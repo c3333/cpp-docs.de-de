@@ -1,5 +1,5 @@
 ---
-title: '&lt;Memory_resource&gt; Operatoren'
+title: '&lt;memory_resource&gt;-Operatoren'
 ms.date: 11/04/2016
 f1_keywords:
 - memory_resource/std::operator!=
@@ -8,26 +8,26 @@ helpviewer_keywords:
 - std::operator!= (memory_resource)
 - std::operator== (memory_resource)
 ms.openlocfilehash: dd7dc3e65fe58663285433f9cbc9b64cf2b81cda
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68268902"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78884044"
 ---
-# <a name="ltmemoryresourcegt-operators"></a>&lt;Memory_resource&gt; Operatoren
+# <a name="ltmemory_resourcegt-operators"></a>&lt;memory_resource&gt;-Operatoren
 
-## <a name="op_neq"></a> Operator! =
+## <a name="op_neq"></a>Operator! =
 
-Testet, ob das Memory_resource-Objekt links vom Operator ist nicht gleich dem Memory_resource-Objekt auf der rechten Seite ist.
+Testet, ob das memory_resource Objekt links vom Operator ungleich dem memory_resource Objekt rechts vom Operator ist.
 
 ```cpp
 template <class T1, class T2>
     bool operator!=(const polymorphic_allocator<T1>& a, const polymorphic_allocator<T2>& b) noexcept;
 ```
 
-## <a name="op_eq_eq"></a> Operator ==
+## <a name="op_eq_eq"></a>Operator = =
 
-Testet, ob das Memory_resource-Objekt auf der linken Seite des Operators gleich dem Memory_resource-Objekt auf der rechten Seite ist.
+Testet, ob das memory_resource Objekt links vom Operator gleich dem memory_resource Objekt rechts vom Operator ist.
 
 ```cpp
 template <class T1, class T2>

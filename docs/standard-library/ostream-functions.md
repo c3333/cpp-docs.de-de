@@ -13,15 +13,15 @@ helpviewer_keywords:
 - std::ends [C++]
 - std::flush [C++]
 ms.openlocfilehash: 8d93e46b0323058d93c6d0bd8c1ee566998aef61
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447193"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78874810"
 ---
 # <a name="ltostreamgt-functions"></a>&lt;ostream&gt;-Funktionen
 
-Dabei handelt es sich um die in &lt;ostream&gt;definierten globalen Vorlagen Funktionen. Informationen zu Element Funktionen finden Sie in der Dokumentation zur [Basic_ostream-Klasse](basic-ostream-class.md) .
+Dies sind die globalen Vorlagen Funktionen, die in &lt;ostream-&gt;definiert sind. Informationen zu Element Funktionen finden Sie in der Dokumentation zur [Basic_ostream-Klasse](basic-ostream-class.md) .
 
 ||||
 |-|-|-|
@@ -40,13 +40,13 @@ basic_ostream<Elem, Tr>& endl(
 
 ### <a name="parameters"></a>Parameter
 
-*Elem*\
+*Elem* -\
 Der Elementtyp.
 
-*Ostr*\
+*Ostr* -\
 Ein Objekt vom Typ **basic_ostream**.
 
-*Stadtrat*\
+*TR* -\
 Zeichenmerkmale.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -87,13 +87,13 @@ basic_ostream<Elem, Tr>& ends(
 
 ### <a name="parameters"></a>Parameter
 
-*Elem*\
+*Elem* -\
 Der Elementtyp.
 
-*Ostr*\
+*Ostr* -\
 Ein Objekt vom Typ `basic_ostream`.
 
-*Stadtrat*\
+*TR* -\
 Zeichenmerkmale.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -102,7 +102,7 @@ Ein Objekt vom Typ `basic_ostream`.
 
 ### <a name="remarks"></a>Hinweise
 
-Der Manipulator ruft *Ostr*auf. [Put](../standard-library/basic-ostream-class.md#put) (*Elem*(' \ 0 ')). Sie gibt *Ostr*zurück.
+Der Manipulator ruft *Ostr*auf. [Put](../standard-library/basic-ostream-class.md#put)(*Elem*(' \ 0 ')). Sie gibt *Ostr*zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -136,13 +136,13 @@ basic_ostream<Elem, Tr>& flush(
 
 ### <a name="parameters"></a>Parameter
 
-*Elem*\
+*Elem* -\
 Der Elementtyp.
 
-*Ostr*\
+*Ostr* -\
 Ein Objekt vom Typ `basic_ostream`.
 
-*Stadtrat*\
+*TR* -\
 Zeichenmerkmale.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -184,16 +184,16 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Elem*\
+*Elem* -\
 Der Elementtyp.
 
-*Stadtrat*\
+*TR* -\
 Zeichenmerkmale.
 
-*linken*\
+*Linker*\
 Ein lvalue-Verweis auf ein `basic_ostream`-Objekt.
 
-*Richting*\
+*Rechte*\
 Ein lvalue-Verweis auf ein `basic_ostream`-Objekt.
 
 ### <a name="remarks"></a>Hinweise
