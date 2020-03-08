@@ -11,15 +11,15 @@ helpviewer_keywords:
 - std::get [C++]
 - std::swap [C++]
 ms.openlocfilehash: 61b5404d0f22cd902e35f6bee680df3c719804f2
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456769"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875888"
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt;-Funktionen
 
-Der \<Array >-Header enthält zwei nicht-Member- `get` Funktionen `swap`, und, die auf **Array** -Objekten angewendet werden.
+Das \<Array >-Header enthält zwei nicht-Member-Funktionen, `get` und `swap`, die für **Array** Objekte verwendet werden.
 
 |||
 |-|-|
@@ -42,16 +42,16 @@ constexpr T&& get(array<T, N>&& arr) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Sin*\
+*Index*\
 Der Offset des Elements.
 
-*BUND*\
+*T*\
 Der Typ eines Elements.
 
-*NR*\
+*N*\
 Die Anzahl der Elemente im Array.
 
-*r*\
+*arr* -\
 Das Array, aus dem die Auswahl erfolgt.
 
 ### <a name="example"></a>Beispiel
@@ -86,9 +86,9 @@ int main()
 1 3
 ```
 
-## <a name="swap"></a>  swap
+## <a name="swap"></a> swap
 
-Eine nicht-Member-Vorlagen Spezialisierung `std::swap` von, die zwei **Array** Objekte tauscht.
+Eine nicht-Member-Vorlagen Spezialisierung von `std::swap`, die zwei **Array** Objekte tauscht.
 
 ```cpp
 template <class Ty, std::size_t N>
@@ -97,19 +97,19 @@ void swap(array<Ty, N>& left, array<Ty, N>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Genossenschaft*\
+*Ty* -\
 Der Typ eines Elements.
 
-*NR*\
+*N*\
 Die Größe des Arrays.
 
-*linken*\
+*Linker*\
 Das erste auszutauschende Array.
 
-*Richting*\
+*Rechte*\
 Das zweite auszutauschende Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
@@ -159,6 +159,6 @@ int main()
 0 1 2 3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<array>](../standard-library/array.md)

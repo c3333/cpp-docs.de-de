@@ -1,5 +1,5 @@
 ---
-title: DDX_DHtml-Hilfsmakros
+title: DDX_DHtml Hilfsobjekte
 ms.date: 11/04/2016
 f1_keywords:
 - AFXDHTML/DDX_DHtml_ElementValue
@@ -18,36 +18,36 @@ helpviewer_keywords:
 - macros [MFC], DDX_DHtml helpers
 ms.assetid: c46302d2-ea43-4fea-bfc2-6f590d99f267
 ms.openlocfilehash: 90c80dbc5c8b6788f3afad3cf77d796139fbd946
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62323033"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78866656"
 ---
-# <a name="ddxdhtml-helper-macros"></a>DDX_DHtml-Hilfsmakros
+# <a name="ddx_dhtml-helper-macros"></a>DDX_DHtml Hilfsobjekte
 
-DDX_DHtml-Hilfsmakros ermöglichen einen einfachen Zugriff auf die häufig verwendeten Eigenschaften von Steuerelementen auf einer HTML-Seite.
+Die DDX_DHtml-Hilfsobjekte ermöglichen den einfachen Zugriff auf die häufig verwendeten Eigenschaften von Steuerelementen auf einer HTML-Seite.
 
-### <a name="data-exchange-macros"></a>Registrierungsdatenaustausch-Makros
+### <a name="data-exchange-macros"></a>Datenaustausch Makros
 
 |||
 |-|-|
-|[DDX_DHtml_ElementValue](#ddx_dhtml_elementvalue)|Legt fest oder ruft die Value-Eigenschaft aus dem ausgewählten Steuerelement.|
-|[DDX_DHtml_ElementInnerText](#ddx_dhtml_elementinnertext)|Ruft den Text zwischen den Start- und Endtags des aktuellen Elements ab, oder legt diesen fest.|
-|[DDX_DHtml_ElementInnerHtml](#ddx_dhtml_elementinnerhtml)|Legt fest oder ruft Sie den HTML-Code zwischen den Start- und Endtags des aktuellen Elements ab.|
-|[DDX_DHtml_Anchor_Href](#ddx_dhtml_anchor_href)|Legt fest oder ruft ab, der Ziel-URL oder den Ankerpunkt Punkt.|
-|[DDX_DHtml_Anchor_Target](#ddx_dhtml_anchor_target)|Ruft das Zielfenster oder den Zielframe ab, ab oder legt diesen fest.|
-|[DDX_DHtml_Img_Src](#ddx_dhtml_img_src)|Legt fest oder ruft den Namen ein Bild oder einen Videoclip in das Dokument ab.|
-|[DDX_DHtml_Frame_Src](#ddx_dhtml_frame_src)|Legt fest oder ruft die URL des zugeordneten Frames ab.|
-|[DDX_DHtml_IFrame_Src](#ddx_dhtml_iframe_src)|Legt fest oder ruft die URL des zugeordneten Frames ab.|
+|[DDX_DHtml_ElementValue](#ddx_dhtml_elementvalue)|Legt die Value-Eigenschaft des ausgewählten Steuer Elements fest oder ruft Sie ab.|
+|[DDX_DHtml_ElementInnerText](#ddx_dhtml_elementinnertext)|Legt den Text zwischen den Start-und Endtags des aktuellen Elements fest oder ruft diesen ab.|
+|[DDX_DHtml_ElementInnerHtml](#ddx_dhtml_elementinnerhtml)|Legt den HTML-Code zwischen den Start-und Endtags des aktuellen Elements fest oder ruft diesen ab.|
+|[DDX_DHtml_Anchor_Href](#ddx_dhtml_anchor_href)|Legt die Ziel-URL oder den Ankerpunkt fest oder ruft Sie ab.|
+|[DDX_DHtml_Anchor_Target](#ddx_dhtml_anchor_target)|Legt das Zielfenster oder den Zielrahmen fest oder ruft es ab.|
+|[DDX_DHtml_Img_Src](#ddx_dhtml_img_src)|Legt den Namen eines Bilds oder eines Videoclips im Dokument fest oder ruft ihn ab.|
+|[DDX_DHtml_Frame_Src](#ddx_dhtml_frame_src)|Legt die URL des zugeordneten Frames fest oder ruft Sie ab.|
+|[DDX_DHtml_IFrame_Src](#ddx_dhtml_iframe_src)|Legt die URL des zugeordneten Frames fest oder ruft Sie ab.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afxdhtml.h
+**Header:** afxdhtml. h
 
-## <a name="ddx_dhtml_anchor_href"></a> DDX_DHtml_Anchor_Href
+## <a name="ddx_dhtml_anchor_href"></a>DDX_DHtml_Anchor_Href
 
-Legt fest oder ruft ab, der Ziel-URL oder den Ankerpunkt Punkt.
+Legt die Ziel-URL oder den Ankerpunkt fest oder ruft Sie ab.
 
 ```
 DDX_DHtml_Anchor_Href(
@@ -58,22 +58,22 @@ DDX_DHtml_Anchor_Href(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLANCHORELEMENT_HREF dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLANCHORELEMENT_HREF Dispatch-ID auf.
 
-## <a name="ddx_dhtml_anchor_target"></a>  DDX_DHtml_Anchor_Target
+## <a name="ddx_dhtml_anchor_target"></a>DDX_DHtml_Anchor_Target
 
-Ruft das Zielfenster oder den Zielframe ab, ab oder legt diesen fest.
+Legt das Zielfenster oder den Zielrahmen fest oder ruft es ab.
 
 ```
 DDX_DHtml_Anchor_Target(
@@ -84,22 +84,22 @@ DDX_DHtml_Anchor_Target(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLANCHORELEMENT_TARGET dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLANCHORELEMENT_TARGET Dispatch-ID auf.
 
-## <a name="ddx_dhtml_elementinnerhtml"></a>  DDX_DHtml_ElementInnerHtml
+## <a name="ddx_dhtml_elementinnerhtml"></a>DDX_DHtml_ElementInnerHtml
 
-Legt fest oder ruft Sie den HTML-Code zwischen den Start- und Endtags des aktuellen Elements ab.
+Legt den HTML-Code zwischen den Start-und Endtags des aktuellen Elements fest oder ruft diesen ab.
 
 ```
 DDX_DHtml_ElementInnerHtml(
@@ -110,22 +110,22 @@ DDX_DHtml_ElementInnerHtml(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLELEMENT_INNERHTML dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLELEMENT_INNERHTML Dispatch-ID auf.
 
-## <a name="ddx_dhtml_elementinnertext"></a>  DDX_DHtml_ElementInnerText
+## <a name="ddx_dhtml_elementinnertext"></a>DDX_DHtml_ElementInnerText
 
-Ruft den Text zwischen den Start- und Endtags des aktuellen Elements ab, oder legt diesen fest.
+Legt den Text zwischen den Start-und Endtags des aktuellen Elements fest oder ruft diesen ab.
 
 ```
 DDX_DHtml_ElementInnerText(
@@ -136,22 +136,22 @@ DDX_DHtml_ElementInnerText(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLELEMENT_INNERTEXT dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLELEMENT_INNERTEXT Dispatch-ID auf.
 
-## <a name="ddx_dhtml_elementvalue"></a> DDX_DHtml_ElementValue
+## <a name="ddx_dhtml_elementvalue"></a>DDX_DHtml_ElementValue
 
-Legt fest oder ruft die Value-Eigenschaft aus dem ausgewählten Steuerelement.
+Legt die Value-Eigenschaft des ausgewählten Steuer Elements fest oder ruft Sie ab.
 
 ```
 DDX_DHtml_ElementValue(
@@ -162,24 +162,24 @@ DDX_DHtml_ElementValue(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden. Finden Sie unter *Wert* in [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext).
+Der ausgetauschte Wert. Siehe *Wert* in [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ist nur erfolgreich, wenn Steuerelemente ausführen, die eine Value-Eigenschaft aufweisen. Steuerelemente, die eine Value-Eigenschaft umfassen Bearbeitungsfelder, Listenfelder und Kombinationsfelder.
+Dieses Makro ist nur erfolgreich, wenn es für Steuerelemente mit einer Value-Eigenschaft ausgeführt wird. Steuerelemente, die über eine Value-Eigenschaft verfügen, umfassen Bearbeitungsfelder, Listenfelder und Kombinations Felder.
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_A_VALUE dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_A_VALUE Dispatch-ID auf.
 
-## <a name="ddx_dhtml_frame_src"></a> DDX_DHtml_Frame_Src
+## <a name="ddx_dhtml_frame_src"></a>DDX_DHtml_Frame_Src
 
-Legt fest oder ruft die URL des zugeordneten Frames ab.
+Legt die URL des zugeordneten Frames fest oder ruft Sie ab.
 
 ```
 DDX_DHtml_Frame_Src(
@@ -190,22 +190,22 @@ DDX_DHtml_Frame_Src(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLFRAMEBASE_SRC dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLFRAMEBASE_SRC Dispatch-ID auf.
 
-## <a name="ddx_dhtml_iframe_src"></a> DDX_DHtml_IFrame_Src
+## <a name="ddx_dhtml_iframe_src"></a>DDX_DHtml_IFrame_Src
 
-Legt fest oder ruft die URL des zugeordneten Frames ab.
+Legt die URL des zugeordneten Frames fest oder ruft Sie ab.
 
 ```
 DDX_DHtml_IFrame_Src(
@@ -216,22 +216,22 @@ DDX_DHtml_IFrame_Src(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLFRAMEBASE_SRC dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLFRAMEBASE_SRC Dispatch-ID auf.
 
 ## <a name="ddx_dhtml_img_src"></a>DDX_DHtml_Img_Src
 
-Ruft ab, oder ruft den Namen ein Bild oder einen Videoclip in das Dokument ab.
+Ruft den Namen eines Bilds oder eines Videoclips im Dokument ab oder ruft ihn ab.
 
 ```
 DDX_DHtml_Img_Src(
@@ -242,21 +242,21 @@ DDX_DHtml_Img_Src(
 
 #### <a name="parameters"></a>Parameter
 
-*dx*<br/>
-Ein Zeiger auf eine [CDataExchange](../../mfc/reference/cdataexchange-class.md) Objekt.
+*Market*<br/>
+Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -Objekt.
 
 *name*<br/>
-Der Wert, den Sie für die HTML-Steuerelement-ID-Parameter angegeben.
+Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben.
 
 *var*<br/>
-Der Wert, die ausgetauscht werden.
+Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wird das Makro DDX_DHtml_Img_Src verwendet, die Src-Eigenschaft für ein IMAGE-Element abzurufen, wird der Bildobjekt Internet Explorer die vollständig mit Escapezeichen versehene URL für die Bildquelle zurückgegeben. Z. B. Wenn Sie das Makro DDX_DHtml_Img_Src verwenden, um der Src-Eigenschaft eines IMAGE-Elements auf die Zeichenfolge "einige interessante Bild" festgelegt, gibt Wenn Sie diese Eigenschaft, die Internet Explorer abrufen, die Zeichenfolge "res://d:\myapplication\myapp.exe/some% zurück 20interesting % 20picture."
+Wenn das DDX_DHtml_Img_Src-Makro zum Abrufen der src-Eigenschaft für ein Bildelement verwendet wird, gibt das Internet Explorer-Image Objekt die URL für den vollständigen Escapezeichen für die Bildquelle zurück. Wenn Sie z. b. das DDX_DHtml_Img_Src-Makro verwenden, um die src-Eigenschaft eines Bild Elements auf die Zeichenfolge "Some interessantes Bild" festzulegen, gibt Internet Explorer beim Abrufen dieser Eigenschaft die Zeichenfolge "res: Knotens"//d: \ MyApplication \ MyApp. exe/some %2 0 interessantiges %2 0 Bild "zurück.
 
-Dieses Makro ruft die [CDHtmlDialog::DDX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) Funktion unter Verwendung der DISPID_IHTMLIMGELEMENT_SRC dispatch-ID an
+Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLIMGELEMENT_SRC Dispatch-ID auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CDHtmlDialog-Klasse](../../mfc/reference/cdhtmldialog-class.md)

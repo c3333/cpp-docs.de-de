@@ -12,11 +12,11 @@ helpviewer_keywords:
 - connection points [C++], notifying of events
 ms.assetid: eb7a563e-6bce-4cdf-8d20-8c6a5307781b
 ms.openlocfilehash: 694127ceccc1d1b55e5da9abca799dff77dcfc60
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496937"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78864917"
 ---
 # <a name="cfirepropnotifyevent-class"></a>Cfirepropnotimayevent-Klasse
 
@@ -31,26 +31,26 @@ Diese Klasse stellt Methoden zum Benachrichtigen der Senke des Containers bezüg
 class CFirePropNotifyEvent
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFirePropNotifyEvent::FireOnChanged](#fireonchanged)|Kum Benachrichtigt die Senke des Containers, dass sich eine Steuerelement Eigenschaft geändert hat.|
-|[CFirePropNotifyEvent::FireOnRequestEdit](#fireonrequestedit)|Kum Benachrichtigt die Senke des Containers, dass eine Steuerelement Eigenschaft gerade geändert wird.|
+|[Cfirepropnotischyevent:: fireonchanged](#fireonchanged)|Kum Benachrichtigt die Senke des Containers, dass sich eine Steuerelement Eigenschaft geändert hat.|
+|[Cfirepropnotieyevent:: fireonrequestedit](#fireonrequestedit)|Kum Benachrichtigt die Senke des Containers, dass eine Steuerelement Eigenschaft gerade geändert wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CFirePropNotifyEvent`verfügt über zwei Methoden, die die Senke des Containers Benachrichtigen, dass eine Steuerelement Eigenschaft geändert wurde oder gerade geändert wird.
+`CFirePropNotifyEvent` verfügt über zwei Methoden, die die Senke des Containers Benachrichtigen, dass eine Steuerelement Eigenschaft geändert wurde oder gerade geändert wird.
 
-Wenn die Klasse, die das Steuerelement implementiert `IPropertyNotifySink`, von `CFirePropNotifyEvent` abgeleitet ist, werden die Methoden `FireOnRequestEdit` aufgerufen `FireOnChanged`, wenn Sie oder aufrufen. Wenn Ihre Steuerelement Klasse nicht von `IPropertyNotifySink`abgeleitet ist, geben Aufrufe dieser Funktionen S_OK zurück.
+Wenn die Klasse, die das Steuerelement implementiert, von `IPropertyNotifySink`abgeleitet ist, werden die `CFirePropNotifyEvent` Methoden aufgerufen, wenn Sie `FireOnRequestEdit` oder `FireOnChanged`aufrufen. Wenn Ihre Steuerelement Klasse nicht von `IPropertyNotifySink`abgeleitet ist, geben Aufrufe dieser Funktionen S_OK zurück.
 
 Weitere Informationen zum Erstellen von Steuerelementen finden Sie im [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlctl.h
+**Header:** atlctl. h
 
 ##  <a name="fireonchanged"></a>Cfirepropnotischyevent:: fireonchanged
 
@@ -62,7 +62,7 @@ static HRESULT FireOnChanged(IUnknown* pUnk, DISPID dispID);
 
 ### <a name="parameters"></a>Parameter
 
-*pUnk*<br/>
+*Kro*<br/>
 in Zeiger auf den `IUnknown` des Objekts, das die Benachrichtigung sendet.
 
 *dispID*<br/>
@@ -72,7 +72,7 @@ in Der Bezeichner der geänderten Eigenschaft.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion kann auch dann aufgerufen werden, wenn das Steuerelement keine Verbindungspunkte unterstützt.
 
@@ -86,7 +86,7 @@ static HRESULT FireOnRequestEdit(IUnknown* pUnk, DISPID dispID);
 
 ### <a name="parameters"></a>Parameter
 
-*pUnk*<br/>
+*Kro*<br/>
 in Zeiger auf den `IUnknown` des Objekts, das die Benachrichtigung sendet.
 
 *dispID*<br/>
@@ -96,10 +96,10 @@ in Der Bezeichner der Eigenschaft, die geändert werden soll.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion kann auch dann aufgerufen werden, wenn das Steuerelement keine Verbindungspunkte unterstützt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen Übersicht](../../atl/atl-class-overview.md)

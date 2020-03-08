@@ -1,5 +1,5 @@
 ---
-title: Fensterklassen-Makros
+title: Fenster Klassen Makros
 ms.date: 11/04/2016
 f1_keywords:
 - atlwin/ATL::DECLARE_WND_CLASS
@@ -7,30 +7,30 @@ f1_keywords:
 - atlwin/ATL::DECLARE_WND_CLASS_EX
 ms.assetid: ce18681a-2bab-4453-9895-0f3ea47c2b24
 ms.openlocfilehash: c4617a04c199741b97316122456e417a94275e89
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62197173"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78862965"
 ---
-# <a name="window-class-macros"></a>Fensterklassen-Makros
+# <a name="window-class-macros"></a>Fenster Klassen Makros
 
-Diese Makros definieren Hilfsprogramme für Fenster-Klasse.
+Diese Makros definieren Fenster Klassen Hilfsprogramme.
 
 |||
 |-|-|
-|[DECLARE_WND_CLASS](#declare_wnd_class)|Können Sie den Namen der eine neue Windows-Klasse angeben.|
-|[DECLARE_WND_CLASS2](#declare_wnd_class2)|(Visual Studio 2017) Ermöglicht Ihnen, geben Sie den Namen, der eine neue Windows-Klasse und der einschließenden Klasse, dessen Fensterprozedur die neue Klasse verwendet wird.|
-|[DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)|Können Sie den Namen der eine vorhandene Fensterklasse angeben, auf dem eine neue Windows-Klasse basieren soll.|
-|[DECLARE_WND_CLASS_EX](#declare_wnd_class_ex)|Können Sie die Parameter einer Klasse angeben.|
+|[DECLARE_WND_CLASS](#declare_wnd_class)|Ermöglicht es Ihnen, den Namen einer neuen Fenster Klasse anzugeben.|
+|[DECLARE_WND_CLASS2](#declare_wnd_class2)|(Visual Studio 2017) Ermöglicht es Ihnen, den Namen einer neuen Fenster Klasse und die einschließende Klasse anzugeben, deren Fenster Prozedur von der neuen Klasse verwendet wird.|
+|[DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)|Ermöglicht das Angeben des Namens einer vorhandenen Fenster Klasse, auf der eine neue Fenster Klasse basiert.|
+|[DECLARE_WND_CLASS_EX](#declare_wnd_class_ex)|Ermöglicht es Ihnen, die Parameter einer Klasse anzugeben.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlwin.h vorhanden
+**Header:** atlwin. h
 
-##  <a name="declare_wnd_class"></a>  DECLARE_WND_CLASS
+##  <a name="declare_wnd_class"></a>DECLARE_WND_CLASS
 
-Können Sie den Namen der eine neue Windows-Klasse angeben. Platzieren Sie dieses Makro in der Steuerelementklasse eines ATL-ActiveX-Steuerelements.
+Ermöglicht es Ihnen, den Namen einer neuen Fenster Klasse anzugeben. Platzieren Sie dieses Makro in der Steuerelement Klasse eines ATL-ActiveX-Steuer Elements.
 
 ```
 DECLARE_WND_CLASS( WndClassName )
@@ -38,18 +38,18 @@ DECLARE_WND_CLASS( WndClassName )
 
 ### <a name="parameters"></a>Parameter
 
-*WndClassName*<br/>
-[in] Der Name der neuen Window-Klasse. Wenn der Wert NULL ist, generiert ATL einen Klassennamen der Fenster.
+*Wndclassname*<br/>
+in Der Name der neuen Fenster Klasse. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die Option /permissive-compiler verwenden, klicken Sie dann verursachen DECLARE_WND_CLASS einen Compilerfehler. Verwenden Sie stattdessen DECLARE_WND_CLASS2.
+Wenn Sie die/permissive--Compileroption verwenden, verursacht DECLARE_WND_CLASS einen Compilerfehler. Verwenden Sie stattdessen DECLARE_WND_CLASS2.
 
-DECLARE_WND_CLASS können Sie den Namen der eine neue Windows-Klasse angeben, deren Informationen werden vom verwaltet [CWndClassInfo](cwndclassinfo-class.md). DECLARE_WND_CLASS definiert die neue Windows-Klasse, durch die folgenden statischen Funktion zu implementieren:
+Mit DECLARE_WND_CLASS können Sie den Namen einer neuen Fenster Klasse angeben, deren Informationen von [CWndClassInfo](cwndclassinfo-class.md)verwaltet werden. DECLARE_WND_CLASS die neue Fenster Klasse definiert, indem die folgende statische Funktion implementiert wird:
 
 [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]
 
-DECLARE_WND_CLASS gibt an, die folgenden Stile für das neue Fenster:
+DECLARE_WND_CLASS gibt die folgenden Stile für das neue Fenster an:
 
 - CS_HREDRAW
 
@@ -57,15 +57,15 @@ DECLARE_WND_CLASS gibt an, die folgenden Stile für das neue Fenster:
 
 - CS_DBLCLKS
 
-DECLARE_WND_CLASS gibt auch die Hintergrundfarbe des Standard-Fensters. Verwenden der [DECLARE_WND_CLASS_EX](#declare_wnd_class_ex) Makro, geben Sie Ihre eigenen Formatvorlagen und Hintergrundfarbe.
+DECLARE_WND_CLASS gibt auch die Hintergrundfarbe des Standard Fensters an. Verwenden Sie das [DECLARE_WND_CLASS_EX](#declare_wnd_class_ex) -Makro, um Ihre eigenen Stile und Hintergrundfarbe anzugeben.
 
-[CWindowImpl](cwindowimpl-class.md) verwendet die DECLARE_WND_CLASS-Makro, um ein Fenster, die basierend auf einem neuen Fensterklasse zu erstellen. Um dieses Verhalten überschreiben, verwenden die [DECLARE_WND_SUPERCLASS](#declare_wnd_superclass) -Makro, oder geben Sie eine eigene Implementierung der [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo) Funktion.
+[CWindowImpl](cwindowimpl-class.md) verwendet das DECLARE_WND_CLASS-Makro, um ein Fenster zu erstellen, das auf einer neuen Fenster Klasse basiert. Um dieses Verhalten zu überschreiben, verwenden Sie das [DECLARE_WND_SUPERCLASS](#declare_wnd_superclass) -Makro, oder stellen Sie eine eigene Implementierung der [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo) -Funktion bereit.
 
-Weitere Informationen zum Verwenden von Fenstern in ATL finden Sie im Artikel [ATL-Fensterklassen](../../atl/atl-window-classes.md).
+Weitere Informationen zur Verwendung von Windows in ATL finden Sie im Artikel [ATL-Fenster Klassen](../../atl/atl-window-classes.md).
 
-##  <a name="declare_wnd_class2"></a>  DECLARE_WND_CLASS2
+##  <a name="declare_wnd_class2"></a>DECLARE_WND_CLASS2
 
-(Visual Studio 2017) Ähnlich wie DECLARE_WND_CLASS, aber mit einem zusätzlichen Parameter, der einen abhängiger Namenfehler verhindert, bei der Kompilierung mit der PERMISSIVE.
+(Visual Studio 2017) Vergleichbar mit DECLARE_WND_CLASS, aber mit einem zusätzlichen Parameter, der einen abhängigen Namensfehler beim Kompilieren mit der/permissive--Option vermeidet.
 
 ```
 DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
@@ -73,20 +73,20 @@ DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
 
 ### <a name="parameters"></a>Parameter
 
-*WndClassName*<br/>
-[in] Der Name der neuen Window-Klasse. Wenn der Wert NULL ist, generiert ATL einen Klassennamen der Fenster.
+*Wndclassname*<br/>
+in Der Name der neuen Fenster Klasse. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
 *EnclosingClass*<br/>
-[in] Der Name der Fensterklasse, die die neue Windows-Klasse umschließt. Darf nicht NULL sein.
+in Der Name der Fenster Klasse, die die neue Fenster Klasse einschließt. Lässt keine NULL-Werte zu.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die PERMISSIVE verwenden, wird DECLARE_WND_CLASS einem Kompilierungsfehler führen, da sie einen abhängigen Namen enthält. DECLARE_WND_CLASS2 müssen Sie die Klasse, dass dieses Makro wird verwendet, und nicht, dass den Fehler unter den /permissive-flag bewirkt explizit zu benennen.
-Andernfalls ist dieses Makro mit [DECLARE_WND_CLASS](#declare_wnd_class).
+Wenn Sie die/permissive--Option verwenden, wird DECLARE_WND_CLASS einen Kompilierungsfehler verursachen, da er einen abhängigen Namen enthält. DECLARE_WND_CLASS2 erfordert, dass Sie die Klasse explizit benennen, in der dieses Makro verwendet wird, und den Fehler unter dem/permissive--Flag nicht verursacht.
+Andernfalls ist dieses Makro mit [DECLARE_WND_CLASS](#declare_wnd_class)identisch.
 
-##  <a name="declare_wnd_superclass"></a>  DECLARE_WND_SUPERCLASS
+##  <a name="declare_wnd_superclass"></a>DECLARE_WND_SUPERCLASS
 
-Können Sie die Parameter einer Klasse angeben. Platzieren Sie dieses Makro in der Steuerelementklasse eines ATL-ActiveX-Steuerelements.
+Ermöglicht es Ihnen, die Parameter einer Klasse anzugeben. Platzieren Sie dieses Makro in der Steuerelement Klasse eines ATL-ActiveX-Steuer Elements.
 
 ```
 DECLARE_WND_SUPERCLASS( WndClassName, OrigWndClassName )
@@ -94,29 +94,29 @@ DECLARE_WND_SUPERCLASS( WndClassName, OrigWndClassName )
 
 ### <a name="parameters"></a>Parameter
 
-*WndClassName*<br/>
-[in] Der Name des Fensters Klasse diese Informationen werden *OrigWndClassName*. Wenn der Wert NULL ist, generiert ATL einen Klassennamen der Fenster.
+*Wndclassname*<br/>
+in Der Name der Fenster Klasse, die *origwndclassname*der übergeordneten Klasse ist. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
-*OrigWndClassName*<br/>
-[in] Der Name der eine vorhandene Fensterklasse.
+*Origwndclassname*<br/>
+in Der Name einer vorhandenen Fenster Klasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro können Sie den Namen des eine Fensterklasse, die übergeordnete Klasse eine vorhandene Fensterklasse angeben. [CWndClassInfo](cwndclassinfo-class.md) verwaltet die Informationen der übergeordneten Klasse.
+Mit diesem Makro können Sie den Namen einer Fenster Klasse angeben, die eine vorhandene Fenster Klasse als übergeordnete Klasse verwendet. [CWndClassInfo](cwndclassinfo-class.md) verwaltet die Informationen der übergeordneten Klasse.
 
 DECLARE_WND_SUPERCLASS implementiert die folgende statische Funktion:
 
 [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]
 
-In der Standardeinstellung [CWindowImpl](cwindowimpl-class.md) verwendet die [DECLARE_WND_CLASS](#declare_wnd_class) Makro beim Erstellen eines Fensters auf der Grundlage von einer neue Windows-Klasse. Durch Angabe der DECLARE_WND_SUPERCLASS-Makro in einem `CWindowImpl`-abgeleitete Klasse sein, die Fensterklasse basiert auf einer vorhandenen Klasse jedoch der Fensterprozedur verwenden. Dieses Verfahren wird die Erstellung einer übergeordneten Klasse bezeichnet.
+Standardmäßig verwendet [CWindowImpl](cwindowimpl-class.md) das [DECLARE_WND_CLASS](#declare_wnd_class) -Makro, um ein Fenster zu erstellen, das auf einer neuen Fenster Klasse basiert. Wenn Sie das DECLARE_WND_SUPERCLASS-Makro in einer `CWindowImpl`abgeleiteten Klasse angeben, wird die Fenster Klasse auf einer vorhandenen Klasse basieren, verwendet jedoch die Fenster Prozedur. Dieses Verfahren wird als superclassingmethode bezeichnet.
 
-Sie können neben dem Verwenden der Makros DECLARE_WND_CLASS und DECLARE_WND_SUPERCLASS, überschreiben die [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo) Funktion durch eine eigene Implementierung.
+Sie können die [GetWndClassInfo](cwindowimpl-class.md#getwndclassinfo) -Funktion nicht nur mit der DECLARE_WND_CLASS-und DECLARE_WND_SUPERCLASS-Makros, sondern auch mit ihrer eigenen Implementierung überschreiben.
 
-Weitere Informationen zum Verwenden von Fenstern in ATL finden Sie im Artikel [ATL-Fensterklassen](../../atl/atl-window-classes.md).
+Weitere Informationen zur Verwendung von Windows in ATL finden Sie im Artikel [ATL-Fenster Klassen](../../atl/atl-window-classes.md).
 
-##  <a name="declare_wnd_class_ex"></a>  DECLARE_WND_CLASS_EX
+##  <a name="declare_wnd_class_ex"></a>DECLARE_WND_CLASS_EX
 
-Können Sie den Namen der eine vorhandene Fensterklasse angeben, auf dem eine neue Windows-Klasse basieren soll. Platzieren Sie dieses Makro in der Steuerelementklasse eines ATL-ActiveX-Steuerelements.
+Ermöglicht das Angeben des Namens einer vorhandenen Fenster Klasse, auf der eine neue Fenster Klasse basiert. Platzieren Sie dieses Makro in der Steuerelement Klasse eines ATL-ActiveX-Steuer Elements.
 
 ```
 DECLARE_WND_CLASS_EX( WndClassName, style, bkgnd )
@@ -124,23 +124,23 @@ DECLARE_WND_CLASS_EX( WndClassName, style, bkgnd )
 
 ### <a name="parameters"></a>Parameter
 
-*WndClassName*<br/>
-[in] Der Name der neuen Window-Klasse. Wenn der Wert NULL ist, generiert ATL einen Klassennamen der Fenster.
+*Wndclassname*<br/>
+in Der Name der neuen Fenster Klasse. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
 *style*<br/>
-[in] Der Stil des Fensters.
+in Der Stil des Fensters.
 
-*bkgnd*<br/>
-[in] Die Hintergrundfarbe des Fensters.
+*Hintergrund*<br/>
+in Die Hintergrundfarbe des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro können Sie die Klasse-Parameter, der eine neue Windows-Klasse angeben, deren Informationen werden vom verwaltet [CWndClassInfo](cwndclassinfo-class.md). DECLARE_WND_CLASS_EX definiert die neue Windows-Klasse, durch die folgenden statischen Funktion zu implementieren:
+Mit diesem Makro können Sie die Klassen Parameter einer neuen Fenster Klasse angeben, deren Informationen von [CWndClassInfo](cwndclassinfo-class.md)verwaltet werden. DECLARE_WND_CLASS_EX die neue Fenster Klasse definiert, indem die folgende statische Funktion implementiert wird:
 
 [!code-cpp[NVC_ATL_Windowing#127](../../atl/codesnippet/cpp/window-class-macros_1.cpp)]
 
-Wenn Sie die Standardstile und Hintergrundfarbe verwenden möchten, verwenden Sie die [DECLARE_WND_CLASS](#declare_wnd_class) Makro. Weitere Informationen zum Verwenden von Fenstern in ATL finden Sie im Artikel [ATL-Fensterklassen](../../atl/atl-window-classes.md).
+Wenn Sie die Standard Stile und die Hintergrundfarbe verwenden möchten, verwenden Sie das [DECLARE_WND_CLASS](#declare_wnd_class) -Makro. Weitere Informationen zur Verwendung von Windows in ATL finden Sie im Artikel [ATL-Fenster Klassen](../../atl/atl-window-classes.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros](atl-macros.md)

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - std::swap [C++]
 - std::yield [C++]
 ms.openlocfilehash: 8064cec7e94a909d7dc2e1b22142d362bb7b9488
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68458500"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876170"
 ---
 # <a name="ltthreadgt-functions"></a>&lt;thread&gt;-Funktionen
 
@@ -55,9 +55,9 @@ inline void sleep_for(const chrono::duration<Rep, Period>& Rel_time);
 *Rel_time*\
 Ein [Dauer](../standard-library/duration-class.md)-Objekt, das ein Zeitintervall angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion sperrt den aufrufenden Thread für mindestens die Zeit, die von *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
+Die-Funktion sperrt den aufrufenden Thread zumindest für die Zeit, die durch *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
 
 ## <a name="sleep_until"></a> sleep_until
 
@@ -75,11 +75,11 @@ void sleep_until(const xtime *Abs_time);
 *Abs_time*\
 Stellt einen Zeitpunkt dar.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="swap"></a>  swap
+## <a name="swap"></a> swap
 
 Vertauscht die Zustände von zwei **Thread** -Objekten.
 
@@ -89,13 +89,13 @@ void swap(thread& Left, thread& Right) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Linken*\
+*Linker*\
 Das linke **Thread** Objekt.
 
-*Richting*\
+*Rechte*\
 Das Rechte **Thread** Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion ruft `Left.swap(Right)` auf.
 
@@ -107,6 +107,6 @@ Signalisiert dem Betriebssystem, andere Threads auszuführen, auch wenn der aktu
 inline void yield() noexcept;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<thread>](../standard-library/thread.md)

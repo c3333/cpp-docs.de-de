@@ -9,11 +9,11 @@ f1_keywords:
 - atlbase/ATL::AtlComModuleGetClassObject
 ms.assetid: c2f0a35d-857c-4538-a44d-c4ea0db63b06
 ms.openlocfilehash: f9c3697259e1cee2b1107ded785ca583d730b55e
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495463"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78863186"
 ---
 # <a name="server-registration-global-functions"></a>Globale Funktionen der Server Registrierung
 
@@ -25,12 +25,12 @@ Diese Funktionen bieten Unterstützung für das registrieren und Aufheben der Re
 |||
 |-|-|
 |[Atlcommoduleregisterserver](#atlcommoduleregisterserver)|Diese Funktion wird aufgerufen, um alle Objekte in der Objektzuordnung zu registrieren.|
-|[AtlComModuleUnregisterServer](#atlcommoduleunregisterserver)|Diese Funktion wird aufgerufen, um die Registrierung aller Objekte in der Objektzuordnung aufzuheben.|
+|[Atlcommoduleunregisterserver](#atlcommoduleunregisterserver)|Diese Funktion wird aufgerufen, um die Registrierung aller Objekte in der Objektzuordnung aufzuheben.|
 |[Atlcommoduleregisterclassobjects](#atlcommoduleregisterclassobjects)|Diese Funktion wird aufgerufen, um Klassenobjekte zu registrieren.|
 |[Atlcommodulerevokeclassobjects](#atlcommodulerevokeclassobjects)|Diese Funktion wird aufgerufen, um Klassen Objekte von einem com-Modul zu widerrufen.|
-|[AtlComModuleGetClassObject](#atlcommodulegetclassobject)|Diese Funktion wird aufgerufen, um das Klassenobjekt zu erhalten.|
+|[Atlcommodulegetclassobject](#atlcommodulegetclassobject)|Diese Funktion wird aufgerufen, um das Klassenobjekt zu erhalten.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlbase. h
 
@@ -47,22 +47,22 @@ ATLINLINE ATLAPI AtlComModuleRegisterServer(
 
 ### <a name="parameters"></a>Parameter
 
-*pComModule*<br/>
+*pcommodule*<br/>
 Zeiger auf das com-Modul.
 
-*bRegTypeLib*<br/>
+*bregtypelib*<br/>
 TRUE, wenn die Typbibliothek registriert werden soll.
 
-*pCLSID*<br/>
+*pclsid*<br/>
 Verweist auf die CLSID des zu registrierenden Objekts. Wenn der Wert NULL ist, werden alle Objekte in der Objekt Zuordnung registriert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`AtlComModuleRegisterServer`durchläuft die automatisch generierte ATL-Objekt Zuordnung und registriert jedes Objekt in der Zuordnung. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das *pclsid* verweist, registriert. Andernfalls werden alle-Objekte registriert.
+`AtlComModuleRegisterServer` durchläuft die ATL-Objekt Zuordnung, die automatisch generiert wird, und registriert jedes Objekt in der Zuordnung. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das *pclsid* verweist, registriert. Andernfalls werden alle-Objekte registriert.
 
 Diese Funktion wird von [catlcommodule:: RegisterServer](catlcommodule-class.md#registerserver)aufgerufen.
 
@@ -79,22 +79,22 @@ ATLINLINE ATLAPI AtlComModuleUnregisterServer(
 
 ### <a name="parameters"></a>Parameter
 
-*pComModule*<br/>
+*pcommodule*<br/>
 Zeiger auf das com-Modul.
 
-*bUnRegTypeLib*<br/>
+*bunregtypelib*<br/>
 TRUE, wenn die Typbibliothek registriert werden soll.
 
-*pCLSID*<br/>
+*pclsid*<br/>
 Verweist auf die CLSID des Objekts, dessen Registrierung aufgehoben werden soll. Wenn der Wert NULL ist, wird die Registrierung aller Objekte in der Objekt Zuordnung aufgehoben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`AtlComModuleUnregisterServer`durchläuft die ATL-Objekt Zuordnung und hebt die Registrierung der einzelnen Objekte in der Zuordnung auf. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das von *pclsid* verwiesen wird, nicht registriert. Andernfalls wird die Registrierung aller Objekte aufgehoben.
+`AtlComModuleUnregisterServer` durchläuft die ATL-Objekt Zuordnung und hebt die Registrierung der einzelnen Objekte in der Zuordnung auf. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das von *pclsid* verwiesen wird, nicht registriert. Andernfalls wird die Registrierung aller Objekte aufgehoben.
 
 Diese Funktion wird von [catlcommodule:: unregisterserver](catlcommodule-class.md#unregisterserver)aufgerufen.
 
@@ -111,7 +111,7 @@ ATLINLINE ATLAPI AtlComModuleRegisterClassObjects(
 
 ### <a name="parameters"></a>Parameter
 
-*pComModule*<br/>
+*pcommodule*<br/>
 Zeiger auf das com-Modul.
 
 *dwClsContext*<br/>
@@ -122,9 +122,9 @@ Bestimmt die Verbindungstypen für das-Klassenobjekt. Mögliche Werte sind REGCL
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Hilfsfunktion wird von [CComModule:: RegisterClassObjects](ccommodule-class.md#registerclassobjects) (veraltet in ATL 7,0) und von "CComModule:: [RegisterClassObjects](catlexemodulet-class.md#registerclassobjects)" verwendet.
 
@@ -138,14 +138,14 @@ ATLINLINE ATLAPI AtlComModuleRevokeClassObjects(_ATL_COM_MODULE* pComModule);
 
 ### <a name="parameters"></a>Parameter
 
-*pComModule*<br/>
+*pcommodule*<br/>
 Zeiger auf das com-Modul.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Hilfsfunktion wird von [CComModule:: revokeclassobjects](ccommodule-class.md#revokeclassobjects) (veraltet in ATL 7,0) und von "CComModule:: [revokeclassobjects](catlexemodulet-class.md#revokeclassobjects)" verwendet.
 
@@ -163,7 +163,7 @@ ATLINLINE ATLAPI AtlComModuleGetClassObject(
 
 ### <a name="parameters"></a>Parameter
 
-*pComModule*<br/>
+*pcommodule*<br/>
 Zeiger auf das com-Modul.
 
 *rclsid*<br/>
@@ -172,17 +172,17 @@ Die CLSID des zu erstellenden Objekts.
 *riid*<br/>
 Die IID der angeforderten Schnittstelle.
 
-*ppv*<br/>
+*PPV*<br/>
 Ein Zeiger auf den Schnittstellen Zeiger, der durch *riid*identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *PPV* auf NULL festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Hilfsfunktion wird von [CComModule:: GetClassObject](ccommodule-class.md#getclassobject) (veraltet in ATL 7,0) und von "CComModule:: [GetClassObject](catldllmodulet-class.md#getclassobject)" verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionen](../../atl/reference/atl-functions.md)

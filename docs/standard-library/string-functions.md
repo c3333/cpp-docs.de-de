@@ -29,11 +29,11 @@ helpviewer_keywords:
 - std::to_string [C++]
 - std::to_wstring [C++]
 ms.openlocfilehash: 828aeb975178850f5c0a7ea3b7e982bbadd6e7c4
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455600"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856535"
 ---
 # <a name="ltstringgt-functions"></a>&lt;string&gt;-Funktionen
 
@@ -79,37 +79,37 @@ basic_istream<Allocator, Traits>& getline(
 *ist gleich*\
 Der Eingabestream, aus dem eine Zeichenfolge extrahiert werden soll.
 
-*SRT*\
+*Str*\
 Die Zeichenfolge, in die die Zeichen aus dem Eingabestream gelesen werden.
 
-*delim*\
+*Delta* -\
 Das Zeilentrennzeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Eingabestream *ist*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Funktions Signatur Paar, das `(1)` als Escapezeichen aus markiert *ist, ist* , bis *Delta* gefunden wird, das in *Str*gespeichert wird.
+Das Funktions Signatur Paar, das als `(1)` extrahiert werden soll, *ist* , bis *Delta* gefunden wird, das in *Str*gespeichert wird.
 
-Das mit markierte Funktions Signatur Paar `(2)` verwendet "Zeilenumbruch" als Standardzeilen Trennzeichen und verhält sich **wie getline**`is`( `str`, `is`,. `widen`(' `\n`')).
+Das mit markierte Funktions Signatur Paar wird als Standardzeilen Trennzeichen als Zeilen Trenn`(2)` Zeichen verwendet und verhält sich wie **getline**(`is`, `str``is`. `widen`(' `\n`')).
 
 Die zweite Funktion jedes Paars ist analog zur ersten, um [rvalue-Verweise](../cpp/lvalues-and-rvalues-visual-cpp.md) zu unterstützen.
 
 Die Extraktion wird beendet, sobald eines der folgenden Ereignisse eintritt:
 
-- Am Ende der Datei. in diesem Fall wird das interne Statusflag von *auf* `ios_base::eofbit`festgelegt.
+- Am Ende der Datei. in diesem *Fall wird das* interne Statusflag von auf `ios_base::eofbit`festgelegt.
 
 - Nachdem die Funktion ein Element extrahiert hat, das `delim` entspricht; in diesem Fall wird das Element weder zurückgestellt noch an die kontrollierte Sequenz angefügt.
 
-- Nachdem `str.`die Funktion [max_size](../standard-library/basic-string-class.md#max_size) -Elemente extrahiert hat, wird in diesem Fall das interne Statusflag *von auf* `ios_base::failbit`festgelegt.
+- Nachdem die Funktion `str.`[max_size](../standard-library/basic-string-class.md#max_size) Elemente extrahiert hat *, wird das* interne Statusflag von auf `ios_base::failbit`festgelegt.
 
-- Ein anderer anderer Fehler als der zuvor aufgeführte. in diesem Fall wird das interne Statusflag *von auf* festgelegt.`ios_base::badbit`
+- Ein anderer anderer Fehler als der zuvor aufgeführte. in diesem *Fall wird das* interne Statusflag von auf festgelegt `ios_base::badbit`
 
 Informationen zu internen Statusflags finden Sie unter [ios_base::iostate](../standard-library/ios-base-class.md#iostate).
 
-Wenn die Funktion keine Elemente extrahiert, wird das interne `ios_base::failbit`Statusflag *von auf* festgelegt. In jedem Fall `getline` gibt den *Wert zurück.*
+Wenn die Funktion keine Elemente extrahiert *, wird das* interne Statusflag von auf `ios_base::failbit`festgelegt. In jedem Fall *wird*`getline` zurückgegeben.
 
 Wenn eine Ausnahme ausgelöst *wird, bleiben* und *Str* in einem gültigen Zustand.
 
@@ -173,7 +173,7 @@ double stod(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -182,9 +182,9 @@ double stod(
 
 Der **Double** -Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert vom Typ **Double** , als ob `strtod( str.c_str(), _Eptr)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **Double** , als ob durch Aufrufen von `strtod( str.c_str(), _Eptr)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stof"></a> stof
 
@@ -202,7 +202,7 @@ float stof(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -211,9 +211,9 @@ float stof(
 
 Der Float-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert des Typs **float** , als ob `strtof( str.c_str(), _Eptr)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **float** , als ob durch Aufrufen von `strtof( str.c_str(), _Eptr)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stoi"></a> stoi
 
@@ -237,19 +237,19 @@ Der Ganzzahlwert.
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Enthält den Index des ersten Zeichens ohne Konvertierung bei der Rückgabe.|
 |*base*|Die zu verwendende Zahlenbasis.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die- `stoi` Funktion konvertiert die Zeichenfolge in *Str* in einen Wert vom Typ **int** und gibt den Wert zurück. Wenn beispielsweise die Zeichenfolge "10" übergeben wurde, ist der durch `stoi` zurückgegebene Wert die Ganzzahl 10.
+Die-Funktion `stoi` konvertiert die Zeichenfolge in *Str* in einen Wert vom Typ **int** und gibt den Wert zurück. Wenn beispielsweise die Zeichenfolge "10" übergeben wurde, ist der durch `stoi` zurückgegebene Wert die Ganzzahl 10.
 
 `stoi` ähnelt der Funktion `strtol` bei Einzelbyte-Zeichen, wenn der Aufruf über `strtol( str.c_str(), _Eptr, idx)` erfolgt, wobei `_Eptr` ein internes Objekt der Funktion ist, oder `wcstol` bei Breitzeichen, wenn der Aufruf ähnlich über `wcstol(Str.c_str(), _Eptr, idx)` erfolgt. Weitere Informationen finden Sie unter [strtol, wcstol, _strtol_l, _wcstol_l](../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md).
 
-Wenn `str.c_str() == *_Eptr`, `stoi` wird ein Objekt vom Typ `invalid_argument`ausgelöst. Wenn ein solcher-Befehl fest `errno`gelegt wird oder der zurückgegebene Wert nicht als ein Objekt vom Typ **int**dargestellt werden kann, wird ein Objekt vom `out_of_range`Typ ausgelöst. Andernfalls speichert `*_Eptr - str.c_str()` die Funktion in `*idx`, wenn *IDX* kein NULL-Zeiger ist.
+Wenn `str.c_str() == *_Eptr`, löst `stoi` ein Objekt vom Typ `invalid_argument`aus. Wenn ein solcher-Befehl `errno`festgelegt oder der zurückgegebene Wert nicht als ein Objekt vom Typ " **int**" dargestellt werden kann, wird ein Objekt vom Typ "`out_of_range`" ausgelöst. Andernfalls speichert die Funktion `*_Eptr - str.c_str()` in `*idx`, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stol"></a> stol
 
@@ -269,7 +269,7 @@ long stol(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -279,9 +279,9 @@ long stol(
 
 Der lange ganzzahlige Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert vom Typ **Long** , wie durch `strtol( str.c_str(), _Eptr, idx)`Aufrufen von `_Eptr` , wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **Long** , als ob durch Aufrufen von `strtol( str.c_str(), _Eptr, idx)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stold"></a> stold
 
@@ -299,7 +299,7 @@ double stold(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -308,9 +308,9 @@ double stold(
 
 Der **long Double** -Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert des Typs **long Double** , als wäre `strtold( str.c_str(), _Eptr)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **long Double** , als ob durch Aufrufen von `strtold( str.c_str(), _Eptr)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stoll"></a> stoll
 
@@ -330,7 +330,7 @@ long long stoll(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -340,9 +340,9 @@ long long stoll(
 
 Der **Long Long** -Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert vom Typ **Long Long** , als wenn `strtoll( str.c_str(), _Eptr, idx)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **Long Long** , als ob durch Aufrufen von `strtoll( str.c_str(), _Eptr, idx)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stoul"></a> stoul
 
@@ -362,7 +362,7 @@ unsigned long stoul(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -372,9 +372,9 @@ unsigned long stoul(
 
 Der lange ganzzahlige Wert ohne Vorzeichen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert vom Typ **Ganzzahl ohne Vorzeichen long** , als wenn `strtoul( str.c_str(), _Eptr, idx)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **Ganzzahl ohne Vorzeichen long** As If by Call `strtoul( str.c_str(), _Eptr, idx)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
 ## <a name="stoull"></a> stoull
 
@@ -394,7 +394,7 @@ unsigned long long stoull(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*str*|Die zu konvertierende Zeichenfolge.|
 |*idx*|Der Indexwert des ersten Zeichens ohne Konvertierung.|
@@ -404,11 +404,11 @@ unsigned long long stoull(
 
 Der **lange lange Wert ohne** Vorzeichen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen `val` Wert vom Typ **Ganzzahl ohne Vorzeichen long long** , als ob `strtoull( str.c_str(), _Eptr, idx)`durch Aufrufen `_Eptr` von, wobei ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert `*_Eptr -  str.c_str()` die Funktion in `*idx` und gibt zurück `val`, wenn *IDX* kein NULL-Zeiger ist.
+Die-Funktion konvertiert die Sequenz von Elementen in *Str* in einen Wert `val` vom Typ **Ganzzahl ohne Vorzeichen long long** As If by Call `strtoull( str.c_str(), _Eptr, idx)`, wobei `_Eptr` ein internes Objekt für die Funktion ist. Bei ` str.c_str() == *_Eptr` wird ein Objekt vom Typ `invalid_argument` ausgegeben. Wenn solch ein Aufruf `errno` festlegt, wird ein Objekt vom Typ `out_of_range` ausgegeben. Andernfalls speichert die Funktion `*_Eptr -  str.c_str()` in `*idx` und gibt `val`zurück, wenn *IDX* kein NULL-Zeiger ist.
 
-## <a name="swap"></a>  swap
+## <a name="swap"></a> swap
 
 Tauscht die Arrays von Zeichen für zwei Zeichenfolgen aus.
 
@@ -419,15 +419,15 @@ void swap(basic_string<CharType, Traits, Allocator>& left, basic_string<CharType
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
+*Linker*\
 Eine Zeichenfolge, deren Elemente mit denen einer anderen Zeichenfolge ausgetauscht werden sollen.
 
-*Richting*\
+*Rechte*\
 Die andere Zeichenfolge, deren Elemente mit der ersten Zeichenfolge ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion führt die spezialisierte Member-Funktion auf der *linken Seite*aus. [austauschen](../standard-library/basic-string-class.md#swap) (*right*) für Zeichen folgen, die eine Konstante Komplexität gewährleisten.
+Die Vorlagen Funktion führt die spezialisierte Member-Funktion auf der *linken Seite*aus. [Swap](../standard-library/basic-string-class.md#swap)(*right*) für Zeichen folgen, die eine Konstante Komplexität gewährleisten.
 
 ### <a name="example"></a>Beispiel
 
@@ -482,7 +482,7 @@ string to_string(long double Val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Ster*|Der zu konvertierende Wert.|
 
@@ -490,27 +490,27 @@ string to_string(long double Val);
 
 Das `string`, das den Wert darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion konvertiert *Val* in eine Sequenz von Elementen, die in einem `Buf` internen Array Objekt für die Funktion gespeichert sind `sprintf(Buf, Fmt, Val)`, `Fmt` als wäre durch den Aufruf von.
+Die-Funktion konvertiert *Val* in eine Sequenz von Elementen, die in einem Array Objekt gespeichert sind, `Buf` intern für die Funktion, als ob durch Aufrufen von `sprintf(Buf, Fmt, Val)`, wobei `Fmt`
 
-- `"%d"`Wenn `Val` den Typ " **int** " aufweist
+- `"%d"`, wenn `Val` den Typ " **int** " aufweist
 
-- `"%u"`Wenn `Val` den Typ " **Ganzzahl ohne Vorzeichen int** " aufweist
+- `"%u"`, wenn `Val` den Typ " **Ganzzahl ohne Vorzeichen int** " aufweist
 
-- `"%ld"`Wenn `Val` den Typ **Long** aufweist
+- `"%ld"`, wenn `Val` den Typ **Long** aufweist.
 
-- `"%lu"`Wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long** aufweist
+- `"%lu"`, wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long** aufweist
 
-- `"%lld"`Wenn `Val` den Typ " **Long Long** " aufweist
+- `"%lld"`, wenn `Val` den Typ " **Long Long** " aufweist.
 
-- `"%llu"`Wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long long** aufweist
+- `"%llu"`, wenn `Val` den Typ " **Long Long" nicht signiert** hat.
 
-- `"%f"`Wenn `Val` den Typ **float** oder **Double** hat
+- `"%f"`, wenn `Val` vom Typ **float** oder **Double** ist.
 
-- `"%Lf"`Wenn `Val` den Typ **long Double** hat
+- `"%Lf"`, wenn `Val` den Typ **long Double** hat.
 
-Die Funktion gibt `string(Buf)` zurück.
+Die Funktion gibt `string(Buf)`zurück.
 
 ## <a name="to_wstring"></a> to_wstring
 
@@ -530,7 +530,7 @@ wstring to_wstring(long double Val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |`Val`|Der zu konvertierende Wert.|
 
@@ -538,28 +538,28 @@ wstring to_wstring(long double Val);
 
 Die breite Zeichenfolge, die den Wert darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit der Funktion wird `Val` in eine Sequenz von Elementen konvertiert, die in einem für die Funktion internen `Buf`-Arrayobjekt gespeichert werden, als würde `swprintf(Buf, Len, Fmt, Val)` aufgerufen, wobei `Fmt` Folgendem entspricht:
 
-- `L"%d"`Wenn `Val` den Typ " **int** " aufweist
+- `L"%d"`, wenn `Val` den Typ " **int** " aufweist
 
-- `L"%u"`Wenn `Val` den Typ " **Ganzzahl ohne Vorzeichen int** " aufweist
+- `L"%u"`, wenn `Val` den Typ " **Ganzzahl ohne Vorzeichen int** " aufweist
 
-- `L"%ld"`Wenn `Val` den Typ **Long** aufweist
+- `L"%ld"`, wenn `Val` den Typ **Long** aufweist.
 
-- `L"%lu"`Wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long** aufweist
+- `L"%lu"`, wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long** aufweist
 
-- `L"%lld"`Wenn `Val` den Typ " **Long Long** " aufweist
+- `L"%lld"`, wenn `Val` den Typ " **Long Long** " aufweist.
 
-- `L"%llu"`Wenn `Val` den Typ **Ganzzahl ohne Vorzeichen long long** aufweist
+- `L"%llu"`, wenn `Val` den Typ " **Long Long" nicht signiert** hat.
 
-- `L"%f"`Wenn `Val` den Typ **float** oder **Double** hat
+- `L"%f"`, wenn `Val` vom Typ **float** oder **Double** ist.
 
-- `L"%Lf"`Wenn `Val` den Typ **long Double** hat
+- `L"%Lf"`, wenn `Val` den Typ **long Double** hat.
 
-Die Funktion gibt `wstring(Buf)` zurück.
+Die Funktion gibt `wstring(Buf)`zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<string>](../standard-library/string.md)

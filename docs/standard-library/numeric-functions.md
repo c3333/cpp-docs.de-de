@@ -32,11 +32,11 @@ helpviewer_keywords:
 - std::transform_inclusive_scan [C++]
 - std::transform_reduce [C++]
 ms.openlocfilehash: 88a97a3d110c684090b78570077927e32541eed7
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73627449"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856361"
 ---
 # <a name="ltnumericgt-functions"></a>&lt;numeric&gt;-Funktionen
 
@@ -61,10 +61,10 @@ Type accumulate(
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Init* -\
@@ -75,11 +75,11 @@ Der binäre Vorgang, der auf jedes Element im angegebenen Bereich und das Ergebn
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Summe von *Init* und allen Elementen im angegebenen Bereich für die erste Vorlagen Funktion, oder für die zweite Vorlagen Funktion das Ergebnis der Anwendung der binären Operation *Binary_Op* anstelle des Sum-Vorgangs auf (* PartialResult, *in_ ITER*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist und *in_iter* ein Iterator ist, der auf das nächste Element im Bereich zeigt.
+Die Summe von *Init* und allen Elementen im angegebenen Bereich für die erste Vorlagen Funktion, oder für die zweite Vorlagen Funktion, das Ergebnis der Anwendung der binären Operation *Binary_Op* anstelle des Sum-Vorgangs auf (* PartialResult, *in_iter*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist und *in_iter* ein Iterator ist, der auf das nächste Element im Bereich zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Anfangswert stellt sicher, dass ein klar definiertes Ergebnis vorliegt, wenn der Bereich leer ist. in diesem Fall wird " *Init* " zurückgegeben. Der binäre Vorgang muss nicht assoziativ oder kommutativ sein. Das Ergebnis wird mit dem *anfänglichen Wert* initialisiert, und das *Ergebnis* = *Binary_Op*(*Result*, *in_iter*) wird iterativ durch den Bereich berechnet, wobei *in_iter* ein Iterator ist, der auf die einzelnen Werte zeigt. aufeinander folgendes Element im Bereich. Der Bereich muss gültig sein, und die Komplexität ist mit der Größe des Bereichs linear. Der Rückgabetyp des binären Operators muss in **Typ** konvertierbar sein, um Closure während der Iteration sicherzustellen.
+Der Anfangswert stellt sicher, dass ein klar definiertes Ergebnis vorliegt, wenn der Bereich leer ist. in diesem Fall wird " *Init* " zurückgegeben. Der binäre Vorgang muss nicht assoziativ oder kommutativ sein. Das Ergebnis wird mit dem *anfänglichen Wert* initialisiert, und anschließend wird das *Ergebnis* = *Binary_Op*(*Result*, *in_iter*) iterativ durch den Bereich berechnet, wobei *in_iter* ein Iterator ist, der auf jedes aufeinanderfolgende Element im Bereich zeigt. Der Bereich muss gültig sein, und die Komplexität ist mit der Größe des Bereichs linear. Der Rückgabetyp des binären Operators muss in **Typ** konvertierbar sein, um Closure während der Iteration sicherzustellen.
 
 ### <a name="example"></a>Beispiel
 
@@ -220,10 +220,10 @@ ForwardIterator2 adjacent_difference(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein Eingabeiterator, der das erste Element im Eingabebereich adressiert, dessen Elemente mit ihren jeweiligen Vorgängern differenziert werden sollen oder in dem die Wertpaare durch einen anderen angegebenen binären Vorgang verarbeitet werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Eingabeiterator, der das letzte Element im Eingabebereich adressiert, dessen Elemente mit ihren jeweiligen Vorgängern differenziert werden sollen oder in dem die Wertpaare durch einen anderen angegebenen binären Vorgang verarbeitet werden sollen.
 
 *Ergebnis*\
@@ -236,13 +236,13 @@ Der binäre Vorgang, der in der verallgemeinerten Operation angewendet werden so
 
 Ein Ausgabeiterator, der das Ende des Zielbereichs adressiert: `result` + (`last` - `first`).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das *Ergebnis* des ausgabeiteratorergebnisses kann derselbe *Iterator sein*wie der eingabeiterator, damit `adjacent_difference` Werte direkt berechnet werden können.
 
 Bei einer Sequenz von Werten *a*1, *a*2, *a*3 in einem Eingabebereich speichert die erste Vorlagen Funktion aufeinander folgende `adjacent_difference` Werte *a*1, *a*2- *a*1, a3- *a*2 im Zielbereich.
 
-Bei einer Sequenz von Werten *a*1, *a*2, *a*3 in einem Eingabebereich speichert die zweite Vorlagen Funktion aufeinander folgende `adjacent_difference` Werte *a*1, *a*2 *Binary_Op* *a*1, *a*3 *Binary_Op* *a*2, in der Zielbereich.
+Bei einer Sequenz von Werten *a*1, *a*2, *a*3 in einem Eingabebereich speichert die zweite Vorlagen Funktion aufeinander folgende `adjacent_difference` Werte *a*1, *a*2 *Binary_Op* *a*1, *a*3 *Binary_Op* *a*2 im Zielbereich.
 
 Der binäre Vorgang *Binary_Op* muss weder assoziativ noch kommutativ sein, da die Reihenfolge der angewendeten Vorgänge angegeben wird.
 
@@ -350,10 +350,10 @@ ForwardIterator2 exclusive_scan(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\
@@ -445,10 +445,10 @@ ForwardIterator2 inclusive_scan(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\
@@ -488,13 +488,13 @@ Type inner_product(
 
 ### <a name="parameters"></a>Parameter
 
-*First1* \
+*First1*\
 Ein Eingabeiterator, der das erste Element im ersten Bereich adressiert, dessen inneres oder generalisiertes inneres Produkt mit dem zweiten Bereich neu zu berechnen ist.
 
-*Last1* \
+*Last1*\
 Ein Eingabeiterator, der das letzte Element im ersten Bereich adressiert, dessen inneres oder generalisiertes inneres Produkt mit dem zweiten Bereich neu zu berechnen ist.
 
-*First2* \
+*First2*\
 Ein Eingabeiterator, der das erste Element im zweiten Bereich adressiert, dessen inneres oder generalisiertes inneres Produkt mit dem ersten Bereich neu zu berechnen ist.
 
 *Init* -\
@@ -520,7 +520,7 @@ Die zweite Memberfunktion gibt folgendes zurück:
 
 durch iteratives Ersetzen von *Init* durch *Init* *Binary_Op1* (*a*i *Binary_Op2* *b*i).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Anfangswert stellt sicher, dass ein klar definiertes Ergebnis vorliegt, wenn der Bereich leer ist. In diesem Fall wird *Init* zurückgegeben. Die binären Operationen müssen nicht assoziativ oder kommutativ sein. Der Bereich muss gültig sein, und die Komplexität ist mit der Größe des Bereichs linear. Der Rückgabetyp des binären Operators muss in **Typ** konvertierbar sein, um Closure während der Iteration sicherzustellen.
 
@@ -625,10 +625,10 @@ void iota(ForwardIterator first, ForwardIterator last, Type value);
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*erste*\
 Ein Eingabeiterator, der das erste Element im aufzufüllenden Bereich adressiert.
 
-*Letzter* \
+*Letzter*\
 Ein Eingabeiterator, der das letzte Element im aufzufüllenden Bereich adressiert.
 
 *value*\
@@ -704,10 +704,10 @@ OutputIterator partial_sum(
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*erste*\
 Ein Eingabeiterator, der das erste Element in dem Bereich adressiert, der entsprechend eines angegebenen binären Vorgangs teilweise summiert oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein Eingabeiterator, der das letzte Element in dem Bereich adressiert, der entsprechend eines angegebenen binären Vorgangs teilweise summiert oder kombiniert werden soll und eine Position nach dem letzten Element folgt, das tatsächlich im iterierten Sammelbereich enthalten ist.
 
 *Ergebnis*\
@@ -720,13 +720,13 @@ Der binäre Vorgang, der in der verallgemeinerten Operation angewendet werden so
 
 Ein Ausgabeiterator, der das Ende des Zielbereichs adressiert: *Ergebnis* + (*Letztes* - *zuerst*).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das *Ergebnis* des ausgabeiteratorergebnisses darf derselbe *Iterator sein*wie der eingabeiterator, damit partielle Summen direkt berechnet werden können.
 
 Für eine Sequenz von Werten *a*1, *a*2,... *ein*x in einem Eingabebereich speichert die erste Vorlagen Funktion aufeinander folgende Teilsummen im Zielbereich. Das *n*-te Element wird durch angegeben (*a*1 + *a*2 + *a*3 +... + *a*n).
 
-Bei einer Sequenz von Werten *a*1, *a*2, *a*3 in einem Eingabebereich speichert die zweite Vorlagen Funktion aufeinander folgende Teilergebnisse im Zielbereich. Das *n*-te Element wird von (() angegeben. (*a*1 *Binary_Op* *a*2) *Binary_Op* *a*3) *Binary_Op* ...) *Binary_Op* *a*n).
+Bei einer Sequenz von Werten *a*1, *a*2, *a*3 in einem Eingabebereich speichert die zweite Vorlagen Funktion aufeinander folgende Teilergebnisse im Zielbereich. Das *n*-te Element wird von (() angegeben. ((*a*1 *Binary_Op* *a*2) *Binary_Op* *a*3) *Binary_Op* ...) *Binary_Op* *a*n).
 
 Der binäre Vorgang *Binary_Op* muss weder assoziativ noch kommutativ sein, da die Reihenfolge der angewendeten Vorgänge angegeben wird.
 
@@ -840,10 +840,10 @@ Type reduce(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\
@@ -857,9 +857,9 @@ Der binäre Vorgang, der auf jedes Element im angegebenen Bereich und das Ergebn
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis der Anwendung von *Binary_Op* oder `std::plus<>()` auf *Init* und alle Elemente im angegebenen Bereich auf (* PartialResult, *in_iter*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist, und *in_iter* ein Iterator, der auf ein Element im Bereich zeigt. In über Ladungen, die nicht *Init*angeben, entspricht der verwendete *Init* -Wert `typename iterator_traits<InputIterator>::value_type{}`.
+Das Ergebnis der Anwendung *von Binary_Op* oder `std::plus<>()` *auf init* und alle Elemente im angegebenen Bereich auf (* PartialResult, *in_iter*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist, und *in_iter* ist ein Iterator, der auf ein Element im Bereich zeigt. In über Ladungen, die nicht *Init*angeben, entspricht der verwendete *Init* -Wert `typename iterator_traits<InputIterator>::value_type{}`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `reduce` Verhalten ist nicht deterministisch, es sei denn, *Binary_Op* ist assoziativ und kommutativ. Das Verhalten ist nicht definiert, wenn *Binary_Op* ein beliebiges Element ändert oder einen Iterator im Intervall \[*First*, *Last*] (einschließlich) ungültig macht.
 
@@ -893,10 +893,10 @@ ForwardIterator2 transform_exclusive_scan(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\
@@ -958,10 +958,10 @@ ForwardIterator2 transform_inclusive_scan(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\
@@ -1038,16 +1038,16 @@ Type transform_reduce(
 *exec* -\
 Eine Ausführungs Richtlinie.
 
-*erste* \
+*erste*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll.
 
-*First1* \
+*First1*\
 Ein eingabeiterator, der das erste Element im Bereich adressiert, der mit *Binary_Op1*zusammengefasst oder kombiniert werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
-*Last1* \
+*Last1*\
 Ein eingabeiterator, der das letzte Element in dem Bereich adressiert, der mit *Binary_Op1*zusammengefasst oder kombiniert werden soll. Dies ist eine Position hinter dem letzten Element, das tatsächlich in der iterierten Akkumulation enthalten ist.
 
 *Ergebnis*\

@@ -83,13 +83,13 @@ helpviewer_keywords:
 - std::regex_constants [C++], collate
 ms.assetid: 4a69c0ba-c46d-46e4-bd29-6f4efb805f26
 ms.openlocfilehash: c8abca8109db9c781d63721b795feb01161fdb40
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68451668"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876136"
 ---
-# <a name="regexconstants-namespace"></a>regex_constants-Namespace
+# <a name="regex_constants-namespace"></a>regex_constants-Namespace
 
 Namespace für Flags für reguläre Ausdrücke.
 
@@ -103,7 +103,7 @@ namespace regex_constants {
 }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Namespace `regex_constants` kapselt mehrere Flagtypen und ihre zugeordneten Flagwerte.
 
@@ -113,9 +113,9 @@ Der Namespace `regex_constants` kapselt mehrere Flagtypen und ihre zugeordneten 
 |[match_flag_type](#match_flag_type)|Flags für Optionen zum Vergleichen regulärer Ausdrücke.|
 |[syntax_option_type](#syntax_option_type)|Flags zum Auswählen von Syntaxoptionen.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<regex >
+**Header:** \<Regex >
 
 **Namespace:** std
 
@@ -144,7 +144,7 @@ enum error_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein enumerierter Typ, der ein Objekt beschreibt, das Fehlerflags aufnehmen kann. Die unterschiedlichen Flagwerte sind:
 
@@ -204,7 +204,7 @@ enum match_flag_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist eine „Bitmaske“, die Optionen für den Vergleich einer Textsequenz mit einem regulären Ausdruck und Formatflags beschreibt, die beim Ersetzen von Text verwendet werden. Optionen können mit `|`kombiniert werden.
 
@@ -260,7 +260,7 @@ enum syntax_option_type
     };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Bitmaskentyp, der Sprachenspezifizierer und Syntaxmodifikatoren beschreibt, die beim Kompilieren eines regulären Ausdrucks verwendet werden sollen. Optionen können mit `|`kombiniert werden. Es darf immer nur jeweils ein Sprachenspezifizierer verwendet werden.
 
@@ -288,7 +288,7 @@ Es gibt folgende Syntaxmodifikatoren:
 
 `collate`: für Übereinstimmungen soll Gebietsschema beachtet werden
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<regex>](../standard-library/regex.md)\
 [regex_error-Klasse](../standard-library/regex-error-class.md)\

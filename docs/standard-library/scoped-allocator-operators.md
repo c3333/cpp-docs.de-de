@@ -6,17 +6,17 @@ f1_keywords:
 - scoped_allocator/std::operator==
 ms.assetid: 4dfe0805-cc6e-479f-887f-a1c164f73837
 ms.openlocfilehash: 071fc3b73cd3378b110d6d412bb7575e35a77478
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447343"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876334"
 ---
-# <a name="ltscopedallocatorgt-operators"></a>&lt;scoped_allocator&gt;-Header
+# <a name="ltscoped_allocatorgt-operators"></a>&lt;scoped_allocator&gt;-Header
 
 |||
 |-|-|
-|[Operator!=](#op_neq)|[operator==](#op_eq_eq)|
+|[operator!=](#op_neq)|[operator==](#op_eq_eq)|
 
 ## <a name="op_neq"></a> operator!=
 
@@ -31,10 +31,10 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
+*Linker*\
 Das linke `scoped_allocator_adaptor`-Objekt.
 
-*Richting*\
+*Rechte*\
 Das rechte `scoped_allocator_adaptor`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -54,16 +54,16 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
+*Linker*\
 Das linke `scoped_allocator_adaptor`-Objekt.
 
-*Richting*\
+*Rechte*\
 Das rechte `scoped_allocator_adaptor`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `left.outer_allocator() == right.outer_allocator() && left.inner_allocator() == right.inner_allocator()`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<scoped_allocator>](../standard-library/scoped-allocator.md)

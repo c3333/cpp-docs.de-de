@@ -11,13 +11,13 @@ helpviewer_keywords:
 - std::front_insert_iterator [C++], reference
 ms.assetid: a9a9c075-136a-4419-928b-c4871afa033c
 ms.openlocfilehash: 176fac8053d352d6a7a72ce62d5a8ee7a64b9811
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68454119"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78874044"
 ---
-# <a name="frontinsertiterator-class"></a>front_insert_iterator-Klasse
+# <a name="front_insert_iterator-class"></a>front_insert_iterator-Klasse
 
 Beschreibt einen Iteratoradapter, der den Anforderungen eines Ausgabeiterators entspricht. Er fügt Elemente in den Anfang einer Sequenz ein, anstatt sie zu überschreiben, und bietet somit Semantik, die sich von der Semantik zum Überschreiben unterscheidet, die von den Iteratoren der C++-Sequenzcontainer bereitgestellt wird. Die `front_insert_iterator`-Klasse ist für den Typ des Containers vorlagenbasiert.
 
@@ -30,35 +30,35 @@ class front_insert_iterator;
 
 ### <a name="parameters"></a>Parameter
 
-*Kum*\
+*Container*\
 Der Typ des Containers, an dessen Anfang Elemente von einem `front_insert_iterator` eingefügt werden sollen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Container muss den Anforderungen einer Sequenz zum Einfügen am Anfang entsprechen, in der es möglich ist, die Elemente am Anfang der Sequenz in amortisierter konstanter Zeit einzufügen. Die Sequenzcontainer der C++-Standardbibliothek, die durch die [deque-Klasse](../standard-library/deque-class.md) und die [list-Klasse](../standard-library/list-class.md) definiert werden, stellen die erforderliche `push_front`-Memberfunktion bereit und erfüllen diese Anforderungen. Im Gegensatz dazu erfüllen die Sequenzcontainer, die von der [vector-Klasse](../standard-library/vector-class.md) definiert sind, diese Anforderungen nicht und können nicht zur Verwendung mit `front_insert_iterator`-Objekten angepasst werden. Ein `front_insert_iterator` muss immer mit seinem Container initialisiert werden.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[front_insert_iterator](#front_insert_iterator)|Damit wird ein Iterator erstellt, mit dem Elemente an den Anfang eines bestimmten Containerobjekts eingefügt werden können.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[container_type](#container_type)|Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenommen werden soll.|
-|[Verweis](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
+|[Referenz](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator*](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um \* den Ausgabeiterator-Ausdruck `i`  =  `x` für eine Front-|
+|[operator*](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um den ausgabeiteratorausdruck zu implementieren, \* `i` = `x` für eine Front|
 |[operator++](#op_add_add)|Inkrementiert `front_insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
-|[operator=](#op_eq)|Der Zuweisungs Operator, der verwendet wird, um \* den Ausgabeiterator-Ausdruck `i`  =  `x` für eine Front-|
+|[operator=](#op_eq)|Der Zuweisungs Operator, der verwendet wird, um den ausgabeiteratorausdruck zu implementieren, \* `i` = `x` für eine Front|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header**: \<iterator>
 
@@ -72,7 +72,7 @@ Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenomm
 typedef Container container_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist synonym mit dem Vorlagenparameter *Container*.
 
@@ -181,9 +181,9 @@ front_insert_iterator<Container>& operator*();
 
 Die Memberfunktion gibt den Wert des adressierten Elements zurück
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wird zum Implementieren des Ausgabeiteratorausdrucks **\*Iter** = **value** verwendet. Wenn `Iter` ein Iterator ist, der ein Element in einer Sequenz adressiert  **\*** , ersetzt der ITER = -**Wert** dieses Element durch value und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
+Wird zum Implementieren des Ausgabeiteratorausdrucks **\*Iter** = **value** verwendet. Wenn `Iter` ein Iterator ist, der ein Element in einer Sequenz adressiert, ersetzt **\*ITER** - = **Wert** dieses Element durch value und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
 
 ### <a name="example"></a>Beispiel
 
@@ -244,7 +244,7 @@ front_insert_iterator<Container> operator++(int);
 
 Ein `front_insert_iterator`, der den nächsten Speicherort adressiert, an dem ein Wert gespeichert werden kann
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sowohl der Prä- als auch der Postinkrement-Operator geben das gleichen Ergebnis zurück.
 
@@ -293,14 +293,14 @@ front_insert_iterator<Container>& operator=(typename Container::value_type&& val
 
 ### <a name="parameters"></a>Parameter
 
-*ster*\
+*Val* -\
 Der Wert, der dem Container zugewiesen werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Verweis auf das letzte, am Anfang des Containers eingefügte Element
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erster Memberoperator wertet `container.push_front( val)` aus und gibt `*this` zurück.
 
@@ -387,8 +387,8 @@ The first element in the list L is: 30.
 */
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<iterator>](../standard-library/iterator.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)

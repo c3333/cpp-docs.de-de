@@ -6,15 +6,15 @@ f1_keywords:
 - chrono/std::time_point_cast
 ms.assetid: d6800e15-77a1-4df3-900e-d8b2fee190c7
 ms.openlocfilehash: 85fdd413354b3f310d3315a80cf7da983cf6621d
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68244920"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865197"
 ---
 # <a name="ltchronogt-functions"></a>&lt;chrono&gt;-Funktionen
 
-## <a name="duration_cast"></a> duration_cast
+## <a name="duration_cast"></a>duration_cast
 
 Wandelt einen `duration`-Objekt in einen angegebenen Typ um.
 
@@ -34,11 +34,11 @@ constexpr ToDuration round(const duration<Rep, Period>& d);
 
 Ein `duration`-Objekt des Typs `To`, der das `Dur` Zeitintervall darstellt, das abgeschnitten wird, wenn es in den Zieltyp passen muss.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `To` eine Instanziierung von `duration` ist, wird diese Funktion nicht an der Überladungsauflösung beteiligt.
 
-## <a name="time_point_cast"></a> time_point_cast
+## <a name="time_point_cast"></a>time_point_cast
 
 Wandelt ein [time_point](../standard-library/time-point-class.md)-Objekt in einen angegebenen Typ um.
 
@@ -61,6 +61,6 @@ round(const time_point<Clock, Duration>& tp);
 
 Ein `time_point`-Objekt, das über eine Dauer des Typs `To` verfügt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sofern `To` keine Instanziierung von [Dauer](../standard-library/duration-class.md) ist, wird diese Funktion nicht an der Überladungsauflösung beteiligt.

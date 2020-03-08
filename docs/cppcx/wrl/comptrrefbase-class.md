@@ -14,15 +14,15 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::ComPtrRefBase::ptr_ data member
 ms.assetid: 6d344c1a-cc13-4a3f-8a0d-f167ccb9348f
 ms.openlocfilehash: df4e2aa1ce650fd5b1f04baf2f7c4cd2fb4cff93
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398640"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865820"
 ---
 # <a name="comptrrefbase-class"></a>ComPtrRefBase-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,81 +34,81 @@ class ComPtrRefBase;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein [ComPtr\<T >](comptr-class.md) Typ oder einem Typ abgeleitet ist, nicht nur die Schnittstelle der `ComPtr`.
+Ein [comptr-\<t >](comptr-class.md) Typ oder ein von ihm abgeleiteter Typ, nicht nur die Schnittstelle, die vom `ComPtr`dargestellt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt die Basisklasse für die [ComPtrRef](comptrref-class.md) Klasse.
+Stellt die Basisklasse für die [comptrref](comptrref-class.md) -Klasse dar.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name            | Beschreibung
+Name            | BESCHREIBUNG
 --------------- | -------------------------------------------------
-`InterfaceType` | Ein Synonym für den Typ des Vorlagenparameters *T*.
+`InterfaceType` | Ein Synonym für den Typ des Vorlagen Parameters *T*.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                                                       | Beschreibung
+Name                                                                       | BESCHREIBUNG
 -------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------
-[Comptrrefbase:: IInspectable **](#operator-iinspectable-star-star) | Wandelt das aktuelle [Ptr_](#ptr) Datenmembers, der einen Zeiger an eine-Zeiger-an die `IInspectable` Schnittstelle.
-[Comptrrefbase:: IUnknown **](#operator-iunknown-star-star)         | Wandelt das aktuelle [Ptr_](#ptr) Datenmembers, der einen Zeiger an eine-Zeiger-an die `IUnknown` Schnittstelle.
+[Comptrrefbase:: Operator iinspectable * *](#operator-iinspectable-star-star) | Wandelt das aktuelle [ptr_](#ptr) Datenmember in einen Zeiger auf einen Zeiger auf die `IInspectable` Schnittstelle um.
+[Comptrref Base:: Operator IUnknown * *](#operator-iunknown-star-star)         | Wandelt das aktuelle [ptr_](#ptr) Datenmember in einen Zeiger auf einen Zeiger auf die `IUnknown` Schnittstelle um.
 
-### <a name="protected-data-members"></a>Geschützte Datenmember
+### <a name="protected-data-members"></a>Geschützte Datenelemente
 
-Name                        | Beschreibung
+Name                        | BESCHREIBUNG
 --------------------------- | ----------------------------------------------------------------
-[ComPtrRefBase::ptr_](#ptr) | Zeiger auf den Typ, durch den aktuellen Vorlagenparameter angegeben.
+[Comptrref Base::p tr_](#ptr) | Ein Zeiger auf den Typ, der durch den aktuellen Vorlagen Parameter angegeben wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ComPtrRefBase`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="operator-iinspectable-star-star"></a>Comptrrefbase:: "iinspectable"\* \* Operator
+## <a name="operator-iinspectable-star-star"></a>Comptrrefbase:: Operator iinspectable\*\*-Operator
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 operator IInspectable**() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wandelt das aktuelle [Ptr_](#ptr) Datenmembers, der einen Zeiger an eine-Zeiger-an die `IInspectable` Schnittstelle.
+Wandelt das aktuelle [ptr_](#ptr) Datenmember in einen Zeiger auf einen Zeiger auf die `IInspectable` Schnittstelle um.
 
-Ein Fehler wird ausgegeben, wenn die aktuelle `ComPtrRefBase` nicht abgeleitet `IInspectable`.
+Wenn die aktuelle `ComPtrRefBase` nicht von `IInspectable`abgeleitet ist, wird ein Fehler ausgegeben.
 
-Diese Umwandlung ist verfügbar nur, wenn `__WRL_CLASSIC_COM__` definiert ist.
+Diese Umwandlung ist nur verfügbar, wenn `__WRL_CLASSIC_COM__` definiert ist.
 
-## <a name="operator-iunknown-star-star"></a>Comptrrefbase:: Operator IUnknown **
+## <a name="operator-iunknown-star-star"></a>Comptrref Base:: Operator IUnknown * *-Operator
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 operator IUnknown**() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wandelt das aktuelle [Ptr_](#ptr) Datenmembers, der einen Zeiger an eine-Zeiger-an die `IUnknown` Schnittstelle.
+Wandelt das aktuelle [ptr_](#ptr) Datenmember in einen Zeiger auf einen Zeiger auf die `IUnknown` Schnittstelle um.
 
-Ein Fehler wird ausgegeben, wenn die aktuelle `ComPtrRefBase` nicht abgeleitet `IUnknown`.
+Wenn die aktuelle `ComPtrRefBase` nicht von `IUnknown`abgeleitet ist, wird ein Fehler ausgegeben.
 
-## <a name="ptr"></a>ComPtrRefBase::ptr_
+## <a name="ptr"></a>Comptrref Base::p tr_
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 T* ptr_;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zeiger auf den Typ, durch den aktuellen Vorlagenparameter angegeben. `ptr_` ist das Element für die geschützten Daten.
+Ein Zeiger auf den Typ, der durch den aktuellen Vorlagen Parameter angegeben wird. `ptr_` ist das geschützte Datenmember.
