@@ -1,118 +1,118 @@
 ---
-title: X64 Softwarekonventionen
+title: Softwarekonventionen bei x64-Systemen
 ms.date: 12/17/2018
 helpviewer_keywords:
 - x64 coding conventions
 - Visual C++, x64 calling conventions
 ms.assetid: 750f3d97-1706-4840-b2fc-41a007329a08
 ms.openlocfilehash: 11d29b6c31ccecfe5b9c51c2f9311213bd4a6732
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62313827"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865599"
 ---
-# <a name="x64-software-conventions"></a>X64 Softwarekonventionen
+# <a name="x64-software-conventions"></a>Softwarekonventionen bei x64-Systemen
 
-In diesem Abschnitt wird beschrieben, die C++-Konvention Methodik für X64, der 64-Bit-Erweiterung für die X86 aufrufen Architektur.
+In diesem Abschnitt wird C++ die Methode für die Aufruf Konvention für x64, die 64-Bit-Erweiterung der x86-Architektur, beschrieben.
 
-## <a name="overview-of-x64-calling-conventions"></a>Übersicht über die X64 Aufrufkonventionen
+## <a name="overview-of-x64-calling-conventions"></a>Übersicht über x64-Aufruf Konventionen
 
-Zwei wichtige Unterschiede zwischen X86- und X64 werden die 64-Bit-Adressierung-Funktion und ein Satz von 16 64-Bit-Flatfile zur allgemeinen Verwendung registriert. Bei Verwendung der erweiterten Register-Gruppe, X64 verwendet werden. die [__fastcall](../cpp/fastcall.md) Aufrufkonvention und ein Ausnahmebehandlungsmodell RISC-basierten. Die `__fastcall` Konvention verwendet führt die Registrierung für die ersten vier Argumente und den Stapelrahmen, um zusätzliche Argumente übergeben. Für Informationen zu den X64 Aufrufkonvention, einschließlich registernutzung, die Parameter Stapel, zurückgeben, Werte und stapelentladung, finden Sie unter [X64 Aufrufkonvention](x64-calling-convention.md).
+Zwei wichtige Unterschiede zwischen x86 und x64 sind die 64-Bit-Adressierungs Funktion und ein flacher Satz von 16 64-Bit-Registern für allgemeine Verwendung. Bei Verwendung des erweiterten Register Satzes verwendet x64 die [__fastcall](../cpp/fastcall.md) Aufruf Konvention und ein RISC-basiertes Modell für die Ausnahmebehandlung. Die `__fastcall` Konvention verwendet Register für die ersten vier Argumente und den Stapel Rahmen, um zusätzliche Argumente zu übergeben. Ausführliche Informationen zur x64-Aufruf Konvention, einschließlich Register Verwendung, Stapel Parameter, Rückgabewerte und Stapel Entwicklung, finden Sie unter [x64-Aufruf Konvention](x64-calling-convention.md).
 
-## <a name="enable-optimization-for-x64"></a>Optimierung für X64 aktivieren
+## <a name="enable-optimization-for-x64"></a>Aktivieren der Optimierung für x64
 
-Die folgende Compileroption können Sie Ihre Anwendung für X64 zu optimieren:
+Mit der folgenden Compileroption können Sie Ihre Anwendung für x64 optimieren:
 
 - [/favor (Für Architektureigenschaften optimieren)](../build/reference/favor-optimize-for-architecture-specifics.md)
 
 ## <a name="types-and-storage"></a>Typen und Speicher
 
-In diesem Abschnitt wird beschrieben, die Enumeration und Speicherung von Datentypen für die X64 Architektur.
+In diesem Abschnitt werden die Enumeration und Speicherung von Datentypen für die x64-Architektur beschrieben.
 
-### <a name="scalar-types"></a>skalare Typen
+### <a name="scalar-types"></a>Skalare Typen
 
-Obwohl es möglich, den Zugriff auf Daten mit einer Ausrichtung ist, wird empfohlen, Ausrichten von Daten für die natürliche Grenze oder ein Vielfaches, um Leistungseinbußen zu vermeiden. Enumerationen sind Konstante ganze Zahlen und fungieren als 32-Bit-Ganzzahlen. Die folgende Tabelle beschreibt die Typdefinition und empfohlene Speicher für Daten, Bezug auf die Ausrichtung, die mithilfe der folgenden Ausrichtungswerte:
+Obwohl es möglich ist, mit einer beliebigen Ausrichtung auf Daten zuzugreifen, empfiehlt es sich, die Daten auf der natürlichen oder einer mehrfach Grenze auszurichten, um Leistungseinbußen zu vermeiden. Enumerationswerte sind Konstante Integerwerte und werden als 32-Bit-Ganzzahlen behandelt. In der folgenden Tabelle werden die Typdefinition und der empfohlene Speicher für Daten anhand der folgenden Ausrichtungs Werte beschrieben:
 
-- Byte - 8-Bit
+- Byte-8 Bits
 
-- Word - 16-Bit
+- Word-16 Bits
 
-- Zeigt Doppelwort - 32-Bit
+- Doubleword-32 Bits
 
-- Vierfachwort - 64-Bit
+- Quadword-64 Bits
 
-- Octaword - 128-Bit
+- Octaword-128 Bits
 
 |||||
 |-|-|-|-|
-|Skalaren Typ|C-Datentyp|Speichergröße (in Byte)|Empfohlene Ausrichtung|
-|**INT8**|**char**|1|Byte|
-|**UINT8**|**unsigned char**|1|Byte|
-|**INT16**|**short**|2|Word|
-|**UINT16**|**unsigned short**|2|Word|
-|**INT32**|**int**, **long**|4|Doubleword|
-|**UINT32**|**ganze Zahl ohne Vorzeichen, unsigned long**|4|Doubleword|
-|**INT64**|**__int64**|8|Quadword|
+|Skalartyp|C-Datentyp|Speichergröße (in Bytes)|Empfohlene Ausrichtung|
+|**Int8**|**char**|1|Byte|
+|**Uint8**|**unsigned char**|1|Byte|
+|**INT16**|**short**|2|Wort|
+|**UInt16**|**unsigned short**|2|Wort|
+|**Int32**|**int**, **Long**|4|Doubleword|
+|**UInt32**|**Ganzzahl ohne Vorzeichen int, Ganzzahl ohne Vorzeichen Long**|4|Doubleword|
+|**Int64**|**__int64**|8|Quadword|
 |**UINT64**|**__int64 ohne Vorzeichen**|8|Quadword|
-|**FP32-Vorgänge (einfache Genauigkeit)**|**float**|4|Doubleword|
+|**FP32 (einfache Genauigkeit)**|**float**|4|Doubleword|
 |**FP64 (doppelte Genauigkeit)**|**double**|8|Quadword|
-|**ZEIGER**|__\*__|8|Quadword|
-|**__m64**|**struct __m64**|8|Quadword|
-|**__m128**|**struct __m128**|16|Octaword|
+|**Zeichner**|__\*__|8|Quadword|
+|**__m64**|**Struktur __m64**|8|Quadword|
+|**__m128**|**Struktur __m128**|16|Octaword|
 
-### <a name="aggregates-and-unions"></a>Aggregate und unions
+### <a name="aggregates-and-unions"></a>Aggregate und Unions
 
-Andere Typen wie Arrays, Strukturen und Unions, gelten strengere Ausrichtung, die die konsistente aggregieren und union-Speicher und Datenabruf zu gewährleisten. Hier sind die Definitionen für Arrays, Struktur und Union:
+Andere Typen, z. b. Arrays, Strukturen und Unions, haben strengere Ausrichtungs Anforderungen, die einen konsistenten Aggregat-und Union-Speicher und Datenabruf sicherstellen. Im folgenden sind die Definitionen für Array, Struktur und Union aufgeführt:
 
 - Array
 
-   Enthält eine geordnete Gruppe von benachbarten Datenobjekten. Jedes Objekt wird aufgerufen, eine *Element*. Alle Elemente in einem Array haben die gleiche Größe und Datentyp.
+   Enthält eine geordnete Gruppe von angrenzenden Datenobjekten. Jedes-Objekt wird als- *Element*bezeichnet. Alle Elemente in einem Array haben dieselbe Größe und denselben Datentyp.
 
 - Struktur
 
-   Enthält eine geordnete Gruppe von Datenobjekten. Im Gegensatz zu den Elementen eines Arrays können die Datenobjekte in einer Struktur unterschiedlichen Typen und Größen haben. Jedes Datenobjekt in einer Struktur wird aufgerufen, eine *Member*.
+   Enthält eine geordnete Gruppe von Datenobjekten. Im Gegensatz zu den Elementen eines Arrays können die Datenobjekte in einer Struktur unterschiedliche Datentypen und Größen aufweisen. Jedes Datenobjekt in einer Struktur wird als *Member*bezeichnet.
 
 - Union
 
-   Ein Objekt, das eine benannte Elemente enthält. Die Elemente der benannten Menge können einen beliebigen Typ sein. Der Speicher zugewiesen werden, damit eine Union ist der Speicherbedarf für den größten Member dieser Union zuzüglich möglicher Abstände, die erforderlich sind, für die Ausrichtung gleich.
+   Ein-Objekt, das eine Gruppe von benannten Membern enthält. Die Elemente der benannten Menge können von einem beliebigen Typ sein. Der für eine Union zugeordnete Speicher ist gleich dem für das größte Mitglied dieser Union erforderlichen Speicher plus allen für die Ausrichtung erforderlichen Auffüll Zeichen.
 
-Die folgende Tabelle zeigt die empfohlene Ausrichtung für die skalaren Member von Unions und Strukturen.
+Die folgende Tabelle zeigt die stark vorgeschlagene Ausrichtung für die skalaren Member von Unions und Strukturen.
 
 ||||
 |-|-|-|
-|Skalaren Typ|C-Datentyp|Erforderlichen Ausrichtung ergibt|
-|**INT8**|**char**|Byte|
-|**UINT8**|**unsigned char**|Byte|
-|**INT16**|**short**|Word|
-|**UINT16**|**unsigned short**|Word|
-|**INT32**|**int**, **long**|Doubleword|
-|**UINT32**|**ganze Zahl ohne Vorzeichen, unsigned long**|Doubleword|
-|**INT64**|**__int64**|Quadword|
+|Skalartyp|C-Datentyp|Erforderliche Ausrichtung|
+|**Int8**|**char**|Byte|
+|**Uint8**|**unsigned char**|Byte|
+|**INT16**|**short**|Wort|
+|**UInt16**|**unsigned short**|Wort|
+|**Int32**|**int**, **Long**|Doubleword|
+|**UInt32**|**Ganzzahl ohne Vorzeichen int, Ganzzahl ohne Vorzeichen Long**|Doubleword|
+|**Int64**|**__int64**|Quadword|
 |**UINT64**|**__int64 ohne Vorzeichen**|Quadword|
-|**FP32-Vorgänge (einfache Genauigkeit)**|**float**|Doubleword|
+|**FP32 (einfache Genauigkeit)**|**float**|Doubleword|
 |**FP64 (doppelte Genauigkeit)**|**double**|Quadword|
-|**ZEIGER**|<strong>\*</strong>|Quadword|
-|**__m64**|**struct __m64**|Quadword|
-|**__m128**|**struct __m128**|Octaword|
+|**Zeichner**|<strong>\*</strong>|Quadword|
+|**__m64**|**Struktur __m64**|Quadword|
+|**__m128**|**Struktur __m128**|Octaword|
 
-Die folgenden aggregierten Ausrichtung Regeln gelten:
+Die folgenden Aggregat Ausrichtungs Regeln gelten:
 
-- Die Ausrichtung eines Arrays ist identisch mit die Ausrichtung eines der Elemente des Arrays.
+- Die Ausrichtung eines Arrays entspricht der Ausrichtung eines der Elemente des Arrays.
 
-- Die Ausrichtung des Anfangs einer Struktur oder Union ist die maximale Ausrichtung eines einzelnen Member. Jedes Element in der Struktur oder Union muss korrekt ausgerichtet platziert werden, gemäß der vorstehenden Tabelle ist möglicherweise eine implizite interne Abstände, je nachdem das vorherige Element erforderlich.
+- Die Ausrichtung des Anfangs einer Struktur oder Union ist die maximale Ausrichtung eines einzelnen Members. Jedes Element in der Struktur oder Union muss in der richtigen Ausrichtung platziert werden, wie in der vorherigen Tabelle definiert. Dies kann abhängig vom vorherigen Member eine implizite interne Auffüll Zeichen erfordern.
 
-- Die Größe der Struktur muss ein ganzzahliges Vielfaches seiner Ausrichtung Abstand hinter das letzte Element ist möglicherweise erforderlich. Da Strukturen und Unions in Arrays gruppiert werden können, muss jedes Arrayelement eine Struktur oder Union beginnen und enden auf die richtige Ausrichtung, die zuvor ermittelt.
+- Die Struktur Größe muss ein ganzzahliges Vielfaches der Ausrichtung sein, das möglicherweise nach dem letzten Element Auffüll Zeichen erfordert. Da Strukturen und Unions in Arrays gruppiert werden können, muss jedes Array Element einer Struktur oder Union mit der richtigen Ausrichtung beginnen und enden, die zuvor festgelegt wurde.
 
-- Es ist möglich, Ausrichten von Daten in so, dass der ausrichtungsanforderungen größer sein, solange alle zuvor genannten Regeln verwaltet werden.
+- Es ist möglich, Daten so auszurichten, dass Sie größer als die Ausrichtungs Anforderungen sind, solange die vorherigen Regeln beibehalten werden.
 
-- Ein einzelner Compiler kann die Komprimierung einer Struktur aus Gründen der Größe anpassen. Z. B. [/Zp (Strukturmemberausrichtung)](../build/reference/zp-struct-member-alignment.md) ermöglicht das Anpassen der Komprimierung von Strukturen.
+- Ein einzelner Compiler kann die Verpackung einer Struktur aus Größen Gründen anpassen. Beispielsweise ermöglicht [/ZP (Strukturmember Alignment)](../build/reference/zp-struct-member-alignment.md) das Anpassen der Verpackung von Strukturen.
 
 ### <a name="examples-of-structure-alignment"></a>Beispiele für die Strukturausrichtung
 
-Die folgenden vier Beispielen wird jeweils deklarieren, dass eine ausgerichtete Struktur oder Union und die entsprechenden Zahlen veranschaulichen das Layout der Struktur oder Union im Arbeitsspeicher. Jede Spalte in einer Abbildung stellt ein Byte Arbeitsspeicher und die Anzahl in der Spalte gibt an, die Verschiebung dieser Bytes. Der Name in der zweiten Zeile von jeder Abbildung entspricht dem Namen einer Variablen in der Deklaration. Die schattierten Spalten anzugeben, dass die Auffüllung, die erforderlich ist, um die angegebene Ausrichtung zu erzielen.
+In den folgenden vier Beispielen wird jeweils eine ausgerichtete Struktur oder Union deklariert, und die entsprechenden Abbildungen veranschaulichen das Layout der Struktur oder Union im Speicher. Jede Spalte in einer Abbildung stellt ein Byte des Speichers dar, und die Zahl in der Spalte zeigt die Verschiebung dieses Byte an. Der Name in der zweiten Zeile jeder Abbildung entspricht dem Namen einer Variablen in der Deklaration. Die schattierten Spalten geben den Abstand an, der zum Erreichen der angegebenen Ausrichtung erforderlich ist.
 
-#### <a name="example-1"></a>Beispiel 1
+#### <a name="example-1"></a>Beispiel 1
 
 ```C
 // Total size = 2 bytes, alignment = 2 bytes (word).
@@ -122,7 +122,7 @@ _declspec(align(2)) struct {
 }
 ```
 
-![AMD Konvertierung Beispiel 1 Strukturlayout](../build/media/vcamd_conv_ex_1_block.png "Strukturlayout für AMD Konvertierung Beispiel 1")
+![AMD-Konvertierung, Beispiel 1, Struktur Layout](../build/media/vcamd_conv_ex_1_block.png "AMD-Konvertierung, Beispiel 1, Struktur Layout")
 
 #### <a name="example-2"></a>Beispiel 2
 
@@ -136,7 +136,7 @@ _declspec(align(8)) struct {
 }
 ```
 
-![AMD Konvertierung Beispiel 2 Strukturlayout](../build/media/vcamd_conv_ex_2_block.png "Strukturlayout für AMD Konvertierung Beispiel 2")
+![AMD-Konvertierungs Beispiel 2 Struktur Layout](../build/media/vcamd_conv_ex_2_block.png "AMD-Konvertierungs Beispiel 2 Struktur Layout")
 
 #### <a name="example-3"></a>Beispiel 3
 
@@ -151,7 +151,7 @@ _declspec(align(4)) struct {
 }
 ```
 
-![AMD Konvertierung Beispiel 2 Strukturlayout](../build/media/vcamd_conv_ex_3_block.png "Strukturlayout für AMD Konvertierung Beispiel 2")
+![AMD-Konvertierungs Beispiel 2 Struktur Layout](../build/media/vcamd_conv_ex_3_block.png "AMD-Konvertierungs Beispiel 2 Struktur Layout")
 
 #### <a name="example-4"></a>Beispiel 4
 
@@ -165,79 +165,79 @@ _declspec(align(8)) union {
 }
 ```
 
-![AMD Konvertierung Beispiel 4 union Layouit](../build/media/vcamd_conv_ex_4_block.png "AMD Konvertierung Beispiel 4 union Layouit")
+![AMD-Konvertierung, Beispiel 4 Union layouit](../build/media/vcamd_conv_ex_4_block.png "AMD-Konvertierung, Beispiel 4 Union layouit")
 
 ### <a name="bitfields"></a>Bitfelder
 
-Struktur-Bitfelder sind auf 64-Bit beschränkt und kann vom Typ signiert Int "," unsigned Int "," int64 "oder" nicht-signierter int64. Bitfelder, die die Typgrenze überschreiten, werden Bits das Bitfeld der Ausrichtung der nächsten Typ ausrichten übersprungen. Beispielsweise können ganzzahlige Bitfeldern keine 32-Bit-überschreiten.
+Struktur Bitfelder sind auf 64 Bits beschränkt und können den Typ "signed int", "Ganzzahl ohne Vorzeichen int", "Int64" oder "Ganzzahl ohne Vorzeichen Int64" aufweisen. Bitfelder, die die Typgrenze überschreiten, überspringen Bits, um das Bitfeld an der nächsten typausrichtung auszurichten. Ganzzahlige Bitfelder können z. b. nicht einen 32-Bit-BOUNDRY-Wert überschreiten.
 
-### <a name="conflicts-with-the-x86-compiler"></a>Verursacht einen Konflikt mit der X86 Compiler
+### <a name="conflicts-with-the-x86-compiler"></a>Konflikte mit dem x86-Compiler
 
-Datentypen, die größer als 4 Byte auf dem Stapel nicht automatisch ausgerichtet werden, bei der Verwendung der X86 Compiler zum Kompilieren einer Anwendung. Da die Architektur für die X86 Compiler kann ein 4-Byte-ausgerichtete-Stapel an, etwas größer als 4 Bytes, z. B. eine 64-Bit-Ganzzahl, kann nicht in eine 8-Byte-Adresse automatisch ausgerichtet werden.
+Datentypen, die größer als 4 Bytes sind, werden nicht automatisch auf dem Stapel ausgerichtet, wenn Sie den x86-Compiler zum Kompilieren einer Anwendung verwenden. Da die Architektur für den x86-Compiler einen 4-Byte-ausgerichteten Stapel ist, kann alles, was größer als 4 Bytes ist (z. b. eine 64-Bit-Ganzzahl), nicht automatisch an eine 8-Byte-Adresse ausgerichtet werden.
 
-Arbeiten mit einer nicht ausgerichteten Daten hat zwei Auswirkungen.
+Das Arbeiten mit nicht ausgerichteten Daten hat zwei Auswirkungen.
 
-- Es dauert möglicherweise länger, nicht ausgerichtete Speicherorte zuzugreifen, als auf ausgerichtete.
+- Der Zugriff auf nicht ausgerichtete Speicherorte dauert möglicherweise länger als für den Zugriff auf ausgerichtete Standorte.
 
-- Nicht ausgerichtete Speicherorte können nicht in interlocked-Vorgänge verwendet werden.
+- Nicht ausgerichtete Standorte können nicht in Interlocked-Vorgängen verwendet werden.
 
-Wenn Sie eine strengere Ausrichtung benötigen, verwenden Sie `__declspec(align(N))` Ihre Variablendeklarationen. Dies bewirkt, dass den Compiler an, dass dynamisch im Stapel, um Ihren Spezifikationen zu erfüllen. Allerdings kann die dynamische Anpassung des Stapels zur Laufzeit langsamer Ausführung der Anwendung führen.
+Wenn Sie eine strengere Ausrichtung benötigen, verwenden Sie `__declspec(align(N))` für die Variablen Deklarationen. Dies bewirkt, dass der Compiler den Stapel dynamisch entsprechend Ihren Spezifikationen ausgleicht. Das dynamische Anpassen des Stapels zur Laufzeit kann jedoch zu einer langsameren Ausführung Ihrer Anwendung führen.
 
-## <a name="register-usage"></a>Registerverwendung
+## <a name="register-usage"></a>Verwendung registrieren
 
-Die Architektur bietet für 16 allgemeinen Registern (im folgenden als Ganzzahl-Register bezeichnet) sowie von 16 XMM/YMM X64 registriert Gleitkommaregister zur Verfügung. Volatile Register sind Scratch-Register, von denen der Aufrufer voraussetzt, dass sie während eines Aufrufs zerstört werden. Nicht volatile Register müssen ihre Werte über einen Funktionsaufruf hinweg bewahren und, sofern sie verwendet werden, vom Aufgerufenen gespeichert werden.
+Die x64-Architektur bietet 16 allgemeine Register (im folgenden als ganzzahlige Register bezeichnet) und 16 XMM/ymm-Register, die für die Gleit Komma Verwendung verfügbar sind. Volatile Register sind Scratch-Register, von denen der Aufrufer voraussetzt, dass sie während eines Aufrufs zerstört werden. Nicht volatile Register müssen ihre Werte über einen Funktionsaufruf hinweg bewahren und, sofern sie verwendet werden, vom Aufgerufenen gespeichert werden.
 
-### <a name="register-volatility-and-preservation"></a>Gibt die Volatilität und Beibehaltung der registrieren
+### <a name="register-volatility-and-preservation"></a>Registrieren von Volatilität und Beibehaltung
 
 Die folgende Tabelle beschreibt, wie jedes Register bei Funktionsaufrufen verwendet wird:
 
 ||||
 |-|-|-|
-|Register|Status|Mit|
-|RAX|Volatil|Rückgabewert-Register|
-|RCX|Volatil|Erstes Ganzzahl-Argument|
-|RDX|Volatil|Zweites Ganzzahl-Argument|
-|R8|Volatil|Drittes Ganzzahl-Argument|
-|R9|Volatil|Viertes Ganzzahl-Argument|
-|R10:R11|Volatil|Muss je nach Anforderung des Aufrufers bewahrt werden. Wird in syscall-/sysret-Instruktionen verwendet.|
+|Register|Status|Zweck|
+|RAX|Flüchtig|Rückgabewert-Register|
+|RCX|Flüchtig|Erstes Ganzzahl-Argument|
+|RDX|Flüchtig|Zweites Ganzzahl-Argument|
+|R8|Flüchtig|Drittes Ganzzahl-Argument|
+|R9|Flüchtig|Viertes Ganzzahl-Argument|
+|R10:R11|Flüchtig|Muss je nach Anforderung des Aufrufers bewahrt werden. Wird in syscall-/sysret-Instruktionen verwendet.|
 |R12:R15|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RDI|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RSI|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RBX|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RBP|Nicht volatil|Kann als Frame-Pointer verwendet werden; muss vom Aufgerufenen bewahrt werden|
 |RSP|Nicht volatil|Stack-Pointer|
-|XMM0, YMM0|Volatil|Erstes FP-Argument; erstes Vektortypargument, wenn `__vectorcall` verwendet wird|
-|XMM1, YMM1|Volatil|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM2, YMM2|Volatil|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM3, YMM3|Volatil|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM4, YMM4|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; fünftes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM5, YMM5|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; sechstes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM6:XMM15, YMM6:YMM15|Nicht volatil (XMM), Volatil (obere Hälfte von YMM)|Muss vom aufgerufenen bewahrt werden. YMM-Register müssen je nach Bedarf vom Aufrufer bewahrt werden.|
+|XMM0, YMM0|Flüchtig|Erstes FP-Argument; erstes Vektortypargument, wenn `__vectorcall` verwendet wird|
+|XMM1, YMM1|Flüchtig|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM2, YMM2|Flüchtig|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM3, YMM3|Flüchtig|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM4, YMM4|Flüchtig|Muss je nach Bedarf vom Aufrufer bewahrt werden; fünftes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM5, YMM5|Flüchtig|Muss je nach Bedarf vom Aufrufer bewahrt werden; sechstes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM6:XMM15, YMM6:YMM15|Nicht volatil (XMM), Volatil (obere Hälfte von YMM)|Muss vom aufgerufenen beibehalten werden. YMM-Register müssen je nach Bedarf vom Aufrufer bewahrt werden.|
 
-Bei Funktionsende und Funktion-Eintrags, der C-Laufzeitbibliothek-Aufrufe und Aufrufe der Windows-System, das Richtungsflag in der CPU Flags registrieren soll gelöscht werden.
+Bei einem Funktions-und einem Funktions Eintrag in C-Lauf Zeit Bibliotheks aufrufen und Windows-Systemaufrufen wird erwartet, dass das richtungsflag im CPU-Flags-Register gelöscht wird.
 
-## <a name="stack-usage"></a>Verwendung von Stapeln
+## <a name="stack-usage"></a>Stapel Verwendung
 
-Einzelheiten der stapelreservierung "," Ausrichtung "," Funktionstypen "und" Stapelrahmen in X64 finden Sie unter [X64 stack Nutzung](stack-usage.md).
+Ausführliche Informationen zu Stapel Zuordnung, Ausrichtung, Funktionstypen und Stapel Rahmen auf x64 finden Sie unter [x64-Stapel Verwendung](stack-usage.md).
 
-## <a name="prolog-and-epilog"></a>Prolog und epilog
+## <a name="prolog-and-epilog"></a>Prolog und Epilogcode
 
-Jede Funktion, die Stapelspeicher zuweist, andere Funktionen aufruft, nicht flüchtigen Register gespeichert oder mithilfe der Ausnahmebehandlung benötigen ein Prologs, deren Adresse Grenzwerte im Zusammenhang mit der Tabelleneintrag für die jeweilige Funktion und epilogen am Entladedaten beschrieben werden jeder Beendigung einer Funktion. Weitere Informationen zu den erforderlichen Prolog und Epilogcode auf X64, finden Sie unter [X64 Prolog und Epilog](prolog-and-epilog.md).
+Jede Funktion, die Stapel Speicher zuordnet, andere Funktionen aufruft, nicht flüchtige Register speichert oder die Ausnahmebehandlung verwendet, muss über einen Prolog verfügen, dessen Adress Begrenzungen in den Entladedaten, die dem jeweiligen Funktionstabellen Eintrag zugeordnet sind, und Epilogs unter beschrieben werden. jeder Exit-Vorgang zu einer Funktion. Ausführliche Informationen zum erforderlichen Prolog-und Epilogcode auf x64 finden Sie unter [x64 Prolog und Epilogcode](prolog-and-epilog.md).
 
-## <a name="x64-exception-handling"></a>X64 Behandlung von Ausnahmen
+## <a name="x64-exception-handling"></a>Ausnahmebehandlung bei x64-Systemen
 
-Informationen zu den Konventionen und die Datenstrukturen verwendet, um strukturierte Ausnahmebehandlung und C++-Ausnahmebehandlung Verhalten für die X64 implementieren, finden Sie unter [X64 Ausnahmebehandlung](exception-handling-x64.md).
+Informationen zu den Konventionen und Datenstrukturen, die verwendet werden, um die strukturierte C++ Ausnahmebehandlung und das Verhalten der Ausnahmebehandlung in x64 zu implementieren, finden Sie unter [x64-Ausnahmebehandlung](exception-handling-x64.md).
 
-## <a name="intrinsics-and-inline-assembly"></a>Systeminterne Funktionen und Inline-assembly
+## <a name="intrinsics-and-inline-assembly"></a>Intrinsie-und Inlineassembly
 
-Eine der Einschränkungen für die X64 Compiler nicht Inline-Assembler unterstützt werden. Dies bedeutet, die, die Funktionen, kann nicht in C oder C++ geschrieben werden, entweder als Unterroutinen oder als systeminterne Funktionen, die vom Compiler unterstützt geschrieben werden müssen. Bestimmte Funktionen sind leistungsabhängig, andere hingegen nicht. Leistungsorientierte Funktionen sollte als systeminterne Funktionen implementiert werden.
+Eine der Einschränkungen für den x64-Compiler besteht darin, dass keine Unterstützung für den Inline Assembler vorhanden ist. Dies bedeutet, dass Funktionen, die nicht in C oder C++ geschrieben werden können, entweder als Unterroutinen oder als intrinsische Funktionen geschrieben werden müssen, die vom Compiler unterstützt werden. Bestimmte Funktionen sind Leistungs sensibel, andere hingegen nicht. Leistungs empfindliche Funktionen sollten als intrinsische Funktionen implementiert werden.
 
-Die systeminternen Funktionen, die vom Compiler unterstützt werden, werden in beschrieben [intrinsische Compilerfunktionen](../intrinsics/compiler-intrinsics.md).
+Die vom Compiler unterstützten systeminternen Funktionen werden in systeminternen [Compilerfunktionen](../intrinsics/compiler-intrinsics.md)beschrieben.
 
 ## <a name="image-format"></a>Bildformat
 
-Die X64 ausführbares Image-Format je typu PE32 +. Ausführbare Images (DLLs und EXEs) sind auf eine Maximalgröße von 2 GB beschränkt, sodass relative Adressierung mit einer 32-Bit-Verschiebung verwendet werden kann, statisches Bild Datenadresse. Diese Daten umfassen die Importadresstabelle, Zeichenfolgenkonstanten, statischen globalen Daten und So weiter.
+Das ausführbare x64-Bildformat ist das Format PE32 +. Ausführbare Images (sowohl DLLs als auch exe-Dateien) sind auf eine maximale Größe von 2 Gigabyte beschränkt, sodass eine relative Adressierung mit einer 32-Bit-Verschiebung verwendet werden kann, um statische Bilddaten zu adressieren. Diese Daten umfassen die Import Adress Tabelle, Zeichen folgen Konstanten, statische globale Daten usw.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Aufrufkonventionen](../cpp/calling-conventions.md)

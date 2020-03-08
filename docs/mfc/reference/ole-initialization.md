@@ -8,26 +8,26 @@ helpviewer_keywords:
 - OLE initialization
 ms.assetid: aa8a54a7-24c3-4344-b2c6-dbcf6084fa31
 ms.openlocfilehash: 6860697dd3adbe26197dd9075e84f402029e00a5
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69502026"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78855688"
 ---
 # <a name="ole-initialization"></a>OLE-Initialisierung
 
-Bevor eine Anwendung OLE-Systemdienste verwenden kann, muss Sie die OLE-System-DLLs initialisieren und sicherstellen, dass die DLLs die richtige Version aufweisen. Die `AfxOleInit` -Funktion initialisiert die OLE-System-DLLs.
+Bevor eine Anwendung OLE-Systemdienste verwenden kann, muss Sie die OLE-System-DLLs initialisieren und sicherstellen, dass die DLLs die richtige Version aufweisen. Die `AfxOleInit` Funktion initialisiert die OLE-System-DLLs.
 
 ### <a name="ole-initialization"></a>OLE-Initialisierung
 
 |||
 |-|-|
-|[AfxOleInit](#afxoleinit)|Initialisiert die OLE-Bibliotheken.|
-|[AfxEnableControlContainer](#afxenablecontrolcontainer)|Diese Funktion wird in der-Funktion des `InitInstance` Anwendungs Objekts aufgerufen, um die Kapselung von OLE-Steuerelementen zu aktivieren.|
+|[AfxOLEInit](#afxoleinit)|Initialisiert die OLE-Bibliotheken.|
+|[AfxEnableControlContainer](#afxenablecontrolcontainer)|Diese Funktion wird in der `InitInstance`-Funktion des Anwendungs Objekts aufgerufen, um die Kapselung von OLE-Steuerelementen zu aktivieren.|
 
 ## <a name="afxenablecontrolcontainer"></a>AfxEnableControlContainer
 
-Diese Funktion wird in der-Funktion des `InitInstance` Anwendungs Objekts aufgerufen, um die Kapselung von OLE-Steuerelementen zu aktivieren.
+Diese Funktion wird in der `InitInstance`-Funktion des Anwendungs Objekts aufgerufen, um die Kapselung von OLE-Steuerelementen zu aktivieren.
 
 ### <a name="syntax"></a>Syntax
 
@@ -35,11 +35,11 @@ Diese Funktion wird in der-Funktion des `InitInstance` Anwendungs Objekts aufger
 void AfxEnableControlContainer( );
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zu OLE-Steuerelementen (jetzt als ActiveX-Steuerelemente bezeichnet) finden Sie unter [ActiveX-Steuerelement Themen](../mfc-activex-controls.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
@@ -55,7 +55,7 @@ BOOL AFXAPI AfxOleInit();
 
 Ist nicht 0 (Null), wenn erfolgreich, und 0, wenn die Initialisierung fehlschlägt, weil möglicherweise falsche Versionen der OLE-Systeme-DLLs installiert sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Rufen Sie diese Funktion auf, um die OLE-Unterstützung für eine MFC-Anwendung zu initialisieren. Wenn diese Funktion aufgerufen wird, werden folgende Aktionen ausgeführt:
 
@@ -67,12 +67,12 @@ Rufen Sie diese Funktion auf, um die OLE-Unterstützung für eine MFC-Anwendung 
 >  Wenn **AfxOLEInit** von einer MFC-DLL aufgerufen wird, schlägt der Aufruf fehl. Der Fehler tritt auf, weil die Funktion davon ausgeht, dass das OLE-System zuvor von der aufrufenden Anwendung initialisiert wurde, wenn sie von einer DLL aufgerufen wird.
 
 > [!NOTE]
->  MFC-Anwendungen müssen als Singlethread-Apartment (STA) initialisiert werden. Wenn Sie [CoInitializeEx](/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex) in der `InitInstance` außer Kraft Setzung aufrufen, geben Sie COINIT_APARTMENTTHREADED (anstelle von COINIT_MULTITHREADED) an.
+>  MFC-Anwendungen müssen als Singlethread-Apartment (STA) initialisiert werden. Wenn Sie [CoInitializeEx](/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex) in der `InitInstance` Außerkraftsetzung aufrufen, geben Sie COINIT_APARTMENTTHREADED (anstelle von COINIT_MULTITHREADED) an.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdisp.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

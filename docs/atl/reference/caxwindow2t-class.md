@@ -13,18 +13,18 @@ helpviewer_keywords:
 - CAxWindow2 class
 ms.assetid: b87bc943-7991-4537-b902-2138d7f4d837
 ms.openlocfilehash: 0d5991dcbf79d1c2415594636a09908586d1dc2f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260027"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78864733"
 ---
 # <a name="caxwindow2t-class"></a>CAxWindow2T-Klasse
 
-Diese Klasse stellt Methoden zum Bearbeiten eines Fensters, das ein ActiveX-Steuerelement hostet, und bietet auch Unterstützung für die lizenzierten ActiveX-Steuerelemente hosten.
+Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet, und unterstützt auch das Hosten von lizenzierten ActiveX-Steuerelementen.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+>  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,44 +36,44 @@ template <class TBase = CWindow>
 
 #### <a name="parameters"></a>Parameter
 
-*TBase*<br/>
-Die Klasse, von der `CAxWindowT` abgeleitet wird.
+*Tbase*<br/>
+Die Klasse, von der `CAxWindowT` abgeleitet ist.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAxWindow2T::CAxWindow2T](#caxwindow2t)|Erstellt ein `CAxWindow2T`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAxWindow2T::Create](#create)|Erstellt ein Hostfenster an.|
-|[CAxWindow2T::CreateControlLic](#createcontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
-|[CAxWindow2T::CreateControlLicEx](#createcontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert wird, hostet es im angegebenen Fenster und ruft einen Schnittstellenzeiger (oder Zeiger) aus dem Steuerelement ab.|
-|[CAxWindow2T::GetWndClassName](#getwndclassname)|Statische Methode, die den Namen der Fensterklasse abruft.|
+|[CAxWindow2T:: Create](#create)|Erstellt ein Host Fenster.|
+|[CAxWindow2T:: kreatecontrollic](#createcontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
+|[CAxWindow2T:: kreatecontrollicex](#createcontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.|
+|[CAxWindow2T:: getwndclassname](#getwndclassname)|Statische Methode, die den Namen der Fenster Klasse abruft.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAxWindow2T::operator =](#operator_eq)|Weist ein HWND zu einem vorhandenen `CAxWindow2T` Objekt.|
+|[CAxWindow2T:: Operator =](#operator_eq)|Weist einem vorhandenen `CAxWindow2T`-Objekt ein HWND zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAxWindow2T` Stellt Methoden zum Bearbeiten eines Fensters, hostet ein ActiveX-Steuerelement bereit. `CAxWindow2T` bietet auch Unterstützung für das Hosten von lizenzierter ActiveX-Steuerelementen. Das hosting erfolgt über " **AtlAxWinLic80**", der umschlossen ist `CAxWindow2T`.
+`CAxWindow2T` stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet. `CAxWindow2T` bietet auch Unterstützung für das Hosting von lizenzierten ActiveX-Steuerelementen. Das Hosting wird von " **AtlAxWinLic80**" bereitgestellt, das von `CAxWindow2T`umschließt wird.
 
-Klasse `CAxWindow2` wird als eine Spezialisierung der implementiert die `CAxWindow2T` Klasse. Diese Spezialisierung wird folgendermaßen deklariert:
+Class `CAxWindow2` wird als Spezialisierung der `CAxWindow2T`-Klasse implementiert. Diese Spezialisierung wird wie folgt deklariert:
 
 `typedef CAxWindow2T <CWindow> CAxWindow2;`
 
 > [!NOTE]
-> `CAxWindowT` Elemente sind unter dokumentiert [CAxWindow](../../atl/reference/caxwindow-class.md).
+> `CAxWindowT` Elemente werden unter [CAxWindow](../../atl/reference/caxwindow-class.md)dokumentiert.
 
-Finden Sie unter [Hosten von ActiveX-Steuerelemente mithilfe von ATL-xhost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, die Member dieser Klasse verwendet.
+Ein Beispiel, in dem die Member dieser Klasse verwendet werden, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -83,11 +83,11 @@ Finden Sie unter [Hosten von ActiveX-Steuerelemente mithilfe von ATL-xhost](../.
 
 `CAxWindow2T`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atlwin.h vorhanden
+**Header:** atlwin. h
 
-##  <a name="caxwindow2t"></a>  CAxWindow2T::CAxWindow2T
+##  <a name="caxwindow2t"></a>CAxWindow2T::CAxWindow2T
 
 Erstellt ein `CAxWindow2T`-Objekt.
 
@@ -98,11 +98,11 @@ CAxWindow2T(HWND  hWnd = NULL) : CAxWindowT<TBase>(hWnd)
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-Ein Handle eines vorhandenen-Fensters.
+Ein Handle eines vorhandenen Fensters.
 
-##  <a name="create"></a>  CAxWindow2T::Create
+##  <a name="create"></a>CAxWindow2T:: Create
 
-Erstellt ein Hostfenster an.
+Erstellt ein Host Fenster.
 
 ```
 HWND Create(
@@ -115,19 +115,19 @@ HWND Create(
     LPVOID lpCreateParam = NULL);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`CAxWindow2T::Create` Aufrufe [CWindow::Create](../../atl/reference/cwindow-class.md#create) mit der LPCTSTR *LpstrWndClass* Parameter festgelegt wird, um die Fensterklasse, das Steuerelementhosting bereitstellt (`AtlAxWinLic80`).
+`CAxWindow2T::Create` ruft [CWindow:: Create](../../atl/reference/cwindow-class.md#create) mit dem LPCTSTR *lpstrauwndclass* -Parameter auf, der auf die Fenster Klasse festgelegt ist, die das Hosting von Steuerelementen ermöglicht (`AtlAxWinLic80`).
 
-Finden Sie unter `CWindow::Create` eine Beschreibung der Parameter und Rückgabewert.
+Unter `CWindow::Create` finden Sie eine Beschreibung der Parameter und des Rückgabewerts.
 
-**Beachten Sie** Wenn 0, als Wert für verwendet wird die *MenuOrID* -Parameter muss als 0 HE angegeben werden (Standardwert), einen Compilerfehler zu vermeiden.
+**Hinweis** Wenn 0 als Wert für den *menuorid-* Parameter verwendet wird, muss es als 0U (Standardwert) angegeben werden, um einen Compilerfehler zu vermeiden.
 
 ### <a name="example"></a>Beispiel
 
-Finden Sie unter [Hosten von ActiveX-Steuerelemente mithilfe von ATL-xhost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, verwendet `CAxWindow2T::Create`.
+Ein Beispiel für die Verwendung von `CAxWindow2T::Create`finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
-##  <a name="createcontrollic"></a>  CAxWindow2T::CreateControlLic
+##  <a name="createcontrollic"></a>CAxWindow2T:: kreatecontrollic
 
 Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.
 
@@ -147,20 +147,20 @@ HRESULT CreateControlLic(
 
 ### <a name="parameters"></a>Parameter
 
-*bstrLicKey*<br/>
-Der Lizenzschlüssel des Steuerelements; NULL, wenn ein Lizenzpaketdatei Steuerelement zu erstellen.
+*bstraulickey*<br/>
+Der Lizenzschlüssel für das Steuerelement. NULL, wenn ein nicht lizenziertes Steuerelement erstellt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter [CAxWindow::CreateControl](../../atl/reference/caxwindow-class.md#createcontrol) eine Beschreibung der verbleibende Parameter und Rückgabewert.
+Eine Beschreibung der verbleibenden Parameter und des Rückgabewerts finden Sie unter [CAxWindow:: kreatecontrol](../../atl/reference/caxwindow-class.md#createcontrol) .
 
 ### <a name="example"></a>Beispiel
 
-Finden Sie unter [Hosten von ActiveX-Steuerelemente mithilfe von ATL-xhost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, verwendet `CAxWindow2T::CreateControlLic`.
+Ein Beispiel für die Verwendung von `CAxWindow2T::CreateControlLic`finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
-##  <a name="createcontrollicex"></a>  CAxWindow2T::CreateControlLicEx
+##  <a name="createcontrollicex"></a>CAxWindow2T:: kreatecontrollicex
 
-Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert wird, hostet es im angegebenen Fenster und ruft einen Schnittstellenzeiger (oder Zeiger) aus dem Steuerelement ab.
+Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.
 
 ```
 HRESULT CreateControlLicEx(
@@ -184,20 +184,20 @@ HRESULT CreateControlLicEx(
 
 ### <a name="parameters"></a>Parameter
 
-*bstrLicKey*<br/>
-Der Lizenzschlüssel des Steuerelements; NULL, wenn ein Lizenzpaketdatei Steuerelement zu erstellen.
+*bstraulickey*<br/>
+Der Lizenzschlüssel für das Steuerelement. NULL, wenn ein nicht lizenziertes Steuerelement erstellt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter [CAxWindow::CreateControlEx](../../atl/reference/caxwindow-class.md#createcontrolex) eine Beschreibung der verbleibende Parameter und Rückgabewert.
+Weitere Informationen zu den verbleibenden Parametern und Rückgabe Werten finden Sie unter [CAxWindow:: kreatecontrolex](../../atl/reference/caxwindow-class.md#createcontrolex) .
 
 ### <a name="example"></a>Beispiel
 
-Finden Sie unter [Hosten von ActiveX-Steuerelemente mithilfe von ATL-xhost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, verwendet `CAxWindow2T::CreateControlLicEx`.
+Ein Beispiel für die Verwendung von `CAxWindow2T::CreateControlLicEx`finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
-##  <a name="getwndclassname"></a>  CAxWindow2T::GetWndClassName
+##  <a name="getwndclassname"></a>CAxWindow2T:: getwndclassname
 
-Ruft den Namen der Fensterklasse ab.
+Ruft den Namen der Fenster Klasse ab.
 
 ```
 static LPCTSTR GetWndClassName();
@@ -205,11 +205,11 @@ static LPCTSTR GetWndClassName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf eine Zeichenfolge, die mit dem Namen der Fensterklasse (`AtlAxWinLic80`) lizenzierter und vollständiger Lizenzpaketdatei ActiveX-Steuerelemente hosten kann.
+Ein Zeiger auf eine Zeichenfolge, die den Namen der Fenster Klasse (`AtlAxWinLic80`) enthält, in der lizenzierte und nicht lizenzierte ActiveX-Steuerelemente gehostet werden können.
 
-##  <a name="operator_eq"></a>  CAxWindow2T::operator =
+##  <a name="operator_eq"></a>CAxWindow2T:: Operator =
 
-Weist ein HWND zu einem vorhandenen `CAxWindow2T` Objekt.
+Weist einem vorhandenen `CAxWindow2T`-Objekt ein HWND zu.
 
 ```
 CAxWindow2T<TBase>& operator= (HWND hWnd);
@@ -218,9 +218,9 @@ CAxWindow2T<TBase>& operator= (HWND hWnd);
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-Ein Handle eines vorhandenen-Fensters.
+Ein Handle eines vorhandenen Fensters.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)<br/>
-[Steuerelementkapselung – häufig gestellte Fragen](../../atl/atl-control-containment-faq.md)
+[Klassen Übersicht](../../atl/atl-class-overview.md)<br/>
+[FAQ zu den Steuerungsmöglichkeiten](../../atl/atl-control-containment-faq.md)

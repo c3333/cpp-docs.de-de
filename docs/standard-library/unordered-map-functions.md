@@ -9,13 +9,13 @@ ms.assetid: cf2e4115-f205-4a0e-90be-a143ffcc1f44
 helpviewer_keywords:
 - std::swap (unordered_map/multimap)
 ms.openlocfilehash: 8ad81157d12de017198afeeb48f3b329ef20dbde
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68454823"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78873973"
 ---
-# <a name="ltunorderedmapgt-functions"></a>&lt;unordered_map&gt;-Funktionen
+# <a name="ltunordered_mapgt-functions"></a>&lt;unordered_map&gt;-Funktionen
 
 |||
 |-|-|
@@ -34,28 +34,28 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Wichtigen*\
+*Schlüssel*\
 Der Schlüsseltyp.
 
-*Genossenschaft*\
+*Ty* -\
 Der zugeordnete Typ.
 
 *Hash*\
 Der Hashfunktionsobjekttyp.
 
-*Pred*\
+*Pred-* \
 Der Gleichheitsvergleich-Funktionsobjekttyp.
 
-*Zuordnungseinheits*\
+*Zuordnung*\
 Die Zuweisungsklasse.
 
-*linken*\
+*Linker*\
 Der erste zu tauschende Container.
 
-*Richting*\
+*Rechte*\
 Der zweite zu tauschende Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.`[unordered_map::swap](../standard-library/unordered-map-class.md#swap)`(right)` aus.
 
@@ -127,28 +127,28 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Wichtigen*\
+*Schlüssel*\
 Der Schlüsseltyp.
 
-*Genossenschaft*\
+*Ty* -\
 Der zugeordnete Typ.
 
 *Hash*\
 Der Hashfunktionsobjekttyp.
 
-*Pred*\
+*Pred-* \
 Der Gleichheitsvergleich-Funktionsobjekttyp.
 
-*Zuordnungseinheits*\
+*Zuordnung*\
 Die Zuweisungsklasse.
 
-*linken*\
+*Linker*\
 Der erste zu tauschende Container.
 
-*Richting*\
+*Rechte*\
 Der zweite zu tauschende Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.`[unordered_multimap::swap](../standard-library/unordered-multimap-class.md#swap)`(right)` aus.
 
@@ -207,6 +207,6 @@ int main()
 [c, 3] [b, 2] [a, 1]
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<unordered_map>](../standard-library/unordered-map.md)

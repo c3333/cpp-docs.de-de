@@ -22,11 +22,11 @@ helpviewer_keywords:
 - std::locale [C++], id
 ms.assetid: 7dd6d271-472d-4750-8fb5-ea8f55fbef62
 ms.openlocfilehash: 551bca93a30bee52dc4c838864df28cb747d91df
-ms.sourcegitcommit: 6ddfb8be5e5923a4d90a2c0f93f76a27ce7ac299
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898844"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856526"
 ---
 # <a name="locale-class"></a>locale-Klasse
 
@@ -38,7 +38,7 @@ Die Klasse, die ein Gebietsschemaobjekt beschreibt, das kulturspezifische Inform
 class locale;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein Facet ist ein Zeiger auf ein Objekt einer Klasse, die von der [facet](#facet_class)-Klasse abgeleitet wird. Diese verfügt über ein öffentliches Objekt in folgendem Format:
 
@@ -140,19 +140,19 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[locale](#locale)|Erstellt ein Gebietsschema, eine Kopie eines Gebietsschemas oder eine Kopie des Gebietsschemas, in dem ein Facet oder eine Kategorie durch ein Facet oder eine Kategorie eines anderen Gebietsschemas ersetzt wurde.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[category](#category)|Ein ganzzahliger Typ, der Bitmaskenwerte bereitstellt, um Standardfacetfamilien anzugeben.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[combine](#combine)|Fügt ein Facet eines angegebenen Gebietsschemas in ein Zielgebietsschema ein.|
 |[name](#name)|Gibt den gespeicherten Gebietsschemanamen zurück.|
@@ -161,28 +161,28 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 
 |||
 |-|-|
-|[classic](#classic)|Die statische Memberfunktion gibt ein Gebietsschemaobjekt zurück, das das klassische C-Gebietsschema darstellt.|
+|[Klassisch](#classic)|Die statische Memberfunktion gibt ein Gebietsschemaobjekt zurück, das das klassische C-Gebietsschema darstellt.|
 |[global](#global)|Setzt das Standardgebietsschema für das Programm zurück.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[operator=](#op_eq)|Weist ein Gebiets Schema zu.|
-|[Operator!=](#op_neq)|Prüft zwei Gebietsschemen auf Ungleichheit.|
+|[operator!=](#op_neq)|Prüft zwei Gebietsschemen auf Ungleichheit.|
 |[operator( )](#op_call)|Vergleicht zwei `basic_string`-Objekte.|
 |[operator==](#op_eq_eq)|Prüft zwei Gebietsschemen auf Gleichheit.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|Beschreibung|
+|Klasse|BESCHREIBUNG|
 |-|-|
 |[facet](#facet_class)|Eine Klasse, die als Basisklasse für alle Gebietsschemafacets dient.|
 |[`id`](#id_class)|Die Memberklasse stellt eine einzigartige Facetidentifikation bereit, die als Index zum Suchen von Facets in einem Gebietsschema verwendet wird.|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<locale>
+**Header:** \<Gebiets Schema >
 
 **Namespace:** std
 
@@ -202,7 +202,7 @@ static const int all = LC_ALL;
 static const int none = 0;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für einen **int** -Typ, der eine Gruppe von unterschiedlichen Elementen des Typs "lokale Bitmaske" der Klasse "locale" darstellen kann oder zur Darstellung der entsprechenden C-Gebiets Schema Kategorien verwendet werden kann. Die Elemente sind:
 
@@ -238,7 +238,7 @@ static const locale& classic();
 
 Ein Verweis auf das C-Gebietsschema.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das klassische c-Gebiets Schema ist das US-englische ASCII-Gebiets Schema in der Standard-c-Bibliothek. Dabei handelt es sich um das Gebiets Schema, das implizit in nicht internationalisierten Programmen verwendet wird.
 
@@ -290,7 +290,7 @@ template <class Facet>
 locale combine(const locale& source_locale) const;
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *source_locale*\
 Das Gebietsschema enthält das Facet, das in das Zielgebietsschema eingefügt werden soll.
@@ -344,7 +344,7 @@ private:
 };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können kein Objekt der Klasse `facet`kopieren oder zuweisen. Sie können Objekte, die von der Klasse `locale::facet` abgeleitet wurden, erstellen oder zerstören, aber nicht die Objekte der richtigen Basisklasse. In der Regel erstellen Sie ein Objekt `_Myfac` das von `facet` abgeleitet ist, wenn Sie eine `locale`erstellen, wie in `locale loc(locale::classic(), new _Myfac);`
 
@@ -358,7 +358,7 @@ Setzt das Standardgebietsschema für das Programm zurück. Dieser-Befehl wirkt s
 static locale global(const locale& new_default_locale);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *new_default_locale*\
 Das Gebietsschema, das als Standardgebietsschema vom Programm verwendet werden soll.
@@ -367,7 +367,7 @@ Das Gebietsschema, das als Standardgebietsschema vom Programm verwendet werden s
 
 Das vorherige Gebietsschema, bevor das Standardgebietsschema zurückgesetzt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei Programmstart ist das globale Gebietsschema gleich dem klassischen Gebietsschema. Die `global()`-Funktion ruft `setlocale( LC_ALL, loc.name. c_str())` auf, um ein entsprechendes Gebietsschema in der Standard-C-Bibliothek festzulegen.
 
@@ -412,7 +412,7 @@ class id
 };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberklasse beschreibt das statische Memberobjekt, das von jedem Gebietsschemafacet benötigt wird. Sie können kein Objekt der Klasse `id`kopieren oder zuweisen.
 
@@ -435,7 +435,7 @@ locale(const locale& from_locale, const Facet* new_facet);
 ~locale();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *locale_name*\
 Der Name eines Gebietsschemas.
@@ -452,7 +452,7 @@ Die Kategorie, die im erstellten Gebietsschema ersetzt werden soll.
 *new_facet*\
 Das Facet, das im erstellten Gebietsschema ersetzt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor initialisiert das Objekt, um mit dem globalen Gebietsschema übereinzustimmen. Mit dem zweiten und dritten Konstruktoren werden alle Gebiets Schema Kategorien initialisiert, sodass das Verhalten mit dem Namen des Gebiets Schemas konsistent ist *locale_name*. Die übrigen Konstruktoren kopieren *from_locale*, wobei die folgenden Ausnahmen beachtet werden:
 
@@ -567,7 +567,7 @@ Prüft zwei Gebietsschemen auf Ungleichheit.
 bool operator!=(const locale& right) const;
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rechte*\
 Eines der Gebietsschemas, die auf Ungleichheit geprüft werden sollen.
@@ -576,7 +576,7 @@ Eines der Gebietsschemas, die auf Ungleichheit geprüft werden sollen.
 
 Ein boolescher Wert, der **true** ist, wenn die Gebiets Schemas keine Kopien desselben Gebiets Schemas sind. Es ist **false** , wenn die Gebiets Schemas Kopien desselben Gebiets Schemas sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Gebiets Schemata sind gleich, wenn Sie das gleiche Gebiets Schema sind, wenn eine Kopie der anderen ist, oder wenn Sie identische Namen haben.
 
@@ -631,7 +631,7 @@ bool operator()(
     const basic_string<CharType, Traits, Allocator>& right) const;
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Linker*\
 Die linke Zeichenfolge.
@@ -645,11 +645,11 @@ Die Memberfunktion gibt Folgendes zurück:
 
 - -1, wenn die erste Sequenz im Vergleich kleiner ist als die zweite Sequenz.
 
-- +1, wenn die zweite Sequenz kleiner als die erste Sequenz ist.
+- +1, wenn die zweite Sequenz im Vergleich kleiner ist als die erste Sequenz.
 
 - 0, wenn die Sequenzen gleichwertig sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion führt Folgendes aus:
 
@@ -700,7 +700,7 @@ Prüft zwei Gebietsschemen auf Gleichheit.
 bool operator==(const locale& right) const;
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rechte*\
 Eines der Gebietsschemas, die auf Gleichheit geprüft werden sollen.
@@ -709,7 +709,7 @@ Eines der Gebietsschemas, die auf Gleichheit geprüft werden sollen.
 
 Ein boolescher Wert, der **true** ist, wenn die Gebiets Schemas Kopien desselben Gebiets Schemas sind. Es ist **false** , wenn die Gebiets Schemas keine Kopien desselben Gebiets Schemas sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Gebiets Schemata sind gleich, wenn Sie das gleiche Gebiets Schema sind, wenn eine Kopie der anderen ist, oder wenn Sie identische Namen haben.
 
@@ -757,9 +757,9 @@ locales loc1 (German_Germany.1252)
 and loc3 (English_United States.1252) are not equal.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<locale>](../standard-library/locale.md)\
 [Codepages](../c-runtime-library/code-pages.md)\
 [Gebietsschema-Namen, Sprachen und Zeichenfolgen für Länder und Regionen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

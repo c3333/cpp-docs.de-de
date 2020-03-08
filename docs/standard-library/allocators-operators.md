@@ -6,19 +6,19 @@ f1_keywords:
 - allocators/std::operator==
 ms.assetid: b55d67cb-3c69-46bf-ad40-e845fb096c4e
 ms.openlocfilehash: b7429e298cdf14d727fc481db6c4a3bf8574b5e7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62377888"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875957"
 ---
 # <a name="ltallocatorsgt-operators"></a>&lt;Allocators&gt;-Operatoren
 
-Hierbei handelt es sich um die globale Operator Vorlagenfunktionen in definierten &lt;Zuweisungen&gt;. Operator Memberfunktionen von Klassen finden Sie in der Dokumentation der Klasse.
+Dies sind die Funktionen des globalen Vorlagen Operators, die in &lt;Zuweisungs&gt;definiert sind. Informationen zu Klassenmember-Operator Funktionen finden Sie in der-Klassen Dokumentation.
 
 |||
 |-|-|
-|[Operator!=](#op_neq)|[operator==](#op_eq_eq)|
+|[operator!=](#op_neq)|[operator==](#op_eq_eq)|
 
 ## <a name="op_neq"></a> operator!=
 
@@ -33,7 +33,7 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*left*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
 |*right*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
@@ -42,7 +42,7 @@ bool operator!=(
 
 **TRUE**, wenn die Zuweisungsobjekte nicht gleich sind; **FALSE**, wenn die Zuweisungsobjekte gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vorlagenoperator gibt `!(left == right)` zurück.
 
@@ -59,7 +59,7 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*left*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
 |*right*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
@@ -68,10 +68,10 @@ bool operator==(
 
 **TRUE**, wenn die Zuweisungsobjekte gleich sind; **FALSE**, wenn die Zuweisungsobjekte nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Vorlagenoperator gibt `left.equals(right)` zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<allocators>](../standard-library/allocators-header.md)
