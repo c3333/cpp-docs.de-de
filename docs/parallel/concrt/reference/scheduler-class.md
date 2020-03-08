@@ -22,11 +22,11 @@ helpviewer_keywords:
 - Scheduler class
 ms.assetid: 34cf7961-048d-4852-8a5c-a32f823e3506
 ms.openlocfilehash: 77ad876b8352ab1ae86fde622b05712ec5f2cea9
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142013"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78867129"
 ---
 # <a name="scheduler-class"></a>Scheduler-Klasse
 
@@ -38,18 +38,18 @@ Stellt eine Abstraktion für einen Concurrency Runtime-Planer dar.
 class Scheduler;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Scheduler](#ctor)|Ein Objekt der `Scheduler` Klasse kann nur mit Factorymethoden oder implizit erstellt werden.|
 |[~ Scheduler-Dekonstruktor](#dtor)|Ein Objekt der `Scheduler` Klasse wird implizit zerstört, wenn alle externen Verweise darauf nicht mehr vorhanden sind.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Anfügen](#attach)|Fügt den Scheduler an den aufrufenden Kontext an. Nachdem diese Methode zurückgegeben wurde, wird der aufrufenden Kontext vom Scheduler verwaltet, und der Scheduler wird zum aktuellen Scheduler.|
 |[Erstellen](#create)|Erstellt einen neuen Scheduler, dessen Verhalten durch den `_Policy`-Parameter beschrieben wird, einen anfänglichen Verweis auf den Scheduler platziert und einen Zeiger darauf zurückgibt.|
@@ -65,7 +65,7 @@ class Scheduler;
 |[ScheduleTask](#scheduletask)|Ist überladen. Plant eine leichte Aufgabe innerhalb des Zeit Planungs Moduls. Die leichte Aufgabe wird in einer Zeit Plan Gruppe platziert, die von der Laufzeit bestimmt wird. Die Version, die den-Parameter annimmt `_Placement` bewirkt, dass die Aufgabe an der angegebenen Position für die Ausführung verzerrt wird.|
 |[SetDefaultSchedulerPolicy](#setdefaultschedulerpolicy)|Ermöglicht die Verwendung einer benutzerdefinierten Richtlinie zum Erstellen des Standard Planers. Diese Methode kann nur aufgerufen werden, wenn innerhalb des Prozesses kein Standard Planer vorhanden ist. Nachdem eine Standard Richtlinie festgelegt wurde, bleibt Sie bis zum nächsten gültigen Aufrufen des `SetDefaultSchedulerPolicy` oder der [ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy) -Methode wirksam.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Der Concurrency Runtime Scheduler verwendet Ausführungs Kontexte, die den Ausführungs Kontexten des Betriebssystems (z. b. einem Thread) zugeordnet sind, um die von der Anwendung in die Warteschlange eingereihte Arbeit auszuführen. Die Parallelitäts Stufe eines Zeit Planungs Moduls ist gleich der Anzahl der virtuellen Prozessoren, die ihm von der Ressourcen-Manager gewährt wurden. Ein virtueller Prozessor ist eine Abstraktion für eine Verarbeitungsressource und wird einem Hardwarethread des zugrunde liegenden Systems zugeordnet. Nur ein einzelner Planerkontext kann jeweils auf einem virtuellen Prozessor ausgeführt werden.
 
@@ -75,7 +75,7 @@ Mit dem Concurrency Runtime wird ein Standard Planer pro Prozess erstellt, um pa
 
 `Scheduler`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ConcRT. h
 
@@ -89,7 +89,7 @@ Fügt den Scheduler an den aufrufenden Kontext an. Nachdem diese Methode zurück
 virtual void Attach() = 0;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch das Anfügen eines Zeit Planungs Moduls wird implizit ein Verweis auf den Scheduler platziert.
 
@@ -116,7 +116,7 @@ Die Scheduler-Richtlinie, die das Verhalten des neu erstellten Zeit Planungs Mod
 
 Ein Zeiger auf einen neu erstellten Scheduler. Für dieses `Scheduler` Objekt wurde ein anfänglicher Verweis Zähler eingefügt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem ein Scheduler mit der `Create`-Methode erstellt wurde, müssen Sie die `Release`-Methode zu einem bestimmten Zeitpunkt in der Zukunft aufzurufen, um den anfänglichen Verweis Zähler zu entfernen und das Herunterfahren des Schedulers zuzulassen.
 
@@ -143,7 +143,7 @@ Ein Verweis auf einen Speicherort, an dem die Tasks innerhalb der Zeit Plan Grup
 
 Ein Zeiger auf die neu erstellte Zeit Plan Gruppe. Für dieses `ScheduleGroup` Objekt wurde ein anfänglicher Verweis Zähler eingefügt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen die [releasemethode](schedulegroup-class.md#release) in einer Zeit Plan Gruppe aufrufen, wenn Sie mit der Planung der Arbeit daran gearbeitet haben. Der Scheduler zerstört die Zeit Plan Gruppe, wenn alle Arbeiten in der Warteschlange abgeschlossen wurden.
 
@@ -202,7 +202,7 @@ Ein Verweis auf den Speicherort, zu dem der Scheduler abgefragt werden soll.
 
 Ein Hinweis darauf, ob der durch das `_Placement`-Argument angegebene Speicherort im Scheduler verfügbar ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass der Rückgabewert eine sofortige Stichprobe dafür ist, ob der angegebene Speicherort verfügbar ist. Wenn mehrere Planer vorhanden sind, kann die dynamische Ressourcenverwaltung Ressourcen von Zeit Planungs Modulen jederzeit hinzufügen oder entfernen. Wenn dies der Fall ist, kann die Verfügbarkeit des angegebenen Standorts geändert werden.
 
@@ -218,7 +218,7 @@ virtual unsigned int Reference() = 0 ;
 
 Der neu inkrementierte Verweis Zähler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies wird normalerweise verwendet, um die Lebensdauer des Zeit Planungs Moduls für die Komposition zu verwalten. Wenn der Verweis Zähler eines Zeit Planungs Moduls auf 0 (null) fällt, wird der Scheduler nach Abschluss der gesamten Arbeit im Zeit Planungs Modul heruntergefahren und die Struktur selbst zerlegt.
 
@@ -249,7 +249,7 @@ virtual unsigned int Release() = 0;
 
 Der neu dekrementierte Verweis Zähler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies wird normalerweise verwendet, um die Lebensdauer des Zeit Planungs Moduls für die Komposition zu verwalten. Wenn der Verweis Zähler eines Zeit Planungs Moduls auf 0 (null) fällt, wird der Scheduler nach Abschluss der gesamten Arbeit im Zeit Planungs Modul heruntergefahren und die Struktur selbst zerlegt.
 
@@ -261,7 +261,7 @@ Setzt die standardmäßige Scheduler-Richtlinie auf den Standardwert der Laufzei
 static void __cdecl ResetDefaultSchedulerPolicy();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode kann aufgerufen werden, während ein Standard Planer innerhalb des Prozesses vorhanden ist. Dies wirkt sich nicht auf die Richtlinie des vorhandenen Standard Planers aus. Wenn der Standard Planer jedoch heruntergefahren wird und ein neuer Standardwert zu einem späteren Zeitpunkt erstellt werden soll, verwendet der neue Scheduler die Standardrichtlinien Einstellungen der Laufzeit.
 
@@ -273,7 +273,7 @@ Ein Objekt der `Scheduler` Klasse kann nur mit Factorymethoden oder implizit ers
 Scheduler();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Standard Planer des Prozesses wird implizit erstellt, wenn Sie viele der Lauf Zeitfunktionen verwenden, die erfordern, dass ein Scheduler an den aufrufenden Kontext angefügt wird. Methoden in der `CurrentScheduler`-Klasse und Funktionen der ppl-und Agents-Schichten führen in der Regel eine implizite Anlage aus.
 
@@ -326,11 +326,11 @@ static void __cdecl SetDefaultSchedulerPolicy(const SchedulerPolicy& _Policy);
 *_Policy*<br/>
 Die Richtlinie, die als standardmäßige Scheduler-Richtlinie festgelegt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die `SetDefaultSchedulerPolicy`-Methode aufgerufen wird, wenn bereits ein Standard Planer innerhalb des Prozesses vorhanden ist, löst die Laufzeit eine [default_scheduler_exists](default-scheduler-exists-class.md) -Ausnahme aus.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [Scheduler-Klasse](scheduler-class.md)<br/>

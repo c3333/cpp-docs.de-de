@@ -30,11 +30,11 @@ helpviewer_keywords:
 - threadprivate OpenMP directive
 ms.assetid: 0562c263-344c-466d-843e-de830d918940
 ms.openlocfilehash: 4db341cf58884263e414e24aacf888c8c88e57cc
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142020"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78882903"
 ---
 # <a name="openmp-directives"></a>OpenMP-Direktiven
 
@@ -44,7 +44,7 @@ Visual C++ unterstützt die folgenden OpenMP-Direktiven.
 
 Für parallele Arbeits Freigabe:
 
-|Direktive|BESCHREIBUNG|
+|Directive|Beschreibung|
 |---------|-----------|
 |[parallel](#parallel)|Definiert einen parallelen Bereich, bei dem es sich um Code handelt, der von mehreren Threads parallel ausgeführt wird.|
 |[for](#for-openmp)|Bewirkt, dass die Arbeit in einer `for`-Schleife innerhalb eines parallelen Bereichs in Threads aufgeteilt wird.|
@@ -53,7 +53,7 @@ Für parallele Arbeits Freigabe:
 
 Für Master und Synchronisierung:
 
-|Direktive|BESCHREIBUNG|
+|Directive|Beschreibung|
 |---------|-----------|
 |[master](#master)|Gibt an, dass nur der Master Thread einen Abschnitt des Programms ausführen soll.|
 |[Kritisch](#critical)|Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.|
@@ -64,7 +64,7 @@ Für Master und Synchronisierung:
 
 Für Daten Umgebung:
 
-|Direktive|BESCHREIBUNG|
+|Directive|Beschreibung|
 |---------|-----------|
 |[threadprivate](#threadprivate)|Gibt an, dass eine Variable für einen Thread privat ist.|
 
@@ -82,7 +82,7 @@ Gibt an, dass eine Speicheradresse atomarisch aktualisiert wird.
 *expression*<br/>
 Die Anweisung mit dem *Lvalue-Wert*, dessen Speicherort Sie vor mehr als einem Schreibvorgang schützen möchten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `atomic`-Anweisung unterstützt keine Klauseln.
 
@@ -121,7 +121,7 @@ Synchronisiert alle Threads in einem Team. alle Threads werden an der Barriere a
 #pragma omp barrier
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `barrier`-Anweisung unterstützt keine Klauseln.
 
@@ -147,7 +147,7 @@ Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.
 *name*<br/>
 Optionale Ein Name, der den kritischen Code identifiziert. Der Name muss in Klammern eingeschlossen werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `critical`-Anweisung unterstützt keine Klauseln.
 
@@ -224,7 +224,7 @@ Gibt an, dass alle Threads dieselbe Ansicht des Arbeitsspeichers für alle freig
 *var*<br/>
 Optionale Eine durch Trennzeichen getrennte Liste von Variablen, die Objekte darstellen, die Sie synchronisieren möchten. Wenn *var* nicht angegeben wird, wird der gesamte Arbeitsspeicher geleert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `flush`-Anweisung unterstützt keine Klauseln.
 
@@ -304,7 +304,7 @@ Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 *for_statement*<br/>
 Eine `for`-Schleife. Nicht definiertes Verhalten führt dazu, dass der Benutzercode in der `for`-Schleife die Index Variable ändert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `for`-Direktive unterstützt die folgenden Klauseln:
 
@@ -395,7 +395,7 @@ Gibt an, dass nur der Master Thread einen Abschnitt des Programms ausführen sol
 }
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `master`-Anweisung unterstützt keine Klauseln.
 
@@ -455,7 +455,7 @@ Gibt an, dass der Code in einer parallelisierten `for` Schleife wie eine sequenz
    structured-block
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `ordered`-Direktive muss innerhalb des dynamischen Wertebereichs eines [for](#for-openmp) -oder `parallel for`-Konstrukts mit einer `ordered`-Klausel liegen.
 
@@ -533,7 +533,7 @@ Definiert einen parallelen Bereich, bei dem es sich um Code handelt, der von meh
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `parallel`-Direktive unterstützt die folgenden Klauseln:
 
@@ -595,7 +595,7 @@ Identifiziert Code Abschnitte, die in alle Threads aufgeteilt werden sollen.
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `sections`-Direktive kann NULL oder mehr `section` Direktiven enthalten.
 
@@ -650,7 +650,7 @@ Ermöglicht Ihnen, anzugeben, dass ein Code Abschnitt für einen einzelnen Threa
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `single`-Direktive unterstützt die folgenden Klauseln:
 
@@ -708,7 +708,7 @@ Gibt an, dass eine Variable für einen Thread privat ist.
 *var*<br/>
 Eine durch Trennzeichen getrennte Liste von Variablen, die Sie als privat in einem Thread einrichten möchten. *var* muss entweder eine globale oder eine Namespace bezogene Variable oder eine lokale statische Variable sein.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `threadprivate`-Anweisung unterstützt keine Klauseln.
 
@@ -716,7 +716,7 @@ Die `threadprivate`-Direktive basiert auf dem [Thread](../../../cpp/thread.md) -
 
 Sie können `threadprivate` in einer DLL verwenden, die beim Prozessstart statisch geladen wird. Sie können jedoch `threadprivate` nicht in einer DLL verwenden, die über [LoadLibrary](/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryw) geladen wird, z. b. DLLs, die mit/DELAYLOAD geladen werden [(verzögertes Laden importieren)](../../../build/reference/delayload-delay-load-import.md), wodurch auch `LoadLibrary`verwendet wird.
 
-Bei einer `threadprivate` *Variablen eines debugierbaren Typs ist* gewährleistet, dass der Debuggertyp nicht mit dem Namen Beispiel: 
+Bei einer `threadprivate` *Variablen eines debugierbaren Typs ist* gewährleistet, dass der Debuggertyp nicht mit dem Namen Beispiel:
 
 ```cpp
 struct MyType
