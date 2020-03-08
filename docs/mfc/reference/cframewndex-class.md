@@ -179,11 +179,11 @@ helpviewer_keywords:
 - CFrameWndEx [MFC], WinHelp
 ms.assetid: 5830aca8-4a21-4f31-91f1-dd5477ffcc8d
 ms.openlocfilehash: 1565a2eef681cbf36a0e166f59cde0320843e8aa
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69506389"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78869902"
 ---
 # <a name="cframewndex-class"></a>CFrameWndEx-Klasse
 
@@ -195,103 +195,103 @@ Implementiert die Funktionalität eines Windows-SDI-Rahmenfensters (Single Docum
 class CFrameWndEx : public CFrameWnd
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFrameWndEx::ActiveItemRecalcLayout](#activeitemrecalclayout)|Passt das Layout des OLE-Client Elements und des Client Bereichs des Frames an.|
+|[CFrameWndEx:: activeitemneu.](#activeitemrecalclayout)|Passt das Layout des OLE-Client Elements und des Client Bereichs des Frames an.|
 |`CFrameWndEx::AddDockSite`|Diese Methode wird nicht verwendet.|
-|[CFrameWndEx::AddPane](#addpane)|Registriert eine Steuerleiste beim Docking-Manager.|
-|[CFrameWndEx::AdjustDockingLayout](#adjustdockinglayout)|Berechnet das Layout aller Bereiche neu, die an das Rahmen Fenster angedockt sind.|
-|[CFrameWndEx::DelayUpdateFrameMenu](#delayupdateframemenu)|Legt das Frame Menü fest und aktualisiert es dann, wenn sich die Befehls Verarbeitung im Leerlauf befindet.|
-|[CFrameWndEx::DockPane](#dockpane)|Dockt den angegebenen Bereich an das Rahmen Fenster an.|
-|[CFrameWndEx::DockPaneLeftOf](#dockpaneleftof)|Dockt einen Bereich auf der linken Seite eines anderen Bereichs an.|
-|[CFrameWndEx::EnableAutoHidePanes](#enableautohidepanes)|Aktiviert den AutoHide-Modus für die Bereiche, wenn diese an die angegebenen Seiten des Hauptrahmen Fensters angedockt werden.|
-|[CFrameWndEx::EnableDocking](#enabledocking)|Aktiviert das Andocken der Bereiche, die zum Rahmen Fenster gehören.|
-|[CFrameWndEx::EnableFullScreenMainMenu](#enablefullscreenmainmenu)|Zeigt das Hauptmenü im Vollbildmodus an oder blendet es aus.|
-|[CFrameWndEx::EnableFullScreenMode](#enablefullscreenmode)|Aktiviert den Vollbildmodus für das Rahmen Fenster.|
-|[CFrameWndEx::EnableLoadDockState](#enableloaddockstate)|Aktiviert oder deaktiviert das Laden des Andock Zustands.|
-|[CFrameWndEx::EnablePaneMenu](#enablepanemenu)|Aktiviert oder deaktiviert die automatische Handhabung des Menü Bereichs.|
-|[CFrameWndEx::GetActivePopup](#getactivepopup)|Gibt einen Zeiger auf das aktuell angezeigte Popupmenü zurück.|
-|[CFrameWndEx::GetDefaultResId](#getdefaultresid)|Gibt die Ressourcen-ID zurück, die Sie beim Laden des Frame Fensters durch das Framework angegeben haben.|
-|[CFrameWndEx::GetDockingManager](#getdockingmanager)|Ruft das [cdockingmanager-Klassen](../../mfc/reference/cdockingmanager-class.md) Objekt für das Rahmen Fenster ab.|
-|[CFrameWndEx::GetMenuBar](#getmenubar)|Gibt einen Zeiger auf das Menüleistenobjekt zurück, das an das Rahmenfenster angefügt ist.|
-|[CFrameWndEx::GetPane](#getpane)|Gibt einen Zeiger auf den Bereich zurück, der über die angegebene ID verfügt.|
-|[CFrameWndEx::GetRibbonBar](#getribbonbar)|Ruft das Menü Band leisten-Steuerelement für den Frame ab.|
-|[CFrameWndEx::GetTearOffBars](#gettearoffbars)|Gibt eine Liste von Bereichsobjekten zurück, die sich in einem abtrennbaren Zustand befinden.|
-|[CFrameWndEx::GetToolbarButtonToolTipText](#gettoolbarbuttontooltiptext)|Wird von Framework aufgerufen, wenn die Anwendung die QuickInfo für eine Symbolleisten-Schaltfläche anzeigt.|
-|[CFrameWndEx::InsertPane](#insertpane)|Registriert einen Bereich beim Docking-Manager.|
-|[CFrameWndEx::IsFullScreen](#isfullscreen)|Bestimmt, ob sich das Rahmen Fenster im Vollbildmodus befindet.|
-|[CFrameWndEx::IsMenuBarAvailable](#ismenubaravailable)|Bestimmt, ob der Zeiger auf das Menüleisten Objekt gültig ist.|
-|[CFrameWndEx::IsPointNearDockSite](#ispointneardocksite)|Gibt an, ob sich der Punkt in einer Ausrichtungs Zone befindet.|
-|[CFrameWndEx::IsPrintPreview](#isprintpreview)|Gibt an, ob sich das Rahmen Fenster im Seiten Ansichtsmodus befindet.|
-|[CFrameWndEx::LoadFrame](#loadframe)|Diese Methode wird nach der Erstellung aufgerufen, um das Rahmen Fenster zu erstellen und seine Ressourcen zu laden.|
-|[CFrameWndEx::NegotiateBorderSpace](#negotiateborderspace)|Implementiert die OLE-Client Border-Aushandlung.|
-|[CFrameWndEx::OnActivate](#onactivate)|Das Framework ruft diese Methode auf, wenn Benutzereingaben zum Frame gewechselt oder vom Frame entfernt werden.|
-|[CFrameWndEx::OnActivateApp](#onactivateapp)|Wird von Framework aufgerufen, wenn die Anwendung entweder ausgewählt oder deaktiviert wird.|
-|[CFrameWndEx::OnChangeVisualManager](#onchangevisualmanager)|Wird von Framework aufgerufen, wenn eine Änderung am Frame eine Änderung an Visual Manager erfordert.|
-|[CFrameWndEx::OnClose](#onclose)|Das Framework ruft diese Methode auf, um den Frame zu schließen.|
-|[CFrameWndEx::OnCloseDockingPane](#onclosedockingpane)|Wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche **Schließen** in einem andockbaren Bereich klickt.|
-|[CFrameWndEx::OnCloseMiniFrame](#oncloseminiframe)|Wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche **Schließen** in einem unverankerten Mini Rahmen Fenster klickt.|
-|[CFrameWndEx::OnClosePopupMenu](#onclosepopupmenu)|Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.|
-|[CFrameWndEx::OnCmdMsg](#oncmdmsg)|Sendet befehlsnachrichten.|
-|[CFrameWndEx::OnContextHelp](#oncontexthelp)|Wird von Framework aufgerufen, um kontextbezogene Hilfe anzuzeigen.|
-|[CFrameWndEx::OnCreate](#oncreate)|Wird von Framework aufgerufen, nachdem der Frame erstellt wurde.|
-|[CFrameWndEx::OnDestroy](#ondestroy)|Wird von Framework aufgerufen, wenn der Frame zerstört wird.|
-|[CFrameWndEx::OnDrawMenuImage](#ondrawmenuimage)|Wird von Framework aufgerufen, wenn die Anwendung das einem Menü Element zugeordnete Bild zeichnet.|
-|[CFrameWndEx::OnDrawMenuLogo](#ondrawmenulogo)|Wird von Framework aufgerufen, wenn `CMFCPopupMenu` ein-Objekt eine [WM_PAINT](/windows/win32/gdi/wm-paint) -Nachricht verarbeitet.|
-|[CFrameWndEx::OnDWMCompositionChanged](#ondwmcompositionchanged)|Wird von Framework aufgerufen, wenn die Komposition von Desktopfenster-Manager (DWM) aktiviert oder deaktiviert wurde.|
-|[CFrameWndEx::OnExitSizeMove](#onexitsizemove)|Wird von Framework aufgerufen, wenn der Frame das Verschieben oder Ändern der Größe stoppt.|
-|[CFrameWndEx::OnGetMinMaxInfo](#ongetminmaxinfo)|Wird von Framework aufgerufen, wenn die Größe des Frames geändert wird, um Fenster Dimensions Limits festzulegen.|
-|[CFrameWndEx::OnIdleUpdateCmdUI](#onidleupdatecmdui)|Wird von Framework aufgerufen, um die Rahmen Anzeige zu aktualisieren, wenn sich die Befehls Verarbeitung im Leerlauf befindet.|
-|[CFrameWndEx::OnLButtonDown](#onlbuttondown)|Das Framework ruft diese Methode auf, wenn der Benutzer die linke Maustaste drückt.|
-|[CFrameWndEx::OnLButtonUp](#onlbuttonup)|Das Framework ruft diese Methode auf, wenn der Benutzer die linke Maustaste loslässt.|
-|[CFrameWndEx::OnMenuButtonToolHitTest](#onmenubuttontoolhittest)|Wird von Framework aufgerufen, wenn `CMFCToolBarButton` ein-Objekt eine WM_NCHITTEST-Nachricht verarbeitet.|
-|[CFrameWndEx::OnMenuChar](#onmenuchar)|Wird von Framework aufgerufen, wenn ein Menü angezeigt wird und der Benutzer eine Taste drückt, die keinem Befehl entspricht.|
-|[CFrameWndEx::OnMouseMove](#onmousemove)|Das Framework ruft diese Methode auf, wenn der Zeiger bewegt wird.|
-|[CFrameWndEx::OnMoveMiniFrame](#onmoveminiframe)|Wird von Framework aufgerufen, wenn ein Fenster verschoben wird.|
-|[CFrameWndEx::OnNcActivate](#onncactivate)|Wird von Framework aufgerufen, wenn der nicht-Client Bereich des Frames neu gezeichnet werden muss, um eine Änderung im aktiven Zustand anzugeben.|
-|[CFrameWndEx::OnNcCalcSize](#onnccalcsize)|Wird von Framework aufgerufen, wenn die Größe und Position des Client Bereichs berechnet werden müssen.|
-|[CFrameWndEx::OnNcHitTest](#onnchittest)|Wird von Framework aufgerufen, wenn der Zeiger bewegt wird oder wenn eine Maustaste gedrückt oder losgelassen wird.|
-|[CFrameWndEx::OnNcMouseMove](#onncmousemove)|Wird von Framework aufgerufen, wenn der Zeiger in einem nicht-Client Bereich bewegt wird.|
-|[CFrameWndEx::OnNcPaint](#onncpaint)|Wird von Framework aufgerufen, wenn der nicht-Client Bereich gezeichnet werden muss.|
-|[CFrameWndEx::OnPaneCheck](#onpanecheck)|Wird von Framework aufgerufen, um die Sichtbarkeit eines Bereichs zu steuern.|
-|[CFrameWndEx::OnPostPreviewFrame](#onpostpreviewframe)|Wird von Framework aufgerufen, wenn der Benutzer den Seitenansichtmodus geändert hat.|
-|[CFrameWndEx::OnPowerBroadcast](#onpowerbroadcast)|Wird von Framework aufgerufen, wenn ein Energie Verwaltungs Ereignis auftritt.|
-|[CFrameWndEx::OnSetMenu](#onsetmenu)|Wird von Framework aufgerufen, um das Rahmen Fenstermenü zu ersetzen.|
-|[CFrameWndEx::OnSetPreviewMode](#onsetpreviewmode)|Wird von Framework aufgerufen, um den Seiten Ansichtsmodus für den Frame festzulegen.|
-|[CFrameWndEx::OnSetText](#onsettext)|Wird von Framework aufgerufen, um den Text eines Fensters festzulegen.|
-|[CFrameWndEx::OnShowCustomizePane](#onshowcustomizepane)|Wird von Framework aufgerufen, wenn ein Bereich für die schnelle Anpassung aktiviert ist.|
-|[CFrameWndEx::OnShowPanes](#onshowpanes)|Wird von Framework aufgerufen, um Bereiche anzuzeigen oder auszublenden.|
-|[CFrameWndEx::OnShowPopupMenu](#onshowpopupmenu)|Wird von Framework aufgerufen, wenn ein Popupmenü aktiviert ist.|
-|[CFrameWndEx::OnSize](#onsize)|Das Framework ruft diese Methode auf, nachdem die Größe des Frames geändert wurde.|
-|[CFrameWndEx::OnSizing](#onsizing)|Das Framework ruft diese Methode auf, wenn der Benutzer die Größe des Frames ändert.|
-|[CFrameWndEx::OnSysColorChange](#onsyscolorchange)|Wird von Framework aufgerufen, wenn sich die Systemfarben ändern.|
-|[CFrameWndEx::OnTearOffMenu](#ontearoffmenu)|Wird von Framework aufgerufen, wenn ein Menü mit einer abtrenn Leiste aktiviert ist.|
-|[CFrameWndEx::OnToolbarContextMenu](#ontoolbarcontextmenu)|Wird von Framework aufgerufen, um ein Symbolleisten-Kontextmenü zu erstellen.|
-|[CFrameWndEx::OnToolbarCreateNew](#ontoolbarcreatenew)|Das Framework ruft diese Methode auf, um eine neue Symbolleiste zu erstellen.|
-|[CFrameWndEx::OnToolbarDelete](#ontoolbardelete)|Wird vom Framework aufgerufen, wenn eine Symbolleiste gelöscht wird.|
-|[CFrameWndEx::OnUpdateFrameMenu](#onupdateframemenu)|Wird von Framework aufgerufen, um das Frame Menü festzulegen.|
-|[CFrameWndEx::OnUpdateFrameTitle](#onupdateframetitle)|Das Framework ruft diese Methode auf, um die Titelleiste des Rahmen Fensters zu aktualisieren.|
-|[CFrameWndEx::OnUpdatePaneMenu](#onupdatepanemenu)|Wird von Framework aufgerufen, um das Bereich Menü zu aktualisieren.|
-|[CFrameWndEx::OnWindowPosChanged](#onwindowposchanged)|Wird von Framework aufgerufen, wenn sich die Frame Größe, Position oder z-Reihenfolge aufgrund eines Aufrufs einer Fenster Verwaltungsmethode geändert hat.|
-|[CFrameWndEx::PaneFromPoint](#panefrompoint)|Gibt den andockbaren Bereich zurück, der den angegebenen Punkt enthält.|
-|[CFrameWndEx::PreTranslateMessage](#pretranslatemessage)|Behandelt bestimmte Fenster Meldungen, bevor Sie gesendet werden.|
-|[CFrameWndEx::RecalcLayout](#recalclayout)|Passt das Layout des Frames und seiner untergeordneten Fenster an.|
-|[CFrameWndEx::RemovePaneFromDockManager](#removepanefromdockmanager)|Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der internen Liste im Docking-Manager.|
-|[CFrameWndEx::SetDockState](#setdockstate)|Stellt das Andock Layout in den in der Registrierung gespeicherten Andock Zustand wieder her.|
-|[CFrameWndEx::SetPrintPreviewFrame](#setprintpreviewframe)|Legt das Rahmen Fenster der Druckvorschau fest.|
-|[CFrameWndEx::SetupToolbarMenu](#setuptoolbarmenu)|Fügt benutzerdefinierte Befehle in ein Symbolleisten Menü ein.|
-|[CFrameWndEx::ShowFullScreen](#showfullscreen)|Schaltet den Hauptrahmen zwischen dem Vollbildmodus und dem regulären Modus um.|
-|[CFrameWndEx::ShowPane](#showpane)|Blendet den angegebenen Bereich ein oder aus.|
-|[CFrameWndEx::UpdateCaption](#updatecaption)|Wird von Framework aufgerufen, um die Fensterrahmen Beschriftung zu aktualisieren.|
-|[CFrameWndEx::WinHelp](#winhelp)|Ruft entweder die `WinHelp` Anwendung oder die kontextbezogene Hilfe auf.|
+|[CFrameWndEx:: addpane](#addpane)|Registriert eine Steuerleiste beim Docking-Manager.|
+|[CFrameWndEx:: Anpassungen dockinglayout](#adjustdockinglayout)|Berechnet das Layout aller Bereiche neu, die an das Rahmen Fenster angedockt sind.|
+|[CFrameWndEx::D elayupdateframemenu](#delayupdateframemenu)|Legt das Frame Menü fest und aktualisiert es dann, wenn sich die Befehls Verarbeitung im Leerlauf befindet.|
+|[CFrameWndEx::D ockpane](#dockpane)|Dockt den angegebenen Bereich an das Rahmen Fenster an.|
+|[CFrameWndEx::D ockpaneleftof](#dockpaneleftof)|Dockt einen Bereich auf der linken Seite eines anderen Bereichs an.|
+|[CFrameWndEx:: enableautohidebereiche](#enableautohidepanes)|Aktiviert den AutoHide-Modus für die Bereiche, wenn diese an die angegebenen Seiten des Hauptrahmen Fensters angedockt werden.|
+|[CFrameWndEx:: EnableDocking](#enabledocking)|Aktiviert das Andocken der Bereiche, die zum Rahmen Fenster gehören.|
+|[CFrameWndEx:: enablefullscreenmainmenu](#enablefullscreenmainmenu)|Zeigt das Hauptmenü im Vollbildmodus an oder blendet es aus.|
+|[CFrameWndEx:: enablefullscreenmode](#enablefullscreenmode)|Aktiviert den Vollbildmodus für das Rahmen Fenster.|
+|[CFrameWndEx:: enableloaddockstate](#enableloaddockstate)|Aktiviert oder deaktiviert das Laden des Andock Zustands.|
+|[CFrameWndEx:: enablepanemenu](#enablepanemenu)|Aktiviert oder deaktiviert die automatische Handhabung des Menü Bereichs.|
+|[CFrameWndEx:: getactivepopup](#getactivepopup)|Gibt einen Zeiger auf das aktuell angezeigte Popupmenü zurück.|
+|[CFrameWndEx:: getdefaultresid](#getdefaultresid)|Gibt die Ressourcen-ID zurück, die Sie beim Laden des Frame Fensters durch das Framework angegeben haben.|
+|[CFrameWndEx:: getdockingmanager](#getdockingmanager)|Ruft das [cdockingmanager-Klassen](../../mfc/reference/cdockingmanager-class.md) Objekt für das Rahmen Fenster ab.|
+|[CFrameWndEx:: getmenubar](#getmenubar)|Gibt einen Zeiger auf das Menüleistenobjekt zurück, das an das Rahmenfenster angefügt ist.|
+|[CFrameWndEx:: GetPane](#getpane)|Gibt einen Zeiger auf den Bereich zurück, der über die angegebene ID verfügt.|
+|[CFrameWndEx:: getribbonbar](#getribbonbar)|Ruft das Menü Band leisten-Steuerelement für den Frame ab.|
+|[CFrameWndEx:: gettearoffbars](#gettearoffbars)|Gibt eine Liste von Bereichsobjekten zurück, die sich in einem abtrennbaren Zustand befinden.|
+|[CFrameWndEx:: gettoolbarbuttontooltiptext](#gettoolbarbuttontooltiptext)|Wird von Framework aufgerufen, wenn die Anwendung die QuickInfo für eine Symbolleisten-Schaltfläche anzeigt.|
+|[CFrameWndEx:: insertpane](#insertpane)|Registriert einen Bereich beim Docking-Manager.|
+|[CFrameWndEx:: IsFullScreen](#isfullscreen)|Bestimmt, ob sich das Rahmen Fenster im Vollbildmodus befindet.|
+|[CFrameWndEx:: ismenubaravailable](#ismenubaravailable)|Bestimmt, ob der Zeiger auf das Menüleisten Objekt gültig ist.|
+|[CFrameWndEx:: ispointneardocksite](#ispointneardocksite)|Gibt an, ob sich der Punkt in einer Ausrichtungs Zone befindet.|
+|[CFrameWndEx:: isprintpreview](#isprintpreview)|Gibt an, ob sich das Rahmen Fenster im Seiten Ansichtsmodus befindet.|
+|[CFrameWndEx:: LoadFrame](#loadframe)|Diese Methode wird nach der Erstellung aufgerufen, um das Rahmen Fenster zu erstellen und seine Ressourcen zu laden.|
+|[CFrameWndEx:: aushandateborderspace](#negotiateborderspace)|Implementiert die OLE-Client Border-Aushandlung.|
+|[CFrameWndEx:: onaktivierungs](#onactivate)|Das Framework ruft diese Methode auf, wenn Benutzereingaben zum Frame gewechselt oder vom Frame entfernt werden.|
+|[CFrameWndEx:: onactivateapp](#onactivateapp)|Wird von Framework aufgerufen, wenn die Anwendung entweder ausgewählt oder deaktiviert wird.|
+|[CFrameWndEx:: onchangevisualmanager](#onchangevisualmanager)|Wird von Framework aufgerufen, wenn eine Änderung am Frame eine Änderung an Visual Manager erfordert.|
+|[CFrameWndEx:: OnClose](#onclose)|Das Framework ruft diese Methode auf, um den Frame zu schließen.|
+|[CFrameWndEx:: onclosedockingpane](#onclosedockingpane)|Wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche **Schließen** in einem andockbaren Bereich klickt.|
+|[CFrameWndEx:: oncloseminiframe](#oncloseminiframe)|Wird von Framework aufgerufen, wenn der Benutzer auf die Schaltfläche **Schließen** in einem unverankerten Mini Rahmen Fenster klickt.|
+|[CFrameWndEx:: onclosepopupmenu](#onclosepopupmenu)|Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.|
+|[CFrameWndEx:: OnCmdMsg](#oncmdmsg)|Sendet befehlsnachrichten.|
+|[CFrameWndEx:: oncontexthelp](#oncontexthelp)|Wird von Framework aufgerufen, um kontextbezogene Hilfe anzuzeigen.|
+|[CFrameWndEx:: OnCreate](#oncreate)|Wird von Framework aufgerufen, nachdem der Frame erstellt wurde.|
+|[CFrameWndEx:: OnDestroy](#ondestroy)|Wird von Framework aufgerufen, wenn der Frame zerstört wird.|
+|[CFrameWndEx:: ondrawmenuimage](#ondrawmenuimage)|Wird von Framework aufgerufen, wenn die Anwendung das einem Menü Element zugeordnete Bild zeichnet.|
+|[CFrameWndEx:: ondrawmenulogo](#ondrawmenulogo)|Wird von Framework aufgerufen, wenn ein `CMFCPopupMenu` Objekt eine [WM_PAINT](/windows/win32/gdi/wm-paint) Meldung verarbeitet.|
+|[CFrameWndEx:: ondwmcompositionchanged](#ondwmcompositionchanged)|Wird von Framework aufgerufen, wenn die Komposition von Desktopfenster-Manager (DWM) aktiviert oder deaktiviert wurde.|
+|[CFrameWndEx:: onexitsizemove](#onexitsizemove)|Wird von Framework aufgerufen, wenn der Frame das Verschieben oder Ändern der Größe stoppt.|
+|[CFrameWndEx:: ongetminmaxinfo](#ongetminmaxinfo)|Wird von Framework aufgerufen, wenn die Größe des Frames geändert wird, um Fenster Dimensions Limits festzulegen.|
+|[CFrameWndEx:: onidleupdatecmdui](#onidleupdatecmdui)|Wird von Framework aufgerufen, um die Rahmen Anzeige zu aktualisieren, wenn sich die Befehls Verarbeitung im Leerlauf befindet.|
+|[CFrameWndEx:: OnLButtonDown](#onlbuttondown)|Das Framework ruft diese Methode auf, wenn der Benutzer die linke Maustaste drückt.|
+|[CFrameWndEx:: onlbuttonup](#onlbuttonup)|Das Framework ruft diese Methode auf, wenn der Benutzer die linke Maustaste loslässt.|
+|[CFrameWndEx:: onmenubuttontoolhittest](#onmenubuttontoolhittest)|Wird von Framework aufgerufen, wenn ein `CMFCToolBarButton` Objekt eine WM_NCHITTEST Meldung verarbeitet.|
+|[CFrameWndEx:: onmenuchar](#onmenuchar)|Wird von Framework aufgerufen, wenn ein Menü angezeigt wird und der Benutzer eine Taste drückt, die keinem Befehl entspricht.|
+|[CFrameWndEx:: onmoucmove](#onmousemove)|Das Framework ruft diese Methode auf, wenn der Zeiger bewegt wird.|
+|[CFrameWndEx:: onmoveminiframe](#onmoveminiframe)|Wird von Framework aufgerufen, wenn ein Fenster verschoben wird.|
+|[CFrameWndEx:: onncaktivierungs](#onncactivate)|Wird von Framework aufgerufen, wenn der nicht-Client Bereich des Frames neu gezeichnet werden muss, um eine Änderung im aktiven Zustand anzugeben.|
+|[CFrameWndEx:: onnccalcsize](#onnccalcsize)|Wird von Framework aufgerufen, wenn die Größe und Position des Client Bereichs berechnet werden müssen.|
+|[CFrameWndEx:: onnchittest](#onnchittest)|Wird von Framework aufgerufen, wenn der Zeiger bewegt wird oder wenn eine Maustaste gedrückt oder losgelassen wird.|
+|[CFrameWndEx:: onncmouummove](#onncmousemove)|Wird von Framework aufgerufen, wenn der Zeiger in einem nicht-Client Bereich bewegt wird.|
+|[CFrameWndEx:: onncpaint](#onncpaint)|Wird von Framework aufgerufen, wenn der nicht-Client Bereich gezeichnet werden muss.|
+|[CFrameWndEx:: onpanecheck](#onpanecheck)|Wird von Framework aufgerufen, um die Sichtbarkeit eines Bereichs zu steuern.|
+|[CFrameWndEx:: onpostpreviewframe](#onpostpreviewframe)|Wird von Framework aufgerufen, wenn der Benutzer den Seitenansichtmodus geändert hat.|
+|[CFrameWndEx:: onpowerbroadcast](#onpowerbroadcast)|Wird von Framework aufgerufen, wenn ein Energie Verwaltungs Ereignis auftritt.|
+|[CFrameWndEx:: onsetmenu](#onsetmenu)|Wird von Framework aufgerufen, um das Rahmen Fenstermenü zu ersetzen.|
+|[CFrameWndEx:: onsetpreviewmode](#onsetpreviewmode)|Wird von Framework aufgerufen, um den Seiten Ansichtsmodus für den Frame festzulegen.|
+|[CFrameWndEx:: onsettext](#onsettext)|Wird von Framework aufgerufen, um den Text eines Fensters festzulegen.|
+|[CFrameWndEx:: onshowcustomizepane](#onshowcustomizepane)|Wird von Framework aufgerufen, wenn ein Bereich für die schnelle Anpassung aktiviert ist.|
+|[CFrameWndEx:: onshowbereichs](#onshowpanes)|Wird von Framework aufgerufen, um Bereiche anzuzeigen oder auszublenden.|
+|[CFrameWndEx:: onshowpopupmenu](#onshowpopupmenu)|Wird von Framework aufgerufen, wenn ein Popupmenü aktiviert ist.|
+|[CFrameWndEx:: OnSize](#onsize)|Das Framework ruft diese Methode auf, nachdem die Größe des Frames geändert wurde.|
+|[CFrameWndEx:: onsizing](#onsizing)|Das Framework ruft diese Methode auf, wenn der Benutzer die Größe des Frames ändert.|
+|[CFrameWndEx:: onsyscolorchange](#onsyscolorchange)|Wird von Framework aufgerufen, wenn sich die Systemfarben ändern.|
+|[CFrameWndEx:: ontearoffmenu](#ontearoffmenu)|Wird von Framework aufgerufen, wenn ein Menü mit einer abtrenn Leiste aktiviert ist.|
+|[CFrameWndEx:: ontoolbarcontextmenu](#ontoolbarcontextmenu)|Wird von Framework aufgerufen, um ein Symbolleisten-Kontextmenü zu erstellen.|
+|[CFrameWndEx:: ontoolbarkreatenew](#ontoolbarcreatenew)|Das Framework ruft diese Methode auf, um eine neue Symbolleiste zu erstellen.|
+|[CFrameWndEx:: ontoolbardelete](#ontoolbardelete)|Wird vom Framework aufgerufen, wenn eine Symbolleiste gelöscht wird.|
+|[CFrameWndEx:: onupdateframemenu](#onupdateframemenu)|Wird von Framework aufgerufen, um das Frame Menü festzulegen.|
+|[CFrameWndEx:: onupdateframetitle](#onupdateframetitle)|Das Framework ruft diese Methode auf, um die Titelleiste des Rahmen Fensters zu aktualisieren.|
+|[CFrameWndEx:: onupdatepanemenu](#onupdatepanemenu)|Wird von Framework aufgerufen, um das Bereich Menü zu aktualisieren.|
+|[CFrameWndEx:: onwindowposchge](#onwindowposchanged)|Wird von Framework aufgerufen, wenn sich die Frame Größe, Position oder z-Reihenfolge aufgrund eines Aufrufs einer Fenster Verwaltungsmethode geändert hat.|
+|[CFrameWndEx::P anefrompoint](#panefrompoint)|Gibt den andockbaren Bereich zurück, der den angegebenen Punkt enthält.|
+|[CFrameWndEx::P retranslatemess Age](#pretranslatemessage)|Behandelt bestimmte Fenster Meldungen, bevor Sie gesendet werden.|
+|[CFrameWndEx:: Neuberechnung](#recalclayout)|Passt das Layout des Frames und seiner untergeordneten Fenster an.|
+|[CFrameWndEx:: removepanefromdockmanager](#removepanefromdockmanager)|Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der internen Liste im Docking-Manager.|
+|[CFrameWndEx:: setdockstate](#setdockstate)|Stellt das Andock Layout in den in der Registrierung gespeicherten Andock Zustand wieder her.|
+|[CFrameWndEx:: setprintpreviewframe](#setprintpreviewframe)|Legt das Rahmen Fenster der Druckvorschau fest.|
+|[CFrameWndEx:: setuptoolbarmenu](#setuptoolbarmenu)|Fügt benutzerdefinierte Befehle in ein Symbolleisten Menü ein.|
+|[CFrameWndEx:: showFullscreen](#showfullscreen)|Schaltet den Hauptrahmen zwischen dem Vollbildmodus und dem regulären Modus um.|
+|[CFrameWndEx:: ShowPane](#showpane)|Blendet den angegebenen Bereich ein oder aus.|
+|[CFrameWndEx:: updatecaption](#updatecaption)|Wird von Framework aufgerufen, um die Fensterrahmen Beschriftung zu aktualisieren.|
+|[CFrameWndEx:: WinHelp](#winhelp)|Ruft entweder die `WinHelp` Anwendung oder die kontextbezogene Hilfe auf.|
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie eine Klasse von der `CFrameWndEx` -Klasse geerbt wird. Das Beispiel veranschaulicht die Methoden Signaturen in der-Unterklasse und das Überschreiben der `OnShowPopupMenu` -Methode. Dieser Codeausschnitt ist Teil des [WordPad-Beispiels](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, wie eine Klasse von der `CFrameWndEx`-Klasse geerbt wird. Das Beispiel veranschaulicht die Methoden Signaturen in der-Unterklasse und das Überschreiben der `OnShowPopupMenu`-Methode. Dieser Codeausschnitt ist Teil des [WordPad-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_WordPad#3](../../mfc/reference/codesnippet/cpp/cframewndex-class_1.h)]
 [!code-cpp[NVC_MFC_WordPad#4](../../mfc/reference/codesnippet/cpp/cframewndex-class_2.cpp)]
@@ -308,7 +308,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine Klasse von der `CFrameWndEx
 
 [CFrameWndEx](../../mfc/reference/cframewndex-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxframewndex.h
 
@@ -320,7 +320,7 @@ Passt das Layout des OLE-Client Elements und des Client Bereichs des Frames an.
 void ActiveItemRecalcLayout();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="addpane"></a>CFrameWndEx:: addpane
 
@@ -334,10 +334,10 @@ BOOL AddPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pControlBar*<br/>
+*pcontrolbar*<br/>
 in Ein Steuer Leistenbereich, der registriert werden soll.
 
-*bTail*<br/>
+*btail*<br/>
 in "True", wenn Sie den Steuer Leistenbereich am Ende der Liste hinzufügen möchten. Andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -355,9 +355,9 @@ virtual void AdjustDockingLayout(HDWP hdwp=NULL);
 ### <a name="parameters"></a>Parameter
 
 *hdwp*<br/>
-Ein Handle für eine-Struktur, die die Positionen mehrerer Fenster enthält. .
+Ein Handle für eine-Struktur, die die Positionen mehrerer Fenster enthält. erforderlich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die hdwp-Struktur wird von der [begindeferwindowpos](/windows/win32/api/winuser/nf-winuser-begindeferwindowpos) -Methode initialisiert.
 
@@ -374,7 +374,7 @@ virtual void DelayUpdateFrameMenu(HMENU hMenuAlt);
 *hmenualt*<br/>
 in Handle für ein alternatives Menü.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="dockpane"></a>CFrameWndEx::D ockpane
 
@@ -389,16 +389,16 @@ void DockPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
+*pbar*<br/>
 in Ein Zeiger auf die Steuerleiste, die angedockt werden soll.
 
-*nDockBarID*<br/>
+*ndockbarid*<br/>
 in Die ID der Seite des Rahmen Fensters, an die Andocken werden soll.
 
-*lpRect*<br/>
+*lprect*<br/>
 in Ein Zeiger auf eine Konstante Rect-Struktur, die die Bildschirmposition und-Größe des Fensters angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *ndockbarid* -Parameter kann einen der folgenden Werte aufweisen:
 
@@ -422,17 +422,17 @@ BOOL DockPaneLeftOf(
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
+*pbar*<br/>
 in Ein Zeiger auf das Pane-Objekt, das angedockt werden soll.
 
-*pLeftOf*<br/>
+*pleftof*<br/>
 in Ein Zeiger auf den Bereich links, von dem der von *pbar*angegebene Bereich Andocken soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn *pbar* erfolgreich angedockt ist. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Methode nimmt die durch den *pbar* -Parameter angegebene Symbolleiste an und dockt Sie auf der linken Seite der Symbolleiste an, die durch den Parameter *pleftof* angegeben wird.
 
@@ -446,14 +446,14 @@ BOOL EnableAutoHidePanes(DWORD dwDockStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwDockStyle*<br/>
+*dwdockstyle*<br/>
 in Gibt die Seite des Hauptrahmen Fensters an, an das der Bereich angedockt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn ein Balken Bereich erfolgreich an die Rahmen Fensterseite angedockt ist, die von *dwdockstyle*angegeben wird, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 *dwdockstyle* kann einen der folgenden Werte aufweisen:
 
@@ -461,7 +461,7 @@ TRUE, wenn ein Balken Bereich erfolgreich an die Rahmen Fensterseite angedockt i
 
 - CBRS_ALIGN_BOTTOM: ermöglicht, dass die Steuerleiste am unteren Rand des Client Bereichs eines Rahmen Fensters angedockt wird.
 
-- CBRS_ALIGN_LEFT: ermöglicht, dass die Steuerleiste Links vom Client Bereich eines Rahmen Fensters angedockt wird.
+- CBRS_ALIGN_LEFT: ermöglicht, dass die Steuerleiste an der linken Seite des Client Bereichs eines Rahmen Fensters angedockt wird.
 
 - CBRS_ALIGN_RIGHT: ermöglicht, dass die Steuerleiste an der rechten Seite des Client Bereichs eines Rahmen Fensters angedockt wird.
 
@@ -475,14 +475,14 @@ BOOL EnableDocking(DWORD dwDockStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwDockStyle*<br/>
+*dwdockstyle*<br/>
 in Gibt die Seite des Hauptrahmen Fensters an, in dem die Bereichs Leiste angedockt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn ein Balken Bereich erfolgreich an der angegebenen Seite angedockt werden kann. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Parameter " *dwdockstyle* " kann einen der folgenden Werte aufweisen:
 
@@ -504,7 +504,7 @@ void EnableFullScreenMainMenu(BOOL bEnableMenu);
 
 ### <a name="parameters"></a>Parameter
 
-*bEnableMenu*<br/>
+*benablemenu*<br/>
 in TRUE, wenn das Hauptmenü im Vollbildmodus angezeigt werden soll, andernfalls false.
 
 ##  <a name="enablefullscreenmode"></a>CFrameWndEx:: enablefullscreenmode
@@ -517,14 +517,14 @@ void EnableFullScreenMode(UINT uiFullScreenCmd);
 
 ### <a name="parameters"></a>Parameter
 
-*uiFullScreenCmd*<br/>
+*uifullscreencmd*<br/>
 in Die ID eines Befehls, der den Vollbildmodus aktiviert und deaktiviert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Im Vollbildmodus werden alle andockbaren Steuer leisten, Symbolleisten und Menüs ausgeblendet, und die Größe der aktiven Ansicht wird so angepasst, dass Sie den voll Bildschirm einnimmt.
 
-Wenn Sie den Vollbildmodus aktivieren, müssen Sie eine ID des Befehls angeben, der den Vollbildmodus aktiviert oder deaktiviert. Sie können von `EnableFullScreenMode` der- `OnCreate` Funktion des Haupt Frames aus aufzurufen. Wenn ein Rahmen Fenster in den Vollbildmodus gewechselt wird, erstellt das Framework eine unverankerte Symbolleiste mit einer Schaltfläche, die über die angegebene Befehls-ID verfügt.
+Wenn Sie den Vollbildmodus aktivieren, müssen Sie eine ID des Befehls angeben, der den Vollbildmodus aktiviert oder deaktiviert. Sie können `EnableFullScreenMode` aus der `OnCreate`-Funktion des Haupt Frames abrufen. Wenn ein Rahmen Fenster in den Vollbildmodus gewechselt wird, erstellt das Framework eine unverankerte Symbolleiste mit einer Schaltfläche, die über die angegebene Befehls-ID verfügt.
 
 Wenn Sie das Hauptmenü auf dem Bildschirm behalten möchten, nennen Sie [CFrameWndEx:: enablefullscreenmainmenu](#enablefullscreenmainmenu).
 
@@ -538,7 +538,7 @@ void EnableLoadDockState(BOOL bEnable=TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bEnable*<br/>
+*benabel*<br/>
 in "True", um das Laden des Andock Zustands zu aktivieren, "false", um das Laden des Andock Zustands zu deaktivieren.
 
 ##  <a name="enablepanemenu"></a>CFrameWndEx:: enablepanemenu
@@ -557,22 +557,22 @@ void EnablePaneMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*bEnable*<br/>
+*benabel*<br/>
 in TRUE, um die automatische Handhabung der Popup Menüs der Steuerleiste zu aktivieren. FALSE zum Deaktivieren der automatischen Behandlung der Popup Menüs der Steuerleiste.
 
 *uicustomizecmd*<br/>
 in Die Befehls-ID des Menü Elements " **Anpassen** ".
 
-*strCustomizeLabel*<br/>
+*"trecustomizelabel"*<br/>
 in Die Bezeichnung, die für das Menü Element " **Anpassen** " angezeigt werden soll.
 
-*uiViewToolbarsMenuEntryID*<br/>
+*uiviewtoolbarsmenuentryid*<br/>
 in Die ID eines Symbolleisten-Menü Elements, das das Popup Menü in der Steuerleiste öffnet.
 
-*bContextMenuShowsToolbarsOnly*<br/>
+*bcontextmenushowstoolbarsonly*<br/>
 in Wenn true, zeigt das Kontextmenü der Steuerleiste nur die Liste der Symbolleisten an. Wenn der Wert false ist, wird im Menü die Liste der Symbolleisten und Andock leisten angezeigt.
 
-*bViewMenuShowsToolbarsOnly*<br/>
+*bviewmenushowstoolbarsonly*<br/>
 in Wenn true, zeigt das Steuerelement leisten Menü nur die Liste der Symbolleisten an. Wenn der Wert false ist, wird im Menü die Liste der Symbolleisten und Andock leisten angezeigt.
 
 ##  <a name="getactivepopup"></a>CFrameWndEx:: getactivepopup
@@ -611,7 +611,7 @@ CDockingManager* GetDockingManager();
 
 Ein Zeiger auf die [cdockingmanager-Klasse](../../mfc/reference/cdockingmanager-class.md).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Rahmen Fenster erstellt und verwendet ein [cdockingmanager-Klassen](../../mfc/reference/cdockingmanager-class.md) Objekt, um das Andocken von untergeordneten Fenstern zu verwalten.
 
@@ -637,7 +637,7 @@ CBasePane* GetPane(UINT nID);
 
 ### <a name="parameters"></a>Parameter
 
-*nID*<br/>
+*NID*<br/>
 in Die Steuerelement-ID.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -656,7 +656,7 @@ CMFCRibbonBar* GetRibbonBar();
 
 Zeiger auf die [CMFCRibbonBar-Klasse](../../mfc/reference/cmfcribbonbar-class.md) für den Frame.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="gettearoffbars"></a>CFrameWndEx:: gettearoffbars
 
@@ -668,7 +668,7 @@ const CObList& GetTearOffBars() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf `CObList` ein-Objekt, das eine Auflistung von Zeigern auf die Pane-Objekte enthält, die sich in einem deaktivierten Zustand befinden.
+Ein Verweis auf `CObList` Objekt, das eine Auflistung von Zeigern auf die Pane-Objekte enthält, die sich in einem deaktivierten Zustand befinden.
 
 ##  <a name="gettoolbarbuttontooltiptext"></a>CFrameWndEx:: gettoolbarbuttontooltiptext
 
@@ -682,17 +682,17 @@ virtual BOOL GetToolbarButtonToolTipText(
 
 ### <a name="parameters"></a>Parameter
 
-*pButton*<br/>
+*pbutton*<br/>
 in Ein Zeiger auf eine Symbolleisten Schaltfläche.
 
-*strTTText*<br/>
+*Text*<br/>
 in Der QuickInfo-Text, der für die Schaltfläche angezeigt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die QuickInfo angezeigt wird. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig führt diese Methode keine Aktion aus. Überschreiben Sie diese Methode, wenn Sie die QuickInfo für die Symbolleisten Schaltfläche anzeigen möchten.
 
@@ -709,20 +709,20 @@ BOOL InsertPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pControlBar*<br/>
+*pcontrolbar*<br/>
 Ein Zeiger auf eine Steuerleiste, die in die Liste der Steuerleisten eingefügt und beim Dock-Manager registriert werden soll.
 
-*pTarget*<br/>
+*pTARGET*<br/>
 Ein Zeiger auf eine Steuerleiste vor oder hinter der der Bereich eingefügt werden soll.
 
-*bAfter*<br/>
+*bafter*<br/>
 TRUE, wenn *pcontrolbar* nach *pTARGET*eingefügt werden soll, andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Steuerleiste erfolgreich eingefügt und registriert wurde, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie müssen jede Steuerleiste mithilfe der [CDockingManager Class](../../mfc/reference/cdockingmanager-class.md) registrieren, damit sie am Layout des Docks teilnehmen werden kann.
 
@@ -738,7 +738,7 @@ BOOL IsFullScreen() const;
 
 TRUE, wenn sich das Rahmen Fenster im Vollbildmodus befindet. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können den Vollbildmodus festlegen, indem Sie die [CFrameWndEx:: enablefullscreenmode](#enablefullscreenmode) -Methode aufrufen.
 
@@ -767,20 +767,20 @@ BOOL IsPointNearDockSite(
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 in Die Position des Punkts.
 
-*dwBarAlignment*<br/>
+*dwbaralignment*<br/>
 vorgenommen Der Punkt, an dem der Punkt ausgerichtet ist. Mögliche Werte finden Sie in der Tabelle im Abschnitt "Hinweise".
 
-*bOuterEdge*<br/>
+*bouteredge*<br/>
 vorgenommen TRUE, wenn sich der Punkt in der Nähe des Frame Rahmens befindet. FALSE, wenn sich der Punkt in einem Client Bereich befindet.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn sich der Punkt in einer Ausrichtungs Zone befindet. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der folgenden Tabelle sind die möglichen Werte für den Parameter *dwbaralignment* aufgeführt.
 
@@ -803,7 +803,7 @@ BOOL IsPrintPreview();
 
 TRUE, wenn sich das Rahmen Fenster im Seiten Ansichtsmodus befindet. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="loadframe"></a>CFrameWndEx:: LoadFrame
 
@@ -819,13 +819,13 @@ virtual BOOL LoadFrame(
 
 ### <a name="parameters"></a>Parameter
 
-*nIDResource*<br/>
+*nidresource*<br/>
 in Die Ressourcen-ID, die zum Laden aller Frame Ressourcen verwendet wird.
 
-*dwDefaultStyle*<br/>
+*dwdefaultstyle*<br/>
 in Der Standardstil für das Rahmen Fenster.
 
-*pParentWnd*<br/>
+*pparser*<br/>
 in Ein Zeiger auf das übergeordnete Fenster des Frames.
 
 *pContext*<br/>
@@ -835,7 +835,7 @@ in Ein Zeiger auf eine [ckreatecontext-Struktur](../../mfc/reference/ccreatecont
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="negotiateborderspace"></a>CFrameWndEx:: aushandateborderspace
 
@@ -849,27 +849,27 @@ virtual BOOL NegotiateBorderSpace(
 
 ### <a name="parameters"></a>Parameter
 
-*nBorderCmd*<br/>
+*nbordercmd*<br/>
 in Der Border-Aushandlungs Befehl. Mögliche Werte finden Sie im Abschnitt "Hinweise".
 
-*lpRectBorder*<br/>
+*lprectborder*<br/>
 [in, out] Die Abmessungen des Rahmens.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das Layout neu berechnet werden muss. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der folgenden Tabelle sind die möglichen Werte für den *nbordercmd* -Parameter aufgeführt.
 
-*borderGet*<br/>
+*borderget*<br/>
 Gibt den verfügbaren OLE-Client Bereich an.
 
-*borderRequest*<br/>
+*borderrequest*<br/>
 Anforderungs-OLE-Client Speicher.
 
-*borderSet*<br/>
+*borderset*<br/>
 Legt den OLE-Client Bereich fest.
 
 ##  <a name="onactivate"></a>CFrameWndEx:: onaktivierungs
@@ -885,16 +885,16 @@ afx_msg void OnActivate(
 
 ### <a name="parameters"></a>Parameter
 
-*nState*<br/>
+*nstatusinformationen*<br/>
 in Gibt an, ob der Frame aktiv oder inaktiv ist. Mögliche Werte finden Sie in der Tabelle im Abschnitt "Hinweise".
 
-*pWndOther*<br/>
+*pwndother*<br/>
 in Ein Zeiger auf ein anderes Fenster, das die Benutzereingabe mit der aktuellen wechselt.
 
-*bMinimized*<br/>
+*bminimiert*<br/>
 in Der minimierte Zustand des Frames. TRUE, wenn der Frame minimiert wird. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der folgenden Tabelle sind die möglichen Werte für den *nState* -Parameter aufgeführt.
 
@@ -916,13 +916,13 @@ afx_msg void OnActivateApp(
 
 ### <a name="parameters"></a>Parameter
 
-*bActive*<br/>
+*bAktiv*<br/>
 in TRUE, wenn die Anwendung ausgewählt ist. FALSE, wenn die Anwendung nicht ausgewählt ist.
 
-*dwThreadID*<br/>
+*dwthreadid*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onchangevisualmanager"></a>CFrameWndEx:: onchangevisualmanager
 
@@ -944,9 +944,9 @@ in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer 0 zurück.
+Es wird immer 0 zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onclose"></a>CFrameWndEx:: OnClose
 
@@ -956,7 +956,7 @@ Das Framework ruft diese Methode auf, um den Frame zu schließen.
 afx_msg void OnClose();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn sich der Frame im Seiten Ansichtsmodus befindet, sendet er eine Windows-Meldung, um die Seitenansicht zu schließen. Andernfalls wird der Client deaktiviert, wenn der Frame einen OLE-Client hostet.
 
@@ -972,7 +972,7 @@ virtual BOOL OnCloseDockingPane(CDockablePane* pPane);
 
 TRUE, wenn die Andock Leiste geschlossen werden kann. Andernfalls false
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung bewirkt nichts. Überschreiben Sie diese Methode, wenn Sie das Ausblenden der Andock Leiste behandeln möchten.
 
@@ -988,7 +988,7 @@ virtual BOOL OnCloseMiniFrame(CPaneFrameWnd* pWnd);
 
 TRUE, wenn ein unverankertes Mini Rahmen Fenster geschlossen werden kann. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Methode, wenn Sie das Ausblenden eines unverankerten Mini Rahmen Fensters verarbeiten möchten.
 
@@ -1002,12 +1002,12 @@ virtual void OnClosePopupMenu(CMFCPopupMenu* pMenuPopup);
 
 ### <a name="parameters"></a>Parameter
 
-*pMenuPopup*<br/>
+*pmenupopup*<br/>
 Ein Zeiger auf ein Popupmenü.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework sendet eine WM_DESTROY-Nachricht, wenn es im Begriff ist, das Fenster zu schließen. Überschreiben Sie diese Methode, wenn Sie Benachrichtigungen von `CMFCPopupMenu` Objekten verarbeiten möchten, die zum Rahmen Fenster gehören `CMFCPopupMenu` , wenn ein-Objekt eine WM_DESTROY-Nachricht verarbeitet, die vom Framework gesendet wird, wenn das Fenster geschlossen wird.
+Das Framework sendet eine WM_DESTROY Meldung, wenn es im Begriff ist, das Fenster zu schließen. Überschreiben Sie diese Methode, wenn Sie Benachrichtigungen von `CMFCPopupMenu` Objekten verarbeiten möchten, die zum Rahmen Fenster gehören, wenn ein `CMFCPopupMenu` Objekt eine WM_DESTROY Nachricht verarbeitet, die vom Framework gesendet wird, wenn das Fenster geschlossen wird.
 
 ##  <a name="oncmdmsg"></a>CFrameWndEx:: OnCmdMsg
 
@@ -1023,23 +1023,23 @@ virtual BOOL OnCmdMsg(
 
 ### <a name="parameters"></a>Parameter
 
-*nID*<br/>
+*NID*<br/>
 in Die Befehls-ID.
 
 *nCode*<br/>
 in Kategorie der Befehls Meldung.
 
-*pExtra*<br/>
+*pextra*<br/>
 [in, out] Zeiger auf ein Befehls Objekt.
 
-*pHandlerInfo*<br/>
+*phandlerinfo*<br/>
 [in, out] Zeiger auf eine befehlshandlerstruktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Befehls Meldung behandelt wurde. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="oncontexthelp"></a>CFrameWndEx:: oncontexthelp
 
@@ -1049,7 +1049,7 @@ Wird von Framework aufgerufen, um kontextbezogene Hilfe anzuzeigen.
 afx_msg void OnContextHelp();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="oncreate"></a>CFrameWndEx:: OnCreate
 
@@ -1061,14 +1061,14 @@ afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpCreateStruct*<br/>
+*lpkreatestruct*<br/>
 in Ein Zeiger auf die [kreatestruct-Struktur](/windows/win32/api/winuser/ns-winuser-createstructw) für den neuen Frame.
 
 ### <a name="return-value"></a>Rückgabewert
 
 0, um die Frame Erstellung fortzusetzen. -1, um den Frame zu zerstören.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="ondestroy"></a>CFrameWndEx:: OnDestroy
 
@@ -1078,7 +1078,7 @@ Wird von Framework aufgerufen, wenn der Frame zerstört wird.
 afx_msg void OnDestroy();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Zugriffstasten Tabelle und alle Fenster werden zerstört.
 
@@ -1098,23 +1098,23 @@ virtual BOOL OnDrawMenuImage(
 *pDC*<br/>
 in Ein Zeiger auf einen Gerätekontext.
 
-*pMenuButton*<br/>
+*pmenubutton*<br/>
 in Ein Zeiger auf eine Menü Schaltfläche, deren Bild gerendert wird.
 
-*rectImage*<br/>
-in Ein Zeiger auf eine `Rect` -Struktur, die die Bildschirmposition und die Größe des Bilds angibt.
+*rectimage*<br/>
+in Ein Zeiger auf eine `Rect`-Struktur, die die Bildschirmposition und die Größe des Bilds angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das Framework das Bild erfolgreich rendert. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode, wenn Sie das Bild Rendering für die Menü Elemente anpassen möchten, die zur Menüleiste gehören, `CFrameWndEx` die dem abgeleiteten Objekt gehört.
+Überschreiben Sie diese Methode, wenn Sie das Bild Rendering für die Menü Elemente anpassen möchten, die zur Menüleiste gehören, die im Besitz des `CFrameWndEx` abgeleiteten Objekts ist.
 
 ##  <a name="ondrawmenulogo"></a>CFrameWndEx:: ondrawmenulogo
 
-Wird von Framework aufgerufen, wenn `CMFCPopupMenu` ein-Objekt eine WM_PAINT-Nachricht verarbeitet.
+Wird von Framework aufgerufen, wenn ein `CMFCPopupMenu` Objekt eine WM_PAINT Meldung verarbeitet.
 
 ```
 virtual void OnDrawMenuLogo(
@@ -1128,15 +1128,15 @@ virtual void OnDrawMenuLogo(
 *pDC*<br/>
 in Ein Zeiger auf einen Gerätekontext.
 
-*pMenu*<br/>
+*pmenu*<br/>
 in Ein Zeiger auf das Menü Element.
 
-*rectLogo*<br/>
-in Ein Verweis auf eine Konstante `CRect` Struktur, die die Bildschirmposition und die Größe des Menü Logos angibt.
+*rectlogo*<br/>
+in Ein Verweis auf eine Konstante `CRect`-Struktur, die die Bildschirmposition und die Größe des Menü Logos angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, wenn Sie ein Logo im Popup Menü anzeigen möchten, das zur Menüleiste gehört, die im Besitz `CFrameWndEx` des abgeleiteten Objekts ist.
+Überschreiben Sie diese Funktion, wenn Sie ein Logo im Popup Menü anzeigen möchten, das zur Menüleiste gehört, die sich im Besitz des `CFrameWndEx` abgeleiteten Objekts befindet.
 
 ##  <a name="ondwmcompositionchanged"></a>CFrameWndEx:: ondwmcompositionchanged
 
@@ -1150,17 +1150,17 @@ afx_msg LRESULT OnDWMCompositionChanged(
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
+*UA*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-*lp*<br/>
+*LP*<br/>
 in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer 0 zurück.
+Es wird immer 0 zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onexitsizemove"></a>CFrameWndEx:: onexitsizemove
 
@@ -1174,17 +1174,17 @@ LRESULT OnExitSizeMove(
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
+*UA*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-*lp*<br/>
+*LP*<br/>
 in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer 0 zurück.
+Es wird immer 0 zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="ongetminmaxinfo"></a>CFrameWndEx:: ongetminmaxinfo
 
@@ -1196,10 +1196,10 @@ afx_msg void OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI);
 
 ### <a name="parameters"></a>Parameter
 
-*lpMMI*<br/>
+*lpmmi*<br/>
 in Zeiger auf eine [minmaxinfo](/windows/win32/api/winuser/ns-winuser-minmaxinfo) -Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onidleupdatecmdui"></a>CFrameWndEx:: onidleupdatecmdui
 
@@ -1221,9 +1221,9 @@ in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer 0 zurück.
+Es wird immer 0 zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onlbuttondown"></a>CFrameWndEx:: OnLButtonDown
 
@@ -1238,12 +1238,12 @@ afx_msg void OnLButtonDown(
 ### <a name="parameters"></a>Parameter
 
 *nFlags*<br/>
-in Gibt an, ob der Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in der [WM_LBUTTONDOWN-Benachrichtigung](/windows/win32/inputdev/wm-lbuttondown).
+in Gibt an, ob der Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in [WM_LBUTTONDOWN Benachrichtigung](/windows/win32/inputdev/wm-lbuttondown).
 
-*point*<br/>
+*Punkt*<br/>
 in Gibt die x-und y-Koordinaten des Zeigers relativ zur linken oberen Ecke des Fensters an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onlbuttonup"></a>CFrameWndEx:: onlbuttonup
 
@@ -1258,16 +1258,16 @@ afx_msg void OnLButtonUp(
 ### <a name="parameters"></a>Parameter
 
 *nFlags*<br/>
-in Gibt an, ob der Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in der [WM_LBUTTONUP-Benachrichtigung](/windows/win32/inputdev/wm-lbuttonup).
+in Gibt an, ob der Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in [WM_LBUTTONUP Benachrichtigung](/windows/win32/inputdev/wm-lbuttonup).
 
-*point*<br/>
+*Punkt*<br/>
 in Gibt die x-und y-Koordinaten des Zeigers relativ zur linken oberen Ecke des Fensters an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onmenubuttontoolhittest"></a>CFrameWndEx:: onmenubuttontoolhittest
 
-Wird von Framework aufgerufen, wenn `CMFCToolBarButton` ein-Objekt eine WM_NCHITTEST-Nachricht verarbeitet.
+Wird von Framework aufgerufen, wenn ein `CMFCToolBarButton` Objekt eine WM_NCHITTEST Meldung verarbeitet.
 
 ```
 virtual BOOL OnMenuButtonToolHitTest(
@@ -1277,17 +1277,17 @@ virtual BOOL OnMenuButtonToolHitTest(
 
 ### <a name="parameters"></a>Parameter
 
-*pButton*<br/>
+*pbutton*<br/>
 in Ein Zeiger auf die Schaltfläche der Symbolleiste.
 
-*pTI*<br/>
+*PTI*<br/>
 vorgenommen Ein Zeiger auf eine Tool Informationsstruktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Anwendung den *PTI* -Parameter füllt. Andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode, wenn Sie QuickInfo-Informationen zu einem bestimmten Menü Element bereitstellen möchten.
 
@@ -1304,13 +1304,13 @@ afx_msg LRESULT OnMenuChar(
 
 ### <a name="parameters"></a>Parameter
 
-*nChar*<br/>
+*NCHAR*<br/>
 in Zeichencode für die gedrückte Taste.
 
 *nFlags*<br/>
 in Enthält das MF_POPUP-Flag, wenn das angezeigte Menü ein Untermenü ist. enthält das MF_SYSMENU-Flag, wenn das angezeigte Menü ein Steuerelement Menü ist.
 
-*pMenu*<br/>
+*pmenu*<br/>
 in Zeiger auf ein Menü.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1336,12 +1336,12 @@ afx_msg void OnMouseMove(
 ### <a name="parameters"></a>Parameter
 
 *nFlags*<br/>
-in Gibt an, ob ein Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in der [WM_MOUSEMOVE-Benachrichtigung](/windows/win32/inputdev/wm-mousemove).
+in Gibt an, ob ein Benutzer Modifizierertasten gedrückt hat. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in [WM_MOUSEMOVE Benachrichtigung](/windows/win32/inputdev/wm-mousemove).
 
-*point*<br/>
+*Punkt*<br/>
 in Gibt die x-und y-Koordinaten des Zeigers relativ zur linken oberen Ecke des Fensters an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onmoveminiframe"></a>CFrameWndEx:: onmoveminiframe
 
@@ -1360,7 +1360,7 @@ in Zeiger auf das Fenster der [cpaneframewnd-Klasse](../../mfc/reference/cpanefr
 
 TRUE, wenn das Fenster Fenster nicht angedockt wurde. FALSE, wenn das Fenster Fenster angedockt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onncactivate"></a>CFrameWndEx:: onncaktivierungs
 
@@ -1372,14 +1372,14 @@ afx_msg BOOL OnNcActivate(BOOL bActive);
 
 ### <a name="parameters"></a>Parameter
 
-*bActive*<br/>
+*bAktiv*<br/>
 in TRUE, wenn der Rahmen aktiv gezeichnet werden soll. FALSE, um den Frame inaktiv zu zeichnen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Nicht NULL, um die Standard Verarbeitung fortzusetzen. 0, um zu verhindern, dass der nicht-Client Bereich deaktiviert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onnccalcsize"></a>CFrameWndEx:: onnccalcsize
 
@@ -1393,13 +1393,13 @@ afx_msg void OnNcCalcSize(
 
 ### <a name="parameters"></a>Parameter
 
-*bCalcValidRects*<br/>
+*bcalcvalidrects*<br/>
 in TRUE, wenn die Anwendung einen gültigen Client Bereich angeben muss. andernfalls false.
 
 *lpncsp*<br/>
-in Zeiger auf eine `NCCALCSIZE_PARAMS` -Struktur, die Frame Dimensions Änderungen enthält.
+in Zeiger auf eine `NCCALCSIZE_PARAMS` Struktur, die Frame Dimensions Änderungen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onnchittest"></a>CFrameWndEx:: onnchittest
 
@@ -1411,14 +1411,14 @@ afx_msg LRESULT OnNcHitTest(CPoint point);
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 in Die Position des Zeigers in Bildschirm Koordinaten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger Treffer-Enumerationswert. Eine Liste möglicher Werte finden Sie unter [WM_NCHITTEST-Benachrichtigung](/windows/win32/inputdev/wm-nchittest).
+Ein Zeiger Treffer-Enumerationswert. Eine Liste möglicher Werte finden Sie unter [WM_NCHITTEST Benachrichtigung](/windows/win32/inputdev/wm-nchittest).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onncmousemove"></a>CFrameWndEx:: onncmouummove
 
@@ -1432,13 +1432,13 @@ afx_msg void OnNcMouseMove(
 
 ### <a name="parameters"></a>Parameter
 
-*nHitTest*<br/>
-in Ein Zeiger Treffer-Enumerationswert. Eine Liste möglicher Werte finden Sie unter [WM_NCHITTEST-Benachrichtigung](/windows/win32/inputdev/wm-nchittest).
+*nhittest*<br/>
+in Ein Zeiger Treffer-Enumerationswert. Eine Liste möglicher Werte finden Sie unter [WM_NCHITTEST Benachrichtigung](/windows/win32/inputdev/wm-nchittest).
 
-*point*<br/>
+*Punkt*<br/>
 in Die Position des Zeigers in Bildschirm Koordinaten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onncpaint"></a>CFrameWndEx:: onncpaint
 
@@ -1448,7 +1448,7 @@ Wird von Framework aufgerufen, wenn der nicht-Client Bereich gezeichnet werden m
 afx_msg void OnNcPaint();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onpanecheck"></a>CFrameWndEx:: onpanecheck
 
@@ -1460,14 +1460,14 @@ afx_msg BOOL OnPaneCheck(UINT nID);
 
 ### <a name="parameters"></a>Parameter
 
-*nID*<br/>
+*NID*<br/>
 in Steuerelement-ID eines Bereichs.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn der Befehl behandelt wurde. "False", um die Befehls Verarbeitung fortzusetzen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onpostpreviewframe"></a>CFrameWndEx:: onpostpreviewframe
 
@@ -1489,9 +1489,9 @@ in TRUE, wenn sich der Rahmen im Seiten Ansichtsmodus befindet. FALSE, wenn der 
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer 0 zurück.
+Es wird immer 0 zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onpowerbroadcast"></a>CFrameWndEx:: onpowerbroadcast
 
@@ -1505,17 +1505,17 @@ afx_msg LRESULT OnPowerBroadcast(
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
-in Das Energie Verwaltungs Ereignis. Eine Liste möglicher Werte finden Sie unter [WM_POWERBROADCAST Message](/windows/win32/Power/wm-powerbroadcast).
+*UA*<br/>
+in Das Energie Verwaltungs Ereignis. Eine Liste möglicher Werte finden Sie unter [WM_POWERBROADCAST Meldung](/windows/win32/Power/wm-powerbroadcast).
 
-*lp*<br/>
+*LP*<br/>
 in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das Ergebnis ist der Aufruf der Standardfenster Prozedur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onsetmenu"></a>CFrameWndEx:: onsetmenu
 
@@ -1531,13 +1531,13 @@ BOOL OnSetMenu(HMENU hmenu);
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
+*UA*<br/>
 in Handle für das neue Rahmen Fenstermenü.
 
-*lp*<br/>
+*LP*<br/>
 in Handle für das neue Fenstermenü.
 
-*hmenu*<br/>
+*HMENU*<br/>
 in Handle für das neue Rahmen Fenstermenü.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1546,7 +1546,7 @@ LRESULT ist das Ergebnis des Aufruf der standardmäßigen Fenster Prozedur.
 
 Bool ist true, wenn das Ereignis behandelt wurde. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onsetpreviewmode"></a>CFrameWndEx:: onsetpreviewmode
 
@@ -1560,13 +1560,13 @@ virtual void OnSetPreviewMode(
 
 ### <a name="parameters"></a>Parameter
 
-*bPreview*<br/>
+*bpreview*<br/>
 in TRUE, um die Seitenansicht zu aktivieren; FALSE zum Deaktivieren der Druckvorschau.
 
 *pState*<br/>
-in Zeiger auf eine `CPrintPreviewState` Frame Zustands Struktur.
+in Zeiger auf eine `CPrintPreviewState` Frame-Status Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onsettext"></a>CFrameWndEx:: onsettext
 
@@ -1590,7 +1590,7 @@ in Zeiger auf den Text für das Fenster.
 
 Rückgabewert von einem-Aufrufe an [defwindowproc](/windows/win32/api/winuser/nf-winuser-defwindowprocw).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onshowcustomizepane"></a>CFrameWndEx:: onshowcustomizepane
 
@@ -1604,17 +1604,17 @@ virtual BOOL OnShowCustomizePane(
 
 ### <a name="parameters"></a>Parameter
 
-*pMenuPane*<br/>
+*pmenupane*<br/>
 in Ein Zeiger auf den Bereich für die schnelle Anpassung.
 
-*uiToolbarID*<br/>
+*uitoolbarid*<br/>
 in Die Steuerelement-ID der Symbolleiste, die angepasst werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Diese Methode gibt immer true zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Menü für die schnelle Anpassung ist ein Popup Menü, das angezeigt wird, wenn Sie auf die Schaltfläche Anpassen der Symbolleiste klicken.
 
@@ -1635,7 +1635,7 @@ in TRUE, wenn die Anwendung die Bereiche anzeigt. Andernfalls false.
 
 Diese Methode gibt immer false zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung zeigt die Bereiche, wenn *bShow* den Wert true aufweist und die Bereiche ausgeblendet sind oder wenn *bShow* den Wert false aufweist und die Bereiche sichtbar sind.
 
@@ -1653,14 +1653,14 @@ virtual BOOL OnShowPopupMenu(CMFCPopupMenu* pMenu);
 
 ### <a name="parameters"></a>Parameter
 
-*pMenu*<br/>
+*pmenu*<br/>
 in Ein Zeiger auf ein Popupmenü.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das Popup Menü sichtbar ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um benutzerdefinierten Code auszuführen, wenn das Framework ein Popup Menü anzeigt. Überschreiben Sie diese Methode z. b., um die Hintergrundfarbe der Befehle in einem Popupmenü zu ändern.
 
@@ -1678,7 +1678,7 @@ afx_msg void OnSize(
 ### <a name="parameters"></a>Parameter
 
 *nType*<br/>
-in Der Typ der Größe der Größe. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in der [WM_SIZE-Benachrichtigung](/windows/win32/winmsg/wm-size).
+in Der Typ der Größe der Größe. Mögliche Werte finden Sie unter dem Parameter " *wParam* " in [WM_SIZE Benachrichtigung](/windows/win32/winmsg/wm-size).
 
 *verschoben*<br/>
 in Neue Breite des Rahmens in Pixel.
@@ -1686,7 +1686,7 @@ in Neue Breite des Rahmens in Pixel.
 *CY*<br/>
 in Die neue Höhe des Frames in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onsizing"></a>CFrameWndEx:: onsizing
 
@@ -1700,13 +1700,13 @@ afx_msg void OnSizing(
 
 ### <a name="parameters"></a>Parameter
 
-*fwSide*<br/>
-in Der Rand des Rahmens, der verschoben wird. Weitere Informationen finden Sie unter dem Parameter " *wParam* " in [WM_SIZING Notification](/windows/win32/winmsg/wm-sizing)
+*die Seite*<br/>
+in Der Rand des Rahmens, der verschoben wird. Weitere Informationen finden *Sie unter* [WM_SIZING Benachrichtigung](/windows/win32/winmsg/wm-sizing).
 
-*pRect*<br/>
+*vorab ausführen*<br/>
 [in, out] Zeiger auf eine [CRect](../../atl-mfc-shared/reference/crect-class.md) -oder [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Koordinaten des Frames enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onsyscolorchange"></a>CFrameWndEx:: onsyscolorchange
 
@@ -1716,7 +1716,7 @@ Wird von Framework aufgerufen, wenn sich die Systemfarben ändern.
 void OnSysColorChange();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="ontearoffmenu"></a>CFrameWndEx:: ontearoffmenu
 
@@ -1730,17 +1730,17 @@ virtual BOOL OnTearOffMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*pMenuPopup*<br/>
+*pmenupopup*<br/>
 in Ein Zeiger auf ein Popupmenü.
 
-*pBar*<br/>
+*pbar*<br/>
 in Ein Zeiger auf einen deaktivierten Balken.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das Popup Menü mit der abtrenn Leiste aktiviert ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um benutzerdefinierten Code auszuführen, wenn das Framework eine Steuerleiste anzeigt.
 
@@ -1758,17 +1758,17 @@ afx_msg LRESULT OnToolbarContextMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
+*UA*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-*lp*<br/>
+*LP*<br/>
 in Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt immer 1 zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="ontoolbarcreatenew"></a>CFrameWndEx:: ontoolbarkreatenew
 
@@ -1782,17 +1782,17 @@ afx_msg LRESULT OnToolbarCreateNew(
 
 ### <a name="parameters"></a>Parameter
 
-*wp*<br/>
+*UA*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-*lp*<br/>
+*LP*<br/>
 in Zeiger auf den Text für die Titelleiste der Symbolleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf die neue Symbolleiste. oder NULL, wenn keine Symbolleiste erstellt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="ontoolbardelete"></a>CFrameWndEx:: ontoolbardelete
 
@@ -1809,14 +1809,14 @@ afx_msg LRESULT OnToolbarDelete(
 *genutzt*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-*lp*<br/>
+*LP*<br/>
 in Zeiger auf eine Symbolleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Symbolleiste gelöscht wurde. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onupdateframemenu"></a>CFrameWndEx:: onupdateframemenu
 
@@ -1831,7 +1831,7 @@ virtual void OnUpdateFrameMenu(HMENU hMenuAlt);
 *hmenualt*<br/>
 in Handle für das Alternative Menü.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onupdateframetitle"></a>CFrameWndEx:: onupdateframetitle
 
@@ -1843,10 +1843,10 @@ virtual void OnUpdateFrameTitle(BOOL bAddToTitle);
 
 ### <a name="parameters"></a>Parameter
 
-*bAddToTitle*<br/>
+*baddzu Title*<br/>
 in TRUE, um den aktiven Dokumenttitel der Rahmen Fenstertitelleiste hinzuzufügen. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onupdatepanemenu"></a>CFrameWndEx:: onupdatepanemenu
 
@@ -1861,7 +1861,7 @@ afx_msg void OnUpdatePaneMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 in Zeiger auf das Pane-Benutzeroberflächen Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="onwindowposchanged"></a>CFrameWndEx:: onwindowposchge
 
@@ -1876,7 +1876,7 @@ afx_msg void OnWindowPosChanged(WINDOWPOS FAR* lpwndpos);
 *lpwndpos*<br/>
 in Zeiger auf eine [WINDOWPOS](/windows/win32/api/winuser/ns-winuser-windowpos) -Struktur, die die neue Größe und Position enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="panefrompoint"></a>CFrameWndEx::P anefrompoint
 
@@ -1898,26 +1898,26 @@ CBasePane* PaneFromPoint(
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 in Die Bildschirm Koordinaten des Punkts, der überprüft werden soll.
 
 *nsensitivität*<br/>
 in Erweitern Sie das umgebende Rechteck jeder Steuerleiste um diesen Betrag, wenn Sie nach Punkt suchen.
 
-*bExactBar*<br/>
+*bexactbar*<br/>
 in TRUE, um den *nsensitivitäts* -Parameter zu ignorieren. andernfalls false.
 
-*pRTCBarType*<br/>
+*prtcbartype*<br/>
 in Wenn nicht NULL, durchsucht die Methode nur die Steuer leisten des angegebenen Typs.
 
-*dwAlignment*<br/>
+*dwalignment*<br/>
 vorgenommen Wenn der Vorgang erfolgreich ist, enthält dieser Parameter die Seite der Steuerleiste, die dem angegebenen Punkt am nächsten ist. Andernfalls ist dieser Parameter nicht initialisiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf eine Steuerleiste, die den *Punkt*enthält. NULL, wenn kein Steuerelement gefunden wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit dieser Methode werden alle Steuer leisten in der Anwendung nach einem *Punkt*durchsucht.
 
@@ -1933,14 +1933,14 @@ virtual BOOL PreTranslateMessage(MSG* pMsg);
 
 ### <a name="parameters"></a>Parameter
 
-*pMsg*<br/>
+*pmsg*<br/>
 in Ein Zeiger auf eine [msg](/windows/win32/api/winuser/ns-winuser-msg) -Struktur, die die zu verarbeitende Meldung enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn die Meldung behandelt wurde und nicht weitergeleitet werden soll. 0, wenn die Meldung nicht verarbeitet wurde und gesendet werden sollte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="recalclayout"></a>CFrameWndEx:: Neuberechnung
 
@@ -1952,10 +1952,10 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bNotify*<br/>
+*bbenachrichtigen*<br/>
 in Gibt an, ob das OLE-Client Element über die Layoutänderung benachrichtigt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode wird aufgerufen, wenn sich die Größe des Rahmen Fensters geändert hat oder Steuer leisten angezeigt oder ausgeblendet werden.
 
@@ -1974,22 +1974,22 @@ void RemovePaneFromDockManager(
 
 ### <a name="parameters"></a>Parameter
 
-*pControlBar*<br/>
+*pcontrolbar*<br/>
 in Ein Zeiger auf den Bereich der Steuerleiste, der entfernt werden soll.
 
-*bDestroy*<br/>
+*bdestroy*<br/>
 in TRUE, wenn die Steuerleiste nach dem Entfernen zerstört werden soll. Andernfalls false.
 
-*bAdjustLayout*<br/>
+*banpassungen-Layout*<br/>
 in TRUE, wenn das Andock Layout angepasst werden soll. Andernfalls false.
 
-*bAutoHide*<br/>
+*bauherum ausblenden*<br/>
 in TRUE, wenn die Steuerleiste im Modus für automatisches ausblenden angezeigt wird. Andernfalls false.
 
-*pBarReplacement*<br/>
+*pbarreplace*<br/>
 in Ein Zeiger auf einen Bereich, der den entfernten Bereich ersetzt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie diese Methode, um eine Steuerleiste aus dem Andock Layout des Rahmen Fensters zu entfernen.
 
@@ -2006,7 +2006,7 @@ void SetDockState(const CDockState& state);
 ### <a name="parameters"></a>Parameter
 
 *state*<br/>
-Der Andock Zustand. Konvertiert die Zeichenfolgendarstellung einer Zahl in einem angegebenen Stil und einem kulturspezifischen Format in die entsprechende 32-Bit-Ganzzahl mit Vorzeichen.
+Der Andock Zustand. Dieser Parameter wird ignoriert.
 
 ##  <a name="setprintpreviewframe"></a>CFrameWndEx:: setprintpreviewframe
 
@@ -2018,10 +2018,10 @@ void SetPrintPreviewFrame(CFrameWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pWnd*<br/>
+*folgenden*<br/>
 in Zeiger auf ein Druck Ansichts Rahmen Fenster.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="setuptoolbarmenu"></a>CFrameWndEx:: setuptoolbarmenu
 
@@ -2036,16 +2036,16 @@ void SetupToolbarMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*menu*<br/>
-in Ein `CMenu` -Objekt, das geändert werden soll.
+*stehen*<br/>
+in Ein `CMenu` Objekt, das geändert werden soll.
 
-*uiViewUserToolbarCmdFirst*<br/>
+*uiviewusertoolbarcmdfirst*<br/>
 in Der erste benutzerdefinierte Befehl.
 
-*uiViewUserToolbarCmdLast*<br/>
+*uiviewusertoolbarcmdlast*<br/>
 in Der letzte benutzerdefinierte Befehl.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Framework speichert benutzerdefinierte Befehle in einer Liste. Verwenden Sie *uiviewusertoolbarcmdfirst* und *uiviewusertoolbarcmdlist* , um die Indizes der einzufügenden Befehle anzugeben.
 
@@ -2071,13 +2071,13 @@ void ShowPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
+*pbar*<br/>
 in Ein Zeiger auf die anzuzeigende oder auszublenden Steuerleiste.
 
 *bShow*<br/>
 in TRUE gibt an, dass die Anwendung die Steuerleiste anzeigt. Andernfalls verbirgt die Anwendung die Steuerleiste.
 
-*bDelay*<br/>
+*bdelay*<br/>
 in Wenn true, wird die Anpassung des Docking Layouts verzögert, bis das Framework [CFrameWndEx:: anpassdockinglayout](#adjustdockinglayout)aufruft. Andernfalls berechnen Sie das Andock Layout sofort neu.
 
 *bactivate*<br/>
@@ -2091,7 +2091,7 @@ Wird von Framework aufgerufen, um die Fensterrahmen Beschriftung zu aktualisiere
 void UpdateCaption();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ##  <a name="winhelp"></a>CFrameWndEx:: WinHelp
 
@@ -2105,15 +2105,15 @@ virtual void WinHelp(
 
 ### <a name="parameters"></a>Parameter
 
-*dwData*<br/>
+*dwdata*<br/>
 Daten, die vom *ncmd* -Parameter abhängen. Eine Liste möglicher Werte finden Sie unter [WinHelp](/windows/win32/api/winuser/nf-winuser-winhelpw).
 
-*nCmd*<br/>
+*ncmd*<br/>
 Der Help-Befehl. Eine Liste möglicher Werte finden Sie unter [WinHelp](/windows/win32/api/winuser/nf-winuser-winhelpw).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

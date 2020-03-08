@@ -8,15 +8,15 @@ helpviewer_keywords:
 - namespaces [C++]
 ms.assetid: d1a5a9ab-1cad-47e6-a82d-385bb77f4188
 ms.openlocfilehash: ae3006dd1b17ec38240a318af6cfcac5c7d6bf49
-ms.sourcegitcommit: bd7ddc044f9083246614b602ef6a758775313214
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866037"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856669"
 ---
 # <a name="namespaces-c"></a>Namespaces (C++)
 
-Ein Namespace ist ein deklarativer Bereich, der einen Gültigkeitsbereich für die darin enthaltenen Bezeichner darstellt (die Namen von Typen, Funktionen, Variablen usw.). Namespaces werden verwendet, um Code in logischen Gruppen zu organisieren und Namenskonflikte zu vermeiden, die insbesondere dann auftreten können, wenn die Codebasis mehrere Bibliotheken enthält. Alle Bezeichner im Gültigkeitsbereich des Namespaces sind ohne Qualifizierung füreinander sichtbar. Bezeichner außerhalb des Namespace können mithilfe des voll qualifizierten Namens für jeden Bezeichner auf die Member zugreifen, z `std::vector<std::string> vec;`. b. durch eine [using-Deklaration](../cpp/using-declaration.md) für einen einzelnen`using std::string`Bezeichner () oder eine [using-Direktive](../cpp/namespaces-cpp.md#using_directives) für alle die Bezeichner im-Namespace (`using namespace std;`). Der Code in Headerdateien muss immer den vollqualifizierten Namespacenamen verwenden.
+Ein Namespace ist ein deklarativer Bereich, der einen Gültigkeitsbereich für die darin enthaltenen Bezeichner darstellt (die Namen von Typen, Funktionen, Variablen usw.). Namespaces werden verwendet, um Code in logischen Gruppen zu organisieren und Namenskonflikte zu vermeiden, die insbesondere dann auftreten können, wenn die Codebasis mehrere Bibliotheken enthält. Alle Bezeichner im Gültigkeitsbereich des Namespaces sind ohne Qualifizierung füreinander sichtbar. Bezeichner außerhalb des Namespace können mithilfe des voll qualifizierten Namens für jeden Bezeichner auf die Member zugreifen, z. b. `std::vector<std::string> vec;`oder else durch eine [using-Deklaration](../cpp/using-declaration.md) für einen einzelnen Bezeichner (`using std::string`) oder eine [using-Direktive](../cpp/namespaces-cpp.md#using_directives) für alle Bezeichner im Namespace (`using namespace std;`). Der Code in Headerdateien muss immer den vollqualifizierten Namespacenamen verwenden.
 
 Das folgende Beispiel zeigt eine Namespacedeklaration und drei Verfahren, mit denen Code außerhalb des Namespaces auf die Member zugreifen kann.
 
@@ -98,7 +98,7 @@ int ContosoDataServer::Bar(){return 0;}
 
 Ein Namespace kann in mehreren Blöcken in einer einzelnen Datei oder in mehreren Dateien deklariert werden. Der Compiler verbindet die Teile während der Vorverarbeitung, und der resultierende Namespace enthält alle Member, die in allen Teilen deklariert sind. Ein Beispiel hierfür ist der std-Namespace, der in jeder der Headerdateien in der Standardbibliothek deklariert wird.
 
-Member eines benannten Namespace können außerhalb des Namespace definiert werden, in dem Sie durch explizite Qualifizierung des definierten Namens deklariert werden. Allerdings muss sich die Definition nach der Deklaration in einem Namespace befinden, der den Namespace der Deklaration einschließt. Beispiel:
+Member eines benannten Namespaces können außerhalb des Namespaces definiert werden, in dem sie von Explizite Qualifizierung des Namens deklariert werden, der definiert wird. Allerdings muss sich die Definition nach der Deklaration in einem Namespace befinden, der den Namespace der Deklaration einschließt. Beispiel:
 
 ```cpp
 // defining_namespace_members.cpp
@@ -123,7 +123,7 @@ Wenn ein Bezeichner nicht in einem expliziten Namespace deklariert ist, ist er T
 
 ## <a name="the-std-namespace"></a>Der Namespace "std"
 
-Alle C++ Standard Bibliothekstypen und-Funktionen werden im Namespace oder in `std` `std`Namespaces deklariert, die in geschachtelt sind.
+Alle C++ Standard Bibliothekstypen und-Funktionen werden in den `std` Namespaces oder Namespaces deklariert, die in `std`geschachtelt sind.
 
 ## <a name="nested-namespaces"></a>Geschachtelte Namespaces
 
@@ -205,7 +205,7 @@ Inlinenamespaces können als Mechanismus für die Versionskontrolle verwendet we
 
 Das inline-Schlüsselwort muss auf die erste Deklaration des Namespaces in einer Kompilierungseinheit angewendet werden.
 
-Das folgende Beispiel zeigt zwei Versionen einer Schnittstelle, beide in einem geschachtelten Namespace. Der `v_20`-Namespace weist einige Änderungen gegenüber der `v_10`-Schnittstelle auf und ist als Inline gekennzeichnet. Clientcode, der die neue Bibliothek verwendet `Contoso::Funcs::Add` aufruft, ruft die v_20-Version auf. Bei Code, der versucht, `Contoso::Funcs::Divide` aufzurufen, wird jetzt ein Fehler zur Kompilierzeit ausgegeben. Wenn diese Funktion wirklich benötigt wird, kann durch explizites Aufrufen von `Contoso::v_10::Funcs::Divide` immer noch auf die `v_10`-Version zugegriffen werden.
+Das folgende Beispiel zeigt zwei Versionen einer Schnittstelle, beide in einem geschachtelten Namespace. Der `v_20`-Namespace weist einige Änderungen gegenüber der `v_10`-Schnittstelle auf und ist als Inline gekennzeichnet. Clientcode, der die neue Bibliothek verwendet `Contoso::Funcs::Add` aufruft, ruft die v_20-Version auf. Bei Code, der versucht, `Contoso::Funcs::Divide` aufzurufen, wird jetzt ein Fehler zur Kompilierzeit ausgegeben. Wenn diese Funktion wirklich benötigt wird, kann durch explizites Aufrufen von `v_10` immer noch auf die `Contoso::v_10::Funcs::Divide`-Version zugegriffen werden.
 
 ```cpp
 namespace Contoso
@@ -264,6 +264,6 @@ namespace
 
 Dies wird als unbenannter oder anonymer Namespace bezeichnet und ist hilfreich, wenn Sie Variablen Deklarationen für Code in anderen Dateien unsichtbar machen möchten (d. h., Sie geben interne Verknüpfungen an), ohne einen benannten Namespace erstellen zu müssen. Der gesamte Code in einer bestimmten Datei kann die Bezeichner in einem unbenannten Namespace sehen, aber die Bezeichner, zusammen mit dem Namespace selbst, sind außerhalb dieser Datei nicht sichtbar – oder genauer gesagt außerhalb der Übersetzungseinheit.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Deklarationen und Definitionen](declarations-and-definitions-cpp.md)
