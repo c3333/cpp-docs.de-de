@@ -6,17 +6,17 @@ f1_keywords:
 - unordered_map/std::operator==
 ms.assetid: 9d5add0b-84bd-4a79-bd82-3f58b55145ed
 ms.openlocfilehash: fe4877bc5b371a2570c18950bac36a003078ccc7
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68454768"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78873972"
 ---
-# <a name="ltunorderedmapgt-operators"></a>&lt;unordered_map&gt;-Operatoren
+# <a name="ltunordered_mapgt-operators"></a>&lt;unordered_map&gt;-Operatoren
 
 |||||
 |-|-|-|-|
-|[Operator!=](#op_neq)|[operator==](#op_eq_eq)|[Operator!=](#op_neq_multimap)|[operator==](#op_eq_eq_multimap)|
+|[operator!=](#op_neq)|[operator==](#op_eq_eq)|[operator!=](#op_neq_multimap)|[operator==](#op_eq_eq_multimap)|
 
 ## <a name="op_neq"></a> operator!=
 
@@ -28,17 +28,17 @@ bool operator!=(const unordered_map <Key, Type, Hash, Pred, Allocator>& left, co
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `unordered_map`.
+*Linker*\
+Ein Objekt des Typs `unordered_map`.
 
-*Richting*\
-Ein Objekt vom Typ `unordered_map`.
+*Rechte*\
+Ein Objekt des Typs `unordered_map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true** , wenn die unordered_maps nicht gleich sind. **false** , wenn Sie gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die beliebige Reihenfolge, in der unordered_map-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_map-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -92,17 +92,17 @@ bool operator==(const unordered_map <Key, Type, Hash, Pred, Allocator>& left, co
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `unordered_map`.
+*Linker*\
+Ein Objekt des Typs `unordered_map`.
 
-*Richting*\
-Ein Objekt vom Typ `unordered_map`.
+*Rechte*\
+Ein Objekt des Typs `unordered_map`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true** , wenn die unordered_maps gleich sind. **false** , wenn Sie nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die beliebige Reihenfolge, in der unordered_map-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_map-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -156,17 +156,17 @@ bool operator!=(const unordered_multimap <Key, Type, Hash, Pred, Allocator>& lef
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `unordered_multimap`.
+*Linker*\
+Ein Objekt des Typs `unordered_multimap`.
 
-*Richting*\
-Ein Objekt vom Typ `unordered_multimap`.
+*Rechte*\
+Ein Objekt des Typs `unordered_multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true** , wenn die unordered_multimaps nicht gleich sind. **false** , wenn Sie gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die beliebige Reihenfolge, in der unordered_multimap-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_multimap-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -221,17 +221,17 @@ bool operator==(const unordered_multimap <Key, Type, Hash, Pred, Allocator>& lef
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `unordered_multimap`.
+*Linker*\
+Ein Objekt des Typs `unordered_multimap`.
 
-*Richting*\
-Ein Objekt vom Typ `unordered_multimap`.
+*Rechte*\
+Ein Objekt des Typs `unordered_multimap`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **true** , wenn die unordered_multimaps gleich sind. **false** , wenn Sie nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die beliebige Reihenfolge, in der unordered_multimap-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_multimap-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -276,6 +276,6 @@ int main( )
 
 `um2 == um3: false`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<unordered_map>](../standard-library/unordered-map.md)

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - std::make_error_condition [C++]
 - std::swap [C++]
 ms.openlocfilehash: 5435c3b9e10f151fc77c72b58c93510b6a867ce1
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447324"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865172"
 ---
 # <a name="ltfuturegt-functions"></a>&lt;future&gt;-Funktionen
 
@@ -44,10 +44,10 @@ future<typename result_of<Fn(ArgTypes...)>::type>
 
 ### <a name="parameters"></a>Parameter
 
-*Policy*\
+*Richtlinien*\
 Ein [launch](../standard-library/future-enums.md#launch)-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Definitionen von Abkürzungen:
 
@@ -63,9 +63,9 @@ Die zweite Funktion gibt ein `future<Ty>`-Objekt zurück, dessen *assoziierter a
 
 Sofern `decay<Fn>::type` nicht ein anderer Typ als "launch" ist, ist die zweite Funktion nicht an der Überladungsauflösung beteiligt.
 
-Der C++ Standardstatus gibt an, dass die Funktion einen neuen Thread erstellt, wenn die Richtlinie Launch:: Async lautet. Die Microsoft-Implementierung ist jedoch zurzeit nicht kompatibel. Er ruft seine Threads aus dem Windows-Thread Pool ab, der in manchen Fällen einen wiederverwendeten Thread anstelle eines neuen bereitstellen kann. Dies bedeutet, dass `launch::async` die Richtlinie tatsächlich als `launch::async|launch::deferred`implementiert wird.  Eine andere Implikation der Thread Pool basierten Implementierung besteht darin, dass es keine Garantie gibt, dass Thread lokale Variablen zerstört werden, wenn der Thread abgeschlossen ist. Wenn der Thread wieder verwendet wird und für einen neuen-Aufrufwert `async`bereitgestellt wird, sind die alten Variablen weiterhin vorhanden. Daher wird empfohlen, keine lokalen Thread Variablen mit zu `async`verwenden.
+Der C++ Standardstatus gibt an, dass die Funktion einen neuen Thread erstellt, wenn die Richtlinie Launch:: Async lautet. Die Microsoft-Implementierung ist jedoch zurzeit nicht kompatibel. Er ruft seine Threads aus dem Windows-Thread Pool ab, der in manchen Fällen einen wiederverwendeten Thread anstelle eines neuen bereitstellen kann. Dies bedeutet, dass die `launch::async`-Richtlinie tatsächlich als `launch::async|launch::deferred`implementiert wird.  Eine andere Implikation der Thread Pool basierten Implementierung besteht darin, dass es keine Garantie gibt, dass Thread lokale Variablen zerstört werden, wenn der Thread abgeschlossen ist. Wenn der Thread wieder verwendet und einem neuen `async`aufgerufen wird, sind die alten Variablen weiterhin vorhanden. Daher wird empfohlen, keine lokalen Thread Variablen mit `async`zu verwenden.
 
-Wenn die *Richtlinie* ist, wird `launch::deferred`der zugeordnete asynchrone Zustand durch die Funktion als mit einer verzögerten *Funktion* markiert und wird zurückgegeben. Der erste Aufruf einer nicht zeitgesteuerten Funktion, die darauf wartet, dass der entsprechende assoziierte asynchrone Zustand bereit ist, ruft effektiv die verzögerte Funktion auf, indem `INVOKE(dfn, dargs..., Ty)` ausgewertet wird.
+Wenn die *Richtlinie* `launch::deferred`ist, markiert die Funktion ihren zugeordneten asynchronen Zustand als mit einer *verzögerten Funktion* und gibt zurück. Der erste Aufruf einer nicht zeitgesteuerten Funktion, die darauf wartet, dass der entsprechende assoziierte asynchrone Zustand bereit ist, ruft effektiv die verzögerte Funktion auf, indem `INVOKE(dfn, dargs..., Ty)` ausgewertet wird.
 
 In allen Fällen wird der assoziierte asynchrone Zustand des `future`-Objekts nicht auf *bereit* festgelegt, bis die Auswertung von `INVOKE(dfn, dargs..., Ty)` abgeschlossen ist; entweder, indem eine Ausnahme ausgelöst wird oder indem die Rückgabe auf die normale Weise erfolgt. Das Ergebnis des assoziierten asynchronen Zustands ist eine Ausnahm, sofern eine ausgelöst wurde, oder ein beliebiger Wert, der von der Auswertung zurückgegeben wird.
 
@@ -92,7 +92,7 @@ inline error_code make_error_code(future_errc Errno) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Errno*\
+*Errno* -\
 Ein [future_errc](../standard-library/future-enums.md#future_errc)-Wert, mit dem die gemeldeten Fehler identifiziert werden.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -109,14 +109,14 @@ inline error_condition make_error_condition(future_errc Errno) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Errno*\
+*Errno* -\
 Ein [future_errc](../standard-library/future-enums.md#future_errc)-Wert, mit dem die gemeldeten Fehler identifiziert werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `error_condition(static_cast<int>(Errno), future_category());`
 
-## <a name="swap"></a>  swap
+## <a name="swap"></a> swap
 
 Tauscht den *zugeordneten asynchronen Zustand* eines `promise`-Objekts mit dem des anderen aus.
 
@@ -130,12 +130,12 @@ void swap(packaged_task<Ty(ArgTypes...)>& Left, packaged_task<Ty(ArgTypes...)>& 
 
 ### <a name="parameters"></a>Parameter
 
-*Linken*\
+*Linker*\
 Das linke `promise`-Objekt.
 
-*Richting*\
+*Rechte*\
 Das rechte `promise`-Objekt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<future>](../standard-library/future.md)

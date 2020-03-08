@@ -14,11 +14,11 @@ helpviewer_keywords:
 - structured_task_group class
 ms.assetid: 742afa8c-c7b6-482c-b0ba-04c809927b22
 ms.openlocfilehash: 93dd79b755f79dcb4857c1b1c4856362b0bd45dd
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142633"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78884117"
 ---
 # <a name="structured_task_group-class"></a>structured_task_group-Klasse
 
@@ -37,7 +37,7 @@ class structured_task_group;
 |Name|BESCHREIBUNG|
 |----------|-----------------|
 |[structured_task_group](#ctor)|Ist überladen. Erstellt ein neues `structured_task_group`-Objekt.|
-|[~ structured_task_group-Dekonstruktor](#dtor)|Zerstört ein `structured_task_group` -Objekt. Es wird erwartet, dass Sie vor dem Ausführen des Dekonstruktors entweder die `wait`-oder `run_and_wait`-Methode für das-Objekt aufruft, es sei denn, der Dekonstruktor wird aufgrund einer Ausnahme aufgrund der Stapel Auflösung ausgeführt.|
+|[~ structured_task_group-Dekonstruktor](#dtor)|Zerstört ein `structured_task_group`-Objekt. Es wird erwartet, dass Sie vor dem Ausführen des Dekonstruktors entweder die `wait`-oder `run_and_wait`-Methode für das-Objekt aufruft, es sei denn, der Dekonstruktor wird aufgrund einer Ausnahme aufgrund der Stapel Auflösung ausgeführt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
@@ -193,7 +193,7 @@ Der Konstruktor, der ein Abbruch Token annimmt, erstellt eine `structured_task_g
 
 ## <a name="dtor"></a>~ structured_task_group
 
-Zerstört ein `structured_task_group` -Objekt. Es wird erwartet, dass Sie vor dem Ausführen des Dekonstruktors entweder die `wait`-oder `run_and_wait`-Methode für das-Objekt aufruft, es sei denn, der Dekonstruktor wird aufgrund einer Ausnahme aufgrund der Stapel Auflösung ausgeführt.
+Zerstört ein `structured_task_group`-Objekt. Es wird erwartet, dass Sie vor dem Ausführen des Dekonstruktors entweder die `wait`-oder `run_and_wait`-Methode für das-Objekt aufruft, es sei denn, der Dekonstruktor wird aufgrund einer Ausnahme aufgrund der Stapel Auflösung ausgeführt.
 
 ```cpp
 ~structured_task_group();

@@ -6,17 +6,17 @@ f1_keywords:
 - hash_set/std::operator==
 ms.assetid: 403d8e4e-0b3f-43fb-bc5a-8100c4f331c5
 ms.openlocfilehash: 3900e9c6e4fb7f5a163279165a51b440d138a8e5
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68452033"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78883842"
 ---
-# <a name="lthashsetgt-operators"></a>&lt;hash_set&gt;-Operatoren
+# <a name="lthash_setgt-operators"></a>&lt;hash_set&gt;-Operatoren
 
 ||||
 |-|-|-|
-|[Operator!=](#op_neq)|[operator!= (hash_multiset)](#op_neq_hash_multiset)|[operator==](#op_eq_eq)|
+|[operator!=](#op_neq)|[operator!= (hash_multiset)](#op_neq_hash_multiset)|[operator==](#op_eq_eq)|
 |[operator== (hash_multiset)](#op_eq_eq_hash_multiset)|
 
 ## <a name="op_neq"></a> operator!=
@@ -32,21 +32,21 @@ bool operator!=(const hash_set <Key, Traits, Allocator>& left, const hash_set <K
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `hash_set`.
+*Linker*\
+Ein Objekt des Typs `hash_set`.
 
-*Richting*\
-Ein Objekt vom Typ `hash_set`.
+*Rechte*\
+Ein Objekt des Typs `hash_set`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die hash_sets ungleich sind; **FALSE**, wenn sie gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_set-Objekten basiert auf einem paarweisen Vergleich zwischen deren Elemente. Zwei hash_sets sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
-Member der > Header Dateien [< hash_map >](../standard-library/hash-map.md) und [< hash_set](../standard-library/hash-set.md) befinden sich im [stdext-Namespace](../standard-library/stdext-namespace.md).
+Die Elemente der [< hash_map->](../standard-library/hash-map.md) und [< hash_set](../standard-library/hash-set.md) Header Dateien befinden sich im [stdext-Namespace](../standard-library/stdext-namespace.md).
 
 ### <a name="example"></a>Beispiel
 
@@ -100,17 +100,17 @@ bool operator!==(const hash_set <Key, Traits, Allocator>& left, const hash_set <
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `hash_set`.
+*Linker*\
+Ein Objekt des Typs `hash_set`.
 
-*Richting*\
-Ein Objekt vom Typ `hash_set`.
+*Rechte*\
+Ein Objekt des Typs `hash_set`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn das hash_set links vom Operator gleich des hash_set rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_set-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_sets sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -166,17 +166,17 @@ bool operator!=(const hash_multiset <Key, Traits, Allocator>& left, const hash_m
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `hash_multiset`.
+*Linker*\
+Ein Objekt des Typs `hash_multiset`.
 
-*Richting*\
-Ein Objekt vom Typ `hash_multiset`.
+*Rechte*\
+Ein Objekt des Typs `hash_multiset`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die hash_multisets ungleich sind; **FALSE**, wenn sie gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_multiset-Objekten basiert auf einem paarweisen Vergleich zwischen deren Elemente. Zwei hash_multisets sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -232,17 +232,17 @@ bool operator!==(const hash_multiset <Key, Traits, Allocator>& left, const hash_
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Objekt vom Typ `hash_multiset`.
+*Linker*\
+Ein Objekt des Typs `hash_multiset`.
 
-*Richting*\
-Ein Objekt vom Typ `hash_multiset`.
+*Rechte*\
+Ein Objekt des Typs `hash_multiset`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn das hash_multiset links vom Operator gleich des hash_multiset rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_multiset-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_multisets sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -285,6 +285,6 @@ The hash_multisets s1 and s2 are not equal.
 The hash_multisets s1 and s2 are equal.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<hash_set>](../standard-library/hash-set.md)

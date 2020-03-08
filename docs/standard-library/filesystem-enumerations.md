@@ -12,19 +12,19 @@ f1_keywords:
 - filesystem/std::experimental::filesystem::perms
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
 ms.openlocfilehash: f148347cd132a604622415c65bb3e0352f5308eb
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303498"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875824"
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt;-Enumerationen
 
 In diesem Thema werden die Enumerationen filesystem-Header beschrieben.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<experimental/filesystem>
+**Header:** \<experimentellen/Dateisystem >
 
 **Namespace:** std::experimental::filesystem
 
@@ -51,7 +51,7 @@ enum class copy_options {
 
 ### <a name="values"></a>Werte
 
-|`Name`|Beschreibung|
+|`Name`|BESCHREIBUNG|
 |------------|-----------------|
 |`none`|Führen Sie das Standardverhalten für diesen Vorgang aus.|
 |`skip_existing`|Erstellen Sie keine Kopie, wenn die Datei bereits vorhanden ist. Melden Sie auch keinen Fehler.|
@@ -79,7 +79,7 @@ enum class directory_options {
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`none`|Standardverhalten: symbolische Verknüpfungen auf Verzeichnisse ignorieren. „Berechtigung verweigert“ ist ein Fehler.|
 |`follow_directory_symlink`|Symbolische Verknüpfungen zu Verzeichnissen als tatsächliche Verzeichnisse behandeln.|
@@ -107,7 +107,7 @@ enum class file_type {
 
 ### <a name="values"></a>Werte
 
-|Name|Wert|Beschreibung|
+|Name|value|BESCHREIBUNG|
 |----------|-----------|-----------------|
 |`not_found`|-1|Stellt eine nicht vorhandene Datei dar.|
 |`none`|0|Stellt eine Datei dar, die über kein Typattribut verfügt. (Nicht unterstützt.)|
@@ -161,7 +161,7 @@ enum class perms {// names for permissions
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
 [\<filesystem>](../standard-library/filesystem.md)

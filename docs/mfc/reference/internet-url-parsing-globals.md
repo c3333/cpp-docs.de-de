@@ -1,38 +1,38 @@
 ---
-title: Analysieren von Internet-URLs und -Hilfsprogramme
+title: Internet-URL-paramenungen und Hilfsprogramme
 ms.date: 04/03/2017
 helpviewer_keywords:
 - parsing, URLs
 - URLs, parsing
 ms.assetid: 46c6384f-e4a6-4dbd-9196-219c19040ec5
 ms.openlocfilehash: 310e4ffb3fc207d874e97ba1fac65f6f8cb41a31
-ms.sourcegitcommit: 934cb53fa4cb59fea611bfeb9db110d8d6f7d165
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65611026"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865807"
 ---
-# <a name="internet-url-parsing-globals-and-helpers"></a>Analysieren von Internet-URLs und -Hilfsprogramme
+# <a name="internet-url-parsing-globals-and-helpers"></a>Internet-URL-paramenungen und Hilfsprogramme
 
-Wenn ein Client eine Abfrage an der IIS-Server sendet, können eine der URLs Globals für das Analysieren Sie zum Extrahieren von Informationen über den Client. Die Hilfsfunktionen bieten andere Internetfunktionen.
+Wenn ein Client eine Abfrage an den Internet Server sendet, können Sie eine der Variablen für die URL-Verarbeitung verwenden, um Informationen über den Client zu extrahieren. Die Hilfsfunktionen bieten weitere Internet Funktionen.
 
 ## <a name="internet-url-parsing-globals"></a>Globale Variablen zur Analyse von Internet-URLs
 
 |||
 |-|-|
-|[AfxParseURL](#afxparseurl)|Analysiert eine URL-Zeichenfolge und gibt den Typ des Diensts und seiner Komponenten zurück.|
-|[AfxParseURLEx](#afxparseurlex)|Analysiert eine URL-Zeichenfolge und gibt den Typ der Dienst und seiner Komponenten, sowie den Benutzernamen und ein Kennwort zurück.|
+|[Afxparser-URL](#afxparseurl)|Analysiert eine URL-Zeichenfolge und gibt den Diensttyp und dessen Komponenten zurück.|
+|[Afxparser](#afxparseurlex)|Analysiert eine URL-Zeichenfolge und gibt den Diensttyp und die zugehörigen Komponenten sowie den Benutzernamen und das Kennwort zurück.|
 
-## <a name="other-internet-helpers"></a>Andere Internet-Hilfsprogramme
+## <a name="other-internet-helpers"></a>Weitere Internet Hilfsprogramme
 
 |||
 |-|-|
-|[AfxThrowInternetException](#afxthrowinternetexception)|Löst eine Ausnahme, die im Zusammenhang mit der Internetverbindung.|
-|[AfxGetInternetHandleType](#afxgetinternethandletype)|Bestimmt den Typ eines Internet-Handles.|
+|[Afxthrowinterntexception](#afxthrowinternetexception)|Löst eine Ausnahme aus, die sich auf die Internetverbindung bezieht.|
+|[Afxgetinternetthandletype](#afxgetinternethandletype)|Bestimmt den Typ eines Internet Handles.|
 
-##  <a name="afxparseurl"></a>  AfxParseURL
+##  <a name="afxparseurl"></a>Afxparser-URL
 
-Dieses globale werden in [OpenURL](../../mfc/reference/cinternetsession-class.md#openurl).
+Diese globale wird in [cinternetzession:: OpenURL](../../mfc/reference/cinternetsession-class.md#openurl)verwendet.
 
 ```
 BOOL AFXAPI AfxParseURL(
@@ -45,11 +45,11 @@ BOOL AFXAPI AfxParseURL(
 
 ### <a name="parameters"></a>Parameter
 
-*pstrURL*<br/>
-Ein Zeiger auf eine Zeichenfolge, die mit der URL analysiert werden.
+*pstrinurl*<br/>
+Ein Zeiger auf eine Zeichenfolge, die die URL enthält, die analysiert werden soll.
 
-*dwServiceType*<br/>
-Gibt den Typ des Internet-Diensts an. Folgende Werte sind möglich:
+*dwservicetype*<br/>
+Gibt den Typ des Internet Dienes an. Folgende Werte sind möglich:
 
 - AFX_INET_SERVICE_FTP
 
@@ -81,43 +81,43 @@ Gibt den Typ des Internet-Diensts an. Folgende Werte sind möglich:
 
 - AFX_INET_SERVICE_UNK
 
-*strServer*<br/>
-Das erste Segment der URL nach der Diensttyp.
+*-Server*<br/>
+Das erste Segment der URL, das auf den Diensttyp folgt.
 
 *strObject*<br/>
-Ein Objekt, das auf die URL verweist (kann leer sein).
+Ein Objekt, auf das sich die URL bezieht (kann leer sein).
 
-*nPort*<br/>
-Durch den Server oder Objekt Teile der URL bestimmt, soweit vorhanden.
+*Nport*<br/>
+Wird entweder durch den Server oder die Objektteile der URL bestimmt, sofern vorhanden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die URL erfolgreich analysiert wurde; andernfalls 0, wenn er leer ist oder enthält keinen bekannten Typ eines Internet-Diensts.
+Ungleich 0 (null), wenn die URL erfolgreich analysiert wurde. Andernfalls ist der Wert 0, wenn er leer ist oder keinen bekannten Internet Diensttyp enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Analysiert eine URL-Zeichenfolge und gibt den Typ des Diensts und seiner Komponenten zurück.
+Es analysiert eine URL-Zeichenfolge und gibt den Diensttyp und seine Komponenten zurück.
 
-Z. B. `AfxParseURL` URLs im Format analysiert *Service://server/dir/dir/object.ext:port* und gibt seine Komponenten wie folgt gespeichert:
+`AfxParseURL` analysiert beispielsweise URLs des Formulars *Service://Server/dir/dir/Object.ext:Port* und gibt die zugehörigen Komponenten wie folgt zurück:
 
-*strServer* == "server"
+" *strindserver* = =" Server "
 
-*strObject* == "/dir/dir/object/object.ext"
+*strObject* = = "/dir/dir/Object/Object.ext"
 
-*nPort* == #port
+*Nport* = = #Port
 
-*dwServiceType* == #service
+*dwservicetype* = = #Service
 
 > [!NOTE]
->  Um diese Funktion aufzurufen, muss Ihr Projekt CFILEFIND enthalten. H.
+>  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-  **Header** afxinet.h
+  **Header** AFXINET. h
 
-##  <a name="afxparseurlex"></a>  AfxParseURLEx
+##  <a name="afxparseurlex"></a>Afxparser
 
-Diese globale Funktion ist die erweiterte Version des [AfxParseURL](#afxparseurl) wird im [OpenURL](../../mfc/reference/cinternetsession-class.md#openurl).
+Diese globale Funktion ist die erweiterte Version von [afxparser URL](#afxparseurl) und wird in [cinternetzession:: OpenURL](../../mfc/reference/cinternetsession-class.md#openurl)verwendet.
 
 ```
 BOOL AFXAPI AfxParseURLEx(
@@ -133,11 +133,11 @@ BOOL AFXAPI AfxParseURLEx(
 
 ### <a name="parameters"></a>Parameter
 
-*pstrURL*<br/>
-Ein Zeiger auf eine Zeichenfolge, die mit der URL analysiert werden.
+*pstrinurl*<br/>
+Ein Zeiger auf eine Zeichenfolge, die die URL enthält, die analysiert werden soll.
 
-*dwServiceType*<br/>
-Gibt den Typ des Internet-Diensts an. Folgende Werte sind möglich:
+*dwservicetype*<br/>
+Gibt den Typ des Internet Dienes an. Folgende Werte sind möglich:
 
 - AFX_INET_SERVICE_FTP
 
@@ -169,52 +169,52 @@ Gibt den Typ des Internet-Diensts an. Folgende Werte sind möglich:
 
 - AFX_INET_SERVICE_UNK
 
-*strServer*<br/>
-Das erste Segment der URL nach der Diensttyp.
+*-Server*<br/>
+Das erste Segment der URL, das auf den Diensttyp folgt.
 
 *strObject*<br/>
-Ein Objekt, das auf die URL verweist (kann leer sein).
+Ein Objekt, auf das sich die URL bezieht (kann leer sein).
 
-*nPort*<br/>
-Durch den Server oder Objekt Teile der URL bestimmt, soweit vorhanden.
+*Nport*<br/>
+Wird entweder durch den Server oder die Objektteile der URL bestimmt, sofern vorhanden.
 
-*strUsername*<br/>
-Ein Verweis auf eine `CString` -Objekt, das den Namen des Benutzers enthält.
+*strUserName*<br/>
+Ein Verweis auf ein `CString` Objekt, das den Namen des Benutzers enthält.
 
-*strPassword*<br/>
-Ein Verweis auf eine `CString` -Objekt, das das Kennwort des Benutzers enthält.
+*"Straume"*<br/>
+Ein Verweis auf ein `CString` Objekt, das das Kennwort des Benutzers enthält.
 
 *dwFlags*<br/>
-Die Flags, steuern die URL zu analysieren. Eine Kombination der folgenden Werte sind möglich:
+Die Flags, die Steuern, wie die URL analysiert werden soll. Kann eine Kombination der folgenden Werte sein:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
-|ICU_DECODE|Konvertieren Sie % XX Escape-Sequenzen, in Zeichen.|
-|ICU_NO_ENCODE|Escape-Sequenz unsichere Zeichen nicht konvertieren.|
-|ICU_NO_META|Entfernen Sie nicht Meta-Sequenzen (z. B. "\." und "\...") aus der URL.|
-|ICU_ENCODE_SPACES_ONLY|Codieren Sie nur aus Leerzeichen bestehen.|
-|ICU_BROWSER_MODE|Nicht codieren oder Decodieren von Zeichen nach "#" oder ", und Entfernen nicht nachgestellte Leerzeichen nach". Wenn dieser Wert nicht angegeben ist, wird die gesamte URL codiert und nachgestellte Leerzeichen entfernt.|
+|ICU_DECODE|Konvertieren von% XX-Escapesequenzen in Zeichen.|
+|ICU_NO_ENCODE|Nicht unsichere Zeichen in Escapesequenz konvertieren.|
+|ICU_NO_META|Entfernen Sie keine Metasequenzen (z. b. "\"). und "\..") aus der URL.|
+|ICU_ENCODE_SPACES_ONLY|Nur Leerzeichen codieren.|
+|ICU_BROWSER_MODE|Codieren oder Decodieren Sie Zeichen nach ' # ' oder ' ' nicht, und entfernen Sie keine nachfolgenden Leerzeichen nach ' '. Wenn dieser Wert nicht angegeben wird, wird die gesamte URL codiert, und nachfolgende Leerzeichen werden entfernt.|
 
-Bei Verwendung von MFC-Standard, der keine Flags ist, die Funktion konvertiert alle unsicheren Zeichen sowie Metadaten Sequenzen (z. B. \\., \.., und \\...) Sequenzen mit Escapezeichen versehen.
+Wenn Sie die MFC-Standardeinstellung verwenden, bei der es sich nicht um Flags handelt, konvertiert die-Funktion alle unsicheren Zeichen und Metasequenzen (z. b. \\., \.. und \\...) in Escapesequenzen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die URL erfolgreich analysiert wurde; andernfalls 0, wenn er leer ist oder enthält keinen bekannten Typ eines Internet-Diensts.
+Ungleich 0 (null), wenn die URL erfolgreich analysiert wurde. Andernfalls ist der Wert 0, wenn er leer ist oder keinen bekannten Internet Diensttyp enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Analysiert eine URL-Zeichenfolge und gibt den Typ des Diensts und seiner Komponenten, sowie Name und das Kennwort des Benutzers bereitstellen. Die Flags geben an, wie unsicheren Zeichen behandelt werden.
+Es analysiert eine URL-Zeichenfolge und gibt den Diensttyp und seine Komponenten sowie den Namen und das Kennwort des Benutzers zurück. Die Flags geben an, wie unsichere Zeichen behandelt werden.
 
 > [!NOTE]
->  Um diese Funktion aufzurufen, muss Ihr Projekt CFILEFIND enthalten. H.
+>  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-  **Header** afxinet.h
+  **Header** AFXINET. h
 
-## <a name="afxgetinternethandletype"></a>  AfxGetInternetHandleType
+## <a name="afxgetinternethandletype"></a>Afxgetinternetthandletype
 
-Verwenden Sie diese globale Funktion, um den Typ eines Internet-Handles zu bestimmen.
+Verwenden Sie diese globale Funktion, um den Typ eines Internet Handles zu bestimmen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -224,16 +224,16 @@ DWORD AFXAPI AfxGetInternetHandleType(  HINTERNET hQuery );
 
 ### <a name="parameters"></a>Parameter
 
-*hQuery*<br/>
-Ein Handle für eine Internet-Abfrage.
+*hquery*<br/>
+Ein Handle für eine Internet Abfrage.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Alle von der Internet-Diensttypen, die durch WININET definiert. H. Finden Sie im Abschnitt "Hinweise" eine Liste dieser Internet-Dienste. Wenn das Handle NULL ist oder nicht erkannt, gibt die Funktion AFX_INET_SERVICE_UNK an.
+Alle durch Wininet definierten Internet Dienst Typen. Micha. Eine Liste dieser Internet Dienste finden Sie im Abschnitt "Hinweise". Wenn das Handle NULL ist oder nicht erkannt wird, gibt die Funktion AFX_INET_SERVICE_UNK zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die folgende Liste enthält mögliche Internet-Typen, die vom `AfxGetInternetHandleType`.
+Die folgende Liste enthält mögliche Internet Typen, die von `AfxGetInternetHandleType`zurückgegeben werden.
 
 - INTERNET_HANDLE_TYPE_INTERNET
 
@@ -262,15 +262,15 @@ Die folgende Liste enthält mögliche Internet-Typen, die vom `AfxGetInternetHan
 - INTERNET_HANDLE_TYPE_HTTP_REQUEST
 
 > [!NOTE]
->  Um diese Funktion aufrufen, muss Ihr Projekt CFILEFIND enthalten. H.
+>  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afxinet.h
+**Header:** AFXINET. h
 
-## <a name="afxthrowinternetexception"></a>  AfxThrowInternetException
+## <a name="afxthrowinternetexception"></a>Afxthrowinterntexception
 
-Eine Internet-Ausnahme ausgelöst.
+Löst eine Internet Ausnahme aus.
 
 ### <a name="syntax"></a>Syntax
 
@@ -280,25 +280,25 @@ Eine Internet-Ausnahme ausgelöst.
 
 ### <a name="parameters"></a>Parameter
 
-*dwContext*<br/>
-Der Kontextbezeichner für den Vorgang, der den Fehler verursacht hat. Der Standardwert von *DwContext* wurde ursprünglich im angegebenen [CInternetSession](cinternetsession-class.md) und übergeben [CInternetConnection](cinternetconnection-class.md)- und [CInternetFile](cinternetfile-class.md)-abgeleiteten Klassen. Für bestimmte Vorgänge, die für eine Verbindung oder eine Datei ausgeführt werden, überschreiben Sie in der Regel die Standardeinstellung mit einem *DwContext* selbst. Dieser Wert wird dann an zurückgegeben [CInternetSession:: OnStatusCallback](cinternetsession-class.md#onstatuscallback) bestimmte den Status des Vorgangs zu identifizieren.
+*dwcontext*<br/>
+Der Kontext Bezeichner für den Vorgang, der den Fehler verursacht hat. Der Standardwert von *dwcontext* wird ursprünglich in [cinternetzession](cinternetsession-class.md) angegeben und an [CInternetConnection](cinternetconnection-class.md)-und [CInternetFile](cinternetfile-class.md)-abgeleitete Klassen übergeben. Für bestimmte Vorgänge, die für eine Verbindung oder eine Datei ausgeführt werden, überschreiben Sie in der Regel die Standardeinstellung mit einem eigenen *dwcontext* . Dieser Wert wird dann an [cinternetzession:: OnStatusCallback](cinternetsession-class.md#onstatuscallback) zurückgegeben, um den Status des jeweiligen Vorgangs zu identifizieren.
 
 *dwError*<br/>
 Der Fehler, der die Ausnahme verursacht hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie sind verantwortlich für das Ermitteln der Ursache, die basierend auf dem Betriebssystem-Fehlercode.
+Sie sind dafür verantwortlich, die Ursache basierend auf dem Fehlercode des Betriebssystems zu ermitteln.
 
 > [!NOTE]
->  Um diese Funktion aufzurufen, muss Ihr Projekt CFILEFIND enthalten. H.
+>  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afxinet.h
+**Header:** AFXINET. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Makros und globale Variablen](mfc-macros-and-globals.md)<br/>
+[Makros und Globals](mfc-macros-and-globals.md)<br/>
 [CInternetException-Klasse](cinternetexception-class.md)<br/>
-[AfxParseURL](internet-url-parsing-globals.md#afxparseurl)
+[Afxparser-URL](internet-url-parsing-globals.md#afxparseurl)

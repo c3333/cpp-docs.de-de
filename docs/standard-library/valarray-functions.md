@@ -41,15 +41,15 @@ helpviewer_keywords:
 - std::tan [C++]
 - std::tanh [C++]
 ms.openlocfilehash: 12275f93c751b4d9ffafcae62621b251a8bc9bfc
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246684"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875610"
 ---
 # <a name="ltvalarraygt-functions"></a>&lt;valarray&gt;-Funktionen
 
-## <a name="abs"></a> Abs
+## <a name="abs"></a>Stäbchen
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem absoluten Wert der Elemente des valarray-Eingabeobjekts sind.
 
@@ -60,7 +60,7 @@ valarray<Type> abs(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -104,7 +104,7 @@ The initial valarray is: 0 -1 -2 -3 4 5 6 7 8 .
 The absolute value of the initial valarray is: 0 1 2 3 4 5 6 7 8 .
 ```
 
-## <a name="acos"></a> ACOS
+## <a name="acos"></a>ACOS
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Arkuskosinus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -115,14 +115,14 @@ valarray<Type> acos(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkuskosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
@@ -177,7 +177,7 @@ The arccosine of the initial valarray is:
          0  radians, which is            0  degrees
 ```
 
-## <a name="asin"></a> ASIN
+## <a name="asin"></a>ASIN
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Arkussinus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -188,18 +188,18 @@ valarray<Type> asin(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkussinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
-Der Rückgabewert ist ein Prinzipal zwischen + Pi/2 "und"--Pi/2, mit der sinuswerteingabe übereinstimmt, Eingabe.
+Der Rückgabewert ist ein Hauptwert zwischen + Pi/2 und-Pi/2, der mit der Sinus Wert Eingabe konsistent ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -250,7 +250,7 @@ The arcsine of the initial valarray is:
     1.5708  radians, which is           90  degrees
 ```
 
-## <a name="atan"></a> ATAN
+## <a name="atan"></a>Atan
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Hauptwert des Arkustangens der Elemente des valarray-Eingabeobjekts sind.
 
@@ -261,18 +261,18 @@ valarray<Type> atan(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkustangens der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
-Der Rückgabewert ist ein Prinzipal zwischen + Pi/2 "und"--Pi/2, mit der tangenswerteingabe übereinstimmt, Eingabe.
+Der Rückgabewert ist ein Hauptwert zwischen + Pi/2 und-Pi/2, der mit der Tangens Wert Eingabe konsistent ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -326,7 +326,7 @@ The arcsine of the initial valarray is:
     1.5608  radians, which is      89.4271  degrees
 ```
 
-## <a name="atan2"></a> atan2
+## <a name="atan2"></a>atan2
 
 Gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Arkustangens der kartesischen Komponenten sind, die durch eine Kombination aus Konstanten und Elementen von valarray-Objekten angegeben sind.
 
@@ -343,10 +343,10 @@ valarray<Type> atan2(const Type& left, const valarray<Type>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Der konstante numerische Datentyp oder das valarray-Eingabeobjekt, dessen Elemente die Werte für die y-Koordinate des Arkustangensarguments bereitstellen.
 
-*Richting*\
+*Rechte*\
 Der konstante numerische Datentyp oder das valarray-Eingabeobjekt, dessen Elemente die Werte für die x-Koordinate des Arkustangensarguments bereitstellen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -359,13 +359,13 @@ Ein valarray-Objekt, dessen Element `I` gleich dem Arkustangens der folgenden Ob
 
 - `left` / `right` [ *I* ] für die dritte Vorlagenfunktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
-Dieser Funktion bleiben die Informationen über die Vorzeichen der Komponenten in das Argument, das von der tangensstandardfunktion verloren geht, und dieses Wissen den Quadranten kann der Rückgabewert zugewiesen werden, einen eindeutigen Winkel zwischen + pi und - pi.
+Diese Funktion behält Informationen zu den Vorzeichen der Komponenten in dem Argument bei, das von der standardmäßigen Tangens Funktion verloren geht. dieses Wissen des Quadranten ermöglicht, dass der Rückgabewert einem eindeutigen Winkel zwischen + Pi und-PI zugewiesen wird.
 
-Wenn *linken* und *rechten* eine unterschiedliche Anzahl von Elementen aufweisen, ist das Ergebnis nicht definiert.
+Wenn *left* und *right* eine unterschiedliche Anzahl von Elementen aufweisen, ist das Ergebnis nicht definiert.
 
 ### <a name="example"></a>Beispiel
 
@@ -420,14 +420,14 @@ The atan2 ( y / x ) of the initial valarrays is:
  -0.785398  radians, which is          -45degrees
 ```
 
-## <a name="begin"></a> beginnen
+## <a name="begin"></a>beginnen
 
 ```cpp
 template <class T> unspecified 1 begin(valarray<T>& v);
 template <class T> unspecified 2 begin(const valarray<T>& v);
 ```
 
-## <a name="cos"></a> COs
+## <a name="cos"></a>Erzeugnissen
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Kosinus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -438,7 +438,7 @@ valarray<Type> cos(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -504,7 +504,7 @@ The cosine of the initial valarray is:
 -1
 ```
 
-## <a name="cosh"></a> cosh
+## <a name="cosh"></a>cosh
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Kosinus Hyperbolicus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -515,14 +515,14 @@ valarray<Type> cosh(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Kosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die den hyperbolischen Kosinus in Bezug auf die Exponentialfunktion definieren:
 
@@ -587,14 +587,14 @@ The hyperbolic cosine of the initial valarray is:
 11.592
 ```
 
-## <a name="end"></a> Ende
+## <a name="end"></a>Schließlich
 
 ```cpp
 template <class T> unspecified 1 end(valarray<T>& v);
 template <class T> unspecified 2 end(const valarray<T>& v);
 ```
 
-## <a name="exp"></a> "exp"
+## <a name="exp"></a>Exp
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich der natürlichen Exponentialfunktion der Elemente des valarray-Eingabeobjekts sind.
 
@@ -605,7 +605,7 @@ valarray<Type> exp(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -657,7 +657,7 @@ The natural exponential of the initial valarray is:
 22026.5
 ```
 
-## <a name="log"></a> Protokoll
+## <a name="log"></a>angezeigt
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem natürlichen Logarithmus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -668,7 +668,7 @@ valarray<Type> log(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -720,7 +720,7 @@ The natural logarithm of the initial valarray is:
 4.38203
 ```
 
-## <a name="log10"></a> LOG10
+## <a name="log10"></a>LOG10
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Logarithmus zur Basis 10 (dekadischer Logarithmus) der Elemente des valarray-Eingabeobjekts sind.
 
@@ -731,7 +731,7 @@ valarray<Type> log10(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -785,7 +785,7 @@ The common logarithm of the initial valarray is:
 2
 ```
 
-## <a name="pow"></a> Pow
+## <a name="pow"></a>Pow
 
 Verarbeitet die Elemente von valarray-Eingabeobjekten und Konstanten und gibt ein valarray-Objekt zurück, dessen Elemente gleich einer mit einem Exponenten potenzierten Basis sind, wobei Basis und Exponent jeweils durch die Elemente eines valarray-Eingabeobjekts oder eine Konstante angegeben sind.
 
@@ -811,10 +811,10 @@ pow(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, dessen Elemente die Basis für alle Elemente bereitstellt, die potenziert werden sollen.
 
-*Richting*\
+*Rechte*\
 Das valarray-Eingabeobjekt, dessen Elemente die Potenz für alle Elemente bereitstellt, die potenziert werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -827,9 +827,9 @@ Ein valarray-Objekt, dessen Element `I` gleich den folgenden Objekten sind:
 
 - `left` hoch `right` [ *I* ] für die dritte Vorlagenfunktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn *linken* und *rechten* eine unterschiedliche Anzahl von Elementen aufweisen, ist das Ergebnis nicht definiert.
+Wenn *left* und *right* eine unterschiedliche Anzahl von Elementen aufweisen, ist das Ergebnis nicht definiert.
 
 ### <a name="example"></a>Beispiel
 
@@ -882,7 +882,7 @@ n = 4   gives 256
 n = 5   gives 1024
 ```
 
-## <a name="sin"></a> sin
+## <a name="sin"></a>Tod
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Sinus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -893,7 +893,7 @@ valarray<Type> sin(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -959,7 +959,7 @@ The sine of the initial valarray is:
 -2.06823e-013
 ```
 
-## <a name="sinh"></a> Sinh
+## <a name="sinh"></a>sinh
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Sinus Hyperbolicus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -970,18 +970,18 @@ valarray<Type> sinh(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Sinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die den hyperbolischen Sinus in Bezug auf die Exponentialfunktion definieren:
 
-Sinh ( *z* ) = (exp ( *z* ) – "exp" (- *z* )) / 2
+sinh ( *z* ) = (Exp ( *z* )-Exp (- *z* ))/2
 
 ### <a name="example"></a>Beispiel
 
@@ -1042,7 +1042,7 @@ The hyperbolic sine of the initial valarray is:
 11.5487
 ```
 
-## <a name="sqrt"></a> "SQRT"
+## <a name="sqrt"></a>SQRT
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich der Quadratwurzel der Elemente des valarray-Eingabeobjekts sind.
 
@@ -1053,7 +1053,7 @@ valarray<Type> sqrt(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1096,7 +1096,7 @@ The initial valarray is: ( 0 1 4 9 16 ).
 The square root of the initial valarray is: ( 0 1 2 3 4 ).
 ```
 
-## <a name="swap"></a> Swap
+## <a name="swap"></a>Wechsel
 
 Tauscht die Elemente zweier valarray-Objekte aus.
 
@@ -1109,13 +1109,13 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `valarray`.
+*Linker*\
+Ein Objekt des Typs `valarray`.
 
-*Richting*\
-Ein Objekt vom Typ `valarray`.
+*Rechte*\
+Ein Objekt des Typs `valarray`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
@@ -1130,7 +1130,7 @@ valarray<Type> tan(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1196,7 +1196,7 @@ The tangent of the initial valarray is:
 -9.6701e+012
 ```
 
-## <a name="tanh"></a> tanh
+## <a name="tanh"></a>tanh
 
 Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Tangens Hyperbolicus der Elemente des valarray-Eingabeobjekts sind.
 
@@ -1207,18 +1207,18 @@ valarray<Type> tanh(const valarray<Type>& left);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen durchführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Kosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die den hyperbolischen Tangens in Bezug auf die Exponentialfunktion definieren:
 
-tanh ( *z* ) = sinh ( *z* ) / cosh ( *z* ) = ( exp ( *z* ) - exp ( - *z* ) ) / ( exp ( *z* ) + exp ( - *z* ) )
+tanh ( *z* ) = Sinh ( *z* )/cosh ( *z* ) = (Exp ( *z* )-Exp (- *z* ))/(Exp ( *z* ) + Exp (- *z* ))
 
 ### <a name="example"></a>Beispiel
 

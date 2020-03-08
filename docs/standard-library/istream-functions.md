@@ -6,11 +6,11 @@ f1_keywords:
 - istream/std::ws
 ms.assetid: 0301ea0d-4ded-4841-83dd-4253b55b3188
 ms.openlocfilehash: fc512558969bc25d2b16afa2b93219e13d0b28ca
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68458767"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78874812"
 ---
 # <a name="ltistreamgt-functions"></a>&lt;istream&gt;-Funktionen
 
@@ -18,7 +18,7 @@ ms.locfileid: "68458767"
 |-|-|
 |[swap](#istream_swap)|[ws](#ws)|
 
-## <a name="istream_swap"></a>  swap
+## <a name="istream_swap"></a> swap
 
 Tauscht die Elemente zweier Streamobjekte.
 
@@ -36,11 +36,11 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*linken*\
-Ein Stream.
+*Linker*\
+Ein Datenstrom.
 
-*Richting*\
-Ein Stream.
+*Rechte*\
+Ein Datenstrom.
 
 ## <a name="ws"></a> ws
 
@@ -53,22 +53,22 @@ template class<Elem, Tr> basic_istream<Elem, Tr>& ws(basic_istream<Elem, Tr>& _I
 ### <a name="parameters"></a>Parameter
 
 *_Istr*\
-Ein Stream.
+Ein Datenstrom.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Stream (Datenstrom).
+Der Datenstrom.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator extrahiert und verwirft Elemente `ch` für die [use_facet](../standard-library/basic-filebuf-class.md#open)< **ctype**\< **Elem**> >( [getloc](../standard-library/ios-base-class.md#getloc)). **is**(**ctype**\< **Elem**>:: **space**, **ch**) ist TRUE.
+Der Manipulator extrahiert und verwirft alle Elemente `ch`, für die [Use_facet](../standard-library/basic-filebuf-class.md#open)< **CType**\< **Elem**> > ( [getloc](../standard-library/ios-base-class.md#getloc)). **is**( **CType**\< **Elem**>:: **Space**, **ch**) ist true.
 
-Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. Sie gibt *_Istr*zurück.
+Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. *_Istr*wird zurückgegeben.
 
 ### <a name="example"></a>Beispiel
 
 Unter [Operator>>](../standard-library/istream-operators.md#op_gt_gt) finden Sie ein Beispiel für die Verwendung von `ws`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<istream>](../standard-library/istream.md)

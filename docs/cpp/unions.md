@@ -8,11 +8,11 @@ helpviewer_keywords:
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
 ms.openlocfilehash: 8a4ea3ae325eb5882c2f8b2524bbc156d12ffcc6
-ms.sourcegitcommit: bf724dfc639b16d5410fab72183f8e6b781338bc
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71062054"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875733"
 ---
 # <a name="unions"></a>Unions
 
@@ -34,10 +34,10 @@ union [name]  { member-list };
 *name*<br/>
 Der Typname, der für die Union angegeben wurde.
 
-*member-list*<br/>
+*Mitgliederliste*<br/>
 Elemente, die die Union enthalten kann. Siehe Hinweise.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 ## <a name="declaring-a-union"></a>Deklarieren einer Union
 
@@ -654,7 +654,7 @@ Zusätzlich zu den Einschränkungen für benannte Unions unterliegen anonyme Uni
 
 - Sie können keine Memberfunktionen aufweisen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

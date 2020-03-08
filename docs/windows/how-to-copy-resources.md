@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Verwalten von RessourcenC++()'
+title: 'Gewusst wie: Verwalten von RessourcenC++()'
 ms.date: 02/14/2019
 f1_keywords:
 - vc.resvw.resource.copying
@@ -31,13 +31,13 @@ helpviewer_keywords:
 - images [C++], exporting
 ms.assetid: 65f523e8-017f-4fc6-82d1-083c56d9131f
 ms.openlocfilehash: 718de310bc4fb0cb0072065bc4e7b7adadb182aa
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740650"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78890927"
 ---
-# <a name="how-to-manage-resources-c"></a>Vorgehensweise: Verwalten von RessourcenC++()
+# <a name="how-to-manage-resources-c"></a>Gewusst wie: Verwalten von RessourcenC++()
 
 ## <a name="copy-and-edit-resources"></a>Kopieren und Bearbeiten von Ressourcen
 
@@ -46,7 +46,7 @@ Sie können Ressourcen aus einer Datei in eine andere Datei kopieren, ohne Sie z
 Sie können problemlos Ressourcen aus einer vorhandenen Ressource oder ausführbaren Datei in die aktuelle Ressourcen Datei kopieren. Um Ressourcen zu kopieren, öffnen Sie beide Dateien, die Ressourcen gleichzeitig enthalten, und ziehen Sie Elemente aus einer Datei in eine andere Datei, oder kopieren und fügen Sie zwischen den beiden Dateien ein. Diese Methode funktioniert für Ressourcen Skriptdateien (. RC) und Ressourcen Vorlagen Dateien (. rct) und als ausführbare Dateien (. exe).
 
 > [!NOTE]
-> Visual C++ enthält Beispiel Ressourcen Dateien, die Sie in ihrer eigenen Anwendung verwenden können. Weitere Informationen finden [Sie unter ClipArt: Allgemeine Ressourcen](https://github.com/Microsoft/VCSamples).
+> Visual C++ enthält Beispiel Ressourcen Dateien, die Sie in ihrer eigenen Anwendung verwenden können. Weitere Informationen finden Sie unter [ClipArt: allgemeine Ressourcen](https://github.com/Microsoft/VCSamples).
 
 Sie können die Ressourcen Dateien im Projekt (**Ressourcenansicht**) und in den eigenständigen RC-Dateien, die in Dokument Fenstern geöffnet sind, nicht per Drag & Drop, kopieren, Ausschneiden oder einfügen. Dies kann in früheren Versionen des Produkts der Fall sein. Verwenden Sie nur die Drag & Drop-Methode zwischen RC-Dateien, die außerhalb des Projekts geöffnet sind.
 
@@ -60,7 +60,7 @@ Sie können die Ressourcen Dateien im Projekt (**Ressourcenansicht**) und in den
 
       1. Wählen Sie die Ressource aus, die Sie kopieren möchten. Wählen Sie z. b *. in Quelle1. RC* **IDD_DIALOG1**aus.
 
-      1. Halten Sie die **STRG** -Taste gedrückt, und ziehen Sie die Ressource in die zweite RC-Datei. Ziehen Sie z. b. **IDD_DIALOG1** von *Quelle1. RC* auf *Source2. RC*.
+      1. Halten Sie die **STRG** -Taste gedrückt, und ziehen Sie die Ressource in die zweite RC-Datei. Ziehen Sie z. b. **IDD_DIALOG1** von *Quelle1. RC* nach *Source2. RC*.
 
          > [!TIP]
          > Wenn Sie die Ressource ziehen, ohne die **STRG** -Taste gedrückt halten, wird die Ressource verschoben, anstatt Sie zu kopieren.
@@ -80,7 +80,7 @@ Beim Kopieren in eine Ressource können Sie ihre Sprachen- und/oder Bedingungsei
 
 - Die Bedingung einer Ressource stellt ein definiertes Symbol dar, das eine Bedingung angibt, unter der diese bestimmte Ressourcenkopie zu verwenden ist.
 
-Die Sprache und Bedingung einer Ressource werden in Klammern nach dem Namen der Ressource im Fenster **Arbeitsbereich** angezeigt. Hier verwendet die Ressource `IDD_AboutBox` mit `Finnish` dem Namen als `XX33`Sprache und Ihre Bedingung:
+Die Sprache und Bedingung einer Ressource werden in Klammern nach dem Namen der Ressource im Fenster **Arbeitsbereich** angezeigt. Hier verwendet die Ressource mit dem Namen `IDD_AboutBox` `Finnish` als Sprache, und Ihre Bedingung ist `XX33`:
 
 ```cpp
 IDD_AboutBox (Finnish - XX33)
@@ -122,12 +122,12 @@ Sie können grafische Ressourcen (Bitmaps, Symbole, Cursor und Symbolleisten), H
 
 1. Navigieren Sie zu dem Ordner, in dem Sie die Datei speichern möchten, und wählen Sie **exportieren**aus.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
-[Vorgehensweise: Ressourcen erstellen](../windows/how-to-create-a-resource-script-file.md)<br/>
+[Vorgehensweise: Erstellen von Ressourcen](../windows/how-to-create-a-resource-script-file.md)<br/>
 [Vorgehensweise: Einfügen von Ressourcen zur Kompilierungszeit](../windows/how-to-include-resources-at-compile-time.md)<br/>

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - precision fields, printf function
 ms.assetid: 664b1717-2760-4c61-bd9c-22eee618d825
 ms.openlocfilehash: 024e757f57e62ba2b30048c783798180b4da2b9a
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857865"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865493"
 ---
 # <a name="format-specification-syntax-printf-and-wprintf-functions"></a>Syntax der Formatangabe: printf- und wprintf-Funktionen
 
@@ -46,7 +46,7 @@ Eine grundlegende Formatspezifikation enthält nur das Prozentzeichen und ein *T
 
 Das *Typ*-Konvertierungsspezifiziererzeichen gibt an, ob das entsprechende Argument als Zeichen, Zeichenfolge, Zeiger, ganze Zahl oder Gleitkommazahl interpretiert werden soll. Das *Typ*zeichen ist das einzige erforderliche Konvertierungsangabenfeld und erscheint nach allen optionalen Feldern.
 
-Die Argumente, die der Formatzeichenfolge folgen, werden nach dem entsprechenden *Typ*zeichen und dem optionalen [Größen](#size)präfix interpretiert. Konvertierungen für die Zeichentypen `char` und `wchar_t` werden durch **c** oder **C** angegeben, und Einzelbyte- und Multibyte- oder Breitzeichen-Zeichenfolgen werden je nach benötigter Formatierungsfunktion durch **s** oder **S** angegeben. Zeichen und Zeichenfolgenargumente, die durch **c** und **s** angegeben werden, werden von den `printf`-Familienfunktionen als `char` und `char*` oder von den `wprintf`-Familienfunktionen als `wchar_t` und `wchar_t*` interpretiert. Zeichen und Zeichenfolgenargumente, die durch **C** und **S** angegeben werden, werden von den `printf`-Familienfunktionen als `wchar_t` und `wchar_t*` oder von den `wprintf`-Familienfunktionen als `char` und `char*` interpretiert. Dieses Verhalten ist Microsoft-spezifisch.
+Die Argumente, die der Formatzeichenfolge folgen, werden nach dem entsprechenden *Typ*zeichen und dem optionalen [Größen](#size)präfix interpretiert. Konvertierungen für die Zeichentypen `char` und `wchar_t` werden durch **c** oder **C** angegeben, und Einzelbyte- und Multibyte- oder Breitzeichen-Zeichenfolgen werden je nach benötigter Formatierungsfunktion durch **s** oder **S** angegeben. Zeichen und Zeichenfolgenargumente, die durch **c** und **s** angegeben werden, werden von den `char`-Familienfunktionen als `char*` und `printf` oder von den `wchar_t`-Familienfunktionen als `wchar_t*` und `wprintf` interpretiert. Zeichen und Zeichenfolgenargumente, die durch **C** und **S** angegeben werden, werden von den `wchar_t`-Familienfunktionen als `wchar_t*` und `printf` oder von den `char`-Familienfunktionen als `char*` und `wprintf` interpretiert. Dieses Verhalten ist Microsoft-spezifisch.
 
 Ganzzahlige Typen wie `short`, `int`, `long`, `long long`und deren `unsigned` Varianten werden mithilfe von **d**, **i**, **o**, **u**, **x**und **x**angegeben. Gleit Komma Typen wie `float`, `double`und `long double`**werden mithilfe von**, **a**, **e**, **e**, **f**, **f**, **g**und **g**angegeben. Wenn Sie nicht durch ein *Größen* Präfix geändert werden, werden ganzzahlige Argumente standardmäßig in `int` Typ umgewandelt, und Gleit Komma Argumente werden in `double`umgewandelt. Bei 64-Bit-Systemen ist `int` ein 32-Bit-Wert. Daher werden ganze 64-Bit-Zahlen verkürzt, wenn sie für Ausgabe formatiert werden, sofern nicht ein *Größen*präfix von **ll** oder **I64** verwendet wird. Durch **p** angegebene Zeigertypen verwenden die Standardzeigergröße für die Plattform.
 
@@ -59,12 +59,12 @@ Ganzzahlige Typen wie `short`, `int`, `long`, `long long`und deren `unsigned` Va
 |--------------------|--------------|-------------------|
 |**c**|Zeichen|Gibt bei Verwendung mit `printf`-Funktionen ein Einzelbytezeichen und bei Verwendung mit `wprintf`-Funktionen ein Breitzeichen an.|
 |**C**|Zeichen|Gibt bei Verwendung mit `printf`-Funktionen ein Breitzeichen und bei Verwendung mit `wprintf`-Funktionen ein Einzelbytezeichen an.|
-|**d**|Ganze Zahl|Ganze Dezimalzahl mit Vorzeichen|
-|**i**|Ganze Zahl|Ganze Dezimalzahl mit Vorzeichen|
-|**o**|Ganze Zahl|Oktale ganze Zahl ohne Vorzeichen|
-|**n**|Ganze Zahl|Ganze Dezimalzahl ohne Vorzeichen|
-|**w**|Ganze Zahl|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „abcdef“.|
-|**X**|Ganze Zahl|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „ABCDEF“.|
+|**d**|Integer|Ganze Dezimalzahl mit Vorzeichen|
+|**i**|Integer|Ganze Dezimalzahl mit Vorzeichen|
+|**o**|Integer|Oktale ganze Zahl ohne Vorzeichen|
+|**u**|Integer|Ganze Dezimalzahl ohne Vorzeichen|
+|**x**|Integer|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „abcdef“.|
+|**X**|Integer|Ganze Hexadezimalzahl ohne Vorzeichen; verwendet „ABCDEF“.|
 |**e**|Gleitkomma|Ein Wert mit Vorzeichen im Format [-]*d.dddd*__e±__*dd*\[*d*], wobei *d* eine Dezimalzahl ist, *dddd* eine oder mehrere Dezimalstellen sind, je nach angegebener Präzision, oder standardmäßig sechs. *dd*\[*d*] stellt zwei oder drei Dezimalstellen dar, je nach [Ausgabeformat](../c-runtime-library/set-output-format.md) und Exponentengröße.|
 |**E**|Gleitkomma|Identisch mit dem **e**-Format mit der Ausnahme, dass **E** anstelle von **e** den Exponenten einführt.|
 |**f**|Gleitkomma|Ein Wert mit Vorzeichen im Format [–]*dddd* __.__ *dddd*, wobei *dddd* eine oder mehrere Dezimalstellen sind. Die Anzahl der Ziffern vor dem Dezimaltrennzeichen ist abhängig von der Größe der Zahl, und die Anzahl der Ziffern nach dem Dezimaltrennzeichen ist abhängig von der angeforderten Genauigkeit oder standardmäßig sechs.|
@@ -81,7 +81,7 @@ Ganzzahlige Typen wie `short`, `int`, `long`, `long long`und deren `unsigned` Va
 
 Ab Visual Studio 2015 entspricht die formatierte Ausgabe dem C99-Standard, wenn das Argument, das einem Gleitkomma-Konvertierungsspezifizierer (**a**, **A**, **e**, **E**, **f**, **F**, **g**, **G**) entspricht, unendlich, unbestimmt oder NaN ist. In dieser Tabelle ist die formatierte Ausgabe aufgeführt:
 
-|{2&gt;Wert&lt;2}|Output|
+|value|Output|
 |-----------|------------|
 |infinity|`inf`|
 |Stiller NaN|`nan`|
@@ -92,12 +92,12 @@ All diesen Werten kann ein Vorzeichen vorangestellt werden. Wenn ein Gleitkomma-
 
 Vor Visual Studio 2015 verwendete die CRT ein anderes, Nicht-Standard-Format für die Ausgabe von unendlichen, unbestimmten oder NaN-Werten:
 
-|{2&gt;Wert&lt;2}|Output|
+|value|Output|
 |-----------|------------|
-|+unendlich|`1.#INF` *random-digits*|
-|- infinity|`-1.#INF` *random-digits*|
-|unbestimmt (mit stillem NaN identisch)|*digit* `.#IND` *random-digits*|
-|NaN|*digit* `.#NAN` *random-digits*|
+|+unendlich|`1.#INF` von *Zufalls Ziffern*|
+|- infinity|`-1.#INF` von *Zufalls Ziffern*|
+|unbestimmt (mit stillem NaN identisch)|*Ziffern* `.#IND` *Zufalls Ziffern*|
+|NaN|*Ziffern* `.#NAN` *Zufalls Ziffern*|
 
 Allen diesen Werte konnte ein Vorzeichen vorangestellt werden und sie wurden möglicherweise je nach Feldbreite und Genauigkeit unterschiedlich formatiert, z.B. mit ungewöhnlichen Effekten. Die Funktion `printf("%.2f\n", INFINITY)` hat `1.#J` ausgegeben, da #INF auf zwei Stellen gerundet wird.
 
@@ -118,7 +118,7 @@ Das erste optionale Feld in einer Konvertierungsangabe enthält *Flag-Anweisunge
 
 ### <a name="flag-characters"></a>Flag-Zeichen
 
-|Flag|Bedeutung|Default|
+|Flag|Bedeutung|Standard|
 |----------|-------------|-------------|
 |**-**|Das Ergebnis mit der angegebenen Feldweite ist linksbündig.|Rechtsbündig.|
 |**+**|Verwenden Sie ein Zeichen (+ der -), um dem Ausgabewert ein Präfix hinzuzufügen, wenn dieser einem signed-Typ entspricht.|Das Vorzeichen taucht nur für negative Werte mit Vorzeichen (-) auf.|
@@ -160,7 +160,7 @@ Das *Typ*zeichen bestimmt entweder die Interpretation von *precision* oder die S
 
 ### <a name="how-precision-values-affect-type"></a>Wie sich Genauigkeitswerte auf den Typ auswirken
 
-|Typ|Bedeutung|Default|
+|type|Bedeutung|Standard|
 |----------|-------------|-------------|
 |**a**, **A**|Die Genauigkeit gibt die Anzahl der Ziffern nach dem Punkt an.|Die Standardgenauigkeit beträgt 13. Wenn die Genauigkeit 0 beträgt, wird kein Dezimaltrennzeichen gedruckt, es sei denn, das **#** -Flag wird verwendet.|
 |**c**, **C**|Die Genauigkeit hat keine Auswirkung.|Zeichen wird gedruckt.|
@@ -206,8 +206,8 @@ Ein **hc**- oder **hC**-Typspezifizierer ist mit **c** in `printf`-Funktionen un
 > [!NOTE]
 > **Microsoft-spezifisch:** Die Präfixe " **i** " (Großbuchstabe i), " **i32**", " **I64**" und " **w** Argument size Modifizierer" sind Microsoft-Erweiterungen und sind nicht ISO-kompatibel. Das **h**-Präfix, wenn es mit Daten des Typs `char` und das **I**-Präfix (Kleinbuchstabe „l“), wenn es mit Daten des Typs `double` verwendet wird, sind Microsoft-Erweiterungen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [printf, _printf_l, wprintf, _wprintf_l](../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)<br/>
 [printf_s, _printf_s_l, wprintf_s, _wprintf_s_l](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md)<br/>
-[printf_p-Positionsparameter](../c-runtime-library/printf-p-positional-parameters.md)
+[printf_p Positional Parameters (printf_p-Positionsparameter)](../c-runtime-library/printf-p-positional-parameters.md)
