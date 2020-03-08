@@ -45,15 +45,15 @@ helpviewer_keywords:
 - CControlBar [MFC], m_pInPlaceOwner
 ms.assetid: 4d668c55-9b42-4838-97ac-cf2b3000b82c
 ms.openlocfilehash: 41e40b3da7b4a294fe396a9d93f7c6a93593ff95
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62345824"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78866432"
 ---
 # <a name="ccontrolbar-class"></a>CControlBar Class
 
-Die Basisklasse für die Steuerleistenklassen [CStatusBar](../../mfc/reference/cstatusbar-class.md), [CToolBar](../../mfc/reference/ctoolbar-class.md), [CDialogBar](../../mfc/reference/cdialogbar-class.md), [CReBar](../../mfc/reference/crebar-class.md), und [ COleResizeBar](../../mfc/reference/coleresizebar-class.md).
+Die Basisklasse für die Steuer leisten Klassen [CStatusBar](../../mfc/reference/cstatusbar-class.md), [CToolBar](../../mfc/reference/ctoolbar-class.md), [CDialogBar](../../mfc/reference/cdialogbar-class.md), [krebar](../../mfc/reference/crebar-class.md)und [COleResizeBar](../../mfc/reference/coleresizebar-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -67,39 +67,39 @@ class CControlBar : public CWnd
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CControlBar::CControlBar](#ccontrolbar)|Erstellt ein `CControlBar`-Objekt.|
+|[CControlBar:: CControlBar](#ccontrolbar)|Erstellt ein `CControlBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CControlBar::CalcDynamicLayout](#calcdynamiclayout)|Gibt die Größe einer dynamischen Steuerleiste als ein [CSize](../../atl-mfc-shared/reference/csize-class.md) Objekt.|
-|[CControlBar::CalcFixedLayout](#calcfixedlayout)|Gibt die Größe der Steuerleiste als ein [CSize](../../atl-mfc-shared/reference/csize-class.md) Objekt.|
-|[CControlBar::CalcInsideRect](#calcinsiderect)|Gibt die aktuellen Maße des Steuerleistenbereichs, einschließlich der Rahmen, zurück.|
-|[CControlBar::DoPaint](#dopaint)|Rendert die Rahmen und das Ziehelement der Steuerleiste.|
-|[CControlBar::DrawBorders](#drawborders)|Rendert die Rahmen der Steuerleiste.|
-|[CControlBar::DrawGripper](#drawgripper)|Rendert das Ziehelement der Steuerleiste.|
-|[CControlBar::EnableDocking](#enabledocking)|Ermöglicht das Andocken bzw. eine unverankerte Steuerleiste.|
-|[CControlBar::GetBarStyle](#getbarstyle)|Ruft die Formatvorlagen der Steuerleiste ab.|
-|[CControlBar::GetBorders](#getborders)|Ruft die Rahmenwerte der Steuerleiste ab.|
-|[CControlBar::GetCount](#getcount)|Gibt die Anzahl der nicht-HWND-Elemente in der Steuerleiste zurück.|
-|[CControlBar::GetDockingFrame](#getdockingframe)|Gibt einen Zeiger auf den Frame zurück, an den eine Steuerleiste angedockt ist.|
-|[CControlBar::IsFloating](#isfloating)|Gibt einen Wert ungleich 0 (null) zurück, wenn die fragliche Steuerleiste unverankert ist.|
-|[CControlBar::OnUpdateCmdUI](#onupdatecmdui)|Ruft die Befehlshandler der Benutzeroberfläche ab.|
-|[CControlBar::SetBarStyle](#setbarstyle)|Ändert die Formatvorlagen der Steuerleiste.|
-|[CControlBar::SetBorders](#setborders)|Legt die Rahmenwerte der Steuerleiste fest.|
-|[CControlBar::SetInPlaceOwner](#setinplaceowner)|Ändert den direkten Besitzer einer Steuerleiste.|
+|[CControlBar:: calcdynamiclayout](#calcdynamiclayout)|Gibt die Größe einer dynamischen Steuerleiste als [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt zurück.|
+|[CControlBar:: calcfixedlayout](#calcfixedlayout)|Gibt die Größe der Steuerleiste als [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt zurück.|
+|[CControlBar:: CalcInsideRect](#calcinsiderect)|Gibt die aktuellen Maße des Steuerleistenbereichs, einschließlich der Rahmen, zurück.|
+|[CControlBar::D opaint](#dopaint)|Rendert die Rahmen und das Ziehelement der Steuerleiste.|
+|[CControlBar::D rawrahmens](#drawborders)|Rendert die Rahmen der Steuerleiste.|
+|[CControlBar::D rawgripper](#drawgripper)|Rendert das Ziehelement der Steuerleiste.|
+|[CControlBar:: EnableDocking](#enabledocking)|Ermöglicht das Andocken bzw. eine unverankerte Steuerleiste.|
+|[CControlBar:: getbarstyle](#getbarstyle)|Ruft die Formatvorlagen der Steuerleiste ab.|
+|[CControlBar:: getrahmens](#getborders)|Ruft die Rahmenwerte der Steuerleiste ab.|
+|[CControlBar:: GetCount](#getcount)|Gibt die Anzahl der nicht-HWND-Elemente in der Steuerleiste zurück.|
+|[CControlBar:: getdockingframe](#getdockingframe)|Gibt einen Zeiger auf den Frame zurück, an den eine Steuerleiste angedockt ist.|
+|[CControlBar:: IsFloating](#isfloating)|Gibt einen Wert ungleich 0 (null) zurück, wenn die fragliche Steuerleiste unverankert ist.|
+|[CControlBar:: OnUpdateCmdUI](#onupdatecmdui)|Ruft die Befehlshandler der Benutzeroberfläche ab.|
+|[CControlBar:: setbarstyle](#setbarstyle)|Ändert die Formatvorlagen der Steuerleiste.|
+|[CControlBar:: SetBorders](#setborders)|Legt die Rahmenwerte der Steuerleiste fest.|
+|[CControlBar:: "*"](#setinplaceowner)|Ändert den direkten Besitzer einer Steuerleiste.|
 
-### <a name="public-data-members"></a>Öffentliche Datenmember
+### <a name="public-data-members"></a>Öffentliche Datenelemente
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CControlBar::m_bAutoDelete](#m_bautodelete)|Wenn der Wert ungleich 0 (null) ist, wird das `CControlBar`-Objekt gelöscht, sobald die Windows-Steuerleiste zerstört wird.|
-|[CControlBar::m_pInPlaceOwner](#m_pinplaceowner)|Der direkte Besitzer der Steuerleiste.|
+|[CControlBar:: m_bAutoDelete](#m_bautodelete)|Wenn der Wert ungleich 0 (null) ist, wird das `CControlBar`-Objekt gelöscht, sobald die Windows-Steuerleiste zerstört wird.|
+|[CControlBar:: m_pInPlaceOwner](#m_pinplaceowner)|Der direkte Besitzer der Steuerleiste.|
 
 ## <a name="remarks"></a>Hinweise
 
-Eine Steuerleiste ist ein Fenster, das normalerweise am linken oder rechten Rand eines Rahmenfensters ausgerichtet wird. Sie kann untergeordnete Elemente enthalten, die entweder HWND-basierte Steuerelemente, Windows, die generiert und auf Windows-Nachrichten reagieren, oder nicht-HWND-basierte-Elemente, die sind keine Fenster und mithilfe von Anwendungs- oder Frameworkcode verwaltet werden. Listenfelder und Bearbeitungssteuerelemente sind Beispiele für HWND-basierte Steuerelemente. Statusleistenbereiche und Bitmapschaltflächen sind Beispiele für nicht-HWND-basierte Steuerelemente.
+Eine Steuerleiste ist ein Fenster, das normalerweise am linken oder rechten Rand eines Rahmenfensters ausgerichtet wird. Sie kann untergeordnete Elemente enthalten, die entweder HWND-basierte Steuerelemente sind, bei denen es sich um Fenster handelt, die Windows-Meldungen generieren und auf diese reagieren, oder nicht-HWND-basierte Elemente, die nicht Windows sind und durch Anwendungscode oder Frameworkcode verwaltet werden. Listenfelder und Bearbeitungs Steuerelemente sind Beispiele für HWND-basierte Steuerelemente. Status leisten-Bereiche und Bitmapschaltflächen sind Beispiele für nicht-HWND-basierte Steuerelemente.
 
 Bei Steuerleistenfenstern handelt es sich normalerweise um untergeordnete Fenster eines übergeordneten Rahmenfensters, und es sind normalerweise nebengeordnete Elemente der Clientansicht oder des MDI-Clients des Rahmenfensters. Ein `CControlBar`-Objekt verwendet zum eigenen Positionieren Informationen über das Clientrechteck des übergeordneten Fensters. Dem übergeordneten Fenster wird dann die Menge des Speicherplatzes im Clientbereich des übergeordneten Fensters mitgeteilt, die unzugeordnet bleibt.
 
@@ -107,7 +107,7 @@ Weitere Informationen zu `CControlBar` finden Sie unter:
 
 - [Steuerleisten](../../mfc/control-bars.md)
 
-- [Technischer Hinweis 31: Steuerleisten](../../mfc/tn031-control-bars.md).
+- [Technischer Hinweis 31: Steuer leisten](../../mfc/tn031-control-bars.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -119,13 +119,13 @@ Weitere Informationen zu `CControlBar` finden Sie unter:
 
 `CControlBar`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** afxext.h
+**Header:** Afxext. h
 
-##  <a name="calcdynamiclayout"></a>  CControlBar::CalcDynamicLayout
+##  <a name="calcdynamiclayout"></a>CControlBar:: calcdynamiclayout
 
-Das Framework ruft diese Member-Funktion, um die Abmessungen des eine dynamische Werkzeugleiste zu berechnen.
+Das Framework ruft diese Member-Funktion auf, um die Dimensionen einer dynamischen Symbolleiste zu berechnen.
 
 ```
 virtual CSize CalcDynamicLayout(
@@ -135,33 +135,33 @@ virtual CSize CalcDynamicLayout(
 
 ### <a name="parameters"></a>Parameter
 
-*nLength*<br/>
-Die angeforderte Dimension der Steuerleiste, horizontal oder vertikal, je nachdem *DwMode*.
+*nlength*<br/>
+Die angeforderte Dimension der Steuerleiste (horizontal oder vertikal), abhängig von *dwmode*.
 
-*nMode*<br/>
-Die folgenden vordefinierten Flags werden verwendet, um zu bestimmen, die Höhe und Breite der dynamischen Steuerleiste. Verwenden Sie das bitweise OR (&#124;) Operator, um die Flags kombinieren.
+*nmode*<br/>
+Die folgenden vordefinierten Flags werden verwendet, um die Höhe und Breite der dynamischen Steuerleiste zu bestimmen. Verwenden Sie den bitweisen or (&#124;)-Operator, um die Flags zu kombinieren.
 
-|Layout-Modus-flags|Bedeutung|
+|Layoutmodusflags|Bedeutung|
 |-----------------------|-------------------|
-|LM_STRETCH|Gibt an, ob die Steuerleiste, auf die Größe des Rahmens gestreckt wird. Festlegen Sie, wenn die Leiste keine andockleiste (nicht verfügbar für Andocken) wird. Nicht festgelegt, wenn die Leiste angedockt oder unverankert ist (zum Andocken verfügbar). Wenn festgelegt, LM_STRETCH ignoriert *nLength* und Dimensionen basierend auf dem LM_HORZ Status zurückgegeben. LM_STRETCH funktioniert ähnlich wie die *bStretch* in verwendeten Parameter [CalcFixedLayout](#calcfixedlayout); finden Sie unter dieser Memberfunktion Weitere Informationen über die Beziehung zwischen Strecken und Ausrichtung.|
-|LM_HORZ|Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Festlegen Sie, wenn die Leiste horizontal ausgerichtet ist, und wenn sie vertikal ausgerichtet ist, ist es nicht festgelegt. LM_HORZ funktioniert ähnlich wie die *bHorz* in verwendeten Parameter [CalcFixedLayout](#calcfixedlayout); finden Sie unter dieser Memberfunktion Weitere Informationen über die Beziehung zwischen Strecken und Ausrichtung.|
-|LM_MRUWIDTH|Dynamische Breite zuletzt verwendete. Ignoriert *nLength* Parameter und verwendet die gespeicherte zuletzt verwendete Breite.|
-|LM_HORZDOCK|Horizontal angedockt Dimensionen. Ignoriert *nLength* Parameter und gibt die dynamische Größe mit der größten Breite.|
-|LM_VERTDOCK|Vertikale angedockt Dimensionen. Ignoriert *nLength* Parameter und gibt die dynamische Größe durch die Höhe des größten.|
-|LM_LENGTHY|Wenn *nLength* gibt die Höhe (Y-Richtung) anstelle von Width.|
-|LM_COMMIT|Setzt LM_MRUWIDTH auf aktuelle Breite der unverankerte Steuerleiste zurück.|
+|LM_STRETCH|Gibt an, ob die Steuerleiste auf die Größe des Frames gestreckt werden soll. Legen Sie fest, wenn die Leiste keine andockbare Leiste ist (zum Andocken nicht verfügbar). Wird nicht festgelegt, wenn die Leiste angedockt oder unverankert (zum Andocken verfügbar) ist. Wenn festgelegt, ignoriert LM_STRETCH *nlength* und gibt Dimensionen auf der Grundlage des LM_HORZ Zustands zurück. LM_STRETCH funktioniert ähnlich wie der *bstretch* -Parameter, der in " [calcfixedlayout](#calcfixedlayout)" verwendet wird. Weitere Informationen über die Beziehung zwischen Streckung und Ausrichtung finden Sie unter dieser Member-Funktion.|
+|LM_HORZ|Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Legen Sie fest, wenn die Leiste horizontal ausgerichtet ist, und wenn Sie vertikal ausgerichtet ist, wird Sie nicht festgelegt. LM_HORZ funktioniert ähnlich wie der *bhorz* -Parameter, der in " [calcfixedlayout](#calcfixedlayout)" verwendet wird. Weitere Informationen über die Beziehung zwischen Streckung und Ausrichtung finden Sie unter dieser Member-Funktion.|
+|LM_MRUWIDTH|Zuletzt verwendete dynamische Breite. Ignoriert den *nlength* -Parameter und verwendet die zuletzt verwendete Breite, die gespeichert wurde.|
+|LM_HORZDOCK|Horizontale angedockte Dimensionen. Ignoriert den *nlength* -Parameter und gibt die dynamische Größe mit der größten Breite zurück.|
+|LM_VERTDOCK|Vertikale angedockte Dimensionen. Ignoriert den *nlength* -Parameter und gibt die dynamische Größe mit der größten Höhe zurück.|
+|LM_LENGTHY|Legen Sie fest, wenn " *nlength* " eine Höhe (Y-Richtung) anstelle der Breite angibt.|
+|LM_COMMIT|Setzt LM_MRUWIDTH auf die aktuelle Breite der gleitenden Steuerleiste zurück.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Steuerleiste Größe, in Pixel, der eine [CSize](../../atl-mfc-shared/reference/csize-class.md) Objekt.
+Die Größe der Steuerleiste eines [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekts in Pixel.
 
 ### <a name="remarks"></a>Hinweise
 
-Überschreiben Sie diese Memberfunktion, um Ihre eigenen dynamischen Layout in Klassen bieten Sie eine von Ableitung `CControlBar`. MFC-Klassen abgeleitet `CControlBar`, z. B. [CToolbar](../../mfc/reference/ctoolbar-class.md), überschreiben Sie diese Memberfunktion auf, und ihre eigene Implementierung bereitstellen.
+Überschreiben Sie diese Member-Funktion, um ein eigenes dynamisches Layout in Klassen bereitzustellen, die Sie von `CControlBar`ableiten. Von `CControlBar`abgeleitete MFC-Klassen, z. b. [CToolBar](../../mfc/reference/ctoolbar-class.md), überschreiben diese Element Funktion und stellen ihre eigene Implementierung bereit.
 
-##  <a name="calcfixedlayout"></a>  CControlBar::CalcFixedLayout
+##  <a name="calcfixedlayout"></a>CControlBar:: calcfixedlayout
 
-Rufen Sie diese Memberfunktion, um die horizontale Größe des eine Steuerleiste zu berechnen.
+Mit dieser Member-Funktion können Sie die horizontale Größe einer Steuerleiste berechnen.
 
 ```
 virtual CSize CalcFixedLayout(
@@ -171,32 +171,32 @@ virtual CSize CalcFixedLayout(
 
 ### <a name="parameters"></a>Parameter
 
-*bStretch*<br/>
-Gibt an, ob die Leiste, auf die Größe des Rahmens gestreckt wird. Die *bStretch* Parameter ungleich NULL ist, wenn die Leiste keine andockleiste (nicht verfügbar für Andocken) und 0, ist wenn es angedockt oder unverankert ist (zum Andocken verfügbar).
+*bstretch*<br/>
+Gibt an, ob die Leiste auf die Größe des Frames gestreckt werden soll. Der *bstretch* -Parameter ist ungleich 0 (null), wenn der Balken keine Docking Leiste ist (nicht zum Andocken verfügbar) und 0 ist, wenn er angedockt oder unverankert (zum Andocken verfügbar) ist.
 
-*bHorz*<br/>
-Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Die *bHorz* Parameter ungleich NULL ist, wenn die Leiste horizontal ausgerichtet und 0, ist wenn es vertikal ausgerichtet ist.
+*bhorz*<br/>
+Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Der *bhorz* -Parameter ist ungleich 0 (null), wenn der Balken horizontal ausgerichtet ist, und ist 0, wenn er vertikal ausgerichtet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Steuerleiste Größe, in Pixel, der eine `CSize` Objekt.
+Die Größe der Steuerleiste eines `CSize` Objekts in Pixel.
 
 ### <a name="remarks"></a>Hinweise
 
-Steuerleisten, wie beispielsweise Symbolleisten können horizontal Strecken oder vertikal, berücksichtigen die Schaltflächen enthalten, in der Steuerleiste.
+Steuer leisten (z. b. Symbolleisten) können horizontal oder vertikal gestreckt werden, um die Schaltflächen in der Steuerleiste anzuzeigen.
 
-Wenn *bStretch* ist "true", dehnen Sie die Dimension auf die Ausrichtung von bereitgestellten *bHorz*. Das heißt, wenn *bHorz* ist "false", die Steuerleiste vertikal gestreckt wird. Wenn *bStretch* false festgelegt ist, tritt keine Stretch. Die folgende Tabelle zeigt die möglichen Permutationen und die resultierende Steuerleiste Stile der *bStretch* und *bHorz*.
+Wenn *bstretch* den Wert true hat, wird die Dimension entlang der von *bhorz*bereitgestellten Ausrichtung gestreckt. Anders ausgedrückt: Wenn *bhorz* false ist, wird die Steuerleiste vertikal gestreckt. Wenn *bstretch* den Wert false hat, erfolgt keine Streckung. In der folgenden Tabelle werden die möglichen Permutationen und die resultierenden Steuer leisten Stile von *bstretch* und *bhorz*angezeigt.
 
-|bStretch|bHorz|Strecken|Ausrichtung|Andocken "/" Not Andocken|
+|bstretch|bHorz|Dehnung|Ausrichtung|Andock/nicht Andocken|
 |--------------|-----------|----------------|-----------------|--------------------------|
-|true|true|Horizontale Strecken|Horizontal ausgerichtet.|Nicht Andocken|
-|true|false|Vertikale Strecken|Vertikal ausgerichtet.|Nicht Andocken|
-|false|true|Keine größenanpassung verfügbar|Horizontal ausgerichtet.|Andocken|
-|false|false|Keine größenanpassung verfügbar|Vertikal ausgerichtet.|Andocken|
+|TRUE|TRUE|Horizontale Streckung|Horizontal ausgerichtet|Nicht Andocken|
+|TRUE|FALSE|Vertikale Streckung|Vertikal orientiert|Nicht Andocken|
+|FALSE|TRUE|Keine Streckung verfügbar|Horizontal ausgerichtet|Docking|
+|FALSE|FALSE|Keine Streckung verfügbar|Vertikal orientiert|Docking|
 
-##  <a name="calcinsiderect"></a>  CControlBar::CalcInsideRect
+##  <a name="calcinsiderect"></a>CControlBar:: CalcInsideRect
 
-Das Framework ruft diese Funktion zum Berechnen der Clientbereich der Steuerleiste.
+Das Framework ruft diese Funktion auf, um den Client Bereich der Steuerleiste zu berechnen.
 
 ```
 virtual void CalcInsideRect(
@@ -206,19 +206,19 @@ virtual void CalcInsideRect(
 
 ### <a name="parameters"></a>Parameter
 
-*rect*<br/>
-Enthält die aktuellen Maße der Steuerleiste. einschließlich der Rahmen an.
+*Rect*<br/>
+Enthält die aktuellen Dimensionen der Steuerleiste. einschließlich der Rahmen.
 
-*bHorz*<br/>
-Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Die *bHorz* Parameter ungleich NULL ist, wenn die Leiste horizontal ausgerichtet und 0, ist wenn es vertikal ausgerichtet ist.
+*bhorz*<br/>
+Gibt an, dass die Leiste horizontal oder vertikal ausgerichtet ist. Der *bhorz* -Parameter ist ungleich 0 (null), wenn der Balken horizontal ausgerichtet ist, und ist 0, wenn er vertikal ausgerichtet ist.
 
 ### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird aufgerufen, bevor die Steuerleiste gezeichnet wird.
 
-Überschreiben Sie diese Funktion, um das Rendering der Rahmen und Ziehpunktleiste der Steuerleiste anpassen.
+Überschreiben Sie diese Funktion, um das Rendering der Rahmen-und Zieh Punkt Leiste der Steuerleiste anzupassen.
 
-##  <a name="ccontrolbar"></a>  CControlBar::CControlBar
+##  <a name="ccontrolbar"></a>CControlBar:: CControlBar
 
 Erstellt ein `CControlBar`-Objekt.
 
@@ -226,9 +226,9 @@ Erstellt ein `CControlBar`-Objekt.
 CControlBar();
 ```
 
-##  <a name="dopaint"></a>  CControlBar::DoPaint
+##  <a name="dopaint"></a>CControlBar::D opaint
 
-Wird aufgerufen, durch das Framework zum Rendern der Rahmen und Ziehpunktleiste der Steuerleiste.
+Wird von Framework aufgerufen, um die Rahmen-und Zieh Punkt Leiste der Steuerleiste zu Rendering.
 
 ```
 virtual void DoPaint(CDC* pDC);
@@ -237,17 +237,17 @@ virtual void DoPaint(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Verweist auf den Gerätekontext für das Rendern der Rahmen und das ziehelement der Steuerleiste verwendet werden.
+Zeigt auf den Gerätekontext, der zum Rendern der Rahmen und des Zieh Punkts der Steuerleiste verwendet werden soll.
 
 ### <a name="remarks"></a>Hinweise
 
-Überschreiben Sie diese Funktion, um das zeichenverhalten der Steuerleiste anpassen.
+Überschreiben Sie diese Funktion, um das Zeichnungs Verhalten der Steuerleiste anzupassen.
 
-Eine weitere Anpassungsmethode ist, überschreiben die `DrawBorders` und `DrawGripper` Funktionen und Hinzufügen von benutzerdefinierten Zeichnungscode für den Rahmen und das ziehelement. Da diese Methoden, die standardmäßig aufgerufen werden `DoPaint` -Methode, die eine Überschreibung der `DoPaint` ist nicht erforderlich.
+Eine weitere Anpassungs Methode besteht darin, die Funktionen `DrawBorders` und `DrawGripper` zu überschreiben und benutzerdefinierten Zeichnungs Code für die Rahmen und den Zieh Punkt hinzuzufügen. Da diese Methoden von der Standard `DoPaint`-Methode aufgerufen werden, ist eine außer Kraft Setzung von `DoPaint` nicht erforderlich.
 
-##  <a name="drawborders"></a>  CControlBar::DrawBorders
+##  <a name="drawborders"></a>CControlBar::D rawrahmens
 
-Wird aufgerufen, durch das Framework zum Rendern der Rahmen der Steuerleiste.
+Wird von Framework aufgerufen, um die Ränder der Steuerleiste zu erzeugen.
 
 ```
 virtual void DrawBorders(
@@ -258,18 +258,18 @@ virtual void DrawBorders(
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Verweist auf den Gerätekontext für das Rendern der Rahmen der Steuerleiste verwendet werden.
+Verweist auf den Gerätekontext, der zum Rendern der Rahmen der Steuerleiste verwendet werden soll.
 
-*rect*<br/>
-Ein `CRect` -Objekt, das die Abmessungen der Steuerleiste enthält.
+*Rect*<br/>
+Ein `CRect`-Objekt, das die Dimensionen der Steuerleiste enthält.
 
 ### <a name="remarks"></a>Hinweise
 
-Überschreiben Sie diese Funktion, um die Darstellung der Steuerelementrahmen Leiste anzupassen.
+Überschreiben Sie diese Funktion, um die Darstellung der Rahmen der Steuerleiste anzupassen.
 
-##  <a name="drawgripper"></a>  CControlBar::DrawGripper
+##  <a name="drawgripper"></a>CControlBar::D rawgripper
 
-Wird aufgerufen, durch das Framework das ziehelement der Steuerleiste zu rendern.
+Wird von Framework aufgerufen, um den Zieh Punkt der Steuerleiste zu Rendering.
 
 ```
 virtual void DrawGripper(
@@ -280,18 +280,18 @@ virtual void DrawGripper(
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Verweist auf den Gerätekontext für das Rendern des ziehelements Leiste Steuerelement verwendet werden.
+Zeigt auf den Gerätekontext, der zum Rendern des Steuer leisten-Zieh Punkts verwendet werden soll.
 
-*rect*<br/>
-Ein `CRect` -Objekt, das die Abmessungen des ziehelements Leiste Steuerelement enthält.
+*Rect*<br/>
+Ein `CRect`-Objekt, das die Abmessungen des Steuer leisten-Zieh Elements enthält.
 
 ### <a name="remarks"></a>Hinweise
 
-Überschreiben Sie diese Funktion, um die Darstellung des Steuerelements Leiste ziehelements anpassen.
+Überschreiben Sie diese Funktion, um die Darstellung des Steuer leisten-Zieh Elements anzupassen.
 
-##  <a name="enabledocking"></a>  CControlBar:: EnableDocking
+##  <a name="enabledocking"></a>CControlBar:: EnableDocking
 
-Mit dieser Funktion können Sie ermöglichen eine Steuerleiste angedockt werden.
+Mit dieser Funktion kann eine Steuerleiste angedockt werden.
 
 ```
 void EnableDocking(DWORD dwDockStyle);
@@ -299,30 +299,30 @@ void EnableDocking(DWORD dwDockStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwDockStyle*<br/>
-Gibt an, ob die Steuerleiste unterstützt Andocken und den Seiten des übergeordneten Fensters auf die Steuerleiste angedockt werden kann, wenn unterstützt. Hierbei kann es sich um eine oder mehrere der folgenden sein:
+*dwdockstyle*<br/>
+Gibt an, ob die Steuerleiste Andocken und die Seiten des übergeordneten Fensters unterstützt, an die die Steuerleiste angedockt werden kann. Kann eine oder mehrere der folgenden sein:
 
-- CBRS_ALIGN_TOP ermöglicht das Andocken am oberen Rand des Clientbereichs.
+- CBRS_ALIGN_TOP ermöglicht das Andocken am oberen Rand des Client Bereichs.
 
-- CBRS_ALIGN_BOTTOM ermöglicht das Andocken am unteren Rand des Clientbereichs.
+- CBRS_ALIGN_BOTTOM ermöglicht das Andocken am unteren Rand des Client Bereichs.
 
-- CBRS_ALIGN_LEFT können auf der linken Seite des Clientbereichs andocken.
+- CBRS_ALIGN_LEFT ermöglicht das Andocken auf der linken Seite des Client Bereichs.
 
-- CBRS_ALIGN_RIGHT können auf der rechten Seite des Clientbereichs andocken.
+- CBRS_ALIGN_RIGHT ermöglicht das Andocken auf der rechten Seite des Client Bereichs.
 
-- CBRS_ALIGN_ANY ermöglicht das Andocken an jede Seite des Clientbereichs.
+- CBRS_ALIGN_ANY ermöglicht das Andocken auf einer beliebigen Seite des Client Bereichs.
 
-- CBRS_FLOAT_MULTI können mehrere Schiebeleisten-Steuerelemente, die in einer einzelnen Minirahmenfenster abgedockt werden.
+- CBRS_FLOAT_MULTI ermöglicht, dass mehrere Steuer leisten in einem einzelnen Mini Rahmen Fenster angezeigt werden.
 
-Wenn der Wert 0 (d. h. keine Flags angibt), die Steuerleiste wird nicht angedockt.
+Wenn 0 (d. h. keine Flags angibt), wird die Steuerleiste nicht andocken.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Seiten mit dem angegebenen müssen einer der Seiten für die in der Ziel-Rahmenfenster Andocken aktiviert entsprechen, oder die Steuerleiste nicht zu diesem Frame Fenster angedockt werden.
+Die angegebenen Seiten müssen einer der Seiten entsprechen, die im Zielrahmen Fenster zum Andocken aktiviert sind, oder die Steuerleiste kann nicht an dieses Rahmen Fenster angedockt werden.
 
-##  <a name="getbarstyle"></a>  CControlBar::GetBarStyle
+##  <a name="getbarstyle"></a>CControlBar:: getbarstyle
 
-Mit dieser Funktion können Sie ermitteln, welche **CBRS_** (Steuerelementstile Leiste)-Einstellungen für die Steuerleiste derzeit festgelegt werden.
+Mit dieser Funktion können Sie bestimmen, welche **CBRS_** -Einstellungen (Steuer leisten Stile) derzeit für die Steuerleiste festgelegt sind.
 
 ```
 DWORD GetBarStyle();
@@ -330,15 +330,15 @@ DWORD GetBarStyle();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die aktuelle **CBRS_** (Steuerelementstile Leiste)-Einstellungen für die Steuerleiste. Finden Sie unter [CControlBar::SetBarStyle](#setbarstyle) für die vollständige Liste der verfügbaren Formate.
+Die aktuellen **CBRS_** (Steuer leisten Stile) Einstellungen für die Steuerleiste. Eine komplette Liste der verfügbaren Stile finden Sie unter [CControlBar:: setbarstyle](#setbarstyle) .
 
 ### <a name="remarks"></a>Hinweise
 
-Verarbeitet keine **WS_** (Fensterstil) Stile.
+Behandelt keine **WS_** Stile (Fenster Stil).
 
-##  <a name="getborders"></a>  CControlBar::GetBorders
+##  <a name="getborders"></a>CControlBar:: getrahmens
 
-Gibt die aktuellen rahmenwerte für die Steuerleiste zurück.
+Gibt die aktuellen Rahmen Werte für die Steuerleiste zurück.
 
 ```
 CRect GetBorders() const;
@@ -346,11 +346,11 @@ CRect GetBorders() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CRect` Objekt, das die aktuelle Breite (in Pixeln) der einzelnen Seiten des Steuerelementobjekts Leiste enthält. Z. B. den Wert von der *linken* Member, der [CRect](../../atl-mfc-shared/reference/crect-class.md) Objekt, das ist die Breite des linken Rahmens.
+Ein `CRect`-Objekt, das die aktuelle Breite (in Pixel) jeder Seite des Steuer leisten Objekts enthält. Beispielsweise ist der Wert des *linken* Members des [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekts die Breite des linken Rahmens.
 
-##  <a name="getcount"></a>  CControlBar::GetCount
+##  <a name="getcount"></a>CControlBar:: GetCount
 
-Gibt die Anzahl der nicht-HWND-Elemente auf der `CControlBar` Objekt.
+Gibt die Anzahl der nicht-HWND-Elemente für das `CControlBar` Objekt zurück.
 
 ```
 int GetCount() const;
@@ -358,15 +358,15 @@ int GetCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der nicht-HWND-Elemente auf der `CControlBar` Objekt. Diese Funktion gibt 0 für eine [CDialogBar](../../mfc/reference/cdialogbar-class.md) Objekt.
+Die Anzahl der nicht-HWND-Elemente für das `CControlBar` Objekt. Diese Funktion gibt 0 für ein [CDialogBar](../../mfc/reference/cdialogbar-class.md) -Objekt zurück.
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ des Elements hängt vom abgeleiteten Objekt: Bereiche für [CStatusBar](../../mfc/reference/cstatusbar-class.md) -Objekte, und die Schaltflächen und die Trennzeichen für die [CToolBar](../../mfc/reference/ctoolbar-class.md) Objekte.
+Der Typ des Elements hängt vom abgeleiteten Objekt ab: Bereiche für [CStatusBar](../../mfc/reference/cstatusbar-class.md) -Objekte und Schaltflächen und Trennzeichen für [CToolBar](../../mfc/reference/ctoolbar-class.md) -Objekte.
 
-##  <a name="getdockingframe"></a>  CControlBar::GetDockingFrame
+##  <a name="getdockingframe"></a>CControlBar:: getdockingframe
 
-Rufen Sie diese Memberfunktion, um einen Zeiger auf das aktuelle Rahmenfenster zu erhalten, Ihre Steuerleiste angedockt ist.
+Rufen Sie diese Member-Funktion auf, um einen Zeiger auf das aktuelle Rahmen Fenster zu erhalten, an das die Steuerleiste angedockt ist.
 
 ```
 CFrameWnd* GetDockingFrame() const;
@@ -374,17 +374,17 @@ CFrameWnd* GetDockingFrame() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein Rahmenfenster, wenn erfolgreich; andernfalls NULL.
+Ein Zeiger auf ein Rahmen Fenster, wenn erfolgreich. andernfalls NULL.
 
-Wenn die Steuerleiste nicht angedockt ist ein Rahmenfenster (d.h., wenn die Steuerleiste unverankert ist), die diese Funktion gibt einen Zeiger zum übergeordneten [CMiniFrameWnd](../../mfc/reference/cminiframewnd-class.md).
+Wenn die Steuerleiste nicht an ein Rahmen Fenster angedockt ist (d. h., wenn die Steuerleiste unverankert ist), gibt diese Funktion einen Zeiger auf das übergeordnete [CMiniFrameWnd](../../mfc/reference/cminiframewnd-class.md)zurück.
 
 ### <a name="remarks"></a>Hinweise
 
-Weitere Informationen zu andockbaren Steuerleisten, finden Sie unter [CControlBar:: EnableDocking](#enabledocking) und [CFrameWnd:: DockControlBar](../../mfc/reference/cframewnd-class.md#dockcontrolbar).
+Weitere Informationen zu andockbaren Steuer leisten finden Sie unter [CControlBar:: EnableDocking](#enabledocking) und [CFrameWnd::D ockcontrolbar](../../mfc/reference/cframewnd-class.md#dockcontrolbar).
 
-##  <a name="isfloating"></a>  CControlBar::IsFloating
+##  <a name="isfloating"></a>CControlBar:: IsFloating
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob die Steuerleiste frei verschiebbar oder angedockt ist.
+Mit dieser Member-Funktion können Sie feststellen, ob die Steuerleiste unverankert oder angedockt ist.
 
 ```
 BOOL IsFloating() const;
@@ -392,13 +392,13 @@ BOOL IsFloating() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Steuerleiste unverankert ist; andernfalls 0.
+Ungleich 0 (null), wenn die Steuerleiste nicht verankert ist. andernfalls 0.
 
 ### <a name="remarks"></a>Hinweise
 
-Ändern Sie den Status einer Steuerleiste von floating angedockt, rufen Sie [CFrameWnd::FloatControlBar](../../mfc/reference/cframewnd-class.md#floatcontrolbar).
+Um den Zustand einer Steuerleiste von angedockt in Floating zu ändern, nennen Sie [CFrameWnd:: FloatControlBar](../../mfc/reference/cframewnd-class.md#floatcontrolbar).
 
-##  <a name="m_bautodelete"></a>  CControlBar::m_bAutoDelete
+##  <a name="m_bautodelete"></a>CControlBar:: m_bAutoDelete
 
 Wenn der Wert ungleich 0 (null) ist, wird das `CControlBar`-Objekt gelöscht, sobald die Windows-Steuerleiste zerstört wird.
 
@@ -408,13 +408,13 @@ BOOL m_bAutoDelete;
 
 ### <a name="remarks"></a>Hinweise
 
-*M_bAutoDelete* ist eine öffentliche Variable des Typs "bool".
+*m_bAutoDelete* ist eine öffentliche Variable des Typs bool.
 
-Eine Steuerleiste-Objekt ist in der Regel in einem Rahmenfenster Objekt eingebettet. In diesem Fall *M_bAutoDelete* ist 0, da das eingebettete Steuerleiste-Objekt zerstört wird, wenn das Rahmenfenster zerstört wird.
+Ein Steuer leisten Objekt ist in der Regel in ein Rahmen Fenster Objekt eingebettet. In diesem Fall ist *m_bAutoDelete* 0, da das eingebettete Steuer leisten Objekt zerstört wird, wenn das Rahmen Fenster zerstört wird.
 
-Legen Sie die Variable einen Wert ungleich NULL, wenn Sie Zuordnen einer `CControlBar` Objekt auf dem Heap, und Sie nicht planen, rufen Sie **löschen**.
+Legen Sie diese Variable auf einen Wert ungleich 0 (null) fest, wenn Sie ein `CControlBar` Objekt auf dem Heap zuordnen, und Sie nicht beabsichtigen, **Delete**aufzurufen.
 
-##  <a name="m_pinplaceowner"></a>  CControlBar::m_pInPlaceOwner
+##  <a name="m_pinplaceowner"></a>CControlBar:: m_pInPlaceOwner
 
 Der direkte Besitzer der Steuerleiste.
 
@@ -422,9 +422,9 @@ Der direkte Besitzer der Steuerleiste.
 CWnd* m_pInPlaceOwner;
 ```
 
-##  <a name="onupdatecmdui"></a>  CControlBar::OnUpdateCmdUI
+##  <a name="onupdatecmdui"></a>CControlBar:: OnUpdateCmdUI
 
-Diese Memberfunktion wird durch das Framework beim Aktualisieren des Status von der Symbolleiste oder der Statusleiste aufgerufen.
+Diese Member-Funktion wird vom Framework aufgerufen, um den Status der Symbolleiste oder der Statusleiste zu aktualisieren.
 
 ```
 virtual void OnUpdateCmdUI(
@@ -434,21 +434,21 @@ virtual void OnUpdateCmdUI(
 
 ### <a name="parameters"></a>Parameter
 
-*pTarget*<br/>
-Zeigt an das Hauptrahmenfenster der Anwendung. This-Zeiger wird für Update Weiterleiten von Nachrichten verwendet.
+*pTARGET*<br/>
+Verweist auf das Hauptrahmen Fenster der Anwendung. Dieser Zeiger wird zum Weiterleiten von Update Nachrichten verwendet.
 
-*bDisableIfNoHndler*<br/>
-Flag, die angibt, ob ein Steuerelement, das keine updatehandler wurde automatisch als deaktiviert angezeigt werden soll.
+*bdisableifnohndler*<br/>
+Flag, das angibt, ob ein Steuerelement ohne Update Handler automatisch als deaktiviert angezeigt werden soll.
 
 ### <a name="remarks"></a>Hinweise
 
-Um eine einzelne Schaltfläche oder einen Bereich zu aktualisieren, verwenden Sie die ON_UPDATE_COMMAND_UI-Makro in der meldungszuordnung, um einen updatehandler entsprechend festzulegen. Finden Sie unter [ON_UPDATE_COMMAND_UI](message-map-macros-mfc.md#on_update_command_ui) für Weitere Informationen zum Verwenden dieses Makro.
+Um eine einzelne Schaltfläche oder einen einzelnen Bereich zu aktualisieren, verwenden Sie das ON_UPDATE_COMMAND_UI-Makro in der Meldungs Zuordnung, um einen Update Handler entsprechend festzulegen. Weitere Informationen zur Verwendung dieses Makros finden Sie unter [ON_UPDATE_COMMAND_UI](message-map-macros-mfc.md#on_update_command_ui) .
 
-`OnUpdateCmdUI` wird von Framework aufgerufen, wenn die Anwendung im Leerlauf befindet. Das Rahmenfenster aktualisiert werden, muss mindestens indirekt eines untergeordneten Fensters, Rand eines Rahmenfensters für sichtbar sein. `OnUpdateCmdUI` ist ein fortschrittlicher überschreibbar.
+`OnUpdateCmdUI` wird vom Framework aufgerufen, wenn sich die Anwendung im Leerlauf befindet. Das zu Aktualisier Ende Rahmen Fenster muss ein untergeordnetes Fenster (zumindest indirekt) eines sichtbaren Rahmen Fensters sein. `OnUpdateCmdUI` ist eine erweiterte über schreibbare.
 
-##  <a name="setbarstyle"></a>  CControlBar::SetBarStyle
+##  <a name="setbarstyle"></a>CControlBar:: setbarstyle
 
-Mit dieser Funktion können Sie die gewünschte festgelegt **CBRS_** Stile für die Steuerleiste.
+Mit dieser Funktion können Sie die gewünschten **CBRS_** Stile für die Steuerleiste festlegen.
 
 ```
 void SetBarStyle(DWORD dwStyle);
@@ -456,42 +456,42 @@ void SetBarStyle(DWORD dwStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwStyle*<br/>
-Die gewünschte Stile für die Steuerleiste. Hierbei kann es sich um eine oder mehrere der folgenden sein:
+*dwstyle*<br/>
+Die gewünschten Stile für die Steuerleiste. Kann eine oder mehrere der folgenden sein:
 
-- CBRS_ALIGN_TOP ermöglicht die Steuerleiste am oberen Rand der Clientbereich eines Rahmenfensters angedockt werden.
+- CBRS_ALIGN_TOP ermöglicht, dass die Steuerleiste am oberen Rand des Client Bereichs eines Rahmen Fensters angedockt wird.
 
-- CBRS_ALIGN_BOTTOM ermöglicht die Steuerleiste am unteren Rand der Clientbereich eines Rahmenfensters angedockt werden.
+- CBRS_ALIGN_BOTTOM ermöglicht, dass die Steuerleiste am unteren Rand des Client Bereichs eines Rahmen Fensters angedockt wird.
 
-- CBRS_ALIGN_LEFT können Steuerleiste an der linken Seite des Clientbereichs des ein Framefenster angedockt werden.
+- CBRS_ALIGN_LEFT ermöglicht, dass die Steuerleiste Links vom Client Bereich eines Rahmen Fensters angedockt wird.
 
-- CBRS_ALIGN_RIGHT ermöglicht es der Symbolleiste auf die rechte Seite des Clientbereichs eines Frame-Fensters angedockt werden.
+- CBRS_ALIGN_RIGHT ermöglicht, dass die Steuerleiste an der rechten Seite des Client Bereichs eines Rahmen Fensters angedockt wird.
 
-- CBRS_ALIGN_ANY können Steuerleiste an jede Seite des Clientbereichs des ein Framefenster angedockt werden.
+- CBRS_ALIGN_ANY ermöglicht es, dass die Steuerleiste an eine beliebige Seite des Client Bereichs eines Rahmen Fensters angedockt wird.
 
-- CBRS_BORDER_TOP bewirkt, dass einen Rahmen gezeichnet werden soll, am oberen Rand des Steuerelements Balken-, wenn es sichtbar wäre.
+- CBRS_BORDER_TOP bewirkt, dass ein Rahmen am oberen Rand der Steuerleiste gezeichnet wird, wenn er sichtbar wäre.
 
-- CBRS_BORDER_BOTTOM bewirkt, dass einen Rahmen gezeichnet werden soll, auf dem unteren Rand des Steuerelements Balken-, wenn es sichtbar wäre.
+- CBRS_BORDER_BOTTOM bewirkt, dass ein Rahmen am unteren Rand der Steuerleiste gezeichnet wird, wenn er sichtbar wäre.
 
-- CBRS_BORDER_LEFT bewirkt, dass einen Rahmen gezeichnet werden soll, am linken Rand des Steuerelements Balken-, wenn es sichtbar wäre.
+- CBRS_BORDER_LEFT bewirkt, dass ein Rahmen am linken Rand der Steuerleiste gezeichnet wird, wenn er sichtbar wäre.
 
-- CBRS_BORDER_RIGHT bewirkt, dass einen Rahmen gezeichnet werden soll, am rechten Rand des Steuerelements Balken-, wenn es sichtbar wäre.
+- CBRS_BORDER_RIGHT bewirkt, dass ein Rahmen am rechten Rand der Steuerleiste gezeichnet wird, wenn er sichtbar wäre.
 
-- CBRS_FLOAT_MULTI können mehrere Schiebeleisten-Steuerelemente, die in einer einzelnen Minirahmenfenster abgedockt werden.
+- CBRS_FLOAT_MULTI ermöglicht, dass mehrere Steuer leisten in einem einzelnen Mini Rahmen Fenster angezeigt werden.
 
-- CBRS_TOOLTIPS bewirkt, dass QuickInfos für der Steuerleiste angezeigt werden soll.
+- CBRS_TOOLTIPS bewirkt, dass Quick Infos für die Steuerleiste angezeigt werden.
 
-- CBRS_FLYBY bewirkt, dass der Meldungstext als QuickInfos gleichzeitig aktualisiert werden.
+- CBRS_FLYBY bewirkt, dass der Nachrichtentext zur gleichen Zeit wie Quick Infos aktualisiert wird.
 
-- CBRS_GRIPPER bewirkt, dass ein ziehelements, ähnlich wie die Bänder in einer `CReBar` Objekt, das für alle gezeichnet werden `CControlBar`-abgeleitete Klasse.
+- CBRS_GRIPPER bewirkt, dass ein Zieh Punkt ähnlich dem, der auf Bändern in einem `CReBar`-Objekt verwendet wird, für jede `CControlBar`abgeleitete Klasse gezeichnet wird.
 
 ### <a name="remarks"></a>Hinweise
 
-Hat keine Auswirkungen auf die **WS_** (Fensterstil)-Einstellungen.
+Hat keine Auswirkung auf die Einstellungen für **WS_** (Fenster Stil).
 
-##  <a name="setborders"></a>  CControlBar::SetBorders
+##  <a name="setborders"></a>CControlBar:: SetBorders
 
-Rufen Sie diese Funktion, um die Größe der Steuerleiste Rahmen festgelegt.
+Diese Funktion wird aufgerufen, um die Größe der Rahmen der Steuerleiste festzulegen.
 
 ```
 void SetBorders(
@@ -505,28 +505,28 @@ void SetBorders(LPCRECT lpRect);
 
 ### <a name="parameters"></a>Parameter
 
-*cxLeft*<br/>
-Die Breite (in Pixel) des linken Rands der Steuerleiste.
+*cxleft*<br/>
+Die Breite (in Pixel) des linken Rahmens der Steuerleiste.
 
-*cyTop*<br/>
-Die Höhe (in Pixel) des oberen Rands der Steuerleiste.
+*cytop*<br/>
+Die Höhe des oberen Rahmens der Steuerleiste in Pixel.
 
-*cxRight*<br/>
-Die Breite (in Pixel) des rechten Rands der Steuerleiste.
+*cxright*<br/>
+Die Breite des rechten Rahmens der Steuerleiste (in Pixel).
 
-*cyBottom*<br/>
-Die Höhe (in Pixel) für die untere Rahmenlinie der Steuerleiste.
+*cybottom*<br/>
+Die Höhe (in Pixel) des unteren Rahmens der Steuerleiste.
 
-*lpRect*<br/>
-Ein Zeiger auf eine [CRect](../../atl-mfc-shared/reference/crect-class.md) Objekt, das die aktuelle Breite (in Pixeln) der einzelnen Rahmen der Steuerleistenobjekt enthält.
+*lprect*<br/>
+Ein Zeiger auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das die aktuelle Breite (in Pixel) der einzelnen Rahmen des Steuer leisten Objekts enthält.
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Codebeispiel legt die oberen und unteren Rahmen der Steuerleiste 5 Pixel und dem linken und rechten Rand auf 2 Pixel fest:
+Im folgenden Codebeispiel werden die oberen und unteren Ränder der Steuerleiste auf 5 Pixel und die linken und rechten Ränder auf 2 Pixel festgelegt:
 
 [!code-cpp[NVC_MFCControlLadenDialog#61](../../mfc/codesnippet/cpp/ccontrolbar-class_1.cpp)]
 
-##  <a name="setinplaceowner"></a>  CControlBar::SetInPlaceOwner
+##  <a name="setinplaceowner"></a>CControlBar:: "*"
 
 Ändert den direkten Besitzer einer Steuerleiste.
 
@@ -536,14 +536,14 @@ void SetInPlaceOwner(CWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pWnd*<br/>
-Ein Zeiger auf ein `CWnd` -Objekt.
+*folgenden*<br/>
+Ein Zeiger auf ein `CWnd`-Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Muster CTRLBARS](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel-CTRLBARS](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CToolBar-Klasse](../../mfc/reference/ctoolbar-class.md)<br/>
