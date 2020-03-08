@@ -5,11 +5,11 @@ helpviewer_keywords:
 - breaking changes [C++]
 ms.assetid: b38385a9-a483-4de9-99a6-797488bc5110
 ms.openlocfilehash: 335db55f3b181021f4deb391358df5bbfb607815
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415703"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865494"
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Änderungsverlauf von Visual C++ von 2003 bis 2015
 
@@ -32,9 +32,9 @@ Darüber hinaus können fortlaufende Verbesserungen der Übereinstimmung des Com
 
 - [Standard C++ und C++-Standardbibliothek: Bedeutende Änderungen](#BK_STL)
 
-- [Wichtige MFC- und ATL-Änderungen](#BK_MFC)
+- [MFC und ATL: Bedeutende Änderungen](#BK_MFC)
 
-- [Wichtige Concurrency Runtime-Änderungen](#BK_ConcRT)
+- [Concurrency Runtime: Bedeutende Änderungen](#BK_ConcRT)
 
 ## <a name="VC_2015"></a> Visual Studio 2015: Änderungen bei der Konformität mit Standards
 
@@ -44,7 +44,7 @@ Darüber hinaus können fortlaufende Verbesserungen der Übereinstimmung des Com
 
 - **Umgestaltete Binärdateien**
 
-   Die CRT-Bibliothek wurde in zwei verschiedene Binärdateien umgestaltet: eine Universal CRT (ucrtbase), die den Großteil der Standardfunkionen enthält, und eine VC-Laufzeitbibliothek (vcruntime). Die VC-Laufzeitbibliothek enthält die compilergebundenen Funktionen wie die Ausnahmebehandlung und intrinsische Funktionen. Wenn Sie die standardmäßigen Projekteinstellungen verwenden, sind Sie von dieser Änderung nicht betroffen, da der Linker automatisch die neuen Standardbibliotheken verwendet. Wenn Sie die **Linker**-Eigenschaft **Alle Standardbibliotheken ignorieren** des Projekts auf **Ja** festgelegt haben oder die `/NODEFAULTLIB`-Linkeroption in der Befehlszeile verwenden, müssen Sie die Liste der Bibliotheken (bei der Eigenschaft **Zusätzliche Abhängigkeiten**) so aktualisieren, dass sie die neuen umgestalteten Bibliotheken enthält. Ersetzen Sie die alte CRT-Bibliothek (libcmt.lib, libcmtd.lib, msvcrt.lib, msvcrtd.lib) mit den entsprechenden umgestalteten Bibliotheken. Für jede der beiden umgestalteten Bibliotheken gibt es eine statische (.lib) und eine dynamische (.dll) Version sowie endgültige (ohne Suffix) und Debugversionen (mit dem Suffix „d“). Die dynamischen Versionen haben eine Importbibliothek, mit der eine Verknüpfung erstellt wird. Die zwei umgestalteten Bibliotheken sind Universal CRT, d. h. „ucrtbase.dll“ oder „ucrtbase.lib“, „ucrtbased.dll“ oder „ucrtbased.lib“, und die VC-Laufzeitbibliothek, „libvcruntime.lib“, die „vcruntime*Version*.dll“, „libvcruntimed.lib“ und „vcruntimed*Version*.dll“. Die *Version* sowohl in Visual Studio 2015 als auch in Visual Studio 2017 ist 140. Siehe [CRT Library Features](../c-runtime-library/crt-library-features.md).
+   Die CRT-Bibliothek wurde in zwei verschiedene Binärdateien umgestaltet: eine Universal CRT (ucrtbase), die den Großteil der Standardfunkionen enthält, und eine VC-Laufzeitbibliothek (vcruntime). Die VC-Laufzeitbibliothek enthält die compilergebundenen Funktionen wie die Ausnahmebehandlung und intrinsische Funktionen. Wenn Sie die standardmäßigen Projekteinstellungen verwenden, sind Sie von dieser Änderung nicht betroffen, da der Linker automatisch die neuen Standardbibliotheken verwendet. Wenn Sie die **Linker**-Eigenschaft **Alle Standardbibliotheken ignorieren** des Projekts auf **Ja** festgelegt haben oder die `/NODEFAULTLIB`-Linkeroption in der Befehlszeile verwenden, müssen Sie die Liste der Bibliotheken (bei der Eigenschaft **Zusätzliche Abhängigkeiten**) so aktualisieren, dass sie die neuen umgestalteten Bibliotheken enthält. Ersetzen Sie die alte CRT-Bibliothek (libcmt.lib, libcmtd.lib, msvcrt.lib, msvcrtd.lib) mit den entsprechenden umgestalteten Bibliotheken. Für jede der beiden umgestalteten Bibliotheken gibt es eine statische (.lib) und eine dynamische (.dll) Version sowie endgültige (ohne Suffix) und Debugversionen (mit dem Suffix „d“). Die dynamischen Versionen haben eine Importbibliothek, mit der eine Verknüpfung erstellt wird. Die zwei umgestalteten Bibliotheken sind Universal CRT, d. h. „ucrtbase.dll“ oder „ucrtbase.lib“, „ucrtbased.dll“ oder „ucrtbased.lib“, und die VC-Laufzeitbibliothek, „libvcruntime.lib“, die „vcruntime*Version*.dll“, „libvcruntimed.lib“ und „vcruntimed*Version*.dll“. Die *Version* sowohl in Visual Studio 2015 als auch in Visual Studio 2017 ist 140. Siehe [CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md).
 
 #### <a name="localeh"></a>\<locale.h>
 
@@ -431,7 +431,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     Command line warning  D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
     ```
 
-   Diese Option wurde in der Regel für nicht dem Standard entsprechenden Code verwendet, der Schleifenvariablen gemäß dem Standard nach dem Punkt verwendet, an dem diese den Gültigkeitsbereich verlassen sollten. Dies war nur erforderlich, wenn Sie die `/Za`-Option zum Kompilieren verwendet haben, da die Verwendung einer Schleifenvariable ohne `/Za` nach dem Ende der Schleife immer zulässig ist. Wenn die Einhaltung von Standards keine Rolle spielt (z.B. wenn der Code nicht auf andere Compiler übertragbar ist), können Sie die Option `/Za` deaktivieren (oder die Eigenschaft **Spracherweiterungen deaktivieren** auf **Nein** festlegen). Wenn Sie übertragbaren Code schreiben möchten, der den Standards entspricht, sollten Sie den Code umschreiben, indem Sie die Deklaration der Variablen an eine Stelle außerhalb der Schleifen verschieben.
+   Diese Option wurde in der Regel für nicht dem Standard entsprechenden Code verwendet, der Schleifenvariablen gemäß dem Standard nach dem Punkt verwendet, an dem diese den Gültigkeitsbereich verlassen sollten. Dies war nur erforderlich, wenn Sie die `/Za`-Option zum Kompilieren verwendet haben, da die Verwendung einer Schleifenvariable ohne `/Za` nach dem Ende der Schleife immer zulässig ist. Wenn die Einhaltung von Standards keine Rolle spielt (z.B. wenn der Code nicht auf andere Compiler übertragbar ist), können Sie die `/Za`-Option deaktivieren (oder die Eigenschaft **Spracherweiterungen deaktivieren** auf **Nein** festlegen). Wenn Sie übertragbaren Code schreiben möchten, der den Standards entspricht, sollten Sie den Code umschreiben, indem Sie die Deklaration der Variablen an eine Stelle außerhalb der Schleifen verschieben.
 
     ```cpp
     // C2065 expected
@@ -666,7 +666,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Union-Datenmember**
 
-   Union-Datenmember dürfen über keine Verweistypen verfügen. Der folgende Code wurde zwar erfolgreich in Visual Studio 2013 kompiliert, erzeugt jedoch in Visual Studio 2015 einen Fehler.
+   Union-Datenmember dürfen über keine Verweistypen verfügen. Der folgende Code kompiliert zwar in Visual Studio 2013 erfolgreich, aber erzeugt in Visual Studio 2015 einen Fehler.
 
     ```cpp
     union U1
@@ -3302,7 +3302,7 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Die Umgebungsvariable __MSVCRT_HEAP_SELECT wird nicht mehr unterstützt. Diese Umgebungsvariable wurde ersatzlos entfernt.
 
-### <a name="microsoft-macro-assembler-reference"></a>Referenz zum Microsoft Macro Assembler
+### <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler – Referenz
 
 - Mehrere Direktiven wurden aus der Referenz zum Microsoft Macro Assembler-Compiler entfernt. Die folgenden Anweisungen wurden entfernt: `.186`, `.286`, `.286P`, `.287`, `.8086`, `.8087` und `.NO87`.
 

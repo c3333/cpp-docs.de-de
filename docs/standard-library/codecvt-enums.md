@@ -7,11 +7,11 @@ ms.assetid: 46a8b073-01bc-46d3-b3d3-a8540f9422c1
 helpviewer_keywords:
 - std::codecvt_mode
 ms.openlocfilehash: bbef1fe28c3321f06c0cc586062cd017168f8e73
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68459791"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78866150"
 ---
 # <a name="ltcodecvtgt-enums"></a>&lt;codecvt&gt;-Enumerationen
 
@@ -27,7 +27,7 @@ enum codecvt_mode {
 };
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Enumeration definiert drei Konstanten, die Konfigurationsinformationen für Gebietsschemafacets angeben, die in [\<codecvt>](../standard-library/codecvt.md) deklariert sind. Die unterschiedlichen Werte lauten:
 
@@ -39,6 +39,6 @@ Die Enumeration definiert drei Konstanten, die Konfigurationsinformationen für 
 
 Diese Konstanten können mit OR beliebig kombiniert werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<codecvt>](../standard-library/codecvt.md)

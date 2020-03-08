@@ -7,11 +7,11 @@ helpviewer_keywords:
 - attributes [C++/CLI], reference topics
 ms.assetid: 613a3611-b3eb-4347-aa38-99b654600e1c
 ms.openlocfilehash: 4885edf57988d5f83b56ba6a71da85877354d3ce
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69491056"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856441"
 ---
 # <a name="c-attributes-for-com-and-net"></a>C++-Attribute für COM und .NET
 
@@ -34,7 +34,7 @@ Attribute erweitern C++ in Richtungen, die derzeit nicht möglich sind, ohne die
 
 - Ersetzt die große Menge an IDL-Code, der für eine COM-Komponente erforderlich ist, mit wenigen präzisen Attributen.
 
-Wenn Sie z `CMyReceiver`. b. eine einfache Ereignis Senke für eine generische ATL-Klasse implementieren möchten, können Sie das [event_receiver](event-receiver.md) -Attribut auf eine bestimmte Klasse, z. b., anwenden. Das `event_receiver` -Attribut wird dann vom Microsoft C++ -Compiler kompiliert, der den richtigen Code in die Objektdatei einfügt.
+Wenn Sie z. b. eine einfache Ereignis Senke für eine generische ATL-Klasse implementieren möchten, können Sie das [event_receiver](event-receiver.md) -Attribut auf eine bestimmte Klasse, z. b. `CMyReceiver`, anwenden. Das `event_receiver`-Attribut wird dann vom Microsoft C++ -Compiler kompiliert, der den richtigen Code in die Objektdatei einfügt.
 
 ```cpp
 [event_receiver(com)]
@@ -45,7 +45,7 @@ class CMyReceiver
 }
 ```
 
-Anschließend können Sie `CMyReceiver` die Methoden `handler1` einrichten und `handler2` Ereignisse (mit der intrinsischen Funktion [__hook](../../cpp/hook.md)) aus einer Ereignis Quelle behandeln, die Sie mit [event_source](event-source.md)erstellen können.
+Anschließend können Sie die `CMyReceiver` Methoden `handler1` und `handler2` einrichten, um Ereignisse (mit der intrinsischen Funktion [__hook](../../cpp/hook.md)) aus einer Ereignis Quelle zu behandeln, die Sie mit [event_source](event-source.md)erstellen können.
 
 ## <a name="basic-mechanics-of-attributes"></a>Grundlegende Funktionsweise der Attribute
 
@@ -55,12 +55,12 @@ Wenn das Projekt erstellt wird, analysiert der Compiler jede Quelldatei, wobei C
 
 In der folgenden Abbildung wird die Beziehung zwischen dem Compiler und dem Attribut Anbieter veranschaulicht.
 
-![Komponenten Attribut Kommunikation](../media/vccompattrcomm.gif "Komponenten Attribut Kommunikation")
+![Komponenten Attribut Kommunikation](../media/vccompattrcomm.gif "Komponentenattributkommunikation")
 
 > [!NOTE]
 > Die Attribut Verwendung ändert nicht den Inhalt der Quelldatei. Der generierte Attribut Code ist nur während des Debuggens von Sitzungen sichtbar. Außerdem können Sie für jede Quelldatei im Projekt eine Textdatei generieren, in der die Ergebnisse der Attribut Ersetzung angezeigt werden. Weitere Informationen zu diesem Verfahren finden Sie unter [/FX (](../../build/reference/fx-merge-injected-code.md) eingefügten Code zusammenführen) und eingefügten [Code Debuggen](/visualstudio/debugger/how-to-debug-injected-code).
 
-Wie die C++ meisten Konstrukte verfügen Attribute über eine Reihe von Merkmalen, die ihre ordnungsgemäße Verwendung definieren. Dies wird als Kontext des-Attributs bezeichnet und in der Attribut Kontext Tabelle für jedes Attribut Verweis Thema behandelt. Beispielsweise kann das [Co-Klasse](coclass.md) -Attribut nur auf eine vorhandene Klasse oder Struktur angewendet werden, im Gegensatz zum [cpp_quote](cpp-quote.md) -Attribut, das an beliebiger Stelle in einer C++ Quelldatei eingefügt werden kann.
+Wie die C++ meisten Konstrukte verfügen Attribute über eine Reihe von Merkmalen, die ihre ordnungsgemäße Verwendung definieren. Dies wird als Kontext des-Attributs bezeichnet und in der Attribut Kontext Tabelle für jedes Attribut Verweis Thema behandelt. Beispielsweise kann das [Co-Klasse](coclass.md) -Attribut nur auf eine vorhandene Klasse oder Struktur angewendet werden, und nicht auf das [cpp_quote](cpp-quote.md) -Attribut, das an beliebiger Stelle in C++ einer Quelldatei eingefügt werden kann.
 
 ## <a name="building-an-attributed-program"></a>Erstellen eines attributierten Programms
 
@@ -80,7 +80,7 @@ Außerdem gibt der visuelle C++ Linker alle IDL-bezogenen Attributinformationen 
 
 ## <a name="contexts"></a>Attribut Kontexte
 
-C++Attribute können über vier grundlegende Felder beschrieben werden: das Ziel, auf das Sie angewendet werden können (**gilt für**), wenn Sie wiederholbar sind oder nicht (**wiederholbar**), das erforderliche vorhanden sein anderer Attribute (**erforderliche Attribute**) und Inkompatibilitäten. mit anderen Attributen (**ungültige Attribute**). Diese Felder sind in einer begleitenden Tabelle im Referenz Thema jedes Attributs aufgelistet. Jedes dieser Felder wird unten beschrieben.
+C++Attribute können über vier grundlegende Felder beschrieben werden: das Ziel, auf das Sie angewendet werden können (**gilt für**), wenn Sie wiederholbar sind oder nicht (**wiederholbar**), das erforderliche vorhanden sein weiterer Attribute (**erforderliche Attribute**) und Inkompatibilitäten mit anderen Attributen (**ungültige Attribute**). Diese Felder sind in einer begleitenden Tabelle im Referenz Thema jedes Attributs aufgelistet. Jedes dieser Felder wird unten beschrieben.
 
 ### <a name="applies-to"></a>Gilt für
 
@@ -92,7 +92,7 @@ Weitere Informationen finden Sie unter [Attribute by Usage (Attribute nach Verwe
 
 Dieses Feld gibt an, ob das Attribut wiederholt auf dasselbe Ziel angewendet werden kann. Die meisten Attribute sind nicht wiederholbar.
 
-### <a name="required-attributes"></a>Erforderliche Attribute
+### <a name="required-attributes"></a>Erforderliche Attribute.
 
 In diesem Feld werden andere Attribute aufgelistet, die vorhanden sein müssen (d. h. auf dasselbe Ziel angewendet), damit das angegebene Attribut ordnungsgemäß funktioniert. Es ist nicht üblich, dass für ein Attribut Einträge für dieses Feld vorhanden sind.
 
