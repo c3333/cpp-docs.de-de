@@ -17,13 +17,13 @@ helpviewer_keywords:
 - std::basic_ifstream [C++], swap
 ms.assetid: 366cd9a7-efc4-4b7f-ba10-c8271e47ffcf
 ms.openlocfilehash: 1e5e22c837ca2d6389591cec6d2cdd256ca50b1a
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455514"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865864"
 ---
-# <a name="basicifstream-class"></a>basic_ifstream-Klasse
+# <a name="basic_ifstream-class"></a>basic_ifstream-Klasse
 
 Beschreibt ein Objekt, das das Extrahieren von Elementen und codierten Objekten aus einem Streampuffer der Klasse [basic_filebuf](../standard-library/basic-filebuf-class.md)< `Elem`, `Tr`> mit Elementen des Typs `Elem` steuert, dessen Zeichenmerkmale von der Klasse `Tr` bestimmt werden.
 
@@ -36,10 +36,10 @@ class basic_ifstream : public basic_istream<Elem, Tr>
 
 ### <a name="parameters"></a>Parameter
 
-*Elem*\
+*Elem* -\
 Das grundlegende Element des Dateipuffers.
 
-*Stadtrat*\
+*TR* -\
 Die Merkmale des grundlegenden Elements des Dateipuffers (in der Regel `char_traits`< `Elem`>).
 
 ## <a name="remarks"></a>Hinweise
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 }
 ```
 
-## <a name="input-basicifstreamclasstxt"></a>Eingabe: basic_ifstream_class.txt
+## <a name="input-basic_ifstream_classtxt"></a>Eingabe: basic_ifstream_class.txt
 
 ```cpp
 This is the contents of basic_ifstream_class.txt.
@@ -91,7 +91,7 @@ This is the contents of basic_ifstream_class.txt.
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[close](#close)|Schließt eine Datei.|
 |[is_open](#is_open)|Ermittelt, ob eine Datei geöffnet ist.|
@@ -105,9 +105,9 @@ This is the contents of basic_ifstream_class.txt.
 |-|-|
 |[operator=](#op_eq)|Weist den Inhalt dieses Streamobjekts zu. Dies ist eine Verschiebezuweisung über einen `rvalue`, die keine Kopie hinterlässt.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** \<fstream>
+**Header:** \<>
 
 **Namespace:** std
 
@@ -133,14 +133,14 @@ basic_ifstream(basic_ifstream&& right);
 
 ### <a name="parameters"></a>Parameter
 
-*_Filename*\
+*_FileName*\
 Der Name der zu öffnenden Datei.
 
 *_Mode*\
 Eine der Enumerationen in [ios_base::openmode](../standard-library/ios-base-class.md#openmode).
 
 *_Prot*\
-Der Standardschutz bei der Dateiöffnung, der dem `shflag`-Parameter in [_fsopen, _wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md) entspricht.
+Der Standardschutz bei der Dateiöffnung, die dem Parameter `shflag` in [_fsopen, _wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md) entspricht.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -185,11 +185,11 @@ void close();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Member-Funktion ruft [rdbuf](#rdbuf) **->** [Close](../standard-library/basic-filebuf-class.md#close)auf.
+Die Member-Funktion ruft [rdbuf](#rdbuf) auf, **->** [Close](../standard-library/basic-filebuf-class.md#close).
 
 ### <a name="example"></a>Beispiel
 
-Sie finden ein Beispiel, in dem `close` verwendet wird, unter [basic_filebuf::close](../standard-library/basic-filebuf-class.md#close).
+Sie finden ein Beispiel, in dem [ verwendet wird, unter ](../standard-library/basic-filebuf-class.md#close)basic_filebuf::close`close`.
 
 ## <a name="is_open"></a> basic_ifstream::is_open
 
@@ -205,11 +205,11 @@ bool is_open() const;
 
 ### <a name="remarks"></a>Hinweise
 
-Die Member-Funktion gibt [rdbuf](#rdbuf) **->** [is_open](../standard-library/basic-filebuf-class.md#is_open)zurück.
+Die Member-Funktion gibt [rdbuf](#rdbuf) - **->** [is_open](../standard-library/basic-filebuf-class.md#is_open)zurück.
 
 ### <a name="example"></a>Beispiel
 
-Sie finden ein Beispiel, in dem `is_open` verwendet wird, unter [basic_filebuf::is_open](../standard-library/basic-filebuf-class.md#is_open).
+Sie finden ein Beispiel, in dem [ verwendet wird, unter ](../standard-library/basic-filebuf-class.md#is_open)basic_filebuf::is_open`is_open`.
 
 ## <a name="open"></a> basic_ifstream::open
 
@@ -237,22 +237,22 @@ void open(
 
 ### <a name="parameters"></a>Parameter
 
-*_Filename*\
+*_FileName*\
 Der Name der zu öffnenden Datei.
 
 *_Mode*\
 Eine der Enumerationen in [ios_base::openmode](../standard-library/ios-base-class.md#openmode).
 
 *_Prot*\
-Der Standardschutz bei der Dateiöffnung, der dem `shflag`-Parameter in [_fsopen, _wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md) entspricht.
+Der Standardschutz bei der Dateiöffnung, die dem Parameter `shflag` in [_fsopen, _wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md) entspricht.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion ruft [rdbuf](#rdbuf) **->** [open](../standard-library/basic-filebuf-class.md#open)(_ *Filename*, `_Mode` &#124; **ios_base::in**) auf. Wenn das Öffnen fehlschlägt, ruft die Funktion [SetState](../standard-library/basic-ios-class.md#setstate)(`failbit`) auf, wodurch möglicherweise eine ios_base:: Failure-Ausnahme ausgelöst wird.
+Die Member-Funktion ruft [rdbuf](#rdbuf) **->** [Open](../standard-library/basic-filebuf-class.md#open)(_ *filename*, &#124; `_Mode` **ios_base:: in) auf**. Wenn das Öffnen fehlschlägt, ruft die Funktion [SetState](../standard-library/basic-ios-class.md#setstate)(`failbit`) auf, wodurch möglicherweise eine ios_base:: Failure-Ausnahme ausgelöst wird.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung `open`von finden Sie unter [basic_filebuf:: Open](../standard-library/basic-filebuf-class.md#open) .
+Ein Beispiel, in dem `open`verwendet wird, finden Sie unter [basic_filebuf:: Open](../standard-library/basic-filebuf-class.md#open) .
 
 ## <a name="op_eq"></a> basic_ifstream::operator=
 
@@ -264,12 +264,12 @@ basic_ifstream& operator=(basic_ifstream&& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Richting*\
+*Rechte*\
 Ein rvalue-Verweis auf ein `basic_ifstream`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `*this`zurück.
+Gibt `*this` zurück.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -289,7 +289,7 @@ Ein Zeiger auf ein [basic_filebuf](../standard-library/basic-filebuf-class.md)-O
 
 ### <a name="example"></a>Beispiel
 
-Sie finden ein Beispiel, in dem `rdbuf` verwendet wird, unter [basic_filebuf::close](../standard-library/basic-filebuf-class.md#close).
+Sie finden ein Beispiel, in dem [ verwendet wird, unter ](../standard-library/basic-filebuf-class.md#close)basic_filebuf::close`rdbuf`.
 
 ## <a name="swap"></a> basic_ifstream::swap
 
@@ -301,7 +301,7 @@ void swap(basic_ifstream& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Richting*\
+*Rechte*\
 Ein Verweis auf einen anderen Streampuffer.
 
 ### <a name="remarks"></a>Hinweise

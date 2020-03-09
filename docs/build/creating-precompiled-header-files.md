@@ -8,11 +8,11 @@ helpviewer_keywords:
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
 ms.openlocfilehash: 071839df431071a7d8921d1b445094f886ad38e2
-ms.sourcegitcommit: 33a898bf976c65f998b4e88a84765a0cef4193a8
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920111"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78884091"
 ---
 # <a name="precompiled-header-files"></a>Vorkompilierte Headerdateien
 
@@ -116,13 +116,13 @@ Wenn Sie einen vorkompilierten Header verwenden, der mit/Yc oder/Yu erstellt wur
 
 In dieser Tabelle sind Compileroptionen aufgeführt, die bei Verwendung eines vorkompilierten Headers möglicherweise eine Inkonsistenz Warnung auslöst:
 
-|Option|-Name|Regel|
+|Option|Name|Regel|
 |------------|----------|----------|
 |/D|Definieren von Konstanten und Makros|Muss zwischen der Kompilierung, die den vorkompilierten Header erstellt hat, und der aktuellen Kompilierung identisch sein. Der Zustand der definierten Konstanten ist nicht aktiviert, aber unvorhersehbare Ergebnisse können auftreten, wenn die Dateien von den Werten der geänderten Konstanten abhängig sind.|
 |/E oder/EP|Präprozessorausgabe in Standardausgabe kopieren|Vorkompilierte Header können nicht mit der/E-Option oder der/EP-Option verwendet werden.|
 |/FR oder/Fr|Informationen zum Microsoft-Quell Browser generieren|Damit die Optionen/fr und/fr mit der Option/Yu gültig sind, müssen Sie auch beim Erstellen des vorkompilierten Headers wirksam werden. Nachfolgende Kompilierungen, die den vorkompilierten Header verwenden, generieren ebenfalls Quell Browser Informationen. Browser Informationen werden in einer einzelnen SBR-Datei platziert, und auf die gleiche Weise wird von anderen Dateien auf dieselbe Weise wie CodeView-Informationen verwiesen. Die Platzierung der Quell Browser Informationen kann nicht überschrieben werden.|
 |/GA,/GD,/ge,/GW oder/GW|Windows-Protokoll Optionen|Muss zwischen der Kompilierung, die den vorkompilierten Header erstellt hat, und der aktuellen Kompilierung identisch sein. Wenn sich diese Optionen unterscheiden, führt dies zu einer Warnmeldung.|
-|/Zi|Umfassende Debuginformationen generieren|Wenn diese Option beim Erstellen des vorkompilierten Headers wirksam ist, können nachfolgende Kompilierungen, die die Vorkompilierung verwenden, diese Debuginformationen verwenden. Wenn/Zi beim Erstellen des vorkompilierten Headers nicht wirksam ist, wird bei nachfolgenden Kompilierungen, bei denen die Vorkompilierung und die/ZI-Option verwendet wird, eine Warnung ausgelöst. Die Debuginformationen werden in der aktuellen Objektdatei abgelegt, und lokale Symbole, die im vorkompilierten Header definiert sind, sind für den Debugger nicht verfügbar.|
+|/ZI|Umfassende Debuginformationen generieren|Wenn diese Option beim Erstellen des vorkompilierten Headers wirksam ist, können nachfolgende Kompilierungen, die die Vorkompilierung verwenden, diese Debuginformationen verwenden. Wenn/Zi beim Erstellen des vorkompilierten Headers nicht wirksam ist, wird bei nachfolgenden Kompilierungen, bei denen die Vorkompilierung und die/ZI-Option verwendet wird, eine Warnung ausgelöst. Die Debuginformationen werden in der aktuellen Objektdatei abgelegt, und lokale Symbole, die im vorkompilierten Header definiert sind, sind für den Debugger nicht verfügbar.|
 
 > [!NOTE]
 >  Die vorkompilierte Header Funktion ist nur für die Verwendung in C C++ -und Quelldateien vorgesehen.
@@ -306,7 +306,7 @@ int main( void )
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Referenz zur C/C++-Erstellung](reference/c-cpp-building-reference.md)<br/>
 [MSVC-Compileroptionen](reference/compiler-options.md)
