@@ -4,11 +4,11 @@ ms.date: 08/09/2019
 helpviewer_keywords:
 - CppProperties.json file [C++]
 ms.openlocfilehash: d59fca412a26d08f88ccbda20a2c0444cf33b1cb
-ms.sourcegitcommit: 6c1960089b92d007fc28c32af1e4bef0f85fdf0c
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75556668"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856812"
 ---
 # <a name="cpppropertiesjson-reference"></a>Cppproperties. JSON-Referenz
 
@@ -64,7 +64,7 @@ Hinweis: die Werte `msvc-x86` und `msvc-x64` werden nur aus Legacy Gründen unte
 
 Visual Studio bietet die folgenden vordefinierten Umgebungen für Microsoft C++ , die dem entsprechenden Developer-Eingabeaufforderung zugeordnet sind. Wenn Sie eine dieser Umgebungen erben, können Sie auf jede Umgebungsvariable verweisen, indem Sie die globale Eigenschaften `env` mit der folgenden Makro Syntax verwenden: $ {env.\<Variable >}.
 
-|Variablenname|Beschreibung|
+|Variablenname|BESCHREIBUNG|
 |-----------|-----------------|
 |vsdev|Die Standardumgebung von Visual Studio|
 |msvc_x86|Kompiliert mithilfe von x86-Tools für x86|
@@ -77,7 +77,7 @@ Visual Studio bietet die folgenden vordefinierten Umgebungen für Microsoft C++ 
 
 Wenn die Linux-Workload installiert ist, können folgende Umgebungen verwendet werden, um Linux und WSL remote anzuzielen:
 
-|Variablenname|Beschreibung|
+|Variablenname|BESCHREIBUNG|
 |-----------|-----------------|
 |linux_x86|Hiermit wird x86 Linux als Remotezielversion festgelegt.|
 |linux_x64|Hiermit wird x64 Linux als Remotezielversion festgelegt.|

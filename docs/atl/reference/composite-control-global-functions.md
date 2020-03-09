@@ -19,11 +19,11 @@ helpviewer_keywords:
 - composite controls, global functions
 ms.assetid: 536884cd-e863-4c7a-ab0a-604dc60a0bbe
 ms.openlocfilehash: 525fc01247053a1e2bc993398978cb332262a1a5
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927770"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78864736"
 ---
 # <a name="composite-control-global-functions"></a>Globale Funktionen des zusammengesetzten Steuer Elements
 
@@ -35,20 +35,20 @@ Diese Funktionen bieten Unterstützung für das Erstellen von Dialogfeldern und 
 |||
 |-|-|
 |[AtlAxDialogBox](#atlaxdialogbox)|Erstellt ein modales Dialogfeld aus einer vom Benutzer angegebenen Dialogfeldvorlage. Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.|
-|[AtlAxCreateDialog](#atlaxcreatedialog)|Erstellt ein nicht modales Dialogfeld aus einer vom Benutzer angegebenen Dialogfeldvorlage. Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.|
-|[AtlAxCreateControl](#atlaxcreatecontrol)|Erstellt ein ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
-|[AtlAxCreateControlEx](#atlaxcreatecontrolex)|Erstellt ein ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.|
-|[AtlAxCreateControlLic](#atlaxcreatecontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
-|[AtlAxCreateControlLicEx](#atlaxcreatecontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.|
-|[AtlAxAttachControl](#atlaxattachcontrol)|Fügt ein bereits erstelltes Steuerelement an das angegebene Fenster an.|
+|[Atlaxkreatedialog](#atlaxcreatedialog)|Erstellt ein nicht modales Dialogfeld aus einer vom Benutzer angegebenen Dialogfeldvorlage. Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.|
+|[Atlaxkreatecontrol](#atlaxcreatecontrol)|Erstellt ein ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
+|[Atlaxkreatecontrolex](#atlaxcreatecontrolex)|Erstellt ein ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.|
+|[Atlaxkreatecontrollic](#atlaxcreatecontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.|
+|[Atlaxkreatecontrollicex](#atlaxcreatecontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es, hostet es im angegebenen Fenster und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem Steuerelement ab.|
+|[Atlaxattachcontrol](#atlaxattachcontrol)|Fügt ein bereits erstelltes Steuerelement an das angegebene Fenster an.|
 |[AtlAxGetHost](#atlaxgethost)|Wird verwendet, um einen direkten Schnittstellen Zeiger auf den Container für ein angegebenes Fenster (sofern vorhanden) zu erhalten, wenn sein handle angegeben ist.|
-|[AtlAxGetControl](#atlaxgetcontrol)|Wird verwendet, um einen direkten Schnittstellen Zeiger auf das Steuerelement zu erhalten, das in einem angegebenen Fenster (sofern vorhanden) enthalten ist, wenn sein handle angegeben ist.|
-|[AtlSetChildSite](#atlsetchildsite)|Initialisiert den `IUnknown` des untergeordneten Standorts.|
+|[Atlaxgetcontrol](#atlaxgetcontrol)|Wird verwendet, um einen direkten Schnittstellen Zeiger auf das Steuerelement zu erhalten, das in einem angegebenen Fenster (sofern vorhanden) enthalten ist, wenn sein handle angegeben ist.|
+|[Atlsetchildsite](#atlsetchildsite)|Initialisiert den `IUnknown` des untergeordneten Standorts.|
 |[AtlAxWinInit](#atlaxwininit)|Initialisiert den Hostcode für axwin-Objekte.|
-|[AtlAxWinTerm](#atlaxwinterm)|Hebt die Initialisierung des Hostcodes für axwin-Objekte auf.|
-|[AtlGetObjectSourceInterface](#atlgetobjectsourceinterface)|Gibt Informationen über die standardmäßige Quell Schnittstelle eines Objekts zurück.|
+|[AtlAxWinInit](#atlaxwinterm)|Hebt die Initialisierung des Hostcodes für axwin-Objekte auf.|
+|[Atlgetobjectsourceingeterface](#atlgetobjectsourceinterface)|Gibt Informationen über die standardmäßige Quell Schnittstelle eines Objekts zurück.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atlhost. h
 
@@ -67,35 +67,35 @@ ATLAPI_(int) AtlAxDialogBox(
 
 ### <a name="parameters"></a>Parameter
 
-*hInstance*<br/>
+*HINSTANCE*<br/>
 in Identifiziert eine Instanz des Moduls, dessen ausführbare Datei die Dialogfeld Vorlage enthält.
 
-*lpTemplateName*<br/>
+*lptemplatename*<br/>
 in Bezeichnet die Dialogfeld Vorlage. Dieser Parameter ist entweder der Zeiger auf eine mit NULL endenden Zeichenfolge, die den Namen der Dialogfeld Vorlage oder einen ganzzahligen Wert angibt, der den Ressourcen Bezeichner der Dialogfeld Vorlage angibt. Wenn der-Parameter einen Ressourcen Bezeichner angibt, muss das hochwertige Wort NULL sein, und das nieder wertige Wort muss den Bezeichner enthalten. Sie können das [makeintresource](/windows/win32/api/winuser/nf-winuser-makeintresourcew) -Makro verwenden, um diesen Wert zu erstellen.
 
-*hWndParent*<br/>
+*hwndParent*<br/>
 in Identifiziert das Fenster, das das Dialogfeld besitzt.
 
-*lpDialogProc*<br/>
+*lpdialogproc*<br/>
 in Verweist auf die Dialogfeld Prozedur. Weitere Informationen zur Dialogfeld Prozedur finden Sie unter [DialogProc](/windows/win32/api/winuser/nc-winuser-dlgproc).
 
-*dwInitParam*<br/>
-in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG-Nachricht übergeben werden soll.
+*dwinitparam*<br/>
+in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG Nachricht übergeben werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um mit `AtlAxDialogBox` einer Dialogfeld Vorlage zu verwenden, die ein ActiveX-Steuerelement enthält, geben Sie eine gültige CLSID, eine AppID oder eine URL-Zeichenfolge als *Textfeld* des **Steuer** Element Abschnitts der Dialogfeld Ressource sowie "AtlAxWin80" als *Klassennamen* Feld an. im gleichen Abschnitt. Das folgende Beispiel zeigt, wie ein gültiger **Steuer** Element Abschnitt aussehen könnte:
+Wenn Sie `AtlAxDialogBox` mit einer Dialogfeld Vorlage verwenden möchten, die ein ActiveX-Steuerelement enthält, geben Sie eine gültige CLSID, eine AppID oder eine URL-Zeichenfolge als *Textfeld* des **Steuer** Element Abschnitts der Dialogfeld Ressource an, zusammen mit "AtlAxWin80" als *Klassennamen* Feld im selben Abschnitt. Das folgende Beispiel zeigt, wie ein gültiger **Steuer** Element Abschnitt aussehen könnte:
 
 ```
 CONTROL    "{04FE35E9-ADBC-4f1d-83FE-8FA4D1F71C7F}", IDC_TEST,
     "AtlAxWin80", WS_GROUP | WS_TABSTOP, 0, 0, 100, 100
 ```
 
-Weitere Informationen zum Bearbeiten von Ressourcen Skripts finden [Sie unter Gewusst wie: Öffnen Sie eine Ressourcen Skriptdatei im Text](../../windows/how-to-open-a-resource-script-file-in-text-format.md)Format. Weitere Informationen zum Steuern von Ressourcen Definitions Anweisungen finden Sie unter [allgemeine Steuerelement Parameter](/windows/win32/menurc/common-control-parameters) unter Windows SDK: SDK Tools.
+Weitere Informationen zum Bearbeiten von Ressourcen [Skripts finden Sie unter Gewusst wie: Öffnen einer Ressourcen Skriptdatei im Text Format](../../windows/how-to-open-a-resource-script-file-in-text-format.md). Weitere Informationen zum Steuern von Ressourcen Definitions Anweisungen finden Sie unter [allgemeine Steuerelement Parameter](/windows/win32/menurc/common-control-parameters) unter Windows SDK: SDK Tools.
 
 Weitere Informationen zu Dialogfeldern im Allgemeinen finden Sie unter [Dialogbox](/windows/win32/api/winuser/nf-winuser-dialogboxw) [und in](/windows/win32/api/winuser/nf-winuser-createdialogparamw) der Windows SDK.
 
@@ -114,26 +114,26 @@ ATLAPI_(HWND) AtlAxCreateDialog(
 
 ### <a name="parameters"></a>Parameter
 
-*hInstance*<br/>
+*HINSTANCE*<br/>
 in Identifiziert eine Instanz des Moduls, dessen ausführbare Datei die Dialogfeld Vorlage enthält.
 
-*lpTemplateName*<br/>
+*lptemplatename*<br/>
 in Bezeichnet die Dialogfeld Vorlage. Dieser Parameter ist entweder der Zeiger auf eine mit NULL endenden Zeichenfolge, die den Namen der Dialogfeld Vorlage oder einen ganzzahligen Wert angibt, der den Ressourcen Bezeichner der Dialogfeld Vorlage angibt. Wenn der-Parameter einen Ressourcen Bezeichner angibt, muss das hochwertige Wort NULL sein, und das nieder wertige Wort muss den Bezeichner enthalten. Sie können das [makeintresource](/windows/win32/api/winuser/nf-winuser-makeintresourcew) -Makro verwenden, um diesen Wert zu erstellen.
 
-*hWndParent*<br/>
+*hwndParent*<br/>
 in Identifiziert das Fenster, das das Dialogfeld besitzt.
 
-*lpDialogProc*<br/>
+*lpdialogproc*<br/>
 in Verweist auf die Dialogfeld Prozedur. Weitere Informationen zur Dialogfeld Prozedur finden Sie unter [DialogProc](/windows/win32/api/winuser/nc-winuser-dlgproc).
 
-*dwInitParam*<br/>
-in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG-Nachricht übergeben werden soll.
+*dwinitparam*<br/>
+in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG Nachricht übergeben werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.
 
@@ -153,36 +153,36 @@ ATLAPI AtlAxCreateControl(
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
+*lpszname*<br/>
 Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden soll. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID, z. b.`"MSCAL.Calendar.7"`
+- Eine ProgID wie `"MSCAL.Calendar.7"`
 
-- Eine CLSID, z. b.`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. b.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein Fragment von HTML, z. b.`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein HTML-Fragment, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
 
 *hWnd*<br/>
 in Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann NULL sein.
+*ppunkcontainer*<br/>
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese globale Funktion gibt Ihnen dasselbe Ergebnis wie das Aufrufen von [atlaxcreatecontrolex](#atlaxcreatecontrolex)(*lpszname*, *HWND*, *pStream*, NULL, NULL, NULL, null);.
 
@@ -205,47 +205,47 @@ ATLAPI AtlAxCreateControlEx(
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
+*lpszname*<br/>
 Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden soll. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID, z. b.`"MSCAL.Calendar.7"`
+- Eine ProgID wie `"MSCAL.Calendar.7"`
 
-- Eine CLSID, z. b.`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. b.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein Fragment von HTML, z. b.`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein HTML-Fragment, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
 
 *hWnd*<br/>
 in Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann NULL sein.
+*ppunkcontainer*<br/>
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
-*ppUnkControl*<br/>
-vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des erstellten Steuer Elements empfängt. Kann NULL sein.
+*ppunkcontrol*<br/>
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann den Wert NULL haben.
 
-*iidSink*<br/>
+*iidsink*<br/>
 Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt.
 
-*punkSink*<br/>
-Ein Zeiger auf die `IUnknown` -Schnittstelle des Sink-Objekts, das mit dem Verbindungspunkt verbunden werden soll, der durch *iidsink* für das enthaltene-Objekt angegeben wird, nachdem das enthaltene-Objekt erfolgreich erstellt wurde.
+*punksink*<br/>
+Ein Zeiger auf die `IUnknown`-Schnittstelle des Sink-Objekts, das mit dem Verbindungspunkt verbunden werden soll, der durch *iidsink* für das enthaltene Objekt angegeben wird, nachdem das enthaltene Objekt erfolgreich erstellt wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`AtlAxCreateControlEx`ähnelt [atlaxkreatecontrol](#atlaxcreatecontrol) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
+`AtlAxCreateControlEx` ähnelt [atlaxkreatecontrol](#atlaxcreatecontrol) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
 Informationen zum Erstellen eines lizenzierten ActiveX-Steuer Elements finden Sie unter [atlaxkreatecontrollicex](#atlaxcreatecontrollicex).
 
@@ -264,32 +264,32 @@ ATLAPI AtlAxCreateControlLic(
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
+*lpszname*<br/>
 Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden soll. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID, z. b.`"MSCAL.Calendar.7"`
+- Eine ProgID wie `"MSCAL.Calendar.7"`
 
-- Eine CLSID, z. b.`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. b.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein Fragment von HTML, z. b.`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein HTML-Fragment, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
 
 *hWnd*<br/>
 Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
+Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann NULL sein.
+*ppunkcontainer*<br/>
+Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
-*bstrLic*<br/>
+*bstrinlisch*<br/>
 Der BSTR, der die Lizenz für das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -298,7 +298,7 @@ Einer der HRESULT-Standardwerte.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung `AtlAxCreateControlLic`von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
+Ein Beispiel für die Verwendung von `AtlAxCreateControlLic`finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
 ##  <a name="atlaxcreatecontrollicex"></a>Atlaxkreatecontrollicex
 
@@ -318,54 +318,54 @@ ATLAPI AtlAxCreateControlLicEx(
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
+*lpszname*<br/>
 Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden soll. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID, z. b.`"MSCAL.Calendar.7"`
+- Eine ProgID wie `"MSCAL.Calendar.7"`
 
-- Eine CLSID, z. b.`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. b.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein Fragment von HTML, z. b.`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein HTML-Fragment, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist.
 
 *hWnd*<br/>
 Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
+Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann NULL sein.
+*ppunkcontainer*<br/>
+Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
-*ppUnkControl*<br/>
-vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des erstellten Steuer Elements empfängt. Kann NULL sein.
+*ppunkcontrol*<br/>
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann den Wert NULL haben.
 
-*iidSink*<br/>
+*iidsink*<br/>
 Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt.
 
-*punkSink*<br/>
-Ein Zeiger auf die `IUnknown` -Schnittstelle des Sink-Objekts, das mit dem Verbindungspunkt verbunden werden soll, der durch *iidsink* für das enthaltene-Objekt angegeben wird, nachdem das enthaltene-Objekt erfolgreich erstellt wurde.
+*punksink*<br/>
+Ein Zeiger auf die `IUnknown`-Schnittstelle des Sink-Objekts, das mit dem Verbindungspunkt verbunden werden soll, der durch *iidsink* für das enthaltene Objekt angegeben wird, nachdem das enthaltene Objekt erfolgreich erstellt wurde.
 
-*bstrLic*<br/>
+*bstrinlisch*<br/>
 Der BSTR, der die Lizenz für das Steuerelement enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`AtlAxCreateControlLicEx`ähnelt [atlaxkreatecontrollic](#atlaxcreatecontrollic) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
+`AtlAxCreateControlLicEx` ähnelt [atlaxkreatecontrollic](#atlaxcreatecontrollic) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung `AtlAxCreateControlLicEx`von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
+Ein Beispiel für die Verwendung von `AtlAxCreateControlLicEx`finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
 ##  <a name="atlaxattachcontrol"></a>Atlaxattachcontrol
 
@@ -380,25 +380,25 @@ ATLAPI AtlAxAttachControl(
 
 ### <a name="parameters"></a>Parameter
 
-*pControl*<br/>
-in Ein Zeiger auf den `IUnknown` des Steuer Elements.
+*pcontrol*<br/>
+in Ein Zeiger auf den `IUnknown` des-Steuer Elements.
 
 *hWnd*<br/>
 in Handle für das Fenster, in dem das-Steuerelement gehostet wird.
 
-*ppUnkContainer*<br/>
+*ppunkcontainer*<br/>
 vorgenommen Ein Zeiger auf einen Zeiger auf den `IUnknown` des Container Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie [atlaxkreatecontrolex](#atlaxcreatecontrolex) und [atlaxkreatecontrol](#atlaxcreatecontrol) , um ein Steuerelement gleichzeitig zu erstellen und anzufügen.
 
 > [!NOTE]
->  Das anzufügende Steuerelement Objekt muss vor dem Aufrufen `AtlAxAttachControl`von ordnungsgemäß initialisiert werden.
+>  Das anzufügende Steuerelement Objekt muss vor dem Aufrufen von `AtlAxAttachControl`ordnungsgemäß initialisiert werden.
 
 ##  <a name="atlaxgethost"></a>AtlAxGetHost
 
@@ -413,8 +413,8 @@ ATLAPI AtlAxGetHost(HWND h, IUnknown** pp);
 *h*<br/>
 in Ein Handle für das Fenster, in dem das-Steuerelement gehostet wird.
 
-*pp*<br/>
-vorgenommen Der `IUnknown` des Containers des-Steuer Elements.
+*Trupp*<br/>
+vorgenommen Die `IUnknown` des Containers des-Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -433,8 +433,8 @@ ATLAPI AtlAxGetControl(HWND h, IUnknown** pp);
 *h*<br/>
 in Ein Handle für das Fenster, in dem das-Steuerelement gehostet wird.
 
-*pp*<br/>
-vorgenommen Der `IUnknown` des gehosteten Steuer Elements.
+*Trupp*<br/>
+vorgenommen Die `IUnknown` des gehosteten Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -442,7 +442,7 @@ Einer der HRESULT-Standardwerte.
 
 ##  <a name="atlsetchildsite"></a>Atlsetchildsite
 
-Diese Funktion wird aufgerufen, um die Site des untergeordneten Objekts auf `IUnknown` die des übergeordneten Objekts festzulegen.
+Mit dieser Funktion wird die Site des untergeordneten Objekts auf den `IUnknown` des übergeordneten Objekts festgelegt.
 
 ```
 HRESULT AtlSetChildSite(IUnknown* punkChild, IUnknown* punkParent);
@@ -450,11 +450,11 @@ HRESULT AtlSetChildSite(IUnknown* punkChild, IUnknown* punkParent);
 
 ### <a name="parameters"></a>Parameter
 
-*punkChild*<br/>
-in Ein Zeiger auf die `IUnknown` -Schnittstelle des untergeordneten-Elements.
+*punkchild*<br/>
+in Ein Zeiger auf die `IUnknown`-Schnittstelle des untergeordneten-Elements.
 
-*punkParent*<br/>
-in Ein Zeiger auf die `IUnknown` -Schnittstelle des übergeordneten Elements.
+*punkparent*<br/>
+in Ein Zeiger auf die `IUnknown`-Schnittstelle des übergeordneten Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -472,7 +472,7 @@ ATLAPI_(BOOL) AtlAxWinInit();
 
 Ungleich 0 (null), wenn die Initialisierung des Steuer Elements, das den Code Hostingcode andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion muss vor der Verwendung der ATL-Steuerelement-Hosting-API aufgerufen werden. Nach einem Aufruf dieser Funktion kann die **"AtlAxWin"** -Fenster Klasse in Aufrufen von " [kreatewindow](/windows/win32/api/winuser/nf-winuser-createwindoww) " oder " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw)" verwendet werden, wie im Windows SDK beschrieben.
 
@@ -488,7 +488,7 @@ inline BOOL AtlAxWinTerm();
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ruft einfach [unregisterclass](/windows/win32/api/winuser/nf-winuser-unregisterclassw) auf, wie im Windows SDK beschrieben.
 
@@ -509,39 +509,39 @@ ATLAPI AtlGetObjectSourceInterface(
 
 ### <a name="parameters"></a>Parameter
 
-*punkObj*<br/>
+*punkobj*<br/>
 in Ein Zeiger auf das-Objekt, für das Informationen zurückgegeben werden sollen.
 
-*plibid*<br/>
+*plizierung*<br/>
 vorgenommen Ein Zeiger auf die LIBID der Typbibliothek, die die Definition der Quell Schnittstelle enthält.
 
 *piid*<br/>
 vorgenommen Ein Zeiger auf die-Schnittstellen-ID der standardmäßigen Quell Schnittstelle des Objekts.
 
-*pdwMajor*<br/>
+*pdwmajor*<br/>
 vorgenommen Ein Zeiger auf die Hauptversionsnummer der Typbibliothek, die die Definition der Quell Schnittstelle enthält.
 
-*pdwMinor*<br/>
+*pdwminor*<br/>
 vorgenommen Ein Zeiger auf die neben Versionsnummer der Typbibliothek, die die Definition der Quell Schnittstelle enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`AtlGetObjectSourceInterface`kann die Schnittstellen-ID der standardmäßigen Quell Schnittstelle zusammen mit der LIBID-und der Haupt-und neben Versionsnummer der Typbibliothek bereitstellen, die diese Schnittstelle beschreibt.
+`AtlGetObjectSourceInterface` können Ihnen die Schnittstellen-ID der standardmäßigen Quell Schnittstelle sowie die LIBID-und die Haupt-und neben Versionsnummer der Typbibliothek bereitstellen, die diese Schnittstelle beschreibt.
 
 > [!NOTE]
->  Damit diese Funktion die angeforderten Informationen erfolgreich abrufen kann, muss das von *punkobj* dargestellte Objekt `IDispatch` implementiert (und Typinformationen über `IDispatch::GetTypeInfo`). Außerdem muss es entweder `IProvideClassInfo2` oder implementieren.`IPersist`. Die Typinformationen für die Quell Schnittstelle müssen sich in derselben Typbibliothek wie die Typinformationen für `IDispatch`befinden.
+>  Damit diese Funktion die angeforderten Informationen erfolgreich abrufen kann, muss das von *punkobj* dargestellte Objekt `IDispatch` (und die Rückgabe von Typinformationen über `IDispatch::GetTypeInfo`) implementieren, zusätzlich muss entweder `IProvideClassInfo2` oder `IPersist`implementiert werden. Die Typinformationen für die Quell Schnittstelle müssen sich in derselben Typbibliothek wie die Typinformationen für `IDispatch`befinden.
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie Sie eine Ereignis Senke-Klasse `CEasySink`definieren können, die die Anzahl von Vorlagen Argumenten verringert, die Sie `IDispEventImpl` an die Bare Essentials-Datei übergeben können. `EasyAdvise`und `EasyUnadvise` verwenden`AtlGetObjectSourceInterface` Sie, um die [IDispEventImpl](../../atl/reference/idispeventimpl-class.md) -Member vor dem Aufruf von [dispeventempfehlung](idispeventsimpleimpl-class.md#dispeventadvise) oder [dispeventunrat](idispeventsimpleimpl-class.md#dispeventunadvise)zu initialisieren.
+Im folgenden Beispiel wird gezeigt, wie Sie eine Ereignis Senke-Klasse, `CEasySink`, definieren, die die Anzahl von Vorlagen Argumenten verringert, die Sie an `IDispEventImpl` an die Bare Essentials übergeben können. `EasyAdvise` und `EasyUnadvise` verwenden Sie `AtlGetObjectSourceInterface`, um die [IDispEventImpl](../../atl/reference/idispeventimpl-class.md) -Member zu initialisieren, bevor Sie [dispevent-Empfehlung](idispeventsimpleimpl-class.md#dispeventadvise) oder [dispeventunrat](idispeventsimpleimpl-class.md#dispeventunadvise)aufrufen.
 
 [!code-cpp[NVC_ATL_Windowing#93](../../atl/codesnippet/cpp/composite-control-global-functions_1.h)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionen](../../atl/reference/atl-functions.md)<br/>
 [Makros zusammengesetzter Steuerelemente](../../atl/reference/composite-control-macros.md)

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - 'msbuild (c++), walkthrough: create a project'
 ms.assetid: 52350d1c-c373-4868-923c-5e8be6f67adb
 ms.openlocfilehash: c93867f3be3b17f703c549aa5c05f3d327934c26
-ms.sourcegitcommit: a10c9390413978d36b8096b684d5ed4cf1553bc8
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65837609"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856286"
 ---
 # <a name="walkthrough-using-msbuild-to-create-a-visual-c-project"></a>Exemplarische Vorgehensweise: Verwenden von MSBuild zum Erstellen eines Visual C++-Projekts
 
@@ -25,7 +25,7 @@ In dieser exemplarischen Vorgehensweise werden die folgenden Aufgaben veranschau
 
 - Verwenden von MSBuild für die Anpassung des Projekts
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Für diese exemplarische Vorgehensweise wird Folgendes benötigt:
 
@@ -189,7 +189,7 @@ Von MSBuild wird ein Verzeichnis für die Ausgabedateien erstellt, und anschlie�
 
 `myproject`
 
-Die Anwendung sollte „Hello, from MSBuild!“ im Konsolenfenster anzeigen.
+Die Anwendung sollte „Hello, from MSBuild!“ im Konsolenfenster anzuzeigen.
 
 ## <a name="customizing-your-project"></a>Anpassen des Projekts
 
@@ -233,7 +233,7 @@ Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um einen Releaseb
 
 ### <a name="using-msbuild-with-the-64-bit-compiler-and-tools"></a>Verwenden von MSBuild mit dem 64-Bit-Compiler und Tools
 
-Wenn Sie Visual Studio auf einer 64-Bit-Windows-Version installiert haben, werden standardmäßig die systemeigenen Tools sowie Cross Tools für 64-Bit x64 installiert. Sie können MSBuild konfigurieren, um den 64-Bit-Compiler und die Tools zur Erstellung Ihrer Anwendung zu verwenden, indem Sie die `PreferredToolArchitecture`-Eigenschaft festlegen. Diese Eigenschaft beeinflusst nicht die Projektkonfigurations- oder Plattformeigenschaften. Standardmäßig wird die 32-Bit-Version des Tools verwendet. Fügen Sie zum Angeben der 64-Bit-Versionen des Compilers und der Tools das folgende Eigenschaftsgruppenelement der Projektdatei "Myproject.vcxproj" nach dem `Microsoft.Cpp.default.props` \<Import />-Element hinzu:
+Wenn Sie Visual Studio auf einer 64-Bit-Windows-Version installiert haben, werden standardmäßig die systemeigenen Tools sowie Cross Tools für 64-Bit x64 installiert. Sie können MSBuild konfigurieren, um den 64-Bit-Compiler und die Tools zur Erstellung Ihrer Anwendung zu verwenden, indem Sie die `PreferredToolArchitecture`-Eigenschaft festlegen. Diese Eigenschaft beeinflusst nicht die Projektkonfigurations- oder Plattformeigenschaften. Standardmäßig wird die 32-Bit-Version des Tools verwendet. Fügen Sie das folgende Eigenschaften Gruppenelement der Projektdatei "MyProject. vcxproj" nach dem `Microsoft.Cpp.default.props` \<Import/>-Element hinzu, um die 64-Bit-Version des Compilers und der Tools anzugeben:
 
 ```xml
 <PropertyGroup>
@@ -247,7 +247,7 @@ Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um die 64-Bit-Too
 
 ### <a name="using-msbuild-with-a-different-toolset"></a>Verwenden von MSBuild mit einem anderen Toolset
 
-Wenn Sie die Toolsets und Bibliotheken für andere Versionen von Visual C++ installiert haben, kann MSBuild entweder Anwendungen für die aktuelle Visual C++-Version oder für die anderen installierten Versionen erstellen. Wenn Sie beispielsweise Visual Studio 2012 installiert haben, um das Visual C++ 11.0-Toolset für Windows XP anzugeben, fügen Sie das folgende Eigenschaftsgruppenelement der Projektdatei „Myproject.vcxproj“ nach dem Element `Microsoft.Cpp.props` \<Import /> hinzu:
+Wenn Sie die Toolsets und Bibliotheken für andere Versionen von Visual C++ installiert haben, kann MSBuild entweder Anwendungen für die aktuelle Visual C++-Version oder für die anderen installierten Versionen erstellen. Wenn Sie z. b. Visual Studio 2012 installiert haben, um das Visual C++ 11,0-Toolset für Windows XP anzugeben, fügen Sie das folgende Eigenschaften Gruppenelement der Projektdatei "MyProject. vcxproj" nach dem `Microsoft.Cpp.props` \<Import/>-Element hinzu:
 
 ```xml
 <PropertyGroup>
