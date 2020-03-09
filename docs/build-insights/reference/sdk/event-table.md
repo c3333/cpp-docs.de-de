@@ -13,8 +13,8 @@ ms.openlocfilehash: 2ccc8a4ef707942963b85edc6db9e21e05610b54
 ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334511"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78857006"
 ---
 # <a name="c-build-insights-sdk-event-table"></a>C++Build Insights-SDK: Ereignis Tabelle
 
