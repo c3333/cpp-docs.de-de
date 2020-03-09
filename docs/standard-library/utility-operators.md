@@ -17,18 +17,18 @@ helpviewer_keywords:
 - std::operator&lt;= (utility)
 - std::operator== (utility)
 ms.openlocfilehash: ec6c996487dc2e6c5ce628fe5e080b4f601479d9
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246295"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854862"
 ---
 # <a name="ltutilitygt-operators"></a>&lt;utility&gt;-Operatoren
 
 > [!NOTE]
-> Verwendung Operatoren `Type&` befinden sich unter `namespace rel_ops`.
+> Operatoren, die `Type&` verwenden, sind unter `namespace rel_ops`enthalten.
 
-## <a name="op_neq"></a> Operator! =
+## <a name="op_neq"></a>Operator! =
 
 Testet, ob das pair-Objekt links vom Operator ungleich dem pair-Objekt rechts vom Operator ist.
 
@@ -42,11 +42,11 @@ template <class T, class U>
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `pair`.
+*Linker*\
+Ein Objekt des Typs `pair`.
 
-*Richting*\
-Ein Objekt vom Typ `pair`.
+*Rechte*\
+Ein Objekt des Typs `pair`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -103,7 +103,7 @@ The pairs p1 and p2 are not equal.
 The pairs p1 and p3 are equal.
 ```
 
-## <a name="op_eq_eq"></a> Operator ==
+## <a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das pair-Objekt links vom Operator gleich dem pair-Objekt rechts vom Operator ist.
 
@@ -114,11 +114,11 @@ constexpr bool operator==(const pair<T, U>& left, const pair<T, U>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `pair`.
+*Linker*\
+Ein Objekt des Typs `pair`.
 
-*Richting*\
-Ein Objekt vom Typ `pair`.
+*Rechte*\
+Ein Objekt des Typs `pair`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -126,7 +126,7 @@ Ein Objekt vom Typ `pair`.
 
 ### <a name="remarks"></a>Hinweise
 
-Ein Paar ist gleich einem anderen, wenn jedes ihrer entsprechenden Elemente gleich ist. Die Funktion gibt `left` zurück. **first** == `right`. **first** && `left`. **second** == `right`. **second**. Zwei Paare sind ungleich, wenn das erste oder das zweite Element eines Paars nicht gleich dem entsprechenden Element des anderen Paars ist.
+Ein Paar ist gleich einem anderen, wenn jedes ihrer entsprechenden Elemente gleich ist. Die Funktion gibt `left`zurück. **first** == `right`. **first** && `left`. **second** == `right`. **second** entspricht, um auf den Wert des zugeordneten Datums für das Element zuzugreifen. Zwei Paare sind ungleich, wenn das erste oder das zweite Element eines Paars nicht gleich dem entsprechenden Element des anderen Paars ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -177,10 +177,10 @@ constexpr bool operator<(const pair<T, U>& left, const pair<T, U>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Ein Objekt des Typs `pair` auf der linken Seite des Operators.
 
-*Richting*\
+*Rechte*\
 Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -189,7 +189,7 @@ Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="remarks"></a>Hinweise
 
-Die `left` `pair` Objekt wird als strikt kleiner als der `right` `pair` Objekt, wenn *linken* ist kleiner als und ungleich *rechten*.
+Das `left` `pair`-Objekt wird als strikt kleiner als das `right` `pair` Objekt bezeichnet, wenn *left* kleiner als und ungleich *Rechts*ist.
 
 In einem Vergleich von Paaren haben die ersten Elemente der Werte der beiden Paare die höchste Priorität. Unterscheiden sie sich, wird das Ergebnis ihres Vergleichs als Ergebnis des Vergleichs des Paars verwendet. Sind die Werte der ersten Elemente nicht unterschiedlich, werden die Werte der zweiten Elemente verglichen, und das Ergebnis von deren Vergleich wird als Ergebnis des Vergleichs des Paars verwendet.
 
@@ -240,7 +240,7 @@ The pair p1 is less than the pair p2.
 The pair p1 is not less than the pair p3.
 ```
 
-## <a name="op_lt_eq"></a> Operator&lt;=
+## <a name="op_lt_eq"></a>Operator&lt;=
 
 Testet, ob das pair-Objekt links vom Operator kleiner gleich dem pair-Objekt rechts vom Operator ist.
 
@@ -254,10 +254,10 @@ constexpr bool operator<=(const pair<T, U>& left, const pair<T, U>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Ein Objekt des Typs `pair` auf der linken Seite des Operators.
 
-*Richting*\
+*Rechte*\
 Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -339,10 +339,10 @@ constexpr bool operator>(const pair<T, U>& left, const pair<T, U>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Ein Objekt des Typs `pair` auf der linken Seite des Operators.
 
-*Richting*\
+*Rechte*\
 Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -351,7 +351,7 @@ Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="remarks"></a>Hinweise
 
-Die `left` `pair` Objekt wird als strikt größer als die `right` `pair` Objekt, wenn *linken* ist größer als und ungleich *rechten*.
+Der `left` `pair`-Objekt wird als strikt größer als das `right` `pair` Objekt bezeichnet, wenn *left* größer als und ungleich *Rechts*ist.
 
 In einem Vergleich von Paaren haben die ersten Elemente der Werte der beiden Paare die höchste Priorität. Unterscheiden sie sich, wird das Ergebnis ihres Vergleichs als Ergebnis des Vergleichs des Paars verwendet. Sind die Werte der ersten Elemente nicht unterschiedlich, werden die Werte der zweiten Elemente verglichen, und das Ergebnis von deren Vergleich wird als Ergebnis des Vergleichs des Paars verwendet.
 
@@ -412,7 +412,7 @@ The pair p1 is greater than the pair p3.
 The pair p1 is not greater than the pair p4.
 ```
 
-## <a name="op_gt_eq"></a> Operator&gt;=
+## <a name="op_gt_eq"></a>Operator&gt;=
 
 Testet, ob das pair-Objekt links vom Operator größer gleich dem pair-Objekt rechts vom Operator ist.
 
@@ -426,10 +426,10 @@ template <class T, class U>
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*Linker*\
 Ein Objekt des Typs `pair` auf der linken Seite des Operators.
 
-*Richting*\
+*Rechte*\
 Ein Objekt des Typs `pair` auf der rechten Seite des Operators.
 
 ### <a name="return-value"></a>Rückgabewert
