@@ -15,15 +15,15 @@ helpviewer_keywords:
 - std::move [C++]
 - std::swap [C++]
 ms.openlocfilehash: 723b077500b9b741445efcd8574fb26cd53e5fc7
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246311"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854861"
 ---
 # <a name="ltutilitygt-functions"></a>&lt;utility&gt;-Funktionen
 
-## <a name="asconst"></a> as_const
+## <a name="asconst"></a>as_const
 
 ```cpp
 template <class T> constexpr add_const_t<T>& as_const(T& t) noexcept;
@@ -32,15 +32,15 @@ template <class T> void as_const(const T&&) = delete;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt *T*.
+Gibt *T*zurück.
 
-## <a name="declval"></a> declval
+## <a name="declval"></a>declval
 
 ```cpp
 template <class T> add_rvalue_reference_t<T> declval() noexcept;  // as unevaluated operand
 ```
 
-## <a name="exchange"></a> Exchange
+## <a name="exchange"></a>Schlag
 
 **(C++14)** weist einem Objekt einen neuen Wert zu und gibt den alten Wert zurück.
 
@@ -51,15 +51,15 @@ template <class T, class Other = T>
 
 ### <a name="parameters"></a>Parameter
 
-*val*\
+*Val* -\
 Das Objekt, das den Wert von „new_val“ erhält.
 
-*"new_val"* \
+*new_val*\
 Das Objekt, dessen Wert nach „val“ kopiert oder verschoben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei komplexen Typen vermeidet `exchange` das Kopieren des alten Werts, wenn ein Bewegungskonstruktor verfügbar ist, vermeidet das Kopieren des neuen Werts, wenn er ein temporäres Objekt ist oder verschoben wird, und nimmt alle Typen als neuen Wert an, wobei beliebige verfügbare konvertierende Zuweisungsoperatoren genutzt werden. Die Exchange-Funktion unterscheidet sich von [Std](../standard-library/algorithm-functions.md#swap) darin, dass das linke Argument nicht verschoben oder, des rechten Arguments kopiert.
+Bei komplexen Typen vermeidet `exchange` das Kopieren des alten Werts, wenn ein Bewegungskonstruktor verfügbar ist, vermeidet das Kopieren des neuen Werts, wenn er ein temporäres Objekt ist oder verschoben wird, und nimmt alle Typen als neuen Wert an, wobei beliebige verfügbare konvertierende Zuweisungsoperatoren genutzt werden. Die Exchange-Funktion unterscheidet sich von [Std:: Swap](../standard-library/algorithm-functions.md#swap) darin, dass das linke Argument nicht in das rechte Argument verschoben oder kopiert wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -95,7 +95,7 @@ The old value of c1 is: 1
 The new value of c1 after exchange is: 2
 ```
 
-## <a name="forward"></a> Vorwärts
+## <a name="forward"></a>vorgezogen
 
 Wandelt bedingt sein Argument in einen rvalue-Verweis um, wenn das Argument ein rvalue-Wert oder ein rvalue-Verweis ist. Dadurch wird die rvalue-Funktion eines Arguments auf die Weiterleitungsfunktion zur Unterstützung einer perfekten Weiterleitung zurückgesetzt.
 
@@ -110,24 +110,24 @@ template <class Type>    // accepts everything else
 ### <a name="parameters"></a>Parameter
 
 *Typ*\
-Der Typ des übergebenen Werts *Arg*, die möglicherweise nicht den Typ des *Arg*. In der Regel bestimmt durch ein Vorlagenargument der Weiterleitungsfunktion.
+Der Typ des Werts, der in *arg (arg*) übertragen wird, der sich von dem Typ von *arg*unterscheiden kann. In der Regel bestimmt durch ein Vorlagenargument der Weiterleitungsfunktion.
 
-*arg*\
+*Arg*\
 Das umzuwandelnde Argument.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Rvalue-Verweis auf *Arg* der Wert im übergebenen *Arg* war ursprünglich ein Rvalue-Wert oder ein Verweis auf ein Rvalue-Wert zurückgegeben; andernfalls *Arg* ohne dessen Typ zu ändern.
+Gibt einen rvalue-Verweis auf *arg* zurück, wenn der in *arg* über gegebene Wert ursprünglich ein rvalue-Wert oder ein Verweis auf einen Rvalue war. Andernfalls gibt *arg* zurück, ohne den Typ zu ändern.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie müssen ein explizites Vorlagenargument angeben, um `forward` aufzurufen.
 
-`forward` Das Argument nicht weitergeleitet werden. Stattdessen ermöglicht `forward` dem Compiler durch bedingte Umwandlung des Arguments in einen rvalue-Verweis, wenn es ursprünglich ein rvalue-Wert oder ein rvalue-Verweis war, eine Überladungsauflösung mit Kenntnis des ursprünglichen Typs des weitergeleiteten Arguments auszuführen. Der sichtbare Typ eines Arguments einer Weiterleitungsfunktion kann seinen ursprünglichen Typ abweichen, z. B., wenn ein Rvalue-Wert wird als Argument an eine Funktion verwendet und an einen Parameternamen gebunden ist eine Namens wird er einen Lvalue ist, für einen beliebigen Wert tatsächlich als Rvalue-Wert vorhanden ist – `forward` wird die Rvalue-Funktion des Arguments wiederhergestellt.
+`forward` führt das Argument nicht weiter. Stattdessen ermöglicht `forward` dem Compiler durch bedingte Umwandlung des Arguments in einen rvalue-Verweis, wenn es ursprünglich ein rvalue-Wert oder ein rvalue-Verweis war, eine Überladungsauflösung mit Kenntnis des ursprünglichen Typs des weitergeleiteten Arguments auszuführen. Der sichtbare Typ eines Arguments für eine Weiterleitungs Funktion kann sich von dem ursprünglichen Typ unterscheiden, z. –. Wenn ein rvalue als Argument für eine Funktion verwendet wird und an einen Parameternamen gebunden ist. ein Name ist ein Lvalue, wobei jeder Wert tatsächlich als Rvalue-– vorhanden ist, `forward` die Rvalue-Wert des Arguments wiederherstellt.
 
-Wiederherstellen der Rvalue-Funktion des ursprünglichen Werts eines Arguments, auf die überladungsauflösung, wird als bezeichnet *eine perfekte Weiterleitung*. Mit der perfekten Weiterleitung wird eine Vorlagenfunktion aktiviert, um ein Argument eines Referenztyps zu akzeptieren und die rvalue-Funktion wiederherzustellen, falls es für eine korrekte Überladungsauflösung erforderlich ist. Mithilfe der perfekten Weiterleitung können Sie die Verschiebesemantik für rvalues beibehalten und brauchen keine Überladungen für Funktionen bereitzustellen, die sich nur durch den Referenztyp ihrer Argumente unterscheiden.
+Das Wiederherstellen der Rvalue-Bedeutung des ursprünglichen Werts eines Arguments für die Überladungs Auflösung wird als *perfekte Weiterleitung*bezeichnet. Mit der perfekten Weiterleitung wird eine Vorlagenfunktion aktiviert, um ein Argument eines Referenztyps zu akzeptieren und die rvalue-Funktion wiederherzustellen, falls es für eine korrekte Überladungsauflösung erforderlich ist. Mithilfe der perfekten Weiterleitung können Sie die Verschiebesemantik für rvalues beibehalten und brauchen keine Überladungen für Funktionen bereitzustellen, die sich nur durch den Referenztyp ihrer Argumente unterscheiden.
 
-## <a name="from_chars"></a> from_chars
+## <a name="from_chars"></a>from_chars
 
 ```cpp
 from_chars_result from_chars(const char* first, const char* last, see below& value, int base = 10);
@@ -139,7 +139,7 @@ from_chars_result from_chars(const char* first, const char* last, double& value,
 from_chars_result from_chars(const char* first, const char* last, long double& value, chars_format fmt = chars_format::general);
 ```
 
-## <a name="get"></a> Erhalten
+## <a name="get"></a>Erhalten
 
 Ruft ein Element aus einem `pair` -Objekt über den Index oder den Typ ab.
 
@@ -192,19 +192,19 @@ Der 0-basierte Index des ausgewählten Elements.
 *T1*\
 Der Typ des ersten Paarelements.
 
-*T2*\
+*T2* -\
 Der Typ des zweiten Paarelements.
 
-*Pull Request*\
+*PR* -\
 Das Paar, für das die Auswahl durchgeführt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktionen geben jeweils einen Verweis auf ein Element des `pair` -Arguments zurück.
 
-Für die indizierten Überladungen Wenn der Wert des *Index* ist 0, die die Funktionen geben `pr.first` und, wenn der Wert des *Index* ist 1, die die Funktionen geben `pr.second`. Der Typ `RI` ist der Typ des zurückgegebenen Elements.
+Wenn für die indizierten über Ladungen der Wert von *Index* 0 lautet, geben die Funktionen `pr.first` zurück, und wenn der Wert des *Indexes* 1 ist, geben die Funktionen `pr.second`zurück. Der Typ `RI` ist der Typ des zurückgegebenen Elements.
 
-Für die Überladungen, die keine Indexparameter haben, wird das zurückzugebende Element durch das Typargument abgeleitet. Aufrufen von `get<T>(Tuple)` erzeugt einen Compilerfehler aus, wenn *Pr* enthält mehr oder weniger als ein Element vom Typ "t".
+Für die über Ladungen, die keinen Index-Parameter aufweisen, wird das zurück zugebende Element durch das Typargument abgeleitet. Wenn Sie `get<T>(Tuple)` aufrufen, wird ein Compilerfehler erzeugt, wenn die *PR* mehr oder weniger als ein Element vom Typ t enthält.
 
 ### <a name="example"></a>Beispiel
 
@@ -235,35 +235,35 @@ int main()
 1 0.27
 ```
 
-## <a name="index_sequence"></a> index_sequence
+## <a name="index_sequence"></a>index_sequence
 
 ```cpp
 template<size_t... I>
     using index_sequence = integer_sequence<size_t, I...>;
 ```
 
-## <a name="index_sequence_for"></a> index_sequence_for
+## <a name="index_sequence_for"></a>index_sequence_for
 
 ```cpp
 template<class... T>
     using index_sequence_for = make_index_sequence<sizeof...(T)>;
 ```
 
-## <a name="make_index_sequence"></a> make_index_sequence
+## <a name="make_index_sequence"></a>make_index_sequence
 
 ```cpp
 template<size_t N>
     using make_index_sequence = make_integer_sequence<size_t, N>;
 ```
 
-## <a name="make_integer_sequence"></a> make_integer_sequence
+## <a name="make_integer_sequence"></a>make_integer_sequence
 
 ```cpp
 template<class T, T N>
     using make_integer_sequence = integer_sequence<T, see below >;
 ```
 
-## <a name="make_pair"></a> make_pair
+## <a name="make_pair"></a>make_pair
 
 Eine Vorlagenfunktion, die Sie verwenden können, um Objekte vom Typ `pair` zu erstellen, wobei die Komponententypen automatisch auf Grundlage der Datentypen ausgewählt werden, die als Parameter übergeben werden.
 
@@ -291,21 +291,21 @@ Ein Wert, der das zweite Element aus `pair` initialisiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Pair-Objekt, das erstellt wird: `pair` < `T`,`U`> (`Val1`, `Val2`).
+Das Pair-Objekt, das erstellt wird: `pair`<`T`,`U`> (`Val1`, `Val2`).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `make_pair` konvertiert ein Objekt vom Typ [reference_wrapper-Klasse](../standard-library/reference-wrapper-class.md) in Verweistypen und verfallende Arrays und Funktionen in Zeiger.
 
 im zurückgegebenen `pair`-Objekt wird `T` wie folgt bestimmt:
 
-- Wenn der Eingabetyp `T` `reference_wrapper<X>` ist, lautet der zurückgegebene Typ `T` `X&`.
+- Wenn der Eingabetyp `T``reference_wrapper<X>` ist, lautet der zurückgegebene Typ `T``X&`.
 
-- Andernfalls ist der zurückgegebene Typ `T` `decay<T>::type`. Wenn [decay-Klasse](../standard-library/decay-class.md) wird nicht unterstützt, der zurückgegebene Typ `T` ist identisch mit dem Eingabetyp `T`.
+- Andernfalls ist der zurückgegebene Typ `T``decay<T>::type`. Wenn die [Decay-Klasse](../standard-library/decay-class.md) nicht unterstützt wird, ist der zurückgegebene Typ `T` identisch mit dem Eingabetyp `T`.
 
 Der zurückgegebene Typ `U` wird auf ähnliche Weise anhand des Eingabetyps `U` bestimmt.
 
-Ein Vorteil von `make_pair` besteht darin, dass die Typen von Objekten, die gespeichert werden, werden automatisch vom Compiler bestimmt, und müssen nicht explizit angegeben werden. Verwenden Sie explizite Vorlagenargumente wie z. B. keine `make_pair<int, int>(1, 2)` bei Verwendung von `make_pair` da sie ausführliche und fügt der komplexen Rvalue-Verweis-Probleme, die möglicherweise Kompilierungsfehler verursachen. Die korrekte Syntax für dieses Beispiel wäre `make_pair(1, 2)`.
+Ein Vorteil von `make_pair` besteht darin, dass die Typen von Objekten, die gespeichert werden, automatisch vom Compiler bestimmt werden und nicht explizit angegeben werden müssen. Verwenden Sie keine expliziten Vorlagen Argumente wie z. b. `make_pair<int, int>(1, 2)`, wenn Sie `make_pair` verwenden, da Sie ausführlich ist und komplexe rvalue-Verweis Probleme hinzufügt, die möglicherweise Kompilierungsfehler verursachen. Die korrekte Syntax für dieses Beispiel wäre `make_pair(1, 2)`.
 
 Die `make_pair`-Hilfsfunktion ermöglicht außerdem, zwei Werte an eine Funktion zu übergeben, die ein Paar als Eingabeparameter erfordert.
 
@@ -313,7 +313,7 @@ Die `make_pair`-Hilfsfunktion ermöglicht außerdem, zwei Werte an eine Funktion
 
 Ein Beispiel für die Verwendung der Hilfsfunktion `make_pair` beim Deklarieren und Initialisieren eines Paares finden Sie unter [pair Structure (pair-Struktur)](../standard-library/pair-structure.md).
 
-## <a name="move"></a> Verschieben
+## <a name="move"></a>voranschreiten
 
 Wandelt unbedingt das Argument in einen rvalue-Verweis um und signalisiert dadurch, dass es verschoben werden kann, wenn das Verschieben für den zugehörigen Typ aktiviert ist.
 
@@ -325,32 +325,32 @@ template <class Type>
 ### <a name="parameters"></a>Parameter
 
 *Typ*\
-Ein Typ, abgeleitet aus dem Typ des Arguments übergeben *Arg*zusammen mit den verweisreduzierungsregeln.
+Ein Typ, der aus dem Typ des Arguments abgeleitet wurde, das in *arg*zusammen mit den verweisreduzierungs Regeln gegeben wurde.
 
-*arg*\
-Das umzuwandelnde Argument. Auch wenn der Typ des *Arg* scheinbar als Rvalue-Verweis, angegeben werden `move` auch Lvalue-Argumente akzeptiert, da Lvalue-Verweise an Rvalue-Verweise gebunden werden können.
+*Arg*\
+Das umzuwandelnde Argument. Obwohl der Typ von *arg* als ein rvalue-Verweis angegeben wird, akzeptiert `move` auch lvalue-Argumente, da Lvalue-Verweise an Rvalue-Verweise gebunden werden können.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `Arg` als rvalue-Verweis, unabhängig davon, ob sein Typ ein Verweistyp ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Vorlagenargument *Typ* ist nicht vorgesehen, explizit angegeben werden, sondern vom Typ des der übergebene Wert abgeleitet werden *Arg*. Der Typ des *Typ* entsprechend den verweisreduzierungsregeln angepasst wird.
+Der Vorlagen *Argumenttyp* sollte nicht explizit angegeben werden, sondern aus dem Typ des Werts abgeleitet werden, der in *arg*angegeben wurde. Der Typ des *Typs* wird entsprechend den verweisreduzierungs Regeln weiter angepasst.
 
-`move` Das Argument nicht verschoben werden. Durch unbedingtes Umwandeln des zugehörigen Arguments, einen l-Wert sein kann – einen Rvalue-Verweis ermöglicht es den Compiler zu verschieben, anstatt Sie zu kopieren, der Wert übergeben *Arg* Wenn der Typ der verschieben aktiviert ist. Wenn der Typ Move-fähigen nicht ist, wird er stattdessen kopiert.
+`move` verschiebt das Argument nicht. Stattdessen ermöglicht es dem Compiler, durch bedingungsloses umwandeln seines Arguments – bei dem es sich um einen lvalue-– in einen rvalue-Verweis handelt, den Wert zu verschieben, anstatt ihn zu kopieren *, wenn der* Typ Verschiebe fähig ist. Wenn der Typ nicht verschoben werden kann, wird er stattdessen kopiert.
 
-Wenn der Wert übergeben *Arg* ein Lvalue ist – d. h. er besitzt einen Namen oder die Adresse kann akzeptiert werden – er ungültig, wenn die Verschiebung erfolgt. Finden Sie mit der nicht in der übergebene Wert *Arg* mit seinem Namen oder die Adresse, nachdem er verschoben wurde.
+Wenn der in *arg* weiter gegebene Wert ein Lvalue ist – d. h., er besitzt einen Namen oder seine Adresse kann angenommen werden – wird er ungültig, wenn die Verschiebung erfolgt. Verweisen Sie nicht auf den Wert, der nach dem Verschieben nach dem Verschieben in *arg* nach dem Namen oder der Adresse weitergegeben wurde.
 
-## <a name="moveif"></a> move_if_noexcept
+## <a name="moveif"></a>move_if_noexcept
 
 ```cpp
 template <class T> constexpr conditional_t< !is_nothrow_move_constructible_v<T> && is_copy_constructible_v<T>, const T&, T&&> move_if_noexcept(T& x) noexcept;
 ```
 
-## <a name="swap"></a> Swap
+## <a name="swap"></a>Wechsel
 
-Tauscht die Elemente von zwei Arten oder [pair-Struktur](../standard-library/pair-structure.md) Objekte.
+Tauscht die Elemente zweier Type-oder [Pair-Struktur](../standard-library/pair-structure.md) Objekte aus.
 
 ```cpp
 template <class T>
@@ -363,17 +363,17 @@ template <class T, class U>
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ oder Typ `pair`.
+*Linker*\
+Ein Objekt vom Typ oder vom Typ `pair`.
 
-*Richting*\
-Ein Objekt vom Typ oder Typ `pair`.
+*Rechte*\
+Ein Objekt vom Typ oder vom Typ `pair`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Vorteil von `swap` besteht darin, dass die Typen von Objekten, die gespeichert werden, werden automatisch vom Compiler bestimmt, und müssen nicht explizit angegeben werden. Verwenden Sie explizite Vorlagenargumente wie z. B. keine `swap<int, int>(1, 2)` bei Verwendung von `swap` da sie ausführliche und fügt der komplexen Rvalue-Verweis-Probleme, die möglicherweise Kompilierungsfehler verursachen.
+Ein Vorteil von `swap` besteht darin, dass die Typen von Objekten, die gespeichert werden, automatisch vom Compiler bestimmt werden und nicht explizit angegeben werden müssen. Verwenden Sie keine expliziten Vorlagen Argumente wie z. b. `swap<int, int>(1, 2)`, wenn Sie `swap` verwenden, da Sie ausführlich ist und komplexe rvalue-Verweis Probleme hinzufügt, die möglicherweise Kompilierungsfehler verursachen.
 
-## <a name="to_chars"></a> to_chars
+## <a name="to_chars"></a>to_chars
 
 ```cpp
 to_chars_result to_chars(char* first, char* last, see below value, int base = 10);
@@ -388,6 +388,6 @@ to_chars_result to_chars(char* first, char* last, double value, chars_format fmt
 to_chars_result to_chars(char* first, char* last, long double value, chars_format fmt, int precision);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wert in eine Zeichenfolge konvertiert, indem Sie den Bereich ausfüllen `[first, last)`, wobei `[first, last)` ist erforderlich, um ein gültiger Bereich sein.
+Konvertiert den Wert in eine Zeichenfolge, indem er den Bereich `[first, last)`füllt, wobei `[first, last)` ein gültiger Bereich sein muss.

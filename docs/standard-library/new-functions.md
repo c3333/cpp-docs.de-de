@@ -7,15 +7,15 @@ f1_keywords:
 - new/std::set_new_handler
 ms.assetid: e250f06a-b025-4509-ae7a-5356d56aad7d
 ms.openlocfilehash: c912e5be07ea0ebdd3148d30c80c39a5f8cfa1a5
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68243669"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854936"
 ---
 # <a name="ltnewgt-functions"></a>&lt;new&gt;-Funktionen
 
-## <a name="get_new_handler"></a> get_new_handler
+## <a name="get_new_handler"></a>get_new_handler
 
 ```cpp
 new_handler get_new_handler() noexcept;
@@ -23,9 +23,9 @@ new_handler get_new_handler() noexcept;
 
 ### <a name="remarks"></a>Hinweise
 
-Gibt die aktuelle `new_handler`.
+Gibt die aktuelle `new_handler`zurück.
 
-## <a name="launder"></a> Profis
+## <a name="launder"></a>launter
 
 ```cpp
 template <class T>
@@ -34,18 +34,18 @@ template <class T>
 
 ### <a name="parameters"></a>Parameter
 
-*PTR*\
-Die Adresse eines Bytes in den Arbeitsspeicher, der ein Objekt, dessen Typ enthält ähnelt *T*.
+*ptr* -\
+Die Adresse eines Bytes im Arbeitsspeicher, das ein Objekt enthält, dessen Typ mit *T*vergleichbar ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert vom Typ *T\**  , die auf X verweist.
+Ein Wert vom Typ *T\** , der auf X zeigt.
 
 ### <a name="remarks"></a>Hinweise
 
-Auch bezeichnet als Barriere Optimierung Zeiger.
+Wird auch als eine Zeiger Optimierungs Barriere bezeichnet.
 
-Als ein konstanter Ausdruck verwendet, wenn der Wert des Arguments in einem konstanten Ausdruck verwendet werden kann. Ein Byte des Speichers ist erreichbar über ein Zeigerwert, der auf ein Objekt verweist, wenn in den Speicher, der durch ein anderes Objekt ein Objekt mit einem ähnlichen Zeiger belegt wird.
+Wird als konstanter Ausdruck verwendet, wenn der Wert des Arguments in einem konstanten Ausdruck verwendet werden kann. Ein Byte des Speichers ist durch einen Zeiger Wert erreichbar, der auf ein Objekt zeigt, wenn es sich im Speicher befindet, der von einem anderen Objekt belegt wird, einem Objekt mit einem ähnlichen Zeiger.
 
 ### <a name="example"></a>Beispiel
 
@@ -59,9 +59,9 @@ const int b = p->n; // undefined behavior
 const int c = std::launder(p)->n; // OK
 ```
 
-## <a name="nothrow"></a> nothrow
+## <a name="nothrow"></a>nothrow
 
-Stellt ein Objekt als Argument für die **Nothrow** Versionen von **neue** und **löschen**.
+Stellt ein Objekt bereit, das als Argument für die **nothrow** -Versionen von **New** und **Delete**verwendet werden soll.
 
 ```cpp
 extern const std::nothrow_t nothrow;
@@ -73,11 +73,11 @@ Das Objekt wird als Funktionsargument verwendet, um auf den Parametertyp [std::n
 
 ### <a name="example"></a>Beispiel
 
-Beispiele zur Verwendung von `std::nothrow_t` als Funktionsparameter finden Sie unter [operator new](../standard-library/new-operators.md#op_new) und [operator new&#91;&#93;](../standard-library/new-operators.md#op_new_arr).
+Beispiele zur Verwendung von [ als Funktionsparameter finden Sie unter ](../standard-library/new-operators.md#op_new)operator new[ und ](../standard-library/new-operators.md#op_new_arr)operator new&#91;&#93;`std::nothrow_t`.
 
-## <a name="set_new_handler"></a> set_new_handler
+## <a name="set_new_handler"></a>set_new_handler
 
-Installiert eine Benutzerfunktion, die aufgerufen werden soll **new-Operator** nicht in der Lage, um Speicher zu belegen.
+Installiert eine Benutzerfunktion, die aufgerufen werden soll, wenn der **New-Operator** beim Versuch, Arbeitsspeicher zuzuweisen, fehlschlägt.
 
 ```cpp
 new_handler set_new_handler(new_handler Pnew) throw();
@@ -85,8 +85,8 @@ new_handler set_new_handler(new_handler Pnew) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*PDAs*\
-Die `new_handler` installiert werden.
+*Pnew* -\
+Der `new_handler`, der installiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -94,7 +94,7 @@ Die `new_handler` installiert werden.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Funktion speichert *PDAs* in einer statischen [neuen Handler](../standard-library/new-typedefs.md#new_handler) Zeiger, die er verwaltet, gibt anschließend den Wert, der zuvor im Zeiger gespeichert. Der neue Handler wird verwendet, indem [new-Operator](../standard-library/new-operators.md#op_new)( **"size_t"** ).
+Die Funktion speichert *Pnew* in einem statischen [neuen handlerzeiger](../standard-library/new-typedefs.md#new_handler) , den Sie verwaltet, und gibt dann den zuvor im Zeiger gespeicherten Wert zurück. Der neue Handler wird von [Operator new](../standard-library/new-operators.md#op_new)(**size_t**) verwendet.
 
 ### <a name="example"></a>Beispiel
 
