@@ -13,13 +13,13 @@ helpviewer_keywords:
 - std::istream_iterator [C++], traits_type
 ms.assetid: fb52a8cd-7f71-48d1-b73e-4b064e2a8d16
 ms.openlocfilehash: 941d625e388edc75dfe25a2de0e609c6d955ff19
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447754"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78869889"
 ---
-# <a name="istreamiterator-class"></a>istream_iterator-Klasse
+# <a name="istream_iterator-class"></a>istream_iterator-Klasse
 
 Beschreibt ein Eingabeiteratorobjekt. Es werden Objekte der Klasse `Type` aus einem Eingabestream extrahiert. Der Zugriff darauf erfolgt durch ein gespeichertes Objekt vom Typ `pointer` auf `basic_istream`< `CharType`, `Traits`>.
 
@@ -36,29 +36,29 @@ class istream_iterator
 
 ### <a name="parameters"></a>Parameter
 
-*Sorte*\
+*Typ*\
 Der Typ des Objekts, das aus dem Eingabestream extrahiert werden soll.
 
-*CharType*\
+*CharType* -\
 Der Typ, der den Zeichentyp für `istream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist **char**.
 
-*Aufweisen*\
+*Merkmale*\
 Der Typ, der den Zeichentyp für `istream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist `char_traits`< `CharType`.
 
-*Flüge*\
+*Entfernungs*\
 Ein ganzzahliger Typ mit Vorzeichen, der den Differenztyp für den `istream_iterator` darstellt. Dieses Argument ist optional, und der Standardwert ist `ptrdiff_t`.
 
 Nachdem ein Objekt der Klasse istream_iterator mit einem ungleich NULL gespeicherten Zeiger erstellt oder erhöht wurde, versucht das Objekt, ein Objekt vom Typ `Type` aus dem zugewiesenen Eingabestream zu extrahieren und zu speichern. Wenn die Extraktion fehlschlägt, ersetzt das Objekt den gespeicherten Zeiger durch einen NULL-Zeiger und erstellt so einen Indikator für das Ende der Sequenz.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[istream_iterator](#istream_iterator)|Erstellt entweder einen End-of-Stream-Iterator als Standard-`istream_iterator` oder ein `istream_iterator`, der für den Streamtyp des Iterators initialisiert wird, von dem gelesen wird.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der für den Zeichentyp von `istream_iterator` bereitgestellt wird.|
 |[istream_type](#istream_type)|Ein Typ, der für den Streamtyp von `istream_iterator` bereitgestellt wird.|
@@ -66,15 +66,15 @@ Nachdem ein Objekt der Klasse istream_iterator mit einem ungleich NULL gespeiche
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[operator*](#op_star)|Der Dereferenzierungsoperator gibt das gespeicherte Objekt vom Typ `Type` zurück, das vom `istream_iterator` adressiert wird.|
 |[operator->](#op_arrow)|Gibt den Wert eines Members zurück, falls vorhanden.|
 |[operator++](#op_add_add)|Extrahiert entweder ein inkrementiertes Objekt im Eingabestream oder kopiert das Objekt vor dem Inkrementieren und gibt die Kopie zurück.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iterator>
+**Header:** \<Iterator >
 
 **Namespace:** std
 
@@ -86,9 +86,9 @@ Ein Typ, der für den Zeichentyp von `istream_iterator` bereitgestellt wird.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Chartype` dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `Chartype`dar.
 
 ### <a name="example"></a>Beispiel
 
@@ -141,7 +141,7 @@ istream_iterator(istream_type& _Istr);
 *_Istr*\
 Der zu lesende Eingabestream verwendet `istream_iterator` zum Initialisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor initialisiert den Eingabestreamzeiger mit einem NULL-Zeiger und erstellt einen End-of-Stream-Iterator. Der zweite Konstruktor initialisiert den Eingabestreamzeiger mit *& _Istr*und versucht dann, ein Objekt vom Typ `Type`zu extrahieren und zu speichern.
 
@@ -189,9 +189,9 @@ Ein Typ, der für den Streamtyp von `istream_iterator` bereitgestellt wird.
 typedef basic_istream<CharType, Traits> istream_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für `basic_istream`\< **CharType**, **Traits**>.
+Der Typ ist ein Synonym für `basic_istream`\< **CharType**, **Merkmale**>.
 
 ### <a name="example"></a>Beispiel
 
@@ -253,9 +253,9 @@ const Type* operator->() const;
 
 Der Wert eines Members, falls vorhanden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`i->m`entspricht`(*i).m`
+`i->m` entspricht `(*i).m`
 
 Der Operator gibt `&*this` zurück.
 
@@ -303,7 +303,7 @@ istream_iterator<Type, CharType, Traits, Distance> operator++(int);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der erste Member-Operator gibt einen Verweis auf das inkrementierte `Type` Objekt vom Typ zurück, das aus dem Eingabestream extrahiert wurde, und die zweite Element Funktion gibt eine Kopie des Objekts zurück.
+Der erste Member-Operator gibt einen Verweis auf das inkrementierte Objekt vom Typ zurück, `Type` aus dem Eingabestream extrahiert wurde, und die zweite Member-Funktion gibt eine Kopie des-Objekts zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -345,7 +345,7 @@ Ein Typ, der für den Merkmaltyp von `istream_iterator` bereitgestellt wird.
 typedef Traits traits_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ stellt ein Synonym für den Vorlagenparameter *Merkmale* dar.
 
@@ -384,10 +384,10 @@ int main( )
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [input_iterator_tag-Struktur](../standard-library/input-iterator-tag-struct.md)\
 [iterator-Struktur](../standard-library/iterator-struct.md)\
 [\<iterator>](../standard-library/iterator.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)
