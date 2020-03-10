@@ -8,13 +8,13 @@ f1_keywords:
 - xtr1common/std::true_type
 ms.assetid: 8ac040ca-ed2d-4570-adc9-cb5626530053
 ms.openlocfilehash: eff1a99fb95f15c6377e8a74cca36e718cbd6fd9
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455080"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78867217"
 ---
-# <a name="lttypetraitsgt-typedefs"></a>&lt;type_traits&gt;-Typedefs
+# <a name="lttype_traitsgt-typedefs"></a>&lt;type_traits&gt;-Typedefs
 
 |||
 |-|-|
@@ -28,7 +28,7 @@ Enthält eine Ganzzahlkonstante mit einem falschen Wert.
 typedef integral_constant<bool, false> false_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für eine Spezialisierung der Vorlage `integral_constant`.
 
@@ -61,7 +61,7 @@ Enthält eine Ganzzahlkonstante mit einem wahren Wert.
 typedef integral_constant<bool, true> true_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für eine Spezialisierung der Vorlage `integral_constant`.
 
@@ -88,6 +88,6 @@ false_type == false
 true_type == true
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)
