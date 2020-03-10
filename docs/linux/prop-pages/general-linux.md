@@ -3,12 +3,12 @@ title: Allgemeine Eigenschaften (Linux C++-Projekt)
 description: In diesem Artikel sind die Linux-Projekteigenschaften beschrieben, die Sie in Visual Studio auf der Seite „Allgemeine Eigenschaften“ festlegen können.
 ms.date: 01/14/2020
 ms.assetid: 56c800a9-3df9-4196-87b2-81adb00e4767
-ms.openlocfilehash: 6d598e9d52037d709cba87d98ad375455d8c00b0
-ms.sourcegitcommit: 49e4fb3e0300fe86c814130661f1bf68b16e72e2
+ms.openlocfilehash: d6a69d9fd3091c885ebd708cbc4598533d2922b4
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031345"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78883979"
 ---
 # <a name="general-properties-linux-c"></a>Allgemeine Eigenschaften (Linux C++)
 
@@ -29,7 +29,7 @@ Zielerweiterung | Diese Eigenschaft gibt die Dateierweiterung an, die von diesem
 Bei der Bereinigung zu löschende Erweiterungen | Bei dieser Eigenschaft wird eine durch Semikolons getrennte Platzhalterspezifikation verwendet, um anzugeben, welche Dateien im Zwischenverzeichnis beim Bereinigen oder erneuten Erstellen gelöscht werden sollen.
 Buildprotokolldatei | Gibt die zu schreibende Buildprotokolldatei an, wenn die Buildprotokollierung aktiviert ist.
 Plattformtoolset | Diese Eigenschaft gibt das Toolset an, das beim Erstellen der aktuellen Konfiguration verwendet wird. Wenn hier nichts angegeben ist, wird das Standardtoolset verwendet.
-Remotebuildcomputer | Diese Eigenschaft gibt den Zielcomputer oder das -gerät an, das für den Remotebuild, die -bereitstellung und das -debuggen verwendet werden soll. **Visual Studio 2019 Version 16.1**: Auf der Seite [Debuggen](debugging-linux.md) können Sie für das Debuggen einen anderen Computer angeben.
+Remotebuildcomputer | Diese Eigenschaft zeigt den Zielcomputer oder das -gerät an, das für den Remotebuild, die -bereitstellung und das -debuggen verwendet werden soll. Sie können eine Zielcomputerverbindung hinzufügen oder bearbeiten, indem Sie **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** auswählen. **Visual Studio 2019 Version 16.1**: Auf der Seite [Debuggen](debugging-linux.md) können Sie für das Debuggen einen anderen Computer angeben.
 Remotebuild-Stammverzeichnis | Gibt einen Pfad zu einem Verzeichnis auf dem Remotecomputer oder -Gerät an.
 Remotebuild-Projektverzeichnis | Gibt einen Pfad zu einem Verzeichnis auf dem Remotecomputer oder -Gerät für das Projekt an.
 Remote Deploy Directory (Verzeichnis für Remotebereitstellung) | **Visual Studio 2019 Version 16.1**: Diese Eigenschaft gibt den Verzeichnispfad auf dem Remotecomputer oder-gerät an, wo das Projekt bereitgestellt werden soll.

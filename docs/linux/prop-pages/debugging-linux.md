@@ -2,12 +2,12 @@
 title: Debuggereigenschaften (Linux C++) | Microsoft Docs
 ms.date: 06/07/2019
 ms.assetid: 0c1c0fcc-a49b-451c-a5cb-ce9711fac064
-ms.openlocfilehash: d76e398d648db7c5cf65e4ca2bb1665aef4359ad
-ms.sourcegitcommit: 8adabe177d557c74566c13145196c11cef5d10d4
+ms.openlocfilehash: 8a57e983a32e1ef1eca2bf2452df2cd39d453467
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66821395"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78883706"
 ---
 # <a name="c-debugging-properties-linux-c"></a>C++-Debugeigenschaften (Linux C++)
 
@@ -21,7 +21,7 @@ Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
 Eigenschaft | Beschreibung | Auswahlmöglichkeiten
 --- | ---| ---
-Remotedebugcomputer | **Visual Studio 2019 Version 16.1:** Gibt den Computer an, auf dem das Programm gedebuggt werden soll. Kann sich vom Remotebuildcomputer unterscheiden, der auf der Seite [Allgemein](general-linux.md) angegeben wurde.
+Remotedebugcomputer | **Visual Studio 2019 Version 16.1:** Gibt den Computer an, auf dem das Programm gedebuggt werden soll. Kann sich vom Remotebuildcomputer unterscheiden, der auf der Seite [Allgemein](general-linux.md) angegeben wurde. Sie können eine Zielcomputerverbindung hinzufügen oder bearbeiten, indem Sie **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** auswählen.
 Befehl vor dem Start | Ein Befehl, der für die Shell ausgeführt wird, bevor der Debugger startet. Er kann verwendet werden, um die Debugumgebung zu beeinflussen.
 Program | Der vollständige Pfad zu dem auf dem Remotesystem zu debuggenden Programm. Wenn die Angabe leer oder unverändert gelassen wird, wird standardmäßig die aktuelle Projektausgabe verwendet.
 Programmargumente | Die Befehlszeilenargumente, die an das zu debuggende Programm übergeben werden sollen.
