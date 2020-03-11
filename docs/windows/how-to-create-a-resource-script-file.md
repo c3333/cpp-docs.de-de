@@ -37,11 +37,11 @@ helpviewer_keywords:
 - .rct files [C++]
 ms.assetid: 82be732a-cdcd-4a58-8de7-976d1418f86b
 ms.openlocfilehash: c997c7a1b2d7fb3a852a42fa78faf2be6074705e
-ms.sourcegitcommit: 9aab425662a66825772f091112986952f341f7c8
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72444938"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78866120"
 ---
 # <a name="how-to-create-resources-c"></a>Vorgehensweise: Erstellen von RessourcenC++()
 
@@ -115,7 +115,7 @@ Sie können auch mit der rechten Maustaste auf das **Ressourcenansicht** Fenster
 
 Das **Ressourcenansicht** Fenster umfasst das Dialogfeld **Ressource hinzufügen** mit den folgenden Eigenschaften zum Hinzufügen von C++ Ressourcen zu einem Windows-Desktop Anwendungsprojekt:
 
-| Eigenschaft | Beschreibung |
+| Eigenschaft | BESCHREIBUNG |
 |---|---|
 | **Ressourcentyp** | Geben Sie die Art der Ressource an, die Sie erstellen möchten.<br/><br/>Sie können die Ressourcen Kategorien Cursor und Dialogfeld erweitern, um zusätzliche Ressourcen anzuzeigen, die sich in befinden *. \Microsoft Visual Studio \<Version\>\vc\vkresourcetemplates\\< LCID\>\mfc.rct*. Wenn Sie RCT-Dateien hinzufügen müssen, platzieren Sie Sie entweder hier, oder geben Sie einen anderen [Includepfad](../windows/how-to-specify-include-directories-for-resources.md)an. Ressourcen, die auf der obersten Ebene in der Strukturansicht angezeigt werden, sind die Standard Ressourcen, die von Visual Studio bereitgestellt werden. Ressourcen in RCT-Dateien werden auf der zweiten Ebene unter der entsprechenden Kategorie angezeigt. Es gibt keine Voreinstellungs Beschränkung für die Anzahl von RCT-Dateien, die Sie hinzufügen können.<br/><br/> |
 | **Neu** | Erstellen Sie eine Ressource basierend auf dem Typ, der im Feld **Ressourcentyp** ausgewählt ist, und öffnen Sie die Ressource im entsprechenden Editor.<br/><br/>Wenn Sie z. b. eine Dialogfeld Ressource erstellen, wird die Ressource im [Dialog-Editor](../windows/dialog-editor.md)geöffnet. |
@@ -183,11 +183,11 @@ Nachdem Sie eine Ressourcen Vorlage angepasst haben, speichern Sie die Änderung
 
 Navigieren Sie mit der geöffneten Ressourcen Skriptdatei im Menü zu **Datei** > speichern Sie **\<*Dateinamen*> als**. Geben Sie einen Speicherort an, und wählen Sie **OK**.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
 [Gewusst wie: Verwalten von Ressourcen](../windows/how-to-copy-resources.md)<br/>

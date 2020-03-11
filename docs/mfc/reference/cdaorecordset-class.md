@@ -167,11 +167,11 @@ helpviewer_keywords:
 - CDaoRecordset [MFC], m_strSort
 ms.assetid: 2322067f-1027-4662-a5d7-aa2fc7488630
 ms.openlocfilehash: 96118645aa656e97fcb93a0fd223045208ab03a3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62206358"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78872473"
 ---
 # <a name="cdaorecordset-class"></a>CDaoRecordset-Klasse
 
@@ -183,141 +183,141 @@ Stellt eine Gruppe von Datensätzen dar, die aus einer Datenquelle ausgewählt w
 class CDaoRecordset : public CObject
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoRecordset::CDaoRecordset](#cdaorecordset)|Erstellt ein `CDaoRecordset`-Objekt.|
+|[CDaoRecordset:: CDaoRecordset](#cdaorecordset)|Erstellt ein `CDaoRecordset`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoRecordset::AddNew](#addnew)|Bereitet zum Hinzufügen eines neuen Eintrags. Rufen Sie [Update](#update) das Hinzufügen abgeschlossen.|
-|[CDaoRecordset::CanAppend](#canappend)|Gibt ungleich NULL, wenn das Recordset über neue Datensätze hinzugefügt werden können die [AddNew](#addnew) Member-Funktion.|
-|[CDaoRecordset::CanBookmark](#canbookmark)|Gibt, die ungleich NULL, wenn das Recordset Lesezeichen unterstützt.|
-|[CDaoRecordset::CancelUpdate](#cancelupdate)|Bricht alle ausstehenden Updates aufgrund einer [bearbeiten](#edit) oder [AddNew](#addnew) Vorgang.|
-|[CDaoRecordset::CanRestart](#canrestart)|Ungleich NULL zurück, wenn [Requery](#requery) aufgerufen werden, um die Abfrage des Recordsets erneut ausführen.|
-|[CDaoRecordset::CanScroll](#canscroll)|Gibt, die ungleich NULL, wenn Sie einen Bildlauf durch die Datensätze durchführen können.|
-|[CDaoRecordset::CanTransact](#cantransact)|Gibt, die ungleich NULL, wenn die Datenquelle Transaktionen unterstützt.|
-|[CDaoRecordset::CanUpdate](#canupdate)|Gibt ungleich NULL, wenn das Recordset aktualisiert werden kann (Sie können hinzufügen, aktualisieren oder Löschen von Datensätzen).|
-|[CDaoRecordset::Close](#close)|Schließt das Recordset.|
-|[CDaoRecordset::Delete](#delete)|Löscht den aktuellen Datensatz aus dem Recordset. Sie müssen explizit mit einem anderen Datensatz nach dem Löschvorgang scrollen.|
-|[CDaoRecordset::DoFieldExchange](#dofieldexchange)|Wird aufgerufen, zum Austauschen von Daten (in beide Richtungen) zwischen den Felddatenmembern des Recordsets und der entsprechende Datensatz in der Datenquelle. Implements-DAO-Datensatzfeldaustausch (DFX).|
-|[CDaoRecordset::Edit](#edit)|Bereitet für Änderungen an den aktuellen Datensatz. Rufen Sie `Update` um die Bearbeitung abzuschließen.|
-|[CDaoRecordset::FillCache](#fillcache)|Füllt den gesamten oder einen Teil des lokalen Cache für ein Recordsetobjekt, das Daten aus einer ODBC-Datenquelle enthält.|
-|[CDaoRecordset::Find](#find)|Sucht das erste, Next, letzten oder vorherigen Speicherort einer bestimmten Zeichenfolge in einem Typ Dynaset-Recordset, das erfüllt werden, den angegebenen Kriterien und macht, die zum aktuellen Datensatz.|
-|[CDaoRecordset::FindFirst](#findfirst)|Sucht den ersten Datensatz in ein Dynaset oder Snapshot-Type-Recordset, das erfüllt werden, den angegebenen Kriterien und macht diesen des aktuellen Datensatzes an.|
-|[CDaoRecordset::FindLast](#findlast)|Sucht den letzten Datensatz in ein Dynaset oder Snapshot-Type-Recordset, das erfüllt werden, den angegebenen Kriterien und macht diesen des aktuellen Datensatzes an.|
-|[CDaoRecordset::FindNext](#findnext)|Sucht den nächsten Datensatz in ein Dynaset oder Snapshot-Type-Recordset, das erfüllt werden, den angegebenen Kriterien und macht diesen des aktuellen Datensatzes an.|
-|[CDaoRecordset::FindPrev](#findprev)|Sucht nach dem vorherigen Datensatz in ein Dynaset oder Snapshot-Type-Recordset, das erfüllt werden, den angegebenen Kriterien und macht, die zum aktuellen Datensatz.|
-|[CDaoRecordset::GetAbsolutePosition](#getabsoluteposition)|Gibt die Nummer des aktuellen Datensatzes einem Recordset-Objekt zurück.|
-|[CDaoRecordset::GetBookmark](#getbookmark)|Gibt einen Wert, der das Lesezeichen für einen Datensatz darstellt.|
-|[CDaoRecordset::GetCacheSize](#getcachesize)|Gibt einen Wert, der angibt, die Anzahl der Datensätze in einem Recordset Dynaset-Typ, die mit Daten aus einer ODBC-Datenquelle lokal zwischengespeichert werden.|
-|[CDaoRecordset::GetCacheStart](#getcachestart)|Gibt einen Wert, der angibt, das Lesezeichen des ersten Datensatzes im Recordset zwischengespeichert werden.|
-|[CDaoRecordset::GetCurrentIndex](#getcurrentindex)|Gibt eine `CString` für eine indizierte Tabelle – verwendet mit dem Namen des Indexes die vor kurzem `CDaoRecordset`.|
-|[CDaoRecordset::GetDateCreated](#getdatecreated)|Gibt das Datum und die Uhrzeit der zugrunde liegenden Basistabelle eine `CDaoRecordset` Objekt erstellt wurde|
-|[CDaoRecordset::GetDateLastUpdated](#getdatelastupdated)|Gibt das Datum und Uhrzeit der letzten Änderungen an den Entwurf einer zugrunde liegenden Basistabelle eine `CDaoRecordset` Objekt.|
-|[CDaoRecordset::GetDefaultDBName](#getdefaultdbname)|Gibt den Namen der Standard-Datenquelle.|
-|[CDaoRecordset::GetDefaultSQL](#getdefaultsql)|Wird aufgerufen, rufen Sie die Standard-SQL-Zeichenfolge ausgeführt wird.|
-|[CDaoRecordset::GetEditMode](#geteditmode)|Gibt einen Wert, der den Status der Bearbeiten für den aktuellen Datensatz angibt.|
-|[CDaoRecordset::GetFieldCount](#getfieldcount)|Gibt einen Wert, der die Anzahl der Felder in einem Recordset darstellt.|
-|[CDaoRecordset::GetFieldInfo](#getfieldinfo)|Gibt bestimmte Arten von Informationen zu den Feldern im Recordset zurück.|
-|[CDaoRecordset::GetFieldValue](#getfieldvalue)|Gibt den Wert eines Felds in einem Recordset zurück.|
-|[CDaoRecordset::GetIndexCount](#getindexcount)|Ruft die Anzahl der Indizes in einer Tabelle mit dem zugrunde liegenden Recordset ab.|
-|[CDaoRecordset::GetIndexInfo](#getindexinfo)|Gibt die verschiedenen Arten von Informationen zu einem Index zurück.|
-|[CDaoRecordset::GetLastModifiedBookmark](#getlastmodifiedbookmark)|Verwendet, um zu bestimmen, die am häufigsten vor kurzem hinzugefügt oder Datensatz aktualisiert.|
-|[CDaoRecordset::GetLockingMode](#getlockingmode)|Gibt einen Wert, der den Typ der Sperre, der während der Bearbeitung aktiviert ist angibt.|
-|[CDaoRecordset::GetName](#getname)|Gibt eine `CString` mit dem Namen des Recordset-Objekts.|
-|[CDaoRecordset::GetParamValue](#getparamvalue)|Ruft den aktuellen Wert des angegebenen Parameters in der zugrunde liegenden DAOParameter-Objekt gespeichert.|
-|[CDaoRecordset::GetPercentPosition](#getpercentposition)|Gibt die Position des aktuellen Datensatzes als Prozentsatz der Gesamtanzahl von Datensätzen zurück.|
-|[CDaoRecordset::GetRecordCount](#getrecordcount)|Gibt die Anzahl der Datensätze, die auf die in einem Recordset-Objekt zurück.|
-|[CDaoRecordset::GetSQL](#getsql)|Ruft die SQL-Zeichenfolge, die zum Auswählen von Datensätzen für das Recordset.|
-|[CDaoRecordset::GetType](#gettype)|Wird aufgerufen, um den Typ eines Recordset-Objekts zu ermitteln: Tabellentyp, Dynaset eines assistentartigen oder Snapshot-Typ.|
-|[CDaoRecordset::GetValidationRule](#getvalidationrule)|Gibt eine `CString` mit dem Wert, der Daten überprüft werden, während sie in ein Feld eingegeben wird.|
-|[CDaoRecordset::GetValidationText](#getvalidationtext)|Ruft den Text ab, der angezeigt wird, wenn eine Validierungsregel nicht erfüllt ist.|
-|[CDaoRecordset::IsBOF](#isbof)|Gibt, die ungleich NULL, wenn das Recordset vor dem ersten Datensatz positioniert ist. Es ist kein aktueller Datensatz vorhanden.|
-|[CDaoRecordset::IsDeleted](#isdeleted)|Gibt, die ungleich NULL, wenn das Recordset in einem gelöschten Datensatz positioniert ist.|
-|[CDaoRecordset::IsEOF](#iseof)|Gibt, die ungleich NULL, wenn das Recordset nach dem letzten Datensatz positioniert ist. Es ist kein aktueller Datensatz vorhanden.|
-|[CDaoRecordset::IsFieldDirty](#isfielddirty)|Gibt, die ungleich NULL, wenn das angegebene Feld im aktuellen Datensatz geändert wurde.|
-|[CDaoRecordset::IsFieldNull](#isfieldnull)|Gibt, die ungleich NULL, wenn das angegebene Feld im aktuellen Datensatz (mit keinen Wert) Null ist.|
-|[CDaoRecordset::IsFieldNullable](#isfieldnullable)|Gibt einen ungleich NULL, wenn das angegebene Feld im aktuellen Datensatz auf Null festgelegt werden kann (mit keinen Wert) zurück.|
-|[CDaoRecordset::IsOpen](#isopen)|Ungleich NULL zurück, wenn [öffnen](#open) wurde zuvor aufgerufen.|
-|[CDaoRecordset::Move](#move)|Positioniert das Recordset auf eine angegebene Anzahl von Datensätzen aus dem aktuellen Datensatz in beide Richtungen.|
-|[CDaoRecordset::MoveFirst](#movefirst)|Positioniert den aktuellen Datensatz für den ersten Datensatz im Recordset.|
-|[CDaoRecordset::MoveLast](#movelast)|Positioniert den aktuellen Datensatz für den letzten Datensatz im Recordset.|
-|[CDaoRecordset::MoveNext](#movenext)|Den aktuellen Datensatz positioniert den nächsten Datensatz im Recordset.|
-|[CDaoRecordset::MovePrev](#moveprev)|Den aktuellen Datensatz positioniert den vorherigen Datensatz im Recordset.|
-|[CDaoRecordset::Open](#open)|Erstellt einen neuen Datensatz aus einer Tabelle, die Dynaset oder die Momentaufnahme an.|
-|[CDaoRecordset::Requery](#requery)|Führt die Abfrage erneut aus, um die ausgewählten Datensätze aktualisieren des Recordsets.|
-|[CDaoRecordset::Seek](#seek)|Sucht nach dem Datensatz in einem indizierten Tabelle Typ Recordset-Objekt, das für den aktuellen Index und macht, die zum aktuellen Datensatz die angegebenen Kriterien erfüllt.|
-|[CDaoRecordset::SetAbsolutePosition](#setabsoluteposition)|Legt die Nummer des aktuellen Datensatzes einem Recordset-Objekt fest.|
-|[CDaoRecordset::SetBookmark](#setbookmark)|Positioniert das Recordset einen Datensatz mit dem angegebenen Lesezeichen.|
-|[CDaoRecordset::SetCacheSize](#setcachesize)|Legt einen Wert, der angibt, die Anzahl der Datensätze in einem Recordset Dynaset-Typ, die mit Daten aus einer ODBC-Datenquelle lokal zwischengespeichert werden.|
-|[CDaoRecordset::SetCacheStart](#setcachestart)|Legt einen Wert, der angibt, das Lesezeichen des ersten Datensatzes im Recordset zwischengespeichert werden.|
-|[CDaoRecordset::SetCurrentIndex](#setcurrentindex)|Wird aufgerufen, um einen Index für ein Recordset-Tabelle vom Typ festzulegen.|
-|[CDaoRecordset::SetFieldDirty](#setfielddirty)|Markiert das angegebene Feld im aktuellen Datensatz an, als geändert.|
-|[CDaoRecordset::SetFieldNull](#setfieldnull)|Legt den Wert des angegebenen Felds in den aktuellen Datensatz auf Null (kein Wert mit) fest.|
-|[CDaoRecordset::SetFieldValue](#setfieldvalue)|Legt den Wert eines Felds in einem Recordset fest.|
-|[CDaoRecordset::SetFieldValueNull](#setfieldvaluenull)|Legt den Wert eines Felds in einem Recordset auf Null fest. (Wenn kein Wert).|
-|[CDaoRecordset::SetLockingMode](#setlockingmode)|Legt einen Wert, der den Typ der Sperren, um während der Bearbeitung vollzogen angibt.|
-|[CDaoRecordset::SetParamValue](#setparamvalue)|Stellt den aktuellen Wert des angegebenen Parameters in der zugrunde liegende Objekt DAOParameter gespeichert|
-|[CDaoRecordset::SetParamValueNull](#setparamvaluenull)|Legt den aktuellen Wert des angegebenen Parameters auf Null (kein Wert mit) fest.|
-|[CDaoRecordset::SetPercentPosition](#setpercentposition)|Legt die Position des aktuellen Datensatzes an einen Speicherort für einen Prozentsatz der Gesamtzahl der Datensätze in einem Recordset fest.|
-|[CDaoRecordset::Update](#update)|Schließt eine `AddNew` oder `Edit` Vorgang, durch die neuen oder bearbeiteten Daten speichern, in der Datenquelle.|
+|[CDaoRecordset:: AddNew](#addnew)|Bereitet das Hinzufügen eines neuen Datensatzes vor. Aktualisieren Sie die [Aktualisierung](#update) , um die Addition abzuschließen.|
+|[CDaoRecordset:: CanAppend](#canappend)|Gibt einen Wert ungleich 0 (null) zurück, wenn dem Recordset mithilfe der [AddNew](#addnew) -Element Funktion neue Datensätze hinzugefügt werden können|
+|[CDaoRecordset:: CanBookmark](#canbookmark)|Gibt einen Wert ungleich 0 zurück, wenn das Recordset Lesezeichen unterstützt|
+|[CDaoRecordset:: CancelUpdate](#cancelupdate)|Bricht ausstehende Updates aufgrund eines [Edit](#edit) -oder [AddNew](#addnew) -Vorgangs ab.|
+|[CDaoRecordset:: canrestart](#canrestart)|Gibt einen Wert ungleich 0 (null) zurück, wenn die [Anforderung](#requery) zum erneuten Ausführen der Abfrage des Recordsets aufgerufen werden kann.|
+|[CDaoRecordset:: CanScroll](#canscroll)|Gibt einen Wert ungleich 0 (null) zurück, wenn Sie durch die Datensätze|
+|[CDaoRecordset:: CanTransact](#cantransact)|Gibt einen Wert ungleich 0 zurück, wenn die Datenquelle Transaktionen unterstützt.|
+|[CDaoRecordset:: CanUpdate](#canupdate)|Gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset aktualisiert werden kann (Sie können Datensätze hinzufügen, aktualisieren oder löschen).|
+|[CDaoRecordset:: Close](#close)|Schließt das Recordset.|
+|[CDaoRecordset::D Elete](#delete)|Löscht den aktuellen Datensatz aus dem Recordset. Sie müssen nach dem Löschen explizit einen Bildlauf zu einem anderen Datensatz durchführen.|
+|[CDaoRecordset::D ofieldexchange](#dofieldexchange)|Wird aufgerufen, um Daten (in beide Richtungen) zwischen den Felddatenmembern des Recordsets und dem entsprechenden Datensatz in der Datenquelle auszutauschen. Implementiert den DAO-Daten Satz Feld Austausch (DFX).|
+|[CDaoRecordset:: Edit](#edit)|Bereitet Änderungen am aktuellen Datensatz vor. Ruft `Update` auf, um die Bearbeitung abzuschließen.|
+|[CDaoRecordset:: FillCache](#fillcache)|Füllt den gesamten oder einen Teil eines lokalen Caches für ein Recordset-Objekt aus, das Daten aus einer ODBC-Datenquelle enthält.|
+|[CDaoRecordset:: Find](#find)|Gibt den ersten, den nächsten, den vorherigen oder den letzten Speicherort einer bestimmten Zeichenfolge in einem "Dynaset-Type"-Recordset an, das die angegebenen Kriterien erfüllt und den Datensatz zum aktuellen Datensatz führt.|
+|[CDaoRecordset:: FindFirst](#findfirst)|Gibt den ersten Datensatz in einem Dynaset-Type-oder Snapshot-Type-Recordset an, das die angegebenen Kriterien erfüllt, und legt diesen Datensatz auf den aktuellen Datensatz fest.|
+|[CDaoRecordset:: FindLast](#findlast)|Gibt den letzten Datensatz in einem Dynaset-Type-oder Snapshot-Type-Recordset an, das die angegebenen Kriterien erfüllt, und legt diesen Datensatz auf den aktuellen Datensatz fest.|
+|[CDaoRecordset:: FindNext](#findnext)|Gibt den nächsten Datensatz in einem Dynaset-Type-oder Snapshot-Type-Recordset an, das die angegebenen Kriterien erfüllt, und legt diesen Datensatz auf den aktuellen Datensatz fest.|
+|[CDaoRecordset:: findprev](#findprev)|Gibt den vorherigen Datensatz in einem Dynaset-Type-oder Snapshot-Type-Recordset an, das die angegebenen Kriterien erfüllt, und legt diesen Datensatz auf den aktuellen Datensatz fest.|
+|[CDaoRecordset:: GetAbsolutePosition](#getabsoluteposition)|Gibt die Datensatznummer des aktuellen Datensatzes eines Recordset-Objekts zurück.|
+|[CDaoRecordset:: GetBookmark](#getbookmark)|Gibt einen Wert zurück, der das Lesezeichen für einen Datensatz darstellt.|
+|[CDaoRecordset:: getCacheSize](#getcachesize)|Gibt einen Wert zurück, der die Anzahl der Datensätze in einem Dynaset-Recordset mit Daten angibt, die lokal aus einer ODBC-Datenquelle zwischengespeichert werden sollen.|
+|[CDaoRecordset:: getcachestart](#getcachestart)|Gibt einen Wert zurück, der das Lesezeichen des ersten Datensatzes im Recordset angibt, das zwischengespeichert werden soll.|
+|[CDaoRecordset:: getcurrentindex](#getcurrentindex)|Gibt einen `CString` zurück, der den Namen des Indexes enthält, der zuletzt für einen indizierten Tabellentyp `CDaoRecordset`verwendet wurde.|
+|[CDaoRecordset:: getdatecreated](#getdatecreated)|Gibt das Datum und die Uhrzeit der Erstellung der Basistabelle zurück, die einem `CDaoRecordset` Objekt zugrunde liegt.|
+|[CDaoRecordset:: getdatelastupveraltet](#getdatelastupdated)|Gibt das Datum und die Uhrzeit der letzten Änderung an dem Entwurf einer Basistabelle zurück, die einem `CDaoRecordset`-Objekt zugrunde liegt.|
+|[CDaoRecordset:: getdefaultdbname](#getdefaultdbname)|Gibt den Namen der Standarddaten Quelle zurück.|
+|[CDaoRecordset:: getdefaulzql](#getdefaultsql)|Wird aufgerufen, um die auszuführende SQL-Standard Zeichenfolge zu erhalten|
+|[CDaoRecordset:: geteditmode](#geteditmode)|Gibt einen Wert zurück, der den Bearbeitungsstatus für den aktuellen Datensatz angibt.|
+|[CDaoRecordset:: GetFieldCount](#getfieldcount)|Gibt einen Wert zurück, der die Anzahl der Felder in einem Recordset darstellt.|
+|[CDaoRecordset:: getfieldinfo](#getfieldinfo)|Gibt bestimmte Arten von Informationen zu den Feldern im Recordset zurück.|
+|[CDaoRecordset:: GetFieldValue](#getfieldvalue)|Gibt den Wert eines Felds in einem Recordset zurück.|
+|[CDaoRecordset:: GetIndexCount](#getindexcount)|Ruft die Anzahl der Indizes in einer Tabelle ab, die einem Recordset zugrunde liegt.|
+|[CDaoRecordset:: getIndexInfo](#getindexinfo)|Gibt verschiedene Arten von Informationen zu einem Index zurück.|
+|[CDaoRecordset:: getlastmodifiedbookmark](#getlastmodifiedbookmark)|Wird verwendet, um den zuletzt hinzugefügten oder aktualisierten Datensatz zu ermitteln.|
+|[CDaoRecordset:: getlockingmode](#getlockingmode)|Gibt einen Wert zurück, der den Typ der Sperre angibt, die während der Bearbeitung wirksam ist.|
+|[CDaoRecordset:: GetName](#getname)|Gibt einen `CString` zurück, der den Namen des Recordsets enthält.|
+|[CDaoRecordset:: GetParamValue](#getparamvalue)|Ruft den aktuellen Wert des angegebenen Parameters ab, der im zugrunde liegenden daoparameter-Objekt gespeichert ist.|
+|[CDaoRecordset:: getprozentuposition](#getpercentposition)|Gibt die Position des aktuellen Datensatzes als Prozentsatz der Gesamtanzahl von Datensätzen zurück.|
+|[CDaoRecordset:: GetRecordCount](#getrecordcount)|Gibt die Anzahl der Datensätze zurück, auf die in einem Recordsetobjekt zugegriffen wird.|
+|[CDaoRecordset:: gezql](#getsql)|Ruft die SQL-Zeichenfolge ab, mit der Datensätze für das Recordset ausgewählt werden.|
+|[CDaoRecordset:: GetType](#gettype)|Wird aufgerufen, um den Typ eines Recordsets zu bestimmen: Table-Type, Dynaset-Type oder Snapshot-Type.|
+|[CDaoRecordset:: getvalidationrule](#getvalidationrule)|Gibt einen `CString` zurück, der den Wert enthält, mit dem Daten überprüft werden, wenn Sie in ein Feld eingegeben werden.|
+|[CDaoRecordset:: getvalidationtext](#getvalidationtext)|Ruft den Text ab, der angezeigt wird, wenn eine Validierungs Regel nicht erfüllt wird.|
+|[CDaoRecordset:: IsBOF](#isbof)|Gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset vor dem ersten Datensatz positioniert wurde. Es ist kein aktueller Datensatz vorhanden.|
+|[CDaoRecordset:: isDeleted](#isdeleted)|Gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset auf einem gelöschten Datensatz positioniert|
+|[CDaoRecordset:: IsEOF](#iseof)|Gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset nach dem letzten Datensatz positioniert wurde. Es ist kein aktueller Datensatz vorhanden.|
+|[CDaoRecordset:: IsFieldDirty](#isfielddirty)|Gibt einen Wert ungleich 0 (null) zurück, wenn das angegebene Feld im aktuellen Datensatz geändert wurde.|
+|[CDaoRecordset:: IsFieldNull](#isfieldnull)|Gibt einen Wert ungleich 0 (null) zurück, wenn das angegebene Feld im aktuellen Datensatz NULL (ohne Wert) ist.|
+|[CDaoRecordset:: IsFieldNullable](#isfieldnullable)|Gibt einen Wert ungleich 0 (null) zurück, wenn das angegebene Feld im aktuellen Datensatz auf NULL (ohne Wert) festgelegt werden kann.|
+|[CDaoRecordset:: IsOpen](#isopen)|Gibt einen Wert ungleich 0 (null) zurück, wenn [Open](#open) zuvor aufgerufen wurde|
+|[CDaoRecordset:: Move](#move)|Positioniert das Recordset auf eine angegebene Anzahl von Datensätzen aus dem aktuellen Datensatz in beide Richtungen.|
+|[CDaoRecordset:: vfirst](#movefirst)|Positioniert den aktuellen Datensatz auf dem ersten Datensatz im Recordset.|
+|[CDaoRecordset:: muvelast](#movelast)|Positioniert den aktuellen Datensatz auf dem letzten Datensatz im Recordset.|
+|[CDaoRecordset:: wvenext](#movenext)|Positioniert den aktuellen Datensatz auf dem nächsten Datensatz im Recordset.|
+|[CDaoRecordset:: weprev](#moveprev)|Positioniert den aktuellen Datensatz auf dem vorherigen Datensatz im Recordset.|
+|[CDaoRecordset:: Open](#open)|Erstellt ein neues Recordset aus einer Tabelle, einem Dynaset oder einer Momentaufnahme.|
+|[CDaoRecordset:: Requery](#requery)|Führt die Abfrage des Recordsets erneut aus, um die ausgewählten Datensätze zu aktualisieren.|
+|[CDaoRecordset:: Seek](#seek)|Sucht den Datensatz in einem indizierten Tabellentyp-Recordset-Objekt, das die angegebenen Kriterien für den aktuellen Index erfüllt und den Datensatz zum aktuellen Datensatz führt.|
+|[CDaoRecordset:: SetAbsolutePosition](#setabsoluteposition)|Legt die Datensatznummer des aktuellen Datensatzes eines Recordset-Objekts fest.|
+|[CDaoRecordset:: SetBookmark](#setbookmark)|Positioniert das Recordset in einem Datensatz, der das angegebene Lesezeichen enthält.|
+|[CDaoRecordset:: setCacheSize](#setcachesize)|Legt einen Wert fest, der die Anzahl der Datensätze in einem Dynaset-Recordset mit Daten angibt, die lokal aus einer ODBC-Datenquelle zwischengespeichert werden sollen.|
+|[CDaoRecordset:: SetCacheStart](#setcachestart)|Legt einen Wert fest, der das Lesezeichen des ersten Datensatzes im Recordset angibt, das zwischengespeichert werden soll.|
+|[CDaoRecordset:: SetCurrentIndex](#setcurrentindex)|Wird aufgerufen, um einen Index für ein Recordset vom Typ "Table" festzulegen.|
+|[CDaoRecordset:: SetFieldDirty](#setfielddirty)|Markiert das angegebene Feld im aktuellen Datensatz als geändert.|
+|[CDaoRecordset:: SetFieldNull](#setfieldnull)|Legt den Wert des angegebenen Felds im aktuellen Datensatz auf NULL fest (ohne Wert).|
+|[CDaoRecordset:: SetFieldValue](#setfieldvalue)|Legt den Wert eines Felds in einem Recordset fest.|
+|[CDaoRecordset:: setfieldvaluenull](#setfieldvaluenull)|Legt den Wert eines Felds in einem Recordset auf NULL fest. (kein Wert).|
+|[CDaoRecordset:: SetLockingMode](#setlockingmode)|Legt einen Wert fest, der den Typ der Sperre angibt, die während der Bearbeitung wirksam werden soll.|
+|[CDaoRecordset:: SetParamValue](#setparamvalue)|Legt den aktuellen Wert des angegebenen Parameters fest, der im zugrunde liegenden daoparameter-Objekt gespeichert ist.|
+|[CDaoRecordset:: setparamvaluenull](#setparamvaluenull)|Legt den aktuellen Wert des angegebenen Parameters auf NULL (ohne Wert) fest.|
+|[CDaoRecordset:: setprozentuposition](#setpercentposition)|Legt die Position des aktuellen Datensatzes auf einen Speicherort fest, der einem Prozentsatz der Gesamtanzahl von Datensätzen in einem Recordset entspricht.|
+|[CDaoRecordset:: Update](#update)|Schließt eine `AddNew` oder einen `Edit` Vorgang ab, indem die neuen oder bearbeiteten Daten in der Datenquelle gespeichert werden.|
 
-### <a name="public-data-members"></a>Öffentliche Datenmember
+### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDaoRecordset::m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)|Enthält ein Flag, das angibt, ob Felder automatisch als geändert markiert werden.|
-|[CDaoRecordset::m_nFields](#m_nfields)|Enthält die Anzahl der Felddatenmember der Recordset-Klasse und die Anzahl der Spalten, die durch das Recordset aus der Datenquelle ausgewählt.|
-|[CDaoRecordset::m_nParams](#m_nparams)|Enthält die Anzahl der Parameterdatenmember in die Recordset-Klasse, die Anzahl der Parameter zu übergeben, mit der Abfrage des Recordsets|
-|[CDaoRecordset::m_pDAORecordset](#m_pdaorecordset)|Ein Zeiger auf die DAO-Schnittstelle, die zugrunde liegende des Recordset-Objekts.|
-|[CDaoRecordset::m_pDatabase](#m_pdatabase)|Die Quelldatenbank für dieses Resultset. Enthält einen Zeiger auf eine [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) Objekt.|
-|[CDaoRecordset::m_strFilter](#m_strfilter)|Enthält eine Zeichenfolge verwendet, um eine SQL-Konstrukt **, in denen** Anweisung.|
-|[CDaoRecordset::m_strSort](#m_strsort)|Enthält eine Zeichenfolge verwendet, um eine SQL-Konstrukt **ORDER BY** Anweisung.|
+|[CDaoRecordset:: m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)|Enthält ein Flag, das angibt, ob Felder automatisch als geändert markiert werden.|
+|[CDaoRecordset:: m_nFields](#m_nfields)|Enthält die Anzahl der Felddatenmember in der Recordset-Klasse und die Anzahl der Spalten, die vom Recordset aus der Datenquelle ausgewählt werden.|
+|[CDaoRecordset:: m_nParams](#m_nparams)|Enthält die Anzahl der Parameterdatenmember in der Recordset-Klasse – die Anzahl von Parametern, die mit der Abfrage des Recordsets übergeben werden.|
+|[CDaoRecordset:: m_pDAORecordset](#m_pdaorecordset)|Ein Zeiger auf die DAO-Schnittstelle, die dem Recordset-Objekt zugrunde liegt.|
+|[CDaoRecordset:: m_pDatabase](#m_pdatabase)|Die Quelldatenbank für dieses Resultset. Enthält einen Zeiger auf ein [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt.|
+|[CDaoRecordset:: m_strFilter](#m_strfilter)|Enthält eine Zeichenfolge, mit der eine SQL- **Where** -Anweisung erstellt wird.|
+|[CDaoRecordset:: m_strSort](#m_strsort)|Enthält eine Zeichenfolge, die zum Erstellen einer SQL **Order by** -Anweisung verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bekannt als "Recordsets," `CDaoRecordset` Objekte sind in den folgenden drei Formen verfügbar:
+`CDaoRecordset` Objekte werden in den folgenden drei Formularen als "Recordsets" bezeichnet:
 
-- Recordsets vom Typ Tabelle stellen eine Basistabelle, die Sie verwenden können, zu überprüfen, hinzufügen, ändern oder Löschen von Datensätzen in einer einzelnen Datenbanktabelle dar.
+- Tabellentyp-Recordsets stellen eine Basistabelle dar, die Sie verwenden können, um Datensätze aus einer einzelnen Datenbanktabelle zu überprüfen, hinzuzufügen, zu ändern oder zu löschen.
 
-- Recordsets vom Typ Dynaset sind das Ergebnis einer Abfrage, die aktualisierbare Datensätze haben kann. Diese Recordsets sind eine Gruppe von Datensätzen, die Sie zum Überprüfen, hinzufügen, ändern oder Löschen von Datensätzen in einer zugrunde liegenden Datenbanktabelle oder-Tabellen verwenden können. Recordsets vom Typ Dynaset können Felder aus einer oder mehreren Tabellen in einer Datenbank enthalten.
+- Dynaset-Recordsets sind das Ergebnis einer Abfrage, die aktualisierbare Datensätze aufweisen kann. Diese Recordsets sind ein Satz von Datensätzen, mit denen Sie Datensätze aus einer zugrunde liegenden Datenbanktabelle oder Tabellen überprüfen, hinzufügen, ändern oder löschen können. Dynaset-Type Recordsets können Felder aus einer oder mehreren Tabellen in einer Datenbank enthalten.
 
-- Recordsets vom Typ Snapshot sind eine statische Kopie einer Gruppe von Datensätzen, die Sie zum Suchen von Daten oder zum Generieren von Berichten verwenden können. Diese Recordsets können Felder aus einer oder mehreren Tabellen in einer Datenbank enthalten, aber es kann nicht aktualisiert werden.
+- Momentaufnahme-Recordsets sind eine statische Kopie eines Satzes von Datensätzen, die Sie verwenden können, um Daten zu suchen oder Berichte zu generieren. Diese Recordsets können Felder aus einer oder mehreren Tabellen in einer Datenbank enthalten, können jedoch nicht aktualisiert werden.
 
-Jedes Formular des Recordsets stellt eine Gruppe von Datensätzen, die behoben werden, zu dem Zeitpunkt, die das Recordset geöffnet wird. Wenn Sie einen Bildlauf zu einem Datensatz in einem Recordset-Tabelle vom Typ oder einem Recordset vom Typ Dynaset durchführen, prüfen, ob Änderungen am Datensatz vorgenommen werden, nachdem das Recordset, von anderen Benutzern oder von anderen Recordsets in Ihrer Anwendung geöffnet wird. (Ein Recordset Momentaufnahme vom Typ kann nicht aktualisiert werden.) Sie können `CDaoRecordset` direkt oder leiten Sie eine anwendungsspezifische Recordset-Klasse von `CDaoRecordset`. Anschließend können Sie:
+Jede Form eines Recordsets stellt einen Satz von Datensätzen dar, die zum Zeitpunkt des Öffnens des Recordsets festgelegt wurden. Wenn Sie einen Bildlauf zu einem Datensatz in einem Tabellentyp-Recordset oder einem Recordset vom Typ "Dynaset" durchführen, werden Änderungen am Datensatz nach dem Öffnen des Recordsets angezeigt. Dies erfolgt entweder von anderen Benutzern oder anderen Recordsets in der Anwendung. (Ein Recordset vom Typ "Snapshot" kann nicht aktualisiert werden.) Sie können `CDaoRecordset` direkt verwenden oder eine anwendungsspezifische Recordsetklasse von `CDaoRecordset`ableiten. Sie können anschließend folgende Aktionen durchführen:
 
-- Durch die Datensätze scrollen.
+- Scrollen Sie durch die Datensätze.
 
-- Legen Sie einen Index, und suchen Sie kurz nach Einträgen mit [Seek](#seek) (nur Recordsets vom Typ Tabelle).
+- Legen Sie einen Index fest, und suchen Sie schnell nach Datensätzen mithilfe von [Suchen](#seek) (nur Tabellentyp-Recordsets).
 
-- Suchen nach Datensätzen, die auf Basis eines Wertevergleichs der Zeichenfolge: "<","\<=", "=", "> =", oder ">" (Typ Dynaset und Recordsets vom Typ Snapshot).
+- Suchen Sie Datensätze basierend auf einem Zeichen folgen Vergleich: "<", "\<=", "=", "> =" oder ">" (Dynaset-Type und Snapshot-Type Recordsets).
 
-- Aktualisieren Sie der Datensätze, und geben Sie einen Sperrmodus (mit Ausnahme der Recordsets vom Typ Snapshot).
+- Aktualisieren Sie die Datensätze, und geben Sie einen Sperrmodus an (außer Recordsets für Snapshot-Typen).
 
-- Filtern Sie das Recordset aus, um die Datensätze zu beschränken, für die Datenquelle aus den verfügbaren ausgewählt.
+- Filtern Sie das Recordset, um einzuschränken, welche Datensätze aus den in der Datenquelle verfügbaren Datensätzen ausgewählt werden.
 
 - Sortieren Sie das Recordset.
 
-- Parametrisieren Sie das Recordset aus, um die Auswahl mit Informationen, die nicht bis zur Laufzeit bekannt anzupassen.
+- Parametrisieren Sie das Recordset, um seine Auswahl mit Informationen anzupassen, die bis zur Laufzeit nicht bekannt sind.
 
-Klasse `CDaoRecordset` stellt eine Schnittstelle, die der Klasse ähnelt `CRecordset`. Der Hauptunterschied besteht darin, Klasse `CDaoRecordset` greift auf Daten über einen (Datenzugriffsobjekt) basierend auf OLE. Klasse `CRecordset` greift auf das DBMS über Open Database Connectivity (ODBC) und einem ODBC-Treiber für dieses DBMS verwaltet.
+Class `CDaoRecordset` stellt eine Schnittstelle bereit, die der Klasse `CRecordset`ähnelt. Der Hauptunterschied besteht darin, dass die Klasse `CDaoRecordset` über ein Datenzugriffs Objekt (DAO) auf Grundlage von OLE auf Daten zugreift. Klassen `CRecordset` auf das DBMS über Open Database Connectivity (ODBC) und einen ODBC-Treiber für dieses DBMS zugreift.
 
 > [!NOTE]
-> Die DAO-Datenbankklassen unterscheiden sich von der MFC-Datenbankklassen in Bezug auf Open Database Connectivity (ODBC). Alle DAO-Datenbank-Klassennamen haben das Präfix "CDao". Sie können weiterhin den Zugriff auf ODBC-Datenquellen mit den DAO-Klassen; die DAO-Klassen bieten im Allgemeinen überlegene Funktionen, da sie für die Microsoft Jet-Datenbank-Engine spezifisch sind.
+> Die DAO-Datenbankklassen unterscheiden sich von der MFC-Datenbankklassen in Bezug auf Open Database Connectivity (ODBC). Alle DAO-Datenbank-Klassennamen haben das Präfix "CDao". Sie können weiterhin mit den DAO-Klassen auf ODBC-Datenquellen zugreifen. die DAO-Klassen bieten im allgemeinen überlegene Funktionen, da Sie für die Microsoft Jet-Datenbank-Engine spezifisch sind.
 
-Sie können entweder `CDaoRecordset` direkt oder leiten eine Klasse von `CDaoRecordset`. Um eine Recordset-Klasse in beiden Fällen zu verwenden, öffnen Sie eine Datenbank aus, und erstellen Sie ein Recordsetobjekt, und übergeben dem Konstruktor einen Zeiger auf Ihre `CDaoDatabase` Objekt. Sie können auch erstellen eine `CDaoRecordset` Objekts, sodass Sie die MFC-Erstellen eines temporären `CDaoDatabase` -Objekt für Sie. Rufen Sie dann der Recordsets [öffnen](#open) Member-Funktion, die angibt, ob das Objekt ein Tabellentyp Recordset, ein Recordset Dynaset vom Typ oder ein Recordset Momentaufnahme vom Typ ist. Aufrufen von `Open` wählt Daten aus der Datenbank aus, und ruft den ersten Datensatz.
+Sie können `CDaoRecordset` direkt verwenden oder eine Klasse von `CDaoRecordset`ableiten. Wenn Sie in jedem Fall eine Recordset-Klasse verwenden möchten, öffnen Sie eine Datenbank, und erstellen Sie ein Recordset-Objekt, wobei der Konstruktor einen Zeiger auf das `CDaoDatabase` Objekt übergibt. Sie können auch ein `CDaoRecordset` Objekt erstellen und es MFC ermöglichen, ein temporäres `CDaoDatabase` Objekt für Sie zu erstellen. Anschließend können Sie die [Open](#open) -Member-Funktion des Recordsets aufzurufen, indem Sie angeben, ob es sich bei dem Objekt um einen Tabellentyp Recordset, einen Dynaset-Typ-Recordset oder ein Recordset vom Typ Snapshot handelt. Durch Aufrufen von `Open` werden Daten aus der Datenbank ausgewählt und der erste Datensatz abgerufen.
 
-Verwenden Sie die Member des Objekts Member-Funktionen und Daten, um durch die Datensätze scrollen und auf ihnen ausgeführt werden. Die verfügbaren Vorgänge ist davon abhängig, ob das Objekt ein Tabellentyp Recordset, ein Recordset Dynaset vom Typ oder ein Recordset Momentaufnahme vom Typ ist, und gibt an, ob es sich um aktualisierbar oder schreibgeschützt ist — dies hängt von der Funktion der Datenbank oder der Open Database Connectivity (ODBC) die Datenquelle. Um Datensätze zu aktualisieren, die möglicherweise wurde geändert oder hinzugefügt werden, da die `Open` aufzurufen, rufen Sie des Objekts [Requery](#requery) Member-Funktion. Aufrufen des Objekts `Close` Member Funktion, und das Objekt zerstört, wenn Sie damit fertig sind.
+Verwenden Sie die Element Funktionen und Datenmember des Objekts, um einen Bildlauf durch die Datensätze durchführen und darauf zu arbeiten. Welche Vorgänge verfügbar sind, hängt davon ab, ob es sich bei dem Objekt um ein Recordset vom Typ "Table", "Dynaset-Type" oder ein Recordset vom Typ "Snapshot" handelt und ob es aktualisierbar oder schreibgeschützt ist – dies hängt von der Funktion der Datenbank oder der Open Database Connectivity (ODBC) ab. Datenquelle. Um Datensätze zu aktualisieren, die seit dem `Open`-aufrufys geändert oder hinzugefügt wurden, müssen Sie die [Requery](#requery) -Element Funktion des Objekts aufzurufen. Ruft die `Close` Member-Funktion des-Objekts auf und zerstört das-Objekt, wenn Sie damit fertig sind.
 
-`CDaoRecordset` DAO-Datensatzfeldaustausch (DFX) zur Unterstützung von lesen und Aktualisieren von Datensatzfeldern verwendet, durch typsichere C++ Mitglieder Ihrer `CDaoRecordset` oder `CDaoRecordset`-abgeleitete Klasse. Sie können auch dynamische Bindung von Spalten in einer Datenbank implementieren, ohne mit DFX Mechanismus [GetFieldValue](#getfieldvalue) und [SetFieldValue](#setfieldvalue).
+`CDaoRecordset` verwendet den DAO-Daten Satz Feld Austausch (DFX), um das Lesen und Aktualisieren von Daten Satz C++ Feldern durch typsichere Member ihrer `CDaoRecordset` oder `CDaoRecordset`abgeleiteten Klasse zu unterstützen. Sie können auch die dynamische Bindung von Spalten in einer Datenbank implementieren, ohne den DFX-Mechanismus mithilfe von [GetFieldValue](#getfieldvalue) und [SetFieldValue](#setfieldvalue)zu verwenden.
 
-Verwandte Informationen finden Sie im Thema "Recordset-Objekts" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Recordset-Objekt" in der DAO-Hilfe.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -325,53 +325,53 @@ Verwandte Informationen finden Sie im Thema "Recordset-Objekts" in-DAO-Hilfe.
 
 `CDaoRecordset`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdao.h
 
-##  <a name="addnew"></a>  AddNew
+##  <a name="addnew"></a>CDaoRecordset:: AddNew
 
-Rufen Sie diese Memberfunktion zum Hinzufügen eines neuen Datensatzes zu einem Recordset-Tabellentyp oder Dynaset.
+Mit dieser Member-Funktion können Sie einen neuen Datensatz einem Recordset vom Typ "Table-Type" oder "Dynaset" hinzufügen.
 
 ```
 virtual void AddNew();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Felder, die ursprünglich Null sind. (Null, in der datenbankterminologie bedeutet "kein Wert having" und entspricht nicht der NULL-Wert in C++.) Um den Vorgang abzuschließen, müssen Sie den Aufrufen der [Update](#update) Member-Funktion. `Update` Speichert die Änderungen an die Datenquelle an.
+Die Felder des Datensatzes sind anfänglich NULL. (In der Daten Bank Terminologie bedeutet NULL, dass kein Wert vorhanden ist und nicht mit NULL in C++übereinstimmt.) Um den Vorgang abzuschließen, müssen Sie die [Update](#update) Member-Funktion aufzurufen. `Update` speichert die Änderungen an der Datenquelle.
 
 > [!CAUTION]
->  Wenn Sie einen Datensatz bearbeiten und navigieren Sie zu einem anderen Datensatz ohne `Update`, Ihre Änderungen gehen verloren, ohne Warnung.
+>  Wenn Sie einen Datensatz bearbeiten und dann einen Bildlauf zu einem anderen Datensatz durchführen, ohne `Update`aufrufen zu müssen, gehen Ihre Änderungen ohne Warnung verloren.
 
-Wenn Sie einen Datensatz durch den Aufruf zu einem Recordset vom Typ Dynaset hinzufügen [AddNew](#addnew), wird von der Datensatz im Recordset angezeigt und enthalten in der zugrunde liegenden Tabelle, in denen es angezeigt, auf eine neue wird `CDaoRecordset` Objekte.
+Wenn Sie einem Recordset vom Typ Dynaset einen Datensatz hinzufügen, indem Sie [AddNew](#addnew)aufrufen, ist der Datensatz im Recordset sichtbar und in der zugrunde liegenden Tabelle enthalten, wo er für alle neuen `CDaoRecordset` Objekte sichtbar wird.
 
-Die Position des neuen Datensatzes hängt von den Typ des Recordsets:
+Die Position des neuen Datensatzes hängt vom Typ des Recordsets ab:
 
-- In der Art eines Dynaset ist Recordset, an der neue Datensatz eingefügt wird nicht garantiert. Dieses Verhalten ist mit Microsoft Jet 3.0 aus Gründen der Leistung und Parallelität. Wenn Ihr Ziel ist es, die neu hinzugefügten Datensatz den aktuellen Datensatz, erhalten Sie das Lesezeichen des letzten Datensatzes geändert und in dieses Lesezeichen verschieben:
+- In einem Dynaset-Typ-Recordset, bei dem der neue Datensatz eingefügt wird, ist nicht garantiert. Dieses Verhalten wurde mit Microsoft Jet 3,0 aus Gründen der Leistung und Parallelität geändert. Wenn Sie den neu hinzugefügten Datensatz zum aktuellen Datensatz machen möchten, können Sie das Lesezeichen des zuletzt geänderten Datensatzes erhalten und zu diesem Lesezeichen wechseln:
 
 [!code-cpp[NVC_MFCDatabase#1](../../mfc/codesnippet/cpp/cdaorecordset-class_1.cpp)]
 
-- In einem Recordset Table-Typ, der für die ein Index angegeben wurde, werden die Datensätze entsprechend ihrer Position in der Sortierreihenfolge zurückgegeben. Wenn kein Index angegeben wurde, werden neue Einträge am Ende des Recordset-Objekts zurückgegeben.
+- In einem Recordset vom Typ "Table", für das ein Index angegeben wurde, werden die Datensätze an ihrer richtigen Stelle in der Sortierreihenfolge zurückgegeben. Wenn kein Index angegeben wurde, werden am Ende des Recordsets neue Datensätze zurückgegeben.
 
-Der Datensatz, der aktuell, bevor Sie verwendet war `AddNew` bleibt der aktuelle. Wenn Sie den neuen Datensatz aktualisieren möchten, und das Recordset Lesezeichen Aufruf unterstützt [SetBookmark](#setbookmark) auf das Lesezeichen, das durch die Einstellung der Eigenschaft der letzten Änderung des zugrunde liegenden DAO-Recordset-Objekts identifiziert. Auf diese Weise ist nützlich zum Bestimmen des Werts für Leistungsindikator (automatisch inkrementierten) Felder in einem Datensatz hinzugefügt. Weitere Informationen finden Sie unter [GetLastModifiedBookmark](#getlastmodifiedbookmark).
+Der Datensatz, der vor der Verwendung `AddNew` aktuell war, bleibt aktuell. Wenn Sie den neuen Datensatz aktuell machen möchten und das Recordset Lesezeichen unterstützt, können Sie [SetBookmark](#setbookmark) für das Lesezeichen aufrufen, das durch die LastModified-Eigenschafts Einstellung des zugrunde liegenden DAO-Recordset-Objekts identifiziert wird. Dies ist hilfreich, um den Wert für die Felder "Counter" (automatische Inkrement) in einem hinzugefügten Datensatz zu ermitteln. Weitere Informationen finden Sie unter [getlastmodifiedbookmark](#getlastmodifiedbookmark).
 
-Wenn die Datenbank Transaktionen unterstützt, können Sie machen Ihre `AddNew` Teil einer Transaktion aufrufen. Weitere Informationen über Transaktionen finden Sie unter Klasse [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md). Beachten Sie, die Sie aufrufen sollten [CDaoWorkspace::BeginTrans](../../mfc/reference/cdaoworkspace-class.md#begintrans) vor dem Aufruf `AddNew`.
+Wenn die Datenbank Transaktionen unterstützt, können Sie den `AddNew` als Teil einer Transaktion angleichen. Weitere Informationen zu Transaktionen finden Sie Unterklasse [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md). Beachten Sie, dass Sie vor dem Aufrufen von `AddNew`[CDaoWorkspace:: BeginTrans](../../mfc/reference/cdaoworkspace-class.md#begintrans) aufrufen sollten.
 
-Es ist nicht zulässig, rufen Sie `AddNew` für ein Recordset, deren [öffnen](#open) Memberfunktion nicht aufgerufen wurde. Ein `CDaoException` wird ausgelöst, wenn Sie aufrufen `AddNew` für ein Recordset, das kann nicht angefügt werden. Sie können bestimmen, ob das Recordset aktualisierbar, durch den Aufruf ist [CanAppend](#canappend).
+Es ist unzulässig, `AddNew` für ein Recordset aufzurufen, dessen [Open](#open) Member-Funktion nicht aufgerufen wurde. Eine `CDaoException` wird ausgelöst, wenn Sie `AddNew` für ein Recordset aufzurufen, das nicht angefügt werden kann. Sie können ermitteln, ob das Recordset aktualisierbar ist, indem Sie " [CanAppend](#canappend)" aufrufen.
 
-Die Framework-Markierungen geändert Felddatenmember, um sicherzustellen, dass sie von den DAO-Datensatzfeldaustausch (DFX)-Mechanismus auf den Eintrag für die Datenquelle geschrieben werden. Ändern den Wert eines Felds in der Regel legt das Feld geändert automatisch, sodass Sie nur selten aufrufen, müssen [SetFieldDirty](#setfielddirty) selbst, aber Sie können in einigen Fällen möchten sicherstellen, dass Spalten werden explizit aktualisiert oder eingefügt werden unabhängig davon, ob welcher Wert im Feld-Datenmember ist. Der DFX-Mechanismus verwendet auch die Verwendung von **UNECHTE NULL**. Weitere Informationen finden Sie unter [CDaoFieldExchange::](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
+Das Framework markiert geänderte Felddatenmember, um sicherzustellen, dass Sie durch den DAO-Daten Satz Feld Austausch-Mechanismus (DFX) in den Datensatz der Datenquelle geschrieben werden. Wenn Sie den Wert eines Felds ändern, wird das Feld in der Regel automatisch geändert, sodass Sie nur selten [SetFieldDirty](#setfielddirty) aufrufen müssen. manchmal möchten Sie jedoch sicherstellen, dass die Spalten explizit aktualisiert oder eingefügt werden, unabhängig davon, welcher Wert im Feld Datenmember ist. Der DFX-Mechanismus nutzt auch die Verwendung von **Pseudo-NULL**. Weitere Informationen finden Sie unter [CDaoFieldExchange:: m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
 
-Wenn die doppelte Pufferung Mechanismus nicht verwendet wird, wird dann ändern den Wert des Felds nicht automatisch das Feld als fehlerhaft festgelegt. In diesem Fall werden muss explizit das Feld geändert festgelegt. Das Flag in enthaltenen [M_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Prüfung.
+Wenn der Mechanismus für die doppelte Pufferung nicht verwendet wird, wird das Feld nicht automatisch als geändert festgelegt, wenn der Wert des Felds geändert wird. In diesem Fall muss das Feld explizit festgelegt werden. Das Flag in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Überprüfung.
 
 > [!NOTE]
-> Wenn Datensätze doppelt gepufferte sind (d. h. automatische Feld zu überprüfen ist aktiviert), Aufrufen von `CancelUpdate` stellen die Membervariablen auf die Werte, die sie zuvor `AddNew` oder `Edit` aufgerufen wurde.
+> Wenn Datensätze doppelt gepuffert werden (d. h., die automatische Feld Überprüfung ist aktiviert), werden durch Aufrufen von `CancelUpdate` die Element Variablen in den Werten wieder hergestellt, die Sie hatten, bevor `AddNew` oder `Edit` aufgerufen wurde.
 
-Weitere Informationen finden Sie unter den Themen "AddNew-Methode", "CancelUpdate-Methode", "Eigenschaft" LastModified "und"EditMode-Eigenschaft"in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "AddNew-Methode", "CancelUpdate-Methode", "LastModified-Eigenschaft" und "EditMode-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="canappend"></a>  CDaoRecordset::CanAppend
+##  <a name="canappend"></a>CDaoRecordset:: CanAppend
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das zuvor geöffnete Recordset Sie neue Datensätze hinzufügen, durch den Aufruf kann die [AddNew](#addnew) Member-Funktion.
+Rufen Sie diese Member-Funktion auf, um zu bestimmen, ob das zuvor geöffnete Recordset es Ihnen ermöglicht, neue Datensätze hinzuzufügen, indem Sie die [AddNew](#addnew) -Member
 
 ```
 BOOL CanAppend() const;
@@ -379,15 +379,15 @@ BOOL CanAppend() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Recordset ermöglicht neue Datensätze hinzufügen; andernfalls 0. `CanAppend` Gibt 0 zurück, wenn Sie das Recordset als schreibgeschützt geöffnet.
+Ein Wert ungleich 0, wenn das Recordset das Hinzufügen neuer Datensätze zulässt andernfalls 0. `CanAppend` wird 0 zurückgegeben, wenn Sie das Recordset als schreibgeschützt geöffnet haben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter dem Thema "Fügen Sie der Methode" in-DAO-Hilfe.
 
-##  <a name="canbookmark"></a>  CDaoRecordset::CanBookmark
+##  <a name="canbookmark"></a>CDaoRecordset:: CanBookmark
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das zuvor geöffnete Recordset, die Sie einzeln Datensätze, die mithilfe von Lesezeichen markieren kann.
+Mit dieser Member-Funktion können Sie ermitteln, ob mit dem zuvor geöffneten Recordset Datensätze einzeln mithilfe von Lesezeichen markiert werden können.
 
 ```
 BOOL CanBookmark();
@@ -395,36 +395,36 @@ BOOL CanBookmark();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Recordset Lesezeichen, andernfalls 0 unterstützt.
+Ungleich 0 (null), wenn das Recordset Lesezeichen unterstützt, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei Verwendung von Recordsets basiert vollständig auf der Microsoft Jet-Datenbank-Engine-Tabellen können außer bei Momentaufnahme-Type-Recordsets als Bildlauf von Vorwärts-Recordsets Lesezeichen verwendet werden. Anderer Produkte (externe ODBC-Datenquellen) unterstützen möglicherweise keine Lesezeichen.
+Wenn Sie Recordsets verwenden, die vollständig auf den Tabellen der Microsoft Jet-Datenbank-Engine basieren, können Lesezeichen verwendet werden, mit Ausnahme von Recordsets, die als vorwärts Bildlauf-Recordsets gekennzeichnet sind. Andere Daten Bankprodukte (externe ODBC-Datenquellen) unterstützen möglicherweise keine Lesezeichen.
 
-Verwandte Informationen finden Sie im Thema "Lesezeichenfähig Property" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Bookmarkable-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="cancelupdate"></a>  CDaoRecordset::CancelUpdate
+##  <a name="cancelupdate"></a>CDaoRecordset:: CancelUpdate
 
-Die `CancelUpdate` Memberfunktion bricht alle ausstehenden Updates aufgrund einer [bearbeiten](#edit) oder [AddNew](#addnew) Vorgang.
+Die `CancelUpdate` Member-Funktion bricht alle ausstehenden Updates aufgrund eines [Edit](#edit) -oder [AddNew](#addnew) -Vorgangs ab.
 
 ```
 virtual void CancelUpdate();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Anwendung ruft z. B. die `Edit` oder `AddNew` Member-Funktion und nicht aufgerufen [Update](#update), `CancelUpdate` verwirft alle Änderungen, die nach `Edit` oder `AddNew` aufgerufen wurde.
+Wenn eine Anwendung z. b. die `Edit`-oder `AddNew` Member-Funktion aufruft und kein [Update](#update)aufgerufen hat, bricht `CancelUpdate` alle Änderungen ab, die nach dem Aufruf von `Edit` oder `AddNew` vorgenommen wurden.
 
 > [!NOTE]
->  Wenn Datensätze doppelt gepufferte sind (d. h. automatische Feld zu überprüfen ist aktiviert), Aufrufen von `CancelUpdate` stellen die Membervariablen auf die Werte, die sie zuvor `AddNew` oder `Edit` aufgerufen wurde.
+>  Wenn Datensätze doppelt gepuffert werden (d. h., die automatische Feld Überprüfung ist aktiviert), werden durch Aufrufen von `CancelUpdate` die Element Variablen in den Werten wieder hergestellt, die Sie hatten, bevor `AddNew` oder `Edit` aufgerufen wurde.
 
-Es ist keine `Edit` oder `AddNew` Vorgang Ausstehend "," `CancelUpdate` bewirkt, dass MFC eine Ausnahme ausgelöst. Rufen Sie die [GetEditMode](#geteditmode) Memberfunktion, um zu bestimmen, ob es ein ausstehender Vorgang, der abgebrochen werden kann.
+Wenn keine `Edit` oder `AddNew` Vorgang aussteht, bewirkt `CancelUpdate`, dass MFC eine Ausnahme auslöst. Ruft die [geteditmode](#geteditmode) -Member-Funktion auf, um zu bestimmen, ob ein ausstehender Vorgang abgebrochen werden kann.
 
-Weitere Informationen finden Sie unter dem Thema "CancelUpdate-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "CancelUpdate Method" in der DAO-Hilfe.
 
-##  <a name="canrestart"></a>  CDaoRecordset::CanRestart
+##  <a name="canrestart"></a>CDaoRecordset:: canrestart
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das Recordset ermöglicht das Neustarten der Abfrage (Wenn Sie die Datensätze zu aktualisieren) durch Aufrufen der `Requery` Member-Funktion.
+Rufen Sie diese Member-Funktion auf, um zu bestimmen, ob das Recordset das Neustarten der Abfrage (zum Aktualisieren Ihrer Datensätze) zulässt, indem Sie die `Requery` Member-Funktion aufruft
 
 ```
 BOOL CanRestart();
@@ -432,19 +432,19 @@ BOOL CanRestart();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einen Wert ungleich NULL `Requery` aufgerufen werden, um die Ausführung des Recordsets Abfrage erneut aus, andernfalls 0.
+Ein Wert ungleich 0 (null), wenn `Requery` aufgerufen werden kann, um die Abfrage des Recordsets erneut auszuführen, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Recordsets vom Typ Tabelle unterstützen keine `Requery`.
+Tabellentypen-Recordsets unterstützen `Requery`nicht.
 
-Wenn `Requery` wird nicht unterstützt wird, rufen [schließen](#close) dann [öffnen](#open) zum Aktualisieren der Daten. Rufen Sie `Requery` zum Aktualisieren von einem Recordset-Objekt zugrunde liegende Parameter-Abfrage nach dem die Parameterwerte geändert wurden.
+Wenn `Requery` nicht unterstützt wird, klicken Sie auf [Schließen](#close) und dann auf [Öffnen](#open) , um die Daten zu aktualisieren. Sie können `Requery` aufrufen, um die zugrunde liegende Parameterabfrage eines Recordset-Objekts zu aktualisieren, nachdem die Parameterwerte geändert wurden.
 
-Verwandte Informationen finden Sie im Thema "Neu gestartet werden können Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "neu startbare Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="canscroll"></a>  CDaoRecordset::CanScroll
+##  <a name="canscroll"></a>CDaoRecordset:: CanScroll
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das Recordset ermöglicht das Durchführen eines Bildlaufs.
+Mit dieser Member-Funktion können Sie feststellen, ob das Recordset einen Bildlauf zulässt.
 
 ```
 BOOL CanScroll() const;
@@ -452,17 +452,17 @@ BOOL CanScroll() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn Sie einen Bildlauf durch die Datensätze, andernfalls 0 durchführen können.
+Ungleich 0 (null), wenn Sie durch die Datensätze scrollen können, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie aufrufen [öffnen](#open) mit `dbForwardOnly`, das Recordset kann nur vorwärts scrollen.
+Wenn Sie [Öffnen](#open) mit `dbForwardOnly`aufzurufen, kann das Recordset nur vorwärts scrollen.
 
-Weitere Informationen finden Sie unter im Thema "Positionierung der aktuellen Zeiger mit DAO" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Positionieren des aktuellen Daten Satz Zeigers mit DAO" in der DAO-Hilfe.
 
-##  <a name="cantransact"></a>  CDaoRecordset::CanTransact
+##  <a name="cantransact"></a>CDaoRecordset:: CanTransact
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das Recordset Transaktionen ermöglicht.
+Mit dieser Member-Funktion können Sie ermitteln, ob das Recordset Transaktionen zulässt.
 
 ```
 BOOL CanTransact();
@@ -470,15 +470,15 @@ BOOL CanTransact();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die zugrunde liegenden Datenquelle unterstützt die Transaktionen, andernfalls 0.
+Ungleich 0 (null), wenn die zugrunde liegende Datenquelle Transaktionen unterstützt, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwandte Informationen finden Sie im Thema "Transaktionen Property" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Transaktions Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="canupdate"></a>  CDaoRecordset::CanUpdate
+##  <a name="canupdate"></a>CDaoRecordset:: CanUpdate
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das Recordset aktualisiert werden kann.
+Mit dieser Member-Funktion können Sie ermitteln, ob das Recordset aktualisiert werden kann.
 
 ```
 BOOL CanUpdate() const;
@@ -486,15 +486,15 @@ BOOL CanUpdate() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Recordset aktualisiert werden kann (hinzufügen, aktualisieren und Löschen von Datensätzen), andernfalls 0.
+Ein Wert ungleich 0 (null), wenn das Recordset aktualisiert werden kann (hinzufügen, aktualisieren und Löschen von Datensätzen), andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Recordset kann schreibgeschützt sein, wenn die zugrunde liegenden Datenquelle schreibgeschützt ist, oder wenn Sie angegeben haben `dbReadOnly` für *nOptions* beim Aufruf [öffnen](#open) für das Recordset.
+Ein Recordset ist möglicherweise schreibgeschützt, wenn die zugrunde liegende Datenquelle schreibgeschützt ist, oder wenn Sie `dbReadOnly` für *noptions* angegeben haben, als Sie " [Öffnen](#open) " für das Recordset aufgerufen haben.
 
-Weitere Informationen finden Sie unter den Themen "AddNew-Methode", "Methode bearbeiten", "-Methode Delete", "Update-Methode" und "Aktualisierbare Property" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "AddNew Method", "Edit Method", "Delete Method", "Update Method" und "Updatable Property" in der DAO-Hilfe.
 
-##  <a name="cdaorecordset"></a>  CDaoRecordset::CDaoRecordset
+##  <a name="cdaorecordset"></a>CDaoRecordset:: CDaoRecordset
 
 Erstellt ein `CDaoRecordset`-Objekt.
 
@@ -504,62 +504,62 @@ CDaoRecordset(CDaoDatabase* pDatabase = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*pDatabase*<br/>
-Enthält einen Zeiger auf eine [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) Objekt oder den Wert NULL. Falls ungleich NULL und `CDaoDatabase` des Objekts `Open` Memberfunktion nicht aufgerufen wurde, um es an die Datenquelle zu verbinden, versucht Sie, dass das Recordset es für Sie öffnen, während eine eigene [öffnen](#open) aufrufen. Wenn Sie NULL übergeben eine `CDaoDatabase` Objekt erstellt und verbunden sind, Sie verwenden die Datenquelleninformationen, die Sie angegeben werden, wenn Sie vom Recordset-Klasse abgeleitet ist `CDaoRecordset`.
+*pdatabase*<br/>
+Enthält einen Zeiger auf ein [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt oder den Wert NULL. Wenn not NULL und die `Open` Member-Funktion des `CDaoDatabase` Objekts nicht aufgerufen wurde, um Sie mit der Datenquelle zu verbinden, versucht das Recordset, es während des eigenen [öffnenden](#open) Aufrufs für Sie zu öffnen. Wenn NULL übergeben wird, wird ein `CDaoDatabase` Objekt erstellt und mit den Datenquellen Informationen verbunden, die Sie angegeben haben, wenn Sie Ihre Recordsetklasse von `CDaoRecordset`abgeleitet haben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können entweder `CDaoRecordset` direkt oder leiten Sie eine anwendungsspezifische Klasse von `CDaoRecordset`. Klassen-Assistenten können Sie die Recordset-Klassen abgeleitet werden.
+Sie können `CDaoRecordset` direkt verwenden oder eine anwendungsspezifische Klasse von `CDaoRecordset`ableiten. Sie können den Klassen-Assistenten verwenden, um die recordsetklassen abzuleiten.
 
 > [!NOTE]
->  Bei der Ableitung einer `CDaoRecordset` Klasse, die Ihre abgeleitete Klasse muss seinen eigenen Konstruktor bereitstellen. Rufen Sie im Konstruktor einer abgeleiteten Klasse den Konstruktor `CDaoRecordset::CDaoRecordset`, die entsprechenden Parameter zusammen an sie übergibt.
+>  Wenn Sie eine `CDaoRecordset` Klasse ableiten, muss die abgeleitete Klasse einen eigenen Konstruktor bereitstellen. Nennen Sie im Konstruktor ihrer abgeleiteten Klasse den Konstruktor `CDaoRecordset::CDaoRecordset`, und übergeben Sie dabei die entsprechenden Parameter.
 
-Übergeben Sie NULL an Ihre recordsetkonstruktor haben eine `CDaoDatabase` Objekt erstellt und für Sie automatisch verbunden. Dies ist eine hilfreiche Abkürzung, die nicht erforderlich ist, erstellen und verbinden Sie ein `CDaoDatabase` Objekt vor dem Erstellen eines Recordsets. Wenn die `CDaoDatabase` Objekt ist nicht geöffnet ist, eine [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) Objekt wird auch für Sie, die verwendet Standard-Arbeitsbereich erstellt werden. Weitere Informationen finden Sie unter [CDaoDatabase::CDaoDatabase](../../mfc/reference/cdaodatabase-class.md#cdaodatabase).
+Übergeben Sie NULL an den recordsetkonstruktor, um ein `CDaoDatabase` Objekt, das automatisch erstellt und verbunden ist, zu erhalten. Dies ist eine nützliche Verknüpfung, bei der Sie keine `CDaoDatabase` Objekt erstellen und verbinden müssen, bevor Sie das Recordset erstellen. Wenn das `CDaoDatabase` Objekt nicht geöffnet ist, wird auch ein [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) -Objekt für Sie erstellt, das den Standard Arbeitsbereich verwendet. Weitere Informationen finden Sie unter [CDaoDatabase:: CDaoDatabase](../../mfc/reference/cdaodatabase-class.md#cdaodatabase).
 
-##  <a name="close"></a>  CDaoRecordset::Close
+##  <a name="close"></a>CDaoRecordset:: Close
 
-Schließen einer `CDaoRecordset` Objekt entfernt es aus der Auflistung der geöffneten Recordsets in der zugehörigen Datenbank.
+Durch das Schließen eines `CDaoRecordset` Objekts wird dieses aus der Auflistung offener Recordsets in der zugeordneten Datenbank entfernt.
 
 ```
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Da `Close` nicht zerstört die `CDaoRecordset` Objekt ist, können Sie das Objekt durch Aufrufen wiederverwenden `Open` auf die gleiche Datenquelle oder eine andere Datenquelle.
+Da `Close` das `CDaoRecordset`-Objekt nicht zerstört, können Sie das-Objekt wieder verwenden, indem Sie `Open` für dieselbe Datenquelle oder eine andere Datenquelle aufrufen.
 
-Alle ausstehenden [AddNew](#addnew) oder [bearbeiten](#edit) -Anweisungen abgebrochen und alle ausstehenden Transaktionen ein Rollback. Wenn Sie ausstehende Ergänzungen oder Änderungen beibehalten möchten, rufen Sie [Update](#update) vor dem Aufruf `Close` für jede Recordset.
+Alle ausstehenden [AddNew](#addnew) -oder [Edit](#edit) -Anweisungen werden abgebrochen, und für alle ausstehenden Transaktionen wird ein Rollback ausgeführt. Wenn Sie ausstehende Ergänzungen oder bearbeitbare Änderungen beibehalten möchten, müssen Sie [Update](#update) ausführen, bevor Sie `Close` für jedes Recordset abrufen.
 
-Rufen Sie `Open` erneut nach dem Aufruf `Close`. Dadurch können Sie die Wiederverwendung des Recordset-Objekts. Eine bessere Alternative ist, rufen Sie [Requery](#requery), sofern möglich.
+Sie können `Open` erneut aufrufen, nachdem Sie `Close`aufgerufen haben. Auf diese Weise können Sie das Recordset-Objekt wieder verwenden. Eine bessere Alternative ist das aufzurufen von [Anforderungen](#requery), wenn möglich.
 
 Verwandte Informationen finden Sie im Thema "Close-Methode" in-DAO-Hilfe.
 
-##  <a name="delete"></a>  CDaoRecordset::Delete
+##  <a name="delete"></a>CDaoRecordset::D Elete
 
-Rufen Sie diese Memberfunktion zum Löschen des aktuellen Datensatzes in einem geöffneten Dynaset oder Tabellentyp Recordset-Objekt.
+Mit dieser Member-Funktion können Sie den aktuellen Datensatz in einem Open Dynaset-Type-oder Table-Recordset-Objekt löschen.
 
 ```
 virtual void Delete();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nach einem erfolgreichen Löschvorgang, dem Recordset Felddatenmember werden auf einen Nullwert festgelegt, und müssen Sie explizit eine Recordset Navigation Memberfunktionen aufrufen ( [verschieben](#move), [Seek](#seek), [ SetBookmark](#setbookmark)usw.) um den gelöschten Datensatz zu verschieben. Wenn Sie Datensätze aus einem Recordset löschen, es muss ein aktueller Datensatz im Recordset vor dem Aufruf `Delete`ist, andernfalls löst MFC eine Ausnahme.
+Nach einem erfolgreichen Löschvorgang werden die Felddatenmember des Recordsets auf einen NULL-Wert festgelegt, und Sie müssen explizit eine der Funktionen des Recordset-Navigations Members aufrufen ( [verschieben](#move), [Suchen](#seek), [SetBookmark](#setbookmark)usw.), um den gelöschten Datensatz zu verschieben. Wenn Sie Datensätze aus einem Recordset löschen, muss ein aktueller Datensatz im Recordset vorhanden sein, bevor `Delete`aufgerufen wird. Andernfalls löst MFC eine Ausnahme aus.
 
-`Delete` Entfernt den aktuellen Datensatz und macht es nicht zugegriffen werden kann. Obwohl Sie können nicht bearbeiten oder den gelöschten Datensatz verwenden, bleibt er in der aktuellen. Sobald Sie mit einem anderen Datensatz verschieben, können nicht jedoch, Sie den gelöschten Datensatz wieder aktualisieren.
+`Delete` entfernt den aktuellen Datensatz und macht ihn nicht zugänglich. Obwohl Sie den gelöschten Datensatz nicht bearbeiten oder verwenden können, bleibt er aktuell. Wenn Sie jedoch zu einem anderen Datensatz wechseln, können Sie den gelöschten Datensatz nicht mehr auf dem aktuellen standhalten.
 
 > [!CAUTION]
->  Muss das Recordset aktualisierbar sein und müssen ein gültiger Datensatz im Recordset aktuelle beim Aufrufen `Delete`. Z. B., wenn Sie einen Datensatz löschen, aber kein Bildlauf zu einem neuen Datensatz vor dem Aufruf `Delete` in diesem Fall `Delete` löst eine [CDaoException](../../mfc/reference/cdaoexception-class.md).
+>  Das Recordset muss aktualisierbar sein, und es muss ein gültiger Datensatz im Recordset vorhanden sein, wenn Sie `Delete`aufrufen. Wenn Sie z. b. einen Datensatz löschen, aber nicht zu einem neuen Datensatz scrollen, bevor Sie `Delete` erneut aufzurufen, löst `Delete` eine [CDaoException](../../mfc/reference/cdaoexception-class.md)aus.
 
-Sie können einen Datensatz wiederherstellen, wenn Sie Transaktionen verwenden, und Sie rufen die [CDaoWorkspace::Rollback](../../mfc/reference/cdaoworkspace-class.md#rollback) Member-Funktion. Wenn die Basistabelle der primären Tabelle ist in zahlreiche Beziehung löschen, das Löschen des aktuellen Datensatzes kann auch einen oder mehrere Datensätze in einer Fremdschlüsseltabelle. Weitere Informationen finden Sie unter der Definition "Überlappend löschen" in-DAO-Hilfe.
+Sie können einen Datensatz wiederherstellen, wenn Sie Transaktionen verwenden und die Member-Funktion [CDaoWorkspace:: Rollback](../../mfc/reference/cdaoworkspace-class.md#rollback) aufruft. Wenn die Basistabelle die primäre Tabelle in einer kaskadierenden Lösch Beziehung ist, kann durch das Löschen des aktuellen Datensatzes auch ein oder mehrere Datensätze in einer fremd Tabelle gelöscht werden. Weitere Informationen finden Sie in der Datei "Cascade Delete" in der DAO-Hilfe.
 
-Im Gegensatz zu `AddNew` und `Edit`, einen Aufruf von `Delete` folgt nicht durch einen Aufruf von `Update`.
+Im Gegensatz zu `AddNew` und `Edit`folgt dem `Delete`-aufrufsbefehl kein `Update`.
 
-Weitere Informationen finden Sie unter den Themen "AddNew-Methode", "Methode bearbeiten", "-Methode Delete", "Update-Methode" und "Aktualisierbare Property" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "AddNew Method", "Edit Method", "Delete Method", "Update Method" und "Updatable Property" in der DAO-Hilfe.
 
-##  <a name="dofieldexchange"></a>  CDaoRecordset::DoFieldExchange
+##  <a name="dofieldexchange"></a>CDaoRecordset::D ofieldexchange
 
-Das Framework ruft diese Memberfunktion zum Austauschen von Daten zwischen den Felddatenmembern eines Recordset-Objekts und den entsprechenden Spalten des aktuellen Datensatzes in der Datenquelle automatisch an.
+Das Framework ruft diese Member-Funktion auf, um automatisch Daten zwischen den Felddatenmembern des Recordset-Objekts und den entsprechenden Spalten des aktuellen Datensatzes in der Datenquelle auszutauschen.
 
 ```
 virtual void DoFieldExchange(CDaoFieldExchange* pFX);
@@ -567,64 +567,64 @@ virtual void DoFieldExchange(CDaoFieldExchange* pFX);
 
 ### <a name="parameters"></a>Parameter
 
-*pFX*<br/>
-Enthält einen Zeiger auf eine `CDaoFieldExchange` Objekt. Das Framework wird bereits dieses Objekts eingerichtet haben, einen Kontext für den Exchange-Vorgang Feld anzugeben.
+*PFX*<br/>
+Enthält einen Zeiger auf ein `CDaoFieldExchange`-Objekt. Das Framework hat dieses Objekt bereits so eingerichtet, dass ein Kontext für den Feld Austausch Vorgang angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie bindet auch Parameterdatenmember, falls vorhanden, die Platzhalter für Parameter in der SQL-Anweisung-Zeichenfolge für das Recordset Auswahl. Der Austausch von Felddaten, wird aufgerufen, DAO-Datensatzfeldaustausch (DFX), funktioniert in beide Richtungen: Felddatenmember des Recordset-Objekts, auf die Felder des Datensatzes für die Datenquelle, und aus dem Datensatz in der Datenquelle auf das Recordsetobjekt. Wenn Sie Spalten dynamisch binden, müssen Sie nicht implementieren `DoFieldExchange`.
+Außerdem werden die Parameter Datenmember, sofern vorhanden, an die Parameter Platzhalter in der SQL-Anweisungs Zeichenfolge für die Auswahl des Recordsets gebunden. Der Austausch von Felddaten, die als DAO-Daten Satz Feld Austausch (DFX) bezeichnet werden, funktioniert in beide Richtungen: von den Felddatenmembern des Recordset-Objekts zu den Feldern des Datensatzes in der Datenquelle und vom Datensatz der Datenquelle zum Recordset-Objekt. Wenn Sie Spalten dynamisch binden, müssen Sie `DoFieldExchange`nicht implementieren.
 
-Die einzige Aktion, die normalerweise nötig sind, um implementieren `DoFieldExchange` für das Recordset abgeleiteten Klasse ist, erstellen Sie die Klasse mit dem Klassen-Assistenten, und geben Sie den Namen und Datentypen, der den Felddatenmembern. Sie können auch Code hinzufügen, in was ClassWizard an Parameterdatenmember geschrieben. Wenn alle Felder sind dynamisch gebunden werden, wird diese Funktion inaktiv sein, es sei denn, Sie Parameterdatenmember angeben.
+Die einzige Aktion, die Sie normalerweise ausführen müssen, um `DoFieldExchange` für die abgeleitete Recordsetklasse zu implementieren, besteht darin, die Klasse mit dem Klassen-Assistenten zu erstellen und die Namen und Datentypen der Felddatenmember anzugeben. Sie können auch Code hinzufügen, der von ClassWizard zum Angeben von Parameterdatenmembern geschrieben wird. Wenn alle Felder dynamisch gebunden werden sollen, ist diese Funktion inaktiv, es sei denn, Sie geben Parameter Datenmember an.
 
-Wenn Sie mit Klassen-Assistent abgeleiteten Recordset-Klasse deklarieren, schreibt der Assistent eine Überschreibung der `DoFieldExchange` für Sie das folgende Beispiel ähnelt:
+Wenn Sie die abgeleitete Recordsetklasse mit ClassWizard deklarieren, schreibt der Assistent eine außer Kraft Setzung von `DoFieldExchange` für Sie, was dem folgenden Beispiel ähnelt:
 
 [!code-cpp[NVC_MFCDatabase#2](../../mfc/codesnippet/cpp/cdaorecordset-class_2.cpp)]
 
-##  <a name="edit"></a>  CDaoRecordset::Edit
+##  <a name="edit"></a>CDaoRecordset:: Edit
 
-Rufen Sie diese Memberfunktion, um Änderungen an den aktuellen Datensatz zu ermöglichen.
+Diese Member-Funktion wird aufgerufen, um Änderungen am aktuellen Datensatz zuzulassen.
 
 ```
 virtual void Edit();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie Aufrufen der `Edit` Memberfunktion, Änderungen an Feldern des aktuellen Datensatzes in der Kopierpuffer kopiert werden. Rufen Sie nach dem vornehmen der gewünschten Änderungen am Datensatz `Update` zum Speichern der Änderungen. `Edit` Speichert die Werte der Datenelemente des Recordsets. Wenn Sie aufrufen `Edit`, nehmen Änderungen vor, und rufen dann `Edit` in diesem Fall werden die Werte des Datensatzes vor dem ersten einstellungsänderungen wiederhergestellt `Edit` aufrufen.
+Nachdem Sie die `Edit` Member-Funktion aufgerufen haben, werden Änderungen, die an den Feldern des aktuellen Datensatzes vorgenommen werden, in den Kopier Puffer kopiert. Nachdem Sie die gewünschten Änderungen am Datensatz vorgenommen haben, wenden Sie `Update` an, um die Änderungen zu speichern. `Edit` speichert die Werte der Datenmember des Recordsets. Wenn Sie `Edit`aufzurufen, Änderungen vornehmen und dann `Edit` erneut aufzurufen, werden die Werte des Datensatzes in dem Zustand wieder hergestellt, der vor dem ersten `Edit` aufgerufen wurde.
 
 > [!CAUTION]
->  Wenn Sie einen Datensatz bearbeiten, und führen Sie dann auf alle Vorgänge, die in einem anderen Datensatz erst nach Aufrufen von verschiebt `Update`, Ihre Änderungen gehen verloren, ohne Warnung. Wenn Sie das Recordset oder die übergeordnete Datenbank schließen, wird darüber hinaus Ihre bearbeitete Datensätze ohne Warnung verworfen.
+>  Wenn Sie einen Datensatz bearbeiten und dann einen Vorgang ausführen, der zu einem anderen Datensatz verschoben wird, ohne dass zuerst `Update`aufgerufen wird, gehen die Änderungen ohne Warnung verloren. Wenn Sie das Recordset oder die übergeordnete Datenbank schließen, wird der bearbeitete Datensatz außerdem ohne Warnung verworfen.
 
-In einigen Fällen möchten möglicherweise eine Spalte zu aktualisieren, indem Sie somit Null (keine Daten enthält). Zu diesem Zweck rufen `SetFieldNull` mit dem Parameter "true" markieren Sie das Feld Null; dies auch bewirkt, dass die Spalte aktualisiert werden. Wenn Sie möchten ein Feld mit der Datenquelle geschrieben werden, auch wenn der Wert nicht geändert wurde, rufen Sie `SetFieldDirty` mit dem Parameter "true". Dies funktioniert auch, wenn das Feld den Wert Null haben.
+In einigen Fällen möchten Sie möglicherweise eine Spalte aktualisieren, indem Sie Sie auf NULL (ohne Daten) festlegen. Dazu müssen Sie `SetFieldNull` mit dem Parameter "true" aufrufen, um das Feld "Null" zu markieren. Dies bewirkt auch, dass die Spalte aktualisiert wird. Wenn Sie möchten, dass ein Feld in die Datenquelle geschrieben wird, auch wenn der Wert nicht geändert wurde, können Sie `SetFieldDirty` mit dem Parameter true aufrufen. Dies funktioniert auch, wenn das Feld den Wert NULL aufweist.
 
-Die Framework-Markierungen geändert Felddatenmember, um sicherzustellen, dass sie von den DAO-Datensatzfeldaustausch (DFX)-Mechanismus auf den Eintrag für die Datenquelle geschrieben werden. Ändern den Wert eines Felds in der Regel legt das Feld geändert automatisch, sodass Sie nur selten aufrufen, müssen [SetFieldDirty](#setfielddirty) selbst, aber Sie können in einigen Fällen möchten sicherstellen, dass Spalten werden explizit aktualisiert oder eingefügt werden unabhängig davon, ob welcher Wert im Feld-Datenmember ist. Der DFX-Mechanismus verwendet auch die Verwendung von **UNECHTE NULL**. Weitere Informationen finden Sie unter [CDaoFieldExchange::](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
+Das Framework markiert geänderte Felddatenmember, um sicherzustellen, dass Sie durch den DAO-Daten Satz Feld Austausch-Mechanismus (DFX) in den Datensatz der Datenquelle geschrieben werden. Wenn Sie den Wert eines Felds ändern, wird das Feld in der Regel automatisch geändert, sodass Sie nur selten [SetFieldDirty](#setfielddirty) aufrufen müssen. manchmal möchten Sie jedoch sicherstellen, dass die Spalten explizit aktualisiert oder eingefügt werden, unabhängig davon, welcher Wert im Feld Datenmember ist. Der DFX-Mechanismus nutzt auch die Verwendung von **Pseudo-NULL**. Weitere Informationen finden Sie unter [CDaoFieldExchange:: m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
 
-Wenn die doppelte Pufferung Mechanismus nicht verwendet wird, wird dann ändern den Wert des Felds nicht automatisch das Feld als fehlerhaft festgelegt. In diesem Fall werden muss explizit das Feld geändert festgelegt. Das Flag in enthaltenen [M_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Prüfung.
+Wenn der Mechanismus für die doppelte Pufferung nicht verwendet wird, wird das Feld nicht automatisch als geändert festgelegt, wenn der Wert des Felds geändert wird. In diesem Fall muss das Feld explizit festgelegt werden. Das Flag in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Überprüfung.
 
-Der Datensatz bleibt gesperrt, ab dem Zeitpunkt, wenn das Recordset-Objekt in einer mehrbenutzerumgebung pessimistisch gesperrt ist, `Edit` wird verwendet, bis die Aktualisierung abgeschlossen ist. Wenn das Recordset optimistisch gesperrt ist, wird der Datensatz ist gesperrt und im Vergleich mit dem Datensatz, der bereits bearbeiteten, kurz bevor sie in der Datenbank aktualisiert wird. Wenn der Datensatz geändert wurde, da Sie aufgerufen `Edit`, `Update` fehl und MFC eine Ausnahme auslöst. Sie können ändern, dass der Sperrmodus mit `SetLockingMode`.
+Wenn das Recordset-Objekt pessimistisch in einer mehr Benutzerumgebung gesperrt ist, bleibt der Datensatz von dem Zeitpunkt, an dem `Edit` verwendet wird, bis zum Abschluss der Aktualisierung gesperrt. Wenn das Recordset optimistisch gesperrt ist, wird der Datensatz gesperrt und mit dem vorab bearbeiteten Datensatz verglichen, kurz bevor er in der Datenbank aktualisiert wird. Wenn sich der Datensatz geändert hat, seit Sie `Edit`aufgerufen haben, schlägt der `Update` Vorgang fehl, und MFC löst eine Ausnahme aus. Sie können den Sperrmodus mit `SetLockingMode`ändern.
 
 > [!NOTE]
->  Optimistische wird immer auf der externen Datenbank-Formate, z. B. ODBC und installierbaren ISAM verwendet.
+>  Die optimistische Sperre wird immer in externen Daten Bank Formaten wie ODBC und installier barer ISAM verwendet.
 
-Der aktuelle Datensatz bleibt nach dem Aufruf von aktuellen `Edit`. Aufzurufende `Edit`, muss ein aktueller Datensatz vorhanden sein. Wenn kein aktueller Datensatz vorhanden ist, oder wenn das Recordset nicht auf eine offene Tabellentyp oder Dynaset eines assistentartigen Recordset-Objekt verwiesen wird, tritt eine Ausnahme auf. Aufrufen von `Edit` bewirkt, dass eine `CDaoException` in den folgenden Situationen ausgelöst:
+Der aktuelle Datensatz bleibt aktuell, nachdem Sie `Edit`aufgerufen haben. Um `Edit`aufzurufen, muss ein aktueller Datensatz vorhanden sein. Wenn kein aktueller Datensatz vorhanden ist oder das Recordset nicht auf ein offenes Recordset-Objekt vom Typ Table-Type oder Dynaset verweist, tritt eine Ausnahme auf. Das Aufrufen von `Edit` bewirkt, dass eine `CDaoException` unter den folgenden Bedingungen ausgelöst wird:
 
 - Es ist kein aktueller Datensatz vorhanden.
 
-- Die Datenbank oder ein Recordset ist schreibgeschützt.
+- Die Datenbank oder das Recordset ist schreibgeschützt.
 
-- Es sind keine Felder im Datensatz aktualisiert.
+- Im Datensatz sind keine Felder aktualisierbar.
 
-- Die Datenbank oder ein Recordset wurde für die ausschließliche Verwendung von einem anderen Benutzer geöffnet.
+- Die Datenbank oder das Recordset wurde für die ausschließliche Verwendung durch einen anderen Benutzer geöffnet.
 
-- Ein anderer Benutzer hat die Seite mit Ihren Eintrag gesperrt.
+- Ein anderer Benutzer hat die Seite mit dem Datensatz gesperrt.
 
-Wenn die Datenquelle Transaktionen unterstützt, können Sie machen die `Edit` Teil einer Transaktion aufrufen. Beachten Sie, die Sie aufrufen sollten `CDaoWorkspace::BeginTrans` vor dem Aufruf `Edit` und nach dem Öffnen des Recordsets. Beachten Sie außerdem, dass der Aufruf `CDaoWorkspace::CommitTrans` ist kein Ersatz für den Aufruf `Update` zum Abschließen der `Edit` Vorgang. Weitere Informationen über Transaktionen finden Sie unter Klasse `CDaoWorkspace`.
+Wenn die Datenquelle Transaktionen unterstützt, können Sie den `Edit` der einen Teil einer Transaktion aufruft. Beachten Sie, dass Sie `CDaoWorkspace::BeginTrans` aufrufen müssen, bevor Sie `Edit` aufrufen und nachdem das Recordset geöffnet wurde. Beachten Sie außerdem, dass das Aufrufen von `CDaoWorkspace::CommitTrans` kein Ersatz für den Aufruf von `Update` ist, um den `Edit` Vorgang abzuschließen. Weitere Informationen zu Transaktionen finden Sie unter Class `CDaoWorkspace`.
 
-Weitere Informationen finden Sie unter den Themen "AddNew-Methode", "Methode bearbeiten", "-Methode Delete", "Update-Methode" und "Aktualisierbare Property" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "AddNew Method", "Edit Method", "Delete Method", "Update Method" und "Updatable Property" in der DAO-Hilfe.
 
-##  <a name="fillcache"></a>  FillCache
+##  <a name="fillcache"></a>CDaoRecordset:: FillCache
 
-Rufen Sie diese Memberfunktion, um eine angegebene Anzahl von Datensätzen aus dem Recordset zwischenzuspeichern.
+Diese Member-Funktion aufrufen, um eine angegebene Anzahl von Datensätzen aus dem Recordset zwischenzuspeichern.
 
 ```
 void FillCache(
@@ -634,29 +634,29 @@ void FillCache(
 
 ### <a name="parameters"></a>Parameter
 
-*pSize*<br/>
-Gibt die Anzahl der Zeilen im Cache zu füllen. Wenn Sie diesen Parameter weglassen, wird der Wert durch die Einstellung der CacheSize-Eigenschaft des zugrunde liegenden DAO-Objekts bestimmt.
+*Psize*<br/>
+Gibt die Anzahl der Zeilen an, die in den Cache aufgefüllt werden sollen. Wenn Sie diesen Parameter weglassen, wird der Wert durch die CacheSize-Eigenschafts Einstellung des zugrunde liegenden DAO-Objekts bestimmt.
 
 *pBookmark*<br/>
-Ein [COleVariant](../../mfc/reference/colevariant-class.md) ein Lesezeichen angeben. Auffüllen des Caches wird aus dem Datensatz, der durch dieses Lesezeichen angegeben ab. Wenn Sie diesen Parameter weglassen, ist der Cache gefüllt, beginnend mit des Datensatzes von der CacheStart-Eigenschaft, der das zugrunde liegende DAO-Objekt.
+Ein [COleVariant](../../mfc/reference/colevariant-class.md) , der ein Lesezeichen angibt. Der Cache wird beginnend mit dem Datensatz gefüllt, der durch dieses Lesezeichen angegeben wird. Wenn Sie diesen Parameter weglassen, wird der Cache beginnend mit dem Datensatz gefüllt, der durch die CacheStart-Eigenschaft des zugrunde liegenden DAO-Objekts angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Zwischenspeichern verbessert die Leistung einer Anwendung, die abgerufen oder an, die Daten von einem Remoteserver abruft. Ein Cache ist Speicherplatz im lokalen Speicher, der das zuletzt auf der Annahme, dass die Daten wahrscheinlich erneut angefordert werden, während die Anwendung ausgeführt wird vom Server abgerufenen Daten enthält. Wenn Daten angefordert werden, überprüft die Microsoft Jet-Datenbank-Engine den Cache für die Daten zuerst anstatt es aus dem Server, wodurch mehr Zeit benötigt, abruft. Zwischenspeichern von Daten auf nicht-ODBC-Datenquellen mit hat keine Auswirkungen, wie die Daten nicht im Cache gespeichert werden.
+Caching verbessert die Leistung einer Anwendung, die Daten von einem Remote Server abruft oder abruft. Bei einem Cache handelt es sich um Speicherplatz im lokalen Arbeitsspeicher, der die Daten enthält, die zuletzt vom Server abgerufen wurden, wenn davon ausgegangen wird, dass die Daten wahrscheinlich erneut angefordert werden, während die Anwendung ausgeführt wird. Wenn Daten angefordert werden, prüft die Microsoft Jet-Datenbank-Engine zuerst den Cache auf die Daten, anstatt Sie vom Server abzurufen, was mehr Zeit in sich bringt. Die Verwendung der Daten Zwischenspeicherung für nicht-ODBC-Datenquellen hat keine Auswirkung, da die Daten nicht im Cache gespeichert werden.
 
-Statt zu warten, für den Cache mit Datensätzen gefüllt werden soll, wie sie abgerufen werden, Sie können explizit füllen den Cache zu einem beliebigen Zeitpunkt durch Aufrufen der `FillCache` Member-Funktion. Dies ist eine schnellere Möglichkeit, die vom Cache belegt werden, da `FillCache` ruft mehrere Datensätze auf einmal statt jeweils einzeln ab. Beispielsweise wird zwar jeweils eine Seite mit Datensätzen angezeigt wird, dass Ihre Anwendung muss durch Aufrufen `FillCache` zum Abrufen der nächsten Seite mit Datensätzen.
+Anstatt zu warten, bis der Cache mit Datensätzen gefüllt ist, während Sie abgerufen werden, können Sie den Cache jederzeit explizit auffüllen, indem Sie die `FillCache` Member-Funktion aufrufen. Dies ist eine schnellere Möglichkeit, den Cache auszufüllen, da `FillCache` mehrere Datensätze gleichzeitig und nicht einzeln abruft. Wenn z. b. alle screenys von Datensätzen angezeigt werden, können Sie die Anwendung `FillCache` abrufen, um den nächsten Screenshot der Datensätze abzurufen.
 
-Eine ODBC-Datenbank mit Recordset-Objekte auf Sie zugegriffen haben einen lokalen Cache. Um den Cache zu erstellen, öffnen Sie ein Recordset-Objekt aus der remote-Datenquelle, und rufen Sie dann die `SetCacheSize` und `SetCacheStart` Memberfunktionen des Recordset-Objekts. Wenn *lSize beim Aufruf* und *lBookmark* erstellen Sie einen Bereich, der teilweise oder vollständig außerhalb des Bereichs, der anhand des `SetCacheSize` und `SetCacheStart`, der Teil des Recordsets außerhalb dieses Bereichs wird ignoriert und nicht in den Cache geladen. Wenn `FillCache` anfordert, mehrere Datensätze als verbleiben in der Remotedatenquelle, nur die übrigen Datensätze abgerufen werden und keine Ausnahme ausgelöst wird.
+Jede ODBC-Datenbank, auf die mit Recordset-Objekten zugegriffen wird, kann einen lokalen Cache haben. Um den Cache zu erstellen, öffnen Sie ein Recordset-Objekt aus der Remote Datenquelle, und rufen Sie dann die Funktionen `SetCacheSize` und `SetCacheStart` Member des Recordsets auf. Wenn *LSIZE* und *lBookmark* einen Bereich erstellen, der teilweise oder ganz außerhalb des Bereichs liegt, der durch `SetCacheSize` und `SetCacheStart`festgelegt ist, wird der Teil des Recordsets außerhalb dieses Bereichs ignoriert und nicht in den Cache geladen. Wenn `FillCache` mehr Datensätze anfordert, als in der Remote Datenquelle verbleiben, werden nur die verbleibenden Datensätze abgerufen, und es wird keine Ausnahme ausgelöst.
 
-Datensätze aus dem Cache abgerufen werden nicht gleichzeitig mit der Datenquelle von anderen Benutzern vorgenommene Änderungen wider.
+Datensätze, die aus dem Cache abgerufen werden, spiegeln nicht die von anderen Benutzern gleichzeitig an den Quelldaten vorgenommenen Änderungen wider.
 
-`FillCache` Ruft nur die Datensätze, die noch nicht zwischengespeichert. Um ein Update aller zwischengespeicherten Daten zu erzwingen, rufen die `SetCacheSize` Member-Funktion mit einer *lSize beim Aufruf* Parameter gleich 0 (null) Aufruf `SetCacheSize` erneut mit der *lSize beim Aufruf* Parameter gleich der Größe des Caches Sie ursprünglich angefordert hat, und rufen dann `FillCache`.
+`FillCache` ruft nur Datensätze ab, die nicht bereits zwischengespeichert wurden. Um ein Update aller zwischengespeicherten Daten zu erzwingen, müssen Sie die `SetCacheSize` Member-Funktion mit einem *LSIZE* -Parameter gleich 0 aufrufen, `SetCacheSize` mit dem *LSIZE* -Parameter erneut aufrufen, der der Größe des ursprünglich angeforderten Caches entspricht, und dann `FillCache`aufrufen.
 
-Weitere Informationen finden Sie unter dem Thema "Zwischenspeichergröße" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FillCache-Methode" in der DAO-Hilfe.
 
-##  <a name="find"></a>  CDaoRecordset::Find
+##  <a name="find"></a>CDaoRecordset:: Find
 
-Rufen Sie diese Memberfunktion zum Suchen einer bestimmten Zeichenfolge in einem Typ Dynaset oder Snapshot-Recordset, das mit einem Vergleichsoperator.
+Mit dieser Member-Funktion können Sie eine bestimmte Zeichenfolge in einem Dynaset-oder Snapshot-Type-Recordset mithilfe eines Vergleichs Operators suchen.
 
 ```
 virtual BOOL Find(
@@ -666,40 +666,40 @@ virtual BOOL Find(
 
 ### <a name="parameters"></a>Parameter
 
-*lFindType*<br/>
-Ein Wert, der angibt, der des Typs des gewünschten Suchvorgang. Mögliche Werte sind:
+*lfindtype*<br/>
+Ein-Wert, der den Typ des gewünschten Such Vorgangs angibt. Mögliche Werte:
 
-- AFX_DAO_NEXT suchen Sie den nächsten Speicherort einer übereinstimmenden Zeichenfolge.
+- AFX_DAO_NEXT den nächsten Speicherort einer übereinstimmenden Zeichenfolge suchen.
 
-- AFX_DAO_PREV suchen Sie den vorherigen Speicherort einer übereinstimmenden Zeichenfolge.
+- AFX_DAO_PREV den vorherigen Speicherort einer übereinstimmenden Zeichenfolge suchen.
 
-- AFX_DAO_FIRST finden Sie den ersten Speicherort einer übereinstimmenden Zeichenfolge.
+- AFX_DAO_FIRST den ersten Speicherort einer übereinstimmenden Zeichenfolge suchen.
 
-- Den letzten Speicherort von einer übereinstimmenden Zeichenfolge AFX_DAO_LAST zu finden.
+- AFX_DAO_LAST den letzten Speicherort einer übereinstimmenden Zeichenfolge suchen.
 
-*lpszFilter*<br/>
-Ein Zeichenfolgenausdruck (z. B. die **, in denen** -Klausel in einer SQL-Anweisung ohne das Wort **, in denen**) verwendet, um den Datensatz zu suchen. Zum Beispiel:
+*lpszfilter*<br/>
+Ein Zeichen folgen Ausdruck (wie die **Where** -Klausel in einer SQL-Anweisung ohne das Wort **Where**), der zum Suchen des Datensatzes verwendet wird. Beispiel:
 
 [!code-cpp[NVC_MFCDatabase#3](../../mfc/codesnippet/cpp/cdaorecordset-class_3.cpp)]
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie ersten, nächsten, vorherigen oder letzten Instanz der Zeichenfolge. `Find` ist Sie eine virtuelle Funktion, sodass Sie überschreiben und eine eigene Implementierung hinzufügen können. Die `FindFirst`, `FindLast`, `FindNext`, und `FindPrev` Memberfunktionen rufen die `Find` Member-Funktion, sodass Sie verwenden können `Find` zur Steuerung des Verhaltens von alle Suchvorgänge.
+Sie können die erste, nächste, vorherige oder letzte Instanz der Zeichenfolge finden. `Find` ist eine virtuelle Funktion, sodass Sie Sie überschreiben und eine eigene Implementierung hinzufügen können. Die Funktionen `FindFirst`, `FindLast`, `FindNext`und `FindPrev` Member bezeichnen die `Find` Member-Funktion, sodass Sie mit `Find` das Verhalten aller Suchvorgänge steuern können.
 
-Um einen Datensatz in einem Recordset-Tabelle vom Typ zu suchen, rufen Sie die [Seek](#seek) Member-Funktion.
+Um einen Datensatz in einem Recordset des Tabellentyps zu suchen, müssen Sie die [Seek](#seek) -Member-Funktion aufzurufen.
 
 > [!TIP]
->  Je kleiner die Gruppe von Datensätzen-haben die effektiver `Find` werden. Im Allgemeinen und vor allem bei ODBC-Datenspeichern ist es besser, eine neue Abfrage zu erstellen, die nur die Datensätze abruft, die Sie möchten.
+>  Der kleinere Satz von Datensätzen, desto effektiver `Find` werden. Im allgemeinen und insbesondere bei ODBC-Daten ist es besser, eine neue Abfrage zu erstellen, die nur die gewünschten Datensätze abruft.
 
-Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methoden" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methods" in der DAO-Hilfe.
 
-##  <a name="findfirst"></a>  CDaoRecordset::FindFirst
+##  <a name="findfirst"></a>CDaoRecordset:: FindFirst
 
-Rufen Sie diese Memberfunktion um den ersten Datensatz zu suchen, der mit einer angegebene Bedingung übereinstimmt.
+Mit dieser Member-Funktion können Sie den ersten Datensatz ermitteln, der mit einer angegebenen Bedingung übereinstimmt.
 
 ```
 BOOL FindFirst(LPCTSTR lpszFilter);
@@ -707,53 +707,53 @@ BOOL FindFirst(LPCTSTR lpszFilter);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszFilter*<br/>
-Ein Zeichenfolgenausdruck (z. B. die **, in denen** -Klausel in einer SQL-Anweisung ohne das Wort **, in denen**) verwendet, um den Datensatz zu suchen.
+*lpszfilter*<br/>
+Ein Zeichen folgen Ausdruck (wie die **Where** -Klausel in einer SQL-Anweisung ohne das Wort **Where**), der zum Suchen des Datensatzes verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `FindFirst` Memberfunktion beginnt die Suche am Anfang des Recordset und sucht bis zum Ende des Recordset-Objekts.
+Die `FindFirst` Member-Funktion beginnt die Suche am Anfang des Recordsets und sucht bis zum Ende des Recordsets.
 
-Wenn alle beinhalten die Datensätze in die Suche (nicht nur diejenigen, die eine bestimmte Bedingung erfüllen) einer von der Verschiebevorgänge mithilfe von Datensatz zu Datensatz verschoben werden sollen. Um einen Datensatz in einem Recordset-Tabelle vom Typ zu suchen, rufen Sie die `Seek` Member-Funktion.
+Wenn Sie alle Datensätze in die Suche einschließen möchten (nicht nur die, die eine bestimmte Bedingung erfüllen), verwenden Sie einen der Verschiebungs Vorgänge, um von Datensatz zu Datensatz zu wechseln. Um einen Datensatz in einem Recordset vom Typ "Table" zu suchen, nennen Sie die `Seek` Member-Funktion.
 
-Wenn ein Datensatz den Kriterien nicht gefunden wird, ist die Zeiger für den aktuellen Datensatz unbestimmt, und `FindFirst` gibt NULL zurück. Wenn das Recordset mehr als einem Datensatz enthält, die den Kriterien entsprechen, `FindFirst` sucht das erste Vorkommen, `FindNext` sucht das nächste Vorkommen und So weiter.
+Wenn ein Datensatz nicht gefunden wird, der mit den Kriterien übereinstimmt, wird der aktuelle Daten Satz Zeiger nicht bestimmt, und `FindFirst` gibt 0 (null) zurück. Wenn das Recordset mehr als einen Datensatz enthält, der die Kriterien erfüllt, `FindFirst` zuerst das erste Vorkommen, `FindNext` das nächste Vorkommen und so weiter.
 
 > [!CAUTION]
->  Wenn Sie den aktuellen Datensatz bearbeiten, werden Sie sicher, dass zum Speichern der Änderungen durch Aufrufen der `Update` Member-Funktion, die vor dem Wechsel zu einem anderen Datensatz. Wenn Sie zu einem anderen Datensatz verschieben, ohne zu aktualisieren, sind Ihre Änderungen verloren gehen, ohne Warnung.
+>  Wenn Sie den aktuellen Datensatz bearbeiten, stellen Sie sicher, dass Sie die Änderungen speichern, indem Sie die `Update` Member-Funktion aufrufen, bevor Sie zu einem anderen Datensatz wechseln. Wenn Sie zu einem anderen Datensatz wechseln, ohne zu aktualisieren, gehen Ihre Änderungen ohne Warnung verloren.
 
-Die `Find` Member-Funktionen zu suchen, in den Speicherort, und klicken Sie auf die Richtung, in der folgenden Tabelle angegeben:
+Die `Find` Member-Funktionen suchen vom Speicherort und in der in der folgenden Tabelle angegebenen Richtung:
 
-|Suchvorgänge|beginnen|Suchrichtung|
+|Suchen von Vorgängen|Begin|Suchrichtung|
 |---------------------|-----------|----------------------|
-|`FindFirst`|Anfang des recordset|Ende des Recordsets|
-|`FindLast`|Ende des Recordsets|Anfang des recordset|
+|`FindFirst`|Anfang des Recordsets|Ende des Recordsets|
+|`FindLast`|Ende des Recordsets|Anfang des Recordsets|
 |`FindNext`|Aktueller Datensatz|Ende des Recordsets|
-|`FindPrevious`|Aktueller Datensatz|Anfang des recordset|
+|`FindPrevious`|Aktueller Datensatz|Anfang des Recordsets|
 
 > [!NOTE]
->  Beim Aufruf `FindLast`, die Microsoft Jet-Datenbank-Engine füllt das Recordset vollständig vor Beginn der Suche auf, wenn dies nicht bereits geschehen ist. Bei der ersten Suche dauert länger als nachfolgende suchen.
+>  Wenn Sie `FindLast`aufgerufen haben, füllt das Microsoft Jet-Datenbankmodul das Recordset vollständig auf, bevor Sie mit der Suche beginnen, sofern dies noch nicht geschehen ist. Die erste Suche kann länger dauern als nachfolgende Suchvorgänge.
 
-Mit einer der Vorgänge suchen ist nicht der gleiche wie das Aufrufen `MoveFirst` oder `MoveNext`, die einfach macht jedoch die ersten oder nächsten Datensatzes aktuelle ohne Angabe einer Bedingung. Führen Sie einen Suchvorgang mit einem Verschiebevorgang.
+Die Verwendung eines der Suchvorgänge ist nicht das gleiche wie das Aufrufen von `MoveFirst` oder `MoveNext`. Dadurch wird der erste oder nächste Datensatz auf den neuesten Stand gesetzt, ohne eine Bedingung anzugeben. Sie können einen Suchvorgang mit einem Verschiebungs Vorgang ausführen.
 
-Bedenken Sie Folgendes bei Verwendung der Suchvorgänge:
+Beachten Sie bei der Verwendung der Suchvorgänge Folgendes:
 
-- Wenn `Find` gibt, die ungleich NULL, die der aktuelle Datensatz ist nicht definiert. In diesem Fall müssen Sie den Zeiger für den aktuellen Datensatz an einem gültigen Datensatz positionieren.
+- Wenn `Find` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert. In diesem Fall müssen Sie den aktuellen Daten Satz Zeiger auf einen gültigen Datensatz zurück positionieren.
 
-- Sie können keinen Suchvorgang mit einem Vorwärtscursor Bildlauf Momentaufnahme Recordset vom Typ verwenden.
+- Es ist nicht möglich, einen Suchvorgang mit einem Bild lauffähige Recordset mit vorwärts Bildlauf zu verwenden.
 
-- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden bei der Suche nach Feldern mit Datumsangaben, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine; verwenden Andernfalls kann übereinstimmende Datensätze nicht gefunden werden.
+- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden, wenn Sie nach Feldern mit Datumsangaben suchen, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine verwenden. Andernfalls werden übereinstimmende Datensätze möglicherweise nicht gefunden.
 
-- Beim Arbeiten mit ODBC-Datenbanken und große Dynasets werden Sie möglicherweise fest, dass die Suchvorgänge mit langsam, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie mit SQL-Abfragen mit angepasst **ORDERBY** oder **, in denen** -Klauseln sowie in der Parameterabfragen, oder `CDaoQuerydef` Objekte, die bestimmte indizierte Datensätze abgerufen werden.
+- Beim Arbeiten mit ODBC-Datenbanken und großen Dynasets können Sie feststellen, dass die Verwendung der Suchvorgänge langsam ist, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie SQL-Abfragen mit angepassten **OrderBy** -oder **Where** -Klauseln, Parameterabfragen oder `CDaoQuerydef` Objekten verwenden, die bestimmte indizierte Datensätze abrufen.
 
-Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methoden" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methods" in der DAO-Hilfe.
 
-##  <a name="findlast"></a>  CDaoRecordset::FindLast
+##  <a name="findlast"></a>CDaoRecordset:: FindLast
 
-Rufen Sie diese Memberfunktion um den letzten Datensatz suchen, der mit einer angegebene Bedingung übereinstimmt.
+Mit dieser Member-Funktion können Sie den letzten Datensatz ermitteln, der mit einer angegebenen Bedingung übereinstimmt.
 
 ```
 BOOL FindLast(LPCTSTR lpszFilter);
@@ -761,41 +761,41 @@ BOOL FindLast(LPCTSTR lpszFilter);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszFilter*<br/>
-Ein Zeichenfolgenausdruck (z. B. die **, in denen** -Klausel in einer SQL-Anweisung ohne das Wort **, in denen**) verwendet, um den Datensatz zu suchen.
+*lpszfilter*<br/>
+Ein Zeichen folgen Ausdruck (wie die **Where** -Klausel in einer SQL-Anweisung ohne das Wort **Where**), der zum Suchen des Datensatzes verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `FindLast` Memberfunktion beginnt die Suche am Ende des Recordset-Objekts und Suche rückwärts bis zum Anfang des Recordset-Objekts.
+Die `FindLast` Member-Funktion beginnt die Suche am Ende des Recordsets und wird rückwärts zum Anfang des Recordsets durchsucht.
 
-Wenn alle beinhalten die Datensätze in die Suche (nicht nur diejenigen, die eine bestimmte Bedingung erfüllen) einer von der Verschiebevorgänge mithilfe von Datensatz zu Datensatz verschoben werden sollen. Um einen Datensatz in einem Recordset-Tabelle vom Typ zu suchen, rufen Sie die `Seek` Member-Funktion.
+Wenn Sie alle Datensätze in die Suche einschließen möchten (nicht nur die, die eine bestimmte Bedingung erfüllen), verwenden Sie einen der Verschiebungs Vorgänge, um von Datensatz zu Datensatz zu wechseln. Um einen Datensatz in einem Recordset vom Typ "Table" zu suchen, nennen Sie die `Seek` Member-Funktion.
 
-Wenn ein Datensatz den Kriterien nicht gefunden wird, ist die Zeiger für den aktuellen Datensatz unbestimmt, und `FindLast` gibt NULL zurück. Wenn das Recordset mehr als einem Datensatz enthält, die den Kriterien entsprechen, `FindFirst` sucht das erste Vorkommen, `FindNext` sucht die nächste Instanz hinter dem ersten Vorkommen, und So weiter.
+Wenn ein Datensatz nicht gefunden wird, der mit den Kriterien übereinstimmt, wird der aktuelle Daten Satz Zeiger nicht bestimmt, und `FindLast` gibt 0 (null) zurück. Wenn das Recordset mehr als einen Datensatz enthält, der die Kriterien erfüllt, `FindFirst` das erste Vorkommen, `FindNext` das nächste Vorkommen nach dem ersten Vorkommen und so weiter.
 
 > [!CAUTION]
->  Wenn Sie den aktuellen Datensatz bearbeiten, werden Sie sicher, dass Sie die Änderungen speichern, durch den Aufruf der `Update` Member-Funktion, die vor dem Wechsel zu einem anderen Datensatz. Wenn Sie zu einem anderen Datensatz verschieben, ohne zu aktualisieren, sind Ihre Änderungen verloren gehen, ohne Warnung.
+>  Wenn Sie den aktuellen Datensatz bearbeiten, stellen Sie sicher, dass Sie die Änderungen speichern, indem Sie die `Update` Member-Funktion aufrufen, bevor Sie zu einem anderen Datensatz wechseln. Wenn Sie zu einem anderen Datensatz wechseln, ohne zu aktualisieren, gehen Ihre Änderungen ohne Warnung verloren.
 
-Mit einer der Vorgänge suchen ist nicht der gleiche wie das Aufrufen `MoveFirst` oder `MoveNext`, die einfach macht jedoch die ersten oder nächsten Datensatzes aktuelle ohne Angabe einer Bedingung. Führen Sie einen Suchvorgang mit einem Verschiebevorgang.
+Die Verwendung eines der Suchvorgänge ist nicht das gleiche wie das Aufrufen von `MoveFirst` oder `MoveNext`. Dadurch wird der erste oder nächste Datensatz auf den neuesten Stand gesetzt, ohne eine Bedingung anzugeben. Sie können einen Suchvorgang mit einem Verschiebungs Vorgang ausführen.
 
-Bedenken Sie Folgendes bei Verwendung der Suchvorgänge:
+Beachten Sie bei der Verwendung der Suchvorgänge Folgendes:
 
-- Wenn `Find` gibt, die ungleich NULL, die der aktuelle Datensatz ist nicht definiert. In diesem Fall müssen Sie den Zeiger für den aktuellen Datensatz an einem gültigen Datensatz positionieren.
+- Wenn `Find` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert. In diesem Fall müssen Sie den aktuellen Daten Satz Zeiger auf einen gültigen Datensatz zurück positionieren.
 
-- Sie können keinen Suchvorgang mit einem Vorwärtscursor Bildlauf Momentaufnahme Recordset vom Typ verwenden.
+- Es ist nicht möglich, einen Suchvorgang mit einem Bild lauffähige Recordset mit vorwärts Bildlauf zu verwenden.
 
-- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden bei der Suche nach Feldern mit Datumsangaben, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine; verwenden Andernfalls kann übereinstimmende Datensätze nicht gefunden werden.
+- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden, wenn Sie nach Feldern mit Datumsangaben suchen, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine verwenden. Andernfalls werden übereinstimmende Datensätze möglicherweise nicht gefunden.
 
-- Beim Arbeiten mit ODBC-Datenbanken und große Dynasets werden Sie möglicherweise fest, dass die Suchvorgänge mit langsam, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie mit SQL-Abfragen mit angepasst **ORDERBY** oder **, in denen** -Klauseln sowie in der Parameterabfragen, oder `CDaoQuerydef` Objekte, die bestimmte indizierte Datensätze abgerufen werden.
+- Beim Arbeiten mit ODBC-Datenbanken und großen Dynasets können Sie feststellen, dass die Verwendung der Suchvorgänge langsam ist, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie SQL-Abfragen mit angepassten **OrderBy** -oder **Where** -Klauseln, Parameterabfragen oder `CDaoQuerydef` Objekten verwenden, die bestimmte indizierte Datensätze abrufen.
 
-Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methoden" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methods" in der DAO-Hilfe.
 
-##  <a name="findnext"></a>  CDaoRecordset::FindNext
+##  <a name="findnext"></a>CDaoRecordset:: FindNext
 
-Rufen Sie diese Memberfunktion um den nächsten Datensatz zu suchen, der mit einer angegebene Bedingung übereinstimmt.
+Mit dieser Member-Funktion können Sie den nächsten Datensatz ermitteln, der mit einer angegebenen Bedingung übereinstimmt.
 
 ```
 BOOL FindNext(LPCTSTR lpszFilter);
@@ -803,41 +803,41 @@ BOOL FindNext(LPCTSTR lpszFilter);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszFilter*<br/>
-Ein Zeichenfolgenausdruck (z. B. die **, in denen** -Klausel in einer SQL-Anweisung ohne das Wort **, in denen**) verwendet, um den Datensatz zu suchen.
+*lpszfilter*<br/>
+Ein Zeichen folgen Ausdruck (wie die **Where** -Klausel in einer SQL-Anweisung ohne das Wort **Where**), der zum Suchen des Datensatzes verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `FindNext` Memberfunktion beginnt die Suche auf den aktuellen Datensatz und sucht bis zum Ende des Recordset-Objekts.
+Die `FindNext` Member-Funktion beginnt mit der Suche nach dem aktuellen Datensatz und sucht bis zum Ende des Recordsets.
 
-Wenn alle beinhalten die Datensätze in die Suche (nicht nur diejenigen, die eine bestimmte Bedingung erfüllen) einer von der Verschiebevorgänge mithilfe von Datensatz zu Datensatz verschoben werden sollen. Um einen Datensatz in einem Recordset-Tabelle vom Typ zu suchen, rufen Sie die `Seek` Member-Funktion.
+Wenn Sie alle Datensätze in die Suche einschließen möchten (nicht nur die, die eine bestimmte Bedingung erfüllen), verwenden Sie einen der Verschiebungs Vorgänge, um von Datensatz zu Datensatz zu wechseln. Um einen Datensatz in einem Recordset vom Typ "Table" zu suchen, nennen Sie die `Seek` Member-Funktion.
 
-Wenn ein Datensatz den Kriterien nicht gefunden wird, ist die Zeiger für den aktuellen Datensatz unbestimmt, und `FindNext` gibt NULL zurück. Wenn das Recordset mehr als einem Datensatz enthält, die den Kriterien entsprechen, `FindFirst` sucht das erste Vorkommen, `FindNext` sucht das nächste Vorkommen und So weiter.
+Wenn ein Datensatz nicht gefunden wird, der mit den Kriterien übereinstimmt, wird der aktuelle Daten Satz Zeiger nicht bestimmt, und `FindNext` gibt 0 (null) zurück. Wenn das Recordset mehr als einen Datensatz enthält, der die Kriterien erfüllt, `FindFirst` zuerst das erste Vorkommen, `FindNext` das nächste Vorkommen und so weiter.
 
 > [!CAUTION]
->  Wenn Sie den aktuellen Datensatz bearbeiten, werden Sie sicher, dass Sie die Änderungen speichern, durch den Aufruf der `Update` Member-Funktion, die vor dem Wechsel zu einem anderen Datensatz. Wenn Sie zu einem anderen Datensatz verschieben, ohne zu aktualisieren, sind Ihre Änderungen verloren gehen, ohne Warnung.
+>  Wenn Sie den aktuellen Datensatz bearbeiten, stellen Sie sicher, dass Sie die Änderungen speichern, indem Sie die `Update` Member-Funktion aufrufen, bevor Sie zu einem anderen Datensatz wechseln. Wenn Sie zu einem anderen Datensatz wechseln, ohne zu aktualisieren, gehen Ihre Änderungen ohne Warnung verloren.
 
-Mit einer der Vorgänge suchen ist nicht der gleiche wie das Aufrufen `MoveFirst` oder `MoveNext`, die einfach macht jedoch die ersten oder nächsten Datensatzes aktuelle ohne Angabe einer Bedingung. Führen Sie einen Suchvorgang mit einem Verschiebevorgang.
+Die Verwendung eines der Suchvorgänge ist nicht das gleiche wie das Aufrufen von `MoveFirst` oder `MoveNext`. Dadurch wird der erste oder nächste Datensatz auf den neuesten Stand gesetzt, ohne eine Bedingung anzugeben. Sie können einen Suchvorgang mit einem Verschiebungs Vorgang ausführen.
 
-Bedenken Sie Folgendes bei Verwendung der Suchvorgänge:
+Beachten Sie bei der Verwendung der Suchvorgänge Folgendes:
 
-- Wenn `Find` gibt, die ungleich NULL, die der aktuelle Datensatz ist nicht definiert. In diesem Fall müssen Sie den Zeiger für den aktuellen Datensatz an einem gültigen Datensatz positionieren.
+- Wenn `Find` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert. In diesem Fall müssen Sie den aktuellen Daten Satz Zeiger auf einen gültigen Datensatz zurück positionieren.
 
-- Sie können keinen Suchvorgang mit einem Vorwärtscursor Bildlauf Momentaufnahme Recordset vom Typ verwenden.
+- Es ist nicht möglich, einen Suchvorgang mit einem Bild lauffähige Recordset mit vorwärts Bildlauf zu verwenden.
 
-- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden bei der Suche nach Feldern mit Datumsangaben, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine; verwenden Andernfalls kann übereinstimmende Datensätze nicht gefunden werden.
+- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden, wenn Sie nach Feldern mit Datumsangaben suchen, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine verwenden. Andernfalls werden übereinstimmende Datensätze möglicherweise nicht gefunden.
 
-- Beim Arbeiten mit ODBC-Datenbanken und große Dynasets werden Sie möglicherweise fest, dass die Suchvorgänge mit langsam, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie mit SQL-Abfragen mit angepasst **ORDERBY** oder **, in denen** -Klauseln sowie in der Parameterabfragen, oder `CDaoQuerydef` Objekte, die bestimmte indizierte Datensätze abgerufen werden.
+- Beim Arbeiten mit ODBC-Datenbanken und großen Dynasets können Sie feststellen, dass die Verwendung der Suchvorgänge langsam ist, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie SQL-Abfragen mit angepassten **OrderBy** -oder **Where** -Klauseln, Parameterabfragen oder `CDaoQuerydef` Objekten verwenden, die bestimmte indizierte Datensätze abrufen.
 
-Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methoden" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methods" in der DAO-Hilfe.
 
-##  <a name="findprev"></a>  CDaoRecordset::FindPrev
+##  <a name="findprev"></a>CDaoRecordset:: findprev
 
-Rufen Sie diese Memberfunktion zum vorherigen Datensatz zu suchen, der mit einer angegebene Bedingung übereinstimmt.
+Mit dieser Member-Funktion können Sie den vorherigen Datensatz ermitteln, der mit einer angegebenen Bedingung übereinstimmt.
 
 ```
 BOOL FindPrev(LPCTSTR lpszFilter);
@@ -845,41 +845,41 @@ BOOL FindPrev(LPCTSTR lpszFilter);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszFilter*<br/>
-Ein Zeichenfolgenausdruck (z. B. die **, in denen** -Klausel in einer SQL-Anweisung ohne das Wort **, in denen**) verwendet, um den Datensatz zu suchen.
+*lpszfilter*<br/>
+Ein Zeichen folgen Ausdruck (wie die **Where** -Klausel in einer SQL-Anweisung ohne das Wort **Where**), der zum Suchen des Datensatzes verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `FindPrev` Memberfunktion beginnt die Suche auf den aktuellen Datensatz und sucht rückwärts bis zum Anfang des Recordset-Objekts.
+Die `FindPrev` Member-Funktion beginnt mit der Suche im aktuellen Datensatz und sucht rückwärts nach dem Anfang des Recordsets.
 
-Wenn alle beinhalten die Datensätze in die Suche (nicht nur diejenigen, die eine bestimmte Bedingung erfüllen) einer von der Verschiebevorgänge mithilfe von Datensatz zu Datensatz verschoben werden sollen. Um einen Datensatz in einem Recordset-Tabelle vom Typ zu suchen, rufen Sie die `Seek` Member-Funktion.
+Wenn Sie alle Datensätze in die Suche einschließen möchten (nicht nur die, die eine bestimmte Bedingung erfüllen), verwenden Sie einen der Verschiebungs Vorgänge, um von Datensatz zu Datensatz zu wechseln. Um einen Datensatz in einem Recordset vom Typ "Table" zu suchen, nennen Sie die `Seek` Member-Funktion.
 
-Wenn ein Datensatz den Kriterien nicht gefunden wird, ist die Zeiger für den aktuellen Datensatz unbestimmt, und `FindPrev` gibt NULL zurück. Wenn das Recordset mehr als einem Datensatz enthält, die den Kriterien entsprechen, `FindFirst` sucht das erste Vorkommen, `FindNext` sucht das nächste Vorkommen und So weiter.
+Wenn ein Datensatz nicht gefunden wird, der mit den Kriterien übereinstimmt, wird der aktuelle Daten Satz Zeiger nicht bestimmt, und `FindPrev` gibt 0 (null) zurück. Wenn das Recordset mehr als einen Datensatz enthält, der die Kriterien erfüllt, `FindFirst` zuerst das erste Vorkommen, `FindNext` das nächste Vorkommen und so weiter.
 
 > [!CAUTION]
->  Wenn Sie den aktuellen Datensatz bearbeiten, werden Sie sicher, dass Sie die Änderungen speichern, durch den Aufruf der `Update` Member-Funktion, die vor dem Wechsel zu einem anderen Datensatz. Wenn Sie zu einem anderen Datensatz verschieben, ohne zu aktualisieren, sind Ihre Änderungen verloren gehen, ohne Warnung.
+>  Wenn Sie den aktuellen Datensatz bearbeiten, stellen Sie sicher, dass Sie die Änderungen speichern, indem Sie die `Update` Member-Funktion aufrufen, bevor Sie zu einem anderen Datensatz wechseln. Wenn Sie zu einem anderen Datensatz wechseln, ohne zu aktualisieren, gehen Ihre Änderungen ohne Warnung verloren.
 
-Mit einer der Vorgänge suchen ist nicht der gleiche wie das Aufrufen `MoveFirst` oder `MoveNext`, die einfach macht jedoch die ersten oder nächsten Datensatzes aktuelle ohne Angabe einer Bedingung. Führen Sie einen Suchvorgang mit einem Verschiebevorgang.
+Die Verwendung eines der Suchvorgänge ist nicht das gleiche wie das Aufrufen von `MoveFirst` oder `MoveNext`. Dadurch wird der erste oder nächste Datensatz auf den neuesten Stand gesetzt, ohne eine Bedingung anzugeben. Sie können einen Suchvorgang mit einem Verschiebungs Vorgang ausführen.
 
-Bedenken Sie Folgendes bei Verwendung der Suchvorgänge:
+Beachten Sie bei der Verwendung der Suchvorgänge Folgendes:
 
-- Wenn `Find` gibt, die ungleich NULL, die der aktuelle Datensatz ist nicht definiert. In diesem Fall müssen Sie den Zeiger für den aktuellen Datensatz an einem gültigen Datensatz positionieren.
+- Wenn `Find` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert. In diesem Fall müssen Sie den aktuellen Daten Satz Zeiger auf einen gültigen Datensatz zurück positionieren.
 
-- Sie können keinen Suchvorgang mit einem Vorwärtscursor Bildlauf Momentaufnahme Recordset vom Typ verwenden.
+- Es ist nicht möglich, einen Suchvorgang mit einem Bild lauffähige Recordset mit vorwärts Bildlauf zu verwenden.
 
-- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden bei der Suche nach Feldern mit Datumsangaben, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine; verwenden Andernfalls kann übereinstimmende Datensätze nicht gefunden werden.
+- Sie sollten das US-Datumsformat (Monat-Tag-Jahr) verwenden, wenn Sie nach Feldern mit Datumsangaben suchen, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine verwenden. Andernfalls werden übereinstimmende Datensätze möglicherweise nicht gefunden.
 
-- Beim Arbeiten mit ODBC-Datenbanken und große Dynasets werden Sie möglicherweise fest, dass die Suchvorgänge mit langsam, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie mit SQL-Abfragen mit angepasst **ORDERBY** oder **, in denen** -Klauseln sowie in der Parameterabfragen, oder `CDaoQuerydef` Objekte, die bestimmte indizierte Datensätze abgerufen werden.
+- Beim Arbeiten mit ODBC-Datenbanken und großen Dynasets können Sie feststellen, dass die Verwendung der Suchvorgänge langsam ist, insbesondere bei der Arbeit mit großen Recordsets. Sie können die Leistung verbessern, indem Sie SQL-Abfragen mit angepassten **OrderBy** -oder **Where** -Klauseln, Parameterabfragen oder `CDaoQuerydef` Objekten verwenden, die bestimmte indizierte Datensätze abrufen.
 
-Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methoden" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "FindFirst, FindLast, FindNext, FindPrevious Methods" in der DAO-Hilfe.
 
-##  <a name="getabsoluteposition"></a>  CDaoRecordset:: GetAbsolutePosition
+##  <a name="getabsoluteposition"></a>CDaoRecordset:: GetAbsolutePosition
 
-Gibt die Nummer des aktuellen Datensatzes einem Recordset-Objekt zurück.
+Gibt die Datensatznummer des aktuellen Datensatzes eines Recordset-Objekts zurück.
 
 ```
 long GetAbsolutePosition();
@@ -887,25 +887,25 @@ long GetAbsolutePosition();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine ganze Zahl von 0 auf die Anzahl der Datensätze im Recordset. Entspricht der Position des aktuellen Datensatzes im Recordset.
+Eine ganze Zahl zwischen 0 und der Anzahl der Datensätze im Recordset. Entspricht der Ordinalposition des aktuellen Datensatzes im Recordset.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Wert der AbsolutePosition-Eigenschaft das zugrunde liegende DAO-Objekt ist nullbasiert. die Einstellung 0 bezieht sich auf den ersten Datensatz im Recordset. Sie können die Anzahl der aufgefüllten Datensätze im Recordset zu ermitteln, durch den Aufruf [GetRecordCount](#getrecordcount). Aufrufen von `GetRecordCount` kann einige Zeit dauern, weil sie alle Datensätze aus, um zu bestimmen, die Anzahl die zugreifen muss.
+Der AbsolutePosition-Eigenschafts Wert des zugrunde liegenden DAO-Objekts ist NULL basiert. eine Einstellung von 0 bezieht sich auf den ersten Datensatz im Recordset. Sie können die Anzahl der gefüllten Datensätze im Recordset durch Aufrufen von [GetRecordCount](#getrecordcount)ermitteln. Das Aufrufen von `GetRecordCount` kann einige Zeit in Anspruch nehmen, da es auf alle Datensätze zugreifen muss
 
-Wenn es keine aktueller Datensatz ist, als es sind keine Datensätze im Recordset, - 1 zurückgegeben. Wenn der aktuelle Datensatz gelöscht wird, den Wert der AbsolutePosition-Eigenschaft ist nicht definiert, und löst MFC eine Ausnahme aus, wenn darauf verwiesen wird. Für Recordsets vom Typ Dynaset werden neue Einträge am Ende der Sequenz hinzugefügt.
-
-> [!NOTE]
->  Diese Eigenschaft ist nicht als Ersatz-Datensatznummer verwendet werden soll. Lesezeichen sind weiterhin die empfohlene Methode zurückzukehren, klicken Sie auf einer bestimmten Position und die einzige Möglichkeit, den aktuellen Datensatz für alle Typen des Recordset-Objekte zu positionieren. Insbesondere ändert die Position eines bestimmten Datensatzes auf, wenn vorhergehenden Datensätze gelöscht werden. Es gibt auch keine Zusicherung, dass ein bestimmter Datensatz die gleiche absolute Position hat, wenn das Recordset neu erstellt wird, da die Reihenfolge der einzelnen Datensätze innerhalb eines Recordsets, nicht unbedingt, es sei denn, sie mit der Verwendung einer SQL-Anweisung erstellt wird eine  **ORDERBY** Klausel.
+Wenn kein aktueller Datensatz vorhanden ist, so als wenn keine Datensätze im Recordset vorhanden sind, wird-1 zurückgegeben. Wenn der aktuelle Datensatz gelöscht wird, ist der Wert der AbsolutePosition-Eigenschaft nicht definiert, und MFC löst eine Ausnahme aus, wenn darauf verwiesen wird. Für den Dynaset-Typ Recordsets werden neue Datensätze am Ende der Sequenz hinzugefügt.
 
 > [!NOTE]
->  Diese Memberfunktion ist nur für Dynaset und Recordsets vom Typ Snapshot gültig.
+>  Diese Eigenschaft ist nicht für die Verwendung als Ersatz Zeichenfolge vorgesehen. Lesezeichen sind immer noch die empfohlene Methode zum beibehalten und zurückkehren zu einer gegebenen Position und sind die einzige Möglichkeit, den aktuellen Datensatz für alle Typen von recordsetobjekten zu positionieren. Insbesondere wird die Position eines bestimmten Datensatzes geändert, wenn Datensätze vor dem Löschen gelöscht werden. Es ist auch nicht sichergestellt, dass ein bestimmter Datensatz die gleiche absolute Position hat, wenn der Recordset erneut erstellt wird, da die Reihenfolge der einzelnen Datensätze in einem Recordset nicht garantiert wird, es sei denn, Sie wird mit einer SQL-Anweisung mithilfe einer **OrderBy** -Klausel erstellt.
 
-Weitere Informationen finden Sie unter dem Thema "AbsolutePosition-Eigenschaft" in-DAO-Hilfe.
+> [!NOTE]
+>  Diese Member-Funktion ist nur für den Dynaset-Type-und den Snapshot-Type-Recordsets gültig.
 
-##  <a name="getbookmark"></a>  CDaoRecordset:: GetBookmark
+Weitere Informationen finden Sie im Thema "AbsolutePosition-Eigenschaft" in der DAO-Hilfe.
 
-Rufen Sie diese Memberfunktion um den Wert für die Lesezeichen in einem bestimmten Datensatz zu erhalten.
+##  <a name="getbookmark"></a>CDaoRecordset:: GetBookmark
+
+Mit dieser Member-Funktion können Sie den Lesezeichen Wert in einem bestimmten Datensatz abrufen.
 
 ```
 COleVariant GetBookmark();
@@ -913,22 +913,22 @@ COleVariant GetBookmark();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Wert, der das Lesezeichen für den aktuellen Datensatz darstellt.
+Gibt einen Wert zurück, der das Lesezeichen für den aktuellen Datensatz darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei einem Recordset-Objekt erstellt oder geöffnet wird, hat jeder Datensatz bereits ein eindeutiges Lesezeichen, wenn es unterstützt. Rufen Sie `CanBookmark` zu bestimmen, ob ein Recordset Lesezeichen unterstützt.
+Wenn ein Recordset-Objekt erstellt oder geöffnet wird, verfügt jeder seiner Datensätze bereits über ein eindeutiges Lesezeichen, wenn es diese unterstützt. Ruft `CanBookmark` auf, um zu bestimmen, ob ein Recordset Lesezeichen unterstützt
 
-Sie können das Lesezeichen für den aktuellen Datensatz speichern, indem Sie den Wert des Lesezeichens, das Zuweisen einer `COleVariant` Objekt. Rufen Sie zum schnellen an diesen Datensatz zu einem beliebigen Zeitpunkt nach dem Wechsel zu einem anderen Datensatz zurückgeben `SetBookmark` mit einem Parameter entsprechend dem Wert dieser `COleVariant` Objekt.
+Sie können das Lesezeichen für den aktuellen Datensatz speichern, indem Sie den Wert des Lesezeichens einem `COleVariant` Objekt zuweisen. Um zu einem beliebigen Zeitpunkt nach dem Wechsel zu einem anderen Datensatz schnell zu diesem Datensatz zurückzukehren, müssen Sie `SetBookmark` mit einem Parameter aufrufen, der dem Wert dieses `COleVariant` Objekts entspricht.
 
 > [!NOTE]
->  Aufrufen von [Requery](#requery) DAO Lesezeichen ändert.
+>  Der Aufruf von " [Requery](#requery) " ändert DAO-Lesezeichen
 
-Verwandte Informationen finden Sie im Thema "Lesezeicheneigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Bookmark Property" in der DAO-Hilfe.
 
-##  <a name="getcachesize"></a>  CDaoRecordset::GetCacheSize
+##  <a name="getcachesize"></a>CDaoRecordset:: getCacheSize
 
-Rufen Sie diese Memberfunktion, um die Anzahl der zwischengespeicherten Datensätze zu erhalten.
+Mit dieser Member-Funktion können Sie die Anzahl der zwischengespeicherten Datensätze abrufen.
 
 ```
 long GetCacheSize();
@@ -936,19 +936,19 @@ long GetCacheSize();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der angibt, die Anzahl der Datensätze in einem Recordset Dynaset-Typ, die mit Daten aus einer ODBC-Datenquelle lokal zwischengespeichert werden.
+Ein-Wert, der die Anzahl der Datensätze in einem Dynaset-Recordset angibt, das Daten enthält, die lokal aus einer ODBC-Datenquelle zwischengespeichert werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zwischenspeichern von Daten verbessert die Leistung einer Anwendung, die Daten von einem Remoteserver über Dynaset eines assistentartigen Recordset-Objekte abruft. Ein Cache ist ein Leerzeichen im lokalen Speicher, der das den Fall, dass die Daten erneut angefordert werden, während der Ausführung der Anwendung zuletzt vom Server abgerufenen Daten enthält. Wenn Daten angefordert werden, überprüft die Microsoft Jet-Datenbank-Engine den Cache für die angeforderten Daten zuerst statt Abruf aus dem Server, wodurch mehr Zeit benötigt. Daten, die nicht von einer ODBC-Datenquelle stammt, ist nicht im Cache gespeichert.
+Das Zwischenspeichern von Daten verbessert die Leistung einer Anwendung, die Daten von einem Remote Server durch Dynaset-Type Recordset-Objekte abruft. Ein Cache ist ein Speicherplatz im lokalen Speicher, der die Daten enthält, die zuletzt vom Server abgerufen wurden, wenn die Daten während der Ausführung der Anwendung erneut angefordert werden. Wenn Daten angefordert werden, überprüft die Microsoft Jet-Datenbank-Engine den Cache zuerst auf die angeforderten Daten, anstatt Sie vom Server abzurufen, was mehr Zeit in sich bringt. Daten, die nicht aus einer ODBC-Datenquelle stammen, werden nicht im Cache gespeichert.
 
-Eine ODBC-Datenquelle, z. B. einer angefügten Tabelle haben einen lokalen Cache.
+Jede ODBC-Datenquelle, z. b. eine angefügte Tabelle, kann über einen lokalen Cache verfügen.
 
-Verwandte Informationen finden Sie im Thema "CacheSize, CacheStart-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "CacheSize, CacheStart Properties" in der DAO-Hilfe.
 
-##  <a name="getcachestart"></a>  CDaoRecordset::GetCacheStart
+##  <a name="getcachestart"></a>CDaoRecordset:: getcachestart
 
-Rufen Sie diese Memberfunktion zum Abrufen des Lesezeichenwert, der den ersten Datensatz im Recordset zwischengespeichert werden.
+Rufen Sie diese Member-Funktion auf, um den Lesezeichen Wert des ersten Datensatzes im Recordset zu erhalten, das zwischengespeichert werden soll.
 
 ```
 COleVariant GetCacheStart();
@@ -956,20 +956,20 @@ COleVariant GetCacheStart();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `COleVariant` , der das Lesezeichen des ersten Datensatzes im Recordset zwischengespeichert werden angibt.
+Eine `COleVariant`, die das Lesezeichen des ersten Datensatzes im Recordset angibt, das zwischengespeichert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Microsoft Jet-Datenbank-Engine Datensätze innerhalb des Bereichs des Cache aus dem Cache, und es Anforderungen Datensätze außerhalb des Bereichs des Caches auf dem Server.
+Die Microsoft Jet-Datenbank-Engine fordert Datensätze im Cache Bereich aus dem Cache an und fordert Datensätze außerhalb des Cache Bereichs vom Server an.
 
 > [!NOTE]
->  Aus dem Cache abgerufenen Datensätze nicht gleichzeitig mit der Datenquelle von anderen Benutzern vorgenommenen Änderungen wieder.
+>  Aus dem Cache abgerufene Datensätze enthalten keine Änderungen, die von anderen Benutzern gleichzeitig an den Quelldaten vorgenommen wurden.
 
-Verwandte Informationen finden Sie im Thema "CacheSize, CacheStart-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "CacheSize, CacheStart Properties" in der DAO-Hilfe.
 
-##  <a name="getcurrentindex"></a>  CDaoRecordset::GetCurrentIndex
+##  <a name="getcurrentindex"></a>CDaoRecordset:: getcurrentindex
 
-Rufen Sie diese Memberfunktion, um zu bestimmen, den Index aktuell in Verwendung in einer volltextindizierten Tabelle Typ `CDaoRecordset` Objekt.
+Mit dieser Member-Funktion können Sie den derzeit in einem indizierten Tabellentyp `CDaoRecordset`-Objekts verwendeten Index ermitteln.
 
 ```
 CString GetCurrentIndex();
@@ -977,19 +977,19 @@ CString GetCurrentIndex();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` mit dem Namen des Index mit einem Recordset vom Typ Tabelle verwendet. Gibt eine leere Zeichenfolge zurück, wenn kein Index festgelegt wurde.
+Eine `CString`, die den Namen des derzeit verwendeten Indexes mit einem Recordset des Tabellentyps enthält. Gibt eine leere Zeichenfolge zurück, wenn kein Index festgelegt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Index ist die Grundlage für ordnen der Datensätze in einem Recordset Tabelle Typ und wird verwendet, indem die [Seek](#seek) Member-Funktion, um Datensätze zu suchen.
+Dieser Index ist die Grundlage für das Anordnen von Datensätzen in einem Recordset des Tabellentyps und wird von der [Seek](#seek) Member-Funktion verwendet, um Datensätze zu suchen.
 
-Ein `CDaoRecordset` Objekt kann mehr als einen Index aufweisen, jedoch können nur einen Index zu einem Zeitpunkt verwenden (obwohl eine [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) Objekt möglicherweise mehrere Indizes definiert ist).
+Ein `CDaoRecordset` Objekt kann mehr als einen Index aufweisen, kann aber jeweils nur einen Index verwenden (obwohl für ein [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) -Objekt möglicherweise mehrere Indizes definiert sind).
 
-Weitere Informationen finden Sie im Thema "Indexobjekt" und der Definition der "aktuellen Index" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Index Objekt" und in der Definition "aktueller Index" in der DAO-Hilfe.
 
-##  <a name="getdatecreated"></a>  CDaoRecordset::GetDateCreated
+##  <a name="getdatecreated"></a>CDaoRecordset:: getdatecreated
 
-Rufen Sie diese Memberfunktion zum Abrufen, das Datum und Uhrzeit der Erstellung eine Basistabelle.
+Rufen Sie diese Member-Funktion auf, um das Datum und die Uhrzeit der Erstellung einer Basistabelle abzurufen.
 
 ```
 COleDateTime GetDateCreated();
@@ -997,17 +997,17 @@ COleDateTime GetDateCreated();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt, enthält das Datum und Uhrzeit die Basistabelle erstellt wurde.
+Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt, das das Datum und die Uhrzeit der Erstellung der Basistabelle enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Datums-und Uhrzeiteinstellungen abgeleitet werden auf dem Computer, auf denen die Basistabelle erstellt wurde.
+Datums-und Uhrzeit Einstellungen werden von dem Computer abgeleitet, auf dem die Basistabelle erstellt wurde.
 
-Verwandte Informationen finden Sie im Thema "DateCreated, LastUpdated-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "DateCreated, lastupated Properties" in der DAO-Hilfe.
 
-##  <a name="getdatelastupdated"></a>  CDaoRecordset::GetDateLastUpdated
+##  <a name="getdatelastupdated"></a>CDaoRecordset:: getdatelastupveraltet
 
-Rufen Sie diese Memberfunktion zum Abrufen von Datum und Uhrzeit der letzten Aktualisierung des Schemas.
+Rufen Sie diese Member-Funktion auf, um das Datum und die Uhrzeit des letzten Updates des Schemas abzurufen.
 
 ```
 COleDateTime GetDateLastUpdated();
@@ -1015,17 +1015,17 @@ COleDateTime GetDateLastUpdated();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) Objekt, das das Datum und Uhrzeit der letzten die Basistabellenstruktur (Schema Aktualisierung) enthält.
+Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt, das das Datum und die Uhrzeit des letzten Updates der Basistabellen Struktur (Schema) enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Datums-und Uhrzeiteinstellungen abgeleitet werden auf dem Computer, auf denen die Struktur der Basistabelle (Schema) zuletzt aktualisiert wurde.
+Datums-und Uhrzeit Einstellungen werden von dem Computer abgeleitet, auf dem die Basistabellen Struktur (Schema) zuletzt aktualisiert wurde.
 
-Verwandte Informationen finden Sie im Thema "DateCreated, LastUpdated-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "DateCreated, lastupated Properties" in der DAO-Hilfe.
 
-##  <a name="getdefaultdbname"></a>  CDaoRecordset::GetDefaultDBName
+##  <a name="getdefaultdbname"></a>CDaoRecordset:: getdefaultdbname
 
-Rufen Sie diese Memberfunktion um den Namen der Datenbank für dieses Recordset zu bestimmen.
+Mit dieser Member-Funktion können Sie den Namen der Datenbank für dieses Recordset ermitteln.
 
 ```
 virtual CString GetDefaultDBName();
@@ -1033,19 +1033,19 @@ virtual CString GetDefaultDBName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` , enthält der Pfad und Name der Datenbank, von dem dieses Recordset abgeleitet ist.
+Eine `CString`, die den Pfad und den Namen der Datenbank enthält, von der dieses Recordset abgeleitet ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Recordset erstellt wird, ohne einen Zeiger auf eine [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md), und klicken Sie dann diesen Pfad vom Recordset verwendet wird, um die Standarddatenbank zu öffnen. Standardmäßig gibt diese Funktion eine leere Zeichenfolge zurück. Wenn Klassen-Assistent ein neues Recordset aus abgeleitet `CDaoRecordset`, diese Funktion wird für Sie erstellt.
+Wenn ein Recordset ohne Zeiger auf eine [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)-Klasse erstellt wird, wird dieser Pfad vom Recordset verwendet, um die Standarddatenbank zu öffnen. Standardmäßig gibt diese Funktion eine leere Zeichenfolge zurück. Wenn ClassWizard ein neues Recordset aus `CDaoRecordset`ableitet, wird diese Funktion für Sie erstellt.
 
-Das folgende Beispiel veranschaulicht die Verwendung der doppelte umgekehrte Schrägstrich (\\\\) wird wie in der Zeichenfolge, erforderlich, damit die Zeichenfolge, die richtig interpretiert werden.
+Das folgende Beispiel veranschaulicht die Verwendung des doppelten umgekehrten Schrägstrichs (\\\\) in der Zeichenfolge, wie für die ordnungsgemäße Interpretation der Zeichenfolge erforderlich ist.
 
 [!code-cpp[NVC_MFCDatabase#4](../../mfc/codesnippet/cpp/cdaorecordset-class_4.cpp)]
 
-##  <a name="getdefaultsql"></a>  CDaoRecordset::GetDefaultSQL
+##  <a name="getdefaultsql"></a>CDaoRecordset:: getdefaulzql
 
-Das Framework ruft diese Member-Funktion, um die Standard-SQL-Anweisung zu erhalten, auf der das Recordset basiert.
+Das Framework ruft diese Member-Funktion auf, um die SQL-Standard Anweisung zu erhalten, auf der das Recordset basiert.
 
 ```
 virtual CString GetDefaultSQL();
@@ -1053,19 +1053,19 @@ virtual CString GetDefaultSQL();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` , die die Standard-SQL-Anweisung enthält.
+Eine `CString`, die die SQL-Standard Anweisung enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies ist möglicherweise ein Tabellenname oder SQL **wählen** Anweisung.
+Dabei kann es sich um einen Tabellennamen oder eine SQL **Select** -Anweisung handeln.
 
-Sie definieren die Standard-SQL-Anweisung indirekt durch Deklarieren des Recordset-Klasse mit dem Klassen-Assistenten, und der Klassen-Assistent führt diese Aufgabe für Sie.
+Sie definieren indirekt die Standard-SQL-Anweisung, indem Sie Ihre Recordset-Klasse mit ClassWizard deklarieren, und ClassWizard führt diese Aufgabe für Sie aus.
 
-Wenn Sie eine SQL-null-Zeichenfolge zu übergeben [öffnen](#open), und klicken Sie dann diese Funktion aufgerufen wird, um den Tabellennamen oder SQL für Recordset zu bestimmen.
+Wenn Sie eine zu [öffnende](#open)Null-SQL-Zeichenfolge übergeben, wird diese Funktion aufgerufen, um den Tabellennamen oder SQL für das Recordset zu ermitteln.
 
-##  <a name="geteditmode"></a>  CDaoRecordset::GetEditMode
+##  <a name="geteditmode"></a>CDaoRecordset:: geteditmode
 
-Rufen Sie diese Memberfunktion zum Bestimmen des Status der Bearbeitung, dies ist einer der folgenden Werte ein:
+Mit dieser Member-Funktion können Sie den Status der Bearbeitung ermitteln, d. h. einen der folgenden Werte:
 
 ```
 short GetEditMode();
@@ -1073,21 +1073,21 @@ short GetEditMode();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Wert, der den Status der Bearbeiten für den aktuellen Datensatz angibt.
+Gibt einen Wert zurück, der den Bearbeitungsstatus für den aktuellen Datensatz angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-|Wert|Beschreibung|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
-|`dbEditNone`|Keine Bearbeitungsvorgang wird ausgeführt.|
+|`dbEditNone`|Es wird kein Bearbeitungsvorgang ausgeführt.|
 |`dbEditInProgress`|`Edit` wurde aufgerufen.|
 |`dbEditAdd`|`AddNew` wurde aufgerufen.|
 
-Weitere Informationen finden Sie unter dem Thema "EditMode-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "EditMode-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getfieldcount"></a>  CDaoRecordset::GetFieldCount
+##  <a name="getfieldcount"></a>CDaoRecordset:: GetFieldCount
 
-Rufen Sie diese Memberfunktion zum Abrufen der Anzahl von Feldern (Spalten), die im Recordset definiert.
+Rufen Sie diese Member-Funktion auf, um die im Recordset definierte Anzahl von Feldern (Spalten) abzurufen.
 
 ```
 short GetFieldCount();
@@ -1097,13 +1097,13 @@ short GetFieldCount();
 
 Die Anzahl der Felder im Recordset.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter dem Thema "Count-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "count Property" in der DAO-Hilfe.
 
-##  <a name="getfieldinfo"></a>  CDaoRecordset::GetFieldInfo
+##  <a name="getfieldinfo"></a>CDaoRecordset:: getfieldinfo
 
-Rufen Sie diese Memberfunktion zum Abrufen von Informationen zu den Feldern in einem Recordset.
+Mit dieser Member-Funktion können Sie Informationen zu den Feldern in einem Recordset abrufen.
 
 ```
 void GetFieldInfo(
@@ -1120,34 +1120,34 @@ void GetFieldInfo(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der nullbasierte Index des vordefinierten Felds in die Recordset Fields-Sammlung, für die Suche nach Index.
+Der null basierte Index des vordefinierten Felds in der Feld Auflistung des Recordsets für die Suche nach Index.
 
-*fieldinfo*<br/>
-Ein Verweis auf eine [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) Struktur.
+*FieldInfo*<br/>
+Ein Verweis auf eine [cdaofieldinfo](../../mfc/reference/cdaofieldinfo-structure.md) -Struktur.
 
-*dwInfoOptions*<br/>
-Optionen, die angeben, welche Informationen das Recordset abrufen. Die verfügbaren Optionen werden hier aufgeführt, zusammen mit der sie die Funktion zurückgibt verursachen. Rufen Sie für eine optimale Leistung nur die Ebene der benötigten Informationen ein:
+*dwinfooptions*<br/>
+Optionen, die angeben, welche Informationen das Recordset abrufen. Die verfügbaren Optionen werden hier zusammen mit den Funktionen aufgelistet, die die Funktion zurückgibt. Um eine optimale Leistung zu erzielen, rufen Sie nur die Ebene der benötigten Informationen ab:
 
-- `AFX_DAO_PRIMARY_INFO` (Standard) Name, Typ, Größe und der Attribute
+- `AFX_DAO_PRIMARY_INFO` (Standard) Name, Typ, Größe, Attribute
 
-- `AFX_DAO_SECONDARY_INFO` Primäre Informationen plus: Ordnungsposition, die erforderlich sind, ermöglichen die Länge Null, Sortieren der Reihenfolge "," Foreign Name "," Feld "," Quelltabelle
+- `AFX_DAO_SECONDARY_INFO` Primärinformationen, plus: Ordinalposition, erforderlich, Null Länge zulassen, Sortierreihenfolge, fremd Name, Quellfeld, Quell Tabelle
 
-- `AFX_DAO_ALL_INFO` Informationen zu primären und sekundären plus: Standardwert, Validierungsregel Überprüfung Text
+- `AFX_DAO_ALL_INFO` primäre und sekundäre Informationen Plus: Standardwert, Validierungs Regel, Validierungs Text
 
-*Wert*<br/>
+*lpszname*<br/>
 Der Name des Felds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Version der Funktion können Sie ein Feld über einen Index zu suchen. Die andere Version können Sie ein Feld nach Namen zu suchen.
+Eine Version der-Funktion ermöglicht es Ihnen, ein Feld nach Index zu suchen. Mit der anderen Version können Sie nach einem Feld nach dem Namen suchen.
 
-Eine Beschreibung der zurückgegebenen Informationen finden Sie in der [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) Struktur. Diese Struktur hat Member, die die Elemente in der Beschreibung der oben aufgeführten Informationen entsprechen *DwInfoOptions*. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen für alle vorherigen Ebenen sowie an.
+Eine Beschreibung der zurückgegebenen Informationen finden Sie in der [cdaofieldinfo](../../mfc/reference/cdaofieldinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den in der Beschreibung von *dwinfooptions*aufgeführten Elementen der oben aufgeführten Informationen entsprechen. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen für alle vorherigen Ebenen sowie an.
 
-Verwandte Informationen finden Sie im Thema "Attributes-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Attribute-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getfieldvalue"></a>  CDaoRecordset:: GetFieldValue
+##  <a name="getfieldvalue"></a>CDaoRecordset:: GetFieldValue
 
-Rufen Sie diese Memberfunktion zum Abrufen von Daten in einem Recordset.
+Rufen Sie diese Member-Funktion auf, um Daten in einem Recordset abzurufen.
 
 ```
 virtual void GetFieldValue(
@@ -1164,35 +1164,35 @@ virtual COleVariant GetFieldValue(int nIndex);
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
+*lpszname*<br/>
 Ein Zeiger auf eine Zeichenfolge, die den Namen eines Felds enthält.
 
 *varValue*<br/>
-Ein Verweis auf eine `COleVariant` -Objekt, das den Wert eines Felds gespeichert werden.
+Ein Verweis auf ein `COleVariant` Objekt, in dem der Wert eines Felds gespeichert wird.
 
 *nIndex*<br/>
-Ein nullbasierter Index des Felds in die Recordset Fields-Sammlung, für die Suche nach Index.
+Ein NULL basierter Index des Felds in der Fields-Auflistung des Recordsets für die Suche nach Index.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die beiden Versionen des `GetFieldValue` , die einen Wert zurückgeben Zurückgeben einer [COleVariant](../../mfc/reference/colevariant-class.md) -Objekt, das den Wert eines Felds enthält.
+In den beiden Versionen von `GetFieldValue`, die einen Wert zurückgeben, wird ein [COleVariant](../../mfc/reference/colevariant-class.md) -Objekt zurückgegeben, das den Wert eines Felds enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können ein Feld nach Name oder Ordnungsposition nachschlagen.
+Sie können ein Feld nach Name oder Ordinalposition suchen.
 
 > [!NOTE]
->  Es ist effizienter, rufen Sie eine der Versionen von dieser Memberfunktion, ein `COleVariant` Objektverweis als Parameter, anstatt eine Version, die gibt Aufrufen einer `COleVariant` Objekt. Die letzten Versionen dieser Funktion werden für die Abwärtskompatibilität beibehalten.
+>  Es ist effizienter, eine der Versionen dieser Member-Funktion aufzurufen, die einen `COleVariant` Objekt Verweis als Parameter annimmt, anstatt eine Version aufzurufen, die ein `COleVariant` Objekt zurückgibt. Die letztgenannten Versionen dieser Funktion werden aus Gründen der Abwärtskompatibilität beibehalten.
 
-Verwendung `GetFieldValue` und [SetFieldValue](#setfieldvalue) Sie Felder zur Laufzeit statt statisch zu binden von Spalten mit dynamisch binden die [DoFieldExchange](#dofieldexchange) Mechanismus.
+Verwenden Sie `GetFieldValue` und [SetFieldValue](#setfieldvalue) , um Felder zur Laufzeit dynamisch zu binden, anstatt Spalten mit dem [DoFieldExchange](#dofieldexchange) -Mechanismus statisch zu binden.
 
-`GetFieldValue` und die `DoFieldExchange` Mechanismus kann kombiniert werden, um die Leistung zu verbessern. Verwenden Sie z. B. `GetFieldValue` zum Abrufen eines Werts, die Sie bei Bedarf nur benötigen, und weisen Sie diesen Aufruf auf eine Schaltfläche "Weitere Informationen" in der Schnittstelle.
+`GetFieldValue` und die `DoFieldExchange` Mechanismus können kombiniert werden, um die Leistung zu verbessern. Verwenden Sie `GetFieldValue` z. b., um einen Wert abzurufen, den Sie nur bei Bedarf benötigen, und weisen Sie den Aufruf einer Schaltfläche "Weitere Informationen" in der-Schnittstelle zu.
 
-Weitere Informationen finden Sie unter den Themen "Field-Objekt" und "Value-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Field Object" und "Value property" in der DAO-Hilfe.
 
-##  <a name="getindexcount"></a>  CDaoRecordset::GetIndexCount
+##  <a name="getindexcount"></a>CDaoRecordset:: GetIndexCount
 
-Rufen Sie diese Memberfunktion zum Ermitteln der Anzahl von Indizes, die auf das Recordset Tabellentyp verfügbar.
+Mit dieser Member-Funktion können Sie die Anzahl der Indizes ermitteln, die für den Tabellentyp-Recordset verfügbar sind.
 
 ```
 short GetIndexCount();
@@ -1200,17 +1200,17 @@ short GetIndexCount();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Indizes im Recordset Tabellentyp.
+Die Anzahl der Indizes im Recordset des Tabellentyps.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetIndexCount` eignet sich für alle Indizes in das Recordset durchlaufen. Verwenden Sie zu diesem Zweck `GetIndexCount` in Verbindung mit [GetIndexInfo](#getindexinfo). Wenn Sie diese Memberfunktion auf Dynaset oder Recordsets vom Typ Snapshot aufrufen, löst MFC eine Ausnahme aus.
+`GetIndexCount` ist nützlich für die durch Schleife aller Indizes im Recordset. Verwenden Sie zu diesem Zweck `GetIndexCount` in Verbindung mit [getIndexInfo](#getindexinfo). Wenn Sie diese Member-Funktion für den Dynaset-Type-oder den Snapshot-Typ-Recordsets aufzurufen, löst MFC eine Ausnahme aus.
 
-Verwandte Informationen finden Sie im Thema "Attributes-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Attribute-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getindexinfo"></a>  CDaoRecordset::GetIndexInfo
+##  <a name="getindexinfo"></a>CDaoRecordset:: getIndexInfo
 
-Rufen Sie diese Memberfunktion zum Abrufen von verschiedenen Arten von Informationen zu einem Index in der Basistabelle, die zugrunde liegende ein Recordset definiert.
+Mit dieser Member-Funktion können Sie verschiedene Arten von Informationen über einen Index abrufen, der in der Basistabelle definiert ist, die einem Recordset zugrunde liegt.
 
 ```
 void GetIndexInfo(
@@ -1227,34 +1227,34 @@ void GetIndexInfo(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der nullbasierte Index in der Tabelle Indizes-Auflistung, für die Suche nach numerischen Position.
+Der null basierte Index in der Index Auflistung der Tabelle für die Suche nach numerischer Position.
 
-*indexinfo*<br/>
-Ein Verweis auf eine [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) Struktur.
+*indexInfo*<br/>
+Ein Verweis auf eine [cdaoindexinfo](../../mfc/reference/cdaoindexinfo-structure.md) -Struktur.
 
-*dwInfoOptions*<br/>
-Optionen, die angeben, welche Informationen über den Index abrufen. Die verfügbaren Optionen werden hier aufgeführt, zusammen mit der sie die Funktion zurückgibt verursachen. Rufen Sie für eine optimale Leistung nur die Ebene der benötigten Informationen ein:
+*dwinfooptions*<br/>
+Optionen, die angeben, welche Informationen über den Index abgerufen werden sollen. Die verfügbaren Optionen werden hier zusammen mit den Funktionen aufgelistet, die die Funktion zurückgibt. Um eine optimale Leistung zu erzielen, rufen Sie nur die Ebene der benötigten Informationen ab:
 
-- `AFX_DAO_PRIMARY_INFO` (Standard) Name, Feldinformationen, Felder
+- `AFX_DAO_PRIMARY_INFO` (Standard) Name, Feld Info, Felder
 
-- `AFX_DAO_SECONDARY_INFO` Primäre Informationen plus: Primary, Unique, Clustered, IgnoreNulls, Required, Foreign
+- `AFX_DAO_SECONDARY_INFO` primäre Informationen, plus: Primary, Unique, Clustered, ignorkoulls, required, Foreign
 
-- `AFX_DAO_ALL_INFO` Informationen zu primären und sekundären plus: Distinct Count
+- `AFX_DAO_ALL_INFO` primäre und sekundäre Informationen Plus: unterschiedliche Anzahl
 
-*Wert*<br/>
-Ein Zeiger auf den Namen des Index-Objekt, für die Suche anhand des Namens.
+*lpszname*<br/>
+Ein Zeiger auf den Namen des Index Objekts für die Suche nach Namen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Version der Funktion können Sie einen Index nach seiner Position in der Auflistung gesucht. Die andere Version können Sie einen Index nach Namen suchen.
+Eine Version der-Funktion ermöglicht es Ihnen, einen Index nach seiner Position in der Auflistung zu suchen. Mit der anderen Version können Sie einen Index nach Namen suchen.
 
-Eine Beschreibung der zurückgegebenen Informationen finden Sie in der [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) Struktur. Diese Struktur hat Member, die die Elemente in der Beschreibung der oben aufgeführten Informationen entsprechen *DwInfoOptions*. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen für alle vorherigen Ebenen sowie an.
+Eine Beschreibung der zurückgegebenen Informationen finden Sie in der [cdaoindexinfo](../../mfc/reference/cdaoindexinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den in der Beschreibung von *dwinfooptions*aufgeführten Elementen der oben aufgeführten Informationen entsprechen. Wenn Sie die Informationen auf einer Ebene anfordern, erhalten Sie Informationen für alle vorherigen Ebenen sowie an.
 
-Verwandte Informationen finden Sie im Thema "Attributes-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Attribute-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getlastmodifiedbookmark"></a>  CDaoRecordset::GetLastModifiedBookmark
+##  <a name="getlastmodifiedbookmark"></a>CDaoRecordset:: getlastmodifiedbookmark
 
-Rufen Sie diese Memberfunktion, um das Lesezeichen des Datensatzes die zuletzt hinzugefügte oder aktualisierte abzurufen.
+Rufen Sie diese Member-Funktion auf, um das Lesezeichen des zuletzt hinzugefügten oder aktualisierten Datensatzes abzurufen.
 
 ```
 COleVariant GetLastModifiedBookmark();
@@ -1262,19 +1262,19 @@ COleVariant GetLastModifiedBookmark();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `COleVariant` hinzugefügten oder geänderten Datensatz mit einem Lesezeichen, das die zuletzt angibt.
+Ein `COleVariant` mit einem Lesezeichen, das den zuletzt hinzugefügten oder geänderten Datensatz angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei einem Recordset-Objekt erstellt oder geöffnet wird, hat jeder Datensatz bereits ein eindeutiges Lesezeichen, wenn es unterstützt. Rufen Sie [GetBookmark](#getbookmark) zu bestimmen, ob das Recordset Lesezeichen unterstützt. Wenn das Recordset keine Lesezeichen unterstützt eine `CDaoException` ausgelöst.
+Wenn ein Recordset-Objekt erstellt oder geöffnet wird, verfügt jeder seiner Datensätze bereits über ein eindeutiges Lesezeichen, wenn es diese unterstützt. [GetBookmark](#getbookmark) aufrufen, um zu bestimmen, ob das Recordset Lesezeichen unterstützt. Wenn das Recordset keine Lesezeichen unterstützt, wird eine `CDaoException` ausgelöst.
 
-Wenn Sie einen Eintrag hinzufügen, am Ende des Recordset-Objekts angezeigt wird, und ist nicht der aktuelle Datensatz. Um den neuen Datensatz aktualisieren, rufen Sie `GetLastModifiedBookmark` und rufen dann `SetBookmark` auf den neu hinzugefügten Datensatz zurückgegeben.
+Wenn Sie einen Datensatz hinzufügen, wird er am Ende des Recordsets angezeigt, und ist nicht der aktuelle Datensatz. Um den neuen Datensatz aktuell zu machen, müssen Sie `GetLastModifiedBookmark` und dann `SetBookmark` aufzurufen, um zum neu hinzugefügten Datensatz zurückzukehren.
 
-Verwandte Informationen finden Sie im Thema "LastModified-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "LastModified-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getlockingmode"></a>  CDaoRecordset::GetLockingMode
+##  <a name="getlockingmode"></a>CDaoRecordset:: getlockingmode
 
-Rufen Sie diese Memberfunktion, um die Sperrung an für das Recordset zu bestimmen.
+Mit dieser Member-Funktion können Sie den Typ der Sperre ermitteln, die für das Recordset wirksam ist.
 
 ```
 BOOL GetLockingMode();
@@ -1282,21 +1282,21 @@ BOOL GetLockingMode();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn der Typ der Sperre pessimistische, ist für vollständige datensatzsperrung andernfalls 0.
+Ungleich 0 (null), wenn der Sperrentyp pessimistisch ist, andernfalls 0 für die vollständige Sperrung von Datensätzen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn pessimistische Sperrung, gilt die Datenseite mit dem Datensatz, die Sie bearbeiten, ist gesperrt, sobald Sie aufrufen, die [bearbeiten](#edit) Member-Funktion. Die Seite ist nicht gesperrt, beim Aufrufen der [Update](#update) oder [schließen](#close) Memberfunktion oder einer der Vorgänge verschieben oder suchen.
+Wenn die pessimistische Sperrung wirksam ist, wird die Datenseite mit dem zu bearbeitenden Datensatz gesperrt, sobald Sie die [Edit](#edit) Member-Funktion aufgerufen haben. Die Seite wird entsperrt, wenn Sie die Funktion " [Update](#update) " oder " [Close](#close) Member" oder einen der Verschiebungs-oder Suchvorgänge aufzurufen.
 
-Bei der optimistischen Sperre wird verwendet, ist die Datenseite mit dem Datensatz gesperrt, nur verwendet werden, während der Aktualisierung des Datensatzes mit der `Update` Member-Funktion.
+Wenn die optimistische Sperre wirksam ist, wird die Datenseite, die den Datensatz enthält, nur gesperrt, während der Datensatz mit der `Update` Member-Funktion aktualisiert wird.
 
-Der Sperrmodus ist immer optimistische, bei der Arbeit mit ODBC-Datenquellen.
+Beim Arbeiten mit ODBC-Datenquellen ist der Sperrmodus immer vollständig.
 
-Weitere Informationen finden Sie unter den Themen "Sperren Property" und "Sperren Verhalten in mehreren Benutzern Anwendungen" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "LockEdits-Eigenschaft" und "Sperr Verhalten in mehr Benutzer Anwendungen" in der DAO-Hilfe.
 
-##  <a name="getname"></a>  CDaoRecordset::GetName
+##  <a name="getname"></a>CDaoRecordset:: GetName
 
-Rufen Sie diese Memberfunktion auf den Namen des Recordset-Objekts abrufen.
+Rufen Sie diese Member-Funktion auf, um den Namen des Recordsets abzurufen.
 
 ```
 CString GetName();
@@ -1304,17 +1304,17 @@ CString GetName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` mit dem Namen des Recordset-Objekts.
+Ein-`CString`, der den Namen des Recordsets enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Name des Recordset-Objekts muss mit einem Buchstaben beginnen und darf maximal 40 Zeichen enthalten. Er kann Zahlen enthalten und Unterstrich-Zeichen, aber keine Interpunktionszeichen oder Leerzeichen enthalten.
+Der Name des Recordsets muss mit einem Buchstaben beginnen und darf maximal 40 Zeichen enthalten. Sie kann Zahlen und Unterstriche enthalten, darf jedoch keine Interpunktions Zeichen oder Leerzeichen enthalten.
 
 Verwandte Informationen finden Sie im Thema "Name-Eigenschaft" in-DAO-Hilfe.
 
-##  <a name="getparamvalue"></a>  CDaoRecordset::GetParamValue
+##  <a name="getparamvalue"></a>CDaoRecordset:: GetParamValue
 
-Rufen Sie diese Memberfunktion zum Abrufen von des aktuellen Wert des angegebenen Parameters in der zugrunde liegenden DAOParameter-Objekt gespeichert.
+Rufen Sie diese Member-Funktion auf, um den aktuellen Wert des angegebenen Parameters abzurufen, der im zugrunde liegenden daoparameter-Objekt gespeichert ist.
 
 ```
 virtual COleVariant GetParamValue(int nIndex);
@@ -1324,24 +1324,24 @@ virtual COleVariant GetParamValue(LPCTSTR lpszName);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Die numerische Position des Parameters in der zugrunde liegenden DAOParameter-Objekt.
+Die numerische Position des Parameters im zugrunde liegenden daoparameter-Objekt.
 
-*Wert*<br/>
-Der Name des Parameters, dessen Wert soll.
+*lpszname*<br/>
+Der Name des Parameters, dessen Wert Sie möchten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Objekt der Klasse [COleVariant](../../mfc/reference/colevariant-class.md) , die den Wert des Parameters enthält.
+Ein Objekt der Klasse [COleVariant](../../mfc/reference/colevariant-class.md) , das den Wert des Parameters enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können die Parameter nach Namen oder durch die numerische Position in der Auflistung zugreifen.
+Sie können auf den Parameter entweder über den Namen oder seine numerische Position in der Auflistung zugreifen.
 
-Verwandte Informationen finden Sie im Thema "Parameterobjekt" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Parameter Objekt" in der DAO-Hilfe.
 
-##  <a name="getpercentposition"></a>  CDaoRecordset:: GetPercentPosition
+##  <a name="getpercentposition"></a>CDaoRecordset:: getprozentuposition
 
-Beim Arbeiten mit einer Dynaset oder Snapshot-Type-Recordset, wenn Sie aufrufen `GetPercentPosition` vor dem vollständig auffüllen das Recordset, datenverschiebung ist relativ zur Anzahl der Datensätze zugegriffen wird, wie durch Aufrufen von [GetRecordCount](#getrecordcount).
+Wenn Sie bei der Arbeit mit einem Recordset vom Typ Dynaset-Type oder Snapshot-Type `GetPercentPosition` aufrufen, bevor das Recordset vollständig aufgefüllt wird, ist der Verschiebungs Aufwand relativ zur Anzahl der Datensätze, auf die wie durch Aufrufen von [GetRecordCount](#getrecordcount)zugegriffen wird.
 
 ```
 float GetPercentPosition();
@@ -1349,19 +1349,19 @@ float GetPercentPosition();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Zahl zwischen 0 und 100, die die ungefähre Position des aktuellen Datensatzes in die Recordset-Objekt, das basierend auf dem Prozentsatz der Datensätze im Recordset angibt.
+Eine Zahl zwischen 0 und 100, die den ungefähren Speicherort des aktuellen Datensatzes im Recordset-Objekt basierend auf einem Prozentsatz der Datensätze im Recordset angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können bis zum letzten Datensatz verschieben durch Aufrufen von [MoveLast](#movelast) , vollständige die Auffüllung des Recordsets, aber dies dauert eine längere Zeitspanne.
+Sie können zum letzten Datensatz wechseln, indem Sie [MoveLast](#movelast) aufrufen, um die Auffüllung aller Recordsets abzuschließen. Dies kann jedoch eine beträchtliche Zeit in Anspruch nehmen.
 
-Rufen Sie `GetPercentPosition` auf alle drei Typen von Recordset-Objekte, einschließlich der Tabellen ohne Indizes. Rufen Sie jedoch nicht möglich `GetPercentPosition` auf Vorwärtscursor Bildlauf Momentaufnahmen oder auf einem Recordset nach einer Pass-Through-Abfrage einer externen Datenbank geöffnet. Wenn kein aktueller Datensatz vorhanden ist, oder seine aktuellen Datensatz gelöscht wurde, eine `CDaoException` ausgelöst.
+Sie können `GetPercentPosition` für alle drei Typen von Recordset-Objekten, einschließlich Tabellen ohne Indizes, abrufen. Es ist jedoch nicht möglich, `GetPercentPosition` für vorwärts scrollmomentaufnahmen oder für ein Recordset, das von einer Pass-Through-Abfrage für eine externe Datenbank geöffnet wurde, aufzurufen. Wenn kein aktueller Datensatz vorhanden ist oder der aktuelle Datensatz gelöscht wurde, wird eine `CDaoException` ausgelöst.
 
-Verwandte Informationen finden Sie im Thema "PercentPosition-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "prozentualpositions Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getrecordcount"></a>  CDaoRecordset::GetRecordCount
+##  <a name="getrecordcount"></a>CDaoRecordset:: GetRecordCount
 
-Rufen Sie diese Memberfunktion, um herauszufinden, wie viele Datensätze in einem Recordset zugegriffen wurde.
+Mit dieser Member-Funktion können Sie feststellen, wie viele Datensätze in einem Recordset aufgerufen wurden.
 
 ```
 long GetRecordCount();
@@ -1369,27 +1369,27 @@ long GetRecordCount();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der Datensätze, die auf die in einem Recordset-Objekt zurück.
+Gibt die Anzahl der Datensätze zurück, auf die in einem Recordsetobjekt zugegriffen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetRecordCount` Gibt nicht an wie viele Datensätze in einem Dynaset-Typ oder die Momentaufnahme vom Typ enthalten sind, bis alle Datensätze zugegriffen wurde. Dieser Aufruf der Memberfunktion kann sehr viel Zeit in Anspruch in Anspruch nehmen.
+`GetRecordCount` gibt nicht an, wie viele Datensätze in einem Recordset vom Typ "Dynaset-Type" oder "Snapshot-Type" enthalten sind, bis auf alle Datensätze zugegriffen wurde. Dieser Member-Funktionsaufruf kann eine beträchtliche Zeit in Anspruch nehmen.
 
-Nachdem der letzte Datensatz zugegriffen wurde, gibt der zurückgegebene Wert die Gesamtzahl nicht gelöschte Datensätze im Recordset an. Um Zugriff auf den letzten Datensatz zu erzwingen, rufen die `MoveLast` oder `FindLast` -Memberfunktion des Recordsets. Sie können auch eine SQL-Anzahl verwenden, um die ungefähre Anzahl der Datensätze zu ermitteln, die die Abfrage zurückgeben wird.
+Nachdem auf den letzten Datensatz zugegriffen wurde, gibt der Rückgabewert die Gesamtzahl der nicht gelöschten Datensätze im Recordset an. Um den Zugriff auf den letzten Datensatz zu erzwingen, müssen Sie die `MoveLast`-oder `FindLast` Member-Funktion für das Recordset aufrufen. Sie können auch eine SQL-Anzahl verwenden, um die ungefähre Anzahl von Datensätzen zu bestimmen, die von der Abfrage zurückgegeben werden.
 
-Wenn Ihre Anwendung Daten in einem Recordset Dynaset-Typ, der Rückgabewert von löscht `GetRecordCount` verringert wird. Von anderen Benutzern gelöschten Datensätze werden jedoch nicht widergespiegelt, indem `GetRecordCount` bis der aktuelle Datensatz mit einem gelöschten Datensatz positioniert ist. Wenn Sie die Ausführung einer Transaktion, die die Anzahl der Datensätze wirkt sich auf und anschließend ein der Transaktion Rollback `GetRecordCount` spiegeln nicht die tatsächliche Anzahl der verbleibenden Datensätze.
+Wenn Ihre Anwendung Datensätze in einem Recordset vom Typ Dynaset löscht, sinkt der Rückgabewert `GetRecordCount`. Datensätze, die von anderen Benutzern gelöscht werden, werden jedoch nicht durch `GetRecordCount` reflektiert, bis der aktuelle Datensatz in einem gelöschten Datensatz positioniert ist. Wenn Sie eine Transaktion ausführen, die sich auf die Anzahl der Datensätze auswirkt, und dann ein Rollback der Transaktion ausführen, wird `GetRecordCount` nicht die tatsächliche Anzahl der verbleibenden Datensätze widerspiegeln
 
-Der Wert des `GetRecordCount` aus einem Recordset-Momentaufnahme-Typ wird durch Änderungen an den zugrunde liegenden Tabellen nicht beeinflusst.
+Der Wert `GetRecordCount` aus einem Recordset vom Typ "Snapshot" ist nicht von Änderungen in den zugrunde liegenden Tabellen betroffen.
 
-Der Wert des `GetRecordCount` aus einen Tabellentyp Recordset gibt die ungefähre Anzahl der Datensätze in der Tabelle, und wird sofort beeinflusst, wie Datensätze hinzugefügt und gelöscht werden.
+Der Wert `GetRecordCount` aus einem Recordset des Tabellentyps gibt die ungefähre Anzahl von Datensätzen in der Tabelle wieder und wird sofort beeinträchtigt, wenn Tabellendaten Sätze hinzugefügt und gelöscht werden.
 
-Ein Recordset mit keine Datensätze gibt den Wert 0 zurück. Bei der Arbeit mit angefügten Tabellen oder ODBC-Datenbanken, `GetRecordCount` immer - 1 zurückgegeben. Aufrufen der `Requery` Member-Funktion auf einem Recordset setzt den Wert der `GetRecordCount` als ob die Abfrage erneut ausgeführt wurden.
+Ein Recordset ohne Datensätze gibt den Wert 0 (null) zurück. Beim Arbeiten mit angefügten Tabellen oder ODBC-Datenbanken gibt `GetRecordCount` immer-1 zurück. Wenn Sie die `Requery` Member-Funktion für ein Recordset aufrufen, wird der Wert von `GetRecordCount` so zurückgesetzt, als ob die Abfrage erneut ausgeführt würde.
 
-Weitere Informationen finden Sie unter dem Thema "RecordCount-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "RecordCount-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="getsql"></a>  CDaoRecordset::GetSQL
+##  <a name="getsql"></a>CDaoRecordset:: gezql
 
-Rufen Sie diese Memberfunktion rufen Sie die SQL-Anweisung, die verwendet wurde, des Recordsets Datensätze auswählen, wenn sie geöffnet wurde.
+Mit dieser Member-Funktion können Sie die SQL-Anweisung abrufen, die zum Auswählen der Datensätze des Recordsets beim Öffnen verwendet wurde.
 
 ```
 CString GetSQL() const;
@@ -1397,22 +1397,22 @@ CString GetSQL() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` , die die SQL-Anweisung enthält.
+Eine `CString`, die die SQL-Anweisung enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese werden in der Regel eine SQL **wählen** Anweisung.
+Dabei handelt es sich im Allgemeinen um eine SQL- **Select** -Anweisung.
 
-Die Zeichenfolge, die vom `GetSQL` unterscheidet sich in der Regel von einer beliebigen Zeichenfolge, die Sie möglicherweise haben an, dass das Recordset in die *LpszSQL* Parameter, um die [öffnen](#open) Member-Funktion. Dies ist, da das Recordset eine vollständige SQL-Anweisung, die basierend erstellt auf der Sie übergeben `Open`, was Sie mit der Klassen-Assistenten angegeben haben. und was Sie in angegeben haben möglicherweise die [M_strFilter](#m_strfilter) und [M_strSort](#m_strsort) Datenmember.
+Die von `GetSQL` zurückgegebene Zeichenfolge unterscheidet sich in der Regel von einer beliebigen Zeichenfolge, die Sie möglicherweise an das Recordset im *lpszSQL* -Parameter an die [Open](#open) Member-Funktion übergeben haben. Der Grund hierfür ist, dass das Recordset eine vollständige SQL-Anweisung erstellt, basierend auf dem, das Sie an `Open`weitergegeben haben, was Sie mit ClassWizard angegeben haben und was Sie möglicherweise in den [m_strFilter](#m_strfilter) und [m_strSort](#m_strsort) Datenmembern angegeben haben.
 
 > [!NOTE]
->  Rufen Sie nur nach dem Aufruf dieser Memberfunktion `Open`.
+>  Diese Member-Funktion nur aufrufen, nachdem `Open`aufgerufen wurde.
 
-Weitere Informationen finden Sie unter dem Thema "SQL-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "SQL-Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="gettype"></a>  CDaoRecordset::GetType
+##  <a name="gettype"></a>CDaoRecordset:: GetType
 
-Aufgerufen Sie diese Memberfunktion wird nach Öffnen des Recordsets, um zu bestimmen, den Typ des Recordset-Objekts.
+Diese Member-Funktion wird nach dem Öffnen des Recordsets aufgerufen, um den Typ des Recordset-Objekts zu bestimmen.
 
 ```
 short GetType();
@@ -1420,21 +1420,21 @@ short GetType();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine der folgenden Werte, der den Typ eines Recordsets angibt:
+Einer der folgenden Werte, der den Typ eines Recordsets angibt:
 
-- `dbOpenTable` Recordset vom Typ Tabelle
+- `dbOpenTable` Tabellentyp-Recordset
 
-- `dbOpenDynaset` Vom Typ Dynaset
+- `dbOpenDynaset` Dynaset-Recordset-Typ
 
-- `dbOpenSnapshot` Recordset-Momentaufnahme vom Typ
+- `dbOpenSnapshot` Recordset vom Typ "Snapshot"
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwandte Informationen finden Sie im Thema "Type-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Type Property" in der DAO-Hilfe.
 
-##  <a name="getvalidationrule"></a>  CDaoRecordset::GetValidationRule
+##  <a name="getvalidationrule"></a>CDaoRecordset:: getvalidationrule
 
-Rufen Sie diese Memberfunktion, um zu bestimmen, die Regel verwendet, um Daten zu überprüfen.
+Mit dieser Member-Funktion können Sie die Regel ermitteln, mit der Daten überprüft werden.
 
 ```
 CString GetValidationRule();
@@ -1442,19 +1442,19 @@ CString GetValidationRule();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` -Objekt, das einen Wert, der die Daten in einem Datensatz überprüft werden, da sie einer Tabelle hinzugefügt, geändert oder enthält.
+Ein `CString`-Objekt, das einen Wert enthält, der die Daten in einem Datensatz überprüft, wenn er geändert oder einer Tabelle hinzugefügt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Regel textbasiert ist und angewendet wird jedes Mal, wenn die zugrunde liegende Tabelle geändert wird. Wenn die Daten nicht zulässig ist, löst MFC eine Ausnahme aus. Die zurückgegebene Fehlermeldung lautet der Text der ValidationText-Eigenschaft des zugrunde liegenden Field-Objekt, wenn angegeben, oder den Text des Ausdrucks durch die ValidationRule-Eigenschaft des zugrunde liegenden Field-Objekt. Rufen Sie [GetValidationText](#getvalidationtext) zum Abrufen des Texts der Fehlermeldung.
+Diese Regel ist Text basiert und wird jedes Mal angewendet, wenn die zugrunde liegende Tabelle geändert wird. Wenn die Daten nicht zulässig sind, löst MFC eine Ausnahme aus. Die zurückgegebene Fehlermeldung ist der Text der ValidationText-Eigenschaft des zugrunde liegenden Feld Objekts, falls angegeben, oder der Text des Ausdrucks, der durch die ValidationRule-Eigenschaft des zugrunde liegenden Field-Objekts angegeben wird. Sie können [getvalidationtext](#getvalidationtext) aufrufen, um den Text der Fehlermeldung zu erhalten.
 
-Z. B. ein Feld in einem Datensatz, der den Tag des Monats erfordert möglicherweise eine Validierungsregel wie z. B. "Tag zwischen 1 und 31."
+Beispielsweise kann ein Feld in einem Datensatz, das den Tag des Monats erfordert, über eine Validierungs Regel verfügen, z. b. "Tag zwischen 1 und 31".
 
-Verwandte Informationen finden Sie im Thema "ValidationRule-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "ValidationRule Property" in der DAO-Hilfe.
 
-##  <a name="getvalidationtext"></a>  CDaoRecordset::GetValidationText
+##  <a name="getvalidationtext"></a>CDaoRecordset:: getvalidationtext
 
-Rufen Sie diese Memberfunktion zum Abrufen des Texts der ValidationText-Eigenschaft des zugrunde liegenden Field-Objekt.
+Rufen Sie diese Member-Funktion auf, um den Text der ValidationText-Eigenschaft des zugrunde liegenden Field-Objekts abzurufen.
 
 ```
 CString GetValidationText();
@@ -1462,15 +1462,15 @@ CString GetValidationText();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` Objekt mit dem Text der Nachricht, die angezeigt wird, wenn der Wert eines Felds Überprüfungsregel für das zugrunde liegende Feldobjekt nicht erfüllt.
+Ein `CString`-Objekt, das den Text der Meldung enthält, die angezeigt wird, wenn der Wert eines Felds die Validierungs Regel des zugrunde liegenden Feld Objekts nicht erfüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwandte Informationen finden Sie im Thema "ValidationText-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "ValidationText Property" in der DAO-Hilfe.
 
-##  <a name="isbof"></a>  CDaoRecordset::IsBOF
+##  <a name="isbof"></a>CDaoRecordset:: IsBOF
 
-Rufen Sie diese Memberfunktion auf, bevor Sie einen Bildlauf von Datensatz zu Datensatz darüber, ob Sie vor dem ersten Datensatz des Recordsets durchgeführt haben.
+Nennen Sie diese Member-Funktion, bevor Sie einen Bildlauf von Datensatz zu Datensatz durchführen, um zu erfahren, ob Sie vor dem ersten Datensatz des Recordsets gegangen sind.
 
 ```
 BOOL IsBOF() const;
@@ -1478,49 +1478,49 @@ BOOL IsBOF() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Recordset keine Datensätze enthält, oder wenn Sie kein Bildlauf rückwärts vor dem ersten Datensatz durchgeführt haben; andernfalls 0.
+Ungleich 0 (null), wenn das Recordset keine Datensätze enthält oder wenn Sie vor dem ersten Datensatz einen Rollup durchgeführt haben. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können auch aufrufen `IsBOF` zusammen mit `IsEOF` bestimmen, ob das Recordset keine Datensätze enthält oder leer ist. Unmittelbar nach dem Aufruf von `Open`, wenn keine Datensätze, das Recordset enthält `IsBOF` ungleich NULL zurückgibt. Beim Öffnen eines Recordsets, die mindestens ein Datensatz ist der erste Datensatz den aktuellen Datensatz und `IsBOF` gibt 0 zurück.
+Sie können auch `IsBOF` zusammen mit `IsEOF` aufzurufen, um zu bestimmen, ob das Recordset Datensätze enthält oder leer ist. Unmittelbar nachdem Sie `Open`aufgerufen haben und das Recordset keine Datensätze enthält, gibt `IsBOF` einen Wert ungleich 0 (null) zurück. Wenn Sie ein Recordset öffnen, das mindestens einen Datensatz enthält, ist der erste Datensatz der aktuelle Datensatz und `IsBOF` 0 zurück.
 
-Wenn der erste Datensatz der aktuelle Datensatz ist ein, und Sie rufen `MovePrev`, `IsBOF` anschließend ungleich NULL zurück. Wenn `IsBOF` ungleich Null gibt und Sie rufen `MovePrev`, wird eine Ausnahme ausgelöst. Wenn `IsBOF` ungleich NULL zurückgegeben wird, der aktuelle Datensatz nicht definiert ist, und jede Aktion, die einen aktuellen Datensatz erforderlich sind, führt zu einer Ausnahme.
+Wenn der erste Datensatz der aktuelle Datensatz ist und Sie `MovePrev`aufzurufen, wird `IsBOF` anschließend ungleich 0 (null) zurückgegeben. Wenn `IsBOF` einen Wert ungleich 0 (null) zurückgibt und `MovePrev`aufruft, wird eine Ausnahme ausgelöst. Wenn `IsBOF` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert, und jede Aktion, die einen aktuellen Datensatz erfordert, führt zu einer Ausnahme.
 
-Auswirkungen von bestimmten Methoden auf `IsBOF` und `IsEOF` Einstellungen:
+Auswirkung spezifischer Methoden auf `IsBOF` und `IsEOF` Einstellungen:
 
-- Aufrufen von `Open*` intern wird der erste Datensatz im Recordset des aktuellen Datensatzes durch Aufrufen von `MoveFirst`. Aus diesem Grund Aufrufen `Open` auf einen leeren Satz von Datensätzen Ursachen `IsBOF` und `IsEOF` ungleich NULL zurückgegeben. (Siehe die folgende Tabelle für das Verhalten einer fehlgeschlagenen `MoveFirst` oder `MoveLast` aufrufen.)
+- Durch den Aufruf von `Open*` wird der erste Datensatz im Recordset durch Aufrufen von `MoveFirst`intern zum aktuellen Datensatz. Aus diesem Grund bewirkt das Aufrufen von `Open` für einen leeren Satz von Datensätzen, dass `IsBOF` und `IsEOF` ungleich NULL zurückgeben. (In der folgenden Tabelle wird das Verhalten eines fehlgeschlagenen `MoveFirst` oder `MoveLast` Aufrufes angezeigt.)
 
-- Dazu führen, dass alle Move-Vorgänge, die einen Datensatz finden beide `IsBOF` und `IsEOF` 0 zurückgegeben.
+- Alle Verschiebe Vorgänge, die erfolgreich einen Datensatz finden, bewirken, dass sowohl `IsBOF` als auch `IsEOF` 0 zurückgeben.
 
-- Ein `AddNew` Aufruf, gefolgt von einer `Update` Aufruf, die erfolgreich einen neuen Datensatz einfügt bewirkt, dass `IsBOF` 0, jedoch nur, wenn zurückzugebende `IsEOF` bereits ungleich NULL ist. Der Status der `IsEOF` bleiben stets unverändert. Gemäß der Definition von der Microsoft Jet-Datenbank-Engine ist Zeiger für den aktuellen Datensatz der eine leere Datensatzgruppe am Ende einer Datei, damit alle neuen Datensätze nach den aktuellen Datensatz eingefügt wird.
+- Ein `AddNew`-Aufrufe, gefolgt von einem `Update`-Befehl, der einen neuen Datensatz erfolgreich einfügt, bewirkt, dass `IsBOF` 0 zurückgibt, jedoch nur, wenn `IsEOF` bereits ungleich NULL ist. Der Status `IsEOF` bleibt immer unverändert. Gemäß der Definition durch die Microsoft Jet-Datenbank-Engine befindet sich der aktuelle Daten Satz Zeiger eines leeren Recordsets am Ende einer Datei, sodass ein neuer Datensatz nach dem aktuellen Datensatz eingefügt wird.
 
-- Alle `Delete` Aufruf, auch wenn den letzte Datensatz aus einem Recordset, entfernt ändert sich nicht den Wert der `IsBOF` oder `IsEOF`.
+- Alle `Delete` Aufrufe, auch wenn der einzige verbleibende Datensatz aus einem Recordset entfernt wird, wird der Wert von `IsBOF` oder `IsEOF`nicht geändert.
 
-In dieser Tabelle sind die Move-Vorgänge zulässig sind, mit verschiedenen Kombinationen von `IsBOF` /  `IsEOF`.
+Diese Tabelle zeigt, welche Verschiebe Vorgänge mit unterschiedlichen Kombinationen von `IsBOF`/ `IsEOF`zulässig sind.
 
-||MoveFirst, MoveLast|MovePrev,<br /><br /> Verschieben Sie die < 0|Verschieben von 0|MoveNext,<br /><br /> Verschieben Sie die > 0|
+||"Muvefirst", "muvelast"|MovePrev<br /><br /> < 0 verschieben|0 verschieben|MoveNext<br /><br /> > 0 verschieben|
 |------|-------------------------|-----------------------------|------------|-----------------------------|
-|`IsBOF`= ungleich NULL ist,<br /><br /> `IsEOF`=0|Allowed|Ausnahme|Ausnahme|Allowed|
-|`IsBOF`=0,<br /><br /> `IsEOF`ungleich null =|Allowed|Allowed|Ausnahme|Ausnahme|
-|Beide ungleich null|Ausnahme|Ausnahme|Ausnahme|Ausnahme|
-|Beide 0|Allowed|Allowed|Allowed|Allowed|
+|`IsBOF`= ungleich 0 (null),<br /><br /> `IsEOF`=0|Zulässig|Ausnahme|Ausnahme|Zulässig|
+|`IsBOF`=0,<br /><br /> `IsEOF`= ungleich 0 (null)|Zulässig|Zulässig|Ausnahme|Ausnahme|
+|Beide Werte ungleich NULL|Ausnahme|Ausnahme|Ausnahme|Ausnahme|
+|Beide 0|Zulässig|Zulässig|Zulässig|Zulässig|
 
-Ermöglicht einen Verschiebevorgang bedeutet nicht, dass der Vorgang erfolgreich einen Datensatz findet. Es gibt lediglich an, dass ein Versuch, den angegebenen Vorgang durchzuführen, ist zulässig, und keine Ausnahme generiert. Der Wert des der `IsBOF` und `IsEOF` Memberfunktionen möglicherweise das Verschieben geändert.
+Das zulassen eines Verschiebungs Vorgangs bedeutet nicht, dass der Vorgang einen Datensatz erfolgreich findet. Sie gibt lediglich an, dass ein Versuch, den angegebenen Verschiebungs Vorgang auszuführen, zulässig ist und keine Ausnahme generiert. Der Wert der `IsBOF`-und `IsEOF` Member-Funktionen kann sich aufgrund des versuchten Verschiebens ändern.
 
-Die Auswirkungen der Verschiebevorgänge, die nicht auf dem Wert ein Datensatzes finden `IsBOF` und `IsEOF` Einstellungen in der folgenden Tabelle dargestellt wird.
+Die Auswirkung von Verschiebungs Vorgängen, die keinen Datensatz für den Wert `IsBOF` und `IsEOF` Einstellungen finden, ist in der folgenden Tabelle aufgeführt.
 
 ||IsBOF|IsEOF|
 |------|-----------|-----------|
-|`MoveFirst`, `MoveLast`|Nonzero|Nonzero|
+|`MoveFirst`, `MoveLast`|Ungleich NULL|Ungleich NULL|
 |`Move` 0|Keine Änderung|Keine Änderung|
-|`MovePrev`, `Move` < 0|Nonzero|Keine Änderung|
-|`MoveNext`, `Move` > 0|Keine Änderung|Nonzero|
+|`MovePrev`, `Move` < 0|Ungleich NULL|Keine Änderung|
+|`MoveNext`, `Move` > 0|Keine Änderung|Ungleich NULL|
 
-Weitere Informationen finden Sie im Thema "BOF, EOF-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "BOF-EOF-Eigenschaften" in der DAO-Hilfe.
 
-##  <a name="isdeleted"></a>  CDaoRecordset::IsDeleted
+##  <a name="isdeleted"></a>CDaoRecordset:: isDeleted
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob der aktuelle Datensatz gelöscht wurde.
+Mit dieser Member-Funktion können Sie ermitteln, ob der aktuelle Datensatz gelöscht wurde.
 
 ```
 BOOL IsDeleted() const;
@@ -1528,22 +1528,22 @@ BOOL IsDeleted() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn das Recordset auf einen gelöschten Datensatz positioniert ist; andernfalls 0.
+Ungleich 0 (null), wenn das Recordset auf einem gelöschten Datensatz positioniert ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie auf einen Datensatz scrollen und `IsDeleted` gibt "true" (ungleich null), und Sie müssen einen Bildlauf zu einem anderen Datensatz, bevor Sie alle anderen Recordset-Vorgänge ausführen können.
+Wenn Sie einen Bildlauf zu einem Datensatz ausführen und `IsDeleted` "true" (ungleich null) zurückgibt, müssen Sie einen Bildlauf zu einem anderen Datensatz ausführen, bevor Sie andere recordsetvorgänge ausführen können.
 
 > [!NOTE]
->  Sie müssen nicht den Status "gelöscht" für Daten in einem Recordset Momentaufnahme- oder eine Tabelle Typ zu überprüfen. Da Datensätze aus einer Momentaufnahme nicht gelöscht werden können, besteht keine Notwendigkeit zum Aufrufen `IsDeleted`. Recordsets vom Typ Tabelle werden gelöschte Datensätze tatsächlich aus dem Recordset entfernt. Sobald ein Datensatz, entweder von Ihnen, einen anderen Benutzer oder in einem anderen Recordset gelöscht wurde können nicht Sie wieder an diesen Datensatz scrollen. Daher besteht keine Notwendigkeit zum Aufrufen `IsDeleted`.
+>  Sie müssen den gelöschten Status für Datensätze in einer Momentaufnahme oder einem Recordset vom Typ "Table" nicht überprüfen. Da Datensätze nicht aus einer Momentaufnahme gelöscht werden können, ist es nicht erforderlich, `IsDeleted`aufzurufen. Bei Tabellentypen-Recordsets werden gelöschte Datensätze tatsächlich aus dem Recordset entfernt. Nachdem ein Datensatz gelöscht wurde (entweder von Ihnen, einem anderen Benutzer oder einem anderen Recordset), können Sie nicht zurück zu diesem Datensatz scrollen. Daher ist es nicht erforderlich, `IsDeleted`aufzurufen.
 
-Wenn Sie einen Datensatz aus einem Dynaset löschen, wird er aus dem Recordset entfernt, und Sie wieder an diesen Datensatz scrollen können nicht. Wenn ein Datensatz in ein Dynaset wird jedoch gelöscht, oder von einem anderen Benutzer als auch in einem anderen Recordset basierend auf der gleichen Tabelle `IsDeleted` gibt "true" zurück, wenn Sie später zu dieser Datensatz wechseln.
+Wenn Sie einen Datensatz aus einem Dynaset löschen, wird er aus dem Recordset entfernt, und Sie können keinen Bildlauf zurück zu diesem Datensatz durchführen. Wenn ein Datensatz in einem Dynaset jedoch entweder von einem anderen Benutzer oder in einem anderen Recordset basierend auf derselben Tabelle gelöscht wird, wird `IsDeleted` bei einem späteren Bildlauf zu diesem Datensatz true zurückgeben.
 
-Weitere Informationen finden Sie unter den Themen "-Methode Delete", "Eigenschaft" LastModified "und"EditMode-Eigenschaft"in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Delete Method", "LastModified Property" und "EditMode Property" in der DAO-Hilfe.
 
-##  <a name="iseof"></a>  CDaoRecordset::IsEOF
+##  <a name="iseof"></a>CDaoRecordset:: IsEOF
 
-Rufen Sie diese Memberfunktion auf, wie Sie einen Bildlauf von Datensatz zu Datensatz darüber, ob Sie den letzten Datensatz des Recordsets überschritten haben.
+Nennen Sie diese Member-Funktion, während Sie einen Bildlauf von Datensatz zu Datensatz durchführen, um zu erfahren, ob Sie den letzten Datensatz des Recordsets überschritten haben.
 
 ```
 BOOL IsEOF() const;
@@ -1551,49 +1551,49 @@ BOOL IsEOF() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Recordset keine Datensätze enthält, oder Sie hinter dem letzten Datensatz gescrollt haben; andernfalls 0.
+Ungleich 0 (null), wenn das Recordset keine Datensätze enthält oder wenn Sie einen Rollup über den letzten Datensatz ausgeführt haben. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können auch aufrufen `IsEOF` bestimmen, ob das Recordset keine Datensätze enthält oder leer ist. Unmittelbar nach dem Aufruf von `Open`, wenn keine Datensätze, das Recordset enthält `IsEOF` ungleich NULL zurückgibt. Beim Öffnen eines Recordsets, die mindestens ein Datensatz ist der erste Datensatz den aktuellen Datensatz und `IsEOF` gibt 0 zurück.
+Sie können auch `IsEOF` aufzurufen, um zu bestimmen, ob das Recordset Datensätze enthält oder leer ist. Unmittelbar nachdem Sie `Open`aufgerufen haben und das Recordset keine Datensätze enthält, gibt `IsEOF` einen Wert ungleich 0 (null) zurück. Wenn Sie ein Recordset öffnen, das mindestens einen Datensatz enthält, ist der erste Datensatz der aktuelle Datensatz und `IsEOF` 0 zurück.
 
-Wenn der letzte Datensatz beim Aufrufen des aktuellen Datensatzes ist `MoveNext`, `IsEOF` anschließend ungleich NULL zurück. Wenn `IsEOF` ungleich Null gibt und Sie rufen `MoveNext`, wird eine Ausnahme ausgelöst. Wenn `IsEOF` ungleich NULL zurückgegeben wird, der aktuelle Datensatz nicht definiert ist, und jede Aktion, die einen aktuellen Datensatz erforderlich sind, führt zu einer Ausnahme.
+Wenn der letzte Datensatz der aktuelle Datensatz ist, wenn Sie `MoveNext`aufgerufen haben, gibt `IsEOF` dann einen Wert ungleich 0 (null) zurück. Wenn `IsEOF` einen Wert ungleich 0 (null) zurückgibt und `MoveNext`aufruft, wird eine Ausnahme ausgelöst. Wenn `IsEOF` einen Wert ungleich 0 (null) zurückgibt, ist der aktuelle Datensatz nicht definiert, und jede Aktion, die einen aktuellen Datensatz erfordert, führt zu einer Ausnahme.
 
-Auswirkungen von bestimmten Methoden auf `IsBOF` und `IsEOF` Einstellungen:
+Auswirkung spezifischer Methoden auf `IsBOF` und `IsEOF` Einstellungen:
 
-- Aufrufen von `Open` intern wird der erste Datensatz im Recordset des aktuellen Datensatzes durch Aufrufen von `MoveFirst`. Aus diesem Grund Aufrufen `Open` auf einen leeren Satz von Datensätzen Ursachen `IsBOF` und `IsEOF` ungleich NULL zurückgegeben. (Siehe die folgende Tabelle für das Verhalten einer fehlgeschlagenen `MoveFirst` aufrufen.)
+- Durch den Aufruf von `Open` wird der erste Datensatz im Recordset durch Aufrufen von `MoveFirst`intern zum aktuellen Datensatz. Aus diesem Grund bewirkt das Aufrufen von `Open` für einen leeren Satz von Datensätzen, dass `IsBOF` und `IsEOF` ungleich NULL zurückgeben. (In der folgenden Tabelle wird das Verhalten eines fehlgeschlagenen `MoveFirst` Aufrufes angezeigt.)
 
-- Dazu führen, dass alle Move-Vorgänge, die einen Datensatz finden beide `IsBOF` und `IsEOF` 0 zurückgegeben.
+- Alle Verschiebe Vorgänge, die erfolgreich einen Datensatz finden, bewirken, dass sowohl `IsBOF` als auch `IsEOF` 0 zurückgeben.
 
-- Ein `AddNew` Aufruf, gefolgt von einer `Update` Aufruf, die erfolgreich einen neuen Datensatz einfügt bewirkt, dass `IsBOF` 0, jedoch nur, wenn zurückzugebende `IsEOF` bereits ungleich NULL ist. Der Status der `IsEOF` bleiben stets unverändert. Gemäß der Definition von der Microsoft Jet-Datenbank-Engine ist Zeiger für den aktuellen Datensatz der eine leere Datensatzgruppe am Ende einer Datei, damit alle neuen Datensätze nach den aktuellen Datensatz eingefügt wird.
+- Ein `AddNew`-Aufrufe, gefolgt von einem `Update`-Befehl, der einen neuen Datensatz erfolgreich einfügt, bewirkt, dass `IsBOF` 0 zurückgibt, jedoch nur, wenn `IsEOF` bereits ungleich NULL ist. Der Status `IsEOF` bleibt immer unverändert. Gemäß der Definition durch die Microsoft Jet-Datenbank-Engine befindet sich der aktuelle Daten Satz Zeiger eines leeren Recordsets am Ende einer Datei, sodass ein neuer Datensatz nach dem aktuellen Datensatz eingefügt wird.
 
-- Alle `Delete` Aufruf, auch wenn den letzte Datensatz aus einem Recordset, entfernt ändert sich nicht den Wert der `IsBOF` oder `IsEOF`.
+- Alle `Delete` Aufrufe, auch wenn der einzige verbleibende Datensatz aus einem Recordset entfernt wird, wird der Wert von `IsBOF` oder `IsEOF`nicht geändert.
 
-In dieser Tabelle sind die Move-Vorgänge zulässig sind, mit verschiedenen Kombinationen von `IsBOF` /  `IsEOF`.
+Diese Tabelle zeigt, welche Verschiebe Vorgänge mit unterschiedlichen Kombinationen von `IsBOF`/ `IsEOF`zulässig sind.
 
-||MoveFirst, MoveLast|MovePrev,<br /><br /> Verschieben Sie die < 0|Verschieben von 0|MoveNext,<br /><br /> Verschieben Sie die > 0|
+||"Muvefirst", "muvelast"|MovePrev<br /><br /> < 0 verschieben|0 verschieben|MoveNext<br /><br /> > 0 verschieben|
 |------|-------------------------|-----------------------------|------------|-----------------------------|
-|`IsBOF`= ungleich NULL ist,<br /><br /> `IsEOF`=0|Allowed|Ausnahme|Ausnahme|Allowed|
-|`IsBOF`=0,<br /><br /> `IsEOF`ungleich null =|Allowed|Allowed|Ausnahme|Ausnahme|
-|Beide ungleich null|Ausnahme|Ausnahme|Ausnahme|Ausnahme|
-|Beide 0|Allowed|Allowed|Allowed|Allowed|
+|`IsBOF`= ungleich 0 (null),<br /><br /> `IsEOF`=0|Zulässig|Ausnahme|Ausnahme|Zulässig|
+|`IsBOF`=0,<br /><br /> `IsEOF`= ungleich 0 (null)|Zulässig|Zulässig|Ausnahme|Ausnahme|
+|Beide Werte ungleich NULL|Ausnahme|Ausnahme|Ausnahme|Ausnahme|
+|Beide 0|Zulässig|Zulässig|Zulässig|Zulässig|
 
-Ermöglicht einen Verschiebevorgang bedeutet nicht, dass der Vorgang erfolgreich einen Datensatz findet. Es gibt lediglich an, dass ein Versuch, den angegebenen Vorgang durchzuführen, ist zulässig, und keine Ausnahme generiert. Der Wert des der `IsBOF` und `IsEOF` Memberfunktionen möglicherweise das Verschieben geändert.
+Das zulassen eines Verschiebungs Vorgangs bedeutet nicht, dass der Vorgang einen Datensatz erfolgreich findet. Sie gibt lediglich an, dass ein Versuch, den angegebenen Verschiebungs Vorgang auszuführen, zulässig ist und keine Ausnahme generiert. Der Wert der `IsBOF`-und `IsEOF` Member-Funktionen kann sich aufgrund des versuchten Verschiebens ändern.
 
-Die Auswirkungen der Verschiebevorgänge, die nicht auf dem Wert ein Datensatzes finden `IsBOF` und `IsEOF` Einstellungen in der folgenden Tabelle dargestellt wird.
+Die Auswirkung von Verschiebungs Vorgängen, die keinen Datensatz für den Wert `IsBOF` und `IsEOF` Einstellungen finden, ist in der folgenden Tabelle aufgeführt.
 
 ||IsBOF|IsEOF|
 |------|-----------|-----------|
-|`MoveFirst`, `MoveLast`|Nonzero|Nonzero|
+|`MoveFirst`, `MoveLast`|Ungleich NULL|Ungleich NULL|
 |`Move` 0|Keine Änderung|Keine Änderung|
-|`MovePrev`, `Move` < 0|Nonzero|Keine Änderung|
-|`MoveNext`, `Move` > 0|Keine Änderung|Nonzero|
+|`MovePrev`, `Move` < 0|Ungleich NULL|Keine Änderung|
+|`MoveNext`, `Move` > 0|Keine Änderung|Ungleich NULL|
 
-Weitere Informationen finden Sie im Thema "BOF, EOF-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "BOF-EOF-Eigenschaften" in der DAO-Hilfe.
 
-##  <a name="isfielddirty"></a>  CDaoRecordset::IsFieldDirty
+##  <a name="isfielddirty"></a>CDaoRecordset:: IsFieldDirty
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob der angegebene Felddatenmember ein Dynaset, als "fehlerhaft eingestellt ist" (geändert).
+Mit dieser Member-Funktion können Sie ermitteln, ob der angegebene Felddatenmember eines Dynaset als "Dirty" (geändert) gekennzeichnet wurde.
 
 ```
 BOOL IsFieldDirty(void* pv);
@@ -1601,22 +1601,22 @@ BOOL IsFieldDirty(void* pv);
 
 ### <a name="parameters"></a>Parameter
 
-*pv*<br/>
-Ein Zeiger auf den Felddatenmember, deren Status zu überprüfen, oder NULL, um zu bestimmen, ob eines der Felder geändert werden.
+*teuren*<br/>
+Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, oder NULL, um zu bestimmen, ob eines der Felder geändert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das angegebene Feld-Daten-Element als fehlerhaft gekennzeichnet ist; andernfalls 0.
+Ein Wert ungleich 0 (null), wenn der angegebene Felddatenmember als geändert gekennzeichnet ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Daten in alle Felddatenmember übertragen werden sollen den Datensatz in der Datenquelle beim Aktualisieren des aktuellen Datensatzes durch einen Aufruf der `Update` Memberfunktion `CDaoRecordset` (nach einem Aufruf von `Edit` oder `AddNew`). Mit diesem Wissen Sie können Schritte weiter, wie z. B. Aufheben der Kennzeichnung der Feld-Datenmember, die die Spalte zu kennzeichnen, sodass Sie sie nicht an die Datenquelle geschrieben wird.
+Die Daten in allen modifizierten Felddatenmembern werden an den Datensatz in der Datenquelle übertragen, wenn der aktuelle Datensatz durch einen aufzurufenden `Update` Member-Funktion `CDaoRecordset` (nach einem `Edit` oder `AddNew`) aktualisiert wird. Mit diesem Wissen können Sie weitere Schritte ausführen, z. b. das Kennzeichnen des Felddatenmembers, um die Spalte zu markieren, sodass Sie nicht in die Datenquelle geschrieben wird.
 
-`IsFieldDirty` wird durch implementiert `DoFieldExchange`.
+`IsFieldDirty` wird über `DoFieldExchange`implementiert.
 
-##  <a name="isfieldnull"></a>  CDaoRecordset::IsFieldNull
+##  <a name="isfieldnull"></a>CDaoRecordset:: IsFieldNull
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob der angegebene Felddatenmember eines Recordset-Objekts als Null gekennzeichnet wurde.
+Mit dieser Member-Funktion können Sie ermitteln, ob der angegebene Felddatenmember eines Recordsets als NULL gekennzeichnet wurde.
 
 ```
 BOOL IsFieldNull(void* pv);
@@ -1624,28 +1624,28 @@ BOOL IsFieldNull(void* pv);
 
 ### <a name="parameters"></a>Parameter
 
-*pv*<br/>
-Ein Zeiger auf den Felddatenmember, deren Status zu überprüfen, oder NULL, um zu bestimmen, ob eines der Felder Null sind.
+*teuren*<br/>
+Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, oder NULL, um zu bestimmen, ob eines der Felder NULL ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn das angegebene Feld-Daten-Element, als Null gekennzeichnet ist; andernfalls 0.
+Ein Wert ungleich 0 (null), wenn der angegebene Felddatenmember als NULL gekennzeichnet ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-(Null, in der datenbankterminologie bedeutet "kein Wert having" und entspricht nicht der NULL-Wert in C++.) Wenn ein Felddatenmember als Null gekennzeichnet ist, wird er als eine Spalte mit den aktuellen Datensatz interpretiert für die kein Wert vorhanden ist.
+(In der Daten Bank Terminologie bedeutet NULL, dass kein Wert vorhanden ist und nicht mit NULL in C++übereinstimmt.) Wenn ein Felddatenmember als NULL gekennzeichnet ist, wird er als Spalte des aktuellen Datensatzes interpretiert, für den kein Wert vorhanden ist.
 
 > [!NOTE]
->  In bestimmten Situationen mit `IsFieldNull` kann ineffizient sein, wie im folgenden Codebeispiel wird veranschaulicht:
+>  In bestimmten Situationen kann die Verwendung von `IsFieldNull` ineffizient sein, wie im folgenden Codebeispiel veranschaulicht:
 
 [!code-cpp[NVC_MFCDatabase#5](../../mfc/codesnippet/cpp/cdaorecordset-class_5.cpp)]
 
 > [!NOTE]
->  Wenn Sie dynamische Bindung aufzuzeichnen, verwenden werden, ohne eine Ableitung von `CDaoRecordset`, achten Sie darauf, dass Sie VT_NULL zu verwenden, wie im Beispiel gezeigt.
+>  Wenn Sie die dynamische Daten Satz Bindung ohne Ableitung von `CDaoRecordset`verwenden, stellen Sie sicher, dass Sie VT_NULL verwenden, wie im Beispiel gezeigt.
 
-##  <a name="isfieldnullable"></a>  CDaoRecordset::IsFieldNullable
+##  <a name="isfieldnullable"></a>CDaoRecordset:: IsFieldNullable
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das angegebene Feld-Datenelement "NULL" ist (möglicherweise auf einen Null-Wert festgelegt NULL in C++ ist nicht identisch mit Null, womit, in der datenbankterminologie "having kein Wert").
+Mit dieser Member-Funktion wird bestimmt, ob der angegebene Felddatenmember "Nullable" ist (kann auf einen NULL-Wert festgelegt werden; C++ NULL ist nicht mit NULL identisch, was in der Daten Bank Terminologie bedeutet, dass kein Wert vorhanden ist.)
 
 ```
 BOOL IsFieldNullable(void* pv);
@@ -1653,20 +1653,20 @@ BOOL IsFieldNullable(void* pv);
 
 ### <a name="parameters"></a>Parameter
 
-*pv*<br/>
-Ein Zeiger auf den Felddatenmember, deren Status zu überprüfen, oder NULL, um zu bestimmen, ob eines der Felder Null sind.
+*teuren*<br/>
+Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, oder NULL, um zu bestimmen, ob eines der Felder NULL ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn das angegebene Feld-Daten-Element Null festgelegt werden kann; andernfalls 0.
+Ungleich 0 (null), wenn der angegebene Felddatenmember NULL gemacht werden kann. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Feld, das nicht Null sein kann, muss einen Wert aufweisen. Wenn Sie versuchen, diese ein Feld auf Null, die beim Hinzufügen oder Aktualisieren eines Datensatzes festgelegt, lehnt die Datenquelle ab, das Hinzufügen oder aktualisieren, und `Update` wird eine Ausnahme ausgelöst. Die Ausnahme tritt auf, beim Aufrufen `Update`, nicht beim Aufrufen `SetFieldNull`.
+Ein Feld, das nicht NULL sein kann, muss über einen Wert verfügen. Wenn Sie versuchen, ein solches Feld beim Hinzufügen oder Aktualisieren eines Datensatzes auf NULL festzulegen, lehnt die Datenquelle das Hinzufügen oder aktualisieren ab, und `Update` löst eine Ausnahme aus. Die Ausnahme tritt auf, wenn Sie `Update`aufzurufen, nicht, wenn Sie `SetFieldNull`aufgerufen haben.
 
-##  <a name="isopen"></a>  CDaoRecordset::IsOpen
+##  <a name="isopen"></a>CDaoRecordset:: IsOpen
 
-Rufen Sie diese Memberfunktion, um festzustellen, ob das Recordset geöffnet ist.
+Mit dieser Member-Funktion können Sie ermitteln, ob das Recordset geöffnet ist.
 
 ```
 BOOL IsOpen() const;
@@ -1674,101 +1674,101 @@ BOOL IsOpen() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einen Wert ungleich Null des Recordset-Objekts `Open` oder `Requery` Member-Funktion wurde zuvor aufgerufen und das Recordset nicht geschlossen wurde; andernfalls 0.
+Ein Wert ungleich 0 (null), wenn die `Open`-oder `Requery` Member-Funktion des Recordset-Objekts zuvor aufgerufen wurde und das Recordset nicht geschlossen wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_bcheckcachefordirtyfields"></a>  CDaoRecordset:: M_bcheckcachefordirtyfields
+##  <a name="m_bcheckcachefordirtyfields"></a>CDaoRecordset:: m_bCheckCacheForDirtyFields
 
-Enthält ein Flag, der angibt, ob zwischengespeicherte Felder automatisch als gekennzeichnet sind, geändert (geändert) und Null.
+Enthält ein Flag, das angibt, ob zwischengespeicherte Felder automatisch als geändert (geändert) und NULL markiert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Flag ist standardmäßig auf "true". Die Einstellung in diesem Data-Member steuert den gesamten doppelte Pufferung-Mechanismus. Wenn Sie das Flag auf "true" festlegen, können Sie die Zwischenspeicherung pro Feld-nach-Feld mit dem Mechanismus DFX deaktivieren. Wenn Sie das Flag auf "false" festlegen, müssen Sie aufrufen `SetFieldDirty` und `SetFieldNull` selbst.
+Das Flag ist standardmäßig auf true eingestellt. Die-Einstellung in diesem Datenmember steuert den gesamten Double-bufferingmechanismus. Wenn Sie das-Flag auf "true" festlegen, können Sie das Zwischenspeichern für eine Feld Weise mithilfe des DFX-Mechanismus deaktivieren. Wenn Sie das Flag auf false festlegen, müssen Sie `SetFieldDirty` und `SetFieldNull` selbst abrufen.
 
-Legen Sie diesen Datenmember vor dem Aufruf `Open`. Dieser Mechanismus ist in erster Linie für erleichterte Bedienung. Leistung ist möglicherweise langsamer aufgrund die doppelte Pufferung der Felder, wenn Änderungen vorgenommen werden.
+Legen Sie diesen Datenmember vor dem Aufrufen von `Open`fest. Dieser Mechanismus ist hauptsächlich für die Benutzerfreundlichkeit zu verwenden. Die Leistung kann aufgrund der doppelten Pufferung von Feldern aufgrund von Änderungen verlangsamt werden.
 
-##  <a name="m_nfields"></a>  CDaoRecordset::m_nFields
+##  <a name="m_nfields"></a>CDaoRecordset:: m_nFields
 
-Enthält die Anzahl der Felddatenmember der Recordset-Klasse und die Anzahl der Spalten, die durch das Recordset aus der Datenquelle ausgewählt.
+Enthält die Anzahl der Felddatenmember in der Recordset-Klasse und die Anzahl der Spalten, die vom Recordset aus der Datenquelle ausgewählt werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Konstruktor für das Recordset-Klasse muss initialisiert werden `m_nFields` mit der richtigen Anzahl von statisch gebundenen Felder. Klassen-Assistent schreibt diese Initialisierung für Sie aus, wenn Sie es verwenden, um die Recordset-Klasse zu deklarieren. Sie können es auch manuell schreiben.
+Der Konstruktor für die Recordset-Klasse muss `m_nFields` mit der richtigen Anzahl von statisch gebundenen Feldern initialisieren. Der Klassen-Assistent schreibt diese Initialisierung für Sie, wenn Sie ihn zum Deklarieren der Recordsetklasse verwenden. Sie können Sie auch manuell schreiben.
 
-Das Framework verwendet diese Zahl zum Verwalten der Interaktion zwischen den Felddatenmembern und die entsprechenden Spalten des aktuellen Datensatzes in der Datenquelle.
-
-> [!NOTE]
->  Diese Zahl muss entsprechen, die Anzahl von Ausgabespalten in registriert die `DoFieldExchange` nach einem Aufruf von `SetFieldType` mit dem Parameter `CDaoFieldExchange::outputColumn`.
-
-Sie können die Spalten dynamisch mit binden `CDaoRecordset::GetFieldValue` und `CDaoRecordset::SetFieldValue`. Wenn Sie dies tun, müssen Sie nicht erhöht die Anzahl die in `m_nFields` entsprechend der Anzahl der DFX-Funktion aufruft, Ihre `DoFieldExchange` Member-Funktion.
-
-##  <a name="m_nparams"></a>  CDaoRecordset::m_nParams
-
-Enthält die Anzahl der Parameterdatenmember in die Recordset-Klasse, die Anzahl von Parametern, die mit dem Recordset Abfrage übergeben.
-
-### <a name="remarks"></a>Hinweise
-
-Wenn Recordset-Klasse keine Parameter statischen Datenmember verfügt, muss der Konstruktor für die Klasse initialisiert *M_nParams* mit der richtigen Anzahl. Der Wert des *M_nParams* hat den Standardwert 0. Wenn Sie Parameterdatenmember hinzufügen – dies manuell ausführen müssen, müssen Sie auch manuell eine Initialisierung im Klassenkonstruktor entsprechend die Anzahl von Parametern hinzufügen (die muss mindestens so groß wie die Anzahl der "Platzhalter in Ihre *M_strFilter*  oder *M_strSort* Zeichenfolge).
-
-Das Framework verwendet diese Zahl an, wenn sie die Abfrage des Recordsets parametrisiert.
+Das Framework verwendet diese Zahl, um die Interaktion zwischen den Felddatenmembern und den entsprechenden Spalten des aktuellen Datensatzes in der Datenquelle zu verwalten.
 
 > [!NOTE]
->  Diese Zahl muss entsprechen, die Anzahl der "Params" in registriert die `DoFieldExchange` nach einem Aufruf von `SetFieldType` mit dem Parameter `CFieldExchange::param`.
+>  Diese Zahl muss der Anzahl der in `DoFieldExchange` registrierten Ausgabespalten entsprechen, nachdem ein `SetFieldType` mit dem Parameter `CDaoFieldExchange::outputColumn`aufgerufen wurde.
 
-Verwandte Informationen finden Sie im Thema "Parameterobjekt" in-DAO-Hilfe.
+Spalten können mithilfe von `CDaoRecordset::GetFieldValue` und `CDaoRecordset::SetFieldValue`dynamisch gebunden werden. Wenn Sie dies tun, müssen Sie die Anzahl in `m_nFields` nicht erhöhen, um die Anzahl von DFX-Funktionsaufrufen in der `DoFieldExchange` Member-Funktion widerzuspiegeln.
 
-##  <a name="m_pdaorecordset"></a>  CDaoRecordset::m_pDAORecordset
+##  <a name="m_nparams"></a>CDaoRecordset:: m_nParams
 
-Enthält einen Zeiger auf die OLE-Schnittstelle für den DAO-Recordset-Objekt zugrunde liegenden der `CDaoRecordset` Objekt.
+Enthält die Anzahl der Parameterdatenmember in der Recordset-Klasse – die Anzahl von Parametern, die mit der Abfrage des Recordsets übergeben werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
+
+Wenn die Recordsetklasse über Parameter Datenmember verfügt, muss der Konstruktor für die Klasse *m_nParams* mit der richtigen Anzahl initialisieren. Der Wert von *m_nParams* der Standardwert 0 ist. Wenn Sie Parameterdaten Elemente hinzufügen – was Sie manuell tun müssen – müssen Sie auch manuell eine Initialisierung im Klassenkonstruktor hinzufügen, um die Anzahl der Parameter (die mindestens so groß wie die Anzahl der Platzhalter in der *m_strFilter* oder *m_strSort* Zeichenfolge sein muss) wiederzugeben.
+
+Das Framework verwendet diese Zahl, wenn die Abfrage des Recordsets parametrisiert wird.
+
+> [!NOTE]
+>  Diese Zahl muss der Anzahl von Parametern entsprechen, die in `DoFieldExchange` nach einem Aufrufen von `SetFieldType` mit dem-Parameter `CFieldExchange::param`registriert sind.
+
+Weitere Informationen finden Sie im Thema "Parameter Objekt" in der DAO-Hilfe.
+
+##  <a name="m_pdaorecordset"></a>CDaoRecordset:: m_pDAORecordset
+
+Enthält einen Zeiger auf die OLE-Schnittstelle für das DAO-Recordsetobjekt, das dem `CDaoRecordset`-Objekt zugrunde liegt.
+
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie diesen Zeiger, wenn Sie die DAO-Schnittstelle direkt zugreifen möchten.
 
-Verwandte Informationen finden Sie im Thema "Recordset-Objekts" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Recordset-Objekt" in der DAO-Hilfe.
 
-##  <a name="m_pdatabase"></a>  CDaoRecordset::m_pDatabase
+##  <a name="m_pdatabase"></a>CDaoRecordset:: m_pDatabase
 
-Enthält einen Zeiger auf die `CDaoDatabase` Objekt über die das Recordset mit einer Datenquelle verbunden ist.
+Enthält einen Zeiger auf das `CDaoDatabase` Objekt, über das das Recordset mit einer Datenquelle verbunden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Variable wird auf zwei Arten festgelegt werden. In der Regel, übergeben Sie einen Zeiger auf ein bereits geöffnetes `CDaoDatabase` -Objekt beim Erstellen des Recordsetobjekts. Wenn Sie stattdessen, NULL übergeben `CDaoRecordset` erstellt eine `CDaoDatabase` -Objekt für Sie und öffnet sie. In beiden Fällen `CDaoRecordset` der Zeiger in dieser Variable gespeichert.
+Diese Variable wird auf zwei Arten festgelegt. In der Regel übergeben Sie einen Zeiger an ein bereits geöffnetes `CDaoDatabase` Objekt, wenn Sie das Recordset-Objekt erstellen. Wenn Sie stattdessen NULL übergeben, erstellt `CDaoRecordset` ein `CDaoDatabase` Objekt für Sie und öffnet es. In beiden Fällen speichert `CDaoRecordset` den Zeiger in dieser Variablen.
 
-Normalerweise Sie nicht direkt benötigen, verwenden Sie den Zeiger, der in gespeicherten `m_pDatabase`. Wenn Sie Ihre eigenen Erweiterungen schreiben `CDaoRecordset`, allerdings müssen möglicherweise den Zeiger zu verwenden. Z. B. möglicherweise den Zeiger, wenn Sie lösen eigene `CDaoException`(s).
+Normalerweise müssen Sie den in `m_pDatabase`gespeicherten Zeiger nicht direkt verwenden. Wenn Sie jedoch eigene Erweiterungen in `CDaoRecordset`schreiben, müssen Sie möglicherweise den-Zeiger verwenden. Beispielsweise können Sie den-Zeiger benötigen, wenn Sie Ihre eigenen `CDaoException`auslösen.
 
-Verwandte Informationen finden Sie im Thema "Database-Objekt" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Datenbankobjekt" in der DAO-Hilfe.
 
-##  <a name="m_strfilter"></a>  CDaoRecordset::m_strFilter
+##  <a name="m_strfilter"></a>CDaoRecordset:: m_strFilter
 
-Enthält eine Zeichenfolge, die verwendet wird, zum Erstellen der **, in denen** -Klausel einer SQL­Anweisung.
+Enthält eine Zeichenfolge, die zum Erstellen der **Where** -Klausel einer SQL-Anweisung verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Er umfasst keine das reservierte Wort **, in denen** das Recordset zu filtern. Die Verwendung dieses Datenelements gilt nicht für Recordsets vom Typ Tabelle zur Verfügung. Die Verwendung von `m_strFilter` wirkt sich nicht beim Öffnen einer Datensatzgruppe mit einem `CDaoQueryDef` Zeiger.
+Es enthält nicht das reservierte Wort, **in** dem das Recordset gefiltert werden soll. Die Verwendung dieses Datenmembers ist für Recordsets des Tabellentyps nicht anwendbar. Die Verwendung von `m_strFilter` hat keine Auswirkung, wenn ein Recordset mithilfe eines `CDaoQueryDef` Zeigers geöffnet wird.
 
-Verwenden Sie die US-Datumsformat (Monat-Tag-Jahr) beim Filtern von Feldern mit Datumsangaben, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine; verwenden Andernfalls können die Daten nicht gefiltert werden, wie zu erwarten.
+Verwenden Sie das US-Datumsformat (month-day-year), wenn Sie Felder mit Datumsangaben filtern, auch wenn Sie nicht die US-Version der Microsoft Jet-Datenbank-Engine verwenden. Andernfalls werden die Daten möglicherweise nicht wie erwartet gefiltert.
 
-Verwandte Informationen finden Sie im Thema "Filter-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Filter Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="m_strsort"></a>  CDaoRecordset::m_strSort
+##  <a name="m_strsort"></a>CDaoRecordset:: m_strSort
 
-Enthält eine Zeichenfolge mit der **ORDERBY** -Klausel einer SQL­Anweisung ohne den reservierten Wörtern **ORDERBY**.
+Enthält eine Zeichenfolge, die die **OrderBy** -Klausel einer SQL-Anweisung ohne die reservierten Wörter **OrderBy**enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können auf Typ Dynaset und Momentaufnahme-Recordset-Objekte sortieren.
+Sie können nach Dynaset-und Snapshot-Type-recordsetobjekten sortieren.
 
-Tabellentyp Recordset-Objekte können nicht sortiert werden. Um die Sortierreihenfolge des Recordset Typ Tabelle zu ermitteln, rufen [SetCurrentIndex](#setcurrentindex).
+Es ist nicht möglich, Recordset-Objekte des Tabellentyps zu sortieren. Um die Sortierreihenfolge eines Tabellentyp-Recordsets zu bestimmen, müssen Sie [SetCurrentIndex](#setcurrentindex)aufrufen.
 
-Die Verwendung von *M_strSort* wirkt sich nicht beim Öffnen einer Datensatzgruppe mit einem `CDaoQueryDef` Zeiger.
+Die Verwendung von *m_strSort* hat keine Auswirkung, wenn ein Recordset mithilfe eines `CDaoQueryDef` Zeigers geöffnet wird.
 
-Weitere Informationen finden Sie unter dem Thema "Sort-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Sort property" in der DAO-Hilfe.
 
-##  <a name="move"></a>  CDaoRecordset::Move
+##  <a name="move"></a>CDaoRecordset:: Move
 
-Rufen Sie diese Memberfunktion, um das Recordset zu positionieren *lRows* Datensätze aus dem aktuellen Datensatz.
+Diese Member-Funktion zum Positionieren der Recordset *lrows* -Datensätze aus dem aktuellen Datensatz aufzurufen.
 
 ```
 virtual void Move(long lRows);
@@ -1776,141 +1776,141 @@ virtual void Move(long lRows);
 
 ### <a name="parameters"></a>Parameter
 
-*lRows*<br/>
-Die Anzahl von Datensätzen, vorwärts oder rückwärts bewegen. Positive Werte vorwärts, zum Ende des Recordset-Objekts. Negative Werte werden zurück, bis zum Anfang verschieben.
+*lrows*<br/>
+Die Anzahl der Datensätze, die vorwärts oder rückwärts verschoben werden sollen. Positive Werte werden vorwärts bis zum Ende des Recordsets verschoben. Negative Werte werden nach hinten verschoben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können entweder vorwärts oder rückwärts bewegen. `Move( 1 )` entspricht dem `MoveNext`, und `Move( -1 )` entspricht `MovePrev`.
+Sie können vorwärts oder rückwärts wechseln. `Move( 1 )` entspricht `MoveNext`, und `Move( -1 )` entspricht `MovePrev`.
 
 > [!CAUTION]
->  Aufrufen einer der der `Move` Funktionen löst eine Ausnahme aus, wenn das Recordset keine Einträge besitzt. Rufen Sie in der Regel beide `IsBOF` und `IsEOF` vor einem Verschiebevorgang bestimmt, ob das Recordset alle Datensätze ist. Nach dem Aufruf von `Open` oder `Requery`, rufen Sie entweder `IsBOF` oder `IsEOF`.
+>  Wenn Sie eine der `Move` Funktionen aufrufen, wird eine Ausnahme ausgelöst, wenn das Recordset keine Datensätze enthält. Im Allgemeinen werden sowohl `IsBOF` als auch `IsEOF` vor einem Verschiebungs Vorgang aufgerufen, um zu bestimmen, ob das Recordset über Datensätze verfügt. Nachdem Sie `Open` oder `Requery`aufgerufen haben, muss entweder `IsBOF` oder `IsEOF`aufgerufen werden.
 
 > [!NOTE]
->  Wenn Sie direkt hinter dem Anfang oder Ende des Recordset gescrollt haben ( `IsBOF` oder `IsEOF` ungleich NULL zurückgibt), einen Aufruf von `Move` löst eine `CDaoException`.
+>  Wenn Sie einen Rollup über den Anfang oder das Ende des Recordsets durchgeführt haben (`IsBOF` oder `IsEOF` den Wert ungleich 0 zurückgibt), löst ein-`Move` einen `CDaoException`aus.
 
 > [!NOTE]
->  Wenn Sie eine der Aufrufen der `Move` Funktionen während der aktuelle Datensatz wird aktualisiert oder hinzugefügt, die Updates werden ohne Warnung verloren gehen.
+>  Wenn Sie eine der `Move` Funktionen aufzurufen, während der aktuelle Datensatz aktualisiert oder hinzugefügt wird, gehen die Aktualisierungen ohne Warnung verloren.
 
-Beim Aufruf `Move` für eine vorwärts gerichtete Bildlauf Momentaufnahme, die *lRows* -Parameter muss eine positive ganze Zahl sein und Lesezeichen sind nicht zulässig, sodass Sie nur vorwärts bewegen können.
+Wenn Sie `Move` für eine vorwärts scrollmomentaufnahme aufrufen, muss der *lrows* -Parameter eine positive Ganzzahl sein, und Lesezeichen sind nicht zulässig, sodass Sie nur vorwärts verschieben können.
 
-Damit wird der ersten, letzten, nächsten oder vorherigen aufzeichnen in einem Recordset den aktuellen Datensatz, Aufruf der `MoveFirst`, `MoveLast`, `MoveNext`, oder `MovePrev` Member-Funktion.
+Um den ersten, letzten, nächsten oder vorherigen Datensatz in einem Recordset des aktuellen Datensatzes festzulegen, geben Sie die `MoveFirst`-, `MoveLast`-, `MoveNext`-oder `MovePrev` Member-Funktion an.
 
-Weitere Informationen finden Sie unter den Themen "Move-Methode" und "MoveFirst, MoveLast, MoveNext und MovePrevious-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in der DAO-Hilfe.
 
-##  <a name="movefirst"></a>  CDaoRecordset::MoveFirst
+##  <a name="movefirst"></a>CDaoRecordset:: vfirst
 
-Rufen Sie diese Memberfunktion um den ersten Datensatz im Recordset zu machen (sofern vorhanden) des aktuellen Datensatzes.
+Mit dieser Member-Funktion können Sie den ersten Datensatz im Recordset (sofern vorhanden) mit dem aktuellen Datensatz erstellen.
 
 ```
 void MoveFirst();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie müssen keine Aufrufen `MoveFirst` sofort, nachdem Sie das Recordset geöffnet. Zu diesem Zeitpunkt ist der erste Datensatz (sofern vorhanden) automatisch den aktuellen Datensatz.
+Sie müssen `MoveFirst` nicht unmittelbar nach dem Öffnen des Recordsets aufzurufen. Zu diesem Zeitpunkt ist der erste Datensatz (sofern vorhanden) automatisch der aktuelle Datensatz.
 
 > [!CAUTION]
->  Aufrufen einer der der `Move` Funktionen löst eine Ausnahme aus, wenn das Recordset keine Einträge besitzt. Rufen Sie in der Regel beide `IsBOF` und `IsEOF` vor einem Verschiebevorgang bestimmt, ob das Recordset alle Datensätze ist. Nach dem Aufruf von `Open` oder `Requery`, rufen Sie entweder `IsBOF` oder `IsEOF`.
+>  Wenn Sie eine der `Move` Funktionen aufrufen, wird eine Ausnahme ausgelöst, wenn das Recordset keine Datensätze enthält. Im Allgemeinen werden sowohl `IsBOF` als auch `IsEOF` vor einem Verschiebungs Vorgang aufgerufen, um zu bestimmen, ob das Recordset über Datensätze verfügt. Nachdem Sie `Open` oder `Requery`aufgerufen haben, muss entweder `IsBOF` oder `IsEOF`aufgerufen werden.
 
 > [!NOTE]
->  Wenn Sie eine der Aufrufen der `Move` Funktionen während der aktuelle Datensatz wird aktualisiert oder hinzugefügt, die Updates werden ohne Warnung verloren gehen.
+>  Wenn Sie eine der `Move` Funktionen aufzurufen, während der aktuelle Datensatz aktualisiert oder hinzugefügt wird, gehen die Aktualisierungen ohne Warnung verloren.
 
-Verwenden der `Move` Funktionen von Datensatz zu Datensatz verschoben, ohne die Anwendung einer Bedingung. Verwenden Sie die Vorgänge suchen, suchen Sie nach Einträgen in ein Dynaset oder momentaufnahmetyp Recordsetobjekt, das eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Tabellentyp Recordset-Objekt zu suchen, rufen Sie `Seek`.
+Verwenden Sie die `Move` Funktionen, um von Datensatz zu Datensatz zu wechseln, ohne eine Bedingung anzuwenden. Verwenden Sie die Suchvorgänge, um Datensätze in einem Objekt vom Typ "Dynaset-Type" oder "Snapshot-Type" zu suchen, die eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Recordset-Objekt vom Typ "Table" zu suchen, geben Sie `Seek`an.
 
-Wenn das Recordset zu einem Recordset vom Typ Tabelle verweist, folgt die Bewegung der Index der aktuellen Tabelle. Sie können den aktuellen Index festlegen, mit der Index-Eigenschaft des zugrunde liegenden DAO-Objekts. Wenn Sie nicht den aktuellen Index festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
+Wenn sich das Recordset auf einen Tabellentyp-Recordset bezieht, folgt die Bewegung dem aktuellen Index der Tabelle. Sie können den aktuellen Index festlegen, indem Sie die Index-Eigenschaft des zugrunde liegenden DAO-Objekts verwenden. Wenn Sie den aktuellen Index nicht festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
 
-Wenn Sie aufrufen `MoveLast` auf einem Recordset-Objekt, das auf einer SQL-Abfrage oder Querydef basiert, bis zum Abschluss die Abfrage erzwungen wird und das Recordset-Objekt wird vollständig aufgefüllt.
+Wenn Sie `MoveLast` für ein Recordset-Objekt auf Grundlage einer SQL-Abfrage oder QueryDef aufzurufen, wird die Abfrage erzwungen, und das Recordset-Objekt wird vollständig aufgefüllt.
 
-Sie können nicht aufgerufen werden die `MoveFirst` oder `MovePrev` Member-Funktion mit den Bildlauf vorwärts-Momentaufnahme.
+Die `MoveFirst`-oder `MovePrev` Member-Funktion kann nicht mit einer vorwärts scrollmomentaufnahme aufgerufen werden.
 
-Rufen Sie um die Position des aktuellen aufzeichnen in einem Recordset-Objekt eine bestimmte Anzahl von Einträgen vorwärts oder rückwärts verschieben `Move`.
+Um die Position des aktuellen Datensatzes in einem Recordset-Objekt mit einer bestimmten Anzahl von Datensätzen vorwärts oder rückwärts zu verschieben, wird `Move`aufgerufen.
 
-Weitere Informationen finden Sie unter den Themen "Move-Methode" und "MoveFirst, MoveLast, MoveNext und MovePrevious-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in der DAO-Hilfe.
 
-##  <a name="movelast"></a>  CDaoRecordset::MoveLast
+##  <a name="movelast"></a>CDaoRecordset:: muvelast
 
-Rufen Sie diese Memberfunktion um den letzten Datensatz (sofern vorhanden) zu machen, im Recordset des aktuellen Datensatzes.
+Mit dieser Member-Funktion können Sie den letzten Datensatz (sofern vorhanden) im Recordset als aktuellen Datensatz festlegen.
 
 ```
 void MoveLast();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!CAUTION]
->  Aufrufen einer der der `Move` Funktionen löst eine Ausnahme aus, wenn das Recordset keine Einträge besitzt. Rufen Sie in der Regel beide `IsBOF` und `IsEOF` vor einem Verschiebevorgang bestimmt, ob das Recordset alle Datensätze ist. Nach dem Aufruf von `Open` oder `Requery`, rufen Sie entweder `IsBOF` oder `IsEOF`.
+>  Wenn Sie eine der `Move` Funktionen aufrufen, wird eine Ausnahme ausgelöst, wenn das Recordset keine Datensätze enthält. Im Allgemeinen werden sowohl `IsBOF` als auch `IsEOF` vor einem Verschiebungs Vorgang aufgerufen, um zu bestimmen, ob das Recordset über Datensätze verfügt. Nachdem Sie `Open` oder `Requery`aufgerufen haben, muss entweder `IsBOF` oder `IsEOF`aufgerufen werden.
 
 > [!NOTE]
->  Wenn Sie eine der Aufrufen der `Move` Funktionen während der aktuelle Datensatz wird aktualisiert oder hinzugefügt, die Updates werden ohne Warnung verloren gehen.
+>  Wenn Sie eine der `Move` Funktionen aufzurufen, während der aktuelle Datensatz aktualisiert oder hinzugefügt wird, gehen die Aktualisierungen ohne Warnung verloren.
 
-Verwenden der `Move` Funktionen von Datensatz zu Datensatz verschoben, ohne die Anwendung einer Bedingung. Verwenden Sie die Vorgänge suchen, suchen Sie nach Einträgen in ein Dynaset oder momentaufnahmetyp Recordsetobjekt, das eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Tabellentyp Recordset-Objekt zu suchen, rufen Sie `Seek`.
+Verwenden Sie die `Move` Funktionen, um von Datensatz zu Datensatz zu wechseln, ohne eine Bedingung anzuwenden. Verwenden Sie die Suchvorgänge, um Datensätze in einem Objekt vom Typ "Dynaset-Type" oder "Snapshot-Type" zu suchen, die eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Recordset-Objekt vom Typ "Table" zu suchen, geben Sie `Seek`an.
 
-Wenn das Recordset zu einem Recordset vom Typ Tabelle verweist, folgt die Bewegung der Index der aktuellen Tabelle. Sie können den aktuellen Index festlegen, mit der Index-Eigenschaft des zugrunde liegenden DAO-Objekts. Wenn Sie nicht den aktuellen Index festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
+Wenn sich das Recordset auf einen Tabellentyp-Recordset bezieht, folgt die Bewegung dem aktuellen Index der Tabelle. Sie können den aktuellen Index festlegen, indem Sie die Index-Eigenschaft des zugrunde liegenden DAO-Objekts verwenden. Wenn Sie den aktuellen Index nicht festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
 
-Wenn Sie aufrufen `MoveLast` auf einem Recordset-Objekt, das auf einer SQL-Abfrage oder Querydef basiert, bis zum Abschluss die Abfrage erzwungen wird und das Recordset-Objekt wird vollständig aufgefüllt.
+Wenn Sie `MoveLast` für ein Recordset-Objekt auf Grundlage einer SQL-Abfrage oder QueryDef aufzurufen, wird die Abfrage erzwungen, und das Recordset-Objekt wird vollständig aufgefüllt.
 
-Rufen Sie um die Position des aktuellen aufzeichnen in einem Recordset-Objekt eine bestimmte Anzahl von Einträgen vorwärts oder rückwärts verschieben `Move`.
+Um die Position des aktuellen Datensatzes in einem Recordset-Objekt mit einer bestimmten Anzahl von Datensätzen vorwärts oder rückwärts zu verschieben, wird `Move`aufgerufen.
 
-Weitere Informationen finden Sie unter den Themen "Move-Methode" und "MoveFirst, MoveLast, MoveNext und MovePrevious-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in der DAO-Hilfe.
 
-##  <a name="movenext"></a>  CDaoRecordset::MoveNext
+##  <a name="movenext"></a>CDaoRecordset:: wvenext
 
-Rufen Sie diese Memberfunktion um den nächsten Datensatz im Recordset des aktuellen Datensatzes zu machen.
+Diese Member-Funktion wird aufgerufen, um den nächsten Datensatz im Recordset zum aktuellen Datensatz zu machen.
 
 ```
 void MoveNext();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es wird empfohlen, die Sie aufrufen `IsBOF` bevor Sie versuchen, die in den vorherigen Datensatz zu verschieben. Ein Aufruf von `MovePrev` löst eine `CDaoException` Wenn `IsBOF` gibt einen Wert ungleich NULL, der angibt, dass Sie bereits vor dem ersten Datensatz gescrollt haben oder keine Datensätze vom Recordset ausgewählt wurden.
+Es wird empfohlen, `IsBOF` aufzurufen, bevor Sie versuchen, zum vorherigen Datensatz zu wechseln. Bei einem `MovePrev` wird eine `CDaoException` ausgelöst, wenn `IsBOF` einen Wert ungleich 0 (null) zurückgibt, der angibt, dass Sie bereits vor dem ersten Datensatz einen Rollup durchgeführt haben oder dass keine Datensätze vom Recordset ausgewählt wurden.
 
 > [!CAUTION]
->  Aufrufen einer der der `Move` Funktionen löst eine Ausnahme aus, wenn das Recordset keine Einträge besitzt. Rufen Sie in der Regel beide `IsBOF` und `IsEOF` vor einem Verschiebevorgang bestimmt, ob das Recordset alle Datensätze ist. Nach dem Aufruf von `Open` oder `Requery`, rufen Sie entweder `IsBOF` oder `IsEOF`.
+>  Wenn Sie eine der `Move` Funktionen aufrufen, wird eine Ausnahme ausgelöst, wenn das Recordset keine Datensätze enthält. Im Allgemeinen werden sowohl `IsBOF` als auch `IsEOF` vor einem Verschiebungs Vorgang aufgerufen, um zu bestimmen, ob das Recordset über Datensätze verfügt. Nachdem Sie `Open` oder `Requery`aufgerufen haben, muss entweder `IsBOF` oder `IsEOF`aufgerufen werden.
 
 > [!NOTE]
->  Wenn Sie eine der Aufrufen der `Move` Funktionen während der aktuelle Datensatz wird aktualisiert oder hinzugefügt, die Updates werden ohne Warnung verloren gehen.
+>  Wenn Sie eine der `Move` Funktionen aufzurufen, während der aktuelle Datensatz aktualisiert oder hinzugefügt wird, gehen die Aktualisierungen ohne Warnung verloren.
 
-Verwenden der `Move` Funktionen von Datensatz zu Datensatz verschoben, ohne die Anwendung einer Bedingung. Verwenden Sie die Vorgänge suchen, suchen Sie nach Einträgen in ein Dynaset oder momentaufnahmetyp Recordsetobjekt, das eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Tabellentyp Recordset-Objekt zu suchen, rufen Sie `Seek`.
+Verwenden Sie die `Move` Funktionen, um von Datensatz zu Datensatz zu wechseln, ohne eine Bedingung anzuwenden. Verwenden Sie die Suchvorgänge, um Datensätze in einem Objekt vom Typ "Dynaset-Type" oder "Snapshot-Type" zu suchen, die eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Recordset-Objekt vom Typ "Table" zu suchen, geben Sie `Seek`an.
 
-Wenn das Recordset zu einem Recordset vom Typ Tabelle verweist, folgt die Bewegung der Index der aktuellen Tabelle. Sie können den aktuellen Index festlegen, mit der Index-Eigenschaft des zugrunde liegenden DAO-Objekts. Wenn Sie nicht den aktuellen Index festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
+Wenn sich das Recordset auf einen Tabellentyp-Recordset bezieht, folgt die Bewegung dem aktuellen Index der Tabelle. Sie können den aktuellen Index festlegen, indem Sie die Index-Eigenschaft des zugrunde liegenden DAO-Objekts verwenden. Wenn Sie den aktuellen Index nicht festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
 
-Rufen Sie um die Position des aktuellen aufzeichnen in einem Recordset-Objekt eine bestimmte Anzahl von Einträgen vorwärts oder rückwärts verschieben `Move`.
+Um die Position des aktuellen Datensatzes in einem Recordset-Objekt mit einer bestimmten Anzahl von Datensätzen vorwärts oder rückwärts zu verschieben, wird `Move`aufgerufen.
 
-Weitere Informationen finden Sie unter den Themen "Move-Methode" und "MoveFirst, MoveLast, MoveNext und MovePrevious-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in der DAO-Hilfe.
 
-##  <a name="moveprev"></a>  CDaoRecordset::MovePrev
+##  <a name="moveprev"></a>CDaoRecordset:: weprev
 
-Rufen Sie diese Memberfunktion zum vorherigen Datensatz im Recordset des aktuellen Datensatzes zu machen.
+Diese Member-Funktion wird aufgerufen, um den vorherigen Datensatz im Recordset zum aktuellen Datensatz zu machen.
 
 ```
 void MovePrev();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es wird empfohlen, die Sie aufrufen `IsBOF` bevor Sie versuchen, die in den vorherigen Datensatz zu verschieben. Ein Aufruf von `MovePrev` löst eine `CDaoException` Wenn `IsBOF` gibt einen Wert ungleich NULL, der angibt, dass Sie bereits vor dem ersten Datensatz gescrollt haben oder keine Datensätze vom Recordset ausgewählt wurden.
+Es wird empfohlen, `IsBOF` aufzurufen, bevor Sie versuchen, zum vorherigen Datensatz zu wechseln. Bei einem `MovePrev` wird eine `CDaoException` ausgelöst, wenn `IsBOF` einen Wert ungleich 0 (null) zurückgibt, der angibt, dass Sie bereits vor dem ersten Datensatz einen Rollup durchgeführt haben oder dass keine Datensätze vom Recordset ausgewählt wurden.
 
 > [!CAUTION]
->  Aufrufen einer der der `Move` Funktionen löst eine Ausnahme aus, wenn das Recordset keine Einträge besitzt. Rufen Sie in der Regel beide `IsBOF` und `IsEOF` vor einem Verschiebevorgang bestimmt, ob das Recordset alle Datensätze ist. Nach dem Aufruf von `Open` oder `Requery`, rufen Sie entweder `IsBOF` oder `IsEOF`.
+>  Wenn Sie eine der `Move` Funktionen aufrufen, wird eine Ausnahme ausgelöst, wenn das Recordset keine Datensätze enthält. Im Allgemeinen werden sowohl `IsBOF` als auch `IsEOF` vor einem Verschiebungs Vorgang aufgerufen, um zu bestimmen, ob das Recordset über Datensätze verfügt. Nachdem Sie `Open` oder `Requery`aufgerufen haben, muss entweder `IsBOF` oder `IsEOF`aufgerufen werden.
 
 > [!NOTE]
->  Wenn Sie eine der Aufrufen der `Move` Funktionen während der aktuelle Datensatz wird aktualisiert oder hinzugefügt, die Updates werden ohne Warnung verloren gehen.
+>  Wenn Sie eine der `Move` Funktionen aufzurufen, während der aktuelle Datensatz aktualisiert oder hinzugefügt wird, gehen die Aktualisierungen ohne Warnung verloren.
 
-Verwenden der `Move` Funktionen von Datensatz zu Datensatz verschoben, ohne die Anwendung einer Bedingung. Verwenden Sie die Vorgänge suchen, suchen Sie nach Einträgen in ein Dynaset oder momentaufnahmetyp Recordsetobjekt, das eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Tabellentyp Recordset-Objekt zu suchen, rufen Sie `Seek`.
+Verwenden Sie die `Move` Funktionen, um von Datensatz zu Datensatz zu wechseln, ohne eine Bedingung anzuwenden. Verwenden Sie die Suchvorgänge, um Datensätze in einem Objekt vom Typ "Dynaset-Type" oder "Snapshot-Type" zu suchen, die eine bestimmte Bedingung erfüllen. Um einen Datensatz in einem Recordset-Objekt vom Typ "Table" zu suchen, geben Sie `Seek`an.
 
-Wenn das Recordset zu einem Recordset vom Typ Tabelle verweist, folgt die Bewegung der Index der aktuellen Tabelle. Sie können den aktuellen Index festlegen, mit der Index-Eigenschaft des zugrunde liegenden DAO-Objekts. Wenn Sie nicht den aktuellen Index festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
+Wenn sich das Recordset auf einen Tabellentyp-Recordset bezieht, folgt die Bewegung dem aktuellen Index der Tabelle. Sie können den aktuellen Index festlegen, indem Sie die Index-Eigenschaft des zugrunde liegenden DAO-Objekts verwenden. Wenn Sie den aktuellen Index nicht festlegen, ist die Reihenfolge der zurückgegebenen Datensätze nicht definiert.
 
-Sie können nicht aufgerufen werden die `MoveFirst` oder `MovePrev` Member-Funktion mit den Bildlauf vorwärts-Momentaufnahme.
+Die `MoveFirst`-oder `MovePrev` Member-Funktion kann nicht mit einer vorwärts scrollmomentaufnahme aufgerufen werden.
 
-Rufen Sie um die Position des aktuellen aufzeichnen in einem Recordset-Objekt eine bestimmte Anzahl von Einträgen vorwärts oder rückwärts verschieben `Move`.
+Um die Position des aktuellen Datensatzes in einem Recordset-Objekt mit einer bestimmten Anzahl von Datensätzen vorwärts oder rückwärts zu verschieben, wird `Move`aufgerufen.
 
-Weitere Informationen finden Sie unter den Themen "Move-Methode" und "MoveFirst, MoveLast, MoveNext und MovePrevious-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Move Method" und "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in der DAO-Hilfe.
 
-##  <a name="open"></a>  CDaoRecordset:: Open
+##  <a name="open"></a>CDaoRecordset:: Open
 
-Sie müssen diese Memberfunktion zum Abrufen der Datensätze für das Recordset aufrufen.
+Sie müssen diese Member-Funktion aufrufen, um die Datensätze für das Recordset abzurufen.
 
 ```
 virtual void Open(
@@ -1934,136 +1934,136 @@ virtual void Open(
 *nOpenType*<br/>
 Einer der folgenden Werte:
 
-- `dbOpenDynaset` Ein Typ Dynaset Recordset mit bidirektionalem Bildlauf. Dies ist die Standardeinstellung.
+- `dbOpenDynaset` einen Dynaset-Type-Recordset mit bidirektionalem Bildlauf. Dies ist die Standardoption.
 
-- `dbOpenTable` Ein Tabellentyp Recordset mit bidirektionalem Bildlauf.
+- `dbOpenTable` einen Tabellentyp-Recordset mit bidirektionalem Bildlauf.
 
-- `dbOpenSnapshot` Ein Momentaufnahme-Type-Recordset mit bidirektionalem Bildlauf.
+- `dbOpenSnapshot` ein Recordset vom Typ "Snapshot" mit bidirektionalem Bildlauf.
 
 *lpszSQL*<br/>
 Eine Zeichenfolge, in der eines der folgenden Elemente enthalten ist:
 
-- Ein Nullzeiger.
+- Ein NULL-Zeiger.
 
-- Der Name einer oder mehreren Tabledefs und/oder Querydefs (durch Trennzeichen getrennt).
+- Der Name einer oder mehrerer Tabledefs und/oder Querydefs (durch Kommas getrennt).
 
-- Eine SQL **wählen** Anweisung (optional mit einem SQL- **, in denen** oder **ORDERBY** Klausel).
+- Eine SQL- **Select** -Anweisung (optional mit einer SQL- **Where** -Klausel oder einer **OrderBy** -Klausel).
 
 - Eine Pass-Through-Abfrage.
 
-*nOptions*<br/>
-Ein oder mehrere der unten aufgeführten Optionen. Der Standardwert ist 0. Folgende Werte sind möglich:
+*noptions*<br/>
+Eine oder mehrere der unten aufgeführten Optionen. Der Standardwert ist 0. Folgende Werte sind möglich:
 
-- `dbAppendOnly` Sie können nur neue Datensätze (gilt nur für Typ Dynaset-Recordset) anfügen. Diese Option bedeutet in der Tat, dass Datensätze nur angefügt werden können. Die MFC-ODBC-Datenbankklassen haben eine nur-anfügen-Option, die Datensätze abgerufen und angefügt werden kann.
+- `dbAppendOnly` Sie nur neue Datensätze anfügen können (nur das Recordset "Dynaset-Type"). Diese Option bedeutet, dass Datensätze nur angehängt werden können. Die MFC-ODBC-Datenbankklassen verfügen über eine nur-Append-Option, mit der Datensätze abgerufen und angefügt werden können.
 
-- `dbForwardOnly` Das Recordset ist eine Vorwärts-Momentaufnahme für den Bildlauf.
+- `dbForwardOnly` das Recordset eine vorwärts scrollmomentaufnahme ist.
 
-- `dbSeeChanges` Eine Ausnahme generiert, wenn ein anderer Benutzer die Daten geändert werden, die Sie bearbeiten.
+- `dbSeeChanges` eine Ausnahme generieren, wenn ein anderer Benutzer die Daten ändert, die Sie bearbeiten.
 
-- `dbDenyWrite` Andere Benutzer nicht ändern oder Hinzufügen von Datensätzen.
+- `dbDenyWrite` andere Benutzerdaten Sätze nicht ändern oder hinzufügen können.
 
-- `dbDenyRead` Andere Benutzer können keine Datensätze (nur Tabellentyp Recordset) anzeigen.
+- `dbDenyRead` andere Benutzer keine Datensätze anzeigen können (nur Tabellentyp-Recordset).
 
-- `dbReadOnly` Sie können nur Datensätze anzeigen; andere Benutzer können sie ändern.
+- `dbReadOnly` Sie nur Datensätze anzeigen können. andere Benutzer können diese ändern.
 
-- `dbInconsistent` Inkonsistente Updates sind (gilt nur für Typ Dynaset-Recordset) zulässig.
+- `dbInconsistent` inkonsistente Updates sind zulässig (nur das Recordset "Dynaset-Type").
 
-- `dbConsistent` Nur einheitliche Aktualisierungen sind (gilt nur für Typ Dynaset-Recordset) zulässig.
+- `dbConsistent` nur konsistente Updates zulässig sind (nur mit dem Typ Recordset von Dynaset).
 
 > [!NOTE]
->  Die Konstanten `dbConsistent` und `dbInconsistent` gegenseitig aus. Sie können einen verwenden oder die andere aber nicht beide in einer bestimmten Instanz des `Open`.
+>  Die Konstanten `dbConsistent` und `dbInconsistent` schließen sich gegenseitig aus. Sie können einen oder den anderen, aber nicht beides in einer bestimmten Instanz von `Open`verwenden.
 
-*pTableDef*<br/>
-Ein Zeiger auf eine [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) Objekt. Diese Version ist nur für Recordsets vom Typ Tabelle gültig. Bei Verwendung dieser Option, die `CDaoDatabase` Zeiger, die zum Erstellen der `CDaoRecordset` nicht verwendet wird, wird stattdessen, verwendet die Datenbank, in dem sich die Tabledef befindet.
+*ptabledef*<br/>
+Ein Zeiger auf ein [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) -Objekt. Diese Version ist nur für Recordsets von Tabellentypen gültig. Wenn Sie diese Option verwenden, wird der `CDaoDatabase` Zeiger, der zum Erstellen des `CDaoRecordset` verwendet wird, nicht verwendet. Stattdessen wird die Datenbank verwendet, in der sich der Tabledef befindet.
 
-*pQueryDef*<br/>
-Ein Zeiger auf eine [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md) Objekt. Diese Version ist nur für Dynaset und Recordsets vom Typ Snapshot gültig. Bei Verwendung dieser Option, die `CDaoDatabase` Zeiger, die zum Erstellen der `CDaoRecordset` nicht verwendet wird, wird stattdessen, verwendet die Datenbank, in dem sich die Querydef befindet.
+*pquerydef*<br/>
+Ein Zeiger auf ein [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md) -Objekt. Diese Version ist nur für die Recordsets "Dynaset-Type" und "Snapshot-Type" gültig. Wenn Sie diese Option verwenden, wird der `CDaoDatabase` Zeiger, der zum Erstellen des `CDaoRecordset` verwendet wird, nicht verwendet. Stattdessen wird die Datenbank verwendet, in der sich das Querydef-Verzeichnis befindet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Vor dem Aufruf `Open`, müssen Sie das Recordset-Objekt erstellen. Dafür stehen verschiedene Möglichkeiten zur Verfügung:
+Vor dem Aufrufen von `Open`müssen Sie das Recordset-Objekt erstellen. Dafür stehen verschiedene Möglichkeiten zur Verfügung:
 
-- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen Zeiger auf eine `CDaoDatabase` -Objekt, das bereits geöffnet ist.
+- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen Zeiger an ein `CDaoDatabase` Objekt, das bereits geöffnet ist.
 
-- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen Zeiger auf eine `CDaoDatabase` -Objekt, das nicht geöffnet ist. Öffnen des Recordsets einen `CDaoDatabase` Objekt, aber nicht geschlossen es beim Schließen des Recordset-Objekts.
+- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen Zeiger an ein `CDaoDatabase` Objekt, das nicht geöffnet ist. Das Recordset öffnet ein `CDaoDatabase` Objekt, schließt es jedoch nicht, wenn das Recordset-Objekt geschlossen wird.
 
-- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen NULL-Zeiger. Der Recordset ruft `GetDefaultDBName` den Namen des Microsoft Access abrufen. MDB-Datei zu öffnen. Klicken Sie dann Öffnen des Recordsets einen `CDaoDatabase` -Objekt und hält sie zu öffnen, solange das Recordset geöffnet ist. Beim Aufruf `Close` für das Recordset die `CDaoDatabase` Objekt ebenfalls geschlossen.
+- Wenn Sie das Recordset-Objekt erstellen, übergeben Sie einen NULL-Zeiger. Das Recordset-Objekt ruft `GetDefaultDBName` auf, um den Namen des Microsoft Access-Objekts zu erhalten. Die zu öffnende MDB-Datei. Das Recordset öffnet dann ein `CDaoDatabase` Objekt und hält es geöffnet, solange das Recordset geöffnet ist. Wenn Sie `Close` für das Recordset aufzurufen, wird das `CDaoDatabase` Objekt ebenfalls geschlossen.
 
     > [!NOTE]
-    >  Beim Öffnen des Recordsets die `CDaoDatabase` Objekt ist, wird die Datenquelle mit nicht exklusiven Zugriff geöffnet.
+    >  Wenn das Recordset das `CDaoDatabase` Objekt öffnet, wird die Datenquelle mit dem nicht exklusiven Zugriff geöffnet.
 
-Für die Version des `Open` , verwendet der *LpszSQL* Parameter, sobald das Recordset geöffnet ist. Sie können Datensätze in eine der folgenden Arten abrufen. Die erste Möglichkeit besteht, von DFX-Funktionen in Ihre `DoFieldExchange`. Die zweite Option ist die Verwendung dynamischer Bindung durch Aufrufen der `GetFieldValue` Member-Funktion. Diese Optionen können separat oder in Kombination implementiert werden. Wenn sie kombiniert werden, müssen die SQL-Anweisung selbst beim Aufruf von übergeben `Open`.
+Wenn das Recordset geöffnet ist, können Sie für die Version von `Open`, die den *lpszSQL* -Parameter verwendet, mit einer von mehreren Methoden Datensätze abrufen. Die erste Option besteht darin, DFX-Funktionen in ihrer `DoFieldExchange`zu haben. Die zweite Option besteht darin, die dynamische Bindung durch Aufrufen der `GetFieldValue` Member-Funktion zu verwenden. Diese Optionen können separat oder in Kombination implementiert werden. Wenn Sie kombiniert werden, müssen Sie die SQL-Anweisung selbst an den `Open`-aufrufenden übergeben.
 
-Bei Verwendung die zweite Version `Open` dort übergeben Sie einer `CDaoTableDef` Objekt, die daraus resultierenden Spalten werden für die Sie über binden `DoFieldExchange` und der DFX-Mechanismus und/oder Bindung dynamisch über `GetFieldValue`.
-
-> [!NOTE]
->  Sie können nur aufrufen `Open` mithilfe einer `CDaoTableDef` -Objekt für Recordsets vom Typ Tabelle.
-
-Die dritte Version bei Verwendung `Open` dort übergeben Sie einer `CDaoQueryDef` -Objekt, dass die Abfrage ausgeführt, und die daraus resultierenden Spalten werden für die Sie über binden `DoFieldExchange` und der DFX-Mechanismus und/oder Bindung dynamisch über `GetFieldValue`.
+Wenn Sie die zweite Version von `Open` verwenden, an die Sie ein `CDaoTableDef` Objekt übergeben, können die resultierenden Spalten über `DoFieldExchange` und den DFX-Mechanismus und/oder dynamisch über `GetFieldValue`gebunden werden.
 
 > [!NOTE]
->  Können Sie nur aufrufen `Open` mithilfe einer `CDaoQueryDef` -Objekt für Dynaset und Recordsets vom Typ Snapshot.
+>  Sie können `Open` nur mit einem `CDaoTableDef`-Objekt für Recordsets vom Typ "Table" aufzurufen.
 
-Für die erste Version des `Open` , verwendet der `lpszSQL` Parameter Datensätze werden die ausgewählten basierend auf Kriterien, die in der folgenden Tabelle gezeigt.
+Wenn Sie die dritte Version von `Open` verwenden, an die Sie ein `CDaoQueryDef` Objekt übergeben, wird diese Abfrage ausgeführt, und die resultierenden Spalten können Sie über `DoFieldExchange` und den DFX-Mechanismus binden und/oder dynamisch über `GetFieldValue`binden.
+
+> [!NOTE]
+>  Sie können `Open` nur mit einem `CDaoQueryDef`-Objekt für den Dynaset-Type-und den Snapshot-Type-Recordsets aufzurufen.
+
+Bei der ersten Version von `Open`, die den `lpszSQL`-Parameter verwendet, werden Datensätze basierend auf den in der folgenden Tabelle aufgeführten Kriterien ausgewählt.
 
 |Der Wert des Parameters `lpszSQL`.|Die ausgewählten Datensätze werden von folgenden Aspekten bestimmt:|Beispiel|
 |--------------------------------------|----------------------------------------|-------------|
 |NULL|Die von `GetDefaultSQL` zurückgegebene Zeichenfolge.||
-|Eine durch Trennzeichen getrennte Liste von ein oder mehrere Tabledefs und/oder Querydef Namen.|Alle Spalten dargestellt, der `DoFieldExchange`.|`"Customer"`|
-|**Wählen Sie** Spaltenliste **FROM** Tabellenliste|Die angegebenen Spalten aus der angegebenen Tabledef(s) und/oder Querydef(s).|`"SELECT CustId, CustName`<br /><br /> `FROM Customer"`|
+|Eine durch Trennzeichen getrennte Liste mit einem oder mehreren Tabledefs-und/oder Querydef-Namen.|Alle in der `DoFieldExchange`dargestellten Spalten.|`"Customer"`|
+|**Select** Column-List **from** Table-List|Die angegebenen Spalten aus den angegebenen Tabledef (s) und/oder QueryDef (s).|`"SELECT CustId, CustName`<br /><br /> `FROM Customer"`|
 
-Der üblichen Vorgehensweise wird zum Übergeben von NULL, um `Open`; in diesem Fall `Open` Aufrufe `GetDefaultSQL`, eine überschreibbare Memberfunktion, die Klassen-Assistent beim Erstellen generiert einer `CDaoRecordset`-abgeleitete Klasse. Dieser Wert gibt den Namen des Tabledef(s) und/oder Querydef, die Sie im Klassen-Assistenten angegeben haben. Sie können stattdessen andere Informationen im Angeben der *LpszSQL* Parameter.
+Die übliche Vorgehensweise besteht darin, NULL an `Open`zu übergeben. in diesem Fall ruft `Open` `GetDefaultSQL`auf, eine über schreibbare Member-Funktion, die von ClassWizard generiert wird, wenn eine `CDaoRecordset`abgeleitete Klasse erstellt wird. Dieser Wert gibt die Tabledef (s) und/oder Querydef-Namen an, die Sie in ClassWizard angegeben haben. Sie können stattdessen Weitere Informationen im *lpszSQL* -Parameter angeben.
 
-Jede Übergabe `Open` eine endgültige SQL-Zeichenfolge für die Abfrage erstellt (die Zeichenfolge möglicherweise die SQL **, in denen** und **ORDERBY** Klauseln angefügt, um die *LpszSQL* Zeichenfolge Sie übergeben), und klicken Sie dann die Abfrage ausführt. Sie können die erstellte Zeichenfolge überprüfen, durch den Aufruf `GetSQL` nach dem Aufruf `Open`.
+`Open` erstellt eine endgültige SQL-Zeichenfolge für die Abfrage (die Zeichenfolge kann SQL **Where** -und **OrderBy** -Klauseln enthalten, die an die übergebene *lpszSQL* -Zeichenfolge angehängt wurden) und führt dann die Abfrage aus. Nachdem Sie `Open`aufgerufen haben, können Sie die erstellte Zeichenfolge durch Aufrufen von `GetSQL` untersuchen.
 
 Die Felddatenmember der Recordset-Klasse sind an die Spalten der ausgewählten Daten gebunden. Falls Datensätze zurückgegeben werden, wird der erste Datensatz zum aktuellen Datensatz.
 
-Wenn Sie Optionen für das Recordset, wie Sie einen Filter oder eine Sortierung festlegen möchten, legen `m_strSort` oder `m_strFilter` nach dem Erstellen des Recordsetobjekts, aber vor dem Aufruf `Open`. Wenn Sie die Datensätze im Recordset nach dem aktualisieren möchten das Recordset bereits geöffnet ist, rufen Sie `Requery`.
+Wenn Sie Optionen für das Recordset festlegen möchten, z. b. einen Filter oder eine Sortierung, legen Sie `m_strSort` oder `m_strFilter` fest, nachdem Sie das Recordset-Objekt erstellt haben, aber bevor Sie `Open`aufgerufen haben. Wenn Sie die Datensätze im Recordset aktualisieren möchten, nachdem das Recordset bereits geöffnet ist, wenden Sie `Requery`an.
 
-Wenn Sie aufrufen `Open` auf ein Dynaset oder Snapshot-Type-Recordset, oder wenn die Datenquelle auf eine SQL-Anweisung oder einer Tabledef, die eine angefügte Tabelle darstellt verweist, können keine `dbOpenTable` für das Typargument; Wenn Sie dies tun, löst MFC eine Ausnahme. Um zu bestimmen, ob ein Objekt Tabledef eine angefügte Tabelle darstellt, erstellen Sie eine [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) Objekt, und rufen die [GetConnect](../../mfc/reference/cdaotabledef-class.md#getconnect) Member-Funktion.
+Wenn Sie `Open` für ein Recordset vom Typ "Dynaset-Type" oder "Snapshot-Type" abrufen oder wenn sich die Datenquelle auf eine SQL-Anweisung oder eine Tabledef bezieht, die eine angefügte Tabelle darstellt, können Sie `dbOpenTable` nicht für das Typargument verwenden. Wenn Sie dies tun, löst MFC eine Ausnahme aus. Um zu ermitteln, ob ein Tabledef-Objekt eine angefügte Tabelle darstellt, erstellen Sie ein [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) -Objekt, und rufen Sie seine [GetConnect](../../mfc/reference/cdaotabledef-class.md#getconnect) -Member-Funktion auf
 
-Verwenden der `dbSeeChanges` auszugeben, wenn Sie Änderungen, die von einem anderen Benutzer oder ein anderes Programm auf Ihrem Computer beim Bearbeiten oder löschen den gleichen Datensatz abfangen möchten. Wenn zwei Benutzer starten, bearbeiten den gleichen Datensatz, der erste Benutzer aufrufen, z. B. die `Update` Memberfunktion erfolgreich ausgeführt wird. Wenn `Update` wird aufgerufen, durch den zweiten Benutzer eine `CDaoException` ausgelöst. Auf ähnliche Weise, wenn der zweite Benutzer versucht, rufen Sie `Delete` So löschen Sie den Datensatz, und es wurde bereits geändert durch den ersten Benutzer, eine `CDaoException` auftritt.
+Verwenden Sie das `dbSeeChanges`-Flag, wenn Sie Änderungen, die von einem anderen Benutzer oder einem anderen Programm auf dem Computer vorgenommen werden, beim Bearbeiten oder löschen desselben Datensatzes abfangen möchten. Wenn beispielsweise zwei Benutzer mit der Bearbeitung desselben Datensatzes beginnen, wird der erste Benutzer, der die `Update` Member-Funktion aufruft, erfolgreich ausgeführt. Wenn `Update` vom zweiten Benutzer aufgerufen wird, wird eine `CDaoException` ausgelöst. Wenn der zweite Benutzer versucht, `Delete` aufzurufen, um den Datensatz zu löschen, und er bereits vom ersten Benutzer geändert wurde, tritt ein `CDaoException` auf.
 
-In der Regel, wenn der Benutzer dies `CDaoException` der Code sollte beim Aktualisieren, aktualisieren Sie den Inhalt der Felder und die geänderte Werte abrufen. Tritt die Ausnahme gerade gelöscht, konnte Ihr Code die Daten des neuen Datensatzes anzeigen, für den Benutzer und eine Meldung gibt an, dass die Daten vor kurzem geändert wurden. An diesem Punkt kann Ihren Code eine Bestätigung anfordern möchte der Benutzer immer noch den Datensatz zu löschen.
+Wenn der Benutzer diese `CDaoException` während der Aktualisierung erhält, sollte der Code den Inhalt der Felder aktualisieren und die neu geänderten Werte abrufen. Wenn die Ausnahme beim Löschen auftritt, könnte der Code die neuen Daten Satz Daten für den Benutzer anzeigen, und es wird eine Meldung angezeigt, die besagt, dass die Daten vor kurzem geändert wurden. An diesem Punkt kann Ihr Code eine Bestätigung anfordern, dass der Benutzer den Datensatz trotzdem löschen möchte.
 
 > [!TIP]
->  Verwenden Sie die Vorwärts-Option für den Bildlauf (`dbForwardOnly`) zur Verbesserung der Leistung, wenn die Anwendung auf einem einzelnen Durchlauf durch ein Recordset verwendet, die in einer ODBC-Datenquelle geöffnet.
+>  Verwenden Sie die vorwärts Bild Lauf Option (`dbForwardOnly`), um die Leistung zu verbessern, wenn Ihre Anwendung eine einzelne Durchführung eines Recordsets durchführt, das aus einer ODBC-Datenquelle geöffnet wurde.
 
-Verwandte Informationen finden Sie im Thema "OpenRecordset Method" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "OpenRecordset-Methode" in der DAO-Hilfe.
 
-##  <a name="requery"></a>  CDaoRecordset::Requery
+##  <a name="requery"></a>CDaoRecordset:: Requery
 
-Rufen Sie diese Memberfunktion um neu zu erstellen (aktualisieren) einem Recordset.
+Diese Member-Funktion zum Neuerstellen (aktualisieren) eines Recordsets aufruft.
 
 ```
 virtual void Requery();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Falls Datensätze zurückgegeben werden, wird der erste Datensatz zum aktuellen Datensatz.
 
-In der Reihenfolge für das Recordset entsprechend der Hinzufügungen und löschungen, die Sie oder andere Benutzer mit der Datenquelle vornehmen, müssen Sie das Recordset erstellen, durch Aufruf `Requery`. Wenn das Recordset ein Dynaset ist, wird automatisch Updates, die Sie oder andere Benutzer an die vorhandene Datensätze (aber nicht Additions) Stellen angezeigt. Wenn das Recordset eine Momentaufnahme ist, müssen Sie aufrufen `Requery` entsprechend der Änderungen von anderen Benutzern als auch Ergänzungen und löschungen.
+Damit das Recordset die Ergänzungen und Löschungen widerspiegelt, die Sie oder andere Benutzer an der Datenquelle vornehmen, müssen Sie das Recordset durch Aufrufen von `Requery`neu erstellen. Wenn das Recordset ein Dynaset ist, spiegelt es automatisch Updates wider, die Sie oder andere Benutzer an den vorhandenen Datensätzen vornehmen (aber nicht an Ergänzungen). Wenn das Recordset eine Momentaufnahme ist, müssen Sie `Requery` aufrufen, um Änderungen durch andere Benutzer sowie Ergänzungen und Löschungen widerzuspiegeln.
 
-Rufen Sie für ein Dynaset oder eine Momentaufnahme, `Requery` jederzeit das Recordset mit Parameterwerten neu erstellen möchten. Legen Sie den neuen Filter oder sortieren, indem Sie [M_strFilter](#m_strfilter) und [M_strSort](#m_strsort) vor dem Aufruf `Requery`. Legen Sie die neuen Parameter Parameterdatenmember vor dem Aufruf neue Werte zuweisen `Requery`.
+Bei einem Dynaset oder einer Momentaufnahme `Requery` jederzeit aufrufen, um das Recordset mithilfe von Parameterwerten neu zu erstellen. Legen Sie den neuen Filter fest, oder sortieren Sie, indem Sie vor dem Aufrufen von `Requery`[m_strFilter](#m_strfilter) und [m_strSort](#m_strsort) festlegen Legen Sie neue Parameter fest, indem Sie den Parameter Datenmembern vor dem Aufrufen von `Requery`neue Werte zuweisen.
 
-Wenn der Versuch, die das Recordset neu erstellen ein Fehler auftritt, wird das Recordset geschlossen. Vor dem Aufruf `Requery`, können Sie bestimmen, ob das Recordset, durch den Aufruf erneut abgefragt werden kann die [CanRestart](#canrestart) Member-Funktion. `CanRestart` garantiert nicht, dass `Requery` wird erfolgreich ausgeführt.
+Wenn der Versuch, das Recordset neu zu erstellen, fehlschlägt, wird das Recordset geschlossen. Bevor Sie `Requery`aufrufen, können Sie bestimmen, ob das Recordset durch Aufrufen der [canrestart](#canrestart) -Member-Funktion abgefragt werden kann. `CanRestart` gewährleistet nicht, dass `Requery` erfolgreich ausgeführt wird.
 
 > [!CAUTION]
->  Rufen Sie `Requery` erst nach der Sie aufgerufen haben `Open`.
+>  `Requery` erst aufrufen, nachdem Sie `Open`aufgerufen haben.
 
 > [!NOTE]
->  Aufrufen von [Requery](#requery) DAO Lesezeichen ändert.
+>  Der Aufruf von " [Requery](#requery) " ändert DAO-Lesezeichen
 
-Sie können nicht aufgerufen werden `Requery` auf ein Dynaset oder Recordset Momentaufnahme vom Typ, wenn der Aufruf `CanRestart` gibt 0 zurück, und Sie können es auf einem Recordset-Tabelle vom Typ.
+Sie können `Requery` für einen Typ vom Typ "Dynaset-Type" oder "Snapshot-Type" nicht aufrufen, wenn der Aufruf von `CanRestart` "0" zurückgibt und Sie ihn nicht für ein Recordset des Tabellentyps verwenden können
 
-Wenn beide `IsBOF` und `IsEOF` ungleich NULL zurückgeben, nach dem Aufruf von `Requery`, die Abfrage wurde keine Datensätze und das Recordset enthalten keine Daten zurückgegeben.
+Wenn sowohl `IsBOF` als auch `IsEOF` nach dem Abrufen von `Requery`einen Wert ungleich 0 (null) zurückgeben, hat die Abfrage keine Datensätze zurückgegeben, und das Recordset enthält keine Daten.
 
-Weitere Informationen finden Sie im Thema "Requery-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Requery Method" in der DAO-Hilfe.
 
-##  <a name="seek"></a>  CDaoRecordset::Seek
+##  <a name="seek"></a>CDaoRecordset:: Seek
 
-Rufen Sie diese Memberfunktion um den Datensatz in einem Recordset-Objekt vom Typ indizierte Tabelle zu suchen, die erfüllt wird, die angegebenen Kriterien für den aktuellen index, und vergewissern, dass die zum aktuellen Datensatz.
+Mit dieser Member-Funktion können Sie den Datensatz in einem indizierten Tabellentyp-Recordset-Objekt suchen, das die angegebenen Kriterien für den aktuellen Index erfüllt und diesen Datensatz zum aktuellen Datensatz führt.
 
 ```
 BOOL Seek(
@@ -2081,53 +2081,53 @@ BOOL Seek(
 ### <a name="parameters"></a>Parameter
 
 *lpszComparison*<br/>
-Eine der folgenden Ausdrücke: "<","\<=", "=", "> =", oder ">".
+Einer der folgenden Zeichen folgen Ausdrücke: "<", "\<=", "=", "> =" oder ">".
 
 *pKey1*<br/>
-Ein Zeiger auf eine [COleVariant](../../mfc/reference/colevariant-class.md) , dessen Wert in das erste Feld im Index entspricht. Erforderlich.
+Ein Zeiger auf einen [COleVariant](../../mfc/reference/colevariant-class.md) , dessen Wert dem ersten Feld im Index entspricht. Erforderlich.
 
 *pKey2*<br/>
-Ein Zeiger auf eine `COleVariant` , dessen Wert entspricht dem zweiten Feld im Index, sofern vorhanden. Der Standardwert ist NULL.
+Ein Zeiger auf eine `COleVariant`, deren Wert dem zweiten Feld im Index entspricht, sofern vorhanden. Der Standardwert ist NULL.
 
 *pKey3*<br/>
-Ein Zeiger auf eine `COleVariant` , dessen Wert entspricht dem dritten Feld im Index, sofern vorhanden. Der Standardwert ist NULL.
+Ein Zeiger auf eine `COleVariant`, deren Wert dem dritten Feld im Index entspricht, sofern vorhanden. Der Standardwert ist NULL.
 
-*pKeyArray*<br/>
-Ein Zeiger auf ein Array von Varianten. Die Größe des Arrays entspricht die Anzahl der Felder im Index.
+*pkeyarray*<br/>
+Ein Zeiger auf ein Array von Varianten. Die Array Größe entspricht der Anzahl der Felder im Index.
 
-*nKeys*<br/>
-Eine ganze Zahl, die Größe des Arrays, die die Anzahl der Felder im Index entspricht.
+*nkeys*<br/>
+Eine ganze Zahl, die der Größe des Arrays entspricht, d. h. die Anzahl der Felder im Index.
 
 > [!NOTE]
->  Geben Sie keine Platzhalter in den Schlüsseln. Bewirkt, dass Platzhalter `Seek` keine übereinstimmenden Datensätze zurückgegeben.
+>  Geben Sie keine Platzhalter in den Schlüsseln an. Platzhalter bewirken, dass `Seek` keine übereinstimmenden Datensätze zurückgibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
+Ungleich NULL, wenn übereinstimmende Datensätze gefunden werden, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die zweite (Array) Version `Seek` verarbeiten Indizes vier Felder oder mehr.
+Verwenden Sie die zweite Version (Array) von `Seek`, um Indizes von vier Feldern oder mehr zu verarbeiten.
 
-`Seek` ermöglicht leistungsstarke Index Recordsets vom Typ Tabelle nach. Sie müssen den aktuellen Index festlegen, durch den Aufruf `SetCurrentIndex` vor dem Aufruf `Seek`. Wenn der Index ein Feld mit einem nicht eindeutigen oder Felder identifiziert `Seek` sucht den ersten Datensatz aus, die die Kriterien erfüllt. Wenn Sie einen Index nicht festlegen, wird eine Ausnahme ausgelöst.
+`Seek` ermöglicht die Suche mit Hochleistungs Indizes für Tabellentypen-Recordsets. Sie müssen den aktuellen Index festlegen, indem Sie `SetCurrentIndex` aufrufen, bevor Sie `Seek`aufrufen. Wenn der Index ein nicht eindeutiges Schlüsselfeld oder Felder identifiziert, `Seek` den ersten Datensatz ermitteln, der die Kriterien erfüllt. Wenn Sie keinen Index festlegen, wird eine Ausnahme ausgelöst.
 
-Beachten Sie, dass, wenn Sie ein UNICODE-Recordset nicht erstellen, wird die `COleVariant` Objekte müssen explizit ANSI deklariert werden. Dies kann erfolgen mithilfe der [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** *LpszSrc* **,** *VtSrc* **)**  Form des Konstruktors mit *VtSrc* festgelegt `VT_BSTRT` (ANSI) oder mithilfe der `COleVariant` Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** *LpszSrc* **,** *VtSrc* **)** mit *VtSrc* festgelegt `VT_BSTRT`.
+Beachten Sie Folgendes: Wenn Sie kein Unicode-Recordset erstellen, müssen die `COleVariant` Objekte explizit als ANSI deklariert werden. Dies kann mithilfe der [COleVariant:: COleVariant](../../mfc/reference/colevariant-class.md#colevariant) **(** *lpszsrc* **,** *vzrc* **)** -Form des Konstruktors erfolgen, wenn *vtrc* auf `VT_BSTRT` (ANSI) festgelegt ist, oder indem Sie die `COleVariant`-Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring) **(** *lpszsrc* **,** *vzrc* **)** verwenden, wobei *vtrc* auf `VT_BSTRT`festgelegt ist.
 
-Beim Aufruf `Seek`, übergeben Sie eine oder mehrere Schlüsselwerte und einem Vergleichsoperator ("<","\<=", "=", "> =", oder ">"). `Seek` durchsucht die angegebene Schlüsselfelder und sucht nach den ersten Datensatz, der die vom angegebenen Kriterien entspricht *LpszComparison* und *pKey1*. Sobald eines gefunden wurde, `Seek` gibt ungleich NULL zurück und macht diesen Datensatz als aktuellen. Wenn `Seek` keine findet eine Übereinstimmung, `Seek` gibt NULL zurück, und der aktuelle Datensatz ist nicht definiert. Bei DAO direkt zu verwenden, müssen Sie explizit die Eigenschaft NoMatch prüfen.
+Wenn Sie `Seek`aufgerufen haben, übergeben Sie mindestens einen Schlüsselwert und einen Vergleichs Operator ("<", "\<=", "=", "> =" oder ">"). `Seek` durchsucht die angegebenen Schlüsselfelder und sucht den ersten Datensatz, der die von *lpszComparison* und *pKey1*angegebenen Kriterien erfüllt. Wenn Sie gefunden wurde, gibt `Seek` einen Wert ungleich 0 (null) zurück Wenn `Seek` eine Suche nicht finden kann, gibt `Seek` 0 (null) zurück, und der aktuelle Datensatz ist nicht definiert. Wenn DAO direkt verwendet wird, müssen Sie explizit die NoMatch-Eigenschaft überprüfen.
 
-Wenn `lpszComparison` ist "=", "> =", oder ">", `Seek` beginnt am Anfang des Indexes. Wenn *LpszComparison* ist "<" oder "< =", `Seek` startet am Ende des Indexes und rückwärts gesucht werden, es sei denn, es doppelte Einträge am Ende gibt. In diesem Fall `Seek` beginnt an einen beliebigen Eintrag für die doppelte Einträge am Ende des Indexes.
+Wenn `lpszComparison` "=", "> =" oder ">" ist, beginnt `Seek` am Anfang des Indexes. Wenn *lpszComparison* den Wert "<" oder "< =" hat, wird `Seek` am Ende des Indexes gestartet und rückwärts durchsucht, es sei denn, am Ende sind doppelte Indexeinträge vorhanden. In diesem Fall wird `Seek` bei einem beliebigen Eintrag unter den doppelten Indexeinträgen am Ende des Indexes gestartet.
 
-Es muss keine aktuellen Datensatz, bei der Verwendung `Seek`.
+Wenn Sie `Seek`verwenden, muss kein aktueller Datensatz vorhanden sein.
 
-Verwenden Sie zum Suchen eines Datensatzes in einem Dynaset oder Snapshot-Type-Recordset, das eine bestimmte Bedingung erfüllt, die Suchvorgänge. Verwenden Sie die Move-Vorgänge von Datensatz zu Datensatz verschoben, um alle Datensätze, nicht nur diejenigen, die eine bestimmte Bedingung erfüllen.
+Um einen Datensatz in einem "Dynaset-Type"-oder "Snapshot-Type"-Recordset zu suchen, das eine bestimmte Bedingung erfüllt, verwenden Sie die Suchvorgänge. Um alle Datensätze einzuschließen, nicht nur die, die eine bestimmte Bedingung erfüllen, verwenden Sie die Verschiebungs Vorgänge, um von Datensatz zu Datensatz zu wechseln.
 
-Sie können nicht aufgerufen werden `Seek` auf einer angefügten Tabelle aller geben, da der verbundene Tabellen als Dynaset oder Recordsets vom Typ Snapshot geöffnet werden müssen. Allerdings Aufrufen `CDaoDatabase::Open` um eine installierbare ISAM-Datenbank direkt zu öffnen, rufen Sie `Seek` für Tabellen in der Datenbank zwar die Leistung möglicherweise verlangsamt.
+Sie können `Seek` für eine angefügte Tabelle eines beliebigen Typs nicht abrufen, da angefügte Tabellen als Dynaset-Type-oder Snapshot-Type-Recordsets geöffnet werden müssen. Wenn Sie jedoch `CDaoDatabase::Open` aufgerufen haben, um eine installierbare ISAM-Datenbank direkt zu öffnen, können Sie `Seek` für Tabellen in dieser Datenbank aufzurufen, obwohl die Leistung möglicherweise langsam ist.
 
-Weitere Informationen finden Sie unter dem Thema "Seek-Methode" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Seek Method" in der DAO-Hilfe.
 
-##  <a name="setabsoluteposition"></a>  CDaoRecordset::SetAbsolutePosition
+##  <a name="setabsoluteposition"></a>CDaoRecordset:: SetAbsolutePosition
 
-Legt fest, die relative Nummer des aktuellen Datensatzes einem Recordset-Objekt.
+Legt die relative Datensatznummer des aktuellen Datensatzes eines Recordset-Objekts fest.
 
 ```
 void SetAbsolutePosition(long lPosition);
@@ -2135,28 +2135,28 @@ void SetAbsolutePosition(long lPosition);
 
 ### <a name="parameters"></a>Parameter
 
-*lPosition*<br/>
-Entspricht der Position des aktuellen Datensatzes im Recordset.
+*lposition*<br/>
+Entspricht der Ordinalposition des aktuellen Datensatzes im Recordset.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aufrufen von `SetAbsolutePosition` ermöglicht es Ihnen, die Zeiger für den aktuellen Datensatz zu einem bestimmten Datensatz basierend auf seine ordnungspostion im ein Dynaset oder Snapshot-Type-Recordset zu positionieren. Sie können die Nummer des aktuelle Datensatzes auch ermitteln, durch den Aufruf [GetAbsolutePosition](#getabsoluteposition).
-
-> [!NOTE]
->  Diese Memberfunktion ist nur für Dynaset und Recordsets vom Typ Snapshot gültig.
-
-Der Wert der AbsolutePosition-Eigenschaft das zugrunde liegende DAO-Objekt ist nullbasiert. die Einstellung 0 bezieht sich auf den ersten Datensatz im Recordset. Festlegen eines Werts größer als die Anzahl der aufgefüllten Datensätze, löst MFC eine Ausnahme ausgelöst. Sie können die Anzahl der aufgefüllten Datensätze im Recordset zu ermitteln, durch den Aufruf der `GetRecordCount` Member-Funktion.
-
-Wenn der aktuelle Datensatz gelöscht wird, den Wert der AbsolutePosition-Eigenschaft ist nicht definiert, und löst MFC eine Ausnahme aus, wenn darauf verwiesen wird. Neue Datensätze werden an das Ende der Sequenz hinzugefügt.
+Wenn Sie `SetAbsolutePosition` aufrufen, können Sie den aktuellen Daten Satz Zeiger auf einem bestimmten Datensatz auf der Grundlage seiner Ordinalposition in einem Recordset vom Typ "Dynaset-Type" oder "Snapshot-Type" positionieren. Sie können auch die aktuelle Datensatznummer ermitteln, indem Sie [GetAbsolutePosition](#getabsoluteposition)aufrufen.
 
 > [!NOTE]
->  Diese Eigenschaft ist nicht als Ersatz-Datensatznummer verwendet werden soll. Lesezeichen sind weiterhin die empfohlene Methode zurückzukehren, klicken Sie auf einer bestimmten Position und die einzige Möglichkeit, den aktuellen Datensatz für alle Typen des Recordset-Objekte zu positionieren, die Lesezeichen unterstützen. Insbesondere ändert die Position eines bestimmten Datensatzes auf, wenn vorhergehenden Datensätze gelöscht werden. Es gibt auch keine Zusicherung, dass ein bestimmter Datensatz die gleiche absolute Position hat, wenn das Recordset neu erstellt wird, da die Reihenfolge der einzelnen Datensätze innerhalb eines Recordsets, nicht unbedingt, es sei denn, sie mit der Verwendung einer SQL-Anweisung erstellt wird eine  **ORDERBY** Klausel.
+>  Diese Member-Funktion ist nur für den Dynaset-Type-und den Snapshot-Type-Recordsets gültig.
 
-Weitere Informationen finden Sie unter dem Thema "AbsolutePosition-Eigenschaft" in-DAO-Hilfe.
+Der AbsolutePosition-Eigenschafts Wert des zugrunde liegenden DAO-Objekts ist NULL basiert. eine Einstellung von 0 bezieht sich auf den ersten Datensatz im Recordset. Wenn Sie einen Wert festlegen, der größer als die Anzahl der aufgefüllten Datensätze ist, löst MFC eine Ausnahme aus. Sie können die Anzahl der gefüllten Datensätze im Recordset ermitteln, indem Sie die `GetRecordCount` Member-Funktion aufrufen.
 
-##  <a name="setbookmark"></a>  CDaoRecordset:: SetBookmark
+Wenn der aktuelle Datensatz gelöscht wird, ist der Wert der AbsolutePosition-Eigenschaft nicht definiert, und MFC löst eine Ausnahme aus, wenn darauf verwiesen wird. Am Ende der Sequenz werden neue Datensätze hinzugefügt.
 
-Rufen Sie diese Memberfunktion, um auf den Datensatz, der das angegebene Lesezeichen enthält das Recordset zu positionieren.
+> [!NOTE]
+>  Diese Eigenschaft ist nicht für die Verwendung als Ersatz Zeichenfolge vorgesehen. Lesezeichen sind immer noch die empfohlene Methode zum beibehalten und zurückkehren zu einer gegebenen Position und sind die einzige Möglichkeit, den aktuellen Datensatz für alle Typen von Recordset-Objekten zu positionieren, die Lesezeichen unterstützen. Insbesondere wird die Position eines bestimmten Datensatzes geändert, wenn Datensätze vor dem Löschen gelöscht werden. Es ist auch nicht sichergestellt, dass ein bestimmter Datensatz die gleiche absolute Position hat, wenn der Recordset erneut erstellt wird, da die Reihenfolge der einzelnen Datensätze in einem Recordset nicht garantiert wird, es sei denn, Sie wird mit einer SQL-Anweisung mithilfe einer **OrderBy** -Klausel erstellt.
+
+Weitere Informationen finden Sie im Thema "AbsolutePosition-Eigenschaft" in der DAO-Hilfe.
+
+##  <a name="setbookmark"></a>CDaoRecordset:: SetBookmark
+
+Ruft diese Member-Funktion auf, um das Recordset für den Datensatz zu positionieren, der das angegebene Lesezeichen enthält.
 
 ```
 void SetBookmark(COleVariant varBookmark);
@@ -2164,23 +2164,23 @@ void SetBookmark(COleVariant varBookmark);
 
 ### <a name="parameters"></a>Parameter
 
-*varBookmark*<br/>
-Ein [COleVariant](../../mfc/reference/colevariant-class.md) Objekt mit dem Lesezeichenwert für einen bestimmten Datensatz.
+*varbookmark*<br/>
+Ein [COleVariant](../../mfc/reference/colevariant-class.md) -Objekt, das den Lesezeichen Wert für einen bestimmten Datensatz enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn einem Recordset-Objekt erstellt oder geöffnet wird, hat jeder Datensatz bereits über ein eindeutiges Lesezeichen. Sie können das Lesezeichen für den aktuellen Datensatz abrufen, durch den Aufruf `GetBookmark` und speichern den Wert in eine `COleVariant` Objekt. Sie können später zu diesem Datensatz zurückkehren, indem `SetBookmark` unter Verwendung des gespeicherten lesezeichenwerts.
+Wenn ein Recordset-Objekt erstellt oder geöffnet wird, verfügt jeder seiner Datensätze bereits über ein eindeutiges Lesezeichen. Sie können das Lesezeichen für den aktuellen Datensatz abrufen, indem Sie `GetBookmark` aufrufen und den Wert in einem `COleVariant`-Objekt speichern. Sie können später zu diesem Datensatz zurückkehren, indem Sie `SetBookmark` mithilfe des gespeicherten Lesezeichen Werts aufrufen.
 
 > [!NOTE]
->  Aufrufen von [Requery](#requery) DAO Lesezeichen ändert.
+>  Der Aufruf von " [Requery](#requery) " ändert DAO-Lesezeichen
 
-Beachten Sie, dass, wenn Sie ein UNICODE-Recordset nicht erstellen, wird die `COleVariant` Objekt muss explizit ANSI deklariert werden. Dies kann erfolgen mithilfe der [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** *LpszSrc* **,** *VtSrc* **)**  Form des Konstruktors mit *VtSrc* festgelegt `VT_BSTRT` (ANSI) oder mithilfe der `COleVariant` Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** *LpszSrc* **,** *VtSrc* **)** mit *VtSrc* festgelegt `VT_BSTRT`.
+Beachten Sie Folgendes: Wenn Sie kein Unicode-Recordset erstellen, muss das `COleVariant` Objekt explizit als ANSI deklariert werden. Dies kann mithilfe der [COleVariant:: COleVariant](../../mfc/reference/colevariant-class.md#colevariant) **(** *lpszsrc* **,** *vzrc* **)** -Form des Konstruktors erfolgen, wenn *vtrc* auf `VT_BSTRT` (ANSI) festgelegt ist, oder indem Sie die `COleVariant`-Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring) **(** *lpszsrc* **,** *vzrc* **)** verwenden, wobei *vtrc* auf `VT_BSTRT`festgelegt ist.
 
-Weitere Informationen finden Sie unter den Themen "Lesezeichen-Eigenschaft" und jeden Eigenschaft"DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Bookmark Property" und "Bookmarkable Property" in der DAO-Hilfe.
 
-##  <a name="setcachesize"></a>  CDaoRecordset:: SetCacheSize
+##  <a name="setcachesize"></a>CDaoRecordset:: setCacheSize
 
-Rufen Sie diese Memberfunktion zum Festlegen der Anzahl der Datensätze, die zwischengespeichert werden.
+Mit dieser Member-Funktion können Sie die Anzahl der Datensätze festlegen, die zwischengespeichert werden sollen.
 
 ```
 void SetCacheSize(long lSize);
@@ -2188,20 +2188,20 @@ void SetCacheSize(long lSize);
 
 ### <a name="parameters"></a>Parameter
 
-*lSize*<br/>
-Gibt die Anzahl von Datensätzen. Ein häufig angegebener Wert ist 100. Eine Einstellung mit 0 deaktiviert die Zwischenspeicherung. Die Einstellung muss zwischen 5 und 1200-Datensätze sein. Der Cache kann eine beträchtliche Menge an Arbeitsspeicher verwenden.
+*LSIZE*<br/>
+Gibt die Anzahl der Datensätze an. Ein typischer Wert ist 100. Durch die Einstellung 0 wird die Zwischenspeicherung deaktiviert. Die Einstellung muss zwischen 5 und 1200 Datensätzen liegen. Der Cache kann eine beträchtliche Menge an Arbeitsspeicher beanspruchen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Cache ist ein Leerzeichen im lokalen Speicher, der das den Fall, dass die Daten erneut angefordert werden, während der Ausführung der Anwendung zuletzt vom Server abgerufenen Daten enthält. Zwischenspeichern von Daten verbessert die Leistung einer Anwendung, die Daten von einem Remoteserver über Dynaset eines assistentartigen Recordset-Objekte abruft. Wenn Daten angefordert werden, überprüft die Microsoft Jet-Datenbank-Engine den Cache für die angeforderten Daten zuerst statt Abruf aus dem Server, wodurch mehr Zeit benötigt. Daten, die nicht von einer ODBC-Datenquelle stammt, ist nicht im Cache gespeichert.
+Ein Cache ist ein Speicherplatz im lokalen Speicher, der die Daten enthält, die zuletzt vom Server abgerufen wurden, wenn die Daten während der Ausführung der Anwendung erneut angefordert werden. Das Zwischenspeichern von Daten verbessert die Leistung einer Anwendung, die Daten von einem Remote Server durch Dynaset-Type Recordset-Objekte abruft. Wenn Daten angefordert werden, überprüft die Microsoft Jet-Datenbank-Engine den Cache zuerst auf die angeforderten Daten, anstatt Sie vom Server abzurufen, was mehr Zeit in sich bringt. Daten, die nicht aus einer ODBC-Datenquelle stammen, werden nicht im Cache gespeichert.
 
-Eine ODBC-Datenquelle, z. B. einer angefügten Tabelle haben einen lokalen Cache. Um den Cache zu erstellen, öffnen Sie ein Recordset-Objekt aus der Remotedatenquelle, Aufruf der `SetCacheSize` und `SetCacheStart` Memberfunktionen und rufen Sie dann die `FillCache` Memberfunktion oder Schritt durch die Datensätze mithilfe eines der Move-Vorgänge. Die *lSize beim Aufruf* Parameter, der die `SetCacheSize` Memberfunktion kann auf die Anzahl der Datensätze, die Ihre Anwendung kann gleichzeitig mit arbeiten basieren. Beispielsweise, wenn Sie ein Recordset als Quelle der Daten verwenden, die auf dem Bildschirm angezeigt werden, Sie könnten übergeben die `SetCacheSize` *lSize beim Aufruf* Parameter als 20, 20 Datensätze auf einmal angezeigt.
+Jede ODBC-Datenquelle, z. b. eine angefügte Tabelle, kann über einen lokalen Cache verfügen. Um den Cache zu erstellen, öffnen Sie ein Recordset-Objekt aus der Remote Datenquelle, rufen Sie die Funktionen `SetCacheSize` und `SetCacheStart` Member auf, und rufen Sie dann die `FillCache` Member-Funktion auf, oder durchlaufen Sie die Datensätze mithilfe eines der Verschiebungs Vorgänge. Der *LSIZE* -Parameter der `SetCacheSize` Member-Funktion kann auf der Anzahl von Datensätzen basieren, mit denen Ihre Anwendung gleichzeitig arbeiten kann. Wenn Sie z. b. ein Recordset als Quelle der Daten verwenden, die auf dem Bildschirm angezeigt werden sollen, können Sie den `SetCacheSize` *LSIZE* -Parameter als 20 übergeben, um 20 Datensätze gleichzeitig anzuzeigen.
 
-Verwandte Informationen finden Sie im Thema "CacheSize, CacheStart-Eigenschaften" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "CacheSize, CacheStart Properties" in der DAO-Hilfe.
 
-##  <a name="setcachestart"></a>  CDaoRecordset:: SetCacheStart
+##  <a name="setcachestart"></a>CDaoRecordset:: SetCacheStart
 
-Rufen Sie diese Memberfunktion zum Angeben des Lesezeichens für den ersten Datensatz im Recordset zwischengespeichert werden.
+Diese Member-Funktion wird aufgerufen, um das Lesezeichen des ersten Datensatzes im Recordset anzugeben, das zwischengespeichert werden soll.
 
 ```
 void SetCacheStart(COleVariant varBookmark);
@@ -2209,26 +2209,26 @@ void SetCacheStart(COleVariant varBookmark);
 
 ### <a name="parameters"></a>Parameter
 
-*varBookmark*<br/>
-Ein [COleVariant](../../mfc/reference/colevariant-class.md) , der das Lesezeichen des ersten Datensatzes im Recordset zwischengespeichert werden angibt.
+*varbookmark*<br/>
+Ein [COleVariant](../../mfc/reference/colevariant-class.md) , der das Lesezeichen des ersten Datensatzes im Recordset angibt, das zwischengespeichert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Können Sie die Lesezeichenwert, der alle Datensätze für die *VarBookmark* Parameter, der die `SetCacheStart` Member-Funktion. Machen Sie den Datensatz, die Sie verwenden möchten, starten den Cache mit den aktuellen Datensatz, ein Lesezeichen für die Verwendung von diesem Datensatz herzustellen [SetBookmark](#setbookmark), und übergeben Sie den Wert für Lesezeichen als Parameter für die `SetCacheStart` Member-Funktion.
+Sie können den Lesezeichen Wert eines beliebigen Datensatzes für den *varbookmark* -Parameter der `SetCacheStart` Member-Funktion verwenden. Legen Sie den Datensatz, für den Sie den Cache starten möchten, mit dem aktuellen Datensatz fest, richten Sie mithilfe von [SetBookmark](#setbookmark)ein Lesezeichen für diesen Datensatz ein, und übergeben Sie den Lesezeichen Wert als Parameter für die `SetCacheStart` Member-Funktion.
 
-Die Microsoft Jet-Datenbank-Engine Datensätze innerhalb des Bereichs des Cache aus dem Cache, und es Anforderungen Datensätze außerhalb des Bereichs des Caches auf dem Server.
+Die Microsoft Jet-Datenbank-Engine fordert Datensätze im Cache Bereich aus dem Cache an und fordert Datensätze außerhalb des Cache Bereichs vom Server an.
 
-Aus dem Cache abgerufenen Datensätze nicht gleichzeitig mit der Datenquelle von anderen Benutzern vorgenommenen Änderungen wieder.
+Aus dem Cache abgerufene Datensätze enthalten keine Änderungen, die von anderen Benutzern gleichzeitig an den Quelldaten vorgenommen wurden.
 
-Um ein Update aller zwischengespeicherten Daten zu erzwingen, übergeben die *lSize beim Aufruf* Parameter der `SetCacheSize` als 0 (null) aufrufen `SetCacheSize` erneut mit der Größe des Caches Sie ursprünglich angefordert hat, und rufen dann die `FillCache` Member-Funktion.
+Wenn Sie ein Update aller zwischengespeicherten Daten erzwingen möchten, übergeben Sie den *LSIZE* -Parameter von `SetCacheSize` als 0, und geben Sie `SetCacheSize` erneut mit der Größe des Cache an, den Sie ursprünglich angefordert haben, und dann die `FillCache` Member-Funktion aufrufen.
 
-Beachten Sie, dass, wenn Sie ein UNICODE-Recordset nicht erstellen, wird die `COleVariant` Objekt muss explizit ANSI deklariert werden. Dies kann erfolgen mithilfe der [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** *LpszSrc* **,** *VtSrc* **)**  Form des Konstruktors mit *VtSrc* festgelegt `VT_BSTRT` (ANSI) oder mithilfe der `COleVariant` Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** *LpszSrc* **,** *VtSrc* **)** mit *VtSrc* festgelegt `VT_BSTRT`.
+Beachten Sie Folgendes: Wenn Sie kein Unicode-Recordset erstellen, muss das `COleVariant` Objekt explizit als ANSI deklariert werden. Dies kann mithilfe der [COleVariant:: COleVariant](../../mfc/reference/colevariant-class.md#colevariant) **(** *lpszsrc* **,** *vzrc* **)** -Form des Konstruktors erfolgen, wenn *vtrc* auf `VT_BSTRT` (ANSI) festgelegt ist, oder indem Sie die `COleVariant`-Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring) **(** *lpszsrc* **,** *vzrc* **)** verwenden, wobei *vtrc* auf `VT_BSTRT`festgelegt ist.
 
-Weitere Informationen finden Sie im Thema CacheSize, CacheStart-Eigenschaften"in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema CacheSize, CacheStart Properties in der DAO-Hilfe.
 
-##  <a name="setcurrentindex"></a>  CDaoRecordset:: SetCurrentIndex
+##  <a name="setcurrentindex"></a>CDaoRecordset:: SetCurrentIndex
 
-Rufen Sie diese Memberfunktion, um einen Index für ein Recordset-Tabelle vom Typ festzulegen.
+Mit dieser Member-Funktion können Sie einen Index für ein Recordset vom Typ "Table" festlegen.
 
 ```
 void SetCurrentIndex(LPCTSTR lpszIndex);
@@ -2236,22 +2236,22 @@ void SetCurrentIndex(LPCTSTR lpszIndex);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszIndex*<br/>
-Ein Zeiger, mit dem Namen des Indexes festgelegt werden.
+*lpszindex*<br/>
+Ein Zeiger, der den Namen des festzulegenden Indexes enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In den Basistabellen werden nicht in einer bestimmten Reihenfolge gespeichert. Einen Index festlegen, ändert die Reihenfolge der Datensätze aus der Datenbank zurückgegeben, aber es hat keine Auswirkungen auf die Reihenfolge, in der die Datensätze gespeichert werden. Der angegebene Index muss bereits definiert sein. Wenn Sie versuchen, eine Indexobjekt verwenden, das nicht vorhanden ist oder wenn der Index nicht festgelegt ist, beim Aufrufen [Seek](#seek), MFC, löst eine Ausnahme aus.
+Datensätze in Basistabellen werden nicht in einer bestimmten Reihenfolge gespeichert. Das Festlegen eines Indexes ändert die Reihenfolge der Datensätze, die von der Datenbank zurückgegeben werden, jedoch nicht die Reihenfolge, in der die Datensätze gespeichert werden. Der angegebene Index muss bereits definiert sein. Wenn Sie versuchen, ein Index Objekt zu verwenden, das nicht vorhanden ist, oder wenn der Index beim aufzurufen von [Seek](#seek)nicht festgelegt wird, löst MFC eine Ausnahme aus.
 
-Sie können einen neuen Index für die Tabelle erstellen, durch den Aufruf [CDaoTableDef::CreateIndex](../../mfc/reference/cdaotabledef-class.md#createindex) von und Anhängen von den neuen Index an die Auflistung von Indizes des zugrunde liegenden Tabledef durch Aufrufen von [CDaoTableDef::](../../mfc/reference/cdaotabledef-class.md#append), und öffnen dann das Recordset.
+Sie können einen neuen Index für die Tabelle erstellen, indem Sie [CDaoTableDef:: CreateIndex](../../mfc/reference/cdaotabledef-class.md#createindex) aufrufen und den neuen Index an die Indexes-Auflistung der zugrunde liegenden Tabledef anhängen, indem Sie [CDaoTableDef:: Append](../../mfc/reference/cdaotabledef-class.md#append)aufrufen und dann das Recordset erneut öffnen.
 
-Aus einem Recordset vom Typ Tabelle zurückgegebene Datensätze können nur von den Indizes, die für die zugrunde liegenden Tabledef definierten sortiert werden. Um Datensätze in einer anderen Reihenfolge sortieren zu können, können Sie öffnen ein Dynaset oder mittels einer SQL-Momentaufnahme-Type-Recordset **ORDERBY** Klausel, die in gespeicherten [CDaoRecordset::m_strSort](#m_strsort).
+Datensätze, die von einem Recordset des Tabellentyps zurückgegeben werden, können nur von den für die zugrunde liegenden Tabledef definierten Indizes geordnet werden Wenn Sie Datensätze in einer anderen Reihenfolge sortieren möchten, können Sie mithilfe einer in [CDaoRecordset:: m_strSort](#m_strsort)gespeicherten SQL **OrderBy** -Klausel einen Dynaset-Type-oder Snapshot-Type-Recordset öffnen.
 
-Weitere Informationen finden Sie im Thema "Indexobjekt" und der Definition der "aktuellen Index" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "Index Objekt" und in der Definition "aktueller Index" in der DAO-Hilfe.
 
-##  <a name="setfielddirty"></a>  CDaoRecordset:: SetFieldDirty
+##  <a name="setfielddirty"></a>CDaoRecordset:: SetFieldDirty
 
-Rufen Sie diese Memberfunktion zum Kennzeichnen der Felddatenmember des Recordset-Objekts als geändert oder als nicht geändert.
+Diese Member-Funktion wird aufgerufen, um einen Felddatenmember des Recordsets als geändert oder unverändert zu markieren.
 
 ```
 void SetFieldDirty(
@@ -2261,40 +2261,40 @@ void SetFieldDirty(
 
 ### <a name="parameters"></a>Parameter
 
-*pv*<br/>
-Enthält die Adresse eines Datenmembers Feld in der Recordset oder NULL. Wenn der Wert NULL ist, werden alle Felddatenmember der Recordset gekennzeichnet. (NULL in C++ ist nicht identisch mit Null in der Terminologie von Datenbanken, d. h. "müssen keinen Wert.")
+*teuren*<br/>
+Enthält die Adresse eines Felddatenmembers im Recordset oder NULL. Wenn der Wert NULL ist, werden alle Felddatenmember im Recordset gekennzeichnet. (C++ NULL ist in der Daten Bank Terminologie nicht identisch mit NULL, was bedeutet, dass kein Wert vorhanden ist.)
 
-*bDirty*<br/>
-True, wenn die Felddatenmember wie "(geändert) geändert" gekennzeichnet wird. Andernfalls "false" ist die Felddatenmember gekennzeichnet wird, wie "(unverändert) bereinigen".
+*bdirty*<br/>
+TRUE, wenn der Felddatenmember als "Dirty" (geändert) gekennzeichnet werden soll. Andernfalls false, wenn der Felddatenmember als "Clean" (unverändert) gekennzeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Markieren die Felder als nicht geändert wird sichergestellt, dass das Feld nicht aktualisiert wird.
+Das Markieren von Feldern als unverändert stellt sicher, dass das Feld nicht aktualisiert wird.
 
-Die Framework-Markierungen geändert Felddatenmember, um sicherzustellen, dass sie von den DAO-Datensatzfeldaustausch (DFX)-Mechanismus auf den Eintrag für die Datenquelle geschrieben werden. Ändern den Wert eines Felds in der Regel legt das Feld geändert automatisch, sodass Sie nur selten aufrufen, müssen `SetFieldDirty` selbst, aber Sie sollten auch um sicherzustellen, dass die Spalten explizit, aktualisiert oder eingefügt werden, unabhängig davon, welcher Wert in das Feld-Daten ist Member. Der Mechanismus DFX setzt auch die Verwendung von PSEUDONULL. Weitere Informationen finden Sie unter [CDaoFieldExchange::](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
+Das Framework markiert geänderte Felddatenmember, um sicherzustellen, dass Sie durch den DAO-Daten Satz Feld Austausch-Mechanismus (DFX) in den Datensatz der Datenquelle geschrieben werden. Wenn Sie den Wert eines Felds ändern, wird das Feld in der Regel automatisch geändert, sodass Sie nicht nur `SetFieldDirty` selbst aufzurufen müssen, sondern manchmal auch sicherstellen möchten, dass die Spalten explizit aktualisiert oder eingefügt werden, unabhängig davon, welcher Wert im Feld Datenmember ist. Der DFX-Mechanismus nutzt auch die Verwendung von pseudonull. Weitere Informationen finden Sie unter [CDaoFieldExchange:: m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
 
-Wenn die doppelte Pufferung Mechanismus nicht verwendet wird, wird dann ändern den Wert des Felds nicht automatisch das Feld als fehlerhaft festgelegt. In diesem Fall werden muss das Feld explizit als fehlerhaft festgelegt. Das Flag in enthaltenen [M_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Prüfung.
+Wenn der Mechanismus für die doppelte Pufferung nicht verwendet wird, wird das Feld nicht automatisch als geändert festgelegt, wenn der Wert des Felds geändert wird. In diesem Fall muss das Feld explizit als geändert festgelegt werden. Das Flag in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Überprüfung.
 
 > [!NOTE]
->  Diese Member-Funktion nur aufrufen, nachdem Sie aufgerufen haben [bearbeiten](#edit) oder [AddNew](#addnew).
+>  Diese Member-Funktion nur aufrufen, nachdem Sie [Edit](#edit) oder [AddNew](#addnew)aufgerufen haben.
 
-Verwenden NULL für das erste Argument der Funktion die Funktion für alle gelten `outputColumn` Feldern nicht **Param** Felder in `CDaoFieldExchange`. Z. B. der Aufruf
+Wenn NULL für das erste Argument der Funktion verwendet wird, wird die Funktion auf alle **`outputColumn` Felder, nicht auf** die Parameter Felder in `CDaoFieldExchange`angewendet. Beispielsweise ist der-Befehl
 
 [!code-cpp[NVC_MFCDatabase#6](../../mfc/codesnippet/cpp/cdaorecordset-class_6.cpp)]
 
-wird nur festgelegt, `outputColumn` Felder NULL. **Param** Felder nicht betroffen.
+legt nur `outputColumn` Felder auf NULL fest. **param** -Felder sind nicht betroffen.
 
-Auf einem **Param**, müssen Sie angeben, die tatsächliche Adresse der Person, die **Param** , z. B. arbeiten möchten:
+Wenn Sie an einem **param**arbeiten möchten, müssen Sie die tatsächliche Adresse des einzelnen **para** Metern angeben, an dem Sie arbeiten möchten, z. b.:
 
 [!code-cpp[NVC_MFCDatabase#7](../../mfc/codesnippet/cpp/cdaorecordset-class_7.cpp)]
 
-Dies bedeutet, dass Sie nicht alle festlegen **Param** Felder für NULL-Werte, mit `outputColumn` Felder.
+Dies bedeutet, dass Sie nicht alle **param** -Felder wie bei `outputColumn` Feldern auf NULL festlegen können.
 
-`SetFieldDirty` wird durch implementiert `DoFieldExchange`.
+`SetFieldDirty` wird über `DoFieldExchange`implementiert.
 
-##  <a name="setfieldnull"></a>  CDaoRecordset::SetFieldNull
+##  <a name="setfieldnull"></a>CDaoRecordset:: SetFieldNull
 
-Rufen Sie diese Memberfunktion zum Felddatenmember des Recordset-Objekts als Null (insbesondere mit kein Wert) oder als nicht-Null-flag.
+Diese Member-Funktion wird aufgerufen, um einen Felddatenmember des Recordsets als NULL (ohne Wert) oder als nicht-NULL zu markieren.
 
 ```
 void SetFieldNull(
@@ -2304,36 +2304,36 @@ void SetFieldNull(
 
 ### <a name="parameters"></a>Parameter
 
-*pv*<br/>
-Enthält die Adresse eines Datenmembers Feld in der Recordset oder NULL. Wenn der Wert NULL ist, werden alle Felddatenmember der Recordset gekennzeichnet. (NULL in C++ ist nicht identisch mit Null in der Terminologie von Datenbanken, d. h. "müssen keinen Wert.")
+*teuren*<br/>
+Enthält die Adresse eines Felddatenmembers im Recordset oder NULL. Wenn der Wert NULL ist, werden alle Felddatenmember im Recordset gekennzeichnet. (C++ NULL ist in der Daten Bank Terminologie nicht identisch mit NULL, was bedeutet, dass kein Wert vorhanden ist.)
 
-*bNull*<br/>
-Legen Sie ungleich NULL, wenn es sich bei der Felddatenmember gekennzeichnet wird, als hätte er keine (Null) ist. Andernfalls 0, wenn der Feld-Datenmember ist, als nicht-Null gekennzeichnet wird.
+*bNULL*<br/>
+Ein Wert ungleich 0 (null), wenn für den Felddatenmember kein Wert (null) gekennzeichnet werden soll. Andernfalls 0, wenn der Felddatenmember als nicht-NULL gekennzeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`SetFieldNull` wird für Felder, die im gebundenen verwendet die `DoFieldExchange` Mechanismus.
+`SetFieldNull` wird für Felder verwendet, die im `DoFieldExchange` Mechanismus gebunden sind.
 
-Wenn Sie einen neuen Datensatz zu einem Recordset hinzufügen, werden alle Felddatenmember anfänglich auf einen Nullwert festgelegt und als "(geändert) geändert" markiert. Wenn Sie einen Datensatz aus einer Datenquelle abrufen, deren Spalten entweder bereits Werte oder Null sind. Wenn sie nicht für ein Feld Null ist, ist eine [CDaoException](../../mfc/reference/cdaoexception-class.md) ausgelöst.
+Wenn Sie einem Recordset einen neuen Datensatz hinzufügen, werden alle Felddatenmember anfänglich auf einen NULL-Wert festgelegt und als "Dirty" (geändert) gekennzeichnet. Wenn Sie einen Datensatz aus einer Datenquelle abrufen, verfügen seine Spalten entweder bereits über Werte oder sind NULL. Wenn es nicht angebracht ist, ein Feld NULL zu machen, wird eine [CDaoException](../../mfc/reference/cdaoexception-class.md) ausgelöst.
 
-Wenn Sie die doppelte Pufferung-Mechanismus, z. B. verwenden, wenn Sie ein Feld des aktuellen Datensatzes zu definieren, ohne einen Wert ein, rufen Sie möchten `SetFieldNull` mit *bNull* auf "true" festgelegt, um gekennzeichnet, die als Null. Wenn ein Feld wurde zuvor Null markiert, und jetzt Sie einen Wert fest möchten, legen Sie einfach den neuen Wert. Sie müssen nicht das Null-Flag mit entfernen `SetFieldNull`. Um zu bestimmen, ob das Feld NULL zulässig ist, rufen Sie [IsFieldNullable](#isfieldnullable).
+Wenn Sie z. b. einen doppelten Puffermechanismus verwenden möchten, z. b. Wenn Sie ausdrücklich ein Feld des aktuellen Datensatzes ohne einen Wert festlegen möchten, müssen Sie `SetFieldNull` mit *bNULL* auf true festlegen, um ihn als Null zu kennzeichnen. Wenn ein Feld zuvor als NULL gekennzeichnet war und Sie diesem nun einen Wert zuordnen möchten, legen Sie einfach den neuen Wert fest. Sie müssen das NULL-Flag nicht mit `SetFieldNull`entfernen. Um zu ermitteln, ob das Feld NULL sein darf, nennen Sie [IsFieldNullable](#isfieldnullable).
 
-Wenn Sie die doppelte Pufferung Mechanismus nicht verwenden, wird dann ändern den Wert des Felds nicht automatisch das Feld als geändert und nicht-Null festgelegt. Sie müssen insbesondere die Felder geändert und ungleich Null festlegen. Das Flag in enthaltenen [M_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Prüfung.
+Wenn Sie den Mechanismus für die doppelte Pufferung nicht verwenden, wird das Feld nicht automatisch als geändert und nicht als NULL festgelegt, wenn Sie den Wert des Felds ändern. Sie müssen die Felder "Dirty" und "non-NULL" festlegen. Das Flag in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) steuert diese automatische Feld Überprüfung.
 
-Der Mechanismus DFX setzt die Verwendung von PSEUDONULL. Weitere Informationen finden Sie unter [CDaoFieldExchange::](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
+Der DFX-Mechanismus verwendet die Verwendung von pseudonull. Weitere Informationen finden Sie unter [CDaoFieldExchange:: m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).
 
 > [!NOTE]
->  Diese Member-Funktion nur aufrufen, nachdem Sie aufgerufen haben [bearbeiten](#edit) oder [AddNew](#addnew).
+>  Diese Member-Funktion nur aufrufen, nachdem Sie [Edit](#edit) oder [AddNew](#addnew)aufgerufen haben.
 
-Verwenden NULL für das erste Argument der Funktion nur für die Funktion angewendet wird `outputColumn` Feldern nicht **Param** Felder in `CDaoFieldExchange`. Z. B. der Aufruf
+Wenn NULL für das erste Argument der Funktion verwendet wird, wird die Funktion nur auf **`outputColumn` Felder, nicht auf** Parameter Felder in `CDaoFieldExchange`angewendet. Beispielsweise ist der-Befehl
 
 [!code-cpp[NVC_MFCDatabase#8](../../mfc/codesnippet/cpp/cdaorecordset-class_8.cpp)]
 
-wird nur festgelegt, `outputColumn` Felder NULL. **Param** Felder nicht betroffen.
+legt nur `outputColumn` Felder auf NULL fest. **param** -Felder sind nicht betroffen.
 
-##  <a name="setfieldvalue"></a>  CDaoRecordset::SetFieldValue
+##  <a name="setfieldvalue"></a>CDaoRecordset:: SetFieldValue
 
-Rufen Sie diese Memberfunktion um den Wert eines Felds oder die Position oder durch Ändern des Werts der Zeichenfolge festzulegen.
+Mit dieser Member-Funktion können Sie den Wert eines Felds entweder durch Ordinalposition oder durch Ändern des Werts der Zeichenfolge festlegen.
 
 ```
 virtual void SetFieldValue(
@@ -2355,29 +2355,29 @@ void SetFieldValue(
 
 ### <a name="parameters"></a>Parameter
 
-*Wert*<br/>
-Ein Zeiger auf eine Zeichenfolge, die mit dem Namen eines Felds.
+*lpszname*<br/>
+Ein Zeiger auf eine Zeichenfolge, die den Namen eines Felds enthält.
 
 *varValue*<br/>
-Ein Verweis auf eine [COleVariant](../../mfc/reference/colevariant-class.md) Objekt mit dem Wert, der der Inhalt des Feldes.
+Ein Verweis auf ein [COleVariant](../../mfc/reference/colevariant-class.md) -Objekt, das den Wert für den Inhalt des Felds enthält.
 
 *nIndex*<br/>
-Eine ganze Zahl, die die Ordnungsposition des Felds in die Recordset Fields-Sammlung (nullbasiert) darstellt.
+Eine ganze Zahl, die die Ordnungsposition des Felds in der Feld Auflistung des Recordsets (null basiert) darstellt.
 
-*lpszValue*<br/>
-Ein Zeiger auf eine Zeichenfolge, die mit dem Wert, der der Inhalt des Feldes.
+*lpszvalue*<br/>
+Ein Zeiger auf eine Zeichenfolge, die den Wert des Feld Inhalts enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwendung `SetFieldValue` und [GetFieldValue](#getfieldvalue) Sie Felder zur Laufzeit statt statisch zu binden von Spalten mit dynamisch binden die [DoFieldExchange](#dofieldexchange) Mechanismus.
+Verwenden Sie `SetFieldValue` und [GetFieldValue](#getfieldvalue) , um Felder zur Laufzeit dynamisch zu binden, anstatt Spalten mit dem [DoFieldExchange](#dofieldexchange) -Mechanismus statisch zu binden.
 
-Beachten Sie, dass Sie ein UNICODE-Recordset nicht erstellen, Sie entweder eine Form der verwenden müssen `SetFieldValue` , die keinen enthalten eine `COleVariant` -Parameter oder die `COleVariant` Objekt muss explizit ANSI deklariert werden. Dies kann erfolgen mithilfe der [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** *LpszSrc* **,** *VtSrc* **)**  Form des Konstruktors mit *VtSrc* festgelegt `VT_BSTRT` (ANSI) oder mithilfe der `COleVariant` Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** *LpszSrc* **,** *VtSrc* **)** mit *VtSrc* festgelegt `VT_BSTRT`.
+Beachten Sie Folgendes: Wenn Sie kein Unicode-Recordset erstellen, müssen Sie entweder eine Form von `SetFieldValue` verwenden, die keinen `COleVariant`-Parameter enthält, oder das `COleVariant`-Objekt muss explizit als ANSI deklariert werden. Dies kann mithilfe der [COleVariant:: COleVariant](../../mfc/reference/colevariant-class.md#colevariant) **(** *lpszsrc* **,** *vzrc* **)** -Form des Konstruktors erfolgen, wenn *vtrc* auf `VT_BSTRT` (ANSI) festgelegt ist, oder indem Sie die `COleVariant`-Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring) **(** *lpszsrc* **,** *vzrc* **)** verwenden, wobei *vtrc* auf `VT_BSTRT`festgelegt ist.
 
-Weitere Informationen finden Sie unter den Themen "Field-Objekt" und "Value-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Field Object" und "Value property" in der DAO-Hilfe.
 
-##  <a name="setfieldvaluenull"></a>  CDaoRecordset::SetFieldValueNull
+##  <a name="setfieldvaluenull"></a>CDaoRecordset:: setfieldvaluenull
 
-Rufen Sie diese Memberfunktion, um das Feld auf einen Null-Wert festgelegt.
+Diese Member-Funktion wird aufgerufen, um das Feld auf einen NULL-Wert festzulegen.
 
 ```
 void SetFieldValueNull(int nIndex);
@@ -2387,20 +2387,20 @@ void SetFieldValueNull(LPCTSTR lpszName);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der Index des Felds im Recordset, für die Suche über den nullbasierten Index.
+Der Index des Felds im Recordset für die Suche durch Null basierten Index.
 
-*Wert*<br/>
-Der Name des Felds im Recordset, für die Suche anhand des Namens.
+*lpszname*<br/>
+Der Name des Felds im Recordset für die Suche nach Namen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-NULL in C++ ist nicht identisch mit Null, womit, in der datenbankterminologie "müssen keinen Wert."
+C++NULL ist nicht mit NULL identisch, was in der Daten Bank Terminologie bedeutet, dass kein Wert vorhanden ist.
 
-Weitere Informationen finden Sie unter den Themen "Field-Objekt" und "Value-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "Field Object" und "Value property" in der DAO-Hilfe.
 
-##  <a name="setlockingmode"></a>  CDaoRecordset::SetLockingMode
+##  <a name="setlockingmode"></a>CDaoRecordset:: SetLockingMode
 
-Rufen Sie diese Memberfunktion um den Typ der Sperre für das Recordset festzulegen.
+Mit dieser Member-Funktion wird der Sperrentyp für das Recordset festgelegt.
 
 ```
 void SetLockingMode(BOOL bPessimistic);
@@ -2408,24 +2408,24 @@ void SetLockingMode(BOOL bPessimistic);
 
 ### <a name="parameters"></a>Parameter
 
-*bPessimistic*<br/>
-Ein Flag, das den Typ der Sperre angibt.
+*bpessimistisch*<br/>
+Ein Flag, das den Sperrentyp angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn pessimistische Sperrung, gilt die 2 KB-Seite mit den Einträgen, die Sie bearbeiten, ist gesperrt, sobald Sie aufrufen, die `Edit` Member-Funktion. Die Seite ist nicht gesperrt, beim Aufrufen der `Update` oder `Close` Memberfunktion oder einer der Vorgänge verschieben oder suchen.
+Wenn die pessimistische Sperrung wirksam ist, wird die Seite 2 KB mit dem zu bearbeitende Datensatz gesperrt, sobald Sie die `Edit` Member-Funktion aufgerufen haben. Die Seite wird entsperrt, wenn Sie die `Update`-oder `Close` Member-Funktion oder einen der Verschiebungs-oder Suchvorgänge aufzurufen.
 
-Bei der optimistischen Sperre wird verwendet, ist die 2 KB-Seite, die mit dem Datensatz gesperrt, nur verwendet werden, während der Aktualisierung des Datensatzes mit der `Update` Member-Funktion.
+Wenn die optimistische Sperre wirksam ist, wird die 2K-Seite, die den Datensatz enthält, nur gesperrt, während der Datensatz mit der `Update` Member-Funktion aktualisiert wird.
 
-Wenn eine Seite gesperrt ist, kann kein anderer Benutzer die Datensätze auf derselben Seite bearbeiten. Wenn Sie aufrufen `SetLockingMode` und übergeben Sie einen Wert ungleich NULL und ein anderer Benutzer hat bereits die Seite gesperrt, eine Ausnahme ausgelöst, wenn Sie aufrufen `Edit`. Andere Benutzer können Daten aus gesperrte Seiten gelesen werden.
+Wenn eine Seite gesperrt ist, kann kein anderer Benutzerdaten Sätze auf derselben Seite bearbeiten. Wenn Sie `SetLockingMode` aufzurufen und einen Wert ungleich 0 (null) übergeben und ein anderer Benutzer die Seite bereits gesperrt hat, wird eine Ausnahme ausgelöst, wenn Sie `Edit`aufruft. Andere Benutzer können Daten von gesperrten Seiten lesen.
 
-Wenn Sie aufrufen `SetLockingMode` rufen Sie mit dem Wert 0 (null) und höher `Update` während die Seite von einem anderen Benutzer gesperrt ist, wird eine Ausnahme auftritt. Um die Änderungen, die an Ihren Eintrag von einem anderen Benutzer (und alle Änderungen verwerfen), rufen Sie die `SetBookmark` Member-Funktion mit der Lesezeichenwert, der den aktuellen Datensatz.
+Wenn Sie `SetLockingMode` mit einem Wert von 0 (null) und später `Update` aufgerufen werden, während die Seite von einem anderen Benutzer gesperrt ist, tritt eine Ausnahme auf. Um die Änderungen anzuzeigen, die von einem anderen Benutzer an Ihrem Datensatz vorgenommen wurden (und die Änderungen verlieren), müssen Sie die `SetBookmark` Member-Funktion mit dem Lesezeichen Wert des aktuellen Datensatzes abrufen.
 
-Der Sperrmodus ist immer optimistische, bei der Arbeit mit ODBC-Datenquellen.
+Beim Arbeiten mit ODBC-Datenquellen ist der Sperrmodus immer vollständig.
 
-##  <a name="setparamvalue"></a>  CDaoRecordset::SetParamValue
+##  <a name="setparamvalue"></a>CDaoRecordset:: SetParamValue
 
-Rufen Sie diese Memberfunktion um den Wert eines Parameters im Recordset zur Laufzeit festzulegen.
+Diese Member-Funktion aufrufen, um den Wert eines Parameters im Recordset zur Laufzeit festzulegen.
 
 ```
 virtual void SetParamValue(
@@ -2440,23 +2440,23 @@ virtual void SetParamValue(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Die numerische Position des Parameters in der Querydef Parameters-Auflistung.
+Die numerische Position des Parameters in der Parameter Auflistung von QueryDef.
 
 *var*<br/>
-Der festzulegende Wert; finden Sie unter "Hinweise".
+Der festzulegende Wert. siehe Hinweise.
 
-*Wert*<br/>
+*lpszname*<br/>
 Der Name des Parameters, dessen Wert Sie festlegen möchten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Parameter muss bereits als Teil der SQL-Zeichenfolge des Recordsets hergestellt haben. Sie können die Parameter nach Namen oder anhand der Indexposition in der Auflistung zugreifen.
+Der-Parameter muss bereits als Teil der SQL-Zeichenfolge des Recordsets eingerichtet worden sein. Sie können auf den Parameter entweder über den Namen oder die Indexposition in der Auflistung zugreifen.
 
-Geben Sie den Wert für die festzulegende als eine `COleVariant` Objekt. Weitere Informationen zum Festlegen der gewünschten Wert und geben Sie Ihre `COleVariant` Objekt, finden Sie unter Klasse [COleVariant](../../mfc/reference/colevariant-class.md). Beachten Sie, dass, wenn Sie ein UNICODE-Recordset nicht erstellen, wird die `COleVariant` Objekt muss explizit ANSI deklariert werden. Dies kann erfolgen mithilfe der [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** *LpszSrc* **,** *VtSrc* **)**  Form des Konstruktors mit *VtSrc* festgelegt `VT_BSTRT` (ANSI) oder mithilfe der `COleVariant` Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** *LpszSrc* **,** *VtSrc* **)** mit *VtSrc* festgelegt `VT_BSTRT`.
+Geben Sie den Wert an, der als `COleVariant` Objekt festgelegt werden soll. Weitere Informationen zum Festlegen des gewünschten Werts und zum Eingeben des `COleVariant` Objekts finden Sie Unterklasse [COleVariant](../../mfc/reference/colevariant-class.md). Beachten Sie Folgendes: Wenn Sie kein Unicode-Recordset erstellen, muss das `COleVariant` Objekt explizit als ANSI deklariert werden. Dies kann mithilfe der [COleVariant:: COleVariant](../../mfc/reference/colevariant-class.md#colevariant) **(** *lpszsrc* **,** *vzrc* **)** -Form des Konstruktors erfolgen, wenn *vtrc* auf `VT_BSTRT` (ANSI) festgelegt ist, oder indem Sie die `COleVariant`-Funktion [SetString](../../mfc/reference/colevariant-class.md#setstring) **(** *lpszsrc* **,** *vzrc* **)** verwenden, wobei *vtrc* auf `VT_BSTRT`festgelegt ist.
 
-##  <a name="setparamvaluenull"></a>  CDaoRecordset::SetParamValueNull
+##  <a name="setparamvaluenull"></a>CDaoRecordset:: setparamvaluenull
 
-Rufen Sie diese Memberfunktion um den Parameter auf einen Nullwert festzulegen.
+Diese Member-Funktion aufrufen, um den-Parameter auf einen NULL-Wert festzulegen.
 
 ```
 void SetParamValueNull(int nIndex);
@@ -2466,18 +2466,18 @@ void SetParamValueNull(LPCTSTR lpszName);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der Index des Felds im Recordset, für die Suche über den nullbasierten Index.
+Der Index des Felds im Recordset für die Suche durch Null basierten Index.
 
-*Wert*<br/>
-Der Name des Felds im Recordset, für die Suche anhand des Namens.
+*lpszname*<br/>
+Der Name des Felds im Recordset für die Suche nach Namen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-NULL in C++ ist nicht identisch mit Null, womit, in der datenbankterminologie "müssen keinen Wert."
+C++NULL ist nicht mit NULL identisch, was in der Daten Bank Terminologie bedeutet, dass kein Wert vorhanden ist.
 
-##  <a name="setpercentposition"></a>  CDaoRecordset:: SetPercentPosition
+##  <a name="setpercentposition"></a>CDaoRecordset:: setprozentuposition
 
-Rufen Sie diese Memberfunktion, um einen Wert festzulegen, der den ungefähren Standort des aktuellen Datensatzes in die Recordset-Objekt, das basierend auf dem Prozentsatz der Datensätze im Recordset zu ändern.
+Mit dieser Member-Funktion können Sie einen Wert festlegen, der die ungefähre Position des aktuellen Datensatzes im Recordset-Objekt basierend auf einem Prozentsatz der Datensätze im Recordset ändert.
 
 ```
 void SetPercentPosition(float fPosition);
@@ -2485,47 +2485,47 @@ void SetPercentPosition(float fPosition);
 
 ### <a name="parameters"></a>Parameter
 
-*fPosition*<br/>
+*Position*<br/>
 Eine Zahl zwischen 0 und 100.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Füllen Sie das Recordset bei der Arbeit mit einem Dynaset oder Recordset Momentaufnahme vom Typ zuerst durch Verschieben bis zum letzten Datensatz vor dem Aufruf `SetPercentPosition`. Wenn Sie aufrufen `SetPercentPosition` vor dem vollständig auffüllen das Recordset, datenverschiebung ist relativ zur Anzahl der Datensätze zugegriffen wird, wie durch den Wert der [GetRecordCount](#getrecordcount). Sie können bis zum letzten Datensatz verschieben durch Aufrufen von `MoveLast`.
+Wenn Sie mit einem Recordset vom Typ Dynaset-oder Snapshot-Type arbeiten, füllen Sie zuerst das Recordset, indem Sie zum letzten Datensatz wechseln, bevor Sie `SetPercentPosition`aufgerufen haben. Wenn Sie `SetPercentPosition` aufrufen, bevor Sie das Recordset vollständig auffüllen, ist die Menge der Bewegung relativ zur Anzahl der Datensätze, auf die wie durch den Wert von " [GetRecordCount](#getrecordcount)" gezeigt wird. Sie können zum letzten Datensatz wechseln, indem Sie `MoveLast`aufrufen.
 
-Wenn Sie aufrufen `SetPercentPosition`, der Eintrag auf die ungefähre Position, die auf diesen Wert entsprechend zum aktuellen Thread.
+Nachdem Sie `SetPercentPosition`aufgerufen haben, wird der Datensatz an der ungefähren Position, die diesem Wert entspricht, aktuell.
 
 > [!NOTE]
->  Aufrufen von `SetPercentPosition` zum Verschieben des aktuellen Datensatzes zu einem bestimmten Datensatz in einem Recordset wird nicht empfohlen. Rufen Sie die [SetBookmark](#setbookmark) Memberfunktion stattdessen.
+>  Das Aufrufen von `SetPercentPosition`, um den aktuellen Datensatz zu einem bestimmten Datensatz in einem Recordset zu verschieben, wird nicht empfohlen. Aufrufen der [SetBookmark](#setbookmark) -Member-Funktion.
 
-Verwandte Informationen finden Sie im Thema "PercentPosition-Eigenschaft" in-DAO-Hilfe.
+Weitere Informationen finden Sie im Thema "prozentualpositions Eigenschaft" in der DAO-Hilfe.
 
-##  <a name="update"></a>  CDaoRecordset::Update
+##  <a name="update"></a>CDaoRecordset:: Update
 
-Rufen Sie nach einem Aufruf von dieser Memberfunktion die `AddNew` oder `Edit` Member-Funktion.
+Diese Member-Funktion wird nach einem Rückruf der `AddNew`-oder `Edit` Member-Funktion aufgerufen.
 
 ```
 virtual void Update();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Aufruf ist erforderlich, zum Abschließen der `AddNew` oder `Edit` Vorgang.
+Dieser Befehl ist erforderlich, um die `AddNew` oder `Edit` Vorgang abzuschließen.
 
-Beide `AddNew` und `Edit` Bearbeitungspuffer, die in der befindet sich die hinzugefügten oder bearbeiteten Daten vorbereiten, für das Speichern in der Datenquelle. `Update` Speichert die Daten. Es werden nur die Felder, markiert oder geändert erkannt, dass aktualisiert.
+Sowohl `AddNew` als auch `Edit` bereiten einen Bearbeitungs Puffer vor, in dem die hinzugefügten oder bearbeiteten Daten zum Speichern in der Datenquelle platziert werden. `Update` speichert die Daten. Nur die Felder, die als geändert markiert oder erkannt wurden, werden aktualisiert.
 
-Wenn die Datenquelle Transaktionen unterstützt, können Sie machen die `Update` aufrufen (und der entsprechenden `AddNew` oder `Edit` aufrufen) Teil einer Transaktion.
+Wenn die Datenquelle Transaktionen unterstützt, können Sie den `Update`-Befehl (und den entsprechenden `AddNew`-oder `Edit`-Aufrufvorgang) einer Transaktion ausführen.
 
 > [!CAUTION]
-> Wenn Sie aufrufen `Update` ohne zuerst Aufrufen von entweder `AddNew` oder `Edit`, `Update` löst eine `CDaoException`. Wenn Sie aufrufen `AddNew` oder `Edit`, rufen Sie `Update` vor dem Aufruf [MoveNext](#movenext) oder das Recordset oder die datenquellenverbindung zu schließen. Andernfalls sind Ihre Änderungen verloren gehen, ohne Benachrichtigung.
+> Wenn Sie `Update` aufrufen, ohne zuerst entweder `AddNew` oder `Edit`aufzurufen, löst `Update` eine `CDaoException`aus. Wenn Sie `AddNew` oder `Edit`aufgerufen haben, müssen Sie `Update` vor dem Abrufen von " [wvenext](#movenext) " oder dem Schließen des Recordsets oder der Datenquellen Verbindung abrufen. Andernfalls gehen die Änderungen ohne Benachrichtigung verloren.
 
-Der Datensatz bleibt gesperrt, ab dem Zeitpunkt, wenn das Recordset-Objekt in einer mehrbenutzerumgebung pessimistisch gesperrt ist, `Edit` wird verwendet, bis die Aktualisierung abgeschlossen ist. Wenn das Recordset optimistisch gesperrt ist, wird der Datensatz ist gesperrt und im Vergleich mit dem Datensatz, der bereits bearbeiteten, kurz bevor sie in der Datenbank aktualisiert wird. Wenn der Datensatz geändert wurde, da Sie aufgerufen `Edit`, `Update` fehl und MFC eine Ausnahme auslöst. Sie können ändern, dass der Sperrmodus mit `SetLockingMode`.
+Wenn das Recordset-Objekt pessimistisch in einer mehr Benutzerumgebung gesperrt ist, bleibt der Datensatz von dem Zeitpunkt, an dem `Edit` verwendet wird, bis zum Abschluss der Aktualisierung gesperrt. Wenn das Recordset optimistisch gesperrt ist, wird der Datensatz gesperrt und mit dem vorab bearbeiteten Datensatz verglichen, kurz bevor er in der Datenbank aktualisiert wird. Wenn sich der Datensatz geändert hat, seit Sie `Edit`aufgerufen haben, schlägt der `Update` Vorgang fehl, und MFC löst eine Ausnahme aus. Sie können den Sperrmodus mit `SetLockingMode`ändern.
 
 > [!NOTE]
-> Optimistische wird immer auf der externen Datenbank-Formate, z. B. ODBC und installierbaren ISAM verwendet.
+> Die optimistische Sperre wird immer in externen Daten Bank Formaten wie ODBC und installier barer ISAM verwendet.
 
-Weitere Informationen finden Sie unter den Themen "AddNew-Methode", "CancelUpdate-Methode", "-Methode Delete", "Eigenschaft" LastModified ","Update-Methode"und"EditMode-Eigenschaft"in-DAO-Hilfe.
+Weitere Informationen finden Sie in den Themen "AddNew Method", "CancelUpdate Method", "Delete Method", "LastModified Property", "Update Method" und "EditMode Property" in der DAO-Hilfe.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

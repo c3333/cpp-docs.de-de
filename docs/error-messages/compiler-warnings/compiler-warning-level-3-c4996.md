@@ -8,11 +8,11 @@ helpviewer_keywords:
 - C4996
 ms.assetid: 926c7cc2-921d-43ed-ae75-634f560dd317
 ms.openlocfilehash: 98662dc0b5439c1f8857e4f2ad259793a4d03e41
-ms.sourcegitcommit: 6ddfb8be5e5923a4d90a2c0f93f76a27ce7ac299
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898773"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865220"
 ---
 # <a name="compiler-warning-level-3-c4996"></a>Compilerwarnung (Stufe 3) C4996
 
@@ -21,7 +21,7 @@ Der Code verwendet eine Funktion, einen Klassenmember, eine Variable oder eine t
 > [!IMPORTANT]
 > Diese Warnung ist immer eine absichtliche Nachricht vom Autor der Header Datei, die das Symbol deklariert. Verwenden Sie das veraltete Symbol nicht, ohne die Konsequenzen zu verstehen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Viele Funktionen, Element Funktionen, Vorlagen Funktionen und globale Variablen in Visual Studio-Bibliotheken sind *veraltet*. Einige, z. b. POSIX-und Microsoft-spezifische Funktionen, sind veraltet, da Sie nun einen anderen bevorzugten Namen haben. Einige C-Lauf Zeit Bibliotheksfunktionen sind veraltet, da Sie unsicher sind und eine sicherere Variante aufweisen. Andere sind veraltet, da sie veraltet sind. Die veralnungs Nachrichten enthalten in der Regel eine vorgeschlagene Ersetzung für die veraltete Funktion oder globale Variable.
 

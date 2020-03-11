@@ -19,15 +19,15 @@ helpviewer_keywords:
 - COM interfaces, COM interface entry macros
 ms.assetid: 19dcb768-2e1f-4b8d-a618-453a01a4bd00
 ms.openlocfilehash: 1e1674bad1164e640939d430a860beac7a6e4208
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496724"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78855665"
 ---
-# <a name="com_interface_entry-macros"></a>COM_INTERFACE_ENTRY-Makros
+# <a name="com_interface_entry-macros"></a>COM_INTERFACE_ENTRY Makros
 
-Diese Makros geben die Schnittstellen eines Objekts in seine com-Zuordnung ein, damit Sie von `QueryInterface`auf Sie zugreifen können. Die Reihenfolge der Einträge in der com-Zuordnung besteht darin, dass die Bestell Schnittstellen auf eine entsprechende IID während `QueryInterface`der Prüfung geprüft werden.
+Diese Makros geben die Schnittstellen eines Objekts in seine com-Zuordnung ein, damit `QueryInterface`auf Sie zugreifen können. Die Reihenfolge der Einträge in der com-Zuordnung besteht darin, dass während `QueryInterface`die Sortier Schnittstellen auf eine übereinstimmende IID geprüft werden.
 
 |||
 |-|-|
@@ -35,19 +35,19 @@ Diese Makros geben die Schnittstellen eines Objekts in seine com-Zuordnung ein, 
 |[COM_INTERFACE_ENTRY2](#com_interface_entry2)|Verwenden Sie dieses Makro, um zwei Verzweigungs Vererbungen eindeutig zu machen.|
 |[COM_INTERFACE_ENTRY_IID](#com_interface_entry_iid)|Verwenden Sie dieses Makro, um die Schnittstelle in die com-Zuordnung einzugeben und ihre IID anzugeben.|
 |[COM_INTERFACE_ENTRY2_IID](#com_interface_entry2_iid)|Identisch mit [COM_INTERFACE_ENTRY2](#com_interface_entry2), mit dem Unterschied, dass Sie eine andere IID angeben können.|
-|[COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate)|Wenn die durch *IID* identifizierte Schnittstelle abgefragt wird, `COM_INTERFACE_ENTRY_AGGREGATE` wird an weiter `punk`geleitet.|
-|[COM_INTERFACE_ENTRY_AGGREGATE_BLIND](#com_interface_entry_aggregate_blind)|Identisch mit [COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an *Punk*weitergeleitet wird.|
+|[COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate)|Wenn die durch *IID* identifizierte Schnittstelle abgefragt wird, `COM_INTERFACE_ENTRY_AGGREGATE` an `punk`weitergeleitet.|
+|[COM_INTERFACE_ENTRY_AGGREGATE_BLIND](#com_interface_entry_aggregate_blind)|Identisch mit [COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate), mit der Ausnahme, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird.|
 |[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)|Identisch mit [COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate), mit dem Unterschied, dass *Punk* NULL ist, wird das von der *CLSID*beschriebene Aggregat automatisch erstellt.|
-|[COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](#com_interface_entry_autoaggregate_blind)|Identisch mit [COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird, und wenn der Wert NULL ist, wird das von der *CLSID*beschriebene Aggregat automatisch erstellt.|
+|[COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](#com_interface_entry_autoaggregate_blind)|Identisch mit [COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird, und wenn der Wert NULL ist *, wird das* von der *CLSID*beschriebene Aggregat automatisch erstellt.|
 |[COM_INTERFACE_ENTRY_BREAK](#com_interface_entry_break)|Bewirkt, dass das Programm "Debug [break](/windows/win32/api/debugapi/nf-debugapi-debugbreak) " aufruft, wenn die angegebene Schnittstelle abgefragt wird.|
 |[COM_INTERFACE_ENTRY_CACHED_TEAR_OFF](#com_interface_entry_cached_tear_off)|Speichert die schnittstellenspezifischen Daten für jede Instanz.|
 |[COM_INTERFACE_ENTRY_TEAR_OFF](#com_interface_entry_tear_off)|Macht Ihre abtrenn Schnittstellen verfügbar.|
 |[COM_INTERFACE_ENTRY_CHAIN](#com_interface_entry_chain)|Verarbeitet die com-Zuordnung der Basisklasse, wenn die Verarbeitung diesen Eintrag in der com-Zuordnung erreicht.|
-|[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)|Ein allgemeiner Mechanismus zum Einbinden der ATL- `QueryInterface` Logik.|
-|[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|Identisch mit [COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func), mit dem Unterschied, dass die Abfrage für eine IID zu einem *Func*-Aufrufe führt.|
+|[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)|Ein allgemeiner Mechanismus zum Einbinden in die `QueryInterface` Logik von ATL.|
+|[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|Identisch mit [COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func), mit dem Unterschied, dass die Abfrage für eine IID zu einem-Befehl von *Func*führt.|
 |[COM_INTERFACE_ENTRY_NOINTERFACE](#com_interface_entry_nointerface)|Gibt E_NOINTERFACE zurück und beendet die com-Zuordnungs Verarbeitung, wenn die angegebene Schnittstelle abgefragt wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Atlcom. h
 
@@ -63,10 +63,10 @@ COM_INTERFACE_ENTRY( x )
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 in Der Name einer Schnittstelle, von der das Klassenobjekt direkt abgeleitet ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der Regel ist dies der Eintragstyp, den Sie am häufigsten verwenden.
 
@@ -80,7 +80,7 @@ BEGIN_COM_MAP(CThisExample)
 END_COM_MAP()
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Atlcom. h
 
@@ -94,15 +94,15 @@ COM_INTERFACE_ENTRY2(x, x2)
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 in Der Name einer Schnittstelle, die Sie aus dem-Objekt verfügbar machen möchten.
 
 *x2*<br/>
 in Der Name der Vererbungs Verzweigung, von der *x* verfügbar gemacht wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie z. b. das Klassenobjekt von zwei Dual Schnittstellen ableiten, machen `IDispatch` Sie mithilfe von `IDispatch` COM_INTERFACE_ENTRY2 verfügbar, da aus einer der Schnittstellen abgerufen werden kann.
+Wenn Sie z. b. das Klassenobjekt von zwei Dual Schnittstellen ableiten, machen Sie `IDispatch` mithilfe COM_INTERFACE_ENTRY2 verfügbar, da `IDispatch` von einer der Schnittstellen abgerufen werden können.
 
 ### <a name="example"></a>Beispiel
 
@@ -118,10 +118,10 @@ COM_INTERFACE_ENTRY_IID(iid, x)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Die GUID der Schnittstelle, die verfügbar gemacht wird.
 
-*w*<br/>
+*x*<br/>
 in Der Name der Klasse, deren vtable als die durch *IID*identifizierte Schnittstelle verfügbar gemacht wird.
 
 ### <a name="example"></a>Beispiel
@@ -138,10 +138,10 @@ COM_INTERFACE_ENTRY2_IID(iid, x, x2)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Die GUID, die Sie für die Schnittstelle angeben.
 
-*w*<br/>
+*x*<br/>
 in Der Name einer Schnittstelle, von der das Klassenobjekt direkt abgeleitet ist.
 
 *x2*<br/>
@@ -149,7 +149,7 @@ in Der Name einer zweiten Schnittstelle, von der das Klassenobjekt direkt abgele
 
 ##  <a name="com_interface_entry_aggregate"></a>COM_INTERFACE_ENTRY_AGGREGATE
 
-Wenn die durch *IID* identifizierte Schnittstelle abgefragt wird, wird COM_INTERFACE_ENTRY_AGGREGATE an *Punk*weitergeleitet.
+Wenn die durch *IID* identifizierte Schnittstelle abgefragt wird, COM_INTERFACE_ENTRY_AGGREGATE an den *Punk*weitergeleitet.
 
 ```
 COM_INTERFACE_ENTRY_AGGREGATE(iid, punk)
@@ -157,15 +157,15 @@ COM_INTERFACE_ENTRY_AGGREGATE(iid, punk)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Die GUID der Schnittstelle, die abgefragt wird.
 
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der *Punk* -Parameter wird davon ausgegangen, dass er auf den inneren unbekannten eines Aggregats oder auf NULL verweist. in diesem Fall wird der Eintrag ignoriert. In der Regel würden `CoCreate` Sie das Aggregat `FinalConstruct`in.
+Der *Punk* -Parameter wird davon ausgegangen, dass er auf den inneren unbekannten eines Aggregats oder auf NULL verweist. in diesem Fall wird der Eintrag ignoriert. In der Regel würden Sie das Aggregat in `FinalConstruct``CoCreate`.
 
 ### <a name="example"></a>Beispiel
 
@@ -173,7 +173,7 @@ Der *Punk* -Parameter wird davon ausgegangen, dass er auf den inneren unbekannte
 
 ##  <a name="com_interface_entry_aggregate_blind"></a>COM_INTERFACE_ENTRY_AGGREGATE_BLIND
 
-Identisch mit [COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an *Punk*weitergeleitet wird.
+Identisch mit [COM_INTERFACE_ENTRY_AGGREGATE](#com_interface_entry_aggregate), mit der Ausnahme, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird.
 
 ```
 COM_INTERFACE_ENTRY_AGGREGATE_BLIND(punk)
@@ -184,7 +184,7 @@ COM_INTERFACE_ENTRY_AGGREGATE_BLIND(punk)
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Schnittstellen Abfrage fehlschlägt, wird die Verarbeitung der com-Zuordnung fortgesetzt.
 
@@ -202,16 +202,16 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE(iid, punk, clsid)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Die GUID der Schnittstelle, die abgefragt wird.
 
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die com-Zuordnung enthält.
 
-*clsid*<br/>
-in Der Bezeichner des Aggregats, das erstellt wird , wenn der Wert NULL ist.
+*CLSID*<br/>
+in Der Bezeichner des Aggregats, das *erstellt wird, wenn der* Wert NULL ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ### <a name="example"></a>Beispiel
 
@@ -219,7 +219,7 @@ in Der Bezeichner des Aggregats, das erstellt wird , wenn der Wert NULL ist.
 
 ##  <a name="com_interface_entry_autoaggregate_blind"></a>COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND
 
-Identisch mit [COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird, und wenn der Wert NULL ist, wird das von der *CLSID*beschriebene Aggregat automatisch erstellt.
+Identisch mit [COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate), mit dem Unterschied, dass die Abfrage für eine IID dazu führt, dass die Abfrage an den *Punk*weitergeleitet wird, und wenn der Wert NULL ist *, wird das* von der *CLSID*beschriebene Aggregat automatisch erstellt.
 
 ```
 COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(punk, clsid)
@@ -230,10 +230,10 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(punk, clsid)
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die com-Zuordnung enthält.
 
-*clsid*<br/>
-in Der Bezeichner des Aggregats, das erstellt wird , wenn der Wert NULL ist.
+*CLSID*<br/>
+in Der Bezeichner des Aggregats, das *erstellt wird, wenn der* Wert NULL ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Schnittstellen Abfrage fehlschlägt, wird die Verarbeitung der com-Zuordnung fortgesetzt.
 
@@ -251,12 +251,12 @@ COM_INTERFACE_ENTRY_BREAK(x)
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 in Text, der zum Erstellen des Schnittstellen Bezeichners verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die IID der Schnittstelle wird erstellt, indem *x* an `IID_`angehängt wird. Wenn z `IID_IPersistStorage`. b. " `IPersistStorage` *x* " ist, ist die IID.
+Die IID der Schnittstelle wird erstellt, indem *x* an `IID_`angehängt wird. *Wenn z* . b. `IPersistStorage`ist, wird die IID `IID_IPersistStorage`.
 
 ##  <a name="com_interface_entry_cached_tear_off"></a>COM_INTERFACE_ENTRY_CACHED_TEAR_OFF
 
@@ -268,16 +268,16 @@ COM_INTERFACE_ENTRY_CACHED_TEAR_OFF(iid, x, punk)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Der GUID der deaktivierten Schnittstelle.
 
-*w*<br/>
+*x*<br/>
 in Der Name der Klasse, die die-Schnittstelle implementiert.
 
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die com-Zuordnung enthält. Sollte im Konstruktor des Klassen Objekts mit NULL initialisiert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Schnittstelle nicht verwendet wird, verringert dies die Gesamtgröße des Objekts.
 
@@ -295,15 +295,15 @@ COM_INTERFACE_ENTRY_TEAR_OFF(iid, x)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Der GUID der deaktivierten Schnittstelle.
 
-*w*<br/>
+*x*<br/>
 in Der Name der Klasse, die die-Schnittstelle implementiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine abtrenn Schnittstelle wird als separates Objekt implementiert, das jedes Mal instanziiert wird, wenn die Schnittstelle, für die Sie steht, abgefragt wird. In der Regel erstellen Sie die Schnittstelle als Abbild, wenn die Schnittstelle selten verwendet wird, da dadurch ein vtable-Zeiger in jeder Instanz des Haupt Objekts gespeichert wird. Die Löschung wird gelöscht, wenn der Verweis Zähler Null wird. Die Klasse, die das Abbild implementiert, sollte von `CComTearOffObjectBase` abgeleitet sein und über eine eigene com-Zuordnung verfügen.
+Eine abtrenn Schnittstelle wird als separates Objekt implementiert, das jedes Mal instanziiert wird, wenn die Schnittstelle, für die Sie steht, abgefragt wird. In der Regel erstellen Sie die Schnittstelle als Abbild, wenn die Schnittstelle selten verwendet wird, da dadurch ein vtable-Zeiger in jeder Instanz des Haupt Objekts gespeichert wird. Die Löschung wird gelöscht, wenn der Verweis Zähler Null wird. Die Klasse, die das Abbild implementiert, sollte von `CComTearOffObjectBase` abgeleitet werden und über eine eigene com-Zuordnung verfügen.
 
 ### <a name="example"></a>Beispiel
 
@@ -322,19 +322,19 @@ COM_INTERFACE_ENTRY_CHAIN(classname)
 *classname*<br/>
 in Eine Basisklasse des aktuellen-Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beispielsweise im folgenden Code:
 
 [!code-cpp[NVC_ATL_Windowing#116](../../atl/codesnippet/cpp/com-map-macros_9.h)]
 
-Beachten Sie, dass der erste Eintrag in der com-Zuordnung eine Schnittstelle für das Objekt sein muss, das die com-Zuordnung enthält. Daher können Sie die com-Zuordnungs Einträge nicht mit COM_INTERFACE_ENTRY_CHAIN starten, was bewirkt, dass die com-Zuordnung eines anderen Objekts an dem Punkt durchsucht wird, an dem **COM_INTERFACE_ENTRY_CHAIN (** `COtherObject` **)** in der com-Zuordnung Ihres Objekts angezeigt wird. Wenn Sie zuerst die com-Zuordnung eines anderen Objekts durchsuchen möchten, fügen Sie der com `IUnknown` -Zuordnung einen Schnittstellen Eintrag für hinzu, und verketten Sie dann die com-Zuordnung des anderen Objekts. Beispiel:
+Beachten Sie, dass der erste Eintrag in der com-Zuordnung eine Schnittstelle für das Objekt sein muss, das die com-Zuordnung enthält. Daher können Sie die com-Zuordnungs Einträge nicht mit COM_INTERFACE_ENTRY_CHAIN starten, was bewirkt, dass die com-Zuordnung eines anderen Objekts an dem Punkt durchsucht wird, an dem **COM_INTERFACE_ENTRY_CHAIN (** `COtherObject` **)** in der com-Zuordnung Ihres Objekts angezeigt wird. Wenn Sie zuerst die com-Zuordnung eines anderen Objekts durchsuchen möchten, fügen Sie der com-Karte einen Schnittstellen Eintrag für `IUnknown` hinzu, und verketten Sie dann die com-Zuordnung des anderen Objekts. Beispiel:
 
 [!code-cpp[NVC_ATL_Windowing#111](../../atl/codesnippet/cpp/com-map-macros_10.h)]
 
 ##  <a name="com_interface_entry_func"></a>COM_INTERFACE_ENTRY_FUNC
 
-Ein allgemeiner Mechanismus zum Einbinden der ATL- `QueryInterface` Logik.
+Ein allgemeiner Mechanismus zum Einbinden in die `QueryInterface` Logik von ATL.
 
 ```
 COM_INTERFACE_ENTRY_FUNC(iid, dw, func)
@@ -342,7 +342,7 @@ COM_INTERFACE_ENTRY_FUNC(iid, dw, func)
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
+*IID*<br/>
 in Die GUID der Schnittstelle, die verfügbar gemacht wird.
 
 *dw*<br/>
@@ -351,17 +351,17 @@ in Ein Parameter, der an die *Funktion*übergeben wird.
 *func*<br/>
 in Der Funktionszeiger, der *IID*zurückgibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *IID* mit der IID der Schnittstelle übereinstimmt, die nach abgefragt wird, wird die von *Func* angegebene Funktion aufgerufen. Die Deklaration für die Funktion sollte wie folgt lauten:
 
 `HRESULT WINAPI func(void* pv, REFIID riid, LPVOID* ppv, DWORD_PTR dw);`
 
-Wenn Ihre Funktion aufgerufen wird, `pv` verweist auf das Klassenobjekt. Der *riid* -Parameter verweist auf die Schnittstelle, die abgefragt `ppv` wird, ist der Zeiger auf den Speicherort, an dem die Funktion den Zeiger auf die Schnittstelle speichern soll, und *DW* ist der Parameter, den Sie im Eintrag angegeben haben. Die-Funktion sollte \* auf NULL festgelegt `ppv` werden und E_NOINTERFACE oder S_FALSE zurückgeben, wenn Sie nicht die Rückgabe einer Schnittstelle auswählt. Mit E_NOINTERFACE wird die com-Zuordnungs Verarbeitung beendet. Mit S_FALSE wird die com-Zuordnungs Verarbeitung fortgesetzt, obwohl kein Schnittstellen Zeiger zurückgegeben wurde. Wenn die Funktion einen Schnittstellen Zeiger zurückgibt, sollte Sie S_OK zurückgeben.
+Wenn Ihre Funktion aufgerufen wird, verweist `pv` auf das Klassenobjekt. Der *riid* -Parameter verweist auf die Schnittstelle, für die abgefragt wird, `ppv` ist der Zeiger auf den Speicherort, an dem die Funktion den Zeiger auf die Schnittstelle speichern soll, und *DW* ist der Parameter, den Sie im Eintrag angegeben haben. Die-Funktion sollte \* `ppv` auf NULL festlegen und E_NOINTERFACE oder S_FALSE zurückgeben, wenn Sie eine Schnittstelle nicht zurückgibt. Bei E_NOINTERFACE wird die com-Kartenverarbeitung beendet. Bei S_FALSE wird die com-Kartenverarbeitung fortgesetzt, obwohl kein Schnittstellen Zeiger zurückgegeben wurde. Wenn die Funktion einen Schnittstellen Zeiger zurückgibt, sollte Sie S_OK zurückgeben.
 
 ##  <a name="com_interface_entry_func_blind"></a>COM_INTERFACE_ENTRY_FUNC_BLIND
 
-Identisch mit [COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func), mit dem Unterschied, dass die Abfrage für eine IID zu einem *Func*-Aufrufe führt.
+Identisch mit [COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func), mit dem Unterschied, dass die Abfrage für eine IID zu einem-Befehl von *Func*führt.
 
 ```
 COM_INTERFACE_ENTRY_FUNC_BLIND(dw, func)
@@ -375,7 +375,7 @@ in Ein Parameter, der an die *Funktion*übergeben wird.
 *func*<br/>
 in Die Funktion, die aufgerufen wird, wenn dieser Eintrag in der com-Zuordnung verarbeitet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jeder Fehler führt dazu, dass die Verarbeitung auf der com-Karte fortgesetzt wird. Wenn die Funktion einen Schnittstellen Zeiger zurückgibt, sollte Sie S_OK zurückgeben.
 
@@ -389,11 +389,11 @@ COM_INTERFACE_ENTRY_NOINTERFACE(x)
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 in Text, der zum Erstellen des Schnittstellen Bezeichners verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können dieses Makro verwenden, um zu verhindern, dass eine Schnittstelle in einem bestimmten Fall verwendet wird. Beispielsweise können Sie dieses Makro direkt vor COM_INTERFACE_ENTRY_AGGREGATE_BLIND in die com-Zuordnung einfügen, um zu verhindern, dass eine Abfrage für die Schnittstelle an den inneren unbekannten des Aggregats weitergeleitet wird.
+Sie können dieses Makro verwenden, um zu verhindern, dass eine Schnittstelle in einem bestimmten Fall verwendet wird. Beispielsweise können Sie dieses Makro direkt vor dem COM_INTERFACE_ENTRY_AGGREGATE_BLIND in die com-Zuordnung einfügen, um zu verhindern, dass eine Abfrage für die Schnittstelle an den inneren unbekannten des Aggregats weitergeleitet wird.
 
-Die IID der Schnittstelle wird erstellt, indem *x* an `IID_`angehängt wird. Wenn z `IID_IPersistStorage`. b. " `IPersistStorage` *x* " ist, ist die IID.
+Die IID der Schnittstelle wird erstellt, indem *x* an `IID_`angehängt wird. *Wenn z* . b. `IPersistStorage`ist, wird die IID `IID_IPersistStorage`.

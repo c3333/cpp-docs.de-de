@@ -6,15 +6,15 @@ f1_keywords:
 - limits/std::float_round_style
 ms.assetid: c86680a2-ba97-4ed9-8c20-a448857d7dc5
 ms.openlocfilehash: 567e0538f59c40d57f85d652a8919be6e034cf0b
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68245354"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876026"
 ---
 # <a name="ltlimitsgt-enums"></a>&lt;limits&gt;-Enumerationen
 
-## <a name="float_denorm_style"></a> float_denorm_style
+## <a name="float_denorm_style"></a>float_denorm_style
 
 Die Enumeration beschreibt die verschiedenen Methoden, die eine Implementierung für die Darstellung eines denormalisierten Gleitkommawerts auswählen kann – für Werte, die zu klein sind, um als normalisierte Werte dargestellt zu werden:
 
@@ -29,17 +29,17 @@ enum float_denorm_style {
 
 Die Enumeration gibt Folgendes zurück:
 
-- `denorm_indeterminate` Wenn das Vorhandensein oder fehlen von denormalisierten Formularen bei der Übersetzung nicht bestimmt werden kann.
+- `denorm_indeterminate`, wenn das vorhanden sein oder Fehlen von denormalisierten Formularen bei der Übersetzung nicht bestimmt werden kann.
 
-- `denorm_absent` Wenn denormalisierte Formulare fehlen.
+- `denorm_absent`, wenn denormalisierte Formulare nicht vorhanden sind.
 
-- `denorm_present` Wenn denormalisierte Formulare vorhanden sind.
+- `denorm_present`, wenn denormalisierte Formulare vorhanden sind.
 
 ### <a name="example"></a>Beispiel
 
 Unter [numeric_limits::has_denorm](../standard-library/numeric-limits-class.md#has_denorm) finden Sie ein Beispiel, in dem auf die Werte dieser Enumeration zugegriffen werden kann.
 
-## <a name="float_round_style"></a> float_round_style
+## <a name="float_round_style"></a>float_round_style
 
 Die Enumeration beschreibt die verschiedenen Methoden, die eine Implementierung für die Rundung eines Gleitkommawerts auf einen ganzzahligen Wert auswählen kann.
 
@@ -56,15 +56,15 @@ enum float_round_style {
 
 Die Enumeration gibt Folgendes zurück:
 
-- `round_indeterminate` Wenn die Rundungsmethode nicht bestimmt werden kann.
+- `round_indeterminate`, wenn die Rundungs Methode nicht bestimmt werden kann.
 
-- `round_toward_zero` Wenn in Richtung 0 (null).
+- `round_toward_zero`, wenn die Runde Richtung 0 (null) ist.
 
-- `round_to_nearest` Wenn die Rundung auf nächste ganze Zahl.
+- `round_to_nearest`, wenn der auf die nächste ganze Zahl abgerundet wird.
 
-- `round_toward_infinity` Wenn die Runde von Null weg.
+- `round_toward_infinity`, wenn die Runde von NULL entfernt wird.
 
-- `round_toward_neg_infinity` Wenn die Runde negativerer ganzer.
+- `round_toward_neg_infinity`, wenn die auf eine negative ganze Zahl gerundet wird.
 
 ### <a name="example"></a>Beispiel
 

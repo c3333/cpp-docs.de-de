@@ -3,11 +3,11 @@ title: 'Leitfaden zum Portieren: Spy++'
 ms.date: 10/23/2019
 ms.assetid: e558f759-3017-48a7-95a9-b5b779d5e51d
 ms.openlocfilehash: 5505e0dbf23dd02f4ae5924ff4f2bacff3f11eea
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73627235"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78890940"
 ---
 # <a name="porting-guide-spy"></a>Leitfaden zum Portieren: Spy++
 
@@ -19,7 +19,7 @@ Spy++ ist ein weit verbreitetes GUI-Diagnosetool für den Windows-Desktop, das a
 
 Dieser Fall wird als typisch für das Portieren von Windows-Desktopanwendungen behandelt, die MFC und die Win32-API verwenden, insbesondere für alte Projekte, die nicht mit jedem Release von Visual C++ seit Visual C++ 6.0 aktualisiert wurden.
 
-##  <a name="convert_project_file"></a> Schritt 1. Konvertieren der Projektdatei
+##  <a name="convert_project_file"></a> Schritt 1: Konvertieren der Projektdatei
 
 Die Projektdatei mit zwei alten DSW-Dateien aus Visual C++ 6.0 wird problemlos konvertiert. Ein Projekt ist die Spy++-Anwendung. Das andere ist SpyHk, geschrieben in C#, und stellt eine unterstützende DLL dar. Für komplexere Projekte ist die Durchführung des Upgrades möglicherweise nicht so einfach wie [hier](../porting/visual-cpp-porting-and-upgrading-guide.md) beschrieben.
 
@@ -29,7 +29,7 @@ Nach dem Upgrade der beiden Projekte sah unsere Projektmappe folgendermaßen aus
 
 Es sind zwei Projekte enthalten, ein mit einer großen Anzahl von C++-Dateien und ein anderes eine in C geschriebene DLL-Datei.
 
-##  <a name="header_file_problems"></a> Schritt 2. Probleme mit Headerdateien
+##  <a name="header_file_problems"></a> Schritt 2: Probleme mit Headerdateien
 
 Eines der häufig auftretenden Probleme beim Erstellen eines neu konvertierten Projekts ist, dass die vom Projekt verwendeten Headerdateien nicht gefunden werden können.
 
@@ -53,7 +53,7 @@ warning MSB8012: TargetPath(...\spyxx\spyxxhk\.\..\Debug\SpyxxHk.dll) does not m
 
 **Link.OutputFile** ist die Buildausgabe (z.B. EXE, DLL) und wird in der Regel aus `$(TargetDir)$(TargetName)$(TargetExt)` erstellt, d.h. Pfad, Dateiname und Erweiterung. Dies ist ein häufiger Fehler beim Migrieren von Projekten von dem alten Visual C++-Buildtool (vcbuild.exe) zu dem neuen Buildtool (MSBuild.exe). Seit der Änderung des Buildtools in Visual Studio 2010 tritt dieser Fehler möglicherweise bei jeder Migration einer älteren Projektversion als 2010 zu 2010 oder neuer auf. Das grundlegende Problem besteht darin, dass der Projektmigrations-Assistent nicht den **Link.OutputFile**-Wert aktualisiert, da es auf Grundlage anderer Projekteinstellungen nicht immer möglich ist, diesen Wert zu bestimmen. Daher müssen Sie diesen in der Regel manuell festlegen. Weitere Details finden Sie in diesem [Beitrag](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/) im Visual C++-Blog.
 
-In diesem Fall war die **Link.OutputFile**-Eigenschaft im konvertierten Projekt abhängig von der Konfiguration auf „.\Debug\Spyxx.exe“ und „.\Release\Spyxx.exe“ für das Spy++-Projekt festgelegt. Am sinnvollsten ist es, diese hartcodierten Werte einfach für **Alle Konfigurationen** durch `$(TargetDir)$(TargetName)$(TargetExt)` zu ersetzen. Wenn dies nicht funktioniert, können Sie die Werte von dort aus anpassen oder sie im Abschnitt **Allgemein** ändern, in dem diese festgelegt werden (die Eigenschaften lauten **Ausgabeverzeichnis**, **Zielname** und **Zielerweiterung**. Wenn die angezeigte Eigenschaft Makros verwendet, können Sie in der Dropdownliste **Bearbeiten** auswählen, um ein Dialogfeld zu öffnen, in dem die endgültige Zeichenfolge mit de vorgenommenen Makro-Ersetzungen angezeigt wird. Sie können alle verfügbaren Makros mit den zugehörigen aktuellen Werten anzeigen, indem Sie die Schaltfläche **Makros** wählen.
+In diesem Fall war die **Link.OutputFile**-Eigenschaft im konvertierten Projekt abhängig von der Konfiguration auf „.\Debug\Spyxx.exe“ und „.\Release\Spyxx.exe“ für das Spy++-Projekt festgelegt. Am sinnvollsten ist es, diese hartcodierten Werte einfach für `$(TargetDir)$(TargetName)$(TargetExt)`Alle Konfigurationen**durch** zu ersetzen. Wenn dies nicht funktioniert, können Sie die Werte von dort aus anpassen oder sie im Abschnitt **Allgemein** ändern, in dem diese festgelegt werden (die Eigenschaften lauten **Ausgabeverzeichnis**, **Zielname** und **Zielerweiterung**. Wenn die angezeigte Eigenschaft Makros verwendet, können Sie in der Dropdownliste **Bearbeiten** auswählen, um ein Dialogfeld zu öffnen, in dem die endgültige Zeichenfolge mit de vorgenommenen Makro-Ersetzungen angezeigt wird. Sie können alle verfügbaren Makros mit den zugehörigen aktuellen Werten anzeigen, indem Sie die Schaltfläche **Makros** wählen.
 
 ##  <a name="updating_winver"></a> Schritt 4. Aktualisieren die Windows-Zielversion
 
@@ -518,7 +518,7 @@ msvcrtd.lib;msvcirtd.lib;kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;Debug\Sp
 
 Im nächsten Schritt wird der alte MBCS-Code in Unicode aktualisiert. Da dies eine Windows-Anwendung ist, die eng an die Windows-Desktopplattform gebunden ist, wird der Code in von Windows verwendeten UTF-16-Unicode portiert. Wenn Sie plattformübergreifenden Code schreiben oder eine Windows-Anwendung in eine andere Plattform portieren, möchten Sie möglicherweise in UTF-8 portieren, was häufig unter anderen Betriebssystemen verwendet wird.
 
-Beim Portieren in UTF-16-Unicode müssen Sie entscheiden, ob in MBCS kompiliert werden soll.  Wenn Sie die Unterstützung von MBCS benötigen, müssen Sie das TCHAR-Makro als Zeichentyp verwenden, das, je nachdem, ob beim Kompilieren \_MBCS oder \_UNICODE definiert wird, in **char** oder **wchar_t** aufgelöst wird. Wenn Sie statt zu **wchar_t** und den zugehörigen APIs zu TCHAR und den TCHAR-Versionen der verschiedenen APIs wechseln, können Sie einfach zu einer MBCS-Version des Codes wechseln, indem Sie statt \_UNICODE das \_MBCS-Makro definieren. Neben TCHAR gibt es eine Vielzahl von TCHAR-Versionen wie häufig verwendete Typdefinitionen, Makros und Funktionen. Beispielsweise LPCTSTR anstelle von LPCSTR usw. Ändern Sie im Dialogfeld „Projekteigenschaften“ unter **Konfigurationseigenschaften** im Abschnitt **Allgemein** die Eigenschaft **Zeichensatz** von **MBCS-Zeichensatz verwenden** in **Unicode-Zeichensatz verwenden**. Mit dieser Einstellung wird festgelegt, welches Makro während der Kompilierung vordefiniert ist. Es sind zwei Makros vorhanden: ein UNICODE-Makro und ein \_UNICODE-Makro. Die Projekteigenschaft wirkt sich konsistent auf beide aus. Windows-Header verwenden UNICODE, während Visual C++-Header wie MFC \_UNICODE verwenden, wenn jedoch eins definiert ist, ist das andere ebenfalls immer definiert.
+Beim Portieren in UTF-16-Unicode müssen Sie entscheiden, ob in MBCS kompiliert werden soll.  Wenn Sie die Unterstützung von MBCS benötigen, müssen Sie das TCHAR-Makro als Zeichentyp verwenden, das, je nachdem, ob beim Kompilieren **MBCS oder** UNICODE definiert wird, in **char** oder \_wchar_t\_ aufgelöst wird. Wenn Sie statt zu **wchar_t** und den zugehörigen APIs zu TCHAR und den TCHAR-Versionen der verschiedenen APIs wechseln, können Sie einfach zu einer MBCS-Version des Codes wechseln, indem Sie statt \_UNICODE das \_MBCS-Makro definieren. Neben TCHAR gibt es eine Vielzahl von TCHAR-Versionen wie häufig verwendete Typdefinitionen, Makros und Funktionen. Beispielsweise LPCTSTR anstelle von LPCSTR usw. Ändern Sie im Dialogfeld „Projekteigenschaften“ unter **Konfigurationseigenschaften** im Abschnitt **Allgemein** die Eigenschaft **Zeichensatz** von **MBCS-Zeichensatz verwenden** in **Unicode-Zeichensatz verwenden**. Mit dieser Einstellung wird festgelegt, welches Makro während der Kompilierung vordefiniert ist. Es sind zwei Makros vorhanden: ein UNICODE-Makro und ein \_UNICODE-Makro. Die Projekteigenschaft wirkt sich konsistent auf beide aus. Windows-Header verwenden UNICODE, während Visual C++-Header wie MFC \_UNICODE verwenden, wenn jedoch eins definiert ist, ist das andere ebenfalls immer definiert.
 
 Eine gute [Anleitung](/previous-versions/cc194801(v=msdn.10)) zum Portieren von MBCS zu UTF-16-Unicode mithilfe von TCHAR ist verfügbar. Diesen Weg haben wir ausgewählt. Ändern Sie zunächst die Eigenschaft **Zeichensatz** in **Unicode-Zeichensatz verwenden**, und erstellen Sie das Projekt neu.
 
@@ -671,7 +671,7 @@ int CPerfTextDataBase::NumStrings(LPCTSTR mszStrings) const
 
 Das Portieren von Spy++ aus dem ursprünglichen Visual C++ 6.0-Code in den aktuellen Compiler hat etwa 20 Stunden Codierungszeit im Verlauf einer Woche in Anspruch genommen. Wir haben über acht Versionen des Produkts direkt ein Upgrade von Visual Studio 6.0 auf Visual Studio 2015 ausgeführt. Dies ist jetzt bei sowohl großen als auch kleinen Projekten der empfohlene Ansatz für alle Upgrades.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Portieren und Aktualisieren: Beispiele und Fallstudien](../porting/porting-and-upgrading-examples-and-case-studies.md)<br/>
 [Vorherige Fallstudie: COM Spy](../porting/porting-guide-com-spy.md)

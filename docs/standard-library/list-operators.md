@@ -17,15 +17,15 @@ helpviewer_keywords:
 - std::operator&lt;= (list)
 - std::operator== (list)
 ms.openlocfilehash: 7b0b7540c1b9a55140405a55e8e034f9c6ec646c
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246461"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78874427"
 ---
 # <a name="ltlistgt-operators"></a>&lt;list&gt;-Operatoren
 
-## <a name="op_neq"></a> Operator! =
+## <a name="op_neq"></a>Operator! =
 
 Testet, ob das Listenobjekt links vom Operator ungleich dem Listenobjekt rechts vom Operator ist.
 
@@ -37,17 +37,17 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Listen ungleich sind; **FALSE**, wenn die Listen gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Listen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -88,17 +88,17 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Liste links vom Operator kleiner als, aber ungleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -131,7 +131,7 @@ List c1 is less than list c2.
 */
 ```
 
-## <a name="op_lt_eq"></a> Operator&lt;=
+## <a name="op_lt_eq"></a>Operator&lt;=
 
 Testet, ob das Listenobjekt links vom Operator kleiner als oder gleich dem Listenobjekt rechts vom Operator ist.
 
@@ -143,17 +143,17 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als oder gleich" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -186,7 +186,7 @@ List c1 is less than or equal to list c2.
 */
 ```
 
-## <a name="op_eq_eq"></a> Operator ==
+## <a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Listenobjekt links vom Operator gleich dem Listenobjekt rechts vom Operator ist.
 
@@ -198,17 +198,17 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Liste links vom Operator gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Listen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -249,17 +249,17 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -292,7 +292,7 @@ List c1 is greater than list c2.
 */
 ```
 
-## <a name="op_gt_eq"></a> Operator&gt;=
+## <a name="op_gt_eq"></a>Operator&gt;=
 
 Testet, ob das Listenobjekt links vom Operator größer als oder gleich dem Listenobjekt rechts vom Operator ist.
 
@@ -304,17 +304,17 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `list`.
+*Linker*\
+Ein Objekt des Typs `list`.
 
-*Richting*\
-Ein Objekt vom Typ `list`.
+*Rechte*\
+Ein Objekt des Typs `list`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Liste links vom Operator größer als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als oder gleich" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 

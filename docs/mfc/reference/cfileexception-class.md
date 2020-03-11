@@ -25,11 +25,11 @@ helpviewer_keywords:
 - CFileException [MFC], m_strFileName
 ms.assetid: f6491bb9-bfbc-42fd-a952-b33f9b62323f
 ms.openlocfilehash: a3514c76d4136fe2bc0b096cc382e6f7f4dd3392
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62205935"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78855304"
 ---
 # <a name="cfileexception-class"></a>CFileException-Klasse
 
@@ -41,37 +41,37 @@ Stellt eine dateibezogene Ausnahmebedingung dar.
 class CFileException : public CException
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFileException::CFileException](#cfileexception)|Erstellt ein `CFileException`-Objekt.|
+|[CFileException:: CFileException](#cfileexception)|Erstellt ein `CFileException`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFileException::ErrnoToException](#errnotoexception)|Gibt, dass Code, eine Laufzeit-Fehlernummer entspricht.|
-|[CFileException::GetErrorMessage](#geterrormessage)|Ruft die Meldung mit einer Beschreibung der Ausnahme ab.|
-|[CFileException::OsErrorToException](#oserrortoexception)|Einen Ursachencode für ein Betriebssystem-Fehlercode zurückgegeben.|
-|[CFileException::ThrowErrno](#throwerrno)|Gibt eine Datei-Ausnahme, die basierend auf einer Common Language Runtime-Fehlernummer.|
-|[CFileException::ThrowOsError](#throwoserror)|Gibt eine Datei-Ausnahme, die basierend auf einer Betriebssystem-Fehlernummer.|
+|[CFileException:: errnodeexception](#errnotoexception)|Gibt den Code zurück, der einer Lauf Zeit Fehlernummer entspricht.|
+|[CFileException:: getErrorMessage](#geterrormessage)|Ruft die Meldung ab, in der eine Ausnahme beschrieben wird.|
+|[CFileException:: oserrordeexception](#oserrortoexception)|Gibt einen Ursachen Code zurück, der dem Fehlercode des Betriebssystems entspricht.|
+|[CFileException:: throwerrno](#throwerrno)|Löst eine Datei Ausnahme basierend auf einer Lauf Zeit Fehlernummer aus.|
+|[CFileException:: throwoserror](#throwoserror)|Löst eine Datei Ausnahme basierend auf einer Betriebssystem-Fehlernummer aus.|
 
-### <a name="public-data-members"></a>Öffentliche Datenmember
+### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFileException::m_cause](#m_cause)|Enthält die portablen Code, der die Ursache der Ausnahme entspricht.|
-|[CFileException::m_lOsError](#m_loserror)|Enthält die verwandten Betriebssystem-Fehlernummer.|
-|[CFileException::m_strFileName](#m_strfilename)|Enthält den Namen der Datei für diese Ausnahme.|
+|[CFileException:: m_cause](#m_cause)|Enthält portablen Code, der der Ausnahme Ursache entspricht.|
+|[CFileException:: m_lOsError](#m_loserror)|Enthält die zugehörige Betriebssystem-Fehlernummer.|
+|[CFileException:: m_strFileName](#m_strfilename)|Enthält den Namen der Datei für diese Ausnahme.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `CFileException` Klasse enthält öffentliche Datenmember, die den Ursachencode für die portable und die Anzahl der Betriebssystem-System-spezifischer Fehler enthalten. Die Klasse bietet auch statische Memberfunktionen für das Auslösen von Ausnahmen der Datei und zum Zurückgeben von Fehlercodes der Ursache für Betriebssystem-Fehler und C-Laufzeitfehler.
+Die `CFileException`-Klasse enthält öffentliche Datenmember, die den portablen Ursachen Code und die betriebssystemspezifische Fehlernummer enthalten. Die-Klasse stellt auch statische Member-Funktionen zum Auslösen von Datei Ausnahmen und zum Zurückgeben von Ursachen Codes für Betriebssystem Fehler und C-Laufzeitfehler bereit.
 
-`CFileException` Objekte werden erstellt und im ausgelöst `CFile` Memberfunktionen und in Memberfunktionen von abgeleiteten Klassen. Sie können auf zugreifen, diese Objekte innerhalb des Bereichs einer **CATCH** Ausdruck. Verwenden Sie zur Portabilität nur den Ursachencode, um den Grund für eine Ausnahme zu erhalten. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmebehandlung (MFC)](../../mfc/exception-handling-in-mfc.md).
+`CFileException` Objekte werden in `CFile` Member-Funktionen und in Element Funktionen abgeleiteter Klassen erstellt und ausgelöst. Sie können auf diese Objekte innerhalb des Gültigkeits Bereichs eines **catch** -Ausdrucks zugreifen. Verwenden Sie für die Portabilität nur den Ursachen Code, um den Grund für eine Ausnahme zu erhalten. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmebehandlung (MFC)](../../mfc/exception-handling-in-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -81,13 +81,13 @@ Die `CFileException` Klasse enthält öffentliche Datenmember, die den Ursachenc
 
 `CFileException`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afx.h
 
-##  <a name="cfileexception"></a>  CFileException::CFileException
+##  <a name="cfileexception"></a>CFileException:: CFileException
 
-Erstellt eine `CFileException` -Objekt, das die Ursache und die Betriebssystem-Code in das Objekt speichert.
+Erstellt ein `CFileException` Objekt, das den Ursachen Code und den Betriebssystem Code im-Objekt speichert.
 
 ```
 CFileException(
@@ -99,24 +99,24 @@ CFileException(
 ### <a name="parameters"></a>Parameter
 
 *cause*<br/>
-Ein enumerierter Typ-Variable, die den Grund für die Ausnahme angibt. Finden Sie unter [CFileException::m_cause](#m_cause) eine Liste der möglichen Werte.
+Eine enumerierte Typvariable, die den Grund für die Ausnahme angibt. Eine Liste der möglichen Werte finden Sie unter [CFileException:: m_cause](#m_cause) .
 
-*lOsError*<br/>
-Eine System-betriebssystemspezifische Ursache der Ausnahme, falls verfügbar. Die *lOsError* Parameter bietet mehr Informationen als *dazu führen, dass* ist.
+*loserror*<br/>
+Ein Betriebssystem spezifischer Grund für die Ausnahme, falls verfügbar. Der *loserror* -Parameter bietet mehr Informationen als *Ursache* .
 
-*lpszArchiveName*<br/>
-Verweist auf eine Zeichenfolge, die mit dem Namen des der `CFile` Objekt, die die Ausnahme verursacht.
+*lpszarchivename*<br/>
+Verweist auf eine Zeichenfolge, die den Namen des `CFile` Objekts enthält, das die Ausnahme verursacht hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diesen Konstruktor nicht direkt, aber stattdessen rufen Sie die globale Funktion [AfxThrowFileException](exception-processing.md#afxthrowfileexception).
+Verwenden Sie diesen Konstruktor nicht direkt, sondern nennen Sie stattdessen die globale Funktion [afxthrowfileexception](exception-processing.md#afxthrowfileexception).
 
 > [!NOTE]
->  Die Variable *lOsError* gilt nur für `CFile` und `CStdioFile` Objekte. Die `CMemFile` -Klasse behandelt keine dieser Fehlercode.
+>  Die Variable *loserror* gilt nur für `CFile`-und `CStdioFile` Objekte. Der `CMemFile`-Klasse behandelt diesen Fehlercode nicht.
 
-##  <a name="errnotoexception"></a>  CFileException::ErrnoToException
+##  <a name="errnotoexception"></a>CFileException:: errnodeexception
 
-Konvertiert den Wert des angegebenen Laufzeit-Bibliothekscode-Fehler in einem `CFileException` -Enumerationswert Fehler ab.
+Konvertiert einen angegebenen Lauf Zeit Bibliotheks-Fehlerwert in einen `CFileException` enumerationsfehlerwert.
 
 ```
 static int PASCAL ErrnoToException(int nErrno);
@@ -124,24 +124,24 @@ static int PASCAL ErrnoToException(int nErrno);
 
 ### <a name="parameters"></a>Parameter
 
-*nErrno*<br/>
-Ganzzahlige Fehlercode in der Laufzeit-Includedatei ERRNO definiert. H.
+*nrno*<br/>
+Ein ganzzahliger Fehlercode, wie er in der Lauf Zeit Datei "errno" definiert ist. Micha.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Enumerationswert, der auf eine bestimmte Laufzeitbibliothek Fehlerwert entspricht.
+Enumerationswert, der einem angegebenen Lauf Zeit Bibliotheks-Fehlerwert entspricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter [CFileException::m_cause](#m_cause) eine Liste der möglichen Enumerationswerten.
+Eine Liste der möglichen Enumerationswerte finden Sie unter [CFileException:: m_cause](#m_cause) .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCFiles#26](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_1.cpp)]
 
-##  <a name="geterrormessage"></a>  CFileException::GetErrorMessage
+##  <a name="geterrormessage"></a>CFileException:: getErrorMessage
 
-Ruft ab, Text, der eine Ausnahme beschrieben wird.
+Ruft Text ab, der eine Ausnahme beschreibt.
 
 ```
 virtual BOOL GetErrorMessage(
@@ -156,26 +156,26 @@ virtual BOOL GetErrorMessage(
 [in, out] Zeiger auf einen Puffer, der eine Fehlermeldung empfängt.
 
 *nMaxError*<br/>
-[in] Die maximale Anzahl von Zeichen, die der angegebene Puffer gespeichert werden kann. Dies schließt das abschließende Nullzeichen.
+in Die maximale Anzahl von Zeichen, die im angegebenen Puffer enthalten sein können. Dies schließt das abschließende Null-Zeichen ein.
 
 *pnHelpContext*<br/>
-[in, out] Zeiger auf eine Ganzzahl ohne Vorzeichen, die empfängt die Hilfekontext-ID. Wenn `NULL`, keine ID zurückgegeben.
+[in, out] Zeiger auf eine Ganzzahl ohne Vorzeichen, die die Hilfe Kontext-ID empfängt. Wenn `NULL`, wird keine ID zurückgegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Methode erfolgreich war. andernfalls "false".
+TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der angegebene Puffer zu klein ist, wird die Fehlermeldung abgeschnitten.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird `CFileException::GetErrorMessage`.
+Im folgenden Beispiel wird `CFileException::GetErrorMessage` verwendet.
 
 [!code-cpp[NVC_MFCExceptions#22](../../mfc/codesnippet/cpp/cfileexception-class_2.cpp)]
 
-##  <a name="m_cause"></a>  CFileException::m_cause
+##  <a name="m_cause"></a>CFileException:: m_cause
 
 Enthält Werte, die von einem `CFileException`-Enumerationstyp definiert wurden.
 
@@ -183,73 +183,73 @@ Enthält Werte, die von einem `CFileException`-Enumerationstyp definiert wurden.
 int m_cause;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Datenelement ist eine öffentliche Variable des Typs **Int**. Die Enumeratoren und ihre Bedeutungen lauten wie folgt:
+Dieser Datenmember ist eine öffentliche Variable vom Typ **int**. Die Enumeratoren und ihre Bedeutungen lauten wie folgt:
 
 - `CFileException::none` 0: Es ist kein Fehler aufgetreten.
 
-- `CFileException::genericException` 1: Es ist ein unbekannter Fehler aufgetreten.
+- `CFileException::genericException` 1: ein nicht angegebener Fehler ist aufgetreten.
 
-- `CFileException::fileNotFound` 2: Die Datei wurde nicht gefunden.
+- `CFileException::fileNotFound` 2: die Datei konnte nicht gefunden werden.
 
-- `CFileException::badPath` 3: Der gesamte Pfad oder ein Teil des Pfads ist ungültig.
+- `CFileException::badPath` 3: der gesamte oder ein Teil des Pfads ist ungültig.
 
-- `CFileException::tooManyOpenFiles` 4: Die zulässige Anzahl offener Dateien wurde überschritten.
+- `CFileException::tooManyOpenFiles` 4: die zulässige Anzahl von geöffneten Dateien wurde überschritten.
 
-- `CFileException::accessDenied` 5: Die Datei konnte nicht geöffnet werden.
+- `CFileException::accessDenied` 5: auf die Datei konnte nicht zugegriffen werden.
 
-- `CFileException::invalidFile` 6: Es gab einen Versuch, einen ungültigen Dateihandle zu verwenden.
+- `CFileException::invalidFile` 6: Es wurde versucht, ein ungültiges Datei Handle zu verwenden.
 
-- `CFileException::removeCurrentDir` 7: Das aktuelle Arbeitsverzeichnis kann nicht entfernt werden.
+- `CFileException::removeCurrentDir` 7: das aktuelle Arbeitsverzeichnis kann nicht entfernt werden.
 
-- `CFileException::directoryFull` 8: Es gibt keine weiteren Verzeichniseinträge.
+- `CFileException::directoryFull` 8: Es sind keine weiteren Verzeichniseinträge vorhanden.
 
-- `CFileException::badSeek` 9: Fehler beim Versuch, den Dateizeiger festzulegen.
+- `CFileException::badSeek` 9: beim Versuch, den Dateizeiger festzulegen, ist ein Fehler aufgetreten.
 
-- `CFileException::hardIO` 10: Hardwarefehler.
+- `CFileException::hardIO` 10: ein Hardwarefehler ist aufgetreten.
 
-- `CFileException::sharingViolation` 11: SHARE.EXE wurde nicht geladen, oder eine freigegebene Region wurde gesperrt.
+- `CFileException::sharingViolation` 11: freigeben. EXE wurde nicht geladen, oder ein frei gegebener Bereich wurde gesperrt.
 
-- `CFileException::lockViolation` 12: Es gab einen Versuch, eine Region zu sperren, die bereits gesperrt war.
+- `CFileException::lockViolation` 12: Es wurde versucht, einen Bereich zu sperren, der bereits gesperrt war.
 
-- `CFileException::diskFull` 14: Der Datenträger ist voll.
+- `CFileException::diskFull` 14: der Datenträger ist voll.
 
-- `CFileException::endOfFile` 15: Das Ende der Datei wurde erreicht.
+- `CFileException::endOfFile` 15: das Dateiende wurde erreicht.
 
     > [!NOTE]
     >  Diese `CFileException`-Ursachenenumeratoren unterscheiden sich von den `CArchiveException`-Ursachenenumeratoren.
 
     > [!NOTE]
-    > `CArchiveException::generic` ist veraltet. Verwenden Sie stattdessen `genericException`. Wenn **generische** in einer Anwendung verwendet und mit "/ CLR", und die resultierenden Syntaxfehler nicht leicht zu entschlüsseln, erstellt wird.
+    > `CArchiveException::generic` ist veraltet. Verwenden Sie stattdessen `genericException`. Wenn **generisch** in einer Anwendung verwendet und mit/CLR erstellt wird, können die resultierenden Syntax Fehler nicht leicht entschlüsselt werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCFiles#30](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_3.cpp)]
 
-##  <a name="m_loserror"></a>  CFileException::m_lOsError
+##  <a name="m_loserror"></a>CFileException:: m_lOsError
 
-Enthält den Betriebssystem-Fehlercode für diese Ausnahme.
+Enthält den Fehlercode des Betriebssystems für diese Ausnahme.
 
 ```
 LONG m_lOsError;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter Ihrem Betriebssystem-Technisches Handbuch für die eine Liste der Fehlercodes. Dieses Datenelement ist eine öffentliche Variable vom Typ LONG aus.
+Eine Liste der Fehlercodes finden Sie in der technischen Anleitung Ihres Betriebssystems. Dieser Datenmember ist eine öffentliche Variable vom Typ Long.
 
-##  <a name="m_strfilename"></a>  CFileException::m_strFileName
+##  <a name="m_strfilename"></a>CFileException:: m_strFileName
 
-Enthält den Namen der Datei für diese Ausnahmebedingung.
+Enthält den Namen der Datei für diese Ausnahme Bedingung.
 
 ```
 CString m_strFileName;
 ```
 
-##  <a name="oserrortoexception"></a>  CFileException::OsErrorToException
+##  <a name="oserrortoexception"></a>CFileException:: oserrordeexception
 
-Gibt einen Enumerator, der entspricht einem bestimmten *lOsError* Wert. Wenn der Fehlercode unbekannt ist, und klicken Sie dann die Funktion gibt `CFileException::generic`.
+Gibt einen Enumerator zurück, der einem angegebenen *loserror* -Wert entspricht. Wenn der Fehlercode unbekannt ist, gibt die Funktion `CFileException::generic`zurück.
 
 ```
 static int PASCAL OsErrorToException(LONG lOsError);
@@ -257,20 +257,20 @@ static int PASCAL OsErrorToException(LONG lOsError);
 
 ### <a name="parameters"></a>Parameter
 
-*lOsError*<br/>
-Ein Betriebssystem-System-spezifischen Fehlercode.
+*loserror*<br/>
+Ein Betriebssystem spezifischer Fehlercode.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Enumerationswert, der Wert eines bestimmten Betriebssystemfehlers entspricht.
+Enumerationswert, der einem angegebenen Betriebssystem-Fehlerwert entspricht.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCFiles#27](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_4.cpp)]
 
-##  <a name="throwerrno"></a>  CFileException::ThrowErrno
+##  <a name="throwerrno"></a>CFileException:: throwerrno
 
-Erstellt eine `CFileException` Objekt entsprechend einer angegebenen *nErrno* Wert und dann wird die Ausnahme ausgelöst.
+Erstellt ein `CFileException` Objekt, das einem angegebenen *nrno* -Wert entspricht, und löst dann die Ausnahme aus.
 
 ```
 static void PASCAL ThrowErrno(int nErrno, LPCTSTR lpszFileName = NULL);
@@ -278,19 +278,19 @@ static void PASCAL ThrowErrno(int nErrno, LPCTSTR lpszFileName = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*nErrno*<br/>
-Ganzzahlige Fehlercode in der Laufzeit-Includedatei ERRNO definiert. H.
+*nrno*<br/>
+Ein ganzzahliger Fehlercode, wie er in der Lauf Zeit Datei "errno" definiert ist. Micha.
 
-*lpszFileName*<br/>
-Ein Zeiger auf die Zeichenfolge, die mit dem Namen der Datei, die der Ausnahme verursacht hat, falls verfügbar.
+*lpszfilename*<br/>
+Ein Zeiger auf die Zeichenfolge, die den Namen der Datei enthält, die die Ausnahme verursacht hat, sofern verfügbar.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCFiles#28](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_5.cpp)]
 
-##  <a name="throwoserror"></a>  CFileException::ThrowOsError
+##  <a name="throwoserror"></a>CFileException:: throwoserror
 
-Löst eine `CFileException` entsprechend einer angegebenen *lOsError* Wert. Wenn der Fehlercode ist unbekannt, löst die Funktion eine Ausnahme, die als `CFileException::generic`.
+Löst eine `CFileException` aus, die einem angegebenen *loserror* -Wert entspricht. Wenn der Fehlercode unbekannt ist, löst die Funktion eine Ausnahme aus, die als `CFileException::generic`codiert ist.
 
 ```
 static void PASCAL ThrowOsError(LONG lOsError, LPCTSTR lpszFileName = NULL);
@@ -298,17 +298,17 @@ static void PASCAL ThrowOsError(LONG lOsError, LPCTSTR lpszFileName = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*lOsError*<br/>
-Ein Betriebssystem-System-spezifischen Fehlercode.
+*loserror*<br/>
+Ein Betriebssystem spezifischer Fehlercode.
 
-*lpszFileName*<br/>
-Ein Zeiger auf die Zeichenfolge, die mit dem Namen der Datei, die der Ausnahme verursacht hat, falls verfügbar.
+*lpszfilename*<br/>
+Ein Zeiger auf die Zeichenfolge, die den Namen der Datei enthält, die die Ausnahme verursacht hat, sofern verfügbar.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCFiles#29](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_6.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CException-Klasse](../../mfc/reference/cexception-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

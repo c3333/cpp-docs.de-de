@@ -37,11 +37,11 @@ helpviewer_keywords:
 - std::ctype [C++], widen
 ms.assetid: 3627154c-49d9-47b5-b28f-5bbedee38e3b
 ms.openlocfilehash: 640b2cc8506e498006feedbea6825a0e51a88209
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688169"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876308"
 ---
 # <a name="ctype-class"></a>ctype-Klasse
 
@@ -59,39 +59,39 @@ class ctype : public ctype_base;
 *CharType* -\
 Der Typ, der innerhalb eines Programms verwendet wird, um Zeichen zu codieren.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in `id` gespeichert. Für Klassifizierungskriterien wird ein geschachtelter Bitmaskentyp in der ctype_base-Basisklasse bereitgestellt.
 
 Die C++ Standard Bibliothek definiert zwei explizite spezizierungen dieser Klassen Vorlage:
 
-- `ctype<char>`, eine explizite Spezialisierung, deren Unterschiede separat beschrieben werden. Weitere Informationen finden Sie unter [CType &lt;char &gt;-Klasse](../standard-library/ctype-char-class.md).
+- `ctype<char>`, eine explizite Spezialisierung, deren Unterschiede separat beschrieben werden. Weitere Informationen finden Sie unter [CType&lt;char&gt; Class](../standard-library/ctype-char-class.md).
 
 - `ctype<wchar_t>`, das Elemente als breit Zeichen behandelt.
 
-Andere Spezialisierungs `ctype<CharType>` der Klassen Vorlagen-:
+Andere Spezialisierungs `ctype<CharType>`der Klassen Vorlagen-:
 
 - Konvertiert einen Wert *ch* vom Typ *CharType* in einen Wert vom Typ **char** mit dem Ausdruck `(char)ch`.
 
 - Konvertiert ein *bytebyte* vom Typ **char** in einen Wert vom Typ *CharType* mit dem Ausdruck `CharType(byte)`.
 
-Alle anderen Vorgänge werden für **char** -Werte auf die gleiche Weise wie für die explizite Spezialisierung `ctype<char>` ausgeführt.
+Alle anderen Vorgänge werden für **char** -Werte auf die gleiche Weise wie für die explizite Spezialisierung `ctype<char>`ausgeführt.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[ctype](#ctype)|Konstruktor für Objekte der Klasse `ctype`, die als Gebietsschemafacets für Zeichen dienen.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der ein Zeichen beschreibt, das von einem Gebietsschema verwendet wird.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[do_is](#do_is)|Eine virtuelle Funktion, die aufgerufen wird, um zu testen, ob ein einzelnes Zeichen über ein bestimmtes Attribut verfügt, oder die Attribute jedes Zeichens in einem Bereich klassifiziert und in einem Array speichert.|
 |[do_narrow](#do_narrow)|Eine virtuelle Funktion, die aufgerufen wird, um ein Zeichen vom Typ `CharType` von einem Gebiets Schema in das entsprechende Zeichen vom Typ " **char** " im systemeigenen Zeichensatz zu konvertieren.|
@@ -108,9 +108,9 @@ Alle anderen Vorgänge werden für **char** -Werte auf die gleiche Weise wie fü
 |[toupper](#toupper)|Konvertiert ein Zeichen oder einen Zeichenbereich in Großbuchstaben.|
 |[widen](#widen)|Konvertiert ein Zeichen vom Typ " **char** " im systemeigenen Zeichensatz in das entsprechende Zeichen vom Typ `CharType` das von einem Gebiets Schema verwendet wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<locale>
+**Header:** \<Gebiets Schema >
 
 **Namespace:** std
 
@@ -122,13 +122,13 @@ Ein Typ, der ein Zeichen beschreibt, das von einem Gebietsschema verwendet wird.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ stellt ein Synonym für den Vorlagenparameter *CharType* dar.
+Der Typ ist ein Synonym für den Vorlagenparameter *CharType*.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung von `char_type` als Rückgabewert finden Sie unter der Memberfunktion [widen](#widen).
+Ein Beispiel für die Verwendung von [ als Rückgabewert finden Sie unter der Memberfunktion ](#widen)widen`char_type`.
 
 ## <a name="ctype"></a> ctype::ctype
 
@@ -140,12 +140,12 @@ explicit ctype(size_t _Refs = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs* \
+*_Refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den Parameter *_Refs* und ihre Bedeutung lauten:
+Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
@@ -180,10 +180,10 @@ Der Maskenwert, für den das Zeichen getestet werden soll.
 *ch* -\
 Das Zeichen, dessen Attribute getestet werden sollen.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in einem Bereich, dessen Attribute klassifiziert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, dessen Attribute klassifiziert werden sollen.
 
 *dest* -\
@@ -195,7 +195,7 @@ Die erste Memberfunktion gibt einen booleschen Wert zurück, der **wahr** ist, w
 
 Die zweite Memberfunktion gibt ein Array mit den Maskenwerten zurück, mit denen die Attribute der einzelnen Zeichen im Bereich beschrieben werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Maskenwerte, mit denen die Attribute der Zeichen beschrieben werden, werden von der [ctype_base](../standard-library/ctype-base-class.md)-Klasse bereitgestellt, von der ctype abgeleitet wird. Die erste Memberfunktion kann Ausdrücke für den ersten Parameter akzeptieren, die als Bitmasken bezeichnet werden und mit verschiedenen Maskenwerten mithilfe der logischen bitweisen Operatoren (&#124; , & , ^ , ~) gebildet werden.
 
@@ -224,13 +224,13 @@ virtual const CharType* do_narrow(
 *ch* -\
 Das zu konvertierende Zeichen vom Typ `Chartype`, das vom Gebietsschema verwendet wird.
 
-*Standard* \
+*Standard*\
 Der Standardwert, der von der Element Funktion den Zeichen vom Typ `CharType` zugewiesen werden soll, die keine Gegenstücke vom Typ " **char**" aufweisen.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
 *dest* -\
@@ -242,9 +242,9 @@ Die erste geschützte Member-Funktion gibt das systemeigene Zeichen vom Typ char
 
 Die zweite geschützte Memberfunktion gibt einen Zeiger auf den Zielbereich mit nativen Zeichen zurück, die aus Zeichen vom Typ `CharType` konvertiert wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zweite geschützte Member-Vorlagen Funktion speichert in `dest` [`I`] den Wert `do_narrow` (`first` [`I`], `default`), für `I` im Intervall [0, `last`  -  `first`).
+Die zweite geschützte Member-Vorlagen Funktion speichert in `dest`[`I`] den Wert `do_narrow`(`first` [`I`], `default`), für `I` im Intervall [0, `last` - `first`).
 
 ### <a name="example"></a>Beispiel
 
@@ -266,19 +266,19 @@ virtual const CharType *do_scan_is(
 *maskval* -\
 Der Maskenwert, mit dem ein Zeichen übereinstimmen soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem gesucht werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die geschützte Member-Funktion gibt den kleinsten Zeiger `ptr` im Bereich [`first`, `last`) zurück, für den [do_is](#do_is)(`maskVal`, \* `ptr`) den Wert true hat.
+Die geschützte Member-Funktion gibt den kleinsten Zeiger `ptr` im Bereich [`first`, `last`) zurück, für den [do_is](#do_is)(`maskVal`, \* `ptr`) true ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -300,17 +300,17 @@ virtual const CharType *do_scan_not(
 *maskval* -\
 Der Maskenwert, mit dem ein Zeichen nicht übereinstimmen soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem gesucht werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske nicht entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die geschützte Member-Funktion gibt den kleinsten Zeiger `ptr` im Bereich [`first`, `last`) zurück, für den [do_is](#do_is)(`maskVal`, \* `ptr`) false ist.
 
@@ -335,19 +335,19 @@ virtual const CharType *do_tolower(
 *ch* -\
 Das Zeichen, das in einen Kleinbuchstaben umgewandelt werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die erste geschützte Member-Funktion gibt die Kleinbuchstaben Form des-Parameters *ch*zurück. Wenn kein Formular aus Kleinbuchstaben vorhanden ist, wird *ch*zurückgegeben. Die zweite geschützte Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last`  -  `first`) mit `do_tolower` (`first` [`I`]).
+Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last` - `first`) mit `do_tolower`(`first` [`I`]).
 
 ### <a name="example"></a>Beispiel
 
@@ -370,19 +370,19 @@ virtual const CharType *do_toupper(
 *ch* -\
 Das Zeichen, das in einen Großbuchstaben umgewandelt werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die erste geschützte Member-Funktion gibt die Großbuchstaben Form des-Parameters *ch*zurück. Wenn kein Großbuchstabe vorhanden ist, wird " *ch*" zurückgegeben. Die zweite geschützte Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last`  -  `first`) mit `do_toupper` (`first` [`I`]).
+Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last` - `first`) mit `do_toupper`(`first` [`I`]).
 
 ### <a name="example"></a>Beispiel
 
@@ -406,10 +406,10 @@ virtual const char *do_widen(
 *byte*\
 Das Zeichen vom Typ " **char** " im systemeigenen Zeichensatz, das konvertiert werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
 *dest* -\
@@ -421,7 +421,7 @@ Die erste geschützte Member-Funktion gibt das Zeichen vom Typ `CharType` zurüc
 
 Die zweite geschützte Member-Funktion gibt einen Zeiger auf den Zielbereich von Zeichen vom Typ zurück `CharType` der von einem Gebiets Schema verwendet wird, das aus systemeigenen Zeichen vom Typ **char**konvertiert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zweite geschützte Membervorlagenfunktion speichert in `dest`[ `I`] den Wert `do_widen`( `first`[ `I`]), wobei `I` im Intervall [0, `last` - `first`] liegen muss.
 
@@ -450,10 +450,10 @@ Der Maskenwert, für den das Zeichen getestet werden soll.
 *ch* -\
 Das Zeichen, dessen Attribute getestet werden sollen.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in einem Bereich, dessen Attribute klassifiziert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, dessen Attribute klassifiziert werden sollen.
 
 *dest* -\
@@ -465,7 +465,7 @@ Die erste Member-Funktion gibt **true** zurück, wenn das überprüfte Zeichen �
 
 Die zweite Memberfunktion gibt einen Zeiger auf das letzte Zeichen in dem Bereich zurück, dessen Attribute klassifiziert werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Maskenwerte, mit denen die Attribute der Zeichen beschrieben werden, werden von der [ctype_base](../standard-library/ctype-base-class.md)-Klasse bereitgestellt, von der ctype abgeleitet wird. Die erste Memberfunktion kann Ausdrücke für den ersten Parameter akzeptieren, die als Bitmasken bezeichnet werden und mit verschiedenen Maskenwerten mithilfe der logischen bitweisen Operatoren (&#124; , & , ^ , ~) gebildet werden.
 
@@ -527,13 +527,13 @@ const CharType* narrow(
 *ch* -\
 Das zu konvertierende Zeichen vom Typ `Chartype`, das vom Gebietsschema verwendet wird.
 
-*Standard* \
+*Standard*\
 Der Standardwert, der von der Element Funktion den Zeichen vom Typ `CharType` zugewiesen werden soll, die keine Gegenstücke vom Typ " **char**" aufweisen.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
 *dest* -\
@@ -545,9 +545,9 @@ Die erste Member-Funktion gibt das systemeigene Zeichen vom Typ **char** zurück
 
 Die zweite Memberfunktion gibt einen Zeiger auf den Zielbereich mit nativen Zeichen zurück, die aus Zeichen vom Typ `CharType` konvertiert wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion gibt [do_narrow](#do_narrow)(`ch` `default`) zurück. Die zweite Member-Funktion gibt [do_narrow](#do_narrow) (`first`, `last`, `default`, `dest`) zurück. Nur für die Basisquellzeichen ist sichergestellt, dass ein eindeutiges inverses `CharType`-Bild unter `narrow` vorhanden ist. Für diese Basisquellzeichen gilt folgende Invariante: `narrow` ( [widen](#widen) ( **c** ), 0 ) == **c**.
+Die erste Member-Funktion gibt [do_narrow](#do_narrow)(`ch`, `default`) zurück. Die zweite Member-Funktion gibt [do_narrow](#do_narrow) (`first`, `last`, `default`, `dest`) zurück. Nur für die Basisquellzeichen ist sichergestellt, dass ein eindeutiges inverses `CharType`-Bild unter `narrow` vorhanden ist. Für diese Basisquellzeichen gilt folgende Invariante: `narrow` ( [widen](#widen) ( **c** ), 0 ) == **c**.
 
 ### <a name="example"></a>Beispiel
 
@@ -591,19 +591,19 @@ const CharType *scan_is(
 *maskval* -\
 Der Maskenwert, mit dem ein Zeichen übereinstimmen soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem gesucht werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt [do_scan_is](#do_scan_is)(`maskVal`, `first` `last`) zurück.
+Die Member-Funktion gibt [do_scan_is](#do_scan_is)zurück (`maskVal`, `first`, `last`).
 
 ### <a name="example"></a>Beispiel
 
@@ -647,19 +647,19 @@ const CharType *scan_not(
 *maskval* -\
 Der Maskenwert, mit dem ein Zeichen nicht übereinstimmen soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem gesucht werden soll.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske nicht entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt [Do_scan_not](#do_scan_not)(`maskVal`, `first` `last`) zurück.
+Die Member-Funktion gibt [Do_scan_not](#do_scan_not)zurück (`maskVal`, `first`, `last`).
 
 ### <a name="example"></a>Beispiel
 
@@ -702,10 +702,10 @@ const CharType *tolower(CharType* first, const CharType* last) const;
 *ch* -\
 Das Zeichen, das in einen Kleinbuchstaben umgewandelt werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -714,9 +714,9 @@ Die erste Member-Funktion gibt die Kleinbuchstaben Form des-Parameters *ch*zurü
 
 Die zweite Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion gibt [Do_tolower](#do_tolower)(`ch`) zurück. Die zweite Member-Funktion gibt [Do_tolower](#do_tolower)(`first` `last`) zurück.
+Die erste Member-Funktion gibt [Do_tolower](#do_tolower)(`ch`) zurück. Die zweite Member-Funktion gibt [Do_tolower](#do_tolower)(`first`, `last`) zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -757,10 +757,10 @@ const CharType *toupper(CharType* first, const CharType* last) const;
 *ch* -\
 Das Zeichen, das in einen Großbuchstaben umgewandelt werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich, in dem die Zeichen in Groß- bzw. Kleinbuchstaben umgewandelt werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -769,7 +769,7 @@ Die erste Member-Funktion gibt die Großbuchstaben Form des-Parameters *ch*zurü
 
 Die zweite Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Member-Funktion gibt [Do_toupper](#do_toupper)(`ch`) zurück. Die zweite Memberfunktion gibt [do_toupper](#do_toupper)( `first`, `last`) zurück.
 
@@ -812,10 +812,10 @@ const char *widen(const char* first, const char* last, CharType* dest) const;
 *byte*\
 Das Zeichen vom Typ char im nativen Zeichensatz, das umgewandelt werden soll.
 
-*erste* \
+*erste*\
 Ein Zeiger auf das erste Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
-*Letzter* \
+*Letzter*\
 Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in dem Zeichen konvertiert werden sollen.
 
 *dest* -\
@@ -827,9 +827,9 @@ Die erste Member-Funktion gibt das Zeichen vom Typ `CharType` zurück, das dem P
 
 Die zweite Member-Funktion gibt einen Zeiger auf den Zielbereich von Zeichen vom Typ zurück `CharType` der von einem Gebiets Schema verwendet wird, das aus systemeigenen Zeichen vom Typ **char**konvertiert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion gibt [Do_widen](#do_widen)(`byte`) zurück. Die zweite Member-Funktion gibt [Do_widen](#do_widen)(`first`, `last` `dest`) zurück.
+Die erste Member-Funktion gibt [Do_widen](#do_widen)(`byte`) zurück. Die zweite Member-Funktion gibt [Do_widen](#do_widen)zurück (`first`, `last`, `dest`).
 
 ### <a name="example"></a>Beispiel
 
@@ -861,7 +861,7 @@ Hello everyone!
 Hello everyone!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<locale>](../standard-library/locale.md)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

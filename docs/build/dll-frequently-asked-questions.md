@@ -7,62 +7,62 @@ helpviewer_keywords:
 - FAQs [C++], DLLs
 ms.assetid: 09dd068e-fc33-414e-82f7-289c70680256
 ms.openlocfilehash: 9108aaf3fcface847b0391455a2aecd4d45658c4
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220932"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856949"
 ---
-# <a name="dll-frequently-asked-questions"></a>FAQ (Häufig gestellte Fragen) zu DLLs
+# <a name="dll-frequently-asked-questions"></a>Häufig gestellte Fragen (FAQs)zu DLLs
 
-Folgenden werden einige häufig gestellte für Fragen (FAQ) zu DLLs.
+Im folgenden finden Sie einige häufig gestellte Fragen (FAQ) zu DLLs.
 
 - [Kann eine MFC-DLL mehrere Threads erstellen?](#mfc_multithreaded_1)
 
-- [Kann eine Multithreadanwendung eine MFC-DLL in unterschiedlichen Threads zugreifen?](#mfc_multithreaded_2)
+- [Kann eine Multithreadanwendung auf eine MFC-DLL in verschiedenen Threads zugreifen?](#mfc_multithreaded_2)
 
-- [Gibt es alle MFC-Klassen oder Funktionen, die in einer MFC-DLL nicht verwendet werden?](#mfc_prohibited_classes)
+- [Gibt es MFC-Klassen oder-Funktionen, die nicht in einer MFC-DLL verwendet werden können?](#mfc_prohibited_classes)
 
-- [Welche Optimierungstechniken sollte ich zur leistungsverbesserung beim Laden der Anwendung verwenden?](#mfc_optimization)
+- [Welche Optimierungstechniken sollte ich verwenden, um die Leistung der Client Anwendung beim Laden zu verbessern?](#mfc_optimization)
 
-- [Ein Arbeitsspeicherverlust in der regulären MFC DLL vorhanden ist, aber Code scheint in Ordnung. Wie finde ich den Speicherverlust?](#memory_leak)
+- [In meiner regulären MFC-DLL gibt es einen Speicherplatz, aber mein Code sieht in Ordnung aus. Wie finde ich den Arbeits Speicherplatz?](#memory_leak)
 
-## <a name="mfc_multithreaded_1"></a> Kann eine MFC-DLL mehrere Threads erstellen?
+## <a name="mfc_multithreaded_1"></a>Kann eine MFC-DLL mehrere Threads erstellen?
 
-Mit der Ausnahme während der Initialisierung einer MFC-DLL problemlos mehrere Threads erstellen können, solange er die Win32-Thread verwendet lokaler Speicher (TLS) wie Funktionen **TlsAlloc** lokalen Threadspeicher zugewiesen werden. Aber wenn eine MFC-DLL verwendet **__declspec(thread)** zum Zuordnen der threadlokale Speicher die Clientanwendung muss werden implizit mit der DLL verknüpft. Wenn die Client-Anwendung explizit auf die DLL, die den Aufruf von verknüpft **LoadLibrary** wird die DLL nicht erfolgreich geladen. Weitere Informationen zu den Thread-lokalen Variablen in DLLs, finden Sie unter [Thread](../cpp/thread.md).
+Außer während der Initialisierung kann eine MFC-DLL sicher mehrere Threads erstellen, solange die Win32-Funktionen (Thread Local Storage) wie z. b. **TlsAlloc** zum Zuordnen von lokalem Thread Speicher verwendet werden. Wenn eine MFC-DLL jedoch **__declspec (Thread)** zum Zuordnen von lokalem Thread Speicher verwendet, muss die Client Anwendung implizit mit der DLL verknüpft werden. Wenn die Client Anwendung explizit mit der DLL verknüpft ist, lädt der **LoadLibrary** -Befehl die dll nicht erfolgreich. Weitere Informationen zu lokalen Thread Variablen in DLLs finden Sie unter [Thread](../cpp/thread.md).
 
-Eine MFC-DLL, die einen neuen MFC-Thread während des Starts erstellt wird reagiert, wenn sie von einer Anwendung geladen wird. Dies schließt, wenn ein Thread, durch den Aufruf erstellt wird `AfxBeginThread` oder `CWinThread::CreateThread` in:
+Eine MFC-DLL, die während des Starts einen neuen MFC-Thread erstellt, reagiert nicht mehr, wenn Sie von einer Anwendung geladen wird. Dies schließt immer dann ein, wenn ein Thread durch Aufrufen von `AfxBeginThread` oder `CWinThread::CreateThread` in erstellt wird:
 
-- Die `InitInstance` von einem `CWinApp`-abgeleitetes Objekt in einer regulären MFC-DLL.
+- Die `InitInstance` eines von `CWinApp`abgeleiteten Objekts in einer regulären MFC-DLL.
 
-- Einer angegebenen `DllMain` oder **RawDllMain** Funktion in einer regulären MFC-DLL.
+- Ein bereitgestellter `DllMain` oder eine **RawDllMain** -Funktion in einer regulären MFC-DLL.
 
-- Einer angegebenen `DllMain` oder **RawDllMain** -Funktion in einer MFC-Erweiterungs-DLL.
+- Ein bereitgestellter `DllMain` oder eine **RawDllMain** -Funktion in einer MFC-Erweiterungs-DLL.
 
-## <a name="mfc_multithreaded_2"></a> Kann eine Multithreadanwendung eine MFC-DLL in unterschiedlichen Threads zugreifen?
+## <a name="mfc_multithreaded_2"></a>Kann eine Multithreadanwendung auf eine MFC-DLL in verschiedenen Threads zugreifen?
 
-Multithread-Anwendungen können reguläre MFC-DLLs, die dynamisch mit MFC verknüpft und MFC-Erweiterungs-DLLs aus verschiedenen Threads zugreifen. Eine Anwendung kann es sich um reguläre MFC-DLLs zugreifen, die von mehreren Threads, die in der Anwendung erstellten statisch mit MFC verknüpfen.
+Multithreadanwendungen können auf reguläre MFC-DLLs zugreifen, die dynamisch mit MFC-und MFC-Erweiterungs-DLLs aus unterschiedlichen Threads verknüpft sind. Eine Anwendung kann auf reguläre MFC-DLLs zugreifen, die statisch mit MFC aus mehreren in der Anwendung erstellten Threads verknüpft sind.
 
-## <a name="mfc_prohibited_classes"></a> Gibt es alle MFC-Klassen oder Funktionen, die in einer MFC-DLL nicht verwendet werden?
+## <a name="mfc_prohibited_classes"></a>Gibt es MFC-Klassen oder-Funktionen, die nicht in einer MFC-DLL verwendet werden können?
 
-Verwenden von Erweiterungs-DLLs der `CWinApp`-abgeleitete Klasse von der Clientanwendung. Es müssen keine eigene `CWinApp`-abgeleitete Klasse.
+Erweiterungs-DLLs verwenden die von `CWinApp`abgeleitete Klasse der Client Anwendung. Sie dürfen nicht über eine eigene `CWinApp`abgeleitete Klasse verfügen.
 
-reguläre MFC-DLLs müssen eine `CWinApp`-Klasse und ein einzelnes Objekt der Anwendungsklasse abgeleitet, wie eine MFC-Anwendung. Im Gegensatz zu den `CWinApp` Objekt einer Anwendung, die `CWinApp` Objekt der DLL keine Haupt-Meldungsverteilschleife.
+Reguläre MFC-DLLs müssen über eine `CWinApp`abgeleitete Klasse und ein einzelnes Objekt dieser Anwendungsklasse verfügen, ebenso wie eine MFC-Anwendung. Im Gegensatz zum `CWinApp` Objekt einer Anwendung weist das `CWinApp`-Objekt der dll keine hauptnachrichtenpump auf.
 
-Beachten Sie, dass die `CWinApp::Run` Mechanismus gelten nicht für eine DLL, die Anwendung besitzt die Haupt-Meldungsverteilschleife. Wenn die DLL nicht modale Dialogfelder geöffnet oder eine eigene Hauptrahmenfenster, muss der Anwendung Haupt-Meldungsverteilschleife eine Routine, die von der DLL, die wiederum aufruft exportierten Aufrufen der `CWinApp::PreTranslateMessage` Memberfunktion des DLL Application-Objekt.
+Beachten Sie, dass die Anwendung das hauptnachrichtenpump besitzt, da der `CWinApp::Run` Mechanismus nicht für eine DLL gilt. Wenn die dll nicht modlose Dialogfelder öffnet oder über ein eigenes Hauptrahmen Fenster verfügt, muss die hauptnachrichtenpump der Anwendung eine von der dll exportierte Routine aufrufen, die wiederum die `CWinApp::PreTranslateMessage` Member-Funktion des Anwendungs Objekts der DLL aufruft.
 
-## <a name="mfc_optimization"></a> Welche Optimierungstechniken sollte ich verwenden, um die Client-Anwendung zu verbessern&#39;s Leistung beim Laden?
+## <a name="mfc_optimization"></a>Welche Optimierungstechniken sollte ich verwenden, um die Leistung der&#39;Client Anwendung beim Laden zu verbessern?
 
-Ist die DLL eine reguläre MFC-DLL, die statisch mit MFC, ändern ihn in eine reguläre verknüpft ist reduziert, die dynamisch mit MFC verknüpfte MFC-DLL die Dateigröße an.
+Wenn die DLL eine reguläre MFC-DLL ist, die statisch mit MFC verknüpft ist, wird durch das Ändern in eine reguläre MFC-DLL, die dynamisch mit MFC verknüpft ist, die Dateigröße reduziert.
 
-Wenn die DLL zahlreiche exportierte Funktionen aufweist, verwenden Sie eine DEF-Datei, die Funktionen exportiert (anstelle von **__declspec(dllexport)**) und verwenden Sie die DEF-Datei [NONAME-Attribut](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) auf jedem exportierten Funktionen. Das NONAME-Attribut bewirkt, dass nur der Ordinalwert und nicht der Funktionsname in der Exporttabelle der DLL, gespeichert werden, wodurch die Dateigröße reduziert wird.
+Wenn die dll über eine große Anzahl von exportierten Funktionen verfügt, verwenden Sie eine DEF-Datei, um die Funktionen (statt **__declspec (dllexport)** ) zu exportieren, und verwenden Sie für jede exportierte Funktion das [Noname-Attribut](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md) der Datei. def. Das NONAME-Attribut bewirkt, dass nur der Ordinalwert und nicht der Funktionsname in der Export Tabelle der dll gespeichert wird, wodurch die Dateigröße verringert wird.
 
-DLLs, die implizit mit einer Anwendung verknüpft sind werden geladen, wenn die Anwendung geladen wird. Versuchen Sie zur Verbesserung der Leistung beim Laden, unterteilen die DLL in verschiedenen DLLs aus. Legen Sie alle Funktionen, die die aufrufende Anwendung unmittelbar nach dem Laden in eine DLL-Datei muss ein, und haben Sie die aufrufende Anwendung, die implizit mit dieser DLL verknüpft. Fügen Sie die anderen Funktionen, die nicht sofort die aufrufende Anwendung benötigt in eine andere DLL und haben die Anwendung explizit auf diese DLL verknüpfen. Weitere Informationen finden Sie unter [Verknüpfen einer ausführbaren Datei in eine DLL](linking-an-executable-to-a-dll.md#determining-which-linking-method-to-use).
+DLLs, die implizit mit einer Anwendung verknüpft sind, werden geladen, wenn die Anwendung geladen wird. Um die Leistung beim Laden zu verbessern, versuchen Sie, die dll in verschiedene DLLs aufzuteilen. Fügen Sie alle Funktionen, die die aufrufende Anwendung benötigt, unmittelbar nach dem Laden in eine DLL ein, und lassen Sie die aufrufende Anwendung implizit mit dieser DLL verknüpfen. Fügen Sie die anderen Funktionen, die die aufrufenden Anwendung nicht benötigt, direkt in eine andere dll ein, und lassen Sie die Anwendung explizit mit dieser DLL verknüpfen. Weitere Informationen finden Sie unter [Verknüpfen einer ausführbaren Datei mit einer DLL](linking-an-executable-to-a-dll.md#determining-which-linking-method-to-use).
 
-## <a name="memory_leak"></a> Es&#39;s eines Speicherverlusts in der regulären MFC DLL, aber mein Code sieht gut aus. Wie finde ich den Speicherverlust?
+## <a name="memory_leak"></a>In&#39;meiner regulären MFC-DLL gibt es einen Speicherplatz, aber mein Code sieht in Ordnung aus. Wie finde ich den Arbeits Speicherplatz?
 
-Eine mögliche Ursache für den Speicherverlust ist, dass MFC temporäre Objekte erstellt, die innerhalb von Meldungshandlerfunktionen verwendet werden. In MFC-Anwendungen, diese temporären Objekte werden automatisch bereinigt die `CWinApp::OnIdle()` -Funktion, die zwischen der Verarbeitung von Nachrichten aufgerufen wird. Im MFC-Dynamic Link Libraries (DLLs), aber die `OnIdle()` Funktion wird nicht automatisch aufgerufen. Daher sind temporäre Objekte nicht automatisch bereinigt. Um temporäre Objekte bereinigen, die DLL muss explizit aufrufen, `OnIdle(1)` in regelmäßigen Abständen.
+Eine mögliche Ursache des Speicherlecks ist, dass MFC temporäre Objekte erstellt, die in nachrichtenhandlerfunktionen verwendet werden. In MFC-Anwendungen werden diese temporären Objekte automatisch in der `CWinApp::OnIdle()`-Funktion bereinigt, die zwischen Nachrichtenverarbeitung aufgerufen wird. In MFC-DLLs (Dynamic-Link Libraries) wird die `OnIdle()`-Funktion jedoch nicht automatisch aufgerufen. Folglich werden temporäre Objekte nicht automatisch bereinigt. Um temporäre Objekte zu bereinigen, muss die dll `OnIdle(1)` in regelmäßigen Abständen explizit aufgerufen werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen von C/C++-DLLs in Visual Studio](dlls-in-visual-cpp.md)

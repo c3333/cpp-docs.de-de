@@ -5,11 +5,11 @@ f1_keywords:
 - sstream/std::swap
 ms.assetid: bc9607e8-7c6b-44ef-949b-19e917b450ad
 ms.openlocfilehash: 707d35123797b84b2b7cef1d1cfd9005e4becb1c
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447531"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865916"
 ---
 # <a name="ltsstreamgt-functions"></a>&lt;sstream&gt; Funktionen
 
@@ -17,7 +17,7 @@ ms.locfileid: "68447531"
 |-|
 |[swap](#sstream_swap)|
 
-## <a name="sstream_swap"></a>  swap
+## <a name="sstream_swap"></a> swap
 
 Tauscht die Werte zwischen zwei `sstream`-Objekten aus.
 
@@ -45,15 +45,15 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*left*|Ein Verweis auf ein `sstream`-Objekt.|
 |*right*|Ein Verweis auf ein `sstream`-Objekt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<sstream>](../standard-library/sstream.md)
