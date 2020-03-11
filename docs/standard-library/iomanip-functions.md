@@ -27,11 +27,11 @@ helpviewer_keywords:
 - std::setprecision [C++]
 - std::setw [C++]
 ms.openlocfilehash: 944834e40a399622b5c85d95100d4ca3c3c2da93
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518464"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856531"
 ---
 # <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt;-Funktionen
 
@@ -51,15 +51,15 @@ template <class Money>
 T7 get_money(Money& amount, bool use_intl);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 \ *Betrag*
 Der extrahierte Währungswert.
 
 *use_intl*\
-Wenn **true**, verwenden Sie das internationale Format. Der Standardwert ist **FALSE**.
+Wenn **true**, verwenden Sie das internationale Format. Der Standardwert ist **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus dem Datenstrom `str`sich als `formatted input function` verhält, die die Element Funktion `get` für die Gebiets Schema-FAC`money_get` ette aufruft, die `str`zugeordnet ist, wobei *use_intl* verwendet wird, um das internationale Format anzugeben. Bei erfolgreicher Ausführung speichert der-Befehl den extrahierten monetären Wert in der *Summe* . Dann gibt der Manipulator `str` zurück.
 
@@ -74,7 +74,7 @@ template <class Elem>
 T10 put_time(struct tm *time_ptr, const Elem *time_format);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *time_ptr*\
 Die Zeit in Form einer Zeitstruktur.
@@ -82,9 +82,9 @@ Die Zeit in Form einer Zeitstruktur.
 *time_format*\
 Das gewünschte Format, das Sie verwenden, um den Zeitwert zu erhalten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `str` gehörige Gebietsschemafacet `time_get` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `time_get` gehörige Gebietsschemafacet `str` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
 
 ## <a name="iomanip_put_money"></a> put_money
 
@@ -95,7 +95,7 @@ template <class Money>
 T8 put_money(const Money& amount, bool use_intl);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 \ *Betrag*
 Der Währungswert, der in den Stream eingefügt werden soll.
@@ -105,11 +105,11 @@ Auf " **true** " festgelegt, wenn der Manipulator das internationale Format verw
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `str`zurück.
+Gibt `str` zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `str` gehörige Gebietsschemafacet `money_put` auf. Bei erfolgreicher Ausführung fügt der-Befehl `amount` entsprechend formatiert ein und verwendet *use_intl* , um das internationale Format und `str.fill()`als Füll Element anzugeben. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `money_put` gehörige Gebietsschemafacet `str` auf. Bei erfolgreicher Ausführung fügt der-Befehl `amount` entsprechend formatiert ein und verwendet *use_intl* , um das internationale Format und `str.fill()`als Füll Element anzugeben. Dann gibt der Manipulator `str` zurück.
 
 `Money` muss Typ `long double` oder eine Instanziierung von `basic_string` sein, das die gleichen Parameter und Merkmale wie `str` aufweist.
 
@@ -122,7 +122,7 @@ template <class Elem>
 T10 put_time(struct tm* time_ptr, const Elem* time_format);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *time_ptr*\
 Der Zeitwert aus einer Zeitstruktur, der in den Stream geschrieben werden soll.
@@ -130,9 +130,9 @@ Der Zeitwert aus einer Zeitstruktur, der in den Stream geschrieben werden soll.
 *time_format*\
 Das gewünschte Format, das Sie verwenden, um den Zeitwert zu schreiben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `str` gehörige Gebietsschema `time_put` die Memberfunktion `put` auf. Die Output-Funktion verwendet *time_ptr* , um die Zeitstruktur anzugeben, und *time_format* , um den Anfang einer null-terminierten Format Zeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `put` gehörige Gebietsschema `time_put` die Memberfunktion `str` auf. Die Output-Funktion verwendet *time_ptr* , um die Zeitstruktur anzugeben, und *time_format* , um den Anfang einer null-terminierten Format Zeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
 
 ## <a name="quoted"></a> quoted
 
@@ -145,7 +145,7 @@ quoted(std::string str, char delimiter, char escape) // or wide versions
 quoted(const char* str, char delimiter, char escape) // or wide versions
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Str*\
 Eine Std:: String-, char\*-, Zeichenfolgenliteralzeichen oder unformatierte Zeichen folgen Literale oder eine breite Version von diesen (z. b. Std:: wstring, wchar_t\*).
@@ -156,7 +156,7 @@ Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Trennzeichen für den
 *Escape* -\
 Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Escapezeichen für Escapesequenzen in der Zeichenfolge verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Siehe auch [Verwenden von Einfügeoperatoren und Festlegen des Formats](../standard-library/using-insertion-operators-and-controlling-format.md).
 
@@ -309,7 +309,7 @@ Löscht die angegebenen Flags.
 T1 resetiosflags(ios_base::fmtflags mask);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Masken*\
 Die zu löschenden Flags.
@@ -330,7 +330,7 @@ Legt die Basis für Ganzzahlen fest.
 T3 setbase(int base);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *base*\
 Die Zahlenbasis.
@@ -360,7 +360,7 @@ template <class Elem>
 T4 setfill(Elem Ch);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Ch* -\
 Das zum Auffüllen in einer rechts ausgerichteten Anzeige verwendete Zeichen.
@@ -381,7 +381,7 @@ Legt die angegebenen Flags fest.
 T2 setiosflags(ios_base::fmtflags mask);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Masken*\
 Die festzulegenden Flags.
@@ -402,7 +402,7 @@ Legt die Genauigkeit für Gleitkommawerte fest.
 T5 setprecision(streamsize Prec);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Prec* -\
 Die Genauigkeit für Gleitkommawerte.
@@ -423,7 +423,7 @@ Gibt die Breite des Anzeigefelds für das nächste Element im Stream an.
 T6 setw(streamsize Wide);
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Breit*\
 Die Breite des Anzeigefelds.
@@ -432,7 +432,7 @@ Die Breite des Anzeigefelds.
 
 Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Breite](../standard-library/ios-base-class.md#width)`(Wide)`aufruft und dann `str`zurückgibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit setw wird die Breite nur für das nächste Element im Stream festgelegt. Der Manipulator muss vor jedem Element eingefügt werden, dessen Breite festgelegt werden soll.
 
@@ -651,6 +651,6 @@ l4 = 4096
 l5 = 65536
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<iomanip>](../standard-library/iomanip.md)

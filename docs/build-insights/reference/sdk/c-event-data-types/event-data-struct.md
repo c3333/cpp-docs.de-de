@@ -13,8 +13,8 @@ ms.openlocfilehash: 572cbdaba346ddb77b665b5677b978c83a80aa3d
 ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78335213"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78857092"
 ---
 # <a name="event_data-structure"></a>EVENT_DATA Struktur
 

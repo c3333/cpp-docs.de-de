@@ -8,15 +8,15 @@ helpviewer_keywords:
 - functional operators
 ms.assetid: d4b3c760-f3e2-4b65-bdaa-d42e8dd6f5e1
 ms.openlocfilehash: b396e5c692129821c0deb9aef9469a5c54e600b0
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68243775"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876347"
 ---
 # <a name="ltfunctionalgt-operators"></a>&lt;functional&gt;-Operatoren
 
-## <a name="op_eq_eq"></a> Operator ==
+## <a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das aufrufbare Objekt leer ist.
 
@@ -30,16 +30,16 @@ template <class Fty>
 
 ### <a name="parameters"></a>Parameter
 
-*Fty*\
+*Raffinierte*\
 Der zu umschließende Funktionstyp.
 
-*F*\
+*f* -\
 Das Funktionsobjekt
 
-*%npc*\
+\ für den *NPC*
 Ein Nullzeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beide Operatoren nehmen ein Argument, das einen Verweis auf ein `function`-Objekt darstellt, und ein Argument, das eine Nullzeigerkonstante ist. Beide geben nur dann true zurück, wenn das `function`-Objekt ist leer.
 
@@ -75,7 +75,7 @@ empty == true
 empty == false
 ```
 
-## <a name="op_neq"></a> Operator! =
+## <a name="op_neq"></a>Operator! =
 
 Testet, ob das aufrufbare Objekt nicht leer ist.
 
@@ -89,16 +89,16 @@ template <class Fty>
 
 ### <a name="parameters"></a>Parameter
 
-*Fty*\
+*Raffinierte*\
 Der zu umschließende Funktionstyp.
 
-*F*\
+*f* -\
 Das Funktionsobjekt
 
-*%npc*\
+\ für den *NPC*
 Ein Nullzeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beide Operatoren nehmen ein Argument, das einen Verweis auf ein `function`-Objekt darstellt, und ein Argument, das eine Nullzeigerkonstante ist. Beide geben nur dann TRUE zurück, wenn das `function`-Objekt nicht leer ist.
 

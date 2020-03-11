@@ -13,17 +13,17 @@ helpviewer_keywords:
 - std::slice [C++], stride
 ms.assetid: 00f0b03d-d657-4b81-ba53-5a9034bb2bf2
 ms.openlocfilehash: 830e345eb7522cef44dbf6e727a976fb79c1e081
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.sourcegitcommit: 49cf365176557456f56c994e06ea1a38f73e938b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68450356"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78937450"
 ---
 # <a name="slice-class"></a>slice-Klasse
 
 Eine Hilfsklasse für valarray, die dazu verwendet wird, eindimensionale Teilmengen eines übergeordneten valarrays zu definieren. Wenn ein valarray als eine zweidimensionale Matrix mit allen Elementen in einem Array angesehen wird, extrahiert das slice-Objekt einen Vektor in einer Dimension aus dem zweidimensionalen Array.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Klasse speichert die Parameter, die ein Objekt des Typs [slice_array](../standard-library/slice-array-class.md) charakterisieren. Die Teilmenge eines valarray wird indirekt erstellt, wenn ein Objekt der slice-Klasse als Argument für ein Objekt der Klasse [valarray](../standard-library/valarray-class.md#op_at) **\<Typ>** verwendet wird. Die gespeicherten Werte, die die aus dem übergeordneten valarray ausgewählte Teilmenge angeben, enthalten:
 
@@ -39,21 +39,21 @@ Vorgänge für valarrays sind nur garantiert, wenn die durch die slice-Objekte d
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[slice](#slice)|Definiert eine Teilmenge eines `valarray`s, die aus einer Anzahl von Elementen besteht, die jeweils denselben Abstand zueinander haben, und die am angegebenen Element beginnt.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[size](#size)|Ermittelt die Anzahl von Elementen eines slice-Objekts von einem `valarray`.|
 |[start](#start)|Ermittelt den Startindex eines slice-Objekts von einem `valarray`.|
 |[stride](#stride)|Ermittelt den Abstand zwischen den Elementen eines slice-Objekts von einem `valarray`.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<valarray>
+**Header:** \<Valarray->
 
 **Namespace:** std
 
@@ -142,14 +142,14 @@ Der valarray-Index des ersten Elements der Teilmenge.
 *_Len*\
 Die Anzahl von Elementen in der Teilmenge.
 
-*Schritt*\
+*Stride* -\
 Der Abstand zwischen Elementen in der Teilmenge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Standardkonstruktor speichert Nullen für Startindex, Gesamtlänge und Segment. Der zweite Konstruktor speichert *_StartIndex* für den Start Index, *_Len* für die Gesamtlänge und *Stride* für den Schritt.
+Der Standardkonstruktor speichert Nullen für Startindex, Gesamtlänge und Segment. Der zweite Konstruktor speichert *_StartIndex* für den Start Index, für die Gesamtlänge *_Len* und für den Schritt " *Stride* ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Segment kann negativ sein.
 
@@ -310,6 +310,6 @@ The slice of valarray va is vaResult = va[slice( 4, 5, 3)] =
 The stride of slice vaSlice is: 3.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

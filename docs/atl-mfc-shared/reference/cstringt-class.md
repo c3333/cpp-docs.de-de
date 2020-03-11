@@ -81,15 +81,15 @@ helpviewer_keywords:
 - CStringT class
 ms.assetid: 7cacc59c-425f-40f1-8f5b-6db921318ec9
 ms.openlocfilehash: a411ed54a73a0dee49ebbd9ccacbd7c6f8e69ca5
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69491642"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856312"
 ---
 # <a name="cstringt-class"></a>CStringT-Klasse
 
-Diese Klasse stellt ein `CStringT` -Objekt dar.
+Diese Klasse stellt ein `CStringT` Objekt dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -103,7 +103,7 @@ class CStringT :
 #### <a name="parameters"></a>Parameter
 
 *BaseType*<br/>
-Der Zeichentyp der Zeichen folgen Klasse. Kann einen der folgenden Werte annehmen:
+Der Zeichentyp der Zeichen folgen Klasse. Dabei kann es sich um eine der folgenden Methoden handeln:
 
 - **char** (für ANSI-Zeichen folgen).
 
@@ -112,106 +112,106 @@ Der Zeichentyp der Zeichen folgen Klasse. Kann einen der folgenden Werte annehme
 - Tchar (für ANSI-und Unicode-Zeichen folgen).
 
 *Stringmerkmalen*<br/>
-Bestimmt, ob die Zeichen folgen Klasse die Unterstützung der C-Lauf Zeit Bibliothek (CRT) und den Speicherort der Zeichen folgen Ressourcen benötigt. Kann einen der folgenden Werte annehmen:
+Bestimmt, ob die Zeichen folgen Klasse die Unterstützung der C-Lauf Zeit Bibliothek (CRT) und den Speicherort der Zeichen folgen Ressourcen benötigt. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- **StrTraitATL< wchar_t** &#124; **char** &#124; **TCHAR, ChTraitsCRT< wchar_t** &#124; **char** &#124; **TCHAR > >**
+- **< Wchar_t** &#124; **char** &#124; **TCHAR, chtraitscrt < wchar_t** &#124; **char** &#124; **TCHAR > >**
 
-   Die-Klasse erfordert CRT-Unterstützung und sucht nach Ressourcen Zeichenfolgen `m_hInstResource` in dem Modul, das von angegeben wird (ein Member der Modul Klasse der Anwendung).
+   Die-Klasse erfordert CRT-Unterstützung und sucht nach Ressourcen Zeichenfolgen in dem Modul, das von `m_hInstResource` angegeben wird (ein Member der Modul Klasse der Anwendung).
 
-- **<** Von "-wchar_t &#124; **char** **TCHAR, chtraitsos < wchar_t** &#124; **char** &#124; **TCHAR > >** &#124;
+- **< Wchar_t** &#124; **char** &#124; **TCHAR, chtraitsos < wchar_t** &#124; **char** &#124; **TCHAR > >**
 
-   Die-Klasse erfordert keine CRT-Unterstützung und sucht nach Ressourcen Zeichenfolgen in `m_hInstResource` dem Modul, das von angegeben wird (ein Member der Modul Klasse der Anwendung).
+   Die-Klasse erfordert keine CRT-Unterstützung und sucht nach Ressourcen Zeichenfolgen in dem Modul, das von `m_hInstResource` angegeben wird (ein Member der Modul Klasse der Anwendung).
 
-- **StrTraitMFC< wchar_t** &#124; **char** &#124; **TCHAR, ChTraitsCRT< wchar_t** &#124; **char** &#124; **TCHAR > >**
+- **< Wchar_t** &#124; **char** &#124; **TCHAR, chtraitscrt < wchar_t** &#124; **char** &#124; **TCHAR > >**
 
    Die-Klasse erfordert CRT-Unterstützung und sucht mithilfe des standardmäßigen MFC-Suchalgorithmus nach Ressourcen Zeichenfolgen.
 
-- **<-Wchar_t** &#124; **char** **TCHAR, chtraitsos < wchar_t** &#124; **char** &#124; **TCHAR > >** &#124;
+- **< Wchar_t** &#124; **char** &#124; **TCHAR, chtraitsos < wchar_t** &#124; **char** &#124; **TCHAR > >**
 
    Die-Klasse erfordert keine CRT-Unterstützung und sucht mithilfe des standardmäßigen MFC-Suchalgorithmus nach Ressourcen Zeichenfolgen.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStringT::CStringT](#cstringt)|Erstellt ein `CStringT` -Objekt auf verschiedene Weise.|
-|[CStringT::~CStringT](#_dtorcstringt)|Zerstört ein `CStringT`-Objekt.|
+|[CStringT:: CStringT](#cstringt)|Erstellt ein `CStringT` Objekt auf verschiedene Weise.|
+|[CStringT:: ~ CStringT](#_dtorcstringt)|Zerstört ein `CStringT`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStringT::AllocSysString](#allocsysstring)|Ordnet ein BSTR aus `CStringT` Daten zu.|
-|[CStringT::AnsiToOem](#ansitooem)|Führt eine direkte Konvertierung vom ANSI-Zeichensatz in den OEM-Zeichensatz aus.|
-|[CStringT:: AppendFormat](#appendformat)|Fügt formatierte Daten an ein vorhandenes `CStringT` -Objekt an.|
-|[CStringT::Collate](#collate)|Vergleicht zwei Zeichen folgen (Groß-/Kleinschreibung beachtet, verwendet Gebiets Schema spezifische Informationen).|
-|[CStringT::CollateNoCase](#collatenocase)|Vergleicht zwei Zeichen folgen (ohne Berücksichtigung der Groß-/Kleinschreibung, verwendet Gebiets Schema spezifische Informationen)|
+|[CStringT:: Zuordnung](#allocsysstring)|Weist `CStringT` Daten einen BSTR zu.|
+|[CStringT:: ansian OEM](#ansitooem)|Führt eine direkte Konvertierung vom ANSI-Zeichensatz in den OEM-Zeichensatz aus.|
+|[CStringT:: AppendFormat](#appendformat)|Fügt formatierte Daten an ein vorhandenes `CStringT` Objekt an.|
+|[CStringT:: COLLATE](#collate)|Vergleicht zwei Zeichen folgen (Groß-/Kleinschreibung beachtet, verwendet Gebiets Schema spezifische Informationen).|
+|[CStringT:: collatsocase](#collatenocase)|Vergleicht zwei Zeichen folgen (ohne Berücksichtigung der Groß-/Kleinschreibung, verwendet Gebiets Schema spezifische Informationen)|
 |[CStringT:: Compare](#compare)|Vergleicht zwei Zeichen folgen (Groß-/Kleinschreibung beachten)|
-|[CStringT::CompareNoCase](#comparenocase)|Vergleicht zwei Zeichen folgen (Groß-/Kleinschreibung nicht beachtet|
-|[CStringT::Delete](#delete)|Löscht ein Zeichen oder Zeichen aus einer Zeichenfolge.|
-|[CStringT::Find](#find)|Sucht ein Zeichen oder eine Teil Zeichenfolge in einer größeren Zeichenfolge.|
-|[CStringT::FindOneOf](#findoneof)|Sucht das erste übereinstimmende Zeichen aus einer Menge.|
-|[CStringT::Format](#format)|Formatiert die Zeichen `sprintf` Folge wie.|
-|[CStringT::FormatMessage](#formatmessage)|Formatiert eine Nachrichten Zeichenfolge.|
-|[CStringT::FormatMessageV](#formatmessagev)|Formatiert eine Meldungs Zeichenfolge mithilfe einer Variablen Argumentliste.|
-|[CStringT::FormatV](#formatv)|Formatiert die Zeichenfolge mithilfe einer Variablen Liste von Argumenten.|
-|[CStringT::GetEnvironmentVariable](#getenvironmentvariable)|Legt die Zeichenfolge auf den Wert der angegebenen Umgebungsvariablen fest.|
-|[CStringT::Insert](#insert)|Fügt ein einzelnes Zeichen oder eine Teil Zeichenfolge am angegebenen Index innerhalb der Zeichenfolge ein.|
+|[CStringT:: comparoocase](#comparenocase)|Vergleicht zwei Zeichen folgen (Groß-/Kleinschreibung nicht beachtet|
+|[CStringT::D Elete](#delete)|Löscht ein Zeichen oder Zeichen aus einer Zeichenfolge.|
+|[CStringT:: Find](#find)|Sucht ein Zeichen oder eine Teil Zeichenfolge in einer größeren Zeichenfolge.|
+|[CStringT:: findoneof](#findoneof)|Sucht das erste übereinstimmende Zeichen aus einer Menge.|
+|[CStringT:: Format](#format)|Formatiert die Zeichenfolge wie `sprintf`.|
+|[CStringT:: FormatMessage](#formatmessage)|Formatiert eine Nachrichten Zeichenfolge.|
+|[CStringT:: formatmessagev](#formatmessagev)|Formatiert eine Meldungs Zeichenfolge mithilfe einer Variablen Argumentliste.|
+|[CStringT:: formatv](#formatv)|Formatiert die Zeichenfolge mithilfe einer Variablen Liste von Argumenten.|
+|[CStringT:: GetEnvironmentVariable](#getenvironmentvariable)|Legt die Zeichenfolge auf den Wert der angegebenen Umgebungsvariablen fest.|
+|[CStringT:: INSERT](#insert)|Fügt ein einzelnes Zeichen oder eine Teil Zeichenfolge am angegebenen Index innerhalb der Zeichenfolge ein.|
 |[CStringT:: Left](#left)|Extrahiert den linken Teil einer Zeichenfolge.|
-|[CStringT::LoadString](#loadstring)|Lädt ein vorhandenes `CStringT` -Objekt aus einer Windows-Ressource.|
-|[CStringT::MakeLower](#makelower)|Konvertiert alle Zeichen in dieser Zeichenfolge in Kleinbuchstaben.|
-|[CStringT::MakeReverse](#makereverse)|Kehrt die Zeichenfolge um.|
-|[CStringT::MakeUpper](#makeupper)|Konvertiert alle Zeichen in dieser Zeichenfolge in Großbuchstaben.|
+|[CStringT:: loadstring](#loadstring)|Lädt ein vorhandenes `CStringT` Objekt aus einer Windows-Ressource.|
+|[CStringT:: makelower](#makelower)|Konvertiert alle Zeichen in dieser Zeichenfolge in Kleinbuchstaben.|
+|[CStringT:: makereverse](#makereverse)|Kehrt die Zeichenfolge um.|
+|[CStringT:: makeUpper](#makeupper)|Konvertiert alle Zeichen in dieser Zeichenfolge in Großbuchstaben.|
 |[CStringT:: Mid](#mid)|Extrahiert den mittleren Teil einer Zeichenfolge.|
-|[CStringT::OemToAnsi](#oemtoansi)|Führt eine direkte Konvertierung vom OEM-Zeichensatz in den ANSI-Zeichensatz aus.|
-|[CStringT::Remove](#remove)|Entfernt die gekennzeichneten Zeichen aus einer Zeichenfolge.|
-|[CStringT::Replace](#replace)|Ersetzt die gekennzeichneten Zeichen durch andere Zeichen.|
-|[CStringT::ReverseFind](#reversefind)|Findet ein Zeichen innerhalb einer größeren Zeichenfolge; beginnt am Ende.|
+|[CStringT:: oemto ANSI](#oemtoansi)|Führt eine direkte Konvertierung vom OEM-Zeichensatz in den ANSI-Zeichensatz aus.|
+|[CStringT:: Remove](#remove)|Entfernt die gekennzeichneten Zeichen aus einer Zeichenfolge.|
+|[CStringT:: Replace](#replace)|Ersetzt die gekennzeichneten Zeichen durch andere Zeichen.|
+|[CStringT:: reverstellen suchen](#reversefind)|Findet ein Zeichen innerhalb einer größeren Zeichenfolge; beginnt am Ende.|
 |[CStringT:: Right](#right)|Extrahiert den rechten Teil einer Zeichenfolge.|
-|[CStringT::SetSysString](#setsysstring)|Legt ein vorhandenes BSTR-Objekt mit Daten `CStringT` aus einem-Objekt fest.|
+|[CStringT:: SetSysString](#setsysstring)|Legt ein vorhandenes BSTR-Objekt mit Daten aus einem `CStringT` Objekt fest.|
 |[CStringT:: Span Ausschluss](#spanexcluding)|Extrahiert Zeichen aus der Zeichenfolge, beginnend mit dem ersten Zeichen, die nicht in dem von `pszCharSet`identifizierten Zeichensatz enthalten sind.|
-|[CStringT::SpanIncluding](#spanincluding)|Extrahiert eine Teil Zeichenfolge, die nur die Zeichen in einer Menge enthält.|
-|[CStringT::Tokenize](#tokenize)|Extrahiert angegebene Token in einer Ziel Zeichenfolge.|
+|[CStringT:: Span einschließen](#spanincluding)|Extrahiert eine Teil Zeichenfolge, die nur die Zeichen in einer Menge enthält.|
+|[CStringT:: tokenize](#tokenize)|Extrahiert angegebene Token in einer Ziel Zeichenfolge.|
 |[CStringT:: Trim](#trim)|Entfernt alle führenden und nachfolgenden Leerzeichen aus der Zeichenfolge.|
-|[CStringT::TrimLeft](#trimleft)|Entfernt führende Leerzeichen aus der Zeichenfolge.|
-|[CStringT::TrimRight](#trimright)|Entfernt nachfolgende Leerzeichen aus der Zeichenfolge.|
+|[CStringT:: TrimLeft](#trimleft)|Entfernt führende Leerzeichen aus der Zeichenfolge.|
+|[CStringT:: TrimRight](#trimright)|Entfernt nachfolgende Leerzeichen aus der Zeichenfolge.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[CStringT:: Operator =](#operator_eq)|Weist einem- `CStringT` Objekt einen neuen Wert zu.|
+|[CStringT:: Operator =](#operator_eq)|Weist einem `CStringT`-Objekt einen neuen Wert zu.|
 |[CStringT:: Operator +](#operator_add)|Verkettet zwei Zeichen folgen oder ein Zeichen und eine Zeichenfolge.|
-|[CStringT::operator +=](#operator_add_eq)|Verkettet eine neue Zeichenfolge am Ende einer vorhandenen Zeichenfolge.|
-|[CStringT::operator ==](#operator_eq_eq)|Bestimmt, ob zwei Zeichen folgen logisch gleich sind.|
+|[CStringT:: Operator + =](#operator_add_eq)|Verkettet eine neue Zeichenfolge am Ende einer vorhandenen Zeichenfolge.|
+|[CStringT:: Operator = =](#operator_eq_eq)|Bestimmt, ob zwei Zeichen folgen logisch gleich sind.|
 |[CStringT:: Operator! =](#operator_neq)|Bestimmt, ob zwei Zeichen folgen logisch nicht gleich sind.|
-|[CStringT:: Operator&lt;](#operator_lt)|Bestimmt, ob die Zeichenfolge links vom Operator kleiner als die Zeichenfolge auf der rechten Seite ist.|
-|[CStringT:: Operator&gt;](#operator_gt)|Bestimmt, ob die Zeichenfolge links vom Operator größer als die Zeichenfolge auf der rechten Seite ist.|
-|[CStringT:: Operator&lt;=](#operator_lt_eq)|Bestimmt, ob die Zeichenfolge links vom Operator kleiner als oder gleich der Zeichenfolge auf der rechten Seite ist.|
-|[CStringT:: Operator&gt;=](#operator_gt_eq)|Bestimmt, ob die Zeichenfolge links vom Operator größer oder gleich der Zeichenfolge auf der rechten Seite ist.|
+|[CStringT:: Operator-&lt;](#operator_lt)|Bestimmt, ob die Zeichenfolge links vom Operator kleiner als die Zeichenfolge auf der rechten Seite ist.|
+|[CStringT:: Operator-&gt;](#operator_gt)|Bestimmt, ob die Zeichenfolge links vom Operator größer als die Zeichenfolge auf der rechten Seite ist.|
+|[CStringT:: Operator &lt;=](#operator_lt_eq)|Bestimmt, ob die Zeichenfolge links vom Operator kleiner als oder gleich der Zeichenfolge auf der rechten Seite ist.|
+|[CStringT:: Operator &gt;=](#operator_gt_eq)|Bestimmt, ob die Zeichenfolge links vom Operator größer oder gleich der Zeichenfolge auf der rechten Seite ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CStringT`erbt von der [CSimpleStringT-Klasse](../../atl-mfc-shared/reference/csimplestringt-class.md). Erweiterte Funktionen, wie z. b. Zeichen Bearbeitung, Reihenfolge und Suche, `CStringT`werden von implementiert.
-
-> [!NOTE]
-> `CStringT`-Objekte können Ausnahmen auslösen. Dies tritt auf, `CStringT` wenn ein-Objekt aus irgendeinem Grund nicht über genügend Arbeitsspeicher verfügt.
-
-Ein `CStringT` -Objekt besteht aus einer Sequenz von Zeichen variabler Länge. `CStringT`stellt Funktionen und Operatoren mit Syntax ähnlich der von Basic bereit. Verkettungs-und Vergleichs Operatoren machen zusammen mit der vereinfachten Speicher `CStringT` Verwaltung die Verwendung von Objekten einfacher als normale Zeichen Arrays.
+`CStringT` erbt von der [CSimpleStringT-Klasse](../../atl-mfc-shared/reference/csimplestringt-class.md). Erweiterte Funktionen, wie z. b. Zeichen Bearbeitung, Reihenfolge und Suche, werden durch `CStringT`implementiert.
 
 > [!NOTE]
->  Obwohl es möglich ist, Instanzen `CStringT` zu erstellen, die eingebettete NULL-Zeichen enthalten, empfiehlt es sich, diese zu erstellen. Das Aufrufen von Methoden und `CStringT` Operatoren für Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+> `CStringT`-Objekten können Ausnahmen auslösen. Dies tritt auf, wenn ein `CStringT` Objekt aus irgendeinem Grund nicht mehr genügend Arbeitsspeicher hat.
 
-Durch die Verwendung verschiedener Kombinationen `BaseType` aus `StringTraits` den para `CStringT` Metern und können Objekte in den folgenden Typen enthalten sein, die von den ATL-Bibliotheken vordefiniert wurden.
+Ein `CStringT`-Objekt besteht aus einer Sequenz von Zeichen variabler Länge. `CStringT` stellt Funktionen und Operatoren mit Syntax ähnlich der von Basic bereit. Verkettungs-und Vergleichs Operatoren machen zusammen mit der vereinfachten Speicherverwaltung `CStringT`-Objekte einfacher als normale Zeichen Arrays.
+
+> [!NOTE]
+>  Obwohl es möglich ist, `CStringT`-Instanzen zu erstellen, die eingebettete NULL-Zeichen enthalten, wird dies empfohlen. Das Aufrufen von Methoden und Operatoren für `CStringT` Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+
+Durch die Verwendung verschiedener Kombinationen aus den Parametern `BaseType` und `StringTraits` können `CStringT` Objekte in den folgenden Typen enthalten sein, die von den ATL-Bibliotheken vordefiniert wurden.
 
 Wenn Sie in einer ATL-Anwendung verwenden:
 
-`CString`, `CStringA`und werden `CStringW` aus der MFC-DLL (Mfc90) exportiert. DLL), niemals von Benutzer-DLLs. Dies geschieht, um zu `CStringT` verhindern, dass eine Multiplikation definiert wird.
+`CString`, `CStringA`und `CStringW` werden von der MFC-DLL (Mfc90) exportiert. DLL), niemals von Benutzer-DLLs. Dies geschieht, um zu verhindern, dass `CStringT` multipliziert definiert werden.
 
 > [!NOTE]
->  Wenn Ihr Code die Problem Umgehung für Linker-Fehler enthält, die unter [Exportieren von Zeichen folgen Klassen mithilfe von CStringT](../../atl-mfc-shared/exporting-string-classes-using-cstringt.md)beschrieben ist, sollten Sie diesen Code entfernen. Er ist nicht mehr erforderlich.
+>  Wenn Ihr Code die Problem Umgehung für Linker-Fehler enthält, die unter [Exportieren von Zeichen folgen Klassen mithilfe von CStringT](../../atl-mfc-shared/exporting-string-classes-using-cstringt.md)beschrieben ist, sollten Sie diesen Code entfernen. Es wird nicht mehr benötigt.
 
 Die folgenden Zeichen folgen Typen sind in MFC-basierten Anwendungen verfügbar:
 
@@ -237,31 +237,31 @@ Die folgenden Zeichen folgen Typen sind in Projekten verfügbar, in denen ATL_CS
 |`CAtlStringW`|Eine Zeichenfolge des Unicode-Zeichen Typs mit CRT-Unterstützung.|
 |`CAtlString`|ANSI-und Unicode-Zeichen Typen mit CRT-Unterstützung.|
 
-`CString`Objekte haben außerdem die folgenden Eigenschaften:
+`CString` Objekte verfügen auch über die folgenden Eigenschaften:
 
-- `CStringT`Objekte können aufgrund von Verkettungs Vorgängen vergrößert werden.
+- `CStringT` Objekte können aufgrund von Verkettungs Vorgängen vergrößert werden.
 
-- `CStringT`Objekte folgen "Wert Semantik". Stellen Sie sich `CStringT` ein-Objekt als tatsächliche Zeichenfolge vor, nicht als Zeiger auf eine Zeichenfolge.
+- `CStringT` Objekten folgt "Wert Semantik". Stellen Sie sich ein `CStringT` Objekt als tatsächliche Zeichenfolge vor, nicht als Zeiger auf eine Zeichenfolge.
 
-- Sie können Objekte für `CStringT` `PCXSTR` Funktionsargumente frei ersetzen.
+- Sie können `CStringT`-Objekten frei `PCXSTR` Funktionsargumente ersetzen.
 
 - Benutzerdefinierte Speicherverwaltung für Zeichen folgen Puffer. Weitere Informationen finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
 ## <a name="cstringt-predefined-types"></a>CStringT vordefinierte Typen
 
-Da `CStringT` ein Vorlagen Argument verwendet, um den Zeichentyp (entweder " [wchar_t](../../c-runtime-library/standard-types.md) " oder " [char](../../c-runtime-library/standard-types.md)") zu definieren, können Methoden Parametertypen manchmal kompliziert sein. Um dieses Problem zu vereinfachen, wird ein Satz vordefinierter Typen definiert und in der `CStringT` gesamten Klasse verwendet. In der folgenden Tabelle sind die verschiedenen Typen aufgelistet:
+Da `CStringT` ein Vorlagen Argument verwendet, um den Zeichentyp (entweder [wchar_t](../../c-runtime-library/standard-types.md) oder [char](../../c-runtime-library/standard-types.md)) zu definieren, können Methoden Parametertypen manchmal kompliziert sein. Um dieses Problem zu vereinfachen, wird ein Satz vordefinierter Typen definiert und in der gesamten `CStringT` Klasse verwendet. In der folgenden Tabelle sind die verschiedenen Typen aufgelistet:
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`XCHAR`|Ein einzelnes Zeichen (entweder " **wchar_t** " oder " **char**") mit dem gleichen `CStringT` Zeichentyp wie das Objekt.|
-|`YCHAR`|Ein einzelnes Zeichen (entweder **wchar_t** oder **char**) mit dem umgekehrten `CStringT` Zeichentyp als Objekt.|
-|`PXSTR`|Ein Zeiger auf eine Zeichenfolge (entweder " **wchar_t** " oder " **char**") mit demselben Zeichentyp wie das `CStringT` Objekt.|
-|`PYSTR`|Ein Zeiger auf eine Zeichenfolge (entweder " **wchar_t** " oder " **char**") mit dem umgekehrten `CStringT` Zeichentyp als Objekt.|
-|`PCXSTR`|Ein Zeiger auf eine Konstante Zeichenfolge (entweder " **wchar_t** " oder " **char**") mit demselben Zeichentyp `CStringT` wie das Objekt.|
-|`PCYSTR`|Ein Zeiger auf eine Konstante Zeichenfolge (entweder **wchar_t** oder **char**) mit dem `CStringT` umgekehrten Zeichentyp als Objekt.|
+|`XCHAR`|Ein einzelnes Zeichen (entweder **wchar_t** oder **char**) mit dem gleichen Zeichentyp wie das `CStringT` Objekt.|
+|`YCHAR`|Ein einzelnes Zeichen (entweder **wchar_t** oder **char**) mit dem umgekehrten Zeichentyp als `CStringT`-Objekt.|
+|`PXSTR`|Ein Zeiger auf eine Zeichenfolge (entweder **wchar_t** oder **char**) mit dem gleichen Zeichentyp wie das `CStringT`-Objekt.|
+|`PYSTR`|Ein Zeiger auf eine Zeichenfolge (entweder **wchar_t** oder **char**) mit dem umgekehrten Zeichentyp als `CStringT`-Objekt.|
+|`PCXSTR`|Ein Zeiger **auf eine Konstante Zeichenfolge (** entweder **wchar_t** oder **char**) mit dem gleichen Zeichentyp wie das `CStringT` Objekt.|
+|`PCYSTR`|Ein Zeiger **auf eine Konstante Zeichenfolge (** entweder **wchar_t** oder **char**) mit dem umgekehrten Zeichentyp als `CStringT`-Objekt.|
 
 > [!NOTE]
->  Code, der zuvor nicht dokumentierte Methoden von `CString` ( `AssignCopy`z. b.) verwendet hat, muss durch Code ersetzt werden, der `CStringT` die folgenden dokumentierten `GetBuffer` Methoden `ReleaseBuffer`von verwendet (z. b. oder). Diese Methoden werden von `CSimpleStringT`geerbt.
+>  Code, der zuvor nicht dokumentierte Methoden von `CString` verwendet hat (z. b. `AssignCopy`), muss durch Code ersetzt werden, der die folgenden dokumentierten Methoden von `CStringT` verwendet (z. b. `GetBuffer` oder `ReleaseBuffer`). Diese Methoden werden von `CSimpleStringT`geerbt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -269,16 +269,16 @@ Da `CStringT` ein Vorlagen Argument verwendet, um den Zeichentyp (entweder " [wc
 
 `CStringT`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Header|Verwenden für|
+|Header|Zweck|
 |------------|-------------|
 |cstringt.h|Nur-MFC-Zeichen folgen Objekte|
 |atlstr. h|Nicht-MFC-Zeichen folgen Objekte|
 
 ##  <a name="allocsysstring"></a>CStringT:: Zuordnung
 
-Ordnet eine Automation-kompatible Zeichenfolge vom Typ BSTR zu und kopiert den Inhalt des `CStringT` -Objekts hinein, einschließlich des abschließenden NULL-Zeichens.
+Ordnet eine Automation-kompatible Zeichenfolge vom Typ BSTR zu und kopiert den Inhalt des `CStringT` Objekts hinein, einschließlich des abschließenden NULL-Zeichens.
 
 ```
 BSTR AllocSysString() const;
@@ -288,7 +288,7 @@ BSTR AllocSysString() const;
 
 Die neu zugeordnete Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In MFC-Programmen wird eine [cmemoryexception-Klasse](../../mfc/reference/cmemoryexception-class.md) ausgelöst, wenn nicht genügend Arbeitsspeicher vorhanden ist. In ATL-Programmen wird eine ""- [Ausnahme](../../atl/reference/catlexception-class.md) ausgelöst. Diese Funktion wird normalerweise verwendet, um Zeichen folgen für die Automatisierung zurückzugeben.
 
@@ -304,13 +304,13 @@ Das folgende Beispiel veranschaulicht die Verwendung von `CStringT::AllocSysStri
 
 ##  <a name="ansitooem"></a>CStringT:: ansian OEM
 
-Konvertiert alle Zeichen in diesem `CStringT` -Objekt aus dem ANSI-Zeichensatz in den OEM-Zeichensatz.
+Konvertiert alle Zeichen in diesem `CStringT` Objekt aus dem ANSI-Zeichensatz in den OEM-Zeichensatz.
 
 ```
 void AnsiToOem();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Funktion ist nicht verfügbar, wenn _UNICODE definiert ist.
 
@@ -320,7 +320,7 @@ Die-Funktion ist nicht verfügbar, wenn _UNICODE definiert ist.
 
 ##  <a name="appendformat"></a>CStringT:: AppendFormat
 
-Fügt formatierte Daten an ein vorhandenes `CStringT` -Objekt an.
+Fügt formatierte Daten an ein vorhandenes `CStringT` Objekt an.
 
 ```
 void __cdecl AppendFormat(PCXSTR pszFormat, [, argument] ...);
@@ -329,18 +329,18 @@ void __cdecl AppendFormat(UINT nFormatID, [, argument] ...);
 
 ### <a name="parameters"></a>Parameter
 
-*pszFormat*<br/>
+*pszformat*<br/>
 Eine Format Steuerelement Zeichenfolge.
 
-*nFormatID*<br/>
+*nformatid*<br/>
 Der Zeichen folgen Ressourcen Bezeichner, der die Format Steuerelement-Zeichenfolge enthält.
 
 *argument*<br/>
 Optionale Argumente.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion formatiert und fügt eine Reihe von Zeichen und Werten in der `CStringT`ein. Jedes optionale Argument (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation in *pszformat* oder der durch *nformatd*identifizierten Zeichen folgen Ressource konvertiert und angefügt.
+Diese Funktion formatiert eine Reihe von Zeichen und Werten im `CStringT`und fügt Sie an. Jedes optionale Argument (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation in *pszformat* oder der durch *nformatd*identifizierten Zeichen folgen Ressource konvertiert und angefügt.
 
 ### <a name="example"></a>Beispiel
 
@@ -348,7 +348,7 @@ Diese Funktion formatiert und fügt eine Reihe von Zeichen und Werten in der `CS
 
 ##  <a name="collate"></a>CStringT:: COLLATE
 
-Vergleicht zwei Zeichen folgen mithilfe der Funktion `_tcscoll`"Generic-Text".
+Vergleicht zwei Zeichen folgen mithilfe der `_tcscoll`der generischen Textfunktion.
 
 ```
 int Collate(PCXSTR psz) const throw();
@@ -356,20 +356,20 @@ int Collate(PCXSTR psz) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
+*PSZ*<br/>
 Die andere Zeichenfolge, die für den Vergleich verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-0 (null), wenn die Zeichen folgen identisch sind `CStringT` , < 0, wenn dieses Objekt kleiner als *PSZ*ist `CStringT` , oder > 0, wenn dieses Objekt größer als *PSZ*ist.
+0 (null), wenn die Zeichen folgen identisch sind, < 0, wenn dieses `CStringT` Objekt kleiner als *PSZ*ist, oder > 0, wenn dieses `CStringT` Objekt größer als *PSZ*ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die in Tchar definierte `_tcscoll`generische Textfunktion. H, wird entweder `strcoll`, `wcscoll`oder `_mbscoll`zugeordnet, abhängig vom Zeichensatz, der zur Kompilierzeit definiert ist. Jede Funktion führt einen Vergleich der Zeichen folgen nach Groß-und Kleinschreibung entsprechend der derzeit verwendeten Codepage durch. Weitere Informationen finden Sie unter "_mbscoll", " [wcscoll](../../c-runtime-library/reference/strcoll-wcscoll-mbscoll-strcoll-l-wcscoll-l-mbscoll-l.md)", "_strcoll_l", "_wcscoll_l", "_mbscoll_l".
+Die generische Textfunktion `_tcscoll`, die in Tchar definiert ist. H, wird entweder `strcoll`, `wcscoll`oder `_mbscoll`zugeordnet, abhängig vom Zeichensatz, der zum Zeitpunkt der Kompilierung definiert wird. Jede Funktion führt einen Vergleich der Zeichen folgen nach Groß-und Kleinschreibung entsprechend der derzeit verwendeten Codepage durch. Weitere Informationen finden Sie unter "_mbscoll", "", "_strcoll_l", " [_wcscoll_l _mbscoll_l](../../c-runtime-library/reference/strcoll-wcscoll-mbscoll-strcoll-l-wcscoll-l-mbscoll-l.md)".
 
 ##  <a name="collatenocase"></a>CStringT:: collatsocase
 
-Vergleicht zwei Zeichen folgen mithilfe der Funktion `_tcscoll`"Generic-Text".
+Vergleicht zwei Zeichen folgen mithilfe der `_tcscoll`der generischen Textfunktion.
 
 ```
 int CollateNoCase(PCXSTR psz) const throw();
@@ -377,16 +377,16 @@ int CollateNoCase(PCXSTR psz) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
+*PSZ*<br/>
 Die andere Zeichenfolge, die für den Vergleich verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-0 (null), wenn die Zeichen folgen identisch sind (die groß- `CStringT` /Kleinschreibung wird ignoriert), < 0, wenn dieses Objekt kleiner als *PSZ* ist (wobei die Groß-/Kleinschreibung ignoriert wird), oder > 0, wenn dieses `CStringT` Objekt größer als
+0 (null), wenn die Zeichen folgen identisch sind (die Groß-/Kleinschreibung wird ignoriert), < 0, wenn dieses `CStringT` Objekt kleiner als *PSZ* (ohne Beachtung der Groß-/Kleinschreibung) ist, oder > 0, wenn dieses `CStringT` Objekt größer als *PSZ*
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die in Tchar definierte `_tcscoll`generische Textfunktion. H, wird entweder `stricoll`, `wcsicoll`oder `_mbsicoll`zugeordnet, abhängig vom Zeichensatz, der zur Kompilierzeit definiert ist. Jede Funktion führt entsprechend der derzeit verwendeten Codepage einen Vergleich der Zeichen folgen ohne Beachtung der Groß-und Kleinschreibung durch. Weitere Informationen finden Sie unter "_mbscoll", " [wcscoll](../../c-runtime-library/reference/strcoll-wcscoll-mbscoll-strcoll-l-wcscoll-l-mbscoll-l.md)", "_strcoll_l", "_wcscoll_l", "_mbscoll_l".
+Die generische Textfunktion `_tcscoll`, die in Tchar definiert ist. H, wird entweder `stricoll`, `wcsicoll`oder `_mbsicoll`zugeordnet, abhängig vom Zeichensatz, der zum Zeitpunkt der Kompilierung definiert wird. Jede Funktion führt entsprechend der derzeit verwendeten Codepage einen Vergleich der Zeichen folgen ohne Beachtung der Groß-und Kleinschreibung durch. Weitere Informationen finden Sie unter "_mbscoll", "", "_strcoll_l", " [_wcscoll_l _mbscoll_l](../../c-runtime-library/reference/strcoll-wcscoll-mbscoll-strcoll-l-wcscoll-l-mbscoll-l.md)".
 
 ### <a name="example"></a>Beispiel
 
@@ -402,16 +402,16 @@ int Compare(PCXSTR psz) const;
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
+*PSZ*<br/>
 Die andere Zeichenfolge, die für den Vergleich verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-0 (null), wenn die Zeichen folgen identisch sind `CStringT` , < 0, wenn dieses Objekt kleiner als *PSZ*ist `CStringT` , oder > 0, wenn dieses Objekt größer als *PSZ*ist.
+0 (null), wenn die Zeichen folgen identisch sind, < 0, wenn dieses `CStringT` Objekt kleiner als *PSZ*ist, oder > 0, wenn dieses `CStringT` Objekt größer als *PSZ*ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die in Tchar definierte `_tcscmp`generische Textfunktion. H, wird entweder `strcmp`, `wcscmp`oder `_mbscmp`zugeordnet, abhängig vom Zeichensatz, der zur Kompilierzeit definiert ist. Jede Funktion führt einen Vergleich der Zeichen folgen unter Beachtung der Groß-und Kleinschreibung durch und ist nicht vom Gebiets Schema betroffen. Weitere Informationen finden Sie unter " [strincmp, wcscmp", "_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)".
+Die generische Textfunktion `_tcscmp`, die in Tchar definiert ist. H, wird entweder `strcmp`, `wcscmp`oder `_mbscmp`zugeordnet, abhängig vom Zeichensatz, der zum Zeitpunkt der Kompilierung definiert wird. Jede Funktion führt einen Vergleich der Zeichen folgen unter Beachtung der Groß-und Kleinschreibung durch und ist nicht vom Gebiets Schema betroffen. Weitere Informationen finden Sie unter " [straucmp, wcscmp", "_mbscmp](../../c-runtime-library/reference/strcmp-wcscmp-mbscmp.md)".
 
 Wenn die Zeichenfolge eingebettete Nullen enthält, wird die Zeichenfolge für den Vergleich beim ersten eingebetteten NULL-Zeichen als abgeschnitten betrachtet.
 
@@ -431,16 +431,16 @@ int CompareNoCase(PCXSTR psz) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
+*PSZ*<br/>
 Die andere Zeichenfolge, die für den Vergleich verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-0 (null), wenn die Zeichen folgen identisch sind (die groß- `CStringT` /Kleinschreibung wird ignoriert), < 0, wenn dieses Objekt kleiner als *PSZ* ist (wobei die Groß-/Kleinschreibung ignoriert wird), oder > 0, wenn dieses `CStringT` Objekt größer als
+0 (null), wenn die Zeichen folgen identisch sind (die Groß-/Kleinschreibung wird ignoriert), < 0, wenn dieses `CStringT` Objekt kleiner als *PSZ* (ohne Beachtung der Groß-/Kleinschreibung) ist, oder > 0, wenn dieses `CStringT` Objekt größer als *PSZ*
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die in Tchar definierte `_tcsicmp`generische Textfunktion. H, wird entweder `_stricmp` `_wcsicmp` oder `_mbsicmp`zugeordnet, abhängig vom Zeichensatz, der zum Zeitpunkt der Kompilierung definiert wird. Jede Funktion führt einen Vergleich der Zeichen folgen ohne Beachtung der Groß-und Kleinschreibung durch. Der Vergleich hängt vom LC_CTYPE-Aspekt des Gebiets Schemas, jedoch nicht von LC_COLLATE ab. Weitere Informationen finden Sie unter [_stricmp, _wcsicmp, _mbsicmp, _stricmp_l, _wcsicmp_l, _mbsicmp_l](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md).
+Die generische Textfunktion `_tcsicmp`, die in Tchar definiert ist. H, wird entweder `_stricmp`, `_wcsicmp` oder `_mbsicmp`zugeordnet, abhängig vom Zeichensatz, der zum Zeitpunkt der Kompilierung definiert wird. Jede Funktion führt einen Vergleich der Zeichen folgen ohne Beachtung der Groß-und Kleinschreibung durch. Der Vergleich hängt vom LC_CTYPE Aspekt des Gebiets Schemas ab, aber nicht von LC_COLLATE. Weitere Informationen finden Sie unter [_stricmp, _wcsicmp, _mbsicmp, _stricmp_l, _wcsicmp_l, _mbsicmp_l](../../c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md).
 
 ### <a name="example"></a>Beispiel
 
@@ -525,29 +525,29 @@ CStringT(const YCHAR* pch, int nLength, IAtlStringMgr* pStringMgr) :
 
 ### <a name="parameters"></a>Parameter
 
-*pch*<br/>
+*PCH*<br/>
 Ein Zeiger auf ein Array von Zeichen der Länge *nlength*, nicht NULL-terminiert.
 
-*nLength*<br/>
+*nlength*<br/>
 Gibt die Anzahl der Zeichen in *PCH*an.
 
 *ch*<br/>
 Ein einzelnes Zeichen.
 
 *pszSrc*<br/>
-Eine mit NULL endende Zeichenfolge, die in `CStringT` dieses-Objekt kopiert werden soll.
+Eine mit NULL endende Zeichenfolge, die in dieses `CStringT`-Objekt kopiert werden soll.
 
-*pStringMgr*<br/>
-Ein Zeiger auf den Speicher-Manager für `CStringT` das-Objekt. Weitere Informationen zur `IAtlStringMgr` -und-Speicherverwaltung `CStringT`für finden Sie unter [Speicherverwaltung mit CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
+*pstringmgr*<br/>
+Ein Zeiger auf den Speicher-Manager für das `CStringT` Objekt. Weitere Informationen zur `IAtlStringMgr`-und Speicherverwaltung für `CStringT`finden Sie unter [Speicherverwaltung mit CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-*strSrc*<br/>
-Ein vorhandenes `CStringT` -Objekt, das in `CStringT` dieses-Objekt kopiert werden soll. Weitere Informationen zu `CThisString` und `CThisSimpleString`finden Sie im Abschnitt "Hinweise".
+*"Straume"*<br/>
+Ein vorhandenes `CStringT` Objekt, das in dieses `CStringT`-Objekt kopiert werden soll. Weitere Informationen zu `CThisString` und `CThisSimpleString`finden Sie im Abschnitt "Hinweise".
 
 *varSrc*<br/>
-Ein Variant-Objekt, das in dieses `CStringT` -Objekt kopiert werden soll.
+Ein Variant-Objekt, das in dieses `CStringT`-Objekt kopiert werden soll.
 
 *BaseType*<br/>
-Der Zeichentyp der Zeichen folgen Klasse. Kann einen der folgenden Werte annehmen:
+Der Zeichentyp der Zeichen folgen Klasse. Dabei kann es sich um eine der folgenden Methoden handeln:
 
 **char** (für ANSI-Zeichen folgen).
 
@@ -555,34 +555,34 @@ Der Zeichentyp der Zeichen folgen Klasse. Kann einen der folgenden Werte annehme
 
 Tchar (für ANSI-und Unicode-Zeichen folgen).
 
-*bMFCDLL*<br/>
+*bmfcdll*<br/>
 Ein boolescher Wert, der angibt, ob das Projekt eine MFC-DLL (true) oder nicht (false) ist.
 
-*SystemString*<br/>
-Muss sein `System::String`, und das Projekt muss mit/CLR. kompiliert werden.
+*Systemstring*<br/>
+Muss `System::String`sein, und das Projekt muss mit/CLR. kompiliert werden.
 
-*pString*<br/>
-Ein Handle für ein `CStringT` -Objekt.
+*pstring*<br/>
+Ein Handle für ein `CStringT` Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Da die-Konstruktoren die Eingabedaten in neuen zugeordneten Speicher kopieren, sollten Sie beachten, dass Arbeitsspeicher Ausnahmen entstehen können. Beachten Sie, dass einige dieser Konstruktoren als Konvertierungs Funktionen fungieren. Dadurch können Sie z. b. einen LPTSTR ersetzen, in dem `CStringT` ein-Objekt erwartet wird.
+Da die-Konstruktoren die Eingabedaten in neuen zugeordneten Speicher kopieren, sollten Sie beachten, dass Arbeitsspeicher Ausnahmen entstehen können. Beachten Sie, dass einige dieser Konstruktoren als Konvertierungs Funktionen fungieren. Dadurch können Sie z. b. einen LPTSTR ersetzen, bei dem ein `CStringT` Objekt erwartet wird.
 
-- `CStringT`( `LPCSTR` `lpsz` ): Erstellt einen Unicode `CStringT` aus einer ANSI-Zeichenfolge. Sie können diesen Konstruktor auch verwenden, um eine Zeichen folgen Ressource zu laden, wie im folgenden Beispiel gezeigt.
+- `CStringT`(`LPCSTR` `lpsz`): erstellt eine Unicode-`CStringT` aus einer ANSI-Zeichenfolge. Sie können diesen Konstruktor auch verwenden, um eine Zeichen folgen Ressource zu laden, wie im folgenden Beispiel gezeigt.
 
-- `CStringT(` `LPCWSTR` `lpsz` ): Erstellt eine `CStringT` aus einer Unicode-Zeichenfolge.
+- `CStringT(` `LPCWSTR` `lpsz`): erstellt eine `CStringT` aus einer Unicode-Zeichenfolge.
 
-- `CStringT`( `const unsigned char*` `psz` ): Ermöglicht das Erstellen eines `CStringT` von einem Zeiger auf ein Zeichen **ohne**Vorzeichen.
-
-> [!NOTE]
->  Definiert das _CSTRING_DISABLE_NARROW_WIDE_CONVERSION-Makro, um die implizite Zeichen folgen Konvertierung zwischen ANSI-und Unicode-Zeichen folgen zu deaktivieren. Das-Makro schließt Kompilierungs Konstruktoren aus, die Konvertierungen unterstützen.
-
-Beachten Sie, dass der " *Strauch* "-Parameter `CStringT` entweder `CThisSimpleString` ein-oder-Objekt sein kann. Verwenden `CStringT`Sie für eine der Standard Instanziierungen (`CString`, `CStringA`oder `CStringW`), und verwenden Sie `CThisSimpleString`für **diesen** Zeiger. `CThisSimpleString`deklariert eine Instanz der [CSimpleStringT-Klasse](../../atl-mfc-shared/reference/csimplestringt-class.md), die eine kleinere Zeichen folgen Klasse mit weniger integrierter Funktionalität als die `CStringT` -Klasse ist.
-
-Der Überladungs `CSimpleStringT<>&()` Operator erstellt `CStringT` ein-Objekt `CSimpleStringT` aus einer-Deklaration.
+- `CStringT`(`const unsigned char*` `psz`): ermöglicht das Erstellen eines `CStringT` von einem Zeiger auf ein Zeichen **ohne**Vorzeichen.
 
 > [!NOTE]
->  Obwohl es möglich ist, Instanzen `CStringT` zu erstellen, die eingebettete NULL-Zeichen enthalten, empfiehlt es sich, diese zu erstellen. Das Aufrufen von Methoden und `CStringT` Operatoren für Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+>  Definieren Sie das _CSTRING_DISABLE_NARROW_WIDE_CONVERSION Makro, um die implizite Zeichen folgen Konvertierung zwischen ANSI-und Unicode-Zeichen folgen zu deaktivieren. Das-Makro schließt Kompilierungs Konstruktoren aus, die Konvertierungen unterstützen.
+
+Beachten Sie, dass der Parameter " *Strauch* " entweder ein `CStringT` oder ein `CThisSimpleString` Objekt sein kann. Verwenden Sie für `CStringT`eine der Standard Instanziierungen (`CString`, `CStringA`oder `CStringW`). Verwenden Sie für `CThisSimpleString`einen **this** -Zeiger. `CThisSimpleString` deklariert eine Instanz der [CSimpleStringT-Klasse](../../atl-mfc-shared/reference/csimplestringt-class.md), die eine kleinere Zeichen folgen Klasse mit weniger integrierter Funktionalität als die `CStringT` Klasse ist.
+
+Der Überladungs Operator `CSimpleStringT<>&()` ein `CStringT`-Objekt aus einer `CSimpleStringT` Deklaration erstellt.
+
+> [!NOTE]
+>  Obwohl es möglich ist, `CStringT`-Instanzen zu erstellen, die eingebettete NULL-Zeichen enthalten, wird dies empfohlen. Das Aufrufen von Methoden und Operatoren für `CStringT` Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
 
 ### <a name="example"></a>Beispiel
 
@@ -596,7 +596,7 @@ Zerstört das `CStringT`-Objekt.
 ~CStringT() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zerstört das `CStringT`-Objekt.
 
@@ -611,7 +611,7 @@ int Delete(int iIndex, int nCount = 1);
 ### <a name="parameters"></a>Parameter
 
 *iIndex*<br/>
-Der null basierte Index des ersten Zeichens im `CStringT` zu löschenden-Objekt.
+Der null basierte Index des ersten Zeichens in der `CStringT` zu löschenden-Objekts.
 
 *nCount*<br/>
 Die Anzahl der zu entfernenden Zeichen.
@@ -620,7 +620,7 @@ Die Anzahl der zu entfernenden Zeichen.
 
 Die Länge der geänderten Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *nCount* länger als die Zeichenfolge ist, wird der Rest der Zeichenfolge entfernt.
 
@@ -646,7 +646,7 @@ int Find(XCHAR ch, int iStart=0) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pszSub*<br/>
+*pszsub*<br/>
 Eine zu suchende Teil Zeichenfolge.
 
 *iStart*<br/>
@@ -657,11 +657,11 @@ Ein einzelnes Zeichen, nach dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des ersten Zeichens in diesem `CStringT` -Objekt, das mit der angeforderten Teil Zeichenfolge übereinstimmt, oder-1, wenn die Teil Zeichenfolge oder das Zeichen nicht gefunden wurde.
+Der null basierte Index des ersten Zeichens in diesem `CStringT` Objekt, das mit der angeforderten Teil Zeichenfolge übereinstimmt. -1, wenn die Teil Zeichenfolge oder das Zeichen nicht gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion ist überladen, sodass beide einzelnen Zeichen (ähnlich der Lauf Zeitfunktion `strchr`) und Zeichen folgen ( `strstr`ähnlich wie) akzeptiert werden.
+Die-Funktion ist überladen, sodass beide einzelnen Zeichen (ähnlich der Lauf Zeitfunktion `strchr`) und Zeichen folgen (ähnlich wie `strstr`) akzeptiert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -677,14 +677,14 @@ int FindOneOf(PCXSTR pszCharSet) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pszCharSet*<br/>
+*pszcharset*<br/>
 Zeichenfolge mit Zeichen für den Abgleich.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der null basierte Index des ersten Zeichens in dieser Zeichenfolge, das auch in *pszcharset*ist. -1, wenn keine Entsprechung vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sucht das erste Vorkommen der Zeichen in *pszcharset*.
 
@@ -694,7 +694,7 @@ Sucht das erste Vorkommen der Zeichen in *pszcharset*.
 
 ##  <a name="format"></a>CStringT:: Format
 
-Schreibt formatierte Daten `CStringT` auf die gleiche Weise wie [sprintf_s](../../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md) formatiert Daten in ein Zeichen Array im C-Stil.
+Schreibt formatierte Daten auf die gleiche Weise in ein `CStringT`, wie [sprintf_s](../../c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md) Daten in ein Zeichen Array im C-Format formatieren.
 
 ```
 void __cdecl Format(UINT nFormatID, [, argument]...);
@@ -703,16 +703,16 @@ void __cdecl Format(PCXSTR pszFormat,  [, argument] ...);
 
 ### <a name="parameters"></a>Parameter
 
-*nFormatID*<br/>
+*nformatid*<br/>
 Der Zeichen folgen Ressourcen Bezeichner, der die Format Steuerelement-Zeichenfolge enthält.
 
-*pszFormat*<br/>
+*pszformat*<br/>
 Eine Format Steuerelement Zeichenfolge.
 
 *argument*<br/>
 Optionale Argumente.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion formatiert und speichert eine Reihe von Zeichen und Werten im `CStringT`. Jedes optionale Argument (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation in *pszformat* oder der durch *nformatd*identifizierten Zeichen folgen Ressource konvertiert und ausgegeben.
 
@@ -737,21 +737,21 @@ void __cdecl FormatMessage(PCXSTR pszFormat, [, argument]...);
 
 ### <a name="parameters"></a>Parameter
 
-*nFormatID*<br/>
+*nformatid*<br/>
 Der Zeichen folgen Ressourcen Bezeichner, der den unformatierten Meldungs Text enthält.
 
-*pszFormat*<br/>
+*pszformat*<br/>
 Verweist auf die Format Steuerelement Zeichenfolge. Sie wird auf Einfügungen überprüft und entsprechend formatiert. Die Format Zeichenfolge ähnelt der Format Zeichenfolge im *printf*-Format der Lauf Zeitfunktion, mit dem Unterschied, dass die Parameter in beliebiger Reihenfolge eingefügt werden können.
 
 *argument*<br/>
 Optionale Argumente.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion erfordert eine Nachrichten Definition als Eingabe. Die Nachrichten Definition wird von *pszformat* oder von der durch *nformatd*identifizierten Zeichen folgen Ressource bestimmt. Die-Funktion kopiert den formatierten Meldungs `CStringT` Text in das-Objekt und verarbeitet alle eingebetteten INSERT-Sequenzen, wenn dies angefordert wird.
+Die-Funktion erfordert eine Nachrichten Definition als Eingabe. Die Nachrichten Definition wird von *pszformat* oder von der durch *nformatd*identifizierten Zeichen folgen Ressource bestimmt. Die-Funktion kopiert den formatierten Meldungs Text in das `CStringT`-Objekt und verarbeitet alle eingebetteten INSERT-Sequenzen, wenn dies angefordert wird.
 
 > [!NOTE]
-> `FormatMessage`versucht, den Systemspeicher für die neu formatierte Zeichenfolge zuzuweisen. Wenn dieser Versuch fehlschlägt, wird automatisch eine Speicher Ausnahme ausgelöst.
+> `FormatMessage` versucht, den Systemspeicher für die neu formatierte Zeichenfolge zuzuweisen. Wenn dieser Versuch fehlschlägt, wird automatisch eine Speicher Ausnahme ausgelöst.
 
 Jede Einfügung muss über einen entsprechenden Parameter verfügen, der auf den *pszformat* *-oder nformatd* -Parameter folgt. Im Nachrichtentext werden mehrere Escapesequenzen für die dynamische Formatierung der Nachricht unterstützt. Weitere Informationen finden Sie unter der Windows- [FormatMessage](/windows/win32/api/winbase/nf-winbase-formatmessage) -Funktion in der Windows SDK.
 
@@ -769,18 +769,18 @@ void FormatMessageV(PCXSTR pszFormat, va_list* pArgList);
 
 ### <a name="parameters"></a>Parameter
 
-*pszFormat*<br/>
-Verweist auf die Format Steuerelement Zeichenfolge. Sie wird auf Einfügungen überprüft und entsprechend formatiert. Die Format Zeichenfolge ähnelt Lauf Zeit Funktions `printf`Format-Zeichen folgen, mit dem Unterschied, dass die Parameter in beliebiger Reihenfolge eingefügt werden können.
+*pszformat*<br/>
+Verweist auf die Format Steuerelement Zeichenfolge. Sie wird auf Einfügungen überprüft und entsprechend formatiert. Die Format Zeichenfolge ähnelt der Lauf Zeitfunktion `printf`Format Zeichenfolgen, mit dem Unterschied, dass die Parameter in beliebiger Reihenfolge eingefügt werden können.
 
-*pArgList*<br/>
+*Liste mit Parametern*<br/>
 Zeiger auf eine Liste von Argumenten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion erfordert eine Nachrichten Definition als Eingabe, die durch *pszformat*bestimmt wird. Die-Funktion kopiert den formatierten Meldungs Text und eine Variablen Liste von `CStringT` Argumenten in das-Objekt und verarbeitet dabei alle eingebetteten INSERT-Sequenzen, wenn dies angefordert wird.
+Die-Funktion erfordert eine Nachrichten Definition als Eingabe, die durch *pszformat*bestimmt wird. Die-Funktion kopiert den formatierten Meldungs Text und eine Variablen Liste von Argumenten in das `CStringT` Objekt und verarbeitet dabei alle eingebetteten einfügesequenzen, wenn dies angefordert wird.
 
 > [!NOTE]
-> `FormatMessageV`Ruft [CStringT:: FormatMessage](#formatmessage)auf, das versucht, Systemspeicher für die neu formatierte Zeichenfolge zuzuweisen. Wenn dieser Versuch fehlschlägt, wird automatisch eine Speicher Ausnahme ausgelöst.
+> `FormatMessageV` ruft [CStringT:: FormatMessage](#formatmessage)auf, das versucht, Systemspeicher für die neu formatierte Zeichenfolge zuzuweisen. Wenn dieser Versuch fehlschlägt, wird automatisch eine Speicher Ausnahme ausgelöst.
 
 Weitere Informationen finden Sie unter der Windows- [FormatMessage](/windows/win32/api/winbase/nf-winbase-formatmessage) -Funktion in der Windows SDK.
 
@@ -794,15 +794,15 @@ void FormatV(PCXSTR pszFormat, va_list args);
 
 ### <a name="parameters"></a>Parameter
 
-*pszFormat*<br/>
-Verweist auf die Format Steuerelement Zeichenfolge. Sie wird auf Einfügungen überprüft und entsprechend formatiert. Die Format Zeichenfolge ähnelt Lauf Zeit Funktions `printf`Format-Zeichen folgen, mit dem Unterschied, dass die Parameter in beliebiger Reihenfolge eingefügt werden können.
+*pszformat*<br/>
+Verweist auf die Format Steuerelement Zeichenfolge. Sie wird auf Einfügungen überprüft und entsprechend formatiert. Die Format Zeichenfolge ähnelt der Lauf Zeitfunktion `printf`Format Zeichenfolgen, mit dem Unterschied, dass die Parameter in beliebiger Reihenfolge eingefügt werden können.
 
 *args*<br/>
 Zeiger auf eine Liste von Argumenten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Schreibt eine formatierte Zeichenfolge und eine Variablen Liste von Argumenten `CStringT` in eine Zeichenfolge auf die `vsprintf_s` gleiche Weise wie Daten in ein Zeichen Array im C-Format.
+Schreibt eine formatierte Zeichenfolge und eine Variablen Liste von Argumenten in eine `CStringT` Zeichenfolge auf die gleiche Weise, wie `vsprintf_s` Daten in ein Zeichen Array im C-Format formatiert.
 
 ### <a name="example"></a>Beispiel
 
@@ -820,14 +820,14 @@ BOOL GetEnvironmentVariable(PCXSTR pszVar);
 
 ### <a name="parameters"></a>Parameter
 
-*pszVar*<br/>
+*pszvar*<br/>
 Zeiger auf eine mit NULL endenden Zeichenfolge, die die Umgebungsvariable angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ruft den Wert der angegebenen Variablen aus dem Umgebungsblock des aufrufenden Prozesses ab. Der Wert wird in Form einer auf NULL endenden Zeichenfolge angezeigt.
 
@@ -849,7 +849,7 @@ int Insert(int iIndex, XCHAR ch);
 *iIndex*<br/>
 Der Index des Zeichens, vor dem die Einfügung stattfinden soll.
 
-*psz*<br/>
+*PSZ*<br/>
 Ein Zeiger auf die einzufügende Teil Zeichenfolge.
 
 *ch*<br/>
@@ -859,7 +859,7 @@ Das einzufügende Zeichen.
 
 Die Länge der geänderten Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *iIndex* -Parameter identifiziert das erste Zeichen, das verschoben wird, um Platz für das Zeichen oder die Teil Zeichenfolge zu schaffen. Wenn *nIndex* 0 (null) ist, wird die Einfügung vor der gesamten Zeichenfolge ausgeführt. Wenn *nIndex* höher als die Länge der Zeichenfolge ist, verkettet die Funktion die vorhandene Zeichenfolge und das neue Material, das entweder von *ch* oder *PSZ*bereitgestellt wird.
 
@@ -869,7 +869,7 @@ Der *iIndex* -Parameter identifiziert das erste Zeichen, das verschoben wird, um
 
 ##  <a name="left"></a>CStringT:: Left
 
-Extrahiert die äußersten linken *nCount* -Zeichen aus diesem `CStringT` -Objekt und gibt eine Kopie der extrahierten Teil Zeichenfolge zurück.
+Extrahiert die äußersten linken *nCount* -Zeichen aus diesem `CStringT` Objekt und gibt eine Kopie der extrahierten Teil Zeichenfolge zurück.
 
 ```
 CStringT Left(int nCount) const;
@@ -884,7 +884,7 @@ Die Anzahl der aus diesem `CStringT`-Objekt zu extrahierenden Zeichen.
 
 Ein `CStringT`-Objekt, das eine Kopie des angegebenen Zeichenbereichs enthält. Das zurückgegebene `CStringT`-Objekt ist ggf. leer.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *nCount* die Zeichen folgen Länge überschreitet, wird die gesamte Zeichenfolge extrahiert. `Left` ähnelt der `Left`-Funktion von ///Visual Basic.
 
@@ -896,7 +896,7 @@ Bei Multibyte-Zeichensätzen (MBCS) behandelt *nCount* jede 8-Bit-Sequenz als Ze
 
 ##  <a name="loadstring"></a>CStringT:: loadstring
 
-Liest eine durch *NID*identifizierte Windows-Zeichen folgen Ressource in ein vorhandenes `CStringT` -Objekt.
+Liest eine von *NID*identifizierte Windows-Zeichen folgen Ressource in ein vorhandenes `CStringT` Objekt.
 
 ```
 BOOL LoadString(HINSTANCE hInstance, UINT nID, WORD wLanguageID);
@@ -906,20 +906,20 @@ BOOL LoadString(UINT nID);
 
 ### <a name="parameters"></a>Parameter
 
-*hInstance*<br/>
+*HINSTANCE*<br/>
 Ein Handle für die Instanz des Moduls.
 
-*nID*<br/>
+*NID*<br/>
 Eine Windows-Zeichen folgen Ressourcen-ID.
 
-*wLanguageID*<br/>
+*wlanguageid*<br/>
 Die Sprache der Zeichen folgen Ressource.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich NULL, wenn der Ressourcen Ladevorgang erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Lädt die Zeichen folgen Ressource (*NID*) aus dem angegebenen Modul (*HINSTANCE*) unter Verwendung der angegebenen Sprache (*wlanguage*).
 
@@ -929,7 +929,7 @@ Lädt die Zeichen folgen Ressource (*NID*) aus dem angegebenen Modul (*HINSTANCE
 
 ##  <a name="makelower"></a>CStringT:: makelower
 
-Konvertiert das `CStringT` -Objekt in eine Zeichenfolge in Kleinbuchstaben.
+Konvertiert das `CStringT` Objekt in eine Zeichenfolge in Kleinbuchstaben.
 
 ```
 CStringT& MakeLower();
@@ -945,7 +945,7 @@ Die resultierende Zeichenfolge in Kleinbuchstaben.
 
 ##  <a name="makereverse"></a>CStringT:: makereverse
 
-Kehrt die Reihenfolge der Zeichen im `CStringT` -Objekt um.
+Kehrt die Reihenfolge der Zeichen im `CStringT`-Objekt um.
 
 ```
 CStringT& MakeReverse();
@@ -961,7 +961,7 @@ Die resultierende umgekehrte Zeichenfolge.
 
 ##  <a name="makeupper"></a>CStringT:: makeUpper
 
-Konvertiert das `CStringT` -Objekt in eine Zeichenfolge in Großbuchstaben.
+Konvertiert das `CStringT` Objekt in eine Zeichenfolge in Großbuchstaben.
 
 ```
 CStringT& MakeUpper();
@@ -971,7 +971,7 @@ CStringT& MakeUpper();
 
 Die resultierende Zeichenfolge in Großbuchstaben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ### <a name="example"></a>Beispiel
 
@@ -979,7 +979,7 @@ Die resultierende Zeichenfolge in Großbuchstaben.
 
 ##  <a name="mid"></a>CStringT:: Mid
 
-Extrahiert eine Teil Zeichenfolge der Länge *nCount* - `CStringT` Zeichen aus diesem-Objekt, beginnend an der Position *ifirst* (null basiert).
+Extrahiert eine Teil Zeichenfolge der Länge *nCount* -Zeichen aus diesem `CStringT` Objekt, beginnend an der Position *ifirst* (null basiert).
 
 ```
 CStringT Mid(int iFirst, int nCount) const;
@@ -988,19 +988,19 @@ CStringT Mid(int iFirst) const;
 
 ### <a name="parameters"></a>Parameter
 
-*iFirst*<br/>
-Der null basierte Index des ersten Zeichens in diesem `CStringT` -Objekt, das in die extrahierte Teil Zeichenfolge eingeschlossen werden soll.
+*ifirst*<br/>
+Der null basierte Index des ersten Zeichens in diesem `CStringT` Objekt, das in die extrahierte Teil Zeichenfolge eingeschlossen werden soll.
 
 *nCount*<br/>
 Die Anzahl der aus diesem `CStringT`-Objekt zu extrahierenden Zeichen. Wenn dieser Parameter nicht angegeben wird, wird der Rest der Zeichenfolge extrahiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CStringT`-Objekt, das eine Kopie des angegebenen Zeichenbereichs enthält. Beachten Sie, dass `CStringT` das zurückgegebene Objekt möglicherweise leer ist.
+Ein `CStringT`-Objekt, das eine Kopie des angegebenen Zeichenbereichs enthält. Beachten Sie, dass das zurückgegebene `CStringT` Objekt möglicherweise leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion gibt eine Kopie der extrahierten Teil Zeichenfolge zurück. `Mid`ähnelt der grundlegenden Mid-Funktion (mit dem Unterschied, dass Indizes in Basic ein einbasiertes sind).
+Die-Funktion gibt eine Kopie der extrahierten Teil Zeichenfolge zurück. `Mid` ähnelt der grundlegenden Mid-Funktion (mit der Ausnahme, dass es sich bei den Indizes in Basic um ein einbasiertes) handelt.
 
 Bei Multibytezeichen-Zeichensätzen (MBCS) bezieht sich *nCount* auf jedes 8-Bit-Zeichen. Das heißt, dass ein Lead-und ein nachfolgendes Byte in einem Multibytezeichen als zwei Zeichen gezählt werden.
 
@@ -1010,13 +1010,13 @@ Bei Multibytezeichen-Zeichensätzen (MBCS) bezieht sich *nCount* auf jedes 8-Bit
 
 ##  <a name="oemtoansi"></a>CStringT:: oemto ANSI
 
-Konvertiert alle Zeichen in diesem `CStringT` -Objekt aus dem OEM-Zeichensatz in den ANSI-Zeichensatz.
+Konvertiert alle Zeichen in diesem `CStringT` Objekt aus dem OEM-Zeichensatz in den ANSI-Zeichensatz.
 
 ```
 void OemToAnsi();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist nicht verfügbar, wenn _UNICODE definiert ist.
 
@@ -1044,13 +1044,13 @@ CStringT& operator=(const VARIANT& var);
 
 ### <a name="parameters"></a>Parameter
 
-*strSrc*<br/>
-Ein `CStringT` , der dieser Zeichenfolge zugewiesen werden soll.
+*"Straume"*<br/>
+Eine `CStringT`, die dieser Zeichenfolge zugewiesen werden soll.
 
 *str*<br/>
 Ein Verweis auf ein `CThisSimpleString`-Objekt.
 
-*bMFCDLL*<br/>
+*bmfcdll*<br/>
 Ein boolescher Wert, der angibt, ob es sich bei dem Projekt um eine MFC-DLL handelt.
 
 *BaseType*<br/>
@@ -1065,14 +1065,14 @@ Ein ANSI-oder Unicode-Zeichen, das der Zeichenfolge zugewiesen werden soll.
 *pszSrc*<br/>
 Ein Zeiger auf die Original Zeichenfolge, die zugewiesen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Zuweisungs Operator akzeptiert `CStringT` ein anderes Objekt, einen Zeichen Zeiger oder ein einzelnes Zeichen. Beachten Sie, dass Speicher Ausnahmen immer auftreten können, wenn Sie diesen Operator verwenden, da neuer Speicher zugeordnet werden kann.
+Der Zuweisungs Operator akzeptiert ein anderes `CStringT` Objekt, einen Zeichen Zeiger oder ein einzelnes Zeichen. Beachten Sie, dass Speicher Ausnahmen immer auftreten können, wenn Sie diesen Operator verwenden, da neuer Speicher zugeordnet werden kann.
 
 Weitere Informationen zu `CThisSimpleString`finden Sie im Abschnitt "Hinweise" unter [CStringT:: CStringT](#cstringt).
 
 > [!NOTE]
-> Obwohl es möglich ist, Instanzen `CStringT` zu erstellen, die eingebettete NULL-Zeichen enthalten, empfiehlt es sich, diese zu erstellen. Das Aufrufen von Methoden und `CStringT` Operatoren für Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+> Obwohl es möglich ist, `CStringT`-Instanzen zu erstellen, die eingebettete NULL-Zeichen enthalten, wird dies empfohlen. Das Aufrufen von Methoden und Operatoren für `CStringT` Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
 
 ##  <a name="operator_add"></a>CStringT:: Operator +
 
@@ -1093,14 +1093,14 @@ friend CStringT operator+(wchar_t ch1, const CStringT& str2,);
 *ch1*<br/>
 Ein ANSI-oder Unicode-Zeichen, das mit einer Zeichenfolge verkettet werden soll.
 
-*ch2*<br/>
+*CH2*<br/>
 Ein ANSI-oder Unicode-Zeichen, das mit einer Zeichenfolge verkettet werden soll.
 
 *str1*<br/>
-Ein `CStringT` , der mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
+Eine `CStringT`, die mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
 
 *str2*<br/>
-Ein `CStringT` , der mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
+Eine `CStringT`, die mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
 
 *psz1*<br/>
 Ein Zeiger auf eine mit NULL endenden Zeichenfolge, die mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
@@ -1108,12 +1108,12 @@ Ein Zeiger auf eine mit NULL endenden Zeichenfolge, die mit einer Zeichenfolge o
 *psz2*<br/>
 Ein Zeiger auf eine Zeichenfolge, die mit einer Zeichenfolge oder einem Zeichen verkettet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es gibt sieben Überladungs Formen `CStringT::operator+` der Funktion. Die erste Version verkettet zwei vorhandene `CStringT` Objekte. Die nächsten beiden verketten ein `CStringT` -Objekt und eine mit NULL endenden Zeichenfolge. Die nächsten beiden verketten ein `CStringT` -Objekt und ein ANSI-Zeichen. Die letzten beiden verketten ein `CStringT` -Objekt und ein Unicode-Zeichen.
+Es gibt sieben Überladungs Formen der `CStringT::operator+`-Funktion. Die erste Version verkettet zwei vorhandene `CStringT`-Objekte. Die nächsten beiden verketten ein `CStringT` Objekt und eine mit NULL endenden Zeichenfolge. Die nächsten beiden verketten ein `CStringT` Objekt und ein ANSI-Zeichen. Die letzten beiden verketten ein `CStringT` Objekt und ein Unicode-Zeichen.
 
 > [!NOTE]
->  Obwohl es möglich ist, Instanzen `CStringT` zu erstellen, die eingebettete NULL-Zeichen enthalten, empfiehlt es sich, diese zu erstellen. Das Aufrufen von Methoden und `CStringT` Operatoren für Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+>  Obwohl es möglich ist, `CStringT`-Instanzen zu erstellen, die eingebettete NULL-Zeichen enthalten, wird dies empfohlen. Das Aufrufen von Methoden und Operatoren für `CStringT` Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1144,7 +1144,7 @@ CStringT& operator+=(const VARIANT& var);
 *str*<br/>
 Ein Verweis auf ein `CThisSimpleString`-Objekt.
 
-*bMFCDLL*<br/>
+*bmfcdll*<br/>
 Ein boolescher Wert, der angibt, ob es sich bei dem Projekt um eine MFC-DLL handelt.
 
 *BaseType*<br/>
@@ -1159,17 +1159,17 @@ Ein ANSI-oder Unicode-Zeichen, das mit einer Zeichenfolge verkettet werden soll.
 *pszSrc*<br/>
 Ein Zeiger auf die ursprüngliche zu verkettende Zeichenfolge.
 
-*strSrc*<br/>
-Eine `CStringT` , die mit dieser Zeichenfolge verkettet werden soll.
+*"Straume"*<br/>
+Eine `CStringT`, die mit dieser Zeichenfolge verkettet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Operator akzeptiert ein `CStringT` anderes Objekt, einen Zeichen Zeiger oder ein einzelnes Zeichen. Beachten Sie, dass Arbeitsspeicher Ausnahmen immer auftreten können, wenn Sie diesen Verkettungs Operator verwenden, da neuer Speicher für Zeichen zugeordnet werden kann `CStringT` , die diesem-Objekt hinzugefügt werden.
+Der Operator akzeptiert ein anderes `CStringT` Objekt, einen Zeichen Zeiger oder ein einzelnes Zeichen. Beachten Sie, dass Arbeitsspeicher Ausnahmen immer auftreten können, wenn Sie diesen Verkettungs Operator verwenden, da neuer Speicher für Zeichen zugeordnet werden kann, die diesem `CStringT` Objekt hinzugefügt werden.
 
 Weitere Informationen zu `CThisSimpleString`finden Sie im Abschnitt "Hinweise" unter [CStringT:: CStringT](#cstringt).
 
 > [!NOTE]
->  Obwohl es möglich ist, Instanzen `CStringT` zu erstellen, die eingebettete NULL-Zeichen enthalten, empfiehlt es sich, diese zu erstellen. Das Aufrufen von Methoden und `CStringT` Operatoren für Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
+>  Obwohl es möglich ist, `CStringT`-Instanzen zu erstellen, die eingebettete NULL-Zeichen enthalten, wird dies empfohlen. Das Aufrufen von Methoden und Operatoren für `CStringT` Objekte, die eingebettete NULL-Zeichen enthalten, kann unbeabsichtigte Ergebnisse verursachen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1194,14 +1194,14 @@ friend bool operator==(XCHAR ch1, const CStringT& str2,) throw();
 *ch1*<br/>
 Ein ANSI-oder Unicode-Zeichen für den Vergleich.
 
-*ch2*<br/>
+*CH2*<br/>
 Ein ANSI-oder Unicode-Zeichen für den Vergleich.
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
@@ -1209,7 +1209,7 @@ Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Testet, ob eine Zeichenfolge oder ein Zeichen auf der linken Seite gleich einer Zeichenfolge oder einem Zeichen auf der rechten Seite ist, und gibt entsprechend true oder false zurück.
 
@@ -1236,14 +1236,14 @@ friend bool operator!=(XCHAR ch1, const CStringT& str2,) throw();
 *ch1*<br/>
 Ein ANSI-oder Unicode-Zeichen, das mit einer Zeichenfolge verkettet werden soll.
 
-*ch2*<br/>
+*CH2*<br/>
 Ein ANSI-oder Unicode-Zeichen, das mit einer Zeichenfolge verkettet werden soll.
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
@@ -1251,7 +1251,7 @@ Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Testet, ob eine Zeichenfolge oder ein Zeichen auf der linken Seite gleich einer Zeichenfolge oder einem Zeichen auf der rechten Seite ist.
 
@@ -1259,7 +1259,7 @@ Testet, ob eine Zeichenfolge oder ein Zeichen auf der linken Seite gleich einer 
 
 [!code-cpp[NVC_ATLMFC_Utilities#143](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_27.cpp)]
 
-##  <a name="operator_lt"></a>CStringT:: Operator&lt;
+##  <a name="operator_lt"></a>CStringT:: Operator-&lt;
 
 Bestimmt, ob die Zeichenfolge links vom Operator kleiner als die Zeichenfolge auf der rechten Seite ist.
 
@@ -1272,10 +1272,10 @@ friend bool operator<(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="parameters"></a>Parameter
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
@@ -1283,7 +1283,7 @@ Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis:
 
@@ -1297,7 +1297,7 @@ Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis
 
 [!code-cpp[NVC_ATLMFC_Utilities#144](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_28.cpp)]
 
-##  <a name="operator_gt"></a>CStringT:: Operator&gt;
+##  <a name="operator_gt"></a>CStringT:: Operator-&gt;
 
 Bestimmt, ob die Zeichenfolge links vom Operator größer als die Zeichenfolge auf der rechten Seite ist.
 
@@ -1310,10 +1310,10 @@ friend bool operator>(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="parameters"></a>Parameter
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
@@ -1321,7 +1321,7 @@ Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis:
 
@@ -1335,7 +1335,7 @@ Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis
 
 [!code-cpp[NVC_ATLMFC_Utilities#145](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_29.cpp)]
 
-##  <a name="operator_lt_eq"></a>CStringT:: Operator&lt;=
+##  <a name="operator_lt_eq"></a>CStringT:: Operator &lt;=
 
 Bestimmt, ob die Zeichenfolge links vom Operator kleiner als oder gleich der Zeichenfolge auf der rechten Seite ist.
 
@@ -1348,10 +1348,10 @@ friend bool operator<=(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="parameters"></a>Parameter
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
@@ -1359,7 +1359,7 @@ Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis:
 
@@ -1373,7 +1373,7 @@ Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis
 
 [!code-cpp[NVC_ATLMFC_Utilities#146](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_30.cpp)]
 
-##  <a name="operator_gt_eq"></a>CStringT:: Operator&gt;=
+##  <a name="operator_gt_eq"></a>CStringT:: Operator &gt;=
 
 Bestimmt, ob die Zeichenfolge links vom Operator größer oder gleich der Zeichenfolge auf der rechten Seite ist.
 
@@ -1386,10 +1386,10 @@ friend bool operator>=(PCXSTR psz1, const CStringT& str2) throw();
 ### <a name="parameters"></a>Parameter
 
 *str1*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *str2*<br/>
-Ein `CStringT` für den Vergleich.
+Eine `CStringT` für den Vergleich.
 
 *psz1*<br/>
 Ein Zeiger auf eine Zeichenfolge für den Vergleich.
@@ -1397,7 +1397,7 @@ Ein Zeiger auf eine Zeichenfolge für den Vergleich.
 *psz2*<br/>
 Ein Zeiger auf eine Zeichenfolge für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein lexikografischer Vergleich zwischen Zeichen folgen, Zeichen nach Zeichen bis:
 
@@ -1421,14 +1421,14 @@ int Remove(XCHAR chRemove);
 
 ### <a name="parameters"></a>Parameter
 
-*chRemove*<br/>
+*chremove*<br/>
 Das Zeichen, das aus einer Zeichenfolge entfernt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Anzahl von Zeichen, die aus der Zeichenfolge entfernt wurden. NULL, wenn die Zeichenfolge nicht geändert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei Vergleichen für das Zeichen wird Groß-/Kleinschreibung beachtet
 
@@ -1438,7 +1438,7 @@ Bei Vergleichen für das Zeichen wird Groß-/Kleinschreibung beachtet
 
 ##  <a name="replace"></a>CStringT:: Replace
 
-Es gibt zwei Versionen von `Replace`. Die erste Version ersetzt eine oder mehrere Kopien einer Teil Zeichenfolge durch eine andere Teil Zeichenfolge. Beide Teil Zeichenfolgen werden mit Null beendet. Die zweite Version ersetzt eine oder mehrere Kopien eines Zeichens durch ein anderes Zeichen. Beide Versionen arbeiten mit den Zeichendaten, die `CStringT`in gespeichert sind.
+Es gibt zwei Versionen von `Replace`. Die erste Version ersetzt eine oder mehrere Kopien einer Teil Zeichenfolge durch eine andere Teil Zeichenfolge. Beide Teil Zeichenfolgen werden mit Null beendet. Die zweite Version ersetzt eine oder mehrere Kopien eines Zeichens durch ein anderes Zeichen. Beide Versionen arbeiten mit den in `CStringT`gespeicherten Zeichendaten.
 
 ```
 int Replace(PCXSTR pszOld, PCXSTR pszNew);
@@ -1447,29 +1447,29 @@ int Replace(XCHAR chOld, XCHAR chNew);
 
 ### <a name="parameters"></a>Parameter
 
-*pszOld*<br/>
+*pszold*<br/>
 Ein Zeiger auf eine mit NULL endende Zeichenfolge, die durch *psznew*ersetzt werden soll.
 
-*pszNew*<br/>
+*psznew*<br/>
 Ein Zeiger auf eine NULL-terminierte Zeichenfolge, die *pszold*ersetzt.
 
 *chOld*<br/>
 Das Zeichen, das durch *chnew*ersetzt werden soll.
 
-*chNew*<br/>
+*chnew*<br/>
 Das Zeichen, das " *chOld*" ersetzt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt die Anzahl der ersetzten Instanzen des Zeichens oder der Teil Zeichenfolge zurück, oder NULL, wenn die Zeichenfolge nicht geändert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`Replace`kann die Zeichen folgen Länge ändern, da *psznew* und *pszold* nicht die gleiche Länge aufweisen müssen und mehrere Kopien der alten Teil Zeichenfolge in die neue geändert werden können. Bei der-Funktion wird die Groß-/Kleinschreibung beachtet.
+`Replace` können die Zeichen folgen Länge ändern, da *psznew* und *pszold* nicht die gleiche Länge aufweisen müssen und mehrere Kopien der alten Teil Zeichenfolge in die neue geändert werden können. Bei der-Funktion wird die Groß-/Kleinschreibung beachtet.
 
-Beispiele für `CStringT` -Instanzen `CString`sind `CStringA`, und `CStringW`.
+Beispiele für `CStringT` Instanzen sind `CString`, `CStringA`und `CStringW`.
 
-Für `CStringA`funktioniertmitANSI -oderMultibytezeichen-Zeichen(MBCS).`Replace` Für `CStringW`funktioniertmitbreit Zeichen.`Replace`
+Für `CStringA`funktioniert `Replace` mit ANSI-oder Multibytezeichen-Zeichen (MBCS). Für `CStringW`funktioniert `Replace` mit breit Zeichen.
 
 Für `CString`wird der Zeichen Datentyp zur Kompilierzeit ausgewählt, je nachdem, ob die Konstanten in der folgenden Tabelle definiert sind.
 
@@ -1477,8 +1477,8 @@ Für `CString`wird der Zeichen Datentyp zur Kompilierzeit ausgewählt, je nachde
 |----------------------|-------------------------|
 |_UNICODE|Breitzeichen|
 |_MBCS|Mehr Byte Zeichen|
-|Noch|Einzel Byte Zeichen|
-|Beides|Nicht definiert|
+|Neither|Einzel Byte Zeichen|
+|Beide|Nicht definiert|
 
 ### <a name="example"></a>Beispiel
 
@@ -1486,7 +1486,7 @@ Für `CString`wird der Zeichen Datentyp zur Kompilierzeit ausgewählt, je nachde
 
 ##  <a name="reversefind"></a>CStringT:: reverstellen suchen
 
-Durchsucht `CStringT` dieses-Objekt nach der letzten Entsprechung eines Zeichens.
+Durchsucht dieses `CStringT` Objekt nach der letzten Entsprechung eines Zeichens.
 
 ```
 int ReverseFind(XCHAR ch) const throw();
@@ -1499,11 +1499,11 @@ Das zu suchende Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des letzten Zeichens in diesem `CStringT` -Objekt, das mit dem angeforderten Zeichen übereinstimmt, oder-1, wenn das Zeichen nicht gefunden wurde.
+Der null basierte Index des letzten Zeichens in diesem `CStringT` Objekt, das mit dem angeforderten Zeichen übereinstimmt, oder-1, wenn das Zeichen nicht gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion ähnelt der-Lauf Zeitfunktion `strrchr`.
+Die-Funktion ähnelt der `strrchr`der Lauf Zeitfunktion.
 
 ### <a name="example"></a>Beispiel
 
@@ -1511,7 +1511,7 @@ Die-Funktion ähnelt der-Lauf Zeitfunktion `strrchr`.
 
 ##  <a name="right"></a>CStringT:: Right
 
-Extrahiert die letzten *nCount* -Zeichen (d. h. ganz rechts) `CStringT` aus diesem-Objekt und gibt eine Kopie der extrahierten Teil Zeichenfolge zurück.
+Extrahiert die letzten *nCount* -Zeichen (d. h. ganz rechts) aus diesem `CStringT` Objekt und gibt eine Kopie der extrahierten Teil Zeichenfolge zurück.
 
 ```
 CStringT Right(int nCount) const;
@@ -1524,11 +1524,11 @@ Die Anzahl der aus diesem `CStringT`-Objekt zu extrahierenden Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CStringT`-Objekt, das eine Kopie des angegebenen Zeichenbereichs enthält. Beachten Sie, dass `CStringT` das zurückgegebene-Objekt leer sein kann.
+Ein `CStringT`-Objekt, das eine Kopie des angegebenen Zeichenbereichs enthält. Beachten Sie, dass das zurückgegebene `CStringT` Objekt leer sein kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn *nCount* die Zeichen folgen Länge überschreitet, wird die gesamte Zeichenfolge extrahiert. `Right`ähnelt der Basic `Right` -Funktion (mit der Ausnahme, dass Indizes in Basic Null basiert).
+Wenn *nCount* die Zeichen folgen Länge überschreitet, wird die gesamte Zeichenfolge extrahiert. `Right` ähnelt der grundlegenden `Right`-Funktion (mit der Ausnahme, dass Indizes in Basic Null basiert).
 
 Bei Multibytezeichen-Zeichensätzen (MBCS) bezieht sich *nCount* auf jedes 8-Bit-Zeichen. Das heißt, dass ein Lead-und ein nachfolgendes Byte in einem Multibytezeichen als zwei Zeichen gezählt werden.
 
@@ -1538,7 +1538,7 @@ Bei Multibytezeichen-Zeichensätzen (MBCS) bezieht sich *nCount* auf jedes 8-Bit
 
 ##  <a name="setsysstring"></a>CStringT:: SetSysString
 
-Ordnet den BSTR, auf den von *pbstr* verwiesen wird, neu zu und kopiert `CStringT` den Inhalt des-Objekts in diesen, einschließlich des NULL-Zeichens.
+Ordnet den BSTR, auf den von *pbstr* verwiesen wird, neu zu und kopiert den Inhalt des `CStringT` Objekts in diesen, einschließlich des NULL-Zeichens.
 
 ```
 BSTR SetSysString(BSTR* pbstr) const;
@@ -1553,7 +1553,7 @@ Ein Zeiger auf eine Zeichenfolge.
 
 Die neue Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Abhängig vom Inhalt des `CStringT` Objekts kann sich der Wert des BSTR, auf den *pbstr* verweist, ändern. Die Funktion löst eine `CMemoryException` aus, wenn nicht genügend Arbeitsspeicher vorhanden ist.
 
@@ -1573,16 +1573,16 @@ CStringT SpanExcluding(PCXSTR pszCharSet) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszCharSet*<br/>
+*pszcharset*<br/>
 Eine Zeichenfolge, die als Zeichensatz interpretiert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Teil Zeichenfolge, die Zeichen in der Zeichenfolge enthält, die nicht in *pszcharset*enthalten sind, beginnend mit dem ersten Zeichen in der Zeichenfolge und mit dem ersten in der Zeichenfolge gefundenen Zeichen, das sich auch in *pszcharset* befindet (d. h. beginnend mit dem ersten Zeichen in der Zeichenfolge und bis auf das erste Zeichen in der Zeichenfolge, das *pszcharset gefunden wurde*. Sie gibt die gesamte Zeichenfolge zurück, wenn kein Zeichen in *pszcharset* in der Zeichenfolge gefunden wird.
+Eine Teil Zeichenfolge, die Zeichen in der Zeichenfolge enthält, die nicht in *pszcharset*enthalten sind, beginnend mit dem ersten Zeichen in der Zeichenfolge und mit dem ersten Zeichen in der Zeichenfolge, das auch in *pszcharset* enthalten ist (d. h. beginnend mit dem ersten Zeichen in der Zeichenfolge und bis zu dem ersten Zeichen in der Zeichenfolge, das als *p* Sie gibt die gesamte Zeichenfolge zurück, wenn kein Zeichen in *pszcharset* in der Zeichenfolge gefunden wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`SpanExcluding`extrahiert und gibt alle Zeichen zurück, die vor dem ersten Vorkommen eines Zeichens aus *pszcharset* stehen (d. h., das Zeichen aus *pszcharset* und alle Zeichen, die in der Zeichenfolge darauf folgen, werden nicht zurückgegeben). Wenn kein Zeichen aus *pszcharset* in der Zeichenfolge gefunden wird, `SpanExcluding` wird die gesamte Zeichenfolge zurückgegeben.
+`SpanExcluding` extrahiert und gibt alle Zeichen zurück, die vor dem ersten Vorkommen eines Zeichens aus *pszcharset* stehen (d. h., das Zeichen aus *pszcharset* und alle Zeichen, die in der Zeichenfolge darauf folgen, werden nicht zurückgegeben). Wenn in der Zeichenfolge kein Zeichen aus *pszcharset* gefunden wird, gibt `SpanExcluding` die gesamte Zeichenfolge zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -1598,16 +1598,16 @@ CStringT SpanIncluding(PCXSTR pszCharSet) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszCharSet*<br/>
+*pszcharset*<br/>
 Eine Zeichenfolge, die als Zeichensatz interpretiert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Teil Zeichenfolge, die Zeichen in der Zeichenfolge in *pszcharset*enthält, beginnend mit dem ersten Zeichen in der Zeichenfolge und dem Zeitpunkt, zu dem ein Zeichen in der Zeichenfolge gefunden wird, die nicht in *pszcharset*enthalten ist. `SpanIncluding`gibt eine leere Teil Zeichenfolge zurück, wenn das erste Zeichen in der Zeichenfolge nicht in der angegebenen Menge ist.
+Eine Teil Zeichenfolge, die Zeichen in der Zeichenfolge in *pszcharset*enthält, beginnend mit dem ersten Zeichen in der Zeichenfolge und dem Zeitpunkt, zu dem ein Zeichen in der Zeichenfolge gefunden wird, die nicht in *pszcharset*enthalten ist. `SpanIncluding` gibt eine leere Teil Zeichenfolge zurück, wenn das erste Zeichen in der Zeichenfolge nicht in der angegebenen Menge ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das erste Zeichen der Zeichenfolge nicht im Zeichensatz ist, `SpanIncluding` wird eine leere Zeichenfolge zurückgegeben. Andernfalls wird eine Sequenz von aufeinander folgenden Zeichen zurückgegeben, die in der Menge enthalten sind.
+Wenn das erste Zeichen der Zeichenfolge nicht im Zeichensatz ist, gibt `SpanIncluding` eine leere Zeichenfolge zurück. Andernfalls wird eine Sequenz von aufeinander folgenden Zeichen zurückgegeben, die in der Menge enthalten sind.
 
 ### <a name="example"></a>Beispiel
 
@@ -1623,7 +1623,7 @@ CStringT Tokenize(PCXSTR pszTokens, int& iStart) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pszTokens*<br/>
+*psztokens*<br/>
 Eine Zeichenfolge, die Tokentrennzeichen enthält. Die Reihenfolge dieser Trennzeichen ist nicht wichtig.
 
 *iStart*<br/>
@@ -1631,19 +1631,19 @@ Der null basierte Index, an dem mit der Suche begonnen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CStringT` -Objekt, das den aktuellen Tokenwert enthält.
+Ein `CStringT`-Objekt, das den aktuellen Tokenwert enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `Tokenize` -Funktion sucht das nächste Token in der Ziel Zeichenfolge. Der Satz von Zeichen in *psztokens* gibt mögliche Trennzeichen des gefundenen Tokens an. Bei jedem Aufrufe `Tokenize` der-Funktion beginnt bei *iStart*, überspringt führende Trennzeichen und gibt ein `CStringT` -Objekt zurück, das das aktuelle Token enthält. Dies ist die Zeichenfolge bis zum nächsten Trennzeichen. Der Wert von *iStart* wird auf die Position des endtrennzeichens aktualisiert, oder-1, wenn das Ende der Zeichenfolge erreicht wurde. Weitere Token können aus dem Rest der Ziel Zeichenfolge durch eine Reihe von Aufrufen `Tokenize`von getrennt werden. dabei wird *iStart* verwendet, um nachzuverfolgen, wo in der Zeichenfolge das nächste Token gelesen werden soll. Wenn keine weiteren Token vorhanden sind, gibt die Funktion eine leere Zeichenfolge zurück, und *iStart* wird auf-1 festgelegt.
+Die `Tokenize`-Funktion sucht das nächste Token in der Ziel Zeichenfolge. Der Satz von Zeichen in *psztokens* gibt mögliche Trennzeichen des gefundenen Tokens an. Bei jedem Rückruf von `Tokenize` die Funktion bei *iStart*gestartet, überspringt führende Trennzeichen und gibt ein `CStringT` Objekt zurück, das das aktuelle Token enthält, das die Zeichenfolge bis zum nächsten Trennzeichen ist. Der Wert von *iStart* wird auf die Position des endtrennzeichens aktualisiert, oder-1, wenn das Ende der Zeichenfolge erreicht wurde. Weitere Token können aus dem Rest der Ziel Zeichenfolge durch eine Reihe von Aufrufen an `Tokenize`getrennt werden. dabei wird *iStart* verwendet, um nachzuverfolgen, wo in der Zeichenfolge das nächste Token gelesen werden soll. Wenn keine weiteren Token vorhanden sind, gibt die Funktion eine leere Zeichenfolge zurück, und *iStart* wird auf-1 festgelegt.
 
-Anders als bei CRT-versehen-Funktionen wie [strtok_s, _strtok_s_l, wcstok_s, _wcstok_s_l, _mbstok_s, _mbstok_s_l](../../c-runtime-library/reference/strtok-s-strtok-s-l-wcstok-s-wcstok-s-l-mbstok-s-mbstok-s-l.md), `Tokenize` wird die Ziel Zeichenfolge nicht geändert.
+Im Gegensatz zu den CRT-versehen-Funktionen wie [strtok_s, _strtok_s_l, wcstok_s, _wcstok_s_l, _mbstok_s](../../c-runtime-library/reference/strtok-s-strtok-s-l-wcstok-s-wcstok-s-l-mbstok-s-mbstok-s-l.md)_mbstok_s_l wird die Ziel Zeichenfolge von `Tokenize` nicht geändert.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATLMFC_Utilities#135](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_39.cpp)]
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Ausgabe dieses Beispiels lautet wie folgt:
 
@@ -1665,17 +1665,17 @@ CStringT& Trim();
 
 ### <a name="parameters"></a>Parameter
 
-*chTarget*<br/>
+*chtarget*<br/>
 Das zu gekürzte Ziel Zeichen.
 
 *pszTargets*<br/>
-Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle führenden und nachfolgenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` -Objekt abgeschnitten.
+Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle führenden und nachfolgenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` Objekt abgeschnitten.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt die gekürzte Zeichenfolge zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Entfernt alle führenden und nachfolgenden Vorkommen einer der folgenden:
 
@@ -1689,7 +1689,7 @@ Entfernt alle führenden und nachfolgenden Vorkommen einer der folgenden:
 
 [!code-cpp[NVC_ATLMFC_Utilities#136](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_40.cpp)]
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Ausgabe dieses Beispiels lautet wie folgt:
 
@@ -1710,17 +1710,17 @@ CStringT& TrimLeft();
 
 ### <a name="parameters"></a>Parameter
 
-*chTarget*<br/>
+*chtarget*<br/>
 Das zu gekürzte Ziel Zeichen.
 
 *pszTargets*<br/>
-Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle führenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` -Objekt abgeschnitten.
+Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle führenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` Objekt abgeschnitten.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die resultierende gekürzte Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Entfernt alle führenden und nachfolgenden Vorkommen einer der folgenden:
 
@@ -1746,17 +1746,17 @@ CStringT& TrimRight();
 
 ### <a name="parameters"></a>Parameter
 
-*chTarget*<br/>
+*chtarget*<br/>
 Das zu gekürzte Ziel Zeichen.
 
 *pszTargets*<br/>
-Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle nachfolgenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` -Objekt abgeschnitten.
+Ein Zeiger auf eine Zeichenfolge, die die zu gekürzten Ziel Zeichen enthält. Alle nachfolgenden Vorkommen von Zeichen in *psztarget* werden aus dem `CStringT` Objekt abgeschnitten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das `CStringT` -Objekt zurück, das die gekürzte Zeichenfolge enthält.
+Gibt das `CStringT` Objekt zurück, das die gekürzte Zeichenfolge enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Entfernt nachfolgende Vorkommen einer der folgenden:
 
@@ -1766,11 +1766,11 @@ Entfernt nachfolgende Vorkommen einer der folgenden:
 
 - Leerzeichen.
 
-Die `CStringT& TrimRight(XCHAR chTarget)` Version akzeptiert einen Zeichen Parameter und entfernt alle Kopien dieses Zeichens aus dem Ende der `CStringT` Zeichen folgen Daten. Sie beginnt am Ende der Zeichenfolge und funktioniert im Vordergrund. Sie wird beendet, wenn ein anderes Zeichen gefunden wird `CSTringT` oder wenn keine Zeichendaten mehr zur Anwendung kommt.
+Die `CStringT& TrimRight(XCHAR chTarget)` Version akzeptiert einen Zeichen Parameter und entfernt alle Kopien dieses Zeichens vom Ende `CStringT` Zeichen folgen Daten. Sie beginnt am Ende der Zeichenfolge und funktioniert im Vordergrund. Sie wird beendet, wenn ein anderes Zeichen gefunden wird oder wenn `CSTringT` über Zeichendaten verfügt.
 
-Die `CStringT& TrimRight(PCXSTR pszTargets)` Version akzeptiert eine NULL-terminierte Zeichenfolge, die alle unterschiedlichen Zeichen enthält, nach denen gesucht werden soll. Es entfernt alle Kopien dieser Zeichen im `CStringT` -Objekt. Sie beginnt am Ende der Zeichenfolge und funktioniert im Vordergrund. Sie wird beendet, wenn ein Zeichen gefunden wird, das sich nicht in der Ziel Zeichenfolge befindet, oder wenn `CStringT` nicht mehr Zeichendaten ausführt. Es wird nicht versucht, die gesamte Ziel Zeichenfolge mit einer Teil Zeichenfolge am `CStringT`Ende von abzugleichen.
+Die `CStringT& TrimRight(PCXSTR pszTargets)`-Version akzeptiert eine NULL-terminierte Zeichenfolge, die alle unterschiedlichen Zeichen enthält, nach denen gesucht werden soll. Alle Kopien dieser Zeichen werden im `CStringT` Objekt entfernt. Sie beginnt am Ende der Zeichenfolge und funktioniert im Vordergrund. Sie wird beendet, wenn ein Zeichen gefunden wird, das sich nicht in der Ziel Zeichenfolge befindet, oder wenn `CStringT` über Zeichendaten verfügt. Es wird nicht versucht, die gesamte Ziel Zeichenfolge am Ende `CStringT`mit einer Teil Zeichenfolge zu vergleichen.
 
-Die `CStringT& TrimRight()` Version erfordert keine Parameter. Alle nachfolgenden Leerzeichen werden vom Ende `CStringT` der Zeichenfolge entfernt. Leerzeichen können Zeilenumbrüche, Leerzeichen oder Registerkarten sein.
+Für die `CStringT& TrimRight()` Version sind keine Parameter erforderlich. Alle nachfolgenden Leerzeichen werden vom Ende der `CStringT` Zeichenfolge entfernt. Leerzeichen können Zeilenumbrüche, Leerzeichen oder Registerkarten sein.
 
 -
 
@@ -1778,7 +1778,7 @@ Die `CStringT& TrimRight()` Version erfordert keine Parameter. Alle nachfolgende
 
 [!code-cpp[NVC_ATLMFC_Utilities#138](../../atl-mfc-shared/codesnippet/cpp/cstringt-class_42.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Gemeinsam genutzte ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)<br/>

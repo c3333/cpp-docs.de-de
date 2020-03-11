@@ -35,11 +35,11 @@ helpviewer_keywords:
 - RECT structure
 ms.assetid: dee4e752-15d6-4db4-b68f-1ad65b2ed6ca
 ms.openlocfilehash: 13f86c411cca98f5817d1b3b2d9162ae8af8b734
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821368"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78866531"
 ---
 # <a name="crect-class"></a>CRect-Klasse
 
@@ -51,45 +51,45 @@ ms.locfileid: "76821368"
 class CRect : public tagRECT
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CRect::CRect](#crect)|Erstellt ein `CRect`-Objekt.|
+|[CRect:: CRect](#crect)|Erstellt ein `CRect`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CRect::BottomRight](#bottomright)|Gibt den unteren rechten Punkt `CRect`zurück.|
-|[CRect::CenterPoint](#centerpoint)|Gibt den Mittelpunkt der `CRect`zurück.|
-|[CRect::CopyRect](#copyrect)|Kopiert die Dimensionen eines Quell Rechtecks in `CRect`.|
-|[CRect::DeflateRect](#deflaterect)|Verringert die Breite und Höhe der `CRect`.|
-|[CRect::EqualRect](#equalrect)|Bestimmt, ob `CRect` gleich dem angegebenen Rechteck ist.|
+|[CRect:: BottomRight](#bottomright)|Gibt den unteren rechten Punkt `CRect`zurück.|
+|[CRect:: Centerpoint](#centerpoint)|Gibt den Mittelpunkt der `CRect`zurück.|
+|[CRect:: copyrect](#copyrect)|Kopiert die Dimensionen eines Quell Rechtecks in `CRect`.|
+|[CRect::D eflaterect](#deflaterect)|Verringert die Breite und Höhe der `CRect`.|
+|[CRect:: equalrect](#equalrect)|Bestimmt, ob `CRect` gleich dem angegebenen Rechteck ist.|
 |[CRect:: height](#height)|Berechnet die Höhe `CRect`.|
-|[CRect::InflateRect](#inflaterect)|Erhöht die Breite und Höhe der `CRect`.|
+|[CRect:: inflaterect](#inflaterect)|Erhöht die Breite und Höhe der `CRect`.|
 |[CRect:: intersectRect](#intersectrect)|Legt `CRect` gleich der Schnittmenge von zwei Rechtecke fest.|
-|[CRect::IsRectEmpty](#isrectempty)|Bestimmt, ob `CRect` leer ist. `CRect` ist leer, wenn Breite und/oder Höhe 0 (null) ist.|
-|[CRect::IsRectNull](#isrectnull)|Bestimmt, ob die `top`-, `bottom`-, `left`-und `right`-Element Variablen gleich 0 sind.|
-|[CRect::MoveToX](#movetox)|Verschiebt `CRect` in die angegebene x-Koordinate.|
-|[CRect::MoveToXY](#movetoxy)|Verschiebt `CRect` zu den angegebenen x-und y-Koordinaten.|
-|[CRect::MoveToY](#movetoy)|Verschiebt `CRect` in die angegebene y-Koordinate.|
-|[CRect::NormalizeRect](#normalizerect)|Standardisiert die Höhe und Breite der `CRect`.|
-|[CRect::OffsetRect](#offsetrect)|Verschiebt `CRect` um die angegebenen Offsets.|
-|[CRect::PtInRect](#ptinrect)|Bestimmt, ob der angegebene Punkt innerhalb `CRect`liegt.|
-|[CRect::SetRect](#setrect)|Legt die Dimensionen `CRect`fest.|
-|[CRect::SetRectEmpty](#setrectempty)|Legt `CRect` auf ein leeres Rechteck (alle Koordinaten gleich 0) fest.|
-|[CRect::Size](#size)|Berechnet die Größe der `CRect`.|
-|[CRect::SubtractRect](#subtractrect)|Subtrahiert ein Rechteck von einem anderen.|
-|[CRect::TopLeft](#topleft)|Gibt den oberen linken Punkt der `CRect`zurück.|
-|[CRect::UnionRect](#unionrect)|Legt `CRect` gleich der Union von zwei Rechtecke fest.|
-|[CRect::Width](#width)|Berechnet die Breite des `CRect`.|
+|[CRect:: isrectempty](#isrectempty)|Bestimmt, ob `CRect` leer ist. `CRect` ist leer, wenn Breite und/oder Höhe 0 (null) ist.|
+|[CRect:: isrectnull](#isrectnull)|Bestimmt, ob die `top`-, `bottom`-, `left`-und `right`-Element Variablen gleich 0 sind.|
+|[CRect:: muvetox](#movetox)|Verschiebt `CRect` in die angegebene x-Koordinate.|
+|[CRect:: muvedexy](#movetoxy)|Verschiebt `CRect` zu den angegebenen x-und y-Koordinaten.|
+|[CRect:: muvetoy](#movetoy)|Verschiebt `CRect` in die angegebene y-Koordinate.|
+|[CRect:: NormalizeRect](#normalizerect)|Standardisiert die Höhe und Breite der `CRect`.|
+|[CRect:: offsetrect](#offsetrect)|Verschiebt `CRect` um die angegebenen Offsets.|
+|[CRect::P tinrect](#ptinrect)|Bestimmt, ob der angegebene Punkt innerhalb `CRect`liegt.|
+|[CRect:: SetRect](#setrect)|Legt die Dimensionen `CRect`fest.|
+|[CRect:: setrectempty](#setrectempty)|Legt `CRect` auf ein leeres Rechteck (alle Koordinaten gleich 0) fest.|
+|[CRect:: size](#size)|Berechnet die Größe der `CRect`.|
+|[CRect:: subtractrect](#subtractrect)|Subtrahiert ein Rechteck von einem anderen.|
+|[CRect:: TopLeft](#topleft)|Gibt den oberen linken Punkt der `CRect`zurück.|
+|[CRect:: unionrect](#unionrect)|Legt `CRect` gleich der Union von zwei Rechtecke fest.|
+|[CRect:: width](#width)|Berechnet die Breite des `CRect`.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CRect:: Operator-](#operator_-)|Subtrahiert die angegebenen Offsets von `CRect` oder defliert `CRect` und gibt die resultierende `CRect`zurück.|
 |[CRect:: Operator lpcrect](#operator_lpcrect)|Konvertiert ein `CRect`-Element in ein `LPCRECT`-Element.|
@@ -97,15 +97,15 @@ class CRect : public tagRECT
 |[CRect:: Operator! =](#operator_neq)|Bestimmt, ob `CRect` nicht gleich einem Rechteck ist.|
 |[CRect:: Operator &amp;](#operator_amp)|Erstellt die Schnittmenge `CRect` und eines Rechtecks und gibt die resultierende `CRect`zurück.|
 |[CRect:: Operator &amp;=](#operator_amp_eq)|Legt `CRect` gleich der Schnittmenge `CRect` und eines Rechtecks fest.|
-|[CRect::operator &#124;](#operator_or)|Erstellt die Vereinigung `CRect` und eines Rechtecks und gibt die resultierende `CRect`zurück.|
-|[CRect::operator &#124;=](#operator_or_eq)|Legt `CRect` gleich der Vereinigung von `CRect` und einem Rechteck fest.|
+|[CRect::-Operator&#124;](#operator_or)|Erstellt die Vereinigung `CRect` und eines Rechtecks und gibt die resultierende `CRect`zurück.|
+|[CRect:: Operator &#124;=](#operator_or_eq)|Legt `CRect` gleich der Vereinigung von `CRect` und einem Rechteck fest.|
 |[CRect:: Operator +](#operator_add)|Fügt die angegebenen Offsets `CRect` oder vergrößert `CRect` und gibt die resultierende `CRect`zurück.|
-|[CRect::operator +=](#operator_add_eq)|Fügt die angegebenen Offsets `CRect` oder vergrößert `CRect`.|
+|[CRect:: Operator + =](#operator_add_eq)|Fügt die angegebenen Offsets `CRect` oder vergrößert `CRect`.|
 |[CRect:: Operator =](#operator_eq)|Kopiert die Dimensionen eines Rechtecks in `CRect`.|
 |[CRect:: Operator-=](#operator_-_eq)|Subtrahiert die angegebenen Offsets von `CRect` oder entleert `CRect`.|
-|[CRect::operator ==](#operator_eq_eq)|Bestimmt, ob `CRect` gleich einem Rechteck ist.|
+|[CRect:: Operator = =](#operator_eq_eq)|Bestimmt, ob `CRect` gleich einem Rechteck ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `CRect` umfasst auch Element Funktionen zum Bearbeiten von `CRect` Objekten und Windows-`RECT` Strukturen.
 
@@ -128,7 +128,7 @@ Wenn überladene `CRect` Operatoren verwendet werden, muss der erste Operand ein
 
 `CRect`
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atltypes. h
 
@@ -145,7 +145,7 @@ const CPoint& BottomRight() const throw();
 
 Die Koordinaten der rechten unteren Ecke des Rechtecks.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können diese Funktion verwenden, um die rechte untere Ecke des Rechtecks zu erhalten oder festzulegen. Legen Sie die Ecke fest, indem Sie diese Funktion auf der linken Seite des Zuweisungs Operators verwenden.
 
@@ -246,9 +246,9 @@ Kopiert das `lpSrcRect` Rechteck in `CRect`.
 void CopyRect(LPCRECT lpSrcRect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*lpSrcRect*<br/>
+*lpsrcrect*<br/>
 Verweist auf die [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das kopiert werden soll.
 
 ### <a name="example"></a>Beispiel
@@ -286,7 +286,7 @@ CRect(POINT point, SIZE size) throw();
 CRect(POINT topLeft, POINT bottomRight) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *l*<br/>
 Gibt die linke Position `CRect`an.
@@ -303,22 +303,22 @@ Gibt den unteren `CRect`an.
 *srcRect*<br/>
 Verweist auf die [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur mit den Koordinaten für `CRect`.
 
-*lpSrcRect*<br/>
+*lpsrcrect*<br/>
 Verweist auf die `RECT` Struktur mit den Koordinaten für `CRect`.
 
-*point*<br/>
+*Punkt*<br/>
 Gibt den Ursprungs Punkt für das Rechteck an, das erstellt werden soll. Entspricht der linken oberen Ecke.
 
 *size*<br/>
 Gibt die Verschiebung von der linken oberen Ecke zur rechten unteren Ecke des zu erstellenden Rechtecks an.
 
-*topLeft*<br/>
+*TopLeft*<br/>
 Gibt die linke obere Position `CRect`an.
 
-*bottomRight*<br/>
+*BottomRight*<br/>
 Gibt die untere rechte Position `CRect`an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn keine Argumente angegeben werden, werden `left`-, `top`-, `right`-und `bottom` Member nicht initialisiert.
 
@@ -373,9 +373,9 @@ void DeflateRect(LPCRECT lpRect) throw();
 void DeflateRect(int l, int t, int r, int b) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gibt die Anzahl der Einheiten an, die die linke und die Rechte Seite des `CRect`deflieren.
 
 *y*<br/>
@@ -384,7 +384,7 @@ Gibt die Anzahl der Einheiten an, um den oberen und unteren Rand `CRect`zu isoli
 *size*<br/>
 Eine [Größe](/windows/win32/api/windef/ns-windef-size) oder [CSize](csize-class.md) , die die Anzahl der Einheiten für die Deflate `CRect`angibt. Der `cx`-Wert gibt die Anzahl der Einheiten an, um die linke und die Rechte Seite zu isolieren, und der `cy` Wert gibt die Anzahl der Einheiten an, um den oberen und unteren Rand zu isolieren.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect`, die die Anzahl der Einheiten für die Deflate der einzelnen Seiten angibt.
 
 *l*<br/>
@@ -399,7 +399,7 @@ Gibt die Anzahl der Einheiten an, um die Rechte Seite `CRect`zu deflieren.
 *b*<br/>
 Gibt die Anzahl der Einheiten an, die das Ende der `CRect`deflate überwiegen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zu diesem Zweck fügt `DeflateRect` Einheiten Links und oben hinzu und subtrahiert Einheiten von rechts nach unten. Die Parameter `DeflateRect` sind signierte Werte. positive Werte deflate `CRect` und negative Werte erhöhen diese Werte.
 
@@ -428,9 +428,9 @@ Bestimmt, ob `CRect` gleich dem angegebenen Rechteck ist.
 BOOL EqualRect(LPCRECT lpRect) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das die linke obere und untere rechte Eckkoordinaten eines Rechtecks enthält.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -471,7 +471,7 @@ int Height() const throw();
 
 Die Höhe `CRect`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der resultierende Wert kann negativ sein.
 
@@ -499,9 +499,9 @@ void InflateRect(LPCRECT lpRect) throw();
 void InflateRect(int l, int t, int r,  int b) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gibt die Anzahl der Einheiten an, um die linke und die Rechte Seite `CRect`zu erhöhen.
 
 *y*<br/>
@@ -510,7 +510,7 @@ Gibt die Anzahl der Einheiten an, um den oberen und unteren Rand `CRect`zu erhö
 *size*<br/>
 Eine [Größe](/windows/win32/api/windef/ns-windef-size) oder [CSize](csize-class.md) , die die Anzahl der Einheiten angibt, die `CRect`vergrößert werden soll. Der `cx`-Wert gibt die Anzahl der Einheiten an, um die linke und die Rechte Seite aufzufüllen, und der `cy` Wert gibt die Anzahl der Einheiten an, um den oberen und unteren Rand aufzufüllen.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect`, die die Anzahl von Einheiten angibt, mit denen die einzelnen Seiten vergrößert werden.
 
 *l*<br/>
@@ -525,7 +525,7 @@ Gibt die Anzahl der Einheiten an, die die Rechte Seite `CRect`erhöhen soll.
 *b*<br/>
 Gibt die Anzahl der Einheiten an, um den unteren `CRect`zu erhöhen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zu diesem Zweck `InflateRect` subtrahiert Einheiten von links nach oben und fügt Einheiten rechts und unten hinzu. Die Parameter `InflateRect` sind signierte Werte. positive Werte erhöhen `CRect` und negative Werte deflate.
 
@@ -549,7 +549,7 @@ Macht eine `CRect` gleich der Schnittmenge zweier bestehender Rechtecke.
 BOOL IntersectRect(LPCRECT lpRect1, LPCRECT lpRect2) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *lpRect1*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das ein Quell Rechteck enthält.
@@ -561,7 +561,7 @@ Verweist auf eine `RECT` Struktur oder `CRect` Objekt, das ein Quell Rechteck en
 
 Ungleich 0 (null), wenn die Schnittmenge nicht leer ist. 0, wenn die Schnittmenge leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Schnittmenge ist das größte Rechteck, das in beiden vorhandenen Rechtecke enthalten ist.
 
@@ -596,7 +596,7 @@ BOOL IsRectEmpty() const throw();
 
 Ungleich 0 (null), wenn `CRect` leer ist. 0, wenn `CRect` nicht leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Rechteck ist leer, wenn Breite und/oder Höhe 0 oder negativ sind. Unterscheidet sich von `IsRectNull`, die bestimmt, ob alle Koordinaten des Rechtecks NULL sind.
 
@@ -626,7 +626,7 @@ BOOL IsRectNull() const throw();
 
 Ungleich 0 (null), wenn `CRect`die Werte Top, Left, Bottom und right gleich 0 sind. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Unterscheidet sich von `IsRectEmpty`, die bestimmt, ob das Rechteck leer ist.
 
@@ -651,9 +651,9 @@ Mit dieser Funktion können Sie das Rechteck in die absolute x-Koordinate versch
 void MoveToX(int x) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Die absolute x-Koordinate für die linke obere Ecke des Rechtecks.
 
 ### <a name="example"></a>Beispiel
@@ -675,15 +675,15 @@ void MoveToXY(int x, int y) throw();
 void MoveToXY(POINT point) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Die absolute x-Koordinate für die linke obere Ecke des Rechtecks.
 
 *y*<br/>
 Die absolute y-Koordinate für die linke obere Ecke des Rechtecks.
 
-*point*<br/>
+*Punkt*<br/>
 Eine `POINT`-Struktur, die die absolute linke obere Ecke des Rechtecks angibt.
 
 ### <a name="example"></a>Beispiel
@@ -703,7 +703,7 @@ Mit dieser Funktion können Sie das Rechteck in die absolute, von *y*angegebene 
 void MoveToY(int y) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *y*<br/>
 Die absolute y-Koordinate für die linke obere Ecke des Rechtecks.
@@ -725,7 +725,7 @@ Normalisiert `CRect`, sodass sowohl die Höhe als auch die Breite positiv sind.
 void NormalizeRect() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Rechteck wird zur Positionierung des vierten Quadranten normalisiert, das Windows in der Regel für Koordinaten verwendet. `NormalizeRect` vergleicht die oberen und unteren Werte und tauscht Sie aus, wenn der obere Wert größer als der untere Wert ist. Entsprechend werden die linken und rechten Werte ausgetauscht, wenn die linke Seite größer als die Rechte ist. Diese Funktion ist nützlich, wenn Sie mit unterschiedlichen Karten Modi und umgekehrten Rechtecke umzugehen.
 
@@ -752,21 +752,21 @@ void OffsetRect(POINT point) throw();
 void OffsetRect(SIZE size) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Gibt den Betrag an, nach links oder rechts verschoben werden soll. Er muss negativ sein, um nach Links zu verschieben.
 
 *y*<br/>
 Gibt den Betrag an, der nach oben oder unten verschoben werden soll. Es muss negativ sein, um nach oben zu wechseln.
 
-*point*<br/>
+*Punkt*<br/>
 Enthält eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder ein [CPoint](cpoint-class.md) -Objekt, das beide Dimensionen angibt, nach denen verschoben werden soll.
 
 *size*<br/>
 Enthält eine [Größen](/windows/win32/api/windef/ns-windef-size) Struktur oder ein [CSize](csize-class.md) -Objekt, das beide Dimensionen angibt, nach denen verschoben werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verschiebt `CRect`*x* -Einheiten entlang der x-Achse und *y* -Einheiten entlang der y-Achse. Der *x* -und der *y* -Parameter sind signierte Werte, sodass `CRect` nach links oder rechts oder nach oben oder unten verschoben werden können.
 
@@ -786,7 +786,7 @@ ASSERT(rect == CRect(230, 230, 265, 265));
 operator LPCRECT() const throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie diese Funktion verwenden, benötigen Sie den Address-of-Operator ( **&** ) nicht. Dieser Operator wird automatisch verwendet, wenn Sie ein `CRect` Objekt an eine Funktion übergeben, die eine `LPCRECT`erwartet.
 
@@ -798,7 +798,7 @@ Konvertiert einen `CRect` in einen [lprect](../../mfc/reference/data-types-mfc.m
 operator LPRECT() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie diese Funktion verwenden, benötigen Sie den Address-of-Operator ( **&** ) nicht. Dieser Operator wird automatisch verwendet, wenn Sie ein `CRect` Objekt an eine Funktion übergeben, die eine `LPRECT`erwartet.
 
@@ -814,7 +814,7 @@ Weist *srcRect* `CRect`zu.
 void operator=(const RECT& srcRect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *srcRect*<br/>
 Verweist auf ein Quell Rechteck. Kann ein [Rect](/windows/win32/api/windef/ns-windef-rect) oder `CRect`sein.
@@ -837,7 +837,7 @@ Bestimmt, ob `rect` gleich `CRect` ist, indem die Koordinaten ihrer oberen linke
 BOOL operator==(const RECT& rect) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
 Verweist auf ein Quell Rechteck. Kann ein [Rect](/windows/win32/api/windef/ns-windef-rect) oder `CRect`sein.
@@ -846,7 +846,7 @@ Verweist auf ein Quell Rechteck. Kann ein [Rect](/windows/win32/api/windef/ns-wi
 
 Ungleich 0 (null), wenn gleich andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 >  Beide Rechtecke müssen normalisiert werden, da diese Funktion möglicherweise fehlschlägt. Sie können [NormalizeRect](#normalizerect) aufrufen, um die Rechtecke zu normalisieren, bevor Sie diese Funktion aufrufen.
@@ -877,7 +877,7 @@ Bestimmt, ob *Rect* nicht gleich `CRect` ist, indem die Koordinaten ihrer oberen
 BOOL operator!=(const RECT& rect) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
 Verweist auf ein Quell Rechteck. Kann ein [Rect](/windows/win32/api/windef/ns-windef-rect) oder `CRect`sein.
@@ -886,7 +886,7 @@ Verweist auf ein Quell Rechteck. Kann ein [Rect](/windows/win32/api/windef/ns-wi
 
 Ungleich 0 (null), wenn nicht gleich; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 >  Beide Rechtecke müssen normalisiert werden, da diese Funktion möglicherweise fehlschlägt. Sie können [NormalizeRect](#normalizerect) aufrufen, um die Rechtecke zu normalisieren, bevor Sie diese Funktion aufrufen.
@@ -919,18 +919,18 @@ void operator+=(SIZE size) throw();
 void operator+=(LPCRECT lpRect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder ein [CPoint](cpoint-class.md) -Objekt, das die Anzahl der Einheiten zum Verschieben des Rechtecks angibt.
 
 *size*<br/>
 Eine [Größen](/windows/win32/api/windef/ns-windef-size) Struktur oder ein [CSize](csize-class.md) -Objekt, das die Anzahl der Einheiten zum Verschieben des Rechtecks angibt.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das die Anzahl der Einheiten enthält, um jede Seite `CRect`aufzufüllen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Werte *x* und *y* des Parameters (oder `cx` und `cy`) werden `CRect`hinzugefügt.
 
@@ -957,18 +957,18 @@ void operator-=(SIZE size) throw();
 void operator-=(LPCRECT lpRect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder ein [CPoint](cpoint-class.md) -Objekt, das die Anzahl der Einheiten zum Verschieben des Rechtecks angibt.
 
 *size*<br/>
 Eine [Größen](/windows/win32/api/windef/ns-windef-size) Struktur oder ein [CSize](csize-class.md) -Objekt, das die Anzahl der Einheiten zum Verschieben des Rechtecks angibt.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das die Anzahl der Einheiten enthält, um jede Seite `CRect`zu isolieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Werte *x* und *y* des-Parameters (oder `cx` und `cy`) werden von `CRect`subtrahiert.
 
@@ -993,12 +993,12 @@ Legt `CRect` gleich der Schnittmenge von `CRect` und `rect`fest.
 void operator&=(const RECT& rect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
 Enthält ein [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Schnittmenge ist das größte Rechteck, das in beiden Rechtecke enthalten ist.
 
@@ -1017,12 +1017,12 @@ Legt `CRect` gleich der Union von `CRect` und `rect`fest.
 void operator|=(const RECT& rect) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
 Enthält eine `CRect` oder ein [Rect](/windows/win32/api/windef/ns-windef-rect).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Union ist das kleinste Rechteck, das beide Quell Rechtecke enthält.
 
@@ -1050,22 +1050,22 @@ CRect operator+(LPCRECT lpRect) const throw();
 CRect operator+(SIZE size) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder ein [CPoint](cpoint-class.md) -Objekt, das die Anzahl der Einheiten angibt, mit denen der Rückgabewert verschoben wird.
 
 *size*<br/>
 Eine [Größen](/windows/win32/api/windef/ns-windef-size) Struktur oder ein [CSize](csize-class.md) -Objekt, das die Anzahl der Einheiten angibt, mit denen der Rückgabewert verschoben wird.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das die Anzahl der Einheiten enthält, um die einzelnen Seiten des Rückgabewerts aufzufüllen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die `CRect`, die sich aus der Verschiebung oder Vergrößerung `CRect` durch die im-Parameter angegebene Anzahl von Einheiten ergeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die *x* -und *y* -Parameter (oder `cx` und `cy`) des Parameters werden der Position `CRect`hinzugefügt.
 
@@ -1093,22 +1093,22 @@ CRect operator-(SIZE size) const throw();
 CRect operator-(LPCRECT lpRect) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 Eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder `CPoint` Objekt, das die Anzahl der Einheiten angibt, mit denen der Rückgabewert verschoben wird.
 
 *size*<br/>
 Eine [Größen](/windows/win32/api/windef/ns-windef-size) Struktur oder `CSize` Objekt, das die Anzahl der Einheiten angibt, die der Rückgabewert verschieben soll.
 
-*lpRect*<br/>
+*lprect*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, das die Anzahl der Einheiten enthält, um die einzelnen Seiten des Rückgabewerts zu deflieren.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die `CRect`, die sich aus dem Verschieben oder deflating `CRect` durch die im-Parameter angegebene Anzahl von Einheiten ergeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die *x* -und *y* -Parameter (oder `cx` und `cy`) des Parameters werden von der Position des `CRect`subtrahiert.
 
@@ -1134,7 +1134,7 @@ Gibt einen `CRect` zurück, der die Schnittmenge von `CRect` und *rect2*ist.
 CRect operator&(const RECT& rect2) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *rect2*<br/>
 Enthält ein [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`.
@@ -1143,7 +1143,7 @@ Enthält ein [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`.
 
 Eine `CRect`, die die Schnittmenge von `CRect` und *rect2*ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Schnittmenge ist das größte Rechteck, das in beiden Rechtecke enthalten ist.
 
@@ -1171,7 +1171,7 @@ CRect operator|(const RECT&
 rect2) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *rect2*<br/>
 Enthält ein [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`.
@@ -1180,7 +1180,7 @@ Enthält ein [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`.
 
 Eine `CRect`, die die Union von `CRect` und *rect2*ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Union ist das kleinste Rechteck, das beide Rechtecke enthält.
 
@@ -1207,16 +1207,16 @@ Bestimmt, ob der angegebene Punkt innerhalb `CRect`liegt.
 BOOL PtInRect(POINT point) const throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*point*<br/>
+*Punkt*<br/>
 Enthält eine [Punkt](/windows/win32/api/windef/ns-windef-point) Struktur oder ein [CPoint](cpoint-class.md) -Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn der Punkt innerhalb `CRect`liegt. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Punkt befindet sich innerhalb `CRect`, wenn er auf der linken oder oberen Seite liegt oder sich auf allen vier Seiten befindet. Ein Punkt auf der rechten oder unteren Seite liegt außerhalb `CRect`.
 
@@ -1259,7 +1259,7 @@ Legt die Dimensionen der `CRect` auf die angegebenen Koordinaten fest.
 void SetRect(int x1, int y1, int x2, int y2) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *x1*<br/>
 Gibt die x-Koordinate der oberen linken Ecke an.
@@ -1270,7 +1270,7 @@ Gibt die y-Koordinate der oberen linken Ecke an.
 *x2*<br/>
 Gibt die x-Koordinate der unteren rechten Ecke an.
 
-*y2*<br/>
+*Y2*<br/>
 Gibt die y-Koordinate der unteren rechten Ecke an.
 
 ### <a name="example"></a>Beispiel
@@ -1311,7 +1311,7 @@ CSize Size() const throw();
 
 Ein [CSize](csize-class.md) -Objekt, das die Größe der `CRect`enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Entweder die Höhe oder die Breite kann negativ sein.
 
@@ -1334,7 +1334,7 @@ Macht die Dimensionen der `CRect` gleich der Subtraktion von `lpRectSrc2` von `l
 BOOL SubtractRect(LPCRECT lpRectSrc1, LPCRECT lpRectSrc2) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *lpRectSrc1*<br/>
 Verweist auf die [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder `CRect` Objekt, von dem ein Rechteck subtrahiert werden soll.
@@ -1346,7 +1346,7 @@ Verweist auf die `RECT` Struktur oder `CRect` Objekt, das von dem Rechteck subtr
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Subtraktion ist das kleinste Rechteck, das alle Punkte in *lpRectScr1* enthält, die sich nicht in der Schnittmenge von *lpRectScr1* und *lpRectScr2*befinden.
 
@@ -1406,7 +1406,7 @@ const CPoint& TopLeft() const throw();
 
 Die Koordinaten der linken oberen Ecke des Rechtecks.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können diese Funktion verwenden, um die linke obere Ecke des Rechtecks zu erhalten oder festzulegen. Legen Sie die Ecke fest, indem Sie diese Funktion auf der linken Seite des Zuweisungs Operators verwenden.
 
@@ -1422,7 +1422,7 @@ Macht die Dimensionen von `CRect` gleich der Vereinigung der beiden Quell Rechte
 BOOL UnionRect(LPCRECT lpRect1, LPCRECT lpRect2) throw();
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *lpRect1*<br/>
 Verweist auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -oder `CRect`, die ein Quell Rechteck enthält.
@@ -1434,7 +1434,7 @@ Verweist auf einen `RECT` oder `CRect`, der ein Quell Rechteck enthält.
 
 Ungleich 0 (null), wenn die Union nicht leer ist. 0, wenn die Union leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Union ist das kleinste Rechteck, das beide Quell Rechtecke enthält.
 
@@ -1467,7 +1467,7 @@ int Width() const throw();
 
 Die Breite der `CRect`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Breite kann negativ sein.
 
@@ -1483,7 +1483,7 @@ int nWid = rect.Width();
 ASSERT(nWid == 60);
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CPoint-Klasse](cpoint-class.md)<br/>
 [CSize-Klasse](csize-class.md)<br/>

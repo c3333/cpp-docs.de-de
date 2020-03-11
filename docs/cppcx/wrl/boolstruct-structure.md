@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::BoolStruct::Member data member
 ms.assetid: 666eae78-e81d-4fb7-a9e4-1ba617d6d4cd
 ms.openlocfilehash: cdec425e317585abbd9730447e2c4fbb19b8250a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398770"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865708"
 ---
 # <a name="boolstruct-structure"></a>BoolStruct-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,36 +26,36 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 struct BoolStruct;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `BoolStruct` Struktur definiert, ob eine `ComPtr` die Objektlebensdauer einer Schnittstelle verwaltet. `BoolStruct` wird intern von verwendet die [BoolType()](comptr-class.md#operator-microsoft-wrl-details-booltype) Operator.
+Die `BoolStruct` Struktur definiert, ob ein `ComPtr` die Objekt Lebensdauer einer Schnittstelle verwaltet. `BoolStruct` wird intern vom [booltype ()](comptr-class.md#operator-microsoft-wrl-details-booltype) -Operator verwendet.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-### <a name="public-data-members"></a>Öffentliche Datenmember
+### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-Name                          | Beschreibung
+Name                          | BESCHREIBUNG
 ----------------------------- | ------------------------------------------------------------------------------------------------------------------
-[BoolStruct::Member](#member) | Gibt an, dass eine [ComPtr](comptr-class.md) ist, oder ist nicht der Fall, die Objektlebensdauer einer Schnittstelle verwalten.
+[Boolstruct:: Member](#member) | Gibt an, dass ein [comptr](comptr-class.md) -Objekt ist oder nicht, das die Objekt Lebensdauer einer Schnittstelle verwaltet.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `BoolStruct`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** internal.h
+**Header:** intern. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="member"></a>BoolStruct::Member
+## <a name="member"></a>Boolstruct:: Member
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ```cpp
 int Member;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt an, dass eine [ComPtr](comptr-class.md) ist, oder ist nicht der Fall, die Objektlebensdauer einer Schnittstelle verwalten.
+Gibt an, dass ein [comptr](comptr-class.md) -Objekt ist oder nicht, das die Objekt Lebensdauer einer Schnittstelle verwaltet.

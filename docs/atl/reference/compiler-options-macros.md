@@ -17,11 +17,11 @@ helpviewer_keywords:
 - compiler options, macros
 ms.assetid: a869adc6-b3de-4299-b040-9ae20b45f82c
 ms.openlocfilehash: 84083c696ee7bdcbb9538bf587c4aaded7a3932e
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630647"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78857170"
 ---
 # <a name="compiler-options-macros"></a>CompilerOptions-Makros
 
@@ -49,7 +49,7 @@ Ein Symbol, das Fehler in Projekten ermöglicht, die aus früheren Versionen von
 #define _ATL_ALL_WARNINGS
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Vor Visual C++ .NET 2002 hat ATL viele Warnungen deaktiviert und deaktiviert, sodass Sie im Benutzercode nicht angezeigt werden. Dies gilt insbesondere in folgenden Fällen:
 
@@ -73,9 +73,9 @@ Dieses Verhalten kann geändert werden, indem Sie der Datei " *PCH. h* " die fol
 
 [!code-cpp[NVC_ATL_Utilities#97](../../atl/codesnippet/cpp/compiler-options-macros_1.h)]
 
-Wenn diese `#define` Option hinzugefügt wird, sind die ATL-Header darauf bedacht, den Zustand dieser Warnungen beizubehalten, damit Sie nicht global deaktiviert werden (oder wenn der Benutzer einzelne Warnungen explizit deaktiviert, ohne Sie zu aktivieren).
+Wenn diese `#define` hinzugefügt wird, sind die ATL-Header darauf bedacht, den Zustand dieser Warnungen beizubehalten, damit Sie nicht global deaktiviert werden (oder wenn der Benutzer einzelne Warnungen explizit deaktiviert, ohne Sie zu aktivieren).
 
-In neuen Projekten ist `#define` dies standardmäßig in " *PCH. h* " (*stdafx. h* in Visual Studio 2017 und früher) festgelegt.
+In neuen Projekten ist diese `#define` in " *PCH. h* " (*stdafx. h* in Visual Studio 2017 und früher) standardmäßig festgelegt.
 
 ##  <a name="_atl_apartment_threaded"></a>_ATL_APARTMENT_THREADED
 
@@ -85,7 +85,7 @@ Legen Sie fest, ob ein oder mehrere ihrer Objekte das Apartment Threading verwen
 _ATL_APARTMENT_THREADED
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt Apartment Threading an. Weitere Informationen finden Sie unter [angeben des Threading Modells des Projekts](../../atl/specifying-the-threading-model-for-a-project-atl.md) für andere Threading Optionen und [Optionen, ATL-Assistent für einfache Objekte](../../atl/reference/options-atl-simple-object-wizard.md) für eine Beschreibung der Threading Modelle, die für ein ATL-Objekt verfügbar sind.
 
@@ -97,7 +97,7 @@ Macht bestimmte `CString` Konstruktoren explizit und verhindert unbeabsichtigte 
 _ATL_CSTRING_EXPLICIT_CONSTRUCTORS
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieser Konstruktor definiert ist, werden alle CString-Konstruktoren, die einen einzelnen Parameter annehmen, mit dem expliziten Schlüsselwort kompiliert, das implizite Konvertierungen von Eingabe Argumenten verhindert. Dies bedeutet beispielsweise, dass beim Versuch, eine char *-Zeichenfolge als CString-Konstruktorargument zu verwenden, ein Compilerfehler ausgegeben wird, wenn _UNICODE definiert ist. Verwenden Sie dieses Makro in Situationen, in denen implizite Konvertierungen zwischen schmalen und breiten Zeichen folgen Typen verhindert werden müssen.
 
@@ -111,17 +111,17 @@ Definieren Sie dieses Makro, um die Verwendung von ANSI C++ -Standard kompatible
 #define _ATL_ENABLE_PTM_WARNING
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die ATL-und MFC-Bibliotheken wurden geändert, damit Sie C++ mit der verbesserten Standard C++ Konformität von Microsoft-Compiler übereinstimmen. Gemäß dem ANSI C++ -Standard sollte die Syntax eines Zeigers auf eine Klassenmember-Funktion `&CMyClass::MyFunc`sein.
+Die ATL-und MFC-Bibliotheken wurden geändert, damit Sie C++ mit der verbesserten Standard C++ Konformität von Microsoft-Compiler übereinstimmen. Gemäß dem ANSI C++ -Standard sollte die Syntax eines Zeigers auf eine Klassenmember-Funktion `&CMyClass::MyFunc`werden.
 
-Wenn [_ATL_ENABLE_PTM_WARNING](#_atl_enable_ptm_warning) nicht definiert ist (Standardfall), deaktiviert ATL/MFC den C4867-Fehler in Makro Zuordnungen (insbesondere Meldungs Zuordnungen), sodass der Code, der in früheren Versionen erstellt wurde, weiterhin wie zuvor erstellt werden kann. Wenn Sie **_ATL_ENABLE_PTM_WARNING**definieren, sollte der Code Standard C++ mäßig kompatibel sein.
+Wenn [_ATL_ENABLE_PTM_WARNING](#_atl_enable_ptm_warning) nicht definiert ist (Standardfall), deaktiviert ATL/MFC den C4867-Fehler in Makro Zuordnungen (insbesondere Meldungs Zuordnungen), sodass der Code, der in früheren Versionen erstellt wurde, weiterhin wie zuvor erstellt werden kann. Wenn Sie **_ATL_ENABLE_PTM_WARNING**definieren, sollte der Code Standard C++ konform sein.
 
 Das nicht standardmäßige Formular ist jedoch veraltet. Sie müssen vorhandenen Code in C++ eine standardmäßige kompatible Syntax verschieben. Beispielsweise folgender Code:
 
 [!code-cpp[NVC_MFCListView#14](../../atl/reference/codesnippet/cpp/compiler-options-macros_2.cpp)]
 
-Sollte in geändert werden:
+Änderung erforderlich in:
 
 [!code-cpp[NVC_MFCListView#11](../../atl/reference/codesnippet/cpp/compiler-options-macros_3.cpp)]
 
@@ -135,7 +135,7 @@ Legen Sie fest, ob eines oder mehrere der Objekte ein kostenloses oder neutrales
 _ATL_FREE_THREADED
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt das kostenlose Threading an. Ein kostenloses Threading entspricht einem Multithread-Apartment Modell. Weitere Informationen finden Sie unter [angeben des Threading Modells des Projekts](../../atl/specifying-the-threading-model-for-a-project-atl.md) für andere Threading Optionen und [Optionen, ATL-Assistent für einfache Objekte](../../atl/reference/options-atl-simple-object-wizard.md) für eine Beschreibung der Threading Modelle, die für ein ATL-Objekt verfügbar sind.
 
@@ -147,7 +147,7 @@ Ein Symbol, das angibt, dass das Projekt über Objekte verfügt, die als "frei" 
 _ATL_MULTI_THREADED
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Symbol definiert ist, ruft ATL Code ab, der den Zugriff auf globale Daten ordnungsgemäß synchronisiert. Neuer Code sollte stattdessen das äquivalente Makro [_ATL_FREE_THREADED](#_atl_free_threaded) verwenden.
 
@@ -159,7 +159,7 @@ Ein Symbol, das die Standardverwendung von Namespace als ATL verhindert.
 _ATL_NO_AUTOMATIC_NAMESPACE
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn dieses Symbol nicht definiert ist, wird von "atlbase. h" standardmäßig die **Verwendung der Namespace-ATL** durchgeführt. Dies kann zu Namenskonflikten führen. Um dies zu verhindern, definieren Sie dieses Symbol.
 
@@ -179,7 +179,7 @@ Ein Symbol, das verhindert, dass der vtable-Zeiger im Konstruktor und debugtor d
 ATL_NO_VTABLE
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der vtable-Zeiger nicht im Konstruktor und debugtor der Klasse initialisiert werden kann, kann der Linker die Vtable und alle Funktionen entfernen, auf die er verweist. Wird zu **__declspec (novtable)** erweitert.
 
@@ -201,10 +201,10 @@ Ein Symbol, das angibt, dass eine Funktion nicht Inline sein sollte.
 
 ### <a name="parameters"></a>Parameter
 
-*myfunction*<br/>
+*MyFunction*<br/>
 Die Funktion, die nicht Inline sein soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie dieses Symbol, wenn Sie sicherstellen möchten, dass eine Funktion nicht vom Compiler Inline geschaltet wird, obwohl Sie als Inline deklariert werden muss, damit Sie in eine Header Datei eingefügt werden kann. Wird zu **__declspec (noinline)** erweitert.
 
@@ -216,10 +216,10 @@ Hiermit wird definiert, ob alle Objekte das einzelne Threading Modell verwenden.
 _ATL_SINGLE_THREADED
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt an, dass das Objekt immer im primären com-Thread ausgeführt wird. Weitere Informationen finden Sie unter [angeben des Threading Modells des Projekts](../../atl/specifying-the-threading-model-for-a-project-atl.md) für andere Threading Optionen und [Optionen, ATL-Assistent für einfache Objekte](../../atl/reference/options-atl-simple-object-wizard.md) für eine Beschreibung der Threading Modelle, die für ein ATL-Objekt verfügbar sind.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros](../../atl/reference/atl-macros.md)

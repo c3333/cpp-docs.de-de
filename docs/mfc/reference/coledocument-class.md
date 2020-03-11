@@ -53,11 +53,11 @@ helpviewer_keywords:
 - COleDocument [MFC], OnUpdatePasteMenu
 ms.assetid: dc2ecb99-03e1-44c7-bb69-48056dd1b672
 ms.openlocfilehash: b92c796fdaa972966dcbfa85b1e34f267b6c629c
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70741607"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78867013"
 ---
 # <a name="coledocument-class"></a>COleDocument-Klasse
 
@@ -69,57 +69,57 @@ Die Basisklasse für OLE-Dokumente, die visuelle Bearbeitung unterstützen.
 class COleDocument : public CDocument
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDocument::COleDocument](#coledocument)|Erstellt ein `COleDocument`-Objekt.|
+|[COleDocument:: COleDocument](#coledocument)|Erstellt ein `COleDocument`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDocument::AddItem](#additem)|Fügt der Liste der Elemente, die vom Dokument verwaltet werden, ein Element hinzu.|
-|[COleDocument::ApplyPrintDevice](#applyprintdevice)|Legt das Druck Zielgerät für alle Client Elemente im Dokument fest.|
-|[COleDocument::EnableCompoundFile](#enablecompoundfile)|Bewirkt, dass Dokumente mit dem OLE-strukturierten Speicherdatei Format gespeichert werden.|
-|[COleDocument::GetInPlaceActiveItem](#getinplaceactiveitem)|Gibt das OLE-Element zurück, das derzeit aktiv ist.|
-|[COleDocument::GetNextClientItem](#getnextclientitem)|Ruft das nächste Client Element für die Iteration ab.|
-|[COleDocument::GetNextItem](#getnextitem)|Ruft das nächste Dokument Element für die Iteration ab.|
-|[COleDocument::GetNextServerItem](#getnextserveritem)|Ruft das nächste Server Element für die Iteration ab.|
-|[COleDocument::GetPrimarySelectedItem](#getprimaryselecteditem)|Gibt das primäre ausgewählte OLE-Element im Dokument zurück.|
-|[COleDocument::GetStartPosition](#getstartposition)|Ruft die Anfangsposition ab, an der die Iterationen beginnen soll.|
-|[COleDocument::HasBlankItems](#hasblankitems)|Prüft, ob leere Elemente im Dokument enthalten sind.|
-|[COleDocument::OnShowViews](#onshowviews)|Wird aufgerufen, wenn das Dokument sichtbar oder unsichtbar wird.|
-|[COleDocument::RemoveItem](#removeitem)|Entfernt ein Element aus der Liste der Elemente, die vom Dokument verwaltet werden.|
-|[COleDocument::UpdateModifiedFlag](#updatemodifiedflag)|Markiert das Dokument als geändert, wenn eines der enthaltenen OLE-Elemente geändert wurde.|
+|[COleDocument:: AddItem](#additem)|Fügt der Liste der Elemente, die vom Dokument verwaltet werden, ein Element hinzu.|
+|[COleDocument:: applyprintdevice](#applyprintdevice)|Legt das Druck Zielgerät für alle Client Elemente im Dokument fest.|
+|[COleDocument:: EnableCompoundFile](#enablecompoundfile)|Bewirkt, dass Dokumente mit dem OLE-strukturierten Speicherdatei Format gespeichert werden.|
+|[COleDocument:: getinplaceactiveitem](#getinplaceactiveitem)|Gibt das OLE-Element zurück, das derzeit aktiv ist.|
+|[COleDocument:: getnextclientitem](#getnextclientitem)|Ruft das nächste Client Element für die Iteration ab.|
+|[COleDocument:: GetNextItem](#getnextitem)|Ruft das nächste Dokument Element für die Iteration ab.|
+|[COleDocument:: getnextserveritem](#getnextserveritem)|Ruft das nächste Server Element für die Iteration ab.|
+|[COleDocument:: getprimaryselecteditem](#getprimaryselecteditem)|Gibt das primäre ausgewählte OLE-Element im Dokument zurück.|
+|[COleDocument:: GetStartPosition](#getstartposition)|Ruft die Anfangsposition ab, an der die Iterationen beginnen soll.|
+|[COleDocument:: hasblankitems](#hasblankitems)|Prüft, ob leere Elemente im Dokument enthalten sind.|
+|[COleDocument:: onshowviews](#onshowviews)|Wird aufgerufen, wenn das Dokument sichtbar oder unsichtbar wird.|
+|[COleDocument:: RemoveItem](#removeitem)|Entfernt ein Element aus der Liste der Elemente, die vom Dokument verwaltet werden.|
+|[COleDocument:: updatemodifiedflag](#updatemodifiedflag)|Markiert das Dokument als geändert, wenn eines der enthaltenen OLE-Elemente geändert wurde.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDocument::OnEditChangeIcon](#oneditchangeicon)|Behandelt Ereignisse im Menübefehl zum Ändern des Symbols.|
-|[COleDocument::OnEditConvert](#oneditconvert)|Behandelt die Konvertierung eines eingebetteten oder verknüpften Objekts von einem Typ in einen anderen.|
-|[COleDocument::OnEditLinks](#oneditlinks)|Behandelt Ereignisse im Befehl "Links" im Menü "Bearbeiten".|
-|[COleDocument::OnFileSendMail](#onfilesendmail)|Sendet eine e-Mail-Nachricht mit angefügtem Dokument.|
-|[COleDocument::OnUpdateEditChangeIcon](#onupdateeditchangeicon)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Symbol bearbeiten/ändern" zu aktualisieren.|
-|[COleDocument::OnUpdateEditLinksMenu](#onupdateeditlinksmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Bearbeiten/Links" zu aktualisieren.|
-|[COleDocument::OnUpdateObjectVerbMenu](#onupdateobjectverbmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption Bearbeiten/ *objectName* und das Untermenü Verb zu aktualisieren, auf das von "Edit/ *objectName*" zugegriffen wird.|
-|[COleDocument::OnUpdatePasteLinkMenu](#onupdatepastelinkmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Kontext einfügen" zu aktualisieren.|
-|[COleDocument::OnUpdatePasteMenu](#onupdatepastemenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Einfügen" zu aktualisieren.|
+|[COleDocument:: oneditchangeicon](#oneditchangeicon)|Behandelt Ereignisse im Menübefehl zum Ändern des Symbols.|
+|[COleDocument:: oneditconvert](#oneditconvert)|Behandelt die Konvertierung eines eingebetteten oder verknüpften Objekts von einem Typ in einen anderen.|
+|[COleDocument:: oneditlinks](#oneditlinks)|Behandelt Ereignisse im Befehl "Links" im Menü "Bearbeiten".|
+|[COleDocument:: OnFileSendMail](#onfilesendmail)|Sendet eine e-Mail-Nachricht mit angefügtem Dokument.|
+|[COleDocument:: onupdateeditchangeicon](#onupdateeditchangeicon)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Symbol bearbeiten/ändern" zu aktualisieren.|
+|[COleDocument:: onupdateeditlinksmenu](#onupdateeditlinksmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Bearbeiten/Links" zu aktualisieren.|
+|[COleDocument:: onupdateobjectverbmenu](#onupdateobjectverbmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption Bearbeiten/ *objectName* und das Untermenü Verb zu aktualisieren, auf das von "Edit/ *objectName*" zugegriffen wird.|
+|[COleDocument:: onupdatepstelinkmenu](#onupdatepastelinkmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Kontext einfügen" zu aktualisieren.|
+|[COleDocument:: onupdatepastemenu](#onupdatepastemenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Einfügen" zu aktualisieren.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`COleDocument`wird von `CDocument`abgeleitet, sodass Ihre OLE-Anwendungen die vom Microsoft Foundation Class-Bibliothek bereitgestellte Dokument-/Ansichtarchitektur verwenden können.
+`COleDocument` wird von `CDocument`abgeleitet, mit dem Ihre OLE-Anwendungen die vom Microsoft Foundation Class-Bibliothek bereitgestellte Dokument-/Ansichtarchitektur verwenden können.
 
-`COleDocument`behandelt ein Dokument als eine Auflistung von [CDocItem](../../mfc/reference/cdocitem-class.md) -Objekten, um OLE-Elemente zu verarbeiten. Für Container-und Server Anwendungen ist eine solche Architektur erforderlich, da Ihre Dokumente OLE-Elemente enthalten müssen. Die von`CDocItem`abgeleiteten [COleServerItem](../../mfc/reference/coleserveritem-class.md) -und [COleClientItem](../../mfc/reference/coleclientitem-class.md) -Klassen verwalten die Interaktionen zwischen Anwendungen und OLE-Elementen.
+`COleDocument` behandelt ein Dokument als eine Auflistung von [CDocItem](../../mfc/reference/cdocitem-class.md) -Objekten, um OLE-Elemente zu verarbeiten. Für Container-und Server Anwendungen ist eine solche Architektur erforderlich, da Ihre Dokumente OLE-Elemente enthalten müssen. Die Klassen [COleServerItem](../../mfc/reference/coleserveritem-class.md) und [COleClientItem](../../mfc/reference/coleclientitem-class.md) , die von `CDocItem`abgeleitet sind, verwalten die Interaktionen zwischen Anwendungen und OLE-Elementen.
 
-Wenn Sie eine einfache Containeranwendung schreiben, leiten Sie die Dokument Klasse von `COleDocument`ab. Wenn Sie eine Containeranwendung schreiben, die das Verknüpfen mit den in den Dokumenten enthaltenen eingebetteten Elementen unterstützt, leiten Sie die Dokument Klasse von [COleLinkingDoc](../../mfc/reference/colelinkingdoc-class.md)ab. Wenn Sie eine Serveranwendung oder einen Kombinations Container/-Server schreiben, leiten Sie die Dokument Klasse von [COleServerDoc](../../mfc/reference/coleserverdoc-class.md)ab. `COleLinkingDoc`und `COleServerDoc` werden von `COleDocument`abgeleitet. daher erben diese Klassen alle in `COleDocument` und `CDocument`verfügbaren Dienste.
+Wenn Sie eine einfache Containeranwendung schreiben, leiten Sie die Dokument Klasse von `COleDocument`ab. Wenn Sie eine Containeranwendung schreiben, die das Verknüpfen mit den in den Dokumenten enthaltenen eingebetteten Elementen unterstützt, leiten Sie die Dokument Klasse von [COleLinkingDoc](../../mfc/reference/colelinkingdoc-class.md)ab. Wenn Sie eine Serveranwendung oder einen Kombinations Container/-Server schreiben, leiten Sie die Dokument Klasse von [COleServerDoc](../../mfc/reference/coleserverdoc-class.md)ab. `COleLinkingDoc` und `COleServerDoc` werden aus `COleDocument`abgeleitet, sodass diese Klassen alle in `COleDocument` und `CDocument`verfügbaren Dienste erben.
 
-Leiten Sie `COleDocument`zum Verwenden von eine Klasse davon ab, und fügen Sie Funktionen hinzu, um die nicht-OLE-Daten der Anwendung sowie eingebettete oder verknüpfte Elemente zu verwalten. Wenn Sie von `CDocItem`abgeleitete Klassen zum Speichern der systemeigenen Daten der Anwendung definieren, können Sie die von `COleDocument` definierte Standard Implementierung verwenden, um sowohl OLE-als auch nicht-OLE-Daten zu speichern. Sie können auch eigene Datenstrukturen entwerfen, um Ihre nicht-OLE-Daten getrennt von den OLE-Elementen zu speichern. Weitere Informationen finden Sie im Artikel [Container: Verbund Dateien](../../mfc/containers-compound-files.md)..
+Um `COleDocument`zu verwenden, leiten Sie eine Klasse davon ab, und fügen Sie Funktionen zum Verwalten der nicht-OLE-Daten der Anwendung sowie eingebetteter oder verknüpfter Elemente hinzu. Wenn Sie `CDocItem`von abgeleitete Klassen definieren, um die systemeigenen Daten der Anwendung zu speichern, können Sie die von `COleDocument` definierte Standard Implementierung verwenden, um sowohl OLE-als auch nicht-OLE-Daten zu speichern. Sie können auch eigene Datenstrukturen entwerfen, um Ihre nicht-OLE-Daten getrennt von den OLE-Elementen zu speichern. Weitere Informationen finden Sie im Artikel [Container: Verbund Dateien](../../mfc/containers-compound-files.md).
 
-`CDocument`unterstützt das Senden von Dokumenten per e-Mail, wenn der e-Mail-Support (MAPI) vorhanden ist. `COleDocument`hat [OnFileSendMail](#onfilesendmail) so aktualisiert, dass Verbund Dokumente ordnungsgemäß verarbeitet werden. Weitere Informationen finden Sie in den Artikeln [MAPI](../../mfc/mapi.md) -und [MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md).
+`CDocument` unterstützt das Senden Ihres Dokuments per e-Mail, wenn der e-Mail-Support (MAPI) vorhanden ist. `COleDocument` hat [OnFileSendMail](#onfilesendmail) aktualisiert, um zusammengesetzte Dokumente ordnungsgemäß zu verarbeiten. Weitere Informationen finden Sie in den Artikeln [MAPI](../../mfc/mapi.md) -und [MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -131,7 +131,7 @@ Leiten Sie `COleDocument`zum Verwenden von eine Klasse davon ab, und fügen Sie 
 
 `COleDocument`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Afxole. h
 
@@ -145,12 +145,12 @@ virtual void AddItem(CDocItem* pItem);
 
 ### <a name="parameters"></a>Parameter
 
-*pItem*<br/>
+*pitem*<br/>
 Zeiger auf das Dokument Element, das hinzugefügt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie müssen diese Funktion nicht explizit aufrufen, wenn Sie vom `COleClientItem` -oder `COleServerItem` -Konstruktor aufgerufen wird, der einen Zeiger auf ein Dokument akzeptiert.
+Sie müssen diese Funktion nicht explizit aufrufen, wenn Sie vom `COleClientItem` oder `COleServerItem` Konstruktor aufgerufen wird, der einen Zeiger auf ein Dokument akzeptiert.
 
 ##  <a name="applyprintdevice"></a>COleDocument:: applyprintdevice
 
@@ -164,20 +164,20 @@ BOOL ApplyPrintDevice(const PRINTDLG* ppd);
 ### <a name="parameters"></a>Parameter
 
 *ptd*<br/>
-Ein Zeiger auf `DVTARGETDEVICE` eine Datenstruktur, die Informationen über das neue Druck Zielgerät enthält. Kann NULL sein.
+Zeiger auf eine `DVTARGETDEVICE` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann den Wert NULL haben.
 
-*ppd*<br/>
-Ein Zeiger auf `PRINTDLG` eine Datenstruktur, die Informationen über das neue Druck Zielgerät enthält. Kann NULL sein.
+*PPD*<br/>
+Zeiger auf eine `PRINTDLG` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann den Wert NULL haben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion aktualisiert das druckzielgerät für alle Elemente, aktualisiert jedoch nicht den Präsentations Cache für diese Elemente. Um den Präsentations Cache für ein Element zu aktualisieren, müssen Sie [COleClientItem:: UpdateLink](../../mfc/reference/coleclientitem-class.md#updatelink)aufrufen.
 
-Die Argumente für diese Funktion enthalten Informationen, die von OLE verwendet werden, um das Zielgerät zu identifizieren. Die [PRINTDLG](/windows/win32/api/commdlg/ns-commdlg-printdlga) -Struktur enthält Informationen, die Windows verwendet, um das Dialogfeld für den allgemeinen Druck zu initialisieren. Nachdem der Benutzer das Dialogfeld geschlossen hat, gibt Windows Informationen zur Auswahl des Benutzers in dieser Struktur zurück. Der `m_pd` Member eines [CPrintDialog](../../mfc/reference/cprintdialog-class.md) -Objekts ist eine `PRINTDLG` -Struktur.
+Die Argumente für diese Funktion enthalten Informationen, die von OLE verwendet werden, um das Zielgerät zu identifizieren. Die [PRINTDLG](/windows/win32/api/commdlg/ns-commdlg-printdlga) -Struktur enthält Informationen, die Windows verwendet, um das Dialogfeld für den allgemeinen Druck zu initialisieren. Nachdem der Benutzer das Dialogfeld geschlossen hat, gibt Windows Informationen zur Auswahl des Benutzers in dieser Struktur zurück. Der `m_pd` Member eines [CPrintDialog](../../mfc/reference/cprintdialog-class.md) -Objekts ist eine `PRINTDLG` Struktur.
 
 Weitere Informationen finden Sie in der [PRINTDLG](/windows/win32/api/commdlg/ns-commdlg-printdlga) -Struktur in der Windows SDK.
 
@@ -201,12 +201,12 @@ void EnableCompoundFile(BOOL bEnable = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bEnable*<br/>
+*benabel*<br/>
 Gibt an, ob die Unterstützung von Verbund Dateien aktiviert oder deaktiviert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies wird auch als strukturierter Speicher bezeichnet. Diese Funktion wird in der Regel vom Konstruktor der von `COleDocument`abgeleiteten Klasse aufgerufen. Weitere Informationen zu Verbund Dokumenten finden Sie im Artikel [Container: Verbund Dateien](../../mfc/containers-compound-files.md)..
+Dies wird auch als strukturierter Speicher bezeichnet. Diese Funktion wird in der Regel vom Konstruktor Ihrer `COleDocument`abgeleiteten Klasse aufgerufen. Weitere Informationen zu Verbund Dokumenten finden Sie im Artikel [Container: Verbund Dateien](../../mfc/containers-compound-files.md).
 
 Wenn Sie diese Member-Funktion nicht aufzurufen, werden Dokumente in einem nicht strukturierten Dateiformat ("Flat") gespeichert.
 
@@ -222,7 +222,7 @@ virtual COleClientItem* GetInPlaceActiveItem(CWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pWnd*<br/>
+*folgenden*<br/>
 Zeiger auf das Fenster, in dem das Container Dokument angezeigt wird.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -239,14 +239,14 @@ COleClientItem* GetNextClientItem(POSITION& pos) const;
 
 ### <a name="parameters"></a>Parameter
 
-*POS*<br/>
-Ein Verweis auf einen Positionswert, der durch einen vorherigen- `GetNextClientItem`Aufrufwert festgelegt wurde. der `GetStartPosition` Anfangswert wird von der Member-Funktion zurückgegeben.
+*pos*<br/>
+Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextClientItem`festgelegt wurde. der Anfangswert wird von der `GetStartPosition` Member-Funktion zurückgegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das nächste Client Element im Dokument oder NULL, wenn keine weiteren Client Elemente vorhanden sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nach jedem-Aufrufwert wird der Wert von *POS* für das nächste Element im Dokument festgelegt, das möglicherweise kein Client Element ist.
 
@@ -264,14 +264,14 @@ virtual CDocItem* GetNextItem(POSITION& pos) const;
 
 ### <a name="parameters"></a>Parameter
 
-*POS*<br/>
-Ein Verweis auf einen Positionswert, der durch einen vorherigen- `GetNextItem`Aufrufwert festgelegt wurde. der `GetStartPosition` Anfangswert wird von der Member-Funktion zurückgegeben.
+*pos*<br/>
+Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextItem`festgelegt wurde. der Anfangswert wird von der `GetStartPosition` Member-Funktion zurückgegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das Dokument Element an der angegebenen Position.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nach jedem-Rückruf wird der Wert von *POS* auf den Positionswert des nächsten Elements im Dokument festgelegt. Wenn das abgerufene Element das letzte Element im Dokument ist, ist der neue Wert von *POS* NULL.
 
@@ -289,14 +289,14 @@ COleServerItem* GetNextServerItem(POSITION& pos) const;
 
 ### <a name="parameters"></a>Parameter
 
-*POS*<br/>
-Ein Verweis auf einen Positionswert, der durch einen vorherigen- `GetNextServerItem`Aufrufwert festgelegt wurde. der `GetStartPosition` Anfangswert wird von der Member-Funktion zurückgegeben.
+*pos*<br/>
+Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextServerItem`festgelegt wurde. der Anfangswert wird von der `GetStartPosition` Member-Funktion zurückgegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das nächste Server Element im Dokument oder NULL, wenn keine weiteren Server Elemente vorhanden sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nach jedem-Aufrufwert wird der Wert von *POS* für das nächste Element im Dokument festgelegt, wobei es sich möglicherweise um ein Server Element handelt.
 
@@ -321,7 +321,7 @@ Zeiger auf das aktive Ansichts Objekt, in dem das Dokument angezeigt wird.
 
 Ein Zeiger auf das einzelne, ausgewählte OLE-Element. NULL, wenn keine OLE-Elemente ausgewählt sind oder wenn mehr als ein Element ausgewählt ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung durchsucht die Liste der enthaltenen OLE-Elemente nach einem einzelnen ausgewählten Element und gibt einen Zeiger darauf zurück. Wenn kein Element ausgewählt ist, oder wenn mehr als ein Element ausgewählt ist, gibt die Funktion NULL zurück. Sie müssen die `CView::IsSelected` Member-Funktion in der Ansichts Klasse überschreiben, damit diese Funktion funktioniert. Überschreiben Sie diese Funktion, wenn Sie eine eigene Methode zum Speichern enthaltener OLE-Elemente besitzen.
 
@@ -337,9 +337,9 @@ virtual POSITION GetStartPosition() const;
 
 Ein Positionswert, der verwendet werden kann, um mit dem Durchlaufen der Dokument Elemente zu beginnen. NULL, wenn das Dokument keine Elemente enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Übergeben Sie den Wert, `GetNextItem`der `GetNextClientItem`an, `GetNextServerItem`oder zurückgegeben wird.
+Übergeben Sie den zurückgegebenen Wert an `GetNextItem`, `GetNextClientItem`oder `GetNextServerItem`.
 
 ##  <a name="hasblankitems"></a>COleDocument:: hasblankitems
 
@@ -353,7 +353,7 @@ BOOL HasBlankItems() const;
 
 Ein Wert ungleich 0 (null), wenn das Dokument leere Elemente enthält. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein leeres Element ist ein Element, dessen Rechteck leer ist.
 
@@ -365,9 +365,9 @@ Zeigt das Dialogfeld OLE-Änderungs Symbol an und ändert das Symbol, das das ak
 afx_msg void OnEditChangeIcon();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnEditChangeIcon`erstellt und öffnet ein `COleChangeIconDialog` Dialogfeld zum Ändern des Symbols.
+`OnEditChangeIcon` erstellt und öffnet das Dialogfeld `COleChangeIconDialog` Symbol ändern.
 
 ##  <a name="oneditconvert"></a>COleDocument:: oneditconvert
 
@@ -377,9 +377,9 @@ Zeigt das Dialogfeld OLE Convert an und konvertiert oder aktiviert das aktuell a
 afx_msg void OnEditConvert();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnEditConvert`erstellt und öffnet ein `COleConvertDialog` Dialogfeld "konvertieren".
+`OnEditConvert` erstellt und öffnet das Dialogfeld `COleConvertDialog` konvertieren.
 
 Ein Beispiel für die Konvertierung ist das Konvertieren eines Microsoft Word-Dokuments in ein WordPad-Dokument.
 
@@ -391,9 +391,9 @@ Zeigt das Dialogfeld OLE-Bearbeitung/-Links an.
 afx_msg void OnEditLinks();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnEditLinks`erstellt und öffnet ein `COleLinksDialog` Dialogfeld mit Links, in dem der Benutzer die verknüpften Objekte ändern kann.
+`OnEditLinks` erstellt und öffnet ein Dialogfeld `COleLinksDialog` Links, das es dem Benutzer ermöglicht, die verknüpften Objekte zu ändern.
 
 ##  <a name="onfilesendmail"></a>COleDocument:: OnFileSendMail
 
@@ -403,11 +403,11 @@ Sendet eine Nachricht über den residenten Mailhost (sofern vorhanden) mit dem D
 afx_msg void OnFileSendMail();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnFileSendMail`Ruft `OnSaveDocument` auf, um unbenannte und geänderte Dokumente in einer temporären Datei zu serialisieren (speichern), die dann per elektronischer e-Mail gesendet wird. Wenn das Dokument nicht geändert wurde, wird keine temporäre Datei benötigt. das Original wird gesendet. `OnFileSendMail`lädt Datei "Mapi32. DLL, wenn Sie nicht bereits geladen wurde.
+`OnFileSendMail` wird `OnSaveDocument` aufgerufen, um unbenannte und geänderte Dokumente in eine temporäre Datei zu serialisieren (speichern), die dann per elektronischer e-Mail gesendet wird. Wenn das Dokument nicht geändert wurde, wird keine temporäre Datei benötigt. das Original wird gesendet. `OnFileSendMail` lädt Datei "Mapi32. DLL, wenn Sie nicht bereits geladen wurde.
 
-Anders als bei der `OnFileSendMail` Implementierung `CDocument`von für verarbeitet diese Funktion Verbund Dateien ordnungsgemäß.
+Anders als bei der Implementierung von `OnFileSendMail` für `CDocument`verarbeitet diese Funktion Verbund Dateien ordnungsgemäß.
 
 Weitere Informationen finden Sie in den [MAPI-Themen](../../mfc/mapi.md) und [in der MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md) -Artikeln.
 
@@ -421,10 +421,10 @@ virtual void OnShowViews(BOOL bVisible);
 
 ### <a name="parameters"></a>Parameter
 
-*bVisible*<br/>
+*bvisible*<br/>
 Gibt an, ob das Dokument sichtbar oder unsichtbar geworden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standardversion dieser Funktion führt keine Aktion aus. Überschreiben Sie diese, wenn Ihre Anwendung eine besondere Verarbeitung durchführen muss, wenn sich die Sichtbarkeit des Dokuments ändert.
 
@@ -439,11 +439,11 @@ afx_msg void OnUpdateEditChangeIcon(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf eine `CCmdUI` -Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion `CCmdUI` der-Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
+Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnUpdateEditChangeIcon`Aktualisiert die Benutzeroberfläche des Befehls, abhängig davon, ob ein gültiges Symbol im Dokument vorhanden ist oder nicht. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
+`OnUpdateEditChangeIcon` aktualisiert die Benutzeroberfläche des Befehls, je nachdem, ob ein gültiges Symbol im Dokument vorhanden ist. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
 ##  <a name="onupdateeditlinksmenu"></a>COleDocument:: onupdateeditlinksmenu
 
@@ -456,11 +456,11 @@ afx_msg void OnUpdateEditLinksMenu(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf eine `CCmdUI` -Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion `CCmdUI` der-Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
+Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Beginnend mit dem ersten OLE-Element im Dokument, `OnUpdateEditLinksMenu` greift auf jedes Element zu, testet, ob das Element ein Link ist, und aktiviert, wenn es sich um einen Link handelt, den Link-Befehl. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
+Beginnend mit dem ersten OLE-Element im Dokument `OnUpdateEditLinksMenu` auf jedes Element zugreift, testet, ob das Element ein Link ist, und aktiviert, wenn es sich um einen Link handelt, den Link-Befehl. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
 ##  <a name="onupdateobjectverbmenu"></a>COleDocument:: onupdateobjectverbmenu
 
@@ -473,11 +473,11 @@ afx_msg void OnUpdateObjectVerbMenu(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf eine `CCmdUI` -Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion `CCmdUI` der-Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
+Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnUpdateObjectVerbMenu`Aktualisiert die Benutzeroberfläche des *objectName* -Befehls, abhängig davon, ob ein gültiges Objekt im Dokument vorhanden ist oder nicht. Wenn ein Objekt vorhanden ist, wird der *objectName* -Befehl im Menü "Bearbeiten" aktiviert. Wenn dieser Menübefehl ausgewählt ist, wird das Untermenü Verb angezeigt. Das Untermenü Verb enthält alle Verb Befehle, die für das Objekt verfügbar sind, wie z. b. "Bearbeiten", "Eigenschaften" usw. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
+`OnUpdateObjectVerbMenu` aktualisiert die Benutzeroberfläche des *objectName* -Befehls, je nachdem, ob im Dokument ein gültiges Objekt vorhanden ist. Wenn ein Objekt vorhanden ist, wird der *objectName* -Befehl im Menü "Bearbeiten" aktiviert. Wenn dieser Menübefehl ausgewählt ist, wird das Untermenü Verb angezeigt. Das Untermenü Verb enthält alle Verb Befehle, die für das Objekt verfügbar sind, wie z. b. "Bearbeiten", "Eigenschaften" usw. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
 ##  <a name="onupdatepastelinkmenu"></a>COleDocument:: onupdatepstelinkmenu
 
@@ -490,9 +490,9 @@ afx_msg void OnUpdatePasteLinkMenu(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf eine `CCmdUI` -Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion `CCmdUI` der-Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
+Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Befehl speziellen Menübefehl Einfügen ist aktiviert oder deaktiviert, je nachdem, ob das Element in das Dokument eingefügt werden kann oder nicht.
 
@@ -507,9 +507,9 @@ afx_msg void OnUpdatePasteMenu(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf eine `CCmdUI` -Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion `CCmdUI` der-Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
+Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Je nachdem, ob das Element in das Dokument eingefügt werden kann, werden der Menübefehl und die Schaltfläche "Einfügen" aktiviert oder deaktiviert.
 
@@ -523,12 +523,12 @@ virtual void RemoveItem(CDocItem* pItem);
 
 ### <a name="parameters"></a>Parameter
 
-*pItem*<br/>
+*pitem*<br/>
 Zeiger auf das zu entfernende Dokument Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie müssen diese Funktion in der Regel nicht explizit aufzurufen. Sie wird von den de-dektoren `COleClientItem` für `COleServerItem`und aufgerufen.
+Sie müssen diese Funktion in der Regel nicht explizit aufzurufen. Sie wird von den de-dektoren für `COleClientItem` und `COleServerItem`aufgerufen.
 
 ##  <a name="updatemodifiedflag"></a>COleDocument:: updatemodifiedflag
 
@@ -538,11 +538,11 @@ Diese Funktion wird aufgerufen, um das Dokument als geändert zu markieren, wenn
 virtual void UpdateModifiedFlag();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dadurch kann das Framework den Benutzer auffordern, das Dokument vor dem Schließen zu speichern, auch wenn die nativen Daten im Dokument nicht geändert wurden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel Container](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel MFCBIND](../../overview/visual-cpp-samples.md)<br/>

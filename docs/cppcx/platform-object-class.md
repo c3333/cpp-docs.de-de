@@ -13,15 +13,15 @@ helpviewer_keywords:
 - Object class
 ms.assetid: 709e84a8-0bff-471b-bc14-63e424080b5a
 ms.openlocfilehash: 77313f8c4dcc87fa9de852afe2d60e614f8fc3a3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62183208"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865742"
 ---
 # <a name="platformobject-class"></a>Platform::Object-Klasse
 
-Stellt gemeinsames Verhalten für Verweisklassen und referenzstrukturen in Windows-Runtime-apps bereit. Alle Verweisklassen- und Referenzstruktur-Instanzen sind implizit konvertierbar in Platform::Object^ und können seine virtuelle ToString-Methode überschreiben.
+Stellt ein häufiges Verhalten für Verweis Klassen und Verweis Strukturen in Windows-Runtime-apps bereit. Alle Verweisklassen- und Referenzstruktur-Instanzen sind implizit konvertierbar in Platform::Object^ und können seine virtuelle ToString-Methode überschreiben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,21 +29,21 @@ Stellt gemeinsames Verhalten für Verweisklassen und referenzstrukturen in Windo
 public ref class Object : Object
 ```
 
-### <a name="members"></a>Member
+### <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Object::Object](#ctor)|Initialisiert eine neue Instanz der Objektklasse.|
+|[Object:: Object](#ctor)|Initialisiert eine neue Instanz der Objektklasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Object::Equals](#equals)|Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.|
-|[Object::GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
-|[Object::ReferenceEquals](#referenceequals)|Stellt fest, ob die angegebenen Objekt-Instanzen dieselbe Instanz sind.|
+|[Object:: ist Gleichheits](#equals)|Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.|
+|[Object:: GetHashCode](#gethashcode)|Gibt den Hashcode für diese Instanz zurück.|
+|[Object:: referenceist](#referenceequals)|Stellt fest, ob die angegebenen Objekt-Instanzen dieselbe Instanz sind.|
 |[ToString](#tostring)|Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt. Kann überschrieben werden.|
 |[GetType](#gettype)|Ruft einen [Platform::Type](../cppcx/platform-type-class.md) ab, der die aktuelle Instanz beschreibt.|
 
@@ -53,15 +53,15 @@ public ref class Object : Object
 
 `Object`
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** vccorlib.h
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
-## <a name="equals"></a> Object:: Equals-Methode
+## <a name="equals"></a>Object:: Gleichheits Methode
 
-Bestimmt, ob das angegebene Objekt mit dem aktuellen Objekt identisch ist.
+Bestimmt, ob das angegebene Objekt gleich dem aktuellen Objekt ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -78,9 +78,9 @@ Das zu vergleichende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die Objekte gleich, andernfalls sind **"false"**.
+**true** , wenn die Objekte gleich sind, andernfalls **false**.
 
-## <a name="gethashcode"></a>  Object:: GetHashCode-Methode
+## <a name="gethashcode"></a>Object:: GetHashCode-Methode
 
 Gibt den `IUnknown`*-Identitätswert für diese Instanz zurück, wenn es sich um ein COM-Objekt handelt, bzw. einen berechneten Hashwert, wenn es kein COM-Objekt ist.
 
@@ -94,13 +94,13 @@ public:int GetHashCode();
 
 Ein numerischer Wert, der das Objekt eindeutig identifiziert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können GetHashCode zum Erstellen von Schlüsseln für Objekte in Zuordnungen verwenden. Sie können Hashcodes mit vergleichen [Object:: Equals](#equals). Wenn der Codepfad äußerst wichtig ist und `GetHashCode` sowie `Equals` nicht schnell genug sind, können Sie auf die zugrunde liegende COM-Ebene herunter wechseln und systemeigene `IUnknown`-Zeigervergleiche ausführen.
+Sie können GetHashCode zum Erstellen von Schlüsseln für Objekte in Zuordnungen verwenden. Sie können Hashcodes mithilfe von [Object:: gleich](#equals)vergleichen. Wenn der Codepfad äußerst wichtig ist und `GetHashCode` sowie `Equals` nicht schnell genug sind, können Sie auf die zugrunde liegende COM-Ebene herunter wechseln und systemeigene `IUnknown`-Zeigervergleiche ausführen.
 
-## <a name="gettype"></a>  Object:: GetType-Methode
+## <a name="gettype"></a>Object:: GetType-Methode
 
-Gibt eine [Platform:: Type](../cppcx/platform-type-class.md) -Objekt, das den Laufzeittyp eines Objekts beschreibt.
+Gibt ein [Platform:: Type](../cppcx/platform-type-class.md) -Objekt zurück, das den Lauf Zeittyp eines Objekts beschreibt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -110,21 +110,21 @@ Object::GetType();
 
 ### <a name="property-valuereturn-value"></a>Eigenschaftswert/Rückgabewert
 
-Ein [Platform:: Type](../cppcx/platform-type-class.md) -Objekt, das den Laufzeittyp des Objekts beschreibt.
+Ein [Platform:: Type](../cppcx/platform-type-class.md) -Objekt, das den Lauf Zeittyp des Objekts beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die statische [Type:: GetTypeCode](../cppcx/platform-type-class.md#gettypecode) kann zum Abrufen einer [Platform:: TypeCode-Enumeration](../cppcx/platform-typecode-enumeration.md) -Wert, der den aktuellen Typ darstellt. Dies ist besonders für integrierte Typen hilfreich. Der Typencode für eine Verweisklasse außer [Platform:: String](../cppcx/platform-string-class.md) ist Objekt (1).
+Der statische [Typ:: gettypep](../cppcx/platform-type-class.md#gettypecode) kann verwendet werden, um einen [Platform:: TypeCode-Enumerationswert](../cppcx/platform-typecode-enumeration.md) zu erhalten, der den aktuellen Typ darstellt. Dies ist besonders für integrierte Typen hilfreich. Der Typcode für eine beliebige Verweis Klasse neben [Platform:: String](../cppcx/platform-string-class.md) ist Object (1).
 
-Die [TypeName](/uwp/api/windows.ui.xaml.interop.typename) Klasse wird in den Windows-APIs als sprachenunabhängige Methode für die Übergabe von Typinformationen zwischen Windows-Komponenten und-Apps verwendet. Der Buchstabe T[Platform:: Type Class](../cppcx/platform-type-class.md) verfügt über Operatoren zum Konvertieren zwischen `Type` und `TypeName`.
+Die [Windows:: UI:: XAML:: Interop:: tykame](/uwp/api/windows.ui.xaml.interop.typename) -Klasse wird in den Windows-APIs als sprachunabhängige Methode für die Übergabe von Typinformationen zwischen Windows-Komponenten und-Apps verwendet. Die T[Platform:: Type-Klasse](../cppcx/platform-type-class.md) verfügt über Operatoren zum Wechseln zwischen `Type` und `TypeName`.
 
-Verwenden der [Typeid](../extensions/typeid-cpp-component-extensions.md) Operator, um zurückzugeben eine `Platform::Type` Objekt für einen Klassennamen, zum Beispiel beim Navigieren zwischen XAML-Seiten:
+Verwenden Sie den [typeid](../extensions/typeid-cpp-component-extensions.md) -Operator, um ein `Platform::Type` Objekt für einen Klassennamen zurückzugeben, z. b. beim Navigieren zwischen XAML-Seiten:
 
 ```
 rootFrame->Navigate(TypeName(MainPage::typeid), e->Arguments);
 ```
 
-## <a name="ctor"></a>  Object:: Object-Konstruktor
+## <a name="ctor"></a>Object:: Object-Konstruktor
 
 Initialisiert eine neue Instanz der Objektklasse.
 
@@ -134,7 +134,7 @@ Initialisiert eine neue Instanz der Objektklasse.
 public:Object();
 ```
 
-## <a name="referenceequals"></a>  Object:: ReferenceEquals-Methode
+## <a name="referenceequals"></a>Object:: referencegleichsmethode
 
 Stellt fest, ob die angegebenen Objekt-Instanzen dieselbe Instanz sind.
 
@@ -147,16 +147,16 @@ public:static bool ReferenceEquals(  Object^ obj1,   Object^ obj2);
 ### <a name="parameters"></a>Parameter
 
 *obj1*<br/>
-Das erste zu vergleichende Objekt.
+Das erste der zu vergleichenden Objekte.
 
 *obj2*<br/>
-Das zweite zu vergleichende Objekt.
+Das zweite der zu vergleichenden Objekte.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die beiden Objekte gleich sind, andernfalls **"false"**.
+**true** , wenn die beiden Objekte identisch sind. andernfalls **false**.
 
-## <a name="tostring"></a>  Object:: ToString-Methode (C++ / CX)
+## <a name="tostring"></a>Object:: destring-MethodeC++(/CX)
 
 Gibt eine Zeichenfolge zurück, die das aktuelle Objekt darstellt.
 
@@ -183,8 +183,8 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Plattform-Namespace](platform-namespace-c-cx.md)<br/>
+[Platform-Namespace](platform-namespace-c-cx.md)<br/>
 [Platform::Type-Klasse](platform-type-class.md)<br/>
 [Typsystem](type-system-c-cx.md)

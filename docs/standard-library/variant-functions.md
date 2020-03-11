@@ -1,5 +1,5 @@
 ---
-title: '&lt;Variante&gt; Funktionen'
+title: '&lt;Variant-&gt; Funktionen'
 ms.date: 04/04/2019
 f1_keywords:
 - variant/std::get
@@ -7,15 +7,15 @@ f1_keywords:
 - variant/std::holds_alternative
 - variant/std::visit
 ms.openlocfilehash: d558eb086e076ba22722080b0c19f3d5733136d2
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68268382"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865755"
 ---
-# <a name="ltvariantgt-functions"></a>&lt;Variante&gt; Funktionen
+# <a name="ltvariantgt-functions"></a>&lt;Variant-&gt; Funktionen
 
-## <a name="get"></a> Erhalten
+## <a name="get"></a>Erhalten
 
 Ruft die Variante eines Objekts ab.
 
@@ -38,7 +38,7 @@ template <class T, class... Types>
     constexpr const T&& get(const variant<Types...>&&);
 ```
 
-## <a name="get_if"></a> get_if
+## <a name="get_if"></a>get_if
 
 Ruft die Variante eines Objekts ab, falls vorhanden.
 
@@ -53,23 +53,23 @@ template <class T, class... Types>
     constexpr add_pointer_t<const T> get_if(const variant<Types...>*) noexcept;
 ```
 
-## <a name="holds_alternative"></a> holds_alternative
+## <a name="holds_alternative"></a>holds_alternative
 
-Zurückgeben **"true"** Wenn eine Variante vorhanden ist.
+Gibt **true** zurück, wenn eine Variante vorhanden ist.
 
 ```cpp
 template <class T, class... Types>
     constexpr bool holds_alternative(const variant<Types...>&) noexcept;
 ```
 
-## <a name="swap"></a> Swap
+## <a name="swap"></a>Wechsel
 
 ```cpp
 template <class... Types>
     void swap(variant<Types...>&, variant<Types...>&) noexcept(see below);
 ```
 
-## <a name="variant_npos"></a> variant_npos
+## <a name="variant_npos"></a>variant_npos
 
 ```cpp
 namespace std {
@@ -77,7 +77,7 @@ namespace std {
 }
 ```
 
-## <a name="visit"></a> Besuch
+## <a name="visit"></a>Sie
 
 Wechselt zur nächsten **Variante**.
 

@@ -85,15 +85,15 @@ helpviewer_keywords:
 - std::experimental::filesystem::temp_directory_path
 - std::experimental::filesystem::u8path
 ms.openlocfilehash: 1ab57a6fc13a03d02963f3d7ecc80f63decb9487
-ms.sourcegitcommit: 6ddfb8be5e5923a4d90a2c0f93f76a27ce7ac299
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898710"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875823"
 ---
 # <a name="ltfilesystemgt-functions"></a>&lt;filesystem&gt;-Funktionen
 
-Diese kostenlosen Funktionen im [\<File System >](../standard-library/filesystem.md) -Header führen Änderungs-und Abfrage Vorgänge für Pfade, Dateien, Symlinks, Verzeichnisse und Volumes aus. Weitere Informationen und Codebeispiele finden Sie unter [File System Navigation (C++) (Dateisystemnavigation (C++))](../standard-library/file-system-navigation.md).
+Diese kostenlosen Funktionen im [\<File System >](../standard-library/filesystem.md) -Header führen Änderungs-und Abfrage Vorgänge für Pfade, Dateien, Symlinks, Verzeichnisse und Volumes aus. Weitere Informationen und Codebeispiele finden Sie unter [Dateisystemnavigation](../standard-library/file-system-navigation.md).
 
 ## <a name="absolute"></a>UT
 
@@ -162,7 +162,7 @@ Die Funktionen bestimmen zunächst die file_status Werte `f` für *from* und `t`
 
 - andernfalls durch Aufrufen von `status`
 
-- Andernfalls wird ein Fehler gemeldet.
+- andernfalls wird ein Fehler gemeldet
 
 Wenn `!exists(f) || equivalent(f, t) || is_other(f) || is_other(t) || is_directory(f)&& is_regular_file(t)`, melden Sie einen Fehler (und führen nichts anderes aus).
 
@@ -184,7 +184,7 @@ Wenn `is_regular_file(f)`, andernfalls:
 
 - Andernfalls `copy_file(from, to` / `from.filename(), opts)`, wenn `is_directory(f)`.
 
-- Andernfalls ist der Wert `copy_file(from, to, opts)`.
+- Andernfalls `copy_file(from, to, opts)`.
 
 Wenn `is_directory(f) && (opts & copy_options::recursive || !opts)`, andernfalls:
 
@@ -288,7 +288,7 @@ void current_path(const path& pval, error_code& ec) noexcept;
 
 Die Funktionen ohne *PVal* -Parameter geben den Pfadnamen für das aktuelle Verzeichnis zurück. Die übrigen Funktionen legen das aktuelle Verzeichnis auf " *PVal*" fest.
 
-## <a name="end"></a>  end
+## <a name="end"></a> end
 
 ```cpp
 directory_iterator& end(const directory_iterator& iter) noexcept;
@@ -306,7 +306,7 @@ bool equivalent(const path& left, const path& right, error_code& ec) noexcept;
 
 Die Funktionen geben nur **dann true** zurück, wenn *left* und *right* dieselbe Dateisystem Entität auswählen.
 
-## <a name="exists"></a>  exists
+## <a name="exists"></a> exists
 
 ```cpp
 bool exists(file_status stat) noexcept;
@@ -549,7 +549,7 @@ void swap(path& left, path& right) noexcept;
 
 Die-Funktion tauscht den Inhalt von *Links* und *Rechts*aus.
 
-## <a name="symlink_status"></a> symlink_status
+## <a name="symlink_status"></a>symlink_status
 
 ```cpp
 file_status symlink_status(const path& pval);

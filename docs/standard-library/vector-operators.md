@@ -17,15 +17,15 @@ helpviewer_keywords:
 - std::operator&lt;= (vector)
 - std::operator== (vector)
 ms.openlocfilehash: f6717add93c489f536bd0c0b0f82b74bbd915985
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68240978"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78876060"
 ---
 # <a name="ltvectorgt-operators"></a>&lt;vector&gt;-Operatoren
 
-## <a name="op_neq"></a> Operator! =
+## <a name="op_neq"></a>Operator! =
 
 Testet, ob das Objekt links vom Operator ungleich dem Objekt rechts vom Operator ist.
 
@@ -35,17 +35,17 @@ bool operator!=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Paare nicht gleich sind; **FALSE**, wenn die Paare gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -86,11 +86,11 @@ bool operator<(const vector<Type, Allocator>& left, const vector<Type, Allocator
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -127,7 +127,7 @@ int main( )
 Vector v1 is less than vector v2.
 ```
 
-## <a name="op_lt_eq"></a> Operator&lt;=
+## <a name="op_lt_eq"></a>Operator&lt;=
 
 Testet, ob das Objekt links vom Operator kleiner oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -137,11 +137,11 @@ bool operator<=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -178,7 +178,7 @@ int main( )
 Vector v1 is less than or equal to vector v2.
 ```
 
-## <a name="op_eq_eq"></a> Operator ==
+## <a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Objekt links vom Operator gleich dem Objekt rechts vom Operator ist.
 
@@ -188,17 +188,17 @@ bool operator==(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn der Vektor links vom Operator gleich dem Vektor rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -239,11 +239,11 @@ bool operator>(const vector<Type, Allocator>& left, const vector<Type, Allocator
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -281,7 +281,7 @@ int main( )
 Vector v1 is greater than vector v2.
 ```
 
-## <a name="op_gt_eq"></a> Operator&gt;=
+## <a name="op_gt_eq"></a>Operator&gt;=
 
 Testet, ob das Objekt links vom Operator größer oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -291,11 +291,11 @@ bool operator>=(const vector<Type, Allocator>& left, const vector<Type, Allocato
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
-Ein Objekt vom Typ `vector`.
+*Linker*\
+Ein Objekt des Typs `vector`.
 
-*Richting*\
-Ein Objekt vom Typ `vector`.
+*Rechte*\
+Ein Objekt des Typs `vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
