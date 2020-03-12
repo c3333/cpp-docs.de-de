@@ -36,11 +36,11 @@ helpviewer_keywords:
 - CAtlServiceModuleT class
 ms.assetid: 8fc753ce-4a50-402b-9b4a-0a4ce5dd496c
 ms.openlocfilehash: 2854d0902700b268383eca094bed35843ea73272
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497737"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78864995"
 ---
 # <a name="catlservicemodulet-class"></a>Klasse von "-Klasse"
 
@@ -68,13 +68,13 @@ Der Ressourcen Bezeichner des Dienstanbieter.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|-Name|Beschreibung|
 |----------|-----------------|
 |[CAtlServiceModuleT::CAtlServiceModuleT](#catlservicemodulet)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|-Name|Beschreibung|
 |----------|-----------------|
 |["-Klasse": Handler](#handler)|Die Handlerroutine für den Dienst.|
 |[CAtlServiceModuleT::InitializeSecurity](#initializesecurity)|Stellt die Standard Sicherheitseinstellungen für den-Dienst bereit.|
@@ -111,7 +111,7 @@ Der Ressourcen Bezeichner des Dienstanbieter.
 
 ## <a name="remarks"></a>Hinweise
 
-`CAtlServiceModuleT`, abgeleitet von [CAtlExeModuleT](../../atl/reference/catlexemodulet-class.md), implementiert ein ATL Service-Modul. `CAtlServiceModuleT`stellt Methoden für die Befehlszeilen Verarbeitung,-Installation,-Registrierung und-Entfernung bereit. Wenn zusätzliche Funktionen erforderlich sind, können diese und andere Methoden überschrieben werden.
+`CAtlServiceModuleT`, abgeleitet von [CAtlExeModuleT](../../atl/reference/catlexemodulet-class.md), implementiert ein ATL Service-Modul. `CAtlServiceModuleT` stellt Methoden für die Befehlszeilen Verarbeitung,-Installation,-Registrierung und-Entfernung bereit. Wenn zusätzliche Funktionen erforderlich sind, können diese und andere Methoden überschrieben werden.
 
 Diese Klasse ersetzt die veraltete [CComModule-Klasse](../../atl/reference/ccommodule-class.md) , die in früheren Versionen von ATL verwendet wurde. Weitere Informationen finden Sie unter [ATL-Modul Klassen](../../atl/atl-module-classes.md) .
 
@@ -158,7 +158,7 @@ Ein Schalter, der den handlervorgang definiert. Weitere Informationen finden Sie
 
 ### <a name="remarks"></a>Hinweise
 
-Dies ist der Code, der vom Dienststeuerungs-Manager (Service Control Manager, SCM) aufgerufen wird, um den Status des diensdienstanbieter abzurufen und Anweisungen wie z. b Der SCM übergibt einen Vorgangs Code, der unten dargestellt ist `Handler` , an, um anzugeben, was der Dienst tun soll.
+Dies ist der Code, der vom Dienststeuerungs-Manager (Service Control Manager, SCM) aufgerufen wird, um den Status des diensdienstanbieter abzurufen und Anweisungen wie z. b Der SCM übergibt einen Vorgangs Code, der unten dargestellt ist, an `Handler`, um anzugeben, was der Dienst tun soll.
 
 |Vorgangs Code|Bedeutung|
 |--------------------|-------------|
@@ -170,7 +170,7 @@ Dies ist der Code, der vom Dienststeuerungs-Manager (Service Control Manager, SC
 
 Wenn der Vorgangscode nicht erkannt wird, wird die Methode [CAtlServiceModuleT::OnUnknownRequest](#onunknownrequest) aufgerufen.
 
-Ein von ATL generierter Standard Dienst verarbeitet nur die Anweisung zum Abbrechen. Wenn der SCM die Anweisung zum Abbrechen übergibt, teilt der Dienst dem SCM mit, dass das Programm beendet werden soll. Der Dienst ruft `PostThreadMessage` dann auf, um eine beendenmeldung an sich selbst zu senden. Dadurch wird die Nachrichten Schleife beendet, und der Dienst wird letztendlich geschlossen.
+Ein von ATL generierter Standard Dienst verarbeitet nur die Anweisung zum Abbrechen. Wenn der SCM die Anweisung zum Abbrechen übergibt, teilt der Dienst dem SCM mit, dass das Programm beendet werden soll. Der Dienst ruft dann `PostThreadMessage` auf, um eine Nachricht zum Beenden an sich selbst zu senden. Dadurch wird die Nachrichten Schleife beendet, und der Dienst wird letztendlich geschlossen.
 
 ##  <a name="initializesecurity"></a>"Gatlservicemodulet:: InitializeSecurity"
 
@@ -182,13 +182,13 @@ HRESULT InitializeSecurity() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Hinweise
 
-Jede Klasse, die von `CAtlServiceModuleT` abgeleitet wird, muss diese Methode in der abgeleiteten Klasse implementieren.
+Jede Klasse, die von `CAtlServiceModuleT` abgeleitet ist, muss diese Methode in der abgeleiteten Klasse implementieren.
 
-Verwenden Sie die Authentifizierung auf `CoInitializeSecurity`Pkt-Ebene, die Identitätswechsel Ebene von RPC_C_IMP_LEVEL_IDENTIFY und eine entsprechende Sicherheits Beschreibung, die nicht NULL ist, im-Aufrufe von.
+Verwenden Sie die Authentifizierung auf Pkt-Ebene, die Identitätswechsel Ebene RPC_C_IMP_LEVEL_IDENTIFY und eine entsprechende Sicherheits Beschreibung, die nicht NULL ist, im `CoInitializeSecurity`aufgerufen wird.
 
 Bei von Assistenten generierten nicht attributierten Dienstprojekten ist dies in
 
@@ -398,7 +398,7 @@ Dieser Parameter wird [:P](../../atl/reference/catlexemodulet-class.md#premessag
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -419,7 +419,7 @@ Muss "true" sein, um als Dienst registriert werden zu können.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ##  <a name="run"></a>"": Run
 
@@ -436,7 +436,7 @@ Gibt an, wie das Fenster angezeigt werden soll. Dieser Parameter kann einer der 
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -460,9 +460,9 @@ Das argv-Argument.
 
 ### <a name="remarks"></a>Hinweise
 
-Der Dienststeuerungs-Manager (SCM) `ServiceMain` Ruft auf, wenn Sie die Anwendung Dienste in der Systemsteuerung öffnen, wählen Sie den Dienst aus, und klicken Sie auf starten.
+Wenn Sie in der Systemsteuerung die Dienst Anwendung öffnen, werden vom Dienststeuerungs-Manager (Service Control Manager, SCM) `ServiceMain` aufgerufen, der Dienst ausgewählt und auf Start.
 
-Nachdem der SCM aufgerufen `ServiceMain`hat, muss ein Dienst dem SCM eine Handlerfunktion einräumen. Mit dieser Funktion kann der SCM den Dienststatus abrufen und bestimmte Anweisungen (z. b. anhalten oder beenden) übergeben. Anschließend wird [CAtlServiceModuleT::Run](#run) aufgerufen, um die Hauptarbeit des Dienstanbieter auszuführen. `Run`wird weiter ausgeführt, bis der Dienst beendet wird.
+Nachdem der SCM `ServiceMain`aufgerufen hat, muss ein Dienst dem SCM eine Handlerfunktion einräumen. Mit dieser Funktion kann der SCM den Dienststatus abrufen und bestimmte Anweisungen (z. b. anhalten oder beenden) übergeben. Anschließend wird [CAtlServiceModuleT::Run](#run) aufgerufen, um die Hauptarbeit des Dienstanbieter auszuführen. `Run` wird weiter ausgeführt, bis der Dienst beendet wird.
 
 ##  <a name="setservicestatus"></a>"Pelservicemodulet:: SetServiceStatus"
 
@@ -496,11 +496,11 @@ Gibt an, wie das Fenster angezeigt werden soll. Dieser Parameter kann einer der 
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Methode [CAtlServiceModuleT::WinMain](#winmain) verarbeitet jeweils die Registrierung und Installation sowie Aufgaben, die bei der Entfernung von Registrierungseinträgen und der Deinstallation des Moduls involviert sind. Wenn der Dienst ausgeführt wird, `WinMain` ruft `Start`auf.
+Die Methode [CAtlServiceModuleT::WinMain](#winmain) verarbeitet jeweils die Registrierung und Installation sowie Aufgaben, die bei der Entfernung von Registrierungseinträgen und der Deinstallation des Moduls involviert sind. Wenn der Dienst ausgeführt wird, ruft `WinMain` `Start`auf.
 
 ##  <a name="uninstall"></a>"": Deinstallieren von "".
 
@@ -540,7 +540,7 @@ HRESULT UnregisterAppId() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ##  <a name="winmain"></a>"": WinMain
 
