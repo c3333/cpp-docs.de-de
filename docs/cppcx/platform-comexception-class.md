@@ -4,17 +4,17 @@ ms.date: 12/30/2016
 ms.topic: reference
 f1_keywords:
 - VCCORLIB/Platform::COMException
-- VCCORLIB/Platform::Exception::HResult
-- VCCORLIB/Platform::Exception::Message
+- VCCORLIB/Platform::COMException::HResult
+- VCCORLIB/Platform::COMException::Message
 helpviewer_keywords:
 - Platform::COMException Class
 ms.assetid: 44fda4e5-574f-4d12-ab5f-4ff3f277448d
-ms.openlocfilehash: eb6f3e0e4860687d0d47294e11b7741294abac20
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 1d0d36ec16303d6bdaa5f2344cd5d48fba03c8bf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69500547"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444293"
 ---
 # <a name="platformcomexception-class"></a>Platform::COMException-Klasse
 
@@ -26,7 +26,7 @@ Stellt COM-Fehler dar, die beim Ausführen einer Anwendung auftreten. COMExcepti
 public ref class COMException : Exception,    IException,    IPrintable,    IEquatable
 ```
 
-### <a name="members"></a>Member
+### <a name="members"></a>Members
 
 Die COMException-Klasse erbt von der Object-Klasse und den Schnittstellen IException, IPrintable und IEquatable.
 
@@ -34,7 +34,7 @@ COMException verfügt auch über die folgenden Membertypen.
 
 **Konstruktoren**
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
 |[COMException](#ctor)|Initialisiert eine neue Instanz der COMException-Klasse.|
 
@@ -46,16 +46,16 @@ Die COMException-Klasse erbt die Methoden Equals(), Finalize(), GetHashCode(), G
 
 Die COMException-Klasse verfügt auch über die folgenden Eigenschaften.
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
 |[Exception:: HRESULT](#hresult)|Das HRESULT, das der Ausnahme entspricht.|
-|[Exception::Message](#message)|Meldung, in der die Ausnahme beschrieben wird.|
+|[Exception:: Message](#message)|Meldung, in der die Ausnahme beschrieben wird.|
 
 ## <a name="derived-exceptions"></a>Abgeleitete Ausnahmen
 
 Die folgenden vordefinierten Ausnahmen werden von COMException abgeleitet. Sie unterscheiden sich von COMException nur im Namen, im Namen des Konstruktors und dem zugrunde liegenden HRESULT-Wert.
 
-|Name|Zugrunde liegendes HRESULT|Beschreibung|
+|Name|Zugrunde liegendes HRESULT|BESCHREIBUNG|
 |----------|------------------------|-----------------|
 |COMException|*Benutzerdefiniertes HRESULT*|Wird ausgelöst, wenn ein COM-Methodenaufruf ein unbekanntes HRESULT zurückgibt.|
 |AccessDeniedException|E_ACCESSDENIED|Wird ausgelöst, wenn der Zugriff auf eine Ressource oder eine Funktion verweigert wird.|
@@ -71,7 +71,7 @@ Die folgenden vordefinierten Ausnahmen werden von COMException abgeleitet. Sie u
 |OutOfBoundsException|E_BOUNDS|Wird ausgelöst, wenn ein Vorgang versucht, auf Daten außerhalb des gültigen Bereichs zuzugreifen.|
 |OutOfMemoryException|E_OUTOFMEMORY|Wird ausgelöst, wenn nicht genügend Arbeitsspeicher vorhanden ist, um den Vorgang abzuschließen.|
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 **Mindestens unterstützter Client:** Windows 8
 
@@ -111,7 +111,7 @@ public:
 
 Ein HRESULT-Wert, der den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Interpretation des HRESULT-Werts finden Sie unter [Struktur von com-Fehler Codes](/windows/win32/com/structure-of-com-error-codes).
 
@@ -129,6 +129,6 @@ public:property String^ Message {    String^ get();}
 
 Eine Beschreibung der Ausnahme.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattformnamespace](../cppcx/platform-namespace-c-cx.md)

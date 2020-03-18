@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operator&lt;= (map)
 - std::operator== (map)
 ms.openlocfilehash: deb442d0ba1fbd180fdb41b66de73df92bee7fc9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883959"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425520"
 ---
 # <a name="ltmapgt-operators"></a>&lt;map&gt;-Operatoren
 
@@ -47,7 +47,7 @@ Ein Objekt des Typs `map`.
 
 **TRUE**, wenn die Zuordnungen ungleich sind; **FALSE**, wenn diese gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zuordnungsobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Zuordnungen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -112,7 +112,7 @@ Ein Objekt des Typs `map`.
 
 **TRUE**, wenn die Zuordnung links vom Operator strikt kleiner als die Zuordnung rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zuordnungsobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -245,7 +245,7 @@ Ein Objekt des Typs `map`.
 
 **TRUE**, wenn die Zuordnung links vom Operator gleich der Zuordnung rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zuordnungsobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Zuordnungen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -310,7 +310,7 @@ Ein Objekt des Typs `map`.
 
 **TRUE**, wenn die map links vom Operator größer als die map rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zuordnungsobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -442,7 +442,7 @@ Ein Objekt des Typs `multimap`.
 
 **TRUE**, wenn die Mehrfachzuordnungen nicht gleich sind; **FALSE**, wenn die Mehrwachzuordnungen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Mehrfachzuordnungen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -507,7 +507,7 @@ Ein Objekt des Typs `multimap`.
 
 **TRUE**, wenn die Mehrfachzuordnung links vom Operator strikt kleiner als die Mehrfachzuordnung rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -640,7 +640,7 @@ Ein Objekt des Typs `multimap`.
 
 **TRUE**, wenn die Mehrfachzuordnung links vom Operator der Mehrfachzuordnung rechts vom Operator entspricht; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Mehrfachzuordnungen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -705,7 +705,7 @@ Ein Objekt des Typs `multimap`.
 
 **TRUE**, wenn die Mehrfachzuordnung links vom Operator größer als die Mehrfachzuordnung rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 

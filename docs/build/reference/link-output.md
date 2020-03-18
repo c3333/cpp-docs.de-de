@@ -1,8 +1,6 @@
 ---
 title: LINK-Ausgabe
 ms.date: 11/04/2016
-f1_keywords:
-- link
 helpviewer_keywords:
 - mapfiles [C++]
 - ILK files
@@ -17,40 +15,40 @@ helpviewer_keywords:
 - DLLs [C++], as linker output
 - LINK tool [C++], mapfile
 ms.assetid: a98b557c-1947-447a-be1f-616fb45a9580
-ms.openlocfilehash: 183f83501d930188032ec4209623ef7cf1a30efa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8323723f2049d3db469e874c91b99f4cfb561c72
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62269175"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439314"
 ---
 # <a name="link-output"></a>LINK-Ausgabe
 
-Link-Ausgabe enthält die .exe-Dateien, DLLs, Nachrichten und Zuordnungsdateien verwendet werden.
+Die Link Ausgabe enthält exe-Dateien, DLLs, Mapfiles und Nachrichten.
 
-##  <a name="_core_output_files"></a> Ausgabedateien
+##  <a name="_core_output_files"></a>Ausgabedateien
 
-Die Standard-Ausgabedatei von LINK ist eine .exe-Datei. Wenn die [/DLL](dll-build-a-dll.md) angegeben wird, eine DLL-Datei verknüpfen von builds. Sie können steuern, Name der Ausgabedatei mit der [Ausgabedatei (/ OUT)](out-output-file-name.md) Option.
+Die Standardausgabe Datei von Link ist eine exe-Datei. Wenn die [/dll](dll-build-a-dll.md) -Option angegeben ist, erstellt Link eine DLL-Datei. Sie können den Namen der Ausgabedatei mit der Option [Name der Ausgabedatei (/Out)](out-output-file-name.md) steuern.
 
-Im inkrementellen Modus erstellt LINK eine ILK-Datei zum Speichern von Statusinformationen für später inkrementelle Builds des Programms an. Weitere Informationen über die ILK-Dateien, finden Sie unter [ILK-Dateien](dot-ilk-files-as-linker-input.md). Weitere Informationen zu inkrementellen verknüpfen, finden Sie unter den [inkrementell verknüpfen (/ INCREMENTAL)](incremental-link-incrementally.md) Option.
+Im inkrementellen Modus erstellt Link eine ILK-Datei, die Statusinformationen für spätere inkrementelle Builds des Programms enthält. Weitere Informationen zu. ILK-Dateien finden Sie unter [. ILK-Dateien](dot-ilk-files-as-linker-input.md). Weitere Informationen zum inkrementellen Verknüpfen finden Sie unter der [Link inkrementelle Option (/incremental)](incremental-link-incrementally.md) .
 
-Wenn der LINK erstellt ein Programm, das enthält exportiert (in der Regel eine DLL), wird auch eine LIB-Datei erstellt, sofern eine .exp-Datei in den Build verwendet wurde. Sie können den Dateinamen der Importbibliothek mit steuern die [/IMPLIB](implib-name-import-library.md) Option.
+Wenn Link ein Programm erstellt, das Exporte (in der Regel eine DLL) enthält, wird auch eine LIB-Datei erstellt, es sei denn, eine EXP-Datei wurde im Build verwendet. Sie können den Dateinamen der Import Bibliothek mit der [/IMPLIB](implib-name-import-library.md) -Option steuern.
 
-Wenn die [Zuordnungsdatei generieren (/ MAP)](map-generate-mapfile.md) angegeben wurde, LINK erstellt eine Zuordnungsdatei.
+Wenn die Option [Mapfile generieren (/Map)](map-generate-mapfile.md) angegeben ist, erstellt Link eine Mapfile.
 
-Wenn die [Debuginfo generieren (/ DEBUG)](debug-generate-debug-info.md) angegeben wurde, LINK erstellt eine PDB-Datei, die Debuginformationen für das Programm enthält.
+Wenn die Option zum [Generieren von Debuginformationen (/Debug)](debug-generate-debug-info.md) angegeben ist, erstellt Link eine PDB, die Debuginformationen für das Programm enthält.
 
-##  <a name="_core_other_output"></a> Andere Ausgabe
+##  <a name="_core_other_output"></a>Andere Ausgabe
 
-Bei der Eingabe `link` ohne weitere Eingaben,-LINK zeigt eine nutzungsanweisung an, die die verfügbaren Optionen zusammengefasst sind.
+Wenn Sie `link` ohne eine andere Befehlszeilen Eingabe eingeben, zeigt Link eine Verwendungs Anweisung an, die die zugehörigen Optionen zusammenfasst.
 
-LINK zeigt eine Meldung Copyright- und Versionsinformationen und Befehlsdatei Eingabe gibt, es sei denn, die [Startbanner unterdrücken (/ NOLOGO)](nologo-suppress-startup-banner-linker.md) Option wird verwendet.
+Link zeigt eine Copyright-und Versions Meldung an und gibt Befehlszeilen Eingaben aus, es sei denn, die Option [Start Banner unterdrücken (/nologo)](nologo-suppress-startup-banner-linker.md) wird verwendet.
 
-Sie können die [Meldungen zum Ausgabefortschritt (/ VERBOSE)](verbose-print-progress-messages.md) Option aus, um zusätzliche Details über den Build anzuzeigen.
+Sie können die Option Status [Meldungen drucken (/verbose)](verbose-print-progress-messages.md) verwenden, um weitere Details zum Build anzuzeigen.
 
-LINK gibt Fehler- und warnungsmeldungen Nachrichten in der Form LNK*Nnnn*. Dieser Fehlerpräfix und den Bereich von Zahlen werden auch von LIB, DUMPBIN und EDITBIN verwendet.
+Link gibt Fehler-und Warnmeldungen im Format lnk*nnnn*aus. Dieses Fehler Präfix und der Bereich von Zahlen werden auch von lib, DUMPBIN und EDITBIN verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Linkerreferenz](linking.md)<br/>
 [MSVC-Linkeroptionen](linker-options.md)

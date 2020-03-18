@@ -5,23 +5,22 @@ f1_keywords:
 - VC.Project.VCNMakeTool.ForcedIncludes
 - VC.Project.VCCLCompilerTool.ForcedIncludeFiles
 - VC.Project.VCCLWCECompilerTool.ForcedIncludeFiles
-- /fi
 helpviewer_keywords:
 - FI compiler option [C++]
 - -FI compiler option [C++]
 - /FI compiler option [C++]
 - preprocess header file compiler option [C++]
 ms.assetid: 07e79577-8152-4df9-a64c-aae08c603397
-ms.openlocfilehash: e047ecc5266a898f2c6dc24be3c204f8ddf94386
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6460f75e2cad81bc1dcc540e3c687de5d0dc0d32
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62293055"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439804"
 ---
 # <a name="fi-name-forced-include-file"></a>/FI (Name der expliziten Includedatei)
 
-Weist den Präprozessor zum Verarbeiten der angegebenen Header-Datei.
+Bewirkt, dass der Präprozessor die angegebene Header Datei verarbeitet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,25 +28,25 @@ Weist den Präprozessor zum Verarbeiten der angegebenen Header-Datei.
 /FI[ ]pathname
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option hat dieselbe Wirkung wie die Datei angeben, in doppelte Anführungszeichen in eine `#include` -Direktive in der ersten Zeile von jeder Quelldatei, die in der Befehlszeile oder in einer Befehlsdatei in der CL-Umgebungsvariablen angegeben. Bei Verwendung mehrerer **/Fi** Optionen, die Dateien befinden sich in der Reihenfolge von CL verarbeitet werden.
+Diese Option hat dieselbe Auswirkung wie das Angeben der Datei mit doppelten Anführungszeichen in einer `#include`-Direktive in der ersten Zeile jeder Quelldatei, die in der CL-Umgebungsvariablen oder in einer Befehlsdatei angegeben ist. Wenn Sie mehrere **/fi** -Optionen verwenden, werden die Dateien in der Reihenfolge eingeschlossen, in der Sie von cl verarbeitet werden.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
 1. Klicken Sie auf den Ordner **C/C++** .
 
-1. Klicken Sie auf die **erweitert** Eigenschaftenseite.
+1. Klicken Sie auf die Eigenschaften Seite **erweitert** .
 
-1. Ändern der **Includedatei** Eigenschaft.
+1. Ändern Sie die Eigenschaft **erzwungene Includedatei** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.ForcedIncludeFiles%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausgabedatei (/F) Optionen](output-file-f-options.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>

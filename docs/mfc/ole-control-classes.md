@@ -1,8 +1,6 @@
 ---
 title: OLE-Steuerelementklassen
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.ole
 helpviewer_keywords:
 - ActiveX classes [MFC]
 - custom controls [MFC], classes
@@ -12,45 +10,45 @@ helpviewer_keywords:
 - OLE control classes [MFC]
 - reusable component classes [MFC]
 ms.assetid: 96495ec3-319e-4163-b839-1af0428ed9dd
-ms.openlocfilehash: 86470c3e3e66d6aee2ce532570cea096641d2c1d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 47c28520d592c4bd49ab6cb40edbb2f5ddf59846
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62186087"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447646"
 ---
 # <a name="ole-control-classes"></a>OLE-Steuerelementklassen
 
-Dies sind die primären Klassen, mit denen Sie beim Schreiben von OLE-Steuerelemente. Die `COleControlModule` Klasse in einem Modul der OLE-Steuerelements ist wie die [CWinApp](../mfc/reference/cwinapp-class.md) Klassen in einer Anwendung. Jedes Modul implementiert ein oder mehrere OLE-Steuerelemente ist. Diese Steuerelemente werden durch dargestellt `COleControl` Objekte. Diese Steuerelemente zu kommunizieren, mit ihren Containern unter Verwendung von `CConnectionPoint` Objekte.
+Dies sind die primären Klassen, die Sie beim Schreiben von OLE-Steuerelementen verwenden. Die `COleControlModule`-Klasse in einem OLE-Steuerungs Modul ähnelt der [CWinApp](../mfc/reference/cwinapp-class.md) -Klasse in einer Anwendung. Jedes Modul implementiert ein oder mehrere OLE-Steuerelemente. Diese Steuerelemente werden durch `COleControl`-Objekte dargestellt. Diese Steuerelemente kommunizieren mit ihren Containern mithilfe von `CConnectionPoint`-Objekten.
 
-Die `CPictureHolder` und `CFontHolder` Klassen kapseln COM-Schnittstellen für Grafiken und Schriftarten, während die `COlePropertyPage` und `CPropExchange` -Klassen können Sie die Eigenschaftenseiten und Beständigkeit von Eigenschaften für das Steuerelement zu implementieren.
+Die Klassen `CPictureHolder` und `CFontHolder` Kapseln com-Schnittstellen für Bilder und Schriftarten, während die Klassen `COlePropertyPage` und `CPropExchange` Sie dabei unterstützen, Eigenschaften Seiten und Eigenschafts Persistenz für das Steuerelement zu implementieren.
 
 [COleControlModule](../mfc/reference/colecontrolmodule-class.md)<br/>
-Ersetzt die `CWinApp` Klasse für das OLE-Steuerelement-Modul. Leiten Sie von der `COleControlModule` Klasse, um ein OLE-Steuerelement-Modul-Objekt zu entwickeln. Es bietet Memberfunktionen zum Initialisieren des OLE-Steuerelements-Modul.
+Ersetzt die `CWinApp` Klasse für das OLE-Steuerungs Modul. Ableiten von der `COleControlModule`-Klasse, um ein OLE-Steuerelement Modul-Objekt zu entwickeln. Sie stellt Member-Funktionen zum Initialisieren des Moduls des OLE-Steuer Elements bereit.
 
 [COleControl](../mfc/reference/colecontrol-class.md)<br/>
-Leiten Sie von der `COleControl` Klasse, um die Entwicklung eines OLE-Steuerelements. Abgeleitet von `CWnd`, diese Klasse erbt die gesamte Funktionalität von einem Windows-Fensterobjekt und zusätzliche OLE-spezifische Funktionen, z. B. das Auslösen von Ereignissen und die Möglichkeit, Methoden und Eigenschaften zu unterstützen.
+Ableiten von der `COleControl`-Klasse, um ein OLE-Steuerelement zu entwickeln. Diese Klasse wird von `CWnd`abgeleitet und erbt die gesamte Funktionalität eines Windows-Fenster Objekts sowie zusätzliche OLE-spezifische Funktionen, wie z. b. das Auslösen von Ereignissen und die Möglichkeit zur Unterstützung von Methoden und Eigenschaften.
 
 [CConnectionPoint](../mfc/reference/cconnectionpoint-class.md)<br/>
-Die `CConnectionPoint` Klasse definiert eine besondere Art von Schnittstelle zur Kommunikation mit anderen OLE-Objekte, die einen Verbindungspunkt aufgerufen. Ein Verbindungspunkt implementiert eine ausgehende-Schnittstelle, die zum Initiieren von Aktionen auf andere Objekte, z. B. das Auslösen von Ereignissen und Benachrichtigungen ändern kann.
+Die `CConnectionPoint`-Klasse definiert einen speziellen Schnittstellentyp, der für die Kommunikation mit anderen OLE-Objekten verwendet wird, die als Verbindungspunkt bezeichnet werden. Ein Verbindungspunkt implementiert eine ausgehende Schnittstelle, die Aktionen für andere Objekte initiieren kann, z. b. das Auslösen von Ereignissen und Änderungs Benachrichtigungen.
 
 [CPictureHolder](../mfc/reference/cpictureholder-class.md)<br/>
-Kapselt die Funktionalität eines Windows-Bildobjekts und der `IPicture` COM-Schnittstelle verwendet, um die benutzerdefinierte Bildeigenschaft eines OLE-Steuerelements zu implementieren.
+Kapselt die Funktionalität eines Windows-Bildobjekts und der `IPicture` com-Schnittstelle. wird verwendet, um die benutzerdefinierte Bild Eigenschaft eines OLE-Steuer Elements zu implementieren.
 
-[CFontHolder](../mfc/reference/cfontholder-class.md)<br/>
-Kapselt die Funktionalität eines Windows-Schriftartobjekts und der `IFont` COM-Schnittstelle verwendet, um die vordefinierte Schriftarteigenschaft eines OLE-Steuerelements zu implementieren.
+[Cfonthälter](../mfc/reference/cfontholder-class.md)<br/>
+Kapselt die Funktionalität eines Windows-Schriftart Objekts und der `IFont` com-Schnittstelle. wird verwendet, um die Eigenschaft "Stock Font" eines OLE-Steuer Elements zu implementieren.
 
 [COlePropertyPage](../mfc/reference/colepropertypage-class.md)<br/>
-Zeigt steuern Sie die Eigenschaften von einer OLE in eine grafische Oberfläche, ähnlich wie ein Dialogfeld.
+Zeigt die Eigenschaften eines OLE-Steuer Elements in einer grafischen Benutzeroberfläche ähnlich einem Dialogfeld an.
 
 [CPropExchange](../mfc/reference/cpropexchange-class.md)<br/>
-Die Implementierung der Dauerhaftigkeit der Eigenschaft unterstützt für die OLE-Steuerelemente. Analog zu [CDataExchange](../mfc/reference/cdataexchange-class.md) für Dialogfelder.
+Unterstützt die Implementierung der Eigenschafts Persistenz für die OLE-Steuerelemente. Analog zu [CDataExchange](../mfc/reference/cdataexchange-class.md) für Dialogfelder.
 
 [CMonikerFile](../mfc/reference/cmonikerfile-class.md)<br/>
-Erfordert einen Moniker oder eine Zeichenfolgendarstellung, der an einen Moniker kann, und bindet sie in den Stream für den der Moniker ein Name ist synchron.
+Nimmt einen Moniker oder eine Zeichen folgen Darstellung, die er in einem Moniker erstellen kann, an und bindet ihn synchron an den Datenstrom, für den der Moniker ein Name ist.
 
 [CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md)<br/>
-Ähnliche Funktionsweise wie `CMonikerFile`jedoch bindet den Moniker asynchron in den Stream für die der Moniker ein Name ist.
+Funktioniert ähnlich wie `CMonikerFile`; der Moniker wird jedoch asynchron an den Stream gebunden, für den der Moniker einen Namen hat.
 
 [CDataPathProperty](../mfc/reference/cdatapathproperty-class.md)<br/>
 Implementiert eine OLE-Steuerelementeigenschaft, die asynchron geladen werden kann.
@@ -59,11 +57,11 @@ Implementiert eine OLE-Steuerelementeigenschaft, die asynchron geladen werden ka
 Implementiert eine asynchron übertragene und in einer Arbeitsspeicherdatei zwischengespeicherte OLE-Steuerelementeigenschaft.
 
 [COleCmdUI](../mfc/reference/colecmdui-class.md)<br/>
-Ermöglicht ein aktiven Dokuments um Befehle zu empfangen, die in der zugehörigen Containers-Benutzeroberfläche (z. B. FileNew, Open, Print und So weiter) stammen, und einen Container aus, um Befehle zu empfangen, die in der Benutzeroberfläche für das aktive Dokument stammen.
+Ermöglicht einem aktiven Dokument das Empfangen von Befehlen, die aus der Benutzeroberfläche seines Containers stammen (z. b. Datei-, Öffnungs-, Druck-usw.) und ermöglicht einem Container das Empfangen von Befehlen, die aus der Benutzeroberfläche des aktiven Dokuments stammen.
 
 [COleSafeArray](../mfc/reference/colesafearray-class.md)<br/>
-Funktioniert mit Arrays von Dimension und beliebigen Typs.
+Kann mit Arrays beliebiger Typen und Dimensionen verwendet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

@@ -2,7 +2,6 @@
 title: __alignof-Operator
 ms.date: 12/17/2018
 f1_keywords:
-- alignas_cpp
 - __alignof_cpp
 - alignof_cpp
 - __alignof
@@ -14,20 +13,20 @@ helpviewer_keywords:
 - alignof [C++]
 - types [C++], alignment requirements
 ms.assetid: acb1eed7-6398-40bd-b0c5-684ceb64afbc
-ms.openlocfilehash: 96c85db83c133af6f1712baa8597ed3360277854
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b3764e95846d48d293991d69d04bc71c6b3aed90
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62258251"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443607"
 ---
-# <a name="alignof-operator"></a>__alignof-Operator
+# <a name="__alignof-operator"></a>__alignof-Operator
 
-C ++ 11 stellt die **"alignof"** Operator, der die Ausrichtung des angegebenen Typs in Bytes zurückgibt. Zur maximalen Portabilität sollten Sie den „alignof“ des Operators statt des Microsoft-spezifischen „__alignof“-Operators verwenden.
+C++ 11 führt den **alignof** -Operator ein, der die Ausrichtung des angegebenen Typs in Bytes zurückgibt. Zur maximalen Portabilität sollten Sie den „alignof“ des Operators statt des Microsoft-spezifischen „__alignof“-Operators verwenden.
 
 **Microsoft-spezifisch**
 
-Gibt einen Wert vom Typ `size_t` , der der ausrichtungsanforderung des Typs.
+Gibt einen Wert vom Typ `size_t` zurück, der der Ausrichtungs Anforderung des Typs entspricht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,28 +34,28 @@ Gibt einen Wert vom Typ `size_t` , der der ausrichtungsanforderung des Typs.
   __alignof( type )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Zum Beispiel:
+Beispiel:
 
-|Ausdruck|Wert|
+|Ausdruck|value|
 |----------------|-----------|
-|**__alignof( char )**|1|
-|**__alignof( short )**|2|
-|**__alignof( int )**|4|
-|**__alignof( \__int64 )**|8|
-|**__alignof( float )**|4|
-|**__alignof( double )**|8|
-|**__alignof( char\* )**|4|
+|**__alignof (Char)**|1|
+|**__alignof (Short)**|2|
+|**__alignof (int)**|4|
+|**__alignof (\__int64)**|8|
+|**__alignof (float)**|4|
+|**__alignof (Double)**|8|
+|**__alignof (Char\*)**|4|
 
-Die **__alignof** Wert entspricht der Wert für `sizeof` für grundlegende Typen. Betrachten Sie jedoch das Beispiel:
+Der **__alignof** -Wert ist identisch mit dem Wert für `sizeof` für grundlegende Typen. Betrachten Sie jedoch das Beispiel:
 
 ```cpp
 typedef struct { int a; double b; } S;
 // __alignof(S) == 8
 ```
 
-In diesem Fall die **__alignof** Wert ist die ausrichtungsanforderung des größten Elements in der Struktur.
+In diesem Fall ist der **__alignof** Wert die Ausrichtungs Anforderung des größten Elements in der Struktur.
 
 Entsprechend gilt:
 
@@ -66,7 +65,7 @@ typedef __declspec(align(32)) struct { int a; } S;
 
 `__alignof(S)` ist gleich `32`.
 
-Eine Verwendungsmöglichkeit für **__alignof** wäre als Parameter an eine der eigene speicherbelegungsroutinen. Beispielsweise könnten Sie angesichts der folgenden definierten Struktur `S` eine Speicherbelegungsroutine mit dem Namen `aligned_malloc` aufrufen, um einen bestimmten Grenzwert mit Speicher zu belegen.
+Eine Verwendung für **__alignof** wäre als Parameter für eine ihrer eigenen Speicher Belegungs Routinen. Beispielsweise könnten Sie angesichts der folgenden definierten Struktur `S` eine Speicherbelegungsroutine mit dem Namen `aligned_malloc` aufrufen, um einen bestimmten Grenzwert mit Speicher zu belegen.
 
 ```cpp
 typedef __declspec(align(32)) struct { int a; double b; } S;
@@ -74,7 +73,7 @@ int n = 50; // array size
 S* p = (S*)aligned_malloc(n * sizeof(S), __alignof(S));
 ```
 
-Für die Kompatibilität mit früheren Versionen **_alignof** ist ein Synonym für **__alignof** , wenn Compileroption [/Za \(spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Gründen der Kompatibilität mit früheren Versionen ist **_alignof** ein Synonym für **__alignof** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 Weitere Informationen über das Ändern der Ausrichtung finden Sie unter:
 
@@ -86,7 +85,7 @@ Weitere Informationen über das Ändern der Ausrichtung finden Sie unter:
 
 - [/Zp (Strukturmemberausrichtung)](../build/reference/zp-struct-member-alignment.md)
 
-- [Beispiele für die Strukturausrichtung](../build/x64-software-conventions.md#examples-of-structure-alignment) (X64 bestimmte)
+- [Beispiele für die Struktur Ausrichtung](../build/x64-software-conventions.md#examples-of-structure-alignment) (x64-spezifisch)
 
 Weitere Informationen zu den Unterschieden bei der Ausrichtung im Code für x86 und x64 finden Sie unter:
 
@@ -94,7 +93,7 @@ Weitere Informationen zu den Unterschieden bei der Ausrichtung im Code für x86 
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

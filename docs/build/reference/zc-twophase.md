@@ -5,17 +5,16 @@ ms.date: 12/03/2019
 f1_keywords:
 - twoPhase
 - /Zc:twoPhase
-- VC.Project.VCCLCompilerTool.EnforceTypeConversionRules
 helpviewer_keywords:
 - twoPhase
 - disable two-phase name lookup
 - /Zc:twoPhase
-ms.openlocfilehash: a2ede9f0875bf718d63361201cf8923666078f7a
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 3464759793a2dd243024a9f3f52263f76514033a
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74856955"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438638"
 ---
 # <a name="zctwophase--disable-two-phase-name-lookup"></a>/Zc:twoPhase- (Zweiphasennamenssuche deaktivieren)
 
@@ -23,9 +22,9 @@ Die **/Zc: twophase-** Option unter **/permissive-** weist den Compiler an, das 
 
 ## <a name="syntax"></a>Syntax
 
-> **/Zc:twoPhase-**
+> **/Zc: twophase-**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Visual Studio 2017 Version 15,3 und höher: unter [/permissive-](permissive-standards-conformance.md)verwendet der Compiler die zweiphasige Namenssuche für die Vorlagen Namensauflösung. Wenn Sie auch **/Zc: twophase**angeben, kehrt der Compiler auf seine vorherige, nicht konforme Klassen Vorlage und die Namensauflösung und das Ersetzungs Verhalten der Funktions Vorlage zurück. Wenn **/permissive-** nicht angegeben wird, ist das nicht konforme Verhalten der Standardwert.
 
@@ -51,7 +50,7 @@ Wenn der Vorlagen Text daher Syntax Fehler aufweist, die Vorlage jedoch nie inst
 
 Ein weiterer Effekt dieses Verhaltens ist die Überladungs Auflösung. Ein nicht standardmäßiges Verhalten tritt auf, wenn der Tokenstream an der instanziierungssite erweitert wird. Symbole, die nicht in der Vorlagen Deklaration sichtbar waren, werden möglicherweise zum Zeitpunkt der Instanziierung sichtbar. Dies bedeutet, dass Sie an der Überladungs Auflösung teilnehmen können. Es kann sein, dass Vorlagen Verhalten auf der Grundlage von Code ändern, der in der Vorlagen Definition nicht sichtbar ist, im Gegensatz zum Standard.
 
-Betrachten Sie beispielsweise folgenden Code:
+Betrachten Sie z. B. diesen Code:
 
 ```cpp
 // zctwophase.cpp
@@ -189,7 +188,7 @@ typename T::template X<T>::TYPE func(typename T::TYPE)
 
 Unter **/permissive-/Zc: twophase** und in älteren Compilern benötigt der Compiler nur das `template`-Schlüsselwort in Zeile 2. Im Übereinstimmungs Modus benötigt der Compiler jetzt auch das `template`-Schlüsselwort in Zeile 4, um anzugeben, dass `T::X<T>` eine Vorlage ist. Suchen Sie nach Code, dem dieses Schlüsselwort fehlt, und stellen Sie es bereit, damit der Code dem Standard entspricht.
 
-Weitere Informationen zu Konformitäts Problemen finden Sie unter [C++Verbesserungen der Konformität in Visual Studio](../../overview/cpp-conformance-improvements.md) und [nicht dem Standard entsprechende Verhalten.](../../cpp/nonstandard-behavior.md)
+Weitere Informationen zu Konformitäts Problemen finden [Nonstandard Behavior](../../cpp/nonstandard-behavior.md) [ C++ Sie unter Verbesserungen der Konformität in Visual Studio](../../overview/cpp-conformance-improvements.md) und nicht dem Standard entsprechende Verhalten.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
@@ -199,6 +198,6 @@ Weitere Informationen zu Konformitäts Problemen finden Sie unter [C++Verbesseru
 
 1. Ändern Sie die Eigenschaft **zusätzliche Optionen** so, dass Sie **/Zc: twophase** einschließt, und wählen Sie dann **OK**aus.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [/Zc (Übereinstimmung)](zc-conformance.md)

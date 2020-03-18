@@ -1,8 +1,6 @@
 ---
 title: Windows-Plattformen (CRT)
 ms.date: 02/02/2018
-f1_keywords:
-- c.programs
 helpviewer_keywords:
 - CRT, compatibility
 - backward compatibility [C++], C run-time libraries
@@ -11,12 +9,12 @@ helpviewer_keywords:
 - operating systems [C++]
 - Unicode [C++], Win32 platforms
 ms.assetid: 0aacaf45-6dc4-4908-bd52-57abac7b39f6
-ms.openlocfilehash: 6f84922f8d477d3c45ba80d14049e81655890d53
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
-ms.translationtype: HT
+ms.openlocfilehash: 26b927b8b1b93a23091bb25fdd5fe0496e21c8b7
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50638398"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444472"
 ---
 # <a name="windows-platforms-crt"></a>Windows-Plattformen (CRT)
 
@@ -25,6 +23,6 @@ Die C-Laufzeitbibliotheken für Visual Studio unterstützen die aktuellen Versio
 > [!NOTE]
 > Die Standardinstallation der Workload **Desktopentwicklung mit C++** in Visual Studio 2017 bietet keine Unterstützung für die Entwicklung mit Windows XP und Windows Server 2003. Sie müssen die optionale Komponente **Windows XP-Unterstützung für C++** installieren, um ein Windows XP-Plattformtoolset zu aktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Kompatibilität](../c-runtime-library/compatibility.md)

@@ -39,11 +39,11 @@ helpviewer_keywords:
 - COlePropertyPage [MFC], SetPageName
 ms.assetid: e9972872-8e6b-4550-905e-d36a274d64dc
 ms.openlocfilehash: 8253b2c2fa6b93ec51c7ede983ef710eed039970
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865885"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426486"
 ---
 # <a name="colepropertypage-class"></a>COlePropertyPage-Klasse
 
@@ -55,17 +55,17 @@ Wird verwendet, um die Eigenschaften eines benutzerdefinierten Steuerelements in
 class AFX_NOVTABLE COlePropertyPage : public CDialog
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COlePropertyPage:: COlePropertyPage](#colepropertypage)|Erstellt ein `COlePropertyPage`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COlePropertyPage:: getcontrolstatus](#getcontrolstatus)|Gibt an, ob der Benutzer den Wert im-Steuerelement geändert hat.|
 |[COlePropertyPage:: getobjectarray](#getobjectarray)|Gibt das Array von-Objekten zurück, die von der Eigenschaften Seite bearbeitet werden.|
@@ -83,7 +83,7 @@ class AFX_NOVTABLE COlePropertyPage : public CDialog
 |[COlePropertyPage:: SetModifiedFlag](#setmodifiedflag)|Legt ein Flag fest, das angibt, ob der Benutzer die Eigenschaften Seite geändert hat.|
 |[COlePropertyPage:: setpagename](#setpagename)|Legt den Namen der Eigenschaften Seite (Beschriftung) fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Beispielsweise kann eine Eigenschaften Seite ein Bearbeitungs Steuerelement enthalten, das es dem Benutzer ermöglicht, die Caption-Eigenschaft des Steuer Elements anzuzeigen und zu ändern.
 
@@ -103,7 +103,7 @@ Weitere Informationen zur Verwendung von `COlePropertyPage`finden Sie im Artikel
 
 `COlePropertyPage`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxctl. h
 
@@ -125,7 +125,7 @@ Ressourcen-ID der Dialogfeld Vorlage.
 *idcaption*<br/>
 Die Ressourcen-ID der Beschriftung der Eigenschaften Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie eine Unterklasse von `COlePropertyPage`implementieren, sollte der Konstruktor der Unterklasse den `COlePropertyPage`-Konstruktor verwenden, um die Dialogfeld Vorlagen Ressource zu identifizieren, auf der die Eigenschaften Seite basiert, und die Zeichen folgen Ressource, die die Beschriftung enthält.
 
@@ -163,7 +163,7 @@ Zeiger auf eine lange ganze Zahl ohne Vorzeichen, die die Anzahl der Objekte emp
 
 Zeiger auf ein Array von `IDispatch` Zeigern, die verwendet werden, um auf die Eigenschaften der einzelnen Steuerelemente auf der Eigenschaften Seite zuzugreifen. Der Aufrufer darf diese Schnittstellen Zeiger nicht freigeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jedes Eigenschaften Seiten Objekt verwaltet ein Array von Zeigern auf die `IDispatch` Schnittstellen der Objekte, die von der Seite bearbeitet werden. Diese Funktion legt das *pnobjects* -Argument auf die Anzahl der Elemente in diesem Array fest und gibt einen Zeiger auf das erste Element des Arrays zurück.
 
@@ -179,7 +179,7 @@ LPPROPERTYPAGESITE GetPageSite();
 
 Ein Zeiger auf die `IPropertyPageSite`-Schnittstelle der Eigenschaften Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Steuerelemente und Container arbeiten zusammen, sodass Benutzer Steuerelement Eigenschaften durchsuchen und bearbeiten können. Das-Steuerelement stellt Eigenschaften Seiten bereit, von denen jedes ein OLE-Objekt ist, das es dem Benutzer ermöglicht, einen zugehörigen Satz von Eigenschaften zu bearbeiten. Der Container stellt einen Eigenschaften Rahmen bereit, der die Eigenschaften Seiten anzeigt. Der Eigenschaften Frame für jede Seite stellt eine Seiten Website bereit, die die `IPropertyPageSite`-Schnittstelle unterstützt.
 
@@ -196,7 +196,7 @@ void IgnoreApply(UINT nID);
 *NID*<br/>
 ID des Steuer Elements, das ignoriert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Schaltfläche Apply (anwenden) der Eigenschaften Seite ist nur aktiviert, wenn die Werte von Eigenschaften Seiten-Steuerelementen geändert wurden. Verwenden Sie diese Funktion, um Steuerelemente anzugeben, die nicht bewirken, dass die Schaltfläche anwenden aktiviert wird, wenn sich die Werte ändern.
 
@@ -229,7 +229,7 @@ Dispatch-ID der Eigenschaft, die bearbeitet wird.
 
 Die Standard Implementierung gibt false zurück. Über schreibungen dieser Funktion sollten true zurückgeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können es überschreiben, um den Fokus auf das entsprechende Steuerelement auf der Seite festzulegen. Die Standard Implementierung führt keine Aktion aus und gibt false zurück.
 
@@ -250,7 +250,7 @@ Verzeichnis, das die Hilfedatei der Eigenschaften Seite enthält.
 
 Die Standard Implementierung gibt false zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese, wenn die Eigenschaften Seite eine spezielle Aktion ausführen muss, wenn der Benutzer auf die Hilfe zugreift. Die Standard Implementierung führt keine Aktion aus und gibt false zurück, wodurch das Framework angewiesen wird, WinHelp aufzurufen.
 
@@ -266,7 +266,7 @@ virtual BOOL OnInitDialog();
 
 Die Standard Implementierung gibt false zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese, wenn beim Initialisieren des Dialog Felds eine spezielle Aktion erforderlich ist. Die Standard Implementierung ruft `CDialog::OnInitDialog` auf und gibt false zurück.
 
@@ -278,7 +278,7 @@ Wird von Framework aufgerufen, wenn ein anderes OLE-Steuerelement mit neuen Eige
 virtual void OnObjectsChanged();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die Eigenschaften eines OLE-Steuer Elements in der Entwicklerumgebung anzeigen, wird ein nicht modalem Dialogfeld verwendet, um seine Eigenschaften Seiten anzuzeigen. Wenn ein anderes Steuerelement ausgewählt ist, muss für den neuen Eigenschaften Satz ein anderer Satz von Eigenschaften Seiten angezeigt werden. Das Framework ruft diese Funktion auf, um die Eigenschaften Seite der Änderung zu benachrichtigen.
 
@@ -292,7 +292,7 @@ Das Framework ruft diese Funktion auf, wenn der Eigenschaften Rahmen die Seiten 
 virtual void OnSetPageSite();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung lädt die Beschriftung der Seite und versucht, die Seitengröße aus der Dialogfeld Ressource zu bestimmen. Überschreiben Sie diese Funktion, wenn für ihre Eigenschaften Seite Weitere Aktionen erforderlich sind. Ihre außer Kraft Setzung sollte die Basisklassen Implementierung aufzurufen.
 
@@ -318,7 +318,7 @@ Gibt an, ob ein Feld der Eigenschaften Seite geändert wurde. Auf true festgeleg
 
 TRUE, wenn das angegebene Steuerelement festgelegt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Status eines Eigenschaften Seiten-Steuer Elements geändert wird, wenn die Eigenschaften Seite geschlossen wird oder die Schaltfläche anwenden ausgewählt wird, wird die-Eigenschaft des Steuer Elements mit dem entsprechenden Wert aktualisiert.
 
@@ -383,7 +383,7 @@ void SetPageName(LPCTSTR lpszPageName);
 *lpszpagename*<br/>
 Zeiger auf eine Zeichenfolge, die den Namen der Eigenschaften Seite enthält.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel CIRC3](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel für "TESTHELP"](../../overview/visual-cpp-samples.md)<br/>

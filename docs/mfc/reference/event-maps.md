@@ -5,11 +5,11 @@ helpviewer_keywords:
 - event maps [MFC]
 ms.assetid: 1ed53aee-bc53-43cd-834a-6fb935c0d29b
 ms.openlocfilehash: 34741dc05efe77c0932343739540370f54db6008
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855620"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426384"
 ---
 # <a name="event-maps"></a>Ereigniszuordnungen
 
@@ -57,13 +57,13 @@ Jede `COleControl`abgeleitete Klasse in Ihrem Programm kann eine Ereignis Zuordn
 DECLARE_EVENT_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie das DECLARE_EVENT_MAP-Makro am Ende der Klassen Deklaration. Verwenden Sie dann in der CPP-Datei, die die Element Funktionen für die Klasse definiert, das BEGIN_EVENT_MAP Makro, die Makro Einträge für jedes der Steuerelemente des Steuer Elements und das END_EVENT_MAP Makro, um das Ende der Ereignisliste zu deklarieren.
 
 Weitere Informationen zu Ereignis Zuordnungen finden Sie im Artikel [ActiveX-Steuerelemente: Ereignisse](../../mfc/mfc-activex-controls-events.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** afxctl. h
 
@@ -83,13 +83,13 @@ Gibt den Namen der Steuerelement Klasse an, deren Ereignis Zuordnung lautet.
 *BaseClass*<br/>
 Gibt den Namen der Basisklasse von *TheClass*an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Starten Sie in der Implementierungs Datei (. cpp), die die Element Funktionen für die Klasse definiert, die Ereignis Zuordnung mit dem BEGIN_EVENT_MAP-Makro, fügen Sie dann Makro Einträge für jedes der Ereignisse hinzu, und vervollständigen Sie die Ereignis Zuordnung mit dem END_EVENT_MAP-Makro.
 
 Weitere Informationen zu Ereignis Zuordnungen und dem BEGIN_EVENT_MAP-Makro finden Sie im Artikel ActiveX-Steuer [Elemente: Ereignisse](../../mfc/mfc-activex-controls-events.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** afxctl. h
 
@@ -101,7 +101,7 @@ Verwenden Sie das END_EVENT_MAP-Makro, um die Definition der Ereignis Zuordnung 
 END_EVENT_MAP()
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** afxctl. h
 
@@ -124,7 +124,7 @@ Der Name der Ereignis auslösenden Funktion.
 *vtsParams*<br/>
 Eine durch Leerzeichen getrennte Liste von einer oder mehreren Konstanten, die die Parameterliste der Funktion angeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *vtsParams* -Parameter ist eine durch Leerzeichen getrennte Liste mit Werten aus den `VTS_` Konstanten. Einer oder mehrere dieser Werte, getrennt durch Leerzeichen (nicht Kommas), gibt die Parameterliste der Funktion an. Beispiel:
 
@@ -142,7 +142,7 @@ Die `VTS_` Konstanten und ihre Bedeutungen lauten wie folgt:
 |VTS_R8|**double**|
 |VTS_COLOR|OLE_COLOR|
 |VTS_CY|CURRENCY|
-|VTS_DATE|DATE|
+|VTS_DATE|DATUM|
 |VTS_BSTR|Konstante __char-\*__|
 |VTS_DISPATCH|Lpdispatch|
 |VTS_FONT|`IFontDispatch*`|
@@ -167,7 +167,7 @@ Die `VTS_` Konstanten und ihre Bedeutungen lauten wie folgt:
 > [!NOTE]
 > Für alle Variant-Typen wurden zusätzliche Variant-Konstanten definiert, mit Ausnahme von VTS_FONT und VTS_PICTURE, die einen Zeiger auf die Variant-Daten Konstante bereitstellen. Diese Konstanten werden mithilfe der `VTS_Pconstantname` Konvention benannt. VTS_PCOLOR ist beispielsweise ein Zeiger auf eine VTS_COLOR Konstante.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** afxctl. h
 
@@ -197,7 +197,7 @@ Der Name der Ereignis auslösenden Funktion.
 *vtsParams*<br/>
 Eine Variablen Liste von Parametern, die beim Auslösen des Ereignisses an den Steuerelement Container übermittelt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das *vtsParams* -Argument ist eine durch Leerzeichen getrennte Liste mit Werten aus den `VTS_` Konstanten. Einer oder mehrere dieser Werte, getrennt durch Leerzeichen, gibt die Parameterliste der Funktion an. Beispiel:
 
@@ -207,7 +207,7 @@ gibt eine Liste mit einer 32-Bit-Ganzzahl an, die einen RGB-Farbwert darstellt, 
 
 Eine Liste der `VTS_` Konstanten finden Sie unter [EVENT_CUSTOM](#event_custom).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** afxctl. h
 
@@ -227,7 +227,7 @@ Die Zeichen folgen Ressourcen-ID für den Namen des Verbs.
 *Mitgliedschaft*<br/>
 Die Funktion, die vom Framework aufgerufen wird, wenn das Verb aufgerufen wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Ressourcen-Editor kann verwendet werden, um benutzerdefinierte Verb Namen zu erstellen, die der Zeichen folgen Tabelle hinzugefügt werden.
 
@@ -242,7 +242,7 @@ BOOL memberFxn(
 
 Die Werte der Parameter *lpmsg*, *hwndParent*und *lprect* werden aus den entsprechenden Parametern der `IOleObject::DoVerb` Member-Funktion entnommen.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** Afxole. h
 
@@ -262,16 +262,16 @@ Der standardmäßige Verb Index für das überschriebene Verb.
 *Mitgliedschaft*<br/>
 Die Funktion, die vom Framework aufgerufen wird, wenn das Verb aufgerufen wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der standardmäßige Verb Index hat die Form `OLEIVERB_`, gefolgt von einer Aktion. OLEIVERB_SHOW, OLEIVERB_HIDE und OLEIVERB_UIACTIVATE sind einige Beispiele für Standard Verben.
 
 Unter [ON_OLEVERB](#on_oleverb) finden Sie eine Beschreibung des Funktions Prototyps, der als *Mitglieds* Parameter verwendet werden soll.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header** Afxole. h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

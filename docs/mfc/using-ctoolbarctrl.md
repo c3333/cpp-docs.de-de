@@ -1,24 +1,22 @@
 ---
 title: Verwenden von CToolBarCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CToolBarCtrl
 helpviewer_keywords:
 - CToolBarCtrl class [MFC]
 - toolbar controls [MFC], creating
 ms.assetid: 13cf3753-135b-4a3e-a850-ed30177fcf9d
-ms.openlocfilehash: 70bb563b7dd4558ab1943ad87ee3db5b877951e6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a82a763ca357feccbe5b61d4f85d6038563c1c11
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411668"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442242"
 ---
 # <a name="using-ctoolbarctrl"></a>Verwenden von CToolBarCtrl
 
-Können Sie die Symbolleisten-Steuerelement ([CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)) beim Erstellen eines Steuerelementfensters, Schaltflächen und optionale Leerzeichen enthält. Jede Schaltfläche im Fenster Symbolleisten-Steuerelements sendet eine Nachricht an das übergeordnete Fenster, wie der Benutzer wählt. In der Regel entsprechen die Schaltflächen in einer Symbolleiste Elemente im Menü von der Anwendung, eine zusätzliche und direktere Möglichkeit für den Benutzer auf die Befehle einer Anwendung bereitstellen.
+Mit dem Symbolleisten-Steuerelement ([CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)) können Sie ein Steuerelement Fenster erstellen, das Schaltflächen und optionale Leerzeichen enthält. Jede Schaltfläche im Symbolleisten-Steuerelement Fenster sendet eine Befehls Meldung an das übergeordnete Fenster, wenn der Benutzer Sie auswählt. Die Schaltflächen in einer Symbolleiste entsprechen in der Regel Elementen im Menü der Anwendung und bieten dem Benutzer eine zusätzliche und direktere Möglichkeit zum Zugriff auf die Befehle einer Anwendung.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Methoden zum Erstellen einer Symbolleiste](../mfc/methods-of-creating-a-toolbar.md)
 
@@ -32,6 +30,6 @@ Können Sie die Symbolleisten-Steuerelement ([CToolBarCtrl](../mfc/reference/cto
 
 - [Anpassen der Darstellung eines Symbolleisten-Steuerelements](../mfc/customizing-the-appearance-of-a-toolbar-control.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

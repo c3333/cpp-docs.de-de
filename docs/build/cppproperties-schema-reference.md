@@ -3,12 +3,12 @@ title: Cppproperties. JSON-Referenz
 ms.date: 08/09/2019
 helpviewer_keywords:
 - CppProperties.json file [C++]
-ms.openlocfilehash: d59fca412a26d08f88ccbda20a2c0444cf33b1cb
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: c276b566d8efc116c8789fd7ebec17dc2017a00d
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422841"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442558"
 ---
 # <a name="cpppropertiesjson-reference"></a>Cppproperties. JSON-Referenz
 
@@ -28,7 +28,7 @@ Eine Konfiguration kann folgende Eigenschaften aufweisen:
 |`forcedInclude`|Ein Header, der automatisch in jede Kompilierungseinheit eingefügt wird (entspricht /FI bei MSVC oder -include bei Clang)|
 |`undefines`|Die Liste der Makros, die nicht definiert sind (entspricht /U bei MSVC)|
 |`intelliSenseMode`|Die zu verwendende IntelliSense-Engine Sie können eine der vordefinierten architekturspezifischen Varianten für MSVC, gcc oder clang angeben.|
-|`environments`|Benutzerdefinierte Variablen Sätze, die sich wie Umgebungsvariablen an einer Eingabeaufforderung Verhalten und auf die mit "$ {ERV.<VARIABLE>}" zugegriffen wird. Hilfen.|
+|`environments`|Benutzerdefinierte Variablen Sätze, die sich wie Umgebungsvariablen an einer Eingabeaufforderung Verhalten und auf die mit dem $ {ERV.\<Variable >}-Makro zugegriffen wird.|
 
 ### <a name="intellisensemode-values"></a>intellisensmode-Werte
 
@@ -64,7 +64,7 @@ Hinweis: die Werte `msvc-x86` und `msvc-x64` werden nur aus Legacy Gründen unte
 
 Visual Studio bietet die folgenden vordefinierten Umgebungen für Microsoft C++ , die dem entsprechenden Developer-Eingabeaufforderung zugeordnet sind. Wenn Sie eine dieser Umgebungen erben, können Sie auf jede Umgebungsvariable verweisen, indem Sie die globale Eigenschaften `env` mit der folgenden Makro Syntax verwenden: $ {env.\<Variable >}.
 
-|Variablenname|Beschreibung|
+|Variablenname|BESCHREIBUNG|
 |-----------|-----------------|
 |vsdev|Die Standardumgebung von Visual Studio|
 |msvc_x86|Kompiliert mithilfe von x86-Tools für x86|
@@ -77,7 +77,7 @@ Visual Studio bietet die folgenden vordefinierten Umgebungen für Microsoft C++ 
 
 Wenn die Linux-Workload installiert ist, können folgende Umgebungen verwendet werden, um Linux und WSL remote anzuzielen:
 
-|Variablenname|Beschreibung|
+|Variablenname|BESCHREIBUNG|
 |-----------|-----------------|
 |linux_x86|Hiermit wird x86 Linux als Remotezielversion festgelegt.|
 |linux_x64|Hiermit wird x64 Linux als Remotezielversion festgelegt.|

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - std::make_error_condition
 - std::system_category
 ms.openlocfilehash: ab4d0d1ee810df8f719bba762262eb03bf899408
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876266"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427614"
 ---
 # <a name="ltsystem_errorgt-functions"></a>&lt;System_error&gt;-Funktionen
 
@@ -29,7 +29,7 @@ Stellt die Kategorie für allgemeine Fehler dar.
 const error_category& generic_category() noexcept;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `generic_category`-Objekt ist eine Implementierung von [Error_category](../standard-library/error-category-class.md).
 
@@ -64,7 +64,7 @@ Der `std::errc` Enumerationswert, der im Fehlercode Objekt gespeichert werden so
 
 Das Fehlercodeobjekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="make_error_condition"></a>make_error_condition
 
@@ -83,7 +83,7 @@ Der `std::errc` Enumerationswert, der im Fehlercode Objekt gespeichert werden so
 
 Das Fehlerzustandobjekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="system_category"></a>system_category
 
@@ -93,6 +93,6 @@ Stellt die Kategorie für Fehler dar, die von Low-Level-Systemüberläufen verur
 const error_category& system_category() noexcept;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `system_category`-Objekt ist eine Implementierung von [Error_category](../standard-library/error-category-class.md).

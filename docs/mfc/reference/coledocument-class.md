@@ -53,11 +53,11 @@ helpviewer_keywords:
 - COleDocument [MFC], OnUpdatePasteMenu
 ms.assetid: dc2ecb99-03e1-44c7-bb69-48056dd1b672
 ms.openlocfilehash: b92c796fdaa972966dcbfa85b1e34f267b6c629c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867013"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426492"
 ---
 # <a name="coledocument-class"></a>COleDocument-Klasse
 
@@ -69,17 +69,17 @@ Die Basisklasse für OLE-Dokumente, die visuelle Bearbeitung unterstützen.
 class COleDocument : public CDocument
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDocument:: COleDocument](#coledocument)|Erstellt ein `COleDocument`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDocument:: AddItem](#additem)|Fügt der Liste der Elemente, die vom Dokument verwaltet werden, ein Element hinzu.|
 |[COleDocument:: applyprintdevice](#applyprintdevice)|Legt das Druck Zielgerät für alle Client Elemente im Dokument fest.|
@@ -97,7 +97,7 @@ class COleDocument : public CDocument
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDocument:: oneditchangeicon](#oneditchangeicon)|Behandelt Ereignisse im Menübefehl zum Ändern des Symbols.|
 |[COleDocument:: oneditconvert](#oneditconvert)|Behandelt die Konvertierung eines eingebetteten oder verknüpften Objekts von einem Typ in einen anderen.|
@@ -109,7 +109,7 @@ class COleDocument : public CDocument
 |[COleDocument:: onupdatepstelinkmenu](#onupdatepastelinkmenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Kontext einfügen" zu aktualisieren.|
 |[COleDocument:: onupdatepastemenu](#onupdatepastemenu)|Wird von Framework aufgerufen, um die Befehls Benutzeroberfläche für die Menüoption "Einfügen" zu aktualisieren.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `COleDocument` wird von `CDocument`abgeleitet, mit dem Ihre OLE-Anwendungen die vom Microsoft Foundation Class-Bibliothek bereitgestellte Dokument-/Ansichtarchitektur verwenden können.
 
@@ -131,7 +131,7 @@ Um `COleDocument`zu verwenden, leiten Sie eine Klasse davon ab, und fügen Sie F
 
 `COleDocument`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxole. h
 
@@ -148,7 +148,7 @@ virtual void AddItem(CDocItem* pItem);
 *pitem*<br/>
 Zeiger auf das Dokument Element, das hinzugefügt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen diese Funktion nicht explizit aufrufen, wenn Sie vom `COleClientItem` oder `COleServerItem` Konstruktor aufgerufen wird, der einen Zeiger auf ein Dokument akzeptiert.
 
@@ -164,16 +164,16 @@ BOOL ApplyPrintDevice(const PRINTDLG* ppd);
 ### <a name="parameters"></a>Parameter
 
 *ptd*<br/>
-Zeiger auf eine `DVTARGETDEVICE` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann den Wert NULL haben.
+Zeiger auf eine `DVTARGETDEVICE` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann NULL sein.
 
 *PPD*<br/>
-Zeiger auf eine `PRINTDLG` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann den Wert NULL haben.
+Zeiger auf eine `PRINTDLG` Datenstruktur, die Informationen über das neue druckzielgerät enthält. Kann NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion aktualisiert das druckzielgerät für alle Elemente, aktualisiert jedoch nicht den Präsentations Cache für diese Elemente. Um den Präsentations Cache für ein Element zu aktualisieren, müssen Sie [COleClientItem:: UpdateLink](../../mfc/reference/coleclientitem-class.md#updatelink)aufrufen.
 
@@ -204,7 +204,7 @@ void EnableCompoundFile(BOOL bEnable = TRUE);
 *benabel*<br/>
 Gibt an, ob die Unterstützung von Verbund Dateien aktiviert oder deaktiviert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies wird auch als strukturierter Speicher bezeichnet. Diese Funktion wird in der Regel vom Konstruktor Ihrer `COleDocument`abgeleiteten Klasse aufgerufen. Weitere Informationen zu Verbund Dokumenten finden Sie im Artikel [Container: Verbund Dateien](../../mfc/containers-compound-files.md).
 
@@ -246,7 +246,7 @@ Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextClientIt
 
 Ein Zeiger auf das nächste Client Element im Dokument oder NULL, wenn keine weiteren Client Elemente vorhanden sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach jedem-Aufrufwert wird der Wert von *POS* für das nächste Element im Dokument festgelegt, das möglicherweise kein Client Element ist.
 
@@ -271,7 +271,7 @@ Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextItem`fes
 
 Ein Zeiger auf das Dokument Element an der angegebenen Position.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach jedem-Rückruf wird der Wert von *POS* auf den Positionswert des nächsten Elements im Dokument festgelegt. Wenn das abgerufene Element das letzte Element im Dokument ist, ist der neue Wert von *POS* NULL.
 
@@ -296,7 +296,7 @@ Ein Verweis auf einen Positionswert, der durch einen vorherigen-`GetNextServerIt
 
 Ein Zeiger auf das nächste Server Element im Dokument oder NULL, wenn keine weiteren Server Elemente vorhanden sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach jedem-Aufrufwert wird der Wert von *POS* für das nächste Element im Dokument festgelegt, wobei es sich möglicherweise um ein Server Element handelt.
 
@@ -321,7 +321,7 @@ Zeiger auf das aktive Ansichts Objekt, in dem das Dokument angezeigt wird.
 
 Ein Zeiger auf das einzelne, ausgewählte OLE-Element. NULL, wenn keine OLE-Elemente ausgewählt sind oder wenn mehr als ein Element ausgewählt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung durchsucht die Liste der enthaltenen OLE-Elemente nach einem einzelnen ausgewählten Element und gibt einen Zeiger darauf zurück. Wenn kein Element ausgewählt ist, oder wenn mehr als ein Element ausgewählt ist, gibt die Funktion NULL zurück. Sie müssen die `CView::IsSelected` Member-Funktion in der Ansichts Klasse überschreiben, damit diese Funktion funktioniert. Überschreiben Sie diese Funktion, wenn Sie eine eigene Methode zum Speichern enthaltener OLE-Elemente besitzen.
 
@@ -337,7 +337,7 @@ virtual POSITION GetStartPosition() const;
 
 Ein Positionswert, der verwendet werden kann, um mit dem Durchlaufen der Dokument Elemente zu beginnen. NULL, wenn das Dokument keine Elemente enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Übergeben Sie den zurückgegebenen Wert an `GetNextItem`, `GetNextClientItem`oder `GetNextServerItem`.
 
@@ -353,7 +353,7 @@ BOOL HasBlankItems() const;
 
 Ein Wert ungleich 0 (null), wenn das Dokument leere Elemente enthält. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein leeres Element ist ein Element, dessen Rechteck leer ist.
 
@@ -365,7 +365,7 @@ Zeigt das Dialogfeld OLE-Änderungs Symbol an und ändert das Symbol, das das ak
 afx_msg void OnEditChangeIcon();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnEditChangeIcon` erstellt und öffnet das Dialogfeld `COleChangeIconDialog` Symbol ändern.
 
@@ -377,7 +377,7 @@ Zeigt das Dialogfeld OLE Convert an und konvertiert oder aktiviert das aktuell a
 afx_msg void OnEditConvert();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnEditConvert` erstellt und öffnet das Dialogfeld `COleConvertDialog` konvertieren.
 
@@ -391,7 +391,7 @@ Zeigt das Dialogfeld OLE-Bearbeitung/-Links an.
 afx_msg void OnEditLinks();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnEditLinks` erstellt und öffnet ein Dialogfeld `COleLinksDialog` Links, das es dem Benutzer ermöglicht, die verknüpften Objekte zu ändern.
 
@@ -403,7 +403,7 @@ Sendet eine Nachricht über den residenten Mailhost (sofern vorhanden) mit dem D
 afx_msg void OnFileSendMail();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnFileSendMail` wird `OnSaveDocument` aufgerufen, um unbenannte und geänderte Dokumente in eine temporäre Datei zu serialisieren (speichern), die dann per elektronischer e-Mail gesendet wird. Wenn das Dokument nicht geändert wurde, wird keine temporäre Datei benötigt. das Original wird gesendet. `OnFileSendMail` lädt Datei "Mapi32. DLL, wenn Sie nicht bereits geladen wurde.
 
@@ -424,7 +424,7 @@ virtual void OnShowViews(BOOL bVisible);
 *bvisible*<br/>
 Gibt an, ob das Dokument sichtbar oder unsichtbar geworden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standardversion dieser Funktion führt keine Aktion aus. Überschreiben Sie diese, wenn Ihre Anwendung eine besondere Verarbeitung durchführen muss, wenn sich die Sichtbarkeit des Dokuments ändert.
 
@@ -441,7 +441,7 @@ afx_msg void OnUpdateEditChangeIcon(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnUpdateEditChangeIcon` aktualisiert die Benutzeroberfläche des Befehls, je nachdem, ob ein gültiges Symbol im Dokument vorhanden ist. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
@@ -458,7 +458,7 @@ afx_msg void OnUpdateEditLinksMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beginnend mit dem ersten OLE-Element im Dokument `OnUpdateEditLinksMenu` auf jedes Element zugreift, testet, ob das Element ein Link ist, und aktiviert, wenn es sich um einen Link handelt, den Link-Befehl. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
@@ -475,7 +475,7 @@ afx_msg void OnUpdateObjectVerbMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OnUpdateObjectVerbMenu` aktualisiert die Benutzeroberfläche des *objectName* -Befehls, je nachdem, ob im Dokument ein gültiges Objekt vorhanden ist. Wenn ein Objekt vorhanden ist, wird der *objectName* -Befehl im Menü "Bearbeiten" aktiviert. Wenn dieser Menübefehl ausgewählt ist, wird das Untermenü Verb angezeigt. Das Untermenü Verb enthält alle Verb Befehle, die für das Objekt verfügbar sind, wie z. b. "Bearbeiten", "Eigenschaften" usw. Überschreiben Sie diese Funktion, um das Verhalten zu ändern.
 
@@ -492,7 +492,7 @@ afx_msg void OnUpdatePasteLinkMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Befehl speziellen Menübefehl Einfügen ist aktiviert oder deaktiviert, je nachdem, ob das Element in das Dokument eingefügt werden kann oder nicht.
 
@@ -509,7 +509,7 @@ afx_msg void OnUpdatePasteMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf eine `CCmdUI`-Struktur, die das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die `Enable` Member-Funktion der `CCmdUI` Struktur über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Je nachdem, ob das Element in das Dokument eingefügt werden kann, werden der Menübefehl und die Schaltfläche "Einfügen" aktiviert oder deaktiviert.
 
@@ -526,7 +526,7 @@ virtual void RemoveItem(CDocItem* pItem);
 *pitem*<br/>
 Zeiger auf das zu entfernende Dokument Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen diese Funktion in der Regel nicht explizit aufzurufen. Sie wird von den de-dektoren für `COleClientItem` und `COleServerItem`aufgerufen.
 
@@ -538,11 +538,11 @@ Diese Funktion wird aufgerufen, um das Dokument als geändert zu markieren, wenn
 virtual void UpdateModifiedFlag();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dadurch kann das Framework den Benutzer auffordern, das Dokument vor dem Schließen zu speichern, auch wenn die nativen Daten im Dokument nicht geändert wurden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Container](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel MFCBIND](../../overview/visual-cpp-samples.md)<br/>

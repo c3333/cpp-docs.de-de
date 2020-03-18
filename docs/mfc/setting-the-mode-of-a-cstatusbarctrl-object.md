@@ -1,8 +1,6 @@
 ---
 title: Festlegen des CStatusBarCtrl-Objektmodus
 ms.date: 11/04/2016
-f1_keywords:
-- CStatusBarCtrl
 helpviewer_keywords:
 - simple mode and status bar controls
 - IsSimple method, using
@@ -11,25 +9,25 @@ helpviewer_keywords:
 - non-simple mode and status bar controls
 - CStatusBarCtrl class [MFC], simple and nonsimple modes
 ms.assetid: ca6076e5-1501-4e33-8d35-9308941e46c0
-ms.openlocfilehash: a6d1a0edb356f9737aa287809dd8bca4146c1854
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 79b499533196447898ce62ea9dc86c1674fc0302
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62307717"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446430"
 ---
 # <a name="setting-the-mode-of-a-cstatusbarctrl-object"></a>Festlegen des CStatusBarCtrl-Objektmodus
 
-Es gibt zwei Modi für einen `CStatusBarCtrl` Objekt: einfache und nicht einfache. In den meisten Fällen müssen Ihre Statusleisten-Steuerelement von einem oder mehreren Teilen zusammen mit Text und vielleicht ein Symbol oder Symbole. Dies wird als nicht einfacher Modus bezeichnet. Weitere Informationen zu diesen Modus, finden Sie unter [Initialisieren der Teile eines CStatusBarCtrl-Objekts](../mfc/initializing-the-parts-of-a-cstatusbarctrl-object.md).
+Es gibt zwei Modi für ein `CStatusBarCtrl` Objekt: einfach und nicht einfach. In den meisten Fällen weist das StatusBar-Steuerelement einen oder mehrere Teile sowie Text und möglicherweise ein Symbol oder ein Symbol auf. Dies wird als nicht einfacher Modus bezeichnet. Weitere Informationen zu diesem Modus finden Sie unter [Initialisieren der Teile eines cstatus-barctrl-Objekts](../mfc/initializing-the-parts-of-a-cstatusbarctrl-object.md).
 
-Es gibt jedoch Fälle, in dem Sie nur eine einzelne Textzeile anzeigen müssen. In diesem Fall ist der einfache Modus für Ihre Anforderungen ausreichend. So ändern Sie den Modus der `CStatusBarCtrl` auf Simple Objekt, rufen Sie die [SetSimple](../mfc/reference/cstatusbarctrl-class.md#setsimple) Member-Funktion. Sobald das StatusBar-Steuerelement im einfachen Modus ist, legen Sie den Text durch Aufrufen der `SetText` Memberfunktion wird die Weitergabe von 255 als Wert für die *nPane* Parameter.
+Es gibt jedoch Fälle, in denen Sie nur eine einzelne Textzeile anzeigen müssen. In diesem Fall ist der einfache Modus für Ihre Bedürfnisse ausreichend. Um den Modus des `CStatusBarCtrl` Objekts in Simple zu ändern, führen Sie einen Aufrufen der [SetSimple](../mfc/reference/cstatusbarctrl-class.md#setsimple) -Member-Funktion aus. Wenn sich das StatusBar-Steuerelement im einfachen Modus befindet, legen Sie den Text fest, indem Sie die `SetText` Member-Funktion aufrufen und 255 als Wert für den *npane* -Parameter übergeben.
 
-Können Sie die [IsSimple](../mfc/reference/cstatusbarctrl-class.md#issimple) Funktion bestimmen, welcher Modus der `CStatusBarCtrl` Objekt befindet sich in.
+Sie können die [IsSimple](../mfc/reference/cstatusbarctrl-class.md#issimple) -Funktion verwenden, um zu bestimmen, in welchem Modus sich das `CStatusBarCtrl` Objekt befindet.
 
 > [!NOTE]
->  Wenn Statusobjekt Leiste aus zeigt nicht einfache, einfach geändert wird, oder umgekehrt, das Fenster wird sofort neu gezeichnet und, falls zutreffend, werden alle definierten Abschnitte automatisch wiederhergestellt.
+>  Wenn das Status leisten Objekt von nicht einfache in Simple geändert wird (oder umgekehrt), wird das Fenster sofort neu gezeichnet, und ggf. werden alle definierten Teile automatisch wieder hergestellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

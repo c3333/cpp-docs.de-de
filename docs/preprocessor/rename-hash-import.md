@@ -1,17 +1,15 @@
 ---
 title: Import Attribut umbenennen
 ms.date: 08/29/2019
-f1_keywords:
-- Rename
 helpviewer_keywords:
 - rename attribute
 ms.assetid: 5c5c6153-1087-4b7b-87fb-fc59b90b9975
-ms.openlocfilehash: ef1f64e0c268f850899efe499f7b1ad3991dd570
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 520369f0308078fead2947e27a512f25a3ad3fab
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70216662"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447486"
 ---
 # <a name="rename-import-attribute"></a>Import Attribut umbenennen
 
@@ -21,17 +19,17 @@ Umgeht Probleme mit Namenskonflikten.
 
 ## <a name="syntax"></a>Syntax
 
-> **#Import** *Typbibliothek* **Rename (** "*OldName*" **,** "*NewName*" **)**
+> **#Import** *Typbibliothek* **Umbenennen (** "*OldName*" **,** "*NewName*" **)**
 
 ### <a name="parameters"></a>Parameter
 
-*OldName*\
+*OldName* -\
 Alter Name in der Typbibliothek.
 
-*NewName*\
+*NewName* -\
 Name, der anstelle des alten Namens verwendet werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn das **Rename** -Attribut angegeben wird, ersetzt der Compiler alle Vorkommen von *OldName* in der *Type-Library* durch den vom Benutzer bereitgestellten *NewName* in den resultierenden Header Dateien.
 
@@ -40,7 +38,7 @@ Das **Rename** -Attribut kann verwendet werden, wenn ein Name in der Typbiblioth
 > [!NOTE]
 > Die Ersetzung erfolgt für einen in der Typbibliothek verwendeten, nicht für einen in der resultierenden Headerdatei verwendeten Namen.
 
-Angenommen, eine Eigenschaft mit dem Namen `MyParent` ist in einer Typbibliothek vorhanden und das Makro `GetMyParent` wird in einer Headerdatei definiert und vor `#import` verwendet. Da `GetMyParent` der Standardname einer Wrapper Funktion für die Fehler Behandlungs `get` Eigenschaft ist, tritt ein namens Konflikt auf. Um das Problem zu umgehen, verwenden Sie das folgende Attribut in der `#import`-Anweisung:
+Angenommen, eine Eigenschaft mit dem Namen `MyParent` ist in einer Typbibliothek vorhanden und das Makro `GetMyParent` wird in einer Headerdatei definiert und vor `#import` verwendet. Da `GetMyParent` der Standardname einer Wrapper Funktion für die Eigenschaft Fehlerbehandlung `get` ist, tritt ein namens Konflikt auf. Um das Problem zu umgehen, verwenden Sie das folgende Attribut in der `#import`-Anweisung:
 
 ```cpp
 #import MyTypeLib.tlb rename("MyParent","MyParentX")
@@ -52,11 +50,11 @@ das den Namen `MyParent` in der Typbibliothek umbenennt. Bei dem Versuch, den Wr
 #import MyTypeLib.tlb rename("GetMyParent","GetMyParentX")
 ```
 
-Der Grund hierfür ist, `GetMyParent` dass der Name nur in der resultierenden Header Datei der Typbibliothek auftritt.
+Dies liegt daran, dass der Name `GetMyParent` nur in der resultierenden Header Datei der Typbibliothek auftritt.
 
 **End C++ -Specific**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [#Import Attribute](../preprocessor/hash-import-attributes-cpp.md)\
 [#Import-Direktive](../preprocessor/hash-import-directive-cpp.md)

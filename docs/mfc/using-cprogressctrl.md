@@ -1,30 +1,28 @@
 ---
 title: Verwenden von CProgressCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CProgressCtrl
 helpviewer_keywords:
 - progress controls [MFC]
 - CProgressCtrl class [MFC], using
 - progress controls [MFC], CProgressCtrl
 - progress controls [MFC], using
 ms.assetid: 61473270-196b-41ab-bf2b-467f46673539
-ms.openlocfilehash: eb332d0c6eb55dddcd20d6d4f07fe6f666c015ab
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a575a766650a77b0908f0fa3016139239b23dc56
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411748"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441902"
 ---
 # <a name="using-cprogressctrl"></a>Verwenden von CProgressCtrl
 
-Sie können das Statussteuerelement verwenden, um den Fortschritt einer längeren Operation angibt. Es ist ein Rechteck, das mit der Hervorhebungsfarbe des Systems allmählich, wenn der Prozess fortschreitet gefüllt ist.
+Sie können das Status-Steuerelement verwenden, um den Fortschritt eines langwierigen Vorgangs anzuzeigen. Dabei handelt es sich um ein Rechteck, das allmählich mit der Hervorhebungs Farbe des-Vorgangs aufgefüllt wird
 
-Das Statussteuerelement wird durch Klasse in MFC dargestellt [CProgressCtrl](../mfc/reference/cprogressctrl-class.md).
+Die Fortschrittskontrolle wird in MFC durch die Klasse [CProgressCtrl](../mfc/reference/cprogressctrl-class.md)dargestellt.
 
-Wenn Sie zunächst das Statussteuerelement erstellen, wird Sie angeben, seiner Größe und Position, übergeordnetes Fenster (normalerweise ein Dialogfeld), und -ID. Mithilfe der *DwStyle* Parameter, Sie können auch angeben verschiedener Window-Stile für das Steuerelement und Formatvorlagen für wie sie voll ist.
+Wenn Sie das Status Steuerelement erstmalig erstellen, geben Sie die Größe und Position, das übergeordnete Fenster (in der Regel ein Dialogfeld) und die ID an. Wenn Sie den *dwstyle* -Parameter verwenden, können Sie auch verschiedene Fenster Stile für das Steuerelement und die Stile für das Ausfüllen angeben.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Stile für das Statussteuerelement](../mfc/styles-for-the-progress-control.md)
 
@@ -32,6 +30,6 @@ Wenn Sie zunächst das Statussteuerelement erstellen, wird Sie angeben, seiner G
 
 - [Bearbeiten des Statussteuerelements](../mfc/manipulating-the-progress-control.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

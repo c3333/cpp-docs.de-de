@@ -6,11 +6,11 @@ f1_keywords:
 - concrt/concurrency:[operator&amp;&amp
 ms.assetid: 8e373f23-fc8e-49f7-82e6-ba0c57b822f8
 ms.openlocfilehash: 676e1936af317a6ab19959f8fd09b1de06dfaf69
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883771"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427374"
 ---
 # <a name="concurrency-namespace-operators"></a>concurrency-Namespace-Operatoren
 
@@ -60,7 +60,7 @@ Die zweite Aufgabe, die mit der resultierenden Aufgabe kombiniert werden soll.
 
 Eine Aufgabe, die erfolgreich abgeschlossen wird, wenn eine der Eingabe Aufgaben erfolgreich abgeschlossen wurde. Wenn die Eingabeaufgaben vom Typ `T` sind, wird die Ausgabe dieser Funktion `task<std::vector<T>` sein. Wenn die Eingabeaufgaben vom Typ `void` sind, ist die Ausgabeaufgabe auch `task<void>`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn beide Tasks abgebrochen oder Ausnahmen ausgelöst werden, wird die zurückgegebene Aufgabe im Zustand "abgebrochen" vervollständigt, und eine der Ausnahmen, falls vorhanden, wird ausgelöst, wenn Sie `get()` oder `wait()` für diese Aufgabe ausführen.
 
@@ -109,7 +109,7 @@ Die zweite Aufgabe, die mit der resultierenden Aufgabe kombiniert werden soll.
 
 Eine Aufgabe, die erfolgreich abgeschlossen ist, wenn beide Eingabeaufgaben erfolgreich abgeschlossen wurden. Wenn die Eingabeaufgaben vom Typ `T` sind, wird die Ausgabe dieser Funktion `task<std::vector<T>>` sein. Wenn die Eingabeaufgaben vom Typ `void` sind, ist die Ausgabeaufgabe auch `task<void>`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn eine der Aufgaben abgebrochen wird oder eine Ausnahme auslöst, wird die zurückgegebene Aufgabe früh im abgebrochenen Zustand ausgeführt, und die Ausnahme wird ausgelöst, wenn Sie `get()` oder `wait()` für diese Aufgabe aufruft.
 
@@ -145,7 +145,7 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn der gleichzeitige Vektor Links vom Operator gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei gleichzeitige Vektoren sind gleich, wenn Sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -183,7 +183,7 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn die gleichzeitigen Vektoren nicht gleich sind. **false** , wenn die gleichzeitigen Vektoren gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei gleichzeitige Vektoren sind gleich, wenn Sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -221,7 +221,7 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn der gleichzeitige Vektor Links vom Operator kleiner als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Verhalten dieses Operators ist mit dem äquivalenten Operator für die `vector`-Klasse im `std`-Namespace identisch.
 
@@ -259,7 +259,7 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn der gleichzeitige Vektor Links vom Operator kleiner als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Verhalten dieses Operators ist mit dem äquivalenten Operator für die `vector`-Klasse im `std`-Namespace identisch.
 
@@ -297,7 +297,7 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn der gleichzeitige Vektor Links vom Operator größer als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Verhalten dieses Operators ist mit dem äquivalenten Operator für die `vector`-Klasse im `std`-Namespace identisch.
 
@@ -335,12 +335,12 @@ Ein Objekt des Typs `concurrent_vector`.
 
 **true** , wenn der gleichzeitige Vektor Links vom Operator größer als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Verhalten dieses Operators ist mit dem äquivalenten Operator für die `vector`-Klasse im `std`-Namespace identisch.
 
 Diese Methode ist in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren `_A` oder `_B`ändern können, nicht Parallelitäts sicher.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)

@@ -74,7 +74,6 @@ f1_keywords:
 - _WIN32
 - _WIN64
 - _WINRT_DLL
-- __func__
 helpviewer_keywords:
 - timestamps, preprocessor macro
 - cl.exe compiler, version number
@@ -226,12 +225,12 @@ no-loc:
 - _WIN64
 - _WINRT_DLL
 - __func__
-ms.openlocfilehash: ff3945fa9476e090f26ce029c63b1813401082e0
-ms.sourcegitcommit: f38f770bfda1c174d2b81fabda7c893b15bd83a1
+ms.openlocfilehash: 6da1ecd178c0bbeed3b741fb611571203d79cb76
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77473848"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444940"
 ---
 # <a name="predefined-macros"></a>Vordefinierte Makros
 
@@ -544,7 +543,7 @@ Keine Präprozessormakros, die die ATL-oder MFC-Bibliotheksversion identifiziere
 
 - `_MFC_VER` in \<afxver_. h-> als Ganzzahlliteral definiert, das die MFC-Versionsnummer codiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros (C/C++)](../preprocessor/macros-c-cpp.md)<br/>
 [Präprozessoroperatoren](../preprocessor/preprocessor-operators.md)<br/>

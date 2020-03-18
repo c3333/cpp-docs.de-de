@@ -1,29 +1,27 @@
 ---
 title: Verwenden von CHeaderCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CHeaderCtrl
 helpviewer_keywords:
 - header controls [MFC], using
 - CHeaderCtrl class [MFC]
 ms.assetid: fb3e512b-9539-43c4-a7e7-3fafd6d0706e
-ms.openlocfilehash: bf99aad508aee52bc8d345ca084ef96ef40f803b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 74e306368d7354bbc9f8281a8bf7fa857b6bf524
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386407"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444002"
 ---
 # <a name="using-cheaderctrl"></a>Verwenden von CHeaderCtrl
 
-Verwenden von einem Kopfzeilen-Steuerelement, dargestellt durch die Klasse [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md), um die Spaltenüberschriften für eine einspaltige Liste anzuzeigen. Beispielsweise wäre ein Headersteuerelement hilfreich für die Implementierung von Spalte Steuerelemente in einer Tabelle.
+Verwenden Sie ein Header Steuerelement, das durch die Klasse [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)dargestellt wird, um Spaltenüberschriften für eine Spaltenliste anzuzeigen. Ein Header Steuerelement wäre z. b. nützlich für das Implementieren von Spalten Steuerelementen in einer Kalkulations Tabelle.
 
-Das Kopfzeilen-Steuerelement ist in der Regel dem Namen "Header-Elemente," denen jedes einen Titel für die zugeordnete Spalte Text oder Zahlen aufgeteilt. Abhängig von der Stile, die Sie festlegen, können Sie eine Reihe von direkten Möglichkeiten für Benutzer zum Bearbeiten der Headerelemente angeben.
+Das Header Steuerelement ist in der Regel in Teile unterteilt, die als "Header Elemente" bezeichnet werden, wobei jeder einen Titel für die zugeordnete Spalte von Text oder Zahlen trägt. Abhängig von den von Ihnen festgelegten Formaten können Sie Benutzern eine Reihe direkter Möglichkeiten zum Bearbeiten der Header Elemente bereitstellen.
 
 > [!NOTE]
->  [CListCtrl](../mfc/reference/clistctrl-class.md) enthält ein eingebettetes Kopfzeilen-Steuerelement, und [CListView](../mfc/reference/clistview-class.md) kapselt `CListCtrl` in einer MFC-Klasse. Stellen Sie sich im Allgemeinen mit `CHeaderCtrl` Bezeichnung Listen, die Sie selbst zu zeichnen möchten.
+>  [CListCtrl](../mfc/reference/clistctrl-class.md) stellt ein eingebettetes Header Steuerelement bereit, und [CListView](../mfc/reference/clistview-class.md) kapselt `CListCtrl` in einer MFC-Klasse. Im Allgemeinen sollten Sie `CHeaderCtrl` zum bezeichnen von Listen verwenden, die Sie selbst zeichnen möchten.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Headersteuerelement und Listensteuerelement](../mfc/header-control-and-list-control.md)
 
@@ -49,6 +47,6 @@ Das Kopfzeilen-Steuerelement ist in der Regel dem Namen "Header-Elemente," denen
 
 - [Verarbeiten von Benachrichtigungen des Headersteuerelements](../mfc/processing-header-control-notifications.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

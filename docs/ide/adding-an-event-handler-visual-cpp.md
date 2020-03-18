@@ -3,19 +3,18 @@ title: Hinzufügen eines Ereignishandlers
 ms.date: 11/12/2018
 f1_keywords:
 - vc.codewiz.eventhandler.overview
-- vc.codewiz.eventhandler.overview
 helpviewer_keywords:
 - event handlers, adding
 - properties [Visual Studio], MSBuild
 - MSBuild, properties
 - event handler wizard [C++]
 ms.assetid: 050bebf0-a9e0-474b-905c-796fe5ac8fc3
-ms.openlocfilehash: 96e5b8777bb8b0c976277a06e8ad49b3334921fb
-ms.sourcegitcommit: c1f646c8b72f330fa8cf5ddb0f8f261ba10d16f0
-ms.translationtype: HT
+ms.openlocfilehash: 0d852991c29281a7ecf912bd3d764d9916ef10f7
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58328570"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447507"
 ---
 # <a name="add-an-event-handler"></a>Hinzufügen eines Ereignishandlers
 
@@ -59,7 +58,7 @@ Dieser Assistent fügt einer beliebigen Klasse einen Ereignishandler für ein Di
 
 - **Handlerfunktionsname**
 
-  Zeigt den Namen der Funktion an, die zur Behandlung des Ereignisses hinzugefügt wird. Der Name basiert standardmäßig auf dem Nachrichtentyp und dem Befehl, und `On` wird vorangestellt. Beispielsweise zeigt der Nachrichtentyp `BN_CLICKED` für die Schaltfläche namens `IDC_BUTTON1` den Handlerfunktionsnamen `OnBnClickedButton1` an.
+  Zeigt den Namen der Funktion an, die zur Behandlung des Ereignisses hinzugefügt wird. Der Name basiert standardmäßig auf dem Nachrichtentyp und dem Befehl, und `On` wird vorangestellt. Beispielsweise zeigt der Nachrichtentyp `IDC_BUTTON1` für die Schaltfläche namens `BN_CLICKED` den Handlerfunktionsnamen `OnBnClickedButton1` an.
 
 - **Klassenliste**
 

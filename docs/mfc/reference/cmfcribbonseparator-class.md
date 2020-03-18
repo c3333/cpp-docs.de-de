@@ -1,5 +1,5 @@
 ---
-title: CMFCRibbonSeparator-Klasse
+title: CMF cribbonseparator-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCRibbonSeparator
@@ -22,16 +22,16 @@ helpviewer_keywords:
 - CMFCRibbonSeparator [MFC], OnDraw
 - CMFCRibbonSeparator [MFC], OnDrawOnList
 ms.assetid: bedb1a53-cb07-4c3c-be12-698c5409e7cf
-ms.openlocfilehash: 4806582a226590459a104f64499ab6ae541570e7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 65321cb80c80a5f4c6b3cf9c67e85b1bfb6f9d11
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62380233"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445601"
 ---
-# <a name="cmfcribbonseparator-class"></a>CMFCRibbonSeparator-Klasse
+# <a name="cmfcribbonseparator-class"></a>CMF cribbonseparator-Klasse
 
-Implementiert das Menüband-Trennzeichen.
+Implementiert das Menüband Trennzeichen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,41 +39,41 @@ Implementiert das Menüband-Trennzeichen.
 class CMFCRibbonSeparator : public CMFCRibbonBaseElement
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[CMFCRibbonSeparator::CMFCRibbonSeparator](#cmfcribbonseparator)|Erstellt ein `CMFCRibbonSeparator`-Objekt.|
+|Name|BESCHREIBUNG|
+|[CMF cribbonseparator:: CMF cribbonseparator](#cmfcribbonseparator)|Erstellt ein `CMFCRibbonSeparator`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[CMFCRibbonSeparator::AddToListBox](#addtolistbox)|Fügt ein Trennzeichen, das die **Befehle** Liste der **anpassen** Dialogfeld. (Überschreibt [CMFCRibbonBaseElement::AddToListBox](../../mfc/reference/cmfcribbonbaseelement-class.md#addtolistbox).)|
+|Name|BESCHREIBUNG|
+|[Cmfcribbonseparator:: AddTo ListBox](#addtolistbox)|Fügt der Liste **Befehle** im Dialogfeld **Anpassen** ein Trennzeichen hinzu. (Überschreibt [cmfcribbonbaseelement:: addtlistbox](../../mfc/reference/cmfcribbonbaseelement-class.md#addtolistbox).)|
 |`CMFCRibbonSeparator::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
-|`CMFCRibbonSeparator::GetThisClass`|Durch das Framework verwendet wird, einen Zeiger zum Abrufen der [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt, das diesem Klassentyp zugeordnet ist.|
+|`CMFCRibbonSeparator::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[CMFCRibbonSeparator::CopyFrom](#copyfrom)|Eine Kopiermethode, die ein Trennzeichen des Elements aus einem anderen Objekt Variablen legt diese fest.|
-|[CMFCRibbonSeparator::GetRegularSize](#getregularsize)|Gibt die Größe eines Trennzeichens zurück.|
-|[CMFCRibbonSeparator::IsSeparator](#isseparator)|Gibt an, ob dies ein Trennzeichen ist.|
-|[CMFCRibbonSeparator::IsTabStop](#istabstop)|Gibt an, ob es sich um einen Tabstopp handelt.|
-|[CMFCRibbonSeparator::OnDraw](#ondraw)|Wird aufgerufen, durch das System an das Trennzeichen auf dem Menüband oder die Symbolleiste für den Schnellzugriff gezeichnet werden soll.|
-|[CMFCRibbonSeparator::OnDrawOnList](#ondrawonlist)|Wird aufgerufen, durch das System zeichnet die Trennlinie der **Befehle** Liste.|
+|Name|BESCHREIBUNG|
+|[CMF cribbonseparator:: CopyFrom](#copyfrom)|Eine Kopiermethode, mit der die Element Variablen eines Trenn Zeichens von einem anderen Objekt festgelegt werden.|
+|[CMF cribbonseparator:: getregularsize](#getregularsize)|Gibt die Größe eines Trenn Zeichens zurück.|
+|[CMF cribbonseparator:: IsSeparator](#isseparator)|Gibt an, ob dies ein Trennzeichen ist.|
+|[CMF cribbonseparator:: istabstopp](#istabstop)|Gibt an, ob es sich um einen Tabstopp handelt.|
+|[CMF cribbonseparator:: OnDraw](#ondraw)|Wird vom System aufgerufen, um das Trennzeichen auf dem Menüband oder der Symbolleiste für den schnell Zugriff zu zeichnen.|
+|[CMF cribbonseparator:: ondrawonlist](#ondrawonlist)|Wird vom System aufgerufen, um das Trennzeichen in der Liste der **Befehle** zu zeichnen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Menüband-Trennzeichen ist eine vertikale oder horizontale Linie, die logisch trennt Elemente des Menübands. Eine Trennzeichen kann auf den Steuerelementen des Menübands, klicken Sie im Menü des Hauptfensters der Anwendung, die Status-Menübands und Symbolleiste für den Schnellzugriff gezeichnet werden.
+Ein Menüband-Trennzeichen ist eine vertikale oder horizontale Linie, die Menü Band Elemente logisch trennt. Ein Trennzeichen kann auf dem Menüband-Steuerelement, dem Hauptmenü der Anwendung, der Multifunktionsleisten-Statusleiste und der Symbolleiste für den schnell Zugriff gezeichnet werden.
 
-Um ein Trennzeichen in Ihrer Anwendung verwenden zu können, erstellen Sie das neue Objekt aus, und fügen Sie sie zum Menü "hauptanwendung" wie hier gezeigt:
+Wenn Sie ein Trennzeichen in Ihrer Anwendung verwenden möchten, erstellen Sie das neue-Objekt, und fügen Sie es wie im folgenden gezeigt zum Hauptmenü der Anwendung hinzu:
 
 ```
 CMFCRibbonMainPanel* pMainPanel = m_wndRibbonBar.AddMainCategory(_T("Main Menu"),
@@ -83,7 +83,8 @@ CMFCRibbonMainPanel* pMainPanel = m_wndRibbonBar.AddMainCategory(_T("Main Menu")
 ...
 pMainPanel->Add(new CMFCRibbonSeparator(TRUE));
 ```
-Rufen Sie [CMFCRibbonPanel::AddSeparator](../../mfc/reference/cmfcribbonpanel-class.md#addseparator) menübandbereichen Trennzeichen hinzu. Die Trennzeichen zugeordnet und intern von hinzugefügt werden die `AddSeparator` Methode.
+
+Wenden Sie [CMFCRibbonPanel:: addSeparator](../../mfc/reference/cmfcribbonpanel-class.md#addseparator) an, um den Menü Band Bereichen Trennzeichen hinzuzufügen. Die Trennzeichen werden zugeordnet und intern durch die `AddSeparator`-Methode hinzugefügt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -91,15 +92,15 @@ Rufen Sie [CMFCRibbonPanel::AddSeparator](../../mfc/reference/cmfcribbonpanel-cl
 
 [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)
 
-[CMFCRibbonSeparator](../../mfc/reference/cmfcribbonseparator-class.md)
+[CMF cribbonseparator](../../mfc/reference/cmfcribbonseparator-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxbaseribbonelement.h
 
-##  <a name="addtolistbox"></a>  CMFCRibbonSeparator::AddToListBox
+##  <a name="addtolistbox"></a>Cmfcribbonseparator:: AddTo ListBox
 
-Fügt ein Trennzeichen, das die **Befehle** Liste der **anpassen** Dialogfeld.
+Fügt der Liste **Befehle** im Dialogfeld **Anpassen** ein Trennzeichen hinzu.
 
 ```
 virtual int AddToListBox(
@@ -109,17 +110,17 @@ virtual int AddToListBox(
 
 ### <a name="parameters"></a>Parameter
 
-*pWndListBox*<br/>
-[in] Ein Zeiger auf die **Befehle** Liste, in dem das Trennzeichen wird hinzugefügt.
+*pwndlistbox*<br/>
+in Ein Zeiger auf die **Befehls** Liste, in der das Trennzeichen hinzugefügt wird.
 
-*bDeep*<br/>
-[in] Ignoriert.
+*bdeep*<br/>
+in Erten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Nullbasierte Index in die Zeichenfolge in das Listenfeld gemäß *pWndListBox*.
+NULL basierter Index der Zeichenfolge im Listenfeld, das von *pwndlistbox*angegeben wird.
 
-##  <a name="cmfcribbonseparator"></a>  CMFCRibbonSeparator::CMFCRibbonSeparator
+##  <a name="cmfcribbonseparator"></a>CMF cribbonseparator:: CMF cribbonseparator
 
 Erstellt ein `CMFCRibbonSeparator`-Objekt.
 
@@ -129,22 +130,22 @@ CMFCRibbonSeparator(BOOL bIsHoriz = FALSE);
 
 ### <a name="parameters"></a>Parameter
 
-*bIsHoriz*<br/>
-[in] Bei "true", ist das Trennzeichen horizontal; Wenn "FALSE" ist das Trennzeichen vertikal.
+*bishoriz*<br/>
+in TRUE gibt an, dass das Trennzeichen horizontal ist. FALSE gibt an, dass das Trennzeichen vertikal ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Horizontale Trennzeichen werden in Anwendungsmenüs verwendet. Vertikale Trennzeichen werden in Symbolleisten verwendet.
+Horizontale Trennzeichen werden in Anwendungs Menüs verwendet. Vertikale Trennzeichen werden in Symbolleisten verwendet.
 
 ### <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie zum Erstellen eines Objekts von der `CMFCRibbonSeparator` Klasse.
+Im folgenden Beispiel wird veranschaulicht, wie ein Objekt der `CMFCRibbonSeparator`-Klasse erstellt wird.
 
 [!code-cpp[NVC_MFC_RibbonApp#19](../../mfc/reference/codesnippet/cpp/cmfcribbonseparator-class_1.cpp)]
 
-##  <a name="copyfrom"></a>  CMFCRibbonSeparator::CopyFrom
+##  <a name="copyfrom"></a>CMF cribbonseparator:: CopyFrom
 
-Eine Kopiermethode, die ein Trennzeichen des Elements aus einem anderen Objekt Variablen legt diese fest.
+Eine Kopiermethode, mit der die Element Variablen eines Trenn Zeichens von einem anderen Objekt festgelegt werden.
 
 ```
 virtual void CopyFrom(const CMFCRibbonBaseElement& src);
@@ -153,11 +154,11 @@ virtual void CopyFrom(const CMFCRibbonBaseElement& src);
 ### <a name="parameters"></a>Parameter
 
 *Src*<br/>
-[in] Das Quellelement des Menübands zum Kopieren aus.
+in Das quellribbon-Element, aus dem kopiert werden soll.
 
-##  <a name="getregularsize"></a>  CMFCRibbonSeparator::GetRegularSize
+##  <a name="getregularsize"></a>CMF cribbonseparator:: getregularsize
 
-Gibt die Größe eines Trennzeichens zurück.
+Gibt die Größe eines Trenn Zeichens zurück.
 
 ```
 virtual CSize GetRegularSize(CDC* pDC);
@@ -166,13 +167,13 @@ virtual CSize GetRegularSize(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Ein Zeiger auf ein Gerät.
+in Ein Zeiger auf einen Geräte Inhalt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe des Trennzeichens für den angegebenen Gerätekontext.
+Die Größe des Trenn Zeichens im angegebenen Gerätekontext.
 
-##  <a name="isseparator"></a>  CMFCRibbonSeparator::IsSeparator
+##  <a name="isseparator"></a>CMF cribbonseparator:: IsSeparator
 
 Gibt an, ob dies ein Trennzeichen ist.
 
@@ -182,9 +183,9 @@ virtual BOOL IsSeparator() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für diese Klasse immer TRUE.
+Immer true für diese Klasse.
 
-##  <a name="istabstop"></a>  CMFCRibbonSeparator::IsTabStop
+##  <a name="istabstop"></a>CMF cribbonseparator:: istabstopp
 
 Gibt an, ob es sich um einen Tabstopp handelt.
 
@@ -194,15 +195,15 @@ virtual BOOL IsTabStop() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für diese Klasse immer FALSE.
+Immer false für diese Klasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Menüband-Trennzeichen ist es sich nicht um einen Tabstopp.
+Ein Menüband-Trennzeichen ist kein Tabstopp.
 
-##  <a name="ondraw"></a>  CMFCRibbonSeparator::OnDraw
+##  <a name="ondraw"></a>CMF cribbonseparator:: OnDraw
 
-Wird aufgerufen, durch das System an das Trennzeichen auf dem Menüband oder die Symbolleiste für den Schnellzugriff gezeichnet werden soll.
+Wird vom System aufgerufen, um das Trennzeichen auf dem Menüband oder der Symbolleiste für den schnell Zugriff zu zeichnen.
 
 ```
 virtual void OnDraw(CDC* pDC);
@@ -211,11 +212,11 @@ virtual void OnDraw(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Ein Zeiger auf einen Gerätekontext.
+in Ein Zeiger auf einen Gerätekontext.
 
-##  <a name="ondrawonlist"></a>  CMFCRibbonSeparator::OnDrawOnList
+##  <a name="ondrawonlist"></a>CMF cribbonseparator:: ondrawonlist
 
-Wird aufgerufen, durch das System zeichnet die Trennlinie der **Befehle** Liste.
+Wird vom System aufgerufen, um das Trennzeichen in der Liste der **Befehle** zu zeichnen.
 
 ```
 virtual void OnDrawOnList(
@@ -231,15 +232,15 @@ virtual void OnDrawOnList(
 
 |||
 |-|-|
-|Parameter|Beschreibung|
-|*pDC*|[in] Ein Zeiger auf einen Gerätekontext.|
-|*strText*|[in] Text in der Liste angezeigt wird.|
-|*nTextOffset*|[in] Der Abstand zwischen dem Text und der linken Seite des umschließenden Rechtecks.|
-|*rect*|[in] Gibt das umschließende Rechteck.|
-|*bIsSelected*|[in] Ignoriert.|
-|*bHighlighted*|[in] Ignoriert.|
+|Parameter|BESCHREIBUNG|
+|*pDC*|in Ein Zeiger auf einen Gerätekontext.|
+|*Text*|in Der in der Liste angezeigte Text.|
+|*ntexumffset*|in Abstand zwischen dem Text und der linken Seite des umgebenden Rechtecks.|
+|*Rect*|in Gibt das umgebende Rechteck an.|
+|*bissgewählt*|in Erten.|
+|*bhervor gehoben*|in Erten.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

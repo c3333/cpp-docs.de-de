@@ -7,7 +7,6 @@ f1_keywords:
 - copyprivate
 - default
 - firstprivate
-- if
 - lastprivate
 - nowait
 - num_threads
@@ -33,12 +32,12 @@ helpviewer_keywords:
 - schedule OpenMP clause
 - shared OpenMP clause
 ms.assetid: 806e7d8f-b204-4e4c-a12c-273ab540a7ca
-ms.openlocfilehash: 92bd73fda5891b0bbf7393d1a7fda573d0f00263
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: 37f86eeb172c5f8b496ed724142af002f5db8d41
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424158"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446343"
 ---
 # <a name="openmp-clauses"></a>OpenMP-Klauseln
 
@@ -48,7 +47,7 @@ Visual C++ unterstützt die folgenden OpenMP-Klauseln.
 
 Für allgemeine Attribute:
 
-|Klausel|Beschreibung|
+|Klausel|BESCHREIBUNG|
 |------|-----------|
 |[if](#if-openmp)|Gibt an, ob eine Schleife Parallel oder seriell ausgeführt werden soll.|
 |[num_threads](#num-threads)|Legt die Anzahl der Threads in einem Thread Team fest.|
@@ -58,13 +57,13 @@ Für allgemeine Attribute:
 
 Für Datenfreigabe Attribute:
 
-|Klausel|Beschreibung|
+|Klausel|BESCHREIBUNG|
 |------|-----------|
 |[private](#private-openmp)|Gibt an, dass jeder Thread über eine eigene Instanz einer Variablen verfügen soll.|
 |[firstprivate](#firstprivate)|Gibt an, dass jeder Thread über eine eigene Instanz einer Variablen verfügen muss und dass die Variable mit dem Wert der Variablen initialisiert werden soll, da Sie vor dem parallelen Konstrukt vorhanden ist.|
 |[lastprivate](#lastprivate)|Gibt an, dass die Version des einschließenden Kontexts der Variablen auf die private Version des Threads festgelegt ist, der die abschließende Iterations Anweisung (for-Loop-Konstrukt) oder den letzten Abschnitt (#Pragma Abschnitte) ausführt.|
 |[Genu](#shared-openmp)|Gibt an, dass eine oder mehrere Variablen von allen Threads gemeinsam verwendet werden sollen.|
-|[default](#default-openmp)|Gibt das Verhalten von Variablen ohne Bereichs Angabe in einem parallelen Bereich an.|
+|[Standardwert](#default-openmp)|Gibt das Verhalten von Variablen ohne Bereichs Angabe in einem parallelen Bereich an.|
 |[reduction](#reduction)|Gibt an, dass eine oder mehrere Variablen, die für jeden Thread privat sind, Gegenstand eines Reduzierungs Vorgangs am Ende des parallelen Bereichs sind.|
 |[copyin](#copyin)|Ermöglicht Threads den Zugriff auf den Wert des Master Threads für eine [Thread private](openmp-directives.md#threadprivate) -Variable.|
 |[copyprivate](#copyprivate)|Gibt an, dass eine oder mehrere Variablen von allen Threads gemeinsam verwendet werden sollen.|
@@ -82,7 +81,7 @@ copyin(var)
 *var*<br/>
 Die `threadprivate` Variable, die mit dem Wert der Variablen im Master Thread initialisiert wird, so wie Sie vor dem parallelen Konstrukt vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `copyin` gilt für die folgenden Direktiven:
 
@@ -109,7 +108,7 @@ copyprivate(var)
 *var*<br/>
 Eine oder mehrere Variablen, die freigegeben werden sollen. Wenn mehr als eine Variable angegeben ist, trennen Sie die Variablennamen durch ein Komma.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `copyprivate` gilt für die [einzelne](openmp-directives.md#single) Direktive.
 
@@ -189,7 +188,7 @@ Gibt das Verhalten von Variablen ohne Bereichs Angabe in einem parallelen Bereic
 default(shared | none)
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `shared`, das in Kraft ist, wenn die `default`-Klausel nicht angegeben ist, bedeutet, dass alle Variablen in einem parallelen Bereich so behandelt werden, als ob Sie mit der [Shared](#shared-openmp) -Klausel angegeben wurden. `none` bedeutet, dass alle Variablen, die in einem parallelen Bereich verwendet werden, der nicht mit der [private](#private-openmp), [Shared](#shared-openmp)-, [Reduction](#reduction)-, [First Private](#firstprivate)-oder [Last private](#lastprivate) -Klausel verwendet wird, einen Compilerfehler verursachen.
 
@@ -218,7 +217,7 @@ firstprivate(var)
 *var*<br/>
 Die Variable, die Instanzen in jedem Thread enthalten soll und die mit dem Wert der Variablen initialisiert werden, da Sie vor dem parallelen Konstrukt vorhanden ist. Wenn mehr als eine Variable angegeben ist, trennen Sie die Variablennamen durch ein Komma.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `firstprivate` gilt für die folgenden Direktiven:
 
@@ -246,7 +245,7 @@ if(expression)
 *expression*<br/>
 Ein ganzzahliger Ausdruck, der bewirkt, dass der Code im parallelen Bereich parallel ausgeführt wird, wenn er als true (ungleich null) ausgewertet wird. Wenn der Ausdruck als false (0) ausgewertet wird, wird der parallele Bereich nacheinander (von einem einzelnen Thread) ausgeführt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `if` gilt für die folgenden Direktiven:
 
@@ -305,7 +304,7 @@ lastprivate(var)
 *var*<br/>
 Die Variable, die auf die private Version eines Threads festgelegt ist, der die abschließende Iterations Anweisung (for-Loop-Konstrukt) oder den letzten Abschnitt (#Pragma Abschnitte) ausführt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `lastprivate` gilt für die folgenden Direktiven:
 
@@ -326,7 +325,7 @@ Ein Beispiel für die Verwendung `lastprivate`-Klausel finden Sie unter [Zeitpla
 nowait
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `nowait` gilt für die folgenden Direktiven:
 
@@ -396,7 +395,7 @@ num_threads(num)
 *num*<br/>
 Die Anzahl der Threads
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `num_threads`-Klausel verfügt über die gleiche Funktionalität wie die [omp_set_num_threads](openmp-functions.md#omp-set-num-threads) -Funktion.
 
@@ -420,7 +419,7 @@ Erforderlich für eine parallele [for](openmp-directives.md#for-openmp) -Anweisu
 ordered
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `ordered` gilt für die [for](openmp-directives.md#for-openmp) -Direktive.
 
@@ -443,7 +442,7 @@ private(var)
 *var*<br/>
 Die Variable, die in jedem Thread Instanzen enthalten soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `private` gilt für die folgenden Direktiven:
 
@@ -648,7 +647,7 @@ Der Operator für den Vorgang, der für *die Variablen am* Ende des parallelen B
 *var*<br/>
 Eine oder mehrere Variablen, für die die skalare Reduzierung durchzuführen ist. Wenn mehr als eine Variable angegeben ist, trennen Sie die Variablennamen durch ein Komma.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `reduction` gilt für die folgenden Direktiven:
 
@@ -781,13 +780,13 @@ schedule(type[,size])
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Die Art der Planung, entweder `dynamic`, `guided`, `runtime`oder `static`.
 
 *size*<br/>
 Optionale Gibt die Größe der Iterationen an. die *Größe* muss eine ganze Zahl sein. Ungültig, wenn der *Typ* `runtime`ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [2.4.1 für Konstrukt](../../../parallel/openmp/2-4-1-for-construct.md).
 
@@ -918,7 +917,7 @@ shared(var)
 *var*<br/>
 Eine oder mehrere Variablen, die freigegeben werden sollen. Wenn mehr als eine Variable angegeben ist, trennen Sie die Variablennamen durch ein Komma.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine andere Möglichkeit, Variablen zwischen Threads gemeinsam zu nutzen, besteht in der [copyprivate](#copyprivate) -Klausel.
 

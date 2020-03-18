@@ -1,8 +1,6 @@
 ---
 title: Gebietsschema-Namen, Sprachen und Zeichenfolgen für Länder und Regionen
 ms.date: 12/10/2018
-f1_keywords:
-- c.strings
 helpviewer_keywords:
 - country/region strings
 - localization, locale
@@ -10,12 +8,12 @@ helpviewer_keywords:
 - setlocale function
 - language strings
 ms.assetid: a0e5a0c5-5602-4da0-b65f-de3d6c8530a2
-ms.openlocfilehash: 512eb589d964da9ef8e87f4193362c739b39b4b0
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
-ms.translationtype: HT
+ms.openlocfilehash: d9baf3622064a7f035d0eb2b096916ae81a3bd50
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69500060"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443111"
 ---
 # <a name="ucrt-locale-names-languages-and-countryregion-strings"></a>UCRT: Gebietsschemanamen, Sprachen und Zeichenfolgen für Länder und Regionen
 
@@ -28,7 +26,7 @@ Das *locale*-Argument für die Funktionen [setlocale\_, wsetlocale](../c-runtime
 &nbsp;&nbsp;&nbsp;&nbsp;\| ""<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;\| NULL
 
-Die *locale-name*-Form ist eine kurze, von der IETF standardisierte Zeichenfolge, z.B. `en-US` für Englisch (USA) oder `bs-Cyrl-BA` für Bosnisch (Kyrillisch, Bosnien und Herzegowina). Diese Formen werden bevorzugt. Eine Liste aller von einer Windows-Betriebssystemversion unterstützten Gebietsschemanamen finden Sie in der Spalte **Language tag** der Tabelle in [Appendix A: Product Behavior](https://msdn.microsoft.com/library/cc233982.aspx) (Anhang A: Produktverhalten) in [MS-LCID]: Windows Language Code Identifier (LCID) Reference (LCID-Referenz [Windows Language Code Identifier]). Unter dieser Ressource finden Sie die unterstützte Sprache, das Skript und die regionalen Teile der Gebietsschemanamen. Informationen zu den unterstützten Gebietsschemanamen ohne standardmäßige Sortierreihenfolge finden Sie in der Spalte des **Gebietsschemanamens** unter den [Sortierreihenfolgen-IDs](/windows/win32/Intl/sort-order-identifiers). Unter Windows 10 und höher sind Gebietsschemanamen zulässig, die gültigen [BCP-47](https://tools.ietf.org/html/bcp47)-Sprachtags entsprechen. `jp-US` z.B. ist ein gültiges BCP-47-Tag, für die locale-Funktion ist es jedoch effektiv nur `US`.
+Die *locale-name*-Form ist eine kurze, von der IETF standardisierte Zeichenfolge, z.B. `en-US` für Englisch (USA) oder `bs-Cyrl-BA` für Bosnisch (Kyrillisch, Bosnien und Herzegowina). Diese Formen werden bevorzugt. Eine Liste der unterstützten Gebietsschemanamen nach Windows-Betriebssystemversionen finden Sie in der Spalte **Sprachtag** der Tabelle unter [Anhang A: Produktverhalten](https://msdn.microsoft.com/library/cc233982.aspx) in [MS-LCID]: Windows-Sprachcodebezeichner – Referenz. Unter dieser Ressource finden Sie die unterstützte Sprache, das Skript und die regionalen Teile der Gebietsschemanamen. Informationen zu den unterstützten Gebietsschemanamen ohne standardmäßige Sortierreihenfolge finden Sie in der Spalte des **Gebietsschemanamens** unter den [Sortierreihenfolgen-IDs](/windows/win32/Intl/sort-order-identifiers). Unter Windows 10 und höher sind Gebietsschemanamen zulässig, die gültigen [BCP-47](https://tools.ietf.org/html/bcp47)-Sprachtags entsprechen. `jp-US` z.B. ist ein gültiges BCP-47-Tag, für die locale-Funktion ist es jedoch effektiv nur `US`.
 
 Die Form *language*\[ **\_** _country-region_\[ __.__ *code-page*]] wird in den Gebietsschemaeinstellungen für eine Kategorie gespeichert, wenn eine Sprachzeichenfolge oder eine Sprachzeichenfolge und eine Land-/Regionszeichenfolge verwendet werden, um das Gebietsschema zu erstellen. Der Satz unterstützter Sprachzeichenfolgen wird in [Language Strings](../c-runtime-library/language-strings.md) beschrieben, und die Liste der unterstützten Land-/Regionszeichenfolgen wird in [Country/Region Strings](../c-runtime-library/country-region-strings.md) aufgeführt. Wenn die angegebene Sprache nicht dem angegebenen Land bzw. der angegebenen Region zugeordnet ist, wird in den Gebietsschemaeinstellungen die Standardsprache für das angegebene Land bzw. die angegebene Region gespeichert. Für Gebietsschema-Zeichenfolgen, die in Code eingebettet sind oder für den Speicher serialisiert sind, empfehlen wir diese Form nicht. Bei diesen Zeichenfolgen ist nämlich die Wahrscheinlichkeit größer, dass sie durch eine Betriebssystemaktualisierung geändert werden, als die Gebietsschema-Namensform.
 
@@ -41,7 +39,7 @@ Ein *locale*-Argumentwert von `C` gibt die Umgebung mit minimaler ANSI-Konformit
 Sie können für die Funktionen `setlocale` und `_wsetlocale` alle Gebietsschemakategorien gleichzeitig mithilfe der `LC_ALL` -Kategorie angeben. Die Kategorien können alle auf das gleiche Gebietsschema festgelegt werden, oder Sie können jede Kategorie einzeln festlegen, indem Sie ein Gebietsschemaargument mit dieser Form verwenden:
 
 > *LC-ALL-specifier* :: *locale*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;\| \[**LC_COLLATE=** _locale_]\[ **;LC_CTYPE=** _locale_]\[ **;LC_MONETARY=** _locale_]\[ **;LC_NUMERIC=** _locale_]\[ **;LC_TIME=** _locale_]
+&nbsp;&nbsp;&nbsp;&nbsp;\| \[**LC_COLLATE =** Gebiets_Schema]\[_ **; LC_CTYPE =** Gebiets_Schema]\[_ **; LC_MONETARY =** Gebiets_Schema]\[_ **; LC_NUMERIC =** Gebiets_Schema]\[_ **; LC_TIME =** Gebiets_Schema]_
 
 Sie können mehrere Kategorientypen angeben, durch Semikolons getrennt. Bei nicht angegebenen Kategorientypen werden die aktuellen Gebietsschemaeinstellungen verwendet. Dieser Codeausschnitt legt beispielsweise das aktuelle Gebietsschema für alle Kategorien auf `de-DE` fest und legt dann die Kategorien `LC_MONETARY` auf `en-GB` und `LC_TIME` auf `es-ES` fest:
 
@@ -50,7 +48,7 @@ _wsetlocale(LC_ALL, L"de-DE");
 _wsetlocale(LC_ALL, L"LC_MONETARY=en-GB;LC_TIME=es-ES");
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C-Laufzeitbibliotheksreferenz](../c-runtime-library/c-run-time-library-reference.md)<br/>
 [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)<br/>

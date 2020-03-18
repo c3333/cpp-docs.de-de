@@ -21,7 +21,6 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- tell
 - telli64
 - _telli64
 - _tell
@@ -33,12 +32,12 @@ helpviewer_keywords:
 - telli64 function
 - _telli64 function
 ms.assetid: 1500e8f9-8fec-4253-9eec-ec66125dfc9b
-ms.openlocfilehash: 54f672a1b230103d6f9ae1c45d2c9e487764939e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: f092bdfdb27dd73baf159da60ba66bd5809aaf61
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946258"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443675"
 ---
 # <a name="_tell-_telli64"></a>_tell, _telli64
 
@@ -68,15 +67,15 @@ Der Rückgabewert-1L gibt einen Fehler an. Wenn *handle* ein ungültiger Dateide
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md) .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_tell** -Funktion Ruft die aktuelle Position des Dateizeigers (sofern vorhanden) ab, der dem *handle* -Argument zugeordnet ist. Die Position wird als Anzahl von Bytes ab dem Anfang der Datei angegeben. Bei der **_telli64** -Funktion wird dieser Wert als 64-Bit-Ganzzahl ausgedrückt.
+Die **_tell** -Funktion Ruft die aktuelle Position des Dateizeigers (sofern vorhanden) ab, der dem *handle* -Argument zugeordnet ist. Die Position wird als Anzahl von Bytes ab dem Anfang der Datei angegeben. Für die **_telli64** -Funktion wird dieser Wert als 64-Bit-Ganzzahl ausgedrückt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_tell**, **_telli64**|\<io.h>|
+|**_tell** **_telli64**|\<io.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -120,13 +119,13 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Current file position is: 20
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
 [ftell, _ftelli64](ftell-ftelli64.md)<br/>

@@ -13,17 +13,17 @@ helpviewer_keywords:
 - std::gslice [C++], stride
 ms.assetid: f47cffd0-ea59-4b13-848b-7a5ce1d7e2a3
 ms.openlocfilehash: 9290fabc86ffbdb051b7c61fe1600cd2f7f17dca
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866249"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427038"
 ---
 # <a name="gslice-class"></a>gslice-Klasse
 
 Eine Hilfsprogrammklasse zu valarray, die zum Definieren von mehrdimensionaler Teilmengen von einem valarray verwendet wird. Wenn ein valarray als mehrdimensionale Matrix mit allen Elementen in einem Array angesehen wird, extrahiert das Segment einen Vektor aus dem mehrdimensionalen Array.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Klasse speichert die Parameter, die ein Objekt des Typs [gslice_array](../standard-library/gslice-array-class.md) charakterisieren. Die Teilmenge von einem valarray wird indirekt erstellt, wenn ein Objekt der gslice-Klasse als ein Argument für ein Objekt der Klasse [valarray](../standard-library/valarray-class.md#op_at) **\<Typ>** erscheint. Die gespeicherten Werte, die die aus dem übergeordneten valarray ausgewählte Teilmenge angeben, enthalten:
 
@@ -41,19 +41,19 @@ Vorgänge für valarrays sind nur garantiert, wenn die durch die gslices definie
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[gslice](#gslice)|Definiert eine Teilmenge von `valarray`, die aus mehreren Segmenten von `valarray` besteht, die alle bei einem angegebenen Element beginnen.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[size](#size)|Sucht die Arraywerte durch Angabe der Anzahl von Elementen in einem allgemeinen Segment von `valarray`.|
 |[start](#start)|Sucht den Startindex eines allgemeinen Segments von `valarray`.|
 |[stride](#stride)|Sucht den Abstand zwischen Elementen in einem allgemeinen Segment von `valarray`.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<Valarray->
 
@@ -87,7 +87,7 @@ Ein Array, das die Sprünge in jedem Segment angibt.
 
 Der Standardkonstruktor speichert 0 (null) für den Startindex und leere Vektoren für die Längen- und Sprungvektoren. Der zweite Konstruktor speichert *_StartIndex* für den Start Index, *_LenArray* für das Längen Array und *_IncArray* für das STRIDE-Array.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 **gslice** definiert eine Teilmenge eines valarray, die aus mehreren Segmenten des valarray besteht, und die jeweils am gleichen angegebenen Element beginnen. Die Möglichkeit, Arrays zu verwenden, um mehrere Segmente zu definieren, ist der einzige Unterschied zwischen `gslice` und [slice:: slice](../standard-library/slice-class.md#slice). Der erste Slice verfügt über ein erstes Element mit einem Index *_StartIndex*, eine Reihe von Elementen, die durch das erste Element von *_LenArray*angegeben werden, und einen Stride, der durch das erste Element von *_IncArray*angegeben wird. Der erste Satz der orthogonalen Segmente hat erste Elemente, die durch das erste Segment angegeben wurden. Das zweite Element von *_LenArray* gibt die Anzahl der Elemente an. Der Stride wird durch das zweite Element von *_IncArray*angegeben. Eine dritte Dimension der Segmente würde die Elemente des zweidimensionalen Arrays als Startelemente nehmen und analog verfahren.
 
@@ -150,7 +150,7 @@ valarray<size_t> size() const;
 
 Ein valarray, das die Anzahl der Elemente in jedem Segment eines allgemeinen Segments eines valarray angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt die gespeicherten Segmentlängen zurück.
 
@@ -347,6 +347,6 @@ The strides of vaResult are:
 vaGSlice.stride ( ) = ( 7 4 ).
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

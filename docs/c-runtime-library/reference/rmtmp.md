@@ -20,7 +20,6 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- rmtmp
 - _rmtmp
 helpviewer_keywords:
 - removing temporary files
@@ -30,12 +29,12 @@ helpviewer_keywords:
 - files [C++], removing
 - temporary files [C++], removing
 ms.assetid: 7419501e-2587-4f2a-b469-0dca07f84736
-ms.openlocfilehash: 314399cf174974132a3635631162a7ffa89342c4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: de28768f479df00eae315c99b80103c5319b38af
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949165"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442781"
 ---
 # <a name="_rmtmp"></a>_rmtmp
 
@@ -52,13 +51,13 @@ int _rmtmp( void );
 
 **_rmtmp** gibt die Anzahl der geschlossenen und gelöschten temporären Dateien zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_rmtmp** -Funktion bereinigt alle temporären Dateien im aktuellen Verzeichnis. Mit der-Funktion werden nur die von **tmpfile**erstellten Dateien entfernt. Verwenden Sie Sie nur in demselben Verzeichnis, in dem die temporären Dateien erstellt wurden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_rmtmp**|\<stdio.h>|
 
@@ -66,13 +65,13 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 ## <a name="libraries"></a>Bibliotheken
 
-Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
+Alle Versionen der [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
 ## <a name="example"></a>Beispiel
 
 Siehe das Beispiel für [tmpfile](tmpfile.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [_flushall](flushall.md)<br/>

@@ -2,7 +2,6 @@
 title: 'Gleichheitsoperatoren: == und !='
 ms.date: 11/04/2016
 f1_keywords:
-- not_eq
 - '!='
 - ==
 helpviewer_keywords:
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - not_eq operator
 - equal to operator
 ms.assetid: ba4e9659-2392-4fb4-be5a-910a2a6df45a
-ms.openlocfilehash: d6248d4a31c478b62e5fbe304d9bde9b51b7cb06
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7e42b66438579bc9be6274863366762b8b4ffbe9
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392167"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444401"
 ---
 # <a name="equality-operators--and-"></a>Gleichheitsoperatoren: == und !=
 
@@ -30,17 +29,17 @@ expression == expression
 expression != expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die binären Gleichheitsoperatoren vergleichen die Operanden hinsichtlich strikter Gleichheit oder Ungleichheit.
 
-Die Gleichheitsoperatoren "gleich" (`==`) und "ungleich" (`!=`) haben weniger Vorrang als die relationalen Operatoren, aber sie verhalten sich ähnlich. Der Ergebnistyp für diese Operatoren ist **"bool"**.
+Die Gleichheitsoperatoren "gleich" (`==`) und "ungleich" (`!=`) haben weniger Vorrang als die relationalen Operatoren, aber sie verhalten sich ähnlich. Der Ergebnistyp für diese Operatoren ist " **bool**".
 
-Der Ungleichheitsoperator (`==`) gibt **"true"** (1), wenn beide Operanden denselben Wert haben; andernfalls wird **"false"** (0). Der Not-gleich-Operator (`!=`) gibt **"true"** , wenn die Operanden nicht mit den gleichen Wert verfügen, andernfalls **"false"**.
+Der Gleichheits Operator (`==`) gibt **true** (1) zurück, wenn beide Operanden denselben Wert aufweisen. Andernfalls wird **false** (0) zurückgegeben. Der ungleich Operator (`!=`) gibt **true** zurück, wenn die Operanden nicht denselben Wert aufweisen. Andernfalls wird **false**zurückgegeben.
 
 ## <a name="operator-keyword-for-"></a>Operator-Schlüsselwort für !=
 
-Der `not_eq`-Operator ist die Textentsprechung von `!=`. Es gibt zwei Möglichkeiten, den Zugriff auf die `not_eq` -Operator in Programmen: Fügen Sie die Headerdatei `iso646.h`, oder Kompilieren Sie mit der [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption (spracherweiterungen deaktivieren).
+Der `not_eq`-Operator ist die Textentsprechung von `!=`. Es gibt zwei Möglichkeiten, auf den `not_eq`-Operator in ihren Programmen zuzugreifen: Fügen Sie die Header Datei `iso646.h`ein, oder kompilieren Sie mit der Compileroption [/Za](../build/reference/za-ze-disable-language-extensions.md) (Spracherweiterungen deaktivieren).
 
 ## <a name="example"></a>Beispiel
 
@@ -62,7 +61,7 @@ int main() {
 
 Gleichheitsoperatoren können Zeiger auf Member des gleichen Typs vergleichen. In einem solchen Vergleich werden Pointer-to-Member-Konvertierungen ausgeführt. Pointer-to-member können auch mit einem konstanten Ausdruck verglichen werden, der mit 0 ausgewertet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit binären Operatoren](../cpp/expressions-with-binary-operators.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>

@@ -1,8 +1,6 @@
 ---
 title: Extrahieren eines Bibliothekmembers
 ms.date: 11/04/2016
-f1_keywords:
-- Lib
 helpviewer_keywords:
 - LIB [C++], extracting library members
 - EXTRACT library manager option
@@ -11,23 +9,23 @@ helpviewer_keywords:
 - extracting library members
 - /EXTRACT library manager option
 ms.assetid: a2c5c2a1-9b7e-489a-a9a4-1dec694e1fc5
-ms.openlocfilehash: 6c577300f747d6f546b7caa3c66bddd6a516e16b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 874866627099eb5aeb318273db26a976e99bac7f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62271319"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439883"
 ---
 # <a name="extracting-a-library-member"></a>Extrahieren eines Bibliothekmembers
 
-Sie können LIB verwenden, um eine Objektdatei (obj) zu erstellen, die eine Kopie eines Elements aus einer bestehenden Bibliothek enthält. Um eine Kopie eines Elements zu extrahieren, verwenden Sie die folgende Syntax:
+Sie können lib verwenden, um eine Objektdatei (obj-Datei) zu erstellen, die eine Kopie eines Members einer vorhandenen Bibliothek enthält. Verwenden Sie die folgende Syntax, um eine Kopie eines Members zu extrahieren:
 
 ```
 LIB library /EXTRACT:member /OUT:objectfile
 ```
 
-Dieser Befehl erstellt eine OBJ-Datei mit dem Namen *Objektdatei* , enthält eine Kopie einer `member` von einer *Bibliothek*. Die `member` Namen wird Groß-/Kleinschreibung beachtet. Sie können nur ein Element in einem einzigen Befehl extrahieren. Die/Out-Option ist erforderlich; Es gibt keine standardausgabename. Wenn eine Datei namens *Objektdatei* bereits im angegebenen Verzeichnis (das aktuelle Verzeichnis, wenn kein Verzeichnis angegeben wird oder *Objektdatei*), die extrahierte *Objektdatei*ersetzt die vorhandene Datei.
+Mit diesem Befehl wird eine OBJ-Datei mit dem Namen " *ObjectFile* " erstellt, die eine Kopie einer `member` einer *Bibliothek*enthält. Beim `member` Namen wird die Groß-/Kleinschreibung beachtet. Sie können nur ein Element in einem einzelnen Befehl extrahieren. Die/out-Option ist erforderlich. Es ist kein Standardausgabe Name vorhanden. Wenn eine Datei mit dem Namen *ObjectFile* bereits im angegebenen Verzeichnis (oder im aktuellen Verzeichnis vorhanden ist, wenn kein Verzeichnis mit *ObjectFile*angegeben ist), wird die vorhandene Datei durch die extrahierte *ObjectFile* ersetzt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [LIB-Referenz](lib-reference.md)

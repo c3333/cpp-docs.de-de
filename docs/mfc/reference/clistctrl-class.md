@@ -264,12 +264,12 @@ helpviewer_keywords:
 - CListCtrl [MFC], SubItemHitTest
 - CListCtrl [MFC], Update
 ms.assetid: fe08a1ca-4b05-4ff7-a12a-ee4c765a2197
-ms.openlocfilehash: c8f1b8a9ed0ca8437ba40e77b47448d1bb209d20
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: 83d7c0223e2ca4a40560e29932beca1f17f74f80
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424440"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442684"
 ---
 # <a name="clistctrl-class"></a>CListCtrl-Klasse
 
@@ -281,17 +281,17 @@ Kapselt die Funktionalität eines Listenansichtsteuerelements, das eine Auflistu
 class CListCtrl : public CWnd
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CListCtrl:: CListCtrl](#clistctrl)|Erstellt ein `CListCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CListCtrl:: näherateviewrect](#approximateviewrect)|Bestimmt die Breite und die Höhe, die zum Anzeigen der Elemente eines Listenansicht-Steuer Elements erforderlich sind.|
 |[CListCtrl:: Anordnen](#arrange)|Richtet Elemente in einem Raster aus.|
@@ -422,13 +422,13 @@ class CListCtrl : public CWnd
 |[CListCtrl:: subitemhittest](#subitemhittest)|Bestimmt, welches Listen Ansichts Element, sofern vorhanden, an einer bestimmten Position ist.|
 |[CListCtrl:: Update](#update)|Zwingt das Steuerelement, ein angegebenes Element neu zu zeichnen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Zusätzlich zu einem Symbol und einer Bezeichnung können für jedes Element in Spalten rechts neben dem Symbol und der Bezeichnung Informationen angezeigt werden. Dieses Steuerelement (und damit auch die `CListCtrl`-Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT, Version 3,51 und höher, ausgeführt werden.
 
 Im folgenden finden Sie eine kurze Übersicht über die `CListCtrl`-Klasse. Eine ausführliche, konzeptionelle Erörterung finden [Sie unter Verwenden von CListCtrl](../../mfc/using-clistctrl.md) und Steuer [Elementen](../../mfc/controls-mfc.md).
 
-## <a name="views"></a>Ansichten
+## <a name="views"></a>Sichten
 
 Listenansicht-Steuerelemente können ihren Inhalt auf vier verschiedene Arten anzeigen, so genannte "Views".
 
@@ -512,7 +512,7 @@ Standardmäßig zerstört ein Listenansicht-Steuerelement die zugeordneten Bildl
 
 `CListCtrl`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
@@ -538,7 +538,7 @@ Anzahl der Elemente, die im Steuerelement angezeigt werden sollen. Wenn dieser P
 
 Ein `CSize`-Objekt, das die ungefähre Breite und Höhe zum Anzeigen der Elemente in Pixel enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_ApproximateViewRect](/windows/win32/api/commctrl/nf-commctrl-listview_approximateviewrect), wie in der Windows SDK beschrieben.
 
@@ -567,7 +567,7 @@ Gibt den Ausrichtungs Stil für die Elemente an. Es kann sich um einen der folge
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *nCode* -Parameter gibt die Ausrichtungs Art an.
 
@@ -588,7 +588,7 @@ Bricht den Bearbeitungsvorgang für den Element Text ab.
 void CancelEditLabel();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_CANCELEDITLABEL](/windows/win32/Controls/lvm-canceleditlabel) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -630,7 +630,7 @@ Gibt die ID des Listen Steuer Elements an.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie erstellen eine `CListCtrl` in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann `Create`aufgerufen, der das Listenansicht-Steuerelement erstellt und an das `CListCtrl`-Objekt anfügt.
 
@@ -678,7 +678,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie `CreateEx` anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -706,7 +706,7 @@ Die Adresse einer [Punkt](/previous-versions/dd162805\(v=vs.85\)) Struktur, die 
 
 Ein Zeiger auf die Liste der Zieh Bilder, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `CImageList` Objekt ist permanent, und Sie müssen es nach Abschluss des Vorgangs löschen. Beispiel:
 
@@ -809,7 +809,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 *lpdrawitemstruct*<br/>
 Ein langer Zeiger auf eine `DRAWITEMSTRUCT`-Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `itemAction` Member der [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur definiert die auszuführende Zeichnungs Aktion.
 
@@ -834,7 +834,7 @@ Der Index des Listen Ansichts Elements, das bearbeitet werden soll.
 
 Bei Erfolg ein Zeiger auf das `CEdit` Objekt, das zum Bearbeiten des Element Texts verwendet wird. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Listenansicht-Steuerelement mit dem LVS_EDITLABELS Fenster Stil ermöglicht es Benutzern, Element Bezeichnungen an Ort und Stelle zu bearbeiten. Der Benutzer beginnt mit der Bearbeitung, indem er auf die Bezeichnung eines Elements klickt, das den Fokus besitzt.
 
@@ -875,7 +875,7 @@ Gibt einen der folgenden Werte zurück:
 
 - **-1** Der Vorgang ist fehlgeschlagen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_ENABLEGROUPVIEW](/windows/win32/Controls/lvm-enablegroupview) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -901,7 +901,7 @@ Gibt an, ob partielle Sichtbarkeit zulässig ist.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Listenansicht-Steuerelement wird bei Bedarf gescrollt. Wenn der *bpartialok* -Parameter ungleich 0 (null) ist, wird kein Bildlauf durchgeführt, wenn das Element teilweise sichtbar ist.
 
@@ -936,7 +936,7 @@ Der Index des Elements, mit dem mit der Suche begonnen werden soll, oder-1, um v
 
 Der Index des Elements, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *pfindinfo* -Parameter verweist auf eine `LVFINDINFO` Struktur, die Informationen enthält, die für die Suche nach einem Listen Ansichts Element verwendet werden.
 
@@ -989,7 +989,7 @@ Ein Zeiger auf eine `LVBKIMAGE`-Struktur, die das aktuelle Hintergrundbild der L
 
 Gibt bei Erfolg einen Wert ungleich 0 (null) zurück, andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode implementiert das Verhalten des Win32-Makros, [ListView_GetBkImage](/windows/win32/api/commctrl/nf-commctrl-listview_getbkimage), wie in der Windows SDK beschrieben.
 
@@ -1020,7 +1020,7 @@ UINT GetCallbackMask() const;
 
 Die Rückruf Maske des Listenansicht-Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein "Rückruf Element" ist ein Listen Ansichts Element, für das die Anwendung – anstelle des Steuer Elements – den Text, das Symbol oder beides speichert. Obwohl ein Listenansicht-Steuerelement diese Attribute für Sie speichern kann, empfiehlt es sich, Rückruf Elemente zu verwenden, wenn Ihre Anwendung bereits einige dieser Informationen verwaltet. Die Rückruf Maske gibt an, welche Element Zustands Bits von der Anwendung verwaltet werden, und bezieht sich auf das gesamte Steuerelement und nicht auf ein bestimmtes Element. Die Rückruf Maske ist standardmäßig 0 (null), was bedeutet, dass das Steuerelement alle Element Zustände nachverfolgt. Wenn eine Anwendung Rückruf Elemente verwendet oder eine Rückruf Maske ungleich NULL angibt, muss Sie in der Lage sein, Listen Ansichts Element-Attribute Bedarfs gesteuert bereitzustellen.
 
@@ -1045,7 +1045,7 @@ Der null basierte Index eines Listen Steuerelement Elements.
 
 Ungleich 0 (null), wenn das Element ausgewählt ist, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetCheckState](/windows/win32/api/commctrl/nf-commctrl-listview_getcheckstate), wie in der Windows SDK beschrieben.
 
@@ -1075,7 +1075,7 @@ Die Adresse einer [LVCOLUMN](/windows/win32/api/commctrl/ns-commctrl-lvcolumnw) 
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `LVCOLUMN`-Struktur enthält Informationen zu einer Spalte in der Berichtsansicht.
 
@@ -1116,7 +1116,7 @@ Anzahl der Spalten im Listenansicht-Steuerelement. Wenn dieser Parameter-1 ist, 
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetColumnOrderArray](/windows/win32/api/commctrl/nf-commctrl-listview_getcolumnorderarray), wie in der Windows SDK beschrieben.
 
@@ -1228,7 +1228,7 @@ CString GetEmptyText() const;
 
 Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der den Text enthält, der angezeigt wird, wenn das Steuerelement leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETEMPTYTEXT](/windows/win32/Controls/lvm-getemptytext) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -1244,7 +1244,7 @@ DWORD GetExtendedStyle();
 
 Eine Kombination der erweiterten Stile, die zurzeit vom Listenansicht-Steuerelement verwendet werden. Eine beschreibende Liste dieser erweiterten Stile finden Sie im Artikel [Erweiterte Listen Ansichts Stile](/windows/win32/Controls/extended-list-view-styles) in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetExtendedListViewStyle](/windows/win32/api/commctrl/nf-commctrl-listview_getextendedlistviewstyle), wie in der Windows SDK beschrieben.
 
@@ -1297,7 +1297,7 @@ int GetFocusedGroup() const;
 
 Der Index der Gruppe, deren Status LVGS_FOCUSED ist, wenn eine solche Gruppe vorhanden ist. andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETFOCUSEDGROUP](/windows/win32/Controls/lvm-getfocusedgroup) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im LVGS_FOCUSED Wert des `state`-Members der Struktur " [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) ".
 
@@ -1313,7 +1313,7 @@ int GetGroupCount()const;
 
 Die Anzahl der Gruppen im Listenansicht-Steuerelement.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETGROUPCOUNT](/windows/win32/Controls/lvm-getgroupcount) Nachricht, die in der Windows SDK-> beschrieben wird.
 
@@ -1339,7 +1339,7 @@ Ein Zeiger auf die " [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) 
 
 Gibt die ID der Gruppe zurück, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETGROUPINFO](/windows/win32/Controls/lvm-getgroupinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1355,7 +1355,7 @@ BOOL GetGroupInfoByIndex(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*iIndex*|in NULL basierter Index einer Gruppe.|
 |*pgroup*|vorgenommen Ein Zeiger auf eine [orgroup](/windows/win32/api/commctrl/ns-commctrl-lvgroup) -Struktur, die Informationen über die vom *iIndex* -Parameter angegebene Gruppe empfängt.<br /><br /> Der Aufrufer ist für die Initialisierung der Elemente der Struktur " [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) " verantwortlich. Legen Sie den `cbSize`-Member auf die Größe der Struktur und die Flags des `mask` Members fest, um die abzurufenden Informationen anzugeben.|
@@ -1364,7 +1364,7 @@ BOOL GetGroupInfoByIndex(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETGROUPINFOBYINDEX](/windows/win32/controls/lvm-getgroupinfobyindex) Nachricht, die in der Windows SDK-> beschrieben wird.
 
@@ -1381,6 +1381,7 @@ public:
 ### <a name="example"></a>Beispiel
 
 Im folgenden Codebeispiel wird die `GetGroupInfoByIndex`-Methode veranschaulicht. In einem früheren Abschnitt dieses Code Beispiels haben wir ein Listenansicht-Steuerelement erstellt, das zwei Spalten mit dem Namen "ClientID" und "Grade" in einer Berichtsansicht anzeigt. Im folgenden Codebeispiel werden Informationen über die Gruppe abgerufen, deren Index 0 ist, wenn eine solche Gruppe vorhanden ist.
+
 ```cpp
     // GetGroupInfoByIndex
     const int GROUP_HEADER_BUFFER_SIZE = 40;
@@ -1421,7 +1422,7 @@ void GetGroupMetrics(PLVGROUPMETRICS pGroupMetrics) const;
 *pgroupmetrics*<br/>
 Ein Zeiger auf eine " [lvgroupmetrics](/windows/win32/api/commctrl/ns-commctrl-lvgroupmetrics) ", die die gruppenmetrikinformationen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETGROUPMETRICS](/windows/win32/Controls/lvm-getgroupmetrics) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1438,7 +1439,7 @@ BOOL GetGroupRect(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*igroupid*|in Gibt eine Gruppe an.|
 |*lprect*|[in, out] Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur. Wenn diese Methode erfolgreich ist, empfängt die-Struktur die Rechteck Koordinaten der Gruppe, die von *igroupid*angegeben wird.|
@@ -1448,7 +1449,7 @@ BOOL GetGroupRect(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Aufrufer ist verantwortlich für die Zuordnung der [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, auf die der *prect* -Parameter verweist.
 
@@ -1457,6 +1458,7 @@ Diese Methode sendet die [LVM_GETGROUPRECT](/windows/win32/Controls/lvm-getgroup
 ### <a name="example"></a>Beispiel
 
 Im folgenden Codebeispiel wird eine Variable definiert, `m_listCtrl`, die für den Zugriff auf das aktuelle Listenansicht-Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+
 ```cpp
 public:
     // Variable used to access the list control.
@@ -1494,7 +1496,7 @@ UINT GetGroupState(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*igroupid*|in NULL basierter Index einer Gruppe.|
 |*dwMask*|in Maske, die den Zustandswert angibt, der für die angegebene Gruppe abgerufen werden soll. Weitere Informationen finden Sie unter `mask`-Member der Struktur " [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) ".|
@@ -1503,7 +1505,7 @@ UINT GetGroupState(
 
 Der angeforderte Status für die angegebene Gruppe oder 0, wenn die Gruppe nicht gefunden werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Rückgabewert ist das Ergebnis einer bitweisen and-Operation für den *dwMask* -Parameter und der Wert des `state`-Elements einer [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) -Struktur, die das aktuelle Listenansicht-Steuerelement darstellt.
 
@@ -1521,7 +1523,7 @@ CHeaderCtrl* GetHeaderCtrl();
 
 Ein Zeiger auf das Header Steuerelement, das vom Listenansicht-Steuerelement verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetHeader](/windows/win32/api/commctrl/nf-commctrl-listview_getheader), wie in der Windows SDK beschrieben.
 
@@ -1541,7 +1543,7 @@ HCURSOR GetHotCursor();
 
 Das Handle der aktuellen Hot-Cursor Ressource, die vom Listenansicht-Steuerelement verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetHotCursor](/windows/win32/api/commctrl/nf-commctrl-listview_gethotcursor), wie in der Windows SDK beschrieben. Der heiße Cursor, der nur sichtbar ist, wenn die Auswahl des Mauszeigers aktiviert ist, wird angezeigt, wenn der Cursor ein Listen Ansichts Element übergibt. Die Auswahl des Hover wird aktiviert, indem der erweiterte LVS_EX_TRACKSELECT Stil festgelegt wird.
 
@@ -1566,7 +1568,7 @@ int GetHotItem();
 
 Der Index des aktuellen aktiven Elements des Listenansicht-Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetHotItem](/windows/win32/api/commctrl/nf-commctrl-listview_gethotitem), wie in der Windows SDK beschrieben. Das heiße Element wird als aktuell ausgewähltes Element definiert, wenn Hot Tracking (und Hover-Auswahl) aktiviert ist.
 
@@ -1593,7 +1595,7 @@ DWORD GetHoverTime() const;
 
 Gibt die Verzögerung in Millisekunden zurück, die der Mauszeiger auf ein Element zeigen muss, bevor es ausgewählt wird. Wenn der Rückgabewert-1 ist, ist die Hover-Zeit die standardmäßige Hover-Zeit.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetHoverTime](/windows/win32/api/commctrl/nf-commctrl-listview_gethovertime), wie in der Windows SDK beschrieben.
 
@@ -1654,7 +1656,7 @@ Ein Zeiger auf eine [lvinsertmark](/windows/win32/api/commctrl/ns-commctrl-lvins
 
 Gibt true zurück, wenn erfolgreich, andernfalls false. FALSE wird zurückgegeben, wenn die Größe des `cbSize`-Elements der `LVINSERTMARK` Struktur nicht der tatsächlichen Größe der Struktur entspricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETINSERTMARK](/windows/win32/Controls/lvm-getinsertmark) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1670,7 +1672,7 @@ COLORREF GetInsertMarkColor() const;
 
 Gibt eine [COLORREF](/windows/win32/gdi/colorref) -Struktur zurück, die die Farbe der Einfügemarke enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETINSERTMARKCOLOR](/windows/win32/Controls/lvm-getinsertmarkcolor) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1695,7 +1697,7 @@ Gibt einen der folgenden Werte zurück:
 
 - **1** Einfügemarke gefunden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETINSERTMARKRECT](/windows/win32/Controls/lvm-getinsertmarkrect) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1716,7 +1718,7 @@ Zeiger auf eine [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struk
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `LVITEM`-Struktur gibt die Attribute eines Listen Ansichts Elements an oder empfängt diese.
 
@@ -1753,7 +1755,7 @@ Der Index des Listen Elements, dessen Daten abgerufen werden sollen.
 
 Ein anwendungsspezifischer 32-Bit-Wert, der dem angegebenen Element zugeordnet ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Wert ist der `lParam` Member der [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struktur, wie im beschrieben Windows SDK
 
@@ -1784,18 +1786,18 @@ BOOL GetItemIndexRect(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pitemindex*|in Zeiger auf eine [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur für das übergeordnete Element des unter Elements.<br /><br /> Der Aufrufer ist dafür verantwortlich, die Member der [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur zuzuordnen und festzulegen. Dieser Parameter darf nicht NULL sein.|
 |*icolumn*|in NULL basierter Index einer Spalte im-Steuerelement.|
-|*recttype*|in Teil des Listen Ansichts unter Elements, für das das umgebende Rechteck abgerufen wird. Geben Sie einen der folgenden Werte an:<br /><br /> LVIR_BOUNDS: gibt das umgebende Rechteck des gesamten unter Elements zurück, einschließlich des Symbols und der Bezeichnung.<br /><br /> LVIR_ICON: gibt das umgebende Rechteck des Symbols oder des kleinen Symbols des unter Elements zurück.<br /><br /> LVIR_LABEL: gibt das umgebende Rechteck des Unterelement Texts zurück.|
+|*recttype*|in Teil des Listen Ansichts unter Elements, für das das umgebende Rechteck abgerufen wird. Geben Sie einen der folgenden Werte an.<br /><br /> LVIR_BOUNDS: gibt das umgebende Rechteck des gesamten unter Elements zurück, einschließlich des Symbols und der Bezeichnung.<br /><br /> LVIR_ICON: gibt das umgebende Rechteck des Symbols oder des kleinen Symbols des unter Elements zurück.<br /><br /> LVIR_LABEL: gibt das umgebende Rechteck des Unterelement Texts zurück.|
 |*vorab ausführen*|vorgenommen Ein Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die Informationen über das umschließende Rechteck des unter Elements empfängt.<br /><br /> Der Aufrufer ist für die Zuordnung der [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur verantwortlich. Dieser Parameter darf nicht NULL sein.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETITEMINDEXRECT](/windows/win32/Controls/lvm-getitemindexrect) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie unter [ListView_GetItemIndexRect-Makro](/windows/win32/api/commctrl/nf-commctrl-listview_getitemindexrect).
 
@@ -1952,7 +1954,7 @@ BOOL GetItemSpacing(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*klein*|in Die Ansicht, für die die Element Abstände abgerufen werden sollen. Geben Sie true für die kleine Symbol Ansicht oder false für die Symbol Ansicht an.|
 |*pnhorzabstände*|vorgenommen Enthält den horizontalen Abstand zwischen Elementen.|
@@ -1962,7 +1964,7 @@ BOOL GetItemSpacing(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_GETITEMSPACING](/windows/win32/Controls/lvm-getitemspacing) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -1988,7 +1990,7 @@ Maske, die angibt, welche der Statusflags des Elements zurückgegeben werden sol
 
 Die Statusflags für das angegebene Listen Ansichts Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Zustand eines Elements wird durch den `state` Member der [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struktur angegeben, wie in der Windows SDK beschrieben. Wenn Sie den Zustand eines Elements angeben oder ändern, gibt das `stateMask` Mitglied an, welche Zustands Bits Sie ändern möchten.
 
@@ -2032,7 +2034,7 @@ Die Version, die **int** zurückgibt, gibt die Länge der abgerufenen Zeichenfol
 
 Die Version, die einen `CString` zurückgibt, gibt den Element Text zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *nsubitem* gleich 0 (null) ist, ruft diese Funktion die Element Bezeichnung ab. Wenn *nsubitem* ungleich NULL ist, wird der Text des unter Elements abgerufen. Weitere Informationen zum Unterelement-Argument finden Sie in der Erörterung der [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struktur in der Windows SDK.
 
@@ -2090,7 +2092,7 @@ BOOL GetNextItemIndex(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pitemindex*|[in, out] Ein Zeiger auf die [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur, die das Element beschreibt, in dem die Suche beginnt, oder-1, um das erste Element zu finden, das mit den Flags im *nFlags* -Parameter übereinstimmt.<br /><br /> Wenn diese Methode erfolgreich ist, wird in der `LVITEMINDEX` Struktur das von der Suche gefundene Element beschrieben.|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, wie die Suche durchgeführt werden soll.<br /><br /> Die Suche kann abhängig vom Index, dem Status oder der Darstellung des Ziel Elements oder der physischen Position des Ziel Elements relativ zu dem durch den *pitemindex* -Parameter angegebenen Element abhängen. Weitere Informationen finden Sie unter dem *Flags* -Parameter in der [LVM_GETNEXTITEMINDEX](/windows/win32/controls/lvm-getnextitemindex) -Nachricht.|
@@ -2099,7 +2101,7 @@ BOOL GetNextItemIndex(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Aufrufer ist dafür verantwortlich, die Elemente der `LVITEMINDEX` Struktur zuzuordnen und festzulegen, auf die durch den *pitemindex* -Parameter verwiesen wird.
 
@@ -2122,7 +2124,7 @@ Ein Verweis auf einen Positionswert, der von einem vorherigen-`GetNextSelectedIt
 
 Der Index des durch *POS*identifizierten Listen Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können `GetNextSelectedItem` in einer Forward-Iterations Schleife verwenden, wenn Sie die ursprüngliche Position mit einem `GetFirstSelectedItemPosition`-aufrufenden festgelegt haben.
 
@@ -2161,7 +2163,7 @@ UINT GetNumberOfWorkAreas() const;
 
 Wird zurzeit nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetNumberOfWorkAreas](/windows/win32/api/commctrl/nf-commctrl-listview_getnumberofworkareas), wie in der Windows SDK beschrieben.
 
@@ -2204,7 +2206,7 @@ COLORREF GetOutlineColor() const;
 
 Gibt eine [COLORREF](/windows/win32/gdi/colorref) -Struktur zurück, die die Kontur Farbe enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETOUTLINECOLOR](/windows/win32/Controls/lvm-getoutlinecolor) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2237,7 +2239,7 @@ UINT GetSelectedColumn() const;
 
 Der Index der ausgewählten Spalte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETSELECTEDCOLUMN](/windows/win32/Controls/lvm-getselectedcolumn) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2283,7 +2285,7 @@ int GetSelectionMark();
 
 Das null basierte Auswahl Zeichen oder-1, wenn kein Auswahl Zeichen vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetSelectionMark](/windows/win32/api/commctrl/nf-commctrl-listview_getselectionmark), wie in der Windows SDK beschrieben.
 
@@ -2313,7 +2315,7 @@ Adresse einer auf NULL endenden Zeichenfolge, deren Breite bestimmt werden soll.
 
 Die Breite der Zeichenfolge, auf die von *lpsz*verwiesen wird, in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zurückgegebene Breite berücksichtigt die aktuellen Schriftart-und Spalten Ränder des Steuer Elements, aber nicht die Breite eines kleinen Symbols.
 
@@ -2369,7 +2371,7 @@ Verweis auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, 
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetSubItemRect](/windows/win32/api/commctrl/nf-commctrl-listview_getsubitemrect), wie in der Windows SDK beschrieben.
 
@@ -2422,7 +2424,7 @@ Ein Zeiger auf eine [lvtileinfo](/windows/win32/api/commctrl/ns-commctrl-lvtilei
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETTILEINFO](/windows/win32/Controls/lvm-gettileinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2443,7 +2445,7 @@ Ein Zeiger auf eine [lvtileviewinfo](/windows/win32/api/commctrl/ns-commctrl-lvt
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETTILEVIEWINFO](/windows/win32/Controls/lvm-gettileviewinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2459,7 +2461,7 @@ CToolTipCtrl* GetToolTips() const;
 
 Ein Zeiger auf ein [CToolTipCtrl](ctooltipctrl-class.md) -Objekt, das vom Listen Steuerelement verwendet werden soll. Wenn die [Create](#create) Member-Funktion den Stil LVS_NOTOOLTIPS verwendet, werden keine Quick Infos verwendet und NULL zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [LVM_GETTOOLTIPS](/windows/win32/Controls/lvm-gettooltips), wie in der Windows SDK beschrieben. Die MFC-Implementierung von `GetToolTips` gibt ein `CToolTipCtrl` Objekt zurück, das vom Listen Steuerelement anstelle eines Handles für ein QuickInfo-Steuerelement verwendet wird.
 
@@ -2515,7 +2517,7 @@ DWORD GetView() const;
 
 Die aktuelle Ansicht des Listenansicht-Steuer Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_GETVIEW](/windows/win32/Controls/lvm-getview) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2536,7 +2538,7 @@ Adresse einer [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Listenansicht muss sich in der Symbol Ansicht oder in der kleinen Symbol Ansicht befinden.
 
@@ -2558,7 +2560,7 @@ Die Anzahl der `RECT` Strukturen, die im *vorangeprect* -Array enthalten sind.
 *vorab ausführen*<br/>
 Ein Zeiger auf ein Array von `RECT` Strukturen (oder [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekten), die die Arbeitsbereiche des Listenansicht-Steuer Elements empfangen. Werte in diesen Strukturen befinden sich in Client Koordinaten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_GetWorkAreas](/windows/win32/api/commctrl/nf-commctrl-listview_getworkareas), wie in der Windows SDK beschrieben.
 
@@ -2583,7 +2585,7 @@ Der Bezeichner der angeforderten Gruppe.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_HASGROUP](/windows/win32/Controls/lvm-hasgroup) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2614,7 +2616,7 @@ Ein Zeiger auf eine ganze Zahl, die Informationen über die Ergebnisse des Tests
 
 Der Index des Elements an der Position, die von " *phittestinfo*" angegeben wird, falls vorhanden, andernfalls "-1".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können die Werte LVHT_ABOVE, LVHT_BELOW, LVHT_TOLEFT und LVHT_TORIGHT des `flag` Members der Struktur verwenden, um zu bestimmen, ob der Inhalt eines Listenansicht-Steuer Elements durchlaufen werden soll. Zwei dieser Flags können kombiniert werden, z. b. wenn sich die Position oberhalb und Links vom Client Bereich befindet.
 
@@ -2683,7 +2685,7 @@ Der Index des unter Elements, das der Spalte zugeordnet ist. Wenn dieser Paramet
 
 Der Index der neuen Spalte, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Spalte ganz links in einem Listenansicht-Steuerelement muss linksbündig ausgerichtet sein.
 
@@ -2701,7 +2703,7 @@ LRESULT InsertGroup(
 
 ### <a name="parameters"></a>Parameter
 
-*index*<br/>
+*Index*<br/>
 Der Index des Elements, an dem die Gruppe eingefügt werden soll.
 
 *pgrp*<br/>
@@ -2711,7 +2713,7 @@ Ein Zeiger auf eine [LVGROUP](/windows/win32/api/commctrl/ns-commctrl-lvgroup) -
 
 Gibt den Index des Elements zurück, dem die Gruppe hinzugefügt wurde, oder-1, wenn der Vorgang fehlgeschlagen ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_INSERTGROUP](/windows/win32/Controls/lvm-insertgroup) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2732,7 +2734,7 @@ Ein Zeiger auf eine [lvinsertgroupsortierte](/windows/win32/api/commctrl/ns-comm
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_INSERTGROUPSORTED](/windows/win32/Controls/lvm-insertgroupsorted) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2792,7 +2794,7 @@ Ein anwendungsspezifischer 32-Bit-Wert, der dem Element zugeordnet ist. Wenn die
 
 Der Index des neuen Elements, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Aufrufen dieser Methode kann dazu führen, dass die LVM_INSERTITEM Meldung an das Steuerelement Fenster gesendet wird. Der zugeordnete Meldungs Handler für das Steuerelement kann den Element Text möglicherweise unter bestimmten Bedingungen nicht festlegen (z. b. die Verwendung von Fenster Stilen wie LVS_OWNERDRAW). Weitere Informationen zu diesen Bedingungen finden Sie unter [LVM_INSERTITEM](/windows/win32/Controls/lvm-insertitem) in der Windows SDK.
 
@@ -2842,7 +2844,7 @@ Ein Zeiger auf eine [lvinsertmark](/windows/win32/api/commctrl/ns-commctrl-lvins
 
 Die Einfügemarke, die dem angegebenen Punkt am nächsten liegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_INSERTMARKHITTEST](/windows/win32/Controls/lvm-insertmarkhittest) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2858,7 +2860,7 @@ BOOL IsGroupViewEnabled() const;
 
 Gibt true zurück, wenn die Gruppenansicht aktiviert ist, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_ISGROUPVIEWENABLED](/windows/win32/Controls/lvm-isgroupviewenabled) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -2872,15 +2874,15 @@ BOOL IsItemVisible(int index) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*index*|in NULL basierter Index eines Elements im aktuellen Listenansicht-Steuerelement.|
+|*Index*|in NULL basierter Index eines Elements im aktuellen Listenansicht-Steuerelement.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das angegebene Element sichtbar ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_ISITEMVISIBLE](/windows/win32/Controls/lvm-isitemvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -2894,15 +2896,15 @@ UINT MapIDToIndex(UINT id) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ID*|in Die eindeutige ID eines Elements.|
+|*id*|in Die eindeutige ID eines Elements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der aktuelle Index für die angegebene ID.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Listenansicht-Steuerelement verfolgt Elemente intern nach Index. Dies kann Probleme darstellen, da Indizes sich während der Lebensdauer des Steuer Elements ändern können. Das Listenansicht-Steuerelement kann ein Element mit einer ID markieren, wenn das Element erstellt wird, und Sie können diese ID verwenden, um die Eindeutigkeit während der Lebensdauer des Listenansicht-Steuer Elements sicherzustellen.
 
@@ -2920,15 +2922,15 @@ UINT MapIndexToID(UINT index) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*index*|in Der null basierte Index eines Elements.|
+|*Index*|in Der null basierte Index eines Elements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Eine eindeutige ID für das angegebene Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Listenansicht-Steuerelement verfolgt Elemente intern nach Index. Dies kann Probleme darstellen, da Indizes sich während der Lebensdauer des Steuer Elements ändern können. Das Listenansicht-Steuerelement kann ein Element mit einer ID markieren, wenn das Element erstellt wird. Sie können diese ID verwenden, um für die Lebensdauer des Listenansicht-Steuer Elements auf ein bestimmtes Element zuzugreifen.
 
@@ -2998,7 +3000,7 @@ Der null basierte Index, an dem die Gruppe verschoben werden soll.
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_MOVEGROUP](/windows/win32/Controls/lvm-movegroup) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3020,7 +3022,7 @@ in Der Index des Elements, das verschoben werden soll.
 *idgroupto*<br/>
 in Der Bezeichner der Gruppe, in die das Element verschoben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 >  Diese Methode ist zurzeit nicht implementiert.
@@ -3049,7 +3051,7 @@ Der Index des letzten Elements, das neu gezeichnet werden soll.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die angegebenen Elemente werden erst dann neu gezeichnet, wenn das Listen Ansichts Fenster eine WM_PAINT Meldung empfängt. Um sofort neu zu zeichnen, müssen Sie die Windows [UpdateWindow](/windows/win32/api/winuser/nf-winuser-updatewindow) -Funktion aufrufen, nachdem Sie diese Funktion verwendet haben.
 
@@ -3061,7 +3063,7 @@ Entfernt alle Gruppen aus einem Listenansicht-Steuerelement.
 void RemoveAllGroups();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_REMOVEALLGROUPS](/windows/win32/Controls/lvm-removeallgroups) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3082,7 +3084,7 @@ Der Bezeichner der Gruppe, die entfernt werden soll.
 
 Gibt den Index der Gruppe zurück, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_REMOVEGROUP](/windows/win32/Controls/lvm-removegroup) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3173,7 +3175,7 @@ Der Offset des oberen Rands des Bilds vom Ursprung des Listenansicht-Steuer Elem
 
 Gibt bei Erfolg einen Wert ungleich 0 (null) zurück, andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 >  Da `CListCtrl::SetBkImage` die OLE-COM-Funktionalität verwendet, müssen die OLE-Bibliotheken vor der Verwendung `SetBkImage`initialisiert werden. Es empfiehlt sich, die com-Bibliotheken zu initialisieren, wenn die Anwendung initialisiert wird, und die Initialisierung der Bibliotheken zu deaktivieren, wenn die Anwendung beendet wird. Dies erfolgt automatisch in MFC-Anwendungen, die ActiveX-Technologie, OLE-Automatisierung, OLE-Verknüpfung/Einbettung oder ODBC/DAO-Vorgänge nutzen.
@@ -3296,7 +3298,7 @@ Anzahl der Spalten im Listenansicht-Steuerelement.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetColumnOrderArray](/windows/win32/api/commctrl/nf-commctrl-listview_setcolumnorderarray), wie in der Windows SDK beschrieben.
 
@@ -3343,7 +3345,7 @@ Eine Kombination erweiterter Stile, die vom Listenansicht-Steuerelement verwende
 
 Eine Kombination der vorherigen erweiterten Stile, die vom Listenansicht-Steuerelement verwendet werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetExtendedListViewStyle](/windows/win32/api/commctrl/nf-commctrl-listview_setextendedlistviewstyle), wie in der Windows SDK beschrieben.
 
@@ -3377,7 +3379,7 @@ Ein Zeiger auf eine [orgroup](/windows/win32/api/commctrl/ns-commctrl-lvgroup) -
 
 Die ID der Gruppe, wenn die Methode erfolgreich ist. andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [LVM_SETGROUPINFO](/windows/win32/Controls/lvm-setgroupinfo) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -3394,7 +3396,7 @@ void SetGroupMetrics(PLVGROUPMETRICS pGroupMetrics);
 *pgroupmetrics*<br/>
 Ein Zeiger auf eine [lvgroupmetrics](/windows/win32/api/commctrl/ns-commctrl-lvgroupmetrics) -Struktur, die die festzulegenden gruppenmetrikinformationen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETGROUPMETRICS](/windows/win32/Controls/lvm-setgroupmetrics) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3415,7 +3417,7 @@ Ein Handle für eine Cursor Ressource, die zur Darstellung des aktiven Cursors v
 
 Das Handle für die vorherige Hot-Cursor Ressource, die vom Listenansicht-Steuerelement verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetHotCursor](/windows/win32/api/commctrl/nf-commctrl-listview_sethotcursor), wie in der Windows SDK beschrieben.
 
@@ -3442,7 +3444,7 @@ NULL basierter Index des Elements, das als heißes Element festgelegt werden sol
 
 Der null basierte Index des zuvor aktiven Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetHotItem](/windows/win32/api/commctrl/nf-commctrl-listview_sethotitem), wie in der Windows SDK beschrieben.
 
@@ -3467,7 +3469,7 @@ Die neue Verzögerung in Millisekunden, in der der Mauszeiger auf ein Element ze
 
 Die vorherige Hover-Zeit in Millisekunden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetHoverTime](/windows/win32/api/commctrl/nf-commctrl-listview_sethovertime), wie in der Windows SDK beschrieben.
 
@@ -3502,7 +3504,7 @@ Ein `CSize`-Objekt, das den Abstand zwischen Symbolen in der x-und y-Achse (in P
 
 Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt, das die vorherigen Werte für den Symbol Abstand enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetIconSpacing](/windows/win32/api/commctrl/nf-commctrl-listview_seticonspacing), wie in der Windows SDK beschrieben.
 
@@ -3562,7 +3564,7 @@ Ein Zeiger auf eine [lvfsetinfotip](/windows/win32/api/commctrl/ns-commctrl-lvse
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETINFOTIP](/windows/win32/Controls/lvm-setinfotip) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3583,7 +3585,7 @@ Ein Zeiger auf eine [lvinsertmark](/windows/win32/api/commctrl/ns-commctrl-lvins
 
 Gibt true zurück, wenn erfolgreich, andernfalls false. FALSE wird zurückgegeben, wenn die Größe des `cbSize`-Elements der `LVINSERTMARK` Struktur nicht der tatsächlichen Größe der Struktur entspricht oder wenn in der aktuellen Ansicht keine Einfügemarke angewendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETINSERTMARK](/windows/win32/Controls/lvm-setinsertmark) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3604,7 +3606,7 @@ Eine [COLORREF](/windows/win32/gdi/colorref) -Struktur, die die Farbe zum Festle
 
 Gibt eine `COLORREF`-Struktur zurück, die die vorherige Farbe enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETINSERTMARKCOLOR](/windows/win32/Controls/lvm-setinsertmarkcolor) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3673,7 +3675,7 @@ Breite des Einzugs in Pixel. Wenn *nindent* kleiner als die vom System definiert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `iItem` und `iSubItem` Member der `LVITEM` Struktur und die Parameter " *nitem* " und " *nsubitem* " identifizieren das Element und das Unterelement, dessen Attribute festgelegt werden sollen.
 
@@ -3700,11 +3702,11 @@ void SetItemCount(int nItems);
 *nitems*<br/>
 Anzahl der Elemente, die das Steuerelement letztendlich enthalten wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Informationen zum Festlegen der Element Anzahl für ein virtuelles Listenansicht-Steuerelement finden Sie unter [CListCtrl:: SetItemCount](#setitemcountex).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetItemCount](/windows/win32/api/commctrl/nf-commctrl-listview_setitemcount), wie in der Windows SDK beschrieben.
 
@@ -3749,7 +3751,7 @@ Gibt das Verhalten des Listenansicht-Steuer Elements nach dem Zurücksetzen der 
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetItemCountEx](/windows/win32/api/commctrl/nf-commctrl-listview_setitemcountex), wie in Windows sdkand beschrieben, und sollte nur für virtuelle Listenansichten aufgerufen werden.
 
@@ -3792,7 +3794,7 @@ Ein 32-Bit-Wert, der dem Element zugeordnet werden soll.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Wert ist der `lParam` Member der [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struktur, wie in der Windows SDK beschrieben.
 
@@ -3819,7 +3821,7 @@ BOOL SetItemIndexState(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pitemindex*|in Zeiger auf eine [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur, die ein Element beschreibt. Der Aufrufer ist dafür verantwortlich, diese Struktur zuzuordnen und deren Member festzulegen.|
 |*dwstate*|in Der Zustand, in dem das Element festgelegt werden soll, das eine bitweise Kombination von [Listen Ansichts Element Zuständen](/windows/win32/Controls/list-view-item-states)ist. Geben Sie 0 (null) zum Zurücksetzen oder einen festzulegenden Zustand an.|
@@ -3829,7 +3831,7 @@ BOOL SetItemIndexState(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zum *dwstate* -Parameter finden Sie unter [Listen Ansichts Element Zustände](/windows/win32/Controls/list-view-item-states).
 
@@ -3859,7 +3861,7 @@ Eine [Punkt](/previous-versions/dd162805\(v=vs.85\)) Struktur, die die neue Posi
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Steuerelement muss ein Symbol oder eine kleine Symbol Ansicht sein.
 
@@ -3902,7 +3904,7 @@ Maske, die angibt, welche Zustands Bits geändert werden sollen. Dieser Wert ent
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der "State" eines Elements ist ein Wert, der die Verfügbarkeit des Elements angibt, Benutzeraktionen angibt oder den Status des Elements anderweitig widerspiegelt. Mit einem Listenansicht-Steuerelement werden einige Zustands Bits geändert, z. b. wenn der Benutzer ein Element auswählt. In einer Anwendung können andere Zustands Bits geändert werden, um das Element zu deaktivieren oder auszublenden, oder um ein Überlagerungs Bild oder ein Zustands Bild anzugeben.
 
@@ -3936,7 +3938,7 @@ Zeiger auf eine Zeichenfolge, die den neuen Element Text enthält.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode ist nicht für die Verwendung mit Steuerelementen vorgesehen, die den LVS_OWNERDATA Fenster Stil enthalten (tatsächlich führt dies zu einer Aussage in Debugbuilds). Weitere Informationen zu diesem Listen Steuerelement Stil finden Sie unter [Übersicht überlisten Ansicht-Steuerelemente](/windows/win32/Controls/list-view-controls-overview).
 
@@ -3961,7 +3963,7 @@ Die neue [COLORREF](/windows/win32/gdi/colorref) -Struktur, die die Kontur Farbe
 
 Die vorherige `COLORREF`-Struktur, die die Kontur Farbe enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETOUTLINECOLOR](/windows/win32/Controls/lvm-setoutlinecolor) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -3982,7 +3984,7 @@ Der Index der Spalte, die ausgewählt werden soll.
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETSELECTEDCOLUMN](/windows/win32/Controls/lvm-setselectedcolumn) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -4003,7 +4005,7 @@ Der null basierte Index des ersten Elements in einer Mehrfachauswahl.
 
 Die vorherige Auswahl Markierung oder-1, wenn kein Auswahl Zeichen vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetSelectionMark](/windows/win32/api/commctrl/nf-commctrl-listview_setselectionmark), wie in der Windows SDK beschrieben.
 
@@ -4081,7 +4083,7 @@ Ein Zeiger auf eine [lvtileinfo](/windows/win32/api/commctrl/ns-commctrl-lvtilei
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETTILEINFO](/windows/win32/Controls/lvm-settileinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -4102,7 +4104,7 @@ Ein Zeiger auf eine [lvtileviewinfo](/windows/win32/api/commctrl/ns-commctrl-lvt
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETTILEVIEWINFO](/windows/win32/Controls/lvm-settileviewinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -4123,7 +4125,7 @@ Ein Zeiger auf ein `CToolTipCtrl` Objekt, das vom Listen Steuerelement verwendet
 
 Ein Zeiger auf ein [CToolTipCtrl](ctooltipctrl-class.md) -Objekt, das die QuickInfo enthält, die zuvor vom Steuerelement verwendet wurde, oder NULL, wenn zuvor keine Quick Infos verwendet wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [LVM_SETTOOLTIPS](/windows/win32/Controls/lvm-settooltips), wie in der Windows SDK beschrieben.
 
@@ -4146,7 +4148,7 @@ Die Ansicht, die ausgewählt werden soll.
 
 Gibt 1 zurück, wenn erfolgreich, andernfalls-1. Beispielsweise wird-1 zurückgegeben, wenn die Sicht ungültig ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SETVIEW](/windows/win32/Controls/lvm-setview) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -4168,7 +4170,7 @@ Die Anzahl der `RECT` Strukturen (oder [CRect](../../atl-mfc-shared/reference/cr
 *lprect*<br/>
 Die Adresse eines Arrays von `RECT` Strukturen (oder `CRect` Objekten), die die neuen Arbeitsbereiche des Listenansicht-Steuer Elements angeben. Diese Bereiche müssen in Client Koordinaten angegeben werden. Wenn dieser Parameter NULL ist, wird der Arbeitsbereich auf den Client Bereich des Steuer Elements festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SetWorkAreas](/windows/win32/api/commctrl/nf-commctrl-listview_setworkareas), wie in der Windows SDK beschrieben.
 
@@ -4201,7 +4203,7 @@ Ein void-Zeiger.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [LVM_SORTGROUPS](/windows/win32/Controls/lvm-sortgroups) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -4229,7 +4231,7 @@ in Der von der Anwendung definierte Wert, der an die Vergleichsfunktion übermit
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode ändert den Index jedes Elements, um die neue Sequenz widerzuspiegeln.
 
@@ -4240,6 +4242,7 @@ int CALLBACK CompareFunc(LPARAM lParam1,
     LPARAM lParam2,
     LPARAM lParamSort);
 ```
+
 Die Vergleichsfunktion muss einen negativen Wert zurückgeben, wenn das erste Element dem zweiten vorangestellt wird, einen positiven Wert, wenn das erste Element der zweiten folgt, oder 0 (null), wenn die beiden Elemente gleich sind.
 
 Der *lParam1* -Parameter ist der 32-Bit-Wert, der dem ersten zu vergleichenden Element zugeordnet ist, und der *lParam2* -Parameter ist der Wert, der dem zweiten Element zugeordnet ist. Dabei handelt es sich um die Werte, die im *LPARAM* -Member der [lvitem](/windows/win32/api/commctrl/ns-commctrl-lvitemw) -Struktur der Elemente angegeben wurden, als Sie in die Liste eingefügt wurden. Der *lparamsort* -Parameter ist mit dem *dwdata* -Wert identisch.
@@ -4280,7 +4283,7 @@ BOOL SortItemsEx(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pfncompare*|in Adresse der Anwendungs definierten Vergleichsfunktion.<br /><br /> Der Sort-Vorgang ruft die Vergleichsfunktion immer dann auf, wenn die relative Reihenfolge zweier Listenelemente bestimmt werden muss. Die Vergleichsfunktion muss entweder ein statischer Member einer Klasse oder eine eigenständige Funktion sein, die kein Member einer Klasse ist.|
 |*dwdata*|in Der von der Anwendung definierte Wert, der an die Vergleichsfunktion übermittelt wird|
@@ -4289,7 +4292,7 @@ BOOL SortItemsEx(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode ändert den Index jedes Elements, um die neue Sequenz widerzuspiegeln.
 
@@ -4300,6 +4303,7 @@ int CALLBACK CompareFunc(LPARAM lParam1,
     LPARAM lParam2,
     LPARAM lParamSort);
 ```
+
 Diese Meldung ist wie [LVM_SORTITEMS](/windows/win32/Controls/lvm-sortitems), mit Ausnahme der Art von Informationen, die an die Vergleichsfunktion übermittelt werden. In [LVM_SORTITEMS](/windows/win32/Controls/lvm-sortitems)sind *lParam1* und *lParam2* die Werte der zu vergleichenden Elemente. In [LVM_SORTITEMSEX](/windows/win32/Controls/lvm-sortitemsex)handelt es sich bei *lParam1* um den aktuellen Index des ersten zu vergleichenden Elements und *lParam2* um den aktuellen Index des zweiten Elements. Sie können eine [LVM_GETITEMTEXT](/windows/win32/Controls/lvm-getitemtext) Nachricht senden, um weitere Informationen zu einem Element abzurufen.
 
 Die Vergleichsfunktion muss einen negativen Wert zurückgeben, wenn das erste Element dem zweiten vorangestellt wird, einen positiven Wert, wenn das erste Element der zweiten folgt, oder 0 (null), wenn die beiden Elemente gleich sind.
@@ -4370,7 +4374,7 @@ Ein Zeiger auf die " [lvhittestinfo](/windows/win32/api/commctrl/ns-commctrl-lvh
 
 Der einbasierte Index des Elements bzw. des unter Elements, das getestet wird (sofern vorhanden), andernfalls-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makros, [ListView_SubItemHitTest](/windows/win32/api/commctrl/nf-commctrl-listview_subitemhittest), wie in der Windows SDK beschrieben.
 
@@ -4411,7 +4415,7 @@ Der Index des zu aktualisierenden Elements.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ordnet auch das Listenansicht-Steuerelement an, wenn es über den LVS_AUTOARRANGE Stil verfügt.
 
@@ -4419,7 +4423,7 @@ Diese Funktion ordnet auch das Listenansicht-Steuerelement an, wenn es über den
 
 Weitere Informationen finden Sie im Beispiel für [CListCtrl:: getselectedcount](#getselectedcount).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-beispielrowlist](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](cwnd-class.md)<br/>

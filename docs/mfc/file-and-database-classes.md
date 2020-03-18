@@ -1,27 +1,25 @@
 ---
 title: Klassen für Dateien und Datenbanken
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.file
 helpviewer_keywords:
 - database classes [MFC], MFC
 - database classes [MFC]
 - file classes [MFC]
 ms.assetid: 580b169c-e26e-4395-b128-5408d08c98fe
-ms.openlocfilehash: 96c45cad5da0bf16edfa71cb7e357ae4d66e318d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0996810a2af835c5c98a4f3311d2411466d43583
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62405832"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442401"
 ---
 # <a name="file-and-database-classes"></a>Klassen für Dateien und Datenbanken
 
-Diese Klassen ermöglichen Ihnen, Informationen mit einer Datenbank oder Datei auf einem Datenträger zu speichern. Es gibt drei Sätze von Datenbankklassen – OLE DB, ODBC und DAO –, die ähnliche Funktionalität bereitstellen. Der OLE DB-Dateigruppe wird mithilfe von OLE DB implementiert, und der OLE DB-Consumervorlagen funktioniert, die DAO-Gruppe wird implementiert, mithilfe des Datenobjekts für den Zugriff und der Gruppe "ODBC" wird mithilfe von Open Database Connectivity implementiert. Es gibt auch einen Satz von Klassen zum Bearbeiten von Standarddateien, aktive Streams und HTML-Streams.
+Diese Klassen ermöglichen Ihnen das Speichern von Informationen in einer Datenbank oder einer Datenträger Datei. Es gibt drei Sätze von Datenbankklassen – OLE DB, ODBC und DAO –, die eine ähnliche Funktionalität bereitstellen. Die OLE DB Gruppe wird mit OLE DB implementiert und funktioniert mit den OLE DB Consumer-Vorlagen, die DAO-Gruppe wird mit dem Datenzugriffs Objekt implementiert, und die ODBC-Gruppe wird mit Open Database Connectivity implementiert. Es gibt auch eine Reihe von Klassen zum Bearbeiten von Standard Dateien, aktiven Streams und HTML-Streams.
 
-Die folgenden Kategorien von Klassen unterstützen die Dauerhaftigkeit von Daten.
+Die folgenden Klassen Kategorien unterstützen die Daten Persistenz.
 
-- [E/a-Klassen](../mfc/file-i-o-classes.md)
+- [Datei-e/a-Klassen](../mfc/file-i-o-classes.md)
 
 - [OLE DB-Klassen](../mfc/ole-db-classes.md)
 
@@ -29,6 +27,6 @@ Die folgenden Kategorien von Klassen unterstützen die Dauerhaftigkeit von Daten
 
 - [ODBC-Klassen](../mfc/odbc-classes.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

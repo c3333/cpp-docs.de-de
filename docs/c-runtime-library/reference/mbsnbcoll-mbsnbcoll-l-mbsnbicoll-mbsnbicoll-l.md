@@ -23,13 +23,9 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- mbsnbicoll
-- mbsnbcoll
-- mbsnbicoll_l
 - _mbsnbcoll
+- _mbsnbcoll_l
 - _mbsnbicoll
-- _ftcsnicoll
-- _ftcsncoll
 - mbsnbcoll_l
 helpviewer_keywords:
 - _mbsnbcoll_l function
@@ -42,15 +38,15 @@ helpviewer_keywords:
 - _tcsncoll function
 - _mbsnbicoll function
 - _mbsnbicoll_l function
-- tcsncoll function
-- tcsnicoll function
+- _tcsncoll_l function
+- _tcsnicoll_l function
 ms.assetid: d139ed63-ccba-4458-baa2-61cbcef03e94
-ms.openlocfilehash: 72c435060a6ac62213a50ba1d9fb9ef7d83fcb33
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d759bda0133a95406a586011d39d69074283bf97
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952283"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438211"
 ---
 # <a name="_mbsnbcoll-_mbsnbcoll_l-_mbsnbicoll-_mbsnbicoll_l"></a>_mbsnbcoll, _mbsnbcoll_l, _mbsnbicoll, _mbsnbicoll_l
 
@@ -88,7 +84,7 @@ int _mbsnbicoll_l(
 
 ### <a name="parameters"></a>Parameter
 
-*string1*, *string2*<br/>
+*Zeichenfolge1*, *Zeichenfolge2*<br/>
 Zu vergleichende Zeichenfolgen.
 
 *count*<br/>
@@ -101,7 +97,7 @@ Zu verwendendes Gebietsschema.
 
 Der Rückgabewert gibt die Beziehung der Teil Zeichenfolgen von *Zeichenfolge1* und *Zeichenfolge2*an.
 
-|Rückgabewert|Beschreibung|
+|Rückgabewert|BESCHREIBUNG|
 |------------------|-----------------|
 |< 0|*Zeichenfolge1* Teil Zeichenfolge kleiner als *Zeichenfolge2* Teil Zeichenfolge.|
 |0|*Zeichenfolge1* Teil Zeichenfolge, die mit *Zeichenfolge2* Teil Zeichenfolge identisch ist.|
@@ -109,15 +105,15 @@ Der Rückgabewert gibt die Beziehung der Teil Zeichenfolgen von *Zeichenfolge1* 
 
 Wenn *Zeichenfolge1* oder *Zeichenfolge2* **null** ist oder *count* größer als **INT_MAX**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **_NLSCMPERROR** zurück und legen **errno** auf **EINVAL**fest. Um **_NLSCMPERROR**zu verwenden, fügen Sie entweder String. h oder mbstring. h ein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Jede dieser Funktionen sortiert höchstens die ersten *Anzahl* Bytes in *Zeichenfolge1* und *Zeichenfolge2* und gibt einen Wert zurück, der die Beziehung zwischen den resultierenden Teil Zeichenfolgen von *Zeichenfolge1* und *Zeichenfolge2*angibt. Wenn das letzte Byte in der Teil Zeichenfolge von " *Zeichenfolge1* " oder " *Zeichenfolge2* " ein führendes Byte ist, ist es nicht im Vergleich enthalten. Diese Funktionen vergleichen nur die kompletten Zeichen in den Teil Zeichenfolgen. **_mbsnbicoll** ist eine Version von **_mbsnbcoll**ohne Beachtung der Groß-/Kleinschreibung. Wie [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md) und [_mbsnbicmp](mbsnbicmp-mbsnbicmp-l.md)ordnen **_mbsnbcoll** und **_mbsnbicoll** die zwei Multibytezeichen-Zeichen folgen entsprechend der lexikografischen Reihenfolge zu, die von der derzeit verwendeten Multibytezeichen- [Codepage](../../c-runtime-library/code-pages.md) angegeben wird.
+Jede dieser Funktionen sortiert höchstens die ersten *Anzahl* Bytes in *Zeichenfolge1* und *Zeichenfolge2* und gibt einen Wert zurück, der die Beziehung zwischen den resultierenden Teil Zeichenfolgen von *Zeichenfolge1* und *Zeichenfolge2*angibt. Wenn das letzte Byte in der Teil Zeichenfolge von " *Zeichenfolge1* " oder " *Zeichenfolge2* " ein führendes Byte ist, ist es nicht im Vergleich enthalten. Diese Funktionen vergleichen nur die kompletten Zeichen in den Teil Zeichenfolgen. **_mbsnbicoll** ist eine Version von **_mbsnbcoll**ohne Beachtung der Groß-/Kleinschreibung. Wie [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md) und [_mbsnbicmp](mbsnbicmp-mbsnbicmp-l.md) **_mbsnbcoll** und **_mbsnbicoll** die beiden Multibytezeichen-Zeichen folgen entsprechend der lexikografischen Reihenfolge, die von der derzeit verwendeten Multibytezeichen- [Codepage](../../c-runtime-library/code-pages.md) angegeben wird.
 
-Bei manchen Codepages und entsprechenden Zeichensätzen kann die Reihenfolge der Zeichen im Zeichensatz möglicherweise von der lexikografischen Reihenfolge abweichen. Im "C "-Gebietsschema ist dies nicht der Fall: Die Reihenfolge der Zeichen im ASCII-Zeichensatz entspricht der lexikografischen Reihenfolge der Zeichen. In bestimmten europäischen Codepages beispielsweise steht im Zeichensatz das Zeichen "a" (Wert 0x61) vor dem Zeichen "ä" (Wert 0xE4), das Zeichen "ä" steht lexikografisch gesehen jedoch vor dem Zeichen "a". Um einen lexikografischen Vergleich von Zeichen folgen nach Bytes in einer solchen Instanz durchzuführen, verwenden Sie **_mbsnbcoll** anstelle von **_mbsnbcmp**. Verwenden Sie **_mbsnbcmp**, um nur die Zeichen folgen Gleichheit zu überprüfen.
+Bei manchen Codepages und entsprechenden Zeichensätzen kann die Reihenfolge der Zeichen im Zeichensatz möglicherweise von der lexikografischen Reihenfolge abweichen. Im "C "-Gebietsschema ist dies nicht der Fall: Die Reihenfolge der Zeichen im ASCII-Zeichensatz entspricht der lexikografischen Reihenfolge der Zeichen. In bestimmten europäischen Codepages beispielsweise steht im Zeichensatz das Zeichen "a" (Wert 0x61) vor dem Zeichen "ä" (Wert 0xE4), das Zeichen "ä" steht lexikografisch gesehen jedoch vor dem Zeichen "a". Wenn Sie in einer solchen Instanz einen lexikografischen Vergleich von Zeichen folgen nach Bytes durchführen möchten, verwenden Sie **_mbsnbcoll** statt **_mbsnbcmp**. Verwenden Sie **_mbsnbcmp**, um nur die Zeichen folgen Gleichheit zu überprüfen.
 
 Da die **Coll** -Funktionen Zeichen folgen für Vergleiche lexikografisch sortieren, während die **CMP** -Funktionen einfach auf Zeichen folgen Gleichheit testen, sind die **Coll** -Funktionen viel langsamer als die entsprechenden **CMP** -Versionen. Daher sollten die **Coll** -Funktionen nur verwendet werden, wenn es in der aktuellen Codepage einen Unterschied zwischen der Reihenfolge des Zeichensatzes und der lexikografischen Zeichen Reihenfolge gibt, und dieser Unterschied für den Vergleich von Interesse ist.
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -128,9 +124,9 @@ Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas
 |**_tcsnicoll**|[_strnicoll](strnicoll-wcsnicoll-mbsnicoll-strnicoll-l-wcsnicoll-l-mbsnicoll-l.md)|**_mbsnbicoll**|[_wcsnicoll](strnicoll-wcsnicoll-mbsnicoll-strnicoll-l-wcsnicoll-l-mbsnicoll-l.md)|
 |**_tcsnicoll_l**|[_strnicoll_l](strnicoll-wcsnicoll-mbsnicoll-strnicoll-l-wcsnicoll-l-mbsnicoll-l.md)|**_mbsnbicoll_l**|[_wcsnicoll_l](strnicoll-wcsnicoll-mbsnicoll-strnicoll-l-wcsnicoll-l-mbsnicoll-l.md)|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbcoll**|\<mbstring.h>|
 |**_mbsnbcoll_l**|\<mbstring.h>|
@@ -139,7 +135,7 @@ Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>

@@ -2,7 +2,6 @@
 title: 'Vorgehensweise: Erstellen von RessourcenC++()'
 ms.date: 02/14/2019
 f1_keywords:
-- vc.editors.resource
 - vc.resvw.add.MFC
 - vs.resourceview.F1
 - vc.editors.insertresource
@@ -36,12 +35,12 @@ helpviewer_keywords:
 - resources [C++], templates
 - .rct files [C++]
 ms.assetid: 82be732a-cdcd-4a58-8de7-976d1418f86b
-ms.openlocfilehash: c997c7a1b2d7fb3a852a42fa78faf2be6074705e
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: 93bee6319d356128f56c1886d395cf25db372e80
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426582"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443873"
 ---
 # <a name="how-to-create-resources-c"></a>Vorgehensweise: Erstellen von RessourcenC++()
 
@@ -115,7 +114,7 @@ Sie können auch mit der rechten Maustaste auf das **Ressourcenansicht** Fenster
 
 Das **Ressourcenansicht** Fenster umfasst das Dialogfeld **Ressource hinzufügen** mit den folgenden Eigenschaften zum Hinzufügen von C++ Ressourcen zu einem Windows-Desktop Anwendungsprojekt:
 
-| Eigenschaft | Beschreibung |
+| Eigenschaft | BESCHREIBUNG |
 |---|---|
 | **Ressourcentyp** | Geben Sie die Art der Ressource an, die Sie erstellen möchten.<br/><br/>Sie können die Ressourcen Kategorien Cursor und Dialogfeld erweitern, um zusätzliche Ressourcen anzuzeigen, die sich in befinden *. \Microsoft Visual Studio \<Version\>\vc\vkresourcetemplates\\< LCID\>\mfc.rct*. Wenn Sie RCT-Dateien hinzufügen müssen, platzieren Sie Sie entweder hier, oder geben Sie einen anderen [Includepfad](../windows/how-to-specify-include-directories-for-resources.md)an. Ressourcen, die auf der obersten Ebene in der Strukturansicht angezeigt werden, sind die Standard Ressourcen, die von Visual Studio bereitgestellt werden. Ressourcen in RCT-Dateien werden auf der zweiten Ebene unter der entsprechenden Kategorie angezeigt. Es gibt keine Voreinstellungs Beschränkung für die Anzahl von RCT-Dateien, die Sie hinzufügen können.<br/><br/> |
 | **Neu** | Erstellen Sie eine Ressource basierend auf dem Typ, der im Feld **Ressourcentyp** ausgewählt ist, und öffnen Sie die Ressource im entsprechenden Editor.<br/><br/>Wenn Sie z. b. eine Dialogfeld Ressource erstellen, wird die Ressource im [Dialog-Editor](../windows/dialog-editor.md)geöffnet. |
@@ -183,11 +182,11 @@ Nachdem Sie eine Ressourcen Vorlage angepasst haben, speichern Sie die Änderung
 
 Navigieren Sie mit der geöffneten Ressourcen Skriptdatei im Menü zu **Datei** > speichern Sie **\<*Dateinamen*> als**. Geben Sie einen Speicherort an, und wählen Sie **OK**.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
 [Gewusst wie: Verwalten von Ressourcen](../windows/how-to-copy-resources.md)<br/>

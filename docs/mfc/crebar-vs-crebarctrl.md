@@ -1,39 +1,36 @@
 ---
 title: CReBar im Vergleich zu CReBarCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CReBar
-- CReBarCtrl
 helpviewer_keywords:
 - CReBar class [MFC], vs. CReBarCtrl
 - rebar controls [MFC], CReBarCtrl class [MFC]
 - GetReBarCtrl class [MFC]
 ms.assetid: 7f9c1d7e-5d5f-4956-843c-69ed3df688d0
-ms.openlocfilehash: a1b5cda729e760246449bf197fdc9b32752b96e8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 94f889be453a17a55357a260bd2a0c07037f6ded
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62241775"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445282"
 ---
 # <a name="crebar-vs-crebarctrl"></a>CReBar im Vergleich zu CReBarCtrl
 
-MFC bietet zwei Klassen um Infoleisten zu erstellen: [CReBar](../mfc/reference/crebar-class.md) und [CReBarCtrl](../mfc/reference/crebarctrl-class.md) (die dient als Wrapper für die allgemeine Windows-Steuerungs-API). `CReBar` Stellt die gesamte Funktionalität des allgemeinen Grundleisten-Steuerelements, und viele der erforderlichen steuerelementeinstellungen für allgemeine und Strukturen für Sie verarbeitet.
+MFC stellt zwei Klassen zum Erstellen von rebars bereit: " [Anbar](../mfc/reference/crebar-class.md) " und " [krebarctrl](../mfc/reference/crebarctrl-class.md) " (das die Common Control API von Windows umschließt). `CReBar` stellt die gesamte Funktionalität des allgemeinen Steuer Elements für die Grund Leiste bereit und verarbeitet viele der erforderlichen allgemeinen Steuerelement Einstellungen und-Strukturen für Sie.
 
-`CReBarCtrl` ist eine Wrapperklasse für die Win32-Grundleisten-Steuerelement, und daher möglicherweise einfacher zu implementieren, wenn Sie nicht beabsichtigen, die die Infoleiste in die MFC-Architektur integriert. Wenn Sie planen, verwenden Sie `CReBarCtrl` und grundleiste in der MFC-Architektur integriert, Sie müssen zusätzliche Sorgfalt Grundleisten-Steuerelement Manipulationen mit MFC zu kommunizieren. Diese Kommunikation ist nicht schwierig. Es ist jedoch zusätzliche Arbeit, die nicht benötigten ist bei Verwendung von `CReBar`.
+`CReBarCtrl` ist eine Wrapper Klasse für das Win32-Grund leisten-Steuerelement und ist daher möglicherweise einfacher zu implementieren, wenn Sie nicht beabsichtigen, die Info Leiste in die MFC-Architektur zu integrieren. Wenn Sie `CReBarCtrl` verwenden und die Info Leiste in die MFC-Architektur integrieren möchten, müssen Sie die Bearbeitung von Grund leisten-Steuerelement Manipulationen an MFC berücksichtigen. Diese Kommunikation ist nicht schwierig. Es handelt sich jedoch um zusätzliche Aufgaben, die nicht benötigt werden, wenn Sie `CReBar`verwenden.
 
-Visual C++ bietet zwei Möglichkeiten, um allgemeine Infoleisten-Steuerelements zu nutzen.
+Visual C++ bietet zwei Möglichkeiten, das allgemeine Steuerelement der Grund Leiste zu nutzen.
 
-- Erstellen Sie die Infoleiste mit `CReBar`, und rufen dann [CReBar:: GetReBarCtrl](../mfc/reference/crebar-class.md#getrebarctrl) für den Zugriff auf die `CReBarCtrl` Memberfunktionen.
+- Erstellen Sie die Grund Leiste mithilfe von `CReBar`, und rufen Sie dann mit " [Anbar:: GetReBarCtrl](../mfc/reference/crebar-class.md#getrebarctrl) " Zugriff auf die `CReBarCtrl` Member-Funktionen auf.
 
     > [!NOTE]
-    >  `CReBar::GetReBarCtrl` ist eine Inlinefunktion für den Member, die wandelt die **dies** Zeiger des Infoleiste-Objekts. Dies bedeutet, dass zur Laufzeit kein Mehraufwand von der Funktionsaufruf hat.
+    >  `CReBar::GetReBarCtrl` ist eine Inline Member-Funktion, die den **this** -Zeiger des Grund leisten-Objekts umwandelt. Dies bedeutet, dass der Funktionsaufruf zur Laufzeit keinen Overhead hat.
 
-- Erstellen Sie die Infoleiste mit [CReBarCtrl](../mfc/reference/crebarctrl-class.md)Konstruktor.
+- Erstellen Sie die Info Leiste mit dem Konstruktor von " [krebarctrl](../mfc/reference/crebarctrl-class.md)".
 
-Beide Methoden erhalten Sie Zugriff auf die Memberfunktionen des Infoleisten-Steuerelements. Beim Aufruf `CReBar::GetReBarCtrl`, es gibt einen Verweis auf eine `CReBarCtrl` Objekt, damit Sie beide Sätze von Memberfunktionen verwenden können. Finden Sie unter [CReBar](../mfc/reference/crebar-class.md) Informationen zum Erstellen und zum Erstellen eines Grundleisten `CReBar`.
+Beide Methoden erhalten Zugriff auf die Element Funktionen des Grund leisten-Steuer Elements. Wenn Sie `CReBar::GetReBarCtrl`aufgerufen wird, wird ein Verweis auf ein `CReBarCtrl` Objekt zurückgegeben, sodass Sie beide Member-Funktionen verwenden können. Weitere Informationen zum Erstellen und Erstellen einer Grund Leiste mithilfe `CReBar`finden Sie in der Info [Leiste](../mfc/reference/crebar-class.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von CReBarCtrl](../mfc/using-crebarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

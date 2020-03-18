@@ -1,24 +1,22 @@
 ---
 title: Verwenden von CTreeCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CTreeCtrl
 helpviewer_keywords:
 - CTreeCtrl class [MFC], about CTreeCtrl
 - tree controls [MFC], using
 ms.assetid: 6a262f2c-3540-43e5-b03f-e4b6f9cb0325
-ms.openlocfilehash: ab73ea66af27e6c1de43ff09074a9539f7518700
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 443ad948e7d48eaefbb74165a0072966b22439b9
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411655"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442190"
 ---
 # <a name="using-ctreectrl"></a>Verwenden von CTreeCtrl
 
-Ein Strukturansicht-Steuerelement, dargestellt durch die Klasse [CTreeCtrl](../mfc/reference/ctreectrl-class.md), ist ein Fenster, in dem eine hierarchische Liste der Elemente, z. B. die Spaltenüberschriften in einem Dokument, die Einträge in einem Index oder die Dateien und Verzeichnisse auf einem Datenträger angezeigt. Jedes Element besteht aus einer Bezeichnung und einem optionalen als Bitmap verfügbares Bild aus kann, und jedes Element eine Liste von Unterelementen zugeordnet. Durch Klicken auf ein Element aus, kann der Benutzer erweitern und Reduzieren der zugehörigen Unterelemente. Die Verzeichnisstruktur im linken Bereich des Datei-Explorer ist ein Beispiel für ein Strukturansicht-Steuerelement.
+Ein Struktur Steuerelement, das von der [CTreeCtrl](../mfc/reference/ctreectrl-class.md)-Klasse dargestellt wird, ist ein Fenster, in dem eine hierarchische Liste von Elementen angezeigt wird, z. b. die Überschriften in einem Dokument, die Einträge in einem Index oder die Dateien und Verzeichnisse auf einem Datenträger. Jedes Element besteht aus einer Bezeichnung und einem optionalen Bitmapbild, und jedem Element kann eine Liste von unter Elementen zugeordnet sein. Wenn Sie auf ein Element klicken, kann der Benutzer die zugeordnete Liste der unter Elemente erweitern und reduzieren. Die Verzeichnisstruktur im linken Bereich des Datei-Explorers ist ein Beispiel für ein Tree-Steuerelement.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [CTreeCtrl im Vergleich zu CTreeView](../mfc/ctreectrl-vs-ctreeview.md)
 
@@ -48,6 +46,6 @@ Ein Strukturansicht-Steuerelement, dargestellt durch die Klasse [CTreeCtrl](../m
 
 - [Benachrichtigungsmeldungen von Struktursteuerelementen](../mfc/tree-control-notification-messages.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

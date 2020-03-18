@@ -1,19 +1,17 @@
 ---
 title: Stream-E/A
 ms.date: 11/04/2016
-f1_keywords:
-- c.io
 helpviewer_keywords:
 - I/O routines, stream I/O
 - I/O [CRT], stream
 - stream I/O
 ms.assetid: dc7874d3-a91b-456a-9015-4748bb358217
-ms.openlocfilehash: 8bf81d1969fcbcfd255f3d4f9878bd3aab421703
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 0fc49d4cd26593cb02a2ff05c3205cc630ef848c
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57746252"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444620"
 ---
 # <a name="stream-io"></a>Stream-E/A
 
@@ -21,7 +19,7 @@ Diese Funktionen verarbeiten die Daten in verschiedenen Größen und Formate, an
 
 ## <a name="stream-io-routines"></a>Stream-E/A-Routinen
 
-|-Routine zurückgegebener Wert|Verwendung|
+|Routine|Zweck|
 |-------------|---------|
 |[clearerr](../c-runtime-library/reference/clearerr.md), [clearerr_s](../c-runtime-library/reference/clearerr-s.md)|Fehlerindikator für Stream löschen|
 |[fclose](../c-runtime-library/reference/fclose-fcloseall.md)|Stream schließen|
@@ -95,7 +93,7 @@ Wenn Ihre Anwendung einen Stream nicht explizit schließt, wird der Stream beim 
 
 Die Eingabe kann nur dann direkt auf die Ausgabe folgen, wenn zwischenzeitlich ein Aufruf von **fflush** oder einer dateipositionierenden Funktion (**fseek**, **fsetpos** oder **rewind**) erfolgt. Die Ausgabe kann ohne einen zwischenzeitlichen Aufruf einer dateipositionierenden Funktion auf die Eingabe folgen, wenn der Eingabevorgang auf das Ende der Datei trifft.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Eingabe und Ausgabe](../c-runtime-library/input-and-output.md)<br/>
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

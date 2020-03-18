@@ -14,11 +14,11 @@ helpviewer_keywords:
 - cancellation_token class
 ms.assetid: 2787df2b-e9d3-440e-bfd0-841a46a9835f
 ms.openlocfilehash: 34743ce48510eec9d8f7862e5ed951a722932962
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876073"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427458"
 ---
 # <a name="cancellation_token-class"></a>cancellation_token-Klasse
 
@@ -30,28 +30,28 @@ Mit der `cancellation_token`-Klasse kann bestimmt werden, ob für einen Vorgang 
 class cancellation_token;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[cancellation_token](#ctor)||
 |[~ cancellation_token-Dekonstruktor](#dtor)||
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[deregister_callback](#deregister_callback)|Entfernt einen Rückruf, der zuvor über die Methode `register` registriert wurde, auf Grundlage des `cancellation_token_registration`-Objekts, das zum Zeitpunkt der Registrierung zurückgegeben wurde.|
 |[is_cancelable](#is_cancelable)|Gibt einen Hinweis zurück, ob dieses Token abgebrochen werden kann oder nicht.|
 |[is_canceled](#is_canceled)|Gibt " **true** " zurück, wenn das Token abgebrochen wurde.|
-|[keine](#none)|Gibt ein Abbruchtoken zurück, das nie abgebrochen werden kann.|
+|[none](#none)|Gibt ein Abbruchtoken zurück, das nie abgebrochen werden kann.|
 |[register_callback](#register_callback)|Verknüpft eine Rückruffunktion mit dem Token. Wenn das Token abgebrochen wird, wird der Rückruf vorgenommen. Wurde das Token bereits abgebrochen, wenn diese Methode aufgerufen wird, wird der Rückruf sofort und synchron ausgeführt.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[operator!=](#operator_neq)||
 |[operator=](#operator_eq)||
@@ -61,7 +61,7 @@ class cancellation_token;
 
 `cancellation_token`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** pplcancellation_token. h
 
@@ -144,7 +144,7 @@ bool operator!= (const cancellation_token& _Src) const;
 ### <a name="parameters"></a>Parameter
 
 *_Src*<br/>
-Das zu vergleichende `cancellation_token`-Element.
+Der zu vergleichende `cancellation_token`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -172,7 +172,7 @@ bool operator== (const cancellation_token& _Src) const;
 ### <a name="parameters"></a>Parameter
 
 *_Src*<br/>
-Das zu vergleichende `cancellation_token`-Element.
+Der zu vergleichende `cancellation_token`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -197,6 +197,6 @@ Das Funktionsobjekt, das zurückgerufen wird, wenn dieses `cancellation_token` a
 
 Ein `cancellation_token_registration`-Objekt, das in der `deregister`-Methode verwendet werden kann, um einen bereits registrierten Rückruf aufzuheben, damit er nicht ausgeführt wird. Die-Methode löst eine [Invalid_operation](invalid-operation-class.md) Ausnahme aus, wenn Sie für ein `cancellation_token` Objekt aufgerufen wird, das mit der [cancellation_token:: None](#none) -Methode erstellt wurde.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)

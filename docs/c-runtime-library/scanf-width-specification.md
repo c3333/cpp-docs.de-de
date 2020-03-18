@@ -1,28 +1,15 @@
 ---
 title: scanf-Breitenangabe
 ms.date: 10/22/2019
-api_location:
-- msvcr100.dll
-- msvcr120.dll
-- msvcr80.dll
-- msvcr110_clr0400.dll
-- msvcr110.dll
-- msvcr90.dll
-api_type:
-- DLLExport
-topic_type:
-- apiref
-f1_keywords:
-- scanf
 helpviewer_keywords:
 - scanf function, width specification
 ms.assetid: 94b4e8fe-c4a2-4799-8b6c-a2cf28ffb09c
-ms.openlocfilehash: 54331f4150c50b084b59ac51b3f34ffe15c5b1c8
-ms.sourcegitcommit: 0a5518fdb9d87fcc326a8507ac755936285fcb94
+ms.openlocfilehash: ea0b2728021e3093ab7818af17e60c598f73587f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72811119"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444704"
 ---
 # <a name="scanf-width-specification"></a>scanf-Breitenangabe
 
@@ -57,12 +44,12 @@ Die optionalen Präfixe **h**, **HH**, **l**, **ll**, **I64**und **l** geben die
 |**double**|**l**|**e**, **E**, **f**, **g** oder **G**|
 |**long double** (identisch mit double)|**L**|**e**, **E**, **f**, **g** oder **G**|
 |**langes int**|**l**|**d**, **i**, **o**, **x** oder **X**|
-|**langes unsingniertes int**|**l**|**n**|
+|**langes unsingniertes int**|**l**|**u**|
 |**langes long**|**ll**|**d**, **i**, **o**, **x** oder **X**|
 |**short int**|**h**|**d**, **i**, **o**, **x** oder **X**|
-|**kurzes unsigniertes int**|**h**|**n**|
+|**kurzes unsigniertes int**|**h**|**u**|
 |**char**|**hh**|**d**, **i**, **o**, **x** oder **X**|
-|**unsigned char**|**hh**|**n**|
+|**unsigned char**|**hh**|**u**|
 |**int64**|**I64**|**d**, **i**, **o**, **u**, **x** oder **X**|
 |Einzelbytezeichen mit `scanf`|**h**|**c** oder **C**|
 |Einzelbytezeichen mit `wscanf`|**h**|**c** oder **C**|
@@ -106,7 +93,7 @@ Die `scanf`-Funktion überprüft Zeichen für Zeichen jedes Eingabefeld. Möglic
 
 Wenn die `scanf`-Funktion, unabhängig von dem Grund, das Lesen eines Eingabefelds beendet, beginnt das nächste Eingabefeld beim ersten ungelesenen Zeichen. Das widersprüchliche Zeichen, falls vorhanden, gilt als ungelesen. Es ist das erste Zeichen des nächsten Eingabe Felds oder das erste Zeichen in nachfolgenden Lesevorgängen des Eingabestreams.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [scanf, _scanf_l, wscanf, _wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)<br/>
 [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)<br/>
