@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operator&lt;= (list)
 - std::operator== (list)
 ms.openlocfilehash: 7b0b7540c1b9a55140405a55e8e034f9c6ec646c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874427"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425586"
 ---
 # <a name="ltlistgt-operators"></a>&lt;list&gt;-Operatoren
 
@@ -47,7 +47,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Listen ungleich sind; **FALSE**, wenn die Listen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Listen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -98,7 +98,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Liste links vom Operator kleiner als, aber ungleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -153,7 +153,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "kleiner als oder gleich" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -208,7 +208,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Liste links vom Operator gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Listen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -259,7 +259,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -314,7 +314,7 @@ Ein Objekt des Typs `list`.
 
 **TRUE**, wenn die Liste links vom Operator größer als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Listenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung "größer als oder gleich" zwischen zwei Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 

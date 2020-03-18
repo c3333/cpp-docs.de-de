@@ -1,21 +1,20 @@
 ---
-title: '&lt;Code > (C++-Dokumentationskommentare)'
+title: '&lt;Code > (C++ Dokumentations Kommentare)'
 ms.date: 11/04/2016
 f1_keywords:
-- code
 - <code>
 helpviewer_keywords:
 - <code> C++ XML tag
 - code C++ XML tag
 ms.assetid: 687db3f8-d435-4a90-b781-8da503fa39bc
-ms.openlocfilehash: d368f3c82afd028ce557db7d0507b3a6a4d7c118
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bacd95f9c93a439e5bab7a556ac2724a042411b8
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62272410"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79440153"
 ---
-# <a name="ltcodegt"></a>&lt;Code&gt;
+# <a name="ltcodegt"></a>&lt;code&gt;
 
 Das Tag \<code> ermöglicht es, mindestens eine Zeile als Code anzugeben.
 
@@ -30,7 +29,7 @@ Das Tag \<code> ermöglicht es, mindestens eine Zeile als Code anzugeben.
 *content*<br/>
 Der Text, der als Code gekennzeichnet werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie [\<c>](c-visual-cpp.md), um anzugeben, dass ein Teil des Texts als Code gekennzeichnet werden soll.
 
@@ -38,8 +37,8 @@ Dokumentationskommentare werden zu einer Datei verarbeitet, indem sie mit [/doc]
 
 ## <a name="example"></a>Beispiel
 
-Ein Beispiel zur Verwendung des \<code>-Tags finden Sie unter dem Thema [\<example>](example-visual-cpp.md).
+Ein Beispiel zur Verwendung des [code>-Tags finden Sie unter dem Thema \<](example-visual-cpp.md)example>\<.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [XML-Dokumentation](xml-documentation-visual-cpp.md)

@@ -6,11 +6,11 @@ f1_keywords:
 - system_error/std::operator==
 ms.assetid: c14edefb-bd8a-4e90-88d3-c59c98e6f73c
 ms.openlocfilehash: 5cf6a455beb5654ef65f7411db4783a32c71d625
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876265"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426174"
 ---
 # <a name="ltsystem_errorgt-operators"></a>&lt;system_error&gt;-Operatoren
 
@@ -41,7 +41,7 @@ Das Objekt, das auf Gleichheit getestet werden soll.
 
 **TRUE**, wenn die Objekte gleich sind; **FALSE**, wenn die Objekte nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt `left.category() == right.category() && left.value() == right.value()`zurück.
 
@@ -68,7 +68,7 @@ Das Objekt, das auf Ungleichheit geprüft werden soll.
 
 **true** , wenn das von *Links* übergebenen-Objekt nicht gleich dem-Objekt ist, das *Rechts*übergangen ist; andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt `!(left == right)`zurück.
 
@@ -112,7 +112,7 @@ Das Objekt, das verglichen werden soll.
 
 **true** , wenn das *Links* übergebenen Objekt kleiner ist als das Objekt, das in der *rechten*Ecke übergangen ist. Andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Funktion wird die Fehlerreihenfolge getestet.
 

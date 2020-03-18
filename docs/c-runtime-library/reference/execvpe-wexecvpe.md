@@ -22,7 +22,6 @@ topic_type:
 - apiref
 f1_keywords:
 - wexecvpe
-- execvpe
 - _wexecvpe
 - _execvpe
 helpviewer_keywords:
@@ -31,12 +30,12 @@ helpviewer_keywords:
 - _wexecvpe function
 - _execvpe function
 ms.assetid: c0c3c986-d9c0-4814-a96c-10f0b3092766
-ms.openlocfilehash: eab63cd54d410daf1dd4d09fb3d904feca0a230d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 49b7f4c55dd0c84807d6ed754ae9b45d63f37dcf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941736"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443010"
 ---
 # <a name="_execvpe-_wexecvpe"></a>_execvpe, _wexecvpe
 
@@ -75,7 +74,7 @@ Array von Zeigern zu Umgebungseinstellungen.
 
 Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Der Rückgabewert-1 gibt einen Fehler an. in diesem Fall ist die globale Variable **errno** festgelegt.
 
-|**errno** -Wert|Beschreibung|
+|**errno** -Wert|BESCHREIBUNG|
 |-------------------|-----------------|
 |**E2BIG**|Für die Argumente und die Umgebungseinstellungen werden mehr als 32 KB Speicherplatz benötigt.|
 |**EACCES**|Für die angegebene Datei ist eine Sperr- oder Freigabeverletzung aufgetreten.|
@@ -86,13 +85,13 @@ Bei Erfolg kehren diese Funktionen nicht zum aufrufenden Prozess zurück. Der R�
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen lädt einen neuen Prozess, führt diesen aus und übergibt ein Array von Zeigern auf Befehlszeilenargumente und ein Array von Zeigern auf Umgebungseinstellungen. Diese Funktionen verwenden die **path** -Umgebungsvariable, um die auszuführende Datei zu suchen.
 
-Die **_execvpe** -Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger, ein Zeiger auf ein leeres Array oder ein Zeiger auf ein Array ist, das eine leere Zeichenfolge als erstes Argument enthält, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [beschrieben. Parameter Validierung](../../c-runtime-library/parameter-validation.md). Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
+Die **_execvpe** Funktionen überprüfen Ihre Parameter. Wenn der *cmdname* ein NULL-Zeiger ist oder *argv* ein NULL-Zeiger, ein Zeiger auf ein leeres Array oder ein Zeiger auf ein Array ist, das eine leere Zeichenfolge als erstes Argument enthält, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück. Es wird kein Prozess gestartet.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|Optionaler Header|
 |--------------|---------------------|---------------------|
@@ -105,7 +104,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 Siehe das Beispiel in [_exec-, _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_exec- und _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>

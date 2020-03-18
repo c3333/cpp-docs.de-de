@@ -2,9 +2,8 @@
 title: /Gd, /Gr, /Gv, /Gz (Aufrufkonvention)
 ms.date: 09/05/2018
 f1_keywords:
-- /gr
+- /Gr
 - /Gv
-- /gz
 - /Gd
 - VC.Project.VCCLCompilerTool.CallingConvention
 helpviewer_keywords:
@@ -21,12 +20,12 @@ helpviewer_keywords:
 - Gv compiler option [C++]
 - /Gr compiler option [C++]
 ms.assetid: fd3110cb-2d77-49f2-99cf-a03f9ead00a3
-ms.openlocfilehash: eabb4e11715e03745e27911ccd654568d70b8352
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: 92fd4f6ae4193e86edb114cc366e6d40e4208ca8
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400496"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439663"
 ---
 # <a name="gd-gr-gv-gz-calling-convention"></a>/Gd, /Gr, /Gv, /Gz (Aufrufkonvention)
 
@@ -39,7 +38,7 @@ Mit diesen Optionen wird festgelegt, in welcher Reihenfolge die Funktionsargumen
 > **/Gv**<br/>
 > **/Gz**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **/Gd**, die Standardeinstellung, gibt die [__cdecl](../../cpp/cdecl.md)-Aufrufkonvention für alle Funktionen an, mit Ausnahme von C++-Memberfunktionen und allen Funktionen, die als [__stdcall](../../cpp/stdcall.md), [__fastcall](../../cpp/fastcall.md) oder [__vectorcall](../../cpp/vectorcall.md) gekennzeichnet sind.
 
@@ -47,7 +46,7 @@ Mit diesen Optionen wird festgelegt, in welcher Reihenfolge die Funktionsargumen
 
 **/Gz** legt die `__stdcall`-Aufrufkonvention für alle Funktionen mit Ausnahme von C++-Memberfunktionen, als `main` benannten Funktionen und mit `__cdecl`, `__fastcall` oder `__vectorcall` gekennzeichneten Funktionen fest. Alle `__stdcall`-Funktionen müssen Prototypen haben. Diese Aufrufkonvention ist nur in Compilern verfügbar, die auf x86 abzielen, und wird von Compilern ignoriert, die auf andere Architekturen abzielen.
 
-**/ GV** gibt an, die `__vectorcall` -Aufrufkonvention für alle Funktionen außer C++ Memberfunktionen, Funktionen, die mit dem Namen `main`, Funktionen mit einer `vararg` Liste variabler Argumente oder Funktionen, die mit einem widersprüchlichen markiert sind `__cdecl`, `__stdcall`, oder `__fastcall` Attribut. Diese Aufrufkonvention ist nur auf x86- und x64-Architekturen verfügbar, die „/arch:SSE2“ und höher unterstützen, und wird von Compilern ignoriert, die auf die ARM-Architektur abzielen.
+**/GV** gibt die `__vectorcall` Aufruf Konvention für alle Funktionen außer C++ Element Funktionen, Funktionen mit dem Namen `main`, Funktionen mit einer `vararg` Variablen Argumentliste oder Funktionen an, die mit einem in Konflikt stehenden `__cdecl`, `__stdcall`oder `__fastcall` Attribut gekennzeichnet sind. Diese Aufrufkonvention ist nur auf x86- und x64-Architekturen verfügbar, die „/arch:SSE2“ und höher unterstützen, und wird von Compilern ignoriert, die auf die ARM-Architektur abzielen.
 
 Funktionen, die eine variable Anzahl von Argumenten akzeptieren, müssen mit `__cdecl` gekennzeichnet sein.
 
@@ -62,13 +61,13 @@ Diese Compileroptionen haben keine Auswirkungen auf die Namensergänzung von C++
 
 Weitere Informationen zu Aufrufkonventionen finden Sie unter [Calling Conventions (Aufrufkonventionen)](../../cpp/calling-conventions.md).
 
-## <a name="cdecl-specifics"></a>__cdecl-Besonderheiten
+## <a name="__cdecl-specifics"></a>__cdecl-Besonderheiten
 
 Auf x86-Prozessoren werden alle Funktionsargumente auf dem Stapel von rechts nach links übergeben. Auf ARM- und x64-Architekturen werden einige Argumente nach Register übergeben und der Rest wird auf dem Stapel von rechts nach links übergeben. Die Aufrufroutine ruft die Argumente vom Stapel auf.
 
 Für C verwendet die `__cdecl`-Benennungskonvention den Funktionsnamen mit einem führenden Unterstrich (`_`); Groß-/Kleinbuchstaben werden nicht umgewandelt. Sofern sie nicht als `extern "C"` deklariert sind, kommt für C++-Funktionen ein anderes Schema für Namensergänzungen zur Anwendung. Weitere Informationen finden Sie unter [Ergänzte Namen](decorated-names.md).
 
-## <a name="fastcall-specifics"></a>__fastcall-Besonderheiten
+## <a name="__fastcall-specifics"></a>__fastcall-Besonderheiten
 
 Einige der Argumente einer `__fastcall`-Funktion werden an Register übergeben (für x86-Prozessoren, ECX und EDX), der Rest wird von rechts nach links auf den Stapel verschoben. Die aufgerufene Routine nimmt diese Argumente vor ihrem Rücksprung vom Stapel auf. Normalerweise verringert **/Gr** die Ausführungszeit.
 
@@ -81,7 +80,7 @@ Für C verwendet die `__fastcall`-Benennungskonvention den Funktionsnamen, mit e
 
 Mit der Benennungskonvention `__fastcall` sollten Sie die standardmäßigen Includedateien verwenden. Andernfalls erhalten Sie nicht aufgelöste externe Verweise.
 
-## <a name="stdcall-specifics"></a>__stdcall-Besonderheiten
+## <a name="__stdcall-specifics"></a>__stdcall-Besonderheiten
 
 Die Argumente einer `__stdcall`-Funktion werden von rechts nach links auf dem Stapel abgelegt, und die aufgerufene Funktion nimmt diese Argumente vor ihrer Rücksetzung vom Stapel.
 
@@ -89,9 +88,9 @@ Für C verwendet die `__stdcall`-Benennungskonvention den Funktionsnamen mit fü
 
 `_functionname@number`
 
-## <a name="vectorcall-specifics"></a>__vectorcall-Besonderheiten
+## <a name="__vectorcall-specifics"></a>__vectorcall-Besonderheiten
 
-Die ganzzahligen Argumente einer `__vectorcall`-Funktion werden nach Wert übergeben, wobei bis zu zwei (auf x86) oder vier (x64) Ganzzahlregister und bis zu sechs XMM-Register für Gleitkomma- und Vektorwerte verwendet werden. Der Rest wird auf dem Stapel von rechts nach links übergeben. Die aufgerufene Funktion bereinigt den Stapel vor dem Zurückgeben. Vektor- und Gleitkomma-Rückgabewerte werden in XMM0 zurückgegeben.
+Die ganzzahligen Argumente einer `__vectorcall` Funktion werden als Wert weitergegeben, wobei bis zu zwei (auf x86) oder vier (on x64) ganzzahlige Register und bis zu sechs XMM-Register für Gleit Komma-und Vektor Werte verwendet werden, und der Rest wird auf dem Stapel von rechts nach links weitergegeben. Die aufgerufene Funktion bereinigt den Stapel vor dem Zurückgeben. Vektor- und Gleitkomma-Rückgabewerte werden in XMM0 zurückgegeben.
 
 Für C verwendet die `__vectorcall`-Benennungskonvention den Funktionsnamen, gefolgt von zwei at-Zeichen ( **\@\@** )und der Größe der Funktionsargumente in Byte. Groß-/Kleinbuchstaben werden nicht umgewandelt. Der Compiler verwendet für die Benennungskonvention diese Vorlage:
 
@@ -109,7 +108,8 @@ Für C verwendet die `__vectorcall`-Benennungskonvention den Funktionsnamen, gef
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.CallingConvention%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [MSVC-Compileroptionen](compiler-options.md)
 - [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
+ 

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - CDaoFieldExchange [MFC], m_prs
 ms.assetid: 350a663e-92ff-44ab-ad53-d94efa2e5823
 ms.openlocfilehash: cfffebd16c3c1d62dc4084b962c22911e4b46ae5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78872472"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426084"
 ---
 # <a name="cdaofieldexchange-class"></a>CDaoFieldExchange-Klasse
 
@@ -33,23 +33,23 @@ DAO wird über Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, di
 class CDaoFieldExchange
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDaoFieldExchange:: isvalidoperation](#isvalidoperation)|Gibt einen Wert ungleich 0 (null) zurück, wenn der aktuelle Vorgang für den Typ des aktualisierten Felds geeignet ist.|
 |[CDaoFieldExchange:: SetFieldType](#setfieldtype)|Gibt den Typ des Recordset-Daten Members – Spalte oder Parameter – an, der durch alle nachfolgenden Aufrufe von DFX-Funktionen dargestellt wird, bis zum nächsten Aufruf von `SetFieldType`.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDaoFieldExchange:: m_nOperation](#m_noperation)|Der DFX-Vorgang, der vom aktuellen aufrufsvorgang der `DoFieldExchange` Member-Funktion des Recordsets ausgeführt wird.|
 |[CDaoFieldExchange:: m_prs](#m_prs)|Ein Zeiger auf das Recordset, für das DFX-Vorgänge ausgeführt werden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CDaoFieldExchange` verfügt nicht über eine Basisklasse.
 
@@ -73,7 +73,7 @@ Die Member-Funktion von [isvalidoperation](#isvalidoperation) wird zum Schreiben
 
 `CDaoFieldExchange`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -89,7 +89,7 @@ BOOL IsValidOperation();
 
 Ungleich 0 (null), wenn der aktuelle Vorgang für den Typ des zu aktualisierenden Felds geeignet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Einige der Vorgänge, die vom DFX-Mechanismus ausgeführt werden, gelten nur für einen der möglichen Feldtypen. Befolgen Sie das Modell der vorhandenen DFX-Funktionen.
 
@@ -99,7 +99,7 @@ Weitere Informationen zum Schreiben von benutzerdefinierten DFX-Routinen finden 
 
 Gibt den Vorgang an, der für das [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekt ausgeführt werden soll, das dem Feld Austausch Objekt zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `CDaoFieldExchange`-Objekt stellt den Kontext für eine Reihe von unterschiedlichen DFX-Vorgängen für das Recordset bereit.
 
@@ -108,7 +108,7 @@ Das `CDaoFieldExchange`-Objekt stellt den Kontext für eine Reihe von unterschie
 
 Mögliche Werte `m_nOperation` sind:
 
-|Vorgang|BESCHREIBUNG|
+|Vorgang|Beschreibung|
 |---------------|-----------------|
 |`AddToParameterList`|Erstellt die **Parameters** -Klausel der SQL-Anweisung.|
 |`AddToSelectList`|Erstellt die **Select** -Klausel der SQL-Anweisung.|
@@ -130,7 +130,7 @@ Mögliche Werte `m_nOperation` sind:
 
 Enthält einen Zeiger auf das [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekt, das mit dem `CDaoFieldExchange`-Objekt verknüpft ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setfieldtype"></a>CDaoFieldExchange:: SetFieldType
 
@@ -149,7 +149,7 @@ Ein Wert des in `CDaoFieldExchange`deklarierten **enumerationsfieldtype**, der e
 
 - `CDaoFieldExchange::param`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Normalerweise schreibt der Klassen-Assistent diesen-Befehl für Sie. Wenn Sie Ihre eigene Funktion schreiben und den Assistenten zum Schreiben Ihrer `DoFieldExchange` Funktion verwenden, fügen Sie Ihrer eigenen Funktion außerhalb der Feld Zuordnung Aufrufe hinzu. Wenn Sie den Assistenten nicht verwenden, wird keine Feld Zuordnung angezeigt. Der Aufruf geht vor den Aufrufen von DFX-Funktionen vor, eine für jedes Feld Datenelement ihrer Klasse und identifiziert den Feldtyp als `CDaoFieldExchange::outputColumn`.
 
@@ -157,7 +157,7 @@ Wenn Sie die Recordset-Klasse parametrisieren, sollten Sie DFX-Aufrufe für alle
 
 Im Allgemeinen muss jeder Gruppe von DFX-Funktionsaufrufen, die den Felddatenmembern oder Parameter Datenmembern zugeordnet ist, ein Aufruf von `SetFieldType`vorangestellt sein. Der *nfieldtype* -Parameter jedes `SetFieldType` Aufrufs identifiziert den Typ der Datenmember, die durch die DFX-Funktionsaufrufe dargestellt werden, die dem `SetFieldType` Aufruf folgen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CDaoRecordset-Klasse](../../mfc/reference/cdaorecordset-class.md)

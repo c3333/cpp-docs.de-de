@@ -107,11 +107,11 @@ helpviewer_keywords:
 - CMFCMenuBar [MFC], SetShowAllCommands
 ms.assetid: 8a3ce4c7-b012-4dc0-b4f8-53c10b4b86b8
 ms.openlocfilehash: 278feca6b64915d0cf789e8f68af3c3fdf9b3129
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78869934"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425778"
 ---
 # <a name="cmfcmenubar-class"></a>Cmfcmenubar-Klasse
 
@@ -124,11 +124,11 @@ Ausführlichere Informationen finden Sie im Quellcode, der sich im Ordner **VC\\
 class CMFCMenuBar : public CMFCToolbar
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfcmenubar:: Anpassungen](#adjustlocations)|(Überschreibt `CMFCToolBar::AdjustLocations`.)|
 |[Cmfcmenubar:: allowchangetextlabels](#allowchangetextlabels)|Gibt an, ob Text Bezeichnungen auf den Symbolleisten-Schaltflächen unter Bilder angezeigt werden können. (Überschreibt [cmfctoolbar:: allowchangetextlabels](../../mfc/reference/cmfctoolbar-class.md#allowchangetextlabels).)|
@@ -181,7 +181,7 @@ class CMFCMenuBar : public CMFCToolbar
 |[Cmfcmenubar:: setrecentlyusedmenüs](#setrecentlyusedmenus)|Gibt an, ob in einer Menüleiste zuletzt verwendete Menübefehle angezeigt werden.|
 |[Cmfcmenubar:: setshowallcommands](#setshowallcommands)|Gibt an, ob in der Menüleiste alle Befehle angezeigt werden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die `CMFCMenuBar`-Klasse ist eine Menüleiste, die Andock Funktionen implementiert. Sie ähnelt einer Symbolleiste, obwohl Sie nicht geschlossen werden kann. Sie wird immer angezeigt.
 
@@ -214,7 +214,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 `CMFCMenuBar`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxmenubar. h
 
@@ -226,7 +226,7 @@ Passt die Positionen der Menü Elemente in der Menüleiste an.
 virtual void AdjustLocations();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="allowchangetextlabels"></a>Cmfcmenubar:: allowchangetextlabels
 
@@ -240,7 +240,7 @@ virtual BOOL AllowChangeTextLabels() const;
 
 Gibt "true" zurück, wenn der Benutzer Text Bezeichnungen Unterbildern anzeigen kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="allowshowonpanemenu"></a>Cmfcmenubar:: allowshowonpanemenu
 
@@ -250,7 +250,7 @@ virtual BOOL AllowShowOnPaneMenu() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="calcfixedlayout"></a>Cmfcmenubar:: calcfixedlayout
 
@@ -268,7 +268,7 @@ in *bhorz*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="calclayout"></a>Cmfcmenubar:: calclayout
 
@@ -286,7 +286,7 @@ in *nlength*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="calcmaxbuttonheight"></a>Cmfcmenubar:: calcmaxbuttonheight
 
@@ -296,7 +296,7 @@ virtual int CalcMaxButtonHeight();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="canbeclosed"></a>Cmfcmenubar:: canbeclosed
 
@@ -306,7 +306,7 @@ virtual BOOL CanBeClosed() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="canberestored"></a>Cmfcmenubar:: canberestored
 
@@ -316,7 +316,7 @@ virtual BOOL CanBeRestored() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="create"></a>Cmfcmenubar:: Create
 
@@ -344,7 +344,7 @@ in Die ID für das untergeordnete Fenster der Menüleiste.
 
 TRUE, wenn erfolgreich; andernfalls FALSE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem Sie ein `CMFCMenuBar` Objekt erstellt haben, müssen Sie `Create`abrufen. Diese Methode erstellt das `CMFCMenuBar` Steuerelement und fügt es an das `CMFCMenuBar` Objekt an.
 
@@ -387,7 +387,7 @@ in Die ID für das untergeordnete Fenster der Menüleiste.
 
 Ungleich 0 (null), wenn die Methode erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie sollten diese Funktion anstelle von [cmfcmenubar:: Create](#create) verwenden, wenn Sie zusätzlich zum Stil der Symbolleiste Stile angeben möchten. Einige häufig verwendete zusätzliche Stile sind TBSTYLE_TRANSPARENT und CBRS_TOP.
 
@@ -422,7 +422,7 @@ in Ein boolescher Wert, der angibt, ob das neue Menü das Standardmenü ist.
 *bforceupdate*<br/>
 in Ein boolescher Wert, der angibt, ob diese Methode eine Menü Aktualisierung erzwingt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, wenn Sie möchten, dass ein Menü Steuerelement dieselben Menü Elemente wie eine Menü Ressource hat. Sie rufen diese Methode auf, nachdem Sie entweder [cmfcmenubar:: Create](#create) oder [cmfcmenubar::](#createex)up-ex aufgerufen haben.
 
@@ -448,7 +448,7 @@ in Eine Zeichenfolge, die den Text enthält, den das Framework im Kombinations F
 *ncomboboxwidth*<br/>
 in Die Breite der Schaltfläche für das Kombinations Feld in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Kombinations Feld **Hilfe** ähnelt dem Kombinations Feld **Hilfe** in der Menüleiste von Microsoft Word.
 
@@ -467,7 +467,7 @@ static void EnableMenuShadows(BOOL bEnable = TRUE);
 *benabel*<br/>
 in Ein boolescher Parameter, der angibt, ob Schatten für Popup Menüs aktiviert werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der von dieser Methode verwendete Algorithmus ist komplex und kann die Leistung Ihrer Anwendung auf langsameren Systemen verringern.
 
@@ -479,7 +479,7 @@ virtual int GetAvailableExpandSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getcolumnwidth"></a>Cmfcmenubar:: getColumnWidth
 
@@ -489,7 +489,7 @@ virtual int GetColumnWidth() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getdefaultmenu"></a>Cmfcmenubar:: getdefaultmenu
 
@@ -503,7 +503,7 @@ HMENU GetDefaultMenu() const;
 
 Ein Handle für eine Menü Ressource.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn von der Anwendung ein Menü angepasst wird, können Sie mit dieser Methode ein Handle zum ursprünglichen Menü abrufen.
 
@@ -519,7 +519,7 @@ UINT GetDefaultMenuResId() const;
 
 Ein Menü Ressourcen Bezeichner.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework lädt das Standardmenü für das `CMFCMenuBar` Objekt aus der Ressourcen Datei.
 
@@ -535,7 +535,7 @@ in *pbutton*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getforcedownarrows"></a>Cmfcmenubar:: getforcedownarrows
 
@@ -545,7 +545,7 @@ BOOL GetForceDownArrows();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="gethelpcombobox"></a>Cmfcmenubar:: gethelpcombobox
 
@@ -559,7 +559,7 @@ CMFCToolBarComboBoxButton* GetHelpCombobox();
 
 Ein Zeiger auf das **Help** -Kombinations Feld. NULL, wenn das Kombinations Feld **Hilfe** ausgeblendet oder nicht aktiviert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Kombinations Feld **Hilfe** befindet sich auf der rechten Seite der Menüleiste. Rufen Sie die [cmfcmenubar:: enablehelpcombobox](#enablehelpcombobox) -Methode auf, um dieses Kombinations Feld zu aktivieren.
 
@@ -588,7 +588,7 @@ in Ein boolescher Parameter, der angibt, ob die horizontale oder vertikale Schri
 
 Ein Zeiger auf einen [CFont](../../mfc/reference/cfont-class.md) -Parameter, der die aktuelle Menüleisten Schriftart enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zurückgegebene Schriftart ist ein globaler Parameter für die Anwendung. Zwei globale Schriftarten werden für alle `CMFCMenuBar`-Objekte verwaltet. Diese separaten Schriftarten werden für horizontale und vertikale Menüleisten verwendet.
 
@@ -617,7 +617,7 @@ virtual int GetRowHeight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getsystembutton"></a>Cmfcmenubar:: getsystembutton
 
@@ -635,7 +635,7 @@ in *bbycommand*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getsystembuttonscount"></a>Cmfcmenubar:: getsystembuttonscount
 
@@ -645,7 +645,7 @@ int GetSystemButtonsCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getsystemmenu"></a>Cmfcmenubar:: getsystemmenu
 
@@ -655,7 +655,7 @@ CMFCToolBarSystemMenuButton* GetSystemMenu() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="highlightdisableditems"></a>Cmfcmenubar:: highlightdisableditems
 
@@ -670,7 +670,7 @@ static void HighlightDisabledItems(BOOL bHighlight = TRUE);
 *bhighlight*<br/>
 in Ein boolescher Parameter, der angibt, ob das Framework nicht verfügbare Menü Elemente hervorhebt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig hebt das Framework keine nicht verfügbaren Menü Elemente hervor, wenn der Benutzer den Mauszeiger darüber positioniert.
 
@@ -682,7 +682,7 @@ virtual BOOL IsButtonExtraSizeAvailable() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="ishighlightdisableditems"></a>Cmfcmenubar:: ishighlightdisableditems
 
@@ -696,7 +696,7 @@ static BOOL IsHighlightDisabledItems();
 
 TRUE, wenn nicht verfügbare Menü Elemente hervorgehoben werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig hebt das Framework keine nicht verfügbaren Menü Elemente hervor, wenn der Benutzer den Mauszeiger darüber positioniert. Verwenden Sie die [cmfcmenubar:: highlightdisableditems](#highlightdisableditems) -Methode, um dieses Feature zu aktivieren.
 
@@ -712,7 +712,7 @@ static BOOL IsMenuShadows();
 
 TRUE, wenn das Framework Menü Schatten zeichnet. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfcmenubar:: enablemenushadows](#enablemenushadows) -Methode, um diese Funktion zu aktivieren oder zu deaktivieren.
 
@@ -728,7 +728,7 @@ static BOOL IsRecentlyUsedMenus();
 
 Ein Wert ungleich 0 (null), wenn das `CMFCMenuBar` Objekt zuletzt verwendete Menübefehle anzeigt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die Funktion [cmfcmenubar:: setrecentlyusedmenüs](#setrecentlyusedmenus) , um zu steuern, ob in der Menüleiste zuletzt verwendete Menübefehle angezeigt werden.
 
@@ -744,7 +744,7 @@ static BOOL IsShowAllCommands();
 
 Ungleich 0 (null), wenn die `CMFCMenuBar` alle Befehle anzeigt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein `CMFCMenuBar`-Objekt kann so konfiguriert werden, dass entweder alle Befehle angezeigt werden oder nur eine Teilmenge der Befehle angezeigt wird. Weitere Informationen zu dieser Funktion finden Sie unter [cmfcmenubar-Klasse](../../mfc/reference/cmfcmenubar-class.md).
 
@@ -762,7 +762,7 @@ static BOOL IsShowAllCommandsDelay();
 
 Ungleich 0 (null), wenn die Menüleiste nach einer kurzen Verzögerung vollständige Menüs anzeigt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie eine Menüleiste so konfigurieren, dass zuletzt verwendete Elemente angezeigt werden, wird auf der Menüleiste eine der beiden folgenden Möglichkeiten angezeigt:
 
@@ -798,7 +798,7 @@ in Ein reservierter Wert.
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfcmenubar:: SaveState](#savestate) -Methode, um den Status der Menüleiste in der Registrierung zu speichern. Zu den gespeicherten Informationen gehören die Menü Elemente, der Andock Zustand und die Position der Menüleiste.
 
@@ -814,7 +814,7 @@ virtual void OnChangeHot(int iHot);
 
 in *ihot*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="ondefaultmenuloaded"></a>Cmfcmenubar:: ondefaultmenuloaded
 
@@ -829,7 +829,7 @@ virtual void OnDefaultMenuLoaded(HMENU hMenu);
 *HMENU*<br/>
 in Das Handle für das Menü, das an das `CMFCMenuBar` Objekt angefügt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um benutzerdefinierten Code auszuführen, nachdem das Framework eine Menü Ressource aus der Ressourcen Datei geladen hat.
 
@@ -845,7 +845,7 @@ in *pbutton*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onsetdefaultbuttontext"></a>Cmfcmenubar:: onsetdefaultbuttontext
 
@@ -864,7 +864,7 @@ in Ein Zeiger auf das [cmfctoolbarbutton](../../mfc/reference/cmfctoolbarbutton-
 
 TRUE, wenn das Framework die Benutzer Änderungen auf die Menüleiste anwendet. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung für diese Methode ändert den Text der Schaltfläche in den Text, den der Benutzer bereitstellt.
 
@@ -884,7 +884,7 @@ in *PTI*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="pretranslatemessage"></a>Cmfcmenubar::P retranslatemess Age
 
@@ -898,7 +898,7 @@ in *pmsg*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="restoreoriginalstate"></a>Cmfcmenubar:: restoreoriginalstate
 
@@ -912,7 +912,7 @@ virtual BOOL RestoreOriginalstate();
 
 Ungleich 0 (null), wenn die Methode erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird aufgerufen, wenn der Benutzer im Anpassungs Menü **Zurücksetzen** auswählt. Sie können diese Methode auch manuell aufzurufen, um den Zustand der Menüleiste Programm gesteuert zurückzusetzen. Diese Methode lädt den ursprünglichen Zustand aus der Ressourcen Datei.
 
@@ -944,7 +944,7 @@ in Ein reservierter Wert.
 
 TRUE, wenn erfolgreich; andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der Regel Ruft die Anwendung `SaveState`nicht auf. Das Framework ruft diese Methode auf, wenn der Arbeitsbereich serialisiert wird. Weitere Informationen finden Sie unter [CWinAppEx:: SaveState](../../mfc/reference/cwinappex-class.md#savestate).
 
@@ -963,7 +963,7 @@ void SetDefaultMenuResId(UINT uiResId);
 *uiresid*<br/>
 in Die Ressourcen-ID für das neue Standardmenü.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [cmfcmenubar:: restoreoriginalstate](#restoreoriginalstate) -Methode stellt das Standardmenü aus der Ressourcen Datei wieder her.
 
@@ -979,7 +979,7 @@ void SetForceDownArrows(BOOL bValue);
 
 in *bvalue*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setmaximizemode"></a>Cmfcmenubar:: setmaximizemode
 
@@ -995,7 +995,7 @@ void SetMaximizeMode(
 ### <a name="parameters"></a>Parameter
 
 *bmax*<br/>
-in Ein boolescher Wert, der den Modus angibt. Weitere Informationen finden Sie im Abschnitt zu den Hinweisen.
+in Ein boolescher Wert, der den Modus angibt. Weitere Informationen finden Sie im Abschnitt Hinweise.
 
 *folgenden*<br/>
 in Ein Zeiger auf das untergeordnete MDI-Fenster, das geändert wird.
@@ -1003,7 +1003,7 @@ in Ein Zeiger auf das untergeordnete MDI-Fenster, das geändert wird.
 *bneuanyout*<br/>
 in Ein boolescher Wert, der angibt, ob das Layout der Menüleiste sofort neu berechnet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein untergeordnetes MDI-Fenster maximiert ist, zeigt eine Menüleiste, die an das MDI-Hauptrahmen Fenster angefügt ist, das Systemmenü und die Schaltflächen **minimieren**, **Maxi** mieren und **Schließen** an. Wenn *bmax* true und *pwnd* nicht NULL ist, wird das untergeordnete MDI-Fenster maximiert, und die Menüleiste muss die zusätzlichen Steuerelemente enthalten. Andernfalls wird die Menüleiste in ihren regulären Zustand zurückversetzt.
 
@@ -1020,7 +1020,7 @@ void SetMenuButtonRTC(CRuntimeClass* pMenuButtonRTC);
 *pmenubuttonrtc*<br/>
 in Die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Informationen für eine von der [cmfcmenubutton-Klasse](../../mfc/reference/cmfcmenubutton-class.md)abgeleitete Klasse.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Benutzer der Menüleiste neue Schaltflächen hinzufügt, erstellt das Framework die Schaltflächen dynamisch. Standardmäßig werden `CMFCMenuButton`-Objekte erstellt. Überschreiben Sie diese Methode, um den Typ von Schaltflächen Objekten zu ändern, die vom Framework erstellt werden.
 
@@ -1046,7 +1046,7 @@ in TRUE, wenn der *lplogfont* -Parameter für die vertikale Schriftart verwendet
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für alle `CMFCMenuBar`-Objekte werden zwei Schriftarten verwendet. Diese separaten Schriftarten werden für horizontale und vertikale Menüleisten verwendet.
 
@@ -1078,11 +1078,11 @@ static void SetShowAllCommands(BOOL bShowAllCommands = TRUE);
 *bshowallcommands*<br/>
 in Ein boolescher Parameter, der angibt, ob im Popupmenü alle Menübefehle angezeigt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn in einem Menü nicht alle Menübefehle angezeigt werden, werden die Befehle ausgeblendet, die selten verwendet werden. Weitere Informationen zum Anzeigen von Menübefehlen finden Sie unter [cmfcmenubar-Klasse](../../mfc/reference/cmfcmenubar-class.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

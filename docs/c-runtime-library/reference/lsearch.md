@@ -21,7 +21,6 @@ topic_type:
 - apiref
 f1_keywords:
 - _lsearch
-- lsearch
 helpviewer_keywords:
 - _lsearch function
 - values, searching for
@@ -31,12 +30,12 @@ helpviewer_keywords:
 - searching, linear
 - lsearch function
 ms.assetid: 8200f608-159a-46f0-923b-1a37ee1af7e0
-ms.openlocfilehash: 92973536df478f4176970929c5f4dd48352bed13
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 6dc610c4ab120d81bfb2b3b5e64a54a104bea97f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954072"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438144"
 ---
 # <a name="_lsearch"></a>_lsearch
 
@@ -62,7 +61,7 @@ Das Objekt, nach dem gesucht werden soll.
 *base*<br/>
 Zeiger auf der Basis des zu durchsuchenden Arrays.
 
-*number*<br/>
+*Zahl*<br/>
 Anzahl der Elemente.
 
 *width*<br/>
@@ -75,17 +74,17 @@ Ein Zeiger auf die Vergleichsroutine. Der erste Parameter ist ein Zeiger auf den
 
 Wenn der Schlüssel gefunden wird, gibt **_lsearch** einen Zeiger auf das Element des Arrays an der *Basis* zurück, die mit dem *Schlüssel*übereinstimmt. Wenn der Schlüssel nicht gefunden wird, gibt **_lsearch** einen Zeiger auf das neu hinzugefügte Element am Ende des Arrays zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_lsearch** -Funktion führt eine lineare Suche nach dem Wert *Schlüssel* in einem Array von *Zahlen* Elementen durch, wobei jede *Breite* Bytes beträgt. Anders als bei **bsearch**erfordert **_lsearch** nicht, dass das Array sortiert wird. Wenn *Key* nicht gefunden wird, fügt **_lsearch** ihn am Ende des Arrays hinzu und erhöht die *Zahl*.
 
-Das *Compare* -Argument ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Array Elemente vergleicht und einen Wert zurückgibt, der Ihre Beziehung angibt. **_lsearch** Ruft die *Vergleichs* Routine einmal oder mehrmals während der Suche auf, wobei bei jedem Aufruf Zeiger auf zwei Array Elemente übergeben werden. *Compare* muss die Elemente vergleichen und entweder ungleich NULL (d.h. die Elemente unterscheiden sich) oder 0 (d.h. die Elemente sind identisch) zurückgeben.
+Das *Compare* -Argument ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Array Elemente vergleicht und einen Wert zurückgibt, der Ihre Beziehung angibt. **_lsearch** die *Vergleichs* Routine während der Suche einmal oder mehrmals aufruft, wobei bei jedem Aufruf Zeiger auf zwei Array Elemente übergeben werden. *Compare* muss die Elemente vergleichen und entweder ungleich NULL (d.h. die Elemente unterscheiden sich) oder 0 (d.h. die Elemente sind identisch) zurückgeben.
 
-Diese Funktion überprüft ihre Parameter. Wenn *Compare*, *Key* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* kleiner als 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen, wie in Parameter beschrieben. [ Validierung](../../c-runtime-library/parameter-validation.md). Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **null**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *Compare*, *Key* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* kleiner als 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **null**zurück.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_lsearch**|\<search.h>|
 
@@ -133,7 +132,7 @@ wordlist before _lsearch: hello thanks bye
 wordlist after _lsearch: hello thanks bye extra
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Suchen und Sortieren](../../c-runtime-library/searching-and-sorting.md)<br/>
 [bsearch](bsearch.md)<br/>

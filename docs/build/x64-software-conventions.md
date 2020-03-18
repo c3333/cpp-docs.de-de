@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Visual C++, x64 calling conventions
 ms.assetid: 750f3d97-1706-4840-b2fc-41a007329a08
 ms.openlocfilehash: 11d29b6c31ccecfe5b9c51c2f9311213bd4a6732
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865599"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422721"
 ---
 # <a name="x64-software-conventions"></a>Softwarekonventionen bei x64-Systemen
 
@@ -49,8 +49,8 @@ Obwohl es möglich ist, mit einer beliebigen Ausrichtung auf Daten zuzugreifen, 
 |Skalartyp|C-Datentyp|Speichergröße (in Bytes)|Empfohlene Ausrichtung|
 |**Int8**|**char**|1|Byte|
 |**Uint8**|**unsigned char**|1|Byte|
-|**INT16**|**short**|2|Wort|
-|**UInt16**|**unsigned short**|2|Wort|
+|**INT16**|**short**|2|Word|
+|**UInt16**|**unsigned short**|2|Word|
 |**Int32**|**int**, **Long**|4|Doubleword|
 |**UInt32**|**Ganzzahl ohne Vorzeichen int, Ganzzahl ohne Vorzeichen Long**|4|Doubleword|
 |**Int64**|**__int64**|8|Quadword|
@@ -84,8 +84,8 @@ Die folgende Tabelle zeigt die stark vorgeschlagene Ausrichtung für die skalare
 |Skalartyp|C-Datentyp|Erforderliche Ausrichtung|
 |**Int8**|**char**|Byte|
 |**Uint8**|**unsigned char**|Byte|
-|**INT16**|**short**|Wort|
-|**UInt16**|**unsigned short**|Wort|
+|**INT16**|**short**|Word|
+|**UInt16**|**unsigned short**|Word|
 |**Int32**|**int**, **Long**|Doubleword|
 |**UInt32**|**Ganzzahl ohne Vorzeichen int, Ganzzahl ohne Vorzeichen Long**|Doubleword|
 |**Int64**|**__int64**|Quadword|
@@ -112,7 +112,7 @@ Die folgenden Aggregat Ausrichtungs Regeln gelten:
 
 In den folgenden vier Beispielen wird jeweils eine ausgerichtete Struktur oder Union deklariert, und die entsprechenden Abbildungen veranschaulichen das Layout der Struktur oder Union im Speicher. Jede Spalte in einer Abbildung stellt ein Byte des Speichers dar, und die Zahl in der Spalte zeigt die Verschiebung dieses Byte an. Der Name in der zweiten Zeile jeder Abbildung entspricht dem Namen einer Variablen in der Deklaration. Die schattierten Spalten geben den Abstand an, der zum Erreichen der angegebenen Ausrichtung erforderlich ist.
 
-#### <a name="example-1"></a>Beispiel 1
+#### <a name="example-1"></a>Beispiel 1
 
 ```C
 // Total size = 2 bytes, alignment = 2 bytes (word).
@@ -124,7 +124,7 @@ _declspec(align(2)) struct {
 
 ![AMD-Konvertierung, Beispiel 1, Struktur Layout](../build/media/vcamd_conv_ex_1_block.png "AMD-Konvertierung, Beispiel 1, Struktur Layout")
 
-#### <a name="example-2"></a>Beispiel 2
+#### <a name="example-2"></a>Beispiel 2
 
 ```C
 // Total size = 24 bytes, alignment = 8 bytes (quadword).
@@ -138,7 +138,7 @@ _declspec(align(8)) struct {
 
 ![AMD-Konvertierungs Beispiel 2 Struktur Layout](../build/media/vcamd_conv_ex_2_block.png "AMD-Konvertierungs Beispiel 2 Struktur Layout")
 
-#### <a name="example-3"></a>Beispiel 3
+#### <a name="example-3"></a>Beispiel 3
 
 ```C
 // Total size = 12 bytes, alignment = 4 bytes (doubleword).
@@ -193,25 +193,25 @@ Die folgende Tabelle beschreibt, wie jedes Register bei Funktionsaufrufen verwen
 
 ||||
 |-|-|-|
-|Register|Status|Zweck|
-|RAX|Flüchtig|Rückgabewert-Register|
-|RCX|Flüchtig|Erstes Ganzzahl-Argument|
-|RDX|Flüchtig|Zweites Ganzzahl-Argument|
-|R8|Flüchtig|Drittes Ganzzahl-Argument|
-|R9|Flüchtig|Viertes Ganzzahl-Argument|
-|R10:R11|Flüchtig|Muss je nach Anforderung des Aufrufers bewahrt werden. Wird in syscall-/sysret-Instruktionen verwendet.|
+|Registrieren|Status|Verwendung|
+|RAX|Volatil|Rückgabewert-Register|
+|RCX|Volatil|Erstes Ganzzahl-Argument|
+|RDX|Volatil|Zweites Ganzzahl-Argument|
+|R8|Volatil|Drittes Ganzzahl-Argument|
+|R9|Volatil|Viertes Ganzzahl-Argument|
+|R10:R11|Volatil|Muss je nach Anforderung des Aufrufers bewahrt werden. Wird in syscall-/sysret-Instruktionen verwendet.|
 |R12:R15|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RDI|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RSI|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RBX|Nicht volatil|Muss vom Aufgerufenen bewahrt werden|
 |RBP|Nicht volatil|Kann als Frame-Pointer verwendet werden; muss vom Aufgerufenen bewahrt werden|
 |RSP|Nicht volatil|Stack-Pointer|
-|XMM0, YMM0|Flüchtig|Erstes FP-Argument; erstes Vektortypargument, wenn `__vectorcall` verwendet wird|
-|XMM1, YMM1|Flüchtig|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM2, YMM2|Flüchtig|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM3, YMM3|Flüchtig|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM4, YMM4|Flüchtig|Muss je nach Bedarf vom Aufrufer bewahrt werden; fünftes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
-|XMM5, YMM5|Flüchtig|Muss je nach Bedarf vom Aufrufer bewahrt werden; sechstes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM0, YMM0|Volatil|Erstes FP-Argument; erstes Vektortypargument, wenn `__vectorcall` verwendet wird|
+|XMM1, YMM1|Volatil|Zweites FP-Argument; zweites Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM2, YMM2|Volatil|Drittes FP-Argument; drittes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM3, YMM3|Volatil|Viertes FP-Argument; viertes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM4, YMM4|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; fünftes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
+|XMM5, YMM5|Volatil|Muss je nach Bedarf vom Aufrufer bewahrt werden; sechstes Argument vom Typ Vektor, wenn `__vectorcall` verwendet wird|
 |XMM6:XMM15, YMM6:YMM15|Nicht volatil (XMM), Volatil (obere Hälfte von YMM)|Muss vom aufgerufenen beibehalten werden. YMM-Register müssen je nach Bedarf vom Aufrufer bewahrt werden.|
 
 Bei einem Funktions-und einem Funktions Eintrag in C-Lauf Zeit Bibliotheks aufrufen und Windows-Systemaufrufen wird erwartet, dass das richtungsflag im CPU-Flags-Register gelöscht wird.
@@ -238,6 +238,6 @@ Die vom Compiler unterstützten systeminternen Funktionen werden in systemintern
 
 Das ausführbare x64-Bildformat ist das Format PE32 +. Ausführbare Images (sowohl DLLs als auch exe-Dateien) sind auf eine maximale Größe von 2 Gigabyte beschränkt, sodass eine relative Adressierung mit einer 32-Bit-Verschiebung verwendet werden kann, um statische Bilddaten zu adressieren. Diese Daten umfassen die Import Adress Tabelle, Zeichen folgen Konstanten, statische globale Daten usw.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Aufrufkonventionen](../cpp/calling-conventions.md)

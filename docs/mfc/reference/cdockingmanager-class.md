@@ -161,11 +161,11 @@ helpviewer_keywords:
 - CDockingManager [MFC], m_nTimeOutBeforeToolBarDock
 ms.assetid: 98e69c43-55d8-4f43-b861-4fda80ec1e32
 ms.openlocfilehash: 8709b3a4eb3f57a3d2700ad7aaed16df994245c5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883926"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425952"
 ---
 # <a name="cdockingmanager-class"></a>Cdockingmanager-Klasse
 
@@ -177,11 +177,11 @@ Implementiert die Kernfunktionen, die das Andocklayout in einem Hauptrahmenfenst
 class CDockingManager : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cdockingmanager:: adddocksite](#adddocksite)|Erstellt einen Andock Bereich und fügt ihn der Liste der Steuer leisten hinzu.|
 |[Cdockingmanager:: addhiddenmditabbedbar](#addhiddenmditabbedbar)|Fügt ein Handle zu einem Balken Bereich der Liste der ausgeblendeten Fensterbereiche im Registerkarten Format hinzu.|
@@ -256,9 +256,9 @@ class CDockingManager : public CObject
 |[Cdockingmanager:: staranddocking](#startsdocking)|Startet das intelligente Andocken des angegebenen Fensters gemäß der Ausrichtung des intelligenten Docking-Managers.|
 |[Cdockingmanager:: stopsdocking](#stopsdocking)|Beendet das intelligente andocken.|
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cdockingmanager:: m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode)|Gibt an, ob der Docking-Manager Bereiche im OLE-Container Modus ausblendet.|
 |[Cdockingmanager:: m_dockModeGlobal](#m_dockmodeglobal)|Gibt den globalen Andock Modus an.|
@@ -266,7 +266,7 @@ class CDockingManager : public CObject
 |[Cdockingmanager:: m_nTimeOutBeforeDockingBarDock](#m_ntimeoutbeforedockingbardock)|Gibt die Zeit in Millisekunden an, bevor ein andockbarer Bereich im unmittelbaren Andock Modus angedockt wird.|
 |[Cdockingmanager:: m_nTimeOutBeforeToolBarDock](#m_ntimeoutbeforetoolbardock)|Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmen Fenster angedockt wird.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Das Hauptrahmen Fenster erstellt und initialisiert diese Klasse automatisch.
 
@@ -302,7 +302,7 @@ Im folgenden Beispiel wird veranschaulicht, wie verschiedene Methoden in der `CD
 
 [CDockingManager](../../mfc/reference/cdockingmanager-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdockingmanager. h
 
@@ -371,7 +371,7 @@ in Nur zur internen Verwendung. Verwenden Sie immer den Standardwert false.
 
 TRUE, wenn der Bereich erfolgreich beim Docking-Manager registriert wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie nicht unverankerte Bereiche, die nicht in der Größe geändert werden können, mit dem Docking-Manager registrieren. Wenn Sie die Bereiche nicht registrieren, werden Sie beim Layout des Docking-Managers nicht ordnungsgemäß angezeigt.
 
@@ -388,7 +388,7 @@ virtual void AdjustDockingLayout(HDWP hdwp = NULL);
 *hdwp*<br/>
 in Gibt die verzögerte Fenster Positions Struktur an. Weitere Informationen finden Sie unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="addminiframe"></a>Cdockingmanager:: addminiframe
 
@@ -415,7 +415,7 @@ Bewirkt, dass die WM_NCCALCSIZE Nachricht an alle Bereiche und `CPaneFrameWnd` F
 virtual void AdjustPaneFrames();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="adjustrecttoclientarea"></a>Cdockingmanager:: Anpassung rectto ClientArea
 
@@ -439,7 +439,7 @@ in Die Ausrichtung des `CRect` Objekts.
 
 TRUE, wenn die Ausrichtung des `CRect` Objekts angepasst wurde. Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *dwalignment* -Parameter kann einen der folgenden Werte aufweisen:
 
@@ -557,7 +557,7 @@ in TRUE, wenn eine Registerkarte gezeichnet werden soll. andernfalls false.
 *pptargetbar*<br/>
 vorgenommen Ein Zeiger auf einen Zeiger auf den Zielbereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode berechnet das Rechteck, das ein Fenster einnimmt, wenn ein Benutzer das Fenster an den von *ptmouse* angegebenen Punkt gezogen und dort angedockt hat.
 
@@ -616,7 +616,7 @@ in Der Bereich, der angedockt ist.
 
 Der Andock Status.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Andock Status kann einer der folgenden Werte sein:
 
@@ -640,7 +640,7 @@ void DisableRestoreDockState(BOOL bDisable = TRUE);
 *bDeaktivieren*<br/>
 in "True", um das Laden des Docking Layouts aus der Registrierung zu deaktivieren. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft diese Methode auf, wenn Sie das aktuelle Layout der Andock Bereiche und Symbolleisten beibehalten müssen, wenn der Anwendungs Zustand geladen wird.
 
@@ -735,7 +735,7 @@ static void EnableDockSiteMenu(BOOL bEnable = TRUE);
 *benabel*<br/>
 in TRUE, um das Menü Dock Site zu aktivieren. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im Menü Dock Site werden die folgenden Optionen zum Ändern des Andock Status des Bereichs angezeigt:
 
@@ -819,7 +819,7 @@ in TRUE, wenn alle Gleit Komma Bereiche in die Suche eingeschlossen werden solle
 
 Das [cbasepane](../../mfc/reference/cbasepane-class.md) -Objekt, das über die angegebene Steuerelement-ID verfügt, oder NULL, wenn der angegebene Bereich nicht gefunden werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="finddocksitebypane"></a>Cdockingmanager:: finddocksitebypane
 
@@ -846,7 +846,7 @@ Der Balken Bereich mit der ID des Ziel leisten Bereichs. NULL, wenn kein solcher
 virtual void FixupVirtualRects();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Benutzer mit dem Ziehen einer Symbolleiste beginnt, speichert die Anwendung seine ursprüngliche Position im *virtuellen Rechteck*. Wenn der Benutzer eine Symbolleiste über seine Dock Site verschiebt, verschiebt die Symbolleiste möglicherweise andere Symbolleisten. Die ursprünglichen Positionen der anderen Symbolleisten werden in den entsprechenden virtuellen Rechtecke gespeichert.
 
@@ -913,7 +913,7 @@ Ein Enumeratorwert, der den aktuellen Andock Modus darstellt. Es kann sich um ei
 
 - DT_SMART
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um den Andock Modus festzulegen, nennen Sie [cdockingmanager:: setdockingmode](#setdockingmode).
 
@@ -941,7 +941,7 @@ DWORD GetEnabledAutoHideAlignment() const;
 
 Eine bitweise Kombination von CBRS_ALIGN_-Flags oder 0, wenn Bereiche zum automatischen Ausblenden nicht aktiviert sind. Weitere Informationen finden Sie unter [CFrameWnd:: EnableDocking](../../mfc/reference/cframewnd-class.md#enabledocking).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode gibt die aktivierte Ausrichtung für automatische Ausblenden von Steuer leisten zurück. Um die Automatisches Ausblenden-leisten zu aktivieren, müssen Sie [CFrameWndEx:: enableautohidebereiche](../../mfc/reference/cframewndex-class.md#enableautohidepanes)abrufen.
 
@@ -995,7 +995,7 @@ in Wenn der Wert nicht NULL ist, enthält die zurückgegebene Liste nur Bereiche
 *bincludetabs*<br/>
 in TRUE zum Einschließen von Registerkarten. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn im Docking-Manager Bereiche im Registerkarten Format vorhanden sind, gibt die Methode Zeiger auf [cbasetabbedpane-Klassen](../../mfc/reference/cbasetabbedpane-class.md) Objekte zurück, und Sie müssen die Registerkarten explizit auflisten.
 
@@ -1037,7 +1037,7 @@ static CSmartDockingInfo& GetSmartDockingParams();
 
 Die Klasse, die die intelligenten Andock Parameter für den aktuellen Docking-Manager enthält. Weitere Informationen finden Sie unter [csmartdockinginfo-Klasse](../../mfc/reference/csmartdockinginfo-class.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hideautohidepanes"></a>Cdockingmanager:: hideautohidebereiche
 
@@ -1109,7 +1109,7 @@ in TRUE, wenn der Bereich nach der Position des Zielbereichs eingefügt werden s
 
 TRUE, wenn der Steuerelement Bereich der Liste der Steuer leisten erfolgreich hinzugefügt wurde. Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode gibt false zurück, wenn der Steuerelement Bereich bereits in der Liste der Steuer leisten vorhanden ist, oder wenn der Zielbereich nicht in der Liste der Steuer leisten vorhanden ist.
 
@@ -1125,7 +1125,7 @@ static BOOL IsDockSiteMenu();
 
 TRUE, wenn das Menü Dock Site bei den Beschriftungen aller andockbaren Bereiche angezeigt wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können das Menü Dock Site aktivieren, indem Sie [cdockingmanager:: enabledocksitemenu](#enabledocksitemenu)aufrufen.
 
@@ -1153,7 +1153,7 @@ BOOL IsOLEContainerMode() const;
 
 TRUE, wenn sich der Andock-Manager im OLE-Container Modus befindet. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im OLE-Container Modus werden alle andockbaren Bereiche und Anwendungssymbol leisten ausgeblendet. Die Bereiche werden auch in diesem Modus ausgeblendet, wenn Sie [cdockingmanager:: m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode) auf true festgelegt haben.
 
@@ -1230,7 +1230,7 @@ void LockUpdate(BOOL bLock);
 *Baustein*<br/>
 in TRUE, wenn das Fenster gesperrt ist. Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Fenster gesperrt ist, kann es nicht verschoben werden und kann nicht neu gezeichnet werden.
 
@@ -1242,7 +1242,7 @@ Gibt an, ob der Docking-Manager Bereiche im OLE-Container Modus ausblendet.
 AFX_IMPORT_DATA static BOOL m_bHideDockingBarsInContainerMode;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Legen Sie diesen Wert auf false fest, wenn alle Bereiche, die an den Hauptrahmen angedockt sind, sichtbar bleiben sollen, wenn sich die Anwendung im OLE-Container Modus befindet. Standardmäßig ist dieser Wert "true".
 
@@ -1254,7 +1254,7 @@ Gibt den globalen Andock Modus an.
 AFX_IMPORT_DATA static AFX_DOCK_TYPE m_dockModeGlobal;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig wird in jedem Docking Bereich dieser Andock Modus verwendet. Weitere Informationen zu den Werten, auf die dieses Feld festgelegt werden kann, finden Sie unter [cbasepane:: getdockingmode](../../mfc/reference/cbasepane-class.md#getdockingmode).
 
@@ -1266,7 +1266,7 @@ Gibt die Andock Empfindlichkeit an.
 AFX_IMPORT_DATA static int m_nDockSensitivity;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Andock Sensitivität definiert, wie geschlossen ein unverankerter Bereich einem andockbaren Bereich, einer Docking Site oder einem anderen Bereich entspricht, bevor das Framework seinen Zustand in angedockt wechselt.
 
@@ -1278,7 +1278,7 @@ Gibt die Zeit in Millisekunden an, bevor ein andockbarer Bereich im unmittelbare
 static UINT m_nTimeOutBeforeDockingBarDock;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bevor ein Bereich angedockt wird, wartet das Framework die angegebene Zeitspanne. Dadurch wird verhindert, dass der Bereich versehentlich an eine Position angedockt wird, während der Benutzer Sie immer noch zieht.
 
@@ -1290,7 +1290,7 @@ Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmen Fe
 static UINT m_nTimeOutBeforeToolBarDock;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bevor eine Symbolleiste angedockt wird, wartet das Framework die angegebene Zeitspanne. Dadurch wird verhindert, dass die Symbolleiste versehentlich an eine Position angedockt wird, während der Benutzer Sie immer noch zieht.
 
@@ -1315,7 +1315,7 @@ Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldu
 void OnClosePopupMenu();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework sendet eine WM_DESTROY Nachricht, wenn es im Begriff ist, das aktuelle Hauptfenster zu schließen. Überschreiben Sie diese Methode, um Benachrichtigungen von `CMFCPopupMenu`-Objekten zu verarbeiten, die zum Rahmen Fenster gehören, wenn ein `CMFCPopupMenu`-Objekt eine WM_DESTROY Nachricht verarbeitet.
 
@@ -1388,7 +1388,7 @@ in Wenn nicht NULL, durchsucht die Methode nur die Bereiche des angegebenen Typs
 in TRUE, um nur sichtbare Bereiche zu überprüfen. andernfalls false.
 
 *dwalignment*<br/>
-vorgenommen Wenn ein Bereich am angegebenen Punkt gefunden wird, enthält dieser Parameter die Seite des Bereichs, die dem angegebenen Punkt am nächsten liegt. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+vorgenommen Wenn ein Bereich am angegebenen Punkt gefunden wird, enthält dieser Parameter die Seite des Bereichs, die dem angegebenen Punkt am nächsten liegt. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
 *pbartoignore*<br/>
 in Wenn der Wert nicht NULL ist, ignoriert die Methode die von diesem Parameter angegebenen Bereiche.
@@ -1397,7 +1397,7 @@ in Wenn der Wert nicht NULL ist, ignoriert die Methode die von diesem Parameter 
 
 Das von [cbasepane](../../mfc/reference/cbasepane-class.md)abgeleitete Objekt, das den angegebenen Punkt enthält, oder NULL, wenn kein Bereich gefunden wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Funktion zurückgibt und ein Bereich gefunden wurde, enthält *dwalignment* die Ausrichtung des angegebenen Punkts. Wenn der Punkt z. b. am oberen Rand des Bereichs liegt, wird *dwalignment* auf CBRS_ALIGN_TOP festgelegt.
 
@@ -1564,7 +1564,7 @@ in Die ID des Docking-Managers.
 
 TRUE, wenn der Zustand erfolgreich gespeichert wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Speichern des Zustands des Docking-Managers in der Registrierung umfasst das Speichern der Zustände der Steuer leisten, die Zustände der automatisch Ausblend baren Balken und die Zustände der Mini Frames, die im Docking-Manager vorhanden sind.
 
@@ -1607,7 +1607,7 @@ void Serialize(CArchive& ar);
 *Tempel*<br/>
 in Ein Verweis auf ein Archiv Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Schreiben des Docking-Managers in ein Archiv umfasst das Bestimmen der Anzahl der andockbaren Steuer leisten und Schieberegler sowie das Schreiben der Steuer leisten, der Mini Frames, der Auto ausblenden-Balken und der MDI-Balken im Registerkarten Format in das Archiv.
 
@@ -1637,12 +1637,12 @@ static void SetDockingMode(
 ### <a name="parameters"></a>Parameter
 
 *dockmode*<br/>
-Gibt den neuen Andock Modus an. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+Gibt den neuen Andock Modus an. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
 *Titel*<br/>
 Gibt das Design an, das für smardockmarker verwendet werden soll. Dabei kann es sich um einen der folgenden Enumerationswerte handeln: AFX_SDT_DEFAULT, AFX_SDT_VS2005 AFX_SDT_VS2008.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft diese statische Methode auf, um den Andock Modus festzulegen.
 
@@ -1693,7 +1693,7 @@ static void SetSmartDockingParams(CSmartDockingInfo& params);
 *params*<br/>
 [in, out] Definiert die Parameter für das intelligente andocken.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die Darstellung, die Farbe oder die Form der intelligenten Docking Marker anpassen möchten, wird diese Methode aufgerufen.
 
@@ -1762,9 +1762,9 @@ static AFX_SMARTDOCK_THEME __stdcall GetSmartDockingTheme();
 
 Gibt einen der folgenden Enumerationswerte zurück: AFX_SDT_DEFAULT, AFX_SDT_VS2005 AFX_SDT_VS2008.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

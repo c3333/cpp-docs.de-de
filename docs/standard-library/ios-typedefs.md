@@ -10,11 +10,11 @@ f1_keywords:
 - iosfwd/std::wstreampos
 ms.assetid: 0b962632-3439-44de-bf26-20c67a7f0ff3
 ms.openlocfilehash: 20bffbeb7720274302633c5dda9e6364c06d5b54
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856395"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424686"
 ---
 # <a name="ltiosgt-typedefs"></a>&lt;ios&gt;-Typedefs
 
@@ -26,7 +26,7 @@ Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.
 typedef basic_ios<char, char_traits<char>> ios;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -42,7 +42,7 @@ Unterstützt interne Vorgänge.
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist eine ganze Zahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. Seine Repräsentation hat mindestens 32 Wertbits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können. Der Wert `streamoff(-1)` der in der Regel einen fehlerhaften Offset angibt.
 
@@ -54,7 +54,7 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> streampos;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für [fpo](../standard-library/fpos-class.md)< `mbstate_t`s>.
 
@@ -93,7 +93,7 @@ Bezeichnet die Größe des Streams.
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das die Anzahl von Objekten speichern kann, die an verschiedenen Streamvorgängen beteiligt sind. Seine Repräsentation verfügt über mindestens 16 Bits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können.
 
@@ -125,7 +125,7 @@ Unterstützt die wios-Klasse aus der alten iostream-Bibliothek.
 typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -137,7 +137,7 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> wstreampos;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für [fpo](../standard-library/fpos-class.md)< `mbstate_t`s>.
 

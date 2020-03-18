@@ -1,43 +1,41 @@
 ---
 title: CL-Befehlsdateien
 ms.date: 11/04/2016
-f1_keywords:
-- cl
 helpviewer_keywords:
 - cl.exe compiler, command files
 - command files
 - command files, CL compiler
 ms.assetid: ec3cea06-2af0-4fe9-a94c-119c9d31b3a9
-ms.openlocfilehash: 9810f7b4308eab2b47a068072039335e59e19f5f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1dc2d6bffe4d0681a04b875383215a0bbfc1a720
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62272584"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79440265"
 ---
 # <a name="cl-command-files"></a>CL-Befehlsdateien
 
-Eine Befehlsdatei ist eine Textdatei, die Optionen und Dateinamen, geben Sie andernfalls auf, enthält die [Befehlszeile](compiler-command-line-syntax.md) oder mithilfe der [CL-Umgebungsvariablen](cl-environment-variables.md). CL akzeptiert eine Compiler-Befehlsdatei als Argument in der CL-Umgebungsvariablen oder in der Befehlszeile an. Anders als in der Befehlszeile oder in der CL-Umgebungsvariablen können Sie in einer Befehlsdatei mehrzeilige Optionen und Dateinamen verwenden.
+Eine Befehlsdatei ist eine Textdatei, die Optionen und Dateinamen enthält, die Sie andernfalls in der [Befehlszeile](compiler-command-line-syntax.md) eingeben oder mithilfe der [CL-Umgebungsvariablen](cl-environment-variables.md)angeben. Cl akzeptiert eine Compilerbefehlsdatei als Argument in der CL-Umgebungsvariablen oder in der Befehlszeile. Anders als in der Befehlszeile oder in der CL-Umgebungsvariablen können Sie in einer Befehlsdatei mehrzeilige Optionen und Dateinamen verwenden.
 
-Optionen und Dateinamen in einer Befehlsdatei werden entsprechend der Position eines Befehls Dateinamens in der CL-Umgebungsvariablen oder in der Befehlszeile verarbeitet. Wenn die Option/Link in der Befehlsdatei angezeigt wird, werden jedoch alle Optionen auf der Rest der Zeile an den Linker übergeben. Optionen in den nachfolgenden Zeilen in der Befehlsdatei und Optionen in der Befehlszeile nach dem Aufruf der Befehlsdatei werden weiterhin wie Compileroptionen akzeptiert. Weitere Informationen zu den Auswirkungen von deren Interpretation aufgelistet in der Reihenfolge der Optionen, finden Sie unter [Reihenfolge von CL-Optionen](order-of-cl-options.md).
+Optionen und Dateinamen in einer Befehlsdatei werden entsprechend dem Speicherort eines Befehls Dateinamen innerhalb der CL-Umgebungsvariablen oder in der Befehlszeile verarbeitet. Wenn jedoch die/Link-Option in der Befehlsdatei angezeigt wird, werden alle Optionen im Rest der Zeile an den Linker weitergeleitet. Optionen in nachfolgenden Zeilen in der Befehlsdatei und Optionen in der Befehlszeile nach dem Aufruf der Befehlsdatei werden weiterhin als Compileroptionen akzeptiert. Weitere Informationen zur Auswirkung der Reihenfolge der Optionen auf die Interpretation finden Sie unter [Reihenfolge der CL-Optionen](order-of-cl-options.md).
 
-Eine Befehlsdatei darf nicht den CL-Befehl. Jede Option muss beginnen und enden, die in der gleichen Zeile; Sie können den umgekehrten Schrägstrich nicht verwenden (**\\**) eine Option auf zwei Zeilen zu kombinieren.
+Eine Befehlsdatei darf keinen CL-Befehl enthalten. Jede Option muss in derselben Zeile beginnen und enden. Sie können den umgekehrten Schrägstrich ( **\\** ) nicht verwenden, um eine Option über zwei Zeilen hinweg zu kombinieren.
 
-Eine Befehlsdatei wird angegeben, indem ein at-Zeichen (**\@**) gefolgt von einem Filename; der Dateiname kann einen absoluten oder relativen Pfad angeben.
+Eine Befehlsdatei wird durch ein @-Zeichen ( **\@** ) gefolgt von einem Dateinamen angegeben. der Dateiname kann einen absoluten oder relativen Pfad angeben.
 
-Beispielsweise in einer Datei mit dem Namen RESP ist der folgende Befehl aus:
+Wenn sich beispielsweise der folgende Befehl in einer Datei namens "\" befindet:
 
 ```
 /Og /link LIBC.LIB
 ```
 
-und geben Sie den folgenden CL-Befehl:
+und geben Sie den folgenden CL-Befehl an:
 
 ```
 CL /Ob2 @RESP MYAPP.C
 ```
 
-der Befehl für CL lautet wie folgt aus:
+der Befehl für cl lautet wie folgt:
 
 ```
 CL /Ob2 /Og MYAPP.C /link LIBC.LIB
@@ -45,7 +43,7 @@ CL /Ob2 /Og MYAPP.C /link LIBC.LIB
 
 Beachten Sie, dass die Befehlszeile und die Befehlsdatei Befehle effektiv kombiniert werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)

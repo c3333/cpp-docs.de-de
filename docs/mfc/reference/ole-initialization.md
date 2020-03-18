@@ -8,11 +8,11 @@ helpviewer_keywords:
 - OLE initialization
 ms.assetid: aa8a54a7-24c3-4344-b2c6-dbcf6084fa31
 ms.openlocfilehash: 6860697dd3adbe26197dd9075e84f402029e00a5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855688"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426216"
 ---
 # <a name="ole-initialization"></a>OLE-Initialisierung
 
@@ -35,11 +35,11 @@ Diese Funktion wird in der `InitInstance`-Funktion des Anwendungs Objekts aufger
 void AfxEnableControlContainer( );
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu OLE-Steuerelementen (jetzt als ActiveX-Steuerelemente bezeichnet) finden Sie unter [ActiveX-Steuerelement Themen](../mfc-activex-controls.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -55,7 +55,7 @@ BOOL AFXAPI AfxOleInit();
 
 Ist nicht 0 (Null), wenn erfolgreich, und 0, wenn die Initialisierung fehlschlägt, weil möglicherweise falsche Versionen der OLE-Systeme-DLLs installiert sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion auf, um die OLE-Unterstützung für eine MFC-Anwendung zu initialisieren. Wenn diese Funktion aufgerufen wird, werden folgende Aktionen ausgeführt:
 
@@ -69,10 +69,10 @@ Rufen Sie diese Funktion auf, um die OLE-Unterstützung für eine MFC-Anwendung 
 > [!NOTE]
 >  MFC-Anwendungen müssen als Singlethread-Apartment (STA) initialisiert werden. Wenn Sie [CoInitializeEx](/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex) in der `InitInstance` Außerkraftsetzung aufrufen, geben Sie COINIT_APARTMENTTHREADED (anstelle von COINIT_MULTITHREADED) an.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

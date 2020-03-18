@@ -6,11 +6,11 @@ helpviewer_keywords:
 - URLs, parsing
 ms.assetid: 46c6384f-e4a6-4dbd-9196-219c19040ec5
 ms.openlocfilehash: 310e4ffb3fc207d874e97ba1fac65f6f8cb41a31
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865807"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426666"
 ---
 # <a name="internet-url-parsing-globals-and-helpers"></a>Internet-URL-paramenungen und Hilfsprogramme
 
@@ -94,7 +94,7 @@ Wird entweder durch den Server oder die Objektteile der URL bestimmt, sofern vor
 
 Ungleich 0 (null), wenn die URL erfolgreich analysiert wurde. Andernfalls ist der Wert 0, wenn er leer ist oder keinen bekannten Internet Diensttyp enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es analysiert eine URL-Zeichenfolge und gibt den Diensttyp und seine Komponenten zurück.
 
@@ -111,7 +111,7 @@ Es analysiert eine URL-Zeichenfolge und gibt den Diensttyp und seine Komponenten
 > [!NOTE]
 >  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXINET. h
 
@@ -187,7 +187,7 @@ Ein Verweis auf ein `CString` Objekt, das das Kennwort des Benutzers enthält.
 *dwFlags*<br/>
 Die Flags, die Steuern, wie die URL analysiert werden soll. Kann eine Kombination der folgenden Werte sein:
 
-|value|Bedeutung|
+|Wert|Bedeutung|
 |-----------|-------------|
 |ICU_DECODE|Konvertieren von% XX-Escapesequenzen in Zeichen.|
 |ICU_NO_ENCODE|Nicht unsichere Zeichen in Escapesequenz konvertieren.|
@@ -201,14 +201,14 @@ Wenn Sie die MFC-Standardeinstellung verwenden, bei der es sich nicht um Flags h
 
 Ungleich 0 (null), wenn die URL erfolgreich analysiert wurde. Andernfalls ist der Wert 0, wenn er leer ist oder keinen bekannten Internet Diensttyp enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es analysiert eine URL-Zeichenfolge und gibt den Diensttyp und seine Komponenten sowie den Namen und das Kennwort des Benutzers zurück. Die Flags geben an, wie unsichere Zeichen behandelt werden.
 
 > [!NOTE]
 >  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXINET. h
 
@@ -231,7 +231,7 @@ Ein Handle für eine Internet Abfrage.
 
 Alle durch Wininet definierten Internet Dienst Typen. Micha. Eine Liste dieser Internet Dienste finden Sie im Abschnitt "Hinweise". Wenn das Handle NULL ist oder nicht erkannt wird, gibt die Funktion AFX_INET_SERVICE_UNK zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die folgende Liste enthält mögliche Internet Typen, die von `AfxGetInternetHandleType`zurückgegeben werden.
 
@@ -264,7 +264,7 @@ Die folgende Liste enthält mögliche Internet Typen, die von `AfxGetInternetHan
 > [!NOTE]
 >  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -286,18 +286,18 @@ Der Kontext Bezeichner für den Vorgang, der den Fehler verursacht hat. Der Stan
 *dwError*<br/>
 Der Fehler, der die Ausnahme verursacht hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie sind dafür verantwortlich, die Ursache basierend auf dem Fehlercode des Betriebssystems zu ermitteln.
 
 > [!NOTE]
 >  Um diese Funktion aufzurufen, muss das Projekt AFXINET enthalten. Micha.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](mfc-macros-and-globals.md)<br/>
 [CInternetException-Klasse](cinternetexception-class.md)<br/>

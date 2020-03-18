@@ -7,11 +7,11 @@ f1_keywords:
 - atlwin/ATL::DECLARE_WND_CLASS_EX
 ms.assetid: ce18681a-2bab-4453-9895-0f3ea47c2b24
 ms.openlocfilehash: c4617a04c199741b97316122456e417a94275e89
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78862965"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422937"
 ---
 # <a name="window-class-macros"></a>Fenster Klassen Makros
 
@@ -24,7 +24,7 @@ Diese Makros definieren Fenster Klassen Hilfsprogramme.
 |[DECLARE_WND_SUPERCLASS](#declare_wnd_superclass)|Ermöglicht das Angeben des Namens einer vorhandenen Fenster Klasse, auf der eine neue Fenster Klasse basiert.|
 |[DECLARE_WND_CLASS_EX](#declare_wnd_class_ex)|Ermöglicht es Ihnen, die Parameter einer Klasse anzugeben.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -41,7 +41,7 @@ DECLARE_WND_CLASS( WndClassName )
 *Wndclassname*<br/>
 in Der Name der neuen Fenster Klasse. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die/permissive--Compileroption verwenden, verursacht DECLARE_WND_CLASS einen Compilerfehler. Verwenden Sie stattdessen DECLARE_WND_CLASS2.
 
@@ -77,9 +77,9 @@ DECLARE_WND_CLASS2( WndClassName, EnclosingClass )
 in Der Name der neuen Fenster Klasse. Wenn der Wert NULL ist, generiert ATL einen Fenster Klassennamen.
 
 *EnclosingClass*<br/>
-in Der Name der Fenster Klasse, die die neue Fenster Klasse einschließt. Lässt keine NULL-Werte zu.
+in Der Name der Fenster Klasse, die die neue Fenster Klasse einschließt. Darf nicht NULL sein.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die/permissive--Option verwenden, wird DECLARE_WND_CLASS einen Kompilierungsfehler verursachen, da er einen abhängigen Namen enthält. DECLARE_WND_CLASS2 erfordert, dass Sie die Klasse explizit benennen, in der dieses Makro verwendet wird, und den Fehler unter dem/permissive--Flag nicht verursacht.
 Andernfalls ist dieses Makro mit [DECLARE_WND_CLASS](#declare_wnd_class)identisch.
@@ -100,7 +100,7 @@ in Der Name der Fenster Klasse, die *origwndclassname*der übergeordneten Klasse
 *Origwndclassname*<br/>
 in Der Name einer vorhandenen Fenster Klasse.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit diesem Makro können Sie den Namen einer Fenster Klasse angeben, die eine vorhandene Fenster Klasse als übergeordnete Klasse verwendet. [CWndClassInfo](cwndclassinfo-class.md) verwaltet die Informationen der übergeordneten Klasse.
 
@@ -133,7 +133,7 @@ in Der Stil des Fensters.
 *Hintergrund*<br/>
 in Die Hintergrundfarbe des Fensters.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit diesem Makro können Sie die Klassen Parameter einer neuen Fenster Klasse angeben, deren Informationen von [CWndClassInfo](cwndclassinfo-class.md)verwaltet werden. DECLARE_WND_CLASS_EX die neue Fenster Klasse definiert, indem die folgende statische Funktion implementiert wird:
 
@@ -141,6 +141,6 @@ Mit diesem Makro können Sie die Klassen Parameter einer neuen Fenster Klasse an
 
 Wenn Sie die Standard Stile und die Hintergrundfarbe verwenden möchten, verwenden Sie das [DECLARE_WND_CLASS](#declare_wnd_class) -Makro. Weitere Informationen zur Verwendung von Windows in ATL finden Sie im Artikel [ATL-Fenster Klassen](../../atl/atl-window-classes.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](atl-macros.md)

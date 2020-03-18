@@ -45,11 +45,11 @@ helpviewer_keywords:
 - CToolBar [MFC], SetSizes
 ms.assetid: e868da26-5e07-4607-9651-e2f863ad9059
 ms.openlocfilehash: 4977cbe0b749724f999d6d7089d46f12d1e2963e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866433"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426822"
 ---
 # <a name="ctoolbar-class"></a>CToolBar-Klasse
 
@@ -61,17 +61,17 @@ Steuerleisten, die eine Zeile mit Bitmapschaltflächen und optionalen Trennzeich
 class CToolBar : public CControlBar
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CToolBar:: CToolBar](#ctoolbar)|Erstellt ein `CToolBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CToolBar:: commanddeindex](#commandtoindex)|Gibt den Index einer Schaltfläche mit der angegebenen Befehls-ID zurück.|
 |[CToolBar:: Create](#create)|Erstellt die Windows-Symbolleiste und fügt Sie an das `CToolBar`-Objekt an.|
@@ -92,7 +92,7 @@ class CToolBar : public CControlBar
 |[CToolBar:: Ort](#setheight)|Legt die Höhe der Symbolleiste fest.|
 |[CToolBar:: setSizes](#setsizes)|Legt die Größe von Schaltflächen und deren Bitmaps fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Schaltflächen können wie Pushbuttons, Kontrollkästchen oder Options Felder fungieren. `CToolBar` Objekte sind in der Regel eingebettete Member von Frame-Window-Objekten, die von der Klasse [CFrameWnd](../../mfc/reference/cframewnd-class.md) oder [CMDIFrameWnd](../../mfc/reference/cmdiframewnd-class.md)abgeleitet werden.
 
@@ -155,7 +155,7 @@ Weitere Informationen zur Verwendung von `CToolBar`finden Sie im Artikel [MFC-Sy
 
 `CToolBar`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxext. h
 
@@ -220,7 +220,7 @@ Die ID des untergeordneten Fensters der Symbolleiste.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Außerdem wird die Höhe der Symbolleiste auf einen Standardwert festgelegt.
 
@@ -266,7 +266,7 @@ Die ID des untergeordneten Fensters der Symbolleiste.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Außerdem wird die Höhe der Symbolleiste auf einen Standardwert festgelegt.
 
@@ -284,7 +284,7 @@ Diese Member-Funktion erstellt ein `CToolBar` Objekt und legt die Standardgröß
 CToolBar();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie die Funktion [Create](#create) Member auf, um das Symbolleisten Fenster zu erstellen.
 
@@ -314,7 +314,7 @@ Verweis auf einen uint-Wert, der auf den Stil der Schaltfläche festgelegt ist.
 *iImage*<br/>
 Verweis auf eine Ganzzahl, die auf den Index des Bilds der Schaltfläche innerhalb der Bitmap festgelegt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Werte werden den Variablen zugewiesen, auf die von *NID*, *nstyle*und *iImage*verwiesen wird. Der Bildindex ist die Position des Bilds innerhalb der Bitmap, das Bilder für alle Symbolleisten Schaltflächen enthält. Das erste Bild befindet sich an Position 0.
 
@@ -337,7 +337,7 @@ Der Index der Symbolleisten Schaltfläche oder des Trenn Zeichens, das abgerufen
 
 Der Stil der Schaltfläche oder des Trenn Zeichens, das von *nIndex*angegeben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Stil einer Schaltfläche bestimmt, wie die Schaltfläche angezeigt wird und wie Sie auf Benutzereingaben reagiert. Beispiele für Schaltflächen Stile finden Sie unter [setbuttonstyle](#setbuttonstyle) .
 
@@ -365,7 +365,7 @@ Ein Verweis auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) 
 
 Ein `CString`-Objekt, das den Schaltflächen Text enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zweite Form dieser Member-Funktion füllt ein `CString`-Objekt mit dem Zeichen folgen Text.
 
@@ -386,7 +386,7 @@ Index des Elements, dessen ID abgerufen werden soll.
 
 Die Befehls-ID der durch *nIndex*angegebenen Schaltfläche oder des Trenn Zeichens.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Trennzeichen geben ID_SEPARATOR zurück.
 
@@ -408,7 +408,7 @@ Index des Elements (Schaltfläche oder Trennzeichen), dessen Rechteck Koordinate
 *lprect*<br/>
 Adresse der [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Koordinaten des Elements enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Koordinaten befinden sich in Pixel relativ zur linken oberen Ecke der Symbolleiste.
 
@@ -430,7 +430,7 @@ CToolBarCtrl& GetToolBarCtrl() const;
 
 Ein Verweis auf ein `CToolBarCtrl`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `GetToolBarCtrl`, um die Funktionalität des allgemeinen Windows-Symbolleisten-Steuer Elements zu nutzen und die von der Unterstützung von [CToolBarCtrl](../../mfc/reference/ctoolbarctrl-class.md) bereitgestellte Symbolleisten Anpassung zu nutzen.
 
@@ -461,7 +461,7 @@ Die Ressourcen-ID der Bitmap, die geladen werden soll.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Bitmap sollte für jede Symbolleisten Schaltfläche ein Bild enthalten. Wenn die Bilder nicht die Standardgröße haben (16 Pixel breit und 15 Pixel hoch), können Sie [setSizes](#setsizes) aufrufen, um die Schaltflächen Größen und Ihre Bilder festzulegen.
 
@@ -489,7 +489,7 @@ Die Ressourcen-ID der zu ladenden Symbolleiste.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Erstellen einer Symbolleisten Ressource finden Sie unter Symbolleisten- [Editor](../../windows/toolbar-editor.md) in.
 
@@ -514,7 +514,7 @@ Handle eines Bitmap-Bilds, das einer Symbolleiste zugeordnet ist.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beispielsweise wird `SetBitmap` aufgerufen, um das Bitmap-Bild zu ändern, nachdem der Benutzer eine Aktion für ein Dokument durchführt, das die Aktion einer Schaltfläche ändert.
 
@@ -560,7 +560,7 @@ Der neue Schaltflächen Stil. Die folgenden Schaltflächen Stile werden unterst�
 *iImage*<br/>
 Neuer Index für das Bild der Schaltfläche innerhalb der Bitmap.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für Trennzeichen, die den Stil TBBS_SEPARATOR haben, legt diese Funktion die Breite des Trenn Zeichens in Pixel auf den in *iImage*gespeicherten Wert fest.
 
@@ -591,7 +591,7 @@ Anzahl der Elemente im Array, auf die von *lpidarray*verwiesen wird.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Element des Arrays den Wert ID_SEPARATOR aufweist, wird ein Trennzeichen an der entsprechenden Position der Symbolleiste erstellt. Mit dieser Funktion wird auch der Stil der einzelnen Schaltflächen auf TBBS_BUTTON und der Stil jedes Trenn Zeichens auf TBBS_SEPARATOR festgelegt, und jeder Schaltfläche wird ein Bild Index zugewiesen. Der Bildindex gibt die Position des Bild der Schaltfläche innerhalb der Bitmap an.
 
@@ -633,7 +633,7 @@ Der Stil der Schaltfläche. Die folgenden Schaltflächen Stile werden unterstüt
 
 - TBBS_NOPREFIX dem Schaltflächen Text kein Zugriffstasten Präfix zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Stil einer Schaltfläche bestimmt, wie die Schaltfläche angezeigt wird und wie Sie auf Benutzereingaben reagiert.
 
@@ -681,7 +681,7 @@ void SetHeight(int cyHeight);
 *cyheight*<br/>
 Die Höhe der Symbolleiste in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie nach dem Aufrufen von [setSizes](#setsizes)diese Member-Funktion, um die Standard Symbolleisten Höhe zu überschreiben. Wenn die Höhe zu klein ist, werden die Schaltflächen unten abgeschnitten.
 
@@ -705,7 +705,7 @@ Die Größe der einzelnen Schaltflächen in Pixel.
 *sizeimage*<br/>
 Die Größe jedes Bilds in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *sizeimage* -Parameter muss die Größe der Bilder in der Bitmap der Symbolleiste in Pixel enthalten. Die Dimensionen in *sizeButton* müssen ausreichend sein, um das Bild plus 7 Pixel zusätzlich in der Breite und 6 Pixel zusätzliche Höhe zu halten. Diese Funktion legt auch die Höhe der Symbolleiste auf die Schaltflächen fest.
 
@@ -715,7 +715,7 @@ Diese Member-Funktion wird nur für Symbolleisten aufgerufen, die nicht den *Ric
 
 [!code-cpp[NVC_MFCListView#8](../../atl/reference/codesnippet/cpp/ctoolbar-class_4.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-CTRLBARS](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DLGCBR32](../../overview/visual-cpp-samples.md)<br/>

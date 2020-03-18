@@ -1,8 +1,6 @@
 ---
 title: Verwenden von VERIFY anstelle ASSERT
 ms.date: 05/06/2019
-f1_keywords:
-- assert
 helpviewer_keywords:
 - ASSERT statements
 - debugging [MFC], ASSERT statements
@@ -11,24 +9,24 @@ helpviewer_keywords:
 - debugging assertions
 - assertions, debugging
 ms.assetid: 4c46397b-3fb1-49c1-a09b-41a72fae3797
-ms.openlocfilehash: 83ea24904c75d41f7c9c9b383f8b7cf8c39e328f
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: bfc0847677ae232fef67ab6200c626472f042bdb
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65217673"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438609"
 ---
 # <a name="using-verify-instead-of-assert"></a>Verwenden von VERIFY anstelle ASSERT
 
-Nehmen wir an, wenn Sie die Debugversion der MFC-Anwendung ausführen, gibt es keine Probleme vorliegen. Die Releaseversion einer Anwendung allerdings stürzt ab, gibt falsche Ergebnisse zurück und/oder weist einige andere ungewöhnliches Verhalten.
+Angenommen, beim Ausführen der Debugversion Ihrer MFC-Anwendung sind keine Probleme aufgetreten. Die Releaseversion der gleichen Anwendung stürzt jedoch ab, gibt falsche Ergebnisse zurück und/oder weist ein anderes anormales Verhalten auf.
 
-Dieses Problem kann verursacht werden, wenn Sie wichtigsten Code, in einer ASSERT-Anweisung einfügen, um sicherzustellen, dass es ordnungsgemäß funktioniert. Da die ASSERT-Anweisungen in einem Releasebuild von einem MFC-Programm auskommentiert werden, wird der Code nicht in einem Releasebuild ausgeführt.
+Dieses Problem kann verursacht werden, wenn Sie wichtigen Code in einer Assert-Anweisung platzieren, um sicherzustellen, dass er ordnungsgemäß ausgeführt wird. Da Assert-Anweisungen in einem Releasebuild eines MFC-Programms auskommentiert werden, wird der Code nicht in einem Releasebuild ausgeführt.
 
-Wenn Sie ASSERT zu verwenden, um zu bestätigen, dass ein Funktionsaufruf erfolgreich war, sollten Sie verwenden [überprüfen](../mfc/reference/diagnostic-services.md#verify) stattdessen. VERIFY-Makro wertet seine eigenen Argumente in sowohl für Debug- und Releasebuilds der Anwendung.
+Wenn Sie Assert verwenden, um zu bestätigen, dass ein Funktions aufruferfolg erfolgreich war, sollten Sie stattdessen die [Überprüfung](../mfc/reference/diagnostic-services.md#verify) verwenden Das VERIFY-Makro wertet seine eigenen Argumente sowohl in Debug-als auch in Releasebuilds der Anwendung aus.
 
-Eine weitere bevorzugte Methode besteht darin, eine temporäre Variable der Funktion zurückgegebene Wert zuweisen, und klicken Sie dann testen Sie die Variable in einer ASSERT-Anweisung.
+Eine weitere bevorzugte Methode besteht darin, den Rückgabewert der Funktion einer temporären Variablen zuzuweisen und dann die Variable in einer Assert-Anweisung zu testen.
 
-Überprüfen Sie das folgende Codefragment:
+Überprüfen Sie das folgende Code Fragment:
 
 ```
 enum {
@@ -40,15 +38,15 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );
 ```
 
-Dieser Code, die perfekt in einer Debugversion der MFC-Anwendung ausgeführt wird. Wenn der Aufruf von `calloc( )` ein Fehler auftritt, wird angezeigt, eine diagnosemeldung aus, die die Anzahl und die Zeilennummer enthält. Allerdings in einer Verkaufsversion einer MFC-Anwendung:
+Dieser Code wird perfekt in einer Debugversion einer MFC-Anwendung ausgeführt. Wenn der `calloc( )`-Aufrufe fehlschlägt, wird eine Diagnose Meldung angezeigt, die die Datei und die Zeilennummer enthält. Allerdings in einem Einzelhandels Build einer MFC-Anwendung:
 
-- der Aufruf von `calloc( )` nie auftritt, sodass `buf` nicht initialisiert ist, oder
+- der `calloc( )`-Aufrufe findet nie statt, `buf` nicht initialisiert, oder
 
-- `strcpy_s( )` Kopien "`Hello, World`" an eine beliebige Stelle des Arbeitsspeichers, möglicherweise die Anwendung abstürzt, oder dass das System nicht mehr reagiert, oder
+- `strcpy_s( )` kopiert "`Hello, World`" in ein zufälliges Speicher Element, das möglicherweise die Anwendung abstürzt oder bewirkt, dass das System nicht mehr reagiert, oder
 
-- `free()` versucht, Speicherplatz freizugeben, der nie zugeordnet wurde.
+- `free()` versucht, Arbeitsspeicher freizugeben, der nie zugeordnet wurde.
 
-Um ASSERT ordnungsgemäß zu verwenden, sollte das Codebeispiel folgt geändert werden:
+Um Assert ordnungsgemäß zu verwenden, sollte das Codebeispiel wie folgt geändert werden:
 
 ```
 enum {
@@ -61,7 +59,7 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );
 ```
 
-Alternativ können Sie stattdessen stellen Sie sicher verwenden:
+Oder Sie können stattdessen überprüfen verwenden:
 
 ```
 enum {
@@ -73,6 +71,6 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Beheben von Problemen mit dem Releasebuild](fixing-release-build-problems.md)

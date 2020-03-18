@@ -15,11 +15,11 @@ helpviewer_keywords:
 - std::move [C++]
 - std::swap [C++]
 ms.openlocfilehash: 723b077500b9b741445efcd8574fb26cd53e5fc7
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854861"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427680"
 ---
 # <a name="ltutilitygt-functions"></a>&lt;utility&gt;-Funktionen
 
@@ -57,7 +57,7 @@ Das Objekt, das den Wert von „new_val“ erhält.
 *new_val*\
 Das Objekt, dessen Wert nach „val“ kopiert oder verschoben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei komplexen Typen vermeidet `exchange` das Kopieren des alten Werts, wenn ein Bewegungskonstruktor verfügbar ist, vermeidet das Kopieren des neuen Werts, wenn er ein temporäres Objekt ist oder verschoben wird, und nimmt alle Typen als neuen Wert an, wobei beliebige verfügbare konvertierende Zuweisungsoperatoren genutzt werden. Die Exchange-Funktion unterscheidet sich von [Std:: Swap](../standard-library/algorithm-functions.md#swap) darin, dass das linke Argument nicht in das rechte Argument verschoben oder kopiert wird.
 
@@ -119,7 +119,7 @@ Das umzuwandelnde Argument.
 
 Gibt einen rvalue-Verweis auf *arg* zurück, wenn der in *arg* über gegebene Wert ursprünglich ein rvalue-Wert oder ein Verweis auf einen Rvalue war. Andernfalls gibt *arg* zurück, ohne den Typ zu ändern.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen ein explizites Vorlagenargument angeben, um `forward` aufzurufen.
 
@@ -198,7 +198,7 @@ Der Typ des zweiten Paarelements.
 *PR* -\
 Das Paar, für das die Auswahl durchgeführt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktionen geben jeweils einen Verweis auf ein Element des `pair` -Arguments zurück.
 
@@ -293,7 +293,7 @@ Ein Wert, der das zweite Element aus `pair` initialisiert.
 
 Das Pair-Objekt, das erstellt wird: `pair`<`T`,`U`> (`Val1`, `Val2`).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `make_pair` konvertiert ein Objekt vom Typ [reference_wrapper-Klasse](../standard-library/reference-wrapper-class.md) in Verweistypen und verfallende Arrays und Funktionen in Zeiger.
 
@@ -334,7 +334,7 @@ Das umzuwandelnde Argument. Obwohl der Typ von *arg* als ein rvalue-Verweis ange
 
 `Arg` als rvalue-Verweis, unabhängig davon, ob sein Typ ein Verweistyp ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vorlagen *Argumenttyp* sollte nicht explizit angegeben werden, sondern aus dem Typ des Werts abgeleitet werden, der in *arg*angegeben wurde. Der Typ des *Typs* wird entsprechend den verweisreduzierungs Regeln weiter angepasst.
 
@@ -369,7 +369,7 @@ Ein Objekt vom Typ oder vom Typ `pair`.
 *Rechte*\
 Ein Objekt vom Typ oder vom Typ `pair`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Vorteil von `swap` besteht darin, dass die Typen von Objekten, die gespeichert werden, automatisch vom Compiler bestimmt werden und nicht explizit angegeben werden müssen. Verwenden Sie keine expliziten Vorlagen Argumente wie z. b. `swap<int, int>(1, 2)`, wenn Sie `swap` verwenden, da Sie ausführlich ist und komplexe rvalue-Verweis Probleme hinzufügt, die möglicherweise Kompilierungsfehler verursachen.
 
@@ -388,6 +388,6 @@ to_chars_result to_chars(char* first, char* last, double value, chars_format fmt
 to_chars_result to_chars(char* first, char* last, long double value, chars_format fmt, int precision);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Konvertiert den Wert in eine Zeichenfolge, indem er den Bereich `[first, last)`füllt, wobei `[first, last)` ein gültiger Bereich sein muss.

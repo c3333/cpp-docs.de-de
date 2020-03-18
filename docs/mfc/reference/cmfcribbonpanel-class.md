@@ -115,11 +115,11 @@ helpviewer_keywords:
 - CMFCRibbonPanel [MFC], ShowPopup
 ms.assetid: 51d70749-1140-4386-b103-f14082049ba6
 ms.openlocfilehash: 1ba7057405da2ebd7fd1bf699a69f97a650fa47c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883602"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425766"
 ---
 # <a name="cmfcribbonpanel-class"></a>CMF cribbonpanel-Klasse
 
@@ -133,17 +133,17 @@ Ausführlichere Informationen finden Sie im Quellcode, der sich im Ordner **VC\\
 class CMFCRibbonPanel : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMF cribbonpanel:: CMF cribbonpanel](#cmfcribbonpanel)|Erstellt und initialisiert ein `CMFCRibbonPanel`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMF cribbonpanel:: Add](#add)|Fügt dem Panel ein Menü Band Element hinzu.|
 |[CMF cribbonpanel:: addSeparator](#addseparator)|Fügt dem Menü Band Panel ein Trennzeichen hinzu.|
@@ -199,7 +199,7 @@ class CMFCRibbonPanel : public CObject
 |[CMF cribbonpanel:: setkeys](#setkeys)|Legt die Tastenkombination fest, mit der der Menü Band Bereich angezeigt wird.|
 |[CMF cribbonpanel:: ShowPopup](#showpopup)||
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Menü Band Panels sind logische Gruppierungen verwandter Aufgaben, die Sie in Menü Band Kategorien erstellen. Wenn sich die Größe der Multifunktionsleiste ändert, wird das Bereichs Layout automatisch so angepasst, dass so viele Elemente wie möglich angezeigt werden.
 
@@ -217,7 +217,7 @@ Im folgenden Beispiel wird veranschaulicht, wie ein `CMFCRibbonPanel`-Objekt mit
 
 [CMFCRibbonPanel](../../mfc/reference/cmfcribbonpanel-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxribbonpanel. h
 
@@ -234,7 +234,7 @@ virtual void Add(CMFCRibbonBaseElement* pElem);
 *pelem*<br/>
 [in, out] Zeiger auf ein Menü Band Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="addseparator"></a>CMF cribbonpanel:: addSeparator
 
@@ -244,7 +244,7 @@ Fügt dem Menü Band Panel ein Trennzeichen hinzu.
 virtual void AddSeparator();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie dem Menü Band Bereich ein Trennzeichen hinzufügen. Das Trennzeichen wird neben dem Menü Band Element hinzugefügt, das durch den vorherigen-Befehl [CMFCRibbonPanel:: Add](#add)hinzugefügt wurde. Um an einer bestimmten Position ein Trennzeichen einzufügen, muss [CMFCRibbonPanel:: InsertSeparator](#insertseparator)aufgerufen werden.
 
@@ -278,7 +278,7 @@ in Gibt die Ressourcen-ID der deaktivierten Images der Symbolleiste an.
 
 Mit dieser Methode können Sie dem Menü Band Bereich eine Symbolleiste hinzufügen. Die Symbolleiste wird neben dem Menü Band Element hinzugefügt, das durch den vorherigen-Befehl [CMFCRibbonPanel:: Add](#add)hinzugefügt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu Symbolleisten, heißen Bildern, kalten Bildern und deaktivierten Bildern finden Sie unter [cmfctoolbar-Klasse](../../mfc/reference/cmfctoolbar-class.md).
 
@@ -322,7 +322,7 @@ in Die Daten, die einem Menüband-Element zugeordnet sind.
 
 Zeiger auf ein Menüband-Element, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="findbyid"></a>CMF cribbonpanel:: findByID
 
@@ -353,7 +353,7 @@ int GetCaptionHeight() const;
 
 Die Höhe einer Beschriftung für den Menü Band Bereich in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getcount"></a>CMF cribbonpanel:: GetCount
 
@@ -391,7 +391,7 @@ CMFCRibbonButton& GetDefaultButton();
 
 Die Standard Schaltfläche für den Menü Band Bereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Schaltfläche wird angezeigt, wenn ein Menüband-Panel nicht über genügend Speicherplatz verfügt
 
@@ -407,7 +407,7 @@ CMFCRibbonBaseElement* GetDroppedDown() const;
 
 Zeiger auf das Menü Band Element, bei dem das Popup Menü abgelegt wurde. andernfalls NULL, wenn das Popup-Menü des Menü Band Elements nicht angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nur Menü Band Elemente, die im Menü Band Bereich enthalten sind, werden getestet.
 
@@ -441,7 +441,7 @@ void GetElements(CArray<CMFCRibbonBaseElement*, CMFCRibbonBaseElement*>& arEleme
 *arelements*<br/>
 vorgenommen Ein Array, das mit allen Menü Band Elementen gefüllt werden soll, die im Menü Band Bereich enthalten sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getelementsbyid"></a>CMF cribbonpanel:: getelementsbyid
 
@@ -461,7 +461,7 @@ in Befehls-ID für ein Menü Band Element.
 *arelements*<br/>
 in Array von Menü Band Elementen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nur Menü Band Elemente, die im Menü Band Bereich enthalten sind, werden getestet.
 
@@ -477,7 +477,7 @@ CMFCRibbonBaseElement* GetHighlighted() const;
 
 Zeiger auf das Menü Band Element, das im Menü Band Bereich hervorgehoben ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getindex"></a>CMF cribbonpanel:: getIndex
 
@@ -496,7 +496,7 @@ in Zeiger auf ein Menü Band Element.
 
 NULL basierter Index des angegebenen Menü Band Elements, wenn die Methode erfolgreich war. andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getitemidslist"></a>CMF cribbonpanel:: getitemittelslist
 
@@ -511,7 +511,7 @@ void GetItemIDsList(CList<UINT, UINT>& lstItems) const;
 *lstItems*<br/>
 vorgenommen Die Liste der Befehls-IDs für Menü Band Elemente, die im Menü Band Bereich enthalten sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getname"></a>CMF cribbonpanel:: GetName
 
@@ -525,7 +525,7 @@ LPCTSTR GetName() const;
 
 Der Name des Menü Band Bereichs.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getparentbutton"></a>CMFCRibbonPanel:: getbientbutton
 
@@ -535,7 +535,7 @@ CMFCRibbonBaseElement* GetParentButton() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getparentcategory"></a>CMF cribbonpanel:: getbientcategory
 
@@ -557,7 +557,7 @@ CMFCRibbonPanelMenuBar* GetParentMenuBar() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getpreferedmenulocation"></a>CMF cribbonpanel:: getpreferedmenulocation
 
@@ -576,7 +576,7 @@ vorgenommen Dieser Parameter wird nicht verwendet.
 
 Gibt immer false zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode gibt immer false zurück. Überschreiben Sie diese Methode, um das bevorzugte Anzeige Rechteck für das Popup Menü im Menü Band Bereich abzurufen.
 
@@ -592,7 +592,7 @@ CMFCRibbonBaseElement* GetPressed() const;
 
 Ein Zeiger auf ein Menü Band Element, wenn der Benutzer es gerade drückt. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getrect"></a>CMF cribbonpanel:: GetRect
 
@@ -606,7 +606,7 @@ const CRect& GetRect() const;
 
 Das Anzeige Rechteck für den Menü Band Bereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="haselement"></a>CMF cribbonpanel:: haselement
 
@@ -625,7 +625,7 @@ in Zeiger auf ein Menü Band Element.
 
 TRUE, wenn der Menü Band Bereich das angegebene Menüband-Element enthält. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="highlight"></a>CMF cribbonpanel:: Hervorhebung
 
@@ -645,7 +645,7 @@ in TRUE, um den Menü Band Bereich hervorzuheben. "False", um den Menü Band Ber
 *Punkt*<br/>
 in Die x-und y-Koordinaten des Zeigers relativ zur linken oberen Ecke des Fensters.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hittest"></a>CMF cribbonpanel:: HitTest
 
@@ -669,7 +669,7 @@ in TRUE, um die Beschriftung des Menü Band Bereichs zu testen. andernfalls fals
 
 Zeiger auf ein Menüband-Element, wenn sich der angegebene Punkt darin befindet. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nur Menü Band Elemente, die im Menü Band Bereich enthalten sind, werden getestet.
 
@@ -690,7 +690,7 @@ in Die x-und y-Koordinaten des Zeigers relativ zur linken oberen Ecke des Fenste
 
 Der null basierte Index des Menü Band Elements, das den angegebenen Punkt enthält. andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nur Menü Band Elemente, die im Menü Band Bereich enthalten sind, werden getestet.
 
@@ -716,7 +716,7 @@ in NULL basierter Wert im Bereich von-1 bis zur Anzahl der Menü Band Elemente, 
 
 TRUE, wenn das Menü Band Element erfolgreich eingefügt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Wert von " *nIndex* "-1 ist, oder wenn " *nIndex* " der Anzahl der Menü Band Elemente im Array entspricht, wird das angegebene Menü Band Element am Ende des Arrays hinzugefügt. Wenn der Wert von *nIndex* außerhalb des gültigen Bereichs liegt, schlägt die Methode fehl.
 
@@ -737,7 +737,7 @@ in Gibt den NULL basierten Index an, an dem das Trennzeichen eingefügt wird.
 
 TRUE, wenn das Trennzeichen erfolgreich eingefügt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode wird ein Trennzeichen an der durch *nIndex*angegebenen Position eingefügt. Um ein Trennzeichen neben dem zuletzt hinzugefügten Menü Band Element einzufügen, nennen Sie [CMFCRibbonPanel:: addSeparator](#addseparator).
 
@@ -765,7 +765,7 @@ BOOL IsCollapsed() const;
 
 TRUE, wenn die Anzeige Größe des Menü Band Bereichs in horizontaler Richtung minimiert wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Menü Band Bereich reduziert wird, werden nur die Standard Schaltfläche, der Name und ein Dropdown Pfeil angezeigt.
 
@@ -781,7 +781,7 @@ BOOL IsHighlighted() const;
 
 TRUE, wenn die Anzeige des Menü Band Bereichs hervorgehoben ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Anzeige eines Menü Band Panels wird hervorgehoben, wenn sich der Mauszeiger darüber befindet.
 
@@ -809,7 +809,7 @@ virtual BOOL IsMainPanel() const;
 
 Gibt immer false zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode gibt immer false zurück. Überschreiben Sie diese Methode, um anzugeben, ob der Menü Band Bereich der zentrale Menü Band Bereich ist.
 
@@ -823,7 +823,7 @@ BOOL IsMenuMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onkey"></a>CMF cribbonpanel:: OnKey
 
@@ -837,7 +837,7 @@ in *NCHAR*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="recalcwidths"></a>CMF cribbonpanel:: recalcbreiten
 
@@ -857,7 +857,7 @@ in Zeiger auf einen Gerätekontext für den Menü Band Bereich.
 *nheight*<br/>
 in Die Höhe des Menü Band Bereichs.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Menü Band Bereich ändert seine Layoutkonfiguration, wenn die verfügbare Breite geändert wird.
 
@@ -883,7 +883,7 @@ in TRUE, um das Element zu löschen, das entfernt wird. andernfalls false.
 
 TRUE, wenn das Element entfernt und gelöscht wurde (wenn *BDELETE* true ist); FALSE, wenn das Element nicht entfernt wurde oder wenn sich kein Menüband-Element in *nIndex*befindet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie ein Element aus dem Menü Band Bereich entfernen.
 
@@ -895,7 +895,7 @@ Löscht alle Menü Band Elemente aus dem Menü Band Bereich.
 void RemoveAll();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Menü Band Elemente werden aus dem Menü Band Bereich gelöscht und zerstört.
 
@@ -921,7 +921,7 @@ in Gibt den NULL basierten Index des zu ersetzenden Elements an.
 
 TRUE, wenn das ursprüngliche Menü Band Element durch das neue Menü Band Element erfolgreich ersetzt wurde. FALSE, wenn das Ribbon-Element nicht ersetzt wurde, oder, wenn am angegebenen Index kein Element vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um ein Menüband-Element anhand der Befehls-ID zu ersetzen, geben Sie [CMFCRibbonPanel:: replacebyid](#replacebyid)an.
 
@@ -947,7 +947,7 @@ in Gibt die Befehls-ID des zu ersetzenden Elements an.
 
 TRUE, wenn das ursprüngliche Menü Band Element durch das neue Menü Band Element erfolgreich ersetzt wurde. FALSE, wenn das Ribbon-Element nicht ersetzt wurde, oder, wenn kein Element mit der angegebenen Befehls-ID tatsächlich vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um ein Menüband-Element auf der Grundlage der Position zu ersetzen, wird [CMFCRibbonPanel:: Replace](#replace)aufgerufen.
 
@@ -964,7 +964,7 @@ void SetCenterColumnVert(BOOL bSet = TRUE);
 *BSET*<br/>
 in TRUE, um die vertikalen Positionen von Menü Band Elementen innerhalb Ihres Anzeige Rechtecks zu zentrieren. FALSE um diese Funktion zu deaktivieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setdata"></a>CMF cribbonpanel:: SetData
 
@@ -979,7 +979,7 @@ void SetData(DWORD_PTR dwData);
 *dwdata*<br/>
 in Gibt die festzulegenden benutzerdefinierten Daten an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie dem Menü Band Bereich benutzerdefinierte Daten zuordnen.
 
@@ -1022,7 +1022,7 @@ in Gibt die Ressourcen-ID des Menüs an, das dem Menü Band Panel hinzugefügt w
 
 TRUE, wenn das Menü dem Menü Band Element zugewiesen wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie dem Menüband-Element, das über die angegebene Befehls-ID verfügt, ein Popup Menü zuweisen.
 
@@ -1048,7 +1048,7 @@ in Gibt den NULL basierten Index des hinzu zufügenden Menü Band Elements an.
 
 Das Menü Band Element, das mit den angegebenen Lauf Zeit Klassen Informationen erstellt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie ein benutzerdefiniertes Element (z. b. eine Farb Schaltfläche) zum Menü Band Bereich hinzufügen möchten, müssen Sie die Lauf Zeit Klassen Informationen des benutzerdefinierten Elements angeben. Das Menüband speichert diese Informationen, erstellt das benutzerdefinierte Element und ersetzt ein vorhandenes Element, das sich (durch) der angegebenen Befehls-ID befindet (durch bezeichnet). Das Menüband gibt dann einen Zeiger auf das neu erstellte Element zurück.
 
@@ -1074,7 +1074,7 @@ in Gibt die Befehls-ID des hinzu zufügenden Menüband Elements an.
 
 Das Menü Band Element, das mit den angegebenen Lauf Zeit Klassen Informationen erstellt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie ein benutzerdefiniertes Element (z. b. eine Farb Schaltfläche) zum Menü Band Bereich hinzufügen möchten, müssen Sie die Lauf Zeit Klassen Informationen des benutzerdefinierten Elements angeben. Das Menüband speichert diese Informationen, erstellt das benutzerdefinierte Element und ersetzt ein vorhandenes Element, das durch die angegebene Befehls-ID gefunden wird. Anschließend wird ein Zeiger auf das neu erstellte Element zurückgegeben.
 
@@ -1117,7 +1117,7 @@ void SetJustifyColumns(BOOL bSet = TRUE);
 *BSET*<br/>
 in TRUE, um die Breite von Menü Band Elementen in derselben Spalte an die Breite des größten Menüband-Elements in der Spalte anzupassen. FALSE, um diese breiten Anpassung zu deaktivieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn diese Funktion in einem Menü Band Bereich aktiviert ist, werden die breiten von Menü Band Elementen in derselben Spalte an die Breite des größten Menüband-Elements in derselben Spalte angepasst.
 
@@ -1134,7 +1134,7 @@ void SetKeys(LPCTSTR lpszKeys);
 *lpszkeys*<br/>
 in Der KeyTip für die Standard Schaltfläche des Menü Band Bereichs.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Schaltfläche wird angezeigt, wenn ein Menüband-Panel nicht über genügend Speicherplatz verfügt
 
@@ -1155,7 +1155,7 @@ in Zeiger auf die Standard Schaltfläche für den Menü Band Bereich.
 
 Zeiger auf das Popup Menü für den Menü Band Bereich, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Popup Menü für den Menü Band Bereich ist nur verfügbar, wenn die Anzeige des Menü Band Panels reduziert ist.
 
@@ -1172,7 +1172,7 @@ void SetFocused(CMFCRibbonBaseElement* pNewFocus);
 *pnewfocus*<br/>
 Ein Zeiger auf ein Menüband-Element, das den Fokus erhält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="makegalleryitemvisible"></a>CMF cribbonpanel:: makegalleryitemvisible
 
@@ -1187,7 +1187,7 @@ void MakeGalleryItemVisible(CMFCRibbonBaseElement* pItem);
 *pitem*<br/>
 Ein Zeiger auf ein Menü Band Element, das angezeigt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="iswindows7look"></a>CMF cribbonpanel:: IsWindows7Look
 
@@ -1201,7 +1201,7 @@ BOOL IsWindows7Look() const;
 
 TRUE, wenn das übergeordnete Menüband über Windows 7-Aussehen verfügt. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getvisibleelements"></a>CMF cribbonpanel:: getvisibleelements
 
@@ -1218,7 +1218,7 @@ CMFCRibbonBaseElement*>& arElements);
 *arelements*<br/>
 Wenn die Funktion zurückgegeben wird, enthält dieser Parameter ein Array sichtbarer Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getgalleryrect"></a>CMF cribbonpanel:: getgalleryrect
 
@@ -1232,7 +1232,7 @@ CRect GetGalleryRect();
 
 Größe und Position des Galerie Elements in diesem Panel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getfocused"></a>CMF cribbonpanel:: getfokus
 
@@ -1246,9 +1246,9 @@ CMFCRibbonBaseElement* GetFocused() const;
 
 Ein Zeiger auf ein Fokus Element oder NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

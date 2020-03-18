@@ -18,11 +18,11 @@ helpviewer_keywords:
 - macros [MFC], DDX_DHtml helpers
 ms.assetid: c46302d2-ea43-4fea-bfc2-6f590d99f267
 ms.openlocfilehash: 90c80dbc5c8b6788f3afad3cf77d796139fbd946
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866656"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426264"
 ---
 # <a name="ddx_dhtml-helper-macros"></a>DDX_DHtml Hilfsobjekte
 
@@ -41,7 +41,7 @@ Die DDX_DHtml-Hilfsobjekte ermöglichen den einfachen Zugriff auf die häufig ve
 |[DDX_DHtml_Frame_Src](#ddx_dhtml_frame_src)|Legt die URL des zugeordneten Frames fest oder ruft Sie ab.|
 |[DDX_DHtml_IFrame_Src](#ddx_dhtml_iframe_src)|Legt die URL des zugeordneten Frames fest oder ruft Sie ab.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdhtml. h
 
@@ -67,7 +67,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLANCHORELEMENT_HREF Dispatch-ID auf.
 
@@ -93,7 +93,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLANCHORELEMENT_TARGET Dispatch-ID auf.
 
@@ -119,7 +119,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLELEMENT_INNERHTML Dispatch-ID auf.
 
@@ -145,7 +145,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLELEMENT_INNERTEXT Dispatch-ID auf.
 
@@ -171,7 +171,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert. Siehe *Wert* in [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ist nur erfolgreich, wenn es für Steuerelemente mit einer Value-Eigenschaft ausgeführt wird. Steuerelemente, die über eine Value-Eigenschaft verfügen, umfassen Bearbeitungsfelder, Listenfelder und Kombinations Felder.
 
@@ -199,7 +199,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLFRAMEBASE_SRC Dispatch-ID auf.
 
@@ -225,7 +225,7 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLFRAMEBASE_SRC Dispatch-ID auf.
 
@@ -251,12 +251,12 @@ Der Wert, den Sie für den ID-Parameter des HTML-Steuer Elements angegeben haben
 *var*<br/>
 Der ausgetauschte Wert.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn das DDX_DHtml_Img_Src-Makro zum Abrufen der src-Eigenschaft für ein Bildelement verwendet wird, gibt das Internet Explorer-Image Objekt die URL für den vollständigen Escapezeichen für die Bildquelle zurück. Wenn Sie z. b. das DDX_DHtml_Img_Src-Makro verwenden, um die src-Eigenschaft eines Bild Elements auf die Zeichenfolge "Some interessantes Bild" festzulegen, gibt Internet Explorer beim Abrufen dieser Eigenschaft die Zeichenfolge "res: Knotens"//d: \ MyApplication \ MyApp. exe/some %2 0 interessantiges %2 0 Bild "zurück.
 
 Dieses Makro ruft die [CDHtmlDialog::D DX_DHtml_ElementText](../../mfc/reference/cdhtmldialog-class.md#ddx_dhtml_elementtext) -Funktion mithilfe der DISPID_IHTMLIMGELEMENT_SRC Dispatch-ID auf.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CDHtmlDialog-Klasse](../../mfc/reference/cdhtmldialog-class.md)

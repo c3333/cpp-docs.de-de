@@ -1,17 +1,15 @@
 ---
 title: ELSE (MASM)
 ms.date: 12/17/2019
-f1_keywords:
-- else
 helpviewer_keywords:
 - ELSE directive
 ms.assetid: c43af707-4567-4489-97ca-f14982d84e88
-ms.openlocfilehash: e7098cb5be7f39458410e48507a4aea675974724
-ms.sourcegitcommit: 0781c69b22797c41630601a176b9ea541be4f2a3
+ms.openlocfilehash: f80de36cf6c7447f345bb54f1263386e76367cd7
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75318149"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79440891"
 ---
 # <a name="else-masm"></a>ELSE (MASM)
 
@@ -21,11 +19,11 @@ Markiert den Anfang eines alternativen Blocks innerhalb eines bedingten Blocks.
 
 > **ELSE**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Siehe [if](if-masm.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Direktivenverweis](directives-reference.md)\
 [MASM-BNF-Grammatik](masm-bnf-grammar.md)

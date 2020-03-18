@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operator&lt;= (vector)
 - std::operator== (vector)
 ms.openlocfilehash: f6717add93c489f536bd0c0b0f82b74bbd915985
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876060"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427572"
 ---
 # <a name="ltvectorgt-operators"></a>&lt;vector&gt;-Operatoren
 
@@ -45,7 +45,7 @@ Ein Objekt des Typs `vector`.
 
 **TRUE**, wenn die Paare nicht gleich sind; **FALSE**, wenn die Paare gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -198,7 +198,7 @@ Ein Objekt des Typs `vector`.
 
 **TRUE**, wenn der Vektor links vom Operator gleich dem Vektor rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei Vektoren sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
