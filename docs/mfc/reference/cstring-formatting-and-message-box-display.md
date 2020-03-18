@@ -5,11 +5,11 @@ helpviewer_keywords:
 - CString objects [MFC], formatting and message boxes
 ms.assetid: d1068cf4-9cc5-4952-b9e7-d612c53cbc28
 ms.openlocfilehash: ad880c5302fd2274c5d46719e912461fd7497f10
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854060"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426516"
 ---
 # <a name="cstring-formatting-and-message-box-display"></a>CString-Formatierung und Meldungsfeldanzeige
 
@@ -26,7 +26,7 @@ Diese Gruppe von Funktionen umfasst auch eine globale Routine zum Anzeigen eines
 |[AfxFormatString2](#afxformatstring2)|Ersetzt zwei Zeichen folgen für die Formatzeichen "%1" und "%2" in einer Zeichenfolge, die in der Zeichen folgen Tabelle enthalten ist.|
 |[AfxMessageBox](#afxmessagebox)|Zeigt ein Meldungsfeld an.|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXWIN. h
 
@@ -60,7 +60,7 @@ Trennzeichen, das zum Begrenzen von Teil Zeichenfolgen verwendet wird.
 
 TRUE, wenn die Funktion erfolgreich die Teil Zeichenfolge am bereitgestellten Index extrahiert hat. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion eignet sich zum Extrahieren mehrerer Teil Zeichenfolgen aus einer Quell Zeichenfolge, wenn ein bekanntes einzelnes Zeichen jede Teil Zeichenfolge trennt. Diese Funktion sucht nach dem Anfang des *lpszfullstring* -Parameters jedes Mal, wenn er aufgerufen wird.
 
@@ -70,7 +70,7 @@ Diese Funktion gibt false zurück, wenn entweder " *lpszfullstring* " auf NULL f
 
 [!code-cpp[NVC_MFC_Utilities#48](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_1.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXWIN. h
 
@@ -96,7 +96,7 @@ Die Ressourcen-ID der Vorlagen Zeichenfolge, für die die Ersetzung durchgeführ
 *lpsz1*<br/>
 Eine Zeichenfolge, die die Formatzeichen "%1" in der Vorlagen Zeichenfolge ersetzt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die neu formatierte Zeichenfolge wird in *RString*gespeichert. Wenn die Zeichenfolge in der Zeichen folgen Tabelle z. b. "Datei %1 nicht gefunden" lautet und *lpsz1* gleich "c:\MyFile. TXT ", dann enthält *RString* die Zeichenfolge" file c:\MyFile. TXT nicht gefunden ". Diese Funktion eignet sich zum Formatieren von Zeichen folgen, die an Meldungs Felder und andere Fenster gesendet werden.
 
@@ -106,7 +106,7 @@ Wenn die Formatzeichen "%1" mehrmals in der Zeichenfolge vorkommen, werden mehre
 
 [!code-cpp[NVC_MFC_Utilities#25](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_2.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXWIN. h
 
@@ -136,7 +136,7 @@ Eine Zeichenfolge, die die Formatzeichen "%1" in der Vorlagen Zeichenfolge erset
 *lpsz2*<br/>
 Eine Zeichenfolge, die die Formatzeichen "%2" in der Vorlagen Zeichenfolge ersetzt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die neu formatierte Zeichenfolge wird in *RString*gespeichert. Wenn die Zeichenfolge in der Zeichen folgen Tabelle z. b. "Datei %1 wurde nicht im Verzeichnis %2 gefunden" angezeigt wird, verweist *lpsz1* auf "MyFile. TXT ", und *lpsz2* verweist auf" c:\meinedir ", dann enthält *RString* die Zeichenfolge" File MyFile. TXT wurde nicht im Verzeichnis "c:\meineidir" gefunden. "
 
@@ -146,7 +146,7 @@ Wenn die Formatzeichen "%1" oder "%2" mehrmals in der Zeichenfolge vorkommen, we
 
 [!code-cpp[NVC_MFC_Utilities#26](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_3.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** AFXWIN. h
 
@@ -202,7 +202,7 @@ Sofern ein Meldungsfeld über die Schaltfläche "Abbrechen" verfügt, wird der I
 
 Die Funktionen [AfxFormatString1](#afxformatstring1) und [AfxFormatString2](#afxformatstring2) können nützlich sein, um Text zu formatieren, der in einem Meldungs Feld angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Form dieser überladenen Funktion zeigt eine Text Zeichenfolge an, auf die *lpszText* im Meldungs Feld verweist, und verwendet *nidhelp* , um einen Hilfe Kontext zu beschreiben. Der Hilfekontext wird verwendet, um zu einem zugeordneten Hilfethema zu wechseln, wenn der Benutzer die Hilfetaste drückt (in der Regel F1).
 
@@ -212,7 +212,7 @@ Die zweite Form der Funktion verwendet die Zeichen folgen Ressource mit der ID *
 
 [!code-cpp[NVC_MFCWindowing#133](../../mfc/reference/codesnippet/cpp/cstring-formatting-and-message-box-display_4.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)<br/>
 [CStringT-Klasse](../../atl-mfc-shared/reference/cstringt-class.md)

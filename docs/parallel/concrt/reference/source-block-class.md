@@ -34,11 +34,11 @@ helpviewer_keywords:
 - source_block class
 ms.assetid: fbdd4146-e8d0-42e8-b714-fe633f69ffbf
 ms.openlocfilehash: 3a0d69bc2e2904b1dcf37a7e9891d95bd869a610
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866133"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424188"
 ---
 # <a name="source_block-class"></a>source_block-Klasse
 
@@ -59,24 +59,24 @@ Link Registrierung, die zum Speichern der Ziel Verknüpfungen verwendet werden s
 *_MessageProcessorType*<br/>
 Der Prozessortyp für die Nachrichtenverarbeitung.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`target_iterator`|Der Iterator zum Durchlaufen der verbundenen Ziele.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[source_block](#ctor)|Erstellt ein `source_block`-Objekt.|
 |[~ source_block-Dekonstruktor](#dtor)|Zerstört das `source_block`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[erst](#accept)|Akzeptiert eine Meldung, die von diesem `source_block` Objekt angeboten wurde, und überträgt den Besitz an den Aufrufer.|
 |[acquire_ref](#acquire_ref)|Ruft einen Verweis Zähler für dieses `source_block` Objekt ab, um das Löschen zu verhindern.|
@@ -90,7 +90,7 @@ Der Prozessortyp für die Nachrichtenverarbeitung.
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[accept_message](#accept_message)|Akzeptiert beim Überschreiben in einer abgeleiteten Klasse eine angebotene Nachricht von der Quelle. Nachrichten Blöcke sollten diese Methode überschreiben, um die `_MsgId` zu überprüfen und eine Meldung zurückzugeben.|
 |[async_send](#async_send)|Fügt Nachrichten asynchron in die Warteschlange ein und startet einen propagierungs Task, wenn dies noch nicht geschehen ist.|
@@ -109,7 +109,7 @@ Der Prozessortyp für die Nachrichtenverarbeitung.
 |[unlink_target_notification](#unlink_target_notification)|Ein Rückruf, der benachrichtigt, dass die Verknüpfung eines Ziels mit diesem `source_block` Objekt aufgehoben wurde.|
 |[wait_for_outstanding_async_sends](#wait_for_outstanding_async_sends)|Wartet, bis alle asynchronen Propagierungen vollständig sind. Diese weiterverweiterungsspezifische Spin-Wartezeit wird in debugktoren von Nachrichten Blöcken verwendet, um sicherzustellen, dass alle asynchronen Weiterungen Zeit bis zum Ende haben, bevor der Block zerstört wird.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Nachrichten Blöcke sollten von diesem Block abgeleitet werden, um die von dieser Klasse bereitgestellte Link Verwaltung und Synchronisierung zu nutzen.
 
@@ -119,7 +119,7 @@ Nachrichten Blöcke sollten von diesem Block abgeleitet werden, um die von diese
 
 `source_block`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** agents.h
 
@@ -147,7 +147,7 @@ Ein Zeiger auf den Zielblock, der die `accept` Methode aufrufen.
 
 Ein Zeiger auf das `message` Objekt, für das der Aufrufer nun den Besitz hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -170,7 +170,7 @@ Die Laufzeitobjekt Identität des `message` Objekts.
 
 Ein Zeiger auf die Nachricht, für die der Aufrufer nun den Besitz hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um den Besitz zu übertragen, sollte der ursprüngliche Nachrichten Zeiger zurückgegeben werden. Um den Besitz aufrechtzuerhalten, muss eine Kopie der Nachrichten Nutzlast erstellt und zurückgegeben werden.
 
@@ -182,7 +182,7 @@ Ruft einen Verweis Zähler für dieses `source_block` Objekt ab, um das Löschen
 virtual void acquire_ref(_Inout_ ITarget<_Target_type> *);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird von einem `ITarget` Objekt aufgerufen, das während der `link_target` Methode mit dieser Quelle verknüpft wird.
 
@@ -221,7 +221,7 @@ Ein Zeiger auf den Zielblock, der die `consume` Methode aufrufen.
 
 Ein Zeiger auf das `message` Objekt, für das der Aufrufer nun den Besitz hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -246,7 +246,7 @@ Die `runtime_object_identity` des verbrauchten `message` Objekts.
 
 Ein Zeiger auf die Nachricht, für die der Aufrufer nun den Besitz hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ähnlich wie bei `accept`, dem aber immer ein Aufruf`reserve`vorangestellt ist.
 
@@ -289,7 +289,7 @@ virtual void link_target(_Inout_ ITarget<_Target_type>* _PTarget);
 *_PTarget*<br/>
 Ein Zeiger auf einen `ITarget` Block, der mit diesem `source_block` Objekt verknüpft werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -353,7 +353,7 @@ Die `runtime_object_identity` des reservierten `message` Objekts.
 *_PTarget*<br/>
 Ein Zeiger auf den Zielblock, der die `release` Methode aufrufen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -385,7 +385,7 @@ virtual void release_ref(_Inout_ ITarget<_Target_type>* _PTarget);
 *_PTarget*<br/>
 Ein Zeiger auf den Zielblock, der diese Methode aufgerufen hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird von einem `ITarget` Objekt aufgerufen, das von dieser Quelle entfernt wird. Der Quell Block darf alle für den Zielblock reservierten Ressourcen freigeben.
 
@@ -419,7 +419,7 @@ Ein Zeiger auf den Zielblock, der die `reserve` Methode aufrufen.
 
 **true** , wenn die Nachricht erfolgreich reserviert wurde, andernfalls **false** . Reservierungen können aus vielen Gründen fehlschlagen, z.b.: die Nachricht wurde bereits von einem anderen Ziel reserviert oder akzeptiert, die Quelle könnte Reservierungen ablehnen usw.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -442,7 +442,7 @@ Die `runtime_object_identity` des reservierten `message` Objekts.
 
 **true** , wenn die Nachricht erfolgreich reserviert wurde, andernfalls **false** .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn `reserve` aufgerufen wird, muss entweder `consume` oder `release` aufgerufen **werden, um**den Besitz der Nachricht zu übernehmen oder freizugeben.
 
@@ -496,7 +496,7 @@ virtual void unlink_target(_Inout_ ITarget<_Target_type>* _PTarget);
 *_PTarget*<br/>
 Ein Zeiger auf einen `ITarget` Block, um die Verknüpfung mit diesem `source_block`-Objekt aufzulösen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode löst eine [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme aus, wenn der Parameter `_PTarget` `NULL`ist.
 
@@ -529,7 +529,7 @@ Wartet, bis alle asynchronen Propagierungen vollständig sind. Diese weiterverwe
 void wait_for_outstanding_async_sends();
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [ISource-Klasse](isource-class.md)

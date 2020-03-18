@@ -56,11 +56,11 @@ helpviewer_keywords:
 - AFX_GLOBAL_DATA constructor
 ms.assetid: c7abf2fb-ad5e-4336-a01d-260c29ed53a2
 ms.openlocfilehash: dda3056cbed18ef93e09b52cd9d0a6b00e1db177
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78869915"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426054"
 ---
 # <a name="afx_global_data-structure"></a>AFX_GLOBAL_DATA-Struktur
 
@@ -72,18 +72,18 @@ Die `AFX_GLOBAL_DATA` -Struktur enthält Felder und Methoden, mit denen das Fram
 struct AFX_GLOBAL_DATA
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`|Erstellt eine `AFX_GLOBAL_DATA` -Struktur.|
 |`AFX_GLOBAL_DATA::~AFX_GLOBAL_DATA`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[AFX_GLOBAL_DATA:: Cleanup](#cleanup)|Gibt Ressourcen frei, die vom Framework zugeordnet werden, z. B. Pinsel, Schriftarten und DLLs.|
 |[AFX_GLOBAL_DATA::D 2d1makerotatematrix](#d2d1makerotatematrix)|Erstellt eine Drehtransformation, die sich in einem angegebenen Winkel um einen angegebenen Punkt dreht.|
@@ -117,15 +117,15 @@ struct AFX_GLOBAL_DATA
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[AFX_GLOBAL_DATA:: enableaccessibilitysupport](#enableaccessibilitysupport)|Aktiviert oder deaktiviert Microsoft Active Accessibility-Unterstützung. Active Accessibility stellt zuverlässige Methoden zum Anzeigen von Informationen über Benutzeroberflächenelemente bereit.|
 |[AFX_GLOBAL_DATA:: isaccessibilitysupport](#isaccessibilitysupport)|Gibt an, ob Microsoft Active Accessibility-Unterstützung aktiviert ist.|
 |[AFX_GLOBAL_DATA:: iswindowslayersupportavailable](#iswindowslayersupportavailable)|Gibt an, ob das Betriebssystem überlappende Fenster unterstützt.|
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[AFX_GLOBAL_DATA:: bisosalphablendingsupport](#bisosalphablendingsupport)|Gibt an, ob das aktuelle Betriebssystem Alphablending unterstützt.|
 |[AFX_GLOBAL_DATA:: bIsWindows7](#biswindows7)|Gibt an, ob die Anwendung unter dem Betriebssystem Windows 7 oder höher ausgeführt wird.|
@@ -142,7 +142,7 @@ struct AFX_GLOBAL_DATA
 |[AFX_GLOBAL_DATA:: m_nDragFrameThicknessDock](#m_ndragframethicknessdock)|Gibt die Breite des Ziehrahmens an, mit dem der angedockten Zustand übermittelt wird.|
 |[AFX_GLOBAL_DATA:: m_nDragFrameThicknessFloat](#m_ndragframethicknessfloat)|Gibt die Breite des Ziehrahmens an, mit dem der unverankerte Zustand übermittelt wird.|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die meisten Daten in der `AFX_GLOBAL_DATA` -Struktur werden beim Start der Anwendung initialisiert.
 
@@ -150,7 +150,7 @@ Die meisten Daten in der `AFX_GLOBAL_DATA` -Struktur werden beim Start der Anwen
 
 `AFX_GLOBAL_DATA`
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxglobals.h
 
@@ -162,7 +162,7 @@ Gibt an, ob das Betriebssystem Alpha Blending unterstützt.
 BOOL  bIsOSAlphaBlendingSupport;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 TRUE gibt an, dass Alpha Blending unterstützt wird. andernfalls false.
 
@@ -280,7 +280,7 @@ in Die Farbe, in der der angegebene Text gezeichnet wird. Der Standardwert ist d
 
 TRUE, wenn zum Zeichnen des angegebenen Texts ein Design verwendet wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Design definiert den visuellen Stil einer Anwendung. Ein Design wird nicht verwendet, um den Text zu zeichnen, wenn der *htheme* -Parameter NULL ist, oder wenn die [drawdermetextex](/windows/win32/api/uxtheme/nf-uxtheme-drawthemetextex) -Methode nicht unterstützt wird oder wenn [Desktopfenster-Manager](/windows/win32/dwm/dwm-overview) (DWM)-Komposition deaktiviert ist.
 
@@ -295,9 +295,9 @@ void EnableAccessibilitySupport(BOOL bEnable=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *benabel*<br/>
-in TRUE, um die Barrierefreiheits Unterstützung zu aktivieren; FALSE zum Deaktivieren der Barrierefreiheits Unterstützung. Der Standardwert ist TRUE.
+in TRUE, um die Barrierefreiheits Unterstützung zu aktivieren; FALSE zum Deaktivieren der Barrierefreiheits Unterstützung. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Active Accessibility ist eine COM-basierte Technologie, die die Zusammenarbeit von Programmen und Windows-Betriebssystemen mit Hilfstechnologieprodukten verbessert. Es stellt zuverlässige Methoden zum verfügbar machen von Informationen über Benutzeroberflächen Elemente bereit. Ein neueres Barrierefreiheits Modell namens Microsoft UI Automation ist nun jedoch verfügbar. Einen Vergleich der beiden Technologien finden Sie unter [UI Automation and Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility).
 
@@ -327,13 +327,13 @@ in Der Name eines Paares von öffnenden und schließenden XML-Tags.
 vorgenommen Wenn diese Methode zurückgegeben wird, enthält der Parameter " *strintag* " den Text zwischen den öffnenden und schließenden XML-Tags, die durch den *lpsztag* -Parameter benannt werden. Alle führenden oder nachfolgenden Leerzeichen werden aus dem Ergebnis abgeschnitten.
 
 *bischarslist*<br/>
-in TRUE, wenn Symbole für Escapezeichen im Parameter " *strintag* " in tatsächliche Escapezeichen konvertiert werden sollen. FALSE: die Konvertierung wird nicht durchgeführt. Der Standardwert ist false. Weitere Informationen finden Sie in den Hinweisen.
+in TRUE, wenn Symbole für Escapezeichen im Parameter " *strintag* " in tatsächliche Escapezeichen konvertiert werden sollen. FALSE: die Konvertierung wird nicht durchgeführt. Der Standardwert ist false. Weitere Informationen finden Sie unter Hinweise.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein XML-Tagpaar besteht aus benannten öffnenden und schließenden Tags, die den Anfang und das Ende einer Textlauf im angegebenen Puffer angeben. Der Parameter " *strinbuffer* " gibt den Puffer an, und der *lpsztag* -Parameter gibt den Namen der XML-Tags an.
 
@@ -364,9 +364,9 @@ in Ein-Wert, der ein Benutzeroberflächen Element angibt, dessen Farbe abgerufen
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der RGB-Farbwert des angegebenen Benutzeroberflächen Elements. Weitere Informationen finden Sie in den Hinweisen.
+Der RGB-Farbwert des angegebenen Benutzeroberflächen Elements. Weitere Informationen finden Sie unter Hinweise.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der *ncolor* -Parameter außerhalb des gültigen Bereichs liegt, ist der Rückgabewert 0 (null). Da NULL auch ein gültiger RGB-Wert ist, können Sie diese Methode nicht verwenden, um zu bestimmen, ob eine System Farbe vom aktuellen Betriebssystem unterstützt wird. Verwenden Sie stattdessen die [getsyscolorbrush](/windows/win32/api/winuser/nf-winuser-getsyscolorbrush) -Methode, die NULL zurückgibt, wenn die Farbe nicht unterstützt wird.
 
@@ -422,7 +422,7 @@ int GetTextHeight(BOOL bHorz = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bhorz*<br/>
-in TRUE, wenn die Höhe von Zeichen beim horizontalen Ausführen von Text abgerufen werden soll. FALSE zum Abrufen der Höhe von Zeichen, wenn der Text vertikal ausgeführt wird. Der Standardwert ist TRUE.
+in TRUE, wenn die Höhe von Zeichen beim horizontalen Ausführen von Text abgerufen werden soll. FALSE zum Abrufen der Höhe von Zeichen, wenn der Text vertikal ausgeführt wird. Der Standardwert lautet TRUE.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -486,7 +486,7 @@ BOOL Is32BitIcons() const;
 
 TRUE, wenn vordefinierte 32-Bit-Symbole unterstützt werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode gibt "true" zurück, wenn das Framework integrierte 32-Bit-Symbole unterstützt, und wenn das Betriebssystem 16 Bits pro Pixel oder mehr unterstützt, und wenn Bilder im hohen Kontrast nicht angezeigt werden.
 
@@ -502,7 +502,7 @@ BOOL IsAccessibilitySupport() const;
 
 TRUE, wenn die Barrierefreiheits Unterstützung aktiviert ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Microsoft Active Accessibility war die frühere Lösung, mit der Anwendungen zugänglich gemacht werden konnten. Microsoft UI Automation ist das neue Barrierefreiheits Modell für Microsoft Windows und soll den Anforderungen von Hilfstechnologieprodukten und automatisierten Testtools gerecht werden.
 
@@ -543,7 +543,7 @@ BOOL IsHighContrastMode() const;
 
 TRUE, wenn derzeit Bilder im Schwarzen oder weißen Modus mit hohem Kontrast angezeigt werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im schwarz-Modus mit hohem Kontrast sind Kanten mit dem Licht weiß, und der Hintergrund ist schwarz. Im Modus für weiße hohe Kontraste sind Kanten mit dem Licht schwarz, und der Hintergrund ist weiß.
 
@@ -559,7 +559,7 @@ BOOL IsWindowsLayerSupportAvailable() const;
 
 TRUE, wenn überlappende Fenster unterstützt werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn überlappende Fenster unterstützt werden, verwenden *smardockmarker* überlappende Fenster.
 
@@ -571,7 +571,7 @@ Gibt an, ob das Framework vordefinierte 32-Bit-Farbsymbole oder Symbole mit eine
 BOOL  m_bUseBuiltIn32BitIcons;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 TRUE gibt an, dass das Framework 32-Bit-Farbsymbole verwendet. FALSE gibt Symbole mit niedrigerer Auflösung an. Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member mit true.
 
@@ -585,7 +585,7 @@ Gibt an, ob eine Systemschriftart für Menüs, Symbolleisten und Menübänder ve
 BOOL m_bUseSystemFont;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 TRUE gibt an, dass eine System Schriftart verwendet werden soll. andernfalls false. Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member mit false.
 
@@ -631,7 +631,7 @@ Gibt den Offset von der äußersten linken Symbolleiste zum automatischen Ausble
 int  m_nAutoHideToolBarMargin;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member auf 4 Pixel.
 
@@ -643,7 +643,7 @@ Gibt die Lücke zwischen Symbolleisten zum automatischen Ausblenden an.
 int   m_nAutoHideToolBarSpacing;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member mit 14 Pixeln.
 
@@ -655,7 +655,7 @@ Gibt die Stärke des ziehrahmens an, der verwendet wird, um den angedockten Zust
 int  m_nDragFrameThicknessDock;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member auf 3 Pixel.
 
@@ -667,7 +667,7 @@ Gibt die Stärke des ziehrahmens an, der verwendet wird, um den Gleit Komma Zust
 int  m_nDragFrameThicknessFloat;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`-Konstruktor initialisiert diesen Member auf 4 Pixel.
 
@@ -679,7 +679,7 @@ Erkennt den aktuellen Zustand der Funktionen zum automatischen Ausblenden der Me
 void OnSettingChange();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode legt frameworkvariablen auf den Zustand bestimmter Attribute des Benutzer Desktops fest. Diese Methode erkennt den aktuellen Zustand der Features Menü Animation, Menü ausblenden und Aufgaben Leiste automatisch ausblenden.
 
@@ -700,7 +700,7 @@ in Der Name der Fenster Klasse, die registriert werden soll.
 
 Der qualifizierte Name der registrierten Klasse, wenn diese Methode erfolgreich ist. andernfalls eine [Ressourcen Ausnahme](exception-processing.md#afxthrowresourceexception).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert ist eine durch Doppelpunkte getrennte Liste der *lpszclassnameprefix* -Parameter Zeichenfolge und der hexadezimalen Textdarstellungen der Handles der aktuellen Anwendungs Instanz. der Anwendungs Cursor, bei dem es sich um den Pfeilcursor handelt, dessen Bezeichner IDC_ARROW ist. und den Hintergrund Pinsel. Weitere Informationen zum Registrieren von MFC-Fenster Klassen finden Sie unter [afxregisterclass](../../mfc/reference/application-information-and-management.md#afxregisterclass).
 
@@ -716,7 +716,7 @@ BOOL Resume();
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false. Im Debugmodus bestätigt diese Methode, wenn diese Methode nicht erfolgreich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird aufgerufen, wenn das Framework die [WM_POWERBROADCAST](/windows/win32/Power/wm-powerbroadcast) Nachricht empfängt.
 
@@ -772,7 +772,7 @@ in TRUE, um anzugeben, dass der Text horizontal ausgeführt wird. FALSE, um anzu
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false. Im Debugmodus bestätigt diese Methode, wenn diese Methode nicht erfolgreich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode erstellt eine horizontale reguläre Schriftart, eine unterstrichene Schriftart und eine Fett formatierte Schriftart, die in Standardmenü Elementen verwendet wird. Diese Methode erstellt optional eine reguläre vertikale Schriftart. Weitere Informationen zu logischen Schriftarten finden Sie unter [CFont:: kreatefontindirekt](../../mfc/reference/cfont-class.md#createfontindirect).
 
@@ -784,7 +784,7 @@ Initialisiert die logischen Schriftarten erneut, die vom Framework verwendet wer
 void UpdateFonts();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu logischen Schriftarten finden Sie unter `CFont::CreateFontIndirect`.
 
@@ -894,7 +894,7 @@ vorgenommen Wenn diese Funktion zurückgegeben wird, enthält Sie den in *riid*a
 
 Gibt S_OK zurück, wenn erfolgreich; andernfalls ein Fehlerwert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../hierarchy-chart.md)<br/>
 [Strukturen, Stile, Rückrufe und Meldungszuordnungen](structures-styles-callbacks-and-message-maps.md)<br/>

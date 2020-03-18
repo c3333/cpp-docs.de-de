@@ -6,11 +6,11 @@ f1_keywords:
 - amp_graphics/concurrency::graphics::filter_mode
 ms.assetid: 1d2e1859-a3d7-4d3d-8e03-1a877a86b3e0
 ms.openlocfilehash: 504de780a5db70def61fb47c7805b32e7de780b4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855798"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424968"
 ---
 # <a name="concurrencygraphics-namespace-enums"></a>Concurrency::graphics-Namespace-Enumerationen
 
@@ -34,10 +34,10 @@ Enumerationstyp zur Angabe der unterstützten Filtermodi für das Textursampling
 enum filter_mode;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** amp_graphics. h- **Namespace:** parallelcurrency:: graphics
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)

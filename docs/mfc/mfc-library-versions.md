@@ -10,11 +10,11 @@ helpviewer_keywords:
 - MFC, library versions
 - libraries [MFC], versions
 ms.openlocfilehash: b8e32366d9ff43bd6e5770f64f0ba9d8bf6e56ab
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856799"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425700"
 ---
 # <a name="mfc-library-versions"></a>MFC-Bibliotheksversionen
 
@@ -97,7 +97,7 @@ Dabei sind die in kursiv Kleinbuchstaben gezeigten Buchstaben Platzhalter für B
 
 Alle Bibliotheken, die in der folgenden Tabelle aufgeführt sind, sind im Verzeichnis "\atlmfc\lib" für unterstützte buildarchitekturen enthalten.
 
-|Bibliothek|BESCHREIBUNG|
+|Bibliothek|Beschreibung|
 |-------------|-----------------|
 |NAFXCW.LIB|MFC-Bibliothek für statische Links, Releaseversion|
 |NAFXCWD.LIB|MFC-Bibliothek für statische Links, Debugversion|
@@ -114,7 +114,7 @@ Die freigegebenen MFC-DLLs befolgen auch eine strukturierte Benennungs Konventio
 
 Die MFC-DLLs verfügen über *Versions* Nummern, die auf binäre Kompatibilität hindeuten. Verwenden Sie MFC-DLLs, die dieselbe Version wie die anderen Bibliotheken und das Compilertoolset aufweisen, um die Kompatibilität innerhalb eines Projekts sicherzustellen.
 
-|DLL|BESCHREIBUNG|
+|DLL|Beschreibung|
 |---------|-----------------|
 |MFC-*Version*. DLL|MFC-DLL, ANSI oder MBCS-Releaseversion|
 |MFC-*Version*U. dll|MFC-DLL, Unicode-Releaseversion|
@@ -139,6 +139,6 @@ Zum Erstellen von DLLs, die von MFC-und nicht-MFC-ausführbaren Dateien verwende
 
 Wenn Sie das DLL-Projekt erstellen, indem Sie eine Verknüpfung mit den statischen MFC-Bibliotheken herstellen, kann die dll ohne die freigegebenen MFC-DLLs bereitgestellt werden. Wenn das DLL-Projekt mit der MFC-*Version*der Import Bibliotheken verknüpft ist. Lib oder MFC-*Version*U. lib Sie müssen die entsprechende MFC-*Version*der MFC-DLL bereitstellen. DLL oder MFC-*Version*U. dll und die dll. Weitere Informationen finden Sie unter [DLLs](../build/dlls-in-visual-cpp.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Allgemeine MFC-Themen](../mfc/general-mfc-topics.md)

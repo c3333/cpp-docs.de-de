@@ -7,11 +7,11 @@ helpviewer_keywords:
 - FAQs [C++], DLLs
 ms.assetid: 09dd068e-fc33-414e-82f7-289c70680256
 ms.openlocfilehash: 9108aaf3fcface847b0391455a2aecd4d45658c4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856949"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422823"
 ---
 # <a name="dll-frequently-asked-questions"></a>Häufig gestellte Fragen (FAQs)zu DLLs
 
@@ -63,6 +63,6 @@ DLLs, die implizit mit einer Anwendung verknüpft sind, werden geladen, wenn die
 
 Eine mögliche Ursache des Speicherlecks ist, dass MFC temporäre Objekte erstellt, die in nachrichtenhandlerfunktionen verwendet werden. In MFC-Anwendungen werden diese temporären Objekte automatisch in der `CWinApp::OnIdle()`-Funktion bereinigt, die zwischen Nachrichtenverarbeitung aufgerufen wird. In MFC-DLLs (Dynamic-Link Libraries) wird die `OnIdle()`-Funktion jedoch nicht automatisch aufgerufen. Folglich werden temporäre Objekte nicht automatisch bereinigt. Um temporäre Objekte zu bereinigen, muss die dll `OnIdle(1)` in regelmäßigen Abständen explizit aufgerufen werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen von C/C++-DLLs in Visual Studio](dlls-in-visual-cpp.md)

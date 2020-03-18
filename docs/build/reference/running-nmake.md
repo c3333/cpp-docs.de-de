@@ -12,11 +12,11 @@ helpviewer_keywords:
 - command files, NMAKE
 ms.assetid: 0421104d-8b7b-4bf3-86c1-928d9b7c1a8c
 ms.openlocfilehash: bfada33a89c04d25bf7444cbf3b1e7ef3ed44385
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856929"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422775"
 ---
 # <a name="running-nmake"></a>Ausführen von NMAKE
 
@@ -24,7 +24,7 @@ ms.locfileid: "78856929"
 
 > **NMAKE** [*Option* ...] [*Makros* ...] [*Ziele* ...] [ **\@** _Befehlsdatei_ ...]
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 NMAKE erstellt nur angegebene *Ziele* oder, wenn keine angegeben ist, das erste Ziel im Makefile. Beim ersten Makefile-Ziel kann es sich um ein [pseudotarget](description-blocks.md#pseudotargets) -Ziel handeln, das andere Ziele erstellt. NMAKE verwendet Makefiles, die mit **/F**angegeben wurden, oder wenn **/F** nicht angegeben ist, die Makefile-Datei im aktuellen Verzeichnis. Wenn kein Makefile-Wert angegeben wird, werden mithilfe von Rückschluss Regeln Befehlszeilen *Ziele*erstellt.
 
@@ -74,6 +74,6 @@ NMAKE gibt die folgenden Exitcodes zurück:
 | 4 | System Fehler – nicht genügend Arbeitsspeicher |
 | 255 | Das Ziel ist nicht auf dem neuesten Stand (wird nur ausgegeben, wenn **/Q** verwendet wird). |
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [NMAKE-Referenz](nmake-reference.md)

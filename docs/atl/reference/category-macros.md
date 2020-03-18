@@ -8,11 +8,11 @@ f1_keywords:
 - atlcom/ATL::REQUIRED_CATEGORY
 ms.assetid: 223578cb-6180-4787-a8d8-ba3787a5d3ee
 ms.openlocfilehash: 411e06cc795827eef356018ba427510fd9eb7c06
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864445"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423495"
 ---
 # <a name="category-macros"></a>Kategoriemakros
 
@@ -25,7 +25,7 @@ Diese Makros definieren Kategoriezuordnungen.
 |[IMPLEMENTED_CATEGORY](#implemented_category)|Gibt die Kategorien an, die vom COM-Objekt implementiert werden.|
 |[REQUIRED_CATEGORY](#required_category)|Gibt die Kategorien an, die vom COM-Objekt für den Container benötigt werden.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -42,7 +42,7 @@ BEGIN_CATEGORY_MAP(theClass)
 *spiegeln*<br/>
 in Der Name der Klasse, die die Kategoriezuordnung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Kategoriezuordnung wird verwendet, um anzugeben, welche Komponenten Kategorien von der com-Klasse implementiert werden und welche Kategorien Sie in Ihrem Container benötigt.
 
@@ -84,7 +84,7 @@ IMPLEMENTED_CATEGORY(catID)
 *CATID*<br/>
 in Eine CATID-Konstante oder Variable, die die Globally Unique Identifier (GUID) für die implementierte Kategorie enthält. Die Adresse von *CATID* wird übernommen und der Zuordnung hinzugefügt. In der folgenden Tabelle finden Sie eine Auswahl von Aktien Kategorien.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die in der Zuordnung aufgeführten Komponenten Kategorien werden automatisch registriert, wenn das Modul registriert ist, wenn die Klasse über eine zugeordnete [OBJECT_ENTRY_AUTO](../../atl/reference/object-map-macros.md#object_entry_auto) oder [OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO](../../atl/reference/object-map-macros.md#object_entry_non_createable_ex_auto) Makro verfügt.
 
@@ -94,7 +94,7 @@ Weitere Informationen zu Komponenten Kategorien finden Sie unter [Was sind Kompo
 
 ### <a name="a-selection-of-stock-categories"></a>Eine Auswahl von Aktien Kategorien
 
-|BESCHREIBUNG|Symbol|Registrierungs-GUID|
+|Beschreibung|Symbol|Registrierungs-GUID|
 |-----------------|------------|-------------------|
 |Sicher für Skripterstellung|CATID_SafeForScripting|{7DD95801-9882-11CF-9FA9-00AA006C42C4}|
 |Sicher für Initialisierung|CATID_SafeForInitializing|{7DD95802-9882-11CF-9FA9-00AA006C42C4}|
@@ -121,7 +121,7 @@ REQUIRED_CATEGORY( catID )
 *CATID*<br/>
 in Eine CATID-Konstante oder Variable, die die Globally Unique Identifier (GUID) für die erforderliche Kategorie enthält. Die Adresse von *CATID* wird übernommen und der Zuordnung hinzugefügt. In der folgenden Tabelle finden Sie eine Auswahl von Aktien Kategorien.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die in der Zuordnung aufgeführten Komponenten Kategorien werden automatisch registriert, wenn das Modul registriert ist, wenn die Klasse über eine zugeordnete [OBJECT_ENTRY_AUTO](../../atl/reference/object-map-macros.md#object_entry_auto) oder [OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO](../../atl/reference/object-map-macros.md#object_entry_non_createable_ex_auto) Makro verfügt.
 
@@ -131,7 +131,7 @@ Weitere Informationen zu Komponenten Kategorien, einschließlich einer Beispiell
 
 ### <a name="a-selection-of-stock-categories"></a>Eine Auswahl von Aktien Kategorien
 
-|BESCHREIBUNG|Symbol|Registrierungs-GUID|
+|Beschreibung|Symbol|Registrierungs-GUID|
 |-----------------|------------|-------------------|
 |Sicher für Skripterstellung|CATID_SafeForScripting|{7DD95801-9882-11CF-9FA9-00AA006C42C4}|
 |Sicher für Initialisierung|CATID_SafeForInitializing|{7DD95802-9882-11CF-9FA9-00AA006C42C4}|
@@ -145,6 +145,6 @@ Weitere Informationen zu Komponenten Kategorien, einschließlich einer Beispiell
 
 [!code-cpp[NVC_ATL_Windowing#135](../../atl/codesnippet/cpp/category-macros_2.h)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)

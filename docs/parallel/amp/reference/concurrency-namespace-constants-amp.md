@@ -6,11 +6,11 @@ f1_keywords:
 - amp/Concurrency::MODULENAME_MAX_LENGTH
 ms.assetid: 13a8e8cd-2eec-4e60-a91d-5d271072747b
 ms.openlocfilehash: 2d304728f5bdca8f4bfb39cdb26baad984e63097
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883724"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424944"
 ---
 # <a name="concurrency-namespace-constants-amp"></a>Concurrency-Namespace-Konstanten (AMP)
 
@@ -34,6 +34,6 @@ Speichert die maximale Länge des Modulnamens. Dieser Wert muss für den Compile
 static const UINT MODULENAME_MAX_LENGTH = 1024;
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

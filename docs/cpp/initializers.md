@@ -7,11 +7,11 @@ helpviewer_keywords:
 - aggregate initializers [C++]
 ms.assetid: ce301ed8-aa1c-47b2-bb39-9f0541b4af85
 ms.openlocfilehash: 2cc68f2384402ce1eb3ac06b414f597a6b3951f0
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865779"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423741"
 ---
 # <a name="initializers"></a>Initialisierer
 
@@ -417,7 +417,7 @@ int main() {
 }
 ```
 
-Die folgende Ausgabe wird angezeigt.
+Daraufhin sollte die folgende Ausgabe angezeigt werden:
 
 ```Output
 agg1: c: 1

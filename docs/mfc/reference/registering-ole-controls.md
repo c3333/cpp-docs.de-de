@@ -6,11 +6,11 @@ helpviewer_keywords:
 - OLE controls [MFC], registering
 ms.assetid: 73c45b7f-7dbc-43f5-bd17-dd77c6acec72
 ms.openlocfilehash: 9fcbc002913cc6cce86276796a371231ef0f32e1
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856377"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426198"
 ---
 # <a name="registering-ole-controls"></a>Registrieren des OLE-Steuerelements
 
@@ -133,7 +133,7 @@ Die neben Versionsnummer der Steuerelement Klasse.
 
 Ungleich 0 (null), wenn die Steuerelement Klasse registriert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dadurch kann das Steuerelement von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterControlClass` aktualisiert die Registrierung mit dem Namen und Speicherort des Steuer Elements auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
 
@@ -147,7 +147,7 @@ Im obigen Beispiel wird veranschaulicht, wie `AfxOleRegisterControlClass` mit de
 
 Das Steuerelement wird im Dialogfeld Objekt einfügen für aktivierte Container angezeigt, und es ist Apartment Modell fähig. Die Steuerelemente für das Apartment Modell müssen sicherstellen, dass statische Klassen Daten durch Sperren geschützt werden, sodass ein Steuerelement in einem Apartment, das auf die statischen Daten zugreift, nicht vom Scheduler deaktiviert wird, bevor es abgeschlossen wird, und eine andere Instanz derselben Klasse beginnt mit der Verwendung von die gleichen statischen Daten. Alle Zugriffe auf die statischen Daten werden durch den kritischen Abschnitts Code umgeben.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxctl. h
 
@@ -186,11 +186,11 @@ Kann das-Flag enthalten:
 
 Ungleich 0 (null), wenn die Steuerelement Klasse registriert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dadurch kann die Eigenschaften Seite von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterPropertyPageClass` aktualisiert die Registrierung mit dem Namen der Eigenschaften Seite und deren Speicherort auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxctl. h
 
@@ -224,7 +224,7 @@ Der Name des Verzeichnisses, in dem sich die Hilfedatei für die Typbibliothek b
 
 Ungleich 0 (null), wenn die Typbibliothek registriert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion aktualisiert die Registrierung mit dem Namen der Typbibliothek und deren Speicherort auf dem System.
 
@@ -234,7 +234,7 @@ Diese Funktion aktualisiert die Registrierung mit dem Namen der Typbibliothek un
 
 [!code-cpp[NVC_MFCAutomation#8](../../mfc/codesnippet/cpp/registering-ole-controls_4.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdisp. h
 
@@ -258,7 +258,7 @@ Die eindeutige Programm-ID des Steuer Elements oder der Eigenschaften Seite.
 
 Ungleich NULL, wenn die Registrierung für das Steuerelement oder die Eigenschaften Seiten Klasse erfolgreich aufgehoben wurde. andernfalls 0.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxctl. h
 
@@ -283,10 +283,10 @@ Ungleich NULL, wenn die Registrierung der Typbibliothek erfolgreich aufgehoben w
 
 [!code-cpp[NVC_MFCAxCtl#13](../../mfc/reference/codesnippet/cpp/registering-ole-controls_5.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdisp. h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

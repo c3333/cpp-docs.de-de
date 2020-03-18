@@ -15,11 +15,11 @@ helpviewer_keywords:
 - std::CACHE_SUBALLOC [C++]
 - std::SYNC_DEFAULT [C++]
 ms.openlocfilehash: 5355661e370daf8826541c036f7301e5c25788d7
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875922"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424080"
 ---
 # <a name="ltallocatorsgt-macros"></a>&lt;allocators&gt;-Makros
 
@@ -36,7 +36,7 @@ Ergibt eine zuordnerklassenvorlage.
 #define ALLOCATOR_DECL(cache, sync, name) <alloc_template>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das-Makro ergibt eine Vorlagen Definition `template <class Type> class name {.....}` und eine Spezialisierung `template <> class name<void> {.....}` die eine zuordnerklassenvorlage definieren, die den Synchronisierungs Filter verwendet `sync` und einen Cache vom Typ `cache`.
 
@@ -76,7 +76,7 @@ Gibt `stdext::allocators::cache_chunklist<sizeof(Type)>` aus.
 #define CACHE_CHUNKLIST <cache_class>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="cache_freelist"></a> CACHE_FREELIST
 
@@ -86,7 +86,7 @@ Gibt `stdext::allocators::cache_freelist<sizeof(Type), max>` aus.
 #define CACHE_FREELIST(max) <cache_class>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="cache_suballoc"></a> CACHE_SUBALLOC
 
@@ -96,7 +96,7 @@ Gibt `stdext::allocators::cache_suballoc<sizeof(Type)>` aus.
 #define CACHE_SUBALLOC <cache_class>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="sync_default"></a> SYNC_DEFAULT
 
@@ -106,10 +106,10 @@ Gibt einen Synchronisierungsfilter aus.
 #define SYNC_DEFAULT <sync_template>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Compiler das Kompilieren sowohl von Singlethread- als auch von Multithread-Anwendungen unterstützt, gibt das Makro für die Singlethread-Anwendung `stdext::allocators::sync_none` aus; andernfalls gibt es `stdext::allocators::sync_shared` aus.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<allocators>](../standard-library/allocators-header.md)

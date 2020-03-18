@@ -15,11 +15,11 @@ helpviewer_keywords:
 - OMP_SCHEDULE OpenMP environment variable
 ms.assetid: 2178ce2b-ffa1-45ec-a455-64437711d15d
 ms.openlocfilehash: 838427320fcb68cedb97b36156fc18002ed962d8
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78882900"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424128"
 ---
 # <a name="openmp-environment-variables"></a>OpenMP-Umgebungsvariablen
 
@@ -27,7 +27,7 @@ Enthält Links zu Umgebungsvariablen, die in der OpenMP-API verwendet werden.
 
 Die visuelle C++ Implementierung von OpenMP Standard umfasst die folgenden Umgebungsvariablen: Diese Umgebungsvariablen werden beim Programmstart gelesen, und Änderungen an ihren Werten werden zur Laufzeit ignoriert (z. b. mit [_putenv _wputenv](../../../c-runtime-library/reference/putenv-wputenv.md)).
 
-|Umgebungsvariable|BESCHREIBUNG|
+|Umgebungsvariable|Beschreibung|
 |--------------------|-----------|
 |[OMP_SCHEDULE](#omp-schedule)|Ändert das Verhalten der [Schedule](openmp-clauses.md#schedule) -Klausel, wenn `schedule(runtime)` in einer `for`-oder `parallel for`-Direktive angegeben wird.|
 |[OMP_NUM_THREADS](#omp-num-threads)|Legt die maximale Anzahl von Threads im parallelen Bereich fest, es sei denn, Sie wird von [omp_set_num_threads](openmp-functions.md#omp-set-num-threads) oder [num_threads](openmp-clauses.md#num-threads)überschrieben.|
@@ -42,7 +42,7 @@ Gibt an, ob die OpenMP-Laufzeit die Anzahl der Threads in einem parallelen Berei
 set OMP_DYNAMIC[=TRUE | =FALSE]
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `OMP_DYNAMIC`-Umgebungsvariable kann von der [omp_set_dynamic](openmp-functions.md#omp-set-dynamic) -Funktion überschrieben werden.
 
@@ -72,7 +72,7 @@ Gibt an, ob die unter Verwendung von naktivierung aktiviert ist, es sei denn, di
 set OMP_NESTED[=TRUE | =FALSE]
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `OMP_NESTED`-Umgebungsvariable kann von der [omp_set_nested](openmp-functions.md#omp-set-nested) -Funktion überschrieben werden.
 
@@ -107,7 +107,7 @@ set OMP_NUM_THREADS[=num]
 *num*<br/>
 Die maximale Anzahl von Threads, die im parallelen Bereich angezeigt werden sollen, bis zu 64 in C++ der visuellen Implementierung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `OMP_NUM_THREADS`-Umgebungsvariable kann durch die [omp_set_num_threads](openmp-functions.md#omp-set-num-threads) -Funktion oder durch [num_threads](openmp-clauses.md#num-threads)überschrieben werden.
 
@@ -142,10 +142,10 @@ set OMP_SCHEDULE[=type[,size]]
 *size*<br/>
 Optionale Gibt die Größe der Iterationen an. die *Größe* muss eine positive ganze Zahl sein. Der Standardwert ist `1`, es sei denn, der *Typ* ist statisch. Ungültig, wenn der *Typ* `runtime`ist.
 
-*type*<br/>
+*Typ*<br/>
 Die Art der Planung, entweder `dynamic`, `guided`, `runtime`oder `static`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Standardwert in der visuellen C++ Implementierung von OpenMP Standard ist `OMP_SCHEDULE=static,0`.
 

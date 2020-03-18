@@ -34,30 +34,30 @@ f1_keywords:
 - ppltasks/concurrency::when_any
 ms.assetid: 520a6dff-9324-4df2-990d-302e3050af6a
 ms.openlocfilehash: 4005ae888511ec987fe83ab3d616aa0fc3675a22
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854164"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424836"
 ---
 # <a name="concurrency-namespace-functions"></a>concurrency-Namespace-Funktionen
 
 ||||
 |-|-|-|
-|[Alloc](#alloc)|[CreateResourceManager](#createresourcemanager)|[DisableTracing](#disabletracing)|
+|[Zuordnungseinheits](#alloc)|[CreateResourceManager](#createresourcemanager)|[DisableTracing](#disabletracing)|
 |[EnableTracing](#enabletracing)|[Free](#free)|[GetExecutionContextId](#getexecutioncontextid)|
 |[GetOSVersion](#getosversion)|[GetProcessorCount](#getprocessorcount)|[GetProcessorNodeCount](#getprocessornodecount)|
-|[GetSchedulerId](#getschedulerid)|[Trace_agents_register_name](#trace_agents_register_name)|[asend](#asend)|
+|[GetSchedulerId](#getschedulerid)|[Trace_agents_register_name](#trace_agents_register_name)|[ASend](#asend)|
 |[cancel_current_task](#cancel_current_task)|[clear](#clear)|[create_async](#create_async)|
 |[create_task](#create_task)|[get_ambient_scheduler](#get_ambient_scheduler)|[internal_assign_iterators](#internal_assign_iterators)|
 |[interruption_point](#interruption_point)|[is_current_task_group_canceling](#is_current_task_group_canceling)|[make_choice](#make_choice)|
 |[make_greedy_join](#make_greedy_join)|[make_join](#make_join)|[make_task](#make_task)|
 |[parallel_buffered_sort](#parallel_buffered_sort)|[parallel_for](#parallel_for)|[parallel_for_each](#parallel_for_each)|
 |[parallel_invoke](#parallel_invoke)|[parallel_radixsort](#parallel_radixsort)|[parallel_reduce](#parallel_reduce)|
-|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[receive](#receive)|
+|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[medizinisch](#receive)|
 |[run_with_cancellation_token](#run_with_cancellation_token)|[Senden](#send)|[set_ambient_scheduler](#set_ambient_scheduler)|
 |[set_task_execution_resources](#set_task_execution_resources)|[swap](#swap)|[task_from_exception](#task_from_exception)|
-|[task_from_result](#task_from_result)|[try_receive](#try_receive)|[wait](#wait)|
+|[task_from_result](#task_from_result)|[try_receive](#try_receive)|[Warte](#wait)|
 |[when_all](#when_all)|[when_any](#when_any)|
 
 ## <a name="alloc"></a>Zuordnungseinheits
@@ -767,7 +767,7 @@ Der Wert, um den bei der Iteration von `first` bis `last`ein Schritt durchlaufen
 Die Funktion, die bei jeder Iterationen ausgeführt werden soll. Hierbei kann es sich um einen Lambda-Ausdruck, einen Funktionszeiger oder ein beliebiges Objekt handeln, das eine Version des Funktions aufrufoperators mit der Signatur `void operator()(_Index_type)`unterstützt.
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner](simple-partitioner-class.md)`&` [affinity_partitioner](affinity-partitioner-class.md) oder`&` [affinity_partitioner](affinity-partitioner-class.md) bei Verwendung eines Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner`&`](simple-partitioner-class.md) affinity_partitioner [oder`&` affinity_partitioner bei](affinity-partitioner-class.md) Verwendung eines [affinity_partitioner](affinity-partitioner-class.md) Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -811,7 +811,7 @@ Ein Iterator, der die Position hinter dem letzten Element adressiert, das in die
 Ein benutzerdefiniertes Funktions Objekt, das auf jedes Element im Bereich angewendet wird.
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner](simple-partitioner-class.md)`&` [affinity_partitioner](affinity-partitioner-class.md) oder`&` [affinity_partitioner](affinity-partitioner-class.md) bei Verwendung eines Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner`&`](simple-partitioner-class.md) affinity_partitioner [oder`&` affinity_partitioner bei](affinity-partitioner-class.md) Verwendung eines [affinity_partitioner](affinity-partitioner-class.md) Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -1312,10 +1312,10 @@ Der Typ des zweiten eingabeiterators.
 Der Typ des binären funktors, der paarweise für Elemente aus den beiden Quell Bereichen ausgeführt wird.
 
 *_Partitioner*<br/>
-*first1*<br/>
+*First1*<br/>
 Ein eingabeiterator, der die Position des ersten Elements im ersten oder einzigen Quellbereich adressiert, der verarbeitet werden soll.
 
-*last1*<br/>
+*Last1*<br/>
 Ein eingabeiterator, der die Position hinter dem letzten Element im ersten oder einzigen Quellbereich adressiert, der verarbeitet werden soll.
 
 *_Result*<br/>
@@ -1325,9 +1325,9 @@ Ein Ausgabeiterator, der die Position des ersten Elements im Zielbereich adressi
 Ein benutzerdefiniertes unäres Funktions Objekt, das auf jedes Element im Quellbereich angewendet wird.
 
 *_Part*<br/>
-Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner](simple-partitioner-class.md)`&` [affinity_partitioner](affinity-partitioner-class.md) oder`&` [affinity_partitioner](affinity-partitioner-class.md) bei Verwendung eines Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
+Ein Verweis auf das Partitionierer-Objekt. Beim Argument kann es sich um einen `const`[auto_partitioner](auto-partitioner-class.md)`&`, `const`[static_partitioner](static-partitioner-class.md)`&``const`[simple_partitioner`&`](simple-partitioner-class.md) affinity_partitioner [oder`&` affinity_partitioner bei](affinity-partitioner-class.md) Verwendung eines [affinity_partitioner](affinity-partitioner-class.md) Objekts handelt es sich bei dem Verweis um einen nicht konstanten l-Wert-Verweis, damit der Algorithmus den Zustand für zukünftige Schleifen speichern kann.
 
-*first2*<br/>
+*First2*<br/>
 Ein Eingabeiterator, der die Position des ersten Elements im zweiten Quellbereich adressiert.
 
 *_Binary_op*<br/>
@@ -1505,7 +1505,7 @@ Die Version der-Methode, die ein Array von Gruppen Affinitäten als Parameter an
 
 Die programmgesteuerte Änderung der Prozess Affinität, nachdem diese Methode aufgerufen wurde, bewirkt nicht, dass die Ressourcen-Manager die Affinität, auf die Sie beschränkt ist, neu auswerten. Daher sollten alle Änderungen an der Prozess Affinität vorgenommen werden, bevor diese Methode aufgerufen wird.
 
-## <a name="swap"></a>  swap
+## <a name="swap"></a> swap
 
 Tauscht die Elemente zweier `concurrent_vector`-Objekte.
 
@@ -1532,7 +1532,7 @@ Der gleichzeitige Vektor, der die auszutauschenden Elemente bereitstellt, oder d
 
 ### <a name="remarks"></a>Hinweise
 
-Die Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert `concurrent_vector`, um die Element Funktion `_A`auszuführen. [concurrent_vector:: Swap](concurrent-vector-class.md#swap)(`_B`). Hierbei handelt es sich um Instanzen der partiellen Sortierung von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die spezialisierteste Version der Vorlagenfunktion. Die allgemeine Version der Vorlagen Funktion `template <class T> void swap(T&, T&)`in der Algorithmusklasse funktioniert nach Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse verwendet werden kann.
+Die Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert `concurrent_vector`, um die Element Funktion `_A`auszuführen. [concurrent_vector:: Swap](concurrent-vector-class.md#swap)(`_B`). Hierbei handelt es sich um Instanzen der partiellen Sortierung von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagen Funktion `template <class T> void swap(T&, T&)`in der Algorithmusklasse funktioniert nach Zuweisung und ist ein langsamer Vorgang. Die spezialisierte Version in jedem Container ist viel schneller, da sie mit der internen Darstellung der Containerklasse verwendet werden kann.
 
 Diese Methode ist nicht nebenläufigkeitssicher. Wenn Sie diese Methode aufgerufen haben, müssen Sie sicherstellen, dass keine anderen Threads Vorgänge für einen der gleichzeitigen Vektoren durchführen.
 

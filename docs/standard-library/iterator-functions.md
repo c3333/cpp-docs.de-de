@@ -33,11 +33,11 @@ helpviewer_keywords:
 - std::next [C++]
 - std::prev [C++]
 ms.openlocfilehash: 69f1007f0c7f587e81313f5de97947410bf243df
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874042"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425646"
 ---
 # <a name="ltiteratorgt-functions"></a>&lt;iterator&gt;-Funktionen
 
@@ -58,7 +58,7 @@ Der Iterator, der vorwärts verschoben werden soll und die Anforderungen für ei
 *Aus*\
 Ein Ganzzahltyp, der in den Differenztyp des Iterators konvertierbar ist und die Anzahl von Schritten angibt, um die die Position des Iterators vorwärts verschoben werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der dabei durchlaufene Bereich darf nicht singulär sein, wobei die Iteratoren dereferenzierbar sein oder hinter dem Ende liegen müssen.
 
@@ -131,7 +131,7 @@ Der Container, in dem die Einfügung am Ende ausgeführt werden sollte.
 
 Eine `back_insert_iterator`, die dem Container Objekt *_Cont*zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der C++-Standardbibliothek muss das Argument auf einen der drei Sequenzcontainer verweisen, die die Memberfunktion `push_back`: [deque-Klasse](../standard-library/deque-class.md), [list-Klasse](../standard-library/list-class.md) oder [vector-Klasse](../standard-library/vector-class.md) haben.
 
@@ -305,7 +305,7 @@ Ein Container oder ein initializer_list-Element.
 
 Eine `cont.begin()`-Konstante.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion arbeitet mit allen C++-Standardbibliothekscontainern und mit [initializer_list](../standard-library/initializer-list-class.md).
 
@@ -338,7 +338,7 @@ Ein Container oder ein initializer_list-Element.
 
 Eine `cont.end()`-Konstante.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion arbeitet mit allen C++-Standardbibliothekscontainern und mit [initializer_list](../standard-library/initializer-list-class.md).
 
@@ -394,7 +394,7 @@ Der zweite Iterator, dessen Abstand zum ersten ermittelt werden soll.
 
 Gibt an, wie oft der *erste* Schritt erhöht werden muss, bis der *Letzte*Wert gleich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Distance-Funktion hat Konstante Komplexität, wenn `InputIterator` die Anforderungen für einen Random-Access-Iterator erfüllt. Andernfalls weist Sie lineare Komplexität auf und ist daher möglicherweise aufwendig.
 
@@ -485,7 +485,7 @@ Die ersten zwei Vorlagenfunktionen geben `cont.end()` zurück (die erste ist kei
 
 Die dritte Vorlagenfunktion gibt `array + Size` zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Codebeispiel finden Sie unter [begin](../standard-library/iterator-functions.md#begin).
 
@@ -507,7 +507,7 @@ Das Containerobjekt, dessen Front ein eingefügtes Element hat.
 
 Eine `front_insert_iterator`, die dem Container Objekt *_Cont*zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion [front_insert_iterator](../standard-library/front-insert-iterator-class.md#front_insert_iterator) von der front_insert_iterator-Klasse kann ebenfalls verwendet werden.
 
@@ -580,7 +580,7 @@ Der Container, zu dem neue Elemente hinzugefügt werden sollen.
 *_Where*\
 Ein Iterator, der nach der Einfügemarke sucht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion gibt [Insert_iterator](../standard-library/insert-iterator-class.md#insert_iterator)`<Container>(_Cont, _Where)`zurück.
 
@@ -660,9 +660,9 @@ Optionaler Index im Array.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Instanz der `checked_array_iterator`.
+Eine Instanz von `checked_array_iterator`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `make_checked_array_iterator`-Funktion wird im `stdext`-Namespace definiert.
 
@@ -740,7 +740,7 @@ make_move_iterator(const Iterator& _It);
 *_IT*\
 Der Iterator, der im neuen Move-Iterator gespeichert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion gibt `move_iterator` `<Iterator>(_It)`zurück.
 
@@ -764,9 +764,9 @@ Ein Zeiger auf das Zielarray.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Instanz der `unchecked_array_iterator`.
+Eine Instanz von `unchecked_array_iterator`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `make_unchecked_array_iterator`-Funktion wird im `stdext`-Namespace definiert.
 
@@ -846,7 +846,7 @@ Die Anzahl der Iterationen.
 
 Gibt die neue iteratorposition zurück, nachdem *_Off* Zeiten durchlaufen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion gibt `next` inkrementierten *_Off* Zeiten zurück.
 
@@ -869,7 +869,7 @@ Die aktuelle Position.
 *_Off*\
 Die Anzahl der Iterationen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion gibt `next` dekrementiert `off`-Zeiten zurück.
 

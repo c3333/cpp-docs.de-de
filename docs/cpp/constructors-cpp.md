@@ -7,11 +7,11 @@ helpviewer_keywords:
 - instance constructors
 ms.assetid: 3e9f7211-313a-4a92-9584-337452e061a9
 ms.openlocfilehash: 985c63c5c937f9e85b6898cdbcc61f347688b96d
-ms.sourcegitcommit: 00f50ff242031d6069aa63c81bc013e432cae0cd
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75546392"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423795"
 ---
 # <a name="constructors-c"></a>Konstruktoren (C++)
 
@@ -80,7 +80,7 @@ Die Verwendung einer Member-Initialisiererliste wird bevorzugt, wenn Werte im Ha
 
 Der Bezeichner muss auf einen Klassenmember verweisen. Sie wird mit dem Wert des-Arguments initialisiert. Das-Argument kann einer der Konstruktorparameter, ein Funktions-oder ein [Std:: initializer_list\<t >](../standard-library/initializer-list-class.md)sein.
 
-Konstante Member und Member des Verweis Typs müssen in der Liste der Elementinitialisierer initialisiert werden.
+**const** Konstante Member und Member des Verweis Typs müssen in der Liste der Elementinitialisierer initialisiert werden.
 
 Aufrufe der parametrisierten Basisklassenkonstruktoren sollten in der Initialisiererliste vorgenommen werden, um sicherzustellen, dass die Basisklasse vor der Ausführung des abgeleiteten Konstruktors vollständig initialisiert wird.
 

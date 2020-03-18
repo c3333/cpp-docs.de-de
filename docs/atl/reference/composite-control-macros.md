@@ -9,11 +9,11 @@ helpviewer_keywords:
 - composite controls, macros
 ms.assetid: 17f2dd5e-07e6-4aa6-b965-7a361c78c45e
 ms.openlocfilehash: 685bf55910d4746463de30b17b71aa6d246db199
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857118"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423201"
 ---
 # <a name="composite-control-macros"></a>Zusammengesetzte Steuerelement Makros
 
@@ -29,7 +29,7 @@ Diese Makros definieren ereignissenkenmaps und-Einträge.
 |[SINK_ENTRY_INFO](#sink_entry_info)|Eintrag zur Ereignis Senke-Zuordnung mit manuell bereitgestellten Typinformationen für die Verwendung mit [IDispEventSimpleImpl](../../atl/reference/idispeventsimpleimpl-class.md).|
 |[SINK_ENTRY_INFO_P](#sink_entry_info)| (Visual Studio 2017) Ähnlich wie SINK_ENTRY_INFO mit der Ausnahme, dass Sie einen Zeiger auf die IID annimmt.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -50,7 +50,7 @@ in Gibt das Steuerelement an.
 
 [!code-cpp[NVC_ATL_Windowing#104](../../atl/codesnippet/cpp/composite-control-macros_1.h)]
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
 
@@ -66,7 +66,7 @@ END_SINK_MAP()
 
 [!code-cpp[NVC_ATL_Windowing#104](../../atl/codesnippet/cpp/composite-control-macros_1.h)]
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
 
@@ -80,7 +80,7 @@ SINK_ENTRY( id, dispid, fn )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Bezeichnet das-Steuerelement.
 
 *DISPID*<br/>
@@ -93,7 +93,7 @@ in Der Name der Ereignishandlerfunktion. Diese Funktion muss die `_stdcall` Aufr
 
 [!code-cpp[NVC_ATL_Windowing#104](../../atl/codesnippet/cpp/composite-control-macros_1.h)]
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
 
@@ -108,7 +108,7 @@ SINK_ENTRY_EX_P( id, piid, dispid, fn ) // (Visual Studio 2017)
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Bezeichnet das-Steuerelement.
 
 *IID*<br/>
@@ -127,7 +127,7 @@ in Der Name der Ereignishandlerfunktion. Diese Funktion muss die `_stdcall` Aufr
 
 [!code-cpp[NVC_ATL_Windowing#136](../../atl/codesnippet/cpp/composite-control-macros_2.h)]
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
 
@@ -142,7 +142,7 @@ SINK_ENTRY_INFO_P( id, piid, dispid, fn, info ) // (Visual Studio 2017)
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Eine Ganzzahl ohne Vorzeichen, die die Ereignis Quelle identifiziert. Dieser Wert muss dem *NID* -Vorlagen Parameter entsprechen, der in der zugehörigen [IDispEventSimpleImpl](../../atl/reference/idispeventsimpleimpl-class.md) -Basisklasse verwendet wird.
 
 *IID*<br/>
@@ -160,11 +160,11 @@ in Der Name der Ereignishandlerfunktion. Diese Funktion muss die `_stdcall` Aufr
 *info*<br/>
 in Typinformationen für die Ereignishandlerfunktion. Diese Typinformationen werden in Form eines Zeigers auf eine `_ATL_FUNC_INFO` Struktur bereitgestellt. CC_CDECL ist die einzige Option, die in Windows CE für das Feld callrev der `_ATL_FUNC_INFO` Struktur unterstützt wird. Alle anderen Werte werden nicht unterstützt, daher ist das Verhalten nicht definiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ersten vier Makro Parameter sind identisch mit denen für das [SINK_ENTRY_EX](#sink_entry_ex) Makro. Der Final-Parameter stellt Typinformationen für das-Ereignis bereit. Die CE-ATL-Implementierung von ActiveX-Ereignis senken unterstützt nur Rückgabewerte vom Typ HRESULT oder void aus den Ereignishandlermethoden. alle anderen Rückgabewerte werden nicht unterstützt, und ihr Verhalten ist nicht definiert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)<br/>
 [Globale Funktionen zusammengesetzter Steuerelemente](../../atl/reference/composite-control-global-functions.md)

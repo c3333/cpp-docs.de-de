@@ -26,11 +26,11 @@ f1_keywords:
 - atlenc/ATL::UUEncodeGetRequiredLength
 ms.assetid: 2ae1648b-2b87-4112-92aa-0069fcfd23da
 ms.openlocfilehash: 1380d33c485c1ac895558bbcaf86c902c6074cd4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865028"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423525"
 ---
 # <a name="atl-text-encoding-functions"></a>ATL-Text Codierungs Funktionen
 
@@ -62,7 +62,7 @@ Diese Funktionen unterstützen die Text Codierung und-Decodierung.
 |[UUEncode](#uuencode)|Mit dieser Funktion können Sie Daten in UUEncoded-Daten codieren. |
 |[Uuencodecogetrequiredlength](#uuencodegetrequiredlength)|Mit dieser Funktion können Sie die Größe eines Puffers in Zeichen abrufen, der eine Zeichenfolge enthalten kann, die aus Daten der angegebenen Größe codiert wurde.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlenc. h
 
@@ -106,7 +106,7 @@ Die-Funktion sollte wie folgt aufgerufen werden.
 
 [!code-cpp[NVC_ATL_Utilities#95](../../atl/codesnippet/cpp/atl-text-encoding-functions_1.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -187,7 +187,7 @@ Ein Zeiger auf eine Variable, die die Länge in Zeichen von *szdest*enthält. We
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jedes Byte der Quelldaten wird als zwei hexadezimale Zeichen codiert.
 
@@ -255,7 +255,7 @@ Die Länge des Puffers in Bytes.
 
 Gibt die Anzahl der Zeichen für die konvertierte Zeichenfolge zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um die Größe des Puffers zu bestimmen, der für die konvertierte Zeichenfolge erforderlich ist, müssen Sie diese Funktion mit 0 für *szdest* und *ndest*übergeben.
 
@@ -293,7 +293,7 @@ Der für die Konvertierung zu verwendende Zeichensatz.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Codierungsschema "B" wird in RFC 2047 ([https://www.ietf.org/rfc/rfc2047.txt](https://www.ietf.org/rfc/rfc2047.txt)) beschrieben.
 
@@ -317,7 +317,7 @@ Die Länge in Zeichen des Zeichensatzes, der für die Konvertierung verwendet we
 
 Die Anzahl von Zeichen, die für einen Puffer erforderlich sind, der codierte Daten von *nsrclen* -Bytes enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Codierungsschema "B" wird in RFC 2047 ([https://www.ietf.org/rfc/rfc2047.txt](https://www.ietf.org/rfc/rfc2047.txt)) beschrieben.
 
@@ -358,16 +358,16 @@ ATL_ESC Flags, die beschreiben, wie die Konvertierung durchgeführt werden soll.
 
 Die Länge in Zeichen der konvertierten Zeichenfolge.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mögliche Konvertierungen, die von dieser Funktion durchgeführt werden, werden in der Tabelle angezeigt:
 
-|`Source`|Destination|
+|Quelle|Ziel|
 |------------|-----------------|
 |\<|&lt;|
 |>|&gt;|
 |&|&amp;|
-|'|&apos;|
+|steht|&apos;|
 |"|&quot;|
 
 ## <a name="getextendedchars"></a>Getextendecodchars
@@ -445,7 +445,7 @@ Ein Zeiger auf eine Variable, die bei Rückgabe die Anzahl der unsicheren Zeiche
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Codierungsschema "Q" wird in RFC 2047 ([https://www.ietf.org/rfc/rfc2047.txt](https://www.ietf.org/rfc/rfc2047.txt)) beschrieben.
 
@@ -469,7 +469,7 @@ Die Länge in Zeichen des Zeichensatzes, der für die Konvertierung verwendet we
 
 Die Anzahl von Zeichen, die für einen Puffer erforderlich sind, der codierte Daten von *nsrclen* -Bytes enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Codierungsschema "Q" wird in RFC 2047 ([https://www.ietf.org/rfc/rfc2047.txt](https://www.ietf.org/rfc/rfc2047.txt)) beschrieben.
 
@@ -507,7 +507,7 @@ in ATLSMTP_QPENCODE Flags, die beschreiben, wie die Konvertierung durchgeführt 
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das in Anführungszeichen eindruckbare Codierungsschema wird in RFC 2045 ([https://www.ietf.org/rfc/rfc2045.txt](https://www.ietf.org/rfc/rfc2045.txt)) beschrieben.
 
@@ -528,7 +528,7 @@ Die Anzahl der Zeichen in der codierten Zeichenfolge.
 
 Die Anzahl der Bytes, die für einen Puffer erforderlich sind, der eine decodierte Zeichenfolge von *nsrclen* -Zeichen enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das in Anführungszeichen eindruckbare Codierungsschema wird in RFC 2045 ([https://www.ietf.org/rfc/rfc2045.txt](https://www.ietf.org/rfc/rfc2045.txt)) beschrieben.
 
@@ -572,7 +572,7 @@ Das in Anführungszeichen Druck Bare Codierungsschema wird in [RFC 2045](https:/
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das in Anführungszeichen eindruckbare Codierungsschema wird in RFC 2045 ([https://www.ietf.org/rfc/rfc2045.txt](https://www.ietf.org/rfc/rfc2045.txt)) beschrieben.
 
@@ -593,7 +593,7 @@ Die Anzahl der Daten bytes, die codiert werden sollen.
 
 Die Anzahl von Zeichen, die für einen Puffer erforderlich sind, der codierte Daten von *nsrclen* -Bytes enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das in Anführungszeichen eindruckbare Codierungsschema wird in RFC 2045 ([https://www.ietf.org/rfc/rfc2045.txt](https://www.ietf.org/rfc/rfc2045.txt)) beschrieben.
 
@@ -627,7 +627,7 @@ Ein Zeiger auf eine Variable, die die Länge des *pbdest*in Bytes enthält. Wenn
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese uuencoding-Implementierung folgt der POSIX p 1003.2 b/D11-Spezifikation.
 
@@ -648,7 +648,7 @@ Die Anzahl der Zeichen in der codierten Zeichenfolge.
 
 Die Anzahl der Bytes, die für einen Puffer erforderlich sind, der eine decodierte Zeichenfolge von *nsrclen* -Zeichen enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese uuencoding-Implementierung folgt der POSIX p 1003.2 b/D11-Spezifikation.
 
@@ -696,7 +696,7 @@ Flags, die das Verhalten dieser Funktion steuern.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese uuencoding-Implementierung folgt der POSIX p 1003.2 b/D11-Spezifikation.
 
@@ -717,11 +717,11 @@ Die Anzahl der Daten bytes, die codiert werden sollen.
 
 Die Anzahl von Zeichen, die für einen Puffer erforderlich sind, der codierte Daten von *nsrclen* -Bytes enthalten kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese uuencoding-Implementierung folgt der POSIX p 1003.2 b/D11-Spezifikation.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Konzepte](../active-template-library-atl-concepts.md)<br/>
 [ATL-COM-Desktop-Komponenten](../atl-com-desktop-components.md)

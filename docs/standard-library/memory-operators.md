@@ -11,11 +11,11 @@ f1_keywords:
 - memory/std::operator==
 ms.assetid: 257e3ba9-c4c2-4ae8-9b11-b156ba9c28de
 ms.openlocfilehash: 661f1bb4c0f5734d88dd23f73c69b362f59a76c2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78884071"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425490"
 ---
 # <a name="ltmemorygt-operators"></a>&lt;memory&gt;-Operatoren
 
@@ -58,7 +58,7 @@ Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
 **TRUE**, wenn die Objekte nicht gleich sind; **FALSE**, wenn die Objekte gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Vorlagenoperator gibt "false" zurück. (Alle standardmäßigen allocator-Objekte sind gleich.)
 
@@ -159,7 +159,7 @@ Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
 **true** , wenn die Objekte gleich sind, **false** , wenn die Objekte nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Vorlagenoperator gibt "true" zurück. (Alle standardmäßigen allocator-Objekte sind gleich.)
 
@@ -262,7 +262,7 @@ Der vom linken gemeinsamen Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Operatoren geben `left.get() >= right.get()`zurück.
 
@@ -326,7 +326,7 @@ Der vom linken gemeinsamen Zeiger gesteuerte Typ.
 *Ty2*\
 Der vom rechten gemeinsamen Zeiger gesteuerte Typ.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Operatoren geben zurück `left.get() <= right.get()`
 
@@ -387,7 +387,7 @@ Der Ausgabestream.
 *SP* -\
 Der freigegebene Zeiger.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion gibt `out << sp.get()` zurück.
 

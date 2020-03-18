@@ -12,11 +12,11 @@ helpviewer_keywords:
 - IExecutionResource structure
 ms.assetid: 6b27042b-b98c-4f7f-b831-566950af84cd
 ms.openlocfilehash: 40799d1ed6e21e6932f1adfbad117c436918b792
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854161"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424260"
 ---
 # <a name="iexecutionresource-structure"></a>IExecutionResource-Struktur
 
@@ -28,18 +28,18 @@ Eine Abstraktion für einen Hardwarethread.
 struct IExecutionResource;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IExecutionResource:: currentabonneptionlevel](#currentsubscriptionlevel)|Gibt die Anzahl der aktivierten virtuellen Prozessor Stämme und abonnierten externen Threads zurück, die derzeit dem zugrunde liegenden Hardware Thread zugeordnet sind, den diese Ausführungs Ressource darstellt.|
 |[IExecutionResource:: GetExecutionResourceId](#getexecutionresourceid)|Gibt einen eindeutigen Bezeichner für den Hardware Thread zurück, den diese Ausführungs Ressource darstellt.|
 |[IExecutionResource:: GetNodeID](#getnodeid)|Gibt einen eindeutigen Bezeichner für den Prozessor Knoten zurück, zu dem diese Ausführungs Ressource gehört.|
 |[IExecutionResource:: Remove](#remove)|Gibt diese Ausführungs Ressource an den Ressourcen-Manager zurück.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ausführungs Ressourcen können eigenständig oder mit virtuellen Prozessor Stämmen verknüpft werden. Eine eigenständige Ausführungs Ressource wird erstellt, wenn ein Thread in der Anwendung ein Thread Abonnement erstellt. Die Methoden [ISchedulerProxy:: abonnementthread](ischedulerproxy-structure.md#subscribecurrentthread) und [ISchedulerProxy:: requestinitialvirtualprocessor](ischedulerproxy-structure.md#requestinitialvirtualprocessors) erstellen Thread Abonnements und geben eine `IExecutionResource`-Schnittstelle zurück, die das Abonnement repräsentiert. Das Erstellen eines Thread Abonnements ist eine Möglichkeit, die Ressourcen-Manager zu informieren, dass ein bestimmter Thread zusammen mit den virtuellen Prozessor Stämme, die dem Scheduler zugewiesen Ressourcen-Manager, an die Arbeit in einem Zeit Planungs Modul teilnimmt. Der Ressourcen-Manager verwendet die Informationen, um das Überschreiben von Hardwarethreads zu vermeiden.
 
@@ -47,7 +47,7 @@ Ausführungs Ressourcen können eigenständig oder mit virtuellen Prozessor Stä
 
 `IExecutionResource`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** concrtrm. h
 
@@ -65,7 +65,7 @@ virtual unsigned int CurrentSubscriptionLevel() const = 0;
 
 Die aktuelle Abonnement Ebene.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Abonnement Ebene gibt Aufschluss darüber, wie viele laufende Threads dem Hardware Thread zugeordnet sind. Dies schließt nur Threads ein, die der Ressourcen-Manager in Form von abonnierten Threads kennt, und virtuelle Prozessor Stämme, die Thread Proxys aktiv ausführen.
 
@@ -87,7 +87,7 @@ virtual unsigned int GetExecutionResourceId() const = 0;
 
 Ein eindeutiger Bezeichner für den Hardware Thread, der dieser Ausführungs Ressource zugrunde liegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jedem Hardware Thread wird vom Concurrency Runtime ein eindeutiger Bezeichner zugewiesen. Wenn mehrere Ausführungs Ressourcen einem Hardware Thread zugeordnet sind, haben Sie alle denselben Ausführungs Ressourcen Bezeichner.
 
@@ -103,7 +103,7 @@ virtual unsigned int GetNodeId() const = 0;
 
 Ein eindeutiger Bezeichner für einen Prozessor Knoten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Concurrency Runtime stellt Hardwarethreads auf dem System in Gruppen von Prozessor Knoten dar. Knoten werden normalerweise von der Hardware Topologie des Systems abgeleitet. Beispielsweise können alle Prozessoren eines bestimmten Sockets oder eines bestimmten NUMA-Knotens zum gleichen Prozessor Knoten gehören. Der Ressourcen-Manager weist diesen Knoten, beginnend mit `0` bis einschließlich `nodeCount - 1`, eindeutige Bezeichner zu, wobei `nodeCount` die Gesamtzahl der Prozessor Knoten im System darstellt.
 
@@ -122,7 +122,7 @@ virtual void Remove(_Inout_ IScheduler* pScheduler) = 0;
 *pscheduler*<br/>
 Eine Schnittstelle zum Scheduler, die die Anforderung zum Entfernen dieser Ausführungs Ressource sendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um eigenständige Ausführungs Ressourcen und Ausführungs Ressourcen zurückzugeben, die mit den virtuellen Prozessor Stämmen der Ressourcen-Manager verknüpft sind.
 
@@ -134,7 +134,7 @@ Virtuelle Prozessor Stämme können auch an den Ressourcen-Manager zurückgegebe
 
 `invalid_operation` wird ausgelöst, wenn der Parameter `pScheduler` nicht mit dem Planer identisch ist, für den diese Ausführungs Ressource erstellt wurde, oder mit einer eigenständigen Ausführungs Ressource, wenn sich der aktuelle Thread von dem Thread unterscheidet, der das Thread Abonnement erstellt hat.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [IVirtualProcessorRoot-Struktur](ivirtualprocessorroot-structure.md)

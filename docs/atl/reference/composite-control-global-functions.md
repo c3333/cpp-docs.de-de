@@ -19,11 +19,11 @@ helpviewer_keywords:
 - composite controls, global functions
 ms.assetid: 536884cd-e863-4c7a-ab0a-604dc60a0bbe
 ms.openlocfilehash: 525fc01247053a1e2bc993398978cb332262a1a5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864736"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423195"
 ---
 # <a name="composite-control-global-functions"></a>Globale Funktionen des zusammengesetzten Steuer Elements
 
@@ -48,7 +48,7 @@ Diese Funktionen bieten Unterstützung für das Erstellen von Dialogfeldern und 
 |[AtlAxWinInit](#atlaxwinterm)|Hebt die Initialisierung des Hostcodes für axwin-Objekte auf.|
 |[Atlgetobjectsourceingeterface](#atlgetobjectsourceinterface)|Gibt Informationen über die standardmäßige Quell Schnittstelle eines Objekts zurück.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlhost. h
 
@@ -86,7 +86,7 @@ in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie `AtlAxDialogBox` mit einer Dialogfeld Vorlage verwenden möchten, die ein ActiveX-Steuerelement enthält, geben Sie eine gültige CLSID, eine AppID oder eine URL-Zeichenfolge als *Textfeld* des **Steuer** Element Abschnitts der Dialogfeld Ressource an, zusammen mit "AtlAxWin80" als *Klassennamen* Feld im selben Abschnitt. Das folgende Beispiel zeigt, wie ein gültiger **Steuer** Element Abschnitt aussehen könnte:
 
@@ -133,7 +133,7 @@ in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.
 
@@ -173,16 +173,16 @@ Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden s
 in Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese globale Funktion gibt Ihnen dasselbe Ergebnis wie das Aufrufen von [atlaxcreatecontrolex](#atlaxcreatecontrolex)(*lpszname*, *HWND*, *pStream*, NULL, NULL, NULL, null);.
 
@@ -225,13 +225,13 @@ Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden s
 in Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 *ppunkcontrol*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann NULL sein.
 
 *iidsink*<br/>
 Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt.
@@ -243,7 +243,7 @@ Ein Zeiger auf die `IUnknown`-Schnittstelle des Sink-Objekts, das mit dem Verbin
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlAxCreateControlEx` ähnelt [atlaxkreatecontrol](#atlaxcreatecontrol) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
@@ -284,10 +284,10 @@ Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden s
 Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 *bstrinlisch*<br/>
 Der BSTR, der die Lizenz für das Steuerelement enthält.
@@ -338,13 +338,13 @@ Ein Zeiger auf eine Zeichenfolge, die an das-Steuerelement übermittelt werden s
 Handle für das Fenster, an das das Steuerelement angefügt wird.
 
 *pStream*<br/>
-Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 *ppunkcontrol*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des erstellten Steuer Elements empfängt. Kann NULL sein.
 
 *iidsink*<br/>
 Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt.
@@ -359,7 +359,7 @@ Der BSTR, der die Lizenz für das Steuerelement enthält.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlAxCreateControlLicEx` ähnelt [atlaxkreatecontrollic](#atlaxcreatecontrollic) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
@@ -393,7 +393,7 @@ vorgenommen Ein Zeiger auf einen Zeiger auf den `IUnknown` des Container Objekts
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [atlaxkreatecontrolex](#atlaxcreatecontrolex) und [atlaxkreatecontrol](#atlaxcreatecontrol) , um ein Steuerelement gleichzeitig zu erstellen und anzufügen.
 
@@ -472,7 +472,7 @@ ATLAPI_(BOOL) AtlAxWinInit();
 
 Ungleich 0 (null), wenn die Initialisierung des Steuer Elements, das den Code Hostingcode andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion muss vor der Verwendung der ATL-Steuerelement-Hosting-API aufgerufen werden. Nach einem Aufruf dieser Funktion kann die **"AtlAxWin"** -Fenster Klasse in Aufrufen von " [kreatewindow](/windows/win32/api/winuser/nf-winuser-createwindoww) " oder " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw)" verwendet werden, wie im Windows SDK beschrieben.
 
@@ -488,7 +488,7 @@ inline BOOL AtlAxWinTerm();
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion ruft einfach [unregisterclass](/windows/win32/api/winuser/nf-winuser-unregisterclassw) auf, wie im Windows SDK beschrieben.
 
@@ -528,7 +528,7 @@ vorgenommen Ein Zeiger auf die neben Versionsnummer der Typbibliothek, die die D
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlGetObjectSourceInterface` können Ihnen die Schnittstellen-ID der standardmäßigen Quell Schnittstelle sowie die LIBID-und die Haupt-und neben Versionsnummer der Typbibliothek bereitstellen, die diese Schnittstelle beschreibt.
 
@@ -541,7 +541,7 @@ Im folgenden Beispiel wird gezeigt, wie Sie eine Ereignis Senke-Klasse, `CEasySi
 
 [!code-cpp[NVC_ATL_Windowing#93](../../atl/codesnippet/cpp/composite-control-global-functions_1.h)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen](../../atl/reference/atl-functions.md)<br/>
 [Makros zusammengesetzter Steuerelemente](../../atl/reference/composite-control-macros.md)

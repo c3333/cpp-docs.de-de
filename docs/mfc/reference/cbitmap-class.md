@@ -35,11 +35,11 @@ helpviewer_keywords:
 - CBitmap [MFC], SetBitmapDimension
 ms.assetid: 3980616a-c59d-495a-86e6-62bd3889c84c
 ms.openlocfilehash: 7161a4cf4484b6cc9e76e6955de558ca6e9121ca
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855555"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424680"
 ---
 # <a name="cbitmap-class"></a>CBitmap-Klasse
 
@@ -51,17 +51,17 @@ Kapselt eine Bitmap der Windows GDI (Graphics Device Interface) und stellt Membe
 class CBitmap : public CGdiObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CBitmap:: CBitmap](#cbitmap)|Erstellt ein `CBitmap`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CBitmap:: kreatebitmap](#createbitmap)|Initialisiert das-Objekt mit einer geräteabhängigen Speicher Bitmap, die über eine angegebene Breite, Höhe und ein angegebenes Bitmuster verfügt.|
 |[CBitmap:: kreatebitmapindirekte](#createbitmapindirect)|Initialisiert das-Objekt mit einer Bitmap mit der Breite, Höhe und dem Bitmuster (sofern angegeben), die in einer `BITMAP` Struktur angegeben sind.|
@@ -79,11 +79,11 @@ class CBitmap : public CGdiObject
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CBitmap:: Operator HBITMAP](#operator_hbitmap)|Gibt das an das `CBitmap` Objekt angefügte Windows-Handle zurück.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn Sie ein `CBitmap` Objekt verwenden möchten, erstellen Sie das-Objekt, fügen Sie ein Bitmap-Handle mit einer der initialisierungsmember-Funktionen an, und nennen Sie dann die-Element Funktionen des-Objekts.
 
@@ -97,7 +97,7 @@ Weitere Informationen zur Verwendung von Grafikobjekten wie `CBitmap`finden Sie 
 
 `CBitmap`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -109,7 +109,7 @@ Erstellt ein `CBitmap`-Objekt.
 CBitmap();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das resultierende-Objekt muss mit einer der initialisierungsmember-Funktionen initialisiert werden.
 
@@ -147,7 +147,7 @@ Zeigt auf ein Array von Bytes, das die ursprünglichen Bitwerte der Bitmap enth�
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für eine Farb Bitmap sollte entweder der *nplane* -Parameter oder der *nbitcount* -Parameter auf 1 festgelegt werden. Wenn beide Parameter auf 1 festgelegt sind, erstellt `CreateBitmap` eine monochrome Bitmap.
 
@@ -174,7 +174,7 @@ Verweist auf eine [Bitmap](/windows/win32/api/wingdi/ns-wingdi-bitmap) -Struktur
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Obwohl eine Bitmap nicht direkt für ein Anzeigegerät ausgewählt werden kann, kann Sie als aktuelle Bitmap für einen Speichergeräte Kontext mithilfe von [CDC:: SelectObject](../../mfc/reference/cdc-class.md#selectobject) ausgewählt und mithilfe der [CDC:: BitBLT](../../mfc/reference/cdc-class.md#bitblt) -oder [CDC:: StretchBlt](../../mfc/reference/cdc-class.md#stretchblt) -Funktion in einen beliebigen kompatiblen Gerätekontext kopiert werden. (Die [CDC::P atblt](../../mfc/reference/cdc-class.md#patblt) -Funktion kann die Bitmap für den aktuellen Pinsel direkt in den Anzeigegeräte Kontext kopieren.)
 
@@ -208,7 +208,7 @@ Gibt die Höhe der Bitmap (in Pixeln) an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Sie kann als aktuelle Bitmap für ein beliebiges Speichergerät ausgewählt werden, das mit dem durch *PDC*angegebenen Speichergerät kompatibel ist.
 
@@ -246,7 +246,7 @@ Gibt die Höhe (in Bits) der Bitmap an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Eine Anwendung kann diese Bitmap als aktuelle Bitmap für ein Speichergerät auswählen, das mit der von *PDC*angegebenen kompatibel ist.
 
@@ -271,7 +271,7 @@ Gibt eine Windows-GDI-Bitmap an.
 
 Ein Zeiger auf ein `CBitmap` Objekt, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein `CBitmap` Objekt noch nicht an das Handle angefügt ist, wird ein temporäres `CBitmap` Objekt erstellt und angefügt. Dieses temporäre `CBitmap` Objekt ist nur gültig, bis das nächste Mal die Leerlaufzeit der Anwendung in der Ereignisschleife liegt. zu diesem Zeitpunkt werden alle temporären Grafik Objekte gelöscht. Eine andere Möglichkeit, dies zu sagen, besteht darin, dass das temporäre Objekt nur während der Verarbeitung einer Fenster Nachricht gültig ist.
 
@@ -292,7 +292,7 @@ Zeiger auf eine [Bitmap](/windows/win32/api/wingdi/ns-wingdi-bitmap) -Struktur, 
 
 Ungleich 0 (null), wenn die Methode erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getbitmapbits"></a>CBitmap:: getbitmapbits
 
@@ -316,7 +316,7 @@ Zeiger auf den Puffer, der die Bitmap empfängt.
 
 Die Anzahl der Bytes, die in den Puffer kopiert werden, wenn die Methode erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [CBitmap:: getbitmap](#getbitmap) , um die erforderliche Puffergröße zu bestimmen.
 
@@ -332,7 +332,7 @@ CSize GetBitmapDimension() const;
 
 Die Breite und Höhe der Bitmap, gemessen in Einheiten von 0,1 Millimeter. Die Höhe befindet sich im `cy`-Member des `CSize`-Objekts, und die Breite ist im `cx` Member. Wenn die Breite und Höhe der Bitmap nicht mithilfe von `SetBitmapDimension`festgelegt wurde, ist der Rückgabewert 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es wird davon ausgegangen, dass die Höhe und die Breite zuvor mithilfe der [setbitmapdimension](#setbitmapdimension) -Element Funktion festgelegt wurden.
 
@@ -357,7 +357,7 @@ Gibt die Ressourcen-ID-Nummer der Bitmap-Ressource an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geladene Bitmap wird an das `CBitmap` Objekt angefügt.
 
@@ -404,7 +404,7 @@ Die Anzahl der Farb Zuordnungen, auf die von *lpcolormap*verwiesen wird.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden in `LoadMappedBitmap` Farben zugeordnet, die häufig in Schaltflächen Symbolen verwendet werden.
 
@@ -447,7 +447,7 @@ ID-Nummer der vordefinierten Windows-Bitmap. Die möglichen Werte sind unten unt
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bitmapnamen, die mit OBM_OLD beginnen, stellen Bitmaps dar, die von Windows-Versionen vor 3,0 verwendet werden.
 
@@ -465,7 +465,7 @@ operator HBITMAP() const;
 
 Bei Erfolg ein Handle für das Windows-GDI-Objekt, das durch das `CBitmap`-Objekt dargestellt wird. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Operator ist ein Typumwandlungs Operator, der die direkte Verwendung eines `HBITMAP` Objekts unterstützt.
 
@@ -515,11 +515,11 @@ Gibt die Höhe der Bitmap an (in Einheiten von 0,1 Millimeter).
 
 Die vorherigen bitmapdimensionen. Die Höhe befindet sich in der `cy` Member-Variable des `CSize`-Objekts, und die Breite ist in der `cx` Member-Variable.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der GDI verwendet diese Werte nicht, es sei denn, Sie werden zurückgegeben, wenn eine Anwendung die [getbitmapdimension](#getbitmapdimension) -Member-Funktion aufruft.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-MDI](../../overview/visual-cpp-samples.md)<br/>
 [CGdiObject-Klasse](../../mfc/reference/cgdiobject-class.md)<br/>

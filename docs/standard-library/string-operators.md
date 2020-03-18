@@ -21,11 +21,11 @@ helpviewer_keywords:
 - std::operator&lt;&lt; (string)
 - std::operator&lt;= (string), std::operator== (string)
 ms.openlocfilehash: f9aa07f7ca30ded5f61e77a327efafe91aa5c269
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890901"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425052"
 ---
 # <a name="ltstringgt-operators"></a>&lt;string&gt;-Operatoren
 
@@ -113,7 +113,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 Die Zeichenfolge, die die Verkettung der Eingabezeichenfolgen ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktionen der einzelnen Überladungen `operator+`, um zwei Objekte der Klassen Vorlage [Basic_string Klasse](../standard-library/basic-string-class.md)zu verketten. Alle `basic_string< CharType, Traits, Allocator>(Left).append(right)`effektiv zurück. Weitere Informationen finden Sie unter [Anfügen](../standard-library/basic-string-class.md#append).
 
@@ -202,7 +202,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch ungleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zeichenfolgenobjekten basiert auf einem paarweisen lexikografischen Vergleich ihrer Zeichen. Zwei Zeichenfolgen sind gleich, wenn die gleiche Anzahl von Zeichen und ihre jeweiligen Zeichenwerte identisch sind. Andernfalls sind sie ungleich.
 
@@ -293,7 +293,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zeichenfolgenobjekten basiert auf einem paarweisen lexikografischen Vergleich ihrer Zeichen. Zwei Zeichenfolgen sind gleich, wenn die gleiche Anzahl von Zeichen und ihre jeweiligen Zeichenwerte identisch sind. Andernfalls sind sie ungleich.
 
@@ -384,7 +384,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch kleiner als das Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein lexikografischer Vergleich zwischen Zeichenfolgen vergleicht diese zeichenweise, bis:
 
@@ -480,7 +480,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein lexikografischer Vergleich zwischen Zeichenfolgen vergleicht diese zeichenweise, bis:
 
@@ -573,7 +573,7 @@ Die in den Ausgabestream einzugebende Zeichenfolge.
 
 Schreibt den Wert der angegebenen Zeichenfolge in den Ausgabestream *_Ostr*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion überlädt den **Operator < <** , um ein Objekt *Str* der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) in den Stream *\_Ostr*einzufügen. Die Funktion gibt `_Ostr.write( str.c_str, str.size )`effektiv zurück.
 
@@ -610,7 +610,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch größer als das Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein lexikografischer Vergleich zwischen Zeichenfolgen vergleicht diese zeichenweise, bis:
 
@@ -713,7 +713,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 **TRUE**, wenn das Zeichenfolgenobjekt links vom Operator lexikografisch größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist, andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein lexikografischer Vergleich zwischen Zeichenfolgen vergleicht diese zeichenweise, bis:
 
@@ -806,7 +806,7 @@ Die Zeichenfolge, die aus dem Eingabestream extrahiert wird.
 
 Liest den Wert der angegebenen Zeichenfolge aus *_Istr* und gibt ihn an der *rechten Seite*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Operator überspringt die führenden Leerzeichen, sofern das `skipws`-Flag nicht festgelegt ist. Es liest alle folgenden Zeichen, bis das nächste Zeichen ein Leerzeichen ist oder das Ende der Datei erreicht wird.
 
@@ -841,6 +841,6 @@ int main( )
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<string>](../standard-library/string.md)

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - containers, C++ Standard Library
 ms.assetid: 8e915ca1-19ba-4f0d-93c8-e2c3bfd638eb
 ms.openlocfilehash: 1119947534c030afaad64e4905e58365ffffd05e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856723"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425076"
 ---
 # <a name="c-standard-library-containers"></a>C++-Standardbibliothekscontainer
 
@@ -121,7 +121,7 @@ int main()
 
 Folgende Memberfunktionen in Map, Multimap, Set und Multiset wurden zur Unterstützung vom heterogenen Nachschlagen überlastet:
 
-1. Suchen
+1. find
 
 1. count
 
@@ -168,9 +168,9 @@ Alle Container überladen den Operator „==“ zum Vergleichen von zwei Contain
 
 In c++ 14 und höher können Sie unterschiedliche Container und/oder unterschiedliche Elementtypen mit einer der `std::equal`-, `std::mismatch`-oder `std::is_permutation` Funktions Überladungen vergleichen, die zwei komplette Bereiche annehmen. Mit diesen Überladungen können Sie Container mit unterschiedlicher Länge vergleichen. Diese Überladungen sind weniger für Benutzerfehler anfällig und sind beim Vergleichen von Containern mit unterschiedlicher Länge so optimiert, dass sie in konstanter Zeit FALSE zurückgeben. Aus diesem Grund wird empfohlen, diese Überladungen zu verwenden, es sei denn (1) Sie haben einen klaren Grund dazu, dies nicht zu tun, oder (2) Sie verwenden einen [std:: list](../standard-library/list-class.md)-Container, der nicht von den Optimierungen mit zwei Bereichen profitiert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Container](../cpp/containers-modern-cpp.md)\
+[Containers (Container)](../cpp/containers-modern-cpp.md)\
 [C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)\
 [\<Sample Container>](../standard-library/sample-container.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

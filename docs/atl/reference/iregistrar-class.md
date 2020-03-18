@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Iregistrar Interface
 ms.assetid: e88c04b7-0c93-4ae8-aeb9-ecd78f87421e
 ms.openlocfilehash: e347bdba1656a53cd705123a26650dad50d3892f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857141"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423051"
 ---
 # <a name="iregistrar-interface"></a>IRegistrar-Schnittstelle
 
@@ -32,15 +32,15 @@ Diese Schnittstelle ist in atliface. h definiert und wird intern von den Element
 typedef interface IRegistrar IRegistrar;
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden [Sie im Thema Verwenden von ersetzbaren Parametern (Präprozessor der Registrierungsstelle)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md) .
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IRegistrar:: ResourceRegisterSz](#resourceregistersz)|Registriert die Ressource. |
 |[IRegistrar:: ResourceUnregisterSz](#resourceunregistersz)| Hebt die Registrierung der Ressource auf.|
@@ -51,7 +51,7 @@ Weitere Informationen finden [Sie im Thema Verwenden von ersetzbaren Parametern 
 |[IRegistrar:: resourceregiester](#resourceregister)|Registriert die Ressource.|
 |[Iregistrierungs:: ResourceUnregister](#resourceunregister)|Hebt die Registrierung der Ressource auf.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlif. h
 
@@ -135,7 +135,7 @@ virtualHRESULT STDMETHODCALLTYPE ResourceUnregister(
     /* [in] */ _In_z_ LPCOLESTR szType) = 0;
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Verwenden von ersetzbaren Parametern (Der Registrierungspräprozessor)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)<br/>
 [Klassen Übersicht](../../atl/atl-class-overview.md)<br/>

@@ -6,11 +6,11 @@ f1_keywords:
 - set/std::swap (multiset)
 ms.assetid: d1277d14-8502-46c0-b820-bcda820f9406
 ms.openlocfilehash: a3a63fb86caa3485b1ee14538c3eb1f1ff72923e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875764"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425166"
 ---
 # <a name="ltsetgt-functions"></a>&lt;set&gt;-Funktionen
 
@@ -31,7 +31,7 @@ Die Gruppe, die die auszutauschenden Elemente bereitstellt, oder die Menge, dere
 *Linker*\
 Die Menge, deren Elemente mit denen des festgelegten *Rechts*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion ist ein Algorithmus, der auf die Container Klasse spezialisiert ist, die zum Ausführen der Member-Funktion `left.`[Swap](../standard-library/set-class.md#swap)(`right`) festgelegt ist. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
 
@@ -60,7 +60,7 @@ Die Multimenge, die die auszutauschenden Elemente bereitstellt, oder die Multime
 *Linker*\
 Die Multimenge, deren Elemente mit denen des Multiset- *Rechts*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagen Funktion ist ein Algorithmus, der auf die Container Klasse Multiset spezialisiert ist, um die Member-Funktion `left.`[Swap](../standard-library/multiset-class.md#swap)(`right`) auszuführen. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
 

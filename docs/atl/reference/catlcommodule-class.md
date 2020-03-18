@@ -13,11 +13,11 @@ helpviewer_keywords:
 - CAtlComModule class
 ms.assetid: af5dd71a-a0d1-4a2e-9a24-154a03381c75
 ms.openlocfilehash: 09adcb33ca9e6f8524063130d6aedca044d6ecb5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863183"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423453"
 ---
 # <a name="catlcommodule-class"></a>Klasse von "-Klasse"
 
@@ -29,25 +29,25 @@ Diese Klasse implementiert ein com-Servermodul.
 class CAtlComModule : public _ATL_COM_MODULE
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["" Für ""](#catlcommodule)|Der Konstruktor.|
 |["-Com-commodule:: ~"](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Catlcommodule:: RegisterServer](#registerserver)|Diese Methode wird aufgerufen, um die Systemregistrierung für jedes Objekt in der Objekt Zuordnung zu aktualisieren.|
 |["" Für ""](#registertypelib)|Mit dieser Methode können Sie eine Typbibliothek registrieren.|
 |[Catlcommodule:: unregisterserver](#unregisterserver)|Diese Methode wird aufgerufen, um die Registrierung der einzelnen Objekte in der Objekt Zuordnung aufzuheben.|
 |["" Für "".](#unregistertypelib)|Mit dieser Methode können Sie die Registrierung einer Typbibliothek aufheben.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CAtlComModule` implementiert ein com-Servermodul, das einem Client den Zugriff auf die Komponenten des Moduls ermöglicht.
 
@@ -59,7 +59,7 @@ Diese Klasse ersetzt die veraltete [CComModule](../../atl/reference/ccommodule-c
 
 `CAtlComModule`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -71,7 +71,7 @@ Der Konstruktor.
 CAtlComModule() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Initialisiert das Modul.
 
@@ -83,7 +83,7 @@ Der Destruktor.
 ~CAtlComModule();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt alle Klassenfactorys frei
 
@@ -98,7 +98,7 @@ HRESULT RegisterServer(BOOL bRegTypeLib = FALSE, const CLSID* pCLSID = NULL);
 ### <a name="parameters"></a>Parameter
 
 *bregtypelib*<br/>
-TRUE, wenn die Typbibliothek registriert werden soll. Der Standardwert ist FALSE.
+TRUE, wenn die Typbibliothek registriert werden soll. Der Standardwert lautet "FALSE".
 
 *pclsid*<br/>
 Verweist auf die CLSID des zu registrierenden Objekts. Wenn der Wert NULL (der Standardwert) ist, werden alle Objekte in der Objekt Zuordnung registriert.
@@ -107,7 +107,7 @@ Verweist auf die CLSID des zu registrierenden Objekts. Wenn der Wert NULL (der S
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft die globale Funktion [atlcommoduleregisterserver](server-registration-global-functions.md#atlcommoduleregisterserver)auf.
 
@@ -129,7 +129,7 @@ Zeichenfolge im Format "\\\n", wobei "N" der ganzzahlige Index der Ressource "Ty
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Fügt der Systemregistrierung Informationen zu einer Typbibliothek hinzu. Wenn die Modul Instanz mehrere Typbibliotheken enthält, verwenden Sie die erste Version dieser Methode, um anzugeben, welche Typbibliothek verwendet werden soll.
 
@@ -146,7 +146,7 @@ HRESULT UnregisterServer(
 ### <a name="parameters"></a>Parameter
 
 *bregtypelib*<br/>
-TRUE, wenn die Registrierung der Typbibliothek aufgehoben werden soll. Der Standardwert ist FALSE.
+TRUE, wenn die Registrierung der Typbibliothek aufgehoben werden soll. Der Standardwert lautet "FALSE".
 
 *pclsid*<br/>
 Verweist auf die CLSID des Objekts, dessen Registrierung aufgehoben werden soll. Wenn der Wert NULL (der Standardwert) ist, wird die Registrierung aller Objekte in der Objekt Zuordnung aufgehoben.
@@ -155,7 +155,7 @@ Verweist auf die CLSID des Objekts, dessen Registrierung aufgehoben werden soll.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft die globale Funktion [atlcommoduleunregisterserver](server-registration-global-functions.md#atlcommoduleunregisterserver)auf.
 
@@ -173,7 +173,7 @@ HRESULT UnRegisterTypeLib();
 *lpszindex*<br/>
 Zeichenfolge im Format "\\\n", wobei "N" der ganzzahlige Index der Ressource "TypeLib" ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Entfernt Informationen zu einer Typbibliothek aus der Systemregistrierung. Wenn die Modul Instanz mehrere Typbibliotheken enthält, verwenden Sie die erste Version dieser Methode, um anzugeben, welche Typbibliothek verwendet werden soll.
 
@@ -181,7 +181,7 @@ Entfernt Informationen zu einer Typbibliothek aus der Systemregistrierung. Wenn 
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)<br/>
 [Klassen Übersicht](../../atl/atl-class-overview.md)

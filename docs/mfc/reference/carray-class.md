@@ -43,11 +43,11 @@ helpviewer_keywords:
 - CArray [MFC], SetSize
 ms.assetid: fead8b00-4cfd-4625-ad0e-251df62ba92f
 ms.openlocfilehash: f82dbf7dce2e14bf760bb76d23d23f667797ee0f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874510"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424596"
 ---
 # <a name="carray-class"></a>CArray-Klasse
 
@@ -68,17 +68,17 @@ Ein Vorlagen Parameter, der den Typ der im Array gespeicherten Objekte angibt. *
 *ARG_TYPE*<br/>
 Ein Vorlagen Parameter, der den Argumenttyp angibt, der verwendet wird, um auf im Array gespeicherte Objekte zuzugreifen. Häufig ein Verweis auf den *Typ*. *Arg_type* ist ein Parameter, der an `CArray`übergeben wird.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArray:: CArray](#carray)|Erstellt ein leeres Array.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArray:: Add](#add)|Fügt am Ende des Arrays ein Element hinzu; vergrößert das Array bei Bedarf.|
 |[CArray:: Append](#append)|Fügt ein anderes Array an das Array an. vergrößert das Array bei Bedarf|
@@ -87,7 +87,7 @@ Ein Vorlagen Parameter, der den Argumenttyp angibt, der verwendet wird, um auf i
 |[CArray:: freextra](#freeextra)|Gibt den gesamten nicht verwendeten Arbeitsspeicher über der aktuellen Obergrenze frei.|
 |[CArray:: GetAt](#getat)|Gibt den Wert an einem bestimmten Index zurück.|
 |[CArray:: GetCount](#getcount)|Ruft die Anzahl der Elemente im Array ab.|
-|[CArray:: GetData](#getdata)|Ermöglicht den Zugriff auf Elemente im Array. Kann den Wert NULL haben.|
+|[CArray:: GetData](#getdata)|Ermöglicht den Zugriff auf Elemente im Array. Kann NULL sein.|
 |[CArray:: GetSize](#getsize)|Ruft die Anzahl der Elemente im Array ab.|
 |[CArray:: GetUpperBound](#getupperbound)|Gibt den größten gültigen Index zurück.|
 |[CArray:: InsertAt](#insertat)|Fügt ein Element (oder alle Elemente in einem anderen Array) am angegebenen Index ein.|
@@ -100,11 +100,11 @@ Ein Vorlagen Parameter, der den Argumenttyp angibt, der verwendet wird, um auf i
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[operator[]](#operator_at)|Legt das Element am angegebenen Index fest oder ruft es ab.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Array Indizes beginnen immer an Position 0. Sie können entscheiden, ob die obere Grenze behoben oder das Array erweitert werden soll, wenn Sie Elemente hinter der aktuellen Grenze hinzufügen. Der Arbeitsspeicher wird der oberen Grenze zusammenhängend zugewiesen, auch wenn einige Elemente NULL sind.
 
@@ -130,7 +130,7 @@ Weitere Informationen zur Verwendung von `CArray`finden Sie im Artikel [Sammlung
 
 `CArray`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxtempl.h
 
@@ -154,7 +154,7 @@ Das Element, das diesem Array hinzugefügt werden soll.
 
 Der Index des hinzugefügten Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [SetSize](#setsize) mit einem `nGrowBy` Wert größer als 1 verwendet wurde, kann zusätzlicher Arbeitsspeicher zugewiesen werden. Die obere Grenze wird jedoch nur um 1 erhöht.
 
@@ -179,7 +179,7 @@ Quelle der Elemente, die an ein Array angefügt werden sollen.
 
 Der Index des ersten angefügten Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Arrays müssen denselben Typ aufweisen.
 
@@ -197,7 +197,7 @@ Erstellt ein leeres Array.
 CArray();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Array wächst jeweils ein Element.
 
@@ -218,7 +218,7 @@ void Copy(const CArray& src);
 *src*<br/>
 Quelle der Elemente, die in ein Array kopiert werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird aufgerufen, um die Elemente eines Arrays mit den Elementen eines anderen Arrays zu überschreiben.
 
@@ -246,7 +246,7 @@ Ein ganzzahliger Index, der größer oder gleich 0 und kleiner als oder gleich d
 
 Ein Verweis auf ein Array Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es wird verwendet, um den linksseitigen Zuweisungs Operator für Arrays zu implementieren.
 
@@ -262,7 +262,7 @@ Gibt zusätzlichen Arbeitsspeicher frei, der zugeordnet wurde, während das Arra
 void FreeExtra();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion hat keine Auswirkung auf die Größe oder die obere Grenze des Arrays.
 
@@ -291,7 +291,7 @@ Ein ganzzahliger Index, der größer oder gleich 0 und kleiner als oder gleich d
 
 Das Array Element, das sich derzeit an diesem Index befinden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein negativer Wert oder ein Wert, der größer als der von `GetUpperBound` zurückgegebene Wert ist, übergeben wird, führt dies zu einer fehlgeschlagenen
 
@@ -311,7 +311,7 @@ INT_PTR GetCount() const;
 
 Die Anzahl der Elemente im Array.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Methode auf, um die Anzahl der Elemente im Array abzurufen. Da Indizes NULL basiert sind, ist die Größe 1 größer als der größte Index. Wenn Sie diese Methode aufrufen, wird dasselbe Ergebnis wie bei der [CArray:: GetSize](#getsize) -Methode generiert.
 
@@ -337,7 +337,7 @@ Ein Vorlagen Parameter, der den Typ der Array Elemente angibt.
 
 Ein Zeiger auf ein Array Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn keine Elemente verfügbar sind, gibt `GetData` einen NULL-Wert zurück.
 
@@ -355,7 +355,7 @@ Gibt die Größe des Arrays zurück.
 INT_PTR GetSize() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Da Indizes NULL basiert sind, ist die Größe 1 größer als der größte Index. Wenn Sie diese Methode aufrufen, wird dasselbe Ergebnis wie bei der [CArray:: GetCount](#getcount) -Methode generiert.
 
@@ -371,7 +371,7 @@ Gibt die aktuelle obere Grenze dieses Arrays zurück.
 INT_PTR GetUpperBound() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Da Array Indizes NULL basiert sind, gibt diese Funktion einen Wert zurück, der kleiner als `GetSize`ist.
 
@@ -416,7 +416,7 @@ Ein ganzzahliger Index, der möglicherweise größer als der von [GetUpperBound]
 *pberwarray*<br/>
 Ein weiteres Array, das Elemente enthält, die diesem Array hinzugefügt werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beim Prozess wird das vorhandene Element an diesem Index (durch Inkrementieren des Indexes) nach oben verschoben, und alle darin liegenden Elemente werden verschoben.
 
@@ -457,7 +457,7 @@ Ein Vorlagen Parameter, der den Typ der Elemente in diesem Array angibt.
 *nIndex*<br/>
 Der Index des Elements, auf das zugegriffen werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Operator, der für Arrays aufgerufen wird, die nicht **konstant**sind, kann entweder auf der rechten Seite (r-Wert) oder auf der linken Seite (l-Wert) einer Zuweisungsanweisung verwendet werden. Die zweite, die für **Konstanten** Arrays aufgerufen wird, kann nur auf der rechten Seite verwendet werden.
 
@@ -490,7 +490,7 @@ Das alte Array von-Elementen.
 *nCount*<br/>
 Anzahl der Elemente im alten Array.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 *pnewdata* ist immer groß genug, um alle *pData* -Elemente aufzunehmen.
 
@@ -506,7 +506,7 @@ Entfernt alle Elemente aus diesem Array.
 void RemoveAll();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Array bereits leer ist, funktioniert die Funktion weiterhin.
 
@@ -532,7 +532,7 @@ Ein ganzzahliger Index, der größer oder gleich 0 und kleiner als oder gleich d
 *nCount*<br/>
 Die Anzahl der zu entfernenden Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im Prozess werden alle Elemente oberhalb der entfernten Elemente nach unten verschoben. Die obere Grenze des Arrays wird verringert, aber es wird kein Arbeitsspeicher freigegeben.
 
@@ -561,7 +561,7 @@ Ein Vorlagen Parameter, der den Typ der Argumente angibt, die zum Verweisen auf 
 *newElement*<br/>
 Der neue Elementwert, der an der angegebenen Position gespeichert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SetAt` bewirkt nicht, dass das Array vergrößert wird. Verwenden Sie " [tartatgrow](#setatgrow) ", wenn das Array automatisch vergrößert werden soll.
 
@@ -590,7 +590,7 @@ Ein Vorlagen Parameter, der den Typ der Elemente im Array angibt.
 *newElement*<br/>
 Das Element, das diesem Array hinzugefügt werden soll. Ein NULL-Wert ist zulässig.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Array wird bei Bedarf automatisch vergrößert (d. h., die obere Grenze wird an das neue Element angepasst).
 
@@ -616,7 +616,7 @@ Die neue Array Größe (Anzahl der Elemente). Muss größer oder gleich 0 sein.
 *ngrowby*<br/>
 Die Mindestanzahl der zuzuordnenden Element Slots, wenn eine Größen Erhöhung erforderlich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die neue Größe kleiner als die alte Größe ist, wird das Array abgeschnitten, und es wird der gesamte nicht verwendete Arbeitsspeicher freigegeben.
 
@@ -628,7 +628,7 @@ Der *ngrowby* -Parameter wirkt sich auf die interne Speicher Belegung aus, währ
 
   Weitere Informationen finden Sie im Beispiel für " [GetData](#getdata)".
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Sammlung](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

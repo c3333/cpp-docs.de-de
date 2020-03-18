@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operator&lt;= (stack)
 - std::operator== (stack)
 ms.openlocfilehash: 169698d30edd4a7995cb05e1909c1ffc38b0b6ef
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865898"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425070"
 ---
 # <a name="ltstackgt-operators"></a>&lt;stack&gt;-Operatoren
 
@@ -45,7 +45,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn Stacks oder Stacks ungleich sind, **FALSE**, wenn Stacks oder Stacks gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stapel-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Stacks sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -110,7 +110,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn der Stack links vom Operator kleiner als und ungleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -194,7 +194,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn der Stack links vom Operator kleiner als oder gleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als oder gleich“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -261,7 +261,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn Stacks oder Stacks gleich sind, **FALSE**, wenn Stacks oder Stacks ungleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Stacks sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -326,7 +326,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn der Stack links vom Operator größer als oder gleich dem Stack rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -395,7 +395,7 @@ Ein Objekt des Typs `stack`.
 
 **TRUE**, wenn der Stack links vom Operator strikt kleiner als der Stack rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Stack-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als oder gleich“ zwischen zwei Stack-Objekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 

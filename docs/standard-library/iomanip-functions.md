@@ -27,11 +27,11 @@ helpviewer_keywords:
 - std::setprecision [C++]
 - std::setw [C++]
 ms.openlocfilehash: 944834e40a399622b5c85d95100d4ca3c3c2da93
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856531"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426954"
 ---
 # <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt;-Funktionen
 
@@ -57,9 +57,9 @@ T7 get_money(Money& amount, bool use_intl);
 Der extrahierte Währungswert.
 
 *use_intl*\
-Wenn **true**, verwenden Sie das internationale Format. Der Standardwert ist **false**.
+Wenn **true**, verwenden Sie das internationale Format. Der Standardwert ist **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus dem Datenstrom `str`sich als `formatted input function` verhält, die die Element Funktion `get` für die Gebiets Schema-FAC`money_get` ette aufruft, die `str`zugeordnet ist, wobei *use_intl* verwendet wird, um das internationale Format anzugeben. Bei erfolgreicher Ausführung speichert der-Befehl den extrahierten monetären Wert in der *Summe* . Dann gibt der Manipulator `str` zurück.
 
@@ -82,7 +82,7 @@ Die Zeit in Form einer Zeitstruktur.
 *time_format*\
 Das gewünschte Format, das Sie verwenden, um den Zeitwert zu erhalten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `time_get` gehörige Gebietsschemafacet `str` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
 
@@ -107,7 +107,7 @@ Auf " **true** " festgelegt, wenn der Manipulator das internationale Format verw
 
 Gibt `str` zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `money_put` gehörige Gebietsschemafacet `str` auf. Bei erfolgreicher Ausführung fügt der-Befehl `amount` entsprechend formatiert ein und verwendet *use_intl* , um das internationale Format und `str.fill()`als Füll Element anzugeben. Dann gibt der Manipulator `str` zurück.
 
@@ -130,7 +130,7 @@ Der Zeitwert aus einer Zeitstruktur, der in den Stream geschrieben werden soll.
 *time_format*\
 Das gewünschte Format, das Sie verwenden, um den Zeitwert zu schreiben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `put` gehörige Gebietsschema `time_put` die Memberfunktion `str` auf. Die Output-Funktion verwendet *time_ptr* , um die Zeitstruktur anzugeben, und *time_format* , um den Anfang einer null-terminierten Format Zeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
 
@@ -156,7 +156,7 @@ Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Trennzeichen für den
 *Escape* -\
 Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Escapezeichen für Escapesequenzen in der Zeichenfolge verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe auch [Verwenden von Einfügeoperatoren und Festlegen des Formats](../standard-library/using-insertion-operators-and-controlling-format.md).
 
@@ -432,7 +432,7 @@ Die Breite des Anzeigefelds.
 
 Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Breite](../standard-library/ios-base-class.md#width)`(Wide)`aufruft und dann `str`zurückgibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit setw wird die Breite nur für das nächste Element im Stream festgelegt. Der Manipulator muss vor jedem Element eingefügt werden, dessen Breite festgelegt werden soll.
 
@@ -651,6 +651,6 @@ l4 = 4096
 l5 = 65536
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<iomanip>](../standard-library/iomanip.md)

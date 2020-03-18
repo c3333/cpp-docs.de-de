@@ -18,11 +18,11 @@ helpviewer_keywords:
 - ATL, dialog boxes
 ms.assetid: 817df483-3fa8-44e7-8487-72ba0881cd27
 ms.openlocfilehash: 548d2aed0644187b4b8dee1e472b581f1f92d6a1
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865055"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423393"
 ---
 # <a name="caxdialogimpl-class"></a>CAxDialogImpl-Klasse
 
@@ -46,11 +46,11 @@ Die von `CAxDialogImpl`abgeleitete Klasse.
 *Tbase*<br/>
 Die Basis Fenster Klasse für `CDialogImplBaseT`.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CAxDialogImpl:: AdviseSinkMap](#advisesinkmap)|Mit dieser Methode können Sie alle Einträge in der senderzuordnungs-Ereignis Zuordnung des Objekts anweisen oder deren Empfehlung aufheben.|
 |[CAxDialogImpl:: Create](#create)|Rufen Sie diese Methode auf, um ein Dialogfeld ohne Modus zu erstellen.|
@@ -63,11 +63,11 @@ Die Basis Fenster Klasse für `CDialogImplBaseT`.
 
 ### <a name="protected-data-members"></a>Geschützte Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CAxDialogImpl:: m_bModal](#m_bmodal)|Eine Variable, die nur in Debugbuilds vorhanden und auf true festgelegt ist, wenn das Dialogfeld modal ist.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 mit `CAxDialogImpl` können Sie ein modales oder nicht modales Dialogfeld erstellen. `CAxDialogImpl` stellt die Dialogfeld Prozedur bereit, in der die standardmäßige Meldungs Zuordnung verwendet wird, um Nachrichten an die entsprechenden Handler weiterzuleiten.
 
@@ -97,7 +97,7 @@ Weitere Informationen zu `CAxDialogImpl`finden Sie unter Häufig gestellte Frage
 
 `CAxDialogImpl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -142,7 +142,7 @@ Dieser Parameter wird nicht verwendet. Dieser Parameter wird von `CComControl`ü
 
 Das Handle für das neu erstellte Dialogfeld.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieses Dialogfeld wird automatisch an das `CAxDialogImpl` Objekt angefügt. Um ein modales Dialogfeld zu erstellen, rufen Sie [DoModal](#domodal)auf.
 
@@ -160,7 +160,7 @@ BOOL DestroyWindow();
 
 TRUE, wenn das Fenster erfolgreich zerstört wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nicht `DestroyWindow` aufgerufen werden, um ein modales Dialogfeld zu zerstören. Ruft stattdessen [EndDialog](#enddialog) auf.
 
@@ -186,7 +186,7 @@ in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG
 
 Wenn erfolgreich, der Wert des *nretcode* -Parameters, der im Aufrufen von [EndDialog](#enddialog); angegeben ist. andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieses Dialogfeld wird automatisch an das `CAxDialogImpl` Objekt angefügt.
 
@@ -209,7 +209,7 @@ in Der Wert, der von " [DoModal](#domodal)" zurückgegeben werden soll.
 
 TRUE, wenn das Dialogfeld zerstört wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `EndDialog` müssen über die Dialogfeld Prozedur aufgerufen werden. Nachdem das Dialogfeld zerstört wurde, verwendet Windows den Wert von *nretcode* als Rückgabewert für `DoModal`, der das Dialogfeld erstellt hat.
 
@@ -228,7 +228,7 @@ virtual DLGPROC GetDialogProc();
 
 Gibt einen Zeiger auf die `DialogProc` Rückruffunktion zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `DialogProc`-Funktion ist eine Anwendungs definierte Rückruffunktion.
 
@@ -261,7 +261,7 @@ Zeiger auf eine [msg](/windows/win32/api/winuser/ns-winuser-msg) -Struktur, die 
 
 Gibt true zurück, wenn die Nachricht verarbeitet wurde, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode soll innerhalb einer Nachrichten Schleife aufgerufen werden.
 
@@ -273,7 +273,7 @@ Eine Variable, die nur in Debugbuilds vorhanden und auf true festgelegt ist, wen
 bool m_bModal;
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CDialogImpl-Klasse](../../atl/reference/cdialogimpl-class.md)<br/>
 [Klassen Übersicht](../../atl/atl-class-overview.md)

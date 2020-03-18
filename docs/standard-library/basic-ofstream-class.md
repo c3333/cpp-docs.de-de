@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::basic_ofstream [C++], swap
 ms.assetid: 3bcc9c51-6dfc-4844-8fcc-22ef57c9dff1
 ms.openlocfilehash: a73803f25c4fb9e54703b8bca93e68fedb63074e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865865"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424062"
 ---
 # <a name="basic_ofstream-class"></a>basic_ofstream-Klasse
 
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 
 |Konstruktor|Beschreibung|
 |-|-|
-|[basic_ofstream](#basic_ofstream)|Erstellt ein Objekt vom Typ `basic_ofstream`.|
+|[basic_ofstream](#basic_ofstream)|Erstellt ein Objekt des Typs `basic_ofstream`.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
@@ -100,7 +100,7 @@ int main(int argc, char **argv)
 
 ## <a name="basic_ofstream"></a> basic_ofstream::basic_ofstream
 
-Erstellt ein Objekt vom Typ `basic_ofstream`.
+Erstellt ein Objekt des Typs `basic_ofstream`.
 
 ```cpp
 basic_ofstream();

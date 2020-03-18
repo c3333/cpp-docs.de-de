@@ -14,11 +14,11 @@ helpviewer_keywords:
 - std::swap [C++]
 - std::swap [C++]
 ms.openlocfilehash: b2be3e4a830113ee86a05fea0d39fd8e12ec3e9a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876137"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425196"
 ---
 # <a name="ltregexgt-functions"></a>&lt;regex&gt;-Funktionen
 
@@ -121,12 +121,12 @@ Die Übereinstimmungsergebnisse. Entspricht dem Elem-Typ: [smatch](../standard-l
 Zeiger auf den Anfang der Sequenz, die übereinstimmen soll. Wenn *ptr* `char*`ist, verwenden Sie `cmatch` und `regex`. Wenn *ptr* `wchar_t*` ist, verwenden Sie `wcmatch` und `wregex`.
 
 *erneut*\
-Der reguläre Ausdruck, mit dem eine Übereinstimmung bestehen soll. Geben Sie `regex` für `string` und `char*`oder `wregex` für `wstring` und `wchar_t*`ein.
+Der reguläre Ausdruck, der übereinstimmen soll. Geben Sie `regex` für `string` und `char*`oder `wregex` für `wstring` und `wchar_t*`ein.
 
 *Str*\
 Zeichenfolge, die übereinstimmen soll. Entspricht dem Typ von *Elem*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jede Vorlagen Funktion gibt nur dann true zurück, wenn der gesamte operandensequenz- *Str* genau mit *dem Argument für*reguläre Ausdrücke übereinstimmt. Verwenden Sie [regex_search](../standard-library/regex-functions.md#regex_search) , um eine Teil Zeichenfolge innerhalb einer Zielsequenz abzugleichen und `regex_iterator`, um mehrere Übereinstimmungen zu suchen Die Funktionen, die ein `match_results`-Objekt übernehmen, legen dessen Member fest, um wiederzugeben, ob die Suche nach der Übereinstimmung erfolgreich war, und wenn ja, was die verschiedenen Erfassungsgruppen im regulären Ausdruck erfasst haben.
 
@@ -251,12 +251,12 @@ Ende der Sequenz, die übereinstimmen soll.
 Der Ausgabeiterator.
 
 *erneut*\
-Der reguläre Ausdruck, mit dem eine Übereinstimmung bestehen soll.
+Der reguläre Ausdruck, der übereinstimmen soll.
 
 *Str*\
 Zeichenfolge, die übereinstimmen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion erstellt eine [regex_iterator-Klassen](../standard-library/regex-iterator-class.md) Objekt `iter(first, last, re, flags)` und verwendet diese, um den Eingabebereich `[first, last)` in eine Reihe von unter Sequenzen `T0 M0 T1 M1...TN-1 MN-1 TN`aufzuteilen, wobei `Mn` die vom Iterator erkannte ten-Entsprechung ist. Wenn keine Übereinstimmungen gefunden werden, ist `T0` der gesamte Bereich für die Eingabe und `N` ist null. Wenn `(flags & format_first_only) != 0` nur die erste Übereinstimmung verwendet, sind `T1` alle Eingabetexte, die der Übereinstimmung folgen und `N` ist 1. Für jede `i` im Bereich `[0, N)`, wenn `(flags & format_no_copy) == 0`, wird der Text im Bereich `Ti` in den Iterator *out*kopiert. Anschließend wird `m.format(out, fmt, flags)`aufgerufen, wobei `m` das `match_results` Objekt ist, das vom Iteratorobjekt `iter` für die unter Sequenz `Mi`zurückgegeben wird. Wenn `(flags & format_no_copy) == 0` wird der Text im Bereich `TN` in den Iterator *out*kopiert. Die *Funktion gibt zurück*.
 
@@ -390,12 +390,12 @@ Die Übereinstimmungsergebnisse.
 Zeiger auf den Anfang der Sequenz, die übereinstimmen soll.
 
 *erneut*\
-Der reguläre Ausdruck, mit dem eine Übereinstimmung bestehen soll.
+Der reguläre Ausdruck, der übereinstimmen soll.
 
 *Str*\
 Zeichenfolge, die übereinstimmen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jede Vorlagen Funktion gibt nur dann true zurück, wenn eine Suche nach dem regulären *Ausdrucks Argument in* der operandensequenz erfolgreich ist. Die Funktionen, die ein `match_results`-Objekt übernehmen, legen dessen Member fest, um wiederzugeben, ob die Suche nach der Übereinstimmung erfolgreich war, und wenn ja, was die verschiedenen Erfassungsgruppen im regulären Ausdruck erfasst haben.
 
@@ -479,7 +479,7 @@ Der zu entsprechende Elementtyp.
 *Rxcharakteristika* -\
 Merkmalklasse für Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktionen tauschen die Inhalte ihrer jeweiligen Argumente in konstanter Zeit und lösen keine Ausnahmen aus.
 
@@ -518,7 +518,7 @@ length == 3
 string == aaa
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<regex>](../standard-library/regex.md)\
 [regex_constants-Klasse](../standard-library/regex-constants-class.md)\

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - std::istream_iterator [C++], traits_type
 ms.assetid: fb52a8cd-7f71-48d1-b73e-4b064e2a8d16
 ms.openlocfilehash: 941d625e388edc75dfe25a2de0e609c6d955ff19
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78869889"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425652"
 ---
 # <a name="istream_iterator-class"></a>istream_iterator-Klasse
 
@@ -52,13 +52,13 @@ Nachdem ein Objekt der Klasse istream_iterator mit einem ungleich NULL gespeiche
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[istream_iterator](#istream_iterator)|Erstellt entweder einen End-of-Stream-Iterator als Standard-`istream_iterator` oder ein `istream_iterator`, der für den Streamtyp des Iterators initialisiert wird, von dem gelesen wird.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der für den Zeichentyp von `istream_iterator` bereitgestellt wird.|
 |[istream_type](#istream_type)|Ein Typ, der für den Streamtyp von `istream_iterator` bereitgestellt wird.|
@@ -66,13 +66,13 @@ Nachdem ein Objekt der Klasse istream_iterator mit einem ungleich NULL gespeiche
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[operator*](#op_star)|Der Dereferenzierungsoperator gibt das gespeicherte Objekt vom Typ `Type` zurück, das vom `istream_iterator` adressiert wird.|
 |[operator->](#op_arrow)|Gibt den Wert eines Members zurück, falls vorhanden.|
 |[operator++](#op_add_add)|Extrahiert entweder ein inkrementiertes Objekt im Eingabestream oder kopiert das Objekt vor dem Inkrementieren und gibt die Kopie zurück.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<Iterator >
 
@@ -86,7 +86,7 @@ Ein Typ, der für den Zeichentyp von `istream_iterator` bereitgestellt wird.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Chartype`dar.
 
@@ -141,7 +141,7 @@ istream_iterator(istream_type& _Istr);
 *_Istr*\
 Der zu lesende Eingabestream verwendet `istream_iterator` zum Initialisieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor initialisiert den Eingabestreamzeiger mit einem NULL-Zeiger und erstellt einen End-of-Stream-Iterator. Der zweite Konstruktor initialisiert den Eingabestreamzeiger mit *& _Istr*und versucht dann, ein Objekt vom Typ `Type`zu extrahieren und zu speichern.
 
@@ -189,7 +189,7 @@ Ein Typ, der für den Streamtyp von `istream_iterator` bereitgestellt wird.
 typedef basic_istream<CharType, Traits> istream_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für `basic_istream`\< **CharType**, **Merkmale**>.
 
@@ -253,7 +253,7 @@ const Type* operator->() const;
 
 Der Wert eines Members, falls vorhanden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `i->m` entspricht `(*i).m`
 
@@ -345,7 +345,7 @@ Ein Typ, der für den Merkmaltyp von `istream_iterator` bereitgestellt wird.
 typedef Traits traits_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ stellt ein Synonym für den Vorlagenparameter *Merkmale* dar.
 
@@ -384,7 +384,7 @@ int main( )
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [input_iterator_tag-Struktur](../standard-library/input-iterator-tag-struct.md)\
 [iterator-Struktur](../standard-library/iterator-struct.md)\

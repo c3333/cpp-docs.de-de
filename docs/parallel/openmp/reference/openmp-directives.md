@@ -30,11 +30,11 @@ helpviewer_keywords:
 - threadprivate OpenMP directive
 ms.assetid: 0562c263-344c-466d-843e-de830d918940
 ms.openlocfilehash: 4db341cf58884263e414e24aacf888c8c88e57cc
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78882903"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424152"
 ---
 # <a name="openmp-directives"></a>OpenMP-Direktiven
 
@@ -56,7 +56,7 @@ Für Master und Synchronisierung:
 |Directive|Beschreibung|
 |---------|-----------|
 |[master](#master)|Gibt an, dass nur der Master Thread einen Abschnitt des Programms ausführen soll.|
-|[Kritisch](#critical)|Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.|
+|[critical](#critical)|Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.|
 |[barrier](#barrier)|Synchronisiert alle Threads in einem Team. alle Threads werden an der Barriere angehalten, bis alle Threads die Barriere ausführen.|
 |[atomic](#atomic)|Gibt an, dass eine Speicheradresse atomarisch aktualisiert wird.|
 |[flush](#flush-openmp)|Gibt an, dass alle Threads dieselbe Ansicht des Arbeitsspeichers für alle freigegebenen Objekte haben.|
@@ -540,7 +540,7 @@ Die `parallel`-Direktive unterstützt die folgenden Klauseln:
 - [if](openmp-clauses.md#if-openmp)
 - [private](openmp-clauses.md#private-openmp)
 - [firstprivate](openmp-clauses.md#firstprivate)
-- [Standardwert](openmp-clauses.md#default-openmp)
+- [default](openmp-clauses.md#default-openmp)
 - [Genu](openmp-clauses.md#shared-openmp)
 - [copyin](openmp-clauses.md#copyin)
 - [reduction](openmp-clauses.md#reduction)

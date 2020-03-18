@@ -105,11 +105,11 @@ helpviewer_keywords:
 - CMFCTabCtrl [MFC], m_bEnableActivate
 ms.assetid: d441385d-2c72-4203-96fa-deae2273da35
 ms.openlocfilehash: 74f5c6e0471682a6b96e82cb2f80cc53155866ca
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883662"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425760"
 ---
 # <a name="cmfctabctrl-class"></a>CMFCTabCtrl Class
 
@@ -121,18 +121,18 @@ Die `CMFCTabCtrl`-Klasse stellt Funktionen für ein Registerkarten-Steuerelement
 class CMFCTabCtrl : public CMFCBaseTabCtrl
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|`CMFCTabCtrl::CMFCTabCtrl`|Der Standardkonstruktor.|
+|`CMFCTabCtrl::CMFCTabCtrl`|Standardkonstruktor|
 |`CMFCTabCtrl::~CMFCTabCtrl`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctabctrl:: activatemditab](#activatemditab)|Zeigt die angegebene Registerkarte des aktuellen Registerkarten-Steuer Elements an und legt den Fokus auf diese Registerkarte fest.|
 |[Cmfctabctrl:: allowdestroyemptytabbedpane](#allowdestroyemptytabbedpane)||
@@ -191,13 +191,13 @@ class CMFCTabCtrl : public CMFCBaseTabCtrl
 |`CMFCTabCtrl::SwapTabs`|Vertauscht ein paar von Registerkarten. (Überschreibt [cmfcbasetabctrl:: Swap Tabs](../../mfc/reference/cmfcbasetabctrl-class.md#swaptabs).)|
 |[Cmfctabctrl:: synchronizescrollbar](#synchronizescrollbar)|Zeichnet eine horizontale Schiebe Leiste auf einem Registerkarten-Steuerelement, das flache Registerkarten anzeigt.|
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctabctrl:: m_bEnableActivate](#m_benableactivate)|Verhindert, dass die aktive Ansicht den Fokus verliert, wenn eine neue Registerkarte eingefügt und aktiviert wird.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die `CMFCTabCtrl`-Klasse unterstützt Folgendes:
 
@@ -248,7 +248,7 @@ Im folgenden Beispiel wird veranschaulicht, wie verschiedene Methoden in der `CM
 [!code-cpp[NVC_MFC_StateCollection#1](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_1.h)]
 [!code-cpp[NVC_MFC_StateCollection#3](../../mfc/reference/codesnippet/cpp/cmfctabctrl-class_2.cpp)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxtabctrl. h
 
@@ -277,7 +277,7 @@ virtual BOOL AllowDestroyEmptyTabbedPane() const;
 
 Immer TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="autosizewindow"></a>Cmfctabctrl:: autosizewindow
 
@@ -290,9 +290,9 @@ void AutoSizeWindow(BOOL bAutoSize = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *Baugröße*<br/>
-in TRUE, um die Größe der Registerkarten-Steuerelemente automatisch zu ändern andernfalls false. Der Standardwert ist TRUE.
+in TRUE, um die Größe der Registerkarten-Steuerelemente automatisch zu ändern andernfalls false. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="create"></a>Cmfctabctrl:: Create
 
@@ -311,7 +311,7 @@ BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *style*<br/>
-in Der Stil des Registerkarten-Steuer Elements. Weitere Informationen finden Sie in den Hinweisen.
+in Der Stil des Registerkarten-Steuer Elements. Weitere Informationen finden Sie unter Hinweise.
 
 *Rect*<br/>
 in Ein Rechteck, das das Register Steuerelement umschließt.
@@ -323,20 +323,20 @@ in Ein Zeiger auf ein übergeordnetes Fenster. Darf nicht NULL sein.
 in Die ID des Registerkarten-Steuer Elements.
 
 *location*<br/>
-in Der Speicherort von Registerkarten. Der Standardwert ist LOCATION_BOTTOM. Weitere Informationen finden Sie in den Hinweisen.
+in Der Speicherort von Registerkarten. Der Standardwert ist LOCATION_BOTTOM. Weitere Informationen finden Sie unter Hinweise.
 
 *bclosebtn*<br/>
-in TRUE, wenn die Schaltfläche Schließen auf der Registerkarte angezeigt werden soll. andernfalls false. Der Standardwert ist FALSE.
+in TRUE, wenn die Schaltfläche Schließen auf der Registerkarte angezeigt werden soll. andernfalls false. Der Standardwert lautet "FALSE".
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn erfolgreich; andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle werden die Werte beschrieben, die Sie für den *Style* -Parameter angeben können.
 
-|Style|BESCHREIBUNG|
+|Stil|Beschreibung|
 |-----------|-----------------|
 |STYLE_3D|Erstellt ein Registerkarten-Steuerelement mit einem dreidimensionalen Erscheinungsbild.|
 |STYLE_FLAT|Erstellt ein Registerkarten-Steuerelement mit flachen Registerkarten.|
@@ -348,7 +348,7 @@ In der folgenden Tabelle werden die Werte beschrieben, die Sie für den *Style* 
 
 In der folgenden Tabelle sind die Werte aufgelistet, die Sie für den *Location* -Parameter angeben können.
 
-|Location|BESCHREIBUNG|
+|Location|Beschreibung|
 |--------------|-----------------|
 |LOCATION_BOTTOM|Registerkarten befinden sich am unteren Rand des Registerkarten-Steuer Elements.|
 |LOCATION_TOP|Registerkarten befinden sich am oberen Rand des Registerkarten-Steuer Elements.|
@@ -373,7 +373,7 @@ virtual void CalcRectEdit(CRect& rectEdit);
 *rectedit*<br/>
 in Ein Rechteck, das den Bereich einer Registerkarte angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird aufgerufen, wenn Sie die Bezeichnung einer Registerkarte ändern. Diese Methode defliert die linke und die Rechte Seite des angegebenen Rechtecks um die Hälfte der aktuellen Tabulator Höhe und entleert den oberen und unteren Rand um eine Einheit.
 
@@ -388,7 +388,7 @@ void EnableActiveTabCloseButton(BOOL bEnable=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *benabel*<br/>
-in TRUE, wenn die Schaltfläche Schließen auf der aktiven Registerkarte angezeigt werden soll. "False", um die Schaltfläche "Schließen" in der oberen rechten Ecke des Registerkarten Bereichs anzuzeigen. Der Standardwert ist TRUE.
+in TRUE, wenn die Schaltfläche Schließen auf der aktiven Registerkarte angezeigt werden soll. "False", um die Schaltfläche "Schließen" in der oberen rechten Ecke des Registerkarten Bereichs anzuzeigen. Der Standardwert lautet TRUE.
 
 ##  <a name="enableinplaceedit"></a>Cmfctabctrl:: enableinplaceedit
 
@@ -403,7 +403,7 @@ virtual void EnableInPlaceEdit(BOOL bEnable);
 *benabel*<br/>
 in TRUE, um bearbeitbare Registerkarten Bezeichnungen zu aktivieren. FALSE, um bearbeitbare Registerkarten Bezeichnungen zu deaktivieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="enabletabdocumentsmenu"></a>Cmfctabctrl:: enabletabdocumentsmenu
 
@@ -416,9 +416,9 @@ void EnableTabDocumentsMenu(BOOL bEnable=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *benabel*<br/>
-in "True", um ein Popup Menü mit Fenster Bezeichnungen im Registerkarten Format anzuzeigen. FALSE zum Anzeigen von vorwärts-und rückwärts Bild Lauf Schaltflächen. Der Standardwert ist TRUE.
+in "True", um ein Popup Menü mit Fenster Bezeichnungen im Registerkarten Format anzuzeigen. FALSE zum Anzeigen von vorwärts-und rückwärts Bild Lauf Schaltflächen. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Benutzer auf eine Registerkarten Bezeichnung klickt, zeigt das Framework das entsprechende Fenster im Registerkarten Format an. Wenn die Registerkarten Bezeichnung sichtbar ist, wird das Fenster im Registerkarten Format geöffnet, ohne die Position zu ändern. Wenn der Benutzer ein Dokument aus dem Popupmenü auswählt und das entsprechende Fenster im Registerkarten Format außerhalb des Bildschirms angezeigt wird, wird das Fenster im Registerkarten Format zur ersten Registerkarte.
 
@@ -439,7 +439,7 @@ in Der null basierte Index einer Registerkarte.
 
 TRUE, wenn der Vorgang erfolgreich ist. FALSE, wenn der *ITAB* -Parameter Index ungültig ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um sicherzustellen, dass die angegebene Registerkarte sichtbar ist. Das Registerkarten-Steuerelement führt einen Bildlauf nach Bedarf aus.
 
@@ -472,7 +472,7 @@ virtual int GetFirstVisibleTabNum() const;
 
 Der null basierte Index einer Registerkarte im Registerkarten-Steuerelement.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode nur, wenn das Registerkarten-Steuerelement im Stil von Microsoft OneNote angezeigt wird. Verwenden Sie die [cmfctabctrl:: isonenotestyle](#isonenotestyle) -Methode, um den Stil zu bestimmen.
 
@@ -500,7 +500,7 @@ CScrollBar* GetScrollBar();
 
 Ein Zeiger auf ein Bild Lauf Leiste-Objekt oder ein NULL-Wert, wenn das Registerkarten-Steuerelement nicht mithilfe des STYLE_FLAT_SHARED_HORZ_SCROLL Stils erstellt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um auf die eingebettete Bild Lauf Leiste des Register Steuer Elements zuzugreifen. Ein ScrollBar-Objekt wird nur erstellt, wenn das Registerkarten-Steuerelement über den STYLE_FLAT_SHARED_HORZ_SCROLL Stil verfügt.
 
@@ -522,7 +522,7 @@ vorgenommen Wenn diese Methode zurückgegeben wird, enthält dieser Verweis ein 
 *recttabareabottom*<br/>
 vorgenommen Wenn diese Methode zurückgegeben wird, enthält dieser Verweis ein Rechteck, das den unteren Tabstopp-Bezeichnungs Bereich umschließt. Das Rechteck befindet sich in Client Koordinaten. Dieser Verweis ist leer, wenn im unteren Bereich des Registerkarten-Steuer Elements kein Tabstopp Zeichenbereich vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um die Größe und Position des Registerkarten Bereichs im Fenster im Registerkarten Format zu bestimmen.
 
@@ -538,7 +538,7 @@ int GetTabMaxWidth() const;
 
 Maximale Breite einer Registerkarte in Pixel. Wenn der Rückgabewert 0 (null) ist, ist die Registerkarten Breite unbegrenzt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfctabctrl:: settabmaxwidth](#settabmaxwidth) -Methode, um die maximale Tabulator Breite festzulegen.
 
@@ -580,7 +580,7 @@ void GetWndArea(CRect& rect) const;
 *Rect*<br/>
 [in, out] Wenn diese Methode zurückgegeben wird, enthält dieser Parameter ein Rechteck, das das aktuelle Registerkarten-Steuerelement umschließt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hideactivewindowhorzscrollbar"></a>Cmfctabctrl:: hideactivewindowhorzscrollbar
 
@@ -590,7 +590,7 @@ Blendet die horizontale Schiebe Leiste im aktiven Fenster aus, sofern vorhanden.
 void HideActiveWindowHorzScrollBar();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um zu verhindern, dass das Registerkarten-Steuerelement blinken, wenn der Benutzer zwischen Registerkarten-Steuer Seiten wechselt
 
@@ -605,9 +605,9 @@ void HideInactiveWindow(BOOL bHide = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *Bhide*<br/>
-in TRUE, wenn ein inaktives Fenster nicht angezeigt werden soll. FALSE zum Anzeigen eines inaktiven Fensters. Der Standardwert ist TRUE.
+in TRUE, wenn ein inaktives Fenster nicht angezeigt werden soll. FALSE zum Anzeigen eines inaktiven Fensters. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hidenotabs"></a>Cmfctabctrl:: hibezeichtabstopps
 
@@ -620,9 +620,9 @@ void HideNoTabs(BOOL bHide=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *Bhide*<br/>
-in TRUE, um das Zeichnen des Registerkarten Bereichs zu aktivieren. FALSE, um das Zeichnen zu deaktivieren. Der Standardwert ist TRUE.
+in TRUE, um das Zeichnen des Registerkarten Bereichs zu aktivieren. FALSE, um das Zeichnen zu deaktivieren. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hidesingletab"></a>Cmfctabctrl:: hidesintons ab
 
@@ -637,7 +637,7 @@ virtual void HideSingleTab(BOOL bHide=TRUE);
 *Bhide*<br/>
 in TRUE, wenn für ein einzelnes Fenster im Registerkarten Format keine Registerkarte gezeichnet werden soll. FALSE, wenn eine einzelne Registerkarte gezeichnet werden soll. Der Standardwert ist "true".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isactiveinmditabgroup"></a>Cmfctabctrl:: isactiveinmditabgroup
 
@@ -651,7 +651,7 @@ BOOL IsActiveInMDITabGroup() const;
 
 TRUE, wenn die aktuelle Registerkarte eines Registerkarten-Steuer Elements die aktive Registerkarte in einer MDI-Registerkarten Gruppe ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können mehrere Dokument Fenster entweder in vertikalen oder horizontalen Registerkarten Gruppen organisieren und Dokumente problemlos zwischen Registerkarten gruppieren.
 
@@ -667,7 +667,7 @@ BOOL IsActiveTabBoldFont() const;
 
 TRUE, wenn die aktive Registerkarte mit der Fett Schrift angezeigt wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfctabctrl:: abtactivetabboldfont](#setactivetabboldfont) -Methode, um die Schriftart der aktiven Registerkarte zu ändern.
 
@@ -683,7 +683,7 @@ virtual BOOL IsActiveTabCloseButton() const;
 
 TRUE, wenn die Schaltfläche Schließen auf der aktiven Registerkarte angezeigt wird. FALSE, wenn die Schaltfläche Schließen in der oberen rechten Ecke des Registerkarten Bereichs angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isdrawframe"></a>Cmfctabctrl:: isdrawframe
 
@@ -697,7 +697,7 @@ BOOL IsDrawFrame() const;
 
 TRUE, wenn ein Frame Rechteck gezeichnet wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfctabctrl:: setdrawframe](#setdrawframe) -Methode, um das Zeichnen eines Frame Rechtecks zu aktivieren oder zu deaktivieren.
 
@@ -713,7 +713,7 @@ BOOL IsFlatFrame() const;
 
 TRUE, wenn der Rahmen um den Registerkarten Bereich flach ist. FALSE, wenn der Frame dreidimensional ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfctabctrl:: setflatframe](#setflatframe) -Methode, um zu ändern, wie der Rahmen gezeichnet wird.
 
@@ -777,7 +777,7 @@ BOOL IsSharedScroll() const;
 
 TRUE, wenn das Registerkarten-Steuerelement eine freigegebene Schiebe Leiste aufweist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode gibt true zurück, wenn der *Style* -Parameter der [cmfctabctrl:: Create](#create) -Methode STYLE_FLAT_SHARED_HORZ_SCROLL ist.
 
@@ -793,7 +793,7 @@ BOOL IsTabDocumentsMenu() const;
 
 TRUE, wenn Fenster im Registerkarten Format mit einem Popupmenü von Fenster Bezeichnungen im Registerkarten Format dargestellt werden. FALSE, wenn Fenster im Registerkarten Format mithilfe von vorwärts-und rückwärts Bild Lauf Schaltflächen verschoben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die [cmfctabctrl:: enabletabdocumentsmenu](#enabletabdocumentsmenu) -Methode, um die Methode für den Bildlauf im Registerkarten Fenster anzugeben.
 
@@ -809,7 +809,7 @@ virtual BOOL IsVS2005Style() const;
 
 TRUE, wenn Registerkarten mit dem Stil von Visual Studio 2005 gezeichnet werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie den *Style* -Parameter der [cmfctabctrl:: Create](#create) -Methode, um anzugeben, wie Registerkarten gezeichnet werden.
 
@@ -821,9 +821,9 @@ Verhindert, dass die aktive Ansicht den Fokus verliert, wenn eine neue Registerk
 static BOOL m_bEnableActivate;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Fokus wird normalerweise von einem neuen Fenster im Registerkarten Format übernommen, wenn die Registerkarte eingefügt und aktiviert wird. Legen Sie die `CMFCTabCtrl::m_bEnableActivate` Member-Variable auf false fest, um den ursprünglichen Fokus beizubehalten. Der Standardwert ist TRUE.
+Der Fokus wird normalerweise von einem neuen Fenster im Registerkarten Format übernommen, wenn die Registerkarte eingefügt und aktiviert wird. Legen Sie die `CMFCTabCtrl::m_bEnableActivate` Member-Variable auf false fest, um den ursprünglichen Fokus beizubehalten. Der Standardwert lautet TRUE.
 
 ##  <a name="modifytabstyle"></a>Cmfctabctrl:: modifytabstyle
 
@@ -842,11 +842,11 @@ in Einer der Enumerationswerte, der die Darstellung des Registerkarten-Steuer El
 
 Immer TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert des *Style* -Parameters kann einer der folgenden `CMFCTabCtrl::Style` Enumerationen sein.
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |STYLE_3D|Zeigt dreidimensionale, rechteckige Registerkarten an, die über runden Ecken verfügen.|
 |STYLE_3D_ONENOTE|Zeigt dreidimensionale Registerkarten an, die eine vertikale Seite und eine schräge Seite haben und über abgerundete Ecken verfügen.|
@@ -883,7 +883,7 @@ in Enthält die aktuelle Position des Cursors in Client Koordinaten.
 
 Immer DROPEFFECT_NONE. Dies bedeutet, dass das Ablage Ziel die Daten nicht akzeptieren kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um einen Drag & Drop-Vorgang zu unterstützen. Überschreiben Sie diese Methode, um ein benutzerdefiniertes Verhalten zu implementieren.
 
@@ -915,7 +915,7 @@ in Die aktuelle Mausposition.
 
 Immer DROPEFFECT_NONE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Methode mit Ihrer benutzerdefinierten Implementierung. Weitere Informationen finden Sie unter der [CView:: OnDragOver](../../mfc/reference/cview-class.md#ondragover) -Methode.
 
@@ -932,7 +932,7 @@ virtual void OnShowTabDocumentsMenu(CPoint point);
 *Punkt*<br/>
 in Die Koordinaten des Orts, an dem das Popup Menü angezeigt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setactiveinmditabgroup"></a>Cmfctabctrl:: abtativeinmditabgroup
 
@@ -947,7 +947,7 @@ void SetActiveInMDITabGroup(BOOL bActive);
 *bAktiv*<br/>
 in TRUE, um die aktuelle Registerkarte zur aktiven Registerkarte zu machen. FALSE, um die aktuelle Registerkarte inaktiv zu machen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können mehrere Dokument Fenster entweder in vertikalen oder horizontalen Registerkarten Gruppen organisieren und Dokumente problemlos zwischen Registerkarten gruppieren.
 
@@ -968,7 +968,7 @@ in Gibt den NULL basierten Index der zu aktivierenden Registerkarte an.
 
 TRUE, wenn die angegebene Registerkarte aktiv gemacht wurde. FALSE, wenn der angegebene *ITAB* -Parameterwert ungültig ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dadurch wird die `AFX_WM_CHANGE_ACTIVE_TAB` Benachrichtigung an das übergeordnete Fenster und den Rahmen des Registerkarten-Steuer Elements des übergeordneten Elements gesendet.
 
@@ -985,9 +985,9 @@ void SetActiveTabBoldFont(BOOL bIsBold=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bisbold*<br/>
-in TRUE, wenn zum Anzeigen der Bezeichnung der aktiven Registerkarte eine Fett Schrift verwendet werden soll. FALSE, wenn die Standard Schriftart zum Anzeigen der Bezeichnung verwendet werden soll. Der Standardwert ist TRUE.
+in TRUE, wenn zum Anzeigen der Bezeichnung der aktiven Registerkarte eine Fett Schrift verwendet werden soll. FALSE, wenn die Standard Schriftart zum Anzeigen der Bezeichnung verwendet werden soll. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setdrawframe"></a>Cmfctabctrl:: setdrawframe
 
@@ -1000,9 +1000,9 @@ void SetDrawFrame(BOOL bDraw=TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bdraw*<br/>
-in TRUE, um ein Rahmen Rechteck um einen eingebetteten Balken anzuzeigen. andernfalls false. Der Standardwert ist TRUE.
+in TRUE, um ein Rahmen Rechteck um einen eingebetteten Balken anzuzeigen. andernfalls false. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setflatframe"></a>Cmfctabctrl:: setflatframe
 
@@ -1017,12 +1017,12 @@ void SetFlatFrame(
 ### <a name="parameters"></a>Parameter
 
 *Bflat*<br/>
-in TRUE, um einen flachen (2D-) Rahmen um den Registerkarten Bereich zu zeichnen. FALSE, um einen dreidimensionalen Frame (3D) zu zeichnen. Der Standardwert ist TRUE.
+in TRUE, um einen flachen (2D-) Rahmen um den Registerkarten Bereich zu zeichnen. FALSE, um einen dreidimensionalen Frame (3D) zu zeichnen. Der Standardwert lautet TRUE.
 
 *brepaint*<br/>
-in TRUE, um das Fenster sofort neu zu zeichnen. andernfalls false. Der Standardwert ist TRUE.
+in TRUE, um das Fenster sofort neu zu zeichnen. andernfalls false. Der Standardwert lautet TRUE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setimagelist"></a>Cmfctabctrl:: SetImageList
 
@@ -1043,7 +1043,7 @@ virtual BOOL SetImageList(HIMAGELIST hImageList);
 in Die ID einer Bitmap-Ressource, die die Bildliste enthält.
 
 *verschoben*<br/>
-in Die Breite jedes Bilds in Pixel. Der Standardwert ist 15.
+in Die Breite jedes Bilds in Pixel. Der Standardwert lautet 15.
 
 *clrtransp*<br/>
 in Die transparente Bildfarbe. Die Teile des Bilds, die diese Farbe aufweisen, sind transparent. Der Standardwert ist die Farbe Magenta, RGB (255, RGB).
@@ -1055,7 +1055,7 @@ in Ein Handle für eine vorab geladene Bildliste.
 
 TRUE, wenn diese Methode erfolgreich ist. FALSE, wenn das Registerkarten-Steuerelement mithilfe eines flachen Formats erstellt wird, oder, wenn die erste Methoden Überladung die durch den *uiid* -Parameter angegebene Bitmap nicht laden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um eine Bildliste für das Registerkarten-Steuerelement festzulegen. Die Bilder aus der Bildliste werden neben der Registerkarten Bezeichnung angezeigt. Diese Methode berechnet die Höhe der Registerkarte neu, sodass die Größe der Registerkarte sowohl das Bild als auch den Text enthält.
 
@@ -1074,11 +1074,11 @@ void SetResizeMode(ResizeMode resizeMode);
 *resizeMode*<br/>
 in Einer der `CMFCTabCtrl::ResizeMode` Enumerationswerte, der angibt, wie die Größe des Registerkarten-Steuer Elements geändert werden kann. Eine Liste möglicher Werte finden Sie in der Tabelle unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *ResizeMode* -Parameter kann einen der folgenden `ResizeMode` Enumerationswerte aufweisen.
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |RESIZE_NO|Die Größe des Registerkarten Steuer Elements kann nicht geändert werden.|
 |RESIZE_VERT|Die Größe des Registerkarten-Steuer Elements kann vertikal, aber nicht horizontal geändert werden.|
@@ -1097,7 +1097,7 @@ void SetTabMaxWidth(int nTabMaxWidth);
 *ntabmaxwidth*<br/>
 in Die maximale Tabulator Breite in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um die Breite der einzelnen Registerkarten in einem Fenster im Registerkarten Format einzuschränken. Diese Methode ist nützlich, wenn Registerkarten sehr lange Bezeichnungen aufweisen. Der [cmfctabctrl](../../mfc/reference/cmfctabctrl-class.md) -Klassenkonstruktor initialisiert die maximale Tabulator Breite auf 0, was bedeutet, dass die Breite nicht begrenzt ist.
 
@@ -1131,11 +1131,11 @@ vorgenommen Zeiger auf eine [ScrollInfo](/windows/win32/api/winuser/ns-winuser-s
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wirkt sich nur auf ein Registerkarten-Steuerelement aus, das flattabs anzeigt Die Bild Lauf Leiste wirkt sich auf alle Registerkarten gleichzeitig aus.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
