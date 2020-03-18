@@ -8,12 +8,12 @@ helpviewer_keywords:
 - throw keyword [C++]
 - noexcept keyword [C++]
 ms.assetid: 4d3276df-6f31-4c7f-8cab-b9d2d003a629
-ms.openlocfilehash: 8245704de16ba94dbe0479a3c19d2a83fb170989
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 4c7cc6027a3af4c300b88389cb29e3ccf091514e
+ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245881"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79509411"
 ---
 # <a name="exception-specifications-throw-noexcept-c"></a>Ausnahme Spezifikationen (throw, noaußer) (C++)
 
@@ -24,11 +24,13 @@ Vor c++ 17 gab es zwei Arten von Ausnahme Spezifikationen. Die *noaußer-Spezifi
 ```cpp
 void MyFunction(int i) throw();
 ```
+
 weist den Compiler an, dass die Funktion keine Ausnahmen auslöst. Im **/Std: c++ 14** -Modus kann dies jedoch zu undefiniertem Verhalten führen, wenn die Funktion eine Ausnahme auslöst. Daher wird empfohlen, anstelle des obigen Operators den [noaußer](../cpp/noexcept-cpp.md) -Operator zu verwenden:
 
 ```cpp
 void MyFunction(int i) noexcept;
 ```
+
 In der folgenden Tabelle ist die C++ Microsoft-Implementierung von Ausnahme Spezifikationen zusammengefasst:
 
 |Ausnahmespezifikation|Bedeutung|
@@ -127,7 +129,7 @@ About to throw 1
 in handler
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [try, throw, and catch Statements (C++) (try-, throw- und catch-Anweisungen (C++))](../cpp/try-throw-and-catch-statements-cpp.md)<br/>
 [Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](errors-and-exception-handling-modern-cpp.md)
