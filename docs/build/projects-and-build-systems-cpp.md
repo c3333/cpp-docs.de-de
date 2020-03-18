@@ -10,12 +10,12 @@ helpviewer_keywords:
 - C++, build options
 ms.assetid: fa6ed4ff-334a-4d99-b5e2-a1f83d2b3008
 ms.topic: overview
-ms.openlocfilehash: 1548f82b62163600b5220c553bebcea72020abbc
-ms.sourcegitcommit: 7750e4c291d56221c8893120c56a1fe6c9af60d6
+ms.openlocfilehash: df3b768c139bc4dc000c185d7153fd4aa38ae94a
+ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274743"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79509450"
 ---
 # <a name="cc-projects-and-build-systems-in-visual-studio"></a>C/C++ Projekte und Buildsysteme in Visual Studio
 
@@ -23,7 +23,7 @@ Mithilfe von Visual Studio können Sie jede C++ Codebasis mit vollständiger Int
 
 ## <a name="c-compilation"></a>C++Neuauflage
 
-C++ Um *ein Programm* zu erstellen, können Sie Quellcode aus einer oder mehreren Dateien kompilieren und diese Dateien dann in eine ausführbare Datei (exe), eine Dynamic Load Library (dll) oder eine statische Bibliothek (. lib) verknüpfen. 
+C++ Um *ein Programm zu erstellen,* können Sie Quellcode aus einer oder mehreren Dateien kompilieren und diese Dateien dann in eine ausführbare Datei (exe), eine Dynamic Load Library (dll) oder eine statische Bibliothek (. lib) verknüpfen. 
 
 Die C++ grundlegende Kompilierung umfasst drei Hauptschritte:
 
@@ -40,11 +40,12 @@ Sie können einfache Programme erstellen, indem Sie den MSVC-Compiler (cl. exe) 
 ```cmd
 cl /EHsc hello.cpp
 ```
+
 Beachten Sie, dass der Compiler (cl. exe) den C++ Präprozessor und den Linker automatisch aufruft, um die endgültige Ausgabedatei zu entwickeln.  Weitere Informationen finden Sie unter [Building in der Befehlszeile](building-on-the-command-line.md).
 
 ## <a name="build-systems-and-projects"></a>Buildsysteme und Projekte
 
-In den meisten realen Programmen wird ein Buildsystem verwendet, um die Komplexität der Kompilierung mehrerer Quelldateien für mehrere Konfigurationen (d. h. Debuggen und Releases), mehrere Plattformen (x86, x64, Arm usw.), benutzerdefinierte Buildschritte und sogar mehrere ausführbare Dateien, die in einer bestimmten Reihenfolge kompiliert werden müssen. Sie nehmen Einstellungen in einer buildkonfigurationsdatei (en) vor, und das Buildsystem akzeptiert diese Datei als Eingabe, bevor Sie den Compiler aufruft. Der Satz von Quell Code Dateien und buildkonfigurationsdateien, die zum Erstellen einer ausführbaren Datei erforderlich sind, wird als *Projekt*bezeichnet. 
+In den meisten realen Programmen wird ein *Buildsystem* verwendet, um die Komplexität der Kompilierung mehrerer Quelldateien für mehrere Konfigurationen (d. h. Debug oder Release), mehrere Plattformen (x86, x64, Arm usw.), benutzerdefinierte Buildschritte und sogar mehrere ausführbare Dateien zu verwalten, die in einer bestimmten Reihenfolge kompiliert werden müssen. Sie nehmen Einstellungen in einer buildkonfigurationsdatei (en) vor, und das Buildsystem akzeptiert diese Datei als Eingabe, bevor Sie den Compiler aufruft. Der Satz von Quell Code Dateien und buildkonfigurationsdateien, die zum Erstellen einer ausführbaren Datei erforderlich sind, wird als *Projekt*bezeichnet. 
 
 In der folgenden Liste werden verschiedene Optionen für Visual Studio- C++Projekte angezeigt:
 
@@ -77,7 +78,7 @@ Erläutert, wie der C/CompilerC++ und die Buildtools direkt über die Befehlszei
 
 Entwickeln von [DLLs in Visual Studio](dlls-in-visual-cpp.md) Erstellen, Debuggen und Bereitstellen vonC++ C/DLLs (freigegebene Bibliotheken) in Visual Studio.
 
-[Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek](walkthrough-creating-and-using-a-static-library-cpp.md) Erstellen einer lib-Binärdatei.
+Exemplarische Vorgehensweise [: Erstellen und Verwenden einer statischen Bibliothek](walkthrough-creating-and-using-a-static-library-cpp.md) So erstellen Sie eine lib-Binärdatei.
 
 [Aufbauen von CC++ /isolierten Anwendungen und](building-c-cpp-isolated-applications-and-side-by-side-assemblies.md) parallelen Assemblys Beschreibt das Bereitstellungs Modell für Windows-Desktop Anwendungen, das auf der Idee von isolierten Anwendungen und parallelen Assemblys basiert.
 

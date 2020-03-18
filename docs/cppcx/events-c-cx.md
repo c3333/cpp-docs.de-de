@@ -3,12 +3,12 @@ title: Ereignisse (C++/CX)
 description: Verwenden C++von/CX zum Erstellen und Verwenden von Ereignis Handlern in der Windows-Runtime.
 ms.date: 02/03/2020
 ms.assetid: 31c8e08a-00ad-40f9-8f7e-124864aaad58
-ms.openlocfilehash: 45f9a7bc17d9a695613ce551dae796b2cd2e0e6f
-ms.sourcegitcommit: ba4180a2d79d7e391f2f705797505d4aedbc2a5e
+ms.openlocfilehash: b40f71b183561b52047c1f7316def3d895465d2a
+ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76972198"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79509368"
 ---
 # <a name="events-ccx"></a>Ereignisse (C++/CX)
 
@@ -28,7 +28,7 @@ Im folgenden Beispiel werden die Deklaration und das Auslösen einer Schnittstel
 
 [!code-cpp[cx_events#01](../cppcx/codesnippet/CPP/cx_events/class1.h#01)]
 
-### <a name="usage"></a>Verwendungs-
+### <a name="usage"></a>Verwendung
 
 Im folgenden Beispiel wird gezeigt, wie der `+=` -Operator von einer abonnierenden Klasse verwendet wird, um das Ereignis zu abonnieren, und wie ein Ereignishandler bereitgestellt wird, der ausgeführt wird, wenn das Ereignis ausgelöst wird. Beachten Sie, dass die bereitstellende Funktion der Signatur des Delegaten entspricht, der auf der Herausgeberseite im `EventTest` -Namespace definiert ist.
 
@@ -53,13 +53,13 @@ In einigen wenigen Fällen möchten Sie vielleicht einen Ereignishandler für ei
 
 [!code-cpp[cx_events#04](../cppcx/codesnippet/CPP/eventsupportinvs/eventclientclass.h#04)]
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mehrere Handler können demselben Ereignis zugeordnet werden. Die Ereignisquelle ruft sequenziell alle Ereignishandler von dem gleichen Thread auf. Wenn ein Ereignisempfänger innerhalb der Ereignishandlermethode blockiert, blockiert den Aufruf anderer Ereignishandler für dieses Ereignis durch die Ereignisquelle.
 
 Die Reihenfolge, in der die Ereignisquelle Ereignishandler auf Ereignisempfängern aufruft, wird nicht garantiert und unterscheidet sich von Aufruf zu Aufruf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Typsystem](../cppcx/type-system-c-cx.md)<br/>
 [Delegaten](../cppcx/delegates-c-cx.md)<br/>
