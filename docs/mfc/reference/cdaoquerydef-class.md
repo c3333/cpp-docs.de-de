@@ -67,11 +67,11 @@ helpviewer_keywords:
 - CDaoQueryDef [MFC], m_pDatabase
 ms.assetid: 9676a4a3-c712-44d4-8c5d-d1cc78288d3a
 ms.openlocfilehash: 08fb2909a4fd2e5bda3dfc63d19224a515c7c699
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883888"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424542"
 ---
 # <a name="cdaoquerydef-class"></a>CDaoQueryDef-Klasse
 
@@ -83,17 +83,17 @@ Stellt eine Abfragedefinition ("Querydef") dar, die in einer Datenbank gespeiche
 class CDaoQueryDef : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDaoQueryDef:: CDaoQueryDef](#cdaoquerydef)|Erstellt ein `CDaoQueryDef`-Objekt. Der nächste Rückruf `Open` oder `Create`, je nach Ihren Anforderungen.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDaoQueryDef:: Append](#append)|Fügt QueryDef als gespeicherte Abfrage an die Querydefs-Sammlung der Datenbank an.|
 |[CDaoQueryDef:: CanUpdate](#canupdate)|Gibt einen Wert ungleich 0 (null) zurück, wenn die Abfrage die Datenbank aktualisieren|
@@ -125,12 +125,12 @@ class CDaoQueryDef : public CObject
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDaoQueryDef:: m_pDAOQueryDef](#m_pdaoquerydef)|Ein Zeiger auf die OLE-Schnittstelle für das zugrunde liegende DAO Querydef-Objekt.|
 |[CDaoQueryDef:: m_pDatabase](#m_pdatabase)|Ein Zeiger auf das `CDaoDatabase` Objekt, dem die QueryDef zugeordnet ist. Querydef kann in der Datenbank gespeichert werden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein QueryDef ist ein Datenzugriffs Objekt, das die SQL-Anweisung enthält, die eine Abfrage beschreibt, sowie deren Eigenschaften, z. b. "Erstellungsdatum" und "ODBC-Timeout". Sie können auch temporäre QueryDef-Objekte erstellen, ohne Sie zu speichern, aber es ist praktisch – und viel effizienter –, häufig wiederverwendete Abfragen in einer Datenbank zu speichern. Ein [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt verwaltet eine Auflistung, die als Querydefs-Sammlung bezeichnet wird und die gespeicherten Querydefs enthält.
 
@@ -187,7 +187,7 @@ Weitere Informationen finden Sie in den Themen "QueryDef-Objekt", "Querydefs Col
 
 `CDaoQueryDef`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -199,7 +199,7 @@ Rufen Sie diese Member-Funktion auf, nachdem Sie [Create](#create) zum Erstellen
 virtual void Append();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `Append` speichert QueryDef in der Datenbank, indem das Objekt an die Querydefs-Sammlung der Datenbank angehängt wird. Sie können QueryDef als temporäres Objekt verwenden, ohne es Anhängen zu müssen. Wenn Sie es jedoch beibehalten möchten, müssen Sie `Append`abrufen.
 
@@ -217,7 +217,7 @@ BOOL CanUpdate();
 
 Ungleich 0 (null), wenn der Querydef geändert werden darf. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können QueryDef ändern, wenn:
 
@@ -240,7 +240,7 @@ CDaoQueryDef(CDaoDatabase* pDatabase);
 *pdatabase*<br/>
 Ein Zeiger auf ein offenes [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das-Objekt kann eine vorhandene QueryDef darstellen, die in der Querydefs-Sammlung der Datenbank gespeichert ist, eine neue Abfrage, die in der Auflistung gespeichert werden soll, oder eine temporäre Abfrage, die nicht gespeichert werden soll. Der nächste Schritt hängt vom Typ von QueryDef ab:
 
@@ -262,7 +262,7 @@ Wenn Sie die Verwendung des QueryDef-Objekts beenden, wird diese Member-Funktion
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch das Schließen von QueryDef wird das zugrunde liegende DAO-Objekt freigegeben, das gespeicherte DAO-Querydef-Objekt oder das C++ `CDaoQueryDef` Objekt wird jedoch nicht zerstört. Dies ist nicht identisch mit [CDaoDatabase::D eletequerydef](../../mfc/reference/cdaodatabase-class.md#deletequerydef), die QueryDef aus der Querydefs-Sammlung der Datenbank in DAO löscht (wenn es sich nicht um eine temporäre QueryDef handelt).
 
@@ -284,7 +284,7 @@ Der eindeutige Name der in der Datenbank gespeicherten Abfrage. Ausführliche In
 *lpszSQL*<br/>
 Die SQL-Zeichenfolge, die die Abfrage definiert. Wenn Sie den Standardwert NULL akzeptieren, müssen Sie später [setql](#setsql) zum Festlegen der Zeichenfolge aufzurufen. Bis dahin ist die Abfrage nicht definiert. Sie können jedoch die nicht definierte Abfrage zum Öffnen eines Recordsets verwenden. Weitere Informationen finden Sie in den hinweisen. Die SQL-Anweisung muss definiert werden, bevor Sie QueryDef an die QueryDefs-Auflistung anfügen können.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie einen Namen in " *lpszname*" übergeben, können Sie " [Append](#append) " zum Speichern von "QueryDef" in der Querydefs-Sammlung der Datenbank aufzurufen. Andernfalls handelt es sich bei dem Objekt um ein temporäres Querydef, das nicht gespeichert wird. In beiden Fällen befindet sich der QueryDef in einem geöffneten Zustand, und Sie können ihn verwenden, um ein [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekt zu erstellen oder die [Execute](#execute) Member-Funktion von QueryDef aufzurufen.
 
@@ -318,7 +318,7 @@ Eine ganze Zahl, die die Merkmale der Abfrage bestimmt. Weitere Informationen fi
 > [!NOTE]
 >  Eine Erläuterung der Begriffe "inkonsistent" und "konsistent" finden Sie im Thema "Execute Method" in der DAO-Hilfe.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 QueryDef-Objekte, die für die Ausführung auf diese Weise verwendet werden, können nur einen der folgenden Abfrage Typen darstellen:
 
@@ -349,7 +349,7 @@ CString GetConnect();
 
 Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der die Verbindungs Zeichenfolge für QueryDef enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird nur für ODBC-Datenquellen und bestimmte ISAM-Treiber verwendet. Es wird nicht mit Microsoft Jet () verwendet. MDB) Datenbanken; in diesem Fall gibt `GetConnect` eine leere Zeichenfolge zurück. Weitere Informationen finden Sie unter [SetConnect](#setconnect).
 
@@ -370,7 +370,7 @@ COleDateTime GetDateCreated();
 
 Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt, das das Datum und die Uhrzeit der Erstellung von QueryDef enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie im Thema "DateCreated, lastupated Properties" in der DAO-Hilfe.
 
@@ -386,7 +386,7 @@ COleDateTime GetDateLastUpdated();
 
 Ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt, das das Datum und die Uhrzeit des letzten Updates von QueryDef enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie im Thema "DateCreated, lastupated Properties" in der DAO-Hilfe.
 
@@ -402,7 +402,7 @@ short GetFieldCount();
 
 Die Anzahl der Felder, die in der Abfrage definiert sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetFieldCount` ist zum Durchlaufen aller Felder in QueryDef nützlich. Verwenden Sie zu diesem Zweck `GetFieldCount` in Verbindung mit [getfieldinfo](#getfieldinfo).
 
@@ -442,7 +442,7 @@ Optionen, die angeben, welche Informationen über das Feld abgerufen werden soll
 *lpszname*<br/>
 Eine Zeichenfolge, die den Namen des gewünschten Felds für die Suche nach Namen enthält. Sie können ein [CString-Zeichen](../../atl-mfc-shared/reference/cstringt-class.md)verwenden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Beschreibung der Informationen, die in *FieldInfo*zurückgegeben werden, finden Sie in der [cdaofieldinfo](../../mfc/reference/cdaofieldinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den beschreibenden Informationen unter *dwinfooptions* oben entsprechen. Wenn Sie eine Ebene Informationen anfordern, erhalten Sie alle vorherigen Ebenen sowie Informationen.
 
@@ -458,7 +458,7 @@ CString GetName();
 
 Der Name der Abfrage.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Querydef-Namen sind eindeutige benutzerdefinierte Namen. Weitere Informationen zu Querydef-Namen finden Sie im Thema "Name Property" in der DAO-Hilfe.
 
@@ -474,7 +474,7 @@ short GetODBCTimeout();
 
 Die Anzahl von Sekunden, nach denen ein Timeout bei einer Abfrage eintritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu diesem Zeit Limit finden Sie im Thema "ODBCTimeout-Eigenschaft" in der DAO-Hilfe.
 
@@ -493,7 +493,7 @@ short GetParameterCount();
 
 Die Anzahl von Parametern, die in der Abfrage definiert sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetParameterCount` ist zum Durchlaufen aller Parameter in QueryDef nützlich. Verwenden Sie zu diesem Zweck `GetParameterCount` in Verbindung mit [GetParameterInfo](#getparameterinfo).
 
@@ -531,7 +531,7 @@ Optionen, die angeben, welche Informationen über den Parameter abgerufen werden
 *lpszname*<br/>
 Eine Zeichenfolge, die den Namen des gewünschten Parameters für die Suche nach Namen enthält. Sie können ein [CString-Zeichen](../../atl-mfc-shared/reference/cstringt-class.md)verwenden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Beschreibung der Informationen, die in *paramInfo*zurückgegeben werden, finden Sie in der [cdaoparameterinfo](../../mfc/reference/cdaoparameterinfo-structure.md) -Struktur. Diese Struktur enthält Member, die den beschreibenden Informationen unter *dwinfooptions* oben entsprechen.
 
@@ -558,7 +558,7 @@ Der null basierte Index des Parameters in der Parameter Auflistung von QueryDef 
 
 Ein Objekt der Klasse [COleVariant](../../mfc/reference/colevariant-class.md) , das den Wert des Parameters enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können auf den-Parameter entweder über den Namen oder seine Ordinalposition in der Auflistung zugreifen.
 
@@ -576,7 +576,7 @@ long GetRecordsAffected();
 
 Die Anzahl der betroffenen Datensätze.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Anzahl die zurückgegebenen spiegeln sich nicht auf Änderungen in verknüpften Tabellen auf, wenn Cascade aktualisiert oder löscht wirksam sind.
 
@@ -594,7 +594,7 @@ BOOL GetReturnsRecords();
 
 Ungleich 0 (null), wenn QueryDef auf einer Abfrage basiert, die Datensätze zurückgibt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird nur für SQL-Pass-Through-Abfragen verwendet. Weitere Informationen zu SQL-Abfragen finden Sie unter der [Execute](#execute) Member-Funktion. Weitere Informationen zum Arbeiten mit SQL-Pass-Through-Abfragen finden Sie in der Member-Funktion von " [ltreturnrecords](#setreturnsrecords) ".
 
@@ -612,7 +612,7 @@ CString GetSQL();
 
 Die SQL-Anweisung, die die Abfrage definiert, auf der Querydef basiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie werden dann wahrscheinlich die Zeichenfolge für Schlüsselwörter, Tabellennamen usw. analysieren.
 
@@ -630,7 +630,7 @@ short GetType();
 
 Der Typ der Abfrage, die von QueryDef definiert wird. Informationen zu-Werten finden Sie unter Hinweise.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Abfragetyp wird durch den Wert festgelegt, den Sie in der SQL-Zeichenfolge von QueryDef angeben, wenn Sie QueryDef erstellen oder eine vorhandene [setionsql](#setsql) -Member-Funktion von QueryDef aufzurufen. Der Abfragetyp, der von dieser Funktion zurückgegeben wird, kann einen der folgenden Werte aufweisen:
 
@@ -673,7 +673,7 @@ BOOL IsOpen() const;
 
 Ungleich 0 (null), wenn das `CDaoQueryDef` Objekt derzeit geöffnet ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine QueryDef muss sich in einem geöffneten Zustand befinden, bevor Sie zum [Ausführen von Execute](#execute) oder zum Erstellen eines [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekts verwendet werden kann. Um eine QueryDef in einen geöffneten Status aufzurufen, [Erstellen](#create) Sie entweder (für ein neues QueryDef) oder [Öffnen](#open) (für eine vorhandene QueryDef).
 
@@ -681,7 +681,7 @@ Eine QueryDef muss sich in einem geöffneten Zustand befinden, bevor Sie zum [Au
 
 Enthält einen Zeiger auf das [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt, das dem QueryDef-Objekt zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diesen Zeiger, wenn Sie direkt auf die Datenbank zugreifen müssen, z. –. um Zeiger auf andere QueryDef-oder Recordset-Objekte in den Auflistungen der Datenbank zu erhalten.
 
@@ -689,7 +689,7 @@ Verwenden Sie diesen Zeiger, wenn Sie direkt auf die Datenbank zugreifen müssen
 
 Enthält einen Zeiger auf die OLE-Schnittstelle für das zugrunde liegende DAO Querydef-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Zeiger wird aus Gründen der Vollständigkeit und Konsistenz mit den anderen Klassen bereitgestellt. Da der MFC DAO-Querydefs jedoch nicht vollständig kapselt, ist es unwahrscheinlich, dass Sie ihn benötigen. Wenn Sie dies tun, sollten Sie dies vorsichtig – insbesondere den Wert des Zeigers nicht ändern, es sei denn, Sie wissen, was Sie tun.
 
@@ -706,7 +706,7 @@ virtual void Open(LPCTSTR lpszName = NULL);
 *lpszname*<br/>
 Eine Zeichenfolge, die den Namen der gespeicherten abzuöffnenden QueryDef-Datei enthält. Sie können ein [CString-Zeichen](../../atl-mfc-shared/reference/cstringt-class.md)verwenden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem QueryDef geöffnet ist, können Sie seine [Execute](#execute) Member-Funktion oder QueryDef verwenden, um ein [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) -Objekt zu erstellen.
 
@@ -723,7 +723,7 @@ void SetConnect(LPCTSTR lpszConnect);
 *lpszconnect*<br/>
 Eine Zeichenfolge, die eine Verbindungs Zeichenfolge für das zugeordnete [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Verbindungszeichenfolge wird zum Übergeben zusätzlicher Informationen auf ODBC und nach Bedarf bestimmte ISAM-Treiber verwendet. Er wird nicht für Microsoft Jet (. MDB).
 
@@ -747,7 +747,7 @@ void SetName(LPCTSTR lpszName);
 *lpszname*<br/>
 Eine Zeichenfolge, die den neuen Namen für eine nicht temporäre Abfrage im zugeordneten [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) -Objekt enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Querydef-Namen sind eindeutige und benutzerdefinierte Namen. Sie können `SetName` vor dem Anhängen des QueryDef-Objekts an die QueryDefs-Auflistung abrufen.
 
@@ -764,7 +764,7 @@ void SetODBCTimeout(short nODBCTimeout);
 *nodbctimeout*<br/>
 Die Anzahl von Sekunden, nach denen ein Timeout bei einer Abfrage eintritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie die Standard Anzahl von Sekunden vor nachfolgenden Vorgängen für die verbundene Datenquelle außer Kraft setzen. Ein Vorgang kann aufgrund von Netzwerkproblemen für den Zugriff, übermäßige Abfrage Verarbeitungszeit und usw. Timeout. Ruft `SetODBCTimeout` vor dem Ausführen einer Abfrage mit diesem QueryDef-Wert auf, wenn Sie den Timeout Wert der Abfrage ändern möchten. (Da ODBC Verbindungen wieder verwendet, ist der Timeout Wert für alle Clients derselben Verbindung identisch.)
 
@@ -795,7 +795,7 @@ Der festzulegende Wert. siehe Hinweise.
 *nIndex*<br/>
 Die Ordinalposition des Parameters in der Parameter Auflistung von QueryDef. Sie können diesen Wert mit Aufrufen von " [GetParameterCount](#getparametercount) " und " [GetParameterInfo](#getparameterinfo)" abrufen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der-Parameter muss bereits als Teil der SQL-Zeichenfolge von QueryDef eingerichtet worden sein. Sie können auf den-Parameter entweder über den Namen oder seine Ordinalposition in der Auflistung zugreifen.
 
@@ -814,7 +814,7 @@ void SetReturnsRecords(BOOL bReturnsRecords);
 *breturnrecords*<br/>
 Übergeben Sie true, wenn die Abfrage für eine externe Datenbank Datensätze zurückgibt. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In einem solchen Fall müssen Sie QueryDef erstellen und seine Eigenschaften mit anderen `CDaoQueryDef`-Element Funktionen festlegen. Eine Beschreibung externer Datenbanken finden Sie unter [SetConnect](#setconnect).
 
@@ -831,11 +831,11 @@ void SetSQL(LPCTSTR lpszSQL);
 *lpszSQL*<br/>
 Eine Zeichenfolge, die eine für die Ausführung geeignete vollständige SQL-Anweisung enthält. Die Syntax dieser Zeichenfolge hängt von dem DBMS ab, auf das die Abfrage abzielt. Eine Erläuterung der Syntax, die in der Microsoft Jet-Datenbank-Engine verwendet wird, finden Sie im Thema "Building SQL-Anweisungen in Code" in der DAO-Hilfe.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine typische Verwendung von `SetSQL` ist das Einrichten eines QueryDef-Objekts für die Verwendung in einer SQL-Pass-Through-Abfrage. (Informationen zur Syntax von SQL-Pass-Through-Abfragen für das Ziel-DBMS finden Sie in der Dokumentation zu Ihrem DBMS.)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -21,11 +21,11 @@ helpviewer_keywords:
 - Context class
 ms.assetid: c0d553f3-961d-4ecd-9a29-4fa4351673b8
 ms.openlocfilehash: 7c47d9db64b0af7d5413abed3f85e9d41a591fa2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865492"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427404"
 ---
 # <a name="context-class"></a>Context-Klasse
 
@@ -37,17 +37,17 @@ Stellt eine Abstraktion für einen Ausführungskontext dar.
 class Context;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[~ Context-debugtor](#dtor)||
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Block](#block)|Blockiert den aktuellen Kontext.|
 |[CurrentContext](#currentcontext)|Gibt einen Zeiger auf den aktuellen Kontext zurück.|
@@ -63,7 +63,7 @@ class Context;
 |[VirtualProcessorId](#virtualprocessorid)|Gibt einen Bezeichner für den virtuellen Prozessor zurück, auf dem der aktuelle Kontext ausgeführt wird.|
 |[Yield](#yield)|Setzt die Ausführung aus, damit ein anderer Kontext ausgeführt werden kann. Wenn kein anderer Kontext für eine Übergabe verfügbar ist, kann der Planer ggf. an einen anderen Betriebssystemthread übergeben.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Der Concurrency Runtime Planer (siehe [Scheduler](scheduler-class.md)) verwendet Ausführungs Kontexte, um die von der Anwendung in die Warteschlange eingereihte Arbeit auszuführen. Ein Win32-Thread ist ein Beispiel für einen Ausführungskontext auf einem Windows-Betriebssystem.
 
@@ -75,7 +75,7 @@ Der Planer ist grundsätzlich kooperativ, und ein Ausführungskontext kann seine
 
 `Context`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ConcRT. h
 
@@ -89,7 +89,7 @@ Blockiert den aktuellen Kontext.
 static void __cdecl Block();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode führt dazu, dass der Standardplaner des Prozesses erstellt und/oder an den aufrufenden Kontext angefügt wird, wenn derzeit dem aufrufenden Kontext kein Planer zugeordnet ist.
 
@@ -117,7 +117,7 @@ static Context* __cdecl CurrentContext();
 
 Ein Zeiger auf den aktuellen Kontext.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode führt dazu, dass der Standardplaner des Prozesses erstellt und/oder an den aufrufenden Kontext angefügt wird, wenn derzeit dem aufrufenden Kontext kein Planer zugeordnet ist.
 
@@ -145,7 +145,7 @@ virtual unsigned int GetScheduleGroupId() const = 0;
 
 Ein Bezeichner für die Zeit Plan Gruppe, an der der Kontext gerade arbeitet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert dieser Methode ist eine sofortige Stichprobe der Zeit Plan Gruppe, in der der Kontext ausgeführt wird. Wenn diese Methode in einem anderen Kontext als dem aktuellen Kontext aufgerufen wird, kann der Wert in dem Moment, in dem er zurückgegeben wird, veraltet sein, und er kann nicht darauf basieren. Diese Methode wird in der Regel nur zum Debuggen oder zum Ablauf Verfolgungs Zweck verwendet.
 
@@ -161,7 +161,7 @@ virtual unsigned int GetVirtualProcessorId() const = 0;
 
 Wenn der Kontext zurzeit auf einem virtuellen Prozessor ausgeführt wird, ein Bezeichner für den virtuellen Prozessor, auf dem der Kontext derzeit ausgeführt wird; Andernfalls wird der Wert `-1`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert dieser Methode ist eine sofortige Stichprobe des virtuellen Prozessors, auf dem der Kontext ausgeführt wird. Dieser Wert kann in dem Moment, in dem er zurückgegeben wird, veraltet sein und nicht mehr verlassen werden. Diese Methode wird in der Regel nur zum Debuggen oder zum Ablauf Verfolgungs Zweck verwendet.
 
@@ -201,7 +201,7 @@ virtual bool IsSynchronouslyBlocked() const = 0;
 
 Gibt an, ob der Kontext synchron blockiert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Kontext wird als synchron blockiert angesehen, wenn er explizit eine zu einer Blockierung führende Aktion ausgeführt hat. Auf dem Thread Planer würde dies auf einen direkten Aufrufder `Context::Block`-Methode oder ein Synchronisierungs Objekt hindeuten, das mit der `Context::Block`-Methode erstellt wurde.
 
@@ -253,7 +253,7 @@ Hebt die Blockierung des Kontexts auf und bewirkt, dass er ausführbar wird.
 virtual void Unblock() = 0;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es ist durchaus zulässig, dass ein aufrufungs Vorgang der `Unblock`-Methode vor einem entsprechenden aufrufungs Vorgang der [Block](#block) -Methode erfolgt. Solange Aufrufe an die Methoden `Block` und `Unblock` ordnungsgemäß gekoppelt sind, verarbeitet die Laufzeit das natürliche Race der beiden Reihenfolge ordnungsgemäß. Ein `Unblock`-Aufrufe, der vor einem `Block` aufgerufen wird, negiert einfach die Auswirkung des `Block`-Aufrufes.
 
@@ -273,7 +273,7 @@ static unsigned int __cdecl VirtualProcessorId();
 
 , Wenn der aktuelle Kontext an einen Planer angefügt ist, ein Bezeichner für den virtuellen Prozessor, auf dem der aktuelle Kontext ausgeführt wird. Andernfalls wird der Wert `-1`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert dieser Methode ist eine sofortige Stichprobe des virtuellen Prozessors, auf dem der aktuelle Kontext ausgeführt wird. Dieser Wert kann in dem Moment, in dem er zurückgegeben wird, veraltet sein und nicht mehr verlassen werden. Diese Methode wird in der Regel nur zum Debuggen oder zum Ablauf Verfolgungs Zweck verwendet.
 
@@ -285,7 +285,7 @@ Setzt die Ausführung aus, damit ein anderer Kontext ausgeführt werden kann. We
 static void __cdecl Yield();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode führt dazu, dass der Standardplaner des Prozesses erstellt und/oder an den aufrufenden Kontext angefügt wird, wenn derzeit dem aufrufenden Kontext kein Planer zugeordnet ist.
 
@@ -297,13 +297,13 @@ Setzt die Ausführung aus, damit ein anderer Kontext ausgeführt werden kann. We
 static void __cdecl YieldExecution();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode führt dazu, dass der Standardplaner des Prozesses erstellt und/oder an den aufrufenden Kontext angefügt wird, wenn derzeit dem aufrufenden Kontext kein Planer zugeordnet ist.
 
 Diese Funktion ist neu in Visual Studio 2015 und ist mit der [Yield](#yield) -Funktion identisch, steht jedoch nicht in Konflikt mit dem Yield-Makro in Windows. h.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [Scheduler-Klasse](scheduler-class.md)<br/>

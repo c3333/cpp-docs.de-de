@@ -21,11 +21,11 @@ helpviewer_keywords:
 - CFont [MFC], GetLogFont
 ms.assetid: 3fad6bfe-d6ce-4ab9-967a-5ce0aa102800
 ms.openlocfilehash: c37b2f657105e0065e0cddb2c508424bd6c89b0a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866606"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424392"
 ---
 # <a name="cfont-class"></a>Cfont-Klasse
 
@@ -37,17 +37,17 @@ Kapselt eine Schriftart der Windows GDI (Graphics Device Interface) und stellt M
 class CFont : public CGdiObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFont:: CFont](#cfont)|Erstellt ein `CFont`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFont:: kreatefont](#createfont)|Initialisiert eine `CFont` mit den angegebenen Merkmalen.|
 |[CFont:: kreatefontindirekte](#createfontindirect)|Initialisiert ein `CFont`-Objekt mit den in einer `LOGFONT`-Struktur angegebenen Merkmalen.|
@@ -58,11 +58,11 @@ class CFont : public CGdiObject
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFont:: Operator hFont](#operator_hfont)|Gibt das an das `CFont` Objekt angefügte Windows GDI-Schriftart Handle zurück.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn Sie ein `CFont` Objekt verwenden möchten, erstellen Sie ein `CFont` Objekt, und fügen Sie ihm eine Windows-Schriftart mit " [anatefont](#createfont)", " [kreatefontindirekte](#createfontindirect)", " [anatepointfont](#createpointfont)" oder " [kreatepointfontindirekte](#createpointfontindirect)" hinzu, und verwenden Sie dann die Member-Funktionen des Objekts, um die Schriftart
 
@@ -78,7 +78,7 @@ Weitere Informationen zu `CFont`finden Sie unter [Graphic Objects](../../mfc/gra
 
 `CFont`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -90,7 +90,7 @@ Erstellt ein `CFont`-Objekt.
 CFont();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das resultierende Objekt muss mit `CreateFont`, `CreateFontIndirect`, `CreatePointFont`oder `CreatePointFontIndirect` initialisiert werden, bevor es verwendet werden kann.
 
@@ -178,7 +178,7 @@ Ein `CString` oder Zeiger auf eine mit NULL endenden Zeichenfolge, die den Schri
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Anschließend kann die Schriftart als Schriftart für beliebige Geräte Kontexte ausgewählt werden.
 
@@ -209,7 +209,7 @@ Verweist auf eine `LOGFONT`-Struktur, die die Merkmale der logischen Schriftart 
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Schriftart kann anschließend als aktuelle Schriftart für ein beliebiges Gerät ausgewählt werden.
 
@@ -247,7 +247,7 @@ Zeiger auf das [CDC](../../mfc/reference/cdc-class.md) -Objekt, das zum Konverti
 
 Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Höhe in *npointsize* wird automatisch in logische Einheiten konvertiert, indem das CDC-Objekt verwendet wird, auf das *PDC*verweist.
 
@@ -279,7 +279,7 @@ Zeiger auf das [CDC](../../mfc/reference/cdc-class.md) -Objekt, das zum Konverti
 
 Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion konvertiert die Höhe in `lfHeight` automatisch in logische Einheiten, indem das CDC-Objekt verwendet wird, auf das *PDC* verweist, bevor die `LOGFONT` Struktur an Windows übergeben wird.
 
@@ -306,7 +306,7 @@ Ein hFont-Handle für eine Windows-Schriftart.
 
 Ein Zeiger auf ein `CFont` Objekt, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein `CFont` Objekt noch nicht an das Handle angefügt ist, wird ein temporäres `CFont` Objekt erstellt und angefügt. Dieses temporäre `CFont` Objekt ist nur gültig, bis das nächste Mal die Leerlaufzeit der Anwendung in der Ereignisschleife liegt. zu diesem Zeitpunkt werden alle temporären Grafik Objekte gelöscht. Eine andere Möglichkeit, dies zu sagen, besteht darin, dass das temporäre Objekt nur während der Verarbeitung einer Fenster Nachricht gültig ist.
 
@@ -347,7 +347,7 @@ operator HFONT() const;
 
 Das Handle des Windows GDI-Schriftart Objekts, das an `CFont` angefügt ist, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Da dieser Operator automatisch für Konvertierungen von `CFont` in [Schriftarten und Text](/windows/win32/gdi/fonts-and-text)verwendet wird, können Sie `CFont` Objekte an Funktionen übergeben, die hfonts erwarten.
 
@@ -357,7 +357,7 @@ Weitere Informationen zum Verwenden von Grafikobjekten finden Sie unter [Graphic
 
 [!code-cpp[NVC_MFCDocView#77](../../mfc/codesnippet/cpp/cfont-class_8.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
 [CGdiObject-Klasse](../../mfc/reference/cgdiobject-class.md)<br/>

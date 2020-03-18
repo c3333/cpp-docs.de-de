@@ -6,11 +6,11 @@ f1_keywords:
 - hash_set/std::swap (hash_multiset)
 ms.assetid: 557a0162-3728-4537-97dc-f9f6cc7ece94
 ms.openlocfilehash: 2fbc05c16ba6629397bbb07bab30cb9315a16e1f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883841"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426936"
 ---
 # <a name="lthash_setgt-functions"></a>&lt;hash_set&gt; Funktionen
 
@@ -39,7 +39,7 @@ Die hash_set, die die auszutauschenden Elemente bereitstellen, oder die hash_set
 *Linker*\
 Die hash_set, deren Elemente mit denen des hash_set *Rechts*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `swap`-Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert hash_set, um die Member-Funktion `left.`[Swap](../standard-library/hash-set-class.md#swap)(`right`) auszuführen. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
 
@@ -70,7 +70,7 @@ Die Hash_multiset, die die auszutauschenden Elemente bereitstellen, oder die Has
 *Linker*\
 Die Hash_multiset, deren Elemente mit denen des Hash_multiset *Rechts*ausgetauscht werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `swap`-Vorlagen Funktion ist ein Algorithmus, der sich auf die Container Klasse spezialisiert hash_multiset, um die Member-Funktion `left.`[Swap](../standard-library/hash-multiset-class.md#swap)(`right`) auszuführen. Dies ist eine Instanz der partiellen Reihenfolge von Funktionsvorlagen durch den Compiler. Wenn Vorlagenfunktionen so überladen werden, dass die Übereinstimmung der Vorlage mit dem Funktionsaufruf nicht eindeutig ist, wählt der Compiler die meist spezialisierte Version der Vorlagenfunktion. Die allgemeine Version der Vorlagenfunktion
 
@@ -82,6 +82,6 @@ in der Algorithmusklasse funktioniert mittels Zuweisung und ist ein langsamer Vo
 
 Im Codebeispiel für die Memberklasse [hash_multiset::swap](../standard-library/hash-multiset-class.md#swap) finden Sie ein Beispiel, das die Vorlagenversion `swap` verwendet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [<hash_set>](../standard-library/hash-set.md)

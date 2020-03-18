@@ -26,14 +26,14 @@ helpviewer_keywords:
 - std::piecewise_constant_distribution [C++], param_type
 - std::piecewise_constant_distribution [C++], param_type
 ms.assetid: 2c9a21fa-623e-4d63-b827-3f1556b6dedb
-ms.openlocfilehash: 62cfba1fda3d9a42788e8dd47144705fb05c6787
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: db537e7cfab70c2ac4e235a752216b892882f8cf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455247"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446198"
 ---
-# <a name="piecewiseconstantdistribution-class"></a>piecewise_constant_distribution-Klasse
+# <a name="piecewise_constant_distribution-class"></a>piecewise_constant_distribution-Klasse
 
 Generiert eine stückweise konstante Verteilung mit Intervallen von variierender Weite und in jedem Intervall eindeutiger Wahrscheinlichkeit.
 
@@ -80,10 +80,10 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*RealType*\
+*RealType* -\
 Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Sampling-Verteilung weist Intervalle von variierender Breite und in jedem Intervall eindeutiger Wahrscheinlichkeit auf. Informationen über weitere Sampling-Verteilungen erhalten Sie unter [piecewise_linear_distribution-Klasse](../standard-library/piecewise-linear-distribution-class.md) und [discrete_distribution](../standard-library/discrete-distribution-class.md).
 
@@ -98,7 +98,7 @@ Die Eigenschaftsfunktion `intervals()` gibt einen `vector<result_type>` mit dem 
 
 Die Eigenschaftsfunktion `densities()` gibt einen `vector<result_type>` mit den für jeden Intervallsatz gespeicherten Dichten zurück, die entsprechend den in den Konstruktorparametern genannten Gewichten berechnet werden.
 
-Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
+Der Eigenschaftenmember `param()` legt das gespeicherte Verteilungsparameterpaket `param_type` fest oder gibt es zurück.
 
 Die `min()`- und `max()`-Memberfunktion gibt das jeweils kleinst- und größtmögliche Ergebnis zurück.
 
@@ -212,9 +212,9 @@ Distribution for 100 samples:
     14-15 ::::::::
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:** \<Random >
 
 **Namespace:** std
 
@@ -251,16 +251,16 @@ explicit piecewise_constant_distribution(const param_type& parm);
 *firsti*\
 Ein Eingabeiterator für das erste Element im Verteilungsbereich.
 
-*lasti*\
+*lasti* -\
 Ein Eingabeiterator für das letzte Element im Verteilungsbereich.
 
-*firstW*\
+*firstw* -\
 Ein Eingabeiterator für das erste Element im Gewichtsbereich.
 
-*Abstände*\
+*Intervalle*\
 Ein [initializer_list](../cpp/initializers.md) mit den Verteilungsintervallen.
 
-*Countdown*\
+*Anzahl*\
 Die Anzahl von Elementen im Verteilungsbereich.
 
 *xmin*\
@@ -269,17 +269,18 @@ Der niedrigste Wert im Verteilungsbereich.
 *xmax*\
 Der höchste Wert im Verteilungsbereich. Muss größer als *xmin* sein.
 
-*weightfunc*\
+*weightfunc* -\
 Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der-Parameter als auch der Rückgabewert müssen in den **Double**-Wert konvertiert werden können.
 
-*parm*\
+*\ für* den
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Standardkonstruktor legt die gespeicherten Parameter so fest, dass es nur ein Intervall, 0 bis 1, mit einer Wahrscheinlichkeitsdichte von 1 gibt.
 
 Der Iteratorbereichskonstruktor
+
 ```cpp
 template <class InputIteratorI, class InputIteratorW>
 piecewise_constant_distribution(InputIteratorI firstI, InputIteratorI lastI,
@@ -289,6 +290,7 @@ piecewise_constant_distribution(InputIteratorI firstI, InputIteratorI lastI,
 erstellt ein Verteilungsobjekt mit Intervallen von Iteratoren über die Sequenz [`firstI`, `lastI`) und einer passenden Gewichtssequenz, die mit `firstW` beginnt.
 
 Der Initialisiererlistenkonstruktor
+
 ```cpp
 template <class UnaryOperation>
 piecewise_constant_distribution(initializer_list<result_type>
@@ -296,18 +298,20 @@ intervals,
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden.
+erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden. *intervals*
 
 Der als
+
 ```cpp
 template <class UnaryOperation>
 piecewise_constant_distribution(size_t count, result_type xmin, result_type xmax,
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt mit  der gleichmäßig über [ `xmin,xmax`] verteilten Anzahl von Intervallen und weist jedem Intervall Gewichtungs Gewichtungen entsprechend der Funktion " *weightfunc*" zu, und " *weightfunc* " muss einen Parameter annehmen und eine Rückgabe aufweisen. -Wert, der beide in `double`konvertierbar sind. **Vorbedingung:** `xmin < xmax`
+erstellt ein Verteilungs Objekt, dessen *Anzahl* Intervalle gleichmäßig über [`xmin,xmax`] verteilt sind, wobei jedes Intervall Gewichtungen gemäß der Funktion " *weightfunc*" zugewiesen wird, und " *weightfunc* " muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, der beide in `double`konvertiert werden kann. **Vorbedingung:** `xmin < xmax`
 
 Der als
+
 ```cpp
 explicit piecewise_constant_distribution(const param_type& parm);
 ```
@@ -338,13 +342,13 @@ struct param_type {
 
 Siehe Konstruktorparameter für [piecewise_constant_distribution](#piecewise_constant_distribution).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `xmin < xmax`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)\
 [piecewise_linear_distribution](../standard-library/piecewise-linear-distribution-class.md)

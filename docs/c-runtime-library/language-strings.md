@@ -1,21 +1,19 @@
 ---
 title: Language Strings
 ms.date: 11/04/2016
-f1_keywords:
-- c.strings
 helpviewer_keywords:
 - language strings
 ms.assetid: bbee63b1-af0b-4e44-9eaf-dd3e265c05fd
-ms.openlocfilehash: a9e6eaa65516b5b49022526f24e220dec83b2c26
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
-ms.translationtype: HT
+ms.openlocfilehash: 18a94d33f9ca382bb6c7cd77a4f2b33ed800f2c6
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69500077"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438250"
 ---
 # <a name="language-strings"></a>Language Strings
 
-Die Funktionen [setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) und [_create_locale](../c-runtime-library/reference/create-locale-wcreate-locale.md) können die von der Windows NLS-API unterstützten Sprachen auf Betriebssystemen verwenden, die nicht die Unicode-Codepage verwenden. Eine Liste der unterstützten Sprachen nach Betriebssystemversion finden Sie in [Appendix A: Product Behavior](https://msdn.microsoft.com/library/cc233982.aspx) (Anhang A: Produktverhalten) in [MS-LCID]: Windows Language Code Identifier (LCID) Reference (LCID-Referenz [Windows Language Code Identifier]). Die Sprachenzeichenfolge kann ein beliebiger Wert aus den Spalten für die **Sprache** und die **Sprachtag** der Liste der unterstützten Sprachen sein. Ein Beispiel für Code, der verfügbare Gebietsschemanamen und zugehörige Werte aufzählt, finden Sie unter [NLS: Name-based APIs Sample](/windows/win32/intl/nls--name-based-apis-sample) (Beispiel für namensbasierte APIs).
+Die Funktionen [setlocale](../c-runtime-library/reference/setlocale-wsetlocale.md) und [_create_locale](../c-runtime-library/reference/create-locale-wcreate-locale.md) können die von der Windows NLS-API unterstützten Sprachen auf Betriebssystemen verwenden, die nicht die Unicode-Codepage verwenden. Eine Liste der unterstützten Sprachen nach Betriebssystemversion finden Sie unter [Anhang A: Produktverhalten](https://msdn.microsoft.com/library/cc233982.aspx) in [MS-LCID]: Windows-Sprachcodebezeichner – Referenz. Die Sprachenzeichenfolge kann ein beliebiger Wert aus den Spalten für die **Sprache** und die **Sprachtag** der Liste der unterstützten Sprachen sein. Ein Beispiel für Code, der verfügbare Gebietsschemanamen und zugehörige Werte aufzählt, finden Sie unter [NLS: Namenbasierte APIs – Beispiel](/windows/win32/intl/nls--name-based-apis-sample).
 
 ## <a name="additional-supported-language-strings"></a>Zusätzliche unterstützte Sprachenzeichenfolgen
 
@@ -23,21 +21,21 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt ebenfalls di
 
 |Sprachenzeichenfolge|Entsprechender Gebietsschemaname|
 |---------------------|----------------------------|
-|american|en-US|
-|american english|en-US|
-|american-english|en-US|
-|australian|en-AU|
-|belgian|nl-BE|
-|canadian|en-CA|
+|Amerikanisch|de-DE|
+|american english|de-DE|
+|american-english|de-DE|
+|Australisch|en-AU|
+|Belgisch|nl-BE|
+|Kanadisch|en-CA|
 |chh|zh-HK|
 |chi|zh-SG|
-|chinese|zh|
+|Chinesisch|zh|
 |chinese-hongkong|zh-HK|
 |chinese-simplified|zh-CN|
 |chinese-singapore|zh-SG|
 |chinese-traditional|zh-TW|
 |dutch-belgian|nl-BE|
-|english-american|en-US|
+|english-american|de-DE|
 |english-aus|en-AU|
 |english-belize|en-BZ|
 |english-can|en-CA|
@@ -48,8 +46,8 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt ebenfalls di
 |english-south africa|en-ZA|
 |english-trinidad y tobago|en-TT|
 |english-uk|en-GB|
-|english-us|en-US|
-|english-usa|en-US|
+|english-us|de-DE|
+|english-usa|de-DE|
 |french-belgian|fr-BE|
 |french-canadian|fr-CA|
 |french-luxembourg|fr-LU|
@@ -60,7 +58,7 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt ebenfalls di
 |german-swiss|de-CH|
 |irish-english|en-IE|
 |italian-swiss|it-CH|
-|norwegian|Nein|
+|Norwegisch|nein|
 |norwegian-bokmal|nb-NO|
 |norwegian-nynorsk|nn-NO|
 |portuguese-brazilian|pt-BR|
@@ -84,12 +82,12 @@ Die Implementierung der Microsoft C-Laufzeitbibliothek unterstützt ebenfalls di
 |spanish-uruguay|es-UY|
 |spanish-venezuela|es-VE|
 |swedish-finland|sv-FI|
-|swiss|de-CH|
+|Schweizerisch|de-CH|
 |uk|en-GB|
-|mehreren|en-US|
-|usa|en-US|
+|USA|de-DE|
+|usa|de-DE|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gebietsschema-Namen, Sprachen und Zeichenfolgen für Länder und Regionen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)<br/>
 [Country/Region Strings](../c-runtime-library/country-region-strings.md)<br/>

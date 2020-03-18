@@ -31,11 +31,11 @@ helpviewer_keywords:
 - COccManager [MFC], SplitDialogTemplate
 ms.assetid: 7d47aeed-d1ab-48e3-b4cf-d429718e370a
 ms.openlocfilehash: c2a49e3396879e5f1e0864ab5342b57541c6b36c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865937"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423936"
 ---
 # <a name="coccmanager-class"></a>COccManager-Klasse
 
@@ -47,11 +47,11 @@ Verwaltet unterschiedliche benutzerdefinierte ControlSites. Wird von `COleContro
 class COccManager : public CNoTrackObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COccManager:: kreatecontainer](#createcontainer)|Erstellt ein `COleContainer`-Objekt.|
 |[COccManager:: kreatedlgcontrols](#createdlgcontrols)|Erstellt ActiveX-Steuerelemente, die vom zugeordneten `COleContainer`-Objekt gehostet werden.|
@@ -66,7 +66,7 @@ class COccManager : public CNoTrackObject
 |[COccManager:: setDefaultButton](#setdefaultbutton)|Schaltet den Standardzustand des angegebenen Steuer Elements um.|
 |[COccManager:: splitdialogtemplate](#splitdialogtemplate)|Trennt alle vorhandenen ActiveX-Steuerelemente von allgemeinen Steuerelementen in der angegebenen Dialogfeld Vorlage.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Basisklasse, `CNoTrackObject`, ist eine nicht dokumentierte Basisklasse (befindet sich in afxtls). H). Die von der `CNoTrackObject`-Klasse abgeleiteten Klassen sind von der Speicher Speicher-Erkennung ausgenommen, wenn Sie vom MFC-Framework verwendet werden sollen. Es wird nicht empfohlen, die Ableitung direkt von `CNoTrackObject`durchzuführen.
 
@@ -76,7 +76,7 @@ Die Basisklasse, `CNoTrackObject`, ist eine nicht dokumentierte Basisklasse (bef
 
 `COccManager`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxocc. h
 
@@ -97,7 +97,7 @@ Ein Zeiger auf das Fenster Objekt, das dem benutzerdefinierten Site Container zu
 
 Ein Zeiger auf den neu erstellten Container. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Erstellen von benutzerdefinierten Websites finden Sie unter [COleControlContainer:: attachcontrolsite](../../mfc/reference/colecontrolcontainer-class.md#attachcontrolsite).
 
@@ -152,7 +152,7 @@ Ein Zeiger auf den Steuerelement Container, der die neue Steuerelement Website g
 
 Ein Zeiger auf die neu erstellte Steuerelement Website.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Funktion, um mithilfe der von [COleControlSite](../../mfc/reference/colecontrolsite-class.md)abgeleiteten Klasse eine benutzerdefinierte Steuerelement Website zu erstellen.
 
@@ -203,7 +203,7 @@ Ein Zeiger auf eine `MSG`-Struktur, die die zu überprüfende Nachricht enthält
 
 Ungleich 0 (null), wenn die Nachricht verarbeitet wird. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Standardverhalten von `IsDialogMessage` besteht darin, Tastatur Meldungen zu überprüfen und Sie in eine Auswahl für das entsprechende Dialogfeld zu konvertieren. Wenn z. b. die Tab-Taste gedrückt wird, wird das nächste Steuerelement oder die nächste Gruppe von Steuerelementen ausgewählt.
 
@@ -227,7 +227,7 @@ Ein Zeiger auf das Fenster, das das Steuerelement enthält.
 
 Ungleich 0 (null), wenn das Steuerelement eine Bezeichnung ist. andernfalls NULL
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Label-Steuerelement ist ein Steuerelement, das sich wie eine Bezeichnung für das nächste Steuerelement in der Reihenfolge verhält.
 
@@ -257,7 +257,7 @@ Ein Zeiger auf die Nachricht, die das zu abgleichtende mnetmonische enthält.
 
 Ungleich 0 (null), wenn der mnetmonic dem Steuerelement entspricht. andernfalls NULL
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onevent"></a>COccManager:: OnEvent
 
@@ -289,7 +289,7 @@ Wenn nicht NULL, füllt `OnEvent` die `pTarget` und `pmf` Member der `AFX_CMDHAN
 
 Ungleich 0 (null), wenn das Ereignis behandelt wurde, andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Funktion, um den standardmäßigen Ereignis Behandlungsprozess anzupassen.
 
@@ -315,7 +315,7 @@ Ein Zeiger auf die Dialogfeld Vorlage, die zum Erstellen des Dialog Felds verwen
 
 Ein Zeiger auf eine Dialogfeld Vorlagen Struktur, die zum Erstellen des Dialog Felds verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Standardverhalten führt einen aufzurufenden `SplitDialogTemplate`aus und bestimmt, ob ActiveX-Steuerelemente vorhanden sind, und gibt dann die resultierende Dialogfeld Vorlage zurück.
 
@@ -334,7 +334,7 @@ virtual void PostCreateDialog(_AFX_OCC_DIALOG_INFO* pOccDialogInfo);
 *poccdialoginfo*<br/>
 Eine `_AFX_OCC_DIALOG_INFO` Struktur, die Informationen über die Dialogfeld Vorlage und alle vom Dialogfeld gehosteten ActiveX-Steuerelemente enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Arbeitsspeicher wurde durch einen aufzurufenden `SplitDialogTemplate`zugeordnet und für alle gehosteten ActiveX-Steuerelemente im Dialogfeld verwendet.
 
@@ -362,7 +362,7 @@ Ungleich NULL, wenn das Steuerelement die Standard Schaltfläche werden soll. an
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Für das-Steuerelement muss das OLEMISC_ACTSLIKEBUTTON Statusbit festgelegt sein. Weitere Informationen zu OLEMISC-Flags finden Sie im Thema zu [OLEMISC](/windows/win32/api/oleidl/ne-oleidl-olemisc) in der Windows SDK.
@@ -389,7 +389,7 @@ Eine Liste von Zeigern auf Dialogfeld Elemente, die ActiveX-Steuerelemente sind.
 
 Ein Zeiger auf eine Dialogfeld Vorlagen Struktur, die nur nicht-ActiveX-Steuerelemente enthält. Wenn keine ActiveX-Steuerelemente vorhanden sind, wird NULL zurückgegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ActiveX-Steuerelemente gefunden werden, wird die Vorlage analysiert, und es wird eine neue Vorlage erstellt, die nur nicht-ActiveX-Steuerelemente enthält. Alle ActiveX-Steuerelemente, die während dieses Vorgangs gefunden werden, werden *ppoledlgitems*hinzugefügt.
 
@@ -400,7 +400,7 @@ Wenn in der Vorlage keine ActiveX-Steuerelemente vorhanden sind, wird NULL zurü
 
 Überschreiben Sie diese Funktion, um diesen Prozess anzupassen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleControlSite-Klasse](../../mfc/reference/colecontrolsite-class.md)<br/>

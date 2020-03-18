@@ -53,11 +53,11 @@ helpviewer_keywords:
 - CArchive [MFC], m_pDocument
 ms.assetid: 9e950d23-b874-456e-ae4b-fe00781a7699
 ms.openlocfilehash: 3cf5c3b7a79e846928b5a7ee0af12a3324e141a3
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855296"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424626"
 ---
 # <a name="carchive-class"></a>CArchive-Klasse
 
@@ -69,17 +69,17 @@ Ermöglicht das Speichern eines komplexen Netzwerks von Objekten in einer perman
 class CArchive
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArchive:: CArchive](#carchive)|Erstellt ein `CArchive`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArchive:: Abort](#abort)|Schließt ein Archiv, ohne eine Ausnahme auszulösen.|
 |[CArchive:: Close](#close)|Entleert ungeschriebene Daten und trennt die Verbindung mit dem `CFile`.|
@@ -105,18 +105,18 @@ class CArchive
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArchive:: Operator &lt;&lt;](#operator_lt_lt)|Speichert-Objekte und primitive Typen im Archiv.|
 |[CArchive:: Operator &gt;&gt;](#operator_gt_gt)|Lädt Objekte und primitive Typen aus dem Archiv.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CArchive:: m_pDocument](#m_pdocument)||
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CArchive` verfügt nicht über eine Basisklasse.
 
@@ -138,7 +138,7 @@ Weitere Informationen zu `CArchive`finden Sie in den Artikeln [Serialisierung](.
 
 `CArchive`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afx.h
 
@@ -150,7 +150,7 @@ Diese Funktion wird aufgerufen, um das Archiv zu schließen, ohne eine Ausnahme 
 void Abort ();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `CArchive` Dekonstruktor ruft normalerweise `Close`auf, der alle Daten leert, die nicht im zugeordneten `CFile` Objekt gespeichert wurden. Dies kann zu Ausnahmen führen.
 
@@ -194,7 +194,7 @@ Eine ganze Zahl, die die Größe des internen Datei Puffers in Bytes angibt. Bea
 *lpbuf*<br/>
 Ein optionaler Zeiger auf einen vom Benutzer bereitgestellten Puffer der Größe *nbufsize*. Wenn Sie diesen Parameter nicht angeben, ordnet das Archiv einen Puffer aus dem lokalen Heap zu und gibt ihn frei, wenn das Objekt zerstört wird. Vom Archiv wird kein vom Benutzer bereitgestellter Puffer freigegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können diese Spezifikation nicht ändern, nachdem Sie das Archiv erstellt haben.
 
@@ -212,7 +212,7 @@ Leert alle Daten, die im Puffer verbleiben, schließt das Archiv und trennt die 
 void Close();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es sind keine weiteren Vorgänge für das Archiv zulässig. Nachdem Sie ein Archiv geschlossen haben, können Sie ein weiteres Archiv für dieselbe Datei erstellen, oder Sie können die Datei schließen.
 
@@ -230,7 +230,7 @@ Erzwingt, dass alle im Archiv Puffer verbleibenden Daten in die Datei geschriebe
 void Flush();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit der Member-Funktion `Flush` wird sichergestellt, dass alle Daten aus dem Archiv in die Datei übertragen werden. Sie müssen [CFile:: Close](../../mfc/reference/cfile-class.md#close) abrufen, um die Übertragung von der Datei auf das Speichermedium abzuschließen.
 
@@ -250,7 +250,7 @@ CFile* GetFile() const;
 
 Ein konstanter Zeiger auf das `CFile` Objekt, das verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen das Archiv leeren, bevor Sie `GetFile`verwenden.
 
@@ -270,7 +270,7 @@ UINT GetObjectSchema();
 
 Die Version des gelesenen Objekts während der Deserialisierung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Aufrufen dieser Funktion ist nur gültig, wenn das `CArchive` Objekt geladen wird ( [CArchive:: isload](#isloading) gibt einen Wert ungleich 0 zurück). Dies sollte der erste Aufruf in der `Serialize`-Funktion sein und nur einmal aufgerufen werden. Der Rückgabewert (uint)-1 gibt an, dass die Versionsnummer unbekannt ist.
 
@@ -292,7 +292,7 @@ BOOL IsBufferEmpty() const;
 
 Ungleich 0 (null), wenn der Puffer des Archivs leer ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird bereitgestellt, um die Programmierung mit der MFC-`CSocketFile`der Windows Sockets-Klasse zu unterstützen Sie müssen Sie nicht für ein Archiv verwenden, das einem `CFile` Objekt zugeordnet ist.
 
@@ -312,7 +312,7 @@ BOOL IsLoading() const;
 
 Ein Wert ungleich 0 (null), wenn das Archiv derzeit zum Laden verwendet wird. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird von den `Serialize` Funktionen der archivierten Klassen aufgerufen.
 
@@ -332,7 +332,7 @@ BOOL IsStoring() const;
 
 Ein Wert ungleich 0 (null), wenn das Archiv derzeit zum Speichern verwendet wird. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird von den `Serialize` Funktionen der archivierten Klassen aufgerufen.
 
@@ -355,7 +355,7 @@ void MapObject(const CObject* pOb);
 *POB*<br/>
 Ein konstanter Zeiger auf das Objekt, das gespeichert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beispielsweise können Sie ein Dokument nicht serialisieren, sondern die Elemente, die Teil des Dokuments sind, serialisieren. Wenn Sie `MapObject`aufrufen, können Sie zulassen, dass diese Elemente bzw. untergeordnete Elemente auf das Dokument verweisen. Außerdem können serialisierte unter Elemente Ihren *m_pDocument* zurück-Zeiger serialisieren.
 
@@ -379,7 +379,7 @@ Standardmäßig auf NULL festgelegt ist, kann dieser Zeiger auf einen `CDocument
 CDocument* m_pDocument;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Zeiger werden häufig verwendet, um allen Objekten, die serialisiert werden, zusätzliche Informationen über den Serialisierungsprozess zu vermitteln. Dies wird erreicht, indem der-Zeiger mit dem Dokument (eine `CDocument`abgeleitete Klasse) initialisiert wird, das serialisiert wird, sodass Objekte im Dokument bei Bedarf auf das Dokument zugreifen können. Dieser Zeiger wird auch von `COleClientItem` Objekten während der Serialisierung verwendet.
 
@@ -439,7 +439,7 @@ CArchive& operator<<(LONGLONG dwdw);
 
 Eine `CArchive` Referenz, die mehrere einfügeoperatoren in einer einzelnen Zeile ermöglicht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die letzten beiden oben aufgeführten Versionen dienen speziell zum Speichern von ganzen Zahlen mit 64 Bit.
 
@@ -519,7 +519,7 @@ CArchive& operator>>(LONGLONG& dwdw);
 
 Eine `CArchive` Referenz, die mehrere Extraktions Operatoren in einer einzelnen Zeile ermöglicht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die letzten beiden oben aufgeführten Versionen dienen speziell zum Laden von ganzen Zahlen mit 64 Bit.
 
@@ -559,7 +559,7 @@ Eine ganze Zahl ohne Vorzeichen, die die Anzahl der aus dem Archiv zu lesenden B
 
 Eine ganze Zahl ohne Vorzeichen, die die Anzahl der tatsächlich gelesenen Bytes enthält. Wenn der Rückgabewert kleiner als die angeforderte Anzahl ist, wurde das Ende der Datei erreicht. Für die dateiendebedingung wird keine Ausnahme ausgelöst.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Archiv interpretiert die Bytes nicht.
 
@@ -583,7 +583,7 @@ CRuntimeClass* ReadClass(
 ### <a name="parameters"></a>Parameter
 
 *pclassrefrequessiert*<br/>
-Ein Zeiger auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Struktur, die dem angeforderten Klassen Verweis entspricht. Kann den Wert NULL haben.
+Ein Zeiger auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Struktur, die dem angeforderten Klassen Verweis entspricht. Kann NULL sein.
 
 *pschema*<br/>
 Ein Zeiger auf ein Schema der zuvor gespeicherten Lauf Zeit Klasse.
@@ -595,7 +595,7 @@ Eine Zahl, die auf das eindeutige Tag eines Objekts verweist. Wird intern von de
 
 Ein Zeiger auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Struktur.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn *pclassrefrequessiert* nicht NULL ist, überprüft `ReadClass`, ob die archivierten Klassen Informationen mit Ihrer Lauf Zeit Klasse kompatibel sind. Wenn Sie nicht kompatibel ist, wird `ReadClass` eine [carchiveexception](../../mfc/reference/carchiveexception-class.md)auslösen.
 
@@ -626,7 +626,7 @@ Ein konstanter Zeiger auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-
 
 Ein [CObject](../../mfc/reference/cobject-class.md) -Zeiger, der mithilfe von [CObject:: IsKindOf](../../mfc/reference/cobject-class.md#iskindof)sicher in die richtige abgeleitete Klasse umgewandelt werden muss.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird normalerweise vom `CArchive` Extraktions Operator ( **>>** ) aufgerufen, der für einen [CObject](../../mfc/reference/cobject-class.md) -Zeiger überladen ist. `ReadObject`wiederum die `Serialize`-Funktion der archivierten Klasse aufruft.
 
@@ -662,7 +662,7 @@ In der Version, die bool zurückgibt, true, wenn erfolgreich; Andernfalls false.
 
 In der Version, die eine `LPTSTR`zurückgibt, ein Zeiger auf den Puffer, der die Textdaten enthält. NULL, wenn das Dateiende erreicht wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der-Version der Member-Funktion mit dem *nmax* -Parameter hält der Puffer bis zu einem Limit von *nmax* -1 Zeichen. Lesevorgänge werden von einem Wagen Rücklauf-Zeilenvorschub Paar beendet. Nachfolgende Zeilenumbruch Zeichen werden immer entfernt. In jedem Fall wird ein NULL-Zeichen (' \ 0 ') angefügt.
 
@@ -685,7 +685,7 @@ void SerializeClass(const CRuntimeClass* pClassRef);
 *pclassref*<br/>
 Ein Zeiger auf ein Lauf Zeit Klassenobjekt für die Basisklasse.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SerializeClass` in Abhängigkeit von der Richtung des `CArchive`den Verweis auf eine Klasse in das `CArchive` Objekt liest oder schreibt. Verwenden Sie `SerializeClass` anstelle von "read [Class](#readclass) " und " [Write-Class](#writeclass) " als bequeme Methode zum Serialisieren von Basisklassen Objekten. `SerializeClass` erfordert weniger Code und weniger Parameter.
 
@@ -712,7 +712,7 @@ void SetLoadParams(UINT nGrowBy = 1024);
 *ngrowby*<br/>
 Die Mindestanzahl der zuzuordnenden Element Slots, wenn eine Größen Erhöhung erforderlich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CArchive` verwendet ein Load-Array zum Auflösen von Verweisen auf Objekte, die im Archiv gespeichert sind. mit `SetLoadParams` können Sie die Größe festlegen, bis zu der das Lade Array wächst.
 
@@ -735,7 +735,7 @@ void SetObjectSchema(UINT nSchema);
 *nschema*<br/>
 Gibt das Schema des Objekts an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der nächste Aufrufen von [GetObjectSchema](#getobjectschema) gibt den in *nschema*gespeicherten Wert zurück.
 
@@ -761,7 +761,7 @@ Die Größe der Hash Tabelle für Schnittstellen Zeiger Zuordnungen. Sollte eine
 *nblocksize*<br/>
 Gibt die Speicher Belegungs Granularität für die Erweiterung der Parameter an. Muss eine Potenz von 2 sein, um die bestmögliche Leistung zu erzielen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 mit `SetStoreParams` können Sie die Hash Tabellengröße und die Blockgröße der Zuordnung festlegen, mit der während des Serialisierungsprozesses eindeutige Objekte identifiziert werden.
 
@@ -787,7 +787,7 @@ Ein Zeiger auf einen vom Benutzer bereitgestellten Puffer, der die Daten enthäl
 *nMax*<br/>
 Eine ganze Zahl, die die Anzahl der in das Archiv zu schreibenden Bytes angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Archiv formatiert die Bytes nicht.
 
@@ -810,7 +810,7 @@ void WriteClass(const CRuntimeClass* pClassRef);
 *pclassref*<br/>
 Ein Zeiger auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Struktur, die dem angeforderten Klassen Verweis entspricht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `WriteClass` schreibt einen Verweis auf die [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) für die Basisklasse in die `CArchive`. Verwenden Sie [CArchive:: Read Class](#readclass) zum Abrufen des Verweises.
 
@@ -837,7 +837,7 @@ void WriteObject(const CObject* pOb);
 *POB*<br/>
 Ein konstanter Zeiger auf das Objekt, das gespeichert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird normalerweise vom `CArchive` Einfügungs Operator ( **<<** ) aufgerufen, der für `CObject`überladen ist. `WriteObject`wiederum die `Serialize`-Funktion der archivierten Klasse aufruft.
 
@@ -867,7 +867,7 @@ void WriteString(LPCTSTR lpsz);
 *lpsz*<br/>
 Gibt einen Zeiger auf einen Puffer an, der eine NULL terminierte Text Zeichenfolge enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das abschließende Null Zeichen (' \ 0 ') wird nicht in die Datei geschrieben. Es wird auch kein Zeilen Vorstrich automatisch geschrieben.
 
@@ -879,7 +879,7 @@ Das abschließende Null Zeichen (' \ 0 ') wird nicht in die Datei geschrieben. E
 
 [!code-cpp[NVC_MFCSerialization#30](../../mfc/codesnippet/cpp/carchive-class_23.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CFile-Klasse](../../mfc/reference/cfile-class.md)<br/>

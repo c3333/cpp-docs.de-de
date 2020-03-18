@@ -99,11 +99,11 @@ helpviewer_keywords:
 - CReBarCtrl [MFC], SizeToRect
 ms.assetid: 154570d7-e48c-425d-8c7e-c64542bcb4cc
 ms.openlocfilehash: 14befb819a30238abb5780b1bdcc6d74402e8976
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875746"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426852"
 ---
 # <a name="crebarctrl-class"></a>Krebarctrl-Klasse
 
@@ -115,17 +115,17 @@ Kapselt die Funktionalität eines Grundleisten-Steuerelements. Dabei handelt es 
 class CReBarCtrl : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["Krebarctrl:: krebarctrl"](#crebarctrl)|Erstellt ein `CReBarCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["Krebarctrl:: BeginDrag"](#begindrag)|Versetzt das Grund leisten-Steuerelement in den Drag & Drop-Modus.|
 |["Erstellen": "erstellen"](#create)|Erstellt das Grund leisten-Steuerelement und fügt es an das `CReBarCtrl` Objekt an.|
@@ -173,7 +173,7 @@ class CReBarCtrl : public CWnd
 |["Krebarctrl:: Showband"](#showband)|Zeigt ein bestimmtes Band in einem Grund leisten-Steuerelement an oder blendet es aus.|
 |["Krebarctrl:: sizetorect"](#sizetorect)|Passt ein Grund leisten-Steuerelement an ein angegebenes Rechteck an.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Anwendung, in der das Grund leisten-Steuerelement residiert, weist das untergeordnete Fenster, das im Info leisten-Steuerelement enthalten ist, dem Info leisten- Das untergeordnete Fenster ist in der Regel ein weiteres häufiges Steuerelement.
 
@@ -215,7 +215,7 @@ Weitere Informationen finden Sie unter [verwenden](../../mfc/using-crebarctrl.md
 
 `CReBarCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -267,7 +267,7 @@ Gibt die Steuerelement-ID des Grund leisten Steuer Elements an.
 
 Ungleich 0 (null), wenn das Objekt erfolgreich erstellt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Erstellen Sie ein Grund leisten-Steuerelement in zwei Schritten:
 
@@ -315,7 +315,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -438,7 +438,7 @@ void GetBandMargins(PMARGINS pMargins);
 *pmargin*<br/>
 Ein Zeiger auf eine [Ränder](/windows/win32/api/uxtheme/ns-uxtheme-margins)-Struktur, die die Informationen empfängt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion emuliert die Funktionalität der [RB_GETBANDMARGINS](/windows/win32/Controls/rb-getbandmargins) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -500,7 +500,7 @@ Ein Zeiger auf eine [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colors
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `COLORSCHEME`-Struktur enthält die Schaltflächen Hervorhebungs Farbe und die Schaltflächen Schatten Farbe.
 
@@ -528,7 +528,7 @@ DWORD GetExtendedStyle() const;
 
 Eine bitweise Kombination (or) von Flags, die die erweiterten Stile angeben. Die möglichen Flags sind RBS_EX_SPLITTER und RBS_EX_TRANSPARENT. Weitere Informationen finden Sie unter dem *dwMask* -Parameter der [Methode "](#setextendedstyle) Methode" von "Methode".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [RB_GETEXTENDEDSTYLE](/windows/win32/Controls/rb-dragmove) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -544,7 +544,7 @@ CImageList* GetImageList() const;
 
 Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt. Gibt NULL zurück, wenn keine Bildliste für das Steuerelement festgelegt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion verwendet in der [rebarinfo](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) -Struktur gespeicherte Größen-und Masken Informationen, wie im Windows SDK beschrieben.
 
@@ -560,7 +560,7 @@ CPalette* GetPalette() const;
 
 Ein Zeiger auf ein [CPalette](../../mfc/reference/cpalette-class.md) -Objekt, das die aktuelle Palette des Grund leisten-Steuer Elements angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass diese Member-Funktion ein `CPalette` Objekt als Rückgabewert anstelle einer hpalette verwendet.
 
@@ -655,7 +655,7 @@ CToolTipCtrl* GetToolTips() const;
 
 Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass die MFC-Implementierung von `GetToolTips` einen Zeiger auf einen `CToolTipCtrl`anstelle eines HWND zurückgibt.
 
@@ -732,7 +732,7 @@ void MaximizeBand(UINT uBand);
 *uband*<br/>
 Der null basierte Index des zu maximier enden Bands.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Implementiert das Verhalten der Win32-Nachricht [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) bei `fIdeal` auf 0 festgelegt, wie im Windows SDK beschrieben.
 
@@ -753,7 +753,7 @@ void MinimizeBand(UINT uBand);
 *uband*<br/>
 Der null basierte Index des zu minimier enden Bands.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Implementiert das Verhalten des Win32-Nachrichten [RB_MINIMIZEBAND](/windows/win32/Controls/rb-minimizeband), wie in der Windows SDK beschrieben.
 
@@ -814,7 +814,7 @@ void RestoreBand(UINT uBand);
 *uband*<br/>
 Der null basierte Index des zu maximier enden Bands.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Implementiert das Verhalten der Win32-Nachricht [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) bei `fIdeal` auf 1 festgelegt, wie im Windows SDK beschrieben.
 
@@ -860,7 +860,7 @@ BOOL SetBandWidth(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*uband*|in NULL basierter Index eines Info leisten Bands.|
 |*cxwidth*|in Neue Breite des Bereichs der Info Leiste in Pixel.|
@@ -869,7 +869,7 @@ BOOL SetBandWidth(
 
 TRUE, wenn die Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [RB_SETBANDWIDTH](/windows/win32/Controls/rb-setbandwidth) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -923,7 +923,7 @@ Der COLORREF-Wert, der die neue Standard Hintergrundfarbe darstellt.
 
 Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Standard Hintergrundfarbe darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Festlegen der Hintergrundfarbe und zum Festlegen der Standardeinstellung finden Sie in diesem Thema.
 
@@ -940,7 +940,7 @@ void SetColorScheme(const COLORSCHEME* lpcs);
 *LPCS*<br/>
 Ein Zeiger auf eine [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colorscheme) -Struktur, wie im Windows SDK beschrieben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `COLORSCHEME`-Struktur enthält sowohl die Hervorhebungs Farbe der Schaltfläche als auch die Schaltflächen Schatten Farbe.
 
@@ -956,7 +956,7 @@ DWORD SetExtendedStyle(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*dwMask*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Flags im Parameter " *dwstyleex* " angewendet werden. Verwenden Sie einen oder mehrere der folgenden Werte:<br /><br /> RBS_EX_SPLITTER: Standardmäßig wird der Splitter unten im horizontalen und rechts im vertikalen Modus angezeigt.<br /><br /> RBS_EX_TRANSPARENT: die [WM_ERASEBKGND](/windows/win32/winmsg/wm-erasebkgnd) Meldung an das übergeordnete Fenster weiterleiten.|
 |*dwstyleex*|in Eine bitweise Kombination (or) von Flags, die die anzuwendenden Stile angeben. Um einen Stil festzulegen, geben Sie das gleiche Flag an, das im *dwMask* -Parameter verwendet wird. Geben Sie zum Zurücksetzen eines Stils Binary NULL an.|
@@ -965,7 +965,7 @@ DWORD SetExtendedStyle(
 
 Der vorherige erweiterte Stil.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [RB_SETEXTENDEDSTYLE](/windows/win32/Controls/rb-setextendedstyle) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -1003,7 +1003,7 @@ Ein Zeiger auf ein `CWnd` Objekt, das als Besitzer des Grund leisten-Steuer Elem
 
 Ein Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, das der aktuelle Besitzer des Grund leisten-Steuer Elements ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass diese Member-Funktion Zeiger auf `CWnd`-Objekte sowohl für den aktuellen als auch für den ausgewählten Besitzer des Grund leisten-Steuer Elements anstelle von Handles für Windows verwendet.
 
@@ -1027,7 +1027,7 @@ Eine hpalette, die die neue Palette angibt, die vom Grund leisten-Steuerelement 
 
 Ein Zeiger auf ein [CPalette](../../mfc/reference/cpalette-class.md) -Objekt, das die vorherige Palette des Grund leisten-Steuer Elements angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass diese Member-Funktion ein `CPalette` Objekt als Rückgabewert anstelle einer hpalette verwendet.
 
@@ -1048,7 +1048,7 @@ Ein COLORREF-Wert, der die neue Textfarbe im `CReBarCtrl` Objekt darstellt.
 
 Der [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Textfarbe darstellt, die dem `CReBarCtrl` Objekt zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Er wird bereitgestellt, um die Text Farb Flexibilität in einem Grund leisten-Steuerelement zu unterstützen
 
@@ -1065,7 +1065,7 @@ void SetToolTips(CToolTipCtrl* pToolTip);
 *ptooltip*<br/>
 Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen das `CToolTipCtrl` Objekt zerstören, wenn Sie damit abgeschlossen sind.
 
@@ -1086,7 +1086,7 @@ Ein Zeiger auf eine Unicode-Zeichenfolge, die den festzulegenden visuellen Stil 
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion emuliert die Funktionalität der [RB_SETWINDOWTHEME](/windows/win32/Controls/rb-setwindowtheme) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -1129,11 +1129,11 @@ Ein Verweis auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Obje
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass diese Member-Funktion ein `CRect`-Objekt als Parameter anstelle einer `RECT` Struktur verwendet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

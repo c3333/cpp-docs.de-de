@@ -3,7 +3,6 @@ title: /HEAP (Heapgröße festlegen)
 ms.date: 11/04/2016
 f1_keywords:
 - VC.Project.VCLinkerTool.HeapCommitSize
-- /heap
 - VC.Project.VCLinkerTool.HeapReserveSize
 helpviewer_keywords:
 - -HEAP linker option
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - /HEAP linker option
 - HEAP linker option
 ms.assetid: a3f71927-7f1d-492c-9fdb-dfccb1a043da
-ms.openlocfilehash: 715eaa358d052d4ae646f38f2e784f0235dffccb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f155ad56ec1a90479b402e38e7ec7f3e3d80e470
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62270353"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439521"
 ---
 # <a name="heap-set-heap-size"></a>/HEAP (Heapgröße festlegen)
 
@@ -24,33 +23,33 @@ ms.locfileid: "62270353"
 /HEAP:reserve[,commit]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Durch die Option wird die Größe des Heaps in Bytes. Diese Option ist nur für die Verwendung, wenn Sie eine .exe-Datei zu erstellen.
+Die Option/Heap legt die Größe des Heaps in Bytes fest. Diese Option ist nur für die Verwendung beim Aufbau einer exe-Datei vorgesehen.
 
-Die *reservieren* Argument gibt die Gesamtgröße der Heapzuordnung im virtuellen Speicher. Die Standard-Heapgröße beträgt 1 MB. Der Linker rundet den angegebenen Wert in die nächsten 4 Bytes ab.
+Das *Reserve* Argument gibt die gesamte Heap Zuordnung im virtuellen Speicher an. Die Standard Heap Größe beträgt 1 MB. Der Linker rundet den angegebenen Wert auf die nächsten 4 Bytes auf.
 
-Der optionale `commit` Argument gibt die Menge an physikalischem Arbeitsspeicher, zu einem Zeitpunkt zuordnen. Die Zusicherung von virtuellem Speicher bewirkt die Belegung von Speicher in der Auslagerungsdatei. Eine höhere `commit` -Wert spart Zeit, wenn die Anwendung benötigt mehr Heapspeicher, erhöht aber die arbeitsspeicheranforderungen und möglicherweise die Startzeit.
+Das optionale `commit`-Argument gibt die Menge an physischem Speicher an, die gleichzeitig belegt werden soll. Die Zusicherung von virtuellem Speicher bewirkt die Belegung von Speicher in der Auslagerungsdatei. Ein höherer `commit` Wert spart Zeit, wenn die Anwendung mehr Heap Speicher benötigt, erhöht jedoch die Arbeitsspeicher Anforderungen und möglicherweise die Startzeit.
 
-Geben Sie die *reservieren* und `commit` Werten in Decimal oder C-Notation.
+Geben Sie die *Reserve* -und `commit` Werte in der Notation Decimal oder C-Language an.
 
-Diese Funktion steht auch über eine Moduldefinitionsdatei mit [HEAPSIZE](heapsize.md).
+Diese Funktionalität ist auch über eine Modul Definitionsdatei mit [HEAPSIZE](heapsize.md)verfügbar.
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Klicken Sie auf die **Linker** Ordner.
+1. Klicken Sie auf den Ordner **Linker**.
 
-1. Klicken Sie auf die **System** Eigenschaftenseite.
+1. Klicken Sie auf die Eigenschaften Seite **System** .
 
-1. Ändern der **Heapgröße Commit** Eigenschaft.
+1. Ändern Sie die Eigenschaft **Heap-Commitgröße** .
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
-- Weitere Informationen finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapReserveSize%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapCommitSize%2A>.
+- Prüfen Sie <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapReserveSize%2A> und <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapCommitSize%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Linkerreferenz](linking.md)<br/>
 [MSVC-Linkeroptionen](linker-options.md)

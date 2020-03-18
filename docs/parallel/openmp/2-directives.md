@@ -3,11 +3,11 @@ title: 2. Anweisungen
 ms.date: 01/18/2019
 ms.assetid: d1a69374-6c03-45fb-8c86-e91cea8adae8
 ms.openlocfilehash: 125d2d83b277e62d007e3a208e426ea717d52790
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78882856"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424194"
 ---
 # <a name="2-directives"></a>2. Direktiven
 
@@ -153,13 +153,13 @@ Die `for`-Direktive schränkt die Struktur der entsprechenden `for` Schleife ein
 `for (` *Init-expr* `;` *var Logical-op b* `;` *INCR-expr* `)`
 
 *init-expr*<br/>
-Einer der folgenden:
+Eine der folgenden Komponenten:
 
 - *var* = *lb*
 - *ganzzahliger Typ var* = *lb*
 
 *INCR-expr*<br/>
-Einer der folgenden:
+Eine der folgenden Komponenten:
 
 - `++` *var*
 - *var* -`++`
@@ -175,7 +175,7 @@ Einer der folgenden:
 Eine ganzzahlige Variable mit Vorzeichen. Wenn diese Variable andernfalls freigegeben wäre, wird Sie für die Dauer der `for`implizit als privat festgelegte. Ändern Sie diese Variable nicht innerhalb des Texts der `for` Anweisung. Wenn die Variable nicht `lastprivate`angegeben wird, ist der Wert nach der Schleife unbestimmt.
 
 *logisches op*<br/>
-Einer der folgenden:
+Eine der folgenden Komponenten:
 
 - `<`
 - `<=`
@@ -194,7 +194,7 @@ Tabelle 2-1: Werte Werte *für* `schedule`-Klausel
 |||
 |-|-|
 |Statisch|Wenn `schedule(static,` *chunk_size* `)` angegeben wird, werden Iterationen in Blöcke der von *chunk_size*angegebenen Größe aufgeteilt. Die Blöcke werden den Threads im Team im Team in der Reihenfolge der Thread Nummer statisch zugewiesen. Wenn kein *chunk_size* angegeben wird, wird der Iterations Bereich in Blöcke unterteilt, die ungefähr gleich groß sind, wobei jedem Thread ein Block zugeordnet ist.|
-|dynamisch|Wenn `schedule(dynamic,` *chunk_size* `)` angegeben wird, werden die Iterationen in eine Reihe von Blöcken aufgeteilt, die jeweils *chunk_size* Iterationen enthalten. Jeder Block wird einem Thread zugewiesen, der auf eine Zuweisung wartet. Der Thread führt den Teil der Iterationen aus und wartet dann auf seine nächste Zuweisung, bis keine Blöcke mehr zugewiesen werden. Der letzte Block, der zugewiesen werden soll, kann eine geringere Anzahl von Iterationen aufweisen. Wenn kein *chunk_size* angegeben wird, wird der Standardwert 1 verwendet.|
+|Dynamische|Wenn `schedule(dynamic,` *chunk_size* `)` angegeben wird, werden die Iterationen in eine Reihe von Blöcken aufgeteilt, die jeweils *chunk_size* Iterationen enthalten. Jeder Block wird einem Thread zugewiesen, der auf eine Zuweisung wartet. Der Thread führt den Teil der Iterationen aus und wartet dann auf seine nächste Zuweisung, bis keine Blöcke mehr zugewiesen werden. Der letzte Block, der zugewiesen werden soll, kann eine geringere Anzahl von Iterationen aufweisen. Wenn kein *chunk_size* angegeben wird, wird der Standardwert 1 verwendet.|
 |durch|Wenn `schedule(guided,` *chunk_size* `)` angegeben wird, werden die Iterationen Threads in Blöcken mit absteigender Größe zugewiesen. Wenn ein Thread den zugewiesenen Teil der Iterationen beendet, wird ihm dynamisch ein weiterer Block zugewiesen, bis keine vorhanden ist. Bei einem *chunk_size* von 1 entspricht die Größe jedes Blocks ungefähr der Anzahl der nicht zugewiesenen Iterationen dividiert durch die Anzahl der Threads. Diese Größen verringern sich fast exponentiell auf 1. Bei einer *chunk_size* mit dem Wert *k* größer als 1 verringern sich die Größen fast exponentiell auf *k*, mit der Ausnahme, dass der letzte Block weniger als *k* Iterationen aufweisen kann. Wenn kein *chunk_size* angegeben wird, wird der Standardwert 1 verwendet.|
 |Laufzeit|Wenn `schedule(runtime)` angegeben wird, wird die Entscheidung bezüglich der Planung bis zur Laufzeit verzögert. Die *Art* des Zeitplans und die Größe der Blöcke können zur Laufzeit ausgewählt werden, indem die Umgebungsvariable `OMP_SCHEDULE`festgelegt wird. Wenn diese Umgebungsvariable nicht festgelegt ist, wird der resultierende Zeitplan von der Implementierung definiert. Wenn `schedule(runtime)` angegeben wird, darf *chunk_size* nicht angegeben werden.|
 
@@ -601,7 +601,7 @@ In den folgenden Abschnitten werden die Klauseln für die Datenfreigabe Attribut
 - [firstprivate](#2722-firstprivate)
 - [lastprivate](#2723-lastprivate)
 - [Genu](#2724-shared)
-- [Standardwert](#2725-default)
+- [default](#2725-default)
 - [reduction](#2726-reduction)
 - [copyin](#2727-copyin)
 - [copyprivate](#2728-copyprivate)

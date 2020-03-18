@@ -189,11 +189,11 @@ helpviewer_keywords:
 - CMFCRibbonBar [MFC], TranslateChar
 ms.assetid: a65d06fa-1a28-4cc0-8971-bc9d7c9198fe
 ms.openlocfilehash: 3656b6a135757a4658f2ef08b80a54efffe89012
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883693"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425772"
 ---
 # <a name="cmfcribbonbar-class"></a>Cmscribbonbar-Klasse
 
@@ -207,17 +207,17 @@ Ausführlichere Informationen finden Sie im Quellcode, der sich im Ordner **VC\\
 class CMFCRibbonBar : public CPane
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|`CMFCRibbonBar::CMFCRibbonBar`|Der Standardkonstruktor.|
+|`CMFCRibbonBar::CMFCRibbonBar`|Standardkonstruktor|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMF cribbonbar:: activatecontextcategory](#activatecontextcategory)|Aktiviert eine bereits angezeigte Kontextkategorie.|
 |[CMF cribbonbar:: AddCategory](#addcategory)|Fügt dem Menüband eine neue Menübandkategorie hinzu.|
@@ -311,7 +311,7 @@ class CMFCRibbonBar : public CPane
 |[CMF cribbonbar:: "tggleimimizestate"](#togglemimimizestate)|Wechselt zwischen dem minimierten und maximierten Zustand der Menübandleiste.|
 |[CMF cribbonbar:: TranslateChar](#translatechar)||
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Microsoft hat das Office Fluent-Menüband zusammen mit Microsoft Office 2007 eingeführt. Dies Menübandleiste ist nicht nur ein neues Steuerelement. Sie stellt auch eine neue Sichtweise der Benutzeroberfläche dar. Das Menüband ist ein Bereich mit einer Reihe von Registerkarten, die als „Kategorien“ bezeichnet werden. Jede Kategorie ist logisch in Menübandbereiche aufgeteilt, und jeder Bereich kann verschiedene Steuerelemente und Befehlsschaltflächen enthalten.
 
@@ -335,7 +335,7 @@ Informationen dazu, wie Sie eine Menü Band Leiste zu Ihrer vorhandenen MFC-Anwe
 
 [CMFCRibbonBar](../../mfc/reference/cmfcribbonbar-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxribbonbar.h
 
@@ -400,7 +400,7 @@ in Zeiger auf eine [CMFCRibbonCategory](../../mfc/reference/cmfcribboncategory-c
 
 Ein Zeiger auf die neue Menü Band Kategorie, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der *prti* -Parameter nicht NULL ist, wird die neue Menü Band Kategorie dynamisch mithilfe der Lauf Zeit Klasse erstellt.
 
@@ -462,7 +462,7 @@ in Zeiger auf eine Lauf Zeit Klasse.
 
 Ein Zeiger auf die neu erstellte Kategorie oder NULL, wenn die `CreateObject`-Methode von *prti* die angegebene Kategorie nicht erstellen kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um eine Kontext Kategorie hinzuzufügen. Bei Kontext Kategorien handelt es sich um einen speziellen Typ von Kategorie, der zur Laufzeit angezeigt oder ausgeblendet werden kann, abhängig vom aktuellen Anwendungskontext. Wenn der Benutzer z. b. ein Objekt auswählt, können Sie spezielle Registerkarten mit Kontext Kategorien anzeigen, mit denen Sie das jeweilige ausgewählte Objekt ändern.
 
@@ -520,7 +520,7 @@ in Die Größe von großen Bildern.
 
 Zeiger auf die neue Haupt Menü Band Kategorie, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn bereits eine Haupt Menü Band Kategorie vorhanden ist, wird Sie gelöscht.
 
@@ -542,7 +542,7 @@ CMFCRibbonCategory* AddPrintPreviewCategory();
 
 Ein Zeiger auf die neue Menü Band Kategorie, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode erstellt eine Menü Band Kategorie und die Steuerelemente, die Sie benötigt, um eine Seitenansicht bereitzustellen.
 
@@ -573,7 +573,7 @@ in Größe der Bilder für Menü Band Elemente in der Kategorie.
 
 Ein Zeiger auf die neue Kategorie, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Menü Band Kategorie schnell Zugriff-Symbolleiste wird nur im Dialogfeld Anpassen der Symbolleiste für den schnell Zugriff verwendet.
 
@@ -590,7 +590,7 @@ void AddToTabs(CMFCRibbonBaseElement* pElement);
 *pelement*<br/>
 in Zeiger auf ein Menü Band Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Ribbon-Element ist vor allen System Schaltflächen positioniert.
 
@@ -607,7 +607,7 @@ CMFCRibbonBar(BOOL bReplaceFrameCaption = TRUE);
 *breplaceframecaption*<br/>
 in TRUE, wenn die Menü Band Leiste die Beschriftung des Hauptrahmen Fensters ersetzt; FALSE, um die Menü Band Leiste unter der Beschriftung des Hauptrahmen Fensters zu suchen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="create"></a>CMF cribbonbar:: Create
 
@@ -635,7 +635,7 @@ in ID des neuen Fensters.
 
 TRUE, wenn das Fenster erstellt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ### <a name="example"></a>Beispiel
 
@@ -673,7 +673,7 @@ in ID des neuen Fensters.
 
 TRUE, wenn das Fenster erstellt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="deactivatekeyboardfocus"></a>CMF cribbonbar::D eactivatekeyboardfocus
 
@@ -688,7 +688,7 @@ void DeactivateKeyboardFocus(BOOL bSetFocus = TRUE);
 *bsetfocus*<br/>
 in TRUE, um den Fokus auf das übergeordnete Fenster der Menü Band Leiste festzulegen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="drawmenuimage"></a>CMF cribbonbar::D rawmenuimage
 
@@ -716,7 +716,7 @@ in Das Anzeige Rechteck für eine Menü Schaltfläche.
 
 TRUE, wenn das Bild gezeichnet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="dwmcompositionchanged"></a>CMF cribbonbar::D wmcompositionchanged
 
@@ -726,7 +726,7 @@ Passt die Anzeige der Menü Band Leiste an, wenn die Komposition von Desktopfens
 virtual void DWMCompositionChanged();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="enablekeytips"></a>Cmscribbonbar:: enablekeytips
 
@@ -741,7 +741,7 @@ void EnableKeyTips(BOOL bEnable = TRUE);
 *benabel*<br/>
 in TRUE, um das KeyTips-Feature zu aktivieren. FALSE zum Deaktivieren der KeyTips-Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie diese Funktion aktivieren, werden wichtige Tipps angezeigt, wenn der Benutzer die Alt-Taste oder die F10-Taste drückt. Wenn der Benutzer die Alt-Taste drückt, werden Schlüssel Tipps mit einer Verzögerung von 200 Millisekunden angezeigt. Diese Verzögerung ermöglicht das Ausführen von Verknüpfungen, sodass die gedrückte Alt-Taste keine Auswirkung auf andere Kombinationen hat, die die Alt-Taste enthalten.
 
@@ -758,7 +758,7 @@ void EnablePrintPreview(BOOL bEnable = TRUE);
 *benabel*<br/>
 in "True", um die **Druckvorschau** Funktion zu aktivieren. FALSE zum Deaktivieren der **Druckvorschau** Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn *benable* auf false festgelegt ist und eine Kategorie der Druckvorschau vorhanden ist, wird Sie gelöscht.
 
@@ -782,7 +782,7 @@ in "True", um Quick Infos auf der Menü Band Leiste zu aktivieren. FALSE zum Dea
 *benabledescr*<br/>
 in TRUE, um QuickInfo-Beschreibungen in der QuickInfo zu aktivieren. FALSE zum Deaktivieren von QuickInfo-Beschreibungen in der QuickInfo.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *benable* -Parameter bestimmt, ob Quick Infos angezeigt werden, wenn die Maus über ein Menüband-Element bewegt wird. Der *benabledescr* -Parameter bestimmt, ob zusätzlicher beschreibender Text mit dem QuickInfo-Text angezeigt wird.
 
@@ -808,7 +808,7 @@ in TRUE, um nur sichtbare Menü Band Elemente zu durchsuchen. FALSE, um alle Men
 
 Ein Zeiger auf ein Menüband-Element, wenn es über die angegebenen Daten und die Sichtbarkeit verfügt. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Menüband-Element ist ein beliebiges Steuerelement, das Sie dem Menüband hinzufügen können, z. b. eine Menü Band Schaltfläche, eine Menü Band Kategorie oder ein Schieberegler
 
@@ -838,7 +838,7 @@ in TRUE, um Symbolleisten Elemente für den schnell Zugriff aus der Suche auszus
 
 Ein Zeiger auf ein Menüband-Element, wenn es über die angegebene Befehls-ID und die angegebenen Suchwerte verfügt. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Menüband-Element ist ein beliebiges Menüband-Steuerelement, das dem Menüband hinzugefügt werden kann, z. b. eine Menü Band Schaltfläche oder eine Menü Band Kategorie oder ein
 
@@ -869,7 +869,7 @@ Passt das Layout aller Elemente in der Menü Band Leiste und im übergeordneten 
 void ForceRecalcLayout();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getactivecategory"></a>CMF cribbonbar:: getactivecategory
 
@@ -883,7 +883,7 @@ CMFCRibbonCategory* GetActiveCategory() const;
 
 Ein Zeiger auf die aktive Menü Band Kategorie. oder NULL, wenn keine Kategorie aktiv ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Kategorie ist aktiv, wenn Sie den Fokus besitzt. Standardmäßig ist die aktive Kategorie die erste Kategorie auf der linken Seite der Menü Band Leiste.
 
@@ -913,7 +913,7 @@ int GetCaptionHeight() const;
 
 Die Höhe des Beschriftungs Bereichs für die Menü Band Leiste in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getcategory"></a>CMF cribbonbar:: getCategory
 
@@ -956,7 +956,7 @@ int GetCategoryHeight() const;
 
 Die Höhe der Kategorie.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die kategoriehöhe umfasst die Höhe der Registerkarte Category.
 
@@ -1011,7 +1011,7 @@ virtual CMFCRibbonBaseElement* GetDroppedDown();
 
 Das Menü Band Element, das zurzeit gelöscht wird. oder NULL, wenn derzeit kein Menü Band Element abgelegt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getelementsbyid"></a>CMF cribbonbar:: getelementsbyid
 
@@ -1031,7 +1031,7 @@ in Befehls-ID eines Menü Band Elements.
 *arbuttons*<br/>
 vorgenommen Ein Array von Zeigern auf Menü Band Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mehrere Menü Band Elemente können dieselbe Befehls-ID aufweisen, da einige Menü Band Elemente in die Symbolleiste für den schnell Zugriff kopiert werden können.
 
@@ -1047,7 +1047,7 @@ DWORD GetHideFlags() const;
 
 Die Flags, die angeben, wie viel der Menü Band Leiste sichtbar ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle sind die möglichen Kombinationen von Flags für den Rückgabewert aufgeführt:
 
@@ -1073,7 +1073,7 @@ vorgenommen Die Liste der Befehls-IDs für Menü Band Elemente, die in der Menü
 *bhiddenonly*<br/>
 in TRUE, wenn die angezeigten Menü Band Elemente ausgeschlossen werden sollen. FALSE, um alle Menü Band Elemente in der Menü Band Leiste einzuschließen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getkeyboardnavigationlevel"></a>CMF cribbonbar:: getkeyboardnavigationlevel
 
@@ -1093,7 +1093,7 @@ Die aktuelle Navigationsebene, während der Benutzer die KeyTips drückt, die au
 |0|KeyTips werden angezeigt.|
 |1|Der Benutzer hat einen angezeigten KeyTip gedrückt.|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getkeyboardnavlevelcurrent"></a>CMF cribbonbar:: getkeyboardnavlevelcurrent
 
@@ -1107,7 +1107,7 @@ CObject* GetKeyboardNavLevelCurrent() const;
 
 Das aktuelle Tastatur navigationsobjekt auf der Menü Band Leiste. andernfalls NULL, wenn derzeit keine KeyTips angezeigt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Objekt, das derzeit KeyTips anzeigt, ist das aktuelle Tastatur navigationsobjekt.
 
@@ -1123,7 +1123,7 @@ CObject* GetKeyboardNavLevelParent() const;
 
 Das übergeordnete Tastatur navigationsobjekt auf der Menü Band Leiste. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Benutzer auf der Menü Band Leiste einen KeyTip drückt, wird das aktuelle Tastatur navigationsobjekt zum übergeordneten Tastatur navigationsobjekt.
 
@@ -1139,7 +1139,7 @@ CMFCRibbonCategory* GetMainCategory() const;
 
 Ein Zeiger auf die Haupt Menü Band Kategorie.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Haupt Menü Band Kategorie enthält den Hauptbereich des Menübands.
 
@@ -1155,7 +1155,7 @@ CRect GetQATCommandsLocation() const;
 
 Das Anzeige Rechteck für den Befehls Abschnitt der Symbolleiste für den schnell Zugriff.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Befehls Abschnitt des Anzeige Rechtecks enthält nicht die Schaltfläche Anpassung.
 
@@ -1171,7 +1171,7 @@ CMFCRibbonBaseElement* GetQATDroppedDown();
 
 Ein Zeiger auf das Menü Band Element auf der Symbolleiste für den schnell Zugriff, bei dem das Popup-Menü angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getquickaccesscommands"></a>CMF cribbonbar:: getquickaccesscommands
 
@@ -1186,7 +1186,7 @@ void GetQuickAccessCommands(CList<UINT,UINT>& lstCommands);
 *lstcommands*<br/>
 vorgenommen Die Liste der Befehls-IDs für die Menü Band Elemente auf der Symbolleiste für den schnell Zugriff.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Liste enthält keine Menü Band Elemente, die Trennzeichen für Steuerelemente sind.
 
@@ -1202,7 +1202,7 @@ CRect GetQuickAccessToolbarLocation() const;
 
 Das Anzeige Rechteck für die Symbolleiste für den schnell Zugriff.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="gettabtrancateratio"></a>CMF cribbonbar:: gettabtrancateratio
 
@@ -1216,7 +1216,7 @@ int GetTabTrancateRatio() const;
 
 Die Verringerung der prozentualen Größe in der Anzeigebreite der kategorieregister Karten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Registerkarten der Kategorie werden in der Breite reduziert, wenn nicht genügend Breite auf der Menü Band Leiste vorhanden ist.
 
@@ -1232,7 +1232,7 @@ int GetTooltipFixedWidthLargeImage() const;
 
 Die große Größe der QuickInfo-Breite in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die große QuickInfo-Breite den Wert 0 hat, variiert die Breite.
 
@@ -1248,7 +1248,7 @@ int GetTooltipFixedWidthRegular() const;
 
 Die reguläre Größe der QuickInfo-Breite in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die reguläre Größe der QuickInfo-Breite 0 ist, variiert die Breite.
 
@@ -1264,7 +1264,7 @@ int GetVisibleCategoryCount() const;
 
 Die Anzahl der sichtbaren Kategorien auf der Menü Band Leiste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hideallcontextcategories"></a>CMF cribbonbar:: hideallcontextcategories
 
@@ -1278,7 +1278,7 @@ BOOL HideAllContextCategories();
 
 TRUE, wenn mindestens eine Kontext Kategorie ausgeblendet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn eine Kontext Kategorie aktiv ist, wird die aktive Kategorie auf die erste sichtbare Kategorie in der Kategorieliste zurückgesetzt.
 
@@ -1290,7 +1290,7 @@ Blendet alle KeyTips auf der Menü Band Leiste aus.
 void HideKeyTips();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="hittest"></a>CMF cribbonbar:: HitTest
 
@@ -1312,13 +1312,13 @@ in Position des Punkts in der Leiste der Menü Band Leiste.
 in TRUE, wenn die aktive Kategorie durchsucht werden soll. FALSE, wenn die aktive Kategorie nicht durchsucht werden soll.
 
 *bcheckpanelcaption*<br/>
-in "True", um die Beschriftung des Menü Band Panels mit dem darin befindlichen Punkt zu testen. Falsch, um die Beschriftung des Menü Band Panels mit dem darin befindlichen Punkt zu testen. Weitere Informationen finden Sie im Abschnitt zu den Hinweisen.
+in "True", um die Beschriftung des Menü Band Panels mit dem darin befindlichen Punkt zu testen. Falsch, um die Beschriftung des Menü Band Panels mit dem darin befindlichen Punkt zu testen. Weitere Informationen finden Sie im Abschnitt Hinweise.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das Menü Band Element, das sich am angegebenen Punkt befindet. andernfalls NULL, wenn sich der Punkt nicht in einem Menü Band Element befindet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Beschriftung des Menü Band Panels mit dem darin befindlichen Punkt wird nicht getestet, es sei denn, der *bcheckactivecategory* -Parameter ist "true".
 
@@ -1346,7 +1346,7 @@ virtual BOOL IsMainRibbonBar() const;
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig gibt diese Methode immer true zurück. Überschreiben Sie diese Methode, um anzugeben, ob die Menü Band Leiste die primäre Menü Band Leiste ist.
 
@@ -1374,7 +1374,7 @@ BOOL IsQATEmpty() const;
 
 TRUE, wenn die Symbolleiste für den schnell Zugriff Befehlszeilen enthält. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isquickaccesstoolbarontop"></a>CMF cribbonbar:: isquickaccesstoolbarontop
 
@@ -1417,7 +1417,7 @@ in Dieser Parameter wird nicht verwendet.
 
 Gibt immer false zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig gibt diese Methode immer false zurück. Überschreiben Sie diese Methode, um anzugeben, ob auf der Menü Band Leiste angeordnete Schaltflächen Gruppen einen Gruppen Rahmen anzeigen.
 
@@ -1433,7 +1433,7 @@ BOOL IsToolTipDescrEnabled() const;
 
 TRUE, wenn QuickInfo-Beschreibungen aktiviert sind. FALSE, wenn die QuickInfo-Beschreibungen deaktiviert sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 QuickInfo-Beschreibungen sind zusätzlicher beschreibender Text, der mit dem QuickInfo-Text angezeigt
 
@@ -1461,7 +1461,7 @@ BOOL IsTransparentCaption() const;
 
 TRUE, wenn das Farbschema Windows Aero ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onclickbutton"></a>CMFCRibbonBar:: onclickbutton
 
@@ -1481,7 +1481,7 @@ in Zeiger auf die Schaltfläche, auf die geklickt wurde.
 *Punkt*<br/>
 in Dieser Parameter wird nicht verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="oneditcontextmenu"></a>CMF cribbonbar:: oneditcontextmenu
 
@@ -1496,7 +1496,7 @@ virtual void OnEditContextMenu(
 in *Peer*<br/>
 in *Punkt*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onrtlchanged"></a>Cmscribbonbar:: onrtlchanged
 
@@ -1511,7 +1511,7 @@ virtual void OnRTLChanged(BOOL bIsRTL);
 *bisrtl*<br/>
 in TRUE, wenn das Layout von rechts nach links ist. FALSE, wenn das Layout von links nach rechts ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode passt das Layout aller Steuerelemente auf der Menü Band Leiste an die neue Layoutrichtung an.
 
@@ -1531,7 +1531,7 @@ Long *LVAL* der Index des barrierefreien Objekts.
 
 S_OK, wenn erfolgreich; andernfalls FALSE oder S_FALSE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onshowribboncontextmenu"></a>CMF cribbonbar:: onshoschreibboncontextmenu
 
@@ -1552,7 +1552,7 @@ in *Phit*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onshowribbonqatmenu"></a>CMF cribbonbar:: onshoschreibbonqatmenu
 
@@ -1573,7 +1573,7 @@ in *Phit*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onsyskeydown"></a>CMF cribbonbar:: onsyskeydown
 
@@ -1601,7 +1601,7 @@ in Tastatur Zustands Flags, wenn die Taste gedrückt wurde.
 
 TRUE, wenn das Tastatureingabe-Ereignis verarbeitet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onsyskeyup"></a>CMF cribbonbar:: onsyskeyup
 
@@ -1629,7 +1629,7 @@ in Dieser Parameter wird nicht verwendet.
 
 TRUE, wenn das Tastatureingabe-Ereignis verarbeitet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="poptooltip"></a>CMF cribbonbar::P optooltip
 
@@ -1639,7 +1639,7 @@ Entfernt eine QuickInfo aus der Ansicht.
 void PopTooltip();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="pretranslatemessage"></a>CMF cribbonbar::P retranslatemess Age
 
@@ -1658,7 +1658,7 @@ in Zeiger auf eine Meldung.
 
 TRUE, wenn die Meldung von der Menü Band Leiste verarbeitet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="recalclayout"></a>CMF cribbonbar:: Neuberechnen
 
@@ -1668,7 +1668,7 @@ Passt das Layout aller Steuerelemente auf der Menü Band Leiste an.
 virtual void RecalcLayout();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach der Layoutanpassung wird die Anzeige der Menü Band Leiste aktualisiert.
 
@@ -1680,7 +1680,7 @@ Löscht alle Menü Band Kategorien von der Menü Band Leiste.
 void RemoveAllCategories();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode löscht alle Menü Band Kategorien aus dem Arbeitsspeicher und aus der Kategorieliste.
 
@@ -1692,7 +1692,7 @@ Entfernt alle Menübandelemente aus dem Registerkartenbereich.
 void RemoveAllFromTabs();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, wenn Sie alle Elemente, die Sie dem Registerkarten Bereich hinzugefügt haben, mithilfe der [CMFCRibbonBar:: adddetabs](#addtotabs) -Methode entfernen möchten.
 
@@ -1713,7 +1713,7 @@ in Der null basierte Index einer Kategorie in der Liste der Menü Band Kategorie
 
 TRUE, wenn die angegebene Menü Band Kategorie gelöscht wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die angegebene Menü Band Kategorie wird aus dem Arbeitsspeicher und aus der Liste Kategorie gelöscht.
 
@@ -1739,7 +1739,7 @@ in TRUE, um die Menü Band Leiste zu maximieren, wenn Sie minimiert ist. FALSE, 
 
 TRUE, wenn die angegebene Kategorie als aktive Kategorie festgelegt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Haupt Menü Band Kategorie kann nicht die aktive Kategorie sein.
 
@@ -1758,7 +1758,7 @@ void SetActiveMDIChild(CWnd* pWnd);
 *folgenden*<br/>
 in Zeiger auf ein untergeordnetes MDI-Fenster.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setapplicationbutton"></a>CMFCRibbonBar:: "stapplicationbutton"
 
@@ -1778,7 +1778,7 @@ in Ein Zeiger auf die Menüband-Schaltfläche der Anwendung.
 *sizeButton*<br/>
 in Die Größe der Menüband-Schaltfläche für die Anwendung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Menüband-Schaltfläche Anwendung ist eine große abgerundete Schaltfläche in der oberen linken Ecke des Menüband-Steuer Elements.
 
@@ -1814,7 +1814,7 @@ in Der Menü-KeyTip.
 
 TRUE, wenn die KeyTips von mindestens einem Menü Band Element festgelegt sind. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der optionale Menü KeyTip ist für Menü Band Elemente mit einer unterteilten Schaltfläche, die ein Popupmenü öffnet.
 
@@ -1836,7 +1836,7 @@ in Zeiger auf das aktuelle Tastatur navigationsobjekt.
 *bsetfocus*<br/>
 in TRUE, um den Tastaturfokus auf die Menü Band Leiste festzulegen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Tastaturnavigation der Menü Band Leiste wird gestartet, wenn der Benutzer die Alt-Taste oder die F10-Taste drückt. Der Benutzer wählt die nächste Navigationsebene aus, indem er auf der Menü Band Leiste einen KeyTip drückt. Der Benutzer kann durch Drücken der Escape-Taste zur vorherigen Navigationsebene zurückkehren.
 
@@ -1858,7 +1858,7 @@ in TRUE, um die System Schaltflächen für ein untergeordnetes MDI-Fenster auf d
 *folgenden*<br/>
 in Zeiger auf das Hauptrahmen Fenster für die Menü Band Leiste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Menü Band Leiste zeigt System Schaltflächen für ein untergeordnetes MDI-Fenster in der Registerkarten Zeile an, wenn ein untergeordnetes MDI-Fenster maximiert ist.
 
@@ -1899,7 +1899,7 @@ void SetQuickAccessDefaultState(const CMFCRibbonQuickAccessToolBarDefaultState& 
 *state*<br/>
 in Der Standardstatus der Symbolleiste für den schnell Zugriff.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Symbolleisten Zustand für den schnell Zugriff enthält eine Liste mit Befehlen und deren Sichtbarkeit.
 
@@ -1940,7 +1940,7 @@ in Die Breite einer regulären QuickInfo mit fester Größe in Pixel.
 *nwidthlargeimage*<br/>
 in Die Breite einer QuickInfo mit fester Größe in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Parameter auf 0 festgelegt wird, variiert die entsprechende Breite.
 
@@ -1988,7 +1988,7 @@ Zeigt die KeyTips für jedes Menü Band Element auf der Menü Band Leiste an.
 void ShowKeyTips();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="togglemimimizestate"></a>CMF cribbonbar:: "tggleimimizestate"
 
@@ -1998,7 +1998,7 @@ Schaltet die Menübandleiste zwischen den minimierten und maximierten Zustand um
 void ToggleMimimizeState();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Tippfehler im Methodennamen sind ein bekanntes Problem.
 
@@ -2021,7 +2021,7 @@ in Ein Benutzer Tastatur-Zeichencode.
 
 TRUE, wenn der Zeichencode von der Menü Band Leiste verarbeitet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mithilfe der KeyTips-Funktion können Benutzer mithilfe der Tastatur in der Menü Band Leiste navigieren.
 
@@ -2037,7 +2037,7 @@ virtual CMFCRibbonBaseElement* GetFocused();
 
 Ein Zeiger auf ein Fokus Element oder NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="iswindows7look"></a>CMF cribbonbar:: IsWindows7Look
 
@@ -2051,7 +2051,7 @@ BOOL IsWindows7Look() const;
 
 "True", wenn das Menüband Windows 7 aussieht. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="loadfromresource"></a>CMF cribbonbar:: loadfromresource
 
@@ -2087,7 +2087,7 @@ Gibt die Ressourcen-ID (in Form einer Zeichenfolge) mit Menü Band leisten Infor
 
 TRUE, wenn die Last erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="savetoxmlbuffer"></a>CMF cribbonbar:: savetoxmlbuffer
 
@@ -2106,7 +2106,7 @@ Wenn diese Funktion zurückgegeben wird, zeigt *ppbuffer* auf einen Puffer, der 
 
 TRUE, wenn erfolgreich; andernfalls FALSE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="savetoxmlfile"></a>CMF cribbonbar:: savetoxmlfile
 
@@ -2125,7 +2125,7 @@ Gibt die Ausgabedatei an.
 
 TRUE, wenn erfolgreich; andernfalls FALSE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setwindows7look"></a>CMF cribbonbar:: SetWindows7Look
 
@@ -2145,9 +2145,9 @@ TRUE Sets Windows 7 Look; Andernfalls false.
 *bneuberechnung*<br/>
 TRUE berechnet das Menüband-Layout neu. Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

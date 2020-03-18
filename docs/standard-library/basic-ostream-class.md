@@ -21,11 +21,11 @@ helpviewer_keywords:
 - std::basic_ostream [C++], write
 ms.assetid: 5baadc65-b662-4fab-8c9f-94457c58cda1
 ms.openlocfilehash: 9025d595e79eed9f81aff77b931a2585359a8c3a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874813"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427242"
 ---
 # <a name="basic_ostream-class"></a>basic_ostream-Klasse
 
@@ -46,7 +46,7 @@ Ein `char_type`.
 *TR* -\
 Der `traits_type` eines Zeichens.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die meisten der Memberfunktionen, die [operator<<](#basic_ostream_operator_lt_lt) überladen, sind Funktionen für die formatierte Ausgabe. Sie entsprechen dem folgenden Muster:
 
@@ -110,13 +110,13 @@ Weitere Informationen zu Ausgabestreams finden Sie im Beispiel für die [basic_o
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[basic_ostream](#basic_ostream)|Erstellt ein `basic_ostream`-Objekt.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[flush](#flush)|Leert den Puffer.|
 |[put](#put)|Schreibt ein Zeichen in einen Stream.|
@@ -128,12 +128,12 @@ Weitere Informationen zu Ausgabestreams finden Sie im Beispiel für die [basic_o
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[operator=](#op_eq)|Weist diesem Objekt den Wert des bereitgestellten `basic_ostream`-Objektparameters zu.|
 |[operator<<](#basic_ostream_operator_lt_lt)|Schreibt in den Stream.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<ostream->
 
@@ -162,7 +162,7 @@ Ein Objekt vom Typ [basic_streambuf](../standard-library/basic-streambuf-class.m
 *Rechte*\
 Ein rvalue-Verweis auf ein Objekt des Typs `basic_ostream`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor initialisiert die Basisobjekte durch Aufrufen von [init](../standard-library/basic-ios-class.md#init)(`strbuf`). Der zweite Konstruktor initialisiert die Basisklasse durch Aufrufen von [basic_ios::move](../standard-library/basic-ios-class.md#move)`(right)`.
 
@@ -182,7 +182,7 @@ basic_ostream<Elem, Tr>& flush();
 
 Ein Verweis auf das basic_ostream-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [rdbuf](../standard-library/basic-ios-class.md#rdbuf) kein NULL-Zeiger ist, ruft die Funktion **rdbuf->** [pubsync](../standard-library/basic-streambuf-class.md#pubsync) auf. Wenn -1 zurückgegeben wird, ruft die Funktion [setstate](../standard-library/basic-ios-class.md#setstate) ( **badbit**) auf. Sie gibt **\*this** zurück.
 
@@ -241,7 +241,7 @@ basic_ostream<Elem, Tr>& operator<<(const void* val);
 Ein Funktionszeiger.
 
 *\ "*
-Ein Zeiger auf ein `stream_buf`-Objekt.
+Ein Zeiger auf ein `stream_buf` -Objekt.
 
 *Val* -\
 Ein Element, das in den Stream geschrieben werden soll.
@@ -250,7 +250,7 @@ Ein Element, das in den Stream geschrieben werden soll.
 
 Ein Verweis auf das basic_ostream-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der \<ostream-> Header definiert außerdem mehrere globale einfügeoperatoren. Weitere Informationen finden Sie unter [Operator < <](../standard-library/ostream-operators.md#op_lt_lt).
 
@@ -361,7 +361,7 @@ basic_ostream& operator=(basic_ostream&& right);
 *Rechte*\
 Ein `rvalue`-Verweis auf ein `basic_ostream`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Memberoperator ruft swap `(right)` auf.
 
@@ -382,7 +382,7 @@ Ein Zeichen.
 
 Ein Verweis auf das basic_ostream-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die nicht formatierte Ausgabefunktion fügt das Element *_Ch*ein. Sie gibt **\*this** zurück.
 
@@ -432,7 +432,7 @@ Eine der [ios_base::seekdir](../standard-library/ios-base-class.md#seekdir)-Enum
 
 Ein Verweis auf das basic_ostream-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [Fail](../standard-library/basic-ios-class.md#fail) **false**ist, ruft die erste Member- **Funktion Newpos =** [rdbuf](../standard-library/basic-ios-class.md#rdbuf) **->** [Pubseekpos](../standard-library/basic-streambuf-class.md#pubseekpos)( *_Pos*) für einige `pos_type` temporäre Objekt `newpos`auf. Wenn `fail` false ist, ruft die zweite Funktion **Newpos = Rdbuf->** [Pubseekoff](../standard-library/basic-streambuf-class.md#pubseekoff)( *_Off, _Way*) auf. In jedem Fall ruft die Funktion `off_type`istr.setstate`off_type`(**failbit**) auf, wenn ([)](../standard-library/basic-ios-class.md#setstate)newpos == **(** )(-1)(-1) (die Positionierung schlägt fehl). Beide Funktionen geben **\*this** zurück.
 
@@ -472,7 +472,7 @@ Die geschachtelte Klasse beschreibt ein Objekt, dessen Deklaration die Funktione
 
 Class Sentry {public: Explizites Sentry (basic_ostream\<Elem, TR > & _Ostr); Operator bool () Konstanten; ~ Sentry ();};
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschachtelte Klasse beschreibt ein Objekt, dessen Deklaration die Funktionen für formatierte Ausgabe und für unformatierte Ausgabe strukturiert. Wenn **ostr.** [good](../standard-library/basic-ios-class.md#good)**TRUE** ist, und **ostr.** [tie](../standard-library/basic-ios-class.md#tie) kein NULL-Zeiger ist, ruft der Konstruktor **ostr.tie->** [flush](#flush) auf. Der Konstruktor speichert dann den von `ostr.good` zurückgegebenen Wert in `status`. Ein späterer-`operator bool` übermittelt diesen gespeicherten Wert.
 
@@ -491,7 +491,7 @@ void swap(basic_ostream& right);
 *Rechte*\
 Ein Verweis auf ein `basic_ostream`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion ruft [basic_ios:: Swap](../standard-library/basic-ios-class.md#swap) -`(right)` auf, um den Inhalt dieses Objekts für den Inhalt von *right*auszutauschen.
 
@@ -507,7 +507,7 @@ pos_type tellp();
 
 Position im Ausgabestream.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [Fail](../standard-library/basic-ios-class.md#fail) den Wert **false**hat, gibt die Member-Funktion [rdbuf](../standard-library/basic-ios-class.md#rdbuf) **->** [Pubseekoff](../standard-library/basic-streambuf-class.md#pubseekoff)(0, `cur`, **in**) zurück. Andernfalls wird `pos_type`(-1) zurückgegeben.
 
@@ -535,7 +535,7 @@ Die Zeichen, die in den Stream geschrieben werden sollen.
 
 Ein Verweis auf das basic_ostream-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [nicht formatierte Ausgabefunktion](../standard-library/basic-ostream-class.md) fügt die Sequenz der *count* -Elemente ein, beginnend bei *Str*.
 
@@ -543,7 +543,7 @@ Die [nicht formatierte Ausgabefunktion](../standard-library/basic-ostream-class.
 
 Ein Beispiel für die Verwendung von [ finden Sie unter ](../standard-library/ios-typedefs.md#streamsize)streamsize`write`.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [iostream-Programmierung](../standard-library/iostream-programming.md)\

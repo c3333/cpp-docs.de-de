@@ -2,19 +2,19 @@
 title: /SECTION (DUMPBIN)
 ms.date: 11/04/2016
 f1_keywords:
-- /section
+- /section_dumpbin
 helpviewer_keywords:
 - -SECTION dumpbin option
 - SECTION option
 - /SECTION dumpbin option
 - SECTION dumpbin option
 ms.assetid: c223d1c6-88ef-411c-9607-c610726b8d66
-ms.openlocfilehash: 3bd0ed68f88df9c5b57b0e7a3a5df64d33a8a6fc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d71a2f857e32383b6bc1a62a832c8ac769e0b7fc
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62318289"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438925"
 ---
 # <a name="section-dumpbin"></a>/SECTION (DUMPBIN)
 
@@ -22,12 +22,12 @@ ms.locfileid: "62318289"
 /SECTION:section
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option beschränkt die Ausgabe auf Informationen auf dem angegebenen *Abschnitt*. Verwenden der [/Headers](headers.md) Option aus, um eine Liste der Abschnitte in der Datei abzurufen.
+Mit dieser Option wird die Ausgabe auf Informationen im angegebenen *Abschnitt*beschränkt. Verwenden Sie die Option [/Headers](headers.md) , um eine Liste der Abschnitte in der Datei zu erhalten.
 
-Nur die [/Headers](headers.md) DUMPBIN-Option ist verfügbar für die Verwendung in Dateien mit der ["/ GL"](gl-whole-program-optimization.md) -Compileroption.
+Für Dateien, die mit der [/GL](headers.md)-Compileroption erstellt wurden, kann nur die Option [/HEADERS](gl-whole-program-optimization.md) DUMPBIN verwendet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [DUMPBIN-Optionen](dumpbin-options.md)

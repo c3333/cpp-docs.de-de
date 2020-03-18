@@ -1,26 +1,24 @@
 ---
 title: Verwenden von CDateTimeCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CDateTimeCtrl
 helpviewer_keywords:
 - DateTimePicker control [MFC], CDateTimeCtrl class
 ms.assetid: cb2a8720-43f1-4c33-a3a4-def9a1622e00
-ms.openlocfilehash: 251528cafcbedb0352a1962d70452f8b8778f10b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 57c437c97ad6c6d377b3bc62099e569b29f03346
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62348600"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447080"
 ---
 # <a name="using-cdatetimectrl"></a>Verwenden von CDateTimeCtrl
 
-Die Datums- / Zeitauswahl-Steuerelement ([CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)) implementiert eine intuitive und erkennbare-Methode eingeben oder Auswählen eines bestimmten Datums. Die Hauptkomponente der Benutzeroberfläche des Steuerelements ähnelt in der Funktionalität eines Kombinationsfelds. Wenn der Benutzer das Steuerelement erweitert ein Monatskalender-Steuerelement angezeigt wird (standardmäßig), können Sie jedoch den Benutzer auf ein bestimmtes Datum anzugeben. Wenn Sie ein Datum auswählen, wird der im Monatskalender-Steuerelement automatisch ausgeblendet.
+Das Steuerelement für die Datums-und Uhrzeit Auswahl ([CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)) implementiert eine intuitive und erkennbare Methode, ein bestimmtes Datum einzugeben oder auszuwählen. Die Hauptschnittstelle des-Steuer Elements ähnelt der Funktionalität einem Kombinations Feld. Wenn der Benutzer das Steuerelement erweitert, wird ein Monatskalender-Steuerelement (standardmäßig) angezeigt, das es dem Benutzer ermöglicht, ein bestimmtes Datum anzugeben. Wenn ein Datum ausgewählt wird, verschwindet das Monatskalender-Steuerelement automatisch.
 
 > [!NOTE]
->  Beide verwenden die `CDateTimePicker` und `CMonthCalCtrl` Klassen in Ihrem Projekt muss AFXDTCTL. In der Regel in Ihres Projekts STDAFX H. H-Datei.
+>  Wenn Sie die Klassen `CDateTimePicker` und `CMonthCalCtrl` im Projekt verwenden möchten, müssen Sie afxdtctl einschließen. H, normalerweise im stdafx Ihres Projekts. H-Datei.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Erstellen des Steuerelements für Datum und Uhrzeit](../mfc/creating-the-date-and-time-picker-control.md)
 
@@ -34,6 +32,6 @@ Die Datums- / Zeitauswahl-Steuerelement ([CDateTimeCtrl](../mfc/reference/cdatet
 
 - [Verarbeiten von Benachrichtigungsmeldungen in Steuerelementen für Zeit und Datum](../mfc/processing-notification-messages-in-date-and-time-picker-controls.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

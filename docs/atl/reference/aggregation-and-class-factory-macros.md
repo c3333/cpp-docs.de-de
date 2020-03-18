@@ -18,11 +18,11 @@ helpviewer_keywords:
 - aggregation [C++], ATL macros
 ms.assetid: d99d379a-0eec-481f-8daa-252dac18f163
 ms.openlocfilehash: 38239942b99a29b5777deef8000d9f1ab85b10e6
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78862604"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423579"
 ---
 # <a name="aggregation-and-class-factory-macros"></a>Aggregation und klassenfactorymakros
 
@@ -43,7 +43,7 @@ Diese Makros bieten Möglichkeiten zum Steuern der Aggregation und zum Deklarier
 |[DECLARE_PROTECT_FINAL_CONSTRUCT](#declare_protect_final_construct)|Schützt das äußere Objekt vor dem Löschen während der Erstellung eines inneren Objekts.|
 |[DECLARE_VIEW_STATUS](#declare_view_status)|Gibt die VIEWSTATUS-Flags für den Container an.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -60,7 +60,7 @@ DECLARE_AGGREGATABLE( x )
 *x*<br/>
 in Der Name der Klasse, die Sie als aggregatable definieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CComCoClass](../../atl/reference/ccomcoclass-class.md) enthält dieses Makro, um das Standard Aggregations Modell anzugeben. Um diese Standardeinstellung zu überschreiben, geben Sie entweder das [DECLARE_NOT_AGGREGATABLE](#declare_not_aggregatable) -oder [DECLARE_ONLY_AGGREGATABLE](#declare_only_aggregatable) -Makro in der Klassendefinition an.
 
@@ -76,7 +76,7 @@ Deklariert [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als
 DECLARE_CLASSFACTORY()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CComCoClass](../../atl/reference/ccomcoclass-class.md) verwendet dieses Makro, um die Standardklassenfactory für das Objekt zu deklarieren.
 
@@ -93,7 +93,7 @@ class CComClassFactory : public IClassFactory,
 public CComObjectRootEx<CComGlobalsThreadModel>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CComClassFactory` implementiert die [IClassFactory](/windows/win32/api/unknwnbase/nn-unknwnbase-iclassfactory) -Schnittstelle, die Methoden zum Erstellen eines Objekts einer bestimmten CLSID enthält, sowie zum Sperren der Klassenfactory im Speicher, damit neue Objekte schneller erstellt werden können. `IClassFactory` müssen für jede Klasse implementiert werden, die Sie in der Systemregistrierung registrieren und denen Sie eine CLSID zuweisen.
 
@@ -124,7 +124,7 @@ DECLARE_CLASSFACTORY_EX( cf )
 *CF*<br/>
 in Der Name der Klasse, die das klassenfactoryobjekt implementiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *CF* -Parameter muss von [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) abgeleitet werden und die `CreateInstance`-Methode überschreiben.
 
@@ -147,7 +147,7 @@ DECLARE_CLASSFACTORY2( lic )
 *fröhlich*<br/>
 in Eine Klasse, die `VerifyLicenseKey`, `GetLicenseKey`und `IsLicenseValid`implementiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CComCoClass](../../atl/reference/ccomcoclass-class.md) enthält das [DECLARE_CLASSFACTORY](#declare_classfactory) -Makro, das [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als Standardklassenfactory angibt. Wenn Sie jedoch das DECLARE_CLASSFACTORY2-Makro in die Klassendefinition Ihres Objekts einschließen, überschreiben Sie diese Standardeinstellung.
 
@@ -177,7 +177,7 @@ Eine Klasse, die die folgenden statischen Funktionen implementiert:
 
 - `static BOOL IsLicenseValid( );`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CComClassFactory2` implementiert die [IClassFactory2](/windows/win32/api/ocidl/nn-ocidl-iclassfactory2) -Schnittstelle, die eine Erweiterung von [IClassFactory](/windows/win32/api/unknwnbase/nn-unknwnbase-iclassfactory)ist. `IClassFactory2` steuert die Objekt Erstellung über eine Lizenz. Eine Klassenfactory, die auf einem lizenzierten Computer ausgeführt wird, kann einen Laufzeitlizenz Schlüssel bereitstellen. Dieser Lizenzschlüssel ermöglicht es einer Anwendung, Objekte zu instanziieren, wenn keine vollständige Computer Lizenz vorhanden ist.
 
@@ -199,7 +199,7 @@ Deklariert [ccomclassfactoryautothread](../../atl/reference/ccomclassfactoryauto
 DECLARE_CLASSFACTORY_AUTO_THREAD()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CComCoClass](../../atl/reference/ccomcoclass-class.md) enthält das [DECLARE_CLASSFACTORY](#declare_classfactory) -Makro, das [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als Standardklassenfactory angibt. Wenn Sie jedoch das DECLARE_CLASSFACTORY_AUTO_THREAD-Makro in die Klassendefinition Ihres Objekts einschließen, überschreiben Sie diese Standardeinstellung.
 
@@ -221,7 +221,7 @@ class CComClassFactoryAutoThread : public IClassFactory,
 public CComObjectRootEx<CComGlobalsThreadModel>
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CComClassFactoryAutoThread` ähnelt [CComClassFactory](../../atl/reference/ccomclassfactory-class.md), ermöglicht aber das Erstellen von Objekten in mehreren Apartments. Um diese Unterstützung zu nutzen, leiten Sie das exe-Modul von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)ab.
 
@@ -242,7 +242,7 @@ DECLARE_CLASSFACTORY_SINGLETON( obj )
 *obj*<br/>
 in Der Name des Klassen Objekts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CComCoClass](../../atl/reference/ccomcoclass-class.md) enthält das [DECLARE_CLASSFACTORY](#declare_classfactory) -Makro, das [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als Standardklassenfactory angibt. Wenn Sie jedoch das DECLARE_CLASSFACTORY_SINGLETON-Makro in die Klassendefinition Ihres Objekts einschließen, überschreiben Sie diese Standardeinstellung.
 
@@ -269,7 +269,7 @@ Ihre Klasse.
 
 `CComClassFactorySingleton` von [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) abgeleitet und verwendet [ccomobjectglobal](../../atl/reference/ccomobjectglobal-class.md) , um ein einzelnes Objekt zu erstellen. Jeder Aufrufe der `CreateInstance`-Methode fragt dieses Objekt einfach nach einem Schnittstellen Zeiger ab.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ATL-Objekte erhalten normalerweise eine Klassenfactory durch Ableiten von [CComCoClass](../../atl/reference/ccomcoclass-class.md). Diese Klasse enthält das Makro [DECLARE_CLASSFACTORY](#declare_classfactory), das `CComClassFactory` als Standardklassenfactory deklariert. Um `CComClassFactorySingleton`zu verwenden, geben Sie das [DECLARE_CLASSFACTORY_SINGLETON](#declare_classfactory_singleton) -Makro in der Klassendefinition Ihres Objekts an. Beispiel:
 
@@ -283,7 +283,7 @@ Deklariert eine virtuelle Funktion `GetControllingUnknown`.
 DECLARE_GET_CONTROLLING_UNKNOWN()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Fügen Sie dem Objekt dieses Makro hinzu, wenn Sie die Compilerfehlermeldung erhalten, dass `GetControllingUnknown` nicht definiert ist (z. b. in `CComAggregateCreator`).
 
@@ -300,7 +300,7 @@ DECLARE_NOT_AGGREGATABLE( x )
 *x*<br/>
 in Der Name des Klassen Objekts, das Sie als nicht aggregierbar definieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 DECLARE_NOT_AGGREGATABLE bewirkt, dass `CreateInstance` einen Fehler (CLASS_E_NOAGGREGATION) zurückgibt, wenn versucht wird, auf das Objekt zu aggregieren.
 
@@ -323,7 +323,7 @@ DECLARE_ONLY_AGGREGATABLE( x )
 *x*<br/>
 in Der Name des Klassen Objekts, das Sie als nur aggregatable definieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 DECLARE_ONLY_AGGREGATABLE verursacht einen Fehler (E_FAIL), wenn versucht wird, das Objekt als nicht aggregiertes Objekt zu `CoCreate`.
 
@@ -346,7 +346,7 @@ DECLARE_POLY_AGGREGATABLE( x )
 *x*<br/>
 in Der Name des Klassen Objekts, das Sie als aggregierbare oder nicht aggregierbare definieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Während der Erstellung wird der Wert des äußeren unbekannten-Werts geprüft. Wenn er NULL ist, wird `IUnknown` für ein nicht aggregiertes Objekt implementiert. Wenn das äußere unbekannte nicht NULL ist, wird `IUnknown` für ein aggregiertes Objekt implementiert.
 
@@ -379,6 +379,6 @@ in Die VIEWSTATUS-Flags. Eine Liste der Flags finden Sie unter [VIEWSTATUS](/win
 
 [!code-cpp[NVC_ATL_Windowing#126](../../atl/codesnippet/cpp/aggregation-and-class-factory-macros_9.h)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)

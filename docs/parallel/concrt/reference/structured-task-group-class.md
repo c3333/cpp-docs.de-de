@@ -14,11 +14,11 @@ helpviewer_keywords:
 - structured_task_group class
 ms.assetid: 742afa8c-c7b6-482c-b0ba-04c809927b22
 ms.openlocfilehash: 93dd79b755f79dcb4857c1b1c4856362b0bd45dd
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78884117"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427362"
 ---
 # <a name="structured_task_group-class"></a>structured_task_group-Klasse
 
@@ -30,18 +30,18 @@ Die `structured_task_group`-Klasse stellt eine stark strukturierte Auflistung pa
 class structured_task_group;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[structured_task_group](#ctor)|Ist überladen. Erstellt ein neues `structured_task_group`-Objekt.|
 |[~ structured_task_group-Dekonstruktor](#dtor)|Zerstört ein `structured_task_group`-Objekt. Es wird erwartet, dass Sie vor dem Ausführen des Dekonstruktors entweder die `wait`-oder `run_and_wait`-Methode für das-Objekt aufruft, es sei denn, der Dekonstruktor wird aufgrund einer Ausnahme aufgrund der Stapel Auflösung ausgeführt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[cancel](#cancel)|Versucht, die Unterstruktur der Arbeit abzubrechen, die an dieser Aufgaben Gruppe verankert ist. Alle Aufgaben, die für die Aufgaben Gruppe geplant werden, werden, wenn möglich, vorübergehend abgebrochen.|
 |[is_canceling](#is_canceling)|Informiert den Aufrufer darüber, ob die Aufgaben Gruppe derzeit in der Mitte eines Abbruchs liegt. Dies weist nicht unbedingt darauf hin, dass die `cancel`-Methode für das `structured_task_group` Objekt aufgerufen wurde (obwohl diese Methode sicherlich für die Rückgabe von **true**qualifiziert ist). Dies kann der Fall sein, wenn das `structured_task_group` Objekt Inline ausgeführt wird und eine Aufgaben Gruppe weiter oben in der Arbeitsstruktur abgebrochen wurde. In Fällen, in denen die Common Language Runtime feststellen kann, dass der Abbruch durch dieses `structured_task_group` Objekt fließt, wird auch **true** zurückgegeben.|
@@ -49,7 +49,7 @@ class structured_task_group;
 |[run_and_wait](#run_and_wait)|Ist überladen. Plant, dass eine Aufgabe Inline im aufrufenden Kontext ausgeführt wird, wobei die Unterstützung des `structured_task_group` Objekts für vollständige Abbruch Unterstützung unterstützt wird. Wenn ein `task_handle` Objekt als Parameter an `run_and_wait`übergeben wird, ist der Aufrufer für die Verwaltung der Lebensdauer des `task_handle` Objekts verantwortlich. Die Funktion wartet dann, bis alle Aufgaben am `structured_task_group` Objekt entweder abgeschlossen oder abgebrochen wurden.|
 |[Warte](#wait)|Wartet, bis alle Arbeiten am `structured_task_group` abgeschlossen oder abgebrochen wurden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Es gibt eine Reihe schwerwiegender Einschränkungen bei der Verwendung eines `structured_task_group` Objekts, um die Leistung zu steigern:
 
@@ -67,7 +67,7 @@ Weitere Informationen finden Sie unter [Aufgaben Parallelität](../../../paralle
 
 `structured_task_group`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ppl. h
 
@@ -81,7 +81,7 @@ Versucht, die Unterstruktur der Arbeit abzubrechen, die an dieser Aufgaben Grupp
 void cancel();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [Abbruch](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation).
 
@@ -97,7 +97,7 @@ bool is_canceling();
 
 Ein Hinweis darauf, ob sich das `structured_task_group` Objekt mitten in einem Abbruch befindet (oder sicher ist, dass es in Kürze ist).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [Abbruch](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation).
 
@@ -127,7 +127,7 @@ Ein Handle für die geplante Arbeit. Beachten Sie, dass der Aufrufer für die Le
 *_Placement*<br/>
 Ein Verweis auf den Speicherort, an dem die durch den `_Task_handle`-Parameter dargestellte Aufgabe ausgeführt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Laufzeit erstellt eine Kopie der Arbeitsfunktion, die Sie an diese Methode übergeben. Alle Zustandsänderungen, die in einem Funktions Objekt auftreten, das Sie an diese Methode übergeben, werden nicht in Ihrer Kopie des Funktions Objekts angezeigt.
 
@@ -162,7 +162,7 @@ Eine Funktion, die aufgerufen wird, um den Hauptteil der Arbeit aufzurufen. Hier
 
 Gibt an, ob der Warte Vorgang durch einen expliziten Abbruch Vorgang oder durch Auslösen einer Ausnahme von einer seiner Aufgaben abgebrochen wurde oder ob die Aufgaben Gruppe abgebrochen wurde. Weitere Informationen finden Sie unter [Task_group_status](concurrency-namespace-enums.md)
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass mindestens eine der Aufgaben, die für dieses `structured_task_group` Objekt geplant sind, im aufrufenden Kontext Inline ausgeführt werden kann.
 
@@ -187,7 +187,7 @@ structured_task_group(cancellation_token _CancellationToken);
 *_CancellationToken*<br/>
 Ein Abbruch Token, das dieser strukturierten Aufgaben Gruppe zugeordnet werden soll. Die strukturierte Aufgaben Gruppe wird abgebrochen, wenn das Token abgebrochen wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Konstruktor, der ein Abbruch Token annimmt, erstellt eine `structured_task_group`, die abgebrochen wird, wenn die dem Token zugeordnete Quelle abgebrochen wird. Das Bereitstellen eines expliziten Abbruch Tokens isoliert diese strukturierte Aufgaben Gruppe auch von der Teilnahme an einem impliziten Abbruch von einer übergeordneten Gruppe mit einem anderen Token oder ohne Token.
 
@@ -199,7 +199,7 @@ Zerstört ein `structured_task_group`-Objekt. Es wird erwartet, dass Sie vor dem
 ~structured_task_group();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Dekonstruktor als Ergebnis der normalen Ausführung ausgeführt wird (z. b. aufgrund einer Ausnahme keine Stapel entruppe) und weder die `wait` noch `run_and_wait` Methoden aufgerufen wurden, kann der Dekonstruktor eine [Missing_wait](missing-wait-class.md) Ausnahme auslösen.
 
@@ -215,7 +215,7 @@ task_group_status wait();
 
 Gibt an, ob der Warte Vorgang durch einen expliziten Abbruch Vorgang oder durch Auslösen einer Ausnahme von einer seiner Aufgaben abgebrochen wurde oder ob die Aufgaben Gruppe abgebrochen wurde. Weitere Informationen finden Sie unter [Task_group_status](concurrency-namespace-enums.md)
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass mindestens eine der Aufgaben, die für dieses `structured_task_group` Objekt geplant sind, im aufrufenden Kontext Inline ausgeführt werden kann.
 
@@ -225,7 +225,7 @@ Nachdem diese Funktion zurückgegeben wurde, wird das `structured_task_group` Ob
 
 Im nicht außergewöhnlichen Ausführungs Pfad haben Sie die Möglichkeit, entweder diese Methode oder die `run_and_wait` Methode aufzurufen, bevor der Dekonstruktor des `structured_task_group` ausgeführt wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [task_group-Klasse](task-group-class.md)<br/>

@@ -21,11 +21,11 @@ helpviewer_keywords:
 - reference counting
 ms.assetid: 894a3d7c-2daf-4fd0-8fa4-e6a05bcfb631
 ms.openlocfilehash: 8fa4e7a035ded2e1a20dd278a5d54d40252e1958
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78862605"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423321"
 ---
 # <a name="ccomobjectrootex-class"></a>CComObjectRootEx-Klasse
 
@@ -43,7 +43,7 @@ class CComObjectRootEx : public CComObjectRootBase
 *Thread Model*<br/>
 Die Klasse, deren Methoden das gewünschte Threading Modell implementieren. Sie können das Threading Modell explizit auswählen, indem Sie *threadmodel* auf " [CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)", " [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)" oder " [ccommultithreadmodelnocs](../../atl/reference/ccommultithreadmodelnocs-class.md)" festlegen. Sie können das Standard Thread Modell des Servers akzeptieren, indem Sie *threadmodel* auf [ccomobjectthreadmodel](atl-typedefs.md#ccomobjectthreadmodel) oder [ccomglobalsthread Model](atl-typedefs.md#ccomglobalsthreadmodel)festlegen.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -72,14 +72,14 @@ Die Klasse, deren Methoden das gewünschte Threading Modell implementieren. Sie 
 |[InternalQueryInterface](#internalqueryinterface)|Delegiert an den `IUnknown` eines nicht aggregierten Objekts.|
 |[Objectmain](#objectmain)|Wird während der Initialisierung und Beendigung von Modulen für abgeleitete Klassen aufgerufen, die in der Objekt Zuordnung aufgeführt sind.|
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
 |||
 |-|-|
 |[m_dwRef](#m_dwref)|Mit `m_pOuterUnknown`, Teil einer Union. Wird verwendet, wenn das Objekt nicht aggregiert wird, um den Verweis Zähler `AddRef` und `Release`zu speichern.|
 |[m_pOuterUnknown](#m_pouterunknown)|Mit `m_dwRef`, Teil einer Union. Wird verwendet, wenn das Objekt aggregiert wird, um einen Zeiger auf das äußere unbekannte festzuhalten.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CComObjectRootEx` behandelt die Verwaltung der Objekt Verweis Zählung sowohl für nicht aggregierte als auch für aggregierte Objekte. Sie enthält den Objekt Verweis Zähler, wenn das Objekt nicht aggregiert wird, und enthält den Zeiger auf das äußere unbekannte, wenn das Objekt aggregiert wird. Bei aggregierten Objekten können `CComObjectRootEx` Methoden verwendet werden, um den Fehler des inneren Objekts zu verarbeiten und das äußere Objekt vor dem Löschen zu schützen, wenn innere Schnittstellen freigegeben werden oder das innere Objekt gelöscht wird.
 
@@ -95,7 +95,7 @@ Wenn das Objekt aggregiert wird, wird [IUnknown](/windows/win32/api/unknwn/nn-un
 
 Wenn das Objekt nicht aggregiert wird, wird `IUnknown` von `CComObject` oder `CComPolyObject`implementiert. In diesem Fall werden Aufrufe von `QueryInterface`, `AddRef`und `Release` an `CComObjectRootEx``InternalQueryInterface`, `InternalAddRef`und `InternalRelease` delegiert, um die eigentlichen Vorgänge auszuführen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -119,7 +119,7 @@ HRESULT FinalConstruct();
 
 Rückgabe S_OK bei Erfolg oder einer der Standardfehler-HRESULT-Werte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig gibt `CComObjectRootEx::FinalConstruct` einfach S_OK zurück.
 
@@ -159,7 +159,7 @@ Sie können diese Methode in der abgeleiteten Klasse überschreiben, um alle fü
 void FinalRelease();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig führt `CComObjectRootEx::FinalRelease` keine Aktion aus.
 
@@ -177,7 +177,7 @@ ULONG InternalAddRef();
 
 Ein Wert, der für die Diagnose und das Testen nützlich sein kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Thread Modell Multithreaded ist, wird `InterlockedIncrement` verwendet, um zu verhindern, dass mehrere Threads gleichzeitig den Verweis Zähler ändern.
 
@@ -211,7 +211,7 @@ vorgenommen Ein Zeiger auf den in *IID*angegebenen Schnittstellen Zeiger oder NU
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `InternalQueryInterface` behandelt nur Schnittstellen in der com-Zuordnungs Tabelle. Wenn das Objekt aggregiert wird, wird `InternalQueryInterface` nicht an das äußere unbekannte delegiert. Sie können Schnittstellen in die com-Zuordnungs Tabelle mit dem Makro [COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry) oder einer der Varianten eingeben.
 
@@ -227,7 +227,7 @@ ULONG InternalRelease();
 
 In nicht-Debug-und Debugbuilds gibt diese Funktion einen Wert zurück, der möglicherweise für Diagnose-oder Testzwecke nützlich ist. Der genaue zurückgegebene Wert hängt von vielen Faktoren ab, wie z. b. dem verwendeten Betriebssystem, und möglicherweise dem Verweis Zähler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Thread Modell Multithreaded ist, wird `InterlockedDecrement` verwendet, um zu verhindern, dass mehrere Threads gleichzeitig den Verweis Zähler ändern.
 
@@ -239,7 +239,7 @@ Wenn das Thread Modell Multithreaded ist, ruft diese Methode die Win32-API-Funkt
 void Lock();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Ausführung des geschützten Codes abgeschlossen ist, muss der Thread `Unlock` aufgerufen werden, um den Besitz des kritischen Abschnitts freizugeben.
 
@@ -253,7 +253,7 @@ Ein Teil einer Union, der auf vier Byte Arbeitsspeicher zugreift.
 long m_dwRef;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit `m_pOuterUnknown`, Teil einer Union:
 
@@ -275,7 +275,7 @@ IUnknown*
     m_pOuterUnknown;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit `m_dwRef`, Teil einer Union:
 
@@ -301,7 +301,7 @@ static void WINAPI ObjectMain(bool bStarting);
 *bstarting*<br/>
 vorgenommen Der Wert ist "true", wenn die Klasse initialisiert wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert des *bstarting* -Parameters gibt an, ob das Modul initialisiert oder beendet wird. Die Standard Implementierung von `ObjectMain` führt keine Aktion aus, aber Sie können diese Funktion in der Klasse überschreiben, um Ressourcen zu initialisieren oder zu bereinigen, die Sie für die Klasse zuordnen möchten. Beachten Sie, dass `ObjectMain` aufgerufen wird, bevor Instanzen der-Klasse angefordert werden.
 
@@ -363,13 +363,13 @@ Wenn das Thread Modell Multithreaded ist, ruft diese Methode die Win32-API-Funkt
 void Unlock();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um den Besitz zu erhalten, muss der Thread `Lock`abrufen. Jeder `Lock` Aufrufe erfordert einen entsprechenden-Aufruf`Unlock`, um den Besitz des kritischen Abschnitts freizugeben.
 
 Wenn das Thread Modell Single Thread ist, führt diese Methode keine Aktion aus.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CComAggObject-Klasse](../../atl/reference/ccomaggobject-class.md)<br/>
 [CComObject-Klasse](../../atl/reference/ccomobject-class.md)<br/>

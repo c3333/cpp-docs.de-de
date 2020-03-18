@@ -53,11 +53,11 @@ helpviewer_keywords:
 - CPropertySheet [MFC], m_psh
 ms.assetid: 8461ccff-d14f-46e0-a746-42ad642ef94e
 ms.openlocfilehash: 23d17aee2aacbc1484c0f3e181bc824546ab49a2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865449"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426414"
 ---
 # <a name="cpropertysheet-class"></a>CPropertySheet-Klasse
 
@@ -69,17 +69,17 @@ Stellt Eigenschaftenblätter dar, auch als "Dialogfelder im Registerformat" beze
 class CPropertySheet : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPropertySheet:: CPropertySheet](#cpropertysheet)|Erstellt ein `CPropertySheet`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPropertySheet:: addPage](#addpage)|Fügt dem Eigenschaftsblatt eine Seite hinzu.|
 |[CPropertySheet:: Construct](#construct)|Erstellt ein `CPropertySheet`-Objekt.|
@@ -105,11 +105,11 @@ class CPropertySheet : public CWnd
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPropertySheet:: m_psh](#m_psh)|Die Windows- [propsheethader](/windows/win32/api/prsht/ns-prsht-propsheetheadera_v2) -Struktur. Ermöglicht den Zugriff auf grundlegende Eigenschaften Blatt Parameter.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Eigenschaften Blatt besteht aus einem `CPropertySheet` Objekt und einem oder mehreren [CPropertyPage](../../mfc/reference/cpropertypage-class.md) -Objekten. Das Framework zeigt ein Eigenschaften Blatt als Fenster mit einem Satz von Registerkarten Indizes und einem Bereich an, der die aktuell ausgewählte Seite enthält. Der Benutzer navigiert zu einer bestimmten Seite, indem er die entsprechende Registerkarte verwendet.
 
@@ -157,7 +157,7 @@ Weitere Informationen zur Verwendung von `CPropertySheet` Objekten finden Sie im
 
 `CPropertySheet`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdlgs. h
 
@@ -172,9 +172,9 @@ void AddPage(CPropertyPage* pPage);
 ### <a name="parameters"></a>Parameter
 
 *pPage*<br/>
-Zeigt auf die Seite, die dem Eigenschaften Blatt hinzugefügt werden soll. Lässt keine NULL-Werte zu.
+Zeigt auf die Seite, die dem Eigenschaften Blatt hinzugefügt werden soll. Darf nicht NULL sein.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Fügen Sie dem Eigenschaften Blatt in der Reihenfolge von links nach rechts Seiten hinzu, in der Sie angezeigt werden sollen.
 
@@ -234,7 +234,7 @@ Ein Zeiger auf das übergeordnete Fenster des Eigenschaften Blatts. Wenn der Wer
 Der Index der Seite, die anfänglich im Vordergrund steht. Der Standardwert ist die erste Seite, die dem Blatt hinzugefügt wird.
 
 *pszcaption*<br/>
-Ein Zeiger auf eine Zeichenfolge, die die Beschriftung enthält, die für das Eigenschaften Blatt verwendet werden soll. Lässt keine NULL-Werte zu.
+Ein Zeiger auf eine Zeichenfolge, die die Beschriftung enthält, die für das Eigenschaften Blatt verwendet werden soll. Darf nicht NULL sein.
 
 *hbmwatermark*<br/>
 Handle für das Wasserzeichen Bitmap der Eigenschaften Seite.
@@ -245,7 +245,7 @@ Handle für die Palette des Wasserzeichen Bitmap-und/oder Header Bitmap.
 *hbmheader*<br/>
 Handle für die Header Bitmap der Eigenschaften Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion aufrufen, wenn einer der Klassenkonstruktoren nicht bereits aufgerufen wurde. Rufen Sie `Construct` z. b. auf, wenn Sie Arrays von `CPropertySheet` Objekten deklarieren oder zuordnen. Im Fall von Arrays müssen Sie für jedes Element im Array `Construct` abrufen.
 
@@ -305,7 +305,7 @@ Zeigt auf das übergeordnete Fenster des Eigenschaften Blatts. Wenn der Wert NUL
 Der Index der Seite, die anfänglich im Vordergrund steht. Der Standardwert ist die erste Seite, die dem Blatt hinzugefügt wird.
 
 *pszcaption*<br/>
-Verweist auf eine Zeichenfolge, die die Beschriftung enthält, die für das Eigenschaften Blatt verwendet werden soll. Lässt keine NULL-Werte zu.
+Verweist auf eine Zeichenfolge, die die Beschriftung enthält, die für das Eigenschaften Blatt verwendet werden soll. Darf nicht NULL sein.
 
 *hbmwatermark*<br/>
 Ein Handle für die Hintergrund Bitmap des Eigenschaften Blatts.
@@ -316,7 +316,7 @@ Ein Handle für die Palette des Wasserzeichen Bitmap-und/oder Header Bitmap.
 *hbmheader*<br/>
 Ein Handle für die Header Bitmap der Eigenschaften Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um das Eigenschaften Blatt anzuzeigen, rufen Sie [DoModal](#domodal) auf, oder [Erstellen](#create)Sie. Die Zeichenfolge, die im ersten Parameter enthalten ist, wird in der Titelleiste für das Eigenschaften Blatt platziert.
 
@@ -353,7 +353,7 @@ Erweiterte Fenster Stile für das Eigenschaften Blatt. Eine umfassende Liste der
 
 Ungleich 0 (null), wenn das Eigenschaften Blatt erfolgreich erstellt wird. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Aufruf von `Create` kann sich innerhalb des Konstruktors befinden, oder Sie können ihn aufrufen, nachdem der Konstruktor aufgerufen wurde.
 
@@ -383,7 +383,7 @@ virtual INT_PTR DoModal();
 
 IDOK oder IDCANCEL, wenn die Funktion erfolgreich war. andernfalls 0 oder-1. Wenn das Eigenschaften Blatt als Assistent festgelegt wurde [(siehe "](#setwizardmode)See" (siehe ""), gibt `DoModal` entweder ID_WIZFINISH oder IDCANCEL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert entspricht der ID des Steuer Elements, das das Eigenschaften Blatt geschlossen hat. Nachdem diese Funktion zurückgegeben wurde, werden die Fenster, die dem Eigenschaften Blatt und allen Seiten entsprechen, zerstört. Die Objekte selbst sind weiterhin vorhanden. In der Regel rufen Sie Daten aus den [CPropertyPage](../../mfc/reference/cpropertypage-class.md) -Objekten ab, nachdem `DoModal` IDOK zurückgegeben hat.
 
@@ -431,7 +431,7 @@ void EnableStackedTabs(BOOL bStacked);
 *bstacked*<br/>
 Gibt an, ob gestapelte Registerkarten im Eigenschaften Blatt aktiviert sind. Deaktivieren Sie gestapelte Zeilen von Tags, indem Sie *bstacked* auf false festlegen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Eigenschaften Blatt mehr Registerkarten enthält, als in eine einzelne Zeile in der Breite des Eigenschaften Blatts passen, werden die Registerkarten standardmäßig in mehreren Zeilen gestapelt. Um Tabstopps anstelle der Stapel Registerkarten zu verwenden, rufen Sie `EnableStackedTabs` auf, wobei *bstacked* auf false festgelegt ist, bevor Sie [DoModal](#domodal) aufrufen oder [Erstellen](#create).
 
@@ -454,7 +454,7 @@ void EndDialog(int nEndID);
 *nendid*<br/>
 Der Bezeichner, der als Rückgabewert des Eigenschaften Blatts verwendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, wenn die Schaltfläche OK, Abbrechen oder schließen gedrückt wird. Diese Member-Funktion wird aufgerufen, wenn ein Ereignis auftritt, das das Eigenschaften Blatt schließen soll.
 
@@ -492,7 +492,7 @@ CPropertyPage* GetActivePage() const;
 
 Der Zeiger auf die aktive Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Member-Funktion, um eine Aktion auf der aktiven Seite auszuführen.
 
@@ -548,13 +548,13 @@ int GetPageIndex(CPropertyPage* pPage);
 ### <a name="parameters"></a>Parameter
 
 *pPage*<br/>
-Verweist auf die Seite mit dem Index, der gefunden werden soll. Lässt keine NULL-Werte zu.
+Verweist auf die Seite mit dem Index, der gefunden werden soll. Darf nicht NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Indexnummer einer Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beispielsweise können Sie mit `GetPageIndex` den Seitenindex abrufen, um " [stactivepage](#setactivepage) " oder " [GetPage](#getpage)" zu verwenden.
 
@@ -574,7 +574,7 @@ CTabCtrl* GetTabControl() const;
 
 Ein Zeiger auf ein Registerkarten-Steuerelement.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beispiel: diese Member-Funktion wird aufgerufen, wenn Sie jeder Registerkarte während der Initialisierung Bitmaps hinzufügen möchten.
 
@@ -586,7 +586,7 @@ Beispiel: diese Member-Funktion wird aufgerufen, wenn Sie jeder Registerkarte w�
 
 Eine-Struktur, deren Member die Merkmale von [propsheeder Ader](/windows/win32/api/prsht/ns-prsht-propsheetheadera_v2)speichern.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Struktur, um die Darstellung des Eigenschaften Blatts zu initialisieren, nachdem es erstellt wurde, aber bevor es mit der [DoModal](#domodal) -Member-Funktion angezeigt wird. Legen Sie beispielsweise den *dwSize* -Member von `m_psh` auf die Größe fest, die das Eigenschaften Blatt enthalten soll.
 
@@ -609,7 +609,7 @@ void MapDialogRect(LPRECT lpRect) const;
 *lprect*<br/>
 Verweist auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur oder ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das die zu konvertierenden Dialogfeld Koordinaten enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dialog Feld Einheiten werden in Bezug auf die aktuelle Dialogfeld-Basiseinheit angegeben, die von der durchschnittlichen Breite und Höhe der Zeichen in der Schriftart abgeleitet ist, die für Text im Dialogfeld verwendet wird. Eine horizontale Einheit ist ein vierte der Dialogfeld-Basis breiten Einheit, und eine vertikale Einheit ist ein Achtel der Dialogfeld-Basis Höheneinheit.
 
@@ -629,7 +629,7 @@ virtual BOOL OnInitDialog();
 
 Gibt an, ob die Anwendung den Eingabefokus auf eines der Steuerelemente im Eigenschaften Blatt festgelegt hat. Wenn `OnInitDialog` einen Wert ungleich 0 (null) zurückgibt, legt Windows den Eingabefokus auf das erste Steuerelement im Eigenschaften Blatt fest. Die Anwendung kann 0 nur zurückgeben, wenn Sie den Eingabefokus explizit auf eines der Steuerelemente im Eigenschaften Blatt festgelegt hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird als Reaktion auf die WM_INITDIALOG Nachricht aufgerufen. Diese Meldung wird während der [Create](#create) -oder [DoModal](#domodal) -Aufrufe an das Eigenschaften Blatt gesendet, die unmittelbar vor dem Anzeigen des Eigenschaften Blatts auftreten.
 
@@ -664,7 +664,7 @@ nbutton: identifiziert die zu drückende Schaltfläche. Dieser Parameter kann ei
 
 - PSBTN_HELP die Schaltfläche Hilfe.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zur Windows SDK pressbutton-Nachricht finden Sie unter [PSM_PRESSBUTTON](/windows/win32/Controls/psm-pressbutton) .
 
@@ -686,12 +686,12 @@ void RemovePage(int nPage);
 ### <a name="parameters"></a>Parameter
 
 *pPage*<br/>
-Zeigt auf die Seite, die aus dem Eigenschaften Blatt entfernt werden soll. Lässt keine NULL-Werte zu.
+Zeigt auf die Seite, die aus dem Eigenschaften Blatt entfernt werden soll. Darf nicht NULL sein.
 
 *nPage*<br/>
 Der Index der zu entfernenden Seite. Muss zwischen 0 und eins kleiner als die Anzahl der Seiten im Eigenschaften Blatt (einschließlich) liegen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das [CPropertyPage](../../mfc/reference/cpropertypage-class.md) -Objekt selbst wird erst zerstört, wenn der Besitzer des `CPropertySheet` Fensters geschlossen wird.
 
@@ -710,13 +710,13 @@ BOOL SetActivePage(CPropertyPage* pPage);
 Der Index der festzulegenden Seite. Der Wert muss zwischen 0 und eins kleiner als die Anzahl der Seiten im Eigenschaften Blatt (einschließlich) liegen.
 
 *pPage*<br/>
-Verweist auf die Seite, die im Eigenschaften Blatt festgelegt werden soll. Er darf nicht NULL sein.
+Verweist auf die Seite, die im Eigenschaften Blatt festgelegt werden soll. Darf nicht NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn das Eigenschaften Blatt erfolgreich aktiviert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie beispielsweise `SetActivePage`, wenn die Aktion eines Benutzers auf einer Seite dazu führen soll, dass eine andere Seite zur aktiven Seite wird.
 
@@ -737,7 +737,7 @@ void SetFinishText(LPCTSTR lpszText);
 *lpszText*<br/>
 Zeigt auf den Text, der auf der Befehls Schaltfläche Fertigstellen angezeigt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SetFinishText` aufrufen, um den Text auf der Befehls Schaltfläche Fertigstellen anzuzeigen und die Schaltflächen weiter und zurück zu blenden, nachdem der Benutzer die Aktion auf der letzten Seite des Assistenten abgeschlossen hat.
 
@@ -763,7 +763,7 @@ Gibt den Stil des Eigenschaften Blatt Titels an. Der Stil muss bei 0 oder als PS
 *lpszText*<br/>
 Zeigt auf den Text, der in der Titelleiste des Eigenschaften Blatts als Beschriftung verwendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig verwendet ein Eigenschaften Blatt den Caption-Parameter im Eigenschaften Blatt-Konstruktor.
 
@@ -792,7 +792,7 @@ Ein Satz von Flags, die die Funktion und das Aussehen der Assistenten Schaltflä
 
 - Schaltfläche zum Fertigstellen PSWIZB_DISABLEDFINISH deaktiviert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft `SetWizardButtons` nur auf, nachdem das Dialogfeld geöffnet wurde. Sie können `SetWizardButtons` nicht anrufen, bevor Sie " [DoModal](#domodal)" aufgerufen haben. In der Regel sollten Sie `SetWizardButtons` aus [CPropertyPage:: OnSetActive](../../mfc/reference/cpropertypage-class.md#onsetactive)aufrufen.
 
@@ -816,7 +816,7 @@ Legt eine Eigenschaften Seite als Assistenten fest.
 void SetWizardMode();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein wichtiges Merkmal einer Eigenschaften Seite des Assistenten besteht darin, dass der Benutzer über die Schaltflächen "weiter" oder "Fertigstellen", "zurück" und "Abbrechen" anstelle von Registerkarten
 
@@ -828,7 +828,7 @@ Rufen Sie `SetWizardMode` auf, bevor Sie [DoModal](#domodal)aufrufen. Nachdem Si
 
 [!code-cpp[NVC_MFCDocView#142](../../mfc/codesnippet/cpp/cpropertysheet-class_15.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel CMNCTRL1](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>

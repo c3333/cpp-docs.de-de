@@ -1,37 +1,35 @@
 ---
 title: Einstellungen für CStatusBarCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CStatusBarCtrl
 helpviewer_keywords:
 - status bar controls [MFC], settings
 - CStatusBarCtrl class [MFC], settings
 ms.assetid: adeba0c3-17f3-435c-b140-a57845e9ce49
-ms.openlocfilehash: b41997fb9342a651260bc2196d212016dc0deb7e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 18c4c780ecf7865d8d648bfa4c54961bbffe7b18
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62307691"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446386"
 ---
 # <a name="settings-for-the-cstatusbarctrl"></a>Einstellungen für CStatusBarCtrl
 
-Die Standardposition des eine [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) Statusfenster wird am unteren Rand des übergeordneten Fensters, aber Sie können angeben, den Stil CCS_TOP-Format so, dass sie am oberen Rand der Clientbereich des übergeordneten Fensters angezeigt werden.
+Die Standardposition eines [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) -Status Fensters befindet sich am unteren Rand des übergeordneten Fensters, Sie können jedoch den CCS_TOP Stil angeben, damit er am oberen Rand des Client Bereichs des übergeordneten Fensters angezeigt wird.
 
-Sie können angeben, das SBARS_SIZEGRIP-Format enthält einen Größenziehpunkt am rechten Ende der `CStatusBarCtrl` Statusfenster. Ein Größenziehpunkt ist vergleichbar mit einem Rahmen; Es ist eines rechteckigen Bereichs, das der Benutzer kann klicken und ziehen Sie zum Ändern der Größe des übergeordneten Fensters.
+Sie können den SBARS_SIZEGRIP Stil angeben, um einen Größen Zieh Punkt am rechten Ende des Fensters "`CStatusBarCtrl` Status" einzuschließen. Ein Größen Zieh Punkt ähnelt einem Größen Anpassungsrahmen. Es ist ein rechteckiger Bereich, auf den der Benutzer klicken und ziehen kann, um die Größe des übergeordneten Fensters zu ändern.
 
 > [!NOTE]
->  Wenn Sie die Stile CCS_TOP-Format und SBARS_SIZEGRIP kombinieren, ist der resultierende Größenziehpunkt nicht funktionsfähig, obwohl das System im Fenster zeichnet.
+>  Wenn Sie die CCS_TOP-und SBARS_SIZEGRIP Stile kombinieren, ist der resultierende Größen Zieh Punkt nicht funktionsfähig, auch wenn das System ihn im Statusfenster zeichnet.
 
-Die Fensterprozedur für das Statusfenster legt automatisch fest, die ursprüngliche Größe und Position des Steuerelements. Die Breite ist identisch mit der Clientbereich des übergeordneten Fensters. Die Höhe basiert auf die Metriken für die Schriftart, die das Statusfenster Gerätekontext derzeit ausgewählt ist und die Breite des Fensterrahmens.
+Die Fenster Prozedur für das Statusfenster legt automatisch die anfängliche Größe und Position des Steuerelement Fensters fest. Die Breite ist mit der Breite des Client Bereichs des übergeordneten Fensters identisch. Die Höhe basiert auf den Metriken der Schriftart, die derzeit im Gerätekontext des Status Fensters und in der Breite der Fensterränder ausgewählt ist.
 
-Die Fensterprozedur wird die Größe des Fensters der automatisch angepasst, wenn sie eine WM_SIZE-Meldung empfängt. Wenn die Größe des übergeordneten Fensters ändert, sendet das übergeordnete Element in der Regel eine WM_SIZE-Meldung im Statusfenster.
+Die Fenster Prozedur passt automatisch die Größe des Status Fensters an, wenn eine WM_SIZE Nachricht empfangen wird. Wenn sich die Größe des übergeordneten Fensters ändert, sendet das übergeordnete Fenster in der Regel eine WM_SIZE Meldung an das Statusfenster.
 
-Sie können die minimale Höhe der Zeichnungsbereich einer Statusfenster festlegen, durch den Aufruf [SetMinHeight](../mfc/reference/cstatusbarctrl-class.md#setminheight), die minimale Höhe in Pixel angibt. Zeichenbereich umfasst keine des Fensterrahmens.
+Sie können die Mindesthöhe des Zeichnungs Bereichs eines Status Fensters festlegen, indem Sie [setMinHeight](../mfc/reference/cstatusbarctrl-class.md#setminheight)aufrufen und dabei die Mindesthöhe in Pixel angeben. Der Zeichenbereich schließt die Rahmen des Fensters nicht ein.
 
-Rufen Sie die Breite des Rahmens eines Fensters Status durch den Aufruf [GetBorders](../mfc/reference/cstatusbarctrl-class.md#getborders). Diese Memberfunktion schließt den Zeiger auf ein Array mit drei Elementen, die die Breite des horizontalen Rands den vertikalen Rahmen und der Rahmen zwischen den Rechtecken empfängt.
+Sie rufen die breiten der Rahmen eines Status Fensters durch Aufrufen von [getrahmens](../mfc/reference/cstatusbarctrl-class.md#getborders)ab. Diese Member-Funktion schließt den Zeiger auf ein Array mit drei Elementen ein, das die Breite des horizontalen Rahmens, den vertikalen Rahmen und den Rahmen zwischen Rechtecke empfängt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

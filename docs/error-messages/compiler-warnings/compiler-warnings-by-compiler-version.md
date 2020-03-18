@@ -4,16 +4,16 @@ ms.date: 04/22/2019
 helpviewer_keywords:
 - warnings, by compiler version
 - cl.exe compiler, setting warning options
-ms.openlocfilehash: 7e0a2d9a342446acbb62ea64031e84e03855e026
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: bf42981396abf8e91077da5c1cc1f180891d2a63
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630819"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446554"
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>Compilerwarnungen nach Compilerversion
 
-Der Compiler kann Warnungen unterdrücken, die nach einer von Ihnen angegebenen Version eingeführt wurden, indem die [/WV](../../build/reference/compiler-option-warning-level.md) -Compileroption verwendet wird. Diese Option ist nützlich, um den Buildprozess zu verwalten, wenn Sie eine neue Toolsetversion einführen und neue Warnungen vorübergehend unterdrücken möchten. Mit dieser Option werden nur Warnungen und keine neuen Fehlermeldungen unterdrückt. Unterdrücken Sie nicht alle neuen Warnungen dauerhaft! Es wird empfohlen, `/W4`immer mit der höchsten regulären Warnstufe () zu kompilieren und die `/Wv` Option in Ihrem Build so schnell wie praktikabel zu entfernen.
+Der Compiler kann Warnungen unterdrücken, die nach einer von Ihnen angegebenen Version eingeführt wurden, indem die [/WV](../../build/reference/compiler-option-warning-level.md) -Compileroption verwendet wird. Diese Option ist nützlich, um den Buildprozess zu verwalten, wenn Sie eine neue Toolsetversion einführen und neue Warnungen vorübergehend unterdrücken möchten. Mit dieser Option werden nur Warnungen und keine neuen Fehlermeldungen unterdrückt. Unterdrücken Sie nicht alle neuen Warnungen dauerhaft! Es wird empfohlen, dass Sie immer mit der höchsten regulären Warnstufe kompilieren, `/W4`und die `/Wv`-Option im Build so schnell wie möglich entfernen.
 
 Diese Versionen des Compilers haben neue Warnungen eingeführt:
 
@@ -21,11 +21,11 @@ Diese Versionen des Compilers haben neue Warnungen eingeführt:
 |-|-|
 | Visual Studio 2002 | 13.00.9466 |
 | Visual Studio 2003 | 13.10.3077 |
-| Visual Studio 2005 | 14.00.50727.762 |
-| Visual Studio 2008 | 15.00.21022.08 |
+| Visual Studio 2005 | 14.00.50727.762 |
+| Visual Studio | 15.00.21022.08 |
 | Visual Studio 2010 | 16.00.40219.01 |
 | Visual Studio 2012 | 17.00.51106.1 |
-| Visual Studio 2013 | 18.00.21005.1 |
+| Visual Studio 2013 | 18.00.21005.1 |
 | Visual Studio 2015 RTM | 19.00.23026.0 |
 | Visual Studio 2015 Update 1 | 19.00.23506.0 |
 | Visual Studio 2015 Update 2 | 19.00.23918.0 |
@@ -36,12 +36,12 @@ Diese Versionen des Compilers haben neue Warnungen eingeführt:
 | Visual Studio 2017 Version 15.6 | 19.13.26128.0 |
 | Visual Studio 2017-Version 15.7 | 19.14.26428.0 |
 | Visual Studio 2017 Version 15.8 | 19.15.26726.0 |
-| Visual Studio 2017, Version 15,9 | 19.16.26926.0 |
+| Visual Studio 2017 Version 15.9 | 19.16.26926.0 |
 | Visual Studio 2019 RTM | 19.20.27004.0 |
 
-Sie können für die `/Wv` Option nur die Hauptnummer, die Haupt-und neben Zahlen oder die Haupt-, neben-und Buildnummern angeben. Der Compiler meldet alle Warnungen, die mit der angegebenen Zahl beginnen, die mit der angegebenen Zahl beginnen, und unterdrückt alle Warnungen für Versionen, die größer als die angegebene Zahl sind. Beispielsweise `/Wv:17` meldet Warnungen, die in oder vor einer beliebigen Version von Visual Studio 2012 eingeführt wurden, und unterdrückt Warnungen, die von einem Compiler aus Visual Studio 2013 (Version 18) oder höher eingeführt wurden. Zum Unterdrücken von Warnungen, die in Visual Studio 2015 Update 2 und höher eingeführt `/Wv:19.00.23506`wurden, können Sie verwenden. Verwenden `/Wv:19.11` Sie, um die Warnungen, die in einer beliebigen Version von Visual Studio vor Visual Studio 2017 Version 15,5 eingeführt wurden, zu melden, aber die in Visual Studio 2017 Version 15,5 und höher eingeführten Warnungen zu unterdrücken.
+Sie können nur die Haupt-, Haupt-und nebenzahlen oder die Haupt-, neben-und Buildnummern für die `/Wv`-Option angeben. Der Compiler meldet alle Warnungen, die mit der angegebenen Zahl beginnen, die mit der angegebenen Zahl beginnen, und unterdrückt alle Warnungen für Versionen, die größer als die angegebene Zahl sind. Beispielsweise `/Wv:17` Berichte zu Warnungen, die in oder vor einer beliebigen Version von Visual Studio 2012 eingeführt wurden, und unterdrückt Warnungen, die von einem Compiler in Visual Studio 2013 (Version 18) oder höher eingeführt wurden. Zum Unterdrücken von Warnungen, die in Visual Studio 2015 Update 2 und höher eingeführt wurden, können Sie `/Wv:19.00.23506`verwenden. Verwenden Sie `/Wv:19.11`, um die Warnungen, die in einer beliebigen Version von Visual Studio vor Visual Studio 2017 Version 15,5 eingeführt wurden, zu melden, aber die in Visual Studio 2017 Version 15,5 und höher eingeführten Warnungen zu unterdrücken.
 
-In den folgenden Abschnitten werden die Warnungen aufgelistet, die von jeder C++ visuellen Version eingeführt werden, die Sie `/Wv` mit der-Compileroption unterdrücken können. Die `/Wv` Option kann keine Warnungen unterdrücken, die nicht aufgelistet sind und die den angegebenen Versionen des Compilers vorangestellt sind.
+In den folgenden Abschnitten werden die Warnungen aufgelistet, die von jeder C++ visuellen Version eingeführt werden, die Sie mit der `/Wv`-Compileroption unterdrücken können. Die Option `/Wv` kann keine Warnungen unterdrücken, die nicht aufgelistet sind und die den angegebenen Compilerversionen vorangestellt sind.
 
 ::: moniker range=">= vs-2019"
 
@@ -305,7 +305,7 @@ Diese Warnungen und alle Warnungen in späteren Versionen werden mithilfe der-Co
 | C4703 | `potentially uninitialized local pointer variable 'name' used` |
 | C4728 | `/Yl- option ignored because PCH reference is required` |
 | C4745 | `volatile access of 'name' cannot be honored due to its size` |
-| C4746|flüchtiger Zugriff auf "Name" unterliegt/volatile: < ISO | MS > Einstellung; Verwenden Sie die intrinsischen __iso_volatile_load/Store-Funktionen. |
+| C4746| `volatile access of 'name' is subject to /volatile:<iso | ms> setting; consider using __iso_volatile_load/store intrinsic functions` |
 | C4872 | `floating point division by zero detected when compiling the call graph for the concurrency::parallel_for_each at: 'description'` |
 | C4880 | `casting from 'type' to 'type': casting away constness from a pointer or reference may result in undefined behavior in an amp restricted function` |
 | C4881 | `the constructor and/or the destructor will not be invoked for tile_static variable 'type'` |
@@ -672,10 +672,10 @@ Diese Warnungen und alle Warnungen in späteren Versionen werden mithilfe der-Co
 | C4997 | `'type': coclass does not implement a COM interface or pseudo-interface` |
 | C4998 | `EXPECTATION FAILED: description(number)` |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Fehler undC++ Warnungen für C/Compiler und Buildtools](../compiler-errors-1/c-cpp-build-errors.md) \
 [Compilerwarnungen C4000-C5999](compiler-warnings-c4000-c5999.md) \
 [/WV-Compileroption](../../build/reference/compiler-option-warning-level.md) \
-[Standardmäßig deaktivierte Compilerwarnungen](../../preprocessor/compiler-warnings-that-are-off-by-default.md) \
-[warning](../../preprocessor/warning.md)
+[Standardmäßig](../../preprocessor/compiler-warnings-that-are-off-by-default.md) deaktivierte Compilerwarnungen \
+[Warnung](../../preprocessor/warning.md)

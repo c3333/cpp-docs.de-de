@@ -115,7 +115,6 @@ f1_keywords:
 - LNK1298
 - LNK1299
 - LNK1300
-- LNK1301
 - LNK1303
 - LNK1304
 - LNK1305
@@ -126,7 +125,6 @@ f1_keywords:
 - LNK1315
 - LNK1316
 - LNK1317
-- LNK1318
 - LNK1319
 - LNK1320
 - LNK1321
@@ -203,7 +201,6 @@ f1_keywords:
 - LNK2035
 - LNK2036
 - LNK2037
-- LNK2038
 - LNK2040
 - LNK2041
 - LNK2042
@@ -216,7 +213,6 @@ f1_keywords:
 - LNK4017
 - LNK4018
 - LNK4019
-- LNK4020
 - LNK4030
 - LNK4031
 - LNK4038
@@ -317,12 +313,12 @@ helpviewer_keywords:
 - linker [C++], errors and warnings
 - errors [C++], linker
 ms.assetid: d4b12c0f-4dae-48b2-9b9e-fedf94c94cb0
-ms.openlocfilehash: 8e611cd20374c912de8d648f51c97177e0d070f1
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
+ms.openlocfilehash: e845ba44476508892be63f0a99f8b2c2fedf0d8e
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907845"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445464"
 ---
 # <a name="linker-tools-errors-and-warnings-lnkxxxx"></a>Fehler und Warnungen der Linkertools (LNKxxxx)
 
@@ -403,59 +399,60 @@ Die Linker-Tools Link, lib, DUMPBIN und EDITBIN verfügen über eine gemeinsame 
 [Linker-Tools-Fehler Linkertoolfehler LNK2028](../../error-messages/tool-errors/linker-tools-error-lnk2028.md) \
 [Linker-Tools-Fehler Linkertoolfehler LNK2031](../../error-messages/tool-errors/linker-tools-error-lnk2031.md) \
 [Linker-Tools-Fehler Linkertoolfehler LNK2033](../../error-messages/tool-errors/linker-tools-error-lnk2033.md) \
+[Linker-Tools-Fehler Linkertoolfehler lnk2038](../../error-messages/tool-errors/linker-tools-error-lnk2038.md) \
 [Linkertoolfehler LNK2039](../../error-messages/tool-errors/linker-tools-error-lnk2039.md)
 
 ## <a name="linker-tools-warnings"></a>Warnungen der Linkertools
 
-[Warn Linkertoolwarnung LNK4001 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4001.md) \
-[Warn Linkertoolwarnung LNK4002 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4002.md) \
-[Warn Linkertoolwarnung LNK4006 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4006.md) \
-[Warn Linkertoolwarnung LNK4010 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4010.md) \
-[Warn Linkertoolwarnung LNK4014 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4014.md) \
-[Warn LNK4020 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4020.md) \
-[Warn Linkertoolwarnung LNK4022 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4022.md) \
-[Warn Linkertoolwarnung LNK4039 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4039.md) \
-[Warn Linkertoolwarnung LNK4044 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4044.md) \
-[Warn Linkertoolwarnung LNK4049 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4049.md) \
-[Warn Linkertoolwarnung LNK4065 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4065.md) \
-[Warn Linkertoolwarnung LNK4070 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4070.md) \
-[Warn Linkertoolwarnung LNK4071 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4071.md) \
-[Warn Linkertoolwarnung LNK4073 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4073.md) \
-[Warn LNK4075 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4075.md) \
-[Warn Linkertoolwarnung LNK4076 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4076.md) \
-[Warn Linkertoolwarnung LNK4078 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4078.md) \
-[Warn Linkertoolwarnung LNK4086 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4086.md) \
-[Warn Linkertoolwarnung LNK4092 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4092.md) \
-[Warn Linkertoolwarnung LNK4096 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4096.md) \
-[Warn Linkertoolwarnung LNK4098 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4098.md) \
-[Warn Linkertoolwarnung LNK4099 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4099.md) \
-[Warn Linkertoolwarnung LNK4102 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4102.md) \
-[Warn Linkertoolwarnung LNK4104 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4104.md) \
-[Warn Linkertoolwarnung LNK4105 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4105.md) \
-[Warn Linkertoolwarnung LNK4194 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4194.md) \
-[Warn Linkertoolwarnung LNK4197 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4197.md) \
-[Warn Linkertoolwarnung LNK4199 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4199.md) \
-[Warn Linkertoolwarnung LNK4200 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4200.md) \
-[Warn Linkertoolwarnung LNK4204 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4204.md) \
-[Warn Linkertoolwarnung LNK4205 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4205.md) \
-[Warn Linkertoolwarnung Lnk4206 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4206.md) \
-[Warn Linkertoolwarnung LNK4210 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4210.md) \
-[Warn Linkertoolwarnung LNK4216 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4216.md) \
-[Warn Linkertoolwarnung LNK4217 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md) \
-[Warn Linkertoolwarnung LNK4219 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4219.md) \
-[Warn Linkertoolwarnung LNK4220 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4220.md) \
-[Warn Linkertoolwarnung LNK4221 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4221.md) \
-[Warn Linkertoolwarnung LNK4222 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4222.md) \
-[Warn Linkertoolwarnung Lnk4224 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4224.md) \
-[Warn Linkertoolwarnung LNK4227 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4227.md) \
-[Warn Linkertoolwarnung LNK4229 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4229.md) \
-[Warn Linkertoolwarnung LNK4237 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4237.md) \
-[Warn Linkertoolwarnung LNK4247 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4247.md) \
-[Warn Linkertoolwarnung LNK4248 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4248.md) \
-[Warn Linkertoolwarnung LNK4253 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4253.md) \
-[Warn Linkertoolwarnung LNK4254 für Linker-Tools](../../error-messages/tool-errors/linker-tools-warning-lnk4254.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4001](../../error-messages/tool-errors/linker-tools-warning-lnk4001.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4002](../../error-messages/tool-errors/linker-tools-warning-lnk4002.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4006](../../error-messages/tool-errors/linker-tools-warning-lnk4006.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4010](../../error-messages/tool-errors/linker-tools-warning-lnk4010.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4014](../../error-messages/tool-errors/linker-tools-warning-lnk4014.md) \
+[Warnmeldungen für Linker-Tools LNK4020](../../error-messages/tool-errors/linker-tools-warning-lnk4020.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4022](../../error-messages/tool-errors/linker-tools-warning-lnk4022.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4039](../../error-messages/tool-errors/linker-tools-warning-lnk4039.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4044](../../error-messages/tool-errors/linker-tools-warning-lnk4044.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4049](../../error-messages/tool-errors/linker-tools-warning-lnk4049.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4065](../../error-messages/tool-errors/linker-tools-warning-lnk4065.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4070](../../error-messages/tool-errors/linker-tools-warning-lnk4070.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4071](../../error-messages/tool-errors/linker-tools-warning-lnk4071.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4073](../../error-messages/tool-errors/linker-tools-warning-lnk4073.md) \
+[Warnmeldungen für Linker-Tools LNK4075](../../error-messages/tool-errors/linker-tools-warning-lnk4075.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4076](../../error-messages/tool-errors/linker-tools-warning-lnk4076.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4078](../../error-messages/tool-errors/linker-tools-warning-lnk4078.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4086](../../error-messages/tool-errors/linker-tools-warning-lnk4086.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4092](../../error-messages/tool-errors/linker-tools-warning-lnk4092.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4096](../../error-messages/tool-errors/linker-tools-warning-lnk4096.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4098](../../error-messages/tool-errors/linker-tools-warning-lnk4098.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4099](../../error-messages/tool-errors/linker-tools-warning-lnk4099.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4102](../../error-messages/tool-errors/linker-tools-warning-lnk4102.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4104](../../error-messages/tool-errors/linker-tools-warning-lnk4104.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4105](../../error-messages/tool-errors/linker-tools-warning-lnk4105.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4194](../../error-messages/tool-errors/linker-tools-warning-lnk4194.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4197](../../error-messages/tool-errors/linker-tools-warning-lnk4197.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4199](../../error-messages/tool-errors/linker-tools-warning-lnk4199.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4200](../../error-messages/tool-errors/linker-tools-warning-lnk4200.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4204](../../error-messages/tool-errors/linker-tools-warning-lnk4204.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4205](../../error-messages/tool-errors/linker-tools-warning-lnk4205.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung Lnk4206](../../error-messages/tool-errors/linker-tools-warning-lnk4206.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4210](../../error-messages/tool-errors/linker-tools-warning-lnk4210.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4216](../../error-messages/tool-errors/linker-tools-warning-lnk4216.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4217](../../error-messages/tool-errors/linker-tools-warning-lnk4217.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4219](../../error-messages/tool-errors/linker-tools-warning-lnk4219.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4220](../../error-messages/tool-errors/linker-tools-warning-lnk4220.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4221](../../error-messages/tool-errors/linker-tools-warning-lnk4221.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4222](../../error-messages/tool-errors/linker-tools-warning-lnk4222.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung Lnk4224](../../error-messages/tool-errors/linker-tools-warning-lnk4224.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4227](../../error-messages/tool-errors/linker-tools-warning-lnk4227.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4229](../../error-messages/tool-errors/linker-tools-warning-lnk4229.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4237](../../error-messages/tool-errors/linker-tools-warning-lnk4237.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4247](../../error-messages/tool-errors/linker-tools-warning-lnk4247.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4248](../../error-messages/tool-errors/linker-tools-warning-lnk4248.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4253](../../error-messages/tool-errors/linker-tools-warning-lnk4253.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4254](../../error-messages/tool-errors/linker-tools-warning-lnk4254.md) \
 [Linkertoolwarnung LNK4286](../../error-messages/tool-errors/linker-tools-warning-lnk4286.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Fehler undC++ Warnungen für C/Compiler und Buildtools](../compiler-errors-1/c-cpp-build-errors.md)

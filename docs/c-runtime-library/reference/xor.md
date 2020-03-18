@@ -17,18 +17,17 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- Xor
 - std::xor
 - std.xor
 helpviewer_keywords:
 - xor function
 ms.assetid: 0fe9554b-d87b-4487-92ed-366c6dc21df2
-ms.openlocfilehash: 44290cb42cd70370ae9bbdac2c8588bbade59577
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a1a1fb677087da173ef490b1a533f4c62d463702
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944828"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444187"
 ---
 # <a name="xor"></a>xor
 
@@ -41,7 +40,7 @@ Eine Alternative zum ^-Operator.
 #define xor ^
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das Makro gibt den Operator ^ aus.
 
@@ -71,6 +70,6 @@ int main( )
 1
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iso646.h>
+**Header:** \<iso646. h >

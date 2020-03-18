@@ -2,9 +2,6 @@
 title: Typen- und Variablengrößen in der Inlineassembly
 ms.date: 08/30/2018
 ms.topic: reference
-f1_keywords:
-- length
-- Type
 helpviewer_keywords:
 - variables, length
 - size, getting in inline assembly
@@ -16,41 +13,41 @@ helpviewer_keywords:
 - variables, type
 - variables, size
 ms.assetid: b62c2f2b-a7ad-4145-bae4-d890db86d348
-ms.openlocfilehash: 36c97ee866ca449e9bbcf514e464a13f24f12cd9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cdb8bddccbea0ef711cb0be4bbac60f7457c625c
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166892"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441563"
 ---
 # <a name="type-and-variable-sizes-in-inline-assembly"></a>Typen- und Variablengrößen in der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Die **Länge**, **Größe**, und **Typ** Operatoren haben eine begrenzte Bedeutung in der Inlineassembly. Sie können nicht mit überhaupt verwendet werden die `DUP` Operator (da Sie Daten mit MASM-Anweisungen und Operatoren definieren können). Jedoch können sie um die Größe von C- oder C++-Variablen oder Typen zu ermitteln:
+Die Operatoren **Länge**, **Größe**und **Typ** weisen in der Inlineassembly eine begrenzte Bedeutung auf. Sie können nicht mit dem `DUP`-Operator verwendet werden (da Sie keine Daten mit MASM-Direktiven oder-Operatoren definieren können). Sie können Sie jedoch verwenden, um die Größe von C oder C++ Variablen oder Typen zu ermitteln:
 
-- Die **Länge** Operator kann die Anzahl der Elemente in einem Array zurückgeben. Es gibt den Wert 1 für nicht-Array-Variablen zurück.
+- Der **length** -Operator kann die Anzahl der Elemente in einem Array zurückgeben. Der Wert 1 wird für nicht-Array Variablen zurückgegeben.
 
-- Die **Größe** Operator kann die Größe einer C- oder C++-Variablen zurück. Eine Variable, die Größe ist das Produkt aus der **Länge** und **Typ**.
+- Der **size** -Operator kann die Größe einer C-oder C++ -Variablen zurückgeben. Die Größe einer Variablen ist das Produkt der **Länge** und des **Typs**.
 
-- Die **Typ** Operator kann die Größe des eine C- oder C++-Typ oder eine Variable zurückgeben. Wenn die Variable ein Array, **Typ** gibt die Größe eines einzelnen Elements des Arrays zurück.
+- Der **typoperator** kann die Größe eines C-oder C++ -Typs oder einer Variablen zurückgeben. Wenn die Variable ein Array ist, gibt **Type** die Größe eines einzelnen Elements des Arrays zurück.
 
-Wenn das Programm ein 8-Element weist z. B. **Int** Array
+Wenn das Programm z. b. über ein 8-Element- **int** -Array verfügt,
 
 ```cpp
 int arr[8];
 ```
 
-die folgenden C "und" Assembly-Ausdrücke zu erhalten, die Größe des `arr` und die zugehörigen Elemente.
+die folgenden C-und assemblyausdrücke ergeben die Größe der `arr` und ihrer Elemente.
 
-|__asm|C|Größe|
+|__asm|C|Size|
 |-------------|-------|----------|
-|**Länge** Arr|`sizeof`(arr)/`sizeof`(arr[0])|8|
-|**Größe** Arr|`sizeof`(Arr)|32|
-|**Typ** Arr|`sizeof`(arr[0])|4|
+|**Länge** Arr|`sizeof`(arr)/`sizeof`(arr [0])|8|
+|**Größe** Arr|`sizeof`(arr)|32|
+|**Typ** Arr|`sizeof`(arr [0])|4|
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden der Assemblysprache in __asm-Blöcken](../../assembler/inline/using-assembly-language-in-asm-blocks.md)<br/>

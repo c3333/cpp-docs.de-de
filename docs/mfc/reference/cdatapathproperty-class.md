@@ -21,11 +21,11 @@ helpviewer_keywords:
 - CDataPathProperty [MFC], SetPath
 ms.assetid: 1f96efdb-54e4-460b-862c-eba5d4103488
 ms.openlocfilehash: 89cb8ddcdd42643f52f755516e8845109163c57a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890823"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424452"
 ---
 # <a name="cdatapathproperty-class"></a>CDataPathProperty-Klasse
 
@@ -37,17 +37,17 @@ Implementiert eine OLE-Steuerelementeigenschaft, die asynchron geladen werden ka
 class CDataPathProperty : public CAsyncMonikerFile
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDataPathProperty:: CDataPathProperty](#cdatapathproperty)|Erstellt ein `CDataPathProperty`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDataPathProperty:: GetControl](#getcontrol)|Ruft das asynchrone OLE-Steuerelement ab, das dem `CDataPathProperty` Objekt zugeordnet ist.|
 |[CDataPathProperty:: getpath](#getpath)|Ruft den Pfadnamen der Eigenschaft ab.|
@@ -56,7 +56,7 @@ class CDataPathProperty : public CAsyncMonikerFile
 |[CDataPathProperty:: setcontrol](#setcontrol)|Legt das der-Eigenschaft zugeordnete asynchrone ActiveX (OLE)-Steuerelement fest.|
 |[CDataPathProperty:: setpath](#setpath)|Legt den Pfadnamen der Eigenschaft fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Asynchrone Eigenschaften werden nach der synchronen Initiierung geladen.
 
@@ -82,7 +82,7 @@ Weitere Informationen zur Verwendung von asynchronen Monikern und ActiveX-Steuer
 
 `CDataPathProperty`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxctl. h
 
@@ -103,7 +103,7 @@ Ein Zeiger auf das OLE-Steuerelement Objekt, das diesem `CDataPathProperty` Obje
 *lpszpath*<br/>
 Der Pfad (absolut oder relativ), der verwendet wird, um einen asynchronen Moniker zu erstellen, der auf die tatsächliche absolute Position der Eigenschaft verweist. `CDataPathProperty` verwendet URLs, nicht Dateinamen. Wenn Sie ein `CDataPathProperty` Objekt für eine Datei benötigen, stellen Sie `file://` dem Pfad voran.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `COleControl` Objekt, auf das *pcontrol* verweist, wird von `Open` verwendet und von abgeleiteten Klassen abgerufen. Wenn *pcontrol* den Wert NULL hat, sollte das mit `Open` verwendete Steuerelement mit `SetControl`festgelegt werden. Wenn *lpszpath* den Wert NULL hat, können Sie den Pfad über `Open` übergeben oder mit `SetPath`festlegen.
 
@@ -167,7 +167,7 @@ Der Pfad (absolut oder relativ), der verwendet wird, um einen asynchronen Monike
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion versucht, die `IBindHost`-Schnittstelle aus dem-Steuerelement abzurufen.
 
@@ -185,7 +185,7 @@ Mit dieser Funktion können Sie `CAsyncMonikerFile::OnDataAvailable` den Contain
 virtual void ResetData();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Öffnen sollte neu gestartet werden. Abgeleitete Klassen können diese Funktion für verschiedene Standardwerte überschreiben.
 
@@ -215,7 +215,7 @@ void SetPath(LPCTSTR lpszPath);
 *lpszpath*<br/>
 Ein Pfad (absolut oder relativ) für die Eigenschaft, die asynchron geladen wird. `CDataPathProperty` verwendet URLs, nicht Dateinamen. Wenn Sie ein `CDataPathProperty` Objekt für eine Datei benötigen, stellen Sie `file://` dem Pfad voran.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Bild](../../overview/visual-cpp-samples.md)<br/>
 [CAsyncMonikerFile-Klasse](../../mfc/reference/casyncmonikerfile-class.md)<br/>

@@ -12,11 +12,11 @@ f1_keywords:
 - fstream/std::wofstream
 ms.assetid: 8dddef2d-7f17-42a6-ba08-6f6f20597d23
 ms.openlocfilehash: 3f4104b28f5becfdbf62ede16faa81e855fcac8c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876112"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427074"
 ---
 # <a name="ltfstreamgt-typedefs"></a>&lt;fstream&gt; typedefs (<fstream>-Typdefinitionen)
 
@@ -34,7 +34,7 @@ Ein Typ `basic_filebuf` spezialisiert auf **char** -Vorlagen Parameter.
 typedef basic_filebuf<char, char_traits<char>> filebuf;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [Basic_filebuf](../standard-library/basic-filebuf-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -46,7 +46,7 @@ Ein Typ `basic_fstream` spezialisiert auf **char** -Vorlagen Parameter.
 typedef basic_fstream<char, char_traits<char>> fstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [Basic_fstream](../standard-library/basic-fstream-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -60,7 +60,7 @@ Es gibt auch `wifstream`, eine typedef, die `basic_ifstream`, um **wchar_t** dop
 typedef basic_ifstream<char, char_traits<char>> ifstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ifstream](../standard-library/basic-ifstream-class.md), die auf Elemente vom Typ "char" mit Standard Zeichen Merkmalen spezialisiert ist. Ein Beispiel ist
 
@@ -84,7 +84,7 @@ Ein Typ `basic_ofstream` spezialisiert auf **char** -Vorlagen Parameter.
 typedef basic_ofstream<char, char_traits<char>> ofstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ofstream](../standard-library/basic-ofstream-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -96,7 +96,7 @@ Ein Typ, `basic_fstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
 typedef basic_fstream<wchar_t, char_traits<wchar_t>> wfstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [Basic_fstream](../standard-library/basic-fstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -108,7 +108,7 @@ Ein Typ, `basic_ifstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
 typedef basic_ifstream<wchar_t, char_traits<wchar_t>> wifstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ifstream](../standard-library/basic-ifstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -120,7 +120,7 @@ Ein Typ, `basic_ofstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
 typedef basic_ofstream<wchar_t, char_traits<wchar_t>> wofstream;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_ofstream](../standard-library/basic-ofstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -132,10 +132,10 @@ Ein Typ, `basic_filebuf` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
 typedef basic_filebuf<wchar_t, char_traits<wchar_t>> wfilebuf;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für Klassen Vorlagen [Basic_filebuf](../standard-library/basic-filebuf-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<fstream>](../standard-library/fstream.md)

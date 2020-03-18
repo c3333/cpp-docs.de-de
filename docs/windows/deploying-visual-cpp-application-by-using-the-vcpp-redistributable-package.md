@@ -4,18 +4,18 @@ ms.date: 04/23/2019
 helpviewer_keywords:
 - walkthrough, deploying a Visual C++ application by using the redistributable package
 ms.assetid: e59becbf-b8c6-4c8e-bab3-b69cc1ed3e5e
-ms.openlocfilehash: a235fa12138fd00a0f6d722cad7776980ad3d292
-ms.sourcegitcommit: 18d3b1e9cdb4fc3a76f7a650c31994bdbd2bde64
+ms.openlocfilehash: 1e09debc53e5b1b3e1eeaa6a63924b04fd2b7ca5
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877285"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443890"
 ---
 # <a name="walkthrough-deploying-a-visual-c-application-by-using-the-visual-c-redistributable-package"></a>Exemplarische Vorgehensweise: Bereitstellen einer Visual C++-Anwendung mithilfe von Visual C++ Redistributable Package
 
 In diesem Artikel wird ausführlich beschrieben, wie Sie das Visual C++ Redistributable Package verwenden, um eine Visual C++-Anwendung bereitzustellen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Sie benötigen folgende Komponenten, um diese exemplarische Vorgehensweise abzuschließen:
 
@@ -25,7 +25,7 @@ Sie benötigen folgende Komponenten, um diese exemplarische Vorgehensweise abzus
 
 ### <a name="to-use-the-visual-c-redistributable-package-to-deploy-an-application"></a>Verwenden des Visual C++ Redistributable Package zum Bereitstellen einer Anwendung
 
-1.  Erstellen Sie eine MFC-Anwendung mithilfe der Schritte in [Exemplarische Vorgehensweise: Bereitstellen einer Visual C++-Anwendung mithilfe eines Setupprojekts](walkthrough-deploying-a-visual-cpp-application-by-using-a-setup-project.md).
+1.  Erstellen Sie eine MFC-Anwendung, indem Sie die folgenden Schritte unter [Exemplarische Vorgehensweise: Bereitstellen einer Visual C++-Anwendung mithilfe eines Setup-Projekts](walkthrough-deploying-a-visual-cpp-application-by-using-a-setup-project.md) befolgen.
 
 1. Erstellen Sie eine Datei, nennen Sie diese „setup.bat“, und fügen Sie dieser folgende Befehle hinzu. Ändern Sie `MyMFCApplication` in den Namen Ihres Projekts.
 
@@ -54,7 +54,7 @@ Sie benötigen folgende Komponenten, um diese exemplarische Vorgehensweise abzus
 
       - Ihre MFC-Anwendungen (EXE-Datei)
 
-      - vcredist_x86.exe Diese Datei befindet sich im Verzeichnis „\Programme (x86)\Microsoft Visual Studio \<version>\SDK\Bootstrapper\Packages\.“. Sie können diese Datei auch von [Microsoft](https://www.microsoft.com/download/confirmation.aspx?id=5555) herunterladen.
+      - vcredist_x86.exe In Visual Studio 2015 befindet sich diese Datei im Verzeichnis *% VCInstallDir% Redist\\1033\\* . In Visual Studio 2017 und Visual Studio 2019 befindet sich diese Datei unter *% vctoolsredistdir%* . Sie können auch [die neueste unterstützte Redist-Datei von Microsoft herunterladen](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
       - Die Datei „setup.bat“, die Sie zuvor erstellt haben.
 
@@ -83,8 +83,8 @@ Sie benötigen folgende Komponenten, um diese exemplarische Vorgehensweise abzus
       Die selbstextrahierende Setupdatei installiert die MFC-Anwendung, die sich in dem Ordner befindet, den Sie in Schritt 2 angegeben haben. Die Anwendung wird erfolgreich ausgeführt, da der Installer für Visual C++ Redistributable Package in der selbstextrahierenden Setupdatei enthalten ist.
 
       > [!IMPORTANT]
-      > Der Installer überprüft den Registrierungsschlüssel „\HKLM\SOFTWARE\Microsoft\VisualStudio\\\<version>\VC\Runtimes\\<platform>, um zu bestimmen, welche Version der Runtime installiert ist. Wenn die derzeit installierte Version neuer als die Version ist, die der Installer zu installieren versucht, gibt der Installer einen Erfolg zurück, ohne die ältere Version zu installieren und erstellt einen zusätzlichen Eintrag auf der Seite des installierten Programms in der Systemsteuerung.
+      > Um zu ermitteln, welche Version der Laufzeit installiert ist, überprüft das Installationsprogramm den Registrierungsschlüssel \\HKLM\\Software\\Microsoft\\VisualStudio\\_Version_\\VC\\Runtimes\\_Platform_\\Version. Wenn die derzeit installierte Version neuer als die Version ist, die der Installer zu installieren versucht, gibt der Installer einen Erfolg zurück, ohne die ältere Version zu installieren und erstellt einen zusätzlichen Eintrag auf der Seite des installierten Programms in der Systemsteuerung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Bereitstellungsbeispiele](deployment-examples.md)<br/>

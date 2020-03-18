@@ -1,18 +1,18 @@
 ---
-title: Sequenced_policy-Klasse
+title: sequenced_policy-Klasse
 ms.date: 04/18/2019
 f1_keywords:
-- execution/std::execution::parallel_policy
-ms.openlocfilehash: 63be7166b84fa452f53baf6b6de16831eb657a23
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+- execution/std::execution::sequenced_policy
+ms.openlocfilehash: 5647f20b560828016231a9bbd38977c51211e6bb
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269192"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444915"
 ---
-# <a name="sequencedpolicy-class"></a>Sequenced_policy-Klasse
+# <a name="sequenced_policy-class"></a>sequenced_policy-Klasse
 
-Als verwendet ein eindeutiger Typ zu unterscheiden, parallelen Algorithmus überladen und erfordern, dass die Ausführung eines parallelen Algorithmus nicht parallelisiert werden kann.
+Wird als eindeutiger Typ verwendet, um das überladen paralleler Algorithmen zu unterscheiden, und erfordert, dass die Ausführung eines parallelen Algorithmus möglicherweise nicht parallelisiert wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -20,6 +20,6 @@ Als verwendet ein eindeutiger Typ zu unterscheiden, parallelen Algorithmus über
 class execution::sequenced_policy;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Während der Ausführung eines parallelen Algorithmus mit der `execution::sequenced_policy` Richtlinie, wenn Sie der Aufruf der Funktion ein Element-Zugriff über eine nicht abgefangene Ausnahme beendet `terminate()` aufgerufen werden soll.
+Wenn während der Ausführung eines parallelen Algorithmus mit der `execution::sequenced_policy`-Richtlinie der Aufruf einer Element Zugriffs Funktion über eine nicht abgefangene Ausnahme beendet wird, müssen `terminate()` aufgerufen werden.

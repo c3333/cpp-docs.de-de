@@ -18,11 +18,11 @@ helpviewer_keywords:
 - RegistryDataExchange function, global functions
 ms.assetid: d58b8a4e-975c-4417-8b34-d3c847f679b3
 ms.openlocfilehash: c5fdaceb47b6cd09dd9d66f26af1337a8dc6bbae
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863184"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422949"
 ---
 # <a name="registry-and-typelib-global-functions"></a>Registrierung und TypeLib globale Funktionen
 
@@ -52,7 +52,7 @@ Diese Funktionen steuern den Knoten in der Registrierung, den das Programm zum S
 |[Atlgetperuserregistration](#atlgetperuserregistration)|Ruft ab, ob die Anwendung den Registrierungs Zugriff auf den Knoten **HKEY_CURRENT_USER** ( **HKCU**) umleitet.|
 |[Atlsetperuserregistration](#atlsetperuserregistration)|Legt fest, ob die Anwendung den Registrierungs Zugriff auf den Knoten **HKEY_CURRENT_USER** ( **HKCU**) umleitet.|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -75,13 +75,13 @@ vorgenommen TRUE gibt an, dass die Registrierungsinformationen an den **HKCU** -
 
 S_OK, wenn die Methode erfolgreich ist, andernfalls der HRESULT-Fehlercode, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Registrierungs Umleitung ist standardmäßig nicht aktiviert. Wenn Sie diese Option aktivieren, wird der Registrierungs Zugriff an **HKEY_CURRENT_USER \software\classes**umgeleitet.
 
 Die Umleitung ist nicht global. Diese Registrierungs Umleitung wirkt sich nur auf MFC-und ATL-Frameworks aus.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -113,7 +113,7 @@ Zeiger auf ein `CAtlTransactionManager` Objekt.
 
 Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUCCESS. Wenn die Funktion fehlschlägt, ist der Rückgabewert ein Fehlercode ungleich 0 (null), der in WinError. h definiert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** „afxpriv.h“
 
@@ -142,7 +142,7 @@ Zeiger auf ein `CAtlTransactionManager` Objekt.
 
 Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUCCESS. Wenn die Funktion fehlschlägt, ist der Rückgabewert ein Fehlercode ungleich 0 (null), der in WinError. h definiert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** „afxpriv.h“
 
@@ -167,7 +167,7 @@ Gibt die ProgID des Handlers an.
 *lpszfilterext*<br/>
 Gibt die Dateierweiterung an, die bei diesem Handler registriert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -191,11 +191,11 @@ Zeichenfolge im Format "\\\n", wobei N der ganzzahlige Index der Typbibliotheks 
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von " [atlcommoduleunregisterserver](server-registration-global-functions.md#atlcommoduleunregisterserver) " und " [catlcommodule:: RegisterTypeLib](../../atl/reference/catlcommodule-class.md#registertypelib)" verwendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -227,7 +227,7 @@ Zeiger auf ein `CAtlTransactionManager` Objekt.
 
 Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUCCESS. Wenn die Funktion fehlschlägt, ist der Rückgabewert ein Fehlercode ungleich 0 (null), der in WinError. h definiert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** „afxpriv.h“
 
@@ -265,7 +265,7 @@ Zeiger auf ein `CAtlTransactionManager` Objekt.
 
 Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUCCESS. Wenn die Funktion fehlschlägt, ist der Rückgabewert ein Fehlercode ungleich 0 (null), der in WinError. h definiert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** „afxpriv.h“
 
@@ -284,7 +284,7 @@ BOOL AFXAPI AfxUnRegisterPreviewHandler(LPCTSTR lpszCLSID);
 *lpszclsid*<br/>
 Gibt die CLSID des Handlers an, dessen Registrierung aufgehoben werden soll.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -307,13 +307,13 @@ in TRUE gibt an, dass die Registrierungsinformationen an den **HKCU** -Knoten we
 
 S_OK, wenn die Methode erfolgreich ist, andernfalls der HRESULT-Fehlercode, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Registrierungs Umleitung ist standardmäßig nicht aktiviert. Wenn Sie diese Option aktivieren, wird der Registrierungs Zugriff an **HKEY_CURRENT_USER \software\classes**umgeleitet.
 
 Die Umleitung ist nicht global. Diese Registrierungs Umleitung wirkt sich nur auf MFC-und ATL-Frameworks aus.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -341,11 +341,11 @@ Zeichenfolge im Format "\\\n", wobei N der ganzzahlige Index der Typbibliotheks 
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von [catlcommodule:: unregistertypelib](../../atl/reference/catlcommodule-class.md#unregistertypelib) und [atlcommoduleunregisterserver](server-registration-global-functions.md#atlcommoduleunregisterserver)verwendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -381,7 +381,7 @@ Enthält bei erfolgreicher Rückgabe einen Zeiger auf einen Zeiger auf die gelad
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von " [atlregistertypelib](#atlregistertypelib) " und " [atlunregistertypelib](#atlunregistertypelib)" verwendet.
 
@@ -421,7 +421,7 @@ Ein Zeiger auf die Daten, die aus der Registrierung gelesen oder in diese geschr
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Makros [BEGIN_RDX_MAP](registry-data-exchange-macros.md#begin_rdx_map) und [END_RDX_MAP](registry-data-exchange-macros.md#end_rdx_map) auf eine Funktion erweitert, die `RegistryDataExchange`aufruft.
 
@@ -433,11 +433,11 @@ Die möglichen Enumerationswerte, die den Vorgang angeben, den die Funktion ausf
 |eWrite-scripeg|Schreiben von Daten in die Registrierung.|
 |eDeleteFromReg|Löschen Sie den Schlüssel aus der Registrierung.|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen](atl-functions.md)<br/>
 [Registrierungsdatenaustausch-Makros](registry-data-exchange-macros.md)

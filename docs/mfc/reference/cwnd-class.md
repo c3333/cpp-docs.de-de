@@ -819,11 +819,11 @@ helpviewer_keywords:
 - CWnd [MFC], m_hWnd
 ms.assetid: 49a832ee-bc34-4126-88b3-bc1d9974f6c4
 ms.openlocfilehash: 1f0338d827a9ec92747169ff2682e6d47485e4c2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855588"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426396"
 ---
 # <a name="cwnd-class"></a>CWnd-Klasse
 
@@ -2316,7 +2316,7 @@ virtual LRESULT DefWindowProc(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu verarbeitende Windows-Meldung an.
 
 *wParam*<br/>
@@ -2606,7 +2606,7 @@ virtual void DoDataExchange(CDataExchange* pDX);
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Ein Zeiger auf ein `CDataExchange`-Objekt.
+Ein Zeiger auf ein `CDataExchange` -Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -3190,7 +3190,7 @@ Ein HWND eines Windows-Fensters.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd`-Objekt.
+Ein Zeiger auf ein `CWnd` -Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -4398,7 +4398,7 @@ CWnd* GetOwner() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd`-Objekt.
+Ein Zeiger auf ein `CWnd` -Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -4448,7 +4448,7 @@ CWnd* GetParentOwner() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd`-Objekt. Wenn ein `CWnd`-Objekt nicht an das Handle angefügt ist, wird ein temporäres `CWnd`-Objekt erstellt und angefügt. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
+Ein Zeiger auf ein `CWnd` -Objekt. Wenn ein `CWnd`-Objekt nicht an das Handle angefügt ist, wird ein temporäres `CWnd`-Objekt erstellt und angefügt. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -5711,7 +5711,7 @@ Gibt Fenster Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt Fenster Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -5760,7 +5760,7 @@ Gibt erweiterte Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt erweiterte Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -6078,7 +6078,7 @@ afx_msg void OnChangeUIState(
 ### <a name="parameters"></a>Parameter
 
 *naktionsmeldung*<br/>
-Gibt die Aktion an, die ausgeführt werden soll. Es kann sich um einen der folgenden Werte handeln:
+Gibt die Aktion an, die ausgeführt werden soll. Kann einer der folgenden Werte sein:
 
 - UIS_CLEAR das UI State-Element (angegeben durch *nuielement*) sollte ausgeblendet werden.
 
@@ -6087,7 +6087,7 @@ Gibt die Aktion an, die ausgeführt werden soll. Es kann sich um einen der folge
 - UIS_SET das UI State-Element (angegeben durch *nuielement*) angezeigt werden soll.
 
 *nuielement*<br/>
-Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Es kann sich um einen der folgenden Werte handeln:
+Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Kann einer der folgenden Werte sein:
 
 - UISF_HIDEACCEL Tastaturbeschleuniger.
 
@@ -6123,7 +6123,7 @@ Enthält den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel
 
 |Wert|Bedeutung|
 |-----------|-------------|
-|0 - 15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer die Taste gedrückt hält.|
+|0-15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer die Taste gedrückt hält.|
 |16-23|Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab.|
 |24|Gibt an, ob der Schlüssel ein erweiterter Schlüssel ist, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Der Wert ist 1, wenn es sich um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0.|
 |25-28|Wird intern von Windows verwendet.|
@@ -6195,7 +6195,7 @@ virtual BOOL OnChildNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Eine an ein übergeordnetes Fenster gesendete Windows-Meldungs Nummer.
 
 *wParam*<br/>
@@ -6540,7 +6540,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -7108,7 +7108,7 @@ afx_msg void OnHotKey(
 |Parameter|Beschreibung|
 |---------------|-----------------|
 |*nhotkeyid*|in Der Bezeichner für den Hot Key, der die Meldung generiert hat. Wenn die Nachricht von einem System definierten Hot Key generiert wurde, weist dieser Parameter einen der folgenden Werte auf:<br /><br /> -IDHOT_SNAPDESKTOP-die Taste für den Snap-in-Desktop wurde gedrückt.<br />-IDHOT_SNAPWINDOW: die Taste für das Snap-in-Fenster wurde gedrückt.|
-|*nKey1*|in Eine bitweise Kombination (or) von Flags, die die Tasten angeben, die in Kombination mit dem durch den *nKey2* -Parameter angegebenen Schlüssel gedrückt wurden. Mögliche Werte:<br /><br /> -MOD_ALT-die Alt-Taste wurde gedrückt.<br />-MOD_CONTROL: entweder wurde die STRG-Taste gedrückt.<br />-MOD_SHIFT: entweder wurde die UMSCHALTTASTE gedrückt.<br />-MOD_WIN: entweder wurde die Windows-Taste angehalten. Diese Schlüssel werden mit dem Microsoft Windows-Logo bezeichnet.|
+|*nKey1*|in Eine bitweise Kombination (or) von Flags, die die Tasten angeben, die in Kombination mit dem durch den *nKey2* -Parameter angegebenen Schlüssel gedrückt wurden. Mögliche Werte sind:<br /><br /> -MOD_ALT-die Alt-Taste wurde gedrückt.<br />-MOD_CONTROL: entweder wurde die STRG-Taste gedrückt.<br />-MOD_SHIFT: entweder wurde die UMSCHALTTASTE gedrückt.<br />-MOD_WIN: entweder wurde die Windows-Taste angehalten. Diese Schlüssel werden mit dem Microsoft Windows-Logo bezeichnet.|
 |*nKey2*|in Der virtuelle Schlüsselcode der Hot-Taste.|
 
 ### <a name="remarks"></a>Hinweise
@@ -7384,7 +7384,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert).|
 |8|Erweiterter Schlüssel, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -7429,7 +7429,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -7915,7 +7915,7 @@ Gibt einen Zeiger auf das übergeordnete Fenster der obersten Ebene des Fensters
 *nhittest*<br/>
 Gibt den Code des [Treffer Test](#onnchittest) Bereichs an. Ein Treffer Test ist ein Test, der die Position des Cursors bestimmt.
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die Nummer der Maus Nachricht an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -8726,7 +8726,7 @@ afx_msg UINT OnNotifyFormat(
 |Parameter|Beschreibung|
 |---------------|-----------------|
 |*folgenden*|in Ein Zeiger auf ein `CWnd` Objekt, das das Fenster darstellt, das die [WM_NOTIFY](/windows/win32/controls/wm-notify) Meldung sendet.<br /><br /> Dieser Parameter ist der Zeiger auf ein Steuerelement, wenn der *nCommand* -Parameter NF_QUERY ist, oder der Zeiger auf das übergeordnete Fenster eines Steuer Elements, wenn *nCommand* NF_REQUERY ist.|
-|*nausgeführter Befehl*|in Ein Befehls Wert, der die WM_NOTIFY Nachricht spezialisiert. Mögliche Werte:<br /><br /> - NF_QUERY -<br />     Die Meldung ist eine Abfrage, mit der bestimmt wird, ob ANSI-oder Unicode-Strukturen in WM_NOTIFY-Nachrichten verwendet werden sollen. Diese Meldung wird während der Erstellung eines-Steuer Elements von einem-Steuerelement an das übergeordnete Fenster gesendet und als Antwort auf das NF_REQUERY Formular dieser Nachricht.<br />-NF_REQUERY:<br />     Die Meldung ist eine Anforderung für ein Steuerelement, das NF_QUERY Formular dieser Nachricht an das übergeordnete Fenster zu senden. Diese Anforderung wird vom übergeordneten Fenster gesendet und fordert das Steuerelement auf, das übergeordnete Element über den in WM_NOTIFY-Nachrichten zu verwendenden Strukturtyp anzufordern. Wenn der *nCommand* -Parameter NF_REQUERY ist, ist der Rückgabewert das Ergebnis des anfragevorgangs.|
+|*nausgeführter Befehl*|in Ein Befehls Wert, der die WM_NOTIFY Nachricht spezialisiert. Mögliche Werte sind:<br /><br /> - NF_QUERY -<br />     Die Meldung ist eine Abfrage, mit der bestimmt wird, ob ANSI-oder Unicode-Strukturen in WM_NOTIFY-Nachrichten verwendet werden sollen. Diese Meldung wird während der Erstellung eines-Steuer Elements von einem-Steuerelement an das übergeordnete Fenster gesendet und als Antwort auf das NF_REQUERY Formular dieser Nachricht.<br />-NF_REQUERY:<br />     Die Meldung ist eine Anforderung für ein Steuerelement, das NF_QUERY Formular dieser Nachricht an das übergeordnete Fenster zu senden. Diese Anforderung wird vom übergeordneten Fenster gesendet und fordert das Steuerelement auf, das übergeordnete Element über den in WM_NOTIFY-Nachrichten zu verwendenden Strukturtyp anzufordern. Wenn der *nCommand* -Parameter NF_REQUERY ist, ist der Rückgabewert das Ergebnis des anfragevorgangs.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -8734,7 +8734,7 @@ afx_msg UINT OnNotifyFormat(
 |------------------|-------------|
 |NFR_ANSI|ANSI-Strukturen sollten in WM_NOTIFY vom Steuerelement gesendeten Nachrichten verwendet werden.|
 |NFR_UNICODE|Unicode-Strukturen sollten in WM_NOTIFY vom Steuerelement gesendeten Nachrichten verwendet werden.|
-|0|Ein Fehler ist aufgetreten.|
+|0|Es ist ein Fehler aufgetreten.|
 
 ### <a name="remarks"></a>Hinweise
 
@@ -8849,7 +8849,7 @@ afx_msg void OnParentNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt das Ereignis an, für das das übergeordnete Element benachrichtigt wird, und den Bezeichner des untergeordneten Fensters. Das Ereignis ist das nieder wertige Wort der *Nachricht*. Wenn das Ereignis WM_CREATE oder WM_DESTROY ist, ist das hochwertige Wort der *Nachricht* der Bezeichner des untergeordneten Fensters. Andernfalls ist das hochwertige Wort nicht definiert. Das Ereignis (Word of *Message*in niedriger Reihenfolge) kann einen der folgenden Werte aufweisen:
 
 - WM_CREATE das untergeordnete Fenster erstellt wird.
@@ -9219,7 +9219,7 @@ Gibt einen Zeiger auf das Fenster an, das den Cursor enthält. Der Zeiger kann t
 *nhittest*<br/>
 Gibt den Code des [Treffer Test](#onnchittest) Bereichs an. Der Treffer Test bestimmt die Position des Cursors.
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die Nummer der Maus Nachricht an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -9520,7 +9520,7 @@ Der *nFlags* -Parameter kann folgende Werte aufweisen:
 
 |Wert|Bedeutung|
 |-----------|-------------|
-|0 - 15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer den Schlüssel gedrückt hält.|
+|0-15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer den Schlüssel gedrückt hält.|
 |16-23|Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab.|
 |24|Gibt an, ob der Schlüssel ein erweiterter Schlüssel ist, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Der Wert ist 1, wenn es sich um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0.|
 |25-28|Wird intern von Windows verwendet.|
@@ -9646,7 +9646,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -9685,7 +9685,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird, andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, 0, wenn der Schlüssel aktiv ist).|
@@ -9732,7 +9732,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Wird nicht verwendet.|
+|9-10|Nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird, andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, 0, wenn der Schlüssel aktiv ist).|
@@ -10001,7 +10001,7 @@ afx_msg void OnUpdateUIState(
 ### <a name="parameters"></a>Parameter
 
 *naktionsmeldung*<br/>
-Gibt die auszuführende Aktion an. Es kann sich um einen der folgenden Werte handeln:
+Gibt die auszuführende Aktion an. Kann einer der folgenden Werte sein:
 
 - UIS_CLEAR das UI State-Element (angegeben durch *nuielement*) sollte ausgeblendet werden.
 
@@ -10010,7 +10010,7 @@ Gibt die auszuführende Aktion an. Es kann sich um einen der folgenden Werte han
 - UIS_SET das UI State-Element (angegeben durch *nuielement*) angezeigt werden soll.
 
 *nuielement*<br/>
-Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Es kann sich um einen der folgenden Werte handeln:
+Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Kann einer der folgenden Werte sein:
 
 - UISF_HIDEACCEL Tastaturbeschleuniger.
 
@@ -10267,7 +10267,7 @@ virtual BOOL OnWndMsg(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -10497,7 +10497,7 @@ BOOL PostMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die Meldung an, die gepostet werden soll.
 
 *wParam*<br/>
@@ -10773,7 +10773,7 @@ BOOL ReflectChildNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die Meldung an, die reflektiert werden soll.
 
 *wParam*<br/>
@@ -10906,7 +10906,7 @@ int RunModalLoop(DWORD dwFlags = 0);
 ### <a name="parameters"></a>Parameter
 
 *dwFlags*<br/>
-Gibt die zu sendende Windows-Meldung an. Es kann sich um einen der folgenden Werte handeln:
+Gibt die zu sendende Windows-Meldung an. Kann einer der folgenden Werte sein:
 
 - MLF_NOIDLEMSG senden keine [WM_ENTERIDLE](/windows/win32/dlgbox/wm-enteridle) Meldungen an das übergeordnete Element.
 
@@ -11082,7 +11082,7 @@ LRESULT SendDlgItemMessage(
 *NID*<br/>
 Gibt den Bezeichner des Dialog Felds an, das die Nachricht empfängt.
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11118,7 +11118,7 @@ LRESULT SendMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11154,7 +11154,7 @@ void SendMessageToDescendants(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11192,7 +11192,7 @@ BOOL SendNotifyMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -12359,7 +12359,7 @@ virtual LRESULT WindowProc(
 
 ### <a name="parameters"></a>Parameter
 
-*Nachricht*<br/>
+*message*<br/>
 Gibt die zu verarbeitende Windows-Meldung an.
 
 *wParam*<br/>

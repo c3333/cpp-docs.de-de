@@ -9,10 +9,8 @@ f1_keywords:
 - flush
 - for
 - master
-- ordered
 - parallel
 - section
-- SECTIONS
 - single
 - threadprivate
 helpviewer_keywords:
@@ -29,12 +27,12 @@ helpviewer_keywords:
 - single OpenMP directive
 - threadprivate OpenMP directive
 ms.assetid: 0562c263-344c-466d-843e-de830d918940
-ms.openlocfilehash: 4db341cf58884263e414e24aacf888c8c88e57cc
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: bfd2cec32acdd6431a571916f1c80e1700ef3af7
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424152"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441775"
 ---
 # <a name="openmp-directives"></a>OpenMP-Direktiven
 
@@ -44,7 +42,7 @@ Visual C++ unterstützt die folgenden OpenMP-Direktiven.
 
 Für parallele Arbeits Freigabe:
 
-|Directive|Beschreibung|
+|Direktive|BESCHREIBUNG|
 |---------|-----------|
 |[parallel](#parallel)|Definiert einen parallelen Bereich, bei dem es sich um Code handelt, der von mehreren Threads parallel ausgeführt wird.|
 |[for](#for-openmp)|Bewirkt, dass die Arbeit in einer `for`-Schleife innerhalb eines parallelen Bereichs in Threads aufgeteilt wird.|
@@ -53,10 +51,10 @@ Für parallele Arbeits Freigabe:
 
 Für Master und Synchronisierung:
 
-|Directive|Beschreibung|
+|Direktive|BESCHREIBUNG|
 |---------|-----------|
 |[master](#master)|Gibt an, dass nur der Master Thread einen Abschnitt des Programms ausführen soll.|
-|[critical](#critical)|Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.|
+|[Kritisch](#critical)|Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.|
 |[barrier](#barrier)|Synchronisiert alle Threads in einem Team. alle Threads werden an der Barriere angehalten, bis alle Threads die Barriere ausführen.|
 |[atomic](#atomic)|Gibt an, dass eine Speicheradresse atomarisch aktualisiert wird.|
 |[flush](#flush-openmp)|Gibt an, dass alle Threads dieselbe Ansicht des Arbeitsspeichers für alle freigegebenen Objekte haben.|
@@ -64,7 +62,7 @@ Für Master und Synchronisierung:
 
 Für Daten Umgebung:
 
-|Directive|Beschreibung|
+|Direktive|BESCHREIBUNG|
 |---------|-----------|
 |[threadprivate](#threadprivate)|Gibt an, dass eine Variable für einen Thread privat ist.|
 
@@ -82,7 +80,7 @@ Gibt an, dass eine Speicheradresse atomarisch aktualisiert wird.
 *expression*<br/>
 Die Anweisung mit dem *Lvalue-Wert*, dessen Speicherort Sie vor mehr als einem Schreibvorgang schützen möchten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `atomic`-Anweisung unterstützt keine Klauseln.
 
@@ -121,7 +119,7 @@ Synchronisiert alle Threads in einem Team. alle Threads werden an der Barriere a
 #pragma omp barrier
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `barrier`-Anweisung unterstützt keine Klauseln.
 
@@ -147,7 +145,7 @@ Gibt an, dass der Code nur auf einem Thread gleichzeitig ausgeführt wird.
 *name*<br/>
 Optionale Ein Name, der den kritischen Code identifiziert. Der Name muss in Klammern eingeschlossen werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `critical`-Anweisung unterstützt keine Klauseln.
 
@@ -224,7 +222,7 @@ Gibt an, dass alle Threads dieselbe Ansicht des Arbeitsspeichers für alle freig
 *var*<br/>
 Optionale Eine durch Trennzeichen getrennte Liste von Variablen, die Objekte darstellen, die Sie synchronisieren möchten. Wenn *var* nicht angegeben wird, wird der gesamte Arbeitsspeicher geleert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `flush`-Anweisung unterstützt keine Klauseln.
 
@@ -304,7 +302,7 @@ Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 *for_statement*<br/>
 Eine `for`-Schleife. Nicht definiertes Verhalten führt dazu, dass der Benutzercode in der `for`-Schleife die Index Variable ändert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `for`-Direktive unterstützt die folgenden Klauseln:
 
@@ -395,7 +393,7 @@ Gibt an, dass nur der Master Thread einen Abschnitt des Programms ausführen sol
 }
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `master`-Anweisung unterstützt keine Klauseln.
 
@@ -455,7 +453,7 @@ Gibt an, dass der Code in einer parallelisierten `for` Schleife wie eine sequenz
    structured-block
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `ordered`-Direktive muss innerhalb des dynamischen Wertebereichs eines [for](#for-openmp) -oder `parallel for`-Konstrukts mit einer `ordered`-Klausel liegen.
 
@@ -533,14 +531,14 @@ Definiert einen parallelen Bereich, bei dem es sich um Code handelt, der von meh
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `parallel`-Direktive unterstützt die folgenden Klauseln:
 
 - [if](openmp-clauses.md#if-openmp)
 - [private](openmp-clauses.md#private-openmp)
 - [firstprivate](openmp-clauses.md#firstprivate)
-- [default](openmp-clauses.md#default-openmp)
+- [Standardwert](openmp-clauses.md#default-openmp)
 - [Genu](openmp-clauses.md#shared-openmp)
 - [copyin](openmp-clauses.md#copyin)
 - [reduction](openmp-clauses.md#reduction)
@@ -595,7 +593,7 @@ Identifiziert Code Abschnitte, die in alle Threads aufgeteilt werden sollen.
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `sections`-Direktive kann NULL oder mehr `section` Direktiven enthalten.
 
@@ -650,7 +648,7 @@ Ermöglicht Ihnen, anzugeben, dass ein Code Abschnitt für einen einzelnen Threa
 *bezogene*<br/>
 Optionale NULL oder mehr Klauseln finden Sie im Abschnitt " **Hinweise** ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `single`-Direktive unterstützt die folgenden Klauseln:
 
@@ -708,7 +706,7 @@ Gibt an, dass eine Variable für einen Thread privat ist.
 *var*<br/>
 Eine durch Trennzeichen getrennte Liste von Variablen, die Sie als privat in einem Thread einrichten möchten. *var* muss entweder eine globale oder eine Namespace bezogene Variable oder eine lokale statische Variable sein.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `threadprivate`-Anweisung unterstützt keine Klauseln.
 

@@ -27,11 +27,11 @@ helpviewer_keywords:
 - CGopherFileFind [MFC], IsDots
 ms.assetid: 8465a979-6323-496d-ab4b-e81383fb999d
 ms.openlocfilehash: 55c40fc04934f00ccb541a01cce611d9532bee1a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875785"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424356"
 ---
 # <a name="cgopherfilefind-class"></a>CGopherFileFind-Klasse
 
@@ -46,17 +46,17 @@ Unterstützt die Internetsuche nach Dateien auf Gopherservern.
 class CGopherFileFind : public CFileFind
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CGopherFileFind:: CGopherFileFind](#cgopherfilefind)|Erstellt ein `CGopherFileFind`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CGopherFileFind:: FindFile](#findfile)|Sucht eine Datei auf einem Gopher-Server.|
 |[CGopherFileFind:: FindNextFile](#findnextfile)|Setzt eine Dateisuche von einem vorherigen Befehl von " [FindFile](#findfile)" fort.|
@@ -68,7 +68,7 @@ class CGopherFileFind : public CFileFind
 |[CGopherFileFind:: getscreenname](#getscreenname)|Ruft den Namen eines Gopher-Bildschirms ab.|
 |[CGopherFileFind:: isdots](#isdots)|Testet beim Durchlaufen von Dateien auf die aktuellen Verzeichnis-und übergeordneten Verzeichnis Marker.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CGopherFileFind` enthält Member-Funktionen, die eine Suche starten, eine Datei suchen und die URL einer Datei zurückgeben.
 
@@ -99,7 +99,7 @@ Weitere Informationen zur Verwendung `CGopherFileFind` und der anderen WinInet-K
 
 `CGopherFileFind`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -121,7 +121,7 @@ Ein Zeiger auf ein [CGopherConnection](../../mfc/reference/cgopherconnection-cla
 *dwcontext*<br/>
 Der Kontext Bezeichner für den Vorgang. Weitere Informationen zu *dwcontext*finden Sie unter " **Hinweise** ".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Standardwert für *dwcontext* wird vom MFC an das `CGopherFileFind` Objekt aus dem [cinternettession](../../mfc/reference/cinternetsession-class.md) -Objekt gesendet, das das `CGopherFileFind`-Objekt erstellt hat. Wenn Sie ein `CGopherFileFind` Objekt erstellen, können Sie die Standardeinstellung überschreiben, um den Kontext Bezeichner auf einen Wert Ihrer Wahl festzulegen. Der Kontext Bezeichner wird an [cinternetzession:: OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) zurückgegeben, um den Status für das Objekt bereitzustellen, mit dem es identifiziert wird. Weitere Informationen zum Kontext Bezeichner finden Sie im Artikel [Internet First Steps: WinInet](../../mfc/wininet-basics.md) .
 
@@ -163,7 +163,7 @@ Die Flags, die beschreiben, wie diese Sitzung behandelt werden soll. Gültige Fl
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Um erweiterte Fehlerinformationen abzurufen, nennen Sie die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem Sie `FindFile` aufgerufen haben, um das erste Gopher-Objekt abzurufen, können Sie [FindNextFile](#findnextfile) aufrufen, um nachfolgende Gopher-Dateien abzurufen.
 
@@ -200,7 +200,7 @@ Ein Verweis auf ein [ctime](../../atl-mfc-shared/reference/ctime-class.md) -Obje
 
 Ungleich NULL, wenn erfolgreich; 0, wenn nicht erfolgreich. `GetCreationTime` gibt 0 nur zurück, wenn [FindNextFile](#findnextfile) für dieses `CGopherFileFind` Objekt noch nie aufgerufen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [FindNextFile](#findnextfile) muss mindestens einmal aufgerufen werden, bevor `GetCreationTime`aufgerufen wird.
 
@@ -228,7 +228,7 @@ Ein Zeiger auf eine [FILETIME](/windows/win32/api/minwinbase/ns-minwinbase-filet
 
 Ungleich NULL, wenn erfolgreich; 0, wenn nicht erfolgreich. `GetLastAccessTime` gibt 0 nur zurück, wenn [FindNextFile](#findnextfile) für dieses `CGopherFileFind` Objekt noch nie aufgerufen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [FindNextFile](#findnextfile) muss mindestens einmal aufgerufen werden, bevor `GetLastAccessTime`aufgerufen wird.
 
@@ -256,7 +256,7 @@ Ein Verweis auf ein [ctime](../../atl-mfc-shared/reference/ctime-class.md) -Obje
 
 Ungleich NULL, wenn erfolgreich; 0, wenn nicht erfolgreich. `GetLastWriteTime` gibt 0 nur zurück, wenn [FindNextFile](#findnextfile) für dieses `CGopherFileFind` Objekt noch nie aufgerufen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [FindNextFile](#findnextfile) muss mindestens einmal aufgerufen werden, bevor `GetLastWriteTime`aufgerufen wird.
 
@@ -275,7 +275,7 @@ virtual ULONGLONG GetLength() const;
 
 Die Länge (in Byte) der gefundenen Datei.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetLength` verwendet die Win32-Struktur [WIN32_FIND_DATA](/windows/win32/api/minwinbase/ns-minwinbase-win32_find_dataw) , um den Wert der Dateigröße in Bytes zu erhalten.
 
@@ -296,7 +296,7 @@ CGopherLocator GetLocator() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CGopherLocator` -Objekt.
+Ein `CGopherLocator`-Objekt.
 
 ##  <a name="getscreenname"></a>CGopherFileFind:: getscreenname
 
@@ -322,11 +322,11 @@ virtual BOOL IsDots() const;
 
 Ungleich 0 (null), wenn die gefundene Datei den Namen "." oder ".." hat, was darauf hinweist, dass es sich bei der gefundenen Datei tatsächlich um ein Verzeichnis handelt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [FindNextFile](#findnextfile) muss mindestens einmal aufgerufen werden, bevor `IsDots`aufgerufen wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CFileFind-Klasse](../../mfc/reference/cfilefind-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

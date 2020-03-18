@@ -21,7 +21,6 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- spawnlpe
 - _wspawnlpe
 - _spawnlpe
 - wspawnlpe
@@ -34,12 +33,12 @@ helpviewer_keywords:
 - processes, executing new
 - process creation
 ms.assetid: e171ebfa-70e7-4c44-8331-2a291fc17bd6
-ms.openlocfilehash: fe82d52418683d414ffbdd0f4fb0efd9bfd709cb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4fd7275969120b35253bbc12098f8dc8f69a1fed
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947652"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442499"
 ---
 # <a name="_spawnlpe-_wspawnlpe"></a>_spawnlpe, _wspawnlpe
 
@@ -87,7 +86,7 @@ Array von Zeigern zu Umgebungseinstellungen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der Rückgabewert eines synchronen **_spawnlpe** oder **_wspawnlpe** ( **_P_WAIT** angegeben für- *Modus*) ist der Beendigungs Status des neuen Prozesses. Der Rückgabewert eines asynchronen **_spawnlpe** oder **_wspawnlpe** ( **_P_NOWAIT** oder **_P_NOWAITO** , der für den- *Modus*angegeben ist) ist das Prozess handle. Der Beendigungsstatus ist 0, wenn der Prozess ordnungsgemäß beendet wurde. Sie können den Beendigungs Status auf einen Wert ungleich 0 (null) festlegen, wenn der erzeugte Prozess speziell ein Argument ungleich Null zum Aufrufen der Beendigungs **Routine verwendet** . Wenn der neue Prozess nicht explizit einen positiven Beendigungsstatus eingestellt hat, weist ein positiver Beendigungsstatus auf eine abnormale Beendigung aufgrund eines Abbruchs oder einer Unterbrechung hin. Der Rückgabewert-1 gibt einen Fehler an (der neue Prozess wird nicht gestartet). In diesem Fall wird **errno** auf einen der folgenden Werte festgelegt.
+Der Rückgabewert eines synchronen **_spawnlpe** oder **_wspawnlpe** ( **_P_WAIT** für den- *Modus*angegeben) ist der Beendigungs Status des neuen Prozesses. Der Rückgabewert eines asynchronen **_spawnlpe** oder **_wspawnlpe** ( **_P_NOWAIT** oder **_P_NOWAITO** , der für den- *Modus*angegeben ist) ist das Prozess handle. Der Beendigungsstatus ist 0, wenn der Prozess ordnungsgemäß beendet wurde. Sie können den Beendigungs Status auf einen Wert ungleich 0 (null) festlegen, wenn der erzeugte Prozess speziell ein Argument ungleich Null zum Aufrufen der Beendigungs **Routine verwendet** . Wenn der neue Prozess nicht explizit einen positiven Beendigungsstatus eingestellt hat, weist ein positiver Beendigungsstatus auf eine abnormale Beendigung aufgrund eines Abbruchs oder einer Unterbrechung hin. Der Rückgabewert-1 gibt einen Fehler an (der neue Prozess wird nicht gestartet). In diesem Fall wird **errno** auf einen der folgenden Werte festgelegt.
 
 |||
 |-|-|
@@ -99,15 +98,15 @@ Der Rückgabewert eines synchronen **_spawnlpe** oder **_wspawnlpe** ( **_P_WAIT
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen erstellt einen neuen Prozess und führt diesen aus, übergibt jedes Befehlszeilenargument als separaten Parameter und übergibt außerdem ein Array von Zeigern auf die Umgebungseinstellungen. Diese Funktionen verwenden die **path** -Umgebungsvariable, um die auszuführende Datei zu suchen.
 
 Diese Funktionen überprüfen ihre Parameter. Wenn entweder *cmdname* oder *arg0* eine leere Zeichenfolge oder ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL**fest und geben-1 zurück. Es wird kein neuer Prozess erzeugt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_spawnlpe**|\<process.h>|
 |**_wspawnlpe**|\<stdio.h> oder \<wchar.h>|
@@ -116,9 +115,9 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 ## <a name="example"></a>Beispiel
 
-Siehe das Beispiel in [_spawn, _wspawn Functions](../../c-runtime-library/spawn-wspawn-functions.md).
+Siehe das Beispiel in [_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>

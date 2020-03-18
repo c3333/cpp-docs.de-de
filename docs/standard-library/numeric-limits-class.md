@@ -71,11 +71,11 @@ helpviewer_keywords:
 - std::numeric_limits [C++], traps
 ms.assetid: 9e817177-0e91-48e6-b680-0531c4b26625
 ms.openlocfilehash: 5373bd6a99605f5a63fb6aa2ed6de50c12b1c8f1
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72687620"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425352"
 ---
 # <a name="numeric_limits-class"></a>numeric_limits-Klasse
 
@@ -90,14 +90,14 @@ template <class Type>
 
 ### <a name="parameters"></a>Parameter
 
-@No__t_1 *eingeben*
+*Typ*\
 Der grundlegende Elementdatentyp, dessen Eigenschaften getestet, abgefragt oder festgelegt werden. Der *Typ* kann auch als **konstant**, **flüchtig**oder **konstant (konstant**) deklariert werden.
 
 ## <a name="remarks"></a>Hinweise
 
-Der Header definiert explizite Spezialisierungs Typen für die **Typen wchar_t**, **bool**, **char**, **signed char**, **Ganzzahl ohne Vorzeichen char**, **Short**, **Ganzzahl ohne Vorzeichen Short**, **int**, **Ganzzahl ohne Vorzeichen int**, **Long**, **Ganzzahl ohne Vorzeichen long**, **float**, **Double**, **long Double**, **Long Long**, **Ganzzahl ohne Vorzeichen long long**, **char16_t**und **char32_t**. Für diese expliziten Spezialisierungs Elemente ist der Member [Numeric_limits:: is_specialized](#is_specialized) auf **true**und alle relevanten Member haben sinnvolle Werte. Das Programm kann zusätzliche explizite Spezialisierungen bereitstellen. Die meisten Member-Funktionen der-Klasse beschreiben oder testen mögliche Implementierungen von **float**.
+Der-Header definiert explizite Spezialisierungs Typen für die Typen " **wchar_t**", " **bool**", " **char**", " **signed char**", " **Ganzzahl ohne Vorzeichen char**", " **Short**", " **Ganzzahl ohne Vorzeichen Short**", " **int**", " **Ganzzahl ohne Vorzeichen int** **", "** **Long**", " **Ganzzahl ohne Vorzeichen long** **", "** **char32_t** **char16_t** **float** **", "** **Long Long"** , " Für diese expliziten Spezialisierungs Elemente ist der Member [Numeric_limits:: is_specialized](#is_specialized) **true**, und alle relevanten Member haben sinnvolle Werte. Das Programm kann zusätzliche explizite Spezialisierungen bereitstellen. Die meisten Member-Funktionen der-Klasse beschreiben oder testen mögliche Implementierungen von **float**.
 
-Für eine beliebige Spezialisierung gibt es keine Member, die sinnvolle Werte haben. Ein Member-Objekt, das keinen sinnvollen Wert hat, speichert NULL (oder **false**), und eine Member-Funktion, die keinen sinnvollen Wert zurückgibt, gibt `Type(0)` zurück.
+Für eine beliebige Spezialisierung gibt es keine Member, die sinnvolle Werte haben. Ein Member-Objekt, das keinen sinnvollen Wert hat, speichert NULL (oder **false**), und eine Member-Funktion, die keinen sinnvollen Wert zurückgibt, gibt `Type(0)`zurück.
 
 ## <a name="static-functions-and-constants"></a>Statische Funktionen und Konstanten
 
@@ -119,7 +119,7 @@ Für eine beliebige Spezialisierung gibt es keine Member, die sinnvolle Werte ha
 |[is_integer](#is_integer)|Testet, ob ein Typ eine Ganzzahldarstellung hat.|
 |[is_modulo](#is_modulo)|Testet, ob ein Typ eine Modulodarstellung hat.|
 |[is_signed](#is_signed)|Testet, ob ein Typ eine vorzeichenbehaftete Darstellung hat.|
-|[is_specialized](#is_specialized)|Testet, ob ein Typ eine explizite Spezialisierung hat, die in der Klassen Vorlage `numeric_limits` definiert ist.|
+|[is_specialized](#is_specialized)|Testet, ob ein Typ eine explizite Spezialisierung hat, die in der Klassen Vorlage `numeric_limits`definiert ist.|
 |[lowest](#lowest)|Gibt den kleinsten negativen begrenzten Wert zurück.|
 |[max](#max)|Gibt den größten endlichen Wert für einen Typ zurück.|
 |[max_digits10](#max_digits10)|Gibt die Anzahl von Dezimalstellen zurück, die dazu erforderlich ist sicherzustellen, dass zwei unterschiedliche Werte des Typs unterschiedliche Dezimaldarstellungen haben.|
@@ -152,7 +152,7 @@ Der kleinste denormalisierte Wert ungleich 0.
 
 **long Double** ist identisch mit **Double** für den C++ Compiler.
 
-Die-Funktion gibt den minimalen Wert für den-Typ zurück, der mit " [Min](#min) " identisch ist, wenn [has_denorm](#has_denorm) nicht gleich `denorm_present` ist.
+Die-Funktion gibt den minimalen Wert für den-Typ zurück, der mit [Min](#min) identisch ist, wenn [has_denorm](#has_denorm) nicht gleich `denorm_present`ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -441,7 +441,7 @@ static constexpr bool has_infinity = false;
 
 #### <a name="remarks"></a>Hinweise
 
-Gibt das Element **TRUE** zurück, wenn [is_iec559](#is_iec559) **TRUE** ist.
+Gibt das Element **TRUE** zurück, wenn [is_iec559](#is_iec559)**TRUE** ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -579,7 +579,7 @@ Die Darstellung für positive Unendlichkeit für einen Typ, sofern verfügbar.
 
 #### <a name="remarks"></a>Hinweise
 
-Der Rückgabewert ist nur aussagekräftig, wenn [has_infinity](#has_infinity) **TRUE** ist.
+Der Rückgabewert ist nur aussagekräftig, wenn [has_infinity](#has_infinity)**TRUE** ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -929,7 +929,7 @@ Whether unsigned char objects have a signed representation: 0
 
 ### <a name="is_specialized"></a>is_specialized
 
-Testet, ob ein Typ eine explizite Spezialisierung hat, die in der Klassen Vorlage `numeric_limits` definiert ist.
+Testet, ob ein Typ eine explizite Spezialisierung hat, die in der Klassen Vorlage `numeric_limits`definiert ist.
 
 ```cpp
 static constexpr bool is_specialized = false;
@@ -941,7 +941,7 @@ static constexpr bool is_specialized = false;
 
 #### <a name="remarks"></a>Hinweise
 
-Alle skalaren Typen außer Zeiger verfügen über eine explizite Spezialisierung, die für Klassen Vorlagen `numeric_limits` definiert ist.
+Alle skalaren Typen außer Zeiger verfügen über eine explizite Spezialisierung, die für Klassen Vorlagen `numeric_limits`definiert ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -1011,7 +1011,7 @@ Der größte endliche Wert für einen Typ.
 
 #### <a name="remarks"></a>Hinweise
 
-Der maximale Endwert ist INT_MAX für den Typ " **int** " und "FLT_MAX" für Typ " **float**". Der Rückgabewert ist aussagekräftig, wenn [is_bounded](#is_bounded) **wahr** ist.
+Der maximale Endwert ist INT_MAX für den Typ " **int** " und FLT_MAX für den Typ " **float**". Der Rückgabewert ist aussagekräftig, wenn [is_bounded](#is_bounded)**wahr** ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -1161,7 +1161,7 @@ Der kleinste normalisierte Wert für einen Typ.
 
 #### <a name="remarks"></a>Hinweise
 
-Der minimale normalisierte Wert ist INT_MIN für den Typ **int** und FLT_MIN für den Typ **float**. Der Rückgabewert ist aussagekräftig, wenn [is_bounded](#is_bounded) den Wert **true** hat oder wenn [is_signed](#is_signed) **false**ist.
+Der minimale normalisierte Wert ist INT_MIN für den Typ " **int** " und FLT_MIN für den Typ " **float**". Der Rückgabewert ist sinnvoll, [is_bounded](#is_bounded) wenn is_bounded **true** ist oder [is_signed](#is_signed) wenn is_signed **false**ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -1303,7 +1303,7 @@ Die Darstellung einer stillen NaN für den Typ.
 
 #### <a name="remarks"></a>Hinweise
 
-Der Rückgabewert ist nur aussagekräftig, wenn [has_quiet_NaN](#has_quiet_nan) **wahr** ist.
+Der Rückgabewert ist nur aussagekräftig, wenn [has_quiet_NaN](#has_quiet_nan)**wahr** ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -1484,7 +1484,7 @@ Die Darstellung einer signalisierenden NaN für den Typ.
 
 #### <a name="remarks"></a>Hinweise
 
-Der Rückgabewert ist nur aussagekräftig, wenn [has_signaling_NaN](#has_signaling_nan) **wahr** ist.
+Der Rückgabewert ist nur aussagekräftig, wenn [has_signaling_NaN](#has_signaling_nan)**wahr** ist.
 
 #### <a name="example"></a>Beispiel
 

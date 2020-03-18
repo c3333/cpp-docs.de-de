@@ -1,17 +1,15 @@
 ---
 title: Verwenden von CListCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CListCtrl
 helpviewer_keywords:
 - CListCtrl class [MFC], using
 ms.assetid: 20d6a5d6-8f07-4ddf-975f-ea2dfebcc835
-ms.openlocfilehash: 8641b7aec3aacf4de6aabfdcc9ffcbc64c278b41
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: ada26f43849bec2ad4cb63a6084c10805e27fcb0
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512905"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441974"
 ---
 # <a name="using-clistctrl"></a>Verwenden von CListCtrl
 
@@ -22,7 +20,7 @@ In einigen Ansichten können Benutzer Symbole an verschiedene Positionen ziehen 
 Weitere Informationen finden Sie unter Informationen [zu Listenansicht-Steuerelementen](/windows/win32/Controls/list-view-controls-overview) in der Windows SDK.
 
 > [!NOTE]
->  Der Windows SDK verweist auf Listen Steuerelemente als "Listenansicht-Steuerelemente". Diese Verwendung von "View" bezieht sich nicht auf MFC-Ansichts Klassen `CListView`, insbesondere. Weitere Informationen finden Sie unter [Listen Steuerelement und Listenansicht](../mfc/list-control-and-list-view.md).
+>  Der Windows SDK verweist auf Listen Steuerelemente als "Listenansicht-Steuerelemente". Diese Verwendung von "View" bezieht sich nicht auf MFC-Ansichts Klassen, insbesondere `CListView`. Weitere Informationen finden Sie unter [Listen Steuerelement und Listenansicht](../mfc/list-control-and-list-view.md).
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
@@ -52,6 +50,6 @@ Weitere Informationen finden Sie unter Informationen [zu Listenansicht-Steuerele
 
 - [Zerstören des Listensteuerelements](../mfc/destroying-the-list-control.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

@@ -53,11 +53,11 @@ helpviewer_keywords:
 - CView [MFC], OnUpdate
 ms.assetid: 9cff3c56-7564-416b-b9a4-71a9254ed755
 ms.openlocfilehash: f6be846e80209ce94c84222d61c37a7964baad03
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855540"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426894"
 ---
 # <a name="cview-class"></a>CView-Klasse
 
@@ -69,17 +69,17 @@ Stellt die grundlegende Funktionalität für benutzerdefinierte Ansichtsklassen 
 class AFX_NOVTABLE CView : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CView:: CView](#cview)|Erstellt ein `CView`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CView::D oprepareprinting](#doprepareprinting)|Zeigt das Dialogfeld Drucken an und erstellt den Drucker Gerätekontext. wird beim Überschreiben der `OnPreparePrinting` Member-Funktion aufgerufen.|
 |[CView:: GetDocument](#getdocument)|Gibt das Dokument zurück, das der Ansicht zugeordnet ist.|
@@ -97,7 +97,7 @@ class AFX_NOVTABLE CView : public CWnd
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CView:: onactivateframe](#onactivateframe)|Wird aufgerufen, wenn das Rahmen Fenster, das die Ansicht enthält, aktiviert oder deaktiviert wird.|
 |[CView:: OnActivateView](#onactivateview)|Wird aufgerufen, wenn eine Ansicht aktiviert wird.|
@@ -109,7 +109,7 @@ class AFX_NOVTABLE CView : public CWnd
 |[CView:: OnPrint](#onprint)|Wird aufgerufen, um eine Seite des Dokuments zu drucken oder eine Vorschau anzuzeigen.|
 |[CView:: OnUpdate](#onupdate)|Wird aufgerufen, um eine Ansicht zu benachrichtigen, dass das Dokument geändert wurde.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Eine Sicht wird an ein Dokument angefügt und fungiert als Vermittler zwischen dem Dokument und dem Benutzer: die Ansicht rendert ein Bild des Dokuments auf dem Bildschirm oder Drucker und interpretiert Benutzereingaben als Vorgänge auf dem Dokument.
 
@@ -159,7 +159,7 @@ Die `CView`-Klasse verfügt auch über eine abgeleitete Implementierungs Klasse 
 
 `CView`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -171,7 +171,7 @@ Erstellt ein `CView`-Objekt.
 CView();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft den Konstruktor auf, wenn ein neues Rahmen Fenster erstellt oder ein Fenster geteilt wird. Überschreiben Sie die [OnInitialUpdate](#oninitialupdate) -Member-Funktion, um die Sicht zu initialisieren, nachdem das Dokument angefügt wurde.
 
@@ -192,7 +192,7 @@ Verweist auf eine [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Str
 
 Ungleich 0 (null), wenn Druck-oder Druckvorschau beginnen kann. 0, wenn der Vorgang abgebrochen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Verhalten dieser Funktion hängt davon ab, ob Sie für Druck-oder Druckvorschau aufgerufen wird (angegeben durch den `m_bPreview` Member des *pinfo* -Parameters). Wenn eine Datei gedruckt wird, ruft diese Funktion das Dialogfeld Drucken auf, wobei die Werte in der [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Struktur verwendet werden, auf die *pinfo* zeigt. Nachdem der Benutzer das Dialogfeld geschlossen hat, erstellt die Funktion einen Drucker Gerätekontext basierend auf den Einstellungen, die der Benutzer im Dialogfeld angegeben hat, und gibt diesen Gerätekontext über den *pinfo* -Parameter zurück. Dieser Gerätekontext wird verwendet, um das Dokument zu drucken.
 
@@ -210,7 +210,7 @@ CDocument* GetDocument() const;
 
 Ein Zeiger auf das [CDocument](../../mfc/reference/cdocument-class.md) -Objekt, das der Ansicht zugeordnet ist. NULL, wenn die Sicht nicht an ein Dokument angefügt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies ermöglicht es Ihnen, die Element Funktionen des Dokuments aufzurufen.
 
@@ -231,7 +231,7 @@ Verweist auf das Dokument Element, das getestet wird.
 
 Ungleich 0 (null), wenn das angegebene Dokument Element ausgewählt ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung dieser Funktion gibt false zurück. Überschreiben Sie diese Funktion, wenn Sie die Auswahl mit [CDocItem](../../mfc/reference/cdocitem-class.md) -Objekten implementieren. Sie müssen diese Funktion überschreiben, wenn die Ansicht OLE-Elemente enthält.
 
@@ -259,7 +259,7 @@ Gibt an, ob das Rahmen Fenster aktiviert oder deaktiviert wird. Es kann sich um 
 *pframewnd*<br/>
 Zeiger auf das Rahmen Fenster, das aktiviert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Member-Funktion, wenn Sie eine besondere Verarbeitung durchführen möchten, wenn das der Ansicht zugeordnete Rahmen Fenster aktiviert oder deaktiviert wird. [CFormView](../../mfc/reference/cformview-class.md) führt diese außer Kraft Setzung beispielsweise aus, wenn das Steuerelement, das den Fokus besitzt, gespeichert und wieder hergestellt wird.
 
@@ -285,7 +285,7 @@ Verweist auf das Ansichts Objekt, das aktiviert wird.
 *pdebug-View*<br/>
 Verweist auf das Ansichts Objekt, das deaktiviert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit der Standard Implementierung dieser Funktion wird der Fokus auf die Ansicht festgelegt, die aktiviert wird. Überschreiben Sie diese Funktion, wenn Sie eine besondere Verarbeitung durchführen möchten, wenn eine Ansicht aktiviert oder deaktiviert wird. Wenn Sie beispielsweise besondere visuelle Hinweise bereitstellen möchten, die die aktive Ansicht von den inaktiven Ansichten unterscheiden, überprüfen Sie den *bactivate* -Parameter und aktualisieren die Darstellung der Ansicht entsprechend.
 
@@ -311,7 +311,7 @@ Verweist auf den Druckergerätekontext.
 *pinfo*<br/>
 Verweist auf eine [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Struktur, die den aktuellen Druckauftrag beschreibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um alle speziell für den Druck benötigten GDI-Ressourcen, z. B. Stifte oder Schriftarten, zuzuordnen. Wählen Sie die GDI-Objekte für den Gerätekontext aus der [OnPrint](#onprint) -Memberfunktion für jede Seite auf, von der sie verwendet werden. Wenn Sie das gleiche Ansichtsobjekt verwenden, um den Bildschirm anzuzeigen und zu drucken, verwenden Sie separate Variablen für die für jeden Bildschirm erforderlichen GDI-Ressourcen. Dadurch können Sie den Bildschirm während des Druckens aktualisieren.
 
@@ -353,7 +353,7 @@ Ein Wert aus dem enumerierten drogffect-Typ, der den Typ des Ablage Werts angibt
 
 Weitere Informationen finden Sie unter MFC Advanced Concepts Sample [OCLIENT](../../overview/visual-cpp-samples.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung besteht darin, nichts zu tun und DROPEFFECT_NONE zurückzugeben.
 
@@ -367,7 +367,7 @@ Wird von Framework während eines Zieh Vorgangs aufgerufen, wenn die Maus aus de
 virtual void OnDragLeave();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Funktion, wenn die aktuelle Ansicht alle Aktionen bereinigen muss, die bei [OnDragEnter](#ondragenter) -oder [OnDragOver](#ondragover) -aufrufen ausgeführt werden, z. b. das Entfernen aller visuellen Benutzer Feedback, während das Objekt gezogen und abgelegt wurde.
 
@@ -407,7 +407,7 @@ Ein Wert aus dem enumerierten drogffect-Typ, der den Typ des Ablage Werts angibt
 
 Weitere Informationen finden Sie unter MFC Advanced Concepts Sample [OCLIENT](../../overview/visual-cpp-samples.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung besteht darin, nichts zu tun und DROPEFFECT_NONE zurückzugeben.
 
@@ -447,7 +447,7 @@ Ein Wert aus dem enumerierten drogffect-Typ, der den Typ des Ablage Werts angibt
 
 Weitere Informationen finden Sie unter MFC Advanced Concepts Sample [OCLIENT](../../overview/visual-cpp-samples.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Funktion, wenn Sie ein spezielles Verhalten für dieses Ereignis bereitstellen möchten. Die Standard Implementierung führt automatisch einen Bildlauf zwischen Fenstern durch, wenn der Cursor in den Standardbild Laufbereich innerhalb des Rahmens der einzelnen Fenster gezogen wird. Weitere Informationen finden Sie im Artikel [OLE Drag & Drop: Implementieren eines Ablage Ziels](../../mfc/drag-and-drop-ole.md#implement-a-drop-target).
 
@@ -464,7 +464,7 @@ virtual void OnDraw(CDC* pDC) = 0;
 *pDC*<br/>
 Zeigt auf den Gerätekontext, der zum Rendern eines Bilds des Dokuments verwendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Funktion auf, um Bildschirm Anzeige, Druck und Druckvorschau auszuführen, und übergibt in jedem Fall einen anderen Gerätekontext. Es ist keine Standardimplementierung vorhanden.
 
@@ -503,7 +503,7 @@ Die aktuelle Mausposition relativ zum Ansichts Client Bereich.
 
 Ungleich NULL, wenn der Löschvorgang erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung führt keine Aktion aus und gibt false zurück.
 
@@ -542,7 +542,7 @@ Die aktuelle Mausposition relativ zum Ansichts Client Bereich.
 
 Der Ablage Effekt, der aus dem Drop-Versuch an der durch *Punkt*angegebenen Position resultiert. Dies muss einer der Werte sein, die von *dropeer ffectlist*angegeben werden. Drop Effects werden im Abschnitt "Hinweise" erläutert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung besteht darin, nichts zu tun und einen Dummywert (-1) zurückzugeben, um anzugeben, dass das Framework den [OnDrop](#ondrop) -Handler aufruft.
 
@@ -594,7 +594,7 @@ Verweist auf den Druckergerätekontext.
 *pinfo*<br/>
 Verweist auf eine [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Struktur, die den aktuellen Druckauftrag beschreibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um GDI-Ressourcen freizugeben, die Sie in der [OnBeginPrinting](#onbeginprinting) -Element Funktion zugewiesen haben.
 
@@ -624,7 +624,7 @@ Gibt den Punkt auf der Seite an, der zuletzt im Vorschaumodus angezeigt wurde.
 *pView*<br/>
 Verweist auf das Ansichts Objekt, das für die Vorschau verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung dieser Funktion Ruft die [OnEndPrinting](#onendprinting) -Member-Funktion auf und stellt das Hauptrahmen Fenster in dem Zustand wieder her, in dem Sie sich vor Beginn der Druckvorschau befand. Überschreiben Sie diese Funktion, um eine besondere Verarbeitung auszuführen, wenn der Vorschaumodus beendet wird. Wenn Sie z. b. die Position des Benutzers im Dokument beim Wechsel vom Vorschaumodus in den normalen Anzeigemodus beibehalten möchten, können Sie einen Bildlauf zu der durch den *Punkt* Parameter beschriebenen Position durchführen und den `m_nCurPage` Member der `CPrintInfo` Struktur, auf die der *pinfo* -Parameter verweist.
 
@@ -638,7 +638,7 @@ Wird von Framework aufgerufen, nachdem die Ansicht zum ersten Mal an das Dokumen
 virtual void OnInitialUpdate();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung dieser Funktion Ruft die [OnUpdate](#onupdate) -Member-Funktion ohne Hinweis Informationen auf (d. h. mit den Standardwerten 0 für den *lHint* -Parameter und NULL für den Parameter " *phint* "). Überschreiben Sie diese Funktion, um eine einmalige Initialisierung durchzuführen, die Informationen über das Dokument erfordert. Wenn Ihre Anwendung z. b. Dokumente mit fester Größe enthält, können Sie diese Funktion verwenden, um die scrolllimits einer Ansicht basierend auf der Dokument Größe zu initialisieren. Wenn Ihre Anwendung Dokumente variabler Größe unterstützt, verwenden Sie [OnUpdate](#onupdate) , um die scrolllimits bei jeder Änderung des Dokuments zu aktualisieren.
 
@@ -660,7 +660,7 @@ Zeigt auf den Gerätekontext, der zum Rendern eines Bilds des Dokuments verwende
 *pinfo*<br/>
 Verweist auf eine [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Struktur, die den aktuellen Druckauftrag beschreibt, wenn `OnPrepareDC` für Druck-oder Druckvorschau aufgerufen wird. der `m_nCurPage` Member gibt die Seite an, die gedruckt werden soll. Dieser Parameter ist NULL, wenn `OnPrepareDC` für die Bildschirm Anzeige aufgerufen wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung dieser Funktion bewirkt nichts, wenn die Funktion für die Bildschirm Anzeige aufgerufen wird. Diese Funktion wird jedoch in abgeleiteten Klassen, wie z. b. [CScrollView](../../mfc/reference/cscrollview-class.md), überschrieben, um Attribute des Geräte Kontexts anzupassen. Folglich sollten Sie immer die Basisklassen Implementierung am Anfang der außer Kraft Setzung abrufen.
 
@@ -697,7 +697,7 @@ Verweist auf eine [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Str
 
 Nicht NULL, um mit dem Drucken zu beginnen. 0, wenn der Druckauftrag abgebrochen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt.
 
@@ -737,7 +737,7 @@ Verweist auf den Druckergerätekontext.
 *pinfo*<br/>
 Verweist auf eine `CPrintInfo` Struktur, die den aktuellen Druckauftrag beschreibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Funktion für jede gedruckte Seite unmittelbar nach dem Aufruf der [OnPrepareDC](#onpreparedc) -Member-Funktion auf. Die Seite, die gedruckt wird, wird durch den `m_nCurPage` Member der [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Struktur angegeben, auf die *pinfo* verweist. Die Standard Implementierung ruft die [OnDraw](#ondraw) -Member-Funktion auf und übergibt sie an den Drucker Gerätekontext.
 
@@ -803,7 +803,7 @@ Bestimmt, ob die angegebene scrollaktion tatsächlich ausgeführt werden soll. T
 
 Wenn *bdoscroll* den Wert true aufweist und die Ansicht tatsächlich einen Bildlauf durchgeführt hat, geben Sie einen Wert ungleich 0 zurück. andernfalls 0. Wenn *bdoscroll* auf false festgelegt ist, geben Sie den Wert zurück, der zurückgegeben wurde, wenn *bdoscroll* true war, auch wenn Sie den Bildlauf nicht tatsächlich durchführen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In einem Fall wird diese Funktion vom Framework aufgerufen, wobei *bdoscroll* auf true festgelegt ist, wenn die Sicht eine Bild Lauf Leiste-Nachricht empfängt. In diesem Fall sollten Sie einen Bildlauf in der Ansicht durchführen. Im anderen Fall wird diese Funktion aufgerufen, wenn *bdoscroll* auf false festgelegt ist, wenn ein OLE-Element anfänglich in den Auto-scrollbereich eines Ablage Ziels gezogen wird, bevor der Bildlauf tatsächlich durchgeführt wird. In diesem Fall sollten Sie den Bildlauf in der Ansicht nicht durchführen.
 
@@ -829,7 +829,7 @@ Bestimmt, ob das Scrollen der Ansicht auftritt. TRUE gibt an, dass der Bildlauf 
 
 Ungleich 0 (null), wenn für die Sicht ein Rollup durchgeführt werden konnte. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In abgeleiteten Klassen prüft diese Methode, ob die Ansicht in der vom Benutzer angeforderten Richtung scrollfähig ist, und aktualisiert dann ggf. die neue Region. Diese Funktion wird automatisch von [CWnd:: OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll) und [CWnd:: OnVScroll](../../mfc/reference/cwnd-class.md#onvscroll) aufgerufen, um die tatsächliche scrollanforderung auszuführen.
 
@@ -859,7 +859,7 @@ Enthält Informationen zu den Änderungen.
 *phint*<br/>
 Verweist auf ein Objekt, das Informationen zu den Änderungen speichert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie wird auch von der Standard Implementierung von [OnInitialUpdate](#oninitialupdate)aufgerufen. Die Standard Implementierung macht den gesamten Client Bereich ungültig und kennzeichnet ihn für das Zeichnen, wenn die nächste WM_PAINT Nachricht empfangen wird. Überschreiben Sie diese Funktion, wenn Sie nur die Regionen aktualisieren möchten, die den geänderten Teilen des Dokuments zugeordnet sind. Zu diesem Zweck müssen Sie Informationen zu den Änderungen mithilfe der Hint-Parameter übergeben.
 
@@ -869,7 +869,7 @@ In der Regel sollten Sie keine Zeichnungen direkt aus `OnUpdate`ausführen. Lege
 
 Wenn der *lHint* -Wert 0 und der *phint* NULL ist, hat das Dokument eine generische Aktualisierungs Benachrichtigung gesendet. Wenn eine Sicht eine generische Update Benachrichtigung empfängt oder die Hinweise nicht decodiert werden können, sollte Sie den gesamten Client Bereich für ungültig erklären.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

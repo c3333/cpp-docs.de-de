@@ -6,11 +6,11 @@ f1_keywords:
 - unordered_set/std::operator==
 ms.assetid: 8653eea6-12f2-4dd7-aa2f-db38a71599a0
 ms.openlocfilehash: 59a7154ed46ac788516bc9f42c3385ec8f07dcf1
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890734"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427686"
 ---
 # <a name="ltunordered_setgt-operators"></a>&lt;unordered_set&gt;-Operatoren
 
@@ -34,7 +34,7 @@ Ein Objekt des Typs `unordered_set`.
 
 **true** , wenn die unordered_sets nicht gleich sind. **false** , wenn Sie gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beliebige Reihenfolge, in der unordered_set-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_set-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -102,7 +102,7 @@ Ein Objekt des Typs `unordered_set`.
 
 **true** , wenn die unordered_sets gleich sind. **false** , wenn Sie nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beliebige Reihenfolge, in der unordered_set-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_set-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -168,7 +168,7 @@ Ein Objekt des Typs `unordered_multiset`.
 
 **true** , wenn die unordered_multisets nicht gleich sind. **false** , wenn Sie gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beliebige Reihenfolge, in der unordered_multiset-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_multiset-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 
@@ -237,7 +237,7 @@ Ein Objekt des Typs `unordered_multiset`.
 
 **true** , wenn die unordered_multisets gleich sind. **false** , wenn Sie nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beliebige Reihenfolge, in der unordered_multiset-Objekte ihre Elemente speichern, hat keine Auswirkungen auf den Vergleich der Objekte. Zwei unordered_multiset-Objekte sind gleich, wenn sie dieselbe Anzahl von Elementen aufweisen und die Elemente in einem Container eine Permutation der Elemente im anderen Container sind. Andernfalls sind sie ungleich.
 

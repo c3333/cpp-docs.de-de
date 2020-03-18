@@ -1,24 +1,22 @@
 ---
 title: Verwenden von CRichEditCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CRichEditCtrl
 helpviewer_keywords:
 - rich edit controls [MFC], using
 - CRichEditCtrl class [MFC], using
 ms.assetid: e400c6ed-563e-4d4c-ab3b-a3f0aa20273b
-ms.openlocfilehash: d935cb5282af16a189d091ee6f40d128a906d392
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 53f718d58840eba5f7c1e41c1c337e6c779b51e3
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411733"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441808"
 ---
 # <a name="using-cricheditctrl"></a>Verwenden von CRichEditCtrl
 
-Ein rich-Edit-Steuerelement ist ein Fenster, in dem der Benutzer kann Text eingeben und bearbeiten. Der Text Zeichen- und absatzformatierung zugewiesen werden kann, und kann eingebettete OLE-Objekte enthalten. Das rich-Edit-Steuerelement wird in MFC nach dargestellt die [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md) Klasse.
+Ein Rich Edit-Steuerelement ist ein Fenster, in dem der Benutzer Text eingeben und bearbeiten kann. Dem Text kann eine Zeichen-und Absatz Formatierung zugewiesen werden, die eingebettete OLE-Objekte enthalten kann. Das Rich Edit-Steuerelement wird in MFC durch die [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md) -Klasse dargestellt.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Übersicht über das RichEdit-Steuerelement](../mfc/overview-of-the-rich-edit-control.md)
 
@@ -32,7 +30,7 @@ Ein rich-Edit-Steuerelement ist ein Fenster, in dem der Benutzer kann Text einge
 
 - [Aktuelle Auswahl in einem RichEdit-Steuerelement](../mfc/current-selection-in-a-rich-edit-control.md)
 
-- [Wortumbrüche in RichEdit-Steuerelement](../mfc/word-breaks-in-rich-edit-controls.md)
+- [Wort Umbrüche in einem Rich-Edit-Steuerelement](../mfc/word-breaks-in-rich-edit-controls.md)
 
 - [Zwischenablageoperationen in RichEdit-Steuerelementen](../mfc/clipboard-operations-in-rich-edit-controls.md)
 
@@ -44,6 +42,6 @@ Ein rich-Edit-Steuerelement ist ein Fenster, in dem der Benutzer kann Text einge
 
 - [Benachrichtigungen von einem RichEdit-Steuerelement](../mfc/notifications-from-a-rich-edit-control.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

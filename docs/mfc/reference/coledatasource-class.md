@@ -37,11 +37,11 @@ helpviewer_keywords:
 - COleDataSource [MFC], SetClipboard
 ms.assetid: 02c8ee7d-8e10-4463-8613-bb2a0305ca69
 ms.openlocfilehash: 5cd573590bc1adb303e0b4c5cd600b9fa6c685b2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855750"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426522"
 ---
 # <a name="coledatasource-class"></a>COleDataSource-Klasse
 
@@ -53,17 +53,17 @@ Dient als Cache, in den eine Anwendung die Daten für Datenübertragungsoperatio
 class COleDataSource : public CCmdTarget
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDataSource:: COleDataSource](#coledatasource)|Erstellt ein `COleDataSource`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDataSource:: CacheData](#cachedata)|Bietet Daten in einem angegebenen Format unter Verwendung einer `STGMEDIUM` Struktur.|
 |[COleDataSource:: CacheGlobalData](#cacheglobaldata)|Bietet Daten in einem angegebenen Format mithilfe eines HGLOBAL.|
@@ -80,7 +80,7 @@ class COleDataSource : public CCmdTarget
 |[COleDataSource:: onsetdata](#onsetdata)|Wird aufgerufen, um die Daten im `COleDataSource` Objekt zu ersetzen.|
 |[COleDataSource:: setClipboard](#setclipboard)|Fügt ein `COleDataSource` Objekt in der Zwischenablage ein.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 OLE-Datenquellen können direkt erstellt werden. Alternativ erstellen die Klassen [COleClientItem](../../mfc/reference/coleclientitem-class.md) und [COleServerItem](../../mfc/reference/coleserveritem-class.md) OLE-Datenquellen als Reaktion auf Ihre `CopyToClipboard`-und `DoDragDrop` Member-Funktionen. Eine kurze Beschreibung finden Sie unter [COleServerItem:: CopyTo Clipboard](../../mfc/reference/coleserveritem-class.md#copytoclipboard) . Überschreiben Sie die `OnGetClipboardData` Member-Funktion des Client Elements oder der Server Element Klasse, um den Daten in der OLE-Datenquelle, die für die `CopyToClipboard`-oder `DoDragDrop` Member-Funktion erstellt wurde, zusätzliche Zwischenablage Formate hinzuzufügen
 
@@ -96,7 +96,7 @@ Weitere Informationen zu Datenquellen und zur Datenübertragung finden Sie im Ar
 
 `COleDataSource`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxole. h
 
@@ -122,7 +122,7 @@ Verweist auf eine [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium~r1)
 *lpformatusw.*<br/>
 Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur, die das Format beschreibt, in dem die Daten angeboten werden sollen. Geben Sie einen Wert für diesen Parameter an, wenn Sie zusätzliche Formatierungsinformationen angeben möchten, die über das in *cfFormat*angegebene Zwischenablage Format hinausgehen. Wenn er NULL ist, werden für die anderen Felder in der `FORMATETC` Struktur Standardwerte verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen die Daten bereitstellen, da diese Funktion Sie mithilfe von sofortigem Rendering bereitstellt. Die Daten werden bis zum benötigten Cache zwischengespeichert.
 
@@ -158,7 +158,7 @@ Handle für den globalen Speicherblock, der die Daten im angegebenen Format enth
 *lpformatusw.*<br/>
 Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur, die das Format beschreibt, in dem die Daten angeboten werden sollen. Geben Sie einen Wert für diesen Parameter an, wenn Sie zusätzliche Formatierungsinformationen angeben möchten, die über das in *cfFormat*angegebene Zwischenablage Format hinausgehen. Wenn er NULL ist, werden für die anderen Felder in der `FORMATETC` Struktur Standardwerte verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion stellt die Daten mithilfe des unmittelbaren Rendering bereit, sodass Sie die Daten beim Aufrufen der Funktion bereitstellen müssen. die Daten werden bis zum benötigten Cache zwischengespeichert. Verwenden Sie die `CacheData` Member-Funktion, wenn Sie eine große Datenmenge bereitstellen oder wenn Sie ein strukturiertes Speichermedium benötigen.
 
@@ -194,7 +194,7 @@ Das Zwischenablage Format, in dem die Daten angeboten werden sollen. Dieser Para
 *lpformatusw.*<br/>
 Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur, die das Format beschreibt, in dem die Daten angeboten werden sollen. Geben Sie einen Wert für diesen Parameter an, wenn Sie zusätzliche Formatierungsinformationen angeben möchten, die über das in *cfFormat*angegebene Zwischenablage Format hinausgehen. Wenn er NULL ist, werden für die anderen Felder in der `FORMATETC` Struktur Standardwerte verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion stellt die Daten mithilfe von verzögertem Rendering bereit, sodass die Daten nicht sofort bereitgestellt werden. Die [OnRenderData](#onrenderdata) -oder [onrenderglobaldata](#onrenderglobaldata) -Member-Funktion wird aufgerufen, um die Daten anzufordern.
 
@@ -224,7 +224,7 @@ Das Zwischenablage Format, in dem die Daten angeboten werden sollen. Dieser Para
 *lpformatusw.*<br/>
 Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur, die das Format beschreibt, in dem die Daten angeboten werden sollen. Geben Sie einen Wert für diesen Parameter an, wenn Sie zusätzliche Formatierungsinformationen angeben möchten, die über das in *cfFormat*angegebene Zwischenablage Format hinausgehen. Wenn er NULL ist, werden für die anderen Felder in der `FORMATETC` Struktur Standardwerte verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion stellt die Daten mithilfe von verzögertem Rendering bereit, sodass die Daten nicht sofort bereitgestellt werden. Die [onrenderfiledata](#onrenderfiledata) -Member-Funktion wird aufgerufen, um die Daten anzufordern.
 
@@ -254,7 +254,7 @@ Das Zwischenablage Format, in dem die Daten abgelegt werden sollen. Dieser Param
 *lpformatusw.*<br/>
 Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Struktur, die das Format beschreibt, in dem die Daten ersetzt werden sollen. Geben Sie einen Wert für diesen Parameter an, wenn Sie zusätzliche Formatierungsinformationen angeben möchten, die über das in *cfFormat*angegebene Zwischenablage Format hinausgehen. Wenn er NULL ist, werden für die anderen Felder in der `FORMATETC` Struktur Standardwerte verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [Onsetdata](#onsetdata) wird von Framework aufgerufen, wenn dies geschieht. Diese Option wird nur verwendet, wenn das Framework die Datenquelle aus [COleServerItem:: GetDataSource](../../mfc/reference/coleserveritem-class.md#getdatasource)zurückgibt. Wenn `DelaySetData` nicht aufgerufen wird, wird die Funktion `OnSetData` nie aufgerufen. `DelaySetData` sollten für jede Zwischenablage oder jedes `FORMATETC` Format aufgerufen werden, das Sie unterstützen.
 
@@ -296,7 +296,7 @@ Verweist auf eine Ablage Quelle. Wenn der Wert NULL ist, wird eine Standard Impl
 
 Vom Drag & Drop-Vorgang generierte Drop-Effekte Andernfalls DROPEFFECT_NONE, wenn der Vorgang nie beginnt, da der Benutzer die Maustaste losgelassen hat, bevor er das angegebene Rechteck verlässt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Drag & Drop-Vorgang wird nicht sofort gestartet. Sie wartet, bis der Mauszeiger das von *lprectstartdrag* angegebene Rechteck verlässt oder bis eine angegebene Anzahl von Millisekunden verstrichen ist. Wenn *lprectstartdrag* den Wert NULL hat, ist die Größe des Rechtecks ein Pixel.
 
@@ -320,7 +320,7 @@ Mit dieser Funktion können Sie das `COleDataSource` Objekt der Daten leeren.
 void Empty();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sowohl zwischengespeicherte als auch verzögerte Renderingformate werden geleert, sodass Sie wieder verwendet werden können.
 
@@ -334,7 +334,7 @@ Rendert Daten, die sich in der Zwischenablage befinden, und ermöglicht das Einf
 static void PASCAL FlushClipboard();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [setClipboard](#setclipboard) , um Daten in die Zwischenablage einzufügen.
 
@@ -372,7 +372,7 @@ Verweist auf eine [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium~r1)
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das angegebene Format ist ein zuvor im `COleDataSource` Objekt angegebenes-Objekt, das die Element Funktion " [Delta Data](#delayrenderdata) " oder " [Delta Data](#delayrenderfiledata) " für verzögertes Rendering verwendet. Die Standard Implementierung dieser Funktion ruft [onrenderfiledata](#onrenderfiledata) oder [onrenderglobaldata](#onrenderglobaldata) auf, wenn das angegebene Speichermedium entweder eine Datei bzw. ein Arbeitsspeicher ist. Wenn keines dieser Formate bereitgestellt wird, gibt die Standard Implementierung 0 zurück und führt keine Aktion aus. Weitere Informationen zum verzögerten Rendering, wie von MFC verarbeitet, finden Sie im Artikel [Datenobjekte und Datenquellen: Manipulation](../../mfc/data-objects-and-data-sources-manipulation.md).
 
@@ -404,7 +404,7 @@ Verweist auf ein [CFile](../../mfc/reference/cfile-class.md) -Objekt, in dem die
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das angegebene Format ist ein zuvor im `COleDataSource` Objekt angegebenes-Objekt, das die Funktion " [Delta Data](#delayrenderdata) " für verzögertes Rendering verwendet. Die Standard Implementierung dieser Funktion gibt einfach false zurück.
 
@@ -434,7 +434,7 @@ Verweist auf ein Handle für den globalen Speicher, in dem die Daten zurückgege
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das angegebene Format ist ein zuvor im `COleDataSource` Objekt angegebenes-Objekt, das die Funktion " [Delta Data](#delayrenderdata) " für verzögertes Rendering verwendet. Die Standard Implementierung dieser Funktion gibt einfach false zurück.
 
@@ -470,7 +470,7 @@ Gibt an, wer den Besitz des Speichermediums nach Abschluss des Funktions Aufrufe
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquelle übernimmt den Besitz der Daten erst, nachdem Sie erfolgreich abgerufen wurde. Dies bedeutet, dass Sie keinen Besitz übernimmt, wenn `OnSetData` 0 zurückgibt. Wenn die Datenquelle den Besitz übernimmt, wird das Speichermedium durch Aufrufen der [ReleaseStgMedium](/windows/win32/api/ole2/nf-ole2-releasestgmedium) -Funktion freigegeben.
 
@@ -486,7 +486,7 @@ Speichert die Daten, die im `COleDataSource` Objekt enthalten sind, nach dem Auf
 void SetClipboard();
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>

@@ -1,20 +1,18 @@
 ---
 title: Einzelbyte- und Mehrbyte-Zeichensätze
 ms.date: 11/04/2016
-f1_keywords:
-- c.character.multibyte
 helpviewer_keywords:
 - SBCS (single byte character set)
 - MBCS [C++], about MBCS
 - character sets [C++], multibyte
 - character sets [C++], single byte
 ms.assetid: 2cbc78ea-33c0-4cfb-b0df-7ce2458431ce
-ms.openlocfilehash: 1e2d3f26891257101b4a9511f4e0b10f03113309
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: a6a0f3aaaa463297b7c51b035acc7b2f4a40b6cf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57745329"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444649"
 ---
 # <a name="single-byte-and-multibyte-character-sets"></a>Einzelbyte- und Mehrbyte-Zeichensätze
 
@@ -25,7 +23,7 @@ Mit dem ASCII-Zeichensatz werden Zeichen im Bereich von 0x00 bis 0x7F definiert.
 
 Ein Multibyte-Zeichensatz kann aus 1-Byte- und 2-Byte-Zeichen bestehen. Daher kann eine Multibyte-Zeichenfolge eine Mischung aus Einzelbyte- und Doppelbytezeichen enthalten. Ein 2-Byte-Multibytezeichen verfügt über ein führendes Byte und ein nachfolgendes Byte. In einem bestimmten Mehrbyte-Zeichensatz liegen die führenden Bytes ebenso wie die nachfolgenden Bytes innerhalb eines bestimmten Bereichs. Wenn sich diese Bereiche überschneiden, muss unter Umständen anhand des Kontexts ermittelt werden, ob ein bestimmtes Byte als führendes oder als nachfolgendes Byte verwendet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Internationalisierung](../c-runtime-library/internationalization.md)<br/>
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

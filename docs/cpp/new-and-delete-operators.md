@@ -1,19 +1,16 @@
 ---
 title: Operatoren "new" und "delete"
 ms.date: 11/19/2019
-f1_keywords:
-- delete_cpp
-- new
 helpviewer_keywords:
 - new keyword [C++]
 - delete keyword [C++]
 ms.assetid: fa721b9e-0374-4f04-bb87-032ea775bcc8
-ms.openlocfilehash: c64b15f1e1e63b1e743743883429ffd11007de0a
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 2fd665ce2570bbe7750684057cdf7f517f6f64f3
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246448"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445446"
 ---
 # <a name="new-and-delete-operators"></a>Operatoren new und delete
 
@@ -23,7 +20,7 @@ Die **neue** Funktion in der C++ Standardbibliothek unterstützt das im C++ Stan
 
 Eine Liste der Bibliotheksdateien, die die C-Lauf Zeit Bibliothek und die C++ Standard Bibliothek enthalten, finden Sie unter [Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md).
 
-##  <a id="new_operator"></a> Der New-Operator
+##  <a id="new_operator"> </a> Der New-Operator
 
 Wenn eine-Anweisung wie die folgende in einem Programm gefunden wird, wird Sie in einen aufzurufenden Funktions **Operator new**übersetzt:
 
@@ -39,7 +36,7 @@ Die beiden Bereiche für **Operator new** -Funktionen werden in der folgenden Ta
 
 ### <a name="scope-for-operator-new-functions"></a>Bereich für Operator new-Funktionen
 
-|Operator|Gültigkeitsbereich|
+|Operator|`Scope`|
 |--------------|-----------|
 |**:: Operator New**|Global|
 |*Class-Name* **:: Operator new**|Klasse|
@@ -124,7 +121,7 @@ int main() {
 
 Es gibt eine weitere Möglichkeit, fehlgeschlagene Speicher Belegungs Anforderungen zu verarbeiten. Schreiben Sie eine benutzerdefinierte Wiederherstellungs Routine, um einen derartigen Fehler zu behandeln, und registrieren Sie die Funktion, indem Sie die [_set_new_handler](../c-runtime-library/reference/set-new-handler.md) Lauf Zeitfunktion aufrufen.
 
-##  <a id="delete_operator"></a> Der Delete-Operator
+##  <a id="delete_operator"> </a> Der Delete-Operator
 
 Speicher, der mithilfe des **New** -Operators dynamisch zugewiesen wird, kann mithilfe des **Delete** -Operators freigegeben werden. Der Delete-Operator Ruft die **Operator Delete** -Funktion auf, die Arbeitsspeicher wieder an den verfügbaren Pool freigibt. Die Verwendung des **Delete** -Operators bewirkt auch, dass der klassendekonstruktor (sofern vorhanden) aufgerufen wird.
 

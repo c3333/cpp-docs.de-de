@@ -5,11 +5,11 @@ helpviewer_keywords:
 - breaking changes [C++]
 ms.assetid: b38385a9-a483-4de9-99a6-797488bc5110
 ms.openlocfilehash: 335db55f3b181021f4deb391358df5bbfb607815
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865494"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422679"
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Änderungsverlauf von Visual C++ von 2003 bis 2015
 
@@ -383,7 +383,7 @@ Um neue Optimierungen und Debuggingüberprüfungen zu aktivieren, unterbricht di
 
 - **launch::any- und launch::sync-Richtlinien**
 
-   Der nicht dem Standard entsprechenden `launch::any`- und `launch::sync`-Richtlinien wurden entfernt. Stattdessen wird `launch::any` für `launch:async | launch:deferred` verwendet. Verwenden Sie `launch::sync` für `launch::deferred`. Siehe [launch-Enumeration](../standard-library/future-enums.md#launch).
+   Der nicht dem Standard entsprechenden `launch::any`- und `launch::sync`-Richtlinien wurden entfernt. Stattdessen wird `launch::any` für `launch:async | launch:deferred` verwendet. Verwenden Sie für `launch::sync` den Typ `launch::deferred`. Siehe [launch-Enumeration](../standard-library/future-enums.md#launch).
 
 ####  <a name="BK_MFC"></a> MFC und ATL
 
@@ -532,7 +532,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Entfernen Sie zum Beheben dieses Problems `__declspec(align)` aus der Funktionsdeklaration. Da dies keine Auswirkungen hatte, ändert sich durch das Entfernen nichts.
 
-- **Fehlerbehandlung**
+- **Ausnahmebehandlung**
 
    Es gibt eine Reihe von Änderungen bei der Ausnahmebehandlung. Ausnahmeobjekte müssen kopiert oder verschoben werden können. Der folgende Code wird zwar in Visual Studio 2013 kompiliert, aber nicht in Visual Studio 2015:
 
@@ -1739,7 +1739,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
     ```
 
-   \- oder –
+   \- oder -
 
     ```cpp
     class base;  // as above
@@ -2854,7 +2854,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    In Visual Studio 2012 wurde `E1` im Ausdruck `E1::b` im globalen Gültigkeitsbereich in `::E1` aufgelöst. In Visual Studio 2013 wird `E1` im Ausdruck `E1::b` in die Definition `typedef E2` in `main()` aufgelöst und weist den Typ `::E2` auf.
 
-- Das Objektlayout wurde geändert. Auf x64-Computern kann sich das Objektlayout einer Klasse gegenüber vorherigen Versionen möglicherweise ändern. Wenn es eine **virtuelle** Funktion aufweist, jedoch über keine Basisklasse mit einer **virtuellen** Funktion verfügt, fügt das Objektmodell des Compilers nach dem Datenmemberlayout einen Zeiger in eine **virtuelle** Funktionstabelle ein. Dies bedeutet, dass das Layout möglicherweise nicht in allen Fällen optimal ist. In vorherigen Releases wurde mithilfe einer Optimierung für x64 versucht, das Layout zu verbessern. Da dies jedoch in komplexen Codesituationen nicht richtig funktionierte, wurde diese Optimierung in Visual Studio 2013 entfernt. Betrachten Sie z. B. diesen Code:
+- Das Objektlayout wurde geändert. Auf x64-Computern kann sich das Objektlayout einer Klasse gegenüber vorherigen Versionen möglicherweise ändern. Wenn es eine **virtuelle** Funktion aufweist, jedoch über keine Basisklasse mit einer **virtuellen** Funktion verfügt, fügt das Objektmodell des Compilers nach dem Datenmemberlayout einen Zeiger in eine **virtuelle** Funktionstabelle ein. Dies bedeutet, dass das Layout möglicherweise nicht in allen Fällen optimal ist. In vorherigen Releases wurde mithilfe einer Optimierung für x64 versucht, das Layout zu verbessern. Da dies jedoch in komplexen Codesituationen nicht richtig funktionierte, wurde diese Optimierung in Visual Studio 2013 entfernt. Betrachten Sie beispielsweise folgenden Code:
 
     ```cpp
     __declspec(align(16)) struct S1 {
@@ -2952,7 +2952,7 @@ Der C++-Compiler in Visual Studio 2013 erkennt Konflikte im _ITERATOR_DEBUG_LEVE
 
    Als Nebeneffekt dieser Änderung funktioniert der Identitätsfall nicht mehr (common_type\<T> ergibt nicht immer den Typ „T“). Dieses Verhalten entspricht der vorgeschlagenen Lösung, beeinträchtigt jedoch den Code, der auf dem vorherigen Verhalten beruhte.
 
-   Wenn ein Identitätstypmerkmal erforderlich ist, verwenden Sie nicht `std::identity`, das kein Standard ist und in \< definiert ist, da dies bei \<void> nicht funktioniert. Implementieren Sie stattdessen Ihr eigenes Identitätstypmerkmal, um Ihre Anforderungen zu erfüllen. Hier sehen Sie ein Beispiel:
+   Wenn ein Identitätstypmerkmal erforderlich ist, verwenden Sie nicht `std::identity`, das kein Standard ist und in \< definiert ist, da dies bei \<void> nicht funktioniert. Implementieren Sie stattdessen Ihr eigenes Identitätstypmerkmal, um Ihre Anforderungen zu erfüllen. Im Folgenden ein Beispiel:
 
     ```cpp
     template < typename T> struct Identity {
@@ -3080,7 +3080,7 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Die Signatur von `CMFCEditBrowseCtrl::EnableBrowseButton` wurde geändert.
 
-- `m_fntTabs` und `m_fntTabsBold` aus `CMFCBaseTabCtrl` entfernt.
+- `m_fntTabs` und `m_fntTabsBold` wurden aus `CMFCBaseTabCtrl` entfernt.
 
 - Es wurde ein Parameter zu den `CMFCRibbonStatusBarPane`-Konstruktoren hinzugefügt. (Dies ist ein Standardparameter, weshalb kein Eingriff in den Quellcode erforderlich ist.)
 
@@ -3522,6 +3522,6 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Der Compiler meldet jetzt nicht erreichbaren Code (C4702).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Neues bei Visual C++ in Visual Studio 2015](../overview/what-s-new-for-visual-cpp-in-visual-studio.md)

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - connection points [C++], global functions
 ms.assetid: bcb4bf50-2155-4e20-b8bb-f2908b03a6e7
 ms.openlocfilehash: 0313e93ee82bb96f3bfe08e45f70ccfee30dbee6
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864398"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423177"
 ---
 # <a name="connection-point-global-functions"></a>Globale Funktionen von Verbindungs Punkten
 
@@ -28,7 +28,7 @@ Diese Funktionen bieten Unterstützung für Verbindungspunkte und senkenzuordnun
 |[Atlunrat](#atlunadvise)|Beendet die Verbindung, die über `AtlAdvise`hergestellt wurde.|
 |[Atladvisesinkmap](#atladvisesinkmap)|Benachrichtigt oder benachrichtigt Einträge in einer Ereignis Senke-Zuordnung.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -65,7 +65,7 @@ vorgenommen Ein Zeiger auf das Cookie, das die Verbindung eindeutig identifizier
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Senke implementiert die ausgehende Schnittstelle, die vom Verbindungspunkt unterstützt wird. Der Client verwendet das *PDW* -Cookie, um die Verbindung zu entfernen, indem Sie Sie an [atlunrat](#atlunadvise)übergibt.
 
@@ -133,7 +133,7 @@ Ein HRESULT-Standardwert.
 
 [!code-cpp[NVC_ATL_Windowing#92](../../atl/codesnippet/cpp/connection-point-global-functions_3.h)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen](../../atl/reference/atl-functions.md)<br/>
 [Verbindungspunkt-Makros](../../atl/reference/connection-point-macros.md)

@@ -1,31 +1,29 @@
 ---
 title: Active Document-Klassen
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.document
 helpviewer_keywords:
 - Active document classes [MFC]
 ms.assetid: cc20af37-b658-406d-8148-7670737f4c03
-ms.openlocfilehash: c4087d8e223e08842d5b402bdf063a908d1e22bc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4c74b1287243c18bf8d7f26325e726b09463700f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394987"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445811"
 ---
 # <a name="active-document-classes"></a>Active Document-Klassen
 
-Aktive Dokumente können angezeigt werden, die der Client im Fenster von einem Webbrowser, wie z. B. Internet Explorer 5.5, oder in einem aktiven Container, z. B. der Microsoft Office Binder, die aktive Dokumente unterstützt.
+Aktive Dokumente können entweder im gesamten Client Fenster eines Webbrowsers (z. b. Internet Explorer 5,5) oder in einem aktiven Container (z. b. dem Microsoft Office Binder) angezeigt werden, der aktive Dokumente unterstützt.
 
 [CDocObjectServer](../mfc/reference/cdocobjectserver-class.md)<br/>
-Active Document-Schnittstellen, zugeordnet und initialisiert und aktiviert einen Active Document-Objekt.
+Ordnet die aktiven Dokument Schnittstellen zu und initialisiert und aktiviert ein aktives Dokument Objekt.
 
 [CDocObjectServerItem](../mfc/reference/cdocobjectserveritem-class.md)<br/>
-Implementiert OLE-Serververben speziell für den Server für aktive Dokumente.
+Implementiert OLE-Server Verben speziell für aktive Dokument Server.
 
 [COleDocObjectItem](../mfc/reference/coledocobjectitem-class.md)<br/>
 Implementiert "Active Document Containment".
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

@@ -131,11 +131,11 @@ helpviewer_keywords:
 - CRecordset [MFC], m_strSort
 ms.assetid: dd89a21d-ef39-4aab-891b-1e373d67c855
 ms.openlocfilehash: 1ebdb18254171d28b5d5e02367596b79142df284
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78871651"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426420"
 ---
 # <a name="crecordset-class"></a>CRecordset-Klasse
 
@@ -147,17 +147,17 @@ Stellt eine Gruppe von Datensätzen dar, die aus einer Datenquelle ausgewählt w
 class CRecordset : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CRecordset:: CRecordset](#crecordset)|Erstellt ein `CRecordset`-Objekt. Ihre abgeleitete Klasse muss einen Konstruktor bereitstellen, der diese aufruft.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CRecordset:: AddNew](#addnew)|Bereitet das Hinzufügen eines neuen Datensatzes vor. Ruft `Update` auf, um die Addition abzuschließen.|
 |[CRecordset:: CanAppend](#canappend)|Gibt einen Wert ungleich 0 (null) zurück, wenn dem Recordset über die `AddNew` Element Funktion neue Datensätze hinzugefügt werden können.|
@@ -217,11 +217,11 @@ class CRecordset : public CObject
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[CRecordset:: m_hstmt](#m_hstmt)|Enthält das ODBC-Anweisungs Handle für das Recordset. Geben Sie `HSTMT`ein.|
-|[CRecordset:: m_nFields](#m_nfields)|Enthält die Anzahl der Felddatenmember im Recordset. Geben Sie `UINT`ein.|
-|[CRecordset:: m_nParams](#m_nparams)|Enthält die Anzahl der Parameterdatenmember im Recordset. Geben Sie `UINT`ein.|
+|[CRecordset:: m_hstmt](#m_hstmt)|Enthält das ODBC-Anweisungs Handle für das Recordset. Geben Sie `HSTMT` ein.|
+|[CRecordset:: m_nFields](#m_nfields)|Enthält die Anzahl der Felddatenmember im Recordset. Geben Sie `UINT` ein.|
+|[CRecordset:: m_nParams](#m_nparams)|Enthält die Anzahl der Parameterdatenmember im Recordset. Geben Sie `UINT` ein.|
 |[CRecordset:: m_pDatabase](#m_pdatabase)|Enthält einen Zeiger auf das `CDatabase` Objekt, über das das Recordset mit einer Datenquelle verbunden ist.|
 |[CRecordset:: m_strFilter](#m_strfilter)|Enthält eine `CString`, die eine strukturierte Abfragesprache (SQL) `WHERE`-Klausel angibt. Wird als Filter verwendet, um nur die Datensätze auszuwählen, die bestimmte Kriterien erfüllen.|
 |[CRecordset:: m_strSort](#m_strsort)|Enthält eine `CString`, die eine SQL `ORDER BY`-Klausel angibt. Wird verwendet, um zu steuern, wie die Datensätze sortiert werden.|
@@ -257,7 +257,7 @@ Weitere Informationen zu Recordsets und Daten Satz Feld Austausch finden Sie in 
 
 `CRecordset`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -269,7 +269,7 @@ Bereitet das Hinzufügen eines neuen Datensatzes zur Tabelle vor.
 virtual void AddNew();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um den neu hinzugefügten Datensatz anzuzeigen, müssen Sie die Funktion " [Requery](#requery) Member" aufzurufen. Die Felder des Datensatzes sind anfänglich NULL. (In der Daten Bank Terminologie bedeutet NULL, dass kein Wert vorhanden ist und nicht mit NULL in C++übereinstimmt.) Um den Vorgang abzuschließen, müssen Sie die [Update](#update) Member-Funktion aufzurufen. `Update` speichert die Änderungen an der Datenquelle.
 
@@ -318,7 +318,7 @@ BOOL CanBookmark() const;
 
 Ungleich NULL, wenn das Recordset Lesezeichen unterstützt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion ist unabhängig von der `CRecordset::useBookmarks`-Option im *dwOptions* -Parameter der [Open](#open) Member-Funktion. `CanBookmark` gibt an, ob der angegebene ODBC-Treiber und der Cursor Typ Lesezeichen unterstützen. `CRecordset::useBookmarks` gibt an, ob Lesezeichen verfügbar sind, sofern diese unterstützt werden.
 
@@ -335,7 +335,7 @@ Fordert an, dass die Datenquelle entweder einen laufenden asynchronen Vorgang od
 void Cancel();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass die MFC-ODBC-Klassen die asynchrone Verarbeitung nicht mehr verwenden. zum Ausführen eines asynchronen Vorgangs müssen Sie die ODBC-API-Funktion `SQLSetConnectOption`direkt aufrufen. Weitere Informationen finden Sie im Thema zum asynchronen Ausführen von Funktionen im *ODBC SDK-Programmier Handbuch*.
 
@@ -347,7 +347,7 @@ Bricht alle ausstehenden Updates ab, die durch einen [Edit](#edit) -oder [AddNew
 void CancelUpdate();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Diese Member-Funktion ist für Recordsets, die das Abrufen von Massen Zeilen verwenden, nicht anwendbar, da solche Recordsets keine `Edit`, `AddNew`oder `Update`abrufen können. Weitere Informationen über das gesammelte Abrufen von Zeilen finden Sie im Artikel [Recordset: Abrufen von Datensätzen in einer Sammeloperation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
@@ -380,7 +380,7 @@ BOOL CanScroll() const;
 
 Ungleich NULL, wenn das Recordset einen Bildlauf zulässt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Scrollen finden Sie im Artikel [Recordset: Scrollen (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).
 
@@ -396,7 +396,7 @@ BOOL CanTransact() const;
 
 Ungleich 0 (null), wenn das Recordset Transaktionen zulässt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie im Artikel [Transaktion (ODBC)](../../data/odbc/transaction-odbc.md).
 
@@ -412,7 +412,7 @@ BOOL CanUpdate() const;
 
 Ungleich 0 (null), wenn das Recordset aktualisiert werden kann. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Recordset ist möglicherweise schreibgeschützt, wenn die zugrunde liegende Datenquelle schreibgeschützt ist, oder wenn Sie beim Öffnen des Recordsets `CRecordset::readOnly` im *dwOptions* -Parameter angegeben haben.
 
@@ -429,13 +429,13 @@ virtual void CheckRowsetError(RETCODE nRetCode);
 *nretcode*<br/>
 Ein Rückgabecode der ODBC-API-Funktion. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion für virtuelle Member behandelt Fehler, die auftreten, wenn Datensätze abgerufen werden, und ist beim Abrufen von Massen Zeilen nützlich. Möglicherweise möchten Sie `CheckRowsetError` überschreiben, um eine eigene Fehlerbehandlung zu implementieren.
 
 `CheckRowsetError` wird automatisch in einem Cursor Navigations Vorgang aufgerufen, z. b. `Open`, `Requery`oder einem beliebigen `Move` Vorgang. Der Rückgabewert der ODBC-API-Funktion `SQLExtendedFetch`wird übermittelt. In der folgenden Tabelle sind die möglichen Werte für den *nretcode* -Parameter aufgeführt.
 
-|nRetCode|BESCHREIBUNG|
+|nRetCode|Beschreibung|
 |--------------|-----------------|
 |SQL_SUCCESS|Die Funktion wurde erfolgreich abgeschlossen. Es sind keine zusätzlichen Informationen verfügbar.|
 |SQL_SUCCESS_WITH_INFO|Die Funktion wurde erfolgreich abgeschlossen, möglicherweise mit einem nicht schwerwiegenden Fehler. Zusätzliche Informationen können durch Aufrufen von `SQLError`abgerufen werden.|
@@ -454,7 +454,7 @@ Schließt das Recordset.
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der ODBC hstmt und der gesamte Arbeitsspeicher, dem das für das Recordset zugewiesene Framework zugewiesen wird, werden aufgehoben. In der Regel nach dem Aufrufen von `Close`C++ löschen Sie das Recordset-Objekt, wenn es mit **New**zugeordnet wurde.
 
@@ -477,7 +477,7 @@ CRecordset(CDatabase* pDatabase = NULL);
 *pdatabase*<br/>
 Enthält einen Zeiger auf ein `CDatabase` Objekt oder den Wert NULL. Wenn not NULL und die `Open` Member-Funktion des `CDatabase` Objekts nicht aufgerufen wurde, um Sie mit der Datenquelle zu verbinden, versucht das Recordset, es während seines eigenen `Open` Aufrufs für Sie zu öffnen. Wenn NULL übergeben wird, wird ein `CDatabase` Objekt erstellt und mit den Datenquellen Informationen verbunden, die Sie beim Ableiten Ihrer Recordset-Klasse mit ClassWizard angegeben haben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können `CRecordset` direkt verwenden oder eine anwendungsspezifische Klasse von `CRecordset`ableiten. Sie können den Klassen-Assistenten verwenden, um die recordsetklassen abzuleiten.
 
@@ -498,7 +498,7 @@ Löscht den aktuellen Datensatz.
 virtual void Delete();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach einem erfolgreichen Löschvorgang werden die Felddatenmember des Recordsets auf einen NULL-Wert festgelegt, und Sie müssen explizit eine der `Move` Funktionen abrufen, um den gelöschten Datensatz zu verschieben. Nachdem Sie den gelöschten Datensatz verschoben haben, ist es nicht möglich, dorthin zurückzukehren. Wenn die Datenquelle Transaktionen unterstützt, können Sie den `Delete` der einen Teil einer Transaktion aufruft. Weitere Informationen finden Sie im Artikel [Transaktion (ODBC)](../../data/odbc/transaction-odbc.md).
 
@@ -529,7 +529,7 @@ virtual void DoBulkFieldExchange(CFieldExchange* pFX);
 *PFX*<br/>
 Ein Zeiger auf ein [CFieldExchange](../../mfc/reference/cfieldexchange-class.md) -Objekt. Das Framework hat dieses Objekt bereits so eingerichtet, dass ein Kontext für den Feld Austausch Vorgang angegeben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Massen Abrufen von Zeilen implementiert ist, ruft das Framework diese Member-Funktion auf, um automatisch Daten aus der Datenquelle in das Recordset-Objekt zu übertragen. `DoBulkFieldExchange` bindet auch die Parameter Datenmember, sofern vorhanden, an die Parameter Platzhalter in der SQL-Anweisungs Zeichenfolge für die Auswahl des Recordsets.
 
@@ -557,7 +557,7 @@ virtual void DoFieldExchange(CFieldExchange* pFX);
 *PFX*<br/>
 Ein Zeiger auf ein [CFieldExchange](../../mfc/reference/cfieldexchange-class.md) -Objekt. Das Framework hat dieses Objekt bereits so eingerichtet, dass ein Kontext für den Feld Austausch Vorgang angegeben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Massen Abrufen von Zeilen nicht implementiert ist, ruft das Framework diese Member-Funktion auf, um automatisch Daten zwischen den Felddatenmembern des Recordset-Objekts und den entsprechenden Spalten des aktuellen Datensatzes in der Datenquelle auszutauschen. `DoFieldExchange` bindet auch die Parameter Datenmember, sofern vorhanden, an die Parameter Platzhalter in der SQL-Anweisungs Zeichenfolge für die Auswahl des Recordsets.
 
@@ -586,7 +586,7 @@ Ermöglicht das Ändern des aktuellen Datensatzes.
 virtual void Edit();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem Sie `Edit`aufgerufen haben, können Sie die Felddatenmember ändern, indem Sie Ihre Werte direkt zurücksetzen. Der Vorgang wird abgeschlossen, wenn Sie anschließend die Funktion zum [Aktualisieren](#update) des Members aufzurufen, um die Änderungen in der Datenquelle zu speichern.
 
@@ -621,7 +621,7 @@ BOOL FlushResultSet();
 
 Ungleich 0 (null), wenn mehr Resultsets abgerufen werden sollen. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie sollten `FlushResultSet` nur dann abrufen, wenn Sie den Cursor auf dem aktuellen Resultset vollständig abgeschlossen haben. Beachten Sie, dass der Cursor für dieses Resultset nicht gültig ist, wenn Sie das nächste Resultset durch Aufrufen von `FlushResultSet`abrufen. Nachdem Sie `FlushResultSet`aufgerufen haben, sollten [Sie die Member](#movenext) -Funktion von "-Member" aufrufen.
 
@@ -652,7 +652,7 @@ void GetBookmark(CDBVariant& varBookmark);
 *varbookmark*<br/>
 Ein Verweis auf ein [CDBVariant](../../mfc/reference/cdbvariant-class.md) -Objekt, das das Lesezeichen für den aktuellen Datensatz darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um zu ermitteln, ob Lesezeichen für das Recordset unterstützt werden, nennen Sie [CanBookmark](#canbookmark). Um Lesezeichen verfügbar zu machen, wenn Sie unterstützt werden, müssen Sie die `CRecordset::useBookmarks`-Option im *dwOptions* -Parameter der [Open](#open) Member-Funktion festlegen.
 
@@ -678,7 +678,7 @@ virtual CString GetDefaultConnect();
 
 Ein-`CString`, der die Standard Verbindungs Zeichenfolge enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Member-Funktion auf, um die Standard Verbindungs Zeichenfolge für die Datenquelle zu erhalten, auf der das Recordset basiert. ClassWizard implementiert diese Funktion für Sie, indem die gleiche Datenquelle identifiziert wird, die Sie in ClassWizard verwenden, um Informationen zu Tabellen und Spalten zu erhalten. Bei der Entwicklung ihrer Anwendung ist es wahrscheinlich praktisch, dass Sie sich auf diese Standardverbindung verlassen. Die Standardverbindung eignet sich jedoch möglicherweise nicht für Benutzer Ihrer Anwendung. Wenn dies der Fall ist, sollten Sie diese Funktion neu implementieren und die Version von ClassWizard verwerfen. Weitere Informationen zu Verbindungs Zeichenfolgen finden Sie im Artikel [Datenquelle (ODBC)](../../data/odbc/data-source-odbc.md).
 
@@ -694,7 +694,7 @@ virtual CString GetDefaultSQL();
 
 Eine `CString`, die die SQL-Standard Anweisung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Member-Funktion auf, um die SQL-Standard Anweisung zu erhalten, auf der das Recordset basiert. Dabei kann es sich um einen Tabellennamen oder eine SQL **Select** -Anweisung handeln.
 
@@ -761,7 +761,7 @@ Der null basierte Index des Felds.
 *strValue*<br/>
 Ein Verweis auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, in dem der Wert des Felds, der in Text konvertiert wird, unabhängig vom Datentyp des Felds gespeichert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können ein Feld nach dem Namen oder nach dem Index suchen. Sie können den Feldwert entweder in einem `CDBVariant` Objekt oder in einem `CString` Objekt speichern.
 
@@ -797,7 +797,7 @@ short GetODBCFieldCount() const;
 
 Die Anzahl der Felder im Recordset.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Erstellen von Recordsets finden Sie im Artikel [Recordset: Erstellen und Schließen von Recordsets (ODBC)](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md).
 
@@ -826,7 +826,7 @@ Ein Verweis auf eine `CODBCFieldInfo`-Struktur.
 *nIndex*<br/>
 Der null basierte Index des Felds.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit einer Version der-Funktion können Sie nach einem Feld nach dem Namen suchen. Die andere Version ermöglicht es Ihnen, ein Feld nach Index zu suchen.
 
@@ -846,7 +846,7 @@ long GetRecordCount() const;
 
 Die Anzahl der Datensätze im Recordset. 0, wenn das Recordset keine Datensätze enthält. oder-1, wenn die Anzahl der Datensätze nicht bestimmt werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!CAUTION]
 >  Die Anzahl der Datensätze wird als "obere Grenze" beibehalten, und der höchste nummerierte Datensatz wird noch angezeigt, wenn der Benutzer die Datensätze durchläuft. Die Gesamtanzahl der Datensätze ist erst bekannt, wenn der Benutzer den letzten Datensatz überschritten hat. Aus Leistungsgründen wird die Anzahl nicht aktualisiert, wenn Sie `MoveLast`aufgerufen wird. Um die Datensätze selbst zu zählen, wird `MoveNext` wiederholt aufgerufen, bis `IsEOF` einen Wert ungleich 0 zurückgibt Durch das Hinzufügen eines Datensatzes über `CRecordset:AddNew` und `Update` wird die Anzahl erhöht. durch das Löschen eines Datensatzes über `CRecordset::Delete` wird die Anzahl verringert.
@@ -863,7 +863,7 @@ DWORD GetRowsetSize() const;
 
 Die Anzahl der Zeilen, die während eines bestimmten Abruf Vorgangs abgerufen werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie das Massen Abrufen von Zeilen verwenden, ist die standardrowsetgröße beim Öffnen des Recordsets 25. Andernfalls ist der Wert 1.
 
@@ -883,7 +883,7 @@ DWORD GetRowsFetched() const;
 
 Die Anzahl der Zeilen, die nach einem bestimmten Abruf Vorgang aus der Datenquelle abgerufen wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies ist nützlich, wenn Sie das Massen Abrufen von Zeilen implementiert haben. Die Rowsetgröße gibt normalerweise an, wie viele Zeilen von einem Abruf Vorgang abgerufen werden. die Gesamtanzahl der Zeilen im Recordset wirkt sich jedoch auch darauf aus, wie viele Zeilen in einem Rowset abgerufen werden. Wenn das Recordset z. b. 10 Datensätze mit einer Rowsetgröße von 4 aufweist, führt das Durchlaufen des Recordsets durch das Aufrufen von `MoveNext` dazu, dass das abschließende Rowset nur über zwei Datensätze verfügt.
 
@@ -912,11 +912,11 @@ Die einbasierte Position einer Zeile im aktuellen Rowset. Dieser Wert kann zwisc
 
 Ein Statuswert für die Zeile. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetRowStatus` gibt einen Wert zurück, der entweder jede Änderung des Status der Zeile seit dem letzten Abrufen aus der Datenquelle angibt, oder dass keine Zeile abgerufen wurde, die *wrow* entspricht. In der folgenden Tabelle sind die möglichen Rückgabewerte aufgelistet:
 
-|Statuswert|BESCHREIBUNG|
+|Statuswert|Beschreibung|
 |------------------|-----------------|
 |SQL_ROW_SUCCESS|Die Zeile ist unverändert.|
 |SQL_ROW_UPDATED|Die Zeile wurde aktualisiert.|
@@ -938,9 +938,9 @@ void GetStatus(CRecordsetStatus& rStatus) const;
 ### <a name="parameters"></a>Parameter
 
 *rstatus*<br/>
-Ein Verweis auf ein `CRecordsetStatus`-Objekt. Weitere Informationen finden Sie im Abschnitt zu den Hinweisen.
+Ein Verweis auf ein `CRecordsetStatus`-Objekt. Weitere Informationen finden Sie im Abschnitt Hinweise.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CRecordset` versucht, den Index zu verfolgen, aber unter bestimmten Umständen ist dies möglicherweise nicht möglich. Eine Erläuterung finden Sie unter [GetRecordCount](#getrecordcount) .
 
@@ -972,7 +972,7 @@ const CString& GetSQL() const;
 
 Ein **konstanter Verweis auf eine `CString`** , die die SQL-Anweisung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dabei handelt es sich im Allgemeinen um eine SQL- **Select** -Anweisung. Die von `GetSQL` zurückgegebene Zeichenfolge ist schreibgeschützt.
 
@@ -993,7 +993,7 @@ const CString& GetTableName() const;
 
 Ein **konstanter Verweis auf** eine `CString`, die den Tabellennamen enthält, wenn das Recordset auf einer Tabelle basiert. andernfalls eine leere Zeichenfolge.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetTableName` ist nur gültig, wenn das Recordset auf einer Tabelle basiert, nicht auf einem Join mehrerer Tabellen oder einer vordefinierten Abfrage (gespeicherte Prozedur). Der Name ist schreibgeschützt.
 
@@ -1012,7 +1012,7 @@ BOOL IsBOF() const;
 
 Ungleich 0 (null), wenn das Recordset keine Datensätze enthält oder wenn Sie vor dem ersten Datensatz einen Rollup durchgeführt haben. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nennen Sie diese Member-Funktion, bevor Sie einen Bildlauf von Datensatz zu Datensatz durchführen, um zu erfahren, ob Sie vor dem ersten Datensatz des Recordsets gegangen sind. Sie können auch `IsBOF` zusammen mit `IsEOF` verwenden, um zu bestimmen, ob das Recordset Datensätze enthält oder leer ist. Unmittelbar nachdem Sie `Open`aufgerufen haben und das Recordset keine Datensätze enthält, gibt `IsBOF` einen Wert ungleich 0 (null) zurück. Wenn Sie ein Recordset öffnen, das mindestens einen Datensatz enthält, ist der erste Datensatz der aktuelle Datensatz und `IsBOF` 0 zurück.
 
@@ -1036,7 +1036,7 @@ BOOL IsDeleted() const;
 
 Ungleich 0 (null), wenn das Recordset auf einem gelöschten Datensatz positioniert ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie einen Bildlauf zu einem Datensatz ausführen und `IsDeleted` "true" (ungleich null) zurückgibt, müssen Sie einen Bildlauf zu einem anderen Datensatz ausführen, bevor Sie andere recordsetvorgänge ausführen können.
 
@@ -1059,7 +1059,7 @@ BOOL IsEOF() const;
 
 Ungleich 0 (null), wenn das Recordset keine Datensätze enthält oder wenn Sie einen Rollup über den letzten Datensatz ausgeführt haben. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nennen Sie diese Member-Funktion, während Sie einen Bildlauf von Datensatz zu Datensatz durchführen, um zu erfahren, ob Sie den letzten Datensatz des Recordsets überschritten haben. Sie können auch `IsEOF` verwenden, um zu bestimmen, ob das Recordset Datensätze enthält oder leer ist. Unmittelbar nachdem Sie `Open`aufgerufen haben und das Recordset keine Datensätze enthält, gibt `IsEOF` einen Wert ungleich 0 (null) zurück. Wenn Sie ein Recordset öffnen, das mindestens einen Datensatz enthält, ist der erste Datensatz der aktuelle Datensatz und `IsEOF` 0 zurück.
 
@@ -1086,7 +1086,7 @@ Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, ode
 
 Ungleich 0 (null), wenn sich der angegebene Felddatenmember seit dem Aufruf von `AddNew` oder `Edit`geändert hat. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Daten in allen modifizierten Felddatenmembern werden an den Datensatz in der Datenquelle übertragen, wenn der aktuelle Datensatz durch einen Rückruf der [Update](#update) Member-Funktion von `CRecordset` aktualisiert wird (nach einem `Edit` oder `AddNew`).
 
@@ -1116,7 +1116,7 @@ Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, ode
 
 Ein Wert ungleich 0 (null), wenn der angegebene Felddatenmember als NULL gekennzeichnet ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie ermitteln, ob der angegebene Felddatenmember eines Recordsets als NULL gekennzeichnet wurde. (In der Daten Bank Terminologie bedeutet NULL, dass kein Wert vorhanden ist und nicht mit NULL in C++übereinstimmt.) Wenn ein Felddatenmember als NULL gekennzeichnet ist, wird er als Spalte des aktuellen Datensatzes interpretiert, für den kein Wert vorhanden ist.
 
@@ -1138,7 +1138,7 @@ BOOL IsFieldNullable(void* pv);
 *teuren*<br/>
 Ein Zeiger auf den Felddatenmember, dessen Status Sie überprüfen möchten, oder NULL, um zu bestimmen, ob eines der Felder auf einen NULL-Wert festgelegt werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion wird bestimmt, ob der angegebene Felddatenmember "Nullable" ist (kann auf einen NULL-Wert festgelegt werden; C++ NULL ist nicht mit NULL identisch, was in der Daten Bank Terminologie bedeutet, dass kein Wert vorhanden ist.)
 
@@ -1177,7 +1177,7 @@ Ein Wert ungleich 0 (null), wenn die [Open](#open) -oder [Requery](#requery) -Me
 
 Enthält ein Handle für die Datenstruktur der ODBC-Anweisung vom Typ HSTMT, die dem Recordset zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jede Abfrage an eine ODBC-Datenquelle ist einem hstmt zugeordnet.
 
@@ -1190,7 +1190,7 @@ Normalerweise müssen Sie nicht direkt auf das hstmt zugreifen, Sie benötigen e
 
 Enthält die Anzahl der Felddatenmember in der Recordset-Klasse. Das heißt, die Anzahl der Spalten, die vom Recordset aus der Datenquelle ausgewählt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Konstruktor für die Recordset-Klasse muss `m_nFields` mit der richtigen Anzahl initialisieren. Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, schreibt ClassWizard diese Initialisierung für Sie, wenn Sie Sie zum Deklarieren der Recordsetklasse verwenden. Sie können Sie auch manuell schreiben.
 
@@ -1211,7 +1211,7 @@ Weitere Informationen finden [Sie im Artikeldaten Satz Feld Austausch: Verwenden
 
 Enthält die Anzahl der Parameterdatenmember in der Recordset-Klasse. Das heißt, die Anzahl der Parameter, die mit der Abfrage des Recordsets übermittelt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Recordsetklasse über Parameter Datenmember verfügt, muss der Konstruktor für die Klasse `m_nParams` mit der richtigen Anzahl initialisieren. Der Wert von `m_nParams` der Standardwert 0 ist. Wenn Sie Parameter Datenmember hinzufügen (was Sie manuell tun müssen), müssen Sie auch manuell eine Initialisierung im Klassenkonstruktor hinzufügen, um die Anzahl von Parametern (die mindestens so groß wie die Anzahl der Platzhalter in der `m_strFilter` oder `m_strSort` Zeichenfolge sein muss) wiederzugeben.
 
@@ -1228,7 +1228,7 @@ Das Framework verwendet diese Zahl, wenn die Abfrage des Recordsets parametrisie
 
 Enthält einen Zeiger auf das `CDatabase` Objekt, über das das Recordset mit einer Datenquelle verbunden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Variable wird auf zwei Arten festgelegt. In der Regel übergeben Sie einen Zeiger an ein bereits verbundenes `CDatabase` Objekt, wenn Sie das Recordset-Objekt erstellen. Wenn Sie stattdessen NULL übergeben, erstellt `CRecordset` ein `CDatabase` Objekt für Sie und verbindet es. In beiden Fällen speichert `CRecordset` den Zeiger in dieser Variablen.
 
@@ -1238,7 +1238,7 @@ Normalerweise müssen Sie den in `m_pDatabase`gespeicherten Zeiger nicht direkt 
 
 Verwenden Sie nach dem Erstellen des Recordset-Objekts, aber bevor Sie seine `Open` Member-Funktion aufzurufen, dieses Datenmember, um eine `CString` zu speichern, die eine SQL- **Where** -Klausel enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Recordset verwendet diese Zeichenfolge, um die Datensätze einzuschränken (oder zu filtern), die während des `Open` oder `Requery`-Aufrufes ausgewählt werden. Dies ist nützlich, wenn Sie eine Teilmenge der Datensätze auswählen, z. b. "alle Vertriebsmitarbeiter, die in Kalifornien basieren" ("State = ca"). Die ODBC-SQL-Syntax für eine **Where** -Klausel lautet:
 
@@ -1258,7 +1258,7 @@ Weitere Informationen zu SQL- **Where** -Klauseln finden Sie im Artikel [SQL](..
 
 Nachdem Sie das Recordset-Objekt erstellt haben, aber bevor Sie dessen `Open` Member-Funktion aufzurufen, speichern Sie mit diesem Datenmember eine `CString`, die eine SQL **Order by** -Klausel enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Recordset verwendet diese Zeichenfolge, um die Datensätze zu sortieren, die während des `Open` oder `Requery` Aufrufens ausgewählt werden. Mit dieser Funktion können Sie ein Recordset nach einer oder mehreren Spalten sortieren. Die ODBC-SQL-Syntax für eine **Order by** -Klausel lautet:
 
@@ -1292,7 +1292,7 @@ Die Anzahl der Zeilen, für die vorwärts oder rückwärts verschoben werden sol
 *wfetchtype*<br/>
 Bestimmt das Rowset, das `Move` abrufen soll. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie für *nrows*den Wert 0 übergeben, `Move` den aktuellen Datensatz aktualisiert. `Move` beenden alle aktuellen `AddNew` oder `Edit` Modus und stellen den Wert des aktuellen Datensatzes wieder her, bevor `AddNew` oder `Edit` aufgerufen wurde.
 
@@ -1341,7 +1341,7 @@ Legt den ersten Datensatz im ersten Rowset als aktuellen Datensatz fest.
 void MoveFirst();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Unabhängig davon, ob das Massen Abrufen von Zeilen implementiert wurde, ist dies immer der erste Datensatz im Recordset.
 
@@ -1373,7 +1373,7 @@ Erstellt den ersten Datensatz im letzten abgeschlossenen Rowset zum aktuellen Da
 void MoveLast();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, hat das Recordset die Rowsetgröße 1, sodass `MoveLast` einfach zum letzten Datensatz im Recordset wechselt.
 
@@ -1403,7 +1403,7 @@ Führt den ersten Datensatz im nächsten Rowset zum aktuellen Datensatz.
 void MoveNext();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, hat das Recordset die Rowsetgröße 1, sodass `MoveNext` einfach zum nächsten Datensatz wechselt.
 
@@ -1433,7 +1433,7 @@ Führt den ersten Datensatz im vorherigen Rowset zum aktuellen Datensatz.
 void MovePrev();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, hat das Recordset die Rowsetgröße 1, sodass `MovePrev` einfach zum vorherigen Datensatz wechselt.
 
@@ -1471,7 +1471,7 @@ virtual void OnSetOptions(HSTMT hstmt);
 *hstmt*<br/>
 Das hstmt der ODBC-Anweisung, deren Optionen festgelegt werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft `OnSetOptions` auf, um für die angegebene ODBC-Anweisung Optionen (bei Auswahl verwendet) festzulegen. Das Framework ruft diese Member-Funktion auf, um die anfänglichen Optionen für das Recordset festzulegen. `OnSetOptions` bestimmt die Unterstützung der Datenquelle für scrollbare Cursor und für die Cursor Parallelität und legt die Optionen des Recordsets entsprechend fest. (Während `OnSetOptions` für Auswahl Vorgänge verwendet wird, wird `OnSetUpdateOptions` für Aktualisierungs Vorgänge verwendet.)
 
@@ -1492,7 +1492,7 @@ virtual void OnSetUpdateOptions(HSTMT hstmt);
 *hstmt*<br/>
 Das hstmt der ODBC-Anweisung, deren Optionen festgelegt werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft `OnSetUpdateOptions` auf, um Optionen für die angegebene ODBC-Anweisung festzulegen (bei Update verwendet). Das Framework ruft diese Member-Funktion auf, nachdem ein hstmt zum Aktualisieren von Datensätzen in einem Recordset erstellt wurde. (Während `OnSetOptions` für Auswahl Vorgänge verwendet wird, wird `OnSetUpdateOptions` für Aktualisierungs Vorgänge verwendet.) `OnSetUpdateOptions` bestimmt die Unterstützung der Datenquelle für scrollbare Cursor und für die Cursor Parallelität und legt die Optionen des Recordsets entsprechend fest.
 
@@ -1576,7 +1576,7 @@ Eine Bitmaske, die eine Kombination der unten aufgeführten Werte angeben kann. 
 
 Ungleich 0 (null), wenn das `CRecordset` Objekt erfolgreich geöffnet wurde. andernfalls 0, wenn [CDatabase:: Open](../../mfc/reference/cdatabase-class.md#open) (sofern aufgerufen) 0 zurückgibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen diese Memberfunktion zum Ausführen der vom Recordset definierten Abfrage aufrufen. Vor dem Aufrufen von `Open`müssen Sie das Recordset-Objekt erstellen.
 
@@ -1631,7 +1631,7 @@ Die einbasierte Position einer Zeile im aktuellen Rowset. Dieser Wert kann zwisc
 *wlocktype*<br/>
 Ein Wert, der angibt, wie die Zeile nach der Aktualisierung gesperrt wird. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie für *wrow*den Wert 0 (null) übergeben, wird jede Zeile im Rowset aktualisiert.
 
@@ -1639,7 +1639,7 @@ Um `RefreshRowset`verwenden zu können, müssen Sie das Massen Abrufen von Zeile
 
 `RefreshRowset` Ruft die ODBC-API-Funktion `SQLSetPos`auf. Der *wlocktype* -Parameter gibt den Sperr Status der Zeile an, nachdem `SQLSetPos` ausgeführt wurde. In der folgenden Tabelle werden die möglichen Werte für *wlocktype*beschrieben.
 
-|wLockType|BESCHREIBUNG|
+|wLockType|Beschreibung|
 |---------------|-----------------|
 |SQL_LOCK_NO_CHANGE (Standardwert)|Der Treiber oder die Datenquelle stellt sicher, dass sich die Zeile in demselben gesperrten oder ungesperrten Zustand befindet wie vor dem Aufrufen `RefreshRowset`.|
 |SQL_LOCK_EXCLUSIVE|Der Treiber oder die Datenquelle sperrt die Zeile exklusiv. Diese Art von Sperre wird nicht von allen Datenquellen unterstützt.|
@@ -1659,7 +1659,7 @@ virtual BOOL Requery();
 
 Ungleich 0 (null), wenn das Recordset erfolgreich neu erstellt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Falls Datensätze zurückgegeben werden, wird der erste Datensatz zum aktuellen Datensatz.
 
@@ -1691,7 +1691,7 @@ void SetAbsolutePosition(long nRows);
 *nRows*<br/>
 Die einbasierte Ordinalposition für den aktuellen Datensatz im Recordset.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SetAbsolutePosition` verschiebt den aktuellen Daten Satz Zeiger basierend auf dieser Ordinalposition.
 
@@ -1720,7 +1720,7 @@ void SetBookmark(const CDBVariant& varBookmark);
 *varbookmark*<br/>
 Ein Verweis auf ein [CDBVariant](../../mfc/reference/cdbvariant-class.md) -Objekt, das den Lesezeichen Wert für einen bestimmten Datensatz enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um zu ermitteln, ob Lesezeichen für das Recordset unterstützt werden, nennen Sie [CanBookmark](#canbookmark). Um Lesezeichen verfügbar zu machen, wenn Sie unterstützt werden, müssen Sie die `CRecordset::useBookmarks`-Option im *dwOptions* -Parameter der [Open](#open) Member-Funktion festlegen.
 
@@ -1750,7 +1750,7 @@ Enthält die Adresse eines Felddatenmembers im Recordset oder NULL. Wenn der Wer
 *bdirty*<br/>
 TRUE, wenn der Felddatenmember als "Dirty" (geändert) gekennzeichnet werden soll. Andernfalls false, wenn der Felddatenmember als "Clean" (unverändert) gekennzeichnet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch Markieren von Feldern als unverändert wird sichergestellt, dass das Feld nicht aktualisiert wird und weniger SQL-Datenverkehr verursacht.
 
@@ -1790,7 +1790,7 @@ Enthält die Adresse eines Felddatenmembers im Recordset oder NULL. Wenn der Wer
 *bNULL*<br/>
 Ein Wert ungleich 0 (null), wenn für den Felddatenmember kein Wert (null) gekennzeichnet werden soll. Andernfalls 0, wenn der Felddatenmember als nicht-NULL gekennzeichnet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie einem Recordset einen neuen Datensatz hinzufügen, werden alle Felddatenmember anfänglich auf einen NULL-Wert festgelegt und als "Dirty" (geändert) gekennzeichnet. Wenn Sie einen Datensatz aus einer Datenquelle abrufen, verfügen seine Spalten entweder bereits über Werte oder sind NULL.
 
@@ -1836,7 +1836,7 @@ Enthält einen der folgenden Werte aus der `enum LockMode`:
 
 - `pessimistic` pessimistische Sperrung sperrt den Datensatz, sobald `Edit` aufgerufen wird, und hält ihn gesperrt, bis der `Update` Aufruf abgeschlossen ist oder Sie zu einem neuen Datensatz wechseln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird aufgerufen, wenn Sie angeben müssen, welche der beiden Daten Satz Sperr Strategien das Recordset für Updates verwendet. Der Sperrmodus eines Recordsets ist standardmäßig `optimistic`. Dies kann zu einer vorsichtigeren `pessimistic` Sperr Strategie geändert werden. Nachdem Sie das Recordset-Objekt erstellt und geöffnet haben, `SetLockingMode`, bevor Sie `Edit`aufgerufen haben, wird aufgerufen.
 
@@ -1858,7 +1858,7 @@ Der nullbasierte Index des Parameters.
 *bNULL*<br/>
 TRUE (der Standardwert) gibt an, dass der Parameter als NULL gekennzeichnet wird. Andernfalls wird der-Parameter als nicht-NULL gekennzeichnet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Anders als bei [SetFieldNull](#setfieldnull)können Sie `SetParamNull` aufrufen, bevor Sie das Recordset geöffnet haben.
 
@@ -1880,7 +1880,7 @@ Die einbasierte Position einer Zeile im aktuellen Rowset. Dieser Wert kann zwisc
 *wlocktype*<br/>
 Wert, der angibt, wie die Zeile nach der Aktualisierung gesperrt wird. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beim Implementieren des Massen Abruf von Zeilen werden Datensätze von Rowsets abgerufen, wobei der erste Datensatz im abgerufenen Rowset der aktuelle Datensatz ist. Um einen weiteren Datensatz innerhalb des Rowsets im aktuellen Datensatz zu erstellen, geben Sie `SetRowsetCursorPosition`an. Beispielsweise können Sie `SetRowsetCursorPosition` mit der [GetFieldValue](#getfieldvalue) -Member-Funktion kombinieren, um die Daten dynamisch aus jedem Datensatz Ihres Recordsets abzurufen.
 
@@ -1888,7 +1888,7 @@ Um `SetRowsetCursorPosition`zu verwenden, müssen Sie das Massen Abrufen von Zei
 
 `SetRowsetCursorPosition` Ruft die ODBC-API-Funktion `SQLSetPos`auf. Der *wlocktype* -Parameter gibt den Sperr Status der Zeile an, nachdem `SQLSetPos` ausgeführt wurde. In der folgenden Tabelle werden die möglichen Werte für *wlocktype*beschrieben.
 
-|wLockType|BESCHREIBUNG|
+|wLockType|Beschreibung|
 |---------------|-----------------|
 |SQL_LOCK_NO_CHANGE (Standardwert)|Der Treiber oder die Datenquelle stellt sicher, dass sich die Zeile in demselben gesperrten oder ungesperrten Zustand befindet wie vor dem Aufrufen `SetRowsetCursorPosition`.|
 |SQL_LOCK_EXCLUSIVE|Der Treiber oder die Datenquelle sperrt die Zeile exklusiv. Diese Art von Sperre wird nicht von allen Datenquellen unterstützt.|
@@ -1909,7 +1909,7 @@ virtual void SetRowsetSize(DWORD dwNewRowsetSize);
 *dwnewrowsetsize*<br/>
 Die Anzahl der Zeilen, die während eines bestimmten Abruf Vorgangs abgerufen werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion für virtuelle Member gibt an, wie viele Zeilen bei einem einzelnen Abruf Vorgang abgerufen werden sollen, wenn das Massen Abrufen von Zeilen verwendet wird. Um das Abrufen von Massen Zeilen zu implementieren, müssen Sie die `CRecordset::useMultiRowFetch`-Option im *dwOptions* -Parameter der [Open](#open) Member-Funktion festlegen.
 
@@ -1937,7 +1937,7 @@ virtual BOOL Update();
 
 Ungleich 0 (null), wenn ein Datensatz erfolgreich aktualisiert wurde. andernfalls 0, wenn keine Spalten geändert wurden. Wenn keine Datensätze aktualisiert wurden oder mehr als ein Datensatz aktualisiert wurde, wird eine Ausnahme ausgelöst. Eine Ausnahme wird auch für andere Fehler in der Datenquelle ausgelöst.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird nach einem Rückruf der [AddNew](#addnew) -oder [Edit](#edit) Member-Funktion aufgerufen. Dieser Befehl ist erforderlich, um die `AddNew` oder `Edit` Vorgang abzuschließen.
 
@@ -1957,7 +1957,7 @@ Ausführliche Informationen zur Behandlung von `Update` Fehlern finden Sie im Ar
 
 Weitere Informationen finden Sie im Artikel [Transaktion: Ausführen einer Transaktion in einem Recordset (ODBC)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

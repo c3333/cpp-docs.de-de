@@ -3,11 +3,6 @@ title: '&lt;filesystem&gt;'
 description: Beschreibt die Klassen, Funktionen und Typen im filesystem-Header der Standard C++ Bibliothek.
 ms.date: 01/22/2020
 f1_keywords:
-- filesystem/std::experimental::filesystem::directory_entry
-- filesystem/std::experimental::filesystem::recursive_directory_iterator
-- filesystem/std::experimental::filesystem::path
-- filesystem/std::experimental::filesystem::filesystem_error
-- filesystem/std::experimental::filesystem::directory_iterator
 - <filesystem>
 ms.assetid: 5005753b-46fa-43e1-8d4e-1b38617d3cfd
 no-loc:
@@ -17,12 +12,12 @@ no-loc:
 - wchar_t
 - char16_t
 - char32_t
-ms.openlocfilehash: dbe6dc89d5460a08ffafd86aa3fcd01222c82166
-ms.sourcegitcommit: b67b08472b6f1ee8f1c5684bba7056d3e0fc745f
+ms.openlocfilehash: f9e384953a4e675ad6235a274c447031976a1585
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725681"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441713"
 ---
 # &lt;filesystem&gt;
 
@@ -98,7 +93,7 @@ Zum Schluss haben `path` Objekte ein wichtiges Feature: Sie können Sie überall
 
 Weitere Informationen und Codebeispiele finden Sie unter [Dateisystem Navigation (C++)](../standard-library/file-system-navigation.md).
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="classes"></a>Klassen
 
@@ -109,7 +104,7 @@ Weitere Informationen und Codebeispiele finden Sie unter [Dateisystem Navigation
 |[filesystem_error-Klasse](../standard-library/filesystem-error-class.md)|Eine Basisklasse für Ausnahmen, die ausgelöst werden, um einen Systemüberlauf auf niedriger Ebene zu melden.|
 |[Path-Klasse](../standard-library/path-class.md)|Definiert eine Klasse, die ein für die Verwendung als Dateiname geeignetes Objekt des Vorlagentyps `String` speichert.|
 |[recursive_directory_iterator-Klasse](../standard-library/recursive-directory-iterator-class.md)|Beschreibt einen Eingabeiterator, der alle Dateinamen in einem Dateisystemverzeichnis durchläuft. Der Iterator kann die Verzeichnisse auch absteigend anordnen.|
-|[file_status-Klasse](../standard-library/file-status-class.md)|Bricht ein `file_type`um.|
+|[file_status-Klasse](../standard-library/file-status-class.md)|Bricht ein `file_type` um.|
 
 ### <a name="structs"></a>Strukturen
 
@@ -117,7 +112,7 @@ Weitere Informationen und Codebeispiele finden Sie unter [Dateisystem Navigation
 |-|-|
 |[space_info Struktur](../standard-library/space-info-structure.md)|Enthält Informationen zu einem Volume.|
 
-## <a name="functions"></a>Funktionen
+## <a name="functions"></a>Functions
 
 [\<filesystem> Funktionen](../standard-library/filesystem-functions.md)
 
@@ -135,6 +130,6 @@ Weitere Informationen und Codebeispiele finden Sie unter [Dateisystem Navigation
 |[perm_options](../standard-library/filesystem-enumerations.md#perm_options)| Listet Optionen für die `permissions`-Funktion auf. |
 |[perms](../standard-library/filesystem-enumerations.md#perms)|Ein Bitmaskentyp, mit dem Berechtigungen und Optionen zu Berechtigungen übermittelt werden.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)

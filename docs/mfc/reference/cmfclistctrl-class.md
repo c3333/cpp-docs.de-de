@@ -29,15 +29,15 @@ helpviewer_keywords:
 - CMFCListCtrl [MFC], Sort
 ms.assetid: 50d16aee-138c-4f34-8690-cb75d544ef2e
 ms.openlocfilehash: 599a00af28ee5b8effbabbe5b334022ceb49f91a
-ms.sourcegitcommit: 725e86dabe2901175ecc63261c3bf05802dddff4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682347"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425820"
 ---
 # <a name="cmfclistctrl-class"></a>CMF CListCtrl-Klasse
 
-Die `CMFCListCtrl` -Klasse erweitert die Funktionen der [CListCtrl-Klassen](../../mfc/reference/clistctrl-class.md) Klasse durch Unterstützung der erweiterten Header Steuerelement-Funktionalität der [CMF-STRG-Klasse](../../mfc/reference/cmfcheaderctrl-class.md).
+Die `CMFCListCtrl`-Klasse erweitert die Funktionen der [CListCtrl-Klassen](../../mfc/reference/clistctrl-class.md) Klasse durch Unterstützung der erweiterten Header Steuerungs Funktionalität der [CMF-STRG-Klasse](../../mfc/reference/cmfcheaderctrl-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -51,21 +51,21 @@ class CMFCListCtrl : public CListCtrl
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CMFCListCtrl::EnableMarkSortedColumn](#enablemarksortedcolumn)|Ermöglicht das Markieren einer sortierten Spalte mit einer anderen Hintergrundfarbe.|
-|[CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)|Aktiviert den mehrfach Sortiermodus.|
-|[CMFCListCtrl::GetHeaderCtrl](#getheaderctrl)|Gibt einen Verweis auf das unterstrichene Header Steuerelement zurück.|
-|[CMFCListCtrl::IsMultipleSort](#ismultiplesort)|Überprüft, ob sich das Listen Steuerelement im mehrfach Sortiermodus befindet.|
+|[CMF CListCtrl:: enablemarksortedcolumn](#enablemarksortedcolumn)|Ermöglicht das Markieren einer sortierten Spalte mit einer anderen Hintergrundfarbe.|
+|[CMF CListCtrl:: enablemultiplesort](#enablemultiplesort)|Aktiviert den mehrfach Sortiermodus.|
+|[CMF CListCtrl:: getheiaderctrl](#getheaderctrl)|Gibt einen Verweis auf das unterstrichene Header Steuerelement zurück.|
+|[CMF CListCtrl:: ismultiplesort](#ismultiplesort)|Überprüft, ob sich das Listen Steuerelement im mehrfach Sortiermodus befindet.|
 |[CMF CListCtrl:: oncompareitems](#oncompareitems)|Wird von Framework aufgerufen, wenn zwei Listen Steuerungselemente verglichen werden müssen.|
-|[CMFCListCtrl::OnGetCellBkColor](#ongetcellbkcolor)|Wird von Framework aufgerufen, wenn es die Hintergrundfarbe einer einzelnen Zelle bestimmen muss.|
-|[CMFCListCtrl::OnGetCellFont](#ongetcellfont)|Wird von Framework aufgerufen, wenn es die Schriftart für die gezeichnete Zelle abrufen muss.|
-|[CMFCListCtrl::OnGetCellTextColor](#ongetcelltextcolor)|Wird von Framework aufgerufen, wenn es die Textfarbe einer einzelnen Zelle bestimmen muss.|
+|[CMF CListCtrl:: ongetcellbkcolor](#ongetcellbkcolor)|Wird von Framework aufgerufen, wenn es die Hintergrundfarbe einer einzelnen Zelle bestimmen muss.|
+|[CMF CListCtrl:: ongetcellfont](#ongetcellfont)|Wird von Framework aufgerufen, wenn es die Schriftart für die gezeichnete Zelle abrufen muss.|
+|[CMF CListCtrl:: ongetcelltextcolor](#ongetcelltextcolor)|Wird von Framework aufgerufen, wenn es die Textfarbe einer einzelnen Zelle bestimmen muss.|
 |[CMF CListCtrl:: removesortcolumn](#removesortcolumn)|Entfernt eine Sortier Spalte aus der Liste der sortierten Spalten.|
 |[CMF CListCtrl:: setsortcolumn](#setsortcolumn)|Legt die aktuelle sortierte Spalte und die Sortierreihenfolge fest.|
-|[CMFCListCtrl::Sort](#sort)|Sortiert das Listen Steuerelement.|
+|[CMF CListCtrl:: Sort](#sort)|Sortiert das Listen Steuerelement.|
 
 ## <a name="remarks"></a>Hinweise
 
-`CMFCListCtrl`bietet zwei Verbesserungen an der [CListCtrl Class](../../mfc/reference/clistctrl-class.md) -Klasse. Zuerst zeigt dies an, dass die Spalten Sortierung eine verfügbare Option ist, indem automatisch ein Sortier Pfeil für den Header gezeichnet wird. Zweitens wird die Daten Sortierung für mehrere Spalten gleichzeitig unterstützt.
+`CMFCListCtrl` bietet zwei Verbesserungen an der [CListCtrl Class](../../mfc/reference/clistctrl-class.md) -Klasse. Zuerst zeigt dies an, dass die Spalten Sortierung eine verfügbare Option ist, indem automatisch ein Sortier Pfeil für den Header gezeichnet wird. Zweitens wird die Daten Sortierung für mehrere Spalten gleichzeitig unterstützt.
 
 ## <a name="example"></a>Beispiel
 
@@ -84,9 +84,9 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CListCtrl](../../mfc/reference/clistctrl-class.md)
 
-[CMFCListCtrl](../../mfc/reference/cmfclistctrl-class.md)
+[CMF CListCtrl](../../mfc/reference/cmfclistctrl-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxlistctrl. h
 
@@ -102,15 +102,15 @@ void EnableMarkSortedColumn(
 
 ### <a name="parameters"></a>Parameter
 
-*bMark*<br/>
+*BMARK*<br/>
 in Ein boolescher Parameter, der bestimmt, ob eine andere Hintergrundfarbe aktiviert werden soll.
 
-*bRedraw*<br/>
+*bredraw*<br/>
 in Ein boolescher Parameter, der bestimmt, ob das Steuerelement sofort neu gezeichnet werden soll.
 
 ### <a name="remarks"></a>Hinweise
 
-`EnableMarkSortedColumn`verwendet die- `CDrawingManager::PixelAlpha` Methode, um zu berechnen, welche Farbe für sortierte Spalten verwendet werden soll. Die ausgewählte Farbe basiert auf der regulären Hintergrundfarbe.
+`EnableMarkSortedColumn` verwendet die-Methode `CDrawingManager::PixelAlpha`, um zu berechnen, welche Farbe für sortierte Spalten verwendet werden soll. Die ausgewählte Farbe basiert auf der regulären Hintergrundfarbe.
 
 ##  <a name="enablemultiplesort"></a>CMF CListCtrl:: enablemultiplesort
 
@@ -122,7 +122,7 @@ void EnableMultipleSort(BOOL bEnable = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bEnable*<br/>
+*benabel*<br/>
 in Ein boolescher Wert, der angibt, ob der mehrere Spalten Sortiermodus aktiviert werden soll.
 
 ### <a name="remarks"></a>Hinweise
@@ -203,7 +203,7 @@ virtual COLORREF OnGetCellBkColor(
 
 ### <a name="parameters"></a>Parameter
 
-*nRow*<br/>
+*nzeile*<br/>
 in Die Zeile der fraglichen Zelle.
 
 *ncolumn*<br/>
@@ -215,7 +215,7 @@ Ein coloref-Wert, der die Hintergrundfarbe der Zelle angibt.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Standard Implementierung von `OnGetCellBkColor` verwendet nicht die angegebenen Eingabeparameter, sondern ruft `GetBkColor`einfach auf. Daher hat das gesamte Listen Steuerelement standardmäßig dieselbe Hintergrundfarbe. Sie können in `OnGetCellBkColor` einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Hintergrundfarbe zu markieren.
+Die Standard Implementierung von `OnGetCellBkColor` verwendet nicht die angegebenen Eingabeparameter und ruft stattdessen einfach `GetBkColor`auf. Daher hat das gesamte Listen Steuerelement standardmäßig dieselbe Hintergrundfarbe. Sie können `OnGetCellBkColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Hintergrundfarbe zu markieren.
 
 ##  <a name="ongetcellfont"></a>CMF CListCtrl:: ongetcellfont
 
@@ -230,13 +230,13 @@ virtual HFONT OnGetCellFont(
 
 ### <a name="parameters"></a>Parameter
 
-*nRow*<br/>
+*nzeile*<br/>
 in Die Zeile der fraglichen Zelle.
 
 *ncolumn*<br/>
 in Die Spalte der fraglichen Zelle.
 
-*dwData*<br/>
+*dwdata*<br/>
 in Benutzerdefinierte Daten. Die Standard Implementierung verwendet diesen Parameter nicht.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -259,7 +259,7 @@ virtual COLORREF OnGetCellTextColor(
 
 ### <a name="parameters"></a>Parameter
 
-*nRow*<br/>
+*nzeile*<br/>
 in Die Zeile der fraglichen Zelle.
 
 *ncolumn*<br/>
@@ -271,7 +271,7 @@ Ein coloref-Wert, der die Textfarbe der Zelle angibt.
 
 ### <a name="remarks"></a>Hinweise
 
-Standardmäßig ruft `GetTextColor` diese Methode unabhängig von Eingabe Parametern auf. Das gesamte Listen Steuerelement hat dieselbe Textfarbe. Sie können in `OnGetCellTextColor` einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Textfarbe zu markieren.
+Standardmäßig ruft diese Methode `GetTextColor` unabhängig von den Eingabe Parametern auf. Das gesamte Listen Steuerelement hat dieselbe Textfarbe. Sie können `OnGetCellTextColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Textfarbe zu markieren.
 
 ##  <a name="removesortcolumn"></a>CMF CListCtrl:: removesortcolumn
 
@@ -306,10 +306,10 @@ void SetSortColumn(
 *icolumn*<br/>
 in Die zu sortierende Spalte.
 
-*bAscending*<br/>
+*bascending*<br/>
 in Ein boolescher Wert, der die Sortierreihenfolge angibt.
 
-*bAdd*<br/>
+*Badd*<br/>
 in Ein boolescher Wert, der angibt, ob die Methode die Spalte, die von *icolumn* angegeben wird, der Liste der Sortier Spalten hinzufügt.
 
 ### <a name="remarks"></a>Hinweise
@@ -332,10 +332,10 @@ virtual void Sort(
 *icolumn*<br/>
 in Die zu sortierende Spalte.
 
-*bAscending*<br/>
+*bascending*<br/>
 in Ein boolescher Wert, der die Sortierreihenfolge angibt.
 
-*bAdd*<br/>
+*Badd*<br/>
 in Ein boolescher Wert, der angibt, ob diese Methode die Spalte, die von *icolumn* angegeben wird, der Liste der Sortier Spalten hinzufügt.
 
 ## <a name="see-also"></a>Siehe auch

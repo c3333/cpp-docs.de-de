@@ -12,11 +12,11 @@ helpviewer_keywords:
 - property maps
 ms.assetid: 128bc742-2b98-4b97-a243-684dbb83db77
 ms.openlocfilehash: 1e2e7235dd924467d9d5e0613a704fedf8340ae4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857183"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422973"
 ---
 # <a name="property-map-macros"></a>Eigenschaften Zuordnungs Makros
 
@@ -31,7 +31,7 @@ Diese Makros definieren Eigenschaften Zuordnungen und Einträge.
 |[PROP_PAGE](#prop_page)|Gibt eine CLSID einer Eigenschaften Seite in die Eigenschaften Zuordnung ein.|
 |[END_PROP_MAP](#end_prop_map)|Markiert das Ende der ATL-Eigenschafts Zuordnung.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -48,7 +48,7 @@ BEGIN_PROP_MAP(theClass)
 *spiegeln*<br/>
 in Gibt die Klasse an, die die Eigenschaften Zuordnung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Eigenschaften Zuordnung speichert Eigenschafts Beschreibungen, Eigenschaften-DispIds, Eigenschaften Seiten-CLSIDs und `IDispatch` IIDs. Die Klassen [iperpropertybrowsingimpl](../../atl/reference/iperpropertybrowsingimpl-class.md), [ipersistpropertybagimpl](../../atl/reference/ipersistpropertybagimpl-class.md), [ipersiststreaminitimpl](../../atl/reference/ipersiststreaminitimpl-class.md)und [ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md) verwenden die Eigenschaften Zuordnung, um diese Informationen abzurufen und festzulegen.
 
@@ -79,7 +79,7 @@ in Der Datenmember, der den Block enthält. beispielsweise `m_sizeExtent`.
 *vt*<br/>
 in Gibt den Varianttyp der Eigenschaft an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieses Makro bewirkt, dass der angegebene Datenmember persistent ist.
 
@@ -115,7 +115,7 @@ in Die CLSID der zugeordneten Eigenschaften Seite. Verwenden Sie den speziellen 
 *vt*<br/>
 in Der Typ der Eigenschaft.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das PROP_ENTRY-Makro war unsicher und veraltet. Sie wurde durch PROP_ENTRY_TYPE ersetzt.
 
@@ -150,7 +150,7 @@ in Die IID der Dual-Schnittstelle, die die Eigenschaft definiert.
 *vt*<br/>
 in Der Typ der Eigenschaft.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das PROP_ENTRY_EX-Makro war unsicher und veraltet. Sie wurde durch PROP_ENTRY_TYPE_EX ersetzt.
 
@@ -175,7 +175,7 @@ PROP_PAGE(clsid)
 *CLSID*<br/>
 in Die CLSID einer Eigenschaften Seite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 PROP_PAGE ähnelt [PROP_ENTRY_TYPE](#prop_entry_type), erfordert jedoch keine Eigenschafts Beschreibung oder DISPID.
 
@@ -196,7 +196,7 @@ Markiert das Ende der Eigenschaften Zuordnung des Objekts.
 END_PROP_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assistent eine leere Eigenschaften Zuordnung, indem [BEGIN_PROP_MAP](#begin_prop_map) gefolgt von END_PROP_MAP angegeben wird.
 
@@ -204,6 +204,6 @@ Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assi
 
 Weitere Informationen finden Sie im Beispiel für [BEGIN_PROP_MAP](#begin_prop_map).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)

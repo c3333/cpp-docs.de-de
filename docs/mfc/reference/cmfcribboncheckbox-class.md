@@ -1,5 +1,5 @@
 ---
-title: CMFCRibbonCheckBox-Klasse
+title: Cmscribboncheckbox-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCRibbonCheckBox
@@ -24,14 +24,14 @@ helpviewer_keywords:
 - CMFCRibbonCheckBox [MFC], OnDrawOnList
 - CMFCRibbonCheckBox [MFC], SetACCData
 ms.assetid: 3a6c3891-c8d1-4af0-b954-7b9ab048782a
-ms.openlocfilehash: 34af1ae818125abd51b9eaf04cd98f9ac24addb3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a8048f860a2cce75c37a065cfdd2751141054f1b
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392543"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446240"
 ---
-# <a name="cmfcribboncheckbox-class"></a>CMFCRibbonCheckBox-Klasse
+# <a name="cmfcribboncheckbox-class"></a>Cmscribboncheckbox-Klasse
 
 Die `CMFCRibbonCheckBox`-Klasse implementiert ein Kontrollkästchen, das einem Menübandbereich, einer Symbolleiste für den Schnellzugriff oder einem Popupmenü hinzugefügt werden kann.
 
@@ -41,37 +41,38 @@ Die `CMFCRibbonCheckBox`-Klasse implementiert ein Kontrollkästchen, das einem M
 class CMFCRibbonCheckBox : public CMFCRibbonButton
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCRibbonCheckBox::CMFCRibbonCheckBox](#cmfcribboncheckbox)|Der Konstruktor.|
+|[CMF cribboncheckbox:: CMF cribboncheckbox](#cmfcribboncheckbox)|Der Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCRibbonCheckBox::GetCompactSize](#getcompactsize)|(Überschreibt [cmfcribbonbutton:: Getcompactsize](../../mfc/reference/cmfcribbonbutton-class.md#getcompactsize).)|
-|[CMFCRibbonCheckBox::GetIntermediateSize](#getintermediatesize)|(Überschreibt [cmfcribbonbutton:: Getintermediatesize](../../mfc/reference/cmfcribbonbutton-class.md#getintermediatesize).)|
-|[CMFCRibbonCheckBox::GetRegularSize](#getregularsize)|(Überschreibt [cmfcribbonbutton:: Getregularsize](../../mfc/reference/cmfcribbonbutton-class.md#getregularsize).)|
-|[CMFCRibbonCheckBox::IsDrawTooltipImage](#isdrawtooltipimage)|(Überschreibt `CMFCRibbonButton::IsDrawTooltipImage`.)|
-|[CMFCRibbonCheckBox::OnDraw](#ondraw)|(Überschreibt [cmfcribbonbutton:: OnDraw](../../mfc/reference/cmfcribbonbutton-class.md#ondraw).)|
-|[CMFCRibbonCheckBox::OnDrawMenuImage](#ondrawmenuimage)|(Overrides [CMFCRibbonBaseElement::OnDrawMenuImage](../../mfc/reference/cmfcribbonbaseelement-class.md#ondrawmenuimage).)|
-|[CMFCRibbonCheckBox::OnDrawOnList](#ondrawonlist)|(Überschreibt `CMFCRibbonButton::OnDrawOnList`.)|
-|[CMFCRibbonCheckBox::SetACCData](#setaccdata)|(Überschreibt [cmfcribbonbutton:: Setaccdata](../../mfc/reference/cmfcribbonbutton-class.md#setaccdata).)|
+|[CMF cribboncheckbox:: getcompactsize](#getcompactsize)|(Überschreibt [cmfcribbonbutton:: getcompactsize](../../mfc/reference/cmfcribbonbutton-class.md#getcompactsize).)|
+|[CMF cribboncheckbox:: getintermediatesize](#getintermediatesize)|(Überschreibt [cmfcribbonbutton:: getintermediatesize](../../mfc/reference/cmfcribbonbutton-class.md#getintermediatesize).)|
+|[CMF cribboncheckbox:: getregularsize](#getregularsize)|(Überschreibt [cmfcribbonbutton:: getregularsize](../../mfc/reference/cmfcribbonbutton-class.md#getregularsize).)|
+|[CMF cribboncheckbox:: isdrawtooltipimage](#isdrawtooltipimage)|(Überschreibt `CMFCRibbonButton::IsDrawTooltipImage`.)|
+|[CMF cribboncheckbox:: OnDraw](#ondraw)|(Überschreibt [cmfcribbonbutton:: OnDraw](../../mfc/reference/cmfcribbonbutton-class.md#ondraw).)|
+|[CMF cribboncheckbox:: ondrawmenuimage](#ondrawmenuimage)|(Überschreibt [CMF cribbonbaseelement:: ondrawmenuimage](../../mfc/reference/cmfcribbonbaseelement-class.md#ondrawmenuimage).)|
+|[CMF cribboncheckbox:: ondrawonlist](#ondrawonlist)|(Überschreibt `CMFCRibbonButton::OnDrawOnList`.)|
+|[CMF cribboncheckbox:: setaccdata](#setaccdata)|(Überschreibt [cmfcribbonbutton:: setaccdata](../../mfc/reference/cmfcribbonbutton-class.md#setaccdata).)|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Fügen Sie zum Verwenden von `CMFCRibbonCheckBox` in Ihrer Anwendung Ihrem Code den folgenden Konstruktor hinzu:
 
 ```
 CMFCRibbonCheckBox (UINT nID, LPCTSTR lpszText)
 ```
-wo *nID* ist die kontrollkästchenbefehls-ID und *LpszText* ist die textbezeichnung des Kontrollkästchens.
 
-Sie können das Kontrollkästchen zum Menübandbereich hinzufügen, indem Sie mithilfe von [cmfcribbonpanel:: Add](../../mfc/reference/cmfcribbonpanel-class.md#add).
+Dabei ist *NID* die Befehls-ID des Kontrollkästchens, und *lpszText* ist die Text Bezeichnung des Kontrollkästchens.
+
+Sie können einem Menü Band Bereich mithilfe von [CMFCRibbonPanel:: Add](../../mfc/reference/cmfcribbonpanel-class.md#add)ein Kontrollkästchen hinzufügen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -81,15 +82,15 @@ Sie können das Kontrollkästchen zum Menübandbereich hinzufügen, indem Sie mi
 
 [CMFCRibbonButton](../../mfc/reference/cmfcribbonbutton-class.md)
 
-[CMFCRibbonCheckBox](../../mfc/reference/cmfcribboncheckbox-class.md)
+[Cmocribboncheckbox](../../mfc/reference/cmfcribboncheckbox-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afxribboncheckbox.h
+**Header:** afxribboncheckbox. h
 
-##  <a name="cmfcribboncheckbox"></a>  CMFCRibbonCheckBox::CMFCRibbonCheckBox
+##  <a name="cmfcribboncheckbox"></a>CMF cribboncheckbox:: CMF cribboncheckbox
 
-Der Konstruktor eines Objekts der Menüband-Kontrollkästchen
+Konstruktor eines Menüband-Kontrollkästchen Objekts
 
 ```
 CMFCRibbonCheckBox(
@@ -99,25 +100,25 @@ CMFCRibbonCheckBox(
 
 ### <a name="parameters"></a>Parameter
 
-*nID*<br/>
-[in] Gibt die Befehls-ID.
+*NID*<br/>
+in Gibt die Befehls-ID an.
 
 *lpszText*<br/>
-[in] Gibt die Bezeichnung.
+in Gibt die Text Bezeichnung an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Erstellt ein Objekt der Menüband-Kontrollkästchen.
+Erstellt ein Menüband-Kontrollkästchen-Objekt.
 
 ### <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie zum Erstellen eines Objekts von der `CMFCRibbonCheckBox` Klasse.
+Im folgenden Beispiel wird veranschaulicht, wie ein Objekt der `CMFCRibbonCheckBox`-Klasse erstellt wird.
 
 [!code-cpp[NVC_MFC_RibbonApp#17](../../mfc/reference/codesnippet/cpp/cmfcribboncheckbox-class_1.cpp)]
 
-##  <a name="getcompactsize"></a>  CMFCRibbonCheckBox::GetCompactSize
+##  <a name="getcompactsize"></a>CMF cribboncheckbox:: getcompactsize
 
-Ruft beim Überschreiben wird die komprimierte Größe des Kontrollkästchens ab.
+Ruft beim Überschreiben die kompakte Größe des Kontrollkästchens ab.
 
 ```
 virtual CSize GetCompactSize(CDC* pDC);
@@ -126,19 +127,19 @@ virtual CSize GetCompactSize(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Zeiger auf die mit dem Kontrollkästchen Verknüpfte CDC.
+in Zeiger auf den CDC, der dem Kontrollkästchen zugeordnet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine `CSize` Objekt, das die komprimierte Größe des Kontrollkästchens enthält.
+Gibt ein `CSize` Objekt zurück, das die kompakte Größe des Kontrollkästchens enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie nicht überschrieben wird, gibt die fortgeschrittene Größe des Kontrollkästchens zurück.
+Wenn Sie nicht überschrieben wird, wird die zwischen Größe des Kontrollkästchens zurückgegeben.
 
-##  <a name="getintermediatesize"></a>  CMFCRibbonCheckBox::GetIntermediateSize
+##  <a name="getintermediatesize"></a>CMF cribboncheckbox:: getintermediatesize
 
-Ruft die fortgeschrittene Größe des Kontrollkästchens.
+Ruft die zwischen Größe des Kontrollkästchens ab.
 
 ```
 virtual CSize GetIntermediateSize(CDC* pDC);
@@ -147,17 +148,17 @@ virtual CSize GetIntermediateSize(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Zeiger auf den mit diesem Kontrollkästchen Verknüpfte CDC.
+in Zeiger auf den CDC, der diesem Kontrollkästchen zugeordnet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CSize` Objekt mit der intermediate Größe des Kontrollkästchens.
+Ein `CSize`-Objekt, das die zwischen Größe des Kontrollkästchens enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie nicht überschrieben wird, berechnet die fortgeschrittene Größe als die Standardgröße des Kontrollkästchen ( `AFX_CHECK_BOX_DEFAULT_SIZE`) sowie die Textgröße zuzüglich der Ränder.
+Wenn Sie nicht überschrieben wird, berechnet die zwischen Größe als Standardgröße des Kontrollkästchens (`AFX_CHECK_BOX_DEFAULT_SIZE`) zuzüglich der Textgröße Plus Ränder.
 
-##  <a name="getregularsize"></a>  CMFCRibbonCheckBox::GetRegularSize
+##  <a name="getregularsize"></a>CMF cribboncheckbox:: getregularsize
 
 Ruft die reguläre Größe des Kontrollkästchens ab.
 
@@ -168,19 +169,19 @@ virtual CSize GetRegularSize(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Zeiger auf die CDC-Objekt, das mit diesem Kontrollkästchen verknüpft ist.
+in Zeiger auf das CDC-Objekt, das diesem Kontrollkästchen zugeordnet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt eine `CSize` Objekt, das die reguläre Größe des Kontrollkästchens enthält.
+Gibt ein `CSize` Objekt zurück, das die reguläre Größe des Kontrollkästchens enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie nicht überschrieben wird, gibt die fortgeschrittene Größe des Kontrollkästchens zurück.
+Wenn Sie nicht überschrieben wird, wird die zwischen Größe des Kontrollkästchens zurückgegeben.
 
-##  <a name="isdrawtooltipimage"></a>  CMFCRibbonCheckBox::IsDrawTooltipImage
+##  <a name="isdrawtooltipimage"></a>CMF cribboncheckbox:: isdrawtooltipimage
 
-Gibt an, ob ein QuickInfo-Image mit dem Kontrollkästchen Verknüpfte vorhanden ist.
+Gibt an, ob dem Kontrollkästchen ein QuickInfo-Bild zugeordnet ist.
 
 ```
 virtual BOOL IsDrawTooltipImage() const;
@@ -188,13 +189,13 @@ virtual BOOL IsDrawTooltipImage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Kontrollkästchen zugeordnet, oder FALSE, wenn kein QuickInfo-Image ist.
+Gibt true zurück, wenn dem Kontrollkästchen ein QuickInfo-Bild zugeordnet ist, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ondraw"></a>  CMFCRibbonCheckBox::OnDraw
+##  <a name="ondraw"></a>CMF cribboncheckbox:: OnDraw
 
-Wird aufgerufen, durch das Framework, das Kontrollkästchen, die mit einem angegebenen Gerätekontext gezeichnet werden soll.
+Wird von Framework aufgerufen, um das Kontrollkästchen mit einem angegebenen Gerätekontext zu zeichnen.
 
 ```
 virtual void OnDraw(CDC* pDC);
@@ -203,13 +204,13 @@ virtual void OnDraw(CDC* pDC);
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Zeiger auf den CDC, in dem Sie das Kontrollkästchen gezeichnet werden soll.
+in Zeiger auf den CDC, in dem das Kontrollkästchen gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ondrawmenuimage"></a>  CMFCRibbonCheckBox::OnDrawMenuImage
+##  <a name="ondrawmenuimage"></a>CMF cribboncheckbox:: ondrawmenuimage
 
-Wird aufgerufen, durch das Framework zum Zeichnen eines Bilds im Menü für das Kontrollkästchen.
+Wird von Framework aufgerufen, um ein Menübild für das Kontrollkästchen zu zeichnen.
 
 ```
 virtual BOOL OnDrawMenuImage(CDC*, CRect);
@@ -217,23 +218,23 @@ virtual BOOL OnDrawMenuImage(CDC*, CRect);
 
 ### <a name="parameters"></a>Parameter
 
-[in] *CDC&#42;*<br/>
-Zeiger auf die mit dem Kontrollkästchen Verknüpfte CDC.
+in *CDC&#42;*<br/>
+Zeiger auf den CDC, der dem Kontrollkästchen zugeordnet ist.
 
 *CRect*<br/>
-[in] Ein `CRect` Objekt, das das Rechteck in der zum Zeichnen des Bilds im Menü angibt.
+in Ein `CRect`-Objekt, das das Rechteck angibt, in dem das Menübild gezeichnet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn das Bild gezeichnet wurde, bzw. FALSE, wenn nicht.
+Gibt true zurück, wenn das Bild gezeichnet wurde, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie nicht überschrieben wird, gibt "false" zurück.
+Wenn Sie nicht überschrieben wird, wird false zurückgegeben.
 
-##  <a name="ondrawonlist"></a>  CMFCRibbonCheckBox::OnDrawOnList
+##  <a name="ondrawonlist"></a>CMF cribboncheckbox:: ondrawonlist
 
-Wird aufgerufen, durch das Framework zum Zeichnen des Kontrollkästchens in einem Listenfeld Befehle.
+Wird von Framework aufgerufen, um das Kontrollkästchen in einem Befehle-Listenfeld zu zeichnen.
 
 ```
 virtual void OnDrawOnList(
@@ -248,28 +249,28 @@ virtual void OnDrawOnList(
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Zeiger auf den Gerätekontext, in dem Sie das Kontrollkästchen gezeichnet werden soll.
+in Zeiger auf den Gerätekontext, in dem das Kontrollkästchen gezeichnet werden soll.
 
-*strText*<br/>
+*Text*<br/>
 [in] Der Anzeigetext.
 
-*nTextOffset*<br/>
-[in] Der Abstand in Pixel von der linken Seite des Listenfelds auf den anzuzeigenden Text.
+*ntexumffset*<br/>
+in Der Abstand von der linken Seite des Listen Felds zum Anzeige Text in Pixel.
 
-*rect*<br/>
-[in] Das Anzeigerechteck für das Kontrollkästchen.
+*Rect*<br/>
+in Das Anzeige Rechteck für das Kontrollkästchen.
 
-*bIsSelected*<br/>
-[in] True, wenn Sie das Kontrollkästchen ausgewählten bzw. FALSE, wenn nicht.
+*bissgewählt*<br/>
+in TRUE, wenn das Kontrollkästchen aktiviert ist, andernfalls false.
 
-*bHighlighted*<br/>
-[in] True, wenn Sie das Kontrollkästchen hervorgehobenen bzw. FALSE, wenn nicht.
+*bhervor gehoben*<br/>
+in TRUE, wenn das Kontrollkästchen markiert ist, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setaccdata"></a>  CMFCRibbonCheckBox::SetACCData
+##  <a name="setaccdata"></a>CMF cribboncheckbox:: setaccdata
 
-Legt die barrierefreiheitsdaten für das Kontrollkästchen.
+Legt die Barrierefreiheits Daten für das Kontrollkästchen fest.
 
 ```
 virtual BOOL SetACCData(
@@ -279,21 +280,21 @@ virtual BOOL SetACCData(
 
 ### <a name="parameters"></a>Parameter
 
-*pParent*<br/>
+*pparent*<br/>
 Das übergeordnete Fenster des Kontrollkästchens.
 
 *data*<br/>
-Die barrierefreiheitsdaten für das Kontrollkästchen.
+Die Barrierefreiheits Daten für das Kontrollkästchen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt immer "true" zurück.
+Gibt immer true zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig wird diese Methode legt die barrierefreiheitsdaten für das Kontrollkästchen fest und gibt immer "true" zurück. Setzen Sie diese Methode außer Kraft, um die Barrierefreiheitsdaten festzulegen und einen Wert zurückzugeben, der den Erfolg oder einen Fehler angibt.
+Standardmäßig legt diese Methode die Barrierefreiheits Daten für das Kontrollkästchen fest und gibt immer true zurück. Setzen Sie diese Methode außer Kraft, um die Barrierefreiheitsdaten festzulegen und einen Wert zurückzugeben, der den Erfolg oder einen Fehler angibt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

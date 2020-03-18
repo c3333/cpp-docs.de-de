@@ -85,11 +85,11 @@ helpviewer_keywords:
 - CMenu [MFC], m_hMenu
 ms.assetid: 40cacfdc-d45c-4ec7-bf28-991c72812499
 ms.openlocfilehash: 1cd7be72dc6c9a38fae4f5ccc1a15c184a2d4466
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855636"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426240"
 ---
 # <a name="cmenu-class"></a>CMenu-Klasse
 
@@ -581,7 +581,7 @@ UINT EnableMenuItem(
 Gibt das zu aktivierende Menü Element an, das von *nenable*bestimmt wird. Mit diesem Parameter können Popup Menü Elemente und Standardmenü Elemente angegeben werden.
 
 *nenable*<br/>
-Gibt die auszuführende Aktion an. Dabei kann es sich um eine Kombination aus MF_DISABLED, MF_ENABLED oder MF_GRAYED mit MF_BYCOMMAND oder MF_BYPOSITION handeln. Diese Werte können mit dem bitweisen OR-Operator kombiniert werden. Diese Werte haben folgende Bedeutungen:
+Gibt die auszuführende Aktion an. Dabei kann es sich um eine Kombination aus MF_DISABLED, MF_ENABLED oder MF_GRAYED mit MF_BYCOMMAND oder MF_BYPOSITION handeln. Diese Werte können mit dem bitweisen OR-Operator kombiniert werden. Diese Werte haben die folgenden Bedeutungen:
 
 - MF_BYCOMMAND gibt an, dass der Parameter die Befehls-ID des vorhandenen Menü Elements angibt. Dies ist die Standardeinstellung.
 
@@ -795,7 +795,7 @@ UINT GetMenuState(
 Gibt die von *nFlags*festgelegte Menü Element-ID an.
 
 *nFlags*<br/>
-Gibt die Art *NID*an. Dies kann einer der folgenden Werte sein:
+Gibt die Art *NID*an. Es kann sich um einen der folgenden Werte handeln:
 
 - MF_BYCOMMAND gibt an, dass der Parameter die Befehls-ID des vorhandenen Menü Elements angibt. Dies ist die Standardeinstellung.
 
@@ -857,7 +857,7 @@ Ein Verweis auf ein `CString` Objekt, das die kopierte Menü Zeichenfolge empfan
 Gibt die maximale Länge (in Zeichen) der zu kopierenden Bezeichnung an. Wenn die Bezeichnung länger als der in *nMaxCount*angegebene Höchstwert ist, werden die zusätzlichen Zeichen abgeschnitten.
 
 *nFlags*<br/>
-Gibt die Interpretation des *niditem* -Parameters an. Dies kann einer der folgenden Werte sein:
+Gibt die Interpretation des *niditem* -Parameters an. Es kann sich um einen der folgenden Werte handeln:
 
 |nFlags|Interpretation von niditem|
 |------------|-------------------------------|

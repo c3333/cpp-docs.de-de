@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Microsoft::WRL::Module::ReleaseNotifier::ReleaseNotifier, constructor
 ms.assetid: 17249cd1-4d88-42e3-8146-da9e942d12bd
 ms.openlocfilehash: 5fc1b8965bf8bf2f86dd30f2195fa825f85f6d7e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865586"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423627"
 ---
 # <a name="modulereleasenotifier-class"></a>Module::ReleaseNotifier-Klasse
 
@@ -32,18 +32,18 @@ Ruft einen Ereignishandler auf, wenn das letzte-Objekt in einem Modul freigegebe
 class ReleaseNotifier;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                                                                | BESCHREIBUNG
+Name                                                                                | Beschreibung
 ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------
 [Module:: releasenotifier:: ~ releasenotifier](#releasenotifier-tilde-releasenotifier) | Deinitialisiert die aktuelle Instanz der `Module::ReleaseNotifier`-Klasse.
-[Module:: releasenotifier:: releasenotifier](#releasenotifier-releasenotifier)        | Initialisiert eine neue Instanz der Klasse `Module::ReleaseNotifier`.
+[Module:: releasenotifier:: releasenotifier](#releasenotifier-releasenotifier)        | Initialisiert eine neue Instanz der `Module::ReleaseNotifier`-Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                         | BESCHREIBUNG
+Name                                                         | Beschreibung
 ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------
 [Module:: releasenotifier:: aufrufen](#releasenotifier-invoke)   | Bei Implementierung wird ein Ereignishandler aufgerufen, wenn das letzte-Objekt in einem Modul freigegeben wird.
 [Module::ReleaseNotifier::Release](#releasenotifier-release) | Löscht das aktuelle `Module::ReleaseNotifier` Objekt, wenn das Objekt mit dem Parameter " **true**" erstellt wurde.
@@ -52,7 +52,7 @@ Name                                                         | BESCHREIBUNG
 
 `ReleaseNotifier`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Module. h
 
@@ -84,7 +84,7 @@ void Release() throw();
 
 ## <a name="releasenotifier-releasenotifier"></a>Module:: releasenotifier:: releasenotifier
 
-Initialisiert eine neue Instanz der Klasse `Module::ReleaseNotifier`.
+Initialisiert eine neue Instanz der `Module::ReleaseNotifier`-Klasse.
 
 ```cpp
 ReleaseNotifier(bool release) throw();

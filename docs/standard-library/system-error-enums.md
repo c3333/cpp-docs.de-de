@@ -6,11 +6,11 @@ f1_keywords:
 - system_error/std::io_errc
 ms.assetid: b21321b7-404a-40de-8777-a85b77c6fa58
 ms.openlocfilehash: cff8a58545409c4358cd303e41d27520edd5d552
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876267"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427560"
 ---
 # <a name="ltsystem_errorgt-enums"></a>&lt;system_error&gt;-Klasse
 
@@ -101,7 +101,7 @@ class errc {
 };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ## <a name="io_errc"></a>io_errc
 
@@ -113,7 +113,7 @@ class io_errc {
 };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [std::make_error_code()](../standard-library/system-error-functions.md#make_error_code) und [std::make_error_condition()](../standard-library/system-error-functions.md#make_error_condition) sind für diese Enumeration überladen.
 

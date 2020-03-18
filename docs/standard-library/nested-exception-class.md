@@ -2,18 +2,18 @@
 title: nested_exception-Klasse
 ms.date: 11/04/2016
 f1_keywords:
-- exception/std::bad_exception
+- exception/std::nested_exception
 helpviewer_keywords:
-- bad_exception class
+- nested_exception class
 ms.assetid: 5ae2c4ef-c7ad-4469-8a9e-a773e86bb000
-ms.openlocfilehash: 5741b3aa255f915500f5fe79ab5374c8c86f8814
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: ed58eb6cc074b54ae6801d2b11089af9a79f8c8f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460177"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441619"
 ---
-# <a name="nestedexception-class"></a>nested_exception-Klasse
+# <a name="nested_exception-class"></a>nested_exception-Klasse
 
 Die Klasse beschreibt eine Ausnahme für die Verwendung mit Mehrfachvererbung. Die aktuell behandelte Ausnahme wird erfasst und zur späteren Verwendung gespeichert.
 
@@ -28,7 +28,7 @@ class nested_exception {
 };
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="operators"></a>Operatoren
 
@@ -36,7 +36,7 @@ class nested_exception {
 |-|-|
 |[operator=](#op_as)||
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
 |||
 |-|-|
@@ -57,7 +57,7 @@ exception_ptr nested_ptr() const;
 
 #### <a name="return-value"></a>Rückgabewert
 
-Die von diesem `nested_exception` -Objekt erfasste gespeicherte Ausnahme.
+Die von diesem `nested_exception` Objekt erfasste gespeicherte Ausnahme.
 
 ### <a name="rethrow_nested"></a>rethrow_nested
 
@@ -65,17 +65,17 @@ Die von diesem `nested_exception` -Objekt erfasste gespeicherte Ausnahme.
 [[noreturn]] void rethrow_nested() const;
 ```
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
-Wenn `nested_ptr()` einen NULL-Zeiger zurückgibt, ruft `std::terminate()`die Funktion auf. Andernfalls wird die von `*this`erfasste gespeicherte Ausnahme ausgelöst.
+Wenn `nested_ptr()` einen NULL-Zeiger zurückgibt, ruft die Funktion `std::terminate()`auf. Andernfalls wird die von `*this`erfasste gespeicherte Ausnahme ausgelöst.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<exception>
+**Header:** \<Ausnahme >
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Exception-Klasse](../standard-library/exception-class.md)\
+[Ausnahme Klasse](../standard-library/exception-class.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

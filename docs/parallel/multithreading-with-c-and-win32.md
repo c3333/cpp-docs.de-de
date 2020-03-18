@@ -11,11 +11,11 @@ helpviewer_keywords:
 - threading [C]
 ms.assetid: 67cdc99e-1ad9-452b-a042-ed246b70040e
 ms.openlocfilehash: 1764561e0b2b43b8a89d8a1eb2e85d84ce33c4fc
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867052"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427356"
 ---
 # <a name="multithreading-with-c-and-win32"></a>Multithreading bei C und Win32
 
@@ -115,7 +115,7 @@ Es gibt mehrere Probleme, die beim Erstellen, verknüpfen oder Ausführen eines 
 |Sie erhalten ein Meldungs Feld, das anzeigt, dass Ihr Programm eine Schutz Verletzung verursacht hat.|Viele Win32-Programmierfehler verursachen Schutz Verletzungen. Eine häufige Ursache für Schutz Verletzungen ist die indirekte Zuweisung von Daten zu Null-Zeigern. Da das Programm versucht, auf den Speicher zuzugreifen, der nicht zu ihm gehört, wird eine Schutz Verletzung ausgegeben.<br /><br /> Eine einfache Möglichkeit, die Ursache eines Schutz Verstoßes zu erkennen, besteht darin, das Programm mit Debuginformationen zu kompilieren und es dann über den Debugger in der Visual Studio-Umgebung auszuführen. Wenn der Schutz Fehler auftritt, überträgt Windows die Steuerung an den Debugger, und der Cursor befindet sich in der Zeile, die das Problem verursacht hat.|
 |Das Programm generiert zahlreiche Kompilierungs-und Verknüpfungs Fehler.|Sie können viele potenzielle Probleme vermeiden, indem Sie die Warnstufe des Compilers auf einen der höchsten Werte und die Warnmeldungen festlegen. Mithilfe der Optionen auf Ebene 3 oder Ebene 4 Warnstufe können Sie unbeabsichtigte Datenkonvertierungen, fehlende Funktionsprototypen und die Verwendung von nicht-ANSI-Features erkennen.|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Multithreading-Unterstützung für älteren Code C++(Visual)](multithreading-support-for-older-code-visual-cpp.md)\
 [Beispiel für ein Multithreadprogramm in C](sample-multithread-c-program.md) -\
