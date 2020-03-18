@@ -15,11 +15,11 @@ helpviewer_keywords:
 - CFtpFileFind [MFC], GetFileURL
 ms.assetid: 9667cf01-657f-4b11-b9db-f11e5a7b4e4c
 ms.openlocfilehash: 2f4a394e29be135cac95edf6f504d8b066f53414
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866297"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425868"
 ---
 # <a name="cftpfilefind-class"></a>CFtpFileFind-Klasse
 
@@ -86,7 +86,7 @@ explicit CFtpFileFind(
 ### <a name="parameters"></a>Parameter
 
 *pConnection*<br/>
-Ein Zeiger auf ein `CFtpConnection`-Objekt. Sie können eine FTP-Verbindung abrufen, indem Sie [cinternetzession:: GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection)aufrufen.
+Ein Zeiger auf ein `CFtpConnection` -Objekt. Sie können eine FTP-Verbindung abrufen, indem Sie [cinternetzession:: GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection)aufrufen.
 
 *dwcontext*<br/>
 Der Kontext Bezeichner für das `CFtpFileFind` Objekt. Weitere Informationen zu diesem Parameter finden Sie unter " **Hinweise** ".

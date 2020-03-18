@@ -21,11 +21,11 @@ helpviewer_keywords:
 - CAtlModule class
 ms.assetid: 63fe02f1-4c4b-4e7c-ae97-7ad7b4252415
 ms.openlocfilehash: 798e94aed3bbd98108866ce0a1810485bd68699b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857143"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423423"
 ---
 # <a name="catlmodule-class"></a>Klasse von "Klasse"
 
@@ -37,18 +37,18 @@ Diese Klasse stellt Methoden bereit, die von mehreren ATL-Modul Klassen verwende
 class ATL_NO_VTABLE CAtlModule : public _ATL_MODULE
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["":](#catlmodule)|Der Konstruktor.|
 |["-Module":: ~ "Module"](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["" Für "": addcommonrgserersetzungen](#addcommonrgsreplacements)|Überschreiben Sie diese Methode, um der Registrierungs Komponente der ATL-Registrierungs Komponente Parameter hinzuzufügen.|
 |["-Module":: addtermfunc](#addtermfunc)|Fügt eine neue Funktion hinzu, die aufgerufen wird, wenn das Modul beendet wird.|
@@ -63,12 +63,12 @@ class ATL_NO_VTABLE CAtlModule : public _ATL_MODULE
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["-Module":: m_libid](#m_libid)|Enthält die GUID des aktuellen Moduls.|
 |["-Module":: m_pGIT](#m_pgit)|Zeiger auf die globale Schnittstellen Tabelle.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Klasse [wird von der](../../atl/reference/catldllmodulet-class.md)Klasse "" der Klasse "-Klasse", der Klasse "-Klasse" und der [Klasse](../../atl/reference/catlservicemodulet-class.md) "-Klasse" [verwendet, um](../../atl/reference/catlexemodulet-class.md)Unterstützung für dll-Anwendungen, exe-Anwendungen und Windows-Dienste bereitzustellen.
 
@@ -82,7 +82,7 @@ Diese Klasse ersetzt die veraltete [CComModule-Klasse](../../atl/reference/ccomm
 
 `CAtlModule`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -103,7 +103,7 @@ Reserviert.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ersetzbare Parameter ermöglichen es dem Client der Registrierungsstelle, Laufzeitdaten anzugeben. Zu diesem Zweck behält die Registrierungsstelle eine Ersatz Zuordnung bei, in die Sie die Werte eingibt, die den ersetzbaren Parametern in Ihrem Skript zugeordnet sind. Diese Einträge werden von der Registrierungsstelle zur Laufzeit erstellt.
 
@@ -137,7 +137,7 @@ Der Konstruktor.
 CAtlModule() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Initialisiert Datenmember und initiiert einen kritischen Abschnitt um den Thread des Moduls.
 
@@ -149,7 +149,7 @@ Der Destruktor.
 ~CAtlModule() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt alle Datenmember frei.
 
@@ -170,7 +170,7 @@ Ein Zeiger auf die Variable, die den Zeiger auf die globale Schnittstellen Tabel
 
 Gibt bei Erfolg S_OK oder einen Fehlercode bei einem Fehler zurück. E_POINTER wird zurückgegeben, wenn *ppgit* gleich NULL ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Table-Objekt der globalen Schnittstelle nicht vorhanden ist, wird es erstellt, und seine Adresse wird in der Element [m_pGIT](#m_pgit)Variablen "", "", "", "", "".
 
@@ -226,7 +226,7 @@ Gibt alle Datenmember frei.
 void Term() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt alle Datenmember frei. Diese Methode wird vom Dekonstruktor aufgerufen.
 
@@ -276,7 +276,7 @@ Ein Zeiger auf die Ersatz Zuordnung, die Werte speichert, die den ersetzbaren Pa
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Führt das Skript aus, das in der durch *lpszres oder nresid*angegebenen Ressource enthalten ist. Wenn *bregister* den Wert true hat, registriert diese Methode das Objekt in der Systemregistrierung. Andernfalls wird das Objekt aus der Registrierung entfernt.
 
@@ -310,7 +310,7 @@ Ein Zeiger auf die Ersatz Zuordnung, die Werte speichert, die den ersetzbaren Pa
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode bietet die [Implementierung von "](#updateregistryfromresourced)" für "".
 
@@ -348,11 +348,11 @@ Ein Zeiger auf die Ersatz Zuordnung, die Werte speichert, die den ersetzbaren Pa
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ähnlich wie [bei "" mit "](#updateregistryfromresourced) ", mit Ausnahme von `CAtlModule::UpdateRegistryFromResourceS` erstellt einen statischen Link zur ATL-Registrierungs Komponente.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_ATL_MODULE](atl-typedefs.md#_atl_module)<br/>
 [Klassen Übersicht](../../atl/atl-class-overview.md)<br/>

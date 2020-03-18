@@ -73,11 +73,11 @@ helpviewer_keywords:
 - CSplitterWnd [MFC], OnInvertTracker
 ms.assetid: fd0de258-6dbe-4552-9e47-a39de0471d51
 ms.openlocfilehash: 065735c13a3e763208142eb6bc989d3a496221f0
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890953"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426798"
 ---
 # <a name="csplitterwnd-class"></a>CSplitterWnd-Klasse
 
@@ -89,17 +89,17 @@ Stellt die Funktionalität eines unterteilten Fensters bereit. Dabei handelt es 
 class CSplitterWnd : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSplitterWnd:: CSplitterWnd](#csplitterwnd)|Ruft auf, um ein `CSplitterWnd` Objekt zu erstellen.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSplitterWnd:: activatenext](#activatenext)|Führt den nächsten Bereich oder den vorherigen Bereich-Befehl aus.|
 |[CSplitterWnd:: canactivatenext](#canactivatenext)|Prüft, ob der nächste Bereich oder der vorherige Bereich-Befehl derzeit möglich ist.|
@@ -133,13 +133,13 @@ class CSplitterWnd : public CWnd
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSplitterWnd:: OnDraw](#ondraw)|Wird von Framework aufgerufen, um das Splitter Fenster zu zeichnen.|
 |[CSplitterWnd:: ondrawsplitter](#ondrawsplitter)|Rendert ein Bild eines geteilten Fensters.|
 |[CSplitterWnd:: oninverttracker](#oninverttracker)|Rendert das Bild eines geteilten Fensters in dieselbe Größe und Form wie das Rahmen Fenster.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Bereich ist in der Regel ein anwendungsspezifisches Objekt, das von [CView](../../mfc/reference/cview-class.md)abgeleitet ist. es kann jedoch ein beliebiges [CWnd](../../mfc/reference/cwnd-class.md) -Objekt mit der entsprechenden untergeordneten Fenster-ID sein.
 
@@ -189,7 +189,7 @@ Weitere Informationen zum Erstellen dynamischer Splitter Fenster finden Sie unte
 
 `CSplitterWnd`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxext. h
 
@@ -206,7 +206,7 @@ virtual void ActivateNext(BOOL bPrev = FALSE);
 *bprev*<br/>
 Gibt an, welches Fenster aktiviert werden soll. **True** für Previous; **False** für Next.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion ist ein allgemeiner Befehl, der von der [CView](../../mfc/reference/cview-class.md) -Klasse verwendet wird, um an die `CSplitterWnd`-Implementierung zu delegieren.
 
@@ -227,7 +227,7 @@ Gibt an, welches Fenster aktiviert werden soll. **True** für Previous; **False*
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion ist ein allgemeiner Befehl, der von der [CView](../../mfc/reference/cview-class.md) -Klasse verwendet wird, um an die `CSplitterWnd`-Implementierung zu delegieren.
 
@@ -273,7 +273,7 @@ Die ID des untergeordneten Fensters des Fensters. Die ID kann AFX_IDW_PANE_FIRST
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können eine `CSplitterWnd` in ein übergeordnetes [CFrameWnd](../../mfc/reference/cframewnd-class.md) -oder [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md) -Objekt einbetten, indem Sie die folgenden Schritte ausführen:
 
@@ -315,7 +315,7 @@ Die ID des untergeordneten Fensters des Fensters. Die ID kann AFX_IDW_PANE_FIRST
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie `CreateScrollBarCtrl`, um zusätzliche Steuerelemente neben einer Schiebe Leiste einzuschließen. Standardmäßig werden normale Steuerelemente der Windows-Scrollleiste erstellt.
 
@@ -338,10 +338,10 @@ virtual BOOL CreateStatic(
 Das übergeordnete Rahmen Fenster des Splitter Fensters.
 
 *nRows*<br/>
-Die Anzahl der Zeilen. Dieser Wert darf nicht länger als 16 sein.
+Die Anzahl von Zeilen. Dieser Wert darf nicht länger als 16 sein.
 
 *ncols*<br/>
-Die Anzahl der Spalten. Dieser Wert darf nicht länger als 16 sein.
+Die Anzahl von Spalten. Dieser Wert darf nicht länger als 16 sein.
 
 *dwstyle*<br/>
 Gibt den Fenster Stil an.
@@ -353,7 +353,7 @@ Die ID des untergeordneten Fensters des Fensters. Die ID kann AFX_IDW_PANE_FIRST
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine `CSplitterWnd` wird in der Regel in ein übergeordnetes `CFrameWnd` oder [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md) -Objekt eingebettet, indem die folgenden Schritte ausgeführt werden:
 
@@ -407,7 +407,7 @@ Ein Zeiger auf einen Erstellungs Kontext, der zum Erstellen der Sicht verwendet 
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Bereiche eines statischen Splitter Fensters müssen erstellt werden, bevor das Framework den Splitter anzeigt.
 
@@ -425,7 +425,7 @@ Ruft auf, um ein `CSplitterWnd` Objekt zu erstellen.
 CSplitterWnd();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Erstellen Sie ein `CSplitterWnd`-Objekt in zwei Schritten. Rufen Sie zuerst den-Konstruktor auf, der das `CSplitterWnd`-Objekt erstellt, und rufen Sie dann die [Create](#create) Member-Funktion auf, die das Splitter Fenster erstellt und an das `CSplitterWnd`-Objekt anfügt.
 
@@ -442,7 +442,7 @@ virtual void DeleteColumn(int colDelete);
 *coldelete*<br/>
 Gibt die zu löschende Spalte an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um die Logik des dynamischen Splitter Fensters zu implementieren (d. h., wenn das Splitter Fenster den SPLS_DYNAMIC_SPLIT Stil hat). Es kann zusammen mit der virtuellen Funktion " [kreateview](#createview)" angepasst werden, um erweiterte dynamische Splitters zu implementieren.
 
@@ -459,7 +459,7 @@ virtual void DeleteRow(int rowDelete);
 *RowDelete*<br/>
 Gibt die zu löschende Zeile an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um die Logik des dynamischen Splitter Fensters zu implementieren (d. h., wenn das Splitter Fenster den SPLS_DYNAMIC_SPLIT Stil hat). Es kann zusammen mit der virtuellen Funktion " [kreateview](#createview)" angepasst werden, um erweiterte dynamische Splitters zu implementieren.
 
@@ -481,7 +481,7 @@ Gibt die Splitter Fenster Zeile an, in der die Ansicht gelöscht werden soll.
 *col*<br/>
 Gibt die Splitter Fenster Spalte an, in der die Ansicht gelöscht werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die aktive Ansicht gelöscht wird, wird die nächste Ansicht aktiviert. Die Standard Implementierung geht davon aus, dass die Sicht in [PostNcDestroy](../../mfc/reference/cwnd-class.md#postncdestroy)automatisch gelöscht wird.
 
@@ -499,7 +499,7 @@ virtual BOOL DoKeyboardSplit();
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion ist ein allgemeiner Befehl, der von der [CView](../../mfc/reference/cview-class.md) -Klasse verwendet wird, um an die `CSplitterWnd`-Implementierung zu delegieren.
 
@@ -541,7 +541,7 @@ Bestimmt, ob die angegebene scrollaktion auftritt. Wenn *bdoscroll* true ist (d.
 
 Ungleich 0 (null), wenn synchronisierter Bildlauf auftritt andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um ein synchronisiertes Scrollen von geteilten Fenstern auszuführen, wenn die Ansicht eine Bild Lauf Nachricht empfängt. Überschreiben Sie, um eine Aktion durch den Benutzer anzufordern, bevor das Synchronisierungs Verhalten zulässig ist.
 
@@ -571,7 +571,7 @@ Bestimmt, ob die angegebene scrollaktion auftritt. Wenn *bdoscroll* true ist (d.
 
 Ungleich 0 (null), wenn synchronisierter Bildlauf auftritt andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework als Reaktion auf eine Bild Lauf Nachricht aufgerufen, um das synchronisierte Scrollen der geteilten Fenster um den von *sizescroll*gekennzeichneten Wert in Pixel auszuführen. Positive Werte geben den Bildlauf nach unten und nach rechts an. negative Werte geben den Bildlauf nach oben und nach links an.
 
@@ -599,7 +599,7 @@ Ein Zeiger auf einen **int** -Wert zum Abrufen der Spaltennummer des aktiven Ber
 
 Zeiger auf den aktiven Bereich. NULL, wenn kein aktiver Bereich vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um den aktiven Bereich in einem Splitter Fenster zu bestimmen. Überschreiben Sie, um eine Aktion durch den Benutzer vor dem aktiven Bereich anzufordern.
 
@@ -693,7 +693,7 @@ Verweis auf den **int** -Wert, der auf die aktuelle Höhe der Zeile in Pixel fes
 *Cymin*<br/>
 Verweis auf den **int** -Wert, der auf die aktuelle Mindesthöhe der Zeile in Pixel festgelegt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Member-Funktion auf, um Informationen über die angegebene Zeile abzurufen. Der *cycur* -Parameter wird mit der aktuellen Höhe der angegebenen Zeile und *Cymin* mit der Mindesthöhe der Zeile aufgefüllt.
 
@@ -737,7 +737,7 @@ Gibt die Splitter Fenster Spalte an.
 
 Die ID des untergeordneten Fensters für den Bereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird zum Erstellen von nicht Sichten als Bereiche verwendet und kann aufgerufen werden, bevor der Bereich vorhanden ist.
 
@@ -771,7 +771,7 @@ Ein Zeiger auf einen **int** -Wert, in dem eine Spaltennummer gespeichert werden
 
 Wenn der Wert ungleich 0 (null) ist, ist *pwnd* zurzeit ein untergeordneter Bereich dieses Splitter Fensters, und *Prow* und *pCol* werden mit der Position des Bereichs im Splitter Fenster ausgefüllt. Wenn *pwnd* kein untergeordneter Bereich dieses Splitter Fensters ist, wird 0 zurückgegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In visuellen C++ Versionen vor 6,0 wurde diese Funktion als
 
@@ -821,7 +821,7 @@ Ein Wert des `enum ESplitType`, bei dem es sich um einen der folgenden Werte han
 *Rect*<br/>
 Ein Verweis auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das die Größe und Form der geteilten Fenster angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um Sie zu zeichnen und die exakten Merkmale eines Splitter Fensters anzugeben. Überschreiben Sie `OnDrawSplitter` für die erweiterte Anpassung der Bilder für die verschiedenen grafischen Komponenten eines Splitter Fensters. Die Standardbilder ähneln dem Splitter in Microsoft Works für Windows oder Microsoft Windows 95/98, da die Schnittpunkte der Splitter leisten zusammengemischt werden.
 
@@ -840,7 +840,7 @@ virtual void OnInvertTracker(const CRect& rect);
 *Rect*<br/>
 Verweis auf ein `CRect` Objekt, das das nach Verfolgungs Rechteck angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird von Framework aufgerufen, während die Größe der Splitters geändert wird. Überschreiben Sie `OnInvertTracker` für die erweiterte Anpassung der Bilder des Splitter Fensters. Die Standardbilder ähneln dem Splitter in Microsoft Works für Windows oder Microsoft Windows 95/98, da die Schnittpunkte der Splitter leisten zusammengemischt werden.
 
@@ -854,7 +854,7 @@ Aufrufen, um das Splitter Fenster erneut anzuzeigen, nachdem die Zeilen-oder Spa
 virtual void RecalcLayout();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie das Splitter Fenster ordnungsgemäß erneut anzeigen, nachdem Sie die Zeilen-und Spaltengrößen mit den Member-Funktionen [setrowinfo](#setrowinfo) und [setcolumninfo](#setcolumninfo) angepasst haben. Wenn Sie die Zeilen-und Spaltengrößen im Rahmen des Erstellungs Prozesses ändern, bevor das Splitter Fenster sichtbar ist, ist es nicht erforderlich, diese Member-Funktion aufzurufen.
 
@@ -884,9 +884,9 @@ Wenn *pwnd* NULL ist, gibt die Zeile im Bereich an, die aktiv sein wird.
 Wenn *pwnd* NULL ist, gibt die Spalte im Bereich an, die aktiv sein wird.
 
 *folgenden*<br/>
-Ein Zeiger auf ein `CWnd`-Objekt. Wenn der Wert NULL ist, wird der durch *Row* und *Col* angegebene Bereich als aktiv festgelegt. Wenn nicht NULL, wird der Bereich angegeben, der als aktiv festgelegt ist.
+Ein Zeiger auf ein `CWnd` -Objekt. Wenn der Wert NULL ist, wird der durch *Row* und *Col* angegebene Bereich als aktiv festgelegt. Wenn nicht NULL, wird der Bereich angegeben, der als aktiv festgelegt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um einen Bereich als aktiv festzulegen, wenn der Benutzer den Fokus auf einen Bereich im Rahmen Fenster ändert. Sie können `SetActivePane` explizit aufzurufen, um den Fokus auf die angegebene Ansicht zu ändern.
 
@@ -914,7 +914,7 @@ Gibt eine ideale Breite für die Splitter Fenster Spalte in Pixel an.
 *cxMin*<br/>
 Gibt eine minimale Breite für die Splitter Fenster Spalte in Pixel an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie eine neue minimale Breite und ideale Breite für eine Spalte festlegen. Der minimale Spaltenwert bestimmt, wann die Spalte zu klein ist, damit Sie vollständig angezeigt wird.
 
@@ -946,7 +946,7 @@ Gibt eine ideale Höhe für die Splitter Fenster Zeile in Pixel an.
 *Cymin*<br/>
 Gibt die minimale Höhe der Splitter Fenster Zeile in Pixel an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie eine neue Mindesthöhe und eine optimale Höhe für eine Zeile festlegen. Der minimale Zeilen Wert bestimmt, wann die Zeile zu klein ist, damit Sie vollständig angezeigt wird.
 
@@ -969,7 +969,7 @@ Der neue scrollstil für die freigegebene Scrollleisten-Unterstützung des Split
 
 - WS_VSCROLL vertikale, freigegebene Schiebe leisten erstellen/anzeigen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem eine Schiebe Leiste erstellt wurde, wird Sie nicht zerstört, auch wenn `SetScrollStyle` ohne diesen Stil aufgerufen wird. Stattdessen werden diese Scrollleisten ausgeblendet. Dies ermöglicht es den Bild Lauf leisten, ihren Zustand beizubehalten, auch wenn Sie ausgeblendet sind. Nach dem Aufrufen von `SetScrollStyle` muss " [Neuberechnen](#recalclayout) " aufgerufen werden, damit alle Änderungen wirksam werden.
 
@@ -990,7 +990,7 @@ Die Position in Pixel, vor der die Teilung erfolgt.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird aufgerufen, wenn ein vertikales Splitter Fenster erstellt wird. `SplitColumn` gibt den Standard Speicherort an, an dem die Teilung erfolgt.
 
@@ -1013,7 +1013,7 @@ Die Position in Pixel, vor der die Teilung erfolgt.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird aufgerufen, wenn ein horizontales Splitter Fenster erstellt wird. `SplitRow` gibt den Standard Speicherort an, an dem die Teilung erfolgt.
 
@@ -1032,9 +1032,9 @@ virtual void OnDraw(CDC* pDC);
 *pDC*<br/>
 Ein Zeiger zu einem Gerätekontext.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-VIEWEX](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

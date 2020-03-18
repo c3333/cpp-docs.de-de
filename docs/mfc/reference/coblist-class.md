@@ -51,11 +51,11 @@ helpviewer_keywords:
 - CObList [MFC], SetAt
 ms.assetid: 80699c93-33d8-4f8b-b8cf-7b58aeab64ca
 ms.openlocfilehash: 2fc3a3643c675394de555f1411030e278bcee775
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855295"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424032"
 ---
 # <a name="coblist-class"></a>CObList-Klasse
 
@@ -67,17 +67,17 @@ funter stützt geordnete Listen mit nicht eindeutigen `CObject` Zeigern, auf die
 class CObList : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CObList:: CObList](#coblist)|Erstellt eine leere Liste für `CObject` Zeiger.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CObList:: AddHead](#addhead)|Fügt ein Element (oder alle Elemente in einer anderen Liste) zum Anfang der Liste hinzu (erstellt einen neuen Kopf).|
 |[CObList:: AddTail](#addtail)|Fügt ein Element (oder alle Elemente in einer anderen Liste) zum Ende der Liste hinzu (führt ein neues Ende aus).|
@@ -101,7 +101,7 @@ class CObList : public CObject
 |[CObList:: removetail](#removetail)|Entfernt das Element aus dem Ende der Liste.|
 |[CObList::](#setat)|Legt das Element an einer angegebenen Position fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CObList` Listen Verhalten sich wie doppelt verknüpfte Listen.
 
@@ -128,7 +128,7 @@ Weitere Informationen zur Verwendung von `CObList`finden Sie im Artikel [Sammlun
 
 `CObList`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcoll. h
 
@@ -160,7 +160,7 @@ In der folgenden Tabelle werden andere Element Funktionen angezeigt, die `CObLis
 |[CPtrList](../../mfc/reference/cptrlist-class.md)|**AddHead positionieren (void** <strong>\*</strong> `newElement` **);**<br /><br /> **void AddHead (CPtrList** <strong>\*</strong> `pNewList` **);**|
 |[CStringList](../../mfc/reference/cstringlist-class.md)|**Position AddHead (Konstante CString &** `newElement` **);**<br /><br /> **Position AddHead (LPCTSTR** `newElement` **);**<br /><br /> **void AddHead (CStringList** <strong>\*</strong> `pNewList` **);**|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Liste kann vor dem Vorgang leer sein.
 
@@ -199,7 +199,7 @@ Ein Zeiger auf eine andere `CObList` Liste. Die Elemente in " *pnewlist* " werde
 
 Die erste Version gibt den Positionswert des neu eingefügten Elements zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Liste kann vor dem Vorgang leer sein.
 
@@ -237,7 +237,7 @@ CObList(INT_PTR nBlockSize = 10);
 *nblocksize*<br/>
 Die Granularität der Speicher Belegung für die Erweiterung der Liste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Liste zunimmt, wird der Arbeitsspeicher in Einheiten von *nblocksize* -Einträgen zugeordnet. Wenn eine Speicher Belegung fehlschlägt, wird eine `CMemoryException` ausgelöst.
 
@@ -280,7 +280,7 @@ Die Startposition für die Suche.
 
 Ein Positionswert, der zum Abrufen von Iterationen oder Objekt Zeigern verwendet werden kann. NULL, wenn das Objekt nicht gefunden wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beachten Sie, dass die Zeiger Werte und nicht der Inhalt der-Objekte verglichen werden.
 
@@ -314,7 +314,7 @@ Der null basierte Index des Listen Elements, das gefunden werden soll.
 
 Ein Positionswert, der zum Abrufen von Iterationen oder Objekt Zeigern verwendet werden kann. NULL, wenn *nIndex* zu groß ist. (Das Framework generiert eine-Assertion, wenn *nIndex* negativ ist.)
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dabei wird ein sequenzieller Scan von der Spitze der Liste gestartet, wobei das *n*-te Element angehalten wird.
 
@@ -349,7 +349,7 @@ Ein Positionswert, der von einem vorherigen `GetHeadPosition` oder `Find` Member
 
 Weitere Informationen finden Sie in der Beschreibung des Rückgabewerts für [gezeige AD](#gethead).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie ist nicht mit einem Index identisch, und Sie können selbst keinen Positionswert verwenden. `GetAt` Ruft den `CObject` Zeiger ab, der einer bestimmten Position zugeordnet ist.
 
@@ -406,7 +406,7 @@ Wenn der Zugriff auf die Liste über einen Zeiger auf einen `const CObList`erfol
 
 Wenn der Zugriff auf die Liste direkt oder über einen Zeiger auf einen `CObList`erfolgt, gibt `GetHead` einen Verweis auf einen `CObject`-Zeiger zurück. Dies ermöglicht die Verwendung der-Funktion auf beiden Seiten einer Zuweisungsanweisung und ermöglicht so, dass die Listeneinträge geändert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Vor dem Aufrufen von `GetHead`müssen Sie sicherstellen, dass die Liste nicht leer ist. Wenn die Liste leer ist, wird die Debugversion des Microsoft Foundation Class-Bibliothek Assert. Verwenden Sie [IsEmpty](#isempty) , um zu überprüfen, ob die Liste Elemente enthält.
 
@@ -468,7 +468,7 @@ Ein Verweis auf einen Positionswert, der von einem vorherigen `GetNext`, `GetHea
 
 Weitere Informationen finden Sie in der Beschreibung des Rückgabewerts für [gezeige AD](#gethead).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können `GetNext` in einer Forward-Iterations Schleife verwenden, wenn Sie die ursprüngliche Position mit einem `GetHeadPosition`-oder `Find`-Aufrufpunkt einrichten.
 
@@ -519,7 +519,7 @@ Ein Verweis auf einen Positionswert, der von einem vorherigen `GetPrev` oder ein
 
 Weitere Informationen finden Sie in der Beschreibung des Rückgabewerts für [gezeige AD](#gethead).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können `GetPrev` in einer Reverse-Iterations Schleife verwenden, wenn Sie die ursprüngliche Position mit einem `GetTailPosition`-oder `Find`-Aufrufpunkt einrichten.
 
@@ -562,7 +562,7 @@ INT_PTR GetSize() const;
 
 Die Anzahl der Elemente in der Liste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Methode auf, um die Anzahl der Elemente in der Liste abzurufen.
 
@@ -592,7 +592,7 @@ const CObject*& GetTail() const;
 
 Weitere Informationen finden Sie in der Beschreibung des Rückgabewerts für [gezeige AD](#gethead).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Vor dem Aufrufen von `GetTail`müssen Sie sicherstellen, dass die Liste nicht leer ist. Wenn die Liste leer ist, wird die Debugversion des Microsoft Foundation Class-Bibliothek Assert. Verwenden Sie [IsEmpty](#isempty) , um zu überprüfen, ob die Liste Elemente enthält.
 
@@ -753,7 +753,7 @@ Entfernt alle Elemente aus dieser Liste und gibt den zugeordneten `CObList` Arbe
 void RemoveAll();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Liste bereits leer ist, wird kein Fehler generiert.
 
@@ -785,7 +785,7 @@ void RemoveAt(POSITION position);
 *position*<br/>
 Die Position des Elements, das aus der Liste entfernt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie ein Element aus einer `CObList`entfernen, entfernen Sie den Objekt Zeiger aus der Liste. Es liegt in ihrer Verantwortung, die Objekte selbst zu löschen.
 
@@ -826,7 +826,7 @@ CObject* RemoveHead();
 
 Der `CObject` Zeiger zuvor am Anfang der Liste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Vor dem Aufrufen von `RemoveHead`müssen Sie sicherstellen, dass die Liste nicht leer ist. Wenn die Liste leer ist, wird die Debugversion des Microsoft Foundation Class-Bibliothek Assert. Verwenden Sie [IsEmpty](#isempty) , um zu überprüfen, ob die Liste Elemente enthält.
 
@@ -855,7 +855,7 @@ CObject* RemoveTail();
 
 Ein Zeiger auf das Objekt, das sich am Ende der Liste befand.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Vor dem Aufrufen von `RemoveTail`müssen Sie sicherstellen, dass die Liste nicht leer ist. Wenn die Liste leer ist, wird die Debugversion des Microsoft Foundation Class-Bibliothek Assert. Verwenden Sie [IsEmpty](#isempty) , um zu überprüfen, ob die Liste Elemente enthält.
 
@@ -890,7 +890,7 @@ Die Position des festzulegenden Elements.
 *newElement*<br/>
 Der `CObject` Zeiger, der in die Liste geschrieben werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Variable vom Typ Position ist ein Schlüssel für die Liste. Sie ist nicht mit einem Index identisch, und Sie können selbst keinen Positionswert verwenden. `SetAt` schreibt den `CObject` Zeiger an die angegebene Position in der Liste.
 
@@ -917,7 +917,7 @@ a CAge at $4D98 40
 a CAge at $4DB8 65
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

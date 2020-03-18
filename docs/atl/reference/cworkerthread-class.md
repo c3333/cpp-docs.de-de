@@ -16,11 +16,11 @@ helpviewer_keywords:
 - CWorkerThread class
 ms.assetid: be79a832-1345-4a36-a13e-a406cc65286f
 ms.openlocfilehash: f1aa76514b98bbf12f8e516d3d54f68e8ef4dd7d
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78862920"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423141"
 ---
 # <a name="cworkerthread-class"></a>CWorkerThread-Klasse
 
@@ -41,24 +41,24 @@ class CWorkerThread
 *Thread Merkmale*<br/>
 Die Klasse, die die Thread Erstellungs Funktion bereitstellt, z. [b. crtthreadmerkmalen](../../atl/reference/crtthreadtraits-class.md) oder [Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md).
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-structures"></a>Geschützte Strukturen
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`WorkerClientEntry`||
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWorkerThread:: CWorkerThread](#cworkerthread)|Der Konstruktor für den Arbeits Thread.|
 |[CWorkerThread:: ~ CWorkerThread](#dtor)|Der Dekonstruktor für den Arbeits Thread.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWorkerThread:: addhandle](#addhandle)|Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, das Handle eines wabbaren Objekts hinzufügen.|
 |[CWorkerThread:: addTIMER](#addtimer)|Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, einen periodischen, aufnutzbaren Timer hinzufügen.|
@@ -68,7 +68,7 @@ Die Klasse, die die Thread Erstellungs Funktion bereitstellt, z. [b. crtthreadme
 |[CWorkerThread:: removehandle](#removehandle)|Mit dieser Methode können Sie ein Handle aus der Liste der aufnutzbaren Objekte entfernen.|
 |[CWorkerThread:: Shutdown](#shutdown)|Mit dieser Methode können Sie den Arbeits Thread beenden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 ### <a name="to-use-cworkerthread"></a>So verwenden Sie CWorkerThread
 
@@ -78,7 +78,7 @@ Die Klasse, die die Thread Erstellungs Funktion bereitstellt, z. [b. crtthreadme
 
 1. Ruft [CWorkerThread:: addhandle](#addhandle) mit dem Handle eines Kernel Objekts und einem Zeiger auf eine Implementierung von [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md)auf.
 
-   \- oder –
+   \- oder -
 
    Ruft [CWorkerThread:: addTIMER](#addtimer) mit einem Zeiger auf eine Implementierung von [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md)auf.
 
@@ -88,7 +88,7 @@ Die Klasse, die die Thread Erstellungs Funktion bereitstellt, z. [b. crtthreadme
 
 1. Um den Thread zu beenden, nennen Sie [CWorkerThread:: Shutdown](#shutdown).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlutil. h
 
@@ -118,7 +118,7 @@ Der Parameter, der an [iworkerthreadclient:: Execute](../../atl/reference/iworke
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [Iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pclient* aufgerufen, wenn das Handle, *hobject*, signalisiert wird.
 
@@ -152,7 +152,7 @@ vorgenommen Adresse der Handle-Variablen, die bei Erfolg das Handle für den neu
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [Iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pclient* aufgerufen, wenn der Timer signalisiert wird.
 
@@ -174,7 +174,7 @@ Der Destruktor.
 ~CWorkerThread() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft [CWorkerThread:: Shutdown](#shutdown)auf.
 
@@ -221,7 +221,7 @@ Ein vorhandener Arbeits Thread.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sollte aufgerufen werden, um das Objekt nach der Erstellung oder nach einem Aufruf von [CWorkerThread:: Shutdown](#shutdown)zu initialisieren.
 
@@ -246,7 +246,7 @@ Das Handle, das entfernt werden soll.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Handle entfernt wird, wird [iworkerthreadclient:: CloseHandle](../../atl/reference/iworkerthreadclient-interface.md#closehandle) für das zugeordnete Objekt aufgerufen, das an [addhandle](#addhandle)weitergeleitet wurde. Wenn dieser Rückruf fehlschlägt, ruft `CWorkerThread` die Windows [CloseHandle](/windows/win32/api/handleapi/nf-handleapi-closehandle) -Funktion für das Handle auf.
 
@@ -267,13 +267,13 @@ Die Zeit in Millisekunden, die auf das Herunterfahren des Arbeitsthreads gewarte
 
 Gibt bei Erfolg S_OK oder einen Fehler HRESULT bei einem Fehler zurück, z. b. wenn der Timeout Wert, *dwwait*, überschritten wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um das-Objekt wiederzuverwenden, rufen Sie [CWorkerThread:: Initialize](#initialize) nach dem Aufruf dieser Methode auf.
 
 Beachten Sie, dass das Aufrufen von `Shutdown` für ein Objekt, das mit einem Zeiger auf ein anderes `CWorkerThread` Objekt initialisiert wird, keine Auswirkung hat und immer S_OK zurückgibt
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Defaultthreadmerkmalen](atl-typedefs.md#defaultthreadtraits)<br/>
 [Klassen](../../atl/reference/atl-classes.md)<br/>

@@ -46,11 +46,11 @@ helpviewer_keywords:
 - RFX (record field exchange)
 ms.assetid: 6e4c5c1c-acb7-4c18-bf51-bf7959a696cd
 ms.openlocfilehash: 491b00fe65634acf7c8805dd471fa6e3cc62acf0
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78871652"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426606"
 ---
 # <a name="record-field-exchange-functions"></a>Funktionen für den Datensatzfeldaustausch
 
@@ -143,7 +143,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 *nMaxLength*<br/>
 Die maximal zulässige Länge der übertragenen Zeichenfolge oder des Arrays. Der Standardwert von *nMaxLength* ist 255. Zulässige Werte sind 1 bis INT_MAX. Das Framework ordnet diese Menge an Speicherplatz für die Daten zu. Um die optimale Leistung zu erzielen, übergeben Sie einen Wert, der groß genug ist, um das größte erwartete Datenelement zu verarbeiten
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten in der Datenquelle dieser Typen werden und vom Typ `CByteArray` im Recordset zugeordnet.
 
@@ -151,7 +151,7 @@ Daten in der Datenquelle dieser Typen werden und vom Typ `CByteArray` im Records
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -183,7 +183,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -215,7 +215,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -257,7 +257,7 @@ Die erste Version der Funktion nimmt einen Verweis auf ein [ctime](../../atl-mfc
 
 Die zweite Version der Funktion nimmt einen Verweis auf eine `TIMESTAMP_STRUCT` Struktur auf. Sie müssen diese Struktur selbst vor dem-Befehl einrichten. Für diese Version ist weder die Unterstützung für den Dialog Datenaustausch (DDX) noch die Unterstützung des Code-Assistenten verfügbar. Die dritte Version der-Funktion funktioniert ähnlich wie die erste Version, mit dem Unterschied, dass Sie einen Verweis auf ein [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Objekt annimmt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `CTime`-Version der-Funktion erzwingt den mehr Aufwand für einige zwischen Verarbeitung und hat einen etwas begrenzten Bereich. Wenn Sie einen dieser Faktoren zu eingeschränkt finden, verwenden Sie die zweite Version der Funktion. Beachten Sie jedoch den fehlenden Code-Assistenten und die DDX-Unterstützung sowie die Anforderung, dass Sie die Struktur selbst einrichten.
 
@@ -265,7 +265,7 @@ Die `CTime`-Version der-Funktion erzwingt den mehr Aufwand für einige zwischen 
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -297,7 +297,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -329,7 +329,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -362,7 +362,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -394,7 +394,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -426,7 +426,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -466,7 +466,7 @@ Wird hauptsächlich für Parameter verwendet. Eine ganze Zahl, die den Datentyp 
 *nskala*<br/>
 Gibt die Skala für Werte des ODBC-Typs SQL_DECIMAL oder SQL_NUMERIC an. *nscale* ist nur nützlich, wenn Parameterwerte festgelegt werden. Weitere Informationen finden Sie im Thema "Genauigkeit, Skalierung, Länge und Anzeige Größe" in Anhang D der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten in der Datenquelle all dieser Typen werden dem Recordset zugeordnet und aus `CString` zugeordnet.
 
@@ -492,7 +492,7 @@ void CCustomer::DoFieldExchange(CFieldExchange* pFX)
 }
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -528,7 +528,7 @@ Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die L�
 *nMaxLength*<br/>
 Die maximal zulässige Länge der im Array gespeicherten Werte, auf die durch *prgbytevals*verwiesen wird. Um sicherzustellen, dass die Daten nicht abgeschnitten werden, übergeben Sie einen Wert, der groß genug ist, um das größte erwartete Datenelement zu verarbeiten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte kann den ODBC-Typ SQL_BINARY, SQL_VARBINARY oder SQL_LONGVARBINARY aufweisen. Das Recordset muss einen Felddatenmember vom Typ "Zeiger auf Byte" definieren.
 
@@ -543,7 +543,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -575,7 +575,7 @@ Ein Zeiger auf ein Array von booleschen Werten. Dieses Array speichert die Daten
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array in Bytes, auf die durch *prgboolvals*verwiesen wird. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte muss den ODBC-Typ "SQL_BIT" aufweisen. Das Recordset muss einen Felddatenmember vom Typ Zeiger auf bool definieren.
 
@@ -590,7 +590,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -622,7 +622,7 @@ Ein Zeiger auf ein Array von Byte Werten. Dieses Array speichert die Daten, die 
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array, auf die von *prgbytevals*verwiesen wird, in Byte. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte muss den ODBC-Typ "SQL_TINYINT" aufweisen. Das Recordset muss einen Felddatenmember vom Typ "Zeiger auf Byte" definieren.
 
@@ -637,7 +637,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -669,7 +669,7 @@ Ein Zeiger auf ein Array von TIMESTAMP_STRUCT Werten. Dieses Array speichert die
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array in Bytes, auf die durch *prgtvals*verwiesen wird. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte kann den ODBC-Typ SQL_DATE, SQL_TIME oder SQL_TIMESTAMP aufweisen. Das Recordset muss einen Felddatenmember vom Typ Zeiger auf TIMESTAMP_STRUCT definieren.
 
@@ -684,7 +684,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -716,7 +716,7 @@ Ein Zeiger auf ein Array von **Double** -Werten. Dieses Array speichert die Date
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array in Bytes, auf die durch *prdsblvals*verwiesen wird. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte muss den ODBC-Typ "SQL_DOUBLE" aufweisen. Das Recordset muss einen Felddatenmember vom Typ Zeiger auf **Double**definieren.
 
@@ -731,7 +731,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -763,7 +763,7 @@ Der im angegebener Datenmember gespeicherte Wert – der Wert, der übertragen w
 
 Siehe [RFX_Text](#rfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -795,7 +795,7 @@ Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Da
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array in Bytes, auf die von *prglongvals*verwiesen wird. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte muss den ODBC-Typ "SQL_INTEGER" aufweisen. Das Recordset muss einen Felddatenmember vom Typ "Zeiger auf **Long**" definieren.
 
@@ -810,7 +810,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -842,7 +842,7 @@ Ein Zeiger auf ein Array von **float** -Werten. Dieses Array speichert die Daten
 *prglengths*<br/>
 Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die Länge der einzelnen Werte im Array in Bytes, auf die von *prgfltvals*verwiesen wird. Beachten Sie, dass der Wert SQL_NULL_DATA gespeichert wird, wenn das entsprechende Datenelement einen NULL-Wert enthält. Weitere Informationen finden Sie in der ODBC-API-Funktion `SQLBindCol` in der *ODBC SDK-Programmier Referenz*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte muss den ODBC-Typ "SQL_REAL" aufweisen. Das Recordset muss einen Felddatenmember vom Typ Zeiger auf **float**definieren.
 
@@ -857,7 +857,7 @@ Weitere Informationen finden Sie in den Artikeln [Recordset: Abrufen von Datens�
 
 Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -893,7 +893,7 @@ Ein Zeiger auf ein Array von langen ganzen Zahlen. Dieses Array speichert die L�
 *nMaxLength*<br/>
 Die maximal zulässige Länge der im Array gespeicherten Werte, auf die durch *prgstranvals*verwiesen wird, einschließlich des NULL-Beendigungs Zeichens. Um sicherzustellen, dass die Daten nicht abgeschnitten werden, übergeben Sie einen Wert, der groß genug ist, um das größte erwartete Datenelement zu verarbeiten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Datenquellen Spalte kann den ODBC-Typ SQL_LONGVARCHAR, SQL_CHAR, SQL_VARCHAR, SQL_DECIMAL oder SQL_NUMERIC aufweisen. Das Recordset muss einen Felddatenmember des Typs LPSTR definieren.
 
@@ -923,7 +923,7 @@ void CMultiCustomer::DoBulkFieldExchange(CFieldExchange* pFX)
 }
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXDB. h
 
@@ -962,7 +962,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Daten für alle Felder standardmäßig doppelt gepuffert werden, indem Sie [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)festlegen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_BYTES in DAO zugeordnet und geben [CByteArray](cbytearray-class.md) in das Recordset ein.
 
@@ -970,7 +970,7 @@ Daten werden zwischen dem Typ DAO_BYTES in DAO zugeordnet und geben [CByteArray]
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1005,7 +1005,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_BOOL in DAO und dem Typ bool im Recordset zugeordnet.
 
@@ -1013,7 +1013,7 @@ Daten werden zwischen dem Typ DAO_BOOL in DAO und dem Typ bool im Recordset zuge
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1048,7 +1048,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_BYTES in DAO und dem Typ Byte im Recordset zugeordnet.
 
@@ -1056,7 +1056,7 @@ Daten werden zwischen dem Typ DAO_BYTES in DAO und dem Typ Byte im Recordset zug
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1091,7 +1091,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_CURRENCY in DAO und dem Typ [COleCurrency](colecurrency-class.md) im Recordset zugeordnet.
 
@@ -1099,7 +1099,7 @@ Daten werden zwischen dem Typ DAO_CURRENCY in DAO und dem Typ [COleCurrency](col
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1134,7 +1134,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_DATE in DAO und dem Typ [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) im Recordset zugeordnet.
 
@@ -1145,7 +1145,7 @@ Daten werden zwischen dem Typ DAO_DATE in DAO und dem Typ [COleDateTime](../../a
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1180,7 +1180,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_R8 in DAO und dem Typ **Double Float** im Recordset zugeordnet.
 
@@ -1188,7 +1188,7 @@ Daten werden zwischen dem Typ DAO_R8 in DAO und dem Typ **Double Float** im Reco
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1223,7 +1223,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_I4 in DAO und dem Typ **Long** im Recordset zugeordnet.
 
@@ -1231,7 +1231,7 @@ Daten werden zwischen dem Typ DAO_I4 in DAO und dem Typ **Long** im Recordset zu
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1270,7 +1270,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `DFX_LongBinary` wird für die Kompatibilität mit den MFC-ODBC-Klassen bereitgestellt. Die `DFX_LongBinary`-Funktion überträgt BLOB-Daten (Binary Large-Object) mithilfe von Klassen `CLongBinary` zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle. Daten werden zwischen dem Typ DAO_BYTES in DAO und dem Typ " [CLongBinary](clongbinary-class.md) " im Recordset zugeordnet.
 
@@ -1278,7 +1278,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1313,7 +1313,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_I2 in DAO und dem Typ **Short** im Recordset zugeordnet.
 
@@ -1324,7 +1324,7 @@ Daten werden zwischen dem Typ DAO_I2 in DAO und dem Typ **Short** im Recordset z
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1359,7 +1359,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_R4 in DAO und dem Typ **float** im Recordset zugeordnet.
 
@@ -1367,7 +1367,7 @@ Daten werden zwischen dem Typ DAO_R4 in DAO und dem Typ **float** im Recordset z
 
 Siehe [DFX_Text](#dfx_text).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
@@ -1406,7 +1406,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 > [!NOTE]
 >  Sie können steuern, ob die Datenstandard mäßig durch Festlegen von [CDaoRecordset:: m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)gepuffert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden zwischen dem Typ DAO_CHAR in DAO zugeordnet (oder, wenn das Symbol _UNICODE definiert ist, DAO_WCHAR), und geben [CString](../../atl-mfc-shared/reference/cstringt-class.md) in das Recordset ein.  n
 
@@ -1430,11 +1430,11 @@ void CCustSet::DoFieldExchange(CDaoFieldExchange* pFX)
 }
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdao.h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](mfc-macros-and-globals.md)<br/>
 [CRecordset::D ofieldexchange](crecordset-class.md#dofieldexchange)<br/>

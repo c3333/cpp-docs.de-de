@@ -18,11 +18,11 @@ helpviewer_keywords:
 - std::basic_string_view::operator&lt;&lt;
 - std::basic_string_view::operator&lt;=, std::basic_string_view::operator==
 ms.openlocfilehash: 699b1f1bddeb71ecbf03297d162a7e45ebd39609
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890914"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425058"
 ---
 # <a name="ltstring_viewgt-operators"></a>&lt;string_view&gt;-Operatoren
 
@@ -67,7 +67,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das Objekt links vom Operator nicht lexikografisch gleich dem Objekt auf der rechten Seite ist; andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es muss eine implizite Konvertierung von *convertible_string_type* zum string_view auf der anderen Seite vorhanden sein. 
 
@@ -106,7 +106,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das Objekt links vom Operator lexikografisch gleich dem Objekt auf der rechten Seite ist; andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es muss eine implizite Konvertierung von *convertible_string_type* zum string_view auf der anderen Seite vorhanden sein. 
 
@@ -145,7 +145,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das Objekt links vom Operator lexikografisch kleiner ist als das Objekt auf der rechten Seite. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es muss eine implizite Konvertierung von *convertible_string_type* zum string_view auf der anderen Seite vorhanden sein. 
 
@@ -206,7 +206,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das Objekt links vom Operator lexikografisch kleiner als oder gleich dem Objekt rechts vom Operator ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe [Operator&lt;](#op_lt).
 
@@ -232,7 +232,7 @@ Der string_view, der in einen Ausgabestream eingegeben werden soll.
 
 ein Ausgabestream, in den geschrieben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diesen Operator, um den Inhalt einer string_view in einen Ausgabestream einzufügen, z. b. mit [Std:: cout](iostream.md#cout).
 
@@ -269,7 +269,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das Objekt links vom Operator lexikografisch größer als das string_view Objekt rechts vom Operator ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe [Operator&lt;](#op_lt).
 
@@ -306,7 +306,7 @@ Alle konvertierbaren Zeichen folgen Typen oder Objekte des Typs `basic_string_vi
 
 **true** , wenn das-Objekt links vom Operator lexikografisch größer als oder gleich dem-Objekt rechts vom Operator ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe [Operator&lt;](#op_lt).
 
@@ -327,6 +327,6 @@ using namespace literals::string_view_literals;
     u32string_view sv32{ U"Hello"sv };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<string_view >](../standard-library/string-view.md)

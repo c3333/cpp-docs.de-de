@@ -8,11 +8,11 @@ helpviewer_keywords:
 - namespaces [C++]
 ms.assetid: d1a5a9ab-1cad-47e6-a82d-385bb77f4188
 ms.openlocfilehash: ae3006dd1b17ec38240a318af6cfcac5c7d6bf49
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856669"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423735"
 ---
 # <a name="namespaces-c"></a>Namespaces (C++)
 
@@ -264,6 +264,6 @@ namespace
 
 Dies wird als unbenannter oder anonymer Namespace bezeichnet und ist hilfreich, wenn Sie Variablen Deklarationen für Code in anderen Dateien unsichtbar machen möchten (d. h., Sie geben interne Verknüpfungen an), ohne einen benannten Namespace erstellen zu müssen. Der gesamte Code in einer bestimmten Datei kann die Bezeichner in einem unbenannten Namespace sehen, aber die Bezeichner, zusammen mit dem Namespace selbst, sind außerhalb dieser Datei nicht sichtbar – oder genauer gesagt außerhalb der Übersetzungseinheit.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Deklarationen und Definitionen](declarations-and-definitions-cpp.md)

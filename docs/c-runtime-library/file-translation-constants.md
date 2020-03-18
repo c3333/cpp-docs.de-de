@@ -1,8 +1,6 @@
 ---
 title: Dateiübersetzungskonstanten
 ms.date: 11/04/2016
-f1_keywords:
-- c.constants.file
 helpviewer_keywords:
 - translation constants
 - file translation [C++], constants
@@ -11,12 +9,12 @@ helpviewer_keywords:
 - constants [C++], file translation mode
 - file translation [C++]
 ms.assetid: 49b13bf3-442e-4d19-878b-bd1029fa666a
-ms.openlocfilehash: ed2fae935850837ebace880d78c206754b3061bd
-ms.sourcegitcommit: 878a164fe6d550ca81ab87d8425c8d3cd52fe384
-ms.translationtype: HT
+ms.openlocfilehash: 363d95e744ccdb45cf06b8303ae4b60c9ecd58c1
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68375920"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443257"
 ---
 # <a name="file-translation-constants"></a>Dateiübersetzungskonstanten
 
@@ -26,7 +24,7 @@ ms.locfileid: "68375920"
 #include <stdio.h>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Diese Konstanten geben den Modus der Übersetzung an ( **„b“** oder **„t“** ). Der Modus ist in der Zeichenfolge enthalten, die den Typ des Zugriffs angibt ( **„r“** , **„w“** , **„a“** , **„r+“** , **„w+“** , **„a+“** ).
 
@@ -45,10 +43,10 @@ Die Übersetzungsmodi lauten wie folgt:
 
 Wenn **t** oder **b** nicht in *mode* angegeben ist, wird der Übersetzungsmodus durch die Standardmodusvariable [_fmode](../c-runtime-library/fmode.md) definiert. Weitere Informationen zur Verwendung von Text- und Binärmodi finden Sie unter [Text- und Binärmodus-Datei-E/A](../c-runtime-library/text-and-binary-mode-file-i-o.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_fdopen, _wfdopen](../c-runtime-library/reference/fdopen-wfdopen.md)<br/>
 [fopen, _wfopen](../c-runtime-library/reference/fopen-wfopen.md)<br/>
 [freopen, _wfreopen](../c-runtime-library/reference/freopen-wfreopen.md)<br/>
 [_fsopen, _wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md)<br/>
-[Globale Konstanten](../c-runtime-library/global-constants.md)
+[Global Constants (Globale Konstanten)](../c-runtime-library/global-constants.md)

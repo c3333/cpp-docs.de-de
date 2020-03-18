@@ -6,11 +6,11 @@ f1_keywords:
 - scoped_allocator/std::operator==
 ms.assetid: 4dfe0805-cc6e-479f-887f-a1c164f73837
 ms.openlocfilehash: 071fc3b73cd3378b110d6d412bb7575e35a77478
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876334"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425172"
 ---
 # <a name="ltscoped_allocatorgt-operators"></a>&lt;scoped_allocator&gt;-Header
 
@@ -64,6 +64,6 @@ Das rechte `scoped_allocator_adaptor`-Objekt.
 
 `left.outer_allocator() == right.outer_allocator() && left.inner_allocator() == right.inner_allocator()`
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [<scoped_allocator>](../standard-library/scoped-allocator.md)

@@ -10,11 +10,11 @@ f1_keywords:
 - tuple/std::operator==
 ms.assetid: f25752dc-d3e2-4e12-b5ac-9a8682ca60ed
 ms.openlocfilehash: 5554f08f32048bafde5bdb2c316e12e1e01c6ffb
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866191"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427806"
 ---
 # <a name="lttuplegt-operators"></a>&lt;tuple&gt;-Operatoren
 
@@ -34,7 +34,7 @@ bool operator!=(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt FALSE zurück, wenn `N` 0 ist, andernfalls `get<0>(tpl1) != get<0>(tpl2) || get<1>(tpl1) != get<1>(tpl2) || ... || get<N - 1>(tpl1) == get<N - 1>(tpl2)`.
 
@@ -99,7 +99,7 @@ bool operator<(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt TRUE zurück, wenn `N` größer als 0 ist und der erste unterschiedliche Wert in `tpl1` kleiner als der entsprechende Wert in `tpl2` ist, andernfalls wird FALSE zurückgegeben.
 
@@ -164,7 +164,7 @@ bool operator<=(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt `!(tpl2 < tpl1)`zurück.
 
@@ -229,7 +229,7 @@ bool operator==(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt TRUE zurück, wenn `N` 0 ist, andernfalls `get<0>(tpl1) == get<0>(tpl2) && get<1>(tpl1) == get<1>(tpl2) && ... && get<N - 1>(tpl1) == get<N - 1>(tpl2)`.
 
@@ -294,7 +294,7 @@ bool operator>(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt `tpl2 < tpl1`zurück.
 
@@ -359,7 +359,7 @@ bool operator>=(const tuple<T1, T2, ..., TN>& tpl1,
 *TN* -\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt `!(tpl1 < tpl2)`zurück.
 

@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operatoroperator&lt; (optional)
 - std::operatoroperator&lt;= (optional)
 ms.openlocfilehash: c5d0de435180054b186400384fc0583df5b03246
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854059"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425286"
 ---
 # <a name="ltoptionalgt-operators"></a>optionale&gt; Operatoren &lt;
 
@@ -65,7 +65,7 @@ Ein Objekt vom Typ `optional`, `nullopt_t`oder `T`.
 *Rechte*\
 Ein Objekt vom Typ `optional`, `nullopt_t`oder `T`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `!(left == right)` zurück.
 
@@ -117,7 +117,7 @@ Ein Objekt vom Typ `optional`, `nullopt_t`oder `T`.
 
 **TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `!(right < left)` zurück.
 
@@ -145,7 +145,7 @@ Ein Objekt vom Typ `optional`, `nullopt_t`oder `T`.
 
 **TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `right < left` zurück.
 
@@ -173,6 +173,6 @@ Ein Objekt vom Typ `optional`, `nullopt_t`oder `T`.
 
 **TRUE**, wenn das `optional`-Objekt links vom Operator größer gleich dem `optional`-Objekt rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion gibt `!(left < right)` zurück.

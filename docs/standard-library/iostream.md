@@ -15,11 +15,11 @@ helpviewer_keywords:
 - iostream header
 ms.assetid: de5d39e1-7e77-4b55-bcd1-7c77b41515c8
 ms.openlocfilehash: 2906e802072c43a93c59ca40d15e032adeeeef97
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856524"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424644"
 ---
 # <a name="ltiostreamgt"></a>&lt;iostream&gt;
 
@@ -34,7 +34,7 @@ Deklariert Objekte, die das Auslesen und Schreiben in Standard-Streams steuern. 
 > [!NOTE]
 > Die \<iostream-> Bibliothek verwendet die Anweisungen `#include <ios>`, `#include <streambuf>`, `#include <istream>`und `#include <ostream>`.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Objekte können in zwei Gruppen unterteilt werden:
 
@@ -73,7 +73,7 @@ extern ostream cerr;
 
 Ein [ostream](../standard-library/ostream-typedefs.md#ostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert ungepufferte Einfügevorgänge in die Standardfehlerausgabe als Byte-Stream. Nachdem das Objekt erstellt wurde, ist der Ausdruck `cerr.`[Flags](../standard-library/ios-base-class.md#flags) `&` [Unitbuf](../standard-library/ios-functions.md#unitbuf) ungleich NULL und `cerr.tie() == &cout`.
 
@@ -119,7 +119,7 @@ extern istream cin;
 
 Ein [instream](../standard-library/istream-typedefs.md#istream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert Extraktionen aus der Standardausgabe als Byte-Stream. Sobald das Objekt konstruiert wurde, gibt der Aufruf `cin.`[tie](../standard-library/basic-ios-class.md#tie)`&`[cout](#cout) zurück.
 
@@ -170,7 +170,7 @@ extern ostream clog;
 
 Ein [ostream](../standard-library/ostream-typedefs.md#ostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert gepufferte Einfügevorgänge in die Standardfehlerausgabe als Byte-Stream.
 
@@ -190,7 +190,7 @@ extern ostream cout;
 
 Ein [ostream](../standard-library/ostream-typedefs.md#ostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert Einfügevorgänge für die Standardausgabe als Byte-Stream.
 
@@ -210,7 +210,7 @@ extern wostream wcerr;
 
 Ein [wostream](../standard-library/ostream-typedefs.md#wostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert ungepufferte Einfügevorgänge in die Standardfehlerausgabe als weiten Stream. Nachdem das Objekt erstellt wurde, ist der Ausdruck `wcerr.`[Flags](../standard-library/ios-base-class.md#flags) `&` [Unitbuf](../standard-library/ios-functions.md#unitbuf) ungleich 0 (null).
 
@@ -230,7 +230,7 @@ extern wistream wcin;
 
 Ein [wistream](../standard-library/istream-typedefs.md#wistream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert Extraktionen aus der Standardausgabe als weiten Stream. Sobald das Objekt konstruiert wurde, gibt der Aufruf `wcin.`[tie](../standard-library/basic-ios-class.md#tie)`&`[wcout](#wcout) zurück.
 
@@ -250,7 +250,7 @@ extern wostream wclog;
 
 Ein [wostream](../standard-library/ostream-typedefs.md#wostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert gepufferte Einfügevorgänge für die Standardfehlerausgabe als weiten Stream.
 
@@ -270,7 +270,7 @@ extern wostream wcout;
 
 Ein [wostream](../standard-library/ostream-typedefs.md#wostream)-Objekt.
 
-#### <a name="remarks"></a>Bemerkungen
+#### <a name="remarks"></a>Hinweise
 
 Das Objekt steuert Einfügevorgänge für die Standardausgabe als weiten Stream.
 
@@ -288,7 +288,7 @@ wcout <<(const wchar_t*) cs <<endl;
 
 Weitere Informationen finden Sie unter [Basic CString Operations](../atl-mfc-shared/basic-cstring-operations.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\

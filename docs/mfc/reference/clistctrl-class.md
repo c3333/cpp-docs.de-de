@@ -265,11 +265,11 @@ helpviewer_keywords:
 - CListCtrl [MFC], Update
 ms.assetid: fe08a1ca-4b05-4ff7-a12a-ee4c765a2197
 ms.openlocfilehash: c8f1b8a9ed0ca8437ba40e77b47448d1bb209d20
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855652"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424440"
 ---
 # <a name="clistctrl-class"></a>CListCtrl-Klasse
 
@@ -1788,7 +1788,7 @@ BOOL GetItemIndexRect(
 |---------------|-----------------|
 |*pitemindex*|in Zeiger auf eine [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur für das übergeordnete Element des unter Elements.<br /><br /> Der Aufrufer ist dafür verantwortlich, die Member der [lvitemindex](/windows/win32/api/commctrl/ns-commctrl-lvitemindex) -Struktur zuzuordnen und festzulegen. Dieser Parameter darf nicht NULL sein.|
 |*icolumn*|in NULL basierter Index einer Spalte im-Steuerelement.|
-|*recttype*|in Teil des Listen Ansichts unter Elements, für das das umgebende Rechteck abgerufen wird. Geben Sie einen der folgenden Werte an.<br /><br /> LVIR_BOUNDS: gibt das umgebende Rechteck des gesamten unter Elements zurück, einschließlich des Symbols und der Bezeichnung.<br /><br /> LVIR_ICON: gibt das umgebende Rechteck des Symbols oder des kleinen Symbols des unter Elements zurück.<br /><br /> LVIR_LABEL: gibt das umgebende Rechteck des Unterelement Texts zurück.|
+|*recttype*|in Teil des Listen Ansichts unter Elements, für das das umgebende Rechteck abgerufen wird. Geben Sie einen der folgenden Werte an:<br /><br /> LVIR_BOUNDS: gibt das umgebende Rechteck des gesamten unter Elements zurück, einschließlich des Symbols und der Bezeichnung.<br /><br /> LVIR_ICON: gibt das umgebende Rechteck des Symbols oder des kleinen Symbols des unter Elements zurück.<br /><br /> LVIR_LABEL: gibt das umgebende Rechteck des Unterelement Texts zurück.|
 |*vorab ausführen*|vorgenommen Ein Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die Informationen über das umschließende Rechteck des unter Elements empfängt.<br /><br /> Der Aufrufer ist für die Zuordnung der [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur verantwortlich. Dieser Parameter darf nicht NULL sein.|
 
 ### <a name="return-value"></a>Rückgabewert
@@ -2701,7 +2701,7 @@ LRESULT InsertGroup(
 
 ### <a name="parameters"></a>Parameter
 
-*Index*<br/>
+*index*<br/>
 Der Index des Elements, an dem die Gruppe eingefügt werden soll.
 
 *pgrp*<br/>
@@ -2874,7 +2874,7 @@ BOOL IsItemVisible(int index) const;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Index*|in NULL basierter Index eines Elements im aktuellen Listenansicht-Steuerelement.|
+|*index*|in NULL basierter Index eines Elements im aktuellen Listenansicht-Steuerelement.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -2896,7 +2896,7 @@ UINT MapIDToIndex(UINT id) const;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*id*|in Die eindeutige ID eines Elements.|
+|*ID*|in Die eindeutige ID eines Elements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -2922,7 +2922,7 @@ UINT MapIndexToID(UINT index) const;
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*Index*|in Der null basierte Index eines Elements.|
+|*index*|in Der null basierte Index eines Elements.|
 
 ### <a name="return-value"></a>Rückgabewert
 

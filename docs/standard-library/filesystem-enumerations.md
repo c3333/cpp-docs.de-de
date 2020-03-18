@@ -12,17 +12,17 @@ f1_keywords:
 - filesystem/std::experimental::filesystem::perms
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
 ms.openlocfilehash: f148347cd132a604622415c65bb3e0352f5308eb
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875824"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427122"
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt;-Enumerationen
 
 In diesem Thema werden die Enumerationen filesystem-Header beschrieben.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<experimentellen/Dateisystem >
 
@@ -51,7 +51,7 @@ enum class copy_options {
 
 ### <a name="values"></a>Werte
 
-|`Name`|BESCHREIBUNG|
+|`Name`|Beschreibung|
 |------------|-----------------|
 |`none`|Führen Sie das Standardverhalten für diesen Vorgang aus.|
 |`skip_existing`|Erstellen Sie keine Kopie, wenn die Datei bereits vorhanden ist. Melden Sie auch keinen Fehler.|
@@ -79,7 +79,7 @@ enum class directory_options {
 
 ### <a name="values"></a>Werte
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`none`|Standardverhalten: symbolische Verknüpfungen auf Verzeichnisse ignorieren. „Berechtigung verweigert“ ist ein Fehler.|
 |`follow_directory_symlink`|Symbolische Verknüpfungen zu Verzeichnissen als tatsächliche Verzeichnisse behandeln.|
@@ -107,7 +107,7 @@ enum class file_type {
 
 ### <a name="values"></a>Werte
 
-|Name|value|BESCHREIBUNG|
+|Name|Wert|Beschreibung|
 |----------|-----------|-----------------|
 |`not_found`|-1|Stellt eine nicht vorhandene Datei dar.|
 |`none`|0|Stellt eine Datei dar, die über kein Typattribut verfügt. (Nicht unterstützt.)|
@@ -161,7 +161,7 @@ enum class perms {// names for permissions
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
 [\<filesystem>](../standard-library/filesystem.md)

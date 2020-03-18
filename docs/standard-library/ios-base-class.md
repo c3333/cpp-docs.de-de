@@ -109,11 +109,11 @@ helpviewer_keywords:
 - std::ios_base [C++], xalloc
 ms.assetid: 0f9e0abc-f70f-49bc-aa1f-003859f56cfe
 ms.openlocfilehash: 17fb83cdbf882467f0ec330e05a6506b13051cab
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856529"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424692"
 ---
 # <a name="ios_base-class"></a>ios_base-Klasse
 
@@ -135,7 +135,7 @@ Ein Objekt der ios_base-Klasse speichert Formatierungsinformationen, die aus Fol
 
 Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem Objekt vom Typ [`iostate`](#iostate)und einem Rückruf Stapel.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -176,7 +176,7 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 |[end](#seekdir)|Gibt an, dass relativ zum Ende einer Sequenz gesucht werden soll.|
 |[eofbit](#iostate)|Protokolliert beim Extrahieren aus einem Stream das Dateiende.|
 |[failbit](#iostate)|Protokolliert einen Fehler beim Extrahieren eines gültigen Felds aus einem Stream.|
-|[Fest](#fmtflags)|Gibt an, dass Gleitkommawerte im Festkommaformat (ohne Exponentenfeld) eingefügt werden sollen.|
+|[fixed](#fmtflags)|Gibt an, dass Gleitkommawerte im Festkommaformat (ohne Exponentenfeld) eingefügt werden sollen.|
 |[floatfield](#fmtflags)|Eine Bitmaske, die als `fixed` &#124; `scientific` definiert ist|
 |[goodbit](#iostate)|Kein Zustandsbit ist gesetzt.|
 |[hex](#fmtflags)|Gibt an, dass ganzzahlige Werte im Hexadezimalformat eingefügt oder extrahiert werden sollen.|
@@ -195,7 +195,7 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 |[unitbuf](#fmtflags)|Bewirkt, dass die Ausgabe nach jeder Einfügung geleert wird.|
 |[uppercase](#fmtflags)|Gibt an, dass bei bestimmten Einfügevorgängen die Großbuchstaben eingefügt werden, die den Kleinbuchstaben entsprechen.|
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Funktionen
 
 |||
 |-|-|
@@ -220,7 +220,7 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 |-|-|
 |[operator=](#op_eq)|Der Zuweisungsoperator für `ios_base`-Objekte.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<IOS->
 
@@ -237,7 +237,7 @@ enum event {
     copyfmt_event};
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Aufzählungstyp, der ein Objekt beschreibt, das ein Rückrufereignis speichern kann, das als Argument für eine Funktion verwendet wird, die mit [register_callback](#register_callback) registriert wurde. Die unterschiedlichen Ereigniswerte lauten:
 
@@ -273,7 +273,7 @@ Der Stream, in dem das Ereignis aufgerufen wurde.
 *_I*\
 Eine benutzerdefinierte Nummer.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ definiert einen Zeiger auf eine Funktion, die mit [register_callback](#register_callback) registriert werden kann. Der Typ der Funktion darf keine Ausnahme auslösen.
 
@@ -300,7 +300,7 @@ namespace std {
 }
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der von `what()` zurückgegebene Wer ist eine Kopie von `_Message`, die möglicherweise mit einem auf `_Code` basierten Test erweitert wurde. Wenn kein `_Code` angegeben wird, lautet der Standardwert `make_error_code(io_errc::stream)`.
 
@@ -351,7 +351,7 @@ Die neue Einstellung `fmtflags`.
 
 Die vorherige oder aktuelle Einstellung `fmtflags`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Liste der Flags finden Sie unter [ios_base::fmtflags](#fmtflags).
 
@@ -409,7 +409,7 @@ public:
 };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Unterstützt die Manipulatoren in [ios](../standard-library/ios.md).
 
@@ -502,7 +502,7 @@ Die neue Benutzergebietsschema-Einstellung.
 
 Das vorherige Gebietsschema.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion speichert *_Loc* im locale-Objekt und meldet dann das Rückruf Ereignis und `imbue_event`. Es gibt den zuletzt gespeicherten Wert zurück.
 
@@ -518,7 +518,7 @@ Erstellt die Standard `iostream`-Objekte, wenn Sie erstellt werden.
 class Init { };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Klasse beschreibt ein Objekt, dessen Konstruktion sicherstellt, dass die Standard `iostream`-Objekte ordnungsgemäß erstellt werden, auch vor der Ausführung eines Konstruktors für ein beliebiges statisches Objekt.
 
@@ -530,7 +530,7 @@ Konstruiert ios_base-Objekte.
 ios_base();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der (geschützte) Konstruktor führt keine Aktion aus. Ein späterer Rückruf von `basic_ios::`[Init](../standard-library/basic-ios-class.md#init) muss das Objekt initialisieren, bevor es sicher zerstört werden kann. Daher ist die einzige sichere Verwendung für Class ios_base als Basisklasse für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md).
 
@@ -550,7 +550,7 @@ public:
 };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Bitmaskentyp, der ein Objekt beschreibt, das Informationen zum Streamzustand speichern kann. Die unterschiedlichen Flagwerte (Elemente) sind:
 
@@ -575,7 +575,7 @@ long& iword(int idx);
 *IDX* -\
 Der Index des als `iword` zu speichernden Werts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt einen Verweis auf das *IDX* -Element des erweiterbaren Arrays mit Elementen vom Typ **Long**zurück. Alle Elemente sind tatsächlich vorhanden und speichern zunächst den Wert 0. Der zurückgegebene Verweis ist nach dem nächsten-`iword` für das-Objekt ungültig, nachdem das-Objekt durch einen `basic_ios::`[Copyfmt](../standard-library/basic-ios-class.md#copyfmt)-Befehl geändert wurde oder nachdem das-Objekt zerstört wurde.
 
@@ -603,7 +603,7 @@ public:
 };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der-Typ ist eine `bitmask type`, die ein Objekt beschreibt, das den Öffnungs Modus für mehrere `iostream` Objekte speichern kann. Die unterschiedlichen Flagwerte (Elemente) sind:
 
@@ -654,7 +654,7 @@ Ein Objekt des Typs `ios_base`.
 
 Das Objekt, an das zugewiesen wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Operator kopiert die gespeicherte Formatinformation und erstellt gleichzeitig eine Kopie von erweiterbaren Arrays. Dann wird **\*this** zurückgegeben. Bitte beachten Sie, dass die Aufrufliste nicht kopiert wird.
 
@@ -678,7 +678,7 @@ Die Anzahl der anzuzeigenden signifikanten Stellen, oder die Anzahl der Stellen 
 
 Die erste Memberfunktion gibt die gespeicherte [Anzeigegenauigkeit](../standard-library/ios-base-class.md) zurück. Die zweite Element Funktion speichert *_Prec* in der Anzeige Genauigkeit und gibt ihren vorherigen gespeicherten Wert zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gleitkommazahlen werden mit festen Schreibweisen mit [fixed](../standard-library/ios-functions.md#fixed) angezeigt.
 
@@ -719,7 +719,7 @@ void *& pword(int index);
 *Index*\
 Der Index des als `pword` zu speichernden Werts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt einen Verweis auf den Element *Index* des erweiterbaren Arrays mit Elementen vom Typ **void** -Zeiger zurück. Alle Elemente sind tatsächlich vorhanden und speichern zunächst den NULL-Zeiger. Der zurückgegebene Verweis ist nach dem nächsten-`pword` für das-Objekt ungültig, nachdem das-Objekt durch einen `basic_ios::`[Copyfmt](../standard-library/basic-ios-class.md#copyfmt)-Befehl geändert wurde oder nachdem das-Objekt zerstört wurde.
 
@@ -748,7 +748,7 @@ Ein Zeiger auf die Rückruffunktion.
 *IDX* -\
 Eine benutzerdefinierte Nummer.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion schiebt das Paar `{pfn, idx}` auf den gespeicherten Rückruf Stapel- [Rückruf Stapel](../standard-library/ios-base-class.md). Wenn ein Rückruf Ereignis ( **EV** ) gemeldet wird, werden die Funktionen von der Ausdrucks `(*pfn)(ev, *this, idx)`in umgekehrter Reihenfolge der Registrierung aufgerufen.
 
@@ -856,7 +856,7 @@ namespace std {
 }
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein enumerierter Typ, der ein Objekt beschreibt, das den Suchmodus speichern kann, der als Argument für die Member-Funktionen mehrerer `iostream` Klassen verwendet wird. Die unterschiedlichen Flagwerte sind:
 
@@ -914,7 +914,7 @@ Die Flags, die deaktiviert werden sollen.
 
 Die vorherigen Formatflags
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion ruft [Flags](#flags)`(_Mask | _Flags)` (ausgewählte Bits festlegen) auf und gibt dann die vorherigen Formatflags zurück. Die zweite Member-Funktion ruft `flags(_Mask & fmtfl, flags & ~_Mask)` effektiv auf (ersetzen Sie die ausgewählten Bits unter einer Maske) und gibt dann die vorherigen Formatflags zurück.
 
@@ -961,7 +961,7 @@ Gibt an, ob alle Streams mit `stdio`synchronisiert sind.
 
 Vorherige Einstellung für diese Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die statische Member-Funktion speichert ein `stdio` Sync-Flag, das anfänglich **true**ist. Wenn **true**, stellt dieses Flag sicher, dass Vorgänge in derselben Datei zwischen den [`iostreams`](../standard-library/iostreams-conventions.md) Funktionen und den in der C++ Standard Bibliothek definierten Funktionen ordnungsgemäß synchronisiert werden. Andernfalls ist die Synchronisierung möglicherweise nicht gewährleistet, aber die Leistung kann verbessert werden. Die Funktion speichert *_Sync* im `stdio` Sync-Flag und gibt ihren vorherigen gespeicherten Wert zurück. Sie können Sie nur zuverlässig anrufen, bevor Sie Vorgänge für die Standardstreams durchführen.
 
@@ -980,7 +980,7 @@ void unsetf(
 *_Mask*\
 Die Flags, die ausgeschaltet werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion ruft effektiv [Flags](#flags)(`~` *_Mask* **& Flags**) auf (Löschen ausgewählter Bits).
 
@@ -1008,7 +1008,7 @@ Die gewünschte Größe des Ausgabestreams.
 
 Die Einstellung für die aktuelle Breite.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion gibt die Breite des gespeicherten Felds zurück. Die zweite Member-Funktion speichert *_Wide* in der Feldbreite und gibt ihren vorherigen gespeicherten Wert zurück.
 
@@ -1045,7 +1045,7 @@ static int xalloc( );
 
 Die statische Member-Funktion gibt einen gespeicherten statischen Wert zurück, der bei jedem-Rückruf Inkrementen erhöht wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert kann als eindeutiges Index Argument verwendet werden, wenn die Element Funktionen [`iword`](#iword) oder [`pword`](#pword)aufgerufen werden.
 
@@ -1079,7 +1079,7 @@ int main( )
 testing
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [iostream-Programmierung](../standard-library/iostream-programming.md)\

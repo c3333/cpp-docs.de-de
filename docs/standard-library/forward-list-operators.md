@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operatoroperator&lt; (forward_list)
 - std::operatoroperator&lt;= (forward_list)
 ms.openlocfilehash: 1ddfb56c7ff68ec10c7bb56af3495e4042acb83c
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874755"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427086"
 ---
 # <a name="ltforward_listgt-operators"></a>&lt;forward_list&gt;-Operatoren
 
@@ -43,7 +43,7 @@ Ein Objekt des Typs `forward_list`.
 *Rechte*\
 Ein Objekt des Typs `forward_list`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Vorlagen Funktion überlädt `operator==`, um zwei Objekte der Klassen Vorlagen `forward_list`zu vergleichen. Die Funktion gibt `distance(left.begin(), end()) == distance(right.begin(),right.end()) && equal(left. begin(),left. end(),right.begin())`zurück.
 
@@ -69,7 +69,7 @@ Ein Objekt des Typs `forward_list`.
 
 **TRUE**, wenn die Listen ungleich sind; **FALSE**, wenn die Listen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `!(left == right)` zurück.
 
@@ -95,7 +95,7 @@ Ein Objekt des Typs `forward_list`.
 
 **TRUE**, wenn die Liste links vom Operator kleiner als, aber ungleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Vorlagen Funktion überlädt `operator<`, um zwei Objekte der Klassen Vorlagen `forward_list`zu vergleichen. Die Funktion gibt `lexicographical_compare(lhs. begin(), lhs. end(), rhs.begin(), rhs.end())`zurück.
 
@@ -121,7 +121,7 @@ Ein Objekt des Typs `forward_list`.
 
 **TRUE**, wenn die Liste links vom Operator kleiner als oder gleich der Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `!(right < left)` zurück.
 
@@ -147,7 +147,7 @@ Ein Objekt des Typs `forward_list`.
 
 **TRUE**, wenn die Liste links vom Operator größer als die Liste rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die dritte Vorlagenfunktion gibt `right < left` zurück.
 
@@ -173,6 +173,6 @@ Ein Objekt des Typs `forward_list`.
 
 **true** , wenn die vorwärts Liste links vom Operator größer als oder gleich der vorwärts Liste auf der rechten Seite des Operators ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion gibt `!(left < right)` zurück.

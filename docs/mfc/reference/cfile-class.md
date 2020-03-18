@@ -61,11 +61,11 @@ helpviewer_keywords:
 - CFile [MFC], m_pTM
 ms.assetid: b2eb5757-d499-4e67-b044-dd7d1abaa0f8
 ms.openlocfilehash: a9161764f6c8646766a73add01c25cce5619ad19
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855305"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424464"
 ---
 # <a name="cfile-class"></a>CFile-Klasse
 
@@ -77,17 +77,17 @@ Die Basisklasse für Microsoft Foundation Class-Dateiklassen.
 class CFile : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFile:: CFile](#cfile)|Erstellt ein `CFile` Objekt aus einem Pfad-oder Datei handle.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFile:: Abort](#abort)|Schließt eine Datei, die alle Warnungen und Fehler ignoriert.|
 |[CFile:: Close](#close)|Schließt eine Datei und löscht das-Objekt.|
@@ -115,24 +115,24 @@ class CFile : public CObject
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFile:: Operator handle](#operator_handle)|Ein Handle für ein `CFile` Objekt.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFile:: hfileull](#hfilenull)|Bestimmt, ob das `CFile` Objekt über ein gültiges Handle verfügt.|
 |[CFile:: m_hFile](#m_hfile)|Enthält normalerweise das Datei Handle des Betriebssystems.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFile:: m_pTM](#m_ptm)|Zeiger auf das `CAtlTransactionManager`-Objekt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Sie stellt direkt nicht gepufferte, binäre Datenträger-Eingabe-/Ausgabedienste bereit und unterstützt indirekt Textdateien und Speicherdateien durch die abgeleiteten Klassen. `CFile` funktioniert in Verbindung mit der `CArchive`-Klasse, um die Serialisierung von Microsoft Foundation Class-Objekten zu unterstützen.
 
@@ -150,7 +150,7 @@ Weitere Informationen zur Verwendung von `CFile`finden Sie in den Artikeln [Date
 
 `CFile`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afx.h
 
@@ -162,7 +162,7 @@ Schließt die Datei, die diesem-Objekt zugeordnet ist, und macht die Datei zum L
 virtual void Abort();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die Datei vor dem Zerstören des Objekts nicht geschlossen haben, wird Sie vom debugtor für Sie geschlossen.
 
@@ -207,13 +207,13 @@ Bitweise Kombination (OR) der Dateizugriffsoptionen für die angegebene Datei. M
 *pTM*<br/>
 Zeiger auf CAtlTransactionManager-Objekt
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In den folgenden fünf Tabellen sind die möglichen Optionen für den *nopenflags* -Parameter aufgeführt.
 
 Wählen Sie eine der folgenden Dateizugriffsmodus-Optionen. Der standardmäßige Dateizugriffsmodus ist `CFile::modeRead`, wobei es sich um einen schreibgeschützten Modus handelt.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::modeRead`|Fordert nur Lesezugriff an.|
 |`CFile::modeWrite`|Fordert nur Schreibzugriff an.|
@@ -221,7 +221,7 @@ Wählen Sie eine der folgenden Dateizugriffsmodus-Optionen. Der standardmäßige
 
 Wählen Sie eine der folgenden Zeichenmodus-Optionen.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::typeBinary`|Legt den Binärmodus fest (nur in abgeleiteten Klassen verwendet).|
 |`CFile::typeText`|Legt den Textmodus mit spezieller Verarbeitung für Wagen Rücklauf-Zeilenvorschub Paare fest (wird nur in abgeleiteten Klassen verwendet).|
@@ -229,7 +229,7 @@ Wählen Sie eine der folgenden Zeichenmodus-Optionen.
 
 Wählen Sie eine der folgenden Dateifreigabemodus-Optionen. Der standardmäßige Dateifreigabemodus ist `CFile::shareExclusive`, wobei es sich um einen exklusiven Modus handelt.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::shareDenyNone`|Keine Freigabebeschränkungen.|
 |`CFile::shareDenyRead`|Verweigert allen anderen Lesezugriff.|
@@ -238,14 +238,14 @@ Wählen Sie eine der folgenden Dateifreigabemodus-Optionen. Der standardmäßige
 
 Wählen Sie die erste oder beide Dateierstellungsmodus-Optionen. Der standardmäßige Dateierstellungsmodus ist `CFile::modeNoTruncate`, wobei es sich um "offen vorhanden" handelt.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::modeCreate`|Erstellt eine neue Datei, wenn keine Datei vorhanden ist. Wenn die Datei bereits vorhanden ist, wird sie überschrieben und anfangs auf die Länge 0 (null) festgelegt.|
 |`CFile::modeNoTruncate`|Erstellt eine neue Datei, wenn keine Datei vorhanden ist. Andernfalls, wenn die Datei bereits vorhanden ist, wird Sie an das `CFile` Objekt angefügt.|
 
 Wählen Sie die folgenden Datei-Cache-Optionen wie beschrieben. Standardmäßig verwendet das System ein allgemeines zwischen Speicherungs Schema, das nicht als Option verfügbar ist.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::osNoBuffer`|Das System verwendet keinen zwischen Cache für die Datei. Diese Option bricht die beiden folgenden Optionen ab.|
 |`CFile::osRandomAccess`|Der Datei-Cache wird für wahlfreien Zugriff optimiert. Verwenden Sie nicht diese Option und die Option für sequenzielle Scans.|
@@ -254,7 +254,7 @@ Wählen Sie die folgenden Datei-Cache-Optionen wie beschrieben. Standardmäßig 
 
 Wählen Sie die folgende Sicherheitsoption, um zu verhindern, dass der Dateihandle übergeben wird. Standardmäßig können alle neuen untergeordneten Prozesse den Dateihandle verwenden.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::modeNoInherit`|Verhindert, dass untergeordnete Prozesse den Dateihandle verwenden.|
 
@@ -280,7 +280,7 @@ Schließt die Datei, die diesem-Objekt zugeordnet ist, und macht die Datei zum L
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die Datei vor dem Zerstören des Objekts nicht geschlossen haben, wird Sie vom debugtor für Sie geschlossen.
 
@@ -302,7 +302,7 @@ virtual CFile* Duplicate() const;
 
 Ein Zeiger auf ein doppeltes `CFile` Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion entspricht der `_dup`der C-Lauf Zeitfunktion.
 
@@ -314,7 +314,7 @@ Erzwingt, dass alle im Datei Puffer verbleibenden Daten in die Datei geschrieben
 virtual void Flush();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Verwendung von `Flush` gewährleistet nicht, dass `CArchive` Puffer geleert werden. Wenn Sie ein Archiv verwenden, nennen Sie zuerst [CArchive:: Flush](../../mfc/reference/carchive-class.md#flush) .
 
@@ -334,7 +334,7 @@ virtual CString GetFileName() const;
 
 Der Name der Datei.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie z. b. `GetFileName` aufgerufen werden, um dem Benutzer eine Meldung über die Datei `c:\windows\write\myfile.wri`zu generieren, wird der Dateiname `myfile.wri`zurückgegeben.
 
@@ -358,7 +358,7 @@ virtual CString GetFilePath() const;
 
 Der vollständige Pfad der angegebenen Datei.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie z. b. `GetFilePath` aufgerufen werden, um dem Benutzer eine Meldung über die Datei `c:\windows\write\myfile.wri`zu generieren, wird der Dateipfad `c:\windows\write\myfile.wri`zurückgegeben.
 
@@ -380,7 +380,7 @@ virtual CString GetFileTitle() const;
 
 Der Titel der zugrunde liegenden Datei.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ruft [GetFileTitle](/windows/win32/api/commdlg/nf-commdlg-getfiletitlew) auf, um den Titel der Datei abzurufen. Bei erfolgreicher Ausführung gibt die Methode die Zeichenfolge zurück, die das System verwendet, um dem Benutzer den Dateinamen anzuzeigen. Andernfalls ruft die-Methode [pathfindfilename](/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew) auf, um den Dateinamen (einschließlich der Dateierweiterung) der zugrunde liegenden Datei abzurufen. Dies bedeutet, dass die Dateierweiterung nicht immer in der zurückgegebenen Datei Titel Zeichenfolge enthalten ist. Weitere Informationen finden Sie unter " [GetFileTitle](/windows/win32/api/commdlg/nf-commdlg-getfiletitlew) " und " [pathfindfilename](/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew) " in der Windows SDK.
 
@@ -462,7 +462,7 @@ Zeiger auf CAtlTransactionManager-Objekt
 
 TRUE, wenn die Statusinformationen für die angegebene Datei erfolgreich abgerufen wurden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die nicht statische Version von `GetStatus` ruft Statusinformationen der geöffneten Datei ab, die dem angegebenen `CFile` Objekt zugeordnet ist.  Die statische Version von `GetStatus` den Dateistatus von einem angegebenen Dateipfad erhält, ohne die Datei tatsächlich zu öffnen. Diese Version ist nützlich, um das vorhanden sein und die Zugriffsrechte einer Datei zu testen.
 
@@ -492,7 +492,7 @@ Bestimmt, ob ein gültiges Datei Handle für das `CFile` Objekt vorhanden ist.
 static AFX_DATA const HANDLE hFileNull;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Konstante wird verwendet, um zu bestimmen, ob das `CFile` Objekt über ein gültiges Datei Handle verfügt.
 
@@ -518,7 +518,7 @@ Der Byte Offset des Starts des zu Sperr enden Byte Bereichs.
 *dwCount*<br/>
 Die Anzahl der zu Sperr enden Bytes im Bereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Sie können mehr als einen Bereich einer Dateisperren, aber es sind keine überlappenden Bereiche zulässig.
 
@@ -539,7 +539,7 @@ Enthält das Datei Handle des Betriebssystems für eine geöffnete Datei.
 HANDLE m_hFile;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `m_hFile` ist eine öffentliche Variable vom Typ uint. Sie enthält `CFile::hFileNull`, einen Betriebssystem unabhängigen, leeren Datei Indikator, wenn das Handle nicht zugewiesen wurde.
 
@@ -553,7 +553,7 @@ Zeiger auf ein `CAtlTransactionManager` Objekt.
 CAtlTransactionManager* m_pTM;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="open"></a>CFile:: Open
 
@@ -590,7 +590,7 @@ Zeiger auf CAtlTransactionManager-Objekt
 
 Ungleich 0 (null), wenn das Öffnen erfolgreich war. andernfalls 0. Der *perror* -Parameter ist nur dann sinnvoll, wenn 0 zurückgegeben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beiden `Open` Funktionen sind "sichere" Methoden zum Öffnen einer Datei, bei der ein Fehler eine normale, erwartete Bedingung ist.
 
@@ -600,9 +600,9 @@ In der folgenden Tabelle werden die möglichen Ergebnisse von `Open`beschrieben.
 
 |`pError`|Fehler aufgetreten|Rückgabewert|CFileException-Inhalt|
 |--------------|------------------------|------------------|----------------------------|
-|NULL|Nein|TRUE|–|
+|NULL|Nein|TRUE|n/v|
 |PTR zum `CFileException`|Nein|TRUE|unverändert|
-|NULL|Ja|FALSE|–|
+|NULL|Ja|FALSE|n/v|
 |PTR zum `CFileException`|Ja|FALSE|Initialisiert zum Beschreiben des Fehlers.|
 
 ### <a name="example"></a>Beispiel
@@ -665,7 +665,7 @@ Eine Zeichenfolge, die den Pfad zur gewünschten Datei ist. Der Pfad kann relati
 *pTM*<br/>
 Zeiger auf CAtlTransactionManager-Objekt
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `Remove` entfernt kein Verzeichnis.
 
@@ -697,7 +697,7 @@ Der neue Pfad.
 *pTM*<br/>
 Zeiger auf CAtlTransactionManager-Objekt
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verzeichnisse können nicht umbenannt werden. Diese Funktion entspricht dem ren-Befehl.
 
@@ -727,11 +727,11 @@ Position, von der gesucht werden soll. Mögliche Werte finden Sie im Abschnitt "
 
 Die Position des Dateizeigers, wenn die Methode erfolgreich war. Andernfalls ist der Rückgabewert nicht definiert, und es wird ein Zeiger auf eine `CFileException` Ausnahme ausgelöst.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle sind die möglichen Werte für den *nfrom* -Parameter aufgeführt.
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |`CFile::begin`|Suchen Sie am Anfang der Datei.|
 |`CFile::current`|Suchen von der aktuellen Position des Dateizeigers.|
@@ -755,7 +755,7 @@ Legt den Wert des Dateizeigers auf den Anfang der Datei fest.
 void SeekToBegin();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SeekToBegin()` entspricht `Seek( 0L, CFile::begin )`.
 
@@ -775,7 +775,7 @@ ULONGLONG SeekToEnd();
 
 Die Länge der Datei in Byte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `SeekToEnd()` entspricht `CFile::Seek( 0L, CFile::end )`.
 
@@ -796,7 +796,7 @@ virtual void SetFilePath(LPCTSTR lpszNewName);
 *lpsznewname*<br/>
 Zeiger auf eine Zeichenfolge, die den neuen Pfad angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 > `SetFilePath` öffnet die Datei nicht oder erstellt die Datei. Das `CFile`-Objekt wird einfach einem Pfadnamen zugeordnet, der dann verwendet werden kann.
@@ -818,7 +818,7 @@ virtual void SetLength(ULONGLONG dwNewLen);
 *dwnewlen*<br/>
 Gewünschte Länge der Datei in Bytes. Dieser Wert kann größer oder kleiner als die aktuelle Länge der Datei sein. Die Datei wird entsprechend erweitert oder abgeschnitten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Mit `CMemFile`könnte diese Funktion ein `CMemoryException` Objekt auslösen.
@@ -843,13 +843,13 @@ static void PASCAL SetStatus(
 *lpszfilename*<br/>
 Eine Zeichenfolge, die den Pfad zur gewünschten Datei ist. Der Pfad kann relativ oder absolut sein und kann einen Netzwerknamen enthalten.
 
-*status*<br/>
+*Status*<br/>
 Der Puffer, der die neuen Statusinformationen enthält. Rufen Sie die `GetStatus` Member-Funktion auf, um die `CFileStatus` Struktur mit aktuellen Werten vorab auszufüllen, und nehmen Sie dann die erforderlichen Änderungen vor. Wenn ein Wert 0 ist, wird das entsprechende Status Element nicht aktualisiert. Eine Beschreibung der `CFileStatus` Struktur finden Sie unter der [GetStatus](#getstatus) -Member-Funktion.
 
 *pTM*<br/>
 Zeiger auf CAtlTransactionManager-Objekt
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um den Zeitpunkt festzulegen, ändern Sie das `m_mtime` Feld des *Status*.
 
@@ -877,7 +877,7 @@ Der Byte Offset des Starts des zu entsperrenden Byte Bereichs.
 *dwCount*<br/>
 Die Anzahl der zu entsperrenden Bytes im Bereich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ausführliche Informationen finden Sie in der Beschreibung der [lockrange](#lockrange) -Member-Funktion.
 
@@ -906,7 +906,7 @@ Ein Zeiger auf den vom Benutzer bereitgestellten Puffer, der die Daten enthält,
 *nCount*<br/>
 Die Anzahl der Bytes, die aus dem Puffer übertragen werden sollen. Bei textmodusdateien werden Wagen Rücklauf-und Zeilenvorschub Paare als einzelne Zeichen gezählt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `Write` löst eine Ausnahme als Reaktion auf verschiedene Bedingungen aus, einschließlich des Datenträger-vollständigen Zustands.
 
@@ -916,7 +916,7 @@ Die Anzahl der Bytes, die aus dem Puffer übertragen werden sollen. Bei textmodu
 
 Weitere Informationen finden Sie auch in den Beispielen für [CFile:: CFile](#cfile) und [CFile:: Open](#open).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel DRAWCLI](../../overview/visual-cpp-samples.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>

@@ -11,17 +11,17 @@ helpviewer_keywords:
 - storage classes [C++], basic concepts
 ms.assetid: f10e1c56-6249-4eb6-b08f-09ab1eef1992
 ms.openlocfilehash: ab00a5c64a32dc1dab5fef4bc15b722587bc2d6b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856897"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423711"
 ---
 # <a name="storage-classes"></a>Speicherklassen
 
 Eine *Speicher Klasse* im Kontext von C++ Variablen Deklarationen ist ein Typspezifizierer, der die Lebensdauer, die Verknüpfung und den Speicherort von Objekten steuert. Ein angegebenes Objekt kann nur eine Speicherklasse haben. Variablen, die innerhalb eines Blocks definiert sind, verfügen über automatischen Speicher, sofern Sie nicht anderweitig mithilfe der **extern**, **static**oder **thread_local** Spezifizierer angegeben werden Automatische Objekte und Variablen haben keine Bindung; sie sind für Code außerhalb des Blocks nicht sichtbar. Arbeitsspeicher wird automatisch zugewiesen, wenn die Ausführung in den Block Eintritt und die Zuordnung aufgehoben wird, wenn der Block beendet wird.
 
-**Hinweise**
+**Notizen**
 
 1. Das [änderbare](../cpp/mutable-data-members-cpp.md) -Schlüsselwort kann als Speicherklassenspezifizierer angesehen werden. Es ist jedoch nur in der Memberliste einer Klassendefinition verfügbar.
 
@@ -286,6 +286,6 @@ Zum Programm gibt es mehrere Punkte zu beachten:
 
 - Des Weiteren behalten statische lokale Variablen wie `I3` ihre Werte für die Dauer des Programms bei, werden jedoch zerstört, sobald das Programm beendet wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Deklarationen und Definitionen](../cpp/declarations-and-definitions-cpp.md)

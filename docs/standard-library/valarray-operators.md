@@ -31,11 +31,11 @@ helpviewer_keywords:
 - std::operator&lt;&lt; (valarray)
 - std::operator&lt;= (valarray), std::operator== (valarray)
 ms.openlocfilehash: 231bad65e2af1ee2ab800890c83cc50e584a8c6a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875611"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427584"
 ---
 # <a name="ltvalarraygt-operators"></a>&lt;valarray&gt;-Operatoren
 
@@ -79,7 +79,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **FALSE**, wenn die entsprechenden Elemente nicht ungleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Vorlagen Operator gibt ein Objekt der Klasse [Valarray\<bool >](../standard-library/valarray-bool-class.md)zurück, dessen Elemente `I` `left[I] != right[I]`sind.
 
@@ -257,7 +257,7 @@ Das zweite der beiden valarray-Objekte, deren Elemente jeweils mit dem bitweisen
 
 Ein Valarray-Element, dessen Elemente die Element Weise Kombination der bitweisen and-Operation von *left* und *right*darstellen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine bitweise Operation kann nur verwendet werden, um Bits in **char** -und **int** -Datentypen und-Varianten und nicht in den Datentypen **float**, **Double**, **longdouble**, **void**, **bool** oder anderen komplexeren Datentypen zu bearbeiten.
 
@@ -348,7 +348,7 @@ Das zweite der beiden valarray-Objekte, deren Elemente jeweils mit dem logischen
 
 Ein Valarray-Element, dessen Elemente vom Typ "bool" sind und die Element Weise Kombination des logischen `AND`-Vorgangs von *Links* und *Rechts*sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die logische `ANDoperator&&` wird auf Element Ebene angewendet, wobei alle Werte ungleich 0 als true gezählt werden und das Ergebnis ein Valarray-Wert von booleschen Werten ist. Die bitweise Version `AND`, [Operator &,](#op_amp)kann im Gegensatz zum Ergebnis der bitweisen Operation ein Valarray-Element mit anderen Werten als 0 und 1 ergeben.
 
@@ -441,7 +441,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **false** , wenn das linke Element oder der *linke* Wert nicht größer als das entsprechende Rechte Element oder der *Rechte* Wert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Anzahl von Elementen in zwei valarray-Objekten nicht übereinstimmt, ist das Ergebnis nicht definiert.
 
@@ -534,7 +534,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **false** , wenn das linke Element oder der *linke* Wert kleiner als das entsprechende Rechte Element oder der *Rechte* Wert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Anzahl von Elementen in zwei valarray-Objekten nicht übereinstimmt, ist das Ergebnis nicht definiert.
 
@@ -623,7 +623,7 @@ Der Wert, der den Betrag angibt, um den die Bits nach rechts verschoben werden, 
 
 Ein valarray-Objekt, dessen Elemente um den angegebenen Betrag nach rechts verschoben wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei Zahlen mit Vorzeichen bleiben die Vorzeichen erhalten.
 
@@ -716,7 +716,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **false** , wenn das linke Element oder der *linke* Wert nicht kleiner als das entsprechende Rechte Element oder der *Rechte* Wert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Anzahl von Elementen in zwei valarray-Objekten nicht übereinstimmt, ist das Ergebnis nicht definiert.
 
@@ -809,7 +809,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **false** , wenn das linke Element oder der *linke* Wert größer als das entsprechende Rechte Element oder der *Rechte* Wert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Anzahl von Elementen in zwei valarray-Objekten nicht übereinstimmt, ist das Ergebnis nicht definiert.
 
@@ -898,7 +898,7 @@ Der Wert, der den Betrag angibt, um den die Bits nach links verschoben werden, o
 
 Ein valarray-Objekt, dessen Elemente um den angegebenen Betrag nach links verschoben wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei Zahlen mit Vorzeichen bleiben die Vorzeichen erhalten.
 
@@ -1157,7 +1157,7 @@ Ein Wert oder ein valarray-Objekt, das als Subtrahend dient, der von anderen Wer
 
 Ein Valarray-Element, dessen Elemente die Element Weise Differenz von *Links* und *Rechts*sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die arithmetische Terminologie, die zum Beschreiben einer Subtraktion verwendet wird:
 
@@ -1248,7 +1248,7 @@ Ein Wert oder ein valarray-Objekt, der bzw. das als Divisor dient und der einen 
 
 Ein Valarray-Element, dessen Elemente der Element Weise Quotienten von *left* (dividiert durch *Rechts*) ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die arithmetische Terminologie, die zum Beschreiben einer Division verwendet wird:
 
@@ -1343,7 +1343,7 @@ Ein valarray-Objekt mit booleschen Werten, für die Folgendes gilt:
 
 - **FALSE**, wenn die entsprechenden Elemente nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Vorlagen Operator gibt ein Objekt der Klasse [Valarray\<bool >](../standard-library/valarray-bool-class.md)zurück, dessen Elemente `I` `left[I] == right[I]`sind. Der zweite Vorlagen Operator speichert in Element `I` `left[I] == right`. Der dritte Vorlagen Operator speichert in Element `I` `left == right[I]`.
 
@@ -1432,7 +1432,7 @@ Das zweite der beiden valarray-Objekte, deren Elemente jeweils mit dem bitweisen
 
 Ein Valarray-Element, dessen Elemente die Element Weise Kombination der bitweisen **Xor** -Operation von *Links* und *Rechts*darstellen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine bitweise Operation kann nur verwendet werden, um Bits in **char** -und **int** -Datentypen und-Varianten und nicht in den Datentypen **float**, **Double**, **long Double**, **void**, **bool** oder anderen komplexeren Datentypen zu bearbeiten.
 
@@ -1527,7 +1527,7 @@ Das zweite der beiden valarray-Objekte, deren Elemente jeweils mit dem bitweisen
 
 Ein Valarray-Element, dessen Elemente die Element Weise Kombination der bitweisen `OR`-Operation von *Links* und *Rechts*darstellen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine bitweise Operation kann nur verwendet werden, um Bits in **char** -und **int** -Datentypen und-Varianten und nicht in den Datentypen **float**, **Double**, **longdouble**, **void**, **bool** oder anderen komplexeren Datentypen zu bearbeiten.
 
@@ -1622,7 +1622,7 @@ Das zweite der beiden valarray-Objekte, deren Elemente jeweils mit dem logischen
 
 Ein Valarray-Element, dessen Elemente vom Typ " **bool** " sind und die Element Weise Kombination der logischen OR-Operation von *left* und *right*sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die logische `OR` `operator||` wird auf Element Ebene angewendet, wobei alle Werte ungleich 0 als **true**gezählt werden und das Ergebnis ein Valarray-Wert von booleschen Werten ist. Die bitweise Version von `OR`, [operator&#124;](../standard-library/valarray-operators.md#op_or) kann dagegen je nach dem Ergebnis der bitweisen Operation ein valarray-Objekt mit anderen Werten als 0 und 1 ergeben.
 

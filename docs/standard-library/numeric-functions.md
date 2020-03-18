@@ -32,11 +32,11 @@ helpviewer_keywords:
 - std::transform_inclusive_scan [C++]
 - std::transform_reduce [C++]
 ms.openlocfilehash: 88a97a3d110c684090b78570077927e32541eed7
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856361"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425364"
 ---
 # <a name="ltnumericgt-functions"></a>&lt;numeric&gt;-Funktionen
 
@@ -77,7 +77,7 @@ Der binäre Vorgang, der auf jedes Element im angegebenen Bereich und das Ergebn
 
 Die Summe von *Init* und allen Elementen im angegebenen Bereich für die erste Vorlagen Funktion, oder für die zweite Vorlagen Funktion, das Ergebnis der Anwendung der binären Operation *Binary_Op* anstelle des Sum-Vorgangs auf (* PartialResult, *in_iter*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist und *in_iter* ein Iterator ist, der auf das nächste Element im Bereich zeigt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Anfangswert stellt sicher, dass ein klar definiertes Ergebnis vorliegt, wenn der Bereich leer ist. in diesem Fall wird " *Init* " zurückgegeben. Der binäre Vorgang muss nicht assoziativ oder kommutativ sein. Das Ergebnis wird mit dem *anfänglichen Wert* initialisiert, und anschließend wird das *Ergebnis* = *Binary_Op*(*Result*, *in_iter*) iterativ durch den Bereich berechnet, wobei *in_iter* ein Iterator ist, der auf jedes aufeinanderfolgende Element im Bereich zeigt. Der Bereich muss gültig sein, und die Komplexität ist mit der Größe des Bereichs linear. Der Rückgabetyp des binären Operators muss in **Typ** konvertierbar sein, um Closure während der Iteration sicherzustellen.
 
@@ -236,7 +236,7 @@ Der binäre Vorgang, der in der verallgemeinerten Operation angewendet werden so
 
 Ein Ausgabeiterator, der das Ende des Zielbereichs adressiert: `result` + (`last` - `first`).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das *Ergebnis* des ausgabeiteratorergebnisses kann derselbe *Iterator sein*wie der eingabeiterator, damit `adjacent_difference` Werte direkt berechnet werden können.
 
@@ -520,7 +520,7 @@ Die zweite Memberfunktion gibt folgendes zurück:
 
 durch iteratives Ersetzen von *Init* durch *Init* *Binary_Op1* (*a*i *Binary_Op2* *b*i).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Anfangswert stellt sicher, dass ein klar definiertes Ergebnis vorliegt, wenn der Bereich leer ist. In diesem Fall wird *Init* zurückgegeben. Die binären Operationen müssen nicht assoziativ oder kommutativ sein. Der Bereich muss gültig sein, und die Komplexität ist mit der Größe des Bereichs linear. Der Rückgabetyp des binären Operators muss in **Typ** konvertierbar sein, um Closure während der Iteration sicherzustellen.
 
@@ -720,7 +720,7 @@ Der binäre Vorgang, der in der verallgemeinerten Operation angewendet werden so
 
 Ein Ausgabeiterator, der das Ende des Zielbereichs adressiert: *Ergebnis* + (*Letztes* - *zuerst*).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das *Ergebnis* des ausgabeiteratorergebnisses darf derselbe *Iterator sein*wie der eingabeiterator, damit partielle Summen direkt berechnet werden können.
 
@@ -859,7 +859,7 @@ Der binäre Vorgang, der auf jedes Element im angegebenen Bereich und das Ergebn
 
 Das Ergebnis der Anwendung *von Binary_Op* oder `std::plus<>()` *auf init* und alle Elemente im angegebenen Bereich auf (* PartialResult, *in_iter*), wobei *PartialResult* das Ergebnis früherer Anwendungen des Vorgangs ist, und *in_iter* ist ein Iterator, der auf ein Element im Bereich zeigt. In über Ladungen, die nicht *Init*angeben, entspricht der verwendete *Init* -Wert `typename iterator_traits<InputIterator>::value_type{}`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `reduce` Verhalten ist nicht deterministisch, es sei denn, *Binary_Op* ist assoziativ und kommutativ. Das Verhalten ist nicht definiert, wenn *Binary_Op* ein beliebiges Element ändert oder einen Iterator im Intervall \[*First*, *Last*] (einschließlich) ungültig macht.
 

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - CDialogBar [MFC], Create
 ms.assetid: da2f7a30-970c-44e3-87f0-6094bd002cab
 ms.openlocfilehash: af84c5239a9cb3cbddb1ab4f0230e5b1a3373573
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883621"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425958"
 ---
 # <a name="cdialogbar-class"></a>CDialogBar-Klasse
 
@@ -27,21 +27,21 @@ Stellt die Funktionalität eines nicht modalen Windows-Dialogfelds in einer Steu
 class CDialogBar : public CControlBar
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDialogBar:: CDialogBar](#cdialogbar)|Erstellt ein `CDialogBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDialogBar:: Create](#create)|Erstellt eine Windows-Dialog Leiste und fügt Sie an das `CDialogBar`-Objekt an.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Eine Dialog Leiste ähnelt einem Dialogfeld, in dem Sie standardmäßige Windows-Steuerelemente enthält, zwischen denen der Benutzer Tabstopps leisten kann. Eine weitere Ähnlichkeit besteht darin, dass Sie eine Dialogfeld Vorlage erstellen, die die Dialog Leiste darstellt.
 
@@ -64,7 +64,7 @@ Weitere Informationen zu `CDialogBar`finden Sie in den Artikeln [Dialog leisten]
 
 `CDialogBar`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxext. h
 
@@ -133,7 +133,7 @@ Die Ressourcen-ID der Dialogfeld Vorlage des `CDialogBar` Objekts.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die CBRS_TOP oder CBRS_BOTTOM Ausrichtungs Format angeben, entspricht die Breite der Dialog Leiste dem Rahmen Fenster, und die Höhe entspricht der von " *nidtemplate*" angegebenen Ressource. Wenn Sie die CBRS_LEFT oder CBRS_RIGHT Ausrichtungs Format angeben, wird die Höhe der Dialog Leiste im Rahmen Fenster und deren Breite der von *nidtemplate*angegebenen Ressource entspricht.
 
@@ -141,7 +141,7 @@ Wenn Sie die CBRS_TOP oder CBRS_BOTTOM Ausrichtungs Format angeben, entspricht d
 
 [!code-cpp[NVC_MFCMessageMaps#13](../../mfc/reference/codesnippet/cpp/cdialogbar-class_1.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-CTRLBARS](../../overview/visual-cpp-samples.md)<br/>
 [CControlBar Class](../../mfc/reference/ccontrolbar-class.md)<br/>
