@@ -9,11 +9,11 @@ f1_keywords:
 - atlbase/ATL::AtlComModuleGetClassObject
 ms.assetid: c2f0a35d-857c-4538-a44d-c4ea0db63b06
 ms.openlocfilehash: f9c3697259e1cee2b1107ded785ca583d730b55e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863186"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422943"
 ---
 # <a name="server-registration-global-functions"></a>Globale Funktionen der Server Registrierung
 
@@ -30,7 +30,7 @@ Diese Funktionen bieten Unterstützung für das registrieren und Aufheben der Re
 |[Atlcommodulerevokeclassobjects](#atlcommodulerevokeclassobjects)|Diese Funktion wird aufgerufen, um Klassen Objekte von einem com-Modul zu widerrufen.|
 |[Atlcommodulegetclassobject](#atlcommodulegetclassobject)|Diese Funktion wird aufgerufen, um das Klassenobjekt zu erhalten.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -60,7 +60,7 @@ Verweist auf die CLSID des zu registrierenden Objekts. Wenn der Wert NULL ist, w
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlComModuleRegisterServer` durchläuft die ATL-Objekt Zuordnung, die automatisch generiert wird, und registriert jedes Objekt in der Zuordnung. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das *pclsid* verweist, registriert. Andernfalls werden alle-Objekte registriert.
 
@@ -92,7 +92,7 @@ Verweist auf die CLSID des Objekts, dessen Registrierung aufgehoben werden soll.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlComModuleUnregisterServer` durchläuft die ATL-Objekt Zuordnung und hebt die Registrierung der einzelnen Objekte in der Zuordnung auf. Wenn *pclsid* nicht NULL ist, wird nur das Objekt, auf das von *pclsid* verwiesen wird, nicht registriert. Andernfalls wird die Registrierung aller Objekte aufgehoben.
 
@@ -124,7 +124,7 @@ Bestimmt die Verbindungstypen für das-Klassenobjekt. Mögliche Werte sind REGCL
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von [CComModule:: RegisterClassObjects](ccommodule-class.md#registerclassobjects) (veraltet in ATL 7,0) und von "CComModule:: [RegisterClassObjects](catlexemodulet-class.md#registerclassobjects)" verwendet.
 
@@ -145,7 +145,7 @@ Zeiger auf das com-Modul.
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von [CComModule:: revokeclassobjects](ccommodule-class.md#revokeclassobjects) (veraltet in ATL 7,0) und von "CComModule:: [revokeclassobjects](catlexemodulet-class.md#revokeclassobjects)" verwendet.
 
@@ -179,10 +179,10 @@ Ein Zeiger auf den Schnittstellen Zeiger, der durch *riid*identifiziert wird. We
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion wird von [CComModule:: GetClassObject](ccommodule-class.md#getclassobject) (veraltet in ATL 7,0) und von "CComModule:: [GetClassObject](catldllmodulet-class.md#getclassobject)" verwendet.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen](../../atl/reference/atl-functions.md)

@@ -1,48 +1,46 @@
 ---
 title: ODBC-Klassen
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.data
 helpviewer_keywords:
 - database classes [MFC], ODBC
 - ODBC classes [MFC]
 ms.assetid: 6c40fca8-3033-4873-9abe-7f51725de0e0
-ms.openlocfilehash: 75e022ea3e5de4a57f0ef2b1e3f312654c2889ec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a4cfa0d7afa197de7b65b6a0bd6b881a09534ef6
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62237774"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447697"
 ---
 # <a name="odbc-classes"></a>ODBC-Klassen
 
-Diese Klassen funktionieren mit der anderen Anwendung Framework-Klassen einfachen Zugriff auf eine Vielzahl von Datenbanken zu gewähren, für die Open Database Connectivity (ODBC)-Treiber zur Verfügung stehen.
+Diese Klassenarbeiten mit den anderen Application Framework-Klassen zusammen, um einen einfachen Zugriff auf eine Vielzahl von Datenbanken zu erhalten, für die Open Database Connectivity (ODBC)-Treiber verfügbar sind.
 
-Programme, die ODBC-Datenbanken verwenden müssen mindestens einen `CDatabase` Objekt und ein `CRecordset` Objekt.
+Programme, die ODBC-Datenbanken verwenden, verfügen über mindestens ein `CDatabase` Objekt und ein `CRecordset`-Objekt.
 
 [CDatabase](../mfc/reference/cdatabase-class.md)<br/>
-Kapselt eine Verbindung mit einer Datenquelle, die über die Sie für die Datenquelle ausgeführt werden können.
+Kapselt eine Verbindung mit einer Datenquelle, über die Sie die Datenquelle verwenden können.
 
 [CRecordset](../mfc/reference/crecordset-class.md)<br/>
-Kapselt einen Satz von Datensätzen aus einer Datenquelle ausgewählt. Durch Recordsets aktivieren, Durchführen eines Bildlaufs von Datensatz zu Datensatz, Aktualisieren von Datensätzen (hinzufügen, bearbeiten und Löschen von Datensätzen), qualifizieren die Auswahl mit einem Filter, sortieren die Auswahl, und parametrisieren die Auswahl mit den Informationen abgerufen oder zur Laufzeit berechnet.
+Kapselt eine Gruppe von Datensätzen, die aus einer Datenquelle ausgewählt wurden. Recordsets ermöglichen das Scrollen von einem Datensatz zu einem Datensatz, das Aktualisieren von Datensätzen (hinzufügen, bearbeiten und Löschen von Datensätzen), das qualifizieren der Auswahl mit einem Filter, das Sortieren der Auswahl und das parametrialisieren der Auswahl mit Informationen, die zur Laufzeit abgerufen oder berechnet werden.
 
 [CRecordView](../mfc/reference/crecordview-class.md)<br/>
-Stellt eine Form anzeigen, die direkt mit einem Recordset-Objekt verbunden. Die Dialogdatenaustausch (DDX)-Mechanismus eine Übertragung von Daten zwischen dem Recordset und der Steuerelemente der Datensatzansicht angezeigt. Wie alle Formularansichten ist eine Dialogfeldvorlagen-Ressource eine Datensatzansicht abhängig. Datensatzansichten unterstützen auch das Verschieben von Datensatz zu Datensatz im Recordset, Aktualisieren von Datensätzen und das zugehörigen Recordset schließen, wenn die Datensatzansicht geschlossen wird.
+Stellt eine Formularansicht bereit, die direkt mit einem Recordset-Objekt verbunden ist. Der DDX-Mechanismus (Dialog Datenaustausch) tauscht Daten zwischen dem Recordset und den Steuerelementen der Daten Satz Ansicht aus. Wie alle Formular Ansichten basiert eine Daten Satz Ansicht auf einer Dialogfeld Vorlagen-Ressource. Daten Satz Sichten unterstützen auch das Verschieben von Datensätzen in den Datensatz in das Recordset, Aktualisieren von Datensätzen und Schließen des zugeordneten Recordsets, wenn die Daten Satz Ansicht geschlossen wird.
 
 [CDBException](../mfc/reference/cdbexception-class.md)<br/>
-Eine Ausnahme aus Fehlern beim Datenzugriff Verarbeitung. Diese Klasse dient demselben Zweck wie die anderen Ausnahmeklassen in der Mechanismus für die Ausnahmebehandlung der Klassenbibliothek.
+Eine Ausnahme, die sich aus Fehlern bei der Datenzugriffs Verarbeitung ergibt. Diese Klasse erfüllt den gleichen Zweck wie andere Ausnahme Klassen im Mechanismus zur Ausnahmebehandlung der-Klassenbibliothek.
 
 [CFieldExchange](../mfc/reference/cfieldexchange-class.md)<br/>
-Stellt Kontextinformationen für den Datensatzfeldaustausch (RFX), zu unterstützen, die Daten zwischen den Felddatenmembern und Parameterdatenmember von einem Recordset-Objekt und den entsprechenden Spalten in der Datenquelle austauscht. Analog zu Klasse [CDataExchange](../mfc/reference/cdataexchange-class.md), die auf ähnliche Weise für Dialogdatenaustausch (DDX) verwendet wird.
+Liefert Kontextinformationen zur Unterstützung von Daten Satz Feld Austausch (RFX), der Daten zwischen den Felddatenmembern und Parameter Datenmembern eines Recordset-Objekts und den entsprechenden Tabellen Spalten in der Datenquelle austauscht. Analog zur Klasse [CDataExchange](../mfc/reference/cdataexchange-class.md), die auf ähnliche Weise für den Dialog Datenaustausch (Dialog Data Exchange, DDX) verwendet wird.
 
 ## <a name="related-classes"></a>Verwandte Klassen
 
 [CLongBinary](../mfc/reference/clongbinary-class.md)<br/>
-Kapselt ein Handle für den Speicher für ein binary large Object (BLOB), z. B. eine Bitmap. `CLongBinary` Objekte werden verwendet, zum Verwalten von große Datenobjekte, die in Datenbanktabellen gespeichert.
+Kapselt ein Handle für den Speicher für einen Binary Large Object (BLOB), z. b. eine Bitmap. `CLongBinary` Objekte werden verwendet, um große Datenobjekte zu verwalten, die in Datenbanktabellen gespeichert werden.
 
 [CDBVariant](../mfc/reference/cdbvariant-class.md)<br/>
-ermöglicht es Ihnen, einen Wert zu speichern, ohne sich Gedanken über den Datentyp des Werts zu. `CDBVariant` verfolgt den Datentyp des aktuellen Werts, der in einer Union gespeichert wird.
+Ermöglicht das Speichern eines Werts, ohne sich Gedanken über den Datentyp des Werts machen zu müssen. `CDBVariant` verfolgt den Datentyp des aktuellen Werts, der in einer Union gespeichert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

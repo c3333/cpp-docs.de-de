@@ -27,7 +27,6 @@ f1_keywords:
 - ungetwch
 - ungetch_nolock
 - _ungetwch
-- ungetch
 - ungetwch_nolock
 - _ungetch
 - _ungettch_nolock
@@ -47,12 +46,12 @@ helpviewer_keywords:
 - ungetwch_nolock function
 - _ungetwch function
 ms.assetid: 70ae71c6-228c-4883-a57d-de6d5f873825
-ms.openlocfilehash: 2f6b782334df710ac9fe6359fda77b40a31e060c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5fd34d0c975ee49bce688cd902a6df856b5d6963
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945906"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443747"
 ---
 # <a name="_ungetch-_ungetwch-_ungetch_nolock-_ungetwch_nolock"></a>_ungetch, _ungetwch, _ungetch_nolock, _ungetwch_nolock
 
@@ -85,13 +84,13 @@ Zu verschiebendes Zeichen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Beide Funktionen geben bei Erfolg das Zeichen *c* zurück. Wenn ein Fehler auftritt, gibt **_ungetch** den Wert " **EOF** " und " **_ungetwch** " den Wert " **WEOF**" zurück.
+Beide Funktionen geben bei Erfolg das Zeichen *c* zurück. Wenn ein Fehler auftritt, gibt **_ungetch** den Wert **EOF** zurück, und **_ungetwch** gibt **WEOF**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktionen schieben das Zeichen *c* zurück in die Konsole, sodass *c* das nächste Zeichen ist, das von **_getch** oder **_getche** (oder **_getwch** oder **_getwche**) gelesen wird. **_ungetch** und **_ungetwch** schlagen fehl, wenn Sie vor dem nächsten Lesevorgang mehrmals aufgerufen werden. Das *c* -Argument darf nicht **EOF** (oder **WEOF**) sein.
+Diese Funktionen schieben das Zeichen *c* zurück in die Konsole, sodass *c* das nächste von **_getch** oder **_getche** (oder **_getwch** oder **_getwche**) gelesene Zeichen ist. **_ungetch** und **_ungetwch** schlagen fehl, wenn Sie vor dem nächsten Lesevorgang mehrmals aufgerufen werden. Das *c* -Argument darf nicht **EOF** (oder **WEOF**) sein.
 
-Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsicheren Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
+Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsichere Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -100,12 +99,12 @@ Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nic
 |**_ungettch**|**_ungetch**|**_ungetch**|**_ungetwch**|
 |**_ungettch_nolock**|**_ungetch_nolock**|**_ungetch_nolock**|**_ungetwch_nolock**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_ungetch**, **_ungetch_nolock**|\<conio.h>|
-|**_ungetwch**, **_ungetwch_nolock**|\<conio.h> oder \<wchar.h>|
+|**_ungetch** **_ungetch_nolock**|\<conio.h>|
+|**_ungetwch** **_ungetwch_nolock**|\<conio.h> oder \<wchar.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -151,7 +150,7 @@ int main( void )
 Whitetoken = White
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cscanf, _cscanf_l, _cwscanf, _cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>

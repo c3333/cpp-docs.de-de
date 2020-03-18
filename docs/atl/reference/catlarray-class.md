@@ -26,11 +26,11 @@ helpviewer_keywords:
 - CAtlArray class
 ms.assetid: 0b503aa8-2357-40af-a326-6654bf1da098
 ms.openlocfilehash: 6a0b83f722d1b616e9c10713646d337f9cb090a4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864884"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423459"
 ---
 # <a name="catlarray-class"></a>Asslarray-Klasse
 
@@ -51,18 +51,18 @@ Der Typ der im Array gespeicherten Daten.
 *Echarakteristika*<br/>
 Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
-|[Add (Hinzufügen)](#add)|Mit dieser Methode können Sie dem Array Objekt ein Element hinzufügen.|
+|[Add](#add)|Mit dieser Methode können Sie dem Array Objekt ein Element hinzufügen.|
 |[Append](#append)|Ruft diese Methode auf, um den Inhalt eines Arrays am Ende eines anderen Arrays hinzuzufügen.|
 |["AssertValid"](#assertvalid)|Mit dieser Methode können Sie bestätigen, dass das Array Objekt gültig ist.|
 |[.](#catlarray)|Der Konstruktor.|
 |[~-Größe](#dtor)|Der Destruktor.|
-|[Copy](#copy)|Ruft diese Methode auf, um die Elemente eines Arrays in ein anderes Array zu kopieren.|
+|[Kopieren](#copy)|Ruft diese Methode auf, um die Elemente eines Arrays in ein anderes Array zu kopieren.|
 |["Freextra"](#freeextra)|Diese Methode wird aufgerufen, um leere Elemente aus dem Array zu entfernen.|
 |[GetAt](#getat)|Rufen Sie diese Methode auf, um ein einzelnes Element aus dem Array Objekt abzurufen.|
 |[GetCount](#getcount)|Mit dieser Methode wird die Anzahl der im Array gespeicherten Elemente zurückgegeben.|
@@ -89,7 +89,7 @@ Der Code, der zum Kopieren oder Verschieben von Elementen verwendet wird.
 |[Inargtype](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Array verwendet werden soll.|
 |[Outargtype](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Array verwendet werden soll.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CAtlArray` stellt Methoden zum Erstellen und Verwalten eines Arrays von Elementen eines benutzerdefinierten Typs bereit. Obwohl die Standard-C-Arrays ähnlich sind, kann das `CAtlArray`-Objekt bei Bedarf dynamisch verkleinert und vergrößert werden. Der Array Index beginnt immer an Position 0, und die obere Grenze kann korrigiert oder erweitert werden, wenn neue Elemente hinzugefügt werden.
 
@@ -99,7 +99,7 @@ Für Arrays mit einer kleinen Anzahl von Elementen kann die ATL-Klasse [CSimpleA
 
 Weitere Informationen finden Sie unter [ATL](../../atl/atl-collection-classes.md)-Auflistungs Klassen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlcoll. h
 
@@ -121,7 +121,7 @@ Das Element, das dem Array hinzugefügt werden soll.
 
 Gibt den Index des hinzugefügten Elements zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das neue Element wird am Ende des Arrays hinzugefügt. Wenn kein-Element bereitgestellt wird, wird ein leeres-Element hinzugefügt. Das heißt, dass das Array so erhöht wird, als ob ein reales Element hinzugefügt wurde. Wenn der Vorgang fehlschlägt, wird " [atlthrow](debugging-and-error-reporting-global-functions.md#atlthrow) " mit dem Argument E_OUTOFMEMORY aufgerufen.
 
@@ -146,7 +146,7 @@ Das anzufügende Array.
 
 Gibt den Index des ersten angefügten Elements zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Elemente im angegebenen Array werden am Ende des vorhandenen Arrays hinzugefügt. Bei Bedarf wird der Arbeitsspeicher zugeordnet, um die neuen Elemente zu unterstützen.
 
@@ -166,7 +166,7 @@ Mit dieser Methode können Sie bestätigen, dass das Array Objekt gültig ist.
 void AssertValid() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Array Objekt nicht gültig ist, löst ATLASSERT eine-Assertionen aus. Diese Methode ist nur verfügbar, wenn _DEBUG definiert ist.
 
@@ -182,7 +182,7 @@ Der Konstruktor.
 CAtlArray() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Initialisiert das Array Objekt.
 
@@ -198,7 +198,7 @@ Der Destruktor.
 ~CAtlArray() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt alle Ressourcen frei, die vom Array Objekt verwendet werden.
 
@@ -215,7 +215,7 @@ void Copy(const CAtlArray<E, ETraits>& aSrc);
 *ASRC*<br/>
 Die Quelle der Elemente, die in ein Array kopiert werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie Elemente eines Arrays mit den Elementen eines anderen Arrays überschreiben. Bei Bedarf wird der Arbeitsspeicher zugeordnet, um die neuen Elemente zu unterstützen. Es ist nicht möglich, Elemente eines Arrays in sich selbst zu kopieren.
 
@@ -238,7 +238,7 @@ Diese Methode wird aufgerufen, um leere Elemente aus dem Array zu entfernen.
 void FreeExtra() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle leeren Elemente werden entfernt, aber die Größe und die obere Grenze des Arrays bleiben unverändert.
 
@@ -262,7 +262,7 @@ Der Indexwert des zurück zugebende Array Elements.
 
 Gibt einen Verweis auf das erforderliche Array Element zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *IElement* die Anzahl der Elemente im Array überschreitet. In Releasebuilds kann ein ungültiges Argument zu unvorhersehbarem Verhalten führen.
 
@@ -282,7 +282,7 @@ size_t GetCount() const throw();
 
 Gibt die Anzahl der im Array gespeicherten Elemente zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Da sich das erste Element im Array an Position 0 befindet, ist der von `GetCount` zurückgegebene Wert immer 1 größer als der größte Index.
 
@@ -331,7 +331,7 @@ Der Index, an dem das Array eingefügt werden soll.
 *Panew*<br/>
 Das Array, das eingefügt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Elemente aus dem *arraypanew* werden in das Array Objekt kopiert, beginnend bei Element *iStart*. Die vorhandenen Array Elemente werden verschoben, damit Sie nicht überschrieben werden.
 
@@ -363,7 +363,7 @@ Der Wert des Elements, das eingefügt werden soll.
 *nCount*<br/>
 Die Anzahl der hinzu zufügenden Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Fügt ein oder mehrere Elemente in das Array ein, beginnend bei Index *IElement*. Vorhandene Elemente werden verschoben, damit Sie nicht überschrieben werden.
 
@@ -385,7 +385,7 @@ bool IsEmpty() const throw();
 
 Gibt true zurück, wenn das Array leer ist, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Array ist leer, wenn es keine Elemente enthält. Daher ist es nicht leer, auch wenn das Array leere Elemente enthält.
 
@@ -411,7 +411,7 @@ Der Indexwert des zurück zugebende Array Elements.
 
 Gibt einen Verweis auf das erforderliche Array Element zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Führt eine ähnliche Funktion für "" "" "" ["mit"](#getat)". Anders als bei der MFC-Klasse [CArray](../../mfc/reference/carray-class.md)kann dieser Operator nicht als Ersatz für " [asslarray::](#setat)" verwendet werden.
 
@@ -433,7 +433,7 @@ Mit dieser Methode können Sie alle Elemente aus dem Array Objekt entfernen.
 void RemoveAll() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Entfernt alle Elemente aus dem Array Objekt.
 
@@ -459,7 +459,7 @@ Der Index des ersten zu entfernenden Elements.
 *nCount*<br/>
 Die Anzahl der zu entfernenden Elemente.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Entfernt ein oder mehrere Elemente aus dem Array. Alle verbleibenden Elemente werden nach unten verschoben. Die obere Grenze wird verringert, aber der Arbeitsspeicher wird erst freigegeben, wenn ein [calllarray:: freextra](#freeextra) -Befehl durchgeführt wird.
 
@@ -485,7 +485,7 @@ Der Index, der auf das festzulegende Array Element verweist.
 *gewisses*<br/>
 Der neue Wert des angegebenen Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *IElement* die Anzahl der Elemente im Array überschreitet. In Einzelhandels Builds kann ein ungültiger Parameter zu unvorhersehbaren Ergebnissen führen.
 
@@ -513,7 +513,7 @@ Ein-Wert, der verwendet wird, um die Größe des Puffers zu bestimmen. Der Wert-
 
 Gibt true zurück, wenn die Größe des Arrays erfolgreich geändert wurde, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Array kann erweitert oder verkleinert werden. Wenn der Wert erhöht wird, werden dem Array zusätzliche leere Elemente hinzugefügt. Wenn die Größe verringert wird, werden die Elemente mit den größten Indizes gelöscht und der Arbeitsspeicher freigegeben.
 
@@ -539,7 +539,7 @@ Der Index, der auf das festzulegende Array Element verweist.
 *gewisses*<br/>
 Der neue Wert des angegebenen Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ersetzt den Wert des Elements, auf das durch den Index verwiesen wird. Wenn *IElement* größer als die aktuelle Größe des Arrays ist, wird das Array automatisch mit einem aufzurufenden [calllarray:: SetCount](#setcount)-Befehl vergrößert. In Debugbuilds wird ein ATLASSERT ausgelöst, wenn das `CAtlArray` Objekt ungültig ist. In Einzelhandels Builds können ungültige Parameter zu unvorhersehbaren Ergebnissen führen.
 
@@ -547,7 +547,7 @@ Ersetzt den Wert des Elements, auf das durch den Index verwiesen wird. Wenn *IEl
 
 [!code-cpp[NVC_ATL_Utilities#12](../../atl/codesnippet/cpp/catlarray-class_12.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MMXSwarm-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [DynamicConsumer-Beispiel](../../overview/visual-cpp-samples.md)<br/>

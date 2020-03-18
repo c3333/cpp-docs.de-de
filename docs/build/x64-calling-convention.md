@@ -4,11 +4,11 @@ description: Details der standardmäßigen x64 ABI-Aufruf Konvention.
 ms.date: 12/17/2018
 ms.assetid: 41ca3554-b2e3-4868-9a84-f1b46e6e21d9
 ms.openlocfilehash: 2cad00ac7f2cb5fe086fa262a0f512330997391f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856884"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422703"
 ---
 # <a name="x64-calling-convention"></a>Aufrufkonvention bei x64-Systemen
 
@@ -45,7 +45,7 @@ In der folgenden Tabelle wird zusammengefasst, wie Parameter übermittelt werden
 |Parametertyp|Bestandene Vorgehensweise|
 |--------------------|----------------|
 |Gleitkomma|Die ersten vier Parameter: XMM0 bis XMM3. Andere wurden auf dem Stapel weitergegeben.|
-|Integer|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
+|Ganze Zahl|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
 |Aggregate (8, 16, 32 oder 64 Bits) und __m64|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
 |Aggregate (sonstige)|Nach Zeiger. Die ersten vier Parameter, die als Zeiger in RCX, RDX, R8 und R9 als Zeiger gegeben wurden.|
 |__m128|Nach Zeiger. Die ersten vier Parameter, die als Zeiger in RCX, RDX, R8 und R9 als Zeiger gegeben wurden.|
@@ -205,6 +205,6 @@ Wenn Sie "setjmpex. h" oder "setjmp. h" einschließen, führen alle Aufrufe von 
 
 Ein-`setjmp`, der den aktuellen Stapelzeiger, nicht flüchtige Register und MXCSR-Register beibehält.  Aufrufe von `longjmp` zur aktuellen `setjmp` Aufruf Site zurückkehren und den Stapelzeiger, nicht flüchtige Register und MXCSR-Register wieder in den Zustand zurücksetzen, der durch den letzten `setjmp` Aufruf beibehalten wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Softwarekonventionen bei x64-Systemen](../build/x64-software-conventions.md)

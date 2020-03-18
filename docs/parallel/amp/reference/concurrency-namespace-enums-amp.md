@@ -6,11 +6,11 @@ f1_keywords:
 - amp/Concurrency::queuing_mode
 ms.assetid: 4c87457e-184f-4992-81ab-ca75e7d524ab
 ms.openlocfilehash: a4feb2f98fc288fa79c0f9d81e4ed882027eddf8
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855728"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424974"
 ---
 # <a name="concurrency-namespace-enums-amp"></a>Concurrency-Namespace-Enumerationen (AMP)
 
@@ -28,7 +28,7 @@ enum access_type;
 
 ### <a name="values"></a>Werte
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`access_type_auto`|Wählen Sie automatisch das beste `access_type`-Objekt für die Zugriffstaste aus.|
 |`access_type_none`|Dediziert. Auf die Speicherbelegung kann nur auf der Zugriffstaste und nicht auf der CPU zugegriffen werden.|
@@ -46,11 +46,11 @@ enum queuing_mode;
 
 ### <a name="values"></a>Werte
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |`queuing_mode_immediate`|Ein queuingmodus, der angibt, dass alle Befehle, z. b. [Parallel_for_each Funktion (C++ amp)](concurrency-namespace-functions-amp.md#parallel_for_each), an das entsprechende Zugriffstasten Gerät gesendet werden, sobald Sie zum Aufrufer zurückkehren.|
 |`queuing_mode_automatic`|Ein queuingmodus, der angibt, dass Befehle in einer Befehls Warteschlange in die Warteschlange eingereiht werden, die dem [accelerator_view](accelerator-view-class.md) Objekt entspricht. Befehle werden an das Gerät gesendet, wenn [accelerator_view:: Flush](accelerator-view-class.md#flush) aufgerufen wird.|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

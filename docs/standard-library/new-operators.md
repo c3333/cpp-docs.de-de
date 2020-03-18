@@ -6,11 +6,11 @@ f1_keywords:
 - new/std::operator new
 ms.assetid: d1af4b56-9a95-4c65-ab01-bf43e982c7bd
 ms.openlocfilehash: a3fd5b825fe1eaf3a07d9d001f03b9d0c64ffa31
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854937"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425370"
 ---
 # <a name="ltnewgt-operators-and-enums"></a>&lt;neuer&gt; Operatoren und-aufumstellungs
 
@@ -35,7 +35,7 @@ void operator delete(void* ptr, const std::nothrow_t&) throw();
 *ptr* -\
 Der Zeiger, dessen Wert durch den Löschvorgang als ungültig gerendert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion wird von einem DELETE-Ausdruck aufgerufen, um den Wert von *ptr* ungültig zu erzeugen. Das Programm kann eine Funktion mit dieser Funktionssignatur definieren, die die von der C++-Standardbibliothek definierte Standardversion ersetzt. Das erforderliche Verhalten besteht darin, einen Wert von *ptr* zu akzeptieren, der NULL ist oder durch einen früheren- [Operator new](../standard-library/new-operators.md#op_new)(**size_t**) zurückgegeben wurde.
 
@@ -64,7 +64,7 @@ void operator delete[](void* ptr, const std::nothrow_t&) throw();
 *ptr* -\
 Der Zeiger, dessen Wert durch den Löschvorgang als ungültig gerendert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion wird von einem `delete[]` Ausdruck aufgerufen, um den Wert von *ptr* ungültig zu erzeugen. Die Funktion lässt sich ersetzen, da das Programm eine Funktion mit dieser Funktionssignatur definieren kann, die die von der C++-Standardbibliothek definierte Standardversion ersetzt. Das erforderliche Verhalten besteht darin, einen Wert von *ptr* zu akzeptieren, der NULL ist oder durch einen früheren- [Operator&#91;New](../standard-library/new-operators.md#op_new_arr)(**size_t**) zurückgegeben wurde. Das Standardverhalten für einen NULL-Wert von *ptr* besteht darin, nichts zu tun. Jeder andere Wert von *ptr* muss ein Wert sein, der zuvor von einem-Befehl zurückgegeben wurde, wie zuvor beschrieben. Das Standardverhalten für einen solchen Wert, der nicht NULL *ist, besteht darin,* den Speicher freizugeben, der durch den vorherigen-Befehl reserviert wurde. Es wird nicht angegeben, unter welchen Bedingungen oder der gesamte freigegebene Speicher durch einen nachfolgenden [Operator new](../standard-library/new-operators.md#op_new)(**size_t**) oder einen beliebigen `calloc`(**size_t**), `malloc`(**size_t**) oder `realloc`( **void** <strong>\*</strong>, **size_t**) zugeordnet wird.
 
@@ -98,7 +98,7 @@ Der Zeiger, der zurückgegeben werden soll.
 
 Entweder ein Zeiger auf die niedrigste Byteadresse des neu belegten Speichers Oder *ptr*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion wird durch einen new-Ausdruck aufgerufen, um genau auf alle Objekte dieser Größe ausgerichtete `count`-Bytes im Speicher zu belegen. Die Funktion lässt sich ersetzen, da das Programm eine Funktion mit dieser Funktionssignatur definieren kann, die die von der C++-Standardbibliothek definierte Standardversion ersetzt.
 
@@ -193,7 +193,7 @@ Der Zeiger, der zurückgegeben werden soll.
 
 Entweder ein Zeiger auf die niedrigste Byteadresse des neu belegten Speichers Oder *ptr*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion wird durch einen `new[]`-Ausdruck aufgerufen, um `count`-Bytes im Speicher zu belegen, die genau auf alle Array-Objekte ausgerichtet sind, die höchstens diese Größe aufweisen. Das Programm kann eine Funktion mit dieser Funktionssignatur definieren, die die von der C++-Standardbibliothek definierte Standardversion ersetzt. Das erforderliche Verhalten ist das gleiche wie bei [New-Operator](../standard-library/new-operators.md#op_new)(**size_t**). Standardmäßig wird `operator new`( `count`) zurückgegeben.
 

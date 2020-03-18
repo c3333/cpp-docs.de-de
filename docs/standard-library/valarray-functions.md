@@ -41,11 +41,11 @@ helpviewer_keywords:
 - std::tan [C++]
 - std::tanh [C++]
 ms.openlocfilehash: 12275f93c751b4d9ffafcae62621b251a8bc9bfc
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875610"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427608"
 ---
 # <a name="ltvalarraygt-functions"></a>&lt;valarray&gt;-Funktionen
 
@@ -122,7 +122,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkuskosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
@@ -195,7 +195,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkussinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
@@ -268,7 +268,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem Arkustangens der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
@@ -359,7 +359,7 @@ Ein valarray-Objekt, dessen Element `I` gleich dem Arkustangens der folgenden Ob
 
 - `left` / `right` [ *I* ] für die dritte Vorlagenfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zurückgegebenen Elemente werden im Bogenmaß angegeben.
 
@@ -522,7 +522,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Kosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die den hyperbolischen Kosinus in Bezug auf die Exponentialfunktion definieren:
 
@@ -827,7 +827,7 @@ Ein valarray-Objekt, dessen Element `I` gleich den folgenden Objekten sind:
 
 - `left` hoch `right` [ *I* ] für die dritte Vorlagenfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn *left* und *right* eine unterschiedliche Anzahl von Elementen aufweisen, ist das Ergebnis nicht definiert.
 
@@ -977,7 +977,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Sinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die den hyperbolischen Sinus in Bezug auf die Exponentialfunktion definieren:
 
@@ -1115,7 +1115,7 @@ Ein Objekt des Typs `valarray`.
 *Rechte*\
 Ein Objekt des Typs `valarray`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
@@ -1214,7 +1214,7 @@ Das valarray-Eingabeobjekt, für dessen Elemente die Memberfunktion Operationen 
 
 Ein valarray-Objekt, dessen Elemente gleich dem hyperbolischen Kosinus der Elemente des valarray-Eingabeobjekts sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die den hyperbolischen Tangens in Bezug auf die Exponentialfunktion definieren:
 

@@ -6,11 +6,11 @@ f1_keywords:
 - istream/std::ws
 ms.assetid: 0301ea0d-4ded-4841-83dd-4253b55b3188
 ms.openlocfilehash: fc512558969bc25d2b16afa2b93219e13d0b28ca
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874812"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425682"
 ---
 # <a name="ltistreamgt-functions"></a>&lt;istream&gt;-Funktionen
 
@@ -57,9 +57,9 @@ Ein Datenstrom.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Datenstrom.
+Der Stream (Datenstrom).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator extrahiert und verwirft alle Elemente `ch`, für die [Use_facet](../standard-library/basic-filebuf-class.md#open)< **CType**\< **Elem**> > ( [getloc](../standard-library/ios-base-class.md#getloc)). **is**( **CType**\< **Elem**>:: **Space**, **ch**) ist true.
 
@@ -69,6 +69,6 @@ Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( *
 
 Unter [Operator>>](../standard-library/istream-operators.md#op_gt_gt) finden Sie ein Beispiel für die Verwendung von `ws`.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<istream>](../standard-library/istream.md)

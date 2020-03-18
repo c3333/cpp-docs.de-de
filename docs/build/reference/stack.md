@@ -2,19 +2,19 @@
 title: /STACK
 ms.date: 11/04/2016
 f1_keywords:
-- /stack
+- /stack_editbin
 helpviewer_keywords:
 - -STACK editbin option
 - STACK editbin option
 - stack, setting size
 - /STACK editbin option
 ms.assetid: a39bcff0-c945-4355-80cc-8e4f24a5f142
-ms.openlocfilehash: 6f30877800d4597054601f7459df88c78193fd3c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 63fcddec8ff8afd81084bb5a2786f394db594b07
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62318497"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438883"
 ---
 # <a name="stack"></a>/STACK
 
@@ -22,14 +22,14 @@ ms.locfileid: "62318497"
 /STACK:reserve[,commit]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option legt die Stapelgröße in Bytes fest und akzeptiert Argumente in der Schreibweise von "decimal" oder C-Sprachen. Die Stapelgröße-Option gilt nur für eine ausführbare Datei.
+Mit dieser Option wird die Größe des Stapels in Byte festgelegt, und es werden Argumente in der Dezimal-oder C-Sprache festgelegt. Die/Stack-Option gilt nur für eine ausführbare Datei.
 
-Die *reservieren* Argument gibt die gesamte stapelzuordnung im virtuellen Speicher. EDITBIN rundet den angegebenen Wert in die nächsten 4 Bytes ab.
+Das *Reserve* Argument gibt die gesamte Stapel Zuordnung im virtuellen Speicher an. EDITBIN rundet den angegebenen Wert auf die nächsten 4 Bytes auf.
 
-Der optionale `commit` -Argument interpretiert, die vom Betriebssystem wird. In Windows NT, Windows 95 und Windows 98 `commit` gibt die Menge an physikalischem Arbeitsspeicher, zu einem Zeitpunkt zuordnen. Die Zusicherung von virtuellem Speicher bewirkt die Belegung von Speicher in der Auslagerungsdatei. Eine höhere `commit` -Wert spart Zeit, wenn die Anwendung mehr Stapelspeicher benötigt, erhöht aber die arbeitsspeicheranforderungen und möglicherweise die Startzeit.
+Das optionale `commit`-Argument unterliegt der Interpretation durch das Betriebssystem. In Windows NT, Windows 95 und Windows 98 gibt `commit` die Menge des physischen Speichers an, der gleichzeitig belegt werden soll. Die Zusicherung von virtuellem Speicher bewirkt die Belegung von Speicher in der Auslagerungsdatei. Ein höherer `commit` Wert spart Zeit, wenn die Anwendung mehr Stapel Speicher benötigt, aber die Arbeitsspeicher Anforderungen und möglicherweise die Startzeit erhöht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [EDITBIN-Optionen](editbin-options.md)

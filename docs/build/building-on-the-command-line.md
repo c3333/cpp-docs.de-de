@@ -11,11 +11,11 @@ helpviewer_keywords:
 - command line [C++], compilers
 ms.assetid: 7ca9daed-a003-4162-842d-908f79058365
 ms.openlocfilehash: ec30cba8e119f96efc5bca156fa565db77904520
-ms.sourcegitcommit: 458dcc794e3841919c01a3a5ff6b9a3767f8861b
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74051493"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422901"
 ---
 # <a name="use-the-microsoft-c-toolset-from-the-command-line"></a>Verwenden Sie das C++ Microsoft-Toolset von der Befehlszeile aus.
 

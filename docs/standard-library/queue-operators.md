@@ -17,11 +17,11 @@ helpviewer_keywords:
 - std::operator&lt;= (queue)
 - std::operator== (queue)
 ms.openlocfilehash: 420d717b34b6c17587f8790701906e06ab008d96
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854886"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425250"
 ---
 # <a name="ltqueuegt-operators"></a>&lt;queue&gt;-Operatoren
 
@@ -45,7 +45,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlangen ungleich sind; **FALSE**, wenn die Warteschlangen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -112,7 +112,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlange links vom Operator kleiner als, aber ungleich der Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -175,7 +175,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „kleiner als oder gleich“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -240,7 +240,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlangen ungleich sind; **FALSE**, wenn die Warteschlangen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -306,7 +306,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Die Beziehung „größer als“ zwischen zwei Warteschlangenobjekten basiert auf einem Vergleich des ersten Paares mit ungleichen Elementen.
 
@@ -372,7 +372,7 @@ Ein Objekt des Typs `queue`.
 
 **TRUE**, wenn die Warteschlange links vom Operator strikt kleiner als die Warteschlange rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Warteschlangenobjekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei Warteschlangen sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 

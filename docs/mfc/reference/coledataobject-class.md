@@ -29,11 +29,11 @@ helpviewer_keywords:
 - COleDataObject [MFC], Release
 ms.assetid: d1cc84be-2e1c-4bb3-a8a0-565eb08aaa34
 ms.openlocfilehash: e706489a84ad564949e2c2d3d193173fc19b9828
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883655"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426540"
 ---
 # <a name="coledataobject-class"></a>COleDataObject-Klasse
 
@@ -45,17 +45,17 @@ Wird in Datenübertragungen zum Abrufen von Daten in unterschiedlichen Formaten 
 class COleDataObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDataObject:: COleDataObject](#coledataobject)|Erstellt ein `COleDataObject`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDataObject:: Attach](#attach)|Fügt das angegebene OLE-Datenobjekt an den `COleDataObject`an.|
 |[COleDataObject:: AttachClipboard](#attachclipboard)|Fügt das Datenobjekt an, das sich in der Zwischenablage befindet.|
@@ -68,7 +68,7 @@ class COleDataObject
 |[COleDataObject:: IsDataAvailable](#isdataavailable)|Überprüft, ob Daten in einem angegebenen Format verfügbar sind.|
 |[COleDataObject:: Release](#release)|Trennt die zugeordneten `IDataObject` Objekt und gibt Sie frei.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `COleDataObject` verfügt nicht über eine Basisklasse.
 
@@ -84,7 +84,7 @@ Weitere Informationen zum Verwenden von Datenobjekten in der Anwendung finden Si
 
 `COleDataObject`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Afxole. h
 
@@ -106,7 +106,7 @@ Verweist auf ein OLE-Datenobjekt.
 *bautoriase*<br/>
 TRUE, wenn das OLE-Datenobjekt freigegeben werden soll, wenn das `COleDataObject` Objekt zerstört wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IDataObject](/windows/win32/api/objidl/nn-objidl-idataobject) in der Windows SDK.
 
@@ -122,7 +122,7 @@ BOOL AttachClipboard();
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Durch Aufrufen dieser Funktion wird die Zwischenablage gesperrt, bis dieses Datenobjekt freigegeben wird. Das Datenobjekt wird im Dekonstruktor für den `COleDataObject`freigegeben. Weitere Informationen finden Sie unter [OpenClipboard](/windows/win32/api/winuser/nf-winuser-openclipboard) und [CloseClipboard](/windows/win32/api/winuser/nf-winuser-closeclipboard) in der Win32-Dokumentation.
@@ -135,7 +135,7 @@ Rufen Sie diese Funktion auf, um nachfolgende Aufrufe `GetNextFormat` zum Abrufe
 void BeginEnumFormats();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach einem `BeginEnumFormats`-Aufrufe wird die Position des ersten von diesem Datenobjekt unterstützten Formats gespeichert. Bei aufeinander folgenden Aufrufen von `GetNextFormat` wird die Liste der verfügbaren Formate im Datenobjekt aufgelistet.
 
@@ -151,7 +151,7 @@ Erstellt ein `COleDataObject`-Objekt.
 COleDataObject();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Aufruf von [COleDataObject:: Attach](#attach) oder [COleDataObject:: AttachClipboard](#attachclipboard) muss erfolgen, bevor andere `COleDataObject` Funktionen aufgerufen werden.
 
@@ -170,7 +170,7 @@ LPDATAOBJECT Detach();
 
 Ein Zeiger auf das OLE-Datenobjekt, das getrennt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getdata"></a>COleDataObject:: GetData
 
@@ -198,7 +198,7 @@ Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -St
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IDataObject:: GetData](/windows/win32/api/objidl/nf-objidl-idataobject-getdata), [STGMEDIUM](/windows/win32/api/objidl/ns-objidl-ustgmedium~r1)und [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) in der Windows SDK.
 
@@ -226,7 +226,7 @@ Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -St
 
 Zeiger auf den neuen `CFile` oder `CFile`abgeleiteten Objekt, das die Daten enthält, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Abhängig vom Medium, in dem die Daten gespeichert werden, kann der tatsächliche Typ, auf den der Rückgabewert verweist, `CFile`, `CSharedFile`oder `COleStreamFile`sein.
 
@@ -259,7 +259,7 @@ Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -St
 
 Das Handle des globalen Speicherblocks, der die Daten enthält, wenn der Vorgang erfolgreich ist. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) in der Windows SDK.
 
@@ -282,7 +282,7 @@ Verweist auf die [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -Str
 
 Ungleich NULL, wenn ein anderes Format verfügbar ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach einem Aufrufen von [COleDataObject:: BeginEnumFormats](#beginenumformats)wird die Position des ersten Formats gespeichert, das von diesem Datenobjekt unterstützt wird. Bei aufeinander folgenden Aufrufen von `GetNextFormat` wird die Liste der verfügbaren Formate im Datenobjekt aufgelistet. Verwenden Sie diese Funktionen, um die verfügbaren Formate aufzulisten.
 
@@ -312,7 +312,7 @@ Verweist auf eine [FORMATETC](/windows/win32/api/objidl/ns-objidl-formatetc) -St
 
 Ungleich 0 (null), wenn Daten im angegebenen Format verfügbar sind. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion ist nützlich, bevor `GetData`, `GetFileData`oder `GetGlobalData`aufgerufen wird.
 
@@ -332,11 +332,11 @@ Diese Funktion wird aufgerufen, um den Besitz des [IDataObject](/windows/win32/a
 void Release();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `IDataObject` wurde der `COleDataObject` zugeordnet, indem `Attach` oder `AttachClipboard` explizit oder durch das Framework aufgerufen wurde. Wenn der Parameter " *bautorelease* " von "`Attach`" den Wert "false" hat, wird das `IDataObject` Objekt nicht freigegeben. In diesem Fall ist der Aufrufer für das Freigeben des `IDataObject` durch Aufrufen von [IUnknown:: Release](/windows/win32/api/unknwn/nf-unknwn-iunknown-release)verantwortlich.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>

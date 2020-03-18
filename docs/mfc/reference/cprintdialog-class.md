@@ -41,11 +41,11 @@ helpviewer_keywords:
 - CPrintDialog [MFC], m_pd
 ms.assetid: 5bdb2424-adf8-433d-a97c-df11a83bc4e4
 ms.openlocfilehash: ccc673d665d6d5beb92f398b21e6ffd313a58fc9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855571"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426528"
 ---
 # <a name="cprintdialog-class"></a>CPrintDialog-Klasse
 
@@ -57,17 +57,17 @@ Kapselt die Dienste, die vom allgemeinen Windows-Dialogfeld für das Drucken ber
 class CPrintDialog : public CCommonDialog
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPrintDialog:: CPrintDialog](#cprintdialog)|Erstellt ein `CPrintDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPrintDialog:: kreateprinterdc](#createprinterdc)|Erstellt einen Drucker Gerätekontext, ohne das Dialogfeld Drucken anzuzeigen.|
 |[CPrintDialog::D omodal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl vorzunehmen.|
@@ -87,11 +87,11 @@ class CPrintDialog : public CCommonDialog
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPrintDialog:: m_pd](#m_pd)|Eine-Struktur, die verwendet wird, um ein `CPrintDialog` Objekt anzupassen.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Allgemeine Druck Dialogfelder bieten eine einfache Möglichkeit, Druck-und Druck Setup Dialogfelder auf eine Weise zu implementieren, die mit Windows-Standards konsistent ist.
 
@@ -138,7 +138,7 @@ Weitere Informationen zur Verwendung von `CPrintDialog`finden Sie unter [Allgeme
 
 `CPrintDialog`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdlgs. h
 
@@ -164,7 +164,7 @@ Ein oder mehrere Flags, die Sie verwenden können, um die Einstellungen des Dial
 *pparser*<br/>
 Ein Zeiger auf das übergeordnete oder Besitzer Fenster des Dialog Felds.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion erstellt nur das-Objekt. Verwenden Sie die `DoModal` Member-Funktion, um das Dialogfeld anzuzeigen.
 
@@ -186,7 +186,7 @@ HDC CreatePrinterDC();
 
 Handle für den neu erstellten Drucker Gerätekontext.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es wird davon ausgegangen, dass es sich bei diesem DC um den aktuellen Drucker-DC handelt, und alle anderen zuvor erhaltenen Drucker-DCS müssen vom Benutzer gelöscht werden. Diese Funktion kann aufgerufen werden, und der resultierende DC wird verwendet, ohne dass das Dialogfeld "Drucken" angezeigt wird.
 
@@ -208,7 +208,7 @@ IDOK oder IDCANCEL. Wenn IDCANCEL zurückgegeben wird, rufen Sie die Windows-Fun
 
 IDOK und IDCANCEL sind Konstanten, die angeben, ob der Benutzer die Schaltfläche OK oder Abbrechen ausgewählt hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die verschiedenen Druck Dialogfeld Optionen durch Festlegen der Elemente der `m_pd` Struktur initialisieren möchten, sollten Sie dies vor dem Aufrufen von `DoModal`tun, nachdem das Dialogfeld Objekt erstellt wurde.
 
@@ -232,7 +232,7 @@ int GetCopies() const;
 
 Die Anzahl der angeforderten Kopien.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion auf, nachdem Sie `DoModal` aufgerufen haben, um die Anzahl der angeforderten Kopien abzurufen.
 
@@ -252,7 +252,7 @@ BOOL GetDefaults();
 
 Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die abgerufenen Werte werden in der `m_pd` Struktur abgelegt.
 
@@ -278,7 +278,7 @@ CString GetDeviceName() const;
 
 Der Name des aktuell ausgewählten Druckers.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von [DoModal](#domodal) auf, um den Namen des aktuell ausgewählten Druckers abzurufen, oder nachdem Sie [getdefaults](#getdefaults) aufgerufen haben, um die aktuellen Geräte Standardwerte des Standard Druckers abzurufen. Verwenden Sie einen Zeiger auf das `CString` Objekt, das von `GetDeviceName` als Wert von `lpszDeviceName` in einem Aufrufen von [CDC:: | atedc](../../mfc/reference/cdc-class.md#createdc)zurückgegeben wurde.
 
@@ -300,7 +300,7 @@ LPDEVMODE GetDevMode() const;
 
 Die [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -Datenstruktur, die Informationen über die Geräte Initialisierung und die Umgebung eines Druck Treibers enthält. Sie müssen den von dieser Struktur erstellten Arbeitsspeicher mit der Funktion Windows [globalunlock](/windows/win32/api/winbase/nf-winbase-globalunlock) entsperren, die im Windows SDK beschrieben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von " [DoModal](#domodal) " oder " [getdefaults](#getdefaults) " auf, um Informationen zum Druck Gerät abzurufen.
 
@@ -320,7 +320,7 @@ CString GetDriverName() const;
 
 Ein `CString` der den Namen des System definierten Treibers angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von " [DoModal](#domodal) " oder " [getdefaults](#getdefaults) " auf, um den Namen des System definierten Drucker-Gerätetreibers abzurufen. Verwenden Sie einen Zeiger auf das `CString` Objekt, das von `GetDriverName` als Wert von `lpszDriverName` in einem Aufrufen von [CDC:: | atedc](../../mfc/reference/cdc-class.md#createdc)zurückgegeben wurde.
 
@@ -340,7 +340,7 @@ int GetFromPage() const;
 
 Die Nummer der Startseite im Bereich der zu druckenden Seiten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion auf, nachdem Sie `DoModal` aufgerufen haben, um die Anfangs Seitenzahl im Bereich der zu druckenden Seiten abzurufen.
 
@@ -360,7 +360,7 @@ CString GetPortName() const;
 
 Der Name des aktuell ausgewählten Drucker Anschlusses.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von " [DoModal](#domodal) " oder " [getdefaults](#getdefaults) " auf, um den Namen des aktuell ausgewählten Drucker Ports abzurufen.
 
@@ -380,7 +380,7 @@ HDC GetPrinterDC() const;
 
 Ein Handle für den Drucker Gerätekontext, wenn der Vorgang erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der *bprintsetuponly* -Parameter des `CPrintDialog` Konstruktors false war (was anzeigt, dass das Dialogfeld "Drucken" angezeigt wird), gibt `GetPrinterDC` ein Handle für den Drucker Gerätekontext zurück. Sie müssen die Windows [DeleteDC](/windows/win32/api/wingdi/nf-wingdi-deletedc) -Funktion aufrufen, um den Gerätekontext zu löschen, wenn Sie ihn nicht mehr benötigen.
 
@@ -400,7 +400,7 @@ int GetToPage() const;
 
 Die Endseiten Zahl im Seitenbereich, der gedruckt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion auf, nachdem Sie `DoModal` aufgerufen haben, um die Endseiten Zahl im Bereich der zu druckenden Seiten abzurufen.
 
@@ -416,7 +416,7 @@ Eine-Struktur, deren Elemente die Merkmale des Dialog Objekts speichern.
 PRINTDLG& m_pd;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem Sie ein `CPrintDialog` Objekt erstellt haben, können Sie mit `m_pd` verschiedene Aspekte des Dialog Felds festlegen, bevor Sie die [DoModal](#domodal) -Member-Funktion aufrufen. Weitere Informationen zur `m_pd` Struktur finden Sie unter [PRINTDLG](/windows/win32/api/commdlg/ns-commdlg-printdlga) in der Windows SDK.
 
@@ -438,7 +438,7 @@ BOOL PrintAll() const;
 
 Ein Wert ungleich 0 (null), wenn alle Seiten im Dokument gedruckt werden sollen. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von `DoModal` auf, um zu bestimmen, ob alle Seiten im Dokument gedruckt werden sollen.
 
@@ -458,7 +458,7 @@ BOOL PrintCollate() const;
 
 Ein Wert ungleich 0 (null), wenn der Benutzer im Dialogfeld das Kontrollkästchen COLLATE auswählt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von `DoModal` auf, um zu bestimmen, ob der Drucker alle gedruckten Kopien des Dokuments anordnen soll.
 
@@ -478,7 +478,7 @@ BOOL PrintRange() const;
 
 Ein Wert ungleich 0 (null), wenn nur ein Seitenbereich im Dokument gedruckt werden soll. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion auf, nachdem Sie `DoModal` aufgerufen haben, um zu bestimmen, ob nur ein Bereich von Seiten im Dokument gedruckt werden soll.
 
@@ -498,7 +498,7 @@ BOOL PrintSelection() const;
 
 Ungleich 0 (null), wenn nur die ausgewählten Elemente gedruckt werden sollen. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Funktion nach dem Aufrufen von `DoModal` auf, um zu bestimmen, ob nur die aktuell ausgewählten Elemente gedruckt werden sollen
 
@@ -506,7 +506,7 @@ Rufen Sie diese Funktion nach dem Aufrufen von `DoModal` auf, um zu bestimmen, o
 
   Weitere Informationen finden Sie im Beispiel für [CPrintDialog:: m_pd](#m_pd).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel DIBLOOK](../../overview/visual-cpp-samples.md)<br/>
 [CCommonDialog-Klasse](../../mfc/reference/ccommondialog-class.md)<br/>

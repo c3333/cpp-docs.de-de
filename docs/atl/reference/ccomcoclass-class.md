@@ -13,11 +13,11 @@ helpviewer_keywords:
 - aggregation [C++], aggregation models
 ms.assetid: 67cfefa4-8df9-47fa-ad58-2d1a1ae25762
 ms.openlocfilehash: 5b4e39fa4d93893d288bb8de03d8a71b671be087
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863188"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423333"
 ---
 # <a name="ccomcoclass-class"></a>CComCoClass-Klasse
 
@@ -38,18 +38,18 @@ Die von `CComCoClass`abgeleitete Klasse.
 *pclsid*<br/>
 Ein Zeiger auf die CLSID des Objekts.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComCoClass:: kreateinzustance](#createinstance)|Kum Erstellt eine Instanz der-Klasse und fragt eine-Schnittstelle ab.|
 |[CComCoClass:: Error](#error)|Kum Gibt umfangreiche Fehlerinformationen an den Client zurück.|
 |[CComCoClass:: GetObjectCLSID](#getobjectclsid)|Kum Gibt den Klassen Bezeichner des-Objekts zurück.|
 |[CComCoClass:: getobjectdescription](#getobjectdescription)|Kum Überschreiben, um die Beschreibung des Objekts zurückzugeben.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CComCoClass` stellt Methoden zum Abrufen der CLSID eines Objekts, zum Festlegen von Fehlerinformationen und zum Erstellen von Instanzen der-Klasse bereit. Jede Klasse, die in der Objekt Zuordnung registriert ist, sollte von `CComCoClass`abgeleitet werden.
 
@@ -63,7 +63,7 @@ Sie können diese Standardeinstellungen überschreiben, indem Sie in der Klassen
 
 [!code-cpp[NVC_ATL_COM#2](../../atl/codesnippet/cpp/ccomcoclass-class_1.h)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -94,7 +94,7 @@ vorgenommen Die Adresse einer Zeiger Variablen, die den angeforderten Schnittste
 
 Ein HRESULT-Standardwert. Eine Beschreibung möglicher Rückgabewerte finden Sie unter [cokreateingestance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance) im Windows SDK.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die erste Überladung dieser Funktion für die typische Objekt Erstellung. Verwenden Sie die zweite Überladung, wenn Sie das zu erstellende Objekt aggregieren müssen.
 
@@ -181,7 +181,7 @@ in Das Handle für die Ressource. Standardmäßig ist dieser Parameter `_AtlModu
 
 Ein HRESULT-Standardwert. Einzelheiten finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um `Error`aufzurufen, muss das-Objekt die `ISupportErrorInfo Interface`-Schnittstelle implementieren.
 
@@ -211,7 +211,7 @@ static LPCTSTR WINAPI GetObjectDescription();
 
 Die Beschreibung des Klassen Objekts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung gibt NULL zurück. Sie können diese Methode mit dem [DECLARE_OBJECT_DESCRIPTION](object-map-macros.md#declare_object_description) -Makro überschreiben. Beispiel:
 
@@ -221,6 +221,6 @@ Die Standard Implementierung gibt NULL zurück. Sie können diese Methode mit de
 
 Weitere Informationen zum ATL-Projekt-Assistenten finden Sie im Artikel [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Klassen Übersicht](../../atl/atl-class-overview.md)

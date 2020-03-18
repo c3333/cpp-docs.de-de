@@ -73,11 +73,11 @@ helpviewer_keywords:
 - CTabCtrl [MFC], SetToolTips
 ms.assetid: 42e4aff6-46ae-4b2c-beaa-d1dce8d82138
 ms.openlocfilehash: a0ca4cbad48c420250fe39e131de5504b1ae70f3
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875859"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426342"
 ---
 # <a name="ctabctrl-class"></a>CTabCtrl-Klasse
 
@@ -89,17 +89,17 @@ Stellt die Funktionalität des allgemeinen Windows-Registerkarten-Steuerelements
 class CTabCtrl : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CTabCtrl:: CTabCtrl](#ctabctrl)|Erstellt ein `CTabCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CTabCtrl::-Rect](#adjustrect)|Berechnet den Anzeigebereich eines Registerkarten-Steuer Elements bei Angabe eines Fenster Rechtecks oder berechnet das Fenster Rechteck, das einem angegebenen Anzeigebereich entsprechen würde.|
 |[CTabCtrl:: Create](#create)|Erstellt ein Registerkarten-Steuerelement und fügt es an eine Instanz eines `CTabCtrl` Objekts an.|
@@ -134,7 +134,7 @@ class CTabCtrl : public CWnd
 |[CTabCtrl:: setPadding](#setpadding)|Legt den Leerraum (Padding) um das Symbol und die Bezeichnung der einzelnen Registerkarten in einem Registerkarten-Steuerelement fest.|
 |[CTabCtrl:: SetToolTips](#settooltips)|Weist einem Registerkarten-Steuerelement ein QuickInfo-Steuerelement zu.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Registerkarten-Steuerelement ist analog zu den untergeordneten Elementen in einem Notebook oder den Bezeichnungen in einer Datei CAB-Datei. Durch Verwenden eines Registerkarten-Steuerelements können in einer Anwendung mehrere Seiten für denselben Bereich in einem Fenster oder Dialogfeld definiert werden. Jede Seite besteht aus einem Satz von Informationen oder einer Gruppe von Steuerelementen, die von der Anwendung angezeigt werden, wenn der Benutzer die entsprechende Registerkarte auswählt. Eine besondere Art Registerkarten-Steuerelement zeigt Registerkarten an, die wie Schaltflächen aussehen. Wenn Sie auf eine Schaltfläche klicken, sollten Sie sofort einen Befehl ausführen, anstatt eine Seite anzuzeigen.
 
@@ -152,7 +152,7 @@ Weitere Informationen zur Verwendung von `CTabCtrl`finden Sie unter Steuer [Elem
 
 `CTabCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -206,7 +206,7 @@ Gibt die ID des Registerkarten-Steuer Elements an.
 
 TRUE, wenn die Initialisierung des Objekts erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen ein `CTabCtrl`-Objekt in zwei Schritten. Nennen Sie zuerst den-Konstruktor, und klicken Sie dann auf `Create`, der das Registerkarten-Steuerelement erstellt und an das `CTabCtrl`-Objekt anfügt.
 
@@ -262,7 +262,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich 0 (null), wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -322,7 +322,7 @@ void DeselectAll(BOOL fExcludeFocus);
 *"f"-Fokus*<br/>
 Flag, das den Gültigkeitsbereich der Elementauswahl angibt. Wenn dieser Parameter auf false festgelegt ist, werden alle Tabulator Schaltflächen zurückgesetzt. Wenn der Wert auf true festgelegt ist, werden alle Registerkarten Elemente mit Ausnahme der aktuell ausgewählten Elemente zurückgesetzt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht, [TCM_DESELECTALL](/windows/win32/Controls/tcm-deselectall), wie in der Windows SDK beschrieben.
 
@@ -339,7 +339,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 *lpdrawitemstruct*<br/>
 Ein Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die das zu zeichnende Element beschreibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `itemAction` Member der `DRAWITEMSTRUCT` Struktur definiert die auszuführende Zeichnungs Aktion.
 
@@ -383,7 +383,7 @@ DWORD GetExtendedStyle();
 
 Stellt die erweiterten Stile dar, die derzeit für das Registerkarten-Steuerelement verwendet werden. Dieser Wert ist eine Kombination aus erweiterten Formatvorlagen [Steuer](/windows/win32/Controls/tab-control-extended-styles)Elementen, wie im Windows SDK beschrieben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TCM_GETEXTENDEDSTYLE](/windows/win32/Controls/tcm-getextendedstyle), wie in der Windows SDK beschrieben.
 
@@ -419,7 +419,7 @@ Zeiger auf eine [TCITEM](/windows/win32/api/commctrl/ns-commctrl-tcitemw) -Struk
 
 Gibt true zurück, wenn erfolgreich; Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Nachricht gesendet wird, gibt der `mask` Member an, welche Attribute zurückgegeben werden sollen. Wenn das `mask`-Element den TCIF_TEXT Wert angibt, muss der `pszText` Member die Adresse des Puffers enthalten, der den Element Text empfängt, und der `cchTextMax` Member muss die Größe des Puffers angeben.
 
@@ -515,14 +515,14 @@ Maske, die angibt, welche der Statusflags des Elements zurückgegeben werden sol
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf einen DWORD-Wert, der die Zustandsinformationen empfängt. Es kann sich um einen der folgenden Werte handeln:
+Ein Verweis auf einen DWORD-Wert, der die Zustandsinformationen empfängt. Kann einer der folgenden Werte sein:
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |TCIS_BUTTONPRESSED|Das Registerkarten-Steuerelement ist ausgewählt.|
 |TCIS_HIGHLIGHTED|Das Registerkarten-Steuerelement wird hervorgehoben, und die Registerkarte und der Text werden mithilfe der aktuellen Hervorhebungs Farbe gezeichnet. Wenn Sie Hervorhebungs Farbe verwenden, handelt es sich hierbei um eine echte Interpolation, nicht um eine Dithering-Farbe.|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Zustand eines Elements wird durch den `dwState` Member der `TCITEM`-Struktur angegeben.
 
@@ -538,7 +538,7 @@ int GetRowCount() const;
 
 Die Anzahl der Zeilen der Registerkarten im Registerkarten-Steuerelement.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nur Registerkarten-Steuerelemente mit dem TCS_MULTILINE-Stil können mehrere Zeilen mit Registerkarten enthalten.
 
@@ -554,7 +554,7 @@ CToolTipCtrl* GetToolTips() const;
 
 Handle des QuickInfo-Steuer Elements, wenn es erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Registerkarten-Steuerelement erstellt ein QuickInfo-Steuerelement, wenn es den TCS_TOOLTIPS Stil hat. Sie können einem Registerkarten-Steuerelement auch ein QuickInfo-Steuerelement zuweisen, indem Sie die `SetToolTips` Member-Funktion verwenden.
 
@@ -578,7 +578,7 @@ Ein Wert, der den festzulegenden Hervorhebungs Zustand angibt. Wenn dieser Wert 
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Win32-Nachricht [TCM_HIGHLIGHTITEM](/windows/win32/Controls/tcm-highlightitem), wie in der Windows SDK beschrieben.
 
@@ -691,7 +691,7 @@ void RemoveImage(int nImage);
 *nbild*<br/>
 Der null basierte Index des zu entfernenden Bilds.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Registerkarten-Steuerelement aktualisiert den Bildindex jeder Registerkarte, sodass jede Registerkarte dem gleichen Bild zugeordnet bleibt.
 
@@ -708,7 +708,7 @@ void SetCurFocus(int nItem);
 *nitem*<br/>
 Gibt den Index der Registerkarte an, die den Fokus erhält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TCM_SETCURFOCUS](/windows/win32/Controls/tcm-setcurfocus), wie in der Windows SDK beschrieben.
 
@@ -729,7 +729,7 @@ Der null basierte Index des Elements, das ausgewählt werden soll.
 
 NULL basierter Index der zuvor ausgewählten Registerkarte, wenn erfolgreich, andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Registerkarten-Steuerelement sendet keine TCN_SELCHANGING oder TCN_SELCHANGE Benachrichtigungs Meldung, wenn mithilfe dieser Funktion eine Registerkarte ausgewählt wird. Diese Benachrichtigungen werden mithilfe von WM_NOTIFY gesendet, wenn der Benutzer auf die Tastatur klickt oder diese verwendet, um die Registerkarten zu ändern.
 
@@ -815,7 +815,7 @@ Die Anzahl der zusätzlichen bytes, die festgelegt werden sollen.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TCM_SETITEMEXTRA](/windows/win32/Controls/tcm-setitemextra), wie in der Windows SDK beschrieben.
 
@@ -856,9 +856,9 @@ Die null basierte Indexnummer des Elements, für das Zustandsinformationen festg
 Maske, die angibt, welche der Zustandsflags des Elements festgelegt werden sollen. Eine Liste der Werte finden Sie unter dem Mask-Member der [TCITEM](/windows/win32/api/commctrl/ns-commctrl-tcitemw) -Struktur, wie im Windows SDK beschrieben.
 
 *dwstate*<br/>
-Ein Verweis auf einen DWORD-Wert, der die Zustandsinformationen enthält. Es kann sich um einen der folgenden Werte handeln:
+Ein Verweis auf einen DWORD-Wert, der die Zustandsinformationen enthält. Kann einer der folgenden Werte sein:
 
-|value|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |TCIS_BUTTONPRESSED|Das Registerkarten-Steuerelement ist ausgewählt.|
 |TCIS_HIGHLIGHTED|Das Registerkarten-Steuerelement wird hervorgehoben, und die Registerkarte und der Text werden mithilfe der aktuellen Hervorhebungs Farbe gezeichnet. Wenn Sie Hervorhebungs Farbe verwenden, handelt es sich hierbei um eine echte Interpolation, nicht um eine Dithering-Farbe.|
@@ -914,7 +914,7 @@ void SetToolTips(CToolTipCtrl* pWndTip);
 *pwndtip*<br/>
 Handle des QuickInfo-Steuer Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können das QuickInfo-Steuerelement, das einem Registerkarten-Steuerelement zugeordnet ist, abrufen, indem Sie `GetToolTips`abrufen.
 
@@ -922,7 +922,7 @@ Sie können das QuickInfo-Steuerelement, das einem Registerkarten-Steuerelement 
 
   Weitere Informationen finden Sie im Beispiel für [CPropertySheet:: gettabcontrol](../../mfc/reference/cpropertysheet-class.md#gettabcontrol).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

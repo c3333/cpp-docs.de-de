@@ -12,11 +12,11 @@ helpviewer_keywords:
 - loading DLLs [C++]
 ms.assetid: 7592e276-dd6e-4a74-90c8-e1ee35598ea3
 ms.openlocfilehash: 2f907fedcaaf9897749ee0eb6a7ea5a33e1af679
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856825"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422835"
 ---
 # <a name="link-an-executable-to-a-dll"></a>Eine ausführbare Datei mit einer DLL verknüpfen
 
@@ -143,6 +143,6 @@ Im Gegensatz zu diesem Beispiel sollten Sie in den meisten Fällen `LoadLibrary`
 
 - [Such Reihenfolge der Dynamic Link Library](/windows/win32/Dlls/dynamic-link-library-search-order)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen von C/C++-DLLs in Visual Studio](dlls-in-visual-cpp.md)

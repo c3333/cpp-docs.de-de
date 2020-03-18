@@ -17,11 +17,11 @@ helpviewer_keywords:
 - composite controls, CComCompositeControl class
 ms.assetid: 1304b931-27e8-4fbc-be8e-bb226ad887fb
 ms.openlocfilehash: b57eaf105bfca1a49d53b5e5e99969b0fa2fc82f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864953"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423303"
 ---
 # <a name="ccomcompositecontrol-class"></a>CComCompositeControl-Klasse
 
@@ -42,18 +42,18 @@ class CComCompositeControl : public CComControl<T,CAxDialogImpl<T>>
 *T*<br/>
 Ihre Klasse, abgeleitet von [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md) oder [CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md), sowie von anderen Schnittstellen, die Sie für Ihr zusammengesetztes Steuerelement unterstützen möchten.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComCompositeControl:: CComCompositeControl](#ccomcompositecontrol)|Der Konstruktor.|
 |[CComCompositeControl:: ~ CComCompositeControl](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComCompositeControl:: AdviseSinkMap](#advisesinkmap)|Mit dieser Methode können Sie alle Steuerelemente, die vom zusammengesetzten Steuerelement gehostet werden, informieren oder deren Empfehlung deaktivieren|
 |[CComCompositeControl:: calcblock](#calcextent)|Mit dieser Methode können Sie die Größe in den HIMETRIC-Einheiten der Dialog Ressource berechnen, die zum Hosten des zusammengesetzten Steuer Elements verwendet wird.|
@@ -63,12 +63,12 @@ Ihre Klasse, abgeleitet von [CComObjectRoot](../../atl/reference/ccomobjectroot-
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComCompositeControl:: m_hbrBackground](#m_hbrbackground)|Der Hintergrundpinsel.|
 |[CComCompositeControl:: m_hWndFocus](#m_hwndfocus)|Das Handle des Fensters, das derzeit den Fokus besitzt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Von der-Klasse abgeleitete Klassen `CComCompositeControl` die Funktionalität eines zusammengesetzten ActiveX-Steuer Elements erben. Von `CComCompositeControl` abgeleitete ActiveX-Steuerelemente werden von einem Standard Dialogfeld gehostet. Diese Steuerelement Typen werden als zusammengesetzte Steuerelemente bezeichnet, da Sie andere Steuerelemente (systemeigene Windows-Steuerelemente und ActiveX-Steuerelemente) hosten können.
 
@@ -98,7 +98,7 @@ Ein Steuerelement, das von einer `CComCompositeControl`-abgeleiteten Klasse impl
 
 `CComCompositeControl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlctl. h
 
@@ -126,7 +126,7 @@ True, wenn alle Steuerelemente empfohlen werden sollen. andernfalls false.
 |CONNECT_E_CANNOTCONNECT  |Die Senke unterstützt nicht die für diesen Verbindungspunkt erforderliche Schnittstelle.|
 |CONNECT_E_NOCONNECTION  |Der Cookie-Wert stellt keine gültige Verbindung dar. Dieser Fehler weist normalerweise auf ein Problem mit einem Eintrag in der Ereignis sendermap des Steuer Elements oder auf ein Problem mit einem Vorlagen Argument hin, das in einer `IDispEventImpl`-oder `IDispEventSimpleImpl` Basisklasse verwendet wird.|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Basis Implementierung dieser Methode durchsucht die Einträge in der Ereignis Senke-Zuordnung. Anschließend werden die Verbindungspunkte für die COM-Objekte, die durch die Senke-Einträge der Ereignis Senke beschrieben werden, von der Ereignis Senke benachrichtigt oder Diese Member-Methode basiert auch darauf, dass die abgeleitete Klasse von einer Instanz von `IDispEventImpl` für jedes Steuerelement in der Senke-Zuordnung erbt, das empfohlen oder nicht empfohlen wird.
 
@@ -147,7 +147,7 @@ Ein Verweis auf eine `SIZE`-Struktur, die von dieser Methode aufgefüllt werden 
 
 TRUE, wenn das Steuerelement von einem Dialogfeld gehostet wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Größe wird im *size* -Parameter zurückgegeben.
 
@@ -177,7 +177,7 @@ An das Steuerelement bei der Erstellung des Steuer Elements zu über gebenden Da
 
 Ein Handle für das neu erstellte zusammengesetzte Steuerelement Dialogfeld.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird in der Regel während der direkten Aktivierung des Steuer Elements aufgerufen.
 
@@ -189,7 +189,7 @@ Der Konstruktor.
 CComCompositeControl();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Initialisiert die Datenmember " [CComCompositeControl:: m_hbrBackground](#m_hbrbackground) " und " [CComCompositeControl:: m_hWndFocus](#m_hwndfocus) " in NULL.
 
@@ -201,7 +201,7 @@ Der Destruktor.
 ~CComCompositeControl();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Löscht das Hintergrund Objekt, falls es vorhanden ist.
 
@@ -227,7 +227,7 @@ Das Positions Rechteck des zusammengesetzten Steuer Elements in Client Koordinat
 
 Gibt ein Handle für das neu erstellte zusammengesetzte Steuerelement-Dialogfeld zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ruft [CComCompositeControl:: Create](#create) und [CComCompositeControl:: AdviseSinkMap](#advisesinkmap)auf.
 
@@ -259,7 +259,7 @@ HRESULT SetBackgroundColorFromAmbient();
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>
 [Grundlagen von zusammengesetzten Steuerelementen](../../atl/atl-composite-control-fundamentals.md)<br/>

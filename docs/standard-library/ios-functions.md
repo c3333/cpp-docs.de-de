@@ -57,11 +57,11 @@ helpviewer_keywords:
 - std::unitbuf [C++]
 - std::uppercase [C++]
 ms.openlocfilehash: c3b1e2350d0923cbfddf95492842ae126859e29f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856525"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426930"
 ---
 # <a name="ltiosgt-functions"></a>&lt;ios&gt;-Funktionen
 
@@ -82,7 +82,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden Variablen vom Typ **bool** als 1 oder 0 angezeigt.
 
@@ -134,7 +134,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt.
 
@@ -183,7 +183,7 @@ ios_base& defaultfloat(ios_base& iosbase);
 *_Iosbase*\
 Ein `ios_base`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator ruft `iosbase.`[ios_base:: unsetf](../standard-library/ios-base-class.md#unsetf)`(ios_base::floatfield)`auf und gibt dann *iosbase*zurück.
 
@@ -204,7 +204,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `fixed` ist die Standard Anzeige Notation für Gleit Komma Zahlen. [scientific](../standard-library/ios-functions.md#scientific) bewirkt, dass Gleitkommazahlen in wissenschaftlicher Schreibweise angezeigt werden.
 
@@ -252,7 +252,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt. Ebenfalls verändern [dec](../standard-library/ios-functions.md#dec) und [oct](../standard-library/ios-functions.md#oct) die Anzeige von Ganzzahlvariablen.
 
@@ -293,7 +293,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch [showpos](../standard-library/ios-functions.md#showpos) zeigt das Nummernzeichen für positive Zahlen an.
 
@@ -351,7 +351,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator ruft `str.`[Setf](../standard-library/ios-base-class.md#setf) -`(ios_base::left, ios_base::adjustfield)`auf und gibt dann *Str*zurück.
 
@@ -406,7 +406,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der Standardeinstellung ist `noboolalpha` aktiviert.
 
@@ -435,9 +435,9 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-`noshowbase` ist standardmäßig aktiviert. Verwenden Sie [showbase](../standard-library/ios-functions.md#showbase), um die Schreibweisenbasis von Zahlen zu kennzeichnen.
+Standardmäßig ist `noshowbase` aktiviert. Verwenden Sie [showbase](../standard-library/ios-functions.md#showbase), um die Schreibweisenbasis von Zahlen zu kennzeichnen.
 
 Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::showbase)`auf und gibt dann *Str*zurück.
 
@@ -462,7 +462,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `noshowpoint` ist standardmäßig aktiviert; verwenden Sie [showpoint](../standard-library/ios-functions.md#showpoint) und [precision](../standard-library/ios-base-class.md#precision), um Nullen hinter dem Dezimaltrennzeichen angezeigt zu bekommen.
 
@@ -509,9 +509,9 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-`noshowpos` ist standardmäßig aktiviert.
+Standardmäßig ist `noshowpos` aktiviert.
 
 Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::showps)`auf und gibt dann *Str*zurück.
 
@@ -536,7 +536,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der Standardeinstellung ist [skipws](../standard-library/ios-functions.md#skipws) aktiviert. Wenn im Eingabestream ein Leerzeichen erkannt wird, wird dadurch das Ende des Puffers markiert.
 
@@ -578,7 +578,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [unitbuf](../standard-library/ios-functions.md#unitbuf) bewirkt, dass der Puffer verarbeitet wird, wenn dieser nicht leer ist.
 
@@ -601,7 +601,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Manipulator ruft `str.`[Unsetf](../standard-library/ios-base-class.md#unsetf) -`(ios_base::uppercase)`auf und gibt dann *Str*zurück.
 
@@ -626,7 +626,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden Ganzzahlvariablen in Basis-10-Schreibweise angezeigt. Ebenfalls verändern [dec](../standard-library/ios-functions.md#dec) und [hex](../standard-library/ios-functions.md#hex) die Anzeige von Ganzzahlvariablen.
 
@@ -653,7 +653,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [left](../standard-library/ios-functions.md#left) modifiziert auch die Textausrichtung.
 
@@ -710,7 +710,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für Gleitkommazahlen ist die [fixed](../standard-library/ios-functions.md#fixed)-Schreibweise standardmäßig aktiviert.
 
@@ -755,7 +755,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Schreibweisenbasis einer Zahl kann mit [dec](../standard-library/ios-functions.md#dec), [oct](../standard-library/ios-functions.md#oct) und [hex](../standard-library/ios-functions.md#hex) geändert werden.
 
@@ -809,7 +809,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [noshowpoint](../standard-library/ios-functions.md#noshowpoint) ist standardmäßig aktiviert.
 
@@ -836,7 +836,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [noshowpos](../standard-library/ios-functions.md#noshowpos) ist die Standardeinstellung.
 
@@ -881,7 +881,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der Standardeinstellung ist `skipws` aktiviert. [noskipws](../standard-library/ios-functions.md#noskipws) bewirkt, dass Leerzeichen aus Eingabestream gelesen werden.
 
@@ -933,7 +933,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bitte beachten Sie, dass `endl` auch den Puffer leert.
 
@@ -958,7 +958,7 @@ Ein Verweis auf ein [ios_base](../standard-library/ios-base-class.md)-Objekt ode
 
 Ein Verweis auf das-Objekt, von dem *Str* abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [nouppercase](../standard-library/ios-functions.md#nouppercase) ist standardmäßig aktiviert.
 

@@ -28,11 +28,11 @@ helpviewer_keywords:
 - char_traits class
 ms.assetid: 568e59f0-4521-4207-9223-9dcf6a16d620
 ms.openlocfilehash: efb926bc8c2ae55835391f884a0e3430e3da8aca
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856396"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427266"
 ---
 # <a name="char_traits-struct"></a>char_traits-Struktur
 
@@ -50,13 +50,13 @@ struct char_traits;
 *CharType* -\
 Der Datentyp des Elements.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Vorlagen Struktur beschreibt verschiedene Zeichen Merkmale für den Typ `CharType`. Die Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) und mehrere iostream-Klassen Vorlagen, einschließlich [basic_ios](../standard-library/basic-ios-class.md), verwenden diese Informationen zum Bearbeiten von Elementen des Typs `CharType`. Ein solcher Elementtyp darf weder explizite Erstellung noch explizite Zerstörung erfordern. Er muss einen Standardkonstruktor, einen Kopierkonstruktor und einen Zuweisungsoperator mit der erwarteten Semantik bereitstellen. Eine bitweise Kopie muss dieselbe Auswirkung wie eine Zuweisung haben. Keine der Memberfunktionen der char_traits-Struktur kann Ausnahmen auslösen.
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Typ von Zeichen.|
 |[int_type](#int_type)|Ein ganzzahliger Typ, der ein Zeichen des Typs `char_type` oder ein Dateiendezeichen (End-of-File, EOF) darstellen kann.|
@@ -66,7 +66,7 @@ Die Vorlagen Struktur beschreibt verschiedene Zeichen Merkmale für den Typ `Cha
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[assign](#assign)|Weist den Wert eines Zeichens einem anderen zu.|
 |[compare](#compare)|Vergleicht zwei Zeichenfolgen bis zu einer angegebenen Anzahl von Zeichen.|
@@ -84,7 +84,7 @@ Die Vorlagen Struktur beschreibt verschiedene Zeichen Merkmale für den Typ `Cha
 |[to_char_type](#to_char_type)|Konvertiert ein `int_type`-Zeichen in das entsprechende `char_type`-Zeichen und gibt das Ergebnis zurück.|
 |[to_int_type](#to_int_type)|Konvertiert ein `char_type`-Zeichen in das entsprechende `int_type`-Zeichen und gibt das Ergebnis zurück.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<Zeichenfolge >
 
@@ -169,7 +169,7 @@ Ein Typ von Zeichen.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `CharType`dar.
 
@@ -202,7 +202,7 @@ Die Anzahl der Elemente in den Zeichenfolgen, die miteinander verglichen werden 
 
 Ein negativer Wert, wenn die erste Zeichenfolge kleiner ist als die zweite Zeichenfolge; 0, wenn die beiden Zeichenfolgen gleich sind; oder ein positiver Wert, wenn die erste Zeichenfolge größer ist als die zweite Zeichenfolge.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Vergleich zwischen den Zeichenfolgen erfolgt elementweise, dabei wird zunächst auf Gleichheit geprüft. Wenn ein Elementpaar in der Sequenz nicht gleich ist, wird es auf „kleiner als“ geprüft.
 
@@ -268,7 +268,7 @@ Die Anzahl der zu kopierenden Elemente.
 
 Das erste Element, das in das Zeichenfolgen- oder Zeichenarray kopiert wird, das die kopierte Zeichenfolgensequenz empfangen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Zeichenfolgensequenz für Quelle und Ziel dürfen sich nicht überschneiden.
 
@@ -333,7 +333,7 @@ Die Anzahl der zu kopierenden Elemente.
 
 Das Zeichenfolgen- oder Zeichenarray, das die kopierte Zeichenfolgensequenz empfangen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Zeichenfolgensequenz für Quelle und Ziel dürfen sich nicht überschneiden.
 
@@ -380,7 +380,7 @@ static int_type eof();
 
 Das EOF-Zeichen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein-Wert, der das Ende der Datei darstellt (z. b. EOF oder WEOF).
 
@@ -639,7 +639,7 @@ Ein ganzzahliger Typ, der ein Zeichen des Typs `char_type` oder ein Dateiendezei
 typedef long int_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es muss möglich sein, einen Wert vom Typ "`CharType`" in "" zu `CharType` `int_type`, ohne den ursprünglichen Wert zu ändern.
 
@@ -776,7 +776,7 @@ Die Anzahl von Elementen, die aus der Quellzeichenfolge kopiert werden sollen.
 
 Das erste Element, das in das Zeichen folgen-oder Zeichen Array kopiert *_To* , das die kopierte Zeichenfolge empfangen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Quelle und Ziel können sich überschneiden.
 
@@ -856,7 +856,7 @@ Die Anzahl von Elementen, die aus der Quellzeichenfolge kopiert werden sollen.
 
 Das erste Element, das in das Zeichen folgen-oder Zeichen Array kopiert wird, das die *kopierte Zeichen* Folge empfangen soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Quelle und Ziel können sich überschneiden.
 
@@ -986,7 +986,7 @@ Ein ganzzahliger Typ, der Offsets zwischen Positionen in einem Stream darstellen
 typedef streamoff off_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist eine ganze Zahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. In der Regel ist dies ein Synonym für [streamoff](../standard-library/ios-typedefs.md#streamoff), weist aber im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
@@ -998,7 +998,7 @@ Ein ganzzahliger Typ, der Positionen in einem Stream darstellen kann.
 typedef streampos pos_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Dateipositionsindikators innerhalb eines Streams erforderlich sind. In der Regel ist dies ein Synonym für [streampos](../standard-library/ios-typedefs.md#streampos), weist aber stets im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
@@ -1010,7 +1010,7 @@ Ein Typ, der den Konvertierungsstatus für Multibytezeichen in einem Stream dars
 typedef implementation-defined state_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das einen Konvertierungszustand repräsentieren kann. In der Regel ist dies ein Synonym für `mbstate_t`, weist aber stets im Wesentlichen dieselben Eigenschaften auf wie dieser Typ.
 
@@ -1033,7 +1033,7 @@ Das `char_type`-Zeichen, das dem `int_type`-Zeichen entspricht.
 
 Ein Wert *_Ch* , der nicht als solche dargestellt werden kann, ergibt ein nicht bestimmtes Ergebnis.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Konvertierungsvorgänge [to_int_type](#to_int_type) und `to_char_type` sind zueinander umgekehrt, was bedeutet:
 
@@ -1137,7 +1137,7 @@ Das `char_type`-Zeichen, das als `int_type` dargestellt werden soll.
 
 Das `int_type`-Zeichen, das dem `char_type`-Zeichen entspricht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Konvertierungsvorgänge `to_int_type` und [to_char_type](#to_char_type) sind zueinander umgekehrt, was bedeutet:
 
@@ -1223,6 +1223,6 @@ The recovered char_type of ch1 is equal to the original ch1.
 The recovered char_type of ch2 is equal to the original ch2.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

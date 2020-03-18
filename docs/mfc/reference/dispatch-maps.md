@@ -7,17 +7,17 @@ helpviewer_keywords:
 - dispatch map macros [MFC]
 ms.assetid: bef9d08b-ad35-4c3a-99d8-04150c7c04e2
 ms.openlocfilehash: f1afa95d7c20d54f2015255a7e4e0d7ad9ae9c2b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856649"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426708"
 ---
 # <a name="dispatch-maps"></a>Dispatchzuordnungen
 
 OLE-Automatisierung bietet Möglichkeiten zum Aufrufen von Methoden und zum Zugreifen auf Eigenschaften über Anwendungen hinweg. Der Mechanismus, der vom Microsoft Foundation Class-Bibliothek zum Verteilen dieser Anforderungen bereitgestellt wird, ist die "dispatchmap", die die internen und externen Namen von Objektfunktionen und-Eigenschaften sowie die Datentypen der Eigenschaften selbst und von angibt. Funktionsargumente.
 
-|Dispatch-Zuordnungs Makro|BESCHREIBUNG|
+|Dispatch-Zuordnungs Makro|Beschreibung|
 |-|-|
 |[DECLARE_DISPATCH_MAP](#declare_dispatch_map)|Deklariert, dass eine dispatchmap verwendet wird, um die Methoden und Eigenschaften einer Klasse verfügbar zu machen (muss in der Klassen Deklaration verwendet werden).|
 |[BEGIN_DISPATCH_MAP](#begin_dispatch_map)|Startet die Definition einer Dispatchzuordnung.|
@@ -37,7 +37,7 @@ Wenn eine von `CCmdTarget`abgeleitete Klasse in Ihrem Programm OLE-Automatisieru
 DECLARE_DISPATCH_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie das DECLARE_DISPATCH_MAP-Makro am Ende der Klassen Deklaration. Klicken Sie anschließend in der auf. Cpp-Datei, die die Element Funktionen für die Klasse definiert. verwenden Sie das BEGIN_DISPATCH_MAP-Makro. Fügen Sie anschließend Makro Einträge für jede verfügbar gemachten Methoden und Eigenschaften der Klasse (DISP_FUNCTION, DISP_PROPERTY usw.) ein. Verwenden Sie abschließend das END_DISPATCH_MAP-Makro.
 
@@ -50,7 +50,7 @@ Der Anwendungs-Assistent und die Code-Assistenten unterstützen Sie beim Erstell
 
 [!code-cpp[NVC_MFCAutomation#10](../../mfc/codesnippet/cpp/dispatch-maps_1.h)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -70,11 +70,11 @@ Gibt den Namen der Klasse an, die diese Dispatchzuordnung besitzt.
 *BaseClass*<br/>
 Gibt den Basisklassen Namen von *TheClass*an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Starten Sie in der Implementierungs Datei (. cpp), in der die Member-Funktionen für Ihre Klasse definiert sind, die Dispatchzuordnung mit dem BEGIN_DISPATCH_MAP-Makro, fügen Sie Makro Einträge für die einzelnen dispatchfunktionen und-Eigenschaften hinzu, und vervollständigen Sie die Dispatchzuordnung mit dem END_DISPATCH_ Map-Makro.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -86,11 +86,11 @@ Beendet die Definition ihrer Dispatchzuordnung.
 END_DISPATCH_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Er muss in Verbindung mit BEGIN_DISPATCH_MAP verwendet werden.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -124,7 +124,7 @@ Ein-Wert, der den Rückgabetyp der Funktion angibt.
 *vtsParams*<br/>
 Eine durch Leerzeichen getrennte Liste von einer oder mehreren Konstanten, die die Parameterliste der Funktion angeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das *vtretval* -Argument weist den Typ VarType auf. Die folgenden möglichen Werte für dieses Argument werden aus der `VARENUM`-Enumeration entnommen:
 
@@ -136,7 +136,7 @@ Das *vtretval* -Argument weist den Typ VarType auf. Die folgenden möglichen Wer
 |VT_R4|**float**|
 |VT_R8|**double**|
 |VT_CY|CY|
-|VT_DATE|DATE|
+|VT_DATE|DATUM|
 |VT_BSTR|BSTR|
 |VT_DISPATCH|Lpdispatch|
 |VT_ERROR|SCODE|
@@ -159,7 +159,7 @@ Die `VTS_` Konstanten und ihre Bedeutungen lauten wie folgt:
 |VTS_R4|**float**|
 |VTS_R8|**double**|
 |VTS_CY|`const CY` oder `CY*`|
-|VTS_DATE|DATE|
+|VTS_DATE|DATUM|
 |VTS_BSTR|LPCSTR|
 |VTS_DISPATCH|Lpdispatch|
 |VTS_SCODE|SCODE|
@@ -180,7 +180,7 @@ Die `VTS_` Konstanten und ihre Bedeutungen lauten wie folgt:
 |VTS_PUNKNOWN|`LPUNKNOWN*`|
 |VTS_NONE|Keine Parameter|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -210,18 +210,18 @@ Der Name der Element Variablen, in der die Eigenschaft gespeichert wird.
 *vtPropType*<br/>
 Ein-Wert, der den Eigenschaftentyp angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das *vtPropType* -Argument weist den Typ **VarType**auf. Mögliche Werte für dieses Argument stammen aus der varenumeration-Enumeration:
 
-|Symbol|Eigenschaftstyp|
+|Symbol|Eigenschaftentyp|
 |------------|-----------------------|
 |VT_I2|**short**|
 |VT_I4|**long**|
 |VT_R4|**float**|
 |VT_R8|**double**|
 |VT_CY|CY|
-|VT_DATE|DATE|
+|VT_DATE|DATUM|
 |VT_BSTR|`CString`|
 |VT_DISPATCH|Lpdispatch|
 |VT_ERROR|SCODE|
@@ -231,7 +231,7 @@ Das *vtPropType* -Argument weist den Typ **VarType**auf. Mögliche Werte für di
 
 Wenn ein externer Client die-Eigenschaft ändert, ändert sich der Wert der Element Variablen, die durch *Mitgliedschafts Name* angegeben wird. Es gibt keine Benachrichtigung über die Änderung.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -265,13 +265,13 @@ Der Name der Member-Funktion, die zum Festlegen der Eigenschaft verwendet wird.
 *vtPropType*<br/>
 Ein-Wert, der den Eigenschaftentyp angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die *mitgliedsatz* -und *mitgliedsatz* Funktionen verfügen über Signaturen, die vom *vtPropType* -Argument bestimmt werden. Die Funktion " *Membership Get* " nimmt keine Argumente an und gibt einen Wert des Typs zurück, der von *vtPropType*angegeben wird. Die- *mitgliedsatz* Funktion nimmt ein Argument des von *vtPropType* angegebenen Typs an und gibt nichts zurück.
 
 Das *vtPropType* -Argument weist den Typ VarType auf. Mögliche Werte für dieses Argument stammen aus der varenumeration-Enumeration. Eine Liste dieser Werte finden Sie in den Hinweisen für den *vtretval* -Parameter in [DISP_FUNCTION](#disp_function). Beachten Sie, dass VT_EMPTY, die in den DISP_FUNCTION Anmerkungen aufgeführt ist, nicht als Eigenschafts Datentyp zulässig ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -305,20 +305,20 @@ Name der Benachrichtigungsfunktion für *szexternalname*.
 *vtPropType*<br/>
 Ein-Wert, der den Eigenschaftentyp angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Anders als Eigenschaften, die mit DISP_PROPERTY definiert werden, ruft eine Eigenschaft, die mit DISP_PROPERTY_NOTIFY definiert ist, automatisch die von *pfnafterset* angegebene Funktion auf, wenn die-Eigenschaft geändert wird.
 
 Das *vtPropType* -Argument weist den Typ VarType auf. Mögliche Werte für dieses Argument stammen aus der varenumeration-Enumeration:
 
-|Symbol|Eigenschaftstyp|
+|Symbol|Eigenschaftentyp|
 |------------|-----------------------|
 |VT_I2|**short**|
 |VT_I4|**long**|
 |VT_R4|**float**|
 |VT_R8|**double**|
 |VT_CY|CY|
-|VT_DATE|DATE|
+|VT_DATE|DATUM|
 |VT_BSTR|`CString`|
 |VT_DISPATCH|Lpdispatch|
 |VT_ERROR|SCODE|
@@ -326,7 +326,7 @@ Das *vtPropType* -Argument weist den Typ VarType auf. Mögliche Werte für diese
 |VT_VARIANT|VARIANT|
 |VT_UNKNOWN|LPUNKNOWN|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -364,7 +364,7 @@ Ein-Wert, der den Eigenschaftentyp angibt.
 *vtsParams*<br/>
 Eine Zeichenfolge mit durch Leerzeichen getrennten `VTS_*` Variant-Parametertypen, eine für jeden Parameter.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im Gegensatz zum DISP_PROPERTY_EX-Makro können Sie mit diesem Makro eine Parameterliste für die-Eigenschaft angeben. Dies ist nützlich, um indizierte oder parametrisierte Eigenschaften zu implementieren.
 
@@ -386,7 +386,7 @@ Diese entsprechen dem folgenden DISP_PROPERTY_PARAM-Makro in der Steuerelement d
 
 [!code-cpp[NVC_MFCActiveXControl#12](../../mfc/codesnippet/cpp/dispatch-maps_6.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -406,16 +406,16 @@ Name der Klasse.
 *pszName*<br/>
 Externer Name der Eigenschaft, die den "Wert" des Objekts darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Verwendung eines Standardwerts kann das Programmieren Ihres Automation-Objekts für Visual Basic Anwendungen vereinfachen.
 
 Der "Standardwert" des Objekts ist die Eigenschaft, die abgerufen oder festgelegt wird, wenn ein Verweis auf ein Objekt keine Eigenschaft oder Member-Funktion angibt.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

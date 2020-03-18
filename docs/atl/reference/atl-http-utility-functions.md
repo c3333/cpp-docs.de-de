@@ -3,11 +3,11 @@ title: ATL-http-Hilfsprogrammfunktionen
 ms.date: 11/04/2016
 ms.assetid: 4db57ef2-31fa-4696-bbeb-79a9035033ed
 ms.openlocfilehash: ca6dfdfb02f5ef629c6eb523744260f177a3309b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865027"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423537"
 ---
 # <a name="atl-http-utility-functions"></a>ATL-http-Hilfsprogrammfunktionen
 
@@ -24,7 +24,7 @@ Diese Funktionen unterstützen die Bearbeitung von URLs.
 |[Rgbzu HTML](#rgbtohtml)|Konvertiert einen [COLORREF](/windows/win32/gdi/colorref) -Wert in den HTML-Text, der diesem Farbwert entspricht.|
 |[Systemtimedehttpdate](#systemtimetohttpdate)|Mit dieser Funktion konvertieren Sie die Systemzeit in eine Zeichenfolge, deren Format sich für die Verwendung in HTTP-Headern eignet.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlutil. h
 
@@ -72,7 +72,7 @@ ATL_URL Flags, die das Verhalten dieser Funktion steuern.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verhält sich wie die aktuelle Version von [internetcanonicalizeurl](/windows/win32/api/wininet/nf-wininet-internetcanonicalizeurlw) , erfordert jedoch nicht, dass WinInet oder Internet Explorer installiert wird.
 
@@ -110,7 +110,7 @@ Flags, die das Verhalten dieser Funktion steuern. Weitere Informationen finden S
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verhält sich wie die aktuelle Version von [internetcombineurl](/windows/win32/api/wininet/nf-wininet-internetcombineurlw) , erfordert jedoch nicht, dass WinInet oder Internet Explorer installiert wird.
 
@@ -189,7 +189,7 @@ Das Zeichen, das auf Sicherheit geprüft werden soll.
 
 Gibt true zurück, wenn das Eingabezeichen unsicher ist, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zeichen, die nicht in URLs verwendet werden sollen, können mithilfe dieser Funktion getestet und mithilfe von [atlcanonicalizeurl](#atlcanonicalizeurl)konvertiert werden.
 
@@ -229,7 +229,7 @@ Die Größe des Puffers *lpszstringout*.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Kehrt den von [atlescapeurl](#atlescapeurl)angewendeten Konvertierungsprozess um.
 
@@ -259,7 +259,7 @@ Die Größe des Puffers in Bytes (einschließlich des leer Zeichens für das NUL
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein HTML-Farbwert ist ein Nummern Zeichen, gefolgt von einem sechsstelligen Hexadezimalwert, wobei zwei Ziffern für jede der roten, grünen und blauen Komponenten der Farbe verwendet werden (z. b. #FFFFFF weiß).
 
@@ -281,7 +281,7 @@ Die Systemzeit, die als HTTP-Format Zeichenfolge abgerufen werden soll.
 *Straume*<br/>
 Ein Verweis auf eine Zeichen folgen Variable, die die in RFC 2616 ([https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)) und RFC 1123 ([https://www.ietf.org/rfc/rfc1123.txt](https://www.ietf.org/rfc/rfc1123.txt)) definierte http-Datumsangabe empfangen soll.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Konzepte](../active-template-library-atl-concepts.md)<br/>
 [ATL-COM-Desktop-Komponenten](../atl-com-desktop-components.md)<br/>

@@ -32,11 +32,11 @@ helpviewer_keywords:
 - IPropertyPageImpl class
 ms.assetid: f9b7c8b1-7a04-4eab-aa63-63efddb740fa
 ms.openlocfilehash: 69842e77aecaa94be66432e5fbba437a6fa3c5a4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864982"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423069"
 ---
 # <a name="ipropertypageimpl-class"></a>IPropertyPageImpl-Klasse
 
@@ -57,17 +57,17 @@ class IPropertyPageImpl
 *T*<br/>
 Die von `IPropertyPageImpl`abgeleitete Klasse.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IPropertyPageImpl:: IPropertyPageImpl](#ipropertypageimpl)|Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IPropertyPageImpl:: Aktivierung](#activate)|Erstellt das Dialogfeld Fenster für die Eigenschaften Seite.|
 |[IPropertyPageImpl:: apply](#apply)|Wendet aktuelle Eigenschaften Seiten Werte auf die zugrunde liegenden Objekte an, die durch `SetObjects`angegeben werden. Die ATL-Implementierung gibt S_OK zurück.|
@@ -84,7 +84,7 @@ Die von `IPropertyPageImpl`abgeleitete Klasse.
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IPropertyPageImpl:: m_bDirty](#m_bdirty)|Gibt an, ob sich der Zustand der Eigenschaften Seite geändert hat.|
 |[IPropertyPageImpl:: m_dwDocString](#m_dwdocstring)|Speichert den Ressourcen Bezeichner, der der Zeichenfolge zugeordnet ist, die die Eigenschaften Seite beschreibt.|
@@ -96,7 +96,7 @@ Die von `IPropertyPageImpl`abgeleitete Klasse.
 |[IPropertyPageImpl:: m_ppUnk](#m_ppunk)|Verweist auf ein Array von `IUnknown` Zeigern auf die-Objekte, die der Eigenschaften Seite zugeordnet sind.|
 |[IPropertyPageImpl:: m_size](#m_size)|Speichert die Höhe und Breite des Dialog Felds der Eigenschaften Seite in Pixel.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die [IPropertyPage](/windows/win32/api/ocidl/nn-ocidl-ipropertypage) -Schnittstelle ermöglicht es einem Objekt, eine bestimmte Eigenschaften Seite innerhalb eines Eigenschaften Blatts zu verwalten. Class `IPropertyPageImpl` stellt eine Standard Implementierung dieser Schnittstelle bereit und implementiert `IUnknown`, indem Informationen in Debugbuilds an das dumpgerät gesendet werden.
 
@@ -108,7 +108,7 @@ Die [IPropertyPage](/windows/win32/api/ocidl/nn-ocidl-ipropertypage) -Schnittste
 
 `IPropertyPageImpl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlctl. h
 
@@ -123,7 +123,7 @@ HRESULT Activate(
     BOOL bModal);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig ist das Dialogfeld immer ohne Modus, unabhängig vom Wert des *bmodal* -Parameters.
 
@@ -141,7 +141,7 @@ HRESULT Apply();
 
 Gibt S_OK zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IPropertyPage:: apply](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-apply) in the Windows SDK.
 
@@ -153,7 +153,7 @@ Zerstört das mit [aktivieren](#activate)erstellte Dialogfeld Fenster.
 HRESULT Deactivate();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IPropertyPage::D eaktivierungs](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-deactivate) in der Windows SDK.
 
@@ -165,7 +165,7 @@ Füllt die *ppageinfo* -Struktur mit Informationen aus, die in den Datenmembern 
 HRESULT GetPageInfo(PROPPAGEINFO* pPageInfo);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetPageInfo` lädt die [m_dwDocString](#m_dwdocstring), [m_dwHelpFile](#m_dwhelpfile)und [m_dwTitle](#m_dwtitle)zugeordneten Zeichen folgen Ressourcen.
 
@@ -179,7 +179,7 @@ Ruft die Windows-Hilfe für die Eigenschaften Seite auf.
 HRESULT Help(PROPPAGEINFO* pPageInfo);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IPropertyPage:: Help](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-help) im Windows SDK.
 
@@ -191,7 +191,7 @@ Der Konstruktor.
 IPropertyPageImpl();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Initialisiert alle Datenmember.
 
@@ -203,7 +203,7 @@ Gibt an, ob die Eigenschaften Seite seit der Aktivierung geändert wurde.
 HRESULT IsPageDirty(void);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `IsPageDirty` gibt S_OK zurück, wenn die Seite seit der Aktivierung geändert wurde.
 
@@ -287,7 +287,7 @@ Positioniert und ändert die Größe des Dialog Felds der Eigenschaften Seite.
 HRESULT Move(LPCRECT pRect);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie im Windows SDK unter [IPropertyPage:: Move](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-move) .
 
@@ -304,7 +304,7 @@ void SetDirty(BOOL bDirty);
 *bdirty*<br/>
 in TRUE gibt an, dass der Zustand der Eigenschaften Seite als geändert markiert wird. Andernfalls wird Sie als unverändert markiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei Bedarf informiert `SetDirty` den Frame darüber, dass die Eigenschaften Seite geändert wurde.
 
@@ -316,7 +316,7 @@ Stellt ein Array von `IUnknown` Zeigern für die Objekte bereit, die der Eigensc
 HRESULT SetObjects(ULONG nObjects, IUnknown** ppUnk);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IPropertyPage:: abtobjects](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-setobjects) in der Windows SDK.
 
@@ -328,7 +328,7 @@ Stellt die Eigenschaften Seite mit einem [ipropertypagesite](/windows/win32/api/
 HRESULT SetPageSite(IPropertyPageSite* pPageSite);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IPropertyPage:: setpagesite](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-setpagesite) im Windows SDK.
 
@@ -340,7 +340,7 @@ Ermöglicht, dass das Dialogfeld Eigenschaften Seite sichtbar oder unsichtbar is
 HRESULT Show(UINT nCmdShow);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe [IPropertyPage:: Show](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-show) in der Windows SDK.
 
@@ -352,11 +352,11 @@ Verarbeitet den in `pMsg`angegebenen Tastatur Strich.
 HRESULT TranslateAccelerator(MSG* pMsg);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie im Windows SDK unter [IPropertyPage:: TranslateAccelerator](/windows/win32/api/ocidl/nf-ocidl-ipropertypage-translateaccelerator) .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [IPropertyPage2Impl-Klasse](../../atl/reference/ipropertypage2impl-class.md)<br/>
 [IPerPropertyBrowsingImpl-Klasse](../../atl/reference/iperpropertybrowsingimpl-class.md)<br/>

@@ -19,11 +19,11 @@ helpviewer_keywords:
 - std::operator&lt;= (thread)
 - std::operator== (thread)
 ms.openlocfilehash: c0593b8016cf45abe64114958ccda84eb3704844
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876169"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426168"
 ---
 # <a name="ltthreadgt-operators"></a>&lt;thread&gt;-Operatoren
 
@@ -55,7 +55,7 @@ Das rechte `thread::id`-Objekt.
 
 `!(Left < Right)`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion löst keine Ausnahmen aus.
 
@@ -81,7 +81,7 @@ Das rechte `thread::id`-Objekt.
 
 `Right < Left`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion löst keine Ausnahmen aus.
 
@@ -107,7 +107,7 @@ Das rechte `thread::id`-Objekt.
 
 `!(Right < Left)`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion löst keine Ausnahmen aus.
 
@@ -133,7 +133,7 @@ Das rechte `thread::id`-Objekt.
 
 **true** , wenn *left* in der Gesamt Reihenfolge *direkt* vorangestellt ist. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Operator definiert eine gesamte Sortierung für alle `thread::id`-Objekte. Diese Objekte können als Schlüssel in assoziativen Containern verwendet werden.
 
@@ -141,7 +141,7 @@ Diese Funktion löst keine Ausnahmen aus.
 
 ## <a name="op_neq"></a> operator!=
 
-Überprüft zwei `thread::id` -Objekte auf Ungleichheit.
+Überprüft zwei `thread::id`-Objekte auf Ungleichheit.
 
 ```cpp
 bool operator!= (
@@ -161,7 +161,7 @@ Das rechte `thread::id`-Objekt.
 
 `!(Left == Right)`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion löst keine Ausnahmen aus.
 
@@ -187,7 +187,7 @@ Das rechte `thread::id`-Objekt.
 
 **true** , wenn die beiden-Objekte denselben Ausführungs Thread darstellen, oder wenn keines der Objekte einen Ausführungs Thread darstellt. andernfalls **false**.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion löst keine Ausnahmen aus.
 
@@ -207,18 +207,18 @@ basic_ostream<Elem, Tr>& operator<<(
 Ein [basic_ostream](../standard-library/basic-ostream-class.md)-Objekt.
 
 *ID* -\
-Ein `thread::id` -Objekt.
+Ein `thread::id`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 *Ostr*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion fügt *ID* in *Ostr*ein.
 
 Wenn zwei `thread::id`-Objekte gleich sind, sind die eingefügten Text-Darstellungen dieser Objekte gleich.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<thread>](../standard-library/thread.md)

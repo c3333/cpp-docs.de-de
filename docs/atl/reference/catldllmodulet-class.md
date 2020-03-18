@@ -15,11 +15,11 @@ helpviewer_keywords:
 - CAtlDllModuleT class
 ms.assetid: 351d5767-8257-4878-94be-45a85e31a72d
 ms.openlocfilehash: be42915c6c2e941bc5fc1de78c5c7ac26ccca6e2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863182"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423441"
 ---
 # <a name="catldllmodulet-class"></a>Klasse von "-Klasse"
 
@@ -37,18 +37,18 @@ class ATL_NO_VTABLE CAtlDllModuleT : public CAtlModuleT<T>
 *T*<br/>
 Die von `CAtlDllModuleT`abgeleitete Klasse.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |["", "":](#catldllmodulet)|Der Konstruktor.|
 |["", "", "".](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ':D](#dllcanunloadnow)|Testet, ob die DLL entladen werden kann.|
 |["Cmdlet"::D llgetclassobject](#dllgetclassobject)|Gibt eine Klassenfactory zurück.|
@@ -57,7 +57,7 @@ Die von `CAtlDllModuleT`abgeleitete Klasse.
 |[CAtlDllModuleT::D llunregisterserver](#dllunregisterserver)|Entfernt Einträge in der Systemregistrierung für Objekte in der dll.|
 |["Cmdlet: GetClassObject"](#getclassobject)|Gibt eine Klassenfactory zurück. Wird von [DllGetClassObject](#dllgetclassobject)aufgerufen.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CAtlDllModuleT` das Modul für eine Dynamic Link Library (dll) darstellt und Funktionen bereitstellt, die von allen DLL-Projekten verwendet werden. Diese [Spezialisierung der Klasse](../../atl/reference/catlmodulet-class.md) "" von "Klasse" umfasst Unterstützung für die Registrierung.
 
@@ -73,7 +73,7 @@ Weitere Informationen zu Modulen in ATL finden Sie unter [ATL-Modul Klassen](../
 
 `CAtlDllModuleT`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -151,7 +151,7 @@ Reserviert.
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Deaktivieren des DLL_THREAD_ATTACH-und DLL_THREAD_DETACH Benachrichtigungs Aufrufs kann eine sinnvolle Optimierung für Multithreadanwendungen mit vielen DLLs sein, die häufig Threads erstellen und löschen und deren DLLs diese Benachrichtigungen auf der Basis von Anlage/Trennung auf Thread Ebene nicht benötigen.
 
@@ -166,7 +166,7 @@ HRESULT DllRegisterServer(BOOL bRegTypeLib = TRUE) throw();
 ### <a name="parameters"></a>Parameter
 
 *bregtypelib*<br/>
-TRUE, wenn die Typbibliothek registriert werden soll. Der Standardwert ist TRUE.
+TRUE, wenn die Typbibliothek registriert werden soll. Der Standardwert lautet TRUE.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -183,7 +183,7 @@ HRESULT DllUnregisterServer(BOOL bUnRegTypeLib = TRUE) throw();
 ### <a name="parameters"></a>Parameter
 
 *bunregtypelib*<br/>
-TRUE, wenn die Typbibliothek aus der Registrierung entfernt werden soll. Der Standardwert ist TRUE.
+TRUE, wenn die Typbibliothek aus der Registrierung entfernt werden soll. Der Standardwert lautet TRUE.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -215,11 +215,11 @@ Ein Zeiger auf den Schnittstellen Zeiger, der durch *riid*identifiziert wird. We
 
 Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird von " [Cmdlet::D llgetclassobject](#dllgetclassobject) " aufgerufen und ist aus Gründen der Abwärtskompatibilität eingeschlossen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CAtlModuleT-Klasse](../../atl/reference/catlmodulet-class.md)<br/>
 [CAtlExeModuleT-Klasse](../../atl/reference/catlexemodulet-class.md)<br/>

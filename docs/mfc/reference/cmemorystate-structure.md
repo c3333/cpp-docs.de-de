@@ -9,11 +9,11 @@ helpviewer_keywords:
 - detecting memory leaks [MFC]
 ms.assetid: 229d9de7-a6f3-4cc6-805b-5a9d9b1bfe1d
 ms.openlocfilehash: a110e1345cb970c117de125bd8105e1bc86eaf94
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855298"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426138"
 ---
 # <a name="cmemorystate-structure"></a>CMemoryState-Struktur
 
@@ -25,24 +25,24 @@ Stellt eine bequeme Methode zum Erkennen von Speicher Verlusten in Ihrem Program
 struct CMemoryState
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMemoryState:: CMemoryState](#cmemorystate)|Erstellt eine Klassen ähnliche Struktur zum Steuern von Speicher Prüfpunkten.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMemoryState:: Checkpoint](#checkpoint)|Ruft eine Momentaufnahme (Prüfpunkt) des aktuellen Speicher Zustands ab.|
 |[CMemoryState::D ifference](#difference)|Berechnet den Unterschied zwischen zwei Objekten vom Typ `CMemoryState`.|
 |[CMemoryState::D-Umschlag](#dumpallobjectssince)|Sichert eine Zusammenfassung aller aktuell zugeordneten Objekte seit einem vorherigen Prüfpunkt.|
 |[CMemoryState::D umpstatistics](#dumpstatistics)|Druckt Speicher Belegungs Statistiken für ein `CMemoryState` Objekt.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CMemoryState` ist eine Struktur, die keine Basisklasse hat.
 
@@ -71,7 +71,7 @@ Weitere Informationen zur Verwendung von `CMemoryState` und anderen Diagnosen fi
 
 `CMemoryState`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afx.h
 
@@ -83,7 +83,7 @@ Erstellt eine Momentaufnahme-Zusammenfassung des Arbeitsspeichers und speichert 
 void Checkpoint();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [Unterschiede](#difference) von `CMemoryState` Member-Funktionen und [Dump-enumerjectssince](#dumpallobjectssince) verwenden diese Momentaufnahme Daten.
 
@@ -125,7 +125,7 @@ Der neue Speicher Zustand, wie durch einen `CMemoryState` Prüfpunkt definiert.
 
 Ungleich 0 (null), wenn sich die beiden Speicher Zustände unterscheiden. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Prüfpunkt [muss für](#checkpoint) jeden der beiden Speicher Zustandsparameter aufgerufen werden.
 
@@ -141,7 +141,7 @@ Ruft die `Dump`-Funktion für alle Objekte eines Typs auf, der von Class `CObjec
 void DumpAllObjectsSince() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch das Aufrufen von `DumpAllObjectsSince` mit einem nicht initialisierten `CMemoryState` Objekt werden alle derzeit im Arbeitsspeicher ausgewerteten Objekte abgeblendet.
 
@@ -157,7 +157,7 @@ Druckt einen präzisen Speicher Statistikbericht aus einem `CMemoryState` Objekt
 void DumpStatistics() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Bericht, der auf dem [afxDump](diagnostic-services.md#afxdump) -Gerät gedruckt wird, zeigt Folgendes:
 
@@ -195,6 +195,6 @@ Fügen Sie einen Handler für die `ExitInstance`-Funktion hinzu, und verwenden S
 
 Sie können das Programm jetzt im Debugmodus ausführen, um die Ausgabe der `DumpStatistics` Funktion anzuzeigen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

@@ -1,19 +1,17 @@
 ---
 title: EOF, WEOF
 ms.date: 11/04/2016
-f1_keywords:
-- EOF
 helpviewer_keywords:
 - EOF function
 - WEOF function
 - end of file
 ms.assetid: a7150563-cdae-4cdf-9798-ad509990e505
-ms.openlocfilehash: f00c4003afebad580bd2ea5d6853edc3ca6e8c73
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 5ccb97b55cb61bd42d0487b22bd3e01413444ad3
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57740039"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438429"
 ---
 # <a name="eof-weof"></a>EOF, WEOF
 
@@ -23,13 +21,13 @@ ms.locfileid: "57740039"
 #include <stdio.h>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 EOF wird von einer E/A-Routine zurückgegeben, wenn das Ende der Datei (oder in einigen Fällen ein Fehler) vorgefunden wird.
 
 WEOF liefert den Rückgabewert vom Typ **wint_t**, mit dem das Ende eines breiten Streams signalisiert oder ein Fehler gemeldet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [putc, putwc](../c-runtime-library/reference/putc-putwc.md)<br/>
 [ungetc, ungetwc](../c-runtime-library/reference/ungetc-ungetwc.md)<br/>
@@ -39,4 +37,4 @@ WEOF liefert den Rückgabewert vom Typ **wint_t**, mit dem das Ende eines breite
 [_ungetch, _ungetwch, _ungetch_nolock, _ungetwch_nolock](../c-runtime-library/reference/ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)<br/>
 [_putch, _putwch](../c-runtime-library/reference/putch-putwch.md)<br/>
 [isascii, __isascii, iswascii](../c-runtime-library/reference/isascii-isascii-iswascii.md)<br/>
-[Globale Konstanten](../c-runtime-library/global-constants.md)
+[Global Constants (Globale Konstanten)](../c-runtime-library/global-constants.md)

@@ -21,7 +21,6 @@ topic_type:
 - apiref
 f1_keywords:
 - _kbhit
-- kbhit
 - conio/_kbhit
 helpviewer_keywords:
 - keyboard input
@@ -33,12 +32,12 @@ helpviewer_keywords:
 - _kbhit function
 - keyboards, checking input
 ms.assetid: e82a1cc9-bbec-4150-b678-a7e433220fe4
-ms.openlocfilehash: 49c8df1a2c600ad3976babea0b560108ea69efd8
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 972b060dd98b5d267fa1f529c898573d4b82bb61
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953515"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438091"
 ---
 # <a name="_kbhit"></a>_kbhit
 
@@ -56,15 +55,15 @@ int _kbhit( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_kbhit** gibt einen Wert ungleich 0 (null) zurück, wenn eine Taste gedrückt wurde. Andernfalls wird 0 (null) zurückgegeben.
+**_kbhit** gibt einen Wert ungleich 0 (null) zurück, wenn eine Taste gedrückt wurde. Andernfalls wird 0 zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_kbhit** -Funktion überprüft die Konsole auf eine aktuelle Tastenkombination. Wenn die Funktion einen Wert ungleich 0 (null) zurückgibt, befindet sich eine Tastatureingabe im Puffer. Das Programm kann dann **_getch** oder **_getche** aufgerufen werden, um die Tastatureingabe zu erhalten.
+Die **_kbhit** -Funktion überprüft die Konsole auf eine aktuelle Tastenkombination. Wenn die Funktion einen Wert ungleich 0 (null) zurückgibt, befindet sich eine Tastatureingabe im Puffer. Das Programm kann dann **_getch** oder **_getche** abrufen, um die Tastatureingabe zu erhalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_kbhit**|\<conio.h>|
 
@@ -72,7 +71,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 ## <a name="libraries"></a>Bibliotheken
 
-Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
+Alle Versionen der [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -106,6 +105,6 @@ Hit me!! Hit me!! Hit me!! Hit me!! Hit me!! Hit me!! Hit me!!
 Key struck was 'q'
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>

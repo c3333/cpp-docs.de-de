@@ -1,26 +1,24 @@
 ---
 title: Verwenden von CImageList
 ms.date: 11/04/2016
-f1_keywords:
-- CImageList
 helpviewer_keywords:
 - image list control
 - CImageList class [MFC], using
 ms.assetid: 3d2a909e-d641-46b7-aada-81cab1a29b41
-ms.openlocfilehash: c3e4cec75ce23beb2a617d672170f86c608ca0a2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 09fd0e95ce2981afbebbfe10d87b26f88a7b5e13
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411837"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447224"
 ---
 # <a name="using-cimagelist"></a>Verwenden von CImageList
 
-Eine Bildliste, dargestellt durch die Klasse [CImageList](../mfc/reference/cimagelist-class.md), ist eine Auflistung von gleichen Bilder, von denen jeder über seinen Index verwiesen werden kann. Bilderliste für das werden verwendet, um große Mengen von Symbolen oder Bitmaps effizient zu verwalten. Bild von Listen sind Sie selbst keine Steuerelemente, da es keine Windows; Sie werden jedoch verschiedene Typen von Steuerelementen, einschließlich der Listensteuerelemente verwendet ([CListCtrl](../mfc/reference/clistctrl-class.md)), Struktursteuerelemente ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)), und Registerkarten-Steuerelementen ([CTabCtrl](../mfc/reference/ctabctrl-class.md)).
+Eine Bildliste, die durch die [CImageList](../mfc/reference/cimagelist-class.md)-Klasse dargestellt wird, ist eine Auflistung von Bildern gleicher Größe, auf die jeweils durch ihren Index verwiesen werden kann. Bildlisten werden verwendet, um große Mengen von Symbolen oder Bitmaps effizient zu verwalten. Bildlisten sind nicht selbst Steuerelemente, da Sie nicht "Windows" sind. Sie werden jedoch mit verschiedenen Typen von Steuerelementen verwendet, z. b. Listen Steuerelemente ([CListCtrl](../mfc/reference/clistctrl-class.md)), Struktur Steuerelemente ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) und Registerkarten-Steuerelemente ([CTabCtrl](../mfc/reference/ctabctrl-class.md)).
 
-Alle Abbilder in einer Bildliste sind in eine einzelne, große Bitmap im Bildschirm-Device-Format enthalten. Eine Bildliste kann auch eine monochrome Bitmap enthalten, die zum Zeichnen von Bildern transparent Masken (Symbolart) enthält. `CImageList` enthält die Member-Funktionen, mit denen Sie zum Zeichnen von Bildern, erstellen und Zerstören von Bildlisten, hinzufügen und Entfernen von Bildern, Ersetzen von Bildern, Zusammenfügen von Bildern, und ziehen Images.
+Alle Bilder in einer Bildliste sind in einer einzelnen, breiten Bitmap im Bildschirmformat enthalten. Eine Bildliste kann auch eine monochrome Bitmap enthalten, die Masken enthält, mit denen Bilder transparent gezeichnet werden (Symbol Stil). `CImageList` stellt Member-Funktionen bereit, mit denen Sie Bilder zeichnen, Bildlisten erstellen und zerstören, Bilder hinzufügen und entfernen, Bilder ersetzen, Bilder zusammenführen und Bilder ziehen können.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Bildlistenarten](../mfc/types-of-image-lists.md)
 
@@ -36,6 +34,6 @@ Alle Abbilder in einer Bildliste sind in eine einzelne, große Bitmap im Bildsch
 
 - [Bildinformationen in Bildlisten](../mfc/image-information-in-image-lists.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

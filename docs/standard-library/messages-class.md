@@ -23,11 +23,11 @@ helpviewer_keywords:
 - std::messages [C++], open
 ms.assetid: c4c71f40-4f24-48ab-9f7c-daccd8d5bd83
 ms.openlocfilehash: 704ee2ce40b4026cc066213181c96cf0f744d152
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78884021"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425430"
 ---
 # <a name="messages-class"></a>messages-Klasse
 
@@ -47,7 +47,7 @@ class messages : public messages_base;
 *CharType* -\
 Der Typ, der innerhalb eines Programms zum Codieren von Zeichen in einem Gebietsschema verwendet wird.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in **id** gespeichert.
 
@@ -55,20 +55,20 @@ Dieses Facet öffnet im Grunde einen Katalog von Meldungen, die in der messages_
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[messages](#messages)|Die Meldungsfacet-Konstruktorfunktion.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Zeichentyp, mit dem Meldungen angezeigt werden.|
 |[string_type](#string_type)|Ein Typ, der eine Zeichenfolge vom Typ `basic_string` beschreibt, die Zeichen vom Typ `CharType` enthält.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[close](#close)|Schließt den Meldungskatalog.|
 |[do_close](#do_close)|Eine virtuelle Funktion, die aufgerufen wird, um den Meldungskatalog zu schließen.|
@@ -77,7 +77,7 @@ Dieses Facet öffnet im Grunde einen Katalog von Meldungen, die in der messages_
 |[get](#get)|Ruft den Meldungskatalog ab.|
 |[open](#open)|Öffnet den Meldungskatalog.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<Gebiets Schema >
 
@@ -91,7 +91,7 @@ Ein Zeichentyp, mit dem Meldungen angezeigt werden.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für den Vorlagenparameter **CharType**.
 
@@ -108,7 +108,7 @@ void close(catalog _Catval) const;
 *_Catval*\
 Der zu schließende Katalog.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion ruft [do_close](#do_close)(_ *Catval*) auf.
 
@@ -125,7 +125,7 @@ virtual void do_close(catalog _Catval) const;
 *_Catval*\
 Der zu schließende Katalog.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion schließt den Message Catalog- *_Catval*, der von einem früheren [Do_open](#do_open)geöffnet werden muss.
 
@@ -165,7 +165,7 @@ Die Zeichenfolge, die zurückgegeben werden soll, wenn ein Fehler auftritt.
 
 Bei einem Fehler wird eine Kopie der *_Dfault* zurückgegeben. Andernfalls gibt er eine Kopie einer angegebenen Meldungssequenz zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion versucht, eine Nachrichten Sequenz aus dem *_Catval*des Nachrichten Katalogs abzurufen. Dabei können *_Set*, *_message*und *_Dfault* verwendet werden.
 
@@ -195,7 +195,7 @@ Das Gebietsschema, nach dem im Katalog gesucht werden soll.
 
 Er gibt einen Wert zurück, der bei einem Fehler kleiner als null ist. Andernfalls kann der Rückgabewert als erstes Argument bei einem späteren Aufruf an [get](#get) verwendet werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion versucht, einen Meldungs Katalog zu öffnen, dessen Name *_Catname*ist. Dabei kann das Gebiets Schema *_Loc* verwendet werden.
 
@@ -235,7 +235,7 @@ Die Zeichenfolge, die zurückgegeben werden soll, wenn ein Fehler auftritt.
 
 Bei einem Fehler wird eine Kopie der *_Dfault* zurückgegeben. Andernfalls gibt er eine Kopie einer angegebenen Meldungssequenz zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt [do_get](#do_get)(`_Catval`,`_Set``_Message`,`_Dfault`) zurück.
 
@@ -260,7 +260,7 @@ Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwend
 *_Locname*\
 Der Name des Gebietsschemas.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
 
@@ -296,7 +296,7 @@ Das Gebietsschema, nach dem im Katalog gesucht werden soll.
 
 Er gibt einen Wert zurück, der bei einem Fehler kleiner als null ist. Andernfalls kann der Rückgabewert als erstes Argument bei einem späteren Aufruf an [get](#get) verwendet werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt [do_open](#do_open)(`_Catname`,`_Loc`) zurück.
 
@@ -308,11 +308,11 @@ Ein Typ, der eine Zeichenfolge vom Typ `basic_string` beschreibt, die Zeichen vo
 typedef basic_string<CharType, Traits, Allocator> string_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt eine Spezialisierung von Klassen Vorlagen [basic_string](../standard-library/basic-string-class.md) , deren Objekte Kopien der Nachrichten Sequenzen speichern können.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<locale>](../standard-library/locale.md)\
 [messages_base-Klasse](../standard-library/messages-base-class.md)\

@@ -22,11 +22,11 @@ f1_keywords:
 - amp/Concurrency::direct3d::umin
 ms.assetid: 28943b62-52c9-42dc-baf1-ca7b095c1a19
 ms.openlocfilehash: 438d211ac2f15bf781b704a7d0d7484d1542f131
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866310"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424980"
 ---
 # <a name="concurrencydirect3d-namespace-functions-amp"></a>Concurrency::direct3d-Namespace-Funktionen (AMP)
 
@@ -42,7 +42,7 @@ ms.locfileid: "78866310"
 |[auslasten](#saturate)|[sign](#sign)|[smoothstep](#smoothstep)|
 |[Schritt](#step)|[Umax](#umax)|[-in](#umin)|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** amp. h- **Namespace:** Parallelität
 
@@ -146,7 +146,7 @@ Der [queuing_mode](concurrency-namespace-enums-amp.md#queuing_mode) , der für d
 
 Das `accelerator_view`-Objekt, das über die übergebene Direct3D-Geräteschnittstelle erstellt wurde.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Funktion erstellt ein neues `accelerator_view`-Objekt von einem vorhandenen Zeiger auf eine Direct3D-Geräteschnittstelle. Wenn der Funktionsaufruf folgt, wird der Verweiszähler des Parameters mit einem `AddRef`-Aufruf der Schnittstelle erhöht. Sie können das Objekt sicher freigeben, wenn es im DirectX-Code nicht mehr benötigt wird. Wenn der Methodenaufrufe fehlschlägt, wird eine [runtime_exception](runtime-exception-class.md) ausgelöst.
 
@@ -610,6 +610,6 @@ Ganzzahliger Wert
 
 Rückgabe des niedrigsten numerischen Werts der Argumente
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency::direct3d Namespace](concurrency-direct3d-namespace.md)

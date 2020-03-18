@@ -8,11 +8,11 @@ helpviewer_keywords:
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
 ms.openlocfilehash: 8a4ea3ae325eb5882c2f8b2524bbc156d12ffcc6
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875733"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423687"
 ---
 # <a name="unions"></a>Unions
 
@@ -37,7 +37,7 @@ Der Typname, der für die Union angegeben wurde.
 *Mitgliederliste*<br/>
 Elemente, die die Union enthalten kann. Siehe Hinweise.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 ## <a name="declaring-a-union"></a>Deklarieren einer Union
 
@@ -654,9 +654,9 @@ Zusätzlich zu den Einschränkungen für benannte Unions unterliegen anonyme Uni
 
 - Sie können keine Memberfunktionen aufweisen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)<br/>
-[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
+[Stichwörter](../cpp/keywords-cpp.md)<br/>
 [class](../cpp/class-cpp.md)<br/>
 [struct](../cpp/struct-cpp.md)

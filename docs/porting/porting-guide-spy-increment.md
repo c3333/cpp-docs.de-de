@@ -3,11 +3,11 @@ title: 'Leitfaden zum Portieren: Spy++'
 ms.date: 10/23/2019
 ms.assetid: e558f759-3017-48a7-95a9-b5b779d5e51d
 ms.openlocfilehash: 5505e0dbf23dd02f4ae5924ff4f2bacff3f11eea
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890940"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422691"
 ---
 # <a name="porting-guide-spy"></a>Leitfaden zum Portieren: Spy++
 
@@ -19,7 +19,7 @@ Spy++ ist ein weit verbreitetes GUI-Diagnosetool für den Windows-Desktop, das a
 
 Dieser Fall wird als typisch für das Portieren von Windows-Desktopanwendungen behandelt, die MFC und die Win32-API verwenden, insbesondere für alte Projekte, die nicht mit jedem Release von Visual C++ seit Visual C++ 6.0 aktualisiert wurden.
 
-##  <a name="convert_project_file"></a> Schritt 1: Konvertieren der Projektdatei
+##  <a name="convert_project_file"></a> Schritt 1. Konvertieren der Projektdatei
 
 Die Projektdatei mit zwei alten DSW-Dateien aus Visual C++ 6.0 wird problemlos konvertiert. Ein Projekt ist die Spy++-Anwendung. Das andere ist SpyHk, geschrieben in C#, und stellt eine unterstützende DLL dar. Für komplexere Projekte ist die Durchführung des Upgrades möglicherweise nicht so einfach wie [hier](../porting/visual-cpp-porting-and-upgrading-guide.md) beschrieben.
 
@@ -29,7 +29,7 @@ Nach dem Upgrade der beiden Projekte sah unsere Projektmappe folgendermaßen aus
 
 Es sind zwei Projekte enthalten, ein mit einer großen Anzahl von C++-Dateien und ein anderes eine in C geschriebene DLL-Datei.
 
-##  <a name="header_file_problems"></a> Schritt 2: Probleme mit Headerdateien
+##  <a name="header_file_problems"></a> Schritt 2. Probleme mit Headerdateien
 
 Eines der häufig auftretenden Probleme beim Erstellen eines neu konvertierten Projekts ist, dass die vom Projekt verwendeten Headerdateien nicht gefunden werden können.
 
@@ -671,7 +671,7 @@ int CPerfTextDataBase::NumStrings(LPCTSTR mszStrings) const
 
 Das Portieren von Spy++ aus dem ursprünglichen Visual C++ 6.0-Code in den aktuellen Compiler hat etwa 20 Stunden Codierungszeit im Verlauf einer Woche in Anspruch genommen. Wir haben über acht Versionen des Produkts direkt ein Upgrade von Visual Studio 6.0 auf Visual Studio 2015 ausgeführt. Dies ist jetzt bei sowohl großen als auch kleinen Projekten der empfohlene Ansatz für alle Upgrades.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Portieren und Aktualisieren: Beispiele und Fallstudien](../porting/porting-and-upgrading-examples-and-case-studies.md)<br/>
 [Vorherige Fallstudie: COM Spy](../porting/porting-guide-com-spy.md)

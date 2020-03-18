@@ -12,11 +12,11 @@ helpviewer_keywords:
 - IThreadProxy structure
 ms.assetid: feb89241-a555-4e61-ad48-40add54daeca
 ms.openlocfilehash: b87694393af4634ec97d05070aa5513cd132098a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854162"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424254"
 ---
 # <a name="ithreadproxy-structure"></a>IThreadProxy-Struktur
 
@@ -28,18 +28,18 @@ Eine Abstraktion für einen Thread der Ausführung. Abhängig von dem von Ihnen 
 struct IThreadProxy;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IThreadProxy:: GetId](#getid)|Gibt einen eindeutigen Bezeichner für den Thread Proxy zurück.|
 |[IThreadProxy:: SwitchOut](#switchout)|Hebt die Zuordnung des Kontexts vom zugrunde liegenden virtuellen Prozessorstamm auf.|
 |[IThreadProxy:: SwitchTo](#switchto)|Führt einen kooperativen Kontextwechsel vom aktuell ausgeführten Kontext zu einem anderen aus.|
 |[IThreadProxy:: yieldto System](#yieldtosystem)|Bewirkt, dass der aufrufende Thread die Ausführung an einen anderen Thread übergibt, der auf dem aktuellen Prozessor ausgeführt werden kann. Das Betriebssystem wählt den nächsten Thread aus, der ausgeführt werden soll.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Thread Proxys werden mit Ausführungs Kontexten gekoppelt, die durch die-Schnittstelle dargestellt werden, um die Arbeit zu verteilen `IExecutionContext`.
 
@@ -47,7 +47,7 @@ Thread Proxys werden mit Ausführungs Kontexten gekoppelt, die durch die-Schnitt
 
 `IThreadProxy`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** concrtrm. h
 
@@ -78,7 +78,7 @@ virtual void SwitchOut(SwitchingProxyState switchState = Blocking) = 0;
 *SwitchState*<br/>
 Gibt den Zustand des Threadproxys an, der den Wechsel ausführt. Der Parameter ist vom Typ `SwitchingProxyState`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `SwitchOut`, wenn Sie aus irgendeinem Grund die Zuordnung eines Kontexts zu einem virtuellen Prozessorstamm aufheben müssen, in dem dieser ausgeführt wird. Je nachdem, welchen Wert Sie an den `switchState`-Parameter übergeben, und abhängig von dessen Ausführung auf einem virtuellen Prozessorstamm, wird der Aufruf entweder sofort zurückgegeben oder der dem Kontext zugeordnete Threadproxy wird blockiert. Es ist nicht zulässig, `SwitchOut` aufzurufen, wenn der Parameter auf `Idle` festgelegt ist. Dies führt zu einer [Invalid_argument](../../../standard-library/invalid-argument-class.md) Ausnahme.
 
@@ -110,7 +110,7 @@ Der Ausführungs Kontext, zu dem kooperativ gewechselt werden soll.
 *SwitchState*<br/>
 Gibt den Zustand des Threadproxys an, der den Wechsel ausführt. Der Parameter ist vom Typ `SwitchingProxyState`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um von der [IExecutionContext::D ispatch](iexecutioncontext-structure.md#dispatch) -Methode des ersten Ausführungs Kontexts aus einen Ausführungs Kontext zu einem anderen zu wechseln. Die-Methode ordnet den Ausführungs Kontext `pContext` einem Thread Proxy zu, wenn dieser nicht bereits mit einem verknüpft ist. Der Besitz des aktuellen Thread Proxys wird durch den Wert bestimmt, den Sie für das `switchState`-Argument angeben.
 
@@ -130,13 +130,13 @@ Bewirkt, dass der aufrufende Thread die Ausführung an einen anderen Thread übe
 virtual void YieldToSystem() = 0;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie von einem Thread Proxy aufgerufen wird, der durch einen regulären Windows-Thread gesichert wird, verhält sich `YieldToSystem` genau wie die Windows-Funktion `SwitchToThread`. Beim Aufrufen aus dem Benutzermodus (ums)-Threads delegiert die `SwitchToThread`-Funktion jedoch den Task, der den nächsten Thread zur Laufzeit an den Benutzermodus-Scheduler, nicht das Betriebssystem, abwählt. Verwenden Sie `YieldToSystem`, um den gewünschten Effekt zu erzielen, wenn Sie zu einem anderen bereiten Thread im System wechseln.
 
 `YieldToSystem` muss für die `IThreadProxy`-Schnittstelle aufgerufen werden, die den gerade ausgeführten Thread darstellt, oder die Ergebnisse sind nicht definiert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [IExecutionContext-Struktur](iexecutioncontext-structure.md)<br/>

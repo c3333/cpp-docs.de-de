@@ -1,5 +1,5 @@
 ---
-title: Empfehlungen für die e / a-Verarbeitung
+title: Empfehlungen für die Behandlung von Eingabe-und Ausgabe
 ms.date: 11/04/2016
 helpviewer_keywords:
 - I/O [MFC], about I/O
@@ -8,45 +8,45 @@ helpviewer_keywords:
 - I/O [MFC], options
 - I/O [MFC], file-based options
 ms.assetid: d664b175-3b4a-40c3-b14b-39de6b12e419
-ms.openlocfilehash: 760c213c3af7f9c75374f04e3dfc6b9499eade5c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 956a92fd1761f61081afa2eb9c6cb35fe72b46d6
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62218563"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446901"
 ---
 # <a name="recommendations-for-handling-inputoutput"></a>Empfehlungen zur Eingabe-/Ausgabebehandlung
 
-Gibt an, ob Sie dateibasierte e/a verwenden, hängt davon ab, wie Sie auf die Fragen in der folgenden Entscheidungsstruktur reagieren:
+Ob Sie dateibasierte e/a verwenden oder nicht, hängt davon ab, wie Sie auf die Fragen in der folgenden Entscheidungsstruktur reagieren:
 
-**Die primären Daten in Ihrer Anwendung in der Datei auf einem Datenträger gespeichert werden**
+**Befinden sich die primären Daten in der Anwendung in einer Datenträger Datei**
 
-- Ja, können Sie die primären Daten in einer Datenträgerdatei gespeichert:
+- Ja, die primären Daten befinden sich in einer Datenträger Datei:
 
-     **Die Anwendung die gesamte Datei gelesen, in den Arbeitsspeicher auf die Datei öffnen und Zurückschreiben die gesamte Datei auf dem Datenträger auf die Datei zu speichern**
+     **Liest die Anwendung die gesamte Datei in den Arbeitsspeicher der Datei, die geöffnet ist, und schreibt die gesamte Datei auf dem Datenträger beim Speichern von Dateien.**
 
-   - "Ja": Dies ist der Standardfall für MFC-Dokument. Verwendung `CDocument` Serialisierung.
+   - Ja: Dies ist der Standardfall für MFC-Dokumente. Verwenden Sie `CDocument` Serialisierung.
 
-   - Nein: Dies ist in der Regel die Groß-/Kleinschreibung transaktionsbasierten Aktualisieren der Datei. Sie aktualisieren Sie die Datei auf einer Basis pro Transaktion und keine `CDocument` Serialisierung.
+   - Nein: Dies ist in der Regel der Fall einer transaktionsbasierten Aktualisierung der Datei. Sie aktualisieren die Datei auf Transaktionsbasis und benötigen keine `CDocument` Serialisierung.
 
-- Nein, nicht die primären Daten in eine Datenträgerdatei befinden:
+- Nein, die primären Daten befinden sich nicht in einer Datenträger Datei:
 
-     **Die Daten in einer ODBC-Datenquelle gespeichert werden**
+     **Befinden sich die Daten in einer ODBC-Datenquelle**
 
-   - Ja, befindet sich die Daten in einer ODBC-Datenquelle ein:
+   - Ja, die Daten befinden sich in einer ODBC-Datenquelle:
 
-         Use MFC's database support. The standard MFC implementation for this case includes a `CDatabase` object, as discussed in the article [MFC: Using Database Classes with Documents and Views](../data/mfc-using-database-classes-with-documents-and-views.md). The application might also read and write an auxiliary file — the purpose of the application wizard "both a database view and file support" option. In this case, you'd use serialization for the auxiliary file.
+      Verwenden Sie die MFC-Datenbankunterstützung. Die MFC-Standard Implementierung für diesen Fall enthält ein `CDatabase` Objekt, wie im Artikel [MFC: Verwenden von Datenbankklassen mit Dokumenten und Sichten](../data/mfc-using-database-classes-with-documents-and-views.md)erläutert. Die Anwendung kann auch eine zusätzliche Datei lesen und Schreiben – der Zweck des Anwendungs-Assistenten für die Option "Daten Bank Ansicht und Dateiunterstützung". In diesem Fall verwenden Sie die Serialisierung für die zusätzliche Datei.
 
-   - Nein, nicht die Daten in einer ODBC-Datenquelle befinden.
+   - Nein, die Daten befinden sich nicht in einer ODBC-Datenquelle.
 
-         Examples of this case: the data resides in a non-ODBC DBMS; the data is read via some other mechanism, such as OLE or DDE.
+      Beispiele für diesen Fall: die Daten befinden sich in einem nicht-ODBC-DBMS. die Daten werden über einen anderen Mechanismus, z. b. OLE oder DDE, gelesen.
 
-         In such cases, you won't use serialization, and your application won't have Open and Save menu items. You might still want to use a `CDocument` as a home base, just as an MFC ODBC application uses the document to store `CRecordset` objects. But you won't use the framework's default File Open/Save document serialization.
+      In solchen Fällen wird die Serialisierung nicht verwendet, und die Anwendung verfügt nicht über die Menü Elemente "Öffnen" und "Speichern". Sie möchten möglicherweise trotzdem eine `CDocument` als Basis Basis verwenden, ebenso wie eine MFC-ODBC-Anwendung das Dokument zum Speichern von `CRecordset` Objekten verwendet. Sie verwenden jedoch nicht die Standarddatei zum Öffnen/Speichern von Dokumenten für das Framework.
 
-Zur Unterstützung von öffnen, speichern, und wie die Befehle im Menü Datei speichern, stellt das Framework Dokumentserialisierung bereit. Serialisierung liest und schreibt Daten, z. B. Objekte aus der Klasse abgeleitete `CObject`, zu dauerhaften Speicher, normalerweise eine Datenträgerdatei. Serialisierung ist einfach zu verwenden, und viele der Ihre Anforderungen erfüllt, aber es kann in vielen Datenzugriffs-Anwendungen nicht geeignet sein. Formularbasierten datenzugriffsanwendungen aktualisieren in der Regel Daten für die pro Transaktion. Sie aktualisieren die Datensätze, die von der Transaktion statt das Lesen und schreiben eine ganze Datei gleichzeitig betroffen sind.
+Zur Unterstützung der Befehle "Öffnen", "Speichern" und "Speichern unter" im Menü Datei bietet das Framework Dokumentserialisierung. Die Serialisierung liest und schreibt Daten, einschließlich von Klassen `CObject`abgeleiteter Objekte, in einen permanenten Speicher, normalerweise eine Datenträger Datei. Die Serialisierung ist einfach zu verwenden und bietet viele Ihrer Anforderungen, kann aber in vielen Datenzugriffs Anwendungen ungeeignet sein. Datenzugriffs Anwendungen aktualisieren Daten in der Regel pro Transaktion. Sie aktualisieren die Datensätze, die von der Transaktion betroffen sind, anstatt eine gesamte Datendatei gleichzeitig zu lesen und zu schreiben.
 
-Weitere Informationen zur Serialisierung finden Sie unter [Serialisierung](../mfc/serialization-in-mfc.md).
+Weitere Informationen zur Serialisierung finden Sie unter [Serialization](../mfc/serialization-in-mfc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Serialisierung: Serialisierung im Vergleich zur Datenbankeingabe/-Ausgabe](../mfc/serialization-serialization-vs-database-input-output.md)
+[Serialisierung: Serialisierung im Vergleich zur Daten Bank Eingabe/-Ausgabe](../mfc/serialization-serialization-vs-database-input-output.md)

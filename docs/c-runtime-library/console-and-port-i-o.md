@@ -1,8 +1,6 @@
 ---
 title: Konsole und Port-E/A
 ms.date: 11/04/2016
-f1_keywords:
-- c.io
 helpviewer_keywords:
 - routines, console and port I/O
 - routines
@@ -11,12 +9,12 @@ helpviewer_keywords:
 - I/O [CRT], port
 - I/O routines, console and port I/O
 ms.assetid: 0eee1c92-9b3d-41e0-a43a-257e546eeec8
-ms.openlocfilehash: 55f97a70f2ce12f6363d234e9bbc9384d7ee9fe1
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 5b4dc2a081ea11bd84d932f55b5b247de81f296a
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57752375"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443447"
 ---
 # <a name="console-and-port-io"></a>Konsole und Port-E/A
 
@@ -24,7 +22,7 @@ Diese Routinen lesen und schreiben Daten in Ihre Konsole oder an den angegebenen
 
 ## <a name="console-and-port-io-routines"></a>Konsolen- und Port-E/A-Routinen
 
-|-Routine zurückgegebener Wert|Verwendung|
+|Routine|Zweck|
 |-------------|---------|
 |[_cgets, _cgetws](../c-runtime-library/cgets-cgetws.md), [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md)|Zeichenfolge aus der Konsole lesen|
 |[_cprintf, _cwprintf](../c-runtime-library/reference/cprintf-cprintf-l-cwprintf-cwprintf-l.md), [_cprintf_s, _cprintf_s_l, _cwprintf_s, _cwprintf_s_l](../c-runtime-library/reference/cprintf-s-cprintf-s-l-cwprintf-s-cwprintf-s-l.md)|Formatierte Daten in Konsole schreiben|
@@ -42,7 +40,7 @@ Diese Routinen lesen und schreiben Daten in Ihre Konsole oder an den angegebenen
 |[_putch, _putwch](../c-runtime-library/reference/putch-putwch.md)|Zeichen in Konsole schreiben|
 |[_ungetch, _ungetwch](../c-runtime-library/reference/ungetch-ungetwch-ungetch-nolock-ungetwch-nolock.md)|Letztes Zeichen von „Unget“ aus der Konsole lesen, damit das nächste Zeichen gelesen wird|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Eingabe und Ausgabe](../c-runtime-library/input-and-output.md)<br/>
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

@@ -2,12 +2,12 @@
 title: 'Visual C++: Neuerungen von 2003 bis 2015'
 ms.date: 07/02/2019
 ms.assetid: c4afde6f-3d75-40bf-986f-be57e3818e26
-ms.openlocfilehash: 6a3db2c9af2bcd9201f696756053cedb0788571a
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
-ms.translationtype: HT
+ms.openlocfilehash: 1e5454e749d93a817caa9ca13553e203f96e038b
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69510304"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446491"
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++: Neuerungen von 2003 bis 2015
 
@@ -42,7 +42,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     Command line warning  D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
    ```
 
-   Die Option wurde in der Regel für nicht dem Standard entsprechenden Code verwendet, der Schleifenvariablen gemäß dem Standard nach dem Punkt verwendet, an dem diese den Gültigkeitsbereich verlassen sollten. Dies war nur dann erforderlich, wenn die Kompilierung mit der Option `/Za` erfolgte. Ohne die Option `/Za` war eine Schleifenvariable nach dem Ende der Schleife immer zulässig. Wenn die Einhaltung von Standards keine Rolle spielt (z.B. wenn der Code nicht auf andere Compiler übertragbar ist), können Sie die Option `/Za` deaktivieren (oder die Eigenschaft **Spracherweiterungen deaktivieren** auf **Nein** festlegen). Wenn Sie übertragbaren Code schreiben möchten, der den Standards entspricht, sollten Sie den Code umschreiben, indem Sie die Deklaration der Variablen an eine Stelle außerhalb der Schleifen verschieben.
+   Die Option wurde in der Regel für nicht dem Standard entsprechenden Code verwendet, der Schleifenvariablen gemäß dem Standard nach dem Punkt verwendet, an dem diese den Gültigkeitsbereich verlassen sollten. Dies war nur dann erforderlich, wenn die Kompilierung mit der `/Za`-Option erfolgte. Ohne die `/Za`-Option war eine Schleifenvariable nach dem Ende der Schleife immer zulässig. Wenn die Einhaltung von Standards keine Rolle spielt (z.B. wenn der Code nicht auf andere Compiler übertragbar ist), können Sie die `/Za`-Option deaktivieren (oder die Eigenschaft **Spracherweiterungen deaktivieren** auf **Nein** festlegen). Wenn Sie übertragbaren Code schreiben möchten, der den Standards entspricht, sollten Sie den Code umschreiben, indem Sie die Deklaration der Variablen an eine Stelle außerhalb der Schleifen verschieben.
 
    ```cpp
     // zc_forScope.cpp
@@ -145,7 +145,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Entfernen Sie zum Beheben dieses Problems `__declspec(align)` aus der Funktionsdeklaration. Da dies keine Auswirkungen hatte, ändert sich durch das Entfernen nichts.
 
-- **Ausnahmebehandlung**
+- **Fehlerbehandlung**
 
    Es gibt eine Reihe von Änderungen bei der Ausnahmebehandlung. Ausnahmeobjekte müssen kopiert oder verschoben werden können. Der folgende Code wird zwar in Visual Studio 2013 kompiliert, aber nicht in Visual Studio 2015:
 
@@ -255,30 +255,30 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    An dem **delete**-Operator wurde eine Änderung vorgenommen, damit er dem C++14-Standard entspricht. Detaillierte Informationen zur Standardänderung finden Sie unter [Aufhebung der Zuordnung mit C++-Größeninformationen](https://isocpp.org/files/papers/n3778.html). Durch die Änderungen wird eine Form des globalen **delete**-Operators hinzugefügt, der einen Größenparameter erfordert. Ein Breaking Change ist, dass nun ein Compilerfehler geniert wird (C2956) wenn Sie zuvor einen **delete**-Operator mit der gleichen Signatur verwendet haben (damit dieser einem **„new“-Platzierungsoperator** entspricht). Dieser tritt an der Stelle auf, an der der **Platzierungsoperator „new“** verwendet wird, denn an dieser Stelle im Code versucht der Compiler einen entsprechenden **delete**-Operator zu identifizieren.
 
-   Bei der `void operator delete(void *, size_t)`-Funktion hat es sich um einen **„delete“-Platzierungsoperator** gehandelt, der dem **„new“-Platzierungsoperator** `void * operator new(size_t, size_t)` in C++11 entspricht. Durch die Aufhebung der Zuordnung mit C++14-Größeninformationen ist diese **delete**-Funktion nun eine *gewöhnliche Funktion zum Aufheben der Zuordnung* (globaler **delete**-Operator). Der Standard erfordert es, dass das Programm bei Verwendung eines **Platzierungsoperators „new“** , der eine entsprechenden **delete**-Funktion sucht und eine gewöhnliche Funktion zum Aufheben der Zuordnung ermittelt, nicht ordnungsgemäß formatiert ist.
+   Bei der `void operator delete(void *, size_t)`-Funktion hat es sich um einen **„delete“-Platzierungsoperator** gehandelt, der dem **„new“-Platzierungsoperator**`void * operator new(size_t, size_t)` in C++11 entspricht. Durch die Aufhebung der Zuordnung mit C++14-Größeninformationen ist diese **delete**-Funktion nun eine *gewöhnliche Funktion zum Aufheben der Zuordnung* (globaler **delete**-Operator). Der Standard erfordert es, dass das Programm bei Verwendung eines **Platzierungsoperators „new“** , der eine entsprechenden **delete**-Funktion sucht und eine gewöhnliche Funktion zum Aufheben der Zuordnung ermittelt, nicht ordnungsgemäß formatiert ist.
 
-   Angenommen, der Code definiert sowohl einen **Platzierungsoperator „new“** als auch einen **Platzierungsoperator „delete“** :
+   Angenommen Ihr Code definiert einen **new**- und einen **delete**-Platzierungsoperator:
 
    ```cpp
     void * operator new(std::size_t, std::size_t);
     void operator delete(void*, std::size_t) noexcept;
    ```
 
-   Das Problem tritt aufgrund der Übereinstimmung zwischen den Funktionssignaturen im definierten Platzierungsoperator **delete** und im neuen globalen Operator **delete** auf. Überlegen Sie, ob Sie einen anderen Typ als `size_t` für alle Platzierungsoperatoren **new** und **delete** verwenden können.  Beachten Sie, dass der Typ von `size_t` **typedef** vom Compiler abhängig ist. In Visual C++ handelt es sich um **typedef** für **unsigned int**. Eine gute Lösung hierfür stellt die Verwendung eines enumerierten Typs wie die des folgenden dar:
+   Das Problem tritt aufgrund der Übereinstimmung zwischen den Funktionssignaturen im definierten Platzierungsoperator **delete** und im neuen globalen Operator **delete** auf. Überlegen Sie, ob Sie einen anderen Typ als `size_t` für alle Platzierungsoperatoren **new** und **delete** verwenden können.  Beachten Sie, dass der Typ der `size_t` **typedef** vom Compiler abhängig ist. Dabei handelt es sich um eine **typedef** für " **Ganzzahl ohne Vorzeichen int** " in Visual C++. Eine gute Lösung hierfür stellt die Verwendung eines enumerierten Typs wie die des folgenden dar:
 
    ```cpp
     enum class my_type : size_t {};
    ```
 
-   Ändern Sie anschließend die Definition der Platzierungsoperatoren **new** und **delete**, um diesen Typ als zweites Argument anstelle von `size_t` zu verwenden. Sie müssen auch die Aufrufe des **Platzierungsoperators „new“** aktualisieren, um den neuen Typ (z.B. indem Sie den Integerwert mithilfe von `static_cast<my_type>` konvertieren) zu übergeben und die Definition von **new** und **delete** so aktualisieren, dass dieser wieder in den Integertyp umgewandelt wird. Dazu müssen Sie keine **enum**-Anweisung verwenden. Ein Klassentyp mit einem `size_t`-Member funktioniert ebenfalls.
+   Ändern Sie anschließend die Definition der Platzierungsoperatoren **new** und **delete**, um diesen Typ als zweites Argument anstelle von `size_t` zu verwenden. Sie müssen auch die Aufrufe von **Platzierung New** aktualisieren, um den neuen Typ zu übergeben (z. b. durch Verwenden von `static_cast<my_type>`, um den ganzzahligen Wert zu konvertieren) und die Definition von **New** und **Delete** aktualisieren, um Sie wieder in den ganzzahligen Typ umzuwandeln. Hierfür müssen **Sie keine** Aufzählung verwenden. ein Klassentyp mit einem `size_t` Member würde ebenfalls funktionieren.
 
    Eine alternative Lösung stellt möglicherweise eine vollständige Eliminierung des **new-Platzierungsoperators** dar. Wenn der Code mit dem **new**-Platzierungsoperator einen Speicherpool implementiert, wobei das Platzierungsargument die Größe des zugeordneten oder gelöschten Objekts ist, ist die Funktion zum Aufheben der Zuordnung mit Größeninformationen möglicherweise zum Ersetzen des benutzerdefinierten Speicherpoolcodes geeignet, und Sie können stattdessen den eigenen **delete**-Operator mit zwei Argumenten verwenden.
 
-   Wenn Sie Ihren Code nicht sofort aktualisieren möchten, können Sie mit der Compileroption `/Zc:sizedDealloc-` das alte Verhalten wiederherstellen. Wenn Sie diese Option verwenden, sind die **delete**-Funktionen mit zwei Argumenten nicht mehr vorhanden und stehen nicht in Konflikt mit dem **delete-Platzierungsoperator**.
+   Wenn Sie Ihren Code nicht sofort aktualisieren möchten, können Sie mit der Compileroption `/Zc:sizedDealloc-` das alte Verhalten wiederherstellen. Wenn Sie diese Option verwenden, sind die **Delete** -Funktionen mit zwei Argumenten nicht vorhanden und führen nicht zu einem Konflikt mit dem **Platzierungs Lösch** Operator.
 
 - **Union-Datenmember**
 
-   Union-Datenmember dürfen über keine Verweistypen verfügen. Der folgende Code wurde zwar erfolgreich in Visual Studio 2013 kompiliert, erzeugt jedoch in Visual Studio 2015 einen Fehler.
+   Union-Datenmember dürfen über keine Verweistypen verfügen. Der folgende Code kompiliert zwar in Visual Studio 2013 erfolgreich, aber erzeugt in Visual Studio 2015 einen Fehler.
 
    ```cpp
     union U1 {
@@ -514,7 +514,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Private virtuelle Basisklassen und indirekte Vererbung**
 
-   In früheren Versionen des Compilers war es abgeleiteten Klassen möglich, Memberfunktionen ihrer *indirekt abgeleiteten* `private virtual`-Basisklassen aufzurufen. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2280 als Ergebnis aus.
+   In früheren Versionen des Compilers konnte eine abgeleitete Klasse Member-Funktionen der *indirekt abgeleiteten* `private virtual` Basisklassen aufzurufen. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2280 als Ergebnis aus.
 
    ```Output
     error C2280: 'void *S3::__delDtor(unsigned int)': attempting to reference a deleted function
@@ -568,7 +568,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - **Überladener Operator „new“ und „delete“**
 
-   In früheren Versionen des Compilers konnte ein **new**-Platzierungsoperator, der kein Member war, und ein **delete**-Platzierungsoperator, der kein Member war, statisch deklariert werden und in anderen Namespaces als dem globalen deklariert werden.  Durch dieses alte Verhalten entstand das Risiko, dass das Programm die Operatoren **new** oder **delete** nicht in der vom Programmierer beabsichtigten Implementierung aufruft, was zu einem schlechten Laufzeitverhalten ohne Rückmeldung führte. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2323 als Ergebnis aus.
+   In früheren Versionen des Compilers konnte ein **new**-Platzierungsoperator, der kein Member war, und ein **delete**-Platzierungsoperator, der kein Member war, statisch deklariert werden und in anderen Namespaces als dem globalen deklariert werden.  Durch dieses alte Verhalten entstand das Risiko, dass das Programm die Operatoren **new** oder **delete** nicht in der vom Programmierer beabsichtigten Implementierung aufrief, was zu einem schlechten Laufzeitverhalten ohne Rückmeldung führte. Der Compiler akzeptiert in dieser Weise erstellten Code nicht mehr und gibt den Compilerfehler C2323 als Ergebnis aus.
 
    ```Output
     error C2323: 'operator new': non-member operator new or delete functions may not be declared static or in a namespace other than the global namespace.
@@ -821,7 +821,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Beispiele für die anderen wiederhergestellten Warnungen stehen in deren Dokumentation zur Verfügung.
 
-- **#include: Verwendung des Bezeichners „..“ für das übergeordnete Verzeichnis im Pfadnamen** (betrifft nur `/Wall` `/WX`)
+- **#include: Verwendung des Bezeichnern ".." des übergeordneten Verzeichnisses in Pfadname** (betrifft nur `/Wall` `/WX`)
 
    Frühere Versionen des Compilers haben die Verwendung des Bezeichners '..' für das übergeordnete Verzeichnis im Pfadnamen von  `#include` -Anweisungen nicht erkannt. Bei in dieser Weise erstelltem Code wird normalerweise die Absicht verfolgt, Header einzuschließen, die sich außerhalb des Projekts befinden, und dazu werden fälschlicherweise projektrelative Pfade verwendet. Bei diesem alten Verhalten ergab sich die Gefahr, dass das Programm möglicherweise mit Einschluss einer anderen als der vom Programmierer beabsichtigten Quelldatei compiliert wurde oder dass diese relativen Pfade nicht auf andere Buildumgebungen portiert werden konnten. Der Compiler erkennt jetzt in dieser Weise erstellten Code und benachrichtigt den Programmierer mit der optionalen Compilerwarnung C4464, sofern diese aktiviert ist.
 
@@ -843,7 +843,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Darüber hinaus empfehlen wir, auch wenn der Compiler dazu keine spezifischen Diagnosemeldungen ausgibt, den Bezeichner ".." für das übergeordnete Verzeichnis beim Angeben der Includeverzeichnisse des Projekts nicht zu verwenden.
 
-- **#pragma optimize() erstreckt sich über das Ende der Headerdatei hinaus** (betrifft nur `/Wall` `/WX`)
+- **#pragma optimieren () erweitert das Ende der Header Datei** (betrifft nur `/Wall` `/WX`).
 
    In früheren Versionen wurden Änderungen an den Optimierungseinstellungen nicht erkannt, die zum Escapen einer in einer Übersetzungseinheit eingeschlossenen Headerddatei dienen. Der Compiler erkennt jetzt in dieser Weise erstellten Code und setzt den Programmierer mit der optionalen Compilerwarnung C4426 von der Position des `#include`-Verstoßes in Kenntnis, sofern diese aktiviert ist. Diese Warnung wird nur ausgegeben, wenn die Änderungen im Konflikt mit den Optimierungseinstellungen stehen, die durch die Befehlszeilenargumente für den Compiler festgelegt wurden.
 
@@ -876,7 +876,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     #include "C4426.h"
    ```
 
-- **Nicht übereinstimmende Festlegung von „#pragma warning(push)“** und **#pragma warning(pop)** (betrifft nur `/Wall` `/WX`)
+- Nicht **übereinstimmende #pragma Warnung (Push)** und **#pragma Warnung (Pop)** (nur Auswirkungen `/Wall` `/WX`)
 
    Frühere Versionen des Compilers konnten keine `#pragma warning(push)`-Statusänderungen erkennen, die in Kombination mit `#pragma warning(pop)`-Statusänderungen in einer anderen Quelldatei auftraten, was selten beabsichtigt ist. Dieses alte Verhalten brachte die Gefahr mit sich, dass das Programm mit anderen Warnungseinstellungen als den vom Programmierer vorgesehenen kompiliert wurde, was möglicherweise zu einem schlechten Laufzeitverhalten führt. Der Compiler erkennt jetzt auf diese Weise erstellten Code und setzt den Programmierer mit der optionalen Compilerwarnung C5031 von der Position der `#pragma warning(pop)`-Übereinstimmung in Kenntnis, sofern diese aktiviert ist. Diese Warnung enthält einen Hinweis, der auf den Speicherort der entsprechenden `#pragma warning(push)`-Warnung verweist.
 
@@ -932,7 +932,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Wenngleich ungewöhnlich, wird Code mitunter absichtlich auf diese Weise geschrieben. Auf diese Weise erstellter Code ist empfindlich gegenüber Änderungen an der `#include`-Reihenfolge. Wir empfehlen, dass Quellcodedateien den Warnungsstatus nach Möglichkeit eigenständig verwalten sollten.
 
-- **Nicht zugeordnete „#pragma warning“ (push)** (betrifft nur `/Wall` `/WX`)
+- Keine Übereinstimmung **#pragma Warnung (Push)** (betrifft nur `/Wall` `/WX`)
 
    Frühere Versionen des Compilers haben nicht zugeordnete `#pragma warning(push)` -Statusänderungen am Ende einer Übersetzungseinheit nicht erkannt. Der Compiler erkennt jetzt auf diese Weise erstellten Code und informiert den Programmierer mit der optionalen Compilerwarnung C5032 über die Position der fehlenden `#pragma warning(push)`-Übereinstimmung, sofern diese aktiviert ist. Diese Warnung wird nur ausgegeben, wenn in der Übersetzungseinheit keine Kompilierfehler auftreten.
 
@@ -1104,7 +1104,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
    ```
 
-- `volatile` **Membervariablen vermeiden implizit definierte Konstruktoren und Zuweisungsoperatoren**. In früheren Versionen des Compilers war es für eine Klasse zulässig, die über Membervariablen des Typs **volatile** verfügte, Kopier-/Verschiebestandardkonstruktoren und Kopier-/Verschiebestandardzuweisungsoperatoren automatisch zu generieren. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler geht bei einer Klasse mit volatilen Membervariablen davon aus, dass sie nicht triviale Konstruktions- und Zuweisungsoperatoren hat. Dies verhindert, dass Standardimplementierungen dieser Operatoren automatisch generiert werden. Ist eine solche Klasse ein Member einer Union (oder einer anonymen Union innerhalb einer Klasse), werden Kopier-/Verschiebekonstruktoren und Kopier-/Verschiebezuweisungsoperatoren der Union (oder die Klasse, die die anonyme Union enthält) implizit als gelöscht definiert. Wird versucht, die Union (oder die Klasse, die die anonyme Union enthält) zu erstellen oder zu kopieren, ohne sie explizit zu definieren, tritt ein Fehler auf, und der Compiler gibt den Compilerfehler C2280 aus.
+- `volatile` **Member-Variablen verhindern, dass implizit definierte Konstruktoren und Zuweisungs Operatoren** frühere Versionen des Compilers eine Klasse mit **flüchtigen** Element Variablen als standardmäßige Kopier-/bewegungskonstruktoren und standardmäßige Kopier-/verschiebezuweisungsoperatoren automatisch generieren. Dieses alte Verhalten war falsch und entsprach nicht dem C++-Standard. Der Compiler geht bei einer Klasse mit volatilen Membervariablen davon aus, dass sie nicht triviale Konstruktions- und Zuweisungsoperatoren hat. Dies verhindert, dass Standardimplementierungen dieser Operatoren automatisch generiert werden. Ist eine solche Klasse ein Member einer Union (oder einer anonymen Union innerhalb einer Klasse), werden Kopier-/Verschiebekonstruktoren und Kopier-/Verschiebezuweisungsoperatoren der Union (oder die Klasse, die die anonyme Union enthält) implizit als gelöscht definiert. Wird versucht, die Union (oder die Klasse, die die anonyme Union enthält) zu erstellen oder zu kopieren, ohne sie explizit zu definieren, tritt ein Fehler auf, und der Compiler gibt den Compilerfehler C2280 aus.
 
    ```Output
     error C2280: 'B::B(const B &)': attempting to reference a deleted function
@@ -1299,7 +1299,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     static_assert(std::is_convertible<X1&, X1>::value, "BOOM");static_assert(std::is_convertible<X2&, X2>::value, "BOOM");
    ```
 
-   In früheren Versionen von Visual C++ wurden die statischen Assertionen unten in diesem Beispiel übergeben, da `std::is_convertable<>::value` fälschlicherweise auf **TRUE** festgelegt war. Jetzt ist `std::is_convertable<>::value` richtig auf **FALSE** festgelegt, wodurch ein Fehler in den statischen Assertionen verursacht wird.
+   In früheren Versionen von Visual C++ wurden die statischen Assertionen unten in diesem Beispiel übergeben, da `std::is_convertable<>::value` fälschlicherweise auf **TRUE** festgelegt war. Jetzt ist `std::is_convertable<>::value` richtig auf **FALSE** festgelegt, was einen Fehler der statischen Assertionen verursacht.
 
 - **Als Standard festgelegte und gelöschte triviale Kopier- und Verschiebekonstruktoren beachten Zugriffsspezifizierer**
 
@@ -1444,7 +1444,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     };
    ```
 
-- **Vorkompilierte Headerdateien (PCH) und nicht übereinstimmende #include-Anweisungen** (wirkt sich nur auf `/Wall` `/WX` aus)
+- **Vorkompilierte Header Dateien (PCH) und nicht übereinstimmende #include Direktiven** (wirkt sich nur auf `/Wall` `/WX`aus)
 
    Frühere Version des Compilers haben bei Verwendung vorkompilierter Headerdateien (PCH) nicht übereinstimmende `#include`-Direktiven in Quelldateien zwischen `-Yc`- und `-Yu`-Kompilierungen akzeptiert. Auf diese Weise geschriebener Code wird vom Compiler nicht mehr akzeptiert. Der Compiler gibt nun die Compilerwarnung CC4598 aus, um bei Verwenden von PCH-Dateien nicht übereinstimmende `#include`-Direktiven zu bestimmen.
 
@@ -1488,7 +1488,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     #include "c.h"
    ```
 
-- **Vorkompilierte Headerdateien (PCH) und nicht übereinstimmende include-Anweisungen** (wirkt sich nur auf `/Wall` `/WX` aus)
+- **Vorkompilierte Header Dateien (PCH) und nicht übereinstimmende include-Verzeichnisse** (betrifft nur `/Wall` `/WX`)
 
    Frühere Version des Compilers haben bei Verwendung vorkompilierter Headerdateien (PCH) nicht übereinstimmende Befehlszeilenargumente des Typs „include-Verzeichnis“ (`-I`) für den Compiler zwischen `-Yc`- und `-Yu`-Kompilierungen akzeptiert. Auf diese Weise geschriebener Code wird vom Compiler nicht mehr akzeptiert.   Der Compiler gibt nun die Compilerwarnung CC4599 aus, um bei Verwenden von PCH-Dateien nicht übereinstimmende Befehlszeilenargumente des Typs „include-Verzeichnis“ (`-I`) zu bestimmen.
 
@@ -1523,7 +1523,7 @@ Microsoft Visual C++ unterstützt diese ISO C++11-Sprachfeatures:
 - Explizite Konvertierungsoperatoren.
 - Initialisierungslisten und einheitliche Initialisierung.
 - Unformatierten Zeichenfolgenliterale.
-- Variadic-Vorlagen.
+- Variadic-Vorlagen
 - Aliasvorlagen
 - Gelöschte Funktionen
 - Nicht statische Datenmemberinitialisierer (NSDMIs)
@@ -1543,19 +1543,19 @@ Microsoft Visual C++ unterstützt diese ISO C++11-Sprachfeatures:
 
 Deklarationen und Implementierungen werden für fehlende Funktionen zu den folgenden Headern hinzugefügt: „math.h“, „ctype.h“, „wctype.h“, „stdio.h“, „stdlib.h“ und „wchar.h“. Außerdem wurden die neuen Header „complex.h“, „stdbool.h“, „fenv.h“ und „inttypes.h“ sowie Implementierungen für alle Funktionen hinzugefügt, die darin deklariert werden. Es gibt neue Wrapperheader für C++ („ccomplex“, „cfenv“, „cinttypes“, „ctgmath“) und eine Reihe von weiteren aktualisierten Headern („ccomplex“, „cctype“, „clocale“, „cmath“, „cstdint“, „cstdio“, „cstring“, „cwchar“ und „cwctype“).
 
-### <a name="standard-template-library"></a>Standard Template Library
+### <a name="standard-template-library"></a>Standardvorlagenbibliothek
 
 Unterstützung für explizite Konvertierungsoperatoren, Initialisierungslisten, bewertete Enumerationen und variadic Vorlagen von C++11.
 Alle Container unterstützen jetzt die differenzierten C++11-Elementanforderungen.
 Unterstützung für diese C++14-Funktionen:
 
 - Die transparenten Operatorfunktionselemente less<>, greater<>, plus<>, multiplies<> usw.
-- make_unique<T>(Args) und make_unique<T[]>(n)
+- make_unique\<t > (args...) und make_unique < t [] > (n)
 - Die Nicht-Memberfunktionen cbegin()/cend(), rbegin()/rend() und crbegin()/crend().
 - \<atomic> weist zahlreiche Leistungserweiterungen auf.
 - \<type_traits> weist wichtige Stabilisierungs- und Codekorrekturen auf.
 
-### <a name="breaking-changes"></a>Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen
+### <a name="breaking-changes"></a>Aktuelle Änderungen
 
 Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherweise Änderungen am vorhandenen Code, sodass er C++11 entspricht und ordnungsgemäß in Visual C++ in Visual Studio 2013 kompiliert wird.
 
@@ -1582,7 +1582,7 @@ Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherwe
 
 - **Unterstützung für geschachtelte Typen in Wertstrukturen.**
 
-   Sie können jetzt Werttypen definieren, indem Sie Felder verwenden, die NULL sein können – z.B. `IBox<int>^` anstelle von **int**. Das bedeutet, dass die Felder entweder einen Wert haben oder **nullptr** entsprechen.
+   Sie können jetzt Werttypen definieren, indem Sie Felder verwenden, die NULL sein können – z. b. `IBox<int>^` im Gegensatz zu **int**. Dies bedeutet, dass die Felder entweder einen Wert haben oder mit **nullptr**identisch sein können.
 
 - **Umfangreichere Ausnahmeinformationen.**
 
@@ -1605,7 +1605,7 @@ Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherwe
 
 ### <a name="diagnostics-enhancements"></a>Verbesserungen bei Diagnosen
 
-- Debugger-Verbesserungen. Unterstützung für asynchrones Debuggen und „Nur mein Code“-Debuggen.
+- Debugger-Verbesserungen. Unterstützung für asynchrones Debuggen und Nur mein Code-Debuggen.
 - Kategorien für die Codeanalyse. Sie können nun die kategorisierte Ausgabe des Code-Analyzer anzeigen, anhand derer Sie Codefehler finden und beheben können.
 - XAML-Diagnose. Sie können nun die UI-Reaktionsfähigkeit sowie Akkuverwendungsprobleme im XAML-Code diagnostizieren.
 - Verbesserungen beim Grafik- und GPU-Debugging.
@@ -1618,7 +1618,7 @@ Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherwe
 
 - Unterstützung der Pipeline für Bildinhalte für vorab multipliziertes Alpha-DDS-Format.
 - Die Bildbearbeitung verwendet intern vorab multipliziertes Alpha zum Rendern und vermeidet somit das Rendern von Artefakten wie dunklen Halos.
-- Bild- und Modell-Editors. Benutzerdefinierte Filtererstellung wird jetzt im Shader-Designer im Bild- und im Modell-Editor unterstützt.
+- Bild- und Modell-Editors. Benutzerdefinierte Filtererstellung wird jetzt in Shader Designer im Bild- und Modell-Editor unterstützt.
 
 ### <a name="ide-and-productivity"></a>IDE und Produktivität
 
@@ -1636,7 +1636,7 @@ Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherwe
 
 - Fügt Semikolon für Klassentypen hinzu.
 - Vervollständigt Klammern für unformatierte Zeichenfolgenliterale.
-- Vervollständigt mehrzeilige Kommentare (/\* \*/)
+- Vervollständigt Mehrzeilige Kommentare (/\* \*/)
 
 **Alle Verweise suchen** löst jetzt Verweise auf und filtert sie im Hintergrund, nachdem die Liste der Textabgleichungen angezeigt wurde.
 
@@ -1660,7 +1660,7 @@ Diese verbesserte Unterstützung für ISO-C/C++-Standards erfordert möglicherwe
 
 ### <a name="improved-c11-standards-support"></a>Verbesserte Unterstützung von C++11-Standards
 
-#### <a name="standard-template-library"></a>Standard Template Library
+#### <a name="standard-template-library"></a>Standardvorlagenbibliothek
 
 - Unterstützung für neue STL-Header: \<atomic>, \<chrono>, \<condition_variable>, \<filesystem>, \<future>, \<mutex>, \<ratio> und \<thread>.
 - Container sind jetzt kleiner, damit die Speicherauslastung durch die Ressourcen optimiert wird. Beispielsweise wurde `std::vector` im Releasemodus x86 mit Standardeinstellungen von 16 Bytes in Visual Studio 2010 auf 12 Bytes in Visual Studio 2012 reduziert, und `std::map`wurde von 16 Bytes in Visual Studio 2010 auf 8 Bytes in Visual Studio 2012 reduziert.
@@ -1787,7 +1787,7 @@ Die Code Coverage wurde aktualisiert, um Binärdateien zur Runtime dynamisch zu 
 
 **static_assert-Deklaration.** Der Deklarationstest **static_assert** einer Softwareassertion ermöglicht es, Zuweisungen beim Kompilieren zu testen, anstatt diesen Test wie andere Zuweisungsmechanismen zur Laufzeit auszuführen. Schlägt die Assertion fehl, kann auch die Kompilierung nicht erfolgreich abgeschlossen werden. Das System gibt dann eine Fehlermeldung aus.
 
-**Die Schlüsselwörter „nullptr“ und „__nullptr“.** Microsoft Visual C++ ermöglicht die Verwendung des Schlüsselworts **nullptr** mit nativem oder verwaltetem Code. Das Schlüsselwort **nullptr** gibt an, dass ein Zeiger des Typs „Ziehpunkt“, „Innerer Zeiger“ oder „Nativer Zeiger“ nicht auf ein Objekt zeigt. Wenn Sie die Compileroption `/clr` verwenden, interpretiert der Compiler **nullptr** als verwalteten Code. Wird die Option `/clr` hingegen nicht verwendet, gilt der Code als nativ.
+**Die Schlüsselwörter „nullptr“ und „__nullptr“.** Microsoft Visual C++ ermöglicht die Verwendung des Schlüsselworts **nullptr** mit nativem oder verwaltetem Code. Das Schlüsselwort **nullptr** gibt an, dass ein Zeiger des Typs „Ziehpunkt“, „Innerer Zeiger“ oder „Nativer Zeiger“ nicht auf ein Objekt zeigt. Wenn Sie die Compileroption **verwenden, interpretiert der Compiler**nullptr`/clr` als verwalteten Code. Wird die Option `/clr` hingegen nicht verwendet, gilt der Code als nativ.
 Das Microsoft-spezifische Schlüsselwort **__nullptr** entspricht zwar der Bedeutung von **nullptr**, ist aber nur auf nativen Code anwendbar. Wenn Sie nativen C/C++-Code über die Compileroption `/clr` kompilieren, kann der Compiler nicht ermitteln, ob es sich bei dem Schlüsselwort **nullptr** um nativen Code oder um eine verwaltete Benennung handelt. Wenn Sie dem Compiler eindeutige Anweisungen geben möchten, verwenden Sie das Schlüsselwort „nullptr“, um die verwaltete Benennung anzugeben, und **__nullptr**, um die native Benennung anzugeben.
 
 **Compileroption „/Zc:trigraphs“.** Standardmäßig ist die Unterstützung von Trigraphen deaktiviert. Verwenden Sie die Compileroption `/Zc:trigraphs`, um die Unterstützung von Trigraphen zu aktivieren.
@@ -1819,7 +1819,7 @@ Ein Trigraph besteht aus zwei aufeinander folgenden Fragezeichen (??) gefolgt vo
 
 - Die neue C++-Sprachfunktion des R-Wert-Verweises wurde verwendet, um Move-Semantiken und die perfekte Weiterleitung für zahlreiche Funktionen in der Standardvorlagenbibliothek zu implementieren. Mithilfe der Move-Semantiken und der perfekten Weiterleitung wird die Leistung der Vorgänge enorm verbessert, in denen Variablen oder Parameter zugeordnet oder zugewiesen werden.
 - Außerdem werden Rvalue-Verweise verwendet, um die neue `unique_ptr`-Klasse zu implementieren. Diese Klasse ist im Vergleich zur `auto_ptr`-Klasse ein sichererer intelligenter Zeigertyp. Die `unique_ptr`-Klasse ist zwar verschiebbar, kann jedoch nicht kopiert werden. Sie implementiert eine strenge Besitzsemantik ohne Auswirkungen auf die Sicherheit und funktioniert gut mit Containern zusammen, die rvalue-Verweise beachten. Die `auto_ptr`-Klasse ist veraltet.
-- Dem \<algorithm>-Header wurden 15 neue Funktionen hinzugefügt – unter anderem `find_if_not`, `copy_if` und `is_sorted`.
+- Dem `find_if_not`algorithm>-Header wurden 15 neue Funktionen hinzugefügt – unter anderem `copy_if`, `is_sorted` und \<.
 - Im \<memory>-Header stellt die make_shared-Funktion eine praktische, robuste und effiziente Möglichkeit dar, während der Erstellung eines Objekts auch einen freigegebenen Zeiger auf ein Objekt zu erstellen.
 - Einfach verknüpfte Listen werden vom \<forward_list>-Header unterstützt.
 - Die neuen Memberfunktionen `cbegin`, `cend`, `crbegin` und `crend` stellen einen `const_iterator`-Objekt bereit, das sich im Container vorwärts und rückwärts bewegt.
@@ -1854,7 +1854,7 @@ Die meisten `/analyze`-Warnungen (Enterprise-Codeanalyse) wurden aus den CRT-, M
 
 #### <a name="animation-and-d2d-support"></a>Animation und D2D-Unterstützung
 
-MFC unterstützt jetzt die Animation und Direct2D-Grafiken. Die MFC-Bibliothek verfügt über einige neue MFC-Klassen und -Funktionen, um diese Funktion zu unterstützen. Es gibt außerdem zwei neue exemplarische Vorgehensweisen, in denen dargestellt wird, wie Sie einem Projekt ein D2D-Objekt und ein Animationsobjekt hinzufügen. Diese finden Sie unter **Exemplarische Vorgehensweise: Hinzufügen eines D2D-Objekts zu einem MFC-Projekt** und **Exemplarische Vorgehensweise: Hinzufügen von Animationen zu einem MFC-Projekt**.
+MFC unterstützt jetzt die Animation und Direct2D-Grafiken. Die MFC-Bibliothek verfügt über einige neue MFC-Klassen und -Funktionen, um diese Funktion zu unterstützen. Es gibt außerdem zwei neue exemplarische Vorgehensweisen, in denen dargestellt wird, wie Sie einem Projekt ein D2D-Objekt und ein Animationsobjekt hinzufügen. **Exemplarische Vorgehensweise: Hinzufügen eines D2D-Objekts zu einem MFC-Projekt** und **Exemplarische Vorgehensweise: Hinzufügen von Animationen zu einem MFC-Projekt**.
 
 ### <a name="ide"></a>IDE
 
@@ -1878,9 +1878,9 @@ Da IntelliSense nur die Informationen verarbeitet, die zum jeweiligen Zeitpunkt 
 
 **MFC-Klassenassistent.** Mit Visual C++ 2010 wird das praktische Tool „MFC-Klassenassistent“ wieder eingeführt. Der MFC-Klassenassistent stellt eine praktische Möglichkeit dar, um einem Projekt Klassen, Meldungen und Variablen hinzuzufügen, ohne Quelldateien manuell verändern zu müssen.
 
-**ATL-Steuerelement-Assistent.** Der ATL-Steuerelement-Assistent füllt das Feld `ProgID` nicht mehr automatisch auf. Wenn ein ATL-Steuerelement keine `ProgID` besitzt, können andere Tools möglicherweise nicht damit arbeiten. Beispielsweise verlangt das Dialogfeld **Insert Active Control** (Aktives Steuerelement einfügen), dass Steuerelemente eine `ProgID` aufweisen. Weitere Informationen zu diesem Dialogfeld finden Sie unter **Insert ActiveX Control Dialog Box („Dialogfeld ‚ActiveX-Steuerelement einfügen‘“)** .
+**ATL-Steuerelement-Assistent.** Der ATL-Steuerelement-Assistent füllt das Feld `ProgID` nicht mehr automatisch auf. Wenn ein ATL-Steuerelement keine `ProgID` besitzt, können andere Tools möglicherweise nicht damit arbeiten. Beispielsweise verlangt das Dialogfeld `ProgID`Insert Active Control **(Aktives Steuerelement einfügen), dass Steuerelemente eine** aufweisen. Weitere Informationen zu diesem Dialogfeld finden Sie unter **Insert ActiveX Control Dialog Box („Dialogfeld ‚ActiveX-Steuerelement einfügen‘“)** .
 
-### <a name="microsoft-macro-assembler-reference"></a>Referenz zum Microsoft Macro Assembler
+### <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler – Referenz
 
 Neben dem Datentyp „YMMWORD“ werden die 256-Bit-Multimediaoperanden unterstützt, die in den Anweisungen zu den Intel Advanced Vector Extensions (AVX) enthalten sind.
 
@@ -1940,7 +1940,7 @@ Neben dem Datentyp „YMMWORD“ werden die 256-Bit-Multimediaoperanden unterst�
 
 ### <a name="linker-changes"></a>Änderungen am Linker
 
-- Informationen zur Benutzerkontensteuerung sind jetzt über den Visual C++-Linker („link.exe“) in Manifestdateien für ausführbare Dateien eingebettet. Diese Funktion ist standardmäßig aktiviert. Weitere Informationen zum Deaktivieren dieser Funktion oder zum Ändern des Standardverhaltens finden Sie unter `/MANIFESTUAC` (Einbetten von UAC-Informationen in Manifeste).
+- Informationen zur Benutzerkontensteuerung sind jetzt über den Visual C++-Linker („link.exe“) in Manifestdateien für ausführbare Dateien eingebettet. Dieses Feature ist standardmäßig aktiviert. Weitere Informationen zum Deaktivieren dieser Funktion oder zum Ändern des Standardverhaltens finden Sie unter `/MANIFESTUAC` (Einbetten von UAC-Informationen in Manifeste).
 - Der Linker verfügt jetzt über die Option `/DYNAMICBASE` zur Aktivierung der Windows Vista-Funktion „Address Space Layout Randomization“ (Zufällige Anordnung des Layouts des Adressraums). Diese Option ändert den Header einer ausführbaren Datei, um anzugeben, ob für die Anwendung nach dem Zufallsprinzip zur Ladezeit ein Rebase ausgeführt werden soll.
 
 ## <a name="whats-new-for-c-in-visual-studio-2005"></a>Neuerungen bei C++ in Visual Studio 2005
@@ -2197,7 +2197,7 @@ In diesem Release sind bedeutende Änderungen des Compilers enthalten.
 
 - Informationen zum Ausführen einer Managed Extensions for C++-Anwendung, die mit dem Compiler der aktuellen Version für eine Vorgängerversion der Runtime erstellt wird.
 - Häufig gestellte Fragen: Managed Extensions for C++
-- Es wurde eine exemplarische Vorgehensweise hinzugefügt, in der veranschaulicht wird, wie Sie eine vorhandene native Anwendung für die Verwendung von „Managed Extensions for C++“ portieren können: Exemplarische Vorgehensweise: Portieren einer vorhandenen nativen C++-Anwendung für die Kompatibilität mit .NET Framework-Komponenten.
+- Eine exemplarische Vorgehensweise wurde hinzugefügt, um darzustellen, wie eine bereits vorhandene native Anwendung für die Verwendung von Managed Extensions for C++ portiert wird (Walkthrough: Porting an Existing Native C++ Application to Interoperate with .NET Framework Components (Exemplarische Vorgehensweise: Portieren einer bereits vorhandenen nativen C++-Anwendung zur Zusammenarbeit mit .NET Framework-Komponenten)).
 - Sie können jetzt einen Delegat für eine Methode eines Werttypen erstellen.
 - Die Konformität des Compilers mit dem C++-Standard wurde für Visual C++ .NET 2003 deutlich verbessert.
 - Die `/arch`-Compileroption wurde hinzugefügt.
@@ -2214,7 +2214,7 @@ In diesem Release sind bedeutende Änderungen des Compilers enthalten.
 - Die intrinsische _InterlockedIncrement-Funktion wird jetzt dokumentiert.
 - Die intrinsische _ReadWriteBarrier-Funktion wurde hinzugefügt.
 
-### <a name="attributes"></a>Attribute
+### <a name="attributes"></a>Attributes
 
 - Das Attribut `implements` wird jetzt dokumentiert.
 
@@ -2233,6 +2233,6 @@ Die folgenden Linkerparameter wurden hinzugefügt:
 
 Das .SAFESEH-Verzeichnis und die `/safeseh`-ml.exe-Option wurden hinzugefügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Visual C++-Handbuch: Portieren und Aktualisieren](visual-cpp-porting-and-upgrading-guide.md)

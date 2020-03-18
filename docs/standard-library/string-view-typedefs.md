@@ -7,11 +7,11 @@ f1_keywords:
 - xstring/std::u32string_view
 - xstring/std::wstring_view
 ms.openlocfilehash: c3367afe1353ac70abb74a59658a255614ac8470
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865846"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427578"
 ---
 # <a name="ltstring_viewgt-typedefs"></a>&lt;string_view&gt; Typedefs
 
@@ -28,7 +28,7 @@ Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt [basic_string_v
 typedef basic_string_view<char, char_traits<char>> string_view;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die folgenden Deklarationen sind gleichwertig:
 
@@ -48,7 +48,7 @@ Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt [basic_string_v
 typedef basic_string_view<char16_t, char_traits<char16_t>> u16string_view;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).
 
@@ -60,7 +60,7 @@ Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt [basic_string_v
 typedef basic_string_view<char32_t, char_traits<char32_t>> u32string_view;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).
 
@@ -72,7 +72,7 @@ Ein Typ, der eine Spezialisierung der Klassen Vorlage beschreibt [basic_string_v
 typedef basic_string_view<wchar_t, char_traits<wchar_t>> wstring_view;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die folgenden Deklarationen sind gleichwertig:
 
@@ -87,6 +87,6 @@ Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string
 > [!NOTE]
 > Die Größe der **wchar_t** beträgt zwei Bytes unter Windows, aber dies ist nicht unbedingt der Fall für alle Plattformen. Wenn Sie einen string_view Wide Character Type mit einer Breite benötigen, die auf allen Plattformen garantiert unverändert bleibt, verwenden Sie [u16string_view](../standard-library/string-view-typedefs.md#u16string_view) oder [u32string_view](../standard-library/string-view-typedefs.md#u32string_view).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<string_view >](../standard-library/string-view.md)

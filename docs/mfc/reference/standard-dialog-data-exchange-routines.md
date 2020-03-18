@@ -5,11 +5,11 @@ helpviewer_keywords:
 - standard dialog, data exchange routines
 ms.assetid: c6adb7f3-f9af-4cc5-a9ea-315c5b60ad1a
 ms.openlocfilehash: 47586f9cff0fcbe2cd7bad31f3d93fed08190830
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69511585"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426600"
 ---
 # <a name="standard-dialog-data-exchange-routines"></a>Standard-Dialogdatenaustauschroutinen
 
@@ -41,7 +41,7 @@ In diesem Thema werden die Standard Routinen für den Dialog Datenaustausch (DDX
 
 ##  <a name="ddx_cbindex"></a>DDX_CBIndex
 
-Die `DDX_CBIndex` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Kombinations Feld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_CBIndex`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Kombinations Feld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_CBIndex(
@@ -67,13 +67,13 @@ Wenn `DDX_CBIndex` aufgerufen wird, wird der *Index* auf den Index der aktuellen
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_cbstring"></a>DDX_CBString
 
-Die `DDX_CBString` -Funktion verwaltet die über `CString` Tragung von Daten zwischen dem Bearbeitungs Steuerelement eines Kombinations Feld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem `CString` Steuerungs Ansichts Objekt und einem Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_CBString`-Funktion verwaltet die Übertragung von `CString` Daten zwischen dem Bearbeitungs Steuerelement eines Kombinations Feld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem `CString` Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_CBString(
@@ -102,13 +102,13 @@ Wenn `DDX_CBString` aufgerufen wird, wird *value* auf die aktuelle Kombinations 
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_cbstringexact"></a>DDX_CBStringExact
 
-Die `DDX_CBStringExact` -Funktion verwaltet die über `CString` Tragung von Daten zwischen dem Bearbeitungs Steuerelement eines Kombinations Feld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem `CString` Steuerungs Ansichts Objekt und einem Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_CBStringExact`-Funktion verwaltet die Übertragung von `CString` Daten zwischen dem Bearbeitungs Steuerelement eines Kombinations Feld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem `CString` Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_CBStringExact(
@@ -137,13 +137,13 @@ Wenn `DDX_CBStringExact` aufgerufen wird, wird *value* auf die aktuelle Kombinat
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_check"></a>DDX_Check
 
-Die `DDX_Check` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Kontrollkästchen-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_Check`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Kontrollkästchen-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_Check(
@@ -165,17 +165,17 @@ Ein Verweis auf eine Member-Variable des Dialog Felds, der Formularansicht oder 
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn `DDX_Check` aufgerufen wird, wird der *Wert* auf den aktuellen Zustand des Kontrollkästchen-Steuer Elements festgelegt. Eine Liste der möglichen Zustands Werte finden Sie unter [BM_GETCHECK](/windows/win32/Controls/bm-getcheck) im Windows SDK.
+Wenn `DDX_Check` aufgerufen wird, wird der *Wert* auf den aktuellen Zustand des Kontrollkästchen-Steuer Elements festgelegt. Eine Liste der möglichen Zustands Werte finden Sie unter [BM_GETCHECK](/windows/win32/Controls/bm-getcheck) in der Windows SDK.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_control"></a>DDX_Control
 
-Die `DDX_Control` -Funktion Unterklassen das von *nidc*angegebene Steuerelement des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_Control`-Funktion Unterklassen das von *nidc*angegebene Steuerelement des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_Control(
@@ -192,22 +192,22 @@ Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -
 *nIDC*<br/>
 Die Ressourcen-ID des Steuer Elements, das unter klassifiziert werden soll.
 
-*rControl*<br/>
+*rcontrol*<br/>
 Ein Verweis auf eine Member-Variable des Dialog Felds, der Formularansicht oder des Steuerelement Ansichts Objekts, das sich auf das angegebene Steuerelement bezieht.
 
 ### <a name="remarks"></a>Hinweise
 
-Das *PDX* -Objekt wird vom Framework bereitgestellt, `DoDataExchange` wenn die-Funktion aufgerufen wird. Daher sollte nur innerhalb ihrer außer Kraft Setzung von `DoDataExchange`aufgerufen werden. `DDX_Control`
+Das *PDX* -Objekt wird vom Framework bereitgestellt, wenn die `DoDataExchange`-Funktion aufgerufen wird. Daher sollten `DDX_Control` nur innerhalb ihrer außer Kraft Setzung `DoDataExchange`aufgerufen werden.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_datetimectrl"></a>DDX_DateTimeCtrl
 
-Die `DDX_DateTimeCtrl` -Funktion verwaltet die Übertragung von Datums-und/oder Zeit Daten zwischen einem Steuerelement für die Datums-und Zeitauswahl ( [CDateTimeCtrl](../../mfc/reference/cdatetimectrl-class.md)) in einem Dialogfeld oder einem Formular Ansichts Objekt und entweder einem [ctime](../../atl-mfc-shared/reference/ctime-class.md) -oder einem [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Datenmember des Dialog Felds oder Formulars. Objekt anzeigen.
+Die `DDX_DateTimeCtrl`-Funktion verwaltet die Übertragung von Datums-und/oder Zeit Daten zwischen einem Steuerelement für die Datums-und Zeitauswahl ( [CDateTimeCtrl](../../mfc/reference/cdatetimectrl-class.md)) in einem Dialogfeld oder einem Formular Ansichts Objekt und entweder einem [ctime](../../atl-mfc-shared/reference/ctime-class.md) -oder einem [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Datenmember des Dialog Felds bzw. des Formular Ansichts Objekts.
 
 ```
 void AFXAPI DDX_DateTimeCtrl(
@@ -235,17 +235,17 @@ Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -
 Die Ressourcen-ID des Steuer Elements für die Datums-und Uhrzeit Auswahl, das der Element Variablen zugeordnet ist.
 
 *value*<br/>
-In den ersten beiden Versionen ein Verweis auf eine `CTime` -oder `COleDateTime` -Element Variable, ein Dialogfeld, eine Formularansicht oder ein Steuerelement Ansichts Objekt, mit dem Daten ausgetauscht werden. In der dritten Version ein Verweis auf ein `CString` Datenmember-Steuerungs Ansichts Objekt.
+In den ersten beiden Versionen ein Verweis auf eine `CTime`-oder `COleDateTime` Member-Variable, ein Dialogfeld, eine Formularansicht oder ein Steuerungs Ansichts Objekt, mit dem Daten ausgetauscht werden. In der dritten Version ein Verweis auf ein `CString` Datenmember-Steuerungs Ansichts Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
 Wenn `DDX_DateTimeCtrl` aufgerufen wird, wird der *Wert* auf den aktuellen Zustand des Steuer Elements für die Datums-und Uhrzeit Auswahl festgelegt, oder das Steuerelement wird auf *value*festgelegt, abhängig von der Richtung des Austauschs.
 
-In der dritten Version von wird `DDX_DateTimeCtrl` die Übertragung von `CString` Daten zwischen einem Datums-/uhrzeitsteuerelement und einem [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Datenmember des Steuerelement Ansichts Objekts verwaltet. Die Zeichenfolge wird mit den Regeln des aktuellen Gebiets Schemas zum Formatieren von Datumsangaben und Uhrzeiten formatiert
+In der dritten Version oben verwaltet `DDX_DateTimeCtrl` die Übertragung von `CString` Daten zwischen einem Datums-/Uhrzeit-Steuerelement und einem [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Datenmember des Steuerelement Ansichts Objekts. Die Zeichenfolge wird mit den Regeln des aktuellen Gebiets Schemas zum Formatieren von Datumsangaben und Uhrzeiten formatiert
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
@@ -276,17 +276,17 @@ Ein Verweis auf ein [CWinFormsControl-Klassen](cwinformscontrol-class.md) Objekt
 
 ### <a name="remarks"></a>Hinweise
 
-`DDX_ManagedControl`Ruft [CWinFormsControl:: kreatemanagedcontrol](cwinformscontrol-class.md#createmanagedcontrol) auf, um ein Steuerelement zu erstellen, das mit der Ressourcen Steuerungs-ID übereinstimmt. Verwenden `DDX_ManagedControl` Sie, um Steuerelemente aus Ressourcen-IDs in " [CDialog:: OnInitDialog](cdialog-class.md#oninitdialog)" zu erstellen. Für den Datenaustausch müssen Sie die DDX/DDV-Funktionen nicht mit Windows Forms-Steuerelementen verwenden.
+`DDX_ManagedControl` ruft [CWinFormsControl:: foratemanagedcontrol](cwinformscontrol-class.md#createmanagedcontrol) auf, um ein Steuerelement zu erstellen, das mit der Ressourcen Steuerungs-ID übereinstimmt. Verwenden Sie `DDX_ManagedControl`, um Steuerelemente aus Ressourcen-IDs in " [CDialog:: OnInitDialog](cdialog-class.md#oninitdialog)" zu erstellen. Für den Datenaustausch müssen Sie die DDX/DDV-Funktionen nicht mit Windows Forms-Steuerelementen verwenden.
 
-Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden Sie die DDX/DDV-Daten](../../dotnet/how-to-do-ddx-ddv-data-binding-with-windows-forms.md)Bindung mit Windows Forms.
+Weitere Informationen finden Sie unter Gewusst [wie: Verwenden von DDX/DDV-Datenbindung mit Windows Forms](../../dotnet/how-to-do-ddx-ddv-data-binding-with-windows-forms.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwinforms. h
 
 ##  <a name="ddx_ipaddress"></a>DDX_IPAddress
 
-Die `DDX_IPAddress` -Funktion verwaltet die Übertragung von Daten zwischen einem IP-Adress Steuerelement und einem Datenmember des Steuerelement Ansichts Objekts.
+Die `DDX_IPAddress`-Funktion verwaltet die Übertragung von Daten zwischen einem IP-Adress Steuerelement und einem Datenmember des Steuerelement Ansichts Objekts.
 
 ```
 void AFXAPI DDX_IPAddress(
@@ -306,28 +306,28 @@ Die Ressourcen-ID des IP-Adress Steuer Elements, das der Steuerelement Eigenscha
 *value*<br/>
 Ein Verweis auf das DWORD-Element, das den vier-Feldwert des IP-Adress Steuer Elements enthält. Die Felder werden wie folgt ausgefüllt oder gelesen.
 
-|Feld|Bits, die den Feldwert enthalten|
+|Field|Bits, die den Feldwert enthalten|
 |-----------|-------------------------------------|
 |3|0 bis 7|
 |2|8 bis 15|
 |1|16 bis 23|
 |0|24 bis 31|
 
-Verwenden Sie das Win32- [IPM_GETADDRESS](/windows/win32/Controls/ipm-getaddress) , um den Wert zu lesen, oder verwenden Sie [IPM_SETADDRESS](/windows/win32/Controls/ipm-setaddress) , um den Wert zu füllen. Diese Nachrichten werden in der Windows SDK beschrieben.
+Verwenden Sie den Win32- [IPM_GETADDRESS](/windows/win32/Controls/ipm-getaddress) , um den Wert zu lesen, oder verwenden Sie [IPM_SETADDRESS](/windows/win32/Controls/ipm-setaddress) , um den Wert zu füllen. Diese Nachrichten werden in der Windows SDK beschrieben.
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn `DDX_IPAddress` aufgerufen wird, wird der *Wert* entweder aus dem IP-Adress Steuerelement gelesen, oder der *Wert* wird in das Steuerelement geschrieben, abhängig von der Richtung des Austauschs.
+Wenn `DDX_IPAddress` aufgerufen wird, wird der *Wert* entweder aus dem IP-Adress Steuerelement gelesen, oder der *Wert* wird abhängig von der Richtung des Austauschs in das Steuerelement geschrieben.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_lbindex"></a>DDX_LBIndex
 
-Die `DDX_LBIndex` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Listenfeld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_LBIndex`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Listenfeld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_LBIndex(
@@ -353,13 +353,13 @@ Wenn `DDX_LBIndex` aufgerufen wird, wird der *Index* auf den Index der aktuellen
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_lbstring"></a>DDX_LBString
 
-Die `DDX_LBString` -Funktion verwaltet die über `CString` Tragung von Daten zwischen einem Listenfeld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem `CString` Steuerungs Ansichts Objekt und einem Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_LBString`-Funktion verwaltet die Übertragung von `CString` Daten zwischen einem Listenfeld-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem `CString` Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_LBString(
@@ -381,7 +381,7 @@ Ein Verweis auf eine Member-Variable des Dialog Felds, der Formularansicht oder 
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn `DDX_LBString` aufgerufen wird, um Daten in ein Listenfeld-Steuerelement zu übertragen, wird das erste Element im-Steuerelement ausgewählt, dessen Anfangs *Wert dem Wert* entspricht. (Verwenden Sie [DDX_LBStringExact](#ddx_lbstringexact), um das gesamte Element und nicht nur ein Präfix abzugleichen.) Wenn keine Übereinstimmungen vorhanden sind, werden keine Elemente ausgewählt. Beim Vergleich wird die Groß-/Kleinschreibung nicht beachtet.
+Wenn `DDX_LBString` aufgerufen wird, um Daten in ein Listenfeld-Steuerelement zu übertragen, wird das erste Element im Steuerelement ausgewählt, dessen Anfangs *Wert dem Wert* entspricht. (Verwenden Sie [DDX_LBStringExact](#ddx_lbstringexact), um das gesamte Element und nicht nur ein Präfix abzugleichen.) Wenn keine Übereinstimmungen vorhanden sind, werden keine Elemente ausgewählt. Beim Vergleich wird die Groß-/Kleinschreibung nicht beachtet.
 
 Wenn `DDX_LBString` aufgerufen wird, um Daten aus einem Listenfeld-Steuerelement zu übertragen, wird *value* auf die aktuelle Listenfeld Auswahl festgelegt. Wenn kein Element ausgewählt ist, wird der *Wert* auf eine Zeichenfolge mit der Länge 0 (null) festgelegt.
 
@@ -390,13 +390,13 @@ Wenn `DDX_LBString` aufgerufen wird, um Daten aus einem Listenfeld-Steuerelement
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_lbstringexact"></a>DDX_LBStringExact
 
-Die `DDX_CBStringExact` -Funktion verwaltet die über `CString` Tragung von Daten zwischen dem Bearbeitungs Steuerelement eines Listenfeld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem `CString` Steuerungs Ansichts Objekt und einem Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_CBStringExact`-Funktion verwaltet die Übertragung von `CString` Daten zwischen dem Bearbeitungs Steuerelement eines Listenfeld-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem `CString` Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_LBStringExact(
@@ -427,13 +427,13 @@ Wenn `DDX_CBStringExact` aufgerufen wird, um Daten aus einem Listenfeld-Steuerel
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_monthcalctrl"></a>DDX_MonthCalCtrl
 
-Die `DDX_MonthCalCtrl` -Funktion verwaltet die Übertragung von Datumsdaten zwischen einem Monatskalender-Steuerelement ( [CMonthCalCtrl](../../mfc/reference/cmonthcalctrl-class.md)) in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und entweder einem [ctime](../../atl-mfc-shared/reference/ctime-class.md) -oder einem [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Datenmember des Dialog Felds, Formular Ansichts-oder Steuerungs Ansichts Objekt.
+Die `DDX_MonthCalCtrl`-Funktion verwaltet die Übertragung von Datumsdaten zwischen einem Monatskalender-Steuerelement ( [CMonthCalCtrl](../../mfc/reference/cmonthcalctrl-class.md)) in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und entweder einem [ctime](../../atl-mfc-shared/reference/ctime-class.md) -oder einem [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_MonthCalCtrl(
@@ -456,24 +456,24 @@ Ein Zeiger auf ein [CDataExchange](../../mfc/reference/cdataexchange-class.md) -
 Die Ressourcen-ID des Monatskalender-Steuer Elements, das der Element Variablen zugeordnet ist.
 
 *value*<br/>
-Ein Verweis auf eine `CTime` - `COleDateTime` oder-Member-Variable des Dialog Felds, der Formularansicht oder des Steuerelement Ansichts Objekts, mit dem Daten ausgetauscht werden.
+Ein Verweis auf eine `CTime`-oder `COleDateTime` Member-Variable des Dialog Felds, der Formularansicht oder des Steuerelement Ansichts Objekts, mit dem Daten ausgetauscht werden.
 
 ### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
->  Das-Steuerelement verwaltet nur einen Datumswert. Die Zeitfelder im Zeit Objekt werden so festgelegt, dass Sie die Erstellungszeit des Steuerelement Fensters widerspiegeln, oder die Zeit, die im Steuer `CMonthCalCtrl::SetCurSel`Element mit einem Aufruf von festgelegt wurde.
+>  Das-Steuerelement verwaltet nur einen Datumswert. Die Zeitfelder im Zeit Objekt werden so festgelegt, dass Sie die Erstellungszeit des Steuerelement Fensters widerspiegeln, oder die Zeit, die im Steuerelement mit einem Aufruf von `CMonthCalCtrl::SetCurSel`festgelegt wurde.
 
 Wenn `DDX_MonthCalCtrl` aufgerufen wird, wird der *Wert* auf den aktuellen Zustand des Monatskalender-Steuer Elements festgelegt.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_radio"></a>DDX_Radio
 
-Die `DDX_Radio` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einer Radio-Steuerelement Gruppe in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts. Der Wert des **int** -Datenmembers wird bestimmt, welches Optionsfeld innerhalb der Gruppe ausgewählt ist.
+Die `DDX_Radio`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einer Radio-Steuerelement Gruppe in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts. Der Wert des **int** -Datenmembers wird bestimmt, welches Optionsfeld innerhalb der Gruppe ausgewählt ist.
 
 ```
 void AFXAPI DDX_Radio(
@@ -497,17 +497,17 @@ Ein Verweis auf eine Member-Variable des Dialog Felds, der Formularansicht oder 
 
 Wenn `DDX_Radio` aufgerufen wird, wird der *Wert* auf den aktuellen Zustand der Optionsfeld-Steuerelement Gruppe festgelegt. Der Wert wird als 0-basierter Index des Options Felds festgelegt, das derzeit aktiviert ist, oder-1, wenn keine Options Felder aktiviert sind.
 
-Wenn beispielsweise das erste Optionsfeld in der Gruppe (die Schaltfläche mit dem WS_GROUP-Stil) aktiviert ist, ist der Wert des **int** -Elements 0 usw.
+Wenn beispielsweise das erste Optionsfeld in der Gruppe (die Schaltfläche mit WS_GROUP Format) aktiviert ist, ist der Wert des **int** -Elements 0 usw.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_scroll"></a>DDX_Scroll
 
-Die `DDX_Scroll` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Bild Lauf leisten-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_Scroll`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Bild Lauf leisten-Steuerelement in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **int** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
 ```
 void AFXAPI DDX_Scroll(
@@ -529,17 +529,17 @@ Ein Verweis auf eine Membervariable des Dialogfelds, Formularansichts- oder Steu
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn `DDX_Scroll` aufgerufen wird, wird der *Wert* auf die aktuelle Position des Zieh Punkts des Steuer Elements festgelegt. Weitere Informationen zu den Werten, die der aktuellen Position des Steuer Elements des Steuer Elements zugeordnet sind, finden Sie unter [getscrollpos](/windows/win32/api/winuser/nf-winuser-getscrollpos) in der Windows SDK.
+Wenn `DDX_Scroll` aufgerufen wird, wird der *Wert* auf die aktuelle Position des Thumb-Steuer Elements festgelegt. Weitere Informationen zu den Werten, die der aktuellen Position des Steuer Elements des Steuer Elements zugeordnet sind, finden Sie unter [getscrollpos](/windows/win32/api/winuser/nf-winuser-getscrollpos) in der Windows SDK.
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_slider"></a>DDX_Slider
 
-Die `DDX_Slider` -Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Schieberegler-Steuerelement in einem Dialogfeld oder einer Formularansicht und einem **int** -Datenmember des Dialog Felds bzw. des Formular Ansichts Objekts.
+Die `DDX_Slider`-Funktion verwaltet die Übertragung von **int** -Daten zwischen einem Schieberegler-Steuerelement in einem Dialogfeld oder einer Formularansicht und einem **int** -Datenmember des Dialog Felds bzw. des Formular Ansichts Objekts.
 
 ```
 void AFXAPI DDX_Slider(
@@ -565,13 +565,13 @@ Wenn `DDX_Slider` aufgerufen wird, wird der *Wert* auf die aktuelle Position des
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md). Weitere Informationen zu Schieberegler-Steuerelementen finden [Sie unter Verwenden von CSliderCtrl](../../mfc/using-csliderctrl.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
 ##  <a name="ddx_text"></a>DDX_Text
 
-Die `DDX_Text` -Funktion verwaltet die Übertragung von Daten vom Typ " **int**", " `CString` **uint**", " **Long**", "DWORD", " **float**" oder " **Double** " zwischen einem Bearbeitungs Steuerelement in einem Dialogfeld, einer Formularansicht [oder einer Steuer](../../atl-mfc-shared/reference/cstringt-class.md) Element Ansicht Member des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
+Die `DDX_Text`-Funktion verwaltet die Übertragung von Daten vom Typ " **int**", " **uint**", " **Long**", "DWORD", "`CString`", " **float**" oder " **Double** " zwischen einem Bearbeitungs Steuerelement in einem Dialogfeld, einer Formularansicht oder einer Steuerelement Ansicht und einem [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Datenmember des Dialog Felds, der
 
 ```
 void AFXAPI DDX_Text(
@@ -645,7 +645,7 @@ Ein Verweis auf einen Datenmember im Dialogfeld, in der Formularansicht oder im 
 
 Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../../mfc/dialog-data-exchange-and-validation.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
   **Header** afxdd_. h
 
@@ -653,5 +653,5 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
 [Standardroutinen zur Validierung der Dialogfelddaten](standard-dialog-data-validation-routines.md)<br/>
 [Makros und Globals](mfc-macros-and-globals.md)<br/>
-[CWinFormsControl::CreateManagedControl](cwinformscontrol-class.md#createmanagedcontrol)<br/>
-[CDialog::OnInitDialog](cdialog-class.md#oninitdialog)
+[CWinFormsControl:: kreatemanagedcontrol](cwinformscontrol-class.md#createmanagedcontrol)<br/>
+[CDialog:: OnInitDialog](cdialog-class.md#oninitdialog)

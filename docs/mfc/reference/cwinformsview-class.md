@@ -11,11 +11,11 @@ helpviewer_keywords:
 - CWinFormsView [MFC], GetControl
 ms.assetid: d597e397-6529-469b-88f5-7f65a6b9e895
 ms.openlocfilehash: f4a5e6b88527dad8606092ccebd4899bba5181f6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62323298"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426288"
 ---
 # <a name="cwinformsview-class"></a>CWinFormsView-Klasse
 
@@ -33,37 +33,37 @@ class CWinFormsView : public CView;
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CWinFormsView::CWinFormsView](#cwinformsview)|Erstellt ein `CWinFormsView`-Objekt.|
+|[CWinFormsView:: CWinFormsView](#cwinformsview)|Erstellt ein `CWinFormsView`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|Beschreibung|
 |----------|-----------------|
-|[CWinFormsView::GetControl](#getcontrol)|Ruft einen Zeiger auf das Windows Forms-Steuerelement ab.|
+|[CWinFormsView:: GetControl](#getcontrol)|Ruft einen Zeiger auf das Windows Forms Steuerelement ab.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |Name||
 |----------|-|
-|[CWinFormsView::operator Steuerelement ^](#operator_control)|Wandelt einen Typ ein Zeiger auf ein Windows Forms-Steuerelement.|
+|[CWinFormsView:: Operator-Steuerelement ^](#operator_control)|Wandelt einen Typ als Zeiger in ein Windows Forms Steuerelement um.|
 
 ## <a name="remarks"></a>Hinweise
 
-MFC verwendet die `CWinFormsView` -Klasse zum Hosten eines .NET Framework Windows Forms-Steuerelements in MFC-Ansicht. Das Steuerelement ist ein untergeordnetes Element der einheitlichen Ansicht und nimmt den gesamten Clientbereich der MFC-Ansicht. Das Ergebnis ähnelt einer `CFormView` anzeigen, sodass Sie profitieren Sie von der Windows Forms-Designer und Laufzeit für die umfangreiche formularbasierte Ansichten zu erstellen.
+MFC verwendet die `CWinFormsView`-Klasse, um ein .NET Framework Windows Forms-Steuerelement in einer MFC-Ansicht zu hosten. Das-Steuerelement ist ein untergeordnetes Element der nativen Ansicht und belegt den gesamten Client Bereich der MFC-Ansicht. Das Ergebnis ähnelt einer `CFormView` Ansicht, sodass Sie den Windows Forms Designer und die Laufzeit nutzen können, um umfangreiche Formular basierte Sichten zu erstellen.
 
-Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [verwenden ein Windows Form-Benutzersteuerelements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
-
-> [!NOTE]
->  MFC-Windows Forms-Integration funktioniert nur in Projekten, die dynamisch mit MFC verknüpfen (Projekte, die in der Bezeichnung definiert ist).
+Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwenden eines Windows Form-Benutzer Steuer Elements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
 
 > [!NOTE]
->  CWinFormsView unterstützt nicht die MFC-Teilungsfenster ( [CSplitterWnd-Klasse](../../mfc/reference/csplitterwnd-class.md)). Derzeit nur den Windows Forms-Splitter-Steuerelement wird unterstützt.
+>  Die MFC-Windows Forms Integration funktioniert nur in Projekten, die dynamisch mit MFC verknüpft sind (Projekte, in denen AFXDLL definiert ist).
 
-## <a name="requirements"></a>Anforderungen
+> [!NOTE]
+>  CWinFormsView unterstützt das MFC-Splitter Fenster ( [CSplitterWnd-Klasse](../../mfc/reference/csplitterwnd-class.md)) nicht. Derzeit wird nur das Windows Forms Splitter-Steuerelement unterstützt.
 
-**Header:** afxwinforms.h
+## <a name="requirements"></a>Voraussetzungen
 
-##  <a name="cwinformsview"></a>  CWinFormsView::CWinFormsView
+**Header:** afxwinforms. h
+
+##  <a name="cwinformsview"></a>CWinFormsView:: CWinFormsView
 
 Erstellt ein `CWinFormsView`-Objekt.
 
@@ -73,20 +73,20 @@ CWinFormsView(System::Type^ pManagedViewType);
 
 ### <a name="parameters"></a>Parameter
 
-*pManagedViewType*<br/>
-Ein Zeiger auf den Datentyp des Windows Forms-Steuerelements.
+*pmanagedviewtype*<br/>
+Ein Zeiger auf den Datentyp des Windows Forms Benutzer Steuer Elements.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel die `CUserView` Klasse erbt von `CWinFormsView` und übergibt den `UserControl1` auf die `CWinFormsView` Konstruktor. `UserControl1` ist eine benutzerdefinierte Steuerelement im ControlLibrary1.dll.
+Im folgenden Beispiel erbt die `CUserView`-Klasse von `CWinFormsView` und übergibt den Typ von `UserControl1` an den `CWinFormsView`-Konstruktor. `UserControl1` ist ein benutzerdefiniertes Steuerelement in ControlLibrary1. dll.
 
 [!code-cpp[NVC_MFC_Managed#1](../../mfc/reference/codesnippet/cpp/cwinformsview-class_1.h)]
 
 [!code-cpp[NVC_MFC_Managed#2](../../mfc/reference/codesnippet/cpp/cwinformsview-class_2.cpp)]
 
-##  <a name="getcontrol"></a>  CWinFormsView::
+##  <a name="getcontrol"></a>CWinFormsView:: GetControl
 
-Ruft einen Zeiger auf das Windows Forms-Steuerelement ab.
+Ruft einen Zeiger auf das Windows Forms Steuerelement ab.
 
 ```
 System::Windows::Forms::Control^ GetControl() const;
@@ -98,11 +98,11 @@ Ein Zeiger auf ein `System.Windows.Forms.Control` -Objekt.
 
 ### <a name="remarks"></a>Hinweise
 
-Ein Beispiel zur Verwendung von Windows Forms finden Sie unter [verwenden ein Windows Form-Benutzersteuerelements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
+Ein Beispiel für die Verwendung von Windows Forms finden Sie unter [Verwenden eines Windows Form-Benutzer Steuer Elements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
 
-##  <a name="operator_control"></a>  CWinFormsView::operator Steuerelement ^
+##  <a name="operator_control"></a>CWinFormsView:: Operator-Steuerelement ^
 
-Wandelt einen Typ ein Zeiger auf ein Windows Forms-Steuerelement.
+Wandelt einen Typ als Zeiger in ein Windows Forms Steuerelement um.
 
 ```
 operator System::Windows::Forms::Control^() const;
@@ -110,11 +110,11 @@ operator System::Windows::Forms::Control^() const;
 
 ### <a name="remarks"></a>Hinweise
 
-Dieser Operator ermöglicht die Übergabe einer `CWinFormsView` Ansicht, um Funktionen, die einen Zeiger auf ein Windows Forms-Steuerelement des Typs akzeptieren <xref:System.Windows.Forms.Control>.
+Dieser Operator ermöglicht es Ihnen, eine `CWinFormsView` Ansicht an Funktionen zu übergeben, die einen Zeiger auf ein Windows Forms Steuerelement des Typs <xref:System.Windows.Forms.Control>akzeptieren.
 
 ### <a name="example"></a>Beispiel
 
-  Finden Sie unter [CWinFormsView::](#getcontrol).
+  Weitere Informationen finden Sie unter [CWinFormsView:: GetControl](#getcontrol).
 
 ## <a name="see-also"></a>Siehe auch
 

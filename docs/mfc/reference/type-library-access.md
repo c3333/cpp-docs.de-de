@@ -5,11 +5,11 @@ helpviewer_keywords:
 - type libraries [MFC], accessing
 ms.assetid: a03fa7f0-86c2-4119-bf81-202916fb74b3
 ms.openlocfilehash: 23d4675bd3638d2effd1b967f0729f9e70dac6de
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867031"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426192"
 ---
 # <a name="type-library-access"></a>Zugreifen auf die Typbibliothek
 
@@ -37,11 +37,11 @@ DECLARE_OLETYPELIB(class_name)
 *class_name*<br/>
 Der Name der Steuerelement Klasse, die mit der Typbibliothek verknüpft ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie dieses Makro in der Header Datei der Steuerelement Klasse.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
@@ -67,14 +67,14 @@ Die Hauptversionsnummer der Typbibliothek.
 *wverminor*<br/>
 Die neben Versionsnummer der Typbibliothek.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieses Makro muss in der Implementierungs Datei für jede Steuerelement Klasse, die das DECLARE_OLETYPELIB-Makro verwendet, angezeigt werden.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxdisp.h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

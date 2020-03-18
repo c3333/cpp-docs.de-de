@@ -15,11 +15,11 @@ helpviewer_keywords:
 - std::lock [C++]
 - std::try_to_lock [C++]
 ms.openlocfilehash: f6bd6a86e91c2d59fec2083dcf0ec6314d7c41ab
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856299"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425418"
 ---
 # <a name="ltmutexgt-functions-and-variables"></a>&lt;mutex&gt;-Funktionen und -Variablen
 
@@ -52,7 +52,7 @@ Ein aufrufbares Objekt.
 *Eine*\
 Eine Argumentliste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das *Flag* nicht gültig ist, löst die Funktion eine [System_Error](../standard-library/system-error-class.md) mit dem Fehlercode `invalid_argument`aus. Andernfalls verwendet die Vorlagen Funktion das *Flag* -Argument, um sicherzustellen, dass `F(A...)` genau einmal erfolgreich aufgerufen wird, unabhängig davon, wie oft die Vorlagen Funktion aufgerufen wird. Wenn `F(A...)` durch Auslösen einer Ausnahme beendet wird, war der Aufruf nicht erfolgreich.
 
@@ -73,7 +73,7 @@ template <class L1, class L2, class... L3>
 void lock(L1&, L2&, L3&...);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Argumente für die Vorlagenfunktion müssen *Mutex-Typen* sein, sofern nicht Aufrufe von `try_lock` Ausnahmen auslösen könnten.
 

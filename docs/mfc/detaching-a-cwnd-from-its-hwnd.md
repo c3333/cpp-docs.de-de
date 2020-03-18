@@ -1,8 +1,6 @@
 ---
 title: Trennen eines CWnd von seinem HWND
 ms.date: 11/04/2016
-f1_keywords:
-- CWnd
 helpviewer_keywords:
 - HWND, detaching CWnd from
 - removing HWNDs from CWnds
@@ -10,25 +8,25 @@ helpviewer_keywords:
 - detaching CWnds from HWNDs
 - Detach method (CWnd class)
 ms.assetid: 6efadf84-0517-4a3f-acfd-216e088f19c6
-ms.openlocfilehash: 259af94958f88643e9c3ce725b25c4e92cc38226
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f7a6f97ba9f1dd3a928a5450c1a899ce09a4ac5f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394571"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446959"
 ---
 # <a name="detaching-a-cwnd-from-its-hwnd"></a>Trennen eines CWnd von seinem HWND
 
-Wenn Sie die Objekt - umgehen müssen`HWND` Beziehung MFC bietet eine andere `CWnd` Member-Funktion [trennen](../mfc/reference/cwnd-class.md#detach), die das Windows-Fenster das C++-Fensterobjekt trennt. Dadurch wird verhindert, dass den Destruktor zerstören das Windows-Fenster aus, wenn das Objekt zerstört wird.
+Wenn Sie die Beziehung zwischen Objekt`HWND` umgehen müssen, bietet MFC eine weitere `CWnd` Member-Funktion an. [trennen](../mfc/reference/cwnd-class.md#detach)Sie die Verbindung zwischen C++ dem Fenster Objekt und dem Windows-Fenster. Dadurch wird verhindert, dass der debugtor das Fenster Windows zerstört, wenn das Objekt zerstört wird.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Erstellen von Fenstern](../mfc/creating-windows.md)
 
-- [Fensterzerstörungssequenz](../mfc/window-destruction-sequence.md)
+- [Fenster Zerstörungs Sequenz](../mfc/window-destruction-sequence.md)
 
-- [Zuordnen und Freigeben von Arbeitsspeicher (Fenster)](../mfc/allocating-and-deallocating-window-memory.md)
+- [Zuordnen und Aufheben der Zuordnung von Fenster Speicher](../mfc/allocating-and-deallocating-window-memory.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Fensterobjekte](../mfc/window-objects.md)

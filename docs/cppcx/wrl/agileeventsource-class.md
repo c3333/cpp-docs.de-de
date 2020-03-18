@@ -4,15 +4,14 @@ ms.date: 10/03/2018
 ms.topic: reference
 f1_keywords:
 - event/Microsoft::WRL::AgileEventSource
-- event/Microsoft::WRL::InvokeModeOptions
 helpviewer_keywords:
 - AgileEventSource class
-ms.openlocfilehash: fa1e0a72d865b2993e149f6e4d2b57fe13463a61
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.openlocfilehash: 7a919c0b2aa778ba1db19c3bfc3871542e8f9569
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821739"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441268"
 ---
 # <a name="agileeventsource-class"></a>Agileeventsource-Klasse
 
@@ -30,15 +29,15 @@ class AgileEventSource :
         TDelegateInterface, TEventSourceOptions>;
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Parameter
 
-*TDelegateInterface*<br/>
+*Tdelegateingeterface*<br/>
 Die-Schnittstelle zu einem Delegaten, der einen Ereignishandler darstellt.
 
-*TEventSourceOptions*<br/>
+*Teventsourceoptions*<br/>
 Eine [invokemodeoptions](invokemodeoptions-structure.md) -Struktur, deren invokemode-Feld auf `InvokeMode::StopOnFirstError` oder `InvokeMode::FireAll`festgelegt ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Bei den meisten Komponenten in der Windows-Runtime handelt es sich um Agile-Komponenten. Weitere Informationen finden Sie unter [Threading und MarshallingC++(/CX)](../../cppcx/threading-and-marshaling-c-cx.md).
 
@@ -48,17 +47,17 @@ Bei den meisten Komponenten in der Windows-Runtime handelt es sich um Agile-Komp
 
 `AgileEventSource`
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Event. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[Agileeventsource:: Add-Methode](#add)|Fügt den von der angegebenen delegatschnittstelle dargestellten Agile-Ereignishandler an den Satz von Ereignis Handlern für das aktuelle **agileeventsource** -Objekt an.|
 
@@ -75,9 +74,9 @@ HRESULT Add(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*delegateInterface*<br/>
+*delegateingangs Gesicht*<br/>
 Die-Schnittstelle zu einem Delegatobjekt, das einen Ereignishandler darstellt.
 
 *token*<br/>
@@ -87,6 +86,6 @@ Wenn dieser Vorgang abgeschlossen ist, ein Handle, das das Ereignis darstellt. V
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

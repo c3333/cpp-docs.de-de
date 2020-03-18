@@ -18,11 +18,11 @@ helpviewer_keywords:
 - std::operator&lt; (iterator)
 - std::operator&lt;= (iterator), std::operator== (iterator)
 ms.openlocfilehash: 7455610af5f03be024753e26f67e561b14c85612
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78884130"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425640"
 ---
 # <a name="ltiteratorgt-operators"></a>&lt;iterator&gt;-Operatoren
 
@@ -53,7 +53,7 @@ Ein Objekt des Typs `iterator`.
 
 **TRUE**, wenn die Iterator-Objekte gleich sind; **FALSE**, wenn die Iterator-Objekte nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt entspricht einem anderen, wenn sie sich auf dieselben Elemente in einem Container beziehen. Wenn zwei Iteratoren auf verschiedene Elemente in einem Container zeigen, sind sie nicht gleich.
 
@@ -157,7 +157,7 @@ Ein Objekt des Typs „iterator“.
 
 **true** , wenn die iteratorobjekte gleich sind. **false** , wenn die iteratorobjekte nicht gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt entspricht einem anderen, wenn sie sich auf dieselben Elemente in einem Container beziehen. Wenn zwei Iteratoren auf verschiedene Elemente in einem Container zeigen, sind sie nicht gleich.
 
@@ -246,7 +246,7 @@ Ein Objekt des Typs `iterator`.
 
 **TRUE**, wenn der Iterator auf der linken Seite des Ausdrucks kleiner als der Iterator auf der rechten Seite des Ausdrucks ist; **FALSE**, wenn er größer als oder gleich dem Iterator auf der rechten Seite ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt ist kleiner als ein anderes, wenn es sich auf ein Element bezieht, das früher im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde. Ein Iterator-Objekt ist nicht kleiner als ein anderes, wenn es sich entweder auf das gleiche Element wie das andere Iterator-Objekt bezieht, oder auf ein Element, das später im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde.
 
@@ -337,7 +337,7 @@ Ein Objekt des Typs „iterator“.
 
 **TRUE**, wenn der Iterator auf der linken Seite des Ausdrucks kleiner als oder gleich dem Iterator auf der rechten Seite des Ausdrucks ist; **FALSE**, wenn er größer als der Iterator auf der rechten Seite ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt ist kleiner als oder gleich einem anderen, wenn es sich auf das gleiche Element oder ein Element bezieht, das früher im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde. Ein Iterator-Objekt ist größer als ein anderes, wenn es sich auf ein Element bezieht, das später im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde.
 
@@ -432,7 +432,7 @@ Ein Objekt des Typs „iterator“.
 
 **TRUE**, wenn der Iterator auf der linken Seite des Ausdrucks größer ist als der Iterator auf der rechten Seite des Ausdrucks ist; **FALSE**, wenn er kleiner als oder gleich dem Iterator auf der rechten Seite ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt ist größer als ein anderes, wenn es sich auf ein Element bezieht, das später im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde. Ein Iterator-Objekt ist nicht größer als ein anderes, wenn es sich entweder auf das gleiche Element bezieht, wie das andere Iterator-Objekt, oder ein Element, das früher im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde.
 
@@ -521,7 +521,7 @@ Ein Objekt des Typs „iterator“.
 
 **TRUE**, wenn der Iterator auf der linken Seite des Ausdrucks größer als oder gleich dem Iterator auf der rechten Seite des Ausdrucks ist; **FALSE**, wenn er kleiner als der Iterator auf der rechten Seite ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Iterator-Objekt ist größer als oder gleich einem anderen, wenn es sich auf das gleiche Element oder ein Element bezieht, das später im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde. Ein Iterator-Objekt ist kleiner als ein anderes, wenn es sich auf ein Element bezieht, das früher im Container auftritt, als das Element, das vom anderen Iterator-Objekt adressiert wurde.
 
@@ -702,13 +702,13 @@ Ein Iterator.
 
 Der Unterschied zwischen zwei Iteratoren `.`
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Vorlagenoperator gibt `left.base() - right.base()` zurück.
 
 Der zweite Vorlagenoperator gibt `right.current - left.current` zurück.
 
-`Tdiff` wird durch den Typ des zurückgegebenen Ausdrucks bestimmt. Andernfalls lautet der Wert `RandomIterator1::difference_type`.
+`Tdiff` wird durch den Typ des zurückgegebenen Ausdrucks bestimmt. Andernfalls ist der Wert `RandomIterator1::difference_type`.
 
 ### <a name="example"></a>Beispiel
 

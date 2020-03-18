@@ -8,11 +8,11 @@ helpviewer_keywords:
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
 ms.openlocfilehash: 071839df431071a7d8921d1b445094f886ad38e2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78884091"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422847"
 ---
 # <a name="precompiled-header-files"></a>Vorkompilierte Headerdateien
 
@@ -306,7 +306,7 @@ int main( void )
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Referenz zur C/C++-Erstellung](reference/c-cpp-building-reference.md)<br/>
 [MSVC-Compileroptionen](reference/compiler-options.md)

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - CGopherConnection [MFC], OpenFile
 ms.assetid: b5b96aea-ac99-430e-bd84-d1372b43f78f
 ms.openlocfilehash: f5d655aa7fd2eb9e41c15c60a71492c24ba43c43
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883901"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424362"
 ---
 # <a name="cgopherconnection-class"></a>CGopherConnection-Klasse
 
@@ -34,23 +34,23 @@ Verwaltet die Verbindung mit einem Gopherinternetserver.
 class CGopherConnection : public CInternetConnection
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CGopherConnection:: CGopherConnection](#cgopherconnection)|Erstellt ein `CGopherConnection`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CGopherConnection:: anatelocator](#createlocator)|Erstellt ein [CGopherLocator](../../mfc/reference/cgopherlocator-class.md) -Objekt, um Dateien auf einem Gopher-Server zu suchen.|
 |[CGopherConnection:: GetAttribute](#getattribute)|Ruft Attributinformationen über das Gopher-Objekt ab.|
 |[CGopherConnection:: OpenFile](#openfile)|Öffnet eine Gopher-Datei.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Der Gopher-Dienst ist einer von drei Internet Diensten, die von den MFC-WinInet-Klassen erkannt werden.
 
@@ -68,7 +68,7 @@ Weitere Informationen zur Funktionsweise von `CGopherConnection` mit den anderen
 
 `CGopherConnection`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -115,14 +115,14 @@ Ein Zeiger auf eine mit NULL endende Zeichenfolge, die das Kennwort für die Anm
 |*pstrusername*|*pstraupassword*|An FTP-Server gesendeter Benutzername|Kennwort an FTP-Server gesendet|
 |--------------------|--------------------|---------------------------------|---------------------------------|
 |NULL oder ""|NULL oder ""|Anonymous|E-Mail-Name des Benutzers|
-|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|„ “|
-|NULL-Zeichenfolge ungleich NULL|ERROR|ERROR||
+|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|" "|
+|NULL-Zeichenfolge ungleich NULL|FEHLER|FEHLER||
 |Zeichenfolge ungleich NULL|Zeichenfolge ungleich NULL|*pstrusername*|*pstraupassword*|
 
 *Nport*<br/>
 Eine Zahl, die den auf dem Server zu verwendenden TCP/IP-Port identifiziert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen niemals direkt einen `CGopherConnection`. Stattdessen wird [cinternetzession:: GetGopherConnection](../../mfc/reference/cinternetsession-class.md#getgopherconnection)aufgerufen, das ein `CGopherConnection` Objekt erstellt und einen Zeiger darauf zurückgibt.
 
@@ -170,7 +170,7 @@ Die Nummer, die den Internetport für diese Verbindung identifiziert.
 
 Ein [CGopherLocator](../../mfc/reference/cgopherlocator-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die statische Version der Member-Funktion erfordert, dass Sie einen Server angeben, während die nicht statische Version den Servernamen aus dem Verbindungs Objekt verwendet.
 
@@ -231,11 +231,11 @@ Die Kontext-ID für die Datei, die geöffnet wird. Weitere Informationen zu *dwc
 
 Ein Zeiger auf das zu öffnende [CGopherFile](../../mfc/reference/cgopherfile-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie den *dwcontext* -Standard, um den Kontext Bezeichner auf einen Wert Ihrer Wahl festzulegen. Der Kontext Bezeichner ist diesem speziellen Vorgang des `CGopherConnection` Objekts zugeordnet, das vom [cinternetzession](../../mfc/reference/cinternetsession-class.md) -Objekt erstellt wurde. Der Wert wird an [cinternetzession:: OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) zurückgegeben, um den Status für den Vorgang bereitzustellen, mit dem er identifiziert wird. Weitere Informationen zum Kontext Bezeichner finden Sie im Artikel [Internet First Steps: WinInet](../../mfc/wininet-basics.md) .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CInternetConnection-Klasse](../../mfc/reference/cinternetconnection-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

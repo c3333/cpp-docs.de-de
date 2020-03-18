@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Parallel Patterns Library, best practices
 ms.assetid: e43e0304-4d54-4bd8-a3b3-b8673559a9d7
 ms.openlocfilehash: 641d85b03fca13a6592610d87563e3e701ad3e3e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854156"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424860"
 ---
 # <a name="best-practices-in-the-parallel-patterns-library"></a>Empfohlene Vorgehensweisen in der Parallel Patterns Library
 
@@ -130,7 +130,7 @@ Obwohl dieses Muster selbst keine Probleme hat, sollten Sie den folgenden Code v
 
 [!code-cpp[concrt-parallel-resource-destruction#2](../../parallel/concrt/codesnippet/cpp/best-practices-in-the-parallel-patterns-library_11.cpp)]
 
-Hierdurch wird folgende Ausgabe generiert:
+Dieses Beispiel erzeugt die folgende Ausgabe:
 
 ```Output
 Container 1: Freeing resources...Exiting program...
@@ -256,14 +256,14 @@ Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions 
 
 [[Nach oben](#top)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Bewährte Methoden im Zusammenhang mit der Concurrency Runtime](../../parallel/concrt/concurrency-runtime-best-practices.md)<br/>
 [Parallel Patterns Library (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)<br/>
 [Parallele Container und Objekte](../../parallel/concrt/parallel-containers-and-objects.md)<br/>
 [Parallele Algorithmen](../../parallel/concrt/parallel-algorithms.md)<br/>
 [Abbruch in der PPL](cancellation-in-the-ppl.md)<br/>
-[Behandlung von Ausnahmen](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
+[Ausnahmebehandlung](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
 [Exemplarische Vorgehensweise: Erstellen eines Bildverarbeitungsnetzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
 [Vorgehensweise: Verwenden von parallel_invoke zum Schreiben einer Runtime für paralleles Sortieren](../../parallel/concrt/how-to-use-parallel-invoke-to-write-a-parallel-sort-routine.md)<br/>
 [Vorgehensweise: Verwenden eines Abbruchs zum Verlassen einer Parallel-Schleife](../../parallel/concrt/how-to-use-cancellation-to-break-from-a-parallel-loop.md)<br/>

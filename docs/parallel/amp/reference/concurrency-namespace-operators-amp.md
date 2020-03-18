@@ -3,11 +3,11 @@ title: Concurrency-Namespace-Operatoren (AMP)
 ms.date: 11/04/2016
 ms.assetid: 77f1ae17-1eb2-480d-8fe5-66d4c24bb91e
 ms.openlocfilehash: 3b536f75e4ef6405b60d45e89290a7d97a01707d
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883725"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424920"
 ---
 # <a name="concurrency-namespace-operators-amp"></a>Concurrency-Namespace-Operatoren (AMP)
 
@@ -276,6 +276,6 @@ Das Tupel für die Modulo-Berechnung.
 
 Das Ergebnis des ersten angegebenen Arguments ergibt das zweite angegebene Argument.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Parallelitäts Namespace](concurrency-namespace-cpp-amp.md)

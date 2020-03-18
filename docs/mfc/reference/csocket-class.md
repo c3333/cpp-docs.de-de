@@ -21,11 +21,11 @@ helpviewer_keywords:
 - CSocket [MFC], OnMessagePending
 ms.assetid: 7f23c081-d24d-42e3-b511-8053ca53d729
 ms.openlocfilehash: a861e557b7368d13d615aaf796faded93c72b040
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854548"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426552"
 ---
 # <a name="csocket-class"></a>CSocket-Klasse
 
@@ -37,17 +37,17 @@ Wird von `CAsyncSocket`abgeleitet, erbt seine Kapselung der Windows Sockets-API 
 class CSocket : public CAsyncSocket
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSocket:: CSocket](#csocket)|Erstellt ein `CSocket`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSocket:: Attach](#attach)|Fügt ein Sockethandle an ein `CSocket` Objekt an.|
 |[CSocket:: cancelblockingstatement](#cancelblockingcall)|Bricht einen blockierenden-Befehl ab, der gerade ausgeführt wird.|
@@ -57,11 +57,11 @@ class CSocket : public CAsyncSocket
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CSocket:: OnMessagePending](#onmessagepending)|Wird aufgerufen, um ausstehende Meldungen beim Warten auf den Abschluss eines blockierenden Aufrufs zu verarbeiten.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CSocket` funktioniert mit Klassen `CSocketFile` und `CArchive`, um das Senden und empfangen von Daten zu verwalten.
 
@@ -90,7 +90,7 @@ Weitere Informationen finden Sie unter [Windows Sockets in MFC](../../mfc/window
 
 `CSocket`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AfxSock. h
 
@@ -111,7 +111,7 @@ Enthält ein Handle für einen Socket.
 
 Ungleich null, wenn die Funktion erfolgreich ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Sockethandle wird im [m_hSocket](../../mfc/reference/casyncsocket-class.md#m_hsocket) Datenmember des Objekts gespeichert.
 
@@ -133,7 +133,7 @@ Rufen Sie diese Member-Funktion auf, um einen derzeit ausgeführten blockierende
 void CancelBlockingCall();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion bricht alle ausstehenden Blockierungs Vorgänge für diesen Socket ab. Der ursprüngliche blockierende-Aufrufvorgang wird so bald wie möglich mit dem Fehler "WSAEINTR" beendet.
 
@@ -169,7 +169,7 @@ Ein Zeiger auf eine Zeichenfolge, die die Netzwerkadresse des verbundenen Socket
 
 Ungleich 0 (null), wenn die Funktion erfolgreich ist. Andernfalls kann der Wert 0 und ein bestimmter Fehlercode durch Aufrufen von `GetLastError`abgerufen werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `Create` dann `Bind` aufrufen, um den Socket an die angegebene Adresse zu binden. Die folgenden sockettypen werden unterstützt:
 
@@ -190,7 +190,7 @@ Erstellt ein `CSocket`-Objekt.
 CSocket();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach der Erstellung müssen Sie die `Create` Member-Funktion aufzurufen.
 
@@ -213,7 +213,7 @@ Enthält ein Handle für einen Socket.
 
 Ein Zeiger auf ein `CSocket` Objekt oder NULL, wenn kein `CSocket` Objekt an *hsocket*angeschlossen ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Sockethandle einem `CSocket` Objekt nicht an das Handle angefügt ist, gibt die Member-Funktion NULL zurück und erstellt kein temporäres Objekt.
 
@@ -231,7 +231,7 @@ BOOL IsBlocking();
 
 Ungleich 0 (null), wenn der Socket blockiert wird. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [Windows Sockets: Verwenden von Sockets mit Archiven](../../mfc/windows-sockets-using-sockets-with-archives.md).
 
@@ -247,7 +247,7 @@ virtual BOOL OnMessagePending();
 
 Ungleich 0 (null), wenn die Meldung behandelt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Hierbei handelt es sich um eine erweiterte über schreibbare.
 
@@ -255,7 +255,7 @@ Das Framework ruft `OnMessagePending` auf, während der Socket Windows-Nachricht
 
 Weitere Informationen finden Sie unter [Windows Sockets: Verwenden von Sockets mit Archiven](../../mfc/windows-sockets-using-sockets-with-archives.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CAsyncSocket-Klasse](../../mfc/reference/casyncsocket-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

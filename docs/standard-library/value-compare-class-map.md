@@ -5,18 +5,17 @@ f1_keywords:
 - std::value_compare
 - std.value_compare
 - map/std::value_compare
-- value_compare
 helpviewer_keywords:
 - std::value_compare
 ms.assetid: ea97c1d0-04b2-4d42-8d96-23522c04cc41
-ms.openlocfilehash: d098e947aec1ea543f29c168a632d1f4c9412e82
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 1f872edce6f0114be7c90a8108ba248fd793a989
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68448324"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447581"
 ---
-# <a name="valuecompare-class-ltmapgt"></a>value_compare-Klasse (&lt;map&gt;)
+# <a name="value_compare-class-ltmapgt"></a>value_compare-Klasse (&lt;map&gt;)
 
 Stellt ein Funktionsobjekt bereit, das die Elemente einer Zuordnung vergleichen kann, indem die Werte ihrer Schlüssel verglichen werden, um deren relative Reihenfolge in der Zuordnung zu bestimmen.
 
@@ -33,9 +32,9 @@ protected:
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das Vergleichskriterium, das `value_compare` von `value_types` der zwischen Zahl ganzer Elemente in einer Zuordnung bereitgestellt wird, wird von einem Vergleich zwischen den Schlüsseln der entsprechenden Elemente durch die Erweiterung der Erweiterungs Klasse verursacht. Der Member-Funktions Operator verwendet das `comp` -Objekt `key_compare` des Typs, das in dem von `value_compare` bereitgestellten Funktions Objekt gespeichert ist, um die Sortierschlüssel Komponenten von zwei Elementen zu vergleichen.
+Das Vergleichskriterium, das von `value_compare` zwischen `value_types` ganzer Elemente in einer Zuordnung bereitgestellt wird, wird von einem Vergleich zwischen den Schlüsseln der entsprechenden Elemente durch die Erweiterung der Erweiterungs Klasse verursacht. Der Member-Funktions Operator verwendet die Objekt `comp` vom Typ `key_compare` der im von `value_compare` bereitgestellten Funktions Objekt gespeichert ist, um die Sortierschlüssel Komponenten von zwei Elementen zu vergleichen.
 
 Bei Mengen und Multimengen, bei denen es sich um einfache Container handelt, bei denen die Schlüsselwerte mit den Elementwerten übereinstimmen, stimmt `value_compare` mit `key_compare` überein; bei Zuordnungen und Mehrfachzuordnungen nicht, da der Wert von Elementen vom Typ `pair` nicht mit dem Wert des Elementschlüssels identisch ist.
 
@@ -43,14 +42,14 @@ Bei Mengen und Multimengen, bei denen es sich um einfache Container handelt, bei
 
 Im Beispiel für [value_comp](../standard-library/map-class.md#value_comp) wird verdeutlicht, wie `value_compare` deklariert und verwendet wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<map>
+**Header:** \<Map >
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [binary_function Struct (binary_function-Struktur)](../standard-library/binary-function-struct.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)

@@ -2,19 +2,19 @@
 title: /SECTION (EDITBIN)
 ms.date: 11/04/2016
 f1_keywords:
-- /section
+- /section_editbin
 helpviewer_keywords:
 - -SECTION editbin option
 - SECTION editbin option
 - alignment characters in sections
 - /SECTION editbin option
 ms.assetid: 4680ab4e-c984-4251-8241-93440cad7615
-ms.openlocfilehash: 8bcc925b34118630c872a0147b93291626b7c19b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 770e1d1c1cf288a7fe68f5bd076791d43f5b8572
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62318601"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438913"
 ---
 # <a name="section-editbin"></a>/SECTION (EDITBIN)
 
@@ -22,32 +22,32 @@ ms.locfileid: "62318601"
 /SECTION:name[=newname][,attributes][alignment]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option ändert die Attribute eines Abschnitts, überschreiben die Attribute, die festgelegt wurden, wenn die Objektdatei für den Abschnitt kompiliert bzw. verknüpft wurde.
+Mit dieser Option werden die Attribute eines Abschnitts geändert, wobei die Attribute überschrieben werden, die festgelegt wurden, als die Objektdatei für den Abschnitt kompiliert oder verknüpft wurde.
 
-Nach dem Doppelpunkt ( **:** ), geben Sie die *Namen* des Abschnitts. Um den Namen des Abschnitts zu ändern, führen Sie *Namen* mit einem Gleichheitszeichen (=) und ein *Newname* für den Abschnitt.
+Geben Sie nach dem Doppelpunkt ( **:** ) den *Namen* des Abschnitts an. Um den Abschnittsnamen zu ändern, befolgen Sie den *Namen* mit einem Gleichheitszeichen (=) und einem *NewName* -Wert für den Abschnitt.
 
-Festlegen oder Ändern des Abschnitts `attributes`, geben Sie ein Komma (**,**) gefolgt von einem oder mehreren Attributzeichen. Um ein Attribut zu negieren, stehen Sie das Zeichen mit einem Ausrufezeichen (!). Die folgenden Zeichen werden arbeitsspeicherattribute angeben:
+Um den `attributes`des Abschnitts festzulegen oder zu ändern, geben Sie ein Komma ( **,** ) gefolgt von einem oder mehreren Attribut Zeichen an. Um ein Attribut zu negieren, stellen Sie dem Zeichen ein Ausrufezeichen (!) voran. Die folgenden Zeichen geben Speicher Attribute an:
 
-|Attribut|Einstellung|
+|attribute|Einstellung|
 |---------------|-------------|
-|c|Code|
-|T|Entfernbare|
-|e|executable|
-|i|Initialisiert Daten|
-|k|zwischengespeicherte virtuellen Arbeitsspeicher|
+|c|code|
+|d|entfernbare|
+|e|Ausführbare Datei (executable)|
+|i|initialisierte Daten|
+|k|zwischen gespeicherter virtueller Speicher|
 |m|Link entfernen|
-|o|Link-Informationen|
-|p|ausgelagerter virtueller Speicher|
-|b|Lesen|
-|s|Freigegeben|
-|n|nicht initialisierte Daten|
-|m|Schreiben|
+|o|Link Informationen|
+|p|ausgehter virtueller Arbeitsspeicher|
+|r|Lesen|
+|s|shared|
+|u|nicht initialisierte Daten|
+|w|Schreiben|
 
-Um zu steuern *Ausrichtung*, geben Sie das Zeichen **ein** gefolgt von einem der folgenden Zeichen, die Größe der Ausrichtung in Bytes, der wie folgt festlegen:
+Geben Sie zum Steuern der *Ausrichtung*das Zeichen **A** gefolgt von einem der folgenden Zeichen an, um die Größe der Ausrichtung in Byte festzulegen, wie im folgenden dargestellt:
 
-|Zeichen|Ausrichtungsgröße in Byte|
+|Zeichen|Ausrichtungs Größe in Bytes|
 |---------------|-----------------------------|
 |1|1|
 |2|2|
@@ -56,10 +56,10 @@ Um zu steuern *Ausrichtung*, geben Sie das Zeichen **ein** gefolgt von einem der
 |p|16|
 |t|32|
 |s|64|
-|w|keine Ausrichtung|
+|x|keine Ausrichtung|
 
-Geben Sie die `attributes` und *Ausrichtung* Zeichen als Zeichenfolge keine Leerzeichen. Die Zeichen sind nicht in der Groß-/Kleinschreibung beachtet.
+Geben Sie die `attributes` und die *Ausrichtungs* Zeichen als Zeichenfolge ohne Leerzeichen an. Bei den Zeichen wird Groß-/Kleinschreibung nicht beachtet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [EDITBIN-Optionen](editbin-options.md)

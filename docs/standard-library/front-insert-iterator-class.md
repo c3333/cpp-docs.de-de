@@ -11,11 +11,11 @@ helpviewer_keywords:
 - std::front_insert_iterator [C++], reference
 ms.assetid: a9a9c075-136a-4419-928b-c4871afa033c
 ms.openlocfilehash: 176fac8053d352d6a7a72ce62d5a8ee7a64b9811
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874044"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424788"
 ---
 # <a name="front_insert_iterator-class"></a>front_insert_iterator-Klasse
 
@@ -33,32 +33,32 @@ class front_insert_iterator;
 *Container*\
 Der Typ des Containers, an dessen Anfang Elemente von einem `front_insert_iterator` eingefügt werden sollen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Der Container muss den Anforderungen einer Sequenz zum Einfügen am Anfang entsprechen, in der es möglich ist, die Elemente am Anfang der Sequenz in amortisierter konstanter Zeit einzufügen. Die Sequenzcontainer der C++-Standardbibliothek, die durch die [deque-Klasse](../standard-library/deque-class.md) und die [list-Klasse](../standard-library/list-class.md) definiert werden, stellen die erforderliche `push_front`-Memberfunktion bereit und erfüllen diese Anforderungen. Im Gegensatz dazu erfüllen die Sequenzcontainer, die von der [vector-Klasse](../standard-library/vector-class.md) definiert sind, diese Anforderungen nicht und können nicht zur Verwendung mit `front_insert_iterator`-Objekten angepasst werden. Ein `front_insert_iterator` muss immer mit seinem Container initialisiert werden.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[front_insert_iterator](#front_insert_iterator)|Damit wird ein Iterator erstellt, mit dem Elemente an den Anfang eines bestimmten Containerobjekts eingefügt werden können.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[container_type](#container_type)|Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenommen werden soll.|
-|[Referenz](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
+|[reference](#reference)|Ein Typ, der einen Verweis auf ein Element in einer Sequenz enthält, die durch den zugehörigen Container gesteuert wird.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[operator*](#op_star)|Der Dereferenzierungsoperator, der verwendet wird, um den ausgabeiteratorausdruck zu implementieren, \* `i` = `x` für eine Front|
 |[operator++](#op_add_add)|Inkrementiert `front_insert_iterator` zum folgenden Speicherort, an dem ein Wert gespeichert werden kann.|
 |[operator=](#op_eq)|Der Zuweisungs Operator, der verwendet wird, um den ausgabeiteratorausdruck zu implementieren, \* `i` = `x` für eine Front|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header**: \<iterator>
 
@@ -72,7 +72,7 @@ Ein Typ, der den Container darstellt, in dem eine Einfügung am Anfang vorgenomm
 typedef Container container_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist synonym mit dem Vorlagenparameter *Container*.
 
@@ -181,7 +181,7 @@ front_insert_iterator<Container>& operator*();
 
 Die Memberfunktion gibt den Wert des adressierten Elements zurück
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wird zum Implementieren des Ausgabeiteratorausdrucks **\*Iter** = **value** verwendet. Wenn `Iter` ein Iterator ist, der ein Element in einer Sequenz adressiert, ersetzt **\*ITER** - = **Wert** dieses Element durch value und ändert nicht die Gesamtzahl der Elemente in der Sequenz.
 
@@ -244,7 +244,7 @@ front_insert_iterator<Container> operator++(int);
 
 Ein `front_insert_iterator`, der den nächsten Speicherort adressiert, an dem ein Wert gespeichert werden kann
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sowohl der Prä- als auch der Postinkrement-Operator geben das gleichen Ergebnis zurück.
 
@@ -300,7 +300,7 @@ Der Wert, der dem Container zugewiesen werden soll
 
 Ein Verweis auf das letzte, am Anfang des Containers eingefügte Element
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erster Memberoperator wertet `container.push_front( val)` aus und gibt `*this` zurück.
 
@@ -387,7 +387,7 @@ The first element in the list L is: 30.
 */
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<iterator>](../standard-library/iterator.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\

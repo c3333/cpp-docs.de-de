@@ -1,9 +1,6 @@
 ---
 title: Ausführen als Mitglied der Gruppe Benutzer
 ms.date: 11/04/2016
-f1_keywords:
-- PRJ0050
-- VCD0047
 helpviewer_keywords:
 - Users Group [C++]
 - security [C++], Users Group
@@ -12,12 +9,12 @@ helpviewer_keywords:
 - user accounts [C++]
 - administrator (not running as) [C++]
 ms.assetid: e48a03ec-d345-49f6-809a-1a291eecbc81
-ms.openlocfilehash: dc06e2dc58d28c34a646ccffc0be90368b3297f5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 117ef426950fc9aff5ae41e894f0d7ae898369cd
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411291"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445443"
 ---
 # <a name="running-as-a-member-of-the-users-group"></a>Ausführen als Mitglied der Gruppe Benutzer
 
@@ -29,7 +26,7 @@ Eine Ausführung als Administrator macht ihr System anfällig für Sicherheitsan
 
 ## <a name="non-administrator-user-groups"></a>Benutzergruppen ohne Administratorrechte
 
-Die von Entwicklern normalerweise verwendeten Windows-Benutzerkonten sollten entweder der Gruppe Benutzer oder der Gruppe Hauptbenutzer hinzugefügt werden. Entwickler sollten zusätzlich der Debuggergruppe hinzugefügt werden. Als Mitglied der Gruppe Benutzer können Sie Routineaufgaben ausführen, z. B. Programme ausführen und Internetsites besuchen, ohne dabei den Computer unnötigen Sicherheitsrisiken auszusetzen. Als Mitglied der Gruppe Hauptbenutzer können Sie darüber hinaus weitere Aufgaben ausführen, z. B. das Installieren von Anwendungen, die Installation eines Druckers und einen Großteil der Operationen der Systemsteuerung. Wenn Sie Verwaltungsaufgaben wie die Aktualisierung des Betriebssystems oder die Konfiguration von Systemparametern ausführen müssen, sollten Sie sich nur solange als Administrator anmelden, wie es für die Ausführung der Verwaltungsaufgabe erforderlich ist. Sie können auch die Windows **Runas** Befehl kann verwendet werden, um bestimmte Anwendungen mit Verwaltungszugriff zu starten.
+Die von Entwicklern normalerweise verwendeten Windows-Benutzerkonten sollten entweder der Gruppe Benutzer oder der Gruppe Hauptbenutzer hinzugefügt werden. Entwickler sollten zusätzlich der Debuggergruppe hinzugefügt werden. Als Mitglied der Gruppe Benutzer können Sie Routineaufgaben ausführen, z. B. Programme ausführen und Internetsites besuchen, ohne dabei den Computer unnötigen Sicherheitsrisiken auszusetzen. Als Mitglied der Gruppe Hauptbenutzer können Sie darüber hinaus weitere Aufgaben ausführen, z. B. das Installieren von Anwendungen, die Installation eines Druckers und einen Großteil der Operationen der Systemsteuerung. Wenn Sie Verwaltungsaufgaben wie die Aktualisierung des Betriebssystems oder die Konfiguration von Systemparametern ausführen müssen, sollten Sie sich nur solange als Administrator anmelden, wie es für die Ausführung der Verwaltungsaufgabe erforderlich ist. Alternativ kann der Windows- **runas** -Befehl verwendet werden, um bestimmte Anwendungen mit administrativem Zugriff zu starten.
 
 ## <a name="exposing-customers-to-security-risks"></a>Sicherheitsrisiken für Kunden
 
@@ -51,6 +48,6 @@ Im Allgemeinen sollten diese Aktionen auf Anwendungsinstallationsprogramme besch
 
 Sie können jede Anwendung, die Sie innerhalb von Visual Studio starten (systemeigen oder nicht verwaltet), als Benutzer ohne Administratorrechte debuggen, indem Sie Mitglied der Debuggergruppe werden. Dies schließt die Möglichkeit ein, sich an eine laufende Anwendung anzuhängen (mit dem Befehl An den Prozess anhängen). Für das Debuggen von systemeigenen oder verwalteten Anwendungen, die von einem anderen Benutzer gestartet wurden, müssen Sie hingegen Mitglied der Gruppe Administratoren sein.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Empfohlene Vorgehensweisen bezüglich der Sicherheit](security-best-practices-for-cpp.md)

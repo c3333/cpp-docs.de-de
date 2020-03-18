@@ -5,11 +5,11 @@ ms.date: 01/10/2020
 ms.technology: cpp-ide
 ms.assetid: f50d459a-e18f-4b4e-814b-913e444cedd6
 ms.openlocfilehash: 7c3dddd62a66c746d92d2f931b97e354ee27d75f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
-ms.translationtype: MT
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857017"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422757"
 ---
 # <a name="vcpkg-a-c-package-manager-for-windows-linux-and-macos"></a>vcpkg: ein C++-Paket-Manager für Windows, Linux und macOS
 
@@ -25,7 +25,7 @@ Im Fall von Bibliotheken im Windows-Katalog lädt vcpkg Quellen anstelle von Bin
 
 Sie können auch einen vcpkg-Klon erstellen, in dessen Auflistung der Ports private Bibliotheken enthalten sind. Fügen Sie einen Port hinzu, der Ihre vorab erstellten Binärdateien und Header herunterlädt. Schreiben Sie dann eine Datei vom Typ „portfile.cmake“, mit der diese Dateien einfach an den bevorzugten Speicherort kopiert werden.
 
-<sup>1</sup> *Hinweis: Quellen sind für einige proprietäre Bibliotheken nicht verfügbar. In diesen Fällen lädt vcpkg kompatible, vorgefertigte Binärdateien herunter.*
+<sup>1</sup> *Hinweis: Für einige proprietäre Bibliotheken stehen keine Quellen zur Verfügung. vcpkg lädt in diesem Fall kompatible, vorab erstellte Binärdateien herunter.*
 
 ## <a name="installation"></a>Installation
 
@@ -79,7 +79,7 @@ The following packages will be built and installed:
 Additional packages (*) will be installed to complete this operation.
 ```
 
-Verwenden Sie bei CMAKE-Projekten CMAKE_TOOLCHAIN_FILE, um Bibliotheken mit `find_package()` zur Verfügung zu stellen. Beispiel:
+Verwenden Sie bei CMAKE-Projekten CMAKE_TOOLCHAIN_FILE, um Bibliotheken mit `find_package()` zur Verfügung zu stellen. Zum Beispiel:
 
 ```cmd
 cmake .. -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake (Linux/MacOS)
@@ -200,11 +200,11 @@ Der Inhalt einer vcpkg-Instanz sieht folgendermaßen aus:
 - ports: Dateien, die jede Bibliothek im Katalog, deren Version und den Ort beschreiben, von dem aus sie heruntergeladen werden kann. Sie können, falls nötig, Ihre eigenen Ports hinzufügen.
 - scripts: Skripts (cmake, powershell), die von vcpkg verwendet werden.
 - toolsrc: C++-Quellcode für vcpkg und zugehörige Komponenten.
-- triplets: Enthält die Einstellung für jede unterstützte Zielplattform (z.B. x86-windows oder x64-uwp).
+- triplets: Enthält die Einstellung für jede unterstützte Zielplattform (z. B. x86-windows oder x64-uwp).
 
 ## <a name="command-line-reference"></a>Befehlszeilenreferenz
 
-|Get-Help|BESCHREIBUNG|
+|Befehl|Beschreibung|
 |---------|---------|
 |**vcpkg search \[pat]**|Suchen nach installationsbereiten Paketen|
 |**vcpkg install \<pkg>...**|Installieren eines Pakets|
@@ -224,9 +224,9 @@ Der Inhalt einer vcpkg-Instanz sieht folgendermaßen aus:
 |**vcpkg version**|Anzeigen von Versionsinformationen|
 |**vcpkg contact --survey**|Kontaktdaten zum Senden von Feedback anzeigen|
 
-### <a name="options"></a>Tastatur
+### <a name="options"></a>Optionen
 
-|Option|BESCHREIBUNG|
+|Option|Beschreibung|
 |---------|---------|
 |**--triplet \<t>**|Angeben der Dreiergruppe der Zielarchitektur (Standard: `%VCPKG_DEFAULT_TRIPLET%`, siehe auch **vcpkg help triplet**)|
 |**--vcpkg-root \<path>**|Angeben des vcpkg-Stammverzeichnisses (Standard: `%VCPKG_ROOT%`)|

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - application control [MFC]
 ms.assetid: c1f69f15-e0fe-4515-9f36-d63d31869deb
 ms.openlocfilehash: cb4ad19dfad06b793f226324d8e28c37c084ad67
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855687"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424632"
 ---
 # <a name="application-control"></a>Anwendungssteuerelement
 
@@ -42,7 +42,7 @@ BOOL AFXAPI AfxOleCanExitApp();
 
 Ungleich NULL, wenn die Anwendung beendet werden kann. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Anwendung sollte nicht beendet werden, wenn ausstehende Verweise auf die Objekte vorhanden sind. Die globalen Funktionen `AfxOleLockApp` und `AfxOleUnlockApp` Inkrement-und Dekrement-Wert bzw. ein gegen Objekt der Verweise auf die Objekte der Anwendung. Die Anwendung sollte nicht beendet werden, wenn dieser Wert ungleich 0 (null) ist. Wenn der Wert ungleich 0 (null) ist, wird das Hauptfenster der Anwendung ausgeblendet (nicht zerstört), wenn der Benutzer im Menüsystem die Option schließen auswählt oder im Menü Datei auf Beenden klickt. Das Framework ruft diese Funktion in `CFrameWnd::OnClose`auf.
 
@@ -50,7 +50,7 @@ Eine Anwendung sollte nicht beendet werden, wenn ausstehende Verweise auf die Ob
 
 [!code-cpp[NVC_MFCAutomation#2](../../mfc/codesnippet/cpp/application-control_1.cpp)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -66,7 +66,7 @@ COleMessageFilter* AFXAPI AfxOleGetMessageFilter();
 
 Ein Zeiger auf den aktuellen Nachrichtenfilter.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion aufrufen, um auf das aktuelle `COleMessageFilter`von abgeleitetes Objekt zuzugreifen, genauso wie Sie `AfxGetApp` aufrufen, um auf das aktuelle Anwendungs Objekt zuzugreifen.
 
@@ -76,7 +76,7 @@ Diese Funktion aufrufen, um auf das aktuelle `COleMessageFilter`von abgeleitetes
 
 [!code-cpp[NVC_MFCAutomation#4](../../mfc/codesnippet/cpp/application-control_3.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: AFXWIN. h
 
@@ -92,11 +92,11 @@ BOOL AFXAPI AfxOleGetUserCtrl();
 
 Ungleich 0 (null), wenn der Benutzer die Kontrolle über die Anwendung hat. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Benutzer ist in der Lage, die Anwendung zu steuern, wenn der Benutzer ein neues Dokument explizit geöffnet oder erstellt hat. Der Benutzer ist auch dann in der Kontrolle, wenn die Anwendung nicht von den OLE-System-DLLs gestartet wurde – mit anderen Worten, wenn der Benutzer die Anwendung mit der systemshell gestartet hat.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -113,13 +113,13 @@ void AFXAPI AfxOleSetUserCtrl(BOOL bUserCtrl);
 *buserctrl*<br/>
 Gibt an, ob das Benutzer Steuerelement-Flag festgelegt oder gelöscht werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Funktion auf, wenn der Benutzer ein Dokument erstellt oder lädt, jedoch nicht, wenn ein Dokument durch eine indirekte Aktion geladen oder erstellt wird, z. b. das Laden eines eingebetteten Objekts aus einer Containeranwendung.
 
 Diese Funktion wird aufgerufen, wenn der Benutzer von anderen Aktionen in der Anwendung in die Kontrolle über die Anwendung versetzt werden soll.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -131,7 +131,7 @@ Inkremente die globale Anzahl der in der Anwendung aktiven Objekte.
 void AFXAPI AfxOleLockApp();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework behält die Anzahl der in einer Anwendung aktiven Objekte bei. Die Funktionen "`AfxOleLockApp`" und "`AfxOleUnlockApp`" erhöhen und Dekrement diese Anzahl.
 
@@ -143,7 +143,7 @@ Ruft `AfxOleLockApp` von jedem Objekt auf, das OLE-Schnittstellen verfügbar mac
 
 [!code-cpp[NVC_MFCAutomation#5](../../mfc/codesnippet/cpp/application-control_4.cpp)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -155,7 +155,7 @@ Dekremente die Anzahl der aktiven Objekte in der Anwendung.
 void AFXAPI AfxOleUnlockApp();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter `AfxOleLockApp`.
 
@@ -165,7 +165,7 @@ Wenn die Anzahl aktiver Objekte NULL erreicht, wird `AfxOleOnReleaseAllObjects` 
 
 Sehen Sie sich das Beispiel für [AfxOleLockApp](#afxolelockapp)an.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -192,7 +192,7 @@ Die eindeutige Programm-ID des Steuer Elements.
 
 Ungleich 0 (null), wenn die Klassenfactory des Steuer Elements erfolgreich gesperrt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dadurch kann die Anzeige der Steuerelemente erheblich beschleunigt werden. Wenn Sie z. b. ein Steuerelement in einem Dialogfeld erstellen und das Steuerelement mit `AfxOleLockControl`sperren, müssen Sie es nicht jedes Mal neu erstellen und beenden, wenn das Dialogfeld angezeigt oder zerstört wird. Wenn der Benutzer ein Dialogfeld wiederholt öffnet und schließt, kann das Sperren der Steuerelemente die Leistung erheblich verbessern. Wenn Sie bereit sind, das Steuerelement zu zerstören, wenden Sie `AfxOleUnlockControl`an.
 
@@ -206,7 +206,7 @@ Dadurch kann die Anzeige der Steuerelemente erheblich beschleunigt werden. Wenn 
 AfxOleLockControl(_T("MSCAL.Calendar"));
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -260,7 +260,7 @@ Array von Zeigern auf Zeichen folgen, die die Schlüssel und Werte darstellen, d
 
 Ungleich 0 (null), wenn die Serverklasse erfolgreich registriert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die meisten Anwendungen können `COleTemplateServer::Register` verwenden, um die Dokumenttypen der Anwendung zu registrieren. Wenn das System Registrierungs Format Ihrer Anwendung nicht mit dem typischen Muster kompatibel ist, können Sie `AfxOleRegisterServerClass` für mehr Kontrolle verwenden.
 
@@ -268,7 +268,7 @@ Die Registrierung besteht aus einem Satz von Schlüsseln und Werten. Die Argumen
 
 Die Symbole werden wie folgt ausgefüllt:
 
-|Symbol|value|
+|Symbol|Wert|
 |------------|-----------|
 |%1|Klassen-ID, formatiert als Zeichenfolge|
 |%2|Klassenname|
@@ -276,7 +276,7 @@ Die Symbole werden wie folgt ausgefüllt:
 |%4|Kurztyp Name|
 |%5|Name des langen Typs|
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: afxdisp. h
 
@@ -314,7 +314,7 @@ Die Befehls-ID, die dem letzten Verb entspricht.
 *nidconvert*<br/>
 ID für das Menü Element konvertieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Server nur ein primäres Verb erkennt, wird das Menü Element zu "Verb *Typname* Object", und der Befehl " *nidverbmin* " wird gesendet, wenn der Benutzer den Befehl auswählt. Wenn der Server mehrere Verben erkennt, wird das Menü Element zu " *tykame* Object", und ein Untermenü mit allen Verben wird angezeigt, wenn der Benutzer den Befehl auswählt. Wenn der Benutzer ein Verb aus dem Untermenü auswählt, wird " *nidverbmin* " gesendet, wenn das erste Verb ausgewählt wird, " *transiverbmin* + 1" gesendet wird, wenn das zweite Verb ausgewählt ist usw. Diese Funktion wird von der standardmäßigen `COleDocument`-Implementierung automatisch verarbeitet.
 
@@ -322,7 +322,7 @@ Sie müssen über die folgende Anweisung im Anwendungs Ressourcen Skript Ihres C
 
 **#include \<AFXOLECL. RC >**
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header**: Afxole. h
 
@@ -349,7 +349,7 @@ Die eindeutige Programm-ID des Steuer Elements.
 
 Ungleich 0 (null), wenn die Klassenfactory des Steuer Elements erfolgreich entsperrt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Steuerelement ist mit `AfxOleLockControl`gesperrt, sodass dynamisch erstellte Daten, die dem Steuerelement zugeordnet sind, im Arbeitsspeicher verbleiben. Dadurch kann die Anzeige des Steuer Elements deutlich beschleunigt werden, da das Steuerelement nicht jedes Mal erstellt und zerstört werden muss, wenn es angezeigt wird. Wenn Sie bereit sind, das Steuerelement zu zerstören, wenden Sie `AfxOleUnlockControl`an.
 
@@ -361,10 +361,10 @@ Ein Steuerelement ist mit `AfxOleLockControl`gesperrt, sodass dynamisch erstellt
 AfxOleUnlockControl(_T("MSCAL.Calendar"));
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](mfc-macros-and-globals.md)<br/>

@@ -45,11 +45,11 @@ helpviewer_keywords:
 - CStatusBarCtrl [MFC], SetTipText
 ms.assetid: 8504ad38-7b91-4746-aede-ac98886eb47b
 ms.openlocfilehash: 8c33aa4d77eeeeca69e50dc63982ff4d7e8bd505
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865534"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426354"
 ---
 # <a name="cstatusbarctrl-class"></a>CStatusBarCtrl-Klasse
 
@@ -61,17 +61,17 @@ Stellt die Funktionalität des allgemeinen Windows-Statusleisten-Steuerelements 
 class CStatusBarCtrl : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cstatus-Barcode STRG:: cstatus-barstrg](#cstatusbarctrl)|Erstellt ein `CStatusBarCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cstatus-Barcode STRG:: Create](#create)|Erstellt ein StatusBar-Steuerelement und fügt es an ein `CStatusBarCtrl` Objekt an.|
 |[Cstatus-Barcode STRG:: up-Ex](#createex)|Erstellt ein StatusBar-Steuerelement mit den angegebenen erweiterten Windows-Stilen und fügt es an ein `CStatusBarCtrl` Objekt an.|
@@ -92,7 +92,7 @@ class CStatusBarCtrl : public CWnd
 |[Cstatus-barctrl:: SetText](#settext)|Legt den Text im bestimmten Teil eines Statusleisten-Steuerelements fest.|
 |[Cstatulaufbarctrl:: Setup Text](#settiptext)|Legt den QuickInfo-Text für einen Bereich in einer Statusleiste fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein "StatusBar-Steuerelement" ist ein horizontales Fenster, das normalerweise am unteren Rand eines übergeordneten Fensters angezeigt wird, in dem eine Anwendung verschiedene Arten von Statusinformationen anzeigen kann. Das StatusBar-Steuerelement kann in Teile aufgeteilt werden, um mehr als eine Art von Informationen anzuzeigen.
 
@@ -110,7 +110,7 @@ Weitere Informationen zur Verwendung von `CStatusBarCtrl`finden Sie unter Steuer
 
 `CStatusBarCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -144,7 +144,7 @@ Gibt die ID des StatusBar-Steuer Elements an.
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen eine `CStatusBarCtrl` in zwei Schritten. Zuerst wird der Konstruktor aufgerufen und dann `Create`aufgerufen, der das StatusBar-Steuerelement erstellt und an das `CStatusBarCtrl` Objekt anfügt.
 
@@ -190,7 +190,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -215,7 +215,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 *lpdrawitemstruct*<br/>
 Ein langer Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `itemAction` Member der `DRAWITEMSTRUCT` Struktur definiert die auszuführende Zeichnungs Aktion.
 
@@ -254,7 +254,7 @@ Verweis auf eine Ganzzahl, die die Breite des Rahmens zwischen Rechtecke empfän
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Rahmen bestimmen den Abstand zwischen dem äußeren Rand des Steuer Elements und den Rechtecke innerhalb des Steuer Elements, die Text enthalten.
 
@@ -272,7 +272,7 @@ HICON GetIcon(int iPart) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*ipart*|in Der null basierte Index des Teils, der das abzurufende Symbol enthält. Wenn dieser Parameter-1 ist, wird angenommen, dass es sich bei der Statusleiste um eine Statusleiste im einfachen Modus handelt.|
 
@@ -280,7 +280,7 @@ HICON GetIcon(int iPart) const;
 
 Das Handle für das Symbol, wenn die Methode erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [SB_GETICON](/windows/win32/Controls/sb-geticon) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -320,7 +320,7 @@ Die Adresse eines ganzzahligen Arrays, das über die gleiche Anzahl von Elemente
 
 Die Anzahl der Teile im-Steuerelement, wenn erfolgreich, andernfalls 0 (null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion ruft auch die Koordinate des rechten Rands der angegebenen Anzahl von Teilen ab.
 
@@ -447,7 +447,7 @@ Der null basierte Index des Status leisten Bereichs, um den QuickInfo-Text zu em
 
 Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, das den Text enthält, der in der QuickInfo verwendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_GETTIPTEXT](/windows/win32/Controls/sb-gettiptext), wie in der Windows SDK beschrieben.
 
@@ -467,7 +467,7 @@ BOOL IsSimple() const;
 
 Ungleich 0 (null), wenn sich das Statusfenster-Steuerelement im einfachen Modus befindet andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_ISSIMPLE](/windows/win32/Controls/sb-issimple), wie in der Windows SDK beschrieben.
 
@@ -488,7 +488,7 @@ COLORREF-Wert, der die neue Hintergrundfarbe angibt. Geben Sie den CLR_DEFAULT W
 
 Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Standard Hintergrundfarbe darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETBKCOLOR](/windows/win32/Controls/sb-setbkcolor), wie in der Windows SDK beschrieben.
 
@@ -518,7 +518,7 @@ Handle für das Symbol, das festgelegt werden soll. Wenn dieser Wert NULL ist, w
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETICON](/windows/win32/Controls/sb-seticon), wie in der Windows SDK beschrieben.
 
@@ -539,7 +539,7 @@ void SetMinHeight(int nMin);
 *nmin.*<br/>
 Die minimale Höhe des Steuer Elements in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Mindesthöhe ist die Summe aus *nmin* und der doppelten Breite des vertikalen Rahmens des StatusBar-Steuer Elements in Pixel.
 
@@ -588,9 +588,9 @@ in Flag zum Anzeigen des Typs. Wenn dieser Parameter true ist, zeigt das Steuere
 
 ### <a name="return-value"></a>Rückgabewert
 
-Es wird immer 0 zurückgegeben.
+Gibt immer 0 zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Anwendung das StatusBar-Steuerelement von "nicht einfach" in "einfach" oder umgekehrt ändert, zeichnet das System sofort das Steuerelement neu.
 
@@ -620,7 +620,7 @@ Der Typ des Zeichenvorgangs. Eine Liste möglicher Werte finden Sie unter [SB_SE
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Meldung erklärt den Teil des Steuer Elements für ungültig, der geändert wurde, sodass der neue Text angezeigt wird, wenn das Steuerelement das nächste Mal die WM_PAINT Nachricht empfängt.
 
@@ -646,7 +646,7 @@ Der null basierte Index des Status leisten Bereichs, um den QuickInfo-Text zu em
 *psztiptext*<br/>
 Ein Zeiger auf eine Zeichenfolge, die den QuickInfo-Text enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETTIPTEXT](/windows/win32/Controls/sb-settiptext), wie in der Windows SDK beschrieben.
 
@@ -654,7 +654,7 @@ Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETTIP
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#12](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_14.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

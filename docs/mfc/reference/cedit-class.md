@@ -95,11 +95,11 @@ helpviewer_keywords:
 - CEdit [MFC], Undo
 ms.assetid: b1533c30-7f10-4663-88d3-8b7f2c9f7024
 ms.openlocfilehash: 5ad8784f3bff999eec046aa91f52b1cd164764e5
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876360"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425880"
 ---
 # <a name="cedit-class"></a>CEdit Class
 
@@ -111,17 +111,17 @@ Stellt die Funktionalität eines Windows-Bearbeitungssteuerelements bereit.
 class CEdit : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CEdit:: CEdit](#cedit)|Erstellt ein `CEdit` Steuerelement Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CEdit:: CanUndo](#canundo)|Bestimmt, ob ein Bearbeitungs Steuerungs Vorgang rückgängig gemacht werden kann.|
 |[CEdit:: charfrompos](#charfrompos)|Ruft die Zeilen-und Zeichen Indizes für das Zeichen ab, das einer angegebenen Position am nächsten liegt.|
@@ -167,7 +167,7 @@ class CEdit : public CWnd
 |[CEdit:: ShowBalloonTip](#showballoontip)|Zeigt eine Sprechblasen Info an, die dem aktuellen Bearbeitungs Steuerelement zugeordnet ist.|
 |[CEdit:: rückgängig](#undo)|Kehrt den letzten Bearbeitungs Steuerungs Vorgang um.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Bearbeitungs Steuerelement ist ein rechteckiges untergeordnetes Fenster, in dem der Benutzer Text eingeben kann.
 
@@ -227,7 +227,7 @@ Weitere Informationen zu `CEdit`finden Sie unter Steuer [Elemente](../../mfc/con
 
 `CEdit`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -243,7 +243,7 @@ BOOL CanUndo() const;
 
 Ungleich 0 (null), wenn der letzte Bearbeitungsvorgang durch einen aufzurufenden `Undo` Member-Funktion rückgängig gemacht werden kann. 0, wenn es nicht rückgängig gemacht werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [EM_CANUNDO](/windows/win32/Controls/em-canundo) in der Windows SDK.
 
@@ -259,7 +259,7 @@ Erstellt ein `CEdit`-Objekt.
 CEdit();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [Create](#create) zum Erstellen des Windows-Bearbeitungs Steuer Elements.
 
@@ -284,7 +284,7 @@ Die Koordinaten eines Punkts im Client Bereich dieses `CEdit` Objekts.
 
 Der Zeichen Index im nieder wertigen Wort und der Zeilen Index im Wort mit hoher Reihenfolge.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
@@ -303,7 +303,7 @@ Mit dieser Funktion können Sie die aktuelle Auswahl (sofern vorhanden) im Bearb
 void Clear();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der von `Clear` ausgeführte Löschvorgang kann durch Aufrufen der Funktion [Rückgängig](#undo) -Member rückgängig gemacht werden.
 
@@ -323,7 +323,7 @@ Mit dieser Funktion wird die aktuelle Auswahl (sofern vorhanden) im Bearbeitungs
 void Copy();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [WM_COPY](/windows/win32/dataxchg/wm-copy) in der Windows SDK.
 
@@ -361,7 +361,7 @@ Gibt die ID des Bearbeitungs Steuer Elements an.
 
 Ungleich NULL, wenn die Initialisierung erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen ein `CEdit`-Objekt in zwei Schritten. Nennen Sie zunächst den `CEdit`-Konstruktor, und klicken Sie dann auf `Create`, der das Windows-Bearbeitungs Steuerelement erstellt und an das `CEdit`-Objekt anfügt.
 
@@ -393,7 +393,7 @@ Mit dieser Funktion können Sie die aktuelle Auswahl (sofern vorhanden) im Bearb
 void Cut();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der von `Cut` ausgeführte Löschvorgang kann durch Aufrufen der Funktion [Rückgängig](#undo) -Member rückgängig gemacht werden.
 
@@ -413,7 +413,7 @@ Mit dieser Funktion wird das rückgängigflag eines Bearbeitungs Steuer Elements
 void EmptyUndoBuffer();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Bearbeitungs Steuerelement kann jetzt den letzten Vorgang nicht rückgängig machen. Das rückgängigflag wird festgelegt, wenn ein Vorgang innerhalb des Bearbeitungs Steuer Elements rückgängig gemacht werden kann.
 
@@ -442,7 +442,7 @@ Gibt an, ob weiche Zeilenumbruch Zeichen eingefügt werden sollen. Der Wert true
 
 Ungleich 0 (null), wenn eine Formatierung auftritt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein weicher Zeilenumbruch besteht aus zwei Wagen Rücklauf Zeichen und einem Zeilenvorschub, der am Ende einer Zeile eingefügt wird, die aufgrund von Wort Umbrüchen unterbrochen wird. Ein harter Zeilenumbruch besteht aus einem Wagen Rücklauf und einem Zeilenvorschub. Zeilen, die mit einem hart zeiligen Umbruch enden, sind von `FmtLines`nicht betroffen.
 
@@ -482,7 +482,7 @@ Bei der ersten Überladung ist true, wenn die Methode erfolgreich ist. andernfal
 
 Bei der zweiten Überladung eine [CString](../../atl-mfc-shared/using-cstring.md) , die den Hinweis Text enthält, wenn die Methode erfolgreich ist. andernfalls die leere Zeichenfolge ("").
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [EM_GETCUEBANNER](/windows/win32/Controls/em-getcuebanner) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_GetCueBannerText](/windows/win32/api/commctrl/nf-commctrl-edit_getcuebannertext) -Makro.
 
@@ -498,7 +498,7 @@ int GetFirstVisibleLine() const;
 
 Der null basierte Index der obersten sichtbaren Zeile. Für einzeilige Bearbeitungs Steuerelemente ist der Rückgabewert 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [EM_GETFIRSTVISIBLELINE](/windows/win32/Controls/em-getfirstvisibleline) in der Windows SDK.
 
@@ -518,7 +518,7 @@ HLOCAL GetHandle() const;
 
 Ein lokales Speicher handle, das den Puffer identifiziert, der den Inhalt des Bearbeitungs Steuer Elements enthält. Wenn ein Fehler auftritt, z. b. das Senden der Nachricht an ein einzeilige Bearbeitungs Steuerelement, ist der Rückgabewert 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei dem Handle handelt es sich um ein lokales Speicher handle, das von allen **lokalen** Windows-Speicherfunktionen verwendet werden kann, die ein lokales Speicher Handle als Parameter annehmen.
 
@@ -547,7 +547,7 @@ BOOL GetHighlight(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*pichstart*|vorgenommen NULL basierter Index des ersten Zeichens im Textbereich, der hervorgehoben wird.|
 |*pichend*|vorgenommen NULL basierter Index des letzten Zeichens im Textbereich, der hervorgehoben wird.|
@@ -556,7 +556,7 @@ BOOL GetHighlight(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [EM_GETHILITE](/windows/win32/Controls/em-gethilite) Nachricht, die in der Windows SDK beschrieben wird. Sowohl `SetHighlight` als auch `GetHighlight` sind zurzeit nur für Unicode-Builds aktiviert.
 
@@ -572,7 +572,7 @@ UINT GetLimitText() const;
 
 Das aktuelle Text Limit für dieses `CEdit` Objekt in tchars.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Text Limit ist die maximale Text Menge in tchars, die das Bearbeitungs Steuerelement annehmen kann.
 
@@ -615,7 +615,7 @@ Gibt die maximale Anzahl von TCHAR-Zeichen an, die in den Puffer kopiert werden 
 
 Die Anzahl der tatsächlich kopierten Zeichen. Der Rückgabewert ist 0, wenn die durch *nIndex* angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungs Steuerelement ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die kopierte Zeile enthält kein NULL-Terminierungs Zeichen.
 
@@ -637,7 +637,7 @@ int GetLineCount() const;
 
 Eine ganze Zahl, die die Anzahl der Zeilen im mehrzeiligen Bearbeitungs Steuerelement enthält. Wenn kein Text in das Bearbeitungs Steuerelement eingegeben wurde, ist der Rückgabewert 1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetLineCount` wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
 
@@ -659,7 +659,7 @@ DWORD GetMargins() const;
 
 Die Breite des linken Rands im nieder wertigen Wort und die Breite des rechten Rands im Wort mit hoher Reihenfolge.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ränder werden in Pixel gemessen.
 
@@ -684,7 +684,7 @@ BOOL GetModify() const;
 
 Ungleich 0 (null), wenn der Inhalt des Bearbeitungs Steuer Elements geändert wurde. 0 (null), wenn Sie unverändert geblieben sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Windows behält ein internes Flag bei, das angibt, ob der Inhalt des Bearbeitungs Steuer Elements geändert wurde. Dieses Flag wird gelöscht, wenn das Bearbeitungs Steuerelement erstmalig erstellt wird, und kann auch durch Aufrufen der [setmodify](#setmodify) -Member-Funktion gelöscht werden.
 
@@ -706,7 +706,7 @@ TCHAR GetPasswordChar() const;
 
 Gibt das Zeichen an, das anstelle des vom Benutzer eingegebenen Zeichens angezeigt werden soll. Der Rückgabewert ist NULL, wenn kein Kenn Wort Zeichen vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie das Bearbeitungs Steuerelement mit dem ES_PASSWORD-Stil erstellen, bestimmt die dll, die das-Steuerelement unterstützt, das Standard Kennwort-Zeichen. Das Manifest oder die [InitCommonControlsEx](/windows/win32/api/commctrl/nf-commctrl-initcommoncontrolsex) -Methode bestimmt, welche DLL das Bearbeitungs Steuerelement unterstützt. Wenn user32. dll das Bearbeitungs Steuerelement unterstützt, ist das Standard Kennwort Sternchen ("*", U + 002A). Wenn Comctl32. dll, Version 6, das Bearbeitungs Steuerelement unterstützt, ist das Standard Zeichen schwarz Kreis ("●", U + 25cf). Weitere Informationen dazu, welche dll und Version die allgemeinen Steuerelemente unterstützt, finden Sie unter [Shell und allgemeine](/previous-versions/windows/desktop/legacy/bb776779\(v=vs.85\))Steuerelement Versionen.
 
@@ -729,7 +729,7 @@ void GetRect(LPRECT lpRect) const;
 *lprect*<br/>
 Verweist auf die `RECT` Struktur, die das Formatierungs Rechteck empfängt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Formatierungs Rechteck ist das einschränkende Rechteck des Texts, der unabhängig von der Größe des Bearbeitungs Steuerelement Fensters ist.
 
@@ -765,7 +765,7 @@ Verweis auf eine Ganzzahl, die die Position des ersten nicht ausgewählten Zeich
 
 Die Version, die ein DWORD zurückgibt, gibt einen-Wert zurück, der die Anfangsposition im nieder wertigen Wort und die Position des ersten nicht ausgewählten Zeichens nach dem Ende der Auswahl im höherwertigen Wort enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [EM_GETSEL](/windows/win32/Controls/em-getsel) in der Windows SDK.
 
@@ -785,7 +785,7 @@ BOOL HideBalloonTip();
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion sendet die [EM_HIDEBALLOONTIP](/windows/win32/Controls/em-hideballoontip) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -802,7 +802,7 @@ void LimitText(int nChars = 0);
 *nchars*<br/>
 Gibt die Länge (in tchars) des Texts an, den der Benutzer eingeben kann. Wenn dieser Parameter 0 ist, wird die Textlänge auf UINT_MAX Bytes festgelegt. Dies ist das Standardverhalten.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch Ändern des Text Limits wird nur der Text eingeschränkt, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, und wirkt sich auch nicht auf die Länge des Texts aus, der von der Element Funktion [SetWindowText](cwnd-class.md#setwindowtext) in `CWnd`in das Bearbeitungs Steuerelement kopiert wurde. Wenn eine Anwendung die `SetWindowText`-Funktion verwendet, um mehr Text in ein Bearbeitungs Steuerelement zu platzieren, als im `LimitText`aufgerufen wird, kann der Benutzer jeden beliebigen Text innerhalb des Bearbeitungs Steuer Elements löschen. Das Text Limit verhindert jedoch, dass der Benutzer den vorhandenen Text durch neuen Text ersetzt, es sei denn, das Löschen der aktuellen Auswahl bewirkt, dass der Text unterhalb des Text Limits liegt.
 
@@ -832,7 +832,7 @@ Enthält den NULL basierten Indexwert für das gewünschte Zeichen im Text des B
 
 Die null basierte Zeilennummer der Zeile, die den durch *nIndex*angegebenen Zeichen Index enthält. Wenn *nIndex* den Wert-1 aufweist, wird die Nummer der Zeile zurückgegeben, die das erste Zeichen der Auswahl enthält. Wenn keine Auswahl vorhanden ist, wird die aktuelle Zeilennummer zurückgegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Zeichen Index ist die Anzahl der Zeichen vom Anfang des Bearbeitungs Steuer Elements.
 
@@ -861,7 +861,7 @@ Enthält den Indexwert für die gewünschte Zeile im Text des Bearbeitungs Steue
 
 Der Zeichen Index der in *nline* angegebenen Zeile oder-1, wenn die angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungs Steuerelement ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Zeichen Index entspricht der Anzahl von Zeichen vom Anfang des Bearbeitungs Steuer Elements bis zur angegebenen Zeile.
 
@@ -898,7 +898,7 @@ Wenn der *nline* -Parameter-1 ist, ist der Rückgabewert die Anzahl der nicht au
 
 Weitere Informationen zum TCHAR-Typ finden Sie in der TCHAR-Zeile in der-Tabelle unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird von der [EM_LINELENGTH](/windows/win32/Controls/em-linelength) Meldung unterstützt, die in der Windows SDK beschrieben wird.
 
@@ -924,7 +924,7 @@ Gibt die Anzahl der Zeilen an, die vertikal scrollen soll.
 *nchars*<br/>
 Gibt die Anzahl der Zeichen Positionen an, die horizontal durchlaufen werden sollen. Dieser Wert wird ignoriert, wenn das Bearbeitungs Steuerelement entweder den ES_RIGHT oder ES_CENTER Stil hat.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
 
@@ -946,7 +946,7 @@ Mit dieser Funktion können Sie die Daten aus der Zwischenablage in die `CEdit` 
 void Paste();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.
 
@@ -973,7 +973,7 @@ Der null basierte Index des angegebenen Zeichens.
 
 Die Koordinaten der linken oberen Ecke des durch *NCHAR*angegebenen Zeichens.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Zeichen wird angegeben, indem der null basierte Indexwert angegeben wird. Wenn *NCHAR* größer als der Index des letzten Zeichens in diesem `CEdit` Objekt ist, gibt der Rückgabewert die Koordinaten der Zeichenposition direkt hinter dem letzten Zeichen in diesem `CEdit` Objekt an.
 
@@ -1000,9 +1000,9 @@ void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE);
 Verweist auf eine mit NULL endenden Zeichenfolge, die den Ersetzungstext enthält.
 
 *bcanundo*<br/>
-Um anzugeben, dass diese Funktion rückgängig gemacht werden kann, legen Sie den Wert dieses Parameters auf true fest. Der Standardwert ist FALSE.
+Um anzugeben, dass diese Funktion rückgängig gemacht werden kann, legen Sie den Wert dieses Parameters auf true fest. Der Standardwert lautet "FALSE".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ersetzt nur einen Teil des Texts in einem Bearbeitungs Steuerelement. Wenn Sie den gesamten Text ersetzen möchten, verwenden Sie die [CWnd:: SetWindowText](cwnd-class.md#setwindowtext) -Member-Funktion.
 
@@ -1036,13 +1036,13 @@ in Wenn der Wert false ist, wird das Hinweis Banner nicht gezeichnet, wenn der B
 
 TRUE gibt an, dass das Hinweis Banner auch dann gezeichnet wird, wenn das Steuerelement den Fokus besitzt. Das Hinweis Banner verschwindet, wenn der Benutzer mit dem Eingeben des Steuer Elements beginnt.
 
-Der Standardwert ist FALSE.
+Der Standardwert lautet "FALSE".
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [EM_SETCUEBANNER](/windows/win32/Controls/em-setcuebanner) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_SetCueBannerTextFocused](/windows/win32/api/commctrl/nf-commctrl-edit_setcuebannertextfocused) -Makro.
 
@@ -1065,7 +1065,7 @@ void SetHandle(HLOCAL hBuffer);
 *hbuffer*<br/>
 Enthält ein Handle für den lokalen Arbeitsspeicher. Dieses Handle muss von einem vorherigen-Befehl der Windows-Funktion [localzuc](/windows/win32/api/winbase/nf-winbase-localalloc) mit dem LMEM_MOVEABLE-Flag erstellt worden sein. Es wird davon ausgegangen, dass der Arbeitsspeicher eine auf NULL endenden Zeichenfolge enthält. Wenn dies nicht der Fall ist, sollte das erste Byte des zugeordneten Speichers auf 0 festgelegt werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Bearbeitungs Steuerelement verwendet diesen Puffer dann, um den aktuell angezeigten Text zu speichern, anstatt seinen eigenen Puffer zuzuweisen.
 
@@ -1098,12 +1098,12 @@ void SetHighlight(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*ichstart*|in NULL basierter Index des ersten Zeichens im Textbereich, der hervorgehoben werden soll.|
 |*ichend*|in Der null basierte Index des letzten Zeichens im Textbereich, der hervorgehoben werden soll.|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die in der Windows SDK beschrieben wird.  Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die in der Windows SDK beschrieben wird. Sowohl `SetHighlight` als auch `GetHighlight` sind nur für Unicode-Builds aktiviert.
 
@@ -1120,7 +1120,7 @@ void SetLimitText(UINT nMax);
 *nMax*<br/>
 Das neue Text Limit in Zeichen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Text Limit ist die maximale Text Menge in Zeichen, die das Bearbeitungs Steuerelement annehmen kann.
 
@@ -1152,7 +1152,7 @@ Die Breite des neuen linken Rands in Pixel.
 *nright*<br/>
 Die Breite des neuen rechten Rands in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 >  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
@@ -1176,7 +1176,7 @@ void SetModify(BOOL bModified = TRUE);
 *bmodified*<br/>
 Der Wert true gibt an, dass der Text geändert wurde, und der Wert false gibt an, dass er unverändert ist. Standardmäßig ist das geänderte Flag festgelegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das geänderte Flag gibt an, ob der Text im Bearbeitungs Steuerelement geändert wurde. Sie wird automatisch festgelegt, wenn der Benutzer den Text ändert. Der Wert kann mit der [getmodify](#getmodify) -Member-Funktion abgerufen werden.
 
@@ -1199,7 +1199,7 @@ void SetPasswordChar(TCHAR ch);
 *ch*<br/>
 Gibt das Zeichen an, das anstelle des vom Benutzer eingegebenen Zeichens angezeigt werden soll. Wenn *ch* den Wert 0 hat, werden die tatsächlich vom Benutzer eingegebenen Zeichen angezeigt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein Kenn Wort Zeichen festgelegt ist, wird dieses Zeichen für jedes Zeichen angezeigt, das der Benutzer eingibt.
 
@@ -1232,7 +1232,7 @@ Gibt an, ob der schreibgeschützte Zustand des Bearbeitungs Steuer Elements fest
 
 Ungleich 0 (null), wenn der Vorgang erfolgreich ist, oder 0, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die aktuelle Einstellung kann gefunden werden, indem Sie das [ES_READONLY](styles-used-by-mfc.md#edit-styles) -Flag im Rückgabewert von [CWnd:: GetStyle](cwnd-class.md#getstyle)testen.
 
@@ -1255,7 +1255,7 @@ void SetRect(LPCRECT lpRect);
 *lprect*<br/>
 Verweist auf die `RECT` Struktur oder `CRect` Objekt, das die neuen Dimensionen des Formatierungs Rechtecks angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Member wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
 
@@ -1284,7 +1284,7 @@ void SetRectNP(LPCRECT lpRect);
 *lprect*<br/>
 Verweist auf eine `RECT` Struktur oder `CRect` Objekt, das die neuen Abmessungen des Rechtecks angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Formatierungs Rechteck ist das einschränkende Rechteck des Texts, der unabhängig von der Größe des Bearbeitungs Steuerelement Fensters ist.
 
@@ -1331,7 +1331,7 @@ Gibt die Anfangsposition an. Wenn *nstartchar* den Wert 0 hat und *nendchar* den
 *nendchar*<br/>
 Gibt die Endposition an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [EM_SETSEL](/windows/win32/Controls/em-setsel) in der Windows SDK.
 
@@ -1367,7 +1367,7 @@ Verweist auf ein Array von ganzen Zahlen ohne Vorzeichen, das die Tabstopps in D
 
 Ungleich NULL, wenn die Registerkarten festgelegt wurden. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Text in ein Bearbeitungs Steuerelement mit mehreren Zeilen kopiert wird, bewirkt jedes Tabulator Zeichen im Text, bis der nächste Tabstopp Bereich angezeigt wird.
 
@@ -1398,7 +1398,7 @@ BOOL ShowBalloonTip(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*peditballoontip*|in Zeiger auf eine [editballoontip](/windows/win32/api/commctrl/ns-commctrl-editballoontip) -Struktur, die die Sprechblasen Info beschreibt.|
 |*lpsztitle*|in Ein Zeiger auf eine Unicode-Zeichenfolge, die den Titel der Sprechblasen info enthält.|
@@ -1409,7 +1409,7 @@ BOOL ShowBalloonTip(
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion sendet die [EM_SHOWBALLOONTIP](/windows/win32/Controls/em-showballoontip) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_ShowBalloonTip](/windows/win32/api/commctrl/nf-commctrl-edit_showballoontip) -Makro.
 
@@ -1437,7 +1437,7 @@ BOOL Undo();
 
 Bei einem einzeiligen Bearbeitungs Steuerelement ist der Rückgabewert immer ungleich 0 (null). Bei einem mehrzeiligen Bearbeitungs Steuerelement ist der Rückgabewert ungleich 0 (null), wenn der Rückgängig-Vorgang erfolgreich ist, oder 0, wenn der Rückgängig-Vorgang fehlschlägt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Rückgängig-Vorgang kann auch rückgängig gemacht werden. Beispielsweise können Sie gelöschten Text mit dem ersten `Undo`-Aufrufvorgang wiederherstellen. Solange es keinen dazwischenliegenden Bearbeitungsvorgang gibt, können Sie den Text mit einem zweiten Aufruf`Undo`erneut entfernen.
 
@@ -1447,7 +1447,7 @@ Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo
 
 [!code-cpp[NVC_MFC_CEdit#25](../../mfc/reference/codesnippet/cpp/cedit-class_27.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel für CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - std::complex [C++], real
 ms.assetid: d6492e1c-5eba-4bc5-835b-2a88001a5868
 ms.openlocfilehash: 0c72726bfb92965a2152830d7ce77ae13f763d35
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876203"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423942"
 ---
 # <a name="complex-class"></a>complex-Klasse
 
@@ -28,7 +28,7 @@ template <class Type>
 class complex
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Objekt der Klasse `Type`:
 
@@ -42,7 +42,7 @@ Insbesondere dürfen keine feinen Unterschiede zwischen einer Kopierkonstruktion
 
 Für die drei Gleit Komma Typen sind explizite Spezialisierungs Klassen Vorlagen Komplex vorhanden. In dieser Implementierung wird ein Wert eines beliebigen anderen Typs `Type` für tatsächliche Berechnungen in **Double** umgewandelt, wobei dem gespeicherten Objekt vom Typ `Type`das **doppelte** Ergebnis zurück zugewiesen wird.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -56,12 +56,12 @@ Für die drei Gleit Komma Typen sind explizite Spezialisierungs Klassen Vorlagen
 |-|-|
 |[value_type](#value_type)|Ein Typ, der den Datentyp darstellt, der für die Darstellung der Real- und Imaginärteile einer komplexen Zahl verwendet wird|
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Funktionen
 
 |||
 |-|-|
 |[imag](#imag)|Extrahiert die imaginäre Komponente einer komplexen Zahl.|
-|[real](#real)|Extrahiert die reelle Komponente einer komplexen Zahl.|
+|[Real](#real)|Extrahiert die reelle Komponente einer komplexen Zahl.|
 
 ### <a name="operators"></a>Operatoren
 
@@ -98,7 +98,7 @@ Der Wert des imaginären Teils, der zum Initialisieren der zu erstellenden kompl
 *complexnum* -\
 Die komplexe Zahl, deren reelle und imaginäre Teile zum Initialisieren der zu erstellenden komplexen Zahl verwendet werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor initialisiert den gespeicherten reellen Teil in *\_RealVal* und den gespeicherten imaginären Teil in *\_Imagval*. Der zweite Konstruktor initialisiert den gespeicherten reellen Teil `complexNum.real()` und den gespeicherten imaginären Teil, der `complexNum.imag()`werden soll.
 
@@ -176,7 +176,7 @@ Eine komplexe Zahl, deren imaginärer Wert extrahiert werden soll.
 
 Der imaginäre Teil der komplexen Zahl.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für eine komplexe Zahl *a + BI*ist der Imaginärteil bzw. die imaginäre Komponente *im (a + BI) = b*.
 
@@ -233,7 +233,7 @@ Eine komplexe Zahl oder eine Zahl vom gleichen Typ wie der Parameter der komplex
 
 Eine komplexe Zahl, die mit der als Parameter angegebenen Zahl multipliziert wurde
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -318,7 +318,7 @@ Eine komplexe Zahl oder eine Zahl vom gleichen Typ wie der Parameter der komplex
 
 Eine komplexe Zahl, der die als Parameter angegebene Zahl hinzugefügt wurde
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -424,7 +424,7 @@ Eine reelle Zahl, die von der komplexen Zielzahl subtrahiert werden soll
 
 Eine komplexe Zahl, von der die als Parameter angegebene Zahl subtrahiert wurde
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -532,7 +532,7 @@ Eine reelle Zahl, die von der komplexen Zielzahl subtrahiert werden soll
 
 Eine komplexe Zahl, die durch die als Parameter angegebene Zahl dividiert wurde
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -631,7 +631,7 @@ Eine komplexe Zahl oder eine Zahl vom gleichen Typ wie der Parameter der komplex
 
 Eine komplexe Zahl, der die als Parameter angegebene Zahl zugewiesen wurde
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -708,7 +708,7 @@ Eine komplexe Zahl, deren reeller Wert extrahiert werden soll.
 
 Der reelle Teil der komplexen Zahl.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für eine komplexe Zahl *a + BI*ist der reelle Teil bzw. die reelle Komponente *re (a + BI) = a*.
 
@@ -751,7 +751,7 @@ Ein Typ, der den Datentyp darstellt, der für die Darstellung der Real- und Imag
 typedef Type value_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `value_type` ist ein Synonym für die Klasse Complex `Type` Template-Parameter.
 
@@ -780,6 +780,6 @@ Specifying initial real & imaginary parts
 of type value_type: c1 = (3,4).
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - canceling parallel tasks [Concurrency Runtime]
 ms.assetid: baaef417-b2f9-470e-b8bd-9ed890725b35
 ms.openlocfilehash: 6e23ccd6fcae03bcad40ea560356f4d1290dbcdd
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866336"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427488"
 ---
 # <a name="cancellation-in-the-ppl"></a>Abbruch in der PPL
 
@@ -23,7 +23,7 @@ In diesem Dokument wird die Rolle des Abbruchs in der Parallel Patterns Library 
 > [!NOTE]
 > Die Laufzeit implementiert Abbrüche mithilfe der Ausnahmebehandlung. Diese Ausnahmen dürfen im eigenen Code nicht abgefangen oder behandelt werden. Außerdem empfiehlt es sich, ausnahmesicheren Code in den Funktionsrümpfen der Aufgaben zu schreiben. Beispielsweise können Sie das Muster *Resource Acquisition Is Initialization* (RAII) verwenden, um sicherzustellen, dass Ressourcen ordnungsgemäß verarbeitet werden, wenn eine Ausnahme im Text einer Aufgabe ausgelöst wird. Ein umfassendes Beispiel, in dem das RAII-Muster verwendet wird, um eine Ressource in einer abbrechbaren Aufgabe zu bereinigen, finden Sie unter Exemplarische Vorgehensweise [: Entfernen von Arbeit aus einem Benutzeroberflächen Thread](../../parallel/concrt/walkthrough-removing-work-from-a-user-interface-thread.md).
 
-## <a name="key-points"></a>Die wichtigsten Punkte
+## <a name="key-points"></a>Wesentliche Punkte
 
 - Das Abbrechen ist ein kooperativer Vorgang und beinhaltet die Koordination zwischen dem Code, der den Abbruch verlangt, und der Aufgabe, die auf den Abbruch reagieren muss.
 
@@ -242,11 +242,11 @@ Die Verwendung eines Abbruchs ist sinnvoll, wenn jeder Member einer Gruppe zusam
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-|Titel|BESCHREIBUNG|
+|Titel|Beschreibung|
 |-----------|-----------------|
 |[Vorgehensweise: Verwenden eines Abbruchs zum Verlassen einer Parallel-Schleife](../../parallel/concrt/how-to-use-cancellation-to-break-from-a-parallel-loop.md)|Zeigt, wie mit dem Abbrechen ein paralleler Suchalgorithmus implementiert wird.|
 |[Vorgehensweise: Verwenden der Ausnahmebehandlung zum Verlassen einer Parallel-Schleife](../../parallel/concrt/how-to-use-exception-handling-to-break-from-a-parallel-loop.md)|Zeigt, wie mit der `task_group`-Klasse ein Suchalgorithmus für eine einfache Struktur geschrieben wird.|
-|[Behandlung von Ausnahmen](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)|Beschreibt, wie die Runtime Ausnahmen behandelt, die von Aufgabengruppen, einfachen Aufgaben und asynchronen Agents ausgelöst werden, und wie in Anwendungen auf Ausnahmen reagiert wird.|
+|[Ausnahmebehandlung](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)|Beschreibt, wie die Runtime Ausnahmen behandelt, die von Aufgabengruppen, einfachen Aufgaben und asynchronen Agents ausgelöst werden, und wie in Anwendungen auf Ausnahmen reagiert wird.|
 |[Aufgaben Parallelität](../../parallel/concrt/task-parallelism-concurrency-runtime.md)|Beschreibt, wie sich Aufgaben und Aufgabengruppen zueinander verhalten und wie Sie unstrukturierte und strukturierte Parallelität in Ihren Anwendungen verwenden können.|
 |[Parallele Algorithmen](../../parallel/concrt/parallel-algorithms.md)|Beschreibt die parallelen Algorithmen, die Auflistungen von Daten gleichzeitig verarbeiten.|
 |[Parallel Patterns Library (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)|Eine Übersicht über die Parallel Patterns Library.|

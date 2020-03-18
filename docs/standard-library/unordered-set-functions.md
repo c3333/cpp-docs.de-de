@@ -6,11 +6,11 @@ f1_keywords:
 - unordered_set/std::swap (unordered_multiset)
 ms.assetid: 66b35671-4023-4411-ad50-83786580d8ee
 ms.openlocfilehash: 6b6e764acc9fa3410a44a4a11760933328365852
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890737"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427692"
 ---
 # <a name="ltunordered_setgt-functions"></a>&lt;unordered_set&gt;-Funktionen
 
@@ -45,7 +45,7 @@ Der erste zu tauschende Container.
 *Rechte*\
 Der zweite zu tauschende Container.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion führt `left.`[unordered_set::swap](../standard-library/unordered-set-class.md#swap)`(right)` aus.
 
@@ -133,7 +133,7 @@ Der erste zu tauschende Container.
 *Rechte*\
 Der zweite zu tauschende Container.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion führt `left.`[unordered_multiset::swap](../standard-library/unordered-multiset-class.md#swap)`(right)` aus.
 

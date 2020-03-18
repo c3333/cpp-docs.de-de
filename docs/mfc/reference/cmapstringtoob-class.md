@@ -35,11 +35,11 @@ helpviewer_keywords:
 - CMapStringToOb [MFC], SetAt
 ms.assetid: 09653980-b885-4f3a-8594-0aeb7f94c601
 ms.openlocfilehash: b56e9052533269ba62d248312f07ac16db71bf4a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876373"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424320"
 ---
 # <a name="cmapstringtoob-class"></a>CMapStringToOb Class
 
@@ -51,17 +51,17 @@ Eine Wörterbuchauflistungsklasse, die eindeutige `CString` -Objekte und `CObjec
 class CMapStringToOb : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmapstringderob:: cmapstringdeob](#cmapstringtoob)|Konstruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmapstringchanob:: GetCount](#getcount)|Gibt die Anzahl der Elemente in dieser Karte zurück.|
 |[Cmapstringthob:: gethashtablesize](#gethashtablesize)|Bestimmt die aktuelle Anzahl der Elemente in der Hash Tabelle.|
@@ -79,11 +79,11 @@ class CMapStringToOb : public CObject
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmapstringto ob:: Operator \[ \]](#operator_at)|Fügt ein Element in die Map –-Operator Ersetzung für `SetAt`ein.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Nachdem Sie eine `CString`- `CObject*` Pair (-Element) in die Zuordnung eingefügt haben, können Sie das Paar effizient abrufen oder löschen, indem Sie eine Zeichenfolge oder einen `CString` Wert als Schlüssel verwenden. Sie können auch alle Elemente in der Zuordnung durchlaufen.
 
@@ -103,7 +103,7 @@ Die Zuordnung der Karten Klasse ähnelt der Listen Ableitung. Im Artikel [Sammlu
 
 `CMapStringToOb`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcoll. h
 
@@ -120,7 +120,7 @@ CMapStringToOb(INT_PTR nBlockSize = 10);
 *nblocksize*<br/>
 Gibt die Speicher Belegungs Granularität für die Erweiterung der Zuordnung an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Zuordnung zunimmt, wird der Arbeitsspeicher in Einheiten von *nblocksize* -Einträgen zugeordnet.
 
@@ -153,7 +153,7 @@ INT_PTR GetCount() const;
 
 Die Anzahl der Elemente in dieser Karte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle werden andere Element Funktionen angezeigt, die `CMapStringToOb::GetCount`ähneln.
 
@@ -184,7 +184,7 @@ UINT GetHashTableSize() const;
 
 Gibt die Anzahl der Elemente in der Hash Tabelle zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle werden andere Element Funktionen angezeigt, die `CMapStringToOb::GetHashTableSize`ähneln.
 
@@ -219,7 +219,7 @@ Gibt den zurückgegebenen Schlüssel des abgerufenen Elements an (eine Zeichenfo
 *rValue*<br/>
 Gibt den zurückgegebenen Wert des abgerufenen Elements an (ein `CObject` Zeiger). Weitere Informationen zu diesem Parameter finden Sie unter "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion ist besonders nützlich für das Durchlaufen aller Elemente in der Zuordnung. Beachten Sie, dass die Positions Sequenz nicht notwendigerweise mit der Schlüsselwert Sequenz identisch ist.
 
@@ -269,7 +269,7 @@ INT_PTR GetSize() const;
 
 Die Anzahl der Elemente in der Zuordnung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Methode auf, um die Anzahl der Elemente in der Zuordnung abzurufen.
 
@@ -300,7 +300,7 @@ POSITION GetStartPosition() const;
 
 Ein Positionswert, der eine Anfangs Position zum Durchlaufen der Zuordnung angibt. oder NULL, wenn die Zuordnung leer ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Iterations Sequenz ist nicht vorhersagbar. Daher hat das "erste Element in der Zuordnung" keine besondere Bedeutung.
 
@@ -336,7 +336,7 @@ Der Schlüssel, dessen Hashwert berechnet werden soll.
 
 Der Hashwert des Schlüssels.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle werden andere Element Funktionen angezeigt, die `CMapStringToOb::HashKey`ähneln.
 
@@ -367,7 +367,7 @@ Anzahl der Einträge in der Hash Tabelle.
 *ballocnow*<br/>
 Wenn true, wird die Hash Tabelle bei der Initialisierung zugewiesen. Andernfalls wird die Tabelle bei Bedarf zugewiesen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Für eine optimale Leistung sollte die Hash Tabellengröße eine Primzahl sein. Um Konflikte zu minimieren, sollte die Größe ungefähr 20 Prozent größer sein als das größte erwartete DataSet.
 
@@ -398,7 +398,7 @@ Ungleich 0 (null), wenn diese Zuordnung keine Elemente enthält; andernfalls 0.
 
 Weitere Informationen finden Sie im Beispiel für [RemoveAll](#removeall).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle werden andere Element Funktionen angezeigt, die **cmapstringtob:: IsEmpty**ähneln.
 
@@ -433,7 +433,7 @@ Gibt den zurückgegebenen Wert des aufsuchten Elements an.
 
 Ungleich 0 (null), wenn das Element gefunden wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `Lookup` verwendet einen Hash Algorithmus, um schnell das MAP-Element mit einem Schlüssel zu finden, der genau übereinstimmt (`CString` Wert).
 
@@ -476,7 +476,7 @@ Der Verweis auf den zugeordneten Schlüssel.
 
 Ungleich 0 (null), wenn der Schlüssel gefunden wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Verwendung eines Verweises auf einen Schlüssel ist unsicher, wenn er nach dem Entfernen des zugeordneten Elements aus der Zuordnung oder nach dem Entfernen der Zuordnung verwendet wird.
 
@@ -499,7 +499,7 @@ CObject*& operator[ ](lpctstr key);
 
 Ein Verweis auf einen Zeiger auf ein `CObject` Objekt. oder NULL, wenn die Zuordnung leer ist oder der *Schlüssel* außerhalb des gültigen Bereichs liegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daher kann Sie nur auf der linken Seite einer Zuweisungsanweisung (ein l-Wert) verwendet werden. Wenn kein MAP-Element mit dem angegebenen Schlüssel vorhanden ist, wird ein neues Element erstellt.
 
@@ -538,7 +538,7 @@ Entfernt alle Elemente aus dieser Zuordnung und zerstört die `CString` Schlüss
 void RemoveAll();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `CObject` Objekte, auf die von jedem Schlüssel verwiesen wird, werden nicht zerstört. Die `RemoveAll` Funktion kann Speicher Verluste verursachen, wenn Sie nicht sicherstellen, dass die `CObject` Objekte, auf die verwiesen wird, zerstört werden.
 
@@ -578,7 +578,7 @@ Gibt die für die Kartensuche verwendete Zeichenfolge an.
 
 Ungleich 0 (null), wenn der Eintrag gefunden und erfolgreich entfernt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies kann zu Speicher Verlusten führen, wenn das `CObject` Objekt nicht an anderer Stelle gelöscht wird.
 
@@ -626,7 +626,7 @@ Gibt die Zeichenfolge an, die der Schlüssel des neuen Elements ist.
 *newValue*<br/>
 Gibt den `CObject` Zeiger an, bei dem es sich um den Wert des neuen Elements handelt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zuerst wird der Schlüssel gesucht. Wenn der Schlüssel gefunden wird, wird der entsprechende Wert geändert. Andernfalls wird ein neues Schlüssel-Wert-Element erstellt.
 
@@ -658,7 +658,7 @@ after Lisa's birthday: A CMapStringToOb with 2 elements
 [Bart] = a CAge at $4654 13
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

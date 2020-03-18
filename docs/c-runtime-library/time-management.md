@@ -1,22 +1,20 @@
 ---
-title: Uhrzeitverwaltung
+title: Zeitmanagement
 ms.date: 11/04/2016
-f1_keywords:
-- c.memory
 helpviewer_keywords:
 - dates, run-time library members
 - time, time management
 - date functions
 - time functions
 ms.assetid: 93599220-c011-45d5-978f-12182abfdd2f
-ms.openlocfilehash: e9842d8c24089c7fbb33745c3bf5d4edb1d29343
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: 24859a0b35274881b03b960807904ed38b19e354
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65446785"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444589"
 ---
-# <a name="time-management"></a>Uhrzeitverwaltung
+# <a name="time-management"></a>Zeitmanagement
 
 Verwenden Sie diese Funktionen, um die aktuelle Uhrzeit abzurufen und sie nach Bedarf zu konvertieren, anzupassen und zu speichern. Die aktuelle Uhrzeit ist die Systemzeit.
 
@@ -24,7 +22,7 @@ Die Routinen **_ftime** und **localtime** verwenden die Umgebungsvariable **TZ**
 
 ### <a name="time-routines"></a>Uhrzeitroutinen
 
-|Funktion|Verwendung|
+|Funktion|Zweck|
 |--------------|---------|
 |[asctime, _wasctime](../c-runtime-library/reference/asctime-wasctime.md), [asctime_s, _wasctime_s](../c-runtime-library/reference/asctime-s-wasctime-s.md)|Konvertiert einen Zeitwert vom Typ **struct tm** in eine Zeichenfolge. Die Versionen dieser Funktionen mit dem Suffix **_s** sind sicherer.|
 |[clock](../c-runtime-library/reference/clock.md)|Gibt die verstrichene Wanduhrzeit für den Prozess zurück.|
@@ -47,8 +45,8 @@ Die Routinen **_ftime** und **localtime** verwenden die Umgebungsvariable **TZ**
 > Die Uhrzeitfunktion gibt in allen Versionen von Microsoft C/C++ (mit Ausnahme von Microsoft C/C++ 7.0) und in allen Versionen von Visual C++ die aktuelle Uhrzeit als die Anzahl von Sekunden zurück, die seit dem 1. Januar 1970 verstrichen sind. In Microsoft C/C++ 7.0 gab **time** die aktuelle Uhrzeit als die Anzahl von Sekunden zurück, die seit dem 31. Dezember 1899 verstrichen sind.
 
 > [!NOTE]
-> In Versionen von Microsoft Visual C++ und Microsoft C/C++ vor Visual Studio 2005 hatte **time_t** den Datentyp **long** **int** (32 Bit) und konnte deshalb nicht für Datumsangaben nach dem 19. Januar 2038, 3:14:07 UTC verwendet werden. **time_t** entspricht jetzt standardmäßig **__time64_t**, aber das Definieren von **_USE_32BIT_TIME_T** ändert **time_t** in **__time32_t** und zwingt viele Zeitfunktionen zum Aufruf von Versionen, die die 32-Bit-Version von **time_t** akzeptieren. Weitere Informationen finden Sie unter [Standardtypen](../c-runtime-library/standard-types.md) und in den Kommentaren in der Dokumentation zu den einzelnen Zeitfunktionen.
+> In Versionen von Visual C++ und Microsoft C/C++ vor Visual Studio 2005 war **time_t** eine **lange** **int** (32 Bits) und konnte deshalb nicht für Datumsangaben nach dem 19. Januar 3:14:07, 2038 UTC verwendet werden. **time_t** entspricht jetzt standardmäßig **__time64_t**, aber das Definieren von **_USE_32BIT_TIME_T** ändert **time_t** in **__time32_t** und zwingt viele Zeitfunktionen zum Aufruf von Versionen, die die 32-Bit-Version von **time_t** akzeptieren. Weitere Informationen finden Sie unter [Standardtypen](../c-runtime-library/standard-types.md) und in den Kommentaren in der Dokumentation zu den einzelnen Zeitfunktionen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

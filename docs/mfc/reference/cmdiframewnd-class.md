@@ -35,11 +35,11 @@ helpviewer_keywords:
 - CMDIFrameWnd [MFC], MDITile
 ms.assetid: fa8736e6-511b-4c51-8b4d-eba78378aeb9
 ms.openlocfilehash: 20d74030cdc90ed2e1a7809c121967e74db21b4a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866559"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424302"
 ---
 # <a name="cmdiframewnd-class"></a>CMDIFrameWnd-Klasse
 
@@ -51,17 +51,17 @@ Stellt die Funktionalität eines untergeordneten Windows-MDI-Rahmenfensters (Mul
 class CMDIFrameWnd : public CFrameWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMDIFrameWnd:: CMDIFrameWnd](#cmdiframewnd)|Erstellt ein Objekt vom Typ `CMDIFrameWnd`.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMDIFrameWnd:: anateclient](#createclient)|Erstellt ein Windows MDICLIENT-Fenster für dieses `CMDIFrameWnd`. Wird von der `OnCreate` Member-Funktion von `CWnd`aufgerufen.|
 |[CMDIFrameWnd:: kreatenewchild](#createnewchild)|Erstellt ein neues untergeordnetes Fenster.|
@@ -77,7 +77,7 @@ class CMDIFrameWnd : public CFrameWnd
 |[CMDIFrameWnd:: mdisetmenu](#mdisetmenu)|Ersetzt das Menü eines MDI-Rahmen Fensters, das Popup Menü des Fensters oder beides.|
 |[CMDIFrameWnd:: mditile](#mditile)|Ordnet alle untergeordneten Fenster in einem gekachelten Format an.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Um ein nützliches MDI-Rahmen Fenster für die Anwendung zu erstellen, leiten Sie eine Klasse von `CMDIFrameWnd`ab. Fügen Sie der abgeleiteten Klasse Element Variablen hinzu, um Daten zu speichern, die für Ihre Anwendung spezifisch sind. Implementieren Sie Meldungshandler-Memberfunktionen und eine Meldungszuordnung in der abgeleiteten Klasse, um anzugeben, was passiert, wenn Meldungen an das Fenster weitergeleitet werden.
 
@@ -127,7 +127,7 @@ Weitere Informationen zu `CMDIFrameWnd`finden Sie unter [Rahmen Fenster](../../m
 
 `CMDIFrameWnd`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -139,7 +139,7 @@ Erstellt ein `CMDIFrameWnd`-Objekt.
 CMDIFrameWnd();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie die `Create`-oder `LoadFrame` Member-Funktion auf, um das sichtbare MDI-Rahmen Fenster zu erstellen.
 
@@ -169,7 +169,7 @@ Ein Zeiger auf das Fenster Popup-Menü.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion sollte aufgerufen werden, wenn Sie die `OnCreate` Member-Funktion direkt überschreiben.
 
@@ -203,7 +203,7 @@ Das Menü des untergeordneten Fensters.
 *haccel*<br/>
 Die Zugriffstaste des untergeordneten Fensters.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um untergeordnete Fenster eines MDI-Rahmen Fensters zu erstellen.
 
@@ -228,7 +228,7 @@ Die aktuelle Menüleiste.
 
 Das Popup Menü des Fensters, wenn ein solches vorhanden ist. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung sucht nach einem Popupmenü, das Standardmenü Befehle für Fenster wie ID_WINDOW_NEW und ID_WINDOW_TILE_HORZ enthält.
 
@@ -251,7 +251,7 @@ void MDIActivate(CWnd* pWndActivate);
 *pwndaktivierung*<br/>
 Verweist auf das untergeordnete MDI-Fenster, das aktiviert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion sendet die [WM_MDIACTIVATE](../../mfc/reference/cwnd-class.md#onmdiactivate) Nachricht an das untergeordnete Fenster, das aktiviert wird, und das untergeordnete Fenster, das deaktiviert wird.
 
@@ -278,7 +278,7 @@ void MDICascade(int nType);
 *nType*<br/>
 Gibt ein Cascade-Flag an. Es kann nur das folgende Flag angegeben werden: MDITILE_SKIPDISABLED, das verhindert, dass deaktivierte untergeordnete MDI-Fenster kaskadiert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der ersten Version `MDICascade`ohne Parameter werden alle untergeordneten MDI-Fenster, einschließlich der deaktivierten, kaskadiert. Die zweite Version führt optional zu deaktivierten untergeordneten MDI-Fenstern, wenn Sie MDITILE_SKIPDISABLED für den *nType* -Parameter angeben.
 
@@ -315,7 +315,7 @@ Ordnet alle untergeordneten Fenster von Dokumenten an.
 void MDIIconArrange();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Untergeordnete Fenster, die nicht minimiert sind, sind nicht betroffen.
 
@@ -336,7 +336,7 @@ void MDIMaximize(CWnd* pWnd);
 *folgenden*<br/>
 Zeigt auf das Fenster, das maximiert werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein untergeordnetes Fenster maximiert ist, ändert Windows seine Größe, damit der Client Bereich das Client Fenster ausfüllen kann. Windows legt das Steuerelement Menü des untergeordneten Fensters in der Menüleiste des Frames ab, sodass der Benutzer das untergeordnete Fenster wiederherstellen oder schließen kann. Außerdem wird dem Rahmen Fenstertitel der Titel des untergeordneten Fensters hinzugefügt.
 
@@ -354,7 +354,7 @@ Aktiviert das untergeordnete Fenster direkt hinter dem momentan aktiven untergeo
 void MDINext();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das momentan aktive untergeordnete MDI-Fenster maximiert ist, stellt die Member-Funktion das momentan aktive untergeordnete Element wieder her und maximiert das neu aktivierte untergeordnete Element.
 
@@ -370,7 +370,7 @@ Aktiviert das vorherige untergeordnete Fenster und platziert das momentan aktive
 void MDIPrev();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das momentan aktive untergeordnete MDI-Fenster maximiert ist, stellt die Member-Funktion das momentan aktive untergeordnete Element wieder her und maximiert das neu aktivierte untergeordnete Element.
 
@@ -413,7 +413,7 @@ Gibt das Menü des Popup Menüs für das neue Fenster an. Wenn der Wert NULL ist
 
 Ein Zeiger auf das Rahmen Fenstermenü, das durch diese Meldung ersetzt wurde. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nach dem Aufrufen von `MDISetMenu`muss eine Anwendung die [DrawMenuBar](../../mfc/reference/cwnd-class.md#drawmenubar) -Member-Funktion von `CWnd` aufrufen, um die Menüleiste zu aktualisieren.
 
@@ -449,7 +449,7 @@ Gibt ein tilinger-Flag an. Dieser Parameter kann eines der folgenden Flags sein:
 
 - MDITILE_VERTICAL Kacheln untergeordneter MDI-Fenster, sodass ein Fenster neben einem anderen Fenster angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit der ersten Version von `MDITile`ohne Parameter werden die Fenster in den Windows-Versionen 3,1 und höher vertikal nebeneinander angezeigt. Die zweite Version Kacheln Fenster vertikal oder horizontal, abhängig vom Wert des *nType* -Parameters.
 
@@ -457,7 +457,7 @@ Mit der ersten Version von `MDITile`ohne Parameter werden die Fenster in den Win
 
 Weitere Informationen finden Sie im Beispiel für [CMDIFrameWnd:: mdicascade](#mdicascade).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-MDI](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>

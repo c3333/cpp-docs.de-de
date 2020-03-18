@@ -1,8 +1,6 @@
 ---
 title: Was ist ein CArchive-Objekt?
 ms.date: 11/04/2016
-f1_keywords:
-- CArchive
 helpviewer_keywords:
 - archive objects [MFC]
 - archives [MFC], for serialization
@@ -10,23 +8,23 @@ helpviewer_keywords:
 - CArchive class [MFC], about CArchive class [MFC]
 - buffering, serializable objects
 ms.assetid: 843f1825-288d-4d89-a1fa-70e1f92d9b8b
-ms.openlocfilehash: 4bae451168449ce3e120ba9d172a615864ac2157
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 0a78385c81c43a4b0c925bbe89ccd3937873ee8b
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346380"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446017"
 ---
 # <a name="what-is-a-carchive-object"></a>Was ist ein CArchive-Objekt?
 
-Ein `CArchive` Objekt lässt sich als typsicherer Pufferung für das Schreiben oder Lesen serialisierbare Objekte aus einer `CFile` Objekt. In der Regel die `CFile` Objekt darstellt, eine Datenträgerdatei, jedoch kann er auch einer Arbeitsspeicherdatei sein (`CSharedFile` Objekt), z. B., die Zwischenablage darstellt.
+Ein `CArchive`-Objekt stellt einen typsicheren Puffer Mechanismus zum Schreiben oder Lesen von serialisierbaren Objekten in ein oder aus einem `CFile` Objekt bereit. Das `CFile`-Objekt stellt normalerweise eine Datenträger Datei dar. Es kann sich jedoch auch um eine Speicherdatei (`CSharedFile` Objekt) handeln, die möglicherweise die Zwischenablage darstellt.
 
-Ein angegebener `CArchive` Objekt entweder Speicher (schreibt, serialisiert) oder das Laden (liest, deserialisiert) Daten, aber nicht beides. Die Lebensdauer einer `CArchive` Objekt ist eine Pass-through-Objekte in eine Datei schreiben oder Lesen von Objekten aus einer Datei auf. Daher zwei nacheinander erstellt `CArchive` Objekte sind erforderlich, um Daten in eine Datei zu serialisieren und Deserialisieren Sie ihn anschließend aus der Datei zurück.
+Ein angegebenes `CArchive` Objekt speichert (schreibt, serialisiert) Daten oder lädt Sie (liest, deserialisiert), aber nicht beides. Die Lebensdauer eines `CArchive` Objekts ist auf einen Pass-Through-Vorgang zum Schreiben von Objekten in eine Datei oder zum Lesen von Objekten aus einer Datei beschränkt. Folglich sind zwei nacheinander erstellte `CArchive`-Objekte erforderlich, um Daten in eine Datei zu serialisieren und Sie dann wieder aus der Datei zu deserialisieren.
 
-Wenn ein Archiv Objekte in einer Datei speichert, fügt das Archiv der `CRuntimeClass` Namen auf die Objekte. Dann, wenn ein weiteres Archiv Objekte aus einer Datei in den Speicher, lädt die `CObject`-abgeleitete Objekte sind dynamisch rekonstruiert basierend auf den `CRuntimeClass` der Objekte. Ein angegebenes Objekt kann mehr als einmal verwiesen werden, wie sie in der Datei durch das Speichern von Archiv geschrieben wird. Das Archiv laden, wird das Objekt jedoch nur einmal rekonstruieren. Die Informationen darüber, wie ein Archiv angefügt wird `CRuntimeClass` werden Informationen zu Objekten und rekonstruiert-Objekten berücksichtigt möglich mehrere Verweise in beschrieben [technischen Hinweis 2](../mfc/tn002-persistent-object-data-format.md).
+Wenn in einem Archiv Objekte in einer Datei gespeichert werden, fügt das Archiv den `CRuntimeClass` Namen an die-Objekte an. Wenn dann Objekte in einem anderen Archiv aus einer Datei in den Arbeitsspeicher geladen werden, werden die `CObject`von abgeleiteten Objekten basierend auf den `CRuntimeClass` der Objekte dynamisch rekonstruiert. Auf ein bestimmtes Objekt kann mehrmals verwiesen werden, da es durch das speichernde Archiv in die Datei geschrieben wird. Das Lade Archiv rekonstruiert das Objekt jedoch nur einmal. Die Details zur Vorgehensweise beim Anordnen von `CRuntimeClass` Informationen an Objekte und zum erneuten Konstruieren von Objekten, wobei möglicherweise mehrere Verweise berücksichtigt werden, werden in [Technical Note 2](../mfc/tn002-persistent-object-data-format.md)beschrieben.
 
-Wie Daten in ein Archiv serialisiert sind, sammelt das Archiv die Daten, bis der Puffer voll ist. Dann das Archiv auf den Puffer in schreibt die `CFile` Objekt verweist die `CArchive` Objekt. Auf ähnliche Weise, wie Sie Daten aus einem Archiv lesen, liest er Daten aus der Datei in den Puffer, und klicken Sie dann aus dem Puffer in das deserialisierte Objekt. Diese Pufferung reduziert die Anzahl der Häufigkeit, mit die eine Festplatte physisch gelesen wird, die somit verbessern die Leistung Ihrer Anwendung.
+Wenn Daten in ein Archiv serialisiert werden, akkumuliert das Archiv die Daten, bis der Puffer voll ist. Dann schreibt das Archiv seinen Puffer in das `CFile` Objekt, auf das das `CArchive` Objekt zeigt. Ebenso werden beim Lesen von Daten aus einem Archivdaten aus der Datei in den Puffer und dann aus dem Puffer in das deserialisierte Objekt gelesen. Diese Pufferung reduziert die Anzahl der physischen Lesevorgänge einer Festplatte und verbessert so die Leistung Ihrer Anwendung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Serialisierung: Serialisieren eines Objekts](../mfc/serialization-serializing-an-object.md)

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - databases [MFC], dialog data exchange (DDX) support
 - DAO [MFC], dialog data exchange (DDX) support
 ms.assetid: 0d8cde38-3a2c-4100-9589-ac80a7b1ce91
-ms.openlocfilehash: 8b216941837cd79492aa6cb707481073b5321bce
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 48ffe6f124b91ee8ad60452f26d895bc2698779b
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866593"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447305"
 ---
 # <a name="dialog-data-exchange-functions-for-crecordview-and-cdaorecordview"></a>Dialogdatenaustausch-Funktionen für CRecordView und CDaoRecordView
 
@@ -476,7 +476,8 @@ Ein allgemeines DDX_Field Beispiel finden Sie unter [DDX_FieldText](#ddx_fieldte
 
   **Header** afxdao. h
 
-  ## <a name="ddx_fieldslider"></a>DDX_FieldSlider
+## <a name="ddx_fieldslider"></a>DDX_FieldSlider
+
 Die `DDX_FieldSlider`-Funktion synchronisiert die Ziehpunkt Position eines Schieberegler-Steuer Elements in einer Daten Satz Ansicht und einen **int** -Felddatenmember eines Recordsets, das der Daten Satz Ansicht zugeordnet ist (oder mit einer beliebigen ganzzahligen Variablen, der Sie zugeordnet werden).
 
 ### <a name="syntax"></a>Syntax

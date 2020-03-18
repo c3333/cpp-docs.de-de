@@ -1,40 +1,38 @@
 ---
 title: Verwenden von CToolTipCtrl zum Erstellen und Bearbeiten eines CToolTipCtrl-Objekts
 ms.date: 11/04/2016
-f1_keywords:
-- CToolTipCtrl
 helpviewer_keywords:
 - tool tips [MFC], creating
 - CToolTipCtrl class [MFC], using
 ms.assetid: 0a34583f-f66d-46a1-a239-31b80ea395ad
-ms.openlocfilehash: b0f008c70eeb43455408e5b0ad302df6b923608e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 37dc7bc5a411ebab3737b87fd6977b26cff68178
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411642"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442219"
 ---
 # <a name="using-ctooltipctrl-to-create-and-manipulate-a-ctooltipctrl-object"></a>Verwenden von CToolTipCtrl zum Erstellen und Bearbeiten eines CToolTipCtrl-Objekts
 
-Es folgt ein Beispiel der [CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md) Nutzung:
+Im folgenden finden Sie ein Beispiel für die Verwendung von [CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md) :
 
-### <a name="to-create-and-manipulate-a-ctooltipctrl"></a>Zum Erstellen und Bearbeiten von CToolTipCtrl
+### <a name="to-create-and-manipulate-a-ctooltipctrl"></a>So erstellen und bearbeiten Sie einen CToolTipCtrl
 
-1. Erstellen der `CToolTipCtrl` Objekt.
+1. Erstellen Sie das `CToolTipCtrl`-Objekt.
 
-1. Rufen Sie [erstellen](../mfc/reference/ctooltipctrl-class.md#create) zum Erstellen von Windows QuickInfo common-Steuerelements, und fügen Sie ihn auf die `CToolTipCtrl` Objekt.
+1. Rufen Sie [Create](../mfc/reference/ctooltipctrl-class.md#create) auf, um das allgemeine Steuerelement für die Windows-ToolTip zu erstellen, und fügen Sie es dem `CToolTipCtrl`
 
-1. Rufen Sie [Sie AddTool](../mfc/reference/ctooltipctrl-class.md#addtool) um ein Tool mit dem QuickInfo-Steuerelement, zu registrieren, damit die Informationen gespeichert, in der QuickInfo angezeigt wird, wenn der Cursor auf das Tool befindet.
+1. Ruft [AddTool](../mfc/reference/ctooltipctrl-class.md#addtool) auf, um ein Tool mit dem QuickInfo-Steuerelement zu registrieren, sodass die in der QuickInfo gespeicherten Informationen angezeigt werden, wenn sich der Cursor auf dem Tool befindet.
 
-1. Rufen Sie [Sie SetToolInfo](../mfc/reference/ctooltipctrl-class.md#settoolinfo) , legen Sie die Informationen, die eine QuickInfo für ein Tool verwaltet.
+1. Aufrufen von [SetToolInfo](../mfc/reference/ctooltipctrl-class.md#settoolinfo) , um die Informationen festzulegen, die eine QuickInfo für ein Tool beibehält.
 
-1. Rufen Sie [Sie SetToolRect](../mfc/reference/ctooltipctrl-class.md#settoolrect) um eine neue umschließende Rechteck für ein Tool festzulegen.
+1. Aufrufen von [SetToolRect](../mfc/reference/ctooltipctrl-class.md#settoolrect) zum Festlegen eines neuen umgebenden Rechtecks für ein Tool.
 
-1. Rufen Sie [HitTest](../mfc/reference/ctooltipctrl-class.md#hittest) um einen Punkt, um zu bestimmen, ob es das umschließende Rechteck des angegebenen Tools befindet und wenn dies der Fall zu testen, Abrufen von Informationen zu diesem Tool.
+1. Rufen Sie [HitTest](../mfc/reference/ctooltipctrl-class.md#hittest) auf, um einen Punkt zu testen, um zu bestimmen, ob er sich innerhalb des umgebenden Rechtecks des angegebenen Tools befindet, und rufen Sie ggf. Informationen über das Tool ab.
 
-1. Rufen Sie [Sie GetToolCount](../mfc/reference/ctooltipctrl-class.md#gettoolcount) zum Abrufen der Anzahl der Tools, die bei der QuickInfo-Steuerelement registriert.
+1. Rufen Sie [gettoolcount](../mfc/reference/ctooltipctrl-class.md#gettoolcount) auf, um die Anzahl der Tools abzurufen, die mit dem QuickInfo-Steuerelement registriert wurden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von CToolTipCtrl](../mfc/using-ctooltipctrl.md)<br/>
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

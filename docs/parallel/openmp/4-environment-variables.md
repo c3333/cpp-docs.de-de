@@ -3,11 +3,11 @@ title: 4. Umgebungsvariablen
 ms.date: 01/16/2019
 ms.assetid: 4ec7ed81-e9ca-46a1-84f8-8f9ce4587346
 ms.openlocfilehash: b41829fd9cf2f90312f669ef991f56dda02947f7
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78882857"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424164"
 ---
 # <a name="4-environment-variables"></a>4. Umgebungsvariablen
 
@@ -92,7 +92,7 @@ setenv OMP_DYNAMIC TRUE
 
 ## <a name="44-omp_nested"></a>4,4 OMP_NESTED
 
-Die `OMP_NESTED`-Umgebungsvariable aktiviert oder deaktiviert die gemutete Parallelität, es sei denn, die gemusterte Parallelität wird durch Aufrufen der `omp_set_nested` Bibliotheks Routine aktiviert oder deaktiviert. Wenn `OMP_NESTED` auf `TRUE`festgelegt ist, wird die unter Aktivierung der Parallelität aktiviert. Wenn `OMP_NESTED` auf `FALSE`festgelegt ist, wird die nicht aktivierte Parallelität deaktiviert. Standardwert: `FALSE`.
+Die `OMP_NESTED`-Umgebungsvariable aktiviert oder deaktiviert die gemutete Parallelität, es sei denn, die gemusterte Parallelität wird durch Aufrufen der `omp_set_nested` Bibliotheks Routine aktiviert oder deaktiviert. Wenn `OMP_NESTED` auf `TRUE`festgelegt ist, wird die unter Aktivierung der Parallelität aktiviert. Wenn `OMP_NESTED` auf `FALSE`festgelegt ist, wird die nicht aktivierte Parallelität deaktiviert. Der Standardwert ist `FALSE`.
 
 Beispiel:
 

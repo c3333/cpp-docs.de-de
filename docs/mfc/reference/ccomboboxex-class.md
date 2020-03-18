@@ -37,11 +37,11 @@ helpviewer_keywords:
 - CComboBoxEx [MFC], SetWindowTheme
 ms.assetid: 33ca960a-2409-478c-84a4-a2ee8ecfe8f7
 ms.openlocfilehash: 7d46f175a62cda7f1ff08327830f1dffe2967727
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865547"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425988"
 ---
 # <a name="ccomboboxex-class"></a>CComboBoxEx-Klasse
 
@@ -53,17 +53,17 @@ Erweitert das Kombinationsfeld-Steuerelement durch die Unterstützung für Bildl
 class CComboBoxEx : public CComboBox
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComboBoxEx:: CComboBoxEx](#ccomboboxex)|Erstellt ein `CComboBoxEx`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CComboBoxEx:: Create](#create)|Erstellt das Kombinations Feld und fügt es an das `CComboBoxEx` Objekt an.|
 |[CComboBoxEx:: kreateex](#createex)|Erstellt ein Kombinations Feld mit den angegebenen erweiterten Windows-Stilen und fügt es an ein `ComboBoxEx` Objekt an.|
@@ -80,7 +80,7 @@ class CComboBoxEx : public CComboBox
 |[CComboBoxEx:: System Item](#setitem)|Legt die Attribute für ein Element in einem `ComboBoxEx`-Steuerelement fest.|
 |[CComboBoxEx:: SetWindowTheme](#setwindowtheme)|Legt den visuellen Stil des erweiterten Kombinations Feld-Steuer Elements fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn Sie `CComboBoxEx` verwenden, um Kombinations Feld-Steuerelemente zu erstellen, müssen Sie nicht mehr ihren eigenen Bild Zeichnungs Code implementieren. Verwenden Sie stattdessen `CComboBoxEx`, um auf Bilder aus einer Bildliste zuzugreifen.
 
@@ -120,7 +120,7 @@ Eine ausführliche, konzeptionelle Erörterung finden [Sie unter Verwenden von C
 
 `CComboBoxEx`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -162,7 +162,7 @@ Gibt die Steuerelement-ID des Kombinations Felds an.
 
 Ungleich 0 (null), wenn das Objekt erfolgreich erstellt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Erstellen Sie ein `CComboBoxEx`-Objekt in zwei Schritten:
 
@@ -222,7 +222,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von `Create` Erweiterte Windows-Stile, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -245,7 +245,7 @@ Der null basierte Index des zu entfernenden Elements.
 
 Die Anzahl der Elemente, die im Steuerelement verbleiben. Wenn *iIndex* ungültig ist, gibt die Funktion CB_ERR zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Funktionen der Nachrichten [CBEM_DELETEITEM](/windows/win32/Controls/cbem-deleteitem), wie in der Windows SDK beschrieben. Wenn Sie DeleteItem aufrufen, wird eine [WM_NOTIFY](/windows/win32/controls/wm-notify) Meldung mit CBEN_DELETEITEM Benachrichtigung an das übergeordnete Fenster gesendet.
 
@@ -259,9 +259,9 @@ CComboBox* GetComboBoxCtrl();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CComboBox`-Objekt.
+Ein Zeiger auf ein `CComboBox` -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `CComboBoxEx` Steuerelement besteht aus einem übergeordneten Fenster, das eine `CComboBox`kapselt.
 
@@ -279,7 +279,7 @@ CEdit* GetEditCtrl();
 
 Ein Zeiger auf ein [CEdit](../../mfc/reference/cedit-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein `CComboBoxEx`-Steuerelement verwendet ein Bearbeitungsfeld, wenn es mit dem CBS_DROPDOWN Format erstellt wird.
 
@@ -297,7 +297,7 @@ DWORD GetExtendedStyle() const;
 
 Der DWORD-Wert, der die erweiterten Stile enthält, die für das Kombinations Feld-Steuerelement verwendet werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu diesen Stilen finden Sie unter [ComboBoxEx-Steuerelement erweiterte Stile](/windows/win32/Controls/comboboxex-control-extended-styles) in der Windows SDK.
 
@@ -313,7 +313,7 @@ CImageList* GetImageList() const;
 
 Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt. Wenn dies nicht möglich ist, gibt diese Member-Funktion NULL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `CImageList` Objekt, auf das der Rückgabewert verweist, ist ein temporäres Objekt und wird während der nächsten Leerlauf Verarbeitungszeit zerstört.
 
@@ -334,7 +334,7 @@ Ein Zeiger auf eine [COMBOBOXEXITEM](/windows/win32/api/commctrl/ns-commctrl-com
 
 Ungleich 0 (null), wenn der Vorgang erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Funktionen der Nachrichten [CBEM_GETITEM](/windows/win32/Controls/cbem-getitem), wie in der Windows SDK beschrieben.
 
@@ -350,7 +350,7 @@ BOOL HasEditChanged();
 
 Ein Wert ungleich 0 (null), wenn der Benutzer das Eingabefeld des Steuer Elements eingegeben hat. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Funktionen der Nachrichten [CBEM_HASEDITCHANGED](/windows/win32/Controls/cbem-haseditchanged), wie in der Windows SDK beschrieben.
 
@@ -371,7 +371,7 @@ Ein Zeiger auf eine [COMBOBOXEXITEM](/windows/win32/api/commctrl/ns-commctrl-com
 
 Der Index, an dem das neue Element eingefügt wurde, wenn erfolgreich. andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie `InsertItem`aufgerufen wird, wird eine [WM_NOTIFY](/windows/win32/controls/wm-notify) Meldung mit [CBEN_INSERTITEM](/windows/win32/Controls/cben-insertitem) Benachrichtigung an das übergeordnete Fenster gesendet.
 
@@ -397,7 +397,7 @@ Ein DWORD-Wert, der das für das Steuerelement festzulegende erweiterte Kombinat
 
 Ein DWORD-Wert, der die erweiterten Stile enthält, die zuvor für das-Steuerelement verwendet wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zu diesen Stilen finden Sie unter [ComboBoxEx-Steuerelement erweiterte Stile](/windows/win32/Controls/comboboxex-control-extended-styles) in der Windows SDK.
 
@@ -420,7 +420,7 @@ Ein Zeiger auf ein `CImageList` Objekt, das die mit dem `CComboBoxEx` Steuerelem
 
 Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt, das die Bilder enthält, die zuvor vom `CComboBoxEx`-Steuerelement verwendet wurden. NULL, wenn zuvor keine Bildliste festgelegt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Funktionen der Nachrichten [CBEM_SETIMAGELIST](/windows/win32/Controls/cbem-setimagelist), wie in der Windows SDK beschrieben. Wenn Sie die Höhe des Standard-Bearbeitungs Steuer Elements ändern, müssen Sie die Win32-Funktion [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) aufrufen, um die Größe des Steuer Elements zu ändern, nachdem Sie `SetImageList`aufgerufen haben, oder es wird nicht ordnungsgemäß angezeigt.
 
@@ -443,7 +443,7 @@ Ein Zeiger auf eine [COMBOBOXEXITEM](/windows/win32/api/commctrl/ns-commctrl-com
 
 Ungleich 0 (null), wenn der Vorgang erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert die Funktionen der Nachrichten [CBEM_SETITEM](/windows/win32/Controls/cbem-setitem), wie in der Windows SDK beschrieben.
 
@@ -464,11 +464,11 @@ Ein Zeiger auf eine Unicode-Zeichenfolge, die den festzulegenden erweiterten vis
 
 Der Rückgabewert wird nicht verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion emuliert die Funktionalität der [CBEM_SETWINDOWTHEME](/windows/win32/Controls/cbem-setwindowtheme) Nachricht, wie in der Windows SDK beschrieben.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-MFCIE](../../overview/visual-cpp-samples.md)<br/>
 [CComboBox-Klasse](../../mfc/reference/ccombobox-class.md)<br/>

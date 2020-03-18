@@ -11,11 +11,11 @@ helpviewer_keywords:
 - std::get [C++]
 - std::swap [C++]
 ms.openlocfilehash: 61b5404d0f22cd902e35f6bee680df3c719804f2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875888"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424068"
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt;-Funktionen
 
@@ -109,7 +109,7 @@ Das erste auszutauschende Array.
 *Rechte*\
 Das zweite auszutauschende Array.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
@@ -159,6 +159,6 @@ int main()
 0 1 2 3
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<array>](../standard-library/array.md)

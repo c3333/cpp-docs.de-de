@@ -6,11 +6,11 @@ helpviewer_keywords:
 - persistence, OLE controls
 ms.assetid: 64f8dc80-f110-41af-b3ea-14948f6bfdf7
 ms.openlocfilehash: 42e70f9e48339eddb2a5af4fa288400cce01f490
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855752"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426642"
 ---
 # <a name="persistence-of-ole-controls"></a>Persistenz der OLE-Steuerelemente
 
@@ -69,7 +69,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird von der Variablen, auf die von *hblob*verwiesen wird, gelesen oder in diese geschrieben. Diese Variable sollte mit NULL initialisiert werden, bevor zunächst `PX_Blob` zum ersten Mal aufgerufen wird (in der Regel kann dies im Konstruktor des Steuer Elements erfolgen). Wenn *hblobdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Initialisierungs-oder Serialisierungsprozess des-Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -116,7 +116,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird nach Bedarf aus der Variablen gelesen oder in diese geschrieben, auf die von *bvalue*verwiesen wird. Wenn *bdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -155,7 +155,7 @@ Der Standardwert für die Eigenschaft, wie vom Steuerelement Entwickler definier
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft *wird nach Bedarf*aus der Variablen gelesen oder in diese geschrieben. Wenn *clrdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -194,7 +194,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *cyvalue*verwiesen wird, gelesen oder in diese geschrieben. Wenn *cydefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -228,7 +228,7 @@ Verweis auf die Variable, in der die Eigenschaft gespeichert ist (in der Regel e
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten Pfad Eigenschaften implementieren asynchrone Steuerelement Eigenschaften. Der Wert der Eigenschaft wird von der Variablen, auf die von *datapathproperty*verwiesen wird, gelesen oder in diese geschrieben.
 
@@ -267,7 +267,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *Double value*verwiesen wird, gelesen oder in diese geschrieben. Wenn *Double default* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -305,7 +305,7 @@ Ein Zeiger auf die `IFontDisp`-Schnittstelle einer Schriftart, die beim Initiali
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in `font`gelesen oder geschrieben, ein `CFontHolder` Verweis, wenn dies angebracht ist. Wenn *pfontde SC* und *pfontdispambient* angegeben werden, werden Sie bei Bedarf zum Initialisieren des Standardwerts der Eigenschaft verwendet. Diese Werte werden verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt. In der Regel übergeben Sie NULL für *pfontbesc* und den Ambient-Wert, der von `COleControl::AmbientFont` für *pfontdispambient*zurückgegeben wurde. Beachten Sie, dass das von `COleControl::AmbientFont` zurückgegebene Schriftart Objekt durch einen aufzurufenden `IFontDisp::Release` Member-Funktion freigegeben werden muss.
 
@@ -344,7 +344,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *floatvalue*verwiesen wird, gelesen oder in diese geschrieben. Wenn *floatdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -382,7 +382,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *Punk*verwiesen wird, gelesen oder in diese geschrieben. Wenn " *punkdefault* " angegeben ist, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -421,7 +421,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft *wird nach Bedarf*aus der Variablen gelesen oder in diese geschrieben. Wenn " *ldefault* " angegeben ist, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -460,7 +460,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft *wird nach Bedarf*aus der Variablen gelesen oder in diese geschrieben. Wenn *pictdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -499,7 +499,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *sValue*verwiesen wird, gelesen oder in diese geschrieben. Wenn *sdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -538,7 +538,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird in der Variablen, auf die von *ULValue*verwiesen wird, gelesen oder in diese geschrieben. Wenn *uldefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -577,7 +577,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft *wird nach Bedarf*aus der Variablen gelesen oder in diese geschrieben. Wenn " *Standard* Wert" angegeben wird, wird er als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -616,7 +616,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft *wird nach Bedarf*aus der Variablen gelesen oder in diese geschrieben. Wenn "- *Standard* " angegeben ist, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn der Serialisierungsprozess des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -642,7 +642,7 @@ Die Font-Eigenschaft des OLE-Steuer Elements, die die konvertierten VBX-Schrifta
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion sollte nur von einem OLE-Steuerelement verwendet werden, das als direkter Ersatz für ein VBX-Steuerelement konzipiert ist. Wenn in der Visual Basic Entwicklungsumgebung ein Formular mit einem VBX-Steuerelement konvertiert wird, um das entsprechende Replace OLE-Steuerelement zu verwenden, wird die `IDataObject::SetData`-Funktion des Steuer Elements aufgerufen und ein Eigenschaften Satz übergeben, der die Eigenschaften Daten des VBX-Steuer Elements enthält. Dieser Vorgang bewirkt wiederum, dass die `DoPropExchange` Funktion des Steuer Elements aufgerufen wird. `DoPropExchange` können `PX_VBXFontConvert` zum Konvertieren der Schriftart bezogenen Eigenschaften des VBX-Steuer Elements (z. b. "FontName", "FontSize" usw.) in die entsprechenden Komponenten der Schriftart Eigenschaft des OLE-Steuer Elements aufzurufen.
 
@@ -651,6 +651,6 @@ Diese Funktion sollte nur von einem OLE-Steuerelement verwendet werden, das als 
 [!code-cpp[NVC_MFCActiveXControl#14](../../mfc/codesnippet/cpp/persistence-of-ole-controls_1.cpp)]
 [!code-cpp[NVC_MFCActiveXControl#15](../../mfc/codesnippet/cpp/persistence-of-ole-controls_2.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)

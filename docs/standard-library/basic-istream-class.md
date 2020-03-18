@@ -35,11 +35,11 @@ helpviewer_keywords:
 - std::basic_istream [C++], unget
 ms.assetid: c7c27111-de6d-42b4-95a3-a7e65259bf17
 ms.openlocfilehash: 68c7f7ffa9c32c16654e57c8249348d74cc83a5b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874814"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424074"
 ---
 # <a name="basic_istream-class"></a>basic_istream-Klasse
 
@@ -52,7 +52,7 @@ template <class Char_T, class Tr = char_traits<Char_T>>
 class basic_istream : virtual public basic_ios<Char_T, Tr>
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die meisten der Memberfunktionen, die [operator>>](#op_gt_gt) überladen, sind Funktionen für die formatierte Eingabe. Sie entsprechen dem folgenden Muster:
 
@@ -133,13 +133,13 @@ Weitere Informationen zu Eingabestreams finden Sie im Beispiel für die [basic_i
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[basic_istream](#basic_istream)|Konstruiert ein Objekt vom Typ `basic_istream`.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[gcount](#gcount)|Gibt die Anzahl von Zeichen zurück, die bei der letzten unformatierten Eingabe gelesen wurden.|
 |[get](#get)|Liest mindestens ein Zeichen aus dem Eingabestream.|
@@ -158,12 +158,12 @@ Weitere Informationen zu Eingabestreams finden Sie im Beispiel für die [basic_i
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[operator>>](#op_gt_gt)|Ruft eine Funktion für den Eingabestream auf oder liest formatierte Daten aus dem Eingabestream.|
 |[operator=](#op_eq)|Weist den `basic_istream` auf der rechten Seite des Operators diesem Objekt zu. Dabei handelt es sich um eine Verschiebungs Zuweisung mit einem `rvalue` Verweis, der keine Kopie hinterlässt.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<IStream >
 
@@ -192,7 +192,7 @@ Ein Objekt vom Typ [basic_streambuf](../standard-library/basic-streambuf-class.m
 *Rechte*\
 Ein zu kopierendes `basic_istream`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor initialisiert die Basisklasse durch Aufrufen von [`init`](../standard-library/basic-ios-class.md#init)`(strbuf)`. Außerdem wird null in der Extraktionsanzahl gespeichert. Weitere Informationen zu dieser Extraktions Anzahl finden Sie im Abschnitt "Hinweise" in der Übersicht über [basic_istream-Klasse](../standard-library/basic-istream-class.md) .
 
@@ -214,7 +214,7 @@ streamsize gcount() const;
 
 Die Extraktionsanzahl.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [basic_istream::get](#get), um nicht formatierte Zeichen zu lesen.
 
@@ -285,7 +285,7 @@ Ein Puffer, in den geschrieben werden soll.
 
 Die parameterlose Form von „get“ gibt das gelesene Element als ganze Zahl oder Ende der Datei zurück. Die übrigen Formen geben den Stream (* `this`) zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste nicht formatierte Eingabe Funktion extrahiert, wenn möglich, ein Element, so als ob Sie `rdbuf->sbumpc`zurückgeben. Andernfalls wird `traits_type::`[`eof`](../standard-library/char-traits-struct.md#eof)zurückgegeben. Wenn die Funktion kein Element extrahiert, ruft Sie [`setstate`](../standard-library/basic-ios-class.md#setstate)`(failbit)`auf.
 
@@ -362,7 +362,7 @@ Eine Zeichenfolge, in die geschrieben werden soll.
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste dieser nicht formatierten Eingabefunktionen gibt `getline(str, count, widen('\n'))`zurück.
 
@@ -419,7 +419,7 @@ Das Element, das, wenn es vor der Anzahl fest steht, bewirkt, dass `ignore` zur�
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die nicht formatierte Eingabe Funktion extrahiert zum *zählen* von Elementen und verwirft Sie. Wenn *count* `numeric_limits<int>::max`ist, wird es jedoch als beliebig groß angenommen. Die Extraktion endet früh am Ende der Datei oder auf einem Element `Ch` so, dass `traits_type::`[`to_int_type`](../standard-library/char-traits-struct.md#to_int_type)`(Ch)` mit einem *Trenn* Zeichen (das ebenfalls extrahiert wird) verglichen wird. Die Funktion gibt __* this__zurück.
 
@@ -484,7 +484,7 @@ Der Wert, der aus dem Stream gelesen werden soll.
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der \<IStream-> Header definiert außerdem mehrere globale Extraktions Operatoren. Weitere Informationen finden Sie unter [operator>> (\<istream>)](../standard-library/istream-operators.md#op_gt_gt).
 
@@ -591,7 +591,7 @@ Ein `rvalue`-Verweis auf ein `basic_ifstream`-Objekt.
 
 Gibt __* this__zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Member-Operator ruft `swap(right)`auf.
 
@@ -607,7 +607,7 @@ int_type peek();
 
 Das nächste zu lesende Zeichen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die nicht formatierte Eingabe Funktion extrahiert, wenn möglich, ein Element, so als ob Sie `rdbuf->`[`sgetc`](../standard-library/basic-streambuf-class.md#sgetc)zurückgeben. Andernfalls wird `traits_type::`[`eof`](../standard-library/char-traits-struct.md#eof)zurückgegeben.
 
@@ -658,7 +658,7 @@ Ein Zeichen, das im Stream wiederhergestellt werden soll.
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [nicht formatierte Eingabe Funktion](../standard-library/basic-istream-class.md) stellt, wenn *möglich, den zurück,* als ob durch Aufrufen [`rdbuf`](../standard-library/basic-ios-class.md#rdbuf)`->`[`sputbackc`](../standard-library/basic-streambuf-class.md#sputbackc). Wenn `rdbuf` ein NULL-Zeiger ist oder wenn der Aufruf von `sputbackc` `traits_type::`[`eof`](../standard-library/char-traits-struct.md#eof)zurückgibt, ruft die Funktion [`setstate`](../standard-library/basic-ios-class.md#setstate)`(badbit)`auf. In jedem Fall wird __* this__zurückgegeben.
 
@@ -710,7 +710,7 @@ Die Anzahl der zu lesenden Zeichen.
 
 Der Stream ( `*this`).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die nicht formatierte Eingabe Funktion extrahiert nach oben, um Elemente zu *zählen* , und speichert Sie in dem Array, beginnend bei *Str*. Die Extraktion hält früh am Ende der Datei an. in diesem Fall ruft die Funktion [`setstate`](../standard-library/basic-ios-class.md#setstate)`(failbit)`auf. In jedem Fall wird __* this__zurückgegeben.
 
@@ -771,7 +771,7 @@ Die Anzahl der zu lesenden Zeichen.
 
 Die Anzahl der tatsächlich gelesenen Zeichen, [`gcount`](#gcount).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese nicht formatierte Eingabe Funktion extrahiert zum *zählen* von Elementen aus dem Eingabestream und speichert Sie im Array *Str*.
 
@@ -831,7 +831,7 @@ Eine der [ios_base::seekdir](../standard-library/ios-base-class.md#seekdir)-Enum
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion führt eine absolute, die zweite Memberfunktion eine relative Suche durch.
 
@@ -877,7 +877,7 @@ class sentry {
    };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn `_Istr.`[`good`](../standard-library/basic-ios-class.md#good) den Wert true hat, wird der Konstruktor:
 
@@ -900,7 +900,7 @@ void swap(basic_istream& right);
 *Rechte*\
 Ein lvalue-Verweis auf ein `basic_istream`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion ruft [`basic_ios::swap`](../standard-library/basic-ios-class.md#swap)`(right)`auf. Außerdem wird die Extraktions Anzahl mit der Extraktions Anzahl für " *right*" ausgetauscht.
 
@@ -928,7 +928,7 @@ pos_type tellg();
 
 Die aktuelle Position in dem Stream.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [`fail`](../standard-library/basic-ios-class.md#fail) false ist, gibt die Member-Funktion [`rdbuf`](../standard-library/basic-ios-class.md#rdbuf)`->`[`pubseekoff`](../standard-library/basic-streambuf-class.md#pubseekoff)`(0, cur, in)`zurück. Andernfalls wird `pos_type(-1)`zurückgegeben.
 
@@ -970,7 +970,7 @@ basic_istream<Char_T, Tr>& unget();
 
 Der Stream ( __* this__).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [nicht formatierte Eingabe Funktion](../standard-library/basic-istream-class.md) gibt das vorherige Element, soweit möglich, in den Stream zurück, als ob durch Aufrufen von `rdbuf->`[`sungetc`](../standard-library/basic-streambuf-class.md#sungetc). Wenn [`rdbuf`](../standard-library/basic-ios-class.md#rdbuf) ein NULL-Zeiger ist oder wenn der Aufruf von `sungetc` `traits_type::`[`eof`](../standard-library/basic-ios-class.md#eof)zurückgibt, ruft die Funktion [`setstate`](../standard-library/basic-ios-class.md#setstate)`(badbit)`auf. In jedem Fall wird __* this__zurückgegeben.
 
@@ -1005,7 +1005,7 @@ Type 'abc': abc
 abc
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [iostream-Programmierung](../standard-library/iostream-programming.md)\

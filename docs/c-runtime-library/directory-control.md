@@ -1,18 +1,16 @@
 ---
 title: Verzeichnissteuerung
 ms.date: 11/04/2016
-f1_keywords:
-- c.programs
 helpviewer_keywords:
 - controls [C++], directory
 - directory control routines
 ms.assetid: a72dcf6f-f366-4d20-8850-0e19cc53ca18
-ms.openlocfilehash: 327647ee2eee7e149ec0e9ebfc71883a8a3643d5
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 640ce8a8665936b604c6e8e6270e358a200c880a
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57748579"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438542"
 ---
 # <a name="directory-control"></a>Verzeichnissteuerung
 
@@ -20,7 +18,7 @@ Diese Routinen greifen auf die Verzeichnisstruktur zu, ändern sie und rufen Inf
 
 ## <a name="directory-control-routines"></a>Routinen für die Verzeichnissteuerung
 
-|-Routine zurückgegebener Wert|Verwendung|
+|Routine|Zweck|
 |-------------|---------|
 |[_chdir, _wchdir](../c-runtime-library/reference/chdir-wchdir.md)|Ändert das aktuelle Arbeitsverzeichnis.|
 |[_chdrive](../c-runtime-library/reference/chdrive.md)|Ändert das aktuelle Laufwerk.|
@@ -33,7 +31,7 @@ Diese Routinen greifen auf die Verzeichnisstruktur zu, ändern sie und rufen Inf
 |[_rmdir, _wrmdir](../c-runtime-library/reference/rmdir-wrmdir.md)|Verzeichnis entfernen|
 |[_searchenv, _wsearchenv](../c-runtime-library/reference/searchenv-wsearchenv.md), [_searchenv_s, _wsearchenv_s](../c-runtime-library/reference/searchenv-s-wsearchenv-s.md)|Sucht nach der angegebenen Datei in den angegebenen Pfaden.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>
 [Dateibehandlung](../c-runtime-library/file-handling.md)<br/>

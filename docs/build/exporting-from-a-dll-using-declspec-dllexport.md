@@ -3,29 +3,28 @@ title: Exportieren aus einer DLL mithilfe von "__declspec(dllexport)"
 ms.date: 05/06/2019
 f1_keywords:
 - dllexport
-- __declspec
 helpviewer_keywords:
 - __declspec(dllexport) keyword [C++]
 - names [C++], DLL exports by
 - export directives [C++]
 - exporting DLLs [C++], __declspec(dllexport) keyword
 ms.assetid: a35e25e8-7263-4a04-bad4-00b284458679
-ms.openlocfilehash: 167060d0270004b8648d32af206865bfe66c3b4b
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: c84a8eca25c90e0790ec8c4991d9d5a116afa59f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220795"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442530"
 ---
-# <a name="exporting-from-a-dll-using-declspecdllexport"></a>Exportieren aus einer DLL mithilfe von "__declspec(dllexport)"
+# <a name="exporting-from-a-dll-using-__declspecdllexport"></a>Exportieren aus einer DLL mithilfe von "__declspec(dllexport)"
 
-Sie können die Daten, Funktionen, Klassen oder Memberfunktionen von Klassen exportieren, aus einer DLL mithilfe der **__declspec(dllexport)** Schlüsselwort. **__declspec(dllexport)** der Objektdatei die Exportdirektive hinzugefügt, damit Sie nicht benötigen, verwenden Sie eine DEF-Datei.
+Sie können Daten, Funktionen, Klassen oder Klassenmember-Funktionen mithilfe des Schlüssel Worts **__declspec (dllexport)** aus einer DLL exportieren. **__declspec (dllexport)** fügt die Export Direktive zur Objektdatei hinzu, sodass Sie keine DEF-Datei verwenden müssen.
 
-Am deutlichsten zeigt sich diese einfache Handhabung beim Exportieren von ergänzten C++-Funktionsnamen. Da es keine Standardspezifikation für die Namensergänzung gibt, kann der Name einer exportierten Funktion zwischen den einzelnen Compilerversionen variieren. Bei Verwendung von **__declspec(dllexport)**, Neukompilierung der DLL und die abhängigen .exe-Dateien ist nur erforderlich für jede Änderung der Benennung Konvention.
+Am deutlichsten zeigt sich diese einfache Handhabung beim Exportieren von ergänzten C++-Funktionsnamen. Da es keine Standardspezifikation für die Namensergänzung gibt, kann der Name einer exportierten Funktion zwischen den einzelnen Compilerversionen variieren. Wenn Sie **__declspec (dllexport)** verwenden, ist das erneute Kompilieren der dll und der abhängigen exe-Dateien nur erforderlich, um Änderungen an der Benennungs Konvention zu berücksichtigen.
 
-Viele Exportdirektiven, z. B. Ordinalzahlen, NONAME und PRIVATE, können nur in einer DEF-Datei angegeben werden, und es gibt keine Möglichkeit, diese Attribute ohne DEF-Datei festzulegen. Jedoch **__declspec(dllexport)** zusätzlich zu einer DEF Datei löst keine Buildfehler auftreten.
+Viele Exportdirektiven, z. B. Ordinalzahlen, NONAME und PRIVATE, können nur in einer DEF-Datei angegeben werden, und es gibt keine Möglichkeit, diese Attribute ohne DEF-Datei festzulegen. Die Verwendung von **__declspec (dllexport)** zusätzlich zur Verwendung einer DEF-Datei führt jedoch nicht zu Buildfehlern.
 
-Zum Exportieren von Funktionen der **__declspec(dllexport)** Schlüsselwort muss auf der linken Seite des Schlüsselworts Aufrufkonvention angezeigt, wenn ein Schlüsselwort angegeben wird. Zum Beispiel:
+Zum Exportieren von Funktionen muss das Schlüsselwort **__declspec (dllexport)** links neben dem Schlüsselwort Call-Convention angezeigt werden, wenn ein Schlüsselwort angegeben wird. Beispiel:
 
 ```
 __declspec(dllexport) void __cdecl Function1(void);
@@ -41,38 +40,38 @@ class __declspec(dllexport) CExampleExport : public CObject
 > [!NOTE]
 >  `__declspec(dllexport)` kann nicht mit der `__clrcall`-Aufrufkonvention für eine Funktion übernommen werden.
 
-Beim Erstellen der DLL, erstellen Sie in der Regel eine Headerdatei mit den Funktionsprototypen oder Klassen, die Sie exportieren, und fügen **__declspec(dllexport)** den Deklarationen in der Headerdatei. Um den Code lesbarer gestalten, definieren Sie ein Makro für **__declspec(dllexport)** und verwenden Sie das Makro für jedes Symbol, das Sie exportieren:
+Beim Erstellen der DLL erstellen Sie in der Regel eine Header Datei, die die zu exportierenden Funktionsprototypen und/oder Klassen enthält, und fügen **__declspec (dllexport)** den Deklarationen in der Header Datei hinzu. Um den Code lesbarer zu gestalten, definieren Sie ein Makro für **__declspec (dllexport)** , und verwenden Sie das-Makro mit jedem Symbol, das Sie exportieren:
 
 ```
 #define DllExport   __declspec( dllexport )
 ```
 
-**__declspec(dllexport)** speichert Funktionsnamen in der Exporttabelle der DLL. Wenn Sie die Größe der Tabelle optimieren möchten, finden Sie unter [Exportieren von Funktionen aus einer DLL über die Ordnungszahl statt über Namen](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md).
+**__declspec (dllexport)** speichert Funktionsnamen in der Export Tabelle der dll. Wenn Sie die Größe der Tabelle optimieren möchten, finden Sie weitere [Informationen unter Exportieren von Funktionen aus einer DLL nach Ordinalzahl anstelle des Namens](exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md).
 
-## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
-- [Exportieren Sie aus einer DLL mithilfe von DEF-Dateien](exporting-from-a-dll-using-def-files.md)
+- [Exportieren aus einer DLL mithilfe von DEF-Dateien](exporting-from-a-dll-using-def-files.md)
 
-- [Exportieren Sie und importieren Sie mithilfe von AFX_EXT_CLASS](exporting-and-importing-using-afx-ext-class.md)
+- [Exportieren und Importieren mithilfe AFX_EXT_CLASS](exporting-and-importing-using-afx-ext-class.md)
 
-- [Exportieren von C++-Funktionen für die Verwendung in ausführbaren c-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
+- [Exportieren C++ von Funktionen zur Verwendung in ausführbaren C-Dateien](exporting-cpp-functions-for-use-in-c-language-executables.md)
 
-- [Exportieren von C-Funktionen für die Verwendung in ausführbaren C oder C++-Dateien](exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)
+- [Exportieren von c-Funktionen zur Verwendung in C++ausführbaren c-oder-Programmier Dateien](exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)
 
-- [Bestimmen Sie die Exportmethode verwendet werden](determining-which-exporting-method-to-use.md)
+- [Bestimmen der zu verwendenden Export Methode](determining-which-exporting-method-to-use.md)
 
 - [Importieren in eine Anwendung mithilfe von __declspec(dllimport)](importing-into-an-application-using-declspec-dllimport.md)
 
-- [Initialisieren einer DLL](run-time-library-behavior.md#initializing-a-dll)
+- [Initialisieren einer dll](run-time-library-behavior.md#initializing-a-dll)
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
-- [Der __declspec-Schlüsselwort](../cpp/declspec.md)
+- [Das __declspec-Schlüsselwort](../cpp/declspec.md)
 
 - [Importieren und Exportieren von Inlinefunktionen](importing-and-exporting-inline-functions.md)
 
 - [Gegenseitige Importe](mutual-imports.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Exportieren aus einer DLL](exporting-from-a-dll.md)

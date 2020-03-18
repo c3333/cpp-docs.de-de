@@ -1,20 +1,6 @@
 ---
 title: 'Formatangabefelder: scanf- und wscanf-Funktionen'
 ms.date: 11/04/2016
-api_location:
-- msvcr80.dll
-- msvcr110.dll
-- msvcr90.dll
-- msvcr100.dll
-- msvcr110_clr0400.dll
-- msvcr120.dll
-api_type:
-- DLLExport
-topic_type:
-- apiref
-f1_keywords:
-- wscanf
-- scanf
 helpviewer_keywords:
 - width, specifications in scanf function
 - scanf format specifications
@@ -24,12 +10,12 @@ helpviewer_keywords:
 - format specification fields for scanf function
 - type fields
 ms.assetid: 7e95de1b-0b71-4de3-9f81-c9560c78e039
-ms.openlocfilehash: 78b64ea29aebdfb355525be69dc7a9fdece55367
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 025d4c164d3afe1ca6b05c1c8e76441109cbc4ae
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944418"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438365"
 ---
 # <a name="format-specification-fields-scanf-and-wscanf-functions"></a>Formatangabefelder: scanf- und wscanf-Funktionen
 
@@ -59,9 +45,9 @@ Die einfachste Formatspezifikation enthält nur das Prozentzeichen und ein `type
 
 Ein Sternchen (`*`), gefolgt von einem Prozentzeichen, unterdrückt die Zuweisung des nächsten Eingabefelds, das als Feld des angegebenen Typs interpretiert wird. Das Feld wird überprüft, aber nicht gespeichert.
 
-Die sicheren Versionen der `scanf`-Funktionsfamilie (mit dem Suffix `_s`) erfordern, dass ein Puffergrößenparameter unmittelbar nach jedem Parameter des Typs `c`, `C`, `s`, `S` oder `[` übergeben wird. Weitere Informationen zu den sicheren Versionen der `scanf`-Funktionsfamilie finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md).
+Die sicheren Versionen der `_s`-Funktionsfamilie (mit dem Suffix `scanf`) erfordern, dass ein Puffergrößenparameter unmittelbar nach jedem Parameter des Typs `c`, `C`, `s`, `S` oder `[` übergeben wird. Weitere Informationen zu den sicheren Versionen der `scanf`-Funktionsfamilie finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [scanf-Breitenangabe](../c-runtime-library/scanf-width-specification.md)<br/>
 [scanf-Typenfeldzeichen](../c-runtime-library/scanf-type-field-characters.md)<br/>

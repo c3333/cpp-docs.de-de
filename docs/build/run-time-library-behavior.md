@@ -16,11 +16,11 @@ helpviewer_keywords:
 - DLLs [C++], startup sequence
 ms.assetid: e06f24ab-6ca5-44ef-9857-aed0c6f049f2
 ms.openlocfilehash: 572a0ba70c1ba2d46d2d9fd6d8ac543a77bbbc01
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856773"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422793"
 ---
 # <a name="dlls-and-visual-c-run-time-library-behavior"></a>DLLs und Verhalten C++ der visuellen Lauf Zeit Bibliothek
 
@@ -178,7 +178,7 @@ Beachten Sie, dass die Header Datei Afxdllx. h spezielle Definitionen für Struk
 
 Eine Beispiel Initialisierungsfunktion, die Multithreading behandelt, ist in die [Verwendung von lokalem Thread Speicher in einer Dynamic Link Library](/windows/win32/Dlls/using-thread-local-storage-in-a-dynamic-link-library) im Windows SDK eingeschlossen. Beachten Sie, dass das Beispiel eine Einstiegspunkt Funktion mit dem Namen `LibMain`enthält. Sie sollten diese Funktion jedoch `DllMain`, damit Sie mit den MFC-und C-Laufzeitbibliotheken funktioniert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen von C/C++-DLLs in Visual Studio](dlls-in-visual-cpp.md)<br/>
 [DllMain-Einstiegspunkt](/windows/win32/Dlls/dllmain)<br/>

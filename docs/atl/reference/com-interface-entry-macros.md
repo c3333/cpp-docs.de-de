@@ -19,11 +19,11 @@ helpviewer_keywords:
 - COM interfaces, COM interface entry macros
 ms.assetid: 19dcb768-2e1f-4b8d-a618-453a01a4bd00
 ms.openlocfilehash: 1e1674bad1164e640939d430a860beac7a6e4208
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855665"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423285"
 ---
 # <a name="com_interface_entry-macros"></a>COM_INTERFACE_ENTRY Makros
 
@@ -47,7 +47,7 @@ Diese Makros geben die Schnittstellen eines Objekts in seine com-Zuordnung ein, 
 |[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|Identisch mit [COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func), mit dem Unterschied, dass die Abfrage für eine IID zu einem-Befehl von *Func*führt.|
 |[COM_INTERFACE_ENTRY_NOINTERFACE](#com_interface_entry_nointerface)|Gibt E_NOINTERFACE zurück und beendet die com-Zuordnungs Verarbeitung, wenn die angegebene Schnittstelle abgefragt wird.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -66,7 +66,7 @@ COM_INTERFACE_ENTRY( x )
 *x*<br/>
 in Der Name einer Schnittstelle, von der das Klassenobjekt direkt abgeleitet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der Regel ist dies der Eintragstyp, den Sie am häufigsten verwenden.
 
@@ -80,7 +80,7 @@ BEGIN_COM_MAP(CThisExample)
 END_COM_MAP()
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -100,7 +100,7 @@ in Der Name einer Schnittstelle, die Sie aus dem-Objekt verfügbar machen möcht
 *x2*<br/>
 in Der Name der Vererbungs Verzweigung, von der *x* verfügbar gemacht wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie z. b. das Klassenobjekt von zwei Dual Schnittstellen ableiten, machen Sie `IDispatch` mithilfe COM_INTERFACE_ENTRY2 verfügbar, da `IDispatch` von einer der Schnittstellen abgerufen werden können.
 
@@ -163,7 +163,7 @@ in Die GUID der Schnittstelle, die abgefragt wird.
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *Punk* -Parameter wird davon ausgegangen, dass er auf den inneren unbekannten eines Aggregats oder auf NULL verweist. in diesem Fall wird der Eintrag ignoriert. In der Regel würden Sie das Aggregat in `FinalConstruct``CoCreate`.
 
@@ -184,7 +184,7 @@ COM_INTERFACE_ENTRY_AGGREGATE_BLIND(punk)
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Schnittstellen Abfrage fehlschlägt, wird die Verarbeitung der com-Zuordnung fortgesetzt.
 
@@ -211,7 +211,7 @@ in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die c
 *CLSID*<br/>
 in Der Bezeichner des Aggregats, das *erstellt wird, wenn der* Wert NULL ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ### <a name="example"></a>Beispiel
 
@@ -233,7 +233,7 @@ in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die c
 *CLSID*<br/>
 in Der Bezeichner des Aggregats, das *erstellt wird, wenn der* Wert NULL ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Schnittstellen Abfrage fehlschlägt, wird die Verarbeitung der com-Zuordnung fortgesetzt.
 
@@ -254,7 +254,7 @@ COM_INTERFACE_ENTRY_BREAK(x)
 *x*<br/>
 in Text, der zum Erstellen des Schnittstellen Bezeichners verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die IID der Schnittstelle wird erstellt, indem *x* an `IID_`angehängt wird. *Wenn z* . b. `IPersistStorage`ist, wird die IID `IID_IPersistStorage`.
 
@@ -277,7 +277,7 @@ in Der Name der Klasse, die die-Schnittstelle implementiert.
 *Kro*<br/>
 in Der Name eines `IUnknown` Zeigers. Muss ein Member der-Klasse sein, die die com-Zuordnung enthält. Sollte im Konstruktor des Klassen Objekts mit NULL initialisiert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Schnittstelle nicht verwendet wird, verringert dies die Gesamtgröße des Objekts.
 
@@ -301,7 +301,7 @@ in Der GUID der deaktivierten Schnittstelle.
 *x*<br/>
 in Der Name der Klasse, die die-Schnittstelle implementiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine abtrenn Schnittstelle wird als separates Objekt implementiert, das jedes Mal instanziiert wird, wenn die Schnittstelle, für die Sie steht, abgefragt wird. In der Regel erstellen Sie die Schnittstelle als Abbild, wenn die Schnittstelle selten verwendet wird, da dadurch ein vtable-Zeiger in jeder Instanz des Haupt Objekts gespeichert wird. Die Löschung wird gelöscht, wenn der Verweis Zähler Null wird. Die Klasse, die das Abbild implementiert, sollte von `CComTearOffObjectBase` abgeleitet werden und über eine eigene com-Zuordnung verfügen.
 
@@ -322,7 +322,7 @@ COM_INTERFACE_ENTRY_CHAIN(classname)
 *classname*<br/>
 in Eine Basisklasse des aktuellen-Objekts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beispielsweise im folgenden Code:
 
@@ -351,7 +351,7 @@ in Ein Parameter, der an die *Funktion*übergeben wird.
 *func*<br/>
 in Der Funktionszeiger, der *IID*zurückgibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn *IID* mit der IID der Schnittstelle übereinstimmt, die nach abgefragt wird, wird die von *Func* angegebene Funktion aufgerufen. Die Deklaration für die Funktion sollte wie folgt lauten:
 
@@ -375,7 +375,7 @@ in Ein Parameter, der an die *Funktion*übergeben wird.
 *func*<br/>
 in Die Funktion, die aufgerufen wird, wenn dieser Eintrag in der com-Zuordnung verarbeitet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Jeder Fehler führt dazu, dass die Verarbeitung auf der com-Karte fortgesetzt wird. Wenn die Funktion einen Schnittstellen Zeiger zurückgibt, sollte Sie S_OK zurückgeben.
 
@@ -392,7 +392,7 @@ COM_INTERFACE_ENTRY_NOINTERFACE(x)
 *x*<br/>
 in Text, der zum Erstellen des Schnittstellen Bezeichners verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können dieses Makro verwenden, um zu verhindern, dass eine Schnittstelle in einem bestimmten Fall verwendet wird. Beispielsweise können Sie dieses Makro direkt vor dem COM_INTERFACE_ENTRY_AGGREGATE_BLIND in die com-Zuordnung einfügen, um zu verhindern, dass eine Abfrage für die Schnittstelle an den inneren unbekannten des Aggregats weitergeleitet wird.
 

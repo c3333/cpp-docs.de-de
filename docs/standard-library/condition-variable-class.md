@@ -21,11 +21,11 @@ helpviewer_keywords:
 - std::condition_variable::wait_for
 - std::condition_variable::wait_until
 ms.openlocfilehash: 999e236433ec4f3f2f52abb06855004a89169fa6
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78872414"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427164"
 ---
 # <a name="condition_variable-class"></a>condition_variable-Klasse
 
@@ -37,7 +37,7 @@ Verwenden Sie die `condition_variable`-Klasse, um ein Ereignis zu erwarten, wenn
 class condition_variable;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -45,7 +45,7 @@ class condition_variable;
 |-|-|
 |[condition_variable](#condition_variable)|Erstellt ein `condition_variable`-Objekt.|
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Funktionen
 
 |||
 |-|-|
@@ -64,7 +64,7 @@ Erstellt ein `condition_variable`-Objekt.
 condition_variable();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn nicht genügend Arbeitsspeicher verfügbar ist, gibt der Konstruktor ein [system_error](../standard-library/system-error-class.md)-Objekt mit einem `not_enough_memory`-Fehlercode aus. Wenn das Objekt nicht erstellt werden kann, da eine andere Ressource nicht verfügbar ist, wird vom Konstruktor ein `system_error`-Objekt mit einem `resource_unavailable_try_again`-Fehlercode ausgelöst.
 
@@ -115,7 +115,7 @@ Ein [unique_lock\<mutex>](../standard-library/unique-lock-class.md)-Objekt
 *Pred-* \
 Jeder Ausdruck, der **true** oder **false**zurückgibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Methode sperrt, bis das `condition_variable`-Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) signalisiert wurde. Sie kann auch falsch aktiviert werden.
 
@@ -160,7 +160,7 @@ Die erste Methode gibt `cv_status::timeout` zurück, wenn der Warte Vorgang been
 
 Die zweite Methode gibt den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Methode wird blockiert, bis das `condition_variable` Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) oder bis zur verstrichenen Zeitspanne *Rel_time* signalisiert wird. Sie kann auch falsch aktiviert werden.
 
@@ -218,7 +218,7 @@ Methoden, die einen `cv_status` Typ zurückgeben, geben `cv_status::timeout` zur
 
 Methoden, die einen **booleschen** Wert zurückgeben, geben den Wert von *pred*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Methode blockiert, bis das `condition_variable`-Objekt durch einen Aufruf von [notify_one](#notify_one) oder [notify_all](#notify_all) signalisiert wurde, oder bis `Abs_time`. Sie kann auch falsch aktiviert werden.
 
@@ -234,7 +234,7 @@ return true;
 
 Bei der dritten und vierten Methode wird einen Zeiger auf ein Objekt des Typs `xtime`, verwendet, um das `chrono::time_point`-Objekt zu ersetzen. Mit dem `xtime`-Objekt wird die maximale Zeit angegeben, die auf ein Signal gewartet wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
 [<condition_variable>](../standard-library/condition-variable.md)

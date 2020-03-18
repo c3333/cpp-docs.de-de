@@ -85,11 +85,11 @@ helpviewer_keywords:
 - std::experimental::filesystem::temp_directory_path
 - std::experimental::filesystem::u8path
 ms.openlocfilehash: 1ab57a6fc13a03d02963f3d7ecc80f63decb9487
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78875823"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427110"
 ---
 # <a name="ltfilesystemgt-functions"></a>&lt;filesystem&gt;-Funktionen
 
@@ -150,11 +150,11 @@ void copy(const path& from, const path& to, copy_options opts, error_code& ec) n
 
 Alle Funktionen, die möglicherweise eine oder mehrere Dateien *von* *bis zu unter Kontrolle* von *OPTS*kopieren oder verknüpfen, die als `copy_options::none` für die über Ladungen ohne *OPTS* -Parameter übernommen werden. *OPTS* müssen höchstens einen der folgenden Zeichen enthalten:
 
-- `skip_existing`, `overwrite_existing` oder `update_existing`
+- `skip_existing`, `overwrite_existing`oder `update_existing`
 
 - `copy_symlinks` oder `skip_symlinks`
 
-- `directories_only`, `create_symlinks` oder `create_hard_links`
+- `directories_only`, `create_symlinks`oder `create_hard_links`
 
 Die Funktionen bestimmen zunächst die file_status Werte `f` für *from* und `t` für *:*
 
@@ -184,7 +184,7 @@ Wenn `is_regular_file(f)`, andernfalls:
 
 - Andernfalls `copy_file(from, to` / `from.filename(), opts)`, wenn `is_directory(f)`.
 
-- Andernfalls `copy_file(from, to, opts)`.
+- Andernfalls ist der Wert `copy_file(from, to, opts)`.
 
 Wenn `is_directory(f) && (opts & copy_options::recursive || !opts)`, andernfalls:
 

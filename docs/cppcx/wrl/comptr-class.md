@@ -52,11 +52,11 @@ helpviewer_keywords:
 - Microsoft::WRL::ComPtr::~ComPtr, destructor
 ms.assetid: a6551902-6819-478a-8df7-b6f312ab1fb0
 ms.openlocfilehash: 1e20a991c8f32027aeea6a17df0534aa6e1c2c43
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865709"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423651"
 ---
 # <a name="comptr-class"></a>ComPtr-Klasse
 
@@ -80,30 +80,30 @@ Die Schnittstelle, die der `ComPtr` darstellt.
 *U*<br/>
 Eine Klasse, zu der der aktuelle `ComPtr` ein Freund ist. (Die Vorlage, die diesen Parameter verwendet, ist geschützt.)
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `ComPtr<>` deklariert einen Typ, der den zugrunde liegenden Schnittstellen Zeiger darstellt. Verwenden Sie `ComPtr<>`, um eine Variable zu deklarieren, und verwenden Sie dann den Pfeil Element Zugriffs Operator (`->`), um auf eine Schnittstellenmember-Funktion zuzugreifen.
 
 Weitere Informationen zu intelligenten Zeigern finden Sie im Abschnitt "com Intelligent Pointer" des Themas [com-Codierungspraktiken](/windows/win32/LearnWin32/com-coding-practices) in der MSDN Library.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name            | BESCHREIBUNG
+Name            | Beschreibung
 --------------- | ---------------------------------------------------------------
 `InterfaceType` | Ein Synonym für den Typ, der vom *T* -Vorlagen Parameter angegeben wird.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                             | BESCHREIBUNG
+Name                             | Beschreibung
 -------------------------------- | --------------------------------------------------------------------------------------------------------------------
 [Comptr:: comptr](#comptr)        | Initialisiert eine neue Instanz der `ComPtr`-Klasse. Überladungen stellen Standard-, Kopier-, Verschiebe- und Konvertierungskonstruktoren bereit.
 [Comptr:: ~ comptr](#tilde-comptr) | Deinitialisiert eine Instanz von `ComPtr`.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                      | BESCHREIBUNG
+Name                                                      | Beschreibung
 --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [Comptr:: As](#as)                                         | Gibt ein `ComPtr` Objekt zurück, das die Schnittstelle darstellt, die durch den angegebenen Vorlagen Parameter identifiziert wird.
 [Comptr:: asiid](#asiid)                                   | Gibt ein `ComPtr` Objekt zurück, das die durch die angegebene Schnittstellen-ID identifizierte Schnittstelle darstellt.
@@ -119,14 +119,14 @@ Name                                                      | BESCHREIBUNG
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-Name                                        | BESCHREIBUNG
+Name                                        | Beschreibung
 ------------------------------------------- | --------------------------------------------------------------------------------
 [Comptr:: internaladressf](#internaladdref)   | Inkremente den Verweis Zähler der Schnittstelle, die dieser `ComPtr`zugeordnet ist.
 [Comptr:: internalrelease](#internalrelease) | Führt einen com-Releasevorgang für die diesem `ComPtr`zugeordnete-Schnittstelle aus.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                                                                           | BESCHREIBUNG
+Name                                                                                           | Beschreibung
 ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------
 [Comptr:: Operator-&](#operator-ampersand)                                                       | Ruft die Adresse des aktuellen `ComPtr`ab.
 [Comptr:: Operator->](#operator-arrow)                                                          | Ruft einen Zeiger auf den Typ ab, der durch den aktuellen Vorlagenparameter angegeben ist.
@@ -137,7 +137,7 @@ Name                                                                            
 
 ### <a name="protected-data-members"></a>Geschützte Datenelemente
 
-Name                 | BESCHREIBUNG
+Name                 | Beschreibung
 -------------------- | ------------------------------------------------------------------------------------------
 [Comptr::p tr_](#ptr) | Enthält einen Zeiger auf die-Schnittstelle, die dieser `ComPtr`zugeordnet ist und von dieser verwaltet wird.
 
@@ -145,7 +145,7 @@ Name                 | BESCHREIBUNG
 
 `ComPtr`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** client.h
 
@@ -183,7 +183,7 @@ Die Schnittstelle, die durch den Parameter *p*dargestellt werden soll.
 *p*<br/>
 Ein `ComPtr`-Objekt, das die durch den Parameter *U*angegebene Schnittstelle darstellt. Der Parameter " *p* " darf nicht auf das aktuelle `ComPtr` Objekt verweisen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Vorlage ist die Form, die Sie in Ihrem Code verwenden sollten. Die zweite Vorlage ist eine interne Hilfsspezialisierung, die C++-Sprachfeatures unterstützt, wie etwa das Schlüsselwort [auto](../../cpp/auto-cpp.md) zur Typableitung.
 
@@ -294,7 +294,7 @@ Ein Objekt vom Typ " *U*".
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor ist der Standardkonstruktor, der implizit ein leeres-Objekt erstellt. Der zweite Konstruktor gibt [__nullptr](../../extensions/nullptr-cpp-component-extensions.md)an, der explizit ein leeres-Objekt erstellt.
 
@@ -339,7 +339,7 @@ Eine Schnittstellen-ID.
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das angibt, warum der implizite `QueryInterface` Vorgang fehlgeschlagen ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Funktion gibt eine Kopie eines Zeigers auf die-Schnittstelle zurück, die dieser `ComPtr`zugeordnet ist. Diese Funktion gibt immer S_OK zurück.
 
@@ -392,7 +392,7 @@ Inkremente den Verweis Zähler der Schnittstelle, die dieser `ComPtr`zugeordnet 
 void InternalAddRef() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ist geschützt.
 
@@ -404,7 +404,7 @@ Führt einen com-Releasevorgang für die diesem `ComPtr`zugeordnete-Schnittstell
 void InternalRelease();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ist geschützt.
 
@@ -422,7 +422,7 @@ const Details::ComPtrRef<const WeakRef> operator&() const
 
 Ein schwacher Verweis auf die aktuelle `ComPtr`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode unterscheidet sich von [comptr:: getaddressof](#getaddressof) insofern, als diese Methode einen Verweis auf den Schnittstellen Zeiger freigibt. Verwenden Sie `ComPtr::GetAddressOf`, wenn Sie die Adresse des Schnittstellen Zeigers benötigen, diese Schnittstelle jedoch nicht freigeben möchten.
 
@@ -438,7 +438,7 @@ WRL_NOTHROW Microsoft::WRL::Details::RemoveIUnknown<InterfaceType>* operator->()
 
 Ein Zeiger auf den Typ, der durch den Namen des aktuellen Vorlagen Typs angegeben wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Hilfsfunktion entfernt unnötigen mehr Aufwand, der durch die Verwendung des STDMETHOD-Makros verursacht wird. Diese Funktion macht `IUnknown` Typen `private` anstelle von `virtual`.
 
@@ -485,7 +485,7 @@ Ein Zeiger, ein Verweis oder ein rvalue-Verweis auf einen Typ oder einen anderen
 
 Ein Verweis auf die aktuelle `ComPtr`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Version dieses Operators weist dem aktuellen `ComPtr`einen leeren Wert zu.
 
@@ -591,7 +591,7 @@ Enthält einen Zeiger auf die-Schnittstelle, die dieser `ComPtr`zugeordnet ist u
 InterfaceType *ptr_;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `ptr_` ist ein interner, geschützter Datenmember.
 

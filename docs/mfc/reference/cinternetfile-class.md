@@ -33,11 +33,11 @@ helpviewer_keywords:
 - CInternetFile [MFC], m_hFile
 ms.assetid: 96935681-ee71-4a8d-9783-5abc7b3e6f10
 ms.openlocfilehash: 68a0a0f35d1a1f4519401080f9f207bf76c87079
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890782"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424332"
 ---
 # <a name="cinternetfile-class"></a>CInternetFile-Klasse
 
@@ -49,17 +49,17 @@ Ermöglicht den Zugriff auf Dateien auf Remote Systemen, die Internet Protokolle
 class CInternetFile : public CStdioFile
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CInternetFile:: CInternetFile](#cinternetfile)|Erstellt ein `CInternetFile`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CInternetFile:: Abort](#abort)|Schließt die Datei, wobei alle Warnungen und Fehler ignoriert werden.|
 |[CInternetFile:: Close](#close)|Schließt einen `CInternetFile` und gibt seine Ressourcen frei.|
@@ -75,17 +75,17 @@ class CInternetFile : public CStdioFile
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CInternetFile:: Operator HINTERNET](#operator_hinternet)|Ein Umwandlungs Operator für ein Internet handle.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CInternetFile:: m_hFile](#m_hfile)|Ein Handle für eine Datei.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Stellt eine Basisklasse für die Klassen " [CHttpFile](../../mfc/reference/chttpfile-class.md) " und " [CGopherFile](../../mfc/reference/cgopherfile-class.md) " bereit. Sie erstellen niemals direkt ein `CInternetFile` Objekt. Erstellen Sie stattdessen ein Objekt einer der abgeleiteten Klassen, indem Sie [CGopherConnection:: OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile) oder [CHttpConnection:: openrequest](../../mfc/reference/chttpconnection-class.md#openrequest)aufrufen. Sie können auch ein `CInternetFile` Objekt erstellen, indem Sie [CFtpConnection:: OpenFile](../../mfc/reference/cftpconnection-class.md#openfile)aufrufen.
 
@@ -103,7 +103,7 @@ Weitere Informationen zur Funktionsweise von `CInternetFile` mit den anderen MFC
 
 `CInternetFile`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -115,7 +115,7 @@ Schließt die Datei, die diesem-Objekt zugeordnet ist, und macht die Datei zum L
 virtual void Abort();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die Datei nicht geschlossen haben, bevor Sie das Objekt zerstören, wird Sie vom Dekonstruktor für Sie geschlossen.
 
@@ -164,7 +164,7 @@ Ein Zeiger auf eine Zeichenfolge, die den Namen des Servers enthält.
 *dwcontext*<br/>
 Der Kontext Bezeichner für das `CInternetFile` Objekt. Weitere Informationen zum Kontext Bezeichner finden Sie unter [WinInet-Grundlagen](../../mfc/wininet-basics.md) .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen niemals direkt ein `CInternetFile` Objekt. Erstellen Sie stattdessen ein Objekt einer der abgeleiteten Klassen, indem Sie [CGopherConnection:: OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile) oder [CHttpConnection:: openrequest](../../mfc/reference/chttpconnection-class.md#openrequest)aufrufen. Sie können auch ein `CInternetFile` Objekt erstellen, indem Sie [CFtpConnection:: OpenFile](../../mfc/reference/cftpconnection-class.md#openfile)aufrufen.
 
@@ -176,7 +176,7 @@ Schließt einen `CInternetFile` und gibt seine Ressourcen frei.
 virtual void Close();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Datei zum Schreiben geöffnet wurde, gibt es einen impliziten Löschvorgang [, um sicherzustellen,](#flush) dass alle gepufferten Daten auf den Host geschrieben werden. Wenn Sie mit der Verwendung einer Datei fertig sind, sollten Sie `Close` anrufen.
 
@@ -188,7 +188,7 @@ Mit dieser Member-Funktion können Sie den Inhalt des Schreib Puffers leeren.
 virtual void Flush();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `Flush`, um sicherzustellen, dass alle Daten im Arbeitsspeicher tatsächlich auf den Zielcomputer geschrieben wurden, und um sicherzustellen, dass die Transaktion mit dem Host Computer abgeschlossen wurde. `Flush` ist nur für `CInternetFile` Objekte wirksam, die zum Schreiben geöffnet sind.
 
@@ -238,7 +238,7 @@ Die Anzahl der zu schreibenden Bytes.
 
 Die Anzahl der in den Puffer übertrageben Bytes. Der Rückgabewert kann kleiner als *nCount* sein, wenn das Ende der Datei erreicht wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktion gibt die Anzahl der tatsächlich gelesenen Bytes zurück – eine Zahl, die kleiner als *nCount* sein kann, wenn die Datei endet. Wenn beim Lesen der Datei ein Fehler auftritt, löst die Funktion ein [cinternettexception](../../mfc/reference/cinternetexception-class.md) -Objekt aus, das den Fehler beschreibt. Beachten Sie, dass der Lesevorgang nach dem Ende der Datei nicht als Fehler angesehen und keine Ausnahme ausgelöst wird.
 
@@ -273,7 +273,7 @@ Ein Zeiger auf den Puffer mit reinen Daten, die aus dem [CInternetFile](../../mf
 
 NULL, wenn das Dateiende erreicht wurde, ohne dass Daten gelesen wurden. oder, wenn es sich um einen booleschen Wert handelt, false, wenn das Dateiende erreicht wurde, ohne Daten zu lesen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Funktion platziert die resultierende Zeile in den Speicher, auf den vom *Pstr* -Parameter verwiesen wird. Das Lesen von Zeichen wird beendet, wenn die maximale Anzahl von Zeichen erreicht wird, die durch *nmax*angegeben wird. Der Puffer empfängt immer ein abschließendes NULL-Zeichen.
 
@@ -307,7 +307,7 @@ Relativer Verweis für den Offset. Dies muss einer der folgenden Werte sein:
 
 Der neue Byte Offset vom Anfang der Datei, wenn die angeforderte Position gültig ist. Andernfalls ist der Wert nicht definiert, und es wird ein [cinternettexception](../../mfc/reference/cinternetexception-class.md) -Objekt ausgelöst.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `Seek`-Funktion ermöglicht den zufälligen Zugriff auf den Inhalt einer Datei, indem der Zeiger auf einen angegebenen Betrag (absolut oder relativ) verschoben wird. Während der Suche werden tatsächlich keine Daten gelesen.
 
@@ -339,7 +339,7 @@ Die gewünschte Puffergröße in Bytes.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zugrunde liegenden WinInet-APIs führen keine Pufferung aus. Wählen Sie daher eine Puffergröße aus, die Ihrer Anwendung ermöglicht, Daten effizient zu lesen, unabhängig von der zu lesenden Datenmenge. Wenn jeder [Lese](#read) Vorgang in der Regel eine große Anzahl von Daten enthält (z. b. vier oder mehr Kilobytes), sollten Sie keinen Puffer benötigen. Wenn Sie jedoch `Read` zum Abrufen kleiner Datenblöcke oder zum Verwenden von "read [String](#readstring) " verwenden, um einzelne Zeilen gleichzeitig zu lesen, verbessert ein Lese Puffer die Anwendungsleistung.
 
@@ -364,7 +364,7 @@ Die Größe des Puffers in Byte.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zugrunde liegenden WinInet-APIs führen keine Pufferung aus. Wählen Sie daher eine Puffergröße aus, die Ihrer Anwendung ermöglicht, Daten unabhängig von der zu schreibenden Datenmenge effizient zu schreiben. Wenn jeder Aufruf zum [Schreiben](#write) in der Regel eine große Datenmenge (z. b. vier oder mehr Kilobyte) umfasst, sollten Sie keinen Puffer benötigen. Wenn Sie jedoch [schreiben schreiben](#write) , um kleine Datenblöcke zu schreiben, verbessert ein Schreibpuffer die Leistung Ihrer Anwendung.
 
@@ -388,7 +388,7 @@ Ein Zeiger auf das erste zu schreibende Byte.
 *nCount*<br/>
 Gibt die Anzahl der zu schreibenden Bytes an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn beim Schreiben der Daten ein Fehler auftritt, löst die Funktion ein [cinternettexception](../../mfc/reference/cinternetexception-class.md) -Objekt aus, das den Fehler beschreibt.
 
@@ -405,11 +405,11 @@ virtual void WriteString(LPCTSTR pstr);
 *Pstr*<br/>
 Ein Zeiger auf eine Zeichenfolge, die den zu schreibenden Inhalt enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn beim Schreiben der Daten ein Fehler auftritt, löst die Funktion ein [cinternettexception](../../mfc/reference/cinternetexception-class.md) -Objekt aus, das den Fehler beschreibt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CStdioFile-Klasse](../../mfc/reference/cstdiofile-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

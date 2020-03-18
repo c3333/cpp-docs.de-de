@@ -63,11 +63,11 @@ helpviewer_keywords:
 - CBaseTabbedPane [MFC], ShowTab
 ms.assetid: f22c0080-5b29-4a0a-8f74-8f0a4cd2dbcf
 ms.openlocfilehash: d7ffaa7274a8ed12944cdbc5dcbbdcb8fd3fd2b9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883659"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424602"
 ---
 # <a name="cbasetabbedpane-class"></a>CBaseTabbedPane-Klasse
 
@@ -79,17 +79,17 @@ Erweitert die Funktionalität von [CDockablePane Class](../../mfc/reference/cdoc
 class CBaseTabbedPane : public CDockablePane
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|`CBaseTabbedPane::CBaseTabbedPane`|Der Standardkonstruktor.|
+|`CBaseTabbedPane::CBaseTabbedPane`|Standardkonstruktor|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cbasetabbedpane:: addTab](#addtab)|Fügt eine neue Registerkarte zu einem Bereich im Registerkarten Format hinzu.|
 |[Cbasetabbedpane:: allowdestroyemptytabbedpane](#allowdestroyemptytabbedpane)|Gibt an, ob ein leerer Bereich im Registerkarten Format zerstört werden kann.|
@@ -125,7 +125,7 @@ class CBaseTabbedPane : public CDockablePane
 |[Cbasetabbedpane:: abtautehidemode](#setautohidemode)|Schaltet den Andock Bereich zwischen dem angezeigten und dem automatisch Ausblend baren Modus um. (Überschreibt [CDockablePane:: abtautrehidemode](../../mfc/reference/cdockablepane-class.md#setautohidemode).)|
 |[Cbasetabbedpane:: showTab](#showtab)|Blendet eine Registerkarte ein oder aus.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Klasse ist eine abstrakte Klasse und kann nicht instanziiert werden. Es implementiert die Dienste, die allen Arten von Bereichen im Registerkarten Format gemeinsam sind.
 
@@ -151,7 +151,7 @@ Weitere Informationen zum Erstellen von Bereichen im Registerkarten Format finde
 
 `CBaseTabbedPane`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxbasetabbedpane. h
 
@@ -170,7 +170,7 @@ virtual BOOL AddTab(
 ### <a name="parameters"></a>Parameter
 
 *pnewbar*<br/>
-[in, out] Ein Zeiger auf den hinzu zufügenden Bereich. Dieser Zeiger wird möglicherweise ungültig, nachdem Sie diese Methode aufgerufen haben. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+[in, out] Ein Zeiger auf den hinzu zufügenden Bereich. Dieser Zeiger wird möglicherweise ungültig, nachdem Sie diese Methode aufgerufen haben. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
 *bvisible*<br/>
 in TRUE, um die Registerkarte sichtbar zu machen. andernfalls false.
@@ -183,9 +183,9 @@ in TRUE, damit die Registerkarte getrennt wird. andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Bereich erfolgreich als Registerkarte hinzugefügt wurde und im Prozess nicht zerstört wurde. FALSE, wenn der hinzugefügte Bereich ein Objekt vom Typ `CBaseTabbedPane`ist. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+TRUE, wenn der Bereich erfolgreich als Registerkarte hinzugefügt wurde und im Prozess nicht zerstört wurde. FALSE, wenn der hinzugefügte Bereich ein Objekt vom Typ `CBaseTabbedPane`ist. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie einen Bereich als neue Registerkarte in einem Bereich im Registerkarten Format hinzufügen. Wenn *pnewbar* auf ein Objekt vom Typ `CBaseTabbedPane`zeigt, werden alle zugehörigen Registerkarten in den Bereich im Registerkarten Format kopiert, und dann wird *pnewbar* zerstört. Daher wird *pnewbar* zu einem ungültigen Zeiger und sollte nicht verwendet werden.
 
@@ -201,7 +201,7 @@ virtual BOOL AllowDestroyEmptyTabbedPane() const;
 
 TRUE, wenn ein leerer Bereich im Registerkarten Format zerstört werden kann. andernfalls false. Die Standard Implementierung gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn ein leerer Bereich im Registerkarten Format nicht zerstört werden darf, verbirgt das Framework stattdessen den Bereich.
 
@@ -218,7 +218,7 @@ virtual void ApplyRestoredTabInfo(BOOL bUseTabIndexes = FALSE);
 *"buabtabindexes"*<br/>
 in Dieser Parameter wird intern vom Framework verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird vom Framework aufgerufen, wenn die Andock Zustandsinformationen aus der Registrierung erneut geladen werden. Die-Methode ruft Informationen zu Aktivier Reihenfolge und Registerkarten Namen für einen Bereich im Register Format ab.
 
@@ -246,7 +246,7 @@ virtual BOOL CanSetCaptionTextToTabName() const;
 
 TRUE, wenn der Beschriftungs Text des Bereichs im Registerkarten Format auf den Text der aktiven Registerkarte festgelegt ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Methode wird verwendet, um zu bestimmen, ob der Text, der im Bereich im Registerkarten Bereich angezeigt wird, die Bezeichnung der aktiven Registerkarte dupliziert. Sie können diese Funktion aktivieren oder deaktivieren, indem Sie [cbasetabbedpane:: enablesetcaptiontexttotabname](#enablesetcaptiontexttotabname)aufrufen.
 
@@ -285,7 +285,7 @@ in Boolescher Parameter, der angibt, ob das Framework den Bereich nach dem Trenn
 
 TRUE, wenn das Framework den Bereich erfolgreich trennt. FALSE, wenn *pbar* NULL ist oder auf einen Bereich verweist, der nicht im Registerkarten Bereich angezeigt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework schwebt nach Möglichkeit im getrennten Bereich. Weitere Informationen finden Sie unter [cbasepane:: canfloat](../../mfc/reference/cbasepane-class.md#canfloat).
 
@@ -310,7 +310,7 @@ Stellt die interne Aktivier Reihenfolge in einem Standardzustand wieder her.
 void FillDefaultTabsOrderArray();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird aufgerufen, wenn das Framework eine Outlook-Leiste in einem Anfangszustand wiederherstellt.
 
@@ -331,7 +331,7 @@ in Gibt die ID des zu suchenden Bereichs an.
 
 Ein Zeiger auf den Bereich, wenn er gefunden wurde. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode vergleicht alle Registerkarten im Bereich und gibt die mit der ID zurück, die durch den *ubarid* -Parameter angegeben wird.
 
@@ -357,7 +357,7 @@ in TRUE, wenn das zugrunde liegende (umschließte) Fenster des Bereichs anstelle
 
 Wenn der Bereich gefunden wird, wird ein gültiger Zeiger auf den Bereich zurückgegeben, der gesucht wird. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie diese Methode auf, um den Bereich abzurufen, der sich auf der durch den *ntabnum* -Parameter angegebenen Registerkarte befindet.
 
@@ -382,7 +382,7 @@ virtual BOOL FloatTab(
 in Gibt den NULL basierten Index der zu gleitenden Registerkarte an.
 
 *dockmethod*<br/>
-in Gibt die Methode an, die verwendet werden soll, um den Bereich zu ändern. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+in Gibt die Methode an, die verwendet werden soll, um den Bereich zu ändern. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
 *Bhide*<br/>
 in TRUE, um den Bereich vor dem Gleit Komma ausblenden. andernfalls false.
@@ -391,7 +391,7 @@ in TRUE, um den Bereich vor dem Gleit Komma ausblenden. andernfalls false.
 
 TRUE, wenn der Bereich angezeigt wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie einen Bereich, der sich zurzeit in einer ablösbaren Registerkarte befindet, float.
 
@@ -409,7 +409,7 @@ const CArray<int,int>& GetDefaultTabsOrder();
 
 Ein `CArray`-Objekt, das die Standard Reihenfolge der Registerkarten im Bereich angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Methode auf, wenn eine Outlook-Leiste auf einen Ausgangszustand zurückgesetzt wird.
 
@@ -443,7 +443,7 @@ virtual void GetMinSize(CSize& size) const;
 *size*<br/>
 vorgenommen Ein `CSize`-Objekt, das mit der minimal zulässigen Größe aufgefüllt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die konsistente Verarbeitung der minimalen Fenstergrößen aktiv ist ( [CPANE:: m_bHandleMinSize](../../mfc/reference/cpane-class.md#m_bhandleminsize)), wird die *Größe* mit der minimal zulässigen Größe für die aktive Registerkarte aufgefüllt. andernfalls wird die *Größe* mit dem Rückgabewert von [CPANE:: getminsize](../../mfc/reference/cpane-class.md#getminsize)aufgefüllt.
 
@@ -460,7 +460,7 @@ virtual void GetMinSize(CSize& size) const;
 *size*<br/>
 vorgenommen Ein `CSize`-Objekt, das mit der minimal zulässigen Größe aufgefüllt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die konsistente Verarbeitung der minimalen Fenstergrößen aktiv ist ( [CPANE:: m_bHandleMinSize](../../mfc/reference/cpane-class.md#m_bhandleminsize)), wird die *Größe* mit der minimal zulässigen Größe für die aktive Registerkarte aufgefüllt. andernfalls wird die *Größe* mit dem Rückgabewert von [CPANE:: getminsize](../../mfc/reference/cpane-class.md#getminsize)aufgefüllt.
 
@@ -500,7 +500,7 @@ vorgenommen Empfängt die Bildschirm Koordinaten des oberen Registerkarten Berei
 *recttabareabottom*<br/>
 vorgenommen Empfängt die Bildschirm Koordinaten des unteren Registerkarten Bereichs.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie die Begrenzungs Rechtecke in Bildschirm Koordinaten für die oberen und unteren Registerkarten Bereiche bestimmen.
 
@@ -540,7 +540,7 @@ virtual int GetVisibleTabsNum() const;
 
 Die Anzahl der sichtbaren Registerkarten, die größer oder gleich 0 (null) ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie die Anzahl der sichtbaren Registerkarten im Bereich im Registerkarten Format ermitteln.
 
@@ -556,7 +556,7 @@ virtual BOOL HasAutoHideMode() const;
 
 TRUE, wenn der Bereich in den Automatisches Ausblenden-Modus gewechselt werden kann. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Modus für automatisches ausblenden deaktiviert ist, wird keine PIN-Schaltfläche auf der Titelleiste im Registerkarten Format angezeigt.
 
@@ -572,7 +572,7 @@ virtual BOOL IsHideSingleTab() const;
 
 TRUE, wenn das Registerkarten Fenster nicht angezeigt wird, wenn nur eine Registerkarte angezeigt wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Bereich nicht angezeigt wird, weil nur eine Registerkarte geöffnet ist, können Sie mit dieser Methode ermitteln, ob der Bereich im Registerkarten Format ordnungsgemäß funktioniert.
 
@@ -593,7 +593,7 @@ virtual BOOL RemovePane(CWnd* pBar);
 
 TRUE, wenn der Bereich erfolgreich aus dem Bereich im Registerkarten Format entfernt wurde und der Bereich im Registerkarten Format noch gültig ist. FALSE, wenn der letzte Bereich aus dem Bereich im Registerkarten Format entfernt wurde und der Bereich im Registerkarten Format zerstört werden soll. Wenn der Rückgabewert FALSE ist, verwenden Sie nicht den Bereich im Registerkarten Format.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Aufrufen Sie diese Methode, um den Bereich zu entfernen, der durch den *pbar* -Parameter aus dem Registerkarten Bereich angegeben wird.
 
@@ -610,7 +610,7 @@ void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 *Bauto zerstören*<br/>
 in TRUE, wenn der Bereich im Registerkarten Format dynamisch erstellt wurde und ihre Lebensdauer nicht kontrolliert wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Legen Sie den Modus für automatische Zerstörung auf true fest, wenn Sie einen Bereich im Registerkarten Format dynamisch erstellen und die Lebensdauer nicht kontrollieren. Wenn der Modus für automatische Zerstörung den Wert true hat, wird der Bereich im Registerkarten Format automatisch durch das Framework zerstört.
 
@@ -644,7 +644,7 @@ in TRUE, um die Registerkarte als aktive Registerkarte zu ändern. andernfalls f
 
 TRUE, wenn die Registerkarte erfolgreich angezeigt oder ausgeblendet wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie diese Methode aufrufen, wird ein Bereich je nach Wert des *bShow* -Parameters entweder angezeigt oder ausgeblendet. Wenn Sie eine Registerkarte ausblenden und es sich um die letzte sichtbare Registerkarte im zugrunde liegenden Registerkarten Fenster handelt, wird der Bereich im Registerkarten Format ausgeblendet. Wenn Sie eine Registerkarte anzeigen, wenn zuvor keine Registerkarten angezeigt wurden, wird der Bereich im Registerkarten Format angezeigt.
 
@@ -656,7 +656,7 @@ Berechnet Layoutinformationen für den Bereich neu.
 virtual void RecalcLayout();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Bereich unverankert ist, benachrichtigt diese Methode das Framework, die Größe des Bereichs auf die aktuelle Größe des Mini Rahmens zu ändern.
 
@@ -683,7 +683,7 @@ in TRUE, wenn der Modus für Automatisches Ausblenden aktiviert werden soll. FAL
 in Gibt die Ausrichtung des Bereichs für Automatisches Ausblenden an, der erstellt werden soll. Eine Liste möglicher Werte finden Sie unter [CPANE:: muvebyalignment](../../mfc/reference/cpane-class.md#movebyalignment).
 
 *pcurrrauumhidebar*<br/>
-[in, out] Ein Zeiger auf die aktuelle automatisch ausblenden-Symbolleiste. Kann den Wert NULL haben.
+[in, out] Ein Zeiger auf die aktuelle automatisch ausblenden-Symbolleiste. Kann NULL sein.
 
 *"bustitimer"*<br/>
 in Gibt an, ob der automatische Ausblend Effekt verwendet werden soll, wenn der Benutzer den Bereich in den Modus für automatisches ausblenden wechselt, oder um den Bereich sofort auszublenden.
@@ -692,7 +692,7 @@ in Gibt an, ob der automatische Ausblend Effekt verwendet werden soll, wenn der 
 
 Ein Zeiger auf die automatisch Ausblend Bare Symbolleiste, die erstellt wird, wenn in den Modus für automatisches ausblenden gewechselt wird, oder NULL, wenn keine Symbolleiste erstellt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Framework ruft diese Methode auf, wenn ein Benutzer die PIN-Schaltfläche auswählt, um den Bereich im Registerkarten Format in den Modus für automatisches ausblenden oder den regulären Docking Modus zu wechseln.
 
@@ -700,7 +700,7 @@ Der Modus für Automatisches Ausblenden wird für jeden ablösbaren Bereich im B
 
 Mit dieser Methode können Sie einen Bereich im Registerkarten Format Programm gesteuert in den Modus für automatisches ausblenden wechseln. Der Bereich muss an das Hauptrahmen Fenster angedockt werden ( [CDockablePane:: getdefaultpanedivider](../../mfc/reference/cdockablepane-class.md#getdefaultpanedivider) muss einen gültigen Zeiger auf den [cpanedivider](../../mfc/reference/cpanedivider-class.md)zurückgeben).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

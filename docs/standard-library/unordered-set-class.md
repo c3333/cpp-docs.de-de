@@ -135,11 +135,11 @@ helpviewer_keywords:
 - std::unordered_set::swap
 ms.assetid: ac08084e-05a7-48c0-9ae4-d40c529922dd
 ms.openlocfilehash: 1aebb30649d138b22c5b9dae95662f84a6bf39f2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890735"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427698"
 ---
 # <a name="unordered_set-class"></a>unordered_set-Klasse
 
@@ -170,7 +170,7 @@ Der Gleichheitsvergleich-Funktionsobjekttyp.
 *Zuordnung*\
 Die Zuweisungsklasse.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="typedefs"></a>TypeDefs
 
@@ -188,11 +188,11 @@ Die Zuweisungsklasse.
 |[key_type](#key_type)|Der Typ eines Sortierschlüssels.|
 |[local_iterator](#local_iterator)|Der Typ eines Bucketiterators für die gesteuerte Sequenz.|
 |[pointer](#pointer)|Der Typ eines Zeigers auf ein Element.|
-|[Referenz](#reference)|Der Typ eines Verweises auf ein Element.|
+|[reference](#reference)|Der Typ eines Verweises auf ein Element.|
 |[size_type](#size_type)|Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.|
 |[value_type](#value_type)|Der Typ eines Elements.|
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Funktionen
 
 |||
 |-|-|
@@ -202,11 +202,11 @@ Die Zuweisungsklasse.
 |[bucket_size](#bucket_size)|Ruft die Größe eines Buckets ab.|
 |[cbegin](#cbegin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cend](#cend)|Legt das Ende der kontrollierten Sequenz fest.|
-|[Löschen](#clear)|Entfernt alle Elemente.|
+|[clear](#clear)|Entfernt alle Elemente.|
 |[count](#count)|Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.|
 |[emplace](#emplace)|Fügt ein Element hinzu, das direkt erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element hinzu, das direkt mit Hinweis erstellt wird.|
-|[empty](#empty)|Testet, ob keine Elemente vorhanden sind.|
+|[leer](#empty)|Testet, ob keine Elemente vorhanden sind.|
 |[end](#end)|Legt das Ende der kontrollierten Sequenz fest.|
 |[equal_range](#equal_range)|Sucht den Bereich, der einem angegebenen Schlüssel entspricht.|
 |[erase](#erase)|Entfernt Elemente an den angegebenen Positionen.|
@@ -220,7 +220,7 @@ Die Zuweisungsklasse.
 |[max_load_factor](#max_load_factor)|Ruft die maximale Anzahl von Elementen pro Bucket ab oder legt sie fest.|
 |[max_size](#max_size)|Ruft die maximale Größe der gesteuerten Sequenz ab.|
 |[rehash](#rehash)|Erstellt die Hashtabelle neu.|
-|[size](#size)|Ermittelt die Anzahl der Elemente.|
+|[size](#size)|Ermittelt die Anzahl von Elementen.|
 |[swap](#swap)|Vertauscht den Inhalt von zwei Containern.|
 |[unordered_set](#unordered_set)|Erstellt ein container-Objekt.|
 
@@ -230,7 +230,7 @@ Die Zuweisungsklasse.
 |-|-|
 |[unordered_set::operator=](#op_eq)|Kopiert eine Hashtabelle.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Das Objekt sortiert die Sequenz, die es steuert, indem es zwei gespeicherte Objekte, ein Vergleichs Funktions Objekt vom Typ [unordered_set:: key_equal](#key_equal) und ein Hash Funktions Objekt des Typs [unordered_set:: Hasher](#hasher), aufruft. Sie greifen auf das erste gespeicherte Objekt zu, indem Sie die Member-Funktion [unordered_set:: key_eq](#key_eq)`()`; aufrufen. und Sie greifen auf das zweite gespeicherte Objekt zu, indem Sie die Member-Funktion [unordered_set:: hash_function](#hash)`()`aufrufen. Insbesondere für alle Werte `X` und `Y` vom Typ `Key` gibt der Aufruf von `key_eq()(X, Y)` nur "true" zurück, wenn die beiden Argumentwerte die entsprechende Reihenfolge aufweisen. Der Aufruf von `hash_function()(keyval)` ergibt eine Verteilung von Werten des Typs `size_t`. Anders als Klassen Vorlagen [unordered_multiset Klasse](../standard-library/unordered-multiset-class.md)stellt ein Objekt vom Typ `unordered_set` sicher, dass `key_eq()(X, Y)` für zwei Elemente der gesteuerten Sequenz immer false ist. (Schlüssel sind eindeutig.)
 
@@ -248,7 +248,7 @@ Der Typ einer Zuweisung für die Speicherverwaltung.
 typedef Alloc allocator_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Alloc`dar.
 
@@ -297,7 +297,7 @@ const_local_iterator begin(size_type nbucket) const;
 *nbucket* -\
 Die Bucketnummer.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die beiden ersten Memberfunktionen geben einen Vorwärtsiterator zurück, der auf das erste Element der Sequenz zeigt (bzw. unmittelbar hinter das Ende einer leeren Sequenz). Die letzten zwei Member-Funktionen geben einen forward-Iterator zurück, der auf das erste Element des Bucket *nbucket* zeigt (oder direkt hinter dem Ende eines leeren Bucket).
 
@@ -370,7 +370,7 @@ size_type bucket(const Key& keyval) const;
 *keyVal* -\
 Der zuzuordnende Schlüsselwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt die Bucket-Nummer zurück, die dem Schlüsselwert *keyVal*derzeit entspricht.
 
@@ -420,7 +420,7 @@ Ruft die Anzahl von Buckets ab.
 size_type bucket_count() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt die aktuelle Anzahl von Buckets zurück.
 
@@ -510,7 +510,7 @@ size_type bucket_size(size_type nbucket) const;
 *nbucket* -\
 Die Bucketnummer.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktionen gibt die Größe der Bucket-Nummer *nbucket*zurück.
 
@@ -564,7 +564,7 @@ const_iterator cbegin() const;
 
 Ein **konstanter** Forward-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich, `cbegin() == cend()`).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
@@ -590,7 +590,7 @@ const_iterator cend() const;
 
 Ein **konstanter** Forward-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
@@ -614,7 +614,7 @@ Entfernt alle Elemente.
 void clear();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion ruft [unordered_set:: Erase](#erase)`(` [unordered_set:: begin](#begin)`(),` [unordered_set:: End](#end)`())`auf.
 
@@ -678,7 +678,7 @@ Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 typedef T1 const_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als konstanter Forward-Iterator für die gesteuerte Sequenz fungieren kann. Er wird hier als Synonym für einen durch Implementierung definierten `T1`-Typ beschrieben.
 
@@ -720,7 +720,7 @@ Der Typ eines konstanten Bucketiterators für die gesteuerte Sequenz.
 typedef T5 const_local_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als konstanter Vorwärtsiterator für ein Bucket dienen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T5`-Typ beschrieben.
 
@@ -767,7 +767,7 @@ Der Typ eines konstanten Zeigers auf ein Element.
 typedef Alloc::const_pointer const_pointer;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als konstanter Zeiger für ein Element der gesteuerten Sequenz fungieren kann.
 
@@ -812,7 +812,7 @@ Der Typ eines konstanten Verweises auf ein Element.
 typedef Alloc::const_reference const_reference;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als Konstantenverweis für ein Element der gesteuerten Sequenz fungieren kann.
 
@@ -862,7 +862,7 @@ size_type count(const Key& keyval) const;
 *keyVal* -\
 Der zu suchende Schlüsselwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt die Anzahl der Elemente im Bereich zurück, der durch [unordered_set:: equal_range](#equal_range)`(keyval)`getrennt ist.
 
@@ -911,7 +911,7 @@ Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 typedef T3 difference_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Ganzzahltyp mit Vorzeichen beschreibt ein Objekt, das die Differenz zwischen den Adressen von zwei beliebigen Elementen in der gesteuerten Sequenz darstellen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T3`-Typ beschrieben.
 
@@ -981,7 +981,7 @@ Ein-`pair`, dessen **boolesche** Komponente true zurückgibt, wenn eine Einfügu
 
 Um auf die Iteratorkomponente eines `pr`-Paares zuzugreifen, das von dieser Memberfunktion zurückgegeben wird, verwenden Sie `pr.first` und `*(pr.first)`, um es zu dereferenzieren. Um auf die **boolesche** Komponente eines Pair-`pr` zuzugreifen, das von dieser Member-Funktion zurückgegeben wird, verwenden Sie `pr.second`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
@@ -1014,7 +1014,7 @@ Ein Iterator zum neu eingefügten Element.
 
 Wenn die Einfügung fehlerhaft war, da das Element bereits vorhanden ist, wird ein Iterator an das vorhandene Element zurückgegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
@@ -1030,7 +1030,7 @@ Testet, ob keine Elemente vorhanden sind.
 bool empty() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück.
 
@@ -1105,7 +1105,7 @@ const_local_iterator end(size_type nbucket) const;
 *nbucket* -\
 Die Bucketnummer.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ersten beiden Memberfunktionen geben einen Vorwärtsiterator zurück, der direkt hinter das Ende der Sequenz verweist. Die letzten zwei Member-Funktionen geben einen forward-Iterator zurück, der direkt hinter das Ende des Bucket *nbucket*zeigt.
 
@@ -1171,7 +1171,7 @@ equal_range(const Key& keyval) const;
 *keyVal* -\
 Der zu suchende Schlüsselwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt ein paar von Iteratoren zurück `X`, sodass`[X.first, X.second)` nur die Elemente der kontrollierten Sequenz trennt, die eine äquivalente Reihenfolge mit *keyVal*aufweisen. Wenn keine solchen Elemente vorhanden sind, sind beide Iteratoren `end()`.
 
@@ -1254,7 +1254,7 @@ Bei den ersten beiden Memberfunktionen ist es ein bidirektionaler Iterator, der 
 
 Für die dritte Memberfunktion wird die Anzahl der aus dem unordered_set-Element entfernten Elemente zurück gegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Codebeispiel finden Sie unter [set::erase](../standard-library/set-class.md#erase).
 
@@ -1271,7 +1271,7 @@ const_iterator find(const Key& keyval) const;
 *keyVal* -\
 Der zu suchende Schlüsselwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt [unordered_set:: equal_range](#equal_range)`(keyval).first`zurück.
 
@@ -1325,7 +1325,7 @@ Ruft das gespeicherte Zuweisungsobjekt ab.
 Alloc get_allocator() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt das gespeicherte Zuweisungsobjekt zurück.
 
@@ -1363,7 +1363,7 @@ Ruft das gespeicherte Hashfunktionsobjekt ab.
 Hash hash_function() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt das gespeicherte Hashfunktionsobjekt zurück.
 
@@ -1401,7 +1401,7 @@ Der Typ der Hashfunktion.
 typedef Hash hasher;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Hash`dar.
 
@@ -1487,7 +1487,7 @@ Die Einzelelement-Element Funktionen (1) und (2) geben ein [paar](../standard-li
 
 Die Einzelelement-Memberfunktionen mit Hinweis (3) und (4) geben einen Iterator zurück, der auf die Position zeigt, an der das neue Element in das unordered_set-Element eingefügt wurde, oder, falls ein Element mit einem entsprechenden Schlüssel bereits vorhanden ist, auf das vorhandene Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Durch diese Funktion werden keine Iteratoren, Zeiger oder Verweise ungültig.
 
@@ -1525,7 +1525,7 @@ Ruft das gespeicherte Vergleichsfunktionsobjekt ab.
 Pred key_eq() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt das gespeicherte Vergleichsfunktionsobjekt zurück.
 
@@ -1565,7 +1565,7 @@ Der Typ der Vergleichsfunktion.
 typedef Pred key_equal;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Pred`dar.
 
@@ -1605,7 +1605,7 @@ Der Typ eines Sortierschlüssels.
 typedef Key key_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Key`dar.
 
@@ -1657,7 +1657,7 @@ Zählt die durchschnittliche Anzahl von Elementen pro Bucket.
 float load_factor() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt `(float)`[unordered_set::size](#size)`() / (float)`[unordered_set::bucket_count](#bucket_count)`()` zurück, also die durchschnittliche Anzahl von Elementen pro Bucket.
 
@@ -1742,7 +1742,7 @@ Der Typ eines Bucketiterators.
 typedef T4 local_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als ein Vorwärtsiterator für ein Bucket dienen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T4`-Typ beschrieben.
 
@@ -1789,7 +1789,7 @@ Ruft die maximale Anzahl von Buckets ab.
 size_type max_bucket_count() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt die maximale Anzahl von Buckets zurück, die derzeit zulässig ist.
 
@@ -1881,7 +1881,7 @@ void max_load_factor(float factor);
 *Faktor*\
 Der neue maximale Lastfaktor.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion gibt den gespeicherten maximalen Lastfaktor zurück. Die zweite Member-Funktion ersetzt den gespeicherten maximalen Lastfaktor durch den *Faktor*.
 
@@ -1966,7 +1966,7 @@ Ruft die maximale Größe der gesteuerten Sequenz ab.
 size_type max_size() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt die Länge der längsten Sequenz zurück, die das Objekt steuern kann.
 
@@ -2008,7 +2008,7 @@ unordered_set& operator=(unordered_set&& right);
 *Rechte*\
 Die [unordered_set](../standard-library/unordered-set-class.md) , die in den `unordered_set`kopiert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem alle vorhandenen Elemente in einem `unordered_set`gelöscht wurden, `operator=` entweder kopiert oder verschiebt den Inhalt von *right* in den `unordered_set`.
 
@@ -2057,7 +2057,7 @@ Der Typ eines Zeigers auf ein Element.
 typedef Alloc::pointer pointer;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als Zeiger auf ein Element der gesteuerten Sequenz fungieren kann.
 
@@ -2103,7 +2103,7 @@ Der Typ eines Verweises auf ein Element.
 typedef Alloc::reference reference;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Objekt, das als Verweis auf ein Element der gesteuerten Sequenz fungieren kann.
 
@@ -2154,7 +2154,7 @@ void rehash(size_type nbuckets);
 *nbucket* -\
 Die angeforderte Anzahl von Buckets.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion ändert die Anzahl von Buchern in mindestens *nbucket* und erstellt die Hash Tabelle nach Bedarf neu.
 
@@ -2220,13 +2220,13 @@ max_load_factor() == 0.1
 
 ## <a name="size"></a>Größe
 
-Ermittelt die Anzahl der Elemente.
+Ermittelt die Anzahl von Elementen.
 
 ```cpp
 size_type size() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück.
 
@@ -2291,7 +2291,7 @@ Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.
 typedef T2 size_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der unsignierte Ganzzahltyp beschreibt ein Objekt, das die Länge jeder kontrollierten Sequenz darstellen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T2`-Typ beschrieben.
 
@@ -2332,7 +2332,7 @@ void swap(unordered_set& right);
 *Rechte*\
 Der Container für den Tauschvorgang.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen `*this` und *Rechts*aus. Wenn [unordered_set:: Get_allocator](#get_allocator)`() == right.get_allocator()`, erfolgt dies in konstanter Zeit, es wird nur eine Ausnahme ausgelöst, wenn das Objekt "gespeicherte Merkmale" vom Typ "`Tr`" kopiert wird, und es werden keine Verweise, Zeiger oder Iteratoren ungültig, die Elemente in den beiden kontrollierten Sequenzen bestimmen. Andernfalls führt Sie proportional zur Anzahl der Elemente in den beiden kontrollierten Sequenzen eine Reihe von Elementzuweisungen und Konstruktoraufrufe aus.
 
@@ -2458,7 +2458,7 @@ Der zu kopierende Container.
 *IList* -\
 Das initializer_list-Element, in dem die zu kopierenden Elemente enthalten sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor gibt eine Kopie der Sequenz an, die von *Rechts*gesteuert wird. Mit dem zweiten Konstruktor wird eine leere gesteuerte Sequenz angegeben. Der dritte Konstruktor gibt eine Kopie der Sequenz an, indem er die vierten bis achten Konstruktoren nach *Rechts* verschiebt. verwenden Sie einen initializer_list, um die zu kopierenden Elemente anzugeben. Mit dem neunten Konstruktor wird die Elementwertesequenz `[first, last)` eingefügt.
 
@@ -2480,7 +2480,7 @@ Der Typ eines Elements.
 typedef Key value_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ beschreibt ein Element der gesteuerten Sequenz.
 

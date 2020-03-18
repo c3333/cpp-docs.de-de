@@ -5,11 +5,11 @@ helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
 ms.openlocfilehash: 542a469393d3655418f69e5d51d59adfa824ad15
-ms.sourcegitcommit: 9a63e9b36d5e7fb13eab15c2c35bedad4fb03ade
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77600037"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422859"
 ---
 # <a name="cmakesettingsjson-schema-reference"></a>CMakeSettings.json-Schemareferenz
 
@@ -25,7 +25,7 @@ Die **cmakesettings. JSON** -Datei enthält Informationen, die Visual Studio fü
 
 Sie können Konfigurationen in der IDE hinzufügen oder entfernen und diese dann direkt in der JSON-Datei bearbeiten oder den Editor für die **cmake-Einstellungen** (Visual Studio 2019 und höher) verwenden. Sie können in der IDE problemlos zwischen den Konfigurationen wechseln, um die verschiedenen Projektdateien zu generieren. Weitere Informationen finden Sie [unter Anpassen von cmake-Buildeinstellungen in Visual Studio](customize-cmake-settings.md) .
 
-## <a name="configurations"></a>Configurations
+## <a name="configurations"></a>Konfigurationen
 
 Das `configurations` Array enthält alle Konfigurationen für ein cmake-Projekt. Weitere Informationen zu den vordefinierten Konfigurationen finden Sie unter [cmake-vordefinierte Konfigurations Referenz](cmake-predefined-configuration-reference.md) . Sie können der Datei beliebig viele vordefinierte oder benutzerdefinierte Konfigurationen hinzufügen. 
 
@@ -44,7 +44,7 @@ Eine `configuration` verfügt über die folgenden Eigenschaften:
 - `configurationType`: Gibt die Buildtypkonfiguration für den ausgewählten Generator an. Folgende stehen zur Auswahl:
 
   - Debuggen
-  - Release
+  - Version
   - MinSizeRel
   - RelWithDebInfo
   
@@ -117,7 +117,7 @@ Wenn in der aktiven Konfiguration ein Visual Studio-Generator angegeben ist, wir
 - `remoteCMakeListsRoot`: Gibt das Verzeichnis auf dem Remotecomputer an, das das CMake-Projekt enthält. Unterstützte Makros sind `${workspaceRoot}`, `${workspaceHash}`, `${projectFile}`, `${projectDir}`, `${thisFile}`, `${thisFileDir}`, `${name}`, `${generator}`, `${env.VARIABLE}`.
 - `remoteBuildRoot`: Gibt das Verzeichnis auf dem Remotecomputer an, in dem CMake Buildskripts für den ausgewählten Generator erstellt. Unterstützte Makros sind `${workspaceRoot}`, `${workspaceHash}`, `${projectFile}`, `${projectDir}`, `${thisFile}`, `${thisFileDir}`, `${name}`, `${generator}`, `${env.VARIABLE}`.
 - `remoteInstallRoot`: Gibt das Verzeichnis auf dem Remotecomputer an, in dem CMake Installationsziele für den ausgewählten Generator erstellt. Unterstützte Makros sind `${workspaceRoot}`, `${workspaceHash}`, `${projectFile}`, `${projectDir}`, `${thisFile}`, `${thisFileDir}`, `${name}`, `${generator}` und `${env.VARIABLE}`, wobei `VARIABLE` eine Umgebungsvariable ist, die auf System-, Benutzer- oder Sitzungsebene definiert wurde.
-- `remoteCopySources`: ein `boolean`, der angibt, ob Visual Studio Quelldateien auf den Remote Computer kopieren soll. Der Standardwert ist „true“. Legen Sie diesen Wert auf FALSE fest, wenn Sie die Dateisynchronisierung selbst verwalten.
+- `remoteCopySources`: ein `boolean`, der angibt, ob Visual Studio Quelldateien auf den Remote Computer kopieren soll. Der Standardwert ist true. Legen Sie diesen Wert auf FALSE fest, wenn Sie die Dateisynchronisierung selbst verwalten.
 - `remoteCopyBuildOutput`: ein `boolean`, der angibt, ob die Buildausgaben vom Remote System kopiert werden sollen.
 - `remoteCopyAdditionalIncludeDirectories`: Zusätzliche Includeverzeichnisse, die vom Remote Computer kopiert werden, um IntelliSense zu unterstützen. Als "/path1;/path2..." formatieren.
 - `remoteCopyExcludeDirectories`: schließt Verzeichnisse ein, die nicht vom Remote Computer kopiert werden sollen. Als "/path1;/path2..." formatieren.
@@ -279,7 +279,7 @@ ninja: invalid option -- `-?'
 usage: ninja [options] [targets...]
 ```
 
-|Option|BESCHREIBUNG|
+|Option|Beschreibung|
 |--------------|------------|
 | --version  | Ausgabe der Ninja-Version ("1.7.1")|
 |   -C DIR   | Änderung in DIR, bevor andere Aktionen ausgeführt werden|

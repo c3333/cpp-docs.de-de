@@ -10,17 +10,17 @@ helpviewer_keywords:
 - else keyword [C++]
 ms.assetid: f8c45cde-6bce-42ae-81db-426b3dbd4caa
 ms.openlocfilehash: 0e9de2d39e09e148c7e4f3ea82c3dadb173c2d0c
-ms.sourcegitcommit: 20a1356193fbe0ddd1002e798b952917eafc3439
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68661640"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423771"
 ---
 # <a name="if-else-statement-c"></a>if-else-Anweisung (C++)
 
 Steuert den bedingten Branch. Anweisungen im *If-Block* werden nur ausgeführt, wenn der *if-Expression* einen Wert ungleich 0 (null) ergibt (oder true). Wenn der Wert des *Ausdrucks* ungleich 0 (null) ist, werden *Anweisung1* und alle anderen Anweisungen im Block ausgeführt, und der Else-Block wird übersprungen. Wenn der Wert von *Expression* NULL ist, wird der If-Block ausgelassen, und der Else-Block wird ausgeführt, falls vorhanden. Ausdrücke, die als ungleich NULL ausgewertet werden, sind
 
-- true
+- TRUE
 - ein nicht-NULL-Zeiger,
 - ein arithmetischer Wert ungleich 0 (null) oder
 - ein Klassentyp, der eine eindeutige Konvertierung in einen arithmetischen, booleschen oder Zeigertyp definiert. (Informationen zu Konvertierungen finden Sie unter [Standard Konvertierungen](../cpp/standard-conversions.md).)
@@ -113,7 +113,7 @@ int main()
 
 ## <a name="if_with_init"></a>if-Anweisung mit einem Initialisierer
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): Eine **if** -Anweisung kann auch einen Ausdruck enthalten, der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Bereich des If-Blocks benötigt wird.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): eine **if** -Anweisung kann auch einen Ausdruck enthalten, der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Bereich des If-Blocks benötigt wird.
 
 ## <a name="example"></a>Beispiel
 
@@ -159,13 +159,13 @@ int main()
 }
 ```
 
-In allen Formen der **if** -Anweisung wird *Ausdruck*, der einen beliebigen Wert außer einer Struktur aufweisen kann, ausgewertet, einschließlich aller Nebeneffekte. Das Steuerelement **wird** von der if-Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, eine der *Anweisungen s enthält*eine [break](../cpp/break-statement-cpp.md)-, [Continue](../cpp/continue-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md)-Anweisung.
+In allen Formen der **if** -Anweisung wird *Ausdruck*, der einen beliebigen Wert außer einer Struktur aufweisen kann, ausgewertet, einschließlich aller Nebeneffekte. Das Steuerelement **wird** von der if-Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, *eine der Anweisungen s enthält*eine [break](../cpp/break-statement-cpp.md)-, [Continue](../cpp/continue-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md)-Anweisung.
 
-Die **else** -Klausel `if...else` einer-Anweisung ist mit der nächstliegenden **if** -Anweisung in demselben Bereich verknüpft, der keine entsprechende **else** -Anweisung hat.
+Die **else** -Klausel einer `if...else`-Anweisung ist mit der nächstliegenden **if** -Anweisung in demselben Bereich verknüpft, der nicht über eine entsprechende **else** -Anweisung verfügt.
 
-## <a name="a-nameifconstexpr-if-constexpr-statements"></a><a name="if_constexpr">if-Anweisungen (constexpr)
+## <a name="a-nameif_constexpr-if-constexpr-statements"></a><a name="if_constexpr">, wenn constexpr-Anweisungen
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): In Funktions Vorlagen können Sie eine **if constexpr** -Anweisung verwenden, um Entscheidungen zur Kompilierzeit Verzweigung zu treffen, ohne auf mehrere Funktions Überladungen zurückgreifen zu müssen. Sie können z. b. eine einzelne Funktion schreiben, die das Entpacken von Parametern behandelt (keine NULL-Parameter Überladung erforderlich):
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): in Funktions Vorlagen können Sie mit einer **if constexpr** -Anweisung Kompilierzeit-Verzweigungs Entscheidungen treffen, ohne auf mehrere Funktions Überladungen zurückgreifen zu müssen. Sie können z. b. eine einzelne Funktion schreiben, die das Entpacken von Parametern behandelt (keine NULL-Parameter Überladung erforderlich):
 
 ```cpp
 template <class T, class... Rest>
@@ -189,5 +189,5 @@ void f(T&& t, Rest&&... r)
 ## <a name="see-also"></a>Siehe auch
 
 [Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
-[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
+[Stichwörter](../cpp/keywords-cpp.md)<br/>
 [switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)

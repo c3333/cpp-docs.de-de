@@ -16,11 +16,11 @@ helpviewer_keywords:
 - reader_writer_lock class
 ms.assetid: 91a59cd2-ca05-4b74-8398-d826d9f86736
 ms.openlocfilehash: 1a7386e527b5327d928bfdcb3281c88666f1b106
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867163"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424224"
 ---
 # <a name="reader_writer_lock-class"></a>reader_writer_lock-Klasse
 
@@ -32,25 +32,25 @@ Eine im Writer festgelegte, warteschlangenbasierte Lese-/Schreibsperre mit aussc
 class reader_writer_lock;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-classes"></a>Öffentliche Klassen
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[reader_writer_lock:: scoped_lock-Klasse](#scoped_lock_class)|Ein Ausnahme sicherer RAII-Wrapper, der zum Abrufen `reader_writer_lock` Sperrobjekte als Writer verwendet werden kann.|
 |[reader_writer_lock:: scoped_lock_read-Klasse](#scoped_lock_read_class)|Ein Ausnahme sicherer RAII-Wrapper, der zum Abrufen `reader_writer_lock` Sperrobjekte als Reader verwendet werden kann.|
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[reader_writer_lock](#ctor)|Erstellt ein neues `reader_writer_lock`-Objekt.|
 |[~ reader_writer_lock-Dekonstruktor](#dtor)|Zerstört das `reader_writer_lock`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[lock](#lock)|Erhält die Reader-Writer-Sperre als Writer.|
 |[lock_read](#lock_read)|Erhält die Reader-Writer-Sperre als Reader. Wenn Writer vorhanden sind, müssen aktive Leser warten, bis Sie abgeschlossen sind. Der Reader registriert lediglich ein Interesse an der Sperre und wartet darauf, dass Writer ihn freigeben.|
@@ -58,7 +58,7 @@ class reader_writer_lock;
 |[try_lock_read](#try_lock_read)|Versucht, die Reader-Writer-Sperre als Reader zu erhalten, ohne zu blockieren.|
 |[unlock](#unlock)|Entsperrt die Lese-/Schreibsperre basierend darauf, wer Sie gesperrt hat, Reader oder Writer.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [Synchronisierungs Datenstrukturen](../../../parallel/concrt/synchronization-data-structures.md).
 
@@ -66,7 +66,7 @@ Weitere Informationen finden Sie unter [Synchronisierungs Datenstrukturen](../..
 
 `reader_writer_lock`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ConcRT. h
 
@@ -80,7 +80,7 @@ Erhält die Reader-Writer-Sperre als Writer.
 void lock();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es ist oft sicherer, das [scoped_lock](#scoped_lock_class) Konstrukt zu verwenden, um ein `reader_writer_lock` Objekt als Writer auf sichere Weise zu erhalten und freizugeben.
 
@@ -98,7 +98,7 @@ Erhält die Reader-Writer-Sperre als Reader. Wenn Writer vorhanden sind, müssen
 void lock_read();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es ist oft sicherer, das [scoped_lock_read](#scoped_lock_read_class) Konstrukt zu verwenden, um ein `reader_writer_lock` Objekt als Leser auf sichere Weise abzurufen und freizugeben.
 
@@ -120,7 +120,7 @@ Zerstört das `reader_writer_lock`-Objekt.
 ~reader_writer_lock();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es wird erwartet, dass die Sperre nicht mehr aufrechterhalten wird, wenn der Dekonstruktor ausgeführt wird. Das zulassen, dass die Sperre des Lese-Writer mit der Sperre weiterhin besteht, führt zu nicht definiertem Verhalten.
 
@@ -216,11 +216,11 @@ Entsperrt die Lese-/Schreibsperre basierend darauf, wer Sie gesperrt hat, Reader
 void unlock();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Writer auf die Sperre warten, wird die Freigabe der Sperre immer an den nächsten Writer in der FIFO-Reihenfolge weitergeleitet. Diese Sperre ist auf Writer ausgerichtet und kann Leser bei einem kontinuierlichen Ladevorgang von Writern verhungern.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [critical_section-Klasse](critical-section-class.md)

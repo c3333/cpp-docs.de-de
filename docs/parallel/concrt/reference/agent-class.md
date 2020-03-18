@@ -18,11 +18,11 @@ helpviewer_keywords:
 - agent class
 ms.assetid: 1b09e3d2-5e37-4966-b016-907ef1512456
 ms.openlocfilehash: f0092f5f90bbdf253c09dbdc80849c3db472212f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78882937"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427476"
 ---
 # <a name="agent-class"></a>agent-Klasse
 
@@ -34,22 +34,22 @@ Diese Klasse ist als Basisklasse für alle unabhängigen Agents vorgesehen. Sie 
 class agent;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Büros](#ctor)|Ist überladen. Erstellt einen Agent.|
 |[~ Agent-Dekonstruktor](#dtor)|Zerstört den Agent.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[cancel](#cancel)|Verschiebt einen Agent entweder vom `agent_created` oder `agent_runnable` Status in den `agent_canceled` Zustand.|
 |[start](#start)|Verschiebt einen Agent vom `agent_created` in den Zustand `agent_runnable` und plant die Ausführung.|
-|[status](#status)|Eine synchrone Quelle von Statusinformationen vom Agent.|
+|[Status](#status)|Eine synchrone Quelle von Statusinformationen vom Agent.|
 |[status_port](#status_port)|Eine asynchrone Quelle von Statusinformationen vom Agent.|
 |[Warte](#wait)|Wartet darauf, dass ein Agent seine Aufgabe abschließt.|
 |[wait_for_all](#wait_for_all)|Wartet darauf, dass alle angegebenen Agents Ihre Tasks ausführen.|
@@ -57,12 +57,12 @@ class agent;
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[ausgeführt](#done)|Verschiebt einen Agent in den `agent_done`-Zustand, der angibt, dass der Agent abgeschlossen wurde.|
 |[run](#run)|Stellt die Hauptaufgabe eines Agents dar. `run` sollte in einer abgeleiteten Klasse überschrieben werden und gibt an, was der Agent nach dem Start tun soll.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [asynchrone Agents](../../../parallel/concrt/asynchronous-agents.md).
 
@@ -70,7 +70,7 @@ Weitere Informationen finden Sie unter [asynchrone Agents](../../../parallel/con
 
 `agent`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** agents.h
 
@@ -96,7 +96,7 @@ Das `Scheduler` Objekt, in dem die Ausführungs Aufgabe des Agents geplant ist.
 *_PGroup*<br/>
 Das `ScheduleGroup` Objekt, in dem die Ausführungs Aufgabe des Agents geplant ist. Das verwendete `Scheduler` -Objekt wird von der Planungsgruppe impliziert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Runtime verwendet das Standardplanungsprogramm, wenn Sie den `_PScheduler` -Parameter oder den `_PGroup` -Parameter nicht angeben.
 
@@ -108,7 +108,7 @@ Zerstört den Agent.
 virtual ~agent();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Es ist ein Fehler, einen Agent zu zerstören, der sich nicht in einem Endzustand befindet (entweder `agent_done` oder `agent_canceled`). Dies kann vermieden werden, indem Sie darauf warten, dass der Agent einen Endzustand im Dekonstruktor einer Klasse erreicht, die von der `agent` Klasse erbt.
 
@@ -136,7 +136,7 @@ bool done();
 
 **true** , wenn der Agent in den `agent_done`-Zustand verschoben wird, andernfalls **false** . Ein Agent, der abgebrochen wurde, kann nicht in den `agent_done` Zustand verschoben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sollte am Ende der `run`-Methode aufgerufen werden, wenn Sie wissen, dass die Ausführung des Agents abgeschlossen wurde.
 
@@ -148,7 +148,7 @@ Stellt die Hauptaufgabe eines Agents dar. `run` sollte in einer abgeleiteten Kla
 virtual void run() = 0;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Agent-Status wird in `agent_started` geändert, bevor diese Methode aufgerufen wird. Die-Methode sollte `done` auf dem Agent mit einem entsprechenden Status vor der Rückgabe aufrufen und möglicherweise keine Ausnahmen auslösen.
 
@@ -210,7 +210,7 @@ Die maximale Wartezeit in Millisekunden.
 
 Die `agent_status` des Agents, wenn der Warte Vorgang abgeschlossen ist. Dies kann entweder `agent_canceled` oder `agent_done`sein.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Agent-Aufgabe wird abgeschlossen, wenn der Agent in die `agent_canceled` oder `agent_done` Zustände eintritt.
 
@@ -242,7 +242,7 @@ Ein Zeiger auf ein Array von Agent-Status. Jeder Statuswert stellt den Status de
 *_Timeout*<br/>
 Die maximale Wartezeit in Millisekunden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Agent-Aufgabe wird abgeschlossen, wenn der Agent in die `agent_canceled` oder `agent_done` Zustände eintritt.
 
@@ -278,12 +278,12 @@ Ein Verweis auf eine Variable, in der der agentindex platziert wird.
 *_Timeout*<br/>
 Die maximale Wartezeit in Millisekunden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Agent-Aufgabe wird abgeschlossen, wenn der Agent in die `agent_canceled` oder `agent_done` Zustände eintritt.
 
 Wenn der Parameter `_Timeout` einen anderen Wert als die Konstante `COOPERATIVE_TIMEOUT_INFINITE`aufweist, wird die Ausnahme [Operation_timed_out](operation-timed-out-class.md) ausgelöst, wenn die angegebene Zeitspanne abläuft, bevor der Agent die Aufgabe abgeschlossen hat.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)

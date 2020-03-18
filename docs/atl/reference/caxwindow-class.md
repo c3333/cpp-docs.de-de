@@ -17,11 +17,11 @@ helpviewer_keywords:
 - ATL, hosting ActiveX controls
 ms.assetid: 85e79261-43e4-4770-bde0-1ff87f222b0f
 ms.openlocfilehash: 6f5c178090a970906209e41da9298be61a61c639
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864734"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423387"
 ---
 # <a name="caxwindow-class"></a>CAxWindow-Klasse
 
@@ -36,7 +36,7 @@ Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein Activ
 class CAxWindow : public CWindow
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -58,7 +58,7 @@ class CAxWindow : public CWindow
 |-|-|
 |[Operator =](#operator_eq)|Weist einem vorhandenen `CAxWindow`-Objekt ein HWND zu.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet. Das Hosting wird von " **AtlAxWin80"** bereitgestellt, das von `CAxWindow`umschließt wird.
 
@@ -68,7 +68,7 @@ Class `CAxWindow` wird als Spezialisierung der `CAxWindowT`-Klasse implementiert
 
 Wenn Sie die Basisklasse ändern müssen, können Sie `CAxWindowT` verwenden und die neue Basisklasse als Vorlagen Argument angeben.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -94,7 +94,7 @@ vorgenommen Ein Zeiger auf den `IUnknown` des Hosts (das `AxWin` Objekt).
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das anzufügende Steuerelement Objekt muss vor dem Aufrufen von `AttachControl`ordnungsgemäß initialisiert werden.
 
@@ -146,10 +146,10 @@ Ein Zeiger auf eine Zeichenfolge zum Erstellen des Steuer Elements. Muss auf ein
    > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist. Nur die ProgID und CLSID werden auf Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen (außer Windows Mobile) mit Unterstützung für CE IE unterstützen alle Typen, einschließlich ProgID, CLSID, URL, Verweis auf aktives Dokument und HTML-Fragmente.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 *dwresid*<br/>
 Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstellt und mit der angegebenen Ressource geladen.
@@ -158,7 +158,7 @@ Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstel
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die zweite Version dieser Methode verwendet wird, wird ein HTML-Steuerelement erstellt und an die durch *dwresid*identifizierte Ressource gebunden.
 
@@ -213,13 +213,13 @@ Ein Zeiger auf eine Zeichenfolge zum Erstellen des Steuer Elements. Muss auf ein
    > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist. Nur die ProgID und CLSID werden auf Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen (außer Windows Mobile) mit Unterstützung für CE IE unterstützen alle Typen, einschließlich ProgID, CLSID, URL, Verweis auf aktives Dokument und HTML-Fragmente.
 
 *pStream*<br/>
-in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann NULL sein.
 
 *ppunkcontainer*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Containers empfängt. Kann NULL sein.
 
 *ppunkcontrol*<br/>
-vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Steuer Elements empfängt. Kann den Wert NULL haben.
+vorgenommen Die Adresse eines Zeigers, der die `IUnknown` des Steuer Elements empfängt. Kann NULL sein.
 
 *iidsink*<br/>
 in Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt. Kann IID_NULL werden.
@@ -234,7 +234,7 @@ in Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird ers
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ähnelt [CAxWindow:: anatecontrol](#createcontrol), aber im Gegensatz zu dieser Methode können `CreateControlEx` auch einen Schnittstellen Zeiger auf das neu erstellte Steuerelement empfangen und eine Ereignis Senke für den Empfang von Ereignissen einrichten, die vom Steuerelement ausgelöst werden.
 
@@ -323,7 +323,7 @@ in Die Schnittstelle, für die abgefragt wird.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Schnittstelle des Hosts ermöglicht den Zugriff auf die zugrunde liegende Funktionalität des Fenster-hostingcodes, der von `AxWin`implementiert wird.
 
@@ -361,11 +361,11 @@ in Ein Zeiger auf eine `IDocHostUIHandlerDispatch`-Schnittstelle.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die externe `IDocHostUIHandlerDispatch`-Schnittstelle wird von Steuerelementen verwendet, die die Host Website nach der `IDocHostUIHandlerDispatch`-Schnittstelle Abfragen. Das WebBrowser-Steuerelement ist ein Steuerelement, das dies bewirkt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [ATLCON-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [CWindow-Klasse](../../atl/reference/cwindow-class.md)<br/>

@@ -16,11 +16,11 @@ helpviewer_keywords:
 - IDispEventSimpleImpl class
 ms.assetid: 971d82b7-a921-47fa-a4d8-909bed377ab0
 ms.openlocfilehash: 3ceb436e4f20a17ecd086fb68f9c1cfdcbe0be3e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864735"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423081"
 ---
 # <a name="idispeventsimpleimpl-class"></a>IDispEventSimpleImpl-Klasse
 
@@ -47,11 +47,11 @@ Die Klasse des Benutzers, die von `IDispEventSimpleImpl`abgeleitet ist.
 *pdiid*<br/>
 Der Zeiger auf die IID der Ereignis dispinterface, die von dieser Klasse implementiert wird.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[IDispEventSimpleImpl:: Empfehlung](#advise)|Stellt eine Verbindung mit der Standard Ereignis Quelle her.|
 |[IDispEventSimpleImpl::D ispeventrat](#dispeventadvise)|Stellt eine Verbindung mit der Ereignis Quelle her.|
@@ -62,7 +62,7 @@ Der Zeiger auf die IID der Ereignis dispinterface, die von dieser Klasse impleme
 |[IDispEventSimpleImpl:: aufrufen](#invoke)|Ruft die Ereignishandler auf, die in der Ereignis Senk Karte aufgeführt sind.|
 |[IDispEventSimpleImpl:: nicht Empfehlung](#unadvise)|Unterbricht die Verbindung mit der Standard Ereignis Quelle.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `IDispEventSimpleImpl` bietet eine Möglichkeit, eine Ereignis-dispinterface zu implementieren, ohne dass Sie Implementierungs Code für jede Methode bzw. jedes Ereignis an dieser Schnittstelle bereitstellen müssen. `IDispEventSimpleImpl` stellt Implementierungen der `IDispatch` Methoden bereit. Sie müssen nur Implementierungen für die Ereignisse bereitstellen, die Sie behandeln möchten.
 
@@ -95,7 +95,7 @@ Weitere Informationen finden Sie [unter Unterstützung von IDispEventImpl](../..
 
 `IDispEventSimpleImpl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -116,7 +116,7 @@ in Ein Zeiger auf die `IUnknown`-Schnittstelle des Ereignis Quell Objekts.
 
 S_OK oder ein HRESULT-Fehlerwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem die Verbindung hergestellt wurde, werden Ereignisse, die von *Punk* ausgelöst werden, mithilfe der Ereignis Senk Karte an Handler in ihrer Klasse weitergeleitet.
 
@@ -145,7 +145,7 @@ Ein Zeiger auf die IID des Ereignis Quell Objekts.
 
 S_OK oder ein HRESULT-Fehlerwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Anschließend werden Ereignisse, die von *Punk* ausgelöst werden, mithilfe der Ereignis Senk Karte an Handler in ihrer Klasse weitergeleitet.
 
@@ -174,7 +174,7 @@ Ein Zeiger auf die IID des Ereignis Quell Objekts.
 
 S_OK oder ein HRESULT-Fehlerwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem die Verbindung getrennt wurde, werden die Ereignisse nicht mehr an die Handlerfunktionen weitergeleitet, die in der Ereignis Senk Karte aufgeführt sind.
 
@@ -196,7 +196,7 @@ STDMETHOD(GetIDsOfNames)(
     DISPID* /* rgdispid */);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IDispatch:: GetIDsOfNames](/windows/win32/api/oaidl/nf-oaidl-idispatch-getidsofnames) im Windows SDK.
 
@@ -211,7 +211,7 @@ STDMETHOD(GetTypeInfo)(
     ITypeInfo** /* pptinfo */);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IDispatch:: gettypeingefo](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfo) im Windows SDK.
 
@@ -223,7 +223,7 @@ Diese Implementierung von `IDispatch::GetTypeInfoCount` gibt E_NOTIMPL zurück.
 STDMETHOD(GetTypeInfoCount)(UINT* /* pctinfo */);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [IDispatch:: gettypeingefocount](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfocount) in der Windows SDK.
 
@@ -243,7 +243,7 @@ STDMETHOD(Invoke)(
     UINT* /* puArgErr */);
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Siehe [IDispatch:: Aufrufen](/windows/win32/api/oaidl/nf-oaidl-idispatch-invoke).
 
@@ -264,7 +264,7 @@ in Ein Zeiger auf die `IUnknown`-Schnittstelle des Ereignis Quell Objekts.
 
 S_OK oder ein HRESULT-Fehlerwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem die Verbindung getrennt wurde, werden die Ereignisse nicht mehr an die Handlerfunktionen weitergeleitet, die in der Ereignis Senk Karte aufgeführt sind.
 
@@ -275,7 +275,7 @@ Nachdem die Verbindung getrennt wurde, werden die Ereignisse nicht mehr an die H
 
 `Unavise` eine Verbindung mit der Standard Ereignis Quelle unterbricht, ruft Sie die IID der Standard Ereignis Quelle des Objekts ab, die von [atlgetobjectsourceinterface](composite-control-global-functions.md#atlgetobjectsourceinterface)bestimmt wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [_ATL_FUNC_INFO-Struktur](../../atl/reference/atl-func-info-structure.md)<br/>
 [IDispatchImpl-Klasse](../../atl/reference/idispatchimpl-class.md)<br/>

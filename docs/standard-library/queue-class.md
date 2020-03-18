@@ -23,11 +23,11 @@ helpviewer_keywords:
 - std::queue [C++], size
 ms.assetid: 28c20ab0-3a72-4185-9e0f-5a44eea0e204
 ms.openlocfilehash: 512b9499e63933a71a27a87f91a3bef8a65339e1
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890857"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425256"
 ---
 # <a name="queue-class"></a>queue-Klasse
 
@@ -48,7 +48,7 @@ Der in der Warteschlange zu speichernde Elementdatentyp.
 *Container*\
 Der Typ des zugrunde liegenden Containers, der verwendet wird, um die Warteschlange zu implementieren.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Elemente der-`Type` Klasse, die im ersten Vorlagen Parameter eines Queue-Objekts festgelegt wurden, sind mit [value_type](#value_type) Synonym und müssen mit dem Typ des Elements in der zugrunde liegenden Container Klasse `Container`, das durch den zweiten Vorlagen Parameter festgelegt ist, identisch sein. Der `Type` muss zugewiesen werden können, sodass es möglich ist, Objekte dieses Typs zu kopieren und Variablen dieses Typs Werte zuzuweisen.
 
@@ -64,7 +64,7 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 
 - In der [Warteschlangenklasse mit hoher Priorität](../standard-library/priority-queue-class.md) sind deren Elemente so sortiert, dass sich das größte Element immer an der obersten Position befindet. Die Klasse unterstützt Einfügen eines Elements sowie die Prüfung und Entfernung des obersten Elements. Eine gute Analogie, um sich dies zu merken, sind Personen, die in einer Schlange stehen, in der sie nach Alter, Größe oder einem anderen Kriterium angeordnet sind.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -80,12 +80,12 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 |[size_type](#size_type)|Eine Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in `queue` darstellen kann.|
 |[value_type](#value_type)|Ein Typ, der den Typ des Objekts angibt, das in einem `queue`-Objekt als Element gespeichert wird.|
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Funktionen
 
 |||
 |-|-|
 |[Rückseite](#back)|Gibt ein Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite des `queue` zurück.|
-|[empty](#empty)|Testet, ob das `queue`-Objekt ist leer.|
+|[leer](#empty)|Testet, ob das `queue`-Objekt ist leer.|
 |[Vorderseite](#front)|Gibt einen Verweis auf das erste Element auf der Vorderseite von `queue` zurück.|
 |[pop](#pop)|Entfernt ein Element vom Anfang der `queue`.|
 |[push](#push)|Fügt am Ende der `queue` ein Element hinzu.|
@@ -105,7 +105,7 @@ const_reference back() const;
 
 Das letzte Element der Warteschlange. Wenn die Warteschlange leer ist, ist der Rückgabewert nicht definiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Rückgabewert von `back` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `back` einem `reference`zugewiesen wird, kann das Warteschlangen Objekt geändert werden.
 
@@ -145,7 +145,7 @@ Ein Typ, der den anzupassenden Basiscontainer bereitstellt.
 typedef Container container_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Container`dar. Zwei Sequenzcontainerklassen der C++-Standardbibliothek — die Listklasse und die Standarddoppelschlangenklasse — erfüllen die Anforderungen, um als Basiscontainer für ein Warteschlangenobjekt verwendet zu werden. Benutzerdefinierte Typen, die diese Anforderung erfüllen, können auch verwendet werden.
 
@@ -215,7 +215,7 @@ const_reference front() const;
 
 Das erste Element der Warteschlange. Wenn die Warteschlange leer ist, ist der Rückgabewert nicht definiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Rückgabewert von `front` einem `const_reference` zugewiesen wird, kann das Warteschlangenobjekt nicht geändert werden. Wenn der Rückgabewert von `front` einem `reference`zugewiesen wird, kann das Warteschlangen Objekt geändert werden.
 
@@ -261,7 +261,7 @@ Entfernt ein Element von der Vorderseite der Warteschlange.
 void pop();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Warteschlange darf nicht leer sein, damit die Memberfunktion angewendet wird. Am Anfang der Warteschlange befindet sich das zuletzt hinzugefügte Element und es ist das letzte Element am Ende des Containers.
 
@@ -322,7 +322,7 @@ void push(const Type& val);
 *Val* -\
 Das Element, das am Ende der Warteschlange hinzugefügt wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 An der Rückseite der Warteschlange befinden sich die zuletzt hinzugefügten Elemente und das letzte Element am Ende des Containers.
 
@@ -373,7 +373,7 @@ explicit queue(const container_type& right);
 *Rechte*\
 Der **const**-Container, dessen Kopie die erstellte Warteschlange sein soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Basisstandardcontainer für die Warteschlange ist die Doppelschlange. Sie können auch die Liste als Basiscontainer angeben, Sie können jedoch keinen Vektor angeben, da die erforderliche `pop_front`-Memberfunktion fehlt.
 
@@ -474,7 +474,7 @@ Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in einer Warteschl
 typedef typename Container::size_type size_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für das `size_type` des Basiscontainers, der von der Warteschlange angepasst wurde.
 
@@ -490,7 +490,7 @@ Ein Typ, der den Objekttyp angibt, der als Element in einer Warteschlange gespei
 typedef typename Container::value_type value_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für das `value_type` des Basiscontainers, der von der Warteschlange angepasst wurde.
 
@@ -524,7 +524,7 @@ The value_type is AnInt = 69
 The element at the front of the queue is 69.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)

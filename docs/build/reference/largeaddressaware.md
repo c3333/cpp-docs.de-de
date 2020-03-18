@@ -2,18 +2,18 @@
 title: /LARGEADDRESSAWARE
 ms.date: 11/04/2016
 f1_keywords:
-- /largeaddressaware
+- /largeaddressaware_editbin
 helpviewer_keywords:
 - -LARGEADDRESSAWARE editbin option
 - /LARGEADDRESSAWARE editbin option
 - LARGEADDRESSAWARE editbin option
 ms.assetid: 5db58df3-4457-4808-adf7-2bee6ea97486
-ms.openlocfilehash: 1a96d8f5c0f0f0e8a011dffda1549760bcc5f0fe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d1a4c27830850cb74f705bfb9663303f465632bf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62269367"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439444"
 ---
 # <a name="largeaddressaware"></a>/LARGEADDRESSAWARE
 
@@ -21,10 +21,10 @@ ms.locfileid: "62269367"
 /LARGEADDRESSAWARE
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Option wird das Bild, um anzugeben, dass die Anwendung Adressen, die größer als 2 Gigabyte verarbeiten kann bearbeitet.
+Mit dieser Option wird das Bild bearbeitet, um anzugeben, dass die Anwendung Adressen verarbeiten kann, die größer als 2 GB sind.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [EDITBIN-Optionen](editbin-options.md)

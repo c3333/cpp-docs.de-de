@@ -37,11 +37,11 @@ helpviewer_keywords:
 - std::ctype [C++], widen
 ms.assetid: 3627154c-49d9-47b5-b28f-5bbedee38e3b
 ms.openlocfilehash: 640b2cc8506e498006feedbea6825a0e51a88209
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876308"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427170"
 ---
 # <a name="ctype-class"></a>ctype-Klasse
 
@@ -59,7 +59,7 @@ class ctype : public ctype_base;
 *CharType* -\
 Der Typ, der innerhalb eines Programms verwendet wird, um Zeichen zu codieren.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in `id` gespeichert. Für Klassifizierungskriterien wird ein geschachtelter Bitmaskentyp in der ctype_base-Basisklasse bereitgestellt.
 
@@ -79,19 +79,19 @@ Alle anderen Vorgänge werden für **char** -Werte auf die gleiche Weise wie fü
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|BESCHREIBUNG|
+|Konstruktor|Beschreibung|
 |-|-|
 |[ctype](#ctype)|Konstruktor für Objekte der Klasse `ctype`, die als Gebietsschemafacets für Zeichen dienen.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name des Typs|BESCHREIBUNG|
+|Typname|Beschreibung|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der ein Zeichen beschreibt, das von einem Gebietsschema verwendet wird.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |-|-|
 |[do_is](#do_is)|Eine virtuelle Funktion, die aufgerufen wird, um zu testen, ob ein einzelnes Zeichen über ein bestimmtes Attribut verfügt, oder die Attribute jedes Zeichens in einem Bereich klassifiziert und in einem Array speichert.|
 |[do_narrow](#do_narrow)|Eine virtuelle Funktion, die aufgerufen wird, um ein Zeichen vom Typ `CharType` von einem Gebiets Schema in das entsprechende Zeichen vom Typ " **char** " im systemeigenen Zeichensatz zu konvertieren.|
@@ -108,7 +108,7 @@ Alle anderen Vorgänge werden für **char** -Werte auf die gleiche Weise wie fü
 |[toupper](#toupper)|Konvertiert ein Zeichen oder einen Zeichenbereich in Großbuchstaben.|
 |[widen](#widen)|Konvertiert ein Zeichen vom Typ " **char** " im systemeigenen Zeichensatz in das entsprechende Zeichen vom Typ `CharType` das von einem Gebiets Schema verwendet wird.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** \<Gebiets Schema >
 
@@ -122,7 +122,7 @@ Ein Typ, der ein Zeichen beschreibt, das von einem Gebietsschema verwendet wird.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ ist ein Synonym für den Vorlagenparameter *CharType*.
 
@@ -143,7 +143,7 @@ explicit ctype(size_t _Refs = 0);
 *_Refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
 
@@ -195,7 +195,7 @@ Die erste Memberfunktion gibt einen booleschen Wert zurück, der **wahr** ist, w
 
 Die zweite Memberfunktion gibt ein Array mit den Maskenwerten zurück, mit denen die Attribute der einzelnen Zeichen im Bereich beschrieben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Maskenwerte, mit denen die Attribute der Zeichen beschrieben werden, werden von der [ctype_base](../standard-library/ctype-base-class.md)-Klasse bereitgestellt, von der ctype abgeleitet wird. Die erste Memberfunktion kann Ausdrücke für den ersten Parameter akzeptieren, die als Bitmasken bezeichnet werden und mit verschiedenen Maskenwerten mithilfe der logischen bitweisen Operatoren (&#124; , & , ^ , ~) gebildet werden.
 
@@ -242,7 +242,7 @@ Die erste geschützte Member-Funktion gibt das systemeigene Zeichen vom Typ char
 
 Die zweite geschützte Memberfunktion gibt einen Zeiger auf den Zielbereich mit nativen Zeichen zurück, die aus Zeichen vom Typ `CharType` konvertiert wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zweite geschützte Member-Vorlagen Funktion speichert in `dest`[`I`] den Wert `do_narrow`(`first` [`I`], `default`), für `I` im Intervall [0, `last` - `first`).
 
@@ -276,7 +276,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in de
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion gibt den kleinsten Zeiger `ptr` im Bereich [`first`, `last`) zurück, für den [do_is](#do_is)(`maskVal`, \* `ptr`) true ist.
 
@@ -310,7 +310,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in de
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske nicht entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion gibt den kleinsten Zeiger `ptr` im Bereich [`first`, `last`) zurück, für den [do_is](#do_is)(`maskVal`, \* `ptr`) false ist.
 
@@ -345,7 +345,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich
 
 Die erste geschützte Member-Funktion gibt die Kleinbuchstaben Form des-Parameters *ch*zurück. Wenn kein Formular aus Kleinbuchstaben vorhanden ist, wird *ch*zurückgegeben. Die zweite geschützte Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last` - `first`) mit `do_tolower`(`first` [`I`]).
 
@@ -380,7 +380,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Zeichenbereich
 
 Die erste geschützte Member-Funktion gibt die Großbuchstaben Form des-Parameters *ch*zurück. Wenn kein Großbuchstabe vorhanden ist, wird " *ch*" zurückgegeben. Die zweite geschützte Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zweite geschützte Member-Vorlagen Funktion ersetzt jedes Element `first` [`I`] für `I` im Intervall [0, `last` - `first`) mit `do_toupper`(`first` [`I`]).
 
@@ -421,7 +421,7 @@ Die erste geschützte Member-Funktion gibt das Zeichen vom Typ `CharType` zurüc
 
 Die zweite geschützte Member-Funktion gibt einen Zeiger auf den Zielbereich von Zeichen vom Typ zurück `CharType` der von einem Gebiets Schema verwendet wird, das aus systemeigenen Zeichen vom Typ **char**konvertiert wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die zweite geschützte Membervorlagenfunktion speichert in `dest`[ `I`] den Wert `do_widen`( `first`[ `I`]), wobei `I` im Intervall [0, `last` - `first`] liegen muss.
 
@@ -465,7 +465,7 @@ Die erste Member-Funktion gibt **true** zurück, wenn das überprüfte Zeichen �
 
 Die zweite Memberfunktion gibt einen Zeiger auf das letzte Zeichen in dem Bereich zurück, dessen Attribute klassifiziert werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Maskenwerte, mit denen die Attribute der Zeichen beschrieben werden, werden von der [ctype_base](../standard-library/ctype-base-class.md)-Klasse bereitgestellt, von der ctype abgeleitet wird. Die erste Memberfunktion kann Ausdrücke für den ersten Parameter akzeptieren, die als Bitmasken bezeichnet werden und mit verschiedenen Maskenwerten mithilfe der logischen bitweisen Operatoren (&#124; , & , ^ , ~) gebildet werden.
 
@@ -545,7 +545,7 @@ Die erste Member-Funktion gibt das systemeigene Zeichen vom Typ **char** zurück
 
 Die zweite Memberfunktion gibt einen Zeiger auf den Zielbereich mit nativen Zeichen zurück, die aus Zeichen vom Typ `CharType` konvertiert wurden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion gibt [do_narrow](#do_narrow)(`ch`, `default`) zurück. Die zweite Member-Funktion gibt [do_narrow](#do_narrow) (`first`, `last`, `default`, `dest`) zurück. Nur für die Basisquellzeichen ist sichergestellt, dass ein eindeutiges inverses `CharType`-Bild unter `narrow` vorhanden ist. Für diese Basisquellzeichen gilt folgende Invariante: `narrow` ( [widen](#widen) ( **c** ), 0 ) == **c**.
 
@@ -601,7 +601,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in de
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt [do_scan_is](#do_scan_is)zurück (`maskVal`, `first`, `last`).
 
@@ -657,7 +657,7 @@ Ein Zeiger auf das Zeichen direkt nach dem letzten Zeichen in dem Bereich, in de
 
 Ein Zeiger auf das erste Zeichen in einem Bereich, der einer bestimmten Maske nicht entspricht. Wenn kein solcher Wert vorhanden ist, gibt die Funktion *Last*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt [Do_scan_not](#do_scan_not)zurück (`maskVal`, `first`, `last`).
 
@@ -714,7 +714,7 @@ Die erste Member-Funktion gibt die Kleinbuchstaben Form des-Parameters *ch*zurü
 
 Die zweite Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion gibt [Do_tolower](#do_tolower)(`ch`) zurück. Die zweite Member-Funktion gibt [Do_tolower](#do_tolower)(`first`, `last`) zurück.
 
@@ -769,7 +769,7 @@ Die erste Member-Funktion gibt die Großbuchstaben Form des-Parameters *ch*zurü
 
 Die zweite Member-Funktion gibt den *letzten*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion gibt [Do_toupper](#do_toupper)(`ch`) zurück. Die zweite Memberfunktion gibt [do_toupper](#do_toupper)( `first`, `last`) zurück.
 
@@ -827,7 +827,7 @@ Die erste Member-Funktion gibt das Zeichen vom Typ `CharType` zurück, das dem P
 
 Die zweite Member-Funktion gibt einen Zeiger auf den Zielbereich von Zeichen vom Typ zurück `CharType` der von einem Gebiets Schema verwendet wird, das aus systemeigenen Zeichen vom Typ **char**konvertiert wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Member-Funktion gibt [Do_widen](#do_widen)(`byte`) zurück. Die zweite Member-Funktion gibt [Do_widen](#do_widen)zurück (`first`, `last`, `dest`).
 
@@ -861,7 +861,7 @@ Hello everyone!
 Hello everyone!
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<locale>](../standard-library/locale.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

@@ -1,24 +1,22 @@
 ---
 title: Verwenden von CStatusBarCtrl
 ms.date: 11/04/2016
-f1_keywords:
-- CStatusBarCtrl
 helpviewer_keywords:
 - CStatusBarCtrl class [MFC], using
 - status bar controls [MFC], about status bar controls
 ms.assetid: 08b39f83-580d-439a-b93e-7ef9e2a5702a
-ms.openlocfilehash: b02b37cee930c0fa2522583c5c331bb4e0563ef4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ee691d013d578f4c16fa9eadabd05f8710f32d8e
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411694"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442335"
 ---
 # <a name="using-cstatusbarctrl"></a>Verwenden von CStatusBarCtrl
 
-Sie können das StatusBar-Steuerelement ([CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)), ein Steuerelementfenster zu erstellen, die verschiedene Arten von Statusinformationen zur Anwendung widerspiegelt. Das Statusfenster kann in Bereiche unterteilt werden, in denen mehr als eine Art von Informationen angezeigt.
+Sie können das StatusBar-Steuerelement ([CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)) verwenden, um ein Steuerelement Fenster zu erstellen, das verschiedene Arten von Statusinformationen über die Anwendung widerspiegelt. Das Fenster Status kann in Teile aufgeteilt werden, in denen mehr als eine Art von Informationen angezeigt wird.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
 
 - [Methoden zum Erstellen einer Statusleiste](../mfc/methods-of-creating-a-status-bar.md)
 
@@ -32,6 +30,6 @@ Sie können das StatusBar-Steuerelement ([CStatusBarCtrl](../mfc/reference/cstat
 
 - [Verwenden von QuickInfos in einem CStatusBarCtrl-Objekt](../mfc/using-tooltips-in-a-cstatusbarctrl-object.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Steuerelemente](../mfc/controls-mfc.md)
+[Kontrollen](../mfc/controls-mfc.md)

@@ -24,11 +24,11 @@ helpviewer_keywords:
 - ATL, typedefs
 ms.assetid: 7dd05baa-3efb-4e3b-af23-793c610f4560
 ms.openlocfilehash: f3db32e85ea9cba1e946db6259c00c621650e969
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857105"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423603"
 ---
 # <a name="atl-typedefs"></a>ATL-Typedefs
 
@@ -61,13 +61,13 @@ Definiert als typedef basierend auf _ATL_BASE_MODULE70.
 typedef ATL::_ATL_BASE_MODULE70 _ATL_BASE_MODULE;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wird in jedem ATL-Projekt verwendet. Basierend auf [_ATL_BASE_MODULE70](../../atl/reference/atl-base-module70-structure.md).
 
 Klassen, die Teil der ATL 7,0-Modul Klassen sind, werden von der _ATL_BASE_MODULE Struktur abgeleitet.  Weitere Informationen zu ATL-Modul Klassen finden Sie unter [com modules Classes](../../atl/com-modules-classes.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlcore. h
 
@@ -79,11 +79,11 @@ Definiert als typedef basierend auf _ATL_COM_MODULE70.
 typedef ATL::_ATL_COM_MODULE70 _ATL_COM_MODULE;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wird von ATL-Projekten verwendet, die com-Funktionen verwenden. Basierend auf [_ATL_COM_MODULE70](../../atl/reference/atl-com-module70-structure.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -95,11 +95,11 @@ Definiert als typedef basierend auf _ATL_MODULE70.
 typedef ATL::_ATL_MODULE70 _ATL_MODULE;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:**
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Basierend auf [_ATL_MODULE70](../../atl/reference/atl-module70-structure.md).
 
@@ -111,11 +111,11 @@ Definiert als typedef basierend auf _ATL_WIN_MODULE70.
 typedef ATL::_ATL_WIN_MODULE70 _ATL_WIN_MODULE;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wird von ATL-Projekten verwendet, die windowingfunktionen verwenden. Basierend auf [_ATL_WIN_MODULE70](../../atl/reference/atl-win-module70-structure.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -127,7 +127,7 @@ Der Typ, der von [CUrl](curl-class.md) zum Angeben einer Portnummer verwendet wi
 typedef WORD ATL_URL_PORT;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlutil. h
 
@@ -139,7 +139,7 @@ Diese Klasse verwaltet com-Schnittstellen Zeiger.
 typedef CComQIPtr<IDispatch, &__uuidof(IDispatch)> CComDispatchDriver;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -159,7 +159,7 @@ typedef CComMultiThreadModel CComGlobalsThreadModel;
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Abhängig vom Threading Modell, das von Ihrer Anwendung verwendet wird, verweist der **typedef** -Name `CComGlobalsThreadModel` entweder auf [CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md) oder [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md). Diese Klassen stellen zusätzliche `typedef` Namen bereit, um auf eine kritische Abschnitts Klasse zu verweisen.
 
@@ -172,14 +172,14 @@ Zusätzlich zu `CComGlobalsThreadModel`stellt ATL den **typedef** -Namen [ccomob
 
 |Typedef|Single Threading|Apartment Threading|Kostenloses Threading|
 |-------------|----------------------|-------------------------|--------------------|
-|`CComObjectThreadModel`|E|E|M|
-|`CComGlobalsThreadModel`|E|M|M|
+|`CComObjectThreadModel`|S|S|M|
+|`CComGlobalsThreadModel`|S|M|M|
 
 S = `CComSingleThreadModel`; M = `CComMultiThreadModel`
 
 Verwenden Sie `CComObjectThreadModel` innerhalb einer einzelnen Objektklasse. Verwenden Sie `CComGlobalsThreadModel` in einem Objekt, das für Ihr Programm Global verfügbar ist, oder wenn Sie Modul Ressourcen über mehrere Threads hinweg schützen möchten.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -199,7 +199,7 @@ typedef CComMultiThreadModel CComObjectThreadModel;
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Abhängig vom Threading Modell, das von Ihrer Anwendung verwendet wird, verweist der `typedef` Name `CComObjectThreadModel` entweder auf [CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md) oder [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md). Diese Klassen stellen zusätzliche `typedef` Namen bereit, um auf eine kritische Abschnitts Klasse zu verweisen.
 
@@ -212,14 +212,14 @@ Zusätzlich zu `CComObjectThreadModel`stellt ATL den **typedef** -Namen [ccomglo
 
 |Typedef|Single Threading|Apartment Threading|Kostenloses Threading|
 |-------------|----------------------|-------------------------|--------------------|
-|`CComObjectThreadModel`|E|E|M|
-|`CComGlobalsThreadModel`|E|M|M|
+|`CComObjectThreadModel`|S|S|M|
+|`CComGlobalsThreadModel`|S|M|M|
 
 S = `CComSingleThreadModel`; M = `CComMultiThreadModel`
 
 Verwenden Sie `CComObjectThreadModel` innerhalb einer einzelnen Objektklasse. Verwenden Sie `CComGlobalsThreadModel` in einem Objekt, das für Ihr Programm Global verfügbar ist, oder wenn Sie Modul Ressourcen über mehrere Threads hinweg schützen möchten.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -231,11 +231,11 @@ Diese Klasse ist eine Spezialisierung von `CContainedWindowT`.
 typedef CContainedWindowT<CWindow> CContainedWindow;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CContainedWindow` ist eine Spezialisierung von [ccontainedwindowt](../../atl/reference/ccontainedwindowt-class.md). Wenn Sie die Basisklasse oder die Merkmale ändern möchten, verwenden Sie `CContainedWindowT` direkt.
 
@@ -247,7 +247,7 @@ Eine Spezialisierung von [cpatht](../../atl/reference/cpatht-class.md) mithilfe 
 typedef CPathT<CString> CPath;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlpath. h
 
@@ -259,7 +259,7 @@ Eine Spezialisierung von [cpatht](../../atl/reference/cpatht-class.md) mithilfe 
 typedef CPathT<CStringA> CPathA;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlpath. h
 
@@ -271,7 +271,7 @@ Eine Spezialisierung von [cpatht](../../atl/reference/cpatht-class.md) mithilfe 
 typedef ATL::CPathT<CStringW> CPathW;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlpath. h
 
@@ -283,11 +283,11 @@ Stellt ein Array zum Speichern von einfachen Typen dar.
 #define CSimpleValArray CSimpleArray
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CSimpleValArray` wird zum Erstellen und Verwalten von Arrays bereitgestellt, die einfache Datentypen enthalten. Es handelt sich um eine einfache #define von [CSimpleArray](../../atl/reference/csimplearray-class.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlsimpcoll. h
 
@@ -299,7 +299,7 @@ Ein Zeiger auf ein konstantes [CUrl](../../atl/reference/curl-class.md) -Objekt.
 typedef const CUrl* LPCURL;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlutil. h
 
@@ -317,11 +317,11 @@ Die standardmäßige Thread Merkmale-Klasse.
 #endif
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Wenn das aktuelle Projekt die multithreadcrt verwendet, wird defaultthreadmerkmalen als crtthreadmerkmalen definiert. Andernfalls wird Win32ThreadTraits verwendet.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlbase. h
 
@@ -333,11 +333,11 @@ Ein Zeiger auf ein [CUrl](../../atl/reference/curl-class.md) -Objekt.
 typedef CUrl* LPURL;
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlutil. h
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [ATL-COM-Desktop-Komponenten](../../atl/atl-com-desktop-components.md)<br/>
 [Funktionen](../../atl/reference/atl-functions.md)<br/>

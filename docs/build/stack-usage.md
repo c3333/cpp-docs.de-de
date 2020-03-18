@@ -3,11 +3,11 @@ title: Verwendung von Stapeln bei x64-Systemen
 ms.date: 12/17/2018
 ms.assetid: 383f0072-0438-489f-8829-cca89582408c
 ms.openlocfilehash: 902e4304ac124be46c6edf0860118dc522b34890
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856962"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422751"
 ---
 # <a name="x64-stack-usage"></a>Verwendung von Stapeln bei x64-Systemen
 
@@ -57,7 +57,7 @@ Visual C++ lässt Typen zu, die über *Erweiterte Ausrichtung*verfügen und auch
 
 Der zugeordnete Stapel muss nach ihm für Parameter der später aufgerufenen Funktionen Leerzeichen enthalten, wie in der [Stapel Zuordnung](#stack-allocation)erläutert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Softwarekonventionen bei x64-Systemen](../build/x64-software-conventions.md)<br/>
 [align](../cpp/align-cpp.md)<br/>

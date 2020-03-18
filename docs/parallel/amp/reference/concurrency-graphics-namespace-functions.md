@@ -6,11 +6,11 @@ f1_keywords:
 - amp_graphics/Concurrency::fast_math::copy
 ms.assetid: ace01cd5-29d3-4356-930e-c81a61c5f934
 ms.openlocfilehash: 46b8a171acd3b125749b4e2c519909b82c76dc39
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883745"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424956"
 ---
 # <a name="concurrencygraphics-namespace-functions"></a>Concurrency::graphics-Namespace-Funktionen
 
@@ -122,7 +122,7 @@ void copy (
 Der Umfang des zu kopierenden Texturabschnitts.
 
 *_Dst*<br/>
-Das Objekt, in das kopiert wird.
+Das Objekt, in das kopiert werden soll.
 
 *_Dst_byte_size*<br/>
 Die Anzahl von Bytes im Ziel.
@@ -257,7 +257,7 @@ concurrency::completion_future copy_async(_Src_type& _Src,
 Der Umfang des zu kopierenden Texturabschnitts.
 
 *_Dst*<br/>
-Das Objekt, in das kopiert wird.
+Das Objekt, in das kopiert werden soll.
 
 *_Dst_byte_size*<br/>
 Die Anzahl von Bytes im Ziel.
@@ -292,12 +292,12 @@ Ein Anfangsiterator in den Quellcontainer.
 *last*<br/>
 Ein Endeiterator in den Quellcontainer.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** amp_graphics. h
 
 **Namespace:** Parallelität:: Grafiken
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
