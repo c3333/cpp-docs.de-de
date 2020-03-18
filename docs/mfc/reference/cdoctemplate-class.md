@@ -47,11 +47,11 @@ helpviewer_keywords:
 - CDocTemplate [MFC], SetServerInfo
 ms.assetid: 14b41a1f-bf9d-4eac-b6a8-4c54ffcc77f6
 ms.openlocfilehash: 3b2d84af9be8e5c606cde8794b51e12207dcdec9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855523"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426072"
 ---
 # <a name="cdoctemplate-class"></a>CDocTemplate-Klasse
 
@@ -63,17 +63,17 @@ Eine abstrakte Basisklasse, die die grundlegende Funktionalität für Dokumentvo
 class CDocTemplate : public CCmdTarget
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDocTemplate:: CDocTemplate](#cdoctemplate)|Erstellt ein `CDocTemplate`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CDocTemplate:: adddocument](#adddocument)|Fügt einer Vorlage ein Dokument hinzu.|
 |[CDocTemplate:: closealldocuments](#closealldocuments)|Schließt alle dieser Vorlage zugeordneten Dokumente.|
@@ -95,7 +95,7 @@ class CDocTemplate : public CCmdTarget
 |[CDocTemplate:: setpreviewinfo](#setpreviewinfo)|Einrichtung des Out-of-Process-Vorschau Handlers.|
 |[CDocTemplate:: setserverinfo](#setserverinfo)|Bestimmt die Ressourcen und Klassen, wenn das Server Dokument direkt eingebettet oder bearbeitet wird.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 In der Regel erstellen Sie eine oder mehrere Dokumentvorlagen in der Implementierung der `InitInstance` Funktion Ihrer Anwendung. Eine Dokument Vorlage definiert die Beziehungen zwischen drei Typen von Klassen:
 
@@ -127,7 +127,7 @@ Weitere Informationen zu `CDocTemplate`finden Sie unter [Dokumentvorlagen und de
 
 `CDocTemplate`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -144,7 +144,7 @@ virtual void AddDocument(CDocument* pDoc);
 *pDoc*<br/>
 Ein Zeiger auf das hinzu zufügende Dokument.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die abgeleiteten Klassen [CMultiDocTemplate](../../mfc/reference/cmultidoctemplate-class.md) und [CSingleDocTemplate](../../mfc/reference/csingledoctemplate-class.md) überschreiben diese Funktion. Wenn Sie Ihre eigene Dokumentvorlagen Klasse von `CDocTemplate`ableiten, muss die abgeleitete Klasse diese Funktion überschreiben.
 
@@ -186,7 +186,7 @@ Verweist auf das `CRuntimeClass` Objekt der Rahmen Fenster Klasse. Diese Klasse 
 *pviewclass*<br/>
 Verweist auf das `CRuntimeClass` Objekt der Ansichts Klasse. Diese Klasse ist eine von `CView`abgeleitete Klasse, die Sie zum Anzeigen der Dokumente definieren.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Member-Funktion, um ein `CDocTemplate`-Objekt zu erstellen. Weisen Sie dynamisch ein `CDocTemplate` Objekt zu, und übergeben Sie es an [CWinApp:: AddDocTemplate](../../mfc/reference/cwinapp-class.md#adddoctemplate) aus der `InitInstance` Member-Funktion Ihrer Anwendungsklasse.
 
@@ -201,9 +201,9 @@ virtual void CloseAllDocuments(BOOL bEndSession);
 ### <a name="parameters"></a>Parameter
 
 *bendsitzung*<br/>
-Wird nicht verwendet.
+Nicht verwendet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird in der Regel als Teil des File Exit-Befehls verwendet. Die Standard Implementierung dieser Funktion Ruft die [CDocument::D eletecontents](../../mfc/reference/cdocument-class.md#deletecontents) -Member-Funktion auf, um die Daten des Dokuments zu löschen, und schließt dann die Rahmen Fenster für alle Sichten, die an das Dokument angefügt sind.
 
@@ -234,16 +234,16 @@ virtual CFrameWnd* CreateNewFrame(
 ### <a name="parameters"></a>Parameter
 
 *pDoc*<br/>
-Das Dokument, auf das das neue Rahmen Fenster verweisen soll. Kann den Wert NULL haben.
+Das Dokument, auf das das neue Rahmen Fenster verweisen soll. Kann NULL sein.
 
 *nach oben*<br/>
-Das Rahmen Fenster, auf dem das neue Rahmen Fenster basieren soll. Kann den Wert NULL haben.
+Das Rahmen Fenster, auf dem das neue Rahmen Fenster basieren soll. Kann NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Zeiger auf das neu erstellte Rahmen Fenster oder NULL, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CreateNewFrame` verwendet die `CRuntimeClass` Objekte, die an den Konstruktor übergeben werden, um ein neues Rahmen Fenster mit angefügter Ansicht und angefügtem Dokument zu erstellen. Wenn der *Pdoc* -Parameter NULL ist, gibt das Framework eine Ablauf Verfolgungs Meldung aus.
 
@@ -275,7 +275,7 @@ Bestimmt, ob eine Ansicht zusammen mit dem Frame erstellt wird.
 
 Ein Zeiger auf ein Rahmen Fenster, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn *bkreateview* NULL ist, wird ein leerer Frame erstellt.
 
@@ -294,7 +294,7 @@ virtual BOOL GetDocString(
 *RString*<br/>
 Ein Verweis auf ein `CString` Objekt, das die Zeichenfolge enthält, wenn die Funktion zurückgegeben wird.
 
-*Index*<br/>
+*index*<br/>
 Ein Index der Teil Zeichenfolge, die aus der Zeichenfolge abgerufen wird, die den Dokumenttyp beschreibt. Dieser Parameter kann einen der folgenden Werte aufweisen:
 
 - `CDocTemplate::windowTitle` Name, der in der Titelleiste des Anwendungsfensters angezeigt wird (z. b. "Microsoft Excel"). Nur in der Dokument Vorlage für SDI-Anwendungen vorhanden.
@@ -315,7 +315,7 @@ Ein Index der Teil Zeichenfolge, die aus der Zeichenfolge abgerufen wird, die de
 
 Ungleich NULL, wenn die angegebene Teil Zeichenfolge gefunden wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Funktion rufen Sie eine bestimmte Teil Zeichenfolge ab, die den Dokumenttyp beschreibt. Die Zeichenfolge, die diese Teil Zeichenfolgen enthält, wird in der Dokument Vorlage gespeichert und aus einer Zeichenfolge in der Ressourcen Datei für die Anwendung abgeleitet. Das Framework ruft diese Funktion auf, um die benötigten Zeichen folgen für die Benutzeroberfläche der Anwendung zu erhalten. Wenn Sie eine Dateinamenerweiterung für die Dokumente Ihrer Anwendung angegeben haben, ruft das Framework auch diese Funktion auf, wenn der Windows-Registrierungsdatenbank ein Eintrag hinzugefügt wird. Dadurch können Dokumente über den Windows-Datei-Manager geöffnet werden.
 
@@ -333,7 +333,7 @@ virtual POSITION GetFirstDocPosition() const = 0;
 
 Ein Positionswert, der verwendet werden kann, um die Liste der dieser Dokument Vorlage zugeordneten Dokumente zu durchlaufen. oder NULL, wenn die Liste leer ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um die Position des ersten Dokuments in der Liste der Dokumente, die dieser Vorlage zugeordnet sind, zu erhalten. Verwenden Sie den Positionswert als Argument für [CDocTemplate:: getnextdoc](#getnextdoc) , um die Liste der der Vorlage zugeordneten Dokumente zu durchlaufen.
 
@@ -356,7 +356,7 @@ Ein Zeiger auf das nächste Dokument in der Liste der dieser Vorlage zugeordnete
 *rPos*<br/>
 Ein Verweis auf einen Positionswert, der von einem vorherigen Rückruf von [getfirstdocposition](#getfirstdocposition) oder `GetNextDoc`zurückgegeben wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das abgerufene Element das letzte in der Liste ist, wird der neue Wert von *RPOs* auf NULL festgelegt.
 
@@ -381,12 +381,12 @@ virtual void InitialUpdateFrame(
 Das Rahmen Fenster, das das erste Update benötigt.
 
 *pDoc*<br/>
-Das Dokument, dem der Frame zugeordnet ist. Kann den Wert NULL haben.
+Das Dokument, dem der Frame zugeordnet ist. Kann NULL sein.
 
 *bmakevisible*<br/>
 Gibt an, ob der Frame sichtbar und aktiv werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft `IntitialUpdateFrame` nach dem Erstellen eines neuen Frames mit `CreateNewFrame`auf. Das Aufrufen dieser Funktion bewirkt, dass die Ansichten in diesem Rahmen Fenster Ihre `OnInitialUpdate` Aufrufe empfangen. Wenn zuvor noch keine aktive Ansicht vorhanden war, wird die primäre Ansicht des Rahmen Fensters aktiv. die primäre Ansicht ist eine Ansicht mit der untergeordneten ID AFX_IDW_PANE_FIRST. Schließlich wird das Rahmen Fenster sichtbar gemacht, wenn *bmakevisible* ungleich 0 (null) ist. Wenn *bmakevisible* gleich 0 (null) ist, bleiben der aktuelle Fokus und der sichtbare Zustand des Rahmen Fensters unverändert.
 
@@ -400,7 +400,7 @@ Lädt die Ressourcen für eine angegebene `CDocTemplate` oder eine abgeleitete K
 virtual void LoadTemplate();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion wird vom Framework aufgerufen, um die Ressourcen für ein bestimmtes `CDocTemplate` oder eine abgeleitete Klasse zu laden. Normalerweise wird Sie während der Erstellung aufgerufen, außer wenn die Vorlage Global erstellt wird. In diesem Fall wird der Aufruf von `LoadTemplate` verzögert, bis [CWinApp:: AddDocTemplate](../../mfc/reference/cwinapp-class.md#adddoctemplate) aufgerufen wird.
 
@@ -438,7 +438,7 @@ enum Confidence
     };
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um den Typ der Dokument Vorlage zu bestimmen, die zum Öffnen einer Datei verwendet werden soll. Wenn Ihre Anwendung mehrere Dateitypen unterstützt, können Sie diese Funktion beispielsweise verwenden, um zu bestimmen, welche der verfügbaren Dokumentvorlagen für eine bestimmte Datei geeignet ist, indem Sie `MatchDocType` für jede Vorlage aufrufen und eine Vorlage entsprechend dem zurückgegebenen Vertrauens Wert auswählen.
 
@@ -474,7 +474,7 @@ in TRUE gibt an, dass das Dokument eine der aktuellsten Dateien ist. FALSE gibt 
 
 Ein Zeiger auf das Dokument, dessen Datei von *lpszpathname*; benannt wird. NULL, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Öffnet die Datei, deren Pfad von *lpszpathname*angegeben wird. Wenn *lpszpathname* NULL ist, wird eine neue Datei erstellt, die ein Dokument mit dem dieser Vorlage zugeordneten Typ enthält.
 
@@ -491,7 +491,7 @@ virtual void RemoveDocument(CDocument* pDoc);
 *pDoc*<br/>
 Zeiger auf das zu entfernende Dokument.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die abgeleiteten Klassen `CMultiDocTemplate` und `CSingleDocTemplate` diese Funktion überschreiben. Wenn Sie Ihre eigene Dokumentvorlagen Klasse von `CDocTemplate`ableiten, muss die abgeleitete Klasse diese Funktion überschreiben.
 
@@ -520,7 +520,7 @@ void SetContainerInfo(UINT nIDOleInPlaceContainer);
 *nidoleingeplacecontainer*<br/>
 Die ID der Ressourcen, die verwendet werden, wenn ein eingebettetes Objekt aktiviert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Funktion können Sie die Ressourcen festlegen, die verwendet werden sollen, wenn ein OLE-Objekt direkt aktiviert wird. Diese Ressourcen können Menüs und Zugriffstasten Tabellen enthalten. Diese Funktion wird in der Regel in der [CWinApp:: InitInstance](../../mfc/reference/cwinapp-class.md#initinstance) -Funktion Ihrer Anwendung aufgerufen.
 
@@ -539,7 +539,7 @@ virtual void SetDefaultTitle(CDocument* pDocument) = 0;
 *pdocument*<br/>
 Zeiger auf das Dokument, dessen Titel festgelegt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen zum Standard Titel finden Sie in der Beschreibung `CDocTemplate::docName` in [CDocTemplate:: getdocstring](#getdocstring).
 
@@ -569,7 +569,7 @@ Ein Zeiger auf eine [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.
 *poleviewclass*<br/>
 Ein Zeiger auf eine `CRuntimeClass` Struktur, die Klassen Informationen für das Ansichts Objekt enthält, das erstellt wird, wenn die direkte Aktivierung stattfindet.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Member-Funktion können Sie Ressourcen identifizieren, die von der Serveranwendung verwendet werden, wenn der Benutzer die Aktivierung eines eingebetteten Objekts anfordert. Diese Ressourcen bestehen aus Menüs und Zugriffstasten Tabellen. Diese Funktion wird in der Regel im `InitInstance` Ihrer Anwendung aufgerufen.
 
@@ -597,7 +597,7 @@ Ein Zeiger auf ein Dokument Objekt, dessen Inhalt in der Vorschau angezeigt wird
 
 Ein gültiger Zeiger auf ein `CFrameWnd` Objekt oder NULL, wenn die Erstellung fehlschlägt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setpreviewinfo"></a>CDocTemplate:: setpreviewinfo
 
@@ -621,9 +621,9 @@ Gibt einen Zeiger auf eine Lauf Zeit Klassen-Informationsstruktur des Vorschau R
 *ppreviewviewclass*<br/>
 Gibt einen Zeiger auf eine Lauf Zeit Klassen-Informationsstruktur der Vorschau Ansicht an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

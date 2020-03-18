@@ -10,11 +10,11 @@ helpviewer_keywords:
 - IAxWinHostWindowLic interface
 ms.assetid: 750f1520-6bce-428c-aca0-fccbe3f063c7
 ms.openlocfilehash: aca3970d13db53ffa04fe9582bbe9b8db78e820d
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864852"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423075"
 ---
 # <a name="iaxwinhostwindowlic-interface"></a>Iaxwinhostwindowlic-Schnittstelle
 
@@ -26,7 +26,7 @@ Diese Schnittstelle stellt Methoden zum Bearbeiten eines lizenzierten Steuer Ele
 interface IAxWinHostWindowLic : IAxWinHostWindow
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
@@ -35,17 +35,17 @@ interface IAxWinHostWindowLic : IAxWinHostWindow
 |["Kreatecontrollic"](#createcontrollic)|Erstellt ein lizenziertes Steuerelement und fügt es an das Host Objekt an.|
 |["Kreatecontrollicex"](#createcontrollicex)|Erstellt ein lizenziertes Steuerelement, fügt es an das Host Objekt an und richtet optional einen Ereignishandler ein.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `IAxWinHostWindowLic` erbt von [IAxWinHostWindow](../../atl/reference/iaxwinhostwindow-interface.md) und fügt Methoden hinzu, die die Erstellung von lizenzierten Steuerelementen unterstützen.
 
 Ein Beispiel für die Verwendung der Member dieser Schnittstelle finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 Die Definition dieser Schnittstelle ist als IDL oder C++verfügbar, wie unten gezeigt.
 
-|Definitionstyp|Datei|
+|Definitionstyp|File|
 |---------------------|----------|
 |IDL|ATLIFace.idl|
 |C++|Atliface. h (auch in "atlbase. h" enthalten)|
@@ -67,7 +67,7 @@ STDMETHOD(CreateControlLic)(
 *bstrinlisch*<br/>
 in Der BSTR-Wert, der den Lizenzschlüssel für das Steuerelement enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Beschreibung der verbleibenden Parameter und des Rückgabewerts finden Sie unter [IAxWinHostWindow:: kreatecontrol](../../atl/reference/iaxwinhostwindow-interface.md#createcontrol) .
 
@@ -97,7 +97,7 @@ STDMETHOD(CreateControlLicEx)(
 *bstrinlisch*<br/>
 in Der BSTR-Wert, der den Lizenzschlüssel für das Steuerelement enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Beschreibung der verbleibenden Parameter und Rückgabewerte finden Sie unter [IAxWinHostWindow:: kreatecontrolex](../../atl/reference/iaxwinhostwindow-interface.md#createcontrolex) .
 

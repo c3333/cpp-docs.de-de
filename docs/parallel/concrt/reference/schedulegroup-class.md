@@ -12,11 +12,11 @@ helpviewer_keywords:
 - ScheduleGroup class
 ms.assetid: 86d380ff-f2e8-411c-b1a8-22bd3079824a
 ms.openlocfilehash: 8686b5ef0906e3188a1e683d1190bbe6124cd19e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867128"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424230"
 ---
 # <a name="schedulegroup-class"></a>ScheduleGroup-Klasse
 
@@ -28,28 +28,28 @@ Stellt die Abstraktion für eine Planungsgruppe dar. In Planungsgruppen werden S
 class ScheduleGroup;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[~ ScheduleGroup-Dekonstruktor](#dtor)||
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Id](#id)|Gibt einen Bezeichner für die Planungsgruppe zurück, der innerhalb des Planers eindeutig ist, zu dem die Gruppe gehört.|
-|[Referenz](#reference)|Inkrementiert den Verweiszähler dieser Planergruppe.|
-|[Release](#release)|Dekrementiert den Verweiszähler dieser Planergruppe.|
+|[Verweis](#reference)|Inkrementiert den Verweiszähler dieser Planergruppe.|
+|[Version](#release)|Dekrementiert den Verweiszähler dieser Planergruppe.|
 |[ScheduleTask](#scheduletask)|Plant eine einfache Aufgabe innerhalb der Planungsgruppe.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ScheduleGroup`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ConcRT. h
 
@@ -99,7 +99,7 @@ virtual unsigned int Reference() = 0;
 
 Der neu inkrementierte Verweis Zähler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies wird normalerweise verwendet, um die Lebensdauer der Zeit Plan Gruppe für die Komposition zu verwalten. Wenn der Verweis Zähler einer Zeit Plan Gruppe auf 0 (null) fällt, wird die Zeit Plan Gruppe von der Laufzeit gelöscht. Eine Zeit Plan Gruppe, die mit der [CurrentScheduler:: aufgabenschedulegroup](currentscheduler-class.md#createschedulegroup) -Methode erstellt wurde, oder die [Scheduler:: up ScheduleGroup](scheduler-class.md#createschedulegroup) -Methode beginnt mit einem Verweis Zähler von 1.
 
@@ -115,7 +115,7 @@ virtual unsigned int Release() = 0;
 
 Der neu dekrementierte Verweis Zähler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies wird normalerweise verwendet, um die Lebensdauer der Zeit Plan Gruppe für die Komposition zu verwalten. Wenn der Verweis Zähler einer Zeit Plan Gruppe auf 0 (null) fällt, wird die Zeit Plan Gruppe von der Laufzeit gelöscht. Nachdem Sie die `Release`-Methode so oft wie möglich, um den Verweis Zähler für die Erstellung und alle zusätzlichen Verweise, die mit der `Reference`-Methode platziert wurden, aufgerufen haben, können Sie die Zeit Plan Gruppe nicht weiter verwenden. Dies führt zu undefiniertem Verhalten.
 
@@ -145,11 +145,11 @@ Ein Zeiger auf die Funktion, die ausgeführt wird, um den Text der einfachen Auf
 *_Data*<br/>
 Ein void-Zeiger auf die Daten, die als Parameter an den Textkörper der Aufgabe übergeben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die `ScheduleTask`-Methode aufrufen, wird implizit ein Verweis Zähler für die Zeit Plan Gruppe eingefügt, der nach der Ausführung des Tasks von der Laufzeit zu einem passenden Zeitpunkt entfernt wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [CurrentScheduler-Klasse](currentscheduler-class.md)<br/>

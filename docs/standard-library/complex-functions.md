@@ -43,11 +43,11 @@ helpviewer_keywords:
 - std::tan [C++]
 - std::tanh [C++]
 ms.openlocfilehash: 5ecba1de1419203d75ba6a97fbd651469a472905
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876091"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423972"
 ---
 # <a name="ltcomplexgt-functions"></a>&lt;complex&gt;-Funktionen
 
@@ -69,7 +69,7 @@ Die komplexe Zahl, deren Betrag bestimmt werden soll
 
 Der Betrag einer komplexen Zahl
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *Betrag* einer komplexen Zahl ist ein Maß für die Länge des Vektors, der die komplexe Zahl darstellt. Der Betrag einer komplexen Zahl                         a + bi ist                         sqrt (a<sup>2</sup> + b<sup>2</sup>), geschrieben als                         &#124;a + bi&#124;. Die *Norm* einer komplexen Zahl                         a + bi ist (a<sup>2</sup> + b<sup>2</sup>). Damit entspricht der Betrag der Quadratwurzel seiner Norm.
 
@@ -168,7 +168,7 @@ Die komplexe Zahl, deren Argument bestimmt werden soll
 
 Das Argument der komplexen Zahl
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das- *Argument* ist der Winkel, den der komplexe Vektor mit der positiven reellen Achse in der komplexen Ebene macht. Für eine komplexe Zahl *a + BI*ist das Argument gleich ARCTAN (*b/a*). Der Winkel ist positiv, wenn er von der positiven realen Achse im Uhrzeigersinn gemessen wird. Er ist negativ, wenn er entgegen dem Uhrzeigersinn gemessen wird. Die Prinzipal Werte sind größer als-PI und kleiner oder gleich + pi.
 
@@ -279,7 +279,7 @@ Die komplexe Zahl, deren konjugierte Zahl zurückgegeben wird
 
 Die konjugierte Zahl einer komplexen Eingabezahl
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das komplexe konjugierte einer komplexen Zahl *a + BI* ist *a-BI*. Das Produkt einer komplexen Zahl und ihrer konjugierten Zahl entspricht der Norm der Zahl *a*2 + *b*2.
 
@@ -354,7 +354,7 @@ Die komplexe Zahl, deren Kosinus bestimmt wird
 
 Die komplexe Zahl, die dem Kosinus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die komplexe Kosinus definieren:
 
@@ -445,7 +445,7 @@ Die komplexe Zahl, deren Kosinus Hyperbolicus bestimmt wird
 
 Die komplexe Zahl, die dem Kosinus Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die komplexe Kosinus Hyperbolicus definieren:
 
@@ -607,7 +607,7 @@ Die komplexe Zahl, deren reeller Teil extrahiert werden soll.
 
 Der imaginäre Teil der komplexen Zahl als globale Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Vorlagenfunktion kann nicht zum Ändern des reellen Teils der komplexen Zahl verwendet werden. Dem Komponentenwert muss eine neue komplexe Zahl zugewiesen werden, um den reellen Teil zu ändern.
 
@@ -659,7 +659,7 @@ Die komplexe Zahl, deren natürlicher Logarithmus bestimmt wird
 
 Die komplexe Zahl, die dem natürlichen Logarithmus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Achsenabschnitte liegen auf der negativen reellen Achse.
 
@@ -729,7 +729,7 @@ Die komplexe Zahl, deren Zehnerlogarithmus bestimmt wird
 
 Die komplexe Zahl, die dem Zehnerlogarithmus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Achsenabschnitte liegen auf der negativen reellen Achse.
 
@@ -799,7 +799,7 @@ Die komplexe Zahl, deren Norm bestimmt werden soll
 
 Die Norm einer komplexen Zahl
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Norm einer komplexen Zahl *a + BI* ist *(a*<sup>2</sup> *+ b*<sup>2</sup> *).* Die Norm einer komplexen Zahl entspricht der Quadratwurzel ihres Betrags. Der Betrag einer komplexen Zahl ist ein Maß für die Länge des Vektors, der die komplexe Zahl darstellt. Der Modulo einer komplexen Zahl *a + BI* ist `sqrt` *(a*<sup>2</sup> *+ b*<sup>2</sup> *),* geschriebene  *&#124;a + BI&#124;.*
 
@@ -885,7 +885,7 @@ Das Argument der komplexen Zahl, die eingegeben wird
 
 Kartesische Form der komplexen Zahl, die in Polarform dargestellt wird
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Polar Form einer komplexen Zahl stellt den Modulo *r* und das Argument *p*bereit, wobei diese Parameter mit den tatsächlichen und imaginären kartesischen Komponenten *a* und *b* von den Gleichungen *a* = r \* cos *p* und *b* = *r* \* Sin *p*verknüpft sind.
 
@@ -971,7 +971,7 @@ Ganze Zahl oder komplexe Zahl oder Zahl vom Parametertyp einer komplexen Zahl, d
 
 Die komplexe Zahl, die sich durch die angegebene Potenzierung der angegebenen Basis ergibt
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Funktionen konvertieren beide Operanden in den Rückgabetyp und übergeben die konvertierten **linksseitigen Werte** an die **rechtsseitige Potenzfunktion**.
 
@@ -1110,7 +1110,7 @@ Die komplexe Zahl, deren reeller Teil extrahiert werden soll.
 
 Der reelle Teil der komplexen Zahl als globale Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Vorlagenfunktion kann nicht zum Ändern des reellen Teils der komplexen Zahl verwendet werden. Dem Komponentenwert muss eine neue komplexe Zahl zugewiesen werden, um den reellen Teil zu ändern.
 
@@ -1162,7 +1162,7 @@ Die komplexe Zahl, deren Sinus bestimmt wird
 
 Die komplexe Zahl, die dem Sinus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die komplexe Sinus definieren:
 
@@ -1253,7 +1253,7 @@ Die komplexe Zahl, deren Sinus Hyperbolicus bestimmt wird
 
 Die komplexe Zahl, die dem Sinus Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die die komplexen Sinus Hyperbolicus definieren:
 
@@ -1344,7 +1344,7 @@ Die komplexe Zahl, deren Quadratwurzel bestimmt werden soll
 
 Die Quadratwurzel einer komplexen Zahl
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Quadratwurzel hat einen Phasenwinkel im halb geöffneten Intervall (-Pi/2 und Pi/2].
 
@@ -1421,7 +1421,7 @@ Die komplexe Zahl, deren Tangens bestimmt wird
 
 Die komplexe Zahl, die dem Tangens der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die den komplexen Tangens definieren:
 
@@ -1510,7 +1510,7 @@ Die komplexe Zahl, deren Tangens Hyperbolicus bestimmt wird
 
 Die komplexe Zahl, die dem Tangens Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Identitäten, die komplexe Kotangens Hyperbolicus definieren:
 

@@ -43,11 +43,11 @@ helpviewer_keywords:
 - CProgressCtrl [MFC], StepIt
 ms.assetid: 222630f4-1598-4026-8198-51649b1192ab
 ms.openlocfilehash: 9d63a1113e521eb73c99c47b335eb7ab00ccd753
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866323"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426864"
 ---
 # <a name="cprogressctrl-class"></a>CProgressCtrl-Klasse
 
@@ -59,17 +59,17 @@ Stellt die Funktionalität des allgemeinen Windows-Statusanzeige-Steuerelements 
 class CProgressCtrl : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CProgressCtrl:: CProgressCtrl](#cprogressctrl)|Erstellt ein `CProgressCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CProgressCtrl:: Create](#create)|Erstellt ein Statusanzeige-Steuerelement und fügt es an ein `CProgressCtrl` Objekt an.|
 |[CProgressCtrl:: kreateex](#createex)|Erstellt ein Status Steuerelement mit den angegebenen erweiterten Windows-Stilen und fügt es an ein `CProgressCtrl` Objekt an.|
@@ -89,7 +89,7 @@ class CProgressCtrl : public CWnd
 |[CProgressCtrl:: SetStep](#setstep)|Gibt das Schritt Inkrement für ein Statusanzeige-Steuerelement an.|
 |[CProgressCtrl:: StepIt](#stepit)|Verschiebt die aktuelle Position für ein Statusanzeige-Steuerelement um Schritt Inkrement (siehe [SetStep](#setstep)) und zeichnet den Balken neu, um die neue Position widerzuspiegeln.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Statusanzeige-Steuerelement ist ein Fenster, mit dem eine Anwendung den Fortschritt eines langwierigen Vorgangs angeben kann. Er besteht aus einem Rechteck, das allmählich von links nach rechts mit der Hervorhebungs Farbe des Systems aufgefüllt wird, während ein Vorgang fortgesetzt wird.
 
@@ -107,7 +107,7 @@ Weitere Informationen zur Verwendung von `CProgressCtrl`finden Sie unter Steuer 
 
 `CProgressCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -119,7 +119,7 @@ Erstellt ein `CProgressCtrl`-Objekt.
 CProgressCtrl();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Rufen Sie nach dem Erstellen des `CProgressCtrl` Objekts `CProgressCtrl::Create` auf, um das Statusanzeige-Steuerelement zu erstellen.
 
@@ -161,7 +161,7 @@ Gibt die ID des Statusanzeige-Steuer Elements an.
 
 TRUE, wenn das `CProgressCtrl` Objekt erfolgreich erstellt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen ein `CProgressCtrl`-Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen, der das `CProgressCtrl` Objekt erstellt und dann `Create`aufruft, das das Statusanzeige-Steuerelement erstellt.
 
@@ -203,7 +203,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -219,7 +219,7 @@ COLORREF GetBarColor() const;
 
 Die Farbe der aktuellen Statusanzeige, die als [COLORREF](/windows/win32/gdi/colorref) -Wert dargestellt wird, oder CLR_DEFAULT, wenn die Statusanzeige leisten Farbe die Standardfarbe ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [PBM_GETBARCOLOR](/windows/win32/Controls/pbm-getbarcolor) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -235,7 +235,7 @@ COLORREF GetBkColor() const;
 
 Die Hintergrundfarbe der aktuellen Statusanzeige, dargestellt als [COLORREF](/windows/win32/gdi/colorref) -Wert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [PBM_GETBKCOLOR](/windows/win32/Controls/pbm-getbkcolor) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -251,7 +251,7 @@ int GetPos();
 
 Die Position des Statusanzeige-Steuer Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Position des Statusanzeige-Steuer Elements ist nicht die physische Position auf dem Bildschirm, sondern liegt zwischen dem oberen und unteren Bereich, [der in "](#setrange)" angegeben ist.
 
@@ -277,7 +277,7 @@ Ein Verweis auf eine Ganzzahl, die die untere Grenze des Statusanzeige-Steuer El
 *nupper*<br/>
 Ein Verweis auf eine Ganzzahl, die die Obergrenze des Statusanzeige-Steuer Elements empfängt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion kopiert die Werte der unteren und oberen Grenzen in die ganzen Zahlen, auf die von *nlower* bzw. *nupperverwiesen*wird.
 
@@ -297,13 +297,13 @@ int GetState() const;
 
 Der Status des aktuellen Statusanzeige-Steuer Elements, bei dem es sich um einen der folgenden Werte handelt:
 
-|value|State|
+|Wert|Phase|
 |-----------|-----------|
 |PBST_NORMAL|In Bearbeitung|
-|PBST_ERROR|Fehler|
+|PBST_ERROR|Error|
 |PBST_PAUSED|Angehalten|
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [PBM_GETSTATE](/windows/win32/Controls/pbm-getstate) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -331,7 +331,7 @@ int GetStep() const;
 
 Das Schritt Inkrement der Statusanzeige.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Schritt Inkrement ist der Betrag, um den durch einen [CProgressCtrl:: StepIt](#stepit) -Befehl die aktuelle Position der Statusanzeige erhöht wird.
 
@@ -380,7 +380,7 @@ COLORREF SetBarColor(COLORREF clrBar);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*clrbar*|in Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die neue Farbe der Statusanzeige Leiste angibt. Geben Sie CLR_DEFAULT an, damit die Statusanzeige Ihre Standardfarbe verwendet.|
 
@@ -388,7 +388,7 @@ COLORREF SetBarColor(COLORREF clrBar);
 
 Die vorherige Farbe der Status Indikator Leiste, dargestellt als [COLORREF](/windows/win32/gdi/colorref) -Wert oder CLR_DEFAULT, wenn die Farbe der Statusanzeige Leiste die Standardfarbe ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit der `SetBarColor`-Methode wird die Statusanzeige Farbe nur dann festgelegt, wenn ein [Windows Vista-](/windows/win32/Controls/visual-styles-overview) Design nicht wirksam ist.
 
@@ -439,7 +439,7 @@ BOOL SetMarquee(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*"f"*|in TRUE, wenn der Marquee-Modus aktiviert werden soll, oder false, um den Marquee-Modus zu deaktivieren.|
 |*nintervall*|in Zeit in Millisekunden zwischen den Aktualisierungen der Marquee-Animation.|
@@ -448,7 +448,7 @@ BOOL SetMarquee(
 
 Diese Methode gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Marquee-Modus aktiviert ist, wird die Statusanzeige animiert und führt einen Bildlauf wie ein Zeichen in einem Theater-Marquee aus.
 
@@ -483,7 +483,7 @@ Neue Position des Statusanzeige-Steuer Elements.
 
 Die vorherige Position des Statusanzeige-Steuer Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Position des Statusanzeige-Steuer Elements ist nicht die physische Position auf dem Bildschirm, sondern liegt zwischen dem oberen und unteren Bereich, [der in "](#setrange)" angegeben ist.
 
@@ -513,7 +513,7 @@ Gibt die untere Grenze des Bereichs an (der Standardwert ist 0 (null)).
 *nupper*<br/>
 Gibt die Obergrenze des Bereichs an (der Standardwert ist 100).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit der Member-Funktion `SetRange32` wird der 32-Bit-Bereich für das Fortschritts Steuerelement festgelegt.
 
@@ -531,7 +531,7 @@ int SetState(int iState);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*IState*|in Der Zustand, in dem die Statusanzeige festgelegt wird. Verwenden Sie einen der folgenden Werte:<br /><br /> -PBST_NORMAL-in Bearbeitung<br />-PBST_ERROR-Fehler<br />-PBST_PAUSED-angehalten|
 
@@ -539,7 +539,7 @@ int SetState(int iState);
 
 Der vorherige Status des aktuellen Statusanzeige-Steuerelements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [PBM_SETSTATE](/windows/win32/Controls/pbm-setstate) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -572,7 +572,7 @@ Neuer Schritt Inkrement.
 
 Der vorherige Schritt Inkrement.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Schritt Inkrement ist der Betrag, um den ein-`CProgressCtrl::StepIt` die aktuelle Position der Statusanzeige erhöht.
 
@@ -594,7 +594,7 @@ int StepIt();
 
 Die vorherige Position des Statusanzeige-Steuer Elements.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Schritt Inkrement wird von der `CProgressCtrl::SetStep` Member-Funktion festgelegt.
 
@@ -602,7 +602,7 @@ Das Schritt Inkrement wird von der `CProgressCtrl::SetStep` Member-Funktion fest
 
 [!code-cpp[NVC_MFC_CProgressCtrl#10](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_16.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>

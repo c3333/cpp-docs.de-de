@@ -65,11 +65,11 @@ helpviewer_keywords:
 - CHeaderCtrl [MFC], SetOrderArray
 ms.assetid: b847ac90-5fae-4a87-88e0-ca45f77b8b3b
 ms.openlocfilehash: 62915da703e1c938e65643ab389999b83c72d459
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78871586"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424338"
 ---
 # <a name="cheaderctrl-class"></a>CHeaderCtrl-Klasse
 
@@ -81,17 +81,17 @@ Stellt die Funktionalität des allgemeinen Windows-Headersteuerelements bereit.
 class CHeaderCtrl : public CWnd
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CHeaderCtrl:: CHeaderCtrl](#cheaderctrl)|Erstellt ein `CHeaderCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CHeaderCtrl:: ClearAllFilters](#clearallfilters)|Löscht alle Filter für ein Header-Steuerelement.|
 |[CHeaderCtrl:: ClearFilter](#clearfilter)|Löscht den Filter für ein Header-Steuerelement.|
@@ -122,7 +122,7 @@ class CHeaderCtrl : public CWnd
 |[CHeaderCtrl::/TItem](#setitem)|Legt die Attribute des angegebenen Elements in einem Header Steuerelement fest.|
 |[CHeaderCtrl:: tarderarray](#setorderarray)|Legt die Reihenfolge der Elemente in einem Header Steuerelement von links nach rechts fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Header Steuerelement ist ein Fenster, das normalerweise oberhalb eines Satzes von Text-oder Zahlen Spalten positioniert ist. Sie enthält einen Titel für jede Spalte und kann in Teile aufgeteilt werden. Der Benutzer kann die unter Teiler zum Trennen der Teile ziehen, um die Breite der einzelnen Spalten festzulegen. Eine Abbildung eines Header Steuer Elements finden Sie unter [Header](/windows/win32/Controls/header-controls)-Steuerelemente.
 
@@ -152,7 +152,7 @@ Weitere Informationen zum Verwenden von `CHeaderCtrl`finden Sie unter Steuer [El
 
 `CHeaderCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxcmn.h
 
@@ -180,7 +180,7 @@ BOOL ClearAllFilters();
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode implementiert das Verhalten der Win32-Nachricht [HDM_CLEARFILTER](/windows/win32/Controls/hdm-clearfilter) mit dem Spaltenwert-1, wie in der Windows SDK beschrieben.
 
@@ -205,7 +205,7 @@ Der Spaltenwert, der den zu Lösch Ende Filter angibt.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode implementiert das Verhalten des Win32-Nachrichten [HDM_CLEARFILTER](/windows/win32/Controls/hdm-clearfilter), wie in der Windows SDK beschrieben.
 
@@ -243,7 +243,7 @@ Gibt die ID des Header Steuer Elements an.
 
 Ungleich NULL, wenn die Initialisierung erfolgreich war. andernfalls NULL.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen ein `CHeaderCtrl`-Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann `Create`aufgerufen, der das Header Steuerelement erstellt und an das `CHeaderCtrl`-Objekt anfügt.
 
@@ -313,7 +313,7 @@ Die ID des untergeordneten Fensters des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `CreateEx` anstelle von `Create` Erweiterte Windows-Stile, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
@@ -334,7 +334,7 @@ Der null basierte Index des Elements innerhalb des Header Steuer Elements. Das d
 
 Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt, wenn erfolgreich. andernfalls NULL. Die zurückgegebene Liste enthält nur ein Bild.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_CREATEDRAGIMAGE](/windows/win32/Controls/hdm-createdragimage), wie in der Windows SDK beschrieben. Er wird bereitgestellt, um das ziehen und Ablegen von Header Elementen zu unterstützen
 
@@ -374,7 +374,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 *lpdrawitemstruct*<br/>
 Ein Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die das zu zeichnende Element beschreibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `itemAction` Member der `DRAWITEMSTRUCT` Struktur definiert die auszuführende Zeichnungs Aktion.
 
@@ -410,7 +410,7 @@ Geben Sie true an, um die vom Benutzer vorgenommenen Änderungen zu verwerfen, o
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode implementiert das Verhalten des Win32-Nachrichten [HDM_EDITFILTER](/windows/win32/Controls/hdm-editfilter), wie in der Windows SDK beschrieben.
 
@@ -430,7 +430,7 @@ int GetBitmapMargin() const;
 
 Die Breite des bitmaprandes in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_GETBITMAPMARGIN](/windows/win32/Controls/hdm-getbitmapmargin), wie in der Windows SDK beschrieben.
 
@@ -450,7 +450,7 @@ int GetFocusedItem() const;
 
 Der null basierte Index des Header Elements, das den Fokus besitzt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [HDM_GETFOCUSEDITEM](/windows/win32/Controls/hdm-getfocuseditem) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -478,7 +478,7 @@ CImageList* GetImageList() const;
 
 Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_GETIMAGELIST](/windows/win32/Controls/hdm-getimagelist), wie in der Windows SDK beschrieben. Das `CImageList` Objekt, auf das der zurückgegebene Zeiger zeigt, ist ein temporäres Objekt und wird in der nächsten Leerlaufzeit Verarbeitung gelöscht.
 
@@ -540,7 +540,7 @@ BOOL GetItemDropDownRect(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*iItem*|in NULL basierter Index eines Header Elements, dessen Stil HDF_SPLITBUTTON ist. Weitere Informationen finden Sie unter `fmt`-Member der [HDITEM](/windows/win32/api/commctrl/ns-commctrl-hditemw) -Struktur.|
 |*lprect*|vorgenommen Ein Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, um die umschließenden Rechteck Informationen zu erhalten.|
@@ -549,7 +549,7 @@ BOOL GetItemDropDownRect(
 
 TRUE, wenn diese Funktion erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [HDM_GETITEMDROPDOWNRECT](/windows/win32/Controls/hdm-getitemdropdownrect) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -587,7 +587,7 @@ Ein Zeiger auf die Adresse einer [Rect](/previous-versions/dd162897\(v=vs.85\)) 
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode implementiert das Verhalten des Win32-Nachrichten [HDM_GETITEMRECT](/windows/win32/Controls/hdm-getitemrect), wie in der Windows SDK beschrieben.
 
@@ -613,7 +613,7 @@ Die Anzahl der Header Steuerungselemente. Darf nicht negativ sein.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_GETORDERARRAY](/windows/win32/Controls/hdm-getorderarray), wie in der Windows SDK beschrieben. Sie wird zur Unterstützung der Header Element-Reihenfolge bereitgestellt.
 
@@ -631,7 +631,7 @@ BOOL GetOverflowRect(LPRECT lpRect) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*lprect*|vorgenommen Ein Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die die umschließenden Rechteck Informationen empfängt.|
 
@@ -639,7 +639,7 @@ BOOL GetOverflowRect(LPRECT lpRect) const;
 
 TRUE, wenn diese Funktion erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Header Steuerelement mehr Elemente enthält, als gleichzeitig angezeigt werden können, kann das Steuerelement eine Überlauf Schaltfläche anzeigen, die zu nicht sichtbaren Elementen führt. Das Header Steuerelement muss die HDS_OVERFLOW-und HDF_SPLITBUTTON Stile aufweisen, um die Überlauf Schaltfläche anzuzeigen. Das umschließende Rechteck schließt die Überlauf Schaltfläche ein und ist nur vorhanden, wenn die Überlauf Schaltfläche angezeigt wird. Weitere Informationen finden Sie unter [Header-Steuerelement Stile](/windows/win32/Controls/header-control-styles).
 
@@ -667,7 +667,7 @@ int HitTest(LPHDHITTESTINFO* phdhti);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*phdhti*|[in, out] Ein Zeiger auf eine [hdhittestinfo](/windows/win32/api/commctrl/ns-commctrl-hdhittestinfo) -Struktur, die den zu testenden Punkt angibt und die Ergebnisse des Tests empfängt.|
 
@@ -675,7 +675,7 @@ int HitTest(LPHDHITTESTINFO* phdhti);
 
 Der null basierte Index des Header Elements, sofern vorhanden, an der angegebenen Position. andernfalls-1.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [HDM_HITTEST](/windows/win32/Controls/hdm-hittest) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -734,7 +734,7 @@ Ein Zeiger auf eine [hdlayout](/windows/win32/api/commctrl/ns-commctrl-hdlayout)
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird verwendet, um die entsprechenden Dimensionen für ein neues Header Steuerelement zu bestimmen, das das angegebene Rechteck belegen soll.
 
@@ -759,7 +759,7 @@ Die null basierte Reihenfolge, in der das Element im Header Steuerelement angeze
 
 Der Index des Elements auf der Grundlage seiner Reihenfolge im Header Steuerelement. Der Index zählt von links nach rechts, beginnend mit 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makro [HDM_ORDERTOINDEX](/windows/win32/controls/hdm-ordertoindex), wie in der Windows SDK beschrieben. Sie wird zur Unterstützung der Header Element-Reihenfolge bereitgestellt.
 
@@ -780,7 +780,7 @@ Die in Pixel angegebene Breite des Randes, das eine Bitmap in einem vorhandenen 
 
 Die Breite des bitmaprandes in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_SETBITMAPMARGIN](/windows/win32/Controls/hdm-setbitmapmargin), wie in der Windows SDK beschrieben.
 
@@ -805,7 +805,7 @@ Timeout Wert in Millisekunden.
 
 Der Index des Filter Steuer Elements, das geändert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_SETFILTERCHANGETIMEOUT](/windows/win32/Controls/hdm-setfilterchangetimeout), wie in der Windows SDK beschrieben.
 
@@ -823,7 +823,7 @@ BOOL SetFocusedItem(int iItem);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
+|Parameter|Beschreibung|
 |---------------|-----------------|
 |*iItem*|in NULL basierter Index eines Header Elements.|
 
@@ -831,7 +831,7 @@ BOOL SetFocusedItem(int iItem);
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [HDM_SETFOCUSEDITEM](/windows/win32/Controls/hdm-setfocuseditem) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -868,7 +868,7 @@ Der Index des hervorgehobenen unter Teilers.
 
 Der Index des hervorgehobenen unter Teilers.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_SETHOTDIVIDER](/windows/win32/Controls/hdm-sethotdivider), wie in der Windows SDK beschrieben. Er wird bereitgestellt, um das ziehen und Ablegen von Header Elementen zu unterstützen
 
@@ -893,7 +893,7 @@ Ein Zeiger auf ein `CImageList` Objekt, das die Bildliste enthält, die dem Head
 
 Ein Zeiger auf das [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt, das zuvor dem Header Steuerelement zugewiesen wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [HDM_SETIMAGELIST](/windows/win32/Controls/hdm-setimagelist), wie in der Windows SDK beschrieben. Das `CImageList` Objekt, auf das der zurückgegebene Zeiger zeigt, ist ein temporäres Objekt und wird in der nächsten Leerlaufzeit Verarbeitung gelöscht.
 
@@ -949,7 +949,7 @@ Ein Zeiger auf die Adresse eines Puffers, der die Indexwerte der Elemente im Hea
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion implementiert das Verhalten des Win32-Makro [HDM_SETORDERARRAY](/windows/win32/Controls/hdm-setorderarray), wie in der Windows SDK beschrieben. Sie wird zur Unterstützung der Header Element-Reihenfolge bereitgestellt.
 
@@ -957,7 +957,7 @@ Diese Member-Funktion implementiert das Verhalten des Win32-Makro [HDM_SETORDERA
 
   Sehen Sie sich das Beispiel für [CHeaderCtrl:: getor Array](#getorderarray)an.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -53,11 +53,11 @@ helpviewer_keywords:
 - CAccessToken class
 ms.assetid: bb5c5945-56a5-4083-b442-76573cee83ab
 ms.openlocfilehash: 33fbaae5dafaccdf7f7e6880eaa42dd68352e840
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78864865"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423519"
 ---
 # <a name="caccesstoken-class"></a>CAccessToken-Klasse
 
@@ -72,17 +72,17 @@ Diese Klasse ist ein Wrapper für ein Zugriffs Token.
 class CAccessToken
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CAccessToken:: ~ CAccessToken](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CAccessToken:: Attach](#attach)|Ruft diese Methode auf, um den Besitz des angegebenen Zugriffs Token-Handles zu übernehmen.|
 |[CAccessToken:: checktokenmembership](#checktokenmembership)|Ruft diese Methode auf, um zu bestimmen, ob eine angegebene SID im `CAccessToken` Objekt aktiviert ist.|
@@ -130,13 +130,13 @@ class CAccessToken
 |[CAccessToken:: seetowner](#setowner)|Mit dieser Methode wird der Besitzer des `CAccessToken` Objekts festgelegt.|
 |[CAccessToken:: setprimarygroup](#setprimarygroup)|Ruft diese Methode auf, um die primäre Gruppe des `CAccessToken` Objekts festzulegen.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein [Zugriffs Token](/windows/win32/SecAuthZ/access-tokens) ist ein Objekt, das den Sicherheitskontext eines Prozesses oder Threads beschreibt und jedem Benutzer zugeordnet ist, der bei einem Windows-System angemeldet ist.
 
 Eine Einführung zum Zugriffs Steuerungsmodell in Windows finden Sie unter [Access Control](/windows/win32/SecAuthZ/access-control) in der Windows SDK.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** ATLSecurity. h
 
@@ -153,7 +153,7 @@ void Attach(HANDLE hToken) throw();
 *hToken*<br/>
 Ein Handle für das Zugriffs Token.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds tritt ein Fehler auf, wenn das `CAccessToken` Objekt bereits über einen Besitz eines Zugriffs Tokens verfügt.
 
@@ -165,7 +165,7 @@ Der Destruktor.
 virtual ~CAccessToken() throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt alle zugeordneten Ressourcen frei.
 
@@ -191,7 +191,7 @@ Ein Zeiger auf eine Variable, die die Ergebnisse der Überprüfung empfängt.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `CheckTokenMembership`-Methode überprüft, ob die SID in den Benutzer-und Gruppen-SIDs des Zugriffs Tokens vorhanden ist. Wenn die SID vorhanden ist und das SE_GROUP_ENABLED-Attribut aufweist, wird *pbismember* auf true festgelegt. Andernfalls wird Sie auf "false" festgelegt.
 
@@ -222,7 +222,7 @@ Gibt einen [SECURITY_IMPERSONATION_LEVEL](/windows/win32/api/winnt/ne-winnt-secu
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CreateImpersonationToken` ruft [duplicatetoken](/windows/win32/api/securitybaseapi/nf-securitybaseapi-duplicatetoken) auf, um ein neues Identitätswechsel Token zu erstellen.
 
@@ -252,7 +252,7 @@ Ein Zeiger auf eine [SECURITY_ATTRIBUTES](/previous-versions/windows/desktop/leg
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CreatePrimaryToken` wird [Dupli-etokenex](/windows/win32/api/securitybaseapi/nf-securitybaseapi-duplicatetokenex) aufgerufen, um ein neues primäres Token zu erstellen.
 
@@ -310,7 +310,7 @@ Zeiger auf eine mit NULL endenden Zeichenfolge, die das aktuelle Laufwerk und Ve
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 in `CreateProcessAsUser` wird die `CreateProcessAsUser` Win32-Funktion verwendet, um einen neuen Prozess zu erstellen, der im Sicherheitskontext des Benutzers ausgeführt wird, der durch das `CAccessToken`-Objekt dargestellt wird. Eine vollständige Erläuterung der erforderlichen Parameter finden Sie [in der Beschreibung der Funktion "](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasuserw) " von "".
 
@@ -346,7 +346,7 @@ Ein `CTokenPrivileges`-Objekt, das die Berechtigungen angibt, die im eingeschrä
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `CreateRestrictedToken` verwendet die [Win32-](/windows/win32/api/securitybaseapi/nf-securitybaseapi-createrestrictedtoken) Funktion "" von "", um ein neues `CAccessToken` Objekt mit Einschränkungen zu erstellen.
 
@@ -365,7 +365,7 @@ HANDLE Detach() throw();
 
 Gibt das Handle für das-`CAccessToken` zurück, das getrennt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode widerruft den Besitz des `CAccessToken`für das Zugriffs Token.
 
@@ -555,7 +555,7 @@ Zeiger auf eine [LUID](/windows/win32/api/winnt/ns-winnt-luid) , die die Anmelde
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds tritt ein Fehler auf, wenn *pluid* ein ungültiger Wert ist.
 
@@ -576,7 +576,7 @@ Zeiger auf ein [CSID-Klassen](../../atl/reference/csid-class.md) Objekt.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds tritt ein Fehler auf, wenn *PSID* ein ungültiger Wert ist.
 
@@ -597,7 +597,7 @@ Zeiger auf ein [CSID-Klassen](../../atl/reference/csid-class.md) Objekt.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Besitzer wird standardmäßig für alle Objekte festgelegt, die erstellt werden, während dieses Zugriffs Token aktiviert ist.
 
@@ -618,7 +618,7 @@ Zeiger auf ein [CSID-Klassen](../../atl/reference/csid-class.md) Objekt.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Gruppe wird standardmäßig für alle Objekte festgelegt, die erstellt werden, während dieses Zugriffs Token aktiviert ist.
 
@@ -659,7 +659,7 @@ Handle an den Prozess, dessen Zugriffstoken geöffnet ist. Wenn der Standardwert
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ruft die [OpenProcessToken](/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken) -Win32-Funktion auf.
 
@@ -788,7 +788,7 @@ Adresse der [TOKEN_TYPE](/windows/win32/api/winnt/ne-winnt-token_type) Variablen
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der TOKEN_TYPE Enumerationstyp enthält Werte, die zwischen einem primären Token und einem Identitätswechsel Token unterscheiden.
 
@@ -838,7 +838,7 @@ Handle für den Thread, dem das Identitätswechsel Token zugewiesen werden soll.
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds tritt ein Fehler auf, wenn `CAccessToken` keinen gültigen Zeiger auf ein Token hat.
 
@@ -856,7 +856,7 @@ bool ImpersonateLoggedOnUser() const throw(...);
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!IMPORTANT]
 >  Wenn ein Aufrufe einer Identitätswechsel Funktion aus irgendeinem Grund fehlschlägt, wird für den Client kein Identitätswechsel durchgeführt, und die Client Anforderung wird im Sicherheitskontext des Prozesses vorgenommen, von dem aus der-Vorgang ausgeführt wurde. Wenn der Prozess als ein Konto mit hohen Berechtigungen oder als Mitglied einer administrativen Gruppe ausgeführt wird, kann der Benutzer möglicherweise Aktionen ausführen, die er andernfalls nicht zulässt. Daher sollte der Rückgabewert für diese Funktion immer bestätigt werden.
@@ -885,7 +885,7 @@ bool LoadUserProfile() throw(...);
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds tritt ein Fehler auf, wenn das `CAccessToken` kein gültiges Token enthält, oder wenn ein Benutzerprofil bereits vorhanden ist.
 
@@ -923,7 +923,7 @@ Gibt den Anmelde Anbieter an. Weitere Informationen finden Sie unter [LogonUser]
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Zugriffs Token, das sich aus der Anmeldung ergibt, wird dem `CAccessToken`zugeordnet. Damit diese Methode erfolgreich ausgeführt werden kann, muss das `CAccessToken` Objekt SE_TCB_NAME Berechtigungen enthalten, die den Inhaber als Teil der vertrauenswürdigen Computer Basis identifizieren. Weitere Informationen zu den erforderlichen Berechtigungen finden Sie unter [LogonUser](/windows/win32/api/winbase/nf-winbase-logonuserw) .
 
@@ -955,7 +955,7 @@ Wenn dieser Parameter false ist, wird die Zugriffs Überprüfung mithilfe des Si
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [cautorevertimpersonations-Klasse](../../atl/reference/cautorevertimpersonation-class.md) kann verwendet werden, um Identitätswechsel-Zugriffs Token, die durch Festlegen des *bimpersonate* -Flags auf true erstellt wurden, automatisch wiederherzustellen.
 
@@ -991,7 +991,7 @@ Wenn dieser Parameter false ist, wird die Zugriffs Überprüfung mithilfe des Si
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [cautorevertimpersonations-Klasse](../../atl/reference/cautorevertimpersonation-class.md) kann verwendet werden, um Identitätswechsel-Zugriffs Token, die durch Festlegen des *bimpersonate* -Flags auf true erstellt wurden, automatisch wiederherzustellen.
 
@@ -1027,7 +1027,7 @@ Wenn dieser Parameter false ist, wird die Zugriffs Überprüfung mithilfe des Si
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die [cautorevertimpersonations-Klasse](../../atl/reference/cautorevertimpersonation-class.md) kann verwendet werden, um Identitätswechsel-Zugriffs Token, die durch Festlegen des *bimpersonate* -Flags auf true erstellt wurden, automatisch wiederherzustellen.
 
@@ -1063,7 +1063,7 @@ Gibt einen [SECURITY_IMPERSONATION_LEVEL](/windows/win32/api/winnt/ne-winnt-secu
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OpenThreadToken` ähnelt [CAccessToken:: getthreadtoken](#getthreadtoken), legt jedoch die Identitätswechsel Ebene vor dem Initialisieren der `CAccessToken` aus dem Zugriffs Token des Threads fest.
 
@@ -1091,7 +1091,7 @@ Ein Zeiger auf einen Wert, der von der-Methode festgelegt wird, um anzugeben, ob
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn `PrivilegeCheck` zurückgibt, wird der `Attributes` Member jeder [LUID_AND_ATTRIBUTES](/windows/win32/api/winnt/ns-winnt-luid_and_attributes) Struktur auf SE_PRIVILEGE_USED_FOR_ACCESS festgelegt, wenn die entsprechende Berechtigung aktiviert ist. Diese Methode ruft die " [privilegecheck](/windows/win32/api/securitybaseapi/nf-securitybaseapi-privilegecheck) "-Win32-Funktion auf.
 
@@ -1112,7 +1112,7 @@ Handle für den Thread, der aus dem Identitätswechsel wieder hergestellt werden
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Neuversion der Identitätswechsel Token kann automatisch mit der [cautorevertimpersonations-Klasse](../../atl/reference/cautorevertimpersonation-class.md)ausgeführt werden.
 
@@ -1133,7 +1133,7 @@ Die neuen [CDacl](../../atl/reference/cdacl-class.md) -Standardklassen Informati
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard-DACL ist die DACL, die standardmäßig verwendet wird, wenn neue Objekte mit diesem Zugriffs Token erstellt werden.
 
@@ -1154,7 +1154,7 @@ Das [CSID-Klassen](../../atl/reference/csid-class.md) Objekt, das die Besitzer I
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Besitzer ist der Standard Besitzer, der für neu erstellte Objekte verwendet wird, während dieses Zugriffs Token aktiviert ist.
 
@@ -1175,11 +1175,11 @@ Das [CSID-Klassen](../../atl/reference/csid-class.md) Objekt, das die Informatio
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die primäre Gruppe ist die Standardgruppe für neue Objekte, die erstellt werden, während dieses Zugriffs Token aktiviert ist.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Beispiel für ATLSecurity](../../overview/visual-cpp-samples.md)<br/>
 [Zugriffs Token](/windows/win32/SecAuthZ/access-tokens)<br/>

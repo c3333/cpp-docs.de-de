@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::BoolStruct::Member data member
 ms.assetid: 666eae78-e81d-4fb7-a9e4-1ba617d6d4cd
 ms.openlocfilehash: cdec425e317585abbd9730447e2c4fbb19b8250a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865708"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423657"
 ---
 # <a name="boolstruct-structure"></a>BoolStruct-Struktur
 
@@ -26,15 +26,15 @@ Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im 
 struct BoolStruct;
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die `BoolStruct` Struktur definiert, ob ein `ComPtr` die Objekt Lebensdauer einer Schnittstelle verwaltet. `BoolStruct` wird intern vom [booltype ()](comptr-class.md#operator-microsoft-wrl-details-booltype) -Operator verwendet.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-Name                          | BESCHREIBUNG
+Name                          | Beschreibung
 ----------------------------- | ------------------------------------------------------------------------------------------------------------------
 [Boolstruct:: Member](#member) | Gibt an, dass ein [comptr](comptr-class.md) -Objekt ist oder nicht, das die Objekt Lebensdauer einer Schnittstelle verwaltet.
 
@@ -42,7 +42,7 @@ Name                          | BESCHREIBUNG
 
 `BoolStruct`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** intern. h
 
@@ -56,6 +56,6 @@ Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im 
 int Member;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt an, dass ein [comptr](comptr-class.md) -Objekt ist oder nicht, das die Objekt Lebensdauer einer Schnittstelle verwaltet.

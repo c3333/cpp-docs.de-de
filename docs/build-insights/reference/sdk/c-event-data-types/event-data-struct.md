@@ -10,11 +10,11 @@ helpviewer_keywords:
 - build time analysis
 - vcperf.exe
 ms.openlocfilehash: 572cbdaba346ddb77b665b5677b978c83a80aa3d
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78857092"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422907"
 ---
 # <a name="event_data-structure"></a>EVENT_DATA Struktur
 
@@ -56,7 +56,7 @@ typedef struct EVENT_DATA_TAG
 } EVENT_DATA;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |  |  |
 |--|--|
@@ -77,13 +77,13 @@ typedef struct EVENT_DATA_TAG
 | `EventName` | Eine ANSI-Zeichenfolge mit dem Namen der Entität, die durch `EventId`identifiziert wird. |
 | `EventWideName` | Eine Breite Zeichenfolge, die den Namen der durch `EventId`identifizierten Entität enthält. |
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Viele Felder in `EVENT_DATA` die Tick-Zähler enthalten. C++Buildeinblicke verwendet den Leistungs Leistungswert von Fenstern als Quelle von Ticks. Ein Tick-Zähler muss mit dem `TickFrequency`-Feld verwendet werden, um ihn in eine entsprechende Zeiteinheit, z. b. Sekunden, zu konvertieren. Sehen Sie sich das folgende Beispiel an, um diese Konvertierung durchzuführen. `EVENT_DATA` enthält kein Feld für die reguläre Takt Anzahl einer Aktivität. Zum Abrufen dieses Werts subtrahieren Sie `StartTimestamp` von `StopTimestamp`. `EVENT_DATA` ist eine Struktur, die von C-API-Benutzern verwendet werden soll. Für C++ API-Benutzer werden Klassen wie [Ereignis](../cpp-event-data-types/event.md) automatisch Zeit Konvertierungen durchführen.
 
 Der Wert des Felds `EVENT_DATA` `Data` hängt vom Wert des `EventId` Felds ab. Der Wert `Data` wird in der folgenden Tabelle beschrieben. In der folgenden Tabelle fehlen möglicherweise einige Entitäts Bezeichner. In diesem Fall wird das Feld `Data` auf `nullptr` oder NULL festgelegt.
 
-| Wert vom Typ `EventId` | Typ, auf den von verwiesen wird `Data` |
+| `EventId` -Wert | Typ, auf den von verwiesen wird `Data` |
 |--|--|
 | `EVENT_ID_BACK_END_PASS` | [CL_PASS_DATA](cl-pass-data-struct.md) |
 | `EVENT_ID_COMMAND_LINE` | `const wchar_t` |

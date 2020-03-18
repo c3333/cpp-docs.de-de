@@ -141,11 +141,11 @@ helpviewer_keywords:
 - CMFCToolBarImages [MFC], m_bDisableTrueColorAlpha
 ms.assetid: d4e50518-9ffc-406f-9996-f79e5cd38155
 ms.openlocfilehash: 210432b8ec193efccc0bf2338089dbccca310726
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78866689"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425748"
 ---
 # <a name="cmfctoolbarimages-class"></a>Cmfctoolbarimages-Klasse
 
@@ -157,17 +157,17 @@ Ausführlichere Informationen finden Sie im Quellcode, der sich im Ordner **VC\\
 class CMFCToolBarImages : public CObject
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarimages:: cmfctoolbarimages](#cmfctoolbarimages)|Erstellt ein `CMFCToolBarImages`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarimages:: adaptcolors](#adaptcolors)||
 |[Cmfctoolbarimages:: addicon](#addicon)|Fügt den Symbolleisten Bildern ein Symbol hinzu.|
@@ -236,17 +236,17 @@ class CMFCToolBarImages : public CObject
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarimages::P remultiplyalpha](#premultiplyalpha)||
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarimages:: m_bDisableTrueColorAlpha](#m_bdisabletruecoloralpha)|TRUE, wenn TrueColor Alpha Blending (32-Bit-Farbe) deaktiviert ist.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Das vollständige Bitmap von Symbolleisten Bildern, die von `CMFCToolbarImages` verwaltet werden, besteht aus einem oder mehreren kleinen Symbolleisten Bildern (Schaltflächen) mit fester Größe.
 
@@ -263,7 +263,7 @@ Im folgenden Beispiel wird veranschaulicht, wie ein `CMFCToolBarImages`-Objekt m
 
 `CMFCToolBarImages`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxtoolbarimages. h
 
@@ -280,7 +280,7 @@ void AdaptColors(
 in *clrbase*<br/>
 in *clrtone*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="addicon"></a>Cmfctoolbarimages:: addicon
 
@@ -342,7 +342,7 @@ Die Anzahl der Symbolleisten Bilder, die das `CMFCToolBarImages`-Objekt verwalte
 static void __stdcall CleanUp();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="clear"></a>Cmfctoolbarimages:: Clear
 
@@ -360,7 +360,7 @@ Erstellt ein `CMFCToolBarImages`-Objekt.
 CMFCToolBarImages();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Erstellt ein `CMFCToolBarImages` Objekt, initialisiert seine Renderingengine und legt die Bildgröße auf den Standardwert 16X 15 Pixel fest. Verwenden Sie [cmfctoolbarimages::](#setimagesize) Abbild-Größe, um die Bildgröße vor dem Hinzufügen von Bildern zu ändern.
 
@@ -376,7 +376,7 @@ in *iImage*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="copyto"></a>Cmfctoolbarimages:: CopyTo
 
@@ -390,7 +390,7 @@ in *ImageList*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="createfromimagelist"></a>Cmfctoolbarimages:: kreatefromimagelist
 
@@ -409,7 +409,7 @@ in Die Bildliste, die als Quelle für Symbolleisten Bilder verwendet werden soll
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um die Liste der Symbolleisten Images schnell aus einer externen Bildliste zu initialisieren.
 
@@ -428,7 +428,7 @@ in *clrtransparent*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="deleteimage"></a>Cmfctoolbarimages::D eleteimage
 
@@ -526,7 +526,7 @@ in *Alpha ASRC*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="enablertl"></a>Cmfctoolbarimages:: enablertl
 
@@ -538,7 +538,7 @@ static void __stdcall EnableRTL(BOOL bIsRTL = TRUE);
 
 in *bisrtl*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="enddrawimage"></a>Cmfctoolbarimages:: enddrawimage
 
@@ -588,7 +588,7 @@ in Ein Zeiger auf einen Gerätekontext.
 *Rect*<br/>
 in Die Koordinaten eines Rechtecks, das ausgefüllt werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um ein Rechteck mit einer Farbe auszufüllen, bei der es sich um den Durchschnitt der Systemfarben COLOR_BTNFACE und COLOR_BTNHIGHLIGHT handelt. Wenn das System 256 oder weniger Farben verwendet, wird das Rechteck stattdessen mit einem Dithering-Muster dieser beiden Farben gefüllt.
 
@@ -600,7 +600,7 @@ BOOL GetAlwaysLight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getcount"></a>Cmfctoolbarimages:: GetCount
 
@@ -626,7 +626,7 @@ static BYTE GetDisabledImageAlpha();
 
 Der aktuelle Alphakanal Wert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie können [cmfctoolbarimages:: setdisabledimagealpha](#setdisabledimagealpha) aufrufen, um den Wert des Alphakanals zu ändern.
 
@@ -638,7 +638,7 @@ static BYTE __stdcall GetFadedImageAlpha();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getimagesize"></a>Cmfctoolbarimages:: getimagesize
 
@@ -657,7 +657,7 @@ in TRUE zum Abrufen der Zielgröße. FALSE zum Abrufen der Quell Image Größe.
 
 Eine `SIZE`-Struktur, die die Größe eines Bilds in Pixel angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Größe des Quell Bilds ist die Größe der Bilder, die im [cmfctoolbarimages](../../mfc/reference/cmfctoolbarimages-class.md) -Objekt gespeichert werden. Sie können [cmfctoolbarimages:: setimagesize](#setimagesize) aufrufen, um die Quellgröße festzulegen. Der Standardwert ist 16 x 15 Pixel.
 
@@ -675,7 +675,7 @@ HBITMAP GetImageWell() const;
 
 Ein Handle für eine Bitmap, die Symbolleisten Bilder enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Symbolleisten Bilder werden in einer Zeile in einer einzelnen Bitmap gespeichert, die als *Bild-Well*bezeichnet wird. Um ein Symbolleisten Bild im Bildbereich zu suchen, Multiplizieren Sie den Index des Bilds mit der Breite der Symbolleisten Bilder (siehe [cmfctoolbarimages:: getimagesize](#getimagesize)), um den horizontalen Offset des Bilds innerhalb des Bilds zu erhalten.
 
@@ -687,7 +687,7 @@ HBITMAP GetImageWellLight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getlastimagerect"></a>Cmfctoolbarimages:: getlastimageriup
 
@@ -697,7 +697,7 @@ CRect GetLastImageRect() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getlightpercentage"></a>Cmfctoolbarimages:: getlightprozentsatz
 
@@ -707,7 +707,7 @@ int GetLightPercentage() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getmapto3dcolors"></a>Cmfctoolbarimages:: GetMapTo3DColors
 
@@ -717,7 +717,7 @@ BOOL GetMapTo3DColors() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getmask"></a>Cmfctoolbarimages:: getMask
 
@@ -731,7 +731,7 @@ in *iImage*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getresourceoffset"></a>Cmfctoolbarimages:: getresourceoffset
 
@@ -758,7 +758,7 @@ COLORREF GetTransparentColor() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="grayimages"></a>Cmfctoolbarimages:: grayimages
 
@@ -777,7 +777,7 @@ in Der Beleuchtungs Prozentsatz.
 
 TRUE, wenn Bilder in der Auflistung erfolgreich ausgegraut wurden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ändert die Symbolleisten Bilder, indem die roten, grünen und blauen Komponenten der einzelnen Pixel im Mittelpunkt stehen und das Ergebnis von *ngrayimageluminanceprozent* dividiert durch 100 multipliziert wird. Wenn *ngrayimagelenuminanceprozent* 0 (null) oder negativ ist, wird stattdessen der Standardwert 130 verwendet.
 
@@ -796,7 +796,7 @@ static BOOL Is32BitTransparencySupported();
 
 TRUE, wenn 32-Bit-Alpha Blending unterstützt wird. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese statische Methode, um zur Laufzeit zu bestimmen, ob das Betriebssystem 32-Bit-Alpha Blending unterstützt. Diese Funktion wird in Windows 2000 und höheren Versionen unterstützt.
 
@@ -808,7 +808,7 @@ BOOL IsPreMultiplyAutoCheck() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isreadonly"></a>Cmfctoolbarimages:: isread Only
 
@@ -822,7 +822,7 @@ BOOL IsReadOnly() const;
 
 TRUE, wenn die Symbolleisten Bilder schreibgeschützt sind, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `CMFCToolbarImages`-Objekt ist schreibgeschützt, wenn die Bitmap mit Symbolleisten Bildern aus einer schreibgeschützten Datei geladen wurde oder wenn die Bitmap mithilfe der `CMFCToolBarImages::CopyTemp`-Methode in kopiert wurde.
 
@@ -838,7 +838,7 @@ static BOOL IsRTL();
 
 TRUE, wenn die RTL-Unterstützung aktiviert ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Support für RTL wird verwendet, wenn die Anwendung in eine Sprache lokalisiert wird, die von rechts nach links gelesen wird, z. b. Arabisch, Hebräisch, Persisch oder Urdu.
 
@@ -866,7 +866,7 @@ BOOL IsValid() const;
 
 TRUE, wenn ein `CMFCToolBarImages` Objekt gültig ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das `CMFCToolBarImages`-Objekt ist nicht gültig, wenn das Handle für eine Bitmap mit Symbolleisten Bildern NULL ist.
 
@@ -906,7 +906,7 @@ in Maximale Anzahl von Bytes in der Bitmapdatei. oder 0, um die Bitmap unabhäng
 
 TRUE, wenn die Bitmap erfolgreich geladen wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Datei über das schreibgeschützte Attribut verfügt, wird die Bildliste als schreibgeschützt gekennzeichnet.
 
@@ -927,7 +927,7 @@ in *Badd*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="mapfromsyscolor"></a>Cmfctoolbarimages:: mapfromsyscolor
 
@@ -944,7 +944,7 @@ in *busergbquad*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="mapto3dcolors"></a>Cmfctoolbarimages:: MapTo3dColors
 
@@ -963,7 +963,7 @@ in *clrdest*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="maptosyscolor"></a>Cmfctoolbarimages:: mapum
 
@@ -980,7 +980,7 @@ in *busergbquad*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="maptosyscoloralpha"></a>Cmfctoolbarimages:: mapin syscoloralpha
 
@@ -994,7 +994,7 @@ in *Farbe*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="mirror"></a>Cmfctoolbarimages:: Mirror
 
@@ -1008,7 +1008,7 @@ BOOL Mirror();
 
 TRUE, wenn die Bilder erfolgreich gespiegelt wurden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode wird zur Unterstützung von von rechts nach links geschriebenen Schreibsystemen verwendet.
 
@@ -1034,7 +1034,7 @@ in Breite des Bilds in Pixel.
 
 TRUE, wenn das Bild erfolgreich gespiegelt wurde. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird zur Unterstützung von von rechts nach links geschriebenen Schreibsystemen verwendet.
 
@@ -1053,7 +1053,7 @@ in *cyimage*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="mirrorvert"></a>Cmfctoolbarimages:: mirrorvert
 
@@ -1063,7 +1063,7 @@ BOOL MirrorVert();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="onsyscolorchange"></a>Cmfctoolbarimages:: onsyscolorchange
 
@@ -1071,7 +1071,7 @@ BOOL MirrorVert();
 void OnSysColorChange();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="premultiplyalpha"></a>Cmfctoolbarimages::P remultiplyalpha
 
@@ -1090,7 +1090,7 @@ in *bauabcheckpremlt*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="m_bdisabletruecoloralpha"></a>Cmfctoolbarimages:: m_bDisableTrueColorAlpha
 
@@ -1100,7 +1100,7 @@ TRUE, wenn TrueColor Alpha Blending (32-Bit-Farbe) deaktiviert ist.
 static BOOL m_bDisableTrueColorAlpha;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Legen Sie diese Member-Variable auf false fest, um TrueColor-Alpha-Blending für Symbolleisten Bilder zu aktivieren.
 
@@ -1133,7 +1133,7 @@ in TRUE, wenn inaktive Bilder ausgeblendet werden sollen.
 
 TRUE, wenn die zum Zeichnen des Symbolleisten Bilds erforderlichen Ressourcen erfolgreich zugeordnet wurden, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Nachdem Sie diese Methode aufgerufen haben, können Sie [cmfctoolbarimages::D RAW](#draw) beliebig oft aufzurufen. Nachdem Sie das Zeichnen abgeschlossen haben, müssen Sie [cmfctoolbarimages:: enddrawimage](#enddrawimage) zum Freigeben der von `PrepareDrawImage`zugeordneten Ressourcen abrufen.
 
@@ -1154,7 +1154,7 @@ Ein Pfad zu einer Datenträger Datei.
 
 TRUE, wenn die Symbolleisten Bilder erfolgreich gespeichert wurden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Mit dieser Methode können Sie die benutzerdefinierten Images in einer Datenträger Datei speichern. Wenn " *lpszbmpfilename* " den Wert NULL hat, speichert die Methode die Bitmap in der Datei, aus der die Bitmap von der [cmfctoolbarimages:: Load](#load) -Methode geladen wurde.
 
@@ -1168,7 +1168,7 @@ void SetAlwaysLight(BOOL bAlwaysLight = TRUE);
 
 in *balwaygering*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setdisabledimagealpha"></a>Cmfctoolbarimages:: setdisabledimagealpha
 
@@ -1183,7 +1183,7 @@ static void SetDisabledImageAlpha(BYTE nValue);
 *nWert*<br/>
 in Der neue Wert des Alphakanals.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Methode, um einen benutzerdefinierten Alpha Wert für deaktivierte Bilder festzulegen. Der Standardwert ist 127. Dadurch werden deaktivierte Schaltflächen Bilder semitransparent. Wenn Sie den Wert 0 festlegen, werden deaktivierte Bilder vollständig transparent. Wenn Sie den Wert 255 festlegen, sind deaktivierte Images vollständig nicht transparent.
 
@@ -1197,7 +1197,7 @@ static void __stdcall SetFadedImageAlpha(BYTE nValue);
 
 in *nWert*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setimagesize"></a>Cmfctoolbarimages:: Abbild-Größe
 
@@ -1214,7 +1214,7 @@ void SetImageSize(
 *sizeimage*<br/>
 in Die neue Größe von Symbolleisten Bildern.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig beträgt die Größe des Symbolleisten Bilds 16X 15 Pixel. Ruft diese Methode auf, wenn Sie Symbolleisten Bilder einer anderen Größe verwenden möchten.
 
@@ -1228,7 +1228,7 @@ void SetLightPercentage(int nValue);
 
 in *nWert*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setmapto3dcolors"></a>Cmfctoolbarimages:: SetMapTo3DColors
 
@@ -1240,7 +1240,7 @@ void SetMapTo3DColors(BOOL bMapTo3DColors);
 
 in *bMapTo3DColors*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setpremultiplyautocheck"></a>Cmfctoolbarimages:: setpremultiplyautocheck
 
@@ -1252,7 +1252,7 @@ void SetPreMultiplyAutoCheck(BOOL bAuto = TRUE);
 
 in *Bauto*<br/>
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="setsingleimage"></a>Cmfctoolbarimages:: setsingleimage
 
@@ -1260,7 +1260,7 @@ in *Bauto*<br/>
 void SetSingleImage();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="settransparentcolor"></a>Cmfctoolbarimages:: settransparentcolor
 
@@ -1279,7 +1279,7 @@ in Ein RGB-Wert.
 
 Die vorherige transparente Farbe.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie oder der Framework-Befehl [cmfctoolbarimages::D RAW](#draw)aufrufen, zeichnet die Methode kein Pixel, das mit der durch *clrtransparent*angegebenen Farbe übereinstimmt.
 
@@ -1318,7 +1318,7 @@ BOOL ConvertTo32Bits(COLORREF clrTransparent = (COLORREF)-1);
 *clrtransparent*<br/>
 Gibt transparente Farbe von unterstrichenen Bitmaps an.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getbitsperpixel"></a>Cmfctoolbarimages:: getbitsperpixel
 
@@ -1332,7 +1332,7 @@ int GetBitsPerPixel() const;
 
 Ein ganzzahliger Wert, der die aktuelle Auflösung von unterstrichenen Bildern in Bits pro Pixel (BPP) darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getscale"></a>Cmfctoolbarimages:: getScale
 
@@ -1346,7 +1346,7 @@ double GetScale() const;
 
 Ein-Wert, der das aktuelle Skalierungs Verhältnis darstellt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isscaled"></a>Cmfctoolbarimages:: isscaled
 
@@ -1360,7 +1360,7 @@ BOOL IsScaled () const;
 
 TRUE, wenn unterstrichene Bilder skaliert werden. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="smoothresize"></a>Cmfctoolbarimages:: smooththresize
 
@@ -1379,9 +1379,9 @@ Skalierungs Verhältnis.
 
 TRUE, wenn die Größenänderung erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

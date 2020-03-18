@@ -5,11 +5,11 @@ f1_keywords:
 - ostream/std::operator&lt;&lt;
 ms.assetid: 9282a62e-a3d1-4371-a284-fbc9515bb9a2
 ms.openlocfilehash: c80abcb08423b4bb269e7d60ac43ef97d197a0e9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78874811"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425280"
 ---
 # <a name="ltostreamgt-operators"></a>&lt;ostream&gt;-Operatoren
 
@@ -87,7 +87,7 @@ Ein Zeichen.
 Der Elementtyp.
 
 *_Ostr*\
-Ein `basic_ostream` -Objekt.
+Ein `basic_ostream`-Objekt.
 
 *Str*\
 Eine Zeichenfolge.
@@ -100,9 +100,9 @@ Der Typ
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Datenstrom.
+Der Stream (Datenstrom).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `basic_ostream`-Klasse definiert außerdem mehrere Einfügeoperatoren. Weitere Informationen finden Sie unter [basic_ostream::operator&lt;&lt;](../standard-library/basic-ostream-class.md#basic_ostream_operator_lt_lt).
 
@@ -267,6 +267,6 @@ gibt `_Ostr` `<<` `val` zurück (und konvertiert einen [rvalue-Verweis](../cpp/r
 
 Ein Beispiel für die Verwendung von [ finden Sie unter ](../standard-library/ostream-functions.md#flush)flush`operator<<`.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<ostream>](../standard-library/ostream.md)

@@ -25,11 +25,11 @@ helpviewer_keywords:
 - COleInsertDialog [MFC], m_io
 ms.assetid: a9ec610b-abde-431e-bd01-c40159a66dbb
 ms.openlocfilehash: a884f946b60be0567f39477f434db8efe041e393
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855603"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427008"
 ---
 # <a name="coleinsertdialog-class"></a>Coleingesertdialog-Klasse
 
@@ -41,17 +41,17 @@ Wird für das OLE-Dialogfeld "Objekt einfügen" verwendet.
 class COleInsertDialog : public COleDialog
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Coleingesertdialog:: colansertdialog](#coleinsertdialog)|Erstellt ein `COleInsertDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Coleingesertdialog:: anateitem](#createitem)|Erstellt das Element, das im Dialogfeld ausgewählt ist.|
 |[Colansertdialog::D omodal](#domodal)|Zeigt das OLE-Dialogfeld "Objekt einfügen" an.|
@@ -63,11 +63,11 @@ class COleInsertDialog : public COleDialog
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Colansertdialog:: m_io](#m_io)|Eine Struktur vom Typ oleuiinsertobject zum Steuern des Verhaltens des Dialog Felds.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Erstellen Sie ein Objekt der Klasse `COleInsertDialog`, wenn Sie dieses Dialogfeld aufzurufen. Nachdem ein `COleInsertDialog`-Objekt erstellt wurde, können Sie die [m_io](#m_io) -Struktur verwenden, um die Werte oder Zustände von Steuerelementen im Dialogfeld zu initialisieren. Die `m_io` Struktur ist vom Typ oleuiinsertobject. Weitere Informationen zum Verwenden dieser Dialogfeld Klasse finden Sie unter der [DoModal](#domodal) -Member-Funktion.
 
@@ -94,7 +94,7 @@ Weitere Informationen zu OLE-spezifischen Dialogfeldern finden Sie in den Artike
 
 `COleInsertDialog`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxodlgs. h
 
@@ -130,7 +130,7 @@ Erstellungs Kennzeichen, das eine beliebige Anzahl der folgenden Werte enthält,
 *pparser*<br/>
 Zeigt auf das übergeordnete oder Besitzer Fenster Objekt (vom Typ "`CWnd`"), zu dem das Dialog Objekt gehört. Wenn er NULL ist, wird das übergeordnete Fenster des Dialog Objekts auf das Hauptanwendungsfenster festgelegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um das Dialogfeld anzuzeigen, müssen Sie die Funktion [DoModal](#domodal) aufrufen.
 
@@ -151,7 +151,7 @@ Verweist auf das Element, das erstellt werden soll.
 
 Nicht NULL, wenn Element erstellt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie müssen das `COleClientItem`-Objekt zuordnen, bevor Sie diese Funktion verwenden können.
 
@@ -188,7 +188,7 @@ Abschluss Status für das Dialogfeld. Einer der folgenden Werte:
 
 - Idabort, wenn ein Fehler aufgetreten ist. Wenn idabort zurückgegeben wird, können Sie die Member-Funktion [COleDialog:: GetLastError](../../mfc/reference/coledialog-class.md#getlasterror) aufrufen, um weitere Informationen zum aufgetretenen Fehlertyp abzurufen. Eine Auflistung möglicher Fehler finden Sie unter der [oleuiinsertobject](/windows/win32/api/oledlg/nf-oledlg-oleuiinsertobjectw) -Funktion in der Windows SDK.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie die verschiedenen Dialogfeld-Steuerelemente durch Festlegen der Elemente der [m_io](#m_io) Struktur initialisieren möchten, sollten Sie dies vor dem Aufrufen von `DoModal`tun, nachdem das Dialogfeld Objekt erstellt wurde.
 
@@ -206,7 +206,7 @@ REFCLSID GetClassID() const;
 
 Gibt die CLSID zurück, die dem ausgewählten Element zugeordnet ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [CLSID-Schlüssel](/windows/win32/com/clsid-key-hklm) in der Windows SDK.
 
@@ -226,7 +226,7 @@ Die Methode, die zum Rendering des-Objekts erforderlich ist.
 
 - DVASPECT_ICON zurückgegeben, wenn das Kontrollkästchen als Symbol anzeigen aktiviert wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird nur aufgerufen, wenn die [Domäne](#domodal) IDOK zurückgibt.
 
@@ -268,7 +268,7 @@ UINT GetSelectionType() const;
 
 Der Typ der Auswahl.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Rückgabetyp Werte werden durch den `Selection` Enumerationstyp angegeben, der in der `COleInsertDialog`-Klasse deklariert ist.
 
@@ -296,13 +296,13 @@ Struktur vom Typ "oleuiinsertobject", die zum Steuern des Verhaltens des Dialog 
 OLEUIINSERTOBJECT m_io;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Member dieser Struktur können entweder direkt oder über Element Funktionen geändert werden.
 
 Weitere Informationen finden Sie in der [oleuiinsertobject](/windows/win32/api/oledlg/ns-oledlg-oleuiinsertobjectw) -Struktur in der Windows SDK.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>
 [COleDialog-Klasse](../../mfc/reference/coledialog-class.md)<br/>

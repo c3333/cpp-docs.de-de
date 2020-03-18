@@ -119,11 +119,11 @@ helpviewer_keywords:
 - CWinAppEx [MFC], m_bForceImageReset
 ms.assetid: a3d3e053-3e22-463f-9444-c73abb1bb9d7
 ms.openlocfilehash: c222567703d0e57480c00f6f2bf9e78f16979150
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78869933"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426306"
 ---
 # <a name="cwinappex-class"></a>CWinAppEx-Klasse
 
@@ -136,17 +136,17 @@ ms.locfileid: "78869933"
 class CWinAppEx : public CWinApp
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinAppEx:: CWinAppEx](#cwinappex)|Erstellt ein `CWinAppEx`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinAppEx:: cleanstate](#cleanstate)|Entfernt Informationen über die Anwendung aus der Windows-Registrierung.|
 |[CWinAppEx:: enableloadwindowplacement](#enableloadwindowplacement)|Gibt an, ob die Anwendung die anfängliche Größe und Position des Hauptrahmen Fensters aus der Registrierung lädt.|
@@ -197,7 +197,7 @@ class CWinAppEx : public CWinApp
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinAppEx:: loadcustomstate](#loadcustomstate)|Wird von Framework aufgerufen, wenn der Anwendungs Zustand geladen wurde.|
 |[CWinAppEx:: loadwindowplacement](#loadwindowplacement)|Wird von Framework aufgerufen, wenn die Größe und der Speicherort der Anwendung aus der Registrierung geladen werden. Die geladenen Daten enthalten die Größe und den Speicherort des Haupt Frames zum Zeitpunkt der letzten Schließung der Anwendung.|
@@ -208,13 +208,13 @@ class CWinAppEx : public CWinApp
 |[CWinAppEx:: savecustomstate](#savecustomstate)|Wird von Framework aufgerufen, nachdem der Anwendungs Zustand in die Registrierung geschrieben wurde.|
 |[CWinAppEx:: storewindowplacement](#storewindowplacement)|Wird von Framework aufgerufen, um die Größe und Position des Haupt Frames in die Registrierung zu schreiben.|
 
-### <a name="data-members"></a>Datenelemente
+### <a name="data-members"></a>Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinAppEx:: m_bForceImageReset](#m_bforceimagereset)|Gibt an, ob das Framework alle Symbolleisten Bilder zurücksetzt, wenn das Rahmen Fenster geladen wird, das die Symbolleiste enthält.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Großteil der Funktionalität, die vom MFC-Framework bereitgestellt wird, hängt von der `CWinAppEx`-Klasse ab. Sie können die `CWinAppEx`-Klasse auf eine von zwei Arten in Ihre Anwendung integrieren:
 
@@ -236,7 +236,7 @@ Nachdem Sie `CWinAppEx` in Ihre Anwendung integriert haben, können Sie einen de
 
 [CWinAppEx](../../mfc/reference/cwinappex-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwinappex. h
 
@@ -257,7 +257,7 @@ in Eine Zeichenfolge, die den Pfad eines Registrierungsschlüssels enthält.
 
 Ungleich 0 (null), wenn die Methode erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode löscht Anwendungsdaten aus einem bestimmten Abschnitt der Registrierung. Sie können den zu löschenden Abschnitt mithilfe des Parameters *lpszsectionname*angeben. Wenn *lpszsectionname* den Wert NULL hat, verwendet diese Methode den standardmäßigen Registrierungs Pfad, der im `CWinAppEx` Objekt gespeichert wird. Verwenden Sie [CWinAppEx:: getregistrybase](#getregistrybase), um den Standard Registrierungs Pfad zu erhalten.
 
@@ -274,7 +274,7 @@ CWinAppEx(BOOL bResourceSmartUpdate = FALSE);
 *bresourcesmartupdate*<br/>
 in Ein boolescher Parameter, der angibt, ob das Arbeitsbereichs Objektressourcen Aktualisierungen erkennen und behandeln soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die `CWinAppEx`-Klasse verfügt über Initialisierungs Methoden, stellt Funktionen zum Speichern und Laden von Anwendungsinformationen in die Registrierung bereit und steuert globale Anwendungseinstellungen. Außerdem können Sie globale Manager verwenden, wie z. b. die [ckeyboardmanager-Klasse](../../mfc/reference/ckeyboardmanager-class.md) und die [cusertoolsmanager-Klasse](../../mfc/reference/cusertoolsmanager-class.md). Jede Anwendung kann nur über eine Instanz der `CWinAppEx`-Klasse verfügen.
 
@@ -291,7 +291,7 @@ void EnableLoadWindowPlacement(BOOL bEnable = TRUE);
 *benabel*<br/>
 in Gibt an, ob die Anwendung die anfängliche Größe und Position des Hauptrahmen Fensters aus der Registrierung lädt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig werden die Größe und die Position des Hauptrahmens mit anderen Anwendungseinstellungen aus der Registrierung geladen. Dieser Fehler tritt während [CWinAppEx:: LoadState](#loadstate)auf. Wenn Sie die anfängliche Fensterplatzierung nicht aus der Registrierung laden möchten, können Sie diese Methode mit dem *Wert* false auf false festlegen.
 
@@ -321,7 +321,7 @@ in Die letzte Deaktivierung der Menü-ID.
 
 TRUE, wenn der `CMenuTearOffManager` erfolgreich erstellt und initialisiert wurde. FALSE, wenn ein Fehler auftritt oder der `CMenuTearOffManager` bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie diese Funktion, um in der Anwendung abtrennbare Menüs zu aktivieren. Sie sollten diese Funktion aus `InitInstance`abrufen.
 
@@ -363,7 +363,7 @@ in Die Menü-ID für das anfängliche Tool Verzeichnis.
 
 TRUE, wenn die Methode ein `CUserToolsManager` Objekt erstellt und initialisiert. FALSE, wenn die Methode fehlschlägt oder ein `CUserToolsManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie benutzerdefinierte Tools aktivieren, unterstützt das Framework automatisch ein dynamisches Menü, das während der Anpassung erweitert werden kann. Das Framework ordnet jedes neue Element einem externen Befehl zu. Das Framework ruft diese Befehle auf, wenn der Benutzer das entsprechende Element aus **dem Menü Extras** auswählt.
 
@@ -379,7 +379,7 @@ virtual int ExitInstance();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getbinary"></a>CWinAppEx:: GetBinary
 
@@ -407,7 +407,7 @@ vorgenommen Ein Zeiger auf eine Ganzzahl ohne Vorzeichen, die die-Methode verwen
 
 TRUE, wenn erfolgreich; Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Binärdaten, die in die Registrierung geschrieben werden. Um Daten in die Registrierung zu schreiben, verwenden Sie die Methoden [CWinAppEx:: Beschreib tebinary](#writebinary) und [CWinAppEx:: Beschreib tesectionbinary](#writesectionbinary).
 
@@ -425,7 +425,7 @@ CContextMenuManager* GetContextMenuManager();
 
 Ein Zeiger auf das globale `CContextMenuManager`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das ccontextmenumanager-Objekt nicht initialisiert ist, ruft diese Funktion [CWinAppEx:: InitContextMenuManager](#initcontextmenumanager) auf, bevor Sie einen-Zeiger zurückgibt.
 
@@ -437,7 +437,7 @@ int GetDataVersion() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="getdataversionmajor"></a>CWinAppEx:: getdataversionmajor
 
@@ -485,7 +485,7 @@ in Der Standardwert, der von der Methode zurückgegeben wird, wenn der angegeben
 
 Die Registrierungsdaten, wenn die Methode erfolgreich war. andernfalls *ndefault*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest ganzzahlige Daten aus der Registrierung. Wenn dem Registrierungsschlüssel, der von *lpszentry*angegeben ist, keine ganzzahligen Daten zugeordnet sind, gibt diese Methode *ndefault*zurück. Um Daten in die Registrierung zu schreiben, verwenden Sie die Methoden [CWinAppEx:: Write-ectionint](#writesectionint) und [CWinAppEx:: Write](#writeint).
 
@@ -503,7 +503,7 @@ CKeyboardManager* GetKeyboardManager();
 
 Ein Zeiger auf das globale `CKeyboardManager`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Tastatur-Manager nicht initialisiert ist, ruft diese Funktion [CWinAppEx:: initkeyboardmanager](#initkeyboardmanager) auf, bevor Sie einen-Zeiger zurückgibt.
 
@@ -519,7 +519,7 @@ CMouseManager* GetMouseManager();
 
 Ein Zeiger auf das globale `CMouseManager`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Maus-Manager nicht initialisiert ist, ruft diese Funktion [CWinAppEx:: initmousemanager](#initmousemanager) auf, bevor Sie einen-Zeiger zurückgibt.
 
@@ -545,7 +545,7 @@ vorgenommen Ein Verweis auf einen `CObject`. Die-Methode verwendet diesen Verwei
 
 Ungleich 0 (null), wenn die Methode erfolgreich war. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Daten aus der Registrierung, die von `CObject`abgeleitet ist. Verwenden Sie zum Schreiben von `CObject` Daten in die Registrierung entweder [CWinAppEx:: schreiteobject](#writeobject) oder [CWinAppEx:: schreitesectionobject](#writesectionobject).
 
@@ -563,7 +563,7 @@ LPCTSTR GetRegistryBase();
 
 Eine Zeichenfolge, die den Pfad des standardmäßigen Registrierungs Speicher Orts enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Methoden der [CWinAppEx-Klasse](../../mfc/reference/cwinappex-class.md) , die auf die Registrierung zugreifen, werden an einem Standard Speicherort gestartet. Verwenden Sie diese Methode, um einen Pfad zum Standard Registrierungs Speicherort abzurufen. Verwenden Sie [CWinAppEx:: abtregistrybase](#setregistrybase) , um den standardmäßigen Registrierungs Speicherort zu ändern.
 
@@ -584,7 +584,7 @@ in Eine Zeichenfolge, die den relativen Pfad eines Registrierungsschlüssels ent
 
 Eine `CString`, die den absoluten Pfad eines Registrierungsschlüssels enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode definiert den absoluten Pfad des Registrierungsschlüssels, indem der relative Pfad in *szsectionadd* an den standardmäßigen Registrierungs Speicherort für Ihre Anwendung angehängt wird. Verwenden Sie die Methode [CWinAppEx:: getregistrybase](#getregistrybase), um den Standard Registrierungsschlüssel zu erhalten.
 
@@ -618,7 +618,7 @@ vorgenommen Ein Zeiger auf eine Ganzzahl ohne Vorzeichen. Die-Methode schreibt d
 
 TRUE, wenn erfolgreich; andernfalls FALSE.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Binärdaten, die in die Registrierung geschrieben werden, mithilfe der Methoden [CWinAppEx:: Beschreib tebinary](#writebinary) und [CWinAppEx:: Beschreib tesectionbinary](#writesectionbinary).
 
@@ -650,7 +650,7 @@ in Der Standardwert, der zurückgegeben werden soll, wenn der angegebene Wert ni
 
 Die ganzzahligen Daten, die im angegebenen Registrierungs Wert gespeichert werden. *ndefault* , wenn die Daten nicht vorhanden sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die Methoden [CWinAppEx:: Write](#writeint) und [CWinAppEx:: Write-ectionint](#writesectionint) , um ganzzahlige Daten in die Registrierung zu schreiben.
 
@@ -682,7 +682,7 @@ vorgenommen Ein Verweis auf einen `CObject`. Diese `CObject` wird von der-Method
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Daten aus der Registrierung. Die gelesenen Daten sind `CObject` Daten oder Daten für eine Klasse, die von `CObject`abgeleitet ist. Verwenden Sie zum Schreiben von `CObject` Daten in die Registrierung entweder [CWinAppEx:: schreiteobject](#writeobject) oder [CWinAppEx:: schreitesectionobject](#writesectionobject).
 
@@ -714,7 +714,7 @@ in Der Standardwert, der zurückgegeben werden soll, wenn der angegebene Wert ni
 
 Die im angegebenen Registrierungs Wert gespeicherten Zeichen folgen Daten, wenn die Daten vorhanden sind. andernfalls *lpszdefault*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Zeichen folgen Daten, die in die Registrierung geschrieben werden. Verwenden Sie [CWinAppEx:: Write String](#writestring) und [CWinAppEx:: Write-ectionstring](#writesectionstring) , um Zeichen folgen Daten in die Registrierung zu schreiben.
 
@@ -732,7 +732,7 @@ CShellManager* GetShellManager();
 
 Ein Zeiger auf das globale `CShellManager`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das `CShellManager` Objekt nicht initialisiert ist, ruft diese Funktion [CWinAppEx:: initshellmanager](#initshellmanager) auf, bevor Sie einen-Zeiger zurückgibt.
 
@@ -758,7 +758,7 @@ in Der Standardwert, der von der Methode zurückgegeben wird, wenn der angegeben
 
 Die Zeichen folgen Daten, die in der Registrierung gespeichert sind, wenn erfolgreich; andernfalls *lpszdefault* .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode liest Zeichen folgen Daten, die in die Registrierung geschrieben werden. Um Daten in die Registrierung zu schreiben, verwenden Sie die Methoden [CWinAppEx:: Write String](#writestring) oder [CWinAppEx:: Beschreib tesectionstring](#writesectionstring).
 
@@ -776,7 +776,7 @@ CTooltipManager* GetTooltipManager();
 
 Ein Zeiger auf das globale `CTooltipManager`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das `CTooltipManager` Objekt nicht initialisiert ist, ruft diese Funktion [CWinAppEx:: inittooltipmanager](#inittooltipmanager) auf, bevor Sie einen-Zeiger zurückgibt.
 
@@ -792,7 +792,7 @@ CUserToolsManager* GetUserToolsManager();
 
 Ein Zeiger auf das globale `CUserToolsManager` Objekt. NULL, wenn die Verwaltung von Benutzer Tools für die Anwendung nicht aktiviert ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bevor Sie einen Zeiger auf das `CUserToolsManager` Objekt abrufen, müssen Sie den Manager durch Aufrufen von [CWinAppEx:: enableusertools](#enableusertools)initialisieren.
 
@@ -808,7 +808,7 @@ BOOL InitContextMenuManager();
 
 Ungleich 0 (null), wenn die Methode das ccontextmenumanager-Objekt erstellt. 0, wenn das `CContextMenuManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie [CWinAppEx:: getcontextmenumanager](#getcontextmenumanager)aufrufen, ruft die Standard Implementierung dieser Methode `InitContextMenuManager`auf.
 
@@ -826,7 +826,7 @@ BOOL InitKeyboardManager();
 
 Ungleich 0 (null), wenn die Methode das `CKeyboardManager`-Objekt erstellt. 0, wenn das `CKeyboardManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie [CWinAppEx:: getkeyboardmanager](#getkeyboardmanager)aufrufen, ruft die Standard Implementierung dieser Methode `InitKeyboardManager`auf.
 
@@ -844,7 +844,7 @@ BOOL InitMouseManager();
 
 Ungleich 0 (null), wenn die Methode das `CMouseManager`-Objekt erstellt. 0, wenn das `CMouseManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie [CWinAppEx:: getmousmanager](#getmousemanager)aufrufen, ruft die Standard Implementierung dieser Methode `InitMouseManager`auf.
 
@@ -862,7 +862,7 @@ BOOL InitShellManager();
 
 Ungleich 0 (null), wenn die Methode das `CShellManager`-Objekt erstellt. 0, wenn das `CShellManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie [CWinAppEx:: getshellmanager](#getshellmanager)aufrufen, ruft die Standard Implementierung dieser Methode `InitShellManager`auf.
 
@@ -880,7 +880,7 @@ BOOL InitTooltipManager();
 
 Ungleich 0 (null), wenn die Methode das `CTooltipManager`-Objekt erstellt. 0, wenn das `CTooltipManager` Objekt bereits vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie [CWinAppEx:: gettooltipmanager](#gettooltipmanager)aufrufen, ruft die Standard Implementierung dieser Methode `InitTooltipManager`auf.
 
@@ -894,7 +894,7 @@ BOOL IsResourceSmartUpdate() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="isstateexists"></a>CWinAppEx:: isstateist vorhanden.
 
@@ -921,7 +921,7 @@ Das Framework ruft diese Methode auf, nachdem der Zustand der Anwendung aus der 
 virtual void LoadCustomState();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Methode, wenn Sie eine Verarbeitung durchführen möchten, nachdem die Anwendung den Zustand aus der Registrierung geladen hat. Standardmäßig führt diese Methode keine Aktion aus.
 
@@ -964,7 +964,7 @@ in Ein Zeiger auf ein `CFrameImpl` Objekt. Die-Methode wendet die Zustandsinform
 
 Ungleich NULL, wenn erfolgreich; andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode lädt den Zustand der Anwendung und alle Zustandsinformationen für ein Rahmen Fenster. Die geladenen Informationen für das Rahmen Fenster werden auf das angegebene Rahmen Fenster angewendet. Wenn Sie kein Rahmen Fenster angeben, werden nur die Informationen zum Anwendungs Zustand geladen. Zu den Anwendungsinformationen gehören der Status der [cmousemanager-Klasse](../../mfc/reference/cmousemanager-class.md), der [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md)-Klasse, der [ckeyboardmanager-Klasse](../../mfc/reference/ckeyboardmanager-class.md)und der [cusertoolsmanager-Klasse](../../mfc/reference/cusertoolsmanager-class.md).
 
@@ -998,7 +998,7 @@ vorgenommen Eine ganze Zahl, die den Anzeige Zustand des Fensters angibt. Weiter
 
 Ungleich NULL, wenn erfolgreich; andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig lädt MFC automatisch die vorherige Position und den Zustand des Hauptrahmen Fensters, wenn die Anwendung gestartet wird. Weitere Informationen dazu, wie diese Informationen in der Registrierung gespeichert werden, finden Sie unter [CWinAppEx:: storewindowplacement](#storewindowplacement).
 
@@ -1012,7 +1012,7 @@ Gibt an, ob das Framework beim erneuten Laden des Rahmen Fensters, das die Symbo
 BOOL m_bForceImageReset;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der `m_bForceImageReset` Datenmember ist eine geschützte Variable.
 
@@ -1034,7 +1034,7 @@ in Ein Zeiger auf ein Fenster Objekt, für das der Benutzer Kontexthilfe aufgeru
 *dwhelpidarray []*<br/>
 in Ein reservierter Wert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ist zurzeit für die zukünftige Verwendung reserviert. Die Standard Implementierung führt keine Aktion aus und wird zurzeit nicht vom Framework aufgerufen.
 
@@ -1051,7 +1051,7 @@ virtual void OnClosingMainFrame(CFrameImpl* pFrameImpl);
 *pframeimpl*<br/>
 in Ein Zeiger auf ein `CFrameImpl` Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Standard Implementierung dieser Methode speichert den Zustand von *pframeimpl*.
 
@@ -1077,7 +1077,7 @@ in Die Ansichts-ID.
 
 TRUE, wenn das Framework einen Befehl findet. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um benutzerdefiniertes Maus Verhalten zu unterstützen, muss diese Funktion aufgerufen werden, wenn Sie die WM_LBUTTONDBLCLK Nachricht verarbeiten. Mit dieser Methode wird der Befehl ausgeführt, der der von *iviewid*bereitgestellten Ansichts-ID zugeordnet ist. Weitere Informationen zum benutzerdefinierten Maus Verhalten finden Sie unter [Tastatur-und Maus Anpassung](../../mfc/keyboard-and-mouse-customization.md).
 
@@ -1093,7 +1093,7 @@ in *CWnd&#38;*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ##  <a name="preloadstate"></a>CWinAppEx::P reloadstate
 
@@ -1103,7 +1103,7 @@ Das Framework ruft diese Methode direkt auf, bevor der Zustand der Anwendung aus
 virtual void PreLoadState();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Methode, wenn Sie eine beliebige Verarbeitung unmittelbar vor dem Laden des Anwendungs Zustands durch das Framework ausführen möchten.
 
@@ -1115,7 +1115,7 @@ Das Framework ruft diese Methode direkt auf, bevor der Anwendungs Zustand gespei
 virtual void PreSaveState();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Methode, wenn Sie eine beliebige Verarbeitung unmittelbar vor dem Speichern des Anwendungs Zustands durch das Framework ausführen möchten.
 
@@ -1136,7 +1136,7 @@ in Ein Zeiger auf ein Rahmen Fenster.
 
 Ungleich 0 (null), wenn die Methode erfolgreich war. 0, wenn der Ladevorgang fehlgeschlagen ist oder keine zu ladenden Daten vorhanden sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie die Funktion [CWinAppEx:: storewindowplacement](#storewindowplacement) , um die Größe und Position eines Fensters in die Registrierung zu schreiben.
 
@@ -1148,7 +1148,7 @@ Das Framework ruft diese Methode auf, nachdem der Zustand der Anwendung in der R
 virtual void SaveCustomState();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Überschreiben Sie diese Methode, wenn Sie eine Verarbeitung durchführen möchten, nachdem die Anwendung den Zustand in der Registrierung gespeichert hat. Standardmäßig führt diese Methode keine Aktion aus.
 
@@ -1189,7 +1189,7 @@ in Ein Zeiger auf ein Rahmen Fenster Objekt. Dieser Frame wird in der Windows-Re
 
 TRUE, wenn erfolgreich; Andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode speichert den Zustand der Anwendung und alle Zustandsinformationen für das bereitgestellte Rahmen Fenster. Wenn Sie kein Rahmen Fenster bereitstellen, speichert die Methode nur den Anwendungs Zustand. Zu den Anwendungsinformationen gehören der Status der [cmousemanager-Klasse](../../mfc/reference/cmousemanager-class.md), der [ccontextmenumanager](../../mfc/reference/ccontextmenumanager-class.md)-Klasse, der [ckeyboardmanager-Klasse](../../mfc/reference/ckeyboardmanager-class.md)und der [cusertoolsmanager-Klasse](../../mfc/reference/cusertoolsmanager-class.md).
 
@@ -1212,7 +1212,7 @@ in Eine Zeichenfolge, die den Pfad eines Registrierungsschlüssels enthält.
 
 Eine Zeichenfolge, die den Pfad des standardmäßigen Registrierungs Speicher Orts enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Methoden der [CWinAppEx-Klasse](../../mfc/reference/cwinappex-class.md) , die auf die Registrierung zugreifen, werden an einem Standard Speicherort gestartet. Verwenden Sie diese Methode, um den standardmäßigen Registrierungs Speicherort zu ändern. Verwenden Sie [CWinAppEx:: getregistrybase](#getregistrybase) , um den standardmäßigen Registrierungs Speicherort abzurufen.
 
@@ -1242,7 +1242,7 @@ in Ein Zeiger auf das Fenster, das das Popup Menü besitzt.
 
 Ungleich 0 (null), wenn das Popup Menü erfolgreich angezeigt wird. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode zeigt das Menü an, das *uimenuresid*zugeordnet ist.
 
@@ -1274,7 +1274,7 @@ in Ein Rechteck, das die Koordinaten des Hauptrahmen Fensters enthält, wenn es 
 
 Ungleich NULL, wenn erfolgreich; andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig speichert MFC automatisch die Position und den Zustand des Hauptrahmen Fensters, bevor die Anwendung beendet wird. Diese Informationen werden in der Windows-Registrierung unter dem Schlüssel WINDOWPLACEMENT am standardmäßigen Registrierungs Speicherort für Ihre Anwendung gespeichert. Weitere Informationen zum standardmäßigen Registrierungs Speicherort Ihrer Anwendung finden Sie unter [CWinAppEx:: getregistrybase](#getregistrybase).
 
@@ -1306,7 +1306,7 @@ in Die Größe der *pData* in Bytes.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszentry* -Parameter ist der Name eines Registrierungs Eintrags, der sich unter dem Standard Registrierungsschlüssel für Ihre Anwendung befindet. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase) .
 
@@ -1334,7 +1334,7 @@ in Die Daten, die gespeichert werden sollen.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszentry* -Parameter ist der Name eines Registrierungs Eintrags, der sich unter dem Standard Registrierungsschlüssel für Ihre Anwendung befindet. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase) .
 
@@ -1362,7 +1362,7 @@ in Ein Verweis auf `CObject` Daten, die von der-Methode gespeichert werden.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode schreibt die *obj* -Daten in den angegebenen Wert unter dem Standard Registrierungsschlüssel. Verwenden Sie [CWinAppEx:: getregistrybase](#getregistrybase) , um den aktuellen Registrierungsschlüssel zu bestimmen.
 
@@ -1396,7 +1396,7 @@ in Die Größe der *pData* in Bytes.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszsubsection* -Parameter ist nicht der absolute Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der an das Ende des Standard Registrierungsschlüssels für Ihre Anwendung angehängt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase) .
 
@@ -1428,7 +1428,7 @@ in Die Daten, die in die Registrierung geschrieben werden sollen.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszsubsection* -Parameter ist kein absoluter Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der an den Standard Registrierungsschlüssel für Ihre Anwendung angehängt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase) .
 
@@ -1460,7 +1460,7 @@ in Die Daten, die gespeichert werden sollen.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszsubsection* -Parameter ist kein absoluter Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der an das Ende des Standard Registrierungsschlüssels für Ihre Anwendung angehängt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase).
 
@@ -1492,7 +1492,7 @@ in Die Zeichen folgen Daten, die in die Registrierung geschrieben werden sollen.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszsubsection* -Parameter ist kein absoluter Pfad für einen Registrierungs Eintrag. Dabei handelt es sich um einen relativen Pfad, der an das Ende des Standard Registrierungsschlüssels für Ihre Anwendung angehängt wird. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase).
 
@@ -1520,13 +1520,13 @@ in Die Daten, die gespeichert werden sollen.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *lpszentry* -Parameter ist der Name eines Registrierungs Eintrags, der sich unter dem Standard Registrierungsschlüssel für Ihre Anwendung befindet. Um den Standard Registrierungsschlüssel zu erhalten oder festzulegen, verwenden Sie die Methoden [CWinAppEx:: getregistrybase](#getregistrybase) bzw. [CWinAppEx:: setregistrybase](#setregistrybase) .
 
 Wenn der von *lspzentry* angegebene Schlüssel nicht vorhanden ist, wird er von dieser Methode erstellt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>

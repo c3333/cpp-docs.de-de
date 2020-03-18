@@ -11,11 +11,11 @@ helpviewer_keywords:
 - CHttpConnection [MFC], OpenRequest
 ms.assetid: a402b662-c445-4988-800d-c8278551babe
 ms.openlocfilehash: 1941af1e16a897235dd90db509d6ed29c2d9a875
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890781"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79425892"
 ---
 # <a name="chttpconnection-class"></a>CHttpConnection-Klasse
 
@@ -27,21 +27,21 @@ Verwaltet die Verbindung mit einem HTTP-Server.
 class CHttpConnection : public CInternetConnection
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CHttpConnection:: CHttpConnection](#chttpconnection)|Erstellt ein `CHttpConnection`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CHttpConnection:: openrequest](#openrequest)|Öffnet eine HTTP-Anforderung.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 HTTP ist eines von drei Internet Server-Protokollen, die von den MFC-WinInet-Klassen implementiert werden.
 
@@ -59,7 +59,7 @@ Weitere Informationen zur Funktionsweise von `CHttpConnection` mit den anderen M
 
 `CHttpConnection`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -118,14 +118,14 @@ Ein Zeiger auf eine auf NULL endende Zeichenfolge, die das Kennwort für die Anm
 |*pstrusername*|*pstraupassword*|An FTP-Server gesendeter Benutzername|Kennwort an FTP-Server gesendet|
 |--------------------|--------------------|---------------------------------|---------------------------------|
 |NULL oder ""|NULL oder ""|Anonymous|E-Mail-Name des Benutzers|
-|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|„ “|
-|NULL |Zeichenfolge ungleich NULL|ERROR|ERROR|
+|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|" "|
+|NULL |Zeichenfolge ungleich NULL|FEHLER|FEHLER|
 |Zeichenfolge ungleich NULL|Zeichenfolge ungleich NULL|*pstrusername*|*pstraupassword*|
 
 *dwFlags*<br/>
 Eine beliebige Kombination der `INTERNET_FLAG_*`-Flags. Eine Beschreibung von *dwFlags* -Werten finden Sie in der Tabelle im Abschnitt " **Hinweise** " unter [CHttpConnection:: openrequest](#openrequest) .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen niemals direkt einen `CHttpConnection`. Stattdessen erstellen Sie ein-Objekt, indem Sie [cinternettession:: GetHttpConnection](../../mfc/reference/cinternetsession-class.md#gethttpconnection)aufrufen.
 
@@ -177,7 +177,7 @@ Ein Zeiger auf eine Zeichenfolge, mit der die HTTP-Version definiert wird. Wenn 
 Beliebige Kombinationen der Flags INTERNET_ FLAG_*. Eine Beschreibung möglicher *dwFlags* -Werte finden Sie im Abschnitt "Hinweise".
 
 *nverb*<br/>
-Eine mit dem HTTP-Anforderungstyp verknüpfte Zahl. Dabei kann es sich um eine der folgenden Methoden handeln:
+Eine mit dem HTTP-Anforderungstyp verknüpfte Zahl. Einer der folgenden Werte ist möglich:
 
 |HTTP-Anforderungstyp|*nverb* -Wert|
 |-----------------------|-------------------|
@@ -193,11 +193,11 @@ Eine mit dem HTTP-Anforderungstyp verknüpfte Zahl. Dabei kann es sich um eine d
 
 Ein Zeiger auf das angeforderte [CHttpFile](../../mfc/reference/chttpfile-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 *dwFlags* können eine der folgenden sein:
 
-|Internet-Flag|BESCHREIBUNG|
+|Internet-Flag|Beschreibung|
 |-------------------|-----------------|
 |INTERNET_FLAG_RELOAD|Erzwingt einen Download der angeforderten Datei, des angeforderten Objekts oder der angeforderten Verzeichnisliste vom ursprünglichen Server, nicht aus dem Cache.|
 |INTERNET_FLAG_DONT_CACHE|Fügt die zurückgegebene Entität nicht zum Cache hinzu.|
@@ -209,7 +209,7 @@ Ein Zeiger auf das angeforderte [CHttpFile](../../mfc/reference/chttpfile-class.
 
 Mit dieser Funktion können Ausnahmen ausgelöst werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CInternetConnection-Klasse](../../mfc/reference/cinternetconnection-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

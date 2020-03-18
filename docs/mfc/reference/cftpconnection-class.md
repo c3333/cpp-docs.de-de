@@ -31,11 +31,11 @@ helpviewer_keywords:
 - CFtpConnection [MFC], SetCurrentDirectory
 ms.assetid: 5e3a0501-8893-49cf-a3d5-0628d8d6b936
 ms.openlocfilehash: 94ee4cb938ee061470282eb2f08a94d83c908805
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78890783"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424350"
 ---
 # <a name="cftpconnection-class"></a>CFtpConnection-Klasse
 
@@ -47,17 +47,17 @@ Verwaltet die FTP-Verbindung mit einem Internet Server und ermöglicht die direk
 class CFtpConnection : public CInternetConnection
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFtpConnection:: CFtpConnection](#cftpconnection)|Erstellt ein `CFtpConnection`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CFtpConnection:: Command](#command)|Sendet einen Befehl direkt an einen FTP-Server.|
 |[CFtpConnection:: kreatedirectory](#createdirectory)|Erstellt ein Verzeichnis auf dem Server.|
@@ -71,7 +71,7 @@ class CFtpConnection : public CInternetConnection
 |[CFtpConnection:: Rename](#rename)|Benennt eine Datei auf dem Server um.|
 |[CFtpConnection:: SetCurrentDirectory](#setcurrentdirectory)|Legt das aktuelle FTP-Verzeichnis fest.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 FTP ist einer der drei Internet Dienste, die von den MFC-WinInet-Klassen erkannt werden.
 
@@ -91,7 +91,7 @@ Weitere Informationen zur Funktionsweise von `CFtpConnection` mit den anderen MF
 
 `CFtpConnection`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** AFXINET. h
 
@@ -139,8 +139,8 @@ Ein Zeiger auf eine mit NULL endende Zeichenfolge, die das Kennwort für die Anm
 |*pstrusername*|*pstraupassword*|An FTP-Server gesendeter Benutzername|Kennwort an FTP-Server gesendet|
 |--------------------|--------------------|---------------------------------|---------------------------------|
 |NULL oder ""|NULL oder ""|Anonymous|E-Mail-Name des Benutzers|
-|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|„ “|
-|NULL-Zeichenfolge ungleich NULL|ERROR|ERROR||
+|Zeichenfolge ungleich NULL|NULL oder ""|*pstrusername*|" "|
+|NULL-Zeichenfolge ungleich NULL|FEHLER|FEHLER||
 |Zeichenfolge ungleich NULL|Zeichenfolge ungleich NULL|*pstrusername*|*pstraupassword*|
 
 *Nport*<br/>
@@ -149,7 +149,7 @@ Eine Zahl, die den auf dem Server zu verwendenden TCP/IP-Port identifiziert.
 *bpassiv*<br/>
 Gibt den passiven oder aktiven Modus für diese FTP-Sitzung an. Wenn der Wert auf true festgelegt ist, wird das Win32-API- *dwFlag* auf INTERNET_FLAG_PASSIVE festgelegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen niemals direkt ein `CFtpConnection` Objekt. Aufrufen Sie stattdessen [cinternetzession:: GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection), wodurch das `CFptConnection` Objekt erstellt wird.
 
@@ -171,7 +171,7 @@ CInternetFile* Command(
 Ein Zeiger auf eine Zeichenfolge, die den zu sendenden Befehl enthält.
 
 *eresponse*<br/>
-Gibt an, ob eine Antwort vom FTP-Server erwartet wird. Es kann sich um einen der folgenden Werte handeln:
+Gibt an, ob eine Antwort vom FTP-Server erwartet wird. Kann einer der folgenden Werte sein:
 
 - `CmdRespNone` es wird keine Antwort erwartet.
 - `CmdRespRead` eine Antwort erwartet wird.
@@ -189,7 +189,7 @@ Ein Zeiger auf einen Wert mit einem anwendungsdefinierten Wert, der zur Identifi
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion emuliert die Funktionalität der [ftpcommand](/windows/win32/api/wininet/nf-wininet-ftpcommandw) -Funktion, wie im Windows SDK beschrieben.
 
@@ -212,7 +212,7 @@ Ein Zeiger auf eine Zeichenfolge, die den Namen des zu erstellenden Verzeichniss
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Windows-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie `GetCurrentDirectory`, um das aktuelle Arbeitsverzeichnis für diese Verbindung mit dem Server zu ermitteln. Gehen Sie nicht davon aus, dass das Remote System eine Verbindung mit dem Stammverzeichnis hergestellt hat.
 
@@ -250,7 +250,7 @@ Ein Zeiger auf ein DWORD, das die folgenden Informationen enthält:
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie stattdessen den Verzeichnisnamen als URL abrufen möchten, müssen Sie [GetCurrentDirectoryAsURL](#getcurrentdirectoryasurl)aufrufen.
 
@@ -288,7 +288,7 @@ Ein Zeiger auf ein DWORD, das die folgenden Informationen enthält:
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetCurrentDirectoryAsURL` verhält sich wie [GetCurrentDirectory](#getcurrentdirectory) .
 
@@ -348,7 +348,7 @@ Der Kontext Bezeichner für das Abrufen von Dateien. Weitere Informationen zu *d
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetFile` ist eine allgemeine Routine, die den gesamten Aufwand für das Lesen einer Datei von einem FTP-Server und die lokale Speicherung behandelt. Anwendungen, die nur Datei Daten abrufen oder die eine schließende Kontrolle über die Dateiübertragung benötigen, sollten stattdessen `OpenFile` und [CInternetFile:: Read](../../mfc/reference/cinternetfile-class.md#read) verwenden.
 
@@ -392,7 +392,7 @@ Der Kontext Bezeichner zum Öffnen der Datei. Weitere Informationen zu *dwcontex
 
 Ein Zeiger auf ein [CInternetFile](../../mfc/reference/cinternetfile-class.md) -Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `OpenFile` sollten in den folgenden Situationen verwendet werden:
 
@@ -438,7 +438,7 @@ Der Kontext Bezeichner zum Platzieren der Datei. Weitere Informationen zu *dwcon
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `PutFile` ist eine allgemeine Routine, die alle Vorgänge behandelt, die mit dem Speichern einer Datei auf einem FTP-Server verbunden sind. Anwendungen, die nur Daten senden oder eine genauere Kontrolle über die Dateiübertragung benötigen, sollten [OpenFile](#openfile) und [CInternetFile:: Write](../../mfc/reference/cinternetfile-class.md#write)verwenden.
 
@@ -461,7 +461,7 @@ Ein Zeiger auf eine Zeichenfolge, die den Dateinamen enthält, der entfernt werd
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *pstrinfilename* -Parameter kann entweder ein teilweise qualifizierter Dateiname relativ zum aktuellen Verzeichnis oder voll qualifiziert sein. Ein umgekehrter Schrägstrich (\\) oder ein Schrägstrich (/) kann als Verzeichnis Trennzeichen für beide Namen verwendet werden. Die `Remove`-Funktion übersetzt die Verzeichnisnamen Trennzeichen in die entsprechenden Zeichen, bevor Sie verwendet werden.
 
@@ -482,7 +482,7 @@ Ein Zeiger auf eine Zeichenfolge, die das zu entfernende Verzeichnis enthält.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [GetCurrentDirectory](#getcurrentdirectory) , um das aktuelle Arbeitsverzeichnis des Servers zu bestimmen. Gehen Sie nicht davon aus, dass das Remote System eine Verbindung mit dem Stammverzeichnis hergestellt hat.
 
@@ -510,7 +510,7 @@ Ein Zeiger auf eine Zeichenfolge, die den neuen Namen der Datei enthält.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Parameter *pstrexisting* und *pstrenew* können entweder ein teilweise qualifizierter Dateiname relativ zum aktuellen Verzeichnis oder voll qualifiziert sein. Ein umgekehrter Schrägstrich (\\) oder ein Schrägstrich (/) kann als Verzeichnis Trennzeichen für beide Namen verwendet werden. `Rename` übersetzt die Verzeichnisnamen Trennzeichen in die entsprechenden Zeichen, bevor Sie verwendet werden.
 
@@ -531,13 +531,13 @@ Ein Zeiger auf eine Zeichenfolge, die den Namen des Verzeichnisses enthält.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *pstrindirname* -Parameter kann entweder ein teilweise oder voll qualifizierter Dateiname relativ zum aktuellen Verzeichnis sein. Ein umgekehrter Schrägstrich (\\) oder ein Schrägstrich (/) kann als Verzeichnis Trennzeichen für beide Namen verwendet werden. `SetCurrentDirectory` übersetzt die Verzeichnisnamen Trennzeichen in die entsprechenden Zeichen, bevor Sie verwendet werden.
 
 Verwenden Sie [GetCurrentDirectory](#getcurrentdirectory) , um das aktuelle Arbeitsverzeichnis eines FTP-Servers zu bestimmen. Gehen Sie nicht davon aus, dass das Remote System eine Verbindung mit dem Stammverzeichnis hergestellt hat.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [CInternetConnection-Klasse](../../mfc/reference/cinternetconnection-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

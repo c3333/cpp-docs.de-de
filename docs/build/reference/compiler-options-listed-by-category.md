@@ -6,17 +6,17 @@ helpviewer_keywords:
 - compiler options, C++
 ms.assetid: c4750dcf-dba0-4229-99b6-45cdecc11729
 ms.openlocfilehash: d29076e6eae4bcbd15a4bc50bb48477e3f93152d
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856906"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79422787"
 ---
 # <a name="compiler-options-listed-by-category"></a>Compileroptionen (nach Kategorie sortiert)
 
 Dieser Artikel enthält eine nach Kategorien sortierte Liste der Compileroptionen. Eine alphabetische Liste finden Sie unter [Compileroptionen alphabetisch aufgelistet](compiler-options-listed-alphabetically.md).
 
-## <a name="optimization"></a>Optimization
+## <a name="optimization"></a>Optimierung
 
 |Option|Zweck|
 |------------|-------------|
@@ -32,7 +32,7 @@ Dieser Artikel enthält eine nach Kategorien sortierte Liste der Compileroptione
 |[/Oy](oy-frame-pointer-omission.md)|Unterdrückt Framezeiger. (nur x86)|
 |[/favor](favor-optimize-for-architecture-specifics.md)|Erzeugt Code, der für eine bestimmte Architektur optimiert wird, oder für einen Bereich von Architekturen.|
 
-## <a name="code-generation"></a>Codegenerierung
+## <a name="code-generation"></a>Codeerzeugung
 
 |Option|Zweck|
 |------------|-------------|
@@ -148,7 +148,7 @@ Dieser Artikel enthält eine nach Kategorien sortierte Liste der Compileroptione
 |[/MT](md-mt-ld-use-run-time-library.md)|Kompiliert, um mit *LIBCMT. lib*eine ausführbare Multithread-Datei zu erstellen.|
 |[/MTd](md-mt-ld-use-run-time-library.md)|Kompiliert, um mit *LIBCMTD. lib*eine ausführbare Multithread-Datei zu erstellen.|
 
-## <a name="miscellaneous"></a>Sonstiges
+## <a name="miscellaneous"></a>Verschiedenes
 
 |Option|Zweck|
 |------------|-------------|
@@ -230,7 +230,7 @@ Experimentelle Optionen können nur von bestimmten Versionen des Compilers unter
 |[/Ze](za-ze-disable-language-extensions.md)|Veraltet. Aktiviert Spracherweiterungen.|
 |[/Zg](zg-generate-function-prototypes.md)|In Visual Studio 2015 entfernt. Erzeugt Funktionsprototypen.|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [C/C++ Verweis](c-cpp-building-reference.md)\
 [MSVC-Compileroptionen](compiler-options.md)\

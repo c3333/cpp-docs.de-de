@@ -22,11 +22,11 @@ helpviewer_keywords:
 - Scheduler class
 ms.assetid: 34cf7961-048d-4852-8a5c-a32f823e3506
 ms.openlocfilehash: 77ad876b8352ab1ae86fde622b05712ec5f2cea9
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78867129"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427350"
 ---
 # <a name="scheduler-class"></a>Scheduler-Klasse
 
@@ -58,9 +58,9 @@ class Scheduler;
 |[GetPolicy](#getpolicy)|Gibt eine Kopie der Richtlinie zurück, mit der der Scheduler erstellt wurde.|
 |[Id](#id)|Gibt einen eindeutigen Bezeichner für den Scheduler zurück.|
 |[IsAvailableLocation](#isavailablelocation)|Bestimmt, ob ein angegebener Speicherort im Scheduler verfügbar ist.|
-|[Referenz](#reference)|Erhöht den Verweis Zähler für den Scheduler.|
+|[Verweis](#reference)|Erhöht den Verweis Zähler für den Scheduler.|
 |[RegisterShutdownEvent](#registershutdownevent)|Bewirkt, dass das an den `_Event`-Parameter übergebenen Windows-Ereignis Handle signalisiert wird, wenn der Scheduler heruntergefahren und selbst zerstört wird. Zum Zeitpunkt der Signalisierung des Ereignisses ist die gesamte Arbeit, die für den Scheduler geplant war, abgeschlossen. Mehrere Shutdown-Ereignisse können über diese Methode registriert werden.|
-|[Release](#release)|Dekremente den Verweis Zähler für den Planer.|
+|[Version](#release)|Dekremente den Verweis Zähler für den Planer.|
 |[ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy)|Setzt die standardmäßige Scheduler-Richtlinie auf den Standardwert der Laufzeit zurück. Wenn ein Standard Planer das nächste Mal erstellt wird, werden die Standardrichtlinien Einstellungen der Laufzeit verwendet.|
 |[ScheduleTask](#scheduletask)|Ist überladen. Plant eine leichte Aufgabe innerhalb des Zeit Planungs Moduls. Die leichte Aufgabe wird in einer Zeit Plan Gruppe platziert, die von der Laufzeit bestimmt wird. Die Version, die den-Parameter annimmt `_Placement` bewirkt, dass die Aufgabe an der angegebenen Position für die Ausführung verzerrt wird.|
 |[SetDefaultSchedulerPolicy](#setdefaultschedulerpolicy)|Ermöglicht die Verwendung einer benutzerdefinierten Richtlinie zum Erstellen des Standard Planers. Diese Methode kann nur aufgerufen werden, wenn innerhalb des Prozesses kein Standard Planer vorhanden ist. Nachdem eine Standard Richtlinie festgelegt wurde, bleibt Sie bis zum nächsten gültigen Aufrufen des `SetDefaultSchedulerPolicy` oder der [ResetDefaultSchedulerPolicy](#resetdefaultschedulerpolicy) -Methode wirksam.|

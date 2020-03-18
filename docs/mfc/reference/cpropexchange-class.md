@@ -23,11 +23,11 @@ helpviewer_keywords:
 - CPropExchange [MFC], IsLoading
 ms.assetid: ed872180-e770-4942-892a-92139d501fab
 ms.openlocfilehash: e9ad7c363f2580200af20baeb0acd7a93c1f603b
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78871770"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426402"
 ---
 # <a name="cpropexchange-class"></a>CPropExchange-Klasse
 
@@ -39,11 +39,11 @@ Unterstützt die Implementierung der Dauerhaftigkeit für die OLE-Steuerelemente
 class AFX_NOVTABLE CPropExchange
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CPropExchange:: exchangeblobprop](#exchangeblobprop)|Tauscht eine Binary Large Object-Eigenschaft (BLOB) aus.|
 |[CPropExchange:: exchangefontprop](#exchangefontprop)|Tauscht eine Schriftart Eigenschaft aus.|
@@ -54,7 +54,7 @@ class AFX_NOVTABLE CPropExchange
 |[CPropExchange:: IsAsynchronous](#isasynchronous)|Bestimmt, ob der Austausch von Eigenschaften asynchron erfolgt.|
 |[CPropExchange:: isload](#isloading)|Gibt an, ob Eigenschaften in das Steuerelement geladen oder daraus gespeichert werden.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CPropExchange` verfügt nicht über eine Basisklasse.
 
@@ -74,7 +74,7 @@ Weitere Informationen zur Verwendung von `CPropExchange`finden Sie im Artikel [M
 
 `CPropExchange`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxctl. h
 
@@ -104,7 +104,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Wert der Eigenschaft wird nach Bedarf aus der von *phblob*referenzierten Variablen gelesen oder in diese geschrieben. Wenn *hblobdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn die Serialisierung des Steuer Elements aus irgendeinem Grund fehlschlägt.
 
@@ -140,7 +140,7 @@ Ein Zeiger auf die `IFontDisp`-Schnittstelle einer Schriftart, die zum Initialis
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Font-Eigenschaft vom Medium in das-Steuerelement geladen wird, werden die Eigenschaften der Schriftart vom Medium abgerufen, und das `CFontHolder` Objekt, auf das von *Font* verwiesen wird, wird mit Ihnen initialisiert. Wenn die Eigenschaft Schriftart gespeichert wird, werden die Merkmale im Schriftart Objekt auf das Medium geschrieben.
 
@@ -176,7 +176,7 @@ Der Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Eigenschaft aus der Datei in das-Steuerelement geladen wird, wird die-Eigenschaft aus der Datei erstellt und initialisiert. Wenn die Eigenschaft gespeichert wird, wird der Wert in die Datei geschrieben.
 
@@ -200,7 +200,7 @@ virtual BOOL ExchangeProp(
 Der Name der Eigenschaft, die ausgetauscht wird.
 
 *vtprop*<br/>
-Ein Symbol, das den Typ der ausgetauschten Eigenschaft angibt. Mögliche Werte:
+Ein Symbol, das den Typ der ausgetauschten Eigenschaft angibt. Dabei sind folgende Werte möglich:
 
 |Symbol|Eigenschaftstyp|
 |------------|-------------------|
@@ -222,7 +222,7 @@ Zeiger auf einen Standardwert für die-Eigenschaft.
 
 Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Eigenschaft vom Medium in das-Steuerelement geladen wird, wird der Wert der Eigenschaft vom Medium abgerufen und in dem Objekt gespeichert, auf das von *pvprop*verwiesen wird. Wenn die Eigenschaft auf dem Medium gespeichert wird, wird der Wert des Objekts, auf das *pvprop* zeigt, auf das Medium geschrieben.
 
@@ -290,7 +290,7 @@ BOOL IsLoading();
 
 Ungleich 0 (null), wenn Eigenschaften geladen werden. andernfalls 0.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleControl::D opropexchange](../../mfc/reference/colecontrol-class.md#dopropexchange)

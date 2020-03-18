@@ -38,11 +38,11 @@ f1_keywords:
 - atlwin/ATL::REFLECTED_NOTIFY_RANGE_HANDLER
 ms.assetid: eefdd546-8934-4a30-b263-9c06a8addcbd
 ms.openlocfilehash: 42fdc7a3f09568b641229e897a2a493994a7ba8a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78862966"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423033"
 ---
 # <a name="message-map-macros-atl"></a>Meldungs Zuordnungs Makros (ATL)
 
@@ -85,7 +85,7 @@ Diese Makros definieren Meldungs Zuordnungen und Einträge.
 |[REFLECTED_NOTIFY_RANGE_CODE_HANDLER](#reflected_notify_range_code_handler)|Ordnet eine reflektierte WM_NOTIFY Nachricht einer Handlerfunktion zu, die auf dem Benachrichtigungs Code und einem zusammenhängenden Bereich von Steuerelement bezeichaten basiert.|
 |[REFLECTED_NOTIFY_RANGE_HANDLER](#reflected_notify_range_handler)|Ordnet eine reflektierte WM_NOTIFY Nachricht einer Handlerfunktion zu, die auf einem zusammenhängenden Bereich von Steuerelement bezeichaten basiert.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -102,7 +102,7 @@ ALT_MSG_MAP(msgMapID)
 *msgmapid*<br/>
 in Der Bezeichner der Meldungs Zuordnung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ATL identifiziert die einzelnen Nachrichten Zuordnungen nach einer Zahl. Die standardmäßige Meldungs Zuordnung (deklariert mit dem BEGIN_MSG_MAP-Makro) wird durch 0 identifiziert. Eine Alternative Meldungs Zuordnung wird durch *msgmapid*identifiziert.
 
@@ -124,7 +124,7 @@ Das nächste Beispiel zeigt zwei alternative Meldungs Zuordnungen. Die Standard 
 
 [!code-cpp[NVC_ATL_Windowing#99](../../atl/codesnippet/cpp/message-map-macros-atl_2.h)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -141,13 +141,13 @@ BEGIN_MSG_MAP(theClass)
 *spiegeln*<br/>
 in Der Name der Klasse, die die Meldungs Zuordnung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 [CWindowImpl:: WindowProc](cwindowimpl-class.md#windowproc) verwendet die standardmäßige Meldungs Zuordnung, um Nachrichten zu verarbeiten, die an das Fenster gesendet werden. Die Meldungs Zuordnung leitet Nachrichten entweder an die entsprechende Handlerfunktion oder an eine andere Meldungs Zuordnung weiter.
 
 Die folgenden Makros ordnen eine-Nachricht einer Handlerfunktion zu. Diese Funktion muss in " *TheClass*" definiert werden.
 
-|Makro|BESCHREIBUNG|
+|Makro|Beschreibung|
 |-----------|-----------------|
 |[MESSAGE_HANDLER](#message_handler)|Ordnet eine Windows-Meldung einer Handlerfunktion zu.|
 |[MESSAGE_RANGE_HANDLER](#message_range_handler)|Ordnet einem Handlerfunktion einen zusammenhängenden Bereich von Windows-Meldungen zu.|
@@ -162,7 +162,7 @@ Die folgenden Makros ordnen eine-Nachricht einer Handlerfunktion zu. Diese Funkt
 
 Die folgenden Makros leiten Nachrichten an eine andere Meldungs Zuordnung weiter. Dieser Vorgang wird als "Verkettung" bezeichnet.
 
-|Makro|BESCHREIBUNG|
+|Makro|Beschreibung|
 |-----------|-----------------|
 |[CHAIN_MSG_MAP](#chain_msg_map)|Verkettet mit der Standard Meldungs Zuordnung in der Basisklasse.|
 |[CHAIN_MSG_MAP_MEMBER](#chain_msg_map_member)|Verkettet mit der Standard Meldungs Zuordnung in einem Datenmember der-Klasse.|
@@ -172,7 +172,7 @@ Die folgenden Makros leiten Nachrichten an eine andere Meldungs Zuordnung weiter
 
 Die folgenden Makros leiten "reflektierte" Nachrichten aus dem übergeordneten Fenster weiter. Ein Steuerelement sendet z. b. normalerweise Benachrichtigungs Meldungen zur Verarbeitung an das übergeordnete Fenster, aber das übergeordnete Fenster kann die Nachricht an das Steuerelement zurückgeben.
 
-|Makro|BESCHREIBUNG|
+|Makro|Beschreibung|
 |-----------|-----------------|
 |[REFLECTED_COMMAND_HANDLER](#reflected_command_handler)|Ordnet eine reflektierte WM_COMMAND Nachricht einer Handlerfunktion zu, basierend auf dem Benachrichtigungs Code und dem Bezeichner des Menü Elements, der Steuerung oder der Zugriffstaste.|
 |[REFLECTED_COMMAND_ID_HANDLER](#reflected_command_id_handler)|Ordnet eine reflektierte WM_COMMAND Nachricht einer Handlerfunktion zu, basierend auf dem Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.|
@@ -203,7 +203,7 @@ Das [END_MSG_MAP](#end_msg_map) -Makro markiert das Ende der Meldungs Zuordnung.
 
 Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie unter [Message Maps](../../atl/message-maps-atl.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -223,7 +223,7 @@ in Der Name der Basisklasse, die die Meldungs Zuordnung enthält.
 *msgmapid*<br/>
 in Der Bezeichner der Meldungs Zuordnung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 CHAIN_MSG_MAP_ALT leitet Nachrichten an eine Alternative Meldungs Zuordnung in einer Basisklasse weiter. Sie müssen diese Alternative Meldungs Zuordnung mit [ALT_MSG_MAP (msgmapid)](#alt_msg_map)deklarieren. Verwenden Sie CHAIN_MSG_MAP, um Nachrichten an die Standard Meldungs Zuordnung einer Basisklasse weiterzuleiten (mit [BEGIN_MSG_MAP](#begin_msg_map)deklariert). Ein Beispiel finden Sie unter [CHAIN_MSG_MAP](#chain_msg_map).
 
@@ -232,7 +232,7 @@ CHAIN_MSG_MAP_ALT leitet Nachrichten an eine Alternative Meldungs Zuordnung in e
 
 Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie unter [Message Maps](../../atl/message-maps-atl.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -252,7 +252,7 @@ in Der Name des Datenmembers, der die Meldungs Zuordnung enthält.
 *msgmapid*<br/>
 in Der Bezeichner der Meldungs Zuordnung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 CHAIN_MSG_MAP_ALT_MEMBER leitet Nachrichten an eine Alternative Nachrichten Zuordnung in einem Datenmember weiter. Sie müssen diese Alternative Meldungs Zuordnung mit [ALT_MSG_MAP (msgmapid)](#alt_msg_map)deklarieren. Verwenden Sie CHAIN_MSG_MAP_MEMBER, um Nachrichten an die Standard Meldungs Zuordnung eines Datenelements weiterzuleiten (mit [BEGIN_MSG_MAP](#begin_msg_map)deklariert). Ein Beispiel finden Sie unter [CHAIN_MSG_MAP_MEMBER](#chain_msg_map_member).
 
@@ -261,7 +261,7 @@ CHAIN_MSG_MAP_ALT_MEMBER leitet Nachrichten an eine Alternative Nachrichten Zuor
 
 Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie unter [Message Maps](../../atl/message-maps-atl.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -278,7 +278,7 @@ CHAIN_MSG_MAP(theChainClass)
 *"-chainclass"*<br/>
 in Der Name der Basisklasse, die die Meldungs Zuordnung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 CHAIN_MSG_MAP leitet Nachrichten an die Standard Meldungs Zuordnung einer Basisklasse (deklariert mit [BEGIN_MSG_MAP](#begin_msg_map)). Verwenden Sie [CHAIN_MSG_MAP_ALT](#chain_msg_map_alt), um Nachrichten an die Alternative Meldungs Zuordnung einer Basisklasse weiterzuleiten (mit [ALT_MSG_MAP](#alt_msg_map)deklariert).
 
@@ -299,7 +299,7 @@ In diesem Beispiel wird Folgendes veranschaulicht:
 
 - Wenn eine Fenster Prozedur die zweite Alternative Meldungs Zuordnung `CMyClass`verwendet und `OnChar` keine Nachricht verarbeitet, wird die Nachricht an die angegebene alternative Meldungs Zuordnung in `CMyBaseClass`weitergeleitet. `CMyBaseClass` müssen diese Meldungs Zuordnung mit ALT_MSG_MAP (1) deklarieren.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -316,7 +316,7 @@ CHAIN_MSG_MAP_DYNAMIC(dynaChainID)
 *dynachainid*<br/>
 in Der eindeutige Bezeichner für die Meldungs Zuordnung eines Objekts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 CHAIN_MSG_MAP_DYNAMIC leitet Nachrichten zur Laufzeit an die Standard Meldungs Zuordnung in einem anderen Objekt weiter. Das-Objekt und seine Meldungs Zuordnung sind mit *dynachainid*verknüpft, das Sie durch [cdynamicchain:: setchainentry](cdynamicchain-class.md#setchainentry)definieren. Sie müssen die Klasse von `CDynamicChain` ableiten, um CHAIN_MSG_MAP_DYNAMIC verwenden zu können. Ein Beispiel finden Sie in der Übersicht über [cdynamicchain](../../atl/reference/cdynamicchain-class.md) .
 
@@ -325,7 +325,7 @@ CHAIN_MSG_MAP_DYNAMIC leitet Nachrichten zur Laufzeit an die Standard Meldungs Z
 
 Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie unter [Message Maps](../../atl/message-maps-atl.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -342,7 +342,7 @@ CHAIN_MSG_MAP_MEMBER(theChainMember)
 *der chainmember*<br/>
 in Der Name des Datenmembers, der die Meldungs Zuordnung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 CHAIN_MSG_MAP_MEMBER leitet Nachrichten an die Standard Meldungs Zuordnung eines Daten Members (deklariert mit [BEGIN_MSG_MAP](#begin_msg_map)). Verwenden Sie [CHAIN_MSG_MAP_ALT_MEMBER](#chain_msg_map_alt_member), um Nachrichten an die Alternative Meldungs Zuordnung eines Datenelements weiterzuleiten (mit [ALT_MSG_MAP](#alt_msg_map)deklariert).
 
@@ -363,7 +363,7 @@ In diesem Beispiel wird Folgendes veranschaulicht:
 
 - Wenn eine Fenster Prozedur die zweite Alternative Meldungs Zuordnung `CMyClass`verwendet und `OnChar` keine Nachricht verarbeitet, wird die Nachricht an die angegebene alternative Meldungs Zuordnung `m_obj`weitergeleitet. Klassen `CMyContainedClass` müssen diese Meldungs Zuordnung mit ALT_MSG_MAP (1) deklarieren.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -377,13 +377,13 @@ COMMAND_CODE_HANDLER(code, func)
 
 ### <a name="parameters"></a>Parameter
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -397,16 +397,16 @@ COMMAND_HANDLER(id, code, func)
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 COMMAND_HANDLER ordnet der angegebenen Handlerfunktion eine [WM_COMMAND](/windows/win32/menurc/wm-command) Meldung basierend auf dem Benachrichtigungs Code und dem Steuerelement Bezeichner zu. Beispiel:
 
@@ -425,7 +425,7 @@ Zusätzlich zu COMMAND_HANDLER können Sie [MESSAGE_HANDLER](#message_handler) v
 
 Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie unter [Message Maps](../../atl/message-maps-atl.md).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -439,13 +439,13 @@ COMMAND_ID_HANDLER(id, func)
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, Steuer Elements oder Zugriffstasten, der die Nachricht sendet.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -465,17 +465,17 @@ in Markiert den Anfang eines zusammenhängenden Bereichs von Steuerelement bezei
 *idlast*<br/>
 in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeichlern.
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Bereich basiert auf dem Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste, die die Nachricht sendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -498,11 +498,11 @@ in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeich
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Bereich basiert auf dem Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste, die die Nachricht sendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -514,7 +514,7 @@ Deklariert eine leere Meldungs Zuordnung.
 DECLARE_EMPTY_MSG_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 DECLARE_EMPTY_MSG_MAP ist ein praktisches Makro, das die Makros [BEGIN_MSG_MAP](#begin_msg_map) aufruft und [END_MSG_MAP](#end_msg_map) , eine leere Meldungs Zuordnung zu erstellen:
 
@@ -528,7 +528,7 @@ Stellt einen Standard Handler für das untergeordnete Fenster (-Steuerelement) b
 DEFAULT_REFLECTION_HANDLER()
 ```
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -540,7 +540,7 @@ Markiert das Ende einer Meldungs Zuordnung.
 END_MSG_MAP()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie immer das [BEGIN_MSG_MAP](#begin_msg_map) -Makro, um den Anfang einer Meldungs Zuordnung zu markieren. Verwenden Sie [ALT_MSG_MAP](#alt_msg_map) , um nachfolgende Alternative Nachrichten Zuordnungen zu deklarieren
 
@@ -558,7 +558,7 @@ Das nächste Beispiel zeigt zwei alternative Meldungs Zuordnungen. Die Standard 
 
 [!code-cpp[NVC_ATL_Windowing#99](../../atl/codesnippet/cpp/message-map-macros-atl_2.h)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -570,11 +570,11 @@ Leitet Benachrichtigungs Meldungen an das übergeordnete Fenster weiter.
 FORWARD_NOTIFICATIONS()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Geben Sie dieses Makro als Teil der Meldungs Zuordnung an.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -594,7 +594,7 @@ in Die Windows-Meldung.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 MESSAGE_HANDLER eine Windows-Meldung der angegebenen Handlerfunktion zuordnet.
 
@@ -615,7 +615,7 @@ Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie u
 
 [!code-cpp[NVC_ATL_Windowing#129](../../atl/codesnippet/cpp/message-map-macros-atl_8.h)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -638,7 +638,7 @@ in Markiert das Ende eines zusammenhängenden Bereichs von Meldungen.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -658,7 +658,7 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -672,7 +672,7 @@ NOTIFY_HANDLER( id, cd, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Steuer Elements, das die Nachricht sendet.
 
 *cd*<br/>
@@ -681,7 +681,7 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 NOTIFY_HANDLER ordnet der angegebenen Handlerfunktion eine [WM_NOTIFY](/windows/win32/controls/wm-notify) Meldung basierend auf dem Benachrichtigungs Code und dem Steuerelement Bezeichner zu.
 
@@ -702,7 +702,7 @@ Weitere Informationen zum Verwenden von Meldungs Zuordnungen in ATL finden Sie u
 
 [!code-cpp[NVC_ATL_Windowing#130](../../atl/codesnippet/cpp/message-map-macros-atl_9.h)]
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -716,13 +716,13 @@ NOTIFY_ID_HANDLER( id, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Steuer Elements, das die Nachricht sendet.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -748,11 +748,11 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Bereich basiert auf dem Bezeichner des Steuer Elements, das die Nachricht sendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -775,11 +775,11 @@ in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeich
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Bereich basiert auf dem Bezeichner des Steuer Elements, das die Nachricht sendet.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -791,11 +791,11 @@ Gibt Benachrichtigungs Meldungen zurück an das untergeordnete Fenster (Steuerel
 REFLECT_NOTIFICATIONS()
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Geben Sie dieses Makro als Teil der Meldungs Zuordnung des übergeordneten Fensters an.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -809,13 +809,13 @@ REFLECTED_COMMAND_CODE_HANDLER( code, func )
 
 ### <a name="parameters"></a>Parameter
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -829,16 +829,16 @@ REFLECTED_COMMAND_HANDLER( id, code, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -852,13 +852,13 @@ REFLECTED_COMMAND_ID_HANDLER( id, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -878,13 +878,13 @@ in Markiert den Anfang eines zusammenhängenden Bereichs von Steuerelement bezei
 *idlast*<br/>
 in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeichlern.
 
-*code*<br/>
+*Code*<br/>
 in Der Benachrichtigungs Code.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -907,7 +907,7 @@ in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeich
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -927,7 +927,7 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -941,7 +941,7 @@ REFLECTED_NOTIFY_HANDLER( id, cd, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.
 
 *cd*<br/>
@@ -950,7 +950,7 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -964,13 +964,13 @@ REFLECTED_NOTIFY_ID_HANDLER( id, func )
 
 ### <a name="parameters"></a>Parameter
 
-*id*<br/>
+*ID*<br/>
 in Der Bezeichner des Menü Elements, des Steuer Elements oder der Zugriffstaste.
 
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -996,7 +996,7 @@ in Der Benachrichtigungs Code.
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Voraussetzungen
 
 **Header:** atlwin. h
 
@@ -1019,6 +1019,6 @@ in Markiert das Ende eines zusammenhängenden Bereichs von Steuerelement bezeich
 *func*<br/>
 in Der Name der nachrichtenhandlerfunktion.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)

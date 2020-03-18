@@ -7,11 +7,11 @@ f1_keywords:
 - atlcom/ATL::OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO
 ms.assetid: 680087f4-9894-41dd-a79c-6f337e1f13c1
 ms.openlocfilehash: 73dc924527bac8499adefab3d0d6b51afa500a5a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78863185"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423021"
 ---
 # <a name="object-map-macros"></a>Objekt Zuordnungs Makros
 
@@ -23,7 +23,7 @@ Diese Makros definieren Objekt Zuordnungen und Einträge.
 |[OBJECT_ENTRY_AUTO](#object_entry_auto)|Gibt ein ATL-Objekt in die Objekt Zuordnung ein, aktualisiert die Registrierung und erstellt eine Instanz des-Objekts.|
 |[OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO](#object_entry_non_createable_ex_auto)|Ermöglicht es Ihnen, anzugeben, dass das Objekt registriert und initialisiert werden sollte, jedoch nicht extern über `CoCreateInstance` erstellbar sein sollte.|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** Atlcom. h
 
@@ -40,7 +40,7 @@ DECLARE_OBJECT_DESCRIPTION( x )
 *x*<br/>
 in Die Beschreibung des Klassen Objekts.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 ATL gibt diese Beschreibung über das [OBJECT_ENTRY_AUTO](#object_entry_auto) -Makro in die Objekt Zuordnung ein.
 
@@ -70,7 +70,7 @@ in Die CLSID einer com-Klasse, die von C++ der Klasse namens *Class*implementier
 *class*<br/>
 in Der Name der C++ Klasse, die die durch *CLSID*dargestellte com-Klasse implementiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Objekt-Eintragsmakros befinden sich im globalen Gültigkeitsbereich des Projekts, um Unterstützung für die Registrierung, Initialisierung und Erstellung einer neuen Klasse bereitzustellen.
 
@@ -102,12 +102,12 @@ in Die CLSID einer com-Klasse, die von C++ der Klasse namens *Class*implementier
 *class*<br/>
 in Der Name der C++ Klasse, die die durch *CLSID*dargestellte com-Klasse implementiert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Objekt-Eintragsmakros befinden sich im globalen Gültigkeitsbereich des Projekts, um Unterstützung für die Registrierung, Initialisierung und Erstellung einer neuen Klasse bereitzustellen.
 
 Mit OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO können Sie angeben, dass ein Objekt registriert und initialisiert werden soll (Weitere Informationen finden Sie unter [OBJECT_ENTRY_AUTO](#object_entry_auto) ), aber es sollte nicht über `CoCreateInstance`erstellbar sein.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)

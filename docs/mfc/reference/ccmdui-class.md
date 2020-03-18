@@ -27,11 +27,11 @@ helpviewer_keywords:
 - CCmdUI [MFC], m_pSubMenu
 ms.assetid: 04eaaaf5-f510-48ab-b425-94665ba24766
 ms.openlocfilehash: 42aec2937cd81ebbb50482321b8deae001723d3a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78883620"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79424566"
 ---
 # <a name="ccmdui-class"></a>CCmdUI-Klasse
 
@@ -43,11 +43,11 @@ Wird nur innerhalb eines `ON_UPDATE_COMMAND_UI`-Handlers in einer `CCmdTarget`ab
 class CCmdUI
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CCmdUI:: continuerouting](#continuerouting)|Weist den Befehls Routing Mechanismus an, das Routing der aktuellen Nachricht weiter nach unten in der Kette von Handlern durchzuführen.|
 |[CCmdUI:: enable](#enable)|Aktiviert oder deaktiviert das Benutzeroberflächen Element für diesen Befehl.|
@@ -57,7 +57,7 @@ class CCmdUI
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CCmdUI:: m_nID](#m_nid)|Die ID des Benutzeroberflächen Objekts.|
 |[CCmdUI:: m_nIndex](#m_nindex)|Der Index des Benutzeroberflächen Objekts.|
@@ -65,7 +65,7 @@ class CCmdUI
 |[CCmdUI:: m_pOther](#m_pother)|Verweist auf das Fenster Objekt, das die Benachrichtigung gesendet hat.|
 |[CCmdUI:: m_pSubMenu](#m_psubmenu)|Verweist auf das enthaltene Untermenü, das durch das `CCmdUI`-Objekt dargestellt wird.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `CCmdUI` verfügt nicht über eine Basisklasse.
 
@@ -91,7 +91,7 @@ Weitere Informationen zur Verwendung dieser Klasse finden [Sie unter Aktualisier
 
 `CCmdUI`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** afxwin.h
 
@@ -103,7 +103,7 @@ Mit dieser Member-Funktion können Sie den Befehls Routing Mechanismus anweisen,
 void ContinueRouting();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dabei handelt es sich um eine erweiterte Member-Funktion, die in Verbindung mit einem ON_COMMAND_EX Handler verwendet werden sollte, der false zurückgibt. Weitere Informationen finden Sie unter [Technical Note 6](../../mfc/tn006-message-maps.md).
 
@@ -150,7 +150,7 @@ Ein Zeiger (von `CMenu` Typ) auf das Menü, das durch das `CCmdUI`-Objekt darges
 CMenu* m_pMenu;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 NULL, wenn es sich bei dem Element nicht um ein Menü handelt.
 
@@ -162,7 +162,7 @@ Ein Zeiger (vom Typ `CMenu`) auf das enthaltene Untermenü, das durch das `CCmdU
 CMenu* m_pSubMenu;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 NULL, wenn es sich bei dem Element nicht um ein Menü handelt. Wenn das Untermenü ein Popup ist, enthält *m_nID* die ID des ersten Elements im Popupmenü. Weitere Informationen finden Sie unter [Technical Note 21](../../mfc/tn021-command-and-message-routing.md).
 
@@ -174,7 +174,7 @@ Zeiger (vom Typ `CWnd`) auf das Fenster Objekt, z. b. ein Tool oder eine Statusl
 CWnd* m_pOther;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 NULL, wenn das Element ein Menü oder ein Objekt ist, das nicht `CWnd` ist.
 
@@ -191,7 +191,7 @@ virtual void SetCheck(int nCheck = 1);
 *nPrüfen*<br/>
 Gibt den festzulegenden Prüf Zustand an. Wenn 0, wird die Prüfung nicht durchgeführt. bei 1 wird überprüft. und bei 2 wird unbestimmt festgelegt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion funktioniert für Menü Elemente und Symbolleisten Schaltflächen. Der Status "unbestimmt" gilt nur für Symbolleisten Schaltflächen.
 
@@ -208,7 +208,7 @@ virtual void SetRadio(BOOL bOn = TRUE);
 *Böller*<br/>
 TRUE, wenn das Element aktiviert werden soll. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion verhält sich wie `SetCheck`, mit dem Unterschied, dass Sie auf Benutzeroberflächen Elementen angewendet wird, die als Teil einer Radiogruppe fungieren. Das Deaktivieren der anderen Elemente in der Gruppe erfolgt nicht automatisch, es sei denn, die Elemente selbst behalten das Verhalten der funkgruppe bei.
 
@@ -229,7 +229,7 @@ Ein Zeiger auf eine Text Zeichenfolge.
 
 [!code-cpp[NVC_MFCDocView#48](../../mfc/codesnippet/cpp/ccmdui-class_3.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel-MDI](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

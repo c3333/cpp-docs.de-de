@@ -16,11 +16,11 @@ helpviewer_keywords:
 - std::operator&gt;&gt; (complex)
 - std::operator&lt;&lt; (complex), std::operator== (complex)
 ms.openlocfilehash: e9ea296ab1b3440782871e3d4c7555ff2075e445
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78876092"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423966"
 ---
 # <a name="ltcomplexgt-operators"></a>&lt;complex&gt;-Operatoren
 
@@ -57,7 +57,7 @@ Eine komplexe Zahl oder ein Objekt des zugehörigen Parametertyps, die bzw. das 
 
 **TRUE**, wenn die Zahlen ungleich sind; **FALSE**, wenn die Zahlen gleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei komplexe Zahlen sind nur dann gleich, wenn ihre reellen Teile und ihre imaginären Teile gleich sind. Andernfalls sind sie ungleich.
 
@@ -196,7 +196,7 @@ Die zweite von zwei komplexen Zahlen oder eine Zahl mit dem Parametertyp einer k
 
 Die komplexe Zahl, die sich aus der Multiplikation der beiden Zahlen ergibt, deren Wert und Typ durch die Parametereingaben festgelegt wird
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -296,7 +296,7 @@ Die zweite von zwei komplexen Zahlen oder eine Zahl mit dem Parametertyp einer k
 
 Die komplexe Zahl, die sich aus der Addition der beiden Zahlen ergibt, deren Wert und Typ durch die Parametereingaben festgelegt wird
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können. Der unäre Operator gibt *left*zurück.
 
@@ -436,7 +436,7 @@ Die zweite von zwei komplexen Zahlen oder eine Zahl mit dem Parametertyp einer k
 
 Die komplexe Zahl, die sich aus der Subtraktion von *Rechts* von *Links*ergibt, die zwei Zahlen, deren Werte durch die Parameter Eingaben angegeben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -575,7 +575,7 @@ Eine komplexe Zahl oder eine Zahl mit dem Parametertyp einer komplexen Zahl, die
 
 Die komplexe Zahl, die sich aus der Division des Zählers durch den Nenner ergibt, dessen Werte durch die Parametereingaben angegeben werden
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Operation wird überladen, damit einfache arithmetische Operationen ohne Konvertierung der Daten in ein bestimmtes Format ausgeführt werden können.
 
@@ -685,7 +685,7 @@ Die komplexe Zahl, die in den Ausgabestream eingegeben werden soll
 
 Schreibt den Wert der angegebenen komplexen Zahl in der *Ostr* in einem kartesischen Format: ( *echter Teil, imaginärer Teil* ).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Ausgabestream ist überladen, sodass er jede Form einer komplexen Zahl akzeptiert. Das Standardausgabeformat ist das kartesische Format.
 
@@ -757,7 +757,7 @@ Eine komplexe Zahl oder ein Objekt des zugehörigen Parametertyps, die bzw. das 
 
 **TRUE**, wenn die Zahlen gleich sind, **FALSE**, wenn die Zahlen ungleich sind.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zwei komplexe Zahlen sind nur dann gleich, wenn ihre reellen Teile und ihre imaginären Teile gleich sind. Andernfalls sind sie ungleich.
 
@@ -886,7 +886,7 @@ Die komplexe Zahl, die aus dem Eingabestream extrahiert wird
 
 Liest den Wert der angegebenen komplexen Zahl aus *ISTR* und gibt ihn an der *rechten Seite*zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Eingabeformate sind:
 
