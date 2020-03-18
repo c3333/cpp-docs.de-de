@@ -1,8 +1,6 @@
 ---
 title: Speichern und Laden eines CObject per Archiv
 ms.date: 11/04/2016
-f1_keywords:
-- CObject
 helpviewer_keywords:
 - CObjects [MFC], loading through archives
 - CArchive class [MFC], storing and loading objects
@@ -10,34 +8,34 @@ helpviewer_keywords:
 - CObject class [MFC], CArchive objects
 - CObjects [MFC]
 ms.assetid: a829b6dd-bc31-47e0-8108-fbb946722db9
-ms.openlocfilehash: 591ce7032aa3d70b1e5a020cd9173ed4c9d0fa9b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 368421a86d6ff6fc70455edd0ea9a32e05645007
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62306768"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446361"
 ---
 # <a name="storing-and-loading-cobjects-via-an-archive"></a>Speichern und Laden eines CObject per Archiv
 
-Speichern und laden `CObject`über ein Archiv erfordert zusätzlich ist zu berücksichtigen. In bestimmten Fällen rufen Sie die `Serialize` Funktion des Objekts, in dem der `CArchive` Objekt ist ein Parameter der der `Serialize` Aufruf, im Gegensatz zur Verwendung der **< \<** oder **>>** Operator, der die `CArchive`. Wichtig zu bedenken ist, die die `CArchive` **>>** Operator Konstrukte der `CObject` im Arbeitsspeicher, die basierend auf `CRuntimeClass` Informationen, die zuvor durch das Speichern von Archiv in die Datei geschrieben.
+Das Speichern und Laden von `CObject`s über ein Archiv erfordert zusätzliche Überlegungen. In bestimmten Fällen sollten Sie die `Serialize`-Funktion des-Objekts aufrufen, wobei das `CArchive`-Objekt ein Parameter des `Serialize`-Aufrufes ist, im Gegensatz zur Verwendung des **<\<** oder **>>** Operators des `CArchive`. Wichtig zu beachten ist, dass der `CArchive` **>>** -Operator die `CObject` im Arbeitsspeicher erstellt, basierend auf `CRuntimeClass` Informationen, die zuvor vom speichernden Archiv in die Datei geschrieben wurden.
 
-Gibt an, ob Sie aus diesem Grund verwenden die `CArchive` **< \<** und **>>** Operatoren, im Vergleich zu Aufrufen `Serialize`, davon abhängig, ob Sie *müssen* das Archiv laden, um das Objekt dynamisch zu rekonstruieren basierend auf zuvor gespeicherte `CRuntimeClass` Informationen. Verwenden der `Serialize` -Funktion in den folgenden Fällen:
+Unabhängig davon, ob Sie die `CArchive` **<\<** und **>>** -Operatoren verwenden, und das Aufrufen von `Serialize`, hängt davon ab, ob Sie das Lade Archiv *benötigen* , um das Objekt auf der Grundlage zuvor gespeicherter `CRuntimeClass` Informationen dynamisch zu rekonstruieren. Verwenden Sie die `Serialize`-Funktion in den folgenden Fällen:
 
-- Wenn das Objekt zu deserialisieren, wissen Sie im voraus die exakte Klasse des Objekts.
+- Wenn Sie das Objekt deserialisieren, kennen Sie die exakte Klasse des Objekts.
 
-- Beim Deserialisieren des Objekts verfügen Sie bereits für dieses Volume zugewiesene Arbeitsspeicher.
+- Beim Deserialisieren des Objekts ist bereits Arbeitsspeicher zugeordnet.
 
 > [!CAUTION]
->  Wenn Sie laden das Objekt mit der `Serialize` -Funktion, Sie müssen auch speichern, das mit der `Serialize` Funktion. Nicht speichern, indem die `CArchive` **<<** -Operator, und klicken Sie dann mithilfe von Load der `Serialize` Funktion, oder speichern Sie die Verwendung der `Serialize` Funktion, und klicken Sie dann zu laden, indem `CArchive >>` Operator.
+>  Wenn Sie das Objekt mit der `Serialize`-Funktion laden, müssen Sie das Objekt auch mit der `Serialize`-Funktion speichern. Speichern Sie den `CArchive` **<<** -Operator nicht, und laden Sie dann mithilfe der `Serialize`-Funktion, oder speichern Sie mithilfe der `Serialize` Funktion, und laden Sie dann mithilfe `CArchive >>`-Operators.
 
-Das folgende Beispiel veranschaulicht die Fälle:
+Im folgenden Beispiel werden die Fälle veranschaulicht:
 
 [!code-cpp[NVC_MFCSerialization#36](../mfc/codesnippet/cpp/storing-and-loading-cobjects-via-an-archive_1.h)]
 
 [!code-cpp[NVC_MFCSerialization#37](../mfc/codesnippet/cpp/storing-and-loading-cobjects-via-an-archive_2.cpp)]
 
-Zusammenfassend, wenn die serialisierbare Klasse definiert, die ein eingebettetes `CObject` als ein Element, sollten Sie *nicht* verwenden die `CArchive` **< \<** und **>>** Operatoren für dieses Objekt müssen jedoch die `Serialize` stattdessen funktionieren. Auch wenn die serialisierbare Klasse definiert, einen Zeiger auf eine `CObject` (oder ein Objekt abgeleitet `CObject`) als ein Element, aber Konstrukte dieses Objekt seinen eigenen Konstruktor, Sie sollten auch aufrufen `Serialize`.
+Wenn die serialisierbare Klasse eine eingebettete `CObject` als Member definiert, sollten Sie die `CArchive`- **<\<** -und **>>** -Operatoren für dieses Objekt *nicht* verwenden, sondern stattdessen die `Serialize`-Funktion verwenden. Wenn die serialisierbare Klasse außerdem einen Zeiger auf eine `CObject` (oder ein Objekt, das von `CObject`abgeleitet ist) als Member definiert, aber dieses andere Objekt in einem eigenen Konstruktor erstellt, sollten Sie auch `Serialize`aufruft.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Serialisierung: Serialisieren eines Objekts](../mfc/serialization-serializing-an-object.md)

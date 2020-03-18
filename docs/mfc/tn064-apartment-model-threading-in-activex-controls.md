@@ -1,8 +1,6 @@
 ---
-title: 'TN064: Apartment Modell Threading in ActiveX-Steuerelementen'
+title: 'TN064: Apartmentmodellthreading in ActiveX-Steuerelementen'
 ms.date: 11/04/2016
-f1_keywords:
-- vc.controls.activex
 helpviewer_keywords:
 - OLE controls [MFC], container support
 - containers [MFC], multithreaded
@@ -10,14 +8,14 @@ helpviewer_keywords:
 - multithread container [MFC]
 - apartment model threading [MFC]
 ms.assetid: b2ab4c88-6954-48e2-9a74-01d4a60df073
-ms.openlocfilehash: 2c6b9dd3ed244f7169e5055eebe7a34e3345e841
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f490e82e179da4614eea345136a9edfb1d320705
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513325"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442116"
 ---
-# <a name="tn064-apartment-model-threading-in-activex-controls"></a>TN064: Apartment Modell Threading in ActiveX-Steuerelementen
+# <a name="tn064-apartment-model-threading-in-activex-controls"></a>TN064: Apartmentmodellthreading in ActiveX-Steuerelementen
 
 > [!NOTE]
 >  Der folgende technische Hinweis wurde seit dem ersten Erscheinen in der Onlinedokumentation nicht aktualisiert. Daher können einige Verfahren und Themen veraltet oder falsch sein. Um aktuelle Informationen zu erhalten, wird empfohlen, das gewünschte Thema im Index der Onlinedokumentation zu suchen.
@@ -40,7 +38,7 @@ Das Aktivieren von Apartment Modell Threading ist für die meisten Steuerelement
 
 ## <a name="protecting-shared-data"></a>Schützen von freigegebenen Daten
 
-Wenn das Steuerelement freigegebene Daten verwendet, z. b. eine statische Element Variable, sollte der Zugriff auf diese Daten durch einen kritischen Abschnitt geschützt werden, um zu verhindern, dass mehrere Threads gleichzeitig die Daten ändern. Zum Einrichten eines kritischen Abschnitts zu diesem Zweck deklarieren Sie eine statische Member-Variable der `CCriticalSection` -Klasse in der-Klasse des Steuer Elements. Verwenden Sie `Lock` die `Unlock` -und-Member-Funktionen dieses kritischen Abschnitts Objekts, wenn Ihr Code auf die freigegebenen Daten zugreift.
+Wenn das Steuerelement freigegebene Daten verwendet, z. b. eine statische Element Variable, sollte der Zugriff auf diese Daten durch einen kritischen Abschnitt geschützt werden, um zu verhindern, dass mehrere Threads gleichzeitig die Daten ändern. Zum Einrichten eines kritischen Abschnitts zu diesem Zweck deklarieren Sie eine statische Element Variable der Klasse `CCriticalSection` in der Klasse des Steuer Elements. Verwenden Sie die Funktionen `Lock` und `Unlock` Member dieses kritischen Abschnitts Objekts, wenn Ihr Code auf die freigegebenen Daten zugreift.
 
 Stellen Sie sich z. b. eine Steuerelement Klasse vor, die eine Zeichenfolge beibehalten muss, die von allen Instanzen gemeinsam verwendet wird. Diese Zeichenfolge kann in einer statischen Element Variablen verwaltet und durch einen kritischen Abschnitt geschützt werden. Die Klassen Deklaration des-Steuer Elements enthält Folgendes:
 
@@ -60,7 +58,7 @@ int CString CSampleCtrl::_strShared;
 CCriticalSection CSampleCtrl::_critSect;
 ```
 
-Der Zugriff auf `_strShared` den statischen Member kann dann durch den kritischen Abschnitt geschützt werden:
+Der Zugriff auf den `_strShared` statischen Member kann dann durch den kritischen Abschnitt geschützt werden:
 
 ```
 void CSampleCtrl::SomeMethod()
@@ -76,7 +74,7 @@ if (_strShared.Empty())
 
 ## <a name="registering-an-apartment-model-aware-control"></a>Registrieren eines Steuer Elements für das Apartment-Modell
 
-Steuerelemente, die das Apartment-Modell-Threading unterstützen, sollten diese Funktion in der Registrierung anzeigen, indem Sie den benannten Wert "ThreadingModel" mit dem Wert "Apartment" in Ihrem Class ID-Registrierungs Eintrag unter der *Klassen-ID* \\  **hinzufügen. InprocServer32** -Taste Damit dieser Schlüssel automatisch für das Steuerelement registriert wird, übergeben Sie das *afxRegApartmentThreading* -Flag im sechsten Parameter an `AfxOleRegisterControlClass`:
+Steuerelemente, die das Apartment-Modell-Threading unterstützen, sollten diese Funktion in der Registrierung angeben, indem Sie den benannten Wert "ThreadingModel" mit dem Wert "Apartment" in Ihrem Klassen-ID-Registrierungs Eintrag unter der *Klassen-ID*\\**InProcServer32** Key hinzufügen. Damit dieser Schlüssel automatisch für das Steuerelement registriert wird, übergeben Sie das *afxRegApartmentThreading* -Flag im sechsten Parameter an `AfxOleRegisterControlClass`:
 
 ```
 BOOL CSampleCtrl::CSampleCtrlFactory::UpdateRegistry(BOOL bRegister)
@@ -107,7 +105,7 @@ Wenn das Projekt mit einer früheren Version von controlwizard generiert wurde, 
 
 Wenn Ihr Steuerelement nicht den Regeln für das Threading von Apartment Modellen folgt, dürfen Sie *afxRegApartmentThreading* in diesem Parameter nicht übergeben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Technische Hinweise – nach Nummern geordnet](../mfc/technical-notes-by-number.md)<br/>
 [Technische Hinweise – nach Kategorien geordnet](../mfc/technical-notes-by-category.md)

@@ -41,11 +41,11 @@ helpviewer_keywords:
 - accelerator class
 ms.assetid: 37eed593-cf87-4611-9cdc-e98df6c2377a
 ms.openlocfilehash: 72a570ab28696730f835c42748a6ea12b865ca55
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78855916"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79427482"
 ---
 # <a name="accelerator-class"></a>Zugriffstastenklasse
 
@@ -57,18 +57,18 @@ Eine Zugriffstaste ist eine Hardwarefunktion, die für datenparallele Computervo
 class accelerator;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
-|[Accelerator-Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `accelerator`.|
+|[Accelerator-Konstruktor](#ctor)|Initialisiert eine neue Instanz der `accelerator`-Klasse.|
 |[~ Accelerator-Debugging](#ctor)|Zerstört das `accelerator`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[create_view](#create_view)|Erstellt und gibt ein `accelerator_view`-Objekt auf dieser Zugriffstaste zurück.|
 |[get_all](#get_all)|Gibt einen Vektor von `accelerator`-Objekten zurück, die alle verfügbaren Zugriffstasten darstellen.|
@@ -90,7 +90,7 @@ class accelerator;
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[operator!=](#operator_neq)|Vergleicht dieses `accelerator` Objekt mit einem anderen und gibt **false** zurück, wenn Sie identisch sind. Andernfalls wird **true**zurückgegeben.|
 |[operator=](#operator_eq)|Kopiert den Inhalt des angegebenen `accelerator`-Objekts in dieses Objekt.|
@@ -98,14 +98,14 @@ class accelerator;
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[cpu_accelerator](#cpu_accelerator)|Ruft eine Zeichenfolgenkonstante für die CPU-`accelerator` ab.|
 |[dedicated_memory](#dedicated_memory)|Ruft den dedizierten Arbeitsspeicher für das `accelerator`-Objekt in KB ab.|
 |[default_accelerator](#default_accelerator)|Ruft eine Zeichenfolgenkonstante für die standardmäßige `accelerator` ab.|
 |[default_cpu_access_type](#default_cpu_access_type)|Ruft die Standard-CPU- [access_type](concurrency-namespace-enums-amp.md#access_type)für Arrays und implizite Speicher Belegungen für diese `accelerator`ab oder legt Sie fest.|
 |[default_view](#default_view)|Ruft das standardmäßige `accelerator_view`-Objekt ab, das dem `accelerator`-Element zugeordnet ist.|
-|[description](#description)|Ruft eine kurze Beschreibung des `accelerator`-Geräts ab.|
+|[Beschreibung](#description)|Ruft eine kurze Beschreibung des `accelerator`-Geräts ab.|
 |[device_path](#device_path)|Ruft den Pfad des physischen Geräts ab.|
 |[direct3d_ref](#direct3d_ref)|Ruft eine Zeichenfolgenkonstante für eine Direct3D-Verweis-`accelerator` ab.|
 |[direct3d_warp](#direct3d_warp)|Ruft die Zeichen folgen Konstante für ein `accelerator` Objekt ab, das Sie zum C++ Ausführen von amp-Code auf Multi-Core-CPUs verwenden können, die Streaming SIMD Extensions (SSE) verwenden.|
@@ -121,13 +121,13 @@ class accelerator;
 
 `accelerator`
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Eine Zugriffstaste ist eine Hardwarefunktion, die für datenparallele Computervorgänge optimiert ist. Eine Zugriffstaste ist häufig eine einzelne GPU, kann jedoch auch eine virtuelle hostseitige Entität wie ein DirectX REF-Gerät, ein WARP-Gerät (ein CPU-seitiges Gerät, das mithilfe von SSE-Anweisungen beschleunigt wird) oder die CPU selbst sein.
 
 Sie können ein `accelerator`-Objekt erstellen, indem Sie die verfügbaren Geräte auflisten oder das Standardgerät, das Referenzgerät oder das WARP-Gerät abrufen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** amprt. h
 
@@ -561,6 +561,6 @@ Ruft die Version der `accelerator` ab.
 __declspec(property(get= get_version)) unsigned int version;
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

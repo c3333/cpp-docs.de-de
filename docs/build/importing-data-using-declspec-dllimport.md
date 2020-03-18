@@ -1,24 +1,22 @@
 ---
 title: Importieren von Daten mithilfe von "__declspec(dllimport)"
 ms.date: 11/04/2016
-f1_keywords:
-- dllimport
 helpviewer_keywords:
 - importing data [C++]
 - dllimport attribute [C++], data imports
 - __declspec(dllimport) keyword [C++]
 - importing DLLs [C++], __declspec(dllimport)
 ms.assetid: 0ae70b39-87c7-4181-8be9-e786e0db60b0
-ms.openlocfilehash: 74ad93e640a4e961f7670077227bb5c35a42c20f
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: c9dce798572a91bcb9721f022393abb669970131
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64342109"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79440448"
 ---
-# <a name="importing-data-using-declspecdllimport"></a>Importieren von Daten mithilfe von "__declspec(dllimport)"
+# <a name="importing-data-using-__declspecdllimport"></a>Importieren von Daten mithilfe von "__declspec(dllimport)"
 
-Im Fall von Daten mithilfe von **von "__declspec(dllimport)" "** bietet eine bequeme Möglichkeit, die eine Schicht der Dereferenzierung entfernt. Beim Importieren von Daten aus einer DLL müssen Sie weiterhin die Importadresstabelle durchlaufen. Vor dem **von "__declspec(dllimport)" "**, dies bedeutete, mussten Sie denken Sie daran, führen eine zusätzliche Dereferenzierungsebene aus, wenn Sie den Zugriff auf Daten, die von der DLL exportiert:
+Im Fall von Daten ist die Verwendung von **__declspec (dllimport)** ein praktisches Element, das eine Dereferenzierungsebene entfernt. Wenn Sie Daten aus einer dll importieren, müssen Sie immer noch die Import Adress Tabelle durchlaufen. Vor **__declspec (dllimport)** bedeutete dies, dass Sie beim Zugriff auf Daten, die aus der dll exportiert wurden, eine zusätzliche dereferenzierungsstufe durchführen mussten:
 
 ```
 // project.h
@@ -30,7 +28,7 @@ Im Fall von Daten mithilfe von **von "__declspec(dllimport)" "** bietet eine beq
 #endif
 ```
 
-Sie würden dann exportieren, die Daten in Ihrer. DEF-Datei:
+Anschließend exportieren Sie die Daten in Ihrer. DEF-Datei:
 
 ```
 // project.def
@@ -39,7 +37,7 @@ EXPORTS
    ulDataInDll   CONSTANT
 ```
 
-und ihn außerhalb der DLL zugreifen:
+und auf diese außerhalb der dll zugreifen:
 
 ```
 if (*ulDataInDll == 0L)
@@ -48,14 +46,14 @@ if (*ulDataInDll == 0L)
 }
 ```
 
-Wenn Sie die Daten als markieren **von "__declspec(dllimport)" "**, generiert der Compiler die Dereferenzierung Code automatisch für Sie. Sie müssen nicht mehr über die oben genannten Schritte machen. Wie bereits erwähnt, verwenden Sie keine **von "__declspec(dllimport)" "** Deklaration für die Daten beim Erstellen der DLL. Funktionen in der DLL verwenden nicht die Importadresstabelle das Datenobjekt, das Zugriff auf. aus diesem Grund müssen Sie nicht die zusätzliche Ebene der Dereferenzierung vorhanden.
+Wenn Sie die Daten als **__declspec (dllimport)** markieren, generiert der Compiler automatisch den dereferenzierungscode für Sie. Sie müssen sich keine Gedanken mehr über die oben beschriebenen Schritte machen. Wie bereits erwähnt, sollten Sie bei der Erstellung der dll keine **__declspec (dllimport)** -Deklaration für die Daten verwenden. Funktionen innerhalb der DLL verwenden die Import Adress Tabelle nicht für den Zugriff auf das Datenobjekt. Daher haben Sie keinen zusätzlichen Dereferenzierungsebene.
 
-Um die Daten automatisch aus der DLL zu exportieren, verwenden Sie diese Deklaration:
+Um die Daten automatisch aus der dll zu exportieren, verwenden Sie diese Deklaration:
 
 ```
 __declspec(dllexport) ULONG ulDataInDLL;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Importieren in eine Anwendung](importing-into-an-application.md)

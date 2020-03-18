@@ -5,6 +5,9 @@ f1_keywords:
 - __int128_cpp
 - __wchar_t_cpp
 - char_cpp
+- char8_t_cpp
+- char16_t_cpp
+- char32_t_cpp
 - double_cpp
 - float_cpp
 - int_cpp
@@ -43,12 +46,12 @@ helpviewer_keywords:
 - storing types [C++]
 - data types [C++], void
 ms.assetid: 58b0106a-0406-4b74-a430-7cbd315c0f89
-ms.openlocfilehash: f6bfc72bf279d09e89423866d9cb46ad3496b49c
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: e67d31e18ebbb6afd9d98542e4a6aa236b2d3e71
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301495"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445312"
 ---
 # <a name="built-in-types-c"></a>Integrierte Typen (C++)
 
@@ -66,16 +69,16 @@ In der folgenden Tabelle werden die Einschränkungen für typgrößen in Relatio
 
 ### <a name="built-in-type-size-restrictions"></a>Einschränkungen für die integrierte Typgröße
 
-|Kategorie|Typ|Inhalt|
+|Category|type|Contents|
 |--------------|----------|--------------|
 |Integral|**char**|Typ **char** ist ein ganzzahliger Typ, der normalerweise Member des grundlegenden Ausführungs Zeichensatzes enthält – standardmäßig C++ist dies ASCII in Microsoft.<br /><br /> Der C++ Compiler behandelt Variablen vom Typ " **char**", " **signed char**" und " **Ganzzahl ohne Vorzeichen char** " mit unterschiedlichen Typen. Variablen vom Typ **char** werden auf **int** herauf gestuft, als ob Sie standardmäßig den Typ **signed char** haben, es sei denn, die Kompilierungs Option/J wird verwendet. In diesem Fall werden Sie als Typ **Ganzzahl ohne Vorzeichen char** behandelt und ohne Vorzeichen Erweiterung zu **int** herauf gestuft.|
 ||**bool**|Der Typ " **bool** " ist ein ganzzahliger Typ, der einen der beiden Werte **true** oder **false**aufweisen kann. Seine Größe ist nicht angegeben.|
 ||**short**|Der Typ **short int** (oder einfach **Short**) ist ein ganzzahliger Typ, der größer oder gleich der Größe des Typs **char**und kürzer oder gleich der Größe des Typs **int**ist.<br /><br /> Objekte vom Typ **Short** können als " **Signed Short** " oder " **Ganzzahl ohne Vorzeichen Short**" deklariert werden. **Signed Short** ist ein Synonym für **Short**.|
 ||**int**|Der Typ " **int** " ist ein ganzzahliger Typ, der größer oder gleich der Größe des Typs " **short int**" und kleiner oder gleich der Größe des Typs " **Long**" ist.<br /><br /> Objekte vom Typ " **int** " können als " **signed int** " oder " **Ganzzahl ohne Vorzeichen int**" deklariert werden. **Signed int** ist ein Synonym für **int**.|
-||**__int8**, **__int16**, **__int32**, **__int64**|Ganzzahl mit fester Größe `__int n`, wobei `n` in Bits die Größe der ganzzahligen Variablen ist. **__int8**, **__int16**, **__int32** und **__int64** sind Microsoft-spezifische Schlüsselwörter. Nicht alle Typen sind in allen Architekturen verfügbar. ( **__int128** wird nicht unterstützt.)|
+||**__int8**, **__int16** **__int32**, **__int64**|Ganzzahl mit fester Größe `__int n`, wobei `n` in Bits die Größe der ganzzahligen Variablen ist. **__int8**, **__int16**, **__int32** und **__int64** sind Microsoft-spezifische Schlüsselwörter. Nicht alle Typen sind in allen Architekturen verfügbar. ( **__int128** wird nicht unterstützt.)|
 ||**long**|Der Typ **Long** (oder **long int**) ist ein ganzzahliger Typ, der größer oder gleich der Größe des Typs **int**ist. (Unter Windows **Long** ist die gleiche Größe wie **int**.)<br /><br /> Objekte vom Typ **Long** können als **Signed Long** oder **Ganzzahl ohne Vorzeichen long**deklariert werden. **Signed Long** ist ein Synonym für **Long**.|
 ||**langes long**|Größer als ein Ganzzahl ohne Vorzeichen **Long**.<br /><br /> Objekte vom Typ **Long Long** können als **Signed Long Long** oder **Ganzzahl ohne Vorzeichen long long**deklariert werden. **Signed Long Long** ist ein Synonym für **Long Long**.|
-||**wchar_t**, **__wchar_t**|Eine Variable vom Typ **wchar_t** der einen breit Zeichen-oder multibytezeichentyp festlegt. Standardmäßig ist **wchar_t** ein System eigener Typ. Sie können jedoch [/Zc: wchar_t-](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) verwenden, um **wchar_t** eine typedef für einen **Ganzzahl ohne Vorzeichen Short**-Wert zu erstellen. Der **__wchar_t** Typ ist ein Microsoft-spezifisches Synonym für den systemeigenen **wchar_t** Typ.<br /><br /> Verwenden Sie das Präfix L vor einem Zeichen oder einem Zeichenliteral, um einen Breitzeichentyp festzulegen.|
+||**wchar_t** **__wchar_t**|Eine Variable vom Typ **wchar_t** der einen breit Zeichen-oder multibytezeichentyp festlegt. Standardmäßig ist **wchar_t** ein System eigener Typ. Sie können jedoch [/Zc: wchar_t-](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) verwenden, um **wchar_t** eine typedef für einen **Ganzzahl ohne Vorzeichen Short**-Wert zu erstellen. Der **__wchar_t** Typ ist ein Microsoft-spezifisches Synonym für den systemeigenen **wchar_t** Typ.<br /><br /> Verwenden Sie das Präfix L vor einem Zeichen oder einem Zeichenliteral, um einen Breitzeichentyp festzulegen.|
 |Gleitkomma|**float**|Der Typ " **float** " ist der kleinste Gleit kommatyp.|
 ||**double**|Type **Double** ist ein Gleit kommatyp, der größer oder gleich dem Typ **float**ist, aber kürzer oder gleich der Größe des Typs **long Double**ist.<br /><br /> Microsoft-spezifisch: die Darstellung von **long Double** und **Double** ist identisch. **Long Double** und **Double** sind jedoch separate Typen.|
 ||**long double**|Der Typ **long Double** ist ein Gleit kommatyp, der größer oder gleich dem Typ **Double**ist.|
@@ -86,12 +89,12 @@ In der folgenden Tabelle wird die Menge des Speichers aufgelistet, die für inte
 
 ### <a name="sizes-of-built-in-types"></a>Größen von integrierten Typen
 
-|Typ|-Größe|
+|type|Size|
 |----------|----------|
 |**bool**, **char**, **Ganzzahl ohne Vorzeichen char**, **signed char**, **__int8**|1 Byte|
 |**__int16**, **Short**, **Ganzzahl ohne Vorzeichen Short**, **wchar_t**, **__wchar_t**|2 Bytes|
-|**float**, **__int32**, **int**, **Ganzzahl ohne Vorzeichen int**, **Long**, **Ganzzahl ohne Vorzeichen long**|4 Bytes|
-|**Double**, **__int64**, **long Double**, **Long Long**|8 Bytes|
+|**float**, **__int32**, **int**, **Ganzzahl ohne Vorzeichen int**, **Long**, **Ganzzahl ohne Vorzeichen long**|4 Byte|
+|**Double**, **__int64**, **long Double**, **Long Long**|8 Byte|
 
 **Ende Microsoft-spezifisch**
 
@@ -99,6 +102,6 @@ Eine Zusammenfassung des Wertebereichs der einzelnen Typen erhalten Sie unter [D
 
 Weitere Informationen zur Typkonvertierung finden Sie unter [Standardwertkonvertierungen](standard-conversions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datentypbereiche](data-type-ranges.md)

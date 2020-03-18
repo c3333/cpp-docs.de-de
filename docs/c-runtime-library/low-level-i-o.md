@@ -1,8 +1,6 @@
 ---
 title: E/A auf niedriger Ebene
 ms.date: 11/04/2016
-f1_keywords:
-- c.io
 helpviewer_keywords:
 - I/O [CRT], low-level
 - I/O [CRT], functions
@@ -10,12 +8,12 @@ helpviewer_keywords:
 - file handles [C++]
 - file handles [C++], I/O functions
 ms.assetid: 53e11bdd-6720-481c-8b2b-3a3a569ed534
-ms.openlocfilehash: 7812656bdcb3f58866f91009b6ad3de9fd67cebe
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: acf07682e9045800bb04aa4c9d6abc5ae4376280
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57740139"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443099"
 ---
 # <a name="low-level-io"></a>E/A auf niedriger Ebene
 
@@ -23,7 +21,7 @@ Diese Funktionen rufen direkt das Betriebssystem für einen Vorgang auf, der sic
 
 Routinen auf niedriger Ebene können mit den folgenden vordefinierten Dateideskriptoren auf Standardstreams zugreifen, die beim Programmstart geöffnet werden.
 
-|Stream|Dateideskriptor|
+|STREAM|Dateideskriptor|
 |------------|---------------------|
 |**stdin**|0|
 |**stdout**|1|
@@ -33,7 +31,7 @@ E/A-Routinen auf niedriger Ebene legen die globale Variable [errno](../c-runtime
 
 ## <a name="low-level-io-functions"></a>E/A-Funktionen auf niedriger Ebene
 
-|Funktion|Verwendung|
+|Funktion|Zweck|
 |--------------|---------|
 |[_close](../c-runtime-library/reference/close.md)|Datei schließen|
 |[_commit](../c-runtime-library/reference/commit.md)|Datei auf Datenträger leeren|
@@ -51,7 +49,7 @@ E/A-Routinen auf niedriger Ebene legen die globale Variable [errno](../c-runtime
 
 **_dup** und **_dup2** werden im Allgemeinen verwendet, um verschiedenen Dateien die vordefinierten Dateideskriptoren zuzuordnen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Eingabe und Ausgabe](../c-runtime-library/input-and-output.md)<br/>
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>

@@ -1,19 +1,17 @@
 ---
 title: 'Sichere Bibliotheken: C++-Standardbibliothek'
 ms.date: 11/04/2016
-f1_keywords:
-- _SCL_SECURE_NO_DEPRECATE
 helpviewer_keywords:
 - Safe Libraries
 - Safe Libraries, C++ Standard Library
 - Safe C++ Standard Library
 ms.assetid: 3993340f-1f29-4d81-b3f5-52a52bc8e148
-ms.openlocfilehash: 782a3610909de01e1a1991dee3a74aee9a131da3
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: e352489ca12b5815aab5517defc72571abe177fb
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68454549"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79446100"
 ---
 # <a name="safe-libraries-c-standard-library"></a>Sichere Bibliotheken: C++-Standardbibliothek
 
@@ -23,7 +21,7 @@ Einige Methoden in der C++-Standardbibliothek wurden als möglicherweise unsiche
 
 Zudem wurden verschiedene Verbesserungen vorgenommen, um Iteratoren und Algorithmen sicherer zu gestalten. Weitere Informationen finden Sie unter [Überprüfte Iteratoren](../standard-library/checked-iterators.md), [Unterstützung für Iteratordebugging](../standard-library/debug-iterator-support.md) und [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 In der folgenden Tabelle sind die Methoden der C++-Standardbibliothek enthalten, die als potenziell unsicher gelten, sowie deren sicherere Entsprechung:
 
@@ -40,10 +38,10 @@ Wenn Sie eine der oben genannten potenziell unsicheren Methoden aufrufen oder di
 
 [_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md)
 
-[Checked Iterators](../standard-library/checked-iterators.md)
+[Checked Iterators (Überprüfte Iteratoren)](../standard-library/checked-iterators.md)
 
-[Debug Iterator Support](../standard-library/debug-iterator-support.md)
+[Debug Iterator Support (Unterstützung für Iteratordebugging)](../standard-library/debug-iterator-support.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Überblick über die C++-Standardbibliothek](../standard-library/cpp-standard-library-overview.md)

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - attributes [C++/CLI], reference topics
 ms.assetid: 613a3611-b3eb-4347-aa38-99b654600e1c
 ms.openlocfilehash: 4885edf57988d5f83b56ba6a71da85877354d3ce
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856441"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79426678"
 ---
 # <a name="c-attributes-for-com-and-net"></a>C++-Attribute für COM und .NET
 
@@ -92,7 +92,7 @@ Weitere Informationen finden Sie unter [Attribute by Usage (Attribute nach Verwe
 
 Dieses Feld gibt an, ob das Attribut wiederholt auf dasselbe Ziel angewendet werden kann. Die meisten Attribute sind nicht wiederholbar.
 
-### <a name="required-attributes"></a>Erforderliche Attribute.
+### <a name="required-attributes"></a>Erforderliche Attribute
 
 In diesem Feld werden andere Attribute aufgelistet, die vorhanden sein müssen (d. h. auf dasselbe Ziel angewendet), damit das angegebene Attribut ordnungsgemäß funktioniert. Es ist nicht üblich, dass für ein Attribut Einträge für dieses Feld vorhanden sind.
 

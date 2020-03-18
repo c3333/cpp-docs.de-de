@@ -14,12 +14,12 @@ f1_keywords:
 helpviewer_keywords:
 - ICommandUI interface [MFC]
 ms.assetid: 134afe8d-dcdf-47ca-857a-a166a6b665dd
-ms.openlocfilehash: a7bb3ab5ed292cef8108e937e67bc9e2ccc1ebce
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: 0740ad024e0ca7fd56ecf9178ca57b22dc66b79e
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426660"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445694"
 ---
 # <a name="icommandui-interface"></a>Icommandui-Schnittstelle
 
@@ -31,11 +31,11 @@ Verwaltet Befehle der Benutzeroberfläche.
 interface class ICommandUI
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[icommandui__Check](#check)|Legt das Element der Benutzeroberfläche für diesen Befehl auf den entsprechenden Prüf Zustand fest.|
 |[Icommandui:: continuerouting](#continuerouting)|Weist den Befehls Routing Mechanismus an, das Routing der aktuellen Nachricht weiter nach unten in der Kette von Handlern durchzuführen.|
@@ -45,7 +45,7 @@ interface class ICommandUI
 |[Icommandui:: Radio](#radio)|Legt das Element der Benutzeroberfläche für diesen Befehl auf den entsprechenden Prüf Zustand fest.|
 |[Icommandui:: Text](#text)|Legt den Text des Benutzeroberflächen Elements für diesen Befehl fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Schnittstelle stellt Methoden und Eigenschaften bereit, mit denen Benutzeroberflächen Befehle verwaltet werden. `ICommandUI` ähnelt der [CCmdUI-Klasse](../../mfc/reference/ccmdui-class.md), mit der Ausnahme, dass `ICommandUI` für MFC-Anwendungen verwendet wird, die mit .NET-Komponenten zusammenarbeiten.
 
@@ -60,11 +60,12 @@ Weitere Informationen zur Verwaltung von Benutzeroberflächen Befehlen in MFC fi
 ## <a name="check"></a>Icommandui:: Check
 
 Legt das Element der Benutzeroberfläche für diesen Befehl auf den entsprechenden Prüf Zustand fest.
+
 ```
 property UICheckState Check;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Mit dieser Eigenschaft wird das Benutzeroberflächen Element für diesen Befehl auf den entsprechenden Prüf Zustand festgelegt. Legen Sie die Option auf die folgenden Werte fest:
 - 0 deaktivieren
@@ -74,73 +75,79 @@ Mit dieser Eigenschaft wird das Benutzeroberflächen Element für diesen Befehl 
 ## <a name="continuerouting"></a>Icommandui:: continuerouting
 
 Weist den Befehls Routing Mechanismus an, das Weiterleiten der aktuellen Nachricht an die Kette von Handlern weiterzuleiten.
+
 ```
 void ContinueRouting();
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dabei handelt es sich um eine erweiterte Member-Funktion, die in Verbindung mit einem ON_COMMAND_EX Handler verwendet werden sollte, der false zurückgibt. Weitere Informationen finden Sie unter Technical Note TN006: Message Maps.
 
 ## <a name="enabled"></a>Icommandui:: aktiviert
 
 Aktiviert oder deaktiviert das Benutzeroberflächen Element für diesen Befehl.
+
 ```
 property bool Enabled;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Eigenschaft aktiviert oder deaktiviert das Benutzeroberflächen Element für diesen Befehl. Legen Sie "aktiviert" auf "true" fest, um das Element zu aktivieren.
 
 ## <a name="id"></a>Icommandui:: ID
 
 Ruft die ID des Benutzeroberflächen Objekts ab, das durch das icommandui-Objekt dargestellt wird.
+
 ```
 property unsigned int ID;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Eigenschaft ruft die ID (ein Handle) des Menü Elements, der Symbolleisten-Schaltfläche oder eines anderen Benutzeroberflächen Objekts ab, das durch das icommandui-Objekt dargestellt wird.
 
 ## <a name="index"></a>Icommandui:: Index
 
 Ruft den Index des Benutzeroberflächen Objekts ab, das durch das icommandui-Objekt dargestellt wird.
+
 ```
 property unsigned int Index;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Eigenschaft ruft den Index (ein Handle) des Menü Elements, der Symbolleisten-Schaltfläche oder eines anderen Benutzeroberflächen Objekts ab, das durch das icommandui-Objekt dargestellt wird.
 
 ## <a name="radio"></a>Icommandui:: Radio
 
 Legt das Element der Benutzeroberfläche für diesen Befehl auf den entsprechenden Prüf Zustand fest.
+
 ```
 property bool Radio;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Mit dieser Eigenschaft wird das Benutzeroberflächen Element für diesen Befehl auf den entsprechenden Prüf Zustand festgelegt. Legen Sie Radio auf true fest, um das Element zu aktivieren. andernfalls false.
 
 ## <a name="text"></a>Icommandui:: Text
 
 Legt den Text des Benutzeroberflächen Elements für diesen Befehl fest.
+
 ```
 property String^ Text;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Eigenschaft legt den Text des Benutzeroberflächen Elements für diesen Befehl fest. Legen Sie Text auf ein Textzeichen folgen Handle fest.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwinforms. h (definiert in Assembly atlmfc\lib\mfcmifc80.dll)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdUI-Klasse](../../mfc/reference/ccmdui-class.md)

@@ -1,28 +1,26 @@
 ---
 title: Sonstige LIB-Ausgabe
 ms.date: 11/04/2016
-f1_keywords:
-- Lib
 helpviewer_keywords:
 - output files, LIB
 ms.assetid: 656864a6-0b7a-4633-8dc6-ee3b1766d836
-ms.openlocfilehash: 1f0140d33a06a1bdb95df4a8c52aea1f84b3aca1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4152795c2f1cc2acbeb7a55d0d5ee3419fe6f789
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62320241"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439177"
 ---
 # <a name="other-lib-output"></a>Sonstige LIB-Ausgabe
 
-Im Standardmodus können Sie die Option/List / Informationen über die erstellte Bibliothek angezeigt. Sie können diese Ausgabe in eine Datei umleiten.
+Im Standardmodus können Sie die Option/List verwenden, um Informationen über die resultierende Bibliothek anzuzeigen. Sie können diese Ausgabe in eine Datei umleiten.
 
-LIB zeigt eine Meldung Copyright- und Versionsinformationen und Befehlsdateien, es sei denn, die/nologo-Option verwendet wird.
+LIB zeigt eine Copyright-und Versions Meldungs-und Echo Befehls Dateien an, sofern nicht die Option/nologo verwendet wird.
 
-Bei der Eingabe `lib` ohne weitere Eingaben zeigt LIB eine nutzungsanweisung an, die die verfügbaren Optionen zusammengefasst sind.
+Wenn Sie `lib` ohne andere Eingabe eingeben, zeigt lib eine Usage-Anweisung an, die seine Optionen zusammenfasst.
 
-Fehler und Warnungen, die Nachrichten, die von LIB ausgestellt haben das Format LNK*Nnnn*. Die Verknüpfung, DUMPBIN und EDITBIN-Tools verwenden den Fehler. Hilfe ist verfügbar, wählen den Fehler im Ausgabefenster angezeigt, und drücken F1.
+Fehler-und Warnmeldungen, die von lib ausgegeben werden, haben das Format lnk*nnnn*. Die Tools Link, DUMPBIN und EDITBIN verwenden diesen Bereich von Fehlern ebenfalls. Hilfe ist verfügbar, wenn Sie den Fehler im Ausgabefenster auswählen und F1 drücken.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über LIB](overview-of-lib.md)

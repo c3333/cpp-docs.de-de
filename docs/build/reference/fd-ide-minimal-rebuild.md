@@ -1,27 +1,25 @@
 ---
 title: /FD (Minimale Neuerstellung in der IDE)
 ms.date: 04/08/2019
-f1_keywords:
-- /FD
 helpviewer_keywords:
 - /FD compiler option [C++]
 - -FD compiler option [C++]
 - FD compiler option [C++]
 ms.assetid: 7ef21b8c-a448-4bb4-9585-a2a870028e17
-ms.openlocfilehash: ac63b021dc0cb9ee5964af7fa2e168f710653979
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 896adcb97a259e6714cf23241424841456371491
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62292873"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439808"
 ---
 # <a name="fd-ide-minimal-rebuild"></a>/FD (Minimale Neuerstellung in der IDE)
 
-**/ Fd** wird nur für Benutzer verfügbar gemacht der [Befehlszeile](command-line-property-pages.md) Eigenschaftenseite ein C++ des Projekts **Eigenschaftenseiten** im Dialogfeld. Es ist verfügbar, wenn und nur, wenn die veraltete und deaktiviert standardmäßig [/GM (minimale Neuerstellung aktivieren)](gm-enable-minimal-rebuild.md) Option nicht aktiviert ist. **/ Fd** wirkt sich nicht nur aus der Entwicklungsumgebung. **/ Fd** ist nicht verfügbar gemacht werden, in der Ausgabe des `cl /?`.
+**/FD** wird nur für Benutzer auf der Eigenschaften Seite [Befehlszeile](command-line-property-pages.md) im Dialogfeld C++ **Eigenschaften Seiten** eines Projekts verfügbar gemacht. Diese Option ist nur dann verfügbar, wenn die Option veraltet und Standard [/GM (minimale Neuerstellung aktivieren)](gm-enable-minimal-rebuild.md) nicht ausgewählt ist. **/FD** hat keine Auswirkung außer der Entwicklungsumgebung. **/FD** wird nicht in der Ausgabe von `cl /?`verfügbar gemacht.
 
-Wenn Sie nicht die veraltete aktivieren **/GM** -Option in der Entwicklungsumgebung **/FD** verwendet wird. **/ Fd** wird sichergestellt, der .idb-Datei verfügt über ausreichende Informationen zu den Abhängigkeiten. **/ Fd** wird nur von der Entwicklungsumgebung verwendet und sollte nicht über die Befehlszeile oder ein Buildskript verwendet werden.
+Wenn Sie die Option "veraltet **/GM** " in der Entwicklungsumgebung nicht aktivieren, wird **/FD** verwendet. **/FD** stellt sicher, dass die IDB-Datei über ausreichende Abhängigkeitsinformationen verfügt. **/FD** wird nur von der Entwicklungsumgebung verwendet und sollte nicht über die Befehlszeile oder ein Buildskript verwendet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausgabedatei (/F) Optionen](output-file-f-options.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>

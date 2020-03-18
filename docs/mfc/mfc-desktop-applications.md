@@ -3,18 +3,17 @@ title: MFC-Desktopanwendungen
 ms.date: 07/28/2019
 f1_keywords:
 - MFC
-- mfc
 helpviewer_keywords:
 - libraries, MFC
 - class libraries, MFC
 - MFC, about MFC
 ms.assetid: 7101cb18-a681-495c-8f2b-069ad20c72f7
-ms.openlocfilehash: f23a41a0dbaedb7063617accee3afe4ba833d59c
-ms.sourcegitcommit: 720b74dddb1cdf4e570d55103158304ee1df81f8
+ms.openlocfilehash: e9921d18e9ec060f61959278b68906338f02b5b7
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607535"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447708"
 ---
 # <a name="mfc-desktop-applications"></a>MFC-Desktopanwendungen
 
@@ -88,6 +87,6 @@ Bietet Links zu den verschiedenen Bibliotheken, die mit Visual C++ bereitgestel
 [Debuggen in Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)<br/>
 Stellt Links zum Visual Studio-Debugger für die Behebung logischer Fehler in Ihrer Anwendung oder in gespeicherten Prozeduren bereit.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC und ATL](mfc-and-atl.md)

@@ -1,19 +1,19 @@
 ---
-title: '&lt;Niederlage&gt;'
+title: '&lt;Ausführung&gt;'
 ms.date: 04/18/2019
 f1_keywords:
 - <execution>
 - std::<execution>
 helpviewer_keywords:
 - execution header
-ms.openlocfilehash: 3b0ccd540c56500c2f265aa6192a12fc2d5078b0
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 81e9aa63265c367412fda709aacd5ca3953e9fdf
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68457967"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445031"
 ---
-# <a name="ltexecutiongt"></a>&lt;Niederlage&gt;
+# <a name="ltexecutiongt"></a>&lt;Ausführung&gt;
 
 Beschreibt die Ausführungsrichtlinien für parallele Algorithmen.
 
@@ -29,6 +29,7 @@ namespace std::execution {
     inline constexpr parallel_unsequenced_policy par_unseq { unspecified };
 }
 ```
+
 ### <a name="classes-and-structs"></a>Klassen und Strukturen
 
 |||
@@ -38,14 +39,14 @@ namespace std::execution {
 |[parallel_unsequenced_policy-Klasse](parallel-unsequenced-policy-class.md)|Wird als eindeutiger Typ verwendet, um das überladen paralleler Algorithmen eindeutig zu machen und anzugeben, dass die Ausführung eines parallelen Algorithmus parallelisiert und vektorisiert werden kann.|
 |[sequenced_policy-Klasse](sequenced-policy-class.md)|Wird als eindeutiger Typ verwendet, um das überladen paralleler Algorithmen zu unterscheiden, und erfordert, dass die Ausführung eines parallelen Algorithmus möglicherweise nicht parallelisiert wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<Ausführungs >
+**Header:** \<Ausführung >
 
 **Namespace:** stdext
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Headerdateienreferenz](cpp-standard-library-header-files.md)\
 [Threadsicherheit in der C++-Standardbibliothek](thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](cpp-standard-library-reference.md)
+[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](cpp-standard-library-reference.md)

@@ -21,15 +21,9 @@ api_type:
 topic_type:
 - apiref
 f1_keywords:
-- _strnicmp
-- _wcsnicmp_l
 - _mbsnbicmp
 - mbsnbicmp
 - mbsnbicmp_l
-- _tcsnicmp
-- _strnicmp_l
-- _tcsnicmp_l
-- _wcsnicmp
 - _mbsnbicmp_l
 helpviewer_keywords:
 - _tcsnicmp_l function
@@ -43,12 +37,12 @@ helpviewer_keywords:
 - mbsnbicmp function
 - _wcsnicmp function
 ms.assetid: ddb44974-8b0c-42f0-90d0-56c9350bae0c
-ms.openlocfilehash: 19ffa4c47f0144ba136607fe5cef09e9bd65374f
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c7a4d5def115101c9f3fbd6c53d649ab5b122f1c
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952186"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442835"
 ---
 # <a name="_mbsnbicmp-_mbsnbicmp_l"></a>_mbsnbicmp, _mbsnbicmp_l
 
@@ -69,7 +63,7 @@ int _mbsnbicmp(
 
 ### <a name="parameters"></a>Parameter
 
-*string1*, *string2*<br/>
+*Zeichenfolge1*, *Zeichenfolge2*<br/>
 Zu vergleichende mit NULL endende Zeichenfolgen.
 
 *count*<br/>
@@ -79,7 +73,7 @@ Anzahl der zu vergleichenden Bytes.
 
 Der Rückgabewert gibt die Beziehung zwischen den untergeordneten Zeichenfolgen an.
 
-|Rückgabewert|Beschreibung|
+|Rückgabewert|BESCHREIBUNG|
 |------------------|-----------------|
 |< 0|*Zeichenfolge1* Teil Zeichenfolge kleiner als *Zeichenfolge2* Teil Zeichenfolge.|
 |0|*Zeichenfolge1* Teil Zeichenfolge, die mit *Zeichenfolge2* Teil Zeichenfolge identisch ist.|
@@ -87,9 +81,9 @@ Der Rückgabewert gibt die Beziehung zwischen den untergeordneten Zeichenfolgen 
 
 Bei einem Fehler gibt **_mbsnbicmp** **_NLSCMPERROR**zurück, das in String. h und mbstring. h definiert ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_mbsnbicmp** -Funktion führt einen Ordinalvergleich von höchstens der ersten *Anzahl* von Bytes von *Zeichenfolge1* und *Zeichenfolge2*aus. Der Vergleich wird durchgeführt, indem jedes Zeichen in Kleinbuchstaben konvertiert wird. [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md) ist eine Version von **_mbsnbicmp**mit Beachtung der Groß-/Kleinschreibung. Der Vergleich endet, wenn ein abschließendes NULL-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden. Wenn die Zeichen folgen gleich sind, wenn ein abschließende Null-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden, ist die kürzere Zeichenfolge geringer.
+Die **_mbsnbicmp** -Funktion führt einen Ordinalvergleich von höchstens der ersten *Anzahl* von Bytes von *Zeichenfolge1* und *Zeichenfolge2*aus. Der Vergleich wird durchgeführt, indem jedes Zeichen in Kleinbuchstaben konvertiert wird. [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md) ist eine Version von **_mbsnbicmp**, die Groß-/Kleinschreibung beachtet. Der Vergleich endet, wenn ein abschließendes NULL-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden. Wenn die Zeichen folgen gleich sind, wenn ein abschließende Null-Zeichen in einer der beiden Zeichen folgen erreicht wird, bevor *count* -Zeichen verglichen werden, ist die kürzere Zeichenfolge geringer.
 
 **_mbsnbicmp** ähnelt [_mbsnbcmp](mbsnbcmp-mbsnbcmp-l.md), mit dem Unterschied, dass die Zeichen folgen nicht mit Zeichen, sondern mit der *Anzahl* von Bytes verglichen werden.
 
@@ -106,9 +100,9 @@ Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist, ruft **_
 |**_tcsnicmp**|**_strnicmp**|**_mbsnbicmp**|**_wcsnicmp**|
 |**_tcsnicmp_l**|**_strnicmp_l**|**_mbsnbicmp_l**|**_wcsnicmp_l**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsnbicmp**|\<mbstring.h>|
 
@@ -118,7 +112,7 @@ Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../
 
 Weitere Informationen finden Sie im Beispiel [_mbsnbcmp _mbsnbcmp_l](mbsnbcmp-mbsnbcmp-l.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [_mbsnbcat, _mbsnbcat_l](mbsnbcat-mbsnbcat-l.md)<br/>

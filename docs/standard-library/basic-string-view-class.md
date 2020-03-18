@@ -119,12 +119,12 @@ helpviewer_keywords:
 - std::basic_string_view, substr
 - std::basic_string_view, swap
 ms.assetid: a9c3e0a2-39bf-4c8a-b093-9abe30839591
-ms.openlocfilehash: 7a53a27e11088ab02f873613794d6799851ca373
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: 2f262ee238d8ee9b441f5bc1daebcf6a64f35a52
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416180"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79445839"
 ---
 # <a name="basic_string_view-class"></a>basic_string_view-Klasse
 
@@ -189,13 +189,13 @@ Standardmäßig [Char_traits](char-traits-struct.md)<*CharType*->.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[basic_string_view](#basic_string_view)|Erstellt eine string_view, die leer ist, oder verweist auf die Daten eines anderen Zeichen folgen Objekts oder auf ein Zeichen Array im C-Stil.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |**const_iterator**|Random-Access-Iterator, der **Konstanten** Elemente lesen kann.|
 |**const_pointer**|`using const_pointer = const value_type*;`|
@@ -213,14 +213,14 @@ Standardmäßig [Char_traits](char-traits-struct.md)<*CharType*->.
 
 ### <a name="member-operators"></a>Member-Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[operator=](#op_eq)|Weist einem anderen string_view ein string_view oder konvertierbares Zeichen folgen Objekt zu.|
 |[operator\[\]](#op_at)|Gibt das Element am angegebenen Index zurück.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[at](#at)|Gibt eine const_reference an einem angegebenen Speicherort an das Element zurück.|
 |[Rückseite](#back)|Gibt eine const_reference an das letzte Element zurück.|
@@ -252,11 +252,11 @@ Standardmäßig [Char_traits](char-traits-struct.md)<*CharType*->.
 |[substr](#substr)|Gibt eine Teil Zeichenfolge mit einer angegebenen Länge zurück, beginnend bei einem angegebenen Index.|
 |[swap](#swap)|Tauschen Sie den Inhalt von zwei string_views.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn eine Funktion aufgefordert wird, eine Sequenz zu generieren, die länger als [max_size](#max_size)-Elemente ist, wird von der Funktion ein Längenfehler gemeldet, indem ein Objekt des Typs [length_error](../standard-library/length-error-class.md) ausgelöst wird.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 [Std: c++ 17](../build/reference/std-specify-language-standard-version.md) oder höher
 
@@ -281,7 +281,7 @@ Der Index des Elements, auf das verwiesen werden soll.
 
 Eine const_reference auf das Zeichen an der Position, die durch den Parameter Index angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das erste Element weist einen Index von NULL auf, und die folgenden Elemente werden nacheinander durch die positiven ganzen Zahlen indiziert, sodass ein string_view der Länge *n* über ein *n*-te Element verfügt, das von der Zahl *n-* 1 indiziert wird. **bei** wird eine Ausnahme für ungültige Indizes ausgelöst, anders als bei [Operator\[\]](#op_at). 
 
@@ -318,7 +318,7 @@ constexpr const_reference back() const;
 
 Eine const_reference zum letzten Element in der string_view.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Löst eine Ausnahme aus, wenn die string_view leer ist.
 
@@ -361,7 +361,7 @@ Der Zeiger auf die Zeichen Werte.
 *len* -\
 Die Anzahl der Zeichen, die in der Ansicht enthalten sein sollen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Bei den Konstruktoren mit einem charT *-Parameter wird davon ausgegangen, dass die Eingabe NULL-terminiert ist, aber der abschließende NULL-Wert ist nicht in der string_view enthalten.
 
@@ -402,7 +402,7 @@ constexpr const_iterator cend() const noexcept;
 
 Ein **konstanter** Random-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
 
@@ -443,7 +443,7 @@ Die C-Zeichenfolge, die mit diesem string_view verglichen werden soll.
 
 Ein negativer Wert, wenn dieser string_view kleiner als " *strauv* " oder " *ptr*" ist. 0 (null), wenn die beiden Zeichen folgen gleich sind. oder ein positiver Wert, wenn dieser string_view größer als " *strauv* " oder " *ptr*" ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `compare` Member-Funktionen führen einen Vergleich von ganz oder teilweise jeder Zeichen Sequenz mit Berücksichtigung der Groß-und Kleinschreibung durch. 
 
@@ -578,7 +578,7 @@ Die Anfangsposition im Quell string_view, von der Kopien erstellt werden sollen.
 
 Die Anzahl der tatsächlich kopierten Zeichen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Es wird kein NULL-Zeichen ans Ende der Kopie angefügt.
 
@@ -611,7 +611,7 @@ Die Anfangsposition in der Quellzeichenfolge, ab der Kopien erstellt werden dür
 
 Die Anzahl der tatsächlich kopierten Zeichen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Es wird kein NULL-Zeichen ans Ende der Kopie angefügt.
 
@@ -653,7 +653,7 @@ constexpr value_type *data() const noexcept;
 
 Ein Zeiger auf den Konstanten zum ersten Element der Zeichen Sequenz.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Zeiger kann die Zeichen nicht ändern.
 
@@ -671,7 +671,7 @@ constexpr bool empty() const noexcept;
 
 **true** , wenn das string_view-Objekt keine Zeichen enthält. **false** , wenn mindestens ein Zeichen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion entspricht [size](#size)() = = 0.
 
@@ -687,7 +687,7 @@ constexpr const_iterator end() const noexcept;
 
 Gibt einen const_iterator mit zufälligem Zugriff zurück, der auf eine Stelle hinter dem letzten Element zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `end` wird verwendet, um zu testen, ob ein Const_iterator das Ende seiner string_view erreicht hat. Der von `end` zurückgegebene Wert darf nicht dereferenziert werden.
 
@@ -863,7 +863,7 @@ constexpr const_reference front() const;
 
 Eine const_reference auf das erste Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Löst eine Ausnahme aus, wenn die string_view leer ist.
 
@@ -875,7 +875,7 @@ Gibt die aktuelle Anzahl von Elementen zurück.
 constexpr size_type length() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion ist identisch mit [size](#size).
 
@@ -891,7 +891,7 @@ constexpr size_type max_size() const noexcept;
 
 Die maximale Anzahl von Zeichen, die ein string_view enthalten kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Ausnahme vom Typ [length_error](../standard-library/length-error-class.md) wird ausgelöst, wenn ein Vorgang eine string_view mit einer Länge größer als `max_size()`erzeugt.
 
@@ -902,12 +902,14 @@ Weist einem anderen string_view ein string_view oder konvertierbares Zeichen fol
 ```cpp
 constexpr basic_string_view& operator=(const basic_string_view&) noexcept = default;
 ```
+
 ### <a name="example"></a>Beispiel
 
 ```cpp
    string_view s = "Hello";
    string_view s2 = s;
 ```
+
 ## <a name="op_at"></a>basic_string_view:: Operator []
 
 Stellt ein const_reference für das Zeichen mit einem angegebenen Index bereit.
@@ -925,7 +927,7 @@ Der Index des Elements, auf das verwiesen werden soll.
 
 Eine const_reference auf das Zeichen an der Position, die durch den Parameter Index angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das erste Element weist einen Index von NULL auf, und die folgenden Elemente werden nacheinander durch die positiven ganzen Zahlen indiziert, sodass ein string_view der Länge *n* über ein *n*-te Element verfügt, das von der Zahl *n* -1 indiziert wird.
 
@@ -949,7 +951,7 @@ constexpr const_reverse_iterator rbegin() const noexcept;
 
 Gibt einen Iterator mit zufälligem Zugriff auf das erste Element in einem umgekehrten string_view zurück, wobei das, was das letzte Element in der entsprechenden nicht umgekehrten string_view ist, adressiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `rbegin` wird bei einem umgekehrten string_view verwendet, wie [Begin](#begin) bei einer string_view verwendet wird. `rbegin` kann verwendet werden, um eine Iterations rückwärts zu initialisieren.
 
@@ -961,7 +963,7 @@ Verschiebt den Zeiger um die angegebene Anzahl von Elementen vorwärts.
 constexpr void remove_prefix(size_type n);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Lässt die zugrunde liegenden Daten unverändert. Verschiebt den string_view Zeiger um n Elemente vorwärts und legt den privaten `size` Datenmember auf size-n fest.
 
@@ -973,7 +975,7 @@ Verringert die Größe der Ansicht um die angegebene Anzahl von Elementen, begin
 constexpr void remove_suffix(size_type n);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zugrunde liegenden Daten und der Zeiger bleiben unverändert. Legt den privaten `size` Datenmember auf size-n fest.
 
@@ -989,7 +991,7 @@ constexpr reverse_iterator rend() const noexcept;
 
 Ein konstanter umgekehrter Random-Access-Iterator, der auf eine Stelle hinter dem letzten Element in einem umgekehrten string_view zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `rend` wird bei einem umgekehrten string_view verwendet, wie [End](#end) bei einer string_view verwendet wird. `rend` kann verwendet werden, um zu testen, ob ein umgekehrter Iterator das Ende seiner string_view erreicht hat. Der von `rend` zurückgegebene Wert darf nicht dereferenziert werden.
 
@@ -1037,7 +1039,7 @@ constexpr size_type size() const noexcept;
 
 Die Länge der string_view.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein string_view kann seine Länge ändern, z. b. durch `remove_prefix` und `remove_suffix`. Da dadurch die zugrunde liegenden Zeichen folgen Daten nicht geändert werden, ist die Größe eines string_view nicht notwendigerweise die Größe der zugrunde liegenden Daten.
 
@@ -1074,7 +1076,7 @@ constexpr void swap(basic_string_view& sv) noexcept;
 *SV* -\
 Der Quell string_view, dessen Zeiger-und Größen Werte mit dem des Ziel string_view ausgetauscht werden sollen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<string_view >](../standard-library/string-view.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

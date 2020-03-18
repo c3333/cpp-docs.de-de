@@ -1,36 +1,34 @@
 ---
 title: OLE-bezogene Klassen
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.ole
 helpviewer_keywords:
 - ActiveX classes [MFC]
 - OLE classes [MFC]
 - OLE [MFC], classes
 ms.assetid: 2135cf54-1d9d-4e0e-91b4-943b3440effa
-ms.openlocfilehash: 7d58072d133b9348558804b848ecfda4497931e1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dfcc07b3fbd0c5badce8e397f4d52bc7d8d3028c
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62378296"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447604"
 ---
 # <a name="ole-related-classes"></a>OLE-bezogene Klassen
 
-Diese Klassen bieten eine Reihe von anderen Diensten, im Bereich von Ausnahmen in eine Datei ein- und Ausgabe.
+Diese Klassen stellen eine Reihe von verschiedenen Diensten bereit, von Ausnahmen bis hin zu Datei Eingaben und-Ausgaben.
 
 [COleObjectFactory](../mfc/reference/coleobjectfactory-class.md)<br/>
-Zum Erstellen von Elementen, die beim Anfordern von anderen Containern verwendet. Diese Klasse dient als Basisklasse für spezifische Typen von Factorys, einschließlich `COleTemplateServer`.
+Wird zum Erstellen von Elementen verwendet, wenn Sie von anderen Containern angefordert werden. Diese Klasse dient als Basisklasse für spezifischere Arten von Factorys, einschließlich `COleTemplateServer`.
 
-[COleMessageFilter](../mfc/reference/colemessagefilter-class.md)<br/>
-Zum Verwalten von Parallelität mit OLE Lightweight Remote Prozedur aufrufen (LRPC) verwendet.
+[Colemessagefilter](../mfc/reference/colemessagefilter-class.md)<br/>
+Dient zum Verwalten von Parallelität mit OLE-Lightweight-Remote Prozedur aufrufen (Remote Procedure Calls, LRPC).
 
-[COleStreamFile](../mfc/reference/colestreamfile-class.md)<br/>
-Die COM verwendet `IStream` -Schnittstelle zur Bereitstellung `CFile` Zugriff auf Dateien zusammengesetzte. Diese Klasse (abgeleitet von `CFile`) ermöglicht die Serialisierung von MFC-OLE structured Storage verwenden.
+[Colestreamfile](../mfc/reference/colestreamfile-class.md)<br/>
+Verwendet die com-`IStream` Schnittstelle, um `CFile` Zugriff auf Verbund Dateien bereitzustellen. Diese Klasse (abgeleitet von `CFile`) ermöglicht die MFC-Serialisierung die Verwendung von strukturiertem OLE-Speicher.
 
 [CRectTracker](../mfc/reference/crecttracker-class.md)<br/>
-Wird verwendet, um verschieben, Ändern der Größe und Neuorientierung des direktes Elemente zu ermöglichen.
+Wird verwendet, um das Verschieben, Ändern der Größe und die Neuausrichtung von direkten Elementen zuzulassen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

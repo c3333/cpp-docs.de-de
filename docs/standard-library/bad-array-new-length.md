@@ -2,18 +2,18 @@
 title: bad_array_new_length-Klasse
 ms.date: 11/04/2016
 f1_keywords:
-- new/std::bad_alloc
+- new/std::bad_array_new_length
 helpviewer_keywords:
 - bad_alloc class
 ms.assetid: 6429a8e6-5a49-4907-8d56-f4a4ec8131d0
-ms.openlocfilehash: b00042513364ac04b62ac7e1943d912dcb78f212
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: c4f4f58f7b28960bbacf695a675fbe4f20a54192
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68459486"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443707"
 ---
-# <a name="badarraynewlength-class"></a>bad_array_new_length-Klasse
+# <a name="bad_array_new_length-class"></a>bad_array_new_length-Klasse
 
 Die Klasse beschreibt eine Ausnahme, die ausgelöst wurde, um anzugeben, dass eine Zuordnungs Anforderung aufgrund einer Array Größe kleiner als 0 (null) oder größer als der Grenzwert nicht erfolgreich war.
 
@@ -26,15 +26,15 @@ class bad_array_new_length : public bad_alloc {
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der von zurückgegebene `what` Wert ist eine von der Implementierung definierte C-Zeichenfolge. Keine der Memberfunktionen löst irgendeine Ausnahme aus.
+Der von `what` zurückgegebene Wert ist eine von der Implementierung definierte C-Zeichenfolge. Keine der Memberfunktionen löst irgendeine Ausnahme aus.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<new>
+**Header:** \<neue >
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Exception-Klasse](../standard-library/exception-class.md)\
+[Ausnahme Klasse](../standard-library/exception-class.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

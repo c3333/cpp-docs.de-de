@@ -4,24 +4,23 @@ description: In C++geben die Schlüsselwörter "static", "extern" und "thread_lo
 ms.date: 12/11/2019
 f1_keywords:
 - thread_local_cpp
-- extern_cpp
 - static_cpp
 - register_cpp
 helpviewer_keywords:
 - storage classes [C++], basic concepts
 ms.assetid: f10e1c56-6249-4eb6-b08f-09ab1eef1992
-ms.openlocfilehash: ab00a5c64a32dc1dab5fef4bc15b722587bc2d6b
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
-ms.translationtype: HT
+ms.openlocfilehash: 5b30fe7bc6665da9172f093f8ea6a2130cb900b2
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423711"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447322"
 ---
 # <a name="storage-classes"></a>Speicherklassen
 
 Eine *Speicher Klasse* im Kontext von C++ Variablen Deklarationen ist ein Typspezifizierer, der die Lebensdauer, die Verknüpfung und den Speicherort von Objekten steuert. Ein angegebenes Objekt kann nur eine Speicherklasse haben. Variablen, die innerhalb eines Blocks definiert sind, verfügen über automatischen Speicher, sofern Sie nicht anderweitig mithilfe der **extern**, **static**oder **thread_local** Spezifizierer angegeben werden Automatische Objekte und Variablen haben keine Bindung; sie sind für Code außerhalb des Blocks nicht sichtbar. Arbeitsspeicher wird automatisch zugewiesen, wenn die Ausführung in den Block Eintritt und die Zuordnung aufgehoben wird, wenn der Block beendet wird.
 
-**Notizen**
+**Hinweise**
 
 1. Das [änderbare](../cpp/mutable-data-members-cpp.md) -Schlüsselwort kann als Speicherklassenspezifizierer angesehen werden. Es ist jedoch nur in der Memberliste einer Klassendefinition verfügbar.
 
@@ -286,6 +285,6 @@ Zum Programm gibt es mehrere Punkte zu beachten:
 
 - Des Weiteren behalten statische lokale Variablen wie `I3` ihre Werte für die Dauer des Programms bei, werden jedoch zerstört, sobald das Programm beendet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Deklarationen und Definitionen](../cpp/declarations-and-definitions-cpp.md)

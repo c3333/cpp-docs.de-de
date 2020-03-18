@@ -1,8 +1,6 @@
 ---
 title: Die CCmdUI-Klasse
 ms.date: 11/04/2016
-f1_keywords:
-- CCmdUI
 helpviewer_keywords:
 - updating user interface objects [MFC]
 - user interface objects [MFC], updating
@@ -10,21 +8,21 @@ helpviewer_keywords:
 - update handlers [MFC]
 - toolbars [MFC], updating
 ms.assetid: 2f2bae62-8c29-45a4-bbce-490eb01907d5
-ms.openlocfilehash: 8e0af0703924d6fae626d3753b8523efe0c56652
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 105aa7ad6c5cc6a5563dbde8145327a2b3d066a1
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62306300"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79447140"
 ---
 # <a name="the-ccmdui-class"></a>Die CCmdUI-Klasse
 
-Wenn sie einen Update-Befehl an seinen Handler weitergeleitet wird, das Framework übergibt dem Handler für ein Zeiger auf eine `CCmdUI` Objekt (oder auf ein Objekt eine `CCmdUI`-abgeleitete Klasse). Dieses Objekt darstellt, die im Menü oder eine Symbolleisten-Schaltfläche oder ein anderes Benutzeroberflächen-Objekt, das den Befehl generiert. Vom updatehandler Ruft Funktionen des die `CCmdUI` -Struktur durch den Zeiger auf das Objekt für die Benutzeroberfläche zu aktualisieren. Hier ist z. B. ein updatehandler für das Menüelement alle löschen:
+Wenn ein Update Befehl an seinen Handler weitergeleitet wird, übergibt das Framework den Handler einen Zeiger auf ein `CCmdUI` Objekt (oder auf ein Objekt einer `CCmdUI`abgeleiteten Klasse). Dieses Objekt stellt das Menü Element oder die Symbolleisten Schaltfläche oder ein anderes Benutzeroberflächen Objekt dar, das den Befehl generiert hat. Der Update Handler Ruft die Member-Funktionen der `CCmdUI` Struktur über den-Zeiger auf, um das Benutzeroberflächen Objekt zu aktualisieren. Hier ist beispielsweise ein Update Handler für das Menü Element Alle löschen:
 
 [!code-cpp[NVC_MFCDocView#3](../mfc/codesnippet/cpp/the-ccmdui-class_1.cpp)]
 
-Dieser Ereignishandler ruft die `Enable` Memberfunktion ein Objekt mit Zugriff auf das Menüelement. `Enable` Wandelt das Element für die Verwendung verfügbar.
+Dieser Handler Ruft die `Enable` Member-Funktion eines Objekts mit Zugriff auf das Menü Element auf. `Enable` stellt das Element für die Verwendung zur Verfügung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vorgehensweise: Aktualisieren von Benutzeroberflächenobjekten](../mfc/how-to-update-user-interface-objects.md)

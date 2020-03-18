@@ -1,8 +1,6 @@
 ---
 title: Allgemeine Prinzipien für den Klassenentwurf
 ms.date: 11/04/2016
-f1_keywords:
-- vc.classes.mfc
 helpviewer_keywords:
 - designing classes [MFC]
 - MFC, Windows API
@@ -10,43 +8,43 @@ helpviewer_keywords:
 - classes [MFC], MFC class design
 - Windows API [MFC], and MFC
 ms.assetid: e6861ae0-1581-4d9c-9ddf-63f9afcdb913
-ms.openlocfilehash: 4dfa11c73703f5f2d3d17f8278610d32178af679
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 34a173802e3fa43615c05da4ce747592f851228f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62219618"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79441187"
 ---
 # <a name="general-class-design-philosophy"></a>Allgemeine Prinzipien für den Klassenentwurf
 
-Microsoft Windows wurde entwickelt, lange bevor die Programmiersprache C++ Popularität einsetzte. Da Tausende von Anwendungen, die Programmiersprache C Windows-Anwendungsprogrammierschnittstelle (API) verwenden, wird diese Schnittstelle für die nächste Zeit beibehalten. Alle C++-Windows-Benutzeroberfläche muss daher auf der prozeduralen Programmiersprache C-API erstellt werden. Dadurch wird sichergestellt, dass die C++-Anwendungen zusammen mit C-Anwendungen verwendet werden können.
+Microsoft Windows wurde schon lange entwickelt, C++ bevor die Sprache populär wurde. Da tausende von Anwendungen die Programmierschnittstelle für die Windows-Anwendungsprogrammierung (API) von C verwenden, wird diese Schnittstelle für die spätere Zukunft beibehalten. Eine C++ beliebige Windows-Schnittstelle muss daher auf der prozeduralen C-Language-API erstellt werden. Dadurch wird sicher C++ gestellt, dass Anwendungen mit C-Anwendungen koexistieren können.
 
-Die Microsoft Foundation Class-Bibliothek ist eine objektorientierte Schnittstelle auf Windows, die die folgenden Entwurfsziele erfüllt:
+Der Microsoft Foundation Class-Bibliothek ist eine objektorientierte Schnittstelle zu Windows, die die folgenden Entwurfs Ziele erfüllt:
 
-- Deutlich reduziert den Aufwand beim Schreiben einer Anwendung für Windows.
+- Deutliche Reduzierung des Aufwands zum Schreiben einer Anwendung für Windows.
 
-- Die ausführungsgeschwindigkeit ist vergleichbar mit der Programmiersprache C-API.
+- Ausführungsgeschwindigkeit, vergleichbar mit der der C-Programmiersprache API.
 
-- Minimale Größe Aufwand.
+- Minimaler Code Größen Aufwand.
 
-- Die Möglichkeit, alle Windows-C-Funktion nicht direkt aufrufen.
+- Die Möglichkeit, eine beliebige Windows C-Funktion direkt aufzurufen.
 
-- Einfacheren Konvertierung vorhandener C#-Anwendungen in C++.
+- Einfachere Konvertierung vorhandener C-Anwendungen C++in.
 
-- Die Fähigkeit, von der vorhandenen Basis der Programmiersprache C Windows-Programmierung zu nutzen.
+- Die Möglichkeit, von der vorhandenen Basis der Programmiersprache der Programmiersprache C zu nutzen.
 
-- Einfachere Verwendung von der Windows-API mit C++ als und C.
+- Einfachere Verwendung der Windows-API mit C++ als mit C.
 
-- Einfacher zu verwendende, aber leistungsstarken Abstraktionen der komplizierte Features wie z. B. ActiveX-Steuerelemente, datenbankunterstützung, drucken, Symbolleisten und Statusleisten.
+- Es ist einfacher, noch leistungsstarke Abstraktionen komplexer Features wie ActiveX-Steuerelemente, Datenbankunterstützung, Druck, Symbolleisten und Status leisten zu verwenden.
 
-- "True" Windows-API für C++, die effektiv die C++-Sprachfeatures verwendet.
+- Echte Windows-API C++ für, die C++ tatsächlich Sprachfunktionen verwendet.
 
-Weitere Informationen zu den Entwurf der MFC-Bibliothek finden Sie unter:
+Weitere Informationen zum Entwerfen der MFC-Bibliothek finden Sie unter:
 
-- [Das Anwendungsframework](../mfc/application-framework.md)
+- [Das Anwendungs Framework](../mfc/application-framework.md)
 
 - [Beziehung zum C-Sprachen-API](../mfc/relationship-to-the-c-language-api.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Übersicht über die Klasse](../mfc/class-library-overview.md)
+[Klassen Übersicht](../mfc/class-library-overview.md)

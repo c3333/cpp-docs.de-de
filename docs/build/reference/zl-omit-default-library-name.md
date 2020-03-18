@@ -2,7 +2,7 @@
 title: /Zl (Kein Standardbibliotheksname)
 ms.date: 11/04/2016
 f1_keywords:
-- /zi
+- /zl
 - VC.Project.VCCLCompilerTool.OmitDefaultLibName
 helpviewer_keywords:
 - -Zl compiler option [C++]
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - /Zl compiler option [C++]
 - default libraries, omitting names
 ms.assetid: b27d39d0-44d6-498c-84ae-27c1326fee59
-ms.openlocfilehash: 1bcb90dbf071253dc0561845e3bd713dc42d5aef
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: c72377314abf755469075c7a4b431f4b8a64ee7f
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74988557"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79438634"
 ---
 # <a name="zl-omit-default-library-name"></a>/Zl (Kein Standardbibliotheksname)
 
@@ -28,7 +28,7 @@ Lässt den Standard-C-Lauf Zeit Bibliotheksnamen aus der obj-Datei aus. Standard
 /Zl
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Standardbibliothek finden Sie unter [Verwenden der Lauf Zeit Bibliothek](md-mt-ld-use-run-time-library.md).
 
@@ -68,7 +68,7 @@ void Test() {
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.OmitDefaultLibName%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

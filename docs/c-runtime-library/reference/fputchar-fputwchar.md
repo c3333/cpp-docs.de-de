@@ -25,7 +25,6 @@ f1_keywords:
 - _fputwchar
 - fputwchar
 - _fputtchar
-- fputchar
 - _fputchar
 helpviewer_keywords:
 - fputchar function
@@ -36,12 +35,12 @@ helpviewer_keywords:
 - fputtchar function
 - _fputchar function
 ms.assetid: b92ff600-a924-4f2b-b0e7-3097ee31bdff
-ms.openlocfilehash: 39642be871c1c5b5c2deaf35b7c26d19c188b440
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b78c59b937a8854d7a36355173a1ccf4f219d541
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956935"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79442965"
 ---
 # <a name="_fputchar-_fputwchar"></a>_fputchar, _fputwchar
 
@@ -65,11 +64,11 @@ Zu schreibende Zeichen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **_fputchar**gibt der Rückgabewert von **EOF** einen Fehler an. Bei **_fputwchar**gibt der Rückgabewert **WEOF** einen Fehler an. Wenn c **null**ist, generieren diese Funktionen eine Ausnahme wegen eines ungültigen Parameters, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben Sie **EOF** (oder **WEOF**) zurück und legen **errno** auf **EINVAL**fest.
+Jede dieser Funktionen gibt das geschriebene Zeichen zurück. Bei **_fputchar**gibt der Rückgabewert von **EOF** einen Fehler an. Bei **_fputwchar**weist der Rückgabewert **WEOF** auf einen Fehler hin. Wenn c **null**ist, generieren diese Funktionen eine Ausnahme wegen eines ungültigen Parameters, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben Sie **EOF** (oder **WEOF**) zurück und legen **errno** auf **EINVAL**fest.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und verschieben den Indikator entsprechend. **_fputchar** entspricht `fputc( stdout )`. Sie entspricht auch **putchar**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert. Anders als bei **fputc** und **putchar**sind diese Funktionen nicht mit dem ANSI-Standard kompatibel.
 
@@ -79,7 +78,7 @@ Beide Funktionen schreiben das einzelne Zeichen *c* in **stdout** und verschiebe
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_fputtchar**|**_fputchar**|**_fputchar**|**_fputwchar**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
@@ -113,7 +112,7 @@ int main( void )
 This is a test of _fputchar!!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [fgetc, fgetwc](fgetc-fgetwc.md)<br/>

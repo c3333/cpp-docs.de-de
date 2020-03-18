@@ -1,19 +1,17 @@
 ---
 title: Routinezuordnungen
 ms.date: 11/04/2016
-f1_keywords:
-- c.mappings
 helpviewer_keywords:
 - _tWinMain
 - TCHAR.H data types, list of routine mappings
 - generic-text mappings
 ms.assetid: 38f33d3b-0f7b-430d-8a4f-75e27c6f1c42
-ms.openlocfilehash: 60a05b8102df1ecb9bb6f66eda15ff10cb12b32a
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 245a44a6722bdf704a5ce750dd285eb3eac66609
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57746890"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79444861"
 ---
 # <a name="routine-mappings"></a>Routinezuordnungen
 
@@ -262,10 +260,10 @@ Entsprechende Informationen finden Sie unter dem Link über [Zuordnungen für ge
 |`_vtprintf`|`vprintf`|`vprintf`|`vwprintf`|
 |`_vtprintf_s`|`vprintf_s`|`vprintf_s`|`vwprintf_s`|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Allgemeintext-Zuordnungen](../c-runtime-library/generic-text-mappings.md)<br/>
 [Datentypzuordnungen](../c-runtime-library/data-type-mappings.md)<br/>
 [Zuordnungen von Konstanten und globalen Variablen](../c-runtime-library/constant-and-global-variable-mappings.md)<br/>
 [Beispiel für ein Programm mit generischem Text](../c-runtime-library/a-sample-generic-text-program.md)<br/>
-[Using Generic-Text Mappings (Verwenden von Zuordnungen für generischen Text)](../c-runtime-library/using-generic-text-mappings.md)
+[Verwenden von Allgemeintext-Zuordnungen](../c-runtime-library/using-generic-text-mappings.md)

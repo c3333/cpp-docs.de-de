@@ -1,17 +1,15 @@
 ---
 title: Richtungsflag
 ms.date: 11/04/2016
-f1_keywords:
-- c.flags
 helpviewer_keywords:
 - direction flag
 ms.assetid: 0836b4af-dbbb-4ab8-a4b2-156f2e2099e2
-ms.openlocfilehash: ead32fa7f09e9dd98130855ecd87ba3b3d454ef5
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 04e096c6a62f806f4c214745a8401b1730eda3a6
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57740154"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79443383"
 ---
 # <a name="direction-flag"></a>Richtungsflag
 
@@ -21,6 +19,6 @@ Die C-Laufzeitroutinen setzen voraus, dass das Richtungsflag deaktiviert ist. We
 
 Die C-Laufzeitbibliotheksfunktionen wie Zeichenfolgenbearbeitungs- und Pufferbearbeitungsroutinen erwarten, dass das Richtungsflag deaktiviert ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)

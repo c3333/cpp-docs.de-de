@@ -1,28 +1,26 @@
 ---
 title: LIB-Ausgabedateien
 ms.date: 11/04/2016
-f1_keywords:
-- Lib
 helpviewer_keywords:
 - output files, LIB
 ms.assetid: e73d2f9b-a42d-402b-b7e3-3a94bebb317e
-ms.openlocfilehash: d7a6352665f12307bfa54025a32f9f7b84311dac
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8aeb46b0249ddf4155277866f7d8537bbfa98244
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62269699"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79439383"
 ---
 # <a name="lib-output-files"></a>LIB-Ausgabedateien
 
-Die LIB erzeugten Ausgabedateien hängen von der Modus, in dem Programm verwendet wird, wie in der folgenden Tabelle gezeigt.
+Die von lib erstellten Ausgabedateien hängen vom Modus ab, in dem Sie verwendet wird, wie in der folgenden Tabelle dargestellt.
 
-|Modus|Output|
+|Mode|Output|
 |----------|------------|
-|Standard (erstellen oder Ändern einer Bibliothek)|COFF-Bibliothek (.lib)|
-|Extrahiert ein Element mit/Extract|Objektdatei (obj)|
-|Erstellen einen Export und Importbibliothek mit/DEF|Importieren der Bibliothek (.lib) und einer Exportdatei (.exp)|
+|Standard (aufbauen oder Ändern einer Bibliothek)|COFF-Bibliothek (. lib)|
+|Extrahieren eines Members mit/Extract|Objektdatei (obj-Datei)|
+|Entwickeln einer Exportdatei und Importieren einer Bibliothek mit/DEF|Import Bibliothek (. lib) und Exportdatei (. exp)|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über LIB](overview-of-lib.md)
