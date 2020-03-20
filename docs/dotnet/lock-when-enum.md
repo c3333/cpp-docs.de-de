@@ -9,16 +9,16 @@ f1_keywords:
 helpviewer_keywords:
 - lock_when enum
 ms.assetid: 6b87bbe9-63cd-450d-a02e-bb91ffd0dcea
-ms.openlocfilehash: be75ec497dff79d75c22bda3b7d24389db2c9c59
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: af4e4472a33ef3d083f54da74e306562af1867a1
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153234"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544832"
 ---
-# <a name="lockwhen-enum"></a>lock_when-Enumeration
+# <a name="lock_when-enum"></a>lock_when-Enumeration
 
-Gibt an, verzögerte sperren.
+Gibt verzögerte Sperren an.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,13 +30,13 @@ enum lock_when {
 
 ## <a name="remarks"></a>Hinweise
 
-Bei der Übergabe an [lock::lock](../dotnet/lock-lock.md), `lock_later` gibt an, dass die Sperre nicht jetzt ausgeführt werden.
+Bei Übergabe an [Lock:: Lock](../dotnet/lock-lock.md)gibt `lock_later` an, dass die Sperre jetzt nicht ausgeführt werden soll.
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel verwendet eine einzelne Instanz einer Klasse auf mehrere Threads.  Die Klasse verwendet eine Sperre auf sich selbst, um sicherzustellen, dass der Zugriff auf seine internen Daten für jeden Thread konsistent sind.  Thread der hauptanwendung verwendet eine Sperre für dieselbe Instanz der Klasse verwendet, um in regelmäßigen Abständen überprüfen, um festzustellen, ob alle Worker-Threads noch vorhanden sind, und wartet, bis alle Worker-Threads zu beenden, ihre Aufgaben abgeschlossen haben.
+In diesem Beispiel wird eine einzelne Instanz einer-Klasse für mehrere Threads verwendet.  Die-Klasse verwendet eine Sperre für sich selbst, um sicherzustellen, dass der Zugriff auf die internen Daten für jeden Thread konsistent ist.  Der Hauptanwendungs Thread verwendet eine Sperre für dieselbe Instanz der-Klasse, um in regelmäßigen Abständen zu überprüfen, ob noch Arbeitsthreads vorhanden sind, und wartet auf das Beenden, bis alle Arbeitsthreads ihre Aufgaben abgeschlossen haben.
 
-```
+```cpp
 // msl_lock_lock_when.cpp
 // compile with: /clr
 #include <msclr/lock.h>
@@ -122,11 +122,11 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Headerdatei** \<msclr\lock.h >
+**Header Datei** \<msclr\lock.h >
 
-**Namespace** Msclr
+**Namespace** -msclr
 
 ## <a name="see-also"></a>Siehe auch
 

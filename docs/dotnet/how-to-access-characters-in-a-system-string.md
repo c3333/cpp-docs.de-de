@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Zugreifen auf Zeichen in einem System:: String'
+title: 'Gewusst wie: Zugriff auf Zeichen in einem System::String'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -7,26 +7,26 @@ helpviewer_keywords:
 - examples [C++], strings
 - strings [C++], accessing characters
 ms.assetid: cfc89756-aef3-4988-907e-fb236dcb7087
-ms.openlocfilehash: 6b9e30a18ab1d2b8463ccccae0b265bc20904020
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3c44c5e7651bb1c5b4c28654b896cbe64bd5bec7
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62222935"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545342"
 ---
-# <a name="how-to-access-characters-in-a-systemstring"></a>Vorgehensweise: Zugreifen auf Zeichen in einem System:: String
+# <a name="how-to-access-characters-in-a-systemstring"></a>Gewusst wie: Zugriff auf Zeichen in einem System::String
 
-Sie erreichen die Zeichen einer <xref:System.String> -Objekt für Hochleistungs-Aufrufe nicht verwalteten Funktionen, `wchar_t*` Zeichenfolgen. Die Methode wird ein innerer Zeiger auf das erste Zeichen von der <xref:System.String> Objekt. This-Zeiger kann direkt bearbeitet oder angeheftet und übergeben Sie an eine Funktion erwartet eine gewöhnliche `wchar_t` Zeichenfolge.
+Sie können auf Zeichen eines <xref:System.String> Objekts zugreifen, um Hochleistungs Aufrufe von nicht verwalteten Funktionen zu erhalten, die `wchar_t*` Zeichen folgen verwenden. Die-Methode ergibt einen inneren Zeiger auf das erste Zeichen des <xref:System.String> Objekts. Dieser Zeiger kann direkt manipuliert oder fixiert und an eine Funktion übermittelt werden, die eine normale `wchar_t` Zeichenfolge erwartet.
 
 ## <a name="example"></a>Beispiel
 
-`PtrToStringChars` Gibt eine <xref:System.Char>, d.h. ein innerer Zeiger (auch bekannt als eine `byref`). Daher ist es während der Garbagecollection. Sie müssen diesen Zeiger anheften, es sei denn, man es an eine native Funktion übergeben.
+`PtrToStringChars` gibt eine <xref:System.Char>zurück, bei der es sich um einen inneren Zeiger handelt (wird auch als `byref`bezeichnet). Dies unterliegt der Garbage Collection. Sie müssen diesen Zeiger nicht anheften, es sei denn, Sie übergeben ihn an eine native Funktion.
 
-Betrachten Sie folgenden Code.  Anheften von Zertifikaten ist nicht erforderlich, da `ppchar` ein innerer Zeiger ist, und wenn der Garbage Collector die Zeichenfolge das Objekt zeigt verschiebt auf, auch aktualisiert `ppchar`. Ohne eine [Pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md), funktioniert der Code, und haben nicht die potenziellen Leistungseinbußen durch Anheften von verursacht.
+Betrachten Sie folgenden Code.  Das anhechern ist nicht erforderlich, da `ppchar` ein innerer Zeiger ist, und wenn die Garbage Collector die Zeichenfolge verschiebt, auf die Sie verweist, wird auch `ppchar`aktualisiert. Ohne einen [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md)funktioniert der Code und führt nicht zu Leistungseinbußen, die durch anhenung verursacht werden.
 
-Wenn Sie übergeben `ppchar` an eine native Funktion, klicken Sie dann es muss eine feste Zeiger, da der Garbage Collector keine Zeiger auf den nicht verwalteten Stapelrahmen zu aktualisieren.
+Wenn Sie `ppchar` an eine native Funktion übergeben, muss Sie ein angeheftender Zeiger sein. der Garbage Collector kann keine Zeiger auf den nicht verwalteten Stapel Rahmen aktualisieren.
 
-```
+```cpp
 // PtrToStringChars.cpp
 // compile with: /clr
 #include<vcclr.h>
@@ -48,9 +48,9 @@ abcdefg
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt an, in dem Anheften von Zertifikaten benötigt wird.
+In diesem Beispiel wird gezeigt, wo anheften benötigt wird.
 
-```
+```cpp
 // PtrToStringChars_2.cpp
 // compile with: /clr
 #include <string.h>
@@ -77,9 +77,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Ein innerer Zeiger hat alle Eigenschaften der systemeigenen C++-Zeigers. Beispielsweise können Sie es zum Durchlaufen einer verknüpften Datenstruktur und Einfüge-und Löschvorgänge mit nur einem Zeiger:
+Ein innerer Zeiger verfügt über alle Eigenschaften eines systemeigenen C++ Zeigers. Beispielsweise können Sie damit eine verknüpfte Datenstruktur durchlaufen und Einfügungen und Löschungen nur mit einem Zeiger ausführen:
 
-```
+```cpp
 // PtrToStringChars_3.cpp
 // compile with: /clr /LD
 using namespace System;

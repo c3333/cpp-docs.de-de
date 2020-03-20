@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Konvertieren einer Standardzeichenfolge nach System:: String'
+title: 'Gewusst wie: Konvertieren einer Standardzeichenfolge nach System::String'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - string conversion [C++], C++ Standard Library string
 - strings [C++], converting
 ms.assetid: 1fde79a0-9d0b-44e5-981b-e8f2676c199d
-ms.openlocfilehash: e1fca0e8cb614c111af80324793cf8027be333a0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3714cf519bcffc41ce8bfcf646dea11654d22ae1
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387512"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545054"
 ---
-# <a name="how-to-convert-standard-string-to-systemstring"></a>Vorgehensweise: Konvertieren einer Standardzeichenfolge nach System:: String
+# <a name="how-to-convert-standard-string-to-systemstring"></a>Gewusst wie: Konvertieren einer Standardzeichenfolge nach System::String
 
-In diesem Thema wird das Konvertieren einer C++-Standardbibliothek ([\<Zeichenfolge >](../standard-library/string.md)) zu einem <xref:System.String>.
+In diesem Thema wird gezeigt, C++ wie eine Standard Bibliotheks Zeichenfolge ([\<Zeichenfolge >](../standard-library/string.md)) in eine <xref:System.String>konvertiert wird.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // convert_standard_string_to_system_string.cpp
 // compile with: /clr
 #include <string>

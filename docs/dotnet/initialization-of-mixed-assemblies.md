@@ -10,38 +10,38 @@ helpviewer_keywords:
 - custom locales [C++]
 - mixed assemblies [C++], initilizing
 ms.assetid: bfab7d9e-f323-4404-bcb8-712b15f831eb
-ms.openlocfilehash: 1f4ea7f5cfc6e99390c93ba9c2beadc46fce8584
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
+ms.openlocfilehash: 35dd47bd87c278d60fc616dca854bf843acc7c57
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50665009"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544513"
 ---
 # <a name="initialization-of-mixed-assemblies"></a>Initialisierung gemischter Assemblys
 
-Windows-Entwickler müssen immer mit Skepsis Loadersperre sein, bei der Ausführung von Code während der `DllMain`. Es gibt jedoch einige zusätzlichen Überlegungen, die ins Spiel, beim Umgang mit C++ kommen / Clr gemischte Assemblys.
+Windows-Entwickler müssen stets die Loadersperre warnen, wenn Sie während `DllMain`Code ausführen. Beim Umgang mit/CLR-Assemblys mit C++gemischtem Modus müssen jedoch einige zusätzliche Aspekte berücksichtigt werden.
 
-Code in [DllMain](/windows/desktop/Dlls/dllmain) darf nicht auf CLR zugreifen. Dies bedeutet, dass `DllMain` keine verwalteten Funktionen – weder direkt noch indirekt – aufrufen sollte; in `DllMain`sollte kein verwalteter Code deklariert oder implementiert werden; und in `DllMain`sollte weder eine Garbagecollection noch automatisches Laden der Bibliothek stattfinden.
+Der Code in [DllMain](/windows/win32/Dlls/dllmain) darf nicht auf die .NET Common Language Runtime (CLR) zugreifen. Dies bedeutet, dass `DllMain` weder direkt noch indirekt verwaltete Funktionen aufrufen sollte. in `DllMain`muss kein verwalteter Code deklariert oder implementiert werden. in `DllMain`sollte weder Garbage Collection noch das automatische Laden der Bibliothek stattfinden.
 
 ## <a name="causes-of-loader-lock"></a>Ursachen für die Loadersperre
 
-Mit der Einführung der .NET-Plattform stehen zwei verschiedene Mechanismen für das Laden eines Ausführungsmoduls (EXE oder DLL) zur Verfügung: einer für Windows, der für nicht verwaltete Module verwendet wird, und einer für die .NET-Common Language Runtime (CLR), der .NET-Assemblys lädt. Das Problem beim Laden gemischter DLLs konzentriert sich auf den Loader des Microsoft Windows-Betriebssystems.
+Mit der Einführung der .NET-Plattform gibt es zwei unterschiedliche Mechanismen für das Laden eines Ausführungs Moduls (exe oder dll): einen für Windows, der für nicht verwaltete Module verwendet wird, und einen für die CLR, der .NET-Assemblys lädt. Das Problem beim Laden gemischter DLLs konzentriert sich auf den Loader des Microsoft Windows-Betriebssystems.
 
 Wenn eine Assembly, die nur .NET-Konstrukte enthält, in einen Prozess geladen wird, kann der CLR-Loader alle notwendigen Lade- und Initialisierungsaufgaben selbst ausführen. Jedoch muss bei gemischten Assemblys auch das Windows-Ladeprogramm verwendet werden, da sie nativen Code und native Daten enthalten können.
 
-Das Windows-Ladeprogramm gewährleistet, dass kein Code auf Code oder Daten in dieser DLL zugreifen kann, bevor sie initialisiert ist, und dass kein Code die DLL redundant laden kann, während sie teilweise initialisiert ist. Zu diesem Zweck verwendet das Windows-Ladeprogramm einen (oft als „Ladeprogrammsperre“ bezeichneten) prozessglobalen kritischen Abschnitt , der unsicheren Zugriff während der Initialisierung des Moduls verhindert. Daher ist der Ladevorgang für viele klassische Deadlockszenarien anfällig. Bei gemischten Assemblys erhöhen die folgenden zwei Szenarien das Deadlockrisiko:
+Das Windows-Lade Modul stellt sicher, dass kein Code auf Code oder Daten in dieser DLL zugreifen kann, bevor Sie initialisiert wurde, und dass kein Code die dll redundant laden kann, während Sie teilweise initialisiert ist. Zu diesem Zweck verwendet das Windows-Lade Modul einen Prozess-globalen kritischen Abschnitt (häufig als "Loadersperre" bezeichnet), der den unsicheren Zugriff während der Initialisierung des Moduls verhindert. Daher ist der Ladevorgang für viele klassische Deadlockszenarien anfällig. Bei gemischten Assemblys erhöhen die folgenden zwei Szenarien das Deadlockrisiko:
 
-- Erstens kann ein Deadlock auftreten, wenn ein Benutzer versucht, in die Microsoft Intermediate Language (MSIL) kompilierte Funktionen auszuführen, wenn die Loadersperre aktiviert ist (z. B. aus `DllMain` oder in statischen Initialisierern). Nehmen wir den Fall an, dass die MSIL-Funktion auf einen Typ in einer Assembly verweist, die nicht geladen wurde. Die CLR versucht, diese Assembly automatisch zu laden, was erfordern kann, dass das Windows-Ladeprogramm von der Loadersperre blockiert wird. Da die Loadersperre bereits von Code aktiviert ist, der früher in der Aufrufsequenz vorkommt, tritt ein Deadlock auf. Die MSIL-Ausführung unter der Loadersperre garantiert jedoch nicht, dass ein Deadlock auftritt, sodass dieses Szenario schwierig zu diagnostizieren und reparieren ist. In einigen Fällen, wo z. B. die DLL des referenzierten Typs keine nativen Konstrukte enthält, und alle ihre Abhängigkeiten keine nativen Konstrukte enthalten, ist das Windows-Ladeprogramm nicht erforderlich, um die .NET-Assembly des referenzierten Typs zu laden. Darüber hinaus wurden die erforderliche Assembly oder ihre gemischten nativen/.NET-Abhängigkeiten möglicherweise bereits durch anderen Code geladen. Folglich kann die Vorhersage eines Deadlocks schwierig sein und abhängig von der Konfiguration des Zielcomputers variieren.
+- Erstens: Wenn Benutzer versuchen, in Microsoft Intermediate Language (MSIL) kompilierte Funktionen auszuführen, wenn die Loadersperre aufrechterhalten wird (z. b. von `DllMain` oder statischen Initialisierern), kann dies zu einem Deadlock führen. Beachten Sie den Fall, in dem die MSIL-Funktion auf einen Typ in einer Assembly verweist, die nicht geladen wurde. Die CLR versucht, diese Assembly automatisch zu laden, was erfordern kann, dass das Windows-Ladeprogramm von der Loadersperre blockiert wird. Ein Deadlock tritt auf, da die Loadersperre bereits von Code an früherer Stelle in der-Rückruf Sequenz gespeichert wird. Das Ausführen von MSIL unter der Loadersperre garantiert jedoch nicht, dass ein Deadlock auftritt, sodass dieses Szenario schwierig zu diagnostizieren und zu beheben ist. In einigen Fällen, z. b. wenn die DLL des referenzierten Typs keine nativen Konstrukte enthält und alle Abhängigkeiten keine nativen Konstrukte enthalten, ist es nicht erforderlich, dass das Windows-Lade Modul die .NET-Assembly des referenzierten Typs lädt. Darüber hinaus wurden die erforderliche Assembly oder ihre gemischten nativen/.NET-Abhängigkeiten möglicherweise bereits durch anderen Code geladen. Folglich kann die Vorhersage eines Deadlocks schwierig sein und abhängig von der Konfiguration des Zielcomputers variieren.
 
-- Zweitens ging die CLR beim Laden von DLLs in den Versionen 1.0 und 1.1 von .NET Framework davon aus, dass die Loadersperre nicht aktiviert wurde, und führte verschiedene Aktionen aus, die unter der Loadersperre ungültig sind. Vorauszusetzen, dass die Loadersperre nicht aktiviert ist, gilt bei reinen .NET-DLLs, aber da gemischte DLLs native Initialisierungsroutinen ausführen, benötigen sie das native Windows-Ladeprogramm und somit die Loadersperre. Also bestand bei den Versionen 1.0 und 1.1 von .NET Framework auch dann die geringe Möglichkeit eines nichtdeterministischen Deadlocks, wenn der Entwickler nicht versuchte, MSIL-Funktionen während der DLL-Initialisierung auszuführen.
+- Zweitens hat die CLR beim Laden von DLLs in den Versionen 1,0 und 1,1 der .NET Framework angenommen, dass die Loadersperre nicht aufrechterhalten wurde, und hat mehrere Aktionen ausgeführt, die unter der Loadersperre ungültig sind. Vorausgesetzt, dass die Loadersperre nicht aufrechterhalten wird, ist eine gültige Annahme für reine .NET-DLLs, aber da gemischte DLLs Native Initialisierungs Routinen ausführen, benötigen Sie das Native Windows-Lade Modul und somit die Loadersperre. Also bestand bei den Versionen 1.0 und 1.1 von .NET Framework auch dann die geringe Möglichkeit eines nichtdeterministischen Deadlocks, wenn der Entwickler nicht versuchte, MSIL-Funktionen während der DLL-Initialisierung auszuführen.
 
 Der gesamte Nichtdeterminismus wurde aus dem Prozess des Ladens gemischter DLLs entfernt. Dies wurde mit diesen Änderungen erreicht:
 
 - Die CLR geht beim Laden von gemischten DLLs nicht mehr von falschen Annahmen aus.
 
-- Nicht verwaltete und verwaltete Initialisierung erfolgen in zwei separaten und unterschiedlichen Stufen. Nicht verwaltete Initialisierung wird zuerst ausgeführt (über DllMain), und die verwaltete Initialisierung wird danach durch ein. NET-unterstütztes Konstrukt mit einem *.cctor*-Namen ausgeführt. Letzteres ist für den Benutzer vollständig transparent, wenn **/Zl** oder **/NODEFAULTLIB** verwendet wird. Weitere Informationen finden Sie unter[/NODEFAULTLIB (Ignore Libraries)](../build/reference/nodefaultlib-ignore-libraries.md) und [/Zl (Omit Default Library Name)](../build/reference/zl-omit-default-library-name.md) .
+- Nicht verwaltete und verwaltete Initialisierung erfolgen in zwei separaten und unterschiedlichen Stufen. Die nicht verwaltete Initialisierung wird zuerst ausgeführt (über DllMain), und die verwaltete Initialisierung erfolgt anschließend über eine. NET-unterstütztes `.cctor` Konstrukt. Letzteres ist für den Benutzer vollständig transparent, wenn **/Zl** oder **/NODEFAULTLIB** verwendet wird. Weitere Informationen finden Sie unter[/NODEFAULTLIB (Ignore Libraries)](../build/reference/nodefaultlib-ignore-libraries.md) und [/Zl (Omit Default Library Name)](../build/reference/zl-omit-default-library-name.md) .
 
-Die Loadersperre kann zwar immer noch auftreten, jetzt aber reproduzierbar, und wird erkannt. Wenn `DllMain` enthält MSIL-Anweisungen, generiert der Compiler die Warnung [Compilerwarnung (Stufe 1) C4747](../error-messages/compiler-warnings/compiler-warning-level-1-c4747.md). Darüber hinaus versucht die CRT oder die CLR, Versuche zu erkennen und zu melden, die MSIL unter der Loadersperre auszuführen. CRT-Erkennung führt zum Laufzeitdiagnose-C-Laufzeitfehler R6033.
+Die Loadersperre kann zwar immer noch auftreten, jetzt aber reproduzierbar, und wird erkannt. Wenn `DllMain` MSIL-Anweisungen enthält, generiert der Compiler die Warnung [Compilerwarnung (Stufe 1) C4747](../error-messages/compiler-warnings/compiler-warning-level-1-c4747.md). Darüber hinaus versucht die CRT oder die CLR, Versuche zu erkennen und zu melden, die MSIL unter der Loadersperre auszuführen. CRT-Erkennung führt zum Laufzeitdiagnose-C-Laufzeitfehler R6033.
 
 Im weiteren Verlauf dieses Dokuments werden die verbleibenden Szenarien, für die MSIL unter der Loadersperre ausgeführt werden kann, Lösungen für das Problem unter jedem dieser Szenarien und Debugverfahren beschrieben.
 
@@ -51,7 +51,7 @@ Es gibt mehrere Situationen, in denen Benutzercode MSIL unter der Loadersperre a
 
 ### <a name="dllmain"></a>DllMain
 
-Die `DllMain` -Funktion ist ein benutzerdefinierter Einstiegspunkt für eine DLL. Wenn vom Benutzer nicht anders angegeben, wird `DllMain` jedes Mal aufgerufen, wenn ein Prozess oder Thread der enthaltenden DLL angefügt oder davon getrennt wird. Da dieser Aufruf auftreten kann, während die Loadersperre aktiv ist, sollte keine benutzerdefinierte `DllMain` -Funktion in MSIL kompiliert werden. Darüber hinaus kann keine Funktion in der Aufrufstruktur, die in `DllMain` wurzelt, in MSIL kompiliert werden. Um hier Probleme zu lösen, sollte der Codeblock, der `DllMain` definiert, mit „#pragma“ `unmanaged`geändert werden. Das gleiche sollte für jede Funktion getan werden, die `DllMain` aufruft.
+Die `DllMain`-Funktion ist ein benutzerdefinierter Einstiegspunkt für eine DLL. Wenn vom Benutzer nicht anders angegeben, wird `DllMain` jedes Mal aufgerufen, wenn ein Prozess oder Thread der enthaltenden DLL angefügt oder davon getrennt wird. Da dieser Aufruf auftreten kann, während die Loadersperre aktiv ist, sollte keine benutzerdefinierte `DllMain` -Funktion in MSIL kompiliert werden. Darüber hinaus kann keine Funktion in der Aufrufstruktur, die in `DllMain` wurzelt, in MSIL kompiliert werden. Um hier Probleme zu lösen, sollte der Codeblock, der `DllMain` definiert, mit „#pragma“ `unmanaged`geändert werden. Das gleiche sollte für jede Funktion getan werden, die `DllMain` aufruft.
 
 In Fällen, in denen diese Funktionen eine Funktion aufrufen müssen, die eine MSIL-Implementierung für andere aufrufende Kontexte erfordert, kann eine Duplizierungsstrategie verwendet werden, wo .NET und eine native Version der gleichen Funktion erstellt werden.
 
@@ -59,13 +59,13 @@ Alternativ kann, wenn `DllMain` nicht erforderlich ist bzw. nicht unter der Load
 
 Wenn DllMain versucht, MSIL direkt auszuführen, führt dies zu [Compiler Warning (level 1) C4747](../error-messages/compiler-warnings/compiler-warning-level-1-c4747.md) . Der Compiler kann jedoch keine Fälle erkennen, in denen DllMain eine Funktion in einem anderen Modul aufruft, das wiederum versucht, MSIL auszuführen.
 
-Weitere Informationen zu diesem Szenario finden Sie unter „Diagnosehindernisse“.
+Weitere Informationen zu diesem Szenario finden Sie unter [Hindernisse bei der Diagnose](#impediments-to-diagnosis).
 
 ### <a name="initializing-static-objects"></a>Initialisieren von statischen Objekten
 
-Initialisieren von statischen Objekten kann zu Deadlocks führen, wenn ein dynamischer Initialisierer erforderlich ist. In einfachen Fällen, wenn z. B. einer statischen Variablen einfach ein zum Zeitpunkt der Kompilierung bekannter Wert zugewiesen wird, ist keine dynamische Initialisierung erforderlich, sodass kein Deadlockrisiko besteht. Allerdings erfordern alle statischen Variablen, die durch Funktionsaufrufe, Konstruktoraufrufe oder Ausdrücke initialisiert werden, die zur Kompilierzeit nicht ausgewertet werden können, während der Initialisierung des Moduls auszuführenden Code.
+Initialisieren von statischen Objekten kann zu Deadlocks führen, wenn ein dynamischer Initialisierer erforderlich ist. In einfachen Fällen, z. b. Wenn eine statische Variable einem Wert zugewiesen wird, der zum Zeitpunkt der Kompilierung bekannt ist, ist keine dynamische Initialisierung erforderlich, sodass kein Deadlockrisiko besteht. Allerdings erfordern alle statischen Variablen, die durch Funktionsaufrufe, Konstruktoraufrufe oder Ausdrücke initialisiert werden, die zur Kompilierzeit nicht ausgewertet werden können, während der Initialisierung des Moduls auszuführenden Code.
 
-Der folgende Code zeigt Beispiele für statische Initialisierer, die dynamische Initialisierung erfordern: ein Funktionsaufruf, eine Objektkonstruktion und eine Initialisierung eines Zeigers. (Diese Beispiele sind nicht statisch, aber wir gehen davon aus, dass sie im globalen Gültigkeitsbereich definiert werden, was die gleiche Auswirkung hat.)
+Der folgende Code zeigt Beispiele für statische Initialisierer, die dynamische Initialisierung erfordern: ein Funktionsaufruf, eine Objektkonstruktion und eine Initialisierung eines Zeigers. (Diese Beispiele sind nicht statisch, sondern werden im globalen Gültigkeitsbereich als definiert angenommen, der die gleiche Auswirkung hat.)
 
 ```cpp
 // dynamic initializer function generated
@@ -74,7 +74,7 @@ CObject o(arg1, arg2);
 CObject* op = new CObject(arg1, arg2);
 ```
 
-Das Deadlockrisiko hängt davon ab, ob das enthaltende Modul mit **/clr** kompiliert, und ob MSIL ausgeführt wird. Insbesondere wenn die statische Variable ohne **/clr** kompiliert wird (oder sich in einem #pragma- `unmanaged` -Block befindet), und der dynamische Initialisierer erforderlich ist, um ihre Ergebnisse der Ausführung der MSIL-Anweisungen zu initialisieren, kann ein Deadlock auftreten. Dies liegt daran, dass bei Modulen, die ohne **/clr**kompiliert werden, die Initialisierung statischer Variablen von DllMain durchgeführt wird. Im Gegensatz dazu werden mit **/clr** kompilierte statische Variablen nach Abschluss der nicht verwalteten Initialisierungsphase, und nachdem die Loadersperre aufgehoben wurde, durch „.cctor“ initialisiert.
+Das Deadlockrisiko hängt davon ab, ob das enthaltende Modul mit **/clr** kompiliert, und ob MSIL ausgeführt wird. Insbesondere wenn die statische Variable ohne **/clr** kompiliert wird (oder sich in einem #pragma- `unmanaged` -Block befindet), und der dynamische Initialisierer erforderlich ist, um ihre Ergebnisse der Ausführung der MSIL-Anweisungen zu initialisieren, kann ein Deadlock auftreten. Dies liegt daran, dass bei Modulen, die ohne **/CLR**kompiliert werden, die Initialisierung statischer Variablen von DllMain durchgeführt wird. Im Gegensatz dazu werden statische Variablen, die mit **/CLR** kompiliert werden, vom `.cctor`initialisiert, nachdem die nicht verwaltete Initialisierungsphase abgeschlossen und die Loadersperre freigegeben wurde.
 
 Es gibt eine Reihe von Lösungen zu einem Deadlock, das durch die dynamische Initialisierung von statischen Variablen verursacht wird (etwa nach erforderlichem Zeitaufwand zum Beheben des Problems angeordnet):
 
@@ -86,19 +86,19 @@ Es gibt eine Reihe von Lösungen zu einem Deadlock, das durch die dynamische Ini
 
 ### <a name="user-supplied-functions-affecting-startup"></a>Benutzerdefinierte Funktionen, die den Start beeinflussen
 
-Es gibt mehrere benutzerdefinierte Funktionen, von denen Bibliotheken zur Initialisierung beim Start abhängig sind. Beispielsweise, wenn Global in C++ wie z. B. Überladen der `new` und `delete` Operatoren, die vom Benutzer bereitgestellten Versionen überall verwendet, einschließlich der in der C++-Standardbibliothek-Initialisierung und Beschädigung. Daher werden C++-Standardbibliothek und vom Benutzer bereitgestellte statische Initialisierer alle vom Benutzer bereitgestellten Versionen dieser Operatoren aufrufen.
+Es gibt mehrere benutzerdefinierte Funktionen, von denen Bibliotheken zur Initialisierung beim Start abhängig sind. Beispielsweise werden beim globalen Überladen von Operatoren in C++ , wie z. b. den `new`-und `delete`-Operatoren, die vom C++ Benutzer bereitgestellten Versionen überall verwendet, einschließlich der Initialisierung und Zerstörung der Standard Bibliothek. Folglich werden von der C++ Standard Bibliothek und vom Benutzer bereitgestellte statische Initialisierer alle vom Benutzer bereitgestellten Versionen dieser Operatoren aufrufen.
 
-Wenn die vom Benutzer bereitgestellten Versionen in MSIL kompiliert werden, versuchen diese Initialisierer, MSIL-Anweisungen ausführen, während die Loadersperre aktiviert ist. Ein vom Benutzer bereitgestelltes `malloc` hat die gleichen folgen. Um dieses Problem zu lösen, müssen alle diese Überladungen oder benutzerdefinierten Definitionen als nativer Code mit der #pragma- `unmanaged` -Richtlinie implementiert werden.
+Wenn die vom Benutzer bereitgestellten Versionen in MSIL kompiliert werden, versuchen diese Initialisierer, MSIL-Anweisungen ausführen, während die Loadersperre aktiviert ist. Ein vom Benutzer bereitgestellter `malloc` hat die gleichen folgen. Um dieses Problem zu lösen, müssen alle diese Überladungen oder benutzerdefinierten Definitionen als nativer Code mit der #pragma- `unmanaged` -Richtlinie implementiert werden.
 
-Weitere Informationen zu diesem Szenario finden Sie unter „Diagnosehindernisse“.
+Weitere Informationen zu diesem Szenario finden Sie unter [Hindernisse bei der Diagnose](#impediments-to-diagnosis).
 
 ### <a name="custom-locales"></a>Benutzerdefinierte Gebietsschemas
 
-Wenn der Benutzer ein benutzerdefiniertes globales Gebietsschema bereitstellt, wird dieses Gebietsschema zum Initialisieren aller zukünftigen E/A-Ströme, einschließlich der statisch initialisierten, verwendet. Wenn dieses globale Gebietsschemaobjekt in MSIL kompiliert wird, können in MSIL kompilierte Gebietsschemaobjekt-Memberfunktionen aufgerufen werden, während die Loadersperre aktiviert ist.
+Wenn der Benutzer ein benutzerdefiniertes globales Gebiets Schema bereitstellt, wird dieses Gebiets Schema zum Initialisieren aller zukünftigen e/a-Streams verwendet, einschließlich Datenströme, die statisch initialisiert werden. Wenn dieses globale Gebietsschemaobjekt in MSIL kompiliert wird, können in MSIL kompilierte Gebietsschemaobjekt-Memberfunktionen aufgerufen werden, während die Loadersperre aktiviert ist.
 
 Es gibt drei Optionen zur Lösung dieses Problems:
 
-Die Quelldateien, die alle globalen E/A-Stromdefinitionen enthalten, können mit der Option **/clr** kompiliert werden. Dies verhindert, dass ihre statischen Initialisierer unter der Loadersperre ausgeführt werden.
+Die Quelldateien, die alle globalen E/A-Stromdefinitionen enthalten, können mit der Option **/clr** kompiliert werden. Dadurch wird verhindert, dass Ihre statischen Initialisierer unter der Loadersperre ausgeführt werden.
 
 Die Funktionsdefinitionen des benutzerdefinierten Gebietsschemas können mit der #pragma- `unmanaged` -Richtlinie in nativen Code kompiliert werden.
 
@@ -112,13 +112,13 @@ In einigen Fällen ist es schwierig, die Quelle von Deadlocks zu erkennen. In de
 
 In bestimmten Fällen können Funktionsimplementierungen in Headerdateien die Diagnose erschweren. Inlinefunktionen und Vorlagencode erfordern, dass Funktionen in einer Headerdatei angegeben werden.  Die Programmiersprache C++ gibt die One Definition Rule (Eine-Definition-Regel) an, die erzwingt, dass alle Implementierungen von Funktionen gleichen Namens semantisch gleichwertig sind. In der Folge muss der C++-Linker beim Zusammenführen von Objektdateien, die doppelte Implementierungen einer bestimmten Funktion aufweisen, nichts Spezielles berücksichtigen.
 
-Vor Visual Studio 2005 wählt der Linker einfach die größte dieser semantisch äquivalenten Definitionen, um weiterleitungsdeklarationen und Szenarien abzudecken, wenn für unterschiedliche Quelldateien verschiedene Optimierungsoptionen verwendet werden. Daraus erwächst ein Problem für gemischte native/.NET-DLLs.
+Vor Visual Studio 2005 wählt der Linker einfach die größte dieser semantisch äquivalenten Definitionen aus, um vorwärts Deklarationen zu unterstützen, und Szenarios, in denen verschiedene Optimierungs Optionen für verschiedene Quelldateien verwendet werden. Es wird ein Problem für gemischte Native/. NET-DLLs erstellt.
 
-Da der gleiche Header möglicherweise enthalten sowohl durch C++-Dateien mit der **"/ CLR"** aktiviert und deaktiviert oder ein #include umhüllt #pragma `unmanaged` blockieren, es ist möglich, sowohl MSIL als auch native Versionen von Funktionen, die bereitstellen in Headern Implementierungen. Die Semantik von MSIL- und nativen Implementierungen unterscheidet sich in Bezug auf die Initialisierung unter der Loadersperre, was effektiv die One Definition Rule verletzt. Wenn also der Linker die größte Implementierung wählt, könnte er selbst dann die MSIL-Version einer Funktion wählen, wenn sie explizit an anderer Stelle mit der nicht verwalteten #pragma-Direktive in nativen Code kompiliert wäre. Um sicherzustellen, dass eine MSIL-Version einer Vorlage oder Inlinefunktion niemals unter der Loadersperre aufgerufen wird, muss jede Definition einer jeden solchen Funktion, die unter der Loadersperre aufgerufen wird, mit der #pragma- `unmanaged` -Richtlinie geändert werden. Wenn die Headerdatei von einem Drittanbieter stammt, erreichen Sie dies am einfachsten, indem die nicht verwaltete #pragma-Direktive mit „Push and Pop“ die #include-Direktive für die problematische Headerdatei umgeht. (Finden Sie unter [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) ein Beispiel.) Allerdings funktioniert diese Strategie nicht bei Headern, die anderen Code enthalten, der direkt .NET-APIs aufrufen muss.
+Da derselbe Header sowohl von Dateien mit aktiviertem C++ /CLR als auch von aktiviertem **/clr** eingeschlossen werden kann, oder wenn ein #include in einen `#pragma unmanaged`-Block eingebunden werden kann, ist es möglich, sowohl MSIL-als auch native Versionen von Funktionen zu haben, die Implementierungen in Headern bereitstellen. Die Semantik von MSIL- und nativen Implementierungen unterscheidet sich in Bezug auf die Initialisierung unter der Loadersperre, was effektiv die One Definition Rule verletzt. Wenn also der Linker die größte Implementierung wählt, könnte er selbst dann die MSIL-Version einer Funktion wählen, wenn sie explizit an anderer Stelle mit der nicht verwalteten #pragma-Direktive in nativen Code kompiliert wäre. Um sicherzustellen, dass eine MSIL-Version einer Vorlage oder Inline Funktion niemals unter der Loadersperre aufgerufen wird, muss jede Definition jeder solchen Funktion, die unter der Loadersperre aufgerufen wird, mit der `#pragma unmanaged`-Direktive geändert werden. Wenn die Header Datei von einem Drittanbieter abgeleitet ist, ist die einfachste Möglichkeit, diese Änderung vorzunehmen, die `#pragma unmanaged`-Direktive per Push und Pop an die #include-Direktive für die problematische Header Datei zu senden. (Ein Beispiel finden Sie [unter Managed, nicht verwaltet](../preprocessor/managed-unmanaged.md) .) Diese Strategie funktioniert jedoch nicht bei Headern, die anderen Code enthalten, der .NET-APIs direkt aufruft.
 
-Zur Erleichterung für Benutzer, die sich mit Loadersperren auseinandersetzen müssen, wählt der Linker die native Implementierung über die verwaltete Direktive, wenn er mit beiden konfrontiert wird. So werden die oben genannten Probleme vermieden. Aufgrund ungelöster Probleme mit dem Compiler gibt es jedoch zwei Ausnahmen von dieser Regel in dieser Version:
+Zur Erleichterung für Benutzer, die sich mit Loadersperren auseinandersetzen müssen, wählt der Linker die native Implementierung über die verwaltete Direktive, wenn er mit beiden konfrontiert wird. Mit dieser Standardeinstellung werden die oben genannten Probleme vermieden. Aufgrund ungelöster Probleme mit dem Compiler gibt es jedoch zwei Ausnahmen von dieser Regel in dieser Version:
 
-- Der Aufruf einer Inlinefunktion erfolgt über einen globalen statischen Funktionszeiger. Dieses Szenario ist besonders bemerkenswert, da virtuelle Funktionen über globale Funktionszeiger aufgerufen werden. Ein auf ein Objekt angewendeter
+- Der Aufrufe einer Inline Funktion erfolgt über einen globalen statischen Funktionszeiger. Dieses Szenario ist bemerkenswert, da virtuelle Funktionen über globale Funktionszeiger aufgerufen werden. Beispiel:
 
 ```cpp
 #include "definesmyObject.h"
@@ -144,43 +144,43 @@ Alle Diagnosen von Loadersperrenproblemen sollten mit Debugbuilds erfolgen. Rele
 
 ## <a name="how-to-debug-loader-lock-issues"></a>Debuggen von Problemen mit Loadersperren
 
-Die Diagnose, die die CLR beim Aufruf einer MSIL-Funktion generiert, bewirkt, dass die CLR die Ausführung unterbricht. Dies führt wiederum dazu, dass der Visual C++-Debugger im gemischten Modus ebenfalls unterbrochen wird, wenn er die zu debuggenden Komponenten ausführt. Beim Anfügen an den Prozess ist das Abrufen einer verwalteten Aufrufliste für die zu debuggende Komponente mit dem gemischten Debugger jedoch nicht möglich.
+Die Diagnose, die die CLR beim Aufruf einer MSIL-Funktion generiert, bewirkt, dass die CLR die Ausführung unterbricht. Dies bewirkt wiederum, dass der visuelle C++ Debugger im gemischten Modus ebenfalls angehalten wird, wenn die zu debuggende Komponente ausgeführt wird. Beim Anfügen an den Prozess ist es jedoch nicht möglich, eine verwaltete Aufruf Liste für die zu debuggende Komponente mit dem gemischten Debugger zu erhalten.
 
 Um die bestimmte MSIL-Funktion zu identifizieren, die unter der Loadersperre aufgerufen wurde, sollten Entwickler die folgenden Schritte ausführen:
 
 1. Stellen Sie sicher, dass für „mscoree.dll“ und „mscorwks.dll“ Symbole verfügbar sind.
 
-   Dazu gibt es zwei Möglichkeiten. Erstens können die PDBs für „mscoree.dll“ und „mscorwks.dll“ dem Symbolsuchpfad hinzugefügt werden. Öffnen Sie dazu das Dialogfeld für den Symbolsuchpfad. (Aus der **Tools** Menü wählen **Optionen**. Im linken Bereich die **Optionen** öffnen Sie im Dialogfeld die **Debuggen** Knoten, und wählen Sie **Symbole**.) Fügen Sie den Pfad zu den PDB-Dateien „mscoree.dll“ und „mscorwks.dll“ der Suchliste hinzu. Diese PDB-Dateien werden in den %VSINSTALLDIR%\SDK\v2.0\symbols installiert. Klicken Sie auf **OK**.
+   Sie können die Symbole auf zwei Arten verfügbar machen. Erstens können die PDBs für „mscoree.dll“ und „mscorwks.dll“ dem Symbolsuchpfad hinzugefügt werden. Öffnen Sie das Dialogfeld Symbol Suchpfad Optionen, um Sie hinzuzufügen. (Wählen Sie **im Menü** Extras die **Option Optionen**aus. Öffnen Sie im linken Bereich des Dialog Felds **Optionen** den Knoten **Debuggen** , und wählen Sie **Symbole**aus.) Fügen Sie den Pfad zu den PDB-Dateien "mscoree. dll" und "mscorwert. dll" der Suchliste hinzu. Diese PDB-Dateien werden in den %VSINSTALLDIR%\SDK\v2.0\symbols installiert. Klicken Sie auf **OK**.
 
-   Zweitens können die PDBs für „mscoree.dll“ und „mscorwks.dll“ vom Microsoft-Symbolserver heruntergeladen werden. Öffnen Sie zum Konfigurieren des Symbolservers das Dialogfeld für die Symbolsuchpfad-Optionen. (Aus der **Tools** Menü wählen **Optionen**. Im linken Bereich die **Optionen** öffnen Sie im Dialogfeld die **Debuggen** Knoten, und wählen Sie **Symbole**.) Fügen Sie den folgenden Suchpfad der Suchliste: http://msdl.microsoft.com/download/symbols. Fügen Sie dem Symbolservercache-Textfeld ein Symbolcacheverzeichnis hinzu. Klicken Sie auf **OK**.
+   Zweitens können die PDBs für „mscoree.dll“ und „mscorwks.dll“ vom Microsoft-Symbolserver heruntergeladen werden. Öffnen Sie zum Konfigurieren des Symbolservers das Dialogfeld für die Symbolsuchpfad-Optionen. (Wählen Sie **im Menü** Extras die **Option Optionen**aus. Öffnen Sie im linken Bereich des Dialog Felds **Optionen** den Knoten **Debuggen** , und wählen Sie **Symbole**aus.) Fügen Sie diesen Suchpfad der Suchliste hinzu: `https://msdl.microsoft.com/download/symbols`. Fügen Sie dem Symbolservercache-Textfeld ein Symbolcacheverzeichnis hinzu. Klicken Sie auf **OK**.
 
 1. Legen Sie den Debugmodus auf nur nativ fest.
 
-   Zu diesem Zweck öffnen Sie die **Eigenschaften** Raster für das Startprojekt in der Projektmappe. Wählen Sie **Konfigurationseigenschaften** > **Debuggen**. Legen Sie die **Debuggertyp** zu **nur nativ**.
+   Öffnen Sie das **Eigenschaften** Raster für das Startprojekt in der Projekt Mappe. Wählen Sie **Konfigurations Eigenschaften** > **Debuggen**aus. Legen Sie den **Debuggertyp** auf **nur native**fest.
 
 1. Starten Sie den Debugger (F5).
 
-1. Wenn die **"/ CLR"** -Diagnose generiert wurde, wählen Sie **wiederholen** und wählen Sie dann **unterbrechen**.
+1. Wenn die **/CLR** -Diagnose generiert wurde, wählen Sie **wiederholen** aus, und wählen Sie dann unter **brechen**aus.
 
-1. Öffnen Sie das Fenster „Aufrufliste“. (Wählen Sie auf der Menüleiste **Debuggen** > **Windows** > **Aufrufliste**.) Die auslösende `DllMain` oder statischer Initialisierer wird mit einem grünen Pfeil gekennzeichnet. Wenn die auslösende Funktion nicht erkannt wird, müssen die folgenden Schritte ausgeführt werden, um sie zu finden.
+1. Öffnen Sie das Fenster „Aufrufliste“. (Wählen Sie in der Menüleiste **Debuggen** > **Windows** > - **Aufrufstapel**aus.) Die problematische `DllMain` oder der statische Initialisierer wird mit einem grünen Pfeil gekennzeichnet. Wenn die auslösende Funktion nicht erkannt wird, müssen die folgenden Schritte ausgeführt werden, um sie zu finden.
 
-1. Öffnen der **direkt** Fenster (Wählen Sie auf der Menüleiste **Debuggen** > **Windows** > **direkt**.)
+1. Öffnen Sie das **direkt** Fenster (Klicken Sie in der Menüleiste auf **Debuggen** > **Fenster** > **direkt**.)
 
-1. Geben Sie .load sos.dll in die **direkt** Fenster aus, um die SOS-Debugdienst zu laden.
+1. Geben Sie `.load sos.dll` in das **direkt** Fenster ein, um den SOS-Debugdienst zu laden.
 
-1. Typ! Dumpstack der **direkt** Fenster aus, um eine vollständige Liste des internen erhalten **"/ CLR"** Stapel.
+1. Geben Sie `!dumpstack` in das **direkt** Fenster ein, um eine komplette Liste des internen **/CLR** -Stapels zu erhalten.
 
-1. Suchen Sie nach der ersten Instanz (nahe dem Ende des Stapels) von entweder _CorDllMain (Wenn `DllMain` bewirkt, dass das Problem) oder _VTableBootstrapThunkInitHelperStub bzw. GetTargetForVTableEntry (wenn ein statische Initialisierer das Problem verursacht). Der Stapeleintrag direkt unterhalb dieses Aufrufs ist der Aufruf der MSIL-implementierten Funktion, die eine Ausführung unter der Loadersperre versuchte.
+1. Suchen Sie nach der ersten (am unteren Rand des Stapels liegenden) Instanz von _CorDllMain (wenn `DllMain` das Problem verursacht) oder _VTableBootstrapThunkInitHelperStub oder GetTargetForVTableEntry (wenn ein statischer Initialisierer das Problem verursacht). Der Stapeleintrag direkt unterhalb dieses Aufrufs ist der Aufruf der MSIL-implementierten Funktion, die eine Ausführung unter der Loadersperre versuchte.
 
-1. Wechseln Sie zur Quelldatei und Zeilennummer im vorherigen Schritt identifizierten und korrekte das Problem mithilfe der Szenarien und Lösungen, die im szenarienabschnitt beschrieben.
+1. Wechseln Sie zu der Quelldatei und der Zeilennummer, die im vorherigen Schritt identifiziert wurden, und beheben Sie das Problem mithilfe der Szenarien und Lösungen, die im Abschnitt Szenarios beschrieben werden.
 
 ## <a name="example"></a>Beispiel
 
 ### <a name="description"></a>Beschreibung
 
-Das folgende Beispiel zeigt, wie Sie die Loadersperre vermeiden, durch das Verschieben von Code aus `DllMain` an den Konstruktor eines globalen Objekts.
+Im folgenden Beispiel wird gezeigt, wie Sie die Loadersperre vermeiden, indem Sie Code aus `DllMain` in den Konstruktor eines globalen Objekts verschieben.
 
-In diesem Beispiel besteht ein verwaltetes globales Objekt, dessen Konstruktor das verwaltete Objekt, das ursprünglich enthält in wurde `DllMain`. Der zweite Teil dieses Beispiels verweist auf die Assembly und erstellt eine Instanz des verwalteten Objekts, um den Modulkonstruktor aufzurufen, der die Initialisierung durchführt.
+In diesem Beispiel gibt es ein Global verwaltetes Objekt, dessen Konstruktor das verwaltete Objekt enthält, das sich ursprünglich in `DllMain`befand. Der zweite Teil dieses Beispiels verweist auf die Assembly und erstellt eine Instanz des verwalteten Objekts, um den Modulkonstruktor aufzurufen, der die Initialisierung durchführt.
 
 ### <a name="code"></a>Code
 
@@ -211,7 +211,7 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved) {
 }
 ```
 
-In diesem Beispiel wird veranschaulicht, bei der Initialisierung gemischter Assemblys:
+In diesem Beispiel werden Probleme bei der Initialisierung gemischter Assemblys veranschaulicht:
 
 ```cpp
 // initializing_mixed_assemblies_2.cpp

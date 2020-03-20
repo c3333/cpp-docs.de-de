@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB, application design considerations
 ms.assetid: 8caa7d99-d2bb-42c9-8884-74f228bb6ecc
-ms.openlocfilehash: ef2837ea80c61f074cf567ee1fe61fa2cfa0ae73
-ms.sourcegitcommit: 00e26915924869cd7eb3c971a7d0604388abd316
-ms.translationtype: HT
+ms.openlocfilehash: b481d9948d3055247bd284ca794a0fa65905e21b
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65525307"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544549"
 ---
 # <a name="ole-db-architectural-design-issues"></a>Fragen zum OLE DB-Architekturdesign
 
@@ -36,9 +36,9 @@ Wenn Sie beispielsweise die Daten in einem Rowset aktualisieren möchten, dies a
 
 Angesichts der Kombinationsmöglichkeiten hinsichtlich der verwendeten Technologien (z.B. die Verwendung von ADO-Komponenten mit OLE DB-Komponenten und die Migration von ODBC-Code zu OLE DB) würde eine Erläuterung aller Situationen den Rahmen der Visual C++-Dokumentation sprengen. Auf den folgenden Microsoft-Websites sind jedoch viele Artikel zu verschiedenen Szenarien verfügbar:
 
-- [Microsoft-Hilfe und -Support](https://support.microsoft.com/)
+- [Microsoft Hilfe- und Supportcenter](https://support.microsoft.com/)
 
-- [Technische Artikel zum Microsoft-Datenzugriff – Übersicht](https://msdn.microsoft.com/library/ms810811.aspx)
+- [Technische Artikel zum Microsoft-Datenzugriff – Übersicht](/previous-versions/ms810811(v=msdn.10))
 
 ## <a name="see-also"></a>Siehe auch
 

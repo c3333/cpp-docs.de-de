@@ -8,36 +8,36 @@ helpviewer_keywords:
 - /clr compiler option [C++], double thunking
 - interoperability [C++], double thunking
 ms.assetid: a85090b2-dc3c-498a-b40c-340db229dd6f
-ms.openlocfilehash: f34af20ed3dd2c48659bdbf7794c443920dbb4e9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 89cca9ef42910d295cbae8bb677fb51927dbcdd2
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404480"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545348"
 ---
 # <a name="double-thunking-c"></a>Doppeltes Thunking (C++)
 
-Doppeltes thunking verweist, zum Verlust der Leistung, die auftreten können, wenn ein Funktionsaufruf in einen verwalteten kontextaufrufen, eine Visual C++ verwalteten Funktion und Ausführung des Programms, in dem systemeigenen Einstiegspunkt der Funktion aufruft, um eine verwaltete Funktion aufzurufen. In diesem Thema wird erläutert, in denen doppeltes thunking tritt auf, und wie Sie es zur Verbesserung der Leistung vermeiden können.
+Double Thunking bezieht sich auf den Leistungsverlust, der auftreten kann, wenn ein Funktionsaufruf in einem verwalteten Kontext eine C++ visuelle verwaltete Funktion aufruft und die Programmausführung den systemeigenen Einstiegspunkt der Funktion aufruft, um die verwaltete Funktion aufzurufen. In diesem Thema wird erläutert, wo Double Thunking auftritt und wie Sie es vermeiden können, um die Leistung zu verbessern.
 
 ## <a name="remarks"></a>Hinweise
 
-Standardmäßig wird beim Kompilieren mit **"/ CLR"**, die Definition einer verwalteten Funktion bewirkt, dass den Compiler einen verwalteten Einstiegspunkt und einen einheitlichen Einstiegspunkt generiert. Dadurch wird die verwaltete Funktion, die von systemeigenen und verwalteten Aufrufsites aufgerufen werden. Wenn ein systemeigener Einstiegspunkt vorhanden ist, kann es jedoch den Einstiegspunkt für alle Aufrufe an die Funktion sein. Wenn es sich bei eine aufrufende Funktion verwaltet wird, wird in der systemeigenen Einstiegspunkt klicken Sie dann den verwalteten Einstiegspunkt aufgerufen. Aktiviert ist, sind zwei Aufrufe zum Aufrufen der Funktion erforderlich (daher doppelte thunking). Beispielsweise werden virtuelle Funktionen, die immer über einen systemeigener Einstiegspunkt aufgerufen.
+Standardmäßig bewirkt die Definition einer verwalteten Funktion beim Kompilieren mit **/CLR**, dass der Compiler einen verwalteten Einstiegspunkt und einen systemeigenen Einstiegspunkt generiert. Dadurch kann die verwaltete Funktion von nativen und verwalteten Aufruf Sites aufgerufen werden. Wenn jedoch ein nativer Einstiegspunkt vorhanden ist, kann dies der Einstiegspunkt für alle Aufrufe der Funktion sein. Wenn eine aufrufende Funktion verwaltet wird, ruft der Native Einstiegspunkt den verwalteten Einstiegspunkt auf. Tatsächlich sind zwei Aufrufe erforderlich, um die Funktion aufzurufen (daher Double Thunking). Virtuelle Funktionen werden z. b. immer über einen systemeigenen Einstiegspunkt aufgerufen.
 
-Eine Lösung ist, um dem Compiler nicht, um einen systemeigener Einstiegspunkt für eine verwaltete Funktion zu generieren, die Funktion wird mit nur von einem verwalteten Kontext aufgerufen werden die [__clrcall](../cpp/clrcall.md) Aufrufkonvention.
+Eine Lösung besteht darin, den Compiler anzuweisen, keinen systemeigenen Einstiegspunkt für eine verwaltete Funktion zu generieren, dass die Funktion nur von einem verwalteten Kontext aus aufgerufen wird, indem Sie die [__clrcall](../cpp/clrcall.md) Aufruf Konvention verwendet.
 
-Auf ähnliche Weise, wenn Sie exportieren ([Dllexport, Dllimport](../cpp/dllexport-dllimport.md)) eine verwaltete Funktion, ein systemeigener Einstiegspunkt wird generiert, und alle Funktionen, die importiert und ruft diese Funktion wird durch den systemeigenen Einstiegspunkt aufgerufen. Um doppeltes thunking in dieser Situation zu vermeiden, verwenden Sie keine Semantik für nativen exportieren/importieren. verweisen Sie einfach die Metadaten über `#using` (finden Sie unter [#using-Direktive](../preprocessor/hash-using-directive-cpp.md)).
+Ebenso gilt: Wenn Sie ([dllexport, dllimport](../cpp/dllexport-dllimport.md)) eine verwaltete Funktion exportieren, wird ein nativer Einstiegspunkt generiert, und jede Funktion, die diese Funktion importiert und aufruft, wird über den systemeigenen Einstiegspunkt aufgerufen. Verwenden Sie keine native Export/Import-Semantik, um in diesem Fall doppelte Thunking zu vermeiden. verweisen Sie einfach auf die Metadaten über `#using` (siehe [#using Direktive](../preprocessor/hash-using-directive-cpp.md)).
 
-Der Compiler wurde aktualisiert, um unnötige doppeltes thunking zu reduzieren. Z. B. eine beliebige Funktion mit einem verwalteten Typ in der Signatur (einschließlich Rückgabetyp) werden implizit als markiert `__clrcall`.
+Der Compiler wurde aktualisiert, um unnötige doppelte Thunking zu verringern. Beispielsweise wird jede Funktion mit einem verwalteten Typ in der Signatur (einschließlich Rückgabetyp) implizit als `__clrcall`gekennzeichnet.
 
 ## <a name="example"></a>Beispiel
 
 ### <a name="description"></a>Beschreibung
 
-Im folgende Beispiel wird veranschaulicht, doppeltes thunking. Bei systemeigener Kompilierung (ohne **"/ CLR"**), den Aufruf der virtuellen Funktion in `main` generiert einen Aufruf an `T`Konstruktor und einen Aufruf des Destruktors zu kopieren. Ein ähnliches Verhalten erfolgt, wenn die virtuelle Funktion deklariert wird, mit **"/ CLR"** und `__clrcall`. Allerdings bei der Kompilierung nur mit **"/ CLR"**, Aufruf der Funktion generiert einen Aufruf an den Copy-Konstruktor, aber es gibt einen weiteren Aufruf für den Kopierkonstruktor aufgrund der Thunk nativ zu verwaltet.
+Im folgenden Beispiel wird das Double-Thunking veranschaulicht. Bei der systemeigenen Kompilierung (ohne **/CLR**) generiert der-Befehl der virtuellen Funktion in `main` einen `T`den Kopierkonstruktor und einen aufzurufenden Dekonstruktor aufzurufen. Ähnliches Verhalten wird erzielt, wenn die virtuelle Funktion mit **/CLR** und `__clrcall`deklariert wird. Wenn Sie jedoch nur mit **/CLR**kompiliert werden, generiert der-Funktions aufrutor einen-aufrufkonstruktor, aber es gibt einen weiteren-aufrufkonstruktor aufgrund des vom systemeigenen zu verwaltenden Thunk.
 
 ### <a name="code"></a>Code
 
-```
+```cpp
 // double_thunking.cpp
 // compile with: /clr
 #include <stdio.h>
@@ -91,11 +91,11 @@ __thiscall T::~T(void)
 
 ### <a name="description"></a>Beschreibung
 
-Im vorherigen Beispiel wurde das Vorhandensein des doppeltes thunking. Dieses Beispiel zeigt die Auswirkungen. Die `for` Schleife aufruft, die virtuelle Funktion und die Ausführungszeit der Programm-Berichte. Die längste Ausführungszeit wird gemeldet, wenn das Programm kompiliert wird, mit **"/ CLR"**. Die schnellste Ausführungszeiten werden gemeldet, beim Kompilieren ohne **"/ CLR"** oder wenn die virtuelle Funktion deklariert wird, mit `__clrcall`.
+Das vorherige Beispiel hat das vorhanden sein von Double-Thunking veranschaulicht. Dieses Beispiel zeigt seine Auswirkung. Die `for`-Schleife ruft die virtuelle Funktion auf, und das Programm meldet die Ausführungszeit. Die langsamste Zeit wird gemeldet, wenn das Programm mit **/CLR**kompiliert wird. Die schnellsten Zeiten werden bei der Kompilierung ohne **/CLR** gemeldet, oder wenn die virtuelle Funktion mit `__clrcall`deklariert wird.
 
 ### <a name="code"></a>Code
 
-```
+```cpp
 // double_thunking_2.cpp
 // compile with: /clr
 #include <time.h>

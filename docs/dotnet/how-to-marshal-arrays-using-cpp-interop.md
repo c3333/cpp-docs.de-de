@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Marshallen von Arrays mithilfe C++-Interop'
+title: 'Gewusst wie: Marshallen von Arrays mit C++-Interop'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -9,24 +9,24 @@ helpviewer_keywords:
 - C++ Interop, arrays
 - data marshaling [C++], arrays
 ms.assetid: c2b37ab1-8acf-4855-ad3c-7d2864826b14
-ms.openlocfilehash: 91fd86a547a0241f0cfcca7cfc36c204429d80ac
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fddb8b4fa645d6fee3597d098fc67a3006603b9f
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62324921"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544946"
 ---
-# <a name="how-to-marshal-arrays-using-c-interop"></a>Vorgehensweise: Marshallen von Arrays mithilfe C++-Interop
+# <a name="how-to-marshal-arrays-using-c-interop"></a>Gewusst wie: Marshallen von Arrays mit C++-Interop
 
-In diesem Thema wird veranschaulicht, einen Aspekt der Visual C++-Interoperabilität. Weitere Informationen finden Sie unter [mithilfe C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md).
+In diesem Thema wird ein Aspekt der C++ visuellen Interoperabilität veranschaulicht. Weitere Informationen finden Sie unter [using C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md).
 
-Im folgenden code, Beispiele für die Verwendung der [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) #pragma-Anweisungen zum Implementieren verwaltet und nicht verwaltete Funktionen in der gleichen Datei, aber diese Funktionen auf die gleiche Weise interagieren, wenn in separaten Dateien definiert. Dateien, die ausschließlich nicht verwaltete Funktionen müssen nicht für die Kompilierung mit [/CLR (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md).
+In den folgenden Codebeispielen werden [verwaltete und nicht verwaltete #pragma-](../preprocessor/managed-unmanaged.md) Direktiven verwendet, um verwaltete und nicht verwaltete Funktionen in der gleichen Datei zu implementieren. diese Funktionen werden jedoch auf die gleiche Weise interagiert, wenn Sie in separaten Dateien definiert werden. Dateien, die nur nicht verwaltete Funktionen enthalten, müssen nicht mit/CLR kompiliert werden [(Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie ein verwaltetes Array an eine nicht verwaltete Funktion übergeben wird. Die verwaltete Funktion verwendet [Pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) Garbagecollection für das Array vor dem Aufrufen von nicht verwalteten Funktion unterdrückt werden sollen. Durch die Bereitstellung von nicht verwalteten Funktion mit einer festen Zeiger in den GC-Heap, kann der Mehraufwand für das Erstellen einer Kopie des Arrays vermieden werden. Zu zeigen, dass die GC-Heap-Speicher wird auf die nicht verwaltete Funktion zugreifen, es ändert es sich um den Inhalt des Arrays und die Änderungen werden übernommen, bei die verwaltete Funktion Steuerung wird.
+Im folgenden Beispiel wird veranschaulicht, wie ein verwaltetes Array an eine nicht verwaltete Funktion übergeben wird. Die verwaltete Funktion verwendet [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) , um Garbage Collection für das Array zu unterdrücken, bevor die nicht verwaltete Funktion aufgerufen wird. Durch die Bereitstellung der nicht verwalteten Funktion mit einem fixierten Zeiger auf den GC-Heap kann der Aufwand für das Erstellen einer Kopie des Arrays vermieden werden. Um zu veranschaulichen, dass die nicht verwaltete Funktion auf den GC-Heap Speicher zugreift, wird der Inhalt des Arrays geändert, und die Änderungen werden reflektiert, wenn die verwaltete Funktion die Steuerung fortsetzt.
 
-```
+```cpp
 // PassArray1.cpp
 // compile with: /clr
 #ifndef _CRT_RAND_S
@@ -83,9 +83,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt ein nicht verwaltetes Array an eine verwaltete Funktion übergeben. Die verwaltete Funktion greift auf den Arrayspeicher direkt (im Gegensatz zum Erstellen eines verwalteten Arrays und kopieren den Arrayinhalt), der Änderungen, die von der verwalteten Funktion in der nicht verwalteten Funktion wiedergegeben werden, wenn es wieder die Steuerung ermöglicht.
+Im folgenden Beispiel wird veranschaulicht, wie ein nicht verwaltetes Array an eine verwaltete Funktion übergeben wird. Die verwaltete Funktion greift direkt auf den Array Speicher zu (anstatt ein verwaltetes Array zu erstellen und den Array Inhalt zu kopieren), sodass von der verwalteten Funktion vorgenommene Änderungen in der nicht verwalteten Funktion übernommen werden können, wenn die Steuerung wiedererlangt wird.
 
-```
+```cpp
 // PassArray2.cpp
 // compile with: /clr
 #include <iostream>

@@ -5,7 +5,6 @@ f1_keywords:
 - ATL::IRowsetIdentityImpl
 - ATL.IRowsetIdentityImpl
 - IRowsetIdentityImpl
-- IsSameRow
 - IRowsetIdentityImpl.IsSameRow
 - ATL.IRowsetIdentityImpl.IsSameRow
 - IRowsetIdentityImpl::IsSameRow
@@ -14,16 +13,16 @@ helpviewer_keywords:
 - IRowsetIdentityImpl class
 - IsSameRow method
 ms.assetid: 56821edf-e045-40c8-96bd-231552cd5799
-ms.openlocfilehash: 51f8d7e832476619ccec277c9d73791041d146a6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3e8c976fcb23bf41d88d88be3887db4dde52379d
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390836"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545894"
 ---
 # <a name="irowsetidentityimpl-class"></a>IRowsetIdentityImpl-Klasse
 
-Implementiert die OLE DB [IRowsetIdentity](/previous-versions/windows/desktop/ms715913(v=vs.85)) -Schnittstelle, die Tests für die Zeilenidentität.
+Implementiert die [IRowset tidentity](/previous-versions/windows/desktop/ms715913(v=vs.85)) -Schnittstelle OLE DB, die das Testen der Zeilen Identität ermöglicht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,14 +35,14 @@ class ATL_NO_VTABLE IRowsetIdentityImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine abgeleitete Klasse `IRowsetIdentityImpl`.
+Eine von `IRowsetIdentityImpl`abgeleitete Klasse.
 
 *RowClass*<br/>
-Die Storage-Einheit für die `HROW`.
+Die Speichereinheit für die `HROW`.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -51,11 +50,11 @@ Die Storage-Einheit für die `HROW`.
 
 |||
 |-|-|
-|[IsSameRow](#issamerow)|Vergleicht zwei Zeilenhandles, um festzustellen, ob sie sich auf derselben Zeile beziehen.|
+|[IsSameRow](#issamerow)|Vergleicht zwei Zeilen Handles, um festzustellen, ob Sie auf dieselbe Zeile verweisen.|
 
-## <a name="issamerow"></a> IRowsetIdentityImpl::IsSameRow
+## <a name="irowsetidentityimplissamerow"></a><a name="issamerow"></a>Irowabtidentityimpl:: IsSameRow
 
-Vergleicht zwei Zeilenhandles, um festzustellen, ob sie sich auf derselben Zeile beziehen.
+Vergleicht zwei Zeilen Handles, um festzustellen, ob Sie auf dieselbe Zeile verweisen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -66,13 +65,13 @@ STDMETHOD(IsSameRow )(HROW hThisRow,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetIdentity::IsSameRow](/previous-versions/windows/desktop/ms719629(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [irowsee tidentity:: IsSameRow](/previous-versions/windows/desktop/ms719629(v=vs.85)) .
 
 ### <a name="remarks"></a>Hinweise
 
-Um Zeilenhandles zu vergleichen, die diese Methode wandelt die `HROW` Fensterhandles zu `RowClass` Member und ruft `memcmp` für den Zeiger.
+Zum Vergleichen von Zeilen Handles wandelt diese Methode die `HROW` Handles in `RowClass` Member um und ruft `memcmp` auf den Zeigern auf.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

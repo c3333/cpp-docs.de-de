@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Marshal ANSI Strings Using C++ Interop'
+title: 'Gewusst wie: Marshallen von ANSI-Zeichenfolgen mit C++-Interop'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -9,28 +9,28 @@ helpviewer_keywords:
 - C++ Interop, strings
 - data marshaling [C++], strings
 ms.assetid: 5eda2eb6-5140-40f0-82cf-7ce171fffb45
-ms.openlocfilehash: b73d8ed403ab0bbad7703f66f0d8d4ac23bb7766
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 6987b23311354cfe6fd095e0e811d043e9b9692e
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345754"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545252"
 ---
-# <a name="how-to-marshal-ansi-strings-using-c-interop"></a>Vorgehensweise: Marshal ANSI Strings Using C++ Interop
+# <a name="how-to-marshal-ansi-strings-using-c-interop"></a>Gewusst wie: Marshallen von ANSI-Zeichenfolgen mit C++-Interop
 
-In diesem Thema wird veranschaulicht, wie von ANSI-Zeichenfolgen werden können mithilfe C++-Interop, aber auf .NET Framework übergeben <xref:System.String> Zeichenfolgen im Unicode-Format darstellt, damit die Konvertierung in ANSI ein zusätzlicher Schritt ist. Für die Interoperation mit anderen Zeichenfolgen-Datentypen, finden Sie unter den folgenden Themen:
+In diesem Thema wird veranschaulicht, wie ANSI-Zeichen C++ folgen mithilfe von Interop übermittelt werden können, aber die .NET Framework <xref:System.String> die Zeichen folgen im Unicode-Format darstellt. die Konvertierung in ANSI ist ein zusätzlicher Schritt. Informationen zum interagieren mit anderen Zeichen folgen Typen finden Sie in den folgenden Themen:
 
 - [Vorgehensweise: Marshallen von Unicode-Zeichenfolgen mit C++-Interop](../dotnet/how-to-marshal-unicode-strings-using-cpp-interop.md)
 
 - [Vorgehensweise: Marshallen von COM-Zeichenfolgen mit C++-Interop](../dotnet/how-to-marshal-com-strings-using-cpp-interop.md)
 
-Im folgenden code, Beispiele für die Verwendung der [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) #pragma-Anweisungen zum Implementieren verwaltet und nicht verwaltete Funktionen in der gleichen Datei, aber diese Funktionen auf die gleiche Weise interagieren, wenn in separaten Dateien definiert. Da Dateien, die ausschließlich nicht verwaltete Funktionen nicht mit kompiliert werden müssen [/CLR (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md), behalten sie ihre Leistungsmerkmale.
+In den folgenden Codebeispielen werden [verwaltete und nicht verwaltete #pragma-](../preprocessor/managed-unmanaged.md) Direktiven verwendet, um verwaltete und nicht verwaltete Funktionen in der gleichen Datei zu implementieren. diese Funktionen werden jedoch auf die gleiche Weise interagiert, wenn Sie in separaten Dateien definiert werden. Da Dateien, die nur nicht verwaltete Funktionen enthalten, nicht mit/CLR kompiliert werden müssen [(Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md), können Sie Ihre Leistungsmerkmale beibehalten.
 
 ## <a name="example"></a>Beispiel
 
-Im Beispiel wird eine ANSI-Zeichenfolge von einer verwalteten übergeben, um eine nicht verwaltete Funktion mit <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A>. Diese Methode belegt Speicher für den nicht verwalteten Heap und gibt die Adresse nach dem Ausführen der Konvertierung zurück. Dies bedeutet, dass kein anheften erforderlich ist (da es sich um eine auf dem GC-Heap nicht an die nicht verwaltete Funktion übergeben wird) und von IntPtr zurückgegeben <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> muss explizit freigegeben werden oder Memory Leakage auftritt.
+Im Beispiel wird veranschaulicht, wie eine ANSI-Zeichenfolge von einer verwalteten an eine nicht verwaltete Funktion mithilfe von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A>übergeben wird. Diese Methode ordnet dem nicht verwalteten Heap Speicher zu und gibt die Adresse zurück, nachdem die Konvertierung durchgeführt wurde. Dies bedeutet, dass kein anheften notwendig ist (weil der Arbeitsspeicher auf dem GC-Heap nicht an die nicht verwaltete Funktion übergeben wird) und dass der von <xref:System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi%2A> zurückgegebene IntPtr explizit freigegeben werden muss oder dass ein Speicher abgebungs Ergebnis entsteht.
 
-```
+```cpp
 // MarshalANSI1.cpp
 // compile with: /clr
 #include <iostream>
@@ -62,9 +62,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt die Marshalling von Daten erforderlich, um eine ANSI-Zeichenfolge in einer verwalteten Funktion zuzugreifen, die durch eine nicht verwaltete Funktion aufgerufen wird. Nach dem Empfang der systemeigenen Zeichenfolge, die verwaltete Funktion können sie direkt verwenden oder konvertieren Sie ihn in eine verwaltete Zeichenfolge mithilfe der <xref:System.Runtime.InteropServices.Marshal.PtrToStringAnsi%2A> Methode, wie gezeigt.
+Das folgende Beispiel veranschaulicht das Daten Marshalling, das für den Zugriff auf eine ANSI-Zeichenfolge in einer verwalteten Funktion erforderlich ist, die von einer nicht verwalteten Funktion aufgerufen wird. Die verwaltete Funktion kann beim Empfang der systemeigenen Zeichenfolge Sie entweder direkt verwenden oder mithilfe der <xref:System.Runtime.InteropServices.Marshal.PtrToStringAnsi%2A>-Methode in eine verwaltete Zeichenfolge konvertieren, wie gezeigt.
 
-```
+```cpp
 // MarshalANSI2.cpp
 // compile with: /clr
 #include <iostream>

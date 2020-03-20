@@ -9,14 +9,14 @@ f1_keywords:
 helpviewer_keywords:
 - safe_cast keyword [C++]
 ms.assetid: 4fa688bf-a8ec-49bc-a4c5-f48134efa4f7
-ms.openlocfilehash: 199fda710a077998c6b10f101f6ebc15573e675e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 42e141caed720aa29cf918a2bdf69d9a2c4203dc
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516635"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544639"
 ---
-# <a name="safecast-ccli-and-ccx"></a>safe_cast (C++/CLI und C++/CX)
+# <a name="safe_cast-ccli-and-ccx"></a>safe_cast (C++/CLI und C++/CX)
 
 Der **safe_cast**-Vorgang gibt im Erfolgsfall den angegebenen Ausdruck als den angegebenen Typ zurück, andernfalls wird eine `InvalidCastException` ausgelöst.
 
@@ -32,7 +32,7 @@ Der **safe_cast**-Vorgang gibt im Erfolgsfall den angegebenen Ausdruck als den a
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-Mit **safe_cast** können Sie den Typ eines angegebenen Ausdrucks ändern. In Situationen, in denen Sie mit Sicherheit erwarten, dass eine Variable oder ein Parameter zu einem bestimmten Typ konvertiert werden kann, können Sie **safe_cast** ohne einen **try-catch**-Block verwenden, um während der Entwicklung Programmierfehler zu ermitteln. Weitere Informationen finden Sie unter [Umwandlung (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755802.aspx).
+Mit **safe_cast** können Sie den Typ eines angegebenen Ausdrucks ändern. In Situationen, in denen Sie mit Sicherheit erwarten, dass eine Variable oder ein Parameter zu einem bestimmten Typ konvertiert werden kann, können Sie **safe_cast** ohne einen **try-catch**-Block verwenden, um während der Entwicklung Programmierfehler zu ermitteln. Weitere Informationen finden Sie unter [Umwandlung (C++/CX)](../cppcx/casting-c-cx.md).
 
 ### <a name="syntax"></a>Syntax
 
@@ -48,11 +48,11 @@ Der Typ, zu dem *expression* konvertiert werden soll. Ein Handle zu einem Verwei
 *expression*<br/>
 Ein Ausdruck, der als ein Handle zu einem Verweis oder Werttyp ausgewertet wird, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
-**safe_cast** löst eine `InvalidCastException` aus, wenn *expression* nicht zum durch *type-id* angegebenen Typ konvertiert werden kann. Geben Sie zum Abfangen von `InvalidCastException` die Compileroption [/EH (Ausnahmebehandlungsmodell)](../build/reference/eh-exception-handling-model.md) an, und verwenden Sie eine **try/catch**-Anweisung.
+**safe_cast** löst `InvalidCastException` aus, wenn der *Ausdruck* nicht in den durch *Type-ID*angegebenen Typ konvertiert werden kann. Um `InvalidCastException`zu erfassen, geben Sie die Compileroption [/eh (Ausnahme Behandlungsmodell)](../build/reference/eh-exception-handling-model.md) an, und verwenden **Sie eine try/catch-** Anweisung.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -108,7 +108,7 @@ Ein Handle zu einem Verweis- oder Werttyp, ein Werttyp oder ein Nachverfolgungsv
 *expression*<br/>
 Ein Ausdruck, der als ein Handle zu einem Verweis oder Werttyp ausgewertet wird, ein Werttyp oder ein Nachverfolgungsverweis auf einen Verweis- oder Werttyp.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Ausdruck `safe_cast<`*type-id*`>(`*expression*`)` konvertiert den Operanden *expression* in ein Objekt vom Typ *type-id*.
 
@@ -128,7 +128,7 @@ Weitere Informationen über **safe_cast** finden Sie hier:
 
 - [Vorgehensweise: Verwenden von safe_cast in C++/CLI](../dotnet/how-to-use-safe-cast-in-cpp-cli.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

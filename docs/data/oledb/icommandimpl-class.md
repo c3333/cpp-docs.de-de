@@ -21,7 +21,6 @@ f1_keywords:
 - ICommandImpl.GetDBSession
 - ATL.ICommandImpl.ICommandImpl
 - ATL::ICommandImpl::ICommandImpl
-- ICommandImpl
 - ICommandImpl::ICommandImpl
 - ICommandImpl.ICommandImpl
 - ICommandImpl::m_bCancel
@@ -52,16 +51,16 @@ helpviewer_keywords:
 - m_bCancelWhenExecuting
 - m_bIsExecuting
 ms.assetid: ef285fef-0d66-45e6-a762-b03357098e3b
-ms.openlocfilehash: d890b62e4e4aabb9f8ca7ebb9d3051c53febd91f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6e095e01d3131f98b44935705b2564291fb13844
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408965"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545978"
 ---
 # <a name="icommandimpl-class"></a>ICommandImpl-Klasse
 
-Stellt die Implementierung für die [ICommand](/previous-versions/windows/desktop/ms709737(v=vs.85)) Schnittstelle.
+Stellt die Implementierung für die [ICommand](/previous-versions/windows/desktop/ms709737(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -73,14 +72,14 @@ class ATL_NO_VTABLE ICommandImpl : public CommandBase
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Abgeleitet von die Klasse `ICommandImpl`.
+Die von `ICommandImpl`abgeleitete Klasse.
 
 *CommandBase*<br/>
-Eine Befehlsschnittstelle. Die Standardeinstellung ist `ICommand`.
+Eine Befehlsschnittstelle. Der Standardwert lautet `ICommand`.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -88,26 +87,26 @@ Eine Befehlsschnittstelle. Die Standardeinstellung ist `ICommand`.
 
 |||
 |-|-|
-|[Kündigung](#cancel)|Bricht die Ausführung des aktuellen Befehls ab.|
+|[Abbrechen](#cancel)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CancelExecution](#cancelexecution)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt.|
-|[Execute](#execute)|Führt den Befehl.|
-|[GetDBSession](#getdbsession)|Gibt einen Schnittstellenzeiger zurück, mit der Sitzung, die den Befehl erstellt haben.|
+|[Ausführen](#execute)|Führt den Befehl aus.|
+|[GetDBSession](#getdbsession)|Gibt einen Schnittstellen Zeiger auf die Sitzung zurück, die den Befehl erstellt hat.|
 |[ICommandImpl](#icommandimpl)|Der Konstruktor.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|[m_bCancel](#bcancel)|Gibt an, ob der Befehl abgebrochen werden.|
-|[m_bCancelWhenExecuting](#bcancelwhenexecuting)|Gibt an, ob der Befehl ist für die Ausführung abgebrochen werden soll.|
-|[m_bIsExecuting](#bisexecuting)|Gibt an, ob der Befehl derzeit ausgeführt wird.|
+|[m_bCancel](#bcancel)|Gibt an, ob der Befehl abgebrochen werden soll.|
+|[m_bCancelWhenExecuting](#bcancelwhenexecuting)|Gibt an, ob der Befehl bei der Ausführung abgebrochen werden soll.|
+|[m_bIsExecuting](#bisexecuting)|Gibt an, ob der Befehl gerade ausgeführt wird.|
 
 ## <a name="remarks"></a>Hinweise
 
-Eine erforderliche Schnittstelle für das Command-Objekt.
+Eine erforderliche Schnittstelle für das Befehls Objekt.
 
-## <a name="cancel"></a> ICommandImpl::Cancel
+## <a name="icommandimplcancel"></a><a name="cancel"></a>ICommandImpl:: Cancel
 
 Bricht die Ausführung des aktuellen Befehls ab.
 
@@ -119,9 +118,9 @@ STDMETHOD(Cancel)();
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ICommand::Cancel](/previous-versions/windows/desktop/ms714402(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [ICommand:: Cancel](/previous-versions/windows/desktop/ms714402(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="cancelexecution"></a> ICommandImpl::CancelExecution
+## <a name="icommandimplcancelexecution"></a><a name="cancelexecution"></a>ICommandImpl:: cancelexecution
 
 Bricht die Ausführung des aktuellen Befehls ab.
 
@@ -131,9 +130,9 @@ Bricht die Ausführung des aktuellen Befehls ab.
 HRESULT CancelExecution();
 ```
 
-## <a name="createrowset"></a> ICommandImpl::CreateRowset
+## <a name="icommandimplcreaterowset"></a><a name="createrowset"></a>ICommandImpl:: kreaterowset
 
-Wird aufgerufen, indem [Execute](../../data/oledb/icommandimpl-execute.md) um ein einzelnes Rowset zu erstellen.
+Wird von [Execute](../../data/oledb/icommandimpl-execute.md) aufgerufen, um ein einzelnes Rowset zu erstellen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -150,39 +149,39 @@ HRESULT CreateRowset(IUnknown* pUnkOuter,
 #### <a name="parameters"></a>Parameter
 
 *RowsetClass*<br/>
-Ein Member von Vorlage-Klasse, die Rowset-Klasse für den Benutzer darstellt. In der Regel vom Assistenten generiert.
+Ein Vorlagen Klassenmember, der die Rowsetklasse des Benutzers darstellt. Wird normalerweise vom Assistenten generiert.
 
 *pUnkOuter*<br/>
-[in] Ein Zeiger auf das steuernde `IUnknown` Schnittstelle, wenn das Rowset als Teil eines Aggregats erstellt wird; andernfalls ist der Wert null.
+in Ein Zeiger auf den steuernden `IUnknown`-Schnittstelle, wenn das Rowset als Teil eines Aggregats erstellt wird. Andernfalls ist der Wert NULL.
 
 *riid*<br/>
-[in] Entspricht *Riid* in `ICommand::Execute`.
+in Entspricht *riid* in `ICommand::Execute`.
 
-*pParams*<br/>
-[in/Out] Entspricht *pParams* in `ICommand::Execute`.
+*pparser*<br/>
+[in/out] Entspricht *PPARa* Metern in `ICommand::Execute`.
 
-*pcRowsAffected*<br/>
-Entspricht *PcRowsAffected* in `ICommand::Execute`.
+*pcrowsafffiziert*<br/>
+Entspricht *pcrowsaff.* in `ICommand::Execute`.
 
 *ppRowset*<br/>
-[in/Out] Entspricht *PpRowset* in `ICommand::Execute`.
+[in/out] Entspricht *ppRowset* in `ICommand::Execute`.
 
-*pRowsetObj*<br/>
-[out] Ein Zeiger auf eine Rowset-Objekt. Dieser Parameter wird in der Regel nicht verwendet, aber es kann verwendet werden, wenn Sie mehr Arbeit für das Rowset ausführen müssen, vor der Übergabe an ein COM-Objekt. Die Lebensdauer des *pRowsetObj* gebunden ist, indem *PpRowset*.
+*prowsetobj*<br/>
+vorgenommen Ein Zeiger auf ein Rowsetobjekt. In der Regel wird dieser Parameter nicht verwendet, kann jedoch verwendet werden, wenn Sie vor der Übergabe an ein COM-Objekt mehr Arbeit an dem Rowset ausführen müssen. Die Lebensdauer von *prowsetobj* wird durch *ppRowset*gebunden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard HRESULT-Wert. Finden Sie unter `ICommand::Execute` eine Liste mit typischen Werten.
+Ein HRESULT-Standardwert. Eine Liste der typischen Werte finden Sie unter `ICommand::Execute`.
 
 ### <a name="remarks"></a>Hinweise
 
-Um mehr als ein Rowset zu erstellen, oder geben Sie Ihren eigenen Bedingungen für das Erstellen von anderen Rowsets, platzieren Sie die verschiedenen Aufrufe zum `CreateRowset` aus `Execute`.
+Um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen unterschiedlicher Rowsets anzugeben, platzieren Sie unterschiedliche Aufrufe `CreateRowset` aus `Execute`.
 
-Finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in die *OLE DB-Programmierreferenz.*
+Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz.*
 
-## <a name="execute"></a> ICommandImpl::Execute
+## <a name="icommandimplexecute"></a><a name="execute"></a>ICommandImpl:: Execute
 
-Führt den Befehl.
+Führt den Befehl aus.
 
 ### <a name="syntax"></a>Syntax
 
@@ -196,17 +195,17 @@ HRESULT Execute(IUnknown* pUnkOuter,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Ausgangsschnittstelle angefordert werden, dass eine Schnittstelle, die abgerufen werden, aus dem Rowsetobjekt, das diese Funktion erstellt.
+Die angeforderte ausgehende Schnittstelle ist eine Schnittstelle, die vom Rowsetobjekt abgerufen wird, das diese Funktion erstellt.
 
-`Execute` Aufrufe [CreateRowset](../../data/oledb/icommandimpl-createrowset.md). Überschreiben Sie die standardmäßige Implementierung mehr als ein Rowset zu erstellen, oder geben Sie Ihren eigenen Bedingungen für das Erstellen von anderen Rowsets.
+`Execute` ruft " [kreaterowset](../../data/oledb/icommandimpl-createrowset.md)" auf. Überschreiben Sie die Standard Implementierung, um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen verschiedener Rowsets anzugeben.
 
-## <a name="getdbsession"></a> ICommandImpl::GetDBSession
+## <a name="icommandimplgetdbsession"></a><a name="getdbsession"></a>ICommandImpl:: getdbsession
 
-Gibt einen Schnittstellenzeiger zurück, mit der Sitzung, die den Befehl erstellt haben.
+Gibt einen Schnittstellen Zeiger auf die Sitzung zurück, die den Befehl erstellt hat.
 
 ### <a name="syntax"></a>Syntax
 
@@ -217,13 +216,13 @@ STDMETHOD (GetDBSession) (REFIID riid,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ICommand::GetDBSession](/previous-versions/windows/desktop/ms719622(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [ICommand:: getdbsession](/previous-versions/windows/desktop/ms719622(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="remarks"></a>Hinweise
 
 Nützlich zum Abrufen von Eigenschaften aus der Sitzung.
 
-## <a name="icommandimpl"></a> ICommandImpl::ICommandImpl
+## <a name="icommandimplicommandimpl"></a><a name="icommandimpl"></a>ICommandImpl:: ICommandImpl
 
 Der Konstruktor.
 
@@ -233,7 +232,7 @@ Der Konstruktor.
 ICommandImpl();
 ```
 
-## <a name="bcancel"></a> ICommandImpl::m_bCancel
+## <a name="icommandimplm_bcancel"></a><a name="bcancel"></a>ICommandImpl:: m_bCancel
 
 Gibt an, ob der Befehl abgebrochen wird.
 
@@ -245,11 +244,11 @@ unsigned m_bCancel:1;
 
 ### <a name="remarks"></a>Hinweise
 
-Sie können diese Variable im Abrufen der `Execute` Methode Ihrer Klasse des Befehls und "Abbrechen", nach Bedarf.
+Sie können diese Variable in der `Execute`-Methode der Befehls Klasse abrufen und entsprechend abbrechen.
 
-## <a name="bcancelwhenexecuting"></a> ICommandImpl::m_bCancelWhenExecuting
+## <a name="icommandimplm_bcancelwhenexecuting"></a><a name="bcancelwhenexecuting"></a>ICommandImpl:: m_bCancelWhenExecuting
 
-Gibt an, ob der Befehl für die Ausführung abgebrochen werden kann.
+Gibt an, ob der Befehl bei der Ausführung abgebrochen werden kann.
 
 ### <a name="syntax"></a>Syntax
 
@@ -259,11 +258,11 @@ unsigned m_bCancelWhenExecuting:1;
 
 ### <a name="remarks"></a>Hinweise
 
-Standardmäßig **"true"** (kann abgebrochen werden kann).
+Der Standardwert ist **true** (kann abgebrochen werden).
 
-## <a name="bisexecuting"></a> ICommandImpl::m_bIsExecuting
+## <a name="icommandimplm_bisexecuting"></a><a name="bisexecuting"></a>ICommandImpl:: m_bIsExecuting
 
-Gibt an, ob der Befehl derzeit ausgeführt wird.
+Gibt an, ob der Befehl gerade ausgeführt wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -273,9 +272,9 @@ unsigned m_bIsExecuting:1;
 
 ### <a name="remarks"></a>Hinweise
 
-Die `Execute` -Methode der Ihre Befehlsklasse kann diese Variable festlegen, um **"true"**.
+Die `Execute`-Methode der Befehls Klasse kann diese Variable auf " **true**" festlegen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

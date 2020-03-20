@@ -7,7 +7,6 @@ f1_keywords:
 - ATL::IAccessorImpl::IAccessorImpl
 - IAccessorImpl::IAccessorImpl
 - IAccessorImpl.IAccessorImpl
-- IAccessorImpl
 - ATL::IAccessorImpl::AddRefAccessor
 - AddRefAccessor
 - IAccessorImpl::AddRefAccessor
@@ -37,16 +36,16 @@ helpviewer_keywords:
 - GetBindings method
 - ReleaseAccessor method
 ms.assetid: 768606da-8b71-417c-a62c-88069ce7730d
-ms.openlocfilehash: a4f98cdfea9ea1e82ec0a3de09e292604a6c199f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f1865089100ac7f60e8c011e72eedb3d0a3f8470
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409043"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545990"
 ---
 # <a name="iaccessorimpl-class"></a>IAccessorImpl-Klasse
 
-Stellt eine Implementierung der [IAccessor](/previous-versions/windows/desktop/ms719672(v=vs.85)) Schnittstelle.
+Stellt eine Implementierung der [IAccessor](/previous-versions/windows/desktop/ms719672(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -60,17 +59,17 @@ class ATL_NO_VTABLE IAccessorImpl : public IAccessorImplBase<BindType>
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ihre Rowset oder Object-Klasse.
+Das Rowset oder die Befehls Objektklasse.
 
 *BindType*<br/>
-Storage-Einheit für die Bindungsinformationen. Der Standardwert ist die `ATLBINDINGS` Struktur (finden Sie unter "atldb.h").
+Speichereinheit für Bindungs Informationen. Der Standardwert ist die `ATLBINDINGS` Struktur (siehe Atldb. h).
 
-*BindingVector*<br/>
-Storage-Einheit für die Spalteninformationen. Der Standardwert ist [CAtlMap](../../atl/reference/catlmap-class.md) , in denen das Schlüsselelement ist ein HACCESSOR-Wert und die Value-Element ist ein Zeiger auf eine `BindType` Struktur.
+*Bindingvector*<br/>
+Speichereinheit für Spalten Informationen. Der Standardwert ist "", wobei das Schlüsselelement ein HACCESSOR- [Wert ist und](../../atl/reference/catlmap-class.md) das Value-Element ein Zeiger auf eine `BindType`-Struktur ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -91,9 +90,9 @@ Storage-Einheit für die Spalteninformationen. Der Standardwert ist [CAtlMap](..
 
 ## <a name="remarks"></a>Hinweise
 
-Dies ist erforderlich für Rowsets und Befehle. OLE DB verlangt von Anbietern zum Implementieren einer HACCESSOR, dies ist ein Tag auf ein Array von [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) Strukturen. Von bereitgestellten HACCESSORs `IAccessorImpl` Adressen sind die `BindType` Strukturen. In der Standardeinstellung `BindType` ist definiert als eine `ATLBINDINGS` in `IAccessorImpl`der Vorlagendefinition. `BindType` Stellt einen Mechanismus, der von verwendeten `IAccessorImpl` zum Nachverfolgen der Anzahl der Elemente in der `DBBINDING` array sowie einen Verweis Count "und"-Accessor-Flags.
+Dies ist für Rowsets und Befehle obligatorisch. OLE DB erfordert, dass Anbieter einen HACCESSOR implementieren, bei dem es sich um ein Tag für ein Array von [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) -Strukturen handelt. Die von `IAccessorImpl` bereitgestellten haccessoren sind Adressen der `BindType` Strukturen. Standardmäßig ist `BindType` als `ATLBINDINGS` in der Vorlagen Definition `IAccessorImpl`definiert. `BindType` stellt einen Mechanismus bereit, der von `IAccessorImpl` verwendet wird, um die Anzahl der Elemente im `DBBINDING` Array sowie einen Verweis Zähler und accessorflags zu verfolgen.
 
-## <a name="iaccessorimpl"></a> IAccessorImpl:: IAccessorImpl
+## <a name="iaccessorimpliaccessorimpl"></a><a name="iaccessorimpl"></a>IAccessorImpl:: IAccessorImpl
 
 Der Konstruktor.
 
@@ -103,7 +102,7 @@ Der Konstruktor.
 IAccessorImpl();
 ```
 
-## <a name="addrefaccessor"></a> IAccessorImpl::AddRefAccessor
+## <a name="iaccessorimpladdrefaccessor"></a><a name="addrefaccessor"></a>IAccessorImpl:: adressariessor
 
 Fügt einem vorhandenen Accessor einen Verweiszähler hinzu.
 
@@ -116,9 +115,9 @@ STDMETHOD(AddRefAccessor)(HACCESSOR hAccessor,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IAccessor::AddRefAccessor](/previous-versions/windows/desktop/ms714978(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere [Informationen](/previous-versions/windows/desktop/ms714978(v=vs.85)) finden Sie in der *OLE DB Programmierer-Referenz*.
 
-## <a name="createaccessor"></a> IAccessorImpl::CreateAccessor
+## <a name="iaccessorimplcreateaccessor"></a><a name="createaccessor"></a>IAccessorImpl::-accateaccessor
 
 Erstellt einen Accessor aus einem Satz von Bindungen.
 
@@ -135,11 +134,11 @@ STDMETHOD(CreateAccessor)(DBACCESSORFLAGS dwAccessorFlags,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IAccessor:: CreateAccessor](/previous-versions/windows/desktop/ms720969(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IAccessor:: erkreateaccessor](/previous-versions/windows/desktop/ms720969(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="getbindings"></a> IAccessorImpl::GetBindings
+## <a name="iaccessorimplgetbindings"></a><a name="getbindings"></a>IAccessorImpl:: getbindungen
 
-Gibt die grundlegenden Spalten Bindungen aus der Consumer in einem Accessor zurück.
+Gibt die grundlegenden Spalten Bindungen vom Consumer in einem Accessor zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -152,9 +151,9 @@ STDMETHOD(GetBindings)(HACCESSOR hAccessor,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IAccessor::GetBindings](/previous-versions/windows/desktop/ms721253(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IAccessor:: getbindungen](/previous-versions/windows/desktop/ms721253(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="releaseaccessor"></a> IAccessorImpl::ReleaseAccessor
+## <a name="iaccessorimplreleaseaccessor"></a><a name="releaseaccessor"></a>IAccessorImpl:: ReleaseAccessor
 
 Gibt einen Accessor frei.
 
@@ -167,9 +166,9 @@ STDMETHOD(ReleaseAccessor)(HACCESSOR hAccessor,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ReleaseAccessor](/previous-versions/windows/desktop/ms719717(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IAccessor:: ReleaseAccessor](/previous-versions/windows/desktop/ms719717(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

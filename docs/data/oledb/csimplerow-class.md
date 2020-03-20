@@ -12,7 +12,6 @@ f1_keywords:
 - CSimpleRow.AddRefRow
 - CSimpleRow.Compare
 - CSimpleRow::Compare
-- CSimpleRow
 - ATL::CSimpleRow::CSimpleRow
 - CSimpleRow.CSimpleRow
 - ATL.CSimpleRow.CSimpleRow
@@ -35,16 +34,16 @@ helpviewer_keywords:
 - m_dwRef
 - m_iRowset
 ms.assetid: 06d9621d-60cc-4508-8b0c-528d1b1a809b
-ms.openlocfilehash: 19b90f4454e784907366ef6cf7e3e7e1b9ada799
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 00d8164425ada573020971f66312b2282cc72c45
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390931"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545564"
 ---
 # <a name="csimplerow-class"></a>CSimpleRow-Klasse
 
-Stellt eine Standardimplementierung für den Zeilenziehpunkt, die in dient der [IRowsetImpl](../../data/oledb/irowsetimpl-class.md) Klasse.
+Stellt eine Standard Implementierung für das Zeilen Handle bereit, das in der [irowmentimpl](../../data/oledb/irowsetimpl-class.md) -Klasse verwendet wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -52,9 +51,9 @@ Stellt eine Standardimplementierung für den Zeilenziehpunkt, die in dient der [
 class CSimpleRow
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -63,24 +62,24 @@ class CSimpleRow
 |||
 |-|-|
 |[AddRefRow](#addrefrow)|Fügt einem vorhandenen Zeilenhandle einen Verweiszähler hinzu.|
-|[Compare](#compare)|Vergleicht zwei Zeilen, um festzustellen, ob sie auf die gleiche Zeileninstanz verweisen.|
+|[Vergleichen](#compare)|Vergleicht zwei Zeilen, um festzustellen, ob Sie auf dieselbe Zeilen Instanz verweisen.|
 |[CSimpleRow](#csimplerow)|Der Konstruktor.|
 |[ReleaseRow](#releaserow)|Gibt Zeilen frei.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|[m_dwRef](#dwref)|Der Verweiszähler auf einem vorhandenen Zeilenhandle.|
-|[m_iRowset](#irowset)|Ein Index in das Rowset, der den Cursor darstellt.|
+|[m_dwRef](#dwref)|Verweis Zähler auf ein vorhandenes Zeilen handle.|
+|[m_iRowset](#irowset)|Ein Index für das Rowset, das den Cursor darstellt.|
 
 ## <a name="remarks"></a>Hinweise
 
-Ein Zeilenhandle ist logisch ein eindeutiges Tag für eine Ergebniszeile. `IRowsetImpl` erstellt ein neues `CSimpleRow` für jede Zeile im angeforderten [IRowsetImpl:: GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md). `CSimpleRow` kann auch durch eine eigene Implementierung von den Zeilenziehpunkt, ersetzt werden, wie ein Standardvorlagenargument zu `IRowsetImpl`. Die einzige Voraussetzung für diese Klasse zu ersetzen ist, damit die äquivalente Klasse einen Konstruktor bereit, der einen einzelnen Parameter vom Typ akzeptiert **lange**.
+Ein Zeilen Handle ist logisch ein eindeutiges Tag für eine Ergebniszeile. `IRowsetImpl` erstellt eine neue `CSimpleRow` für jede in [IRowset timpl:: GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md)angeforderte Zeile. `CSimpleRow` können auch durch ihre eigene Implementierung des Zeilen Handles ersetzt werden, da es sich um ein Standardvorlagen Argument für `IRowsetImpl`handelt. Die einzige Anforderung, diese Klasse zu ersetzen, besteht darin, dass die Ersetzungs Klasse einen Konstruktor bereitstellt, der einen einzelnen Parameter vom Typ **Long**akzeptiert.
 
-## <a name="addrefrow"></a> CSimpleRow::AddRefRow
+## <a name="csimplerowaddrefrow"></a><a name="addrefrow"></a>Csimplerow:: Adresszeilen
 
-Fügt einen Verweiszähler auf einem vorhandenen Zeilenhandle auf threadsichere Weise.
+Fügt einem vorhandenen Zeilen handle Thread sicher einen Verweis Zähler hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -88,9 +87,9 @@ Fügt einen Verweiszähler auf einem vorhandenen Zeilenhandle auf threadsichere 
 DWORD AddRefRow();
 ```
 
-## <a name="compare"></a> CSimpleRow::Compare
+## <a name="csimplerowcompare"></a><a name="compare"></a>Csimplerow:: Compare
 
-Vergleicht zwei Zeilen, um festzustellen, ob sie auf die gleiche Zeileninstanz verweisen.
+Vergleicht zwei Zeilen, um festzustellen, ob Sie auf dieselbe Zeilen Instanz verweisen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -100,14 +99,14 @@ HRESULT Compare(CSimpleRow* pRow);
 
 #### <a name="parameters"></a>Parameter
 
-*pRow*<br/>
-Ein Zeiger auf ein `CSimpleRow` -Objekt.
+*Prow*<br/>
+Ein Zeiger auf ein `CSimpleRow`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Wert, in der Regel S_OK, der angibt, die zwei Zeilen sind die gleiche Zeileninstanz oder S_FALSE, der angibt, der zwei Zeilen sind unterschiedlich. Finden Sie unter [IRowsetIdentity::IsSameRow](/previous-versions/windows/desktop/ms719629(v=vs.85)) in die *OLE DB-Programmierreferenz* für weitere mögliche Rückgabewerte.
+Ein HRESULT-Wert, der in der Regel S_OK ist, der angibt, dass die beiden Zeilen dieselbe Zeilen Instanz oder S_FALSE sind, was bedeutet, dass die beiden Zeilen unterschiedlich sind. Weitere mögliche Rückgabewerte finden Sie unter [irowsee tidentity:: IsSameRow](/previous-versions/windows/desktop/ms719629(v=vs.85)) in der *OLE DB Programmierer*
 
-## <a name="csimplerow"></a> CSimpleRow::CSimpleRow
+## <a name="csimplerowcsimplerow"></a><a name="csimplerow"></a>Csimplerow:: csimplerow
 
 Der Konstruktor.
 
@@ -119,16 +118,16 @@ CSimpleRow(DBCOUNTITEM iRowsetCur);
 
 #### <a name="parameters"></a>Parameter
 
-*iRowsetCur*<br/>
-[in] Indizieren Sie auf das aktuelle Rowset.
+*irowsetcur*<br/>
+in Index für das aktuelle Rowset.
 
 ### <a name="remarks"></a>Hinweise
 
-Legt [M_iRowset](../../data/oledb/csimplerow-m-irowset.md) zu *iRowsetCur*.
+Legt [m_iRowset](../../data/oledb/csimplerow-m-irowset.md) auf *irowsetcur*fest.
 
-## <a name="releaserow"></a> CSimpleRow::ReleaseRow
+## <a name="csimplerowreleaserow"></a><a name="releaserow"></a>Csimplerow:: releaserow
 
-Gibt die Zeilen in einer threadsicheren Weise frei.
+Gibt Zeilen auf Thread sichere Weise frei.
 
 ### <a name="syntax"></a>Syntax
 
@@ -136,9 +135,9 @@ Gibt die Zeilen in einer threadsicheren Weise frei.
 DWORD ReleaseRow();
 ```
 
-## <a name="dwref"></a> CSimpleRow::m_dwRef
+## <a name="csimplerowm_dwref"></a><a name="dwref"></a>Csimplerow:: m_dwRef
 
-Der Verweiszähler auf einem vorhandenen Zeilenhandle.
+Verweis Zähler auf ein vorhandenes Zeilen handle.
 
 ### <a name="syntax"></a>Syntax
 
@@ -146,9 +145,9 @@ Der Verweiszähler auf einem vorhandenen Zeilenhandle.
 DWORD m_dwRef;
 ```
 
-## <a name="irowset"></a> CSimpleRow::m_iRowset
+## <a name="csimplerowm_irowset"></a><a name="irowset"></a>Csimplerow:: m_iRowset
 
-Indizieren Sie auf das Rowset, der den Cursor darstellt.
+Index für das Rowset, das den Cursor darstellt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -158,6 +157,6 @@ KeyType m_iRowset;
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>
 [IRowsetImpl-Klasse](../../data/oledb/irowsetimpl-class.md)

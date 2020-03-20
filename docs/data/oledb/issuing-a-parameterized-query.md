@@ -4,16 +4,16 @@ ms.date: 10/19/2018
 helpviewer_keywords:
 - parameter queries, running using CCommand class
 ms.assetid: aedb0fce-52a4-4c97-a5c9-b2114be6c3b0
-ms.openlocfilehash: 1ac029d954fc6cefaae6349e01af7728ca0886fd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4964d63846e14c0eaf4ff7c7fc80e14237673f69
+ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390658"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "79545504"
 ---
 # <a name="issuing-a-parameterized-query"></a>Ausgeben einer parametrisierten Abfrage
 
-Im folgende Beispiel stellt eine einfache parametrisierte Abfrage, die Datensätze mit einem Feld "Age" (das größer als 30 ist) aus einer Tabelle in einer Microsoft Access-Datenbank abruft. Um den Parameter zu unterstützen, muss der Benutzerdatensatz eine zusätzliche Zuordnung verfügen. Der folgende Code in einem ATL-Projekt verwendet die `CCommand` -Klasse anstelle der `CTable` im vorherigen Beispiel verwendete Klasse [Durchlaufen eines einfachen Rowsets](../../data/oledb/traversing-a-simple-rowset.md).
+Im folgenden Beispiel wird eine einfache parametrisierte Abfrage ausgegeben, die Datensätze mit einem Alters Feld (das größer als 30 ist) aus einer Tabelle in einer Microsoft Access-Datenbank abruft. Um den-Parameter zu unterstützen, muss der Benutzerdaten Satz über eine zusätzliche Karte verfügen. Der folgende Code verwendet in einem ATL-Projekt die `CCommand`-Klasse anstelle der `CTable`-Klasse, die im vorherigen Beispiel verwendet wurde, wobei [ein einfaches Rowset](../../data/oledb/traversing-a-simple-rowset.md)durchlaufen wird.
 
 ```cpp
 #include <atldbcli.h>
@@ -51,7 +51,7 @@ int main()
 }
 ```
 
-Benutzerdatensatz `CArtists`, sieht wie im folgenden Beispiel:
+Der Benutzerdaten Satz `CArtists`sieht in etwa wie folgt aus:
 
 ```cpp
 class CArtists

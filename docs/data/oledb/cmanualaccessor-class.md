@@ -8,7 +8,6 @@ f1_keywords:
 - ATL::CManualAccessor::AddBindEntry
 - ATL.CManualAccessor.AddBindEntry
 - CManualAccessor::AddBindEntry
-- AddBindEntry
 - CManualAccessor.AddBindEntry
 - CManualAccessor::AddParameterEntry
 - ATL.CManualAccessor.AddParameterEntry
@@ -16,7 +15,6 @@ f1_keywords:
 - AddParameterEntry
 - ATL::CManualAccessor::AddParameterEntry
 - ATL::CManualAccessor::CreateAccessor
-- CreateAccessor
 - ATL.CManualAccessor.CreateAccessor
 - CManualAccessor.CreateAccessor
 - CManualAccessor::CreateAccessor
@@ -32,16 +30,16 @@ helpviewer_keywords:
 - CreateAccessor method
 - CreateParameterAccessor method
 ms.assetid: a0088074-7135-465c-b228-69097a50b8cc
-ms.openlocfilehash: 526415f14172911b26462fab97d9e0a7513b8cad
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 80c8f94a417c700f86159de53bd53e4011f78d71
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62231063"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79546068"
 ---
 # <a name="cmanualaccessor-class"></a>CManualAccessor-Klasse
 
-Stellt einen Accessor für die erweiterte Verwendung vorgesehen.
+Stellt einen Accessortyp dar, der für die Erweiterte Verwendung entworfen wurde.
 
 ## <a name="syntax"></a>Syntax
 
@@ -49,7 +47,7 @@ Stellt einen Accessor für die erweiterte Verwendung vorgesehen.
 class CManualAccessor : public CAccessorBase
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -59,18 +57,18 @@ class CManualAccessor : public CAccessorBase
 
 |||
 |-|-|
-|[AddBindEntry](#addbindentry)|Fügt eine Bindung für den Ausgabespalten.|
-|[AddParameterEntry](#addparameterentry)|Fügt einen Parametereintrag, die dem Parameteraccessor.|
-|[CreateAccessor](#createaccessor)|Belegt Speicher für die Spalte binden, Strukturen und der Spaltenelemente für die Daten initialisiert.|
-|[CreateParameterAccessor](#createparameteraccessor)|Belegt Speicher für den Parameter binden Strukturen und initialisiert die Datenmember des Parameters.|
+|[AddBindEntry](#addbindentry)|Fügt den Ausgabespalten einen Bindungs Eintrag hinzu.|
+|[AddParameterEntry](#addparameterentry)|Fügt dem Parameter Accessor einen Parameter Eintrag hinzu.|
+|[CreateAccessor](#createaccessor)|Weist Speicher für die Spalten Bindungs Strukturen zu und initialisiert die Spalten Datenmember.|
+|[CreateParameterAccessor](#createparameteraccessor)|Weist Speicher für die Parameter Bindungs Strukturen zu und initialisiert die Parameter Datenmember.|
 
 ## <a name="remarks"></a>Hinweise
 
-Mithilfe von `CManualAccessor`, können Sie den Parameter angeben und ausgabebindung Spalte von Run-Time-Funktionsaufrufen.
+Mithilfe `CManualAccessor`können Sie die Parameter-und Ausgabespalten Bindung mithilfe von Lauf Zeit Funktionsaufrufen angeben.
 
-## <a name="addbindentry"></a> CManualAccessor::AddBindEntry
+## <a name="cmanualaccessoraddbindentry"></a><a name="addbindentry"></a>CManualAccessor:: AddBindEntry
 
-Fügt eine Bindung für den Ausgabespalten.
+Fügt den Ausgabespalten einen Bindungs Eintrag hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -84,33 +82,33 @@ void AddBindEntry(DBORDINAL nOrdinal,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *wType*<br/>
-[in] -Datentyp.
+in Datentyp.
 
-*nColumnSize*<br/>
-[in] Spaltengröße in Bytes.
+*ncolumnsize*<br/>
+in Spaltengröße in Byte.
 
 *pData*<br/>
-[in] Ein Zeiger auf die Daten der Spalte im Puffer gespeichert.
+in Ein Zeiger auf die Spaltendaten, die im Puffer gespeichert werden.
 
 *pLength*<br/>
-[in] Ein Zeiger auf die Feldlänge, falls erforderlich.
+in Ein Zeiger auf die Feldlänge, falls erforderlich.
 
-*pStatus*<br/>
-[in] Ein Zeiger auf die Variable an den Status der Spalte gebunden werden soll, falls erforderlich.
+*pstatus*<br/>
+in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, falls erforderlich.
 
 ### <a name="remarks"></a>Hinweise
 
-Um diese Funktion verwenden zu können, müssen Sie zuerst Aufrufen [CreateAccessor](../../data/oledb/cmanualaccessor-createaccessor.md). Fügen Sie können nicht mehrere Einträge als die Anzahl der Spalten, die im angegebenen `CreateAccessor`.
+Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](../../data/oledb/cmanualaccessor-createaccessor.md)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in `CreateAccessor`angegebenen Spalten.
 
-## <a name="addparameterentry"></a> CManualAccessor::AddParameterEntry
+## <a name="cmanualaccessoraddparameterentry"></a><a name="addparameterentry"></a>CManualAccessor:: AddParameterEntry
 
-Die Parameter-Eintrag-Strukturen wird ein Parametereintrag hinzugefügt.
+Fügt den Parameter Eintrags Strukturen einen Parameter Eintrag hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -125,36 +123,36 @@ void AddParameterEntry(DBORDINAL nOrdinal,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Parameteranzahl.
+*nordinon*<br/>
+in Parameter Nummer.
 
 *wType*<br/>
-[in] -Datentyp.
+in Datentyp.
 
-*nColumnSize*<br/>
-[in] Spaltengröße in Bytes.
+*ncolumnsize*<br/>
+in Spaltengröße in Byte.
 
 *pData*<br/>
-[in] Ein Zeiger auf die Daten der Spalte im Puffer gespeichert.
+in Ein Zeiger auf die Spaltendaten, die im Puffer gespeichert werden.
 
 *pLength*<br/>
-[in] Ein Zeiger auf die Feldlänge, falls erforderlich.
+in Ein Zeiger auf die Feldlänge, falls erforderlich.
 
-*pStatus*<br/>
-[in] Ein Zeiger auf die Variable an den Status der Spalte gebunden werden soll, falls erforderlich.
+*pstatus*<br/>
+in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, falls erforderlich.
 
 *eParamIO*<br/>
-[in] Gibt an, ob der Parameter mit dem die Bindung verknüpft ist ein Eingabe-, Eingabe/Ausgabe- oder Ausgabe-Parameter.
+in Gibt an, ob der Parameter, mit dem die Bindung verknüpft ist, ein Eingabe-, Eingabe-/Ausgabe-oder Ausgabeparameter ist.
 
 ### <a name="remarks"></a>Hinweise
 
-Um diese Funktion verwenden zu können, müssen Sie zuerst Aufrufen [CreateParameterAccessor](../../data/oledb/cmanualaccessor-createparameteraccessor.md).
+Um diese Funktion verwenden zu können, müssen Sie zuerst den Befehl "" für "" als " [" aufrufen.](../../data/oledb/cmanualaccessor-createparameteraccessor.md)
 
-## <a name="createaccessor"></a> CManualAccessor::CreateAccessor
+## <a name="cmanualaccessorcreateaccessor"></a><a name="createaccessor"></a>CManualAccessor:: erkreateaccessor
 
-Belegt Speicher für die Spalte binden, Strukturen und der Spaltenelemente für die Daten initialisiert.
+Weist Speicher für die Spalten Bindungs Strukturen zu und initialisiert die Spalten Datenmember.
 
 ### <a name="syntax"></a>Syntax
 
@@ -166,26 +164,26 @@ HRESULT CreateAccessor(int nBindEntries,
 
 #### <a name="parameters"></a>Parameter
 
-*nBindEntries*<br/>
-[in] Anzahl der Spalten. Diese Anzahl sollte die Anzahl der Aufrufe entsprechen den [CManualAccessor:: AddBindEntry](../../data/oledb/cmanualaccessor-addbindentry.md) Funktion.
+*nbindentries*<br/>
+in Anzahl der Spalten. Diese Zahl sollte mit der Anzahl der Aufrufe der [CManualAccessor:: AddBindEntry](../../data/oledb/cmanualaccessor-addbindentry.md) -Funktion identisch sein.
 
 *pBuffer*<br/>
-[in] Ein Zeiger auf den Puffer, in denen die Ausgabespalten gespeichert sind.
+in Ein Zeiger auf den Puffer, in dem die Ausgabespalten gespeichert werden.
 
-*nBufferSize*<br/>
-[in] Die Größe des Puffers in Byte.
+*nbuffersize*<br/>
+in Die Größe des Puffers in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der standardmäßigen HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Hinweise
 
-Rufen Sie diese Funktion vor dem Aufruf der `CManualAccessor::AddBindEntry` Funktion.
+Diese Funktion wird aufgerufen, bevor Sie die `CManualAccessor::AddBindEntry`-Funktion aufzurufen.
 
-## <a name="createparameteraccessor"></a> CManualAccessor::CreateParameterAccessor
+## <a name="cmanualaccessorcreateparameteraccessor"></a><a name="createparameteraccessor"></a>CManualAccessor:: up Parameteraccessor
 
-Belegt Speicher für den Parameter binden Strukturen und initialisiert die Datenmember des Parameters.
+Weist Speicher für die Parameter Bindungs Strukturen zu und initialisiert die Parameter Datenmember.
 
 ### <a name="syntax"></a>Syntax
 
@@ -197,22 +195,22 @@ HRESULT CreateParameterAccessor(int nBindEntries,
 
 #### <a name="parameters"></a>Parameter
 
-*nBindEntries*<br/>
-[in] Anzahl der Spalten.
+*nbindentries*<br/>
+in Anzahl der Spalten.
 
 *pBuffer*<br/>
-[in] Ein Zeiger auf den Puffer, in denen die Eingabespalten gespeichert sind.
+in Ein Zeiger auf den Puffer, in dem die Eingabe Spalten gespeichert werden.
 
-*nBufferSize*<br/>
-[in] Die Größe des Puffers in Byte.
+*nbuffersize*<br/>
+in Die Größe des Puffers in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der standardmäßigen HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Hinweise
 
-Sie müssen diese Funktion vor dem Aufruf aufrufen [AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md).
+Sie müssen diese Funktion aufrufen, bevor Sie [AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md)aufrufen.
 
 ## <a name="see-also"></a>Siehe auch
 

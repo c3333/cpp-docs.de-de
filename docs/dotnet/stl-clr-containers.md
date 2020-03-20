@@ -6,44 +6,44 @@ helpviewer_keywords:
 - STL/CLR, containers
 - containers, STL/CLR
 ms.assetid: 34ca8031-2041-46b9-aed9-29082d1972ea
-ms.openlocfilehash: dc2e5ce3263c61839a1ba434ab0d2a39e6a9078f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bfdbbeb735f98f77046790e21c19dd2d21b9d5c6
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384594"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544838"
 ---
 # <a name="stlclr-containers"></a>STL/CLR-Container
 
-Die STL/CLR-Bibliothek besteht aus Containern, die ähnliche befinden sich in der C++-Standardbibliothek, aber sie innerhalb der verwalteten Umgebung von .NET Framework ausgeführt wird. Es wird nicht auf dem neuesten Stand mit der tatsächlichen C++-Standardbibliothek beibehalten und wird für die Unterstützung beibehalten.
+Die STL/CLR-Bibliothek besteht aus Containern, die mit denen in der C++ Standard Bibliothek vergleichbar sind, aber innerhalb der verwalteten Umgebung des .NET Framework ausgeführt werden. Sie wird nicht mit der eigentlichen C++ Standard Bibliothek auf dem neuesten Stand gehalten und wird für Legacy Unterstützung verwaltet.
 
-Dieses Dokument enthält eine Übersicht über die Container in STL/CLR, z. B. die Anforderungen für Containerelemente, die Typen der Elemente, Sie in den Containern einfügen können und den Besitz mit den Elementen in den Containern gibt. Gegebenenfalls werden die Unterschiede zwischen dem systemeigenen C++-Standardbibliothek und STL/CLR erwähnt.
+Dieses Dokument bietet eine Übersicht über die Container in STL/CLR, wie z. b. die Anforderungen für Container Elemente, die Elementtypen, die Sie in die Container einfügen können, und die Besitz Probleme mit den Elementen in den Containern. Gegebenenfalls werden Unterschiede zwischen der nativen C++ Standard Bibliothek und STL/CLR erwähnt.
 
 ## <a name="requirements-for-container-elements"></a>Anforderungen für Containerelemente
 
-Alle Elemente, die in STL/CLR-Container eingefügt müssen bestimmte Richtlinien unterliegen. Weitere Informationen finden Sie unter [Anforderungen für STL/CLR-Containerelemente](../dotnet/requirements-for-stl-clr-container-elements.md).
+Alle Elemente, die in STL/CLR-Container eingefügt werden, müssen bestimmte Richtlinien einhalten. Weitere Informationen finden Sie unter [Anforderungen für STL/CLR-Container Elemente](../dotnet/requirements-for-stl-clr-container-elements.md).
 
-## <a name="valid-container-elements"></a>Gültige Container-Elemente
+## <a name="valid-container-elements"></a>Gültige Container Elemente
 
-STL/CLR-Container können es sich um einen von zwei Typen von Elementen enthalten:
+STL/CLR-Container können einen von zwei Typen von Elementen enthalten:
 
-- Kümmert sich um Typen zu verweisen.
+- Handles für Verweis Typen.
 
 - Verweistypen.
 
-- Nicht geschachtelte Werttypen.
+- Unboxing-Werttypen.
 
-Sie können keine geschachtelte Werttypen in jedem der STL/CLR-Container einfügen.
+Sie können keine geachtelten Werttypen in einen der STL/CLR-Container einfügen.
 
-### <a name="handles-to-reference-types"></a>Handles für Referenztypen
+### <a name="handles-to-reference-types"></a>Handles für Verweis Typen
 
-Sie können ein Handle für ein Verweistyp in einen STL/CLR-Container einfügen. Ein Handle in C++, die die CLR ist analog zu einem Zeiger in systemeigenem C++. Weitere Informationen finden Sie unter [Handle für Objekt (^)](../extensions/handle-to-object-operator-hat-cpp-component-extensions.md).
+Sie können ein Handle für einen Referenztyp in einen STL/CLR-Container einfügen. Ein Handle in C++ , das die CLR als Ziel hat, ist analog zu C++einem Zeiger im systemeigenen. Weitere Informationen finden Sie unter [handle to Object Operator (^)](../extensions/handle-to-object-operator-hat-cpp-component-extensions.md).
 
 #### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie Sie ein Handle für ein Employee-Objekt in Einfügen einer [cliext::set](../dotnet/set-stl-clr.md).
+Im folgenden Beispiel wird gezeigt, wie ein Handle für ein Employee-Objekt in einen [cliext:: Set](../dotnet/set-stl-clr.md)eingefügt wird.
 
-```
+```cpp
 // cliext_container_valid_reference_handle.cpp
 // compile with: /clr
 
@@ -132,13 +132,13 @@ int main()
 
 ### <a name="reference-types"></a>Verweistypen
 
-Es ist auch möglich, einen Verweistyp handelt (statt ein Handle für einen Verweistyp) in einen STL/CLR-Container eingefügt. Der Hauptunterschied besteht hier ist, wenn ein Container für Verweistypen gelöscht wird, der Destruktor für alle Elemente im Container enthaltene aufgerufen wird. In einem Container von Handles für Verweistypen würde die Destruktoren für diese Elemente nicht aufgerufen werden.
+Es ist auch möglich, einen Verweistyp (anstelle eines Handles für einen Verweistyp) in einen STL/CLR-Container einzufügen. Der Hauptunterschied besteht darin, dass beim Löschen eines Containers von Verweis Typen der Dekonstruktor für alle Elemente in diesem Container aufgerufen wird. In einem Container von Handles, die auf Typen verweisen, werden die dektoren für diese Elemente nicht aufgerufen.
 
 #### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie zum Einfügen eines Objekts Mitarbeiter in einem `cliext::set`.
+Im folgenden Beispiel wird gezeigt, wie ein Employee-Objekt in eine `cliext::set`eingefügt wird.
 
-```
+```cpp
 // cliext_container_valid_reference.cpp
 // compile with: /clr
 
@@ -225,17 +225,17 @@ int main()
 }
 ```
 
-### <a name="unboxed-value-types"></a>Nicht geschachtelte Werttypen
+### <a name="unboxed-value-types"></a>Unboxing-Werttypen
 
-Sie können auch einen nicht geschachtelter Werttyp in einen STL/CLR-Container einfügen. Nicht geschachtelter Werttyp ist ein Werttyp, der nicht wurde *geschachtelt* in einen Verweistyp handelt.
+Sie können auch einen Unboxing-Werttyp in einen STL/CLR-Container einfügen. Bei einem Unboxing-Werttyp handelt es sich um einen Werttyp, der nicht in einen Verweistyp *eingecheckt* wurde.
 
-Ein Value-Type-Element kann eine der standardmäßigen Werttypen, wie z. B. eine `int`, oder es kann ein benutzerdefinierter Wert z. B. eine `value class`. Weitere Informationen finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md)
+Ein Werttyp Element kann einer der Standard Werttypen sein, z. b. ein `int`, oder es kann ein benutzerdefinierter Werttyp, z. b. ein `value class`, sein. Weitere Informationen finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md) .
 
 #### <a name="example"></a>Beispiel
 
-Das folgende Beispiel ändert die im erste Beispiel, indem Sie den Mitarbeiter, die einen Werttyp Klasse machen. Diesen Werttyp wird dann in eingefügt eine `cliext::set` wie im ersten Beispiel.
+Im folgenden Beispiel wird das erste Beispiel dahingehend geändert, dass die Employee-Klasse ein Werttyp ist. Dieser Werttyp wird dann wie im ersten Beispiel in eine `cliext::set` eingefügt.
 
-```
+```cpp
 // cliext_container_valid_valuetype.cpp
 // compile with: /clr
 
@@ -296,20 +296,20 @@ int main()
 }
 ```
 
-Wenn Sie versuchen, ein Handle für einen Werttyp in einen Container einfügen [Compilerfehler C3225](../error-messages/compiler-errors-2/compiler-error-c3225.md) wird generiert.
+Wenn Sie versuchen, ein Handle für einen Werttyp in einen Container einzufügen, wird der [Compilerfehler C3225](../error-messages/compiler-errors-2/compiler-error-c3225.md) generiert.
 
-### <a name="performance-and-memory-implications"></a>Leistung und Arbeitsspeicher-Auswirkungen
+### <a name="performance-and-memory-implications"></a>Auswirkungen auf Leistung und Arbeitsspeicher
 
-Sie müssen mehrere Faktoren berücksichtigt, wenn bestimmt wird, ob Handles zum Verweisen auf Typen oder Werttypen als Elemente verwendet. Wenn Sie Werttypen verwenden möchten, denken Sie daran, dass eine Kopie des Elements erstellt wird, jedes Mal, wenn ein Element in den Container eingefügt wird. Für kleine Objekte Dies sollte kein Problem sein, aber wenn die Objekte, die eingefügte groß sind, die Leistung kann beeinträchtigt werden. Auch wenn Sie mit Werttypen arbeiten, ist es unmöglich, ein Element in mehreren Containern zur gleichen Zeit zu speichern, da jeder Container eine eigene Kopie des Elements verfügen würde.
+Sie müssen mehrere Faktoren berücksichtigen, wenn Sie bestimmen, ob Handles verwendet werden sollen, um auf Typen oder Werttypen als Container Elemente zu verweisen. Wenn Sie sich für die Verwendung von Werttypen entscheiden, denken Sie daran, dass jedes Mal, wenn ein Element in den Container eingefügt wird, eine Kopie des Elements erstellt wird. Bei kleinen Objekten ist dies kein Problem, aber wenn die einzufügenden Objekte sehr groß sind, kann die Leistung beeinträchtigt werden. Wenn Sie Werttypen verwenden, ist es nicht möglich, ein Element gleichzeitig in mehreren Containern zu speichern, da jeder Container über eine eigene Kopie des Elements verfügt.
 
-Wenn Sie Handles zu verwenden, um Typen stattdessen verweisen möchten, kann die Leistung erhöhen, da es nicht erforderlich, erstellen Sie eine Kopie des Elements ein, wenn es in den Container eingefügt wird, ist. Darüber hinaus kann anders als bei Werttypen das gleiche Element in mehreren Containern vorhanden. Jedoch wenn Sie Handles verwenden möchten, müssen Sie darauf achten, stellen Sie sicher, dass das Handle gültig ist und das Objekt, auf die, dem es verweist, nicht an anderer Stelle im Programm gelöscht wurde.
+Wenn Sie stattdessen Handles verwenden, um auf Typen zu verweisen, kann sich die Leistung erhöhen, da es nicht erforderlich ist, eine Kopie des Elements zu erstellen, wenn es in den Container eingefügt wird. Anders als bei Werttypen kann auch das gleiche Element in mehreren Containern vorhanden sein. Wenn Sie sich jedoch für die Verwendung von Handles entscheiden, müssen Sie sicherstellen, dass das Handle gültig ist und dass das Objekt, auf das es verweist, nicht an anderer Stelle im Programm gelöscht wurde.
 
-## <a name="ownership-issues-with-containers"></a>Besitzprobleme mit Containern
+## <a name="ownership-issues-with-containers"></a>Besitz Probleme mit Containern
 
-Container in STL/CLR arbeiten Wertsemantik. Jedes Mal, wenn Sie ein Element in einen Container einfügen, wird eine Kopie des Elements eingefügt. Wenn Sie die Referenz-ähnlicher Semantik abrufen möchten, können Sie ein Handle für das Objekt selbst, sondern ein Objekt einfügen.
+Container in STL/CLR arbeiten an der Wert Semantik. Jedes Mal, wenn Sie ein Element in einen Container einfügen, wird eine Kopie dieses Elements eingefügt. Wenn Sie Verweis ähnliche Semantik erhalten möchten, können Sie ein Handle für ein Objekt anstelle des Objekts selbst einfügen.
 
-Wenn Sie Klartext aufrufen oder erase-Methode, eines Containers der Handle-Objekte, werden die Objekte, denen auf die Handles verweisen nicht aus dem Arbeitsspeicher freigegeben. Sie müssen entweder explizit Löschen des Objekts oder, da diese Objekte, auf dem verwalteten Heap befinden der Garbage Collector den Arbeitsspeicher freizugeben, sobald es feststellt, dass das Objekt nicht mehr verwendet wird.
+Wenn Sie die Clear-oder Erase-Methode eines Containers von handle-Objekten aufzurufen, werden die Objekte, auf die die Handles verweisen, nicht aus dem Arbeitsspeicher freigegeben. Sie müssen das Objekt entweder explizit löschen oder, da sich diese Objekte auf dem verwalteten Heap befinden, zulassen, dass der Garbage Collector den Speicher freigeben kann, sobald er feststellt, dass das Objekt nicht mehr verwendet wird.
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)

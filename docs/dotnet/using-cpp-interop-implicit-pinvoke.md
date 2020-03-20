@@ -20,18 +20,18 @@ helpviewer_keywords:
 - C++ COM Interop
 - .NET [C++], porting C++ native to
 ms.assetid: 5f710bf1-88ae-4c4e-8326-b3f0b7c4c68a
-ms.openlocfilehash: aaa07373b7dd22807290ceefa9197b4013c61fe5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d26fbefd87b3ba6d6ca7e183be78608777f383b5
+ms.sourcegitcommit: 27d9db019f6d84c94de9e6aff0170d918cee6738
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384516"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "79545420"
 ---
 # <a name="using-c-interop-implicit-pinvoke"></a>Verwenden von C++-Interop (implizites PInvoke)
 
-Im Gegensatz zu anderen .NET-Sprachen verfügt Visual C++ interoperabilitätsunterstützung, die verwalteten und nicht verwaltetem Code vorhanden sein, in der gleichen Anwendung und sogar in derselben Datei ermöglicht (mit der [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) Pragmas). Auf diese Weise können Visual C++-Entwickler .NET-Funktionalität in vorhandene Visual C++-Anwendungen integrieren, ohne den Rest der Anwendung zu beeinträchtigen.
+Im Gegensatz zu anderen .net- C++ Sprachen verfügt Visual über Interoperabilitäts Unterstützung, mit der verwalteter und nicht verwalteter Code in derselben Anwendung und sogar in derselben Datei (mit den [verwalteten, nicht verwalteten](../preprocessor/managed-unmanaged.md) Pragmas) vorhanden sein kann. Auf diese Weise können Visual C++-Entwickler .NET-Funktionalität in vorhandene Visual C++-Anwendungen integrieren, ohne den Rest der Anwendung zu beeinträchtigen.
 
-Sie können auch nicht verwaltete Funktionen aus einer verwalteten Kompiliereinheit Aufrufen [Dllexport, Dllimport](../cpp/dllexport-dllimport.md).
+Sie können auch nicht verwaltete Funktionen von einer verwalteten Kompilierungen aus mithilfe von [dllexport, dllimport,](../cpp/dllexport-dllimport.md)abrufen.
 
 Implizites PInvoke ist sinnvoll, wenn Sie das Marshalling von Funktionsparametern oder andere Details, die bei einem expliziten Aufruf von DllImportAttribute angegeben werden können, nicht festlegen müssen.
 
@@ -43,23 +43,23 @@ Explizites PInvoke wird von .NET Framework unterstützt und ist in den meisten .
 
 ## <a name="c-interop"></a>C++ Interop
 
-C++-Interop wird gegenüber explizitem PInvoke empfohlen, da es bessere Typsicherheit bietet, normalerweise einfacher zu implementieren ist, sich bei Änderungen der nicht verwalteten API leichter handhaben lässt und Leistungsverbesserungen erlaubt, die mit explizitem PInvoke nicht möglich sind. C++-Interop ist jedoch nicht möglich, wenn der nicht verwaltete Quellcode nicht verfügbar ist.
+C++Interop bietet eine bessere Typsicherheit und ist in der Regel weniger mühsam zu implementieren. C++ Interop ist jedoch keine Option, wenn der nicht verwaltete Quellcode nicht verfügbar ist, oder für plattformübergreifende Projekte.
 
 ## <a name="c-com-interop"></a>C++-COM-Interop
 
-Die von Visual C++ unterstützten Interoperabilitätsfunktionen bieten einen besonderen Vorteil gegenüber anderen .NET-Sprachen, wenn es um die Interoperation mit COM-Komponenten geht. Nicht auf die Einschränkungen von .NET Framework beschränkt [Tlbimp.exe (Type Library Importer-Tool)](/dotnet/framework/tools/tlbimp-exe-type-library-importer), z. B. eingeschränkte Unterstützung für Datentypen und das obligatorische Verfügbarmachen jedes einzelnen Members der einzelnen COM-Schnittstellen, C++-Interop ermöglicht COM Komponenten am Zugriff auf und erfordert keine separate interop-Assemblys. Im Gegensatz zu Visual Basic und C#, Visual C++ können COM-Objekte, die direkt mit der üblichen COM-Mechanismen verwenden (z. B. **CoCreateInstance** und **QueryInterface**). Dies ist möglich, da die C++-Interop-Funktionen, die dazu führen, dass den Compiler zum automatischen Einfügen von Code für den Übergang zum Verschieben von verwaltetem zu nicht verwalteten Funktionen und wieder zurück.
+Die von Visual C++ unterstützten Interoperabilitätsfunktionen bieten einen besonderen Vorteil gegenüber anderen .NET-Sprachen, wenn es um die Interoperation mit COM-Komponenten geht. Anstatt auf die Einschränkungen der .NET Framework [Tlbimp. exe (Typbibliothek-Import Programm)](/dotnet/framework/tools/tlbimp-exe-type-library-importer)beschränkt zu sein, z. b. eingeschränkte Unterstützung für Datentypen und die obligatorische verfügbar machung jedes Members jeder C++ com-Schnittstelle, ermöglicht Interop den Zugriff auf COM-Komponenten bei Bedarf und erfordert keine separaten Interop-Assemblys. Im Gegensatz zu C#Visual Basic und C++ kann Visual com-Objekte direkt mithilfe der üblichen com-Mechanismen (z. b. **cokreateinstance** und **QueryInterface**) verwenden. Dies ist aufgrund von C++ Interop-Features möglich, die bewirken, dass der Compiler automatisch den Übergangs Code einfügt, um von verwalteten zu nicht verwalteten Funktionen und wieder zurück zu wechseln.
 
-C++-Interop können, COM-Komponenten verwendet werden, wie sie normalerweise verwendet werden, oder sie innerhalb von C++-Klassen eingebunden werden können. Diese Wrapperklassen werden als benutzerdefinierte Runtime callable Wrapper, oder CRCWs, und sie haben zwei Vorteile gegenüber der Verwendung von COM direkt im Anwendungscode:
+Mithilfe C++ von Interop können COM-Komponenten verwendet werden, da Sie normalerweise verwendet werden, oder Sie C++ können in Klassen umschließt werden. Diese Wrapper Klassen werden als benutzerdefinierte Runtime Callable Wrapper oder CRCWs bezeichnet und haben zwei Vorteile gegenüber der Verwendung von com direkt im Anwendungscode:
 
-- Die resultierende Klasse kann von anderen Sprachen als Visual C++ verwendet werden.
+- Die resultierende Klasse kann in anderen Sprachen als Visual C++verwendet werden.
 
-- Die Details der COM-Schnittstelle können aus dem verwalteten Clientcode ausgeblendet werden. .NET Datentypen anstelle von systemeigenen Typen verwendet werden können, und die Details des Marshalling von Daten in die CRCW transparent ausgeführt werden können.
+- Die Details der COM-Schnittstelle können im verwalteten Client Code ausgeblendet werden. .NET-Datentypen können anstelle von systemeigenen Typen verwendet werden, und die Details des Daten Marshalling können transparent innerhalb des CRCW ausgeführt werden.
 
-Unabhängig davon, ob COM direkt oder über eine CRCW verwendet wird müssen die Argumenttypen einfach, blitfähige Typen gemarshallt werden.
+Unabhängig davon, ob com direkt oder über einen CRCW verwendet wird, müssen die anderen Argument Typen als einfache, blitfähige Typen gemarshallt werden.
 
 ## <a name="blittable-types"></a>Blitfähige Typen
 
-Für nicht verwaltete APIs, die einfache, systeminterne Typen verwenden (finden Sie unter [blitfähige und nicht blitfähige Typen](/dotnet/framework/interop/blittable-and-non-blittable-types)), keine besondere Codierung ist erforderlich, da diese Datentypen die gleiche Darstellung im Arbeitsspeicher haben, während komplexere Datentypen erfordern explizite Daten-Marshalling. Ein Beispiel finden Sie unter [Gewusst wie: Aufrufen von systemeigenen DLLs in verwaltetem Code mithilfe von PInvoke](../dotnet/how-to-call-native-dlls-from-managed-code-using-pinvoke.md).
+Bei nicht verwalteten APIs, die einfache, systeminterne Typen verwenden (siehe [blitfähige und nicht blitfähige Typen](/dotnet/framework/interop/blittable-and-non-blittable-types)), ist keine spezielle Codierung erforderlich, da diese Datentypen die gleiche Darstellung im Arbeitsspeicher aufweisen, aber komplexere Datentypen explizites Marshalling von Daten erfordern. Ein Beispiel finden Sie unter Gewusst [wie: Aufrufen von systemeigenen DLLs aus verwaltetem Code mithilfe von PInvoke](../dotnet/how-to-call-native-dlls-from-managed-code-using-pinvoke.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -111,7 +111,7 @@ Done
 
 - [Vorgehensweise: Umwandeln von char * String nach System::Byte Array](../dotnet/how-to-convert-char-star-string-to-system-byte-array.md)
 
-- [Vorgehensweise: Konvertieren von System:: String in Wchar_t * oder char\*](../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)
+- [Vorgehensweise: Konvertieren von System:: String in wchar_t * oder char\*](../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)
 
 - [Vorgehensweise: Konvertieren von System::String zu Standardzeichenfolge](../dotnet/how-to-convert-system-string-to-standard-string.md)
 
@@ -131,19 +131,19 @@ Done
 
 - [Vorgehensweise: Objektverweis in nicht verwaltetem Arbeitsspeicher](../dotnet/how-to-hold-object-reference-in-unmanaged-memory.md)
 
-- [Vorgehensweise: Erkennen von/CLR-Kompilierung](../dotnet/how-to-detect-clr-compilation.md)
+- [Gewusst wie: Erkennen der/CLR-Kompilierung](../dotnet/how-to-detect-clr-compilation.md)
 
 - [Vorgehensweise: Konvertieren zwischen System::Guid und _GUID](../dotnet/how-to-convert-between-system-guid-and-guid.md)
 
 - [Vorgehensweise: Angeben eines out-Parameters](../dotnet/how-to-specify-an-out-parameter.md)
 
-- [Vorgehensweise: Verwenden eines nativen Typs in einer/CLR-Kompilierung](../dotnet/how-to-use-a-native-type-in-a-clr-compilation.md)
+- [Gewusst wie: Verwenden eines systemeigenen Typs in einer/CLR-Kompilierung](../dotnet/how-to-use-a-native-type-in-a-clr-compilation.md)
 
 - [Vorgehensweise: Deklarieren von Handles in nativen Typen](../dotnet/how-to-declare-handles-in-native-types.md)
 
 - [Vorgehensweise: Kapseln einer nativen Klasse zur Verwendung in C#](../dotnet/how-to-wrap-native-class-for-use-by-csharp.md)
 
-Informationen zum Verwenden von Delegaten in einem Interop-Szenario finden Sie unter [Delegate (Komponentenerweiterungen)](../extensions/delegate-cpp-component-extensions.md).
+Informationen zur Verwendung von Delegaten in einem Interop-Szenario finden Sie unter [delegieren (C++ Komponenten Erweiterungen)](../extensions/delegate-cpp-component-extensions.md).
 
 ## <a name="see-also"></a>Siehe auch
 

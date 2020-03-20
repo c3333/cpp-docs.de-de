@@ -4,12 +4,6 @@ ms.date: 11/04/2016
 ms.topic: reference
 f1_keywords:
 - cliext::queue
-- cliext::operator!=
-- cliext::operator<
-- cliext::operator<=
-- cliext::operator==
-- cliext::operator>
-- cliext::operator>=
 - cliext::queue::assign
 - cliext::queue::back
 - cliext::queue::back_item
@@ -63,18 +57,18 @@ helpviewer_keywords:
 - to_array member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: 9ea7dec3-ea98-48ff-87d0-a5afc924aaf2
-ms.openlocfilehash: 2cf0467c2b4799c2009f866b7aa22be5e421f762
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 08f90ef6be7a5eeb560add9c60a6578057fbb310
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384724"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79546158"
 ---
 # <a name="queue-stlclr"></a>queue (STL/CLR)
 
-Die Vorlagenklasse beschreibt ein Objekt, das eine Elementsequenz variabler Länge Sequenz von Elementen steuert, die First in First Out Zugriff hat. Verwenden des Adapters Container `queue` einen zugrunde liegenden Container wie eine Warteschlange zu verwalten.
+Die Vorlagen Klasse beschreibt ein Objekt, das eine Sequenz von Elementen mit variabler Länge steuert, die über den First-in-First-Out-Zugriff verfügt. Sie verwenden den Container Adapter `queue`, um einen zugrunde liegenden Container als Warteschlange zu verwalten.
 
-In der folgenden Beschreibung `GValue` ist identisch mit *Wert* , wenn die zweite ein Ref-Typ ist, in diesem Fall ist es `Value^`. Auf ähnliche Weise `GContainer` ist identisch mit *Container* , wenn die zweite ein Ref-Typ ist, in diesem Fall ist es `Container^`.
+In der folgenden Beschreibung ist `GValue` identisch mit dem *Wert* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Value^`. Ebenso ist `GContainer` identisch mit dem *Container* , es sei denn, es handelt sich um einen Verweistyp. in diesem Fall ist es `Container^`.
 
 ## <a name="syntax"></a>Syntax
 
@@ -96,11 +90,11 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 *Container*<br/>
 Der Typ des zugrunde liegenden Containers.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** \<cliext/queue>
+**Header:** \<cliext/Queue >
 
-**Namespace:** Cliext
+**Namespace:** cliext
 
 ## <a name="declarations"></a>Deklarationen
 
@@ -109,8 +103,8 @@ Der Typ des zugrunde liegenden Containers.
 |[queue::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
 |[queue::container_type (STL/CLR)](#container_type)|Der Typ des zugrunde liegenden Containers.|
 |[queue::difference_type (STL/CLR)](#difference_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
-|[queue::generic_container (STL/CLR)](#generic_container)|Der Typ der generischen Schnittstelle für den Containeradapter.|
-|[queue::generic_value (STL/CLR)](#generic_value)|Der Typ eines Elements für die generische Schnittstelle für den Containeradapter.|
+|[queue::generic_container (STL/CLR)](#generic_container)|Der Typ der generischen Schnittstelle für den Container Adapter.|
+|[queue::generic_value (STL/CLR)](#generic_value)|Der Typ eines Elements für die generische Schnittstelle für den Container Adapter.|
 |[queue::reference (STL/CLR)](#reference)|Der Typ eines Verweises auf ein Element.|
 |[queue::size_type (STL/CLR)](#size_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[queue::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
@@ -121,12 +115,12 @@ Der Typ des zugrunde liegenden Containers.
 |[queue::back (STL/CLR)](#back)|Greift auf das letzte Element zu.|
 |[queue::empty (STL/CLR)](#empty)|Testet, ob keine Elemente vorhanden sind.|
 |[queue::front (STL/CLR)](#front)|Greift auf das erste Element zu.|
-|[queue::get_container (STL/CLR)](#get_container)|Greift auf die zugrunde liegenden Containers.|
+|[queue::get_container (STL/CLR)](#get_container)|Greift auf den zugrunde liegenden Container zu.|
 |[queue::pop (STL/CLR)](#pop)|Entfernt das erste Element.|
-|[queue::push (STL/CLR)](#push)|Fügt ein neues Letztes Element hinzu.|
+|[queue::push (STL/CLR)](#push)|Fügt ein neues letztes Element hinzu.|
 |[queue::queue (STL/CLR)](#queue)|Erstellt ein container-Objekt.|
 |[queue::size (STL/CLR)](#size)|Ermittelt die Anzahl von Elementen.|
-|[queue::to_array (STL/CLR)](#to_array)|Kopiert die kontrollierte Sequenz in ein neues Array.|
+|[queue::to_array (STL/CLR)](#to_array)|Kopiert die gesteuerte Sequenz in ein neues Array.|
 
 |Eigenschaft|Beschreibung|
 |--------------|-----------------|
@@ -136,27 +130,27 @@ Der Typ des zugrunde liegenden Containers.
 |Operator|Beschreibung|
 |--------------|-----------------|
 |[queue::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
-|[operator!= (queue) (STL/CLR)](#op_neq)|Bestimmt, ob eine `queue` Objekt ist nicht gleich einem anderen `queue` Objekt.|
-|[operator< (queue) (STL/CLR)](#op_lt)|Bestimmt, ob eine `queue` Objekt ist kleiner als ein anderes `queue` Objekt.|
-|[operator<= (queue) (STL/CLR)](#op_lteq)|Bestimmt, ob eine `queue` Objekt ist kleiner als oder gleich einem anderen `queue` Objekt.|
-|[operator== (queue) (STL/CLR)](#op_eq)|Bestimmt, ob eine `queue` Objekt ist gleich einem anderen `queue` Objekt.|
-|[operator> (queue) (STL/CLR)](#op_gt)|Bestimmt, ob eine `queue` Objekt ist größer als ein anderer `queue` Objekt.|
-|[operator>= (queue) (STL/CLR)](#op_gteq)|Bestimmt, ob eine `queue` Objekt ist größer als oder gleich einem anderen `queue` Objekt.|
+|[operator!= (queue) (STL/CLR)](#op_neq)|Bestimmt, ob ein `queue` Objekt nicht gleich einem anderen `queue` Objekt ist.|
+|[operator< (queue) (STL/CLR)](#op_lt)|Bestimmt, ob ein `queue` Objekt kleiner als ein anderes `queue`-Objekt ist.|
+|[operator<= (queue) (STL/CLR)](#op_lteq)|Bestimmt, ob ein `queue`-Objekt kleiner als oder gleich einem anderen `queue`-Objekt ist.|
+|[operator== (queue) (STL/CLR)](#op_eq)|Bestimmt, ob ein `queue` Objekt gleich einem anderen `queue`-Objekt ist.|
+|[operator> (queue) (STL/CLR)](#op_gt)|Bestimmt, ob ein `queue` Objekt größer als ein anderes `queue`-Objekt ist.|
+|[operator>= (queue) (STL/CLR)](#op_gteq)|Bestimmt, ob ein `queue` Objekt größer als oder gleich einem anderen `queue` Objekt ist.|
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Interface|Beschreibung|
+|Schnittstelle|Beschreibung|
 |---------------|-----------------|
-|<xref:System.ICloneable>|Duplizieren Sie ein Objekt.|
-|IQueue\<-Wert, der Container >|Behalten Sie die generischen Container-Adapter.|
+|<xref:System.ICloneable>|Duplizieren eines Objekts.|
+|IQueue\<Wert, Container >|Verwalten Sie einen generischen Container Adapter.|
 
 ## <a name="remarks"></a>Hinweise
 
-Das Objekt weist speicherbelegungen und-Freigaben für die gesteuerte Sequenz durch eine zugrunde liegenden Containers, eines Typs `Container`, speichert `Value` Elemente und wächst nach Bedarf. Objekts schränkt den Zugriff auf Sie übertragen nur das erste Element und entfernt das letzte Element, in die Implementierung einer First in First Out Warteschlange (auch bekannt als eine FIFO-Warteschlange oder einfach eine Warteschlange).
+Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ "`Container`" steuert, der `Value` Elemente speichert und Bedarfs gesteuert wächst. Das-Objekt schränkt den Zugriff ein, um nur das erste Element per Push zu übertragen und das letzte Element zu pingen. dabei wird eine First-in-First-Out-Warteschlange implementiert (auch als FIFO-Warteschlange bezeichnet).
 
 ## <a name="members"></a>Member
 
-## <a name="assign"></a> queue::assign (STL/CLR)
+## <a name="queueassign-stlclr"></a><a name="assign"></a>Queue:: Assign (STL/CLR)
 
 Ersetzt alle Elemente.
 
@@ -169,11 +163,11 @@ void assign(queue<Value, Container>% right);
 #### <a name="parameters"></a>Parameter
 
 *right*<br/>
-Der Containeradapter, einfügen.
+Der einzufügende Container Adapter.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion weist `right.get_container()` in den zugrunde liegenden Container. Damit können Sie um den gesamten Inhalt der Warteschlange zu ändern.
+Die Member-Funktion weist `right.get_container()` dem zugrunde liegenden Container zu. Sie verwenden Sie, um den gesamten Inhalt der Warteschlange zu ändern.
 
 ### <a name="example"></a>Beispiel
 
@@ -210,7 +204,7 @@ a b c
 a b c
 ```
 
-## <a name="back"></a> queue::back (STL/CLR)
+## <a name="queueback-stlclr"></a><a name="back"></a>Queue:: Back (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -222,7 +216,7 @@ reference back();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt einen Verweis auf das letzte Element der kontrollierten Sequenz, die nicht leer sein darf. Damit können Sie das letzte Element zuzugreifen, wenn Sie wissen, dass es vorhanden ist.
+Die Member-Funktion gibt einen Verweis auf das letzte Element der kontrollierten Sequenz zurück, das nicht leer sein darf. Sie verwenden Sie, um auf das letzte Element zuzugreifen, wenn Sie wissen, dass es vorhanden ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -262,7 +256,7 @@ back() = c
 a b x
 ```
 
-## <a name="back_item"></a> queue::back_item (STL/CLR)
+## <a name="queueback_item-stlclr"></a><a name="back_item"></a>Queue:: back_item (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -274,7 +268,7 @@ property value_type back_item;
 
 ### <a name="remarks"></a>Hinweise
 
-Die Eigenschaft greift auf das letzte Element der kontrollierten Sequenz, die nicht leer sein darf. Sie verwenden ihn zum Lesen oder schreiben das letzte Element, wenn Sie wissen, dass es vorhanden ist.
+Die-Eigenschaft greift auf das letzte Element der kontrollierten Sequenz zu, das nicht leer sein darf. Sie verwenden Sie, um das letzte Element zu lesen oder zu schreiben, wenn Sie wissen, dass es vorhanden ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -314,7 +308,7 @@ back_item = c
 a b x
 ```
 
-## <a name="const_reference"></a> queue::const_reference (STL/CLR)
+## <a name="queueconst_reference-stlclr"></a><a name="const_reference"></a>Queue:: const_reference (STL/CLR)
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -358,7 +352,7 @@ int main()
 a b c
 ```
 
-## <a name="container_type"></a> queue::container_type (STL/CLR)
+## <a name="queuecontainer_type-stlclr"></a><a name="container_type"></a>Queue:: container_type (STL/CLR)
 
 Der Typ des zugrunde liegenden Containers.
 
@@ -370,7 +364,7 @@ typedef Container value_type;
 
 ### <a name="remarks"></a>Hinweise
 
-Der Type stellt ein Synonym für den Vorlagenparameter `Container` dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `Container`dar.
 
 ### <a name="example"></a>Beispiel
 
@@ -400,9 +394,9 @@ int main()
 a b c
 ```
 
-## <a name="difference_type"></a> queue::difference_type (STL/CLR)
+## <a name="queuedifference_type-stlclr"></a><a name="difference_type"></a>Queue::d ifference_type (STL/CLR)
 
-Die Typen des Abstands zwischen den beiden Elementen mit Vorzeichen.
+Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -412,7 +406,7 @@ typedef int difference_type;
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ beschreibt eine möglicherweise negative Elementanzahl.
+Der Typ beschreibt eine möglicherweise negative Element Anzahl.
 
 ### <a name="example"></a>Beispiel
 
@@ -458,7 +452,7 @@ pushing 2 = -2
 popping 3 = 3
 ```
 
-## <a name="empty"></a> queue::empty (STL/CLR)
+## <a name="queueempty-stlclr"></a><a name="empty"></a>Queue:: Empty (STL/CLR)
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -470,7 +464,7 @@ bool empty();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies ist äquivalent zum [Queue:: Size (STL/CLR)](../dotnet/queue-size-stl-clr.md)`() == 0`. Damit können Sie überprüfen, ob die Warteschlange leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht dem [Queue:: Size (STL/CLR)-](../dotnet/queue-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob die Warteschlange leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -512,7 +506,7 @@ size() = 0
 empty() = True
 ```
 
-## <a name="front"></a> queue::front (STL/CLR)
+## <a name="queuefront-stlclr"></a><a name="front"></a>Queue:: Front (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -524,7 +518,7 @@ reference front();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt einen Verweis auf das erste Element der kontrollierten Sequenz, die nicht leer sein darf. Damit können Sie das erste Element, zugreifen, wenn Sie wissen, dass es vorhanden ist.
+Die Member-Funktion gibt einen Verweis auf das erste Element der kontrollierten Sequenz zurück, das nicht leer sein darf. Sie verwenden Sie, um auf das erste Element zuzugreifen, wenn Sie wissen, dass es vorhanden ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -564,7 +558,7 @@ front() = a
 x b c
 ```
 
-## <a name="front_item"></a> queue::front_item (STL/CLR)
+## <a name="queuefront_item-stlclr"></a><a name="front_item"></a>Queue:: front_item (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -576,7 +570,7 @@ property value_type front_item;
 
 ### <a name="remarks"></a>Hinweise
 
-Die Eigenschaft greift auf das erste Element der kontrollierten Sequenz, die nicht leer sein darf. Sie verwenden ihn zum Lesen oder schreiben das erste Element, wenn Sie wissen, dass es vorhanden ist.
+Die-Eigenschaft greift auf das erste Element der kontrollierten Sequenz zu, das nicht leer sein darf. Sie verwenden Sie, um das erste Element zu lesen oder zu schreiben, wenn Sie wissen, dass es vorhanden ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -616,9 +610,9 @@ front_item = a
 x b c
 ```
 
-## <a name="generic_container"></a> queue::generic_container (STL/CLR)
+## <a name="queuegeneric_container-stlclr"></a><a name="generic_container"></a>Queue:: generic_container (STL/CLR)
 
-Der Typ der generischen Schnittstelle für den Containeradapter.
+Der Typ der generischen Schnittstelle für den Container Adapter.
 
 ### <a name="syntax"></a>Syntax
 
@@ -629,7 +623,7 @@ typedef Microsoft::VisualC::StlClr::IQueue<Value>
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ beschreibt die generische Schnittstelle für diese Container Adapter-Vorlagenklasse.
+Der Typ beschreibt die generische Schnittstelle für diese Vorlagen Container-Adapter Klasse.
 
 ### <a name="example"></a>Beispiel
 
@@ -679,9 +673,9 @@ a b c d
 a b c d e
 ```
 
-## <a name="generic_value"></a> queue::generic_value (STL/CLR)
+## <a name="queuegeneric_value-stlclr"></a><a name="generic_value"></a>Queue:: generic_value (STL/CLR)
 
-Der Typ eines Elements für die Verwendung mit der generischen Schnittstelle für den Container.
+Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
 ### <a name="syntax"></a>Syntax
 
@@ -691,7 +685,7 @@ typedef GValue generic_value;
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ beschreibt ein Objekt des Typs `GValue` , beschreibt den gespeichertes Element-Wert für die Verwendung mit der generischen Schnittstelle für diese Vorlage Container-Klasse. (`GValue` ist entweder `value_type` oder `value_type^` Wenn `value_type` ist ein Ref-Typ.)
+Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt. (`GValue` ist entweder `value_type` oder `value_type^`, wenn `value_type` ein Ref-Typ ist.)
 
 ### <a name="example"></a>Beispiel
 
@@ -737,9 +731,9 @@ a b c
 a b c
 ```
 
-## <a name="get_container"></a> queue::get_container (STL/CLR)
+## <a name="queueget_container-stlclr"></a><a name="get_container"></a>Queue:: get_container (STL/CLR)
 
-Greift auf die zugrunde liegenden Containers.
+Greift auf den zugrunde liegenden Container zu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -749,7 +743,7 @@ container_type^ get_container();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt den zugrunde liegenden Container zurück. Damit können Sie um die Einschränkungen, die vom Container Wrapper zu umgehen.
+Die Member-Funktion gibt den zugrunde liegenden Container zurück. Sie verwenden Sie, um die Einschränkungen zu umgehen, die vom Container Wrapper auferlegt werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -778,7 +772,7 @@ int main()
 a b c
 ```
 
-## <a name="op_as"></a> queue::operator= (STL/CLR)
+## <a name="queueoperator-stlclr"></a><a name="op_as"></a>Queue:: Operator = (STL/CLR)
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -791,11 +785,11 @@ queue <Value, Container>% operator=(queue <Value, Container>% right);
 #### <a name="parameters"></a>Parameter
 
 *right*<br/>
-Der Containeradapter, zu kopieren.
+Zu Kopier der Container Adapter.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Member-Operator Kopien *rechten* klicken Sie dann auf das Objekt, gibt `*this`. Damit können Sie die kontrollierte Sequenz durch eine Kopie der kontrollierten Sequenz in ersetzen *rechten*.
+Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -832,7 +826,7 @@ a b c
 a b c
 ```
 
-## <a name="pop"></a> queue::pop (STL/CLR)
+## <a name="queuepop-stlclr"></a><a name="pop"></a>Queue::p op (STL/CLR)
 
 Entfernt das letzte Element.
 
@@ -844,7 +838,7 @@ void pop();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion entfernt das letzte Element der kontrollierten Sequenz, die nicht leer sein darf. Sie verwenden, um ein Element an der Rückseite die Warteschlange zu verkürzen.
+Die Member-Funktion entfernt das letzte Element der kontrollierten Sequenz, das nicht leer sein darf. Sie verwenden Sie, um die Warteschlange um ein Element auf der Rückseite zu verkürzen.
 
 ### <a name="example"></a>Beispiel
 
@@ -880,9 +874,9 @@ a b c
 b c
 ```
 
-## <a name="push"></a> queue::push (STL/CLR)
+## <a name="queuepush-stlclr"></a><a name="push"></a>Queue::p USH (STL/CLR)
 
-Fügt ein neues Letztes Element hinzu.
+Fügt ein neues letztes Element hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -892,7 +886,7 @@ void push(value_type val);
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion Fügt ein Element mit dem Wert `val` am Ende der Warteschlange. Damit können Sie ein Element an die Warteschlange angefügt werden soll.
+Die Member-Funktion fügt ein Element mit einem Wert `val` am Ende der Warteschlange hinzu. Sie verwenden es, um ein Element an die Warteschlange anzufügen.
 
 ### <a name="example"></a>Beispiel
 
@@ -921,9 +915,9 @@ int main()
 a b c
 ```
 
-## <a name="queue"></a> queue::queue (STL/CLR)
+## <a name="queuequeue-stlclr"></a><a name="queue"></a>Queue:: Queue (STL/CLR)
 
-Erstellt ein Containerobjekt für den Adapter.
+Erstellt ein Container Adapter Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -937,10 +931,10 @@ explicit queue(container_type% wrapped);
 #### <a name="parameters"></a>Parameter
 
 *right*<br/>
-Zu kopierende Objekt.
+Objekt, das kopiert werden soll.
 
-*wrapped*<br/>
-Umschlossene Container verwenden.
+*nür*<br/>
+Der zu verwendende Container.
 
 ### <a name="remarks"></a>Hinweise
 
@@ -948,25 +942,25 @@ Der Konstruktor:
 
 `queue();`
 
-erstellt einen leeren umschlossenen Container an. Damit können Sie eine leere gesteuerte Sequenz angeben.
+erstellt einen leeren umschließenen Container. Sie verwenden es, um eine leere anfängliche gesteuerte Sequenz anzugeben.
 
 Der Konstruktor:
 
 `queue(queue<Value, Container>% right);`
 
-erstellt einen Wrapper-Container, die eine Kopie des `right.get_container()`. Damit können Sie eine gesteuerte Sequenz angeben, die eine Kopie der gesteuerte Sequenz durch das Queue-Objekt ist *rechten*.
+erstellt einen umschpackten Container, der eine Kopie von `right.get_container()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Queue-Objekt *Rechts*gesteuert wird.
 
 Der Konstruktor:
 
 `queue(queue<Value, Container>^ right);`
 
-erstellt einen Wrapper-Container, die eine Kopie des `right->get_container()`. Damit können Sie eine gesteuerte Sequenz angeben, die eine Kopie der gesteuerte Sequenz durch das Queue-Objekt ist `*right`.
+erstellt einen umschpackten Container, der eine Kopie von `right->get_container()`ist. Sie verwenden Sie, um eine anfängliche gesteuerte Sequenz anzugeben, die eine Kopie der Sequenz ist, die vom Warteschlangen Objekt `*right`gesteuert wird.
 
 Der Konstruktor:
 
 `explicit queue(container_type wrapped);`
 
-den vorhandenen Container verwendet *umschlossen* als umschlossene Container. Damit können Sie um eine Warteschlange aus einem vorhandenen Container zu erstellen.
+verwendet den vorhandenen Container, der als umschließenden Container *umschließt* . Sie verwenden Sie, um eine Warteschlange aus einem vorhandenen Container zu erstellen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1014,7 +1008,7 @@ x x x x x
 x x x x x
 ```
 
-## <a name="reference"></a> queue::reference (STL/CLR)
+## <a name="queuereference-stlclr"></a><a name="reference"></a>Queue:: Reference (STL/CLR)
 
 Der Typ eines Verweises auf ein Element.
 
@@ -1063,7 +1057,7 @@ a b c
 a b x
 ```
 
-## <a name="size"></a> queue::size (STL/CLR)
+## <a name="queuesize-stlclr"></a><a name="size"></a>Queue:: Size (STL/CLR)
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1075,7 +1069,7 @@ size_type size();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Damit können Sie die Anzahl der Elemente, die derzeit in der kontrollierten Sequenz bestimmt. Wenn Sie besonders interessierenden lediglich, ob die Reihenfolge größer, finden Sie unter hat [Queue:: Empty (STL/CLR)](../dotnet/queue-empty-stl-clr.md)`()`.
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur sicher sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Queue:: Empty (STL/CLR)](../dotnet/queue-empty-stl-clr.md)`()`.
 
 ### <a name="example"></a>Beispiel
 
@@ -1117,9 +1111,9 @@ size() = 2 after popping
 size() = 4 after adding 2
 ```
 
-## <a name="size_type"></a> queue::size_type (STL/CLR)
+## <a name="queuesize_type-stlclr"></a><a name="size_type"></a>Queue:: size_type (STL/CLR)
 
-Der Typ eines Abstands zwischen den beiden Elementen mit Vorzeichen.
+Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1129,7 +1123,7 @@ typedef int size_type;
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ beschreibt eine nicht Negative Elementanzahl.
+Der Typ beschreibt eine nicht negative Element Anzahl.
 
 ### <a name="example"></a>Beispiel
 
@@ -1166,9 +1160,9 @@ a b c
 size difference = 2
 ```
 
-## <a name="to_array"></a> queue::to_array (STL/CLR)
+## <a name="queueto_array-stlclr"></a><a name="to_array"></a>Queue:: to_array (STL/CLR)
 
-Kopiert die kontrollierte Sequenz in ein neues Array.
+Kopiert die gesteuerte Sequenz in ein neues Array.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1178,7 +1172,7 @@ cli::array<Value>^ to_array();
 
 ### <a name="remarks"></a>Hinweise
 
-Die Memberfunktion gibt ein Array mit der kontrollierten Sequenz zurück. Damit können Sie eine Kopie der kontrollierten Sequenz in Arrayform abrufen.
+Die Member-Funktion gibt ein Array mit der kontrollierten Sequenz zurück. Sie verwenden Sie, um eine Kopie der kontrollierten Sequenz in Array Form abzurufen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1216,7 +1210,7 @@ a b c d
 a b c
 ```
 
-## <a name="value_type"></a> queue::value_type (STL/CLR)
+## <a name="queuevalue_type-stlclr"></a><a name="value_type"></a>Queue:: value_type (STL/CLR)
 
 Der Typ eines Elements.
 
@@ -1228,7 +1222,7 @@ typedef Value value_type;
 
 ### <a name="remarks"></a>Hinweise
 
-Der Typ ist ein Synonym für den Vorlagenparameter *Wert*.
+Der Typ ist ein Synonym für den Vorlagen Parameter *Wert*.
 
 ### <a name="example"></a>Beispiel
 
@@ -1261,9 +1255,9 @@ int main()
 a b c
 ```
 
-## <a name="op_neq"></a> operator!= (queue) (STL/CLR)
+## <a name="operator-queue-stlclr"></a><a name="op_neq"></a>Operator! = (Queue) (STL/CLR)
 
-Nicht gleich-Vergleich in die Warteschlange.
+Die Warteschlange entspricht nicht dem Vergleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1284,7 +1278,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Gibt zurück, die Operatorfunktion `!(left == right)`. Damit können Sie testen, ob *linken* nicht sortiert wird, ist identisch mit *rechten* bei beiden Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt `!(left == right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1332,9 +1326,9 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="op_lt"></a> Operator&lt; (Warteschlange) (STL/CLR)
+## <a name="operatorlt-queue-stlclr"></a><a name="op_lt"></a>Operator&lt; (Warteschlange) (STL/CLR)
 
-Die Warteschlange kleiner als-Vergleich.
+Warteschlange ist kleiner als der Vergleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1355,7 +1349,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Der Operator-Funktion gibt "true" zurück, wenn, für die niedrigste Position `i` für die `!(right[i] < left[i])` es ist auch, die "true" `left[i] < right[i]`. Andernfalls wird `left->` [Queue:: Size (STL/CLR)](../dotnet/queue-size-stl-clr.md) `() <` `right->size()` damit können Sie testen, ob *linken* sortiert ist, bevor Sie *rechten* Wenn die zwei Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position `i` für die `!(right[i] < left[i])` auch true ist, dass `left[i] < right[i]`. Andernfalls wird `left->`[Queue:: Size (STL/CLR)-](../dotnet/queue-size-stl-clr.md)`() <` zurückgegeben `right->size()` Sie verwenden Sie, um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1403,9 +1397,9 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="op_lteq"></a> operator&lt;= (queue) (STL/CLR)
+## <a name="operatorlt-queue-stlclr"></a><a name="op_lteq"></a>Operator&lt;= (Queue) (STL/CLR)
 
-Kleiner oder gleich in die Warteschlange Vergleich.
+Warteschlange kleiner oder gleich-Vergleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1426,7 +1420,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Gibt zurück, die Operatorfunktion `!(right < left)`. Damit können Sie testen, ob *linken* wird nicht nach dem sortiert *rechten* bei beiden Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt `!(right < left)`zurück. Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1474,9 +1468,9 @@ a b d
 [a b d] <= [a b c] is False
 ```
 
-## <a name="op_eq"></a> Operator == (Warteschlange) (STL/CLR)
+## <a name="operator-queue-stlclr"></a><a name="op_eq"></a>Operator = = (Queue) (STL/CLR)
 
-Queue-gleich-Vergleich.
+In Warteschlange gleicher Vergleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1497,7 +1491,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Die Operatorfunktion gibt "true" nur dann, wenn die Sequenzen von gesteuert *linken* und *rechten* die gleiche Länge aufweisen und für jede Position `i`, `left[i] ==` `right[i]`. Damit können Sie testen, ob *linken* sortiert wird, ist identisch mit *rechten* bei beiden Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i``left[i] ==` `right[i]`. Sie verwenden es, um zu überprüfen, ob *Links* mit dem Element nach dem Element überein *Stimmen* .
 
 ### <a name="example"></a>Beispiel
 
@@ -1545,9 +1539,9 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="op_gt"></a> Operator&gt; (Warteschlange) (STL/CLR)
+## <a name="operatorgt-queue-stlclr"></a><a name="op_gt"></a>Operator&gt; (Warteschlange) (STL/CLR)
 
-Die Warteschlange ist größer als-Vergleich.
+Warteschlange ist größer als der Vergleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1568,7 +1562,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Gibt zurück, die Operatorfunktion `right` `<` `left`. Damit können Sie testen, ob *linken* sortiert wird, ist nach *rechten* bei beiden Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt `right` `<` `left`zurück. Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1616,9 +1610,9 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="op_gteq"></a> operator&gt;= (queue) (STL/CLR)
+## <a name="operatorgt-queue-stlclr"></a><a name="op_gteq"></a>Operator&gt;= (Queue) (STL/CLR)
 
-Warteschlange, die größer als oder gleich-Vergleich.
+Warteschlangen Vergleich größer oder gleich.
 
 ### <a name="syntax"></a>Syntax
 
@@ -1639,7 +1633,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Hinweise
 
-Gibt zurück, die Operatorfunktion `!(left < right)`. Damit können Sie testen, ob *linken* ist nicht geordnet, bevor Sie *rechten* bei beiden Warteschlangen verglichenen elementweise sind.
+Die Operator-Funktion gibt `!(left < right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 

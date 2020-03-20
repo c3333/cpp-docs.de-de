@@ -1,15 +1,15 @@
 ---
 title: Implementieren eines einfachen Consumers
-ms.date: 05/09/2019
+ms.date: 08/19/2019
 helpviewer_keywords:
 - OLE DB consumers, implementing
 ms.assetid: 13828167-23a4-4e94-8b6c-878262fda464
-ms.openlocfilehash: 67bce55a19a2aaaf3a8cbb62d7db228513e93c91
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 2f290f2a17c51682c75fbc09118757e5fd12c4f7
+ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707532"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "79544705"
 ---
 # <a name="implementing-a-simple-consumer"></a>Implementieren eines einfachen Consumers
 
@@ -33,7 +33,7 @@ Die folgenden Themen zeigen, wie Sie die vom **MFC-Anwendungsassistenten** und *
 > [!NOTE]
 > Um eine Consumeranwendung zum Testen von `MyProv` (derselbe Anbieter, der unter [Erweitern des einfachen schreibgeschützen Anbieters](../../data/oledb/enhancing-the-simple-read-only-provider.md) beschrieben ist) zu erstellen, müssen Sie die Lesezeichenunterstützung wie unter [Hinzufügen der Lesezeichenunterstützung für den Cosumer](#bookmark) beschrieben integrieren.
 
-## <a name="retrieve" ></a> Abrufen von Daten mit dem Consumer
+## <a name="retrieving-data-with-the-consumer"></a><a name="retrieve" ></a> Abrufen von Daten mit dem Consumer
 
 ### <a name="to-modify-the-console-application-to-use-the-ole-db-consumer"></a>So ändern Sie die Konsolenanwendung zur Verwendung des OLE DB-Consumers
 
@@ -42,7 +42,7 @@ Die folgenden Themen zeigen, wie Sie die vom **MFC-Anwendungsassistenten** und *
     ```cpp
     // MyCons.cpp : Defines the entry point for the console application.
     //
-    #include "stdafx.h"
+    #include "pch.h" // "stdafx.h" in Visual Studio 2017 and earlier
     #include "Products.h"
     ...
     int main(int argc, char* argv[])
@@ -64,7 +64,7 @@ Die folgenden Themen zeigen, wie Sie die vom **MFC-Anwendungsassistenten** und *
     }
     ```
 
-## <a name="bookmark" ></a> Hinzufügen von Lesezeichenunterstützung für den Consumer
+## <a name="adding-bookmark-support-to-the-consumer"></a><a name="bookmark" ></a> Hinzufügen von Lesezeichenunterstützung für den Consumer
 
 Ein Lesezeichen ist eine Spalte, die Zeilen in der Tabelle eindeutig identifiziert. Normalerweise ist das die Schlüsselspalte. Dies ist jedoch nicht immer der Fall, es ist anbieterspezifisch. In diesem Abschnitt erfahren Sie, wie Sie die Lesezeichenunterstützung hinzufügen. Dazu müssen Sie die folgenden Schritte in der Klasse der Benutzerdatensätze durchführen:
 

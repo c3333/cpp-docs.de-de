@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C++]
 ms.assetid: c4998e42-883c-4419-bbf4-36cdc979dd27
-ms.openlocfilehash: 26bfc3bb9892486353f55a71cfd86a17f2de98b5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 8b34a4f146cc7961ee1176580def6319185693e9
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516585"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544657"
 ---
 # <a name="event--ccli-and-ccx"></a>event (C++/CLI und C++/CX)
 
@@ -55,7 +55,7 @@ Der Rückgabewert der Ereigniszugriffsmethode.  Um überprüfbar zu sein, muss d
 *parameters*<br/>
 (Optional) Parameter für die `raise`-Methode, die mit der Signatur des Parameters *delegate* übereinstimmen.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Ereignis ist eine Zuordnung zwischen einem Delegaten und einer Memberfunktion (Ereignishandler), die auf das Auslösen des Ereignisses reagiert und es Clients beliebiger Klassen ermöglicht, Methoden zu registrieren, die mit der Signatur und dem Rückgabetyp des zugrundeliegenden Delegaten übereinstimmen.
 
@@ -73,13 +73,13 @@ Sie können mithilfe von **operators+=** und **operator-=** einen Ereignishandle
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
-Weitere Informationen finden Sie unter [Ereignisse (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755799.aspx).
+Weitere Informationen finden Sie unter [Ereignisse (C++/CX)](../cppcx/events-c-cx.md).
 
 Wenn Sie beabsichtigen, einen Ereignishandler hinzuzufügen und dann zu entfernen, müssen Sie die EventRegistrationToken-Struktur speichern, die durch den Vorgang des Hinzufügens zurückgegeben wird. Dann müssen Sie im Entfernungsvorgang die gespeicherte EventRegistrationToken-Struktur verwenden, um den zu entfernenden Ereignishandler zu identifizieren.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -119,7 +119,7 @@ Der Rückgabewert der Ereigniszugriffsmethode.  Um überprüfbar zu sein, muss d
 *parameters*<br/>
 (Optional) Parameter für die `raise`-Methode, die mit der Signatur des Parameters *delegate* übereinstimmen.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Ereignis ist eine Zuordnung zwischen einem Delegaten und einer Memberfunktion (Ereignishandler), die auf das Auslösen des Ereignisses reagiert und es Clients beliebiger Klassen ermöglicht, Methoden zu registrieren, die mit der Signatur und dem Rückgabetyp des zugrundeliegenden Delegaten übereinstimmen.
 
@@ -165,7 +165,7 @@ Weitere Informationen zu C++/CLI-Ereignissen finden Sie hier:
 
 - [Ereignisse in einer Schnittstelle](../dotnet/how-to-use-events-in-cpp-cli.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 
@@ -230,7 +230,7 @@ OnClick: 7, 3.14159
 OnDblClick: Hello
 ```
 
-Das folgende Codebeispiel veranschaulicht die Logik, die zum Generieren der `raise`-Methode eines trivialen Ereignisses verwendet wird: Wenn mindestens ein Abonnent für das Ereignis vorhanden ist, führt der Aufruf der `raise`-Methode implizit oder explizit zum Aufruf des Delegaten. Wenn der Rückgabetyp des Delegaten nicht **void** lautet und keine Ereignisabonnenten vorhanden sind, gibt die `raise`-Methode den Standardwert für den Delegattyp zurück. Wenn keine Ereignisabonnenten vorhanden sind, wird beim Aufrufen der `raise`-Methode einfach zurückgegeben und keine Ausnahme ausgelöst. Wenn der Rückgabetyp des Delegaten nicht **void** lautet, wird der Delegattyp zurückgegeben.
+Im folgenden Codebeispiel wird die Logik zum Generieren der `raise`-Methode eines trivialen Ereignisses veranschaulicht: Wenn das Ereignis einen oder mehrere Abonnenten aufweist, wird beim impliziten oder expliziten Aufrufen der `raise`-Methode der Delegat aufgerufen. Wenn der Rückgabetyp des Delegaten nicht **void** lautet und keine Ereignisabonnenten vorhanden sind, gibt die `raise`-Methode den Standardwert für den Delegattyp zurück. Wenn keine Ereignisabonnenten vorhanden sind, wird beim Aufrufen der `raise`-Methode einfach zurückgegeben und keine Ausnahme ausgelöst. Wenn der Rückgabetyp des Delegaten nicht **void** lautet, wird der Delegattyp zurückgegeben.
 
 ```cpp
 // trivial_events.cpp

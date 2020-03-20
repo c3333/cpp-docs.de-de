@@ -7,25 +7,23 @@ f1_keywords:
 - ATL::ICommandPropertiesImpl
 - ICommandPropertiesImpl::GetProperties
 - ICommandPropertiesImpl.GetProperties
-- GetProperties
 - ICommandPropertiesImpl.SetProperties
 - ICommandPropertiesImpl::SetProperties
-- SetProperties
 helpviewer_keywords:
 - ICommandPropertiesImpl class
 - GetProperties method
 - SetProperties method
 ms.assetid: b3cf6aea-527e-4f0d-96e0-669178b021a2
-ms.openlocfilehash: 1250f1c5c5094a0ca8348f325260e6079afe2baa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 165f7124657cbaf0c0f94171eaf9394011796aea
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408952"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545972"
 ---
 # <a name="icommandpropertiesimpl-class"></a>ICommandPropertiesImpl-Klasse
 
-Stellt eine Implementierung der [ICommandProperties](/previous-versions/windows/desktop/ms723044(v=vs.85)) Schnittstelle.
+Stellt eine Implementierung der [ICommandProperties](/previous-versions/windows/desktop/ms723044(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,14 +36,14 @@ class ATL_NO_VTABLE ICommandPropertiesImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Klasse abgeleitet
+Ihre Klasse, abgeleitet von
 
-*PropClass*<br/>
-Ihre Eigenschaftenklasse.
+*Propclass*<br/>
+Ihre Properties-Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -53,16 +51,16 @@ Ihre Eigenschaftenklasse.
 
 |||
 |-|-|
-|[GetProperties](#getproperties)|Gibt die Liste der Eigenschaften in der Gruppe der Rowset-Eigenschaften, die derzeit für das Rowset angefordert werden.|
-|[SetProperties](#setproperties)|Legt die Eigenschaften in der Gruppe der Rowset-Eigenschaften fest.|
+|[GetProperties](#getproperties)|Gibt die Liste der Eigenschaften in der Rowset-Eigenschaften Gruppe zurück, die derzeit für das Rowset angefordert werden.|
+|[SetProperties](#setproperties)|Legt Eigenschaften in der Rowset-Eigenschaften Gruppe fest.|
 
 ## <a name="remarks"></a>Hinweise
 
-Dies ist obligatorisch einschaltbefehle. Die Implementierung erfolgt durch eine statische Funktion, die definiert, die von der [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) Makro.
+Dies ist für-Befehle obligatorisch. Die-Implementierung wird von einer statischen Funktion bereitgestellt, die durch das [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) -Makro definiert wird.
 
-## <a name="getproperties"></a> ICommandPropertiesImpl::GetProperties
+## <a name="icommandpropertiesimplgetproperties"></a><a name="getproperties"></a>Icommandpropertiesimpl:: GetProperties
 
-Gibt alle angeforderten Eigenschaftensätze, die mithilfe des Befehlsparameters eigenschaftenzuordnung zurück.
+Gibt alle angeforderten Eigenschaften Sätze zurück, indem die Eigenschaften Zuordnung des Befehls verwendet wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -75,15 +73,15 @@ STDMETHOD(GetProperties)(const ULONG cPropertyIDSets,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ICommandProperties:: GetProperties](/previous-versions/windows/desktop/ms723119(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [ICommandProperties:: GetProperties](/previous-versions/windows/desktop/ms723119(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="remarks"></a>Hinweise
 
 Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
 
-## <a name="setproperties"></a> ICommandPropertiesImpl::SetProperties
+## <a name="icommandpropertiesimplsetproperties"></a><a name="setproperties"></a>Icommandpropertiesimpl:: SetProperties
 
-Stellt Eigenschaften für das Command-Objekt.
+Legt Eigenschaften für das Command-Objekt fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -94,9 +92,9 @@ STDMETHOD(SetProperties)(ULONG cPropertySets,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ICommandProperties:: SetProperties](/previous-versions/windows/desktop/ms711497(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [ICommandProperties:: SetProperties](/previous-versions/windows/desktop/ms711497(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -11,7 +11,6 @@ f1_keywords:
 - CStreamRowset.CStreamRowset
 - ATL.CStreamRowset.CStreamRowset
 - ATL::CStreamRowset::CStreamRowset
-- CStreamRowset
 - CStreamRowset<TAccessor>::CStreamRowset
 - ATL::CStreamRowset<TAccessor>::CStreamRowset
 - CStreamRowset<TAccessor>.Close
@@ -27,16 +26,16 @@ helpviewer_keywords:
 - CStreamRowset class, constructor
 - Close method
 ms.assetid: a106e953-a38a-464e-8ea5-28963d9e4811
-ms.openlocfilehash: b566ddab89d2198e3f6b24eb9a20c60747749d1a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4a0e67ff1e800ff0f838b863eaaf839d4456ed82
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368668"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545558"
 ---
 # <a name="cstreamrowset-class"></a>CStreamRowset-Klasse
 
-Verwendet eine `CCommand` oder `CTable` Deklaration.
+Wird in einer `CCommand`-oder `CTable` Deklaration verwendet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -48,9 +47,9 @@ class CStreamRowset
 ### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Ein Accessor-Klasse.
+Eine Accessor-Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -60,12 +59,12 @@ Ein Accessor-Klasse.
 
 |||
 |-|-|
-|[CStreamRowset](#cstreamrowset)|Konstruktor. Instanziiert und initialisiert die `CStreamRowset` Objekt.|
-|[Schließen](#close)|Versionen der [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) Schnittstellenzeiger in der Klasse.|
+|[CStreamRowset](#cstreamrowset)|Konstruktor. Instanziiert und initialisiert das `CStreamRowset`-Objekt.|
+|[Close](#close)|Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.|
 
 ## <a name="remarks"></a>Hinweise
 
-Verwendung `CStreamRowset` in Ihre `CCommand` oder `CTable` Deklaration, z. B.:
+Verwenden Sie `CStreamRowset` in der `CCommand`-oder `CTable` Deklaration, z. b.:
 
 [!code-cpp[NVC_OLEDB_Consumer#11](../../data/oledb/codesnippet/cpp/cstreamrowset-class_1.cpp)]
 
@@ -73,18 +72,18 @@ oder
 
 [!code-cpp[NVC_OLEDB_Consumer#12](../../data/oledb/codesnippet/cpp/cstreamrowset-class_2.cpp)]
 
-`ICommand::Execute` Gibt eine `ISequentialStream` -Zeiger ist, die in gespeichert ist `m_spStream`. Sie verwenden, klicken Sie dann die `Read` Methode zum Abrufen von Daten im XML-Format (Unicode-Zeichenfolge). Zum Beispiel:
+`ICommand::Execute` gibt einen `ISequentialStream`-Zeiger zurück, der in `m_spStream`gespeichert wird. Anschließend verwenden Sie die `Read`-Methode, um die (Unicode-Zeichen folgen) im XML-Format abzurufen. Beispiel:
 
 [!code-cpp[NVC_OLEDB_Consumer#13](../../data/oledb/codesnippet/cpp/cstreamrowset-class_3.cpp)]
 
-SQL Server 2000 führt das XML-Formatierung und gibt alle Spalten und Zeilen des Rowsets als eine XML-Zeichenfolge zurück.
+SQL Server 2000 wird die XML-Formatierung durchführt und alle Spalten und alle Zeilen des Rowsets als eine XML-Zeichenfolge zurückgegeben.
 
 > [!NOTE]
->  Dieses Feature funktioniert nur mit SQL Server 2000.
+>  Diese Funktion funktioniert nur mit SQL Server 2000.
 
-## <a name="cstreamrowset"></a> CStreamRowset::CStreamRowset
+## <a name="cstreamrowsetcstreamrowset"></a><a name="cstreamrowset"></a>CStreamRowset:: CStreamRowset
 
-Instanziiert und initialisiert die `CStreamRowset` Objekt.
+Instanziiert und initialisiert das `CStreamRowset`-Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -92,9 +91,9 @@ Instanziiert und initialisiert die `CStreamRowset` Objekt.
 CStreamRowset();
 ```
 
-## <a name="close"></a> CStreamRowset::Close
+## <a name="cstreamrowsetclose"></a><a name="close"></a>CStreamRowset:: Close
 
-Versionen der [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) Schnittstellenzeiger in der Klasse.
+Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.
 
 ### <a name="syntax"></a>Syntax
 

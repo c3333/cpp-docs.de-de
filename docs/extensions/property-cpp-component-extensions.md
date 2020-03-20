@@ -2,18 +2,15 @@
 title: property (C++/CLI und C++/CX)
 ms.date: 10/12/2018
 ms.topic: reference
-f1_keywords:
-- property_cpp
-- property
 helpviewer_keywords:
 - property keyword [C++]
 ms.assetid: cc79d2b2-f013-4d81-8252-eece97a18704
-ms.openlocfilehash: 8ec76db37cffb1b3d15447165300bedf1a8771c9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 46501717755933b2bdc11ee4ee6249bfea9f18cd
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516505"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545756"
 ---
 # <a name="property--ccli-and-ccx"></a>property (C++/CLI und C++/CX)
 
@@ -61,11 +58,11 @@ property type default[index_list] {
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Der Datentyp des Eigenschaftwerts und somit die Eigenschaft selbst.
 
 *property_name*<br/>
-Den Namen der Eigenschaft.
+Der Name der Eigenschaft.
 
 *access-modifier*<br/>
 Ein Zugangsqualifizierer. Gültige Qualifizierer sind **static** und **virtual**.
@@ -86,9 +83,9 @@ Der Methodentext der Eigenschaft des set- oder get-Accessors. *property_body* ka
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-Weitere Informationen finden Sie unter [Eigenschaften (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755807.aspx).
+Weitere Informationen finden Sie unter [Eigenschaften (C++/CX)](../cppcx/properties-c-cx.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -116,7 +113,7 @@ modifier property type default[index];
 *modifier*<br/>
 Ein Modifizierer, der entweder für eine Eigenschaftendeklaration oder eine Get-/Set-Zugriffsmethode verwendet werden kann. Mögliche Werte sind **static** und **virtual**.
 
-*Typ*<br/>
+*type*<br/>
 Der Typ des Werts, der durch die Eigenschaft dargestellt wird.
 
 *property_name*<br/>
@@ -125,7 +122,7 @@ Parameter für die Raise-Methode; muss der Signatur des Delegaten entsprechen.
 *index_list*<br/>
 Eine durch Kommata getrennte Liste von einem oder mehreren Indizes, die in eckigen Klammern (der Indexoperator, ([])) angegeben werden. Geben Sie für jeden Index einen Typ und optional einen Bezeichner an, der im Methodentext der Eigenschaft verwendet werden kann.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Das erste Syntaxbeispiel zeigt eine einfache Eigenschaft (*simple property*), die implizit eine `set`- und eine `get`-Methode deklariert. Der Compiler erstellt automatisch ein privates Feld für die Speicherung des Werts der Eigenschaft.
 
@@ -163,7 +160,7 @@ Für die Zugriffsmethoden sind unterschiedliche Zugriffsmöglichkeiten in einem 
 
 **property** ist ein kontextbezogenes Schlüsselwort.  Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

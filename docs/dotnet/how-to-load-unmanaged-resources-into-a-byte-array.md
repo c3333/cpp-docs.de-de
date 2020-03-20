@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Laden von nicht verwalteten Ressourcen in ein Byte-Array'
+title: 'Gewusst wie: Laden von nicht verwalteten Ressourcen in ein Byte-Array'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - unmanaged resources, loading into Byte array
 - native resources
 ms.assetid: cdada6cd-6d42-437a-a90f-44a0b18d6a93
-ms.openlocfilehash: 641bdf4429bca35800e3fbbbb7622f2651bb3fee
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 425def1cd0557298985148d7bb9f74da489643e8
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64344971"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544958"
 ---
-# <a name="how-to-load-unmanaged-resources-into-a-byte-array"></a>Vorgehensweise: Laden von nicht verwalteten Ressourcen in ein Byte-Array
+# <a name="how-to-load-unmanaged-resources-into-a-byte-array"></a>Gewusst wie: Laden von nicht verwalteten Ressourcen in ein Byte-Array
 
-In diesem Thema wird erläutert, verschiedene Möglichkeiten zum Laden von nicht verwalteter Ressourcen in einem <xref:System.Byte> Array.
+In diesem Thema werden verschiedene Möglichkeiten zum Laden von nicht verwalteten Ressourcen in ein <xref:System.Byte> Array erläutert.
 
 ## <a name="example"></a>Beispiel
 
-Wenn Sie die Größe des nicht verwalteten Ressource kennen, können Sie vorab ein CLR-Array und Laden Sie die Ressource dann in das Array, das mithilfe eines Zeigers auf den Array-Block des CLR-Arrays.
+Wenn Sie die Größe ihrer nicht verwalteten Ressource kennen, können Sie ein CLR-Array vorab zuordnen und dann die Ressource mithilfe eines Zeigers auf den Array Block des CLR-Arrays in das Array laden.
 
-```
+```cpp
 // load_unmanaged_resources_into_Byte_array.cpp
 // compile with: /clr
 using namespace System;
@@ -56,9 +56,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie Sie Daten aus einem nicht verwalteten Speicherblock in ein verwaltetes Array zu kopieren.
+In diesem Beispiel wird gezeigt, wie Daten aus einem nicht verwalteten Speicherblock in ein verwaltetes Array kopiert werden.
 
-```
+```cpp
 // load_unmanaged_resources_into_Byte_array_2.cpp
 // compile with: /clr
 using namespace System;

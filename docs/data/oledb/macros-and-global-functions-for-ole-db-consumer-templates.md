@@ -2,7 +2,6 @@
 title: Makros und globale Funktionen für OLE-Consumervorlagen
 ms.date: 02/11/2019
 f1_keywords:
-- vc.templates.ole
 - ATL.AtlTraceErrorRecords
 - ATL::AtlTraceErrorRecords
 - AtlTraceErrorRecords
@@ -100,90 +99,90 @@ helpviewer_keywords:
 - END_PARAM_MAP macro
 - SET_PARAM_TYPE macro
 ms.assetid: 8765eb7b-32dd-407c-bacf-8890ef959837
-ms.openlocfilehash: d4ed6b86d99cdfc272b5df10ede6af6bd05ed366
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 83d38dda61d973b2d176ee7164011d665ee04655
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62361346"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545936"
 ---
 # <a name="macros-and-global-functions-for-ole-db-consumer-templates"></a>Makros und globale Funktionen für OLE-Consumervorlagen
 
-Die OLE DB-Consumervorlagen gehören die folgenden Makros und globale Funktionen:
+Die OLE DB Consumer-Vorlagen enthalten die folgenden Makros und globalen Funktionen:
 
 ## <a name="global-functions"></a>Globale Funktionen
 
 |||
 |-|-|
-|[AtlTraceErrorRecords](#atltraceerrorrecords)|Gibt OLE DB-Fehlerdatensatz Informationen auf dem Sicherungsmedium an, wenn ein Fehler zurückgegeben wird.|
+|[AtlTraceErrorRecords](#atltraceerrorrecords)|Sichert OLE DB Fehler Datensatzinformationen auf dem dumpgerät, wenn ein Fehler zurückgegeben wird.|
 
-## <a name="accessor-map-macros"></a>Accessor-Zuordnungs-Makros
+## <a name="accessor-map-macros"></a>Accessor-Zuordnungs Makros
 
 |||
 |-|-|
-|[BEGIN_ACCESSOR](#begin_accessor)|Markiert den Beginn eines Eintrags für die Zugriffsmethode.|
+|[BEGIN_ACCESSOR](#begin_accessor)|Markiert den Anfang eines accessoreintrags.|
 |[BEGIN_ACCESSOR_MAP](#begin_accessor_map)|Markiert den Beginn der Accessor-Zuordnungseinträge.|
-|[END_ACCESSOR](#end_accessor)|Markiert das Ende eines Eintrags für die Zugriffsmethode.|
-|[END_ACCESSOR_MAP](#end_accessor_map)|Markiert das Ende der Accessor-Zuordnungseinträge.|
+|[END_ACCESSOR](#end_accessor)|Markiert das Ende eines accessoreintrags.|
+|[END_ACCESSOR_MAP](#end_accessor_map)|Markiert das Ende der Accessor-Zuordnungs Einträge.|
 
-## <a name="column-map-macros"></a>Spalte Eigenschaftenzuordnungs-Makros
-
-|||
-|-|-|
-|[BEGIN_COLUMN_MAP](#begin_column_map)|Markiert den Beginn der Zuordnungseintrags-Spalte in die Benutzerdatensatz-Klasse.|
-|[BLOB_ENTRY](#blob_entry)|Wird verwendet, um ein binary large Object (BLOB) zu binden.|
-|[BLOB_ENTRY_LENGTH](#blob_entry_length)|Gibt die Länge der BLOB-Spalte.|
-|[BLOB_ENTRY_LENGTH_STATUS](#blob_entry_length_status)|Gibt die Länge und den Status der BLOB-Spalte.|
-|[BLOB_ENTRY_STATUS](#blob_entry_status)|Meldet den Status der BLOB-Spalte.|
-|[BLOB_NAME](#blob_name)|Verwendet, um ein großes binäres Objekt anhand des Spaltennamens zu binden.|
-|[BLOB_NAME_LENGTH](#blob_name_length)|Gibt die Länge der BLOB-Spalte.|
-|[BLOB_NAME_LENGTH_STATUS](#blob_name_length_status)|Gibt die Länge und den Status der BLOB-Spalte.|
-|[BLOB_NAME_STATUS](#blob_name_status)|Meldet den Status der BLOB-Spalte.|
-|[BOOKMARK_ENTRY](#bookmark_entry)|Stellt einen Lesezeicheneintrag für das Rowset dar. Ein Lesezeicheneintrag ist eine besondere Art von Eintrag in der Spalte.|
-|[COLUMN_ENTRY](#column_entry)|Stellt eine Bindung zu einer bestimmten Spalte in der Datenbank dar.|
-|[COLUMN_ENTRY_EX](#column_entry_ex)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Typ*, *Länge*, *Genauigkeit*, *Skalierung*, und *Status* Parameter.|
-|[COLUMN_ENTRY_LENGTH](#column_entry_length)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt die *Länge* Variable.|
-|[COLUMN_ENTRY_LENGTH_STATUS](#column_entry_length_status)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Status* und *Länge* Parameter.|
-|[COLUMN_ENTRY_PS](#column_entry_ps)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Genauigkeit* und *Skalierung* Parameter.|
-|[COLUMN_ENTRY_PS_LENGTH](#column_entry_ps_length)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt die *Länge* Variable *Genauigkeit* und *Skalierung* Parameter.|
-|[COLUMN_ENTRY_PS_LENGTH_STATUS](#column_entry_ps_length_status)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Status* und *Länge* Variablen *Genauigkeit* und *Skalierung* Parameter.|
-|[COLUMN_ENTRY_PS_STATUS](#column_entry_ps_status)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt die *Status* Variable *Genauigkeit* und *Skalierung* Parameter.|
-|[COLUMN_ENTRY_STATUS](#column_entry_status)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt die *Status* Variable.|
-|[COLUMN_ENTRY_TYPE](#column_entry_type)|Stellt eine Bindung zu einer bestimmten Spalte in der Datenbank dar. Unterstützt *Typ* Parameter.|
-|[COLUMN_ENTRY_TYPE_SIZE](#column_entry_type_size)|Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Typ* und *Größe* Parameter.|
-|[COLUMN_NAME](#column_name)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar.|
-|[COLUMN_NAME_EX](#column_name_ex)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Datentyp, Größe, Genauigkeit, Dezimalstellen, Länge der Spalte und Status in der Spalte.|
-|[COLUMN_NAME_LENGTH](#column_name_length)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe der Länge der Spalte.|
-|[COLUMN_NAME_LENGTH_STATUS](#column_name_length_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Spezifikation der Spaltenlänge und Status.|
-|[COLUMN_NAME_PS](#column_name_ps)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Genauigkeit und Dezimalstellenanzahl.|
-|[COLUMN_NAME_PS_LENGTH](#column_name_ps_length)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Genauigkeit, Dezimalstellen und Spalte Länge.|
-|[COLUMN_NAME_PS_LENGTH_STATUS](#column_name_ps_length_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Genauigkeit, Dezimalstellen, Länge der Spalte und Status in der Spalte.|
-|[COLUMN_NAME_PS_STATUS](#column_name_ps_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Genauigkeit, Dezimalstellen und Spalte Status.|
-|[COLUMN_NAME_STATUS](#column_name_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Status in der Spalte.|
-|[COLUMN_NAME_TYPE](#column_name_type)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe des Datentyps.|
-|[COLUMN_NAME_TYPE_PS](#column_name_type_ps)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Datentyp, Genauigkeit und Dezimalstellen.|
-|[COLUMN_NAME_TYPE_SIZE](#column_name_type_size)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Datentyp und Größe.|
-|[COLUMN_NAME_TYPE_STATUS](#column_name_type_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Name dar. Unterstützt die Angabe von Typ und der Spalte Status von Daten.|
-|[END_COLUMN_MAP](#end_column_map)|Markiert das Ende der Zuordnungseintrags-Spalte.|
-
-## <a name="command-macros"></a>Befehlsmakros
+## <a name="column-map-macros"></a>Spalten Zuordnungs Makros
 
 |||
 |-|-|
-|[DEFINE_COMMAND](#define_command)|Gibt den Befehl, der verwendet wird, um das Rowset zu erstellen, bei Verwendung der [CCommand](../../data/oledb/ccommand-class.md) Klasse. Akzeptiert nur Zeichenfolgen-Datentypen, die Übereinstimmung des angegebenen Anwendungstyps (ANSI oder Unicode). Es wird empfohlen, die Verwendung von [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) statt DEFINE_COMMAND.|
-|[DEFINE_COMMAND_EX](#define_command_ex)|Gibt den Befehl, der verwendet wird, um das Rowset zu erstellen, bei Verwendung der [CCommand](../../data/oledb/ccommand-class.md) Klasse. Unterstützt die ANSI- und Unicode-Anwendungen.|
+|[BEGIN_COLUMN_MAP](#begin_column_map)|Markiert den Anfang der Spalten Zuordnungs Einträge in der Benutzerdaten Satz-Klasse.|
+|[BLOB_ENTRY](#blob_entry)|Wird verwendet, um eine Binary Large Object (BLOB) zu binden.|
+|[BLOB_ENTRY_LENGTH](#blob_entry_length)|Gibt die Länge der BLOB-Datenspalte an.|
+|[BLOB_ENTRY_LENGTH_STATUS](#blob_entry_length_status)|Meldet die Länge und den Status der BLOB-Datenspalte.|
+|[BLOB_ENTRY_STATUS](#blob_entry_status)|Meldet den Status der BLOB-Datenspalte.|
+|[BLOB_NAME](#blob_name)|Wird verwendet, um eine Binary Large Object anhand des Spaltennamens zu binden.|
+|[BLOB_NAME_LENGTH](#blob_name_length)|Gibt die Länge der BLOB-Datenspalte an.|
+|[BLOB_NAME_LENGTH_STATUS](#blob_name_length_status)|Meldet die Länge und den Status der BLOB-Datenspalte.|
+|[BLOB_NAME_STATUS](#blob_name_status)|Meldet den Status der BLOB-Datenspalte.|
+|[BOOKMARK_ENTRY](#bookmark_entry)|Stellt einen Lesezeichen Eintrag für das Rowset dar. Ein Lesezeichen Eintrag ist eine besondere Art von Spalten Eintrag.|
+|[COLUMN_ENTRY](#column_entry)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank dar.|
+|[COLUMN_ENTRY_EX](#column_entry_ex)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt die Parameter *Typ*, *Länge*, *Genauigkeit* *, dezimal*stellen und *Status* .|
+|[COLUMN_ENTRY_LENGTH](#column_entry_length)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt die *length* -Variable.|
+|[COLUMN_ENTRY_LENGTH_STATUS](#column_entry_length_status)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Status* -und *Längen* Parameter.|
+|[COLUMN_ENTRY_PS](#column_entry_ps)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Genauigkeit* und *Skalierungs* Parameter.|
+|[COLUMN_ENTRY_PS_LENGTH](#column_entry_ps_length)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt die *Längen* Variablen, die *Genauigkeit* und die *Skalierungs* Parameter.|
+|[COLUMN_ENTRY_PS_LENGTH_STATUS](#column_entry_ps_length_status)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Status* -und *Längen* Variablen, *Parameter für* *Genauigkeit* und Dezimalstellen.|
+|[COLUMN_ENTRY_PS_STATUS](#column_entry_ps_status)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt die Parameter *Status* Variable, *Genauigkeit* und *Skala* .|
+|[COLUMN_ENTRY_STATUS](#column_entry_status)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt die *Status* Variable.|
+|[COLUMN_ENTRY_TYPE](#column_entry_type)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank dar. Unterstützt *Typparameter* .|
+|[COLUMN_ENTRY_TYPE_SIZE](#column_entry_type_size)|Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Type* -und *size* -Parameter.|
+|[COLUMN_NAME](#column_name)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar.|
+|[COLUMN_NAME_EX](#column_name_ex)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Datentyp, Größe, Genauigkeit, Dezimalstellen, Spaltenlänge und Spalten Status.|
+|[COLUMN_NAME_LENGTH](#column_name_length)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe der Spaltenlänge.|
+|[COLUMN_NAME_LENGTH_STATUS](#column_name_length_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Spaltenlänge und-Status.|
+|[COLUMN_NAME_PS](#column_name_ps)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Genauigkeit und Skalierung.|
+|[COLUMN_NAME_PS_LENGTH](#column_name_ps_length)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Genauigkeit, Skalierung und Spaltenlänge.|
+|[COLUMN_NAME_PS_LENGTH_STATUS](#column_name_ps_length_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Genauigkeit, Dezimalstellen, Spaltenlänge und Spalten Status.|
+|[COLUMN_NAME_PS_STATUS](#column_name_ps_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Genauigkeit, Skalierung und Spalten Status.|
+|[COLUMN_NAME_STATUS](#column_name_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe des Spalten Status.|
+|[COLUMN_NAME_TYPE](#column_name_type)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe des Datentyps.|
+|[COLUMN_NAME_TYPE_PS](#column_name_type_ps)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Datentyp, Genauigkeit und Skalierung.|
+|[COLUMN_NAME_TYPE_SIZE](#column_name_type_size)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe von Datentyp und Größe.|
+|[COLUMN_NAME_TYPE_STATUS](#column_name_type_status)|Stellt eine Bindung an eine bestimmte Spalte in der Datenbank nach Namen dar. Unterstützt die Angabe des Datentyps und des Spalten Status.|
+|[END_COLUMN_MAP](#end_column_map)|Markiert das Ende der Spalten Zuordnungs Einträge.|
 
-## <a name="parameter-map-macros"></a>Parameter-Zuordnungs-Makros
+## <a name="command-macros"></a>Befehls Makros
 
 |||
 |-|-|
-|[BEGIN_PARAM_MAP](#begin_param_map)|Markiert den Beginn der Zuordnungseintrags-Parameter in die Benutzerdatensatz-Klasse.|
-|[END_PARAM_MAP](#end_param_map)|Markiert das Ende der Zuordnungseintrags-Parameter.|
-|[SET_PARAM_TYPE](#set_param_type)|Gibt an, COLUMN_ENTRY-Makros, die die SET_PARAM_TYPE-Makro als Eingabe-, Ausgabe- oder Eingabe/Ausgabe zu folgen.|
+|[DEFINE_COMMAND](#define_command)|Gibt den Befehl an, der verwendet wird, um das Rowset zu erstellen, wenn die [CCommand](../../data/oledb/ccommand-class.md) -Klasse verwendet wird. Akzeptiert nur Zeichen folgen Typen, die dem angegebenen Anwendungstyp (ANSI oder Unicode) entsprechen. Es wird empfohlen, anstelle von DEFINE_COMMAND [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) zu verwenden.|
+|[DEFINE_COMMAND_EX](#define_command_ex)|Gibt den Befehl an, der verwendet wird, um das Rowset zu erstellen, wenn die [CCommand](../../data/oledb/ccommand-class.md) -Klasse verwendet wird. Unterstützt ANSI-und Unicode-Anwendungen.|
 
-### <a name="atltraceerrorrecords"></a> AtlTraceErrorRecords
+## <a name="parameter-map-macros"></a>Parameter Zuordnungs Makros
 
-Gibt OLE DB-Fehlerdatensatz Informationen auf dem Sicherungsmedium an, wenn ein Fehler zurückgegeben wird.
+|||
+|-|-|
+|[BEGIN_PARAM_MAP](#begin_param_map)|Markiert den Anfang der Parameter Zuordnungs Einträge in der Benutzerdaten Satz-Klasse.|
+|[END_PARAM_MAP](#end_param_map)|Markiert das Ende der Parameter Zuordnungs Einträge.|
+|[SET_PARAM_TYPE](#set_param_type)|Gibt COLUMN_ENTRY Makros an, die dem SET_PARAM_TYPE-Makro als Eingabe, Ausgabe oder Eingabe/Ausgabe folgen.|
+
+### <a name="atltraceerrorrecords"></a><a name="atltraceerrorrecords"></a>AtlTraceErrorRecords
+
+Sichert OLE DB Fehler Datensatzinformationen auf dem dumpgerät, wenn ein Fehler zurückgegeben wird.
 
 #### <a name="syntax"></a>Syntax
 
@@ -193,16 +192,16 @@ inline void AtlTraceErrorRecords(HRESULT hrErr = S_OK);
 
 #### <a name="parameters"></a>Parameter
 
-*hErr*<br/>
-[in] Ein HRESULT, der von einer OLE DB-Consumervorlagen Memberfunktion zurückgegeben wird.
+*Bauherr*<br/>
+in Ein HRESULT, das von einer OLE DB consumertemplate-Member-Funktion zurückgegeben wird.
 
 #### <a name="remarks"></a>Hinweise
 
-Wenn *hErr* ist nicht S_OK, `AtlTraceErrorRecords` gibt OLE DB-Fehlerdatensatz Informationen auf dem Sicherungsmedium (die **Debuggen** Registerkarte dem Fenster "Ausgabe" oder eine Datei). Die Error-Datensatzes von Informationen vom Anbieter abgerufen wird, enthält die Nummer der Zeile, Quelle, Beschreibung, Hilfe, Kontext und GUID für jeden Eintrag der Fehler. `AtlTraceErrorRecords` gibt diese Informationen nur in Debug-Builds. In Releasebuilds ist es sich um einen leeren Stub, der Sie optimiert ist. Weitere Informationen finden Sie unter [CDBErrorInfo-Klasse](../../data/oledb/cdberrorinfo-class.md).
+Wenn *er* nicht S_OK ist, `AtlTraceErrorRecords` Abbilder OLE DB Fehler Datensatzinformationen an das dumpgerät (die Registerkarte **Debuggen** des Ausgabe Fensters oder einer Datei). Die Fehler Datensatzinformationen, die vom Anbieter abgerufen werden, enthalten die Zeilennummer, die Quelle, die Beschreibung, die Hilfedatei, den Kontext und die GUID für jeden Fehler Daten Satz Eintrag. `AtlTraceErrorRecords` diese Informationen nur in Debugbuilds absichert. In Releasebuilds handelt es sich um einen leeren Stub, der optimiert wird. Weitere Informationen finden Sie unter [CDBErrorInfo-Klasse](../../data/oledb/cdberrorinfo-class.md).
 
-### <a name="begin_accessor"></a> BEGIN_ACCESSOR
+### <a name="begin_accessor"></a><a name="begin_accessor"></a>BEGIN_ACCESSOR
 
-Markiert den Beginn eines Eintrags für die Zugriffsmethode.
+Markiert den Anfang eines accessoreintrags.
 
 #### <a name="syntax"></a>Syntax
 
@@ -213,20 +212,20 @@ BEGIN_ACCESSOR(num, bAuto)
 #### <a name="parameters"></a>Parameter
 
 *num*<br/>
-[in] Die Anzahl der NULL-Offset für den Accessor in dieser accessorzuordnung.
+in Die Null-Offset-Zahl für den Accessor in dieser accessorzuordnung.
 
-*bAuto*<br/>
-[in] Gibt an, ob dieser Accessor einen Accessor für die automatische oder manuelle-Accessor. Wenn **"true"**, der Accessor ist automatisch, wenn **"false"**, der Accessor ist manuell. Ein Accessor automatisch bedeutet, dass es sich bei Daten auf Move-Vorgänge für Sie abgerufen werden.
+*Bauto*<br/>
+in Gibt an, ob dieser Accessor ein automatischer Accessor oder ein manueller Accessor ist. **True**gibt an, dass der Accessor Auto ist. **false**gibt an, dass der Accessor manuell ist. Ein automatischer Accessor bedeutet, dass Daten bei Verschiebungs Vorgängen für Sie abgerufen werden.
 
 #### <a name="remarks"></a>Hinweise
 
-Bei mehreren Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP geben an, und die BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
+Bei mehreren Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP angeben und das BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
+Siehe [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
 
-### <a name="begin_accessor_map"></a> BEGIN_ACCESSOR_MAP
+### <a name="begin_accessor_map"></a><a name="begin_accessor_map"></a>BEGIN_ACCESSOR_MAP
 
 Markiert den Beginn der Accessor-Zuordnungseinträge.
 
@@ -238,7 +237,7 @@ BEGIN_ACCESSOR_MAP(x, num)
 
 #### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 [in] Der Name der Benutzerdatensatzklasse.
 
 *num*<br/>
@@ -246,7 +245,7 @@ BEGIN_ACCESSOR_MAP(x, num)
 
 #### <a name="remarks"></a>Hinweise
 
-Bei mehreren Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP am Anfang geben an, und die BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Die accessorzuordnung wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
+Bei mehreren Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP am Anfang angeben und das BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Die accessorzuordnung wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
 
 Wenn es nur einen Accessor im Benutzerdatensatz gibt, verwenden Sie das Makro [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md).
 
@@ -295,9 +294,9 @@ END_ACCESSOR_MAP()
 };
 ```
 
-### <a name="end_accessor"></a> END_ACCESSOR
+### <a name="end_accessor"></a><a name="end_accessor"></a>END_ACCESSOR
 
-Markiert das Ende eines Eintrags für die Zugriffsmethode.
+Markiert das Ende eines accessoreintrags.
 
 #### <a name="syntax"></a>Syntax
 
@@ -307,15 +306,15 @@ END_ACCESSOR()
 
 #### <a name="remarks"></a>Hinweise
 
-Für mehrere Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP geben an, und die BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
+Für mehrere Accessoren in einem Rowset müssen Sie BEGIN_ACCESSOR_MAP angeben und das BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
+Siehe [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
 
-### <a name="end_accessor_map"></a> END_ACCESSOR_MAP
+### <a name="end_accessor_map"></a><a name="end_accessor_map"></a>END_ACCESSOR_MAP
 
-Markiert das Ende der Accessor-Zuordnungseinträge.
+Markiert das Ende der Accessor-Zuordnungs Einträge.
 
 #### <a name="syntax"></a>Syntax
 
@@ -325,13 +324,13 @@ END_ACCESSOR_MAP()
 
 #### <a name="remarks"></a>Hinweise
 
-Für mehrere Accessoren für ein Rowset müssen Sie BEGIN_ACCESSOR_MAP geben an, und die BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
+Für mehrere Accessoren in einem Rowset müssen Sie BEGIN_ACCESSOR_MAP angeben und das BEGIN_ACCESSOR-Makro für jeden einzelnen Accessor verwenden. Das BEGIN_ACCESSOR-Makro wird mit dem END_ACCESSOR-Makro abgeschlossen. Das BEGIN_ACCESSOR_MAP-Makro wird mit dem END_ACCESSOR_MAP-Makro abgeschlossen.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
+Siehe [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
 
-### <a name="begin_column_map"></a> BEGIN_COLUMN_MAP
+### <a name="begin_column_map"></a><a name="begin_column_map"></a>BEGIN_COLUMN_MAP
 
 Kennzeichnet den Anfang eines Spaltenzuordnungseintrags.
 
@@ -343,7 +342,7 @@ BEGIN_COLUMN_MAP(x)
 
 #### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 [in] Der Name der Benutzerdatensatzklasse, abgeleitet aus `CAccessor`.
 
 #### <a name="remarks"></a>Hinweise
@@ -360,9 +359,9 @@ Hier sehen Sie ein Beispiel für eine Spalten- und Parameterzuordnung:
 
 <!--[!CODE [NVC_OLEDB_Consumer#16](../codesnippet/vs_snippets_cpp/nvc_oledb_consumer#16)]  -->
 
-### <a name="blob_entry"></a> BLOB_ENTRY
+### <a name="blob_entry"></a><a name="blob_entry"></a>BLOB_ENTRY
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))).
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden.
 
 #### <a name="syntax"></a>Syntax
 
@@ -372,25 +371,25 @@ BLOB_ENTRY(nOrdinal, IID, flags, data)
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [wie kann ich einen BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
+Weitere Informationen finden Sie unter [wie kann ich ein BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
 
-### <a name="blob_entry_length"></a> BLOB_ENTRY_LENGTH
+### <a name="blob_entry_length"></a><a name="blob_entry_length"></a>BLOB_ENTRY_LENGTH
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_ENTRY](../../data/oledb/blob-entry.md), außer dass dieses Makro, auch über die Länge in Bytes der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_ENTRY](../../data/oledb/blob-entry.md), mit der Ausnahme, dass dieses Makro auch die Länge der BLOB-Spalte in Bytes erhält.
 
 #### <a name="syntax"></a>Syntax
 
@@ -400,28 +399,28 @@ BLOB_ENTRY_LENGTH(nOrdinal, IID, flags, data, length)
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[out] Die (tatsächlich) Länge in Bytes der BLOB-Spalte.
+vorgenommen Die (tatsächliche) Länge der BLOB-Spalte in Bytes.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [wie kann ich einen BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
+Weitere Informationen finden Sie unter [wie kann ich ein BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
 
-### <a name="blob_entry_length_status"></a> BLOB_ENTRY_LENGTH_STATUS
+### <a name="blob_entry_length_status"></a><a name="blob_entry_length_status"></a>BLOB_ENTRY_LENGTH_STATUS
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_ENTRY](../../data/oledb/blob-entry.md), außer dass dieses Makro auch die Länge und den Status der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_ENTRY](../../data/oledb/blob-entry.md), mit der Ausnahme, dass dieses Makro auch die Länge und den Status der BLOB-Spalte abruft.
 
 #### <a name="syntax"></a>Syntax
 
@@ -437,31 +436,31 @@ BLOB_ENTRY_LENGTH_STATUS(
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[out] Die (tatsächlich) Länge in Bytes der BLOB-Spalte.
+vorgenommen Die (tatsächliche) Länge der BLOB-Spalte in Bytes.
 
-*Status*<br/>
-[out] Der Status der BLOB-Spalte.
+*status*<br/>
+vorgenommen Der Status der BLOB-Datenspalte.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [wie kann ich einen BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
+Weitere Informationen finden Sie unter [wie kann ich ein BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
 
-### <a name="blob_entry_status"></a> BLOB_ENTRY_STATUS
+### <a name="blob_entry_status"></a><a name="blob_entry_status"></a>BLOB_ENTRY_STATUS
 
-BEGIN_COLUMN_MAP oder BEGIN_ACCESSOR_MAP verwendet werden, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_ENTRY](../../data/oledb/blob-entry.md), außer dass dieses Makro auch den Status der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP oder BEGIN_ACCESSOR_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_ENTRY](../../data/oledb/blob-entry.md), mit der Ausnahme, dass dieses Makro auch den Status der BLOB-Spalte abruft.
 
 #### <a name="syntax"></a>Syntax
 
@@ -471,28 +470,28 @@ BLOB_ENTRY_STATUS(nOrdinal, IID, flags, data, status)
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[out] Der Status des BLOB-Felds.
+*status*<br/>
+vorgenommen Der Status des BLOB-Felds.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [wie kann ich einen BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
+Weitere Informationen finden Sie unter [wie kann ich ein BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
 
-### <a name="blob_name"></a> BLOB_NAME
+### <a name="blob_name"></a><a name="blob_name"></a>BLOB_NAME
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_ENTRY](../../data/oledb/blob-entry.md), außer dass dieses Makro anstelle eine Spaltennummer des Namens einer Spalte verwendet.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_ENTRY](../../data/oledb/blob-entry.md), mit der Ausnahme, dass dieses Makro einen Spaltennamen anstelle einer Spaltennummer annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -503,24 +502,24 @@ BLOB_NAME(pszName, IID, flags, data )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [wie kann ich einen BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
+Weitere Informationen finden Sie unter [wie kann ich ein BLOB abrufen?](../../data/oledb/retrieving-a-blob.md).
 
-### <a name="blob_name_length"></a> BLOB_NAME_LENGTH
+### <a name="blob_name_length"></a><a name="blob_name_length"></a>BLOB_NAME_LENGTH
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_NAME](../../data/oledb/blob-name.md), außer dass dieses Makro, auch über die Länge in Bytes der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_NAME](../../data/oledb/blob-name.md), mit der Ausnahme, dass dieses Makro auch die Länge der BLOB-Datenspalte in Bytes erhält.
 
 #### <a name="syntax"></a>Syntax
 
@@ -531,23 +530,23 @@ BLOB_NAME_LENGTH(pszName, IID, flags, data, length )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[out] Die (tatsächlich) Länge in Bytes der BLOB-Spalte.
+vorgenommen Die (tatsächliche) Länge der BLOB-Spalte in Bytes.
 
-### <a name="blob_name_length_status"></a> BLOB_NAME_LENGTH_STATUS
+### <a name="blob_name_length_status"></a><a name="blob_name_length_status"></a>BLOB_NAME_LENGTH_STATUS
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_NAME](../../data/oledb/blob-name.md), außer dass dieses Makro auch die Länge und den Status der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_NAME](../../data/oledb/blob-name.md), mit der Ausnahme, dass dieses Makro auch die Länge und den Status der BLOB-Datenspalte abruft.
 
 #### <a name="syntax"></a>Syntax
 
@@ -558,26 +557,26 @@ BLOB_NAME_LENGTH_STATUS(pszName, IID, flags, data, length, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[out] Die (tatsächlich) Länge in Bytes der BLOB-Spalte.
+vorgenommen Die (tatsächliche) Länge der BLOB-Spalte in Bytes.
 
-*Status*<br/>
-[out] Der Status des BLOB-Felds.
+*status*<br/>
+vorgenommen Der Status des BLOB-Felds.
 
-### <a name="blob_name_status"></a> BLOB_NAME_STATUS
+### <a name="blob_name_status"></a><a name="blob_name_status"></a>BLOB_NAME_STATUS
 
-Mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um ein großes binäres Objekt zu binden ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))). Ähnlich wie [BLOB_NAME](../../data/oledb/blob-name.md), außer dass dieses Makro auch den Status der BLOB-Spalte erhält.
+Wird mit BEGIN_COLUMN_MAP und END_COLUMN_MAP verwendet, um eine Binary Large Object ([BLOB](/previous-versions/windows/desktop/ms711511(v=vs.85))) zu binden. Vergleichbar mit [BLOB_NAME](../../data/oledb/blob-name.md), mit der Ausnahme, dass dieses Makro auch den Status der BLOB-Datenspalte abruft.
 
 #### <a name="syntax"></a>Syntax
 
@@ -588,23 +587,23 @@ BLOB_NAME_STATUS(pszName, IID, flags, data, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *IID*<br/>
-[in] Schnittstellen-GUID, wie z. B. `IDD_ISequentialStream`verwendet, um das BLOB abrufen.
+in Schnittstellen-GUID, z. b. `IDD_ISequentialStream`, der zum Abrufen des BLOBs verwendet wird.
 
 *flags*<br/>
-[in] Vom OLE Structured Storage Modell definierte Speichermodus flags (z. B. `STGM_READ`).
+in Speichermodusflags, wie vom OLE-strukturiertem Speichermodell definiert (z. b. `STGM_READ`).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[out] Der Status des BLOB-Felds.
+*status*<br/>
+vorgenommen Der Status des BLOB-Felds.
 
-### <a name="bookmark_entry"></a> BOOKMARK_ENTRY
+### <a name="bookmark_entry"></a><a name="bookmark_entry"></a>BOOKMARK_ENTRY
 
-Bindet die Lesezeichenspalte an.
+Bindet die Lesezeichen Spalte.
 
 #### <a name="syntax"></a>Syntax
 
@@ -615,7 +614,7 @@ BOOKMARK_ENTRY(variable)
 #### <a name="parameters"></a>Parameter
 
 *variable*<br/>
-[in] Die Variable an die Lesezeichenspalte gebunden werden muss.
+in Die Variable, die an die Lesezeichen Spalte gebunden werden soll.
 
 #### <a name="example"></a>Beispiel
 
@@ -665,11 +664,11 @@ END_COLUMN_MAP()
 };
 ```
 
-Weitere Informationen finden Sie unter [mithilfe von Lesezeichen](using-bookmarks.md) und [CBookmark-Klasse](../../data/oledb/cbookmark-class.md).
+Weitere Informationen finden Sie unter [Verwenden von Lesezeichen](using-bookmarks.md) und [CBookmark-Klasse](../../data/oledb/cbookmark-class.md).
 
-### <a name="column_entry"></a> COLUMN_ENTRY
+### <a name="column_entry"></a><a name="column_entry"></a>COLUMN_ENTRY
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -679,31 +678,31 @@ COLUMN_ENTRY(nOrdinal, data)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Das COLUMN_ENTRY-Makro wird in den folgenden Stellen verwendet:
+Das COLUMN_ENTRY-Makro wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter den Beispielen in den Themen Makro [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
+Weitere Informationen finden Sie in den Beispielen in den Makro Themen [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md).
 
-### <a name="column_entry_ex"></a> COLUMN_ENTRY_EX
+### <a name="column_entry_ex"></a><a name="column_entry_ex"></a>COLUMN_ENTRY_EX
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -713,49 +712,49 @@ COLUMN_ENTRY_EX(nOrdinal, wType, nLength, nPrecision, nScale, data, length, stat
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
-*nLength*<br/>
-[in] Die Datengröße in Bytes.
+*nlength*<br/>
+in Die Datengröße in Bytes.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit, die beim Daten Einsatz verwendet werden soll, und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
 
-*nScale*<br/>
-[in] Die Skalierung verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
+*nskala*<br/>
+in Die beim Daten Daten und *wType* zu verwendende Skala ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Die COLUMN_ENTRY_EX-Marko wird in den folgenden Stellen verwendet:
+Das COLUMN_ENTRY_EX-Makro wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
+Siehe [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
 
-### <a name="column_entry_length"></a> COLUMN_ENTRY_LENGTH
+### <a name="column_entry_length"></a><a name="column_entry_length"></a>COLUMN_ENTRY_LENGTH
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -765,30 +764,30 @@ COLUMN_ENTRY_LENGTH(nOrdinal, data, length)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte, beginnend bei eins. Lesezeichen entspricht Spalte 0 (null).
+*nordinon*<br/>
+in Die Spaltennummer, beginnend mit einer. Lesezeichen entspricht der Spalte 0 (null).
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Dieses Makro unterstützt die *Länge* Variable. Es wird an folgenden Orten verwendet:
+Dieses Makro unterstützt die *length* -Variable. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_length_status"></a> COLUMN_ENTRY_LENGTH_STATUS
+### <a name="column_entry_length_status"></a><a name="column_entry_length_status"></a>COLUMN_ENTRY_LENGTH_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -798,33 +797,33 @@ COLUMN_ENTRY_LENGTH_STATUS(nOrdinal, data, length, status)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Verwenden Sie dieses Makro aus, wenn Sie Variablen für Länge und der Status unterstützen möchten. Es wird an folgenden Orten verwendet:
+Verwenden Sie dieses Makro, wenn Sie Längen-und Statusvariablen unterstützen möchten. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_ps"></a> COLUMN_ENTRY_PS
+### <a name="column_entry_ps"></a><a name="column_entry_ps"></a>COLUMN_ENTRY_PS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -834,33 +833,33 @@ COLUMN_ENTRY_PS(nOrdinal, nPrecision, nScale, data)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Ermöglicht Ihnen die Angabe der Genauigkeit und Dezimalstellen der Spalte, die Sie binden möchten. Es wird an folgenden Orten verwendet:
+Ermöglicht es Ihnen, die Genauigkeit und die Dezimal sind der Spalte anzugeben, die Sie binden möchten. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_ps_length"></a> COLUMN_ENTRY_PS_LENGTH
+### <a name="column_entry_ps_length"></a><a name="column_entry_ps_length"></a>COLUMN_ENTRY_PS_LENGTH
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -870,36 +869,36 @@ COLUMN_ENTRY_PS_LENGTH(nOrdinal, nPrecision, nScale, data, length)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte, beginnend bei eins. Lesezeichen entspricht Spalte 0 (null).
+*nordinon*<br/>
+in Die Spaltennummer, beginnend mit einer. Lesezeichen entspricht der Spalte 0 (null).
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Ermöglicht Ihnen die Angabe der Genauigkeit und Dezimalstellen der Spalte, die Sie binden möchten. Dieses Makro unterstützt die *Länge* Variable. Es wird an folgenden Orten verwendet:
+Ermöglicht es Ihnen, die Genauigkeit und die Dezimal sind der Spalte anzugeben, die Sie binden möchten. Dieses Makro unterstützt die *length* -Variable. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_ps_length_status"></a> COLUMN_ENTRY_PS_LENGTH_STATUS
+### <a name="column_entry_ps_length_status"></a><a name="column_entry_ps_length_status"></a>COLUMN_ENTRY_PS_LENGTH_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -909,39 +908,39 @@ COLUMN_ENTRY_PS_LENGTH_STATUS(nOrdinal, nPrecision, nScale, data, length, status
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Ermöglicht Ihnen die Angabe der Genauigkeit und Dezimalstellen der Spalte, die Sie binden möchten. Verwenden Sie dieses Makro aus, wenn Sie Variablen für Länge und der Status unterstützen möchten. Es wird an folgenden Orten verwendet:
+Ermöglicht es Ihnen, die Genauigkeit und die Dezimal sind der Spalte anzugeben, die Sie binden möchten. Verwenden Sie dieses Makro, wenn Sie Längen-und Statusvariablen unterstützen möchten. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_ps_status"></a> COLUMN_ENTRY_PS_STATUS
+### <a name="column_entry_ps_status"></a><a name="column_entry_ps_status"></a>COLUMN_ENTRY_PS_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -951,36 +950,36 @@ COLUMN_ENTRY_PS_STATUS(nOrdinal, nPrecision, nScale, data, status)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Ermöglicht Ihnen die Angabe der Genauigkeit und Dezimalstellen der Spalte, die Sie binden möchten. Dieses Makro unterstützt die *Status* Variable. Es wird an folgenden Orten verwendet:
+Ermöglicht es Ihnen, die Genauigkeit und die Dezimal sind der Spalte anzugeben, die Sie binden möchten. Dieses Makro unterstützt die *Status* Variable. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_status"></a> COLUMN_ENTRY_STATUS
+### <a name="column_entry_status"></a><a name="column_entry_status"></a>COLUMN_ENTRY_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte in der Datenbank dar.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte in der Datenbank dar.
 
 #### <a name="syntax"></a>Syntax
 
@@ -990,30 +989,30 @@ COLUMN_ENTRY_STATUS(nOrdinal, data, status)
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Dieses Makro unterstützt die *Status* Variable. Es wird an folgenden Orten verwendet:
+Dieses Makro unterstützt die *Status* Variable. Sie wird an den folgenden Stellen verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_entry_type"></a> COLUMN_ENTRY_TYPE
+### <a name="column_entry_type"></a><a name="column_entry_type"></a>COLUMN_ENTRY_TYPE
 
-Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Typ* Parameter.
+Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Typparameter* .
 
 #### <a name="syntax"></a>Syntax
 
@@ -1023,22 +1022,22 @@ COLUMN_ENTRY_TYPE (nOrdinal, wType, data)
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *wType*<br/>
-[in] Der Datentyp der Eintrag in der Spalte.
+in Datentyp des Spalten Eintrags.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Dieses Makro ist eine spezielle Variante der [COLUMN_ENTRY](../../data/oledb/column-entry.md) Makro, das eine Möglichkeit zur Angabe des Datentyps enthält.
+Dieses Makro ist eine spezialisierte Variante des [COLUMN_ENTRY](../../data/oledb/column-entry.md) -Makros, das eine Möglichkeit zum Angeben des Datentyps bereitstellt.
 
-### <a name="column_entry_type_size"></a> COLUMN_ENTRY_TYPE_SIZE
+### <a name="column_entry_type_size"></a><a name="column_entry_type_size"></a>COLUMN_ENTRY_TYPE_SIZE
 
-Stellt eine Bindung an die spezifische Spalte in der Datenbank dar. Unterstützt *Typ* und *Größe* Parameter.
+Stellt eine Bindung an die jeweilige Spalte in der Datenbank dar. Unterstützt *Type* -und *size* -Parameter.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1048,25 +1047,25 @@ COLUMN_ENTRY_TYPE_SIZE(nOrdinal, wType, nLength, data)
 
 #### <a name="parameters"></a>Parameter
 
-*nOrdinal*<br/>
-[in] Die Nummer der Spalte.
+*nordinon*<br/>
+in Die Spaltennummer.
 
 *wType*<br/>
-[in] Der Datentyp der Eintrag in der Spalte.
+in Datentyp des Spalten Eintrags.
 
-*nLength*<br/>
-[in] Die Größe der Eintrag in der Spalte in Bytes.
+*nlength*<br/>
+in Größe des Spalten Eintrags in Bytes.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Dieses Makro ist eine spezielle Variante der [COLUMN_ENTRY](../../data/oledb/column-entry.md) Makro, das eine Möglichkeit zur Angabe der Größe der Daten und den Typ enthält.
+Dieses Makro ist eine spezialisierte Variante des [COLUMN_ENTRY](../../data/oledb/column-entry.md) -Makros, das eine Möglichkeit zum Angeben von Datengröße und-Typ bereitstellt.
 
-### <a name="column_name"></a> COLUMN_NAME
+### <a name="column_name"></a><a name="column_name"></a>COLUMN_NAME
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_ENTRY](../../data/oledb/column-entry.md), außer dass dieses Makro anstelle die Nummer der Spalte den Namen der Spalte verwendet.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [COLUMN_ENTRY](../../data/oledb/column-entry.md), mit der Ausnahme, dass dieses Makro den Spaltennamen anstelle der Spaltennummer annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1077,24 +1076,24 @@ COLUMN_NAME(pszName, data)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Die Makros COLUMN_NAME_ * dienen in denselben Situationen wie [COLUMN_ENTRY](../../data/oledb/column-entry.md):
+Die COLUMN_NAME_ *-Makros werden an denselben Stellen wie [COLUMN_ENTRY](../../data/oledb/column-entry.md)verwendet:
 
-- Zwischen der [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) Makros.
+- Zwischen den [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -und [END_COLUMN_MAP](../../data/oledb/end-column-map.md) -Makros.
 
-- Zwischen der [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) und [END_ACCESSOR](../../data/oledb/end-accessor.md) Makros.
+- Zwischen den [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) -und [END_ACCESSOR](../../data/oledb/end-accessor.md) -Makros.
 
-- Zwischen der [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) und [END_PARAM_MAP](../../data/oledb/end-param-map.md) Makros.
+- Zwischen den [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -und [END_PARAM_MAP](../../data/oledb/end-param-map.md) -Makros.
 
-### <a name="column_name_ex"></a> COLUMN_NAME_EX
+### <a name="column_name_ex"></a><a name="column_name_ex"></a>COLUMN_NAME_EX
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro auch-Datentyp, Größe, Genauigkeit, Dezimalstellen, Länge der Spalte und Status in der Spalte verwendet.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Datentyp, Größe, Genauigkeit, Dezimalstellen, Spaltenlänge und Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1105,36 +1104,36 @@ COLUMN_NAME_EX(pszName, wType, nLength, nPrecision, nScale, data, length, status
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
-*nLength*<br/>
-[in] Die Datengröße in Bytes.
+*nlength*<br/>
+in Die Datengröße in Bytes.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit, die beim Daten Einsatz verwendet werden soll, und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
 
-*nScale*<br/>
-[in] Die Skalierung verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
+*nskala*<br/>
+in Die beim Daten Daten und *wType* zu verwendende Skala ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_length"></a> COLUMN_NAME_LENGTH
+### <a name="column_name_length"></a><a name="column_name_length"></a>COLUMN_NAME_LENGTH
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Länge der Spalte.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Spaltenlänge annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1145,21 +1144,21 @@ COLUMN_NAME_LENGTH(pszName, data, length)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_length_status"></a> COLUMN_NAME_LENGTH_STATUS
+### <a name="column_name_length_status"></a><a name="column_name_length_status"></a>COLUMN_NAME_LENGTH_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Länge der Spalte und der Spalte Status.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Spaltenlänge und Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1170,24 +1169,24 @@ COLUMN_NAME_LENGTH_STATUS(pszName, data, length, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_ps"></a> COLUMN_NAME_PS
+### <a name="column_name_ps"></a><a name="column_name_ps"></a>COLUMN_NAME_PS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Genauigkeit und Dezimalstellenanzahl.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Genauigkeit und Skalierung erfordert.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1198,24 +1197,24 @@ COLUMN_NAME_PS(pszName, nPrecision, nScale, data )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_ps_length"></a> COLUMN_NAME_PS_LENGTH
+### <a name="column_name_ps_length"></a><a name="column_name_ps_length"></a>COLUMN_NAME_PS_LENGTH
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Genauigkeit, Dezimalstellen und Spalte Länge.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Genauigkeit, Skalierung und Spaltenlänge annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1226,27 +1225,27 @@ COLUMN_NAME_PS_LENGTH(pszName, nPrecision, nScale, data, length )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_ps_length_status"></a> COLUMN_NAME_PS_LENGTH_STATUS
+### <a name="column_name_ps_length_status"></a><a name="column_name_ps_length_status"></a>COLUMN_NAME_PS_LENGTH_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Genauigkeit, Dezimalstellen, Länge der Spalte und Status in der Spalte.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch Genauigkeit, Dezimalstellen, Spaltenlänge und Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1257,30 +1256,30 @@ COLUMN_NAME_PS_LENGTH_STATUS(pszName, nPrecision, nScale, data, length, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 *length*<br/>
-[in] Die Variable an die Länge der Spalte gebunden werden muss.
+in Die Variable, die an die Spaltenlänge gebunden werden soll.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_ps_status"></a> COLUMN_NAME_PS_STATUS
+### <a name="column_name_ps_status"></a><a name="column_name_ps_status"></a>COLUMN_NAME_PS_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Genauigkeit, Dezimalstellen und Spalte Status.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch die Genauigkeit, den Skalierungs-und Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1291,27 +1290,27 @@ COLUMN_NAME_PS_STATUS(pszName, nPrecision, nScale, data, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit der Spalte, die Sie binden möchten.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit der Spalte, die Sie binden möchten.
 
-*nScale*<br/>
-[in] Die Dezimalstellen der Spalte, die Sie binden möchten.
+*nskala*<br/>
+in Die Skala der Spalte, die Sie binden möchten.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_status"></a> COLUMN_NAME_STATUS
+### <a name="column_name_status"></a><a name="column_name_status"></a>COLUMN_NAME_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Spalte Status.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch den Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1322,21 +1321,21 @@ COLUMN_NAME_STATUS(pszName, data, status )
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_type"></a> COLUMN_NAME_TYPE
+### <a name="column_name_type"></a><a name="column_name_type"></a>COLUMN_NAME_TYPE
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro auch-Datentyp verwendet.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch den Datentyp annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1347,21 +1346,21 @@ COLUMN_NAME_TYPE(pszName, wType, data)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_type_ps"></a> COLUMN_NAME_TYPE_PS
+### <a name="column_name_type_ps"></a><a name="column_name_type_ps"></a>COLUMN_NAME_TYPE_PS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro auch-Datentyp, Genauigkeit und Dezimalstellen verwendet.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch den Datentyp, die Genauigkeit und die Skalierung annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1372,27 +1371,27 @@ COLUMN_NAME_TYPE_PS(pszName, wType, nPrecision, nScale, data)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
-*nPrecision*<br/>
-[in] Die maximale Genauigkeit verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
+*ngenauigkeit*<br/>
+in Die maximale Genauigkeit, die beim Daten Einsatz verwendet werden soll, und *wType* ist `DBTYPE_NUMERIC`. Andernfalls wird dieser Parameter ignoriert.
 
-*nScale*<br/>
-[in] Die Skalierung verwenden, beim Abrufen von Daten und *wType* ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
+*nskala*<br/>
+in Die beim Daten Daten und *wType* zu verwendende Skala ist `DBTYPE_NUMERIC` oder `DBTYPE_DECIMAL`.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_type_size"></a> COLUMN_NAME_TYPE_SIZE
+### <a name="column_name_type_size"></a><a name="column_name_type_size"></a>COLUMN_NAME_TYPE_SIZE
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro auch den Datentyp und Größe nutzt.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch den Datentyp und die Größe annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1403,24 +1402,24 @@ COLUMN_NAME_TYPE_SIZE(pszName, wType, nLength, data)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
-*nLength*<br/>
-[in] Die Datengröße in Bytes.
+*nlength*<br/>
+in Die Datengröße in Bytes.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="column_name_type_status"></a> COLUMN_NAME_TYPE_STATUS
+### <a name="column_name_type_status"></a><a name="column_name_type_status"></a>COLUMN_NAME_TYPE_STATUS
 
-Stellt eine Bindung für das Rowset für die spezifische Spalte des Rowsets dar. Ähnlich wie [COLUMN_NAME](../../data/oledb/column-name.md), außer dass dieses Makro nutzt auch die Data-Typ und der Spalte Status.
+Stellt eine Bindung für das Rowset für die jeweilige Spalte im Rowset dar. Vergleichbar mit [column_name](../../data/oledb/column-name.md), mit der Ausnahme, dass dieses Makro auch den Datentyp und den Spalten Status annimmt.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1431,24 +1430,24 @@ COLUMN_NAME_TYPE_STATUS(pszName, wType, status, data)
 #### <a name="parameters"></a>Parameter
 
 *pszName*<br/>
-[in] Ein Zeiger auf den Namen der Spalte. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem eine "L" vor dem Namen, z. B. einfügen: `L"MyColumn"`.
+in Ein Zeiger auf den Spaltennamen. Der Name muss eine Unicode-Zeichenfolge sein. Sie können dies erreichen, indem Sie ein "L" vor dem Namen einfügen, z. b. `L"MyColumn"`.
 
 *wType*<br/>
-[in] Der Datentyp.
+in Der-Datentyp.
 
-*Status*<br/>
-[in] Die Variable auf den Status der Spalte gebunden werden soll.
+*status*<br/>
+in Die Variable, die an den Spalten Status gebunden werden soll.
 
 *data*<br/>
-[in] Der entsprechenden Datenmember im Benutzerdatensatz.
+in Der entsprechende Datenmember im Benutzerdaten Satz.
 
 #### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [COLUMN_NAME](../../data/oledb/column-name.md) Informationen auf, wo die COLUMN_NAME_ *-Makros verwendet werden.
+Informationen dazu, wo die COLUMN_NAME_ *-Makros verwendet werden, finden Sie unter [column_name](../../data/oledb/column-name.md) .
 
-### <a name="end_column_map"></a> END_COLUMN_MAP
+### <a name="end_column_map"></a><a name="end_column_map"></a>END_COLUMN_MAP
 
-Markiert das Ende der Zuordnungseintrags-Spalte.
+Markiert das Ende der Spalten Zuordnungs Einträge.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1458,18 +1457,18 @@ END_COLUMN_MAP()
 
 #### <a name="remarks"></a>Hinweise
 
-Es wird mit einer einzelnen Accessors in einem Rowset verwendet. Das BEGIN_COLUMN_MAP-Makro wird mit dem END_COLUMN_MAP-Makro abgeschlossen.
+Es wird mit einem einzelnen Accessor für ein Rowset verwendet. Das BEGIN_COLUMN_MAP-Makro wird mit dem END_COLUMN_MAP-Makro abgeschlossen.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md).
+Siehe [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md).
 
-### <a name="define_command"></a> DEFINE_COMMAND
+### <a name="define_command"></a><a name="define_command"></a>DEFINE_COMMAND
 
-Gibt den Befehl, der verwendet wird, um das Rowset zu erstellen, bei Verwendung der [CCommand](../../data/oledb/ccommand-class.md) Klasse. Akzeptiert nur Zeichenfolgen-Datentypen, die Übereinstimmung des angegebenen Anwendungstyps (ANSI oder Unicode).
+Gibt den Befehl an, der verwendet wird, um das Rowset zu erstellen, wenn die [CCommand](../../data/oledb/ccommand-class.md) -Klasse verwendet wird. Akzeptiert nur Zeichen folgen Typen, die dem angegebenen Anwendungstyp (ANSI oder Unicode) entsprechen.
 
 > [!NOTE]
->  Es wird empfohlen, die Verwendung von [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) statt DEFINE_COMMAND.
+>  Es wird empfohlen, anstelle von DEFINE_COMMAND [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) zu verwenden.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1479,25 +1478,25 @@ DEFINE_COMMAND(x, szCommand)
 
 #### <a name="parameters"></a>Parameter
 
-*w*<br/>
-[in] Der Name der Benutzerdatensatzklasse (Befehl).
+*x*<br/>
+in Der Name der Benutzerdaten Satz-Klasse (Command).
 
 *szCommand*<br/>
-[in] Die Befehlszeichenfolge, die verwendet wird, um das Rowset zu erstellen, bei Verwendung [CCommand](../../data/oledb/ccommand-class.md).
+in Die Befehls Zeichenfolge, die verwendet wird, um das Rowset zu erstellen, wenn [CCommand](../../data/oledb/ccommand-class.md)verwendet wird.
 
 #### <a name="remarks"></a>Hinweise
 
-Die Befehlszeichenfolge, die Sie angeben, wird als Standard verwendet, wenn Sie keinen Befehlstext angeben der [CCommand:: Open](../../data/oledb/ccommand-open.md) Methode.
+Die angegebene Befehls Zeichenfolge wird als Standard verwendet, wenn Sie in der [CCommand:: Open](../../data/oledb/ccommand-open.md) -Methode keinen Befehls Text angeben.
 
-Dieses Makro akzeptiert ANSI-Zeichenfolgen, wenn es sich bei der Erstellung Ihrer Anwendung als ANSI oder Unicode-Zeichenfolgen, wenn Sie die Anwendung im Unicode-Format erstellen. Es wird empfohlen, die Verwendung von [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) statt DEFINE_COMMAND, da der erste Wert, Unicode-Zeichenfolgen, unabhängig von der Art der Anwendung ANSI- oder Unicode akzeptiert.
+Dieses Makro akzeptiert ANSI-Zeichen folgen, wenn Sie die Anwendung als ANSI erstellen, oder Unicode-Zeichen folgen, wenn Sie die Anwendung als Unicode erstellen. Es wird empfohlen, [DEFINE_COMMAND_EX](../../data/oledb/define-command-ex.md) anstelle von DEFINE_COMMAND zu verwenden, da die frühere Unicode-Zeichen folgen akzeptiert, unabhängig vom Typ der ANSI-oder Unicode-Anwendung.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
+Siehe [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
 
-### <a name="define_command_ex"></a> DEFINE_COMMAND_EX
+### <a name="define_command_ex"></a><a name="define_command_ex"></a>DEFINE_COMMAND_EX
 
-Gibt den Befehl, der verwendet wird, um das Rowset zu erstellen, bei Verwendung der [CCommand](../../data/oledb/ccommand-class.md) Klasse. Unterstützt Unicode und ANSI-Anwendungen.
+Gibt den Befehl an, der verwendet wird, um das Rowset zu erstellen, wenn die [CCommand](../../data/oledb/ccommand-class.md) -Klasse verwendet wird. Unterstützt Unicode-und ANSI-Anwendungen.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1507,25 +1506,25 @@ DEFINE_COMMAND_EX(x, wszCommand)
 
 #### <a name="parameters"></a>Parameter
 
-*w*<br/>
-[in] Der Name der Benutzerdatensatzklasse (Befehl).
+*x*<br/>
+in Der Name der Benutzerdaten Satz-Klasse (Command).
 
-*wszCommand*<br/>
-[in] Die Befehlszeichenfolge, die verwendet wird, um das Rowset zu erstellen, bei Verwendung [CCommand](../../data/oledb/ccommand-class.md).
+*wszcommand*<br/>
+in Die Befehls Zeichenfolge, die verwendet wird, um das Rowset zu erstellen, wenn [CCommand](../../data/oledb/ccommand-class.md)verwendet wird.
 
 #### <a name="remarks"></a>Hinweise
 
-Die Befehlszeichenfolge, die Sie angeben, wird als Standard verwendet, wenn Sie keinen Befehlstext angeben der [CCommand:: Open](../../data/oledb/ccommand-open.md) Methode.
+Die angegebene Befehls Zeichenfolge wird als Standard verwendet, wenn Sie in der [CCommand:: Open](../../data/oledb/ccommand-open.md) -Methode keinen Befehls Text angeben.
 
-Dieses Makro akzeptiert Unicode-Zeichenfolgen, unabhängig von der Art der Anwendung. Dieses Makro wird bevorzugt über [DEFINE_COMMAND](../../data/oledb/define-command.md) da Unicode unterstützt und ANSI-Anwendungen.
+Dieses Makro akzeptiert Unicode-Zeichen folgen, unabhängig vom Anwendungstyp. Dieses Makro wird als [DEFINE_COMMAND](../../data/oledb/define-command.md) bevorzugt, da es Unicode und ANSI-Anwendungen unterstützt.
 
 #### <a name="example"></a>Beispiel
 
-Finden Sie unter [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
+Siehe [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md).
 
-### <a name="begin_param_map"></a> BEGIN_PARAM_MAP
+### <a name="begin_param_map"></a><a name="begin_param_map"></a>BEGIN_PARAM_MAP
 
-Markiert den Beginn der Zuordnungseintrags-Parameter.
+Markiert den Anfang der Parameter Zuordnungs Einträge.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1535,20 +1534,20 @@ BEGIN_PARAM_MAP(x)
 
 #### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 [in] Der Name der Benutzerdatensatzklasse.
 
 #### <a name="remarks"></a>Hinweise
 
-Parameter werden verwendet, indem [Befehle](/previous-versions/windows/desktop/ms724608(v=vs.85)).
+Parameter werden von- [Befehlen](/previous-versions/windows/desktop/ms724608(v=vs.85))verwendet.
 
 #### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für die [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) Makro.
+Weitere Informationen finden Sie im Beispiel für das [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md) -Makro.
 
-### <a name="end_param_map"></a> END_PARAM_MAP
+### <a name="end_param_map"></a><a name="end_param_map"></a>END_PARAM_MAP
 
-Markiert das Ende der Zuordnungseintrags-Parameter.
+Markiert das Ende der Parameter Zuordnungs Einträge.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1558,11 +1557,11 @@ END_PARAM_MAP()
 
 #### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für die [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) Makro.
+Weitere Informationen finden Sie im Beispiel für das [BEGIN_PARAM_MAP](../../data/oledb/begin-param-map.md) -Makro.
 
-### <a name="set_param_type"></a> SET_PARAM_TYPE
+### <a name="set_param_type"></a><a name="set_param_type"></a>SET_PARAM_TYPE
 
-Gibt an, COLUMN_ENTRY-Makros, die die SET_PARAM_TYPE-makroeingabe-, Ausgabe- oder Eingabe/Ausgabe folgen.
+Gibt COLUMN_ENTRY Makros an, die den SET_PARAM_TYPE Makro Eingabe,-Ausgabe oder-Eingabe/-Ausgabe folgen.
 
 #### <a name="syntax"></a>Syntax
 
@@ -1572,20 +1571,20 @@ SET_PARAM_TYPE(type)
 
 #### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 [in] Der für den Parameter festzulegende Typ.
 
 #### <a name="remarks"></a>Hinweise
 
-Anbieter unterstützen nur Parametereingabe-/-ausgabetypen, die von der zugrunde liegenden Datenquelle unterstützt werden. Der Typ ist eine Kombination aus einem oder mehreren `DBPARAMIO` Werte (finden Sie unter [DBBINDING-Strukturen](/previous-versions/windows/desktop/ms716845(v=vs.85)) in die *OLE DB-Programmierreferenz*):
+Anbieter unterstützen nur Parametereingabe-/-ausgabetypen, die von der zugrunde liegenden Datenquelle unterstützt werden. Der Typ ist eine Kombination aus einem oder mehreren `DBPARAMIO` Werten (siehe [DBBINDING-Strukturen](/previous-versions/windows/desktop/ms716845(v=vs.85)) in der *OLE DB-Programmier Referenz*):
 
-- `DBPARAMIO_NOTPARAM` Der Accessor hat keine Parameter. Legen Sie in der Regel `eParamIO` auf diesen Wert in zeilenaccessoren, um dem Benutzer daran zu erinnern, dass Parameter ignoriert werden.
+- `DBPARAMIO_NOTPARAM` der-Accessor über keine Parameter verfügt. In der Regel legen Sie `eParamIO` auf diesen Wert in zeilenaccessoren fest, um den Benutzer daran zu erinnern, dass Parameter ignoriert werden.
 
-- `DBPARAMIO_INPUT` Ein Eingabeparameter.
+- `DBPARAMIO_INPUT` einen Eingabeparameter.
 
-- `DBPARAMIO_OUTPUT` Ein Ausgabeparameter.
+- `DBPARAMIO_OUTPUT` einen Output-Parameter.
 
-- `DBPARAMIO_INPUT | DBPARAMIO_OUTPUT` Der Parameter ist sowohl Eingabe-als auch ein Output-Parameter.
+- `DBPARAMIO_INPUT | DBPARAMIO_OUTPUT` der-Parameter sowohl ein Eingabe-als auch ein Output-Parameter ist.
 
 #### <a name="example"></a>Beispiel
 
@@ -1629,13 +1628,12 @@ END_COLUMN_MAP()
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
 ## <a name="see-also"></a>Siehe auch
 
 [Makros und globale Funktionen für OLE-Consumervorlagen](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)<br/>
-[OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

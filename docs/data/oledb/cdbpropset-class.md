@@ -21,7 +21,6 @@ f1_keywords:
 - ATL.CDBPropSet.SetGUID
 - CDBPropSet.SetGUID
 - ATL::CDBPropSet::SetGUID
-- SetGUID
 - CDBPropSet::SetGUID
 helpviewer_keywords:
 - CDBPropSet class
@@ -33,16 +32,16 @@ helpviewer_keywords:
 - SetGUID method
 - AddProperty method
 ms.assetid: 54190149-c277-4679-b81a-ef484d4d1c00
-ms.openlocfilehash: b58c0262d361ede37bc3db68784177ec4c29f3a4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 08cab967fbfbd4b3207e96a4fdbd2d2dbc6da793
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62325025"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79546116"
 ---
 # <a name="cdbpropset-class"></a>CDBPropSet-Klasse
 
-Erbt von der `DBPROPSET` -Struktur und fügt einen Konstruktor, der wichtige Felder initialisiert sowie die `AddProperty` -Zugriffsmethode.
+Erbt von der `DBPROPSET` Struktur und fügt einen Konstruktor hinzu, der Schlüsselfelder und die `AddProperty` Zugriffsmethode initialisiert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,7 +49,7 @@ Erbt von der `DBPROPSET` -Struktur und fügt einen Konstruktor, der wichtige Fel
 class CDBPropSet : public tagDBPROPSET
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -60,23 +59,23 @@ class CDBPropSet : public tagDBPROPSET
 
 |||
 |-|-|
-|[AddProperty](#addproperty)|Fügt eine Eigenschaft, der die Eigenschaft festgelegt.|
+|[AddProperty](#addproperty)|Fügt dem Eigenschaften Satz eine Eigenschaft hinzu.|
 |[CDBPropSet](#cdbpropset)|Konstruktor.|
-|[SetGUID](#setguid)|Legt die `guidPropertySet` Feld der `DBPROPSET` Struktur.|
+|[SetGUID](#setguid)|Legt das `guidPropertySet`-Feld der `DBPROPSET` Struktur fest.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[operator =](#op_equal)|Weist den Inhalt einer Eigenschaft in ein anderes festlegen.|
+|[Operator =](#op_equal)|Weist den Inhalt einer Eigenschaft einem anderen Satz zu.|
 
 ## <a name="remarks"></a>Hinweise
 
-OLE DB-Anbieter und Consumer verwenden `DBPROPSET` Strukturen zum Übergeben von Arrays von `DBPROP` Strukturen. Jede `DBPROP` Struktur stellt eine einzelne Eigenschaft, die festgelegt werden kann.
+OLE DB Anbieter und Consumer verwenden `DBPROPSET` Strukturen, um Arrays von `DBPROP` Strukturen zu übergeben. Jede `DBPROP` Struktur stellt eine einzelne Eigenschaft dar, die festgelegt werden kann.
 
-## <a name="addproperty"></a> CDBPropSet::AddProperty
+## <a name="cdbpropsetaddproperty"></a><a name="addproperty"></a>CDBPropSet:: AddProperty
 
-Fügt eine Eigenschaft, der die Eigenschaft festgelegt.
+Fügt dem Eigenschaften Satz eine Eigenschaft hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -97,37 +96,37 @@ bool AddProperty(DWORD dwPropertyID,
 
 #### <a name="parameters"></a>Parameter
 
-*dwPropertyID*<br/>
-[in] Die ID der Eigenschaft hinzugefügt werden. Zum Initialisieren der `dwPropertyID` von der `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*dwpropertyid*<br/>
+in Die ID der Eigenschaft, die hinzugefügt werden soll. Wird verwendet, um den `dwPropertyID` der `DBPROP` Struktur zu initialisieren, die dem Eigenschaften Satz hinzugefügt wurde.
 
 *var*<br/>
-[in] Eine Variante, die zum Initialisieren des Eigenschaftswerts für die `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+in Ein Variant, mit dem der Eigenschafts Wert für die `DBPROP` Struktur initialisiert wird, die dem Eigenschaften Satz hinzugefügt wurde.
 
-*szValue*<br/>
-[in] Eine Zeichenfolge, die zum Initialisieren des Eigenschaftswerts für die `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*szvalue*<br/>
+in Eine Zeichenfolge, mit der der Eigenschafts Wert für die `DBPROP` Struktur initialisiert wird, die dem Eigenschaften Satz hinzugefügt wurde.
 
 *bValue*<br/>
-[in] Ein `BYTE` oder ein boolescher Wert, der zum Initialisieren des Eigenschaftswerts für die `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+in Ein `BYTE` oder boolescher Wert, der verwendet wird, um den Eigenschafts Wert für die `DBPROP` Struktur zu initialisieren, die dem Eigenschaften Satz hinzugefügt wurde.
 
-*nValue*<br/>
-[in] Ein Ganzzahlwert, der zum Initialisieren des Eigenschaftswerts für die `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*nWert*<br/>
+in Ein ganzzahliger Wert, mit dem der Eigenschafts Wert für die `DBPROP` Struktur initialisiert wird, die dem Eigenschaften Satz hinzugefügt wurde.
 
-*fltValue*<br/>
-[in] Ein Gleitkommawert, der zum Initialisieren des Eigenschaftswerts für die `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*fltvalue*<br/>
+in Ein Gleit Komma Wert, der verwendet wird, um den Eigenschafts Wert für die `DBPROP` Struktur zu initialisieren, die dem Eigenschaften Satz hinzugefügt wurde.
 
-*dblValue*<br/>
-[in] Ein Gleitkommawert mit doppelter Genauigkeit, verwendet, um den Eigenschaftswert für Initialisieren der `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*dblvalue*<br/>
+in Ein Gleit Komma Wert mit doppelter Genauigkeit, der verwendet wird, um den Eigenschafts Wert für die `DBPROP` Struktur zu initialisieren, die dem Eigenschaften Satz hinzugefügt wurde.
 
-*cyValue*<br/>
-[in] CY Währungswert verwendet, um den Eigenschaftswert für Initialisieren der `DBPROP` Struktur hinzugefügt, der die Eigenschaft festgelegt.
+*cyvalue*<br/>
+in Ein CY Currency-Wert, mit dem der Eigenschafts Wert für die `DBPROP` Struktur initialisiert wird, die dem Eigenschaften Satz hinzugefügt wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die Eigenschaft erfolgreich hinzugefügt wurde. Andernfalls **"false"**.
+**true** , wenn die Eigenschaft erfolgreich hinzugefügt wurde. Andernfalls lautet der Wert **false**.
 
-## <a name="cdbpropset"></a> CDBPropSet:: CDBPropSet
+## <a name="cdbpropsetcdbpropset"></a><a name="cdbpropset"></a>CDBPropSet:: CDBPropSet
 
-Der Konstruktor. Initialisiert die `rgProperties`, `cProperties`, und `guidPropertySet` Felder der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Struktur.
+Der Konstruktor. Initialisiert die Felder `rgProperties`, `cProperties`und `guidPropertySet` der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Struktur.
 
 ### <a name="syntax"></a>Syntax
 
@@ -142,14 +141,14 @@ CDBPropSet();
 #### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-[in] Eine GUID, die zum Initialisieren der `guidPropertySet` Feld.
+in Eine GUID, die verwendet wird, um das `guidPropertySet` Feld zu initialisieren.
 
 *propset*<br/>
-[in] Eine andere `CDBPropSet` Objekt für die Copy-Konstruktion.
+in Ein weiteres `CDBPropSet` Objekt für die Kopier Konstruktion.
 
-## <a name="setguid"></a> CDBPropSet::SetGUID
+## <a name="cdbpropsetsetguid"></a><a name="setguid"></a>CDBPropSet:: SetGuid
 
-Legt die `guidPropertySet` -Feld in der `DBPROPSET` Struktur.
+Legt das `guidPropertySet` Feld in der `DBPROPSET`-Struktur fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -160,15 +159,15 @@ void SetGUID(const GUID& guid) throw();
 #### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-[in] Eine GUID zum Festlegen der `guidPropertySet` Feld der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Struktur.
+in Eine GUID, die verwendet wird, um das `guidPropertySet`-Feld der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Struktur festzulegen.
 
 ### <a name="remarks"></a>Hinweise
 
-Dieses Feld kann festgelegt werden, indem die [Konstruktor](../../data/oledb/cdbpropset-cdbpropset.md) ebenfalls.
+Dieses Feld kann auch durch den- [Konstruktor](../../data/oledb/cdbpropset-cdbpropset.md) festgelegt werden.
 
-## <a name="op_equal"></a> CDBPropSet:: Operator =
+## <a name="cdbpropsetoperator-"></a><a name="op_equal"></a>CDBPropSet:: Operator =
 
-Weist den Inhalt einer Eigenschaft, die auf einem anderen Eigenschaftensatz festgelegt.
+Weist den Inhalt einer Eigenschaften Gruppe einem anderen Eigenschaften Satz zu.
 
 ### <a name="syntax"></a>Syntax
 

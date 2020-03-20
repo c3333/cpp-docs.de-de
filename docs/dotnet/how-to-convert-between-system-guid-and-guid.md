@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Konvertieren Sie zwischen System:: GUID und _GUID'
+title: 'Gewusst wie: Konvertieren zwischen System::Guid und _GUID'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - GUID, converting to System::GUID
 - System::GUID, converting to GUID
 ms.assetid: 022c934c-3395-4f04-b498-85ad9bf8c646
-ms.openlocfilehash: e74a95eea1018916dcdef6b133ef1f0ab0533f96
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a0150053157d2694788cd50bf64097805a8eda88
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379063"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545060"
 ---
-# <a name="how-to-convert-between-systemguid-and-guid"></a>Vorgehensweise: Konvertieren Sie zwischen System:: GUID und _GUID
+# <a name="how-to-convert-between-systemguid-and-_guid"></a>Gewusst wie: Konvertieren zwischen System::Guid und _GUID
 
-Das folgende Codebeispiel zeigt, wie für die Konvertierung zwischen einem <xref:System.Guid> und `_GUID`.
+Im folgenden Codebeispiel wird veranschaulicht, wie zwischen einem <xref:System.Guid> und einem `_GUID`konvertiert werden kann.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // convert_guids.cpp
 // compile with: /clr
 #include <windows.h>

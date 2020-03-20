@@ -6,22 +6,22 @@ helpviewer_keywords:
 - Windows Forms controls [C++], hosting as an MFC view
 - hosting Windows Forms control [C++]
 ms.assetid: 43c02ab4-1366-434c-a980-0b19326d6ea0
-ms.openlocfilehash: 9c59f28739ab94210c16bd800a48997f3f2282df
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bf91730f98685935d50ee0076739b436e8d9da60
+ms.sourcegitcommit: e5192a25c084eda9eabfa37626f3274507e026b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62222870"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "79544784"
 ---
 # <a name="hosting-a-windows-forms-user-control-as-an-mfc-view"></a>Hosten eines Windows Forms-Benutzersteuerelements als MFC-Ansicht
 
-MFC verwendet die CWinFormsView-Klasse zum Hosten eines Windows Forms-Benutzersteuerelements in MFC-Ansicht. MFC-Windows Forms-Ansichten sind die ActiveX-Steuerelemente. Das Benutzersteuerelement als untergeordnetes Element der einheitlichen Ansicht gehostet wird, und nimmt den gesamten Clientbereich der einheitlichen Ansicht.
+MFC verwendet die CWinFormsView-Klasse, um ein Windows Forms Benutzer Steuerelement in einer MFC-Ansicht zu hosten. MFC-Windows Forms Ansichten sind ActiveX-Steuerelemente. Das Benutzer Steuerelement wird als untergeordnetes Element der nativen Ansicht gehostet und belegt den gesamten Client Bereich der systemeigenen Ansicht.
 
-Das Ergebnis ähnelt das Modell, das die [CFormView-Klasse](../mfc/reference/cformview-class.md). Dadurch können Sie die Nutzung von Windows Forms-Designer und der Laufzeit zum Erstellen von umfassender formularbasierte Sichten.
+Das Endergebnis ähnelt dem Modell, das von der [CFormView-Klasse](../mfc/reference/cformview-class.md)verwendet wird. Auf diese Weise können Sie den Windows Forms-Designer und die Laufzeit nutzen, um umfangreiche Formular basierte Sichten zu erstellen.
 
-Da MFC-Windows Forms-Ansichten ActiveX-Steuerelemente sind, sie verfügen nicht über die gleiche `hwnd` wie MFC-Ansichten. Sie können keine auch übergeben werden, als Zeiger auf eine [CView](../mfc/reference/cview-class.md) anzeigen. Im Allgemeinen verwenden Sie .NET Framework-Methoden zum Arbeiten mit Windows Forms-Ansichten, und verlassen sich weniger auf Win32.
+Da MFC-Windows Forms Ansichten ActiveX-Steuerelemente sind, haben Sie nicht denselben `hwnd` wie MFC-Sichten. Außerdem können Sie nicht als Zeiger auf eine [CView](../mfc/reference/cview-class.md) -Ansicht übergeben werden. Verwenden Sie im Allgemeinen .NET Framework Methoden, um mit Windows Forms Sichten zu arbeiten und sich weniger auf Win32 zu verlassen.
 
-Eine beispielanwendung, die Windows Forms, die mit MFC verwendet wird, finden Sie unter [MFC und Windows Forms-Integration](http://www.microsoft.com/downloads/details.aspx?FamilyID=987021bc-e575-4fe3-baa9-15aa50b0f599&displaylang=en).
+Eine Beispielanwendung, die Windows Forms anzeigt, die mit MFC verwendet werden, finden Sie unter [MFC-und Windows Forms-Integration](https://www.microsoft.com/download/details.aspx?id=2113).
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
@@ -34,4 +34,4 @@ Eine beispielanwendung, die Windows Forms, die mit MFC verwendet wird, finden Si
 ## <a name="see-also"></a>Siehe auch
 
 [Verwenden eines Windows Form-Benutzersteuerelements in MFC](../dotnet/using-a-windows-form-user-control-in-mfc.md)<br/>
-[Vorgehensweise: Erstellen von zusammengesetzten Steuerelementen](/dotnet/framework/winforms/controls/how-to-author-composite-controls)
+[Gewusst wie: Erstellen von zusammengesetzten Steuerelementen](/dotnet/framework/winforms/controls/how-to-author-composite-controls)

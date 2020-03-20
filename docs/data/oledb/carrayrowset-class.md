@@ -12,7 +12,6 @@ f1_keywords:
 - ATL.CArrayRowset.CArrayRowset
 - ATL.CArrayRowset<TAccessor>.CArrayRowset
 - CArrayRowset::CArrayRowset
-- CArrayRowset
 - CArrayRowset<TAccessor>::CArrayRowset
 - ATL::CArrayRowset<TAccessor>::CArrayRowset
 - CArrayRowset<TAccessor>.Snapshot
@@ -43,16 +42,16 @@ helpviewer_keywords:
 - operator[], arrays
 - m_nRowsRead
 ms.assetid: 511427e1-73ca-4fd8-9ba1-ae9463557cb6
-ms.openlocfilehash: b257c4e95a99bfbc8042c5935638a70deac0ea7a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 66b7607eb28392196f6b7d3790aee976a861f2b6
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176160"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545612"
 ---
 # <a name="carrayrowset-class"></a>CArrayRowset-Klasse
 
-Greift auf die Elemente eines Rowsets mit Arraysyntax.
+Greift mithilfe der Array Syntax auf Elemente eines Rowsets zu.
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,9 +65,9 @@ class CArrayRowset :
 ### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Der Typ der Accessor-Klasse, die Sie auf das Rowset verwenden möchten.
+Der Typ der Accessorklasse, die vom Rowset verwendet werden soll.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -79,21 +78,21 @@ Der Typ der Accessor-Klasse, die Sie auf das Rowset verwenden möchten.
 |||
 |-|-|
 |[CArrayRowset](#carrayrowset)|Konstruktor.|
-|[Snapshot](#snapshot)|Liest das gesamte Rowset in den Speicher an.|
+|[Momentaufnahme](#snapshot)|Liest das gesamte Rowset in den Arbeitsspeicher.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[Operator&#91;&#93;](#operator)|Greift auf ein Element des Rowsets.|
+|[KOM&#91;&#93;](#operator)|Greift auf ein Element des Rowsets zu.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|[CArrayRowset::m_nRowsRead](#nrowsread)|Die Anzahl der Zeilen, die bereits gelesen.|
+|[CArrayRowset::m_nRowsRead](#nrowsread)|Die Anzahl der bereits gelesenen Zeilen.|
 
-## <a name="carrayrowset"></a> CArrayRowset::CArrayRowset
+## <a name="carrayrowsetcarrayrowset"></a><a name="carrayrowset"></a>CArrayRowset:: CArrayRowset
 
 Erstellt ein neues `CArrayRowset`-Objekt.
 
@@ -106,11 +105,11 @@ CArrayRowset(int nMax = 100000);
 #### <a name="parameters"></a>Parameter
 
 *nMax*<br/>
-[in] Maximale Anzahl von Zeilen im Rowset.
+in Maximale Anzahl von Zeilen im Rowset.
 
-## <a name="snapshot"></a> CArrayRowset::Snapshot
+## <a name="carrayrowsetsnapshot"></a><a name="snapshot"></a>CArrayRowset:: Snapshot
 
-Liest das gesamte Rowset in den Speicher, erstellen ein Bild oder eine Momentaufnahme davon.
+Liest das gesamte Rowset in den Arbeitsspeicher, wobei ein Bild oder eine Momentaufnahme erstellt wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -118,9 +117,9 @@ Liest das gesamte Rowset in den Speicher, erstellen ein Bild oder eine Momentauf
 HRESULT Snapshot() throw();
 ```
 
-## <a name="operator"></a> CArrayRowset::operator
+## <a name="carrayrowsetoperator"></a><a name="operator"></a>CArrayRowset::-Operator
 
-Stellt arrayähnlichen Syntax für den Zugriff auf eine Zeile im Rowset bereit.
+Stellt eine Array ähnliche Syntax für den Zugriff auf eine Zeile im Rowset bereit.
 
 ### <a name="syntax"></a>Syntax
 
@@ -131,20 +130,20 @@ TAccessor & operator[](int nrow);
 #### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Auf Vorlagen basierenden Parameter, der den Typ des Accessors gespeichert, in dem Rowset angibt.
+Ein Vorlagen Parameter, der den Typ des im Rowset gespeicherten Accessors angibt.
 
-*nRow*<br/>
-[in] Anzahl von der Zeile (Arrayelement), die Sie zugreifen möchten.
+*nzeile*<br/>
+in Die Nummer der Zeile (Array Element), auf die Sie zugreifen möchten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Inhalt der die angeforderte Zeile.
+Der Inhalt der angeforderten Zeile.
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn *Funktionen "nrow"* überschreitet die Anzahl der Zeilen im Rowset, wird eine Ausnahme ausgelöst.
+Wenn die Anzahl der Zeilen im Rowset von *nrow* überschritten wird, wird eine Ausnahme ausgelöst.
 
-## <a name="nrowsread"></a> CArrayRowset::m_nRowsRead
+## <a name="carrayrowsetm_nrowsread"></a><a name="nrowsread"></a>CArrayRowset:: m_nRowsRead
 
 Enthält die Anzahl der Zeilen im Rowset, die bereits gelesen wurden.
 

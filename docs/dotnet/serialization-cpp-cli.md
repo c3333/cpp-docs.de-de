@@ -9,30 +9,30 @@ helpviewer_keywords:
 - .NET Framework [C++], serialization
 - serialization [C++], about serialization
 ms.assetid: 869010ca-74e1-4989-b409-4643cdb94084
-ms.openlocfilehash: 794a71ae9a146b691ba6a4377a7fdf2c3ddd3501
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b2dfdcaf1a1f33e89d106d4529ffc9af2d08376b
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384672"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545162"
 ---
 # <a name="serialization-ccli"></a>Serialisierung (C++/CLI)
 
-Serialisierung (der Prozess des Speicherns des Status eines Objekts oder der Member, die auf einem permanenten Medium) von verwalteten Klassen (einschließlich der einzelnen Felder oder Eigenschaften) wird von unterstützt die <xref:System.SerializableAttribute> und <xref:System.NonSerializedAttribute> Klassen.
+Die Serialisierung (der Vorgang zum Speichern des Zustands eines Objekts oder eines Members in einem permanenten Medium) der verwalteten Klassen (einschließlich einzelner Felder oder Eigenschaften) wird von den Klassen <xref:System.SerializableAttribute> und <xref:System.NonSerializedAttribute> unterstützt.
 
 ## <a name="remarks"></a>Hinweise
 
-Anwenden der **SerializableAttribute** benutzerdefiniertes Attribut auf eine verwaltete Klasse an die gesamte Klasse zu serialisieren, oder wenden Sie nur auf bestimmte Felder oder Eigenschaften, die Teile der verwalteten Klasse serialisiert. Verwenden der **NonSerializedAttribute** benutzerdefiniertes Attribut auf Felder und Eigenschaften einer verwalteten Klasse von der Serialisierung.
+Wenden Sie das benutzerdefinierte **SerializableAttribute** -Attribut auf eine verwaltete Klasse an, um die gesamte Klasse zu serialisieren, oder wenden Sie Sie nur auf bestimmte Felder oder Eigenschaften an, um Teile der verwalteten Klasse zu serialisieren. Verwenden Sie das benutzerdefinierte **NonSerializedAttribute** -Attribut, um die Felder oder Eigenschaften einer verwalteten Klasse von der Serialisierung auszuschließen.
 
 ## <a name="example"></a>Beispiel
 
 ### <a name="description"></a>Beschreibung
 
-Im folgenden Beispiel die Klasse `MyClass` (und die Eigenschaft `m_nCount`) als serialisierbar markiert ist. Allerdings die `m_nData` Eigenschaft wird nicht serialisiert werden, wie durch die **NonSerialized** benutzerdefiniertes Attribut:
+Im folgenden Beispiel wird die-Klasse `MyClass` (und die-Eigenschaft `m_nCount`) als serialisierbar markiert. Die `m_nData`-Eigenschaft wird jedoch nicht so serialisiert, wie durch das **nicht serialisierte** benutzerdefinierte Attribut angegeben:
 
 ### <a name="code"></a>Code
 
-```
+```cpp
 // serialization_and_mcpp.cpp
 // compile with: /LD /clr
 using namespace System;
@@ -47,9 +47,9 @@ private:
 };
 ```
 
-### <a name="comments"></a>Kommentare
+### <a name="comments"></a>Comments
 
-Beachten Sie, dass beide Attribute mit ihren "short Name" verwiesen werden können (**Serializable** und **NonSerialized**). Dies wird weiter erläutert [Anwenden von Attributen](/dotnet/standard/attributes/applying-attributes).
+Beachten Sie, dass auf beide Attribute mit Ihrem "Kurznamen" verwiesen werden kann (**serialisierbar** und **nicht serialisiert**). Dies wird in Anwenden von [Attributen](/dotnet/standard/attributes/applying-attributes)ausführlicher erläutert.
 
 ## <a name="see-also"></a>Siehe auch
 

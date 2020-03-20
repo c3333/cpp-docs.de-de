@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - overriding, override [C++]
 ms.assetid: 4ec3eaf5-163b-4df8-8f16-7a2ec04c3d0f
-ms.openlocfilehash: 7d36793e4467f9454aca1eb207f3c3dfbd483bff
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: b80e49489c0b0d26469ba9f8b77e80a962668e35
+ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516675"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "79545432"
 ---
 # <a name="explicit-overrides--ccli-and-ccx"></a>Explizite Überschreibungen (C++/CLI und C++/CX)
 
@@ -30,34 +30,34 @@ overriding-function-declarator = function { overriding-function-definition }
 *overriding-function-declarator*<br/>
 Der Rückgabetyp, der Name und die Argumentliste der überschreibenden Funktion.  Beachten Sie, dass die überschreibende Funktion nicht den gleichen Namen aufweisen muss wie die Funktion, die überschrieben wird.
 
-*Typ*<br/>
+*type*<br/>
 Der Basistyp, der eine zu überschreibende Funktion enthält.
 
-*function*<br/>
+*Funktion*<br/>
 Eine durch Trennzeichen getrennte Liste mit zu überschreibenden Funktionsnamen.
 
 *overriding-function-definition*<br/>
 Die Funktionstextanweisungen, die die überschreibende Funktion definieren.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
-Verwenden Sie explizite Überschreibungen, um einen Alias für eine Methodensignatur zu erstellen oder um verschiedene Implementierungen für Methoden mit der gleichen Signatur bereitzustellen.
+Verwenden Sie explizite über schreibungen, um einen Alias für eine Methoden Signatur zu erstellen oder um verschiedene Implementierungen für Methoden mit der gleichen Signatur bereitzustellen.
 
 Informationen zum Ändern des Verhaltens von geerbten Typen und geerbten Typmembern finden Sie unter [Überschreibungsspezifizierer](override-specifiers-cpp-component-extensions.md).
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Informationen zu expliziten Überschreibungen in nativem Code oder in mit `/clr:oldSyntax` kompiliertem Code finden Sie unter [Explizite Überschreibungen](../cpp/explicit-overrides-cpp.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

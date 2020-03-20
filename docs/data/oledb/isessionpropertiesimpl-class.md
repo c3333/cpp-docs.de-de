@@ -5,25 +5,23 @@ f1_keywords:
 - ISessionPropertiesImpl
 - ISessionPropertiesImpl::GetProperties
 - ISessionPropertiesImpl.GetProperties
-- GetProperties
 - ISessionPropertiesImpl.SetProperties
-- SetProperties
 - ISessionPropertiesImpl::SetProperties
 helpviewer_keywords:
 - ISessionPropertiesImpl class
 - GetProperties method
 - SetProperties method
 ms.assetid: ca0ba254-c7dc-4c52-abec-cf895a0c6a63
-ms.openlocfilehash: ed8b7a271bc6ac234fc9276d6c88d26848da24f8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 50052e13371482fa0a8b6d66ef666b9801837501
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390684"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545702"
 ---
 # <a name="isessionpropertiesimpl-class"></a>ISessionPropertiesImpl-Klasse
 
-Stellt eine Implementierung der [ISessionProperties](/previous-versions/windows/desktop/ms713721(v=vs.85)) Schnittstelle.
+Stellt eine Implementierung der [ISessionProperties](/previous-versions/windows/desktop/ms713721(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,14 +35,14 @@ class ATL_NO_VTABLE ISessionPropertiesImpl :
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Abgeleitet von die Klasse `ISessionPropertiesImpl`.
+Die von `ISessionPropertiesImpl`abgeleitete Klasse.
 
-*PropClass*<br/>
-Eine mit benutzerdefinierbaren-Eigenschaftsklasse, die standardmäßig *T*.
+*Propclass*<br/>
+Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig um *T*handelt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -52,16 +50,16 @@ Eine mit benutzerdefinierbaren-Eigenschaftsklasse, die standardmäßig *T*.
 
 |||
 |-|-|
-|[GetProperties](#getproperties)|Gibt die Liste der Eigenschaften in der Sitzung-Eigenschaftengruppe, die derzeit für die Sitzung festgelegt sind.|
-|[SetProperties](#setproperties)|Legt die Eigenschaften in der Eigenschaftengruppe Sitzung fest.|
+|[GetProperties](#getproperties)|Gibt die Liste der Eigenschaften in der Sitzungs Eigenschaften Gruppe zurück, die derzeit für die Sitzung festgelegt sind.|
+|[SetProperties](#setproperties)|Legt Eigenschaften in der Sitzungs Eigenschaften Gruppe fest.|
 
 ## <a name="remarks"></a>Hinweise
 
-Eine erforderliche Schnittstelle für Sitzungen. Diese Klasse implementiert die Eigenschaften der leistungssitzung durch Aufrufen der statische Funktion definiert, die von der [Satz eigenschaftenzuordnung](../../data/oledb/begin-propset-map.md). Die Set-eigenschaftenzuordnung sollte in Ihrer Sitzungsklasse angegeben werden.
+Eine erforderliche Schnittstelle für Sitzungen. Diese Klasse implementiert Sitzungs Eigenschaften durch Aufrufen einer statischen Funktion, die durch die [Eigenschaften Satz](../../data/oledb/begin-propset-map.md)Zuordnung definiert ist. Die Eigenschaften Satz Zuordnung sollte in ihrer Sitzungs Klasse angegeben werden.
 
-## <a name="getproperties"></a> ISessionPropertiesImpl::GetProperties
+## <a name="isessionpropertiesimplgetproperties"></a><a name="getproperties"></a>Isessionpropertiesimpl:: GetProperties
 
-Gibt die Liste der Eigenschaften in der `DBPROPSET_SESSION` Eigenschaftengruppe, die derzeit für die Sitzung festgelegt sind.
+Gibt die Liste der Eigenschaften in der `DBPROPSET_SESSION` Eigenschaften Gruppe zurück, die derzeit für die Sitzung festgelegt sind.
 
 ### <a name="syntax"></a>Syntax
 
@@ -74,11 +72,11 @@ STDMETHOD(GetProperties)(ULONG cPropertyIDSets,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ISessionProperties::GetProperties](/previous-versions/windows/desktop/ms723643(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Siehe [ISessionProperties:: GetProperties](/previous-versions/windows/desktop/ms723643(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="setproperties"></a> ISessionPropertiesImpl::SetProperties
+## <a name="isessionpropertiesimplsetproperties"></a><a name="setproperties"></a>Isessionpropertiesimpl:: SetProperties
 
-Legt Eigenschaften fest, der `DBPROPSET_SESSION` Eigenschaftengruppe.
+Legt Eigenschaften in der `DBPROPSET_SESSION` Eigenschaften Gruppe fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -89,9 +87,9 @@ STDMETHOD(SetProperties)(ULONG cPropertySets,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [ISessionProperties::SetProperties](/previous-versions/windows/desktop/ms714405(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [ISessionProperties:: SetProperties](/previous-versions/windows/desktop/ms714405(v=vs.85)) .
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

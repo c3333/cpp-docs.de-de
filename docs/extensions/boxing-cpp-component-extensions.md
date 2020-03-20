@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - boxing, C++
 ms.assetid: b5fd2c98-c578-4f83-8257-6dd663478665
-ms.openlocfilehash: 0b41cacba8c279447e1e944cc3214ca1ba607665
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 6221087b60e76e3a2648366c4efebc4105f0ab58
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516155"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544669"
 ---
 # <a name="boxing--ccli-and-ccx"></a>Boxing (C++/CLI und C++/CX)
 
@@ -30,7 +30,7 @@ C++/CX unterstützt eine Kurzsyntax für Boxing-Werttypen und Unboxing-Verweisty
 value_variable = (value_type) object_variable;
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -72,7 +72,7 @@ void BlankPage::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Weitere Informationen finden Sie unter [Boxing (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh969554.aspx).
+Weitere Informationen finden Sie unter [Boxing (C++/CX)](../cppcx/boxing-c-cx.md).
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
@@ -80,17 +80,17 @@ Der Compiler konvertiert Werttypen durch Boxing in <xref:System.Object>. Dies is
 
 Mit Boxing und Unboxing können Werttypen wie Objekte behandelt werden. Werttypen, einschließlich Strukturtypen und integrierten Typen wie int, können in und aus dem Typ <xref:System.Object> konvertiert werden.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 - [Vorgehensweise: Explizites Anfordern von Boxing](../dotnet/how-to-explicitly-request-boxing.md)
 
 - [Vorgehensweise: Verwenden von gcnew zum Erstellen von Werttypen und für implizites Boxing](../dotnet/how-to-use-gcnew-to-create-value-types-and-use-implicit-boxing.md)
 
-- [Vorgehensweise: Anwenden von Unboxing](../dotnet/how-to-unbox.md)
+- [Vorgehensweise: Unboxing](../dotnet/how-to-unbox.md)
 
 - [Standardumwandlungen und implizites Boxing](../dotnet/standard-conversions-and-implicit-boxing.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

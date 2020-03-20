@@ -24,16 +24,16 @@ helpviewer_keywords:
 - Fire_OnRowChange method
 - Fire_OnRowsetChange method
 ms.assetid: ccef402b-94a0-4c2e-9a13-7e854ef82390
-ms.openlocfilehash: a3ab63206ce7ac53ff996ecf1bb64bdaa0b79fcb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 481c2c0ec28972e9cef8d1103e49afa2037c2393
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390736"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544567"
 ---
 # <a name="irowsetnotifycp-class"></a>IRowsetNotifyCP-Klasse
 
-Die Website für die Verbindungspunkt-Schnittstelle implementiert [IRowsetNotify](/previous-versions/windows/desktop/ms712959(v=vs.85)).
+Implementiert die Anbieter Website für die Verbindungspunkt Schnittstelle [IRowsetNotify](/previous-versions/windows/desktop/ms712959(v=vs.85)).
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,20 +50,20 @@ class IRowsetNotifyCP :
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine abgeleitete Klasse `IRowsetNotifyCP`.
+Eine von `IRowsetNotifyCP`abgeleitete Klasse.
 
-*ReentrantEventSync*<br/>
-Ein Mutex-Klasse, die Eintrittsinvarianz unterstützt (die Standardeinstellung ist `CComSharedMutex`). Ein Mutex ist ein Synchronisierungsobjekt, das Threads den einander ausschließenden Zugriff auf eine Ressource ermöglicht.
+*Reentranteventsync*<br/>
+Eine Mutex-Klasse, die das erneute eintreten unterstützt (Standardwert ist `CComSharedMutex`). Bei einem Mutex handelt es sich um ein Synchronisierungs Objekt, das einem Thread den Zugriff auf eine Ressource gegenseitig ausschließt.
 
 *piid*<br/>
-Ein ID-Schnittstellenzeiger (`IID*`) für eine `IRowsetNotify` Verbindungspunkt-Schnittstelle. Der Standardwert ist `&__uuidof(IRowsetNotify)`.
+Ein Schnittstellen-ID-Zeiger (`IID*`) für eine `IRowsetNotify` Verbindungspunkt-Schnittstelle. Standardwert: `&__uuidof(IRowsetNotify)`.
 
-*DynamicUnkArray*<br/>
-Ein Array vom Typ [CComDynamicUnkArray](../../atl/reference/ccomdynamicunkarray-class.md), d.h. ein dynamisch zugeordnetes Array aus `IUnknown` sink-Schnittstellen Zeigern auf dem Client.
+*Dynamicunkarray*<br/>
+Ein Array vom Typ [ccomdynamicunkarray](../../atl/reference/ccomdynamicunkarray-class.md), bei dem es sich um ein dynamisch zugewiesenes Array von `IUnknown` Zeigern auf die clientsenke-Schnittstellen handelt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -71,21 +71,21 @@ Ein Array vom Typ [CComDynamicUnkArray](../../atl/reference/ccomdynamicunkarray-
 
 |||
 |-|-|
-|[Fire_OnFieldChange](#onfieldchange)|Benachrichtigt den Consumer über eine Änderung an den Wert einer Spalte.|
-|[Fire_OnRowChange](#onrowchange)|Benachrichtigt den Consumer über eine Änderung, die Auswirkungen auf die Zeilen.|
-|[Fire_OnRowsetChange](#onrowsetchange)|Benachrichtigt den Consumer über eine Änderung, die Auswirkungen auf das gesamte Rowset.|
+|[Fire_OnFieldChange](#onfieldchange)|Benachrichtigt den Consumer über eine Änderung des Werts einer Spalte.|
+|[Fire_OnRowChange](#onrowchange)|Benachrichtigt den Consumer über eine Änderung, die sich auf die Zeilen auswirkt.|
+|[Fire_OnRowsetChange](#onrowsetchange)|Benachrichtigt den Consumer über eine Änderung, die sich auf das gesamte Rowset auswirkt.|
 
 ## <a name="remarks"></a>Hinweise
 
-`IRowsetNotifyCP` broadcast-implementiert Funktionen, um den Listener auf dem Verbindungspunkt empfehlen `IID_IRowsetNotify` von Änderungen an den Inhalt des Rowsets.
+`IRowsetNotifyCP` implementiert Broadcast Funktionen, um Listener auf dem Verbindungspunkt `IID_IRowsetNotify` Änderungen am Inhalt des Rowsets zu informieren.
 
-Beachten Sie, dass Sie auch implementieren registrieren müssen `IRowsetNotify` vom Consumer (auch bekannt als "Senke" genannt) mit [IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md) , damit der Consumer mit Benachrichtigungen behandeln kann. Finden Sie unter [empfangen von Benachrichtigungen](../../data/oledb/receiving-notifications.md) zur Implementierung der vom Consumer der Verbindungspunkt-Schnittstelle.
+Beachten Sie, dass Sie mit [IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md) auch `IRowsetNotify` für den Consumer (auch als "Sink" bezeichnet) implementieren und registrieren müssen, damit der Consumer Benachrichtigungen verarbeiten kann. Weitere Informationen finden Sie unter [empfangen von Benachrichtigungen](../../data/oledb/receiving-notifications.md) zum Implementieren der Verbindungspunkt Schnittstelle für den Consumer.
 
-Ausführliche Informationen zum Implementieren von Benachrichtigungen finden Sie unter "Unterstützen von Benachrichtigungen" in [Erstellen eines aktualisierbaren Anbieters](../../data/oledb/creating-an-updatable-provider.md).
+Ausführliche Informationen zum Implementieren von Benachrichtigungen finden Sie unter "unterstützen von Benachrichtigungen" unter [Erstellen eines aktualisierbaren Anbieters](../../data/oledb/creating-an-updatable-provider.md).
 
-## <a name="onfieldchange"></a> IRowsetNotifyCP::Fire_OnFieldChange
+## <a name="irowsetnotifycpfire_onfieldchange"></a><a name="onfieldchange"></a>IRowsetNotifyCP:: Fire_OnFieldChange
 
-Überträgt ein [OnFieldChange](/previous-versions/windows/desktop/ms715961(v=vs.85)) Ereignis benachrichtigt Kunden über eine Änderung an den Wert einer Spalte.
+Überträgt ein [OnFieldChange](/previous-versions/windows/desktop/ms715961(v=vs.85)) -Ereignis, um Consumer über eine Änderung des Werts einer Spalte zu benachrichtigen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -101,11 +101,11 @@ HRESULT Fire_OnFieldChange(IRowset* pRowset,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetNotify::OnFieldChange](/previous-versions/windows/desktop/ms715961(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IRowsetNotify:: OnFieldChange](/previous-versions/windows/desktop/ms715961(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="onrowchange"></a> IRowsetNotifyCP::Fire_OnRowChange
+## <a name="irowsetnotifycpfire_onrowchange"></a><a name="onrowchange"></a>IRowsetNotifyCP:: Fire_OnRowChange
 
-Überträgt ein [OnRowChange](/previous-versions/windows/desktop/ms722694(v=vs.85)) Ereignis an alle Listener für den Verbindungspunkt `IID_IRowsetNotify` benachrichtigen Kunden über eine Änderung, die Auswirkungen auf die Zeilen.
+Überträgt ein [OnRowChange](/previous-versions/windows/desktop/ms722694(v=vs.85)) -Ereignis an alle Listener auf dem Verbindungspunkt `IID_IRowsetNotify`, um Consumer über eine Änderung zu benachrichtigen, die sich auf die Zeilen auswirkt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -120,11 +120,11 @@ HRESULT Fire_OnRowChange(IRowset* pRowset,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetNotify::OnRowChange](/previous-versions/windows/desktop/ms722694(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IRowsetNotify:: OnRowChange](/previous-versions/windows/desktop/ms722694(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="onrowsetchange"></a> IRowsetNotifyCP::Fire_OnRowsetChange
+## <a name="irowsetnotifycpfire_onrowsetchange"></a><a name="onrowsetchange"></a>IRowsetNotifyCP:: Fire_OnRowsetChange
 
-Überträgt ein [OnRowsetChange](/previous-versions/windows/desktop/ms722669(v=vs.85)) Ereignis an alle Listener für den Verbindungspunkt `IID_IRowsetNotify` benachrichtigen Kunden über eine Änderung, die Auswirkungen auf das gesamte Rowset.
+Überträgt ein [OnRowsetChange](/previous-versions/windows/desktop/ms722669(v=vs.85)) -Ereignis an alle Listener auf dem Verbindungspunkt `IID_IRowsetNotify`, um Consumer über eine Änderung zu benachrichtigen, die das gesamte Rowset betrifft.
 
 ### <a name="syntax"></a>Syntax
 
@@ -137,13 +137,13 @@ HRESULT Fire_OnRowsetChange(IRowset* pRowset,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetNotify::OnRowsetChange](/previous-versions/windows/desktop/ms722669(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IRowsetNotify:: OnRowsetChange](/previous-versions/windows/desktop/ms722669(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>
-[Benachrichtigungen (COM)](/windows/desktop/com/notifications)<br/>
+[Benachrichtigungen (com)](/windows/win32/com/notifications)<br/>
 [BEGIN_CONNECTION_POINT_MAP](../../atl/reference/connection-point-macros.md#begin_connection_point_map)<br/>
 [END_CONNECTION_POINT_MAP](../../atl/reference/connection-point-macros.md#end_connection_point_map)<br/>
 [CONNECTION_POINT_ENTRY](../../atl/reference/connection-point-macros.md#connection_point_entry)<br/>

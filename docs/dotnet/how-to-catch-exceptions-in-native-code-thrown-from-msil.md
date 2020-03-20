@@ -1,29 +1,29 @@
 ---
-title: 'Vorgehensweise: Abfangen von Ausnahmen in nativem Code, die von der MSIL ausgelöst'
+title: 'Gewusst wie: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - exceptions, catching
 - catching exceptions, thrown from MSIL
 - MSIL, catching exceptions in native code
 ms.assetid: c15afd2b-8505-43bf-8a4a-f1d41532a124
-ms.openlocfilehash: 95ce7a2afabc34ea78376b12da61f419dab4af34
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 23adb573a62e93933c487f611c05aed4c08494ef
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379041"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545084"
 ---
-# <a name="how-to-catch-exceptions-in-native-code-thrown-from-msil"></a>Vorgehensweise: Abfangen von Ausnahmen in nativem Code, die von der MSIL ausgelöst
+# <a name="how-to-catch-exceptions-in-native-code-thrown-from-msil"></a>Gewusst wie: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code
 
-In nativem Code können Sie native C++-Ausnahme von der MSIL abfangen.  Sie können auch mit CLR-Ausnahmen abfangen `__try` und `__except`.
+In nativem Code können Sie eine System C++ eigene Ausnahme von MSIL abfangen.  Sie können CLR-Ausnahmen mit `__try` und `__except`abfangen.
 
-Weitere Informationen finden Sie unter [Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md) und [C++-Ausnahmebehandlung](../cpp/cpp-exception-handling.md).
+Weitere Informationen finden Sie unter [strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md) und [moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel definiert ein Modul mit zwei Funktionen, eine, die von einem systemeigenen Ausnahme ausgelöst und eine, die eine MSIL-Ausnahme auslöst.
+Im folgenden Beispiel wird ein Modul mit zwei Funktionen definiert, von denen eine native Ausnahme ausgelöst wird, und eine andere, die eine MSIL-Ausnahme auslöst.
 
-```
+```cpp
 // catch_MSIL_in_native.cpp
 // compile with: /clr /c
 void Test() {
@@ -37,9 +37,9 @@ void Test2() {
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel definiert ein Modul, das einen einheitlichen und MSIL-Ausnahme abfängt.
+Im folgenden Beispiel wird ein Modul definiert, das eine native und eine MSIL-Ausnahme abfängt.
 
-```
+```cpp
 // catch_MSIL_in_native_2.cpp
 // compile with: /clr catch_MSIL_in_native.obj
 #include <iostream>
@@ -79,4 +79,4 @@ caught an exception
 
 ## <a name="see-also"></a>Siehe auch
 
-[Ausnahmebehandlung](../extensions/exception-handling-cpp-component-extensions.md)
+[Behandlung von Ausnahmen](../extensions/exception-handling-cpp-component-extensions.md)

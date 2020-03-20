@@ -11,7 +11,6 @@ f1_keywords:
 - ATL.CDBPropIDSet.AddPropertyID
 - ATL::CDBPropIDSet::AddPropertyID
 - ATL::CDBPropIDSet::CDBPropIDSet
-- CDBPropIDSet
 - CDBPropIDSet.CDBPropIDSet
 - CDBPropIDSet::CDBPropIDSet
 - ATL.CDBPropIDSet.CDBPropIDSet
@@ -21,7 +20,6 @@ f1_keywords:
 - CDBPropIDSet::operator=
 - CDBPropIDSet.SetGUID
 - ATL::CDBPropIDSet::SetGUID
-- SetGUID
 - ATL.CDBPropIDSet.SetGUID
 - CDBPropIDSet::SetGUID
 helpviewer_keywords:
@@ -33,16 +31,16 @@ helpviewer_keywords:
 - operator=, property sets
 - SetGUID method
 ms.assetid: 52bb806c-9581-494d-9af7-50d8a4834805
-ms.openlocfilehash: 9e878af3acf4c4d3a6ca785454c4bb072f17cf09
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e2fced2ed0e32af15e75c7290733fdc2b4b34dc9
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209320"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79546122"
 ---
 # <a name="cdbpropidset-class"></a>CDBPropIDSet-Klasse
 
-Erbt von der `DBPROPIDSET` -Struktur und fügt einen Konstruktor, der wichtige Felder initialisiert sowie die [AddPropertyID](../../data/oledb/cdbpropidset-addpropertyid.md) -Zugriffsmethode.
+Erbt von der `DBPROPIDSET` Struktur und fügt einen Konstruktor hinzu, der Schlüsselfelder und die [addpropertyid](../../data/oledb/cdbpropidset-addpropertyid.md) -Zugriffsmethode initialisiert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,7 +48,7 @@ Erbt von der `DBPROPIDSET` -Struktur und fügt einen Konstruktor, der wichtige F
 class CDBPropIDSet : public tagDBPROPIDSET
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -60,23 +58,23 @@ class CDBPropIDSet : public tagDBPROPIDSET
 
 |||
 |-|-|
-|[AddPropertyID](#addpropertyid)|Fügt eine Eigenschaft auf den ID-Eigenschaftensatz an.|
+|[AddPropertyID](#addpropertyid)|Fügt dem Eigenschaften-ID-Satz eine Eigenschaft hinzu.|
 |[CDBPropIDSet](#cdbpropidset)|Konstruktor.|
-|[SetGUID](#setguid)|Legt fest, die GUID der Eigenschafts-ID wird.|
+|[SetGUID](#setguid)|Legt die GUID für den festgelegten Eigenschaften-ID-Wert fest.|
 
 ### <a name="operators"></a>Operatoren
 
 |||
 |-|-|
-|[operator =](#op_equal)|Weist legen Sie den Inhalt von einer Eigenschafts-ID in eine andere.|
+|[Operator =](#op_equal)|Weist den Inhalt von einer eigen schafts-ID einem anderen Satz zu.|
 
 ## <a name="remarks"></a>Hinweise
 
-Verwenden der OLE DB-Consumer `DBPROPIDSET` Strukturen, um ein Array von Eigenschaften-IDs übergeben, für die der Consumer die Eigenschaftsinformationen abrufen möchte. In einem einzelnen angegebenen Eigenschaften [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) Struktur zu einem Eigenschaftensatz gehören.
+OLE DB Consumer verwenden `DBPROPIDSET` Strukturen, um ein Array von Eigenschaften-IDs zu übergeben, für die der Consumer Eigenschafts Informationen erhalten möchte. Die in einer einzelnen [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) -Struktur identifizierten Eigenschaften gehören zu einem Eigenschaften Satz.
 
-## <a name="addpropertyid"></a> CDBPropIDSet::AddPropertyID
+## <a name="cdbpropidsetaddpropertyid"></a><a name="addpropertyid"></a>Cdbpropidset:: addpropertyid
 
-Eine Eigenschafts-ID und der ID-Eigenschaftensatz hinzugefügt.
+Fügt dem Eigenschaften-ID-Satz eine eigen schafts-ID hinzu.
 
 ### <a name="syntax"></a>Syntax
 
@@ -86,12 +84,12 @@ bool AddPropertyID(DBPROPID propid) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*propid*<br/>
-[in] Legen Sie die Eigenschafts-ID der Eigenschafts-ID hinzugefügt werden.
+*PROPID*<br/>
+in Die eigen schafts-ID, die dem Eigenschaften-ID-Satz hinzugefügt werden soll.
 
-## <a name="cdbpropidset"></a> CDBPropIDSet::CDBPropIDSet
+## <a name="cdbpropidsetcdbpropidset"></a><a name="cdbpropidset"></a>Cdbpropidset:: cdbpropidset
 
-Der Konstruktor. Initialisiert die `rgProperties`, `cProperties`, und (optional) `guidPropertySet` Felder der [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) Struktur.
+Der Konstruktor. Initialisiert die `rgProperties`, `cProperties`und (optional) `guidPropertySet` Felder der [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) -Struktur.
 
 ### <a name="syntax"></a>Syntax
 
@@ -106,14 +104,14 @@ CDBPropIDSet();
 #### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-[in] Eine GUID, die zum Initialisieren der `guidPropertySet` Feld.
+in Eine GUID, die verwendet wird, um das `guidPropertySet` Feld zu initialisieren.
 
 *propidset*<br/>
-[in] Eine andere `CDBPropIDSet` Objekt für die Copy-Konstruktion.
+in Ein weiteres `CDBPropIDSet` Objekt für die Kopier Konstruktion.
 
-## <a name="setguid"></a> CDBPropIDSet::SetGUID
+## <a name="cdbpropidsetsetguid"></a><a name="setguid"></a>Cdbpropidset:: SetGuid
 
-Legt das Feld "GUID" der `DBPROPIDSET` Struktur.
+Legt das GUID-Feld in der `DBPROPIDSET` Struktur fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -124,15 +122,15 @@ void SetGUID(const GUID& guid) throw();
 #### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-[in] Eine GUID zum Festlegen der `guidPropertySet` Feld der [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) Struktur.
+in Eine GUID, die verwendet wird, um das `guidPropertySet`-Feld der [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) -Struktur festzulegen.
 
 ### <a name="remarks"></a>Hinweise
 
-Dieses Feld kann festgelegt werden, indem die [Konstruktor](../../data/oledb/cdbpropidset-cdbpropidset.md) ebenfalls. Rufen Sie diese Funktion, wenn Sie den Standardkonstruktor für diese Klasse verwenden.
+Dieses Feld kann auch durch den- [Konstruktor](../../data/oledb/cdbpropidset-cdbpropidset.md) festgelegt werden. Diese Funktion wird aufgerufen, wenn Sie den Standardkonstruktor für diese Klasse verwenden.
 
-## <a name="op_equal"></a> Cdbpropidset:: Operator =
+## <a name="cdbpropidsetoperator-"></a><a name="op_equal"></a>Cdbpropidset:: Operator =
 
-Weist den Inhalt von einer Eigenschafts-ID, die auf einen anderen Satz von ID-Eigenschaft festgelegt.
+Weist den Inhalt einer eigen schafts-ID einem anderen ID-Eigenschaften Satz zu.
 
 ### <a name="syntax"></a>Syntax
 

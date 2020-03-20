@@ -9,12 +9,12 @@ helpviewer_keywords:
 - lang namespace
 - cli namespace
 ms.assetid: 9d38bd1e-dc78-47d1-a84b-9b4683e52c9c
-ms.openlocfilehash: a7599e2987d27626e6f5c9d049d9a3bd4509c3ff
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: db6c73d6c52bf97aea5d0fbeeeebdeef87f692cc
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516515"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544651"
 ---
 # <a name="platform-default-and-cli-namespaces--ccli-and-ccx"></a>Namespaces „Platform“, „default“ und „cli“ (C++/CLI und C++/CX)
 
@@ -26,9 +26,9 @@ Beim Erstellen des Projekts stellt Visual Studio einen Standardnamespace für da
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-Weitere Informationen finden Sie unter [Namespaces und Typsichtbarkeit (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh969551.aspx).
+Weitere Informationen finden Sie unter [Namespaces und Typsichtbarkeit (C++/CX)](../cppcx/namespaces-and-type-visibility-c-cx.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -40,7 +40,7 @@ Compileroption: `/ZW`
 using namespace cli;
 ```
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 C++/CLI unterstützt den Namespace **cli**. Beim Kompilieren mit `/clr` ist die **using**-Anweisung im Syntaxabschnitt impliziert.
 
@@ -54,7 +54,7 @@ Im Namespace **cli** befinden sich die folgenden Sprachfeatures:
 
 - [safe_cast](safe-cast-cpp-component-extensions.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

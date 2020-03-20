@@ -1,6 +1,6 @@
 ---
 title: Übersicht über das Marshalling in C++
-ms.date: 06/28/2018
+ms.date: 07/12/2019
 ms.topic: reference
 f1_keywords:
 - marshaling
@@ -10,40 +10,40 @@ helpviewer_keywords:
 - C++ Support Library, marshaling
 - marshaling, about marshaling
 ms.assetid: 997dd4bc-5f98-408f-b890-f35de9ce3bb8
-ms.openlocfilehash: 9e3b8f561ce6609eb2afedb527a16c4803f69c53
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 937fbdf4b3ed09344e69a8f1eb731565c36794ae
+ms.sourcegitcommit: 0e3da5cea44437c132b5c2ea522bd229ea000a10
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384737"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "79544435"
 ---
-# <a name="overview-of-marshaling-in-c"></a>Übersicht über das Marshalling in C++
+# <a name="overview-of-marshaling-in-ccli"></a>Übersicht über das Marshalling in C++/CLI
 
-Im gemischten Modus müssen Sie die Daten zwischen nativen und verwalteten Typen manchmal marshallen. Visual Studio 2008 eingeführt, die *Marshallingbibliothek* können Sie marshallen und Konvertieren von Daten auf einfache Weise.  Die Marshallingbibliothek besteht aus einem Satz von Funktionen und ein `marshal_context` -Klasse, die für allgemeine Typen führen Marshalling. Die Bibliothek wird definiert, in diese Header in der **einschließen/Msclr** Verzeichnis für Ihre Visual Studio-Edition:
+Im gemischten Modus müssen Sie die Daten zwischen nativen und verwalteten Typen manchmal marshallen. Die *Marshallingbibliothek* hilft Ihnen, Daten auf einfache Weise zu Mars Hallen und zu konvertieren.  Die Marshallingbibliothek besteht aus einer Reihe von Funktionen und einer `marshal_context` Klasse, die das Marshalling für allgemeine Typen durchführen. Die Bibliothek ist in diesen Headern im Verzeichnis **include/msclr** für Ihre Visual Studio-Edition definiert:
 
 |Header|Beschreibung|
 |---------------|-----------------|
-|marshal.h|`marshal_context` Klasse und kontextfreier Marshalling-Funktionen|
-|marshal_atl.h| Funktionen für das Marshalling von ATL-Typen|
-|marshal_cppstd.h|Funktionen für das Marshalling von Standard-c++-Typen|
-|marshal_windows.h|Funktionen für das Marshalling von Windows-Typen|
+|marshal.h|`marshal_context`-Klasse und kontextfreie Marshallingfunktionen|
+|marshal_atl.h| Funktionen für das Mars Hallen von ATL-Typen|
+|marshal_cppstd.h|Funktionen für das Mars Hallen von C++ Standardtypen|
+|marshal_windows.h|Funktionen für das Mars Hallen von Windows-Typen|
 
-Der Standardpfad für **Msclr** Ordner ist etwa wie folgt je nachdem welche Version Sie haben und die Nummer des Builds:
+Der Standardpfad für den Ordner " **msclr** " ist abhängig von der verwendeten Edition und der Buildnummer wie folgt:
 
 ```cmd
 C:\\Program Files (x86)\\Microsoft Visual Studio\\Preview\\Enterprise\\VC\\Tools\\MSVC\\14.15.26528\\include\\msclr
 ```
 
-Sie können die Marshallingbibliothek mit oder ohne eine [Marshal_context-Klasse](../dotnet/marshal-context-class.md). Einige Konvertierungen erfordern einen Kontext. Andere Konvertierungen können implementiert werden, mithilfe der [Marshal_as](../dotnet/marshal-as.md) Funktion. Die folgende Tabelle enthält eine Liste der aktuell unterstützten Konvertierungen und Informationen dazu, ob sie einen Kontext benötigen und welche Marschalldatei Sie hinzufügen müssen:
+Sie können die Marshallingbibliothek mit oder ohne [Marshal_context Klasse](../dotnet/marshal-context-class.md)verwenden. Einige Konvertierungen erfordern einen Kontext. Andere Konvertierungen können mit der [marshal_as](../dotnet/marshal-as.md) -Funktion implementiert werden. Die folgende Tabelle enthält eine Liste der aktuell unterstützten Konvertierungen und Informationen dazu, ob sie einen Kontext benötigen und welche Marschalldatei Sie hinzufügen müssen:
 
 |Von Typ|in Typ|Marschallmethode|Includedatei|
 |---------------|-------------|--------------------|------------------|
-|System::String^|const char \*|marshal_context|marshal.h|
-|const char \*|System::String^|marshal_as|marshal.h|
-|Char \*|System::String^|marshal_as|marshal.h|
-|System::String^|const wchar_t\*|marshal_context|marshal.h|
-|const wchar_t \*|System::String^|marshal_as|marshal.h|
-|"wchar_t" \*|System::String^|marshal_as|marshal.h|
+|System::String^|Konstante char-\*|marshal_context|marshal.h|
+|Konstante char-\*|System::String^|marshal_as|marshal.h|
+|char-\*|System::String^|marshal_as|marshal.h|
+|System::String^|Konstante wchar_t\*|marshal_context|marshal.h|
+|Konstante wchar_t \*|System::String^|marshal_as|marshal.h|
+|wchar_t \*|System::String^|marshal_as|marshal.h|
 |System::IntPtr|HANDLE|marshal_as|marshal_windows.h|
 |HANDLE|System::IntPtr|marshal_as|marshal_windows.h|
 |System::String^|BSTR|marshal_context|marshal_windows.h|
@@ -54,10 +54,10 @@ Sie können die Marshallingbibliothek mit oder ohne eine [Marshal_context-Klasse
 |std::string|System::String^|marshal_as|marshal_cppstd.h|
 |System::String^|std::wstring|marshal_as|marshal_cppstd.h|
 |std::wstring|System::String^|marshal_as|marshal_cppstd.h|
-|System::String^|CStringT\<char>|marshal_as|marshal_atl.h|
-|CStringT\<char>|System::String^|marshal_as|marshal_atl.h|
-|System::String^|CStringT<wchar_t>|marshal_as|marshal_atl.h|
-|CStringT<wchar_t>|System::String^|marshal_as|marshal_atl.h|
+|System::String^|CStringT\<Char >|marshal_as|marshal_atl.h|
+|CStringT\<Char >|System::String^|marshal_as|marshal_atl.h|
+|System::String^|CStringT < wchar_t >|marshal_as|marshal_atl.h|
+|CStringT < wchar_t >|System::String^|marshal_as|marshal_atl.h|
 |System::String^|CComBSTR|marshal_as|marshal_atl.h|
 |CComBSTR|System::String^|marshal_as|marshal_atl.h|
 
@@ -70,9 +70,7 @@ Dieses Beispiel zeigt, wie das Verzeichnis "msclr" einer Includeheaderdeklaratio
 
 `#include "msclr\marshal_cppstd.h"`
 
-Die Marshallingbibliothek ist erweiterbar, sodass Sie eigene Marshallingtypen hinzufügen können. Weitere Informationen zum Erweitern der Marshallingbibliothek finden Sie unter [Vorgehensweise: Erweitern der Marshallingbibliothek](../dotnet/how-to-extend-the-marshaling-library.md).
-
-In früheren Versionen konnten Sie Daten mithilfe von Marshallen [Plattformaufruf](/dotnet/framework/interop/consuming-unmanaged-dll-functions). Weitere Informationen zu `PInvoke`, finden Sie unter [aufrufen nativer Funktionen aus verwaltetem Code](../dotnet/calling-native-functions-from-managed-code.md).
+Die Marshallingbibliothek ist erweiterbar, sodass Sie eigene Marshallingtypen hinzufügen können. Weitere Informationen zum Erweitern der Marshallingbibliothek finden Sie unter Gewusst [wie: Erweitern der](../dotnet/how-to-extend-the-marshaling-library.md)Marshallingbibliothek.
 
 ## <a name="see-also"></a>Siehe auch
 

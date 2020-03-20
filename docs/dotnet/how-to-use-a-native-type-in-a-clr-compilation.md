@@ -1,31 +1,31 @@
 ---
-title: 'Vorgehensweise: Verwenden eines nativen Typs in einer Clr - Kompilierung'
+title: 'Gewusst wie: Verwenden eines systemeigenen Typs in einer CLR-Kompilierung'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - compilation, native types in /clr
 - /clr compiler option [C++], using native types
 ms.assetid: 3a505c90-4adb-4942-9cf9-7d1fdcbc01e7
-ms.openlocfilehash: 9979113ac4ffc062ddfe8654279af03036984f38
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b506c3d825c4c26236a4ac3fc9682067a011315a
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387200"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545204"
 ---
-# <a name="how-to-use-a-native-type-in-a-clr-compilation"></a>Vorgehensweise: Verwenden eines nativen Typs in einer/CLR-Kompilierung
+# <a name="how-to-use-a-native-type-in-a-clr-compilation"></a>Gewusst wie: Verwenden eines systemeigenen Typs in einer /clr-Kompilierung
 
-Sie können definieren, einen systemeigenen Typ in eine **"/ CLR"** Kompilierung und jede Verwendung dieses nativen Typs von innerhalb der Assembly ist gültig. Allerdings werden systemeigene Typen für die Verwendung von Metadaten verwiesen wird nicht verfügbar.
+Sie können einen systemeigenen Typ in einer **/CLR** -Kompilierung definieren, und jede Verwendung dieses systemeigenen Typs innerhalb der Assembly ist gültig. Systemeigene Typen können jedoch nicht von Metadaten verwendet werden, auf die verwiesen wird.
 
-Jede Assembly muss die Definition aller systemeigenen Typen enthalten, die dazu verwendet werden.
+Jede Assembly muss die Definition aller systemeigenen Typen enthalten, die Sie verwenden wird.
 
 Weitere Informationen finden Sie unter [/clr (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md).
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel erstellt eine Komponente, die definiert und verwendet einen systemeigenen Typ.
+In diesem Beispiel wird eine Komponente erstellt, die einen systemeigenen Typ definiert und verwendet.
 
-```
+```cpp
 // use_native_type_in_clr.cpp
 // compile with: /clr /LD
 public struct NativeClass {
@@ -42,9 +42,9 @@ public ref struct ManagedClass {
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel definiert einen Client, der Komponente verwendet. Beachten Sie, dass es ist ein Fehler den nativen Typ, den Zugriff auf, es sei denn, sie in der Kompiliereinheit definiert ist.
+In diesem Beispiel wird ein Client definiert, der die-Komponente verwendet. Beachten Sie, dass es sich um einen Fehler handelt, der auf den systemeigenen Typ zugreifen kann, es sei denn, er ist in kompiliert.
 
-```
+```cpp
 // use_native_type_in_clr_2.cpp
 // compile with: /clr
 #using "use_native_type_in_clr.dll"

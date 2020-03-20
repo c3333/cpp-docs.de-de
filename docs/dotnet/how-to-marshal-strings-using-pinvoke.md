@@ -1,33 +1,37 @@
 ---
-title: 'Vorgehensweise: Marshallen von Zeichenfolgen mit PInvoke'
+title: 'Gewusst wie: Marshallen von Zeichenfolgen mit PInvoke'
 ms.custom: get-started-article
-ms.date: 11/04/2016
+ms.date: 09/09/2016
 helpviewer_keywords:
 - interop [C++], strings
 - marshaling [C++], strings
 - data marshaling [C++], strings
 - platform invoke [C++], strings
 ms.assetid: bcc75733-7337-4d9b-b1e9-b95a98256088
-ms.openlocfilehash: f316e33f1711ea0053fb68c0af7e89f90b793e05
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e89177261aa32d34ea392030078d4088ea61e2a5
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404402"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545222"
 ---
-# <a name="how-to-marshal-strings-using-pinvoke"></a>Vorgehensweise: Marshallen von Zeichenfolgen mit PInvoke
+# <a name="how-to-marshal-strings-using-pinvoke"></a>Gewusst wie: Marshallen von Zeichenfolgen mit PInvoke
 
-In diesem Thema wird erläutert, wie native Funktionen, akzeptieren die Zeichenfolgen im C-Stil können aufgerufen werden, mithilfe der CLR-Zeichenfolge, mit Unterstützung für .NET Framework Plattformaufrufe System:: String zu geben. Visual C++-Programmierer werden empfohlen, stattdessen die C++-Interop-Funktionen (wenn möglich), da der P/Invoke bietet wenig Fehler während der Kompilierung, berichterstellung, ist nicht typsicher, und kann einfacher zu implementieren. Wenn die nicht verwaltete API als DLL verpackt wird und der Quellcode nicht verfügbar ist, anschließend P/Invoke ist die einzige Option, aber andernfalls [mithilfe C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md).
+In diesem Thema wird erläutert, wie Native Funktionen, die Zeichen folgen im C-Stil akzeptieren, mithilfe des CLR-Zeichen folgen Typs System:: String aufgerufen werden können, indem .NET Framework Platt Form Aufruf Unterstützung Visual C++ Programmierern wird empfohlen, die C++ Interop-Features (sofern möglich) zu verwenden, da P/aufrufen wenig Kompilierzeit-Fehlerberichterstattung bietet, nicht typsicher ist und die Implementierung mühsam sein kann. Wenn die nicht verwaltete API als DLL verpackt ist und der Quellcode nicht verfügbar ist, ist P/aufrufen die einzige Option, aber andernfalls wird die [Verwendung C++ von Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)angezeigt.
 
-Verwaltete und nicht verwaltete Zeichenfolgen sind anders als im Arbeitsspeicher angeordnet, also die Übergabe von Zeichenfolgen aus verwaltetem zu nicht verwalteten Funktionen erfordert die <xref:System.Runtime.InteropServices.MarshalAsAttribute> Attribut, um den Compiler anzuweisen, die erforderliche Konvertierung Mechanismen für das Marshalling von Daten der Zeichenfolge einfügen ordnungsgemäß und sicher.
+Verwaltete und nicht verwaltete Zeichen folgen werden im Arbeitsspeicher unterschiedlich angeordnet. Daher erfordert das Übergeben von Zeichen folgen von verwalteten an nicht verwaltete Funktionen das <xref:System.Runtime.InteropServices.MarshalAsAttribute>-Attribut, um den Compiler anzuweisen, die erforderlichen Konvertierungs Mechanismen zum ordnungsgemäßen und sicheren Marshalling der Zeichen folgen Daten einzufügen.
 
-Wie bei Funktionen, die nur systeminterne Datentypen verwenden <xref:System.Runtime.InteropServices.DllImportAttribute> verwendet, um verwaltete Einstiegspunkte in die systemeigenen Funktionen, aber – für die Übergabe von Zeichenfolgen – anstelle von definieren übernehmen die Zeichenfolgen im C-Stil, ein Handle für diese Einstiegspunkte deklarieren die <xref:System.String> Typ Stattdessen verwendet werden können. Dadurch wird den Compiler Code einfügen, die die erforderliche Konvertierung ausführt. Für jedes Funktionsargument in eine nicht verwaltete Funktion, die eine Zeichenfolge akzeptiert die <xref:System.Runtime.InteropServices.MarshalAsAttribute> Attribut sollte verwendet werden, um anzugeben, dass das String-Objekt an die systemeigene Funktion als Zeichenfolge im C-Stil gemarshallt werden sollen.
+Wie bei Funktionen, die nur systeminterne Datentypen verwenden, wird <xref:System.Runtime.InteropServices.DllImportAttribute> verwendet, um verwaltete Einstiegspunkte in die nativen Funktionen zu deklarieren, aber zum Übergeben von Zeichen folgen, anstatt diese Einstiegspunkte als Zeichen folgen im C-Format zu definieren, kann stattdessen ein Handle für den <xref:System.String> Typ verwendet werden. Dadurch wird der Compiler aufgefordert, Code einzufügen, der die erforderliche Konvertierung ausführt. Für jedes Funktions Argument in einer nicht verwalteten Funktion, die eine Zeichenfolge annimmt, sollte das <xref:System.Runtime.InteropServices.MarshalAsAttribute> Attribut verwendet werden, um anzugeben, dass das Zeichen folgen Objekt als Zeichenfolge im C-Format an die native Funktion gemarshallt werden soll.
+
+Der Mars Haller umschließt den Aufrufen der nicht verwalteten Funktion in einer ausgeblendeten Wrapper Routine, die die verwaltete Zeichenfolge anheftet und in eine lokal zugewiesene Zeichenfolge im nicht verwalteten Kontext kopiert, der dann an die nicht verwaltete Funktion übergeben wird. Wenn die nicht verwaltete Funktion zurückgibt, löscht der Wrapper entweder die Ressource, oder wenn Sie sich auf dem Stapel befunden hat, wird Sie freigegeben, wenn der Wrapper den Gültigkeitsbereich verlässt. Die nicht verwaltete Funktion ist für diesen Arbeitsspeicher nicht verantwortlich. Der nicht verwaltete Code erstellt und löscht nur den Arbeitsspeicher im Heap, der durch seine eigene CRT eingerichtet ist. es gibt also nie ein Problem mit dem Mars Haller für, das eine andere CRT-Version verwendet.
+
+Wenn Ihre nicht verwaltete Funktion eine Zeichenfolge zurückgibt, entweder als Rückgabewert oder out-Parameter, kopiert der Mars Haller Sie in eine neue verwaltete Zeichenfolge und gibt dann den Arbeitsspeicher frei. Weitere Informationen finden Sie unter [standardmäßiges Marshallingverhalten](/dotnet/framework/interop/default-marshaling-behavior) und Mars Hallen von [Daten mit Platt Form Aufruf](/dotnet/framework/interop/marshaling-data-with-platform-invoke).
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code besteht aus einem verwalteten und ein verwaltetes Modul. Das nicht verwaltete Modul handelt es sich um eine DLL, die eine Funktion namens TakesAString, die eine C-Stil ANSI-Zeichenfolge in Form von Char * akzeptiert definiert. Das verwaltete Modul ist eine befehlszeilenanwendung, die die Funktion TakesAString importiert, aber definiert es als das Erstellen einer verwalteten System.String "statt" Char\*. Die <xref:System.Runtime.InteropServices.MarshalAsAttribute> -Attribut wird verwendet, um anzugeben, wie die verwaltete Zeichenfolge gemarshallt werden sollen, wenn TakesAString aufgerufen wird.
+Der folgende Code besteht aus einem nicht verwalteten und einem verwalteten Modul. Das nicht verwaltete Modul ist eine DLL, die eine Funktion namens "TakesAString" definiert, die eine ANSI-Zeichenfolge im C-Format in Form von "char *" akzeptiert. Das verwaltete Modul ist eine Befehlszeilen Anwendung, die die TakesAString-Funktion importiert, Sie aber als eine verwaltete System. String anstelle eines Char-\*definiert. Das <xref:System.Runtime.InteropServices.MarshalAsAttribute>-Attribut wird verwendet, um anzugeben, wie die verwaltete Zeichenfolge gemarshallt werden soll, wenn TakesAString aufgerufen wird.
 
-```
+```cpp
 // TraditionalDll2.cpp
 // compile with: /LD /EHsc
 #include <windows.h>
@@ -52,7 +56,7 @@ void TakesAString(char* p) {
 }
 ```
 
-```
+```cpp
 // MarshalString.cpp
 // compile with: /clr
 using namespace System;
@@ -73,9 +77,9 @@ int main() {
 }
 ```
 
-Diese Methode bewirkt, dass eine Kopie der Zeichenfolge, die auf dem nicht verwalteten Heap erstellt werden, sodass Änderungen an der Zeichenfolge durch die systemeigene Funktion in der verwalteten Kopie der Zeichenfolge nicht widergespiegelt werden.
+Dieses Verfahren bewirkt, dass eine Kopie der Zeichenfolge auf dem nicht verwalteten Heap erstellt wird, sodass Änderungen, die von der systemeigenen Funktion an der Zeichenfolge vorgenommen werden, nicht in der verwalteten Kopie der Zeichenfolge widergespiegelt werden.
 
-Beachten Sie, dass kein Teil der DLL verfügbar, auf den verwalteten Code über die herkömmliche gemacht wird #include-Anweisung. In der Tat ist die DLL nur zur Laufzeit zugegriffen, damit Probleme mit Funktionen mit importiert `DllImport` zum Zeitpunkt der Kompilierung nicht erkannt.
+Beachten Sie, dass kein Teil der DLL für den verwalteten Code über die herkömmliche #include-Direktive verfügbar gemacht wird. Tatsächlich wird nur zur Laufzeit auf die dll zugegriffen, sodass Probleme mit Funktionen, die mit `DllImport` importiert werden, zum Zeitpunkt der Kompilierung nicht erkannt werden.
 
 ## <a name="see-also"></a>Siehe auch
 

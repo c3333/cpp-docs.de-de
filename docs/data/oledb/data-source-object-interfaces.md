@@ -9,30 +9,30 @@ helpviewer_keywords:
 - OLE DB provider templates [C++], object interfaces
 - OLE DB [C++], interfaces
 ms.assetid: 929e100c-c08c-4b64-8437-d8d1357226f6
-ms.openlocfilehash: fc8d2f5edf854766dcb5dcc8ed6d57a849b8f2a0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a615694a9db75cdaf3b187cf6d29248bd26ef978
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176017"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544603"
 ---
 # <a name="data-source-object-interfaces"></a>Datenquellenobjekt-Schnittstellen
 
-Die folgende Tabelle zeigt die erforderlichen und optionalen Schnittstellen, die durch OLE DB für ein Datenquellenobjekt definiert.
+Die folgende Tabelle zeigt die obligatorischen und optionalen Schnittstellen, die durch OLE DB für ein Datenquellen Objekt definiert werden.
 
-|Interface|Erforderlich?|Vom OLE DB-Vorlagen implementiert?|
+|Schnittstelle|Erforderlich?|Implementiert durch OLE DB Vorlagen?|
 |---------------|---------------|--------------------------------------|
-|`IDBCreateSession`|Erforderlich|Ja|
-|`IDBInitialize`|Erforderlich|Ja|
-|`IDBProperties`|Erforderlich|Ja|
-|[IPersist](/windows/desktop/api/objidl/nn-objidl-ipersist)|Erforderlich|Ja|
-|[IConnectionPointContainer](/windows/desktop/api/ocidl/nn-ocidl-iconnectionpointcontainer)|Optional|Nein|
+|`IDBCreateSession`|Obligatorisch.|Ja|
+|`IDBInitialize`|Obligatorisch.|Ja|
+|`IDBProperties`|Obligatorisch.|Ja|
+|[IPersist](/windows/win32/api/objidl/nn-objidl-ipersist)|Obligatorisch.|Ja|
+|[IConnectionPointContainer](/windows/win32/api/ocidl/nn-ocidl-iconnectionpointcontainer)|Optional|Nein|
 |`IDBDataSourceAdmin`|Optional|Nein|
 |`IDBInfo`|Optional|Nein|
-|[IPersistFile](/windows/desktop/api/objidl/nn-objidl-ipersistfile)|Optional|Nein|
+|[IPersistFile](/windows/win32/api/objidl/nn-objidl-ipersistfile)|Optional|Nein|
 |`ISupportErrorInfo`|Optional|Nein|
 
-Das Datenquellenobjekt implementiert die `IDBProperties`, `IDBInitialize`, und `IDBCreateSession` Schnittstellen durch Vererbung. Sie können auch zusätzliche Funktionen unterstützt werden, erbt oder keine von einem dieser Implementierung Klassen erben. Wenn Sie unterstützen möchten die `IDBDataSourceAdmin` -Schnittstelle, die Sie erben müssen, von der `IDBDataSourceAdminImpl` Klasse.
+Das Datenquellen Objekt implementiert die Schnittstellen `IDBProperties`, `IDBInitialize`und `IDBCreateSession` durch Vererbung. Sie können zusätzliche Funktionen unterstützen, indem Sie von einer dieser Implementierungsklassen erben oder nicht erben. Wenn Sie die `IDBDataSourceAdmin`-Schnittstelle unterstützen möchten, müssen Sie von der `IDBDataSourceAdminImpl`-Klasse erben.
 
 ## <a name="see-also"></a>Siehe auch
 
