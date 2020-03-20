@@ -7,7 +7,6 @@ f1_keywords:
 - IColumnsInfoImpl
 - ATL.IColumnsInfoImpl
 - ATL::IColumnsInfoImpl<T>
-- GetColumnInfo
 - ATL::IColumnsInfoImpl::GetColumnInfo
 - ATL.IColumnsInfoImpl.GetColumnInfo
 - ATL::IColumnsInfoImpl<T>::GetColumnInfo
@@ -27,16 +26,16 @@ helpviewer_keywords:
 - GetColumnInfo method
 - MapColumnIDs method
 ms.assetid: ba74c1c5-2eda-4452-8b57-84919fa0d066
-ms.openlocfilehash: d9fbe95f87cfdf51ae9c52c7890e6f6c4075c89a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2eb7714762de8ccf810a8fdd04ee33ae24e9d431
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409147"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545984"
 ---
 # <a name="icolumnsinfoimpl-class"></a>IColumnsInfoImpl-Klasse
 
-Stellt eine Implementierung der [IColumnsInfo](/previous-versions/windows/desktop/ms724541(v=vs.85)) Schnittstelle.
+Stellt eine Implementierung der [IColumnsInfo](/previous-versions/windows/desktop/ms724541(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,11 +49,11 @@ class ATL_NO_VTABLE IColumnsInfoImpl :
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Abgeleitet von die Klasse `IColumnsInfoImpl`.
+Die von `IColumnsInfoImpl`abgeleitete Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -62,16 +61,16 @@ Abgeleitet von die Klasse `IColumnsInfoImpl`.
 
 |||
 |-|-|
-|[GetColumnInfo](#getcolumninfo)|Gibt die von den meisten Consumern benötigte Spaltenmetadaten zurück.|
-|[MapColumnIDs](#mapcolumnids)|Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset, das durch die angegebenen Spalten-IDs gekennzeichnet sind.|
+|[GetColumnInfo](#getcolumninfo)|Gibt die von den meisten Consumern benötigten Spaltenmetadaten zurück.|
+|[MapColumnIDs](#mapcolumnids)|Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset zurück, die mit den angegebenen Spalten-IDs gekennzeichnet sind.|
 
 ## <a name="remarks"></a>Hinweise
 
-Eine erforderliche Schnittstelle für Rowsets und Befehle. So ändern Sie das Verhalten Ihres Anbieters `IColumnsInfo` Implementierung müssen Sie die Anbieter-Spalte-Zuordnung zu ändern.
+Eine erforderliche Schnittstelle für Rowsets und Befehle. Um das Verhalten der `IColumnsInfo` Implementierung Ihres Anbieters zu ändern, müssen Sie die Zuordnung der Anbieter Spalte ändern.
 
-## <a name="getcolumninfo"></a> IColumnsInfoImpl::GetColumnInfo
+## <a name="icolumnsinfoimplgetcolumninfo"></a><a name="getcolumninfo"></a>Icolumnsinfoimpl:: GetColumnInfo
 
-Gibt die von den meisten Consumern benötigte Spaltenmetadaten zurück.
+Gibt die von den meisten Consumern benötigten Spaltenmetadaten zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -83,11 +82,11 @@ STDMETHOD (GetColumnInfo)(DBORDINAL* pcColumns,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB-Programmier Referenz*.
 
-## <a name="mapcolumnids"></a> IColumnsInfoImpl::MapColumnIDs
+## <a name="icolumnsinfoimplmapcolumnids"></a><a name="mapcolumnids"></a>Icolumnsinfoimpl:: MapColumnIDs
 
-Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset, das durch die angegebenen Spalten-IDs gekennzeichnet sind.
+Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset zurück, die mit den angegebenen Spalten-IDs gekennzeichnet sind.
 
 ### <a name="syntax"></a>Syntax
 
@@ -99,9 +98,9 @@ STDMETHOD (MapColumnIDs)(DBORDINAL cColumnIDs,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IColumnsInfo::MapColumnIDs](/previous-versions/windows/desktop/ms714200(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IColumnsInfo:: MapColumnIDs](/previous-versions/windows/desktop/ms714200(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

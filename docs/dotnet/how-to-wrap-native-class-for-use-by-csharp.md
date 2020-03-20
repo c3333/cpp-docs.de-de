@@ -1,25 +1,25 @@
 ---
-title: 'Vorgehensweise: Kapseln einer systemeigenen Klasse zur Verwendung durchC#'
+title: 'Gewusst wie: Kapseln einer systemeigenen Klasse zur Verwendung in C#'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - native code [C++], Visual C# and
 - classes [C++], Visual C# and
 ms.assetid: 988819ae-cc6a-4453-8ff5-be369210d962
-ms.openlocfilehash: e58530577fdcc87f4ca168b6976a848cba29b372
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 06cb922aff4079f29b93874787a8b79ef99d75c3
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387122"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545888"
 ---
-# <a name="how-to-wrap-native-class-for-use-by-c"></a>Vorgehensweise: Kapseln einer systemeigenen Klasse zur Verwendung durchC#
+# <a name="how-to-wrap-native-class-for-use-by-c"></a>Gewusst wie: Einbinden der systemeigenen Klasse zur Verwendung durch C-\#
 
-Dieses Beispiel zeigt, wie Sie eine systemeigene C++-Klasse zu umschließen, damit sie von Code in c# oder anderen genutzt werden kann.
+In diesem Beispiel wird gezeigt, wie eine C++ systemeigene Klasse eingebunden wird, damit Sie von Code C#verwendet werden kann, der in oder einer anderen .NET-Sprache erstellt wurde.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // wrap_native_class_for_mgd_consumption.cpp
 // compile with: /clr /LD
 #include <windows.h>

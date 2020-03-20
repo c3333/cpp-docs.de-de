@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Bestimmen Sie, ob ein Bild nativ oder CLR ist'
+title: 'Gewusst wie: Ermitteln, ob ein Bild systemeigen oder CLR ist'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -8,24 +8,24 @@ helpviewer_keywords:
 - /clr compiler option [C++], detecting use in compilation
 - common language runtime, /clr compiler option
 ms.assetid: 5a854822-6172-4b22-b236-320165412568
-ms.openlocfilehash: 541581e0f172c8ce2601e2e476ccd03a49757f80
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5149440e172b764278c5ee816827c2d13e2b4c0e
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387343"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545288"
 ---
-# <a name="how-to-determine-if-an-image-is-native-or-clr"></a>Vorgehensweise: Bestimmen Sie, ob ein Bild nativ oder CLR ist
+# <a name="how-to-determine-if-an-image-is-native-or-clr"></a>Gewusst wie: Ermitteln, ob ein Bild systemeigen oder CLR ist
 
-Eine Möglichkeit, um zu bestimmen, ob ein Image erstellt wurde, für die common Language Runtime ist die Verwendung **Dumpbin**["/ CLRHEADER"](../build/reference/clrheader.md).
+Eine Möglichkeit, um zu bestimmen, ob ein Image für die Common Language Runtime erstellt wurde, ist die Verwendung von **(dumpbin**[/CLRHEADER](../build/reference/clrheader.md).
 
-Sie können auch programmgesteuert überprüfen, ob ein Bild für die common Language Runtime erstellt wurde. Weitere Informationen finden Sie unter [Vorgehensweise: Erkennen von/CLR-Kompilierung](../dotnet/how-to-detect-clr-compilation.md).
+Sie können auch Programm gesteuert überprüfen, ob ein Image für die Common Language Runtime erstellt wurde. Weitere Informationen finden Sie unter Gewusst [wie: Erkennen der/CLR-Kompilierung](../dotnet/how-to-detect-clr-compilation.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird bestimmt, ob ein Image erstellt wurde, auf die common Language Runtime ausgeführt.
+Im folgenden Beispiel wird bestimmt, ob ein Bild erstellt wurde, das auf dem Common Language Runtime ausgeführt wird.
 
-```
+```cpp
 // detect_image_type.cpp
 // compile with: /clr
 using namespace System;

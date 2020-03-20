@@ -8,16 +8,16 @@ helpviewer_keywords:
 - OLE DB consumers [C++], database attributes
 - accessors [C++], rowsets
 ms.assetid: b45acf16-4029-429d-ab8d-b7fba98b9740
-ms.openlocfilehash: 88a027a24f8ab817f793f101f9f128e1fc0c61c3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 874c8372074838cd614d1fe17727871ca6e5f21a
+ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389150"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "79545516"
 ---
 # <a name="traversing-a-simple-rowset"></a>Durchlaufen eines einfachen Rowsets
 
-Das folgende Beispiel zeigt, Zugriff auf die schnelle und einfache Datenbank, die Befehle enthalten, nicht. Der folgende Consumercode, in einem ATL-Projekt ruft Datensätze aus einer Tabelle namens *Künstler* in einer Microsoft Access-Datenbank mithilfe von Microsoft OLE DB-Anbieter für ODBC. Der Code erstellt eine [CTable](../../data/oledb/ctable-class.md) Table-Objekt mit einem Accessor, auf der Grundlage von der Benutzerdatensatz-Klasse `CArtists`. Öffnet eine Verbindung, wird eine Sitzung für die Verbindung geöffnet und die Tabelle in der Sitzung wird geöffnet.
+Das folgende Beispiel zeigt einen schnellen und einfachen Datenbankzugriff, der keine-Befehle umfasst. Der folgende Consumer-Code ruft in einem ATL-Projektdaten Sätze aus einer Tabelle namens " *Artists* " in einer Microsoft Access-Datenbank mithilfe des Microsoft OLE DB-Anbieters für ODBC ab. Der Code erstellt ein [beschreibbares](../../data/oledb/ctable-class.md) Tabellenobjekt mit einem Accessor, der auf der `CArtists`des Benutzerdaten Satzes basiert. Es wird eine Verbindung geöffnet, eine Sitzung für die Verbindung geöffnet und die Tabelle in der Sitzung geöffnet.
 
 ```cpp
 #include <atldbcli.h>
@@ -54,7 +54,7 @@ int main()
 }
 ```
 
-Benutzerdatensatz `CArtists`, sieht wie im folgenden Beispiel:
+Der Benutzerdaten Satz `CArtists`sieht in etwa wie folgt aus:
 
 ```cpp
 class CArtists

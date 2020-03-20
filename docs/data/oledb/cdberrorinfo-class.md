@@ -8,19 +8,15 @@ f1_keywords:
 - ATL.CDBErrorInfo.GetAllErrorInfo
 - CDBErrorInfo::GetAllErrorInfo
 - ATL::CDBErrorInfo::GetAllErrorInfo
-- GetAllErrorInfo
 - CDBErrorInfo.GetAllErrorInfo
 - CDBErrorInfo::GetBasicErrorInfo
 - ATL.CDBErrorInfo.GetBasicErrorInfo
 - CDBErrorInfo.GetBasicErrorInfo
 - ATL::CDBErrorInfo::GetBasicErrorInfo
-- GetBasicErrorInfo
 - CDBErrorInfo::GetCustomErrorObject
 - ATL.CDBErrorInfo.GetCustomErrorObject
 - CDBErrorInfo.GetCustomErrorObject
 - ATL::CDBErrorInfo::GetCustomErrorObject
-- GetCustomErrorObject
-- GetErrorInfo
 - ATL.CDBErrorInfo.GetErrorInfo
 - CDBErrorInfo.GetErrorInfo
 - ATL::CDBErrorInfo::GetErrorInfo
@@ -29,11 +25,9 @@ f1_keywords:
 - CDBErrorInfo::GetErrorParameters
 - ATL::CDBErrorInfo::GetErrorParameters
 - CDBErrorInfo.GetErrorParameters
-- GetErrorParameters
 - CDBErrorInfo.GetErrorRecords
 - ATL.CDBErrorInfo.GetErrorRecords
 - ATL::CDBErrorInfo::GetErrorRecords
-- GetErrorRecords
 - CDBErrorInfo::GetErrorRecords
 helpviewer_keywords:
 - CDBErrorInfo class
@@ -44,16 +38,16 @@ helpviewer_keywords:
 - GetErrorParameters method
 - GetErrorRecords method
 ms.assetid: 9a5c18a2-ee3e-40f5-ab4c-581288d7f737
-ms.openlocfilehash: bc13137a4222ba51cf3745f9706353d48068a072
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2d2b21652fd5ee3604c3c72c2168c3d9a495caf1
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209333"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79546128"
 ---
 # <a name="cdberrorinfo-class"></a>CDBErrorInfo-Klasse
 
-Bietet Unterstützung für OLE DB-fehlerverarbeitung mit dem OLE DB [IErrorRecords](/previous-versions/windows/desktop/ms718112(v=vs.85)) Schnittstelle.
+Bietet Unterstützung für die OLE DB Fehler Verarbeitung mithilfe der OLE DB [IErrorRecords](/previous-versions/windows/desktop/ms718112(v=vs.85)) -Schnittstelle.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,7 +55,7 @@ Bietet Unterstützung für OLE DB-fehlerverarbeitung mit dem OLE DB [IErrorRecor
 class CDBErrorInfo
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -71,20 +65,20 @@ class CDBErrorInfo
 
 |||
 |-|-|
-|[GetAllErrorInfo](#getallerrorinfo)|Gibt alle Fehlerinformationen, die innerhalb eines fehlerdatensatzes.|
-|[GetBasicErrorInfo](#getbasicerrorinfo)|Aufrufe [IErrorRecords::GetBasicErrorInfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) grundlegende Informationen zu dem angegebenen Fehler zurückgegeben werden sollen.|
-|[GetCustomErrorObject](#getcustomerrorobject)|Aufrufe [IErrorRecords::GetCustomErrorObject](/previous-versions/windows/desktop/ms725417(v=vs.85)) um einen Zeiger auf eine Schnittstelle für ein Objekt für die benutzerdefinierten Fehler zurückzugeben.|
-|[GetErrorInfo](#geterrorinfo)|Aufrufe [IErrorRecords::GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) zurückzugebenden ein `IErrorInfo` Schnittstellenzeiger auf den angegebenen Datensatz.|
-|[GetErrorParameters](#geterrorparameters)|Aufrufe [IErrorRecords::GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) die Fehlerparameter zurückgegeben.|
-|[GetErrorRecords](#geterrorrecords)|Ruft die Error-Datensätze für das angegebene Objekt ab.|
+|[GetAllErrorInfo](#getallerrorinfo)|Gibt alle Fehlerinformationen zurück, die in einem Fehler Daten Satz enthalten sind.|
+|[GetBasicErrorInfo](#getbasicerrorinfo)|Ruft [IErrorRecords:: getbasicerrorinfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) auf, um grundlegende Informationen zum angegebenen Fehler zurückzugeben.|
+|[GetCustomErrorObject](#getcustomerrorobject)|Ruft [IErrorRecords:: getcustomerrorobject](/previous-versions/windows/desktop/ms725417(v=vs.85)) auf, um einen Zeiger auf eine Schnittstelle für ein benutzerdefiniertes Fehler Objekt zurückzugeben.|
+|[GetErrorInfo](#geterrorinfo)|Ruft [IErrorRecords:: GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) auf, um einen `IErrorInfo` Schnittstellen Zeiger auf den angegebenen Datensatz zurückzugeben.|
+|[GetErrorParameters](#geterrorparameters)|Ruft [IErrorRecords:: GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) auf, um die Fehler Parameter zurückzugeben.|
+|[GetErrorRecords](#geterrorrecords)|Ruft Fehler Datensätze für das angegebene Objekt ab.|
 
 ## <a name="remarks"></a>Hinweise
 
-Diese Schnittstelle gibt einen oder mehrere Error-Datensätze für den Benutzer zurück. Rufen Sie [cdberrorinfo:: Geterrorrecords](../../data/oledb/cdberrorinfo-geterrorrecords.md) zuerst, damit die Anzahl der Fehlerdatensätze zu erhalten. Dann eine der der Zugriff Funktionen, z. B. [cdberrorinfo:: Getallerrorinfo](../../data/oledb/cdberrorinfo-getallerrorinfo.md), um Fehlerinformationen für jeden Datensatz abzurufen.
+Diese Schnittstelle gibt einen oder mehrere Fehler Datensätze an den Benutzer zurück. Nennen Sie zuerst [CDBErrorInfo:: geterrorrecords](../../data/oledb/cdberrorinfo-geterrorrecords.md) , um die Anzahl der Fehler Datensätze abzurufen. Rufen Sie dann eine der Zugriffs Funktionen (z. b. [CDBErrorInfo:: getallerrorinfo](../../data/oledb/cdberrorinfo-getallerrorinfo.md)) auf, um Fehlerinformationen für jeden Datensatz abzurufen.
 
-## <a name="getallerrorinfo"></a> CDBErrorInfo::GetAllErrorInfo
+## <a name="cdberrorinfogetallerrorinfo"></a><a name="getallerrorinfo"></a>CDBErrorInfo:: getallerrorinfo
 
-Gibt alle Typen von Fehlerinformationen enthalten, die in einen Fehlerdatensatz zurück.
+Gibt alle Typen von Fehlerinformationen zurück, die in einem Fehler Daten Satz enthalten sind.
 
 ### <a name="syntax"></a>Syntax
 
@@ -99,42 +93,42 @@ HRESULT GetAllErrorInfo(ULONG ulRecordNum,
 
 #### <a name="parameters"></a>Parameter
 
-*ulRecordNum*<br/>
-[in] Die nullbasierte Nummer des Datensatzes für die Fehlerinformationen zurückgegeben werden sollen.
+*ulrecordnum*<br/>
+in Die null basierte Nummer des Datensatzes, für den Fehlerinformationen zurückgegeben werden sollen.
 
 *lcid*<br/>
-[in] Die Gebietsschema-ID für die Fehlerinformationen zurückgegeben werden.
+in Die Gebiets Schema-ID für die zurück zugegenden Fehlerinformationen.
 
-*pbstrDescription*<br/>
-[out] Ein Zeiger auf eine textbeschreibung des Fehlers oder NULL, wenn das Gebietsschema nicht unterstützt wird. Siehe Hinweise.
+*pbstraudescription*<br/>
+vorgenommen Ein Zeiger auf eine Textbeschreibung des Fehlers oder NULL, wenn das Gebiets Schema nicht unterstützt wird. Siehe Hinweise.
 
-*pbstrSource*<br/>
-[out] Ein Zeiger auf eine Zeichenfolge, die mit dem Namen der Komponente, die den Fehler generiert hat.
+*pbstrausource*<br/>
+vorgenommen Ein Zeiger auf eine Zeichenfolge, die den Namen der Komponente enthält, die den Fehler generiert hat.
 
 *pguid*<br/>
-[out] Ein Zeiger auf die GUID der Schnittstelle, die den Fehler definiert.
+vorgenommen Ein Zeiger auf die GUID der Schnittstelle, die den Fehler definiert hat.
 
-*pdwHelpContext*<br/>
-[out] Ein Zeiger auf die Hilfekontext-ID für den Fehler.
+*pdwhelpcontext*<br/>
+vorgenommen Ein Zeiger auf die Hilfe Kontext-ID für den Fehler.
 
-*pbstrHelpFile*<br/>
-[out] Ein Zeiger auf eine Zeichenfolge, die mit dem Pfad zur Hilfedatei, die den Fehler beschreibt.
+*pbstrauhelpfile*<br/>
+vorgenommen Ein Zeiger auf eine Zeichenfolge, die den Pfad zur Hilfedatei enthält, in der der Fehler beschrieben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn erfolgreich. Finden Sie unter [IErrorRecords::GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) in die *OLE DB-Programmierreferenz* für andere Werte zurückgeben.
+S_OK, wenn erfolgreich. Weitere Rückgabewerte finden Sie unter [IErrorRecords:: GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
 ### <a name="remarks"></a>Hinweise
 
-Der Ausgabewert des *PbstrDescription* wird intern durch den Aufruf abgerufen `IErrorInfo::GetDescription`, wodurch den Wert auf NULL festgelegt, wenn das Gebietsschema nicht unterstützt wird, oder wenn beide der folgenden Bedingungen zutreffen:
+Der Ausgabewert von *pbstrdescription* wird intern durch Aufrufen von `IErrorInfo::GetDescription`abgerufen. Dadurch wird der Wert auf NULL festgelegt, wenn das Gebiets Schema nicht unterstützt wird, oder wenn die beiden folgenden Bedingungen zutreffen:
 
-1. der Wert des *Lcid* ist nicht-US Englisch und
+1. der Wert von *LCID* ist nicht US-Englisch und
 
-1. der Wert des *Lcid* ist nicht gleich dem Wert, der von GetUserDefaultLCID zurückgegeben.
+1. der Wert von *LCID* entspricht nicht dem Wert, der von GetUserDefaultLCID zurückgegeben wurde.
 
-## <a name="getbasicerrorinfo"></a> CDBErrorInfo::GetBasicErrorInfo
+## <a name="cdberrorinfogetbasicerrorinfo"></a><a name="getbasicerrorinfo"></a>CDBErrorInfo:: getbasicerrorinfo
 
-Aufrufe [IErrorRecords::GetBasicErrorInfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) grundlegende Informationen über den Fehler, z. B. den Rückgabecode und die Anzahl der Anbieter-spezifischer Fehler zurückgegeben werden sollen.
+Ruft [IErrorRecords:: getbasicerrorinfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) auf, um grundlegende Informationen zum Fehler zurückzugeben, z. b. den Rückgabecode und die anbieterspezifische Fehlernummer.
 
 ### <a name="syntax"></a>Syntax
 
@@ -145,15 +139,15 @@ HRESULT GetBasicErrorInfo(ULONG ulRecordNum,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IErrorRecords::GetBasicErrorInfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IErrorRecords:: getbasicerrorinfo](/previous-versions/windows/desktop/ms723907(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
-## <a name="getcustomerrorobject"></a> CDBErrorInfo::GetCustomErrorObject
+## <a name="cdberrorinfogetcustomerrorobject"></a><a name="getcustomerrorobject"></a>CDBErrorInfo:: getcustomerrorobject
 
-Aufrufe [IErrorRecords::GetCustomErrorObject](/previous-versions/windows/desktop/ms725417(v=vs.85)) um einen Zeiger auf eine Schnittstelle für ein Objekt für die benutzerdefinierten Fehler zurückzugeben.
+Ruft [IErrorRecords:: getcustomerrorobject](/previous-versions/windows/desktop/ms725417(v=vs.85)) auf, um einen Zeiger auf eine Schnittstelle für ein benutzerdefiniertes Fehler Objekt zurückzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -164,15 +158,15 @@ HRESULT GetCustomErrorObject(ULONG ulRecordNum,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IErrorRecords::GetCustomErrorObject](/previous-versions/windows/desktop/ms725417(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IErrorRecords:: getcustomerrorobject](/previous-versions/windows/desktop/ms725417(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
-## <a name="geterrorinfo"></a> CDBErrorInfo::GetErrorInfo
+## <a name="cdberrorinfogeterrorinfo"></a><a name="geterrorinfo"></a>CDBErrorInfo:: GetErrorInfo
 
-Aufrufe [IErrorRecords::GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) zurückzugebenden ein [IErrorInfo](/previous-versions/windows/desktop/ms718112(v=vs.85)) Schnittstellenzeiger auf den angegebenen Datensatz.
+Ruft [IErrorRecords:: GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) auf, um einen [IErrorInfo](/previous-versions/windows/desktop/ms718112(v=vs.85)) -Schnittstellen Zeiger auf den angegebenen Datensatz zurückzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -183,15 +177,15 @@ HRESULT GetErrorInfo(ULONG ulRecordNum,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IErrorRecords::GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Siehe [IErrorRecords:: GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
-## <a name="geterrorparameters"></a> CDBErrorInfo::GetErrorParameters
+## <a name="cdberrorinfogeterrorparameters"></a><a name="geterrorparameters"></a>CDBErrorInfo:: GetErrorParameters
 
-Aufrufe [IErrorRecords::GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) die Fehlerparameter zurückgegeben.
+Ruft [IErrorRecords:: GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) auf, um die Fehler Parameter zurückzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -202,15 +196,15 @@ HRESULT GetErrorParameters(ULONG ulRecordNum,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IErrorRecords::GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IErrorRecords:: GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
-## <a name="geterrorrecords"></a> CDBErrorInfo::GetErrorRecords
+## <a name="cdberrorinfogeterrorrecords"></a><a name="geterrorrecords"></a>CDBErrorInfo:: geterrorrecords
 
-Ruft die Error-Datensätze für das angegebene Objekt ab.
+Ruft Fehler Datensätze für das angegebene Objekt ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -224,22 +218,22 @@ HRESULT GetErrorRecords(ULONG* pcRecords) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*pUnk*<br/>
-[in] Eine Schnittstelle für das Objekt für die Error-Datensätze abgerufen.
+*Kro*<br/>
+in Eine Schnittstelle zu dem Objekt, für das Fehler Datensätze zu erhalten sind.
 
-*iid*<br/>
-[in] Die IID der Schnittstelle mit dem Fehler verknüpft ist.
+*IID*<br/>
+in Die IID der Schnittstelle, die dem Fehler zugeordnet ist.
 
-*pcRecords*<br/>
-[out] Ein Zeiger auf die (1-basiert) Anzahl von Datensätzen.
+*pcrecords*<br/>
+vorgenommen Ein Zeiger auf die (eine-basierte) Anzahl von Fehler Datensätzen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Verwenden Sie die erste Form der Funktion, wenn Sie die Schnittstelle zum Abrufen der Fehlerinformationen von überprüfen möchten. Verwenden Sie andernfalls die zweite Form.
+Verwenden Sie die erste Form der-Funktion, wenn Sie überprüfen möchten, welche Schnittstelle die Fehlerinformationen erhalten soll. Andernfalls verwenden Sie die zweite Form.
 
 ## <a name="see-also"></a>Siehe auch
 

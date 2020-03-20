@@ -9,7 +9,6 @@ f1_keywords:
 - CUtlProps::IsValidValue
 - CUtlProps.IsValidValue
 - IsValidValue
-- CUtlProps
 - OnPropertyChanged
 - CUtlProps.OnPropertyChanged
 - CUtlProps::OnPropertyChanged
@@ -30,16 +29,16 @@ helpviewer_keywords:
 - OnPropertyChanged method
 - SetPropValue method
 ms.assetid: bb525178-765c-4e23-a110-c0fd70c05437
-ms.openlocfilehash: 3f1af90bcf454a3651dd8de65bbee7cb6b5960ca
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bbeae4faad4d650d8dc44a61a22b1fcc63a0bc15
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176114"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545552"
 ---
 # <a name="cutlprops-class"></a>CUtlProps-Klasse
 
-Die Eigenschaften für eine Vielzahl von Schnittstellen für OLE DB-Eigenschaft implementiert (z. B. `IDBProperties`, `IDBProperties`, und `IRowsetInfo`).
+Implementiert Eigenschaften für eine Reihe von OLE DB Eigenschaften Schnittstellen (z. b. `IDBProperties`, `IDBProperties`und `IRowsetInfo`).
 
 ## <a name="syntax"></a>Syntax
 
@@ -51,11 +50,11 @@ class ATL_NO_VTABLE CUtlProps : public CUtlPropsBase
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Klasse enthält die `BEGIN_PROPSET_MAP`.
+Die Klasse, die die `BEGIN_PROPSET_MAP`enthält.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -63,23 +62,23 @@ Die Klasse enthält die `BEGIN_PROPSET_MAP`.
 
 |||
 |-|-|
-|[GetPropValue](#getpropvalue)|Ruft eine Eigenschaft aus einem Eigenschaftensatz ab.|
-|[IsValidValue](#isvalidvalue)|Verwendet, um einen Wert zu überprüfen, bevor Sie eine Eigenschaft festlegen.|
-|[OnInterfaceRequested](#oninterfacerequested)|Behandelt Anforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode für ein Objekt erstellen-Schnittstelle aufruft.|
-|[OnPropertyChanged](#onpropertychanged)|Wird aufgerufen, nach dem Festlegen einer Eigenschaft für die verkettete Eigenschaften zu behandeln.|
-|[SetPropValue](#setpropvalue)|Legt eine Eigenschaft in einem Eigenschaftensatz an.|
+|[GetPropValue](#getpropvalue)|Ruft eine Eigenschaft aus einem Eigenschaften Satz ab.|
+|[IsValidValue](#isvalidvalue)|Wird zum Überprüfen eines Werts verwendet, bevor eine Eigenschaft festgelegt wird.|
+|[OnInterfaceRequested](#oninterfacerequested)|Verarbeitet Anforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode für eine Schnittstelle zum Erstellen von Objekten aufruft.|
+|[OnPropertyChanged](#onpropertychanged)|Wird aufgerufen, nachdem eine Eigenschaft zum Verarbeiten verketteter Eigenschaften festgelegt wurde|
+|[SetPropValue](#setpropvalue)|Legt eine Eigenschaft in einem Eigenschaften Satz fest.|
 
 ## <a name="remarks"></a>Hinweise
 
-Die meisten dieser Klasse ist ein Implementierungsdetail.
+Der größte Teil dieser Klasse ist ein Implementierungsdetail.
 
-`CUtlProps` enthält zwei Member zum Festlegen von Eigenschaften intern an: [GetPropValue](../../data/oledb/cutlprops-getpropvalue.md) und [SetPropValue](../../data/oledb/cutlprops-setpropvalue.md).
+`CUtlProps` enthält zwei Member zum internen Festlegen von Eigenschaften: [GetPropValue](../../data/oledb/cutlprops-getpropvalue.md) und [SetPropValue](../../data/oledb/cutlprops-setpropvalue.md).
 
-Weitere Informationen zu den Makros, die in einer Set-Zuordnung von Eigenschaft verwendet, finden Sie unter [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) und [END_PROPSET_MAP](../../data/oledb/end-propset-map.md).
+Weitere Informationen zu den in einer Eigenschaften Satz Zuordnung verwendeten Makros finden Sie unter [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) und [END_PROPSET_MAP](../../data/oledb/end-propset-map.md).
 
-## <a name="getpropvalue"></a> CUtlProps::GetPropValue
+## <a name="cutlpropsgetpropvalue"></a><a name="getpropvalue"></a>Cutlrequips:: GetPropValue
 
-Ruft eine Eigenschaft aus einem Eigenschaftensatz ab.
+Ruft eine Eigenschaft aus einem Eigenschaften Satz ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -91,22 +90,22 @@ OUT_OF_LINE HRESULT GetPropValue(const GUID* pguidPropSet,
 
 #### <a name="parameters"></a>Parameter
 
-*pguidPropSet*<br/>
-[in] Die GUID für den Eigenschaftensatz.
+*pguidpropset*<br/>
+in Die GUID für das propset.
 
 *dwPropId*<br/>
-[in] Der Property-Index.
+in Der Eigenschafts Index.
 
-*pvValue*<br/>
-[out] Ein Zeiger auf einen Variant-Wert, der den neue Eigenschaftswert enthält.
+*pvvalue*<br/>
+vorgenommen Ein Zeiger auf einen Variant-Wert, der den neuen Eigenschafts Wert enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-`Failure` für Fehler und S_OK, wenn erfolgreich.
+bei erfolgreicher S_OK `Failure`.
 
-## <a name="isvalidvalue"></a> CUtlProps::IsValidValue
+## <a name="cutlpropsisvalidvalue"></a><a name="isvalidvalue"></a>Cutlrequid:: IsValidValue
 
-Verwendet, um einen Wert zu überprüfen, bevor Sie eine Eigenschaft festlegen.
+Wird zum Überprüfen eines Werts verwendet, bevor eine Eigenschaft festgelegt wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -117,23 +116,23 @@ virtual HRESULT CUtlPropsBase::IsValidValue(ULONG /* iCurSet */,
 
 #### <a name="parameters"></a>Parameter
 
-*iCurSet*<br/>
-Der Index im Array Eigenschaftensatz; NULL, wenn nur eine Eigenschaft festgelegt ist.
+*icurrset*<br/>
+Der Index des Eigenschaften Satz Arrays. 0 (null), wenn nur ein Eigenschaften Satz vorhanden ist.
 
-*pDBProp*<br/>
-Die Eigenschafts-ID und den neuen Wert in eine [DBPROP](/previous-versions/windows/desktop/ms717970(v=vs.85)) Struktur.
+*pdbprop*<br/>
+Die eigen schafts-ID und der neue Wert in einer [DBPROP](/previous-versions/windows/desktop/ms717970(v=vs.85)) -Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT. Der Standardrückgabewert ist S_OK.
+Ein HRESULT-Standard. Der Standard Rückgabewert ist S_OK.
 
 ### <a name="remarks"></a>Hinweise
 
-Wenn Sie Überprüfungsroutinen, die Sie nach einem Wert ausgeführt wird, die Sie verwenden verfügen, um eine Eigenschaft festlegen möchten, sollten Sie diese Funktion überschreiben. Beispielsweise konnte DBPROP_AUTH_PASSWORD für eine Kennworttabelle, um einen gültigen Wert zu bestimmen, überprüft werden.
+Wenn Sie über Validierungs Routinen verfügen, die Sie für einen Wert ausführen möchten, den Sie zum Festlegen einer Eigenschaft verwenden möchten, sollten Sie diese Funktion überschreiben. Beispielsweise können Sie DBPROP_AUTH_PASSWORD anhand einer Kenn Wort Tabelle validieren, um einen gültigen Wert zu bestimmen.
 
-## <a name="oninterfacerequested"></a> CUtlProps::OnInterfaceRequested
+## <a name="cutlpropsoninterfacerequested"></a><a name="oninterfacerequested"></a>Cutl-Eigenschaften:: oninterfakerequessiert
 
-Behandelt Anforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode eines Objekts erstellen Schnittstellen aufruft.
+Verarbeitet Anforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode für eine der Schnittstellen zum Erstellen von Objekten aufruft.
 
 ### <a name="syntax"></a>Syntax
 
@@ -144,15 +143,15 @@ virtual HRESULT CUtlPropsBase::OnInterfaceRequested(REFIID riid);
 #### <a name="parameters"></a>Parameter
 
 *riid*<br/>
-[in] Die IID für die angeforderte Schnittstelle. Weitere Informationen finden Sie unter der Beschreibung des der *Riid* Parameter `ICommand::Execute` in die *OLE DB-Programmierreferenz* (in der *MDAC SDK*).
+in Die IID für die angeforderte Schnittstelle. Weitere Informationen finden Sie in der Beschreibung des *riid* -Parameters `ICommand::Execute` in der *OLE DB Programmierer-Referenz* (im *MDAC-SDK*).
 
 ### <a name="remarks"></a>Hinweise
 
-`OnInterfaceRequested` Consumeranforderungen für eine optionale Schnittstelle verarbeitet, wenn ein Consumer eine Methode eines Objekts erstellen Schnittstellen aufruft (z. B. `IDBCreateSession`, `IDBCreateCommand`, `IOpenRowset`, oder `ICommand`). Die entsprechende OLE DB-Eigenschaft für die angeforderte Schnittstelle festgelegt. Angenommen, fordert der Consumer `IID_IRowsetLocate`, `OnInterfaceRequested` legt die `DBPROP_IRowsetLocate` Schnittstelle. Auf diese Weise verwaltet den richtigen Status während der rowseterstellung.
+`OnInterfaceRequested` behandelt Consumeranforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode für eine der Objekt Erstellungs Schnittstellen (z. b. `IDBCreateSession`, `IDBCreateCommand`, `IOpenRowset`oder `ICommand`) aufruft. Die entsprechende OLE DB-Eigenschaft für die angeforderte Schnittstelle wird festgelegt. Wenn der Consumer z. b. `IID_IRowsetLocate`anfordert, legt `OnInterfaceRequested` die `DBPROP_IRowsetLocate`-Schnittstelle fest. Auf diese Weise wird der richtige Zustand während der Rowseterstellung beibehalten.
 
-Diese Methode wird aufgerufen, wenn der Consumer ruft `IOpenRowset::OpenRowset` oder `ICommand::Execute`.
+Diese Methode wird aufgerufen, wenn der Consumer `IOpenRowset::OpenRowset` oder `ICommand::Execute`aufruft.
 
-Wenn ein Consumer ein Objekt öffnet, und eine optionale Schnittstelle fordert, sollte der Anbieter die Schnittstelle auf VARIANT_TRUE fest zugeordnete Eigenschaft festlegen. Eigenschaft-spezifische Verarbeitung zu `OnInterfaceRequested` wird aufgerufen, bevor des Anbieters `Execute` Methode wird aufgerufen. In der Standardeinstellung `OnInterfaceRequested` behandelt die folgenden Schnittstellen:
+Wenn ein Consumer ein Objekt öffnet und eine optionale Schnittstelle anfordert, sollte der Anbieter die Eigenschaft, die dieser Schnittstelle zugeordnet ist, VARIANT_TRUE festlegen. Um die Eigenschaften spezifische Verarbeitung zuzulassen, wird `OnInterfaceRequested` aufgerufen, bevor die `Execute`-Methode des Anbieters aufgerufen wird. Standardmäßig verarbeitet `OnInterfaceRequested` die folgenden Schnittstellen:
 
 - `IRowsetLocate`
 
@@ -164,11 +163,11 @@ Wenn ein Consumer ein Objekt öffnet, und eine optionale Schnittstelle fordert, 
 
 - `IRowsetScroll`
 
-Wenn Sie andere Schnittstellen zu verarbeiten möchten, überschreiben Sie diese Funktion in Ihrer Datenklasse Quelle "," Sitzung "," Befehl "oder" Rowset, funktioniert. Die Außerkraftsetzung funktionieren über die normalen festlegen/Abrufen von Eigenschaften-Schnittstellen, um sicherzustellen, dass das Festlegen von Eigenschaften auch alle verketteten Eigenschaften legt diese fest (siehe [OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)).
+Wenn Sie andere Schnittstellen verarbeiten möchten, überschreiben Sie diese Funktion in der Datenquelle, der Sitzung, dem Befehl oder der Rowsetklasse, um Funktionen zu verarbeiten. Die außer Kraft Setzung sollte die normalen Eigenschaften der Eigenschaften "Set/Get" durchlaufen, um sicherzustellen, dass Einstellungs Eigenschaften auch alle verketteten Eigenschaften festlegen (siehe [OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)).
 
-## <a name="onpropertychanged"></a> CUtlProps::OnPropertyChanged
+## <a name="cutlpropsonpropertychanged"></a><a name="onpropertychanged"></a>Cutl-Eigenschaften:: OnPropertyChanged
 
-Wird aufgerufen, nach dem Festlegen einer Eigenschaft für die verkettete Eigenschaften zu behandeln.
+Wird aufgerufen, nachdem eine Eigenschaft zum Verarbeiten verketteter Eigenschaften festgelegt wurde
 
 ### <a name="syntax"></a>Syntax
 
@@ -179,29 +178,29 @@ virtual HRESULT OnPropertyChanged(ULONG /* iCurSet */,
 
 #### <a name="parameters"></a>Parameter
 
-*iCurSet*<br/>
-Der Index im Array Eigenschaftensatz; NULL, wenn nur eine Eigenschaft festgelegt ist.
+*icurrset*<br/>
+Der Index des Eigenschaften Satz Arrays. 0 (null), wenn nur ein Eigenschaften Satz vorhanden ist.
 
-*pDBProp*<br/>
-Die Eigenschafts-ID und den neuen Wert in eine [DBPROP](/previous-versions/windows/desktop/ms717970(v=vs.85)) Struktur.
+*pdbprop*<br/>
+Die eigen schafts-ID und der neue Wert in einer [DBPROP](/previous-versions/windows/desktop/ms717970(v=vs.85)) -Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT. Der Standardrückgabewert ist S_OK.
+Ein HRESULT-Standard. Der Standard Rückgabewert ist S_OK.
 
 ### <a name="remarks"></a>Hinweise
 
-Sollten Sie behandeln verkettete Eigenschaften, z. B. Lesezeichen oder Updates, deren Werte den Wert einer anderen Eigenschaft abhängig sind, sollten Sie diese Funktion überschreiben.
+Wenn Sie verkettete Eigenschaften verarbeiten möchten, z. b. Lesezeichen oder Updates, deren Werte von einem anderen Eigenschafts Wert abhängen, sollten Sie diese Funktion überschreiben.
 
 ### <a name="example"></a>Beispiel
 
-In dieser Funktion erhält der Benutzer die Eigenschafts-ID aus der `DBPROP*` Parameter. Jetzt ist es möglich, die ID für eine Eigenschaft, eine Verkettung zu vergleichen. Wenn die Eigenschaft gefunden wird, `SetProperties` wird aufgerufen, mit der Eigenschaft, die jetzt in Verbindung mit einer anderen Eigenschaft festgelegt werden. In diesem Fall wird die `DBPROP_IRowsetLocate`, `DBPROP_LITERALBOOKMARKS`, oder `DBPROP_ORDEREDBOOKMARKS` Eigenschaft, die eine Festlegen der `DBPROP_BOOKMARKS` Eigenschaft.
+In dieser Funktion ruft der Benutzer die eigen schafts-ID aus dem `DBPROP*`-Parameter ab. Nun ist es möglich, die ID mit einer Eigenschaft mit einer Kette zu vergleichen. Wenn die-Eigenschaft gefunden wird, wird `SetProperties` mit der-Eigenschaft aufgerufen, die nun in Verbindung mit der anderen-Eigenschaft festgelegt wird. Wenn in diesem Fall die Eigenschaft `DBPROP_IRowsetLocate`, `DBPROP_LITERALBOOKMARKS`oder `DBPROP_ORDEREDBOOKMARKS` abgerufen wird, kann die `DBPROP_BOOKMARKS`-Eigenschaft festgelegt werden.
 
 [!code-cpp[NVC_OLEDB_Provider#2](../../data/oledb/codesnippet/cpp/cutlprops-onpropertychanged_1.h)]
 
-## <a name="setpropvalue"></a> CUtlProps::SetPropValue
+## <a name="cutlpropssetpropvalue"></a><a name="setpropvalue"></a>Cutlrequips:: SetPropValue
 
-Legt eine Eigenschaft in einem Eigenschaftensatz an.
+Legt eine Eigenschaft in einem Eigenschaften Satz fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -213,20 +212,20 @@ HRESULT SetPropValue(const GUID* pguidPropSet,
 
 #### <a name="parameters"></a>Parameter
 
-*pguidPropSet*<br/>
-[in] Die GUID für den Eigenschaftensatz.
+*pguidpropset*<br/>
+in Die GUID für das propset.
 
 *dwPropId*<br/>
-[in] Der Property-Index.
+in Der Eigenschafts Index.
 
-*pvValue*<br/>
-[in] Ein Zeiger auf einen Variant-Wert, der den neue Eigenschaftswert enthält.
+*pvvalue*<br/>
+in Ein Zeiger auf einen Variant-Wert, der den neuen Eigenschafts Wert enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-`Failure` für Fehler und S_OK, wenn erfolgreich.
+bei erfolgreicher S_OK `Failure`.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

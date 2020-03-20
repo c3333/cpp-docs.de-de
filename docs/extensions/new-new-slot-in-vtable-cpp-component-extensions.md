@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - new keyword [C++]
 ms.assetid: 1a9a5704-f02f-46ae-ad65-f0f2b6dbabc3
-ms.openlocfilehash: c5446e5e84491ff7d736ce3b3af49dacd471c010
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 684c6149457f7b0306f3d444a3652ecda1636839
+ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515645"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "79544411"
 ---
 # <a name="new-new-slot-in-vtable--ccli-and-ccx"></a>new (neuer Slot in vtable) (C++/CLI und C++/CX)
 
@@ -26,7 +26,7 @@ Wird nicht in Windows-Runtime unterstützt.
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 In einer `/clr`-Kompilierung gibt **new** an, dass ein virtueller Member einen neuen Slot in vtable erhält und die Funktion keine Basisklassenmethode überschreibt.
 
@@ -36,7 +36,7 @@ In einer `/clr`-Kompilierung gibt **new** an, dass ein virtueller Member einen n
 
 - <xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 
@@ -106,5 +106,4 @@ E::f() called
 ## <a name="see-also"></a>Siehe auch
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
-
 [Überschreibungsspezifizierer](override-specifiers-cpp-component-extensions.md)

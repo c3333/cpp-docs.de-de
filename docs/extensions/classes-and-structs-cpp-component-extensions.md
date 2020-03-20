@@ -1,21 +1,24 @@
 ---
 title: Verweisklasse und Referenzstruktur (C++/CLI und C++/CX)
-ms.date: 05/16/2019
+ms.date: 05/30/2019
 ms.topic: reference
 f1_keywords:
 - ref class
+- value class
+- ref struct
+- value struct
 helpviewer_keywords:
 - ref class keyword [C++]
 - value class keyword [C++]
 - value struct keyword [C++]
 - ref struct keyword [C++]
 ms.assetid: 5c360764-b229-49c6-9357-66213afbc372
-ms.openlocfilehash: 9c993b134d6d359d0bc756f5e79d2f9cc137c9cf
-ms.sourcegitcommit: bc1b14f29a02685f97c7ef5c098d16db6eaf369f
-ms.translationtype: HT
+ms.openlocfilehash: dd58f32d031068785cd6020549f9eea4b2182786
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65788787"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544663"
 ---
 # <a name="ref-class-and-ref-struct--ccli-and-ccx"></a>Verweisklasse und Referenzstruktur (C++/CLI und C++/CX)
 
@@ -54,7 +57,7 @@ Der Name der Klasse oder Struktur.
 
 Weitere Informationen finden Sie in den sprachspezifischen Beschreibungen für diesen Parameter in den Abschnitten „Windows-Runtime“ und „Common Language Runtime“.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Standardmemberzugriff auf ein mit **ref class** oder **value class** deklariertes Objekt ist **private**. Und der Standardmemberzugriff auf ein mit **ref struct** oder **value struct** deklariertes Objekt ist **public**.
 
@@ -70,7 +73,7 @@ Weitere Informationen über Klassen und Strukturen finden Sie unter
 
 - [Klassen, Strukturen und Unions](../cpp/classes-and-structs-cpp.md)
 
-- [„Destruktoren und Finalizer“ in „Vorgehensweise: Definieren und Verarbeiten von Klassen und Strukturen (C++/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)
+- [Debugtoren und Finalizer in Gewusst wie: definieren und Verarbeiten von Klassen und StrukturenC++(/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)
 
 - [Benutzerdefinierte Operatoren (C++/CLI)](../dotnet/user-defined-operators-cpp-cli.md)
 
@@ -82,9 +85,9 @@ Weitere Informationen über Klassen und Strukturen finden Sie unter
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
-Weitere Informationen finden Sie unter [Verweisklassen und Strukturen](../cppcx/ref-classes-and-structs-c-cx.md) und [Wertklassen und Strukturen](https://msdn.microsoft.com/library/windows/apps/hh699861.aspx).
+Weitere Informationen finden Sie unter [Verweisklassen und Strukturen](../cppcx/ref-classes-and-structs-c-cx.md) und [Wertklassen und Strukturen](../cppcx/value-classes-and-structs-c-cx.md).
 
 ### <a name="parameters"></a>Parameter
 
@@ -95,13 +98,13 @@ Wenn Sie ein Objekt mithilfe der Schlüsselwörter **ref class** oder **ref stru
 
 Wenn Sie ein Objekt mithilfe der Schlüsselwörter **value class** oder **value struct** deklarieren, wird die Objektlebensdauer des deklarierten Objekts nicht überwacht. Das Objekt ist wie jede andere Standard-C++-Klasse oder -Struktur.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Die folgende Tabelle listet die für C++/CLI spezifischen Unterschiede zu der im Abschnitt **Alle Laufzeiten** gezeigten Syntax auf.
 
@@ -114,7 +117,7 @@ Die Schlüsselwörter **ref class** und **ref struct** teilen dem Compiler mit, 
 
 Die Schlüsselwörter **value class** und **value struct** teilen dem Compiler mit, dass der Wert der zugeordneten Klasse oder Struktur an Funktionen übergeben oder in Membern gespeichert wird.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/clr`
 

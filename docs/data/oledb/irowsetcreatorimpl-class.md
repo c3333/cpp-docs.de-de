@@ -19,16 +19,16 @@ helpviewer_keywords:
 - IRowsetCreatorImpl class
 - SetSite method
 ms.assetid: 92cc950f-7978-4754-8d9a-defa63867d82
-ms.openlocfilehash: 3dc5cb06b3eb7f01667e4e1ec09dd60f9befae77
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8c4253d469c510f5e6eb996ed510ef836844899d
+ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390788"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "79544579"
 ---
 # <a name="irowsetcreatorimpl-class"></a>IRowsetCreatorImpl-Klasse
 
-Führt die gleichen Funktionen wie `IObjectWithSite` kann jedoch auch die OLE DB-Eigenschaften `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS`.
+Führt dieselben Funktionen wie `IObjectWithSite` aus, aktiviert jedoch auch die OLE DB Eigenschaften `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS`.
 
 ## <a name="syntax"></a>Syntax
 
@@ -41,11 +41,11 @@ class ATL_NO_VTABLE IRowsetCreatorImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine abgeleitete Klasse `IRowsetCreator`.
+Eine von `IRowsetCreator`abgeleitete Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -53,15 +53,15 @@ Eine abgeleitete Klasse `IRowsetCreator`.
 
 |||
 |-|-|
-|[SetSite](#setsite)|Legt fest, die Website, die Rowset-Objekt enthält.|
+|[SetSite](#setsite)|Legt die Site fest, die das Rowsetobjekt enthält.|
 
 ## <a name="remarks"></a>Hinweise
 
-Diese Klasse erbt von [IObjectWithSite](/windows/desktop/api/ocidl/nn-ocidl-iobjectwithsite) und überschreibt [IObjectWithSite::SetSite](/windows/desktop/api/ocidl/nf-ocidl-iobjectwithsite-setsite). Wenn ein Befehl oder Sitzung Anbieterobjekt ein Rowset erstellt wird, ruft er `QueryInterface` für das Rowsetobjekt, das nach `IObjectWithSite` und ruft `SetSite` übergeben des Rowsetobjekt, das die `IUnkown` Schnittstelle wie die Website-Schnittstelle.
+Diese Klasse erbt von [IObjectWithSite](/windows/win32/api/ocidl/nn-ocidl-iobjectwithsite) und überschreibt [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite). Wenn ein Anbieter Befehl oder ein Sitzungs Objekt ein Rowset erstellt, ruft es `QueryInterface` für das Rowsetobjekt auf, das nach `IObjectWithSite` sucht, und ruft auf, `SetSite` die `IUnkown` Schnittstelle des rowsetobjektes als Website Schnittstelle zu übergeben.
 
-## <a name="setsite"></a> IRowsetCreatorImpl::SetSite
+## <a name="irowsetcreatorimplsetsite"></a><a name="setsite"></a>Irowsetkreatorimpl:: SetSite
 
-Legt fest, die Website, die Rowset-Objekt enthält. Weitere Informationen finden Sie unter [IObjectWithSite::SetSite](/windows/desktop/api/ocidl/nf-ocidl-iobjectwithsite-setsite).
+Legt die Site fest, die das Rowsetobjekt enthält. Weitere Informationen finden Sie unter [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite).
 
 ### <a name="syntax"></a>Syntax
 
@@ -71,18 +71,18 @@ STDMETHOD(SetSite )(IUnknown* pCreator);
 
 #### <a name="parameters"></a>Parameter
 
-*pCreator*<br/>
-[in] Zeiger auf die `IUnknown` Schnittstellenzeiger auf der Website verwalten von Rowset-Objekt.
+*pcreator*<br/>
+in Zeiger auf den `IUnknown` Schnittstellen Zeiger der Site, die das Rowsetobjekt verwaltet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Darüber hinaus `IRowsetCreatorImpl::SetSite` ermöglicht OLE DB- `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` Eigenschaften.
+Außerdem werden `IRowsetCreatorImpl::SetSite` die OLE DB `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` Eigenschaften aktiviert.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

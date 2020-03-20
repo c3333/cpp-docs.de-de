@@ -1,25 +1,25 @@
 ---
-title: 'Vorgehensweise: Abrufen eines Zeigers auf Byte-Array'
+title: 'Gewusst wie: Abrufen eines Zeigers auf ein Byte-Array'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - pointers, to Byte array
 - Byte arrays
 ms.assetid: aea18073-3341-47f4-9f0e-04e03327037e
-ms.openlocfilehash: 28feb039cf7b91bbf12d94b1abebe0e5b9501d7f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5c0fc61f2876c652be6f25bf1627822537892dc9
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400538"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545216"
 ---
-# <a name="how-to-obtain-a-pointer-to-byte-array"></a>Vorgehensweise: Abrufen eines Zeigers auf Byte-Array
+# <a name="how-to-obtain-a-pointer-to-byte-array"></a>Gewusst wie: Abrufen eines Zeigers auf ein Byte-Array
 
-Sie erhalten einen Zeiger auf den Array-Block in einem <xref:System.Byte> Array durch das Übernehmen der Adresse des ersten Elements, und in einen Zeiger zuweisen.
+Sie können einen Zeiger auf den Array Block in einem <xref:System.Byte> Array abrufen, indem Sie die Adresse des ersten Elements übernehmen und einem Zeiger zuweisen.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // pointer_to_Byte_array.cpp
 // compile with: /clr
 using namespace System;

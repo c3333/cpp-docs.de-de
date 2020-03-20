@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Marshallen von Rückrufen und Delegaten mit C++-Interop'
+title: 'Gewusst wie: Marshallen von Rückrufen und Delegaten mit C++-Interop'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -10,28 +10,28 @@ helpviewer_keywords:
 - marshaling [C++], callbacks and delegates
 - callbacks [C++], marshaling
 ms.assetid: 2313e9eb-5df9-4367-be0f-14b4712d8d2d
-ms.openlocfilehash: f8088bf90162fd2177599c252b0eee6332d61289
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 592eae0ff59baddb79b810d46669b78ecc801155
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64344955"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544940"
 ---
-# <a name="how-to-marshal-callbacks-and-delegates-by-using-c-interop"></a>Vorgehensweise: Marshallen von Rückrufen und Delegaten mit C++-Interop
+# <a name="how-to-marshal-callbacks-and-delegates-by-using-c-interop"></a>Gewusst wie: Marshallen von Rückrufen und Delegaten mit C++-Interop
 
-In diesem Thema wird veranschaulicht, das Marshallen von Rückrufen und Delegaten (die verwaltete Version eines Rückrufs) zwischen verwaltetem und nicht verwaltetem Code mithilfe von Visual C++.
+In diesem Thema wird das Marshalling von Rückrufen und Delegaten (der verwalteten Version eines Rückrufs) zwischen verwaltetem und nicht verwaltetem Code mithilfe von Visual C++veranschaulicht.
 
-Im folgenden code, Beispiele für die Verwendung der [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) #pragma-Anweisungen zum Implementieren verwaltet und nicht verwaltete Funktionen in der gleichen Datei, aber die Funktionen können auch in separaten Dateien definiert werden. Dateien, die ausschließlich nicht verwaltete Funktionen müssen nicht für die Kompilierung mit der [/CLR (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md).
+In den folgenden Codebeispielen werden [verwaltete und nicht verwaltete #pragma-](../preprocessor/managed-unmanaged.md) Direktiven verwendet, um verwaltete und nicht verwaltete Funktionen in der gleichen Datei zu implementieren. die Funktionen können jedoch auch in separaten Dateien definiert werden. Dateien, die nur nicht verwaltete Funktionen enthalten, müssen nicht mit [/CLR (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md)kompiliert werden.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie so konfigurieren Sie eine nicht verwaltete API, um einen verwalteten Delegaten ausgelöst wird. Ein verwalteter Delegat erstellt wird und eine der Interop-Methoden, <xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A>, dient zum Abrufen des zugrunde liegenden Einstiegspunkts für den Delegaten. Diese Adresse wird dann an die nicht verwaltete Funktion übergeben bezeichneten ohne Kenntnis der Tatsache, dass es als eine verwaltete Funktion implementiert wird.
+Im folgenden Beispiel wird veranschaulicht, wie Sie eine nicht verwaltete API so konfigurieren, dass Sie einen verwalteten Delegaten auslöst. Ein verwalteter Delegat wird erstellt, und eine der Interop-Methoden (<xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A>) wird verwendet, um den zugrunde liegenden Einstiegspunkt für den Delegaten abzurufen. Diese Adresse wird dann an die nicht verwaltete Funktion weitergegeben, die Sie aufruft, ohne dass Sie wissen, dass Sie als verwaltete Funktion implementiert ist.
 
-Beachten Sie, dass ist es möglich, aber nicht erforderlich ist, für das anheften der Delegat, der mit [Pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) um zu verhindern, dass er erneut befinden oder durch den Garbage Collector verworfen. Schutz vor der vorzeitigen Garbagecollection ist erforderlich, aber anheften bietet mehr Schutz als ist erforderlich, da es verhindert, Sammlung dass, verhindert aber zugleich verschieben.
+Beachten Sie, dass es möglich, aber nicht notwendig ist, den Delegaten mithilfe von [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) anzuheften, um zu verhindern, dass er vom Garbage Collector wieder gefunden oder verworfen wird. Der Schutz vor einem vorzeitigen Garbage Collection ist erforderlich, aber das Anhebungs bietet mehr Schutz als notwendig, da es die Erfassung verhindert, aber auch die Verlagerung verhindert.
 
-Ein Delegat erneut durch eine Garbagecollection verschoben wird, wirkt sich nicht die zugrunde liegende verwaltete-Rückruf, also <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> wird verwendet, um einen Verweis auf den Delegaten, sodass Verschiebung des Delegaten, aber verhindert die Freigabe hinzufügen. Anstelle von GCHandle Pin_ptr reduziert die Fragmentierungspotenzial des verwalteten Heaps.
+Wenn ein Delegat von einem Garbage Collection neu angeordnet wird, wirkt er sich nicht auf den zugrunde liegenden verwalteten Rückruf aus, sodass <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> verwendet wird, um einen Verweis auf den Delegaten hinzuzufügen und so die Verschiebung des Delegaten zu ermöglichen, aber die Beseitigung zu verhindern. Wenn Sie GCHandle anstelle von pin_ptr verwenden, wird das Fragmentierungs Potenzial des verwalteten Heaps reduziert.
 
-```
+```cpp
 // MarshalDelegate1.cpp
 // compile with: /clr
 #include <iostream>
@@ -79,9 +79,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel ähnelt dem vorherigen Beispiel, aber in diesem Fall wird der Zeiger für die angegebene Funktion von der nicht verwalteten API gespeichert, damit er jederzeit aufgerufen werden kann, die erfordern, dass die automatische speicherbereinigung für einen beliebigen Zeitraum unterdrückt werden. Im folgenden Beispiel wird daher eine globale Instanz des <xref:System.Runtime.InteropServices.GCHandle> um zu verhindern, dass der Delegat wird der verschobene, unabhängig vom Gültigkeitsbereich der Funktion. Wie im ersten Beispiel erläutert wird, mithilfe von Pin_ptr ist nicht für diese Beispiele, aber in diesem Fall wäre nicht funktioniert dennoch wie der Gültigkeitsbereich der Pin_ptr auf eine einzelne Funktion beschränkt ist.
+Das folgende Beispiel ähnelt dem vorherigen Beispiel, aber in diesem Fall wird der bereitgestellte Funktionszeiger von der nicht verwalteten API gespeichert, sodass er jederzeit aufgerufen werden kann, sodass Garbage Collection für eine beliebige Zeitspanne unterdrückt werden muss. Im folgenden Beispiel wird eine globale Instanz von <xref:System.Runtime.InteropServices.GCHandle> verwendet, um zu verhindern, dass der Delegat unabhängig vom Funktionsbereich verschoben wird. Wie im ersten Beispiel erläutert, ist die Verwendung von pin_ptr für diese Beispiele unnötig, aber in diesem Fall funktioniert nicht trotzdem, da der Bereich eines pin_ptr auf eine einzelne Funktion beschränkt ist.
 
-```
+```cpp
 // MarshalDelegate2.cpp
 // compile with: /clr
 #include <iostream>

@@ -1,25 +1,25 @@
 ---
-title: 'Vorgehensweise: Verwenden von Ereignissen in C++ / CLI'
+title: 'Gewusst wie: Verwenden von Ereignissen in C++/CLI'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - events [C++], accessing in interfaces
 ms.assetid: fbf452dc-2dd7-4322-adc0-656512d654d1
-ms.openlocfilehash: 6b4ecbba5651341965d2cf4df5b5ad2ead7f9f26
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dbaffaa42b5cfaf60c41694653651ce0bb0fc199
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387174"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545174"
 ---
-# <a name="how-to-use-events-in-ccli"></a>Vorgehensweise: Verwenden von Ereignissen in C++ / CLI
+# <a name="how-to-use-events-in-ccli"></a>Gewusst wie: Verwenden von Ereignissen in C++/CLI
 
-In diesem Artikel wird gezeigt, wie eine Schnittstelle, die ein Ereignis und eine Funktion zum Aufrufen dieses Ereignis deklariert, und die Klasse und ein Ereignishandler, die die Schnittstelle implementieren.
+In diesem Artikel wird gezeigt, wie Sie eine Schnittstelle verwenden, die ein Ereignis und eine Funktion zum Aufrufen dieses Ereignisses deklariert, sowie die Klasse und den Ereignishandler, die die-Schnittstelle implementieren.
 
-## <a name="interface-events"></a>Ereignisse der Benutzeroberfläche
+## <a name="interface-events"></a>Schnittstellen Ereignisse
 
-Im folgenden Codebeispiel wird ein Ereignishandler hinzugefügt wird, ruft das Ereignis – dadurch wird den Ereignishandler, der den Namen in der Konsole zu schreiben, und den Ereignishandler wieder entfernt.
+Das folgende Codebeispiel fügt einen Ereignishandler hinzu, ruft das-Ereignis auf – das bewirkt, dass der Ereignishandler seinen Namen in die Konsole schreibt – und entfernt dann den-Ereignishandler.
 
-```
+```cpp
 // mcppv2_events2.cpp
 // compile with: /clr
 using namespace System;
@@ -71,11 +71,11 @@ int main () {
 EventReceiver::Handler
 ```
 
-## <a name="custom-accessor-methods"></a>Benutzerdefinierte Zugriffsmethoden
+## <a name="custom-accessor-methods"></a>Benutzerdefinierte Accessormethoden
 
-Das folgende Beispiel zeigt, wie Sie das Verhalten eines Ereignisses zu definieren, wenn Ereignishandler hinzugefügt oder entfernt werden, und wenn ein Ereignis ausgelöst wird.
+Im folgenden Beispiel wird gezeigt, wie das Verhalten eines Ereignisses beim Hinzufügen oder Entfernen von Handlern definiert wird und wann ein Ereignis ausgelöst wird.
 
-```
+```cpp
 // mcppv2_events6.cpp
 // compile with: /clr
 using namespace System;
@@ -163,11 +163,11 @@ In event handler H1
 In event handler H2 with args 1 and 2.2
 ```
 
-## <a name="override-default-access-on-add-remove-and-raise-accessors"></a>Außerkraftsetzung der Standardzugriff auf Hinzufügen, entfernen und Auslösen von Accessoren
+## <a name="override-default-access-on-add-remove-and-raise-accessors"></a>Standard Zugriff für Add-, Remove-und Raise-Accessoren überschreiben
 
-Dieses Beispiel zeigt, wie Sie den Standardzugriff auf das Hinzufügen, entfernen und Ereignisse Raise-Methoden außer Kraft setzen:
+Dieses Beispiel zeigt, wie der Standard Zugriff auf die Methoden zum Hinzufügen, entfernen und Aufrufen von Ereignissen überschrieben wird:
 
-```
+```cpp
 // mcppv2_events3.cpp
 // compile with: /clr
 public delegate void f(int);
@@ -223,9 +223,9 @@ int main() {
 
 ## <a name="multiple-event-handlers"></a>Mehrere Ereignishandler
 
-Ereignisempfänger oder irgendeinen anderen Clientcode kann ein oder mehrere Handler auf ein Ereignis hinzufügen.
+Ein Ereignis Empfänger oder beliebiger anderer Client Code kann einem Ereignis einen oder mehrere Handler hinzufügen.
 
-```
+```cpp
 // mcppv2_events4.cpp
 // compile with: /clr
 using namespace System;
@@ -302,9 +302,9 @@ DblClickAgain(s=System.Char[])
 
 ## <a name="static-events"></a>Statische Ereignisse
 
-Das folgende Beispiel zeigt, wie Sie definieren und Verwenden statischer Ereignisse.
+Im folgenden Beispiel wird gezeigt, wie statische Ereignisse definiert und verwendet werden.
 
-```
+```cpp
 // mcppv2_events7.cpp
 // compile with: /clr
 using namespace System;
@@ -390,11 +390,11 @@ In event handler H1
 In event handler H2 with args 22 and 22.22
 ```
 
-## <a name="virtual-events"></a>Virtuelle Veranstaltungen
+## <a name="virtual-events"></a>Virtuelle Ereignisse
 
-In diesem Beispiel werden virtuelle verwaltete Ereignisse in einer Schnittstelle und die Klasse implementiert:
+In diesem Beispiel werden virtuelle, verwaltete Ereignisse in einer Schnittstelle und Klasse implementiert:
 
-```
+```cpp
 // mcppv2_events5.cpp
 // compile with: /clr
 using namespace System;
@@ -476,9 +476,9 @@ In handler H1
 In handler H2 with args 1 and 2.2
 ```
 
-Ein einfaches Ereignis kann nicht angegeben werden, außer Kraft setzen oder ein Ereignis der Basisklasse auszublenden.  Sie müssen alle Accessorfunktionen des Ereignisses zu definieren, und geben Sie dann die `new` oder `override` -Schlüsselwort in den einzelnen Accessor-Funktionen.
+Ein einfaches Ereignis kann nicht angegeben werden, um ein Basisklassen Ereignis zu überschreiben oder auszublenden.  Sie müssen alle Accessor-Funktionen des Ereignisses definieren und dann für jede Accessorfunktion die `new` oder `override`-Schlüsselwort angeben.
 
-```
+```cpp
 // mcppv2_events5_a.cpp
 // compile with: /clr /c
 delegate void Del();
@@ -510,9 +510,9 @@ ref struct C : B {
 
 ## <a name="abstract-events"></a>Abstrakte Ereignisse
 
-Das folgende Beispiel zeigt, wie Sie ein abstraktes Ereignis implementiert wird.
+Im folgenden Beispiel wird gezeigt, wie ein abstraktes Ereignis implementiert wird.
 
-```
+```cpp
 // mcppv2_events10.cpp
 // compile with: /clr /W1
 using namespace System;
@@ -593,11 +593,11 @@ hi
 hello from Event2
 ```
 
-## <a name="raising-events-that-are-defined-in-a-different-assembly"></a>Auslösen von Ereignissen, die in einer anderen Assembly definiert sind
+## <a name="raising-events-that-are-defined-in-a-different-assembly"></a>Ereignisse, die in einer anderen Assembly definiert sind
 
-Ein Ereignis und Ereignishandler können von einer anderen Assembly in einer Assembly definiert, und genutzt werden.
+Ein Ereignis-und Ereignishandler kann in einer Assembly definiert und von einer anderen Assembly genutzt werden.
 
-```
+```cpp
 // mcppv2_events8.cpp
 // compile with: /LD /clr
 using namespace System;
@@ -613,9 +613,9 @@ public:
 };
 ```
 
-Dieser Client verarbeitet des Ereignis:
+Dieser Client Code verwendet das-Ereignis:
 
-```
+```cpp
 // mcppv2_events9.cpp
 // compile with: /clr
 #using "mcppv2_events8.dll"

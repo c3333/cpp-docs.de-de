@@ -18,7 +18,6 @@ f1_keywords:
 - ATL.CDataSource.GetProperties
 - CDataSource.GetProperties
 - ATL::CDataSource::GetProperties
-- GetProperties
 - ATL::CDataSource::GetProperty
 - ATL.CDataSource.GetProperty
 - CDataSource.GetProperty
@@ -57,16 +56,16 @@ helpviewer_keywords:
 - OpenWithPromptFileName method
 - OpenWithServiceComponents method
 ms.assetid: 99bf862c-9d5c-4117-9501-aa0e2672085c
-ms.openlocfilehash: 2564d4d9b0a2e5df1f575d6f2627ce80f48533c1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d97138b548a3e303898ee2bafde88af38aa78f40
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176082"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545768"
 ---
 # <a name="cdatasource-class"></a>CDataSource-Klasse
 
-Entspricht einer OLE DB-Datenquellenobjekt, das eine Verbindung über einen Anbieter mit einer Datenquelle darstellt.
+Entspricht einem OLE DB-Datenquellen Objekt, das eine Verbindung über einen Anbieter mit einer Datenquelle darstellt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -74,7 +73,7 @@ Entspricht einer OLE DB-Datenquellenobjekt, das eine Verbindung über einen Anbi
 class CDataSource
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
@@ -84,25 +83,25 @@ class CDataSource
 
 |||
 |-|-|
-|[Schließen](#close)|Schließt die Verbindung.|
-|[GetInitializationString](#getinitializationstring)|Ruft die Initialisierungszeichenfolge der Datenquelle, die derzeit geöffnet ist.|
-|[GetProperties](#getproperties)|Ruft die Werte der Eigenschaften, die derzeit für die verbundene Datenquelle festgelegt.|
-|[GetProperty](#getproperty)|Ruft den Wert einer einzelnen Eigenschaft, die derzeit für die verbundene Datenquelle festgelegt.|
-|[Öffnen](#open)|Erstellt eine Verbindung zu einem Anbieter (Datenquelle) entweder eine `CLSID`, `ProgID`, oder ein `CEnumerator` Moniker, die vom Aufrufer bereitgestellt wird.|
+|[Close](#close)|Schließen der Verbindung.|
+|[GetInitializationString](#getinitializationstring)|Ruft die Initialisierungs Zeichenfolge der Datenquelle ab, die derzeit geöffnet ist.|
+|[GetProperties](#getproperties)|Ruft die Werte der Eigenschaften ab, die derzeit für die verbundene Datenquelle festgelegt sind.|
+|[GetProperty](#getproperty)|Ruft den Wert einer einzelnen Eigenschaft ab, die derzeit für die verbundene Datenquelle festgelegt ist.|
+|[Öffnen](#open)|Erstellt eine Verbindung mit einem Anbieter (Datenquelle) unter Verwendung eines `CLSID`, `ProgID`oder eines `CEnumerator` Monikers, der vom Aufrufer bereitgestellt wird.|
 |[OpenFromFileName](#openfromfilename)|Öffnet eine Datenquelle aus einer Datei, die durch den vom Benutzer bereitgestellten Dateinamen angegeben wird.|
-|[OpenFromInitializationString](#openfrominitializationstring)|Öffnet die Datenquelle, die von einer Initialisierungszeichenfolge angegeben.|
-|[OpenWithPromptFileName](#openwithpromptfilename)|Ermöglicht dem Benutzer, wählen Sie eine zuvor erstellte Data Link-Datei, um den entsprechenden Datenquellentyp zu öffnen.|
-|[OpenWithServiceComponents](#openwithservicecomponents)|Öffnet ein Datenquellenobjekt, das mit dem Data Link-Dialogfeld.|
+|[OpenFromInitializationString](#openfrominitializationstring)|Öffnet die Datenquelle, die durch eine Initialisierungs Zeichenfolge angegeben wird.|
+|[OpenWithPromptFileName](#openwithpromptfilename)|Ermöglicht es dem Benutzer, eine zuvor erstellte Daten Verknüpfungs Datei auszuwählen, um die entsprechende Datenquelle zu öffnen.|
+|[OpenWithServiceComponents](#openwithservicecomponents)|Öffnet ein Datenquellen Objekt mit dem Dialogfeld Daten Link.|
 
 ## <a name="remarks"></a>Hinweise
 
-Mindestens eine Datenbank-ereignissitzungen können für eine einzelne Verbindung erstellt werden. Diese Sitzungen werden durch dargestellt `CSession`. Rufen Sie [CDataSource:: Open](../../data/oledb/cdatasource-open.md) zum Öffnen der Verbindung vor dem Erstellen einer Sitzungs mit `CSession::Open`.
+Eine oder mehrere Daten Bank Sitzungen können für eine einzelne Verbindung erstellt werden. Diese Sitzungen werden durch `CSession`dargestellt. Sie müssen [CDataSource:: Open](../../data/oledb/cdatasource-open.md) abrufen, um die Verbindung zu öffnen, bevor Sie eine Sitzung mit `CSession::Open`erstellen.
 
-Ein Beispiel zur Verwendung für `CDataSource`, finden Sie unter den [CatDB](../../overview/visual-cpp-samples.md) Beispiel.
+Ein Beispiel für die Verwendung von `CDataSource`finden [Sie im Beispiel für das Beispiel.](../../overview/visual-cpp-samples.md)
 
-## <a name="close"></a> CDataSource:: Close
+## <a name="cdatasourceclose"></a><a name="close"></a>CDataSource:: Close
 
-Schließt die Verbindung durch die Freigabe der `m_spInit` Zeiger.
+Schließt die Verbindung, indem Sie den `m_spInit` Zeiger freigibt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -110,9 +109,9 @@ Schließt die Verbindung durch die Freigabe der `m_spInit` Zeiger.
 void Close() throw();
 ```
 
-## <a name="getinitializationstring"></a> CDataSource::GetInitializationString
+## <a name="cdatasourcegetinitializationstring"></a><a name="getinitializationstring"></a>CDataSource:: getinitializationstring
 
-Ruft die Initialisierungszeichenfolge für die Datenquelle, die derzeit geöffnet ist.
+Ruft die Initialisierungs Zeichenfolge einer Datenquelle ab, die derzeit geöffnet ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -123,23 +122,23 @@ HRESULT GetInitializationString(BSTR* pInitializationString,
 
 #### <a name="parameters"></a>Parameter
 
-*pInitializationString*<br/>
-[out] Ein Zeiger auf die Initialisierungszeichenfolge.
+*pinitializationstring*<br/>
+vorgenommen Ein Zeiger auf die Initialisierungs Zeichenfolge.
 
-*bIncludePassword*<br/>
-[in] **"true"** Wenn Zeichenfolge enthält, ein Kennwort ein; andernfalls **"false"**.
+*bincludepassword*<br/>
+in **true** , wenn die Zeichenfolge ein Kennwort enthält. andernfalls **false**.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Die resultierende Initialisierungszeichenfolge kann verwendet werden, um diese datenquellenverbindung später erneut zu öffnen.
+Die resultierende Initialisierungs Zeichenfolge kann verwendet werden, um diese Datenquellen Verbindung später erneut zu öffnen.
 
-## <a name="getproperties"></a> CDataSource:: GetProperties
+## <a name="cdatasourcegetproperties"></a><a name="getproperties"></a>CDataSource:: GetProperties
 
-Gibt Informationen über die Eigenschaft für das verbundene Objekt angefordert.
+Gibt die für das verbundene Datenquellen Objekt angeforderten Eigenschaften Informationen zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -152,19 +151,19 @@ HRESULT GetProperties(ULONG ulPropIDSets,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IDBProperties:: GetProperties](/previous-versions/windows/desktop/ms714344(v=vs.85)) in die *OLE DB-Programmierreferenz* in das Windows SDK.
+Siehe [IDBProperties:: GetProperties](/previous-versions/windows/desktop/ms714344(v=vs.85)) in der *OLE DB Programmierer-Referenz* im Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Verwenden Sie zum Abrufen einer einzelnen Eigenschaft [GetProperty](../../data/oledb/cdatasource-getproperty.md).
+Um eine einzelne Eigenschaft zu erhalten, verwenden Sie [GetProperty](../../data/oledb/cdatasource-getproperty.md).
 
-## <a name="getproperty"></a> CDataSource:: GetProperty
+## <a name="cdatasourcegetproperty"></a><a name="getproperty"></a>CDataSource:: GetProperty
 
-Gibt den Wert einer angegebenen Eigenschaft für das verbundene Objekt.
+Gibt den Wert einer angegebenen Eigenschaft für das verbundene Datenquellen Objekt zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -177,25 +176,25 @@ HRESULT GetProperty(const GUID& guid,
 #### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-[in] Eine GUID zum Identifizieren des Eigenschaftensatzes für die Eigenschaft zurückgegeben werden sollen.
+in Eine GUID, die den Eigenschaften Satz identifiziert, für den die Eigenschaft zurückgegeben werden soll.
 
-*propid*<br/>
-[in] Eigenschafts-ID für die Eigenschaft zurückgegeben.
+*PROPID*<br/>
+in Die eigen schafts-ID für die zurück zugebende Eigenschaft.
 
-*pVariant*<br/>
-[out] Ein Zeiger auf die Variante, in denen `GetProperty` gibt den Wert der Eigenschaft zurück.
+*pvariant*<br/>
+vorgenommen Ein Zeiger auf die Variante, bei der `GetProperty` den Wert der-Eigenschaft zurückgibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Rufen Sie mehrere Eigenschaften mit [GetProperties](../../data/oledb/cdatasource-getproperties.md).
+Verwenden Sie " [GetProperties](../../data/oledb/cdatasource-getproperties.md)", um mehrere Eigenschaften zu erhalten.
 
-## <a name="open"></a> CDataSource:: Open
+## <a name="cdatasourceopen"></a><a name="open"></a>CDataSource:: Open
 
-Öffnet eine Verbindung mit einer Datenquelle mithilfe einer `CLSID`, `ProgID`, oder `CEnumerator` Moniker oder zeigt dem Benutzer ein locatordialogfeld.
+Öffnet eine Verbindung mit einer Datenquelle mit einem `CLSID`, `ProgID`oder `CEnumerator` Moniker oder fordert den Benutzer zur Eingabe eines Serverlocatorpunkt-Dialog Felds auf.
 
 ### <a name="syntax"></a>Syntax
 
@@ -240,56 +239,56 @@ HRESULT Open(LPCSTR szProgID,
 
 #### <a name="parameters"></a>Parameter
 
-*clsid*<br/>
-[in] Die `CLSID` des Datenanbieters.
+*CLSID*<br/>
+in Die `CLSID` des Datenanbieters.
 
-*pPropSet*<br/>
-[in] Ein Zeiger auf ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Strukturen, die Eigenschaften und Werte festgelegt werden. Finden Sie unter [Eigenschaftensätze und Eigenschaftengruppen](/previous-versions/windows/desktop/ms713696(v=vs.85)) in die *OLE DB-Programmierreferenz* in das Windows SDK.
+*ppropset*<br/>
+in Ein Zeiger auf ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, das Eigenschaften und Werte enthält, die festgelegt werden sollen. Informationen zu [Eigenschafts Sätzen und Eigenschafts Gruppen](/previous-versions/windows/desktop/ms713696(v=vs.85)) finden Sie in der *OLE DB Programmierer-Referenz* im Windows SDK.
 
-*nPropertySets*<br/>
-[in] Die Anzahl der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Strukturen zu übergeben, der *DBPROPSET* Argument.
+*npropertysets*<br/>
+in Die Anzahl von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, die im *ppropset* -Argument übergeben werden.
 
 *pName*<br/>
 [in] Der Name der Datenbank, zu der eine Verbindung hergestellt werden soll.
 
-*pUserName*<br/>
+*pusername*<br/>
 [in] Der Name des Benutzers.
 
 *pPassword*<br/>
 [in] Das Benutzerkennwort.
 
-*nInitMode*<br/>
-[in] Initialisierungsmodus der Datenbank. Finden Sie unter [Eigenschaften zur Datenquelleninitialisierung](/previous-versions/windows/desktop/ms723127(v=vs.85))in die *OLE DB-Programmierreferenz* im Windows SDK für eine Liste gültiger initialisierungsmodi. Wenn *nInitMode* ist 0 (null), ohne Initialisierung Modus ist in der zum Öffnen der Verbindung verwendeten Eigenschaftensatz enthalten.
+*ninitmode*<br/>
+[in] Initialisierungsmodus der Datenbank. Eine Liste gültiger Initialisierungs Modi finden Sie unter [Initialisierungs Eigenschaften](/previous-versions/windows/desktop/ms723127(v=vs.85))in der *OLE DB-Programmier Referenz* im Windows SDK. Wenn *ninitmode* gleich NULL ist, ist kein Initialisierungs Modus im Eigenschaften Satz enthalten, der zum Öffnen der Verbindung verwendet wird.
 
-*szProgID*<br/>
+*szprogid*<br/>
 [in] Ein Programmbezeichner.
 
 *enumerator*<br/>
-[in] Ein [CEnumerator](../../data/oledb/cenumerator-class.md) Objekt zum Abrufen eines Monikers zum Öffnen der Verbindung, wenn der Aufrufer nicht angegeben ist, verwendet eine `CLSID`.
+in Ein [cenenumerator](../../data/oledb/cenumerator-class.md) -Objekt, das zum Abrufen eines Monikers zum Öffnen der Verbindung verwendet wird, wenn der Aufrufer keine `CLSID`angibt.
 
 *hWnd*<br/>
-[in] Handle für das Fenster, das als das übergeordnete Element des Dialogfelds festgelegt werden soll. Mit der funktionsüberladung, die verwendet die *hWnd* Parameter werden Dienstkomponenten automatisch aufgerufen; Siehe Hinweise für Details.
+[in] Handle für das Fenster, das als das übergeordnete Element des Dialogfelds festgelegt werden soll. Wenn Sie die Funktions Überladung verwenden, die den *HWND* -Parameter verwendet, werden automatisch Dienst Komponenten aufgerufen. Weitere Informationen finden Sie in den hinweisen.
 
-*dwPromptOptions*<br/>
+*dwpromptoptions*<br/>
 [in] Bestimmt den Stil des anzuzeigenden Locatordialogfelds. Mögliche Werte sind in Msdasc.h aufgeführt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Die methodenüberladung, die verwendet die *hWnd* Parameter öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; diese DLL enthält die Implementierung von dienstkomponentenfunktionen wie z. B. Ressourcenpooling, automatische Eintragung von Transaktionen und So weiter. Weitere Informationen finden Sie unter "OLE DB-Dienste" in der OLE DB Programmer's Reference unter [ https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true ](https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true).
+Die-Methoden Überladung, die den *HWND* -Parameter verwendet, öffnet ein Datenquellen Objekt mit den Dienst Komponenten in Oledb32. dll. Diese DLL enthält die Implementierung von Dienst Komponenten Features wie z. b. Ressourcen Pooling, automatische Transaktions Eintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
-Die methodenüberladungen, die keine verwenden die *hWnd* Parameter öffnen ein Datenquellenobjekt ohne mit den Dienstkomponenten im oledb32.dll. Ein [CDataSource](../../data/oledb/cdatasource-class.md) -Objekt, mit diesen funktionsüberladungen geöffnet wird in der Lage, die Funktionalität von Dienstkomponenten zu nutzen.
+Die Methoden Überladungen, die den *HWND* -Parameter nicht verwenden, öffnen ein Datenquellen Objekt, ohne die Dienst Komponenten in Oledb32. dll zu verwenden. Ein [CDataSource](../../data/oledb/cdatasource-class.md) -Objekt, das mit diesen Funktions Überladungen geöffnet wird, kann keine der Funktionen von Dienst Komponenten nutzen.
 
 ### <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie eine Jet 4.0-Datenquelle mit OLE DB-Vorlagen geöffnet werden kann. Die Jet-Datenquelle wird OLE DB-Datenquelle behandelt. Allerdings den Aufruf von `Open` zwei Eigenschaftensätze: für DBPROPSET_DBINIT und die andere für DBPROPSET_JETOLEDB_DBINIT, sodass Sie DBPROP_JETOLEDB_DATABASEPASSWORD festlegen können.
+Der folgende Code zeigt, wie eine Jet 4.0-Datenquelle mit OLE DB-Vorlagen geöffnet werden kann. Die Jet-Datenquelle wird OLE DB-Datenquelle behandelt. Der `Open` Aufrufe benötigt jedoch zwei Eigenschaften Sätze: einen für DBPROPSET_DBINIT und den anderen für DBPROPSET_JETOLEDB_DBINIT, damit Sie DBPROP_JETOLEDB_DATABASEPASSWORD festlegen können.
 
 [!code-cpp[NVC_OLEDB_Consumer#7](../../data/oledb/codesnippet/cpp/cdatasource-open_1.cpp)]
 
-## <a name="openfromfilename"></a> CDataSource::OpenFromFileName
+## <a name="cdatasourceopenfromfilename"></a><a name="openfromfilename"></a>CDataSource:: openfromfilename
 
 Öffnet eine Datenquelle aus einer Datei, die durch den vom Benutzer bereitgestellten Dateinamen angegeben wird.
 
@@ -301,22 +300,22 @@ HRESULT OpenFromFileName(LPCOLESTR szFileName) throw();
 
 #### <a name="parameters"></a>Parameter
 
-*szFileName*<br/>
+*szFilename*<br/>
 [in] Der Name einer Datei, in der Regel eine Datenquellenverbindungsdatei (UDL-Datei).
 
-Weitere Informationen zu Datenverknüpfungsdateien (UDL-Dateien), finden Sie unter [Data Link-API – Übersicht](/previous-versions/windows/desktop/ms718102(v=vs.85)) im Windows SDK.
+Weitere Informationen zu Daten Verknüpfungs Dateien (UDL-Dateien) finden Sie unter Übersicht über die [Daten Link-API](/previous-versions/windows/desktop/ms718102(v=vs.85)) in der Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie unter "OLE DB-Dienste" in der OLE DB Programmer's Reference unter [ https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true ](https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true).
+Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
-## <a name="openfrominitializationstring"></a> CDataSource::OpenFromInitializationString
+## <a name="cdatasourceopenfrominitializationstring"></a><a name="openfrominitializationstring"></a>CDataSource:: OpenFromInitializationString
 
-Öffnet eine Datenquelle, die vom Benutzer bereitgestellten Initialisierungszeichenfolge angegeben.
+Öffnet eine Datenquelle, die von der vom Benutzer bereitgestellten Initialisierungs Zeichenfolge angegeben wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -327,23 +326,23 @@ HRESULT OpenFromInitializationString(LPCOLESTR szInitializationString,
 
 #### <a name="parameters"></a>Parameter
 
-*szInitializationString*<br/>
-[in] Die Initialisierungszeichenfolge.
+*szinitializationstring*<br/>
+in Die Initialisierungs Zeichenfolge.
 
-*fPromptForInfo*<br/>
-[in] Wenn dieses Argument, um festgelegt wird **"true"**, klicken Sie dann `OpenFromInitializationString` wird, legen Sie die DBPROP_INIT_PROMPT-Eigenschaft auf DBPROMPT_COMPLETEREQUIRED, der angibt, dass der Benutzer aufgefordert werden, nur, wenn Sie weitere Informationen benötigt werden. Dies eignet sich für Situationen, in denen Initialisierungszeichenfolge eine Datenbank angibt, die ein Kennwort erforderlich ist, aber die Zeichenfolge enthält nicht das Kennwort. Der Benutzer wird aufgefordert werden, für ein Kennwort (oder die fehlenden Informationen) beim Versuch, mit der Datenbank herstellen.
+*"f promptforinfo"*<br/>
+in Wenn dieses Argument auf **true**festgelegt ist, legt `OpenFromInitializationString` die DBPROP_INIT_PROMPT-Eigenschaft auf DBPROMPT_COMPLETEREQUIRED fest, das angibt, dass der Benutzer nur aufgefordert wird, wenn weitere Informationen benötigt werden. Dies ist nützlich für Situationen, in denen die Initialisierungs Zeichenfolge eine Datenbank angibt, für die ein Kennwort erforderlich ist, aber die Zeichenfolge nicht das Kennwort enthält. Wenn Sie versuchen, eine Verbindung mit der Datenbank herzustellen, wird der Benutzer zur Eingabe eines Kennworts (oder anderer fehlender Informationen) aufgefordert.
 
-Der Standardwert ist **"false"**, der angibt, dass der Benutzer niemals aufgefordert (Gruppen DBPROP_INIT_PROMPT auf DBPROMPT_NOPROMPT) sein.
+Der Standardwert ist **false**. er gibt an, dass der Benutzer nie aufgefordert wird (legt DBPROP_INIT_PROMPT auf DBPROMPT_NOPROMPT).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
 Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw.
 
-## <a name="openwithpromptfilename"></a> CDataSource::OpenWithPromptFileName
+## <a name="cdatasourceopenwithpromptfilename"></a><a name="openwithpromptfilename"></a>CDataSource:: openwithpromptfilename
 
 Mit dieser Methode wird dem Benutzer ein Dialogfeld angezeigt und anschließend eine Datenquelle mithilfe der vom Benutzer angegebenen Datei geöffnet.
 
@@ -360,21 +359,21 @@ HRESULT OpenWithPromptFileName(HWND hWnd = GetActiveWindow(   ),
 *hWnd*<br/>
 [in] Handle für das Fenster, das als das übergeordnete Element des Dialogfelds festgelegt werden soll.
 
-*dwPromptOptions*<br/>
+*dwpromptoptions*<br/>
 [in] Bestimmt den Stil des anzuzeigenden Locatordialogfelds. Mögliche Werte sind in Msdasc.h aufgeführt.
 
-*szInitialDirectory*<br/>
+*szinitialdirectory*<br/>
 [in] Das im Locatordialogfeld anzuzeigende Ausgangsverzeichnis.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie unter "OLE DB-Dienste" in der OLE DB Programmer's Reference unter [ https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true ](https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true).
+Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
-## <a name="openwithservicecomponents"></a> CDataSource:: Openwithservicecomponents
+## <a name="cdatasourceopenwithservicecomponents"></a><a name="openwithservicecomponents"></a>CDataSource:: openwithservicecomponents
 
 Öffnet ein Datenquellenobjekt mithilfe der Dienstkomponenten in „oledb32.dll“.
 
@@ -392,25 +391,25 @@ HRESULT OpenWithServiceComponents (LPCSTR szProgID,
 
 #### <a name="parameters"></a>Parameter
 
-*clsid*<br/>
-[in] Die `CLSID` eines Datenanbieters.
+*CLSID*<br/>
+in Der `CLSID` eines Datenanbieters.
 
-*szProgID*<br/>
+*szprogid*<br/>
 [in] Programm-ID eines Datenanbieters.
 
-*pPropset*<br/>
-[in] Ein Zeiger auf ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Strukturen, die Eigenschaften und Werte festgelegt werden. Finden Sie unter [Eigenschaftensätze und Eigenschaftengruppen](/previous-versions/windows/desktop/ms713696(v=vs.85)) in die *OLE DB-Programmierreferenz* in das Windows SDK. Wenn das Datenquellenobjekt initialisiert wird, müssen die Eigenschaften zur Eigenschaftsquelle „Datenquelle“ gehören. Wenn die gleiche Eigenschaft in mehr als einmal angegeben ist *DBPROPSET*, dann ist der anbieterspezifischen welcher Wert verwendet wird. Wenn *UlPropSets* 0 (null), ist dieser Parameter wird ignoriert.
+*ppropset*<br/>
+in Ein Zeiger auf ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, das Eigenschaften und Werte enthält, die festgelegt werden sollen. Informationen zu [Eigenschafts Sätzen und Eigenschafts Gruppen](/previous-versions/windows/desktop/ms713696(v=vs.85)) finden Sie in der *OLE DB Programmierer-Referenz* im Windows SDK. Wenn das Datenquellenobjekt initialisiert wird, müssen die Eigenschaften zur Eigenschaftsquelle „Datenquelle“ gehören. Wenn die gleiche Eigenschaft in *ppropset*mehrmals angegeben wird, ist der verwendete Wert Anbieter spezifisch. Wenn *ulpropsets* NULL ist, wird dieser Parameter ignoriert.
 
-*ulPropSets*<br/>
-[in] Die Anzahl der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) Strukturen zu übergeben, der *DBPROPSET* Argument. Wenn dies 0 (null) ist, ignoriert der Anbieter *DBPROPSET*.
+*ulpropsets*<br/>
+in Die Anzahl von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, die im *ppropset* -Argument übergeben werden. Wenn dieser Wert 0 (null) ist, ignoriert der Anbieter *ppropset*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein standard-HRESULT.
+Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Hinweise
 
-Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie unter "OLE DB-Dienste" in der OLE DB Programmer's Reference unter [ https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true ](https://msdn.microsoft.com/library/default.asp?url=/library/oledb/htm/oledbole_db_services.asp?frame=true).
+Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
 ## <a name="see-also"></a>Siehe auch
 

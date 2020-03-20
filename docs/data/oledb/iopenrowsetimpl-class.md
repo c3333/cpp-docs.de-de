@@ -5,7 +5,6 @@ f1_keywords:
 - IOpenRowsetImpl
 - IOpenRowsetImpl.CreateRowset
 - IOpenRowsetImpl::CreateRowset
-- CreateRowset
 - OpenRowset
 - IOpenRowsetImpl::OpenRowset
 - IOpenRowsetImpl.OpenRowset
@@ -14,16 +13,16 @@ helpviewer_keywords:
 - CreateRowset method
 - OpenRowset method
 ms.assetid: d259cedc-1db4-41cf-bc9f-5030907ab486
-ms.openlocfilehash: 6f0dfb90b0ea79e115f459968558e48ae9827e40
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 66fce9d2ffe63798738be1658a5328e907395a54
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390775"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545906"
 ---
 # <a name="iopenrowsetimpl-class"></a>IOpenRowsetImpl-Klasse
 
-Stellt die Implementierung für die `IOpenRowset` Schnittstelle.
+Stellt eine Implementierung für die `IOpenRowset`-Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,12 +33,12 @@ class IOpenRowsetImpl : public IOpenRowset
 
 ### <a name="parameters"></a>Parameter
 
-*SessionClass*<br/>
-Abgeleitet von die Klasse `IOpenRowsetImpl`.
+*Sessionclass*<br/>
+Die von `IOpenRowsetImpl`abgeleitete Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
 ## <a name="members"></a>Member
 
@@ -47,16 +46,16 @@ Abgeleitet von die Klasse `IOpenRowsetImpl`.
 
 |||
 |-|-|
-|[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt. Nicht direkt vom Benutzer aufgerufen.|
-|[OpenRowset](#openrowset)|Öffnet und gibt ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem Index enthält. (Nicht im ATLDB. H)|
+|[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt. Wird nicht direkt vom Benutzer aufgerufen.|
+|[OPENROWSET](#openrowset)|Öffnet ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem einzelnen Index enthält, und gibt es zurück. (Nicht in Atldb. Micha|
 
 ## <a name="remarks"></a>Hinweise
 
-Die [IOpenRowset](/previous-versions/windows/desktop/ms716946(v=vs.85)) Schnittstelle ist erforderlich, damit ein Sitzungsobjekt. Es wird geöffnet und gibt ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem Index enthält.
+Die [IOpenRowset](/previous-versions/windows/desktop/ms716946(v=vs.85)) -Schnittstelle ist für ein Sitzungs Objekt obligatorisch. Er wird geöffnet und gibt ein Rowset zurück, das alle Zeilen aus einer einzelnen Basistabelle oder einem einzelnen Index enthält.
 
-## <a name="createrowset"></a> IOpenRowsetImpl::CreateRowset
+## <a name="iopenrowsetimplcreaterowset"></a><a name="createrowset"></a>Iopenrowsetimpl:: kreaterowset
 
-Erstellt ein Rowsetobjekt. Nicht direkt vom Benutzer aufgerufen. Finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in die *OLE DB-Programmierreferenz.*
+Erstellt ein Rowsetobjekt. Wird nicht direkt vom Benutzer aufgerufen. Weitere Informationen finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in der *OLE DB Programmierer-Referenz.*
 
 ### <a name="syntax"></a>Syntax
 
@@ -75,16 +74,16 @@ HRESULT CreateRowset(IUnknown* pUnkOuter,
 #### <a name="parameters"></a>Parameter
 
 *RowsetClass*<br/>
-Ein Member von Vorlage-Klasse, die Rowset-Klasse für den Benutzer darstellt. In der Regel vom Assistenten generiert.
+Ein Vorlagen Klassenmember, der die Rowsetklasse des Benutzers darstellt. Wird normalerweise vom Assistenten generiert.
 
-*pRowsetObj*<br/>
-[out] Ein Zeiger auf eine Rowset-Objekt. Dieser Parameter wird in der Regel nicht verwendet, aber es kann verwendet werden, wenn Sie mehr Arbeit für das Rowset ausführen müssen, vor der Übergabe an ein COM-Objekt. Die Lebensdauer des *pRowsetObj* gebunden ist, indem *PpRowset*.
+*prowsetobj*<br/>
+vorgenommen Ein Zeiger auf ein Rowsetobjekt. In der Regel wird dieser Parameter nicht verwendet, kann jedoch verwendet werden, wenn Sie vor der Übergabe an ein COM-Objekt mehr Arbeit an dem Rowset ausführen müssen. Die Lebensdauer von *prowsetobj* wird durch *ppRowset*gebunden.
 
-Andere Parameter, finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in die *OLE DB-Programmiererreferenz.*
+Informationen zu anderen Parametern finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in der *OLE DB Programmierer-Referenz.*
 
-## <a name="openrowset"></a> IOpenRowsetImpl::OpenRowset
+## <a name="iopenrowsetimplopenrowset"></a><a name="openrowset"></a>Iopenrowsetimpl:: OPENROWSET
 
-Öffnet und gibt ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem Index enthält.
+Öffnet ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem einzelnen Index enthält, und gibt es zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -100,13 +99,13 @@ HRESULT OpenRowset(IUnknown* pUnkOuter,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 ### <a name="remarks"></a>Hinweise
 
-Diese Methode wird in ATLDB nicht gefunden. H. Sie wird von ATL-Objektassistenten erstellt, wenn Sie einen Anbieter erstellen.
+Diese Methode wurde in Atldb nicht gefunden. Micha. Sie wird vom ATL-Objekt-Assistenten erstellt, wenn Sie einen Anbieter erstellen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

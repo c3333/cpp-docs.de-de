@@ -8,12 +8,12 @@ helpviewer_keywords:
 - partial
 - C++/CX, partial
 ms.assetid: 43adf1f5-10c5-44aa-a66f-7507e2bdabf8
-ms.openlocfilehash: eb9b3907008147cb21f04aec5f42e4896fa35b3c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 37406060c3569c417c14bcc98561f8f52a7c6201
+ms.sourcegitcommit: 28eae422049ac3381c6b1206664455dbb56cbfb6
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516475"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "79544399"
 ---
 # <a name="partial--ccli-and-ccx"></a>partial (C++/CLI und C++/CX)
 
@@ -49,27 +49,27 @@ Ein Schlüsselwort, das eine Klasse oder Struktur deklariert, die durch die Wind
 *identifier*<br/>
 Der Name des definierten Typs.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine partielle Klasse unterstützt Szenarien, in denen Sie einen Teil einer Klassendefinition in einer Datei ändern und Software für die automatische Codegenerierung – beispielsweise der XAML Designer – den Code in der gleichen Klasse in einer anderen Datei ändert. Durch Verwendung einer partiellen Klasse können Sie verhindern, dass der automatische Codegenerator Ihren Code überschreibt. In einem Visual Studio-Projekt wird der Modifizierer **partial** automatisch auf die generierte Datei angewendet.
 
-Inhalte: Mit zwei Ausnahmen kann eine partielle Klassendefinition alles enthalten, was die vollständige Klassendefinition enthalten kann, wenn das Schlüsselwort **partial** ausgelassen wurde. Sie können jedoch keinen Klassenzugriff (z.B. `public partial class X { ... };`) oder **declspec** angeben.
+Inhalt: mit zwei Ausnahmen kann eine partielle Klassendefinition alles enthalten, was die vollständige Klassendefinition enthalten kann, wenn das **partielle** Schlüsselwort ausgelassen wird. Sie können jedoch keinen Klassenzugriff (z.B. `public partial class X { ... };`) oder **declspec** angeben.
 
 Zugriffsspezifizierer, die in einer partiellen Klassendefinition für *identifier* verwendet werden, wirken sich nicht auf den Standardzugriff in einer nachfolgenden partiellen oder vollständigen Klassendefinition für *identifier* aus. Inlinedefinitionen statischer Datenmember sind zulässig.
 
-Deklaration: Eine partielle Definition des *identifier*-Typs für eine Klasse führt nur den *identifier*-Typ für den Namen ein. *identifier* kann jedoch nicht in einer Weise verwendet werden, die eine Klassendefinition erfordert. Der *identifier* für den Namen kann nicht zur Größenbestimmung von *identifier* oder zur Verwendung einer Basisklasse oder eines Members von *identifier* verwendet werden, bis der Compiler die vollständige Definition von *identifier* findet.
+Deklaration: eine partielle Definition eines Klassen *Bezeichners* führt nur den namens *Bezeichner*ein, aber der *Bezeichner* kann nicht auf eine Weise verwendet werden, für die eine Klassendefinition erforderlich ist. Der *identifier* für den Namen kann nicht zur Größenbestimmung von *identifier* oder zur Verwendung einer Basisklasse oder eines Members von *identifier* verwendet werden, bis der Compiler die vollständige Definition von *identifier* findet.
 
-Anzahl und Reihenfolge: Es kann null oder mehr partielle Klassendefinitionen für *identifier* geben. Jede partielle Klassendefinition von *identifier* muss lexikalisch einer vollständigen Definition von *identifier* vorangehen (sofern eine vollständige Definition vorhanden ist; andernfalls kann die Klasse außer bei Verwendung von „forward-declared“ nicht verwendet werden). Vorwärtsdeklarationen von *identifier* muss sie jedoch nicht vorangehen. Alle Klassenschlüssel müssen übereinstimmen.
+Anzahl und Reihenfolge: Es können NULL oder mehr partielle Klassendefinitionen für den *Bezeichner*vorhanden sein. Jede partielle Klassendefinition von *identifier* muss lexikalisch einer vollständigen Definition von *identifier* vorangehen (sofern eine vollständige Definition vorhanden ist; andernfalls kann die Klasse außer bei Verwendung von „forward-declared“ nicht verwendet werden). Vorwärtsdeklarationen von *identifier* muss sie jedoch nicht vorangehen. Alle Klassenschlüssel müssen übereinstimmen.
 
-Vollständige Definition: Zum Zeitpunkt der vollständigen Definition der Klasse *identifier* ist das Verhalten so, als ob die Definition von *identifier* alle Basisklassen, Member usw. in der Reihenfolge deklariert hätte, in der sie in den partiellen Klassen gefunden und definiert wurden.
+Vollständige Definition: zum Zeitpunkt der vollständigen Definition des Klassen *Bezeichners*ist das Verhalten das gleiche wie, wenn die Definition des *Bezeichners* alle Basisklassen, Member usw. in der Reihenfolge deklariert hätte, in der Sie in der partiellen Klasse gefunden und definiert wurden.
 
-Vorlagen: Eine partielle Klasse kann keine Vorlage sein.
+Vorlagen: eine partielle Klasse kann keine Vorlage sein.
 
-Generics: Eine partielle Klasse kann generisch sein, wenn die vollständige Definition generisch sein kann. Allerdings muss jede partielle und vollständige Klasse exakt die gleichen generischen Parameter enthalten, einschließlich formaler Parameternamen.
+Generika: eine partielle Klasse kann eine generische Klasse sein, wenn die vollständige Definition generisch sein könnte. Allerdings muss jede partielle und vollständige Klasse exakt die gleichen generischen Parameter enthalten, einschließlich formaler Parameternamen.
 
-Weitere Informationen zur Verwendung des Schlüsselworts **partial** finden Sie unter [Partielle Klassen (C++/CX)](http://go.microsoft.com/fwlink/p/?LinkId=249023).
+Weitere Informationen zur Verwendung des Schlüsselworts **partial** finden Sie unter [Partielle Klassen (C++/CX)](https://go.microsoft.com/fwlink/p/?LinkId=249023).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Voraussetzungen
 
 Compileroption: `/ZW`
 
@@ -79,4 +79,4 @@ Compileroption: `/ZW`
 
 ## <a name="see-also"></a>Siehe auch
 
-[Partielle Klassen (C++-CX)](http://go.microsoft.com/fwlink/p/?LinkId=249023)
+[Partielle Klassen (C++-CX)](https://go.microsoft.com/fwlink/p/?LinkId=249023)

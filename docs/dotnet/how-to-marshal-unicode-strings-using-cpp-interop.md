@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Marshal Unicode Strings Using C++ Interop'
+title: 'Gewusst wie: Marshallen von Unicode-Zeichenfolgen mit C++-Interop'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - data marshaling [C++], strings
 - Unicode, marshaling strings
 ms.assetid: 96c2141d-6c5d-43ef-a1aa-5785afb9a9aa
-ms.openlocfilehash: 37b56834e000cff686557730252f3d425f642772
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f666e52b604e4713f02cb14744ac12a0407366a3
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400551"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79544886"
 ---
-# <a name="how-to-marshal-unicode-strings-using-c-interop"></a>Vorgehensweise: Marshal Unicode Strings Using C++ Interop
+# <a name="how-to-marshal-unicode-strings-using-c-interop"></a>Gewusst wie: Marshallen von Unicode-Zeichenfolgen mit C++-Interop
 
-In diesem Thema wird veranschaulicht, einen Aspekt der Visual C++-Interoperabilität. Weitere Informationen finden Sie unter [mithilfe C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md).
+In diesem Thema wird ein Aspekt der C++ visuellen Interoperabilität veranschaulicht. Weitere Informationen finden Sie unter [using C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md).
 
-Im folgenden code, Beispiele für die Verwendung der [verwaltete, unverwaltete](../preprocessor/managed-unmanaged.md) #pragma-Anweisungen zum Implementieren verwaltet und nicht verwaltete Funktionen in der gleichen Datei, aber diese Funktionen auf die gleiche Weise interagieren, wenn in separaten Dateien definiert. Dateien, die ausschließlich nicht verwaltete Funktionen müssen nicht für die Kompilierung mit [/CLR (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md).
+In den folgenden Codebeispielen werden [verwaltete und nicht verwaltete #pragma-](../preprocessor/managed-unmanaged.md) Direktiven verwendet, um verwaltete und nicht verwaltete Funktionen in der gleichen Datei zu implementieren. diese Funktionen werden jedoch auf die gleiche Weise interagiert, wenn Sie in separaten Dateien definiert werden. Dateien, die nur nicht verwaltete Funktionen enthalten, müssen nicht mit/CLR kompiliert werden [(Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md).
 
-In diesem Thema wird veranschaulicht, wie Unicode-Zeichenfolgen werden, können von einer verwalteten übergeben werden, um eine nicht verwaltete Funktion (und umgekehrt). Für die Interoperation mit anderen Zeichenfolgen-Datentypen, finden Sie unter den folgenden Themen:
+In diesem Thema wird veranschaulicht, wie Unicode-Zeichen folgen von einer verwalteten an eine nicht verwaltete Funktion und umgekehrt übermittelt werden können. Informationen zum interagieren mit anderen Zeichen folgen Typen finden Sie in den folgenden Themen:
 
 - [Vorgehensweise: Marshallen von ANSI-Zeichenfolgen mit C++-Interop](../dotnet/how-to-marshal-ansi-strings-using-cpp-interop.md)
 
@@ -30,9 +30,9 @@ In diesem Thema wird veranschaulicht, wie Unicode-Zeichenfolgen werden, können 
 
 ## <a name="example"></a>Beispiel
 
-Um eine Unicode-Zeichenfolge von einer verwalteten an eine nicht verwaltete Funktion übergeben werden soll, kann die PtrToStringChars-Funktion (deklariert in Vcclr.h) verwendet werden, Zugriff auf den Speicher, in dem die verwaltete Zeichenfolge gespeichert wird. Da diese Adresse an eine native Funktion übergeben wird, ist es wichtig, dass der Arbeitsspeicher mit angeheftet werden [Pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) um zu verhindern, dass die Zeichenfolgendaten verschoben wird, sollte ein Garbage Collection-Zyklus stattfinden und der nicht verwaltete Funktion ausgeführt wird.
+Um eine Unicode-Zeichenfolge von einer verwalteten an eine nicht verwaltete Funktion zu übergeben, kann die ptrdestringchars-Funktion (deklariert in "Vcclr. h") verwendet werden, um auf den Speicher zuzugreifen, in dem die verwaltete Zeichenfolge gespeichert ist. Da diese Adresse an eine native Funktion übermittelt wird, ist es wichtig, dass der Arbeitsspeicher mit [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) fixiert wird, um zu verhindern, dass die Zeichen folgen Daten verschoben werden, wenn eine Garbage Collection Cycle stattfindet, während die nicht verwaltete Funktion ausgeführt wird.
 
-```
+```cpp
 // MarshalUnicode1.cpp
 // compile with: /clr
 #include <iostream>
@@ -63,9 +63,9 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt die Marshalling von Daten erforderlich, um eine Unicode-Zeichenfolge in einer verwalteten Funktion wird aufgerufen, indem Sie eine nicht verwaltete Funktion zuzugreifen. Die verwaltete Funktion, nach dem Empfang der systemeigenen Unicode-Zeichenfolge, konvertiert es in eine verwaltete Zeichenfolge mit der <xref:System.Runtime.InteropServices.Marshal.PtrToStringUni%2A> Methode.
+Das folgende Beispiel veranschaulicht das Daten Marshalling, das für den Zugriff auf eine Unicode-Zeichenfolge in einer verwalteten Funktion erforderlich ist, die von einer nicht verwalteten Funktion aufgerufen wird. Die verwaltete Funktion konvertiert beim Empfang der systemeigenen Unicode-Zeichenfolge Sie mithilfe der <xref:System.Runtime.InteropServices.Marshal.PtrToStringUni%2A>-Methode in eine verwaltete Zeichenfolge.
 
-```
+```cpp
 // MarshalUnicode2.cpp
 // compile with: /clr
 #include <iostream>

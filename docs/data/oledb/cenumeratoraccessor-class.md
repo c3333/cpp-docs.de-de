@@ -14,14 +14,12 @@ f1_keywords:
 - CEnumeratorAccessor.m_nType
 - CEnumeratorAccessor::m_nType
 - ATL.CEnumeratorAccessor.m_nType
-- m_nType
 - ATL::CEnumeratorAccessor::m_szDescription
 - CEnumeratorAccessor.m_szDescription
 - CEnumeratorAccessor::m_szDescription
 - ATL.CEnumeratorAccessor.m_szDescription
 - CEnumeratorAccessor::m_szName
 - ATL.CEnumeratorAccessor.m_szName
-- m_szName
 - ATL::CEnumeratorAccessor::m_szName
 - CEnumeratorAccessor.m_szName
 - CEnumeratorAccessor::m_szParseName
@@ -37,16 +35,16 @@ helpviewer_keywords:
 - m_szName
 - m_szParseName
 ms.assetid: 21e8e7ea-3511-4afe-b33f-d520f4ff82bb
-ms.openlocfilehash: e609b346bb4a0c2469c24e20540c646fa869ae26
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d85f630a01ab7e2a07035a8a304a56be91eca8a9
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230731"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545630"
 ---
 # <a name="cenumeratoraccessor-class"></a>CEnumeratorAccessor-Klasse
 
-Ein, die [CEnumerator](../../data/oledb/cenumerator-class.md) Zugriff auf die Daten aus dem Enumerator-Rowset.
+Wird von [CEnumerator](../../data/oledb/cenumerator-class.md) verwendet, um auf die Daten aus dem enumeratorrowset zuzugreifen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -54,29 +52,29 @@ Ein, die [CEnumerator](../../data/oledb/cenumerator-class.md) Zugriff auf die Da
 class CEnumeratorAccessor
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
 **Header:** atldbcli.h
 
 ## <a name="members"></a>Member
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|[m_bIsParent](#bisparent)|Eine Variable, der angibt, ob der Enumerator einen übergeordneten-Enumerator ist die Zeile ist ein Enumerator.|
-|[m_nType](#ntype)|Eine Variable, der angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.|
-|[m_szDescription](#szdescription)|Die Beschreibung der Datenquelle oder Enumerator.|
-|[m_szName](#szname)|Der Name der Datenquelle oder Enumerator.|
-|[m_szParseName](#szparsename)|Zeichenfolge zu übergeben [IParseDisplayName](/windows/desktop/api/oleidl/nn-oleidl-iparsedisplayname) einen Moniker für die Datenquelle oder einen Enumerator abrufen.|
+|[m_bIsParent](#bisparent)|Eine Variable, die angibt, ob der Enumerator ein übergeordneter Enumerator ist, wenn die Zeile ein Enumerator ist.|
+|[m_nType](#ntype)|Eine Variable, die angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.|
+|[m_szDescription](#szdescription)|Die Beschreibung der Datenquelle oder des Enumerators.|
+|[m_szName](#szname)|Der Name der Datenquelle oder des Enumerators.|
+|[m_szParseName](#szparsename)|Eine Zeichenfolge, die an [iparser Display Name](/windows/win32/api/oleidl/nn-oleidl-iparsedisplayname) übergeben werden soll, um einen Moniker für die Datenquelle oder den Enumerator zu erhalten.|
 
 ## <a name="remarks"></a>Hinweise
 
-Dieses Rowset besteht aus den Datenquellen und Enumeratoren, die der aktuelle Enumerator sichtbar.
+Dieses Rowset besteht aus den Datenquellen und Enumeratoren, die im aktuellen Enumerator sichtbar sind.
 
-## <a name="bisparent"></a> CEnumeratorAccessor::m_bIsParent
+## <a name="cenumeratoraccessorm_bisparent"></a><a name="bisparent"></a>Cenzueratoraccessor:: m_bIsParent
 
-Eine Variable, der angibt, ob der Enumerator einen übergeordneten-Enumerator ist die Zeile ist ein Enumerator.
+Eine Variable, die angibt, ob der Enumerator ein übergeordneter Enumerator ist, wenn die Zeile ein Enumerator ist.
 
 ### <a name="syntax"></a>Syntax
 
@@ -86,11 +84,11 @@ VARIANT_BOOL m_bIsParent;
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in die *OLE DB-Programmierreferenz* für Weitere Informationen.
+Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="ntype"></a> Cenumeratoraccessor:: M_ntype
+## <a name="cenumeratoraccessorm_ntype"></a><a name="ntype"></a>Cenzueratoraccessor:: m_nType
 
-Eine Variable, der angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.
+Eine Variable, die angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -100,11 +98,11 @@ USHORT m_nType;
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in die *OLE DB-Programmierreferenz* für Weitere Informationen.
+Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="szdescription"></a> Cenumeratoraccessor:: M_szdescription
+## <a name="cenumeratoraccessorm_szdescription"></a><a name="szdescription"></a>Cenzueratoraccessor:: m_szDescription
 
-Die Beschreibung der Datenquelle oder Enumerator.
+Die Beschreibung der Datenquelle oder des Enumerators.
 
 ### <a name="syntax"></a>Syntax
 
@@ -114,11 +112,11 @@ WCHAR m_szDescription[129];
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in die *OLE DB-Programmierreferenz* für Weitere Informationen.
+Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="szname"></a> CEnumeratorAccessor::m_szName
+## <a name="cenumeratoraccessorm_szname"></a><a name="szname"></a>Cenzueratoraccessor:: m_szName
 
-Der Name der Datenquelle oder Enumerator.
+Der Name der Datenquelle oder des Enumerators.
 
 ### <a name="syntax"></a>Syntax
 
@@ -128,11 +126,11 @@ WCHAR m_szName[129];
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in die *OLE DB-Programmierreferenz* für Weitere Informationen.
+Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="szparsename"></a> CEnumeratorAccessor::m_szParseName
+## <a name="cenumeratoraccessorm_szparsename"></a><a name="szparsename"></a>Cenzueratoraccessor:: m_szParseName
 
-Zeichenfolge zu übergeben [IParseDisplayName](/windows/desktop/api/oleidl/nn-oleidl-iparsedisplayname) einen Moniker für die Datenquelle oder einen Enumerator abrufen.
+Eine Zeichenfolge, die an [iparser Display Name](/windows/win32/api/oleidl/nn-oleidl-iparsedisplayname) übergeben werden soll, um einen Moniker für die Datenquelle oder den Enumerator zu erhalten.
 
 ### <a name="syntax"></a>Syntax
 
@@ -142,7 +140,7 @@ WCHAR m_szParseName[129];
 
 ### <a name="remarks"></a>Hinweise
 
-Finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in die *OLE DB-Programmierreferenz* für Weitere Informationen.
+Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
 ## <a name="see-also"></a>Siehe auch
 

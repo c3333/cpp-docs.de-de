@@ -6,46 +6,46 @@ helpviewer_keywords:
 - Windows Forms [C++], hosting as MFC Dialog
 - hosting Windows Forms control [C++]
 ms.assetid: 0434a9d7-8b14-48e6-ad69-9ba9a684677a
-ms.openlocfilehash: 4c4ee8c8b4570b598ba20b3bd5e1cf4c706ee885
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7fc2aad1e0a550fb8f22b311518ae9fb16c076a5
+ms.sourcegitcommit: e5192a25c084eda9eabfa37626f3274507e026b3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62222948"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "79544796"
 ---
 # <a name="hosting-a-windows-form-user-control-as-an-mfc-dialog-box"></a>Hosten eines Windows Form-Benutzersteuerelements als MFC-Dialogfeld
 
-MFC stellt die Vorlagenklasse [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md) , damit Sie ein Windows Forms-Benutzersteuerelement hosten können (<xref:System.Windows.Forms.UserControl>) in einer MFC-Dialogfeld mit oder ohne Modus. `CWinFormsDialog` wird von der MFC-Klasse abgeleitet [CDialog](../mfc/reference/cdialog-class.md), sodass Sie das Dialogfeld mit oder ohne Modus gestartet werden kann.
+MFC stellt die Vorlagen Klasse [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md) bereit, sodass Sie in einem modalen oder nicht modalen MFC-Dialogfeld ein Windows Forms Benutzer Steuerelement (<xref:System.Windows.Forms.UserControl>) hosten können. `CWinFormsDialog` wird von der MFC-Klasse [CDialog](../mfc/reference/cdialog-class.md)abgeleitet, sodass das Dialogfeld als modales oder nicht modales Dialogfeld gestartet werden kann.
 
-Der Prozess, `CWinFormsDialog` zum Hosten des Benutzersteuerelements verwendet wird, wird der ähnlich wie in [hosten ein Windows Form-Benutzersteuerelements in MFC-Dialogfeld](../dotnet/hosting-a-windows-form-user-control-in-an-mfc-dialog-box.md). `CWinFormsDialog` verwaltet jedoch die Initialisierung und das Hosten des Benutzersteuerelements, sodass es nicht manuell programmiert werden muss.
+Der Prozess, der von `CWinFormsDialog` zum Hosten des Benutzer Steuer Elements verwendet wird, ähnelt dem unter [Hosten eines Windows Form-Benutzer Steuer Elements in einem MFC-Dialog Feld](../dotnet/hosting-a-windows-form-user-control-in-an-mfc-dialog-box.md). `CWinFormsDialog` verwaltet jedoch die Initialisierung und das Hosten des Benutzersteuerelements, sodass es nicht manuell programmiert werden muss.
 
-Eine beispielanwendung, die Windows Forms, die mit MFC verwendet wird, finden Sie unter [MFC und Windows Forms-Integration](http://www.microsoft.com/downloads/details.aspx?FamilyID=987021bc-e575-4fe3-baa9-15aa50b0f599&displaylang=en).
+Eine Beispielanwendung, die Windows Forms anzeigt, die mit MFC verwendet werden, finden Sie unter [MFC-und Windows Forms-Integration](https://www.microsoft.com/download/details.aspx?id=2113).
 
 ### <a name="to-create-the-mfc-host-application"></a>So erstellen Sie die MFC-Hostanwendung
 
 1. Erstellen Sie ein MFC-Anwendungsprojekt.
 
-   Auf der **Datei** , wählen Sie im Menü **neu**, und klicken Sie dann auf **Projekt**. In der **Visual C++** Ordner **MFC-Anwendung**.
+   Wählen Sie im Menü **Datei** die Option **neu**aus, und klicken Sie dann auf **Projekt**. Wählen Sie im Ordner " **Visual C++**  " die Option **MFC-Anwendung**aus.
 
-   In der **Namen** geben `MFC03` , und ändern Sie die projektmappeneinstellung in **zu Projektmappe hinzufügen**. Klicken Sie auf **OK**.
+   Geben Sie im Feld **Name** `MFC03` ein, und ändern Sie die Projektmappeneinstellung zu Projekt Mappe **Hinzufügen**. Klicken Sie auf **OK**.
 
-   In der **MFS-Anwendungsassistenten**, übernehmen Sie alle Standardeinstellungen, und klicken Sie dann auf **Fertig stellen**. Dies erstellt eine MFC-Anwendung mit einem MDI (Multiple Document Interface).
+   Akzeptieren Sie im **MFC-Anwendungs-Assistenten**alle Standardwerte, und klicken Sie dann auf **Fertig**stellen. Dies erstellt eine MFC-Anwendung mit einem MDI (Multiple Document Interface).
 
 1. Konfigurieren des Projekts.
 
-   In **Projektmappen-Explorer**, mit der rechten Maustaste die **MFC03** Projektknoten, und wählen Sie **Eigenschaften**. Die **Eigenschaftenseiten** Dialogfeld wird angezeigt.
+   Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projekt Knoten **den MFC03** , und wählen Sie **Eigenschaften**aus. Das Dialogfeld **Eigenschaften Seiten** wird angezeigt.
 
-   In der **Eigenschaftenseiten** Dialogfeld der **Konfigurationseigenschaften** Strukturansicht-Steuerelement, auf **allgemeine**, klicken Sie dann in der **Projektstandards**legen **Common Language Runtime-Unterstützung** zu **Common Language Runtime-Unterstützung (/ Clr)**. Klicken Sie auf **OK**.
+   Wählen Sie im Dialogfeld Eigenschaften **Seiten** in der **Strukturansicht Konfigurations Eigenschaften** die Option **Allgemein**aus, und legen Sie dann im Abschnitt **Projekt** Standards die **Common Language Runtime-unter** Stützung auf **Common Language Runtime-Unterstützung (/CLR)** fest. Klicken Sie auf **OK**.
 
 1. Fügen Sie dem .NET-Steuerelement einen Verweis hinzu.
 
-   In **Projektmappen-Explorer**, mit der rechten Maustaste die **MFC03** Projektknoten und wählen **hinzufügen**, **Verweise**. In der **Eigenschaftenseite**, klicken Sie auf **neuen Verweis hinzufügen**, wählen Sie WindowsControlLibrary1 (unter der **Projekte** Registerkarte), und klicken Sie auf **OK**. Dies fügt einen Verweis in Form einer [/FU](../build/reference/fu-name-forced-hash-using-file.md) -Compileroption, damit das Programm kompiliert wird; außerdem wird WindowsControlLibrary1.dll in kopiert die `MFC03` Projektverzeichnis, damit das Programm ausgeführt wird.
+   Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projekt Knoten **den MFC03** , und wählen Sie **Hinzufügen**, **Verweise**aus. Klicken Sie auf der **Eigenschaften Seite**auf **neuen Verweis hinzufügen**, wählen Sie WindowsControlLibrary1 (unter der Registerkarte **Projekte** ) aus, und klicken Sie auf **OK**. Dadurch wird ein Verweis in Form einer [/Fu](../build/reference/fu-name-forced-hash-using-file.md) -Compileroption hinzugefügt, damit das Programm kompiliert wird. Außerdem wird WindowsControlLibrary1. dll in das `MFC03`-Projektverzeichnis kopiert, damit das Programm ausgeführt wird.
 
-1. Fügen Sie in der Datei stdafx.h nach den vorhandenen `#include <afxwinforms.h>`-Anweisungen die Zeichenfolge `#include` ein.
+1. Fügen Sie `#include <afxwinforms.h>` zu " *PCH. h* " (*stdafx. h* in Visual Studio 2017 und früher) am Ende der vorhandenen `#include` Anweisungen hinzu.
 
 1. Fügen Sie eine neue Klasse hinzu, die `CDialog` als Unterklasse verwendet.
 
-   Klicken Sie mit der rechten Maustaste auf den Projektnamen, und fügen Sie eine MFC-Klasse mit dem Namen CHostForWinForm hinzu, die `CDialog` als Unterklasse verwendet. Da Sie die Dialogfeldressource nicht benötigen, können Sie die Ressourcen-ID löschen (Wählen Sie **Ressourcenansicht**, erweitern Sie die **Dialogfeld** Ordner "und" Delete `IDD_HOSTFORWINFORM` Ressource.  Entfernen Sie dann alle Verweise auf die ID aus dem Code.)
+   Klicken Sie mit der rechten Maustaste auf den Projektnamen, und fügen Sie eine MFC-Klasse mit dem Namen CHostForWinForm hinzu, die `CDialog` als Unterklasse verwendet. Da Sie die Dialogfeld Ressource nicht benötigen, können Sie die Ressourcen-ID löschen (Wählen Sie **Ressourcenansicht**aus, erweitern Sie den **Dialog** Ordner, und löschen Sie `IDD_HOSTFORWINFORM` Ressource.  Entfernen Sie dann alle Verweise auf die ID aus dem Code.)
 
 1. Ersetzen Sie in den Dateien CHostForWinForm.h und CHostForWinForm.cpp `CDialog` durch `CWinFormsDialog<WindowsControlLibrary1::UserControl1>`.
 
@@ -62,15 +62,15 @@ Eine beispielanwendung, die Windows Forms, die mit MFC verwendet wird, finden Si
 
 1. Erstellen Sie das Projekt, und führen Sie es aus.
 
-   Klicken Sie im Menü **Erstellen** auf **Projektmappe erstellen**.
+   Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
 
-   Auf der **Debuggen** Menü klicken Sie auf **Starten ohne debugging**.
+   Klicken Sie im Menü **Debuggen** auf **Starten ohne Debuggen**.
 
    Als Nächstes fügen Sie Code zum Überwachen des Zustands eines Steuerelements in den Windows Forms aus der MFC-Anwendung hinzu.
 
 1. Fügen Sie einen Handler für OnInitDialog hinzu.
 
-   Anzeigen der **Eigenschaften** Fenster (F4). In **Klassenansicht**, wählen Sie CHostForWinForm aus. In der **Eigenschaften** , wählen Sie überschreibt, und klicken Sie in der Zeile für OnInitDialog, in der linken Spalte und wählen \< hinzufügen >. Dadurch wird in CHostForWinForm.h die folgende Zeile hinzugefügt:
+   Zeigen Sie das **Eigenschaften** Fenster (F4) an. Wählen Sie in **Klassenansicht**CHostForWinForm aus. Wählen Sie im Fenster **Eigenschaften** die Option außer Kraft setzungen aus, und klicken Sie in der Zeile für OnInitDialog in der linken Spalte auf \< > hinzufügen. Dadurch wird in CHostForWinForm.h die folgende Zeile hinzugefügt:
 
     ```cpp
     virtual BOOL OnInitDialog();
@@ -137,4 +137,4 @@ Eine beispielanwendung, die Windows Forms, die mit MFC verwendet wird, finden Si
 ## <a name="see-also"></a>Siehe auch
 
 <xref:System.Windows.Forms.UserControl?displayProperty=fullName>
-[Verwenden ein Windows Form-Benutzersteuerelements in MFC](../dotnet/using-a-windows-form-user-control-in-mfc.md)
+[mithilfe eines Windows Form-Benutzer Steuer Elements in MFC](../dotnet/using-a-windows-form-user-control-in-mfc.md)

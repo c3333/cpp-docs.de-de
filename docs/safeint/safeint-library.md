@@ -2,18 +2,16 @@
 title: SafeInt-Bibliothek
 ms.custom: index-page
 ms.date: 03/19/2019
-f1_keywords:
-- SafeInt
 helpviewer_keywords:
 - libraries, SafeInt
 - SafeInt library
 ms.assetid: 5321e875-67c5-49d7-9650-85a876552d14
-ms.openlocfilehash: 67aafdb978d5574c5031ea6911b464555094ad5e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 39f50fc9076b033ecb20a585ec139ec240145252
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515585"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545684"
 ---
 # <a name="safeint-library"></a>SafeInt-Bibliothek
 
@@ -21,7 +19,7 @@ ms.locfileid: "65515585"
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-|Bereich|Beschreibung|
+|`Section`|Beschreibung|
 |-------------|-----------------|
 |[SafeInt-Klasse](../safeint/safeint-class.md)|Diese Klasse bietet Schutz vor Ganzzahlüberläufen.|
 |[SafeInt-Funktionen](../safeint/safeint-functions.md)|Funktionen, die ohne Erstellung eines **SafeInt**-Objekts verwendet werden können.|
@@ -29,6 +27,6 @@ ms.locfileid: "65515585"
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-|Bereich|Beschreibung|
+|`Section`|Beschreibung|
 |-------------|-----------------|
 |[C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)|Referenz und konzeptionelle Inhalte für die Sprache C++.|

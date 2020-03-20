@@ -1,25 +1,25 @@
 ---
-title: 'Vorgehensweise: Konvertieren von System:: String zu Standardzeichenfolge'
+title: 'Gewusst wie: Konvertieren von System::String zu Standardzeichenfolge'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - C++ Standard Library, converting System::String to standard string
 - string conversion, System::String
 ms.assetid: 79e2537e-d4eb-459f-9506-0e738045b59e
-ms.openlocfilehash: 3ea3c56af2fefaf7c65055135e8549fb153c9a8b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7dd73b8fed98918135b66af1b6351977426cd26e
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379115"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545300"
 ---
-# <a name="how-to-convert-systemstring-to-standard-string"></a>Vorgehensweise: Konvertieren von System:: String zu Standardzeichenfolge
+# <a name="how-to-convert-systemstring-to-standard-string"></a>Gewusst wie: Konvertieren von System::String zu Standardzeichenfolge
 
 Sie können einen <xref:System.String> in `std::string` oder `std::wstring` konvertieren, ohne `PtrToStringChars` in Vcclr.h zu verwenden.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // convert_system_string.cpp
 // compile with: /clr
 #include <string>

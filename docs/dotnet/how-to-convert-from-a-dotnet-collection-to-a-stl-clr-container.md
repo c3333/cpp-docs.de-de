@@ -1,40 +1,40 @@
 ---
-title: 'Vorgehensweise: Umwandeln einer .NET-Auflistung in einen STL/CLR-Container'
+title: 'Gewusst wie: Umwandeln einer .Net-Auflistung in einen STL/CLR-Container'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - STL/CLR, converting from .NET collections
 - STL/CLR Containers [STL/CLR]
 ms.assetid: bb927c48-78e8-4150-bd0b-787c651f4a87
-ms.openlocfilehash: 836623f6d539b7b28765763a3dc36d477f8c1499
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 156b4162f742915939ebdfaec6a84d77afaad8cd
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387551"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545048"
 ---
-# <a name="how-to-convert-from-a-net-collection-to-a-stlclr-container"></a>Vorgehensweise: Umwandeln einer .NET-Auflistung in einen STL/CLR-Container
+# <a name="how-to-convert-from-a-net-collection-to-a-stlclr-container"></a>Gewusst wie: Umwandeln einer .Net-Auflistung in einen STL/CLR-Container
 
-In diesem Thema wird gezeigt, wie Auflistungen von .NET in ihre entsprechenden STL/CLR-Container konvertiert. Als Beispiel erfahren, wie Sie eine .NET konvertieren <xref:System.Collections.Generic.List%601> auf einen STL/CLR [Vektor](../dotnet/vector-stl-clr.md) und konvertieren Sie eine .NET <xref:System.Collections.Generic.Dictionary%602> auf einen STL/CLR [Zuordnung](../dotnet/map-stl-clr.md), aber das Verfahren ist für alle Auflistungen und Container ähnlich .
+In diesem Thema wird gezeigt, wie Sie .NET-Auflistungen in ihre entsprechenden STL/CLR-Container konvertieren. Als Beispiel wird veranschaulicht, wie Sie eine .net-<xref:System.Collections.Generic.List%601> in einen STL/CLR- [Vektor](../dotnet/vector-stl-clr.md) konvertieren und eine .net-<xref:System.Collections.Generic.Dictionary%602> in eine STL/CLR-Zuordnung [konvertieren, aber](../dotnet/map-stl-clr.md)die Prozedur ist für alle Sammlungen und Container ähnlich.
 
-### <a name="to-create-a-container-from-a-collection"></a>Zum Erstellen eines Containers aus einer Auflistung
+### <a name="to-create-a-container-from-a-collection"></a>So erstellen Sie einen Container aus einer Sammlung
 
-1. Um eine ganze Sammlung zu konvertieren, erstellen Sie einen STL/CLR-Container, und übergeben Sie die Auflistung an den Konstruktor.
+1. Erstellen Sie zum Konvertieren einer gesamten Auflistung einen STL/CLR-Container, und übergeben Sie die Auflistung an den Konstruktor.
 
-   Das erste Beispiel veranschaulicht dieses Verfahren.
+   Im ersten Beispiel wird dieses Verfahren veranschaulicht.
 
--ODER-
+ODER
 
-1. Erstellen Sie einen generischen STL/CLR-Container, indem Sie erstellen eine [Collection_adapter](../dotnet/collection-adapter-stl-clr.md) Objekt. Diese Vorlagenklasse verwendet eine sammlungsschnittstelle .NET als Argument an. Um zu überprüfen, welche Schnittstellen unterstützt werden, finden Sie unter [Collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md).
+1. Erstellen Sie einen generischen STL/CLR-Container, indem Sie ein [Collection_adapter](../dotnet/collection-adapter-stl-clr.md) Objekt erstellen. Diese Vorlagen Klasse nimmt eine .net-Auflistungs Schnittstelle als Argument an. Informationen dazu, welche Schnittstellen unterstützt werden, finden Sie unter [Collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md).
 
-1. Kopieren Sie den Inhalt der Auflistung .NET auf den Container ein. Dies kann erfolgen mithilfe einer STL/CLR [Algorithmus](../dotnet/algorithm-stl-clr.md), oder durch Durchlaufen der Auflistung von .NET und eine Kopie jedes Element in der STL/CLR-Container eingefügt.
+1. Kopieren Sie den Inhalt der .net-Auflistung in den Container. Hierzu können Sie einen STL/CLR- [Algorithmus](../dotnet/algorithm-stl-clr.md)verwenden oder die .net-Auflistung durchlaufen und eine Kopie der einzelnen Elemente in den STL/CLR-Container einfügen.
 
-   Das zweite Beispiel veranschaulicht dieses Verfahren.
+   Im zweiten Beispiel wird dieses Verfahren veranschaulicht.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel erstellen wir eine generische <xref:System.Collections.Generic.List%601> , und fügen Sie 5 Elemente hinzu. Anschließend erstellen wir eine `vector` mithilfe des Konstruktors, die akzeptiert eine <xref:System.Collections.Generic.IEnumerable%601> als Argument.
+In diesem Beispiel erstellen wir einen generischen <xref:System.Collections.Generic.List%601> und fügen diesem fünf Elemente hinzu. Anschließend erstellen wir eine `vector` mithilfe des Konstruktors, der einen <xref:System.Collections.Generic.IEnumerable%601> als Argument annimmt.
 
-```
+```cpp
 // cliext_convert_list_to_vector.cpp
 // compile with: /clr
 
@@ -78,9 +78,9 @@ The contents of the cliext::vector are:
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel erstellen wir eine generische <xref:System.Collections.Generic.Dictionary%602> , und fügen Sie 5 Elemente hinzu. Anschließend erstellen wir eine `collection_adapter` umschließen der <xref:System.Collections.Generic.Dictionary%602> als einfache STL/CLR-Container. Schließlich erstellen wir eine `map` , und kopieren Sie den Inhalt des der <xref:System.Collections.Generic.Dictionary%602> auf die `map` durch Iteration über die `collection_adapter`. Während dieses Vorgangs erstellen wir ein neues Paar mithilfe der `make_pair` funktionieren, und fügen Sie das neue Paar direkt in die `map`.
+In diesem Beispiel erstellen wir einen generischen <xref:System.Collections.Generic.Dictionary%602> und fügen diesem fünf Elemente hinzu. Anschließend erstellen wir eine `collection_adapter`, um die <xref:System.Collections.Generic.Dictionary%602> als einfachen STL/CLR-Container zu umschließen. Zum Schluss erstellen wir eine `map` und kopieren den Inhalt des <xref:System.Collections.Generic.Dictionary%602> in die `map`, indem wir die `collection_adapter`durchlaufen. Während dieses Vorgangs wird ein neues Paar mit der `make_pair`-Funktion erstellt, und das neue Paar wird direkt in die `map`eingefügt.
 
-```
+```cpp
 // cliext_convert_dictionary_to_map.cpp
 // compile with: /clr
 

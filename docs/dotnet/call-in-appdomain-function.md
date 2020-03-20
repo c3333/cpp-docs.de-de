@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - call_in_appdomain function
 ms.assetid: 9a1a5026-b76b-4cae-a3d4-29badeb9db9c
-ms.openlocfilehash: a7ee0ef9c98ee940ab810abd82f6220da95d7346
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: da0f2bc1a503226e41198871e6dc48ace7a86854
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62351494"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545372"
 ---
-# <a name="callinappdomain-function"></a>call_in_appdomain-Funktion
+# <a name="call_in_appdomain-function"></a>call_in_appdomain-Funktion
 
 Führt eine Funktion in einer angegebenen Anwendungsdomäne aus.
 
@@ -41,29 +41,29 @@ RetType call_in_appdomain(
 
 #### <a name="parameters"></a>Parameter
 
-*appdomainId*<br/>
-Die Anwendungsdomäne, in dem die Funktion aufgerufen werden soll.
+*AppDomainID*<br/>
+Die AppDomain, in der die Funktion aufgerufen werden soll.
 
 *voidFunc*<br/>
-Zeiger auf eine `void` -Funktion, die N-Parameter akzeptiert (0 < = N < = 15).
+Zeiger auf eine `void` Funktion, die N Parameter annimmt (0 < = N < = 15).
 
 *nonvoidFunc*<br/>
-Zeiger auf einen nicht-`void` -Funktion, die N-Parameter akzeptiert (0 < = N < = 15).
+Zeiger auf eine nicht`void` Funktion, die N Parameter annimmt (0 < = N < = 15).
 
-*arg1...argN*<br/>
-0 (null), um 15 Parameter übergeben werden soll `voidFunc` oder `nonvoidFunc` in der anderen Anwendungsdomäne.
+*arg1... argN*<br/>
+Null bis 15 Parameter, die an `voidFunc` oder `nonvoidFunc` in der anderen Anwendungsdomäne übermittelt werden sollen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Das Ergebnis der Ausführung `voidFunc` oder `nonvoidFunc` in die angegebene Anwendungsdomäne.
+Das Ergebnis der Ausführung `voidFunc` oder `nonvoidFunc` in der angegebenen Anwendungsdomäne.
 
 ## <a name="remarks"></a>Hinweise
 
-Die Argumente der Funktion übergeben wird, um `call_in_appdomain` muss sich nicht auf CLR-Typen.
+Die Argumente der an `call_in_appdomain` über gebenden Funktion dürfen keine CLR-Typen sein.
 
 ## <a name="example"></a>Beispiel
 
-```
+```cpp
 // msl_call_in_appdomain.cpp
 // compile with: /clr
 
@@ -107,7 +107,7 @@ int main()
 }
 ```
 
-## <a name="output"></a>Output
+## <a name="output"></a>Ausgabe
 
 ```
 default appdomain: msl_call_in_appdomain.exe
@@ -116,8 +116,8 @@ default appdomain id = 1
 appDomain1 id = 2
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Voraussetzungen
 
-**Headerdatei** \<msclr\appdomain.h >
+**Header Datei** \<msclr\appdomain.h >
 
-**Namespace** Msclr
+**Namespace** -msclr

@@ -1,42 +1,42 @@
 ---
-title: 'Vorgehensweise: Erweitern der Marshallingbibliothek'
+title: 'Gewusst wie: Erweitern der Marshallingbibliothek'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - Marshaling Library, extending
 ms.assetid: 4c4a56d7-1d44-4118-b85f-f9686515e6e9
-ms.openlocfilehash: f289539807b1e9499cef51427d3f6a494545cc60
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ab3b17638e07a54189803c83163db67c5ebf82a5
+ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387304"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "79545270"
 ---
-# <a name="how-to-extend-the-marshaling-library"></a>Vorgehensweise: Erweitern der Marshallingbibliothek
+# <a name="how-to-extend-the-marshaling-library"></a>Gewusst wie: Erweitern der Marshallingbibliothek
 
-In diesem Thema wird erläutert, das Erweitern der Marshallingbibliothek, um weitere Umwandlungen zwischen Datentypen bereitzustellen. Benutzer können die Marshallingbibliothek für alle derzeit nicht unterstützt, von der Bibliothek datenkonvertierungen erweitern.
+In diesem Thema wird erläutert, wie Sie die Marshallingbibliothek erweitern, um mehr Konvertierungen zwischen Datentypen bereitzustellen. Benutzer können die Marshallingbibliothek für alle Datenkonvertierungen erweitern, die derzeit nicht von der Bibliothek unterstützt werden.
 
-Sie können die Marshallingbibliothek auf zwei Arten – mit oder ohne Erweitern einer [Marshal_context-Klasse](../dotnet/marshal-context-class.md). Überprüfen Sie die [Overview of Marshaling in C++](../dotnet/overview-of-marshaling-in-cpp.md) Thema, um zu bestimmen, ob eine neue Konvertierung einen Kontext erfordert.
+Die Marshallingbibliothek kann auf eine von zwei Arten erweitert werden: mit oder ohne [Marshal_context-Klasse](../dotnet/marshal-context-class.md). Überprüfen Sie die Übersicht über das Marshalling [im C++ ](../dotnet/overview-of-marshaling-in-cpp.md) Thema, um zu bestimmen, ob eine neue Konvertierung einen Kontext erfordert.
 
-In beiden Fällen erstellen Sie zuerst eine Datei für die neue Marshalling Konvertierungen. Dies geschieht, um die Integrität des Standards Marshallingbibliothek erhalten. Wenn Sie ein Projekt auf einen anderen Computer oder ein anderer Programmierer portieren möchten, müssen Sie die neue Marshalling-Datei mit dem Rest des Projekts kopieren. Auf diese Weise kann der Benutzer das Projekt wird sichergestellt, dass die neuen Konvertierungen zu empfangen und muss keine Bibliotheksdateien zu ändern.
+In beiden Fällen erstellen Sie zuerst eine Datei für neue Marshallingkonvertierungen. Dies geschieht, um die Integrität der standardmäßigen Marshallingbibliotheksdateien beizubehalten. Wenn Sie ein Projekt auf einen anderen Computer oder einen anderen Programmierer portieren möchten, müssen Sie die neue Marshallingdatei mit dem Rest des Projekts kopieren. Auf diese Weise erhält der Benutzer, der das Projekt empfängt, die neuen Konvertierungen und muss keine Bibliotheksdateien ändern.
 
-### <a name="to-extend-the-marshaling-library-with-a-conversion-that-does-not-require-a-context"></a>Zum Erweitern der Marshallingbibliothek bei einer Konvertierung erfordert, die einen Kontext keine
+### <a name="to-extend-the-marshaling-library-with-a-conversion-that-does-not-require-a-context"></a>So erweitern Sie die Marshallingbibliothek durch eine Konvertierung, die keinen Kontext erfordert
 
-1. Erstellen Sie eine Datei zum Speichern der neuen Marshallen Funktionen, z. B. MyMarshal.h.
+1. Erstellen Sie eine Datei zum Speichern der neuen Marshallingfunktionen, z. b. MyMarshal. h.
 
-1. Umfassen Sie eine oder mehrere der Marshallingbibliotheksdateien:
+1. Fügen Sie eine oder mehrere der Mars Hall Bibliotheksdateien ein:
 
-   - Marshal.h für Basistypen.
+   - Marshal. h für Basis Typen.
 
-   - marshal_windows.h für Windows-Datentypen.
+   - marshal_windows. h für Windows-Datentypen.
 
-   - marshal_cppstd.h für C++ Datentypen für Standard-Bibliothek.
+   - marshal_cppstd. h für C++ die Datentypen der Standard Bibliothek.
 
-   - marshal_atl.h für ATL-Datentypen.
+   - marshal_atl. h für ATL-Datentypen.
 
-1. Verwenden Sie den Code am Ende der folgenden Schritte aus, um die Konvertierungsfunktion zu schreiben. In diesem Code ist der Zieltyp der Konvertierung, FROM ist der Typ, aus dem konvertiert und `from` ist der Parameter konvertiert werden.
+1. Verwenden Sie den Code am Ende dieser Schritte, um die Konvertierungs Funktion zu schreiben. In diesem Code ist für den Typ, in den konvertiert werden soll, von der Typ, aus dem konvertiert werden soll, und `from` ist der zu konvertierende Parameter.
 
-1. Ersetzen Sie den Kommentar zu Konvertierungslogik mit Code zum Konvertieren der `from` Parameter in ein Objekt des zu geben und das konvertierte Objekt zurückzugeben.
+1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den `from`-Parameter in ein Objekt vom Typ zu konvertieren und das konvertierte Objekt zurückzugeben.
 
 ```
 namespace msclr {
@@ -49,29 +49,29 @@ namespace msclr {
 }
 ```
 
-### <a name="to-extend-the-marshaling-library-with-a-conversion-that-requires-a-context"></a>Zum Erweitern der Marshallingbibliothek bei einer Konvertierung erfordert, die einen Kontext
+### <a name="to-extend-the-marshaling-library-with-a-conversion-that-requires-a-context"></a>So erweitern Sie die Marshallingbibliothek durch eine Konvertierung, die einen Kontext erfordert
 
-1. Erstellen Sie eine Datei zum Speichern von neuen Marshallen Funktionen, z. B. MyMarshal.h
+1. Erstellen Sie eine Datei zum Speichern der neuen Marshallingfunktionen, z. b. MyMarshal. h.
 
-1. Umfassen Sie eine oder mehrere der Marshallingbibliotheksdateien:
+1. Fügen Sie eine oder mehrere der Mars Hall Bibliotheksdateien ein:
 
-   - Marshal.h für Basistypen.
+   - Marshal. h für Basis Typen.
 
-   - marshal_windows.h für Windows-Datentypen.
+   - marshal_windows. h für Windows-Datentypen.
 
-   - marshal_cppstd.h für C++ Datentypen für Standard-Bibliothek.
+   - marshal_cppstd. h für C++ die Datentypen der Standard Bibliothek.
 
-   - marshal_atl.h für ATL-Datentypen.
+   - marshal_atl. h für ATL-Datentypen.
 
-1. Verwenden Sie den Code am Ende der folgenden Schritte aus, um die Konvertierungsfunktion zu schreiben. In diesem Code ist der Zieltyp der Konvertierung, FROM ist der Typ, aus dem konvertiert `toObject` ist ein Zeiger in der das Ergebnis gespeichert und `fromObject` ist der Parameter konvertiert werden.
+1. Verwenden Sie den Code am Ende dieser Schritte, um die Konvertierungs Funktion zu schreiben. In diesem Code ist für den Typ, in den konvertiert werden soll, von der Typ, aus dem konvertiert werden soll, `toObject` ein Zeiger ist, in dem das Ergebnis gespeichert werden soll, und `fromObject` der zu konvertierende Parameter ist.
 
-1. Ersetzen Sie den Kommentar zum Initialisieren von mit Code zum Initialisieren der `toPtr` auf den entsprechenden leeren Wert. Z. B. wenn es ein Zeiger ist, legen Sie es auf `NULL`.
+1. Ersetzen Sie den Kommentar zur Initialisierung durch Code, um die `toPtr` mit dem entsprechenden leeren Wert zu initialisieren. Wenn es sich beispielsweise um einen-Zeiger handelt, legen Sie ihn auf `NULL`fest.
 
-1. Ersetzen Sie den Kommentar zu Konvertierungslogik mit Code zum Konvertieren der `from` Parameter in ein Objekt des *für* Typ. Dieser konvertierte Objekt gespeichert werden soll `toPtr`.
+1. Ersetzen Sie den Kommentar zur Konvertierungs Logik durch Code, um den `from`-Parameter in ein Objekt vom Typ *zu* konvertieren. Dieses konvertierte Objekt wird in `toPtr`gespeichert.
 
-1. Ersetzen Sie den Kommentar zu den Einstellungen `toObject` mit Code aus, um `toObject` auf das konvertierte Objekt.
+1. Ersetzen Sie den Kommentar zum Festlegen `toObject` mit Code, um `toObject` auf das konvertierte Objekt festzulegen.
 
-1. Ersetzen Sie den Kommentar zum Bereinigen von systemeigenen Ressourcen durch Code, um alle von belegten Arbeitsspeicher freizugeben `toPtr`. Wenn `toPtr` zugeordneter Arbeitsspeicher mit `new`, verwenden Sie `delete` um den Arbeitsspeicher freizugeben.
+1. Ersetzen Sie den Kommentar zum Bereinigen von systemeigenen Ressourcen mit Code, um den von `toPtr`zugeordneten Arbeitsspeicher freizugeben. Wenn `toPtr` zugeordneten Arbeitsspeicher mithilfe `new`, verwenden Sie `delete`, um den Arbeitsspeicher freizugeben.
 
 ```
 namespace msclr {
@@ -104,9 +104,9 @@ namespace msclr {
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel erweitert die Marshallingbibliothek mit eine Konvertierung, die nicht mit einen Kontext erfordert. In diesem Beispiel konvertiert der Code aus einem systemeigenen Datentyp die Mitarbeiterdaten in einen verwalteten Datentyp an.
+Im folgenden Beispiel wird die Marshallingbibliothek durch eine Konvertierung erweitert, die keinen Kontext erfordert. In diesem Beispiel konvertiert der Code die Mitarbeiter Informationen von einem systemeigenen Datentyp in einen verwalteten Datentyp.
 
-```
+```cpp
 // MyMarshalNoContext.cpp
 // compile with: /clr
 #include <msclr/marshal.h>
@@ -156,7 +156,7 @@ int main() {
 }
 ```
 
-Im vorherigen Beispiel die `marshal_as` Funktion gibt ein Handle an die konvertierten Daten. Dies erfolgte, um zu verhindern, erstellen eine zusätzliche Kopie der Daten. Die Variable direkt zurückgeben würde eine unnötige Leistungseinbußen zugeordnet haben.
+Im vorherigen Beispiel gibt die `marshal_as`-Funktion ein Handle für die konvertierten Daten zurück. Dies wurde durchgeführt, um zu verhindern, dass eine zusätzliche Kopie der Daten erstellt wird. Wenn die Variable direkt zurückgegeben wird, sind unnötige Leistungskosten verbunden.
 
 ```Output
 Managed name: Jeff Smith
@@ -166,9 +166,9 @@ Managed zip code: 98111
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel werden die Informationen zu Mitarbeitern aus einem verwalteten Datentyp in einen systemeigenen Datentyp konvertiert. Diese Konvertierung erfordert einen Kontext an marshallen.
+Im folgenden Beispiel werden die Mitarbeiter Informationen von einem verwalteten Datentyp in einen systemeigenen Datentyp konvertiert. Diese Konvertierung erfordert einen Marshallingkontext.
 
-```
+```cpp
 // MyMarshalContext.cpp
 // compile with: /clr
 #include <stdlib.h>

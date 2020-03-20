@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ODBC connections, configuring
 - configuring ODBC data sources
 ms.assetid: b8cabe9b-9e12-4d73-ae36-7cb12dee3213
-ms.openlocfilehash: 33269b65835812a6e1a03e091833831781d97b6d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 38f0f383256a05c983fb7e7d7a498e16881c7b78
+ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395927"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79545960"
 ---
 # <a name="data-source-programmatically-configuring-an-odbc-data-source"></a>Datenquelle: Programmgesteuertes Konfigurieren einer ODBC-Datenquelle
 
@@ -24,11 +24,11 @@ Normalerweise führt ein Benutzer den ODBC-Administrator aus, um eine Datenquell
 
 Beim Anlegen einer Microsoft Access-ODBC-Datenquelle mit ODBC-Administrator haben Sie zwei Möglichkeiten: Sie können entweder eine vorhandene MDB-Datei auswählen oder eine neue MDB-Datei erstellen. Es gibt keine Möglichkeit, eine MDB-Datei von einer MFC-ODBC-Anwendung aus programmgesteuert anzulegen. Wenn es daher für die Anwendung erforderlich ist, Daten in einer Microsoft Access-Datenquelle (.mdb-Datei) zu speichern, benötigen Sie wahrscheinlich eine leere MDB-Datei, auf die Sie bei Bedarf zugreifen oder die Sie kopieren können.
 
-Viele Datenbankmanagementsysteme ermöglichen jedoch das programmgesteuerte Erstellen einer Datenquelle. Einige Datenquellen verwenden eine Verzeichnisangabe für Datenbanken. Als Datenquelle wird also ein Verzeichnis verwendet. Jede Tabelle dieser Datenquelle ist in einer eigenen Datei gespeichert. Im Fall von dBASE ist jede Tabelle in einer eigenen DBF-Datei enthalten. Treiber für andere ODBC-Datenbanken, z. B. Microsoft Access und SQL Server, erfordern, dass bestimmte Kriterien erfüllt werden, bevor Sie eine Datenquelle hergestellt werden kann. Beispielsweise müssen bei Verwendung den SQL Server-ODBC-Treiber einen SQL Server-Computer eingerichtet haben.
+Viele Datenbankmanagementsysteme ermöglichen jedoch das programmgesteuerte Erstellen einer Datenquelle. Einige Datenquellen verwenden eine Verzeichnisangabe für Datenbanken. Als Datenquelle wird also ein Verzeichnis verwendet. Jede Tabelle dieser Datenquelle ist in einer eigenen Datei gespeichert. Im Fall von dBASE ist jede Tabelle in einer eigenen DBF-Datei enthalten. Treiber für andere ODBC-Datenbanken, wie z. b. Microsoft Access und SQL Server, erfordern, dass bestimmte Kriterien erfüllt werden, bevor eine Datenquelle erstellt werden kann. Wenn Sie z. b. den SQL Server ODBC-Treiber verwenden, müssen Sie einen SQL Server Computer eingerichtet haben.
 
-##  <a name="_core_sqlconfigdatasource_example"></a> SQLConfigDataSource-Beispiel
+##  <a name="sqlconfigdatasource-example"></a><a name="_core_sqlconfigdatasource_example"></a>SQLConfigDataSource-Beispiel
 
-Im folgenden Beispiel wird die `::SQLConfigDataSource` ODBC API-Funktion zum Erstellen einer neuen Excel-Datenquelle wird aufgerufen, neue Excel-Datenquelle:
+Im folgenden Beispiel wird die `::SQLConfigDataSource` ODBC-API-Funktion verwendet, um eine neue Excel-Datenquelle namens New Excel Data Source zu erstellen:
 
 ```
 SQLConfigDataSource(NULL,ODBC_ADD_DSN, "Excel Files (*.xls)",
@@ -41,21 +41,21 @@ SQLConfigDataSource(NULL,ODBC_ADD_DSN, "Excel Files (*.xls)",
 
 Beachten Sie, dass es sich bei der Datenquelle um ein Verzeichnis handelt (C:\EXCELDIR), dessen Vorhandensein sichergestellt sein muss. Der Excel-Treiber verwendet Verzeichnisse als Datenquellen und Dateien als einzelne Tabellen, und zwar eine Tabelle pro XLS-Datei.
 
-Weitere Informationen zum Erstellen von Tabellen finden Sie unter [Datenquelle: Programmgesteuertes Erstellen einer Tabelle in einer ODBC-Datenquelle](../../data/odbc/data-source-programmatically-creating-a-table-in-an-odbc-data-source.md).
+Weitere Informationen zum Erstellen von Tabellen finden Sie unter [Datenquelle: Programm gesteuertes Erstellen einer Tabelle in einer ODBC-Datenquelle](../../data/odbc/data-source-programmatically-creating-a-table-in-an-odbc-data-source.md).
 
-Die folgende Informationen wird erläutert, die Parameter, die übergeben werden müssen, die `::SQLConfigDataSource` ODBC API-Funktion. Verwendung von `::SQLConfigDataSource`, müssen Sie die Headerdatei Odbcinst.h eingebunden und die Importbibliothek Odbcinst.lib verwendet werden. Außerdem muss die Datei Odbccp32.dll zur Laufzeit im Ausführungspfad gespeichert sein, bzw. für 16 Bits die Datei Odbcinst.dll.
+In den folgenden Informationen werden die Parameter erläutert, die an die `::SQLConfigDataSource` ODBC-API-Funktion übermittelt werden müssen. Wenn Sie `::SQLConfigDataSource`verwenden möchten, müssen Sie die Header Datei Odbcinst. h einschließen und die Import Bibliothek Odbcinst. lib verwenden. Außerdem muss die Datei Odbccp32.dll zur Laufzeit im Ausführungspfad gespeichert sein, bzw. für 16 Bits die Datei Odbcinst.dll.
 
 Sie können einen ODBC-Datenquellennamen mit ODBC-Administrator oder einem ähnlichen Dienstprogramm erstellen. Manchmal ist es jedoch besser, einen Datenquellennamen direkt aus einer Anwendung heraus anzulegen. So wird der Zugriff ermöglicht, ohne dass der Benutzer ein separates Hilfsprogramm ausführen muss.
 
-ODBC-Administrator, der normalerweise in der Windows-Systemsteuerung installiert ist, erstellt eine neue Datenquelle, indem er Einträge in die Windows-Registrierung schreibt, bzw. bei 16 Bits in die Datei Odbc.ini. Der ODBC-Treiber-Manager verwendet diese Datei, um die benötigten Informationen über die Datenquelle zu ermitteln. Es ist wichtig zu wissen, welche Informationen muss in der Registrierung platziert werden, da Sie ihn durch den Aufruf von müssen `::SQLConfigDataSource`.
+ODBC-Administrator, der normalerweise in der Windows-Systemsteuerung installiert ist, erstellt eine neue Datenquelle, indem er Einträge in die Windows-Registrierung schreibt, bzw. bei 16 Bits in die Datei Odbc.ini. Der ODBC-Treiber-Manager verwendet diese Datei, um die benötigten Informationen über die Datenquelle zu ermitteln. Es ist wichtig zu wissen, welche Informationen in der Registrierung abgelegt werden müssen, da Sie ihn mit dem-`::SQLConfigDataSource`bereitstellen müssen.
 
-Obwohl diese Informationen direkt in der Registrierung ohne geschrieben werden konnte `::SQLConfigDataSource`, jede Anwendung, die tut es setzt voraus, dass das aktuelle Verfahren, die der Treiber-Manager zum Verwalten der Daten verwendet. Sollte eine spätere Version von ODBC-Treiber-Manager die Datensatzverwaltung für Datenquellen in einer anderen Weise implementieren, wäre eine solche Anwendung nicht mehr funktionsfähig. Soweit möglich, sollte immer eine API-Funktion verwendet werden. Der Code ist z. B. aus 16-Bit mit 32 Bits portiert, wenn Sie verwenden die `::SQLConfigDataSource` Funktion, da die Funktion in der Datei Odbc.ini oder in die Registrierung schreibt.
+Obwohl diese Informationen direkt in die Registrierung geschrieben werden können, ohne `::SQLConfigDataSource`zu verwenden, verwendet jede Anwendung, die dies verwendet, die aktuelle Technik, die der Treiber-Manager verwendet, um die Daten beizubehalten. Sollte eine spätere Version von ODBC-Treiber-Manager die Datensatzverwaltung für Datenquellen in einer anderen Weise implementieren, wäre eine solche Anwendung nicht mehr funktionsfähig. Soweit möglich, sollte immer eine API-Funktion verwendet werden. Beispielsweise kann Ihr Code von einem 16-Bit-zu einem 32-Bit portierbar sein, wenn Sie die `::SQLConfigDataSource`-Funktion verwenden, da die Funktion ordnungsgemäß in die Datei "ODBC. ini" oder in die Registrierung schreibt.
 
-##  <a name="_core_sqlconfigdatasource_parameters"></a> Parameter von SQLConfigDataSource
+##  <a name="sqlconfigdatasource-parameters"></a><a name="_core_sqlconfigdatasource_parameters"></a>SQLConfigDataSource-Parameter
 
-Das folgende Beispiel erläutert die Parameter der `::SQLConfigDataSource` Funktion. Der Großteil dieser Informationen stammt aus der ODBC-API *Programmer's Reference* mit Visual C++, Version 1.5 und höher angegeben.
+Im folgenden werden die Parameter der `::SQLConfigDataSource`-Funktion erläutert. Ein Großteil der Informationen stammt aus der ODBC-API *-Programmier Referenz* , die mit C++ Visual Version 1,5 und höher bereitgestellt wird.
 
-###  <a name="_core_function_prototype"></a> Funktionsprototyp
+###  <a name="function-prototype"></a><a name="_core_function_prototype"></a>Funktionsprototyp
 
 ```
 BOOL SQLConfigDataSource(HWND hwndParent,UINT fRequest, LPCSTR lpszDriver, LPCSTR lpszAttributes);
@@ -63,16 +63,16 @@ BOOL SQLConfigDataSource(HWND hwndParent,UINT fRequest, LPCSTR lpszDriver, LPCST
 
 ### <a name="remarks"></a>Hinweise
 
-####  <a name="_core_parameters_and_usage"></a> Parameter und Ihre Verwendung
+####  <a name="parameters-and-usage"></a><a name="_core_parameters_and_usage"></a>Parameter und Verwendung
 
 *hwndParent*<br/>
-Das Besitzerfenster für alle Dialogfelder, das der ODBC-Treiber-Manager oder der spezifische ODBC-Treiber erstellt, um vom Benutzer zusätzliche Informationen über die neue Datenquelle anzufordern. Wenn die *LpszAttributes* -Parameter nicht genügend Informationen bereitstellt, wird ein Dialogfeld angezeigt. Die *HwndParent* Parameter kann NULL sein.
+Das Besitzerfenster für alle Dialogfelder, das der ODBC-Treiber-Manager oder der spezifische ODBC-Treiber erstellt, um vom Benutzer zusätzliche Informationen über die neue Datenquelle anzufordern. Wenn der *lpszattribute* -Parameter nicht genügend Informationen bereitstellt, wird ein Dialogfeld angezeigt. Der *hwndParent* -Parameter kann NULL sein.
 
 *lpszDriver*<br/>
 Hierbei handelt es sich um die Treiberbeschreibung. Dies ist der Name, der dem Benutzer an Stelle des physischen Treibernamens, also der DLL, angezeigt wird.
 
-*lpszAttributes*<br/>
-Die Liste der Attribute in der Form "Schlüsselname=Wert". Diese Zeichenfolgen werden durch NULL-Zeichen getrennt. Zwei aufeinander folgende NULL-Zeichen kennzeichnen das Ende der Liste. Diese Attribute sind in erster Linie treiberspezifische Standardeinträge, die für die neue Datenquelle in die Registrierung geschrieben werden. Ein wichtiger Schlüssel, der in der ODBC-API-Referenz zu dieser Funktion nicht erwähnt wird, ist "DSN" (Data Source Name, Datenquellenname). Hierdurch wird der Name der neuen Datenquelle angegeben. Die übrigen Einträge betreffen den Treiber für die neue Datenquelle. Meist ist es nicht erforderlich, alle Einträge zur Verfügung zu stellen, da der Benutzer durch den Treiber in Dialogfeldern zur Eingabe der neuen Werte aufgefordert werden kann. (Legen Sie *HwndParent* auf NULL, um dies zu verursachen.) Es können auch explizit Standardwerte bereitgestellt werden, damit der Benutzer nicht zu einer Eingabe aufgefordert wird.
+*lpszattribute*<br/>
+Die Liste der Attribute in der Form "Schlüsselname=Wert". Diese Zeichenfolgen werden durch NULL-Zeichen getrennt. Zwei aufeinander folgende NULL-Zeichen kennzeichnen das Ende der Liste. Diese Attribute sind in erster Linie treiberspezifische Standardeinträge, die für die neue Datenquelle in die Registrierung geschrieben werden. Ein wichtiger Schlüssel, der in der ODBC-API-Referenz zu dieser Funktion nicht erwähnt wird, ist "DSN" (Data Source Name, Datenquellenname). Hierdurch wird der Name der neuen Datenquelle angegeben. Die übrigen Einträge betreffen den Treiber für die neue Datenquelle. Meist ist es nicht erforderlich, alle Einträge zur Verfügung zu stellen, da der Benutzer durch den Treiber in Dialogfeldern zur Eingabe der neuen Werte aufgefordert werden kann. (Legen Sie *hwndParent* auf NULL fest, um dies zu verursachen.) Möglicherweise möchten Sie explizit Standardwerte angeben, sodass der Benutzer nicht aufgefordert wird.
 
 #### <a name="to-determine-the-description-of-a-driver-for-the-lpszdriver-parameter-using-odbc-administrator"></a>So ermitteln Sie mit ODBC-Administrator die Beschreibung eines Treibers für den lpszDriver-Parameter
 
@@ -80,11 +80,11 @@ Die Liste der Attribute in der Form "Schlüsselname=Wert". Diese Zeichenfolgen w
 
 1. Klicken Sie auf **Hinzufügen**.
 
-Hierdurch wird eine Liste der installierten Treiber mit der entsprechenden Beschreibung angezeigt. Verwenden Sie diese Beschreibung der *LpszDriver* Parameter. Verwenden Sie hierbei die vollständige Beschreibung, z. B. "Excel-Dateien (*.xls)", einschließlich der Dateinamenerweiterung und der Klammern, sofern diese in der Beschreibung vorhanden sind.
+Hierdurch wird eine Liste der installierten Treiber mit der entsprechenden Beschreibung angezeigt. Verwenden Sie diese Beschreibung als *lpszDriver* -Parameter. Verwenden Sie hierbei die vollständige Beschreibung, z. B. "Excel-Dateien (*.xls)", einschließlich der Dateinamenerweiterung und der Klammern, sofern diese in der Beschreibung vorhanden sind.
 
 Wahlweise kann auch die Registrierung oder, bei 16 Bit-Systemen, die Datei Odbcinst.ini durchsucht werden, die eine Liste aller Treibereinträge und Beschreibungen unter dem Registrierungsschlüssel "ODBC Drivers" enthält bzw. der Abschnitt [ODBC Drivers] in der Datei Odbcinst.ini.
 
-Eine Möglichkeit zum Suchen von Schlüsselnamen und Werte für die *LpszAttributes* Parameter ist die Untersuchung der Datei Odbc.ini einer bereits konfigurierten Datenquelle (z. B. eins, die vom ODBC-Administrator konfiguriert wurde).
+Eine Möglichkeit, die Schlüsselnamen und Werte für den Parameter " *lpszattribute* " zu finden, besteht darin, die Datei "ODBC. ini" auf eine bereits konfigurierte Datenquelle zu überprüfen (möglicherweise eine, die vom ODBC-Administrator konfiguriert wurde).
 
 #### <a name="to-find-keynames-and-values-for-the-lpszattributes-parameter"></a>So suchen Sie Schlüsselnamen und Werte für den Parameter lpszAttributes
 
@@ -92,15 +92,15 @@ Eine Möglichkeit zum Suchen von Schlüsselnamen und Werte für die *LpszAttribu
 
 1. Suchen Sie nach den Informationen zu ODBC-Datenquellen mit einer der folgenden Methoden:
 
-   - Suchen Sie den Schlüssel für die 32-Bit **HKEY_CURRENT_USER\Software\ODBC\ODBC. Datenquellen INI\ODBC** im linken Bereich.
+   - Wenn Sie 32 Bit verwenden, finden Sie den Schlüssel **HKEY_CURRENT_USER \software\odbc\odbc. INI\ODBC-Datenquellen** im linken Bereich.
 
-      Im rechten Fenster werden die Einträge der Form: "Pub: REG_SZ:*<data source name>*", wobei *<data source name>* ist eine Datenquelle, die Sie verwenden möchten bereits mit den gewünschten Einstellungen für den Treiber konfiguriert wurde. Wählen Sie die Datenquelle, die Sie möchten, die z. b. SQL Server. Die Elemente, die nach der Zeichenfolge "Pub:" sind, die Reihenfolge der Schlüsselname und Wert für die Verwendung in Ihrem *LpszAttributes* Parameter.
+      Im rechten Bereich werden die folgenden Einträge aufgelistet: "Pub: REG_SZ: *\<Datenquellen Name >* ", wobei *\<Datenquellen Name >* eine Datenquelle ist, die bereits mit den gewünschten Einstellungen für den Treiber konfiguriert wurde, den Sie verwenden möchten. Wählen Sie die gewünschte Datenquelle aus, z. b. SQL Server. Die Elemente, die der Zeichenfolge "Pub:" folgen, sind in der richtigen Reihenfolge der keyName und der Wert, der in Ihrem *lpszattribute* -Parameter verwendet werden soll.
 
-   - Suchen Sie den Abschnitt für 16-Bit in der Datei Odbc.ini nach [*\<Datenquellenname >*].
+   - Für 16-Bit finden Sie den Abschnitt in der Datei "ODBC. ini", die durch [ *\<Datenquellen Name >* ] gekennzeichnet ist.
 
-      Die Zeilen im Anschluss an diese Zeile haben die Form "Schlüsselname=Wert". Hierbei handelt es sich um genau die Einträge für die Verwendung in Ihrem *LpszAttributes* Parameter.
+      Die Zeilen im Anschluss an diese Zeile haben die Form "Schlüsselname=Wert". Dies sind genau die Einträge, die in Ihrem *lpszattribute* -Parameter verwendet werden.
 
-Sie können auch die Dokumentation des Treibers durchsuchen, den Sie verwenden möchten. Sie finden nützliche Informationen in der Onlinehilfe zu diesem Treiber, auf die Sie mit ODBC-Administrator zugreifen können. Diese Hilfedateien werden in der Regel im Verzeichnis WINDOWS\SYSTEM von Windows NT, Windows 3.1 oder Windows 95 platziert.
+Sie können auch die Dokumentation des Treibers durchsuchen, den Sie verwenden möchten. Sie finden nützliche Informationen in der Onlinehilfe zu diesem Treiber, auf die Sie mit ODBC-Administrator zugreifen können. Diese Hilfedateien werden normalerweise im Verzeichnis "Windows\System" für Windows NT, Windows 3,1 oder Windows 95 platziert.
 
 #### <a name="to-obtain-online-help-for-your-odbc-driver"></a>So greifen Sie auf die Onlinehilfe des ODBC-Treibers zu
 
@@ -112,7 +112,7 @@ Sie können auch die Dokumentation des Treibers durchsuchen, den Sie verwenden m
 
 1. Klicken Sie auf **OK**.
 
-Wenn ODBC-Administrator die Informationen zum Erstellen einer neuen Datenquelle für diesen speziellen Treiber anzeigt, klicken Sie auf **Hilfe**. Hierdurch wird die Hilfedatei für diesen Treiber geöffnet, die in der Regel wichtige Informationen zu dessen Verwendung enthält.
+Wenn der ODBC-Administrator die Informationen zum Erstellen einer neuen Datenquelle für diesen bestimmten Treiber anzeigt, klicken Sie auf **Hilfe**. Hierdurch wird die Hilfedatei für diesen Treiber geöffnet, die in der Regel wichtige Informationen zu dessen Verwendung enthält.
 
 ## <a name="see-also"></a>Siehe auch
 
