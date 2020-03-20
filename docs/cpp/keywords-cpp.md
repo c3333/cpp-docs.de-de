@@ -31,42 +31,42 @@ Schlüsselwörter sind vordefinierte, reservierte Bezeichner, die besondere Bede
 |[__single_inheritance](inheritance-keywords.md)<sup>4</sup>|[__sptr](sptr-uptr.md)<sup>4</sup>|[__stdcall](stdcall.md) <sup>4</sup>|[__super](super.md)|
 |[__thiscall](thiscall.md)|[__try_cast](../dotnet/cast-notation-and-introduction-of-safe-cast-angles.md) <sup>2</sup>|[__unaligned](unaligned.md) <sup>4</sup>|[__unhook](unhook.md) <sup>3</sup>|
 |[__uptr](sptr-uptr.md) <sup>4</sup>|[__uuidof](uuidof-operator.md) <sup>4</sup>|[__value](../dotnet/value-type-semantics.md) <sup>2</sup>|[__vectorcall](vectorcall.md) <sup>4</sup>|
-|[__virtual_inheritance](inheritance-keywords.md) <sup>4</sup>|[__w64](w64.md) <sup>4</sup>|[__wchar_t](fundamental-types-cpp.md)|[abstrakte](../extensions/abstract-cpp-component-extensions.md)(C++ / CLI)|
-|[alignas](align-cpp.md)|[Array](../extensions/arrays-cpp-component-extensions.md)(C++ / CLI)|[auto](auto-keyword.md)|[bool](bool-cpp.md)|
+|[__virtual_inheritance](inheritance-keywords.md) <sup>4</sup>|[__w64](w64.md) <sup>4</sup>|[__wchar_t](fundamental-types-cpp.md)|[abstract](../extensions/abstract-cpp-component-extensions.md)(C++ / CLI)|
+|[alignas](align-cpp.md)|[array](../extensions/arrays-cpp-component-extensions.md)(C++ / CLI)|[auto](auto-keyword.md)|[bool](bool-cpp.md)|
 |[break](break-statement-cpp.md)|[case](switch-statement-cpp.md)|[catch](try-throw-and-catch-statements-cpp.md)|[char](fundamental-types-cpp.md)|
 |[char16_t](char-wchar-t-char16-t-char32-t.md)|[char32_t](char-wchar-t-char16-t-char32-t.md)|[class](class-cpp.md)|[const](const-cpp.md)|
 |[const_cast](const-cast-operator.md)|[constexpr](constexpr-cpp.md)|[continue](continue-statement-cpp.md)|[decltype](decltype-cpp.md)|
-|[default](switch-statement-cpp.md)|[Delegieren](../extensions/delegate-cpp-component-extensions.md)(C++ / CLI)|[delete](delete-operator-cpp.md)|[als veraltet markiert](deprecated-cpp.md) <sup>1</sup>|
+|[default](switch-statement-cpp.md)|[delegate](../extensions/delegate-cpp-component-extensions.md)(C++ / CLI)|[delete](delete-operator-cpp.md)|[depreciated](deprecated-cpp.md) <sup>1</sup>|
 |[dllexport](dllexport-dllimport.md) <sup>1</sup>|[dllimport](dllexport-dllimport.md) <sup>1</sup>|[do](do-while-statement-cpp.md)|[double](fundamental-types-cpp.md)|
-|[dynamic_cast](dynamic-cast-operator.md)|[else](if-else-statement-cpp.md)|[enum](enumerations-cpp.md)|[Enumerationsklasse](../extensions/enum-class-cpp-component-extensions.md)|
-|[Enum-Struktur](../extensions/enum-class-cpp-component-extensions.md)|[Ereignis](../extensions/event-cpp-component-extensions.md)(C++ / CLI)|[explicit](user-defined-type-conversions-cpp.md)|[extern](using-extern-to-specify-linkage.md)|
+|[dynamic_cast](dynamic-cast-operator.md)|[else](if-else-statement-cpp.md)|[enum](enumerations-cpp.md)|[enum class](../extensions/enum-class-cpp-component-extensions.md)|
+|[enum struct](../extensions/enum-class-cpp-component-extensions.md)|[event](../extensions/event-cpp-component-extensions.md)(C++ / CLI)|[explicit](user-defined-type-conversions-cpp.md)|[extern](using-extern-to-specify-linkage.md)|
 |[false](false-cpp.md)|[finally](../dotnet/finally.md)|[float](fundamental-types-cpp.md)|[for](for-statement-cpp.md)|
-|[für jede in](../dotnet/for-each-in.md)|[friend](friend-cpp.md)|[friend_as](../preprocessor/hash-using-directive-cpp.md)|[Gcnew](../extensions/ref-new-gcnew-cpp-component-extensions.md)(C++ / CLI)|
-|[generische](../extensions/generics-cpp-component-extensions.md)(C++ / CLI)|[goto](goto-statement-cpp.md)|[if](if-else-statement-cpp.md)|[initonly](../dotnet/initonly-cpp-cli.md)|
-|[inline](inline-functions-cpp.md)|[int](fundamental-types-cpp.md)|[Schnittstellenklasse](../extensions/interface-class-cpp-component-extensions.md)(C++ / CLI)|[Schnittstelle Struktur](../extensions/interface-class-cpp-component-extensions.md)(C++ / CLI)|
-|[interior_ptr](../extensions/interior-ptr-cpp-cli.md)(C++/CLI)|[Literal](../extensions/literal-cpp-component-extensions.md)(C++ / CLI)|[long](fundamental-types-cpp.md)|[mutable](mutable-data-members-cpp.md)|
-|[naked](naked-cpp.md) <sup>1</sup>|[namespace](namespaces-cpp.md)|[neue](../extensions/new-new-slot-in-vtable-cpp-component-extensions.md)(C++ / CLI)|[new](new-operator-cpp.md)|
+|[for each in](../dotnet/for-each-in.md)|[friend](friend-cpp.md)|[friend_as](../preprocessor/hash-using-directive-cpp.md)|[Gcnew](../extensions/ref-new-gcnew-cpp-component-extensions.md)(C++ / CLI)|
+|[generic](../extensions/generics-cpp-component-extensions.md)(C++ / CLI)|[goto](goto-statement-cpp.md)|[if](if-else-statement-cpp.md)|[initonly](../dotnet/initonly-cpp-cli.md)|
+|[inline](inline-functions-cpp.md)|[int](fundamental-types-cpp.md)|[interface class](../extensions/interface-class-cpp-component-extensions.md)(C++ / CLI)|[interface struct](../extensions/interface-class-cpp-component-extensions.md)(C++ / CLI)|
+|[interior_ptr](../extensions/interior-ptr-cpp-cli.md)(C++/CLI)|[literal](../extensions/literal-cpp-component-extensions.md)(C++ / CLI)|[long](fundamental-types-cpp.md)|[mutable](mutable-data-members-cpp.md)|
+|[naked](naked-cpp.md) <sup>1</sup>|[namespace](namespaces-cpp.md)|[new](../extensions/new-new-slot-in-vtable-cpp-component-extensions.md)(C++ / CLI)|[new](new-operator-cpp.md)|
 |[noexcept](noexcept-cpp.md)|[noinline](noinline.md) <sup>1</sup>|[noreturn](noreturn.md) <sup>1</sup>|[nothrow](nothrow-cpp.md) <sup>1</sup>|
 |[novtable](novtable.md) <sup>1</sup>|[nullptr](nullptr.md)|[operator](operator-overloading.md)|[private](private-cpp.md)|
-|[Eigenschaft](../extensions/property-cpp-component-extensions.md)(C++ / CLI)|[Eigenschaft](property-cpp.md) <sup>1</sup>|[protected](protected-cpp.md)|[public](public-cpp.md)|
-|[REF-Klasse](../extensions/classes-and-structs-cpp-component-extensions.md)|[ref struct](../extensions/classes-and-structs-cpp-component-extensions.md)|[register](storage-classes-cpp.md#register)|[reinterpret_cast](reinterpret-cast-operator.md)|
-|[return](return-statement-cpp.md)|[safecast](../extensions/safe-cast-cpp-component-extensions.md)|[versiegelte](../extensions/sealed-cpp-component-extensions.md)(C++ / CLI)|[Selectany](selectany.md) <sup>1</sup>|
+|[property](../extensions/property-cpp-component-extensions.md)(C++ / CLI)|[property](property-cpp.md) <sup>1</sup>|[protected](protected-cpp.md)|[public](public-cpp.md)|
+|[ref class](../extensions/classes-and-structs-cpp-component-extensions.md)|[ref struct](../extensions/classes-and-structs-cpp-component-extensions.md)|[register](storage-classes-cpp.md#register)|[reinterpret_cast](reinterpret-cast-operator.md)|
+|[return](return-statement-cpp.md)|[safecast](../extensions/safe-cast-cpp-component-extensions.md)|[sealed](../extensions/sealed-cpp-component-extensions.md)(C++ / CLI)|[selectany](selectany.md) <sup>1</sup>|
 |[short](fundamental-types-cpp.md)|[signed](fundamental-types-cpp.md)|[sizeof](sizeof-operator.md)|[static](storage-classes-cpp.md)|
 |[static_assert](static-assert.md)|[static_cast](static-cast-operator.md)|[struct](struct-cpp.md)|[switch](switch-statement-cpp.md)|
-|[template](templates-cpp.md)|[this](this-pointer.md)|[Thread](thread.md) <sup>1</sup>|[throw](try-throw-and-catch-statements-cpp.md)|
+|[template](templates-cpp.md)|[this](this-pointer.md)|[thread](thread.md) <sup>1</sup>|[throw](try-throw-and-catch-statements-cpp.md)|
 |[true](true-cpp.md)|[try](try-throw-and-catch-statements-cpp.md)|[typedef](aliases-and-typedefs-cpp.md)|[typeid](typeid-operator.md)|
 |[typeid](../extensions/typeid-cpp-component-extensions.md)|[typename](typename.md)|[union](unions.md)|[unsigned](fundamental-types-cpp.md)|
-|[Mithilfe von](using-declaration.md) Deklaration|[Mithilfe von](namespaces-cpp.md#using_directives) Richtlinie|[uuid](uuid-cpp.md) <sup>1</sup>|[Value-Klasse](../extensions/classes-and-structs-cpp-component-extensions.md)(C++ / CLI)|
-|[wertstruktur](../extensions/classes-and-structs-cpp-component-extensions.md)(C++ / CLI)|[virtual](virtual-cpp.md)|[void](void-cpp.md)|[volatile](volatile-cpp.md)|
+|[using](using-declaration.md) declaration|[using](namespaces-cpp.md#using_directives) directive|[uuid](uuid-cpp.md) <sup>1</sup>|[value class](../extensions/classes-and-structs-cpp-component-extensions.md)(C++ / CLI)|
+|[value struct](../extensions/classes-and-structs-cpp-component-extensions.md)(C++ / CLI)|[virtual](virtual-cpp.md)|[void](void-cpp.md)|[volatile](volatile-cpp.md)|
 |[while](while-statement-cpp.md)|
 
 <sup>1</sup> erweiterte Attribute für die **__declspec** Schlüsselwort.
 
-<sup>2</sup> für Managed Extensions for C++ nur anwendbar. Diese Syntax ist inzwischen veraltet. Finden Sie unter [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md) für Weitere Informationen.
+<sup>2</sup> für Managed Extensions for C++ nur anwendbar. Diese Syntax ist inzwischen veraltet. Unter [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md) finden Sie weitere Informationen.
 
 <sup>3</sup> in der Ereignisbehandlung verwendete intrinsische Funktion.
 
-<sup>4</sup> Gründen der Abwärtskompatibilität mit früheren Versionen sind diese Schlüsselwörter verfügbar mit zwei führenden unterstrichen und eines einzelnen vorangestellten Unterstrichs, wenn Microsoft-Erweiterungen sind aktiviert (Standard).
+<sup>4</sup> aus Gründen der Abwärtskompatibilität mit früheren Versionen sind diese Schlüsselwörter verfügbar mit zwei führenden Unterstrichen und eines einzelnen vorangestellten Unterstrichs, wenn Microsoft-Erweiterungen aktiviert sind (Standard).
 
 **Microsoft-spezifisch**
 
