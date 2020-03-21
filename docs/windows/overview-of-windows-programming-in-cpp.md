@@ -2,16 +2,16 @@
 title: Übersicht über Windows-Programmierung in C++
 ms.date: 09/17/2019
 ms.assetid: efc691d7-21f3-47ae-ae56-cab999ccf59d
-ms.openlocfilehash: 96a03194059f59f57780bfd70cab3065d6a1aff0
-ms.sourcegitcommit: 76cc69b482ada8ebf0837e8cdfd4459661f996dd
+ms.openlocfilehash: cd95332721f51ed2d17c3205cba5f1456a1037b9
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71127196"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075488"
 ---
 # <a name="overview-of-windows-programming-in-c"></a>Übersicht über Windows-Programmierung in C++
 
-Es gibt mehrere allgemeine Kategorien von Windows-Anwendungen, die Sie mit C++erstellen können. Jede verfügt über ein eigenes Programmiermodell und eine Reihe von Windows-spezifischen Bibliotheken, C++ aber die Standardbibliothek und Bibliotheken C++ von Drittanbietern können in jedem verwendet werden. 
+Es gibt mehrere allgemeine Kategorien von Windows-Anwendungen, die Sie mit C++erstellen können. Jede verfügt über ein eigenes Programmiermodell und eine Reihe von Windows-spezifischen Bibliotheken, C++ aber die Standardbibliothek und Bibliotheken C++ von Drittanbietern können in jedem verwendet werden.
 
 In diesem Abschnitt wird erläutert, wie Visual Studio und die MFC/ATL-Wrapper Bibliotheken zum Erstellen von Windows-Programmen verwendet werden. Dokumentation zur Windows-Plattform selbst finden Sie in der [Windows-Dokumentation](/windows/index).
 
@@ -23,7 +23,7 @@ C++Konsolen Anwendungen werden über die Befehlszeile in einem Konsolenfenster a
 
 Eine *native Desktop Client Anwendung* ist eine C- C++ oder Fenster-Anwendung, die die ursprünglichen System [eigenen Windows C-APIs oder-Component Object Model (com)-APIs](/windows/win32/apiindex/windows-api-list) für den Zugriff auf das Betriebssystem verwendet. Diese APIs werden größtenteils in C geschrieben. Es gibt mehrere Möglichkeiten, eine native Desktop-App zu erstellen: Sie können mithilfe der Win32-APIs direkt programmieren, indem Sie eine Nachrichten Schleife im C-Stil verwenden, die Betriebssystem Ereignisse verarbeitet. Oder Sie können mit *Microsoft Foundation Classes* (MFC) programmieren, einer leicht zu einem Objekt C++ orientierten Bibliothek, die Win32 umschließt. Beide Ansätze werden im Vergleich zum universelle Windows-Plattform (UWP) als "Modern" betrachtet, aber beide werden weiterhin vollständig unterstützt und verfügen heute über Millionen von Codezeilen. Eine Win32-Anwendung, die in einem-Fenster ausgeführt wird, erfordert, dass der Entwickler explizit mit Windows-Meldungen innerhalb einer Windows-Prozedur Funktion arbeitet. Trotz des Namens kann eine Win32-Anwendung als 32-Bit-(x86) oder 64-Bit-Binärdatei (x64) kompiliert werden. In der Visual Studio-IDE sind die Begriffe x86 und Win32 Synonym.
 
-Informationen zu den ersten Schritten mit C++ der herkömmlichen Windows-Programmierung finden Sie unter [Get Started with Win32 and C++ ](/windows/win32/LearnWin32/learn-to-program-for-windows). Nachdem Sie sich mit Win32 vertraut machen, ist es einfacher, sich über [MFC-Desktop Anwendungen](../mfc/mfc-desktop-applications.md)zu informieren. Ein Beispiel für eine herkömmliche C++ Desktop Anwendung, die ausgereifte Grafiken verwendet, [finden Sie unter Hilo: Entwickeln C++ von Anwendungen für](https://msdn.microsoft.com/library/windows/desktop/ff708696.aspx)Windows.
+Informationen zu den ersten Schritten mit C++ der herkömmlichen Windows-Programmierung finden Sie unter [Get Started with Win32 and C++ ](/windows/win32/LearnWin32/learn-to-program-for-windows). Nachdem Sie sich mit Win32 vertraut machen, ist es einfacher, sich über [MFC-Desktop Anwendungen](../mfc/mfc-desktop-applications.md)zu informieren. Ein Beispiel für eine herkömmliche C++ Desktop Anwendung, die ausgereifte Grafiken verwendet, finden Sie unter [Hilo: entwickeln C++ von Anwendungen für Windows](https://msdn.microsoft.com/library/windows/desktop/ff708696.aspx).
 
 ### <a name="c-or-net"></a>C++oder .net?
 
@@ -77,13 +77,13 @@ Der [vcpkg-Paket-Manager](../build/vcpkg.md) ermöglicht Ihnen die bequeme Insta
 
 Die Microsoft-Bibliotheken umfassen Folgendes:
 
-- Microsoft Foundation Classes (MFC): Ein objektorientiertes Framework zum Erstellen herkömmlicher Windows-Programme – insbesondere Unternehmensanwendungen –, die über umfangreiche Benutzeroberflächen mit Schaltflächen, Listenfeldern, Struktur Ansichten und anderen Steuerelementen verfügen. Weitere Informationen finden Sie unter [MFC Desktop Applications](../mfc/mfc-desktop-applications.md).
+- Microsoft Foundation Classes (MFC): Ein objektorientiertes Framework zum Erstellen herkömmlicher Windows-Programme (im Besonderen Unternehmensanwendungen), die über komplexe Benutzeroberflächen mit Schaltflächen, Listenfeldern, Strukturansichten und anderen Steuerelementen verfügen. Weitere Informationen finden Sie unter [MFC Desktop Applications](../mfc/mfc-desktop-applications.md).
 
-- Active Template Library (ATL): Eine leistungsfähige Hilfsbibliothek zum Erstellen von COM-Komponenten. Weitere Informationen finden Sie unter [ATL COM Desktop Components](../atl/atl-com-desktop-components.md).
+- Active Template Library (ATL): Eine leistungsstarke Hilfebibliothek zum Erstellen von COM-Komponenten. Weitere Informationen finden Sie unter [ATL COM Desktop Components](../atl/atl-com-desktop-components.md).
 
-- C++AMP (C++ beschleunigte massive Parallelität): Eine Bibliothek, die leistungsstarke Allgemeine Berechnungs arbeiten auf der GPU ermöglicht. Weitere Informationen finden Sie unter [C++ AMP (C++ Accelerated Massive Parallelism)](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md).
+- C++ AMP (C++ Accelerated Massive Parallelism): Eine Bibliothek, die leistungsstarke allgemeine Computerarbeit auf der GPU ermöglicht. Weitere Informationen finden Sie unter [C++ AMP (C++ Accelerated Massive Parallelism)](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md).
 
-- Concurrency Runtime: Eine Bibliothek, die die Arbeit paralleler und asynchroner Programmierung für mehr Kern-und viele-Core-Geräte vereinfacht. Weitere Informationen finden Sie unter [Concurrency Runtime](../parallel/concrt/concurrency-runtime.md).
+- Concurrency Runtime: Eine Bibliothek, mit der die Arbeit mit paralleler und asynchroner Programmierung für Viel- und Mehrkerngeräte vereinfacht wird. Weitere Informationen finden Sie unter [Concurrency Runtime](../parallel/concrt/concurrency-runtime.md).
 
 Viele Programmierszenarien bei Windows erfordern zudem das Windows SDK, in dem die Headerdateien enthalten sind, die den Zugriff auf Komponenten des Windows-Betriebssystems ermöglichen. Standardmäßig installiert Visual Studio die Windows SDK als Komponente der C++ Desktop Arbeitsauslastung, die die Entwicklung von universellen Windows-Apps ermöglicht. Zum Entwickeln von UWP-apps benötigen Sie die Windows 10-Version der Windows SDK. Weitere Informationen finden Sie unter [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk). (Weitere Informationen zu den Windows sdert für frühere Versionen von Windows finden Sie im [Windows SDK Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive)).
 
@@ -96,9 +96,9 @@ Für andere Plattformen, wie Xbox und Azure, sind eigene SDKs verfügbar, die si
 Visual Studio bietet einen leistungsfähigen Debugger für nativen Code, Tools für statische Analyse, Grafikdebugtools, einen umfassenden Code-Editor, Unterstützung für Komponententests und viele weitere Tools und Hilfsprogramme. Weitere Informationen finden Sie unter "Einstieg in die Entwicklung [mit Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)" und [ C++ in der Übersicht über die Entwicklung in Visual Studio](../overview/overview-of-cpp-development.md).
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
-|Titel|Beschreibung|
+|Titel|BESCHREIBUNG|
 |-----------|-----------------|
-|[Exemplarische Vorgehensweise: Erstellen eines Standard C++-Programms](walkthrough-creating-a-standard-cpp-program-cpp.md)| Erstellen Sie eine Windows-Konsolenanwendung.|
+|[Exemplarische Vorgehensweise: Erstellen C++ eines Standard Programms](walkthrough-creating-a-standard-cpp-program-cpp.md)| Erstellen Sie eine Windows-Konsolenanwendung.|
 |[Exemplarische Vorgehensweise: Erstellen von Windows-Desktopanwendungen (C++)](walkthrough-creating-windows-desktop-applications-cpp.md)|Erstellen Sie eine native Windows-Desktop Anwendung.|
 |[Windows-Desktopassistent](windows-desktop-wizard.md)|Verwenden Sie den Assistenten, um neue Windows-Projekte zu erstellen.|
 |[Active Template Library (ATL)](../atl/atl-com-desktop-components.md)|Verwenden Sie die ATL-Bibliothek, um com C++-Komponenten in zu erstellen.|
@@ -107,15 +107,15 @@ Visual Studio bietet einen leistungsfähigen Debugger für nativen Code, Tools f
 |[Datenzugriff](../data/data-access-in-cpp.md)| OLE DB und ODBC|
 |[Text und Zeichenfolgen](../text/text-and-strings-in-visual-cpp.md)|Verschiedene Zeichen folgen Typen unter Windows.|
 |[Ressourcen zum Erstellen eines Spiels mit DirectX](resources-for-creating-a-game-using-directx.md)
-|[Vorgehensweise: Verwenden des Windows 10 SDK in einer Windows-Desktopanwendung](how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)|Windows SDK|
+|[Gewusst wie: Verwenden des Windows 10-SDKs in einer Windows-Desktopanwendung](how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)|Windows SDK|
 |[Arbeiten mit Ressourcendateien](working-with-resource-files.md)|Hinzufügen von Bildern, Symbolen, Zeichen folgen Tabellen und anderen Ressourcen zu einer Desktop Anwendung.|
 |[Ressourcen zum Erstellen eines Spiels mit DirectX (C++)](resources-for-creating-a-game-using-directx.md)|Links zu Inhalten zum Erstellen von spielen C++in.|
-|[Vorgehensweise: Verwenden des Windows 10 SDK in einer Windows-Desktopanwendung](how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)|Enthält Schritte zum Einrichten Ihres Projekts für das Erstellen mit dem Windows 10-SDK.|
+|[Gewusst wie: Verwenden des Windows 10-SDKs in einer Windows-Desktopanwendung](how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)|Enthält Schritte zum Einrichten Ihres Projekts für das Erstellen mit dem Windows 10-SDK.|
 |[Bereitstellen nativer Desktopanwendungen](deploying-native-desktop-applications-visual-cpp.md)|Stellen Sie native Anwendungen unter Windows bereit.|
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-|Titel|Beschreibung|
+|Titel|BESCHREIBUNG|
 |-----------|-----------------|
 |[C++ in Visual Studio](../overview/visual-cpp-in-visual-studio.md)|Übergeordnetes Thema für C++ visuellen Entwickler Inhalt.|
 [.NET-Entwicklung mit C++/CLI](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)|Erstellen Sie Wrapper für Native C++ Bibliotheken, die die Kommunikation mit .NET-Anwendungen und-Komponenten ermöglichen.|

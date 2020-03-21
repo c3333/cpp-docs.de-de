@@ -8,22 +8,22 @@ helpviewer_keywords:
 - Visual C++ projects, properties
 - projects [C++], properties
 ms.assetid: 9b0d6f8b-7d4e-4e61-aa75-7d14944816cd
-ms.openlocfilehash: 57414bd56c72b951d3f1948e658243e9036f0179
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 6c05dd00324113819dd145e46bf10dfeb96a66a3
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69498124"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078235"
 ---
 # <a name="set-compiler-and-build-properties"></a>Festlegen von compilerund Buildeigenschaften
 
-In der IDE werden alle Informationen, die für das Erstellen eines Projekts erforderlich sind, als *Eigenschaften* verfügbar gemacht. Zu diesen Informationen zählen unter anderem der Anwendungsname, die Erweiterung (z.B. DLL, LIB, EXE), Compileroptionen, Linkeroptionen, Debuggereinstellungen und benutzerdefinierte Buildschritte. In der Regel verwenden Sie Eigenschaften *Seiten* , um diese Eigenschaften anzuzeigen und zu ändern. Wählen Sie zum Zugreifen auf die Eigenschaften Seiten im Hauptmenü **Project** >  **_ProjectName_ Properties** aus, oder klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften**aus.
+In der IDE werden alle Informationen, die für das Erstellen eines Projekts erforderlich sind, als *Eigenschaften* verfügbar gemacht. Zu diesen Informationen zählen unter anderem der Anwendungsname, die Erweiterung (z.B. DLL, LIB, EXE), Compileroptionen, Linkeroptionen, Debuggereinstellungen und benutzerdefinierte Buildschritte. In der Regel verwenden Sie Eigenschaften *Seiten* , um diese Eigenschaften anzuzeigen und zu ändern. Wählen Sie zum Zugreifen auf die Eigenschaften Seiten im Hauptmenü **Project** >  **_ProjectName_ -Eigenschaften** aus, oder klicken Sie mit der rechten Maustaste in **Projektmappen-Explorer** auf den Projekt Knoten, und wählen Sie **Eigenschaften**aus.
 
 ## <a name="default-properties"></a>Standardeigenschaften
 
 Wenn Sie ein Projekt erstellen, weist das System verschiedenen Eigenschaften Werte zu. Die Standardwerte variieren in Abhängigkeit von der Art des Projekts und den Optionen, die Sie im App-Assistenten auswählen. Ein ATL-Projekt verfügt beispielsweise über Eigenschaften für MIDL-Dateien. Diese sind jedoch in einer Basiskonsolenanwendung nicht vorhanden. Die Standardeigenschaften werden im Bereich „Allgemein“ auf den Eigenschaftenseiten angezeigt:
 
-![Visual C&#43; &#43; -Projekt Standardwerte](media/visual-c---project-defaults.png "Visual C++ Project Standardwerte")
+![Visual C&#43; &#43; -Projekt Standardwerte](media/visual-c---project-defaults.png "Visual C++ Project-Standardwerte")
 
 ## <a name="applying-properties-to-build-configurations-and-target-platforms"></a>Anwenden von Eigenschaften auf Buildkonfigurationen und Zielplattformen
 
@@ -31,11 +31,11 @@ Einige Eigenschaften (z.B. der Anwendungsname) gelten für alle Buildvarianten, 
 
 Die Eigenschaftenseiten wurden so entwickelt, dass Sie immer sehen und bei Bedarf ändern können, für welche Konfiguration und Plattform ein Eigenschaftswert gelten soll. Die folgende Abbildung zeigt die Eigenschaftenseiten mit Informationen zur Konfiguration und zur Plattform in den Listenfeldern im oberen Bereich. Wenn die Eigenschaft **Optimierung** hier festgelegt ist, gilt diese nur für Win32-Debugbuilds. Dies ist die aktive Konfiguration (angezeigt durch die roten Pfeile).
 
-![Visual C++-Eigenschaftenseite, die die aktive Konfiguration anzeigt](media/visual-c---property-pages-showing-active-configuration.png "Visual C++ Property Pages showing active configuration")
+![Visual C&#43; &#43; -Eigenschaften Seiten mit aktiver Konfiguration](media/visual-c---property-pages-showing-active-configuration.png "Visuelle C++ Eigenschaften Seiten, die eine aktive Konfiguration zeigen")
 
 Die folgende Abbildung zeigt dieselbe Eigenschaftenseite des Projekts, allerdings wurde die Konfiguration in „Release“ geändert. Beachten Sie den geänderten Wert der Eigenschaft „Optimierung“. Beachten Sie außerdem, dass die aktive Konfiguration immer noch „Debug“ ist. Sie können hier Eigenschaften für jede Konfiguration festlegen. Diese müssen nicht der aktiven Konfiguration entsprechen.
 
-![Visual C++-Eigenschaftenseite, die die Konfiguration „Release“ anzeigt](media/visual-c---property-pages-showing-release-config.png "Visual C++ Property Pages showing release config")
+![Visual C&#43; &#43; -Eigenschaften Seiten mit Releasekonfiguration](media/visual-c---property-pages-showing-release-config.png "Visuelle C++ Eigenschaften Seiten mit Releasekonfiguration")
 
 ## <a name="target-platforms"></a>Zielplattformen
 
@@ -47,22 +47,22 @@ Weitere Informationen zum Festlegen von Eigenschaften für einen Debugbuild find
 
 - [Projekteinstellungen für eine C++-Debugkonfiguration](/visualstudio/debugger/project-settings-for-a-cpp-debug-configuration)
 - [Debuggereinstellungen und -vorbereitung](/visualstudio/debugger/debugger-settings-and-preparation)
-- [Debugvorbereitung: Visuelle C++ Projekttypen](/visualstudio/debugger/debugging-preparation-visual-cpp-project-types)
+- [Vorbereitung zum Debuggen: Visual C++-Projekttypen](/visualstudio/debugger/debugging-preparation-visual-cpp-project-types)
 - [Angeben von Symbol- (PDB-) und Quelldateien im Visual Studio Debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)
 
 ## <a name="c-compiler-and-linker-options"></a>C++Optionen für Compiler und Linker
 
-C++Optionen für Compiler und Linker befinden sich unter den Knoten **C/C++**  und **Linker** im linken Bereich unter **Konfigurations Eigenschaften**. Diese übersetzen direkt in Befehlszeilenoptionen, die an den Compiler übermittelt werden. Um die Dokumentation zu einer bestimmten Option zu lesen, wählen Sie die Option im mittleren Bereich aus, und drücken Sie **F1**. Sie können auch die Dokumentation zu allen Optionen unter [MSVC-Compileroptionen](reference/compiler-options.md) und [MSVC](reference/linker-options.md)-Linkeroptionen durchsuchen. 
+C++Optionen für Compiler und Linker befinden sich unter den Knoten **C/C++**  und **Linker** im linken Bereich unter **Konfigurations Eigenschaften**. Diese übersetzen direkt in Befehlszeilenoptionen, die an den Compiler übermittelt werden. Um die Dokumentation zu einer bestimmten Option zu lesen, wählen Sie die Option im mittleren Bereich aus, und drücken Sie **F1**. Sie können auch die Dokumentation zu allen Optionen unter [MSVC-Compileroptionen](reference/compiler-options.md) und [MSVC-Linkeroptionen](reference/linker-options.md)durchsuchen.
 
-Im Dialogfeld **Eigenschaften Seiten** werden nur die Eigenschaften Seiten angezeigt, die für das aktuelle Projekt relevant sind. Wenn das Projekt beispielsweise keine IDL-Datei enthält, wird die MIDL-Eigenschaftenseite nicht angezeigt. Weitere Informationen zu den Einstellungen auf den einzelnen Eigenschaften Seiten finden Sie unter [Eigenschaften SeitenC++()](reference/property-pages-visual-cpp.md). 
+Im Dialogfeld **Eigenschaften Seiten** werden nur die Eigenschaften Seiten angezeigt, die für das aktuelle Projekt relevant sind. Wenn das Projekt beispielsweise keine IDL-Datei enthält, wird die MIDL-Eigenschaftenseite nicht angezeigt. Weitere Informationen zu den Einstellungen auf den einzelnen Eigenschaften Seiten finden Sie unter [Eigenschaften SeitenC++()](reference/property-pages-visual-cpp.md).
 
 ## <a name="directory-and-path-values"></a>Verzeichnis-und Pfadwerte
 
-MSBuild unterstützt die Verwendung von Kompilierzeit Konstanten, die als "Makros" bezeichnet werden, für bestimmte Zeichen folgen Werte, die Verzeichnisse und Pfade enthalten. Diese werden in den Eigenschaften Seiten verfügbar gemacht, auf die Sie mithilfe des [Eigenschaften-Editors](#property_editor)verweisen und diese ändern können. 
+MSBuild unterstützt die Verwendung von Kompilierzeit Konstanten, die als "Makros" bezeichnet werden, für bestimmte Zeichen folgen Werte, die Verzeichnisse und Pfade enthalten. Diese werden in den Eigenschaften Seiten verfügbar gemacht, auf die Sie mithilfe des [Eigenschaften-Editors](#property_editor)verweisen und diese ändern können.
 
-Die folgende Abbildung zeigt die Eigenschaften Seiten für ein Visual Studio C++ -Projekt. Im linken Bereich ist die *Regel* **VC++-Verzeichnisse** ausgewählt, und im rechten Bereich werden die Eigenschaften aufgeführt, die dieser Regel zugeordnet sind. Die `$(...)` Werte werden als *Makros*bezeichnet. Ein *Makro* ist eine Kompilierzeitkonstante, die auf einen benutzerdefinierten Wert oder auf einen Wert verweisen kann, der von Visual Studio oder dem MSBuild-System definiert wurde. Durch die Verwendung von Makros anstelle von hart codierten Werten, wie z. b. Verzeichnis Pfaden, können Sie Eigenschafts Einstellungen zwischen Computern und Versionen von Visual Studio einfacher freigeben. Außerdem können Sie besser sicherstellen, dass die Projekteinstellungen in der Eigenschaft ordnungsgemäß teilnehmen. [ Vererbung](project-property-inheritance.md). 
+Die folgende Abbildung zeigt die Eigenschaften Seiten für ein Visual Studio C++ -Projekt. Im linken Bereich ist die Regel **VC + +-Verzeichnisse** *rule* ausgewählt, und im rechten Bereich werden die Eigenschaften aufgelistet, die dieser Regel zugeordnet sind. Die `$(...)` Werte werden als *Makros*bezeichnet. Ein *Makro* ist eine Kompilierzeitkonstante, die auf einen benutzerdefinierten Wert oder auf einen Wert verweisen kann, der von Visual Studio oder dem MSBuild-System definiert wurde. Durch die Verwendung von Makros anstelle von hart codierten Werten, wie z. b. Verzeichnis Pfaden, können Sie Eigenschafts Einstellungen zwischen Computern und Versionen von Visual Studio einfacher freigeben, und Sie können besser sicherstellen, dass Ihre Projekteinstellungen ordnungsgemäß an der [Eigenschaften Vererbung](project-property-inheritance.md)teilnehmen.
 
-![Projekteigenschaftenseiten](media/project_property_pages_vc.png "Project_Property_Pages_VC")
+![Projekteigenschaften Seiten](media/project_property_pages_vc.png "Project_Property_Pages_VC")
 
 Sie können den Eigenschaften-Editor verwenden, um die Werte aller verfügbaren Makros anzuzeigen.
 
@@ -72,7 +72,7 @@ Sie können den Eigenschaften-Editor verwenden, um die Werte aller verfügbaren 
 Gilt für alle Elemente in einer Projektkonfiguration. Besitzt die Syntax `$(name)`. Ein Beispiel eines globalen Makros ist `$(VCInstallDir)`, das das Stammverzeichnis der Visual Studio-Installation speichert. Ein globales Makro entspricht einer `PropertyGroup` in MSBuild.
 
 *Elementmakros*<br/>
-Besitzt die Syntax `%(name)`. Bei einer Datei gilt ein Elementmakro nur für diese Datei – z. B. können Sie `%(AdditionalIncludeDirectories)` verwenden, um Includeverzeichnisse anzugeben, die nur für eine bestimmte Datei gelten. Diese Art des Elementmakros entspricht den `ItemGroup`-Metadaten in MSBuild. Wenn ein Elementmakro im Zusammenhang mit einer Projektkonfiguration verwendet wird, gilt es für alle Dateien eines bestimmten Typs. Beispielsweise kann die C/C++-Konfigurationseigenschaft **Präprozessordefinitionen** ein `%(PreprocessorDefinitions)`-Elementmakro verwenden, das für alle CPP-Dateien im Projekt gilt. Diese Art des Elementmakros entspricht den `ItemDefinitionGroup`-Metadaten in MSBuild. Weitere Informationen finden Sie unter [Item Definitions](/visualstudio/msbuild/item-definitions) (Elementdefinitionen).
+Besitzt die Syntax `%(name)`. Bei einer Datei gilt ein Elementmakro nur für diese Datei – z. B. können Sie `%(AdditionalIncludeDirectories)` verwenden, um Includeverzeichnisse anzugeben, die nur für eine bestimmte Datei gelten. Diese Art des Elementmakros entspricht den `ItemGroup`-Metadaten in MSBuild. Wenn ein Elementmakro im Zusammenhang mit einer Projektkonfiguration verwendet wird, gilt es für alle Dateien eines bestimmten Typs. Beispielsweise kann die C/C++-Konfigurationseigenschaft **Präprozessordefinitionen** ein `%(PreprocessorDefinitions)`-Elementmakro verwenden, das für alle CPP-Dateien im Projekt gilt. Diese Art des Elementmakros entspricht den `ItemDefinitionGroup`-Metadaten in MSBuild. Weitere Informationen finden Sie unter [Item Definitions (Elementdefinitionen)](/visualstudio/msbuild/item-definitions).
 
 ### <a name="user-defined-macros"></a>benutzerdefinierte Makros
 
@@ -82,21 +82,21 @@ Ein benutzerdefiniertes Makro wird in einem Eigenschaftenblatt gespeichert. Wenn
 
 #### <a name="to-create-a-user-defined-macro"></a>So erstellen Sie ein benutzerdefiniertes Makro
 
-1. Öffnen Sie das Fenster **Eigenschaften-Manager** . (Wählen Sie in der Menüleiste**Eigenschaften-Manager** **anzeigen** > oder**andere Fenster** > **Eigenschaften-Manager** **anzeigen** > aus.) Öffnen Sie das Kontextmenü für ein Eigenschaften Blatt (der Name endet auf. User), und wählen Sie dann **Eigenschaften**aus. Das Dialogfeld **Eigenschaftenseiten** für dieses Eigenschaftenblatt wird geöffnet.
+1. Öffnen Sie das Fenster **Eigenschaften-Manager** . (Wählen Sie in der Menüleiste > **Eigenschaften-Manager** **anzeigen** oder > **anderen Windows** - > **Eigenschaften-Manager** **anzeigen** aus.) Öffnen Sie das Kontextmenü für ein Eigenschaften Blatt (der Name endet auf. User), und wählen Sie dann **Eigenschaften**aus. Das Dialogfeld **Eigenschaftenseiten** für dieses Eigenschaftenblatt wird geöffnet.
 
 1. Klicken Sie im linken Bereich des Dialogfelds auf **Benutzermakros**. Klicken Sie im rechten Bereich auf die Schaltfläche **Makro hinzufügen**, um das Dialogfeld **Benutzermakro hinzufügen** zu öffnen.
 
 1. Geben Sie im Dialogfeld einen Namen und einen Wert für das Makro an. Optional können Sie das Kontrollkästchen **Makro als Umgebungsvariable in Buildumgebung festlegen** aktivieren.
 
-## <a name="property_editor">Eigenschaften-Editor</a>
+## <a name=""></a><a name="property_editor">Eigenschaften-Editor</a>
 
 Mit dem Eigenschaften-Editor können Sie bestimmte Zeichenfolgeneigenschaften ändern und Makros als Werte auswählen. Um auf den Eigenschaften-Editor zuzugreifen, wählen Sie eine Eigenschaft auf einer Eigenschaftenseite aus, und klicken Sie rechts auf die Schaltfläche mit dem Pfeil nach unten. Wenn die Dropdownliste die Option **\<Bearbeiten>** enthält, können Sie auf diese klicken, um den Eigenschaften-Editor für diese Eigenschaft anzuzeigen.
 
-![Dropdownliste im Eigenschaften-Editor](media/property_editor_dropdown.png "Property_Editor_Dropdown")
+![Dropdown Menü für Eigenschaften&#95;-Editor&#95;](media/property_editor_dropdown.png "Property_Editor_Dropdown")
 
 Im Eigenschaften-Editor können Sie auf die Schaltfläche **Makros** klicken, um die verfügbaren Makros und deren aktuelle Werte anzuzeigen. Die folgende Abbildung zeigt den Eigenschaften-Editor für die Eigenschaft **Zusätzliche Includeverzeichnisse**, nachdem auf die Schaltfläche **Makros** geklickt wurde. Wenn das Kontrollkästchen **Vom übergeordneten Projekt erben oder Projektstandard** aktiviert ist und Sie einen neuen Wert hinzufügen, wird dieser an alle Werte angefügt, die derzeit vererbt werden. Wenn Sie das Kontrollkästchen deaktivieren, ersetzt der neue Wert die vererbten Werte. In den meisten Fällen bleibt das Kontrollkästchen aktiviert.
 
-![Eigenschaften-Editor, Visual C++](media/propertyeditorvc.png "PropertyEditorVC")
+![Eigenschaften-Editor, Visual C&#43;&#43;](media/propertyeditorvc.png "PropertyEditor VC")
 
 ## <a name="add-an-include-directory-to-the-set-of-default-directories"></a>Hinzufügen eines includeverzeichnisses zum Satz von Standardverzeichnissen
 
@@ -112,7 +112,7 @@ Suche nur in den Eigenschaftennamen (untergeordnete Zeichenfolge ohne Berücksic
 '/' oder '-' :<br/>
 Suche nur in den Compilerschaltern (Präfix ohne Berücksichtigung der Groß-/Kleinschreibung)
 
-v:<br/>
+A:<br/>
 Suche nur in Werten (untergeordnete Zeichenfolge ohne Berücksichtigung der Groß-/Kleinschreibung)
 
 ## <a name="set-environment-variables-for-a-build"></a>Festlegen von Umgebungsvariablen für einen Build
@@ -134,9 +134,9 @@ Erstellen einer.-Eigenschaften Datei mit benutzerdefinierten Buildeinstellungen,
 Beschreibt die Auswertungs Reihenfolge für die.-Eigenschaften, Targets-, vcxproj-Dateien und Umgebungsvariablen im Buildprozess.
 
 [Ändern von Eigenschaften und Zielen ohne Änderungen an der Projektdatei](modify-project-properties-without-changing-project-file.md)<br/>
-Erstellen temporärer Buildeinstellungen, ohne dass eine Projektdatei geändert werden muss. 
+Erstellen temporärer Buildeinstellungen, ohne dass eine Projektdatei geändert werden muss.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Visual Studio-Projekte: C++](creating-and-managing-visual-cpp-projects.md)<br/>
 [VCXPROJ- und PROPS-Dateistruktur](reference/vcxproj-file-structure.md)<br/>

@@ -1,5 +1,5 @@
 ---
-title: 'Beispiel: Anzeigen eines Dialog Felds über einen Menübefehl'
+title: 'Beispiel: Anzeigen eines Dialogfelds mit einem Menübefehl'
 ms.date: 09/07/2019
 helpviewer_keywords:
 - MFC dialog boxes [MFC], examples
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - examples [MFC], dialog boxes
 - menu items [MFC], examples
 ms.assetid: e8692549-acd7-478f-9c5e-ba310ce8cccd
-ms.openlocfilehash: 12c919c1c79a3e40a1322f3f73398b90af2fad5f
-ms.sourcegitcommit: 2f96e2fda591d7b1b28842b2ea24e6297bcc3622
+ms.openlocfilehash: ec4e0495519db3e30213d8abb9292409f2110e3c
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71095926"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078830"
 ---
-# <a name="example-displaying-a-dialog-box-via-a-menu-command"></a>Beispiel: Anzeigen eines Dialog Felds über einen Menübefehl
+# <a name="example-displaying-a-dialog-box-via-a-menu-command"></a>Beispiel: Anzeigen eines Dialogfelds mit einem Menübefehl
 
 Dieses Thema enthält Verfahren für Folgendes:
 
@@ -44,7 +44,7 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
 
 1. Fügen Sie eine Klasse für das Dialogfeld hinzu. Weitere Informationen finden Sie unter [Hinzufügen einer Klasse](../ide/adding-a-class-visual-cpp.md) .
 
-1. Wählen Sie in **Klassenansicht**die Document-Klasse (CDisplayDialogDoc) aus. Klicken Sie im Fenster **Eigenschaften** auf die Schaltfläche **Ereignisse** . Doppelklicken Sie auf die ID des Menübefehls (ID_VIEW_TEST). Klicken Sie anschließend auf den Pfeil nach unten, und wählen Sie  **\<> OnViewTest hinzufügen**aus.
+1. Wählen Sie in **Klassenansicht**die Document-Klasse (CDisplayDialogDoc) aus. Klicken Sie im Fenster **Eigenschaften** auf die Schaltfläche **Ereignisse**. Doppelklicken Sie auf die ID des Menübefehls (ID_VIEW_TEST). Klicken Sie anschließend auf den Pfeil nach unten, und wählen Sie **\<> OnViewTest hinzufügen**aus.
 
    Wenn Sie den Menübefehl dem Main Frame einer MDI-Anwendung hinzugefügt haben, wählen Sie stattdessen die Anwendungsklasse (CDisplayDialogApp) aus.
 
@@ -54,11 +54,11 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
    #include "TestDialog.h"
    ```
 
-1. Fügen Sie den folgenden Code `OnViewTest` hinzu, um die-Funktion zu implementieren:
+1. Fügen Sie den folgenden Code hinzu, um `OnViewTest`, um die Funktion zu implementieren:
 
    ```cpp
    CTestDialog testdlg;
-   testdlg.DoModal(); 
+   testdlg.DoModal();
    ```
 
 ### <a name="to-display-a-modeless-dialog-box"></a>So zeigen Sie ein nicht modalem Dialogfeld an
@@ -99,7 +99,7 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
    delete m_pTestDlg;
    ```
 
-   - Fügen Sie den folgenden Code `OnViewTest` hinzu, um die-Funktion zu implementieren:
+   - Fügen Sie den folgenden Code hinzu, um `OnViewTest`, um die Funktion zu implementieren:
 
    ```cpp
    if (NULL == m_pTestDlg)
@@ -110,7 +110,7 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
    m_pTestDlg->ShowWindow(SW_SHOW);
    ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dialogfelder](../mfc/dialog-boxes.md)<br/>
 [Modale und nicht modale Dialogfelder](../mfc/modal-and-modeless-dialog-boxes.md)

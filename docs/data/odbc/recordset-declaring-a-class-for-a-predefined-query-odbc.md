@@ -8,16 +8,16 @@ helpviewer_keywords:
 - recordsets, predefined queries
 - recordsets, stored procedures
 ms.assetid: d27c4df9-dad2-4484-ba72-92ab0c8ff928
-ms.openlocfilehash: 9ef95f4a2ebbc1bdf52e5631389f65391ce7cf8f
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 6338de99bf9c3e19e6e15ffbe0bcf5caab066ed8
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707968"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079838"
 ---
 # <a name="recordset-declaring-a-class-for-a-predefined-query-odbc"></a>Recordset: Deklarieren einer Klasse für eine vordefinierte Abfrage (ODBC)
 
-> [!NOTE] 
+> [!NOTE]
 > Der MFC-ODBC-Consumer-Assistent ist in Visual Studio 2019 und höher nicht verfügbar. Sie können einen Consumer weiterhin manuell erstellen.
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
@@ -25,7 +25,7 @@ Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 In diesem Thema wird erläutert, wie eine Recordset-Klasse für eine vordefinierte Abfrage (manchmal als gespeicherte Prozedur bezeichnet, wie in Microsoft SQL Server) erstellt wird.
 
 > [!NOTE]
->  Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Wird gesammeltes Abrufen (Massenabrufen) von Zeilen implementiert, ist die Vorgehensweise sehr ähnlich. Informationen dazu, wie sich Recordsets, in denen Massenabrufen von Zeilen implementiert ist, von solchen unterscheiden, in denen dies nicht der Fall ist, finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammeloperation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
+>  Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Wird gesammeltes Abrufen (Massenabrufen) von Zeilen implementiert, ist die Vorgehensweise sehr ähnlich. Informationen zu den Unterschieden zwischen Recordsets, die das Abrufen von Massen Zeilen implementieren, und denen, die dies nicht tun, finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammel Operation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
 
 Einige Datenbankmanagementsysteme (DBMSs) ermöglichen es Ihnen, eine vordefinierte Abfrage zu erstellen und diese wie eine Funktion aus Ihren Programmen aufzurufen. Die Abfrage hat einen Namen, kann Parameter übernehmen und kann Datensätze zurückgeben. In der Vorgehensweise in diesem Thema ist beschrieben, wie eine vordefinierte Abfrage aufgerufen wird, die Datensätze zurückgibt (und eventuell Parameter übernimmt).
 
@@ -66,7 +66,7 @@ Sie können eine einzelne Recordset-Klasse erstellen, um den Aufruf einer vordef
 
 1. Hat die Abfrage Parameter, fügen Sie einen Parameterdatenmember, eine RFX-Funktion und eine Initialisierung für jeden Parameter hinzu.
 
-1. Sie müssen `m_nParams` für jeden hinzugefügten Parameter inkrementieren, wie Sie dies für `m_nFields` für hinzugefügte Felder in Schritt 4 dieser Vorgehensweise getan haben. Weitere Informationen finden Sie unter [Recordset: Parametrisieren eines Recordsets (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md).
+1. Sie müssen `m_nParams` für jeden hinzugefügten Parameter inkrementieren, wie Sie dies für `m_nFields` für hinzugefügte Felder in Schritt 4 dieser Vorgehensweise getan haben. Weitere Informationen finden Sie unter [Recordset: parametrialisieren eines Recordsets (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md).
 
 1. Schreiben Sie manuell eine SQL-Anweisungseichenfolge im folgenden Format:
 
@@ -153,9 +153,9 @@ In diesem Code wird eine Momentaufnahme erstellt, wird an sie ein Parameter übe
 > [!TIP]
 >  Es bietet sich an, einen Rückgabewert (Ausgabeparameter) in einer gespeicherten Prozedur zu verarbeiten. Weitere Informationen und ein Beispiel hierzu finden Sie unter [CFieldExchange::SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Erneutes Abfragen eines Recordsets (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md)<br/>
 [Recordset: Deklarieren einer Klasse für eine Tabelle (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md)<br/>
-[Recordset: Ausführen einer Verknüpfung (ODBC)](../../data/odbc/recordset-performing-a-join-odbc.md)
+[Recordset: Ausführen eines Join (ODBC)](../../data/odbc/recordset-performing-a-join-odbc.md)

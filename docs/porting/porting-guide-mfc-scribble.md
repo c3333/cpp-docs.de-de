@@ -2,12 +2,12 @@
 title: 'Leitfaden zum Portieren: MFC Scribble'
 ms.date: 10/23/2019
 ms.assetid: 8ddb517d-89ba-41a1-ab0d-4d2c6d9047e8
-ms.openlocfilehash: c5e0e8fecd99e4f03077574da7b7fcb3e538762b
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 789d29effeea76045a4a10fbca19f20d06778f7c
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73627214"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076965"
 ---
 # <a name="porting-guide-mfc-scribble"></a>Leitfaden zum Portieren: MFC Scribble
 
@@ -23,11 +23,11 @@ Vergewissern Sie sich vor der Aktualisierung, dass die Arbeitsauslastung „Wind
 
 Sichern Sie als Nächstes die Projektmappe samt Inhalt.
 
-Öffnen Sie abschließend die Projekt Mappe in der aktuellen Version von Visual Studio, und lassen Sie den Assistenten das Konvertieren des Projekts zu. 
+Öffnen Sie abschließend die Projekt Mappe in der aktuellen Version von Visual Studio, und lassen Sie den Assistenten das Konvertieren des Projekts zu.
 
 Beachten Sie, dass Sie devenv auch in der Befehlszeile mithilfe der `/Upgrade`-Option ausführen können, anstatt den Assistenten zum Aktualisieren von Projekten zu verwenden. Siehe [/Upgrade (devenv.exe)](/visualstudio/ide/reference/upgrade-devenv-exe). Das kann hilfreich bei der Automatisierung des Aktualisierungsvorgangs für eine große Anzahl von Projekten sein.
 
-### <a name="step-1-converting-the-project-file"></a>Schritt 1. Konvertieren der Projektdatei
+### <a name="step-1-converting-the-project-file"></a>Schritt 1: Konvertieren der Projektdatei
 
 Wenn Sie eine alte Projektdatei in Visual Studio öffnen, bietet Visual Studio das Konvertieren der Projektdatei in die aktuellste Version an, die wir akzeptiert haben. Das folgende Dialogfeld wurde angezeigt:
 
@@ -47,7 +47,7 @@ Visual Studio hat dann einen Migrationsbericht mit einer Liste aller Probleme de
 
 In diesem Fall waren alle Probleme Warnungen, und Visual Studio hat die entsprechenden Änderungen in der Projektdatei vorgenommen. Der große Unterschied hinsichtlich des Projekts liegt darin, dass das Buildtool von vcbuild in msbuild geändert wurde. Diese Änderung wurde in Visual Studio 2010 eingeführt. Weitere Änderungen umfassen u. a. eine Neuanordnung der Elementreihenfolge in der Projektdatei selbst. Keines der Probleme bedurfte für dieses einfache Projekt weiterer Aufmerksamkeit.
 
-### <a name="step-2-getting-it-to-build"></a>Schritt 2. Erstellen des Projekts
+### <a name="step-2-getting-it-to-build"></a>Schritt 2: Erstellen des Projekts
 
 Vor der Erstellung überprüfen wir das Plattformtoolset, damit wir wissen, welche Compilerversion das Projektsystem verwendet. Sehen Sie sich im Dialogfeld „Projekteigenschaften“ unter **Konfigurationseigenschaften** in der Kategorie **Allgemein** die Eigenschaft **Plattformtoolset** an. Sie enthält die Version von Visual Studio und die Versionsnummer des Plattformtools, in diesem Fall v141 für die Visual Studio 2017-Version der Tools. Wenn Sie ein Projekt konvertieren, das ursprünglich mit Visual Studio 2010, 2012, 2013 oder 2015 kompiliert wurde, wird das Toolset nicht automatisch auf das neueste Toolset aktualisiert.
 
@@ -73,7 +73,7 @@ Dies ist eine Warnung, kein Fehler, und kommt sehr häufig vor, wenn ein C++-Pro
 
 Wenn der Code Teile der Windows-API verwendet, die nicht in der Version von Windows verfügbar sind, die Sie mit diesem Makro angeben, sollte das als Compilerfehler angezeigt werden. Im Fall des Scribble-Codes gibt es keinen Fehler.
 
-### <a name="step-3-testing-and-debugging"></a>Schritt 3. Testen und Debuggen
+### <a name="step-3-testing-and-debugging"></a>Schritt 3: Testen und Debuggen
 
 Es gibt keine Testsammlung, daher haben wir die App einfach gestartet und ihre Funktionen manuell über die Benutzeroberfläche getestet. Es wurden keine Probleme festgestellt.
 
@@ -85,7 +85,7 @@ Nach der Migration zu Visual Studio 2017 möchten Sie u.U. einige Änderungen vo
 
 Scribble war eine kleine und einfache Windows-Desktopanwendung, bei der Konvertierungen einfach waren. Viele kleine, einfache Anwendungen können genauso einfach in die neue Version konvertiert werden.  Für komplexere Anwendungen mit viel mehr Codezeilen, für älteren Legacycode, der möglicherweise nicht den modernen technischen Standards entspricht, für mehrere Projekte und Bibliotheken, benutzerdefinierte Buildschritte oder für komplexe geskriptete automatische Builds ist die Aktualisierung zeitaufwendiger. Fahren Sie mit dem [nächsten Beispiel](../porting/porting-guide-com-spy.md) fort, einer ATL/COM-Anwendung namens COM Spy.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Portieren und Aktualisieren: Beispiele und Fallstudien](../porting/porting-and-upgrading-examples-and-case-studies.md)<br/>
 [Nächstes Beispiel: COM Spy](../porting/porting-guide-com-spy.md)

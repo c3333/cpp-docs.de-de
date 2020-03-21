@@ -15,16 +15,16 @@ helpviewer_keywords:
 - is_nothrow_invocable
 - is_nothrow_invocable_r class
 - is_nothrow_invocable_r
-ms.openlocfilehash: 20fec55fc3ad1924ee85db3b2f78812e4847f447
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 53394a10464e2688953cd1b5703530e2719b7593
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456229"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076458"
 ---
-# <a name="isinvocable-isinvocabler-isnothrowinvocable-isnothrowinvocabler-classes"></a>is_invocable-, is_invocable_r-, is_nothrow_invocable-, is_nothrow_invocable_r-Klassen
+# <a name="is_invocable-is_invocable_r-is_nothrow_invocable-is_nothrow_invocable_r-classes"></a>is_invocable-, is_invocable_r-, is_nothrow_invocable-, is_nothrow_invocable_r-Klassen
 
-Diese Vorlagen bestimmen, ob ein Typ mit den angegebenen Argument Typen aufgerufen werden kann. `is_invocable_r`und `is_nothrow_invocable_r` auch bestimmen, ob das Ergebnis des aufzurufenden aufzurufenden in einen bestimmten Typ konvertiert werden kann. `is_nothrow_invocable`und `is_nothrow_invocable_r` legen außerdem fest, ob der Aufruf keine Ausnahmen auslöst. Hinzugefügt in c++ 17.
+Diese Vorlagen bestimmen, ob ein Typ mit den angegebenen Argument Typen aufgerufen werden kann. `is_invocable_r` und `is_nothrow_invocable_r` bestimmen auch, ob das Ergebnis des aufzurufenden aufzurufenden in einen bestimmten Typ konvertiert werden kann. `is_nothrow_invocable` und `is_nothrow_invocable_r` bestimmen auch, ob der Aufruf bekanntermaßen Ausnahmen nicht auslöst. Hinzugefügt in c++ 17.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,26 +61,26 @@ inline constexpr bool is_nothrow_invocable_r_v =
 
 ### <a name="parameters"></a>Parameter
 
-*Callable*\
+*Aufruf Bare*\
 Der abzufragende, aufgerufene Typ.
 
 *Args*\
 Die abzufragende Argument Typen.
 
-*Ver*\
+*Konvertierbar*\
 Der Typ, in den das Ergebnis von *Callable* konvertiert werden kann.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das `is_invocable` typprädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann.*
+Das `is_invocable` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann.*
 
-Das `is_invocable_r` typprädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann,* um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann.
+Das `is_invocable_r` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann,* um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann.
 
-Das `is_nothrow_invocable` typprädikat ist true, wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen werden kann, und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
+Das `is_nothrow_invocable` Type-Prädikat ist true, wenn der Aufruf Bare Aufruf Bare Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen *werden kann,* und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
 
-Das `is_nothrow_invocable_r` typprädikat ist true, wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe *der Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen werden kann, um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann, und dass ein solcher Aufruf bekanntermaßen nicht ausgelöst wird. eine Ausnahme.
+Das `is_nothrow_invocable_r` Type-Prädikat ist "true", wenn der Aufruf Bare Aufruf *Bare* Typ mithilfe der *Argumente Argumente* in einem nicht ausgewerteten Kontext aufgerufen werden kann, um einen Ergebnistyp zu konvertieren, der in *konvertierbar*konvertiert werden kann, und dass ein solcher Aufruf bekanntermaßen keine Ausnahme auslöst.
 
-Alle Typen, die *konvertiert, aufgerufen*werden *können*, und die Typen in den Parametern des *Parameter Pakets müssen* ein vollständiger Typ, ein Array mit unbekannter Grenze oder eine möglicherweise CV qualifizierte **void**sein. Andernfalls ist das Verhalten des Prädikats nicht definiert.
+Alle *Typen, die konvertiert, aufgerufen*werden *können*, und die Typen in den Parametern des *Parameter Pakets müssen* ein vollständiger Typ, ein Array mit unbekannter Grenze oder eine möglicherweise CV qualifizierte **void**sein. Andernfalls ist das Verhalten des Prädikats nicht definiert.
 
 ## <a name="example"></a>Beispiel
 
@@ -103,7 +103,7 @@ int main()
 {
     static_assert( std::is_invocable<decltype(test1), short>::value );
 
-    static_assert( std::is_invocable_r<int(*)(), decltype(test1), int>::value ); 
+    static_assert( std::is_invocable_r<int(*)(), decltype(test1), int>::value );
     static_assert( std::is_invocable_r<long(*)(), decltype(test1), int>::value ); // fails
 
     static_assert( std::is_nothrow_invocable<decltype(test1), int>::value );
@@ -114,13 +114,13 @@ int main()
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:** \<type_traits >
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)\
 [invoke](functional-functions.md#invoke)

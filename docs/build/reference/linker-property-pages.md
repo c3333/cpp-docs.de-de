@@ -3,16 +3,16 @@ title: Linker-Eigenschaftenseiten
 ms.date: 07/24/2019
 ms.topic: article
 ms.assetid: 7e7671e5-a35a-4e67-9bdb-661d75c4d11e
-ms.openlocfilehash: 55fcefd826ec6ecb153adad495e21ce97aa432f1
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: fd0befd7b8ed4e7a4209c3c80602be2f2a99422f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927707"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079595"
 ---
 # <a name="linker-property-pages"></a>Linker-Eigenschaftenseiten
 
-Die folgenden Eigenschaften finden Sie unter **Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **Linker**. Weitere Informationen zum Linker finden Sie unter [CL: Starten des Linkers](cl-invokes-the-linker.md) und [Linkeroptionen](linker-options.md).
+Die folgenden Eigenschaften finden Sie unter **Project** > **Properties** > **Configuration Properties** > **Linker**. Weitere Informationen zum Linker finden Sie unter [cl Ruft die Linker](cl-invokes-the-linker.md) -und [Linkeroptionen](linker-options.md)auf.
 
 ## <a name="general-property-page"></a>Eigenschaften Seite "Allgemein"
 
@@ -24,10 +24,10 @@ Die Option [/out](out-output-file-name.md) überschreibt den Standardnamen und d
 
 Druckt linkerstatusmeldungen.
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt** : keine Ausführlichkeit.
-- **Alle Fortschrittsmeldungen anzeigen** : zeigt alle Statusmeldungen an. 
+- **Alle Fortschrittsmeldungen anzeigen** : zeigt alle Statusmeldungen an.
 - **Für durchsuchte Bibliotheken** : Zeigt Statusmeldungen an, die nur die durchsuchten Bibliotheken angeben.
 - Informationen **über COMDAT-Faltung während der optimierten Verknüpfung** : zeigt Informationen zur COMDAT-Faltung während der optimierten Verknüpfung.
 - Informationen **zu Daten, die während der optimierten Verknüpfung entfernt** wurden
@@ -40,11 +40,11 @@ Die [/Version](version-version-information.md) -Option weist den Linker an, eine
 
 ### <a name="enable-incremental-linking"></a>Inkrementelle Verknüpfung aktivieren
 
-Aktiviert inkrementelles Verknüpfen. ([/INCREMENTAL](incremental-link-incrementally.md),/INCREMENTAL: NO)
+Aktiviert inkrementelles Verknüpfen. ([/Incremental](incremental-link-incrementally.md),/Incremental: No)
 
 ### <a name="suppress-startup-banner"></a>Startbanner unterdrücken
 
-Die Option [/nologo](nologo-suppress-startup-banner-linker.md) verhindert die Anzeige der Copyright Meldung und der Versionsnummer. 
+Die Option [/nologo](nologo-suppress-startup-banner-linker.md) verhindert die Anzeige der Copyright Meldung und der Versionsnummer.
 
 ### <a name="ignore-import-library"></a>Importbibliothek ignorieren
 
@@ -80,9 +80,9 @@ Gibt an, ob die Eingaben in das Bibliotheks Tool statt in die Bibliotheksdatei s
 
 Weitere Informationen zum Zugreifen auf die Eigenschaften Seite " **Allgemein** " finden Sie [unter C++ Festlegen von Compiler-und Buildeigenschaften in Visual Studio](../working-with-project-properties.md).
 
-### <a name="link-status"></a>Link Status
+### <a name="link-status"></a>Linkstatus
 
-Gibt an, ob der Linker eine Statusanzeige anzeigen soll, die anzeigt, welcher Prozentsatz des Links abgeschlossen ist. Standardmäßig werden diese Statusinformationen nicht angezeigt. ([/LTCG](ltcg-link-time-code-generation.md): STATUS | LTCG: NOSTATUS)
+Gibt an, ob der Linker eine Statusanzeige anzeigen soll, die anzeigt, welcher Prozentsatz des Links abgeschlossen ist. Standardmäßig werden diese Statusinformationen nicht angezeigt. ([/LTCG](ltcg-link-time-code-generation.md): Status | LTCG: NOSTATUS)
 
 ### <a name="prevent-dll-binding"></a>DLL-Bindung verhindern
 
@@ -96,7 +96,7 @@ Gibt an, ob der Linker eine Statusanzeige anzeigen soll, die anzeigt, welcher Pr
 
 Die [/Force](force-force-file-output.md) -Option weist den Linker an, eine exe-Datei oder-dll zu erstellen, auch wenn auf ein Symbol verwiesen wird, aber nicht definiert oder die Multiplikation definiert ist. Möglicherweise wird eine ungültige exe-Datei erstellt.
 
-**Optionen**
+**choices**
 
 - **Aktiviert** -/Force ohne Argumente impliziert sowohl mehrfach als auch nicht aufgelöst.
 - **Nur mehrfach definiertes Symbol** verwenden: Verwenden Sie/Force: Multiple, um eine Ausgabedatei zu erstellen, auch wenn der Link mehr als eine Definition für ein Symbol findet.
@@ -106,7 +106,7 @@ Die [/Force](force-force-file-output.md) -Option weist den Linker an, eine exe-D
 
 Bereitet ein Image für Hotpatching vor.
 
-**Optionen**
+**choices**
 
 - **Aktiviert** : bereitet ein Image für Hotpatching vor.
 - **Nur x86-Image** : bereitet ein x86-Image für Hotpatching vor.
@@ -125,7 +125,7 @@ Gibt zusätzliche Elemente an, die der Link Befehlszeile hinzugefügt werden sol
 
 ### <a name="ignore-all-default-libraries"></a>Alle Standardbibliotheken ignorieren
 
-Die [/NODEFAULTLIB](nodefaultlib-ignore-libraries.md) -Option weist den Linker an, mindestens eine Standardbibliothek aus der Liste der Bibliotheken zu entfernen, die beim Auflösen externer Verweise durchsucht werden. 
+Die [/NODEFAULTLIB](nodefaultlib-ignore-libraries.md) -Option weist den Linker an, mindestens eine Standardbibliothek aus der Liste der Bibliotheken zu entfernen, die beim Auflösen externer Verweise durchsucht werden.
 
 ### <a name="ignore-specific-default-libraries"></a>Bestimmte Standardbibliotheken ignorieren
 
@@ -133,7 +133,7 @@ Gibt einen oder mehrere Namen der zu ignorierenden Standardbibliotheken an. Tren
 
 ### <a name="module-definition-file"></a>Modul Definitionsdatei
 
-Die Option [/DEF](def-specify-module-definition-file.md) übergibt eine Modul Definitionsdatei (. def) an den Linker. Es kann nur eine DEF-Datei angegeben werden, die verknüpft werden kann. 
+Die Option [/DEF](def-specify-module-definition-file.md) übergibt eine Modul Definitionsdatei (. def) an den Linker. Es kann nur eine DEF-Datei angegeben werden, die verknüpft werden kann.
 
 ### <a name="add-module-to-assembly"></a>Modul zur Assembly hinzufügen
 
@@ -149,7 +149,7 @@ Die [/include](include-force-symbol-references.md) -Option weist den Linker an, 
 
 ### <a name="delay-loaded-dlls"></a>Verzögerte geladene DLLs
 
-Die Option [/DELAYLOAD](delayload-delay-load-import.md) bewirkt ein verzögertes Laden von DLLs. Der DLL-Name gibt eine DLL an, die das Laden verzögert. 
+Die Option [/DELAYLOAD](delayload-delay-load-import.md) bewirkt ein verzögertes Laden von DLLs. Der DLL-Name gibt eine DLL an, die das Laden verzögert.
 
 ### <a name="assembly-link-resource"></a>Assembly-Link Ressource
 
@@ -171,17 +171,17 @@ Mit [/MANIFESTDEPENDENCY](manifestdependency-specify-manifest-dependencies.md) k
 
 ### <a name="allow-isolation"></a>Isolation zulassen
 
-Gibt das Verhalten bei der Manifestsuche an. ([/ALLOWISOLATION](allowisolation-manifest-lookup.md): NEIN)
+Gibt das Verhalten bei der Manifestsuche an. ([/ALLOWISOLATION](allowisolation-manifest-lookup.md): Nein)
 
 ### <a name="enable-user-account-control-uac"></a>Benutzerkontensteuerung (User Account Control, UAC) aktivieren
 
-Gibt an, ob die Benutzerkontensteuerung aktiviert ist.  ([/MANIFESTUAC](manifestuac-embeds-uac-information-in-manifest.md),/MANIFESTUAC: NO)
+Gibt an, ob die Benutzerkontensteuerung aktiviert ist.  ([/MANIFESTUAC](manifestuac-embeds-uac-information-in-manifest.md),/MANIFESTUAC: No)
 
 ### <a name="uac-execution-level"></a>UAC-Ausführungs Ebene
 
 Gibt die angeforderte Ausführungs Ebene für die Anwendung an, wenn Sie mit der Benutzerkontensteuerung ausgeführt wird.  (/MANIFESTUAC: Level = [Wert])
 
-**Optionen**
+**choices**
 
 - **asInvoker** -UAC-Ausführungs Ebene: als INVOKER.
 - **highestAvailable** -UAC-Ausführungs Ebene: höchste Verfügbarkeit.
@@ -197,12 +197,12 @@ Gibt an, ob Benutzeroberflächen-Schutz Ebenen für andere Fenster auf dem Deskt
 
 Diese Option ermöglicht die Erstellung von Debuginformationen für die exe-Datei oder die dll.
 
-**Optionen**
+**choices**
 
 - **Nein** : Es werden keine Debuginformationen erzeugt.
 - **Generieren von Debuginformationen** : Erstellen Sie eine komplette Programmdatenbank (PDB), die ideal für die Verteilung an Microsoft Symbol Server geeignet ist.
-- **Für schnellere Verknüpfungen optimierte Debuginformationen generieren** : erzeugt eine Programmdatenbank (PDB), die sich ideal für den Edit-Link-Debug-Cycle eignet. 
-- **Generieren von Debuginformationen, die für Freigabe und Veröffentlichung optimiert** sind: erstellt eine Programmdatenbank (PDB), die ideal für den Edit-Link-Debug-Cycle ist 
+- **Für schnellere Verknüpfungen optimierte Debuginformationen generieren** : erzeugt eine Programmdatenbank (PDB), die sich ideal für den Edit-Link-Debug-Cycle eignet.
+- **Generieren von Debuginformationen, die für Freigabe und Veröffentlichung optimiert** sind: erstellt eine Programmdatenbank (PDB), die ideal für den Edit-Link-Debug-Cycle ist
 
 ### <a name="generate-program-database-file"></a>Programm Datenbankdatei generieren
 
@@ -234,15 +234,15 @@ Die [/MapInfo](mapinfo-include-information-in-mapfile.md) -Option weist den Link
 
 Die Option [/Subsystem](subsystem-specify-subsystem.md) teilt dem Betriebssystem mit, wie die exe-Datei ausgeführt werden soll. Die Auswahl des Subsystems wirkt sich auf das Einstiegspunkt Symbol (oder die Einstiegspunkt Funktion) aus, das der Linker wählt.
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt** -kein Subsystem festgelegt.
 - **Konsolen** -Win32-zeichenmodusanwendung. Konsolen Anwendungen erhalten eine Konsole vom Betriebssystem. Wenn Main oder wmain definiert ist, ist Console die Standardeinstellung.
 - Für **Windows** -Anwendungen ist keine Konsole erforderlich, weil es wahrscheinlich für die Interaktion mit dem Benutzer eigene Fenster erstellt. Wenn WinMain oder wWinMain definiert ist, ist Windows der Standardwert.
-- **Native** Gerätetreiber für Windows NT. Wenn/Driver: WDM angegeben ist, ist native der Standardwert.
+- **Native** Gerätetreiber für Windows NT. Wenn /DRIVER:WDM angegeben ist, ist NATIVE der Standard.
 - **EFI-Anwendung** : EFI-Anwendung.
 - **EFI-Start Dienst Treiber** : der EFI-Start Dienst Treiber.
-- **EFI ROM** -EFI-ROM.
+- **EFI Rom** -EFI-Rom.
 - **EFI-Laufzeit** : EFI-Laufzeit.
 - **POSIX** -Anwendung, die mit dem POSIX-Subsystem in Windows NT ausgeführt wird.
 
@@ -272,7 +272,7 @@ Die [/LARGEADDRESSAWARE](largeaddressaware-handle-large-addresses.md) -Option te
 
 ### <a name="terminal-server"></a>Terminalserver
 
-Die Option [/TSAWARE](tsaware-create-terminal-server-aware-application.md) legt ein Flag im IMAGE_OPTIONAL_HEADER DllCharacteristics-Feld im optionalen-Header des Programm Bilds fest. Wenn dieses Flag festgelegt ist, wird der Terminalserver keine bestimmten Änderungen an der Anwendung vornehmen.
+Die Option [/TSAWARE](tsaware-create-terminal-server-aware-application.md) legt ein Flag im Feld IMAGE_OPTIONAL_HEADER DllCharacteristics im optionalen Header des Programm Bilds fest. Wenn dieses Flag festgelegt ist, wird der Terminalserver keine bestimmten Änderungen an der Anwendung vornehmen.
 
 ### <a name="swap-run-from-cd"></a>Austauschen von CD ausführen
 
@@ -286,16 +286,16 @@ Die Option [/SWAPRUN](swaprun-load-linker-output-to-swap-file.md) weist das Betr
 
 Verwenden Sie die Option [/Driver](driver-windows-nt-kernel-mode-driver.md) Linker, um einen Windows NT-Kernelmodustreiber zu erstellen.
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt** -Standardtreiber Einstellung.
 - **Treiber** Treiber
-- **Nur nach oben** :/Driver bewirkt, dass der Linker das IMAGE_FILE_UP_SYSTEM_ONLY-Bit den Merkmalen im Ausgabe Header hinzufügt, um anzugeben, dass es sich um einen Uniprozessor-Treiber (up) handelt. Das Betriebssystem wird das Laden eines uptreibers auf einem Multiprozessorsystem (MP) ablehnen.
+- **Nur nach oben** :/Driver bewirkt, dass der Linker das IMAGE_FILE_UP_SYSTEM_ONLY Bit den Merkmalen im Ausgabe Header hinzufügt, um anzugeben, dass es sich um einen Uniprozessor-Treiber (up) handelt. Das Betriebssystem wird das Laden eines uptreibers auf einem Multiprozessorsystem (MP) ablehnen.
 - **WDM** -/Driver: WDM bewirkt, dass der Linker das IMAGE_DLLCHARACTERISTICS_WDM_DRIVER-Bit im DllCharacteristics-Feld des optionalen Headers festgelegt hat.
 
 ## <a name="optimization-property-page"></a>Eigenschaften Seite "Optimierung"
 
-### <a name="references"></a>Verweise
+### <a name="references"></a>References
 
 [/Opt](opt-optimizations.md): Ref löscht Funktionen und/oder Daten, auf die nie verwiesen wird, während/OPT: NOREF die Funktionen und/oder Daten, auf die nie verwiesen wird, beibehält.
 
@@ -315,7 +315,7 @@ Geben Sie die PGD-Datei für Profil gesteuerte Optimierungen an. ([/PGD](pgd-spe
 
 Gibt Link-Zeitcodegenerierung an. ([/LTCG](ltcg-link-time-code-generation.md))
 
-**Optionen**
+**choices**
 
 - **Standard** -LTCG-Standardeinstellung.
 - **Schnelle Link-Zeit Codegenerierung verwenden** -Link-Zeit Codegenerierung mit [/FASTGENPROFILE](genprofile-fastgenprofile-generate-profiling-instrumented-build.md)verwenden.
@@ -352,7 +352,7 @@ Ermöglicht Ihnen die Angabe der Ressourcen-ID der vom Linker generierten Typbib
 
 Aktiviert oder deaktiviert die Generierung von Windows-Metadaten.
 
-**Optionen**
+**choices**
 
 - **Ja** , Generierung von Windows-Metadatendateien aktivieren.
 - Deaktivieren Sie die Generierung von **Windows-** Metadatendateien.
@@ -381,7 +381,7 @@ Die Option [/Entry](entry-entry-point-symbol.md) gibt eine Einstiegspunkt Funkti
 
 ### <a name="no-entry-point"></a>Kein Einstiegspunkt
 
-Die [/NOENTRY](noentry-no-entry-point.md)-Option ist erforderlich, um eine reine Ressourcen-DLL zu erstellen. Verwenden Sie diese Option, um zu verhindern, dass Link `_main` einen Verweis auf die DLL verknüpft.
+Die [/NOENTRY](noentry-no-entry-point.md)-Option ist erforderlich, um eine reine Ressourcen-DLL zu erstellen. Verwenden Sie diese Option, um zu verhindern, dass Verknüpfung einen Verweis auf `_main` in die DLL verknüpft.
 
 ### <a name="set-checksum"></a>Prüfsumme festlegen
 
@@ -389,19 +389,19 @@ Die Option [/Release](release-set-the-checksum.md) legt die Prüfsumme im Header
 
 ### <a name="base-address"></a>Basisadresse
 
-Legt eine Basisadresse für das Programm fest. ([/Base](base-base-address.md): {Address\[, size] | @filename, Schlüssel})
+Legt eine Basisadresse für das Programm fest. ([/Base](base-base-address.md): {Address\[, size] | @filename, Key})
 
 ### <a name="randomized-base-address"></a>Zufällige Basisadresse
 
-Zufällige Basisadresse. ([/DYNAMICBASE](dynamicbase-use-address-space-layout-randomization.md)\[: NO])
+Zufällige Basisadresse. ([/DynamicBase](dynamicbase-use-address-space-layout-randomization.md)\[: No])
 
 ### <a name="fixed-base-address"></a>Basisadresse korrigiert
 
-Erstellt ein Programm, das nur an seiner bevorzugten Basisadresse geladen werden kann. ([/FIXED](fixed-fixed-base-address.md)\[: NO])
+Erstellt ein Programm, das nur an seiner bevorzugten Basisadresse geladen werden kann. ([/Fixed](fixed-fixed-base-address.md)\[: No])
 
 ### <a name="data-execution-prevention-dep"></a>Daten Ausführungs Verhinderung (Data Execution Prevention, DEP)
 
-Markiert eine ausführbare Datei als mit der Windows-Funktion zur Daten Ausführungs Verhinderung kompatibel. ([/NXCOMPAT](nxcompat-compatible-with-data-execution-prevention.md)\[: NO])
+Markiert eine ausführbare Datei als mit der Windows-Funktion zur Daten Ausführungs Verhinderung kompatibel. ([/NXCOMPAT](nxcompat-compatible-with-data-execution-prevention.md)\[: No])
 
 ### <a name="turn-off-assembly-generation"></a>Assemblygenerierung deaktivieren
 
@@ -409,13 +409,13 @@ Die [/noAssembly](noassembly-create-a-msil-module.md) -Option weist den Linker a
 
 ### <a name="unload-delay-loaded-dll"></a>Verzögert geladene DLL entladen
 
-Der **Entlade** Qualifizierer weist die Hilfsfunktion für das verzögerte Laden an, das explizite Entladen der dll zu unterstützen. ([/DELAY](delay-delay-load-import-settings.md): ENTLADEN)
+Der **Entlade** Qualifizierer weist die Hilfsfunktion für das verzögerte Laden an, das explizite Entladen der dll zu unterstützen. ([/Delay](delay-delay-load-import-settings.md): entladen)
 
 ### <a name="nobind-delay-loaded-dll"></a>NOBIND verzögert geladene DLL
 
-Der **NOBIND** -Qualifizierer weist den Linker an, keine bindbare IAT in das endgültige Image einzuschließen. Das Standardverhalten ist, die bindungsfähige IAT für verzögert geladene DLLs zu erstellen. ([/DELAY](delay-delay-load-import-settings.md): NOBIND)
+Der **NOBIND** -Qualifizierer weist den Linker an, keine bindbare IAT in das endgültige Image einzuschließen. Das Standardverhalten ist, die bindungsfähige IAT für verzögert geladene DLLs zu erstellen. ([/Delay](delay-delay-load-import-settings.md): NOBIND)
 
-### <a name="import-library"></a>Bibliothek importieren
+### <a name="import-library"></a>Importbibliothek
 
 Überschreibt den Standardnamen für die Importbibliothek. ([/IMPLIB](implib-name-import-library.md): filename)
 
@@ -427,7 +427,7 @@ Die Option [/Merge](merge-combine-sections.md) kombiniert den ersten Abschnitt (
 
 Die [/Machine](machine-specify-target-platform.md) -Option gibt die Zielplattform für das Programm an.
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt**
 - **Machinearm**
@@ -443,15 +443,15 @@ Die [/Machine](machine-specify-target-platform.md) -Option gibt die Zielplattfor
 - **MachineX64**
 - **MachineX86**
 
-### <a name="profile"></a>Profile
+### <a name="profile"></a>Profil
 
-Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden kann. Erfordert, dass GenerateDebugInformation (/[/Debug](debug-generate-debug-info.md)) festgelegt wird. ([/PROFILE](profile-performance-tools-profiler.md))
+Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden kann. Erfordert, dass GenerateDebugInformation (/[/Debug](debug-generate-debug-info.md)) festgelegt wird. ([/Profile](profile-performance-tools-profiler.md))
 
 ### <a name="clr-thread-attribute"></a>CLR-Thread Attribut
 
 Geben Sie das Threading Attribut für den Einstiegspunkt des CLR-Programms explizit an.
 
-**Optionen**
+**choices**
 
 - **MTA-Threading Attribut** : wendet das MTAThreadAttribute-Attribut auf den Einstiegspunkt des Programms an.
 - **STA-Threading Attribut** : wendet das STAThreadAttribute-Attribut auf den Einstiegspunkt des Programms an.
@@ -461,7 +461,7 @@ Geben Sie das Threading Attribut für den Einstiegspunkt des CLR-Programms expli
 
 Legt den Typ (IJW, rein oder sicher) eines CLR-Images fest.
 
-**Optionen**
+**choices**
 
 - **IJW-Image erzwingen**
 - **Reines Il-Image erzwingen**
@@ -484,11 +484,11 @@ Eine Assembly teilweise signieren. Verwenden Sie [/delaysign](delaysign-partiall
 
 [/CLRUNMANAGEDCODECHECK](clrunmanagedcodecheck-add-suppressunmanagedcodesecurityattribute.md) gibt an, ob der Linker SuppressUnmanagedCodeSecurityAttribute auf vom Linker generierte PInvoke-Aufrufe von verwaltetem Code in Native DLLs anwendet.
 
-### <a name="error-reporting"></a>Fehlerberichterstattung
+### <a name="error-reporting"></a>Fehlerberichterstellung
 
 Ermöglicht Ihnen, Informationen über interne Compilerfehler direkt an das Visual C++-Team zu senden.
 
-**Optionen**
+**choices**
 
 - **Promptimmediately** : sofort auffordern.
 - **Warteschlange für nächste** Anmelde Warteschlange für nächste Anmeldung.
@@ -503,7 +503,7 @@ Die [/align](align-section-alignment.md) -Option gibt die Ausrichtung der einzel
 
 [/CLRSUPPORTLASTERROR](clrsupportlasterror-preserve-last-error-code-for-pinvoke-calls.md), das standardmäßig aktiviert ist, behält den letzten Fehlercode von Funktionen bei, die durch den P/Aufruf-Mechanismus aufgerufen werden. Dadurch können Sie Native Funktionen in DLLs aufrufen, von Code, der mit/CLR. kompiliert wurde.
 
-**Optionen**
+**choices**
 
 - **Aktiviert** -CLRSUPPORTLASTERROR aktivieren.
 - **Deaktiviert** : CLRSUPPORTLASTERROR deaktivieren.

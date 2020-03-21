@@ -9,27 +9,27 @@ helpviewer_keywords:
 - containers [MFC], creating
 - OLE controls [MFC], containers
 ms.assetid: ec70e137-7c14-4940-bd0e-fd4edcc63ea5
-ms.openlocfilehash: 7591b3ed84c1703a201e4e62f699df877de36058
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
+ms.openlocfilehash: 27f229a23595d4842a77409a3cedc7a57aa43e6c
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220192"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079427"
 ---
 # <a name="creating-an-mfc-activex-control-container"></a>Erstellen eines MFC-ActiveX-Steuerelementcontainers
 
-Ein ActiveX-Steuerelementcontainer ist es sich um ein übergeordnetes-Programm, das die Umgebung für ein ActiveX-(früher OLE)-Steuerelement ausführen bereitstellt. Sie können eine Anwendung kann mit ActiveX-Steuerelementen mit oder ohne MFC erstellen, aber es ist viel einfacher mit MFC.
+Bei einem ActiveX-Steuerelement Container handelt es sich um ein übergeordnetes Programm, das die Umgebung für ein ActiveX-Steuerelement (früher OLE) bereitstellt. Sie können eine Anwendung erstellen, die ActiveX-Steuerelemente mit oder ohne MFC enthalten kann. Dies ist jedoch viel einfacher mit MFC.
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen zu moderne Technologien, die ActiveX-ablösen, finden Sie unter [ActiveX-Steuerelemente](../activex-controls.md).
+> ActiveX ist eine ältere Technologie, die nicht für die neue Entwicklung verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ersetzen, finden Sie unter ActiveX-Steuer [Elemente](../activex-controls.md).
 
-Erstellen einer MFC-Container Programm mit der [MFS-Anwendungsassistenten](../../mfc/reference/mfc-application-wizard.md) können Sie auf die zahlreichen Features von ActiveX-Steuerelemente und Automatisierung zugreifen, die von den MFC- und ActiveX-Klassen implementiert werden. Diese Funktionen gehören die visuelle Bearbeitung, Automatisierung, compound-Dateien erstellen und Unterstützung für Steuerelemente. Die MFS-Anwendungsassistenten visual bearbeiten, die das übergeordnete Programm unterstützen, unter anderem Erstellen eines Containers, eines Mini-Servers, einer voll-Server und ein Programm, das einen Container und einem Server ist.
+Wenn Sie ein MFC-Container Programm mit dem [MFC-Anwendungs-Assistenten](../../mfc/reference/mfc-application-wizard.md) erstellen, können Sie auf die zahlreichen Features von ActiveX-Steuerelementen und-Automatisierung zugreifen, die von den MFC-und ActiveX-Klassen implementiert Zu diesen Features gehören visuelle Bearbeitung, Automatisierung, Erstellung von Verbund Dateien und Unterstützung für Steuerelemente. Die visuellen Bearbeitungs Optionen des MFC-Anwendungs-Assistenten, die das übergeordnete Programm unterstützt, umfassen das Erstellen eines Containers, eines Mini Servers, eines vollständigen Servers und eines Programms, bei dem es sich um einen Container und einen Server handelt.
 
-- **Neue MFC-Anwendung**. Um ein neues MFC-Programm zu erstellen, das Automation umfasst, visuelle Bearbeitung, zusammengesetzte-Dateien oder Steuerelements unterstützen, verwenden Sie den Assistenten zum MFC-Anwendungen und wählen Sie die gewünschten Optionen für die Automatisierung.
+- **Neue MFC-Anwendung**. Um ein neues MFC-Programm zu erstellen, das Automatisierung, visuelle Bearbeitung, Verbund Dateien oder Steuerungs Unterstützung umfasst, verwenden Sie den MFC-Anwendungs-Assistenten, und wählen Sie die entsprechenden Automatisierungs Optionen aus.
 
-- **Vorhandene MFC-Anwendung**. Wenn Sie Steuerelementcontainern zu einer vorhandenen MFC-Anwendung hinzufügen, finden Sie unter [OLE-Steuerelementcontainer: Manuelles Aktivieren von OLE-Steuerelementcontainern](../../mfc/activex-control-containers-manually-enabling-activex-control-containment.md).
+- **Vorhandene MFC-Anwendung**. Wenn Sie einer vorhandenen MFC-Anwendung Steuerelement Kapselung hinzufügen, finden Sie weitere Informationen unter [OLE-Steuerungs Container: Manuelles Aktivieren der OLE-Steuer](../../mfc/activex-control-containers-manually-enabling-activex-control-containment.md)
 
-### <a name="to-create-an-activex-container-for-any-of-the-following-types-of-applications"></a>Zum Erstellen eines ActiveX-Containers für eine der folgenden Typen von Anwendungen
+### <a name="to-create-an-activex-container-for-any-of-the-following-types-of-applications"></a>So erstellen Sie einen ActiveX-Container für einen der folgenden Anwendungs Typen
 
 1. [Container](../../mfc/containers.md)
 
@@ -37,7 +37,6 @@ Erstellen einer MFC-Container Programm mit der [MFS-Anwendungsassistenten](../..
 
 1. [MFC-ActiveX-Steuerelemente](../../mfc/mfc-activex-controls.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[C++Projekttypen in Visual Studio](../../build/reference/visual-cpp-project-types.md)
-
+[C++-Projektvorlagen](../../build/reference/visual-cpp-project-types.md)

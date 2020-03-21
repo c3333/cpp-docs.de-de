@@ -3,16 +3,16 @@ title: Ausrichtung
 description: Gibt an, wie die Daten Ausrichtung C++in modern angegeben wird.
 ms.date: 12/11/2019
 ms.assetid: a986d510-ccb8-41f8-b905-433df9183485
-ms.openlocfilehash: 13f09366501de2482b8ae9ea430898d6c32134c2
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 45b22742394a0b1c159e8b8102a26802a2441929
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79443665"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076115"
 ---
 # <a name="alignment"></a>Ausrichtung
 
-Eines der Features von C++ auf niedriger Ebene ist die Möglichkeit zum Angeben der präzisen Ausrichtung von Objekten im Speiche, um eine bestimmte Hardwarearchitektur optimal zu nutzen. Standardmäßig richtet der Compiler Klassen-und Strukturmember auf ihren Größen Wert aus: `bool` und `char` an 1-Byte-Begrenzungen, `short` an 2-Byte-Begrenzungen, `int`, `long`und `float` an 4-Byte-Grenzen und `long long`, `double`und `long double` an 8-Byte-Begrenzungen. 
+Eines der Features von C++ auf niedriger Ebene ist die Möglichkeit zum Angeben der präzisen Ausrichtung von Objekten im Speiche, um eine bestimmte Hardwarearchitektur optimal zu nutzen. Standardmäßig richtet der Compiler Klassen-und Strukturmember auf ihren Größen Wert aus: `bool` und `char` an 1-Byte-Begrenzungen, `short` an 2-Byte-Begrenzungen, `int`, `long`und `float` an 4-Byte-Grenzen und `long long`, `double`und `long double` an 8-Byte-Begrenzungen.
 
 In den meisten Szenarien müssen Sie sich nicht mit der Ausrichtung beschäftigen, da die Standardausrichtung bereits optimal ist. In einigen Fällen können Sie jedoch bedeutende Leistungsverbesserungen oder Speicher Einsparungen erzielen, indem Sie eine benutzerdefinierte Ausrichtung für Ihre Datenstrukturen angeben. Vor Visual Studio 2015 konnten Sie die Microsoft-spezifischen Schlüsselwörter `__alignof` und `declspec(alignas)` verwenden, um eine Ausrichtung anzugeben, die größer als die Standardeinstellung ist. Ab Visual Studio 2015 sollten Sie die Standard Schlüsselwörter " **alignof** " und " **alignas** " für "c++ 11" verwenden, um die maximale Portabilität Die neuen Schlüsselwörter Verhalten sich auf die gleiche Weise wie die Microsoft-spezifischen Erweiterungen. Die Dokumentation für diese Erweiterungen gilt auch für die neuen Schlüsselwörter. Weitere Informationen finden Sie unter [__alignof-Operator](../cpp/alignof-operator.md) und [Ausrichtung](../cpp/align-cpp.md). Der C++ Standard gibt kein Verpackungs Verhalten für die Ausrichtung an Grenzen an, die kleiner als der Compilerstandard für die Zielplattform sind, sodass Sie in diesem Fall weiterhin das Microsoft #Pragma [Pack](../preprocessor/pack.md) verwenden müssen.
 

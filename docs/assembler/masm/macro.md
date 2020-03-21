@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - MACRO directive
 ms.assetid: 89434f7c-bc2c-4e91-8940-fe2db8785233
-ms.openlocfilehash: 23c6b0aefae856da449da574669e8475122c7556
-ms.sourcegitcommit: 0781c69b22797c41630601a176b9ea541be4f2a3
+ms.openlocfilehash: 8eb0afdf73270c3e741f43b2e1fba02fe965846c
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75312949"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076140"
 ---
 # <a name="macro"></a>MACRO
 
@@ -25,14 +25,13 @@ Markiert einen Makroblock namens *Name* und richtet *Parameter* Platzhalter für
 > ⟦**Exitm**⟧ \
 > **ENDM** ⟦*Wert*⟧
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine Makrofunktion gibt einen *Wert* an die aufrufenden Anweisung zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Direktivenverweis](directives-reference.md)\
 [Goto (MASM)](goto-masm.md) -\
 [ENDM](endm.md) -\
 [MASM-BNF-Grammatik](masm-bnf-grammar.md)
-

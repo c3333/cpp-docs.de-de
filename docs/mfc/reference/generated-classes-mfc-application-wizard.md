@@ -6,41 +6,40 @@ f1_keywords:
 helpviewer_keywords:
 - MFC Application Wizard, generated classes
 ms.assetid: 5f33209c-7f01-4f72-8c1c-6f02f507ba9f
-ms.openlocfilehash: 14efffeca11a87f4c3bcaa3241af5cf6784d01e9
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 472ceade4dbb5d99194098d82b7effc40092b5d1
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65708348"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075659"
 ---
 # <a name="generated-classes-mfc-application-wizard"></a>Erstellte Klassen, MFC-Anwendungs-Assistent
 
-Dieses Thema enthält die Namen der Basisklassen und Dateien, die Ihr Projekt generiert. Standardmäßig basieren auf den Projektnamen, den Sie, in angegeben die Namen der **Dialogfeld Neues Projekt**. Sie können die meisten diese Namen ändern, wie hier beschrieben:
+In diesem Thema werden die Namen von Basisklassen und-Dateien aufgelistet, die Ihr Projekt generiert. Standardmäßig basieren die Namen auf dem Projektnamen, den Sie im **Dialog Feld Neues Projekt**angegeben haben. Sie können die meisten dieser Namen ändern, wie hier beschrieben:
 
 - **Generierte Klassen**
 
-   Die Namen der Klassen für das Projekt erstellt werden soll. Standardmäßig basieren die Namen auf den Projektnamen. Das Standard-MFC-Projekt erstellt eine C*ProjName*View-Klasse, die eine C*ProjName*App-Klasse, eines C*ProjName*Doc-Klasse, eine CMainFrame-Klasse und eine CChildFrame-Klasse. Alle anderen Werte auf dieser Seite enthält Informationen über die Klasse, die derzeit im ausgewählten der **generierte Klassen** Liste.
+   Die Namen der Klassen, die für das Projekt erstellt wurden. Standardmäßig basieren die Namen auf dem Projektnamen. Das MFC-Standard Projekt erstellt eine c*ProjName*-Ansichts Klasse, eine c*ProjName*-App-Klasse, eine c*ProjName*doc-Klasse, eine CMainFrame-Klasse und eine CchildFrame-Klasse. Alle anderen Werte auf dieser Seite enthalten Informationen zu der Klasse, die derzeit in der Liste **generierte Klassen** ausgewählt ist.
 
-   Um einen Klassennamen zu ändern, verwenden die **Klassenname** Textfeld.
+   Um einen Klassennamen zu ändern, verwenden Sie das Textfeld **Klassenname** .
 
 - **Klassenname**
 
-   Der Name der Klasse, die aktuell ausgewählt ist die **generierte Klassen** Liste. Wenn das Kontrollkästchen aktiv ist, können Sie den Namen der Klasse ändern. Wenn Sie ändern den Fokus von der **Klassenname** , Änderungen an den Namen der ausgewählten Klasse, wird im der **generierte Klassen** Liste.
+   Der Name der Klasse, die derzeit in der Liste der **generierten Klassen** ausgewählt ist. Wenn das Kontrollkästchen aktiviert ist, können Sie den Klassennamen ändern. Wenn Sie den Fokus im Feld **Klassenname** ändern, werden alle Änderungen am ausgewählten Klassennamen in der Liste **generierte Klassen** angezeigt.
 
 - **H-Datei**
 
-   Der Name der Headerdatei der-Klasse, die aktuell ausgewählt ist die **generierte Klassen** Liste. Wenn das Textfeld aktiv ist, können Sie den Namen der Headerdatei ändern.
+   Der Name der Header Datei der Klasse, die derzeit in der Liste der **generierten Klassen** ausgewählt ist. Wenn das Textfeld aktiv ist, können Sie den Namen der Header Datei ändern.
 
 - **Basisklasse**
 
-   Der Name der Basisklasse der ausgewählten Klasse in der **generierte Klassen** Liste. Wenn das Kontrollkästchen aktiv ist, können Sie eine andere Klasse, die für die Basisklasse aus der Liste auswählen.
+   Der Name der Basisklasse der aktuell ausgewählten Klasse in der Liste der **generierten Klassen** . Wenn das Kontrollkästchen aktiviert ist, können Sie aus der Liste eine andere Klasse für die Basisklasse auswählen.
 
 - **CPP-Datei**
 
-   Der Name der Quellcodedatei, die die ausgewählte Klasse zugeordnet ist. Wenn das Textfeld aktiv ist, können Sie den Namen der Implementierungsdatei ändern.
+   Der Name der Quell Code Datei, die der ausgewählten Klasse zugeordnet ist. Wenn das Textfeld aktiv ist, können Sie den Namen der Implementierungs Datei ändern.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweiterte Funktionen, MFC-Anwendungs-Assistent](../../mfc/reference/advanced-features-mfc-application-wizard.md)<br/>
-[Für Visual Studio-Datei erstellt C++ Projekte](../../build/reference/file-types-created-for-visual-cpp-projects.md)
-
+[Für Visual Studio C++-Projekte erstellte Dateitypen](../../build/reference/file-types-created-for-visual-cpp-projects.md)

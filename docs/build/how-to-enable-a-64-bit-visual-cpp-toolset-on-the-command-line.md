@@ -12,12 +12,12 @@ helpviewer_keywords:
 - IPF, command-line compiler
 - x64 [C++], command-line compiler
 ms.assetid: 4da93a19-e20d-4778-902a-5eee9a6a90b5
-ms.openlocfilehash: 9e8a671a7fe67150e1b867c62231173429f7b6ed
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: 60399994cd5fc2f39efeadc6ffcf917138aada37
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77415929"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078531"
 ---
 # <a name="how-to-enable-a-64-bit-x64-hosted-msvc-toolset-on-the-command-line"></a>Gewusst wie: Aktivieren eines 64-Bit-, x64-gehosteten MSVC-Toolsets in der Befehlszeile
 
@@ -25,7 +25,7 @@ Visual Studio enthält C++ Compiler, Linker und andere Tools, die Sie verwenden 
 
 ## <a name="use-a-64-bit-hosted-developer-command-prompt-shortcut"></a>Verwenden einer auf 64-Bit gehosteten Developer-Eingabeaufforderungsverknüpfung
 
-Um unter Windows 10 auf diese Eingabeaufforderungen zuzugreifen, öffnen Sie im **Startmenü** den Ordner für Ihre Visual Studio-Version, z.B. **Visual Studio 2019**, und wählen Sie dann eine der Developer-Eingabeaufforderungen für native oder kreuzkompatible x64-Tools aus. 
+Um unter Windows 10 auf diese Eingabeaufforderungen zuzugreifen, öffnen Sie im **Startmenü** den Ordner für Ihre Visual Studio-Version, z.B. **Visual Studio 2019**, und wählen Sie dann eine der Developer-Eingabeaufforderungen für native oder kreuzkompatible x64-Tools aus.
 
 ![x64 Native Tools-Eingabeaufforderung](media/x64-native-tools-command-prompt.png "systemeigene x64-Tools im Startmenü")
 
@@ -35,7 +35,7 @@ Zum Zugreifen auf diese Eingabeaufforderungen unter Windows 8 klicken Sie auf de
 
 Jede der Buildkonfigurationen mit nativen oder kreuzkompatiblen Tools kann durch Ausführen der Befehlsdatei „vcvarsall.bat“ auf der Befehlszeile verwendet werden. Diese Befehlsdatei konfiguriert die Pfad- und Umgebungsvariablen, die eine bestimmte Buildarchitektur in einem vorhandenen Eingabeaufforderungsfenster aktivieren. Ausführliche Anweisungen finden Sie unter [Speicherorte der Developer-Befehlsdatei](building-on-the-command-line.md#developer_command_file_locations).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Informationen zu den spezifischen Tools, die in den einzelnen Visual Studio-Editionen enthalten sind, finden Sie unter [Visual C++-Tools und -Features in Visual Studio-Editionen](../overview/visual-cpp-tools-and-features-in-visual-studio-editions.md).
@@ -44,6 +44,6 @@ Jede der Buildkonfigurationen mit nativen oder kreuzkompatiblen Tools kann durch
 
 Wenn Sie eine C++-Workload im Visual Studio-Installer installieren, werden immer auf x86 gehostete native und kreuzkompatible 32-Bit-Compilertools zum Erstellen von x86- und x64-Code installiert. Wenn Sie die Workload Universelle Windows-Plattform einschließen, werden außerdem auf x86 gehostete kreuzkompatible Compilertools zum Erstellen von ARM-Code installiert. Wenn Sie diese Workloads auf einem x64-64-Bit-Prozessor installieren, erhalten Sie darüber hinaus native und kreuzkompatible 64-Bit-Compilertools zum Erstellen von x86-, x64- und ARM-Code. Die 32-Bit- und die 64-Bit-Tools generieren identischen Code, jedoch unterstützen die 64-Bit-Tools mehr Speicher für vorkompilierte Headersymbole und die Optimierung des gesamten Programms ([/GL](reference/gl-whole-program-optimization.md)- und [/LTCG](reference/ltcg-link-time-code-generation.md)-Optionen). Wenn Sie mit 32-Bit-Tools auf Speicherbegrenzungen treffen, versuchen Sie es mit den 64-Bit-Tools.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Konfigurieren von C++-Projekten für 64-Bit-x64-Ziele](configuring-programs-for-64-bit-visual-cpp.md)<br/>

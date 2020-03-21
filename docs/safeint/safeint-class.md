@@ -10,18 +10,18 @@ helpviewer_keywords:
 - SafeInt class
 - SafeInt class, constructor
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-ms.openlocfilehash: 1fc7ec438d83be1a92d8fa9d699f4172aba842e4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: c69dc7ed5e34d98d5acff8f2bc28c34761bd31c6
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515555"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076822"
 ---
 # <a name="safeint-class"></a>SafeInt-Klasse
 
 Erweitert die primitiven Ganzzahlen, um Ganzzahlüberlauf zu vermeiden, und ermöglicht Ihnen, verschiedene Typen von ganzen Zahlen zu vergleichen.
 
-> [!NOTE] 
+> [!NOTE]
 > Die neueste Version dieser Bibliothek befindet sich unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt).
 
 ## <a name="syntax"></a>Syntax
@@ -33,29 +33,29 @@ class SafeInt;
 
 ### <a name="parameters"></a>Parameter
 
-| Vorlage  |  Beschreibung |
+| Vorlage  |  BESCHREIBUNG |
 |--------|------------|
 | T         |  Der Typ des Ganzzahl- oder booleschen Parameters, der `SafeInt` ersetzt. |
 | E         |  Ein Aufzählungsdatentyp, der die Fehlerbehandlungsrichtlinie definiert. |
 | U         |  Der Typ des Ganzzahl- oder booleschen Parameters für den zweiten Operanden. |
 
-| Parameter  |  Beschreibung |
+| Parameter  |  BESCHREIBUNG |
 |---------|-----------------|
 | *rhs*      |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 | *i*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 | *bits*     |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-| name                          |  Beschreibung |
+| Name                          |  BESCHREIBUNG |
 |---------------------------|--------------------|
-| [SafeInt::SafeInt](#safeint)  |  Standardkonstruktor |
+| [SafeInt::SafeInt](#safeint)  |  Der Standardkonstruktor. |
 
 ### <a name="assignment-operators"></a>Zuweisungsoperatoren
 
-| name  |  Syntax |
+| Name  |  Syntax |
 |----|---------|
 | =     |  `template<typename U>`<br />`SafeInt<T,E>& operator= (const U& rhs)` |
 | =     |  `SafeInt<T,E>& operator= (const T& rhs) throw()` |
@@ -64,7 +64,7 @@ class SafeInt;
 
 ### <a name="casting-operators"></a>Umwandlungsoperatoren
 
-| name              |  Syntax |
+| Name              |  Syntax |
 |------|---------------------------------|
 | bool              |  `operator bool() throw()` |
 | char              |  `operator char() const` |
@@ -82,7 +82,7 @@ class SafeInt;
 
 ### <a name="comparison-operators"></a>Vergleichsoperatoren
 
-| name  |  Syntax |
+| Name  |  Syntax |
 |----|----------------|
 | \<     |  `template<typename U>`<br /><br /> `bool operator< (U rhs) const throw()` |
 | \<     |  `bool operator< (SafeInt<T,E> rhs) const throw()` |
@@ -101,7 +101,7 @@ class SafeInt;
 
 ### <a name="arithmetic-operators"></a>Arithmetische Operatoren
 
-| name  |  Syntax |
+| Name  |  Syntax |
 |----|--------------|
 | +     |  `const SafeInt<T,E>& operator+ () const throw()` |
 | -     |  `SafeInt<T,E> operator- () const` |
@@ -134,7 +134,7 @@ class SafeInt;
 
 ### <a name="logical-operators"></a>Logische Operatoren
 
-| name     |  Syntax |
+| Name     |  Syntax |
 |------|--------------|
 | !        |  `bool operator !() const throw()` |
 | ~        |  `SafeInt<T,E> operator~ () const throw()` |
@@ -162,7 +162,7 @@ class SafeInt;
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (U rhs) throw()` |
 | &#124;=  |  `template<typename U>`<br /><br /> `SafeInt<T,E>& operator&#124;= (SafeInt<U, E> rhs) throw()` |
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Die `SafeInt`-Klasse schützt vor Ganzzahlüberlauf in mathematischen Operationen. Betrachten Sie beispielsweise das Hinzufügen von zwei 8-Bit-Ganzzahlen: eine hat den Wert 200 und die zweite den Wert 100. Die richtige mathematische Operation wäre 200 + 100 = 300. Jedoch geht aufgrund des 8-Bit-Ganzzahllimits das obere Bit verloren, und der Compiler gibt 44 (300 - 2<sup>8</sup>) als Ergebnis zurück. Jeder Vorgang, der von dieser mathematischen Gleichung abhängig ist, wird unerwartetes Verhalten hervorrufen.
 
@@ -201,7 +201,7 @@ Der Compiler wandelt sie wie folgt um:
 Int x = flag ? SafeInt<unsigned int>(y) : SafeInt<unsigned int>(-1);
 ```
 
-Wenn `flag` `false` ist, löst der Compiler eine Ausnahme aus, anstatt `x` den Wert -1 zuzuweisen. In der folgenden Zeile sehen Sie den richtigen Code, um dieses Verhalten zu vermeiden.
+Wenn `flag``false` ist, löst der Compiler eine Ausnahme aus, anstatt `x` den Wert -1 zuzuweisen. In der folgenden Zeile sehen Sie den richtigen Code, um dieses Verhalten zu vermeiden.
 
 ```cpp
 Int x = flag ? (int) SafeInt<unsigned int>(y) : -1;
@@ -223,13 +223,13 @@ Es gibt zwei Optionen zur Optimierung der Fehlerrichtlinie. Die erste Option ist
 
 `SafeInt`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** „safeint.h“
 
 **Namespace:** msl::utilities
 
-## <a name="safeint"></a>SafeInt::SafeInt
+## <a name="safeintsafeint"></a><a name="safeint"></a>SafeInt::SafeInt
 
 Erstellt ein `SafeInt`-Objekt.
 
@@ -263,12 +263,12 @@ SafeInt (
 *b*<br/>
 [in] Der boolesche Wert für das neue `SafeInt`-Objekt.
 
-*n*<br/>
+*u*<br/>
 [in] Ein `SafeInt`-Objekt vom Typ „U“. Das neue `SafeInt`-Objekt hat den gleichen Wert wie *u*, ist aber vom Typ „T“.
 
 U Der in `SafeInt` gespeicherte Datentyp. Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn er ein ganzzahliger Typ ist, kann er mit oder ohne Vorzeichen sein und zwischen 8 und 64 Bits groß sein.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Der Eingabeparameter für den Konstruktor *i* oder *u* muss ein boolescher, Zeichen- oder Ganzzahltyp sein. Wenn es sich um einen anderen Parametertyp handelt, ruft die `SafeInt`-Klasse [static_assert](../cpp/static-assert.md) auf, um auf einen ungültigen Eingabeparameter hinzuweisen.
 

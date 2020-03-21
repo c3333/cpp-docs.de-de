@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4127
 ms.assetid: f59ded9e-5227-45bd-ac43-2aa861581363
-ms.openlocfilehash: bef825f546573b878c415c385e1a2a2286e08db4
-ms.sourcegitcommit: 9aab425662a66825772f091112986952f341f7c8
+ms.openlocfilehash: 52a966bb321226058afbf4667a4192e4e814f0a1
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72444902"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075854"
 ---
 # <a name="compiler-warning-level-4-c4127"></a>Compilerwarnung (Stufe 4) C4127
 
 > Bedingter Ausdruck ist konstant
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der steuernde Ausdruck einer **if** -Anweisung oder **while** -Schleife wird zu einer Konstanten ausgewertet. Aufgrund ihrer allgemeinen idiomatischen Verwendung, beginnend mit Visual Studio 2015 Update 3, wird die Warnung durch triviale Konstanten wie 1 oder **true** nicht auslöst, es sei denn, Sie sind das Ergebnis eines Vorgangs in einem Ausdruck.
 
-Wenn der steuernde Ausdruck einer **while** -Schleife eine Konstante ist, weil die Schleife in der Mitte beendet wird, empfiehlt es sich, die **while** -Schleife durch eine **for** -Schleife zu ersetzen. Sie können die Initialisierung, den Beendigungs Test und das Schleifen Inkrement einer for-Schleife weglassen, was bewirkt, **dass** die Schleife wie `while(1)` unendlich ist, und Sie können die Schleife aus dem Text der **for** -Anweisung beenden.
+Wenn der steuernde Ausdruck einer **while** -Schleife eine Konstante ist, weil die Schleife in der Mitte beendet wird, empfiehlt es sich, die **while** -Schleife durch eine **for** -Schleife zu ersetzen. Sie können die Initialisierung, den Beendigungs Test und das Schleifen Inkrement einer for-Schleife weglassen, was bewirkt, **dass** die Schleife wie `while(1)`unendlich ist, und Sie können die Schleife aus dem Text der **for** -Anweisung beenden.
 
 ## <a name="example"></a>Beispiel
 
@@ -45,7 +45,6 @@ int main() {
 ```
 
 Diese Warnung kann auch generiert werden, wenn eine Kompilierzeit Konstante in einem bedingten Ausdruck verwendet wird:
-
 
 ```cpp
 #include <string>

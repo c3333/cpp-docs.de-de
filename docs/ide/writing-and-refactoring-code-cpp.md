@@ -4,12 +4,12 @@ description: Verwenden Sie den C++-Code-Editor in Visual Studio, um Ihren Code z
 ms.date: 05/31/2019
 ms.assetid: 56ffb9e9-514f-41f4-a3cf-fd9ce2daf3b6
 ms.topic: overview
-ms.openlocfilehash: da3f4e7d783561dba8250652a0715e51e71cc387
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 6d920ec302e8385d900d74152ee5ad17851fdaac
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438166"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077846"
 ---
 # <a name="edit-and-refactor-c-code-in-visual-studio"></a>Bearbeiten und Umgestalten von C++-Code in Visual Studio
 
@@ -70,15 +70,15 @@ Eine Schaltfläche wird nur dann angezeigt, wenn sie auch für Ihre aktuelle Int
 
 ## <a name="template-intellisense"></a>IntelliSense für Vorlagen
 
-Wenn sich die Einfügemarke in einer Vorlagendefinition befindet, wird eine **Vorlagenleiste** angezeigt, über die Sie Beispielvorlagenargumente für IntelliSense angeben können. 
+Wenn sich die Einfügemarke in einer Vorlagendefinition befindet, wird eine **Vorlagenleiste** angezeigt, über die Sie Beispielvorlagenargumente für IntelliSense angeben können.
 
 ![C&#43; &#43; -Vorlage IntelliSense zeigt vorhandene Instanziierungen an](../ide/media/template-intellisense-cpp-1.png "Vorlage IntelliSense zeigt vorhandene Instanziierungen an")
 
-Klicken Sie auf das Symbol **\<t >** , um die **Vorlagen Leiste**zu erweitern bzw. zu reduzieren. Klicken Sie auf das Stiftsymbol, oder doppelklicken Sie auf die **Vorlagenleiste**, um das **Bearbeitungsfenster** zu öffnen. 
+Klicken Sie auf das Symbol **\<t >** , um die **Vorlagen Leiste**zu erweitern bzw. zu reduzieren. Klicken Sie auf das Stiftsymbol, oder doppelklicken Sie auf die **Vorlagenleiste**, um das **Bearbeitungsfenster** zu öffnen.
 
 ![C&#43; &#43; -Vorlage (IntelliSense)](../ide/media/template-intellisense-cpp-3.png "IntelliSense für Vorlagen")
 
-Im Fenster vorgenommene Änderungen werden direkt im Quellcode widergespiegelt, sodass Sie die Auswirkungen in Echtzeit sehen können. 
+Im Fenster vorgenommene Änderungen werden direkt im Quellcode widergespiegelt, sodass Sie die Auswirkungen in Echtzeit sehen können.
 
 Die Vorlagenleiste kann Kandidaten basierend auf Instanziierungen in Ihrem Code automatisch auffüllen. Klicken Sie auf **Alle vorhandenen Instanziierungen hinzufügen**, um eine Liste aller konkreten Argumente anzuzeigen, die verwendet wurden, um die Vorlage in Ihrer Codebasis zu instanziieren.
 
@@ -94,13 +94,13 @@ Die Informationen in der **Vorlagenleiste** werden als benutzerspezifisch angese
 
 Wenn der Editor Probleme in Ihrem Code erkennt, fügt er farbige Wellenlinien unter den betreffenden problematischen Teilen ein. Rote Wellenlinien werden unter Code angezeigt, der nicht kompiliert werden kann. Grüne Wellenlinien geben an, dass ein anderes Problem vorliegt, das dennoch schwerwiegend sein kann. Sie können ein Fenster mit einer **Fehlerliste** öffnen, um mehr Informationen zu den Problemen zu erhalten.
 
-Bei einigen Fehlern und häufigen Codemustern schlägt der Editor eine **Schnellkorrektur** mit einem Glühbirnensymbol vor, das angezeigt wird, wenn Sie mit dem Mauszeiger auf die Wellenlinie zeigen. Klicken Sie auf den Pfeil nach unten, um die Vorschläge anzuzeigen. 
+Bei einigen Fehlern und häufigen Codemustern schlägt der Editor eine **Schnellkorrektur** mit einem Glühbirnensymbol vor, das angezeigt wird, wenn Sie mit dem Mauszeiger auf die Wellenlinie zeigen. Klicken Sie auf den Pfeil nach unten, um die Vorschläge anzuzeigen.
 
 Im folgenden Beispiel wurde ein `vector`-Objekt deklariert, aber es konnte keine Definition gefunden werden, weshalb der Editor vorschlägt, die nötige Headerdatei einzubeziehen:
 
 ![C&#43; &#43; -schnell Korrektur](../ide/media/quick-fix-for-header-cpp.png "C++Schnell Korrektur")
 
-Der Editor bietet zudem Schnellkorrekturen für mögliche Refactorings. Wenn Sie beispielsweise eine Klasse in einer Headerdatei deklarieren, schlägt Visual Studio für diese eine Definition in einer separaten CPP-Datei vor. 
+Der Editor bietet zudem Schnellkorrekturen für mögliche Refactorings. Wenn Sie beispielsweise eine Klasse in einer Headerdatei deklarieren, schlägt Visual Studio für diese eine Definition in einer separaten CPP-Datei vor.
 
 ![C&#43; &#43; -schnell Korrektur](../ide/media/quick-fix.png "C++Schnell Korrektur")
 
@@ -120,7 +120,7 @@ Ein Ausschnitt ist ein vordefinierter Teil des Quellcodes. Klicken Sie mit der r
 
 ![C&#43; &#43; & amp; Drop&#45;Ausschnitt einfügen](../ide/media/vs2015_cpp_surround_with.png "vs2015_cpp_surround_with")
 
-##  <a name="add-class"></a>Hinzufügen
+##  <a name="add-class"></a>Klasse hinzufügen
 
 Über das Menü **Projekt** oder über das Kontextmenü im **Projektmappen-Explorer** können Sie eine neue Klasse hinzufügen:
 
@@ -132,7 +132,7 @@ Sie können auch den Klassen-Assistenten verwenden, um eine vorhandene Klasse zu
 
 Weitere Informationen finden Sie unter [Adding Functionality with Code Wizards (C++) (Hinzufügen neuer Funktionen mit Code-Assistenten (C++))](../ide/adding-functionality-with-code-wizards-cpp.md).
 
-##  <a name="refactoring"></a>Umgestaltung
+##  <a name="refactoring"></a>Refactoring
 
 Refactorings stehen unter dem Kontextmenü „Schnelle Aktion“ oder durch Klicken auf eine [Glühbirne](/visualstudio/ide/perform-quick-actions-with-light-bulbs) im Editor zur Verfügung.  Einige befinden sich auch im Menü **Bearbeiten > Umgestalten**.  Zu den Features zählen:
 

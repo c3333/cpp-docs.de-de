@@ -4,12 +4,12 @@ ms.date: 05/14/2019
 helpviewer_keywords:
 - code wizards [C++]
 ms.assetid: 6afb7ef9-7056-423d-b244-91bb4236d1d7
-ms.openlocfilehash: 360f206ff4dae0b49650e131ccd86ecf9a0ed87d
-ms.sourcegitcommit: 3caf5261b3ea80d9cf14038c116ba981d655cd13
-ms.translationtype: HT
+ms.openlocfilehash: cb77b2ce74f962df0a4c7472b037cb7a73effc2d
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70907491"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077698"
 ---
 # <a name="adding-functionality-with-code-wizards-c"></a>Hinzufügen neuer Funktionen mit Code-Assistenten (C++)
 
@@ -27,7 +27,6 @@ Nachdem Sie ein Projekt erstellt haben, sollten Sie Funktionen zum Projekt hinzu
 - MFC-Klasse aus ActiveX-Steuerelement
 - MFC-Klasse aus Typbibliothek
 
-
 > [!NOTE]
 >  Sie können Meldungshandler und Zuordnungsmeldungen zu diesen hinzufügen und virtuelle MFC-Funktionen mithilfe des [MFC-Klassen-Assistenten](../mfc/reference/mfc-class-wizard.md) überschreiben.
 
@@ -43,7 +42,7 @@ Es gibt drei Stellen, über die Sie auf C++-Code-Assistenten zugreifen können:
 
    - **Funktion hinzufügen**
 
-   - **Variable hinzufügen**
+   - **Hinzufügen von Variablen**
 
    - **Verbindungspunkt hinzufügen** (nur ATL-Klassen)
 
@@ -73,7 +72,7 @@ Es gibt drei Stellen, über die Sie auf C++-Code-Assistenten zugreifen können:
    |Projektmappen-Explorer|Die Code-Assistenten, die über den Projektmappen-Explorer verfügbar sind, hängen davon ab, wo sich der Fokus Ihres Cursors befindet, wenn Sie mit der rechten Maustaste auf ein Element klicken. Wenn die Option **Hinzufügen** nicht angezeigt wird, wenn Sie mit der rechten Maustaste auf ein Element klicken, bewegen Sie Ihren Cursor in der Entwicklungsstruktur eine Ebene nach oben, und wiederholen Sie den Vorgang. Der Code-Assistent fügt zusätzlichen Code unabhängig davon, wo Ihr Cursor sich befindet, immer an der entsprechenden Stelle in der Entwicklungsstruktur ein. Folgende Code-Assistenten sind über den Projektmappen-Explorer verfügbar:<br /><br />– Klasse hinzufügen (öffnet das Dialogfeld **Klasse hinzufügen**, das die neuen Code-Assistenten enthält)<br />– Ressource hinzufügen (Optionen: „Neu“, „Importieren“ oder „Benutzerdefiniert“)<br />– Webverweis hinzufügen|
    |Klassenansicht|Die Code-Assistenten, die über die Klassenansicht verfügbar sind, hängen davon ab, wo sich der Fokus Ihres Cursors befindet, wenn Sie mit der rechten Maustaste auf ein Element klicken. Wenn die Option **Hinzufügen** nicht angezeigt wird, wenn Sie mit der rechten Maustaste auf ein Element klicken, bewegen Sie Ihren Cursor in der Klassenstruktur eine Ebene nach oben, und wiederholen Sie den Vorgang. Der Code-Assistent fügt zusätzlichen Code unabhängig davon, wo Ihr Cursor sich befindet, immer an der entsprechenden Stelle in der Entwicklungsstruktur ein. Folgende Code-Assistenten sind über die Klassenansicht verfügbar:<br /><br />- [Memberfunktion hinzufügen](../ide/adding-a-member-function-visual-cpp.md)<br />- [Membervariable hinzufügen](../ide/adding-a-member-variable-visual-cpp.md)<br />- [Klasse hinzufügen](../ide/adding-a-class-visual-cpp.md)<br />- [Schnittstelle implementieren](../ide/implement-interface-wizard.md) (nur über eine Steuerelementklasse)<br />- [Verbindungspunkt hinzufügen](../ide/implement-connection-point-wizard.md) (nur ATL-Klassen)<br />- [Methode hinzufügen](../ide/add-method-wizard.md) (nur über eine Schnittstelle)<br />- [Eigenschaft hinzufügen](../ide/names-add-property-wizard.md) (nur über eine Schnittstelle)<br />- [Ereignis hinzufügen](../ide/add-event-wizard.md) (nur über eine Steuerelementklasse)<br /><br />Die Auswahl „Klasse hinzufügen“ öffnet das Dialogfeld **Klasse hinzufügen**, über das Sie auf alle neuen Code-Assistenten zum Hinzufügen von Klassen zugreifen können.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Überschreiben einer virtuellen Funktion](../ide/overriding-a-virtual-function-visual-cpp.md)<br>
 [Navigate your C++ code base in Visual Studio (Navigieren in Ihrer C++-Codebasis in Visual Studio)](../ide/navigate-code-cpp.md)<br>

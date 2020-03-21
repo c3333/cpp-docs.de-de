@@ -1,5 +1,5 @@
 ---
-title: Befehle im Menü (C++)
+title: Menübefehle (C++)
 ms.date: 02/15/2019
 helpviewer_keywords:
 - menu items, properties
@@ -17,76 +17,76 @@ helpviewer_keywords:
 - mnemonics [C++], uniqueness checking
 - Check Mnemonics command
 ms.assetid: 6d308205-3c9e-42f2-ab42-45e656940e45
-ms.openlocfilehash: 1010e4d1c11c9408ef73f4db0a449314b36059a7
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: 972478923a7c4c60d8ff949c5532b00a1de1efc0
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400770"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075503"
 ---
-# <a name="menu-commands-c"></a>Befehle im Menü (C++)
+# <a name="menu-commands-c"></a>Menübefehle (C++)
 
-Die folgenden Informationen sind entsprechend so aufgebaut, dass die **Menü** Eigenschaften, die in der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window) bei der Auswahl eines Menübefehls. Diese sind alphabetisch aufgeführt, obwohl die **Eigenschaften** Fenster auch können Sie diese Eigenschaften nach Kategorie anzuzeigen.
+Die unten aufgeführten Informationen sind entsprechend den **Menü** Eigenschaften organisiert, die im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window) angezeigt werden, wenn Sie einen Menübefehl auswählen. Diese werden alphabetisch aufgelistet, obwohl das **Eigenschaften** Fenster auch das Anzeigen dieser Eigenschaften nach Kategorie ermöglicht.
 
-|Eigenschaft|Beschreibung|
+|Eigenschaft|BESCHREIBUNG|
 |--------------|-----------------|
-|**Break**|Einer der folgenden Werte ist möglich:<br/>  - **Keine**: Kein Wechsel. Dies ist die Standardeinstellung.<br/>  - **Spalte**: Bei statischen Menüs bewirkt wird dieser Wert den Menübefehl in eine neue Zeile.<br/>      Bei Popupmenüs bewirkt dieser Wert, dass der Menübefehl in eine neue Spalte gesetzt wird, ohne dass zwischen den Spalten eine Trennlinie angezeigt wird.<br/>      Diese Eigenschaft wirkt sich nicht im Menü-Editor, sondern erst zur Laufzeit auf die Darstellung des Menüs aus.<br />   - **Bar**: Identisch mit **Spalte** außer dass bei Popupmenüs dieser Wert die neue Spalte von der alten Spalte getrennt durch eine vertikale Linie.<br/>      Diese Eigenschaft wirkt sich auf die Darstellung des Menüs nur zur Laufzeit nicht in der **Menü-Editor**.|
+|**Break**|Einer der folgenden Werte ist möglich:<br/>  - **None**: keine Pause. Dies ist die Standardoption.<br/>  - **Spalte**: Bei statischen Menüs bewirkt dieser Wert, dass der Menübefehl in eine neue Zeile gesetzt wird.<br/>      Bei Popupmenüs bewirkt dieser Wert, dass der Menübefehl in eine neue Spalte gesetzt wird, ohne dass zwischen den Spalten eine Trennlinie angezeigt wird.<br/>      Diese Eigenschaft wirkt sich nicht im Menü-Editor, sondern erst zur Laufzeit auf die Darstellung des Menüs aus.<br />   - **Leiste**: identisch mit der **Spalte** , außer dass bei Popup Menüs der Wert die neue Spalte von der alten Spalte mit einer vertikalen Linie trennt.<br/>      Das Festlegen dieser Eigenschaft wirkt sich nicht im **Menü-Editor**, sondern nur zur Laufzeit auf die Darstellung des Menüs aus.|
 |**Beschriftung**|Text zur Beschreibung des Menübefehls (der Menüname). Einem der Buchstaben in der Beschriftung eines Menübefehls kann eine Zugriffstaste zugeordnet werden, indem ihm ein kaufmännisches Und-Zeichen (&) vorangestellt wird.|
-|**Aktiviert**|Wenn **"true"** , der Menübefehl zu Beginn aktiviert ist. Typ: **Bool**. Standard: **"False"** .|
+|**Aktiviert**|**True**gibt an, dass der Menübefehl anfänglich aktiviert ist. Typ: **bool**. Standardwert: **FALSE**.|
 |**Aktiviert**|Wenn **FALSE**, ist das Menüelement deaktiviert.|
-|**Grau**|Wenn **"true"** , ist der Menübefehl, Beginn grau dargestellt und inaktiv. Typ: **Bool**. Standard: **"False"** .|
-|**Hilfe**|Richtet das Menüelement rechtsbündig aus. Standard: **"False"** .<br/><br/>Der Menübefehl für die **Hilfe** befindet sich beispielsweise in allen Windows-Anwendungen immer ganz rechts. Wenn Sie diese Eigenschaft für ein Menüelement festlegen, wird das Element ganz rechts am Ende des Menüs angezeigt. Bezieht sich auf Elemente des Hauptmenüs.|
-|**ID**|Ein Symbol, das in der Headerdatei definiert ist. Typ: **Symbol**, **Ganzzahl**, oder **Zeichenfolge in Anführungszeichen**.<br/><br/>Sie können ein beliebiges Symbol verwenden, das üblicherweise in den Editoren verfügbar ist. Dies gilt auch, wenn das [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) keine Dropdownliste enthält, aus der Sie auswählen können.|
-|**Popup**|Wenn **"true"** , der Menübefehl ist ein Popup-Menü. Typ: **Bool**. Standard: **"True"** für Menüs der obersten Ebene in einer Menüleiste, andernfalls **"false"** .|
-|**Eingabeaufforderung**|Enthält Text, der in der Statusleiste angezeigt werden soll, wenn dieser Menübefehl markiert wird. Der Text wird mit dem Bezeichner des Menübefehls in der Zeichenfolgentabelle gespeichert.<br/><br/>Diese Eigenschaft ist für jeden Projekttyp verfügbar, wobei die Laufzeitfunktionalität jedoch MFC-spezifisch ist.|
-|**Rechtsbündig**|Richtet den Menübefehl auf der Menüleiste zur Laufzeit rechtsbündig aus. Typ: **Bool**. Standard: **"False"** .|
+|**Grau**|**True**gibt an, dass der Menübefehl anfänglich ausgegraut und inaktiv ist. Typ: **bool**. Standardwert: **FALSE**.|
+|**Hilfe**|Richtet das Menüelement rechtsbündig aus. Standardwert: **FALSE**.<br/><br/>Der Menübefehl für die **Hilfe** befindet sich beispielsweise in allen Windows-Anwendungen immer ganz rechts. Wenn Sie diese Eigenschaft für ein Menüelement festlegen, wird das Element ganz rechts am Ende des Menüs angezeigt. Bezieht sich auf Elemente des Hauptmenüs.|
+|**ID**|Ein Symbol, das in der Headerdatei definiert ist. Typ: **Symbol**, **ganze**Zahl oder **Zeichenfolge**in Anführungszeichen.<br/><br/>Sie können ein beliebiges Symbol verwenden, das üblicherweise in den Editoren verfügbar ist. Dies gilt auch, wenn das [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) keine Dropdownliste enthält, aus der Sie auswählen können.|
+|**Popup**|**True**gibt an, dass der Menübefehl ein Popup Menü ist. Typ: **bool**. Standard: **true** für Menüs der obersten Ebene in einer Menüleiste, andernfalls **false**.|
+|**prompt**|Enthält Text, der in der Statusleiste angezeigt werden soll, wenn dieser Menübefehl markiert wird. Der Text wird mit dem Bezeichner des Menübefehls in der Zeichenfolgentabelle gespeichert.<br/><br/>Diese Eigenschaft ist für jeden Projekttyp verfügbar, wobei die Laufzeitfunktionalität jedoch MFC-spezifisch ist.|
+|**Rechtsbündig**|Richtet den Menübefehl auf der Menüleiste zur Laufzeit rechtsbündig aus. Typ: **bool**. Standardwert: **FALSE**.|
 |**Von rechts nach links**|Ermöglicht die Darstellung der Menübefehle von rechts nach links, wenn die Benutzeroberfläche in eine Sprache übertragen werden soll, die von rechts nach links geschrieben wird, z. B. Hebräisch oder Arabisch.|
-|**Trennzeichen**|Wenn **"true"** , der Menübefehl ein Trennzeichen ist. Typ: **Bool**. Standard: **"False"** .|
+|**Trennzeichen**|**True**gibt an, dass der Menübefehl ein Trennzeichen ist. Typ: **bool**. Standardwert: **FALSE**.|
 
-## <a name="associate-menu-commands"></a>Verknüpfen von Menübefehlen
+## <a name="associate-menu-commands"></a>Menübefehle zuordnen
 
-Häufig ist es wünschenswert, dass ein Menübefehl und eine Tastenkombination den gleichen Programmbefehl ausgeben. Identische Befehle werden mithilfe der **Menü-Editor** auf den gleichen Ressourcenbezeichner des Menübefehls und ein Eintrag in der Zugriffstastentabelle Ihrer Anwendung zugewiesen. Anschließend bearbeiten Sie die [Beschriftung](../windows/menu-command-properties.md) des Menübefehls so, dass sie den Namen der Zugriffstaste anzeigt.
+Häufig ist es wünschenswert, dass ein Menübefehl und eine Tastenkombination den gleichen Programmbefehl ausgeben. Identische Befehle werden mit dem Menü- **Editor** ausgegeben, um dem Menübefehl und einem Eintrag in der Zugriffstasten Tabelle Ihrer Anwendung denselben Ressourcen Bezeichner zuzuweisen. Anschließend bearbeiten Sie die [Beschriftung](../windows/menu-command-properties.md) des Menübefehls so, dass sie den Namen der Zugriffstaste anzeigt.
 
 ### <a name="to-associate-a-menu-command-with-an-accelerator-key"></a>So ordnen Sie einen Menübefehl einer Zugriffstaste zu
 
-1. In der **Menü-Editor**, wählen Sie den gewünschten Menübefehl.
+1. Wählen Sie im **Menü-Editor**den gewünschten Menübefehl aus.
 
 1. Fügen Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)der Eigenschaft **Caption** den Namen der Zugriffstaste hinzu:
 
    - Geben Sie im Anschluss an die Menübeschriftung die Escapesequenz für einen Tabulator (\t) ein, damit alle Zugriffstasten des Menüs links ausgerichtet sind.
 
-   - Geben Sie den Namen der Modifizierertaste (**STRG**, **Alt**, oder **UMSCHALT**) gefolgt von einem Pluszeichen ( **+** ) und den Namen, Buchstaben, oder Symbol der zusätzlichen Taste.
+   - Geben Sie den Namen der Modifizierertaste (**STRG**, **alt**oder **UMSCHALT**) ein, gefolgt von einem Pluszeichen ( **+** ) und dem Namen, Buchstaben oder Symbol der zusätzlichen Taste.
 
-   Beispielsweise weisen **STRG**+**O** auf die **öffnen** Befehl die **Datei** im Menü Sie ändern, dass der Menübefehl  **Beschriftung** , damit sie wie folgt aussieht:
+   Wenn Sie z. b. dem Befehl **Öffnen** im Menü **Datei** die Tastenkombination **STRG**+**O** zuweisen möchten, ändern Sie die **Beschriftung** des Menübefehls so, dass Sie wie der folgende Text aussieht:
 
    ```
    &Open...\tCtrl+O
    ```
 
-   Der Menübefehl in die **Menü-Editor** wird aktualisiert, um die neue Beschriftung so darzustellen, wie Sie es eingeben.
+   Der Menübefehl im **Menü-Editor** wird aktualisiert, um die neue Beschriftung bei der Eingabe widerzuspiegeln.
 
 1. [Erstellen Sie den Zugriffstastentabellen-Eintrag](../windows/adding-an-entry-to-an-accelerator-table.md) im **Zugriffstasten** -Editor, und weisen Sie ihm den gleichen Bezeichner wie dem Menübefehl zu. Verwenden Sie eine Tastenkombination, die Ihrer Ansicht nach leicht zu merken ist.
 
-Die MFC-Anwendung kann beschreibenden Text für jeden der Menübefehle im angezeigt, die ein Benutzer auswählen kann. Beschreibenden Text anzeigen, indem Sie eine Textzeichenfolge zuweisen, um jedem Menübefehl mit der **Eingabeaufforderung** -Eigenschaft in der **Eigenschaften** Fenster. Wenn eine Zeichenfolge in der [Zeichenfolgentabelle](../windows/string-editor.md) die gleiche ID wie der Befehl aufweist, zeigt eine MFC-Anwendung automatisch diese Zeichenfolgenressource in der Statusleiste der ausgeführten Anwendung an, wenn ein Benutzer auf ein Menüelement zeigt.
+Die MFC-Anwendung kann beschreibenden Text für jeden Menübefehl anzeigen, den ein Benutzer auswählen kann. Zeigen Sie beschreibenden Text an, indem Sie jedem Menübefehl mithilfe der Eigenschaft **prompt** im Fenster **Eigenschaften** eine Text Zeichenfolge zuweisen. Wenn eine Zeichenfolge in der [Zeichenfolgentabelle](../windows/string-editor.md) die gleiche ID wie der Befehl aufweist, zeigt eine MFC-Anwendung automatisch diese Zeichenfolgenressource in der Statusleiste der ausgeführten Anwendung an, wenn ein Benutzer auf ein Menüelement zeigt.
 
-- Zum Zuordnen eines Menübefehls einer Statusleisten-Zeichenfolge in MFC-Anwendungen, in der **Menü-Editor**, wählen den Menübefehl aus. Geben Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)den zugeordneten Statusleistentext im Feld **Eingabeaufforderung** ein.
+- Wählen Sie im **Menü-Editor**den Menübefehl aus, um einem Menübefehl eine Text Zeichenfolge für eine Statusleiste in MFC-Anwendungen zuzuordnen. Geben Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)den zugeordneten Statusleistentext im Feld **Eingabeaufforderung** ein.
 
-In einem C++-Projekt können Sie eine Zugriffstaste (ein mnemonisches Zeichen, die dem Benutzer ermöglicht, wählen Sie im Menü mit der Tastatur) zuweisen, Ihren Menüs und Menübefehlen.
+In einem C++ Projekt können Sie eine Zugriffstaste (ein mnetmonisches, mit dem der Benutzer das Menü mit der Tastatur auswählen kann) zu Ihren Menüs und Menübefehlen zuweisen.
 
-- Geben Sie einen Menübefehl eine Zugriffstaste (Tastenkombination) zuweisen möchten, ein kaufmännisches und-Zeichen (`&`) vor einen Buchstaben im Namen des Menüs oder Befehlsnamen, um diesen Buchstaben als die entsprechende Zugriffstaste festzulegen. 
+- Wenn Sie einem Menübefehl eine Zugriffstaste (Tastenkombination) zuweisen möchten, geben Sie ein kaufmännisches und-(`&`) vor einem Buchstaben im Menü Namen oder Befehlsnamen ein, um diesen Buchstaben als entsprechenden Zugriffsschlüssel anzugeben.
 
-   Z. B. "& Datei" legt **Alt**+**F** als Tastenkombination für den **Datei** Menü in Anwendungen für Microsoft Windows.
+   Beispiel: "& Datei" legt **alt**+**F** als Tastenkombination für das Menü **Datei** in Anwendungen fest, die für Microsoft Windows geschrieben wurden.
 
    Das Menüelement gibt einen sichtbaren Hinweis darauf, dass einem der Buchstaben eine Zugriffstaste zugeordnet ist. Der Buchstabe, der auf das kaufmännische Und-Zeichen folgt, wird unterstrichen dargestellt (abhängig vom Betriebssystem).
 
 > [!NOTE]
-> Stellen Sie sicher, dass alle Zugriffstasten in einem Menü eindeutig sind, indem Sie einen Rechtsklick auf das Menü und Auswahl **Mnemonik**.
+> Stellen Sie sicher, dass alle Zugriffstasten in einem Menü eindeutig sind, indem Sie mit der rechten Maustaste auf das Menü klicken und **mnetmonics überprüfen**auswählen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Menü-Editor](../windows/menu-editor.md)
 

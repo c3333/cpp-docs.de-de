@@ -2,12 +2,12 @@
 title: Navigieren in C++-Code in Visual Studio
 description: Verwenden Sie verschiedene Tools in Visual Studio, um in Ihrer C++-Codebasis zu navigieren.
 ms.date: 05/28/2019
-ms.openlocfilehash: 0877fe64e913ab394d9605b9ff0b9825febca793
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 932694db70019924557259d4defe802b53ef0f89
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79446635"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079076"
 ---
 # <a name="navigate-c-code-in-visual-studio"></a>Navigieren in C++-Code in Visual Studio
 
@@ -31,7 +31,7 @@ Sie können zur Definition eines Codesymbols navigieren, indem Sie mit der recht
 
 ## <a name="go-to"></a>Gehe zu
 
-**Gehe zu** bezieht sich auf Navigationsfeatures, die basierend auf von Ihnen festgelegten Filtern jeweils eine spezifische Art Ergebnis erzielen. 
+**Gehe zu** bezieht sich auf Navigationsfeatures, die basierend auf von Ihnen festgelegten Filtern jeweils eine spezifische Art Ergebnis erzielen.
 
 Sie können **Gehe zu** mit **STRG+,** öffnen. Diese Aktion öffnet ein Suchfeld über dem Dokument, das Sie bearbeiten.
 
@@ -82,7 +82,7 @@ Die **Suche** kann auf eine Auswahl, das aktuelle Dokument, alle offenen Dokumen
 
 ![C&#43; &#43; suchen](../ide/media/find-cpp.png "Suchen")
 
-**In Dateien suchen** ist eine leistungsstärkere Version von **Suchen**, die Ergebnisse im Fenster **Suchergebnisse** anzeigt. Sie können externe Codeabhängigkeiten suchen, nach Dateitypen filtern und vieles mehr. 
+**In Dateien suchen** ist eine leistungsstärkere Version von **Suchen**, die Ergebnisse im Fenster **Suchergebnisse** anzeigt. Sie können externe Codeabhängigkeiten suchen, nach Dateitypen filtern und vieles mehr.
 
 ![C&#43; &#43; in Dateien suchen](../ide/media/find-in-files-cpp.png "In Dateien suchen")
 

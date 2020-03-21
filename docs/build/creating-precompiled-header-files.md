@@ -7,18 +7,18 @@ helpviewer_keywords:
 - cl.exe compiler, precompiling code
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
-ms.openlocfilehash: 071839df431071a7d8921d1b445094f886ad38e2
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 6333e105a20612d6cbdf8d4b4d4abf47286c4e9b
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422847"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078583"
 ---
 # <a name="precompiled-header-files"></a>Vorkompilierte Headerdateien
 
-Wenn Sie in Visual Studio ein neues Projekt erstellen, wird dem Projekt eine *Vorkompilierte Header Datei* mit dem Namen " *PCH. h* " hinzugefügt. (In Visual Studio 2017 und früher wurde die Datei " *stdafx. h*" genannt.) Der Zweck der Datei besteht darin, den Buildprozess zu beschleunigen. Alle stabilen Header Dateien, z. b. Standard Bibliotheks Header wie `<vector>`, sollten hier eingeschlossen werden. Der vorkompilierte Header wird nur kompiliert, wenn er oder alle darin enthaltenen Dateien geändert werden. Wenn Sie nur Änderungen im Projekt Quell Code vornehmen, überspringt der Build die Kompilierung für den vorkompilierten Header. 
+Wenn Sie in Visual Studio ein neues Projekt erstellen, wird dem Projekt eine *Vorkompilierte Header Datei* mit dem Namen " *PCH. h* " hinzugefügt. (In Visual Studio 2017 und früher wurde die Datei " *stdafx. h*" genannt.) Der Zweck der Datei besteht darin, den Buildprozess zu beschleunigen. Alle stabilen Header Dateien, z. b. Standard Bibliotheks Header wie `<vector>`, sollten hier eingeschlossen werden. Der vorkompilierte Header wird nur kompiliert, wenn er oder alle darin enthaltenen Dateien geändert werden. Wenn Sie nur Änderungen im Projekt Quell Code vornehmen, überspringt der Build die Kompilierung für den vorkompilierten Header.
 
-Die Compileroptionen für vorkompilierte Header sind [/Y](reference/y-precompiled-headers.md). Auf den Eigenschaften Seiten des Projekts befinden sich die Optionen unter **Konfigurations Eigenschaften > vorkompilierte C/>-C++ Header**. Sie können auswählen, dass keine vorkompilierten Header verwendet werden sollen, und Sie können den Namen und den Pfad der Ausgabedatei angeben. 
+Die Compileroptionen für vorkompilierte Header sind [/Y](reference/y-precompiled-headers.md). Auf den Eigenschaften Seiten des Projekts befinden sich die Optionen unter **Konfigurations Eigenschaften > vorkompilierte C/>-C++ Header**. Sie können auswählen, dass keine vorkompilierten Header verwendet werden sollen, und Sie können den Namen und den Pfad der Ausgabedatei angeben.
 
 ## <a name="custom-precompiled-code"></a>Benutzerdefinierter vorkompilierter Code
 
@@ -306,7 +306,7 @@ int main( void )
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Referenz zur C/C++-Erstellung](reference/c-cpp-building-reference.md)<br/>
 [MSVC-Compileroptionen](reference/compiler-options.md)

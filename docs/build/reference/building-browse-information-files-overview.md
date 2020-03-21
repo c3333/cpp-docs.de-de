@@ -7,47 +7,46 @@ helpviewer_keywords:
 - browse information files (.bsc)
 - browse information files (.bsc), creating
 ms.assetid: b5c12832-51f6-4953-8044-4264dd0fb242
-ms.openlocfilehash: 5d33460ba63e50d31e44384be382e98cfbea4c91
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 94cb5865e56e12f51ef4a8598a5df3fcbe69fa0f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220548"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078358"
 ---
 # <a name="building-browse-information-files-overview"></a>Erstellen von Browseinformationsdateien: Übersicht
-
 
 > [!WARNING]
 > Obwohl BSCMAKE weiterhin mit Visual Studio installiert wird, wird es nicht mehr von der IDE verwendet. Seit Visual Studio 2008 werden Browse- und Symbolinformationen automatisch in einer SQL Server-.SDF-Datei im Projektmappenordner gespeichert.
 
-Zum Durchsuchen von Informationen für die Symbolsuche zu erstellen, erstellt der Compiler eine SBR-Datei für jede Quelldatei im Projekt, klicken Sie dann BSCMAKE an. EXE-Datei wird die SBR-Dateien in einer BSC-Datei.
+Zum Erstellen von Suchinformationen für das Durchsuchen von Symbolen erstellt der Compiler eine SBR-Datei für jede Quelldatei in Ihrem Projekt und dann BSCMAKE. EXE verkettet die SBR-Dateien in eine BSC-Datei.
 
-SBR- und BSC-Dateien generieren nimmt Zeit in Anspruch, damit Visual Studio diese Funktionen standardmäßig deaktiviert. Wenn Sie aktuelle Informationen durchsuchen möchten, müssen Sie die Durchsuchen-Optionen aktivieren und das Projekt erneut erstellen.
+Das Erstellen von SBR-und BSC-Dateien nimmt Zeit in Kraft, sodass Visual Studio diese Funktionen standardmäßig deaktiviert. Wenn Sie die aktuellen Informationen durchsuchen möchten, müssen Sie die Optionen zum Durchsuchen aktivieren und das Projekt erneut erstellen.
 
-Verwendung [/FR](fr-fr-create-dot-sbr-file.md) oder [/FR](fr-fr-create-dot-sbr-file.md) um den Compiler SBR-Dateien zu erstellen. Sie können zum Erstellen von BSC-Dateien aufrufen [BSCMAKE](bscmake-command-line.md) über die Befehlszeile. Mithilfe von BSCMAKE über die Befehlszeile, bietet Ihnen eine präzisere Kontrolle über die Bearbeitung von Browserinformationsdateien. Finden Sie unter [BSCMAKE-Referenz](bscmake-reference.md) für Weitere Informationen.
+Verwenden Sie [/fr](fr-fr-create-dot-sbr-file.md) oder [/fr](fr-fr-create-dot-sbr-file.md) , um dem Compiler mitzuteilen, dass SBR-Dateien erstellt werden sollen. Zum Erstellen von. BSC-Dateien können Sie [BSCMAKE](bscmake-command-line.md) von der Befehlszeile aus abrufen. Durch die Verwendung von BSCMAKE in der Befehlszeile erhalten Sie eine präzisere Kontrolle über die Bearbeitung von Browseinformationsdateien. Weitere Informationen finden Sie unter [BSCMAKE-Referenz](bscmake-reference.md) .
 
 > [!TIP]
->  Sie können einschalten SBR-Datei generieren jedoch BSC-Datei generieren, die deaktiviert. Dadurch schnell erstellt, aber auch können Sie schnell eine neue .bsc-Datei erstellen, durch das Aktivieren der Generierung von BSC-Dateien und beim Erstellen des Projekts.
+>  Sie können die SBR-Datei Generierung aktivieren, aber die Generierung von. BSC-Dateien deaktivieren. Dies bietet schnelle Builds, ermöglicht Ihnen aber auch, schnell eine neue BSC-Datei zu erstellen, indem Sie die Datei Generierung von BSC aktivieren und das Projekt erstellen.
 
-Sie können die Zeit, Arbeitsspeicher und Speicherplatz erforderlich, um eine BSC-Datei zu erstellen, durch die Reduzierung der BSC-Datei reduzieren.
+Sie können die Zeit, den Arbeitsspeicher und den Speicherplatz verringern, die erforderlich sind, um eine BSC-Datei zu erstellen, indem Sie die Größe der BSC-Datei verringern.
 
-Finden Sie unter [Eigenschaftenseite "Allgemein" (Projekt)](general-property-page-project.md) für Informationen über das eine Browserdatei in der Entwicklungsumgebung zu erstellen.
+Weitere Informationen zum Erstellen einer Browser Datei in der Entwicklungsumgebung finden Sie unter [Allgemeine Eigenschaften Seite (Projekt)](general-property-page-project.md) .
 
-### <a name="to-create-a-smaller-bsc-file"></a>Um eine kleinere BSC-Datei zu erstellen.
+### <a name="to-create-a-smaller-bsc-file"></a>So erstellen Sie eine kleinere BSC-Datei
 
-1. Verwendung [BSCMAKE-Befehlszeilenoptionen](bscmake-options.md) Ausschließen von Informationen aus der Browserinformationsdatei aus.
+1. Verwenden Sie [BSCMAKE-Befehlszeilenoptionen](bscmake-options.md) , um Informationen aus der Datei mit den Browseinformationen auszuschließen.
 
-1. Lassen Sie die lokalen Symbole in eine oder mehrere .sbr-Dateien beim Kompilieren oder assemblieren.
+1. Lassen Sie lokale Symbole in einer oder mehreren SBR-Dateien aus, wenn Sie kompilieren oder assemblieren.
 
-1. Wenn eine Objektdatei nicht für die aktuelle Schritt des Debugvorgangs erforderlichen Informationen enthält, lassen Sie beim Neuerstellen der Browserinformationsdatei die SBR-Datei aus dem BSCMAKE-Befehl.
+1. Wenn eine Objektdatei keine Informationen enthält, die für die aktuelle Phase des Debuggens benötigt werden, lassen Sie die SBR-Datei aus dem BSCMAKE-Befehl Weg, wenn Sie die Datei zum Durchsuchen von Informationen neu erstellen.
 
-### <a name="to-combine-the-browse-information-from-several-projects-into-one-browser-file-bsc"></a>Kombinieren Sie die Durchsuchen-Informationen aus mehreren Projekten in einer Datei (.bsc)
+### <a name="to-combine-the-browse-information-from-several-projects-into-one-browser-file-bsc"></a>So kombinieren Sie die Browseinformationen aus mehreren Projekten in einer Browser Datei (. BSC)
 
-1. Entweder nicht erstellen Sie die BSC-Datei auf Projektebene zu oder verwenden Sie den/n-Schalter, um zu verhindern, dass die SBR-Dateien abgeschnitten wird.
+1. Erstellen Sie entweder die BSC-Datei nicht auf Projektebene, oder verwenden Sie den Schalter/n, um zu verhindern, dass die SBR-Dateien abgeschnitten werden.
 
-1. Nachdem alle Projekte erstellt werden, führen Sie BSCMAKE mit allen die SBR-Dateien als Eingabe. Platzhalter sind zulässig. Wenn Sie Projektverzeichnissen C:\X C:\Y und C:\Z SBR-Dateien in und diese in einer BSC-Datei kombinieren möchten mussten, klicken Sie dann verwenden Sie z. B. BSCMAKE C:\X\\\*SBR C:\Y\\\*SBR C:\Z\\ \*SBR/o c:\whatever_directory\combined.bsc zum Erstellen der kombinierten BSC-Datei.
+1. Nachdem alle Projekte erstellt wurden, führen Sie BSCMAKE mit allen SBR-Dateien als Eingabe aus. Platzhalter werden akzeptiert. Wenn Sie z. b. die Projekt Verzeichnisse c:\x, c:\y haben, und c:\Z mit SBR-Dateien, die Sie in einer BSC-Datei kombinieren wollten. verwenden Sie dann BSCMAKE c:\x\\\*. SBR c:\y\\\*. SBR c:\Z\\\*. SBR/o c:\ whatever_directory \combined.BSC, um die kombinierte BSC-Datei zu erstellen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zusätzliche MSVC-Buildtools](c-cpp-build-tools.md)<br/>
 [BSCMAKE-Referenz](bscmake-reference.md)

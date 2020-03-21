@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Erstellen eines C++-Projekts aus vorhandenem Code'
+title: 'Gewusst wie: Erstellen eines C++-Projekts aus vorhandenem Code'
 ms.date: 05/06/2019
 helpviewer_keywords:
 - C++, creating projects from existing code
@@ -10,18 +10,18 @@ f1_keywords:
 - vc.appwiz.importwiz.debugsettings
 - vc.appwiz.importwiz.releasesettings
 ms.assetid: e328a938-395c-48ea-9e35-dd433de12b31
-ms.openlocfilehash: a899fe7f1b038ac1497465171098183f63f40564
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 5e59230186380b787c95dbe08914bcd9d3ca2407
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65221458"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078549"
 ---
-# <a name="how-to-create-a-c-project-from-existing-code"></a>Vorgehensweise: Erstellen eines C++-Projekts aus vorhandenem Code
+# <a name="how-to-create-a-c-project-from-existing-code"></a>Gewusst wie: Erstellen eines C++-Projekts aus vorhandenem Code
 
-In Visual Studio können Sie vorhandene Codedateien mit dem Assistenten **Neues Projekt aus vorhandenen Codedateien erstellen** in ein C++-Projekt portieren. Dieser Assistent erstellt eine Projektmappe, die das MSBuild-System zum Verwalten der Quelldateien und Buildkonfigurationen verwendet. Diese Vorgehensweise hat sich vor allem für relativ einfache Projekte bewährt, die keine komplexen Ordnerhierarchien aufweisen. Der Assistent ist in älteren Express-Editionen von Visual Studio nicht verfügbar. 
+In Visual Studio können Sie vorhandene Codedateien mit dem Assistenten **Neues Projekt aus vorhandenen Codedateien erstellen** in ein C++-Projekt portieren. Dieser Assistent erstellt eine Projektmappe, die das MSBuild-System zum Verwalten der Quelldateien und Buildkonfigurationen verwendet. Diese Vorgehensweise hat sich vor allem für relativ einfache Projekte bewährt, die keine komplexen Ordnerhierarchien aufweisen. Der Assistent ist in älteren Express-Editionen von Visual Studio nicht verfügbar.
 
-Durch das Portieren Ihrer vorhandenen Codedateien in ein C++-Projekt wird es Ihnen ermöglicht, alle nativen MSBuild-Projektverwaltungsfeatures zu verwenden, die in der IDE integriert sind. Wenn Sie es vorziehen, Ihr vorhandenes Buildsystem zu verwenden, z. B. NMake-Makefiles, CMake oder andere, können Sie stattdessen die Option „Ordner öffnen“ oder „CMake“ verwenden. Weitere Informationen finden Sie unter [Open Folder-Projekte für C++](open-folder-projects-cpp.md) oder [CMake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md). Mit beiden Optionen können Sie IDE-Features wie [IntelliSense](/visualstudio/ide/using-intellisense) und [Projekteigenschaften](working-with-project-properties.md) verwenden.
+Durch das Portieren Ihrer vorhandenen Codedateien in ein C++-Projekt wird es Ihnen ermöglicht, alle nativen MSBuild-Projektverwaltungsfeatures zu verwenden, die in der IDE integriert sind. Wenn Sie es vorziehen, Ihr vorhandenes Buildsystem zu verwenden, z. B. NMake-Makefiles, CMake oder andere, können Sie stattdessen die Option „Ordner öffnen“ oder „CMake“ verwenden. Weitere Informationen finden Sie unter [Öffnen von Ordner Projekten C++ für](open-folder-projects-cpp.md) oder [cmake-Projekte in Visual Studio](cmake-projects-in-visual-studio.md). Mit beiden Optionen können Sie IDE-Features wie [IntelliSense](/visualstudio/ide/using-intellisense) und [Projekteigenschaften](working-with-project-properties.md) verwenden.
 
 ### <a name="to-create-a-c-project-from-existing-code"></a>So erstellen Sie ein C++-Projekt aus vorhandenem Code
 
@@ -29,7 +29,7 @@ Durch das Portieren Ihrer vorhandenen Codedateien in ein C++-Projekt wird es Ihn
 
 1. Geben Sie den Speicherort Ihres Projekts, das Verzeichnis Ihrer Quelldateien und die Dateitypen an, die der Assistent in das neue Projekt importieren soll. Klicken Sie auf **Weiter** , um fortzufahren.
 
-    | Einstellung | Beschreibung |
+    | Einstellung | BESCHREIBUNG |
     | --- | --- |
     | **Projektdateiverzeichnis** | Gibt den Verzeichnispfad des neuen Projekts an. Dieser Speicherort befindet sich dort, wo der Assistent alle Dateien (und Unterverzeichnisse) des neuen Projekts ablegt.<br/><br/>Klicken Sie auf **Durchsuchen**, um das Dialogfeld **Projektdateiverzeichnis** anzuzeigen. Navigieren Sie zum richtigen Ordner, und geben Sie das Verzeichnis an, das das neue Projekt enthält. |
     | **Projektname** | Gibt den Namen des neuen Projekts an. Projektdateien, die Erweiterungen wie z.B. VCXPROJ vorweisen, übernehmen diesen Namen, und vorhandene Codedateien behalten ihren ursprünglichen Namen. |
@@ -40,9 +40,9 @@ Durch das Portieren Ihrer vorhandenen Codedateien in ein C++-Projekt wird es Ihn
 
 1. Legen Sie die Projekteinstellungen wie etwa die Buildumgebung für das neue Projekt sowie die Buildeinstellungen so fest, dass sie der Art des Projekts entsprechen, das neu generiert werden soll. Klicken Sie auf **Weiter** , um fortzufahren.
 
-    | Einstellung | Beschreibung |
+    | Einstellung | BESCHREIBUNG |
     | --- | --- |
-    | **Visual Studio verwenden** | Gibt an, dass Buildtools verwendet werden sollen, die zum Erstellen des neuen Projekts in Visual Studio enthalten sind. Diese Option ist standardmäßig ausgewählt.<br/><br/>Klicken Sie auf **Projekttyp**, um den Projekttyp anzugeben, den der Assistent generieren soll. Wählen Sie **Windows-Anwendungsprojekt**, **Konsolenanwendungsprojekt**, **DLL-Projekt (Dynamically Linked Library)** oder **LIB-Projekt (Static Library, Statische Bibliothek)**.<br/><br/>Aktivieren Sie **ATL-Unterstützung hinzufügen**, um ATL-Unterstützung zum neuen Projekt hinzuzufügen.<br/><br/>Aktivieren Sie **Unterstützung für MFC hinzufügen**, um MFC-Unterstützung zum neuen Projekt hinzuzufügen.<br/><br/>Aktivieren Sie **Unterstützung für die Common Language Runtime hinzufügen**, um Unterstützung für CRL-Programmierung zum Projekt hinzuzufügen. Wählen Sie die **Common Language Runtime-Unterstützung** für Compliance-Typ, z. B. **Common Language Runtime (alte Syntax)** für die Kompatibilität mit Managed Extensions for C++ Syntax, die CLR-Programmierung-Syntax vor Visual Studio 2005. |
+    | **Verwenden von Visual Studio** | Gibt an, dass Buildtools verwendet werden sollen, die zum Erstellen des neuen Projekts in Visual Studio enthalten sind. Diese Option ist standardmäßig aktiviert.<br/><br/>Klicken Sie auf **Projekttyp**, um den Projekttyp anzugeben, den der Assistent generieren soll. Wählen Sie **Windows-Anwendungsprojekt**, **Konsolenanwendungsprojekt**, **DLL-Projekt (Dynamically Linked Library)** oder **LIB-Projekt (Static Library, Statische Bibliothek)** .<br/><br/>Aktivieren Sie **ATL-Unterstützung hinzufügen**, um ATL-Unterstützung zum neuen Projekt hinzuzufügen.<br/><br/>Aktivieren Sie **Unterstützung für MFC hinzufügen**, um MFC-Unterstützung zum neuen Projekt hinzuzufügen.<br/><br/>Aktivieren Sie **Unterstützung für die Common Language Runtime hinzufügen**, um Unterstützung für CRL-Programmierung zum Projekt hinzuzufügen. Wählen Sie die **Common Language Runtime-Unterstützung** für den Kompatibilitäts Typ aus, z. b. **Common Language Runtime (alte Syntax)** für die Konformität mit verwalteten Erweiterungen für C++ Syntax, die CLR-Programmier Syntax vor Visual Studio 2005. |
     | **Externes Buildsystem verwenden** | Gibt an, dass zum Erstellen des neuen Projekts Buildtools verwendet werden sollen, die nicht in Visual Studio enthalten sind. Wenn diese Option ausgewählt ist, können Sie Buildbefehlszeilen auf den Seiten **Einstellungen für Debugkonfiguration angeben** und **Einstellungen für Releasekonfiguration angeben** angeben. |
 
     ![Projekteinstellungen](media/settings.png)
@@ -52,7 +52,7 @@ Durch das Portieren Ihrer vorhandenen Codedateien in ein C++-Projekt wird es Ihn
 
 1. Legen Sie die zu verwendenden Debugkonfigurationseinstellungen fest. Klicken Sie auf **Weiter** , um fortzufahren.
 
-    | Einstellung | Beschreibung |
+    | Einstellung | BESCHREIBUNG |
     | --- | --- |
     | **Buildbefehlszeile** | Gibt die Befehlszeile an, mit der das Projekt erstellt wird. Geben Sie den Namen des Compilers (einschließlich aller Optionen und Argumente) oder des Buildskripts an, der bzw. das zum Erstellen des Projekts verwendet werden soll. |
     | **Neuerstellungsbefehlszeile** | Gibt die Befehlszeile an, mit der das neue Projekt neu erstellt wird. |

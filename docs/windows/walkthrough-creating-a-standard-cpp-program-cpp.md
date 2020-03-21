@@ -6,12 +6,12 @@ helpviewer_keywords:
 - command-line applications [C++], standard
 - standard applications [C++]
 ms.assetid: 48217e35-d892-46b7-93e3-f6f0b7e2da35
-ms.openlocfilehash: 9b2d1f3bf1a229a0590553369e37bc07f35ada33
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 381fa347a4ca2872ef0697d76a1e788c97e8a014
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73627144"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075441"
 ---
 # <a name="walkthrough-creating-a-standard-c-program-c"></a>Exemplarische Vorgehensweise: Erstellen C++ eines StandardC++Programms ()
 
@@ -22,7 +22,7 @@ Sie können ein eigenes C++-Programm eingeben oder eines der Beispielprogramme v
 > [!NOTE]
 > Wenn die Kompatibilität mit einer bestimmten Version des C++ Sprachstandards (d. h. c++ 14 oder c++ 17) erforderlich ist, verwenden Sie die Compileroption `/std:c++14` oder `/std:c++17`. (Visual Studio 2017 und höher.)
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Durchführung dieser exemplarischen Vorgehensweise benötigen Sie Grundkenntnisse in C++.
 
@@ -34,9 +34,9 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 ### <a name="to-create-a-c-project-in-visual-studio-2019"></a>So erstellen Sie C++ ein Projekt in Visual Studio 2019
 
-1. Klicken Sie im Hauptmenü auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Wählen Sie im Hauptmenü **Datei** > **neue** > **Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest. 
+1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
 1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite einen Namen für das Projekt ein, und geben Sie den Speicherort des Projekts an, wenn dies gewünscht ist.
 
@@ -72,9 +72,9 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 1. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-1. Schließen Sie den **Win32-Anwendungs-Assistenten**ab. 
+1. Schließen Sie den **Win32-Anwendungs-Assistenten**ab.
 
-1. Klicken Sie auf **weiter**, und stellen Sie sicher, dass **Konsolenanwendung** ausgewählt ist, und deaktivieren Sie das Kontrollkästchen **Vorkompilierte Header** . 
+1. Klicken Sie auf **weiter**, und stellen Sie sicher, dass **Konsolenanwendung** ausgewählt ist, und deaktivieren Sie das Kontrollkästchen **Vorkompilierte Header** .
 
 1. Klicken Sie auf **Fertig stellen**.
 
@@ -94,9 +94,9 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 1. Geben Sie in der-Datei im Editor ein gültiges C++ Programm ein, das C++ die Standard Bibliothek verwendet, oder kopieren Sie eines der Beispiel Programme, und fügen Sie es in die Datei ein.
 
-1. Speichern Sie die Datei.
+1. Speichern Sie die Datei .
 
-1. Klicken Sie im Menü **Erstellen** auf **Projektmappe erstellen**.
+1. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
 
    Im Fenster **Ausgabe** werden Informationen zum Kompilierungs Fortschritt angezeigt, z. b. der Speicherort des Buildprotokolls und eine Meldung, die den Buildstatus angibt.
 
@@ -109,7 +109,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 **Vorheriges:** [Konsolen Anwendungen in C++ Visual](../windows/console-applications-in-visual-cpp.md)<br/>
 **Weiter:** Exemplarische [Vorgehensweise: Kompilieren C++ eines nativen Programms in der Befehlszeile](../build/walkthrough-compiling-a-native-cpp-program-on-the-command-line.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>
 [C++-Standardbibliothek](../standard-library/cpp-standard-library-reference.md)

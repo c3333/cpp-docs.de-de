@@ -24,16 +24,16 @@ helpviewer_keywords:
 - std::terminate [C++]
 - std::uncaught_exception [C++]
 - std::unexpected [C++]
-ms.openlocfilehash: 34a34c48be8bb0e319a7d0eebeccba805cafbc1f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: ede3c828437aab1759c6711fc40511c69646a133
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424824"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076566"
 ---
 # <a name="ltexceptiongt-functions"></a>&lt;exception&gt;-Funktionen
 
-## <a name="current_exception"></a>current_exception
+## <a name="current_exception"></a><a name="current_exception"></a>current_exception
 
 Erhält einen intelligenten Zeiger auf die aktuelle Ausnahme.
 
@@ -45,7 +45,7 @@ exception_ptr current_exception();
 
 Ein [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr)-Objekt, das auf die aktuelle Ausnahme zeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Rufen Sie die `current_exception`-Funktion in einem catch-Block auf. Wenn eine Ausnahme aktiv ist und die Ausnahme vom catch-Block nicht abgefangen werden kann, gibt die `current_exception`-Funktion ein `exception_ptr`-Objekt zurück, das auf die Ausnahme verweist. Andernfalls gibt die Funktion ein NULL-`exception_ptr`-Objekt zurück.
 
@@ -55,7 +55,7 @@ Der Dekonstruktor für die aktuelle Ausnahme wird am Ende des **catch** -Blocks 
 
 Aufeinander folgende Aufrufe der `current_exception`-Funktion geben `exception_ptr`-Objekte zurück, die sich auf unterschiedliche Kopien der aktuellen Ausnahme beziehen. Folglich sind die Objekte bei einem Vergleich ungleich, da sie auf unterschiedliche Kopien verweisen, auch wenn die Kopien den gleichen Binärwert aufweisen.
 
-## <a name="make_exception_ptr"></a>make_exception_ptr
+## <a name="make_exception_ptr"></a><a name="make_exception_ptr"></a>make_exception_ptr
 
 Erstellt ein [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr)-Objekt, das eine Kopie einer Ausnahme enthält.
 
@@ -73,13 +73,13 @@ Die Klasse mit der zu kopierenden Ausnahme. Normalerweise geben Sie ein [excepti
 
 Ein [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr) Objekt, das auf eine Kopie der aktuellen Ausnahme für *außer*verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Aufrufen der `make_exception_ptr`-Funktion ist gleichbedeutend mit dem Auslösen einer C++-Ausnahme, die in einem catch-Block abgefangen wird, und dem anschließenden Aufrufen der [current_exception](../standard-library/exception-functions.md#current_exception)-Funktion, um ein `exception_ptr`-Objekt zurückzugeben, das auf die Ausnahme verwiest. Die Microsoft-Implementierung der `make_exception_ptr`-Funktion ist effizienter als das Auslösen und anschließende Abfangen einer Ausnahme.
 
 Eine Anwendung erfordert in der Regel nicht die `make_exception_ptr` -Funktion, und es wird von ihrer Verwendung abgeraten.
 
-## <a name="rethrow_exception"></a>rethrow_exception
+## <a name="rethrow_exception"></a><a name="rethrow_exception"></a>rethrow_exception
 
 Löst eine Ausnahme aus, die als Parameter übergeben wird.
 
@@ -92,11 +92,11 @@ void rethrow_exception(exception_ptr P);
 *P* -\
 Die erneut auszulösende abgefangene Ausnahme. Wenn *P* ein NULL- [exception_ptr](../standard-library/exception-typedefs.md#exception_ptr)ist, löst die Funktion [Std:: Bad_exception](../standard-library/bad-exception-class.md)aus.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nachdem Sie eine abgefangene Ausnahme in einem `exception_ptr`-Objekt gespeichert haben, kann der primäre Thread das Objekt verarbeiten. Rufen Sie in Ihrem primären Thread die `rethrow_exception`-Funktion zusammen mit dem `exception_ptr`-Objekt als Argument auf. Die `rethrow_exception`-Funktion extrahiert die Ausnahme vom `exception_ptr`-Objekt und löst die Ausnahme anschließend im Kontext des primären Threads aus.
 
-## <a name="get_terminate"></a>get_terminate
+## <a name="get_terminate"></a><a name="get_terminate"></a>get_terminate
 
 Ruft die aktuelle `terminate_handler`-Funktion ab.
 
@@ -104,7 +104,7 @@ Ruft die aktuelle `terminate_handler`-Funktion ab.
 terminate_handler get_terminate();
 ```
 
-## <a name="set_terminate"></a>set_terminate
+## <a name="set_terminate"></a><a name="set_terminate"></a>set_terminate
 
 Richtet ein neues `terminate_handler`-Element ein, das bei Beendigung des Programms aufgerufen wird.
 
@@ -121,7 +121,7 @@ Die bei Beendigung aufzurufende Funktion.
 
 Die Adresse der vorherigen Funktion, die von bei Beendigung aufgerufen wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion erstellt eine neue [terminate_handler](../standard-library/exception-typedefs.md#terminate_handler) als *Funktion * "* *". Daher darf " *f new* " kein NULL-Zeiger sein. Die Funktion gibt die Adresse des vorherigen terminate-Handlers zurück.
 
@@ -153,7 +153,7 @@ int main()
 }
 ```
 
-## <a name="get_unexpected"></a>get_unexpected
+## <a name="get_unexpected"></a><a name="get_unexpected"></a>get_unexpected
 
 Ruft die aktuelle `unexpected_handler`-Funktion ab.
 
@@ -161,18 +161,18 @@ Ruft die aktuelle `unexpected_handler`-Funktion ab.
 unexpected_handler get_unexpected();
 ```
 
-## <a name="rethrow_if_nested"></a>rethrow_if_nested
+## <a name="rethrow_if_nested"></a><a name="rethrow_if_nested"></a>rethrow_if_nested
 
 ```cpp
-template <class E> 
+template <class E>
     void rethrow_if_nested(const E& e);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn es sich nicht um einen polymorphen Klassentyp handelt oder wenn `nested_exception` nicht zugänglich oder mehrdeutig ist, gibt es keine Auswirkungen. Andernfalls führt eine dynamische Umwandlung aus.
 
-## <a name="set_unexpected"></a>set_unexpected
+## <a name="set_unexpected"></a><a name="set_unexpected"></a>set_unexpected
 
 Richtet ein neues `unexpected_handler` ein, das bei einer unerwarteten Ausnahme auftritt.
 
@@ -189,7 +189,7 @@ Die Funktion, die bei einer unerwarteten Ausnahme aufgerufen wird.
 
 Die Adresse des vorherigen `unexpected_handler`-Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 " *f new* " darf kein NULL-Zeiger sein.
 
@@ -220,7 +220,7 @@ int main()
 }
 ```
 
-## <a name="terminate"></a>aufzu
+## <a name="terminate"></a><a name="terminate"></a>aufzu
 
 Ruft einen terminate-Handler auf.
 
@@ -228,7 +228,7 @@ Ruft einen terminate-Handler auf.
 void terminate();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion Ruft einen Beendigungs Handler auf, eine Funktion vom Typ " **void**". Wenn `terminate` direkt vom Programm aufgerufen wird, ist der Beendigungs Handler der zuletzt durch einen Aufruf von [Set_terminate](../standard-library/exception-functions.md#set_terminate)festgelegte. Wenn `terminate` aus verschiedenen anderen Gründen während der Auswertung eines Throw-Ausdrucks aufgerufen wird, ist der Beendigungs Handler sofort nach der Auswertung des Throw-Ausdrucks wirksam.
 
@@ -238,18 +238,18 @@ Ein terminate-Handler kehrt möglicherweise nicht zum Aufrufer zurück. Beim Pro
 
 Ein Beispiel zur Verwendung von [ finden Sie unter ](../standard-library/exception-functions.md#set_unexpected)set_unexpected`terminate`.
 
-## <a name="throw_with_nested"></a>throw_with_nested
+## <a name="throw_with_nested"></a><a name="throw_with_nested"></a>throw_with_nested
 
 ```cpp
 template <class T> [[noreturn]]
     void throw_with_nested(T&& t);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Löst eine Ausnahme mit Ausnahme Fehlern aus.
 
-## <a name="uncaught_exception"></a>uncaught_exception
+## <a name="uncaught_exception"></a><a name="uncaught_exception"></a>uncaught_exception
 
 Gibt nur dann **TRUE** zurück, wenn augenblicklich eine Ausnahme verarbeitet wird.
 
@@ -314,7 +314,7 @@ In Test::~Test("outside try block")
         std::uncaught_exception( ) = 0
 ```
 
-## <a name="unexpected"></a>te
+## <a name="unexpected"></a><a name="unexpected"></a>te
 
 Ruft den unerwarteten Handler auf.
 
@@ -322,7 +322,7 @@ Ruft den unerwarteten Handler auf.
 void unexpected();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Für den C++-Standard ist es erforderlich, dass `unexpected` aufgerufen wird, wenn eine Funktion eine Ausnahme auslöst, die nicht auf der Auslöseliste aufgeführt wird. Die augenblickliche Implementierung unterstützt das nicht. Das Beispiel ruft `unexpected` direkt auf, wodurch der unerwartete Handler aufgerufen wird.
 

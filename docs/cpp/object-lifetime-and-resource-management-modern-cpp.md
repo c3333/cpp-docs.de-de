@@ -1,17 +1,17 @@
 ---
-title: Objekt Lebensdauer und Ressourcenverwaltung (RAII)
+title: Objektlebenszeit und Ressourcenverwaltung (RAII)
 description: Befolgen Sie das Prinzip von RAII in C++ modern, um Ressourcen Lecks zu vermeiden.
 ms.date: 11/19/2019
 ms.topic: conceptual
 ms.assetid: 8aa0e1a1-e04d-46b1-acca-1d548490700f
-ms.openlocfilehash: 01867ec0a71ba54bb6534da1b408cb0610d652a7
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: d30b5296b35bec7f8949057becfaeeea61ef09a0
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303365"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078031"
 ---
-# <a name="object-lifetime-and-resource-management-raii"></a>Objekt Lebensdauer und Ressourcenverwaltung (RAII)
+# <a name="object-lifetime-and-resource-management-raii"></a>Objektlebenszeit und Ressourcenverwaltung (RAII)
 
 Im Gegensatz zu verwalteten C++ Sprachen hat keine automatischen *Garbage Collection*. Dabei handelt es sich um einen internen Prozess, der Heap Speicher und andere Ressourcen beim Ausführen eines Programms freigibt. Ein C++ Programm ist dafür verantwortlich, alle erworbenen Ressourcen an das Betriebssystem zurückzugeben. Eine nicht verwendete Ressource kann nicht freigegeben werden *.* Kompromittierte Ressourcen sind für andere Programme erst verfügbar, wenn der Prozess beendet wird. Insbesondere Speicher Verluste sind eine häufige Ursache für Fehler bei der Programmierung im C-Stil.
 
@@ -41,7 +41,7 @@ void functionUsingWidget () {
 ```
 
 Im folgenden Beispiel besitzt `w` eine Speicher Ressource und muss daher über Code in seinem Dekonstruktor verfügen, um den Arbeitsspeicher zu löschen.
- 
+
 ```cpp
 class widget
 {
@@ -89,7 +89,7 @@ Durch die Verwendung intelligenter Zeiger für die Speicher Belegung können Sie
 
 Der Entwurf von C++ stellt sicher, dass Objekte zerstört werden, wenn Sie den Gültigkeitsbereich verlassen. Das heißt, Sie werden zerstört, da Blöcke in umgekehrter Reihenfolge der Konstruktion beendet werden. Wenn ein Objekt zerstört wird, werden seine Basen und Member in einer bestimmten Reihenfolge zerstört. Objekte, die außerhalb eines Blocks im globalen Gültigkeitsbereich deklariert werden, können zu Problemen führen. Es kann schwierig sein, zu debuggen, wenn der Konstruktor eines globalen Objekts eine Ausnahme auslöst.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Willkommen zurück beiC++](../cpp/welcome-back-to-cpp-modern-cpp.md)<br/>
 [C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>

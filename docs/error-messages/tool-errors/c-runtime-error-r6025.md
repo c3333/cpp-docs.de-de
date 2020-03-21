@@ -6,29 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - R6025
 ms.assetid: afa06d98-9c36-445b-b3e7-b6409bc8e779
-ms.openlocfilehash: 461bfb2aa46053ec56fff67de70038b1fcd97389
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d5edb08278b7b6b9b3eb62e92fc04410f96a8f09
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214167"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075125"
 ---
 # <a name="c-runtime-error-r6025"></a>C-Laufzeitfehler R6025
 
-rein virtuellen Funktionsaufruf
+reiner virtueller Funktionsaufrufe
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da er ein internes Problem aufweist. Die häufigste Ursache für diesen Fehler ist ein Fehler in der app oder eine beschädigte Installation.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP aufgrund eines internen Problems heruntergefahren. Der häufigste Grund für diesen Fehler ist ein Fehler in der APP oder eine beschädigte Installation.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Kein Objekt ist instanziiert wurde, um die rein virtuellen Funktionsaufruf zu behandeln.
+Es wurde kein Objekt zum Verarbeiten des reinen virtuellen Funktions Aufrufes instanziiert.
 
-Dieser Fehler wird verursacht durch eine virtuelle Funktion in einer abstrakten Klasse über einen Zeiger auf die wird durch eine Umwandlung in den Typ der abgeleiteten Klasse erstellt, jedoch ist eigentlich ein Zeiger auf die Basisklasse aufrufen. Dies kann auftreten, bei der Umwandlung von einer **"void"** <strong>\*</strong> in einen Zeiger auf eine Klasse bei der **"void"** <strong>\*</strong> wurde während der Erstellung der Basisklasse erstellt.
-
+Dieser Fehler wird ausgelöst, wenn eine virtuelle Funktion in einer abstrakten Basisklasse durch einen Zeiger aufgerufen wird, der durch eine Umwandlung in den Typ der abgeleiteten Klasse erstellt wird, aber tatsächlich ein Zeiger auf die Basisklasse ist. Dies kann vorkommen, wenn die Umwandlung von einem **void**  <strong>-\*</strong> in einen Zeiger auf eine Klasse erfolgt, wenn der **void** -<strong>\*</strong> während der Erstellung der Basisklasse erstellt wurde.

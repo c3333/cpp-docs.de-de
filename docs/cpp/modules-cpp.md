@@ -5,12 +5,12 @@ helpviewer_keywords:
 - modules [C++]
 - modules [C++], overview
 description: Module in c++ 20 stellen eine moderne Alternative zu Header Dateien dar.
-ms.openlocfilehash: 28e1824250ad4fb404c528aa9511745abb001f31
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 286d2ec8a26dbd0a85e8f8721ad6fd7f12f45a31
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301378"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078039"
 ---
 # <a name="overview-of-modules-in-c"></a>Übersicht über Module in C++
 
@@ -28,7 +28,7 @@ Ein Modul und der Code, in dem es verwendet wird, müssen mit denselben Compiler
 
 Obwohl es nicht durch den c++ 20-Standard angegeben ist, ermöglicht Microsoft seine C++ Implementierung der Standardbibliothek als Module. Wenn Sie die C++ Standard Bibliothek als Module importieren, anstatt Sie über Header Dateien #including, können Sie die Kompilierungszeiten abhängig von der Größe Ihres Projekts möglicherweise beschleunigen. Die Bibliothek ist in die folgenden Module integriert:
 
-- Std. Regex stellt den Inhalt der Regex-Header \<
+- Std. Regex stellt den Inhalt der Regex-Header \<>
 - Std. File System stellt den Inhalt von Header \<File System >
 - Std. Memory stellt den Inhalt von Header \<Arbeitsspeicher bereit >
 - Std. Threading bietet den Inhalt von Headern \<Atomic >, \<CONDITION_VARIABLE >, \<zukünftige >, \<Mutex >, \<shared_mutex > und \<Thread >
@@ -52,7 +52,7 @@ export module Foo;
 
 #define ANSWER 42
 
-namespace Bar 
+namespace Bar
 {
    int f_internal() {
         return ANSWER;
@@ -168,6 +168,6 @@ import <vector>
 import "myheader.h"
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Module, Import, Export](import-export-module.md)

@@ -2,12 +2,12 @@
 title: Lesen und Verstehen von C++-Code in Visual Studio
 description: Verwenden Sie den C++-Code-Editor in Visual Studio, um Ihren Code zu formatieren und zu verstehen.
 ms.date: 05/28/2019
-ms.openlocfilehash: 2ddeabd9d70ebb344fe6d14abe520ee51a42eebb
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: aa9008900ae631668d7a87fb413dd389696f3454
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416127"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079045"
 ---
 # <a name="read-and-understand-c-code-in-visual-studio"></a>Lesen und Verstehen von C++-Code in Visual Studio
 
@@ -61,7 +61,7 @@ Zeigen Sie auf eine beliebige Variable, Funktion oder ein anderes Symbol, um Inf
 
 ![QuickInfo in C&#43;&#43;](../ide/media/quick-info-vs2019.png "QuickInfo")
 
-Die **QuickInfo** enthält einen Link zum **Online suchen**. Öffnen Sie **Extras** > **Optionen** > **Text-Editor** > **C++**  > **Ansicht**, um den Suchanbieter festzulegen. 
+Die **QuickInfo** enthält einen Link zum **Online suchen**. Öffnen Sie **Extras** > **Optionen** > **Text-Editor** > **C++**  > **Ansicht**, um den Suchanbieter festzulegen.
 
 Wenn Ihr Code einen Fehler aufweist, können Sie auf diesen zeigen. In der **QuickInfo** wird die Fehlermeldung angezeigt. Sie können die Fehlermeldung auch im Fenster „Fehlerliste“ finden.
 

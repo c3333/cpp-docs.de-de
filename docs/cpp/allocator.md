@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - __declspec keyword [C++], allocator
 - allocator __declspec keyword
-ms.openlocfilehash: 2e2615829f6491bf660859fbc86ebcd07a56c5fe
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 39708e8cfff7f61c3a3f763f87e1a3da36f0d4b1
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857683"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077253"
 ---
 # <a name="allocator"></a>Zuweisung
 
@@ -22,10 +22,10 @@ Der **Allocator** -deklarationsspezifizierer kann auf benutzerdefinierte Speiche
 ## <a name="syntax"></a>Syntax
 
 ```
-   __declspec(allocator) 
+   __declspec(allocator)
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Native Memory-Profiler in Visual Studio funktioniert, indem die von zur Laufzeit ausgegebenen Zuordnungs-etw-Ereignisdaten gesammelt werden. Zuweisungen im CRT und Windows SDK wurden auf Quellebene kommentiert, sodass ihre Speicherbelegungsdaten erfasst werden können. Wenn Sie Ihre eigenen Zuweisungen schreiben, kann jede Funktion, die einen Zeiger auf neu zugewiesenen Heap Speicher zurückgibt, mit `__declspec(allocator)`versehen werden, wie in diesem Beispiel für mymalloc zu sehen ist:
 

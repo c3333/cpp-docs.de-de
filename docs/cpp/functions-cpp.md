@@ -1,5 +1,5 @@
 ---
-title: Funktionen [C++]
+title: Funktionen (C++)
 ms.date: 11/19/2018
 helpviewer_keywords:
 - defaults, arguments
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - default arguments
 - declarators, functions
 ms.assetid: 33ba01d5-75b5-48d2-8eab-5483ac7d2274
-ms.openlocfilehash: da30d647947e98146cd89f255c2e05991c1be562
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: fbc8b108ea958f526156e7f81a75a2918a0a8903
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423753"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076161"
 ---
-# <a name="functions-c"></a>Funktionen [C++]
+# <a name="functions-c"></a>Funktionen (C++)
 
 Eine Funktion ist ein Codeblock, der einige Vorgänge ausführt. Eine Funktion kann optional Eingabeparameter definieren, die Aufrufern ermöglichen, Argumente in die Funktion weiterzugeben. Eine Funktion kann einen Wert optional als Ausgabe zurückgeben. Funktionen sind für das Kapseln allgemeiner Vorgänge in einem einzelnen wiederverwendbaren Block nützlich, und zwar ideal unter Verwendung eines Namens, der deutlich das beschreibt, was die Funktion vornimmt. Die folgende Funktion akzeptiert zwei ganze Zahlen von einem Aufrufer und gibt Ihre Summe zurück. *a* und *b* sind *Parameter* vom Typ **int**.
 
@@ -261,7 +261,7 @@ Eine Variable, die innerhalb eines Funktions Texts deklariert wird, wird als *lo
 
 In C++ kann eine lokale Variable als statisch deklariert werden. Die Variable ist nur innerhalb des Funktionsrumpfs sichtbar. Es ist jedoch eine einzelne Kopie der Variable für alle Instanzen der Funktion vorhanden. Lokale statische Objekte werden während der Beendigung zerstört, die von `atexit` angegeben wird. Wenn kein statisches Objekt erstellt wurde, da die Ablaufsteuerung des Programms seine Deklaration umgangen ist, wird nicht versucht, das Objekt zu zerstören.
 
-##  <a name="type_deduction"></a>Typableitung in Rückgabe Typen (c++ 14)
+##  <a name="type-deduction-in-return-types-c14"></a><a name="type_deduction"></a>Typableitung in Rückgabe Typen (c++ 14)
 
 In c++ 14 können Sie " **Auto** " verwenden, um den Compiler anzuweisen, den Rückgabetyp aus dem Funktions Rumpf abzuleiten, ohne einen nachfolgenden Rückgabetyp bereitstellen zu müssen. Beachten Sie, dass **Auto** immer zu einem Rückgabewert herleitet. Verwenden Sie `auto&&` um den Compiler anzuweisen, einen Verweis abzuleiten.
 
@@ -277,7 +277,7 @@ auto Add2(const Lhs& lhs, const Rhs& rhs)
 
 Beachten Sie, dass **Auto** die Konstante des Typs, den er herleitet, nicht beibehält. Für Weiterleitungs Funktionen, deren Rückgabewert die Konstante oder die Verweis Funktion ihrer Argumente beibehalten muss, können Sie das " **decltype (Auto)** "-Schlüsselwort verwenden, das die Deklarations Regeln für den **decltype** -Typ verwendet und alle Typinformationen beibehält. **decltype (Auto)** kann als normaler Rückgabewert auf der linken Seite oder als nachfolgende Rückgabewert verwendet werden.
 
-Im folgenden Beispiel (basierend auf Code aus [N3493](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2013/n3493.html)) wird **decltype (Auto)** zum Aktivieren der perfekten Weiterleitung von Funktions Argumenten in einem Rückgabetyp verwendet, der erst bekannt ist, wenn die Vorlage instanziiert wird.
+Im folgenden Beispiel (basierend auf Code aus [N3493](https://wg21.link/n3493)) wird **decltype (Auto)** zum Aktivieren der perfekten Weiterleitung von Funktions Argumenten in einem Rückgabetyp verwendet, der erst bekannt ist, wenn die Vorlage instanziiert wird.
 
 ```cpp
 template<typename F, typename Tuple = tuple<T...>, int... I>
@@ -295,7 +295,7 @@ template<typename F, typename Tuple = tuple<T...>,
 }
 ```
 
-## <a name="multi_val"></a>Zurückgeben von mehreren Werten aus einer Funktion
+## <a name="returning-multiple-values-from-a-function"></a><a name="multi_val"></a>Zurückgeben von mehreren Werten aus einer Funktion
 
 Es gibt verschiedene Möglichkeiten, mehr als einen Wert aus einer Funktion zurückzugeben:
 
@@ -423,7 +423,7 @@ int (*myFunction(char* s))(int);
 
 Die vorhergehende Deklaration gleicht der Deklaration oben, die "typedef" verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionsüberladung](../cpp/function-overloading.md)<br/>
 [Funktionen mit Variablenargumentlisten](../cpp/functions-with-variable-argument-lists-cpp.md)<br/>

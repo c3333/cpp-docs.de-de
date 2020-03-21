@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - INVOKE directive
 ms.assetid: 12d9bb40-33b9-411e-b801-45a1d675967e
-ms.openlocfilehash: 7a005e5e70a2696ca89fb0ad1a3ff02aab8ffe5a
-ms.sourcegitcommit: 0781c69b22797c41630601a176b9ea541be4f2a3
+ms.openlocfilehash: ba1377359ba9bc960e5d7d2a55df15adfe0d5d33
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75317187"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076222"
 ---
 # <a name="invoke"></a>INVOKE
 
-(nur 32-Bit-MASM.) Ruft die Prozedur bei der von *Ausdruck*angegebenen Adresse auf und übergibt die Argumente auf dem Stapel oder in Registern gemäß den Standard Aufruf Konventionen des sprach Typs.     
+(nur 32-Bit-MASM.) Ruft die Prozedur bei der von *Ausdruck*angegebenen Adresse auf und übergibt die Argumente auf dem Stapel oder in Registern gemäß den Standard Aufruf Konventionen des sprach Typs.
 
 ## <a name="syntax"></a>Syntax
 
-> *Ausdruck* aufrufen ⟦ __,__ *Argument* ... ⟧
+> **INVOKE** *Ausdruck* aufrufen ⟦ __,__ *Argument* ... ⟧
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jedes Argument, das an die Prozedur übermittelt wird, kann ein Ausdruck, ein Registrierungs Paar oder ein Adress Ausdruck (ein Ausdruck mit vorangestelltem **addr**) sein.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Direktivenverweis](directives-reference.md)\
 [MASM-BNF-Grammatik](masm-bnf-grammar.md)

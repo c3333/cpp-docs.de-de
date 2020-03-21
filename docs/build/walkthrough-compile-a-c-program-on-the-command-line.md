@@ -8,12 +8,12 @@ helpviewer_keywords:
 - compiling programs [C++]
 - C program compiling [C++]
 ms.assetid: 7e74cc2d-54b1-49de-b7ad-d3ae6b39ab8d
-ms.openlocfilehash: d91ee36d26e307577aa56560eb95bef5ed03305b
-ms.sourcegitcommit: 458dcc794e3841919c01a3a5ff6b9a3767f8861b
+ms.openlocfilehash: 1b4e7f0f188ce7b3003f12cb7acafaf15a03d86a
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74051534"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078255"
 ---
 # <a name="walkthrough-compile-a-c-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines C-Programms in der Befehlszeile
 
@@ -21,7 +21,7 @@ Visual C++ bietet einen C-Compiler, mit dem Sie alles von einfachen Konsolenprog
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit einem Text-Editor ein einfaches "Hello, World"-C-Programm erstellen und dann in der Befehlszeile kompilieren. Wenn Sie lieber in C++ der Befehlszeile arbeiten, finden Sie weitere Informationen unter Exemplarische Vorgehensweise [: Kompilieren eines nativen C++ Programms in der Befehlszeile](walkthrough-compiling-a-native-cpp-program-on-the-command-line.md). Wenn Sie die Visual Studio-IDE testen möchten, anstatt die Befehlszeile zu verwenden, finden Sie weitere Informationen unter Exemplarische Vorgehensweise [:C++arbeiten mit Projekten und Projektmappen ()](../ide/walkthrough-working-with-projects-and-solutions-cpp.md) oder [Verwenden der Visual Studio-IDE für C++ die Desktop Entwicklung](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md).
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Um diese exemplarische Vorgehensweise durchführen zu können, müssen Sie entweder Visual Studio und C++ die optionalen visuellen Komponenten oder die Buildtools für Visual Studio installiert haben.
 
@@ -60,12 +60,11 @@ Wenn Sie eine andere Version von Windows ausführen, suchen Sie im Startmenü od
 
 ## <a name="open-a-developer-command-prompt-in-visual-studio-2015"></a>Öffnen Sie eine Developer-Eingabeaufforderung in Visual Studio 2015
 
-Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das Startmenü, Scrollen Sie nach unten, und öffnen Sie den Ordner **Visual C++ Build Tools** . Wählen **Sie C++ Visual 2015 x86 Native Tools-Eingabeaufforderung** aus, um das Eingabe Aufforderungs Fenster zu öffnen.
+Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das Startmenü, Scrollen Sie nach unten, und öffnen Sie den Ordner **Visual C++ Build Tools** . **Start** Wählen **Sie C++ Visual 2015 x86 Native Tools-Eingabeaufforderung** aus, um das Eingabe Aufforderungs Fenster zu öffnen.
 
 Wenn Sie eine andere Version von Windows ausführen, suchen Sie im Startmenü oder auf der Startseite nach einem Visual Studio-Tools-Ordner, der eine Eingabe Aufforderungs Verknüpfung für Entwickler enthält. Sie können auch die Windows Search-Funktion verwenden, um nach "Developer Command Prompt" zu suchen und eine solche auszuwählen, die mit der installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabe Aufforderungs Fenster zu öffnen.
-   
-::: moniker-end
 
+::: moniker-end
 
 Überprüfen Sie als nächstes, C++ ob die Visual Developer-Eingabeaufforderung ordnungsgemäß eingerichtet ist. Geben Sie im Eingabe Aufforderungs Fenster `cl` ein, und überprüfen Sie, ob die Ausgabe in etwa wie folgt aussieht:
 
@@ -183,7 +182,7 @@ Die C- C++ und-Sprachen sind ähnlich, aber nicht identisch. Der Microsoft C/C++
 
 MSVC ist mit dem ISO C99-Standard kompatibel, jedoch nicht streng kompatibel. In den meisten Fällen wird der Portable C-Code wie erwartet kompiliert und ausgeführt. Visual C++ unterstützt den größten Teil der Änderungen in ISO C11 nicht. Bestimmte Bibliotheksfunktionen und POSIX-Funktionsnamen werden von MSVC als veraltet markiert. Die Funktionen werden unterstützt, aber die bevorzugten Namen wurden geändert. Weitere Informationen finden Sie unter [Sicherheitsfunktionen in der CRT](../c-runtime-library/security-features-in-the-crt.md) und [Compilerwarnung (Stufe 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Exemplarische Vorgehensweise: Erstellen eines Standard C++-Konsolenprogramms (C++)](../windows/walkthrough-creating-a-standard-cpp-program-cpp.md)<br/>
 [C-Sprachreferenz](../c-language/c-language-reference.md)<br/>

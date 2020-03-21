@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cpp.stop
 - Class View, hint file
 ms.assetid: 17194f66-cf62-4523-abec-77db0675ab65
-ms.openlocfilehash: ca111fcb8b0fc511fda3bbb3a4769ebc9fdd28bc
-ms.sourcegitcommit: 217fac22604639ebd62d366a69e6071ad5b724ac
+ms.openlocfilehash: de299f17686d68956e9847d47743d8931734d4ad
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74189009"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075202"
 ---
 # <a name="hint-files"></a>Hinweisdateien
 
@@ -104,7 +104,7 @@ Standardmäßig wird das störende Makro als Vorschlag hervorgehoben. Die Hervor
 
 Über den Menübefehl **Projekt** > **Fehler beim Durchsuchen der Datenbank anzeigen** werden in der **Fehlerliste** alle Bereiche angezeigt, die nicht analysiert werden konnten. Der Befehl dient dazu, die Erstellung der Hinweisdatei zu optimieren. Vom Parser kann jedoch nicht ermittelt werden, ob die Ursache des Fehlers ein störendes Makro ist. Sie müssen daher jeden Fehler einzeln analysieren. Führen Sie den Befehl **Fehler beim Durchsuchen der Datenbank anzeigen** aus, und navigieren Sie zu jedem Fehler, um die betroffene Datei im Editor zu laden. Wenn sich Makros im Bereich befinden, werden sie hervorgehoben. Sie können diese mit Schnellaktionen einer Hinweisdatei hinzufügen. Nach einem Update der Hinweisdatei wird die Fehlerliste automatisch aktualisiert. Wenn Sie die Hinweisdatei manuell ändern, können Sie mit dem Befehl **Projektmappe neu prüfen** ein Update auslösen.
 
-## <a name="architecture"></a>Architektur
+## <a name="architecture"></a>Aufbau
 
 Hinweisdateien beziehen sich auf physische Verzeichnisse, nicht auf die lokalen Verzeichnisse, die im **Projektmappen-Explorer** angezeigt werden. Sie müssen eine Hinweisdatei nicht Ihrem Projekt hinzufügen, damit diese wirksam ist. Das Analysesystem verwendet Hinweisdateien nur, wenn es Quelldateien analysiert.
 
@@ -150,13 +150,13 @@ Für Hinweise wird die folgende Syntax verwendet:
 
 |Syntax|Bedeutung|
 |------------|-------------|
-|`#define` *Hinweisname* *Ersatzzeichenfolge*<br /><br /> `#define` *Hinweisname* `(` *Parameter*, ...`)`*Ersatzzeichenfolge*|Eine Präprozessordirektive, die einen neuen Hinweis definiert oder einen vorhandenen Hinweis neu definiert. Nach der Direktive ersetzt der Präprozessor jedes Vorkommen von *Hinweisname* im Quellcode mit *Ersatzzeichenfolge*.<br /><br /> Durch das zweite Syntaxformat wird ein funktionsähnlicher Hinweis definiert. Wenn ein funktionsähnlicher Hinweis im Quellcode vorkommt, ersetzt der Präprozessor zunächst jedes Vorkommen von *Parameter* in *Ersatzzeichenfolge* mit dem entsprechenden Argument im Quellcode. Anschließend wird *Hinweisname* durch *Ersatzzeichenfolge* ersetzt.|
+|`#define` von *Hint-Name* *-Zeichenfolge*<br /><br /> `#define` *Hint-Name* `(` *Parameter*,...`)` *-Ersetzungs Zeichenfolge*|Eine Präprozessordirektive, die einen neuen Hinweis definiert oder einen vorhandenen Hinweis neu definiert. Nach der Direktive ersetzt der Präprozessor jedes Vorkommen von *Hinweisname* im Quellcode mit *Ersatzzeichenfolge*.<br /><br /> Durch das zweite Syntaxformat wird ein funktionsähnlicher Hinweis definiert. Wenn ein funktionsähnlicher Hinweis im Quellcode vorkommt, ersetzt der Präprozessor zunächst jedes Vorkommen von *Parameter* in *Ersatzzeichenfolge* mit dem entsprechenden Argument im Quellcode. Anschließend wird *Hinweisname* durch *Ersatzzeichenfolge* ersetzt.|
 |`@<`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die den Anfang von einer Reihe von Zuordnungselementen definiert.|
 |`@=`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die ein Zwischenzuordnungselement definiert. Eine Zuordnung kann mehrere Zuordnungselemente enthalten.|
 |`@>`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die das Ende von einer Reihe von Zuordnungselementen definiert.|
-|`#undef` *Hinweisname*|Die Präprozessordirektive, die einen vorhandenen Hinweis löscht. Der Name des Hinweises wird durch den Bezeichner *Hinweisname* bereitgestellt.|
+|`#undef` *Hint-Name*|Die Präprozessordirektive, die einen vorhandenen Hinweis löscht. Der Name des Hinweises wird durch den Bezeichner *Hinweisname* bereitgestellt.|
 |`//` *Kommentar*|Ein einzeiliger Kommentar.|
-|`/*` *comment* `*/`|Ein mehrzeiliger Kommentar.|
+|`/*` *Kommentar* `*/`|Ein mehrzeiliger Kommentar.|
 
 ## <a name="example"></a>Beispiel
 
@@ -242,10 +242,9 @@ Die folgenden Hinweise gelten für die vorangehende Liste:
 
 - Der Hinweis `#undef` im Verzeichnis `A2` hat die Hinweise für `OBRACE` und `CBRACE` aus der Verzeichnishinweisdatei `Debug` gelöscht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Für Visual Studio C++-Projekte erstellte Dateitypen](file-types-created-for-visual-cpp-projects.md)<br>
 [#define-Direktive (C/C++)](../../preprocessor/hash-define-directive-c-cpp.md)<br>
 [#undef-Direktive (C/C++)](../../preprocessor/hash-undef-directive-c-cpp.md)<br>
 [SAL-Anmerkungen](../../c-runtime-library/sal-annotations.md)<br>
-

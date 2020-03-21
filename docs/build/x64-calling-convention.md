@@ -3,12 +3,12 @@ title: Aufrufkonvention bei x64-Systemen
 description: Details der standardmäßigen x64 ABI-Aufruf Konvention.
 ms.date: 12/17/2018
 ms.assetid: 41ca3554-b2e3-4868-9a84-f1b46e6e21d9
-ms.openlocfilehash: 2cad00ac7f2cb5fe086fa262a0f512330997391f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 5b9801eff6a9789313d083fdd6ed69c3076643ad
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422703"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078080"
 ---
 # <a name="x64-calling-convention"></a>Aufrufkonvention bei x64-Systemen
 
@@ -45,7 +45,7 @@ In der folgenden Tabelle wird zusammengefasst, wie Parameter übermittelt werden
 |Parametertyp|Bestandene Vorgehensweise|
 |--------------------|----------------|
 |Gleitkomma|Die ersten vier Parameter: XMM0 bis XMM3. Andere wurden auf dem Stapel weitergegeben.|
-|Ganze Zahl|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
+|Integer|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
 |Aggregate (8, 16, 32 oder 64 Bits) und __m64|Die ersten vier Parameter: RCX, RDX, R8, R9. Andere wurden auf dem Stapel weitergegeben.|
 |Aggregate (sonstige)|Nach Zeiger. Die ersten vier Parameter, die als Zeiger in RCX, RDX, R8 und R9 als Zeiger gegeben wurden.|
 |__m128|Nach Zeiger. Die ersten vier Parameter, die als Zeiger in RCX, RDX, R8 und R9 als Zeiger gegeben wurden.|
@@ -147,7 +147,7 @@ Die Register Rax, RCX, RDX, R8, R9, R10, R11, XMM0-5 und die oberen Teile von YM
 Die Register RBX, RBP, RDI, RSI, RSP, R12, R13, R14, R15 und XMM6-15 gelten als nicht flüchtig und müssen von einer Funktion gespeichert und wieder hergestellt werden, die Sie verwendet.
 
 ## <a name="function-pointers"></a>Funktionszeiger
- 
+
 Funktionszeiger sind einfach Zeiger auf die Bezeichnung der jeweiligen Funktion. Es gibt keine Inhaltsverzeichnis Anforderungen (TOC) für Funktionszeiger.
 
 ## <a name="floating-point-support-for-older-code"></a>Gleit Komma Unterstützung für älteren Code
@@ -205,6 +205,6 @@ Wenn Sie "setjmpex. h" oder "setjmp. h" einschließen, führen alle Aufrufe von 
 
 Ein-`setjmp`, der den aktuellen Stapelzeiger, nicht flüchtige Register und MXCSR-Register beibehält.  Aufrufe von `longjmp` zur aktuellen `setjmp` Aufruf Site zurückkehren und den Stapelzeiger, nicht flüchtige Register und MXCSR-Register wieder in den Zustand zurücksetzen, der durch den letzten `setjmp` Aufruf beibehalten wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Softwarekonventionen bei x64-Systemen](../build/x64-software-conventions.md)

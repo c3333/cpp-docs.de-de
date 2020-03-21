@@ -24,16 +24,16 @@ f1_keywords:
 - VC.Project.VCManifestTool.UpdateFileHashesSearchPath
 - vc.project.AdditionalOptionsPage
 ms.assetid: f33499c4-7733-42d9-80e3-8a5018786965
-ms.openlocfilehash: d9b074667614da8d83fae7b00b49bf63c9390b69
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: 20ca118b3aacb02333d49b67d13de30f11dc5d8d
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927676"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079500"
 ---
 # <a name="manifest-tool-property-pages"></a>Eigenschaftenseiten des Manifesttools
 
-Verwenden Sie diese Seiten, um allgemeine Optionen für " [Mt. exe](/windows/win32/sbscs/mt-exe)" anzugeben. Diese Seiten finden Sie unter **Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **Manifest-Tool**.
+Verwenden Sie diese Seiten, um allgemeine Optionen für " [Mt. exe](/windows/win32/sbscs/mt-exe)" anzugeben. Diese Seiten finden Sie unter **Project** > **Properties** > **Configuration Properties** > **Manifest Tool**.
 
 ## <a name="general-property-page"></a>Eigenschaften Seite "Allgemein"
 
@@ -49,9 +49,9 @@ Verwenden Sie diese Seiten, um allgemeine Optionen für " [Mt. exe](/windows/win
 
 Verwendet die Option „/identity“, um eine Identitätszeichenfolge anzugeben, die aus den Attributen für das [\<assemblyIdentity>-Element](/visualstudio/deployment/assemblyidentity-element-clickonce-application) besteht. Eine Identitätszeichenfolge beginnt mit dem Wert für das `name`-Attribut gefolgt von *Attribut* = *Wert*-Paaren. Die Attribute in einer Identitätszeichenfolge werden durch Kommas getrennt.
 
-Dies ist ein Beispiel für eine Identitäts Zeichenfolge:`Microsoft.Windows.Common-Controls, processorArchitecture=x86, version=6.0.0.0, type=win32, publicKeyToken=6595b64144ccf1df`
+Dies ist ein Beispiel für eine Identitäts Zeichenfolge: `Microsoft.Windows.Common-Controls, processorArchitecture=x86, version=6.0.0.0, type=win32, publicKeyToken=6595b64144ccf1df`
 
-## <a name="input-and-output-property-page"></a>Eingabe-und Ausgabe Eigenschaften Seite     
+## <a name="input-and-output-property-page"></a>Eingabe-und Ausgabe Eigenschaften Seite
 
 ###  <a name="additional-manifest-files"></a>Zusätzliche Manifest-Dateien
 
@@ -97,15 +97,15 @@ Wird mit-Managedassembly verwendet. -Category bewirkt, dass die kategorietags ge
 
 Gibt an, ob die Anwendung DPI-fähig ist. Für MFC-Projekte ist diese Einstellung standardmäßig auf **Ja** festgelegt, andernfalls ist **Nein** festgelegt, da nur MFC-Projekte über integrierte DPI-Unterstützung verfügen. Sie können die Einstellung auf **Ja** festlegen, indem Sie Code hinzufügen, um verschiedene DPI-Einstellungen zu verarbeiten. Wenn Sie Ihre Anwendung auf DPI-fähig einstellen und sie nicht DPI-fähig ist, wird sie möglicherweise verschwommen oder klein angezeigt.
 
-**Optionen**
+**choices**
 
-- **Keine**
+- **None**
 - **Hohe dpi-Werten**
 - **Hohe dpi-Werten pro Monitor**
 
 ## <a name="isolated-com-property-page"></a>Isolierte COM-Eigenschaften Seite
 
-Weitere Informationen zu isolierten com finden Sie unter [isolierte Anwendungen](/windows/win32/SbsCs/isolated-applications) und [Gewusst wie: Erstellen Sie isolierte Anwendungen für die Nutzung](../how-to-build-isolated-applications-to-consume-com-components.md)von COM-Komponenten.
+Weitere Informationen zu isolierten com finden Sie unter [isolierte Anwendungen](/windows/win32/SbsCs/isolated-applications) und Gewusst [wie: Erstellen isolierter Anwendungen für die Nutzung von COM-Komponenten](../how-to-build-isolated-applications-to-consume-com-components.md).
 
 ###  <a name="type-library-file"></a>Typbibliotheks Datei
 
@@ -137,7 +137,6 @@ Gibt den Suchpfad an, der beim Aktualisieren der Dateihashes verwendet werden so
 
 Zusätzliche Optionen
 
-
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++Referenz zur Projekteigenschaften Seite](property-pages-visual-cpp.md)

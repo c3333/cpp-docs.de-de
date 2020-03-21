@@ -7,12 +7,12 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], creating
 - ActiveX controls [MFC], creating
 ms.assetid: 8bd5a93c-d04d-414e-bb28-163fdc1c0dd5
-ms.openlocfilehash: d35b788910b0c73a3b6da85faf119958ffbccea0
-ms.sourcegitcommit: bf1940a39029dbbd861f95480f55e5e8bd25cda0
+ms.openlocfilehash: 5e0a81d6a01632bcfadccd241f3a485e6d332627
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108443"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077462"
 ---
 # <a name="creating-an-mfc-activex-control"></a>Erstellen eines MFC-ActiveX-Steuerelements
 
@@ -38,8 +38,7 @@ Nachdem Sie das Projekt erstellt haben, können Sie die in **Projektmappen-Explo
 
 Nachdem Sie das Projekt erstellt haben, können Sie die Code-Assistenten verwenden, um [Funktionen](../../ide/add-member-function-wizard.md), [Variablen](../../ide/add-member-variable-wizard.md), [Ereignisse](../../ide/add-event-wizard.md), [Eigenschaften](../../ide/names-add-property-wizard.md)und [Methoden](../../ide/add-method-wizard.md)hinzuzufügen. Weitere Informationen zum Anpassen des ActiveX-Steuer Elements finden Sie unter [MFC-ActiveX](../../mfc/mfc-activex-controls.md)-Steuerelemente.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hinzufügen neuer Funktionen mit Code-Assistenten](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
 [Eigenschaftenseiten](../../build/reference/property-pages-visual-cpp.md)
-

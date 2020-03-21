@@ -7,39 +7,39 @@ helpviewer_keywords:
 - OLE DB providers, calling
 - OLE DB providers, testing
 ms.assetid: e4aa30c1-391b-41f8-ac73-5270e46fd712
-ms.openlocfilehash: a9601b2afe40133a5cc88589b530b5ed549ac81e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a173e1466179dfb40a33d7bdb4a94eabdbf23cc0
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389228"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079049"
 ---
 # <a name="testing-the-read-only-provider"></a>Testen des schreibgeschützten Anbieters
 
-Um einen Anbieter zu testen, benötigen Sie einen Consumer. Es ist hilfreich, wenn der Consumer mit dem Anbieter vergleichen kann. Die OLE DB-Consumervorlagen sind ein einfacher Wrapper um den OLE DB und mit dem Anbieter-COM-Objekten entsprechen. Da die Quelle der Consumervorlagen ausgeliefert wird, ist es einfach, einen Anbieter mit dem sie debuggen. Die Consumervorlagen sind auch eine sehr klein und schnelle Möglichkeit zum Consumer-Anwendungen zu entwickeln.
+Zum Testen eines Anbieters benötigen Sie einen Consumer. Dies ist hilfreich, wenn der Consumer dem Anbieter gerecht werden kann. Die OLE DB Consumervorlagen sind ein schlanker Wrapper um OLE DB und entsprechen den COM-Objekten des Anbieters. Da die Quelle mit den Consumervorlagen ausgeliefert wird, ist es einfach, einen Anbieter mit Ihnen zu debuggen. Die Consumer-Vorlagen sind auch eine sehr kleine und schnelle Möglichkeit, Consumeranwendungen zu entwickeln.
 
-Das Beispiel in diesem Thema erstellt eine standardanwendung für MFS-Anwendungsassistenten für einen Testconsumer. Die Anwendung zu testen ist ein einfaches Dialogfeld mit OLE DB-Consumer-Vorlagencode hinzugefügt.
+Das Beispiel in diesem Thema erstellt eine Standardanwendung des MFC-Anwendungs-Assistenten für einen Testconsumer. Die Testanwendung ist ein einfaches Dialogfeld mit hinzugefügter OLE DB Consumervorlagen Code.
 
-## <a name="to-create-the-test-application"></a>Erstellen Sie die testanwendung
+## <a name="to-create-the-test-application"></a>So erstellen Sie die Testanwendung
 
-1. Klicken Sie im Menü **Datei** auf **Neu**und dann auf **Projekt**.
+1. Klicken Sie im Menü **Datei** auf **Neu** und dann auf **Projekt**.
 
-1. In der **Projekttypen** wählen Sie im Bereich der **installiert** > **Visual C++** > **MFC/ATL** Ordner. In der **Vorlagen** wählen Sie im Bereich **MFC-Anwendung**.
+1. Wählen Sie im Bereich **Projekttypen** den Ordner **installiert** > **Visual C++**  > **MFC/ATL** aus. Wählen Sie im Bereich **Vorlagen** die Option **MFC-Anwendung**aus.
 
-1. Geben Sie für den Projektnamen, *TestProv*, und klicken Sie dann auf **OK**.
+1. Geben Sie als Projektnamen *TestProv*ein, und klicken Sie dann auf **OK**.
 
-   Die **MFC-Anwendung** -Assistent wird angezeigt.
+   Der **MFC-Anwendungs** -Assistent wird angezeigt.
 
-1. Auf der **Anwendungstyp** Seite **auf Dialogfeldern basierend**.
+1. Wählen Sie auf der Seite **Anwendungstyp** die Option **Dialog Feld basiert**aus.
 
-1. Auf der **erweiterte Features** Seite **Automation**, und klicken Sie dann auf **Fertig stellen**.
+1. Wählen Sie auf der Seite **Erweiterte Features** die Option **Automation**aus, und klicken Sie dann auf **Fertig**stellen.
 
 > [!NOTE]
-> Die Anwendung erfordert keine automatisierungsunterstützung aus, wenn Sie hinzufügen, `CoInitialize` in `CTestProvApp::InitInstance`.
+> Die Anwendung erfordert keine Automatisierungsunterstützung, wenn Sie `CoInitialize` in `CTestProvApp::InitInstance`hinzufügen.
 
-Können Sie anzeigen und Bearbeiten der **TestProv** im (IDD_TESTPROV_DIALOG) Wählen sie im Dialogfeld **Ressourcenansicht**. Platzieren Sie zwei Listenfelder, eines für jede Zeichenfolge in das Rowset, das Dialogfeld. Deaktivieren der Sort-Eigenschaft, für beide Felder durch Drücken der Liste **Alt**+**EINGABETASTE** Wenn ein Listenfeld, das ausgewählt ist, und legen die **sortieren** Eigenschaft **"False"**. Fügen Sie außerdem eine **ausführen** Schaltfläche im Dialogfeld, um die Datei abzurufen. Die fertige **TestProv** Dialogfeld sollte zwei Listenfelder, die mit der Bezeichnung "String 1" und "String 2", verfügen; es verfügt auch über **OK**, **Abbrechen**, und **ausführen**  Schaltflächen.
+Sie können das Dialogfeld **TestProv** (IDD_TESTPROV_DIALOG) anzeigen und bearbeiten, indem Sie es in **Ressourcenansicht**auswählen. Platzieren Sie im Dialogfeld zwei Listenfelder, eine für jede Zeichenfolge im Rowset. Deaktivieren Sie die Sort-Eigenschaft für beide Listenfelder, indem Sie ALT drücken+**Eingabe** **Taste** drücken, wenn ein Listenfeld ausgewählt ist, und legen Sie die **Sort** -Eigenschaft auf **false**fest. Platzieren Sie außerdem eine Schaltfläche **Ausführen** im Dialogfeld, um die Datei abzurufen. Das fertige Dialogfeld **TestProv** sollte über zwei Listenfelder mit den Bezeichnungen "String 1" und "String 2" verfügen. Außerdem werden die Schaltflächen **OK**, **Abbrechen**und **Ausführen** angezeigt.
 
-Öffnen Sie die Headerdatei für die Dialogfeldklasse (in diesem Fall TestProvDlg.h). Fügen Sie den folgenden Code, der Headerdatei (außerhalb von jedem Klassendeklarationen):
+Öffnen Sie die Header Datei für die Dialogfeld Klasse (in diesem Fall TestProvDlg. h). Fügen Sie den folgenden Code der Header Datei hinzu (außerhalb von Klassen Deklarationen):
 
 ```cpp
 ////////////////////////////////////////////////////////////////////////
@@ -61,9 +61,9 @@ END_COLUMN_MAP()
 };
 ```
 
-Der Code stellt einen Benutzerdatensatz, der definiert, welche Spalten im Rowset enthalten sein sollen. Wenn der Client ruft `IAccessor::CreateAccessor`, er verwendet diese Einträge aus, um die zu bindenden Spalten anzugeben. Die OLE DB-Consumervorlagen können auch Spalten dynamisch zu binden. Die-Makros handelt es sich um die clientseitige Version der PROVIDER_COLUMN_ENTRY-Makros. Bei den zwei-Makros werden Ordnungszahl Typ, Länge und Datenmember für die beiden Zeichenfolgen.
+Der Code stellt einen Benutzerdaten Satz dar, der definiert, welche Spalten im Rowset verwendet werden. Wenn der Client `IAccessor::CreateAccessor`aufruft, verwendet er diese Einträge, um anzugeben, welche Spalten gebunden werden sollen. Die OLE DB Consumervorlagen ermöglichen es Ihnen außerdem, Spalten dynamisch zu binden. Die COLUMN_ENTRY-Makros sind die Client seitige Version der PROVIDER_COLUMN_ENTRY Makros. Die beiden COLUMN_ENTRY Makros geben die Ordinalzahl, den Typ, die Länge und den Datenmember für die beiden Zeichen folgen an.
 
-Hinzufügen eine Handlerfunktion für die **ausführen** Schaltfläche durch Drücken von **STRG** und durch Doppelklicken auf die **ausführen** Schaltfläche. Platzieren Sie den folgenden Code in der Funktion:
+Fügen Sie eine Handlerfunktion für die Schaltfläche **Ausführen** hinzu, indem Sie **STRG** drücken und auf die Schaltfläche **Ausführen** doppelklicken. Platzieren Sie den folgenden Code in der-Funktion:
 
 ```cpp
 ///////////////////////////////////////////////////////////////////////
@@ -92,20 +92,20 @@ void CTestProvDlg::OnRun()
 }
 ```
 
-Die `CCommand`, `CDataSource`, und `CSession` Klassen, die alle zu den OLE DB-Consumervorlagen gehören. Jede Klasse wird ein COM-Objekt im Anbieter imitiert. Die `CCommand` -Objekt nimmt die `CProvider` Klasse, die in der Headerdatei als Vorlagenparameter deklariert. Die `CProvider` Parameter darstellt, Bindungen, die Sie verwenden, um die Daten vom Anbieter zugreifen. 
+Die Klassen `CCommand`, `CDataSource`und `CSession` gehören alle zu den OLE DB Consumer-Vorlagen. Jede Klasse imitiert ein COM-Objekt im Anbieter. Das `CCommand`-Objekt übernimmt die `CProvider` Klasse, die in der Header Datei deklariert ist, als Vorlagen Parameter. Der `CProvider`-Parameter stellt Bindungen dar, die Sie verwenden, um auf die Daten des Anbieters zuzugreifen.
 
-Die Zeilen zum Öffnen der einzelnen Klassen erstellt jedes COM-Objekt im Anbieter. Verwenden Sie zum Suchen des Anbieters die `ProgID` des Anbieters. Sie erhalten die `ProgID` aus der Registrierung des Systems oder anhand der in der Datei Custom.rgs (Öffnen Sie das Verzeichnis des Anbieters, und suchen Sie nach der `ProgID` Schlüssel).
+Mit den Zeilen zum Öffnen der einzelnen Klassen werden alle COM-Objekte im Anbieter erstellt. Um den Anbieter zu suchen, verwenden Sie den `ProgID` des Anbieters. Sie können die `ProgID` aus der Systemregistrierung oder in der Datei Custom. RGS (Datei "Custom. RGS") erhalten (Öffnen Sie das Verzeichnis des Anbieters, und suchen Sie nach der `ProgID` Key).
 
-Die Datei "mydata.txt" ist im Lieferumfang der `MyProv` Beispiel. Erstellen Sie eine Datei für Ihre eigene Verwendung ein Editor, und geben eine gerade Anzahl von Zeichenfolgen, die Sie drücken **EINGABETASTE** zwischen den einzelnen Zeichenfolgen. Ändern Sie den Pfadnamen aus, wenn Sie die Datei verschieben.
+Die Datei "mydata. txt" ist im `MyProv` Beispiel enthalten. Wenn Sie eine eigene Datei erstellen möchten, verwenden Sie einen Editor, und geben Sie eine gerade Anzahl von Zeichen folgen ein, und drücken **Sie die Eingabe** Taste. Ändern Sie den Pfadnamen, wenn Sie die Datei verschieben.
 
-Übergeben Sie die Zeichenfolge "c:\\\samples\\\myprov\\\MyData.txt" in der `table.Open` Zeile. Wenn Sie Sie in Schritt der `Open` Aufruf wird ersichtlich, dass diese Zeichenfolge, um übergeben wird die `SetCommandText` -Methode in der der Anbieter. Beachten Sie, dass die `ICommandText::Execute` Methode verwendet die Zeichenfolge.
+Übergeben Sie die Zeichenfolge "c:\\\Samples\\\myprov\\\mydata.txt" in der `table.Open` Zeile. Wenn Sie in den `Open`-Befehl eintreten, sehen Sie, dass diese Zeichenfolge an die `SetCommandText`-Methode im Anbieter übermittelt wird. Beachten Sie, dass die `ICommandText::Execute`-Methode diese Zeichenfolge verwendet hat.
 
-Um die Daten abzurufen, rufen Sie `MoveNext` für die Tabelle. `MoveNext` Ruft die `IRowset::GetNextRows`, `GetRowCount`, und `GetData` Funktionen. Wenn keine weiteren Zeilen mehr vorhanden sind (d. h. die aktuelle Position im Rowset ist größer als `GetRowCount`), die Schleife wird beendet.
+Rufen Sie zum Abrufen der Daten `MoveNext` in der Tabelle auf. `MoveNext` Ruft die Funktionen `IRowset::GetNextRows`, `GetRowCount`und `GetData` auf. Wenn keine weiteren Zeilen vorhanden sind (d. h. die aktuelle Position im Rowset ist größer als `GetRowCount`), wird die Schleife beendet.
 
-Wenn keine weiteren Zeilen vorhanden sind, geben Anbieter DB_S_ENDOFROWSET zurück. Die DB_S_ENDOFROWSET-Wert ist kein Fehler. Sie sollten immer mit S_OK, um eine Abbrechen und verwenden Sie das Makro SUCCEEDED nicht überprüfen.
+Wenn keine Zeilen mehr vorhanden sind, geben Anbieter DB_S_ENDOFROWSET zurück. Der DB_S_ENDOFROWSET Wert ist kein Fehler. Sie sollten immer eine Prüfung auf S_OK durchführen, um eine Datenabruf Schleife abzubrechen und das Makro "erfolgreich" nicht zu verwenden.
 
-Sie sollten jetzt in der Lage zu erstellen und testen das Programm.
+Sie sollten jetzt in der Lage sein, das Programm zu erstellen und zu testen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweitern des einfachen schreibgeschützten Anbieters](../../data/oledb/enhancing-the-simple-read-only-provider.md)
