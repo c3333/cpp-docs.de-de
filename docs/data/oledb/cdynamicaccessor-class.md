@@ -124,12 +124,12 @@ helpviewer_keywords:
 - SetStatus method
 - SetValue method
 ms.assetid: 374b13b7-1f09-457d-9e6b-df260ff4d178
-ms.openlocfilehash: 08e36606ae5d8dc34b9e25dd7d8dbc6d606520da
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: a2dcb946b4161c03fe34f02608cfb3dbbca21695
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546080"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075842"
 ---
 # <a name="cdynamicaccessor-class"></a>CDynamicAccessor-Klasse
 
@@ -141,11 +141,11 @@ Ermöglicht den Zugriff auf eine Datenquelle, wenn Sie das Datenbankschema (die 
 class CDynamicAccessor : public CAccessorBase
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header**: atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -172,7 +172,7 @@ class CDynamicAccessor : public CAccessorBase
 |[SetStatus](#setstatus)|Legt den Status einer angegebenen Spalte fest.|
 |[SetValue](#setvalue)|Speichert die Daten im Puffer.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie `CDynamicAccessor` Methoden, um Spalten Informationen zu erhalten, wie z. b. Spaltennamen, Spalten Anzahl, Datentyp usw. Anschließend verwenden Sie diese Spalten Informationen, um einen Accessor dynamisch zur Laufzeit zu erstellen.
 
@@ -199,7 +199,7 @@ in Eine `DBCOLUMNINFO` Struktur, die Spalten Informationen enthält. Siehe "DBCO
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie diese Methode, wenn Sie den mit `CDynamicAccessor` erstellten Standard Accessor überschreiben (siehe Gewusst [wie: Abrufen von Daten](../../data/oledb/fetching-data.md)).
 
@@ -222,7 +222,7 @@ Gibt an, wie die Binary Large Object (BLOB)-Daten behandelt werden sollen. Der S
 *nblobsize*<br/>
 Die maximale BLOB-Größe in Bytes. Spaltendaten über diesen Wert werden als BLOB behandelt. Der Standardwert ist 8.000. Weitere Informationen finden Sie unter [setblobsizelimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md) .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie den-Konstruktor verwenden, um das `CDynamicAccessor` Objekt zu initialisieren, können Sie angeben, wie blobobjekte gebunden werden. BLOB können binäre Daten enthalten, z. b. Grafiken, Sound oder kompilierten Code. Standardmäßig werden Spalten mit mehr als 8.000 Bytes als blobwerte behandelt, und es wird versucht, Sie an ein `ISequentialStream` Objekt zu binden. Sie können jedoch einen anderen Wert als die BLOB-Größe angeben.
 
@@ -248,7 +248,7 @@ Ruft den Wert für die BLOB-Behandlung der aktuellen Zeile ab.
 const DBBLOBHANDLINGENUM GetBlobHandling() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt den von [setblobhandling](../../data/oledb/cdynamicaccessor-setblobhandling.md)festgelegten BLOB-Behandlungs Wert *eblobhandling* zurück.
 
@@ -262,7 +262,7 @@ Ruft die maximale BLOB-Größe in Bytes ab.
 const DBLENGTH GetBlobSizeLimit() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt den von [setblobsizelimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md)festgelegten BLOB-Behandlungs Wert *nblobsize* zurück.
 
@@ -285,7 +285,7 @@ vorgenommen Ein Zeiger auf das [CBookmark](../../data/oledb/cbookmark-class.md) 
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie müssen `DBPROP_IRowsetLocate` auf VARIANT_TRUE festlegen, um ein Lesezeichen abzurufen.
 
@@ -326,7 +326,7 @@ vorgenommen Ein Zeiger auf eine Bitmaske, die Spalten Eigenschaften beschreibt. 
 
 Gibt **true** zurück, wenn die Spalten Eigenschaften erfolgreich abgerufen wurden. Andernfalls wird **false**zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Spaltennummer ist von eins versetzt. Die Spalte 0 (null) ist ein Sonderfall. Es ist das Lesezeichen, wenn es verfügbar ist.
 
@@ -361,7 +361,7 @@ vorgenommen Ein Zeiger auf den Arbeitsspeicher, in dem ein Zeiger auf den Speich
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Informationen zu den Datentypen `DBORDINAL`, `DBCOLUMNINFO`und `OLECHAR`finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB Programmierer-Referenz* .
 
@@ -439,7 +439,7 @@ vorgenommen Ein Zeiger auf die ganze Zahl, die die Länge der Spalte in Bytes en
 
 Gibt **true** zurück, wenn die angegebene Spalte gefunden wurde. Andernfalls gibt diese Funktion **false**zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste außer Kraft Setzung nimmt die Spaltennummer an, und die zweite und Dritte über schreibungen nehmen den Spaltennamen im ANSI-bzw. Unicode-Format.
 
@@ -544,7 +544,7 @@ Wenn Sie Zeichen folgen Daten übergeben möchten, verwenden Sie die nicht Vorla
 
 Für alle anderen Datentypen ist es einfacher, die Vorlagen basierten Versionen von `GetValue`zu verwenden. Die Vorlagen Versionen geben bei Erfolg **true** oder **false** bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie die Versionen nicht Vorlagen, um Spalten zurückzugeben, die Zeichen folgen und die Vorlagen Versionen für Spalten enthalten, die andere Datentypen enthalten.
 
@@ -571,7 +571,7 @@ Gibt an, wie die BLOB-Daten verarbeitet werden sollen. Die folgenden Werte sind 
 
 - DBBLOBHANDLING_SKIP: überspringen (keine Bindung) Spalten, die als enthaltende blobzeichen qualifiziert sind (der-Accessor bindet oder Ruft den Spaltenwert nicht ab, sondern ruft weiterhin den Spalten Status und die-Länge ab).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie sollten `SetBlobHandling` vor `Open` aufrufen.
 
@@ -592,7 +592,7 @@ void SetBlobSizeLimit(DBLENGTH nBlobSize);
 *nblobsize*<br/>
 Gibt die Größenbeschränkung für das BLOB an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Legt die maximale BLOB-Größe in Bytes fest. Spaltendaten, die größer als dieser Wert sind, werden als BLOB behandelt. Einige Anbieter verfügen über extrem große Größen für Spalten (z. b. 2 GB). Anstatt zu versuchen, Arbeitsspeicher für eine Spalte mit dieser Größe zuzuweisen, würden Sie in der Regel versuchen, diese Spalten als blobspeicher zu binden. Auf diese Weise müssen Sie nicht den gesamten Arbeitsspeicher zuordnen, aber Sie können trotzdem alle Daten lesen, ohne dass die Daten abgeschnitten werden müssen. Es gibt jedoch einige Fälle, in denen Sie erzwingen können, dass `CDynamicAccessor` große Spalten in ihren systemeigenen Datentypen bindet. Rufen Sie hierzu `SetBlobSizeLimit` auf, bevor Sie `Open`aufrufen.
 
@@ -674,7 +674,7 @@ bool SetValue(
    DBORDINAL nColumn,
    constctype& data) throw( );
 
-template <class ctype> 
+template <class ctype>
 bool SetValue(
    const CHAR * pColumnName,
    const ctype& data) throw( );
@@ -705,7 +705,7 @@ Wenn Sie Zeichen folgen Daten festlegen möchten, verwenden Sie die nicht Vorlag
 
 Für alle anderen Datentypen ist es einfacher, die Vorlagen basierten Versionen von `GetValue`zu verwenden. Die Vorlagen Versionen geben bei Erfolg **true** oder **false** bei einem Fehler zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

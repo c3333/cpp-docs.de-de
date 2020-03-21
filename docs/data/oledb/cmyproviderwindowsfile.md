@@ -9,22 +9,22 @@ helpviewer_keywords:
 - OLE DB providers, wizard-generated files
 - CCustomWindowsFile class
 ms.assetid: 0e9e72ac-1e1e-445f-a7ac-690c20031f9d
-ms.openlocfilehash: 4af302d8a391de359f3b8ac66d41b5d7198fd8f6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 103a1ce5568c6137994056e574ce8eec04511d8f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182911"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079744"
 ---
 # <a name="ccustomwindowsfile"></a>CCustomWindowsFile
 
-Der Assistent erstellt eine Klasse, die eine Zeile mit Daten verfügt. In diesem Fall heißt es `CCustomWindowsFile`. Der folgende code für `CCustomWindowsFile` Assistenten generiert wird, und listet alle Dateien in einem Verzeichnis mit dem `WIN32_FIND_DATA` Struktur. `CCustomWindowsFile` erbt von der `WIN32_FIND_DATA` Struktur:
+Der Assistent erstellt eine Klasse mit einer Daten Zeile. in diesem Fall wird es als `CCustomWindowsFile`bezeichnet. Der folgende Code für `CCustomWindowsFile` wird vom Assistenten generiert und listet alle Dateien in einem Verzeichnis mit der `WIN32_FIND_DATA`-Struktur auf. `CCustomWindowsFile` erbt von der `WIN32_FIND_DATA` Struktur:
 
 ```cpp
 /////////////////////////////////////////////////////////////////////
 // CustomRS.H
 
-class CCustomWindowsFile: 
+class CCustomWindowsFile:
    public WIN32_FIND_DATA
 {
 public:
@@ -38,9 +38,9 @@ END_PROVIDER_COLUMN_MAP()
 };
 ```
 
-`CCustomWindowsFile` wird aufgerufen, die [Benutzerdatensatz-Klasse](../../data/oledb/user-record.md) , da sie hat auch eine Zuordnung, die Beschreibung der Spalten im Rowset des Anbieters. Die Anbieter-Spalte-Zuordnung enthält einen Eintrag für jedes Feld in das Rowset mit die-Makros. Die Makros Geben Sie Spaltennamen, ordinal, und auf einen Struktureintrag der Offset. Die Einträge für den Anbieter im obigen Code enthalten, die Offsets in die `WIN32_FIND_DATA` Struktur. Wenn der Consumer ruft `IRowset::GetData`, Daten in einem zusammenhängenden Puffer übertragen werden. Anstatt zu sorgen, dass Sie die Zeigerarithmetik auszuführen, können mit die Zuordnung geben Sie einen Datenmember.
+`CCustomWindowsFile` wird die [Benutzerdaten Satz-Klasse](../../data/oledb/user-record.md) genannt, da Sie auch eine Karte enthält, die die Spalten im Rowset des Anbieters beschreibt. Die Anbieter Spalten Zuordnung enthält einen Eintrag für jedes Feld im Rowset mithilfe der PROVIDER_COLUMN_ENTRY Makros. Die Makros geben Spaltennamen, Ordinalzahl und Offset zu einem Struktur Eintrag an. Die Anbieter Spalten Einträge im obigen Code enthalten Offsets in die `WIN32_FIND_DATA` Struktur. Wenn der Consumer `IRowset::GetData`aufruft, werden die Daten in einem zusammenhängenden Puffer übertragen. Anstatt Zeigerarithmetik zu machen, können Sie mit der Zuordnung einen Datenmember angeben.
 
-Die `CCustomRowset` Klasse enthält auch die `Execute` Methode. `Execute` ist tatsächlich, durch die Daten aus der systemeigenen Quelle eingelesen. Der folgende Code zeigt die vom Assistenten generierte `Execute` Methode. Die Funktion verwendet die Win32 `FindFirstFile` und `FindNextFile` APIs zum Abrufen von Informationen zu den Dateien im Verzeichnis, und fügen Sie sie in Instanzen von der `CCustomWindowsFile` Klasse.
+Die `CCustomRowset`-Klasse enthält auch die `Execute`-Methode. in `Execute` werden die Daten tatsächlich aus der systemeigenen Quelle gelesen. Der folgende Code zeigt die `Execute` Methode, die vom Assistenten generiert wurde. Die-Funktion verwendet die Win32-`FindFirstFile` und `FindNextFile`-APIs, um Informationen zu den Dateien im Verzeichnis abzurufen und Sie in Instanzen der `CCustomWindowsFile`-Klasse zu platzieren.
 
 ```cpp
 /////////////////////////////////////////////////////////////////////
@@ -73,10 +73,10 @@ HRESULT Execute(DBPARAMS * pParams, LONG* pcRowsAffected)
 }
 ```
 
-Das zu durchsuchende Verzeichnis zeigt `m_strCommandText`; enthält den Text, dargestellt durch die `ICommandText` -Schnittstelle in das Command-Objekt. Wenn kein Verzeichnis angegeben ist, wird das aktuelle Verzeichnis verwendet.
+Das zu durchsuchende Verzeichnis wird durch `m_strCommandText`angezeigt. Diese enthält den Text, der durch die `ICommandText`-Schnittstelle im Command-Objekt dargestellt wird. Wenn kein Verzeichnis angegeben ist, wird das aktuelle Verzeichnis verwendet.
 
-Die Methode erstellt einen Eintrag für jede Datei (entspricht einer Zeile) und platziert es in der `m_rgRowData` -Datenmember. Die `CRowsetImpl` -Klasse definiert die `m_rgRowData` -Datenmember. Die Daten in diesem Array werden die gesamte Tabelle angezeigt und werden in den Vorlagen verwendet.
+Die-Methode erstellt einen Eintrag für jede Datei (entsprechend einer Zeile) und platziert Sie im `m_rgRowData` Datenmember. Die `CRowsetImpl`-Klasse definiert den `m_rgRowData` Datenmember. Die Daten in diesem Array werden in der gesamten Tabelle angezeigt und in den Vorlagen verwendet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vom Anbieter-Assistenten generierte Dateien](../../data/oledb/provider-wizard-generated-files.md)<br/>

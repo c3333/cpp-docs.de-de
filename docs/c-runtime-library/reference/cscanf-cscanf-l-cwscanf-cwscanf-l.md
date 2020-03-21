@@ -48,18 +48,18 @@ helpviewer_keywords:
 - reading data [C++], from the console
 - _cwscanf_l function
 ms.assetid: dbfe7547-b577-4567-a1cb-893fa640e669
-ms.openlocfilehash: 8b996e510d6a8c106aa88a60a8da456d36a4b3e5
-ms.sourcegitcommit: ea9d78dbb93bf3f8841dde93dbc12bd66f6f32ff
+ms.openlocfilehash: 973642aa113c8db4174b399f22e980daba95ce41
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72778312"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079994"
 ---
 # <a name="_cscanf-_cscanf_l-_cwscanf-_cwscanf_l"></a>_cscanf, _cscanf_l, _cwscanf, _cwscanf_l
 
 Liest formatierte Daten aus der Konsole. Sicherere Versionen dieser Funktionen sind verfügbar. Sie finden sie unter [_cscanf_s, _cscanf_s_l, _cwscanf_s, _cwscanf_s_l](cscanf-s-cscanf-s-l-cwscanf-s-cwscanf-s-l.md).
 
-> [!NOTE] 
+> [!NOTE]
 > In Visual Studio 2015 wurden die `printf`-und `scanf`-Funktions Familie als **Inline** deklariert und in die Header `<stdio.h>` und `<conio.h>` verschoben. Wenn Sie älteren Code migrieren, kann *LNK2019* in Verbindung mit diesen Funktionen angezeigt werden. Weitere Informationen finden Sie unter [visueller C++ Änderungs Verlauf 2003-2015](../../porting/visual-cpp-change-history-2003-2015.md#stdio_and_conio).
 
 > [!IMPORTANT]
@@ -93,7 +93,7 @@ int _cwscanf_l(
 *format*<br/>
 Formatsteuerzeichenfolge.
 
-*gestritten*<br/>
+*argument*<br/>
 Optionale Parameter.
 
 *locale*<br/>
@@ -103,9 +103,9 @@ Das zu verwendende Gebietsschema.
 
 Die Anzahl der Felder, die erfolgreich konvertiert und zugewiesen wurden. Der Rückgabewert enthält keine nicht zugewiesenen gelesenen Felder. Der Rückgabewert ist **EOF** für den Versuch, am Dateiende zu lesen. Dies kann vorkommen, wenn Tastatureingaben auf der Befehlszeilenebene des Betriebssystems umgeleitet wurden. Ein Rückgabewert von 0 bedeutet, dass keine Felder zugewiesen wurden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_cscanf** -Funktion liest Daten direkt aus der Konsole in die Speicherorte, die durch das- *Argument*angegeben werden. Die Funktion [_getche](getch-getwch.md) wird verwendet, um Zeichen zu lesen. Jeder optionale Parameter muss ein Zeiger auf eine Variable mit einem Typ sein, der einem Typspezifizierer im- *Format*entspricht. Das Format steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie der *Format* -Parameter für die [scanf](scanf-scanf-l-wscanf-wscanf-l.md) -Funktion. Obwohl **_cscanf** normalerweise das Eingabezeichen wiederholt, erfolgt dies nicht, wenn der letzte-Befehl an **_ungetch**erfolgt ist.
+Die **_cscanf** -Funktion liest Daten direkt aus der Konsole in die Speicherorte, die durch das- *Argument*angegeben werden. Die Funktion [_getche](getch-getwch.md) wird verwendet, um Zeichen zu lesen. Jeder optionale Parameter muss ein Zeiger auf eine Variable mit einem Typ sein, der einem Typspezifizierer im- *Format*entspricht. Das Format steuert die Interpretation der Eingabefelder und hat die gleiche Form und Funktion wie der *Format* -Parameter für die [scanf](scanf-scanf-l-wscanf-wscanf-l.md) -Funktion. Obwohl **_cscanf** normalerweise das Eingabezeichen wiederholt, erfolgt dies nicht, wenn der letzte aufrufungs Vorgang **_ungetch**war.
 
 Diese Funktion überprüft ihre Parameter. Wenn Format **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **EOF**zurück.
 
@@ -118,14 +118,14 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |**_tcscanf**|**_cscanf**|**_cscanf**|**_cwscanf**|
 |**_tcscanf_l**|**_cscanf_l**|**_cscanf_l**|**_cwscanf_l**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**_cscanf**, **_cscanf_l**|\<conio.h>|
-|**_cwscanf**, **_cwscanf_l**|\<conio.h> oder \<wchar.h>|
+|**_cscanf** **_cscanf_l**|\<conio.h>|
+|**_cwscanf** **_cwscanf_l**|\<conio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -164,7 +164,7 @@ Enter three integers: 1 2 3
 You entered 3 2 1
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cprintf, _cprintf_l, _cwprintf, _cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>

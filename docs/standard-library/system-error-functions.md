@@ -12,16 +12,16 @@ helpviewer_keywords:
 - std::make_error_code
 - std::make_error_condition
 - std::system_category
-ms.openlocfilehash: ab4d0d1ee810df8f719bba762262eb03bf899408
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 2ddeb256c974294e2e46d516219a6b5b0cac3ae2
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427614"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076348"
 ---
 # <a name="ltsystem_errorgt-functions"></a>&lt;System_error&gt;-Funktionen
 
-## <a name="generic_category"></a>generic_category
+## <a name="generic_category"></a><a name="generic_category"></a>generic_category
 
 Stellt die Kategorie für allgemeine Fehler dar.
 
@@ -29,25 +29,25 @@ Stellt die Kategorie für allgemeine Fehler dar.
 const error_category& generic_category() noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `generic_category`-Objekt ist eine Implementierung von [Error_category](../standard-library/error-category-class.md).
 
-## <a name="is_error_code_enum_v"></a>is_error_code_enum_v
+## <a name="is_error_code_enum_v"></a><a name="is_error_code_enum_v"></a>is_error_code_enum_v
 
 ```cpp
-template <class T> 
+template <class T>
     inline constexpr bool is_error_code_enum_v = is_error_code_enum<T>::value;
 ```
 
-## <a name="is_error_condition_enum_v"></a>is_error_condition_enum_v
+## <a name="is_error_condition_enum_v"></a><a name="is_error_condition_enum_v"></a>is_error_condition_enum_v
 
 ```cpp
-template <class T> 
+template <class T>
     inline constexpr bool is_error_condition_enum_v = is_error_condition_enum<T>::value;
 ```
 
-## <a name="make_error_code"></a>make_error_code
+## <a name="make_error_code"></a><a name="make_error_code"></a>make_error_code
 
 Erstellt ein Fehlercodeobjekt.
 
@@ -64,9 +64,9 @@ Der `std::errc` Enumerationswert, der im Fehlercode Objekt gespeichert werden so
 
 Das Fehlercodeobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="make_error_condition"></a>make_error_condition
+## <a name="make_error_condition"></a><a name="make_error_condition"></a>make_error_condition
 
 Erstellt ein Fehlerzustandobjekt.
 
@@ -83,9 +83,9 @@ Der `std::errc` Enumerationswert, der im Fehlercode Objekt gespeichert werden so
 
 Das Fehlerzustandobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="system_category"></a>system_category
+## <a name="system_category"></a><a name="system_category"></a>system_category
 
 Stellt die Kategorie für Fehler dar, die von Low-Level-Systemüberläufen verursacht wurden.
 
@@ -93,6 +93,6 @@ Stellt die Kategorie für Fehler dar, die von Low-Level-Systemüberläufen verur
 const error_category& system_category() noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `system_category`-Objekt ist eine Implementierung von [Error_category](../standard-library/error-category-class.md).

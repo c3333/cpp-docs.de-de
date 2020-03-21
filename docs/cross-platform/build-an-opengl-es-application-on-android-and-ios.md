@@ -2,12 +2,12 @@
 title: Erstellen einer OpenGL ES-Anwendung für Android und iOS
 ms.date: 10/09/2019
 ms.assetid: 76a67886-df57-4a81-accb-2e3c2eaf607b
-ms.openlocfilehash: 23dd9dbb1ff32050494e0d1d105cd55de3123fbb
-ms.sourcegitcommit: a673f6a54cc97e3d4cd032b10aa8dce7f0539d39
+ms.openlocfilehash: 3709cfcc681f265d08758f97422ae16e98a66a1c
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "79470076"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079672"
 ---
 # <a name="build-an-opengl-es-application-on-android-and-ios"></a>Erstellen einer OpenGL ES-Anwendung für Android und iOS
 
@@ -109,7 +109,7 @@ Durch die von der Vorlage erstellte Projektmappe wird die Android-App als Standa
 
    Die generierten Android Native Activity-APP-und Bibliotheks Projekte C++ legen den freigegebenen Code in einer dynamischen Bibliothek ab. Es enthält "Klebe Code" für die Schnittstelle mit der Android-Plattform. Der größte Teil des App-Codes befindet sich in der-Bibliothek. Manifest, Ressourcen und Buildanweisungen befinden sich im Paket Erstellungs Projekt. Der freigegebene Code wird von "main.cpp" im NativeActivity-Projekt aufgerufen. Weitere Informationen über das Programmieren einer Android Native Activity-App finden Sie im Android Developer NDK auf der Seite [Konzepte](https://developer.android.com/ndk/guides/concepts.html) .
 
-   Visual Studio erstellt Android Native Activity-Projekte mithilfe des Android-NDK. Clang wird als Platt Form Toolset verwendet. Visual Studio ordnet die Eigenschaften des Projekts den Befehlen zum Kompilieren, verknüpfen und Debuggen auf der Zielplattform zu. Um weitere Informationen zu erhalten, öffnen Sie das Dialogfeld **Eigenschaftenseiten** des MyOpenGLESApp.Android.NativeActivity-Projekts. Weitere Informationen zu den Befehlszeilenschaltern finden Sie im [Clang Compiler-Benutzerhandbuch](http://clang.llvm.org/docs/UsersManual.html) (in englischer Sprache).
+   Visual Studio erstellt Android Native Activity-Projekte mithilfe des Android-NDK. Clang wird als Platt Form Toolset verwendet. Visual Studio ordnet die Eigenschaften des Projekts den Befehlen zum Kompilieren, verknüpfen und Debuggen auf der Zielplattform zu. Um weitere Informationen zu erhalten, öffnen Sie das Dialogfeld **Eigenschaftenseiten** des MyOpenGLESApp.Android.NativeActivity-Projekts. Weitere Informationen zu den Befehlszeilenschaltern finden Sie im [Clang Compiler-Benutzerhandbuch](https://clang.llvm.org/docs/UsersManual.html) (in englischer Sprache).
 
 ## <a name="build-and-run-the-ios-app-on-an-ios-device"></a>Erstellen und Ausführen der iOS-App auf einem iOS-Gerät
 

@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ODBC recordsets, closing
 - ODBC recordsets, opening
 ms.assetid: 8d2aac23-4396-4ce2-8c60-5ecf1b360d3d
-ms.openlocfilehash: b4896dff711d87db05334afc0345c15da2fa23e6
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: e7aa4c0fc2a0acfe7b8df2f50f99bf44eb1ef456
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707983"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075919"
 ---
 # <a name="recordset-creating-and-closing-recordsets-odbc"></a>Recordset: Erstellen und Schließen von Recordsets (ODBC)
 
-> [!NOTE] 
+> [!NOTE]
 > Der MFC-ODBC-Consumer-Assistent ist in Visual Studio 2019 und höher nicht verfügbar. Sie können einen Consumer weiterhin manuell erstellen.
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
@@ -33,7 +33,7 @@ In diesem Thema wird Folgendes erläutert:
 
 - [Wann und wie Sie ein Recordset-Objekt schließen können](#_core_closing_a_recordset).
 
-##  <a name="_core_creating_recordsets_at_run_time"></a> Erstellen von Recordsets zur Laufzeit
+##  <a name="creating-recordsets-at-run-time"></a><a name="_core_creating_recordsets_at_run_time"></a> Erstellen von Recordsets zur Laufzeit
 
 Bevor Sie Recordset-Objekte in Ihrem Programm erstellen können, schreiben Sie üblicherweise anwendungsspezifische Recordset-Klassen. Weitere Informationen zu diesem vorbereitenden Schritt finden Sie unter [Hinzufügen eines MFC-ODBC-Consumers](../../mfc/reference/adding-an-mfc-odbc-consumer.md).
 
@@ -74,12 +74,12 @@ if(!rsStudent.Open(CRecordset::snapshot, NULL, CRecordset::readOnly))
 // Use the snapshot to operate on its records...
 ```
 
-Nachdem Sie `Open` aufgerufen haben, verwenden Sie die Memberfunktionen und Datenmember des Objekts, um mit den Datensätzen zu arbeiten. In einigen Fällen möchten Sie das Recordset möglicherweise erneut abfragen oder aktualisieren, damit die Änderungen einbezogen werden, die in der Datenquelle vorgenommen wurden. Weitere Informationen finden Sie unter [Recordset: Erneutes Abfragen eines Recordsets (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md).
+Nachdem Sie `Open` aufgerufen haben, verwenden Sie die Memberfunktionen und Datenmember des Objekts, um mit den Datensätzen zu arbeiten. In einigen Fällen möchten Sie das Recordset möglicherweise erneut abfragen oder aktualisieren, damit die Änderungen einbezogen werden, die in der Datenquelle vorgenommen wurden. Weitere Informationen finden Sie unter [Recordset: anweisen eines Recordsets (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md).
 
 > [!TIP]
->  Die Verbindungszeichenfolge, die Sie während der Entwicklung verwenden, ist möglicherweise nicht mit der identisch, die die eigentlichen Benutzer benötigen. Ideen, wie Sie Ihre Anwendung in dieser Hinsicht verallgemeinern können, finden Sie unter [Datenquelle: Verwalten von Verbindungen (ODBC)](../../data/odbc/data-source-managing-connections-odbc.md).
+>  Die Verbindungszeichenfolge, die Sie während der Entwicklung verwenden, ist möglicherweise nicht mit der identisch, die die eigentlichen Benutzer benötigen. Ideen zum generalisieren Ihrer Anwendung in dieser Hinsicht finden Sie unter [Datenquelle: Verwalten von Verbindungen (ODBC)](../../data/odbc/data-source-managing-connections-odbc.md).
 
-##  <a name="_core_setting_recordset_options"></a> Festlegen von Recordset-Optionen
+##  <a name="setting-recordset-options"></a><a name="_core_setting_recordset_options"></a> Festlegen von Recordset-Optionen
 
 Nachdem Sie Ihr Recordset-Objekt erstellt haben, aber vor dem Aufrufen von `Open`, um Datensätze auszuwählen, möchten Sie möglicherweise einige Optionen festlegen, mit denen das Verhalten des Recordsets gesteuert wird. Für alle Recordsets können Sie folgende Aktionen ausführen:
 
@@ -96,7 +96,7 @@ Sie können auch die folgende Option festlegen, wenn die Bedingungen geeignet si
 > [!NOTE]
 >  Damit sich diese Optionen auf die jeweilige Datensatzauswahl auswirken, müssen Sie sie festlegen, bevor die `Open`-Memberfunktion aufgerufen wird.
 
-##  <a name="_core_closing_a_recordset"></a> Schließen eines Recordsets
+##  <a name="closing-a-recordset"></a><a name="_core_closing_a_recordset"></a> Schließen eines Recordsets
 
 Wenn Sie nicht weiter mit dem Recordset arbeiten möchten, müssen Sie es löschen und dessen reservierten Speicher freigeben.
 
@@ -110,7 +110,7 @@ Wenn Sie nicht weiter mit dem Recordset arbeiten möchten, müssen Sie es lösch
 
 `Close` bewirkt, dass das `HSTMT`-Handle des Recordsets freigegeben wird. „Close“ zerstört nicht das C++ Objekt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Scrollen (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)<br/>

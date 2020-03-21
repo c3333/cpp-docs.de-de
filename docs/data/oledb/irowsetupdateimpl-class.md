@@ -49,12 +49,12 @@ helpviewer_keywords:
 - IsUpdateAllowed method
 - m_mapCachedData
 ms.assetid: f85af76b-ab6f-4f8b-8f4a-337c9679d68f
-ms.openlocfilehash: dba962c761fac0408a3c68a46ec6447aa7832522
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: fdd6072f831d7bfb77673169c2ef8062cc7107a6
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545720"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077863"
 ---
 # <a name="irowsetupdateimpl-class"></a>IRowsetUpdateImpl-Klasse
 
@@ -96,11 +96,11 @@ Die Speichereinheit für die `HROW`.
 *Mapclass*<br/>
 Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods-used-with-irowsetchange"></a>Schnittstellen Methoden (mit IRowsetChange verwendet)
 
@@ -130,7 +130,7 @@ Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 |-|-|
 |[m_mapCachedData](#mapcacheddata)|Enthält die ursprünglichen Daten für den verzögerten Vorgang.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sie sollten zunächst die Dokumentation für [IRowsetChange](/previous-versions/windows/desktop/ms715790(v=vs.85))lesen und verstehen, da alles, was hier beschrieben wird, auch hier gilt. Lesen Sie außerdem Kapitel 6 der *OLE DB Programmierer-Referenz* zum Festlegen von Daten.
 
@@ -161,7 +161,7 @@ STDMETHOD (SetData )(HROW hRow,
 
 Weitere Informationen finden Sie unter [IRowsetChange:: SetData](/previous-versions/windows/desktop/ms721232(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode überschreibt die [IRowsetChangeImpl:: SetData](../../data/oledb/irowsetchangeimpl-setdata.md) -Methode, beinhaltet jedoch das Zwischenspeichern ursprünglicher Daten, um die sofortige oder verzögerte Verarbeitung des Vorgangs zuzulassen.
 
@@ -202,7 +202,7 @@ in Entspricht dem *hChapter* -Parameter in [IRowsetUpdate:: getpdingens](/previo
 
 Informationen zu anderen Parametern finden Sie unter [IRowsetUpdate:: getpdinwächst](/previous-versions/windows/desktop/ms719626(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IRowsetUpdate:: getpdinwächst](/previous-versions/windows/desktop/ms719626(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
@@ -276,7 +276,7 @@ in Entspricht dem *hChapter* -Parameter in [IRowsetUpdate:: Update](/previous-ve
 
 Informationen zu anderen Parametern finden Sie unter [IRowsetUpdate:: Update](/previous-versions/windows/desktop/ms719709(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Änderungen werden durch Aufrufen von [IRowsetChangeImpl:: FlushData](../../data/oledb/irowsetchangeimpl-flushdata.md)übertragen. Der Consumer muss [CRowset:: Update](../../data/oledb/crowset-update.md) anrufen, damit die Änderungen wirksam werden. Legen Sie *prgRowStatus* auf einen geeigneten Wert fest, wie in den [Zeilen](/previous-versions/windows/desktop/ms722752(v=vs.85)) Status in der *OLE DB Programmierer-Referenz*beschrieben.
 
@@ -303,7 +303,7 @@ in Handle für die Zeilen, die der Benutzer aktualisieren möchte.
 *prowstatus*<br/>
 vorgenommen Der Status, der an den Benutzer zurückgegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie feststellen, dass ein Update zulässig sein soll, wird S_OK zurückgegeben. Andernfalls wird E_FAIL zurückgegeben. Wenn Sie ein Update zulassen, müssen Sie auch die `DBROWSTATUS` in [IRowsetUpdateImpl:: Update](../../data/oledb/irowsetupdateimpl-update.md) auf einen entsprechenden [Zeilen Status](/previous-versions/windows/desktop/ms722752(v=vs.85))festlegen.
 
@@ -315,7 +315,7 @@ Eine Karte, die die ursprünglichen Daten für den verzögerten Vorgang enthält
 
 ```cpp
 CAtlMap<
-   HROW hRow, 
+   HROW hRow,
    Storage* pData
 >
 m_mapCachedData;
@@ -329,7 +329,7 @@ Handle für die Zeilen für die Daten.
 *pData*<br/>
 Ein Zeiger auf die Daten, die zwischengespeichert werden sollen. Die Daten sind vom Typ " *Storage* " (die Benutzerdaten Satz-Klasse). Weitere Informationen finden Sie unter dem *Storage* Template-Argument in der [IRowsetUpdateImpl-Klasse](../../data/oledb/irowsetupdateimpl-class.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

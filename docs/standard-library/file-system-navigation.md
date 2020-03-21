@@ -2,18 +2,18 @@
 title: Dateisystemnavigation
 ms.date: 11/04/2016
 ms.assetid: f7cc5f5e-a541-4e00-87c7-a3769ef6096d
-ms.openlocfilehash: ea9bf44a11087180d3bd02c5dcd5d1acfa4b9e57
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: f5fe8d29baae76b1e7fb851bf04f4c6b32215a8e
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518503"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076543"
 ---
 # <a name="file-system-navigation"></a>Dateisystemnavigation
 
-Der Header \<filesystem> implementiert die technische Dateisystemspezifikation für C++ ISO/IEC TS 18822:2015 (endgültige Fassung: [ISO/IEC JTC 1/SC 22/WG 21 N4100](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf)) und enthält Typen und Funktionen, mit denen Sie plattformunabhängigen Code für die Navigation im Dateisystem schreiben können. Da er plattformübergreifend ist, enthält er APIs, die für Windows-Systeme nicht relevant sind. Dies bedeutet beispielsweise, dass `is_fifo(const path&)` bei Windows immer **false** zurückgibt.
+Der Header \<filesystem> implementiert die technische Dateisystemspezifikation für C++ ISO/IEC TS 18822:2015 (endgültige Fassung: [ISO/IEC JTC 1/SC 22/WG 21 N4100](https://wg21.link/n4100)) und enthält Typen und Funktionen, mit denen Sie plattformunabhängigen Code für die Navigation im Dateisystem schreiben können. Da er plattformübergreifend ist, enthält er APIs, die für Windows-Systeme nicht relevant sind. Dies bedeutet beispielsweise, dass `is_fifo(const path&)` bei Windows immer **false** zurückgibt.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Verwenden Sie die \<filesystem>-APIs für die folgenden Aufgaben:
 
@@ -29,7 +29,7 @@ Verwenden Sie die \<filesystem>-APIs für die folgenden Aufgaben:
 
 Weitere Informationen zu Datei-E/A mit der Standardbibliothek finden Sie unter [iostream-Programmierung](../standard-library/iostream-programming.md).
 
-## <a name="paths"></a>Pfade
+## <a name="paths"></a>Paths
 
 ### <a name="constructing-and-composing-paths"></a>Erstellen und Zerlegen von Pfaden
 
@@ -41,7 +41,7 @@ path pathToDisplay2(L"\\FileSystemTest\\SubDir3");  // Still OK as always
 path pathToDisplay3(LR"(\FileSystemTest\SubDir3)"); // Raw string literals are OK, too.
 ```
 
-Zum Verketten zweier Pfade können Sie überladene `/` - und `/=` -Operatoren verwenden, die analog zu den `+` - und `+=` -Operatoren in `std::string` und `std::wstring`sind. Das `path` -Objekt stellt Trennzeichen bereit, wenn Sie dies nicht tun.
+Zum Verketten zweier Pfade können Sie überladene `/` - und `/=` -Operatoren verwenden, die analog zu den `+` - und `+=` -Operatoren in `std::string` und `std::wstring`sind. Wenn dies nicht der Fall ist, werden die Trennzeichen vom `path` Objekt bequem bereitgestellt.
 
 ```cpp
 path myRoot("C:/FileSystemTest");  // no trailing separator, no problem!

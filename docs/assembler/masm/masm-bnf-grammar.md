@@ -4,12 +4,12 @@ description: BNF-Beschreibung von MASM für x64.
 ms.date: 12/17/2019
 helpviewer_keywords:
 - MASM (Microsoft Macro Assembler), BNF reference
-ms.openlocfilehash: 29eae0b110f99f1f417e153f18aa2ac3aff5c69b
-ms.sourcegitcommit: 0781c69b22797c41630601a176b9ea541be4f2a3
+ms.openlocfilehash: 1a9577292e60db73838e5e6b850a4634db959fd6
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322823"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075465"
 ---
 # <a name="microsoft-macro-assembler-bnf-grammar"></a>BNF-Grammatik für den Microsoft-Makro Assembler
 
@@ -57,7 +57,7 @@ Die BNF-Grammatik ermöglicht Rekursive Definitionen. Die Grammatik verwendet be
 &nbsp;&nbsp;&nbsp;&nbsp;*Register* : *assumeval*
 
 " *assumeregiester* "-\
-&nbsp;&nbsp;&nbsp; |  *&nbsp;.*
+&nbsp;&nbsp;&nbsp; |  *&nbsp;.* *assumeReg*
 
 der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;*Segmentregister* : *.*
@@ -123,7 +123,7 @@ der *-\*
 *commentdir*\
 &nbsp;&nbsp;&nbsp;&nbsp;**Kommentar** *Trennzeichen\*
 &nbsp;&nbsp;&nbsp;&nbsp;*Text*\
-&nbsp;&nbsp;&nbsp;&nbsp;*Text* Trennzeichen *Text* ;;
+&nbsp;&nbsp;&nbsp;&nbsp;*Text* *delimiter* Trennzeichen *Text* ;;
 
 *kommlist* -\
 &nbsp;&nbsp;&nbsp;&nbsp;*kommdecl* - | *kommlist* , *kommdecl*
@@ -142,7 +142,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;**POPCONTEXT** *contextitemlist* ;;
 
 *ContextItem* -\
-&nbsp;&nbsp;&nbsp;&nbsp;**die |  | ** **CPU** - ** | **
+&nbsp;&nbsp;&nbsp;&nbsp;**die |  | ** **CPU** - **LISTING** ** | ** **ALL** | 
 
 *contextitemlist* -\
 &nbsp;&nbsp;&nbsp;&nbsp;*ContextItem* | *contextitemlist* , *ContextItem*
@@ -423,7 +423,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;| *ID*
 
 *generaldir*\
-&nbsp;&nbsp;&nbsp;&nbsp;*modeldir* |  der *namedir* | 
+&nbsp;&nbsp;&nbsp;&nbsp;*modeldir* | *segOrderDir* der *namedir* | \
 &nbsp;&nbsp;&nbsp;&nbsp;| *includelibdir* | *commentdir*\
 &nbsp;&nbsp;&nbsp;&nbsp;| *groupdir* | *assumedir*\
 &nbsp;&nbsp;&nbsp;&nbsp;| *structdir* | *recorddir* | *typedefdir*\
@@ -513,7 +513,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;| *generaldir*
 
 *instranprefix* -\
-&nbsp;&nbsp;&nbsp;&nbsp;**Rep** | **REPE** | **repz** |  Repp | **REPNZ** | - **Sperre**
+&nbsp;&nbsp;&nbsp;&nbsp;**Rep** | **REPE** | **repz** | **REPNE** Repp | **REPNZ** | - **Sperre**
 
 *Anweisungs*\
 &nbsp;&nbsp;&nbsp;&nbsp;⟦ *instrauprefix* ⟧ *asminkonstruktion*
@@ -650,7 +650,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;**alle** | **keine** | **NotPublic**
 
 *memoption* -\
-&nbsp;&nbsp; **&nbsp;&nbsp;** Small | **Small** | **Medium** | **Compact** | **Large** |  Large | **Flat**
+&nbsp;&nbsp; **&nbsp;&nbsp;** Small | **Small** | **Medium** | **Compact** | **Large** | **HUGE** Large | **Flat**
 
 *mnetmonisches*\
 &nbsp;&nbsp;&nbsp;&nbsp;Anweisungs Name.
@@ -676,7 +676,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;- *ID* ;; \
 
 *near far*\
-&nbsp;&nbsp;&nbsp;&nbsp;**nah** | 
+&nbsp;&nbsp;&nbsp;&nbsp;**nah** | **FAR**
 
 \ von " *netstedstruct* "
 &nbsp;&nbsp;&nbsp;&nbsp;*structhdr* ⟦ *ID* ⟧;; \
@@ -716,7 +716,7 @@ der *-\*
 &nbsp;&nbsp;&nbsp;&nbsp;| **proc** : *ovisibility*\
 &nbsp;&nbsp;&nbsp;&nbsp;| **Prolog** : *makroid*\
 &nbsp;&nbsp;&nbsp; **&nbsp;| Schreib geschützter** | **noreadonly**\
-&nbsp;&nbsp;&nbsp; **&nbsp;|  | Bereich**\
+&nbsp;&nbsp;&nbsp; **&nbsp;|  | Bereich**\ **NOSCOPED**
 &nbsp;&nbsp;&nbsp;&nbsp;| **Segment** : *segsize*\
 &nbsp;&nbsp;&nbsp;&nbsp;| **SETIF2** : bool
 
@@ -890,7 +890,7 @@ der *-\*
 *\ der*
 &nbsp;&nbsp;&nbsp;&nbsp;- *ID*
 
-Einstellungs\
+*segIdList* Einstellungs\
 &nbsp;&nbsp;&nbsp;\ *&nbsp;*
 &nbsp;&nbsp;&nbsp;&nbsp;| " *abgidlist* ", " *ggid* "
 
@@ -901,7 +901,7 @@ Einstellungs\
 &nbsp;&nbsp;&nbsp;&nbsp;*Segid* - **Segment** ⟦ *segoptionlist* ⟧;;
 
 *Segmentregister* -\
-&nbsp;&nbsp;&nbsp;&nbsp;**CS** |  es | **es** | **FS** | **GS** | **SS**
+&nbsp;&nbsp;&nbsp;&nbsp;**CS** | **DS** es | **es** | **FS** | **GS** | **SS**
 
 *segoption*\
 &nbsp;&nbsp;&nbsp;&nbsp;*segalign*\
@@ -1071,4 +1071,3 @@ Einstellungs\
 
 *xmmregister* -\
 &nbsp;&nbsp;&nbsp;&nbsp;XMM0 | XMM1 | XMM2 | XMM3 | XMM4 | Xmm5 | XMM6 | Xmm7 | XMM8 | XMM9 | XMM10 | XMM11 | XMM12 | XMM13 | XMM14 | XMM15\
-

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -PROFILE linker option
 - /PROFILE linker option
 ms.assetid: e676baa1-5063-47a3-a357-ba0d1f0d1699
-ms.openlocfilehash: 678816ce455d2a982ff8218becd805a0b2cdd896
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: cf07154c6b681e2ad30a85a62a0db996c3f3d911
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416032"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078308"
 ---
 # <a name="profile-performance-tools-profiler"></a>/PROFILE (Leistungstools-Profiler)
 
@@ -24,7 +24,7 @@ Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden k
 /PROFILE
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 /Profile impliziert die folgenden Linkeroptionen:
 
@@ -64,7 +64,7 @@ Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden k
 
 1. Fügen Sie unten Code hinzu. Weitere Informationen finden Sie unter [cmake-Verweise](https://cmake.org/cmake/help/v3.0/command/set_target_properties.html) .
 
-1. Erstellen Sie die Projektmappe neu.
+1. Erstellen Sie Ihre Lösung neu.
 
 ```
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/PROFILE")
@@ -74,4 +74,3 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/PROFILE")
 
 [MSVC-Linkerreferenz](linking.md)<br/>
 [MSVC-Linkeroptionen](linker-options.md)
-

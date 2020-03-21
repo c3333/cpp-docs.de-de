@@ -2,12 +2,12 @@
 title: Deklarationen und DefinitionenC++()
 ms.date: 12/12/2019
 ms.assetid: 678f1424-e12f-45e0-a957-8169e5fef6cb
-ms.openlocfilehash: d52294b635e05f42a4c48620214a90cad609f575
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 7aa9e07a471ed5a32ecc8f13690f1a1bf08b655f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301547"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077208"
 ---
 # <a name="declarations-and-definitions-c"></a>Deklarationen und DefinitionenC++()
 
@@ -40,9 +40,9 @@ namespace N {
 }
 ```
 
-In Zeile 5 wird die `main`-Funktion deklariert. In Zeile 7 **wird eine Konstante** Variable mit dem Namen `pi` deklariert und *Initialisiert*. In Zeile 8 wird ein Integer-`i` deklariert und mit dem Wert initialisiert, der von der Funktion `f`erzeugt wird. Der Name `f` der für den Compiler aufgrund der *Vorwärts Deklaration* in Zeile 3 sichtbar ist. 
+In Zeile 5 wird die `main`-Funktion deklariert. In Zeile 7 **wird eine Konstante** Variable mit dem Namen `pi` deklariert und *Initialisiert*. In Zeile 8 wird ein Integer-`i` deklariert und mit dem Wert initialisiert, der von der Funktion `f`erzeugt wird. Der Name `f` der für den Compiler aufgrund der *Vorwärts Deklaration* in Zeile 3 sichtbar ist.
 
-In Zeile 9 wird eine Variable mit dem Namen `obj` vom Typ `C` deklariert. Diese Deklaration löst jedoch einen Fehler aus, da `C` bis zu einem späteren Zeitpunkt im Programm nicht deklariert wird und nicht vorwärts deklariert ist. Um den Fehler zu beheben, können Sie entweder die gesamte *Definition* des `C` vor `main` verschieben oder eine vorwärts Deklaration dafür hinzufügen. Dieses Verhalten unterscheidet sich von anderen Sprachen wie C#z. b., in denen Funktionen und Klassen vor dem Zeitpunkt der Deklaration in einer Quelldatei verwendet werden können. 
+In Zeile 9 wird eine Variable mit dem Namen `obj` vom Typ `C` deklariert. Diese Deklaration löst jedoch einen Fehler aus, da `C` bis zu einem späteren Zeitpunkt im Programm nicht deklariert wird und nicht vorwärts deklariert ist. Um den Fehler zu beheben, können Sie entweder die gesamte *Definition* des `C` vor `main` verschieben oder eine vorwärts Deklaration dafür hinzufügen. Dieses Verhalten unterscheidet sich von anderen Sprachen wie C#z. b., in denen Funktionen und Klassen vor dem Zeitpunkt der Deklaration in einer Quelldatei verwendet werden können.
 
 In Zeile 10 wird eine Variable mit dem Namen `str` vom Typ `std::string` deklariert. Der Name `std::string` ist sichtbar, da er in der `string` [Header Datei](header-files-cpp.md) eingeführt wird, die in Zeile 1 in der Quelldatei zusammengeführt wird. `std` ist der Namespace, in dem die `string` Klasse deklariert wird.
 
@@ -107,6 +107,6 @@ Ein C++ Programm kann mehr als eine [Kompilierungseinheit](header-files-cpp.md)e
 [decltype](decltype-cpp.md)<br/>
 [Attribute inC++](attributes.md)<br/>
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grundlegende Konzepte](../cpp/basic-concepts-cpp.md)<br/>

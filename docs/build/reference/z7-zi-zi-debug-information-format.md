@@ -23,74 +23,73 @@ helpviewer_keywords:
 - line numbers only compiler option [C++]
 - cl.exe compiler, debugging options
 - -Z7 compiler option [C++]
-ms.openlocfilehash: e809c7af7465cde98db11eac8628b76d04f7e8b5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: aeaf435874b6d6b9dbc8a3d12ec06d38bf33aaae
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62316287"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078265"
 ---
 # <a name="z7-zi-zi-debug-information-format"></a>/Z7, /Zi, /ZI (Debuginformationsformat)
 
-Gibt den Typ der Debuginformationen erstellt, die für Ihr Programm und ob diese Informationen als Objektdateien oder in einer Programmdatenbankdatei (PDB) gespeichert werden sollen.
+Gibt den Typ der Debuginformationen an, die für das Programm erstellt werden, und gibt an, ob diese Informationen in Objektdateien oder in einer Programm Datenbankdatei (PDB) gespeichert werden.
 
 ## <a name="syntax"></a>Syntax
 
-> **/Z**{**7**|**i**|**I**}
+> **"/Z**{**7**|**i**|**i**}
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bei der Code wird kompiliert und erstellt im Debugmodus ausgeführt, generiert der Compiler Symbolnamen für Funktionen und Variablen, Typinformationen und Line Number Speicherorte für die Verwendung durch den Debugger an. Diese symbolische Debuginformationen kann entweder in den Objektdateien (OBJ-Dateien), die vom Compiler erzeugten, oder klicken Sie in einer separaten PDB-Datei (PDB-Datei) für die ausführbare Datei enthalten sein.  Die Formatoptionen für Debug-Informationen werden in den folgenden Abschnitten beschrieben.
+Wenn Code kompiliert und im Debugmodus erstellt wird, erstellt der Compiler Symbolnamen für Funktionen und Variablen, Typinformationen und Positionen von Zeilennummern, die vom Debugger verwendet werden können. Diese symbolischen Debuginformationen können entweder in die Objektdateien (OBJ-Dateien) eingefügt werden, die vom Compiler erstellt wurden, oder in einer separaten PDB-Datei (PDB-Datei) für die ausführbare Datei.  Die Optionen für das Debuginformationsformat werden in den folgenden Abschnitten beschrieben.
 
-### <a name="none"></a>Keiner
+### <a name="none"></a>Keine
 
-Standardmäßig Wenn keine Debug Informationen Format-Option angegeben wird, generiert der Compiler keine Debuginformationen, damit die Kompilierung schneller ist.
+Wenn keine Debuginformationsformat-Option angegeben ist, erzeugt der Compiler standardmäßig keine Debuginformationen, sodass die Kompilierung schneller erfolgt.
 
 ### <a name="z7"></a>/Z7
 
-Die **"/ Z7"** Option erzeugt Objektdateien, die auch vollständige symbolische Debuginformationen für die Verwendung mit dem Debugger enthalten. Diese Objektdateien und die erstellte ausführbare Datei können wesentlich größer als Dateien sein, die keine Informationen zum Debuggen. Zu den symbolischen Debuginformationen gehören die Namen und Typen von Variablen sowie Funktionen und Zeilennummern. Es wird keine PDB-Datei generiert.
+Die Option **/Z7** erzeugt Objektdateien, die auch vollständige symbolische Debuginformationen für die Verwendung mit dem Debugger enthalten. Diese Objektdateien und die erstellter ausführbare Datei können wesentlich größer sein als Dateien, die keine Debuginformationen aufweisen. Zu den symbolischen Debuginformationen gehören die Namen und Typen von Variablen sowie Funktionen und Zeilennummern. Es wird keine PDB-Datei erstellt.
 
-Für die Verteiler von Debugversionen von Drittanbieter-Bibliotheken ist es ein Vorteil der ohne einer PDB-Datei. Die Objektdateien für alle vorkompilierten Header sind jedoch erforderlich, während der Linkphase Bibliothek sowie zum Debuggen. Wenn vorhanden ist, nur Typinformationen (und keinen Code) in der Objektdatei PCH geben, müssen Sie auch verwenden die [/Yl (PCH-Verweis für Debugbibliothek einfügen)](yl-inject-pch-reference-for-debug-library.md) Option, die standardmäßig aktiviert ist, wenn Sie die Bibliothek erstellen.
+Für Verteiler von Debugversionen von Drittanbieterbibliotheken gibt es einen Vorteil, dass keine PDB-Datei vorhanden ist. Allerdings sind die Objektdateien für vorkompilierte Header während der Bibliotheks Verknüpfungs Phase und zum Debuggen erforderlich. Wenn in der PCH-Objektdatei nur Typinformationen (und kein Code) vorhanden sind, müssen Sie auch die Option [/Yl (PCH-Verweis für Debugbibliothek einfügen)](yl-inject-pch-reference-for-debug-library.md) verwenden, die beim Erstellen der Bibliothek standardmäßig aktiviert ist.
 
-Die veraltete [/GM (minimale Neuerstellung aktivieren)](gm-enable-minimal-rebuild.md) Option ist nicht verfügbar, wenn **"/ Z7"** angegeben ist.
-
-### <a name="zi"></a>/ZI
-
-Die **"/ Zi"** Option generiert eine separate PDB-Datei, die alle den symbolischen Debuginformationen für die Verwendung mit dem Debugger enthält. Die Debuginformationen nicht in den Objektdateien enthalten ist, oder ausführbare Datei an, sodass sie wesentlich kleiner ist.
-
-Verwenden von **"/ Zi"** wirkt sich nicht auf die Optimierungen. Allerdings **"/ Zi"** impliziert **/debug**; finden Sie unter [/Debug (Debuginfo generieren)](debug-generate-debug-info.md) für Weitere Informationen.
-
-Wenn Sie beide angeben **"/ Zi"** und **"/ CLR"**, <xref:System.Diagnostics.DebuggableAttribute> Attribut wird nicht in den Metadaten der Assembly platziert. Wenn Sie es möchten, müssen Sie es im Quellcode angeben. Dieses Attribut kann Auswirkungen auf die Laufzeitleistung der Anwendung haben. Weitere Informationen zur Funktionsweise des **Debuggable** Attribut wirkt sich auf die Leistung und wie Sie die Auswirkungen auf die Leistung ändern können, finden Sie unter [Making an Image Easier to Debug](/dotnet/framework/debug-trace-profile/making-an-image-easier-to-debug).
-
-Der Compiler die PDB-Datei benannt *Projekt*PDB-Datei. Wenn Sie eine Datei außerhalb eines Projekts kompilieren, erstellt der Compiler eine PDB-Datei mit dem Namen VC*x*PDB-Datei, wobei *x* besteht aus einer Verkettung der Haupt-und Nebenversionsnummern Anzahl von der Compilerversion verwendet. Der Compiler bettet den Namen der PDB-Datei und eine identifizierende mit einem Zeitstempel-Signatur in einzelnen Objektdatei erstellt haben, verwenden diese Option, die den Debugger auf den Speicherort der Zeilennummer und symbolischen Informationen verweist. Name und Signatur in der PDB-Datei müssen die ausführbare Datei für die Symbole im Debugger geladen werden, übereinstimmen. Des WinDBG-Debuggers kann nicht übereinstimmende Symbole laden, indem Sie mit der `.symopt+0x40` Befehl. Visual Studio muss sich nicht auf eine ähnliche können nicht übereinstimmende Symbole laden aus.
-
-Wenn Sie eine Bibliothek von Objekten erstellen, die mit kompiliert wurden **"/ Zi"**, die zugehörige PDB-Datei muss verfügbar sein, wenn die Bibliothek mit einem Programm verknüpft ist. Also, wenn Sie die Bibliothek weitergeben, müssen Sie auch die PDB-Datei verteilen. Zum Erstellen einer Bibliothek, die Debuginformationen ohne Verwendung von PDB-Dateien enthält, Sie müssen auswählen, die **"/ Z7"** Option. Wenn Sie Optionen für vorkompilierte Header verwenden, wird die Debuginformationen für den vorkompilierten Header und den Rest des Quellcodes in der PDB-Datei eingefügt.
+Die Option veraltet [/GM (minimale Neuerstellung aktivieren)](gm-enable-minimal-rebuild.md) ist nicht verfügbar, wenn **/Z7** angegeben wird.
 
 ### <a name="zi"></a>/ZI
 
-Die **"/ Zi"** Option ist vergleichbar mit **"/ Zi"**, doch wird dadurch eine PDB-Datei in ein Format, unterstützt die [bearbeiten und Fortfahren](/visualstudio/debugger/edit-and-continue-visual-cpp) Feature. Zum Bearbeiten und fortfahren, Debuggen von Features zu verwenden, müssen Sie diese Option verwenden. Die Funktion bearbeiten und Fortfahren eignet sich für die Produktivität von Entwicklern, aber es kann zu Problemen im Code-Größe, Leistung und Compiler Conformance führen. Da die meisten Optimierungen nicht mit bearbeiten und Fortfahren kompatibel sind, mithilfe von **"/ Zi"** deaktiviert jede `#pragma optimize` -Anweisungen in Ihrem Code. Die **"/ Zi"** Option ist auch nicht mit Verwendung des der [ &#95; &#95;Zeile&#95; &#95; vordefiniertes Makro](../../preprocessor/predefined-macros.md); kompilierten Code mit **"/ Zi"** kannnichtverwendetwerden.**&#95; &#95;Zeile&#95; &#95;** als Nichttyp-Vorlagenargument, obwohl **&#95; &#95;Zeile&#95; &#95;** in makroerweiterungen verwendet werden kann.
+Die Option **/Zi** erzeugt eine separate PDB-Datei, die alle symbolischen Debuginformationen für die Verwendung mit dem Debugger enthält. Die Debuginformationen sind nicht in den Objektdateien oder der ausführbaren Datei enthalten, wodurch Sie wesentlich kleiner werden.
 
-Die **"/ Zi"** Option erzwingt, dass sowohl die [/Gy (Funktionslevel-Linking aktivieren)](gy-enable-function-level-linking.md) und [/FC (vollständiger Pfad der Quellcodedatei in Diagnose)](fc-full-path-of-source-code-file-in-diagnostics.md) Optionen, die bei der Kompilierung verwendet werden.
+Die Verwendung von **/Zi** wirkt sich nicht auf Optimierungen aus. **/Zi** impliziert jedoch **/Debug**; Weitere Informationen finden Sie unter [/Debug (Debuginformationen generieren)](debug-generate-debug-info.md) .
 
-**"/ Zi"** ist nicht kompatibel mit [/CLR (Common Language Runtime Compilation)](clr-common-language-runtime-compilation.md).
+Wenn Sie sowohl **/Zi** als auch **/CLR**angeben, wird das <xref:System.Diagnostics.DebuggableAttribute>-Attribut nicht in die Assemblymetadaten eingefügt. Wenn Sie dies wünschen, müssen Sie es im Quellcode angeben. Dieses Attribut kann Auswirkungen auf die Laufzeitleistung der Anwendung haben. Weitere Informationen dazu, wie sich das **Debugfähige** Attribut auf die Leistung auswirkt und wie Sie die Auswirkungen auf die Leistung ändern können, finden Sie unter Vereinfachen des Debuggens [eines Bilds](/dotnet/framework/debug-trace-profile/making-an-image-easier-to-debug).
+
+Der Compiler benennt die PDB-Datei *Project*. pdb. Wenn Sie eine Datei außerhalb eines Projekts kompilieren, erstellt der Compiler eine PDB-Datei mit dem Namen VC*x*. pdb, wobei *x* eine Verkettung der Haupt-und neben Versionsnummer der verwendeten Compilerversion ist. Der Compiler bettet den Namen der PDB und eine identifizierende Signatur mit Zeitstempel in jede Objektdatei ein, die mit dieser Option erstellt wurde, die den Debugger auf den Speicherort von symbolischen und Zeilennummern Informationen verweist. Der Name und die Signatur in der PDB-Datei müssen mit der ausführbaren Datei für die im Debugger zu ladenden Symbole identisch sein. Der WinDbg-Debugger kann nicht übereinstimmende Symbole mit dem `.symopt+0x40` Befehl laden. Visual Studio verfügt nicht über eine ähnliche Option zum Laden von nicht übereinstimmenden Symbolen.
+
+Wenn Sie eine Bibliothek aus Objekten erstellen, die mit **/Zi**kompiliert wurden, muss die zugehörige PDB-Datei verfügbar sein, wenn die Bibliothek mit einem Programm verknüpft ist. Wenn Sie die Bibliothek verteilen, müssen Sie daher auch die PDB-Datei verteilen. Wenn Sie eine Bibliothek erstellen möchten, die Debuginformationen enthält, ohne PDB-Dateien zu verwenden, müssen Sie die Option **/Z7** auswählen. Wenn Sie die Optionen für vorkompilierte Header verwenden, werden Debuginformationen sowohl für den vorkompilierten Header als auch den restlichen Quellcode in der PDB-Datei abgelegt.
+
+### <a name="zi"></a>/ZI
+
+Die **/Zi** -Option ähnelt **/Zi**, aber Sie erzeugt eine PDB-Datei in einem Format, das die Funktion " [Bearbeiten und Fortfahren](/visualstudio/debugger/edit-and-continue-visual-cpp) " unterstützt. Sie müssen diese Option verwenden, um Debuggingfeatures bearbeiten und Fortfahren verwenden zu können. Die Funktion "Bearbeiten und Fortfahren" ist für die Produktivität von Entwicklern nützlich, kann aber Probleme bei der Code Größe, Leistung und Compilerkonformität verursachen. Da die meisten Optimierungen nicht mit "Bearbeiten und Fortfahren" kompatibel sind, deaktiviert die Verwendung von **/Zi** alle `#pragma optimize` Anweisungen in Ihrem Code. Die **/Zi** -Option ist auch mit der Verwendung des [ &#95; &#95;vordefinierten&#95; &#95; Zeilen voreingestellten Makros](../../preprocessor/predefined-macros.md)nicht kompatibel. Code, der mit **/Zi** kompiliert wurde, kann keine  **&#95; &#95;&#95; Zeile** als Nichttyp-Vorlagen Argument verwenden, obwohl **&#95; &#95;line&#95;** in Makro Erweiterungen verwendet werden kann.
+
+Die Option **/Zi** erzwingt, dass die Optionen [/Gy (Aktivierung der Funktionsebene)](gy-enable-function-level-linking.md) und [/FC (vollständiger Pfad der Quell Code Datei in Diagnose)](fc-full-path-of-source-code-file-in-diagnostics.md) in der Kompilierung verwendet werden.
+
+**/Zi** ist nicht kompatibel mit [/CLR (Common Language Runtime-Kompilierung)](clr-common-language-runtime-compilation.md).
 
 > [!NOTE]
-> Die **"/ Zi"** Option ist nur in Compilern für X86 und X64-Prozessoren verfügbar; Diese Compileroption ist nicht in Compilern für ARM-Prozessoren verfügbar.
+> Die **/Zi** -Option ist nur in den Compilern verfügbar, die auf x86-und x64-Prozessoren abzielen. Diese Compileroption ist nicht in den Compilern verfügbar, die auf ARM-Prozessoren abzielen.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
-1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen finden Sie unter [Festlegen von C++-Compiler und die Build-Eigenschaften in Visual Studio](../working-with-project-properties.md).
+1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Öffnen der **Konfigurationseigenschaften** > **C/C++-** > **allgemeine** Eigenschaftenseite.
+1. Öffnen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **C++ C/**  > **Allgemein** .
 
-1. Ändern der **Debuginformationsformat** Eigenschaft. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Ändern Sie die Eigenschaft **Debuginformationsformat** . Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.DebugInformationFormat%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
-

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - user records, described
 - rowsets, user record
 ms.assetid: 9c0d2864-2738-4f62-a750-1016d9c3523f
-ms.openlocfilehash: d6920a73f107f226cc31cb27fd15178f6d2f1c26
-ms.sourcegitcommit: 00e26915924869cd7eb3c971a7d0604388abd316
-ms.translationtype: HT
+ms.openlocfilehash: 4a8fb6c9eeee3736501a04a095bdd763de16de7d
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65525265"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079002"
 ---
 # <a name="user-record"></a>Benutzerdatensatz
 
-> [!NOTE] 
+> [!NOTE]
 > Der ATL-OLE DB-Anbieter-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 Der Benutzerdatensatz stellt den Code und die Datenstruktur bereit, die die Spaltendaten für ein Rowset repräsentieren. Ein Benutzerdatensatz kann zum Zeitpunkt der Kompilierung oder zur Laufzeit erstellt werden. Wenn Sie einen Anbieter mit dem **ATL-OLE DB-Anbieter-Assistenten** erstellen, erstellt der Assistent einen Standardbenutzereintrag. Dieser sieht so aus (vorausgesetzt, Sie haben als Anbieternamen [Kurznamen] *MyProvider* angegeben):
@@ -43,7 +43,7 @@ Die OLE DB-Anbietervorlagen verarbeiten alle OLE DB-Aspekte für Interaktionen m
 
 ```cpp
 template <class T>
-static ATLCOLUMNINFO* GetColumnInfo(T* pThis, ULONG* pcCols) 
+static ATLCOLUMNINFO* GetColumnInfo(T* pThis, ULONG* pcCols)
 ```
 
 Dies entspricht:
@@ -69,6 +69,6 @@ Wenn ein Benutzerdatensatz zur Laufzeit erstellt wird, verwendet `GetColumnInfo`
 
 Ein ausführlicheres Beispiel zum Außerkraftsetzen von `GetColumnInfo` in einem Benutzerdatensatz finden Sie unter [Dynamisches Festlegen der an den Consumer zurückgegebenen Spalten](../../data/oledb/dynamically-determining-columns-returned-to-the-consumer.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

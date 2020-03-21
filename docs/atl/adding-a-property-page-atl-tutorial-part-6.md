@@ -3,16 +3,16 @@ title: Hinzufügen einer Eigenschaftenseite (ATL-Lernprogramm, Teil 6)
 ms.custom: get-started-article
 ms.date: 09/27/2018
 ms.assetid: df80d255-e7ea-49d9-b940-3f012e90cf9b
-ms.openlocfilehash: 2c487d1446f5d1050868f2066359e9639f474ba3
-ms.sourcegitcommit: 00e26915924869cd7eb3c971a7d0604388abd316
+ms.openlocfilehash: 467ae19c372e24b2d368002cb83367b7087136fd
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524686"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078767"
 ---
 # <a name="adding-a-property-page-atl-tutorial-part-6"></a>Hinzufügen einer Eigenschaftenseite (ATL-Lernprogramm, Teil 6)
 
-> [!NOTE] 
+> [!NOTE]
 > Der ATL-OLE DB-Anbieter-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 Eigenschaftenseiten werden als separate COM-Objekte implementiert, sodass sie bei Bedarf gemeinsam genutzt werden können. In diesem Schritt führen Sie die folgenden Aufgaben aus, um dem Steuerelement eine Eigenschaftenseite hinzuzufügen:
@@ -45,7 +45,7 @@ Um dem Steuerelement eine Eigenschaftenseite hinzuzufügen, verwenden Sie die Vo
 
 Die folgenden drei Dateien werden erstellt:
 
-|Datei|Beschreibung|
+|Datei|BESCHREIBUNG|
 |----------|-----------------|
 |PolyProp.h|Enthält die C++-Klasse `CPolyProp`, die die Eigenschaftenseite implementiert.|
 |PolyProp.cpp|Enthält die Datei „PolyProp.h“.|
@@ -71,13 +71,13 @@ Fügen Sie jetzt die Felder hinzu, die auf der Eigenschaftenseite angezeigt werd
 
 1. Erweitern Sie in der **Ressourcenansicht** den Knoten `Dialog`, und doppelklicken Sie auf `IDD_POLYPROP`. Beachten Sie, dass das angezeigte Dialogfeld leer ist, bis auf einen Text, der angibt, dass Sie hier Ihre Steuerelemente einfügen können.
 
-1. Wählen Sie diesen Text aus, und ändern Sie im Fenster **Eigenschaften** den Text für **Beschriftung** zu `Sides:`.
+1. Wählen Sie diesen Text aus, und ändern Sie im Fenster `Sides:`Eigenschaften**den Text für**Beschriftung**zu**.
 
 1. Passen Sie die Größe des Beschriftungsfelds an die Textgröße an.
 
 1. Ziehen Sie ein **Bearbeitungssteuerelement** aus der **Toolbox** rechts neben die Beschriftung.
 
-1. Als Letztes ändern Sie die **ID** des Bearbeitungssteuerelements im Fenster **Eigenschaften** zu `IDC_SIDES`.
+1. Als Letztes ändern Sie die **ID** des Bearbeitungssteuerelements im Fenster `IDC_SIDES`Eigenschaften**zu**.
 
 Damit ist der Prozess der Erstellung der Eigenschaftenseitenressource abgeschlossen.
 
@@ -149,6 +149,6 @@ Als Nächstes fügen Sie Ihr Steuerelement auf einer Webseite ein.
 
 [Zurück zu Schritt 5](../atl/adding-an-event-atl-tutorial-part-5.md) &#124; [Weiter zu Schritt 7](../atl/putting-the-control-on-a-web-page-atl-tutorial-part-7.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Tutorial](../atl/active-template-library-atl-tutorial.md)

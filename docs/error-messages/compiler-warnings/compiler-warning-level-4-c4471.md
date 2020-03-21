@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4471
 ms.assetid: ccfd8bd5-bc1b-4be7-a6ea-0e3a7add6607
-ms.openlocfilehash: 0345b730b8fc37329f632bb5d8486c67efd8e3b8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5d7ed7dc84c0ef61c7789deeb128b99977fa6028
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400785"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076942"
 ---
 # <a name="compiler-warning-level-4-c4471"></a>Compilerwarnung (Stufe 4) C4471
 
-"*Enumeration*': eine Vorwärtsdeklaration einer Enumeration ohne bereichseinschränkung müssen einen zugrunde liegenden Typ (Int wird angenommen)
+'*Enumeration*': für eine vorwärts Deklaration einer Enumeration ohne Bereichs Einschränkung ist ein zugrunde liegender Typ erforderlich (int wird angenommen).
 
-Eine Vorwärtsdeklaration einer Enumeration ohne bereichseinschränkung wurde ohne einen Bezeichner für den zugrunde liegenden Typ gefunden. Standardmäßig geht davon aus Visual C++ `int` der zugrunde liegenden Typ einer Enumeration ist. Dies kann Probleme verursachen, wenn Sie ein anderen Typ in der Enumerationsdefinition z. B. verwendet wird, wenn ein anderer expliziter Typ angegeben ist, oder ein anderen Typ implizit durch einen Initialisierer festgelegt ist. Möglicherweise müssen Sie auch die Portabilitätsprobleme; Nehmen Sie nicht anderen Compilern an `int` ist der zugrunde liegenden Typ einer Enumeration.
+Eine vorwärts Deklaration einer Enumeration ohne Bereichs Einschränkung wurde ohne einen Spezifizierer für den zugrunde liegenden Typ gefunden. Standardmäßig geht Visual C++ davon aus, dass `int` der zugrunde liegende Typ für eine Enumeration ist. Dies kann zu Problemen führen, wenn ein anderer Typ in der Enumerationsdefinition verwendet wird, z. b. Wenn ein anderer expliziter Typ angegeben ist oder wenn ein anderer Typ implizit durch einen Initialisierer festgelegt wird. Möglicherweise haben Sie auch Portabilitäts Probleme. andere Compiler nehmen nicht an `int` der zugrunde liegende Typ einer Enumeration ist.
 
-Diese Warnung ist standardmäßig deaktiviert; Verwenden Sie "/ Wall" oder/w*N*4471 zum in der Befehlszeile aktivieren, oder verwenden Sie #pragma [Warnung](../../preprocessor/warning.md) in der Quelldatei.
+Diese Warnung ist standardmäßig deaktiviert. Sie können/Wall oder/w*N*4471 verwenden, um es in der Befehlszeile zu aktivieren, oder Sie verwenden #Pragma [Warnung](../../preprocessor/warning.md) in der Quelldatei.
 
-Diese Warnung ist in einigen Fällen sichergestellt. Wenn Sie eine Vorwärtsdeklaration für eine Enumeration nach der Definition angezeigt wird, kann diese Warnung ausgelöst werden. Beispielsweise ist dieser Code gültig ist, obwohl sie C4471 führen kann:
+In einigen Fällen ist diese Warnung falsch. Wenn eine vorwärts Deklaration für eine Enumeration nach der Definition angezeigt wird, kann diese Warnung ausgelöst werden. Beispielsweise ist dieser Code gültig, obwohl er C4471 verursachen kann:
 
 ```cpp
 // C4471a.cpp
@@ -33,7 +33,7 @@ enum Example;    // Spurious C4471
 
 ## <a name="example"></a>Beispiel
 
-Im Allgemeinen ist es sicher ist, verwenden die vollständige Definition für eine Enumeration ohne bereichseinschränkung anstelle einer Vorwärtsdeklaration. Sie können die Definition in einer Headerdatei einfügen und fügen Sie es in den Quelldateien, die darauf verweisen. Dies funktioniert in Code geschrieben wurde, für die C ++ 98 und höher. Es wird empfohlen, diese Lösung für Portabilität und einfache Wartung.
+Im Allgemeinen ist es sicher, die vollständige Definition für eine Enumeration ohne Bereichs Einschränkung anstelle einer vorwärts Deklaration zu verwenden. Sie können die Definition in eine Header Datei einfügen und in Quelldateien einschließen, die darauf verweisen. Dies funktioniert in Code, der für c++ 98 und höher geschrieben wurde. Wir empfehlen diese Lösung für die Portabilität und einfache Wartung.
 
 ```cpp
 // C4471b.cpp
@@ -46,7 +46,7 @@ enum Example;    // C4471
 
 ## <a name="example"></a>Beispiel
 
-In C ++ 11 können Sie einen expliziten Typ und die Vorwärtsdeklaration einer Enumeration ohne bereichseinschränkung hinzufügen. Diese Lösung wird empfohlen, nur dann, wenn complex-Header-Aufnahme-Logik verhindert, dass die Verwendung der Definition anstelle einer Vorwärtsdeklaration. Diese Lösung kann zu einem Wartungsproblem führen: Wenn Sie den zugrunde liegenden Typ, der für die Enumerationsdefinition verwendet, müssen Sie auch alle forward Deklarationen entsprechend ändern oder automatische Fehler in Ihrem Code enthalten. Sie können die Vorwärtsdeklaration einfügen, in eine Headerdatei, um dieses Problem zu minimieren.
+In c++ 11 können Sie einer Enumeration ohne Bereichs Einschränkung und ihrer vorwärts Deklaration einen expliziten Typ hinzufügen. Diese Lösung wird nur dann empfohlen, wenn eine komplexe Header-Inklusions Logik die Verwendung der Definition anstelle einer vorwärts Deklaration verhindert. Diese Lösung kann zu einem Wartungsproblem führen: Wenn Sie den zugrunde liegenden Typ ändern, der für die Enumerationsdefinition verwendet wird, müssen Sie auch alle vorwärts Deklarationen entsprechend ändern, oder Sie können in Ihrem Code zu stillen Fehlern führen. Sie können die vorwärts Deklaration in eine Header Datei einfügen, um dieses Problem zu minimieren.
 
 ```cpp
 // C4471c.cpp
@@ -66,11 +66,11 @@ enum Example : unsigned { item = 0x80000000 }; // explicit type
 // ...
 ```
 
-Wenn Sie einen expliziten Typ für eine Enumeration angeben, sollten Sie die Warnung auch aktivieren [C4369](compiler-warning-level-1-C4369.md), das ist standardmäßig aktiviert. Situationen, in denen ein Enumerationselement erforderlich, einen anderen Typ als dem explizit angegebenen Typ sind, identifiziert.
+Wenn Sie einen expliziten Typ für eine Enumeration angeben, empfiehlt es sich, auch die Warnung [C4369](compiler-warning-level-1-C4369.md)zu aktivieren, die standardmäßig aktiviert ist. Dies identifiziert Fälle, in denen ein Enumerationselement einen anderen Typ als den explizit angegebenen Typ erfordert.
 
 ## <a name="example"></a>Beispiel
 
-Sie können Ihren Code, um einer bereichsbezogenen Enumeration ist ein Feature zu verwenden, die neu in C ++ 11 ist ändern. Sowohl die Definition als auch alle Clientcode, der den Enumerationstyp verwendet müssen geändert werden, um eine Bereichsbezogene Enumeration verwenden. Es wird empfohlen, dass Sie eine Bereichsbezogene Enumeration verwenden, wenn Sie Probleme mit Namespacekonflikte, haben wie die Namen der definierten Enumerationselemente auf den Bereich der Enumeration beschränkt sind. Ein weiteres Feature von einer bereichsbezogenen Enumeration ist, dass der Member in einen anderen Typ für einen Ganzzahl- oder -Enumeration, die möglicherweise eine Quelle für schwer erkennbare Fehler entstehen, implizit konvertiert werden können.
+Sie können den Code so ändern, dass er eine Bereichs bezogene Enum verwendet, eine neue Funktion in c++ 11. Sowohl die Definition als auch jeder Client Code, der den Enumerationstyp verwendet, muss so geändert werden, dass eine Bereichs bezogene Enumeration verwendet wird. Es wird empfohlen, eine Bereichs bezogene Enumeration zu verwenden, wenn Probleme mit der Namespace-Verunreinigung auftreten, da die Namen definierter Enumerationselemente auf den Gültigkeitsbereich der Enumeration beschränkt sind. Ein weiteres Feature einer Bereichs bezogenen Enumeration ist, dass seine Member nicht implizit in einen anderen integralen oder Enumerationstyp konvertiert werden können. Dies kann eine Quelle von geringfügigen Fehlern sein.
 
 ```cpp
 // C4471e.cpp
@@ -89,4 +89,3 @@ enum Example;    // C4471
 enum class Example { item = 0 };
 // ...
 ```
-

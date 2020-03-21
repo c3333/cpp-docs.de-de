@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Build system changes, $(Inherit)
 - Build system changes, $(NoInherit)
 ms.assetid: e564d95f-a6cc-4d97-b57e-1a71daf66f4a
-ms.openlocfilehash: afa9324d6074db72fd065cfa07c16349f86a615c
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: ce3eb9e51a103aa54b74c7b5b4f775eb402269f1
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626604"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076951"
 ---
 # <a name="vcbuild-vs-msbuild-build-system-changes-in-visual-studio-2010"></a>VCBuild im Vergleich zu MSBuild: buildsystemänderungen in Visual Studio 2010
 
@@ -63,7 +63,7 @@ Wenn **Projektmappen-Explorer** zum Hinzufügen einer Datei zu einem Projekt ver
 
 ## <a name="vc-directories-settings"></a>Einstellungen für VC + +-Verzeichnisse
 
-Die Einstellungen von Visual C++-Verzeichnissen werden auf der [Eigenschaftenseite für VC++-Verzeichnisse](../ide/vcpp-directories-property-page.md) festgelegt. In Visual Studio 2008 und früheren Versionen werden Verzeichnisse pro Benutzer angewendet, und die Liste der ausgeschlossenen Verzeichnisse wird in der Datei " *SYSINCL. dat* " angegeben. 
+Die Einstellungen von Visual C++-Verzeichnissen werden auf der [Eigenschaftenseite für VC++-Verzeichnisse](../ide/vcpp-directories-property-page.md) festgelegt. In Visual Studio 2008 und früheren Versionen werden Verzeichnisse pro Benutzer angewendet, und die Liste der ausgeschlossenen Verzeichnisse wird in der Datei " *SYSINCL. dat* " angegeben.
 
 Sie können die VC++-Verzeichniseinstellungen nicht ändern, wenn Sie [devenv /resetsettings](/visualstudio/ide/reference/resetsettings-devenv-exe) in der Befehlszeile ausführen. Außerdem können Sie die Einstellungen nicht ändern, indem Sie das Menü **Extras** öffnen, auf **Einstellungen importieren/exportieren** klicken und dann die Option **Alle Einstellungen zurücksetzen** auswählen.
 
@@ -71,8 +71,8 @@ So migrieren Sie die Einstellungen für VC + +-Verzeichnisse aus einer *VSSETTIN
 
 1. Öffnen Sie **das Menü** Extras, und klicken Sie auf **Einstellungen importieren und exportieren** .
 2. **Ausgewählte Umgebungseinstellungen importieren**
-3. Befolgen Sie die Anweisungen im Assistenten.
+3. Folgen Sie den Anweisungen im Assistenten.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSBuild on the Command Line – C++ (C++: MSBuild in der Befehlszeile)](../build/msbuild-visual-cpp.md)

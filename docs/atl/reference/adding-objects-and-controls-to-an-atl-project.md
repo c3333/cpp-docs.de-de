@@ -11,16 +11,16 @@ helpviewer_keywords:
 - objects [C++], adding to ATL projects
 - ATL Control Wizard
 ms.assetid: c0adcbd0-07fe-4c55-a8fd-8c2c65ecdaad
-ms.openlocfilehash: deaac8f2d6aac02d0cd751e6abebb3b67051200f
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 415432eb2f5e0bc8f58fc84edaf8409ee8792f27
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65706849"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075312"
 ---
 # <a name="adding-objects-and-controls-to-an-atl-project"></a>Hinzufügen von Objekten und Steuerelementen zu einem ATL-Projekt
 
-> [!NOTE] 
+> [!NOTE]
 > Der ATL COM+ 1.0 Komponenten-Assistent, der ATL-OLE DB-Consumer-Assistent und der ATL-Assistent für Active Server Page-Komponenten sind in Visual Studio 2019 und höher nicht verfügbar.
 
 Sie können einen der ATL-Code-Assistenten verwenden, um Objekte oder Steuerelemente zu ATL. oder MFC-basierten Projekten hinzuzufügen. Für jedes COM-Objekt oder -Steuerelement, das Sie hinzufügen, generiert der Assistent CPP- und .h-Dateien sowie eine RGS-Datei für skriptbasierte Registrierungsunterstützung. Die folgenden ATL-Code-Assistenten sind in Visual Studio verfügbar:
@@ -47,7 +47,7 @@ Sie können einen der ATL-Code-Assistenten verwenden, um Objekte oder Steuerelem
 
    Wenn Sie versuchen, ein ATL-Objekt zu Ihrem MFC-Projekt hinzuzufügen, ohne vorher ATL-Unterstützung hinzugefügt zu haben, werden Sie alternativ von Visual Studio aufgefordert anzugeben, ob ATL-Unterstützung zu Ihrem Projekt hinzugefügt werden soll. Klicken Sie auf **Ja**, um ATL-Unterstützung zum Projekt hinzuzufügen und den ausgewählten ATL-Assistenten zu öffnen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATL-Projekt-Assistent](../../atl/reference/atl-project-wizard.md)<br/>
 [C++-Projektvorlagen](../../build/reference/visual-cpp-project-types.md)<br/>

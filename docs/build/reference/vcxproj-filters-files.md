@@ -5,12 +5,12 @@ description: Verwenden von Filter Dateien in Visual C++ Studio-Projekten zum Def
 helpviewer_keywords:
 - vcxproj.filters
 - filters file [C++]
-ms.openlocfilehash: ee44bf3d1cbe06d6c007ed8976ec384a456efca5
-ms.sourcegitcommit: 1e6386be9084f70def7b3b8b4bab319a117102b2
+ms.openlocfilehash: bdf40708a70d841cb3d3144fa8fa73a71e9e9ef2
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686923"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078276"
 ---
 # <a name="vcxprojfilters-files"></a>Vcxproj. Filters-Dateien
 
@@ -26,7 +26,7 @@ Diese Datei wird von Visual Studio automatisch erstellt. Bei Desktop Anwendungen
 
 Das folgende Beispiel zeigt die Filterdatei für das Beispiel, das zuvor gezeigt wurde. Sie verfügt über eine flache Hierarchie. Das heißt, es gibt keine logischen logischen Ordner. Der `UniqueIdentifier` -Knoten ist optional. Es ermöglicht Visual Studio-Automatisierungs Schnittstellen, den Filter zu suchen. `Extensions` ist ebenfalls optional. Wenn einem Projekt eine neue Datei hinzugefügt wird, wird Sie dem obersten Filter mit einer übereinstimmenden Dateierweiterung hinzugefügt. Um einem bestimmten Filter eine Datei hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Filter, und wählen Sie **Neues Element hinzufügen**aus.
 
-Der `ItemGroup`, der die `ClInclude` Knoten enthält, wird beim ersten Start des Projekts erstellt. Wenn Sie Ihre eigenen vcxproj-Dateien erstellen, stellen Sie sicher, dass alle Projekt Elemente auch über einen Eintrag in der Filterdatei verfügen. Werte in einem `ClInclude` Knoten überschreiben die Standard Filterung auf der Grundlage von Dateierweiterungen. Wenn Sie Visual Studio verwenden, um dem Projekt ein neues Element hinzuzufügen, fügt die IDE einen einzelnen Datei Eintrag in der Filterdatei hinzu. Der Filter wird nicht automatisch neu zugewiesen, wenn Sie die Dateierweiterung ändern. 
+Der `ItemGroup`, der die `ClInclude` Knoten enthält, wird beim ersten Start des Projekts erstellt. Wenn Sie Ihre eigenen vcxproj-Dateien erstellen, stellen Sie sicher, dass alle Projekt Elemente auch über einen Eintrag in der Filterdatei verfügen. Werte in einem `ClInclude` Knoten überschreiben die Standard Filterung auf der Grundlage von Dateierweiterungen. Wenn Sie Visual Studio verwenden, um dem Projekt ein neues Element hinzuzufügen, fügt die IDE einen einzelnen Datei Eintrag in der Filterdatei hinzu. Der Filter wird nicht automatisch neu zugewiesen, wenn Sie die Dateierweiterung ändern.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,4 +107,3 @@ Um geclusterte logische Ordner zu erstellen, deklarieren Sie alle Knoten in Filt
     </Filter>
   </ItemGroup>
 ```
-

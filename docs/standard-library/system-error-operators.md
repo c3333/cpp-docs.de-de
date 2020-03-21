@@ -5,16 +5,16 @@ f1_keywords:
 - system_error/std::operator!=
 - system_error/std::operator==
 ms.assetid: c14edefb-bd8a-4e90-88d3-c59c98e6f73c
-ms.openlocfilehash: 5cf6a455beb5654ef65f7411db4783a32c71d625
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 8631cae146a311f1890583900b564471d5a80958
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426174"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076261"
 ---
 # <a name="ltsystem_errorgt-operators"></a>&lt;system_error&gt;-Operatoren
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
 
 Testet, ob das Objekt links vom Operator gleich dem Objekt rechts vom Operator ist.
 
@@ -41,11 +41,11 @@ Das Objekt, das auf Gleichheit getestet werden soll.
 
 **TRUE**, wenn die Objekte gleich sind; **FALSE**, wenn die Objekte nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt `left.category() == right.category() && left.value() == right.value()`zurück.
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a>Operator! =
 
 Testet, ob das Objekt links vom Operator ungleich dem Objekt rechts vom Operator ist.
 
@@ -68,11 +68,11 @@ Das Objekt, das auf Ungleichheit geprüft werden soll.
 
 **true** , wenn das von *Links* übergebenen-Objekt nicht gleich dem-Objekt ist, das *Rechts*übergangen ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt `!(left == right)`zurück.
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>-Operator&lt;
 
 Testet, ob ein Objekt kleiner ist als das Objekt, das für den Vergleich übergeben wurde.
 
@@ -112,13 +112,13 @@ Das Objekt, das verglichen werden soll.
 
 **true** , wenn das *Links* übergebenen Objekt kleiner ist als das Objekt, das in der *rechten*Ecke übergangen ist. Andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit dieser Funktion wird die Fehlerreihenfolge getestet.
 
-## <a name="op_ostream"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_ostream"></a>Operator&lt;&lt;
 
 ```cpp
-template <class charT, class traits> 
+template <class charT, class traits>
     basic_ostream<charT, traits>& operator<<(basic_ostream<charT, traits>& os, const error_code& ec);
 ```

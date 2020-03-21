@@ -12,12 +12,12 @@ helpviewer_keywords:
 - GetProperties method
 - SetProperties method
 ms.assetid: ca0ba254-c7dc-4c52-abec-cf895a0c6a63
-ms.openlocfilehash: 50052e13371482fa0a8b6d66ef666b9801837501
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: c1a3539ea4ea705ad8bd1e40acda965ef66e2051
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545702"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077714"
 ---
 # <a name="isessionpropertiesimpl-class"></a>ISessionPropertiesImpl-Klasse
 
@@ -28,7 +28,7 @@ Stellt eine Implementierung der [ISessionProperties](/previous-versions/windows/
 ```cpp
 template <class T, class PropClass = T>
 class ATL_NO_VTABLE ISessionPropertiesImpl :
-   public ISessionProperties, 
+   public ISessionProperties,
    public CUtlProps<PropClass>
 ```
 
@@ -40,11 +40,11 @@ Die von `ISessionPropertiesImpl`abgeleitete Klasse.
 *Propclass*<br/>
 Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig um *T*handelt.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
@@ -53,7 +53,7 @@ Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig 
 |[GetProperties](#getproperties)|Gibt die Liste der Eigenschaften in der Sitzungs Eigenschaften Gruppe zurück, die derzeit für die Sitzung festgelegt sind.|
 |[SetProperties](#setproperties)|Legt Eigenschaften in der Sitzungs Eigenschaften Gruppe fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine erforderliche Schnittstelle für Sitzungen. Diese Klasse implementiert Sitzungs Eigenschaften durch Aufrufen einer statischen Funktion, die durch die [Eigenschaften Satz](../../data/oledb/begin-propset-map.md)Zuordnung definiert ist. Die Eigenschaften Satz Zuordnung sollte in ihrer Sitzungs Klasse angegeben werden.
 
@@ -89,7 +89,7 @@ STDMETHOD(SetProperties)(ULONG cPropertySets,
 
 Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [ISessionProperties:: SetProperties](/previous-versions/windows/desktop/ms714405(v=vs.85)) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

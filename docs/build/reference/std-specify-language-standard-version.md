@@ -6,12 +6,12 @@ f1_keywords:
 - -std
 - VC.Project.VCCLCompilerTool.CppLanguageStandard
 ms.assetid: 0acb74ba-1aa8-4c05-b96c-682988dc19bd
-ms.openlocfilehash: 4583bef3ef3033b6ba493ccac1c4fc5360c70e35
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 52aa99cf5bdf7ddcf83a8423b946a03d2ca95d2d
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73624889"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079264"
 ---
 # <a name="std-specify-language-standard-version"></a>/std (Standardversion für die Sprache festlegen)
 
@@ -21,21 +21,21 @@ Aktivieren Sie unterstützte Features der Programmiersprache C++ aus der angegeb
 
 > /std:\[c++14\|c++17\|c++latest]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Option **/std** ist in Visual Studio 2017 und höher verfügbar. Sie wird zum Steuern der versionsspezifischen Features gemäß dem ISO C++-Programmiersprachenstandard verwendet, die während der Kompilierung Ihres Codes aktiviert sind. Diese Option ermöglicht Ihnen, die Unterstützung für bestimmte neue Sprach- und Bibliotheksfeatures zu deaktivieren, die Ihren vorhandenen Code stören können, der mit einer bestimmten Version des Sprachstandards kompatibel ist. Standardmäßig ist **/std:c++14** angegeben, womit Features von Sprache und Standardbibliotheken deaktiviert sind, die sich in späteren Versionen des C++-Sprachstandards finden. Verwenden Sie **/std:c++17**, um die spezifischen Features und das Verhalten gemäß dem C++17-Standard zu aktivieren. Um explizit die aktuell implementierten Features von Compiler und Standardbibliotheken zu aktivieren, die für den nächsten Entwurf des Standards vorgeschlagen sind, verwenden Sie **/std:c++latest**. Alle c++ 20 Features erfordern **/Std: C + + Latest**; Wenn die Implementierung beendet ist, wird eine neue Option **/Std: c++ 20** aktiviert.
 
 Die Standardoption **/std:c++14** aktiviert den Satz der C++14-Features, die vom MSVC-Compiler implementiert werden. Diese Option deaktiviert Compiler- und Standardbibliotheksunterstützung für Features, die in aktuelleren Versionen des Sprachstandards geändert oder neu sind, mit Ausnahme einiger C++17-Features, die bereits in früheren Releases des MSVC-Compilers implementiert waren. Um Breaking Changes für Benutzer zu vermeiden, die bereits Abhängigkeiten mit den in Visual Studio 2015 Update 2 verfügbaren Features implementiert haben, bleiben diese Features aktiviert, wenn die Option **/std:c++14** angegeben wird:
 
-- [Regeln für „auto“ mit „braced-init-lists“](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3922.html)
+- [Regeln für „auto“ mit „braced-init-lists“](https://wg21.link/n3922)
 
-- [typename in Vorlagen-Vorlagenparameter](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4051.html)
+- [typename in Vorlagen-Vorlagenparameter](https://wg21.link/n4051)
 
-- [Entfernen von Trigraphen](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4086.html)
+- [Entfernen von Trigraphen](https://wg21.link/n4086)
 
-- [Attribute für Namespaces und Enumeratoren](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4266.html)
+- [Attribute für Namespaces und Enumeratoren](https://wg21.link/n4266)
 
-- [u8-Zeichenliterale](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4267.html)
+- [u8-Zeichenliterale](https://wg21.link/n4267)
 
 Weitere Informationen dazu, welche c++ 14-und c++ 17-Features aktiviert sind, wenn **/Std: c++ 14** angegeben wird, finden Sie in den Hinweisen in der [Microsoft C++ -sprach Konformitäts Tabelle](../../overview/visual-cpp-language-conformance.md).
 
@@ -44,7 +44,7 @@ Die Option **/std:c++17** aktiviert den vollständigen Satz der C++17-Features, 
 Die Option **/std:c++latest** aktiviert die Sprach- und Bibliotheksfeatures nach C++17, die aktuell im Compiler und den Bibliotheken aktiviert sind. Dies schließt möglicherweise Features aus dem C++20-Arbeitsentwurf und Fehleraktualisierungen des C++-Standards, die nicht in C++17 enthalten sind, ebenso wie experimentelle Vorschläge für den Entwurfsstandard ein. Eine Liste der unterstützten Sprach- und Bibliotheksfeatures finden Sie unter [Neuerungen bei Visual C++](../../overview/what-s-new-for-visual-cpp-in-visual-studio.md). Die Option **/std:c++latest** aktiviert keine Features, die der Kontrolle durch den Schalter **/experimental** unterstehen, müssen diese aber möglicherweise aktivieren.
 
 > [!IMPORTANT]
-> Die Compiler- und Bibliotheksfeatures, die durch **/std:c++latest** aktiviert werden, stellen Features dar, die möglicherweise in einem zukünftigen C++-Standard vorkommen, jedoch auch C++20-Features, die bereits genehmigt sind. Features, die nicht genehmigt wurden, unterliegen Breaking Changes oder der Entfernung ohne Benachrichtigung und werden „wie besehen“ zur Verfügung gestellt. 
+> Die Compiler- und Bibliotheksfeatures, die durch **/std:c++latest** aktiviert werden, stellen Features dar, die möglicherweise in einem zukünftigen C++-Standard vorkommen, jedoch auch C++20-Features, die bereits genehmigt sind. Features, die nicht genehmigt wurden, unterliegen Breaking Changes oder der Entfernung ohne Benachrichtigung und werden „wie besehen“ zur Verfügung gestellt.
 
 Die während einer C++-Kompilierung wirksame **/std**-Option kann mithilfe des Präprozessormakros [\_MSVC\_LANG](../../preprocessor/predefined-macros.md) bestimmt werden. Weitere Informationen finden Sie unter [Präprozessormakros](../../preprocessor/predefined-macros.md).
 
@@ -61,7 +61,7 @@ Die Optionen **/std:c++14** und **/std:c++latest** stehen von Visual Studio 2015
 
 1. Wählen Sie unter **C++-Sprachstandard** in der Dropdownliste den zu unterstützenden Sprachstandard und dann **OK** oder **Übernehmen** aus, um Ihre Änderungen zu speichern.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)

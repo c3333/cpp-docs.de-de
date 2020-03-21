@@ -33,12 +33,12 @@ helpviewer_keywords:
 - m_strCommandText
 - m_strIndexText
 ms.assetid: e97614b3-b11d-4806-a0d3-b9401331473f
-ms.openlocfilehash: 9c2e5923fe35287a7586cd4b52bc60e4a5b27b2d
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 956648babf987d156cac753f8373518a83362013
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545570"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079674"
 ---
 # <a name="crowsetimpl-class"></a>CRowsetImpl-Klasse
 
@@ -55,7 +55,7 @@ template <
    class RowClass = CSimpleRow,
    class RowsetInterface = IRowsetImpl <T, IRowset>
 >
-class CRowsetImpl : 
+class CRowsetImpl :
    public CComObjectRootEx<CreatorClass::_ThreadModel>,
    public CRowsetBaseImpl<T, Storage, ArrayType, RowsetInterface>,
    public IRowsetInfoImpl<T, CreatorClass::_PropClass>
@@ -75,11 +75,11 @@ Die Klasse, die Eigenschaften für das Rowset enthält. in der Regel der Befehl.
 *ArrayType*<br/>
 Die Klasse, die als Speicher für die Daten des Rowsets fungiert. Dieser Parameter ist standardmäßig `CAtlArray`, kann jedoch jede Klasse sein, die die erforderliche Funktionalität unterstützt.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -104,7 +104,7 @@ Die Klasse, die als Speicher für die Daten des Rowsets fungiert. Dieser Paramet
 |[m_strCommandText](#strcommandtext)|Enthält den anfänglichen Befehl des Rowsets.|
 |[m_strIndexText](#strindextext)|Enthält den Anfangs Index des Rowsets.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `CRowsetImpl` stellt über Schreibungen in Form von statischen Upcasts bereit. Die Methoden steuern die Art und Weise, in der ein bestimmtes Rowset Befehls Text überprüft. Sie können eine eigene Klasse im `CRowsetImpl`Stil erstellen, indem Sie Ihre Implementierungs Schnittstellen mehrfach geerbt machen. Die einzige Methode, für die Sie die Implementierung bereitstellen müssen, ist `Execute`. Je nachdem, welche Art von Rowset Sie erstellen, erwarten die Ersteller-Methoden für `Execute`unterschiedliche Signaturen. Wenn Sie z. b. eine `CRowsetImpl`abgeleitete Klasse zum Implementieren eines Schemarowsets verwenden, hat die `Execute`-Methode die folgende Signatur:
 
@@ -143,7 +143,7 @@ in **true** , wenn ein Index `DBID`; **false** , wenn eine Tabelle `DBID`.
 
 Ein HRESULT-Standard. Abhängig davon, ob es sich bei der `DBID` um eine Tabelle oder einen Index handelt (wird durch *bindex*bezeichnet), gibt die Methode entweder DB_E_NOINDEX oder DB_E_NOTABLE zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode wird von den `CRowsetImpl`-Implementierungen von [ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md) und [getcommandfromid](../../data/oledb/crowsetimpl-getcommandfromid.md)aufgerufen.
 
@@ -170,7 +170,7 @@ in Ein Zeiger auf die `DBID`, die die Index-ID darstellt.
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `SetCommentText`-Methode wird von `CreateRowset`aufgerufen, einer statischen Vorlagen basierten Methode von `IOpenRowsetImpl`.
 
@@ -199,7 +199,7 @@ in Ein Zeiger (Ausgabe) auf die Anzahl der zurückgegebenen Spalten.
 
 Ein Zeiger auf eine statische `ATLCOLUMNINFO`-Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode ist eine erweiterte außer Kraft Setzung.
 
@@ -232,7 +232,7 @@ in Ein Zeiger auf die `DBID`, die die Index-ID darstellt.
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode wird durch einen statischen umgewandelt aufgerufen, indem `CRowsetImpl`, um die Datenmember [m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) und [m_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)aufzufüllen. Standardmäßig prüft diese Methode, ob einer oder beide Parameter Zeichen folgen Werte enthalten. Wenn Sie Zeichen folgen Werte enthalten, kopiert diese Methode die Zeichen folgen Werte in die Datenmember. Indem Sie eine Methode mit dieser Signatur in der von `CRowsetImpl`abgeleiteten Klasse platzieren, wird die-Methode anstelle der Basis Implementierung aufgerufen.
 
@@ -259,7 +259,7 @@ in Ein Zeiger auf die `DBID`, die die Index-ID darstellt.
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode wird durch einen statischen umgewandelt aufgerufen, indem `CRowsetImpl`, um ihre Datenmember [m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) und [m_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)aufzufüllen. Standardmäßig prüft diese Methode, ob eine oder beide `DBID`s Zeichen folgen Werte enthalten. wenn dies der Fall ist, werden Sie in die Datenmember kopiert. Indem Sie eine Methode mit dieser Signatur in der von `CRowsetImpl`abgeleiteten Klasse platzieren, wird die-Methode anstelle der Basis Implementierung aufgerufen.
 
@@ -273,7 +273,7 @@ Standardmäßig wird eine `CAtlArray`, die auf dem Vorlagen Argument des Benutze
 ArrayType CRowsetBaseImpl::m_rgRowData;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 *ArrayType* ist ein Vorlagen Parameter, der `CRowsetImpl`wird.
 

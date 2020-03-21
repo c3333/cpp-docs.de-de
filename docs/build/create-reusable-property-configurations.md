@@ -3,16 +3,16 @@ title: Freigeben oder wieder verwenden von Visual Studio-Projekteinstellungen-C+
 ms.date: 07/17/2019
 helpviewer_keywords:
 - project properties [C++], reusable
-ms.openlocfilehash: 49a0153edc5678777c937423ba2bdbd2d92a6a35
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: 451e22997f81753abf0c8d55d3b9e8d097cc6d5d
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303216"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80078702"
 ---
 # <a name="share-or-reuse-visual-studio-project-settings"></a>Freigeben oder Wiederverwenden von Visual Studio-Projekteinstellungen
 
-Um eine benutzerdefinierte Gruppe von Einstellungen zu erstellen, die Sie für andere Benutzer freigeben oder in mehreren Projekten wieder verwenden können, verwenden Sie **Eigenschaften-Manager** , um ein *Eigenschaften Blatt* (.-Eigenschaften Datei) zu erstellen, um die Einstellungen für jede Art von Projekt zu speichern, die Sie wieder verwenden oder für andere Benutzer freigeben möchten. Die Verwendung von Eigenschaften Blättern ist weitaus weniger fehleranfällig als andere Möglichkeiten zum Erstellen von "globalen" Einstellungen. 
+Um eine benutzerdefinierte Gruppe von Einstellungen zu erstellen, die Sie für andere Benutzer freigeben oder in mehreren Projekten wieder verwenden können, verwenden Sie **Eigenschaften-Manager** , um ein *Eigenschaften Blatt* (.-Eigenschaften Datei) zu erstellen, um die Einstellungen für jede Art von Projekt zu speichern, die Sie wieder verwenden oder für andere Benutzer freigeben möchten. Die Verwendung von Eigenschaften Blättern ist weitaus weniger fehleranfällig als andere Möglichkeiten zum Erstellen von "globalen" Einstellungen.
 
 > [!IMPORTANT]
 > **USER-Dateien und mit ihnen verbundene Schwierigkeiten**

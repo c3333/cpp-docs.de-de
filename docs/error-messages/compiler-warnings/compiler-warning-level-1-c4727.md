@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - C4727
 ms.assetid: 991b0087-3a50-40f5-9cdb-cdc367cd472c
-ms.openlocfilehash: 1bcc029536d2602d50178d7148332b8371db3c7f
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: 0c00ac552e525fd57f6f09b0be5655958cfce3cc
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630828"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075139"
 ---
 # <a name="compiler-warning-level-1-c4727"></a>Compilerwarnung (Stufe 1) C4727
 
-"PCH mit dem Namen Pch_file mit dem gleichen Zeitstempel, der in obj_file_1 und obj_file_2 gefunden wurde.  Verwenden des ersten PCH.
+"PCH Named Pch_file mit demselben Zeitstempel in obj_file_1 und obj_file_2.  Verwenden des ersten PCH.
 
 > [!NOTE]
 > In Visual Studio 2017 und früheren Versionen heißt der vorkompilierte Header standardmäßig *stdafx. h* , und in Visual Studio 2019 und höher wird der vorkompilierte Header standardmäßig als " *PCH. h* " bezeichnet.
@@ -49,7 +49,6 @@ Gehen Sie stattdessen wie folgt vor:
 **cl/clr/GL b. cpp c. cpp/Yupch.h/Link a. obj**
 
 ::: moniker-end
-
 
 Weitere Informationen finden Sie unter
 

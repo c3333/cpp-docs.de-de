@@ -5,18 +5,18 @@ helpviewer_keywords:
 - bookmarks [C++], dynamically determining columns
 - dynamically determining columns [C++]
 ms.assetid: 58522b7a-894e-4b7d-a605-f80e900a7f5f
-ms.openlocfilehash: 81353581d22f3d075fd19d783591ec856c21e241
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6b6061fc7da6f4c4dd53ae70a0e2d5ba7ec40023
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175497"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079637"
 ---
 # <a name="dynamically-determining-columns-returned-to-the-consumer"></a>Dynamisches Festlegen der an den Consumer zurückgegebenen Spalten
 
-Die-Makros normalerweise behandelt die `IColumnsInfo::GetColumnsInfo` aufrufen. Allerdings da ein Consumer kann Lesezeichen verwenden, muss der Anbieter Lage Ändern der Spalten, die zurückgegeben werden, je nachdem, ob der Consumer ein Lesezeichen anfordert.
+Die PROVIDER_COLUMN_ENTRY Makros behandeln normalerweise den `IColumnsInfo::GetColumnsInfo`-Befehl. Da ein Consumer sich jedoch möglicherweise für die Verwendung von Lesezeichen entscheidet, muss der Anbieter in der Lage sein, die zurückgegebenen Spalten zu ändern, je nachdem, ob der Consumer ein Lesezeichen verlangt.
 
-Behandelt die `IColumnsInfo::GetColumnsInfo` aufrufen, löschen Sie Makro, das eine Funktion definiert `GetColumnInfo`, aus der `CCustomWindowsFile` Benutzerdatensatz im *benutzerdefinierte*RS.h und Ersetzen Sie sie mit der Definition für Ihre eigenen `GetColumnInfo` Funktion:
+Um den `IColumnsInfo::GetColumnsInfo` aufzurufen, löschen Sie das PROVIDER_COLUMN_MAP, das eine Funktion `GetColumnInfo`definiert, aus dem `CCustomWindowsFile` Benutzerdaten Satz in der *benutzerdefinierten*Rs. h-Datei und ersetzen Sie Sie durch die Definition für Ihre eigene `GetColumnInfo` Funktion:
 
 ```cpp
 ////////////////////////////////////////////////////////////////////////
@@ -39,11 +39,11 @@ public:
 };
 ```
 
-Implementieren Sie als Nächstes die `GetColumnInfo` -Funktion in *benutzerdefinierte*RS.cpp, wie im folgenden Code gezeigt.
+Implementieren Sie als nächstes die `GetColumnInfo`-Funktion in " *benutzerdefinierte*Rs. cpp", wie im folgenden Code dargestellt.
 
-`GetColumnInfo` überprüft zunächst, ob der OLE DB-Eigenschaft `DBPROP_BOOKMARKS` festgelegt ist. Zum Abrufen der Eigenschaft, `GetColumnInfo` verwendet einen Zeiger (`pRowset`) auf das Rowsetobjekt. Die `pThis` Zeiger darstellt, die Klasse, die das Rowset erstellt wurde, dies ist die Klasse, in die eigenschaftenzuordnung gespeichert ist. `GetColumnInfo` typenumwandlungen der `pThis` Zeiger auf ein `RCustomRowset` Zeiger.
+`GetColumnInfo` prüft zunächst, ob die OLE DB-Eigenschaft `DBPROP_BOOKMARKS` festgelegt ist. Um die Eigenschaft zu erhalten, verwendet `GetColumnInfo` einen Zeiger (`pRowset`) für das Rowsetobjekt. Der `pThis` Zeiger stellt die Klasse dar, die das Rowset erstellt hat. Hierbei handelt es sich um die Klasse, in der die Eigenschaften Zuordnung gespeichert wird. `GetColumnInfo` Typecasts den `pThis` Zeiger auf einen `RCustomRowset`-Zeiger.
 
-Zu prüfen, die `DBPROP_BOOKMARKS` Eigenschaft `GetColumnInfo` verwendet die `IRowsetInfo` -Schnittstelle, die Sie durch den Aufruf abrufen können `QueryInterface` auf die `pRowset` Schnittstelle. Als Alternative können Sie eine ATL [CComQIPtr](../../atl/reference/ccomqiptr-class.md) Methode stattdessen.
+Um die `DBPROP_BOOKMARKS`-Eigenschaft zu überprüfen, verwendet `GetColumnInfo` die `IRowsetInfo`-Schnittstelle, die Sie abrufen können, indem Sie `QueryInterface` für die `pRowset`-Schnittstelle aufrufen. Als Alternative können Sie stattdessen eine ATL- [CComQIPtr](../../atl/reference/ccomqiptr-class.md) -Methode verwenden.
 
 ```cpp
 ////////////////////////////////////////////////////////////////////
@@ -53,7 +53,7 @@ ATLCOLUMNINFO* CCustomWindowsFile::GetColumnInfo(void* pThis, ULONG* pcCols)
    static ATLCOLUMNINFO _rgColumns[5];
    ULONG ulCols = 0;
   
-   // Check the property flag for bookmarks; if it is set, set the zero 
+   // Check the property flag for bookmarks; if it is set, set the zero
    // ordinal entry in the column map with the bookmark information.
    CCustomRowset* pRowset = (CCustomRowset*) pThis;
    CComQIPtr<IRowsetInfo, &IID_IRowsetInfo> spRowsetProps = pRowset;
@@ -75,25 +75,25 @@ ATLCOLUMNINFO* CCustomWindowsFile::GetColumnInfo(void* pThis, ULONG* pcCols)
   
       if (SUCCEEDED(hr) && (var.boolVal == VARIANT_TRUE))
       {
-         ADD_COLUMN_ENTRY_EX(ulCols, OLESTR("Bookmark"), 0, sizeof(DWORD), 
-         DBTYPE_BYTES, 0, 0, GUID_NULL, CCustomWindowsFile, dwBookmark, 
+         ADD_COLUMN_ENTRY_EX(ulCols, OLESTR("Bookmark"), 0, sizeof(DWORD),
+         DBTYPE_BYTES, 0, 0, GUID_NULL, CCustomWindowsFile, dwBookmark,
          DBCOLUMNFLAGS_ISBOOKMARK)
          ulCols++;
       }
    }
   
    // Next, set the other columns up.
-   ADD_COLUMN_ENTRY(ulCols, OLESTR("Command"), 1, 256, DBTYPE_STR, 0xFF, 0xFF, 
+   ADD_COLUMN_ENTRY(ulCols, OLESTR("Command"), 1, 256, DBTYPE_STR, 0xFF, 0xFF,
       GUID_NULL, CCustomWindowsFile, szCommand)
    ulCols++;
-   ADD_COLUMN_ENTRY(ulCols, OLESTR("Text"), 2, 256, DBTYPE_STR, 0xFF, 0xFF, 
+   ADD_COLUMN_ENTRY(ulCols, OLESTR("Text"), 2, 256, DBTYPE_STR, 0xFF, 0xFF,
       GUID_NULL, CCustomWindowsFile, szText)
    ulCols++;
   
-   ADD_COLUMN_ENTRY(ulCols, OLESTR("Command2"), 3, 256, DBTYPE_STR, 0xFF, 0xFF, 
+   ADD_COLUMN_ENTRY(ulCols, OLESTR("Command2"), 3, 256, DBTYPE_STR, 0xFF, 0xFF,
       GUID_NULL, CCustomWindowsFile, szCommand2)
    ulCols++;
-   ADD_COLUMN_ENTRY(ulCols, OLESTR("Text2"), 4, 256, DBTYPE_STR, 0xFF, 0xFF, 
+   ADD_COLUMN_ENTRY(ulCols, OLESTR("Text2"), 4, 256, DBTYPE_STR, 0xFF, 0xFF,
       GUID_NULL, CCustomWindowsFile, szText2)
    ulCols++;
   
@@ -104,7 +104,7 @@ ATLCOLUMNINFO* CCustomWindowsFile::GetColumnInfo(void* pThis, ULONG* pcCols)
 }
 ```
 
-In diesem Beispiel verwendet ein statisches Array für die Spalteninformationen. Wenn der Consumer die Lesezeichenspalte nicht möchte, wird ein Eintrag im Array nicht verwendet. Um die Informationen zu behandeln, erstellen Sie zwei Array-Makros: ADD_COLUMN_ENTRY und ADD_COLUMN_ENTRY_EX. ADD_COLUMN_ENTRY_EX verwendet einen zusätzlichen Parameter, *Flags*, d. h. erforderlich, wenn Sie eine Lesezeichenspalte zu bestimmen.
+In diesem Beispiel wird ein statisches Array verwendet, um die Spalten Informationen zu speichern. Wenn der Consumer die Lesezeichen Spalte nicht wünschen, wird ein Eintrag im Array nicht verwendet. Um die Informationen zu verarbeiten, erstellen Sie zwei Array Makros: ADD_COLUMN_ENTRY und ADD_COLUMN_ENTRY_EX. ADD_COLUMN_ENTRY_EX nimmt einen zusätzlichen Parameter ( *Flags*) an, der erforderlich ist, wenn Sie eine Lesezeichen Spalte festlegen.
 
 ```cpp
 ////////////////////////////////////////////////////////////////////////  
@@ -135,7 +135,7 @@ In diesem Beispiel verwendet ein statisches Array für die Spalteninformationen.
    _rgColumns[ulCols].columnid.uName.pwszName = (LPOLESTR)name;  
 ```
 
-In der `GetColumnInfo` -Funktion, die Lesezeichenmakro wird wie folgt verwendet:
+In der `GetColumnInfo`-Funktion wird das Bookmark-Makro wie folgt verwendet:
 
 ```cpp
 ADD_COLUMN_ENTRY_EX(ulCols, OLESTR("Bookmark"), 0, sizeof(DWORD),
@@ -143,8 +143,8 @@ ADD_COLUMN_ENTRY_EX(ulCols, OLESTR("Bookmark"), 0, sizeof(DWORD),
    DBCOLUMNFLAGS_ISBOOKMARK)
 ```
 
-Sie können jetzt kompilieren und führen Sie den erweiterten Anbieter. Um den Anbieter zu testen, ändern Sie den Testconsumer, wie unter beschrieben [Implementieren eines einfachen Consumers](../../data/oledb/implementing-a-simple-consumer.md). Führen Sie den Testconsumer mit dem Anbieter aus, und stellen Sie sicher, dass der Testconsumer die richtigen Zeichenfolgen vom Anbieter empfängt.
+Sie können jetzt den erweiterten Anbieter kompilieren und ausführen. Um den Anbieter zu testen, ändern Sie den Testconsumer wie unter [Implementieren eines einfachen](../../data/oledb/implementing-a-simple-consumer.md)Consumers beschrieben. Führen Sie den Testconsumer mit dem Anbieter aus, und überprüfen Sie, ob der Testconsumer die richtigen Zeichen folgen vom Anbieter abruft.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweitern des einfachen schreibgeschützten Anbieters](../../data/oledb/enhancing-the-simple-read-only-provider.md)<br/>

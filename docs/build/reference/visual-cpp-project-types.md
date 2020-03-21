@@ -10,16 +10,16 @@ helpviewer_keywords:
 - applications [C++], projects
 - C++ projects, types
 ms.assetid: 7337987e-1e7b-4120-9a4b-94f0401f15e7
-ms.openlocfilehash: f234f9a05a871fe474b783a68f644cb4f2b1c2e7
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f322d16bbbe91d229fb8efdfb5f2d35cb0a686ae
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69498439"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079228"
 ---
 # <a name="c-project-templates"></a>C++-Projektvorlagen
 
-Visual Studio-Projektvorlagen generieren Quell Code Dateien, Compileroptionen, Menüs, Symbolleisten, Symbole, Verweise `#include` und Anweisungen, die für die Art des Projekts geeignet sind, das Sie erstellen möchten. Visual Studio umfasst verschiedene Arten von C++ Projektvorlagen und bietet Assistenten für viele von Ihnen, sodass Sie Ihre Projekte beim Erstellen anpassen können. Sie können die Anwendung unmittelbar nach dem Erstellen eines Projekts erstellen und ausführen. Es ist empfehlenswert, den Buildprozess in Abständen durchzuführen, während Sie Ihre Anwendung entwickeln.
+Visual Studio-Projektvorlagen generieren Quell Code Dateien, Compileroptionen, Menüs, Symbolleisten, Symbole, Verweise und `#include` Anweisungen, die für die Art des Projekts geeignet sind, das Sie erstellen möchten. Visual Studio umfasst verschiedene Arten von C++ Projektvorlagen und bietet Assistenten für viele von Ihnen, sodass Sie Ihre Projekte beim Erstellen anpassen können. Sie können die Anwendung unmittelbar nach dem Erstellen eines Projekts erstellen und ausführen. Es ist empfehlenswert, den Buildprozess in Abständen durchzuführen, während Sie Ihre Anwendung entwickeln.
 
 > [!NOTE]
 > Mit C++-Projektvorlagen können Sie ein C-Sprachprojekt erstellen. Suchen Sie im generierten Projekt die Dateien mit der Dateinamenerweiterung .cpp, und ändern Sie sie in .c. Erweitern Sie dann auf der Seite **Projekteigenschaften** für das Projekt (nicht für die Projektmappe) die Option **Konfigurationseigenschaften**, **C/C++** , und wählen Sie dann **Erweitert**. Ändern Sie die Einstellung **Kompilierungsart** in **Als C-Code kompilieren (/TC)** .
@@ -28,9 +28,9 @@ Visual Studio-Projektvorlagen generieren Quell Code Dateien, Compileroptionen, M
 
 Die in Visual Studio enthaltenen Projektvorlagen hängen von der Produktversion und den Workloads ab, die Sie installiert haben. Wenn Sie die Desktop Entwicklung mit C++ Arbeitsauslastung installiert haben, verfügt Visual Studio C++ über diese Projektvorlagen.
 
-### <a name="windows-desktop"></a>Windows-Desktop
+### <a name="windows-desktop"></a>Windows Desktop
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |[Windows-Konsolenanwendung](../../windows/creating-a-console-application.md)|Ein Projekt zum Erstellen einer Windows-Konsolenanwendung|
 |[Windows-Desktopanwendung](../../windows/walkthrough-creating-windows-desktop-applications-cpp.md)|Ein Projekt zum Erstellen einer Windows-Desktopanwendung (Win32)|
@@ -40,7 +40,7 @@ Die in Visual Studio enthaltenen Projektvorlagen hängen von der Produktversion 
 
 ### <a name="general"></a>Allgemein
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |Leeres Projekt|Ein leeres Projekt zum Erstellen einer Anwendung, Bibliothek oder DLL. Sie müssen erforderlichen Code oder Ressourcen hinzufügen.|
 |[Makefile-Projekt](creating-a-makefile-project.md)|Ein Projekt, das ein Windows-Makefile-Element in einem Visual Studio-Projekt umschließt. (Um das Makefile-Element unverändert in Visual Studio zu öffnen, verwenden Sie [Ordner öffnen](../open-folder-projects-cpp.md).|
@@ -48,13 +48,13 @@ Die in Visual Studio enthaltenen Projektvorlagen hängen von der Produktversion 
 
 ### <a name="atl"></a>ATL
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |[ATL-Projekt](../../atl/reference/creating-an-atl-project.md)|Ein Projekt, das die Active Template Library (ATL) verwendet|
 
 ### <a name="test"></a>Test
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |[Natives Komponententestprojekt](/visualstudio/test/writing-unit-tests-for-c-cpp-with-the-microsoft-unit-testing-framework-for-cpp)|Ein Projekt, das native C++-Komponententests enthält|
 
@@ -62,7 +62,7 @@ Die in Visual Studio enthaltenen Projektvorlagen hängen von der Produktversion 
 
 Wenn Sie Ihrer Visual Studio-Installation die Komponente für die MFC- und ATL-Unterstützung hinzufügen, werden die folgenden Projektvorlagen in Visual Studio hinzugefügt.
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |[MFC-Anwendung](../../mfc/reference/creating-an-mfc-application.md)|Ein Projekt zum Erstellen einer Anwendung, die die MFC-Bibliothek verwendet.|
 |[MFC-ActiveX-Steuerelement](../../mfc/reference/creating-an-mfc-activex-control.md)|Ein Projekt zum Erstellen eines ActiveX-Steuerelements, das die MFC-Bibliothek verwendet.|
@@ -74,7 +74,7 @@ Wenn Sie Ihrer Visual Studio-Installation die Komponente für C++-Tools für die
 
 Einen Überblick über Universelle Windows-Apps in C++ finden Sie unter [Universal Windows Apps (C++) (Universelle Windows-Apps (C++))](../../cppcx/universal-windows-apps-cpp.md).
 
-|Projektvorlage|Beschreibung|
+|Projektvorlage|BESCHREIBUNG|
 |----------------------|-----------------------------|
 |Leere App|Ein Projekt für eine einseitige UWP-App ohne vordefinierte Steuerelemente oder Layouts.|
 |DirectX 11-App|Ein Projekt für eine UWP-App, die DirectX 11 verwendet.|
@@ -89,5 +89,3 @@ Einen Überblick über Universelle Windows-Apps in C++ finden Sie unter [Univers
 ## <a name="todo-comments"></a>TODO-Kommentare
 
 Viele der mit einer Projektvorlage generierten Dateien enthalten TODO-Kommentare, um Ihnen beim Identifizieren von Orten zu helfen, an denen Sie Ihren eigenen Quellcode bereitstellen können. Weitere Informationen zum Hinzufügen von Code finden Sie unter [Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../../ide/adding-functionality-with-code-wizards-cpp.md) und [Working with Resource Files (Arbeiten mit Ressourcendateien)](../../windows/working-with-resource-files.md).
-
-

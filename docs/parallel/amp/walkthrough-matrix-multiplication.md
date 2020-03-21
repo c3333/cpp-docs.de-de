@@ -2,20 +2,20 @@
 title: 'Exemplarische Vorgehensweise: Matrixmultiplikation'
 ms.date: 04/23/2019
 ms.assetid: 61172e8b-da71-4200-a462-ff3a908ab0cf
-ms.openlocfilehash: 341800e258f89db340d206ebe04bc20d4763ad1a
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: a84383aa02b3f8300774e18ba2b27655d07b72ae
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518490"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075710"
 ---
 # <a name="walkthrough-matrix-multiplication"></a>Exemplarische Vorgehensweise: Matrixmultiplikation
 
 Befolgen Sie die exemplarische Vorgehensweise, um mithilfe von C++ AMP die Ausführung der Matrixmultiplikation zu beschleunigen. Es werden zwei Algorithmen vorgestellt, einer ohne und einer mit Tiling.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
-Vor dem Start:
+Vorbereitungen:
 
 - Lesen [ C++ ](../../parallel/amp/cpp-amp-overview.md)Sie den Artikelübersicht.
 
@@ -33,7 +33,7 @@ Die Anweisungen zum Erstellen eines neuen Projekts variieren abhängig von der i
 
 1. Wählen Sie in der Menüleiste **Datei** > **neue** > **Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest. 
+1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
 1. Wählen Sie in der gefilterten Liste der Projekttypen **leeres Projekt** aus, und klicken Sie dann auf **weiter**. Geben Sie auf der nächsten Seite *Matrixmultiplikation* in das Feld **Name** ein, um einen Namen für das Projekt anzugeben, und geben Sie ggf. den Projekt Speicherort an.
 
@@ -43,7 +43,7 @@ Die Anweisungen zum Erstellen eines neuen Projekts variieren abhängig von der i
 
 1. Öffnen Sie in **Projektmappen-Explorer**das Kontextmenü für **Quelldateien**, und wählen Sie dann > **Neues Element** **Hinzufügen** aus.
 
-1. Wählen Sie **C++** im Dialogfeld Neues Element hinzufügen die Option Datei (. cpp) aus, geben Sie *Matrixmultiplikation. cpp* in das Feld Name ein, und wählen Sie dann die Schaltfläche hinzufügen aus.
+1. **Name** Wählen Sie **Add New Item** **Add** **C++** im Dialogfeld Neues Element hinzufügen die Option Datei (. cpp) aus, geben Sie *Matrixmultiplikation. cpp* in das Feld Name ein, und wählen Sie dann die Schaltfläche hinzufügen aus.
 
 ::: moniker-end
 
@@ -61,7 +61,7 @@ Die Anweisungen zum Erstellen eines neuen Projekts variieren abhängig von der i
 
 1. Öffnen Sie in **Projektmappen-Explorer**das Kontextmenü für **Quelldateien**, und wählen Sie dann > **Neues Element** **Hinzufügen** aus.
 
-1. Wählen Sie **C++** im Dialogfeld Neues Element hinzufügen die Option Datei (. cpp) aus, geben Sie *Matrixmultiplikation. cpp* in das Feld Name ein, und wählen Sie dann die Schaltfläche hinzufügen aus.
+1. **Name** Wählen Sie **Add New Item** **Add** **C++** im Dialogfeld Neues Element hinzufügen die Option Datei (. cpp) aus, geben Sie *Matrixmultiplikation. cpp* in das Feld Name ein, und wählen Sie dann die Schaltfläche hinzufügen aus.
 
 ::: moniker-end
 
@@ -320,7 +320,7 @@ Um diesen Algorithmus implementieren, verwendet der Code:
 
 1. Drücken Sie die **LEERTASTE** , um die Anwendung zu beenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)<br/>
 [Exemplarische Vorgehensweise: Debuggen einer C++ AMP-Anwendung](../../parallel/amp/walkthrough-debugging-a-cpp-amp-application.md)

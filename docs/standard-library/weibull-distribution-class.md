@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::weibull_distribution [C++], param_type
 - std::weibull_distribution [C++], param_type
 ms.assetid: f20b49d3-1b9a-41af-8db4-baf800eaa02b
-ms.openlocfilehash: 2c1e53c529be8c589f51b9011cee42e5f6f1165b
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 8524ec61f1d785c8ab4a7b3dbef76bba69ddb6d6
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688509"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075533"
 ---
 # <a name="weibull_distribution-class"></a>weibull_distribution-Klasse
 
@@ -71,9 +71,9 @@ class weibull_distribution
 ### <a name="parameters"></a>Parameter
 
 *RealType* -\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleit Komma Typs produziert. Wenn kein entsprechend der Weibull-Verteilung verteilter Wert vorhanden ist, geben Sie **Double** ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
@@ -84,7 +84,7 @@ Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinier
 
 Die Eigenschaftsfunktionen `a()` und `b()` geben ihre entsprechenden Werte für die gespeicherten Verteilungsparameter *a* und *b* zurück.
 
-Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
+Der Eigenschaftenmember `param()` legt das gespeicherte Verteilungsparameterpaket `param_type` fest oder gibt es zurück.
 
 Die `min()`- und `max()`-Memberfunktion gibt das jeweils kleinst- und größtmögliche Ergebnis zurück.
 
@@ -94,7 +94,7 @@ Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entwe
 
 Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
 
-Ausführliche Informationen über die Weibull-Verteilung finden Sie im Wolfram MathWorld-Artikel [Weibull Distribution (Weibull-Verteilung)](http://mathworld.wolfram.com/WeibullDistribution.html).
+Ausführliche Informationen über die Weibull-Verteilung finden Sie im Wolfram MathWorld-Artikel [Weibull Distribution (Weibull-Verteilung)](https://mathworld.wolfram.com/WeibullDistribution.html).
 
 ## <a name="example"></a>Beispiel
 
@@ -207,13 +207,13 @@ Distribution for 10 samples:
     10: 24.7220241239
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:** \<Random >
 
 **Namespace:** std
 
-## <a name="weibull_distribution"></a> weibull_distribution::weibull_distribution
+## <a name="weibull_distributionweibull_distribution"></a><a name="weibull_distribution"></a> weibull_distribution::weibull_distribution
 
 ```cpp
 explicit weibull_distribution(result_type a = 1.0, result_type b = 1.0);
@@ -222,24 +222,24 @@ explicit weibull_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*eine* \
+*eine*\
 Der `a`-Verteilungsparameter.
 
-*b* \
+*b*\
 Der `b`-Verteilungsparameter.
 
 *\ für* den
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < a` und `0.0 < b`
 
 Mit dem ersten Konstruktor wird ein Objekt erstellt, in dessen gespeichertem `a`-Wert der Wert *a* enthalten ist und dessen gespeicherter `b`-Wert den Wert *b* enthält.
 
-Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
+Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter von *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> weibull_distribution::param_type
+## <a name="weibull_distributionparam_type"></a><a name="param_type"></a> weibull_distribution::param_type
 
 Speichert die Parameter der Verteilung.
 
@@ -257,21 +257,21 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*eine* \
+*eine*\
 Der `a`-Verteilungsparameter.
 
-*b* \
+*b*\
 Der `b`-Verteilungsparameter.
 
-*Rechte* \
+*Rechte*\
 Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < a` und `0.0 < b`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

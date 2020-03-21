@@ -1,20 +1,20 @@
 ---
-title: C++-Sprachreferenz
+title: C++-Programmiersprachenreferenz
 ms.custom: index-page
 ms.date: 12/10/2019
 helpviewer_keywords:
 - C++, language reference
 ms.assetid: 4be9cacb-c862-4391-894a-3a118c9c93ce
-ms.openlocfilehash: 8d828c1b151e37380c123003c245f6b83243f84a
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: f00d4eb5dc69ee0ab95ea864e63091b041a1853f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301586"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079920"
 ---
-# <a name="c-language-reference"></a>C++-Sprachreferenz
+# <a name="c-language-reference"></a>C++-Programmiersprachenreferenz
 
-Diese Referenz erläutert die C++ Programmiersprache, die im Microsoft C++ -Compiler implementiert ist. Die Organisation basiert auf [*dem kommentierten C++ Referenzhandbuch*](http://www.stroustrup.com/arm.html) von Margaret Ellis und Bjarne Stroustrup sowie auf dem internationalen ANSI/ISO C++ -Standard (ISO/IEC-bdis 14882). Microsoft-spezifische Implementierungen von Funktionen der Programmiersprache C++- sind enthalten.
+Diese Referenz erläutert die C++ Programmiersprache, die im Microsoft C++ -Compiler implementiert ist. Die Organisation basiert auf *dem kommentierten C++ Referenzhandbuch* von Margaret Ellis und Bjarne Stroustrup sowie auf dem internationalen ANSI/ISO C++ -Standard (ISO/IEC-bdis 14882). Microsoft-spezifische Implementierungen von Funktionen der Programmiersprache C++- sind enthalten.
 
 Eine Übersicht über die modernen C++ Programmiermethoden finden [Sie unter Willkommen zurück C++bei ](welcome-back-to-cpp-modern-cpp.md).
 
@@ -66,7 +66,7 @@ Steuern des Zugriffs auf Klassenmember: **öffentliche**, **private**und **gesch
 [Überladen](operator-overloading.md)<br/>
 Überladene Operatoren, Regeln für die Operator Überladung.
 
-[Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md)<br/>
+[Behandlung von Ausnahmen](../cpp/exception-handling-in-visual-cpp.md)<br/>
 C++-Ausnahmebehandlung, strukturierte Ausnahmebehandlung (SEH), Schlüsselwörter, die für das Schreiben von Ausnahmebehandlungsanweisungen verwendet werden.
 
 [Assertionsanweisung und benutzerdefinierte Meldungen](../cpp/assertion-and-user-supplied-messages-cpp.md)<br/>
@@ -110,6 +110,6 @@ Referenzmaterial für Pragmas, Präprozessordirektiven, vordefinierte Makros und
 [Visual C++-Bibliotheken](../standard-library/cpp-standard-library-reference.md)<br/>
 Eine Liste mit Links zu den Referenz Startseiten für die verschiedenen Microsoft C++ -Bibliotheken.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C-Sprachreferenz](../c-language/c-language-reference.md)

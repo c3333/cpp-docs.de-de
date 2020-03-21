@@ -14,61 +14,61 @@ helpviewer_keywords:
 - rowsets, bulk row fetching
 - RFX (ODBC), bulk row fetching
 ms.assetid: 20d10fe9-c58a-414a-b675-cdf9aa283e4f
-ms.openlocfilehash: 2fdcbf18fcb0d97ba7b2a39aa9bbbd79e65a4112
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cd9597da7ab4c405f90a145182d63945cef48c53
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397847"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079825"
 ---
 # <a name="recordset-fetching-records-in-bulk-odbc"></a>Recordset: Abrufen von Datensätzen in einer Sammeloperation (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-Klasse `CRecordset` bietet Unterstützung für das gesammelte, was bedeutet, dass mehrere Datensätze auf einmal beim Abrufen von einem Datensatz, anstatt einen einzelnen Abruf zu einem Zeitpunkt aus der Datenquelle abgerufen werden können. Sie können das gesammelte Abrufen von Zeilen nur in einer abgeleiteten implementieren `CRecordset` Klasse. Der Prozess der Übertragung von Daten aus der Datenquelle an das Recordset-Objekt wird Massen-Datensatzfeldaustausch (Bulk-RFX) aufgerufen. Beachten Sie, dass Sie nicht verwenden massenzeilenabruf in einem `CRecordset`-abgeleiteten Klasse, die Daten werden per Datensatzfeldaustausch (RFX) übertragen. Weitere Informationen finden Sie unter [Datensatzfeldaustausch (RFX)](../../data/odbc/record-field-exchange-rfx.md).
+Class `CRecordset` bietet Unterstützung für das Abrufen von Massen Zeilen, d. h., mehrere Datensätze können während eines einzelnen Abruf Vorgangs gleichzeitig abgerufen werden, anstatt jeweils einen Datensatz aus der Datenquelle abzurufen. Sie können das Massen Abrufen von Zeilen nur in einer abgeleiteten `CRecordset` Klasse implementieren. Der Vorgang zum Übertragen von Daten aus der Datenquelle in das Recordset-Objekt wird als Massendaten Satz Feld Austausch (Bulk RFX) bezeichnet. Beachten Sie Folgendes: Wenn Sie das Massen Abrufen von Zeilen in einer `CRecordset`-abgeleiteten Klasse nicht verwenden, werden Daten über den Daten Satz Feld Austausch (RFX) übertragen. Weitere Informationen finden Sie unter [Daten Satz Feld Austausch (RFX)](../../data/odbc/record-field-exchange-rfx.md).
 
 In diesem Thema wird Folgendes erläutert:
 
-- [Wie CRecordset unterstützt gesammelte](#_core_how_crecordset_supports_bulk_row_fetching).
+- [Wie CRecordset das Abrufen von Massen Zeilen unterstützt](#_core_how_crecordset_supports_bulk_row_fetching).
 
-- [Einige besondere Überlegungen zur Verwendung der Zeilenabruf](#_core_special_considerations).
+- [Einige besondere Überlegungen beim Abrufen von Massen Zeilen](#_core_special_considerations).
 
-- [Gewusst wie: Implementieren der massenaustausch](#_core_how_to_implement_bulk_record_field_exchange).
+- [So implementieren Sie den Massendaten Satz Feld Austausch](#_core_how_to_implement_bulk_record_field_exchange).
 
-##  <a name="_core_how_crecordset_supports_bulk_row_fetching"></a> Wie unterstützt CRecordset gesammelte
+##  <a name="how-crecordset-supports-bulk-row-fetching"></a><a name="_core_how_crecordset_supports_bulk_row_fetching"></a>Unterstützt das Abrufen von Massen Zeilen durch CRecordset
 
-Vor dem Öffnen des Recordset-Objekts an, Sie können die Größe eines Rowsets mit definieren die `SetRowsetSize` Member-Funktion. Die Größe des Rowsets gibt an, wie viele Datensätze, die während einer einzigen Abfrage abgerufen werden soll. Wenn massenzeilenabruf implementiert ist, ist die Standardgröße des Rowsets 25. Wenn gesammelte nicht implementiert wird, bleibt die Rowsetgröße 1 behoben.
+Vor dem Öffnen des Recordset-Objekts können Sie eine Rowsetgröße mit der `SetRowsetSize` Member-Funktion definieren. Die Rowsetgröße gibt an, wie viele Datensätze während eines einzelnen Abruf Vorgangs abgerufen werden sollen. Wenn das Massen Abrufen von Zeilen implementiert ist, beträgt die standardrowsetgröße 25. Wenn das Abrufen von Massen Zeilen nicht implementiert ist, bleibt die Rowsetgröße bei 1 festgelegt.
 
-Nachdem Sie die Größe des Rowsets initialisiert haben, rufen Sie die [öffnen](../../mfc/reference/crecordset-class.md#open) Member-Funktion. Hier müssen Sie die `CRecordset::useMultiRowFetch` Möglichkeit, die *DwOptions* Parameter massenzeilenabruf implementiert. Sie können außerdem festlegen, die `CRecordset::userAllocMultiRowBuffers` Option. Der Mechanismus Bulk Record Field Exchange verwendet Arrays zum Speichern der mehrere Zeilen von Daten, die bei einem Abrufvorgang abgerufen. Diese Speicherpuffer vom Framework automatisch zugeordnet werden können, oder Sie können diese manuell zuordnen. Angeben der `CRecordset::userAllocMultiRowBuffers` Option bedeutet, dass Sie die Zuordnung werden.
+Nachdem Sie die Rowsetgröße initialisiert haben, können Sie die Funktion [Open](../../mfc/reference/crecordset-class.md#open) Member aufzurufen. Hier müssen Sie die `CRecordset::useMultiRowFetch`-Option des *dwOptions* -Parameters angeben, um das Massen Abrufen von Zeilen zu implementieren. Außerdem können Sie die Option `CRecordset::userAllocMultiRowBuffers` festlegen. Der Massendaten Satz Feld Austauschmechanismus verwendet Arrays, um die verschiedenen Daten Zeilen zu speichern, die während eines Abruf Vorgangs abgerufen werden. Diese Speicherpuffer können automatisch vom Framework zugeordnet werden, oder Sie können Sie manuell zuordnen. Die Angabe der Option `CRecordset::userAllocMultiRowBuffers` bedeutet, dass Sie die Zuordnung durchführen.
 
-Die folgende Tabelle enthält die Member-Funktionen, die von bereitgestellte `CRecordset` gesammelte unterstützen.
+In der folgenden Tabelle werden die von `CRecordset` bereitgestellten Element Funktionen aufgelistet, um das Abrufen von Massen Zeilen zu unterstützen.
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |---------------------|-----------------|
-|[CheckRowsetError](../../mfc/reference/crecordset-class.md#checkrowseterror)|Virtuelle Funktion, die alle Fehler, die während des Abrufens auftreten behandelt.|
-|[DoBulkFieldExchange](../../mfc/reference/crecordset-class.md#dobulkfieldexchange)|Implementiert den Sammel-Datensatzfeldaustausch. Automatisch aufgerufen, um Übertragungen mehrere Zeilen mit Daten aus der Datenquelle des Recordset-Objekts.|
-|[GetRowsetSize](../../mfc/reference/crecordset-class.md#getrowsetsize)|Ruft die aktuelle Einstellung für die Größe des Rowsets ab.|
-|[GetRowsFetched](../../mfc/reference/crecordset-class.md#getrowsfetched)|Gibt an, wie viele Zeilen tatsächlich einem Abrufvorgang abgerufen wurden. In den meisten Fällen ist dies die Größe des Rowsets, es sei denn, ein unvollständiges Rowset abgerufen wurde.|
-|[GetRowStatus](../../mfc/reference/crecordset-class.md#getrowstatus)|Gibt einen Fetch-Status für eine bestimmte Zeile in ein Rowset zurück.|
-|[RefreshRowset](../../mfc/reference/crecordset-class.md#refreshrowset)|Aktualisiert die Daten und den Status einer bestimmten Zeile in einem Rowset.|
-|[SetRowsetCursorPosition](../../mfc/reference/crecordset-class.md#setrowsetcursorposition)|Verschiebt den Cursor zu einer bestimmten Zeile in einem Rowset.|
-|[SetRowsetSize](../../mfc/reference/crecordset-class.md#setrowsetsize)|Virtuelle Funktion, die die Einstellung für die Rowsetgröße mit dem angegebenen Wert zu ändern.|
+|[Checkrow* Terror](../../mfc/reference/crecordset-class.md#checkrowseterror)|Eine virtuelle Funktion, die alle Fehler behandelt, die während des Abrufens auftreten.|
+|[DoBulkFieldExchange](../../mfc/reference/crecordset-class.md#dobulkfieldexchange)|Implementiert den Massendaten Satz Feld Austausch. Wird automatisch aufgerufen, um mehrere Daten Zeilen von der Datenquelle an das Recordset-Objekt zu übertragen.|
+|[Getrowsetsize](../../mfc/reference/crecordset-class.md#getrowsetsize)|Ruft die aktuelle Einstellung für die Rowsetgröße ab.|
+|[Getrowsfetch](../../mfc/reference/crecordset-class.md#getrowsfetched)|Gibt an, wie viele Zeilen nach einem bestimmten Abruf Vorgang tatsächlich abgerufen wurden. In den meisten Fällen ist dies die Rowsetgröße, es sei denn, es wurde ein unvollständiges Rowset abgerufen.|
+|[GetRowStatus](../../mfc/reference/crecordset-class.md#getrowstatus)|Gibt einen Abruf Status für eine bestimmte Zeile in einem Rowset zurück.|
+|[Aktuerfrischendes Rowset](../../mfc/reference/crecordset-class.md#refreshrowset)|Aktualisiert die Daten und den Status einer bestimmten Zeile innerhalb eines Rowsets.|
+|[Setrowsetcurrsorposition](../../mfc/reference/crecordset-class.md#setrowsetcursorposition)|Verschiebt den Cursor in eine bestimmte Zeile innerhalb eines Rowsets.|
+|[SetRowsetSize](../../mfc/reference/crecordset-class.md#setrowsetsize)|Eine virtuelle Funktion, die die Einstellung für die Rowsetgröße auf den angegebenen Wert ändert.|
 
-##  <a name="_core_special_considerations"></a> Besondere Überlegungen
+##  <a name="special-considerations"></a><a name="_core_special_considerations"></a>Besondere Überlegungen
 
-Obwohl gesammelte einen Leistungsgewinn ist, gehen bestimmte Funktionen anders vor. Bevor Sie die gesammelte implementieren möchten, beachten Sie Folgendes:
+Obwohl das Abrufen von Massen Zeilen eine Leistungssteigerung ist, funktionieren bestimmte Features anders. Beachten Sie Folgendes, bevor Sie das Abrufen von Massen Zeilen beschließen:
 
-- Ruft das Framework automatisch die `DoBulkFieldExchange` Member-Funktion zum Übertragen von Daten aus der Datenquelle auf das Recordsetobjekt. Allerdings werden Daten nicht aus dem Recordset zurück an die Datenquelle übertragen. Aufrufen der `AddNew`, `Edit`, `Delete`, oder `Update` Ergebnissen der Member-Funktionen in eine fehlgeschlagene Assertion. Obwohl `CRecordset` derzeit keinen Mechanismus zum Aktualisieren von Datenzeilen, können Sie Ihre eigenen Funktionen schreiben, indem Sie mithilfe der ODBC-API-Funktion `SQLSetPos`. Weitere Informationen zu `SQLSetPos`, finden Sie unter den *ODBC SDK-Programmierreferenz* in der MSDN-Dokumentation.
+- Das Framework ruft automatisch die `DoBulkFieldExchange` Member-Funktion auf, um Daten aus der Datenquelle in das Recordset-Objekt zu übertragen. Die Daten werden jedoch nicht aus dem Recordset zurück in die Datenquelle übertragen. Das Aufrufen der Funktionen `AddNew`, `Edit`, `Delete`oder `Update` Members führt zu einer fehlgeschlagenen-Assertion. Obwohl `CRecordset` derzeit keinen Mechanismus zum Aktualisieren von Massendaten Zeilen bereitstellt, können Sie eigene Funktionen mithilfe der ODBC-API-Funktion `SQLSetPos`schreiben. Weitere Informationen zu `SQLSetPos`finden Sie in der MSDN-Dokumentation in der *ODBC SDK-Programmier Referenz* .
 
-- Die Memberfunktionen `IsDeleted`, `IsFieldDirty`, `IsFieldNull`, `IsFieldNullable`, `SetFieldDirty`, und `SetFieldNull` kann nicht in Recordsets, die gesammelte implementieren verwendet werden. Sie können jedoch aufrufen `GetRowStatus` anstelle von `IsDeleted`, und `GetODBCFieldInfo` anstelle von `IsFieldNullable`.
+- Die Element Funktionen `IsDeleted`, `IsFieldDirty`, `IsFieldNull`, `IsFieldNullable`, `SetFieldDirty`und `SetFieldNull` können nicht für Recordsets verwendet werden, die das Abrufen von Massen Zeilen implementieren. Sie können `GetRowStatus` jedoch anstelle von `IsDeleted`und `GetODBCFieldInfo` anstelle von `IsFieldNullable`aufzurufen.
 
-- Die `Move` -Operationen Recordset nach Rowsets. Nehmen wir beispielsweise an, dass Sie ein Recordset mit öffnen 100 Datensätze mit einem anfänglichen Rowsetgröße von 10. `Open` Ruft die Zeilen 1 bis 10 mit den aktuellen Datensatz in Zeile 1 ist. Ein Aufruf von `MoveNext` des nächsten Rowsets, nicht die nächste Zeile abgerufen. Dieses Rowset besteht aus Zeilen 11 bis 20, mit dem aktuellen Datensatz in Zeile 11 positioniert. Beachten Sie, dass `MoveNext` und `Move( 1 )` einander nicht entsprechen, wenn die massenzeilenabruf implementiert ist. `Move( 1 )` Ruft das Rowset, das 1 Zeile aus dem aktuellen Datensatz beginnt ab. In diesem Beispiel Aufrufen `Move( 1 )` nach dem Aufruf `Open` abruft, das Rowset aus den Zeilen 2 bis 11, mit dem aktuellen Datensatz positioniert für Zeile 2 besteht. Weitere Informationen finden Sie unter den [verschieben](../../mfc/reference/crecordset-class.md#move) Member-Funktion.
+- Der `Move`-Vorgang positioniert das Recordset nach Rowset. Angenommen, Sie öffnen ein Recordset, das über 100 Datensätze mit einer anfänglichen Rowsetgröße von 10 verfügt. `Open` Ruft die Zeilen 1 bis 10 ab, wobei der aktuelle Datensatz in Zeile 1 positioniert ist. Ein-`MoveNext` Ruft das nächste Rowset und nicht die nächste Zeile ab. Dieses Rowset besteht aus den Zeilen 11 bis 20, wobei der aktuelle Datensatz in Zeile 11 positioniert ist. Beachten Sie, dass `MoveNext` und `Move( 1 )` nicht äquivalent sind, wenn das Abrufen von Massen Zeilen implementiert wird. `Move( 1 )` Ruft das Rowset ab, das eine Zeile aus dem aktuellen Datensatz startet. In diesem Beispiel ruft der Aufruf von `Move( 1 )` nach dem Aufruf von `Open` das Rowset ab, das aus den Zeilen 2 bis 11 besteht, wobei der aktuelle Datensatz in Zeile 2 positioniert ist. Weitere Informationen finden Sie unter der [Move](../../mfc/reference/crecordset-class.md#move) Member-Funktion.
 
-- Im Gegensatz zu Datensatzfeldaustausch unterstützen die Assistenten keine massenaustausch. Dies bedeutet, dass müssen Sie manuell die Felddatenmember deklarieren und manuell überschreiben `DoBulkFieldExchange` durch Aufrufe der Bulk-RFX-Funktionen zu schreiben. Weitere Informationen finden Sie unter [Funktionen für den Datensatzfeldaustausch](../../mfc/reference/record-field-exchange-functions.md) in die *Klassenbibliotheksreferenz*.
+- Im Gegensatz zum Daten Satz Feld Austausch unterstützen die Assistenten keinen Massendaten Satz Feld Austausch. Dies bedeutet, dass Sie Ihre Felddatenmember manuell deklarieren und `DoBulkFieldExchange` manuell überschreiben müssen, indem Sie Aufrufe der Massen-RFX-Funktionen schreiben. Weitere Informationen finden Sie unter [Daten Satz Feld Austausch-Funktionen](../../mfc/reference/record-field-exchange-functions.md) in der *Klassen Bibliotheks Referenz*.
 
-##  <a name="_core_how_to_implement_bulk_record_field_exchange"></a> Gewusst wie: Implementieren der Massen-Datensatzfeldaustausch
+##  <a name="how-to-implement-bulk-record-field-exchange"></a><a name="_core_how_to_implement_bulk_record_field_exchange"></a>So implementieren Sie einen Massendaten Satz Feld Austausch
 
-Massenaustausch überträgt ein Rowset von Daten aus der Datenquelle, auf das Recordset-Objekt. Die Bulk-RFX-Funktionen verwenden Sie Arrays zum Speichern dieser Daten als auch Arrays, die die Länge der einzelnen Datenelemente in das Rowset zu speichern. In der Klassendefinition müssen Sie Ihre Felddatenmember als Zeiger auf die Arrays von Daten definieren. Darüber hinaus müssen Sie einen Satz von Zeigern auf Arrays mit Längen definieren. Parameterdatenmember sollten nicht als Zeiger deklariert werden. Parameterdatenmember deklarieren, bei Verwendung der massenaustausch ist identisch mit der sie bei Verwendung von Datensatzfeldaustausch deklarieren. Der folgende Code zeigt ein einfaches Beispiel:
+Der Massendaten Satz Feld Austausch überträgt ein Rowset von Daten aus der Datenquelle in das Recordset-Objekt. Die Massen-RFX-Funktionen verwenden Arrays zum Speichern dieser Daten sowie Arrays, um die Länge der einzelnen Datenelemente im Rowset zu speichern. In ihrer Klassendefinition müssen Sie die Felddatenmember als Zeiger definieren, um auf die Daten Arrays zuzugreifen. Außerdem müssen Sie einen Satz von Zeigern definieren, um auf die Längen Arrays zuzugreifen. Alle Parameter Datenmember sollten nicht als Zeiger deklariert werden. das Deklarieren von Parameterdatenmembern bei Verwendung des Massendaten Satz-Feld Austauschs entspricht der Deklaration bei der Verwendung von Daten Satz Feld Austausch Der folgende Code zeigt ein einfaches Beispiel:
 
 ```cpp
 class MultiRowSet : public CRecordset
@@ -93,7 +93,7 @@ public:
 }
 ```
 
-Sie können diese Speicherpuffer manuell zuordnen oder das Framework erledigen müssen. Um die Puffer selbst zuordnen, müssen Sie angeben der `CRecordset::userAllocMultiRowBuffers` Möglichkeit, die *DwOptions* Parameter in der `Open` Member-Funktion. Achten Sie darauf, dass Sie die Größe der Arrays entspricht mindestens die Größe des Rowsets fest. Wenn Sie das Framework die Zuordnung vornehmen möchten, sollten Sie die Zeiger auf NULL initialisieren. Dies erfolgt normalerweise im Konstruktor des Recordset-Objekts:
+Sie können diese Speicherpuffer entweder manuell zuordnen, oder das Framework muss die Zuordnung durchführen. Um die Puffer selbst zuzuordnen, müssen Sie die Option `CRecordset::userAllocMultiRowBuffers` des Parameters *dwOptions* in der `Open` Member-Funktion angeben. Stellen Sie sicher, dass Sie die Größe der Arrays mindestens gleich der Rowsetgröße festlegen. Wenn Sie möchten, dass das Framework die Zuordnung durchführen soll, sollten Sie die Zeiger auf Null initialisieren. Dies erfolgt in der Regel im Konstruktor des Recordset-Objekts:
 
 ```cpp
 MultiRowSet::MultiRowSet( CDatabase* pDB )
@@ -114,7 +114,7 @@ MultiRowSet::MultiRowSet( CDatabase* pDB )
 }
 ```
 
-Abschließend müssen Sie überschreiben die `DoBulkFieldExchange` Member-Funktion. Rufen Sie die Bulk-RFX-Funktionen, für den Felddatenmembern; Rufen Sie für alle Datenmember der Parameter der RFX-Funktionen. Wenn Sie das Recordset geöffnet haben, übergeben Sie eine SQL-Anweisung oder gespeicherte Prozedur, `Open`, muss die Reihenfolge, in dem Sie die Bulk-RFX-Aufrufe vornehmen, Reihenfolge der Spalten im Recordset entsprechen; die Reihenfolge der RFX-Analog dazu verlangt wird, für die Parameter entsprechen müssen Reihenfolge der Parameter in der SQL-Anweisung oder gespeicherten Prozedur.
+Zum Schluss müssen Sie die `DoBulkFieldExchange` Member-Funktion überschreiben. Bei den Felddatenmembern werden die Massen-RFX-Funktionen aufgerufen. bei allen Parameterdatenmembern werden die RFX-Funktionen aufgerufen. Wenn Sie das Recordset geöffnet haben, indem Sie eine SQL-Anweisung oder eine gespeicherte Prozedur an `Open`übergeben, muss die Reihenfolge, in der Sie die Massen-RFX-Aufrufe vornehmen, der Reihenfolge der Spalten im Recordset entsprechen. Ebenso muss die Reihenfolge der RFX-Aufrufe für Parameter der Reihenfolge der Parameter in der SQL-Anweisung oder der gespeicherten Prozedur entsprechen.
 
 ```cpp
 void MultiRowSet::DoBulkFieldExchange( CFieldExchange* pFX )
@@ -135,13 +135,12 @@ void MultiRowSet::DoBulkFieldExchange( CFieldExchange* pFX )
 ```
 
 > [!NOTE]
->  Rufen Sie die `Close` Memberfunktion, bevor Sie Ihre abgeleiteten `CRecordset` Klasse den Gültigkeitsbereich verlässt. Dadurch wird sichergestellt, dass durch das Framework zugewiesener Speicher freigegeben werden. Es empfiehlt sich immer explizit aufrufen, `Close`, unabhängig davon, ob massenzeilenabruf implementiert haben.
+>  Bevor die abgeleitete `CRecordset` Klasse den Gültigkeitsbereich verlässt, müssen Sie die `Close` Member-Funktion abrufen. Dadurch wird sichergestellt, dass der vom Framework zugewiesene Arbeitsspeicher freigegeben wird. Es empfiehlt sich, `Close`stets explizit aufzurufen, unabhängig davon, ob Sie das Massen Abrufen von Zeilen implementiert haben.
 
-Weitere Informationen zu den Datensatzfeldaustausch (RFX), finden Sie unter [Record Field Exchange: Funktionsweise von RFX](../../data/odbc/record-field-exchange-how-rfx-works.md). Weitere Informationen zur Verwendung von Parametern finden Sie unter [CFieldExchange::](../../mfc/reference/cfieldexchange-class.md#setfieldtype) und [Recordset: Parametrisieren eines Recordsets (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md).
+Weitere Informationen zum Daten Satz Feld Austausch (RFX) finden Sie unter [Daten Satz Feld Austausch: Funktionsweise von RFX](../../data/odbc/record-field-exchange-how-rfx-works.md). Weitere Informationen zum Verwenden von Parametern finden Sie unter [CFieldExchange:: SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype) und [Recordset: parametrialisieren eines Recordsets (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
-[CRecordset::m_nFields](../../mfc/reference/crecordset-class.md#m_nfields)<br/>
-[CRecordset::m_nParams](../../mfc/reference/crecordset-class.md#m_nparams)
-
+[CRecordset:: m_nFields](../../mfc/reference/crecordset-class.md#m_nfields)<br/>
+[CRecordset:: m_nParams](../../mfc/reference/crecordset-class.md#m_nparams)

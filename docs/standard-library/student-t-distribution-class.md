@@ -21,12 +21,12 @@ helpviewer_keywords:
 - std::student_t_distribution [C++], max
 - std::student_t_distribution [C++], param_type
 ms.assetid: 87b48127-9311-4d07-95df-833ed46bf0b1
-ms.openlocfilehash: ebf9324d478a12476b548dc62455e205b9261430
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 5a4e7306dbfee4f1482ee81d3470f166697e3ab6
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72685870"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076380"
 ---
 # <a name="student_t_distribution-class"></a>student_t_distribution-Klasse
 
@@ -65,9 +65,9 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType* -\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert. Wenn kein Wert angegeben wird **, wird dieser** entsprechend der Student- *t*-Verteilung verteilt. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
@@ -80,7 +80,7 @@ Die Eigenschaftsfunktion `n()` gibt den Wert für den gespeicherten Verteilungsp
 
 Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
 
-Ausführliche Informationen über die Student-*t*-Verteilung finden Sie im Wolfram MathWorld-Artikel [Students t-Distribution](http://mathworld.wolfram.com/Studentst-Distribution.html).
+Ausführliche Informationen über die Student-*t*-Verteilung finden Sie im Wolfram MathWorld-Artikel [Students t-Distribution](https://mathworld.wolfram.com/Studentst-Distribution.html).
 
 ## <a name="example"></a>Beispiel
 
@@ -157,13 +157,13 @@ Distribution for 10 samples:
     10: 92.7084335614
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:** \<Random >
 
 **Namespace:** std
 
-## <a name="student_t_distribution"></a> student_t_distribution::student_t_distribution
+## <a name="student_t_distributionstudent_t_distribution"></a><a name="student_t_distribution"></a> student_t_distribution::student_t_distribution
 
 Erstellt die Verteilung.
 
@@ -180,15 +180,15 @@ Der `n`-Verteilungsparameter.
 *\ für* den
 Das für die Erstellung der Verteilung verwendete Parameterpaket.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < n`
 
 Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `n`-Wert den Wert *n* enthält.
 
-Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
+Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter von *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> student_t_distribution::param_type
+## <a name="student_t_distributionparam_type"></a><a name="param_type"></a> student_t_distribution::param_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -208,15 +208,15 @@ struct param_type {
 *n*\
 Der `n`-Verteilungsparameter.
 
-*Rechte* \
+*Rechte*\
 Das mit diesem `param_type`-Objekt zu vergleichende Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 **Vorbedingung:** `0.0 < n`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

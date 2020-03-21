@@ -4,12 +4,12 @@ description: Verwenden von unformatierten Zeigern inC++
 ms.date: 11/19/2019
 helpviewer_keywords:
 - pointers [C++]
-ms.openlocfilehash: 9ea498c254bc37dc8dc550232127cb2db3bc0886
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 2dbb4f11fc0c08578e82371e8df77e9643313879
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250685"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077149"
 ---
 # <a name="raw-pointers-c"></a>Rohzeiger (C++)
 
@@ -45,7 +45,7 @@ Ein Zeiger (wenn er nicht als " **konstant**" deklariert ist) kann inkrementiert
     const int* pconst = &c; // declare a non-const pointer to const int
     const int c2 = 2;
     pconst = &c2;  // OK pconst itself isn't const
-    const int* const pconst2 = &c; 
+    const int* const pconst2 = &c;
     // pconst2 = &c2; // Error! pconst2 is const.
 ```
 
@@ -168,7 +168,7 @@ int main()
 
 Bestimmte Arithmetische Operationen können für nicht konstante Zeiger ausgeführt werden, damit Sie auf einen neuen Speicherort zeigen. Ein Zeiger kann mit den Operatoren **++** , **+=** , **-=** und **--** erhöht und dekrementiert werden. Dieses Verfahren kann in Arrays verwendet werden und ist besonders nützlich für Puffer von nicht typisierten Daten. Ein **void-\*** Inkremente um die Größe eines **char** (1 Byte). Ein typisierter Zeiger erhöht die Größe des Typs, auf den er verweist.
 
-Im folgenden Beispiel wird veranschaulicht, wie Zeigerarithmetik für den Zugriff auf einzelne Pixel in einer Bitmap unter Windows verwendet werden kann. Beachten Sie die Verwendung von " **New** " und " **Delete**" sowie den Dereferenzierungsoperator. 
+Im folgenden Beispiel wird veranschaulicht, wie Zeigerarithmetik für den Zugriff auf einzelne Pixel in einer Bitmap unter Windows verwendet werden kann. Beachten Sie die Verwendung von " **New** " und " **Delete**" sowie den Dereferenzierungsoperator.
 
 ```cpp
 #include <Windows.h>
@@ -235,7 +235,7 @@ int main()
 
 ## <a name="void-pointers"></a>void *-Zeiger
 
-Ein Zeiger auf " **void** " zeigt einfach auf einen rohspeicher Speicherort. Manchmal ist es erforderlich, **void\*** Zeiger zu verwenden, z. b. C++ bei der Übergabe zwischen Code und C-Funktionen. 
+Ein Zeiger auf " **void** " zeigt einfach auf einen rohspeicher Speicherort. Manchmal ist es erforderlich, **void\*** Zeiger zu verwenden, z. b. C++ bei der Übergabe zwischen Code und C-Funktionen.
 
 Wenn ein typisierter Zeiger in einen void-Zeiger umgewandelt wird, wird der Inhalt des Speicher Orts nicht geändert, aber die Typinformationen gehen verloren, sodass Sie keine Inkrement-oder Dekrement-Vorgänge ausführen können. Eine Speicheradresse kann z. b. von MyClass * in void * und wieder zurück in MyClass * umgewandelt werden. Solche Vorgänge sind grundsätzlich fehleranfällig und erfordern große Sorgfalt, um Fehler zu vermeiden. Modern C++ schreckt die Verwendung von void-Zeigern ab, sofern dies nicht unbedingt erforderlich ist.
 
@@ -290,7 +290,7 @@ int main()
 }
 ```
 
-## <a name="pointers_to_functions"></a>Zeiger auf Funktionen
+## <a name="pointers-to-functions"></a><a name="pointers_to_functions"></a>Zeiger auf Funktionen
 
 Bei der Programmierung im C-Stil werden Funktionszeiger hauptsächlich verwendet, um Funktionen an andere Funktionen zu übergeben. In diesem Szenario kann der Aufrufer das Verhalten einer Funktion anpassen, ohne Sie zu ändern. In modernen C++sind [Lambda-Ausdrücke](lambda-expressions-in-cpp.md) mit größerer Typsicherheit und anderen Vorteilen identisch.
 
@@ -342,7 +342,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Intelligenter Zeiger](smart-pointers-modern-cpp.md)
 [Dereferenzierungsoperator: *](indirection-operator-star.md)<br/>

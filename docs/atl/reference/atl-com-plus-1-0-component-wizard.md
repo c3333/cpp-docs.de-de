@@ -4,12 +4,12 @@ ms.date: 05/08/2019
 helpviewer_keywords:
 - ATL projects, adding components
 ms.assetid: 11670681-8671-4122-96a4-2e52f8dadce0
-ms.openlocfilehash: 24b4698ebc8dd4f61dfd88ad14e64d4f70b2ef35
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: eaecd0d4e6e2b024ce3312719e7104298d3f9a66
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707036"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80075280"
 ---
 # <a name="atl-com-10-component-wizard"></a>ATL COM+ 1.0 Komponenten-Assistent
 
@@ -25,7 +25,7 @@ Verwenden Sie diesen Assistenten, um ein Objekt zu Ihrem Projekt hinzuzufügen, 
 
 Sie können angeben, ob das Objekt duale Schnittstellen und Automatisierung unterstützt. Sie können auch Unterstützung für die Schnittstelle für Fehlerinformationen, für die erweiterte Objektsteuerung, für Transaktionen und für asynchrones Meldungsqueuing angeben.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE**, sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
 
@@ -74,20 +74,20 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
 > [!NOTE]
 >  Wenn Sie Ihr Projekt unter Verwendung von Attributen erstellen oder auf dieser Seite des Assistenten angeben, dass die COM+ 1.0-Komponente Attribute verwendet, können Sie diese Option nicht ändern, da ATL das `coclass`-Attribut nicht enthält.
 
-- **Type**
+- **Typ**
 
    Legt die Objektbeschreibung fest, die in der Registrierung angezeigt wird.
 
-- **Interface**
+- **Schnittstelle**
 
    Legt die Schnittstelle fest, die Sie für Ihr Objekt erstellen. Diese Schnittstelle enthält Ihre benutzerdefinierten Methoden.
 
 - **ProgID**
 
    Legt den Namen fest, den Container anstelle der CLSID des Objekts verwenden können.
-   
+
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATL COM+ 1.0-Komponente](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)

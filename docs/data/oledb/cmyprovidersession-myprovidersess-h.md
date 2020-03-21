@@ -11,21 +11,21 @@ helpviewer_keywords:
 - OLE DB providers, wizard-generated files
 - CCustomSession class in CustomSess.H
 ms.assetid: d37ad471-cf05-49c5-aa47-cd10824d777f
-ms.openlocfilehash: 5cb462aba671e79450e9ee7b8447410252f8edc9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4775f21c1e0fa7666d24b4d6a55e099bc6ae55a2
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230580"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079759"
 ---
 # <a name="ccustomsession-customsessh"></a>CCustomSession (CustomSess.H)
 
-*Benutzerdefinierte*Sess.H enthält die Deklaration und Implementierung für das OLE DB-Sitzungsobjekt. Das Datenquellenobjekt erstellt das Sitzungsobjekt und stellt eine Konversation zwischen einem Consumer und Anbieter dar. Mehrere gleichzeitige Sitzungen können für eine Datenquelle geöffnet sein. Die Vererbungsliste für `CCustomSession` folgt:
+*Benutzer* definiert Sess. H enthält die Deklaration und Implementierung für das OLE DB Session-Objekt. Das Datenquellen Objekt erstellt das Sitzungs Objekt und stellt eine Konversation zwischen einem Consumer und einem Anbieter dar. Mehrere gleichzeitige Sitzungen können für eine Datenquelle geöffnet werden. Die Vererbungs Liste für `CCustomSession` folgt:
 
 ```cpp
 /////////////////////////////////////////////////////////////////////////
 // CCustomSession
-class ATL_NO_VTABLE CCustomSession : 
+class ATL_NO_VTABLE CCustomSession :
    public CComObjectRootEx<CComSingleThreadModel>,
    public IGetDataSourceImpl<CCustomSession>,
    public IOpenRowsetImpl<CCustomSession>,
@@ -35,12 +35,12 @@ class ATL_NO_VTABLE CCustomSession :
    public IDBCreateCommandImpl<CCustomSession, CCustomCommand>
 ```
 
-Das Sitzungsobjekt erbt `IGetDataSource`, `IOpenRowset`, `ISessionProperties`, und `IDBCreateCommand`. Die `IGetDataSource` Schnittstelle ermöglicht es, eine Sitzung mit die Datenquelle abgerufen werden, die sie erstellt haben. Dies ist nützlich, wenn Sie zum Abrufen von Eigenschaften aus der Datenquelle, die Sie erstellt oder andere Informationen, die die Datenquelle bereitstellen müssen. Die `ISessionProperties` Schnittstelle verarbeitet alle Eigenschaften für die Sitzung. Die `IOpenRowset` und `IDBCreateCommand` Schnittstellen werden verwendet, um Datenbankaufgaben. Wenn der Anbieter Befehle unterstützt, es implementiert die `IDBCreateCommand` Schnittstelle. Es wird verwendet, um das Command-Objekt zu erstellen, das Befehle ausführen können. Immer vom Anbieter implementiert die `IOpenRowset` Objekt. Es wird verwendet, um ein Rowset von einem Anbieter zu generieren. Es ist ein Standardrowset (z. B. `"select * from mytable"`) von einem Anbieter.
+Das Sitzungs Objekt erbt von `IGetDataSource`, `IOpenRowset`, `ISessionProperties`und `IDBCreateCommand`. Die `IGetDataSource`-Schnittstelle ermöglicht einer Sitzung das Abrufen der Datenquelle, die Sie erstellt hat. Dies ist hilfreich, wenn Sie Eigenschaften aus der Datenquelle, die Sie erstellt haben, oder andere Informationen, die von der Datenquelle bereitgestellt werden können, erhalten müssen. Die `ISessionProperties`-Schnittstelle verarbeitet alle Eigenschaften der Sitzung. Die `IOpenRowset`-und `IDBCreateCommand`-Schnittstellen werden verwendet, um die Datenbank zu verarbeiten. Wenn der Anbieter Befehle unterstützt, wird die `IDBCreateCommand`-Schnittstelle implementiert. Sie wird verwendet, um das Command-Objekt zu erstellen, das Befehle ausführen kann. Der Anbieter implementiert immer das `IOpenRowset` Objekt. Sie wird verwendet, um ein Rowset von einem Anbieter zu generieren. Dabei handelt es sich um ein Standardrowset (z. b. `"select * from mytable"`) eines Anbieters.
 
-Der Assistent generiert auch drei Sitzungsklassen: `CCustomSessionColSchema`, `CCustomSessionPTSchema`, und `CCustomSessionTRSchema`. Diese Sitzungen werden für Schemarowsets verwendet. Schemarowsets können den Anbieter an Metadaten an den Consumer zurückgegeben, ohne dass die Consumer, die eine Abfrage ausführen oder Daten abrufen muss. Beim Abrufen von Metadaten kann viel schneller als das Suchen eines Anbieters Funktionen sein.
+Der Assistent generiert außerdem drei Sitzungs Klassen: `CCustomSessionColSchema`, `CCustomSessionPTSchema`und `CCustomSessionTRSchema`. Diese Sitzungen werden für Schemarowsets verwendet. Mit Schemarowsets kann der Anbieter Metadaten an den Consumer zurückgeben, ohne dass der Consumer eine Abfrage ausführen oder Daten abrufen muss. Das Abrufen von Metadaten kann viel schneller sein als das Auffinden der Funktionen eines Anbieters.
 
-OLE DB-Spezifikation erfordert, dass Anbieter implementieren die `IDBSchemaRowset` Schnittstelle unterstützt drei Rowset Schematypen: DBSCHEMA_COLUMNS DBSCHEMA_PROVIDER_TYPES und DBSCHEMA_TABLES. Der Assistent generiert die Implementierungen für sämtliche-Schemarowsets. Jede vom Assistenten generierte Klasse enthält eine `Execute` Methode. In diesem `Execute` -Methode können Sie die Daten zurückgeben, an den Anbieter darüber, welche Tabellen, Spalten und Datentypen, die Sie unterstützen. Diese Daten werden zum Zeitpunkt der Kompilierung bezeichnet.
+Die OLE DB Spezifikation erfordert, dass Anbieter, die die `IDBSchemaRowset`-Schnittstelle implementieren, drei Schemarowsettypen unterstützen: DBSCHEMA_COLUMNS, DBSCHEMA_PROVIDER_TYPES und DBSCHEMA_TABLES. Der Assistent generiert Implementierungen für jedes Schemarowset. Jede vom Assistenten generierte Klasse enthält eine `Execute`-Methode. In dieser `Execute`-Methode können Sie Daten an den Anbieter zurückgeben, welche Tabellen, Spalten und Datentypen unterstützt werden. Diese Daten sind zur Kompilierzeit bekannt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vom Anbieter-Assistenten generierte Dateien](../../data/oledb/provider-wizard-generated-files.md)<br/>

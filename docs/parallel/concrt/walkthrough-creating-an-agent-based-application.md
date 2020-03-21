@@ -5,12 +5,12 @@ helpviewer_keywords:
 - asynchronous agents, creating
 - agent class, example
 ms.assetid: 730f42ce-6d58-4753-b948-fd9c9ef2ce6c
-ms.openlocfilehash: 3ece04811a75fba22db447875dc6ed08c22987b5
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 25fffd018c45200571f99dc87ab8ffe29bb6667f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77142041"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080008"
 ---
 # <a name="walkthrough-creating-an-agent-based-application"></a>Exemplarische Vorgehensweise: Erstellen einer agentbasierten Anwendung
 
@@ -28,7 +28,7 @@ Zum Durchführen dieser exemplarischen Vorgehensweise sollten Sie die folgenden 
 
 - [Synchronisierungsdatenstrukturen](../../parallel/concrt/synchronization-data-structures.md)
 
-## <a name="top"></a> Abschnitte
+## <a name="sections"></a><a name="top"></a> Abschnitte
 
 Mit dieser exemplarischen Vorgehensweise wird die Durchführung der folgenden Aufgaben beschrieben:
 
@@ -38,7 +38,7 @@ Mit dieser exemplarischen Vorgehensweise wird die Durchführung der folgenden Au
 
 - [Verwenden der file_reader-Klasse in der Anwendung](#useagentclass)
 
-## <a name="createapplication"></a>Erstellen der Konsolenanwendung
+## <a name="creating-the-console-application"></a><a name="createapplication"></a>Erstellen der Konsolenanwendung
 
 In diesem Abschnitt wird gezeigt, wie C++ eine Konsolenanwendung erstellt wird, die auf die vom Programm verwendeten Header Dateien verweist. Die ersten Schritte sind abhängig von der verwendeten Version von Visual Studio. Stellen Sie sicher, dass die Versions Auswahl in der linken oberen Ecke dieser Seite richtig festgelegt ist.
 
@@ -48,7 +48,7 @@ In diesem Abschnitt wird gezeigt, wie C++ eine Konsolenanwendung erstellt wird, 
 
 1. Wählen Sie im Hauptmenü **Datei** > **neue** > **Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
-1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest. 
+1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
 1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite `BasicAgent` als Namen für das Projekt ein, und geben Sie den Speicherort des Projekts an, wenn gewünscht.
 
@@ -80,7 +80,7 @@ In diesem Abschnitt wird gezeigt, wie C++ eine Konsolenanwendung erstellt wird, 
 
 [[Nach oben](#top)]
 
-## <a name="createagentclass"></a>Erstellen der file_reader-Klasse
+## <a name="creating-the-file_reader-class"></a><a name="createagentclass"></a>Erstellen der file_reader-Klasse
 
 In diesem Abschnitt wird die Erstellung der `file_reader`-Klasse beschrieben. Die Runtime plant jeden Agent so, dass er Arbeiten im eigenen Kontext ausführt. Daher können Sie einen Agent erstellen, der Arbeiten synchron ausführt, aber asynchron mit anderen Komponenten interagiert. Die `file_reader`-Klasse liest Daten aus einer angegebenen Eingabedatei aus und sendet Daten aus dieser Datei an eine angegebene Zielkomponente.
 
@@ -128,7 +128,7 @@ Im folgenden Beispiel wird der vollständige Inhalt der Datei file_reader.h darg
 
 [[Nach oben](#top)]
 
-## <a name="useagentclass"></a>Verwenden der file_reader-Klasse in der Anwendung
+## <a name="using-the-file_reader-class-in-the-application"></a><a name="useagentclass"></a>Verwenden der file_reader-Klasse in der Anwendung
 
 In diesem Abschnitt wird beschrieben, wie mithilfe der `file_reader`-Klasse der Inhalt einer Textdatei gelesen wird. Außerdem wird gezeigt, wie ein [parallelcurrency:: Callcenter](../../parallel/concrt/reference/call-class.md) -Objekt erstellt wird, das diese Datei Daten empfängt und seine Adler-32-Prüfsumme berechnet.
 
@@ -192,7 +192,7 @@ Wenn dieses Programm mit der Beispieleingabe verwendet wird, generiert es die fo
 Adler-32 sum is fefb0d75
 ```
 
-## <a name="robust-programming"></a>Robuste Programmierung
+## <a name="robust-programming"></a>Stabile Programmierung
 
 Um gleichzeitigen Zugriff auf Datenmember zu verhindern, wird empfohlen, Methoden hinzufügen, die Arbeiten am `protected`-Abschnitt oder am `private`-Abschnitt der Klasse durchführen. Fügen Sie dem `public`-Abschnitt der Klasse nur Methoden hinzu, die Nachrichten an den Agent senden oder vom Agent empfangen.
 

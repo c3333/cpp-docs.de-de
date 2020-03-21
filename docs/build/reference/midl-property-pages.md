@@ -47,12 +47,12 @@ f1_keywords:
 - VC.Project.VCMidlTool.RedirectOutputAndErrors
 - VC.Project.VCMidlTool.MinimumTargetSystem
 - vc.project.AdditionalOptionsPage
-ms.openlocfilehash: e9c9cb75d326642c86405992a4bf9d7da9e578df
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: 260936d01a611f061b0b4fa9a5c087ff38cc66a3
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927698"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076128"
 ---
 # <a name="midl-property-pages"></a>Eigenschaftenseiten "MIDL"
 
@@ -62,15 +62,15 @@ Die Eigenschaften Seiten in der Mitte sind als Element Eigenschaft in verfügbar
 
 ### <a name="preprocessor-definitions"></a>Präprozessordefinitionen
 
-Gibt eine oder mehrere Definitionen an, einschließlich der MIDL-Makros ([/D](/windows/win32/midl/-d))\[macros\]).
+Gibt eine oder mehrere Definitionen an, einschließlich der/D-Makros ([/D](/windows/win32/midl/-d)), die\[Makros\])).
 
 ### <a name="additional-include-directories"></a>Zusätzliche Includeverzeichnisse
 
-Gibt mindestens ein Verzeichnis an, das dem Include-Pfad hinzugefügt werden\]soll ([/I](/windows/win32/midl/-i)\[Path).
+Gibt mindestens ein Verzeichnis an, das dem Include-Pfad hinzugefügt werden soll ([/I](/windows/win32/midl/-i)\[Pfad\]).
 
 ### <a name="additional-metadata-directories"></a>Weitere Metadatenverzeichnisse
 
-Geben Sie das Verzeichnis an, das die Datei "Windows. Foundation. winmd" ([/metadata_dir](/windows/win32/midl/-metadata-dir) \[Path\]) enthält.
+Geben Sie das Verzeichnis an, das die Datei "Windows. Foundation. winmd" ([/metadata_dir](/windows/win32/midl/-metadata-dir) \[Pfad\]) enthält.
 
 ### <a name="enable-windows-runtime"></a>Aktivieren von Windows-Runtime
 
@@ -78,7 +78,7 @@ Aktivieren Sie Windows-Runtime Semantik zum Erstellen einer Windows-Metadatendat
 
 ### <a name="ignore-standard-include-path"></a>Standardincludepfad ignorieren
 
-Ignorieren der aktuellen und der include-Verzeichnisse ([/no_def_idir](/windows/win32/midl/-no-def-idir)).
+Die aktuellen und include-Verzeichnisse ([/no_def_idir](/windows/win32/midl/-no-def-idir)) werden ignoriert.
 
 ### <a name="mktyplib-compatible"></a>MkTypLib-kompatibel
 
@@ -88,7 +88,7 @@ Erzwingt Kompatibilität mit MkTypLib. exe, Version 2,03 ([/mktyplib203](/window
 
 Wählt die strenge der Mittell-Code Fehler ([/W](/windows/win32/midl/-w)) aus.
 
-**Optionen**
+**choices**
 
 - **1**
 - **1**
@@ -108,7 +108,7 @@ Unterdrückt die Anzeige des Start Banners und der Informations Meldung ([/nolog
 
 Gibt den Standard Zeichentyp des C-Compilers an, der zum Kompilieren des generierten Codes verwendet wird. ([/char](/windows/win32/midl/-char) signiert | unsigned | ASCII7).
 
-**Optionen**
+**choices**
 
 - **Signiert** -signiert
 - **Unsigned** -unsigned
@@ -118,7 +118,7 @@ Gibt den Standard Zeichentyp des C-Compilers an, der zum Kompilieren des generie
 
 Gibt an, welche Umgebung als Ziel festgelegt werden soll ([/env](/windows/win32/midl/-env) arm32 | Win32 | ia64 | x64).
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt** -Win32
 - **Microsoft Windows 32-Bit** -Win32
@@ -157,7 +157,7 @@ Gibt das Ausgabeverzeichnis an ([/out](/windows/win32/midl/-out) [Verzeichnis]).
 
 Gibt den Namen der generierten Metadatendatei an ([/winmd](/windows/win32/midl/-winmd) filename).
 
-### <a name="header-file"></a>Header Datei
+### <a name="header-file"></a>Headerdatei
 
 Gibt den Namen der generierten Header Datei an ([/h](/windows/win32/midl/-h) filename).
 
@@ -185,7 +185,7 @@ Gibt den Namen der Typbibliotheks Datei an ([/tlb](/windows/win32/midl/-tlb) fil
 
 Nur Client-Stub-Datei generieren ([/Client](/windows/win32/midl/-client) [Stub | none]).
 
-**Optionen**
+**choices**
 
 - **Stub** -Stub
 - **None** -None
@@ -194,7 +194,7 @@ Nur Client-Stub-Datei generieren ([/Client](/windows/win32/midl/-client) [Stub |
 
 Nur Server-Stub-Datei generieren ([/Server](/windows/win32/midl/-server) [Stub | none]).
 
-**Optionen**
+**choices**
 
 - **Stub** -Stub
 - **None** -None
@@ -211,7 +211,7 @@ Geben Sie die Server-Stub-Datei an ([/sstub](/windows/win32/midl/-sstub) [File])
 
 Gibt das Format der Typbibliotheks Datei an ([/oldtlb |/newtlb]).
 
-**Optionen**
+**choices**
 
 - **Newformat** -neues Format
 - **OldFormat** -altes Format
@@ -230,7 +230,7 @@ Gibt eine oder mehrere nicht Definitionen an, einschließlich der Mittel l-Makro
 
 Wählen Sie die Option Fehlerüberprüfung ([/Error all | none]) aus.
 
-**Optionen**
+**choices**
 
 - **Enablecustom** -alle
 - **Alle**
@@ -254,7 +254,7 @@ Wählen Sie die Option Fehlerüberprüfung ([/Error all | none]) aus.
 
 ### <a name="check-stub-data"></a>Stub-Daten überprüfen
 
-Geben Sie eine zusätzliche Überprüfung für die Gültigkeit der serverseitigen Stub-Daten an ([/Error](/windows/win32/midl/-error) stub_data).
+Geben Sie eine zusätzliche Überprüfung auf die Gültigkeit der serverseitigen Stub-Daten ([/Error](/windows/win32/midl/-error) stub_data) aus.
 
 ### <a name="prepend-with-abi-namespace"></a>"Abi"-Namespace voransetzen
 
@@ -262,13 +262,13 @@ Fügen Sie allen Typen den "abi"-Namespace voran.  ([/ns_prefix](/windows/win32/
 
 ### <a name="validate-parameters"></a>Parameter überprüfen
 
-Generieren zusätzlicher Informationen zum Überprüfen von Parametern ([/robust](/windows/win32/midl/-robust) | [/no_robust](/windows/win32/midl/-no-robust)).
+Generieren Sie zusätzliche Informationen zum Überprüfen von Parametern ([/robust](/windows/win32/midl/-robust) | [/no_robust](/windows/win32/midl/-no-robust)).
 
 ### <a name="struct-member-alignment"></a>Ausrichtung von Strukturmembern
 
 Gibt die Verpackungs Ebene von Strukturen im Zielsystem an (/ZpN).
 
-**Optionen**
+**choices**
 
 - **Nicht festgelegt** -nicht festgelegt
 - **1 Byte** -Zp1
@@ -283,6 +283,3 @@ Leitet die Ausgabe vom Bildschirm an eine Datei ([/o](/windows/win32/midl/-o) -D
 ### <a name="minimum-target-system"></a>Minimalziel System
 
 Legen Sie das minimale Zielsystem fest ([/target](/windows/win32/midl/-target) String).
-
-
-

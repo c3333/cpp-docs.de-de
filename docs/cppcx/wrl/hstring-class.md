@@ -38,12 +38,12 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HString::Set method
 - Microsoft::WRL::Wrappers::HString::~HString, destructor
 ms.assetid: 6709dd2e-8d72-4675-8ec7-1baa7d71854d
-ms.openlocfilehash: a3765da94560eb84a1d441a6b25c42822fc857bb
-ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
+ms.openlocfilehash: 38979a058cd6a8b029961708b4197daea2826d85
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79509470"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077172"
 ---
 # <a name="hstring-class"></a>HString-Klasse
 
@@ -102,7 +102,7 @@ Name                                         | BESCHREIBUNG
 
 **Namespace:** Microsoft:: WRL:: Wrapper
 
-## <a name="tilde-hstring"></a>Hstring:: ~ hstring
+## <a name="hstringhstring"></a><a name="tilde-hstring"></a>Hstring:: ~ hstring
 
 Zerstört die aktuelle Instanz der `HString`-Klasse.
 
@@ -110,7 +110,7 @@ Zerstört die aktuelle Instanz der `HString`-Klasse.
 ~HString() throw()
 ```
 
-## <a name="attach"></a>Hstring:: Attach
+## <a name="hstringattach"></a><a name="attach"></a>Hstring:: Attach
 
 Ordnet das angegebene `HString` Objekt dem aktuellen `HString`-Objekt zu.
 
@@ -125,7 +125,7 @@ void Attach(
 *HSTR*<br/>
 Ein vorhandenes `HString`-Objekt.
 
-## <a name="copyto"></a>Hstring:: CopyTo
+## <a name="hstringcopyto"></a><a name="copyto"></a>Hstring:: CopyTo
 
 Kopiert das aktuelle `HString`-Objekt in ein hstring-Objekt.
 
@@ -144,7 +144,7 @@ Das HSTRING, das die Kopie erhält.
 
 Diese Methode ruft die [windowsduplicatestring](/windows/win32/api/winstring/nf-winstring-windowsduplicatestring) -Funktion auf.
 
-## <a name="detach"></a>Hstring::D Etach
+## <a name="hstringdetach"></a><a name="detach"></a>Hstring::D Etach
 
 Trennt die Zuordnung des angegebenen `HString` Objekts zum zugrunde liegenden Wert.
 
@@ -156,7 +156,7 @@ HSTRING Detach() throw()
 
 Der zugrunde liegende `HString` Wert, bevor der Trennvorgang gestartet wurde.
 
-## <a name="get"></a>Hstring:: Get
+## <a name="hstringget"></a><a name="get"></a>Hstring:: Get
 
 Ruft den Wert des zugrunde liegenden HSTRING-Handles ab.
 
@@ -168,7 +168,7 @@ HSTRING Get() const throw()
 
 Der Wert des zugrunde liegenden hstring-Handles.
 
-## <a name="getaddressof"></a>Hstring:: getaddressof
+## <a name="hstringgetaddressof"></a><a name="getaddressof"></a>Hstring:: getaddressof
 
 Ruft einen Zeiger auf das zugrunde liegende HSTRING-Handle ab.
 
@@ -184,7 +184,7 @@ Ein Zeiger auf das zugrunde liegende hstring-handle.
 
 Nach diesem Vorgang wird der Zeichen folgen Wert des zugrunde liegenden hstring-Handles zerstört.
 
-## <a name="getrawbuffer"></a>Hstring:: getrawbuffer
+## <a name="hstringgetrawbuffer"></a><a name="getrawbuffer"></a>Hstring:: getrawbuffer
 
 Ruft einen Zeiger auf die zugrunde liegenden Zeichen folgen Daten ab.
 
@@ -200,8 +200,7 @@ const wchar_t* GetRawBuffer(unsigned int* length) const;
 
 Ein **konstanter** Zeiger auf die zugrunde liegenden Zeichen folgen Daten.
 
-
-## <a name="hstring"></a>Hstring:: hstring
+## <a name="hstringhstring"></a><a name="hstring"></a>Hstring:: hstring
 
 Initialisiert eine neue Instanz der Klasse `HString`.
 
@@ -224,7 +223,7 @@ Der erste Konstruktor initialisiert ein neues `HString`-Objekt, das leer ist.
 
 Der zweite Konstruktor initialisiert ein neues `HString`-Objekt mit dem Wert des vorhandenen *anderen* Parameters und zerstört dann den *anderen* Parameter.
 
-## <a name="isvalid"></a>Hstring:: IsValid
+## <a name="hstringisvalid"></a><a name="isvalid"></a>Hstring:: IsValid
 
 Gibt an, ob das aktuelle `HString`-Objekt leer ist.
 
@@ -236,7 +235,7 @@ bool IsValid() const throw()
 
 **true** , wenn das aktuelle `HString` Objekt nicht leer ist. andernfalls **false**.
 
-## <a name="makereference"></a>Hstring:: makereferenzierung
+## <a name="hstringmakereference"></a><a name="makereference"></a>Hstring:: makereferenzierung
 
 Erstellt ein `HStringReference`-Objekt aus einem angegebenen Zeichen folgen Parameter.
 
@@ -266,7 +265,7 @@ Die maximale Länge des *Str* -Parameter Puffers, der in diesem Vorgang verwende
 
 Ein `HStringReference` Objekt, dessen Wert mit dem angegebenen *Str* -Parameter übereinstimmt.
 
-## <a name="operator-assign"></a>Hstring:: Operator =-Operator
+## <a name="hstringoperator-operator"></a><a name="operator-assign"></a>Hstring:: Operator =-Operator
 
 Verschiebt den Wert eines anderen `HString` Objekts in das aktuelle `HString`-Objekt.
 
@@ -283,7 +282,7 @@ Ein vorhandenes `HString`-Objekt.
 
 Der Wert des vorhandenen *anderen* Objekts wird in das aktuelle `HString` Objekt kopiert, und dann wird das *andere* Objekt zerstört.
 
-## <a name="operator-equality"></a>Hstring:: Operator = =-Operator
+## <a name="hstringoperator-operator"></a><a name="operator-equality"></a>Hstring:: Operator = =-Operator
 
 Gibt an, ob die zwei Parameter gleich sind.
 
@@ -321,7 +320,7 @@ Der zweite Parameter, der verglichen werden soll. bei *RHS* kann es sich um ein 
 
 **true** , wenn die Parameter *LHS* und *RHS* gleich sind. andernfalls **false**.
 
-## <a name="operator-inequality"></a>Hstring:: Operator! =-Operator
+## <a name="hstringoperator-operator"></a><a name="operator-inequality"></a>Hstring:: Operator! =-Operator
 
 Gibt an, ob die zwei Parameter ungleich sind.
 
@@ -354,7 +353,7 @@ Der zweite Parameter, der verglichen werden soll. bei *RHS* kann es sich um ein 
 
 **true** , wenn die Parameter *LHS* und *RHS* nicht gleich sind. andernfalls **false**.
 
-## <a name="operator-less-than"></a>Hstring:: Operator&lt;-Operator
+## <a name="hstringoperatorlt-operator"></a><a name="operator-less-than"></a>Hstring:: Operator&lt;-Operator
 
 Gibt an, ob der erste Parameter kleiner als der zweite Parameter ist.
 
@@ -376,7 +375,7 @@ Der zweite Parameter, der verglichen werden soll. bei *RHS* kann es sich um eine
 
 **true** , wenn der *LHS* -Parameter kleiner als der *RHS* -Parameter ist. andernfalls **false**.
 
-## <a name="release"></a>Hstring:: Release
+## <a name="hstringrelease"></a><a name="release"></a>Hstring:: Release
 
 Löscht den zugrunde liegenden Zeichen folgen Wert und initialisiert das aktuelle `HString`-Objekt in einen leeren Wert.
 
@@ -384,7 +383,7 @@ Löscht den zugrunde liegenden Zeichen folgen Wert und initialisiert das aktuell
 void Release() throw()
 ```
 
-## <a name="set"></a>Hstring:: Set
+## <a name="hstringset"></a><a name="set"></a>Hstring:: Set
 
 Legt den Wert des aktuellen `HString` Objekts auf die angegebene Zeichenfolge mit breit Zeichen oder `HString` Parameter fest.
 

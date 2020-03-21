@@ -14,14 +14,14 @@ helpviewer_keywords:
 - std::make_integer_sequence
 - std::index_sequence_for
 ms.assetid: 2cfdddee-819d-478e-bb78-c8a9c2696803
-ms.openlocfilehash: ca923933ac7a401f6a3ef14f821ceb04b844797b
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: d0de2e56e1f6b8e68e5989f21ecd89b9646caa1b
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68451022"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80076470"
 ---
-# <a name="integersequence-class"></a>integer_sequence-Klasse
+# <a name="integer_sequence-class"></a>integer_sequence-Klasse
 
 Stellt eine Ganzzahlsequenz dar. Kann zum Ableiten und Erweitern von Parameterpaketen in Variadic-Typen wie „std::tuple\<T...>“ verwendet werden, die an eine Funktion als Argumente weitergegeben werden.
 
@@ -34,30 +34,30 @@ struct integer_sequence
 
 ### <a name="parameters"></a>Parameter
 
-*BUND*\
+*T*\
 Der Typ von Werten; muss sich um einen integralen Typ handeln: „bool“, „char“, „char16_t“, „char32_t“, „wchar_t“ oder signierte oder nicht signierte Ganzzahltypen.
 
-*Veranstaltungen*\
+*Vals* -\
 Ein typenloses Parameterpaket, das eine Sequenz von Werten des integralen Typs T darstellt.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 |||
 |-|-|
 |`static size_t size() noexcept`|Die Anzahl der Elemente in der Sequenz.|
 |`typedef T value_type`|Der Typ jedes Elements in der Sequenz. Muss ein ganzzahliger Typ sein.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein Parameterpaket, das direkt an eine Funktion weitergegeben wird, kann ohne spezielle Bibliothekshilfsprogramme entpackt werden. Wenn ein Parameterpaket Bestandteil eines an eine Funktion weitergegebenen Typs ist und Sie Indizes für den Zugriff auf Elemente benötigen, besteht die einfachste Möglichkeit es zu entpacken darin, `integer_sequence` und die zugehörigen Typaliase `make_integer_sequence`, `index_sequence`, `make_index_sequence` und `index_sequence_for` zu verwenden.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel beruht auf dem ursprünglichen Vorschlag [N3658](http://open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3658.html). Darin wird die Verwendung von `integer_sequence` zum Erstellen von `std::tuple` aus `std::array<T,N>` und die Verwendung von `integer_sequence` für den Abruf bei Tupel-Membern gezeigt.
+Das folgende Beispiel beruht auf dem ursprünglichen Vorschlag [N3658](https://wg21.link/n3658). Darin wird die Verwendung von `integer_sequence` zum Erstellen von `std::tuple` aus `std::array<T,N>` und die Verwendung von `integer_sequence` für den Abruf bei Tupel-Membern gezeigt.
 
 In der Funktion `a2t` ist `index_sequence` ein Alias von `integer_sequence` auf Grundlage des integralen Typs `size_t`. `make_index_sequence` ist ein Alias, der zum Zeitpunkt der Kompilierung eine nullbasierte `index_sequence` mit der gleichen Anzahl an Elementen wie das Array erstellt, das durch den Aufrufer weitergegeben wird. `a2t` übergibt `index_sequence` nach Wert an `a2t_`, wo der Ausdruck `a[I]...` entpackt`I` wird. Dann werden die Elemente an `make_tuple` übergeben, wo sie als einzelne Argumente verwendet werden. Wenn Sie Sequenz beispielsweise drei Elemente enthält, wird `make_tuple` als „make_tuple(a[0], a[1], a[2])“ aufgerufen. Die Arrayelemente an sich können von einem beliebigen Typ sein.
 
-Die Apply-Funktion akzeptiert ein [Std:: Tuple](../standard-library/tuple-class.md)und erzeugt mithilfe `integer_sequence` der `tuple_size` -Hilfsklasse einen. Beachten Sie, dass [Std::d ecay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Verweis Typen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
+Die Apply-Funktion akzeptiert ein [Std:: Tuple](../standard-library/tuple-class.md)und erzeugt eine `integer_sequence` mithilfe der `tuple_size` Helper-Klasse. Beachten Sie, dass [Std::d ecay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Verweis Typen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
 
 ```cpp
 #include <stddef.h>
@@ -117,12 +117,12 @@ int main()
 
 Verwenden Sie zum Erstellen einer `index_sequence` für ein Parameterpaket `index_sequence_for`\<<T...>. Hierbei handelt es sich um einen Alias für `make_index_sequence`\<<sizeof...(T)>
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Header: \<type_traits\>
 
 Namepace: std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Auslassungszeichen- und Variadic-Vorlagen](../cpp/ellipses-and-variadic-templates.md)
