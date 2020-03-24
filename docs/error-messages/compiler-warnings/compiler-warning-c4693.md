@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4693
 ms.assetid: 72d8db01-5e6f-4794-8731-76107e8f064a
-ms.openlocfilehash: cac5918eb4a1689fd215e07272958eeca48247ad
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 71c3db18b400ce94bff3c643d6728a6613061039
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62311310"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165131"
 ---
 # <a name="compiler-warning-c4693"></a>Compilerwarnung C4693
 
 > "class": Eine versiegelte abstrakte Klasse kann keine Test-Instanzmember aufweisen
 
-Wenn ein Typ gekennzeichnet ist [versiegelten](../../extensions/sealed-cpp-component-extensions.md) und [abstrakte](../../extensions/abstract-cpp-component-extensions.md), es kann nur statische Member aufweisen.
+Wenn ein Typ als [versiegelt](../../extensions/sealed-cpp-component-extensions.md) und [abstrakt](../../extensions/abstract-cpp-component-extensions.md)markiert ist, kann er nur statische Member aufweisen.
 
-Diese Warnung wird automatisch zu einem Fehler heraufgestuft. Wenn Sie dieses Verhalten ändern möchten, verwenden Sie [#pragma-Warnung](../../preprocessor/warning.md).
+Diese Warnung wird automatisch zu einem Fehler heraufgestuft. Wenn Sie dieses Verhalten ändern möchten, verwenden Sie [#pragma Warnung](../../preprocessor/warning.md).
 
 ## <a name="example"></a>Beispiel
 

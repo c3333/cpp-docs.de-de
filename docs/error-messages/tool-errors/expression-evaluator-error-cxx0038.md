@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CXX0038
 - CAN0038
 ms.assetid: 3327dc4e-1726-4924-a519-6ffd766a389c
-ms.openlocfilehash: aa471ef538846e48e40032f976754eda93137981
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 06105064db9f696784aaaef2d41d978935eac896
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397002"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80185112"
 ---
 # <a name="expression-evaluator-error-cxx0038"></a>Ausdrucksauswertungsfehler CXX0038
 
-Funktion Argument die Anzahl und/oder der Art-Konflikt
+Funktions Argument Anzahl und/oder Typen Konflikt
 
-Der Funktionsaufruf gemäß entspricht nicht den Prototyp für die Funktion.
+Der angegebene Funktions aufrufstyp entspricht nicht dem Prototyp für die Funktion.
 
-Geben Sie den Aufruf mit der richtigen Anzahl von Argumenten ein. Jedes Argument im Prototyp nach Bedarf entsprechend umgewandelt.
+Geben Sie den-Befehl mit der richtigen Anzahl von Argumenten erneut ein. Geben Sie bei Bedarf jedes Argument so ein, dass es dem Prototyp entspricht.
 
 Dieser Fehler ist mit CAN0038 identisch.

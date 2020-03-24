@@ -12,12 +12,12 @@ helpviewer_keywords:
 - multidimensional arrays
 - arrays [C++]
 ms.assetid: 49445812-d775-4db1-a231-869598dbb955
-ms.openlocfilehash: e4173c16e13c08a54b36e42183e6e18b6ed4fdc2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: ecd8425bf7bcc9772d7b1327add79b89aea629a7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516195"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182239"
 ---
 # <a name="arrays-ccli-and-ccx"></a>Arrays (C++/CLI und C++/CX)
 
@@ -68,13 +68,13 @@ Der Name der Arrayvariablen.
 Der Typ der Werte, die das Array initialisieren. In der Regel haben *array-type* und *initialization-type* denselben Typ. Die Typen können jedoch unterschiedlich sein, wenn eine Konvertierung von *initialization-type* zu *array-type* erfolgt – z.B., wenn *initialization-type* von *array-type* abgeleitet ist.
 
 *initialization-list*<br/>
-(Optional) Eine durch Trennzeichen getrennte Liste von Werten in geschweiften Klammern, die die Elemente des Arrays initialisieren. Wenn z.B. *rank-size-list* `(3)` wäre, was ein eindimensionales Array von 3 Elementen deklariert, könnte *initialization-list* `{1,2,3}` sein.
+(Optional) Eine durch Trennzeichen getrennte Liste von Werten in geschweiften Klammern, die die Elemente des Arrays initialisieren. Wenn z.B. *rank-size-list*`(3)` wäre, was ein eindimensionales Array von 3 Elementen deklariert, könnte *initialization-list*`{1,2,3}` sein.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Sie können zur Kompilierzeit mit `__is_ref_array(type)` erkennen, ob ein Typ ein Array mit Verweiszählung ist. Weitere Informationen finden Sie unter [Compilerunterstützung für Typmerkmale](compiler-support-for-type-traits-cpp-component-extensions.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -129,9 +129,9 @@ Eine durch Trennzeichen getrennte Liste der Größe der einzelnen Dimensionen im
 *initialization-list*<br/>
 (Optional) Eine durch Trennzeichen getrennte Liste von Werten in geschweiften Klammern, die die Elemente des Arrays initialisieren. Es kann auch eine durch Trennzeichen getrennte Liste von geschachtelten oder *initialization-list*-Elementen sein, die die Elemente in einem mehrdimensionalen Array initialisieren.
 
-Wenn z.B. *rank-size-list* `(3)` wäre, was ein eindimensionales Array von 3 Elementen deklariert, könnte *initialization-list* `{1,2,3}` sein. Wenn *rank-size-list* `(3,2,4)` wäre, was ein dreidimensionales Arrays von 3 Elementen in der ersten, 2 Elementen in der zweiten und 4 Elementen in der dritten Dimension deklariert, könnte *initialization-list* `{{1,2,3},{0,0},{-5,10,-21,99}}` sein.
+Wenn z.B. *rank-size-list*`(3)` wäre, was ein eindimensionales Array von 3 Elementen deklariert, könnte *initialization-list*`{1,2,3}` sein. Wenn *rank-size-list*`(3,2,4)` wäre, was ein dreidimensionales Arrays von 3 Elementen in der ersten, 2 Elementen in der zweiten und 4 Elementen in der dritten Dimension deklariert, könnte *initialization-list*`{{1,2,3},{0,0},{-5,10,-21,99}}` sein.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 **array** befindet sich in [Plattform-, Standard- und CLI-Namespaces (C++/CLI und C++/CX)](platform-default-and-cli-namespaces-cpp-component-extensions.md).
 
@@ -145,7 +145,7 @@ Wenn Sie ein Array zuordnen, dessen Elementtyp ein Werttyp `V` ist, wird der Sta
 
 Zur Kompilierzeit können Sie mit `__is_ref_array(type)` erkennen, ob ein Typ ein Common Language Runtime-Array (CLR) ist. Weitere Informationen finden Sie unter [Compilerunterstützung für Typmerkmale](compiler-support-for-type-traits-cpp-component-extensions.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -168,6 +168,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

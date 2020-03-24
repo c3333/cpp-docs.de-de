@@ -10,12 +10,12 @@ helpviewer_keywords:
 - based pointers
 - pointers, based
 ms.assetid: 1e5f2e96-c52e-4738-8e14-87278681205e
-ms.openlocfilehash: 393fe8f8d12266650740942d0605152b6548d146
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: f16e9f6582ae846c0c19fc1dcbd86f09baba713e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857696"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181394"
 ---
 # <a name="based-pointers-c"></a>Basierte Zeiger (C++)
 
@@ -27,7 +27,7 @@ Mit dem **__based** -Schlüsselwort können Sie Zeiger auf der Grundlage von Zei
 type __based( base ) declarator
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Zeiger, die auf Zeiger Adressen basieren, sind die einzige Form des **__based** Schlüsselworts, das in 32-Bit-oder 64-Bit-Kompilierungen gültig ist. Für den 32-Bit-C/C++Compiler von Microsoft ist ein basierter Zeiger ein 32-Bit-Offset von einer 32-Bit-Zeigerbasis. Eine ähnliche Einschränkung besteht für 64-Bit-Umgebungen, in denen ein basierter Zeiger ein 64-Bit-Offset von der 64-Bit-Basis ist.
 
@@ -89,7 +89,7 @@ int main() {
 11
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [alloc_text](../preprocessor/alloc-text.md)

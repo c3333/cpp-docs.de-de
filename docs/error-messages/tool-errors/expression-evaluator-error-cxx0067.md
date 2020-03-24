@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CXX0067
 - CAN0067
 ms.assetid: 9a3e642b-4746-41ac-b665-bd98a6fa0cb3
-ms.openlocfilehash: 61178f1a0c89306bdc0318c12b2c347aa6a3255f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6bf9ddc1474ba32ecaee35ba9003bf76a424e4a1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299191"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184319"
 ---
 # <a name="expression-evaluator-error-cxx0067"></a>Ausdrucksauswertungsfehler CXX0067
 
-die funktionsauswertung nicht unterstützt
+Funktions Auswertung wird nicht unterstützt.
 
-Der Ausdruck enthielt einen Funktionsaufruf an. Einige ausdrucksauswertungen unterstützen keine Funktionsaufrufe.
+Der Ausdruck enthielt einen Funktions Aufruf. Die Ausdrucks Auswertung unterstützt keine Funktionsaufrufe.
 
 Dieser Fehler ist mit CAN0067 identisch.

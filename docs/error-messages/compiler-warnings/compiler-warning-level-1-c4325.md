@@ -6,49 +6,49 @@ f1_keywords:
 helpviewer_keywords:
 - C4325
 ms.assetid: 8127a08c-d626-481b-aa7b-04a3fdc9a9ec
-ms.openlocfilehash: 293cbbcfe134f6cb4f5e1bf924be7c03fa278833
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e0a13761b0657d054065358994638779817dad6a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408536"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80163023"
 ---
 # <a name="compiler-warning-level-1-c4325"></a>Compilerwarnung (Stufe 1) C4325
 
-> Attribute für Standardabschnitt "*Abschnitt*" ignoriert
+> Attribute für Standardabschnitt '*Abschnitt*' werden ignoriert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Sie können die Attribute eines Abschnitts standard nicht ändern. Zum Beispiel:
+Die Attribute eines Standard Abschnitts dürfen nicht geändert werden. Beispiel:
 
 ```cpp
 #pragma section(".sdata", long)
 ```
 
-Dies überschreibt die `.sdata` Abschnitt "standard" verwendet die **kurze** Datentyp mit der **lange** -Datentyp.
+Dadurch wird der `.sdata` Standardabschnitt überschrieben, der den **Short** -Datentyp mit dem **Long** -Datentyp verwendet.
 
-Standard-Abschnitten enthalten, deren Attribute, die nicht geändert werden kann,
+Standard Abschnitte, deren Attribute Sie möglicherweise nicht ändern, sind:
 
-- ".Data"
+- . Data
 
-- .sdata
+- sdata
 
-- ".BSS"
+- BSS
 
-- .sbss
+- SBSS
 
 - .text
 
-- .const
+- . konstant
 
-- .sconst
+- . skonstanten
 
-- .rdata
+- . rdata
 
-- .srdata
+- srdata
 
-Zusätzliche Abschnitte ggf. später hinzugefügt werden.
+Weitere Abschnitte können später hinzugefügt werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [section](../../preprocessor/section.md)

@@ -5,26 +5,26 @@ f1_keywords:
 - C4840
 helpviewer_keywords:
 - C4840
-ms.openlocfilehash: a757004659c1a9d2ce858cfae5ddfbc6c024d782
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 649083d66d0c7a0ef11c742e56cbfb70e2e9b75f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62360007"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80185203"
 ---
 # <a name="compiler-warning-level-4-c4840"></a>Compilerwarnung (Stufe 4) C4840
 
-> nicht Portable Verwendung der Klasse*Typ*"als Argument an eine Variadic-Funktion
+> nicht Portier Bare Verwendung der '*Type*'-Klasse als Argument für eine Variadic-Funktion
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Klassen oder Strukturen, die an eine Variadic-Funktion übergeben werden müssen einfach kopierbar sein. Wenn solche Objekte übergeben werden, macht der Compiler einfach eine bitweise Kopie und ruft keinen Konstruktor oder Destruktor auf.
+Klassen oder Strukturen, die an eine Variadic-Funktion übermittelt werden, müssen trivial kopiert werden können. Wenn solche Objekte übergeben werden, macht der Compiler einfach eine bitweise Kopie und ruft keinen Konstruktor oder Destruktor auf.
 
-Diese Warnung ist ab, die in Visual Studio 2017 verfügbar.
+Diese Warnung ist ab Visual Studio 2017 verfügbar.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4840 generiert, und es wird gezeigt, wie Sie diesen Fehler beheben:
+Im folgenden Beispiel wird C4840 generiert und gezeigt, wie Sie diesen Fehler beheben:
 
 ```cpp
 // C4840.cpp
@@ -49,7 +49,7 @@ int main()
 }
 ```
 
-Für Zeichenfolgen mit erstellte und verwaltete `CStringW`, bereitgestellten `operator LPCWSTR()` sollte verwendet werden, um die Umwandlung einer `CStringW` Objekt, das den Zeichenfolgenzeiger im C-Stil für von der Formatzeichenfolge erwartet wird:
+Für Zeichen folgen, die mit `CStringW`erstellt und verwaltet werden, sollte die angegebene `operator LPCWSTR()` verwendet werden, um ein `CStringW` Objekt in den Zeichen folgen Zeiger im C-Stil umzuwandeln, der von der Format Zeichenfolge erwartet wird
 
 ```cpp
     CStringW str1;

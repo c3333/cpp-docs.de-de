@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4197
 ms.assetid: 8a976fd7-a74b-4c83-ab66-a9e7d7073c4a
-ms.openlocfilehash: 0abad1b98ff4782f077312752603ec17fd611c12
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 92702864a00455e4b70f00dfc9988bfb754e2e64
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390359"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183279"
 ---
 # <a name="linker-tools-warning-lnk4197"></a>Linkertoolwarnung LNK4197
 
-> Exportieren von "*Exportname*" angegeben, mehrmals; erste Angabe
+> Export "Export*Name*" mehrmals angegeben; erste Spezifikation wird verwendet
 
-Ein Export in mehreren angegeben ist und auf unterschiedliche Weise. Der Linker die erste Spezifikation verwendet und der Rest wird ignoriert.
+Ein Export wird auf mehrere verschiedene Arten angegeben. Der Linker verwendet die erste Spezifikation und ignoriert den Rest.
 
-Wenn Sie die C-Laufzeitbibliothek neu sind, können Sie diese Meldung ignorieren.
+Wenn Sie die C-Lauf Zeit Bibliothek neu erstellen, können Sie diese Meldung ignorieren.
 
-Wenn ein Export genau die gleiche Weise mehrere Male angegeben ist, gibt der Linker eine Warnung nicht.
+Wenn ein Export genau gleich mehrmals angegeben wird, gibt der Linker keine Warnung aus.
 
-Beispielsweise würde eine DEF-Datei mit folgendem Inhalt, diese Warnung verursachen:
+Beispielsweise würde der folgende Inhalt einer DEF-Datei diese Warnung verursachen:
 
 ```
 EXPORTS
@@ -33,6 +33,6 @@ EXPORTS
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Der gleiche Export entspricht sowohl in der Befehlszeile (über Export:) und in der DEF-Datei.
+1. Derselbe Export wird in der Befehlszeile (durch Export:) angegeben. und in der DEF-Datei.
 
-2. Der gleiche Export wird in der DEF-Datei mit unterschiedlichen Attributen zweimal aufgeführt.
+2. Derselbe Export wird zweimal in der DEF-Datei mit unterschiedlichen Attributen aufgelistet.

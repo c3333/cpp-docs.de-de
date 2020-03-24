@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1240
 ms.assetid: 7d0e065d-1015-4df0-8370-79c3cf045e1c
-ms.openlocfilehash: 58d4a75f35da5ea9c842921ab60532a970db9ecf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 02452146c1f9fc6b23cf3483711ff440ecc7d014
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62242811"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183903"
 ---
 # <a name="linker-tools-error-lnk1240"></a>Linkertoolfehler LNK1240
 
-Fehler beim Kompilieren von IDL-Inhalt
+IDL-Inhalt konnte nicht kompiliert werden.
 
-Der Linker erzeugt MIDL zum Kompilieren der eingebetteten IDL, aber es wurde ein Problem aufgetreten. Überprüfen Sie die Fehler, die von MIDL angegeben.
+Der Linker hat eine mittlere Zeit für die Kompilierung der eingebetteten IDL erzeugt, aber es ist ein Problem aufgetreten. Überprüfen Sie die von "Mittel l" angegebenen Fehler.

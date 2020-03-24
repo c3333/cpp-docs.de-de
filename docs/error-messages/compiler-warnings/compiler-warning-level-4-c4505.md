@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4505
 ms.assetid: 068716a0-7dd2-40af-abf4-478f893b48c5
-ms.openlocfilehash: f9096ea8bc1e80e0e632f3e2e60a810ddb395240
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9f80b7c2a1fdafbe8333796e6f6befbfa4ed064a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62311019"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80185320"
 ---
 # <a name="compiler-warning-level-4-c4505"></a>Compilerwarnung (Stufe 4) C4505
 
-"Function": Nichtreferenzierte lokaler Funktion wurde entfernt
+"Funktion": nicht referenzierte lokale Funktion wurde entfernt.
 
-Die angegebene Funktion ist lokal und nicht im Text der das Modul verwiesen wird. aus diesem Grund ist die Funktion totem Code.
+Die angegebene Funktion ist lokal, und im Hauptteil des Moduls wird nicht auf Sie verwiesen. aus diesem Grund ist die Funktion nicht im Code.
 
-Der Compiler Code für diese Funktion nicht generiert werden.
+Der Compiler hat für diese unzustellbare Funktion keinen Code generiert.

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - blocks, about blocks
 - compound statements
 ms.assetid: 23855939-7430-498e-8936-0c70055ea701
-ms.openlocfilehash: 6aef2a0b5716ab501fabe80f0dda15080abe3ff5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cd0e5daa2232f17a34bee2f0d8b9569e524fbf34
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154863"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189558"
 ---
 # <a name="compound-statements-blocks"></a>Verbundanweisungen (Blöcke)
 
-Eine verbundanweisung besteht aus null oder mehr Anweisungen, die in geschweiften Klammern (**{}**). Einer Verbundanweisung kann an einer jeder beliebigen Stelle, an der eine Anweisung erwartet wird. Verbundanweisungen werden im Allgemeinen "Blöcke" genannt.
+Eine Verbund Anweisung besteht aus null oder mehr Anweisungen, die in geschweiften Klammern ( **{}** ) eingeschlossen sind. Einer Verbundanweisung kann an einer jeder beliebigen Stelle, an der eine Anweisung erwartet wird. Verbundanweisungen werden im Allgemeinen "Blöcke" genannt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,9 +25,9 @@ Eine verbundanweisung besteht aus null oder mehr Anweisungen, die in geschweifte
 { [ statement-list ] }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Im folgenden Beispiel wird eine verbundanweisung als den *Anweisung* Teil der **Wenn** Anweisung (finden Sie unter [If Anweisung](../cpp/if-else-statement-cpp.md) Details zur Syntax):
+Im folgenden Beispiel wird eine Verbund Anweisung als *Anweisungs* Teil der **if** -Anweisung verwendet (Weitere Informationen zur Syntax finden Sie in [der if-Anweisung](../cpp/if-else-statement-cpp.md) ):
 
 ```cpp
 if( Amount > 100 )
@@ -42,8 +42,8 @@ else
 ```
 
 > [!NOTE]
->  Da eine Deklaration eine Anweisung ist, eine Deklaration kann eine der Anweisungen in der *Anweisungsliste*. Folglich verfügen Namen, die innerhalb einer Verbundanweisung deklariert werden, jedoch nicht explizit als statisch deklariert werden, über einen lokalen Gültigkeitsbereich und eine lokale Lebensdauer (für Objekte). Finden Sie unter [Bereich](../cpp/scope-visual-cpp.md) ausführliche Informationen zum Umgang mit Namen mit lokalem Gültigkeitsbereich.
+>  Da eine Deklaration eine-Anweisung ist, kann eine Deklaration eine der-Anweisungen in der *-Anweisungs Liste*sein. Folglich verfügen Namen, die innerhalb einer Verbundanweisung deklariert werden, jedoch nicht explizit als statisch deklariert werden, über einen lokalen Gültigkeitsbereich und eine lokale Lebensdauer (für Objekte). Ausführliche Informationen zur Behandlung von Namen mit lokalem Gültigkeitsbereich finden Sie im [Bereich](../cpp/scope-visual-cpp.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)

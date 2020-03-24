@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4612
 ms.assetid: 21ac02b2-51cd-4aff-9b70-d543511d5962
-ms.openlocfilehash: ed5458fc52c1c9c9f12187095e4658204613d1a1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f9478caef9eaba9c72dc282179100daf2d94c6d5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406365"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80185983"
 ---
 # <a name="compiler-warning-level-1-c4612"></a>Compilerwarnung (Stufe 1) C4612
 
 > Fehler im Namen der Includedatei
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Warnung tritt bei **#pragma include_alias** auf, wenn ein Dateiname falsch ist oder fehlt.
 
-Die Argumente für die **#pragma Include_alias** -Anweisung kann das Angebotsformular verwenden ("*Filename*") oder spitze Klammern (\<*Filename*>), aber beide müssen Verwenden Sie die gleiche Form.
+Die Argumente für die **#pragma Include_alias** -Anweisung können das Anführungszeichen ("*Dateiname*") oder das Winkel Klammer Formular (\<*filename*->) verwenden, beide müssen jedoch dieselbe Form verwenden.
 
 ## <a name="example"></a>Beispiel
 

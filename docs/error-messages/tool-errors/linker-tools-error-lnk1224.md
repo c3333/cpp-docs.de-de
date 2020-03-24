@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1224
 ms.assetid: e190b5d0-ce0c-4f65-8cc0-753f1cc9758a
-ms.openlocfilehash: 7e2c8da7443a9251d8111f643a785f5d75149cac
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4b84a2390baad5ac307fa025e3fffafa0f093fb6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62242543"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183877"
 ---
 # <a name="linker-tools-error-lnk1224"></a>Linkertoolfehler LNK1224
 
-Ungültiges Bild Basisadresse
+Ungültige Bild Basisadresse
 
-Sie haben eine ungültige Basisadresse für das Image angegeben. Basisadressen müssen 64KB ausgerichtet sein (die letzten vier hexadezimale Ziffern müssen null sein) und die Anwendungsbasis muss in einer 32-Bit mit oder ohne Vorzeichen-Wert passen.
+Sie haben eine ungültige Basisadresse für das Image angegeben. Basisadressen müssen auf 64 KB ausgerichtet sein (die letzten vier hexadezimalen Ziffern müssen NULL sein), und die Bildbasis muss in einen 32-Bit-Wert mit oder ohne Vorzeichen passen.

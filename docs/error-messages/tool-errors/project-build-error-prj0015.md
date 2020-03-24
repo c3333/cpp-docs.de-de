@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0015
 ms.assetid: 2096c8f1-e96c-49a4-a690-1cb893a8bf6f
-ms.openlocfilehash: b83c8f6ba7dac5b4af44cb03d941750fb0092df4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d88a3c2c25542cf492f374fb9857e709697c865d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359435"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192574"
 ---
 # <a name="project-build-error-prj0015"></a>Projektbuildfehler PRJ0015
 
-Das NULL-Gerät ist auf Ihrem System vorhanden. Nicht zum Starten eines Builds werden.
+Das NULL-Gerät ist in Ihrem System nicht vorhanden. Ein Build kann nicht gestartet werden.
 
-Dieser Fehler kann durch unzureichende Systemressourcen verursacht werden. Schließen Sie einige Anwendungen oder neu starten.
+Dieser Fehler kann durch geringe Systemressourcen verursacht werden. Schließen Sie einige Anwendungen, oder starten Sie neu.
 
-Es kann auch verursacht werden, wenn Sie nicht über ausreichende Berechtigungen, die NULL-Gerät auf dem Computer verfügen.
+Dies kann auch der Fall sein, wenn Sie nicht über ausreichende Berechtigungen für das NULL-Gerät auf dem Computer verfügen.

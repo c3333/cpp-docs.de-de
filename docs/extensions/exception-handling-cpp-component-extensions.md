@@ -10,12 +10,12 @@ helpviewer_keywords:
 - exception handling, types of
 - System::Exception class in managed applications
 ms.assetid: ccb11fe8-6938-41ac-b477-a183e85865b9
-ms.openlocfilehash: b477f7355ee1f4f70a0ad3df8b85c4276c07d397
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 9f5662bb9e744b5db3b0ab25ac4230b2f67016bd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516575"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182122"
 ---
 # <a name="exception-handling--ccli-and-ccx"></a>Ausnahmebehandlung (C++/CLI und C++/CX)
 
@@ -43,9 +43,9 @@ Veranschaulicht, wie alle Ausnahmefehler abgefangen werden.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-[Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md)<br/>
+[Behandlung von Ausnahmen](../cpp/exception-handling-in-visual-cpp.md)<br/>
 Beschreibt die Ausnahmebehandlung in Standard-C++.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

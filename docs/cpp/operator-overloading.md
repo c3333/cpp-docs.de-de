@@ -11,83 +11,83 @@ helpviewer_keywords:
 - operators [C++], overloading
 - operator overloading
 ms.assetid: 56ad4c4f-dd0c-45e0-adaa-08fe98cb1f8e
-ms.openlocfilehash: d6a294af3ea7ef6085eae0f7069ea2d1fdbb30e4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a16f68088ffffd6c3cf38f5ae3adda5f2d59fb57
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62377360"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188570"
 ---
 # <a name="operator-overloading"></a>Überladen von Operatoren
 
-Die **Operator** -Schlüsselwort deklariert eine Funktion, die angibt, welche *-Operatorsymbol* bedeutet, dass bei Anwendung auf Instanzen einer Klasse. Dadurch erhält der Operator mehrere Bedeutungen, oder er wird "überladen". Der Compiler unterscheidet zwischen verschiedenen Bedeutungen eines Operators, indem er die Typen seiner Operanden überprüft.
+Das **Operator** Schlüsselwort deklariert eine Funktion, die angibt, welches *Operator-Symbol* bei der Anwendung auf Instanzen einer Klasse bedeutet. Dadurch erhält der Operator mehrere Bedeutungen, oder er wird "überladen". Der Compiler unterscheidet zwischen verschiedenen Bedeutungen eines Operators, indem er die Typen seiner Operanden überprüft.
 
 ## <a name="syntax"></a>Syntax
 
-> *type* **operator** *operator-symbol* **(** *parameter-list* **)**
+> *Type* **Operator** *Operator-Symbol* **(** *Parameterliste* **)**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sie können die Funktion der meisten integrierten Operatoren global oder klassenweise neu definieren. Überladene Operatoren werden als Funktionen implementiert.
 
-Der Name eines überladenen Operators ist **Operator** *x*, wobei *x* ist der Operator, wie er in der folgenden Tabelle angezeigt wird. Um den Additionsoperator zu überladen, definieren Sie z. B. eine Funktion namens **Operator +-**. Auf ähnliche Weise, um das Überladen der Additions-/Zuweisungsoperator **+=**, definieren Sie eine Funktion namens **Operator +=**.
+Der Name eines überladenen Operators ist **Operator** *x*, wobei *x* der Operator ist, wie er in der folgenden Tabelle angezeigt wird. Wenn Sie z. b. den Additions Operator überladen möchten, definieren Sie eine Funktion mit dem Namen **Operator +** . Um den Additions-/Zuweisungs Operator **+=** zu überladen, definieren Sie eine Funktion mit dem Namen **Operator + =** .
 
 ### <a name="redefinable-operators"></a>Neu definierbare Operatoren
 
-|Operator|Name|Typ|
+|Operator|Name|type|
 |--------------|----------|----------|
-|**,**|Komma|Binär|
-|**\!**|Logisches NOT|Unär|
-|**\!=**|Ungleichheit|Binär|
-|**%**|Modulooperator|Binär|
-|**%=**|Modulozuweisung|Binär|
-|**&**|Bitweises AND|Binär|
-|**&**|Address-of|Unär|
-|**&&**|Logisches AND|Binär|
-|**&=**|Bitweise AND-Zuweisung|Binär|
-|**( )**|Funktionsaufruf |—|
-|**( )**|Umwandlungsoperator|Unär|
-|**&#42;**|Multiplikation|Binär|
-|**&#42;**|Zeiger-Dereferenzierung|Unär|
-|**&#42;=**|Multiplikationszuweisung|Binär|
-|**+**|Addition|Binär|
-|**+**|Unäres Plus|Unär|
-|**++**|Inkrement <sup>1</sup>|Unär|
-|**+=**|Additionszuweisung|Binär|
-|**-**|Subtraktion|Binär|
-|**-**|Unäre Negation|Unär|
-|**--**|Dekrementoperatoren <sup>1</sup>|Unär|
-|**-=**|Subtraktionszuweisung|Binär|
-|**->**|Memberauswahl|Binär|
-|**->&#42;**|Pointer-to-member-Auswahl|Binär|
-|**/**|Division|Binär|
-|**/=**|Divisionszuweisung|Binär|
-|**\<**|Kleiner als|Binär|
-|**<<**|Nach links verschieben|Binär|
-|**<<=**|Linksschiebezuweisung|Binär|
-|**<=**|Kleiner oder gleich|Binär|
-|**=**|Zuweisung|Binär|
-|**==**|Gleichheit|Binär|
-|**>**|Größer als|Binär|
-|**>=**|Größer oder gleich|Binär|
-|**>>**|Nach rechts verschieben|Binär|
-|**>>=**|Rechtsschiebezuweisung|Binär|
-|**[ ]**|Arrayfeldindex|—|
-|**^**|Exklusives OR|Binär|
-|**^=**|Exklusive OR-Zuweisung|Binär|
-|**&#124;**|Bitweises inklusives OR|Binär|
-|**&#124;=**|Bitweise inklusive OR-Zuweisung|Binär|
-|**&#124;&#124;**|Logisches OR|Binär|
-|**~**|Einerkomplement|Unär|
+|**,**|Komma|Binary|
+|**!**|Logisches NOT|Unäroperatoren|
+|**!=**|Ungleichheit|Binary|
+|**%**|Modulus|Binary|
+|**%=**|Modulozuweisung|Binary|
+|**&**|Bitweises AND|Binary|
+|**&**|Address-of|Unäroperatoren|
+|**&&**|Logisches AND|Binary|
+|**&=**|Bitweise AND-Zuweisung|Binary|
+|**( )**|Funktionsaufruf|—|
+|**( )**|Umwandlungsoperator|Unäroperatoren|
+|**&#42;**|Multiplikation|Binary|
+|**&#42;**|Zeiger-Dereferenzierung|Unäroperatoren|
+|**&#42;=**|Multiplikationszuweisung|Binary|
+|**+**|Addition|Binary|
+|**+**|Unäres Plus|Unäroperatoren|
+|**++**|<sup>1</sup> Inkrement|Unäroperatoren|
+|**+=**|Additionszuweisung|Binary|
+|**-**|Subtraktion|Binary|
+|**-**|Unäre Negation|Unäroperatoren|
+|**--**|Dekrement <sup>1</sup>|Unäroperatoren|
+|**-=**|Subtraktionszuweisung|Binary|
+|**->**|Memberauswahl|Binary|
+|**->&#42;**|Pointer-to-member-Auswahl|Binary|
+|**/**|Division|Binary|
+|**/=**|Divisionszuweisung|Binary|
+|**\<**|Kleiner als|Binary|
+|**<<**|Nach links verschieben|Binary|
+|**<<=**|Linksschiebezuweisung|Binary|
+|**<=**|Kleiner als oder gleich|Binary|
+|**=**|Zuweisung|Binary|
+|**==**|Gleichheit|Binary|
+|**>**|Größer als|Binary|
+|**>=**|Größer als oder gleich|Binary|
+|**>>**|Nach rechts verschieben|Binary|
+|**>>=**|Rechtsschiebezuweisung|Binary|
+|**[ ]**|Array-Subscript|—|
+|**^**|Exklusives OR|Binary|
+|**^=**|Exklusive OR-Zuweisung|Binary|
+|**&#124;**|Bitweises inklusives OR|Binary|
+|**&#124;=**|Bitweise inklusive OR-Zuweisung|Binary|
+|**&#124;&#124;**|Logisches OR|Binary|
+|**~**|Einerkomplement|Unäroperatoren|
 |**delete**|Löschen|—|
-|**new**|Neu|—|
-|Konvertierungsoperatoren|Konvertierungsoperatoren|Unär|
+|**Neu**|Neu|—|
+|Konvertierungsoperatoren|Konvertierungsoperatoren|Unäroperatoren|
 
-<sup>1</sup> zwei Versionen der unären erhöhen und Dekrementoperatoren: Preincrement und Postincrement.
+<sup>1</sup> es sind zwei Versionen der unären Inkrement-und Dekrementoperatoren vorhanden: "Preincrement" und "postincrement".
 
-Finden Sie unter [Allgemeine Regeln für Operatorüberladung](../cpp/general-rules-for-operator-overloading.md) für Weitere Informationen. Die Einschränkungen für die verschiedenen Kategorien von überladenen Operatoren werden in den folgenden Themen beschrieben:
+Weitere Informationen finden Sie unter [Allgemeine Regeln für die Überladung von Operatoren](../cpp/general-rules-for-operator-overloading.md) . Die Einschränkungen für die verschiedenen Kategorien von überladenen Operatoren werden in den folgenden Themen beschrieben:
 
-- [Unäre Operatoren](../cpp/overloading-unary-operators.md)
+- [Unary Operators (Unäre Operatoren)](../cpp/overloading-unary-operators.md)
 
 - [Binäre Operatoren](../cpp/binary-operators.md)
 
@@ -97,13 +97,13 @@ Finden Sie unter [Allgemeine Regeln für Operatorüberladung](../cpp/general-rul
 
 - [Indizierung](../cpp/subscripting.md)
 
-- [Klassenmemberzugriff](../cpp/member-access.md)
+- [Zugriff auf Klassenmember](../cpp/member-access.md)
 
-- [Inkrementieren und Dekrementieren](../cpp/increment-and-decrement-operator-overloading-cpp.md).
+- [Inkrement und Dekrement](../cpp/increment-and-decrement-operator-overloading-cpp.md).
 
 - [Benutzerdefinierte Typkonvertierungen](../cpp/user-defined-type-conversions-cpp.md)
 
-Die Operatoren, die in der folgenden Tabelle aufgeführt sind, können nicht überladen werden. Die Tabelle enthält die Präprozessorsymbole **#** und **##**.
+Die Operatoren, die in der folgenden Tabelle aufgeführt sind, können nicht überladen werden. Die Tabelle enthält die Präprozessorsymbole **#** und **##** .
 
 ### <a name="nonredefinable-operators"></a>Nicht neu definierbare Operatoren
 
@@ -125,7 +125,7 @@ pt.operator+( 3 );  // Call addition operator to add 3 to pt.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel überlädt die **+** Operator, um das Hinzufügen von zwei komplexen Zahlen und gibt das Ergebnis zurück.
+Im folgenden Beispiel wird der **+** -Operator überladen, um zwei komplexe Zahlen hinzuzufügen und das Ergebnis zurückzugeben.
 
 ```cpp
 // operator_overloading.cpp
@@ -176,7 +176,7 @@ int main() {
 
 - [Memberzugriff](../cpp/member-access.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

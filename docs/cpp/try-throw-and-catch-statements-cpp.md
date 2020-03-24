@@ -19,12 +19,12 @@ helpviewer_keywords:
 - throwing exceptions [C++]
 - throw keyword [C++], throw() vs. throw(...)
 ms.assetid: 15e6a87b-b8a5-4032-a7ef-946c644ba12a
-ms.openlocfilehash: 31ed5f7a17b9b45dbbecf5ccb29d2b51a7635eaa
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: 03f7f6f5a1a2842ad7fb0ba2715fada130277e70
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74245139"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187985"
 ---
 # <a name="try-throw-and-catch-statements-c"></a>try-, throw- und catch-Anweisungen (C++)
 
@@ -72,7 +72,7 @@ MyData GetNetworkResource()
 }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Code nach der **try** -Klausel ist der geschützte Abschnitt des Codes. Der **throw** -Ausdruck *löst – aus*, d. h. löst – eine Ausnahme aus. Der Codeblock nach der **catch** -Klausel ist der Ausnahmehandler. Dies ist der Handler, der die Ausnahme *abfängt* , die ausgelöst wird, wenn die Typen in den **throw** -und **catch** -Ausdrücken kompatibel sind. Eine Liste der Regeln, die die Typübereinstimmung in **catch** -Blöcken steuern, finden Sie unter [wie catch-Blöcke ausgewertet werden](../cpp/how-catch-blocks-are-evaluated-cpp.md). Wenn die **catch** -Anweisung eine Ellipse (...) anstelle eines Typs angibt, verarbeitet der **catch** -Block jeden Ausnahmetyp. Wenn Sie mit der [/EHa](../build/reference/eh-exception-handling-model.md) -Option kompilieren, können diese C-strukturierte Ausnahmen und vom systemgenerierte oder von der Anwendung generierte asynchrone Ausnahmen wie z. b. Speicherschutz, Division durch 0 (null) und Gleit Komma Verletzungen enthalten. Da **catch** -Blöcke in der Programm Reihenfolge verarbeitet werden, um einen übereinstimmenden Typ zu finden, muss ein Ellipsen Handler der letzte Handler für den zugeordneten **try** -Block sein. Verwenden Sie `catch(...)` mit Vorsicht. Lassen Sie nicht zu, dass ein Programm fortgesetzt wird, es sei denn der catch-Block kann die spezifische Ausnahme, die abgefangen wird, behandeln. Normalerweise wird ein `catch(...)`-Block verwendet, um Fehler zu protokollieren und eine spezielle Bereinigung vor dem Beenden der Programmausführung auszuführen.
 
@@ -91,7 +91,7 @@ catch(...) {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

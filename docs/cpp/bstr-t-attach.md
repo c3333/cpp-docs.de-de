@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - Attach method [C++]
 ms.assetid: 8cad867e-40fc-435b-841f-0d412c2f58d3
-ms.openlocfilehash: 8601ebbea6a9ab837c07518b018e83e8c0df226d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b52661097ca1feab4c8045be240e4138a0c0f21
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385062"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190663"
 ---
-# <a name="bstrtattach"></a>_bstr_t::Attach
+# <a name="_bstr_tattach"></a>_bstr_t::Attach
 
 **Microsoft-spezifisch**
 
@@ -32,16 +32,16 @@ void Attach(
 *s*<br/>
 Eine `BSTR`-Variable, die `_bstr_t` zugeordnet oder zugewiesen werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn `_bstr_t` zuvor an einen anderen `BSTR` angefügt war, bereinigt `_bstr_t` die `BSTR`-Ressource, wenn keine anderen `_bstr_t`-Variablen den `BSTR` verwenden.
 
 ## <a name="example"></a>Beispiel
 
-Finden Sie unter [_bstr_t:: Assign](../cpp/bstr-t-assign.md) ein Beispiel mit **Anfügen**.
+Ein Beispiel für die Verwendung von **Attach**finden Sie unter [_bstr_t:: Assign](../cpp/bstr-t-assign.md) .
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_bstr_t-Klasse](../cpp/bstr-t-class.md)

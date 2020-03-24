@@ -5,12 +5,12 @@ helpviewer_keywords:
 - structured exception handling [C++], exception handlers
 - exception handling [C++], exception handlers
 ms.assetid: 71473fee-f773-4a34-bf12-82a3af79579c
-ms.openlocfilehash: 6f1bcecf3aaed2bf2b7ebbe511f11cdb5ec1ca5e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 201dcaa6a90584d1f9535df11d5722a37bdceb89
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209402"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187283"
 ---
 # <a name="writing-an-exception-handler"></a>Schreiben eines Ausnahmehandlers
 
@@ -20,16 +20,16 @@ Ausnahmehandler verwenden die try-except-Anweisung.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
-- [Die Try-except-Anweisung](../cpp/try-except-statement.md)
+- [Die Try-außer-Anweisung](../cpp/try-except-statement.md)
 
-- [Schreiben eines Ausnahmefilters](../cpp/writing-an-exception-filter.md)
+- [Schreiben eines Ausnahme Filters](../cpp/writing-an-exception-filter.md)
 
-- [Auslösen von Softwareausnahmen](../cpp/raising-software-exceptions.md)
+- [Auswerfen von Software Ausnahmen](../cpp/raising-software-exceptions.md)
 
-- [Hardwareausnahmen](../cpp/hardware-exceptions.md)
+- [Hardware Ausnahmen](../cpp/hardware-exceptions.md)
 
-- [Einschränkungen bei Ereignishandlern](../cpp/restrictions-on-exception-handlers.md)
+- [Einschränkungen bei Ausnahme Handlern](../cpp/restrictions-on-exception-handlers.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4694
 ms.assetid: 5ca122bb-34f3-43ee-a21f-95802cd515f7
-ms.openlocfilehash: 6164fd2e19e35233ba67feb84d117f1e4e01f20d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: daf5423588d08260239c3cff5a68532a358d07b2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62311047"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165118"
 ---
 # <a name="compiler-warning-c4694"></a>Compilerwarnung C4694
 
-> "*Klasse*': eine versiegelte abstrakte Klasse einer Basisklasse sind keine*Base_class*"
+> '*Class*': eine versiegelte abstrakte Klasse kann keine Basisklasse '*BASE_CLASS*' aufweisen.
 
 Eine abstrakte und versiegelte Klasse kann nicht von einem Referenztyp erben; eine versiegelte und abstrakte Klasse kann weder die Basisklassenfunktionen implementieren noch ihre eigene Verwendung als Basisklasse zulassen.
 
-Weitere Informationen finden Sie unter [abstrakte](../../extensions/abstract-cpp-component-extensions.md), [versiegelten](../../extensions/sealed-cpp-component-extensions.md), und [Klassen und Strukturen](../../extensions/classes-and-structs-cpp-component-extensions.md).
+Weitere Informationen finden Sie unter [abstrakte](../../extensions/abstract-cpp-component-extensions.md), [versiegelte](../../extensions/sealed-cpp-component-extensions.md)und [Klassen und Strukturen](../../extensions/classes-and-structs-cpp-component-extensions.md).
 
-Diese Warnung wird automatisch zu einem Fehler heraufgestuft. Wenn Sie dieses Verhalten ändern möchten, verwenden Sie [#pragma-Warnung](../../preprocessor/warning.md).
+Diese Warnung wird automatisch zu einem Fehler heraufgestuft. Wenn Sie dieses Verhalten ändern möchten, verwenden Sie [#pragma Warnung](../../preprocessor/warning.md).
 
 ## <a name="example"></a>Beispiel
 

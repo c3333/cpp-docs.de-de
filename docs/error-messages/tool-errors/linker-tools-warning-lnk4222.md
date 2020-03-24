@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4222
 ms.assetid: b7bb1794-41fb-4c83-b9b0-59c0d786a7da
-ms.openlocfilehash: 52a4fee532eb9997dcf013f95246b27fdffc4c20
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f74379861ad04142fd78a8e307af165072c9cadd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160405"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183032"
 ---
 # <a name="linker-tools-warning-lnk4222"></a>Linkertoolwarnung LNK4222
 
-dem exportierten Symbol 'Symbol' sollte keine Ordinalzahl zugewiesen werden
+dem exportierten Symbol ' Symbol ' sollte keine Ordinalzahl zugewiesen werden.
 
-Die folgenden Symbole sollen nach Ordnungszahl nicht exportiert werden:
+Die folgenden Symbole dürfen nicht nach Ordnungszahl exportiert werden:
 
 - `DllCanUnloadNow`
 
@@ -33,7 +33,7 @@ Die folgenden Symbole sollen nach Ordnungszahl nicht exportiert werden:
 
 - `DllUnregisterServer`
 
-Diese Funktionen befinden sich immer den Namen mithilfe von `GetProcAddress`. Der Linker warnt vor dieser Art der Export ist, da es zu vergrößern führen kann. Dies kann passieren, wenn der Bereich Ihrer ordinal Exporte mit relativ wenigen Exporten groß ist. Ein auf ein Objekt angewendeter
+Diese Funktionen befinden sich immer mithilfe `GetProcAddress`. Der Linker warnt über diese Art von Export, weil er zu einem größeren Bild führen könnte. Dies kann vorkommen, wenn der Bereich ihrer ordinalen Exporte mit relativ wenigen Exporten groß ist. Beispiel:
 
 ```
 EXPORTS
@@ -41,7 +41,7 @@ EXPORTS
    MyOtherAPI      @100
 ```
 
-ist erforderlich, dass die slots von 100 in der Exporttabelle der Adresse 98 davon nur Filler (2-99). Auf der anderen Seite
+erfordert 100-Slots in der Export Adress Tabelle mit 98 von Ihnen (2-99) nur "Filler". Andererseits
 
 ```
 EXPORTS
@@ -49,4 +49,4 @@ EXPORTS
    MyOtherAPI      @100
 ```
 
-Sie benötigen zwei Slots. (Beachten Sie, dass Sie auch exportieren können, mit der [/EXPORT](../../build/reference/export-exports-a-function.md) -Linkeroption.)
+erfordert zwei Slots. (Beachten Sie, dass Sie auch mit der Option [/Export](../../build/reference/export-exports-a-function.md) Linker exportieren können.)

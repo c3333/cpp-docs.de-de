@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0019
 ms.assetid: 5390a62b-aacf-4bc8-b9d7-08f1e0233423
-ms.openlocfilehash: e97d9488df0eeb666cb78354d0363c2a359a159d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3aed7ca5dcf5803305d8765f50430520a5b73d2d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359396"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192535"
 ---
 # <a name="project-build-error-prj0019"></a>Projektbuildfehler PRJ0019
 
-Ein Tool hat einen Fehlercode von zurückgegeben.
+Ein Tool hat einen Fehlercode aus zurückgegeben.
 
-Eine Fehlerstufe erreicht, die für einen benutzerdefinierten Buildschritt oder Buildereignis ungleich NULL war.
+Eine Fehler Ebene war für einen benutzerdefinierten Buildschritt oder ein Buildereignis ungleich NULL.
 
-Sie werden PRJ0019, wenn ein Tool einen Fehlercode aber keine Fehlermeldung zurückgegeben. Dies kann beispielsweise vorkommen, wenn Sie die Ausgabe von MIDL an NUL umleiten.
+Außerdem wird Projektbuildfehler PRJ0019 angezeigt, wenn ein Tool einen Fehlercode, aber keine Fehlermeldung zurückgegeben hat. Dies kann beispielsweise der Fall sein, wenn Sie die Ausgabe von "Mittel l" zu "NUL" umleiten.
 
-Finden Sie unter [Problembehandlung benutzerdefinierter Buildschritte und Buildereignisse](../../build/troubleshooting-build-customizations.md) für Weitere Informationen.
+Weitere Informationen finden Sie unter Problembehandlung für [benutzerdefinierte Buildschritte und Buildereignisse](../../build/troubleshooting-build-customizations.md)
 
-Dieser Fehler kann auch auftreten, wenn Sie als Mitglied der Gruppe der Benutzer ausgeführt werden, und administrativer Zugriff erforderlich ist. Weitere Informationen finden Sie unter [Ausführen als Mitglied der Gruppe Benutzer](../../security/running-as-a-member-of-the-users-group.md).
+Dieser Fehler kann auch auftreten, wenn Sie als Mitglied der Gruppe "Benutzer" ausführen und Administrator Zugriff erforderlich ist. Weitere Informationen finden Sie unter [Ausführen als Mitglied der Gruppe "Benutzer](../../security/running-as-a-member-of-the-users-group.md)".

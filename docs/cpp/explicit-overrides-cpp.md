@@ -8,20 +8,20 @@ helpviewer_keywords:
 - explicit virtual function overrides
 - explicit override of virtual function
 ms.assetid: ee583234-5cda-4e90-b55e-3f9fbf079ced
-ms.openlocfilehash: dbaf8b0d78093df522cfbc63bf20dd0acb6c477c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c3bf48b3dac9f23fd3894d7d3cdd41b7ec000ba4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62184253"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189025"
 ---
 # <a name="explicit-overrides-c"></a>Explizite Überschreibungen (C++)
 
 **Microsoft-spezifisch**
 
-Wenn dieselbe virtuelle Funktion, in zwei oder mehr deklariert wird [Schnittstellen](../cpp/interface.md) und wenn eine Klasse, die von diesen Schnittstellen abgeleitet ist, können Sie jede virtuelle Funktion explizit überschreiben.
+Wenn dieselbe virtuelle Funktion in zwei oder mehr [Schnittstellen](../cpp/interface.md) deklariert wird und eine Klasse von diesen Schnittstellen abgeleitet ist, können Sie jede virtuelle Funktion explizit überschreiben.
 
-Informationen über explizite überschreibungen in verwaltetem Code mit C++ / CLI finden Sie unter [explizite Überschreibungen](../extensions/explicit-overrides-cpp-component-extensions.md).
+Informationen zu expliziten über Schreibungen in verwaltetem Code C++mit/CLI finden Sie unter [explizite über](../extensions/explicit-overrides-cpp-component-extensions.md)schreibungen.
 
 **Ende Microsoft-spezifisch**
 
@@ -119,6 +119,6 @@ In CMyClass::IMyInt2::mf2()
 In CMyClass::IMyInt2::mf2(int)
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vererbung](../cpp/inheritance-cpp.md)

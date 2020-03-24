@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C++], unqualified names in
 - using keyword [C++]
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
-ms.openlocfilehash: a158094141307acb507d5f3e873c600e89135ad7
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: d762ea36e83d2384b7bb50c2914f6a634c134d15
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301274"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187842"
 ---
 # <a name="using-declaration"></a>using-Deklaration
 
@@ -25,7 +25,7 @@ using [typename] nested-name-specifier unqualified-id ;
 using declarator-list ;
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *Name des "netsted-Name-Specifiers* " Eine Sequenz von Namespace-, Klassen-oder Enumerationsnamen und Bereichs Auflösungs Operatoren (::), die durch einen Bereichs Auflösungs Operator beendet werden. Ein einzelner Bereichs Auflösungs Operator kann verwendet werden, um einen Namen aus dem globalen Namespace einzuführen. Das Schlüsselwort **tykame** ist optional und kann verwendet werden, um abhängige Namen aufzulösen, wenn Sie in eine Klassen Vorlage aus einer Basisklasse eingefügt werden.
 
@@ -33,7 +33,7 @@ nicht *qualifizierte-ID* Ein nicht qualifizierter ID-Ausdruck, bei dem es sich u
 
 *Deklarator-List* Eine durch Trennzeichen getrennte Liste von [**typoame** *],* die als nicht gekennzeichnete ID-Deklaratoren, gefolgt von den *Auslassungs* Zeichen, optional.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine using-Deklaration führt einen nicht qualifizierten Namen als Synonym für eine an anderer Stelle deklarierte Entität ein. Er ermöglicht die Verwendung eines einzelnen Namens aus einem bestimmten Namespace ohne explizite Qualifizierung in dem Deklarations Bereich, in dem er angezeigt wird. Dies steht im Gegensatz zur [using-Direktive](../cpp/namespaces-cpp.md#using_directives), mit der *alle* Namen in einem Namespace ohne Qualifikation verwendet werden können. Das **using** -Schlüsselwort wird auch für [Typaliase](../cpp/aliases-and-typedefs-cpp.md)verwendet.
 
@@ -325,7 +325,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Namespaces](../cpp/namespaces-cpp.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

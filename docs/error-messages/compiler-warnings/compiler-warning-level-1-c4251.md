@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - C4251
 ms.assetid: a9992038-f0c2-4fc4-a9be-4509442cbc1e
-ms.openlocfilehash: d2fff1d2f30c4ac80af6d5b9ca452fa5f30f5a15
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8a723b7ce7fc79fb6be9c9dd2b500631098622b0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62207349"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80163218"
 ---
 # <a name="compiler-warning-level-1-c4251"></a>Compilerwarnung (Stufe 1) C4251
 
-'Bezeichner': Klasse 'Typ' Dll-Schnittstelle, von der Klasse "Typ2" verwendet werden muss
+"Bezeichner": die Klasse "Type" muss über eine DLL-Schnittstelle verfügen, die von Clients der Klasse "Typ2" verwendet werden darf.
 
-Um das Risiko einer datenbeschädigung zu minimieren, beim Exportieren einer Klasse mit [__declspec(dllexport)](../../cpp/dllexport-dllimport.md), sicher, dass:
+Stellen Sie Folgendes sicher, um die Möglichkeit einer Daten Beschädigung beim Exportieren einer Klasse mit [__declspec (dllexport)](../../cpp/dllexport-dllimport.md)zu minimieren:
 
-- Alle statischen Daten ist der Zugriff über Funktionen, die aus der DLL exportiert werden.
+- Alle statischen Daten sind über Funktionen zugänglich, die aus der dll exportiert werden.
 
-- Keine Inline-Methoden der Klasse können statische Daten ändern.
+- Keine Inline Methoden ihrer Klasse können statische Daten ändern.
 
-- Keine Inline-Methoden der Klasse verwendet die CRT-Funktionen oder andere Bibliotheksfunktionen verwenden statische Daten (finden Sie unter [potenzielle Fehler übergeben von CRT-Objekten über DLL-Grenzen](../../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md) Informationen).
+- Keine Inline Methoden ihrer Klasse verwenden CRT-Funktionen, oder andere Bibliotheksfunktionen verwenden statische Daten (Weitere Informationen finden Sie unter [potenzielle Fehler bei der Übergabe von CRT-Objekten über dll-Grenzen](../../c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries.md) hinweg).
 
-- Keine Methoden der Klasse (unabhängig vom inlining) können Typen verwenden, in dem die Instanziierung in der EXE- und DLL statische Datenunterschiede aufweisen.
+- Keine Methoden ihrer Klasse (unabhängig vom Inlining) können Typen verwenden, bei denen die Instanziierung in der exe-und dll-Datei Unterschiede aufweisen.
 
-Sie können vermeiden, Exportieren von Klassen definieren, die eine DLL, die definiert eine Klasse mit virtuellen Funktionen und Funktionen Sie aufrufen kann, instanziieren und Löschen von Objekten des Typs.  Sie können dann virtuelle Funktionen nur für den Typ aufrufen.
+Sie können den Export von Klassen vermeiden, indem Sie eine DLL definieren, die eine Klasse mit virtuellen Funktionen definiert, und Funktionen, die Sie zum Instanziieren und Löschen von Objekten des Typs aufzurufen können.  Sie können dann einfach virtuelle Funktionen für den Typ aufzurufen.
 
-C4251 können ignoriert werden, wenn Sie von einem Typ in der C++ Standardbibliothek, die eine Debugversion kompilieren (**/MTd**) und, in dem die Fehlermeldung des Compilers auf _Container_base bezieht.
+C4251 kann ignoriert werden, wenn Sie von einem Typ in der C++ Standard Bibliothek ableiten, eine Debugversion ( **/MTD**) kompilieren und die Compilerfehlermeldung auf _Container_base verweist.
 
 ```cpp
 // C4251.cpp

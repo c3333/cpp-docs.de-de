@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - C4506
 ms.assetid: aa682869-65d1-4dad-ba32-198f10b44f91
-ms.openlocfilehash: ad18b8469b602d8e2aaa29087eac75e609fe6844
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 10f3c01015dff11a0af40cbb2a4bb92ce33ea535
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160834"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80186559"
 ---
 # <a name="compiler-warning-level-1-c4506"></a>Compilerwarnung (Stufe 1) C4506
 
-keine Definition für Inlinefunktion 'Funktion'
+keine Definition für Inline Funktion "Function".
 
-Die angegebene Funktion wurde deklariert und markiert, für das inlining aber nicht definiert.
+Die angegebene Funktion wurde deklariert und für das Inlining gekennzeichnet, wurde jedoch nicht definiert.
 
-Der Compiler nahm nicht Inline-Funktion.
+Der Compiler hat die Funktion nicht Inline eingebunden.
 
-Stellen Sie sicher, dass externe Funktionen zu setzende deklariert sind, mit der `extern` Schlüsselwort.
+Stellen Sie sicher, dass externe Funktionen, die Inline sind, mit dem `extern`-Schlüsselwort deklariert werden.

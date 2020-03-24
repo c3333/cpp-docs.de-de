@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4653
 ms.assetid: 90ec3317-3d39-4b4c-bcd1-97e7c799e1b6
-ms.openlocfilehash: 664b1b3ec732c323d0074310902890cdd6eca9a6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 994e9a4963e7e10af2313b3dcea5bb8b2b93426e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402410"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161736"
 ---
 # <a name="compiler-warning-level-2-c4653"></a>Compilerwarnung (Stufe 2) C4653
 
-die Compileroption "Option" inkonsistent mit der vorkompilierten Headerdatei; aktuelle Befehlszeilenoption wird ignoriert
+die Compileroption "Option" ist inkonsistent mit dem vorkompilierten Header aktuelle Befehlszeilenoption wird ignoriert.
 
-Eine mit der vorkompilierte Header angegebene Option (["/ Yu"](../../build/reference/yu-use-precompiled-header-file.md)) Option inkonsistent mit den Optionen, die beim Erstellen des vorkompilierten Headers angegeben. Dieser Kompilierung verwendet die Option beim Erstellen des vorkompilierten Headers angegeben werden.
+Eine Option, die mit der Option Vorkompilierte Header verwenden ([/Yu](../../build/reference/yu-use-precompiled-header-file.md)) angegeben wurde, war nicht mit den Optionen konsistent, die beim Erstellen des vorkompilierten Headers angegeben wurden. Bei dieser Kompilierung wurde die Option verwendet, die beim Erstellen des vorkompilierten Headers angegeben wurde.
 
-Diese Warnung kann auftreten, wenn auf einen anderen Wert für die Option Pack Strukturen ([/Zp](../../build/reference/zp-struct-member-alignment.md)) während der Kompilierung des vorkompilierten Headers angegeben wurde.
+Diese Warnung kann auftreten, wenn während der Kompilierung des vorkompilierten Headers ein anderer Wert für die Option Paket Strukturen ([/ZP](../../build/reference/zp-struct-member-alignment.md)) angegeben wurde.

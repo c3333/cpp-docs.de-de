@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - RW2002
 ms.assetid: b1d1a49b-b50b-4b0b-9f09-c7762e2dbe8f
-ms.openlocfilehash: 1726e6ce74dfd7b6b0c6e4b69771a826cdf07774
-ms.sourcegitcommit: 389c559918d9bfaf303d262ee5430d787a662e92
+ms.openlocfilehash: 9c5c2824778a679627bd3008276849890f43ac7e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71230409"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190689"
 ---
 # <a name="resource-compiler-error-rw2002"></a>Ressourcencompiler: Fehler RW2002
 
-Fehler beim übernehmen
+Parsingfehler
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
@@ -69,7 +69,7 @@ Fehler beim übernehmen
 
 1. **Name der Steuerelement Klasse erwartet**
 
-   Das `class` -Feld einer **Steuer** Element Anweisung in der **Dialog** -Anweisung muss einen der folgenden Typen aufweisen: Button, ComboBox, Edit, ListBox, ScrollBar, static oder User-Defined. Stellen Sie sicher, dass die Klasse richtig geschrieben ist.
+   Das `class`-Feld einer **Steuer** Element Anweisung in der **Dialog** -Anweisung muss einen der folgenden Typen aufweisen: Button, ComboBox, Edit, ListBox, ScrollBar, static oder User-Defined. Stellen Sie sicher, dass die Klasse richtig geschrieben ist.
 
 1. **Der Name der Schriftart wurde erwartet.**
 
@@ -109,7 +109,7 @@ Fehler beim übernehmen
 
 1. **Anzahl für ID wird erwartet.**
 
-   Es wird eine Zahl für `id` das Feld einer Steuerelement Anweisung in der **Dialog** -Anweisung erwartet. Stellen Sie sicher, dass Sie eine `#define` Zahl oder eine Anweisung für die Steuerelement-ID haben.
+   Es wird eine Zahl für das `id`-Feld einer Steuerelement Anweisung in der **Dialog** -Anweisung erwartet. Stellen Sie sicher, dass Sie über eine Zahl oder `#define`-Anweisung für die Steuerelement-ID verfügen
 
 1. **Zeichenfolge in Anführungszeichen in Dialog Klasse erwartet**
 
@@ -141,7 +141,7 @@ Fehler beim übernehmen
 
 1. **Ungültiger Steuerungstyp**
 
-   Jede Steuerelement Anweisung in einer **Dialog** -Anweisung muss eine der folgenden sein: CHECKBOX, COMBOBOX, CONTROL, CTEXT, DEFPUSHBUTTON, EDITTEXT, GROUPBOX, SYMBOL, LISTBOX, LTEXT, PUSHBUTTON, RADIOBUTTON, RTEXT, SCROLLBAR. Stellen Sie sicher, dass diese Steuerungs Anweisungen richtig geschrieben sind.
+   Jede Steuerelement Anweisung in einer **Dialog** Feld Anweisung muss eines der folgenden sein: CheckBox, ComboBox, Control, CTEXT, DEFPUSHBUTTON, EDITTEXT, GroupBox, Symbol, ListBox, LTEXT, PUSHBUTTON, RadioButton, rtext, ScrollBar. Stellen Sie sicher, dass diese Steuerungs Anweisungen richtig geschrieben sind.
 
 1. **Ungültiger Typ**
 

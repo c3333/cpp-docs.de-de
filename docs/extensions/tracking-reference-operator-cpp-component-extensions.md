@@ -8,12 +8,12 @@ helpviewer_keywords:
 - tracking references
 - '% tracking reference [C++]'
 ms.assetid: 142a7269-ab69-4b54-a6d7-833bef06228f
-ms.openlocfilehash: c6fef4562545b03e212d0e4e58742a1209a6ab81
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: ab1b11d3f8d3416a6e9ed345085d63ce86d56010
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516015"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181784"
 ---
 # <a name="tracking-reference-operator-ccli-and-ccx"></a>Nachverfolgungsverweisoperator (C++/CLI und C++/CX)
 
@@ -25,7 +25,7 @@ Ein Nachverfolgungsverweis verfügt über die folgenden Eigenschaften.
 
 - Die Zuweisung eines Objekts zu einem Nachverfolgungsverweis bewirkt, dass der Verweiszähler des Objekts erhöht wird.
 
-- Wenn Sie einen `*` dereferenzieren, ist das Ergebnis ein nativer Verweis (`&`). Wenn Sie einen `^` dereferenzieren, ist das Ergebnis ein Nachverfolgungsverweis (`%`). Solange Sie über einen `%` zu einem Objekt verfügen, bleibt das Objekt im Speicher erhalten.
+- Wenn Sie einen `&` dereferenzieren, ist das Ergebnis ein nativer Verweis (`*`). Wenn Sie einen `%` dereferenzieren, ist das Ergebnis ein Nachverfolgungsverweis (`^`). Solange Sie über einen `%` zu einem Objekt verfügen, bleibt das Objekt im Speicher erhalten.
 
 - Der Punktzugriffsoperator (`.`) für Member wird verwendet, um auf einen Member des Objekts zuzugreifen.
 

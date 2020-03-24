@@ -24,12 +24,12 @@ helpviewer_keywords:
 - files [C++], editable types
 - resource editing
 ms.assetid: 4d2b6fcc-07cf-4289-be87-83a60f69533c
-ms.openlocfilehash: b66a207766962856cc4d7181607868c2a48ebe84
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 087cd613fa0dfd9cb6e07ac47a6a38d63bba004e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513659"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167874"
 ---
 # <a name="resource-files-c"></a>Ressourcendateien (C++)
 
@@ -46,11 +46,11 @@ Der Begriff " *Ressourcen Datei* " kann auf eine Reihe von Dateitypen verweisen,
 
 - Eine einzelne Ressource, die als eigenständige Datei vorhanden ist. Dieser Typ enthält eine Bitmap, ein Symbol oder eine Cursor Datei, auf die von einer RC-Datei verwiesen wird.
 
-- Eine von der Entwicklungsumgebung generierte Header Datei. Dieser Typ enthält `Resource.h`, auf den von einer RC-Datei verwiesen wird.
+- Eine von der Entwicklungsumgebung generierte Header Datei. Dieser Typ enthält `Resource.h`, auf die von einer RC-Datei verwiesen wird.
 
 Ressourcen, die in anderen Dateitypen, z. b. exe-, dll-und res-Dateien, gefunden werden, werden als *Ressourcen*bezeichnet.
 
-Sie können in Ihrem Projekt mit *Ressourcen Dateien* und *Ressourcen* arbeiten. Sie können auch mit solchen arbeiten, die nicht Teil des aktuellen Projekts sind oder außerhalb der Entwicklungsumgebung von Visual Studio erstellt wurden. Sie haben unter anderem folgende Möglichkeiten:
+Sie können in Ihrem Projekt mit *Ressourcen Dateien* und *Ressourcen* arbeiten. Sie können auch mit solchen arbeiten, die nicht Teil des aktuellen Projekts sind oder außerhalb der Entwicklungsumgebung von Visual Studio erstellt wurden. Beispielsweise können Sie folgende Aktionen ausführen:
 
 - Arbeiten mit geschachtelten und bedingt eingeschlossenen Ressourcendateien.
 
@@ -70,19 +70,19 @@ Weitere Informationen zu Ressourcen finden Sie unter Erstellen von [Ressourcen](
 
 Die folgenden Dateitypen können geöffnet werden, um die darin enthaltenen Ressourcen zu bearbeiten:
 
-| Dateiname | Beschreibung |
+| Dateiname | BESCHREIBUNG |
 |---|---|
 | .rc | Ressourcen Skriptdateien |
 | .rct | Ressourcen Vorlagen Dateien |
 | .res | Ressourcendateien |
-| .resx | Verwaltete Ressourcen Dateien |
+| RESX-Datei | Verwaltete Ressourcen Dateien |
 | .exe | Ausführbare Dateien |
 | .dll | Dynamic Link Library-Dateien |
 | . BMP,. ico,. DIB,. cur | Bitmap-, Symbol-, Symbolleisten-und Cursor Dateien |
 
 Beim Bearbeiten von Ressourcen arbeitet die Visual Studio-Umgebung mit und wirkt sich auf die folgenden Dateien aus:
 
-| Dateiname | Beschreibung |
+| Dateiname | BESCHREIBUNG |
 |---|---|
 | Resource.h | Die von der Entwicklungsumgebung generierte Header Datei, die Symbol Definitionen enthält.<br/><br/>Fügen Sie diese Datei in die Quell Code Verwaltung ein. |
 | Filename.aps | Binäre Version der aktuellen Ressourcen Skriptdatei, die für das schnelle Laden verwendet wird.<br /><br /> Ressourcen-Editoren lesen RC-oder Resource. h-Dateien nicht direkt. Der Ressourcen Compiler kompiliert Sie in. APS-Dateien, die von den Ressourcen-Editoren verwendet werden. Diese Datei ist ein Kompilierungsschritt und speichert nur symbolische Daten.<br/><br/>Wie bei einem normalen Kompilierungsprozess werden nicht symbolische Informationen, wie z. b. Kommentare, während des Kompilierungs Vorgangs verworfen.<br/><br/>Wenn die. APS-Datei nicht mit der RC-Datei synchronisiert ist, wird die RC-Datei neu generiert. Wenn Sie z. b. **Speichern**, überschreibt der Ressourcen-Editor die RC-Datei und die Datei "Resource. h". Alle Änderungen an den Ressourcen selbst bleiben in der RC-Datei enthalten, Kommentare werden jedoch immer verloren gehen, sobald die RC-Datei überschrieben wird. Weitere Informationen zum Beibehalten von Kommentaren finden Sie [unter Einschließen von Ressourcen zur Kompilierzeit](../windows/how-to-include-resources-at-compile-time.md).<br/><br/>In der Regel sollten Sie die. APS-Datei nicht in die Quell Code Verwaltung einschließen. |
@@ -108,7 +108,7 @@ In C++ Desktop Projekten sind Manifest-Ressourcen XML-Dateien, die die von einer
 </dependency>
 ```
 
-Für eine Windows XP-oder Windows Vista-Anwendung sollte die Manifestressource die aktuellste Version der allgemeinen Windows-Steuerelemente angeben, die von der Anwendung verwendet werden soll. Im obigen Beispiel wird die `6.0.0.0`-Version verwendet, die das [Syslink-Steuer](/windows/win32/Controls/syslink-overview)Element unterstützt.
+Für eine Windows XP-oder Windows Vista-Anwendung sollte die Manifestressource die aktuellste Version der allgemeinen Windows-Steuerelemente angeben, die von der Anwendung verwendet werden soll. Im obigen Beispiel wird Version `6.0.0.0`verwendet, die das [Syslink-Steuer](/windows/win32/Controls/syslink-overview)Element unterstützt.
 
 > [!NOTE]
 > Es kann nur eine Manifestressource pro Modul verwendet werden.
@@ -125,11 +125,11 @@ Um die in einer Manifestressource enthaltenen Versions-und Typinformationen anzu
 
    - Klicken Sie zum Öffnen in einem anderen Editor mit der rechten Maustaste auf die *Manifest* -Datei, und wählen Sie **Öffnen mit**aus. Geben Sie den zu verwendenden Editor an, und wählen Sie **Öffnen**.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit Ressourcendateien](../windows/working-with-resource-files.md)<br/>
 [Ressourcenbezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>

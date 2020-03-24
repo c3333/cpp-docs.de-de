@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4096
 ms.assetid: ef6fba38-59a1-4d86-bcac-cadf44d87a36
-ms.openlocfilehash: 5b561d5e9c48d806be566aec104f63743d4409e8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 28d7bd2918c90716ab9d7eba67b59ca345fc5a17
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408120"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183344"
 ---
 # <a name="linker-tools-warning-lnk4096"></a>Linkertoolwarnung LNK4096
 
-/ Basiswert "Number" ist ungültig für Windows 95 und Windows 98. Image kann möglicherweise nicht ausgeführt.
+Der/Base-Wert "Number" ist für Windows 95 und Windows 98 ungültig. Image kann möglicherweise nicht ausgeführt werden
 
-Die Basisadresse, die Sie angegeben haben, ist ungültig. Windows 95 und Windows 98 ausführbare Dateien müssen eine Basisadresse, die größer als 0 x 400000. Weitere Informationen zu Basisadressen, finden Sie unter den [/BASE](../../build/reference/base-base-address.md) -Linkeroption.
+Die angegebene Basisadresse ist ungültig. Ausführbare Dateien für Windows 95 und Windows 98 müssen eine Basisadresse aufweisen, die größer als 0x400000 ist. Weitere Informationen zu Basisadressen finden Sie unter der [/Base](../../build/reference/base-base-address.md) (Linkeroption).

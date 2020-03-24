@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1169
 ms.assetid: e079d518-f184-48cd-8b38-969bf137af54
-ms.openlocfilehash: f167c82c28834d1de82578735e5557d0e9d6b5f5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 19ac8bb8bd28f42b28fb86e64e72f4ea01f01ab1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62242720"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183994"
 ---
 # <a name="linker-tools-error-lnk1169"></a>Linkertoolfehler LNK1169
 
-mindestens ein mehrfach definiertes Symbol gefunden.
+mindestens ein mehrfach definiertes Symbol wurde gefunden.
 
-Fehler bei der Build aufgrund eines oder mehrerer Symbole Definitionen. Dieser Fehler geht von Fehler [LNK2005](../../error-messages/tool-errors/linker-tools-error-lnk2005.md).
+Der Buildvorgang ist aufgrund mehrerer Definitionen von mindestens einem Symbol fehlgeschlagen. Diesem Fehler wird der Fehler [LNK2005](../../error-messages/tool-errors/linker-tools-error-lnk2005.md)vorangestellt.
 
-Die [/FORCE](../../build/reference/force-force-file-output.md) oder **Multiple** -Option überschreibt diesen Fehler.
+Der Fehler wird durch die Option [/Force](../../build/reference/force-force-file-output.md) oder **/Force: Multiple** überschrieben.
