@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - QueryInterface method [C++]
 ms.assetid: d03292f1-6b02-40db-9756-8b0837a97319
-ms.openlocfilehash: 42953c92e4cf31b5ccd02dd51811fc1fdeedbcaf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 26dda2dff83ff0adbb7ef05c5e75f64b44138bd8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62399277"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170670"
 ---
-# <a name="comptrtqueryinterface"></a>_com_ptr_t::QueryInterface
+# <a name="_com_ptr_tqueryinterface"></a>_com_ptr_t::QueryInterface
 
 **Microsoft-spezifisch**
 
-Ruft die **QueryInterface** Memberfunktion `IUnknown` für den gekapselten Schnittstellenzeiger auf.
+Ruft die **QueryInterface** -Member-Funktion von `IUnknown` für den gekapselten Schnittstellen Zeiger auf.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,18 +35,18 @@ template<typename _InterfaceType> HRESULT QueryInterface (
 
 #### <a name="parameters"></a>Parameter
 
-*iid*<br/>
-`IID` eines Schnittstellenzeigers.
+*IID*<br/>
+`IID` eines Schnittstellen Zeigers.
 
 *p*<br/>
 Nicht formatierter Schnittstellenzeiger.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Aufrufe `IUnknown::QueryInterface` für den gekapselten Schnittstellenzeiger mit dem angegebenen `IID` und gibt den resultierenden unformatierten Schnittstellenzeiger in *p*. Diese Routine gibt zurück, das HRESULT, um den Erfolg oder Fehler anzuzeigen.
+Ruft `IUnknown::QueryInterface` für den gekapselten Schnittstellen Zeiger mit dem angegebenen `IID` auf und gibt den resultierenden rohschnittstellen Zeiger in *p*zurück. Diese Routine gibt das HRESULT zurück, um einen Erfolg oder Fehler anzugeben.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_ptr_t-Klasse](../cpp/com-ptr-t-class.md)

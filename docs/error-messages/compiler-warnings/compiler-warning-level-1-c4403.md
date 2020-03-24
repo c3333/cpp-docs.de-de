@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4403
 ms.assetid: d95597c9-4762-4f33-86e4-1d98f0e80d52
-ms.openlocfilehash: 758084f2f900d5f8cb63fd3d6d82b80116fbcb87
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7ea8fa619f17713cca615294ffce6dee46c01cf8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182391"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80162594"
 ---
 # <a name="compiler-warning-level-1-c4403"></a>Compilerwarnung (Stufe 1) C4403
 
-Unzulässiger PTR-operator
+Unzulässiger PTR-Operator
 
-PTR-Operator wird nicht ordnungsgemäß in Inlineassemblercode verwendet.
+Ein PTR-Operator wird in Inline-Assemblercode inadäquat verwendet.
 
-Der Compiler ignoriert die PTR-Operator.
+Der Compiler hat den PTR-Operator ignoriert.

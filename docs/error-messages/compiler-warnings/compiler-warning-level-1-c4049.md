@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - C4049
 ms.assetid: d11c1870-bcfc-4d71-8945-b87ec6ec3514
-ms.openlocfilehash: a4958bb446b5f7e80ef2eef92b52a0f86cf6a134
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 214ccae5d9835bc4a3b66bbbe1cd5ded4bc651cb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388761"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164143"
 ---
 # <a name="compiler-warning-level-1-c4049"></a>Compilerwarnung (Stufe 1) C4049
 
-Compilerlimit: Ausgabe der Zeilennummer beenden
+Compilerlimit: Ausgabe der Zeilennummer wird beendet.
 
-Die Datei enthält mehr als 16.777.215 (2<sup>24</sup>-1) Quellzeilen. Der Compiler wird die Nummerierung mit 16.777.215 beendet.
+Die Datei enthält mehr als 16.777.215 (2<sup>24</sup>-1) Quellzeilen. Der Compiler beendet die Nummerierung bei 16.777.215.
 
-Für Code nach der Zeile 16.777.215:
+Für Code nach Zeile 16.777.215:
 
-- Das Image enthält keine Debuginformationen, damit die Zeilennummern.
+- Das Bild enthält keine Debuginformationen für Zeilennummern.
 
-- Eine Diagnose erfolgen, können mit falschen Zeilennummern angezeigt werden.
+- Einige Diagnosen werden möglicherweise mit falschen Zeilennummern gemeldet.
 
-- ASM-Angebote (/ FAs) möglicherweise falsche Zeilennummern.
+- asm-Auflistungen (/FAS) weisen möglicherweise falsche Zeilennummern auf.

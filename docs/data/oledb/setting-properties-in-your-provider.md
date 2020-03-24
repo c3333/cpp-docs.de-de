@@ -5,48 +5,48 @@ helpviewer_keywords:
 - OLE DB providers, properties
 - properties [C++], OLE DB provider
 ms.assetid: 26a8b493-7ec4-4686-96d0-9ad5d2bca5ac
-ms.openlocfilehash: 2cbb334ab15912fdcf6980461016976d869f5a84
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 905a9bb32544dbd7453d46362e100047516d22a8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404506"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209572"
 ---
 # <a name="setting-properties-in-your-provider"></a>Festlegen von Eigenschaften im Anbieter
 
-Finden Sie die Eigenschaftengruppe und die Eigenschafts-ID für die gewünschte Eigenschaft an. Weitere Informationen finden Sie unter [OLE DB-Eigenschaften](/previous-versions/windows/desktop/ms722734(v=vs.85)) in die **OLE DB-Programmierreferenz**.
+Suchen Sie die Eigenschaften Gruppe und die Eigenschaften-ID für die gewünschte Eigenschaft. Weitere Informationen finden Sie unter [OLE DB Eigenschaften](/previous-versions/windows/desktop/ms722734(v=vs.85)) in der **OLE DB Programmierer-Referenz**.
 
-Finden Sie in den Anbietercode, die vom Assistenten generiert wird die für die Eigenschaftengruppe eigenschaftenzuordnung ein. Der Name der Eigenschaftengruppe entspricht in der Regel der Name des Objekts. Befehls- und Rowsetobjekte-Eigenschaften finden Sie in den Befehl oder das Rowset; Dateneigenschaften Quell- und Initialisierung finden Sie in das neue Datenquellenobjekt.
+Suchen Sie in dem vom Assistenten generierten Anbieter Code die Eigenschaften Zuordnung, die der Eigenschaften Gruppe entspricht. Der Name der Eigenschaften Gruppe entspricht in der Regel dem Namen des Objekts. Befehls-und Rowseteigenschaften können im Befehl oder Rowset gefunden werden. Datenquellen-und Initialisierungs Eigenschaften finden Sie im Datenquellen Objekt.
 
-Fügen Sie in der eigenschaftenzuordnung eine [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md) Makro. PROPERTY_INFO_ENTRY_EX vier Parameter:
+Fügen Sie in der Eigenschaften Zuordnung ein [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md) Makro hinzu. PROPERTY_INFO_ENTRY_EX benötigt vier Parameter:
 
-- Die Eigenschafts-ID für Ihre Eigenschaft entspricht. Entfernen Sie die ersten sieben Zeichen ("DBPROP_"), ausgehend vom Anfang des Namen der Eigenschaft. Wenn Sie hinzufügen möchten z. B. `DBPROP_MAXROWS`, übergeben Sie `MAXROWS` als erstes Element. Ist dies eine benutzerdefinierte Eigenschaft, übergeben Sie die vollständige GUID-Namen (z. B. `DBMYPROP_MYPROPERTY`).
+- Die eigen schafts-ID, die ihrer Eigenschaft entspricht. Entfernen Sie die ersten sieben Zeichen ("DBPROP_") von der Vorderseite des Eigenschaften namens. Wenn Sie z. b. `DBPROP_MAXROWS`hinzufügen möchten, übergeben Sie `MAXROWS` als erstes Element. Wenn dies eine benutzerdefinierte Eigenschaft ist, übergeben Sie den vollständigen GUID-Namen (z. b. `DBMYPROP_MYPROPERTY`).
 
-- Der variant-Typ der Eigenschaft (in [OLE DB-Eigenschaften](/previous-versions/windows/desktop/ms722734(v=vs.85)) in die **OLE DB-Programmierreferenz**). Geben Sie die VT_ Typ (z. B. VT_BOOL oder VT_I2), der Datentyp entspricht.
+- Der Varianttyp der Eigenschaft (in [OLE DB Eigenschaften](/previous-versions/windows/desktop/ms722734(v=vs.85)) in der **OLE DB Programmierer-Referenz**). Geben Sie den VT_ Typ (z. b. VT_BOOL oder VT_I2) ein, der dem Datentyp entspricht.
 
-- Flags, um anzugeben, ob die Eigenschaft lesbar und schreibbar ist und der Gruppe, zu der er gehört. Der folgende Code gibt beispielsweise an eine Lese-/Schreibeigenschaft, die der Rowset-Gruppe gehören:
+- Flags, die angeben, ob die Eigenschaft lesbar und beschreibbar ist, und die Gruppe, zu der Sie gehört. Der folgende Code zeigt z. b. eine Lese-/Schreibeigenschaft an, die der Rowsetgruppe angehört:
 
     ```cpp
     DBPROPFLAGS_ROWSET | DBPROPFLAGS_READ | DBPROPFLAGS_WRITE
     ```
 
-- Der Basiswert der Eigenschaft. Dies ist möglicherweise `VARIANT_FALSE` Geben Sie für einen booleschen Wert oder 0 (null) für einen ganzzahligen Typ, z. B. Die Eigenschaft weist diesen Wert an, es sei denn, er geändert wird.
+- Der Basiswert der Eigenschaft. Dies kann z. b. `VARIANT_FALSE` für einen booleschen Typ oder NULL für einen ganzzahligen Typ sein. Die-Eigenschaft hat diesen Wert, es sei denn, Sie wird geändert.
 
     > [!NOTE]
-    > Einige Eigenschaften sind verbunden oder mit anderen Eigenschaften, z. B. Lesezeichen oder Aktualisieren von verkettet. Wenn ein Consumer eine Eigenschaft auf "true" setzt, kann auch eine andere Eigenschaft festgelegt werden. Über die Methode unterstützt die OLE DB-Anbietervorlagen [CUtlProps:: OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md).
+    > Einige Eigenschaften sind mit anderen Eigenschaften verknüpft oder verkettet, z. b. Lesezeichen oder Aktualisierungen. Wenn ein Consumer eine Eigenschaft auf true festlegt, kann auch eine andere Eigenschaft festgelegt werden. Die OLE DB Anbieter Vorlagen unterstützen dies über die Methode " [cutlpropertychanged](../../data/oledb/cutlprops-onpropertychanged.md)".
 
-## <a name="properties-ignored-by-microsoft-ole-db-providers"></a>Eigenschaften von Microsoft OLE DB-Anbieter ignoriert
+## <a name="properties-ignored-by-microsoft-ole-db-providers"></a>Eigenschaften, die von Microsoft OLE DB-Anbietern ignoriert werden
 
-Der Microsoft OLE DB-Anbieter ignoriert die folgenden OLE DB-Eigenschaften:
+Die Microsoft OLE DB-Anbieter ignorieren die folgenden OLE DB Eigenschaften:
 
-- `DBPROP_MAXROWS` funktioniert nur für schreibgeschützte Anbieter (d. h. `DBPROP_IRowsetChange` und `DBPROP_IRowsetUpdate` sind **"false"**); andernfalls diese Eigenschaft wird nicht unterstützt.
+- `DBPROP_MAXROWS` funktioniert nur für schreibgeschützte Anbieter (d. h., wenn `DBPROP_IRowsetChange` und `DBPROP_IRowsetUpdate` **false**sind). Andernfalls wird diese Eigenschaft nicht unterstützt.
 
-- `DBPROP_MAXPENDINGROWS` wird ignoriert. der Anbieter gibt einen eigenen Grenzwert an.
+- `DBPROP_MAXPENDINGROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
-- `DBPROP_MAXOPENROWS` wird ignoriert. der Anbieter gibt einen eigenen Grenzwert an.
+- `DBPROP_MAXOPENROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
-- `DBPROP_CANHOLDROWS` wird ignoriert. der Anbieter gibt einen eigenen Grenzwert an.
+- `DBPROP_CANHOLDROWS` wird ignoriert. der Anbieter gibt seinen eigenen Grenzwert an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

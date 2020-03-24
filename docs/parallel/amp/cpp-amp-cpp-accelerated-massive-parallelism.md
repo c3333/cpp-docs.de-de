@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C++ AMP (see C++ Accelerated Massive Parallelism)
 - C++ Accelerated Massive Parallelism, getting started
 ms.assetid: e27824cb-3167-409b-8c3f-a0e476d8f349
-ms.openlocfilehash: 3dbd7d646b455ac57833d28b18602b533c8388e6
-ms.sourcegitcommit: 28eae422049ac3381c6b1206664455dbb56cbfb6
+ms.openlocfilehash: c9ef7ab816ec0d17b9dc0b569a6f3a43af83cc68
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66450346"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167692"
 ---
 # <a name="c-amp-c-accelerated-massive-parallelism"></a>C++ AMP (C++ Accelerated Massive Parallelism)
 
@@ -18,18 +18,18 @@ ms.locfileid: "66450346"
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-|Titel|Beschreibung|
+|Titel|BESCHREIBUNG|
 |-----------|-----------------|
 |[Übersicht über C++ AMP](../../parallel/amp/cpp-amp-overview.md)|Beschreibt die Hauptfunktionen von C++ AMP und der mathematischen Bibliothek.|
-|[Verwenden von Lambdas, Funktionsobjekten und eingeschränkten Funktionen](../../parallel/amp/using-lambdas-function-objects-and-restricted-functions.md)|Beschreibt, wie Lambdaausdrücke, Funktionsobjekte und eingeschränkte Funktionen in Aufrufen an die [Parallel_for_each](reference/concurrency-namespace-functions-amp.md#parallel_for_each) Methode.|
+|[Verwenden von Lambdas, Funktionsobjekten und eingeschränkten Funktionen](../../parallel/amp/using-lambdas-function-objects-and-restricted-functions.md)|Beschreibt, wie Lambda-Ausdrücke, Funktions Objekte und eingeschränkte Funktionen in Aufrufen der [parallel_for_each](reference/concurrency-namespace-functions-amp.md#parallel_for_each) -Methode verwendet werden.|
 |[Verwenden von Kacheln](../../parallel/amp/using-tiles.md)|Beschreibt, wie Unterteilungen verwendet werden, um den C++ AMP-Code beschleunigen.|
 |[Verwenden von accelerator-Objekten und accelerator_view-Objekten](../../parallel/amp/using-accelerator-and-accelerator-view-objects.md)|Beschreibt, wie die Ausführung des Codes auf der GPU mithilfe von Beschleunigern angepasst werden kann.|
-|[C++ AMP in UWP-Apps](../../parallel/amp/using-cpp-amp-in-windows-store-apps.md)|Beschreibt, wie Sie C++ AMP in apps der universellen Windows-Plattform (UWP) zu verwenden, die Windows-Runtime-Typen zu verwenden.|
+|[C++ AMP in UWP-Apps](../../parallel/amp/using-cpp-amp-in-windows-store-apps.md)|Beschreibt die Verwendung C++ von amp in universelle Windows-Plattform-Apps (UWP), die Windows-Runtime-Typen verwenden.|
 |[Grafiken (C++ AMP)](../../parallel/amp/graphics-cpp-amp.md)|Beschreibt, wie die C++ AMP-Grafikbibliothek verwendet wird.|
-|[Exemplarische Vorgehensweise: Matrizenmultiplikation](../../parallel/amp/walkthrough-matrix-multiplication.md)|Veranschaulicht die Matrixmultiplikation mithilfe von C++ AMP-Code und Unterteilung.|
+|[Exemplarische Vorgehensweise: Matrixmultiplikation](../../parallel/amp/walkthrough-matrix-multiplication.md)|Veranschaulicht die Matrixmultiplikation mithilfe von C++ AMP-Code und Unterteilung.|
 |[Exemplarische Vorgehensweise: Debuggen einer C++ AMP-Anwendung](../../parallel/amp/walkthrough-debugging-a-cpp-amp-application.md)|Erklärt, wie eine Anwendung erstellt und gedebuggt wird, die parallele Reduzierung verwendet, um ein großes Array von ganzen Zahlen aufzusummieren.|
 
-## <a name="reference"></a>Referenz
+## <a name="reference"></a>Verweis
 
 [Referenz (C++ AMP)](../../parallel/amp/reference/reference-cpp-amp.md)<br/>
 [tile_static-Schlüsselwort](../../cpp/tile-static-keyword.md)<br/>
@@ -37,6 +37,6 @@ ms.locfileid: "66450346"
 
 ## <a name="other-resources"></a>Weitere Ressourcen
 
-[Parallele Programmierung in systemeigenem Code (Blog)](https://go.microsoft.com/fwlink/p/?linkid=238472)<br/>
-[C++ AMP-Beispielprojekte zum download](https://go.microsoft.com/fwlink/p/?linkid=248508)<br/>
-[Analysieren von C++ AMP-Code mit der Nebenläufigkeitsschnellansicht](https://blogs.msdn.microsoft.com/nativeconcurrency/2012/03/09/analyzing-c-amp-code-with-the-concurrency-visualizer/)
+[Parallele Programmierung in nativem Code (Blog)](https://go.microsoft.com/fwlink/p/?linkid=238472)<br/>
+[C++AMP-Beispiel Projekte zum herunterladen](https://go.microsoft.com/fwlink/p/?linkid=248508)<br/>
+[Analysieren C++ von amp-Code mit der neben läufigkeits Schnellansicht](https://blogs.msdn.microsoft.com/nativeconcurrency/2012/03/09/analyzing-c-amp-code-with-the-concurrency-visualizer/)

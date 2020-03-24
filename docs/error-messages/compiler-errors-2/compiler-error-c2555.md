@@ -6,34 +6,34 @@ f1_keywords:
 helpviewer_keywords:
 - C2555
 ms.assetid: 5e49ebb8-7c90-457a-aa12-7ca7ab6574b2
-ms.openlocfilehash: cc6c3a3a29665ccf65b77a3d9866986cb0a46b9e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ebf3e4a3aff48311edd5fb95b01a7b2d23990231
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62353211"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202423"
 ---
 # <a name="compiler-error-c2555"></a>Compilerfehler C2555
 
-'Class1 ':: function1: überschreibende virtuelle Funktion unterscheidet sich und ist nicht von 'Class2 ':: function2 kovariant zurückgeben
+' Class1:: Funktion1 ': der Rückgabetyp der virtuellen Funktion wird unterschiedlich und ist nicht kovariant von ' Klasse2:: Funktion2 '.
 
-Haben eine virtuelle Funktion und die abgeleiteten überschreibenden Funktion Parameterlisten identisch, jedoch unterschiedliche Rückgabetypen. Eine überschreibende-Funktion in einer abgeleiteten Klasse kann nicht von einer virtuellen Funktion in einer Basisklasse nur durch ihren Rückgabetyp unterscheiden.
+Eine virtuelle Funktion und eine abgeleitete Überschreibungs Funktion verfügen über identische Parameterlisten, aber unterschiedliche Rückgabe Typen. Eine über schreibende Funktion in einer abgeleiteten Klasse kann sich nur durch ihren Rückgabetyp von einer virtuellen Funktion in einer Basisklasse unterscheiden.
 
-Um diesen Fehler zu beheben, wandeln Sie den Rückgabewert, nachdem die virtuelle Funktion aufgerufen wurde.
+Umwandeln Sie den Rückgabewert, nachdem die virtuelle Funktion aufgerufen wurde, um diesen Fehler zu beheben.
 
-Dieser Fehler kann auch angezeigt, wenn Sie mit "/ CLR" kompilieren.   Z. B. Visual C++ entspricht der folgenden C#-Deklaration:
+Dieser Fehler wird möglicherweise auch angezeigt, wenn Sie mit/CLR. kompilieren.   Beispielsweise entspricht die Visualisierung C++ der folgenden C# Deklaration:
 
 ```
 Guid[] CheckSources(Guid sourceID, Guid[] carouselIDs);
 ```
 
-echt
+stimmt
 
 ```
 Guid CheckSources(Guid sourceID, Guid carouselIDs[]) [];
 ```
 
-Im folgende Beispiel wird die C2555 generiert:
+Im folgenden Beispiel wird C2555 generiert:
 
 ```cpp
 // C2555.cpp

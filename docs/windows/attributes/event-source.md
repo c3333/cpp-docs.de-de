@@ -1,5 +1,5 @@
 ---
-title: Event_source (C++ com-Attribut)
+title: event_source (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.event_source
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - event sources
 - event handling, creating event source
 ms.assetid: 0983e36a-6127-4fbb-8a22-8dfec6564c16
-ms.openlocfilehash: 81eba3c032a3556d1c69ad02652455ebc07ab6be
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e187e57f21e9c94068c0b3396b93deed617fef2a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409634"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167068"
 ---
-# <a name="eventsource"></a>event_source
+# <a name="event_source"></a>event_source
 
 Erstellt eine Ereignisquelle.
 
@@ -30,7 +30,7 @@ Erstellt eine Ereignisquelle.
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Eine Enumeration von einem der folgenden Werte:
 
 - `native` für nicht verwalteten C/C++-Code (Standard für nicht verwaltete Klassen).
@@ -44,34 +44,34 @@ Eine Enumeration von einem der folgenden Werte:
     ```
 
 *optimize*<br/>
-Wenn *Typ* ist `native`, können Sie angeben, `optimize=size`, um anzugeben, dass es 4 Bytes Speicherplatz (minimum) für alle Ereignisse in einer Klasse oder `optimize=speed` (Standard), um anzugeben, dass es 4 * (Anzahl von Ereignissen)-Bytes im Speicher.
+Wenn der *Typ* `native`ist, können Sie `optimize=size`angeben, um anzugeben, dass für alle Ereignisse in einer Klasse oder `optimize=speed` (Standardwert) 4 Bytes Speicher (minimal) vorhanden sind, um anzugeben, dass es 4 * (# der Ereignisse) Speicher Bytes gibt.
 
 *decorate*<br/>
-Wenn *Typ* ist `native`, können Sie angeben, `decorate=false`, um anzugeben, dass der erweiterte Name in der zusammengeführten Datei (.mrg) nicht den Klassennamen der einschließenden enthalten soll. Mit[/Fx](../../build/reference/fx-merge-injected-code.md) können Sie MRG-Dateien generieren. `decorate=false`, ist die Standardeinstellung und führt zu vollqualifizierten Typnamen in der zusammengeführten Datei.
+Wenn *Type* `native`ist, können Sie `decorate=false`angeben, um anzugeben, dass der erweiterte Name in der zusammengeführten Datei (. MRG) nicht den einschließenden Klassennamen enthalten soll. Mit[/Fx](../../build/reference/fx-merge-injected-code.md) können Sie MRG-Dateien generieren. `decorate=false`ist die Standardeinstellung und führt zu voll qualifizierten Typnamen in der zusammengeführten Datei.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das C++-Attribut **event_source** gibt an, dass die Klasse oder Struktur, auf die es angewendet wird, eine Ereignisquelle sein wird.
 
-**event_source** wird in Verbindung mit dem Attribut [event_receiver](event-receiver.md) und dem Schlüsselwort [__event](../../cpp/event.md) verwendet. Verwendung `event_receiver` um Ereignisempfänger zu erstellen. Verwendung **__event** für Methoden in die Ereignisquelle, die diese Methoden als Ereignisse anzugeben.
+**event_source** wird in Verbindung mit dem Attribut [event_receiver](event-receiver.md) und dem Schlüsselwort [__event](../../cpp/event.md) verwendet. Verwenden Sie `event_receiver`, um Ereignis Empfänger zu erstellen. Verwenden Sie **__event** für Methoden innerhalb der Ereignis Quelle, um diese Methoden als Ereignisse anzugeben.
 
 > [!NOTE]
 > Eine von einer Vorlage gebildete Klasse oder Struktur kann keine Ereignisse enthalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
+|**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|**Co-Klasse** bei `type`=`com`|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|**Co-Klasse** , wenn `type`=`com`|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [event_receiver](event-receiver.md)<br/>

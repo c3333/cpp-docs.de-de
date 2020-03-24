@@ -1,5 +1,5 @@
 ---
-title: Event_receiver (C++ com-Attribut)
+title: event_receiver (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.event_receiver
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - event sinks, creating
 - event sinks
 ms.assetid: bf8fe770-3ea2-4128-b46b-166222ee4097
-ms.openlocfilehash: 81a3ec88c336ddeb550f133e657854b3b6f89d96
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9653a0b5c756857d92914496b9c5c6f8aee56ebb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409633"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167081"
 ---
-# <a name="eventreceiver"></a>event_receiver
+# <a name="event_receiver"></a>event_receiver
 
 Erstellt einen Ereignisempfänger (Senke).
 
@@ -32,10 +32,10 @@ Erstellt einen Ereignisempfänger (Senke).
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Eine Enumeration von einem der folgenden Werte:
 
-- `native` für nicht verwalteten C/C++-Code (Standard für native Klassen).
+- `native` für nicht verwalteten C/C++ Code (Standard für Native Klassen).
 
 - `com` für COM-Code. Dieser Wert erfordert, dass Sie folgende Headerdateien einschließen:
 
@@ -46,37 +46,37 @@ Eine Enumeration von einem der folgenden Werte:
     ```
 
 *layout_dependent*<br/>
-Geben Sie *Layout_dependent* nur, wenn `type` = **com**. *Layout_dependent* ist ein boolescher Wert:
+Geben Sie *layout_dependent* nur an, wenn `type`=**com**. *layout_dependent* ist ein boolescher Wert:
 
-- **"true"** bedeutet, dass die Signatur des Delegaten, den Fall, dass Empfänger genau übereinstimmen muss, sie in dieser Quelle verknüpft sind. Der Empfänger Ereignishandlernamen müssen es sich um den in der Quellschnittstelle des relevanten Ereignisses angegebenen Namen übereinstimmen. Verwenden Sie `coclass` beim *Layout_dependent* ist **"true"**. Es ist etwas effizienter an **"true"**.
+- " **true** " bedeutet, dass die Signatur der Delegaten im Ereignis Empfänger genau mit denen übereinstimmen muss, an die Sie in der Ereignis Quelle angeschlossen sind. Die Namen des ereignishandlerhandlers müssen mit den in der relevanten Ereignis Quellen Schnittstelle angegebenen Namen identisch sein. Sie müssen `coclass` verwenden, wenn *layout_dependent* den Wert " **true**" hat. Es ist etwas effizienter, " **true**" anzugeben.
 
-- **"false"** (Standard) bedeutet, dass die aufrufende Klasse der Aufrufkonvention und die Speicherklasse (virtuell, statisch, usw.) müssen nicht die Ereignismethode und den Handlern; entsprechen, noch müssen die Handlernamen die Source-Schnittstelle Methode Ereignisnamen übereinstimmen.
+- **false** (Standard) bedeutet, dass die Aufruf Konvention und die Speicher Klasse (virtuell, statisch und andere) nicht mit der Ereignismethode und den Handlern übereinstimmen müssen. Außerdem müssen die Handlernamen nicht mit den Methodennamen der Ereignis Quell Schnittstellen identisch sein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Event_receiver** C++ Attribut gibt an, dass die Klasse oder Struktur, die auf das er angewendet wird einen Ereignisempfänger, verwenden das visuelle Element kann C++ einheitliche Ereignismodell.
+Das **event_receiver** C++ -Attribut gibt an, dass die Klasse oder Struktur, auf die es angewendet wird, mithilfe des visuellen C++ Unified-Ereignis Modells als Ereignis Empfänger festgelegt wird.
 
-**Event_receiver** wird zusammen mit den [Event_source](event-source.md) Attribut und die [__hook](../../cpp/hook.md) und [__unhook](../../cpp/unhook.md) Schlüsselwörter. Verwendung `event_source` zum Erstellen von Ereignisquellen. Verwendung **__hook** einen Ereignisempfänger Methoden ("Hook") Event Receiver-Methoden, Ereignisse aus einer Ereignisquelle zu verknüpfen. Verwendung **__unhook** um sie zu trennen.
+**event_receiver** wird mit dem [event_source](event-source.md) -Attribut und den Schlüsselwörtern [__hook](../../cpp/hook.md) und [__unhook](../../cpp/unhook.md) verwendet. Verwenden Sie `event_source` zum Erstellen von Ereignis Quellen. Verwenden Sie **__hook** in den Methoden eines Ereignis Empfängers, um Ereignis Empfänger Methoden ("Hook") den Ereignissen einer Ereignis Quelle zuzuordnen. Verwenden Sie **__unhook** , um Sie zu trennen.
 
-*Layout_dependent* wird nur bei COM-Ereignisempfängern angegeben (`type`=**com**). Der Standardwert für *Layout_dependent* ist **"false"**.
+*layout_dependent* wird nur für com-Ereignis Empfänger (`type`=**com**) angegeben. Der Standardwert für *layout_dependent* ist **false**.
 
 > [!NOTE]
 > Eine von einer Vorlage gebildete Klasse oder Struktur kann keine Ereignisse enthalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
+|**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|`coclass` when *layout_dependent*=**true**|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|`coclass`, wenn *layout_dependent*=**true**|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [event_source](event-source.md)<br/>

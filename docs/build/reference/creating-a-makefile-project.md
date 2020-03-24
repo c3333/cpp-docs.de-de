@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - Makefile projects [C++]
 ms.assetid: dd077af3-97a8-48fb-baaa-cf7e07ddef61
-ms.openlocfilehash: 861cd88440a697ce5a3abc83109526227ae42f8e
-ms.sourcegitcommit: bd7ddc044f9083246614b602ef6a758775313214
+ms.openlocfilehash: b96b7a1663e5d5886615dd976900f8eda9daeccc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866135"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169889"
 ---
 # <a name="create-a-c-makefile-project"></a>Erstellen eines C++-Makefile-Projekts
 
@@ -19,10 +19,10 @@ Ein *Makefile* ist eine Textdatei, die Anweisungen zum Kompilieren und Linken (o
 
 Wenn Sie über ein vorhandenes Makefile-Projekt verfügen, können Sie folgende Optionen auswählen, wenn Sie es in der Visual Studio-IDE codieren und/oder debuggen möchten:
 
-- Erstellen eines Makefile-Projekts in Visual Studio, das Ihr vorhandenes Makefile verwendet, um eine VCXPROJ-Datei zu konfigurieren, die von Visual Studio für IntelliSense verwendet wird. (Sie verfügen nicht über alle IDE-Funktionen, die Sie mit einem nativen MSBuild-Projekt erhalten.) Siehe [So erstellen Sie ein Makefile-Projekt](#create_a_makefile_project) weiter unten.
+- Erstellen eines Makefile-Projekts in Visual Studio, das Ihr vorhandenes Makefile verwendet, um eine VCXPROJ-Datei zu konfigurieren, die von Visual Studio für IntelliSense verwendet wird. (Sie verfügen nicht über alle IDE-Features, die Sie mit einem nativen MSBuild-Projekt erhalten.) Weitere Informationen finden Sie unter so [Erstellen Sie ein Makefile-Projekt](#create_a_makefile_project) .
 - Verwenden des Assistenten für das **Erstellen von Projekten aus vorhandenen Codedateien**, um ein natives MSBuild-Projekt aus dem Quellcode zu erstellen. Das ursprüngliche Makefile wird nach diesem Vorgang nicht verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen eines C++-Projekts aus vorhandenem Code](../how-to-create-a-cpp-project-from-existing-code.md).
-- **Visual Studio 2017 und höher:** Verwenden Sie die Funktion **Ordner öffnen**, um ein Makefile-Projekt zu bearbeiten und in der vorliegenden Form zu erstellen, ohne Beteiligung des MSBuild-Systems. Weitere Informationen finden Sie unter [Open Folder projects for C++ (Verwenden von „Ordner öffnen“ mit Projekten in Visual C++)](../open-folder-projects-cpp.md).
-- **Visual Studio 2019 und höher**: Erstellen eines UNIX-Makefile-Projekts für Linux.
+- **Visual Studio 2017 und**höher: Verwenden Sie die Funktion " **Ordner öffnen** ", um ein Makefile-Projekt unverändert zu bearbeiten und zu erstellen, ohne das MSBuild-System einzubeziehen. Weitere Informationen finden Sie unter [Open Folder projects for C++ (Verwenden von „Ordner öffnen“ mit Projekten in Visual C++)](../open-folder-projects-cpp.md).
+- **Visual Studio 2019 und**höher: Erstellen Sie ein UNIX Makefile-Projekt für Linux.
 
 ## <a name="a-namecreate_a_makefile_project-to-create-a-makefile-project-with-the-makefile-project-template"></a><a name="create_a_makefile_project"> So erstellen Sie ein Makefile-Projekt mit der Makefile-Projektvorlage
 
@@ -40,7 +40,7 @@ Die Ausgabedatei, die Sie im Projekt festlegen, hat keinen Einfluss auf den vom 
 
 1. Wählen Sie im Visual Studio-Hauptmenü **Datei** > **Neu** > **Projekt** aus, und geben Sie im Suchfeld „makefile“ ein. Oder erweitern Sie im Dialogfeld **Neues Projekt** **Visual C++**  > **Allgemein** (Visual Studio 2015) oder **Sonstige** (Visual Studio 2017), und wählen Sie dann zwischen den zwei Optionen, je nachdem, ob Windows oder Linux Ihr Ziel darstellt.
 
-1. **Nur Windows**: Geben Sie auf der Seite **Debugkonfigurationseinstellungen** die Befehls-, Ausgabe-, Bereinigungs- und Neuerstellungsinformationen für die Debug- und Verkaufsversion an. Klicken Sie auf **Weiter**, wenn Sie für eine Verkaufskonfiguration abweichende Einstellungen festlegen möchten.
+1. **Nur Windows**: Geben Sie auf der Seite **Debugkonfigurationseinstellungen** die Informationen zum Befehl, zur Ausgabe, zum Bereinigen und zum erneuten Erstellen für Debug-und Einzelhandels Builds an. Klicken Sie auf **Weiter**, wenn Sie für eine Verkaufskonfiguration abweichende Einstellungen festlegen möchten.
 
 1. Klicken Sie auf **Fertig stellen**, um das Dialogfeld zu schließen und das neu erstellte Projekt im **Projektmappen-Explorer** zu öffnen.
 
@@ -50,7 +50,7 @@ Die Ausgabedatei, die Sie im Projekt festlegen, hat keinen Einfluss auf den vom 
 
 ### <a name="to-create-a-makefile-project-in-visual-studio-2015-or-visual-studio-2017"></a>So erstellen Sie ein Makefile-Projekt in Visual Studio 2015 oder Visual Studio 2017
 
-1. Geben Sie auf der Visual Studio-Startseite „makefile“ in das Suchfeld **Neues Projekt** ein. Sie können auch **Visual C++**  > **Allgemein** (Visual Studio 2015) oder **Andere** (Visual Studio 2017) im Dialogfeld **Neues Projekt** erweitern und dann im Vorlagenbereich auf **Makefile-Projekt** klicken, um den Projekt-Assistenten zu öffnen.
+1. Geben Sie auf der Visual Studio-Startseite „makefile“ in das Suchfeld **Neues Projekt** ein. Sie können auch **Visual C++** Allgemein >  (Visual Studio 2015) oder **Andere** (Visual Studio 2017) im Dialogfeld **Neues Projekt** erweitern und dann im Vorlagenbereich auf **Makefile-Projekt** klicken, um den Projekt-Assistenten zu öffnen.
 
 1. Geben Sie auf der Seite **Anwendungseinstellungen** die Befehls-, Ausgabe-, Bereinigungs- und Neuerstellungsinformationen für die Debug- und Verkaufsversion an.
 
@@ -64,15 +64,15 @@ Sie können die Projekteigenschaften auf der Eigenschaftenseite des Projekts anz
 
 Nachdem Sie ein Makefile-Projekt erstellt haben, können Sie die folgenden Optionen auf der **Nmake**-Seite der Eigenschaftenseite Ihres Projekts anzeigen und bearbeiten.
 
-- **Buildbefehlszeile:** Gibt die auszuführende Befehlszeile an, wenn der Benutzer im Menü „Build“ auf „Erstellen“ klickt. Wird im Feld „Buildbefehlszeile“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
+- **Buildbefehlszeile:** Gibt die Befehlszeile an, die ausgeführt werden soll, wenn der Benutzer im Menü Erstellen die Option erstellen auswählt. Wird im Feld „Buildbefehlszeile“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
 
-- **Ausgabe:** Gibt den Namen der Datei an, in der die Ausgabe für die Befehlszeile enthalten ist. Diese Option basiert standardmäßig auf dem Projektnamen. Wird im Feld „Ausgabe“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
+- **Ausgabe:** Gibt den Namen der Datei an, die die Ausgabe für die Befehlszeile enthält. Diese Option basiert standardmäßig auf dem Projektnamen. Wird im Feld „Ausgabe“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
 
-- **„Bereinigen“-Befehle**: Gibt die auszuführende Befehlszeile an, wenn der Benutzer im Menü „Build“ auf „Bereinigen“ klickt. Wird im Befehlszeilenfeld „Bereinigen“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
+- **Clean-Befehle:** Gibt die Befehlszeile an, die ausgeführt wird, wenn der Benutzer im Menü Erstellen die Option bereinigen auswählt. Wird im Befehlszeilenfeld „Bereinigen“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
 
-- **Neuerstellungsbefehlszeile:** Gibt die Befehlszeile an, die ausgeführt werden soll, wenn der Benutzer im Menü „Build“ auf „Neu erstellen“ klickt. Wird im Befehlszeilenfeld „Alles neu erstellen“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
+- Neuerstellung der **Befehlszeile:** Gibt die Befehlszeile an, die ausgeführt wird, wenn der Benutzer im Menü Erstellen die Option neu erstellen auswählt. Wird im Befehlszeilenfeld „Alles neu erstellen“ auf der Seite „Nmake“ der Eigenschaftenseite des Projekts angezeigt.
 
-## <a name="how-to-enable-intellisense-for-makefile-projects"></a>Vorgehensweise: Aktivieren von IntelliSense für Makefile-Projekte
+## <a name="how-to-enable-intellisense-for-makefile-projects"></a>Gewusst wie: Aktivieren von IntelliSense für Makefile-Projekte
 
 IntelliSense wird in Makefile-Projekten nicht ordnungsgemäß ausgeführt, wenn bestimmte Projekteinstellungen oder Compileroptionen nicht ordnungsgemäß eingerichtet sind. Führen Sie die folgenden Schritte aus, um Makefileprojekte so zu konfigurieren, dass IntelliSense erwartungsgemäß arbeitet:
 
@@ -86,7 +86,7 @@ IntelliSense wird in Makefile-Projekten nicht ordnungsgemäß ausgeführt, wenn 
 
    - Legen Sie die Eigenschaft **Includesuchpfad** so fest, dass die Liste von Verzeichnissen angegeben wird, in denen der Compiler sucht, um Dateiverweise aufzulösen, die an Präprozessordirektiven in Ihrem Makefile-Projekt übergeben werden. Weitere Informationen finden Sie unter [/I (Additional Include Directories) (/I (Zusätzliche Includeverzeichnisse))](i-additional-include-directories.md).
 
-    - Legen Sie die Umgebungsvariable **INCLUDE** für Projekte fest, die mithilfe der „cl.exe“ über ein Befehlsfenster erstellt werden, um Verzeichnisse anzugeben, in denen der Compiler sucht, um Dateiverweise aufzulösen, die an Präprozessordirektiven in Ihrem Makefile-Projekt übergeben werden.
+   - Legen Sie die Umgebungsvariable **INCLUDE** für Projekte fest, die mithilfe der „cl.exe“ über ein Befehlsfenster erstellt werden, um Verzeichnisse anzugeben, in denen der Compiler sucht, um Dateiverweise aufzulösen, die an Präprozessordirektiven in Ihrem Makefile-Projekt übergeben werden.
 
    - Legen Sie die Eigenschaft **Erzwungene Includedateien** fest, um anzugeben, welche Headerdateien bei der Erstellung des Makefile-Projekts verarbeitet werden sollen. Weitere Informationen finden Sie unter [/FI (Name Forced Include File) (/FI (Name der expliziten Includedatei))](fi-name-forced-include-file.md).
 
@@ -102,10 +102,10 @@ IntelliSense wird in Makefile-Projekten nicht ordnungsgemäß ausgeführt, wenn 
 
 Führen Sie das nächste Mal, wenn Sie Ihr Makefile-Projekt in der Visual Studio-Entwicklungsumgebung öffnen, den Befehl **Projektmappe bereinigen** und anschließend **Projektmappe erstellen** im Makefile-Projekt aus. IntelliSense sollte nun ordnungsgemäß in der IDE funktionieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von IntelliSense](/visualstudio/ide/using-intellisense)<br>
 [NMAKE-Referenz](nmake-reference.md)<br>
-[Vorgehensweise: Erstellen eines C++-Projekts aus vorhandenem Code](../how-to-create-a-cpp-project-from-existing-code.md)
+Gewusst [wie: Erstellen eines C++ Projekts aus vorhandenem Code](../how-to-create-a-cpp-project-from-existing-code.md)
 [Sonderzeichen in einem Makefile](special-characters-in-a-makefile.md)<br/>
 [Inhalt eines Makefiles](contents-of-a-makefile.md)<br/>

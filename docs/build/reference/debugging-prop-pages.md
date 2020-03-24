@@ -35,20 +35,20 @@ f1_keywords:
 - VC.Project.IVCWebSvcDebugPageObject.HttpUrl
 - VC.Project.IVCWebSvcDebugPageObject.DebuggerType
 - VC.Project.IVCWebSvcDebugPageObject.SQLDebugging
-ms.openlocfilehash: 5f7a7bc0e2c696365daa38696fde6f1a480644b4
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: c2190c4406e165cfec1915234b688c598f228777
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927739"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169707"
 ---
 # <a name="c-debugging-property-pages"></a>C++Eigenschaften Seiten Debuggen
 
-Diese Eigenschaften Seiten finden Sie unter **Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **Debuggen**. Wählen Sie den Debuggertyp im Dropdown-Steuerelement aus. Weitere Informationen zum Debuggen C++ von Code [finden Sie unter Tutorial: Erfahren Sie, C++ wie Sie Code mithilfe](/visualstudio/debugger/getting-started-with-the-debugger-cpp) von Visual Studio und [Debuggen von nativem Code](/visualstudio/debugger/debugging-native-code)
+Diese Eigenschaften Seiten finden Sie unter **Project** > **Properties** > **Configuration Properties** > **Debugging**. Wählen Sie den Debuggertyp im Dropdown-Steuerelement aus. Weitere Informationen zum Debuggen C++ von Code finden Sie [unter Tutorial: Erlernen des Debuggens C++ von Code mit Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger-cpp) und [Debuggen von nativem](/visualstudio/debugger/debugging-native-code)
 
 ## <a name="local-windows-debugger-property-page"></a>Lokale Windows-Debugger (Eigenschaften Seite)
 
-### <a name="command"></a>Befehl
+### <a name="command"></a>Get-Help
 
 Der auszuführende Debugbefehl.
 
@@ -60,7 +60,7 @@ Die Befehlszeilenargumente, die an die Anwendung übergeben werden sollen.
 
 Das Arbeitsverzeichnis der Anwendung. Standardmäßig das Verzeichnis, das die Projektdatei enthält.
 
-### <a name="attach"></a>Anfügen
+### <a name="attach"></a>Attach
 
 Gibt an, ob der Debugger beim Starten des Debuggens an einen vorhandenen Prozess angefügt werden soll.
 
@@ -68,7 +68,7 @@ Gibt an, ob der Debugger beim Starten des Debuggens an einen vorhandenen Prozess
 
 Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgelegt ist, wird der Debuggertyp basierend auf dem Inhalt der exe-Datei ausgewählt.
 
-**Optionen**
+**choices**
 
 - **Nur** System eigen (nur native)
 - Nur **verwaltet** : nur verwaltet
@@ -77,7 +77,7 @@ Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgel
 - **Skript** -Skript
 - **Nur GPU (C++ amp)** -nur GPU (C++ amp)
 
-### <a name="environment"></a>Umgebung
+### <a name="environment"></a>Environment
 
 Gibt die Umgebung für das zu debuggende Programm oder Variablen an, die mit der vorhandenen Umgebung zusammengeführt werden sollen.
 
@@ -89,7 +89,7 @@ Der Debuggertyp, der zum Debuggen des GPU-Codes verwendet wird. (Verfügbar, wen
 
 Legt fest, wie oft der GPU-Debugger unterbrochen wird.
 
-**Optionen**
+**choices**
 
 - Einmal pro Warp-Pause pro Warp **Abbrechen**
 - **Bei jedem Thread (** z. b. CPU-Verhalten) einen Umbruch Abbrechen (z. b. CPU-Verhalten)
@@ -110,7 +110,7 @@ Fügen Sie den SQL-Debugger an.
 
 Weitere Informationen zum Remote Debuggen finden Sie unter [Remote Debugging C++ a Visual Project in Visual Studio](/visualstudio/debugger/remote-debugging-cpp).
 
-### <a name="remote-command"></a>Remote-Befehl
+### <a name="remote-command"></a>Remotebefehl
 
 Der auszuführende Debugbefehl.
 
@@ -130,7 +130,7 @@ Gibt einen Remote Servernamen an.
 
 Gibt den Verbindungstyp an.
 
-**Optionen**
+**choices**
 
 - **Remote mit Windows-Authentifizierung** : Remote mit [Windows-Authentifizierung](/windows-server/security/windows-authentication/windows-authentication-overview).
 - **Remote ohne Authentifizierung** -Remote ohne Authentifizierung.
@@ -139,7 +139,7 @@ Gibt den Verbindungstyp an.
 
 Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgelegt ist, wird der Debuggertyp basierend auf dem Inhalt der exe-Datei ausgewählt.
 
-**Optionen**
+**choices**
 
 - **Nur** System eigen (nur native)
 - Nur **verwaltet** : nur verwaltet
@@ -148,7 +148,7 @@ Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgel
 - **Skript** -Skript
 - **Nur GPU (C++ amp)** -nur GPU (C++ amp)
 
-### <a name="environment"></a>Umgebung
+### <a name="environment"></a>Environment
 
 Gibt die Umgebung für das zu debuggende Programm oder Variablen an, die mit der vorhandenen Umgebung zusammengeführt werden sollen.
 
@@ -160,12 +160,12 @@ Der Debuggertyp, der zum Debuggen des GPU-Codes verwendet wird. (Verfügbar, wen
 
 Legt fest, wie oft der GPU-Debugger unterbrochen wird.
 
-**Optionen**
+**choices**
 
 - Einmal pro Warp-Pause pro Warp **Abbrechen**
 - **Bei jedem Thread (** z. b. CPU-Verhalten) einen Umbruch Abbrechen (z. b. CPU-Verhalten)
 
-### <a name="attach"></a>Anfügen
+### <a name="attach"></a>Attach
 
 Gibt an, ob der Debugger beim Starten des Debuggens an einen vorhandenen Prozess angefügt werden soll.
 
@@ -199,7 +199,7 @@ Gibt die URL für das Projekt an.
 
 Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgelegt ist, wird der Debuggertyp basierend auf dem Inhalt der exe-Datei ausgewählt.
 
-**Optionen**
+**choices**
 
 - **Nur** System eigen (nur native)
 - Nur **verwaltet** : nur verwaltet
@@ -217,7 +217,7 @@ Gibt die URL für das Projekt an.
 
 Gibt den zu verwendenden Debuggertyp an. Wenn die Einstellung auf "Auto" festgelegt ist, wird der Debuggertyp basierend auf dem Inhalt der exe-Datei ausgewählt.
 
-**Optionen**
+**choices**
 
 - **Nur** System eigen (nur native)
 - Nur **verwaltet** : nur verwaltet

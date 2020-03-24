@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - db_column attribute
 ms.assetid: 58da4afc-f69c-4ae6-af9a-3f9515f56081
-ms.openlocfilehash: e0e2c873452884275e97663ae2d9d6df2f790ffd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4ce57443480e35e7a4c7b9e872e41777662ddc20
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62148177"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167289"
 ---
-# <a name="dbcolumn"></a>db_column
+# <a name="db_column"></a>db_column
 
-Bindet eine angegebene Spalte auf eine Variable im Rowset.
+Bindet eine angegebene Spalte an eine Variable im Rowset.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,44 +23,44 @@ Bindet eine angegebene Spalte auf eine Variable im Rowset.
 [ db_column(ordinal, dbtype, precision, scale, status, length) ]
 ```
 
-#### <a name="parameters"></a>Parameter
+### <a name="parameters"></a>Parameter
 
 *ordinal*<br/>
-Die Spaltenordnungszahl (`DBCOLUMNINFO` Ordnungszahl) oder einen Spaltennamen (ANSI oder Unicode-Zeichenfolge) für ein Feld in das Rowset, um Daten zu binden. Wenn Sie Zahlen verwenden, können Sie mit der überspringen aufeinander folgende Ordnungszahlen (z. B.: 1, 2, 3, 5). Der Name darf Leerzeichen enthalten, wenn der OLE DB-Anbieter, die, den Sie verwenden, dies unterstützt. Beispielsweise können Sie eine der folgenden Formate:
+Die ordinalspaltennummer (`DBCOLUMNINFO` Ordnungszahl) oder der Spaltenname (ANSI-oder Unicode-Zeichenfolge), die einem Feld im Rowset entspricht, an das die Daten gebunden werden sollen. Wenn Sie Zahlen verwenden, können Sie aufeinander folgende ordinale überspringen (z. b.: 1, 2, 3, 5). Der Name kann Leerzeichen enthalten, wenn der von Ihnen verwendete OLE DB Anbieter ihn unterstützt. Sie können z. b. eines der folgenden Formate verwenden:
 
 ```cpp
 [db_column("2")] TCHAR szCity[30];
 [db_column(L"city_name")] TCHAR szCity[30];
 ```
 
-*dbtype*<br/>
-(Optional) OLE DB [Typindikator](/previous-versions/windows/desktop/ms711251(v=vs.85)) für den Eintrag in der Spalte.
+*DbType*<br/>
+Optionale Ein OLE DB [Typindikator](/previous-versions/windows/desktop/ms711251(v=vs.85)) für den Spalten Eintrag.
 
 *precision*<br/>
-(Optional) Die Genauigkeit für den Eintrag in der Spalte verwendet werden soll. Weitere Informationen finden Sie unter der Beschreibung des der `bPrecision` Element der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85))
+Optionale Die Genauigkeit, die für den Spalten Eintrag verwendet werden soll. Weitere Informationen finden Sie in der Beschreibung des `bPrecision`-Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
 
 *scale*<br/>
-(Optional) Die Dezimalstellen für den Eintrag in der Spalte verwendet werden soll. Weitere Informationen finden Sie unter der Beschreibung der `bScale` Element der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85))
+Optionale Die für den Spalten Eintrag zu verwendende Skala. Weitere Informationen finden Sie in der Beschreibung `bScale` Elements der [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) .
 
-*Status*<br/>
-(Optional) Eine Membervariable verwendet, um den Status dieser Spalte zu speichern. Der Status gibt an, ob der Wert der Spalte einen Datenwert oder einen anderen Wert, z. B. die NULL ist. Mögliche Werte finden Sie unter [Status](/previous-versions/windows/desktop/ms722617(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+*status*<br/>
+Optionale Eine Element Variable, die zum Speichern des Status dieser Spalte verwendet wird. Der Status gibt an, ob der Spaltenwert ein Datenwert oder ein anderer Wert ist, z. b. NULL. Mögliche Werte finden Sie unter [Status](/previous-versions/windows/desktop/ms722617(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
 *length*<br/>
-(Optional) Eine Membervariable verwendet, um die Größe der Spalte in Bytes zu speichern.
+Optionale Eine Element Variable, die zum Speichern der Größe der Spalte in Bytes verwendet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Er begrenzt die Daten, die in der OLE DB teilnehmen kann `IAccessor`-basierten Bindung. Dieses Attribut richtet die spaltenzuordnung, die normalerweise definiert mithilfe der OLE DB-Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md), [END_COLUMN_MAP](../../data/oledb/end-column-map.md), und [COLUMN_ENTRY](../../data/oledb/column-entry.md). Diese Bearbeitung der OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) die angegebene Spalte zu binden. Jedes Element, markieren Sie Sie mit, der **Db_column** Attribut nimmt einen Eintrag in der spaltenzuordnung in Form von einem Eintrag in der Spalte. Daher rufen Sie dieses Attribut, in denen würden Sie die spaltenzuordnung, d. h. in der Klasse-Befehl oder eine Tabelle platzieren.
+**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Dabei werden Elementdaten begrenzt, die an OLE DB `IAccessor`basierten Bindung teilnehmen können. Mit diesem Attribut wird die Spalten Zuordnung festgelegt, die normalerweise mithilfe der OLE DB Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md), [END_COLUMN_MAP](../../data/oledb/end-column-map.md)und [COLUMN_ENTRY](../../data/oledb/column-entry.md)definiert wird. Diese bearbeiten die OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) , um die angegebene Spalte zu binden. Jeder Member, den Sie mit dem **Db_column** -Attribut markieren, belegt einen Eintrag in der Spalten Zuordnung in Form eines Spalten Eintrags. Daher wird dieses Attribut aufgerufen, wenn Sie die Spalten Zuordnung, d. h. in der Befehls-oder Tabellen Klasse, einfügen würden.
 
-Verwendung **Db_column** in Verbindung mit der [Db_table](db-table.md) oder [Db_command](db-command.md) Attribute.
+Verwenden Sie **Db_column** in Verbindung mit den Attributen [Db_table](db-table.md) oder [db_command](db-command.md) .
 
-Wenn der Consumer Attributanbieter dieses Attribut auf eine Klasse angewendet wird, wird der Compiler die Klasse umbenennen \_ *Klassenname*Accessor, in denen *Klassenname* ist der Name, der Sie zugewiesen haben die Klasse und der Compiler erstellt auch eine Klasse namens *Klassenname*, die sich daraus ableitet \_ *Klassenname*Accessor.  In dieser Klassenansicht werden beide Klassen angezeigt.
+Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, benennt der Compiler die Klasse in \_*yourclassname*-Accessor um, wobei *yourclassname* der Name ist, den Sie der Klasse gegeben haben, und der Compiler erstellt außerdem eine Klasse namens *yourclassname*, die von \_*yourclassname*-Accessor abgeleitet wird.  In dieser Klassenansicht werden beide Klassen angezeigt.
 
-Beispiele für dieses Attribut in einer Anwendung verwendet, finden Sie unter den Beispielen [AtlAgent](https://github.com/Microsoft/VCSamples), und [MultiRead](https://github.com/Microsoft/VCSamples).
+Ein Beispiel für dieses Attribut, das in einer Anwendung verwendet wird, finden [Sie unter MultiRead](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer).
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird eine Spalte gebunden, in einer Tabelle eine **lange** -Datenmember und Felder Status und Länge angegeben.
+In diesem Beispiel wird eine Spalte in einer Tabelle an einen **Long** -Datenmember gebunden, und es werden die Felder Status und Länge angegeben.
 
 ```cpp
 // db_column_1.cpp
@@ -80,7 +80,7 @@ class CProducts {
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel bindet die vier Spalten zu einer **lange**, eine Zeichenfolge, die einen Zeitstempel, und ein `DB_NUMERIC` ganze Zahl, die in dieser Reihenfolge.
+In diesem Beispiel werden vier Spalten in dieser Reihenfolge an eine **lange**Zeichenfolge, eine Zeichenfolge, einen Zeitstempel und eine `DB_NUMERIC` Ganzzahl gebunden.
 
 ```cpp
 // db_column_2.cpp
@@ -98,7 +98,7 @@ class CProducts {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -106,12 +106,12 @@ class CProducts {
 |-|-|
 |**Betrifft**|**Klasse**, **Struktur**, Member, Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumerattribute](ole-db-consumer-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

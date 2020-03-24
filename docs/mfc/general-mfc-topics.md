@@ -6,12 +6,12 @@ helpviewer_keywords:
 - class libraries [MFC], MFC
 - MFC, application development
 ms.assetid: 617e9945-9bb3-471d-a3ba-e235fcfb55d1
-ms.openlocfilehash: 5f4c75e3f8bd8f7d32109cf92465dfa6e5aba6ed
-ms.sourcegitcommit: 2f96e2fda591d7b1b28842b2ea24e6297bcc3622
+ms.openlocfilehash: 571be8300f46ceecdc65df92d35c731bec96a92a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71095859"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169984"
 ---
 # <a name="general-mfc-topics"></a>Allgemeine MFC-Themen
 
@@ -23,7 +23,7 @@ Das MFC-Framework ist ein leistungsfähiger Ansatz, mit dem Sie auf der Arbeit v
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-`MFC Samples`, die in [visuellen C++ Beispielen](../overview/visual-cpp-samples.md) bereitgestellt werden
+[MFC-Beispiele](../overview/visual-cpp-samples.md#mfc-samples)
 
 [Verwenden der MFC-Quelldateien](../mfc/using-the-mfc-source-files.md)
 
@@ -55,6 +55,6 @@ Eine Übersicht über die MFC-Referenz Dokumentation finden Sie unter [Microsoft
 
 Weitere Informationen zu ATL finden Sie unter [Active Template Library Referenz](../atl/atl-class-overview.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit Fensterobjekten](../mfc/working-with-window-objects.md)

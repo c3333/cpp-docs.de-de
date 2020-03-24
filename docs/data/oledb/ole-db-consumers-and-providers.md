@@ -8,24 +8,24 @@ helpviewer_keywords:
 - OLE DB consumers
 - OLE DB, data model
 ms.assetid: 886cb39d-652b-4557-93f0-4b1b0754d8bc
-ms.openlocfilehash: f5940ca65e42787c3156a9537cb3f3f6694339c0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d57ded9d084971c3562fc7f22e6a1a12a4e3368d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62284019"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210076"
 ---
 # <a name="ole-db-consumers-and-providers"></a>OLE DB-Consumer und -Anbieter
 
-Die OLE DB-Architektur verwendet das Modell von Consumern und Anbietern. Ein Consumer sendet Anforderungen für Daten. Ein Anbieter reagiert auf diese Anforderungen durch die Platzierung von Daten in einem tabellarischen Format und diese an den Consumer zurückgegeben wird. Alle Aufrufe, die der Consumer vornehmen können, muss im Anbieter implementiert werden.
+Die OLE DB-Architektur verwendet das Modell von Consumern und Anbietern. Ein Consumer nimmt Datenanforderungen an. Ein Anbieter antwortet auf diese Anforderungen, indem Daten in einem tabellarischen Format abgelegt und an den Consumer zurückgegeben werden. Alle Aufrufe, die der Consumer vornehmen kann, müssen im Anbieter implementiert werden.
 
-Aus technischer Sicht definiert ist, ist ein Consumer System- oder Code (nicht unbedingt eine OLE DB-Komponente), die über OLE DB-Schnittstellen auf Daten zugreift. Die Schnittstellen sind in einem Anbieter implementiert. Daher ist ein Anbieter eine beliebige Softwarekomponente, die implementiert die OLE DB-Schnittstellen zum Zugriff auf Daten zu kapseln und anderen Objekten (d. h. Verbraucher) verfügbar gemacht.
+Technisch definiert ist ein Consumer ein beliebiger System-oder Anwendungscode (nicht notwendigerweise eine OLE DB Komponente), der über OLE DB Schnittstellen auf Daten zugreift. Die Schnittstellen werden in einem Anbieter implementiert. Ein Anbieter ist also eine beliebige Softwarekomponente, die OLE DB-Schnittstellen implementiert, um den Zugriff auf Daten zu kapseln und Sie für andere Objekte (d. h. Consumer) verfügbar zu machen.
 
-Für Rollen Ruft ein Consumer Methoden auf OLE DB-Schnittstellen; OLE DB-Anbieter implementiert die erforderlichen OLE DB-Schnittstellen.
+Bei Rollen Ruft ein Consumer Methoden auf OLE DB-Schnittstellen auf. ein OLE DB-Anbieter implementiert die benötigten OLE DB Schnittstellen.
 
-OLE DB werden Begriffe-Client und Server vermieden, da diese Rollen immer, insbesondere in einer n-schichtige Situation nicht sinnvoll sind. Da ein Consumer eine Komponente in einer Ebene, die eine andere Komponente dient sein kann, wird für den Aufruf eines Clients Komponente verwirrend sein. Darüber hinaus verhält sich ein Anbieter manchmal eher wie ein ODBC-Treiber als bei einem Server.
+OLE DB vermeidet die Begriffe Client und Server, da diese Rollen nicht immer sinnvoll sind, insbesondere in einer n-Tier-Situation. Da ein Consumer eine Komponente auf einer Ebene sein könnte, die eine andere Komponente bedient, wäre es verwirrend, eine Client Komponente aufzurufen. Außerdem verhält sich ein Anbieter manchmal eher wie ein Datenbanktreiber als ein Server.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Programmierung](../../data/oledb/ole-db-programming.md)<br/>
 [Übersicht über die OLE DB-Programmierung](../../data/oledb/ole-db-programming-overview.md)

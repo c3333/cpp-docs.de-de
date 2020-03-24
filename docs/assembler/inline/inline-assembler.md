@@ -8,12 +8,12 @@ helpviewer_keywords:
 - inline assembler [C++]
 - inline assembly [C++]
 ms.assetid: 7e13f18f-3628-4306-8b81-4a6d09c043fe
-ms.openlocfilehash: f2be42cd5ab4d335d076a1eb4627c41f5b340350
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d36c4d83a1fbf5d7ad718a7caf1dccb8f6745676
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166944"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169370"
 ---
 # <a name="inline-assembler"></a>Inlineassembler
 
@@ -24,7 +24,7 @@ Die Assemblysprache dient vielen Zwecken, wie etwa der Verbesserung der Programm
 > [!NOTE]
 >  Programme mit Inlineassemblercode sind nicht vollständig auf andere Hardwareplattformen übertragbar. Wenn Ihnen Portabilität wichtig ist, vermeiden Sie beim Entwerfen die Verwendung des Inlineassemblers.
 
-Inlineassembly wird nicht unterstützt, auf dem ARM und X64 Prozessoren.  In folgenden Themen wird erklärt, wie der Inlineassembler von Visual C/C++ mit x86-Prozessoren zu verwenden ist:
+Die Inlineassembly wird auf Arm-und x64-Prozessoren nicht unterstützt.  In folgenden Themen wird erklärt, wie der Inlineassembler von Visual C/C++ mit x86-Prozessoren zu verwenden ist:
 
 - [Übersicht über Inlineassembler](../../assembler/inline/inline-assembler-overview.md)
 
@@ -50,7 +50,7 @@ Inlineassembly wird nicht unterstützt, auf dem ARM und X64 Prozessoren.  In fol
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Intrinsische Compilerfunktionen und Assemblysprache](../../intrinsics/compiler-intrinsics-and-assembly-language.md)<br/>
 [C++-Programmiersprachenreferenz](../../cpp/cpp-language-reference.md)<br/>

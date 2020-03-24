@@ -50,12 +50,12 @@ helpviewer_keywords:
 - END_SCHEMA_MAP macro
 - SCHEMA_ENTRY macro
 ms.assetid: 909482c5-64ab-4e52-84a9-1c07091db183
-ms.openlocfilehash: b11455c1de13321bce52fbc3be906014b2844aee
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 2fda4d9f003e84247527d964685e631532d4c366
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545648"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210144"
 ---
 # <a name="macros-for-ole-db-provider-templates"></a>Makros für OLE DB-Anbietervorlagen
 
@@ -97,7 +97,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 |[END_SCHEMA_MAP](#end_schema_map)|Markiert das Ende einer Schema Zuordnung.|
 |[SCHEMA_ENTRY](#schema_entry)|Ordnet eine GUID einer Klasse zu.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
@@ -184,7 +184,7 @@ CHAIN_PROPERTY_SET(ChainClass)
 *Chainclass*<br/>
 in Der Name der Klasse, für die Eigenschaften verkettet werden sollen. Dies ist eine Klasse, die vom ATL-Projekt-Assistenten generiert wird, der bereits eine Karte (z. b. eine Sitzung, einen Befehl oder eine Datenquellen-Objektklasse) enthält.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Sie können einen Eigenschaften Satz von einer anderen Klasse mit ihrer eigenen Klasse verketten und dann direkt von der Klasse aus auf die Eigenschaften zugreifen.
 
@@ -239,7 +239,7 @@ PROPERTY_INFO_ENTRY(dwPropID)
 *dwPropID*<br/>
 [in] Ein [DBPROPID](/previous-versions/windows/desktop/ms723882(v=vs.85)) -Wert, der in Verbindung mit dem Eigenschaftensatz GUID verwendet werden kann, um eine Eigenschaft zu identifizieren.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Dieses Makro legt den Wert der Eigenschaft vom Typ `DWORD` auf einen in ATLDB.H definierten Standardwert fest. Verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](../../data/oledb/property-info-entry-value.md), um die Eigenschaft auf einen Wert Ihrer Wahl festzulegen. Verwenden Sie [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md), um die `VARTYPE` und [dbpropflags](/previous-versions/windows/desktop/ms724342(v=vs.85)) für die Eigenschaft gleichzeitig festzulegen.
 
@@ -274,7 +274,7 @@ PROPERTY_INFO_ENTRY_EX(dwPropID, vt, dwFlags, value, options)
 *options*<br/>
 Entweder DBPROPOPTIONS_REQUIRED oder DBPROPOPTIONS_SETIFCHEAP. Normalerweise müssen von einem Anbieter keine *Optionen* festgelegt werden, da er vom Consumer festgelegt wird.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Mit diesem Makro können Sie den Wert der Eigenschaft des Typs `DWORD` sowie Optionen und Flags direkt angeben. Um lediglich einen in ATLDB.H definierten Standardwert für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md). Um einen Wert Ihrer Wahl für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](../../data/oledb/property-info-entry-value.md).
 
@@ -300,7 +300,7 @@ PROPERTY_INFO_ENTRY_VALUE(dwPropID, value)
 *value*<br/>
 [in] Der Eigenschaftswert von Typ `DWORD`.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Mit diesem Makro können Sie den Eigenschafts Wert des Typs `DWORD`direkt angeben. , Um die-Eigenschaft auf den in Atldb definierten Standardwert festzulegen. H, [PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md)verwenden. Verwenden Sie [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md), um den Wert, die Flags und die Optionen für die Eigenschaft festzulegen.
 
@@ -388,7 +388,7 @@ in Der Datentyp in [DbType](/previous-versions/windows/desktop/ms711251(v=vs.85)
 *member*<br/>
 in Die Element Variable in `dataClass`, in der die Daten gespeichert sind.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Ermöglicht das Angeben des Spalten Datentyps.
 
@@ -432,7 +432,7 @@ in Gibt die Skala an, die beim Daten Bedarf verwendet werden soll, wenn DbType D
 *guid*<br/>
 Eine GUID für das Schemarowset. Eine Liste der Schemarowsets und ihrer GUIDs finden Sie unter [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Ermöglicht das Angeben der Größe, des Datentyps, der Genauigkeit, der Skala und der Schemarowset-GUID der Spalte.
 
@@ -460,7 +460,7 @@ in Die Spaltengröße in Byte.
 *member*<br/>
 in Die Element Variable in `dataClass`, die die Spaltendaten speichert.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Ermöglicht es Ihnen, die Spaltengröße anzugeben.
 
@@ -489,7 +489,7 @@ in Die Spaltennummer. Die Spaltennummer darf nicht 0 sein, es sei denn, die Spal
 *member*<br/>
 in Die Member-Variable in der Datenklasse, in der die Daten gespeichert werden.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie dieses Makro, wenn davon ausgegangen wird, dass die Spaltendaten [DBTYPE_STR](/previous-versions/windows/desktop/ms711251(v=vs.85))werden.
 
@@ -524,7 +524,7 @@ in Die Spaltengröße in Byte.
 *member*<br/>
 in Die Member-Variable in der Datenklasse, in der die Daten gespeichert werden.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Ähnlich wie [PROVIDER_COLUMN_ENTRY_LENGTH](../../data/oledb/provider-column-entry-length.md) aber auch die Angabe des Datentyps der Spalte sowie der Größe ermöglicht.
 
@@ -549,7 +549,7 @@ in Die Spaltennummer. Die Spaltennummer darf nicht 0 sein, es sei denn, die Spal
 *member*<br/>
 in Die Member-Variable in der Datenklasse, in der die Daten gespeichert werden.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie dieses Makro, wenn die Spaltendaten eine NULL-terminierte Unicode-Zeichenfolge [DBTYPE_WSTR](/previous-versions/windows/desktop/ms711251(v=vs.85)).
 
@@ -568,7 +568,7 @@ BEGIN_SCHEMA_MAP(SchemaClass);
 *SchemaClass*<br/>
 Die Klasse, die die Zuordnung enthält. In der Regel ist dies die Session-Klasse.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zu [Schemarowsets finden Sie unter IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) im Windows SDK.
 
@@ -582,7 +582,7 @@ Bezeichnet das Ende der Schema Zuordnung.
 END_SCHEMA_MAP()
 ```
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [idbschemarowabtimpl-Klasse](../../data/oledb/idbschemarowsetimpl-class.md).
 
@@ -605,7 +605,7 @@ Eine GUID für das Schemarowset. Eine Liste der Schemarowsets und ihrer GUIDs fi
 *rowsetClass*<br/>
 Die Klasse, die erstellt wird, um das Schemarowset darzustellen.
 
-#### <a name="remarks"></a>Hinweise
+#### <a name="remarks"></a>Bemerkungen
 
 [IDBSchemaRowsetImpl](../../data/oledb/idbschemarowsetimpl-class.md) kann dann die Zuordnung nach einer Liste von GUIDs Abfragen, oder es kann ein Rowset erstellt werden, wenn ihm eine GUID zugewiesen ist. Das-Schemarowset, das `IDBSchemaRowsetImpl` erstellt, ähnelt einer standardmäßigen `CRowsetImpl`abgeleiteten Klasse, mit der Ausnahme, dass es eine `Execute`-Methode mit folgender Signatur bereitstellen muss:
 
@@ -625,7 +625,7 @@ Diese `Execute` Funktion füllt die Daten des Rowsets auf. Der ATL-Projekt-Assis
 
 Der Assistent fügt außerdem drei zugehörige Einträge in der Schema Zuordnung hinzu. Weitere Informationen zur Verwendung des Assistenten zum Erstellen eines Anbieters finden Sie unter [Erstellen eines OLE DB Vorlagen Anbieters](../../data/oledb/creating-an-ole-db-provider.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

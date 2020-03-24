@@ -8,24 +8,24 @@ helpviewer_keywords:
 - procedure calls
 - procedure calls, stored procedures
 ms.assetid: 4f7c2700-1c2d-42f3-8c9f-7e83962b2442
-ms.openlocfilehash: 196c50ea62c3e3188b61a3b35a9e2752740c4ad5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ece626eb7fbecae9b90321ccc2569607897cf520
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62283940"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209858"
 ---
 # <a name="output-parameters"></a>Ausgabeparameter
 
-Aufrufen einer gespeicherten Prozedur ist ähnlich wie beim Ausführen eines SQL-Befehls. Der Hauptunterschied besteht darin, dass gespeicherte Prozeduren verwenden von Output-Parameter (oder "Outparameters"), und geben Werte zurück.
+Das Aufrufen einer gespeicherten Prozedur ähnelt der Ausführung eines SQL-Befehls. Der Hauptunterschied besteht darin, dass gespeicherte Prozeduren Ausgabeparameter (oder "OutParameters") und Rückgabewerte verwenden.
 
-In der folgenden gespeicherten Prozedur, der ersten "?"ist der Rückgabewert (Phone) und das zweite"?" ist der Eingabeparameter (Name):
+In der folgenden gespeicherten Prozedur ist das erste '? ' der Rückgabewert (Phone), und das zweite '? ' ist der Eingabeparameter (Name):
 
 ```cpp
 DEFINE_COMMAND_EX(CMySProcAccessor, _T("{ ? = SELECT phone FROM shippers WHERE name = ? }"))
 ```
 
-Sie werden die Eingabe- und Ausgabeparameter in der parameterzuordnung angeben:
+Sie geben die Parameter "in" und "out" in der Parameter Zuordnung an:
 
 ```cpp
 BEGIN_PARAM_MAP(CMySProcAccessor)
@@ -36,13 +36,13 @@ BEGIN_PARAM_MAP(CMySProcAccessor)
 END_PARAM_MAP()
 ```
 
-Die Anwendung muss die Ausgabe von gespeicherten Prozeduren zurückgegebenen behandeln. Verschiedene OLE DB-Anbieter zurückgeben der Output-Parameter und Rückgabewerte zu unterschiedlichen Zeitpunkten während der ergebnisverarbeitung. Der Microsoft OLE DB-Anbieter für SQL Server (SQLOLEDB) nicht, z. B. Ausgabeparameter und Rückgabecodes erst, nachdem der Consumer abgerufen oder die von der gespeicherten Prozedur zurückgegebenen Resultsets abgebrochen hat. Die Ausgabe wird im letzten TDS-Paket vom Server zurückgegeben.
+Die Anwendung muss die von gespeicherten Prozeduren zurückgegebene Ausgabe verarbeiten. Die Rückgabe von Ausgabeparametern und Rückgabewerten erfolgt bei verschiedenen OLE DB-Anbietern zu unterschiedlichen Zeitpunkten während der Ergebnisverarbeitung. Beispielsweise stellt der Microsoft OLE DB-Anbieter für SQL Server (SQLOLEDB) keine Ausgabeparameter und Rückgabecodes bereit, bis der Consumer die von der gespeicherten Prozedur zurückgegebenen Resultsets abgerufen oder abgebrochen hat. Die Ausgabe wird im letzten TDS-Paket vom Server zurückgegeben.
 
 ## <a name="row-count"></a>Zeilenanzahl
 
-Wenn Sie die OLE DB-Consumervorlagen verwenden, um eine gespeicherte Prozedur ausführen, die mit Ausgabeparametern, nicht die Anzahl der Zeilen festgelegt, bis Sie das Rowset schließen.
+Wenn Sie die OLE DB Consumer-Vorlagen verwenden, um eine gespeicherte Prozedur mit OutParameters auszuführen, wird die Zeilen Anzahl erst festgelegt, wenn Sie das Rowset schließen.
 
-Betrachten Sie beispielsweise eine gespeicherte Prozedur mit einer Zeilengruppe und einem Ausgabeparameter aus:
+Stellen Sie sich z. b. eine gespeicherte Prozedur mit einem Rowset und einem outparameter vor:
 
 ```sql
 create procedure sp_test
@@ -53,8 +53,8 @@ as
 return 0
 ```
 
-Die `@_rowcount` Ausgabeparameter meldet, wie viele Zeilen aus der Tabelle "Test" zurückgegeben wurden. Diese gespeicherte Prozedur wird jedoch die Anzahl der Zeilen auf 50 beschränkt. Beispielsweise würde es 100 Zeilen im Test, würde die Zeilenanzahl 50 lauten (da dieser Code nur die ersten 50 Zeilen werden abgerufen). Wenn nur 30 Zeilen in der Tabelle vorhanden waren, wäre die Zeilenanzahl 30. Achten Sie darauf, dass Sie zum Aufrufen `Close` oder `CloseAll` um den Ausgabeparameter aufzufüllen, bevor Sie diesen Wert abrufen.
+Der `@_rowcount` outparameter gibt an, wie viele Zeilen aus der Test Tabelle zurückgegeben wurden. Diese gespeicherte Prozedur schränkt jedoch die Anzahl der Zeilen auf 50 ein. Wenn z. b. 100 Zeilen im Test vorhanden waren, wäre die Zeilen Anzahl 50 (da dieser Code nur die obersten 50 Zeilen abruft). Wenn in der Tabelle nur 30 Zeilen vorhanden sind, beträgt die Zeilen Anzahl 30. Stellen Sie sicher, dass Sie `Close` oder `CloseAll` aufrufen, um den outparameter aufzufüllen, bevor Sie seinen Wert abrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von gespeicherten Prozeduren](../../data/oledb/using-stored-procedures.md)

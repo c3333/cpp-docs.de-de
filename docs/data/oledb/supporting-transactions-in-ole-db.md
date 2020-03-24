@@ -9,51 +9,51 @@ helpviewer_keywords:
 - databases [C++], transactions
 - distributed transactions [C++]
 ms.assetid: 3d72e583-ad38-42ff-8f11-e2166d60a5a7
-ms.openlocfilehash: 3c71200e39641a69443599e0445f89f469aceeda
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e7ec4f69b4bba497446c94afb94cb5a1d648f7c7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389267"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209543"
 ---
 # <a name="supporting-transactions-in-ole-db"></a>Unterstützen von Transaktionen in OLE DB
 
-Ein [Transaktion](../../data/transactions-mfc-data-access.md) ist eine Möglichkeit, eine Gruppe oder einem Batch zusammenfassen, eine Reihe von Updates mit einer Datenquelle, damit entweder alle erfolgreich ausgeführt werden und gleichzeitig ein Commit ausgeführt werden, oder (Wenn eine der davon ausfällt) sind keine ein Commit ausgeführt, und die gesamte Transaktion zurückgesetzt wird. Dadurch wird sichergestellt, die Integrität des Ergebnisses, auf die Datenquelle.
+Bei einer [Transaktion](../../data/transactions-mfc-data-access.md) handelt es sich um eine Möglichkeit, eine Reihe von Aktualisierungen einer Datenquelle zu gruppieren oder zu gruppieren, sodass entweder alle erfolgreich ausgeführt werden und ein Commit für einen einzelnen Commit ausgeführt wird, und für die gesamte Transaktion ein Rollback ausgeführt wird. Durch diesen Vorgang wird die Integrität des Ergebnisses in der Datenquelle sichergestellt.
 
 OLE DB unterstützt Transaktionen mit den folgenden drei Methoden:
 
-- [ITransactionLocal::StartTransaction](/previous-versions/windows/desktop/ms709786(v=vs.85))
+- [ITransaction local:: Start Transaction](/previous-versions/windows/desktop/ms709786(v=vs.85))
 
-- [ITransaction::Commit](/previous-versions/windows/desktop/ms713008(v=vs.85))
+- [ITransaction:: Commit](/previous-versions/windows/desktop/ms713008(v=vs.85))
 
-- [ITransaction::Abort](/previous-versions/windows/desktop/ms709833(v=vs.85))
+- [ITransaction:: Abort](/previous-versions/windows/desktop/ms709833(v=vs.85))
 
 ## <a name="relationship-of-sessions-and-transactions"></a>Beziehung zwischen Sitzungen und Transaktionen
 
-Ein einzelnes Objekt kann eine oder mehrere Sitzungsobjekte erstellen, von die jeder innerhalb oder außerhalb des Bereichs einer Transaktion zu einem bestimmten Zeitpunkt sein kann.
+Mit einem einzelnen Datenquellen Objekt können ein oder mehrere Sitzungs Objekte erstellt werden, von denen jeder zu einem bestimmten Zeitpunkt innerhalb oder außerhalb des Gültigkeits Bereichs einer Transaktion liegen kann.
 
-Wenn eine Sitzung eine Transaktion nicht eingegeben haben, wird bei jedem Methodenaufruf sofort alle Arbeit, die innerhalb dieser Sitzung für den Datenspeicher ein Commit ausgeführt. (Dies wird manchmal als Autocommit-Modus oder impliziter Modus bezeichnet.)
+Wenn eine Sitzung nicht in eine Transaktion eintritt, wird für alle innerhalb dieser Sitzung ausgeführten Vorgänge im Datenspeicher sofort ein Commit für jeden Methoden Aufrufvorgang ausgeführt. (Dies wird manchmal auch als Autocommitmodus oder impliziter Modus bezeichnet.)
 
-Wenn eine Sitzung eine Transaktion eingibt, alle Aufgaben innerhalb dieser Sitzung ausgeführt wird, für den Datenspeicher ist Teil der Transaktion und ein Commit ausgeführt oder wurde abgebrochen, als einzelne Einheit. (Dies wird manchmal als Manualcommit-Modus bezeichnet.)
+Wenn eine Sitzung in eine Transaktion eintritt, sind alle innerhalb der Sitzung im Datenspeicher ausgeführten Arbeiten Teil dieser Transaktion und werden als einzelne Einheit ausgeführt oder abgebrochen. (Dies wird manchmal auch als manueller Commitmodus bezeichnet.)
 
-Unterstützung von Transaktionen ist anbieterspezifisch. Wenn der Anbieter, die Sie verwenden Transaktionen, die ein Sitzungsobjekt unterstützt, die unterstützt `ITransaction` und `ITransactionLocal` können eine Transaktion (nicht geschachtelt) eingeben. Die Klasse des OLE DB-Vorlagen [CSession](../../data/oledb/csession-class.md) unterstützt diese Schnittstellen und die empfohlene Vorgehensweise für das transaktionsunterstützung in Visual C++ implementiert wird.
+Die Transaktionsunterstützung ist Anbieter spezifisch. Wenn der von Ihnen verwendete Anbieter Transaktionen unterstützt, kann ein Sitzungs Objekt, von dem `ITransaction` und `ITransactionLocal` unterstützt werden, eine (nicht-nicht-eingefügte) Transaktion eingeben. Die OLE DB Templates-Klasse [CSession](../../data/oledb/csession-class.md) unterstützt diese Schnittstellen und ist die empfohlene Methode zum Implementieren der C++Transaktionsunterstützung in Visual.
 
 ## <a name="starting-and-ending-the-transaction"></a>Starten und Beenden der Transaktion
 
-Rufen Sie die `StartTransaction`, `Commit`, und `Abort` Methoden in das Rowsetobjekt, das im Consumer.
+Sie können die Methoden `StartTransaction`, `Commit`und `Abort` im Rowsetobjekt im Consumer aufzurufen.
 
-Aufrufen von `ITransactionLocal::StartTransaction` startet eine neue lokale Transaktion. Zu Beginn die Transaktion, sind keine Änderungen, die von späteren Vorgängen beauftragt im Datenspeicher angewendet, bis Sie die Transaktion ein commit.
+Durch Aufrufen von `ITransactionLocal::StartTransaction` wird eine neue lokale Transaktion gestartet. Wenn Sie die Transaktion starten, werden alle von späteren Vorgängen vorgeschriebenen Änderungen erst dann auf den Datenspeicher angewendet, wenn Sie einen Commit für die Transaktion durchgeführt haben.
 
-Aufrufen von `ITransaction::Commit` oder `ITransaction::Abort` beendet die Transaktion. `Commit` bewirkt, dass alle Änderungen innerhalb des Bereichs der Transaktion, die mit dem Datenspeicher angewendet werden. `Abort` bewirkt, dass alle Änderungen innerhalb des Bereichs der Transaktion abgebrochen werden soll und dem Datenspeicher wird im Status belassen, es vor der die Transaktion gestartet wurde.
+Durch Aufrufen von `ITransaction::Commit` oder `ITransaction::Abort` wird die Transaktion beendet. `Commit` bewirkt, dass alle Änderungen im Bereich der Transaktion auf den Datenspeicher angewendet werden. `Abort` bewirkt, dass alle Änderungen im Gültigkeitsbereich der Transaktion abgebrochen werden, und der Datenspeicher verbleibt in dem Zustand, den er vor dem Start der Transaktion besaß.
 
-## <a name="nested-transactions"></a>Geschachtelte Transaktionen
+## <a name="nested-transactions"></a>Nicht mehr als Transaktionen
 
-Ein [geschachtelten Transaktionen](/previous-versions/windows/desktop/ms716985(v=vs.85)) tritt auf, wenn Sie eine neue lokale Transaktion starten, wenn die Sitzung bereits eine aktive Transaktion vorhanden ist. Die neue Transaktion wird als eine geschachtelte Transaktion unter der aktuellen Transaktion gestartet. Wenn der Anbieter geschachtelte Transaktionen unterstützt, wird beim Aufrufen `StartTransaction` bei bereits gibt eine aktive Transaktion in der Sitzung wird XACT_E_XTIONEXISTS zurückgegeben.
+Eine [eingefügte Transaktion](/previous-versions/windows/desktop/ms716985(v=vs.85)) tritt auf, wenn Sie eine neue lokale Transaktion starten, wenn in der Sitzung bereits eine aktive Transaktion vorhanden ist. Die neue Transaktion wird als eine unter der aktuellen Transaktion unter der aktuellen Transaktion gestartete Transaktion gestartet. Wenn der Anbieter keine Unterstützung für die Durchführung von unterstützten Transaktionen hat, wird beim Aufrufen von `StartTransaction` XACT_E_XTIONEXISTS zurückgegeben.
 
 ## <a name="distributed-transactions"></a>Verteilte Transaktionen
 
-Eine verteilte Transaktion ist eine Transaktion, die verteilte Daten aktualisiert. d. h. die Daten auf mehreren vernetzten Computersystemen befinden. Wenn Sie Transaktionen über ein verteiltes System unterstützen möchten, sollten Sie .NET Framework anstelle der OLE DB-transaktionsunterstützung verwenden.
+Eine verteilte Transaktion ist eine Transaktion, mit der verteilte Daten aktualisiert werden. Das heißt, Daten auf mehr als einem vernetzten Computersystem. Wenn Sie Transaktionen über ein verteiltes System unterstützen möchten, sollten Sie anstelle der OLE DB Transaktionsunterstützung die .NET Framework verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)

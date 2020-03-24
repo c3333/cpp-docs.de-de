@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - async_uuid attribute
 ms.assetid: 235cb0d7-be58-4dd9-983c-e2a21bbc42c6
-ms.openlocfilehash: 70e73a6286a4b6adaba20b5a35dc16d8389b1948
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 537bd6d645532d9d5d20b740125c66f3953239bc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501868"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168459"
 ---
 # <a name="async_uuid"></a>async_uuid
 
@@ -28,9 +28,9 @@ Gibt die UUID an, die den mittlerer l-Compiler anweist, sowohl synchrone als auc
 *uuid*<br/>
 Ein UUID-Wert, der die Version der Schnittstelle identifiziert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **Async_uuid** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Async_uuid](/windows/win32/Midl/async-uuid) -Mittell-Attribut.
+Das **Async_uuid** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Async_uuid](/windows/win32/Midl/async-uuid) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -46,7 +46,7 @@ __interface ICustom {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -54,12 +54,12 @@ __interface ICustom {
 |-|-|
 |**Betrifft**|`interface`|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
+|**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|**Dual**, **dispinterface**|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)

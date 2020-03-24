@@ -1,21 +1,21 @@
 ---
-title: Satype (C++-COM-Attribut)
+title: Satype (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.satype
 helpviewer_keywords:
 - satype attribute
 ms.assetid: 1716590b-6bcb-4aba-b1bc-82f7335f02c3
-ms.openlocfilehash: 7588e8d855d648309c46d981898cfbbf7888f4c9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4619deec6d5e4e9083fbc7bcab53caee0101285c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407301"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166275"
 ---
 # <a name="satype"></a>satype
 
-Gibt den Datentyp, der die `SAFEARRAY` Struktur.
+Gibt den Datentyp der `SAFEARRAY` Struktur an.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,25 +26,25 @@ Gibt den Datentyp, der die `SAFEARRAY` Struktur.
 ### <a name="parameters"></a>Parameter
 
 *data_type*<br/>
-Der Datentyp für die `SAFEARRAY` -Datenstruktur, die für eine Schnittstellenmethode als Parameter übergeben wird.
+Der Datentyp für die `SAFEARRAY` Datenstruktur, die als Parameter an eine Schnittstellen Methode übergeben wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|Parameter, für die Schnittstellenmethode|
+|**Betrifft**|Schnittstellenparameter, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Satype** C++-Attribut gibt den Datentyp, der die `SAFEARRAY`.
+Das **Satype** C++ -Attribut gibt den Datentyp des `SAFEARRAY`an.
 
 > [!NOTE]
-> Eine Dereferenzierungsebene aus gelöscht wird die `SAFEARRAY` Zeiger in der generierten IDL-Datei aus, wie sie in der CPP-Datei deklariert ist.
+> Eine Dereferenzierungsebene wird vom `SAFEARRAY` Zeiger in der generierten IDL-Datei aus der Deklaration in der CPP-Datei gelöscht.
 
 ## <a name="example"></a>Beispiel
 
@@ -59,9 +59,9 @@ __interface A {
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
 [Methodenattribut](method-attributes.md)<br/>
-[ID](id.md)
+[id](id.md)

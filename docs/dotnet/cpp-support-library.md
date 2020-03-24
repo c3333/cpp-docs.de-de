@@ -7,16 +7,16 @@ helpviewer_keywords:
 - C++ Support Library
 - Visual C++ Support Library
 ms.assetid: fe6246eb-9ac7-478d-a272-dc9b09b14788
-ms.openlocfilehash: 88b7112962e003d825bac85112224130b5827b9c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e6fb61eb871df91dd7fe308c7f9ab103f8a7a915
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209134"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208858"
 ---
 # <a name="c-support-library"></a>C++-Unterstützungsbibliothek
 
-Die Unterstützung von C++-Standardbibliothek enthält Klassen, die verwaltete Programmierung in C++ zu unterstützen.
+Die C++ Unterstützungs Bibliothek stellt Klassen bereit, die verwaltete Programmierung C++in unterstützen.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - OLE DB consumer templates, ADO recordsets
 - recordsets [C++], using in OLE DB
 ms.assetid: a9b1de8a-d379-49b1-a26e-578741e9f6a8
-ms.openlocfilehash: eb558bb319bb5ddb61d0383846099d708f99c627
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 48f6eb3bac34b37f495b9492e19b4197ed69cca3
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389007"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209351"
 ---
 # <a name="using-an-existing-ado-recordset"></a>Verwenden eines vorhandenen ADO-Recordsets
 
-Verwenden Sie zum Kombinieren von OLE DB-Consumervorlagen und Active Data Objects (ADO), ADO, um einem Recordset (entsprechend in ein Rowset in den OLE DB-Consumervorlagen) zu öffnen. Wenn Sie ein Recordset haben, gehen Sie zur Verbindung mit einem OLE DB-Rowset:
+Um OLE DB Consumervorlagen und Active Data Objects (ADO) zu mischen, verwenden Sie ADO zum Öffnen eines Recordsets (entsprechend einem Rowset in den OLE DB Consumervorlagen). Wenn Sie ein Recordset haben, führen Sie die folgenden Schritte aus, um eine Verbindung mit einem OLE DB-Rowset herzustellen:
 
-1. Rufen Sie `QueryInterface` für die `IRowset` und `IAccessor` Zeiger.
+1. Ruft `QueryInterface` für die `IRowset` und `IAccessor` Zeiger auf.
 
     ```cpp
     IRowset* lpRowset = NULL;
@@ -27,9 +27,9 @@ Verwenden Sie zum Kombinieren von OLE DB-Consumervorlagen und Active Data Object
     ```
 
     > [!NOTE]
-    > *LpUnk* verweist auf die `IUnknown` Objekt von der ADO-Recordset.
+    > *lpUnk* verweist auf das `IUnknown` Objekt des ADO-Recordsets.
 
-1. Fügen Sie den Accessor und das Rowset an ihre entsprechenden OLE DB-Consumer-Vorlagenklassen an.
+1. Fügen Sie den Accessor und das Rowset an die entsprechenden OLE DB Consumervorlagen Klassen an.
 
     ```cpp
     CRowset rs;
@@ -40,6 +40,6 @@ Verwenden Sie zum Kombinieren von OLE DB-Consumervorlagen und Active Data Object
     rs.SetAccessor(accessor);
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)

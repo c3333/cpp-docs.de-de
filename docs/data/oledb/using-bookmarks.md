@@ -1,5 +1,5 @@
 ---
-title: Verwenden von Lesezeichen
+title: Verwenden von Textmarken
 ms.date: 10/24/2018
 helpviewer_keywords:
 - rowsets, bookmarks
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - bookmarks, OLE DB
 - OLE DB providers, bookmark support
 ms.assetid: 7fa1d1a8-5063-4aa9-93ee-815bb9c98fae
-ms.openlocfilehash: 579e67151858904e877a34bf30467e3cb97fe2c4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5a4a2d65ba7367b5568603b5f08a07c6d85cc4a5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388955"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209312"
 ---
-# <a name="using-bookmarks"></a>Verwenden von Lesezeichen
+# <a name="using-bookmarks"></a>Verwenden von Textmarken
 
-Vor dem Öffnen des Rowsets, müssen Sie dem Anbieter mitteilen, dass Sie Lesezeichen verwenden möchten. Zu diesem Zweck legen Sie die `DBPROP_BOOKMARKS` Eigenschaft **"true"** in die Eigenschaft festgelegt. Der Anbieter Lesezeichen als Spalte 0 (null), abruft, daher müssen Sie das spezielle Makro BOOKMARK_ENTRY verwenden und die `CBookmark` Klasse, wenn Sie einen statischen Accessor verwenden. `CBookmark` ist eine Vorlagenklasse, in dem das Argument die Länge in Bytes des Lesezeichenpuffers ist. Die Länge des Puffers für die ein Lesezeichen erforderlich sind, hängt von den Anbieter ab. Wenn Sie den ODBC-OLE DB-Anbieter, wie im folgenden Beispiel gezeigt verwenden, muss der Puffer 4 Byte sein.
+Vor dem Öffnen des Rowsets müssen Sie dem Anbieter mitteilen, dass Sie Lesezeichen verwenden möchten. Legen Sie hierzu die `DBPROP_BOOKMARKS`-Eigenschaft in Ihrem Eigenschaften Satz auf **true** fest. Der Anbieter ruft Lesezeichen als Spalte NULL ab, sodass Sie das spezielle Makro BOOKMARK_ENTRY und die `CBookmark` Klasse verwenden müssen, wenn Sie einen statischen Accessor verwenden. `CBookmark` ist eine Vorlagen Klasse, in der das-Argument die Länge des Lesezeichen Puffers in Bytes ist. Die Länge des für ein Lesezeichen erforderlichen Puffers hängt vom Anbieter ab. Wenn Sie den ODBC-OLE DB Anbieter verwenden, wie im folgenden Beispiel gezeigt, muss der Puffer 4 Bytes groß sein.
 
 ```cpp
 class CProducts
@@ -30,7 +30,7 @@ public:
 };
 ```
 
-Klicken Sie dann verwendet mit dem folgenden Code:
+Anschließend wird der folgende Code verwendet:
 
 ```cpp
 CDBPropSet propset(DBPROPSET_ROWSET);
@@ -41,7 +41,7 @@ CSession session;
 product.Open(session, "Products", &propset);
 ```
 
-Bei Verwendung von `CDynamicAccessor`, des Puffers zur Laufzeit dynamisch festgelegt ist. In diesem Fall können Sie eine spezialisierte Version der `CBookmark` Sie nicht angeben, für die Pufferlänge. Verwenden Sie die Funktion `GetBookmark` das Lesezeichen aus dem aktuellen Datensatz, abrufen, wie in diesem Codebeispiel gezeigt:
+Wenn Sie `CDynamicAccessor`verwenden, wird der Puffer dynamisch zur Laufzeit festgelegt. In diesem Fall können Sie eine spezialisierte Version von `CBookmark` verwenden, für die Sie keine Pufferlänge angeben. Verwenden Sie die Funktion `GetBookmark`, um das Lesezeichen aus dem aktuellen Datensatz abzurufen, wie im folgenden Codebeispiel gezeigt:
 
 ```cpp
 CTable<CDynamicAccessor> product;
@@ -55,8 +55,8 @@ product.MoveNext();
 product.GetBookmark(&bookmark);
 ```
 
-Informationen zur Unterstützung von Lesezeichen in Anbieter finden Sie unter [Anbieterunterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md).
+Informationen zur Unterstützung von Lesezeichen in Anbietern finden Sie unter [Anbieter Unterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)

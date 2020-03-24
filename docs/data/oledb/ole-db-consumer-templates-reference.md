@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - OLE DB consumer templates, classes
 ms.assetid: cfc7f698-1a0e-4a09-a4d3-ccb99e6654fe
-ms.openlocfilehash: 52fe3df7e872c257aa8802f84c548ad57d21be27
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 13805ab1dc2c2b4792fd05c9140006c610b42f75
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546092"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210105"
 ---
 # <a name="ole-db-consumer-templates-reference"></a>Referenz der OLE DB-Consumervorlagen
 
@@ -132,7 +132,7 @@ Wird als Index für den Zugriff auf Daten in einem Rowset verwendet.
 [CDBErrorInfo](../../data/oledb/cdberrorinfo-class.md)<br/>
 Wird verwendet, um OLE DB Fehlerinformationen abzurufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Referenz der OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-reference.md)<br/>
 [OLE DB-Vorlagen](../../data/oledb/ole-db-templates.md)

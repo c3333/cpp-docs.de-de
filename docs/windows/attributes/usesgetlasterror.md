@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - usesgetlasterror attribute
 ms.assetid: d149e33d-35a7-46cb-9137-ae6883d86122
-ms.openlocfilehash: b14316bd929f4b41b13a76c41e94b31b7534e9d8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f58929db01a1710e811a973c0559ad29b242b4eb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513890"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166132"
 ---
 # <a name="usesgetlasterror"></a>usesgetlasterror
 
-Teilt dem Aufrufer mit, dass der Aufrufer dann aufrufen `GetLastError` kann, um den Fehlercode abzurufen, wenn beim Aufrufen der Funktion ein Fehler auftritt.
+Teilt dem Aufrufer mit, dass der Aufrufer beim Aufrufen dieser Funktion `GetLastError` aufrufen kann, um den Fehlercode abzurufen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,15 +23,15 @@ Teilt dem Aufrufer mit, dass der Aufrufer dann aufrufen `GetLastError` kann, um 
 [usesgetlasterror]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das C++ Attribut " [" des](/windows/win32/Midl/usesgetlasterror) Attributs "" ist die gleiche Funktionalität wie das Attribut "" von "" in "".
+Das **usesgetlasterror** C++ Attribut " [" des](/windows/win32/Midl/usesgetlasterror) Attributs "" ist die gleiche Funktionalität wie das Attribut "" von "" in "".
 
 ## <a name="example"></a>Beispiel
 
-Im Beispiel [idl_module](idl-module.md) finden Sie ein Beispiel für die Verwendung von " **" mit "".**
+Im [idl_module](idl-module.md) Beispiel wird ein Beispiel für **die Verwendung von**"" verwendet.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -39,11 +39,11 @@ Im Beispiel [idl_module](idl-module.md) finden Sie ein Beispiel für die Verwend
 |-|-|
 |**Betrifft**|**Module** -Attribut|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)

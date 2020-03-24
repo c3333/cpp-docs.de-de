@@ -5,20 +5,20 @@ helpviewer_keywords:
 - OLE DB providers, multithreaded
 - threading [C++], providers
 ms.assetid: a91270dc-cdf9-4855-88e7-88a54be7cbe8
-ms.openlocfilehash: a2afb7354dd0447375ee6205b7c5d9a4755aa4b8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 50e05b70a782dd343031443540790697e980c994
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404493"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209542"
 ---
 # <a name="supporting-free-threading-in-your-provider"></a>Unterstützen des Freethreadings im Anbieter
 
-Alle OLE DB-Anbieterklassen sind threadsicher und Registrierungseinträge werden entsprechend festgelegt. Es ist eine gute Idee, freies threading zum bieten ein hohes Maß an Leistung in Situationen mit mehreren Benutzern zu unterstützen. Um Ihren Anbieter threadsicher zu schützen, müssen Sie sicherstellen, dass der Code ordnungsgemäß blockiert wird. Wenn Sie zu schreiben oder Speichern von Daten, müssen Sie den Zugriff auf kritische Abschnitte blockieren.
+Alle OLE DB Anbieter Klassen sind Thread sicher, und Registrierungseinträge werden entsprechend festgelegt. Es empfiehlt sich, ein kostenloses Threading zu unterstützen, um ein hohes Maß an Leistung in mehr Benutzer Situationen zu gewährleisten. Damit der Anbieter Thread sicher bleibt, müssen Sie überprüfen, ob der Code ordnungsgemäß blockiert ist. Wenn Sie Daten schreiben oder speichern, muss der Zugriff mit kritischen Abschnitten blockiert werden.
 
-Einzelnen Vorlagenobjekte für OLE DB-Anbieter hat einen eigenen kritischen Abschnitt. Damit einfacher blockiert wird, muss jede neue Klasse, die Sie erstellen eine Vorlagenklasse, dauert die übergeordnete Klasse als Argument Name.
+Jedes OLE DB Provider-Vorlagen Objekt verfügt über einen eigenen kritischen Abschnitt. Um die Blockierung zu vereinfachen, muss jede neue Klasse, die Sie erstellen, eine Vorlagen Klasse sein, die den Namen der übergeordneten Klasse als Argument annimmt.
 
-Das folgende Beispiel zeigt, wie Sie Ihren Code zu blockieren:
+Im folgenden Beispiel wird gezeigt, wie Sie Ihren Code blockieren:
 
 ```cpp
 template <class T>
@@ -37,10 +37,10 @@ HRESULT MyObject::MyMethod(void)
 }
 ```
 
-Weitere Informationen dazu, wie Sie kritische Abschnitte mit schützen `Lock` und `Unlock`, finden Sie unter [Multithreading: Gewusst wie: der Synchronisierungsklassen](../../parallel/multithreading-how-to-use-the-synchronization-classes.md).
+Weitere Informationen zum Schutz kritischer Abschnitte mit `Lock` und `Unlock`finden Sie unter [Multithreading: Verwenden der Synchronisierungs Klassen](../../parallel/multithreading-how-to-use-the-synchronization-classes.md).
 
-Stellen Sie sicher, dass alle Methoden außer Kraft setzen (wie z. B. `Execute`) sind threadsicher.
+Stellen Sie sicher, dass alle Methoden, die Sie überschreiben (z. b. `Execute`) Thread sicher sind.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

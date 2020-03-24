@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C2150
 ms.assetid: 21e82a10-c1d4-4c0d-9dc6-c5d92ea42a31
-ms.openlocfilehash: a9c6465ef87c12135ad4e6709741f0027d8ea3c7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 57c21f7ee9435220a9ca0b50bb85567506b6ad3e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175146"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207219"
 ---
 # <a name="compiler-error-c2150"></a>Compilerfehler C2150
 
-> "*Bezeichner*": Bitfeld muss vom Typ 'Int','signed Int' oder 'unsigned Int' aufweisen
+> '*Identifier*': Das Bitfeld muss den Typ ' int ', ' signed int ' oder ' unsigned int ' aufweisen.
 
-Der Basistyp für Bitfeld ist erforderlich, um werden `int`, `signed int`, oder `unsigned int`.
+Der Basistyp für ein Bitfeld muss `int`, `signed int`oder `unsigned int`sein.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird gezeigt, wie C2150 auftreten können und wie Sie es beheben können:
+Dieses Beispiel zeigt, wie Sie C2150 und wie Sie das Problem beheben können:
 
 ```cpp
 // C2150.cpp

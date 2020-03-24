@@ -9,24 +9,24 @@ helpviewer_keywords:
 - OLE DB provider templates, notifications
 - OLE DB providers, notifications
 ms.assetid: 76e875fd-2bfd-4e4e-9f43-dbe5a3fa7382
-ms.openlocfilehash: 52c4313de5017b97a193be1afebc020c9896fe6a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d29f84a0a5b33d55c0a04a4c758050cf9746f72a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379089"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209546"
 ---
 # <a name="supporting-notifications"></a>Unterstützen von Benachrichtigungen
 
-## <a name="implementing-connection-point-interfaces-on-the-provider-and-consumer"></a>Implementieren von Verbindungsschnittstellen für Anbieter und Consumer
+## <a name="implementing-connection-point-interfaces-on-the-provider-and-consumer"></a>Implementieren von Verbindungspunkt Schnittstellen für den Anbieter und den Consumer
 
-Um Benachrichtigungen zu implementieren, muss von eine Klasse erben [IRowsetNotifyCP](../../data/oledb/irowsetnotifycp-class.md) und [IConnectionPointContainer](../../atl/reference/iconnectionpointcontainerimpl-class.md).
+Um Benachrichtigungen zu implementieren, muss eine Anbieter Klasse von [IRowsetNotifyCP](../../data/oledb/irowsetnotifycp-class.md) und [IConnectionPointContainer](../../atl/reference/iconnectionpointcontainerimpl-class.md)erben.
 
-`IRowsetNotifyCP` die Website für die Verbindungspunkt-Schnittstelle implementiert [IRowsetNotify](/previous-versions/windows/desktop/ms712959(v=vs.85)). `IRowsetNotifyCP` broadcast-implementiert Funktionen, um den Listener auf dem Verbindungspunkt empfehlen `IID_IRowsetNotify` von Änderungen an den Inhalt des Rowsets.
+`IRowsetNotifyCP` implementiert die Anbieter Website für die Verbindungspunkt Schnittstelle [IRowsetNotify](/previous-versions/windows/desktop/ms712959(v=vs.85)). `IRowsetNotifyCP` implementiert Broadcast Funktionen, um Listener auf dem Verbindungspunkt `IID_IRowsetNotify` Änderungen am Inhalt des Rowsets zu informieren.
 
-Müssen Sie auch implementieren und registrieren Sie `IRowsetNotify` vom Consumer (auch bekannt als die Senke) mit [IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md) , damit der Consumer mit Benachrichtigungen behandeln kann. Informationen zur Implementierung der vom Consumer der Verbindungspunkt-Schnittstelle finden Sie unter [empfangen von Benachrichtigungen](../../data/oledb/receiving-notifications.md).
+Sie müssen auch `IRowsetNotify` auf dem Consumer (auch als Senke bezeichnet) mithilfe von [IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md) implementieren und registrieren, damit der Consumer Benachrichtigungen verarbeiten kann. Weitere Informationen zum Implementieren der Verbindungspunkt Schnittstelle für den Consumer finden Sie unter [empfangen von Benachrichtigungen](../../data/oledb/receiving-notifications.md).
 
-Darüber hinaus muss die Klasse eine Zuordnung verfügen, die der Verbindung des Punkt-Eintrag wie folgt definiert:
+Außerdem muss die Klasse über eine Karte verfügen, die den Eintrag für den Verbindungspunkt definiert, wie folgt:
 
 ```cpp
 BEGIN_CONNECTION_POINT_MAP
@@ -34,14 +34,14 @@ BEGIN_CONNECTION_POINT_MAP
 END_CONNECTION_POINT_MAP
 ```
 
-## <a name="adding-irowsetnotify"></a>IRowsetNotify hinzugefügt
+## <a name="adding-irowsetnotify"></a>Hinzufügen von IRowsetNotify
 
-Hinzuzufügende `IRowsetNotify`, müssen Sie die hinzuzufügenden `IConnectionPointContainerImpl<rowset-name>` und `IRowsetNotifyCP<rowset-name>` der Vererbungskette.
+Zum Hinzufügen von `IRowsetNotify`müssen Sie Ihrer Vererbungs Kette `IConnectionPointContainerImpl<rowset-name>` und `IRowsetNotifyCP<rowset-name>` hinzufügen.
 
-Hier ist z. B. die Vererbungskette für `RUpdateRowset` in [UpdatePV](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV):
+Hier ist beispielsweise die Vererbungs Kette für `RUpdateRowset` in [Update](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV)Panel:
 
 > [!NOTE]
-> Der Beispielcode unterscheiden sich von dem hier aufgeführten ist; den Code sollte wie die aktuelleren Version angesehen werden.
+> Der Beispielcode unterscheidet sich möglicherweise vom hier gezeigten Code. Betrachten Sie den Beispielcode als die aktuellere Codeversion.
 
 ```cpp
 ///////////////////////////////////////////////////////////////////////////
@@ -56,20 +56,20 @@ public CRowsetImpl< RUpdateRowset, CAgentMan, CUpdateCommand,
       public IRowsetNotifyCP<RUpdateRowset>
 ```
 
-### <a name="setting-com-map-entries"></a>Festlegen von COM-Zuordnungseinträgen
+### <a name="setting-com-map-entries"></a>Festlegen von com-Zuordnungs Einträgen
 
-Außerdem müssen Sie die COM-Zuordnung im Rowset Folgendes hinzugefügt:
+Außerdem müssen Sie der com-Zuordnung in Ihrem Rowset Folgendes hinzufügen:
 
 ```cpp
 COM_INTERFACE_ENTRY(IConnectionPointContainer)
 COM_INTERFACE_ENTRY_IMPL(IConnectionPointContainer)
 ```
 
-Diese Makros können bei einem `QueryInterface` für den Verbindungspunktcontainer (die Grundlage für `IRowsetNotify`) auf die angeforderte Schnittstelle für den Anbieter zu suchen. Ein Beispiel zur Verwendung von Verbindungspunkten finden Sie im Beispiel für ATL-POLYGON und Tutorials.
+Diese Makros ermöglichen allen Benutzern, die `QueryInterface` für den Verbindungspunkt Container aufrufen (Basis `IRowsetNotify`), die angeforderte Schnittstelle für Ihren Anbieter zu finden. Ein Beispiel für die Verwendung von Verbindungs Punkten finden Sie im ATL POLYGON-Beispiel und im Tutorial.
 
-### <a name="setting-connection-point-map-entries"></a>Punkt-Zuordnungseinträge Verbindung festlegen
+### <a name="setting-connection-point-map-entries"></a>Festlegen von Zuordnungs Einträgen für Verbindungspunkte
 
-Sie müssen auch eine Verbindung Punkt Karte hinzufügen. Es sollte etwa so aussehen:
+Außerdem müssen Sie eine Karte für den Verbindungspunkt hinzufügen. Dies sollte etwa wie folgt aussehen:
 
 ```cpp
 BEGIN_CONNECTION_POINT_MAP(rowset-name)
@@ -77,13 +77,13 @@ BEGIN_CONNECTION_POINT_MAP(rowset-name)
 END_CONNECTION_POINT_MAP()
 ```
 
-Diese Verbindung Punkt Zuordnung kann eine Komponente, die nach der `IRowsetNotify` Schnittstelle in Ihrem Anbieter suchen.
+Diese Verbindungspunkt Zuordnung ermöglicht einer Komponente, die nach der `IRowsetNotify`-Schnittstelle sucht, Sie in Ihrem Anbieter zu finden.
 
 ### <a name="setting-properties"></a>Festlegen von Eigenschaften
 
-Sie müssen auch die folgenden Eigenschaften an Ihren Anbieter hinzufügen. Sie müssen nur zum Hinzufügen von Eigenschaften, die basierend auf den Schnittstellen, die Sie unterstützen.
+Außerdem müssen Sie dem Anbieter die folgenden Eigenschaften hinzufügen. Sie müssen die Eigenschaften nur auf Basis der von Ihnen unterstützten Schnittstellen hinzufügen.
 
-|Eigenschaft|Bei Unterstützung hinzufügen|
+|Eigenschaft|Hinzufügen bei Unterstützung von|
 |--------------|------------------------|
 |DBPROP_IConnectionPointContainer|Always|
 |DBPROP_NOTIFICATIONGRANULARITY|Always|
@@ -99,8 +99,8 @@ Sie müssen auch die folgenden Eigenschaften an Ihren Anbieter hinzufügen. Sie 
 |DBPROP_NOTIFYROWUNDOINSERT|`IRowsetUpdate`|
 |DBPROP_NOTIFYROWUPDATE|`IRowsetUpdate`|
 
-Den größten Teil der Implementierung für die Benachrichtigungen ist bereits in der OLE DB-Anbietervorlagen eingebettet. Wenn Sie nicht `IRowsetNotifyCP` der Vererbungskette der Compiler, diesen gesamten Code aus Ihrem Kompilierung-Datenstrom, wodurch Ihr Code Codegröße entfernt.
+Der größte Teil der Implementierung für die Benachrichtigungen ist bereits in die OLE DB Anbieter Vorlagen eingebettet. Wenn Sie Ihrer Vererbungs Kette `IRowsetNotifyCP` nicht hinzufügen, entfernt der Compiler den gesamten Code aus dem Kompilierungs Datenstrom, wodurch die Codegröße kleiner wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweiterte Anbietertechniken](../../data/oledb/advanced-provider-techniques.md)

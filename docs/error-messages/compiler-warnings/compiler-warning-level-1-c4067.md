@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4067
 ms.assetid: 1d10353e-8cd5-4b01-9184-a06189b965a4
-ms.openlocfilehash: 012866e328433ec9511782c26a39265481ff4940
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8bdd16f5c3182e4217e195475bdb4a9a0f60fa6f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386511"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164117"
 ---
 # <a name="compiler-warning-level-1-c4067"></a>Compilerwarnung (Stufe 1) C4067
 
-> Unerwartetes Token nach Präprozessordirektive - Zeilenvorschub erwartet.
+> unerwartete Token nach Präprozessordirektive-erwartet wurde ein Zeilen Vorstrich.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Compiler gefunden und zusätzliche Zeichen, die nach einer Präprozessordirektive ignoriert. Dies kann durch beliebige unerwartete Zeichen verursacht werden, obwohl eine häufige Ursache ein vereinzelten Semikolon nach der Direktive ist. Kommentare sind nicht dazu führen, dass diese Warnung. Die **/Za** -Compileroption kann diese Warnung für weitere präprozessoranweisungen, als die Standardeinstellung.
+Der Compiler hat nach einer Präprozessordirektive zusätzliche Zeichen gefunden und ignoriert. Dies kann durch unerwartete Zeichen verursacht werden. eine häufige Ursache ist jedoch ein unzulässiges Semikolon nach der-Direktive. Diese Warnung wird nicht durch Kommentare verursacht. Die **/Za** -Compileroption aktiviert diese Warnung für mehr Präprozessordirektiven als die Standardeinstellung.
 
 ## <a name="example"></a>Beispiel
 
@@ -39,7 +39,7 @@ int main()
 }
 ```
 
-Um diese Warnung zu beheben, löschen Sie die vereinzelten Zeichen, oder verschieben in einen Kommentarblock. Bestimmte Warnungen C4067 können deaktiviert werden, durch das Entfernen der **/Za** -Compileroption.
+Um diese Warnung zu beheben, löschen Sie die unverstreuten Zeichen, oder verschieben Sie Sie in einen Kommentar Block. Bestimmte C4067-Warnungen können deaktiviert werden, indem die **/Za** -Compileroption entfernt wird.
 
 ```cpp
 // C4067b.cpp

@@ -11,26 +11,26 @@ helpviewer_keywords:
 - long double
 - real*4 value
 ms.assetid: 537833e8-fe05-49fc-8169-55fd0314b195
-ms.openlocfilehash: de132dcf28747cd866229cff8972e2aed271a047
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: bb8523256c05479b303dec66ca79caa28e7cda03
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69630356"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169811"
 ---
 # <a name="ieee-floating-point-representation"></a>IEEE-Gleitkommadarstellung
 
-Microsoft C++ (MSVC) ist mit den numerischen IEEE-Standards konsistent. Der IEEE-754-Standard beschreibt Gleit Komma Formate, eine Möglichkeit zur Darstellung von reellen Zahlen in der Hardware. Es gibt mindestens fünf interne Formate für Gleit Komma Zahlen, die auf der vom MSVC-Compiler vorgesehenen Hardware darstellbar sind, der Compiler verwendet jedoch nur zwei davon. Die Formate mit einfacher *Genauigkeit* (4 Byte) und mit *doppelter Genauigkeit* (8 Byte) werden in MSVC verwendet. Die einfache Genauigkeit wird mithilfe des Schlüssel Worts **float**deklariert. Doppelte Genauigkeit wird mithilfe des Schlüssel Worts **Double**deklariert. Der IEEE-Standard gibt auch die Formate *halbgenauigkeit* (2-Byte) und *vierfache Genauigkeit* (16 Byte) sowie ein Format mit *doppelter* Genauigkeit (10 Byte) an, das von einigen C-und C++ Compilern als Long implementiert wird.  **Double** -Datentyp. Im MSVC-Compiler wird der **long Double** -Datentyp als eindeutiger Typ behandelt, aber der Speichertyp ist **Double**zugeordnet. Es gibt jedoch Unterstützung für systeminterne und Assemblysprachen für Berechnungen mit den anderen Formaten, einschließlich des 10-Byte-Formats (Double-Extended-Precision), das von der Hardware unterstützt wird.
+Microsoft C++ (MSVC) ist mit den numerischen IEEE-Standards konsistent. Der IEEE-754-Standard beschreibt Gleit Komma Formate, eine Möglichkeit zur Darstellung von reellen Zahlen in der Hardware. Es gibt mindestens fünf interne Formate für Gleit Komma Zahlen, die auf der vom MSVC-Compiler vorgesehenen Hardware darstellbar sind, der Compiler verwendet jedoch nur zwei davon. Die Formate mit einfacher *Genauigkeit* (4 Byte) und mit *doppelter Genauigkeit* (8 Byte) werden in MSVC verwendet. Die einfache Genauigkeit wird mithilfe des Schlüssel Worts **float**deklariert. Doppelte Genauigkeit wird mithilfe des Schlüssel Worts **Double**deklariert. Der IEEE-Standard gibt auch die Formate *halbgenauigkeit* (2 Byte) und *vierfache Genauigkeit* (16 Byte) sowie ein Format mit *doppelter* Genauigkeit (10 Byte) an, das einige C-und C++ Compiler als **long Double** -Datentyp implementieren. Im MSVC-Compiler wird der **long Double** -Datentyp als eindeutiger Typ behandelt, aber der Speichertyp ist **Double**zugeordnet. Es gibt jedoch Unterstützung für systeminterne und Assemblysprachen für Berechnungen mit den anderen Formaten, einschließlich des 10-Byte-Formats (Double-Extended-Precision), das von der Hardware unterstützt wird.
 
 Die Werte werden wie folgt gespeichert:
 
-|Wert|Gespeichert als|
+|value|Gespeichert als|
 |-----------|---------------|
-|einfache Genauigkeit|Signier Bit, 8-Bit-Exponent, 23-Bit-signifikanor|
+|Einfache Genauigkeit|Signier Bit, 8-Bit-Exponent, 23-Bit-signifikanor|
 |doppelte Genauigkeit|Signier Bit, 11-Bit-Exponent, 52-Bit-signifikanand|
 |doppelte Erweiterte Genauigkeit|Signier Bit, 15-Bit-Exponent, 64-Bit-signifikanand|
 
-Bei Formaten mit einfacher Genauigkeit und doppelter Genauigkeit gibt es einen angenommenen führenden 1 im Bruch Teil, der als signifikanand ( und auch als *Mantisse*bezeichnet) bezeichnet wird, der nicht im Arbeitsspeicher gespeichert ist, sodass die signifianden tatsächlich 24 oder 53 sind. Bits, auch wenn nur 23 oder 52 Bits gespeichert werden. Das Format für die doppelte Erweiterte Genauigkeit speichert dieses Bit tatsächlich.
+Bei Formaten mit einfacher Genauigkeit und doppelter Genauigkeit gibt es einen angenommenen führenden 1 im Bruch Teil, der als *signifikanand* (und manchmal auch als *Mantisse*bezeichnet) bezeichnet wird, der nicht im Arbeitsspeicher gespeichert ist, sodass die signifianden tatsächlich 24 oder 53 Bits sind, auch wenn nur 23 oder 52 Bits gespeichert werden. Das Format für die doppelte Erweiterte Genauigkeit speichert dieses Bit tatsächlich.
 
 Die Exponenten sind von der Hälfte ihres möglichen Werts verzerrt. Dies bedeutet, dass Sie diese Abweichung vom gespeicherten Exponent subtrahieren, um den eigentlichen Exponent zu erhalten. Wenn der gespeicherte Exponent kleiner ist als der Bias, ist er tatsächlich ein negativer Exponent.
 
@@ -50,11 +50,11 @@ Das Format für die verschiedenen Größen lautet dann wie folgt:
 
 |Format|Byte 1|Byte 2|Byte 3|Byte 4|...|Byte n|
 |------------|------------|------------|------------|------------|---------|------------|
-|einfache Genauigkeit| `SXXXXXXX`|`XMMMMMMM`|`MMMMMMMM`|`MMMMMMMM`|||
+|Einfache Genauigkeit| `SXXXXXXX`|`XMMMMMMM`|`MMMMMMMM`|`MMMMMMMM`|||
 |doppelte Genauigkeit|`SXXXXXXX`|`XXXXMMMM`|`MMMMMMMM`|`MMMMMMMM`|...|`MMMMMMMM`|
 |doppelte Erweiterte Genauigkeit|`SXXXXXXX`|`XXXXXXXX`|`1MMMMMMM`|`MMMMMMMM`|...|`MMMMMMMM`|
 
-`S`stellt das Signier Bit dar `X`, die sind die unausgewogenen Exponentenbits, `M`und die es sind die signifikanten und Bits. Beachten Sie, dass das ganz linke Bit in Formaten mit einfacher Genauigkeit und doppelter Genauigkeit angenommen wird, aber in Byte 3 des Formats mit doppelter Genauigkeit als "1" vorhanden ist.
+`S` das das Signier Bit darstellt, sind die `X`die unausgewogenen Exponentenbits, und die `M`sind die signifikanten und Bits. Beachten Sie, dass das ganz linke Bit in Formaten mit einfacher Genauigkeit und doppelter Genauigkeit angenommen wird, aber in Byte 3 des Formats mit doppelter Genauigkeit als "1" vorhanden ist.
 
 Um den Binär Punkt ordnungsgemäß zu verschieben, entfernen Sie zuerst den Exponenten, und verschieben Sie dann den Binär Punkt nach rechts, oder lassen Sie die entsprechende Anzahl von Bits zurück.
 
@@ -62,7 +62,7 @@ Um den Binär Punkt ordnungsgemäß zu verschieben, entfernen Sie zuerst den Exp
 
 Die Gleit Komma Formate enthalten einige Werte, die speziell behandelt werden.
 
-### <a name="zero"></a>Zero
+### <a name="zero"></a>Null
 
 NULL kann nicht normalisiert werden, wodurch Sie in der normalisierten Form eines Werts mit einfacher Genauigkeit oder doppelter Genauigkeit nicht dargestellt werden kann. Ein spezielles Bitmuster aller Nullen stellt 0 dar. Es ist auch möglich,-0 als 0 (null) anzugeben, wenn das Signier Bit festgelegt ist, aber-0 und 0 vergleichen immer gleich.
 
@@ -82,60 +82,60 @@ Werte, die keine reelle Zahl sind, wie z. b. 0/0, können im IEEE-Gleit Komma Fo
 
 Im folgenden finden Sie einige Beispiele im Format mit einfacher Genauigkeit:
 
-- Für den Wert 2 ist das Signier Bit 0 (null), und der gespeicherte Exponent ist 128 oder 1000 0000 in binary (127 Plus 1). Die gespeicherten binären signifikanten signifiund sind (1). 000 0000 0000 0000 0000 0000, der über einen impliziten führenden 1-und binärpunkt verfügt, d. h., der tatsächliche signifiund ist ein Wert.
+- Für den Wert 2 ist das Signier Bit 0 (null), und der gespeicherte Exponent ist 128 oder 1000 0000 in binary (127 Plus 1). Das gespeicherte binäre signifiund ist (1.) 000 0000 0000 0000 0000 0000, das über einen impliziten führenden 1-und binärpunkt verfügt, d. h., der tatsächliche signifiund ist ein Wert.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |2|1 * 2<sup>1</sup>|0100 0000 0000 0000 0000 0000 0000 0000|0x40000000|
 
 - Der Wert-2. Identisch mit + 2 mit der Ausnahme, dass das Signier Bit festgelegt ist. Dies gilt für den negativen Wert aller Gleit Komma Zahlen im IEEE-Format.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |-2|-1 * 2<sup>1</sup>|1100 0000 0000 0000 0000 0000 0000 0000|0xC0000000|
 
 - Der Wert 4. Der gleiche signifiund der Exponent erhöht sich um eins (der unausgewogene Wert ist 129 oder 100 0000 1 in Binary.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |4|1 * 2<sup>2</sup>|0100 0000 1000 0000 0000 0000 0000 0000|0x40800000|
 
-- Der Wert 6. Der gleiche Exponent, signifiund ist größer als die Hälfte – er ist (1). 100 0000 ... 0000 0000, da es sich um einen binären Bruchteil handelt, ist 1 1/2, weil die Werte der Dezimalstellen 1/2, 1/4, 1/8 usw. sind.
+- Der Wert 6. Der gleiche Exponent, signifiund ist größer als die Hälfte – er ist (1.) 100 0000... 0000 0000, da es sich um einen binären Bruchteil handelt, ist 1 1/2, weil die Werte der Dezimalstellen 1/2, 1/4, 1/8 usw. sind.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |6|1,5 * 2<sup>2</sup>|0100 0000 1100 0000 0000 0000 0000 0000|0x40C00000|
 
 - Der Wert 1. Die gleiche signifiprise und die anderen Potenzen von zwei, der unausgewogene Exponent ist ein kleiner als 2 um 127, oder 011 1111 1 in Binary.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |1|1 * 2<sup>0</sup>|0011 1111 1000 0000 0000 0000 0000 0000|0x3F800000|
 
-- Der Wert 0,75. Der unbedeutende Exponent ist 126, 011 1111 0 in binary, und der signifiand ist (1). 100 0000 ... 0000 0000, 1 1/2.
+- Der Wert 0,75. Der unausgewogene Exponent ist 126, 011 1111 0 in binary, und der signifiand ist (1.) 100 0000... 0000 0000, 1 1/2.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |0.75|1,5 * 2<sup>-1</sup>|0011 1111 0100 0000 0000 0000 0000 0000|0x3F400000|
 
 - Der Wert 2,5. Genau identisch mit zwei, außer dass das Bit, das 1/4 darstellt, im signifiund festgelegt wird.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |2.5|1,25 * 2<sup>1</sup>|0100 0000 0010 0000 0000 0000 0000 0000|0x40200000|
 
 - 1/10 ist ein wiederholter Bruchteil in der Binärdatei. Der signifiand ist nur ein gewisser Wert von 1,6, und der dezimale Exponent besagt, dass 1,6 durch 16 dividiert werden muss (es ist 011 1101 1 in binary, die 123 in Decimal ist). Der wahre Exponent ist 123-127 =-4. Dies bedeutet, dass der Faktor, um den multipliziert werden soll, 2<sup>-4</sup> = 1/16 ist. Beachten Sie, dass das gespeicherte signifiund im letzten Bit aufgerundet werden – ein Versuch, die nicht darstellbare Zahl so genau wie möglich darzustellen. (Der Grund, warum 1/10 und 1/100 in Binärdateien nicht genau darstellbar sind, ähnelt dem Grund, warum 1/3 nicht genau in Dezimalform dargestellt werden kann.)
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
-   |0.1|1,6 * 2<sup>-4</sup>|0011 1101 1100 1100 1100 1100 1100 1101|0x3dcccccd|
+   |0,1|1,6 * 2<sup>-4</sup>|0011 1101 1100 1100 1100 1100 1100 1101|0x3dcccccd|
 
 - NULL ist ein Sonderfall, der die Formel für den minimal möglichen darstellbaren positiven Wert verwendet, bei dem es sich um Nullen handelt.
 
-   |Wert|Formel|Binäre Darstellung|Hexadezimal|
+   |value|Formel|Binäre Darstellung|Hexadezimal|
    |-|-|-|-|
    |0|1 * 2<sup>-128</sup>|0000 0000 0000 0000 0000 0000 0000 0000|0x00000000|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Warum Gleitkommazahlen an Genauigkeit verlieren können](why-floating-point-numbers-may-lose-precision.md)
