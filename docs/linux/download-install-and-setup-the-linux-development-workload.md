@@ -3,12 +3,12 @@ title: Installieren der C++-Workload unter Linux in Visual Studio
 description: Informationen zum Herunterladen, Installieren und Einrichten der Linux-Workload für C++ in Visual Studio
 ms.date: 06/11/2019
 ms.assetid: e11b40b2-f3a4-4f06-b788-73334d58dfd9
-ms.openlocfilehash: 1dad17756cbc12fdf65250b7c54314ff2a645287
-ms.sourcegitcommit: e5192a25c084eda9eabfa37626f3274507e026b3
+ms.openlocfilehash: 719fb9a04c3b0090a1ae5442f881ba6b7d2136c5
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966209"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80077637"
 ---
 # <a name="download-install-and-set-up-the-linux-workload"></a>Herunterladen, Installieren und Einrichten der Linux-Workload
 
@@ -20,11 +20,11 @@ Linux-Projekte werden von Visual Studio 2017 und höher unterstützt.
 
 ::: moniker range=">=vs-2017"
 
-Sie können die IDE von Visual Studio unter Windows verwenden, um C++-Projekte zu erstellen, zu bearbeiten und zu debuggen, die auf einem Linux-Remotesystem, einem virtuellen Computer oder im [Windows-Subsystem für Linux](/windows/wsl/about) ausgeführt werden. 
+Sie können die IDE von Visual Studio unter Windows verwenden, um C++-Projekte zu erstellen, zu bearbeiten und zu debuggen, die auf einem Linux-Remotesystem, einem virtuellen Computer oder im [Windows-Subsystem für Linux](/windows/wsl/about) ausgeführt werden.
 
-Sie können an Ihrer bestehenden Codebasis arbeiten, die CMake nutzt, ohne sie in ein Visual Studio-Projekt konvertieren zu müssen. Wenn Ihre Codebasis plattformübergreifend ist, können Sie sowohl Windows als auch Linux in Visual Studio als Ziel verwenden. Sie können beispielsweise Ihren Code unter Windows in Visual Studio bearbeiten, kompilieren und debuggen und dann das Projekt in kürzester Zeit auf Linux umstellen, um es in einer Linux-Umgebung zu kompilieren und zu debuggen. Linux-Headerdateien werden automatisch auf Ihren lokalen Computer kopiert, auf dem sie von Visual Studio genutzt werden, um vollständige IntelliSense-Unterstützung bereitzustellen (Anweisungsvervollständigung, „Gehe zu Definition“ usw.). 
- 
-Für jedes dieser Szenarios ist die Workload **Linux-Entwicklung mit C++** erforderlich. 
+Sie können an Ihrer bestehenden Codebasis arbeiten, die CMake nutzt, ohne sie in ein Visual Studio-Projekt konvertieren zu müssen. Wenn Ihre Codebasis plattformübergreifend ist, können Sie sowohl Windows als auch Linux in Visual Studio als Ziel verwenden. Sie können beispielsweise Ihren Code unter Windows in Visual Studio bearbeiten, kompilieren und debuggen und dann das Projekt in kürzester Zeit auf Linux umstellen, um es in einer Linux-Umgebung zu kompilieren und zu debuggen. Linux-Headerdateien werden automatisch auf Ihren lokalen Computer kopiert, auf dem sie von Visual Studio genutzt werden, um vollständige IntelliSense-Unterstützung bereitzustellen (Anweisungsvervollständigung, „Gehe zu Definition“ usw.).
+
+Für jedes dieser Szenarios ist die Workload **Linux-Entwicklung mit C++** erforderlich.
 
 ::: moniker-end
 
