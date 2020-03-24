@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2091
 ms.assetid: 247c3b57-f123-4420-b68e-d65a364b63cb
-ms.openlocfilehash: 836aad27fa1d3c5b23ad0c14be9810a61f731c3c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d56263b7b11ee0e3a9dbe6b0d3b12cd0ce09df70
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387096"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207681"
 ---
 # <a name="compiler-error-c2091"></a>Compilerfehler C2091
 
-Funktion gibt Funktion zurück.
+Funktion gibt Funktion zurück
 
-Eine Funktion kann nicht mit eine Funktion zurückgeben. Geben Sie stattdessen einen Zeiger auf eine Funktion zurück.
+Eine Funktion kann keine Funktion zurückgeben. Geben Sie stattdessen einen Zeiger auf eine Funktion zurück.

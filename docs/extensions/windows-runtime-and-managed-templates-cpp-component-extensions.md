@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - templates, with CLR types
 ms.assetid: cf59d16b-5514-448b-9a95-e0b4fcb616a6
-ms.openlocfilehash: a8cc429763d042ba262d5543f4a2d85bbf8aa29a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: ce30133d9a2d1ce5a6e446093a617f3a108055c4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515965"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171826"
 ---
 # <a name="windows-runtime-and-managed-templates-ccli-and-ccx"></a>Windows-Runtime und verwaltete Vorlagen (C++/CLI und C++/CX)
 
@@ -26,7 +26,7 @@ Weitere Informationen zu C++-Standardklassenvorlagen finden Sie unter [Klassenvo
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -34,7 +34,7 @@ Compileroption: `/ZW`
 
 Es gibt einige Einschränkungen für das Erstellen von Klassenvorlagen aus verwalteten Typen, die in den folgenden Codebeispielen veranschaulicht werden.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -130,6 +130,6 @@ template <>
 class A <int> {};
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - Assign method [C++]
 ms.assetid: 2e209bbe-77ca-4598-86d5-6c2ea213f43c
-ms.openlocfilehash: 922c29849361d3a116df32671a2c49ac3b4988fd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 09af33f4ed246c459d5c78d8d23d5316ad9c07c6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396133"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190641"
 ---
-# <a name="bstrtassign"></a>_bstr_t::Assign
+# <a name="_bstr_tassign"></a>_bstr_t::Assign
 
 **Microsoft-spezifisch**
 
-Kopiert ein `BSTR` in die `BSTR` eingebundenes eine **_**`bstr_t`.
+Kopiert eine `BSTR` in die von einem **_** -`bstr_t`umschließende `BSTR`.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,9 +32,9 @@ void Assign(
 *s*<br/>
 Eine `BSTR`, das von einem `BSTR` umschlossen in `_bstr_t` kopiert werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**Weisen Sie** ist eine binäre Kopie, was bedeutet, dass die gesamte Dauer des der `BSTR` wird unabhängig vom Inhalt kopiert.
+**Assign** führt eine binäre Kopie aus. Dies bedeutet, dass die gesamte Länge des `BSTR` unabhängig vom Inhalt kopiert wird.
 
 ## <a name="example"></a>Beispiel
 
@@ -111,6 +111,6 @@ bstrWrapper2 = some text
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_bstr_t-Klasse](../cpp/bstr-t-class.md)

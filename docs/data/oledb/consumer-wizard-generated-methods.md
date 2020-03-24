@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB consumers, wizard-generated classes and methods
 ms.assetid: d80ee51c-8bb3-4dca-8760-5808e0fb47b4
-ms.openlocfilehash: 5d5c7aa680ca6b764e2ee9710e46cf6fa3af1c89
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: ce2442909fd318187a1508300a75ff4f634b3410
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707729"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211509"
 ---
 # <a name="consumer-wizard-generated-methods"></a>Vom Consumer-Assistenten generierte Methoden
 
@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
 }
 ```
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie eine `HasBookmark`-Methode definieren, legt der `OpenAll`-Code die `DBPROP_IRowsetLocate`-Eigenschaft fest. Stellen Sie sicher, dass Sie nur dann so vorgehen, wenn Ihr Anbieter diese Eigenschaft unterstützt.
 
@@ -141,7 +141,7 @@ void GetRowsetProperties(CDBPropSet* pPropSet)
 }
 ```
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Sie sollten keine globale `GetRowsetProperties`-Methode definieren, weil Konflikte mit der vom Assistenten definierten Methode auftreten können. Dies ist eine vom Assistenten generierte Methode, die Sie mit Projekten mit Vorlagen und Attributen erhalten. Die Attribute fügen diesen Code nicht ein.
 
@@ -153,12 +153,12 @@ HRESULT OpenDataSource();
 void CloseDataSource();
 ```
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Der Assistent definiert die Methoden `OpenDataSource` und `CloseDataSource`; `OpenDataSource` ruft [CDataSource::OpenFromInitializationString](../../data/oledb/cdatasource-openfrominitializationstring.md) auf.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen eines OLE DB-Consumers mit einem Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)

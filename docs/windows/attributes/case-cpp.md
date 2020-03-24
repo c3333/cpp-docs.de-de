@@ -1,21 +1,21 @@
 ---
-title: Fall (C++-COM-Attribut)
+title: Case (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.case
 helpviewer_keywords:
 - case attribute
 ms.assetid: 6fb883c3-0526-4932-a901-b4564dcaeb7d
-ms.openlocfilehash: b3058f2fe6f35e1b11d4790780cb0fcdcaada706
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: da72fff3bb600b5db2fba0ecdfe9c6a768836f3c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62148435"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167335"
 ---
 # <a name="case-c"></a>case (C++)
 
-Verwendung der [Switch_type](switch-type.md) -Attribut in einer **Union**.
+Wird mit dem [Switch_type](switch-type.md) -Attribut in einer **Union**verwendet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,7 +26,7 @@ Verwendung der [Switch_type](switch-type.md) -Attribut in einer **Union**.
 #### <a name="parameters"></a>Parameter
 
 *value*<br/>
-Geben Sie ein möglicher Wert für die Sie verarbeiten möchten. Der Typ des **Wert** kann eine der folgenden Typen:
+Ein möglicher Eingabe Wert, für den Sie die Verarbeitung bereitstellen möchten. Der **Werttyp** kann einer der folgenden Typen sein:
 
 - `int`
 
@@ -36,15 +36,15 @@ Geben Sie ein möglicher Wert für die Sie verarbeiten möchten. Der Typ des **W
 
 - `enum`
 
-oder ein Bezeichner eines solchen Typs.
+oder einen Bezeichner eines solchen Typs.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Fall** C++-Attribut hat die gleiche Funktionalität wie die **Fall** MIDL-Attribut. Dieses Attribut wird nur verwendet, mit der [Switch_type](switch-type.md) Attribut.
+Das **Case** C++ -Attribut verfügt über die gleiche Funktionalität wie das Mittel l-Attribut für den **Fall** . Dieses Attribut wird nur mit dem [Switch_type](switch-type.md) -Attribut verwendet.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code veranschaulicht die Verwendung der der **Fall** Attribut:
+Der folgende Code zeigt die Verwendung des **Case** -Attributs:
 
 ```cpp
 // cpp_attr_ref_case.cpp
@@ -63,20 +63,20 @@ struct SizedValue2 {
 [module(name="ATLFIRELib")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|Mitglied einer **Klasse** oder **Struktur**|
+|**Betrifft**|Member einer **Klasse** oder **Struktur**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

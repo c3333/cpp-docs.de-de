@@ -24,12 +24,12 @@ helpviewer_keywords:
 - portability [C++], character sets
 - MBCS [C++], international programming
 ms.assetid: a1bb27ac-abe5-4c6b-867d-f761d4b93205
-ms.openlocfilehash: c6083fcf9db8236df15d1cb5e7de4cc15fe5916e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 80b7139996fddc82b206828d4a036922fa1446d5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411798"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167601"
 ---
 # <a name="text-and-strings-in-visual-c"></a>Text und Zeichenfolgen in Visual C++
 
@@ -43,7 +43,7 @@ Beschreibt die Visual C++-Unterstützung für Unicode und MBCS-Programmierung.
 [Unterstützung für Unicode](../text/support-for-unicode.md)<br/>
 Beschreibt Unicode, eine Spezifikation zur Unterstützung sämtlicher Zeichensätze, einschließlich Zeichensätzen, zu deren Darstellung mehr als ein Byte erforderlich ist.
 
-[Unterstützung von Mehrbyte-Zeichensätzen (MBCS)](../text/support-for-multibyte-character-sets-mbcss.md)<br/>
+[Unterstützung für Multibyte-Zeichensätze (MBCS)](../text/support-for-multibyte-character-sets-mbcss.md)<br/>
 Beschreibt MBCS, eine Alternative zu Unicode für die Unterstützung von Zeichensätzen, die nicht mit einem Byte pro Zeichen dargestellt werden können, z. B. Japanisch und Chinesisch.
 
 [Zuordnungen für generischen Text in tchar.h](../text/generic-text-mappings-in-tchar-h.md)<br/>
@@ -57,7 +57,7 @@ Veranschaulicht, wie verschiedene Visual C++-Zeichenfolgentypen in andere Zeich
 [Internationalisierung](../c-runtime-library/internationalization.md)<br/>
 Beschreibt die internationale Unterstützung in der C-Laufzeitbibliothek.
 
-[Internationale Beispiele](https://github.com/Microsoft/VCSamples)<br/>
+[Internationale Beispiele](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/International)<br/>
 Enthält Verknüpfungen mit Beispielen, die die Internationalisierung in Visual C++ demonstrieren.
 
 [Zeichenfolgen in Sprach- und Länder-/Regionseinstellungen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)<br/>

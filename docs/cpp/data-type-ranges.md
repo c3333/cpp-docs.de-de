@@ -35,12 +35,12 @@ helpviewer_keywords:
 - long int keyword [C++]
 - unsigned long int [C++]
 ms.assetid: 3691ceca-05fb-4b82-b1ae-5c4618cda91a
-ms.openlocfilehash: 43eb5f34bc587e3ce86532c56d393da3e07c1b03
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 8b4031eccccb432342790fef4da809542e77d669
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301560"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180263"
 ---
 # <a name="data-type-ranges"></a>Datentypbereiche
 
@@ -66,32 +66,32 @@ Wenn der Name mit zwei Unterstrichen (`__`) beginnt, handelt es sich um einen ni
 
 Die Bereiche, die in der folgenden Tabelle angegeben werden, sind "inclusive-inclusive".
 
-|Typname|Bytes|Andere Namen|Wertebereich|
+|Typname|Byte|Andere Namen|Wertebereich|
 |---------------|-----------|-----------------|---------------------|
-|**int**|4|**signed**|-2,147,483,648 bis 2,147,483,647|
+|**int**|4|**signed**|-2.147.483.648 bis 2.147.483.647|
 |**unsigned int**|4|**unsigned**|0 bis 4.294.967.295|
 |**__int8**|1|**char**|–128 bis 127|
 |**nicht signierte __int8**|1|**unsigned char**|0 bis 255|
-|**__int16**|2|**Short**, **short int**, **Signed short int**|–32.768 bis 32.767|
+|**__int16**|2|**Short**, **short int**, **Signed short int**|-32.768 bis 32.767|
 |**nicht signierte __int16**|2|**Ganzzahl ohne Vorzeichen Short**, **Ganzzahl ohne Vorzeichen short int**|0 bis 65.535|
-|**__int32**|4|**Signed**, **signed int**, **int**|-2,147,483,648 bis 2,147,483,647|
+|**__int32**|4|**Signed**, **signed int**, **int**|-2.147.483.648 bis 2.147.483.647|
 |**nicht signierte __int32**|4|**Ganzzahl ohne Vorzeichen**, **Ganzzahl ohne Vorzeichen int**|0 bis 4.294.967.295|
-|**__int64**|8|**Long Long**, **Signed Long Long**|-9,223,372,036,854,775,808 bis 9,223,372,036,854,775,807|
+|**__int64**|8|**Long Long**, **Signed Long Long**|-9.223.372.036.854.775.808 bis 9.223.372.036.854.775.807|
 |**__int64 ohne Vorzeichen**|8|**Ganzzahl ohne Vorzeichen long long**|0 bis 18.446.744.073.709.551.615|
-|**bool**|1|Keine|**false** oder **true**|
-|**char**|1|Keine|-128 bis 127 standardmäßig<br /><br /> 0 bis 255, falls mithilfe von [/J](../build/reference/j-default-char-type-is-unsigned.md)kompiliert|
-|**signed char**|1|Keine|–128 bis 127|
-|**unsigned char**|1|Keine|0 bis 255|
-|**short**|2|**short int**, **Signed short int**|–32.768 bis 32.767|
+|**bool**|1|none|**false** oder **true**|
+|**char**|1|none|-128 bis 127 standardmäßig<br /><br /> 0 bis 255, falls mithilfe von [/J](../build/reference/j-default-char-type-is-unsigned.md) kompiliert|
+|**signed char**|1|none|–128 bis 127|
+|**unsigned char**|1|none|0 bis 255|
+|**short**|2|**short int**, **Signed short int**|-32.768 bis 32.767|
 |**unsigned short**|2|**unsigned short int**|0 bis 65.535|
-|**long**|4|**long int**, **Signed long int**|-2,147,483,648 bis 2,147,483,647|
+|**long**|4|**long int**, **Signed long int**|-2.147.483.648 bis 2.147.483.647|
 |**unsigned long**|4|**unsigned long int**|0 bis 4.294.967.295|
-|**langes long**|8|None (jedoch Äquivalent zu **__int64**)|-9,223,372,036,854,775,808 bis 9,223,372,036,854,775,807|
+|**langes long**|8|None (jedoch Äquivalent zu **__int64**)|-9.223.372.036.854.775.808 bis 9.223.372.036.854.775.807|
 |**Ganzzahl ohne Vorzeichen long long**|8|None (jedoch Äquivalent zu **Ganzzahl ohne Vorzeichen __int64**)|0 bis 18.446.744.073.709.551.615|
-|**enum**|varies|Keine| |
-|**float**|4|Keine|3.4E +/- 38 (7 Stellen)|
-|**double**|8|Keine|1.7E +/- 308 (15 Stellen)|
-|**long double**|identisch mit **Double**|Keine|Identisch mit **Double**|
+|**enum**|Variiert|none| |
+|**float**|4|none|3.4E +/- 38 (7 Stellen)|
+|**double**|8|none|1.7E +/- 308 (15 Stellen)|
+|**long double**|identisch mit **Double**|none|identisch mit **Double**|
 |**wchar_t**|2|**__wchar_t**|0 bis 65.535|
 
 Abhängig von der verwendeten Verwendung gibt eine Variable von **__wchar_t** entweder einen breit Zeichentyp oder einen Multibyte-Zeichentyp an. Verwenden Sie das Präfix `L` vor einem Zeichen oder einer Zeichenfolgenkonstante, um eine Breitzeichenkonstante festzulegen.
@@ -106,7 +106,7 @@ Weitere Informationen zu den Einschränkungen der einzelnen Typen finden Sie unt
 
 Der Bereich von Enumerationstypen variiert je nach Sprachkontext und angegebenen Compilerflags. Weitere Informationen finden Sie unter [C Enumeration Declarations (C-Enumerationsdeklarationen)](../c-language/c-enumeration-declarations.md) und [Enumerations (Enumerationen)](../cpp/enumerations-cpp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Integrierte Typen](../cpp/fundamental-types-cpp.md)

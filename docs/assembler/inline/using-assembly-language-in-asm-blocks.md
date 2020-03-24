@@ -6,18 +6,18 @@ helpviewer_keywords:
 - assembly language [C++]
 - __asm keyword [C++], assembly language in
 ms.assetid: ad699356-1d16-4984-871f-c5fd7797c1fb
-ms.openlocfilehash: e2da242bf22b8b01a315d5bb09498764b54e1504
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e5c7c9274ab5b75efa007fd96fc00d80bd53426e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166567"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169122"
 ---
-# <a name="using-assembly-language-in-asm-blocks"></a>Verwenden der Assemblysprache in __asm-Blöcken
+# <a name="using-assembly-language-in-__asm-blocks"></a>Verwenden der Assemblysprache in __asm-Blöcken
 
 **Microsoft-spezifisch**
 
-Der Inlineassembler von wurde einiges mit anderen Assembler. Es akzeptiert z. B. einen Ausdruck, der in MASM zulässig ist. In diesem Abschnitt wird beschrieben, die Verwendung der Assemblysprache in `__asm` Blöcke.
+Der Inline Assembler hat viel gemeinsam mit anderen Assemblern. Er akzeptiert z. b. jeden Ausdruck, der in MASM zulässig ist. In diesem Abschnitt wird die Verwendung von Funktionen für die Assemblysprache in `__asm`-Blöcken beschrieben.
 
 ## <a name="what-do-you-want-to-know-more-about"></a>Worüber möchten Sie mehr erfahren?
 
@@ -37,7 +37,7 @@ Der Inlineassembler von wurde einiges mit anderen Assembler. Es akzeptiert z. B.
 
 - [Assemblysprachenkommentare](../../assembler/inline/assembly-language-comments.md)
 
-- [Die _emit-Pseudoanweisung](../../assembler/inline/emit-pseudoinstruction.md)
+- [Der _emit Pseudoinstruction](../../assembler/inline/emit-pseudoinstruction.md)
 
 - [Debuggen und Listen für die Inlineassembly](../../assembler/inline/debugging-and-listings-for-inline-assembly.md)
 
@@ -45,6 +45,6 @@ Der Inlineassembler von wurde einiges mit anderen Assembler. Es akzeptiert z. B.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C2129
 ms.assetid: 21a8223e-1d22-4baa-9ca1-922b7f751dd0
-ms.openlocfilehash: e55107419235420d272c738e9d8ef7cf277c11c9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a3e2268bfc5597668e8689d093a0c2bb7f18e037
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397626"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207284"
 ---
 # <a name="compiler-error-c2129"></a>Compilerfehler C2129
 
-statische Funktion 'Funktion' deklariert, aber nicht definiert
+die statische Funktion "Function" wurde deklariert, aber nicht definiert.
 
-Ein Vorwärtsverweis wird versucht, eine `static` -Funktion, die nicht definiert ist.
+Ein vorwärts Verweis erfolgt auf eine `static` Funktion, die nie definiert ist.
 
-Ein `static` -Funktion im Dateibereich definiert werden muss. Wenn die Funktion in einer anderen Datei definiert ist, muss diese deklariert werden `extern`.
+Eine `static` Funktion muss im Datei Gültigkeitsbereich definiert werden. Wenn die Funktion in einer anderen Datei definiert ist, muss Sie als `extern`deklariert werden.

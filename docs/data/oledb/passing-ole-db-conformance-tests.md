@@ -8,27 +8,27 @@ helpviewer_keywords:
 - conformance testing [OLE DB]
 - OLE DB providers, testing
 ms.assetid: d1a4f147-2edd-476c-b452-0e6a0ac09891
-ms.openlocfilehash: 9f78b16bc30651560137a39286460a8e5ceccd40
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: eda4dccda147ddd4776bb56e649f539a7550abd1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282815"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209772"
 ---
 # <a name="passing-ole-db-conformance-tests"></a>Erfolgreiche Durchführung der OLE DB-Konformitätstests
 
-Um Anbieter konsistenter zu machen, bietet der Data Access SDK einen Satz von OLE DB-Konformitätstests. Die Tests überprüfen Sie alle Aspekte des Anbieters ein, und geben Ihnen die Sicherheit, die der Anbieter erwartungsgemäß funktioniert. Der OLE DB-Konformitätstests finden Sie auf der Microsoft Data Access SDK. Dieser Abschnitt konzentriert sich auf Dinge, die Sie tun sollten, um die Konformitätstests besteht. Informationen zum Ausführen der OLE DB-Konformitätstests finden Sie im SDK.
+Damit die Anbieter konfizierer werden, stellt das Datenzugriffs-SDK eine Reihe von OLE DB Konformitätstests bereit. Die Tests überprüfen alle Aspekte Ihres Anbieters und Gewährleistung, dass Ihr Anbieter erwartungsgemäß funktioniert. Die OLE DB Konformitätstests finden Sie im Microsoft Data Access SDK. Dieser Abschnitt konzentriert sich auf Dinge, die Sie tun sollten, um die Konformitätstests zu bestehen. Weitere Informationen zum Ausführen der OLE DB Konformitätstests finden Sie im SDK.
 
-## <a name="running-the-conformance-tests"></a>Ausführen der Konformitätstests
+## <a name="running-the-conformance-tests"></a>Ausführen der Konformitäts Tests
 
-In Visual C++ 6.0 hinzugefügt, die OLE DB-Anbietervorlagen eine Reihe von hooking Funktionen, die Ihnen ermöglichen, Werte und Eigenschaften zu überprüfen. Die meisten dieser Funktionen wurden als Reaktion auf die Konformitätstests hinzugefügt.
+In Visual C++ 6,0 haben die OLE DB Anbieter Vorlagen eine Reihe von Verknüpfungen hinzugefügt, mit denen Sie Werte und Eigenschaften überprüfen können. Die meisten dieser Funktionen wurden als Reaktion auf die Konformitätstests hinzugefügt.
 
 > [!NOTE]
-> Sie müssen mehrere Validierungsfunktionen für Ihren Anbieter, um die OLE DB-Konformitätstests besteht hinzufügen.
+> Sie müssen mehrere Validierungs Funktionen für Ihren Anbieter hinzufügen, um die OLE DB Konformitätstests zu übergeben.
 
-Der Anbieter erfordert zwei Überprüfungsroutinen. Die erste Routine, `CRowsetImpl::ValidateCommandID`, ist Teil der Rowsetklasse. Es wird während der Erstellung des Rowsets von die Anbietervorlagen aufgerufen werden. Das Beispiel verwendet diese Routine, um Consumern mitzuteilen, dass sie die Indizes nicht unterstützt. Der erste Aufruf `CRowsetImpl::ValidateCommandID` (Beachten Sie, die der Anbieter verwendet die `_RowsetBaseClass` Typedef, die hinzugefügt werden, in die schnittstellenzuordnung für `CCustomRowset` in [Anbieterunterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md), sodass Sie keine, lange Zeile in der Vorlage eingeben (Argumente). Als Nächstes zurückgegeben Sie DB_E_NOINDEX, wenn der Indexparameter nicht NULL ist, (was darauf hinweist, dass der Consumer einen Index verwenden möchte). Weitere Informationen zu den Befehls-IDs finden Sie in der OLE DB-Spezifikation, und suchen Sie nach `IOpenRowset::OpenRowset`.
+Dieser Anbieter erfordert zwei Validierungs Routinen. Die erste Routine, `CRowsetImpl::ValidateCommandID`, ist Teil der Rowsetklasse. Sie wird beim Erstellen des Rowsets durch die Anbieter Vorlagen aufgerufen. Das Beispiel verwendet diese Routine, um Consumer mitzuteilen, dass Sie keine Indizes unterstützt. Der erste Rückruf besteht darin, `CRowsetImpl::ValidateCommandID` (Beachten Sie, dass der Anbieter die `_RowsetBaseClass` typedef verwendet, die in der Schnittstellen Zuordnung für `CCustomRowset` in der [Anbieter Unterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md)hinzugefügt wurde, sodass Sie diese lange Zeile von Vorlagen Argumenten nicht eingeben müssen). Geben Sie als nächstes DB_E_NOINDEX zurück, wenn der Index Parameter nicht NULL ist (Dies deutet darauf hin, dass der Consumer einen Index für uns verwenden möchte). Weitere Informationen zu Befehls-IDs finden Sie in der OLE DB Spezifikation und untersuchen nach `IOpenRowset::OpenRowset`.
 
-Der folgende Code ist die `ValidateCommandID` Validierungsroutine:
+Der folgende Code stellt die `ValidateCommandID` Validierungs Routine dar:
 
 ```cpp
 /////////////////////////////////////////////////////////////////////
@@ -48,12 +48,12 @@ HRESULT ValidateCommandID(DBID* pTableID, DBID* pIndexID)
 }
 ```
 
-Die Anbietervorlagen rufen die `OnPropertyChanged` -Methode auf, wenn jemand eine Eigenschaft in der DBPROPSET_ROWSET-Gruppe ändert. Sollten Sie die Eigenschaften für andere Gruppen zu behandeln, fügen Sie sie in das entsprechende Objekt (DBPROPSET_SESSION-Überprüfungen, also zu wechseln, der `CCustomSession` Klasse).
+Die Anbieter Vorlagen wenden die `OnPropertyChanged`-Methode immer dann an, wenn jemand eine Eigenschaft in der DBPROPSET_ROWSET Gruppe ändert. Wenn Sie Eigenschaften für andere Gruppen behandeln möchten, fügen Sie diese dem entsprechenden Objekt hinzu (d. h. DBPROPSET_SESSION Überprüfungen in der `CCustomSession`-Klasse).
 
-Der Code überprüft zuerst, um festzustellen, ob die Eigenschaft auf einen anderen verknüpft ist. Wenn die Eigenschaft verkettet ist, wird die Eigenschaft DBPROP_BOOKMARKS auf `True`. Anhang C der OLE DB-Spezifikation enthält Informationen zu Eigenschaften. Diese Informationen darüber hinaus erfahren Sie, ob die Eigenschaft auf einen anderen verkettet ist.
+Der Code prüft zunächst, ob die-Eigenschaft mit einer anderen verknüpft ist. Wenn die Eigenschaft verkettet wird, wird die DBPROP_BOOKMARKS-Eigenschaft auf `True`festgelegt. Anhang C der OLE DB Spezifikation enthält Informationen zu Eigenschaften. Diese Informationen zeigen auch, ob die-Eigenschaft mit einer anderen verkettet ist.
 
-Sie können auch hinzufügen möchten die `IsValidValue` routinemäßige an Ihrem Code. Der Aufruf Vorlagen `IsValidValue` beim Versuch, eine Eigenschaft festzulegen. Sie würden diese Methode überschreiben, wenn eine zusätzliche Verarbeitung erforderlich ist, wenn Sie einen Eigenschaftswert festlegen. Sie können eine dieser Methoden für jeden Eigenschaftensatz verwenden.
+Möglicherweise möchten Sie dem Code auch die `IsValidValue` Routine hinzufügen. Der Vorlagen Rückruf `IsValidValue`, wenn versucht wird, eine Eigenschaft festzulegen. Sie würden diese Methode überschreiben, wenn Sie zusätzliche Verarbeitungsschritte benötigen, wenn Sie einen Eigenschafts Wert festlegen. Sie können eine dieser Methoden für jeden Eigenschaften Satz festlegen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweiterte Anbietertechniken](../../data/oledb/advanced-provider-techniques.md)

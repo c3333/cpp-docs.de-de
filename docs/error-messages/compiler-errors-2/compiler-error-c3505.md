@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - C3505
 ms.assetid: ed73c99e-93a1-4f3a-bac7-ba7ed5d836e4
-ms.openlocfilehash: 5730102371d00ebaf3ae05fdefb70184b58d7c18
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0c67eb46208c35c1b11a74898107ad3c0e6e570d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400330"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200849"
 ---
 # <a name="compiler-error-c3505"></a>Compilerfehler C3505
 
-> Typbibliothek kann nicht geladen werden kann '*Guid*"
+> die Typbibliothek "*GUID*" kann nicht geladen werden.
 
-C3505 kann verursacht werden, wenn Sie die 32-Bit, X86 gehostete-Cross-Compiler für 64-Bit-Version ausführen, X64 Ziele auf einem 64-Bit-Computer, da der Compiler unter WOW64 ausgeführt wird, und können nur aus der 32-Bit-Registrierungsstruktur lesen.
+C3505 kann verursacht werden, wenn Sie den 32-Bit-, x86-gehosteten Cross-Compiler für 64-Bit x64-Ziele auf einem 64-Bit-Computer ausführen, da der Compiler unter WOW64 ausgeführt wird und nur aus der 32-Bit-Registrierungs Struktur gelesen werden kann.
 
-Sie können diesen Fehler beheben, durch das Erstellen von 32-Bit- und 64-Bit-Versionen der Typbibliothek, die Sie importieren möchten, und registrieren Sie sie beide.  Sie können auch den systemeigenen 64-Bit-Compiler, der ändern, muss Ihre **VC++-Verzeichnisse** Eigenschaft in der IDE, um auf die 64-Bit-Compiler zu verweisen.
+Sie können diesen Fehler beheben, indem Sie sowohl 32-Bit-als auch 64-Bit-Versionen der Typbibliothek, die Sie importieren möchten, sowie beide registrieren.  Oder Sie können den systemeigenen 64-Bit-Compiler verwenden, bei dem Sie die Eigenschaft " **VC + +-Verzeichnisse** " in der IDE ändern müssen, um auf den 64-Bit-Compiler zu verweisen.
 
 Weitere Informationen finden Sie unter
 
-- [Vorgehensweise: Aktivieren eines 64-Bit-Visual C++-Toolsets über die Befehlszeile](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)
+- [Vorgehensweise: Aktivieren eines 64-Bit-Visual C++-Toolsets auf der Befehlszeile](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)
 
-- [Vorgehensweise: Konfigurieren von Visual C++-Projekten für 64-Bit-Zielplattformen (x64)](../../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)
+- [Vorgehensweise: Konfigurieren von Visual C++-Projekten für 64-Bit-x64-Zielplattformen](../../build/how-to-configure-visual-cpp-projects-to-target-64-bit-platforms.md)

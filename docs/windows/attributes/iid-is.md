@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - iid_is attribute
 ms.assetid: 2f9b42a9-7130-4b08-9b1e-0d5d360e10ff
-ms.openlocfilehash: 8bfa20f55afd85019795fdd40548158c2f49e126
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 627ecff4835386dc70a9f3dfac0500404a84eefe
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514659"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167991"
 ---
 # <a name="iid_is"></a>iid_is
 
@@ -28,9 +28,9 @@ Gibt die IID der COM-Schnittstelle an, auf die durch einen Schnittstellen Zeiger
 *expression*<br/>
 Ein C-sprach Ausdruck, der eine IID einer COM-Schnittstelle angibt, auf die von einem Schnittstellen Zeiger gezeigt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **iid_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [iid_is](/windows/win32/Midl/iid-is) -Mittell-Attribut.
+Das **iid_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [iid_is](/windows/win32/Midl/iid-is) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -51,7 +51,7 @@ __interface IFireTabCtrl : IDispatch
 [module(name="ATLFIRELib")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -59,12 +59,12 @@ __interface IFireTabCtrl : IDispatch
 |-|-|
 |**Betrifft**|Schnittstellenparameter, Datenmember|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)

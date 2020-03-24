@@ -2,12 +2,12 @@
 title: Signatur ändern
 ms.date: 11/16/2016
 ms.assetid: 8daaa060-7305-4035-99d2-8b460b4f4454
-ms.openlocfilehash: ec42fd00ecf48fb700042f02543e3fe194fe6975
-ms.sourcegitcommit: 7c05ebd2c75e9326fe774e95cbce7f150ba2eeba
-ms.translationtype: HT
+ms.openlocfilehash: 1599a7900e33db61994ea75581f9d87b1aee83f9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52281947"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171904"
 ---
 # <a name="change-signature"></a>Signatur ändern
 
@@ -17,7 +17,7 @@ ms.locfileid: "52281947"
 
 **Grund:** Sie können diese Parameter eigenhändig manuell ändern und dann alle Aufrufe dieser Funktion suchen und nacheinander ändern, was jedoch zu Fehlern führen kann.  Bei diesem Refactoringtool wird der Task automatisch ausgeführt.
 
-**Vorgehensweise**:
+**Anwendung:**
 
 1. Platzieren Sie Ihren Text oder Mauszeiger auf dem Namen der zu ändernden Methode oder auf einer deren Verwendungen:
 
@@ -26,7 +26,7 @@ ms.locfileid: "52281947"
 1. Führen Sie dann eine der folgenden Aktionen aus:
    * **Tastatur**
      * Drücken Sie **STRG+R** und dann **STRG+O**.  (Beachten Sie, dass Ihre Tastenkombination je nach dem gewählten Profil möglicherweise abweicht.)
-     * Drücken Sie **STRG+.**, um das Menü **Schnellaktionen und Refactorings** aufzurufen, und klicken Sie im Kontextmenü auf **Signatur ändern**.
+     * Drücken Sie **STRG+.** , um das Menü **Schnellaktionen und Refactorings** aufzurufen, und klicken Sie im Kontextmenü auf **Signatur ändern**.
    * **Maus**
      * Wählen Sie **Bearbeiten > Umgestalten > Parameter neu anordnen** aus.
      * Klicken Sie mit der rechten Maustaste auf den Code, und klicken Sie auf das Menü **Schnellaktionen und Refactorings**, klicken Sie dann im Kontextmenü auf **Signatur ändern**.
@@ -35,12 +35,12 @@ ms.locfileid: "52281947"
 
    ![Dialogfeld „Signatur ändern“](images/changesignature_dialog.png)
 
-   | Schaltfläche | Beschreibung 
+   | Taste | BESCHREIBUNG
    | ------ | ---
    | **Nach oben/unten**    | Den ausgewählten Parameter in der Liste nach oben oder nach unten verschieben
-   | **Add**        | Einen neuen Parameter zur Liste hinzufügen
-   | **Entfernen**     | Den ausgewählten Parameter aus der Liste entfernen
-   | **Ändern**     | Ändern Sie den Typ und Namen des ausgewählten Parameters, und geben Sie an, ob er optional ist und was sein eingefügter Wert wäre
+   | **Add (Hinzufügen)**        | Einen neuen Parameter zur Liste hinzufügen
+   | **Remove**     | Den ausgewählten Parameter aus der Liste entfernen
+   | **Modify**     | Ändern Sie den Typ und Namen des ausgewählten Parameters, und geben Sie an, ob er optional ist und was sein eingefügter Wert wäre
    | **Zurücksetzen**     | Den ursprünglichen Zustand des ausgewählten Parameters wiederherstellen
    | **Alle zurücksetzen** | Den ursprünglichen Zustand aller Parameter wiederherstellen
 
@@ -53,9 +53,9 @@ ms.locfileid: "52281947"
 
    Hier stehen Ihnen folgende Optionen zur Verfügung:
 
-   | Eingabe | Beschreibung 
+   | Eintrag | BESCHREIBUNG
    | ----- | ---
-   | **Type**               | Der Typ des Parameters (int, double, float usw.)
+   | **Typ**               | Der Typ des Parameters (int, double, float usw.)
    | **Name**               | Der Name des Parameters
    | **Optionaler Parameter** | Legt fest, dass der Parameter optional angegeben wird
    | **Eingefügter Wert**     | Der Wert, der in alle Aufrufe der Funktion eingefügt wird, für die der Parameter nicht angegeben wird (nur für **Hinzufügen** gültig)

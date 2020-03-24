@@ -4,20 +4,20 @@ ms.date: 05/07/2019
 helpviewer_keywords:
 - event handling [C++]
 ms.assetid: e4b9219a-15d8-42fb-83c8-6d2e4e087c8d
-ms.openlocfilehash: 9eb0334e3633921842fcc06155ba0300ff6192e1
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: cc9265cd3f9f400e2880405019e4d2c9a934f10a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222187"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180081"
 ---
 # <a name="event-handling-in-native-c"></a>Ereignisbehandlung in systemeigenem C++
 
-In systemeigenen C++ Ereignisbehandlung müssen Sie eine Ereignisquelle und einen Ereignisempfänger mithilfe der [Event_source](../windows/attributes/event-source.md) und [Event_receiver](../windows/attributes/event-receiver.md) -Attribute angeben `type` =`native`. Diese Attribute ermöglichen es den Klassen, auf die sie angewendet werden, in einem systemeigenen Nicht-COM-Kontext Ereignisse auszulösen und Ereignisse zu behandeln.
+Bei der C++ nativen Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der Attribute " [event_source](../windows/attributes/event-source.md) " und " [event_receiver](../windows/attributes/event-receiver.md) " ein, wobei Sie `type`=`native`angeben. Diese Attribute ermöglichen es den Klassen, auf die sie angewendet werden, in einem systemeigenen Nicht-COM-Kontext Ereignisse auszulösen und Ereignisse zu behandeln.
 
 ## <a name="declaring-events"></a>Deklarieren von Ereignissen
 
-In einer ereignisquellklasse verwenden die [__event](../cpp/event.md) Schlüsselwort in einer Methodendeklaration, um die Methode als ein Ereignis zu deklarieren. Stellen Sie sicher, dass Sie die Methode deklarieren, aber nicht definieren. Andernfalls wird ein Compilerfehler verursacht, da der Compiler die Methode implizit definiert, wenn er in einem Ereignis ausgeführt wird. Systemeigene Ereignisse können Methoden mit null oder mehr Parametern sein. Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
+Verwenden Sie in einer Ereignis Quell Klasse das [__event](../cpp/event.md) -Schlüsselwort in einer Methoden Deklaration, um die Methode als Ereignis zu deklarieren. Stellen Sie sicher, dass Sie die Methode deklarieren, aber nicht definieren. Andernfalls wird ein Compilerfehler verursacht, da der Compiler die Methode implizit definiert, wenn er in einem Ereignis ausgeführt wird. Systemeigene Ereignisse können Methoden mit null oder mehr Parametern sein. Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
 
 ## <a name="defining-event-handlers"></a>Definieren von Ereignishandlern
 
@@ -25,7 +25,7 @@ In einer Ereignisempfängerklasse definieren Sie Ereignishandler, die Methoden m
 
 ## <a name="hooking-event-handlers-to-events"></a>Verknüpfen von Ereignishandlern mit Ereignissen
 
-In einer Ereignisempfängerklasse, verwenden Sie auch die intrinsische Funktion [__hook](../cpp/hook.md) um Ereignisse Ereignishandlern zuzuordnen und [__unhook](../cpp/unhook.md) um Ereignisse von Ereignishandlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
+Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion [__hook](../cpp/hook.md) , um Ereignisse mit Ereignis Handlern und [__unhook](../cpp/unhook.md) zuzuordnen, um Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
 
 ## <a name="firing-events"></a>Auslösen von Ereignissen
 
@@ -88,6 +88,6 @@ MyHandler2 was called with value 123.
 MyHandler1 was called with value 123.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ereignisbehandlung](../cpp/event-handling.md)

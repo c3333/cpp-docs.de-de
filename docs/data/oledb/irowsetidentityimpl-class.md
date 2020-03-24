@@ -13,12 +13,12 @@ helpviewer_keywords:
 - IRowsetIdentityImpl class
 - IsSameRow method
 ms.assetid: 56821edf-e045-40c8-96bd-231552cd5799
-ms.openlocfilehash: 3e8c976fcb23bf41d88d88be3887db4dde52379d
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 20f558099c02d7de8a20b3cf631812b44a742a48
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545894"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210405"
 ---
 # <a name="irowsetidentityimpl-class"></a>IRowsetIdentityImpl-Klasse
 
@@ -40,11 +40,11 @@ Eine von `IRowsetIdentityImpl`abgeleitete Klasse.
 *RowClass*<br/>
 Die Speichereinheit für die `HROW`.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -67,11 +67,11 @@ STDMETHOD(IsSameRow )(HROW hThisRow,
 
 Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [irowsee tidentity:: IsSameRow](/previous-versions/windows/desktop/ms719629(v=vs.85)) .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zum Vergleichen von Zeilen Handles wandelt diese Methode die `HROW` Handles in `RowClass` Member um und ruft `memcmp` auf den Zeigern auf.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

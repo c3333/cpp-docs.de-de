@@ -12,16 +12,16 @@ helpviewer_keywords:
 - IDBCreateSessionImpl class
 - CreateSession method
 ms.assetid: 48c02c5c-8362-45ac-af8e-bb119cf8c5c7
-ms.openlocfilehash: ae59abc542a4599d289c099801fc34d56b2b13d4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cff1ca374c9489cb9c5df0dad153c4bf7a4cbc9e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409160"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210781"
 ---
 # <a name="idbcreatesessionimpl-class"></a>IDBCreateSessionImpl-Klasse
 
-Stellt eine Implementierung für die [IDBCreateSession](/previous-versions/windows/desktop/ms724076(v=vs.85)) Schnittstelle.
+Stellt eine Implementierung für die [idbkreatesession](/previous-versions/windows/desktop/ms724076(v=vs.85)) -Schnittstelle bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,30 +34,30 @@ class ATL_NO_VTABLE IDBCreateSessionImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-DER KLASSE ABGELEITET
+Ihre Klasse, abgeleitet von
 
-*SessionClass*<br/>
-Der Session-Objekt.
+*Sessionclass*<br/>
+Das Sitzungs Objekt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
 |||
 |-|-|
-|[CreateSession](#createsession)|Erstellt eine neue Sitzung über das Datenquellenobjekt, und gibt die angeforderte Schnittstelle zurück, auf die neu erstellte Sitzung.|
+|[CreateSession](#createsession)|Erstellt eine neue Sitzung aus dem Datenquellen Objekt und gibt die angeforderte Schnittstelle für die neu erstellte Sitzung zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine erforderliche Schnittstelle für Datenquellenobjekte.
+Eine erforderliche Schnittstelle für Datenquellen Objekte.
 
-## <a name="createsession"></a> IDBCreateSessionImpl::CreateSession
+## <a name="idbcreatesessionimplcreatesession"></a><a name="createsession"></a>Idbkreatesessionimpl:: kreatesession
 
-Erstellt eine neue Sitzung über das Datenquellenobjekt, und gibt die angeforderte Schnittstelle zurück, auf die neu erstellte Sitzung.
+Erstellt eine neue Sitzung aus dem Datenquellen Objekt und gibt die angeforderte Schnittstelle für die neu erstellte Sitzung zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -69,9 +69,9 @@ STDMETHOD(CreateSession)(IUnknown * pUnkOuter,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IDBCreateSession:: CreateSession](/previous-versions/windows/desktop/ms714942(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [idbkreatesession:: erkreatesession](/previous-versions/windows/desktop/ms714942(v=vs.85)) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

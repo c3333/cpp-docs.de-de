@@ -32,16 +32,16 @@ helpviewer_keywords:
 - Hash method
 - m_rgbookmarks
 ms.assetid: a8aa3149-7ce8-4976-a680-2da193fd3234
-ms.openlocfilehash: e3513084697a60a33b9fa2ab02222a9b332cce79
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 06e860425215d9fde268b780c001301b14a1caa1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408841"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210430"
 ---
 # <a name="irowsetlocateimpl-class"></a>IRowsetLocateImpl-Klasse
 
-Implementiert die OLE DB [IRowsetLocate](/previous-versions/windows/desktop/ms721190(v=vs.85)) -Schnittstelle, die beliebige Zeilen aus einem Rowset abruft.
+Implementiert die [IRowsetLocate](/previous-versions/windows/desktop/ms721190(v=vs.85)) -Schnittstelle OLE DB, die beliebige Zeilen aus einem Rowset abruft.
 
 ## <a name="syntax"></a>Syntax
 
@@ -64,58 +64,58 @@ class ATL_NO_VTABLE IRowsetLocateImpl : public IRowsetImpl<
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine abgeleitete Klasse `IRowsetLocateImpl`.
+Eine von `IRowsetLocateImpl`abgeleitete Klasse.
 
 *RowsetInterface*<br/>
-Eine abgeleitete Klasse `IRowsetImpl`.
+Eine von `IRowsetImpl`abgeleitete Klasse.
 
 *RowClass*<br/>
-Die Storage-Einheit für die `HROW`.
+Die Speichereinheit für die `HROW`.
 
-*MapClass*<br/>
-Die Storage-Einheit für alle Zeilenhandles, die vom Anbieter.
+*Mapclass*<br/>
+Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
-*BookmarkKeyType*<br/>
-Der Typ der Wiederaufnahme des Lesezeichens, z. B. einen Long-Wert oder eine Zeichenfolge. Normale Lesezeichen müssen eine Länge von mindestens zwei Bytes. (Single-Byte-Länge ist für den OLE DB reserviert [standard Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85))`DBBMK_FIRST`, `DBBMK_LAST`, und `DBBMK_INVALID`.)
+*Bookmarkkeytype*<br/>
+Der Typ des Lesezeichens, z. b. eine lange oder eine Zeichenfolge. Gewöhnliche Lesezeichen müssen eine Länge von mindestens zwei Bytes aufweisen. (Die Einzel Byte Länge ist für die OLE DB [Standard-Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85))`DBBMK_FIRST`, `DBBMK_LAST`und `DBBMK_INVALID`reserviert.)
 
-*BookmarkType*<br/>
-Der Zuordnungsmechanismus für die Verwaltung von Lesezeichen-to-Data-Beziehungen.
+*Bookmarktype*<br/>
+Der Mapping-Mechanismus zum Verwalten von Lesezeichen-zu-Daten-Beziehungen.
 
-*BookmarkMapClass*<br/>
-Die Storage-Einheit für alle Zeilenhandles, die vom Lesezeichen.
+*Bookmarkmapclass*<br/>
+Die Speichereinheit für alle Zeilen Handles, die vom Lesezeichen gehalten werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**: atldb.h
+**Header**: Atldb. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
 |||
 |-|-|
-|[Compare](#compare)|Vergleicht zwei Lesezeichen.|
-|[GetRowsAt](#getrowsat)|Ruft Zeilen ab der Zeile, in einem Lesezeichen als Offset angegeben ab.|
-|[GetRowsByBookmark](#getrowsbybookmark)|Ruft die Zeilen, die die angegebenen Lesezeichen entsprechen.|
-|[Hash](#hash)|Gibt hash-Werte für den angegebenen Lesezeichen.|
+|[Vergleichen](#compare)|Vergleicht zwei Lesezeichen.|
+|[GetRowsAt](#getrowsat)|Ruft Zeilen ab, beginnend mit der Zeile, die durch einen Offset von einem Lesezeichen angegeben wird.|
+|[GetRowsByBookmark](#getrowsbybookmark)|Ruft die Zeilen ab, die den angegebenen Lesezeichen entsprechen.|
+|[Hash](#hash)|Gibt Hashwerte für die angegebenen Lesezeichen zurück.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
 |[m_rgBookmarks](#rgbookmarks)|Ein Array von Lesezeichen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`IRowsetLocateImpl` ist die Implementierung der OLE DB-Vorlagen von den [IRowsetLocate](/previous-versions/windows/desktop/ms721190(v=vs.85)) Schnittstelle. `IRowsetLocate` wird verwendet, um beliebige Zeilen aus einem Rowset abzurufen. Ein Rowset, das diese Schnittstelle nicht implementiert ist eine `sequential` Rowset. Wenn `IRowsetLocate` vorhanden ist für ein Rowset, ist die Spalte 0 das Lesezeichen für die Zeilen, lesen diese Spalte erhält einen Lesezeichenwert, der mit dem in der gleichen Zeile positioniert werden kann.
+`IRowsetLocateImpl` ist die OLE DB Vorlagen Implementierung der [IRowsetLocate](/previous-versions/windows/desktop/ms721190(v=vs.85)) -Schnittstelle. `IRowsetLocate` wird zum Abrufen beliebiger Zeilen aus einem Rowset verwendet. Ein Rowset, das diese Schnittstelle nicht implementiert, ist ein `sequential` Rowset. Wenn `IRowsetLocate` in einem Rowset vorhanden ist, ist Spalte 0 das Lesezeichen für die Zeilen. beim Lesen dieser Spalte wird ein Lesezeichen Wert abgerufen, der zum Neupositionieren der gleichen Zeile verwendet werden kann.
 
-`IRowsetLocateImpl` wird verwendet, um lesezeichenunterstützung in Anbietern zu implementieren. Lesezeichen sind Platzhalter (Indizes für ein Rowset), mit die den Consumer schnell zu einer Zeile zurückkehren können schnelle Zugriff auf Daten gewährt. Der Anbieter bestimmt, wie Lesezeichen eindeutig können eine Zeile zu identifizieren. Mithilfe von `IRowsetLocateImpl` Methoden, Sie können Lesezeichen vergleichen, Fetch Zeilen durch die Werte für offset, Fetch-Zeilen durch Lesezeichen, und der Hashwerte für Lesezeichen zurückzugeben.
+`IRowsetLocateImpl` wird zum Implementieren von Lesezeichen Unterstützung in Anbietern verwendet. Lesezeichen sind Platzhalter (Indizes für ein Rowset), mit denen der Consumer schnell zu einer Zeile zurückkehren kann, sodass hoch Geschwindigkeits Zugriff auf Daten möglich ist. Der Anbieter bestimmt, welche Lesezeichen eine Zeile eindeutig identifizieren können. Mithilfe `IRowsetLocateImpl` Methoden können Sie Lesezeichen vergleichen, Zeilen nach Offset abrufen, Zeilen nach Lesezeichen abrufen und Hashwerte für Lesezeichen zurückgeben.
 
-Stellen Sie zur Unterstützung von OLE DB-Lesezeichen in einem Rowset, das Rowset, das von dieser Klasse erben.
+Damit OLE DB Lesezeichen in einem Rowset unterstützt werden, müssen Sie das Rowset von dieser Klasse erben.
 
-Informationen zum Implementieren der lesezeichenunterstützung finden Sie unter [-Anbieter unterstützt Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md) in die *Visual C++ Handbuch für Programmierer* und [Lesezeichen](/previous-versions/windows/desktop/ms709728(v=vs.85)) in die *OLE DB-Programmierreferenz* im Platform SDK.
+Weitere Informationen zum Implementieren der Lesezeichen Unterstützung finden Sie unter [Anbieter Unterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md) im *Handbuch des C++ visuellen Programmierers* und [Lesezeichen](/previous-versions/windows/desktop/ms709728(v=vs.85)) in der *OLE DB Programmierer-Referenz* im Platform SDK.
 
-## <a name="compare"></a> IRowsetLocateImpl::Compare
+## <a name="irowsetlocateimplcompare"></a><a name="compare"></a>Irowsetloreseimpl:: Compare
 
 Vergleicht zwei Lesezeichen.
 
@@ -132,25 +132,25 @@ STDMETHOD (Compare )(HCHAPTER /* hReserved */,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetLocate::Compare](/previous-versions/windows/desktop/ms709539(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IRowsetLocate:: Compare](/previous-versions/windows/desktop/ms709539(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine der Lesezeichen können ein Standard werden OLE DB-definierten [standard Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85)) (`DBBMK_FIRST`, `DBBMK_LAST`, oder `DBBMK_INVALID`). Der zurückgegebene Wert in `pComparison` gibt die Beziehung zwischen zwei Lesezeichen:
+Bei beiden Lesezeichen kann es sich um eine standardmäßige OLE DB definierte [Standard-Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85)) (`DBBMK_FIRST`, `DBBMK_LAST`oder `DBBMK_INVALID`) handeln. Der in `pComparison` zurückgegebene Wert gibt die Beziehung zwischen den beiden Lesezeichen an:
 
-- DBCOMPARE_LT (`cbBookmark1` ist, bevor Sie `cbBookmark2`.)
+- DBCOMPARE_LT (`cbBookmark1` ist vor `cbBookmark2`.)
 
-- DBCOMPARE_EQ (`cbBookmark1` gleich `cbBookmark2`.)
+- DBCOMPARE_EQ (`cbBookmark1` ist gleich `cbBookmark2`.)
 
-- DBCOMPARE_GT (`cbBookmark1` ist nach `cbBookmark2`.)
+- DBCOMPARE_GT (`cbBookmark1` nach `cbBookmark2`.)
 
-- DBCOMPARE_NE (Lesezeichen sind gleich und nicht sortiert.)
+- DBCOMPARE_NE (die Lesezeichen sind gleich und nicht geordnet.)
 
-- DBCOMPARE_NOTCOMPARABLE (Lesezeichen können nicht verglichen werden.)
+- DBCOMPARE_NOTCOMPARABLE (die Lesezeichen können nicht verglichen werden.)
 
-## <a name="getrowsat"></a> IRowsetLocateImpl::GetRowsAt
+## <a name="irowsetlocateimplgetrowsat"></a><a name="getrowsat"></a>Irowsetloalisieimpl:: GetRowsAt
 
-Ruft Zeilen ab der Zeile, in einem Lesezeichen als Offset angegeben ab.
+Ruft Zeilen ab, beginnend mit der Zeile, die durch einen Offset von einem Lesezeichen angegeben wird.
 
 ### <a name="syntax"></a>Syntax
 
@@ -167,17 +167,17 @@ STDMETHOD (GetRowsAt )(HWATCHREGION /* hReserved1 */,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IRowsetLocate:: GetRowsAt](/previous-versions/windows/desktop/ms723031(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IRowsetLocate:: GetRowsAt](/previous-versions/windows/desktop/ms723031(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um stattdessen von der Cursorposition bis zu abzurufen, verwenden Sie [IRowset::GetRowsAt](/previous-versions/windows/desktop/ms723031(v=vs.85)).
+Um stattdessen von der Cursorposition abzurufen, verwenden Sie [IRowset:: GetRowsAt](/previous-versions/windows/desktop/ms723031(v=vs.85)).
 
-`IRowsetLocateImpl::GetRowsAt` die Position des Cursors wird nicht geändert werden.
+`IRowsetLocateImpl::GetRowsAt` ändert die Cursorposition nicht.
 
-## <a name="getrowsbybookmark"></a> IRowsetLocateImpl::GetRowsByBookmark
+## <a name="irowsetlocateimplgetrowsbybookmark"></a><a name="getrowsbybookmark"></a>Irowsetloalisieimpl:: GetRowsByBookmark
 
-Ruft eine oder mehrere Zeilen, die die angegebenen Lesezeichen entsprechen.
+Ruft eine oder mehrere Zeilen ab, die den angegebenen Lesezeichen entsprechen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -192,18 +192,18 @@ STDMETHOD (GetRowsByBookmark )(HCHAPTER /* hReserved */,
 
 #### <a name="parameters"></a>Parameter
 
-*hReserved*<br/>
-[in] Entspricht *hChapter* Parameter [IRowsetLocate:: Getrowsbybookmark](/previous-versions/windows/desktop/ms725420(v=vs.85)).
+*hreserved*<br/>
+in Entspricht dem *hChapter* -Parameter für [IRowsetLocate:: GetRowsByBookmark](/previous-versions/windows/desktop/ms725420(v=vs.85)).
 
-Andere Parameter, finden Sie unter [IRowsetLocate:: Getrowsbybookmark](/previous-versions/windows/desktop/ms725420(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Informationen zu anderen Parametern finden Sie unter [IRowsetLocate:: GetRowsByBookmark](/previous-versions/windows/desktop/ms725420(v=vs.85)) in der *OLE DB-Programmier Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Lesezeichen kann ein Wert, die Sie definieren oder eine OLE DB sein [standard Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85)) (`DBBMK_FIRST` oder `DBBMK_LAST`). die Position des Cursors wird nicht geändert werden.
+Bei dem Lesezeichen kann es sich um einen von Ihnen definierten Wert oder um OLE DB [Standard-Lesezeichen](/previous-versions/windows/desktop/ms712954(v=vs.85)) (`DBBMK_FIRST` oder `DBBMK_LAST`) handeln. Die Cursorposition wird nicht geändert.
 
-## <a name="hash"></a> IRowsetLocateImpl::Hash
+## <a name="irowsetlocateimplhash"></a><a name="hash"></a>Irowsetloalisieimpl:: Hash
 
-Gibt hash-Werte für den angegebenen Lesezeichen.
+Gibt Hashwerte für die angegebenen Lesezeichen zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -218,12 +218,12 @@ STDMETHOD (Hash )(HCHAPTER /* hReserved */,
 
 #### <a name="parameters"></a>Parameter
 
-*hReserved*<br/>
-[in] Entspricht *hChapter* Parameter [IRowsetLocate::Hash](/previous-versions/windows/desktop/ms709697(v=vs.85)).
+*hreserved*<br/>
+in Entspricht dem *hChapter* -Parameter für [IRowsetLocate:: Hash](/previous-versions/windows/desktop/ms709697(v=vs.85)).
 
-Andere Parameter, finden Sie unter [IRowsetLocate::Hash](/previous-versions/windows/desktop/ms709697(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Informationen zu anderen Parametern finden Sie unter [IRowsetLocate:: Hash](/previous-versions/windows/desktop/ms709697(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="rgbookmarks"></a> IRowsetLocateImpl::m_rgBookmarks
+## <a name="irowsetlocateimplm_rgbookmarks"></a><a name="rgbookmarks"></a>Irowsetloalisieimpl:: m_rgBookmarks
 
 Ein Array von Lesezeichen.
 
@@ -233,10 +233,10 @@ Ein Array von Lesezeichen.
 CAtlArray<DBROWCOUNT> m_rgBookmarks;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>
-[IRowsetLocate:IRowset](/previous-versions/windows/desktop/ms721190(v=vs.85))
-[Anbieterunterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md)<br/>
-[BTextmarken](/previous-versions/windows/desktop/ms709728(v=vs.85))
+[IRowsetLocate: IRowset](/previous-versions/windows/desktop/ms721190(v=vs.85)) -
+[Anbieter Unterstützung für Lesezeichen](../../data/oledb/provider-support-for-bookmarks.md)<br/>
+[Lesezeichen](/previous-versions/windows/desktop/ms709728(v=vs.85))

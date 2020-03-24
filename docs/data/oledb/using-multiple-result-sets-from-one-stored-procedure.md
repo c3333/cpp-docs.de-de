@@ -5,27 +5,27 @@ helpviewer_keywords:
 - stored procedures, returning result sets
 - multiple result sets
 ms.assetid: c450c12c-a76c-4ae4-9675-071a41eeac05
-ms.openlocfilehash: 69e5c956d897e217501cbac9b9b93db868731221
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6163eb8bf18edfc3d205f1d012de0c64c5570693
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403040"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209286"
 ---
 # <a name="using-multiple-result-sets-from-one-stored-procedure"></a>Verwenden mehrerer Resultsets aus einer gespeicherten Prozedur
 
-Die meisten gespeicherte Prozeduren zurückgeben mehrere Resultsets. Eine solche gespeicherte Prozedur enthält in der Regel eine oder mehr select-Anweisungen. Der Consumer muss berücksichtigt diese Einbeziehung alle Resultsets verarbeiten.
+Die meisten gespeicherten Prozeduren geben mehrere Ergebnissätze zurück. Eine solche gespeicherte Prozedur umfasst in der Regel eine oder mehrere SELECT-Anweisungen. Der Consumer muss diesen Einschluss in Erwägung gezogen, um alle Resultsets verarbeiten zu können.
 
-## <a name="to-handle-multiple-result-sets"></a>Um mehrere Resultsets verarbeiten legt diese fest
+## <a name="to-handle-multiple-result-sets"></a>So verarbeiten Sie mehrere Resultsets
 
-1. Erstellen Sie eine `CCommand` Klasse mit `CMultipleResults` als Vorlagenargument und mit dem Accessor auf Ihrer Wahl, in der Regel einen dynamischen oder manuellen-Accessor. Wenn Sie einen anderen Typ des Accessors verwenden, Sie bestimmen die Ausgabespalten für jedes Rowset können möglicherweise nicht.
+1. Erstellen Sie eine `CCommand`-Klasse mit `CMultipleResults` als Vorlagen Argument und mit dem-Accessor Ihrer Wahl, normalerweise ein dynamischer oder manueller Accessor. Wenn Sie einen anderen Accessor verwenden, können Sie möglicherweise nicht die Ausgabespalten für jedes Rowset ermitteln.
 
-1. Führen Sie die gespeicherte Prozedur wie gewohnt und binden Sie die Spalten (finden Sie unter [Abrufen von Daten?](../../data/oledb/fetching-data.md)).
+1. Führen Sie die gespeicherte Prozedur wie gewohnt aus, und binden Sie die Spalten (Weitere Informationen finden Sie unter Gewusst [wie: Abrufen von Daten](../../data/oledb/fetching-data.md)).
 
-1. Verwenden Sie die Daten an.
+1. Verwenden Sie die Daten.
 
-1. Rufen Sie `GetNextResult` auf die `CCommand` Klasse. Wenn eine andere Ergebnisrowset verfügbar ist, `GetNextResult` gibt S_OK zurück, und Sie sollten Ihre Spalten erneut binden, wenn Sie einen manuellen Accessor verwenden. Wenn `GetNextResult` ein Fehler zurückgegeben, es sind keine weiteren Resultsets nach zur Verfügung.
+1. Ruft `GetNextResult` für die `CCommand`-Klasse auf. Wenn ein anderes resultrowset verfügbar ist, gibt `GetNextResult` S_OK zurück, und Sie sollten die Spalten erneut binden, wenn Sie einen manuellen Accessor verwenden. Wenn `GetNextResult` einen Fehler zurückgibt, sind keine weiteren Resultsets verfügbar.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von gespeicherten Prozeduren](../../data/oledb/using-stored-procedures.md)

@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - C2393
 ms.assetid: 4bd95728-e813-4ce8-844a-c6ebe235ca82
-ms.openlocfilehash: 39ca693aed3f08e7b2df3d687f94d93384393f23
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cc3c124f1a4daea0f2517a93c6b354b8233aa5e5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62302396"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205984"
 ---
 # <a name="compiler-error-c2393"></a>Compilerfehler C2393
 
-> "*Symbol*': anwendungsdomänenspezifisches Symbol kann nicht in Segment zugeordnet werden kann '*Segment*"
+> '*Symbol*': pro-AppDomain-Symbol kann im Segment '*Segment*' nicht zugeordnet werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Die Verwendung von [Appdomain](../../cpp/appdomain.md) -Variablen setzt voraus, dass Sie Kompilieren mit **/CLR: pure** oder **/CLR: safe**, und ein safe oder pure-Image darf keine Datensegmente enthalten.
+Die Verwendung von [AppDomain](../../cpp/appdomain.md) -Variablen impliziert, dass Sie mit **/clr: pure** oder **/clr: Safe**kompilieren und ein sicheres oder reines Image keine Daten Segmente enthalten kann.
 
-Finden Sie unter [/CLR (Common Language Runtime Compilation)](../../build/reference/clr-common-language-runtime-compilation.md) für Weitere Informationen.
+Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) .
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C2393 generiert. Um dieses Problem zu beheben, erstellen Sie ein Datensegment nicht.
+Im folgenden Beispiel wird C2393 generiert. Um dieses Problem zu beheben, erstellen Sie kein Daten Segment.
 
 ```cpp
 // C2393.cpp

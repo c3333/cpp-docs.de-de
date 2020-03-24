@@ -8,12 +8,12 @@ f1_keywords:
 - VC.Project.VCXDCMakeTool.OutputDocumentFile
 - VC.Project.VCXDCMakeTool.AdditionalDocumentFiles
 ms.assetid: 645912b5-197a-4c36-ba58-64df09444ca0
-ms.openlocfilehash: c99677d7fc53ae3343e15e54997fe0101322fbcf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9f10ddf98c238120750e72644779a6ad74af2d1e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62316157"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171631"
 ---
 # <a name="xml-document-generator-tool-property-pages"></a>Eigenschaftenseiten für das Tool XML-Dokument-Generator
 
@@ -22,7 +22,7 @@ Die Eigenschaftenseite des XML-Dokument-Generators stellt die Funktionen der „
 > [!NOTE]
 >  Die Optionen von „xdcmake.exe“ in der Entwicklungsumgebung (Eigenschaftenseiten) unterscheiden sich von den Optionen, wenn „xdcmake.exe“ in der Befehlszeile verwendet wird. Informationen zur Verwendung von „xdcmake.exe“ in der Befehlszeile finden Sie unter [XDCMake Reference (XDCMake-Verweis)](xdcmake-reference.md).
 
-## <a name="uielement-list"></a>UIElement-Liste
+## <a name="uielement-list"></a>Liste der Benutzeroberflächenelemente
 
 - **Startbanner unterdrücken**
 
@@ -34,12 +34,12 @@ Die Eigenschaftenseite des XML-Dokument-Generators stellt die Funktionen der „
 
 - **Ausgabedokumentdatei**
 
-   Der Name und der Speicherort des Verzeichnisses der XML-Ausgabedatei. Finden Sie unter [gängige Makros für Buildbefehle und-Eigenschaften](common-macros-for-build-commands-and-properties.md) Informationen zur Verwendung von Makros Verzeichnispfade angeben.
+   Der Name und der Speicherort des Verzeichnisses der XML-Ausgabedatei. Weitere Informationen zum Verwenden von Makros zum Angeben von Verzeichnis Speicherorten finden Sie unter [Allgemeine Makros für Buildbefehle und-Eigenschaften](common-macros-for-build-commands-and-properties.md) .
 
 - **Dokumentbibliothekabhängigkeiten**
 
    Wenn Ihr Projekt von einem LIB-Projekt in der Projektmappe abhängig ist, können Sie XDC-Dateien des LIB-Projekts in die XML-Dateien für das aktuelle Projekt verarbeiten.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Referenz für C++-Projekt Seite](property-pages-visual-cpp.md)
+[C++Referenz zur Projekteigenschaften Seite](property-pages-visual-cpp.md)

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2066
 ms.assetid: f1efc63f-948a-410b-bf6e-ba250d52cd38
-ms.openlocfilehash: b8576614e76ddad06fa579c442032e0a5105afe3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c50bec0c3bddde2ffe27fd8492397d3401cbcad3
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408601"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207934"
 ---
 # <a name="compiler-error-c2066"></a>Compilerfehler C2066
 
-Typumwandlung in Funktionstyp ist nicht zulässig
+Umwandlung in Funktionstyp ist unzulässig
 
-In ANSI C ist es nicht zulässig, die zwischen einem Funktionszeiger und einen Datenzeiger umgewandelt.
+In ANSI C ist es nicht zulässig, eine Umwandlung zwischen einem Funktionszeiger und einem Datenzeiger durchzusetzen.

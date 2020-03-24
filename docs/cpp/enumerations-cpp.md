@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named constants, enumeration declarations
 - declaring enumerations
 ms.assetid: 081829db-5dca-411e-a53c-bffef315bcb3
-ms.openlocfilehash: caec9ea7ac5482ff23b73676a3fd7b3d25ad293f
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 67b03256390d5447ae5accc28dd450a7f60f485c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423759"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180185"
 ---
 # <a name="enumerations-c"></a>Enumerationen (C++)
 
@@ -49,7 +49,7 @@ enum class C : short;  // ... may have any integral underlying type
 *identifier*<br/>
 Der Typname, der für die Enumeration angegeben wurde.
 
-*Typ*<br/>
+*type*<br/>
 Der zugrunde liegende Typ der Enumeratoren. Alle Enumeratoren weisen den gleichen zugrunde liegenden Typ auf. Kann ein beliebiger ganzzahliger Typ sein.
 
 *Enum-Liste*<br/>
@@ -143,7 +143,7 @@ namespace ScopedEnumConversions
 
 Beachten Sie, dass die Zeile `hand = account_num;` noch den Fehler verursacht, der bei Enumerationen ohne Bereichsbeschränkung auftritt, wie oben beschrieben. Sie ist mit einer expliziten Umwandlung zulässig. Bei bereichsbezogenen Enumerationen ist der Versuch einer Konvertierung in der nächsten Anweisung, `account_num = Suit::Hearts;`, nicht mehr ohne eine explizite Umwandlung zulässig.
 
-## <a name="no_enumerators"></a>Enumerationen ohne Enumeratoren
+## <a name="enums-with-no-enumerators"></a><a name="no_enumerators"></a>Enumerationen ohne Enumeratoren
 
 **Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): indem Sie eine Enumeration (regulär oder Bereichs bezogen) mit einem expliziten zugrunde liegenden Typ und keinen Enumeratoren definieren, können Sie einen neuen integralen Typ mit einer impliziten Konvertierung in einen anderen Typ einführen. Wenn Sie diesen Typ anstelle des integrierten zugrunde liegenden Typs verwenden, können Sie das Potenzial für feine Fehler vermeiden, die durch unbeabsichtigte implizite Konvertierungen verursacht werden.
 
@@ -181,7 +181,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C-Enumerationsdeklarationen](../c-language/c-enumeration-declarations.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

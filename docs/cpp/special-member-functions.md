@@ -9,27 +9,27 @@ helpviewer_keywords:
 - move operators [C++]
 - assignment operators [C++]
 ms.assetid: 017d6817-b012-44f0-b153-f3076c251ea7
-ms.openlocfilehash: 3b26628fd18749bd19819fe787888fd3264a79d1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b15a0e50774bbc4e70912a31f9a57ea0439f2c12
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330979"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178690"
 ---
 # <a name="special-member-functions"></a>Spezielle Memberfunktionen
 
-Die *spezielle Memberfunktionen* -Klasse (oder Struktur) Member-Funktionen auf, dass der Compiler in bestimmten Fällen automatisch für Sie generiert werden. Diese Funktionen sind die [Standardkonstruktor](constructors-cpp.md#default_constructors), [Destruktor](destructors-cpp.md), [Kopierkonstruktor und Kopierzuweisungsoperator](copy-constructors-and-copy-assignment-operators-cpp.md), und die [bewegungskonstruktor und einen bewegungszuweisungsoperator](move-constructors-and-move-assignment-operators-cpp.md). Wenn Ihre Klasse eine oder mehrere der speziellen Memberfunktionen nicht definiert, klicken Sie dann der Compiler kann implizit zu deklarieren und definieren die Funktionen, die verwendet werden. Die vom Compiler generierter Implementierungen heißen die *Standard* spezielle Memberfunktionen. Der Compiler erzeugt Funktionen nicht, wenn sie nicht benötigt werden.
+Die *speziellen Member-Funktionen* sind Klassen-oder Strukturmember-Funktionen, die in bestimmten Fällen automatisch für Sie generiert werden. Diese Funktionen sind der [Standardkonstruktor](constructors-cpp.md#default_constructors), [der debugtor](destructors-cpp.md), der [Kopierkonstruktor und der Kopier Zuweisungs Operator](copy-constructors-and-copy-assignment-operators-cpp.md)sowie der [bewegungskonstruktor und Bewegungs Zuweisungs Operator](move-constructors-and-move-assignment-operators-cpp.md). Wenn die Klasse eine oder mehrere der sondermember-Funktionen nicht definiert, kann der Compiler die verwendeten Funktionen implizit deklarieren und definieren. Die vom Compiler generierten Implementierungen werden als *Standard* mäßige spezielle Member-Funktionen bezeichnet. Der Compiler generiert keine Funktionen, wenn Sie nicht benötigt werden.
 
-Sie können eine Standard-spezielle Memberfunktion explizit deklarieren, mit der **= Default** Schlüsselwort. Dies bewirkt, dass der Compiler an, definieren Sie die Funktion nur, wenn auf die gleiche Weise benötigt, als ob die Funktion nicht deklariert wurde.
+Sie können eine standardmäßige spezielle Element Funktion explizit mit dem Schlüsselwort **= default** deklarieren. Dies bewirkt, dass der Compiler die Funktion nur bei Bedarf definiert, und zwar auf dieselbe Weise, als wenn die Funktion überhaupt nicht deklariert wurde.
 
-In einigen Fällen kann der Compiler generieren *gelöscht* spezielle Memberfunktionen, die nicht definierte und daher nicht aufgerufen werden. Dies kann in Fällen auftreten, in denen eine bestimmte spezielle Memberfunktion in einer Klasse Sinn, weitere Eigenschaften der Klasse aufrufen nicht. Um die automatische Generierung von eine spezielle Memberfunktion explizit zu vermeiden, deklarieren Sie es wie mithilfe der **= Delete** Schlüsselwort.
+In einigen Fällen generiert der Compiler möglicherweise *Gelöschte* besondere Member-Funktionen, die nicht definiert und daher nicht aufgerufen werden können. Dies kann vorkommen, wenn ein Aufrufe einer bestimmten speziellen Member-Funktion für eine Klasse bei anderen Eigenschaften der Klasse keinen Sinn macht. Um die automatische Generierung einer speziellen Member-Funktion explizit zu verhindern, können Sie Sie mit dem Schlüsselwort " **= Delete** " als gelöscht deklarieren.
 
-Der Compiler generiert eine *Standardkonstruktor*, einen Konstruktor, der keine Argumente akzeptiert nur, wenn Sie nicht auf einen anderen Konstruktor deklariert haben. Wenn Sie nur einen Konstruktor, der Parameter annimmt deklariert haben, Code, der versucht, einen standardmäßigen Konstruktor aufzurufen, generiert der Compiler eine Fehlermeldung zu erzeugen. Der vom Compiler generierten Standardkonstruktor führt einfache member-wise [standardinitialisierung](initializers.md#default_initialization) des Objekts. Standardinitialisierung bewirkt, dass alle Membervariablen in einem unbestimmten Zustand.
+Der Compiler generiert einen *Standardkonstruktor*, einen Konstruktor, der keine Argumente annimmt, nur, wenn Sie keinen anderen Konstruktor deklariert haben. Wenn Sie nur einen Konstruktor deklariert haben, der Parameter annimmt, bewirkt dies, dass Code, der versucht, einen Standardkonstruktor aufzurufen, bewirkt, dass der Compiler eine Fehlermeldung erzeugt. Der vom Compiler generierte Standardkonstruktor führt eine einfache, Element Weise [Standard Initialisierung](initializers.md#default_initialization) des Objekts aus. Bei der Standard Initialisierung bleiben alle Element Variablen in einem unbestimmten Zustand.
 
-Der Standarddestruktor führt jeden Member Zerstörung des Objekts. Es ist virtuell, nur dann, wenn ein Basisklassen-Destruktor virtuell ist.
+Der standardedekonstruktor führt die Element Weise Zerstörung des Objekts aus. Es ist nur virtuell, wenn ein basisklassendekonstruktor virtuell ist.
 
-Für die Standard-Kopie und verschiebungskonstruktion und Zuweisungsvorgängen führen elementweise Bitmuster kopiert oder verschiebt nicht statischen Datenmember. Verschieben Sie, dass Vorgänge nur generiert werden, wenn keine Destruktor oder Verschiebe-oder Kopiervorgänge deklariert werden. Ein Standardkonstruktor für die Kopie wird nur generiert, wenn kein Kopierkonstruktor deklariert wird. Es wird implizit gelöscht, wenn ein Verschiebevorgang deklariert ist. Ein Standard-Kopierzuweisungsoperator wird nur generiert, wenn kein Kopierzuweisungsoperator explizit deklariert wird. Es wird implizit gelöscht, wenn ein Verschiebevorgang deklariert ist.
+Die standardmäßigen Kopier-und Verschiebungs Vorgänge für die Erstellung und Zuweisung führen Element Weise Bitmuster Kopien oder Verschiebungen nicht statischer Datenmember aus. Verschiebe Vorgänge werden nur generiert, wenn weder Dekonstruktor-noch verschiebe-oder Kopiervorgänge deklariert werden. Ein Standardkopierkonstruktor wird nur generiert, wenn kein Kopierkonstruktor deklariert wurde. Er wird implizit gelöscht, wenn ein Verschiebungs Vorgang deklariert wird. Ein standardmäßiger Kopier Zuweisungs Operator wird nur generiert, wenn kein Kopier Zuweisungs Operator explizit deklariert wurde. Er wird implizit gelöscht, wenn ein Verschiebungs Vorgang deklariert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Programmiersprachenreferenz](cpp-language-reference.md)

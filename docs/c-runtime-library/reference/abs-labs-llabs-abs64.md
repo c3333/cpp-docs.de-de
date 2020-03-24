@@ -39,12 +39,12 @@ helpviewer_keywords:
 - _abs64 function
 - calculating absolute values
 ms.assetid: 60f789d1-4a1e-49f5-9e4e-0bdb277ea26a
-ms.openlocfilehash: df5b6a30bf219b78f77f11604d3bbbe3b954c59f
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: a21bdbcb54d7fecf00b3c782c562d60ccc866dcc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857852"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171410"
 ---
 # <a name="abs-labs-llabs-_abs64"></a>abs, labs, llabs, _abs64
 
@@ -67,7 +67,7 @@ long double abs( long double n );   // C++ only
 float abs( float n );   // C++ only
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
 *n*<br/>
 Ein numerischer Wert.
@@ -76,20 +76,20 @@ Ein numerischer Wert.
 
 Die Funktionen **ABS**, **Labs**, **llabs** und **_abs64** geben den absoluten Wert des Parameters *n*zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **ABS** aufzurufen, die **Long**-, **Long** **Long**-, **float**-, **Double**-und **Long** **Double** -Werte verwenden und zurückgeben. Diese Überladungen sind im Header \<cmath> definiert. In einem C-Programm nimmt **ABS** immer einen **int**-Wert an und gibt ihn zurück.
 
-**Microsoft-spezifisch**: da der Bereich von negativen ganzen Zahlen, der mithilfe eines ganzzahligen Typs dargestellt werden kann, größer als der Bereich von positiven ganzen Zahlen ist, die mithilfe dieses Typs dargestellt werden können, kann ein Argument für diese Funktionen bereitgestellt werden, die nicht konvertiert werden können. Wenn der absolute Wert des Arguments nicht durch den Rückgabetyp dargestellt werden kann, geben die **ABS** -Funktionen den Argument Wert unverändert zurück. Insbesondere gibt `abs(INT_MIN)` `INT_MIN` zurück, `labs(LONG_MIN)` gibt `LONG_MIN` zurück, `llabs(LLONG_MIN)` gibt `LLONG_MIN` zurück und `_abs64(_I64_MIN)` gibt `_I64_MIN` zurück. Dies bedeutet, dass die **ABS** -Funktionen nicht verwendet werden können, um einen positiven Wert sicherzustellen.
+**Microsoft-spezifisch**: da der Bereich von negativen ganzen Zahlen, der mithilfe eines ganzzahligen Typs dargestellt werden kann, größer als der Bereich von positiven ganzen Zahlen ist, die mithilfe dieses Typs dargestellt werden können, kann ein Argument für diese Funktionen bereitgestellt werden, die nicht konvertiert werden können. Wenn der absolute Wert des Arguments nicht durch den Rückgabetyp dargestellt werden kann, geben die **ABS** -Funktionen den Argument Wert unverändert zurück. Insbesondere gibt `abs(INT_MIN)``INT_MIN` zurück, `labs(LONG_MIN)` gibt `LONG_MIN` zurück, `llabs(LLONG_MIN)` gibt `LLONG_MIN` zurück und `_abs64(_I64_MIN)` gibt `_I64_MIN` zurück. Dies bedeutet, dass die **ABS** -Funktionen nicht verwendet werden können, um einen positiven Wert sicherzustellen.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
+|Routine|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|-----------------------|---------------------------|
-|**abs**, **labs**, **llabs**|\<math.h> oder\<stdlib.h>|\<cmath>, \<cstdlib>, \<stdlib.h> oder \<math.h|
-|**_abs64**|\<stdlib.h>|\<cstdlib> oder \<stdlib.h>|
+|**ABS**, **Labs**, **llabs**|\<math.h> oder\<stdlib.h>|\<cmath>, \<cstdlib>, \<stdlib.h> oder \<math.h|
+|**_abs64**|\<stdlib.h>|\<cstdlib.h> oder\<stdlib.h>|
 
-Um die überladenen Versionen von ABS C++in zu verwenden, müssen Sie den \<cmath-> Header einschließen.
+Um die überladenen Versionen **abs** von ABS C++in zu verwenden, müssen Sie den \<cmath-> Header einschließen.
 
 ## <a name="example"></a>Beispiel
 
@@ -148,7 +148,7 @@ llabs(LLONG_MIN) returns -9223372036854775808
 _abs64(_I64_MIN) returns 0x8000000000000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>

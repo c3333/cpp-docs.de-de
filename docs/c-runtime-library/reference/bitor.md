@@ -23,12 +23,12 @@ f1_keywords:
 helpviewer_keywords:
 - bitor function
 ms.assetid: 3c0a3711-9c74-41f2-b400-2f7797da30d1
-ms.openlocfilehash: bda47a4590095ecf089efa23b983622e2fbd1a59
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: bcd7639fd4959c95b198e080ae3c7d4fbd3234b8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939447"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171228"
 ---
 # <a name="bitor"></a>bitor
 
@@ -41,7 +41,7 @@ Eine Alternative zum Operator &#124;.
 #define bitor |
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das Makro gibt den Operator &#124; aus.
 
@@ -71,6 +71,6 @@ int main( )
 3
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iso646.h>
+**Header:** \<iso646. h >

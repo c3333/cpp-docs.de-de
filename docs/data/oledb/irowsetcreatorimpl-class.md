@@ -19,12 +19,12 @@ helpviewer_keywords:
 - IRowsetCreatorImpl class
 - SetSite method
 ms.assetid: 92cc950f-7978-4754-8d9a-defa63867d82
-ms.openlocfilehash: 8c4253d469c510f5e6eb996ed510ef836844899d
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a53cd653258980d21e9dd297ae61c458732b7250
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544579"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210547"
 ---
 # <a name="irowsetcreatorimpl-class"></a>IRowsetCreatorImpl-Klasse
 
@@ -43,11 +43,11 @@ class ATL_NO_VTABLE IRowsetCreatorImpl
 *T*<br/>
 Eine von `IRowsetCreator`abgeleitete Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -55,7 +55,7 @@ Eine von `IRowsetCreator`abgeleitete Klasse.
 |-|-|
 |[SetSite](#setsite)|Legt die Site fest, die das Rowsetobjekt enthält.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Klasse erbt von [IObjectWithSite](/windows/win32/api/ocidl/nn-ocidl-iobjectwithsite) und überschreibt [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite). Wenn ein Anbieter Befehl oder ein Sitzungs Objekt ein Rowset erstellt, ruft es `QueryInterface` für das Rowsetobjekt auf, das nach `IObjectWithSite` sucht, und ruft auf, `SetSite` die `IUnkown` Schnittstelle des rowsetobjektes als Website Schnittstelle zu übergeben.
 
@@ -78,11 +78,11 @@ in Zeiger auf den `IUnknown` Schnittstellen Zeiger der Site, die das Rowsetobjek
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Außerdem werden `IRowsetCreatorImpl::SetSite` die OLE DB `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` Eigenschaften aktiviert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

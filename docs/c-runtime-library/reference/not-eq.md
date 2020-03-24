@@ -23,12 +23,12 @@ f1_keywords:
 helpviewer_keywords:
 - not_eq function
 ms.assetid: d87ad299-8b50-4393-a57f-06f70e1f23fb
-ms.openlocfilehash: 784673e2f314c97490511f69a33847cb824c8d7b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: acce0e6bc50e50c8c5aadbcdf7ebf9b35a6aca00
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951282"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168758"
 ---
 # <a name="not_eq"></a>not_eq
 
@@ -41,7 +41,7 @@ Eine Alternative zum !=-Operator.
 #define not_eq !=
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das Makro gibt den Operator != aus.
 
@@ -71,6 +71,6 @@ a is not equal to b
 a is not equal to b
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iso646.h>
+**Header:** \<iso646. h >

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C4088
 ms.assetid: 9bab817c-16b2-4324-be5e-f9cbb06b702e
-ms.openlocfilehash: 86069cb9cab1bf8454c9e60053ccfcaeaee5dd6d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5c3deb39656af0de4fcf54ffc9f99c12380c3620
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255874"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80163962"
 ---
 # <a name="compiler-warning-level-1-c4088"></a>Compilerwarnung (Stufe 1) C4088
 
-'Funktion': Zeigerkonflikt im übergebenen Parameter "Number", formale Parameter 'Nummer'
+"Function": Zeiger Stimmen im tatsächlichen Parameter "Number", formaler Parameter "Number", nicht überein.
 
-Die entsprechenden formalen und übergebenen Parameter müssen einen anderen Grad an Dereferenzierung. Der tatsächliche Parameter wird unverändert übergeben. Die aufgerufene Funktion interpretiert den Wert als ein Zeiger.
+Der entsprechende formale und tatsächliche Parameter haben eine andere Dereferenzierungsebene. Der tatsächliche Parameter wird unverändert übergeben. Die aufgerufene Funktion interpretiert ihren Wert als Zeiger.

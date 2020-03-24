@@ -1,5 +1,5 @@
 ---
-title: Verwenden von gespeicherten Prozeduren
+title: Verwenden gespeicherter Prozeduren
 ms.date: 10/24/2018
 helpviewer_keywords:
 - OLE DB, stored procedures
@@ -8,33 +8,33 @@ helpviewer_keywords:
 - OLE DB provider templates, stored procedures
 - stored procedures, OLE DB
 ms.assetid: 90507e4c-eca2-46c9-ad8c-07e10dc1d41b
-ms.openlocfilehash: 7ace43283c56c0c859b193f63e8ca104f6b52a31
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a7e97781d245e236c57942db15d61080d6418cfa
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62165761"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209273"
 ---
-# <a name="using-stored-procedures"></a>Verwenden von gespeicherten Prozeduren
+# <a name="using-stored-procedures"></a>Verwenden gespeicherter Prozeduren
 
-Eine gespeicherte Prozedur ist eine in einer Datenbank gespeichertes, ausführbares Objekt. Aufrufen einer gespeicherten Prozedur entspricht einen SQL-Befehl aufrufen. Verwenden von gespeicherten Prozeduren in der Datenquelle (anstelle von ausführen oder das Vorbereiten einer Anweisung in der Clientanwendung) bieten mehrere Vorteile, u.a. höhere Leistung, geringere Aufwand, und verbesserte Konsistenz und Genauigkeit.
+Bei einer gespeicherten Prozedur handelt es sich um ein ausführbares Objekt, das in einer Datenbank gespeichert ist. Das Aufrufen einer gespeicherten Prozedur ähnelt dem Aufrufen eines SQL-Befehls. Die Verwendung gespeicherter Prozeduren in der Datenquelle (anstatt eine Anweisung in der Client Anwendung auszuführen oder vorzubereiten) bietet mehrere Vorteile, z.b. höhere Leistung, geringeren Netzwerk Aufwand und verbesserte Konsistenz und Genauigkeit.
 
-Eine gespeicherte Prozedur kann eine beliebige Anzahl von (einschließlich NULL) haben Eingabe- oder Ausgabeparameter und einen Rückgabewert übergeben können. Sie können entweder Parameterwerte fest programmieren, wie bestimmte Daten Werte, oder eine parametermarkierung verwenden (ein Fragezeichen ersetzt ein "?").
+Eine gespeicherte Prozedur kann eine beliebige Anzahl von Eingabe-oder Ausgabeparametern (einschließlich NULL) aufweisen und kann einen Rückgabewert übergeben. Sie können Parameterwerte als bestimmte Datenwerte hart codieren oder einen Parametermarker (Fragezeichen '? ') verwenden.
 
 > [!NOTE]
->  CLR von SQL Server gespeicherte Prozeduren, die mit Visual C++ erstellten müssen kompiliert werden, mit der `/clr:safe` -Compileroption.
+>  CLR-SQL Server mithilfe von Visual C++ erstellten gespeicherten Prozeduren müssen mit der `/clr:safe`-Compileroption kompiliert werden.
 
-Der OLE DB-Anbieter für SQL Server (SQLOLEDB) unterstützt die folgenden Mechanismen, die gespeicherten Prozeduren verwenden, um Daten zurückzugeben:
+Der OLE DB Anbieter für SQL Server (SQLOLEDB) unterstützt die folgenden Mechanismen, die gespeicherte Prozeduren zum Zurückgeben von Daten verwenden:
 
-- Jede **wählen** Anweisung in der Prozedur generiert ein Resultset.
+- Jede **Select** -Anweisung in der Prozedur generiert ein Resultset.
 
 - Die Prozedur kann Daten über Ausgabeparameter zurückgeben.
 
 - Die Prozedur kann einen ganzzahligen Rückgabecode besitzen.
 
 > [!NOTE]
-> Sie können gespeicherte Prozeduren mit dem OLE DB-Anbieter für Jet verwenden, da es sich bei diesen Anbieter gespeicherte Prozeduren nicht unterstützt; nur Konstanten sind in die Abfragezeichenfolgen zulässig.
+> Sie können keine gespeicherten Prozeduren mit dem OLE DB-Anbieter für Jet verwenden, da dieser Anbieter keine gespeicherten Prozeduren unterstützt. in Abfrage Zeichenfolgen sind nur Konstanten zulässig.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Consumervorlagen](../../data/oledb/working-with-ole-db-consumer-templates.md)

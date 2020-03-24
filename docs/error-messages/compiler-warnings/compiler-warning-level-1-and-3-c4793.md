@@ -1,5 +1,5 @@
 ---
-title: Compilerwarnung (Stufe 1 und 3) C4793
+title: Compilerwarnung (Stufe 1 und 3) C4793
 ms.date: 11/04/2016
 f1_keywords:
 - C4793
@@ -15,40 +15,40 @@ helpviewer_keywords:
 - C6637
 - C4793
 ms.assetid: 819ada53-1d9c-49b8-a629-baf8c12314e6
-ms.openlocfilehash: e7ca3b10e09b0d6818fbc7f5607ebc9c95c7f15c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: de6f514d8e3ad8e7715c9cd13a695e3398fffc8d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62280541"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164806"
 ---
-# <a name="compiler-warning-level-1-and-3-c4793"></a>Compilerwarnung (Stufe 1 und 3) C4793
+# <a name="compiler-warning-level-1-and-3-c4793"></a>Compilerwarnung (Stufe 1 und 3) C4793
 
-> "*Funktion*': Funktion als systemeigener Code kompiliert wird:"*Grund*"
+> "*Function*": die Funktion wird als nativer Code kompiliert: "*reason*"
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Compiler kann nicht kompiliert werden *Funktion* in verwaltetem Code, obwohl die ["/ CLR"](../../build/reference/clr-common-language-runtime-compilation.md) -Compileroption angegeben ist. Stattdessen der Compiler gibt Warnung C4793 und eine Nachricht erläuternde Fortsetzung aus, und klicken Sie dann kompiliert *Funktion* in systemeigenen Code. Die Fortsetzung-Nachricht enthält die *Grund* Text, die erklärt, warum *Funktion* kann nicht kompiliert werden, um `MSIL`.
+Der Compiler kann die *Funktion* nicht in verwalteten Code kompilieren, auch wenn die [/CLR](../../build/reference/clr-common-language-runtime-compilation.md) -Compileroption angegeben ist. Stattdessen gibt der Compiler Warning C4793 und eine Erläuterung der Fortsetzungs Meldung aus und kompiliert dann die *Funktion* in nativen Code. Die Fortsetzungs Meldung enthält den *Grund* Text, in dem erläutert wird, warum die *Funktion* nicht in `MSIL`kompiliert werden kann.
 
-Dies ist eine Warnung der Stufe 1, wenn Sie angeben, die **/CLR: pure** -Compileroption.  Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Dies ist eine Warnung der Stufe 1, wenn Sie die Compileroption **/clr: pure** angeben.  Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
-Die folgende Tabelle enthält alle möglichen Anhaltens Nachrichten.
+In der folgenden Tabelle sind alle möglichen Fortsetzungs Nachrichten aufgeführt.
 
-|Grund-Nachricht|Hinweise|
+|Grund Nachricht|Bemerkungen|
 |--------------------|-------------|
-|Ausgerichtete Datentypen werden in verwaltetem Code nicht unterstützt.|Die CLR Lage sein, Daten bei Bedarf zuzuordnen, die eventuell nicht möglich, wenn die Daten mit Deklarationen, z. B. ausgerichtet ist [__m128](../../cpp/m128.md) oder [ausrichten](../../cpp/align-cpp.md).|
-|Funktionen, mit denen "__ImageBase" werden in verwaltetem Code nicht unterstützt.|`__ImageBase` ist ein spezieller Linkersymbol, das in der Regel nur von systemeigenen Code auf niedriger Ebene verwendet wird, um eine DLL zu laden.|
-|VarArgs werden nicht unterstützt, indem Sie die "/ Clr" (Compileroption)|Native Funktionen können nicht verwaltete Funktionen aufrufen [Variablenargumentlisten](../../cpp/functions-with-variable-argument-lists-cpp.md) (Varargs), da die Funktionen auf anderen Stapel layoutanforderungen haben. Jedoch bei Angabe der **/CLR: pure** Compileroption Variablenargument unterstützt, da die Assembly nur verwaltete Funktionen enthalten kann. Weitere Informationen finden Sie unter [reiner und überprüfbarer Code (C++ / CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).|
-|Daten, die mit dem __ptr32-Modifizierer deklariert wird von die 64-Bit-CLR nicht unterstützt.|Ein Zeiger, muss die gleiche Größe wie einen systemeigenen Zeiger auf die aktuelle Plattform. Weitere Informationen finden Sie unter [__ptr32, \__ptr64](../../cpp/ptr32-ptr64.md).|
-|Daten, die mit dem __ptr64-Modifizierer deklariert wird von die 32-Bit-CLR nicht unterstützt.|Ein Zeiger, muss die gleiche Größe wie einen systemeigenen Zeiger auf die aktuelle Plattform. Weitere Informationen finden Sie unter [__ptr32, \__ptr64](../../cpp/ptr32-ptr64.md).|
-|Eine oder mehrere systeminterne Funktionen werden in verwaltetem Code nicht unterstützt.|Der Name der die systeminterne Funktion ist nicht verfügbar, zu dem Zeitpunkt, der die Meldung ausgegeben wird. Jedoch stellt eine systeminterne Funktion, die diese Nachricht in der Regel führt dazu, dass eine Low-Level-computeranweisung.|
-|Systemeigene Inlineassemblys ("__asm") wird in verwaltetem Code nicht unterstützt.|[Inline-Assemblycode](../../assembler/inline/asm.md) darf beliebige, systemeigenen Code, der nicht verwaltet werden kann.|
-|Ein Thunk der __clrcall-nicht virtuelle Funktion muss als systemeigen kompiliert werden.|Nicht[__clrcall](../../cpp/clrcall.md) virtuelle Funktionsthunk muss eine nicht verwaltete Adresse verwendet.|
-|Eine Funktion mit "_setjmp" muss als systemeigen kompiliert werden|Die CLR muss Ausführung des Programms steuern können. Allerdings die [Setjmp](../../cpp/using-setjmp-longjmp.md) Funktion umgeht die normale programmausführung speichern und Wiederherstellen von Low-Level-Informationen wie z. B.-Register und Ausführungsstatus.|
+|Ausgerichtete Datentypen werden in verwaltetem Code nicht unterstützt.|Die CLR muss bei Bedarf Daten zuordnen können. Dies ist möglicherweise nicht möglich, wenn die Daten mit Deklarationen wie [__m128](../../cpp/m128.md) oder [align](../../cpp/align-cpp.md)ausgerichtet sind.|
+|Funktionen, die "__ImageBase" verwenden, werden in verwaltetem Code nicht unterstützt.|`__ImageBase` ist ein spezielles Linker-Symbol, das in der Regel nur von System eigenem Code auf niedriger Ebene verwendet wird, um eine DLL zu laden.|
+|VarArgs werden von der Compileroption '/CLR ' nicht unterstützt.|Native Funktionen können keine verwalteten Funktionen mit [Variablen Argumentlisten](../../cpp/functions-with-variable-argument-lists-cpp.md) (VarArgs) abrufen, da die Funktionen unterschiedliche Anforderungen für das Stapel Layout aufweisen. Wenn Sie jedoch die **/clr: pure** -Compileroption angeben, werden Variablen Argumentlisten unterstützt, da die Assembly nur verwaltete Funktionen enthalten kann. Weitere Informationen finden Sie unter [reiner und überprüfbarerC++Code (/CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).|
+|Die 64-Bit-CLR unterstützt keine Daten, die mit dem __ptr32-Modifizierer deklariert werden.|Ein Zeiger muss dieselbe Größe aufweisen wie ein nativer Zeiger auf der aktuellen Plattform. Weitere Informationen finden Sie unter [__ptr32 \__ptr64](../../cpp/ptr32-ptr64.md).|
+|Die 32-Bit-CLR unterstützt keine Daten, die mit dem __ptr64-Modifizierer deklariert werden.|Ein Zeiger muss dieselbe Größe aufweisen wie ein nativer Zeiger auf der aktuellen Plattform. Weitere Informationen finden Sie unter [__ptr32 \__ptr64](../../cpp/ptr32-ptr64.md).|
+|Mindestens eine intrinsie wird in verwaltetem Code nicht unterstützt.|Der Name der systeminternen ist nicht verfügbar, wenn die Meldung ausgegeben wird. Eine intrinsische, die diese Nachricht verursacht, stellt jedoch in der Regel eine Computer Anweisung auf niedriger Ebene dar.|
+|Die systemeigene Inline Assembly ("__asm") wird in verwaltetem Code nicht unterstützt.|[Inline](../../assembler/inline/asm.md) -Assemblycode kann beliebigen nativen Code enthalten, der nicht verwaltet werden kann.|
+|Ein nicht __clrcall virtuelle Funktions Thunk muss als Native kompiliert werden.|Eine nicht[__clrcall](../../cpp/clrcall.md) virtuelle Funktions Thunk muss eine nicht verwaltete Adresse verwenden.|
+|Eine Funktion, die "_setjmp" verwendet, muss als Native kompiliert werden.|Die CLR muss in der Lage sein, die Programmausführung zu steuern. Die Funktion " [setjmp](../../cpp/using-setjmp-longjmp.md) " umgeht jedoch die reguläre Programmausführung durch Speichern und Wiederherstellen von Informationen auf niedriger Ebene, wie z. b. Registern und Ausführungs Status.|
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4793 generiert.
+Im folgenden Beispiel wird C4793 generiert.
 
 ```cpp
 // C4793.cpp
@@ -66,7 +66,7 @@ warning C4793: 'asmfunc' : function is compiled as native code:
         Inline native assembly ('__asm') is not supported in managed code
 ```
 
-Im folgende Beispiel wird die C4793 generiert.
+Im folgenden Beispiel wird C4793 generiert.
 
 ```cpp
 // C4793_b.cpp

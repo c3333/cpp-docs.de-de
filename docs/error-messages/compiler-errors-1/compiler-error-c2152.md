@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2152
 ms.assetid: a9ea2b0c-d55d-41c7-ba9f-dd75592ffc8a
-ms.openlocfilehash: 072b5f13a639b1bd3d8e028fcd6c811012bfa2bd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 10178d2cd40af60603b908a9351b8e14d12c5570
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175237"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207193"
 ---
 # <a name="compiler-error-c2152"></a>Compilerfehler C2152
 
-'Bezeichner': Zeiger auf Funktionen mit verschiedenen Attributen
+' Identifier ': Zeiger auf Funktionen mit verschiedenen Attributen
 
-Ein Zeiger auf eine Funktion mit einer Aufrufkonvention (`__cdecl`, `__stdcall`, oder `__fastcall`) in einen Zeiger auf eine Funktion mit einer anderen Aufrufkonvention zugewiesen ist.
+Ein Zeiger auf eine Funktion mit einer Aufruf Konvention (`__cdecl`, `__stdcall`oder `__fastcall`) wird einem Zeiger auf eine Funktion mit einer anderen Aufruf Konvention zugewiesen.

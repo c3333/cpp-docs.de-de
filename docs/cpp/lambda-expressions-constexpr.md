@@ -1,19 +1,19 @@
 ---
-title: Constexpr-Lambdaausdrücke in C++
+title: constexpr-Lambda-Ausdrücke inC++
 ms.date: 04/08/2019
 helpviewer_keywords:
 - lambda expressions [C++], constexpr
 ms.assetid: b56346cd-fbff-475f-aeaa-ed2010c6d6f7
-ms.openlocfilehash: d1bc60a6da813e54c857da38b0164f544216be00
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9467d9e404204012df6461adacd5dc4cdbdfe71d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368694"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179574"
 ---
-# <a name="constexpr-lambda-expressions-in-c"></a>Constexpr-Lambdaausdrücke in C++
+# <a name="constexpr-lambda-expressions-in-c"></a>constexpr-Lambda-Ausdrücke inC++
 
-**Visual Studio 2017 Version 15.3 und höher** (verfügbar mit [/Std: c ++ 17](../build/reference/std-specify-language-standard-version.md)): Ein Lambda-Ausdruck kann deklariert werden, als **"constexpr"** oder in einem konstanten Ausdruck verwendet werden, wenn die Initialisierung der einzelnen Datenmember, das erfasst oder führt in einem konstanten Ausdruck zulässig ist.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): ein Lambda-Ausdruck kann als **constexpr** deklariert oder in einem konstanten Ausdruck verwendet werden, wenn die Initialisierung der einzelnen Datenmember, die von ihm erfasst oder eingeführt werden, innerhalb eines konstanten Ausdrucks zulässig ist.
 
 ```cpp
     int y = 32;
@@ -29,7 +29,7 @@ ms.locfileid: "62368694"
     }
 ```
 
-Ein Lambda-Ausdruck ist implizit **"constexpr"** Wenn das Ergebnis die Anforderungen erfüllt, eine **"constexpr"** Funktion:
+Ein Lambda-Ausdruck ist implizit **constexpr** , wenn sein Ergebnis den Anforderungen einer **constexpr** -Funktion entspricht:
 
 ```cpp
     auto answer = [](int n)
@@ -40,7 +40,7 @@ Ein Lambda-Ausdruck ist implizit **"constexpr"** Wenn das Ergebnis die Anforderu
     constexpr int response = answer(10);
 ```
 
-Wenn ein Lambda-Ausdruck implizit oder explizit ist **"constexpr"**, und Sie diese in einen Funktionszeiger konvertieren, die sich ergebende Funktion ist auch **"constexpr"**:
+Wenn ein Lambda implizit oder explizit **constexpr**ist und Sie es in einen Funktionszeiger konvertieren, ist die resultierende Funktion auch **constexpr**:
 
 ```cpp
     auto Increment = [](int n)
@@ -51,7 +51,7 @@ Wenn ein Lambda-Ausdruck implizit oder explizit ist **"constexpr"**, und Sie die
     constexpr int(*inc)(int) = Increment;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Programmiersprachenreferenz](../cpp/cpp-language-reference.md)<br/>
 [Funktionsobjekte in der C++-Standardbibliothek](../standard-library/function-objects-in-the-stl.md)<br/>

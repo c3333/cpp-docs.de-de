@@ -7,18 +7,18 @@ helpviewer_keywords:
 - cl.exe compiler, performance
 - cl.exe compiler, intrinsics
 ms.assetid: 48bb9929-7d78-4fd8-a092-ae3c9f971858
-ms.openlocfilehash: 61fc825e333b8d839d15752ce737dfc6d3980809
-ms.sourcegitcommit: e805200eaef4fe7a65a00051bbd305273af94fe7
+ms.openlocfilehash: 6f41b56995e1a5a7d7f4267cb1def5370f953d5c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163490"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171670"
 ---
 # <a name="compiler-intrinsics"></a>Intrinsische Compilerfunktionen
 
 Die meisten Funktionen sind in Bibliotheken enthalten, aber einige Funktionen sind in den Compiler integriert (das heißt, sie sind systemintern). Diese werden als intrinsische Funktionen bezeichnet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn eine Funktion systemintern ist, wird der Code für diese Funktion normalerweise inline eingefügt, damit wird der Mehraufwand eines Funktionsaufrufs vermieden und es können äußerst effiziente Computerbefehle für diese Funktion ausgegeben werden. Eine systeminterne Funktion ist häufig schneller als die entsprechende Inlineassembly, da der Optimierer über integriertes Wissen über das Verhalten vieler systeminterner Funktionen verfügt, sodass einige Optimierungen verfügbar sein können, die bei Verwendung von Inlineassemblys nicht verfügbar sind. Außerdem kann der Optimierer die systeminterne Funktion anders erweitern, Puffer anders ausrichten oder je nach Kontext und den Argumenten des Aufrufs andere Anpassungen vornehmen.
 
@@ -46,9 +46,9 @@ In den folgenden Abschnitten werden alle systeminternen Funktionen aufgeführt, 
 
 - [Alphabetische Auflistung von intrinsischen Funktionen](../intrinsics/alphabetical-listing-of-intrinsic-functions.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arm-Assembler-Verweis](../assembler/arm/arm-assembler-reference.md)<br/>
 [Microsoft Macro Assembler-Referenz](../assembler/masm/microsoft-macro-assembler-reference.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [C-Lauf Zeit Bibliotheks Referenz](../c-runtime-library/c-run-time-library-reference.md)

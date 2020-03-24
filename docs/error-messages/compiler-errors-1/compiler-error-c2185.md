@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2185
 ms.assetid: 74bc9f64-7b4c-4735-ba13-67c43f8c47db
-ms.openlocfilehash: d1d9d3d6f40d5797d5d51684734adc80ee8da591
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d3ec8b92d9411e790870c582d98cc67c7e68284a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385952"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206777"
 ---
 # <a name="compiler-error-c2185"></a>Compilerfehler C2185
 
-"Bezeichner": __based-Reservierung
+"Bezeichner": Ungültige basierte Zuordnung
 
-Eine Registervariable oder automatische (lokale) Variable wird deklariert `__based`. Nur globale Variablen können deklariert werden `__based`.
+Eine Register Variable oder eine automatische (lokale) Variable wird als `__based`deklariert. Nur globale Variablen können als `__based`deklariert werden.

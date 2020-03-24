@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - inline functions [C++], class members
 ms.assetid: 355f120c-2847-4608-ac04-8dda18ffe10c
-ms.openlocfilehash: efaaacc46f63ac1a702ab2110d35fe80727ead1d
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: b13007211857d84e4f3b33c80ed6b5beaf6f0bcf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857514"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178236"
 ---
 # <a name="inline-functions-c"></a>Inlinefunktionen [C++]
 
@@ -94,7 +94,7 @@ Mit der [/ob](../build/reference/ob-inline-function-expansion.md) -compileroptim
 
 [/LTCG](../build/reference/ltcg-link-time-code-generation.md) führt Modul übergreifende Inlining unabhängig davon aus, ob es im Quellcode angefordert wurde.
 
-### <a name="example-1"></a>Beispiel 1
+### <a name="example-1"></a>Beispiel 1
 
 ```cpp
 // inline_keyword1.cpp
@@ -108,7 +108,7 @@ inline int max( int a , int b ) {
 
 Die Member-Funktionen einer Klasse können Inline deklariert werden, entweder mithilfe des **Inline** Schlüsselworts oder durch Platzieren der Funktionsdefinition innerhalb der Klassendefinition.
 
-### <a name="example-2"></a>Beispiel 2
+### <a name="example-2"></a>Beispiel 2
 
 ```cpp
 // inline_keyword2.cpp
@@ -207,7 +207,7 @@ Wenn die Koordinaten Manipulation ein relativ allgemeiner Vorgang in einem Clien
 
 - Wiederherstellung des alten Stapelrahmens
 
-- Zurückgeben des
+- Rückgabewert
 
 ## <a name="inline-functions-vs-macros"></a>Inline Funktionen im Vergleich zu Makros
 
@@ -265,7 +265,7 @@ Sample Input: a
 Sample Output: A
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [noinline](../cpp/noinline.md)<br/>
 [auto_inline](../preprocessor/auto-inline.md)
