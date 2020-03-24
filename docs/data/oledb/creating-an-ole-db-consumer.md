@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB consumers, creating
 ms.assetid: 652309d3-7736-4354-89ec-28ec80a83f9a
-ms.openlocfilehash: a221aa98f5d4011bb310e056f4c2c8b04d847af6
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 0e084b5f25d713424217af5a2f4517ca73a27b39
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707594"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211444"
 ---
 # <a name="creating-an-ole-db-consumer"></a>Erstellen eines OLE DB-Consumers
 
@@ -23,7 +23,7 @@ Der ATL-OLE DB-Consumer-Assistent ist in Visual Studio 2019 und höher nicht ver
 
 Sie können einen OLE DB-Vorlagenconsumer mit oder ohne den **ATL-OLE DB-Consumer-Assistenten** erstellen. Die Verwendung des Assistenten wird jedoch empfohlen. Ein Consumer kann in einer beliebigen Anwendung genutzt werden, die ATL unterstützt.
 
-In diesem Abschnitt werden die folgenden Themen behandelt:
+Dieser Abschnitt enthält die folgenden Themen:
 
 - [Erstellen eines OLE DB-Consumers mit einem Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)
 
@@ -31,6 +31,6 @@ In diesem Abschnitt werden die folgenden Themen behandelt:
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)

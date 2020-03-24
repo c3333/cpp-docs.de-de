@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2077
 ms.assetid: f046f0e3-1987-477a-a0af-fe543a9f5fcb
-ms.openlocfilehash: 0f4b484e1ea248495ecb8fa838dea1b8ad63dc0e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b7ee3545b3fe6583dac924c3563578875a443386
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404369"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207718"
 ---
 # <a name="compiler-error-c2077"></a>Compilerfehler C2077
 
-Initialisierer für nicht skalaren Felds 'Identifier'
+nicht skalarer Feldinitialisierer "Bezeichner"
 
-Sie haben versucht, die mit einer nicht skalare (Struktur, Union, Array oder -Klasse) ein Bitfeld zu initialisieren. Verwenden Sie eine ganze Zahl oder Gleitkommazahl doppelter Genauigkeit.
+Sie haben versucht, ein Bitfeld mit einem nicht skalaren (struct, Union, Array oder Klasse) zu initialisieren. Verwenden Sie einen ganzzahligen oder Gleit Komma Wert.

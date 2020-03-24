@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C2823
 ms.assetid: 982b1b35-1a7c-456e-b711-f80cfe2d571e
-ms.openlocfilehash: 5f9b60499fd3c3bd5f06834e3c4f6482031066d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ef07e1b542c4c3977f35de7ed9cd0f0a5358cedb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406963"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201954"
 ---
 # <a name="compiler-error-c2823"></a>Compilerfehler C2823
 
-> eine Typedef-Vorlage ist nicht zulässig
+> eine typedef-Vorlage ist unzulässig.
 
-Vorlagen sind nicht zulässig `typedef` Definitionen.
+Vorlagen sind in `typedef` Definitionen nicht zulässig.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C2823 generiert und zeigt eine Möglichkeit, das Problem zu beheben:
+Im folgenden Beispiel wird C2823 generiert und eine Möglichkeit gezeigt, Sie zu beheben:
 
 ```cpp
 // C2823.cpp

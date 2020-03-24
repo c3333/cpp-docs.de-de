@@ -21,16 +21,16 @@ helpviewer_keywords:
 - properties [C++], resources
 - resources [C++], properties
 ms.assetid: e20a29ec-d6fb-4ead-98f3-431a0e23aaaf
-ms.openlocfilehash: 893ddf3b4d030384572baf77647e09d4d2a9d719
-ms.sourcegitcommit: 9aab425662a66825772f091112986952f341f7c8
+ms.openlocfilehash: 5f12b126db7c0e040f06640d3ecd201007d73968
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72444992"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167887"
 ---
 # <a name="resource-editors-c"></a>Ressourcen-Editoren (C++)
 
-Ein Ressourcen-Editor ist eine spezialisierte Umgebung zum Erstellen oder Ändern von Ressourcen, die in einem Visual Studio-Projekt enthalten sind. Die Ressourcen-Editoren von Visual Studio teilen Techniken und Schnittstellen, die Sie beim schnellen und einfachen Erstellen und Ändern von Anwendungsressourcen unterstützen. Mit Ressourcen-Editoren können Sie Ressourcen im entsprechenden Editor anzeigen und bearbeiten sowie Ressourcen in der Vorschau anzeigen.
+Ein Ressourcen-Editor ist eine spezialisierte Umgebung zum Erstellen oder Ändern von Ressourcen, die in einem Visual Studio-Projekt enthalten sind. Die Ressourcen-Editoren von Visual Studio teilen Techniken und Schnittstellen, die Sie beim schnellen und einfachen Erstellen und Ändern von Anwendungsressourcen unterstützen. Mithilfe von Ressourcen-Editoren können Sie Ressourcen im entsprechenden Editor anzeigen und bearbeiten sowie Ressourcen in der Vorschau anzeigen.
 
 Wenn Sie eine Ressource erstellen oder öffnen, wird automatisch der entsprechende Editor geöffnet.
 
@@ -42,7 +42,7 @@ Wenn Sie eine Ressource erstellen oder öffnen, wird automatisch der entsprechen
 |[Zugriffstasten-Editor](../windows/accelerator-editor.md)|Zugriffstasten Tabellen in Visual C++ Studio-Projekten.|
 |[Binary Editor](binary-editor.md)|Binäre Daten und benutzerdefinierte Ressourcen in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
 |[Dialog-Editor](../windows/dialog-editor.md)|Dialog Felder in Visual Studio C++ -Projekten.|
-|[Image Editor](../windows/image-editor-for-icons.md)|Bitmaps, Symbole, Cursor und andere Bilddateien in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
+|[Bildbearbeitung](../windows/image-editor-for-icons.md)|Bitmaps, Symbole, Cursor und andere Bilddateien in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
 |[Menü-Editor](../windows/menu-editor.md)|Menü Ressourcen in Visual Studio C++ -Projekten.|
 |[Ribbon-Editor](../mfc/ribbon-designer-mfc.md)|Menübandressourcen in MFC-Projekten.|
 |[Zeichenfolgen-Editor](../windows/string-editor.md)|Zeichen folgen Tabellen in Visual C++ Studio-Projekten.|
@@ -73,7 +73,7 @@ Sie können im [Ressourcenansicht](how-to-create-a-resource-script-file.md#creat
 
 #### <a name="to-view-a-win32-resource-in-a-resource-editor"></a>So zeigen Sie eine Win32-Ressource in einem Ressourcen-Editor an
 
-1. Wechseln Sie zur Menü **Ansicht** > **Weitere Windows** > **Ressourcenansicht**.
+1. Wechseln Sie zur Menü **Ansicht** > **anderen Windows** > **Ressourcenansicht**.
 
 1. Wenn das **Ressourcenansicht** Fenster nicht das oberste Fenster ist, wählen Sie die Registerkarte **Ressourcenansicht** aus, um Sie oben zu verschieben.
 
@@ -118,15 +118,15 @@ Die folgenden Ressourcen bieten keine visuelle Vorschau: Accelerator, Manifest, 
 1. Wählen Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)die Schaltfläche **Eigenschaften Seiten** aus.
 
    > [!TIP]
-   > Verwenden Sie eine Verknüpfung, wechseln Sie zur Menü **Ansicht** > -**Eigenschaften Seiten**.
+   > Verwenden Sie eine Verknüpfung, wechseln Sie zur Menü **Ansicht** > **Eigenschaften Seiten**.
 
    Die **Eigenschaften** Seite für die Ressource wird geöffnet und zeigt eine Vorschau der Ressource an. Mithilfe der nach- **oben** -und **nach-unten** -Taste können Sie im Struktur Steuerelement in **Ressourcenansicht** oder im Dokument Fenster navigieren. Die **Eigenschaften** Seite wird geöffnet und zeigt alle Ressourcen an, die sich im Fokus befinden und in der Vorschau angezeigt werden können.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-Keiner
+Keine
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit Ressourcendateien](../windows/working-with-resource-files.md)<br/>
 [Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2720
 ms.assetid: 9ee3aab7-711b-4f5a-b2f1-cb62b130f1ce
-ms.openlocfilehash: c6499fd3f279099ea7c5b31860e70bdaa285e3f9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 24f4329ee631eafc7c2670d9ebf28609c22e7592
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383047"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202132"
 ---
 # <a name="compiler-error-c2720"></a>Compilerfehler C2720
 
-> "*Bezeichner*': '*Spezifizierer*" Speicherklassenspezifizierer für Elemente unzulässig
+> "*Bezeichner*": der Speicherklassenspezifizierer "*Spezifizierer*" ist für Member unzulässig.
 
-Die Speicherklasse kann für Klassenmember außerhalb der Variablendeklaration verwendet werden. Um diesen Fehler zu beheben, entfernen Sie den nicht benötigten [Speicherklasse](../../cpp/storage-classes-cpp.md) -Bezeichner aus der Definition des Members außerhalb der Klassendeklaration.
+Die Speicherklasse kann für Klassenmember außerhalb der Variablendeklaration verwendet werden. Um diesen Fehler zu beheben, entfernen Sie den nicht benötigten [Speicherklassenspezifizierer](../../cpp/storage-classes-cpp.md) aus der Definition des Members außerhalb der Klassen Deklaration.
 
 ## <a name="example"></a>Beispiel
 

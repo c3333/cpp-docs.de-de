@@ -4,19 +4,19 @@ ms.date: 10/29/2018
 helpviewer_keywords:
 - OLE DB provider templates, unsupported data types
 ms.assetid: f495e50f-530a-4fab-ab54-e0c359785845
-ms.openlocfilehash: e60f6cd4f7dca1ed3e176cabefc42f69946436a4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e87aebc4d6f23343af9a2f966d2c522e95b304ea
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409069"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211496"
 ---
 # <a name="converting-data-not-supported-by-the-provider"></a>Konvertieren von Daten, die nicht vom Anbieter unterstützt werden
 
-Wenn fordert der Consumer einen Datentyp, der vom Anbieter nicht unterstützt wird, wird die OLE DB-Anbieter-Vorlage für code `IRowsetImpl::GetData` Msdadc.dll aufgerufen, um den Datentyp zu konvertieren.
+Wenn der Consumer einen Datentyp anfordert, der vom Anbieter nicht unterstützt wird, ruft der OLE DB Anbieter-Vorlagen Code für `IRowsetImpl::GetData` msdadc. dll auf, um den Datentyp zu konvertieren.
 
-Wenn Sie eine Schnittstelle wie implementieren `IRowsetChange` , erfordert der Datenkonvertierung, rufen Sie Msdaenum.dll, um die Konvertierung erforderlich sind. Verwendung `GetData`, definiert in Atldb.h als Beispiel.
+Wenn Sie eine Schnittstelle wie `IRowsetChange` implementieren, für die eine Datenkonvertierung erforderlich ist, können Sie für die Konvertierung msdaenum. dll ausführen. Verwenden Sie `GetData`, die in "Atldb. h" definiert sind, als Beispiel.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

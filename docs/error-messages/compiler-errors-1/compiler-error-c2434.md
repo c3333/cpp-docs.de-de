@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C2434
 ms.assetid: 01329e26-7c74-4219-b74f-69e3a40c9738
-ms.openlocfilehash: c73a8d4fcde945ddf2495cc2d0d7dc47216f2db3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 869db3b49075fa477860e045e59306e22a381ca4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166333"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205463"
 ---
 # <a name="compiler-error-c2434"></a>Compilerfehler C2434
 
-> "*Symbol*": ein mit __declspec(process) deklariertes Symbol kann nicht dynamisch initialisiert werden, im/CLR: pure-Modus
+> '*Symbol*': ein Symbol, das mit __declspec (Process) deklariert wurde, kann im/CLR: pure-Modus nicht dynamisch initialisiert werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Es ist nicht möglich, eine Variable pro Prozess unter dynamisch initialisiert **/CLR: pure**. Weitere Informationen finden Sie unter [/CLR (Common Language Runtime Compilation)](../../build/reference/clr-common-language-runtime-compilation.md) und [Prozess](../../cpp/process.md).
+Es ist nicht möglich, eine prozessspezifische Variable unter **/clr: pure**dynamisch zu initialisieren. Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) und [verarbeiten](../../cpp/process.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C2434 generiert. Um dieses Problem zu beheben, verwenden Sie Konstanten zum Initialisieren `process` Variablen.
+Im folgenden Beispiel wird C2434 generiert. Um dieses Problem zu beheben, verwenden Sie Konstanten, um `process` Variablen zu initialisieren.
 
 ```cpp
 // C2434.cpp

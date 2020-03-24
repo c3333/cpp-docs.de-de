@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C2439
 ms.assetid: 3c5dbe5c-b7d3-4bb0-8619-92f6e280461e
-ms.openlocfilehash: f71112d3f37f3e4d1a4f41bade95726d7aa0a0bc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 99f3644869f6c5395684643f0e7802f3a01baa62
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62311732"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205360"
 ---
 # <a name="compiler-error-c2439"></a>Compilerfehler C2439
 
-'Bezeichner': Member konnte nicht initialisiert werden
+"Bezeichner": Member konnte nicht initialisiert werden.
 
-Eine Klasse, Struktur oder union-Member kann nicht initialisiert werden.
+Klassen-, Struktur-oder Union-Member können nicht initialisiert werden.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Versuch, eine indirekte Basisklasse der Klasse oder Struktur zu initialisieren.
+1. Es wird versucht, eine indirekte Basisklasse oder Struktur zu initialisieren.
 
-1. Versuch, einen geerbten Member einer Klasse oder Struktur zu initialisieren. Durch den Konstruktor der Klasse oder Struktur muss ein geerbter Member initialisiert werden.
+1. Es wird versucht, einen geerbten Member einer Klasse oder Struktur zu initialisieren. Ein geerbter Member muss vom Konstruktor der Klasse oder Struktur initialisiert werden.

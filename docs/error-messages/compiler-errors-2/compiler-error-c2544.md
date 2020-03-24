@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C2544
 ms.assetid: 8e79b74a-4e92-4752-a5fe-c3143dfc5524
-ms.openlocfilehash: 85136a8d05b2a9f4bdc7a53571aba83cc8fca1ee
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 569f092adfc49116337dc39cdf3c3f33d55ffcb9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62266210"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202513"
 ---
 # <a name="compiler-error-c2544"></a>Compilerfehler C2544
 
-erwartet ')' für '()'-Operator
+")" für Operator "()" erwartet
 
-Die Funktionsaufrufoperator ist eine linke Klammer fehlt.
+Dem Funktions aufrufsoperator fehlt eine linke Klammer.
 
-Dieser Fehler kann durch makroerweiterung verursacht werden.
+Dieser Fehler kann durch eine Makro Erweiterung verursacht werden.

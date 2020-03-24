@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C1351
 ms.assetid: 1f8502e4-1049-49c7-bbe3-fa101c79021e
-ms.openlocfilehash: 5ba34d07141ddef301f95de23bead654a14b677e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 079f17106f3515b332352c2370371e175e72d7a7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62329737"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203137"
 ---
 # <a name="fatal-error-c1351"></a>Schwerwiegender Fehler C1351
 
-> Fehler beim Laden der Dll "*Dll*": Inkompatible Version
+> Fehler beim Laden der dll "*dll*": inkompatible Version.
 
 Die falsche Version einer DLL wurde gefunden.
 
-Dies bedeutet, dass ein Problem mit Ihrer Installation, und installieren Sie Visual Studio neu.
+Dies weist auf ein Problem mit Ihrer Installation hin, und Sie sollten Visual Studio neu installieren.

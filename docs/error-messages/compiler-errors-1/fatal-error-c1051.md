@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C1051
 ms.assetid: 87dcbd3b-0952-499a-bd42-64f9e8de2605
-ms.openlocfilehash: afc851cc9e46df0555d3702db982d5c3890d99ef
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fa897d6e7f4d1d5d6bdd06dba33d0eeb1c238049
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62243666"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204501"
 ---
 # <a name="fatal-error-c1051"></a>Schwerwiegender Fehler C1051
 
-Programmdatenbankdatei "PDB-Datei", hat ein veraltetes Format.
+Programm Datenbankdatei "PdbFile" hat ein veraltetes Format, löschen Sie Sie, und kompilieren Sie erneut.
 
-Der Compiler kann nicht die Programmdatenbankdatei, aktualisiert die hat eine ältere Versionsnummer. Die Datei löschen und neu kompilieren des Programms mit **"/ Zi"** oder **"/ Zi"**. Weitere Informationen finden Sie unter  [ /Z7, / Zi, / Zi (Debuginformationsformat)](../../build/reference/z7-zi-zi-debug-information-format.md)
+Der Compiler kann die Programm Datenbankdatei mit einer älteren Versionsnummer nicht aktualisieren. Löschen Sie die Datei, und kompilieren Sie Ihr Programm mit **/Zi** oder **/Zi**neu. Weitere Informationen finden Sie unter [/Z7,/Zi,/Zi (Debuginformationsformat)](../../build/reference/z7-zi-zi-debug-information-format.md) .

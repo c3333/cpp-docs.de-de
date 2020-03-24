@@ -9,14 +9,14 @@ helpviewer_keywords:
 - __asm keyword [C++], vs. asm blocks
 - __asm keyword [C++]
 ms.assetid: 77ff3bc9-a492-4b5e-85e1-fa4e414e79cd
-ms.openlocfilehash: 43c7ae02e465ce8de2871d78e7ba604221aa7426
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: de28e4c0fad6b89a62b4479c5c32f0b8606cf3af
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65445901"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169630"
 ---
-# <a name="asm"></a>__asm
+# <a name="__asm"></a>__asm
 
 **Microsoft-spezifisch**
 
@@ -27,31 +27,31 @@ Das `__asm`-Schlüsselwort ruft den Inlineassembler auf und kann immer da auftre
 
 ## <a name="grammar"></a>Grammatik
 
-*asm-block*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**__asm** *assembly-instruction* **;**<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**__asm {** *Assembly-Anweisung-List* **}** **;** <sub>deaktivieren</sub>
+*ASM-Block*:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__asm** *Assemblyanweisung* **;** <sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__asm {** *Assembly-Instruction-List* **}** **;** <sub>opt</sub>
 
-*assembly-instruction-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*assembly-instruction* **;**<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*assembly-instruction* **;** *assembly-instruction-list* **;**<sub>opt</sub>
+*Assembly-Instruction-List*:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Assemblyanweisung* **;** <sub>opt</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*Assemblyanweisung* **;** *Assembly-Instruction-List* **;** <sub>opt</sub>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn es ohne geschweifte Klammern verwendet wird, bedeutet das `__asm`-Schlüsselwort, dass der Rest der Zeile eine Assemblysprachanweisung ist. Wenn es mit geschweiften Klammern verwendet wird, bedeutet es, dass jede Zeile zwischen den geschweiften Klammern eine Assemblysprachanweisung ist. Aus Gründen der Kompatibilität mit früheren Versionen wird `_asm` synonym für `__asm` verwendet.
 
 Da das `__asm`-Schlüsselwort ein Trennzeichen für Anweisungen ist, können Sie Assemblyanweisungen in die gleiche Zeile einfügen:
 
-Vor Visual Studio 2005, die Anweisung
+Vor Visual Studio 2005 ist die Anweisung
 
 ```cpp
 __asm int 3
 ```
 
-führte nicht zu einem systemeigenen Code generiert werden, bei der Kompilierung mit **"/ CLR"**; der Compiler übersetzte die Anweisung in einer CLR-unterbrechungsanweisung.
+hat bei der Kompilierung mit **/CLR**nicht bewirkt, dass nativer Code generiert wird. der Compiler hat die Anweisung in eine CLR-Break-Anweisung übersetzt.
 
-`__asm int 3` führt jetzt zur Generierung von systemeigenem Code für die Funktion. Wenn Sie möchten eine Funktion, die einen Haltepunkt im Code verursachen und zu verwenden, wenn Sie möchten, dass diese Funktion in MSIL kompiliert [__debugbreak](../../intrinsics/debugbreak.md).
+`__asm int 3` führt jetzt zur Generierung von systemeigenem Code für die Funktion. Wenn eine Funktion einen Haltepunkt im Code verursachen soll und diese Funktion in MSIL kompiliert werden soll, verwenden Sie [__debugbreak](../../intrinsics/debugbreak.md).
 
-Für die Kompatibilität mit früheren Versionen **_asm** ist ein Synonym für **__asm** , wenn Compileroption [/Za \(spracherweiterungen deaktivieren)](../../build/reference/za-ze-disable-language-extensions.md) angegeben ist.
+Aus Gründen der Kompatibilität mit früheren Versionen ist **_asm** ein Synonym für **__asm** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 ## <a name="example"></a>Beispiel
 
@@ -85,7 +85,7 @@ Anders als bei geschweiften Klammern in C und C++ wirkt sich das Einschließen e
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../../cpp/keywords-cpp.md)<br/>
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>

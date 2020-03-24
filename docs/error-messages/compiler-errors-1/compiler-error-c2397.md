@@ -4,24 +4,24 @@ ms.date: 11/04/2016
 f1_keywords:
 - C2397
 ms.assetid: b418cf5a-d50d-4a6c-98a7-994ae35046d1
-ms.openlocfilehash: 61f23269e0b6ed65a485f11e49e492d2248b8a42
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 02a8bb09e0b22619bd61e6c4675057263a62a9d5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62378933"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206014"
 ---
 # <a name="compiler-error-c2397"></a>Compilerfehler C2397
 
-Konvertierung von 'type_1' zu 'type_2' erfordert eine einschränkende Konvertierung
+die Konvertierung von ' TYPE_1 ' in ' TYPE_2 ' erfordert eine einschränkende Konvertierung.
 
-Eine implizite einschränkende Konvertierung wurde gefunden, wenn Sie einheitliche Initialisierung verwenden.
+Bei Verwendung der einheitlichen Initialisierung wurde eine implizite einschränkende Konvertierung gefunden.
 
-Die Programmiersprache C ermöglicht implizite einschränkende Konvertierungen in Zuweisungen und Initialisierung und C++-aufgespielte, auch wenn unerwartete einschränkende eine Ursache für viele Fehler in Code ist. Um den Code sicherer zu gestalten, erfordert der C++-standard eine diagnosemeldung aus, tritt eine einschränkende Konvertierung in eine Initialisierungsliste. In Visual C++ ist die Diagnose Compilerfehler C2397 beim Beginn unterstützte Syntax einheitliche Initialisierung in Visual Studio 2015. Der Compiler generiert [Compilerwarnung (Stufe 1) C4838](../../error-messages/compiler-warnings/compiler-warning-level-1-c4838.md) bei Verwendung der Liste aus oder aggregatinitialisierungssyntax von Visual Studio 2013 unterstützt werden.
+Die Programmiersprache C ermöglicht implizite einschränkende Konvertierungen in Zuweisungen und Initialisierung und C++ folgt, obwohl eine unerwartete Einschränkung eine Ursache für viele Code Fehler ist. Um Code sicherer zu machen, C++ erfordert der Standard eine Diagnose Meldung, wenn eine einschränkende Konvertierung in einer Initialisierungs Liste erfolgt. In Visual C++ist die Diagnose ein Compilerfehler C2397 bei Verwendung der von Visual Studio 2015 unterstützten Uniform Initialisierung-Syntax. Der Compiler generiert [Compilerwarnung (Stufe 1) C4838](../../error-messages/compiler-warnings/compiler-warning-level-1-c4838.md) bei Verwendung der von Visual Studio 2013 unterstützten List-oder Aggregat Initialisierungs Syntax.
 
-Eine einschränkende Konvertierung kann kein Problem sein, wenn Sie wissen, dass die Bandbreite der konvertierten Werte in der Ziel-eingepasst werden kann. In diesem Fall wissen Sie mehr als der Compiler übernimmt. Wenn Sie eine einschränkende Konvertierung bewusst machen, stellen Sie Ihre Absichten explizit über eine statische Umwandlung. Andernfalls gibt diese Fehlermeldung an fast immer, dass Sie einen Fehler in Ihrem Code verfügen. Sie können ihn beheben, indem Sie sicherstellen, dass die Objekte, die Sie initialisieren aufweisen, die groß genug, um die Eingaben zu verarbeiten sind.
+Eine einschränkende Konvertierung kann in Ordnung sein, wenn Sie wissen, dass der mögliche Bereich der konvertierten Werte in das Ziel passen kann. In diesem Fall wissen Sie mehr als der Compiler. Wenn Sie eine einschränkende Konvertierung absichtlich vornehmen, machen Sie Ihre Absichten mithilfe einer statischen Umwandlung explizit. Andernfalls gibt diese Fehlermeldung fast immer an, dass ein Fehler in Ihrem Code vorliegt. Sie können dieses Problem beheben, indem Sie sicherstellen, dass die initialisierten Objekte über Typen verfügen, die groß genug sind, um die Eingaben zu verarbeiten.
 
-Im folgenden Beispiel wird die C2397 generiert und zeigt eine Möglichkeit, das Problem zu beheben:
+Im folgenden Beispiel wird C2397 generiert und eine Möglichkeit gezeigt, Sie zu beheben:
 
 ```
 // C2397.cpp -- C++ narrowing conversion diagnostics

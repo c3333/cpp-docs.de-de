@@ -7,24 +7,24 @@ helpviewer_keywords:
 - invoking inline assembler
 - inline assembly, inline assembler
 ms.assetid: d990331a-0e33-4760-8d7a-b720b0288335
-ms.openlocfilehash: 21e0d9ca0e64922b83518eb79c19d2f2e67813bd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6233e07e115c21a0a173f094079dc9c1753533b6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62167010"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169396"
 ---
 # <a name="inline-assembler-overview"></a>Übersicht über Inlineassembler
 
 **Microsoft-spezifisch**
 
-Der Inlineassembler können Sie Assemblysprachanweisungen in Ihrem C- und C++-Quellprogramme ohne zusätzliche Assembly- und Verknüpfungsschritte einbetten. Der Inlineassembler ist im Compiler integriert, daher benötigen Sie keinen getrennten Assembler wie den Microsoft Macro Assembler (MASM).
+Mit dem Inline Assembler können Sie Assemblysprachanweisungen in Ihre C C++ -und Quell Programme einbetten, ohne zusätzliche Assembly-und Link Schritte auszuführen. Der Inlineassembler ist im Compiler integriert, daher benötigen Sie keinen getrennten Assembler wie den Microsoft Macro Assembler (MASM).
 
-Da der Inlineassembler keine separaten Assembly- und Verknüpfungsschritte erfordert, ist er einfacher als ein getrennter Assembler. Inline-Assemblycode können einen C- oder C++ Variablen- oder Funktionsname-Namen, der im Gültigkeitsbereich, daher ist es einfach, es mit C und C++-Code des Programms zu integrieren. Und da der Assemblycode mit C und C++-Anweisungen kombiniert werden kann, können sie Aufgaben, die mühsam oder unmöglich in C oder C++ allein sind ausführen.
+Da der Inlineassembler keine separaten Assembly- und Verknüpfungsschritte erfordert, ist er einfacher als ein getrennter Assembler. Inline-Assemblycode kann alle C++ c-oder Variablen-oder Funktionsnamen verwenden, die sich im Gültigkeitsbereich befinden. Daher ist es einfach C++ , ihn in den c-und Code Ihres Programms zu integrieren. Und da der Assemblycode mit c-und C++ -Anweisungen gemischt werden kann, kann er Aufgaben ausführen, die in c C++ oder allein mühsam oder unmöglich sind.
 
-Die [__asm](../../assembler/inline/asm.md) -Schlüsselwort ruft den Inlineassembler und kann verwendet werden, wo eine C oder C++ Anweisung ist zulässig. Es kann nicht allein stehen. Ihm muss eine Assemblyanweisung, eine Gruppe von Anweisungen, die in geschweifte Klammern eingeschlossen sind, oder zumindest ein leeres Paar geschweifter Klammern folgen. Der Begriff "`__asm`-Block" bezieht sich hier auf eine beliebige Anweisung bzw. Gruppe von Anweisungen, unabhängig davon, ob in geschweifte Klammern gesetzt oder nicht.
+Das [__asm](../../assembler/inline/asm.md) -Schlüsselwort Ruft den Inline Assembler auf und kann überall vorkommen C++ , wo eine C-oder-Anweisung zulässig ist. Es kann nicht allein stehen. Ihm muss eine Assemblyanweisung, eine Gruppe von Anweisungen, die in geschweifte Klammern eingeschlossen sind, oder zumindest ein leeres Paar geschweifter Klammern folgen. Der Begriff "`__asm`-Block" bezieht sich hier auf eine beliebige Anweisung bzw. Gruppe von Anweisungen, unabhängig davon, ob in geschweifte Klammern gesetzt oder nicht.
 
-Der folgende Code zeigt eine einfache `__asm` Block in geschweifte Klammern eingeschlossen. (Der Code ist eine Prologsequenz für eine benutzerdefinierte Funktion).
+Der folgende Code ist ein einfacher `__asm` Block, der in geschweiften Klammern eingeschlossen ist. (Der Code ist eine Prologsequenz für eine benutzerdefinierte Funktion).
 
 ```cpp
 // asm_overview.cpp
@@ -62,6 +62,6 @@ __asm push ebp   __asm mov  ebp, esp   __asm sub  esp, __LOCAL_SIZE
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>
