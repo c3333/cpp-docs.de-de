@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C2670
 ms.assetid: 4b3b74c7-a750-4b0d-abd3-216d1234461f
-ms.openlocfilehash: c75c9f68b44dfb3d687942811d3a175f34dc9910
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 41da2d246bbabd9301f9ac03e46c213b137d82de
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62367940"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177143"
 ---
 # <a name="compiler-error-c2670"></a>Compilerfehler C2670
 
-'Bezeichner': die Funktionsvorlage kann nicht Parameternummer vom Typ 'Typ' konvertieren
+"Bezeichner": die Funktions Vorlage kann die Parameter Nummer nicht vom Typ "Type" konvertieren.
 
 Ein Parameter konnte nicht in den erforderlichen Typ konvertiert werden.
 
-Dieser Fehler möglicherweise behoben werden, wenn Sie eine explizite Konvertierung erstellen.
+Dieser Fehler wird möglicherweise korrigiert, wenn Sie eine explizite Konvertierung erstellen.

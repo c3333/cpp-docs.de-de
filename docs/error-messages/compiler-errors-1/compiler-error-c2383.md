@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2383
 ms.assetid: 6696221d-879c-477a-a0f3-a6edc15fd3d7
-ms.openlocfilehash: e9c1774fe7cd4a6883aa79f384cc64521a57ed17
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: 2aa922ebeadb374a7eac73a0f452376472b00984
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448006"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206027"
 ---
 # <a name="compiler-error-c2383"></a>Compilerfehler C2383
 
-"*Symbol*': Standardargumente dürfen nicht auf dieses Symbol
+'*Symbol*': für dieses Symbol sind keine Standardargumente zulässig.
 
-Der C++-Compiler lässt die Standardargumente für Zeiger auf Funktionen nicht.
+Der C++ Compiler lässt keine Standardargumente für Zeiger auf Funktionen zu.
 
-Dieser Code wurde vom Microsoft akzeptiert C++ -Compiler in Versionen vor Visual Studio 2005 jetzt jedoch einen Fehler. Weisen Sie für Code, der in allen Versionen von Visual C++ funktioniert einen Standardwert nicht auf ein Zeiger auf Funktion-Argument.
+Dieser Code wurde vom Microsoft C++ -Compiler in Versionen vor Visual Studio 2005 akzeptiert, gibt jetzt jedoch einen Fehler aus. Weisen Sie für Code, der in allen Versionen C++von Visual funktioniert, keinen Standardwert einem Pointer-to-function-Argument zu.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C2383 generiert und gezeigt, eine mögliche Lösung:
+Im folgenden Beispiel wird C2383 generiert und eine mögliche Lösung angezeigt:
 
 ```cpp
 // C2383.cpp

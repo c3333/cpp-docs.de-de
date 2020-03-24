@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - type forwarding, C++
 ms.assetid: ae730b69-0c27-41cc-84e1-3132783866ea
-ms.openlocfilehash: c5148c05e5580942d885b310e35f3b629224a654
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 0803ecc2ffb2da2748b1ef063481aa2571f27f50
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515975"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171930"
 ---
 # <a name="type-forwarding-ccli"></a>Typweiterleitung (C++/CLI)
 
@@ -33,13 +33,13 @@ Im folgenden Codebeispiel wird die Verwendung dieses Typs veranschaulicht.
 
 ### <a name="parameters"></a>Parameter
 
-*new*<br/>
+*Neu*<br/>
 Die Assembly, in die Sie die Typdefinition verschieben.
 
-*Typ*<br/>
+*type*<br/>
 Der Typ, dessen Definition Sie in eine andere Assembly verschieben.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Wenn eine Komponente (Assembly) geliefert ist und von Clientanwendungen verwendet wird, können Sie mit der Typweiterleitung einen Typ von der Komponente (Assembly) in eine andere Assembly verschieben, die aktualisierte Komponente (und alle zusätzlichen erforderlichen Assemblys) liefern, und die Clientanwendungen sind weiterhin funktionsfähig, ohne erneut kompiliert zu werden.
 
@@ -88,6 +88,6 @@ Wenn also eine Quellcodedatei, die zum Erstellen der Assembly „A.dll“ verwen
 
 5. Verwenden Sie „A.dll“ ohne erneute Kompilierung von Clientanwendungen.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`

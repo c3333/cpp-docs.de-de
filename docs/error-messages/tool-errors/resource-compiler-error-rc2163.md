@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - RC2163
 ms.assetid: a7e95939-9267-4262-9b49-90dc4157a7da
-ms.openlocfilehash: 6fadeb99bd29731da5275ca1a556a72e47756a39
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d65ddb24415a67004b8d5d6dccd509b966f10e7e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396885"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191045"
 ---
 # <a name="resource-compiler-error-rc2163"></a>Ressourcencompiler: Fehler RC2163
 
-Accelerator-Typ erforderlich ist [ASCII oder VIRTKEY]
+Erforderlicher accelerattyp [ASCII oder VIRTKEY]
 
 Das `type` -Feld der **ACCELERATORS** -Anweisung muss entweder den ASCII- oder den VIRTKEY-Wert enthalten.

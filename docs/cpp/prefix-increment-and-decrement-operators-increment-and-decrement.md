@@ -13,12 +13,12 @@ helpviewer_keywords:
 - decrement operators [C++], syntax
 - decrement operators [C++]
 ms.assetid: 45ea7fc7-f279-4be9-a216-1d9a0ef9eb7b
-ms.openlocfilehash: deb8acc6c6a68c9a97f2f0efbdc4084b4937df46
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 32c210961c4966bb7b2cbcc597bd3c99f0d6ed24
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392101"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177663"
 ---
 # <a name="prefix-increment-and-decrement-operators--and---"></a>Inkrementierungs- und Dekrementierungsoperatoren in Präfixnotation: ++ und --
 
@@ -29,15 +29,15 @@ ms.locfileid: "62392101"
 -- unary-expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der präfixdekrementoperator (**++**) Fügt eine zu seinem Operanden hinzu, ist dieser inkrementierte Wert das Ergebnis des Ausdrucks. Der Operand muss ein l-Wert nicht vom Typ **const**. Das Ergebnis ist ein L-Wert des gleichen Typs wie der Operand.
+Der Präfix Inkrementoperator ( **++** ) fügt einen dem Operanden hinzu. dieser inkrementierte Wert ist das Ergebnis des Ausdrucks. Der Operand muss ein l-Wert sein, der nicht vom Typ " **Konstanten**" ist. Das Ergebnis ist ein L-Wert des gleichen Typs wie der Operand.
 
-Der präfixdekrementoperator (**--**) entspricht dem präfixinkrementoperator, außer dass der Operand um eins verringert wird und das Ergebnis dieser dekrementierte Wert ist.
+Der Präfix-Dekrementoperator ( **--** ) entspricht dem Präfix Inkrementoperator, mit dem Unterschied, dass der Operand um eins verringert wird und das Ergebnis dieser dekrementierte Wert ist.
 
-**Visual Studio 2017 Version 15.3 und höher** (verfügbar mit [/Std: c ++ 17](../build/reference/std-specify-language-standard-version.md)): Der Operand eines Inkrement- oder Dekrementoperatoren möglicherweise nicht vom Typ **"bool"**.
+**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): der Operand eines Inkrement-oder Dekrementoperators darf nicht den Typ " **bool**" aufweisen.
 
-Sowohl Präfix- als auch Postfixinkrement und Dekrementoperatoren beeinflussen ihre Operanden. Der wesentliche Unterschied zwischen ihnen besteht in der Reihenfolge von Inkrement und Dekrement bei der Auswertung eines Ausdrucks. (Weitere Informationen finden Sie unter [Inkrementierungs- und Dekrementierungsoperatoren in Postfixnotation](../cpp/postfix-increment-and-decrement-operators-increment-and-decrement.md).) In der Präfix-Form findet das Inkrement oder Dekrement statt, bevor der Wert in der Ausdrucksauswertung verwendet wird, daher ist der Wert des Ausdrucks ungleich dem Wert des Operanden. In der Postfix-Form findet das Inkrement oder Dekrement statt, nachdem der Wert in der Ausdrucksauswertung verwendet wird, daher ist der Wert des Ausdrucks der gleiche wie der Wert des Operanden. Zum Beispiel gibt das folgende Programm "`++i = 6`" aus:
+Sowohl Präfix- als auch Postfixinkrement und Dekrementoperatoren beeinflussen ihre Operanden. Der wesentliche Unterschied zwischen ihnen besteht in der Reihenfolge von Inkrement und Dekrement bei der Auswertung eines Ausdrucks. (Weitere Informationen finden Sie unter [postfix-Inkrement-und Dekrementoperatoren](../cpp/postfix-increment-and-decrement-operators-increment-and-decrement.md).) Im Präfix Formular findet das Inkrement oder Dekrement statt, bevor der Wert in der Ausdrucks Auswertung verwendet wird, daher unterscheidet sich der Wert des Ausdrucks vom Wert des Operanden. In der Postfix-Form findet das Inkrement oder Dekrement statt, nachdem der Wert in der Ausdrucksauswertung verwendet wird, daher ist der Wert des Ausdrucks der gleiche wie der Wert des Operanden. Zum Beispiel gibt das folgende Programm "`++i = 6`" aus:
 
 ```cpp
 // expre_Increment_and_Decrement_Operators.cpp
@@ -54,7 +54,7 @@ int main() {
 
 Ein Operand vom Typ "Ganzzahl" oder "Gleitkomma" wird durch den ganzzahligen Wert 1 inkrementiert oder dekrementiert. Der Ergebnistyp entspricht dem Operandentyp. Ein Operand vom Zeigertyp wird um die Größe des von ihm adressierten Objekts inkrementiert oder dekrementiert. Ein inkrementierter Zeiger verweist auf das nächste Objekt. Ein dekrementierter Zeiger verweist auf das vorherige Objekt.
 
-Da Inkrement-und Dekrementoperatoren Nebeneffekte haben, verwenden von Ausdrücken mit Inkrement- oder Dekrement-Operatoren in einem [Präprozessormakro](../preprocessor/macros-c-cpp.md) kann unerwünschte Ergebnisse haben. Betrachten Sie das folgende Beispiel:
+Da Inkrement-und Dekrementoperatoren Nebeneffekte haben, kann das Verwenden von Ausdrücken mit Inkrement-oder Dekrementoperatoren in einem [Präprozessormakro](../preprocessor/macros-c-cpp.md) unerwünschte Ergebnisse aufweisen. Betrachten Sie dieses Beispiel:
 
 ```cpp
 // expre_Increment_and_Decrement_Operators2.cpp
@@ -78,7 +78,7 @@ Wenn `i` größer oder gleich `j` oder um 1 kleiner als `j` ist, wird es zweimal
 > [!NOTE]
 >  C++-Inlinefunktionen sind in vielen Fällen Makros vorzuziehen, da diese Nebeneffekte, wie die hier beschriebenen, ausschließen und der Programmiersprache die weitere Ausführung vollständigerer Typüberprüfung ermöglichen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>

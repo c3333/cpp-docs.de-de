@@ -8,12 +8,12 @@ helpviewer_keywords:
 - attributes [C#], default attribute
 - defaults, default attribute
 ms.assetid: 0cdca716-1ba8-46d7-9399-167e55492870
-ms.openlocfilehash: 291e16ad0967acd1869874fcc9fa6eb5529e4b44
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: b789f82f4b5a09b86d72dfde5d783665cf2e918a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501681"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167185"
 ---
 # <a name="default-c"></a>default (C++)
 
@@ -32,18 +32,18 @@ Die Standardschnittstelle, die für Skriptumgebungen verfügbar gemacht wird, di
 
 Wenn keine Standardschnittstelle angegeben wird, wird das erste Vorkommen einer Nicht-Quellschnittstelle als Standard verwendet.
 
-*interface2*<br/>
+*Schnittstelle2*<br/>
 Optionale Die Standard-Quell Schnittstelle. Sie müssen diese Schnittstelle auch beim [source](source-cpp.md) -Attribut angeben.
 
 Wenn keine Standard-Quellschnittstelle angegeben ist, wird die erste Quellschnittstelle als Standard verwendet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das C++-Attribut **default** hat die gleiche Funktion wie das MIDL-Attribut [default](/windows/win32/Midl/default) . Das **default** -Attribut wird auch mit dem [case](case-cpp.md) -Attribut verwendet.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie **default** für die Definition einer Co-Klasse verwendet wird, `ICustomDispatch` um als standardmäßige Programmierbarkeits Schnittstelle anzugeben:
+Der folgende Code zeigt, wie **default** für die Definition einer Co-Klasse verwendet wird, um `ICustomDispatch` als Standard Programmierbarkeits Schnittstelle anzugeben:
 
 ```cpp
 // cpp_attr_ref_default.cpp
@@ -93,7 +93,7 @@ int main() {
 
 Das [source](source-cpp.md) -Attribut weist außerdem ein Beispiel zum Verwenden von **default**auf.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -102,11 +102,11 @@ Das [source](source-cpp.md) -Attribut weist außerdem ein Beispiel zum Verwenden
 |**Betrifft**|**Klasse**, **Struktur**, Datenmember|
 |**Wiederholbar**|Nein|
 |**Erforderliche Attribute**|**Co-Klasse** (bei Anwendung auf **Klasse** oder **Struktur**)|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

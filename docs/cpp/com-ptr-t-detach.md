@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - Detach method [C++]
 ms.assetid: 0652053e-af37-44e9-a278-2522212ebfed
-ms.openlocfilehash: affaefd8af4802836733587af62977171ba01410
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8ba42f19e3474cc4a3199771f761b021221f430e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154960"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190013"
 ---
-# <a name="comptrtdetach"></a>_com_ptr_t::Detach
+# <a name="_com_ptr_tdetach"></a>_com_ptr_t::Detach
 
 **Microsoft-spezifisch**
 
@@ -25,12 +25,12 @@ Extrahiert den gekapselten Schnittstellenzeiger und gibt ihn zurück.
 Interface* Detach( ) throw( );
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Extrahiert und gibt den gekapselten Schnittstellenzeiger zurück, und löscht dann den Speicher des gekapselten Zeigers auf NULL. Dadurch wird der Schnittstellenzeiger aus der Kapselung entfernt. Es liegt bei Ihnen Aufrufen `Release` für den zurückgegebenen Schnittstellenzeiger auf.
+Extrahiert den gekapselten Schnittstellenzeiger und gibt ihn zurück und löscht dann den Speicher des gekapselten Zeigers auf NULL. Dadurch wird der Schnittstellenzeiger aus der Kapselung entfernt. Sie müssen `Release` für den zurückgegebenen Schnittstellen Zeiger aufzurufen.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_ptr_t-Klasse](../cpp/com-ptr-t-class.md)

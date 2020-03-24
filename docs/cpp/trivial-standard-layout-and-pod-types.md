@@ -2,12 +2,12 @@
 title: Triviale Typen sowie Standardlayout-, POD- und Literaltypen
 ms.date: 04/05/2018
 ms.assetid: 2b23a7be-9bad-49fc-8298-31a9a7c556b0
-ms.openlocfilehash: 2745302b3ebd7927e9d839e4661e884a2bd91042
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: b31fefd31b32a5fc4aa3f655b90d39f60a524ca4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423705"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188063"
 ---
 # <a name="trivial-standard-layout-pod-and-literal-types"></a>Triviale Typen sowie Standardlayout-, POD- und Literaltypen
 
@@ -183,7 +183,7 @@ int main()
 }
 ```
 
-## <a name="literal_types"></a> Literaltypen
+## <a name="literal-types"></a><a name="literal_types"></a> Literaltypen
 
 Das Layout eines Literaltyps kann zur Kompilierzeit bestimmt werden. Folgende Typen sind Literaltypen:
 
@@ -193,6 +193,6 @@ Das Layout eines Literaltyps kann zur Kompilierzeit bestimmt werden. Folgende Ty
 - Void-Arrays, skalare Typen oder Verweise
 - Eine Klasse, die einen trivialen Destruktor und einen oder mehrere constexpr-Konstruktoren aufweist, die keine Konstruktoren zum Verschieben oder Kopieren sind. Darüber hinaus müssen alle nicht statischen Datenmember und Basisklassen Literaltypen und permanent sein.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grundlegende Konzepte](../cpp/basic-concepts-cpp.md)

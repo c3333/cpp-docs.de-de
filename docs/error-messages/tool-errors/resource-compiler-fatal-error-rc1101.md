@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - RC1101
 ms.assetid: ff273384-b819-464a-8c0e-d5951e4a28b4
-ms.openlocfilehash: abe16bb949fff46f01b51efee842f065d8e37cae
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 45ffe1d687cc54268af489a268a5927d00ad3224
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62374286"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182512"
 ---
 # <a name="resource-compiler-fatal-error-rc1101"></a>Ressourcencompiler: Schwerwiegender Fehler RC1101
 
-> kein Name für die Binärdatei angegeben
+> kein Ressourcen Binär Dateiname angegeben.
 
-Umbenennen der Ausgabe (/ fo) Option wurde nicht, gefolgt vom Dateinamen.
+Auf die Option Ausgabe umbenennen (/FO) wurde kein Dateiname gefolgt.
 
-Verwenden Sie die folgende Syntax für die/Fo-Option:
+Verwenden Sie die folgende Syntax für die/FO-Option:
 
-> **RC/Fo** *Ausgabedateiname* <em>Infilename</em>**RC**
+> **RC/FO** *outFileName* <em>inFileName</em> **. RC**

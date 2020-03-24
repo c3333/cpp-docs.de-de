@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C4024
 ms.assetid: f6cb1b70-686a-4747-a01c-de673208209a
-ms.openlocfilehash: 140ec0de3650e2fed1a79958f9d75b49083ac801
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4eee180b4582efe7ac3ba2ecd8540a6b2149b05f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152081"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164533"
 ---
 # <a name="compiler-warning-level-1-c4024"></a>Compilerwarnung (Stufe 1) C4024
 
-'Funktion': unterschiedliche Typen für formalen und übergebenen Parameter 'Number'
+"Function": unterschiedliche Typen für formalen und tatsächlichen Parameter "Number"
 
-Formale und tatsächliche der entsprechende Parameter aufweisen unterschiedliche Typen. Der Compiler übergibt den tatsächlichen Parameter ohne Änderung. Die empfangende-Funktion konvertiert den Parametertyp in den erwarteten Typ.
+Die entsprechenden formalen und tatsächlichen Parameter haben unterschiedliche Typen. Der Compiler übergibt den eigentlichen Parameter unverändert. Die empfangende Funktion konvertiert den Parametertyp in den erwarteten Typ.

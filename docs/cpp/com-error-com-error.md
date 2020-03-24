@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - _com_error method [C++]
 ms.assetid: 0a69e46c-caab-49ef-b091-eee401253ce6
-ms.openlocfilehash: 8856289605cce430fdab36d6e3e8b743190e02ea
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4ac902f0fda90f77526ef53139ef0d523d8c22e7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62155123"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180783"
 ---
-# <a name="comerrorcomerror"></a>_com_error::_com_error
+# <a name="_com_error_com_error"></a>_com_error::_com_error
 
 **Microsoft-spezifisch**
 
-Erstellt eine **_com_error** Objekt.
+Erstellt ein **_com_error** -Objekt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,34 +32,34 @@ _com_error( const _com_error& that ) throw( );
 
 #### <a name="parameters"></a>Parameter
 
-*hr*<br/>
+*HR*<br/>
 HRESULT-Informationen.
 
 *perrinfo*<br/>
 `IErrorInfo`-Objekt
 
-*fAddRef*<br/>
-Der Standardwert veranlasst den Konstruktor, AddRef auf einer nicht-Null Aufrufen `IErrorInfo` Schnittstelle. Dadurch wird eine richtige verweiszählung im typischen Fall, in dem Besitz der Schnittstelle übergeben wird, die **_com_error** Objekt, z. B.:
+*abadressf*<br/>
+Der Standard bewirkt, dass der Konstruktor die adressf für eine `IErrorInfo`-Schnittstelle ungleich NULL aufruft. Dies ermöglicht die korrekte Verweis Zählung in dem allgemeinen Fall, in dem der Besitz der Schnittstelle an das **_com_error** Objekt übermittelt wird, z. b.:
 
 ```cpp
 throw _com_error(hr, perrinfo);
 ```
 
-Wenn Sie nicht möchten, dass Ihr Code zum Übertragen des Besitzes zu der **_com_error** -Objekt, und die `AddRef` ist erforderlich, um den offset der `Release` in die **_com_error** Destruktor, erstellen Sie das Objekt als Die folgende:
+Wenn Sie nicht möchten, dass Ihr Code den Besitz an das **_com_error** Objekt überträgt, und der `AddRef` erforderlich ist, um die `Release` im **_com_error** Dekonstruktor zu versetzen, erstellen Sie das Objekt wie folgt:
 
 ```cpp
 _com_error err(hr, perrinfo, true);
 ```
 
-*that*<br/>
-Eine vorhandene **_com_error** Objekt.
+*,*<br/>
+Ein vorhandenes **_com_error** -Objekt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor erstellt ein neues Objekt angegeben wird, ein HRESULT und optionalen `IErrorInfo` Objekt. Der zweite Konstruktor erstellt eine Kopie eines vorhandenen **_com_error** Objekt.
+Der erste Konstruktor erstellt ein neues-Objekt, wenn ein HRESULT und ein optionales `IErrorInfo` Objekt angegeben werden. Die zweite erstellt eine Kopie eines vorhandenen **_com_error** Objekts.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_error-Klasse](../cpp/com-error-class.md)

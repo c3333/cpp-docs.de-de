@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CAN0055
 - CXX0055
 ms.assetid: bb2a81f9-35ea-4b02-a49e-6b2c7023aebd
-ms.openlocfilehash: 7584516f55af51107f2765b57986cf6ea4700fc5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 62197741ada96240e628b95b520bf94396bba5f7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299516"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184709"
 ---
 # <a name="expression-evaluator-error-cxx0055"></a>Ausdrucksauswertungsfehler CXX0055
 
-Mehrdeutiges Symbol im Kontextoperator
+Mehrdeutiges Symbol im Kontext Operator
 
-Ein Symbol in den Kontext-Operator (**{}**) mehr als ein Symbol in der Anwendung bezeichnet.
+Ein Symbol im Kontext Operator ( **{}** ) verweist auf mehr als ein Symbol im Programm.
 
-Der Bereichsauflösungsoperator (`::`) möglicherweise die Mehrdeutigkeit aufzulösen.
+Der Bereichs Auflösungs Operator (`::`) ist möglicherweise in der Lage, die Mehrdeutigkeit aufzulösen.
 
 Dieser Fehler ist mit CAN0055 identisch.

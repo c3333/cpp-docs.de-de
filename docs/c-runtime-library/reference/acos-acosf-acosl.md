@@ -34,12 +34,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arccosine function
 ms.assetid: 00b89c48-8faf-4824-aa95-fa4349a4975d
-ms.openlocfilehash: 9e8aba1104af5855db9cb4f3cbb989d182b2c78e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4933e4b3757161621676133ea8b9725ce140e80c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939996"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171293"
 ---
 # <a name="acos-acosf-acosl"></a>acos, acosf, acosl
 
@@ -60,7 +60,7 @@ long double acos( long double x );   // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der Wert zwischen-1 und 1, für den der Arkus Kosinus berechnet werden soll (umgekehrter Kosinus).
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,15 +75,15 @@ Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ACOS** standardmäßig ei
 |± QNAN,IND|none|_DOMAIN|
 |&#124;x&#124;>1|INVALID|_DOMAIN|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **ACOS** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **ACOS** immer einen **Double**-Wert an und gibt ihn zurück.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
+|Routine|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
-|**acos**, **acosf**, **acosl**|\<math.h>|\<errno.h>|
+|**ACOS**, **Acosf**, **acosl**|\<math.h>|\<errno.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -135,7 +135,7 @@ Arcsine of 0.000000 = 0.000000
 Arccosine of 0.000000 = 1.570796
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asin, asinf, asinl](asin-asinf-asinl.md)<br/>

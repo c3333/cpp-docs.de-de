@@ -6,12 +6,12 @@ helpviewer_keywords:
 - transactions [C++]
 - databases [C++], transactions
 ms.assetid: f80afbfe-1517-4fec-8870-9ffc70a58b05
-ms.openlocfilehash: e3dc5b9319a8745ddb446ae7dbe895bfcd446c37
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 742e95d896d107fb89b3d65f0eeb6d418f1b2057
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152656"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209065"
 ---
 # <a name="transactions--mfc-data-access"></a>Transaktionen (MFC-Datenzugriff)
 
@@ -23,18 +23,18 @@ Wenn Sie beispielsweise bei einer automatisierten Banküberweisung Geld von Kont
 
 Eine Transaktion muss über ACID-Eigenschaften verfügen, die für Folgendes stehen:
 
-- **Unteilbarkeit** eine Transaktion ist eine unteilbare Arbeitseinheit und wird genau einmal ausgeführt; alle die Arbeit erfolgt oder nichts davon ist.
+- **Atomizität** Eine Transaktion ist eine atomarische Arbeitseinheit und wird genau einmal ausgeführt. entweder ist alles erledigt, oder es ist kein Vorgang.
 
-- **Konsistenz** eine Transaktion behält die Konsistenz der Daten, die ein konsistenten Zustand der Daten in einen anderen konsistenten Zustand der Daten transformiert. Durch eine Transaktion gebundene Daten müssen semantisch erhalten bleiben.
+- **Konsistenz** Eine Transaktion behält die Konsistenz der Daten bei und transformiert einen konsistenten Zustand von Daten in einen anderen konsistenten Daten Zustand. Durch eine Transaktion gebundene Daten müssen semantisch erhalten bleiben.
 
-- **Isolation** eine Transaktion ist eine Isolationseinheit, und jede einzelne erfolgt separat und unabhängig von gleichzeitigen Transaktionen. Eine Transaktion sollte nie die Zwischenschritte einer anderen Transaktion sehen.
+- **Isolation** Eine Transaktion ist eine Isolationseinheit, die jeweils separat und unabhängig von gleichzeitigen Transaktionen erfolgt. Eine Transaktion sollte nie die Zwischenschritte einer anderen Transaktion sehen.
 
-- **Dauerhaftigkeit** eine Transaktion ist eine Wiederherstellungseinheit. Wenn eine Transaktion erfolgreich ausgeführt wird, werden die entsprechenden Aktualisierungen beibehalten, auch wenn das System abstürzt oder heruntergefahren wird. Schlägt eine Transaktion fehl, verbleibt das System in dem Zustand, der vor der Ausführung eines Commit für die Transaktion vorhanden war.
+- **Dauerhaftigkeit** Eine Transaktion ist eine Wiederherstellungs Einheit. Wenn eine Transaktion erfolgreich ausgeführt wird, werden die entsprechenden Aktualisierungen beibehalten, auch wenn das System abstürzt oder heruntergefahren wird. Schlägt eine Transaktion fehl, verbleibt das System in dem Zustand, der vor der Ausführung eines Commit für die Transaktion vorhanden war.
 
-Sie können Transaktionen unterstützt, in der OLE DB (finden Sie unter [unterstützen von Transaktionen in OLE DB](../data/oledb/supporting-transactions-in-ole-db.md)) oder ODBC (finden Sie unter [Transaktion (ODBC)](../data/odbc/transaction-odbc.md)).
+Sie können Transaktionen in OLE DB (siehe [unterstützende Transaktionen in OLE DB](../data/oledb/supporting-transactions-in-ole-db.md)) oder ODBC unterstützen (siehe [Transaktion (ODBC)](../data/odbc/transaction-odbc.md)).
 
-Eine verteilte Transaktion ist eine Transaktion, die verteilte Daten aktualisiert. Dabei handelt es sich also um Daten, die sich auf mehreren vernetzten Computersystemen befinden. Wenn Sie Transaktionen über ein verteiltes System unterstützen möchten, sollten Sie ADO.NET anstelle der OLE DB-transaktionsunterstützung verwenden.
+Eine verteilte Transaktion ist eine Transaktion, die verteilte Daten aktualisiert. Dabei handelt es sich also um Daten, die sich auf mehreren vernetzten Computersystemen befinden. Wenn Sie Transaktionen über ein verteiltes System unterstützen möchten, sollten Sie anstelle der OLE DB Transaktionsunterstützung ADO.NET verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenzugriffsprogrammierung (MFC/ATL)](../data/data-access-programming-mfc-atl.md)

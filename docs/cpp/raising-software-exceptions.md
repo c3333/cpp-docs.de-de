@@ -13,12 +13,12 @@ helpviewer_keywords:
 - software exceptions [C++]
 - formats [C++], exception codes
 ms.assetid: be1376c3-c46a-4f52-ad1d-c2362840746a
-ms.openlocfilehash: 7c58ae2e2b6635345a162d11d2b75a9865d37751
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: f50d84bd034cc6eeb00dc17cb3b7272a988b6731
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246408"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179132"
 ---
 # <a name="raising-software-exceptions"></a>Auslösen von Softwareausnahmen
 
@@ -36,7 +36,7 @@ So verwenden Sie die strukturierte Ausnahmebehandlung bei Fehlern
 
 Die > Datei \<Winerror. h zeigt das Format für Ausnahme Codes an. Um sicherzustellen, dass Sie keinen Code definieren, der in Konflikt mit einem vorhandenen Ausnahmecode steht, legen Sie das dritte höchstwertige Bit auf 1 fest. Die vier höchstwertigen Bits sollten so festgelegt werden, wie in der folgenden Tabelle gezeigt.
 
-|Bits|Empfohlene Binäreinstellung|Beschreibung|
+|Bits|Empfohlene Binäreinstellung|BESCHREIBUNG|
 |----------|--------------------------------|-----------------|
 |31-30|11|Diese zwei Bits beschreiben den grundlegenden Status des Codes: 11 = Fehler, 00 = Erfolg, 01 = Information, 10 = Warnung.|
 |29|1|Clientbit. Wird für benutzerdefinierten Code auf 1 festgelegt.|
@@ -71,7 +71,7 @@ __except (GetExceptionCode() == STATUS_INSUFFICIENT_MEM ||
         GetExceptionCode() == STATUS_FILE_BAD_FORMAT )
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schreiben eines Ausnahme Handlers](../cpp/writing-an-exception-handler.md)<br/>
 [Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

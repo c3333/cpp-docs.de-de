@@ -9,16 +9,16 @@ helpviewer_keywords:
 - scope resolution operator
 - ':: operator'
 ms.assetid: fd5de9d3-c716-4e12-bae9-03a16fd79a50
-ms.openlocfilehash: e601bed976009a72a43545d8d38a38d75e93a137
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 07c2884ed0ba114c22a0c71bbaf7268d6f6931a4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267367"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178885"
 ---
 # <a name="scope-resolution-operator-"></a>Bereichsauflösungsoperator: ::
 
-Der Bereichsauflösungsoperator **::** wird verwendet, um zu identifizieren und eindeutigen Angabe von Bezeichnern in unterschiedlichen geltungsbereichen verwendet. Weitere Informationen zum Bereich finden Sie unter [Bereich](../cpp/scope-visual-cpp.md).
+Der Bereichs Auflösungs Operator **::** wird verwendet, um Bezeichner zu identifizieren und zu unterscheiden, die in unterschiedlichen Bereichen verwendet werden. Weitere Informationen zum Gültigkeitsbereich finden Sie unter [Scope](../cpp/scope-visual-cpp.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,7 +30,7 @@ enum class :: identifier
 enum struct :: identifier
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `identifier` kann eine Variable, eine Funktion oder ein Enumerationswert sein.
 
@@ -150,7 +150,7 @@ int main() {
 
 ## <a name="with-scoped-enumerations"></a>Mit bereichsbezogenen Enumerationen
 
-Der Bereichsauflösungsoperator wird auch mit den Werten einer bereichsbezogenen Enumeration verwendet [Enumerationsdeklarationen](../cpp/enumerations-cpp.md), wie im folgenden Beispiel:
+Der Bereichs bezogene Auflösungs Operator wird auch mit den Werten einer Bereichs bezogenen [enumerationsenumerationsdeklaration](../cpp/enumerations-cpp.md)verwendet, wie im folgenden Beispiel dargestellt:
 
 ```cpp
 enum class EnumA{
@@ -164,7 +164,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Namespaces](../cpp/namespaces-cpp.md)

@@ -8,31 +8,31 @@ helpviewer_keywords:
 - __asm keyword [C++], C/C++ elements in
 - Visual C++, in __asm blocks
 ms.assetid: 0758ffdc-dfe9-41c8-a5e1-fd395bcac328
-ms.openlocfilehash: fc22af8ec04d616eb8f5566b118e19c405605401
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fd9f8b444d263818aca1b16260f70730d5350e7c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166541"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169109"
 ---
-# <a name="using-c-or-c-symbols-in-asm-blocks"></a>Verwenden von C- oder C++-Symbolen in __asm-Blöcken
+# <a name="using-c-or-c-symbols-in-__asm-blocks"></a>Verwenden von C- oder C++-Symbolen in __asm-Blöcken
 
 **Microsoft-spezifisch**
 
-Ein `__asm` Block kann auf jeder C- oder C++-Symbol, in der Block steht verweisen. (C und C++-Symbole sind Variablennamen, Funktionsnamen, und die Bezeichnungen; die, Namen, die nicht der symbolischen Konstanten oder `enum` Member. Sie können keine C++-Memberfunktionen Funktionen aufrufen.)
+Ein `__asm`-Block kann auf jedes C- C++ oder-Symbol im Bereich verweisen, in dem der-Block angezeigt wird. (C- C++ und-Symbole sind Variablennamen, Funktionsnamen und Bezeichnungen, d. h. Namen, die keine symbolischen Konstanten oder `enum` Elemente sind. Member-Funktionen C++ können nicht aufgerufen werden.)
 
-Einige Einschränkungen gelten für die Verwendung von C- und C++-Symbolen:
+Es gelten einige Einschränkungen für die Verwendung von C und C++ Symbolen:
 
-- Jede Assembly-Language-Anweisung kann nur eine C- oder C++-Symbol enthalten. Mehrere Symbole können angezeigt werden, in der gleichen Assemblyanweisung nur mit **Länge**, **Typ**, und **Größe** Ausdrücke.
+- Jede Assembly-sprach Anweisung kann nur ein C-oder C++ -Symbol enthalten. Mehrere Symbole können in derselben **Assemblyanweisung**nur mit **Längen**-, Typ-und **Größen** Ausdrücken angezeigt werden.
 
-- Funktionen, die auf die verwiesen wird einer `__asm` Block (Prototyp) weiter oben in das Programm deklariert werden. Andernfalls vom Compiler nicht unterscheiden Funktionsnamen und Bezeichnungen in der `__asm` Block.
+- Funktionen, auf die in einem `__asm`-Block verwiesen wird, müssen zuvor im Programm als (prototypisiert) deklariert werden. Andernfalls kann der Compiler nicht zwischen Funktionsnamen und Bezeichnungen im `__asm`-Block unterscheiden.
 
-- Ein `__asm` Block keine Symbole für C- oder C++ mit der gleichen Schreibweise wie MASM reservierte Wörter (unabhängig von der Schreibweise) nicht verwendet werden. MASM-reservierten Wörter enthalten Anweisungsnamen, z. B. **PUSH** und Namen, z. B. SI zu registrieren.
+- Ein `__asm`-Block kann keine C- C++ oder-Symbole mit derselben Schreibweise wie in MASM reservierten Wörtern (unabhängig von der Groß-/Kleinschreibung) verwenden. Zu den in MASM reservierten Wörtern zählen Anweisungs Namen wie **Push** -und Registernamen wie z. b. si.
 
-- Struktur- und Unionmember Tags werden nicht erkannt. `__asm` Blöcke.
+- Struktur-und Union-Tags werden in `__asm` Blöcken nicht erkannt.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von C oder C++ in __asm-Blöcken](../../assembler/inline/using-c-or-cpp-in-asm-blocks.md)<br/>

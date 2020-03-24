@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - com_interface_entry attribute
 ms.assetid: 10368f81-b99b-4a0f-ba4f-a142e6911a5c
-ms.openlocfilehash: 65d174679f851613e064568b071cfcbdad8f0f06
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d7b378baedd3f8c2720c7ab17698e8b416304061
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62148262"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168303"
 ---
-# <a name="cominterfaceentry-c"></a>com_interface_entry (C++)
+# <a name="com_interface_entry-c"></a>com_interface_entry (C++)
 
-Fügt einen Eintrag Schnittstelle in der COM-Zuordnung der Zielklasse.
+Fügt der com-Zuordnung der Zielklasse einen Schnittstellen Eintrag hinzu.
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,15 +27,15 @@ Fügt einen Eintrag Schnittstelle in der COM-Zuordnung der Zielklasse.
 ### <a name="parameters"></a>Parameter
 
 *com_interface_entry*<br/>
-Eine Zeichenfolge mit den tatsächlichen Text des Eintrags. Eine Liste der möglichen Werte, finden Sie unter [COM_INTERFACE_ENTRY-Makros](../../atl/reference/com-interface-entry-macros.md).
+Eine Zeichenfolge, die den eigentlichen Text des Eintrags enthält. Eine Liste möglicher Werte finden Sie unter [COM_INTERFACE_ENTRY Makros](../../atl/reference/com-interface-entry-macros.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Com_interface_entry** C++ fügt Attribut den ungekürzt Inhalt einer Zeichenfolge in die Zuordnung des COM-Schnittstelle des Zielobjekts. Wenn das Attribut angewendet wird, sobald auf das Zielobjekt, der Eintrag in den Anfang der vorhandenen schnittstellenzuordnung eingefügt wird. Wenn das Attribut auf dem gleichen Zielobjekt wiederholt angewendet wird, werden die Einträge am Anfang die schnittstellenzuordnung in der Reihenfolge eingefügt, die sie empfangen werden.
+Das **COM_INTERFACE_ENTRY** C++ -Attribut fügt den ungekürzte Inhalt einer Zeichenfolge in die COM-Schnittstellen Zuordnung des Zielobjekts ein. Wenn das Attribut einmal auf das Zielobjekt angewendet wird, wird der Eintrag am Anfang der vorhandenen Schnittstellen Zuordnung eingefügt. Wenn das Attribut wiederholt auf dasselbe Zielobjekt angewendet wird, werden die Einträge am Anfang der Schnittstellen Zuordnung in der Reihenfolge eingefügt, in der Sie empfangen werden.
 
-Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Z. B. wenn `progid` angewendet wird, `vi_progid` und `coclass` werden ebenfalls angewendet.
+Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn `progid` z. b. angewendet wird, werden `vi_progid` und `coclass` ebenfalls angewendet.
 
-Da die erste Verwendung von **Com_interface_entry** bewirkt, dass die neue Schnittstelle, am Anfang der schnittstellenzuordnung eingefügt werden soll es muss eine der folgenden COM_INTERFACE_ENTRY Typen sein:
+Da die erste Verwendung von **COM_INTERFACE_ENTRY** bewirkt, dass die neue Schnittstelle am Anfang der Schnittstellen Zuordnung eingefügt wird, muss es sich um einen der folgenden COM_INTERFACE_ENTRY Typen handeln:
 
 - COM_INTERFACE_ENTRY
 
@@ -45,9 +45,9 @@ Da die erste Verwendung von **Com_interface_entry** bewirkt, dass die neue Schni
 
 - COM_INTERFACE_ENTRY2_IID
 
-Zusätzliche Verwendungen der **Com_interface_entry** Attribut kann alle unterstützte COM_INTERFACE_ENTRY-Typen verwenden.
+Bei zusätzlichen Verwendungsmöglichkeiten des **COM_INTERFACE_ENTRY** -Attributs können alle unterstützten COM_INTERFACE_ENTRY Typen verwendet werden.
 
-Diese Einschränkung ist notwendig, da den ersten Eintrag in die schnittstellenzuordnung von ATL als Identität verwendet `IUnknown`; aus diesem Grund der Eintrag muss eine gültige Schnittstelle sein. Das folgende Codebeispiel ist beispielsweise ungültig, da der erste Eintrag in die schnittstellenzuordnung eine tatsächliche COM-Schnittstelle nicht angegeben ist.
+Diese Einschränkung ist erforderlich, da ATL den ersten Eintrag in der Schnittstellen Zuordnung als Identitäts `IUnknown`verwendet. Daher muss der Eintrag eine gültige Schnittstelle sein. Beispielsweise ist das folgende Codebeispiel ungültig, da der erste Eintrag in der Schnittstellen Zuordnung keine tatsächliche com-Schnittstelle angibt.
 
 ```cpp
 [ coclass, com_interface_entry =
@@ -60,7 +60,7 @@ Diese Einschränkung ist notwendig, da den ersten Eintrag in die schnittstellenz
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code fügt zwei Einträge der vorhandenen COM-Schnittstelle Zuordnung von `CMyBaseClass`. Die erste ist eine Standardschnittstelle, und die zweite Blendet die `IDebugTest` Schnittstelle.
+Der folgende Code fügt der vorhandenen COM-Schnittstellen Zuordnung `CMyBaseClass`zwei Einträge hinzu. Der erste ist eine Standardschnittstelle, und der zweite blendet die `IDebugTest`-Schnittstelle aus.
 
 ```cpp
 // cpp_attr_ref_com_interface_entry.cpp
@@ -90,7 +90,7 @@ class CMyClass: public IMyClass, public IDebugTest
 };
 ```
 
-Der resultierende COM-Objekt-Zuordnung für `CMyBaseClass` lautet wie folgt:
+Die resultierende com-Objekt Zuordnung für `CMyBaseClass` lautet wie folgt:
 
 ```cpp
 BEGIN_COM_MAP(CMyClass)
@@ -103,20 +103,20 @@ BEGIN_COM_MAP(CMyClass)
 END_COM_MAP()
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
+|**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Ja|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`, oder `vi_progid`.|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
