@@ -7,12 +7,12 @@ helpviewer_keywords:
 - __declspec keyword [C++], selectany
 - selectany __declspec keyword
 ms.assetid: 9c353017-5a42-4f50-b741-bd13da1ce84d
-ms.openlocfilehash: a6bf4076dfecbd29035716285f52c0a9faf81067
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 38346e41c1e943e9bfda70668a163c630a0b9599
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267296"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178872"
 ---
 # <a name="selectany"></a>selectany
 
@@ -26,22 +26,22 @@ Weist den Compiler an, dass das deklarierte, globale Datenelement (Variable oder
 __declspec( selectany ) declarator
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn zum Zeitpunkt der Verknüpfung mehrere Definitionen einer COMDAT angezeigt werden, wählt der Linker eine aus und verwirft den Rest. Wenn die Linkeroption [/OPT: REF](../build/reference/opt-optimizations.md) (Optimizations) ausgewählt ist, und klicken Sie dann die COMDAT-Eliminierung erfolgt, um alle unreferenzierten Datenelemente in der Linkerausgabe zu entfernen.
+Wenn zum Zeitpunkt der Verknüpfung mehrere Definitionen einer COMDAT angezeigt werden, wählt der Linker eine aus und verwirft den Rest. Wenn die Linkeroption [/OPT: Ref](../build/reference/opt-optimizations.md) (Optimierungen) ausgewählt ist, wird die COMDAT-Löschung ausgelöst, um alle nicht referenzierten Datenelemente in der Linkerausgabe zu entfernen.
 
 Konstruktoren und Zuweisung durch globale Funktion oder statische Methoden in der Deklaration erstellen keine Verweise und verhindern die /OPT: REF-Eliminierung nicht. Nebeneffekte von derartigem Code sollten nicht davon abhängen, ob keine weiteren Verweise auf die Daten vorhanden sind.
 
-Für dynamisch initialisierten, globalen Objekte **Selectany** wird ein Objekt ohne Verweis Initialisierungscode, auch verwerfen.
+Für dynamisch initialisierte globale Objekte verwirft **Selectany** auch den Initialisierungs Code eines Objekts, auf das nicht verwiesen wird.
 
-Ein globales Datenelement kann normalerweise nur einmal in einem EXE- bzw. DLL-Projekt initialisiert werden. **Selectany** kann verwendet werden, beim Initialisieren der globale Daten, die durch Header definiert sind, wenn derselbe Header in mehr als einer Quelldatei angezeigt wird. **Selectany** in C- und C++-Compilern verfügbar ist.
+Ein globales Datenelement kann normalerweise nur einmal in einem EXE- bzw. DLL-Projekt initialisiert werden. **Selectany** kann zum Initialisieren von globalen Daten verwendet werden, die durch Header definiert werden, wenn derselbe Header in mehr als einer Quelldatei angezeigt wird. **Selectany** ist sowohl im C-als auch C++ im Compiler verfügbar.
 
 > [!NOTE]
->  **Selectany** kann nur angewendet werden, auf die tatsächliche Initialisierung globaler Datenelemente, die extern sichtbar sind.
+>  " **Selectany** " kann nur auf die tatsächliche Initialisierung globaler Datenelemente angewendet werden, die extern sichtbar sind.
 
 ## <a name="example"></a>Beispiel
 
-Dieser Code zeigt, wie Sie mit der **Selectany** Attribut:
+Dieser Code zeigt, wie das **Selectany** -Attribut verwendet wird:
 
 ```cpp
 //Correct - x1 is initialized and externally visible
@@ -75,7 +75,7 @@ __declspec(selectany) X x(1);
 
 ## <a name="example"></a>Beispiel
 
-Dieser Code zeigt, wie Sie mit der **Selectany** Attribut, um sicherzustellen, dass Daten COMDAT-Faltung, wenn Sie auch die [/OPT: ICF](../build/reference/opt-optimizations.md) -Linkeroption. Beachten Sie, dass die Daten mit markiert sein müssen **Selectany** und platziert Sie in eine **const** (Readonly)-Abschnitt. Sie müssen den schreibgeschützten Abschnitt explizit angeben.
+Dieser Code zeigt, wie das **Selectany** -Attribut verwendet wird, um die Faltung von Daten zu gewährleisten, wenn Sie auch die Linkeroption [/OPT: ICF](../build/reference/opt-optimizations.md) verwenden. Beachten Sie, dass Daten mit **Selectany** gekennzeichnet und in einem **Konstanten** Abschnitt (Schreib geschützter Bereich) abgelegt werden müssen. Sie müssen den schreibgeschützten Abschnitt explizit angeben.
 
 ```cpp
 // selectany2.cpp
@@ -90,7 +90,7 @@ int main() {
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

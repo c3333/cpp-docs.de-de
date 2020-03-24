@@ -9,12 +9,12 @@ helpviewer_keywords:
 - volatile objects
 - objects [C++], volatile
 ms.assetid: 81db4a85-ed5a-4a2c-9a53-5d07a771d2de
-ms.openlocfilehash: 572fe244a076492e3f3316dd6d00f6fe7d7c3c9c
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 6d193c530cbe0258d8713883b769fe4828a248c1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857202"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187426"
 ---
 # <a name="volatile-c"></a>volatile (C++)
 
@@ -26,7 +26,7 @@ Ein Typqualifizierer, den Sie verwenden können, um zu deklarieren, dass ein Obj
 volatile declarator ;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sie können den [/volatile](../build/reference/volatile-volatile-keyword-interpretation.md) -Compilerschalter verwenden, um zu ändern, wie der Compiler dieses Schlüsselwort interpretiert.
 
@@ -36,7 +36,7 @@ Sie können den **volatile** -Qualifizierer verwenden, um den Zugriff auf Speich
 
 Wenn **volatile** für eine Variable verwendet wird, die auch das [__restrict](../cpp/extension-restrict.md) -Schlüsselwort aufweist, hat **volatile** Vorrang.
 
-Wenn ein Strukturmember als **flüchtig**gekennzeichnet ist, wird **volatile** an die gesamte Struktur weitergegeben. Wenn eine Struktur nicht über eine Länge verfügt, die in der aktuellen Architektur mithilfe einer Anweisung kopiert werden kann, kann **volatile** in dieser Struktur vollständig verloren gehen.
+Wenn ein **struct** Strukturmember als **flüchtig**gekennzeichnet ist, wird **volatile** an die gesamte Struktur weitergegeben. Wenn eine Struktur nicht über eine Länge verfügt, die in der aktuellen Architektur mithilfe einer Anweisung kopiert werden kann, kann **volatile** in dieser Struktur vollständig verloren gehen.
 
 Das **volatile** -Schlüsselwort hat möglicherweise keine Auswirkung auf ein Feld, wenn eine der folgenden Bedingungen zutrifft:
 
@@ -56,7 +56,7 @@ Wenn C# Sie mit dem volatile-Schlüsselwort vertraut sind oder mit dem Verhalten
 
 **Microsoft-spezifisch**
 
-Wenn die **/volatile: ms** -Compileroption – standardmäßig verwendet wird, wenn andere Architekturen als Arm als Ziel verwendet werden – der Compiler zusätzlichen Code generiert, um die Reihenfolge der Verweise auf flüchtige Objekte zu verwalten, zusätzlich zur Beibehaltung der Reihenfolge an Verweise auf andere globale Objekte. Insbesondere:
+Wenn die **/volatile: ms** -Compileroption – standardmäßig verwendet wird, wenn andere Architekturen als Arm als Ziel verwendet werden – der Compiler zusätzlichen Code generiert, um die Reihenfolge der Verweise auf flüchtige Objekte zu verwalten, zusätzlich zur Beibehaltung der Reihenfolge an Verweise auf andere globale Objekte. Dies gilt insbesondere für:
 
 - Das Schreiben in ein flüchtiges Objekt (auch als flüchtiger Schreibvorgang bezeichnet) weist Release-Semantik auf. Das heißt, dass ein Verweis auf ein globales oder statisches Objekt, das vor einem Schreibvorgang in ein flüchtiges Objekt in der Anweisungsabfolge auftritt, vor diesem flüchtigen Schreibvorgang in der kompilierten Binärdatei auftritt.
 
@@ -69,8 +69,8 @@ Dadurch können flüchtige Objekte für Arbeitsspeichersperren und -freigaben in
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [const](../cpp/const-cpp.md)<br/>
 [const- und volatile-Zeiger](../cpp/const-and-volatile-pointers.md)

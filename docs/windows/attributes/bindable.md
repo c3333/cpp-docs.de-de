@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - bindable attribute
 ms.assetid: a2360f92-927b-4af8-98cc-6eca7f4ec954
-ms.openlocfilehash: 4a74531a40bcacdae4ef98c292884e7a43fa82fe
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 9e476183374ad2a70864fd46aaa19c616cd3ce91
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501827"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167354"
 ---
 # <a name="bindable"></a>bindable
 
@@ -23,13 +23,13 @@ Gibt an, dass die Eigenschaft die Datenbindung unterstützt.
 [bindable]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **bindbare** C++ Attribut verfügt über die gleiche Funktionalität wie das [binable](/windows/win32/Midl/bindable) -Attribut "Mittel l". Sie können Sie in Eigenschaften verwenden, die mit den Attributen [propget](propget.md), [PROPPUT](propput.md)oder [PROPPUTREF](propputref.md) definiert wurden, oder Sie können eine bindbare Methode manuell definieren.
 
 Die folgenden MFC-Beispiele zeigen die Verwendung von **bindbaren**Elementen:
 
-- [Beispiele für Steuerelemente: MFC-basierte ActiveX-Steuerelemente](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/controls)
+- [Steuerelemente Beispiele: MFC-basierte ActiveX-Steuerelemente](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/controls)
 
 - [CIRC-Beispiel: ActiveX-Steuerelement](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/controls)
 
@@ -58,7 +58,7 @@ __interface IPropDemo : IDispatch {
 [ module(name="PropDemoLib", uuid="479B29E2-9A2C-11D0-B696-00A0C903487A", version="1.0", helpstring="property demo") ];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -66,12 +66,12 @@ __interface IPropDemo : IDispatch {
 |-|-|
 |**Betrifft**|Schnittstellenmethode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Methodenattribut](method-attributes.md)<br/>

@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - C4485
 ms.assetid: a6f2b437-ca93-4dcd-b9cb-df415e10df86
-ms.openlocfilehash: 896fca6c6b257c90ccdf813a9c6cb6bc27ad9e96
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: c92f805eb2960336ed34f5da93b6c13f46bf15ac
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623609"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165144"
 ---
 # <a name="compiler-warning-c4485"></a>Compilerwarnung C4485
 
-"override_function": stimmt mit der "base_class_function"-Basis Methode der Verweis Klasse überein, ist jedoch nicht als "New" oder "override" markiert. "New" (und "Virtual") wird angenommen.
+' override_function ': entspricht der Verweis Klassenmethode ' Base_class_function ' der Basis, Sie ist jedoch nicht als ' New ' oder ' override ' gekennzeichnet. "New" (und "Virtual") wird angenommen.
 
 Ein-Accessor überschreibt, mit oder ohne das `virtual`-Schlüsselwort, eine Basisklassen-Accessorfunktion, aber der `override`-oder `new`-Spezifizierer war nicht Teil der über schreibenden Funktions Signatur. Fügen Sie den `new` oder `override` Spezifizierer hinzu, um diese Warnung zu beheben.
 

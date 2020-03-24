@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - C4819
 ms.assetid: c0316e85-249c-414d-9df0-622d077c6bc2
-ms.openlocfilehash: d43b49d473e7113d8cdfb89aaa6e93045e13d0f7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c9bf60e8eec0ee6416bda3323583f3e056fce1a8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406313"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80174881"
 ---
 # <a name="compiler-warning-level-1-c4819"></a>Compilerwarnung (Stufe 1) C4819
 
-> Die Datei enthält ein Zeichen, das in der aktuellen Codepage nicht dargestellt werden kann (*Anzahl*). Speichern Sie die Datei im Unicode-Format, um Datenverluste zu vermeiden.
+> Die Datei enthält ein Zeichen, das in der aktuellen Codepage (*Number*) nicht dargestellt werden kann. Speichern Sie die Datei im Unicode-Format, um Datenverluste zu vermeiden.
 
-C4819 tritt auf, wenn Sie kompilieren eine ANSI-Quelldatei auf einem System mit einer Codepage, die alle Zeichen in der Datei darstellen kann.
+C4819 tritt auf, wenn Sie eine ANSI-Quelldatei auf einem System mithilfe einer Codepage kompilieren, die nicht alle Zeichen in der Datei darstellen kann.
 
-Es gibt mehrere Möglichkeiten, um C4819 zu beheben. Eine einfache Möglichkeit ist, um die Beschädigung Zeichen und zu entfernen, wenn Sie ihn, z. B. nicht benötigen, wenn es in einem Kommentar befindet. Sie können die Codepage des Systems in der Systemsteuerung auf einen festlegen, die den Zeichensatz ab, indem Sie Ihren Quellcode unterstützt. Sie können die Unicode verwenden [escape-Zeichensequenzen](/cpp/c-language/escape-sequences) erstellen Zeichen oder Zeichenfolgen, die nur das grundlegende ANSI-Zeichensatz in Ihrem Quellcode. Schließlich können Sie die Datei in einem Unicode-Format mit einer Signatur, auch bekannt als eine Bytereihenfolge-Marke (BOM) speichern.
+Es gibt mehrere Möglichkeiten, C4819 aufzulösen. Eine einfache Möglichkeit besteht darin, das angreifende Zeichen zu entfernen, wenn Sie es nicht benötigen, z. b. wenn es in einem Kommentar ist. Sie können die System Codepage in der Systemsteuerung auf eine festlegen, die den von Ihrem Quellcode verwendeten Zeichensatz unterstützt. Sie können Unicode-Escapesequenzen verwenden, um Zeichen oder Zeichen [folgen](/cpp/c-language/escape-sequences) zu erstellen, die nur den Basis-ANSI-Zeichensatz in Ihrem Quellcode verwenden. Schließlich können Sie die Datei im Unicode-Format mit einer Signatur speichern, auch als Byte-Reihenfolge Markierung (BOM) bezeichnet.
 
-Wählen Sie zum Speichern einer Datei im Unicode-Format in Visual Studio **Datei** > **speichern**. In der **Datei speichern unter** Dialogfeld wählen die Dropdownliste für die **speichern** und wählen Sie **mit Codierung speichern**. Wenn Sie auf dem gleichen Dateinamen speichern, müssen Sie möglicherweise zu bestätigen, dass Sie die Datei ersetzen möchten. In der **Erweiterte Speicheroptionen** Dialogfeld Wählen Sie eine Codierung, die alle Zeichen in der Datei darstellen kann, z. B. **Unicode (UTF-8 mit Signatur) - Codepage 65001**, und wählen Sie dann  **OK**.
+Um eine Datei im Unicode-Format zu speichern, wählen Sie in Visual Studio **Datei** > **Speichern**unter aus. Wählen Sie im Dialogfeld **Datei speichern** unter die Dropdown Schaltfläche auf der Schaltfläche **Speichern** aus, und klicken Sie auf **mit Codierung speichern**. Wenn Sie den gleichen Dateinamen speichern, müssen Sie möglicherweise bestätigen, dass Sie die Datei ersetzen möchten. Wählen Sie im Dialogfeld **Erweiterte Speicheroptionen** eine Codierung aus, die alle Zeichen in der Datei darstellen kann – z. b. **Unicode (UTF-8 mit Signatur)-Codepage 65001**–, und wählen Sie dann **OK**aus.

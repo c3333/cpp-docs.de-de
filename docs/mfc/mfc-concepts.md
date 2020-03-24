@@ -3,12 +3,12 @@ title: MFC-Konzepte
 ms.date: 01/09/2018
 f1_keywords:
 - Concepts
-ms.openlocfilehash: 5617051dc700bb1dd594a13627c9e3d01ef9caa9
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: 3273538e4fdffbf68fbe01c7f912584380505d1b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927906"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178521"
 ---
 # <a name="mfc-concepts"></a>MFC-Konzepte
 
@@ -66,5 +66,5 @@ Erläutert die MFC-Implementierung von Windows Sockets.
 [MFC-Referenz](../mfc/mfc-desktop-applications.md)<br/>
 Bietet Referenzmaterial für die MFC-Bibliothek: Einige Klassen bilden das Anwendungsframework, das wiederum das Framework einer für die Windows-API geschriebenen Anwendung darstellt.
 
-[MFC-Beispiele](../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiele](../overview/visual-cpp-samples.md#mfc-samples)<br/>
 Stellt Links zu Beispielen bereit, die zeigen, wie MFC für Desktopanwendungen, DLLs, Datenbankanwendungen, Steuerelemente, Webanwendungen und mehr verwendet wird.

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4160
 ms.assetid: a9610cb7-cac4-4a74-8b4e-049030ebb92b
-ms.openlocfilehash: 988c1fcbe0826582dceaa527811c688711fd8906
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8eb53d3f00c717df0e657ede3de6dd71d4a0bb47
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391841"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80176168"
 ---
 # <a name="compiler-warning-level-1-c4160"></a>Compilerwarnung (Stufe 1) C4160
 
-> #<a name="pragma-pop--did-not-find-previously-pushed-identifier-identifier"></a>Pragma (Pop,...): zuvor per push abgelegten Bezeichner wurde nicht gefunden "*Bezeichner*"
+> #<a name="pragma-pop--did-not-find-previously-pushed-identifier-identifier"></a>pragma (Pop-,...): die zuvor per pushid '*ID ' nicht*gefunden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine Pragma-Anweisung im Quellcode versucht, einen Bezeichner per Pop auszulesen, der nicht per Push veröffentlicht wurde. Um diese Warnung zu vermeiden, achten Sie darauf, dass der ausgelesene Bezeichner ordnungsgemäß gepusht wurde.
 

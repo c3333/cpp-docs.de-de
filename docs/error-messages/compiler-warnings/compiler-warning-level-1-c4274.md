@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - C4274
 ms.assetid: 5a948680-7ed1-469f-978d-ae99d154e161
-ms.openlocfilehash: f73fa8e09baab127e7755ebe3def69c2fb585744
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5f2350f275f883e7bf18aa1621d08b34132e8dfb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62207206"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80175845"
 ---
 # <a name="compiler-warning-level-1-c4274"></a>Compilerwarnung (Stufe 1) C4274
 
-\#ident ignored; see documentation for #pragma comment(exestr, 'string')
+\#Ident wird ignoriert. Weitere Informationen finden Sie in der Dokumentation zu #Pragma Kommentar (exestr, ' String ')
 
-Die `#ident` -Direktive, die eine vom Benutzer angegebene Zeichenfolge in das Objekt oder eine ausführbare Datei einfügt, ist veraltet. Daher ignoriert der Compiler die Direktive an.
+Die `#ident`-Direktive, die eine benutzerdefinierte Zeichenfolge in das Objekt oder die ausführbare Datei einfügt, ist veraltet. Folglich ignoriert der Compiler die-Direktive.
 
 > [!CAUTION]
->  Warnung C4274 Sie verwenden die [#pragma Comment (Exestr, "String")](../../preprocessor/comment-c-cpp.md) Richtlinie. Allerdings wird diese Empfehlung ist veraltet und werden in einer zukünftigen Version des Compilers überarbeitet werden. Bei Verwendung der `#pragma` Direktive, das Linkertool (LINK.exe) den von der Richtlinie erzeugte Kommentardatensatz ignoriert und gibt die Warnung [LNK4229](../../error-messages/tool-errors/linker-tools-warning-lnk4229.md). Statt die `#ident` Direktive, es wird empfohlen, dass Sie eine Ressourcenzeichenfolge für Datei-Version in Ihrer Anwendung verwenden.
+>  Warnung C4274 Sie können die Anweisung [#pragma comment (exestr, ' String ')](../../preprocessor/comment-c-cpp.md) verwenden. Dieser Ratgeber ist jedoch veraltet und wird in einer zukünftigen Version des Compilers überarbeitet. Wenn Sie die `#pragma`-Direktive verwenden, ignoriert das Linker-Tool (Link. exe) den von der-Direktive erzeugten Kommentar Daten Satz und gibt Warning [Linkertoolwarnung LNK4229](../../error-messages/tool-errors/linker-tools-warning-lnk4229.md)aus. Anstelle der `#ident`-Direktive empfiehlt es sich, dass Sie in Ihrer Anwendung eine Ressourcen Zeichenfolge für die Dateiversion verwenden.
 
 ## <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-- Entfernen Sie die `#ident "` *Zeichenfolge* `"` Richtlinie.
+- Entfernen Sie die `#ident "`*Zeichenfolge*`"` Direktive.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [comment (C/C++)](../../preprocessor/comment-c-cpp.md)<br/>
 [Linkertoolwarnung LNK4229](../../error-messages/tool-errors/linker-tools-warning-lnk4229.md)<br/>

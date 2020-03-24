@@ -6,18 +6,18 @@ helpviewer_keywords:
 - class templates
 - templates, class templates
 ms.assetid: 633a53c8-24ee-4c23-8c88-e7c3cb0b7ac3
-ms.openlocfilehash: 1bf384967af9d6d639e11df882751bbdaf1b0aa6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 36c5263213b5ef348bb341a83da097db7dbb1d9d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62188394"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180913"
 ---
 # <a name="class-templates"></a>Klassenvorlagen
 
-Dieses Thema beschreibt die Regeln, die spezifisch für C++-Klassenvorlagen sind.
+In diesem Thema werden Regeln beschrieben, die C++ für Klassen Vorlagen spezifisch sind.
 
-## <a name="member-functions-of-class-templates"></a>Memberfunktionen von Klassenvorlagen
+## <a name="member-functions-of-class-templates"></a>Member-Funktionen von Klassen Vorlagen
 
 Memberfunktionen können innerhalb oder außerhalb einer Klassenvorlage definiert sein. Sie werden wie Funktionsvorlagen definiert, wenn sie außerhalb der Klassenvorlage definiert sind.
 
@@ -75,9 +75,9 @@ int main()
 }
 ```
 
-## <a name="nested-class-templates"></a>Geschachtelte Klassenvorlagen
+## <a name="nested-class-templates"></a>Klassen Vorlagen für eine Vorlage
 
-Vorlagen können in Klassen oder Klassenvorlagen definiert werden. In diesem Fall werden sie als Membervorlagen bezeichnet. Membervorlagen, die Klassen sind, werden als geschachtelte Klassenvorlagen bezeichnet. Membervorlagen, die Funktionen sind finden Sie im [Memberfunktionsvorlagen](../cpp/member-function-templates.md).
+Vorlagen können in Klassen oder Klassenvorlagen definiert werden. In diesem Fall werden sie als Membervorlagen bezeichnet. Membervorlagen, die Klassen sind, werden als geschachtelte Klassenvorlagen bezeichnet. Element Vorlagen, die Funktionen sind, werden in Element [Funktions Vorlagen](../cpp/member-function-templates.md)erläutert.
 
 Geschachtelte Klassenvorlagen werden als Klassenvorlagen innerhalb des Bereichs der äußeren Klasse deklariert. Sie können innerhalb oder außerhalb der einschließenden Klasse definiert sein.
 
@@ -193,9 +193,9 @@ X<T>::Y<U>::~Y()
 
 Lokale Klassen dürfen keine Membervorlagen haben.
 
-## <a name="template-friends"></a>Friend-Vorlagen
+## <a name="template-friends"></a>Vorlagen Freunde
 
-Klassenvorlagen können haben [Freunde](friend-cpp.md). Eine Klasse oder Klassenvorlage, Funktion oder Funktionsvorlage kann ein Friend einer Vorlagenklasse sein. Friends können auch Spezialisierungen einer Klassenvorlage oder Funktionsvorlage sein, jedoch keine teilweisen Spezialisierungen.
+Klassen Vorlagen können über [Freunde](friend-cpp.md)verfügen. Eine Klasse oder Klassenvorlage, Funktion oder Funktionsvorlage kann ein Friend einer Vorlagenklasse sein. Friends können auch Spezialisierungen einer Klassenvorlage oder Funktionsvorlage sein, jedoch keine teilweisen Spezialisierungen.
 
 Im folgenden Beispiel wird eine Friend-Funktion als Funktionsvorlage innerhalb der Klassenvorlage definiert. Dieser Code erstellt eine Version der Friend-Funktion für jede Instanziierung der Vorlage. Dieses Konstrukt ist nützlich, wenn die Friend-Funktion von denselben Vorlagenparametern wie die Klasse abhängt.
 
@@ -438,6 +438,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vorlagen](../cpp/templates-cpp.md)

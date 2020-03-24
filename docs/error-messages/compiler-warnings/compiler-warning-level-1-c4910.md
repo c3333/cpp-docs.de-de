@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4910
 ms.assetid: 67963560-fbca-4ca7-93db-06beaf7055f0
-ms.openlocfilehash: a3f29cb895da8c06ed43dd5c9956426f3f6014f1
-ms.sourcegitcommit: 8762a3f9b5476b4dee03f0ee8064ea606550986e
+ms.openlocfilehash: dc5feb3613e45134a08e493b397eb738fffee8a9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74810719"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80174777"
 ---
 # <a name="compiler-warning-level-1-c4910"></a>Compilerwarnung (Stufe 1) C4910
 
@@ -19,7 +19,7 @@ ms.locfileid: "74810719"
 
 Die explizite Vorlagen Instanziierung mit dem Namen *\<Bezeichner>* wird durch die Schlüsselwörter `__declspec(dllexport)` und `extern` geändert. Die beiden Schlüsselwörter schließen sich jedoch gegenseitig aus. Das `__declspec(dllexport)` -Schlüsselwort soll die Instanziierung der Vorlagenklasse bewirken, während das `extern` -Schlüsselwort verhindern soll, dass die Vorlagenklasse automatisch instanziiert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Explizite Instantiierung](../../cpp/explicit-instantiation.md)<br/>
 [dllexport, dllimport](../../cpp/dllexport-dllimport.md)<br/>

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - RW2001
 ms.assetid: 963bdc7d-6ebe-4378-8bbc-47dfcf5d330c
-ms.openlocfilehash: 4d298cdd9d96c55f283ce7f0e2ba04dd664941f8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 900bfed9d57af0f6f5dd8fac19380bb7c382addc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62226504"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190741"
 ---
 # <a name="resource-compiler-error-rw2001"></a>Ressourcencompiler: Fehler RW2001
 
-Ungültige Richtlinie im vorverarbeiteten RC-Datei
+Ungültige Direktive in der vorverarbeiteten RC-Datei.
 
-Die RC-Datei enthält eine **#pragma** Richtlinie.
+Die RC-Datei enthält eine **#pragma** -Direktive.
 
-Verwenden der **#ifndef** Präprozessordirektive der **RC_INVOKED** Konstanten, dass der Ressourcencompiler definiert, bei der Verarbeitung einer Include-Datei. Ort der **#pragma** -Direktive innerhalb eines Codeblocks, der nicht verarbeitet, wenn die **RC_INVOKED** Konstante definiert ist. Code im Block wird nur von C/C++-Compiler und nicht von der Ressourcencompiler verarbeitet. Im folgenden Beispielcode wird diese Technik veranschaulicht:
+Verwenden Sie die **#ifndef** -Präprozessordirektive mit der **RC_INVOKED** -Konstante, die der Ressourcen Compiler definiert, wenn er eine Includedatei verarbeitet. Platzieren Sie die **#pragma** -Direktive in einem Codeblock, der nicht verarbeitet wird, wenn die **RC_INVOKED** Konstante definiert ist. Der Code im Block wird nur vom C/C++ Compiler und nicht vom Ressourcen Compiler verarbeitet. Der folgende Beispielcode veranschaulicht diese Vorgehensweise:
 
 ```
 #ifndef RC_INVOKED
@@ -27,6 +27,6 @@ Verwenden der **#ifndef** Präprozessordirektive der **RC_INVOKED** Konstanten, 
 #endif
 ```
 
-Die **#pragma** Präprozessordirektive hat keine Bedeutung ein. RC-Datei. Die **#include** Präprozessordirektive werden häufig in ein. RC-Datei, die eine Headerdatei (eine Projekt-basierten benutzerdefinierten Header-Datei oder ein Standardheader-Datei, die mit einem seiner Produkte von Microsoft bereitgestellten) enthalten. Einige dieser include-Dateien enthalten die **#pragma** Richtlinie. Da eine Headerdatei eine oder mehrere andere Headerdateien, die Datei enthalten kann, die die auslösende enthält **#pragma** Richtlinie möglicherweise nicht sofort ersichtlich.
+Die **#pragma** -Präprozessordirektive hat keine Bedeutung in. RC-Datei. Die **#include** -Präprozessordirektive wird häufig in einer verwendet. RC-Datei zum Einschließen einer Header Datei (entweder eine Projekt basierte benutzerdefinierte Header Datei oder eine Standard Header Datei, die von Microsoft mit einem seiner Produkte bereitgestellt wird). Einige dieser Include-Dateien enthalten die **#pragma** -Direktive. Da eine Header Datei eine oder mehrere andere Header Dateien enthalten kann, ist die Datei, die die angreifende **#pragma** Direktive enthält, möglicherweise nicht sofort offensichtlich.
 
-Die **#ifndef RC_INVOKED** Technik kann steuern, einschließlich Headerdateien in projektbasierten Headerdateien.
+Die **#ifndef RC_INVOKED** Technik kann das Einschließen von Header Dateien in projektbasierten Header Dateien steuern.

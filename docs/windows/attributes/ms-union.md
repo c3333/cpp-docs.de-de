@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - ms_union attribute
 ms.assetid: bb548689-6962-457e-af56-8ffdf68987eb
-ms.openlocfilehash: 26207c3c2c20fb039eb39e26f4d24e141c4dff07
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 3e89facf48bd4f0f9d6200657b0e0a66fe95455a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514369"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166639"
 ---
 # <a name="ms_union"></a>ms_union
 
@@ -23,13 +23,13 @@ Steuert die Ausrichtung der Netzwerkdaten Darstellung von nicht gekapselten Unio
 [ms_union]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **Ms_union** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Ms_union](/windows/win32/Midl/ms-union-attrib) -Mittell-Attribut.
+Das **Ms_union** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Ms_union](/windows/win32/Midl/ms-union-attrib) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt die Platzierung von **Ms_union**:
+Der folgende Code zeigt die Platzierung der **Ms_union**:
 
 ```cpp
 // cpp_attr_ref_ms_union.cpp
@@ -54,7 +54,7 @@ __interface IFireTabCtrl {
 [module(name="ATLFIRELib")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -62,12 +62,12 @@ __interface IFireTabCtrl {
 |-|-|
 |**Betrifft**|Nicht gekapselt Unions|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
+|**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|`dispinterface`|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - _com_error class
 ms.assetid: 70dafa69-b1fb-4a5c-9249-e857e0793d42
-ms.openlocfilehash: 828a1ec68fef631700d5b64e6aeeec6660acf9a8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 0c33791fbe6011a3eddc6e535a3a4ed838e5e06c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69498743"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180809"
 ---
 # <a name="_com_error-class"></a>_com_error-Klasse
 
 **Microsoft-spezifisch**
 
-Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehler Behandlungs-Wrapper Funktionen in den Header Dateien erkannt wird, die aus der Typbibliothek oder einer der com-Unterstützungs Klassen generiert wurden. Die **_com_error** -Klasse kapselt den HRESULT-Fehlercode und `IErrorInfo Interface` alle zugeordneten Objekte.
+Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehler Behandlungs-Wrapper Funktionen in den Header Dateien erkannt wird, die aus der Typbibliothek oder einer der com-Unterstützungs Klassen generiert wurden. Die **_com_error** -Klasse kapselt den HRESULT-Fehlercode und alle zugeordneten `IErrorInfo Interface`-Objekte.
 
-### <a name="construction"></a>Konstruktion
+### <a name="construction"></a>Bauwesen
 
 |||
 |-|-|
@@ -29,7 +29,7 @@ Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehle
 
 |||
 |-|-|
-|[operator =](../cpp/com-error-operator-equal.md)|Weist ein vorhandenes **_com_error** -Objekt einem anderen zu.|
+|[Operator =](../cpp/com-error-operator-equal.md)|Weist ein vorhandenes **_com_error** Objekt einem anderen zu.|
 
 ### <a name="extractor-functions"></a>Funktionen des Extrahierungsprogramms
 
@@ -59,18 +59,18 @@ Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehle
 
 |||
 |-|-|
-|[Hresulttowcode](../cpp/com-error-hresulttowcode.md)|Ordnet 32-Bit-HRESULT einem 16- `wCode`Bit-Wert zu.|
-|[WCodeToHRESULT](../cpp/com-error-wcodetohresult.md)|Ordnet ein 16- `wCode` Bit-32-Bit-HRESULT zu.|
+|[Hresulttowcode](../cpp/com-error-hresulttowcode.md)|Ordnet 32-Bit-HRESULT einem 16-Bit-`wCode`zu.|
+|[Wcodedehresult](../cpp/com-error-wcodetohresult.md)|Ordnet die 16-Bit-`wCode` dem 32-Bit-HRESULT zu.|
 
 **Ende Microsoft-spezifisch**
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<comdef.h>
+**Header:** \<comdef. h >
 
-`Lib:`"comsuppw. lib" oder "comsuppwd. lib" (siehe [/Zc: wchar_t (wchar_t ist](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) der systemeigene Typ), um weitere Informationen zu erhalten)
+`Lib:` Sie "comsuppw. lib" oder "comsuppwd. lib" (siehe [/Zc: wchar_t (wchar_t ist System eigener Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) , um weitere Informationen zu erhalten)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerklassen für COM-Unterstützung](../cpp/compiler-com-support-classes.md)<br/>
 [IErrorInfo-Schnittstelle](/windows/win32/api/oaidl/nn-oaidl-ierrorinfo)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - labeled statement
 - statements, labeled
 ms.assetid: 456a26d5-0fcc-4d1a-b71f-fa9ff3d73b91
-ms.openlocfilehash: 030f1d74cf8a6c6686fcebd10559b5bd7b5d964c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d971a0e9864aeada1db5f004ef70577512e78c76
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368746"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179691"
 ---
 # <a name="labeled-statements"></a>Anweisungen mit Bezeichnung
 
@@ -24,7 +24,7 @@ default :  statement
 
 Der Umfang einer Bezeichnung ist die gesamte Funktion, in der diese deklariert wurde.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Es gibt drei Typen von bezeichneten Anweisungen. Alle verwenden einen Doppelpunkt, um einen Bezeichnungstyp von der Anweisung zu trennen. Die case- und default-Bezeichnungen sind für case-Anweisungen bestimmt.
 
@@ -54,9 +54,9 @@ int main() {
 }
 ```
 
-**Die Goto-Anweisung**
+**Die GoTo-Anweisung**
 
-Die Darstellung einer *Bezeichner* Bezeichnung im Quellprogramm deklariert eine Bezeichnung. Nur ein [Goto](../cpp/goto-statement-cpp.md) Anweisung kann übertragen Sie die Steuerung an eine *Bezeichner* Bezeichnung. Das folgende Codefragment veranschaulicht die Verwendung von der **Goto** Anweisung und eine *Bezeichner* Bezeichnung:
+Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **goto** -Anweisung und eine *bezeichnerbezeichnung* :
 
 Eine Bezeichnung kann nicht allein stehen, sondern muss immer an eine Anweisung angefügt werden. Wenn eine Bezeichnung allein benötigt wird, platzieren Sie nach ihr eine NULL-Anweisung.
 
@@ -81,7 +81,7 @@ int main() {
 
 **Die Case-Anweisung**
 
-Bezeichnungen, die nach dem erscheinen der **Fall** Schlüsselwort darf nicht auch außerhalb einer **wechseln** Anweisung. (Diese Einschränkung gilt auch für die **Standard** Schlüsselwort.) Das folgende Codefragment zeigt die korrekte Verwendung von **Fall** Bezeichnungen:
+Bezeichnungen, die nach dem **Case** -Schlüsselwort angezeigt werden, können nicht auch außerhalb einer **Switch** -Anweisung vorkommen. (Diese Einschränkung gilt auch für das **default** -Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **Case** -Bezeichnungen:
 
 ```cpp
 // Sample Microsoft Windows message processing loop.
@@ -111,7 +111,7 @@ switch( msg )
 
 ## <a name="labels-in-the-case-statement"></a>Bezeichnungen in der case-Anweisung
 
-Bezeichnungen, die nach dem erscheinen der **Fall** Schlüsselwort darf nicht auch außerhalb einer **wechseln** Anweisung. (Diese Einschränkung gilt auch für die **Standard** Schlüsselwort.) Das folgende Codefragment zeigt die korrekte Verwendung von **Fall** Bezeichnungen:
+Bezeichnungen, die nach dem **Case** -Schlüsselwort angezeigt werden, können nicht auch außerhalb einer **Switch** -Anweisung vorkommen. (Diese Einschränkung gilt auch für das **default** -Schlüsselwort.) Das folgende Code Fragment zeigt die korrekte Verwendung von **Case** -Bezeichnungen:
 
 ```cpp
 // Sample Microsoft Windows message processing loop.
@@ -156,7 +156,7 @@ switch( msg )
 
 ## <a name="labels-in-the-goto-statement"></a>Bezeichnungen in der goto-Anweisung
 
-Die Darstellung einer *Bezeichner* Bezeichnung im Quellprogramm deklariert eine Bezeichnung. Nur ein [Goto](../cpp/goto-statement-cpp.md) Anweisung kann übertragen Sie die Steuerung an eine *Bezeichner* Bezeichnung. Das folgende Codefragment veranschaulicht die Verwendung von der **Goto** Anweisung und eine *Bezeichner* Bezeichnung:
+Das Aussehen einer *bezeichnerbezeichnung* im Quell Programm deklariert eine Bezeichnung. Nur eine [goto](../cpp/goto-statement-cpp.md) -Anweisung kann die Steuerung an eine *bezeichnerbezeichnung* übertragen. Das folgende Code Fragment veranschaulicht die Verwendung der **goto** -Anweisung und eine *bezeichnerbezeichnung* :
 
 Eine Bezeichnung kann nicht allein stehen, sondern muss immer an eine Anweisung angefügt werden. Wenn eine Bezeichnung allein benötigt wird, platzieren Sie nach ihr eine NULL-Anweisung.
 
@@ -178,7 +178,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)<br/>
 [switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)

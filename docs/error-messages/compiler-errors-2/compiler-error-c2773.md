@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2773
 ms.assetid: 8d564b26-1623-4d92-aabc-dff33f7b1145
-ms.openlocfilehash: dc4ff7174f6a801f0e1759ce8b4b306e74ec798a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 661c607183697b0ace12291d9d1305b262a80c6f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62257204"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80176987"
 ---
 # <a name="compiler-error-c2773"></a>Compilerfehler C2773
 
-\#Importieren und #using nur in C++-Compiler verfügbar
+\#Import und #using nur im C++ Compiler verfügbar.
 
-Der C-Compiler erkennt nicht die `#import` Präprozessordirektive angegeben. Kompilieren Sie die Quelle als C++. Verwendung [/TP](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md) bei Bedarf.
+Der C-Compiler erkennt die `#import` Präprozessordirektive nicht. Kompilieren Sie die Quelle C++als. Verwenden Sie [/tp](../../build/reference/tc-tp-tc-tp-specify-source-file-type.md) bei Bedarf.

@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C1067
 ms.assetid: e2c94be6-4573-4571-aac9-73d657fe9f96
-ms.openlocfilehash: f8fe301e25d9ecb5cc67397f9537e0bbd86c0627
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b016790220d409435ff7ea53c6f48899a9e8f1c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62165852"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204346"
 ---
 # <a name="fatal-error-c1067"></a>Schwerwiegender Fehler C1067
 
-Compiler-Grenzen: 64 KB für Typeneinträge Größe wurde überschritten
+Compilerlimit: das Limit von 64K für die Größe eines Typdaten Satzes wurde überschritten.
 
-Dieser Fehler kann auftreten, wenn ein Symbol ein ergänzten Namens, der länger als 247 Zeichen aufweist.  Um zu beheben, kürzen Sie den Symbolnamen an.
+Dieser Fehler kann auftreten, wenn ein Symbol einen ergänzten Namen hat, der mehr als 247 Zeichen enthält.  Um das Problem zu beheben, kürzen Sie den Symbolnamen.
 
-Wenn der Compiler Debuginformationen generiert werden, werden Typeneinträge zum Definieren von Typen, die im Quellcode gefunden.  Beispielsweise enthalten die Datensätze des Typs einfache Strukturen und Argumentlisten der Funktionen.  Einige diese Datensätze geben können umfangreiche Listen sein.
+Wenn der Compiler Debuginformationen generiert, gibt er Typdaten Sätze zum Definieren von Typen aus, die im Quellcode gefunden werden.  Beispielsweise enthalten die Typdaten Sätze einfache Strukturen und Argumentlisten von Funktionen.  Einige dieser Typen von Datensätzen können große Listen sein.
 
-Es gibt ein Limit von 64 KB auf der Größe eines beliebigen Typs Datensatzes.  Wenn dieser 64-KB-Grenze überschritten wird, wird dieser Fehler auftreten.
+Die Größe eines beliebigen Typen Datensatzes beträgt 64 KB.  Wenn das Limit von 64K überschritten wird, tritt dieser Fehler auf.
 
-C1067 kann auch auftreten, wenn viele Symbole mit langen Namen vorhanden sind oder wenn eine Klasse, Struktur oder Union verfügt über zu viele Elemente.
+C1067 kann auch auftreten, wenn viele Symbole mit langen Namen vorhanden sind oder wenn eine Klasse, Struktur oder Union zu viele Elemente aufweist.
