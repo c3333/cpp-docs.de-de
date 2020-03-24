@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0060
 - CXX0060
 ms.assetid: 40c0ff02-ca6b-4232-b1e3-1f3a213ee2a3
-ms.openlocfilehash: 30e44be23a84e9f14f194f9baaaba1eda6c7a097
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 32bee6d51368eb74ca0856607cf44bf902d202a2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299503"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184566"
 ---
 # <a name="expression-evaluator-error-cxx0060"></a>Ausdrucksauswertungsfehler CXX0060
 
-Register ist nicht verfügbar
+Register ist nicht verfügbar.
 
-Ein Ausdruck angegeben ein Register, die nicht verwendet werden kann. Dieser Fehler kann verursacht werden, indem Sie versuchen, ein Register zugreifen, die nicht auf dem Computer vorhanden ist.
+Ein Ausdruck hat ein Register angegeben, das nicht verwendet werden kann. Dieser Fehler kann auftreten, wenn Sie versuchen, auf ein Register zuzugreifen, das auf dem Computer, auf dem ausgeführt wird, nicht vorhanden ist.
 
 Dieser Fehler ist mit CAN0060 identisch.

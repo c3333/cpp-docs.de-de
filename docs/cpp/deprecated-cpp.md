@@ -7,26 +7,26 @@ helpviewer_keywords:
 - __declspec keyword [C++], deprecated
 - deprecated __declspec keyword
 ms.assetid: beef1129-9434-4cb3-8392-f1eb29e04805
-ms.openlocfilehash: 34f9c10cd898b0359463d5933141822576fa4a11
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e4689d3cb1a1757e2ac3bf4ca9eef7670ad5c655
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398952"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189480"
 ---
 # <a name="deprecated-c"></a>deprecated (C++)
 
-In diesem Thema geht es um die Microsoft-spezifischen veraltet "declspec"-Deklaration. Informationen zu den C ++ 14 `[[deprecated]]` -Attribut und Anleitungen zur Verwendung dieses Attributs im Vergleich zu den Microsoft-spezifische "declspec" "oder" Pragma, finden Sie unter [Standard C++-Attribute](attributes.md).
+In diesem Thema wird die Microsoft-spezifische Deklaration der Deklaration "declspec" erläutert. Weitere Informationen zum c++ 14-`[[deprecated]]`-Attribut sowie Anleitungen zur Verwendung dieses Attributs im Vergleich zu den Microsoft-spezifischen declspec-oder Pragma- [ C++ Attributen](attributes.md)finden Sie unter Standard Attribute.
 
-Mit den unten aufgeführten Ausnahmen die **veraltet** Deklaration bietet die gleiche Funktionalität wie die [veraltet](../preprocessor/deprecated-c-cpp.md) Pragma:
+Mit den unten aufgeführten Ausnahmen bietet die **Veraltete** Deklaration die gleiche Funktionalität wie das [veraltet](../preprocessor/deprecated-c-cpp.md) -Pragma:
 
-- Die **veraltet** Deklaration können Sie bestimmte Arten von funktionsüberladungen als veraltet angeben, wohingegen das Pragma auf alle überladenen Arten eines Funktionsnamens angewendet wird.
+- Mit der **veralteten** Deklaration können Sie bestimmte Formen von Funktions Überladungen als veraltet festlegen, während das Pragma-Formular für alle überladenen Formen eines Funktionsnamens gilt.
 
-- Die **veraltet** Deklaration ermöglicht die Angabe eine Nachricht, die zum Zeitpunkt der Kompilierung angezeigt werden. Der Text der Meldung kann von einem Makro stammen.
+- Mit der **veralteten** Deklaration können Sie eine Meldung angeben, die zur Kompilierzeit angezeigt wird. Der Text der Meldung kann von einem Makro stammen.
 
-- Makros können nur markiert werden, als veraltet mit der **veraltet** Pragma.
+- Makros können nur mit dem **veraltet** -Pragma als veraltet markiert werden.
 
-Findet der Compiler die Verwendung von einen veralteten Bezeichner oder Standard [ `[[deprecated]]` ](attributes.md) -Attribut, eine [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) Warnung wird ausgelöst.
+Wenn der Compiler auf die Verwendung eines veralteten Bezeichners oder des Standard- [`[[deprecated]]`](attributes.md) Attributs stößt, wird eine [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) -Warnung ausgelöst.
 
 ## <a name="example"></a>Beispiel
 
@@ -70,7 +70,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

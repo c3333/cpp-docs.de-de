@@ -7,12 +7,12 @@ helpviewer_keywords:
 - CXX0056
 - CAN0056
 ms.assetid: a67c90e0-933c-43f2-a548-0ba272920331
-ms.openlocfilehash: 8c73061ad360aadd52dfad46d3febc8975099804
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 37e2d6128284a0d2896d01a430dad1f74f6c8ca5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299544"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184683"
 ---
 # <a name="expression-evaluator-error-cxx0056"></a>Ausdrucksauswertungsfehler CXX0056
 

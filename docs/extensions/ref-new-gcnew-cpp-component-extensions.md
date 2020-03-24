@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ref new keyword (C++)
 - gcnew keyword [C++]
 ms.assetid: 388a62da-c2df-4a94-a9a2-205b53e577da
-ms.openlocfilehash: f3dd0b73e300b44cb4f35e42683725813453d7de
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: f7269a62d7899df4eb89f6dd9487310c0fda0b4d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516645"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181810"
 ---
 # <a name="ref-new-gcnew--ccli-and-ccx"></a>ref new, gcnew (C++/CLI und C++/CX)
 
@@ -31,9 +31,9 @@ Weitere Informationen über die Zuordnung und Aufhebung der Zuordnung von Arbeit
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-Verwenden Sie **ref new**, um Arbeitsspeicher für Windows-Runtime-Objekte zuzuordnen, deren Lebensdauer Sie automatisch verwalten möchten. Die Zuordnung des Objekts wird automatisch aufgehoben, wenn sein Verweiszähler bei 0 liegt. Dies ist der Fall, nachdem die letzte Kopie des Verweises den Gültigkeitsbereich verlassen hat. Weitere Informationen finden Sie unter [Referenzklassen und Strukturen](../cppcx/ref-classes-and-structs-c-cx.md).
+Verwenden Sie **ref new**, um Arbeitsspeicher für Windows-Runtime-Objekte zuzuordnen, deren Lebensdauer Sie automatisch verwalten möchten. Die Zuordnung des Objekts wird automatisch aufgehoben, wenn sein Verweiszähler bei 0 liegt. Dies ist der Fall, nachdem die letzte Kopie des Verweises den Gültigkeitsbereich verlassen hat. Weitere Informationen finden Sie unter [Referenzklassen und -strukturen](../cppcx/ref-classes-and-structs-c-cx.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -41,7 +41,7 @@ Compileroption: `/ZW`
 
 Der Arbeitsspeicher für einen verwalteten Typ (Verweis- oder Werttyp) wird durch **gcnew** zugeordnet, die Aufhebung der Zuordnung erfolgt über die Garbage Collection.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -87,6 +87,6 @@ int main()
 32
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

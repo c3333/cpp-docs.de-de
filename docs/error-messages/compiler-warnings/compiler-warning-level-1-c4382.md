@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - C4382
 ms.assetid: 34be9ad3-bae6-411a-8f80-0c8fd0d2c092
-ms.openlocfilehash: cca2f8cc13cc8317bac3736e142ef58e126ed994
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7b8dbf77defab2a711ad931057c740193908474b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390489"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80186971"
 ---
 # <a name="compiler-warning-level-1-c4382"></a>Compilerwarnung (Stufe 1) C4382
 
-> Auslösen von "*Typ*": ein Typ mit __clrcall-Destruktor oder Kopierkonstruktor kann nur in "/ CLR" abgefangen werden: pure-Modul
+> Auslösen von "*Typ*": ein Typ mit __clrcall Dekonstruktor oder Kopierkonstruktor kann nur im Modul "/CLR: pure" abgefangen werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
-Bei der Kompilierung mit **"/ CLR"** (nicht **/CLR: pure**), Ausnahmebehandlung erwartet, dass die Member-Funktionen in einem systemeigenen Typ sein [__cdecl](../../cpp/cdecl.md) und nicht [__clrcall](../../cpp/clrcall.md). Systemeigene Typen mit Memberfunktionen verwenden `__clrcall` Aufrufkonvention kann nicht abgefangen werden, in einem Modul mit kompiliert **"/ CLR"**.
+Bei der Kompilierung mit **/CLR** (nicht **/clr: pure**) erwartet die Ausnahmebehandlung, dass die Member-Funktionen in einem systemeigenen Typ [__cdecl](../../cpp/cdecl.md) und nicht [__clrcall](../../cpp/clrcall.md)werden. Systemeigene Typen mit Element Funktionen, die `__clrcall` Aufruf Konvention verwenden, können in einem mit **/CLR**kompilierten Modul nicht abgefangen werden.
 
-Wenn in einem Modul kompiliert, die mit die Ausnahme abgefangen wird **/CLR: pure**, können Sie diese Warnung ignorieren.
+Wenn die Ausnahme in einem Modul abgefangen wird, das mit **/clr: pure**kompiliert wurde, können Sie diese Warnung ignorieren.
 
 Weitere Informationen finden Sie unter [/clr (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4382 generiert.
+Im folgenden Beispiel wird C4382 generiert.
 
 ```cpp
 // C4382.cpp

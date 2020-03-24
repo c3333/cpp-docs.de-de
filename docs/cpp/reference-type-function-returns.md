@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data types [C++], function return types
 - functions [C++], return types
 ms.assetid: 5b73be1d-2dc7-41df-ab0a-adcba36f2ad1
-ms.openlocfilehash: a2d7fa9ddbc1d4a2f922b5a20930e150ae991f38
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5e84643713dcbcb278fe7ce07c5d55f3593ec2ef
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403437"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188297"
 ---
 # <a name="reference-type-function-returns"></a>Verweistyp-Funktionsrückgaben
 
@@ -23,9 +23,9 @@ Funktionen können deklariert werden, um einen Verweistyp zurückzugeben. Es gib
 
 - Das verwiesene Objekt geht bei Rückgabe der Funktion nicht außerhalb des gültigen Bereichs.
 
-Genauso wie es effizienter, große Objekte übergeben werden kann *zu* Funktionen als Verweis es auch kann effizienter sein, große Objekte zurückgeben *aus* Funktionen als Verweis. Durch das Verweisrückgabeprotokoll entfällt die Notwendigkeit, das Objekt vor der Rückgabe in einen temporären Speicherort zu kopieren.
+Ebenso wie es effizienter sein kann, große Objekte als Verweis *an Funktionen zu* übergeben, kann es effizienter sein, große Objekte von Funktionen *als* Verweis zurückzugeben. Durch das Verweisrückgabeprotokoll entfällt die Notwendigkeit, das Objekt vor der Rückgabe in einen temporären Speicherort zu kopieren.
 
-Verweisrückgabetypen können auch nützlich sein, wenn die Funktion als l-Wert ausgewertet werden muss. Die meisten überladenen Operatoren fallen in diese Kategorie, vor allem der Zuweisungsoperator. Überladene Operatoren finden Sie im [überladene Operatoren](../cpp/operator-overloading.md).
+Verweisrückgabetypen können auch nützlich sein, wenn die Funktion als l-Wert ausgewertet werden muss. Die meisten überladenen Operatoren fallen in diese Kategorie, vor allem der Zuweisungsoperator. Überladene Operatoren werden in [überladenen Operatoren](../cpp/operator-overloading.md)
 
 ## <a name="example"></a>Beispiel
 
@@ -86,7 +86,7 @@ Beachten Sie auch, dass in Main das Punktobjekt im Gültigkeitsbereich bleibt un
 
 Deklarationen von Verweistypen müssen Initialisierer enthalten, ausgenommen in den folgenden Fällen:
 
-- Explizite **"extern"** Deklaration
+- Explizite **externe** Deklaration
 
 - Deklaration eines Klassenmembers
 
@@ -108,8 +108,8 @@ Foo& GetFoo()
 } // f is destroyed here
 ```
 
-Der Compiler gibt eine Warnung in diesem Fall: `warning C4172: returning address of local variable or temporary`. In einfachen Programmen ist es möglich, dass gelegentlich keine Zugriffsverletzung auftritt, wenn der Verweis vom Aufrufer erfolgt, bevor die Speicheradresse überschrieben wird. Dies ist einfach auf Glück zurückzuführen. Warnung beachten.
+Der Compiler gibt in diesem Fall eine Warnung aus: `warning C4172: returning address of local variable or temporary`. In einfachen Programmen ist es möglich, dass gelegentlich keine Zugriffsverletzung auftritt, wenn der Verweis vom Aufrufer erfolgt, bevor die Speicheradresse überschrieben wird. Dies ist einfach auf Glück zurückzuführen. Warnung beachten.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verweise](../cpp/references-cpp.md)
+[Referenzen](../cpp/references-cpp.md)

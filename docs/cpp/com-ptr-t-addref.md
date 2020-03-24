@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - AddRef method [C++], interface pointers
 ms.assetid: c104dac3-aad3-40bb-a298-75c6cd0e63a2
-ms.openlocfilehash: 7408b5c174f76673b56caffd56aaa87895bd08d4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 51182b461aeac83c12bb18a573a49b2d4347a190
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154941"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189927"
 ---
-# <a name="comptrtaddref"></a>_com_ptr_t::AddRef
+# <a name="_com_ptr_taddref"></a>_com_ptr_t::AddRef
 
 **Microsoft-spezifisch**
 
-Ruft die `AddRef` Memberfunktion `IUnknown` für den gekapselten Schnittstellenzeiger auf.
+Ruft die `AddRef` Member-Funktion von `IUnknown` für den gekapselten Schnittstellen Zeiger auf.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,12 +25,12 @@ Ruft die `AddRef` Memberfunktion `IUnknown` für den gekapselten Schnittstellenz
 void AddRef( );
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Aufrufe `IUnknown::AddRef` für den gekapselten Schnittstellenzeiger, Auslösen einer `E_POINTER` Fehler, wenn der Zeiger NULL ist.
+Ruft `IUnknown::AddRef` für den gekapselten Schnittstellen Zeiger auf und gibt einen `E_POINTER` Fehler aus, wenn der Zeiger NULL ist.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_ptr_t-Klasse](../cpp/com-ptr-t-class.md)

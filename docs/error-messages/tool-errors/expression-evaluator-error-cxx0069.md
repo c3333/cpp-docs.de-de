@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - CXX0069
 ms.assetid: cf334b23-1e17-4d37-acc5-18597ee84164
-ms.openlocfilehash: 4a37e7ef5a260f696f3c3f0cb95fd8557ce8dfbb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 07e6dea2090c09223719d0dbeeadc9497e7ab042
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299360"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184267"
 ---
 # <a name="expression-evaluator-error-cxx0069"></a>Ausdrucksauswertungsfehler CXX0069
 
-Variable erfordert Stapelrahmen
+Variable benötigt Stapel Rahmen
 
-Die ausdrucksauswertung kann nicht die Variable ausgewertet werden, da es nicht in einem Stapelrahmen auftritt. Dies kann durch Variablen, die als Teil einer Inlinefunktion verursacht werden.
+Die Ausdrucks Auswertung kann die Variable nicht auswerten, da Sie nicht in einem Stapel Rahmen vorkommt. Dies kann durch Variablen verursacht werden, die als Teil einer Inline Funktion deklariert werden.

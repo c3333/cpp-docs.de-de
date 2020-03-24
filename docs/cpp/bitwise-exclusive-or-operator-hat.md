@@ -10,12 +10,12 @@ helpviewer_keywords:
 - OR operator [C++], bitwise exclusive
 - operators [C++], logical
 ms.assetid: f9185d85-65d5-4f64-a6d6-679758d52217
-ms.openlocfilehash: 07af1b507cf256b84ac2f0f2db4061790a23555a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9a44dc60a985729aae79ed0e2e48c44adace647b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62232013"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190715"
 ---
 # <a name="bitwise-exclusive-or-operator-"></a>Bitweiser exklusiver OR-Operator: ^
 
@@ -25,15 +25,15 @@ ms.locfileid: "62232013"
 expression ^ expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der bitweise exklusive OR-Operator (**^**) vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn ein Bit 0 (null) und das andere Bit 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 (null) festgelegt.
+Der bitweise exklusive OR-Operator ( **^** ) vergleicht jedes Bit seines ersten Operanden mit dem entsprechenden Bit seines zweiten Operanden. Wenn ein Bit 0 und das andere 1 ist, wird das entsprechende Ergebnisbit auf 1 festgelegt. Andernfalls wird das entsprechende Ergebnisbit auf 0 festgelegt.
 
-Beide Operanden im bitweisen exklusiven OR-Operator müssen vom Ganzzahltyp sein. Die üblichen arithmetischen Konvertierungen finden Sie im [Standardkonvertierungen](standard-conversions.md) auf die Operanden angewendet werden.
+Beide Operanden im bitweisen exklusiven OR-Operator müssen vom Ganzzahltyp sein. Die üblichen arithmetischen Konvertierungen, die in [Standard Konvertierungen](standard-conversions.md) abgedeckt werden, werden auf die Operanden angewendet.
 
 ## <a name="operator-keyword-for-"></a>Operator-Schlüsselwort für "^"
 
-Die **Xor** -Operator ist die ausgeschriebene Variante von **^**. Es gibt zwei Möglichkeiten, den Zugriff auf die **Xor** -Operator in Programmen: Fügen Sie die Headerdatei `iso646.h`, oder Kompilieren Sie mit der [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption (spracherweiterungen deaktivieren).
+Der **Xor** -Operator ist die Text Entsprechung von **^** . Es gibt zwei Möglichkeiten, auf den **Xor** -Operator in den Programmen zuzugreifen: Schließen Sie die Header Datei `iso646.h`ein, oder kompilieren Sie mit der Compileroption [/Za](../build/reference/za-ze-disable-language-extensions.md) (Spracherweiterungen deaktivieren).
 
 ## <a name="example"></a>Beispiel
 
@@ -51,6 +51,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

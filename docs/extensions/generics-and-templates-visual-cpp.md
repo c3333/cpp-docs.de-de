@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C++], vs. templates
 - templates, C++
 ms.assetid: 63adec79-b1dc-4a1a-a21d-b8a72a8fce31
-ms.openlocfilehash: 74cfd791e8400b788d38f272eed3d421ca4230e3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 567286ee24e9df968b2d352489fe12f2735854eb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516355"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172346"
 ---
 # <a name="generics-and-templates-ccli"></a>Generics und Vorlagen (C++/CLI)
 
@@ -47,7 +47,7 @@ Der grundlegende Unterschied zwischen Vorlagen und Generics wirkt sich auf die E
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
 Nachfolgend sehen Sie ein einfaches Beispiel für die gemeinsame Verwendung von Vorlagen und Generics. In diesem Beispiel übergibt die Vorlagenklasse ihre Parameter an den generischen Typ. Umgekehrt ist dies nicht möglich.
 
@@ -92,6 +92,6 @@ int main() {
 F
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Generics](generics-cpp-component-extensions.md)

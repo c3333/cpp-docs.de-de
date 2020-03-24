@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U1056
 ms.assetid: da855728-b69e-413c-83ed-df912126215e
-ms.openlocfilehash: b15b14c04dd91ae648ea4311612c122f04f90477
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 10131e518fa608292fff58672ede36390bcd665b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62367264"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182902"
 ---
 # <a name="nmake-fatal-error-u1056"></a>NMAKE: Schwerwiegender Fehler U1056
 
-Befehlsprozessor nicht gefunden werden.
+Der Befehlsprozessor wurde nicht gefunden.
 
-Der Befehlsprozessor wies nicht den im angegebenen Pfad die **COMSPEC** oder **Pfad** Umgebungsvariablen.
+Der Befehlsprozessor befand sich nicht in dem Pfad, der in den **COMSPEC** -oder **path** -Umgebungsvariablen angegeben ist.
 
-NMAKE verwendet COMMAND.COM oder cmd ein. EXE-Datei als ein Befehlsprozessor, wenn Sie Befehle ausführen. Es sucht der Befehlsprozessor zuerst in den Pfad an, legen Sie in **COMSPEC**. Wenn **COMSPEC** ist nicht vorhanden, NMAKE-Suchvorgänge, die die Verzeichnisse im angegebenen **Pfad**.
+NMAKE verwendet Command.com oder cmd. EXE als Befehlsprozessor beim Ausführen von Befehlen. Er sucht zuerst nach dem Befehlsprozessor in dem Pfad, der in **COMSPEC**festgelegt ist. Wenn **COMSPEC** nicht vorhanden ist, durchsucht NMAKE die unter **path**angegebenen Verzeichnisse.

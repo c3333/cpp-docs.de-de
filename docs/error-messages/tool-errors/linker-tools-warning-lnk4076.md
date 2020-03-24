@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4076
 ms.assetid: c424d43b-abb3-4df4-be66-8907b859a555
-ms.openlocfilehash: 05a05c63b9b63aafc52854aa9dcdcccbdc6f8d70
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3f5c5f6bd33fd0e43ccf3c7b55ab54a3cc25ba68
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182305"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183435"
 ---
 # <a name="linker-tools-warning-lnk4076"></a>Linkertoolwarnung LNK4076
 
-Ungültige inkrementelle Statusdatei 'Dateiname'; Link erfolgt nicht inkrementell
+Ungültige inkrementelle Statusdatei "filename". nicht inkrementelles Verknüpfen
 
-LINK kann nicht in die inkrementelle Statusdatei (ILK) schreiben. Entweder `filename` ist beschädigt, oder es ist dabei nicht um eine Datenbank, die inkrementell verknüpfen. Entfernen Sie die Datei, und anschließend ein.
+Der Link kann nicht in die inkrementelle Statusdatei (. ILK) schreiben. `filename` ist beschädigt, oder es handelt sich nicht um eine inkrementelle Verknüpfungs Datenbank. Entfernen Sie die Datei, und verknüpfen Sie Sie neu.

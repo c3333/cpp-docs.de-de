@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CAN0047
 - CXX0047
 ms.assetid: db23d0db-fce2-4d86-b391-6e1d6ad13fd4
-ms.openlocfilehash: ecc2ca4061f01cfa3ef868ed2916ceaeb5513116
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3b5a8ebaaac351833970b10336f4f71940082114
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160795"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184904"
 ---
 # <a name="expression-evaluator-error-cxx0047"></a>Ausdrucksauswertungsfehler CXX0047
 
-Argumentliste stimmt nicht mit eine Funktion überein.
+die Argumentliste entspricht keiner Funktion.
 
-Ein Ausdruck, der Namen einer Funktion mit einer Liste von übergebener Parameter, die nicht mit der formalen Parameterliste von jeder Funktion mit dem gleichen Namen im Programm definiert übereinstimmt.
+Ein Ausdruck, der eine Funktion mit einer tatsächlichen Parameterliste aufgerufen hat, die nicht mit der formalen Parameterliste einer Funktion übereinstimmt, die denselben Namen hat, der im Programm definiert ist.
 
-Überladene Funktionen können aufgerufen werden, nur dann, wenn eine genaue Übereinstimmung oder nach einer Übereinstimmung, die nicht über die Erstellung eines Objekts erfordert.
+Überladene Funktionen können nur aufgerufen werden, wenn es eine genaue Parameter Übereinstimmung oder eine Entsprechung gibt, bei der die Erstellung eines Objekts nicht erforderlich ist.
 
 Dieser Fehler ist mit CAN0047 identisch.

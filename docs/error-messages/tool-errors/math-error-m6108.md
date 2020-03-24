@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - M6108
 ms.assetid: 054893b4-49bc-45d9-882f-7cb50ba387c0
-ms.openlocfilehash: d60e9b6284c79828fda1f7af542fcf197f189ad0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 68e6ae823613d87eb01c443b564b46746259cd7b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62393271"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173724"
 ---
 # <a name="math-error-m6108"></a>Mathematischer Fehler M6108
 
 Quadratwurzel
 
-Der Operand in einem Vorgang Quadratwurzel war negativ.
+Der Operand in einem Quadratwurzel Vorgang war negativ.
 
-Das Programm mit Exitcode 136 wird beendet.
+Das Programm endet mit dem Exitcode 136.
 
 > [!NOTE]
->  Die `sqrt` Funktion in der C-Laufzeitbibliothek und die FORTRAN-Funktion **"SQRT"** Generieren dieser Fehler nicht. Das C `sqrt` Funktion überprüft das Argument vor dem Ausführen des Vorgangs und gibt einen Fehlerwert zurück, wenn der Operand negativ ist. Die FORTRAN **"SQRT"** Funktion generiert die Domänenfehler [M6201](../../error-messages/tool-errors/math-error-m6201.md) anstelle dieses Fehlers.
+>  Dieser Fehler wird nicht von der `sqrt`-Funktion in der C-Lauf Zeit Bibliothek und der systeminternen FORTRAN-Funktion **sqrt** generiert. Die C-`sqrt` Funktion überprüft das-Argument, bevor der Vorgang durchgeführt wird, und gibt einen Fehlerwert zurück, wenn der Operand negativ ist. Die Fortran **sqrt** -Funktion generiert den Domänen Fehler [M6201](../../error-messages/tool-errors/math-error-m6201.md) anstelle dieses Fehlers.
