@@ -1,18 +1,18 @@
 ---
-title: 'Operator&lt; -Operator (Microsoft:: wrl)'
+title: 'Operator&lt;-Operator (Microsoft:: WRL)'
 ms.date: 11/04/2016
 ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::operator<
 ms.assetid: bfae0e1c-1648-482b-99c2-3217d62aba46
-ms.openlocfilehash: 4887a7ebf3906edbc4a5a2a723caff0ad7732c46
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 04f5598667f7e0e036f0a55cd3f9cc52b5356299
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182924"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213641"
 ---
-# <a name="operatorlt-operator-microsoftwrl"></a>Operator&lt; -Operator (Microsoft:: wrl)
+# <a name="operatorlt-operator-microsoftwrl"></a>Operator&lt;-Operator (Microsoft:: WRL)
 
 Bestimmt, ob die Adresse eines Objekts kleiner als ein anderes ist.
 
@@ -35,14 +35,14 @@ Das rechte Objekt.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**"true"** Wenn die Adresse des *eine* ist kleiner als die Adresse des *b*ist, andernfalls **"false"**.
+**true** , wenn die Adresse *eines kleiner* als die Adresse von *b*ist. andernfalls **false**.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

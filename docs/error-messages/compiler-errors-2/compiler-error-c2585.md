@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C2585
 ms.assetid: 05bb1a9c-28fb-4a88-a1b5-aea85ebdee1c
-ms.openlocfilehash: 812ab15aacd1f6a215c6a5beb7781983859fe858
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 57a0cd7a200c5bbb875821eb9e10314d98e58185
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62360501"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177390"
 ---
 # <a name="compiler-error-c2585"></a>Compilerfehler C2585
 
-die explizite Konvertierung in 'type' ist mehrdeutig
+die explizite Konvertierung in "Typ" ist mehrdeutig.
 
-Die typkonvertierung kann mehr als ein Ergebnis erzeugen.
+Die Typkonvertierung kann mehr als ein Ergebnis verursachen.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Konvertieren von einem Typ Klasse oder Struktur, die basierend auf mehrfache Vererbung. Wenn der Typ mehr als einmal derselben Basisklasse erbt, die Konvertierungsfunktion or -Operator muss verwenden bereichsauflösung (`::`) angeben, welche von der geerbten Klassen, die bei der Konvertierung verwendet.
+1. Die Umstellung von einer Klasse oder einem Strukturtyp auf der Grundlage mehrerer Vererbung. Wenn der Typ dieselbe Basisklasse mehrmals erbt, muss die Konvertierungs Funktion oder der Operator Bereichs Auflösung (`::`) verwenden, um anzugeben, welche der geerbten Klassen bei der Konvertierung verwendet werden soll.
 
-1. Ein Konvertierungsoperator und einen Konstruktor haben die gleiche Konvertierung vornehmen definiert wurde.
+1. Ein Konvertierungs Operator und ein Konstruktor wurden definiert, sodass die gleiche Konvertierung durchführen.

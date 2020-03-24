@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CAN0031
 - CXX0031
 ms.assetid: adafbcb7-982f-495f-a34d-72e95d7e54c7
-ms.openlocfilehash: 29bd4959c7bdd20b25279ca5d0e18814d1b23039
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bd4b0d744f9fc101ec4a7bc3a2a01f1d14cfbf7b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397093"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195590"
 ---
 # <a name="expression-evaluator-error-cxx0031"></a>Ausdrucksauswertungsfehler CXX0031
 
-Ausdruck ist nicht erweiterbar
+Ausdruck nicht erweiterbar
 
 Die Ausdrucksauswertung hat einen internen Fehler festgestellt.
 
-Sie können möglicherweise einen entsprechenden Ausdruck schreiben, der ordnungsgemäß ausgewertet werden kann.
+Möglicherweise sind Sie in der Lage, einen entsprechenden Ausdruck zu schreiben, der ordnungsgemäß ausgewertet werden kann.
 
 Dieser Fehler ist mit CAN0031 identisch.

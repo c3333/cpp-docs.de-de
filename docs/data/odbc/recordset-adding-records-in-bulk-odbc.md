@@ -6,33 +6,33 @@ helpviewer_keywords:
 - recordsets, adding records
 - bulk record additions to recordsets
 ms.assetid: 4685f656-14b9-4f10-a1c5-147b2b89a0b4
-ms.openlocfilehash: a2c3eab8bb4c0e8db76fceb5a2dafd16a4a07079
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f561cb0275933a973e97ef0518148e81e14a0234
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395663"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213017"
 ---
 # <a name="recordset-adding-records-in-bulk-odbc"></a>Recordset: Hinzufügen von Datensätzen in einer Sammeloperation (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-Die MFC-Bibliothek [CRecordset](../../mfc/reference/crecordset-class.md) -Klasse verfügt über eine neue Optimierung, die Effizienz verbessert werden, wenn Sie neue Datensätze in eine Tabelle in einer Massenoperation hinzufügen.
+Die MFC [CRecordset](../../mfc/reference/crecordset-class.md) -Klasse verfügt über eine neue Optimierung, die die Effizienz verbessert, wenn Sie einer Tabelle neue Datensätze in einem Massen Vorgang hinzufügen.
 
 > [!NOTE]
-> Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Wenn Sie die gesammelte verwenden werden, finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammeloperation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
+> Dieses Thema bezieht sich auf von `CRecordset` abgeleitete Objekte, in denen das gesammelte Abrufen von Zeilen nicht implementiert wurde. Wenn Sie das Massen Abrufen von Zeilen verwenden, finden Sie weitere Informationen unter [Recordset: Abrufen von Datensätzen in einer Sammel Operation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
 
-Eine neue Option für die *DwOptions* Parameter, um die [CRecordset:: Open](../../mfc/reference/crecordset-class.md#open) Memberfunktion `optimizeBulkAdd`, verbessert die Leistung bei der Sie mehrere Datensätze ohne hintereinanderhinzufügen`Requery` oder `Close`. Nur die Felder, die vor dem ersten dirty `Update` Aufruf werden als modifizierte für nachfolgende `AddNew` / `Update` aufrufen.
+Eine neue Option für den *dwOptions* -Parameter der [CRecordset:: Open](../../mfc/reference/crecordset-class.md#open) -Member-Funktion, `optimizeBulkAdd`, verbessert die Leistung, wenn Sie mehrere Datensätze nacheinander hinzufügen, ohne `Requery` oder `Close`aufrufen zu müssen. Nur die Felder, die vor dem ersten `Update` Aufruf geändert werden, werden für nachfolgende `AddNew`/`Update` Aufrufe als geändert markiert.
 
-Wenn Sie die Datenbankklassen verwendet werden, nutzen die `::SQLSetPos` ODBC-API-Funktion zum Hinzufügen, bearbeiten und Löschen von Datensätzen, ist diese Optimierung nicht erforderlich.
+Wenn Sie die-Datenbankklassen verwenden, um die `::SQLSetPos` ODBC-API-Funktion zum Hinzufügen, bearbeiten und Löschen von Datensätzen zu nutzen, ist diese Optimierung nicht erforderlich.
 
-Wenn die ODBC-Cursorbibliothek geladen ist, oder der ODBC-Treiber unterstützt nicht das Hinzufügen, bearbeiten und Löschen von über `::SQLSetPos`, diese Optimierung sollten Bulk verbessern Leistung hinzufügen. Um diese Optimierung zu deaktivieren, setzen die *DwOptions* Parameter in der `Open` für Recordsets der folgenden aufrufen:
+Wenn die ODBC-Cursor Bibliothek geladen wird oder der ODBC-Treiber das Hinzufügen, bearbeiten und Löschen über `::SQLSetPos`nicht unterstützt, sollte diese Optimierung die Leistung beim Massen hinzufügen verbessern. Um diese Optimierung zu aktivieren, legen Sie den *dwOptions* -Parameter im `Open`-aufrufsbefehl für das Recordset auf Folgendes fest:
 
 ```
 appendOnly | optimizeBulkAdd
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Hinzufügen, Aktualisieren und Löschen von Datensätzen (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)<br/>

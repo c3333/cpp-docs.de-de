@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - RaiseException function
 ms.assetid: f9c74f6d-112a-4d2e-900f-622f795d5dbf
-ms.openlocfilehash: 08305c5d59d7e272aac87ad9aa183c8e82588632
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3270057bf5b1b27a98bef1ab236291eab15d27ab
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62231352"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213628"
 ---
 # <a name="raiseexception-function"></a>RaiseException-Funktion
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -28,24 +28,24 @@ inline void __declspec(noreturn)   RaiseException(
 
 ### <a name="parameters"></a>Parameter
 
-*hr*<br/>
-Der Ausnahmecode, der die Ausnahme ausgelöst wird; d. h. das HRESULT des einen fehlgeschlagenen Vorgang.
+*HR*<br/>
+Der Ausnahme Code der Ausnahme, die ausgelöst wird. Das heißt, das HRESULT eines fehlgeschlagenen Vorgangs.
 
-*dwExceptionFlags*<br/>
-Ein Flag, der angibt, ein vernachlässigbare Ausnahme (der Flagwert ist 0 (null)), oder eine noncontinuable Ausnahme (Flag-Wert ungleich NULL ist). Standardmäßig ist die Ausnahme nicht fortsetzbare.
+*dwexceptionflags*<br/>
+Ein Flag, das eine fort Setz Bare Ausnahme angibt (der Flagwert ist 0 (null)) oder eine nicht fort Setz Bare Ausnahme (Flagwert ist nicht null). Standardmäßig ist die Ausnahme nicht fort setzbar.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Löst eine Ausnahme aus, in dem aufrufenden Thread aus.
+Löst eine Ausnahme im aufrufenden Thread aus.
 
-Weitere Informationen finden Sie in der Windows `RaiseException` Funktion.
+Weitere Informationen finden Sie unter der Windows `RaiseException`-Funktion.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** internal.h
+**Header:** intern. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

@@ -6,21 +6,21 @@ helpviewer_keywords:
 - SQL data types [C++]
 - SQL [C++], vs. C++ data types
 ms.assetid: 066e0070-d4da-435c-9c4b-f7cab3352c86
-ms.openlocfilehash: 3efa36342b7d16968113acd818a7a1386e4cefcc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1c1ce908b5c8d345906d49adc79e322225ed49f5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62329883"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212614"
 ---
 # <a name="sql-sql-and-c-data-types-odbc"></a>SQL: SQL- und C++-Datentypen (ODBC)
 
 > [!NOTE]
->  Diese Informationen gelten für die MFC-ODBC-Klassen. Wenn Sie mit den MFC-DAO-Klassen arbeiten, finden Sie im "Vergleich von Microsoft Jet-Datenbank-Engine-SQL und ANSI-SQL" in-DAO-Hilfe.
+>  Diese Informationen gelten für die MFC-ODBC-Klassen. Wenn Sie mit den MFC-DAO-Klassenarbeiten, finden Sie weitere Informationen im Thema "Vergleich von Microsoft Jet Datenbank-Engine SQL und ANSI SQL" in der DAO-Hilfe.
 
-In der folgende Tabelle werden ANSI SQL-Datentypen in C++-Datentypen zugeordnet. Diese Tabelle die C-Language-Informationen erhalten in Anhang D des ergänzt die *ODBC SDK* *Programmer's Reference* auf der MSDN Library-CD. Die Assistenten verwalten die meisten datentypzuordnung für Sie. Wenn Sie einen Assistenten nicht verwenden, können Sie die Zuordnungsinformationen zu, damit Sie den Code manuell schreiben können.
+In der folgenden Tabelle sind die ANSI-SQL C++ -Datentypen zu-Datentypen zugeordnet. Dies erweitert die C-Sprachinformationen, die in Anhang D der *ODBC SDK* *-Programmier Referenz* auf der MSDN Library-CD angegeben sind. Die meisten Datentyp Zuordnung wird von den Assistenten für Sie verwaltet. Wenn Sie keinen Assistenten verwenden, können Sie die Zuordnungsinformationen verwenden, um den Code für den Feld Austausch manuell zu schreiben.
 
-### <a name="ansi-sql-data-types-mapped-to-c-data-types"></a>ANSI SQL-Datentypen, die C++-Datentypen zugeordnet
+### <a name="ansi-sql-data-types-mapped-to-c-data-types"></a>ANSI-SQL-Datentypen C++ , die Datentypen zugeordnet sind
 
 |ANSI-SQL-Datentyp|C++-Datentyp|
 |------------------------|---------------------|
@@ -37,24 +37,24 @@ In der folgende Tabelle werden ANSI SQL-Datentypen in C++-Datentypen zugeordnet.
 |**BIT**|**BOOL**|
 |**TINYINT**|**BYTE**|
 |**BIGINT**|`CString` 1|
-|**BINÄRE**|`CByteArray`|
+|**Ärer**|`CByteArray`|
 |**VARBINARY**|`CByteArray`|
 |**LONGVARBINARY**|`CLongBinary`, `CByteArray` 3|
 |**DATE**|`CTime`, `CString`|
 |**TIME**|`CTime`, `CString`|
 |**TIMESTAMP**|`CTime`, `CString`|
 
-1. ANSI **DECIMAL** und **numerischen** zuordnen `CString` da **SQL_C_CHAR** ist der Standardtyp für ODBC-Übertragung.
+1. Die ANSI- **Dezimal** Zahl und die **numerische** Zuordnung `CString`, da **SQL_C_CHAR** der standardodbc-Übertragungstyp ist.
 
-2. Zeichendaten, die länger als 255 Zeichen abgeschnitten, indem bei-Zuordnung standardmäßig `CString`. Sie können diese Länge erweitern, indem Sie explizit die *nMaxLength* Argument `RFX_Text`.
+2. Zeichendaten, die über 255 Zeichen hinausgehen, werden standardmäßig abgeschnitten, wenn Sie `CString`zugeordnet werden. Sie können die abkürzen Länge erweitern, indem Sie das *nMaxLength* -Argument von `RFX_Text`explizit festlegen.
 
-3. Binäre Daten länger als 255 Zeichen abgeschnitten, indem bei-Zuordnung standardmäßig `CByteArray`. Sie können diese Länge erweitern, indem Sie explizit die *nMaxLength* Argument `RFX_Binary`.
+3. Binäre Daten, die über 255 Zeichen hinausgehen, werden standardmäßig abgeschnitten, wenn Sie `CByteArray`zugeordnet werden. Sie können die abkürzen Länge erweitern, indem Sie das *nMaxLength* -Argument von `RFX_Binary`explizit festlegen.
 
-Wenn Sie nicht die ODBC-Cursorbibliothek verwenden, können ein Problem beim Versuch, aktualisieren Sie zwei oder mehr Felder für lange variabler Länge mit der Microsoft SQL Server-ODBC-Treiber und die MFC-ODBC-Datenbankklassen auftreten. Der ODBC-Datentypen, **SQL_LONGVARCHAR** und **SQL_LONGVARBINARY**, ordnen Sie Text und image von SQLServer-Typen. Ein `CDBException` wird ausgelöst, wenn Sie zwei oder mehr lange variabler Länge, die Felder auf den gleichen Aufruf aktualisieren `CRecordset::Update`. Aktualisieren Sie daher nicht mehrere lange Spalten gleichzeitig mit `CRecordset::Update`. Sie können mehrere lange Spalten gleichzeitig mit der ODBC-API aktualisieren `SQLPutData`. Sie können auch die ODBC-Cursorbibliothek verwenden, aber dies wird nicht empfohlen, für die Treiber, z. B. den SQL Server-Treiber, die Cursor unterstützen und die Cursorbibliothek ist nicht erforderlich.
+Wenn Sie die ODBC-Cursor Bibliothek nicht verwenden, tritt möglicherweise ein Problem auf, wenn Sie versuchen, zwei oder mehr lange Felder variabler Länge mithilfe des Microsoft SQL Server ODBC-Treibers und der MFC-ODBC-Datenbankklassen zu aktualisieren. Die ODBC-Typen, **SQL_LONGVARCHAR** und **SQL_LONGVARBINARY**, werden Text-und Bild SQL Server Typen zugeordnet. Eine `CDBException` wird ausgelöst, wenn Sie mindestens zwei lange Felder mit variabler Länge für denselben `CRecordset::Update`-Auflistungen aktualisieren. Aktualisieren Sie daher nicht mehrere lange Spalten gleichzeitig mit `CRecordset::Update`. Sie können mehrere lange Spalten gleichzeitig mit der ODBC-API-`SQLPutData`aktualisieren. Sie können auch die ODBC-Cursor Bibliothek verwenden. Dies wird jedoch nicht empfohlen für Treiber, wie z. b. den SQL Server-Treiber, die Cursor unterstützen und die Cursor Bibliothek nicht benötigen.
 
-Bei Verwendung der ODBC-Cursorbibliothek mit dem MFC-ODBC-Datenbankklassen und Microsoft SQL Server-ODBC-Treiber eine **ASSERT** auftreten, zusammen mit einem `CDBException` Wenn ein Aufruf von `CRecordset::Update` folgt einen Aufruf zum `CRecordset::Requery`. Rufen Sie stattdessen `CRecordset::Close` und `CRecordset::Open` statt `CRecordset::Requery`. Eine andere Lösung ist nicht für die ODBC-Cursorbibliothek verwenden, da es sich bei der SQL Server und der SQL Server-ODBC-Treiber systemeigene Unterstützung für Cursor systemeigen bieten und die ODBC-Cursorbibliothek ist nicht erforderlich.
+Wenn Sie die ODBC-Cursor Bibliothek mit den MFC-ODBC-Datenbankklassen und dem Microsoft SQL Server ODBC-Treiber verwenden **, kann eine** Bestätigung zusammen mit einer `CDBException` auftreten, wenn ein-`CRecordset::Update` auf einen `CRecordset::Requery`aufgerufen wird. Verwenden Sie stattdessen `CRecordset::Close` und `CRecordset::Open` anstelle von `CRecordset::Requery`. Eine andere Lösung besteht darin, die ODBC-Cursor Bibliothek nicht zu verwenden, da die SQL Server und der SQL Server ODBC-Treiber systemeigene Unterstützung für Cursor bereitstellen und die ODBC-Cursor Bibliothek nicht benötigt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [SQL](../../data/odbc/sql.md)<br/>
 [SQL: Durchführen direkter SQL-Aufrufe (ODBC)](../../data/odbc/sql-making-direct-sql-calls-odbc.md)

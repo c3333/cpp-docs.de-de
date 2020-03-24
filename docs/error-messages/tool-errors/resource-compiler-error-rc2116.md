@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - RC2116
 ms.assetid: d9203ddf-798d-490b-be41-0dd3f7d53653
-ms.openlocfilehash: 38f500b203c0ec47743ccd76c8453ce6c9286918
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3fae25b7232425128c51625ca09319cc84064f50
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62219872"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191417"
 ---
 # <a name="resource-compiler-error-rc2116"></a>Ressourcencompiler: Fehler RC2116
 
-Zahl erwartet als ID
+Anzahl für ID wird erwartet.
 
-Erwartet eine Zahl für die `id` einer Steuerelement-Anweisung in der **Dialogfeld** Anweisung. Stellen Sie sicher, dass eine Zahl oder `#define` -Anweisung für die Steuerelement-ID.
+Es wird eine Zahl für das `id`-Feld einer Steuerelement Anweisung in der **Dialog** -Anweisung erwartet. Stellen Sie sicher, dass Sie über eine Zahl oder `#define`-Anweisung für die Steuerelement-ID verfügen

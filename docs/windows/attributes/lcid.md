@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LCID attribute
 ms.assetid: 7f248c69-ee1c-42c3-9411-39cf27c9f43d
-ms.openlocfilehash: 7c737661bb8429e416b515e4e7fcaf54956385d0
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: bb9e44d34c675e4f5d955c5f422a6dd35259ec8d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514532"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214798"
 ---
 # <a name="lcid"></a>lcid
 
@@ -23,9 +23,9 @@ Ermöglicht es Ihnen, einen Gebiets Schema Bezeichner an eine Funktion zu überg
 [lcid]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **LCID** C++ -Attribut implementiert die Funktionalität des [LCID](/windows/win32/Midl/lcid) -Attributs "Mittel l". Wenn Sie das Gebiets Schema für einen Bibliotheks Block implementieren möchten, verwenden Sie den **LCID =** `lcid` -Parameter für das [Module](module-cpp.md) -Attribut.
+Das **LCID** C++ -Attribut implementiert die Funktionalität des [LCID](/windows/win32/Midl/lcid) -Attributs "Mittel l". Wenn Sie das Gebiets Schema für einen Bibliotheks Block implementieren möchten, verwenden Sie den **LCID =** `lcid`-Parameter für das [Module](module-cpp.md) -Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -42,7 +42,7 @@ __interface IStatic {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -50,12 +50,12 @@ __interface IStatic {
 |-|-|
 |**Betrifft**|Schnittstellenparameter|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)

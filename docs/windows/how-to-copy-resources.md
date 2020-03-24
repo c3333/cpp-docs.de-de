@@ -30,12 +30,12 @@ helpviewer_keywords:
 - cursors [C++], importing and exporting
 - images [C++], exporting
 ms.assetid: 65f523e8-017f-4fc6-82d1-083c56d9131f
-ms.openlocfilehash: 718de310bc4fb0cb0072065bc4e7b7adadb182aa
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 0af4e8faeb3d8606fb351b193364a2748fbc944e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426576"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215213"
 ---
 # <a name="how-to-manage-resources-c"></a>Gewusst wie: Verwalten von RessourcenC++()
 
@@ -46,7 +46,7 @@ Sie können Ressourcen aus einer Datei in eine andere Datei kopieren, ohne Sie z
 Sie können problemlos Ressourcen aus einer vorhandenen Ressource oder ausführbaren Datei in die aktuelle Ressourcen Datei kopieren. Um Ressourcen zu kopieren, öffnen Sie beide Dateien, die Ressourcen gleichzeitig enthalten, und ziehen Sie Elemente aus einer Datei in eine andere Datei, oder kopieren und fügen Sie zwischen den beiden Dateien ein. Diese Methode funktioniert für Ressourcen Skriptdateien (. RC) und Ressourcen Vorlagen Dateien (. rct) und als ausführbare Dateien (. exe).
 
 > [!NOTE]
-> Visual C++ enthält Beispiel Ressourcen Dateien, die Sie in ihrer eigenen Anwendung verwenden können. Weitere Informationen finden Sie unter [ClipArt: allgemeine Ressourcen](https://github.com/Microsoft/VCSamples).
+> Visual C++ enthält Beispiel Ressourcen Dateien, die Sie in ihrer eigenen Anwendung verwenden können. Weitere Informationen finden Sie unter [ClipArt: allgemeine Ressourcen](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/general).
 
 Sie können die Ressourcen Dateien im Projekt (**Ressourcenansicht**) und in den eigenständigen RC-Dateien, die in Dokument Fenstern geöffnet sind, nicht per Drag & Drop, kopieren, Ausschneiden oder einfügen. Dies kann in früheren Versionen des Produkts der Fall sein. Verwenden Sie nur die Drag & Drop-Methode zwischen RC-Dateien, die außerhalb des Projekts geöffnet sind.
 
@@ -122,12 +122,12 @@ Sie können grafische Ressourcen (Bitmaps, Symbole, Cursor und Symbolleisten), H
 
 1. Navigieren Sie zu dem Ordner, in dem Sie die Datei speichern möchten, und wählen Sie **exportieren**aus.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
 [Vorgehensweise: Erstellen von Ressourcen](../windows/how-to-create-a-resource-script-file.md)<br/>
-[Vorgehensweise: Einfügen von Ressourcen zur Kompilierungszeit](../windows/how-to-include-resources-at-compile-time.md)<br/>
+[Vorgehensweise: Einfügen von Ressourcen zur Kompilierungszeit](../windows/how-to-include-resources-at-compile-time.md)

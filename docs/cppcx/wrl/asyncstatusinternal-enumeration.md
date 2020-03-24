@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - AsyncStatusInternal enumeration
 ms.assetid: b783923f-3f1c-4487-9384-be572cbc62d7
-ms.openlocfilehash: f12bf4aafc87e44a6e2fb15ba79de4a9744bea58
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0eadd1e3a287feecd36b00b231b42c31218352c1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398783"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214148"
 ---
 # <a name="asyncstatusinternal-enumeration"></a>AsyncStatusInternal-Enumeration
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,11 +24,11 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 enum AsyncStatusInternal;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Gibt eine Zuordnung zwischen internen Enumerationen für den Status von asynchronen Vorgängen und die `Windows::Foundation::AsyncStatus` Enumeration.
+Gibt eine Zuordnung zwischen internen Enumerationen für den Zustand von asynchronen Vorgängen und die `Windows::Foundation::AsyncStatus` Enumeration an.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 `_Created`<br/>
 Entspricht `::Windows::Foundation::AsyncStatus::Created`.
@@ -45,12 +45,12 @@ Entspricht `::Windows::Foundation::AsyncStatus::Cancelled`.
 `_Error`<br/>
 Entspricht `::Windows::Foundation::AsyncStatus::Error`.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** async.h
+**Header:** Async. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

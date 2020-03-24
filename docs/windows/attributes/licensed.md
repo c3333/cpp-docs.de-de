@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - licensed attribute
 ms.assetid: 09cf3b4a-d3f2-43e3-9180-d420333b23bf
-ms.openlocfilehash: 0c637f9e3f6d99b9f197474f49a1a9843744f38b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 49585a697c7880da27357ebcafce9c5cefd89fd2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514453"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214759"
 ---
 # <a name="licensed"></a>licensed
 
-Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mithilfe `IClassFactory2`von instanziiert werden muss.
+Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mit `IClassFactory2`instanziiert werden muss.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,7 +23,7 @@ Gibt an, dass das COM-Objekt, auf das es angewendet wird, lizenziert ist und mit
 [licensed]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **lizenzierte** C++ Attribut verfügt über die gleiche Funktionalität wie das [lizenzierte](/windows/win32/Midl/licensed) Mittel l-Attribut.
 
@@ -48,7 +48,7 @@ public:
 [module(name="MyLibrary", version="1.0", helpstring="My Library Block")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -57,11 +57,11 @@ public:
 |**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
 |**Erforderliche Attribute**|`coclass`|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

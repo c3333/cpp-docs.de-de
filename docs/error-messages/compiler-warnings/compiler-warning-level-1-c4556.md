@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4556
 ms.assetid: e4c0e296-b747-4db1-9608-30b8b74feac2
-ms.openlocfilehash: c31602766261a8d6d0c4f0bb0a880ee34ee1ed45
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 501d79a8a86fcd3e2d8ba08dc2f03488f9abb827
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397314"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80162308"
 ---
 # <a name="compiler-warning-level-1-c4556"></a>Compilerwarnung (Stufe 1) C4556
 
-> der Wert des systeminternen unmittelbaren Arguments "*Wert*"liegt außerhalb des Bereichs"*Lowerbound* - *Upperbound*"
+> der Wert des systeminternen unmittelbaren Arguments '*value*' liegt außerhalb des gültigen Bereichs '*klein gebunden* - *obere Grenze*'.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine systeminterne Funktion entspricht eine Hardware-Anweisung. Die Hardware-Anweisung verfügt über eine feste Anzahl von Bits, um die Konstante zu codieren. Wenn *Wert* ist außerhalb des gültigen Bereichs, wird nicht codiert werden ordnungsgemäß. Der Compiler schneidet der zusätzlichen Bits ab.
+Eine systeminterne Funktion stimmt mit einer Hardware Anweisung überein. Die Hardware Anweisung verfügt über eine Fixed-Anzahl von Bits, um die Konstante zu codieren. Wenn der *Wert* außerhalb des gültigen Bereichs liegt, wird er nicht ordnungsgemäß codiert. Der Compiler verkürzt die zusätzlichen Bits.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4556 generiert:
+Im folgenden Beispiel wird C4556 generiert:
 
 ```cpp
 // C4556.cpp

@@ -3,12 +3,12 @@ title: 'Gewusst wie: Verwenden von winmdidl.exe und midlrt.exe zum Erstellen von
 ms.date: 11/04/2016
 ms.topic: reference
 ms.assetid: 4be8ba11-c223-44ad-9256-7e1edae9a7bc
-ms.openlocfilehash: 3aa7cd28a37ec7187cc3c87927a83e45eeda2a4e
-ms.sourcegitcommit: 5f276064779d90a4cfda758f89e0c0f1e4d1a188
+ms.openlocfilehash: bceb4aff22f6ebba9c8705b3b5a55d0478f244c9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791669"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213537"
 ---
 # <a name="how-to-use-winmdidlexe-and-midlrtexe-to-create-h-files-from-windows-metadata"></a>Gewusst wie: Verwenden von winmdidl.exe und midlrt.exe zum Erstellen von .h-Dateien aus Windows-Metadaten
 
@@ -36,12 +36,12 @@ Winmdidl.exe [/nologo] [/suppressversioncheck] [/time] [/outdir:dir] [/banner:fi
 Verhindert die Anzeige der winmdidl-Copyrightmeldung und -Versionsnummer auf der Konsole.
 
 **/suppressversioncheck**<br/>
-Nicht verwendet.
+Wird nicht verwendet.
 
 **/Time**<br/>
 Zeigt die gesamte Ausführungszeit in der Konsolenausgabe an.
 
-**/outdir:** <em>dir</em><br/>
+**/OutDir:** <em>dir</em><br/>
 Gibt ein Ausgabeverzeichnis an. Wenn der Pfad Leerzeichen enthält, verwenden Sie Anführungszeichen. Das Standardausgabe Verzeichnis ist *\<Laufwerk >* : \Users\\ *\<username >* \AppData\Local\VirtualStore\Program Files (x86) \Microsoft Visual Studio 12,0\\.
 
 **/Banner:** <em>Datei</em><br/>
@@ -71,7 +71,7 @@ Anschließend wird "midlrt" auf der generierten IDL-Datei ausgeführt. Beachten 
 
 `C:\Program Files (x86)\Microsoft Visual Studio 12.0> midlrt "c:\users\username\documents\test_for_winmdidl.idl" /metadata_dir "C:\Windows\System32\WinMetadata"`
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Ausgabedatei eines winmdidl-Vorgangs weist denselben Namen wie die Eingabedatei auf, hat aber die Dateierweiterung IDL.
 

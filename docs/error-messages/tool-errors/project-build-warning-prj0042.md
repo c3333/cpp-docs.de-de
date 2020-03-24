@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0042
 ms.assetid: 682c9999-6f85-409f-b102-00c93243f74f
-ms.openlocfilehash: c91e40b6ad56d6201fc7d0ba7c9fbf23e620e8b0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 45de1de889dedbc03c556e4c88dc76f21e1c8c63
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62297747"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191911"
 ---
 # <a name="project-build-warning-prj0042"></a>Projektbuildwarnung PRJ0042
 
-> Die 'Outputs-Eigenschaft für den benutzerdefinierten Buildschritt für die Datei"*Datei*' ist nicht festgelegt. Der benutzerdefinierte Buildschritt wird übersprungen.
+> Die Outputs-Eigenschaft für den benutzerdefinierten Buildschritt für die Datei "*File*" ist nicht festgelegt. Der benutzerdefinierte Buildschritt wird übersprungen.
 
-Ein benutzerdefinierter Buildschritt wurde nicht ausgeführt werden, da keine Ausgabe angegeben wurde.
+Ein benutzerdefinierter Buildschritt wurde nicht ausgeführt, da keine Ausgabe angegeben wurde.
 
-Um diesen Fehler zu beheben, führen Sie eine der folgenden:
+Führen Sie eine der folgenden Aktionen aus, um diesen Fehler zu beheben:
 
-- Schließen Sie den benutzerdefinierten Buildschritt aus dem Build.
+- Schließen Sie den benutzerdefinierten Buildschritt aus dem Build aus.
 
 - Fügen Sie eine Ausgabe hinzu.
 
-- Löschen Sie den Inhalt des Befehls für den benutzerdefinierten Buildschritt an.
+- Löschen Sie den Inhalt des Befehls des benutzerdefinierten Buildschritts.

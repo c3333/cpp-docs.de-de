@@ -4,16 +4,16 @@ ms.date: 10/29/2018
 helpviewer_keywords:
 - OLE DB providers, using
 ms.assetid: 002a9731-7e06-49ac-be50-3cc26aa43759
-ms.openlocfilehash: c7cd75c9ff5fd42bae9883a6b7374cae6419b291
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e9a3a9b7cf9a7c7cadeec956a118737038807140
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62284489"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212317"
 ---
 # <a name="advanced-provider-techniques"></a>Erweiterte Anbietertechniken
 
-Weitere Informationen über erweiterte Anbietertechniken finden Sie unter den folgenden Themen:
+Weitere Informationen zu erweiterten Anbieter Techniken finden Sie in den folgenden Themen:
 
 - [Unterstützen von Benachrichtigungen](../../data/oledb/supporting-notifications.md)
 
@@ -25,7 +25,7 @@ Weitere Informationen über erweiterte Anbietertechniken finden Sie unter den fo
 
 - [OLE DB-Ressourcenpooling und -Dienste](../../data/oledb/ole-db-resource-pooling-and-services.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Referenz der OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-reference.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)

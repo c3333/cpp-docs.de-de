@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - RC1002
 ms.assetid: b43dfece-0dc3-4d0b-9d8f-509699b9ae80
-ms.openlocfilehash: 0804e7db92355c023e4f9f1dbef8d9194caa3718
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3e6069a9c0901071d366a6deafeab7c064c18efc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62297736"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173191"
 ---
 # <a name="resource-compiler-fatal-error-rc1002"></a>Ressourcencompiler: Schwerwiegender Fehler RC1002
 
-kein weiterer Heapspeicher verfügbar
+nicht genügend Heap Speicher.
 
 ### <a name="to-fix-by-using-the-following-possible-solutions"></a>So beheben Sie den Fehler (unterschiedliche Lösungsmöglichkeiten)
 
-1. Den Windows-Auslagerungsdatei Speicherplatz zu erhöhen. Weitere Informationen zum Erhöhen der Auslagerungsdatei finden Sie unter Virtueller Arbeitsspeicher im Windows-Hilfe.
+1. Vergrößern Sie den Bereich der Windows-Auslagerungs Datei. Weitere Informationen zum Vergrößern des Auslagerungs Datei-Speicherplatzes finden Sie unter Virtueller Arbeitsspeicher in der Windows-Hilfe.
 
-1. Die aktuelle Datei in kleinere Dateien aufgeteilt, und kompilieren Sie sie separat.
+1. Unterteilen Sie die aktuelle Datei in kleinere Dateien, und kompilieren Sie Sie separat.
 
-1. Entfernen Sie andere Programme oder Treiber, die auf dem System ausgeführt.
+1. Entfernen Sie andere Programme oder Treiber, die auf dem System ausgeführt werden.

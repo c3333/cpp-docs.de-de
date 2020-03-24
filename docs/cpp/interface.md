@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - __interface keyword [C++]
 ms.assetid: ca5d400b-d6d8-4ba2-89af-73f67e5ec056
-ms.openlocfilehash: 7c95e3700b4124c4793e0214ed3b06ecfeee72f1
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 9b265dcbaca9f8fa836795cca990804371813647
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222078"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178210"
 ---
-# <a name="interface"></a>__interface
+# <a name="__interface"></a>__interface
 
 **Microsoft-spezifisch**
 
-Ein Microsoft C++ Schnittstelle kann wie folgt definiert werden:
+Eine Microsoft C++ -Schnittstelle kann wie folgt definiert werden:
 
 - Kann von null oder mehreren Basisschnittstellen erben.
 
@@ -37,9 +37,9 @@ Ein Microsoft C++ Schnittstelle kann wie folgt definiert werden:
 modifier __interface interface-name {interface-definition};
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein C++ [Klasse](../cpp/class-cpp.md) oder [Struktur](../cpp/struct-cpp.md) könnte mit diesen Regeln implementiert werden, aber **__interface** setzt sie durch.
+Eine C++ [Klasse](../cpp/class-cpp.md) oder [Struktur](../cpp/struct-cpp.md) kann mit diesen Regeln implementiert werden, **__interface** Sie jedoch erzwingt.
 
 Im Folgenden ist eine Beispiel-Schnittstellendefinition angegeben:
 
@@ -50,7 +50,7 @@ __interface IMyInterface {
 };
 ```
 
-Weitere Informationen zu verwalteten Schnittstellen finden Sie unter [Schnittstellenklasse](../extensions/interface-class-cpp-component-extensions.md).
+Informationen zu verwalteten Schnittstellen finden Sie unter [Interface-Klasse](../extensions/interface-class-cpp-component-extensions.md).
 
 Sie müssen nicht explizit angeben, dass die `CommitX`- und `get_X`-Funktionen rein virtuell sind. Eine entsprechende Deklaration für die erste Funktion wäre:
 
@@ -58,7 +58,7 @@ Sie müssen nicht explizit angeben, dass die `CommitX`- und `get_X`-Funktionen r
 virtual HRESULT CommitX() = 0;
 ```
 
-**__interface** impliziert die [Novtable](../cpp/novtable.md) **__declspec** Modifizierer.
+**__interface** impliziert den [novtable](../cpp/novtable.md) - **__declspec** Modifizierer.
 
 ## <a name="example"></a>Beispiel
 
@@ -144,7 +144,7 @@ bstr_data = Testing
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Schnittstellenattribut](../windows/attributes/interface-attributes.md)

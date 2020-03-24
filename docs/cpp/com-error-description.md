@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - Description method [C++]
 ms.assetid: 88191e24-4ee8-44a6-8c4c-3758e22e0548
-ms.openlocfilehash: a517c40e9adfbda2d790ce41a48ccf8658bcd3e0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: de2275f096fe2fde96e64cbc3034602a1fde5e88
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62155110"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180770"
 ---
-# <a name="comerrordescription"></a>_com_error::Description
+# <a name="_com_errordescription"></a>_com_error::Description
 
 **Microsoft-spezifisch**
 
@@ -27,14 +27,14 @@ _bstr_t Description( ) const;
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt das Ergebnis des `IErrorInfo::GetDescription` für die `IErrorInfo` -Objekt erfasst wird, innerhalb der `_com_error` Objekt. Das resultierende `BSTR` wird in einem `_bstr_t`-Objekt gekapselt. Wenn kein `IErrorInfo` wird aufgezeichnet, es gibt eine leere `_bstr_t`.
+Gibt das Ergebnis `IErrorInfo::GetDescription` für das `IErrorInfo` Objekt zurück, das innerhalb des `_com_error`-Objekts aufgezeichnet wird. Das resultierende `BSTR` wird in einem `_bstr_t`-Objekt gekapselt. Wenn keine `IErrorInfo` aufgezeichnet wird, wird ein leerer `_bstr_t`zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ruft die `IErrorInfo::GetDescription` -Funktion und ruft `IErrorInfo` aufgezeichnet, die innerhalb der `_com_error` Objekt. Jeder Fehler beim Aufrufen der `IErrorInfo::GetDescription` -Methode wird ignoriert.
+Ruft die `IErrorInfo::GetDescription`-Funktion auf und ruft `IErrorInfo` im `_com_error`-Objekt aufgezeichnete ab. Jeder Fehler beim Aufrufen der `IErrorInfo::GetDescription`-Methode wird ignoriert.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_error-Klasse](../cpp/com-error-class.md)

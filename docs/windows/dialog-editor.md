@@ -23,18 +23,18 @@ helpviewer_keywords:
 - Dialog Editor [C++], switching between controls and code
 - Dialog Editor [C++], shortcut keys
 ms.assetid: d94884ef-2cca-49d8-9b58-775f34848134
-ms.openlocfilehash: 40b5d8c8390c638b70bc2c0860ccf3c17872719c
-ms.sourcegitcommit: 9aab425662a66825772f091112986952f341f7c8
+ms.openlocfilehash: 9d0f9993d81c499f67a08e5401c5e56dba7b281c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72445028"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215253"
 ---
 # <a name="dialog-editor-c"></a>Dialog-EditorC++()
 
 Der **Dialog-Editor** ermöglicht es Ihnen, Dialog Feld Ressourcen zu erstellen oder zu bearbeiten.
 
-- Um den Editor zu öffnen, doppelklicken Sie im Fenster **Ressourcenansicht** auf die RC-Datei eines Dialog Felds, oder wechseln Sie zur Menü **Ansicht** > **Weitere Windows** > -**Ressourcenansicht**.
+- Um den Editor zu öffnen, doppelklicken Sie im Fenster **Ressourcenansicht** auf die RC-Datei eines Dialog Felds, oder wechseln Sie zur Menü **Ansicht** > **anderen Windows** - > **Ressourcenansicht**.
 
 Einer der ersten Schritte beim Erstellen eines neuen Dialog Felds oder einer Dialogfeld Vorlage ist das Hinzufügen von Steuerelementen. Im **Dialog-Editor**können Sie Steuerelemente so anordnen, dass Sie einer bestimmten Größe, Form oder Ausrichtung entsprechen, oder Sie können Sie verschieben, um im Dialogfeld zu arbeiten. Steuerelemente lassen sich darüber hinaus problemlos löschen.
 
@@ -62,12 +62,12 @@ Die Symbolleiste des **Dialog-Editors** enthält Schaltflächen zum Anordnen des
 |![Schaltfläche Rechte ausrichten](../mfc/media/vcdialogeditoralignrights.png "vcdialogeditoralignrights")|Nach rechts ausrichten|![Schaltfläche für die gleiche Breite](../mfc/media/vcdialogeditorsamewidth.png "vcdialogedirensamewidth")|Breite angleichen|
 |![Spitze ausrichten](../mfc/media/vcdialogeditoraligntops.png "vcdialogeditor aligntops")|Nach oben ausrichten|![Schaltfläche "Höhe erhöhen"](../mfc/media/vcdialogeditormakesameheight.png "vcdialogeditor makesameheight")|Höhe angleichen|
 |![Schaltfläche "Bottoms ausrichten"](../mfc/media/vcdialogeditoralignbottoms.png "vcdialogeditoralignbottoms")|Nach unten ausrichten|![Schaltfläche "Größe angleichen"](../mfc/media/vcdialogeditorsamesize.png "vcdialogeditor SameSize")|Größe angleichen|
-|![Vertikale Mitteltaste](../mfc/media/vcdialogeditorvertical.png "vcdialogedirenvertikal")|Vertikal|![Raster Schaltfläche Umschalten](../mfc/media/vcdialogeditortogglegrid.png "vcdialogeditortogglegrid")|Raster umschalten|
+|![Vertikale Mitteltaste](../mfc/media/vcdialogeditorvertical.png "vcdialogedirenvertikal")|Vertical|![Raster Schaltfläche Umschalten](../mfc/media/vcdialogeditortogglegrid.png "vcdialogeditortogglegrid")|Raster umschalten|
 |![Horizontale Mitteltaste](../mfc/media/vcdialogeditorhorizontal.png "vcdialogeditor horizontal")|Horizontal|![Schaltfläche zum Umschalten der Führungslinien](../mfc/media/vcdialogeditortoggleguides.png "vcdialogeditortoggleguides")|Führungslinien ein-/ausschalten|
 
-- Um die Symbolleiste des **Dialog-Editors** anzuzeigen oder auszublenden, wechseln Sie zur Menü **Ansicht** > **Symbolleisten** > **Dialog-Editor**.
+- Zum Anzeigen oder Ausblenden der Symbolleiste des **Dialog-Editors** wechseln Sie zur Menü **Ansicht** > Symbol **leisten** > **Dialog-Editor**.
 
-Wenn Sie den **Dialog-Editor** in einem C++ Projekt öffnen, wird die Symbolleiste des **Dialog-Editors** automatisch am oberen Rand der Projekt Mappe angezeigt. Wenn Sie die Symbolleiste jedoch explizit schließen, müssen Sie Sie beim nächsten Öffnen des **Dialog-Editors aufrufen.** . Sie können die Anzeige umschalten, indem Sie Sie in der Liste der verfügbaren Symbolleisten und Fenster auswählen.
+Wenn Sie den **Dialog-Editor** in einem C++ Projekt öffnen, wird die Symbolleiste des **Dialog-Editors** automatisch am oberen Rand der Projekt Mappe angezeigt. Wenn Sie die Symbolleiste jedoch explizit schließen, müssen Sie Sie beim nächsten Öffnen des **Dialog-Editors**aufrufen. Sie können die Anzeige umschalten, indem Sie Sie in der Liste der verfügbaren Symbolleisten und Fenster auswählen.
 
 ## <a name="switch-between-dialog-box-controls-and-code"></a>Zwischen Dialog Feld-Steuerelementen und Code wechseln
 
@@ -92,39 +92,39 @@ Wenn Sie ein Steuerelement ausgewählt haben, wählen Sie die Schaltfläche **Co
 
 Im folgenden finden Sie die Standard Zugriffstasten für die Befehle des **Dialog-Editors** .  
 
-|Befehl|Tasten|Beschreibung|
+|Get-Help|Schlüssel|BESCHREIBUNG|
 |-------------|----------|-----------------|
-|Format.AlignBottoms|**STRG** + **UMSCHALT** + **nach-unten-Taste**|Richtet die unteren Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
+|Format.AlignBottoms|**STRG** + **UMSCHALT** + **Pfeil nach unten**|Richtet die unteren Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
 |Format.AlignCenters|**UMSCHALT** + **F9**|Richtet die vertikalen zentriert der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
-|Format.AlignLefts|**STRG** + **UMSCHALT** +  nach-**Links-Taste**|Richtet die linken Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
+|Format.AlignLefts|**STRG** + **UMSCHALT** + nach- **Links-Taste**|Richtet die linken Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
 |Format.AlignMiddles|**F9**|Richtet die horizontalen zentriert der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
-|Format.AlignRights|**STRG** + **UMSCHALT** +  nach-**rechts-Taste**|Richtet die rechten Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
-|Format.AlignTops|**STRG** + **UMSCHALT** +  nach-**oben-Taste**|Richtet die oberen Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
+|Format.AlignRights|**STRG** + **UMSCHALT** + **Pfeil nach rechts**|Richtet die rechten Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
+|Format.AlignTops|**STRG** + **UMSCHALT** + **Pfeil nach oben**|Richtet die oberen Ränder der ausgewählten Steuerelemente mit dem vorherrschenden Steuerelement aus.|
 |Format.ButtonBottom|**STRG** + **B**|Platziert die ausgewählten Schaltflächen in der unteren Mitte des Dialog Felds.|
 |Format.ButtonRight|**STRG** + **R**|Platziert die ausgewählten Schaltflächen in der oberen rechten Ecke des Dialog Felds.|
 |Format.CenterHorizontal|**STRG** + **UMSCHALT** + **F9**|Zentriert die Steuerelemente horizontal im Dialogfeld.|
 |Format.CenterVertical|**STRG** + **F9**|Zentriert die Steuerelemente im Dialogfeld vertikal.|
 |Format.CheckMnemonics|**STRG** + **M**|Überprüft die Eindeutigkeit von mnetmonics.|
-|Format. SizeToContent|**UMSCHALT** + **F7**|Ändert die Größe der ausgewählten Steuerelemente an den Beschriftungs Text.|
+|Format.SizeToContent|**UMSCHALT** + **F7**|Ändert die Größe der ausgewählten Steuerelemente an den Beschriftungs Text.|
 |Format.SpaceAcross|**ALT** + **NACH-LINKS-TASTE**|Die ausgewählten Steuerelemente werden gleichmäßig horizontal angeordnet.|
-|Format.SpaceDown|**Alt** + -**nach-unten-Taste**|Gibt die ausgewählten Steuerelemente gleichmäßig vertikal an.|
+|Format.SpaceDown|**Alt** + **Pfeil nach unten**|Gibt die ausgewählten Steuerelemente gleichmäßig vertikal an.|
 |Format.TabOrder|**STRG** + **D**|Legt die Reihenfolge der Steuerelemente innerhalb des Dialog Felds fest.|
 |Format.TestDialog|**STRG** + **T**|Führt das Dialogfeld aus, um Darstellung und Verhalten zu testen.|
 |Format.ToggleGuides|**STRG** + **G**|Zyklen zwischen keinem Raster, Richtlinien und einem Raster für die Bearbeitung des Dialog Felds.|
 
-- Um die Tastenkombinationen zu ändern, wechseln Sie zu Menü **Tools** >  Optionen, und wählen Sie im Ordner **Umgebung** die**Option** **Tastatur** aus.
+- Um die Tastenkombinationen zu ändern, wechseln Sie zu Menü **Tools** > Optionen, und wählen Sie im Ordner **Umgebung** die **Option** **Tastatur** aus.
 
-   Weitere Informationen finden Sie unter [Identifizieren und Anpassen von Tastenkombinationen in Visual Studio](/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio).
+   Weitere Informationen finden Sie unter [Identifizieren und Anpassen von Tastenkombinationen](/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio).
 
 - Um die Einstellungen zu ändern, wechseln Sie zu Menü **Tools** > **Einstellungen importieren und exportieren**.
 
    Die in den Dialogfeldern verfügbaren Optionen sowie die Namen und Positionen der angezeigten Menübefehle können sich von den in der **Hilfe** beschriebenen Optionen abhängig von den aktiven Einstellungen oder der Version unterscheiden.  Weitere Informationen finden Sie unter [Personalisieren von Visual Studio-IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editor](../windows/resource-editors.md)<br/>
 [Vorgehensweise: Erstellen eines Dialog Felds](../windows/creating-a-new-dialog-box.md)<br/>

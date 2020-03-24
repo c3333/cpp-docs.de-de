@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interface class keyword
 - interface struct keyword
 ms.assetid: 3ccea701-f50b-4da7-ad6b-f0ee1203e2b9
-ms.openlocfilehash: 60e8965e3ef2538554d8c664b35bd0849bd5e69e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: cb4566a0094db6d9e0cc97d81718a18a6df5cf18
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515705"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172164"
 ---
 # <a name="interface-class--ccli-and-ccx"></a>interface-Klasse (C++/CLI und C++/CX)
 
@@ -43,7 +43,7 @@ Die Möglichkeit des Zugriffs auf *base_interface*.  Die einzige zulässige Mög
 *base_interface*<br/>
 (Optional) Eine Basisschnittstelle für die Schnittstelle *name*.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 **interface struct** entspricht **interface class**.
 
@@ -53,7 +53,7 @@ Eine Schnittstelle definiert, wie eine Klasse implementiert werden kann. Eine Sc
 
 Eine Klasse oder Struktur, die von einer Schnittstelle abgeleitet wird, muss alle Member der Schnittstelle implementieren. Bei der Implementierung des *Namens* der Schnittstelle müssen Sie auch die Schnittstellen in der `base_interface`-Liste implementieren.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 - [Statische Schnittstellenkonstruktoren](../dotnet/how-to-define-an-interface-static-constructor-cpp-cli.md)
 
@@ -67,21 +67,21 @@ In der Entwicklungsumgebung können Sie F1-Hilfe für diese Schlüsselwörter ab
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Common Language Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -218,6 +218,6 @@ ref struct R : I, J {
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

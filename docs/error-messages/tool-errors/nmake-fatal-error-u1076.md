@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - U1076
 ms.assetid: f8a6c646-0c49-4ee3-bb74-ab916a7aa6ff
-ms.openlocfilehash: 916927959af862a68d1fa29fc576057b2322713b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0a14693db018fe67ec4aa870a27c8e437114defa
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62254907"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193562"
 ---
 # <a name="nmake-fatal-error-u1076"></a>NMAKE: Schwerwiegender Fehler U1076
 
-Name ist zu lang
+Name zu lang
 
-Eine Zeichenfolge überschritten der folgenden Grenzwerte:
+Eine Zeichenfolge hat eine der folgenden Grenzwerte überschritten:
 
 - 1024 Zeichen für einen Makronamen.
 
-- 256 Zeichen für einen Zielpfadnamen.
+- 256 Zeichen für einen Ziel Pfadnamen.
 
 - 2048 Zeichen für einen Befehl.

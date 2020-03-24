@@ -1,5 +1,5 @@
 ---
-title: Statische Member (C++)
+title: Statische Member [C++]
 ms.date: 11/04/2016
 helpviewer_keywords:
 - class members [C++], static
@@ -13,18 +13,18 @@ helpviewer_keywords:
 - instance constructors, shared members
 - class instances [C++], static members
 ms.assetid: 9cc8cf0f-d74c-46f2-8e83-42d4e42c8370
-ms.openlocfilehash: 708f78c09db263584d478d16863999d4428e4891
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c18b29cf69c2f899fbf06c7cb75ebbd2242ab427
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62266945"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178560"
 ---
-# <a name="static-members-c"></a>Statische Member (C++)
+# <a name="static-members-c"></a>Statische Member [C++]
 
-Klassen können statische Memberdaten und Memberfunktionen enthalten. Wenn ein Datenmember deklariert ist, als **statische**, nur eine Kopie der Daten wird für alle Objekte der Klasse beibehalten.
+Klassen können statische Memberdaten und Memberfunktionen enthalten. Wenn ein Datenmember als **statisch**deklariert wird, wird nur eine Kopie der Daten für alle Objekte der Klasse beibehalten.
 
-Statische Datenmember sind nicht Teil von Objekten eines angegebenen Klassentyps. Daher gilt die Deklaration eines statischen Datenmembers nicht als eine Definition. Der Datenmember wird im Klassenbereich deklariert, die Definition wird jedoch im Dateigültigkeitsbereich ausgeführt. Diese statischen Member verfügen über eine externe Bindung. Dies wird anhand des folgenden Beispiels veranschaulicht:
+Statische Datenmember sind nicht Teil von Objekten eines angegebenen Klassentyps. Daher gilt die Deklaration eines statischen Datenmembers nicht als eine Definition. Der Datenmember wird im Klassenbereich deklariert, die Definition wird jedoch im Dateigültigkeitsbereich ausgeführt. Diese statischen Member verfügen über eine externe Bindung. Das folgende Beispiel veranschaulicht dies:
 
 ```cpp
 // static_data_members.cpp
@@ -63,7 +63,7 @@ Auf statische Datenmember kann verwiesen werden, ohne dass auf ein Klassentypobj
 long nBytes = BufferedOutput::bytecount;
 ```
 
-Damit der statische Member vorhanden sein kann, ist es nicht notwendig, dass Klassentypobjekte vorhanden sind. Statische Member können auch mithilfe der memberauswahloperatoren zugegriffen werden (**.** und **->**) Operatoren. Zum Beispiel:
+Damit der statische Member vorhanden sein kann, ist es nicht notwendig, dass Klassentypobjekte vorhanden sind. Auf statische Member kann auch mit der Elementauswahl () zugegriffen werden **.** und **->** )-Operatoren. Beispiel:
 
 ```cpp
 BufferedOutput Console;
@@ -73,10 +73,10 @@ long nBytes = Console.bytecount;
 
 Im vorangegangenen Fall wird der Verweis auf das Objekt (`Console`) nicht ausgewertet. Der zurückgegebene Wert ist der des statischen `bytecount`-Objekts.
 
-Statische Datenmember unterliegen Klassenmember-Zugriffsregeln, sodass ein privater Zugriff auf statische Datenmember nur für Klassenmemberfunktionen und "Friends" zulässig ist. Diese Regeln werden beschrieben [Memberzugriffssteuerung](../cpp/member-access-control-cpp.md). Die Ausnahme besteht darin, dass statische Datenmember im Dateibereich definiert werden müssen, ungeachtet ihrer Zugriffseinschränkungen. Wenn der Datenmember explizit initialisiert werden soll, muss ein Initialisierer mit der Definition bereitgestellt werden.
+Statische Datenmember unterliegen Klassenmember-Zugriffsregeln, sodass ein privater Zugriff auf statische Datenmember nur für Klassenmemberfunktionen und "Friends" zulässig ist. Diese Regeln werden in [Member-Access Control](../cpp/member-access-control-cpp.md)beschrieben. Die Ausnahme besteht darin, dass statische Datenmember im Dateibereich definiert werden müssen, ungeachtet ihrer Zugriffseinschränkungen. Wenn der Datenmember explizit initialisiert werden soll, muss ein Initialisierer mit der Definition bereitgestellt werden.
 
-Der Typ eines statischen Members wird nicht durch seinen Klassennamen qualifiziert. Deshalb ist der Typ des `BufferedOutput::bytecount` ist **lange**.
+Der Typ eines statischen Members wird nicht durch seinen Klassennamen qualifiziert. Daher ist der Typ der `BufferedOutput::bytecount` **lang**.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

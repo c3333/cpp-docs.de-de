@@ -6,29 +6,29 @@ f1_keywords:
 helpviewer_keywords:
 - R6030
 ms.assetid: 0238a6c3-a033-4046-8adc-f8f99d961153
-ms.openlocfilehash: 7f5c61d9b39b1d655bcbf3d42ea870370ddf2842
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5d7160623d4e1eb83240c09e637c780fefc0d43d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400018"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197118"
 ---
 # <a name="c-runtime-error-r6030"></a>C-Laufzeitfehler R6030
 
-CRT, die nicht initialisiert
+CRT nicht initialisiert
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da er ein internes Problem aufweist. Dieses Problem wird meist durch bestimmte Softwareprogramme Sicherheit oder nur selten, durch einen Fehler im Programm verursacht.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP aufgrund eines internen Problems heruntergefahren. Dieses Problem wird häufig durch bestimmte Sicherheitssoftware Programme oder selten durch einen Programmfehler verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Ihre Sicherheitssoftware möglicherweise spezifische Anweisungen für dieses Problem zu entschärfen. Überprüfen Sie die Security Software der Website des Herstellers für Details. Klicken Sie alternativ prüfen, ob aktualisierte Versionen Ihrer Sicherheitssoftware, oder versuchen Sie es anderen Sicherheitssoftware.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Die Sicherheitssoftware kann bestimmte Anweisungen zum Beheben dieses Problems enthalten. Weitere Informationen finden Sie auf der Website Ihres Security Software Vendor. Alternativ dazu können Sie auch nach aktualisierten Versionen Ihrer Sicherheitssoftware suchen oder verschiedene Sicherheitssoftware ausprobieren.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Dieser Fehler tritt auf, wenn Sie die C-Laufzeit (CRT) verwenden, aber die CRT-Startcode wurde nicht ausgeführt. Es ist möglich, diese Fehlermeldung, wenn der Linkerschalter [/Entry](../../build/reference/entry-entry-point-symbol.md) dient zum Überschreiben der standardmäßigen Start-Adresse in der Regel **MainCRTStartup**, **WmainCRTStartup** für eine EXE-Datei, Konsole **WinMainCRTStartup** oder **wWinMainCRTStartup** für eine Windows-EXE-Datei ein, oder **_DllMainCRTStartup** für eine DLL. Wenn eine der oben genannten Funktionen beim Start aufgerufen wird, wird der C-Laufzeit nicht initialisiert werden. Diese Start-Funktionen werden normalerweise standardmäßig aufgerufen, wenn Sie mit der C-Laufzeitbibliothek verknüpfen, und verwenden Sie den gewohnten **main**, **Wmain**, **WinMain**, oder  **DllMain** Einstiegspunkte.
+Dieser Fehler tritt auf, wenn Sie die C-Laufzeit (CRT) verwenden, der CRT-Startcode jedoch nicht ausgeführt wurde. Dieser Fehler kann auftreten, wenn der Linkerschalter [/Entry](../../build/reference/entry-entry-point-symbol.md) verwendet wird, um die Standard Startadresse außer Kraft zu setzen, normalerweise **mainCRTStartup**, **wmainCRTStartup** für eine Konsolen-exe, **WinMainCRTStartup** oder **wWinMainCRTStartup** für eine Windows-exe-Datei oder **_DllMainCRTStartup** für eine DLL. Die C-Laufzeit wird nicht initialisiert, es sei denn, eine der oben genannten Funktionen wird beim Start aufgerufen. Diese Startfunktionen werden normalerweise standardmäßig aufgerufen, wenn Sie eine Verknüpfung mit der C-Lauf Zeit Bibliothek herstellen und die normalen **Haupt**-, **wmain**-, **WinMain**-oder **DllMain** -Einstiegspunkte verwenden.
 
-Es ist auch möglich, diese Fehlermeldung, wenn ein anderes Programm Code Injection-Technologien verwendet, um bestimmte DLL-Bibliotheksaufrufe abfangen. Einige Sicherheitsprogramme tiefgreifende verwenden Sie dieses Verfahren. In Versionen von Visual C++ vor Visual Studio 2015 es ist möglich, eine statisch verknüpften CRT-Bibliothek zu verwenden, um das Problem zu beheben, aber dies wird nicht empfohlen aus Gründen der Sicherheit und Updates. Beheben dieses Problem unter Umständen Aktion des Endbenutzers.
+Dieser Fehler kann auch auftreten, wenn ein anderes Programmcode einschleusungs Techniken verwendet, um bestimmte dll-Bibliotheks Aufrufe zu übernehmen. Für einige eindringliche Sicherheitsprogramme wird dieses Verfahren verwendet. In Visual C++ Studio-Versionen vor Visual Studio 2015 ist es möglich, eine statisch verknüpfte CRT-Bibliothek zu verwenden, um das Problem zu beheben. Dies wird jedoch aus Gründen der Sicherheits-und Anwendungs Updates nicht empfohlen. Um dieses Problem zu beheben, ist möglicherweise eine Benutzeraktion erforderlich.

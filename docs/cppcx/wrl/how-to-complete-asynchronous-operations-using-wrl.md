@@ -1,34 +1,34 @@
 ---
-title: 'Vorgehensweise: Abschließen Sie asynchroner Vorgänge mit WRL'
+title: 'Gewusst wie: Abschließen asynchroner Vorgänge mit WRL'
 ms.date: 11/04/2016
 ms.topic: reference
 ms.assetid: 02173eae-731b-49bc-b412-f1f69388b99d
-ms.openlocfilehash: 09c341e5e3d4f6007d5d5f66b7c06e1f0af5a65c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8e7e52342cf73a56c6c33d4d1f998f446d632ddd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398341"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213940"
 ---
-# <a name="how-to-complete-asynchronous-operations-using-wrl"></a>Vorgehensweise: Abschließen Sie asynchroner Vorgänge mit WRL
+# <a name="how-to-complete-asynchronous-operations-using-wrl"></a>Gewusst wie: Abschließen asynchroner Vorgänge mit WRL
 
-Dieses Dokument veranschaulicht, wie die Windows Runtime C++ Template Library (WRL) verwenden, um asynchrone Vorgänge starten und Arbeiten ausführen, wenn die Vorgänge abgeschlossen.
+In diesem Dokument wird gezeigt, wie Sie C++ die Windows-Runtime Template Library (WRL) verwenden, um asynchrone Vorgänge zu starten und Aufgaben auszuführen, wenn die Vorgänge beendet sind.
 
-Dieses Dokument enthält zwei Beispiele. Im ersten Beispiel wird ein asynchroner Timer gestartet und gewartet, bis der Timer abläuft. In diesem Beispiel geben Sie die asynchrone Aktion an, wenn Sie das Timer-Objekt erstellen. Im zweiten Beispiel wird ein Hintergrundarbeitsthread ausgeführt. Dieses Beispiel veranschaulicht die Arbeit mit einer Windows-Runtime-Methode, die gibt ein `IAsyncInfo` Schnittstelle. Die [Rückruf](callback-function-wrl.md) Funktion ist ein wichtiger Teil der Beispiele aus, da sie einen Ereignishandler zur Verarbeitung der Ergebnisse der asynchronen Vorgänge angeben können.
+Dieses Dokument enthält zwei Beispiele. Im ersten Beispiel wird ein asynchroner Timer gestartet und gewartet, bis der Timer abläuft. In diesem Beispiel geben Sie die asynchrone Aktion an, wenn Sie das Timer-Objekt erstellen. Im zweiten Beispiel wird ein Hintergrundarbeitsthread ausgeführt. In diesem Beispiel wird gezeigt, wie mit einer Windows-Runtime Methode gearbeitet wird, die eine `IAsyncInfo`-Schnittstelle zurückgibt. Die [Rückruf](callback-function-wrl.md) Funktion ist ein wichtiger Bestandteil beider Beispiele, da Sie Ihnen ermöglicht, einen Ereignishandler für die Verarbeitung der Ergebnisse der asynchronen Vorgänge anzugeben.
 
-Ein einfacheres Beispiel, das eine Instanz einer Komponente erstellt, und ein Eigenschaftswert abgerufen werden, finden Sie unter [Vorgehensweise: Aktivieren und Verwenden einer Windows-Runtime-Komponente](how-to-activate-and-use-a-windows-runtime-component-using-wrl.md).
+Ein grundlegendes Beispiel, das eine Instanz einer Komponente erstellt und einen Eigenschafts Wert abruft, finden [Sie unter Gewusst wie: Aktivieren und Verwenden einer Windows-Runtime Komponente](how-to-activate-and-use-a-windows-runtime-component-using-wrl.md).
 
 > [!TIP]
-> In diesem Beispiele werden die Rückrufe mithilfe von Lambdaausdrücken definiert. Sie können auch die Funktionsobjekte (Funktionselemente), Funktionszeiger, oder [Std:: Function](../../standard-library/function-class.md) Objekte. Weitere Informationen zu C++-Lambdaausdrücken finden Sie unter [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md).
+> In diesem Beispiele werden die Rückrufe mithilfe von Lambdaausdrücken definiert. Sie können auch Funktions Objekte (functors), Funktionszeiger oder [Std:: function](../../standard-library/function-class.md) -Objekte verwenden. Weitere Informationen zu C++ Lambda-Ausdrücken finden Sie unter [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md).
 
 ## <a name="example-working-with-a-timer"></a>Beispiel: Arbeiten mit einem Timer
 
 Mit den folgenden Schritten wird ein asynchroner Timer und gestartet und gewartet, bis der Timer abläuft. Im Folgenden finden Sie das vollständige Beispiel.
 
 > [!WARNING]
-> Obwohl Sie in der Regel über die Windows Runtime C++ Template Library in einer app für die universelle Windows-Plattform (UWP) verwenden, wird in diesem Beispiel eine Konsolen-app zur Veranschaulichung verwendet. Funktionen wie `wprintf_s` sind bei einer UWP-app nicht verfügbar. Weitere Informationen über die Typen und Funktionen, die Sie in einer UWP-app verwenden können, finden Sie unter [in apps der universellen Windows-Plattform nicht unterstützte CRT-Funktionen](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md) und [Win32 und COM für UWP-apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps).
+> Obwohl Sie in der Regel die C++ Windows-Runtime Vorlagen Bibliothek in einer universelle Windows-Plattform-app (UWP) verwenden, wird in diesem Beispiel eine Konsolen-App zur Veranschaulichung verwendet. Funktionen wie `wprintf_s` sind in einer UWP-APP nicht verfügbar. Weitere Informationen zu den Typen und Funktionen, die Sie in einer UWP-App verwenden können, finden Sie unter CRT-Funktionen, die in universelle Windows-Plattform-apps und [Win32 und com für UWP-apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) [nicht unterstützt](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md) werden.
 
-1. Enthalten (`#include`) alle erforderlichen Windows-Runtime, die Windows Runtime C++ Template Library und die Header der C++-Standardbibliothek.
+1. Fügen Sie (`#include`) alle erforderlichen Windows-Runtime, C++ Windows-Runtime Vorlagen Bibliothek oder C++ Standard Bibliotheks Header ein.
 
    [!code-cpp[wrl-consume-async#2](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_1.cpp)]
 
@@ -44,9 +44,9 @@ Mit den folgenden Schritten wird ein asynchroner Timer und gestartet und gewarte
 
    [!code-cpp[wrl-consume-async#4](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_3.cpp)]
 
-   Die Windows-Runtime verwendet den vollqualifizierten Namen, um Typen zu identifizieren. Die `RuntimeClass_Windows_System_Threading_ThreadPoolTimer` Parameter ist eine Zeichenfolge, die von der Windows-Runtime bereitgestellt wird und den erforderlichen ablaufklassennamen enthält.
+   Der Windows-Runtime verwendet voll qualifizierte Namen, um Typen zu identifizieren. Der `RuntimeClass_Windows_System_Threading_ThreadPoolTimer`-Parameter ist eine Zeichenfolge, die vom Windows-Runtime bereitgestellt wird und den erforderlichen Lauf Zeit Klassennamen enthält.
 
-4. Erstellen Sie eine [Ereignis](event-class-wrl.md) , das den timerrückruf zur Haupt-app synchronisiert.
+4. Erstellen Sie ein [Ereignis](event-class-wrl.md) Objekt, das den Timer-Rückruf mit der Haupt-App synchronisiert.
 
    [!code-cpp[wrl-consume-async#5](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_4.cpp)]
 
@@ -67,7 +67,7 @@ Im Folgenden sehen Sie das vollständige Beispiel:
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Um den Code zu kompilieren, kopieren Sie ihn und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-async.cpp` und führen Sie dann den folgenden Befehl in einem Fenster von Visual Studio-Eingabeaufforderung.
+Um den Code zu kompilieren, kopieren Sie ihn, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-async.cpp` ein, und führen Sie dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster aus.
 
 `cl.exe wrl-consume-async.cpp runtimeobject.lib`
 
@@ -78,7 +78,7 @@ Mit den folgenden Schritten starten Sie einen Arbeitsthread und definieren die A
 > [!TIP]
 > In diesem Beispiel wird gezeigt, wie Sie mit der `ABI::Windows::Foundation::IAsyncAction`-Schnittstelle arbeiten. Sie können dieses Muster für jede Schnittstelle anwenden, die `IAsyncInfo` implementiert: `IAsyncAction`, `IAsyncActionWithProgress`, `IAsyncOperation` und `IAsyncOperationWithProgress`.
 
-1. Enthalten (`#include`) alle erforderlichen Windows-Runtime, die Windows Runtime C++ Template Library und die Header der C++-Standardbibliothek.
+1. Fügen Sie (`#include`) alle erforderlichen Windows-Runtime, C++ Windows-Runtime Vorlagen Bibliothek oder C++ Standard Bibliotheks Header ein.
 
    [!code-cpp[wrl-consume-asyncOp#2](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_8.cpp)]
 
@@ -94,7 +94,7 @@ Mit den folgenden Schritten starten Sie einen Arbeitsthread und definieren die A
 
    [!code-cpp[wrl-consume-asyncOp#4](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_10.cpp)]
 
-4. Erstellen Sie eine [Ereignis](event-class-wrl.md) -Objekt, das Abschluss des Arbeitsthreads zur Haupt-app synchronisiert.
+4. Erstellen Sie ein [Ereignis](event-class-wrl.md) Objekt, das den Abschluss des Arbeitsthreads mit der Haupt-App synchronisiert.
 
    [!code-cpp[wrl-consume-asyncOp#5](../codesnippet/CPP/how-to-complete-asynchronous-operations-using-wrl_11.cpp)]
 
@@ -117,10 +117,10 @@ Im Folgenden sehen Sie das vollständige Beispiel:
 
 ### <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Um den Code zu kompilieren, kopieren Sie ihn und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-asyncOp.cpp` und führen Sie dann den folgenden Befehl in einem **Visual Studio-Eingabeaufforderung** Fenster.
+Um den Code zu kompilieren, kopieren Sie ihn, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-asyncOp.cpp` ein, und führen Sie dann den folgenden Befehl in einem **Visual Studio-Eingabe** Aufforderungs Fenster aus.
 
 `cl.exe wrl-consume-asyncOp.cpp runtimeobject.lib`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](windows-runtime-cpp-template-library-wrl.md)

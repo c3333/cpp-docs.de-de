@@ -9,18 +9,18 @@ helpviewer_keywords:
 - VARIANT object [C++], ChangeType
 - VARIANT object
 ms.assetid: 829d2eeb-3338-4a88-9dce-0ca145f47aac
-ms.openlocfilehash: 319c4fde808932e86021ee59b051261c43ca2edd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b0692c9befaa6b7e787ada624dcbb56b074c9f9d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166203"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160462"
 ---
-# <a name="varianttchangetype"></a>_variant_t::ChangeType
+# <a name="_variant_tchangetype"></a>_variant_t::ChangeType
 
 **Microsoft-spezifisch**
 
-Ändert den Typ des der `_variant_t` -Objekts in den angegebenen `VARTYPE`.
+Ändert den Typ des `_variant_t` Objekts in den angegeben `VARTYPE`.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,18 +33,18 @@ void ChangeType(
 
 #### <a name="parameters"></a>Parameter
 
-*vartype*<br/>
-Die `VARTYPE` für diesen `_variant_t` Objekt.
+*VarType*<br/>
+Die `VARTYPE` für dieses `_variant_t`-Objekt.
 
 *pSrc*<br/>
-Ein Zeiger auf das `_variant_t`-Objekt, das umgewandelt werden soll. Wenn dieser Wert NULL ist, erfolgt die Konvertierung vorhanden.
+Ein Zeiger auf das `_variant_t`-Objekt, das umgewandelt werden soll. Wenn dieser Wert NULL ist, wird die Konvertierung direkt ausgeführt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion konvertiert ein `_variant_t` Objekt in das angegebene `VARTYPE`. Wenn *pSrc* NULL ist, die Konvertierung erfolgt in vorhanden, andernfalls diese `_variant_t` Objekt wird aus kopiert *pSrc* und anschließend konvertiert.
+Diese Member-Funktion konvertiert ein `_variant_t` Objekt in die ange`VARTYPE`angezeigt. Wenn *psrc* den Wert NULL hat, erfolgt die Konvertierung direkt. andernfalls wird dieses `_variant_t` Objekt aus *psrc* kopiert und anschließend konvertiert.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

@@ -11,20 +11,20 @@ helpviewer_keywords:
 - ODBC Administrator [C++]
 - drivers [C++], ODBC
 ms.assetid: b8652790-3437-4e7d-bc83-6ea6981f008b
-ms.openlocfilehash: ac893981ff8c697dc090f1e6ad5ac61886a69f99
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9e88492919eac80a4f3db2f94202d49011aa69de
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395845"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213168"
 ---
 # <a name="odbc-administrator"></a>ODBC-Administrator
 
-ODBC-Administrator registriert und konfiguriert die [Datenquellen](../../data/odbc/data-source-odbc.md) für Sie verfügbaren entweder lokal oder in einem Netzwerk. Die Assistenten erstellen mithilfe der vom ODBC-Administrator bereitgestellten Informationen Code in Anwendungen, der Verbindungen zu Datenquellen für den Benutzer aufbaut.
+Der ODBC-Administrator registriert und konfiguriert die für Sie verfügbaren [Datenquellen](../../data/odbc/data-source-odbc.md) entweder lokal oder über ein Netzwerk. Die Assistenten erstellen mithilfe der vom ODBC-Administrator bereitgestellten Informationen Code in Anwendungen, der Verbindungen zu Datenquellen für den Benutzer aufbaut.
 
 Zur Einrichtung einer ODBC-Datenquelle zur Verwendung mit MFC-ODBC-Datenbankklassen oder DAO-Klassen muss die Datenquelle zunächst registriert und konfiguriert werden. Zum Hinzufügen und Entfernen von Datenquellen verwenden Sie den ODBC-Administrator. Je nach ODBC-Treiber können Sie auch neue Datenquellen erstellen.
 
-Der ODBC-Administrator wird beim Setup installiert. Wenn Sie ausgewählt haben **benutzerdefinierte** Installation, und wählen Sie keine ODBC-Treiber in der **Datenbankoptionen** (Dialogfeld), müssen Sie Setup erneut aus, um die notwendigen Dateien ausführen.
+Der ODBC-Administrator wird beim Setup installiert. Wenn Sie **benutzerdefinierte** Installation ausgewählt und im Dialogfeld **Daten Bankoptionen** keine ODBC-Treiber ausgewählt haben, müssen Sie Setup erneut ausführen, um die erforderlichen Dateien zu installieren.
 
 Wählen Sie beim Setup die ODBC-Treiber aus, die Sie installieren möchten. Später können Sie mit Setup für Visual C++ zusätzliche Treiber installieren, die in Visual C++ mitgeliefert werden.
 
@@ -36,21 +36,21 @@ Wenn Sie ODBC-Treiber installieren möchten, die nicht in Visual C++ mitgeliefe
 
    Das Begrüßungsdialogfeld von Setup wird angezeigt.
 
-1. Klicken Sie auf **Weiter** in jedem Dialogfeld bis zu der **Installationsoptionen** Dialogfeld. Wählen Sie **benutzerdefinierte**, und klicken Sie dann auf **Weiter**.
+1. Klicken Sie in jedem Dialogfeld so lange auf **weiter** , bis das Dialogfeld **Installationsoptionen** angezeigt wird. Wählen Sie **Benutzer**definiert aus, und klicken Sie auf **weiter**.
 
-1. Deaktivieren Sie alle Kontrollkästchen in der **Setup für Microsoft Visual C++** im Dialogfeld, mit Ausnahme der **Datenbankoptionen** , und klicken Sie dann auf **Details** zum Anzeigen der **Datenbankoptionen** Dialogfeld.
+1. Deaktivieren Sie alle Kontrollkästchen im Dialogfeld **Microsoft C++ Visual Setup** mit Ausnahme des Kontrollkästchens **Daten Bankoptionen** , und klicken Sie dann auf **Details** , um das Dialogfeld **Daten Bankoptionen** anzuzeigen.
 
-1. Deaktivieren der **Microsoft Data Access Objects** aktivieren Sie die Kontrollkästchen der **Microsoft ODBC-Treiber** , und klicken Sie dann auf **Details**.
+1. Deaktivieren Sie das Kontrollkästchen **Microsoft-Datenzugriffs Objekte** , aktivieren Sie das Kontrollkästchen **Microsoft ODBC-Treiber** , und klicken Sie dann auf **Details**.
 
-   Die **Microsoft ODBC-Treiber** Dialogfeld wird angezeigt.
+   Das Dialogfeld **Microsoft ODBC-Treiber** wird angezeigt.
 
-1. Wählen Sie die Treiber, die Sie installieren möchten, und klicken Sie dann auf **OK** zweimal.
+1. Wählen Sie die Treiber aus, die Sie installieren möchten, und klicken Sie dann zweimal auf **OK** .
 
-1. Klicken Sie auf **Weiter** in den verbleibenden Dialogfeldern, um die Installation zu beginnen. Setup benachrichtigt Sie, wenn die Installation beendet ist.
+1. Klicken Sie in den verbleibenden Dialogfeldern auf **weiter** , um mit der Installation zu beginnen. Setup benachrichtigt Sie, wenn die Installation beendet ist.
 
 Wenn die Treiber installiert sind, können Sie mit dem ODBC-Administrator die Datenquelle konfigurieren. In der Systemsteuerung finden Sie das ODBC-Symbol.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)<br/>
 [Datenquelle (ODBC)](../../data/odbc/data-source-odbc.md)

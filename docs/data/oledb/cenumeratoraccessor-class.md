@@ -35,12 +35,12 @@ helpviewer_keywords:
 - m_szName
 - m_szParseName
 ms.assetid: 21e8e7ea-3511-4afe-b33f-d520f4ff82bb
-ms.openlocfilehash: d85f630a01ab7e2a07035a8a304a56be91eca8a9
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: f238c0b5b2a3988f08d910f605415bbe6403ea3d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545630"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211824"
 ---
 # <a name="cenumeratoraccessor-class"></a>CEnumeratorAccessor-Klasse
 
@@ -52,11 +52,11 @@ Wird von [CEnumerator](../../data/oledb/cenumerator-class.md) verwendet, um auf 
 class CEnumeratorAccessor
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="data-members"></a>Datenelemente
 
@@ -68,7 +68,7 @@ class CEnumeratorAccessor
 |[m_szName](#szname)|Der Name der Datenquelle oder des Enumerators.|
 |[m_szParseName](#szparsename)|Eine Zeichenfolge, die an [iparser Display Name](/windows/win32/api/oleidl/nn-oleidl-iparsedisplayname) übergeben werden soll, um einen Moniker für die Datenquelle oder den Enumerator zu erhalten.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dieses Rowset besteht aus den Datenquellen und Enumeratoren, die im aktuellen Enumerator sichtbar sind.
 
@@ -82,7 +82,7 @@ Eine Variable, die angibt, ob der Enumerator ein übergeordneter Enumerator ist,
 VARIANT_BOOL m_bIsParent;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
@@ -96,7 +96,7 @@ Eine Variable, die angibt, ob die Zeile eine Datenquelle oder einen Enumerator b
 USHORT m_nType;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
@@ -110,7 +110,7 @@ Die Beschreibung der Datenquelle oder des Enumerators.
 WCHAR m_szDescription[129];
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
@@ -124,7 +124,7 @@ Der Name der Datenquelle oder des Enumerators.
 WCHAR m_szName[129];
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
@@ -138,11 +138,11 @@ Eine Zeichenfolge, die an [iparser Display Name](/windows/win32/api/oleidl/nn-ol
 WCHAR m_szParseName[129];
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - generic classes
 - generics [C++], declaring generic classes
 ms.assetid: 0beb99e1-1ec4-4fee-9836-ce9657d67a3a
-ms.openlocfilehash: 71850807f6332f31195ef9bafbd9468f48cb6fb3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 78f4bf3abb98aab5e626e8ada538a22bdbca2912
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516385"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172359"
 ---
 # <a name="generic-classes-ccli"></a>Generische Klassen (C++/CLI)
 
@@ -33,11 +33,11 @@ class-body
 } [declarators] [;]
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 In der oben stehenden Syntax werden die folgenden Begriffe verwendet:
 
-*Attribute*<br/>
+*attributes*<br/>
 (Optional) Zusätzliche deklarative Informationen. Weitere Informationen zu Attributen und Attributklassen finden Sie unter „Attribute“.
 
 *class-key*<br/>
@@ -48,10 +48,10 @@ Entweder **class** oder **typename**.
 *constraint-clauses*<br/>
 Eine (nicht durch Trennzeichen getrennte) Liste von **where**-Klauseln, die die Einschränkungen für die Typparameter angeben. Nimmt folgende Form an:
 
-> **where** *type-parameter-identifier* **:** *constraint-list* **...**
+> **Where** *Type-Parameter-Identifier* **:** Einschränkungs *Liste*  **...**
 
 *constraint-list*<br/>
-*class-or-interface*[`,` *...* ]
+*Class-or-Interface*[`,` *...* ]
 
 *accessibility-modifiers*<br/>
 Zugriffsmodifizierer für die generische Klasse. Für die Windows-Runtime ist **private** der einzige zulässige Modifizierer. Für die Common Language Runtime sind **private** und **public** die zulässigen Modifizierer.
@@ -710,6 +710,6 @@ The field is assigned the double value: 0.123
 The field is assigned the string: Hello Generics!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Generics](generics-cpp-component-extensions.md)

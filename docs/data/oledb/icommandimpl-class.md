@@ -51,12 +51,12 @@ helpviewer_keywords:
 - m_bCancelWhenExecuting
 - m_bIsExecuting
 ms.assetid: ef285fef-0d66-45e6-a762-b03357098e3b
-ms.openlocfilehash: 6e095e01d3131f98b44935705b2564291fb13844
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: f04885ef61841ac20f87ab07ce73d3c9342fe39c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545978"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212161"
 ---
 # <a name="icommandimpl-class"></a>ICommandImpl-Klasse
 
@@ -77,11 +77,11 @@ Die von `ICommandImpl`abgeleitete Klasse.
 *CommandBase*<br/>
 Eine Befehlsschnittstelle. Der Standardwert lautet `ICommand`.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -102,7 +102,7 @@ Eine Befehlsschnittstelle. Der Standardwert lautet `ICommand`.
 |[m_bCancelWhenExecuting](#bcancelwhenexecuting)|Gibt an, ob der Befehl bei der Ausführung abgebrochen werden soll.|
 |[m_bIsExecuting](#bisexecuting)|Gibt an, ob der Befehl gerade ausgeführt wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine erforderliche Schnittstelle für das Befehls Objekt.
 
@@ -116,7 +116,7 @@ Bricht die Ausführung des aktuellen Befehls ab.
 STDMETHOD(Cancel)();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [ICommand:: Cancel](/previous-versions/windows/desktop/ms714402(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
@@ -173,7 +173,7 @@ vorgenommen Ein Zeiger auf ein Rowsetobjekt. In der Regel wird dieser Parameter 
 
 Ein HRESULT-Standardwert. Eine Liste der typischen Werte finden Sie unter `ICommand::Execute`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen unterschiedlicher Rowsets anzugeben, platzieren Sie unterschiedliche Aufrufe `CreateRowset` aus `Execute`.
 
@@ -197,7 +197,7 @@ HRESULT Execute(IUnknown* pUnkOuter,
 
 Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die angeforderte ausgehende Schnittstelle ist eine Schnittstelle, die vom Rowsetobjekt abgerufen wird, das diese Funktion erstellt.
 
@@ -218,7 +218,7 @@ STDMETHOD (GetDBSession) (REFIID riid,
 
 Weitere Informationen finden Sie unter [ICommand:: getdbsession](/previous-versions/windows/desktop/ms719622(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nützlich zum Abrufen von Eigenschaften aus der Sitzung.
 
@@ -242,7 +242,7 @@ Gibt an, ob der Befehl abgebrochen wird.
 unsigned m_bCancel:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können diese Variable in der `Execute`-Methode der Befehls Klasse abrufen und entsprechend abbrechen.
 
@@ -256,7 +256,7 @@ Gibt an, ob der Befehl bei der Ausführung abgebrochen werden kann.
 unsigned m_bCancelWhenExecuting:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Standardwert ist **true** (kann abgebrochen werden).
 
@@ -270,11 +270,11 @@ Gibt an, ob der Befehl gerade ausgeführt wird.
 unsigned m_bIsExecuting:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `Execute`-Methode der Befehls Klasse kann diese Variable auf " **true**" festlegen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -1,29 +1,29 @@
 ---
-title: 'Vorgehensweise: Behandeln von Ereignissen mit WRL'
+title: 'Gewusst wie: Behandeln von Ereignissen mit WRL'
 ms.date: 11/04/2016
 ms.topic: reference
 ms.assetid: 1c77543f-7b0c-4a94-93bf-e3225885ed76
-ms.openlocfilehash: 959a85d6cf6de666ae56d09035acefe9a3828ae8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0e13212d7cb481bc72a903a31fb170fd1ff8b7ec
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398315"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213927"
 ---
-# <a name="how-to-handle-events-using-wrl"></a>Vorgehensweise: Behandeln von Ereignissen mit WRL
+# <a name="how-to-handle-events-using-wrl"></a>Gewusst wie: Behandeln von Ereignissen mit WRL
 
-Dieses Dokument veranschaulicht, wie die Windows Runtime C++ Template Library (WRL) abonnieren und Behandeln der Ereignisse von einem Windows-Runtime-Objekt.
+In diesem Dokument wird gezeigt, wie Sie C++ die Windows-Runtime Vorlagen Bibliothek (WRL) verwenden, um die Ereignisse eines Windows-Runtime Objekts zu abonnieren und zu behandeln.
 
-Ein einfacheres Beispiel, das eine Instanz dieser Komponente erstellt, und ein Eigenschaftswert abgerufen werden, finden Sie unter [Vorgehensweise: Aktivieren und Verwenden einer Windows-Runtime-Komponente](how-to-activate-and-use-a-windows-runtime-component-using-wrl.md).
+Ein grundlegendes Beispiel, das eine Instanz dieser Komponente erstellt und einen Eigenschafts Wert abruft, finden [Sie unter Gewusst wie: Aktivieren und Verwenden einer Windows-Runtime Komponente](how-to-activate-and-use-a-windows-runtime-component-using-wrl.md).
 
 ## <a name="subscribing-to-and-handling-events"></a>Abonnieren und Behandeln von Ereignissen
 
-Mit den folgenden Schritten starten Sie ein `ABI::Windows::System::Threading::IDeviceWatcher`-Objekt und überwachen den Fortschritt mit Ereignishandlern. Die `IDeviceWatcher`-Schnittstelle ermöglicht es Ihnen, Geräte asynchron oder im Hintergrund aufzulisten und benachrichtigt zu werden, wenn Geräte hinzugefügt, entfernt oder geändert werden. Die [Rückruf](callback-function-wrl.md) Funktion ist ein wichtiger Teil dieses Beispiels aus, da sie Ereignishandler an, die die Ergebnisse des Hintergrundvorgangs verarbeiten können. Im Folgenden finden Sie das vollständige Beispiel.
+Mit den folgenden Schritten starten Sie ein `ABI::Windows::System::Threading::IDeviceWatcher`-Objekt und überwachen den Fortschritt mit Ereignishandlern. Die `IDeviceWatcher`-Schnittstelle ermöglicht es Ihnen, Geräte asynchron oder im Hintergrund aufzulisten und benachrichtigt zu werden, wenn Geräte hinzugefügt, entfernt oder geändert werden. Die [Rückruf](callback-function-wrl.md) Funktion ist ein wichtiger Bestandteil dieses Beispiels, da Sie Sie ermöglicht, Ereignishandler anzugeben, die die Ergebnisse des Hintergrund Vorgangs verarbeiten. Im Folgenden finden Sie das vollständige Beispiel.
 
 > [!WARNING]
-> Obwohl Sie in der Regel über die Windows Runtime C++ Template Library in einer universellen Windows-Plattform-app verwenden, wird von diesem Beispiel zur Veranschaulichung eine Konsolen-app verwendet. Funktionen wie `wprintf_s` sind nicht von einer universellen Windows-Plattform-app verfügbar. Weitere Informationen über die Typen und Funktionen, die Sie in einer universellen Windows-Plattform-app verwenden können, finden Sie unter [in apps der universellen Windows-Plattform nicht unterstützte CRT-Funktionen](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md) und [Win32 und COM für UWP-apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps).
+> Obwohl Sie in der Regel die C++ Windows-Runtime Vorlagen Bibliothek in einer universelle Windows-Plattform-App verwenden, wird in diesem Beispiel eine Konsolen-App zur Veranschaulichung verwendet. Funktionen wie `wprintf_s` sind in einer universelle Windows-Plattform-APP nicht verfügbar. Weitere Informationen zu den Typen und Funktionen, die Sie in einer universelle Windows-Plattform-App verwenden können, finden Sie unter CRT-Funktionen, die [in universelle Windows-Plattform-apps nicht unterstützt](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md) werden, und [Win32 und com für UWP-apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps).
 
-1. Enthalten (`#include`) alle erforderlichen Windows-Runtime, die Windows Runtime C++ Template Library und die Header der C++-Standardbibliothek.
+1. Fügen Sie (`#include`) alle erforderlichen Windows-Runtime, C++ Windows-Runtime Vorlagen Bibliothek oder C++ Standard Bibliotheks Header ein.
 
    [!code-cpp[wrl-consume-event#2](../codesnippet/CPP/how-to-handle-events-using-wrl_1.cpp)]
 
@@ -39,7 +39,7 @@ Mit den folgenden Schritten starten Sie ein `ABI::Windows::System::Threading::ID
 
    [!code-cpp[wrl-consume-event#3](../codesnippet/CPP/how-to-handle-events-using-wrl_3.cpp)]
 
-4. Erstellen Sie eine [Ereignis](event-class-wrl.md) -Objekt, das den Abschluss des Enumerationsprozesses mit der Haupt-app synchronisiert.
+4. Erstellen Sie ein [Ereignis](event-class-wrl.md) Objekt, das den Abschluss des Enumerationsprozesses mit der Haupt-App synchronisiert.
 
    [!code-cpp[wrl-consume-event#4](../codesnippet/CPP/how-to-handle-events-using-wrl_4.cpp)]
 
@@ -50,9 +50,9 @@ Mit den folgenden Schritten starten Sie ein `ABI::Windows::System::Threading::ID
 
    [!code-cpp[wrl-consume-event#5](../codesnippet/CPP/how-to-handle-events-using-wrl_5.cpp)]
 
-   Die Windows-Runtime verwendet den vollqualifizierten Namen, um Typen zu identifizieren. Die `RuntimeClass_Windows_Devices_Enumeration_DeviceInformation` Parameter ist eine Zeichenfolge, die von der Windows-Runtime bereitgestellt wird und den erforderlichen ablaufklassennamen enthält.
+   Der Windows-Runtime verwendet voll qualifizierte Namen, um Typen zu identifizieren. Der `RuntimeClass_Windows_Devices_Enumeration_DeviceInformation`-Parameter ist eine Zeichenfolge, die vom Windows-Runtime bereitgestellt wird und den erforderlichen Lauf Zeit Klassennamen enthält.
 
-6. Erstellen Sie das `IDeviceWatcher`-Objekt.
+6. Erstellen Sie das Objekt `IDeviceWatcher`.
 
    [!code-cpp[wrl-consume-event#6](../codesnippet/CPP/how-to-handle-events-using-wrl_6.cpp)]
 
@@ -67,7 +67,7 @@ Mit den folgenden Schritten starten Sie ein `ABI::Windows::System::Threading::ID
    Der Ereignishandler `EnumerationCompleted` beendet den Enumerationsprozess. Dieses Ereignis wird behandelt, falls es einmal weniger als zehn Geräte gibt.
 
    > [!TIP]
-   > Dieses Beispiel definiert die Rückrufe mithilfe eines Lambdaausdrucks. Sie können auch die Funktionsobjekte (Funktionselemente), Funktionszeiger, oder [Std:: Function](../../standard-library/function-class.md) Objekte. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../../cpp/lambda-expressions-in-cpp.md).
+   > Dieses Beispiel definiert die Rückrufe mithilfe eines Lambdaausdrucks. Sie können auch Funktions Objekte (functors), Funktionszeiger oder [Std:: function](../../standard-library/function-class.md) -Objekte verwenden. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../../cpp/lambda-expressions-in-cpp.md).
 
 8. Starten Sie den Enumerationsprozess.
 
@@ -83,10 +83,10 @@ Im Folgenden sehen Sie das vollständige Beispiel:
 
 ## <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Um den Code zu kompilieren, kopieren Sie ihn und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-events.cpp` und führen Sie dann den folgenden Befehl in einem **Visual Studio-Eingabeaufforderung** Fenster.
+Um den Code zu kompilieren, kopieren Sie ihn, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `wrl-consume-events.cpp` ein, und führen Sie dann den folgenden Befehl in einem **Visual Studio-Eingabe** Aufforderungs Fenster aus.
 
 `cl.exe wrl-consume-events.cpp runtimeobject.lib`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](windows-runtime-cpp-template-library-wrl.md)

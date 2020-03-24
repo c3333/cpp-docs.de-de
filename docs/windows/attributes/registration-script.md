@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - registration_script attribute
 ms.assetid: 786f8072-9187-4163-a979-7a604dd4c888
-ms.openlocfilehash: 0b2c4d576a699dea7772821b5635944b2663c57c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 780f3d41676d01458f47542d6f0862a278edff6a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407314"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214577"
 ---
-# <a name="registrationscript"></a>registration_script
+# <a name="registration_script"></a>registration_script
 
-Führt den angegebenen benutzerdefinierten Registrierung-Skript aus.
+Führt das angegebene benutzerdefinierte Registrierungs Skript aus.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,18 +25,18 @@ Führt den angegebenen benutzerdefinierten Registrierung-Skript aus.
 
 ### <a name="parameters"></a>Parameter
 
-*script*<br/>
-Der vollständige Pfad zu einer benutzerdefinierten Registrierungsskriptdatei (.rgs). Der Wert **keine**, z. B. `script = "none"`, gibt an, dass die Co-Klasse keine Anforderungen an die Registrierung.
+*Web*<br/>
+Der vollständige Pfad zu einer benutzerdefinierten Registrierungs Skriptdatei (. rgs). Der Wert **None**(z. b. `script = "none"`) gibt an, dass die Co-Klasse keine Registrierungsanforderungen hat.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Registration_script** C++ Attribut führt die benutzerdefinierte Registrierungsskript gemäß *Skript*. Wenn dieses Attribut nicht angegeben ist, wird eine standard-RGS-Datei, die (mit Informationen zum Registrieren der Komponente) verwendet. Weitere Informationen zu RGS-Dateien finden Sie unter [der ATL-Registrierungskomponente (Registrar)](../../atl/atl-registry-component-registrar.md).
+Das **Registration_script** C++ -Attribut führt das durch das *Skript*angegebene benutzerdefinierte Registrierungs Skript aus. Wenn dieses Attribut nicht angegeben wird, wird eine RGS-Standarddatei (die Informationen zum Registrieren der Komponente enthält) verwendet. Weitere Informationen zu RGS-Dateien finden Sie in [der ATL-Registrierungs Komponente (Registrierungs Komponente, Registrierungs Komponente)](../../atl/atl-registry-component-registrar.md).
 
 Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code gibt an, dass die Komponente eine Registrierungsdatei cpp_attr_ref_registration_script.rgs aufgerufen hat.
+Der folgende Code gibt an, dass die Komponente über ein Registrierungs Skript mit dem Namen cpp_attr_ref_registration_script. RGS verfügt.
 
 ```cpp
 // cpp_attr_ref_registration_script.cpp
@@ -57,20 +57,20 @@ __interface IFace {};
 class CMyClass:public IFace {};
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
+|**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`, oder `vi_progid`.|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

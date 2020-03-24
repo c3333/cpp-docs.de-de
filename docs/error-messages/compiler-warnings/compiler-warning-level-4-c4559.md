@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4559
 ms.assetid: ed542f60-454d-45cb-85da-987ede61b1ab
-ms.openlocfilehash: afb4fb493c7c3e34ca691720a30d74517b0ab5b7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0788824dd4180476d81d9682f99fb95883b8c4f0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62220872"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80198340"
 ---
 # <a name="compiler-warning-level-4-c4559"></a>Compilerwarnung (Stufe 4) C4559
 
-> "*Funktion*": Neudefinition; die Funktion Gewinne __declspec (*Modifizierer*)
+> "*Function*": Neudefinition; die Funktion gewinnt __declspec (*Modifizierer*).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Funktion neu definiert wurde, oder erneut deklariert und die zweite Definition oder Deklaration hinzugefügt. eine **__declspec** Modifizierer (*Modifizierer*). Diese Warnung dient nur zu Informationszwecken. Um diese Warnung zu beheben, löschen Sie eine der Definitionen.
+Eine Funktion wurde neu definiert oder erneut deklariert, und die zweite Definition oder Deklaration hat einen **__declspec** Modifizierer (*Modifizierer*) hinzugefügt. Diese Warnung dient nur zu Informationszwecken. Löschen Sie eine der Definitionen, um diese Warnung zu beheben.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4559 generiert:
+Im folgenden Beispiel wird C4559 generiert:
 
 ```cpp
 // C4559.cpp

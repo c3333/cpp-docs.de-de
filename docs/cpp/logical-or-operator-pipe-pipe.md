@@ -1,5 +1,5 @@
 ---
-title: 'Logischer OR-Operator: ||'
+title: 'Operator für logisches ODER: ||'
 ms.date: 06/14/2018
 f1_keywords:
 - '||'
@@ -9,22 +9,22 @@ helpviewer_keywords:
 - OR operator
 - logical OR operator
 ms.assetid: 31837c99-2655-4bf3-8ded-f13b7a9dc533
-ms.openlocfilehash: 5db1af870644d1552aeac813edce0985a31d95b3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 94b2bc024dd7223ac7adacc72924f5ee289bab37
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368681"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178079"
 ---
-# <a name="logical-or-operator-"></a>Logischer OR-Operator: ||
+# <a name="logical-or-operator-"></a>Operator für logisches ODER: ||
 
 ## <a name="syntax"></a>Syntax
 
-> *logical-or-expression* **||** *logical-and-expression*
+> *logischer or-Ausdruck* **||** Ausdruck "logischer Ausdruck" *und* "Ausdruck"
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der logische OR-Operator (**||**) gibt den booleschen Wert "true" zurück, wenn einer oder beide Operanden TRUE ist, und andernfalls "false" wird zurückgegeben. Die Operanden werden implizit in den Typ konvertiert **"bool"** vor der Auswertung und das Ergebnis ist vom Typ **"bool"**. Das logische OR weist eine Assoziativität von links nach rechts auf.
+Der logische OR-Operator ( **||** ) gibt den booleschen Wert true zurück, wenn einer der Operanden oder beide Operanden true ist, andernfalls wird false zurückgegeben. Die Operanden werden vor der Auswertung implizit in den Typ **bool** konvertiert, und das Ergebnis ist vom Typ **bool**. Das logische OR weist eine Assoziativität von links nach rechts auf.
 
 Die Operanden für den logischen OR-Operator müssen nicht vom gleichen Typ sein, aber sie müssen Ganzzahltypen oder Zeigertypen sein. Die Operanden sind im Allgemeinen relationale oder Gleichheitsausdrücke.
 
@@ -38,9 +38,9 @@ printf( "%d" , (x == w || x == y || x == z) );
 
 Im Beispiel oben, wenn `x` entweder gleich `w`, `y` oder `z` ist, wird das zweite Argument für die `printf`-Funktion mit TRUE ausgewertet, und der Wert 1 wird ausgegeben. Andernfalls wird dies mit "false" ausgewertet, und der Wert 0 (null) wird ausgegeben. Sobald eine der Bedingungen mit dem Ergebnis "true" ausgewertet wird, wird die Auswertung beendet.
 
-## <a name="operator-keyword-for-124124"></a>Operator-Schlüsselwort für&#124;&#124;
+## <a name="operator-keyword-for-124124"></a>Operator Schlüsselwort für&#124;&#124;
 
-Die **oder** -Operator ist die ausgeschriebene Variante von **||**. Es gibt zwei Möglichkeiten, den Zugriff auf die **oder** -Operator in Programmen: Fügen Sie die Headerdatei \<iso646.h >, oder Kompilieren Sie mit der [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption (spracherweiterungen deaktivieren).
+Der **or** -Operator ist die Text Entsprechung von **||** . Es gibt zwei Möglichkeiten, auf den **or** -Operator in ihren Programmen zuzugreifen: Schließen Sie die Header Datei \<iso646. h > ein, oder kompilieren Sie mit der [/Za](../build/reference/za-ze-disable-language-extensions.md) -Compileroption (Spracherweiterungen deaktivieren).
 
 ## <a name="example"></a>Beispiel
 
@@ -62,8 +62,8 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[C++-Built-Operatoren, Rangfolge und Assoziativität](cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[C++Rangfolge und Assoziativität integrierter Operatoren](cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [C-Operatoren (logisch)](../c-language/c-logical-operators.md)

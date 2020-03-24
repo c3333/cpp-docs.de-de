@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - C4182
 ms.assetid: 8970f3c6-e2dd-407e-b2ec-964360eb8b43
-ms.openlocfilehash: 49e3e2f62b4be50d14cb8da3d776b4640be7160c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a438373b7fda04a6e8d1f76e2ef38208c3e557a8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391633"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80175947"
 ---
 # <a name="compiler-warning-level-1-c4182"></a>Compilerwarnung (Stufe 1) C4182
 
-\#umfassen Schachtelungsebene ist "Anzahl" tief; Endlosschleife möglich
+\#die Schachtelungs Ebene einschließen ist "Number" Deep; mögliche unendliche Rekursion
 
 Dem Compiler stand aufgrund der Anzahl geschachtelter Includedateien kein Heapspeicherplatz mehr zur Verfügung. Eine Includedatei, die aus einer anderen Includedatei eingefügt wird, ist geschachtelt.
 

@@ -32,12 +32,12 @@ helpviewer_keywords:
 - SetGUID method
 - AddProperty method
 ms.assetid: 54190149-c277-4679-b81a-ef484d4d1c00
-ms.openlocfilehash: 08cab967fbfbd4b3207e96a4fdbd2d2dbc6da793
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: e2bb01e6acb9298b08fddc3117ec93dd7c0c2417
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546116"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212020"
 ---
 # <a name="cdbpropset-class"></a>CDBPropSet-Klasse
 
@@ -49,11 +49,11 @@ Erbt von der `DBPROPSET` Struktur und fügt einen Konstruktor hinzu, der Schlüs
 class CDBPropSet : public tagDBPROPSET
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -69,7 +69,7 @@ class CDBPropSet : public tagDBPROPSET
 |-|-|
 |[Operator =](#op_equal)|Weist den Inhalt einer Eigenschaft einem anderen Satz zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 OLE DB Anbieter und Consumer verwenden `DBPROPSET` Strukturen, um Arrays von `DBPROP` Strukturen zu übergeben. Jede `DBPROP` Struktur stellt eine einzelne Eigenschaft dar, die festgelegt werden kann.
 
@@ -161,7 +161,7 @@ void SetGUID(const GUID& guid) throw();
 *guid*<br/>
 in Eine GUID, die verwendet wird, um das `guidPropertySet`-Feld der [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Struktur festzulegen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieses Feld kann auch durch den- [Konstruktor](../../data/oledb/cdbpropset-cdbpropset.md) festgelegt werden.
 
@@ -175,7 +175,7 @@ Weist den Inhalt einer Eigenschaften Gruppe einem anderen Eigenschaften Satz zu.
 CDBPropSet& operator =(CDBPropSet& propset) throw();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

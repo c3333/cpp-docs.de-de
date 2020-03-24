@@ -23,12 +23,12 @@ helpviewer_keywords:
 - GetFileVersionInfo
 - version information
 ms.assetid: 772e6f19-f765-4cec-9521-0ad3eeb99f9b
-ms.openlocfilehash: e68e1480d2cd9a8d8a4d862252e6eb4384a5cd68
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: b083ed27b6b1f471dbec9b96e7be7a6165f8d125
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513645"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214369"
 ---
 # <a name="version-information-editor-c"></a>Versionsinformationen-EditorC++()
 
@@ -42,7 +42,7 @@ Eine Versionsinformationsressource weist einen oberen Block und mindestens einen
 > [!NOTE]
 > Wenn Sie den **Versionsinformationen-Editor**verwenden, können Sie in vielen Fällen mit der rechten Maustaste klicken, um ein Kontextmenü mit Ressourcen spezifischen Befehlen anzuzeigen. Wenn Sie z. b. auswählen, während Sie auf einen Block Header Eintrag zeigen, zeigt das Kontextmenü die Befehle " **neue Versions Block Informationen** " und " **Versions Block Informationen löschen** " an.
 
-## <a name="how-to"></a>Gewusst wie
+## <a name="how-to"></a>Vorgehensweise
 
 Der **Versions Informations-Editor** ermöglicht Ihnen Folgendes:
 
@@ -50,11 +50,11 @@ Der **Versions Informations-Editor** ermöglicht Ihnen Folgendes:
 
 Wählen Sie das Element einmal aus, um es auszuwählen, und klicken Sie dann erneut, um es zu bearbeiten. Nehmen Sie Änderungen direkt in der **Versions Informations** Tabelle oder im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)vor. Die vorgenommenen Änderungen werden an beiden Orten berücksichtigt.
 
-Beachten Sie beim `FILEFLAGS` Bearbeiten des Schlüssels im Versionsinformationen- **Editor**, dass Sie die Eigenschaften **Debug**, **private Build**oder **Special Build** im **Eigenschaften** Fenster für RC-Dateien nicht festlegen können:
+Beachten Sie beim Bearbeiten des `FILEFLAGS` Schlüssels im **Versionsinformationen-Editor**, dass Sie die Eigenschaften **Debug**, **private Build**oder **Special Build** im **Eigenschaften** Fenster für RC-Dateien nicht festlegen können:
 
-   - Der **Versions Informations-Editor** legt die **Debug** -Eigenschaft `#ifdef` mit einem im Ressourcen Skript fest, basierend `_DEBUG` auf dem Build-Flag.
+- Der **Versions Informations-Editor** legt die **Debug** -Eigenschaft mit einem `#ifdef` im Ressourcen Skript fest, basierend auf dem `_DEBUG` Build-Flag.
 
-  - Wenn für `Private Build` den Schlüssel ein **Wert** in der **Versions Informations** Tabelle festgelegt ist, ist die zugehörige **private Build** -Eigenschaft im `FILEFLAGS` **Eigenschaften** Fenster für den Schlüssel auf **true**festgelegt. Wenn **value** leer ist, ist die Eigenschaft **false**. Ebenso ist der **spezielle** buildschlüssel in der **Versions Informations** Tabelle an die **spezielle Build** -Eigenschaft für den `FILEFLAGS` Schlüssel gebunden.
+- Wenn für den `Private Build`-Schlüssel ein **Wert** in der **Versions Informations** Tabelle festgelegt ist, ist die entsprechende **private Build** -Eigenschaft im **Eigenschaften** Fenster für die `FILEFLAGS` Taste **true**. Wenn **value** leer ist, ist die Eigenschaft **false**. Ebenso ist der **spezielle** buildschlüssel in der **Versions Informations** Tabelle an die **spezielle** Buildeigenschaft für den `FILEFLAGS` Schlüssel gebunden.
 
 Sie können die Informations Sequenz des Zeichen folgen Blocks sortieren, indem Sie entweder die Spaltenüberschriften **Key** oder **value** auswählen. Mithilfe dieser Überschriften können die Informationen automatisch in der ausgewählten Reihenfolge neu angeordnet werden.
 
@@ -80,11 +80,11 @@ Sie können die Informations Sequenz des Zeichen folgen Blocks sortieren, indem 
 
 Wenn Sie aus ihrem Programm auf die Versionsinformationen zugreifen möchten, verwenden Sie die Funktion [GetFileVersionInfo](/windows/win32/api/winver/nf-winver-getfileversioninfow) und die Funktion [VerQueryValue](/windows/win32/api/winver/nf-winver-verqueryvaluew) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editor](../windows/resource-editors.md)<br/>
 [Menüs und weitere Ressourcen](/windows/win32/menurc/resources)<br/>

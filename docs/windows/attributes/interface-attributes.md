@@ -1,55 +1,55 @@
 ---
-title: Schnittstellenattribut (C++-COM)
+title: Schnittstellen Attribute (C++ com)
 ms.date: 10/02/2018
 helpviewer_keywords:
 - attributes [C++/CLI], reference topics
 - interface attributes
 ms.assetid: 27fcdfee-abce-4585-8b53-ee31635356e8
-ms.openlocfilehash: 8218ccb66c6be9edef5d7de751a73bf4753d069f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 81a88ddfd74f20fa57ef615c988ba9786f41c1ad
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409316"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214824"
 ---
 # <a name="interface-attributes"></a>Schnittstellenattribut
 
-Die folgenden Attribute gelten für die [-Schnittstelle (oder __interface)](../../cpp/interface.md) C++ Schlüsselwort.
+Die folgenden Attribute gelten für das-Schlüsselwort der- [Schnittstelle (oder __interface)](../../cpp/interface.md) C++ .
 
-|Attribut|Beschreibung|
+|attribute|BESCHREIBUNG|
 |---------------|-----------------|
-|[async_uuid](async-uuid.md)|Gibt an, die UUID, die den MIDL-Compiler definiert synchrone und asynchrone Versionen einer COM-Schnittstelle weiterleitet.|
-|[custom](custom-cpp.md)|Können Sie eigene Attribute definieren.|
+|[async_uuid](async-uuid.md)|Gibt die UUID an, die den mittlerer l-Compiler anweist, sowohl synchrone als auch asynchrone Versionen einer COM-Schnittstelle zu definieren.|
+|[custom](custom-cpp.md)|Ermöglicht Ihnen, eigene Attribute zu definieren.|
 |[dispinterface](dispinterface.md)|Fügt eine Schnittstelle in die IDL-Datei als Verteilschnittstelle ein.|
-|[dual](dual.md)|Fügt eine Schnittstelle in der IDL-Datei als eine duale Schnittstelle an.|
-|[export](export.md)|Bewirkt, dass eine Datenstruktur, in der IDL-Datei platziert wird.|
-|[helpcontext](helpcontext.md)|Gibt eine Kontext-ID, mit dem die Benutzerinformationen zu diesem Element in der Hilfedatei.|
-|[helpfile](helpfile.md)|Legt den Namen der Hilfedatei für die Typbibliothek.|
+|[dual](dual.md)|Fügt eine Schnittstelle in die IDL-Datei als duale Schnittstelle ein.|
+|[export](export.md)|Bewirkt, dass eine Datenstruktur in der IDL-Datei platziert wird.|
+|[helpcontext](helpcontext.md)|Gibt eine Kontext-ID an, mit der der Benutzerinformationen zu diesem Element in der Hilfedatei anzeigen kann.|
+|[helpfile](helpfile.md)|Legt den Namen der Hilfedatei für eine Typbibliothek fest.|
 |[helpstring](helpstring.md)|Gibt eine Zeichenfolge an, die zum Beschreiben des Elements verwendet wird, auf das sie angewendet wird.|
-|[helpstringcontext](helpstringcontext.md)|Gibt die ID des Hilfethemas in eine .hlp oder CHM-Datei an.|
-|[helpstringdll](helpstringdll.md)|Gibt den Namen der DLL zu verwenden, um die Suche nach Dokument (Lokalisierung) ausführen.|
+|[helpstringcontext](helpstringcontext.md)|Gibt die ID eines Hilfe Themas in einer. hlp-oder CHM-Datei an.|
+|[helpstringdll](helpstringdll.md)|Gibt den Namen der dll an, die verwendet werden soll, um die Suche nach Dokument Zeichenfolgen (Lokalisierung) auszuführen.|
 |[hidden](hidden.md)|Gibt an, dass das Element vorhanden ist, aber nicht in einem benutzerorientierten Browser angezeigt werden soll.|
-|[library_block](library-block.md)|Fügt ein Konstrukt in bibliotheksblock der IDL-Datei an.|
-|[local](local-cpp.md)|Ermöglicht Ihnen die Verwendung den MIDL-Compiler als ein Header-Generator, wenn in der Schnittstelle-Header verwendet. Bei Verwendung in einer einzelnen Funktion kennzeichnet eine lokale Prozedur, die für die keine Stubs generiert werden.|
-|[nonextensible](nonextensible.md)|Gibt an, dass die `IDispatch` -Implementierung enthält nur die Eigenschaften und Methoden aufgeführt, die in der schnittstellenbeschreibung und können nicht zur Laufzeit zusätzliche Member erweitert werden. Dieses Attribut ist nur gültig für eine [dual](dual.md) Schnittstelle.|
-|[odl](odl.md)|Gibt eine Schnittstelle als Schnittstelle Objekt Description Language (ODL).|
-|[object](object-cpp.md)|Gibt eine benutzerdefinierte Schnittstelle an.|
-|[oleautomation](oleautomation.md)|Gibt an, dass eine Schnittstelle mit der Automatisierung kompatibel ist.|
-|[pointer_default](pointer-default.md)|Gibt das Standardattribut für die Zeiger für alle Zeiger, mit Ausnahme der obersten Ebene Zeigern, die angezeigt werden in der Parameterliste.|
-|[ptr](ptr.md)|Kennzeichnet einen Zeiger als vollständige Zeiger.|
-|[restricted](restricted.md)|Legt fest, welche Elemente der Bibliothek nicht beliebig aufgerufen werden können.|
-|[uuid](uuid-cpp-attributes.md)|Stellt die eindeutige ID für die Bibliothek|
+|[library_block](library-block.md)|Platziert ein Konstrukt innerhalb des Bibliotheks Blocks der IDL-Datei.|
+|[local](local-cpp.md)|Ermöglicht es Ihnen, den Mittel l-Compiler als Header Generator zu verwenden, wenn er im Schnittstellen Header verwendet wird. Gibt bei Verwendung in einer einzelnen Funktion eine lokale Prozedur an, für die keine stubals generiert werden.|
+|[nonextensible](nonextensible.md)|Gibt an, dass die `IDispatch` Implementierung nur die Eigenschaften und Methoden enthält, die in der Schnittstellen Beschreibung aufgeführt sind, und kann zur Laufzeit nicht mit zusätzlichen Elementen erweitert werden. Dieses Attribut gilt nur für eine [duale](dual.md) Schnittstelle.|
+|[odl](odl.md)|Identifiziert eine Schnittstelle als Object Description Language (ODL)-Schnittstelle.|
+|[object](object-cpp.md)|Identifiziert eine benutzerdefinierte-Schnittstelle.|
+|[oleautomation](oleautomation.md)|Gibt an, dass eine Schnittstelle mit Automation kompatibel ist.|
+|[pointer_default](pointer-default.md)|Gibt das Standard Zeiger Attribut für alle Zeiger außer auf der obersten Ebene an, die in Parameterlisten angezeigt werden.|
+|[ptr](ptr.md)|Legt einen Zeiger als vollständigen Zeiger fest.|
+|[restricted](restricted.md)|Legt fest, welche Member der Bibliothek nicht willkürlich aufgerufen werden können.|
+|[uuid](uuid-cpp-attributes.md)|Stellt die eindeutige ID für die Bibliothek bereit.|
 
 Sie müssen diese Regeln zum Definieren einer Schnittstelle beachten:
 
-- Standardaufrufkonvention ist [__stdcall](../../cpp/stdcall.md).
+- Die Standard Aufruf Konvention ist [__stdcall](../../cpp/stdcall.md).
 
-- Eine GUID wird für Sie bereitgestellt werden, wenn Sie eine nicht angeben.
+- Eine GUID wird für Sie bereitgestellt, wenn Sie keine angeben.
 
 - Es sind keine überladenen Methoden zulässig.
 
-Wenn Sie nicht angeben der [Uuid](uuid-cpp-attributes.md) Attribut, und verwenden den gleichen Schnittstellennamen in Projekten auf anderes Attribut, wird dieselbe GUID generiert.
+Wenn Sie das [UUID](uuid-cpp-attributes.md) -Attribut nicht angeben und denselben Schnittstellennamen in unterschiedlichen Attribut Projekten verwenden, wird dieselbe GUID generiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Attribute nach Verwendung](attributes-by-usage.md)

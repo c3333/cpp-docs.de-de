@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0005
 ms.assetid: 00c1821b-16aa-4bd9-9cf6-a778e5ed4ad9
-ms.openlocfilehash: b77c029b77d48d35ff1a4ea1508ed81cf31fa531
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 37f9ad42f0c9f82352beb8b44812029485f9d3f4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359643"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192847"
 ---
 # <a name="project-build-error-prj0005"></a>Projektbuildfehler PRJ0005
 
-Erstellen einer temporären Datei im Verzeichnis 'Directory' kann nicht ausgeführt werden.
+Eine temporäre Datei im Verzeichnis "Verzeichnis" konnte nicht erstellt werden.
 
-Fehler beim Aufruf eine temporäre Datei erstellen. Fehlerursachen beinhalten:
+Fehler beim Erstellen einer temporären Datei. Fehlerursachen sind:
 
-- Temporären Dateinamen nicht genügend.
+- Es liegen keine temporären Dateinamen vor.
 
-- Das temporäre Verzeichnis ist schreibgeschützt.
+- Das Verzeichnis Temp ist schreibgeschützt.
 
-- Es gibt kein Verzeichnis temp oder TMP-Umgebungsvariable.
+- Es ist kein Temp-Verzeichnis oder keine TMP-Umgebungsvariable vorhanden.
 
-- Ihr Computer ist nicht genügend freier Speicherplatz vorhanden.
+- Auf Ihrem Computer ist kein freier Speicherplatz mehr verfügbar.

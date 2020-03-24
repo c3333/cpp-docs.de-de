@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0016
 - CXX0016
 ms.assetid: af94a2ae-e835-4da6-8d2f-5c879f72eda2
-ms.openlocfilehash: 8e8e8ed3e8b374786414a59bb65e22701b816f65
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9f280eeb6d59eb2f81d6d27225441f807664ce27
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359916"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196026"
 ---
 # <a name="expression-evaluator-error-cxx0016"></a>Ausdrucksauswertungsfehler CXX0016
 
 Konstante zu groß
 
-Eine ganze Zahl ohne Vorzeichen-Konstante, die größer als 4.294.967.295 (0FFFFFFFF hexadezimal) oder eine Gleitkommakonstante, deren Größe etwa 1.8E + 308 übersteigt, kann nicht die C++-ausdrucksauswertung akzeptieren.
+Die C-Ausdrucks Auswertung kann eine ganzzahlige Konstante ohne Vorzeichen, die größer als 4.294.967.295 (0ffffffff hexadezimal) ist, oder eine Gleit Komma Konstante, deren Größe größer als ungefähr 1.8 e + 308 ist, nicht akzeptieren.
 
 Dieser Fehler ist mit CAN0016 identisch.

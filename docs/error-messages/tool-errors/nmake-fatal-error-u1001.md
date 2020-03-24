@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - U1001
 ms.assetid: 5d7da559-6cbd-44d6-848c-aaf54cae0d1a
-ms.openlocfilehash: bfe2edf9c57eda073826a8c161ae0c358f3a6232
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bb39d9080fdceb1ab26c32e9aedc654323581eb5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62378452"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173451"
 ---
 # <a name="nmake-fatal-error-u1001"></a>NMAKE: Schwerwiegender Fehler U1001
 
-Syntaxfehler: Ungültiges Zeichen 'Zeichen' in Makro
+Syntax Fehler: unzulässiges Zeichen ' character ' in Makro.
 
-Das angegebene Zeichen wird angezeigt, in einem Makro ist jedoch kein Buchstabe, eine Zahl oder ein Unterstrich.
+Das angegebene Zeichen wird in einem Makro angezeigt, ist jedoch kein Buchstabe, keine Zahl oder kein Unterstrich.
 
-Dieser Fehler kann durch einen fehlenden Doppelpunkt in einer makroerweiterung verursacht werden:
+Dieser Fehler kann durch einen fehlenden Doppelpunkt in einer Makro Erweiterung verursacht werden:
 
 ```
 syntax error : illegal character '=' in macro

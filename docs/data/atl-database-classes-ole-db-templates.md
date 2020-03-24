@@ -6,35 +6,35 @@ helpviewer_keywords:
 - database classes [C++], OLE DB
 - database classes [C++], ATL
 ms.assetid: 219766aa-e18a-405f-9e36-d7a0fdb31b2b
-ms.openlocfilehash: dc016a5e1e1d9652f6a69f73b5760f42dec5e889
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 76e9f49d4b394d0c807ca1f3d103ff325ded8a09
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222559"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213498"
 ---
 # <a name="atl-database-classes-ole-db-templates"></a>ATL-Datenbankklassen (OLE DB-Vorlagen)
 
-Microsoft bietet mehrere Implementierungen von OLE DB, einen Satz von COM-Schnittstellen, die einheitlichen Zugriff auf Daten in verschiedenen Datenquellen und Formaten bereitstellen.
+Microsoft bietet mehrere Implementierungen von OLE DB, eine Reihe von COM-Schnittstellen, die den einheitlichen Zugriff auf Daten in verschiedenen Informationsquellen und-Formaten ermöglichen.
 
-OLE DB-Vorlagen sind C++-Vorlagen in ATL-OLE DB-datenbanktechnologie einfacher zu verwenden, indem Sie Klassen, die viele häufig verwendeten OLE DB-Schnittstellen implementieren.
+Die OLE DB Vorlagen sind C++ Vorlagen in ATL, die die Verwendung OLE DB Datenbanktechnologie vereinfachen, indem Sie Klassen bereitstellen, die viele der häufig verwendeten OLE DB-Schnittstellen implementieren.
 
-Diese Vorlagenbibliothek besteht aus zwei Teilen:
+Diese Vorlagen Bibliothek enthält zwei Komponenten:
 
-- [OLE DB-Consumervorlagen](../data/oledb/ole-db-consumer-templates-cpp.md) verwendet, um eine OLE DB-Clientanwendung (Consumer) zu implementieren.
+- [OLE DB von Consumer-Vorlagen](../data/oledb/ole-db-consumer-templates-cpp.md) Wird verwendet, um eine OLE DB Client Anwendung (Consumer) zu implementieren.
 
-- [OLE DB-Anbietervorlagen](../data/oledb/ole-db-provider-templates-cpp.md) verwendet, um eine OLE DB-Server (Provider)-Anwendung zu implementieren.
+- [OLE DB Anbieter Vorlagen](../data/oledb/ole-db-provider-templates-cpp.md) Wird verwendet, um eine OLE DB Server-Anwendung (Anbieter) zu implementieren.
 
-Darüber hinaus die [OLE DB-Consumerattribute](../windows/ole-db-consumer-attributes.md) bieten eine einfache Möglichkeit zum Erstellen von OLE DB-Consumer. Die OLE DB-Attribute fügen Code basierend auf den OLE DB-Consumervorlagen arbeiten-OLE DB-Consumer zu erstellen.
+Außerdem stellen die [OLE DB Consumer-Attribute](../windows/ole-db-consumer-attributes.md) eine bequeme Möglichkeit zum Erstellen von OLE DB Consumern dar. Die OLE DB Attribute fügen Code auf Grundlage der OLE DB Consumervorlagen ein, um funktionierende OLE DB Consumer zu erstellen.
 
-Beachten Sie, dass die MFC-Bibliothek eine Klasse enthält [COleDBRecordView](../mfc/reference/coledbrecordview-class.md), die Datenbankdatensätze in Steuerelementen anzeigt. Die Ansicht ist eine Formularansicht können Sie direkt mit verbundenen eine `CRowset` Objekt aus, und zeigt die Felder an die `CRowset` Objekt in der Dialogfeldvorlage-Steuerelementen.
+Beachten Sie, dass die MFC-Bibliothek eine Klasse ( [COleDBRecordView](../mfc/reference/coledbrecordview-class.md)) enthält, die Datenbankdaten Sätze in Steuerelementen anzeigt. Die Ansicht ist eine Formularansicht, die direkt mit einem `CRowset` Objekt verbunden ist, und zeigt die Felder des `CRowset` Objekts in den Steuerelementen der Dialogfeld Vorlage an.
 
-Weitere Informationen finden Sie unter [OLE DB-Programmierung](../data/oledb/ole-db-programming.md) und [OLE DB Programmer's Guide](/sql/connect/oledb/ole-db/oledb-driver-for-sql-server-programming).
+Weitere Informationen finden Sie unter [OLE DB Programming](../data/oledb/ole-db-programming.md) and [OLE DB Programmer es Guide](/sql/connect/oledb/ole-db/oledb-driver-for-sql-server-programming).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen eines OLE DB-Consumers](../data/oledb/creating-an-ole-db-consumer.md)<br/>
 [Erstellen eines OLE DB-Anbieters](../data/oledb/creating-an-ole-db-provider.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [Referenz der OLE DB-Anbietervorlagen](../data/oledb/ole-db-provider-templates-reference.md)<br/>
-[Beispiele für OLE DB-Vorlagen](https://github.com/Microsoft/VCSamples)
+[OLE DB-Vorlagenbeispiele](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB)

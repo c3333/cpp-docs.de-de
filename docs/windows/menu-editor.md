@@ -39,12 +39,12 @@ helpviewer_keywords:
 - commands [C++], deleting from menus
 - menus [C++], deleting
 ms.assetid: 421fb215-6e12-4ec9-a3af-82d77f87bfa6
-ms.openlocfilehash: a21ff3ba736bd345e4b8399a761b5a8d9db531ac
-ms.sourcegitcommit: 9aab425662a66825772f091112986952f341f7c8
+ms.openlocfilehash: 3671dbe33b2d6e373e2df3d54267c6aac5bbf20d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72444986"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214447"
 ---
 # <a name="menu-editor-c"></a>Menü-EditorC++()
 
@@ -53,13 +53,13 @@ Menüs ermöglichen Ihnen das Anordnen von Befehlen in einer logischen und leich
 > [!TIP]
 > Mit dem **Menü-Editor**können Sie in vielen Fällen mit der rechten Maustaste klicken, um ein Popupmenü mit häufig verwendeten Befehlen anzuzeigen. Die verfügbaren Befehle hängen davon ab, auf was der Zeiger verweist.
 
-## <a name="how-to"></a>Gewusst wie
+## <a name="how-to"></a>Vorgehensweise
 
 Der **Menü-Editor** ermöglicht Ihnen Folgendes:
 
 ### <a name="to-create-a-standard-menu"></a>So erstellen Sie ein Standardmenü
 
-1. Wechseln Sie zur Menü **Ansicht** > **Weitere Fenster** > **Ressourcenansicht** und klicken Sie mit der rechten Maustaste auf die **Menü** Überschrift. Wählen Sie **Ressource hinzufügen**und dann **Menü**aus.
+1. Wechseln Sie zur Menü **Ansicht** > **anderen Fenster** > **Ressourcenansicht** , und klicken Sie mit der rechten Maustaste auf die **Menü** Überschrift. Wählen Sie **Ressource hinzufügen**und dann **Menü**aus.
 
 1. Wählen Sie in der Menüleiste das Feld **Neues Element** (das Rechteck, das den *Typ hier*enthält) aus.
 
@@ -190,11 +190,11 @@ Wenn Sie im **Menü-Editor**arbeiten, wird normalerweise eine Menü Ressource al
 > [!TIP]
 > Um zurück zur Menüleisten Ansicht zu wechseln, wählen Sie erneut **als Popup anzeigen** aus. Durch diese Aktion wird das Häkchen entfernt, und die Menüleisten Ansicht wird zurückgegeben.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editor](../windows/resource-editors.md)<br/>
 [Menübefehle](../windows/menu-command-properties.md)<br/>

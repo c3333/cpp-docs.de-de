@@ -32,12 +32,12 @@ helpviewer_keywords:
 - strings [C++], formatting
 - strings [C++], special characters
 ms.assetid: f71ab8de-3068-4e29-8e28-5a33d18dd416
-ms.openlocfilehash: 996e5f132e5cfa33c39c4cc3ddbeb692f41925bc
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 1f9b21893bd361d02b3446360b24a97f4d1d1365
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514716"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214408"
 ---
 # <a name="string-editor-c"></a>Zeichen folgen-C++Editor ()
 
@@ -50,7 +50,7 @@ Mithilfe von Zeichenfolgentabellen können Sie Ihre Anwendung bequem in verschie
 > [!NOTE]
 > Windows lässt die Erstellung leerer Zeichen folgen Tabellen nicht zu. Wenn Sie eine Zeichenfolgentabelle ohne Einträge erstellen, wird sie beim Speichern der Ressourcendatei automatisch gelöscht.
 
-## <a name="how-to"></a>Gewusst wie
+## <a name="how-to"></a>Vorgehensweise
 
 Der **Zeichen** folgen-Editor ermöglicht Ihnen Folgendes:
 
@@ -58,7 +58,7 @@ Der **Zeichen** folgen-Editor ermöglicht Ihnen Folgendes:
 
 1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Wechseln Sie zu Menü **Bearbeiten** > **Suchen und ersetzen** , und wählen Sie **Suchen**aus.
+1. Wechseln Sie zum Menü **Bearbeiten** > **Suchen und ersetzen** , und klicken Sie auf **Suchen**.
 
 1. Wählen Sie im Feld **Suchen** nach eine vorherige Such Zeichenfolge aus der Dropdown Liste aus, oder geben Sie den Beschriftungs Text oder den Ressourcen Bezeichner der Zeichenfolge ein, die Sie suchen möchten.
 
@@ -69,13 +69,13 @@ Der **Zeichen** folgen-Editor ermöglicht Ihnen Folgendes:
 >
 > Geben Sie einen regulären Ausdruck ein, um eine Entsprechung für ein Muster festzustellen, oder klicken Sie auf die Schaltfläche rechts neben dem Feld **Suchen** nach, um eine Liste regulärer Such Ausdrücke anzuzeigen Wenn Sie einen Ausdruck aus dieser Liste auswählen, wird dieser als Suchtext **im Feld Suchen** nach ersetzt.
 >
-> Wenn Sie reguläre Ausdrücke verwenden, stellen Sie sicher **, dass Folgendes verwendet wird: Das Kontroll** Kästchen reguläre Ausdrücke ist aktiviert.
+> Wenn Sie reguläre Ausdrücke verwenden, stellen Sie sicher, dass das Kontrollkästchen **use: reguläre Ausdrücke** aktiviert ist.
 
 ### <a name="to-add-or-delete-a-string-resource"></a>So können Sie eine Zeichen folgen Ressource hinzufügen oder löschen
 
 Mithilfe des Zeichen folgen- **Editors**können Sie schnell Einträge in die Zeichen folgen Tabelle einfügen oder löschen. Neue Zeichen folgen werden am Ende der Tabelle platziert und erhalten den nächsten verfügbaren Bezeichner. Sie können die Eigenschaften " **ID**", " **Wert**" oder " **Caption** " im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) nach Bedarf bearbeiten.
 
-Der **Zeichen** folgen-Editor stellt sicher, dass Sie keine ID verwenden, die bereits verwendet wird. Wenn Sie eine bereits verwendete ID auswählen, werden Sie vom Zeichen folgen- **Editor** benachrichtigt, und anschließend wird eine generische eindeutige ID zugewiesen `IDS_STRING58113`, z. b.
+Der **Zeichen** folgen-Editor stellt sicher, dass Sie keine ID verwenden, die bereits verwendet wird. Wenn Sie eine bereits verwendete ID auswählen, werden Sie vom Zeichen folgen- **Editor** benachrichtigt, und anschließend wird eine generische eindeutige ID zugewiesen, z. b. `IDS_STRING58113`.
 
 #### <a name="to-add-a-string-table-entry"></a>So fügen Sie einen Eintrag der Zeichen folgen Tabelle hinzu
 
@@ -96,7 +96,7 @@ Der **Zeichen** folgen-Editor stellt sicher, dass Sie keine ID verwenden, die be
 
 Wählen Sie den Eintrag aus, den Sie löschen möchten, und führen Sie einen der folgenden Schritte aus:
 
-- Wechseln Sie zu Menü **Bearbeiten** > **Löschen**.
+- Wechseln Sie zum Menü **Bearbeiten** > **Löschen**.
 
 - Klicken Sie mit der rechten Maustaste auf die zu löschende Zeichenfolge, **und wählen**
 
@@ -154,9 +154,9 @@ Sie können die direkte Bearbeitung verwenden, um die Eigenschaften " **ID**", "
 
    |Um dies zu erreichen...|Eingeben...|
    |-----------------|---------------|
-   | Zeilenwechsel | \\Nr |
+   | Neue Zeile | \\n |
    | Wagenrücklauf | \\r |
-   | Registerkarte | \\Bund |
+   | Registerkarte | \\t |
    | Umgekehrter Schrägstrich (\\) | \\\\ |
    | ASCII-Zeichen | \\ddd (Oktale Notation) |
    | Warnung (Glocken) | \\a |
@@ -164,13 +164,13 @@ Sie können die direkte Bearbeitung verwenden, um die Eigenschaften " **ID**", "
    > [!NOTE]
    > Der **Zeichen** folgen-Editor unterstützt nicht den vollständigen Satz mit Escapezeichen. Sie können nur die oben aufgeführten verwenden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcen-Editoren](../windows/resource-editors.md)
-[Zeichenfolgen](/windows/win32/menurc/strings)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md) [
+Zeichen](/windows/win32/menurc/strings) folgen<br/>
 [Informationen über Zeichenfolgen](/windows/win32/menurc/about-strings)<br/>
 [Anpassen von Fensterlayouts](/visualstudio/ide/customizing-window-layouts-in-visual-studio)

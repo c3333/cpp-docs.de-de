@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - MixIn structure
 ms.assetid: 47e2df9b-3a2e-4ae8-8ba3-b1fd3aa73566
-ms.openlocfilehash: 16fd6b46d616df7163a304afa7f32ac3c095d398
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b302d6e08e401a24b465508d5ddabcae8b16bd8f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62325352"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213693"
 ---
 # <a name="mixin-structure"></a>MixIn-Struktur
 
@@ -31,29 +31,29 @@ struct MixIn;
 
 ### <a name="parameters"></a>Parameter
 
-*Abgeleitete*<br/>
-Ein abgeleiteter Typ von der [implementiert](implements-structure.md) Struktur.
+*Gewonnen*<br/>
+Ein Typ, der von [der-](implements-structure.md) Struktur abgeleitet wird.
 
-*MixInType*<br/>
+*MixinType*<br/>
 Ein Basistyp.
 
-*hasImplements*<br/>
-**"true"** Wenn *MixInType* ist abgeleitet von der aktuellen Implementierung Basistyp **"false"** andernfalls.
+*hasimplements*<br/>
+**true** , wenn *mixinType* von der aktuellen Implementierung des Basistyps abgeleitet ist. andernfalls **false** .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn eine Klasse von Windows-Runtime und COM-Klassenschnittstellen abgeleitet ist, Liste der Deklaration muss zunächst alle Windows-Runtime-Schnittstellen aufgelistet, und klicken Sie dann alle klassischen COM-Schnittstellen. **MixIn** wird sichergestellt, dass die Schnittstellen in der richtigen Reihenfolge angegeben werden.
+Wenn eine Klasse sowohl aus Windows-Runtime-als auch aus der COM-Schnittstelle der Klasse abgeleitet ist, muss die Klassen Deklarations Liste zuerst alle Windows-Runtime Schnittstellen und dann alle klassischen COM-Schnittstellen auflisten. **Mixin** stellt sicher, dass die Schnittstellen in der richtigen Reihenfolge angegeben werden.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `MixIn`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

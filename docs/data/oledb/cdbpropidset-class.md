@@ -31,12 +31,12 @@ helpviewer_keywords:
 - operator=, property sets
 - SetGUID method
 ms.assetid: 52bb806c-9581-494d-9af7-50d8a4834805
-ms.openlocfilehash: e2fced2ed0e32af15e75c7290733fdc2b4b34dc9
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: a52d7443ab335e8546a4bcce03cf68c3b1d60e3d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546122"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212019"
 ---
 # <a name="cdbpropidset-class"></a>CDBPropIDSet-Klasse
 
@@ -48,11 +48,11 @@ Erbt von der `DBPROPIDSET` Struktur und fügt einen Konstruktor hinzu, der Schl�
 class CDBPropIDSet : public tagDBPROPIDSET
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -68,7 +68,7 @@ class CDBPropIDSet : public tagDBPROPIDSET
 |-|-|
 |[Operator =](#op_equal)|Weist den Inhalt von einer eigen schafts-ID einem anderen Satz zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 OLE DB Consumer verwenden `DBPROPIDSET` Strukturen, um ein Array von Eigenschaften-IDs zu übergeben, für die der Consumer Eigenschafts Informationen erhalten möchte. Die in einer einzelnen [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) -Struktur identifizierten Eigenschaften gehören zu einem Eigenschaften Satz.
 
@@ -124,7 +124,7 @@ void SetGUID(const GUID& guid) throw();
 *guid*<br/>
 in Eine GUID, die verwendet wird, um das `guidPropertySet`-Feld der [DBPROPIDSET](/previous-versions/windows/desktop/ms717981(v=vs.85)) -Struktur festzulegen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieses Feld kann auch durch den- [Konstruktor](../../data/oledb/cdbpropidset-cdbpropidset.md) festgelegt werden. Diese Funktion wird aufgerufen, wenn Sie den Standardkonstruktor für diese Klasse verwenden.
 
@@ -138,7 +138,7 @@ Weist den Inhalt einer eigen schafts-ID einem anderen ID-Eigenschaften Satz zu.
 CDBPropIDSet& operator =(CDBPropIDSet& propset) throw();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

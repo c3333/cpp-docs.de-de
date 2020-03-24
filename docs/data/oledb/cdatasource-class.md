@@ -56,12 +56,12 @@ helpviewer_keywords:
 - OpenWithPromptFileName method
 - OpenWithServiceComponents method
 ms.assetid: 99bf862c-9d5c-4117-9501-aa0e2672085c
-ms.openlocfilehash: d97138b548a3e303898ee2bafde88af38aa78f40
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 646d4b3548a1c5ee1bdfaf64f7823fa584abaac5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545768"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212016"
 ---
 # <a name="cdatasource-class"></a>CDataSource-Klasse
 
@@ -73,11 +73,11 @@ Entspricht einem OLE DB-Datenquellen Objekt, das eine Verbindung über einen Anb
 class CDataSource
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -93,7 +93,7 @@ class CDataSource
 |[OpenWithPromptFileName](#openwithpromptfilename)|Ermöglicht es dem Benutzer, eine zuvor erstellte Daten Verknüpfungs Datei auszuwählen, um die entsprechende Datenquelle zu öffnen.|
 |[OpenWithServiceComponents](#openwithservicecomponents)|Öffnet ein Datenquellen Objekt mit dem Dialogfeld Daten Link.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine oder mehrere Daten Bank Sitzungen können für eine einzelne Verbindung erstellt werden. Diese Sitzungen werden durch `CSession`dargestellt. Sie müssen [CDataSource:: Open](../../data/oledb/cdatasource-open.md) abrufen, um die Verbindung zu öffnen, bevor Sie eine Sitzung mit `CSession::Open`erstellen.
 
@@ -132,7 +132,7 @@ in **true** , wenn die Zeichenfolge ein Kennwort enthält. andernfalls **false**
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die resultierende Initialisierungs Zeichenfolge kann verwendet werden, um diese Datenquellen Verbindung später erneut zu öffnen.
 
@@ -157,7 +157,7 @@ Siehe [IDBProperties:: GetProperties](/previous-versions/windows/desktop/ms71434
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um eine einzelne Eigenschaft zu erhalten, verwenden Sie [GetProperty](../../data/oledb/cdatasource-getproperty.md).
 
@@ -188,7 +188,7 @@ vorgenommen Ein Zeiger auf die Variante, bei der `GetProperty` den Wert der-Eige
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie " [GetProperties](../../data/oledb/cdatasource-getproperties.md)", um mehrere Eigenschaften zu erhalten.
 
@@ -276,7 +276,7 @@ in Ein [cenenumerator](../../data/oledb/cenumerator-class.md) -Objekt, das zum A
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Methoden Überladung, die den *HWND* -Parameter verwendet, öffnet ein Datenquellen Objekt mit den Dienst Komponenten in Oledb32. dll. Diese DLL enthält die Implementierung von Dienst Komponenten Features wie z. b. Ressourcen Pooling, automatische Transaktions Eintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
@@ -309,7 +309,7 @@ Weitere Informationen zu Daten Verknüpfungs Dateien (UDL-Dateien) finden Sie un
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
@@ -338,7 +338,7 @@ Der Standardwert ist **false**. er gibt an, dass der Benutzer nie aufgefordert w
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw.
 
@@ -369,7 +369,7 @@ HRESULT OpenWithPromptFileName(HWND hWnd = GetActiveWindow(   ),
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
@@ -407,11 +407,11 @@ in Die Anzahl von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.8
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode öffnet ein Datenquellenobjekt mit den Dienstkomponenten im oledb32.dll; Diese DLL enthält die Implementierung von Dienstkomponentenfeatures wie z. B. Ressourcenpooling, automatische Transaktionseintragung usw. Weitere Informationen finden Sie in der OLE DB-Referenz im [OLE DB Programmierer-Handbuch](/previous-versions/windows/desktop/ms713643(v=vs.85)).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

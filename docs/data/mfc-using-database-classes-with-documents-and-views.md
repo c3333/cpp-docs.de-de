@@ -14,63 +14,63 @@ helpviewer_keywords:
 - ODBC recordsets [C++], documents and views
 - ODBC [C++], forms
 ms.assetid: 83979974-fc63-46ac-b162-e8403a572e2c
-ms.openlocfilehash: 78765d17b52889123f13c492699230834decba66
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e2b073b20b9518667b43c30e7ee3199a84a3ad38
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182898"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213381"
 ---
 # <a name="mfc-using-database-classes-with-documents-and-views"></a>MFC: Verwenden von Datenbankklassen mit Dokumenten und Ansichten
 
-Sie können die MFC-Datenbankklassen mit oder ohne die Dokument-/Ansichtarchitektur verwenden. In diesem Thema hebt hervor, arbeiten mit Dokumenten und Ansichten. Es wird erläutert:
+Sie können die MFC-Datenbankklassen mit oder ohne die Dokument-/Ansichtarchitektur verwenden. In diesem Thema wird die Arbeit mit Dokumenten und Ansichten hervorgehoben. Es wird Folgendes erläutert:
 
-- [Gewusst wie: Schreiben einer formularbasierten Anwendung](#_core_writing_a_form.2d.based_application) mithilfe einer `CRecordView` -Objekt als die Hauptansicht in Ihr Dokument.
+- So [schreiben Sie eine Formular basierte Anwendung](#_core_writing_a_form.2d.based_application) mit einem `CRecordView`-Objekt als Hauptansicht Ihres Dokuments.
 
-- [Wie Sie mit der Recordsets in Dokumenten und Ansichten](#_core_using_recordsets_in_documents_and_views).
+- [Verwenden von Recordset-Objekten in Ihren Dokumenten und Sichten](#_core_using_recordsets_in_documents_and_views).
 
-- [Weitere Überlegungen zur](#_core_other_factors).
+- [Weitere Überlegungen](#_core_other_factors).
 
-Alternativen, finden Sie unter [MFC: Verwenden von Datenbankklassen ohne Dokumente und Ansichten](../data/mfc-using-database-classes-without-documents-and-views.md).
+Alternativen finden Sie unter [MFC: Verwenden von Datenbankklassen ohne Dokumente und Sichten](../data/mfc-using-database-classes-without-documents-and-views.md).
 
-##  <a name="_core_writing_a_form.2d.based_application"></a> Das Schreiben einer formularbasierten Anwendung
+##  <a name="writing-a-form-based-application"></a><a name="_core_writing_a_form.2d.based_application"></a>Schreiben einer Formular basierten Anwendung
 
-Viele Datenzugriffs-Anwendungen basieren auf Formularen. Die Benutzeroberfläche ist ein Formular mit Steuerelementen, die in denen der Benutzer überprüft wird, gibt, oder Bearbeiten von Daten. Verwenden Sie die Klasse, um Ihre Anwendung formularbasiert zu machen, `CRecordView`. Wenn Sie den Assistenten zum MFC-Anwendungen ausführen und **ODBC** Clienttyp auf die **Datenbankunterstützung** Seite das Projekt verwendet `CRecordView` für die Ansichtsklasse.
+Viele Datenzugriffs Anwendungen basieren auf Formularen. Die Benutzeroberfläche ist ein Formular, das Steuerelemente enthält, in denen der Benutzerdaten untersucht, eingibt oder bearbeitet. Verwenden Sie zum Erstellen des Anwendungs Formulars die Klasse `CRecordView`. Wenn Sie den MFC-Anwendungs-Assistenten ausführen und auf der Seite **Datenbankunterstützung** den Typ **ODBC** -Client auswählen, verwendet das Projekt `CRecordView` für die Ansichts Klasse.
 
-In einer formularbasierten Anwendung jedes Datensatzansichts-Objekt speichert einen Zeiger auf eine `CRecordset` Objekt. Die Framework Datensatzfeldaustausch (RFX)-Mechanismus Datenaustausch zwischen dem Recordset und der Datenquelle an. Die Dialogdatenaustausch (DDX)-Mechanismus eine Übertragung von Daten zwischen den Felddatenmembern des Recordset-Objekts und den Steuerelementen im Formular. `CRecordView` Standardmäßig bietet auch befehlshandlerfunktionen für die Navigation zwischen Datensätzen auf dem Formular an.
+In einer Formular basierten Anwendung speichert jedes Daten Satz Ansichts Objekt einen Zeiger auf ein `CRecordset` Objekt. Der RFX-Mechanismus (Record Field Exchange) des Frameworks tauscht Daten zwischen dem Recordset und der Datenquelle aus. Der DDX-Mechanismus (Dialog Datenaustausch) tauscht Daten zwischen den Felddatenmembern des Recordset-Objekts und den Steuerelementen im Formular aus. `CRecordView` bietet auch Standard Befehls Handler-Funktionen für die Navigation von Datensatz zu Datensatz im Formular.
 
-Zum Erstellen einer formularbasierten Anwendung mit der Anwendungs-Assistenten finden Sie unter [Erstellen einer formularbasierten MFC-Anwendung](../mfc/reference/creating-a-forms-based-mfc-application.md) und [Datenbankunterstützung, MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md).
+Informationen zum Erstellen einer Formular basierten Anwendung mit dem Anwendungs-Assistenten finden Sie unter [Erstellen einer Formular basierten MFC-Anwendung](../mfc/reference/creating-a-forms-based-mfc-application.md) und [Datenbankunterstützung, MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md).
 
-Eine vollständige Erläuterung der Formulare, finden Sie unter [Datensatzansichten](../data/record-views-mfc-data-access.md).
+Eine vollständige Erläuterung der Formulare finden Sie unter [Daten Satz Ansichten](../data/record-views-mfc-data-access.md).
 
-##  <a name="_core_using_recordsets_in_documents_and_views"></a> Verwenden von Recordsets in Dokumenten und Ansichten
+##  <a name="using-recordsets-in-documents-and-views"></a><a name="_core_using_recordsets_in_documents_and_views"></a>Verwenden von Recordsets in Dokumenten und Ansichten
 
-Viele einfache formularbasierte Anwendungen ist die Dokumente nicht erforderlich. Wenn Ihre Anwendung komplexer ist, wahrscheinlich ein Dokument als Proxy für die Datenbank verwenden möchten, Speichern einer `CDatabase` -Objekt, das eine Verbindung mit der Datenquelle herstellt. Formularbasierte Anwendungen speichern normalerweise einen Zeiger auf einem Recordset-Objekt in der Ansicht. Andere Arten von datenbankanwendungen speichern Recordsets und `CDatabase` Objekt im Dokument. Hier sind einige Möglichkeiten für die Verwendung von Dokumenten in datenbankanwendungen:
+Viele einfache Formular basierte Anwendungen benötigen keine Dokumente. Wenn Ihre Anwendung komplexer ist, sollten Sie ein Dokument als Proxy für die Datenbank verwenden und ein `CDatabase` Objekt speichern, das eine Verbindung mit der Datenquelle herstellt. Formular basierte Anwendungen speichern in der Regel einen Zeiger auf ein Recordset-Objekt in der Ansicht. Andere Arten von Datenbankanwendungen speichern Recordsets und `CDatabase` Objekt im Dokument. Im folgenden finden Sie einige Möglichkeiten für die Verwendung von Dokumenten in Datenbankanwendungen:
 
-- Wenn Sie ein Recordset in einem lokalen Kontext zugreifen möchten, erstellen Sie eine `CRecordset` Objekt lokal in Memberfunktionen des Dokuments oder der Ansicht, je nach Bedarf.
+- Wenn Sie auf ein Recordset in einem lokalen Kontext zugreifen, erstellen Sie nach Bedarf ein `CRecordset` Objekt lokal in den Element Funktionen des Dokuments oder der Ansicht.
 
-   Deklarieren Sie ein Recordset-Objekt als eine lokale Variable in einer Funktion an. Übergeben Sie NULL an den Konstruktor, der bewirkt, dass das Framework zum Erstellen und öffnen eine temporäre `CDatabase` -Objekt für Sie. Als Alternative, übergeben Sie einen Zeiger auf eine `CDatabase` Objekt. Verwenden Sie das Recordset in der Funktion, und lassen sie die automatisch zerstört, wenn die Funktion beendet wird.
+   Deklarieren Sie ein Recordset-Objekt als lokale Variable in einer Funktion. Übergeben Sie NULL an den-Konstruktor, der bewirkt, dass das Framework ein temporäres `CDatabase` Objekt erstellt und öffnet. Übergeben Sie als Alternative einen Zeiger auf ein `CDatabase` Objekt. Verwenden Sie das Recordset innerhalb der-Funktion, und lassen Sie es beim Beenden der Funktion automatisch zerstören.
 
-   Wenn Sie NULL an den Recordset-Konstruktor übergeben, wird durch das Framework verwendet, von der Recordsets zurückgegebenen Informationen `GetDefaultConnect` Member-Funktion zum Erstellen einer `CDatabase` Objekt aus, und öffnen Sie sie. Implementieren Sie die Assistenten `GetDefaultConnect` für Sie.
+   Wenn Sie NULL an einen recordsetkonstruktor übergeben, verwendet das Framework Informationen, die von der `GetDefaultConnect` Member-Funktion des Recordsets zurückgegeben werden, um ein `CDatabase` Objekt zu erstellen und zu öffnen. Die Assistenten implementieren `GetDefaultConnect` für Sie.
 
-- Wenn Sie während der Lebensdauer des Dokuments auf einem Recordset zugreifen, betten Sie eine oder mehrere `CRecordset` Objekte in Ihrem Dokument.
+- Wenn Sie während der Lebensdauer Ihres Dokuments auf ein Recordset zugreifen, Betten Sie mindestens ein `CRecordset`-Objekt in das Dokument ein.
 
-   Erstellen Sie das Recordset-Objekte, bei der Initialisierung des Dokuments oder nach Bedarf. Sie können eine Funktion schreiben, die einen Zeiger auf das Recordset zurückgibt, wenn er bereits vorhanden ist oder erstellt und öffnet das Recordset aus, wenn sie noch nicht vorhanden ist. Schließen, löschen, und das Recordset nach Bedarf neu erstellen oder rufen Sie die `Requery` Memberfunktion versucht, die Datensätze zu aktualisieren.
+   Erstellen Sie die Recordset-Objekte, entweder wenn Sie das Dokument initialisieren oder nach Bedarf. Sie können eine Funktion schreiben, die einen Zeiger auf das Recordset zurückgibt, wenn Sie bereits vorhanden ist, oder das Recordset erstellt und öffnet, wenn es noch nicht vorhanden ist. Schließen, löschen und erstellen Sie das Recordset nach Bedarf, oder erstellen Sie die `Requery` Member-Funktion, um die Datensätze zu aktualisieren.
 
-- Wenn Sie während der Lebensdauer des Dokuments auf eine Datenquelle zugreifen, Einbetten einer `CDatabase` Objekt oder einen Zeiger auf eine `CDatabase` -Objekt.
+- Wenn Sie während der Lebensdauer des Dokuments auf eine Datenquelle zugreifen, Betten Sie ein `CDatabase` Objekt ein, oder speichern Sie einen Zeiger auf ein `CDatabase` Objekt darin.
 
-   Die `CDatabase` Objekt verwaltet eine Verbindung mit Ihrer Datenquelle. Das Objekt wird automatisch während der Erstellung des Dokuments erstellt, und rufen Sie die `Open` Member-Funktion, die beim Initialisieren des Dokuments. Erstellen der Recordset-Objekte im Dokument-Memberfunktionen übergeben Sie einen Zeiger auf des Dokuments des `CDatabase` Objekt. Dies ordnet jedes Recordset, mit dessen Datenquelle. In der Regel wird das Datenbankobjekt, das zerstört, wenn das Dokument geschlossen wird. Das Recordset-Objekte in der Regel zerstört, wenn sie den Bereich einer Funktion beenden.
+   Das `CDatabase`-Objekt verwaltet eine Verbindung mit Ihrer Datenquelle. Das-Objekt wird während der Dokument Erstellung automatisch erstellt, und Sie können seine `Open` Member-Funktion aufzurufen, wenn Sie das Dokument initialisieren. Beim Erstellen von recordsetobjekten in Dokument Element Funktionen übergeben Sie einen Zeiger auf das `CDatabase` Objekt des Dokuments. Dadurch wird jedes Recordset mit seiner Datenquelle verknüpft. Das Datenbankobjekt wird in der Regel zerstört, wenn das Dokument geschlossen wird. Die Recordset-Objekte werden in der Regel zerstört, wenn Sie den Gültigkeitsbereich einer Funktion beenden.
 
-##  <a name="_core_other_factors"></a> Andere Faktoren
+##  <a name="other-factors"></a><a name="_core_other_factors"></a>Weitere Faktoren
 
-Formularbasierte Anwendungen häufig verfügen nicht über keine Verwendung für die Framework Dokument-Serialisierungsmechanismus, daher Sie sollten zu entfernen, deaktivieren oder zu ersetzen die **neu** und **öffnen** Befehle in der **Datei** Menü. Finden Sie im Artikel [Serialisierung: Serialisierung im Vergleich zur Datenbank-e/a](../mfc/serialization-serialization-vs-database-input-output.md).
+Formular basierte Anwendungen werden häufig nicht für den dokumentserialisierungsmechanismus des Frameworks verwendet, sodass Sie die Befehle " **New** " und " **Open** " im Menü " **Datei** " entfernen, deaktivieren oder ersetzen können. Weitere Informationen finden Sie im Artikel [Serialisierung: Serialisierung im Vergleich zur Daten Bank Eingabe/-Ausgabe](../mfc/serialization-serialization-vs-database-input-output.md).
 
-Möchten Sie möglicherweise auch, verwenden Sie die vielen Benutzeroberflächen-Möglichkeiten, die das Framework unterstützt werden. Beispielsweise können Sie mehrere `CRecordView` Objekte in einem Splitterfenster kann mehrere Recordsets in verschiedenen öffnen, mehrere Document Interface (MDI) untergeordnete Fenster und So weiter.
+Möglicherweise möchten Sie auch die zahlreichen Möglichkeiten der Benutzeroberfläche nutzen, die das Framework unterstützen kann. Beispielsweise können Sie mehrere `CRecordView` Objekte in einem Splitter Fenster verwenden, mehrere Recordsets in untergeordneten MDI-Fenstern (Multiple Document Interface) öffnen usw.
 
-Drucken des Inhalts in der Ansicht implementieren möchten, sei es ein Formular implementiert, mit `CRecordView` oder etwas anderes. Abgeleitete Klassen `CFormView`, `CRecordView` Drucken nicht unterstützt, aber Sie können überschreibt die `OnPrint` Member-Funktion mit dem Drucken zulässig. Weitere Informationen finden Sie in der Klasse [CFormView](../mfc/reference/cformview-class.md).
+Möglicherweise möchten Sie den Druck von anderen in der Ansicht implementieren, unabhängig davon, ob es sich um ein mit `CRecordView` implementiertes Formular handelt. Als von `CFormView`abgeleitete Klassen unterstützt `CRecordView` keinen Druck, aber Sie können die `OnPrint` Member-Funktion überschreiben, um das Drucken zuzulassen. Weitere Informationen finden Sie unter [CFormView](../mfc/reference/cformview-class.md)-Klasse.
 
-Sie möchten keine Dokumente und Ansichten verwenden. In diesem Fall finden Sie unter [MFC: Verwenden von Datenbankklassen ohne Dokumente und Ansichten](../data/mfc-using-database-classes-without-documents-and-views.md).
+Möglicherweise möchten Sie überhaupt keine Dokumente und Sichten verwenden. Weitere Informationen finden Sie unter [MFC: Verwenden von Datenbankklassen ohne Dokumente und Sichten](../data/mfc-using-database-classes-without-documents-and-views.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Datenbankklassen](../data/mfc-database-classes-odbc-and-dao.md)

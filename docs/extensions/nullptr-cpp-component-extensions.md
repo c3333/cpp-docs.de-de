@@ -6,12 +6,12 @@ helpviewer_keywords:
 - __nullptr keyword (C++)
 - nullptr keyword [C++]
 ms.assetid: 594cfbf7-06cb-4366-9ede-c0b703e1d095
-ms.openlocfilehash: 05aaaa8a0d0056e0f5318f5e9329d90824760728
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 02da716959deb7fcffa7a63a8308279a765c4569
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515635"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172113"
 ---
 # <a name="nullptr--ccli-and-ccx"></a>nullptr (C++/CLI und C++/CX)
 
@@ -219,11 +219,11 @@ int main() {
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-Compileroption: (Nicht erforderlich; wird von allen Optionen zur Codegenerierung einschließlich `/ZW` und `/clr` unterstützt)
+Compileroption: (nicht erforderlich; wird von allen Code Generierungs Optionen unterstützt, einschließlich `/ZW` und `/clr`)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
 [nullptr](../cpp/nullptr.md)

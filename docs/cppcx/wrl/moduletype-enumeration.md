@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - ModuleType enumeration
 ms.assetid: 61a763af-a5a4-451d-8b40-815af507fcde
-ms.openlocfilehash: 3c7486cbc761975dd133f229f23dcf0b70e7e3ac
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8425a15d594f7b8b30027d3576ee86015b656130
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403229"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213719"
 ---
 # <a name="moduletype-enumeration"></a>ModuleType-Enumeration
 
-Gibt an, ob ein Modul einen In-Process-Server oder einen Out-of-Process-Server unterstützen sollte. 
+Gibt an, ob ein Modul einen In-Process-Server oder einen Out-of-Process-Server unterstützen sollte.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,24 +24,24 @@ Gibt an, ob ein Modul einen In-Process-Server oder einen Out-of-Process-Server u
 enum ModuleType;
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`InProc`|In-Process-Server.|
-|`OutOfProc`|Ein Out-of-Process-Server.|
-|`DisableCaching`|Deaktivieren Sie Zwischenspeichermechanismus Modul.|
-|`InProcDisableCaching`|Kombination von `InProc` und `DisableCaching`.|
-|`OutOfProcDisableCaching`|Kombination von `OutOfProc` und `DisableCaching`.|
+|`InProc`|Ein in-Process-Server.|
+|`OutOfProc`|Einen Out-of-Process-Server.|
+|`DisableCaching`|Deaktivieren Sie den Cache Mechanismus für das Modul.|
+|`InProcDisableCaching`|Kombination aus `InProc` und `DisableCaching`.|
+|`OutOfProcDisableCaching`|Kombination aus `OutOfProc` und `DisableCaching`.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** module.h
+**Header:** Module. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

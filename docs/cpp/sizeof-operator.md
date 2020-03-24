@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof operator
 ms.assetid: 8bc3b6fb-54a1-4eb7-ada0-05f8c5efc532
-ms.openlocfilehash: 9edd6420193fbc1ff6013c545b294851ce105848
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bc1165cf1df3933575013906d1b24673467f0b36
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267218"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178716"
 ---
 # <a name="sizeof-operator"></a>sizeof-Operator
 
-Gibt die Größe seines Operanden in Bezug auf die Größe des Typs **Char**.
+Ergibt die Größe des Operanden in Bezug auf die Größe des Typs **char**.
 
 > [!NOTE]
->  Informationen zu den `sizeof ...` -Operator, finden Sie unter [Auslassungszeichen- und Variadic-Vorlagen](../cpp/ellipses-and-variadic-templates.md).
+>  Weitere Informationen zum `sizeof ...`-Operator finden Sie unter [Ellipsen und Variadic-Vorlagen](../cpp/ellipses-and-variadic-templates.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,17 +27,17 @@ sizeof unary-expression
 sizeof  ( type-name )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das Ergebnis der **"sizeof"** -Operators ist vom Typ `size_t`, ein ganzzahliger Typ, in der Includedatei \<stddef.h >. Mithilfe dieses Operators können Sie es vermeiden, rechnerabhängige Datengrößen in Ihren Programmen anzugeben.
+Das Ergebnis des **sizeof** -Operators ist vom Typ `size_t`, ein ganzzahliger Typ, der in der Includedatei \<STDDEF. h > definiert ist. Mithilfe dieses Operators können Sie es vermeiden, rechnerabhängige Datengrößen in Ihren Programmen anzugeben.
 
-Der Operand, der **"sizeof"** kann einen der folgenden sein:
+Der Operand für **sizeof** kann eine der folgenden sein:
 
-- Ein Typname. Verwendung von **"sizeof"** mit einem Typnamen muss der Namen in Klammern eingeschlossen werden.
+- Ein Typname. Um **sizeof** mit einem Typnamen zu verwenden, muss der Name in Klammern eingeschlossen werden.
 
-- Ein Ausdruck. Bei Verwendung mit einem Ausdruck **"sizeof"** kann mit oder ohne Klammern angegeben werden. Der Ausdruck wird nicht ausgewertet.
+- Ein Ausdruck. Bei Verwendung mit einem Ausdruck kann **sizeof** mit oder ohne Klammern angegeben werden. Der Ausdruck wird nicht ausgewertet.
 
-Wenn die **"sizeof"** -Operator auf ein Objekt des Typs angewendet wird **Char**, es 1 ergibt. Wenn die **"sizeof"** -Operator auf ein Array angewendet wird, bietet Sie die Gesamtzahl der Bytes im Array, nicht die Größe des Zeigers, der vom Arraybezeichner dargestellt. Um die Größe des Zeigers, der vom Arraybezeichner dargestellt zu erhalten, übergeben sie als Parameter an eine Funktion, die verwendet **"sizeof"**. Zum Beispiel:
+Wenn der **sizeof** -Operator auf ein Objekt vom Typ " **char**" angewendet wird, ergibt dies 1. Wenn der **sizeof** -Operator auf ein Array angewendet wird, ergibt er die Gesamtzahl der Bytes in diesem Array, nicht die Größe des Zeigers, der durch den Array Bezeichner dargestellt wird. Zum Abrufen der Größe des Zeigers, der durch den Array Bezeichner dargestellt wird, übergeben Sie ihn als Parameter an eine Funktion, die **sizeof**verwendet. Beispiel:
 
 ## <a name="example"></a>Beispiel
 
@@ -71,19 +71,19 @@ The length of Hello, world! is: 14
 The size of the pointer is 4
 ```
 
-Wenn die **"sizeof"** Operator angewendet wird, um eine **Klasse**, **Struktur**, oder **Union** Typ, der das Ergebnis ist die Anzahl der Bytes in einem Objekt, Geben Sie außerdem Auffüllung hinzugefügt, um Member an Wortgrenzen auszurichten. Daher stimmt das Ergebnis möglicherweise nicht mit der Größe überein, die durch Addieren der Speicheranforderungen der einzelnen Member berechnet wird. Die [/Zp](../build/reference/zp-struct-member-alignment.md) Compileroption und das [Pack](../preprocessor/pack.md) Pragma beeinflussen die Ausrichtungsgrenzen für Member.
+Wenn der **sizeof** -Operator auf einen **Klassen**-, **Struktur**-oder **Union** -Typ angewendet wird, ist das Ergebnis die Anzahl von Bytes in einem Objekt dieses Typs sowie alle Auffüll Zeichen, die hinzugefügt wurden, um Member an Wortgrenzen auszurichten. Daher stimmt das Ergebnis möglicherweise nicht mit der Größe überein, die durch Addieren der Speicheranforderungen der einzelnen Member berechnet wird. Die [/ZP](../build/reference/zp-struct-member-alignment.md) -Compileroption und das [Pack](../preprocessor/pack.md) -Pragma beeinflussen die Ausrichtungs Grenzen für Member.
 
-Die **"sizeof"** -Operator gibt niemals 0 ist, auch für eine leere Klasse.
+Der **sizeof** -Operator ergibt niemals 0, auch für eine leere Klasse.
 
-Die **"sizeof"** Operator kann nicht mit den folgenden Operanden verwendet werden:
+Der **sizeof** -Operator kann mit den folgenden Operanden nicht verwendet werden:
 
-- Funktionen. (Allerdings **"sizeof"** auf Zeigern auf Funktionen angewendet werden können.)
+- Funktionen ( **Sizeof** kann jedoch auf Zeiger auf Funktionen angewendet werden.)
 
-- Bitfelder.
+- Bitfelder
 
 - Nicht definierte Klassen.
 
-- Der Typ **"void"**.
+- Der Typ " **void**".
 
 - Dynamisch zugeordnete Arrays.
 
@@ -93,17 +93,17 @@ Die **"sizeof"** Operator kann nicht mit den folgenden Operanden verwendet werde
 
 - In Klammern gesetzte Namen unvollständiger Typen.
 
-Wenn die **"sizeof"** -Operator auf einen Verweis angewendet wird, das Ergebnis ist der gleiche wie **"sizeof"** hatte angewendet wurde, auf das Objekt selbst.
+Wenn der **sizeof** -Operator auf einen Verweis angewendet wird, ist das Ergebnis das gleiche wie, wenn **sizeof** auf das Objekt selbst angewendet wurde.
 
-Wenn ein Array ohne Größenangabe das letzte Element einer Struktur ist die **"sizeof"** Operator gibt die Größe der Struktur ohne das Array zurück.
+Wenn ein Array ohne Größen Grad das letzte Element einer Struktur ist, gibt der **sizeof** -Operator die Größe der Struktur ohne das Array zurück.
 
-Die **"sizeof"** -Operator wird häufig verwendet, um die Anzahl der Elemente in einem Array mit einem Ausdruck der Form zu berechnen:
+Der **sizeof** -Operator wird häufig verwendet, um die Anzahl von Elementen in einem Array mithilfe eines Ausdrucks in der Form zu berechnen:
 
 ```cpp
 sizeof array / sizeof array[0]
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

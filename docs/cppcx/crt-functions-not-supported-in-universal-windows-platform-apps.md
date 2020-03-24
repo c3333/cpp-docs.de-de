@@ -2,16 +2,16 @@
 title: In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen
 ms.date: 12/30/2016
 ms.assetid: cbfc957d-6c60-48f4-97e3-1ed8526743b4
-ms.openlocfilehash: 763d76dd9eb139c10f4147e5fa069a0901fe5398
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cf67cb9c0a2438ee6ac1bcc7753c0f89b63a356d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62188381"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214317"
 ---
 # <a name="crt-functions-not-supported-in-universal-windows-platform-apps"></a>In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen
 
-Viele CRT-Funktionen (C-Laufzeit) sind nicht verfügbar, wenn Sie Apps für die universelle Windows-Plattform erstellen. In einigen Fällen sind problemumgehungen verfügbar:: Beispielsweise können Sie Windows-Runtime oder Win32-APIs. In anderen Fällen wurden die CRT-Funktionen jedoch möglicherweise gesperrt, da die ihnen entsprechenden Features oder die unterstützenden APIs nicht auf Apps für die universelle Windows-Plattform (UWP) angewendet werden können. Suchen Sie nach einer alternativen Methode, die für die Windows-Runtime unterstützt wird, finden Sie unter [Alternativen zu Windows-APIs in UWP-apps](/uwp/win32-and-com/alternatives-to-windows-apis-uwp).
+Viele CRT-Funktionen (C-Laufzeit) sind nicht verfügbar, wenn Sie Apps für die universelle Windows-Plattform erstellen. In einigen Fällen sind Problem Umgehungen verfügbar – beispielsweise können Sie Windows-Runtime oder Win32-APIs verwenden. In anderen Fällen wurden die CRT-Funktionen jedoch möglicherweise gesperrt, da die ihnen entsprechenden Features oder die unterstützenden APIs nicht auf Apps für die universelle Windows-Plattform (UWP) angewendet werden können. Eine alternative Methode, die für die Windows-Runtime unterstützt wird, finden Sie unter [Alternativen zu Windows-APIs in UWP-apps](/uwp/win32-and-com/alternatives-to-windows-apis-uwp).
 
 In der folgenden Tabelle sind die CRT-Funktionen, die beim Erstellen von Apps für die universelle Windows-Plattform nicht verfügbar sind, sowie mögliche Problemumgehungen aufgeführt.
 
@@ -33,13 +33,13 @@ In der folgenden Tabelle sind die CRT-Funktionen, die beim Erstellen von Apps f�
 |_environ _putenv _putenv_s _searchenv _searchenv_s _dupenv_s _wputenv _wputenv_s _wsearchenv getenv getenv_s putenv _wdupenv_s _wenviron _wgetenv _wgetenv_s _wsearchenv_s tzset|Umgebungsvariablen sind für Apps für die universelle Windows-Plattform nicht verfügbar.|Keine Problemumgehung. Verwenden Sie „_tzset“ zum Festlegen der Zeitzone.|
 |_loaddll _getdllprocaddr _unloaddll|Dies waren veraltete Funktionen in früheren CRT-Versionen. Darüber hinaus können Benutzer DLL-Dateien nur in demselben Anwendungspaket laden.|Verwenden Sie die Win32-APIs `LoadPackagedLibrary`, `GetProcAddress`und `FreeLibrary` zum Laden und Verwenden verpackter DLL-Dateien.|
 |_wexecl _wexecle _wexeclp _wexeclpe _wexecv _wexecve _wexecvp _wexecvpe _execl _execle _execlp _execlpe _execv _execve _execvp _execvpe _spawnl _spawnle _spawnlp _spawnlpe _spawnv _spawnve _spawnvp _spawnvpe _wspawnl _wspawnle _wspawnlp _wspawnlpe _wspawnv _wspawnve _wspawnvp _wspawnvpe _wsystem execl execle execlp execlpe execv execve execvp execvpe spawnl spawnle spawnlp spawnlpe spawnv spawnve spawnvp spawnvpe system|Die Funktionalität ist in Apps für die universelle Windows-Plattform nicht verfügbar. Eine App für die universelle Windows-Plattform kann keine andere App für die universelle Windows-Plattform oder eine Desktop-App aufrufen.|Keine Problemumgehung.|
-|_heapwalk _heapadd _heapchk _heapset _heapused|Diese Funktionen werden in der Regel bei der Arbeit mit dem Heap verwendet. Entsprechende Win32-APIs werden in Apps für die universelle Windows-Plattform jedoch nicht unterstützt. Zudem können Apps keine privaten Heaps mehr erstellen oder verwenden.|Keine Problemumgehung. Allerdings ist `_heapwalk` nur zu Debugzwecken in der DEBUG CRT verfügbar. Diese können nicht in apps verwendet werden, die in den Microsoft Store hochgeladen werden.|
+|_heapwalk _heapadd _heapchk _heapset _heapused|Diese Funktionen werden in der Regel bei der Arbeit mit dem Heap verwendet. Entsprechende Win32-APIs werden in Apps für die universelle Windows-Plattform jedoch nicht unterstützt. Zudem können Apps keine privaten Heaps mehr erstellen oder verwenden.|Keine Problemumgehung. Allerdings ist `_heapwalk` nur zu Debugzwecken in der DEBUG CRT verfügbar. Diese können nicht in Apps verwendet werden, die in die Microsoft Store hochgeladen werden.|
 
-Die folgenden Funktionen sind in der CRT für UWP-apps verfügbar, aber es sollte nur verwendet werden, wenn die entsprechenden Win32- oder Windows-Runtime-APIs verwendet werden, kann nicht verwendet werden, z. B. beim Portieren großen Codebasen
+Die folgenden Funktionen sind in der CRT für UWP-apps verfügbar, sollten aber nur verwendet werden, wenn die entsprechenden Win32-oder Windows-Runtime-APIs nicht verwendet werden können, z. –. Wenn Sie große Codebasen portieren.
 
 |||
 |-|-|
-|Einzelbyte-Zeichenfolgenfunktionen, z. B. `strcat`, `strcpy`, `strlwr`usw.|Stellen Sie Ihren UWP-apps ausschließlich Unicode da alle Win32-APIs und Windows-Runtime-APIs, die verfügbar gemacht werden Unicode verwenden nur Zeichensätze.  Einzelbyte-Funktionen wurden für die Portierung umfangreicher Codebasen beibehalten, sollten aber ansonsten vermieden werden, und es sollten stattdessen nach Möglichkeit die entsprechenden Breitzeichen-Funktionen verwendet werden.|
+|Einzelbyte-Zeichenfolgenfunktionen, z. B. `strcat`, `strcpy`, `strlwr`usw.|Erstellen Sie Ihre UWP-apps strikt in Unicode, weil alle Win32-APIs und Windows-Runtime APIs, die verfügbar gemacht werden, nur Unicode-Zeichensätze verwenden.  Einzelbyte-Funktionen wurden für die Portierung umfangreicher Codebasen beibehalten, sollten aber ansonsten vermieden werden, und es sollten stattdessen nach Möglichkeit die entsprechenden Breitzeichen-Funktionen verwendet werden.|
 |Stream-E/A- und Datei-E/A-Funktionen auf niedriger Ebene, z. B. `fopen`, `open`usw.|Diese Funktionen sind synchron, was für Apps für die universelle Windows-Plattform nicht empfohlen wird. Verwenden Sie in Ihren Apps für die universelle Windows-Plattform asynchrone APIs, um Dateien zu öffnen, aus Dateien zu lesen und in Dateien zu schreiben, damit das Sperren des UI-Threads verhindert wird. Beispiele für derartige APIs finden Sie in der `Windows::Storage::FileIO` -Klasse.|
 
 ## <a name="windows-8x-store-apps-and-windows-phone-8x-apps"></a>Windows 8.x Store-Apps und Windows Phone 8.x-Apps

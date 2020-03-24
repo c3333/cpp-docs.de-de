@@ -9,12 +9,12 @@ helpviewer_keywords:
 - keywords [C++]
 - Managed Extensions for C++, replacement syntax
 ms.assetid: 1e400ee6-3ac9-4910-a608-9d3d5993e423
-ms.openlocfilehash: 1e47a138fece021cf015884222d8cf5c766655fd
-ms.sourcegitcommit: 7750e4c291d56221c8893120c56a1fe6c9af60d6
+ms.openlocfilehash: 6b3add1c0de8aa1f8ec66e8d220443c4a0efd704
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "79544760"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172464"
 ---
 # <a name="component-extensions-for-net-and-uwp"></a>Komponentenerweiterungen für .NET und UWP
 
@@ -106,7 +106,7 @@ Die folgenden Typdeklaratoren weisen die Laufzeit an, die Lebensdauer und das L�
 
 In diesem Abschnitt werden weitere Programmierungskonstrukte sowie Themen aufgeführt, die die CLR betreffen.
 
-|Thema|Beschreibung|
+|Thema|BESCHREIBUNG|
 |-----------|-----------------|
 |[__identifier (C++/CLI)](identifier-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht die Verwendung von Schlüsselwörtern als Bezeichner.|
 |[Variable Argumentlisten (...) (C++/CLI)](variable-argument-lists-dot-dot-dot-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht es einer Funktion, eine variable Anzahl von Argumenten zu akzeptieren.|
@@ -130,7 +130,7 @@ In diesem Abschnitt werden weitere Programmierungskonstrukte sowie Themen aufgef
 |[#using-Direktive](../preprocessor/hash-using-directive-cpp.md)|Importiert externe Assemblys.|
 |[XML-Dokumentation](../build/reference/xml-documentation-visual-cpp.md)|Erläutert die XML-basierte Codedokumentation mit [/doc (Verarbeiten von Dokumentationskommentaren) (C/C++)](../build/reference/doc-process-documentation-comments-c-cpp.md).|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)<br/>
 [Interoperabilität von nativem Code und .NET](../dotnet/native-and-dotnet-interoperability.md)

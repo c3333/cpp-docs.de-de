@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - RemoveReference structure
 ms.assetid: 43ff91bb-815a-440e-b9fb-7dcbb7c863af
-ms.openlocfilehash: 342980ac9a7cae8a98ffd0f367c666487e34e5de
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7753c1ad41f12fa8c14d2f10c9e2f91e043a5846
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62231309"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213602"
 ---
 # <a name="removereference-structure"></a>RemoveReference-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,30 +34,30 @@ struct RemoveReference<T&&>;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine Klasse.
+Eine-Klasse.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Entfernt das Merkmal "Verweis" oder "Rvalue-Verweis" aus der angegebenen Klasse Template-Parameter.
+Entfernt den Verweis oder das rvalue-Verweis Merkmal aus dem angegebenen Klassen Vorlagen Parameter.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`Type`|Synonym für den Klassenvorlagenparameter.|
+|`Type`|Synonym für den Klassen Vorlagen Parameter.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `RemoveReference`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** internal.h
+**Header:** intern. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

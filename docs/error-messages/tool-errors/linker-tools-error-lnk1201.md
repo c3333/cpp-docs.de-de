@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1201
 ms.assetid: 64c3f496-a428-4b54-981e-faa82ef9c8a1
-ms.openlocfilehash: c5cbb9a7159a976ad0f96f46462669cff7b19f26
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8d02743333c02c7cdff3b75e4a16bfecda442fa9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62213263"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195109"
 ---
 # <a name="linker-tools-error-lnk1201"></a>Linkertoolfehler LNK1201
 
-Fehler beim Schreiben in die Programmdatenbank 'Dateiname'; nicht genügend Speicherplatz, Ungültiger Pfad oder keine ausreichenden Berechtigungen überprüfen
+Fehler beim Schreiben in die Programmdatenbank "Dateiname". auf unzureichenden Speicherplatz, ungültigen Pfad oder unzureichende Berechtigungen überprüfen
 
-LINK konnte nicht in die Programmdatenbank (PDB) für die Ausgabedatei schreiben.
+Der Link konnte nicht in die Programmdatenbank (PDB) für die Ausgabedatei schreiben.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Die Datei ist beschädigt. Löschen Sie die PDB-Datei und anschließend.
+1. Die Datei ist beschädigt. Löschen Sie die PDB-Datei, und verknüpfen Sie Sie neu.
 
 1. Nicht genügend Speicherplatz zum Schreiben der Datei.
 
-1. Laufwerk ist nicht verfügbar ist, möglicherweise aufgrund eines Netzwerkproblems.
+1. Das Laufwerk ist möglicherweise aufgrund eines Netzwerk Problems nicht verfügbar.
 
-1. Der Debugger ist auf die Anwendung, die Sie verknüpfen möchten.
+1. Der Debugger ist auf dem Programm aktiv, das Sie verknüpfen möchten.
 
-1. Kein weiterer Heapspeicher verfügbar.  Finden Sie unter [C1060](../../error-messages/compiler-errors-1/fatal-error-c1060.md) für Weitere Informationen.
+1. Nicht genügend Heap Speicher.  Weitere Informationen finden Sie unter [C1060](../../error-messages/compiler-errors-1/fatal-error-c1060.md) .

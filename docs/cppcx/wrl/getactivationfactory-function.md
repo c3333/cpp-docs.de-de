@@ -9,16 +9,16 @@ f1_keywords:
 helpviewer_keywords:
 - GetActivationFactory function
 ms.assetid: 5736d285-6beb-42aa-8788-e261c0010afe
-ms.openlocfilehash: 3e138eee9e5bc02971cd1eb34c78f2be4ad5c9a0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 430b4ed3f6a02fd3db2bcab05fbb7f21f5367b5c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398419"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213979"
 ---
 # <a name="getactivationfactory-function"></a>GetActivationFactory-Funktion
 
-Ruft eine aktivierungsfactory für den durch die Template-Parameter angegebenen Typ ab.
+Ruft eine aktivierungfactory für den Typ ab, der vom Vorlagen Parameter angegeben wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,24 +33,24 @@ inline HRESULT GetActivationFactory(
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Vorlagenparameter, der angibt, welche die aktivierungsfactory.
+Ein Vorlagen Parameter, der den Typ der Aktivierungs Factory angibt.
 
-*activatableClassId*<br/>
-Der Name der Klasse, die die Aktivierungs-Factory erstellt werden kann.
+*activatableclassid*<br/>
+Der Name der Klasse, die von der Aktivierungs Factory erzeugt werden kann.
 
-*factory*<br/>
-Wenn dieser Vorgang abgeschlossen ist, einen Verweis auf die aktivierungsfactory für den Typ *T*.
+*schen*<br/>
+Wenn dieser Vorgang abgeschlossen ist, ein Verweis auf die aktivierungsfactory für Typ *T*.
 
 ## <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehler HRESULT, der angibt, warum dieser Vorgang fehlgeschlagen ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
-**Namespace:** Windows::Foundation
+**Namespace:** Windows:: Foundation
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows::Foundation-Namespace](windows-foundation-namespace.md)

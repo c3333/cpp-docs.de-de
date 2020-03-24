@@ -1,18 +1,18 @@
 ---
-title: 'Vorgehensweise: Deklarieren von inneren Zeigern mit dem const-Schlüsselwort (C++/CLI)'
+title: 'Gewusst wie: Deklarieren von inneren Zeigern mit dem const-Schlüsselwort (C++/CLI)'
 ms.date: 10/12/2018
 ms.topic: reference
 helpviewer_keywords:
 - pointers, interior
 ms.assetid: 64e08b0e-9396-4046-ab51-8f6588f32330
-ms.openlocfilehash: 62daa255749747e3c4b9b24e29d38c0cb6f50d0f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 9515abb6fed2ffd2c818fc14eae321bfcc856ce5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515775"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172308"
 ---
-# <a name="how-to-declare-interior-pointers-with-the-const-keyword-ccli"></a>Vorgehensweise: Deklarieren von inneren Zeigern mit dem const-Schlüsselwort (C++/CLI)
+# <a name="how-to-declare-interior-pointers-with-the-const-keyword-ccli"></a>Gewusst wie: Deklarieren von inneren Zeigern mit dem const-Schlüsselwort (C++/CLI)
 
 Das folgende Beispiel zeigt, wie Sie **const** in der Deklaration eines inneren Zeigers verwenden.
 
@@ -78,6 +78,6 @@ int main() {
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [interior_ptr (C++/CLI)](interior-ptr-cpp-cli.md)

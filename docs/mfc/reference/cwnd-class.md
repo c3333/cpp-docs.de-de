@@ -818,12 +818,12 @@ helpviewer_keywords:
 - CWnd [MFC], WindowProc
 - CWnd [MFC], m_hWnd
 ms.assetid: 49a832ee-bc34-4126-88b3-bc1d9974f6c4
-ms.openlocfilehash: 1f0338d827a9ec92747169ff2682e6d47485e4c2
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 8932459a9add2334c04053242f6eccfca1830536
+ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426396"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80150978"
 ---
 # <a name="cwnd-class"></a>CWnd-Klasse
 
@@ -835,17 +835,17 @@ Stellt die Basisfunktionalität aller Fensterklassen der Microsoft Foundation Cl
 class CWnd : public CCmdTarget
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CWnd:: CWnd](#cwnd)|Erstellt ein `CWnd`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CWnd:: accDoDefaultAction](#accdodefaultaction)|Wird durch das Framework aufgerufen, um die Standardaktion des Objekts auszuführen.|
 |[CWnd:: accHitTest](#acchittest)|Wird durch das Framework aufgerufen, um das untergeordnete Element oder untergeordnete Objekt an einem bestimmten Punkt auf dem Bildschirm abzurufen.|
@@ -1088,7 +1088,7 @@ class CWnd : public CCmdTarget
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CWnd::D EFAULT](#default)|Ruft die standardmäßige Fensterprozedur auf, die eine standardmäßige Verarbeitung für Fenstermeldungen bereitstellt, die von einer Anwendung nicht verarbeitet werden.|
 |[CWnd::D efwindowproc](#defwindowproc)|Ruft die standardmäßige Fensterprozedur auf, die eine standardmäßige Verarbeitung für Fenstermeldungen bereitstellt, die von einer Anwendung nicht verarbeitet werden.|
@@ -1259,7 +1259,7 @@ class CWnd : public CCmdTarget
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CWnd:: Operator-HWND](#operator_hwnd)|Nehmen Sie einen Aufruf vor, um ein Handle zu einem Fenster zu erhalten.|
 |[CWnd:: Operator! =](#operator_neq)|Bestimmt, ob ein Fenster nicht mit dem Fenster identisch ist, dessen Handle [m_hWnd](#m_hwnd)ist.|
@@ -1267,11 +1267,11 @@ class CWnd : public CCmdTarget
 
 ### <a name="public-data-members"></a>Öffentliche Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CWnd:: m_hWnd](#m_hwnd)|Gibt das HWND an, das an dieses `CWnd`angefügt ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein `CWnd`-Objekt unterscheidet sich von einem Windows-Fenster, aber beide sind jedoch eng miteinander verknüpft. Ein `CWnd`-Objekt wird durch den `CWnd`-Konstruktor und -Dekonstruktor erstellt oder zerstört. Das Windows-Fenster hingegen ist eine interne Datenstruktur von Windows, die von einer `Create`-Element Funktion erstellt und vom virtuellen debugtor `CWnd` gelöscht wird. Die [DestroyWindow](#destroywindow) -Funktion zerstört das Windows-Fenster, ohne das Objekt zu zerstören.
 
@@ -1295,11 +1295,11 @@ Weitere Informationen zur Verwendung von `CWnd`finden Sie unter [Rahmen Fenster]
 
 `CWnd`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
-##  <a name="accdodefaultaction"></a>CWnd:: accDoDefaultAction
+##  <a name="cwndaccdodefaultaction"></a><a name="accdodefaultaction"></a>CWnd:: accDoDefaultAction
 
 Wird durch das Framework aufgerufen, um die Standardaktion des Objekts auszuführen.
 
@@ -1316,13 +1316,13 @@ Gibt an, ob die Standardaktion, die aufgerufen werden soll, die des Objekts oder
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie in der Windows SDK unter **Rückgabewerte** in " [IAccessible:: accDoDefaultAction](/windows/win32/api/oleacc/nf-oleacc-iaccessible-accdodefaultaction) ".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
 Überschreiben Sie diese Funktion in der von `CWnd`abgeleiteten Klasse, um die Standardaktion des Objekts auszuführen. Weitere Informationen finden Sie unter [IAccessible:: accDoDefaultAction](/windows/win32/api/oleacc/nf-oleacc-iaccessible-accdodefaultaction) in der Windows SDK.
 
-##  <a name="acchittest"></a>CWnd:: accHitTest
+##  <a name="cwndacchittest"></a><a name="acchittest"></a>CWnd:: accHitTest
 
 Wird durch das Framework aufgerufen, um das untergeordnete Element oder untergeordnete Objekt an einem bestimmten Punkt auf dem Bildschirm abzurufen.
 
@@ -1348,7 +1348,7 @@ Empfängt Informationen, die das Objekt an dem Punkt identifizieren, der von *xL
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::accHitTest` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -1356,7 +1356,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: accHitTest](/windows/win32/api/oleacc/nf-oleacc-iaccessible-acchittest) in der Windows SDK.
 
-##  <a name="acclocation"></a>CWnd:: accLocation
+##  <a name="cwndacclocation"></a><a name="acclocation"></a>CWnd:: accLocation
 
 Wird durch das Framework aufgerufen, um die aktuelle Bildschirmposition des angegebenen Objekts abzurufen.
 
@@ -1390,13 +1390,13 @@ Gibt an, ob der abzurufende Speicherort der des Objekts oder eines der untergeor
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::accLocation` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion in der von `CWnd`abgeleiteten Klasse, wenn Sie keine Benutzeroberflächen Elemente (außer fensterlose ActiveX-Steuerelemente, die von MFC behandelt werden) enthalten.
 
 Weitere Informationen finden Sie unter `IAccessible::accLocation` in der Windows SDK.
 
-##  <a name="accnavigate"></a>CWnd:: accNavigate
+##  <a name="cwndaccnavigate"></a><a name="accnavigate"></a>CWnd:: accNavigate
 
 Wird durch das Framework aufgerufen, um zu einem anderen Benutzer-Schnittstellenelement innerhalb eines Containers zu gelangen und wenn möglich, das Objekt abzurufen.
 
@@ -1422,7 +1422,7 @@ Empfängt Informationen über das Ziel Benutzeroberflächen Objekt. Weitere Info
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::accNavigate` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -1430,7 +1430,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: accNavigate](/windows/win32/api/oleacc/nf-oleacc-iaccessible-accnavigate) in der Windows SDK.
 
-##  <a name="accselect"></a>CWnd:: accSelect
+##  <a name="cwndaccselect"></a><a name="accselect"></a>CWnd:: accSelect
 
 Wird durch das Framework aufgerufen, um die Auswahl zu ändern oder den Tastaturfokus des angegebenen Objekts zu verschieben.
 
@@ -1452,7 +1452,7 @@ Gibt das auszuwählende Objekt an. Dieser Parameter kann entweder CHILDID_SELF (
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::accSelect` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -1460,7 +1460,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: accSelect](/windows/win32/api/oleacc/nf-oleacc-iaccessible-accselect) in der Windows SDK.
 
-##  <a name="animatewindow"></a>CWnd:: animatewindow
+##  <a name="cwndanimatewindow"></a><a name="animatewindow"></a>CWnd:: animatewindow
 
 Erzeugt besondere Effekte, wenn Fenster angezeigt oder ausgeblendet werden.
 
@@ -1482,11 +1482,11 @@ Gibt den Typ der Animation an. Eine vollständige Liste möglicher Werte finden 
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [animatewindow](/windows/win32/api/winuser/nf-winuser-animatewindow)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="arrangeiconicwindows"></a>CWnd:: arrangeirewindows-Fenster
+##  <a name="cwndarrangeiconicwindows"></a><a name="arrangeiconicwindows"></a>CWnd:: arrangeirewindows-Fenster
 
 Ordnet alle minimierten untergeordneten Fenster (Symbole).
 
@@ -1498,7 +1498,7 @@ UINT ArrangeIconicWindows();
 
 Die Höhe einer Zeile von Symbolen, wenn die Funktion erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion ordnet auch Symbole im Desktop Fenster an, das den gesamten Bildschirm abdeckt. Die [GetDesktopWindow](#getdesktopwindow) -Member-Funktion Ruft einen Zeiger auf das Desktop Fenster Objekt ab.
 
@@ -1508,7 +1508,7 @@ Zum Anordnen von untergeordneten MDI-Fenstern in einem MDI-Client Fenster, nenne
 
 [!code-cpp[NVC_MFCWindowing#66](../../mfc/reference/codesnippet/cpp/cwnd-class_1.cpp)]
 
-##  <a name="attach"></a>CWnd:: Attach
+##  <a name="cwndattach"></a><a name="attach"></a>CWnd:: Attach
 
 Fügt ein Windows-Fenster an ein `CWnd` Objekt an.
 
@@ -1535,7 +1535,7 @@ In diesem Beispiel wird gezeigt, wie Sie anfügen und trennen verwenden, um das 
 
 [!code-cpp[NVC_MFCWindowing#69](../../mfc/reference/codesnippet/cpp/cwnd-class_4.cpp)]
 
-##  <a name="beginmodalstate"></a>CWnd:: beginmodalstate
+##  <a name="cwndbeginmodalstate"></a><a name="beginmodalstate"></a>CWnd:: beginmodalstate
 
 Rufen Sie diese Memberfunktion auf, um ein Framefenster modal zu machen.
 
@@ -1543,7 +1543,7 @@ Rufen Sie diese Memberfunktion auf, um ein Framefenster modal zu machen.
 virtual void BeginModalState();
 ```
 
-##  <a name="beginpaint"></a>CWnd:: BeginPaint
+##  <a name="cwndbeginpaint"></a><a name="beginpaint"></a>CWnd:: BeginPaint
 
 Bereitet `CWnd` für das Zeichnen und Ausfüllen einer `PAINTSTRUCT` Datenstruktur mit Informationen zum Zeichnen vor.
 
@@ -1560,7 +1560,7 @@ Verweist auf die [paintstruct](/windows/win32/api/winuser/ns-winuser-paintstruct
 
 Identifiziert den Gerätekontext für `CWnd`. Der Zeiger kann temporär sein und sollte nicht über den Gültigkeitsbereich von [endpaint](#endpaint)hinaus gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Paint-Struktur enthält eine Rect-Datenstruktur, die über das kleinste Rechteck verfügt, das den Update Bereich vollständig einschließt, und ein Flag, das angibt, ob der Hintergrund gelöscht wurde.
 
@@ -1572,7 +1572,7 @@ Verwenden Sie die `BeginPaint` Member-Funktion nicht als Antwort auf eine [WM_PA
 
 [!code-cpp[NVC_MFCWindowing#70](../../mfc/reference/codesnippet/cpp/cwnd-class_5.cpp)]
 
-##  <a name="binddefaultproperty"></a>CWnd:: BindDefaultProperty
+##  <a name="cwndbinddefaultproperty"></a><a name="binddefaultproperty"></a>CWnd:: BindDefaultProperty
 
 Bindet die in der Typbibliothek markierte standardmäßige einfache gebundene Eigenschaft des aufrufenden Objekts an den zugrunde liegenden Cursor, der durch die Eigenschaften DataSource, username, Password und SQL des Datenquellen-Steuer Elements definiert wird.
 
@@ -1598,7 +1598,7 @@ Gibt den Namen der Spalte in dem Cursor an, der vom Datenquellen-Steuerelement b
 *pdscwnd*<br/>
 Verweist auf das Fenster, das das Datenquellen-Steuerelement hostet, an das die Eigenschaft gebunden wird. Rufen Sie `GetDlgItem` mit der Ressourcen-ID des Host Fensters der DCS auf, um diesen Zeiger abzurufen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `CWnd` Objekt, für das Sie diese Funktion aufzurufen, muss ein Daten gebundenes Steuerelement sein.
 
@@ -1608,7 +1608,7 @@ Das `CWnd` Objekt, für das Sie diese Funktion aufzurufen, muss ein Daten gebund
 
 [!code-cpp[NVC_MFC_AxDataBinding#2](../../mfc/reference/codesnippet/cpp/cwnd-class_7.cpp)]
 
-##  <a name="bindproperty"></a>CWnd:: BindProperty
+##  <a name="cwndbindproperty"></a><a name="bindproperty"></a>CWnd:: BindProperty
 
 Bindet eine Cursor gebundene Eigenschaft an ein Daten gebundenes Steuerelement (z. b. ein Raster Steuerelement) an ein Datenquellen-Steuerelement und registriert diese Beziehung mit dem MFC-Bindungs-Manager.
 
@@ -1626,7 +1626,7 @@ Gibt die DISPID einer Eigenschaft in einem Daten gebundenen Steuerelement an, da
 *pwnddsc*<br/>
 Verweist auf das Fenster, das das Datenquellen-Steuerelement hostet, an das die Eigenschaft gebunden wird. Rufen Sie `GetDlgItem` mit der Ressourcen-ID des Host Fensters der DCS auf, um diesen Zeiger abzurufen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `CWnd` Objekt, für das Sie diese Funktion aufzurufen, muss ein Daten gebundenes Steuerelement sein.
 
@@ -1636,7 +1636,7 @@ Das `CWnd` Objekt, für das Sie diese Funktion aufzurufen, muss ein Daten gebund
 
 [!code-cpp[NVC_MFC_AxDataBinding#4](../../mfc/reference/codesnippet/cpp/cwnd-class_9.cpp)]
 
-##  <a name="bringwindowtotop"></a>CWnd:: bringwindowtoptop
+##  <a name="cwndbringwindowtotop"></a><a name="bringwindowtotop"></a>CWnd:: bringwindowtoptop
 
 Bringt `CWnd` nach oben im Stapel überlappender Fenster.
 
@@ -1644,7 +1644,7 @@ Bringt `CWnd` nach oben im Stapel überlappender Fenster.
 void BringWindowToTop();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Darüber hinaus aktiviert `BringWindowToTop` Popupfenster, Fenster der obersten Ebene und untergeordnete MDI-Fenster. Die Memberfunktion `BringWindowToTop` sollte dazu verwendet werden, um jedes Fenster aufzudecken, das von irgendeinem überlappenden Fenster teilweise oder vollständig verdeckt ist.
 
@@ -1654,7 +1654,7 @@ Diese Funktion ruft nur die Win32-Funktion " [bringwindowdetop](/windows/win32/a
 
 [!code-cpp[NVC_MFCWindowing#71](../../mfc/reference/codesnippet/cpp/cwnd-class_10.cpp)]
 
-##  <a name="calcwindowrect"></a>CWnd:: calcwindowrect
+##  <a name="cwndcalcwindowrect"></a><a name="calcwindowrect"></a>CWnd:: calcwindowrect
 
 Berechnet das Fenster Rechteck, das das angegebene Client Rechteck enthalten kann.
 
@@ -1672,7 +1672,7 @@ virtual void CalcWindowRect(
 *Typ "nanpassungen"*<br/>
 in Verwenden Sie `CWnd::adjustBorder`, um Fenster Koordinaten ohne den WS_EX_CLIENTEDGE Stil zu berechnen. Verwenden Sie andernfalls `CWnd::adjustOutside`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Größe des berechneten Fenster Rechtecks enthält keinen Platz für eine Menüleiste.
 
@@ -1682,7 +1682,7 @@ Weitere Verwendungs [Beschränkungen finden Sie](/windows/win32/api/winuser/nf-w
 
 [!code-cpp[NVC_MFCWindowing#72](../../mfc/reference/codesnippet/cpp/cwnd-class_11.cpp)]
 
-##  <a name="canceltooltips"></a>CWnd:: canceltooltips
+##  <a name="cwndcanceltooltips"></a><a name="canceltooltips"></a>CWnd:: canceltooltips
 
 Mit dieser Member-Funktion können Sie eine QuickInfo aus dem Bildschirm entfernen, wenn derzeit eine QuickInfo angezeigt wird.
 
@@ -1695,7 +1695,7 @@ static void PASCAL CancelToolTips(BOOL bKeys = FALSE);
 *bkeys*<br/>
 TRUE, wenn Quick Infos abgebrochen werden, wenn eine Taste gedrückt wird, und der Status leisten Text auf den Standardwert festgelegt wird. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Die Verwendung dieser Member-Funktion hat keine Auswirkung auf Quick Infos, die von Ihrem Code verwaltet werden. Er wirkt sich nur auf das QuickInfo-Steuerelement aus, das von [CWnd:: EnableToolTips](#enabletooltips)verwaltet wird.
@@ -1704,7 +1704,7 @@ TRUE, wenn Quick Infos abgebrochen werden, wenn eine Taste gedrückt wird, und d
 
 [!code-cpp[NVC_MFCWindowing#73](../../mfc/reference/codesnippet/cpp/cwnd-class_12.cpp)]
 
-##  <a name="centerwindow"></a>CWnd:: CenterWindow
+##  <a name="cwndcenterwindow"></a><a name="centerwindow"></a>CWnd:: CenterWindow
 
 Zentriert ein Fenster relativ zu dessen übergeordnetem Element.
 
@@ -1717,7 +1717,7 @@ void CenterWindow(CWnd* pAlternateOwner = NULL);
 *palternateowner*<br/>
 Zeiger auf ein alternatives Fenster, relativ zu dem es zentriert wird (mit Ausnahme des übergeordneten Fensters).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wird in der Regel von [CDialog:: OnInitDialog](../../mfc/reference/cdialog-class.md#oninitdialog) zum Zentrieren von Dialogfeldern in Bezug auf das Hauptfenster der Anwendung aufgerufen. Standardmäßig werden untergeordnete Fenster in Bezug auf das übergeordnete Fenster und Popup Fenster relativ zu ihrem Besitzer zentriert. Wenn das Popup Fenster nicht im Besitz ist, wird es relativ zum Bildschirm zentriert. Um ein Fenster relativ zu einem bestimmten Fenster zu zentrieren, das nicht der Besitzer oder das übergeordnete Fenster ist, kann der Parameter " *palternateowner* " auf ein gültiges Fenster festgelegt werden. Um das Zentrieren in Relation zum Bildschirm zu erzwingen, übergeben Sie den von [CWnd:: GetDesktopWindow](#getdesktopwindow) zurückgegebenen Wert als *palternateowner*.
 
@@ -1725,7 +1725,7 @@ Wird in der Regel von [CDialog:: OnInitDialog](../../mfc/reference/cdialog-class
 
 [!code-cpp[NVC_MFCWindowing#74](../../mfc/reference/codesnippet/cpp/cwnd-class_13.cpp)]
 
-##  <a name="changeclipboardchain"></a>CWnd:: changeclipboardchain
+##  <a name="cwndchangeclipboardchain"></a><a name="changeclipboardchain"></a>CWnd:: changeclipboardchain
 
 Entfernt `CWnd` aus der Kette der Zwischenablage-Viewer und macht das Fenster, das von *hwndnext* angegeben wird, als Nachfolger der `CWnd` Vorgänger in der Kette.
 
@@ -1742,7 +1742,7 @@ Identifiziert das Fenster, das `CWnd` in der Zwischenablage-Viewer-Kette folgt.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-##  <a name="checkdlgbutton"></a>CWnd:: checkdlgbutton
+##  <a name="cwndcheckdlgbutton"></a><a name="checkdlgbutton"></a>CWnd:: checkdlgbutton
 
 Wählt eine Schaltfläche aus (platziert ein Häkchen neben) oder löscht sie (entfernt ein Häkchen) oder ändert den Zustand einer Schaltfläche mit drei Zuständen.
 
@@ -1760,7 +1760,7 @@ Gibt die Schaltfläche an, die geändert werden soll.
 *nPrüfen*<br/>
 Gibt die auszuführende Aktion an. Wenn *ncheck* nicht NULL ist, platziert die `CheckDlgButton` Member-Funktion ein Häkchen neben der Schaltfläche. Wenn der Wert 0 ist, wird das Häkchen entfernt. Bei drei-Status-Schaltflächen, wenn *ncheck* 2 ist, ist der Schaltflächen Zustand unbestimmt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `CheckDlgButton`-Funktion sendet eine [BM_SETCHECK](/windows/win32/Controls/bm-setcheck) Meldung an die angegebene Schaltfläche.
 
@@ -1768,7 +1768,7 @@ Die `CheckDlgButton`-Funktion sendet eine [BM_SETCHECK](/windows/win32/Controls/
 
 [!code-cpp[NVC_MFCWindowing#75](../../mfc/reference/codesnippet/cpp/cwnd-class_14.cpp)]
 
-##  <a name="checkradiobutton"></a>CWnd:: checkradio Button
+##  <a name="cwndcheckradiobutton"></a><a name="checkradiobutton"></a>CWnd:: checkradio Button
 
 Wählt eine angegebene Options Schaltfläche in einer Gruppe aus (Fügt ein Häkchen hinzu) und löscht (entfernt ein Häkchen) alle anderen Options Felder in der Gruppe.
 
@@ -1790,7 +1790,7 @@ Gibt den ganzzahligen Bezeichner des letzten Options Felds in der Gruppe an.
 *nidcheckbutton*<br/>
 Gibt den ganzzahligen Bezeichner des Options Felds an, das geprüft werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `CheckRadioButton`-Funktion sendet eine [BM_SETCHECK](/windows/win32/Controls/bm-setcheck) Meldung an das angegebene Optionsfeld.
 
@@ -1798,7 +1798,7 @@ Die `CheckRadioButton`-Funktion sendet eine [BM_SETCHECK](/windows/win32/Control
 
 [!code-cpp[NVC_MFCWindowing#76](../../mfc/reference/codesnippet/cpp/cwnd-class_15.cpp)]
 
-##  <a name="childwindowfrompoint"></a>CWnd:: childwindowfrompoint
+##  <a name="cwndchildwindowfrompoint"></a><a name="childwindowfrompoint"></a>CWnd:: childwindowfrompoint
 
 Bestimmt, welche der untergeordneten Fenster, die zu `CWnd` gehören, den angegebenen Punkt enthält.
 
@@ -1818,7 +1818,7 @@ Gibt die Client Koordinaten des zu testenden Punkts an.
 *nFlags*<br/>
 Gibt an, welche untergeordneten Fenster übersprungen werden sollen. Dieser Parameter kann eine Kombination der folgenden Werte sein:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |CWP_ALL|Untergeordnete Fenster nicht überspringen|
 |CWP_SKIPINVISIBLE|Unsichtbare untergeordnete Fenster überspringen|
@@ -1839,7 +1839,7 @@ Der `CWnd`*, der zurückgegeben wird, kann temporär sein und sollte nicht für 
 
 [!code-cpp[NVC_MFCWindowing#77](../../mfc/reference/codesnippet/cpp/cwnd-class_16.cpp)]
 
-##  <a name="clienttoscreen"></a>CWnd:: clientdescreen
+##  <a name="cwndclienttoscreen"></a><a name="clienttoscreen"></a>CWnd:: clientdescreen
 
 Konvertiert die Clientkoordinaten eines bestimmten Punkts oder Rechtecks auf der Anzeige zu Bildschirmkoordinaten.
 
@@ -1855,7 +1855,7 @@ Verweist auf eine [Punkt Struktur](/windows/win32/api/windef/ns-windef-point) od
 *lprect*<br/>
 Verweist auf eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) oder `CRect` Objekt, das die zu konvertierenden Client Koordinaten enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `ClientToScreen` Member-Funktion verwendet die Client Koordinaten in der `POINT`-oder `RECT` Struktur oder das `CPoint`-oder `CRect` Objekt, auf das von *lpPoint* oder *lprect* verwiesen wird, um neue Bildschirm Koordinaten zu berechnen. Anschließend werden die Koordinaten in der-Struktur durch die neuen Koordinaten ersetzt. Die neuen Bildschirm Koordinaten sind relativ zur oberen linken Ecke der System Anzeige.
 
@@ -1865,7 +1865,7 @@ Die `ClientToScreen` Member-Funktion geht davon aus, dass sich der angegebene Pu
 
 [!code-cpp[NVC_MFCWindowing#78](../../mfc/reference/codesnippet/cpp/cwnd-class_17.cpp)]
 
-##  <a name="closewindow"></a>CWnd:: CloseWindow
+##  <a name="cwndclosewindow"></a><a name="closewindow"></a>CWnd:: CloseWindow
 
 Minimiert das Fenster.
 
@@ -1873,11 +1873,11 @@ Minimiert das Fenster.
 void CloseWindow();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion [CloseWindow](/windows/win32/api/winuser/nf-winuser-closewindow), wie im Windows SDK beschrieben.
 
-##  <a name="continuemodal"></a>CWnd:: continuemodal
+##  <a name="cwndcontinuemodal"></a><a name="continuemodal"></a>CWnd:: continuemodal
 
 Diese Member-Funktion wird von [runmodzuzuordnungs](#runmodalloop) aufgerufen, um zu bestimmen, wann der modale Zustand beendet werden soll.
 
@@ -1889,11 +1889,11 @@ virtual BOOL ContinueModal();
 
 Ungleich NULL, wenn die modale Schleife fortgesetzt werden soll. 0, wenn [endmodzuweisung](#endmodalloop) aufgerufen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig wird ein Wert ungleich 0 (null) zurückgegeben, bis `EndModalLoop` aufgerufen wird.
 
-##  <a name="create"></a>CWnd:: Create
+##  <a name="cwndcreate"></a><a name="create"></a>CWnd:: Create
 
 Erstellt das angegebene untergeordnete Fenster und fügt es an das [CWnd](../../mfc/reference/cwnd-class.md) -Objekt an.
 
@@ -1935,7 +1935,7 @@ in Ein Zeiger auf eine [ckreatecontext](../../mfc/reference/ccreatecontext-struc
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!WARNING]
 > `CWnd::PreCreateWindow` weist jetzt den HMENU-Member seines `CREATESTRUCT`-Parameters dem **this** -Zeiger zu, wenn das Menü NULL ist und der Stil WS_CHILD enthält. Stellen Sie sicher, dass das Dialogfeld Steuerelement über eine ID verfügt, die nicht NULL ist.
@@ -1950,7 +1950,7 @@ Die [CWnd:: OnCreate](#oncreate) -Methode wird aufgerufen, bevor die `Create`-Me
 
 [!code-cpp[NVC_MFCWindowing#79](../../mfc/reference/codesnippet/cpp/cwnd-class_18.cpp)]
 
-##  <a name="createaccessibleproxy"></a>CWnd:: kreateaccessibleproxy
+##  <a name="cwndcreateaccessibleproxy"></a><a name="createaccessibleproxy"></a>CWnd:: kreateaccessibleproxy
 
 Erstellt einen Active Accessibility-Proxy für das angegebene Objekt.
 
@@ -1966,7 +1966,7 @@ virtual HRESULT CreateAccessibleProxy(
 *wParam*<br/>
 Identifiziert das Objekt, auf das der Active Accessibility Proxy zugreift. Kann einer der folgenden Werte sein:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |OBJID_CLIENT|Bezieht sich auf den Client Bereich des Fensters.|
 
@@ -1976,11 +1976,11 @@ Stellt zusätzliche Nachrichten abhängige Informationen bereit.
 *pResult*<br/>
 Ein Zeiger auf ein LRESULT, das den Ergebniscode speichert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Erstellt einen Active Accessibility-Proxy für das angegebene Objekt.
 
-##  <a name="createcaret"></a>CWnd:: kreatecaret
+##  <a name="cwndcreatecaret"></a><a name="createcaret"></a>CWnd:: kreatecaret
 
 Erstellt eine neue Form für die System Einfügemarke und beansprucht den Besitz der Einfügemarke.
 
@@ -1993,7 +1993,7 @@ void CreateCaret(CBitmap* pBitmap);
 *pbitmap*<br/>
 Bezeichnet die Bitmap, die die Form des Caretzeichen definiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Bitmap muss zuvor von der Element Funktion [CBitmap:: deatebitmap](../../mfc/reference/cbitmap-class.md#createbitmap) , der Windows-Funktion " [winatedibitmap](/windows/win32/api/wingdi/nf-wingdi-createdibitmap) " oder der [CBitmap:: LoadBitmap](../../mfc/reference/cbitmap-class.md#loadbitmap) -Member-Funktion erstellt worden sein.
 
@@ -2005,7 +2005,7 @@ Die System Einfügemarke ist eine freigegebene Ressource. `CWnd` sollten nur dan
 
 [!code-cpp[NVC_MFCWindowing#80](../../mfc/reference/codesnippet/cpp/cwnd-class_19.cpp)]
 
-##  <a name="createcontrol"></a>CWnd:: kreatecontrol
+##  <a name="cwndcreatecontrol"></a><a name="createcontrol"></a>CWnd:: kreatecontrol
 
 Verwenden Sie diese Member-Funktion, um ein ActiveX-Steuerelement zu erstellen, das im MFC-Programm von einem `CWnd`-Objekt dargestellt wird.
 
@@ -2075,7 +2075,7 @@ Gibt die ID des Steuer Elements an.
 Ein Zeiger auf eine [CFile-Datei](../../mfc/reference/cfile-class.md) , die den persistenten Zustand für das Steuerelement enthält. Der Standardwert ist NULL, was bedeutet, dass das Steuerelement selbst initialisiert wird, ohne seinen Zustand aus einem persistenten Speicher wiederherzustellen. Wenn nicht NULL, sollte es sich um einen Zeiger auf ein `CFile`von abgeleitetes Objekt handeln, das die persistenten Daten des Steuer Elements in Form eines Datenstroms oder eines Speichers enthält. Diese Daten wurden möglicherweise bei einer früheren Aktivierung des Clients gespeichert. Der `CFile` kann andere Daten enthalten, muss jedoch zum Zeitpunkt des Aufruf`CreateControl`auf das erste Byte der persistenten Daten festgelegt sein.
 
 *bstorage*<br/>
-Gibt an, ob die Daten in *ppersistent* als IStorage-oder IStream-Daten interpretiert werden sollen. Wenn es sich bei den *ppersistent* -Daten um einen Speicher handelt, sollte *bstorage* den Wert true haben. Wenn es sich bei den *ppersistent* -Daten um einen Stream handelt, sollte *bstorage* den Wert false aufweisen. Der Standardwert lautet "FALSE".
+Gibt an, ob die Daten in *ppersistent* als IStorage-oder IStream-Daten interpretiert werden sollen. Wenn es sich bei den *ppersistent* -Daten um einen Speicher handelt, sollte *bstorage* den Wert true haben. Wenn es sich bei den *ppersistent* -Daten um einen Stream handelt, sollte *bstorage* den Wert false aufweisen. Der Standardwert ist FALSE.
 
 *bstraulickey*<br/>
 Optionale Lizenzschlüssel Daten. Diese Daten werden nur zum Erstellen von Steuerelementen benötigt, für die ein Laufzeitlizenz Schlüssel erforderlich ist. Wenn das Steuerelement die Lizenzierung unterstützt, müssen Sie einen Lizenzschlüssel bereitstellen, damit die Erstellung des Steuer Elements erfolgreich ist. Der Standardwert ist NULL.
@@ -2087,7 +2087,7 @@ Die eindeutige Klassen-ID des Steuer Elements.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `CreateControl` ist eine direkte Analogie der [CWnd:: Create](#create) -Funktion, die das Fenster für eine `CWnd`erstellt. `CreateControl` erstellt anstelle eines normalen Fensters ein ActiveX-Steuerelement.
 
@@ -2107,7 +2107,7 @@ Nur eine Teilmenge der Windows *dwstyle* -Flags wird für `CreateControl`unterst
 
 [!code-cpp[NVC_MFCWindowing#81](../../mfc/reference/codesnippet/cpp/cwnd-class_20.h)]
 
-##  <a name="createex"></a>CWnd:: up-Ex
+##  <a name="cwndcreateex"></a><a name="createex"></a>CWnd:: up-Ex
 
 Erstellt das angegebene Fenster und fügt es an das `CWnd` Objekt an.
 
@@ -2184,7 +2184,7 @@ Bei einem untergeordneten Fenster ist die Fenster-ID andernfalls die ID eines Me
 
 TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!WARNING]
 > `CWnd::PreCreateWindow` weist jetzt den HMENU-Member seines `CREATESTRUCT`-Parameters dem **this** -Zeiger zu, wenn das Menü NULL ist und der Stil WS_CHILD enthält. Stellen Sie sicher, dass das Dialogfeld Steuerelement über eine ID verfügt, die nicht NULL ist.
@@ -2203,7 +2203,7 @@ Die [CWnd:: OnCreate](#oncreate) -Methode wird aufgerufen, bevor die `CreateEx`-
 
 [!code-cpp[NVC_MFCWindowing#82](../../mfc/reference/codesnippet/cpp/cwnd-class_21.cpp)]
 
-##  <a name="creategraycaret"></a>CWnd:: kreategraycaret
+##  <a name="cwndcreategraycaret"></a><a name="creategraycaret"></a>CWnd:: kreategraycaret
 
 Erstellt ein graues Rechteck für die System Einfügemarke und beansprucht den Besitz der Einfügemarke.
 
@@ -2221,7 +2221,7 @@ Gibt die Breite des Caretzeichen (in logischen Einheiten) an. Wenn dieser Parame
 *nheight*<br/>
 Gibt die Höhe der Einfügemarke an (in logischen Einheiten). Wenn dieser Parameter 0 ist, wird die Höhe auf die vom System definierte Fensterrahmen Höhe festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Form des Caretzeichen kann eine Linie oder ein Block sein.
 
@@ -2237,7 +2237,7 @@ Die System Einfügemarke ist eine freigegebene Ressource. `CWnd` sollten nur dan
 
 [!code-cpp[NVC_MFCWindowing#83](../../mfc/reference/codesnippet/cpp/cwnd-class_22.cpp)]
 
-##  <a name="createsolidcaret"></a>CWnd:: kreatesolidcaret
+##  <a name="cwndcreatesolidcaret"></a><a name="createsolidcaret"></a>CWnd:: kreatesolidcaret
 
 Erstellt ein voll solides Rechteck für die System Einfügemarke und beansprucht den Besitz der Einfügemarke.
 
@@ -2255,7 +2255,7 @@ Gibt die Breite des Caretzeichen (in logischen Einheiten) an. Wenn dieser Parame
 *nheight*<br/>
 Gibt die Höhe der Einfügemarke an (in logischen Einheiten). Wenn dieser Parameter 0 ist, wird die Höhe auf die vom System definierte Fensterrahmen Höhe festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Form des Caretzeichen kann eine Linie oder ein Block sein.
 
@@ -2271,7 +2271,7 @@ Die System Einfügemarke ist eine freigegebene Ressource. `CWnd` sollten nur dan
 
 [!code-cpp[NVC_MFCWindowing#84](../../mfc/reference/codesnippet/cpp/cwnd-class_23.cpp)]
 
-##  <a name="cwnd"></a>CWnd:: CWnd
+##  <a name="cwndcwnd"></a><a name="cwnd"></a>CWnd:: CWnd
 
 Erstellt ein `CWnd`-Objekt.
 
@@ -2279,11 +2279,11 @@ Erstellt ein `CWnd`-Objekt.
 CWnd();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Fenster Windows wird erst erstellt und angefügt, wenn die Funktion " [Create](#create) Member [" oder "](#createex) Create Member" aufgerufen wird.
 
-##  <a name="default"></a>CWnd::D EFAULT
+##  <a name="cwnddefault"></a><a name="default"></a>CWnd::D EFAULT
 
 Ruft die Standardfenster Prozedur auf.
 
@@ -2295,7 +2295,7 @@ LRESULT Default();
 
 Hängt von der gesendeten Nachricht ab.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die standardmäßige Fenster Prozedur bietet Standard Verarbeitung für jede Fenster Meldung, die von einer Anwendung nicht verarbeitet wird. Mit dieser Member-Funktion wird sichergestellt, dass jede Nachricht verarbeitet wird.
 
@@ -2303,7 +2303,7 @@ Die standardmäßige Fenster Prozedur bietet Standard Verarbeitung für jede Fen
 
 [!code-cpp[NVC_MFCWindowing#85](../../mfc/reference/codesnippet/cpp/cwnd-class_24.cpp)]
 
-##  <a name="defwindowproc"></a>CWnd::D efwindowproc
+##  <a name="cwnddefwindowproc"></a><a name="defwindowproc"></a>CWnd::D efwindowproc
 
 Ruft die standardmäßige Fenster Prozedur auf, die die Standard Verarbeitung für jede Fenster Meldung bereitstellt, die von einer Anwendung nicht verarbeitet wird.
 
@@ -2316,7 +2316,7 @@ virtual LRESULT DefWindowProc(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu verarbeitende Windows-Meldung an.
 
 *wParam*<br/>
@@ -2329,11 +2329,11 @@ Gibt zusätzliche Nachrichten abhängige Informationen an.
 
 Hängt von der gesendeten Nachricht ab.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit dieser Member-Funktion wird sichergestellt, dass jede Nachricht verarbeitet wird. Er sollte mit denselben Parametern aufgerufen werden, die von der Fenster Prozedur empfangen wurden.
 
-##  <a name="deletetempmap"></a>CWnd::D eletetempmap
+##  <a name="cwnddeletetempmap"></a><a name="deletetempmap"></a>CWnd::D eletetempmap
 
 Wird automatisch vom Leerlaufzeit Handler des `CWinApp` Objekts aufgerufen.
 
@@ -2341,7 +2341,7 @@ Wird automatisch vom Leerlaufzeit Handler des `CWinApp` Objekts aufgerufen.
 static void PASCAL DeleteTempMap();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Löscht alle temporären `CWnd`-Objekte, die von der `FromHandle` Member-Funktion erstellt wurden.
 
@@ -2349,7 +2349,7 @@ Löscht alle temporären `CWnd`-Objekte, die von der `FromHandle` Member-Funktio
 
 [!code-cpp[NVC_MFCWindowing#86](../../mfc/reference/codesnippet/cpp/cwnd-class_25.cpp)]
 
-##  <a name="destroywindow"></a>CWnd::D estroywindow
+##  <a name="cwnddestroywindow"></a><a name="destroywindow"></a>CWnd::D estroywindow
 
 Zerstört das an das `CWnd` Objekt angefügte Windows-Fenster.
 
@@ -2361,7 +2361,7 @@ virtual BOOL DestroyWindow();
 
 Ungleich 0 (null), wenn das Fenster zerstört wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `DestroyWindow` Member-Funktion sendet entsprechende Meldungen an das Fenster, um Sie zu deaktivieren und den Eingabefokus zu entfernen. Außerdem wird das Menü des Fensters zerstört, die Anwendungs Warteschlange geleert, ausstehende Zeitgeber zerstört, der Besitz der Zwischenablage entfernt und die Zwischenablage-Viewer-Kette unterbrochen, wenn sich `CWnd` am oberen Rand der Viewer-Kette befindet. Er sendet [WM_DESTROY](#ondestroy) -und [WM_NCDESTROY](#onncdestroy) Meldungen an das-Fenster. Das `CWnd`-Objekt wird nicht zerstört.
 
@@ -2379,7 +2379,7 @@ Wenn das `CWnd` zerstört wird, das zerstört wird und die [WS_EX_NOPARENTNOTIFY
 
 [!code-cpp[NVC_MFCWindowing#87](../../mfc/reference/codesnippet/cpp/cwnd-class_26.cpp)]
 
-##  <a name="detach"></a>CWnd::D Etach
+##  <a name="cwnddetach"></a><a name="detach"></a>CWnd::D Etach
 
 Trennt ein Windows-Handle von einem `CWnd`-Objekt und gibt das Handle zurück.
 
@@ -2395,7 +2395,7 @@ Ein HWND für das Windows-Objekt.
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: Attach](#attach).
 
-##  <a name="dlgdirlist"></a>CWnd::D lgdirlist
+##  <a name="cwnddlgdirlist"></a><a name="dlgdirlist"></a>CWnd::D lgdirlist
 
 Füllt ein Listenfeld mit einer Datei- oder Verzeichnisauflistung auf.
 
@@ -2443,7 +2443,7 @@ Gibt die Attribute der Dateien an, die angezeigt werden sollen. Dabei kann es si
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `DlgDirList` sendet [LB_RESETCONTENT](/windows/win32/Controls/lb-resetcontent) und [LB_DIR](/windows/win32/Controls/lb-dir) Meldungen an das Listenfeld. Es füllt das von *nidlistbox* angegebene Listenfeld mit den Namen aller Dateien aus, die dem von *lppathspec*angegebenen Pfad entsprechen.
 
@@ -2463,7 +2463,7 @@ Nachdem das Listenfeld ausgefüllt wurde, wird *lppathspec* aktualisiert, indem 
 
 [!code-cpp[NVC_MFCWindowing#88](../../mfc/reference/codesnippet/cpp/cwnd-class_27.cpp)]
 
-##  <a name="dlgdirlistcombobox"></a>CWnd::D lgdirlistcombobox
+##  <a name="cwnddlgdirlistcombobox"></a><a name="dlgdirlistcombobox"></a>CWnd::D lgdirlistcombobox
 
 Füllt das Listenfeld eines Kombinationsfelds mit einer Datei- oder Verzeichnisauflistung auf.
 
@@ -2511,7 +2511,7 @@ Gibt die DOS-Dateiattribute der anzuzeigenden Dateien an. Dabei kann es sich um 
 
 Gibt das Ergebnis der Funktion an. Er ist nicht NULL, wenn eine Auflistung erstellt wurde, auch eine leere Auflistung. Der Rückgabewert 0 bedeutet, dass die Eingabe Zeichenfolge keinen gültigen Suchpfad enthielt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `DlgDirListComboBox` sendet [CB_RESETCONTENT](/windows/win32/Controls/cb-resetcontent) und [CB_DIR](/windows/win32/Controls/cb-dir) Meldungen an das Kombinations Feld. Es füllt das Listenfeld des Kombinations Felds, das von " *nidcombobox* " angegeben wird, mit den Namen aller Dateien aus, die dem von *lppathspec*angegebenen Pfad entsprechen.
 
@@ -2531,7 +2531,7 @@ Nachdem das Kombinations Feld-Listenfeld ausgefüllt wurde, wird *lppathspec* ak
 
 [!code-cpp[NVC_MFCWindowing#89](../../mfc/reference/codesnippet/cpp/cwnd-class_28.cpp)]
 
-##  <a name="dlgdirselect"></a>CWnd::D lgdirselect
+##  <a name="cwnddlgdirselect"></a><a name="dlgdirselect"></a>CWnd::D lgdirselect
 
 Ruft die aktuelle Auswahl aus einem Listenfeld ab.
 
@@ -2553,7 +2553,7 @@ Gibt die ganzzahlige ID eines Listen Felds im Dialogfeld an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dabei wird davon ausgegangen, dass das Listenfeld von der [dlgdirlist](#dlgdirlist) -Member-Funktion ausgefüllt wurde und dass die Auswahl ein Laufwerk Buchstabe, eine Datei oder ein Verzeichnisname ist.
 
@@ -2563,7 +2563,7 @@ Die `DlgDirSelect` Member-Funktion kopiert die Auswahl in den von *lpString*ange
 
 Es ist nicht zulässig, dass mehr als ein Dateiname von einem Listenfeld zurückgegeben wird. Das Listenfeld darf kein Mehrfachauswahl-Listenfeld sein.
 
-##  <a name="dlgdirselectcombobox"></a>CWnd::D lgdirselectcombobox
+##  <a name="cwnddlgdirselectcombobox"></a><a name="dlgdirselectcombobox"></a>CWnd::D lgdirselectcombobox
 
 Ruft die neueste Auswahl aus dem Listenfeld von einem Kombinationsfeld ab.
 
@@ -2585,7 +2585,7 @@ Gibt die ganzzahlige ID des Kombinations Felds im Dialogfeld an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dabei wird davon ausgegangen, dass das Listenfeld von der [dlgdirlistcombobox](#dlgdirlistcombobox) -Member-Funktion ausgefüllt wurde und dass die Auswahl ein Laufwerk Buchstabe, eine Datei oder ein Verzeichnisname ist.
 
@@ -2595,7 +2595,7 @@ Die `DlgDirSelectComboBox` Member-Funktion kopiert die Auswahl in den angegebene
 
 Es ist nicht zulässig, dass mehr als ein Dateiname von einem Kombinations Feld zurückgegeben wird.
 
-##  <a name="dodataexchange"></a>CWnd::D odataexchange
+##  <a name="cwnddodataexchange"></a><a name="dodataexchange"></a>CWnd::D odataexchange
 
 Wird von Framework aufgerufen, um Dialog Daten auszutauschen und zu überprüfen.
 
@@ -2606,9 +2606,9 @@ virtual void DoDataExchange(CDataExchange* pDX);
 ### <a name="parameters"></a>Parameter
 
 *pDX*<br/>
-Ein Zeiger auf ein `CDataExchange` -Objekt.
+Ein Zeiger auf ein `CDataExchange`-Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion niemals direkt aufzurufen. Sie wird von der [UpdateData](#updatedata) -Member-Funktion aufgerufen. Rufen Sie `UpdateData` auf, um die Steuerelemente eines Dialog Felds zu initialisieren oder Daten aus einem Dialogfeld abzurufen.
 
@@ -2622,7 +2622,7 @@ Die `DoDataExchange` überschriebene Member-Funktion muss den Makro Anweisungen 
 
 Weitere Informationen zum Dialog Datenaustausch und zur Validierung finden Sie unter [anzeigen und Bearbeiten von Daten in einem Formular](../../data/odbc/displaying-and-manipulating-data-in-a-form.md) und [Dialog Datenaustausch und-Validierung](../../mfc/dialog-data-exchange-and-validation.md). Eine Beschreibung der vom Assistenten zum Hinzufügen von Variablen generierten DDX_ und DDV_ Makros finden Sie in der [technischen Notiz 26](../../mfc/tn026-ddx-and-ddv-routines.md).
 
-##  <a name="dragacceptfiles"></a>CWnd::D ragakzeptfiles
+##  <a name="cwnddragacceptfiles"></a><a name="dragacceptfiles"></a>CWnd::D ragakzeptfiles
 
 Mithilfe eines `CWnd` Zeigers in der [CWinApp:: InitInstance](../../mfc/reference/cwinapp-class.md#initinstance) -Funktion Ihrer Anwendung können Sie diese Member-Funktion aus einem Fenster heraus abrufen, um anzugeben, dass das Fenster gelöschte Dateien aus dem Windows-Datei-Manager oder dem Datei-Explorer akzeptiert.
 
@@ -2635,13 +2635,13 @@ void DragAcceptFiles(BOOL bAccept = TRUE);
 *Baccept*<br/>
 Flag, das angibt, ob gezogene Dateien akzeptiert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur das Fenster, das `DragAcceptFiles` mit dem *baccept* -Parameter aufruft, der auf true festgelegt ist, hat sich selbst als in der Lage erwiesen, die Windows-Nachrichten WM_DROPFILES Wenn z. b. in einer MDI-Anwendung der `CMDIFrameWnd` Fenster Zeiger im `DragAcceptFiles` Funktions Aufrufes verwendet wird, erhält nur das `CMDIFrameWnd` Fenster die WM_DROPFILES Nachricht. Diese Meldung wird nicht an alle geöffneten `CMDIChildWnd` Fenster gesendet. Damit ein `CMDIChildWnd` Fenster diese Nachricht empfangen kann, müssen Sie `DragAcceptFiles` mit dem `CMDIChildWnd` Fenster Zeiger abrufen.
 
 Um den Empfang von gezogenen Dateien zu beenden, müssen Sie die Member-Funktion mit *baccept* auf false festlegen.
 
-##  <a name="dragdetect"></a>CWnd::D ragdetect
+##  <a name="cwnddragdetect"></a><a name="dragdetect"></a>CWnd::D ragdetect
 
 Erfasst die Maus und zeichnet ihre Bewegung auf, bis der Benutzer die linke Maustaste loslässt, die ESC-Taste drückt oder die Maus so bewegt, dass sie sich außerhalb des Ziehrechtecks um den angegebenen Punkt herum befindet.
 
@@ -2660,11 +2660,11 @@ Wenn der Benutzer die Maus außerhalb des Zieh Rechtecks bewegt hat, während er
 
 Wenn der Benutzer die Maus nicht außerhalb des Zieh Rechtecks bewegt hat, während er die linke Schaltfläche gedrückt hält, ist der Rückgabewert 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion [dragdetect](/windows/win32/api/winuser/nf-winuser-dragdetect), wie im Windows SDK beschrieben.
 
-##  <a name="drawanimatedrects"></a>CWnd::D rawanimatedrects
+##  <a name="cwnddrawanimatedrects"></a><a name="drawanimatedrects"></a>CWnd::D rawanimatedrects
 
 Zeichnet ein Drahtrahmenrechteck und animiert es, um das Öffnen eines Symbols oder das Minimieren bzw. Maximieren eines Fensters anzudeuten.
 
@@ -2690,11 +2690,11 @@ Zeiger auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die di
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion [drawanimatedrects](/windows/win32/api/winuser/nf-winuser-drawanimatedrects), wie im Windows SDK beschrieben.
 
-##  <a name="drawcaption"></a>CWnd::D rawcaption
+##  <a name="cwnddrawcaption"></a><a name="drawcaption"></a>CWnd::D rawcaption
 
 Zeichnet eine Fenster Beschriftung.
 
@@ -2720,11 +2720,11 @@ Gibt Zeichnungsoptionen an. Eine umfassende Liste der Werte finden Sie unter [dr
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [drawcaption](/windows/win32/api/winuser/nf-winuser-drawcaption)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="drawmenubar"></a>CWnd::D rawmenubar
+##  <a name="cwnddrawmenubar"></a><a name="drawmenubar"></a>CWnd::D rawmenubar
 
 Zeichnet die Menüleiste neu.
 
@@ -2732,7 +2732,7 @@ Zeichnet die Menüleiste neu.
 void DrawMenuBar();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn eine Menüleiste geändert wird, nachdem Windows das Fenster erstellt hat, können Sie diese Funktion aufrufen, um die geänderte Menüleiste zu zeichnen.
 
@@ -2740,7 +2740,7 @@ Wenn eine Menüleiste geändert wird, nachdem Windows das Fenster erstellt hat, 
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: getMenu](#getmenu).
 
-##  <a name="enableactiveaccessibility"></a>CWnd:: EnableActiveAccessibility
+##  <a name="cwndenableactiveaccessibility"></a><a name="enableactiveaccessibility"></a>CWnd:: EnableActiveAccessibility
 
 Aktiviert benutzerdefinierte Active Accessibility Funktionen.
 
@@ -2748,11 +2748,11 @@ Aktiviert benutzerdefinierte Active Accessibility Funktionen.
 void EnableActiveAccessibility();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Active Accessibility Unterstützung von MFC ist für Standardfenster und-Steuerelemente, einschließlich ActiveX-Steuerelementen, ausreichend. Wenn die von `CWnd`abgeleitete Klasse jedoch nicht Windowed-Elemente der Benutzeroberfläche enthält, hat MFC keine Möglichkeit, Sie zu kennen. In diesem Fall müssen Sie die entsprechenden [Active Accessibility Member-Funktionen](/windows/win32/winauto/sdk-components) in der Klasse überschreiben, und Sie müssen `EnableActiveAccessibility` im Konstruktor der Klasse aufzurufen.
 
-##  <a name="enabledynamiclayout"></a>CWnd:: enabledynamiclayout
+##  <a name="cwndenabledynamiclayout"></a><a name="enabledynamiclayout"></a>CWnd:: enabledynamiclayout
 
 Aktiviert oder deaktiviert den dynamischen Layout-Manager. Wenn das dynamische Layout aktiviert ist, können die Position und Größe von untergeordneten Fensters dynamisch angepasst werden, wenn der Benutzer die Größe des Fensters anpasst.
 
@@ -2765,11 +2765,11 @@ void EnableDynamicLayout(BOOL bEnable = TRUE);
 *benabel*<br/>
 TRUE, um das dynamische Layout zu aktivieren; FALSE, um das dynamische Layout zu deaktivieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie ein dynamisches Layout aktivieren möchten, reicht es nicht aus, nur diese Methode aufzurufen. Sie müssen auch Informationen zum dynamischen Layout bereitstellen, die angeben, wie die Steuerelemente im Fenster auf Änderungen der Größe reagieren. Sie können diese Informationen im Ressourcen-Editor oder programmgesteuert für jedes Steuerelement angeben. Siehe [dynamisches Layout](../../mfc/dynamic-layout.md).
 
-##  <a name="enabled2dsupport"></a>CWnd:: EnableD2DSupport
+##  <a name="cwndenabled2dsupport"></a><a name="enabled2dsupport"></a>CWnd:: EnableD2DSupport
 
 Aktiviert oder deaktiviert die D2D-Unterstützung für Fenster. Rufen Sie diese Methode vor der Initialisierung des Hauptfensters auf.
 
@@ -2787,7 +2787,7 @@ Gibt an, ob die D2D-Unterstützung aktiviert oder deaktiviert werden soll.
 *busedcrendertarget*<br/>
 Gibt an, ob das Gerätekontext-Renderziel (CDCRenderTarget) verwendet werden soll. Wenn „false“, wird CHwndRenderTarget verwendet.
 
-##  <a name="enablescrollbar"></a>CWnd:: enablescrollbar
+##  <a name="cwndenablescrollbar"></a><a name="enablescrollbar"></a>CWnd:: enablescrollbar
 
 Aktiviert oder deaktiviert einen oder beide Pfeile auf einer Scrollleiste.
 
@@ -2823,7 +2823,7 @@ Gibt an, ob die Pfeile der Schiebe Leiste aktiviert oder deaktiviert sind und we
 
 Ungleich 0 (null), wenn die Pfeile wie angegeben aktiviert oder deaktiviert werden. Andernfalls ist der Wert 0. Dies bedeutet, dass sich die Pfeile bereits im angeforderten Zustand befinden oder dass ein Fehler aufgetreten ist.
 
-##  <a name="enablescrollbarctrl"></a>CWnd:: enablescrollbarctrl
+##  <a name="cwndenablescrollbarctrl"></a><a name="enablescrollbarctrl"></a>CWnd:: enablescrollbarctrl
 
 Aktiviert oder deaktiviert die Bild Lauf Leiste für dieses Fenster.
 
@@ -2841,11 +2841,11 @@ Der Bezeichner der Bild Lauf Leiste.
 *benabel*<br/>
 Gibt an, ob die Bild Lauf Leiste aktiviert oder deaktiviert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Fenster über ein gleich geordnetes Schiebe leisten-Steuerelement verfügt, wird die Bild Lauf Leiste verwendet. Andernfalls wird die eigene Scrollleiste des Fensters verwendet.
 
-##  <a name="enabletooltips"></a>CWnd:: EnableToolTips
+##  <a name="cwndenabletooltips"></a><a name="enabletooltips"></a>CWnd:: EnableToolTips
 
 Aktiviert Quick Infos für das angegebene Fenster.
 
@@ -2862,7 +2862,7 @@ Gibt an, ob das QuickInfo-Steuerelement aktiviert oder deaktiviert ist. TRUE akt
 
 TRUE, wenn Quick Infos aktiviert sind. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie [ontoolhittest](#ontoolhittest) , um die [toolinfo](/windows/win32/api/commctrl/ns-commctrl-tttoolinfoa) -Struktur oder Strukturen für das Fenster bereitzustellen.
 
@@ -2881,7 +2881,7 @@ Die standardmäßigen Quick Infos, die für Ihre Fenster von `EnableToolTips` be
 
 [!code-cpp[NVC_MFCWindowing#92](../../mfc/reference/codesnippet/cpp/cwnd-class_31.cpp)]
 
-##  <a name="enabletrackingtooltips"></a>CWnd:: enabletrackingtooltips
+##  <a name="cwndenabletrackingtooltips"></a><a name="enabletrackingtooltips"></a>CWnd:: enabletrackingtooltips
 
 Aktiviert oder deaktiviert die nach Verfolgungs Quick Infos.
 
@@ -2898,11 +2898,11 @@ Gibt an, ob Tipps für das Verfolgungs Tool aktiviert oder deaktiviert werden. W
 
 Gibt den Zustand vor dem Aufruf der `EnableWindow` Member-Funktion an. Der Rückgabewert ist ungleich 0 (null), wenn das Fenster zuvor deaktiviert wurde. Der Rückgabewert ist 0, wenn das Fenster zuvor aktiviert wurde oder ein Fehler aufgetreten ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Tipps für die nach Verfolgungs Tools sind QuickInfo-Fenster, die Sie dynamisch auf dem Bildschirm positionieren können. Wenn Sie die Position schnell aktualisieren, wird das QuickInfo-Fenster angezeigt, um reibungslos zu wechseln oder "nachverfolgen". Diese Funktionalität kann nützlich sein, wenn Sie QuickInfo-Text benötigen, um die Position des Zeigers beim Verschieben zu verfolgen.
 
-##  <a name="enablewindow"></a>CWnd:: EnableWindow
+##  <a name="cwndenablewindow"></a><a name="enablewindow"></a>CWnd:: EnableWindow
 
 Aktiviert oder deaktiviert die Maus- und Tastatureingaben.
 
@@ -2919,7 +2919,7 @@ Gibt an, ob das angegebene Fenster aktiviert oder deaktiviert werden soll. Wenn 
 
 Gibt den Zustand vor dem Aufruf der `EnableWindow` Member-Funktion an. Der Rückgabewert ist ungleich 0 (null), wenn das Fenster zuvor deaktiviert wurde. Der Rückgabewert ist 0, wenn das Fenster zuvor aktiviert wurde oder ein Fehler aufgetreten ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Eingabe deaktiviert ist, werden Eingaben wie Mausklicks und Tastatureingaben ignoriert. Wenn die Eingabe aktiviert ist, verarbeitet das Fenster alle Eingaben.
 
@@ -2937,7 +2937,7 @@ Eine Anwendung kann diese Funktion verwenden, um ein Steuerelement in einem Dial
 
 [!code-cpp[NVC_MFCWindowing#93](../../mfc/reference/codesnippet/cpp/cwnd-class_32.cpp)]
 
-##  <a name="endmodalloop"></a>CWnd:: endmodzuweisung
+##  <a name="cwndendmodalloop"></a><a name="endmodalloop"></a>CWnd:: endmodzuweisung
 
 Beendet einen aufzurufenden `RunModalLoop`.
 
@@ -2950,11 +2950,11 @@ virtual void EndModalLoop(int nResult);
 *nergebnis*<br/>
 Enthält den Wert, der an den Aufrufer von [runmodzuzufüop](#runmodalloop)zurückgegeben werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *nResult* -Parameter wird von `RunModalLoop`an den Rückgabewert weitergegeben.
 
-##  <a name="endmodalstate"></a>CWnd:: endmodalstate
+##  <a name="cwndendmodalstate"></a><a name="endmodalstate"></a>CWnd:: endmodalstate
 
 Rufen Sie diese Memberfunktion auf, um ein Framefenster von einem modalen in einen Status ohne Modus zu ändern.
 
@@ -2962,7 +2962,7 @@ Rufen Sie diese Memberfunktion auf, um ein Framefenster von einem modalen in ein
 virtual void EndModalState();
 ```
 
-##  <a name="endpaint"></a>CWnd:: endpaint
+##  <a name="cwndendpaint"></a><a name="endpaint"></a>CWnd:: endpaint
 
 Markiert das Ende des Bildes im angegebenen Fenster.
 
@@ -2975,7 +2975,7 @@ void EndPaint(LPPAINTSTRUCT lpPaint);
 *lppaint*<br/>
 Verweist auf eine [paintstruct](/windows/win32/api/winuser/ns-winuser-paintstruct) -Struktur, die die von der [BeginPaint](#beginpaint) -Member-Funktion abgerufenen Zeichnungs Informationen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `EndPaint` Member-Funktion ist für jeden Aufrufe der `BeginPaint` Member-Funktion erforderlich, aber erst nach Abschluss des Zeichnungs Vorgangs.
 
@@ -2985,7 +2985,7 @@ Wenn die Einfügemarke von der `BeginPaint` Member-Funktion ausgeblendet wurde, 
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: BeginPaint](#beginpaint).
 
-##  <a name="executedlginit"></a>CWnd:: executedlginit
+##  <a name="cwndexecutedlginit"></a><a name="executedlginit"></a>CWnd:: executedlginit
 
 Initiiert eine Dialogfeldressource.
 
@@ -3006,11 +3006,11 @@ Ein Zeiger auf eine Ressource.
 
 TRUE, wenn eine Dialogfeld Ressource ausgeführt wird. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `ExecuteDlgInit` werden Ressourcen verwenden, die an das ausführende Modul gebunden sind, oder Ressourcen aus anderen Quellen. Um dies zu erreichen, findet `ExecuteDlgInit` ein Ressourcen Handle durch Aufrufen von `AfxFindResourceHandle`. Wenn Ihre MFC-Anwendung die freigegebene DLL nicht verwendet (MFCx0 [U] [D]). DLL), `AfxFindResourceHandle` wird [AfxGetResourceHandle](application-information-and-management.md#afxgetresourcehandle)aufgerufen, das das aktuelle Ressourcen Handle für die ausführbare Datei zurückgibt. Wenn Ihre MFC-Anwendung MFCx0 [U] [D] verwendet. DLL, `AfxFindResourceHandle` durchläuft die `CDynLinkLibrary` Objektliste der freigegebenen und MFC-Erweiterungs-DLLs, die nach dem richtigen Ressourcen handle suchen.
 
-##  <a name="filtertooltipmessage"></a>CWnd:: FilterToolTipMessage
+##  <a name="cwndfiltertooltipmessage"></a><a name="filtertooltipmessage"></a>CWnd:: FilterToolTipMessage
 
 Wird von Framework aufgerufen, um QuickInfo-Meldungen anzuzeigen.
 
@@ -3023,13 +3023,13 @@ void FilterToolTipMessage(MSG* pMsg);
 *pmsg*<br/>
 Ein Zeiger auf die QuickInfo-Nachricht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In den meisten MFC-Anwendungen wird diese Methode von " [pretranslatemess Age](#pretranslatemessage) " und " [enablequick Tips](#enabletooltips)" von Framework aufgerufen, und Sie müssen Sie nicht selbst aufrufen.
 
 In bestimmten Anwendungen, z. b. bei einigen ActiveX-Steuerelementen, werden diese Methoden jedoch möglicherweise nicht vom Framework aufgerufen, und Sie müssen FilterToolTipMessage selbst aufrufen. Weitere Informationen finden Sie unter [Methoden zum Erstellen von](../../mfc/methods-of-creating-tool-tips.md)Quick Infos.
 
-##  <a name="findwindow"></a>CWnd:: FindWindow
+##  <a name="cwndfindwindow"></a><a name="findwindow"></a>CWnd:: FindWindow
 
 Gibt die `CWnd` der obersten Ebene zurück, deren Fenster Klasse von *lpszClassName* angegeben wird und deren Fenster Name bzw. Titel von *lpszWindowName*angegeben wird.
 
@@ -3053,7 +3053,7 @@ Identifiziert das Fenster, das über den angegebenen Klassennamen und den angege
 
 Der `CWnd`* ist möglicherweise temporär und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion durchsucht keine untergeordneten Fenster.
 
@@ -3061,7 +3061,7 @@ Diese Funktion durchsucht keine untergeordneten Fenster.
 
 [!code-cpp[NVC_MFCWindowing#94](../../mfc/reference/codesnippet/cpp/cwnd-class_33.cpp)]
 
-##  <a name="findwindowex"></a>CWnd:: FindWindowEx
+##  <a name="cwndfindwindowex"></a><a name="findwindowex"></a>CWnd:: FindWindowEx
 
 Ruft das Fenster Objekt ab, dessen Klassenname und Fenster Name den angegebenen Zeichen folgen entsprechen.
 
@@ -3091,11 +3091,11 @@ Zeiger auf eine mit NULL endenden Zeichenfolge, die den Fensternamen angibt (Tit
 
 Wenn die Funktion erfolgreich ausgeführt wird, ist der Rückgabewert ein Zeiger auf das Fenster Objekt mit den angegebenen Klassen-und Fensternamen. Wenn die Funktion fehlschlägt, ist der Rückgabewert NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion " [FindWindowEx](/windows/win32/api/winuser/nf-winuser-findwindowexw)", wie im Windows SDK beschrieben.
 
-##  <a name="flashwindow"></a>CWnd:: Flash Window
+##  <a name="cwndflashwindow"></a><a name="flashwindow"></a>CWnd:: Flash Window
 
 Blinkt das angegebene Fenster einmal.
 
@@ -3112,7 +3112,7 @@ Gibt an, ob der `CWnd` per Flash Vorgang oder in seinen ursprünglichen Zustand 
 
 Ein Wert ungleich 0 (null), wenn das Fenster vor dem aufzurufen der `FlashWindow` Member-Funktion aktiv war. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Erstellen Sie für aufeinander folgende blinken einen Systemzeit Geber, und rufen Sie `FlashWindow`wiederholt auf. Das Blinken der `CWnd` bedeutet, dass die Darstellung der Titelleiste so geändert wird, als ob die `CWnd` von "inaktiv" in "aktiv" geändert werden oder umgekehrt. (Eine inaktive Titelleiste wird in eine aktive Titelleiste geändert; eine aktive Titelleiste ändert sich in eine inaktive Titelleiste.)
 
@@ -3126,7 +3126,7 @@ Diese Funktion gibt für minimierte Fenster immer ungleich 0 (null) zurück. Wen
 
 [!code-cpp[NVC_MFCWindowing#95](../../mfc/reference/codesnippet/cpp/cwnd-class_34.cpp)]
 
-##  <a name="flashwindowex"></a>CWnd:: Flash windowex
+##  <a name="cwndflashwindowex"></a><a name="flashwindowex"></a>CWnd:: Flash windowex
 
 Blinkt das angegebene Fenster.
 
@@ -3152,11 +3152,11 @@ Gibt die Rate in Millisekunden an, in der das Fenster flashed wird. Wenn *dwtime
 
 Der Rückgabewert gibt den Zustand des Fensters vor dem aufzurufenden `FlashWindowEx` Funktion an. Wenn die Fenster Beschriftung vor dem-Befehl als aktiv gezeichnet wurde, ist der Rückgabewert ungleich 0 (null). Andernfalls ist der Rückgabewert 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode emuliert die Funktionalität der Funktion " [Flash windowex](/windows/win32/api/winuser/nf-winuser-flashwindowex)", wie im Windows SDK beschrieben.
 
-##  <a name="fromhandle"></a>CWnd:: FromHandle
+##  <a name="cwndfromhandle"></a><a name="fromhandle"></a>CWnd:: FromHandle
 
 Gibt einen Zeigt zu einem `CWnd`-Objekt zurück, wenn ein Handle zu einem Fenster vorhanden ist. Wenn ein `CWnd`-Objekt nicht an das Handle angefügt ist, wird ein temporäres `CWnd`-Objekt erstellt und angefügt.
 
@@ -3175,7 +3175,7 @@ Gibt einen Zeigt zu einem `CWnd`-Objekt zurück, wenn ein Handle zu einem Fenste
 
 Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-##  <a name="fromhandlepermanent"></a>CWnd:: fromlenker permanent
+##  <a name="cwndfromhandlepermanent"></a><a name="fromhandlepermanent"></a>CWnd:: fromlenker permanent
 
 Gibt einen Zeigt zu einem `CWnd`-Objekt zurück, wenn ein Handle zu einem Fenster vorhanden ist.
 
@@ -3190,15 +3190,15 @@ Ein HWND eines Windows-Fensters.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd` -Objekt.
+Ein Zeiger auf ein `CWnd`-Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein `CWnd` Objekt nicht an das Handle angefügt ist, wird NULL zurückgegeben.
 
 Diese Funktion erstellt im Gegensatz zu [FromHandle](#fromhandle)keine temporären Objekte.
 
-##  <a name="get_accchild"></a>CWnd:: get_accChild
+##  <a name="cwndget_accchild"></a><a name="get_accchild"></a>CWnd:: get_accChild
 
 Wird durch das Framework aufgerufen, um die Adresse einer `IDispatch`-Schnittstelle für das angegebene, untergeordnete Element abzurufen.
 
@@ -3220,7 +3220,7 @@ Empfängt die Adresse der `IDispatch`-Schnittstelle des untergeordneten Objekts.
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accChild](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accchild) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3228,7 +3228,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accChild](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accchild) im Windows SDK.
 
-##  <a name="get_accchildcount"></a>CWnd:: get_accChildCount
+##  <a name="cwndget_accchildcount"></a><a name="get_accchildcount"></a>CWnd:: get_accChildCount
 
 Wird durch das Framework aufgerufen, um die Zahl der untergeordneten Elemente abzurufen, die zu diesem Objekt gehören.
 
@@ -3245,7 +3245,7 @@ Empfängt die Anzahl der untergeordneten Elemente.
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accChildCount](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accchildcount) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3253,7 +3253,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accChildCount](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accchildcount) im Windows SDK.
 
-##  <a name="get_accdefaultaction"></a>CWnd:: get_accDefaultAction
+##  <a name="cwndget_accdefaultaction"></a><a name="get_accdefaultaction"></a>CWnd:: get_accDefaultAction
 
 Wird durch das Framework aufgerufen, um eine Zeichenfolge abzurufen, die die Standardaktion des Objekts beschreibt.
 
@@ -3275,7 +3275,7 @@ Die Adresse eines BSTR-Objekts, das eine lokalisierte Zeichenfolge zum Beschreib
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accDefaultAction](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accdefaultaction) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3283,7 +3283,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accDefaultAction](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accdefaultaction) im Windows SDK.
 
-##  <a name="get_accdescription"></a>CWnd:: get_accDescription
+##  <a name="cwndget_accdescription"></a><a name="get_accdescription"></a>CWnd:: get_accDescription
 
 Wird durch das Framework aufgerufen, um eine Zeichenfolge abzurufen, die die visuelle Darstellung des angegebenen Objekts beschreibt.
 
@@ -3305,7 +3305,7 @@ Die Adresse eines BSTR-Objekts, das eine lokalisierte Zeichenfolge zum Beschreib
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accDescription](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accdescription) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3313,7 +3313,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accDescription](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accdescription) im Windows SDK.
 
-##  <a name="get_accfocus"></a>CWnd:: get_accFocus
+##  <a name="cwndget_accfocus"></a><a name="get_accfocus"></a>CWnd:: get_accFocus
 
 Wird durch das Framework aufgerufen, um das Objekt abzurufen, das den Tastaturfokus hat.
 
@@ -3330,7 +3330,7 @@ Empfängt Informationen über das Objekt, das den Fokus besitzt. Weitere Informa
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::get_accFocus` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3338,7 +3338,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accFocus](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accfocus) im Windows SDK.
 
-##  <a name="get_acchelp"></a>CWnd:: get_accHelp
+##  <a name="cwndget_acchelp"></a><a name="get_acchelp"></a>CWnd:: get_accHelp
 
 Wird von Framework aufgerufen, um die **Hilfe** Eigenschaften Zeichenfolge eines Objekts abzurufen.
 
@@ -3360,7 +3360,7 @@ Die Adresse eines BSTR-Objekts, das die lokalisierte Zeichenfolge mit den Hilfe 
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accHelp](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_acchelp) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3368,7 +3368,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accHelp](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_acchelp) im Windows SDK.
 
-##  <a name="get_acchelptopic"></a>CWnd:: get_accHelpTopic
+##  <a name="cwndget_acchelptopic"></a><a name="get_acchelptopic"></a>CWnd:: get_accHelpTopic
 
 Wird von Framework aufgerufen, um den vollständigen Pfad der **WinHelp** -Datei abzurufen, die dem angegebenen Objekt zugeordnet ist, und den Bezeichner des entsprechenden Themas in dieser Datei.
 
@@ -3394,7 +3394,7 @@ Identifiziert das Hilfedatei Thema, das dem angegebenen Objekt zugeordnet ist. W
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::get_accHelpTopic` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3402,7 +3402,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accHelpTopic](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_acchelptopic) im Windows SDK.
 
-##  <a name="get_acckeyboardshortcut"></a>CWnd:: get_accKeyboardShortcut
+##  <a name="cwndget_acckeyboardshortcut"></a><a name="get_acckeyboardshortcut"></a>CWnd:: get_accKeyboardShortcut
 
 Wird durch das Framework aufgerufen, um die Tastenkombination oder Zugriffstaste des angegebenen Objekts abzurufen.
 
@@ -3424,7 +3424,7 @@ Adresse eines BSTR-Objekts, das eine lokalisierte Zeichenfolge empfängt, die di
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accKeyboardShortcut](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_acckeyboardshortcut) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3432,7 +3432,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accKeyboardShortcut](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_acckeyboardshortcut) im Windows SDK.
 
-##  <a name="get_accname"></a>CWnd:: get_accName
+##  <a name="cwndget_accname"></a><a name="get_accname"></a>CWnd:: get_accName
 
 Wird durch das Framework aufgerufen, um den Namen des angegebenen Objekts abzurufen.
 
@@ -3454,7 +3454,7 @@ Die Adresse eines BSTR-Objekts, das eine Zeichenfolge mit dem Namen des angegebe
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accName](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accname) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3462,7 +3462,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accName](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accname) im Windows SDK.
 
-##  <a name="get_accparent"></a>CWnd:: get_accParent
+##  <a name="cwndget_accparent"></a><a name="get_accparent"></a>CWnd:: get_accParent
 
 Wird durch das Framework aufgerufen, um die `IDispatch`-Schnittstelle des übergeordneten Elements des Objekts abzurufen.
 
@@ -3479,7 +3479,7 @@ Empfängt die Adresse der `IDispatch`-Schnittstelle des übergeordneten Objekts.
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accParent](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accparent) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3487,7 +3487,7 @@ In den meisten Fällen müssen Sie diese Funktion nicht außer Kraft setzen.
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accParent](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accparent) im Windows SDK.
 
-##  <a name="get_accrole"></a>CWnd:: get_accRole
+##  <a name="cwndget_accrole"></a><a name="get_accrole"></a>CWnd:: get_accRole
 
 Wird durch das Framework aufgerufen, um Informationen abzurufen, die die Rolle des angegebenen Objekts beschreiben.
 
@@ -3509,7 +3509,7 @@ Empfängt die Rollen Informationen. Weitere Informationen finden Sie unter *pvar
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::get_accRole` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3517,7 +3517,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accRole](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accrole) im Windows SDK.
 
-##  <a name="get_accselection"></a>CWnd:: get_accSelection
+##  <a name="cwndget_accselection"></a><a name="get_accselection"></a>CWnd:: get_accSelection
 
 Wird durch das Framework aufgerufen, um die ausgewählten, untergeordneten Elemente dieses Objekts abzurufen.
 
@@ -3534,7 +3534,7 @@ Empfängt Informationen darüber, welche untergeordneten Elemente ausgewählt si
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::get_accSelection` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3542,7 +3542,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accSelection](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accselection) im Windows SDK.
 
-##  <a name="get_accstate"></a>CWnd:: get_accState
+##  <a name="cwndget_accstate"></a><a name="get_accstate"></a>CWnd:: get_accState
 
 Wird durch das Framework aufgerufen, um den aktuellen Status des angegebenen Objekts abzurufen.
 
@@ -3564,7 +3564,7 @@ Empfängt Informationen über den Zustand des Objekts. Siehe *pvarstate* in [IAc
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Weitere Informationen finden Sie unter **Rückgabewerte** in `IAccessible::get_accState` in der Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3572,7 +3572,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accState](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accstate) im Windows SDK.
 
-##  <a name="get_accvalue"></a>CWnd:: get_accValue
+##  <a name="cwndget_accvalue"></a><a name="get_accvalue"></a>CWnd:: get_accValue
 
 Wird durch das Framework aufgerufen, um den Wert des angegebenen Objekts abzurufen.
 
@@ -3594,7 +3594,7 @@ Die Adresse des BSTR-Objekts, das eine lokalisierte Zeichenfolge mit dem aktuell
 
 Gibt S_OK bei Erfolg zurück, ein com-Fehlercode bei einem Fehler. Siehe **Rückgabewerte** in [IAccessible:: get_accValue](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accvalue) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/microsoft-active-accessibility) -Unterstützung von MFC.
 
@@ -3602,7 +3602,7 @@ Diese Funktion ist Teil der [Active Accessibility](/windows/win32/WinAuto/micros
 
 Weitere Informationen finden Sie unter [IAccessible:: get_accValue](/windows/win32/api/oleacc/nf-oleacc-iaccessible-get_accvalue) im Windows SDK.
 
-##  <a name="getactivewindow"></a>CWnd:: GetActiveWindow
+##  <a name="cwndgetactivewindow"></a><a name="getactivewindow"></a>CWnd:: GetActiveWindow
 
 Ruft einen Zeiger auf das aktive Fenster ab.
 
@@ -3614,11 +3614,11 @@ static CWnd* PASCAL GetActiveWindow();
 
 Das aktive Fenster oder NULL, wenn zum Zeitpunkt des Aufrufes kein Fenster aktiv war. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das aktive Fenster ist entweder das Fenster, das den aktuellen Eingabefokus besitzt, oder das Fenster [, das von der Member-](#setactivewindow) Funktion von "Member" explizit aktiviert wurde.
 
-##  <a name="getancestor"></a>CWnd:: GetAncestor
+##  <a name="cwndgetancestor"></a><a name="getancestor"></a>CWnd:: GetAncestor
 
 Ruft das Vorgängerfensterobjekt des angegebenen Fensters ab.
 
@@ -3635,11 +3635,11 @@ Gibt den abzurufenden Vorgänger an. Eine umfassende Liste möglicher Werte find
 
 Wenn die Funktion erfolgreich ausgeführt wird, ist der Rückgabewert ein Zeiger auf das Vorgänger Fenster Objekt. Wenn die Funktion fehlschlägt, ist der Rückgabewert NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [GetAncestor](/windows/win32/api/winuser/nf-winuser-getancestor)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="getcapture"></a>CWnd:: GetCapture
+##  <a name="cwndgetcapture"></a><a name="getcapture"></a>CWnd:: GetCapture
 
 Ruft das Fenster ab, das die Maus Aufzeichnung enthält.
 
@@ -3653,11 +3653,11 @@ Identifiziert das Fenster mit der Maus Aufzeichnung. Der Wert ist NULL, wenn kei
 
 Der Rückgabewert kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur ein Fenster hat die Maus Aufzeichnung zu einem bestimmten Zeitpunkt. Ein Fenster empfängt die Maus Aufzeichnung, wenn die Funktion [SetCapture](#setcapture) -Member aufgerufen wird. Dieses Fenster empfängt Maus Eingaben, unabhängig davon, ob sich der Cursor innerhalb seines Rahmens befindet.
 
-##  <a name="getcaretpos"></a>CWnd:: getcaretpos
+##  <a name="cwndgetcaretpos"></a><a name="getcaretpos"></a>CWnd:: getcaretpos
 
 Ruft die Client Koordinaten der aktuellen Position des Caretzeichen ab und gibt Sie als `CPoint`zurück.
 
@@ -3669,11 +3669,11 @@ static CPoint PASCAL GetCaretPos();
 
 [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die Koordinaten der Position des Caretzeichen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Position der Einfügemarke wird in den Client Koordinaten des `CWnd` Fensters angegeben.
 
-##  <a name="getcheckedradiobutton"></a>CWnd:: getcheckedradiobutton
+##  <a name="cwndgetcheckedradiobutton"></a><a name="getcheckedradiobutton"></a>CWnd:: getcheckedradiobutton
 
 Ruft die ID des derzeit aktivierten Options Felds in der angegebenen Gruppe ab.
 
@@ -3695,7 +3695,7 @@ Gibt den ganzzahligen Bezeichner des letzten Options Felds in der Gruppe an.
 
 ID des aktivierten Options Felds oder 0, wenn keines ausgewählt ist.
 
-##  <a name="getclientrect"></a>CWnd:: GetClientRect
+##  <a name="cwndgetclientrect"></a><a name="getclientrect"></a>CWnd:: GetClientRect
 
 Kopiert die Client Koordinaten des `CWnd` Client Bereichs in die Struktur, auf die von *lprect*verwiesen wird.
 
@@ -3708,7 +3708,7 @@ void GetClientRect(LPRECT lpRect) const;
 *lprect*<br/>
 Verweist auf eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein `CRect` Objekt, um die Client Koordinaten zu empfangen. Die `left`-und `top` Member sind 0 (null). Die `right`-und `bottom` Member enthalten die Breite und Höhe des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Client Koordinaten geben die oberen linken und unteren rechten Ecke des Client Bereichs an. Da Client Koordinaten relativ zu den oberen linken Ecken des `CWnd` Client Bereichs sind, sind die Koordinaten der oberen linken Ecke (0,0).
 
@@ -3716,7 +3716,7 @@ Die Client Koordinaten geben die oberen linken und unteren rechten Ecke des Clie
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: ISIC](#isiconic).
 
-##  <a name="getclipboardowner"></a>CWnd:: getclipboardowner
+##  <a name="cwndgetclipboardowner"></a><a name="getclipboardowner"></a>CWnd:: getclipboardowner
 
 Ruft den aktuellen Besitzer der Zwischenablage ab.
 
@@ -3730,11 +3730,11 @@ Identifiziert das Fenster, das die Zwischenablage besitzt, wenn die Funktion erf
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Zwischenablage kann weiterhin Daten enthalten, auch wenn Sie derzeit nicht im Besitz ist.
 
-##  <a name="getclipboardviewer"></a>CWnd:: getclipboardviewer
+##  <a name="cwndgetclipboardviewer"></a><a name="getclipboardviewer"></a>CWnd:: getclipboardviewer
 
 Ruft das erste Fenster in der Zwischenablage-Viewer-Kette ab.
 
@@ -3748,7 +3748,7 @@ Identifiziert das Fenster, das zurzeit für die Anzeige der Zwischenablage zust�
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-##  <a name="getcontrolunknown"></a>CWnd:: getcontrolunknown
+##  <a name="cwndgetcontrolunknown"></a><a name="getcontrolunknown"></a>CWnd:: getcontrolunknown
 
 Rufen Sie diese Member-Funktion auf, um einen Zeiger auf ein unbekanntes OLE-Steuerelement abzurufen.
 
@@ -3760,7 +3760,7 @@ LPUNKNOWN GetControlUnknown();
 
 Ein Zeiger auf die [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) -Schnittstelle des OLE-Steuer Elements, das von diesem `CWnd`-Objekt dargestellt wird. Wenn dieses Objekt kein OLE-Steuerelement darstellt, ist der Rückgabewert NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie sollten diesen `IUnknown` Zeiger nicht freigeben. Normalerweise verwenden Sie, um eine bestimmte Schnittstelle des Steuer Elements abzurufen.
 
@@ -3770,7 +3770,7 @@ Der von `GetControlUnknown` zurückgegebene Schnittstellen Zeiger ist nicht Verw
 
 [!code-cpp[NVC_MFCWindowing#96](../../mfc/reference/codesnippet/cpp/cwnd-class_35.cpp)]
 
-##  <a name="getcurrentmessage"></a>CWnd:: GetCurrentMessage
+##  <a name="cwndgetcurrentmessage"></a><a name="getcurrentmessage"></a>CWnd:: GetCurrentMessage
 
 Gibt einen Zeiger zur Nachricht zurück, die durch dieses Fenster zurzeit verarbeitet wird. Sollte nur aufgerufen werden, wenn in einem Nachrichten Handler **für**<em>Nachrichten</em> Handler.
 
@@ -3786,7 +3786,7 @@ Gibt einen Zeiger auf die [msg](/windows/win32/api/winuser/ns-winuser-msg) -Stru
 
   Weitere Informationen finden Sie im Beispiel für [CMDIFrameWnd:: mdicascade](../../mfc/reference/cmdiframewnd-class.md#mdicascade).
 
-##  <a name="getdc"></a>CWnd:: GetDC
+##  <a name="cwndgetdc"></a><a name="getdc"></a>CWnd:: GetDC
 
 Ruft einen Zeiger auf einen gemeinsamen, Klassen-oder privaten Gerätekontext für den Client Bereich ab, abhängig vom für die `CWnd`angegebenen Klassen Stil.
 
@@ -3798,7 +3798,7 @@ CDC* GetDC();
 
 Identifiziert den Gerätekontext für den `CWnd` Client Bereich, wenn erfolgreich. Andernfalls ist der Rückgabewert NULL. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei gängigen Geräte Kontexten weist `GetDC` dem Kontext jedes Mal Standard Attribute zu, wenn er abgerufen wird. Für Klassen-und private Kontexte gibt `GetDC` die zuvor zugewiesenen Attribute unverändert. Der Gerätekontext kann in nachfolgenden Funktionen der Graphics Device Interface (GDI) zum Zeichnen im Client Bereich verwendet werden.
 
@@ -3806,7 +3806,7 @@ Wenn der Gerätekontext zu einer Fenster Klasse gehört, muss die [ReleaseDC](#r
 
 Ein Gerätekontext, der zur `CWnd`-Klasse gehört, wird von der `GetDC` Member-Funktion zurückgegeben, wenn CS_CLASSDC, CS_OWNDC oder CS_PARENTDC als Stil in der `WNDCLASS` Struktur angegeben wurde, als die Klasse registriert wurde.
 
-##  <a name="getdcex"></a>CWnd:: getdcex
+##  <a name="cwndgetdcex"></a><a name="getdcex"></a>CWnd:: getdcex
 
 Ruft das Handle eines Geräte Kontexts für das `CWnd` Fenster ab.
 
@@ -3844,7 +3844,7 @@ Kann einen der folgenden vordefinierten Werte aufweisen:
 
 Der Gerätekontext für das angegebene Fenster, wenn die Funktion erfolgreich ist. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Gerätekontext kann in nachfolgenden GDI-Funktionen zum Zeichnen im Client Bereich verwendet werden.
 
@@ -3858,7 +3858,7 @@ Ein Gerätekontext mit besonderen Merkmalen wird von der [getdcex](/windows/win3
 
 Weitere Informationen zu diesen Merkmalen finden Sie in der Beschreibung der `WNDCLASS` Struktur in der Windows SDK.
 
-##  <a name="getdcrendertarget"></a>CWnd:: getdcrendertarget
+##  <a name="cwndgetdcrendertarget"></a><a name="getdcrendertarget"></a>CWnd:: getdcrendertarget
 
 Ruft das Renderziel des Geräts Gerätekontext (DC) für das `CWnd`-Fenster ab.
 
@@ -3870,9 +3870,9 @@ CDCRenderTarget* GetDCRenderTarget();
 
 Das Gerätekontext-Renderziel für das angegebene Fenster, wenn die Funktion erfolgreich ist; ansonsten NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getdescendantwindow"></a>CWnd:: getdescendantwindow
+##  <a name="cwndgetdescendantwindow"></a><a name="getdescendantwindow"></a>CWnd:: getdescendantwindow
 
 Mit dieser Member-Funktion können Sie das von der angegebenen ID angegebene Nachfolger Fenster suchen.
 
@@ -3894,11 +3894,11 @@ Gibt an, ob das zurück zugegende Fenster temporär sein kann. TRUE gibt an, das
 
 Ein Zeiger auf ein `CWnd` Objekt oder NULL, wenn kein untergeordnetes Fenster gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion durchsucht die gesamte Struktur untergeordneter Fenster, nicht nur die Fenster, die unmittelbar untergeordnete Fenster sind.
 
-##  <a name="getdesktopwindow"></a>CWnd:: GetDesktopWindow
+##  <a name="cwndgetdesktopwindow"></a><a name="getdesktopwindow"></a>CWnd:: GetDesktopWindow
 
 Gibt das Windows-Desktop Fenster zurück.
 
@@ -3910,11 +3910,11 @@ static CWnd* PASCAL GetDesktopWindow();
 
 Identifiziert das Fenster Windows-Desktop. Dieser Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Desktop Fenster deckt den gesamten Bildschirm ab und ist der Bereich, auf dem alle Symbole und andere Fenster gezeichnet werden.
 
-##  <a name="getdlgctrlid"></a>CWnd:: getdlgctrlid
+##  <a name="cwndgetdlgctrlid"></a><a name="getdlgctrlid"></a>CWnd:: getdlgctrlid
 
 Gibt den Fenster-oder Steuerelement-ID-Wert für ein beliebiges untergeordnetes Fenster zurück, nicht nur für ein Steuerelement in einem Dialogfeld.
 
@@ -3926,7 +3926,7 @@ int GetDlgCtrlID() const;
 
 Der numerische Bezeichner des `CWnd` untergeordneten Fensters, wenn die Funktion erfolgreich ausgeführt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Da das Fenster der obersten Ebene über keinen ID-Wert verfügt, ist der Rückgabewert dieser Funktion ungültig, wenn die `CWnd` ein Fenster der obersten Ebene ist.
 
@@ -3934,7 +3934,7 @@ Da das Fenster der obersten Ebene über keinen ID-Wert verfügt, ist der Rückga
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: onctlcolor](#onctlcolor).
 
-##  <a name="getdlgitem"></a>CWnd:: GetDlgItem
+##  <a name="cwndgetdlgitem"></a><a name="getdlgitem"></a>CWnd:: GetDlgItem
 
 Ruft einen Zeiger auf das angegebene Steuerelement oder untergeordnete Fenster in einem Dialogfeld oder einem anderen Fenster ab.
 
@@ -3960,7 +3960,7 @@ Ein Zeiger auf das angegebene Steuerelement oder untergeordnete Fenster. Wenn ke
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der zurückgegebene Zeiger wird in der Regel in den Typ des Steuer Elements umgewandelt, der durch *NID*gekennzeichnet ist.
 
@@ -3968,7 +3968,7 @@ Der zurückgegebene Zeiger wird in der Regel in den Typ des Steuer Elements umge
 
 [!code-cpp[NVC_MFCWindowing#97](../../mfc/reference/codesnippet/cpp/cwnd-class_36.cpp)]
 
-##  <a name="getdlgitemint"></a>CWnd:: getdlgitemint
+##  <a name="cwndgetdlgitemint"></a><a name="getdlgitemint"></a>CWnd:: getdlgitemint
 
 Ruft den Text des Steuer Elements ab, das von *NID*identifiziert wird.
 
@@ -3998,7 +3998,7 @@ Die Funktion gibt 0 zurück, wenn die übersetzte Zahl größer als INT_MAX (fü
 
 Wenn Fehler auftreten, z. b. das Auffinden nicht numerischer Zeichen und das Überschreiten des obigen Höchstwerts, wird von `GetDlgItemInt` 0 an den Speicherort kopiert, auf den *lptrans* Wenn keine Fehler vorliegen, empfängt *lptrans* einen Wert ungleich 0 (null). Wenn *lptrans* NULL ist, warnt `GetDlgItemInt` nicht vor Fehlern.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Er übersetzt den Text des angegebenen Steuer Elements im angegebenen Dialogfeld in einen ganzzahligen Wert, indem alle zusätzlichen Leerzeichen am Anfang des Texts entfernt werden und Dezimalziffern konvertiert werden. Die Übersetzung wird beendet, wenn das Ende des Texts erreicht wird, oder es wird ein nicht numerisches Zeichen erkannt.
 
@@ -4006,7 +4006,7 @@ Wenn *bsigned* den Wert true hat, prüft `GetDlgItemInt` am Anfang des Texts auf
 
 Es sendet eine [WM_GETTEXT](/windows/win32/winmsg/wm-gettext) Meldung an das-Steuerelement.
 
-##  <a name="getdlgitemtext"></a>CWnd:: getdlgitemtext
+##  <a name="cwndgetdlgitemtext"></a><a name="getdlgitemtext"></a>CWnd:: getdlgitemtext
 
 Rufen Sie diese Member-Funktion auf, um den Titel oder Text abzurufen, der einem Steuerelement in einem Dialogfeld zugeordnet ist.
 
@@ -4039,11 +4039,11 @@ Ein Verweis auf eine [CString](../../atl-mfc-shared/reference/cstringt-class.md)
 
 Gibt die tatsächliche Anzahl der in den Puffer kopierten Zeichen an, ohne das abschließende Null Zeichen. Der Wert ist 0, wenn kein Text kopiert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `GetDlgItemText` Member-Funktion kopiert den Text an den Speicherort, auf den von *LPSTR* verwiesen wird, und gibt die Anzahl der Bytes zurück, die kopiert werden.
 
-##  <a name="getdsccursor"></a>CWnd:: GetDSCCursor
+##  <a name="cwndgetdsccursor"></a><a name="getdsccursor"></a>CWnd:: GetDSCCursor
 
 Rufen Sie diese Member-Funktion auf, um einen Zeiger auf den zugrunde liegenden Cursor abzurufen, der durch die Eigenschaften DataSource, username, Password und SQL des Datenquellen-Steuer Elements definiert wird.
 
@@ -4055,7 +4055,7 @@ IUnknown* GetDSCCursor();
 
 Ein Zeiger auf einen Cursor, der durch ein Datenquellen-Steuerelement definiert wird. MFC übernimmt das Aufrufen von `AddRef` für den Zeiger.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie den zurückgegebenen Zeiger, um die ICursor-Eigenschaft eines komplexen Daten gebundenen Steuer Elements, z. b. das Daten gebundene Raster Steuerelement, festzulegen. Ein Datenquellen-Steuerelement wird erst dann aktiv, wenn das erste gebundene Steuerelement seinen Cursor anfordert. Dies kann entweder explizit durch einen aufzurufenden `GetDSCCursor` oder implizit durch den MFC-Bindungs-Manager erfolgen. In beiden Fällen können Sie erzwingen, dass ein Datenquellen-Steuerelement aktiviert wird, indem Sie `GetDSCCursor` aufrufen und dann `Release` auf dem zurückgegebenen Zeiger zum `IUnknown`aufrufen. Die Aktivierung bewirkt, dass das Datenquellen-Steuerelement versucht, eine Verbindung mit der zugrunde liegenden Datenquelle herzustellen. Der zurückgegebene Zeiger kann im folgenden Kontext verwendet werden:
 
@@ -4063,7 +4063,7 @@ Verwenden Sie den zurückgegebenen Zeiger, um die ICursor-Eigenschaft eines komp
 
 [!code-cpp[NVC_MFC_AxDataBinding#5](../../mfc/reference/codesnippet/cpp/cwnd-class_37.cpp)]
 
-##  <a name="getdynamiclayout"></a>CWnd:: getdynamiclayout
+##  <a name="cwndgetdynamiclayout"></a><a name="getdynamiclayout"></a>CWnd:: getdynamiclayout
 
 Ruft einen Zeiger zum dynamischen Layout-Manager-Objekt ab.
 
@@ -4075,11 +4075,11 @@ CMFCDynamicLayout* GetDynamicLayout();
 
 Ein Zeiger auf das dynamische Layout-Manager-Objekt oder NULL, wenn das dynamische Layout deaktiviert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Fensterobjekt besitzt und verwaltet die Lebensdauer des zurückgegebenen Zeigers. Es sollte daher nur verwendet werden, um auf das Objekt zuzugreifen. Sie sollten den Zeiger weder löschen noch dauerhaft speichern.
 
-##  <a name="getexstyle"></a>CWnd:: getexstyle
+##  <a name="cwndgetexstyle"></a><a name="getexstyle"></a>CWnd:: getexstyle
 
 Gibt den erweiterten Stil des Fensters zurück.
 
@@ -4091,7 +4091,7 @@ DWORD GetExStyle() const;
 
 Der erweiterte Stil des Fensters. Weitere Informationen zu den in MFC verwendeten erweiterten Fenster Stilen finden Sie unter [Erweiterte Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles).
 
-##  <a name="getfocus"></a>CWnd:: GetFocus
+##  <a name="cwndgetfocus"></a><a name="getfocus"></a>CWnd:: GetFocus
 
 Ruft einen Zeiger auf den `CWnd` ab, der derzeit den Eingabefokus besitzt.
 
@@ -4105,7 +4105,7 @@ Ein Zeiger auf das Fenster, das den aktuellen Fokus besitzt, oder NULL, wenn kei
 
 Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-##  <a name="getfont"></a>CWnd:: getFont
+##  <a name="cwndgetfont"></a><a name="getfont"></a>CWnd:: getFont
 
 Sendet die WM_GETFONT Meldung an das Fenster, um die aktuelle Schriftart abzurufen.
 
@@ -4117,11 +4117,11 @@ CFont* GetFont() const;
 
 Zeiger auf ein [CFont](../../mfc/reference/cfont-class.md) -Objekt, das an die aktuelle Schriftart für das Fenster angefügt ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode hat keine Auswirkung, es sei denn, das Fenster verarbeitet die WM_GETFONT Meldung. Viele MFC-Klassen, die von abgeleitet werden, `CWnd` diese Nachricht verarbeiten, da Sie an eine vordefinierte Fenster Klasse angefügt werden, die einen Meldungs Handler für die WM_GETFONT Meldung enthält. Um diese Methode verwenden zu können, müssen Klassen, die Sie von `CWnd` ableiten, einen Methoden Handler für die WM_GETFONT Nachricht definieren.
 
-##  <a name="getforegroundwindow"></a>CWnd:: getforegroundwindow
+##  <a name="cwndgetforegroundwindow"></a><a name="getforegroundwindow"></a>CWnd:: getforegroundwindow
 
 Gibt einen Zeiger auf das Vordergrund Fenster zurück (das Fenster, mit dem der Benutzer gerade arbeitet).
 
@@ -4133,11 +4133,11 @@ static CWnd* PASCAL GetForegroundWindow();
 
 Ein Zeiger auf das Vordergrund Fenster. Dies kann ein temporäres `CWnd` Objekt sein.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Vordergrund Fenster gilt nur für Fenster der obersten Ebene (Rahmen Fenster oder Dialogfelder).
 
-##  <a name="geticon"></a>CWnd:: getIcon
+##  <a name="cwndgeticon"></a><a name="geticon"></a>CWnd:: getIcon
 
 Mit dieser Member-Funktion können Sie das Handle für ein großes (32x32) oder das Handle zu einem kleinen Symbol (16x16) abrufen, wie von *bbigicon*angegeben.
 
@@ -4154,7 +4154,7 @@ Gibt das Symbol 32 Pixel um 32 Pixel an, wenn true. Gibt ein 16 Pixel x 16 Pixel
 
 Ein Handle für ein Symbol. Wenn nicht erfolgreich, wird NULL zurückgegeben.
 
-##  <a name="getlastactivepopup"></a>CWnd:: getlastactivepopup
+##  <a name="cwndgetlastactivepopup"></a><a name="getlastactivepopup"></a>CWnd:: getlastactivepopup
 
 Bestimmt, welches `CWnd` gehörige Popupfenster zuletzt aktiv war.
 
@@ -4178,7 +4178,7 @@ Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung ge
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: FindWindow](#findwindow).
 
-##  <a name="getlayeredwindowattributes"></a>CWnd:: getlayeredwindowattributes
+##  <a name="cwndgetlayeredwindowattributes"></a><a name="getlayeredwindowattributes"></a>CWnd:: getlayeredwindowattributes
 
 Ruft die Deckkraft- und Transparenzfarbenschlüssel eines überlappenden Fensters ab.
 
@@ -4204,11 +4204,11 @@ Zeiger auf ein DWORD, das ein ebenenflag empfängt. Dieser Wert kann NULL sein, 
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [getlayeredwindowattributes](/windows/win32/api/winuser/nf-winuser-getlayeredwindowattributes)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="getmenu"></a>CWnd:: getMenu
+##  <a name="cwndgetmenu"></a><a name="getmenu"></a>CWnd:: getMenu
 
 Ruft einen Zeiger auf das Menü für dieses Fenster ab.
 
@@ -4222,7 +4222,7 @@ Gibt das Menü an. Der Wert ist NULL, wenn `CWnd` über kein Menü verfügt. Der
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion sollte nicht für untergeordnete Fenster verwendet werden, da Sie nicht über ein Menü verfügen.
 
@@ -4230,7 +4230,7 @@ Diese Funktion sollte nicht für untergeordnete Fenster verwendet werden, da Sie
 
 [!code-cpp[NVC_MFCWindowing#98](../../mfc/reference/codesnippet/cpp/cwnd-class_38.cpp)]
 
-##  <a name="getmenubarinfo"></a>CWnd:: getmenubarinfo
+##  <a name="cwndgetmenubarinfo"></a><a name="getmenubarinfo"></a>CWnd:: getmenubarinfo
 
 Ruft Informationen zur angegebenen Menüleiste ab.
 
@@ -4256,11 +4256,11 @@ Zeiger auf eine [menubarinfo](/windows/win32/api/winuser/ns-winuser-menubarinfo)
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [getmenubarinfo](/windows/win32/api/winuser/nf-winuser-getmenubarinfo)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="getnextdlggroupitem"></a>CWnd:: getnextdlggroupitem
+##  <a name="cwndgetnextdlggroupitem"></a><a name="getnextdlggroupitem"></a>CWnd:: getnextdlggroupitem
 
 Sucht das vorherige oder das nächste Steuerelement innerhalb einer Gruppe von Steuerelementen in einem Dialogfeld.
 
@@ -4290,7 +4290,7 @@ Zeiger auf das vorherige oder das nächste Steuerelement in der Gruppe, wenn die
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Gruppe von Steuerelementen beginnt mit einem Steuerelement, das mit dem [WS_GROUP](styles-used-by-mfc.md#window-styles) Stil erstellt wurde, und endet mit dem letzten Steuerelement, das nicht mit dem WS_GROUP Format erstellt wurde.
 
@@ -4305,7 +4305,7 @@ Standardmäßig gibt die `GetNextDlgGroupItem` Member-Funktion einen Zeiger auf 
 |Fensterloses ActiveX-Steuerelement|Enthält kein HWND. Der `m_pSite` Member von `COleControlSiteOrWnd` verweist auf die `COleControlSite`des Steuer Elements, und der `m_hWnd` Member ist NULL.|
 |Standard Fenster|Enthält nur ein HWND. Der `m_hWnd` Member von `COleControlSiteOrWnd` wird auf das HWND des Fensters festgelegt, und der `m_pSite` Member ist NULL.|
 
-##  <a name="getnextdlgtabitem"></a>CWnd:: getnextdlgtabitem
+##  <a name="cwndgetnextdlgtabitem"></a><a name="getnextdlgtabitem"></a>CWnd:: getnextdlgtabitem
 
 Ruft einen Zeiger auf das erste Steuerelement ab, das mit der [WS_TABSTOP](styles-used-by-mfc.md#window-styles) -Formatvorlage erstellt wurde und dem angegebenen Steuerelement vorangestellt ist oder diesem folgt.
 
@@ -4338,7 +4338,7 @@ Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine späte
 
 Weitere Informationen zu `COleControlSiteOrWnd`finden Sie unter [CWnd:: getnextdlggroupitem](#getnextdlggroupitem).
 
-##  <a name="getnextwindow"></a>CWnd:: getnextwindow
+##  <a name="cwndgetnextwindow"></a><a name="getnextwindow"></a>CWnd:: getnextwindow
 
 Sucht das nächste (oder vorherige) Fenster in der Liste der Fenster-Manager.
 
@@ -4357,13 +4357,13 @@ Identifiziert das nächste (oder vorherige) Fenster in der Liste des Fenster-Man
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Liste der Fenster-Manager enthält Einträge für alle Fenster der obersten Ebene, die zugehörigen untergeordneten Fenster und die untergeordneten Fenster aller untergeordneten Fenster.
 
 Wenn `CWnd` ein Fenster der obersten Ebene ist, sucht die-Funktion nach dem nächsten (oder vorherigen) Fenster der obersten Ebene. Wenn `CWnd` ein untergeordnetes Fenster ist, sucht die-Funktion nach dem nächsten (oder vorherigen) untergeordneten Fenster.
 
-##  <a name="getolecontrolsite"></a>CWnd:: getolecontrolsite
+##  <a name="cwndgetolecontrolsite"></a><a name="getolecontrolsite"></a>CWnd:: getolecontrolsite
 
 Ruft die benutzerdefinierte Site für das angegebene ActiveX-Steuerelement ab.
 
@@ -4376,7 +4376,7 @@ COleControlSite* GetOleControlSite(UINT idControl) const;
 *idcontrol*<br/>
 Die ID des ActiveX-Steuer Elements.
 
-##  <a name="getopenclipboardwindow"></a>CWnd:: getopenclipboardwindow
+##  <a name="cwndgetopenclipboardwindow"></a><a name="getopenclipboardwindow"></a>CWnd:: getopenclipboardwindow
 
 Ruft das Handle des Fensters ab, für das die Zwischenablage derzeit geöffnet ist.
 
@@ -4388,7 +4388,7 @@ static CWnd* PASCAL GetOpenClipboardWindow();
 
 Das Handle des Fensters, in dem die Zwischenablage aktuell geöffnet ist, wenn die Funktion erfolgreich ist. andernfalls NULL.
 
-##  <a name="getowner"></a>CWnd:: GetOwner
+##  <a name="cwndgetowner"></a><a name="getowner"></a>CWnd:: GetOwner
 
 Ruft einen Zeiger auf den Besitzer des Fensters ab.
 
@@ -4398,15 +4398,15 @@ CWnd* GetOwner() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd` -Objekt.
+Ein Zeiger auf ein `CWnd`-Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Fenster keinen Besitzer hat, wird standardmäßig ein Zeiger auf das übergeordnete Fenster Objekt zurückgegeben. Beachten Sie, dass sich die Beziehung zwischen dem Besitzer und dem Besitz von dem über-und untergeordneten Aspekt in mehreren wichtigen Aspekten unterscheidet. Beispielsweise wird ein Fenster mit einem übergeordneten Element auf den Client Bereich des übergeordneten Fensters beschränkt. Im Besitz befindliche Fenster können an einem beliebigen Speicherort auf dem Desktop gezeichnet werden.
 
 Das Besitz Konzept dieser Funktion unterscheidet sich vom Besitz Konzept von [GetWindow](/windows/win32/api/winuser/nf-winuser-getwindow).
 
-##  <a name="getparent"></a>CWnd:: GetParent
+##  <a name="cwndgetparent"></a><a name="getparent"></a>CWnd:: GetParent
 
 Mit dieser Funktion können Sie einen Zeiger auf das übergeordnete Fenster eines untergeordneten Fensters abrufen (sofern vorhanden).
 
@@ -4418,11 +4418,11 @@ CWnd* GetParent() const;
 
 Weitere Informationen finden Sie im Abschnitt "Rückgabewerte" in " [GetParent](/windows/win32/api/winuser/nf-winuser-getparent) " im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `GetParent`-Funktion gibt einen Zeiger auf das direkt übergeordnete Element zurück (falls vorhanden). Im Gegensatz dazu gibt die [getcentowner](#getparentowner) -Funktion einen Zeiger auf das unmittelteste übergeordnete Fenster oder Besitzer Fenster zurück, das kein untergeordnetes Fenster ist (hat nicht den WS_CHILD Stil). Wenn Sie ein untergeordnetes Fenster innerhalb eines untergeordneten Fensters haben `GetParent` und `GetParentOwner` andere Ergebnisse zurückgeben.
 
-##  <a name="getparentframe"></a>CWnd:: getparameentframe
+##  <a name="cwndgetparentframe"></a><a name="getparentframe"></a>CWnd:: getparameentframe
 
 Rufen Sie diese Member-Funktion auf, um das übergeordnete Rahmen Fenster abzurufen.
 
@@ -4434,11 +4434,11 @@ CFrameWnd* GetParentFrame() const;
 
 Ein Zeiger auf ein Rahmen Fenster, wenn erfolgreich. andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion sucht nach der übergeordneten Kette, bis ein [CFrameWnd](../../mfc/reference/cframewnd-class.md) -Objekt (oder ein abgeleitetes Klassenobjekt) gefunden wird.
 
-##  <a name="getparentowner"></a>CWnd:: getParser Owner
+##  <a name="cwndgetparentowner"></a><a name="getparentowner"></a>CWnd:: getParser Owner
 
 Mit dieser Member-Funktion können Sie einen Zeiger auf das übergeordnete Fenster oder Besitzer Fenster eines untergeordneten Fensters abrufen.
 
@@ -4448,15 +4448,15 @@ CWnd* GetParentOwner() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CWnd` -Objekt. Wenn ein `CWnd`-Objekt nicht an das Handle angefügt ist, wird ein temporäres `CWnd`-Objekt erstellt und angefügt. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
+Ein Zeiger auf ein `CWnd`-Objekt. Wenn ein `CWnd`-Objekt nicht an das Handle angefügt ist, wird ein temporäres `CWnd`-Objekt erstellt und angefügt. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `GetParentOwner` gibt einen Zeiger auf das unmittelteste übergeordnete Fenster oder Besitzer Fenster zurück, das kein untergeordnetes Fenster ist (hat nicht den WS_CHILD Stil). Das aktuelle Besitzer Fenster kann mit " [SetOwner](#setowner)" festgelegt werden. Standardmäßig ist das übergeordnete Element eines Fensters dessen Besitzer.
 
 Im Gegensatz dazu gibt die [GetParent](#getparent) -Funktion einen Zeiger auf das direkt übergeordnete Element zurück, unabhängig davon, ob es sich um ein untergeordnetes Fenster handelt. Wenn Sie ein untergeordnetes Fenster innerhalb eines untergeordneten Fensters haben `GetParent` und `GetParentOwner` andere Ergebnisse zurückgeben.
 
-##  <a name="getproperty"></a>CWnd:: GetProperty
+##  <a name="cwndgetproperty"></a><a name="getproperty"></a>CWnd:: GetProperty
 
 Mit dieser Member-Funktion können Sie die von *dwdispid*angegebene ActiveX-Steuerelement Eigenschaft abrufen.
 
@@ -4478,7 +4478,7 @@ Gibt den Typ der abzurufenden Eigenschaft an. Informationen zu den möglichen We
 *pvprop*<br/>
 Adresse der Variablen, die den Eigenschafts Wert empfängt. Er muss mit dem von *vtprop*angegebenen Typ identisch sein.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `GetProperty` gibt den Wert über *pvprop*zurück.
 
@@ -4487,7 +4487,7 @@ Adresse der Variablen, die den Eigenschafts Wert empfängt. Er muss mit dem von 
 
 Weitere Informationen zur Verwendung dieser Member-Funktion mit ActiveX-Steuerelement Containern finden Sie im Artikel [ActiveX-Steuerelement Container: Programmieren von ActiveX-Steuerelementen in einem ActiveX-Steuerelement Container](../../mfc/programming-activex-controls-in-a-activex-control-container.md).
 
-##  <a name="getrendertarget"></a>CWnd:: GetRenderTarget
+##  <a name="cwndgetrendertarget"></a><a name="getrendertarget"></a>CWnd:: GetRenderTarget
 
 Ruft ein Renderziel ab, das mit diesem Fenster verknüpft ist.
 
@@ -4499,7 +4499,7 @@ CHwndRenderTarget* GetRenderTarget();
 
 Zeiger auf das Renderziel oder NULL.
 
-##  <a name="getsafehwnd"></a>CWnd:: gezafehwnd
+##  <a name="cwndgetsafehwnd"></a><a name="getsafehwnd"></a>CWnd:: gezafehwnd
 
 Gibt `m_hWnd`zurück, oder NULL, wenn der **this** -Zeiger NULL ist.
 
@@ -4515,7 +4515,7 @@ Gibt das Fenster Handle für ein Fenster zurück. Gibt NULL zurück, wenn die `C
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SubclassWindow](#subclasswindow).
 
-##  <a name="getsafeowner"></a>CWnd:: gezafeowner
+##  <a name="cwndgetsafeowner"></a><a name="getsafeowner"></a>CWnd:: gezafeowner
 
 Rufen Sie diese Member-Funktion auf, um das Besitzer Fenster abzurufen, das für Dialogfelder oder andere modale Fenster verwendet werden soll.
 
@@ -4537,14 +4537,14 @@ Ein Zeiger auf das Fenster, das sich zurzeit auf der obersten Ebene befindet. Ka
 
 Ein Zeiger auf den sicheren Besitzer für das angegebene Fenster.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der sichere Besitzer ist das erste nicht untergeordnete übergeordnete Fenster von *pparent*. Wenn *pparent* den Wert NULL hat, wird das Hauptfenster des Threads (abgerufen über [afxgetmainwnd](../../mfc/reference/application-information-and-management.md#afxgetmainwnd)) zum Suchen eines Besitzers verwendet.
 
 > [!NOTE]
 > Das Framework selbst verwendet diese Funktion, um das richtige Besitzer Fenster für Dialogfelder und Eigenschaften Blätter zu ermitteln, in denen der Besitzer nicht angegeben ist.
 
-##  <a name="getscrollbarctrl"></a>CWnd:: getscrollbarctrl
+##  <a name="cwndgetscrollbarctrl"></a><a name="getscrollbarctrl"></a>CWnd:: getscrollbarctrl
 
 Mit dieser Member-Funktion können Sie einen Zeiger auf die angegebene gleich geordnete Bild Lauf Leiste oder das Splitter Fenster abrufen.
 
@@ -4565,11 +4565,11 @@ Gibt den Typ der Bild Lauf Leiste an. Der-Parameter kann einen der folgenden Wer
 
 Ein gleich geordnetes Schiebe leisten-Steuerelement oder NULL, wenn keines.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion funktioniert nicht auf Bild Lauf leisten, die erstellt werden, wenn die WS_HSCROLL oder WS_VSCROLL Bits während der Erstellung eines Fensters festgelegt werden. Die `CWnd` Implementierung dieser Funktion gibt einfach NULL zurück. Abgeleitete Klassen, wie z. b. `CView`, implementieren die beschriebene Funktionalität.
 
-##  <a name="getscrollbarinfo"></a>CWnd:: getscrollbarinfo
+##  <a name="cwndgetscrollbarinfo"></a><a name="getscrollbarinfo"></a>CWnd:: getscrollbarinfo
 
 Ruft Informationen über die angegebene Bildlaufleiste ab.
 
@@ -4591,11 +4591,11 @@ Zeiger auf eine [scrollbarinfo](/windows/win32/api/winuser/ns-winuser-scrollbari
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [getscrollbarinfo](/windows/win32/api/winuser/nf-winuser-getscrollbarinfo)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="getscrollinfo"></a>CWnd:: getscrollinfo
+##  <a name="cwndgetscrollinfo"></a><a name="getscrollinfo"></a>CWnd:: getscrollinfo
 
 Rufen Sie diese Member-Funktion auf, um die Informationen abzurufen, die von der `SCROLLINFO` Struktur über eine Schiebe Leiste verwaltet werden.
 
@@ -4627,7 +4627,7 @@ Gibt die abzurufenden ScrollBar-Parameter an. Der Standardwert gibt eine Kombina
 
 Wenn die Nachricht Werte abgerufen hat, ist die Rückgabe true. Andernfalls ist Sie false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `GetScrollInfo` ermöglicht es Anwendungen, 32-Bit-scrollpositionen zu verwenden.
 
@@ -4635,7 +4635,7 @@ Die [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur ent
 
 Die MFC-Windows-Meldungs Handler, die die Position der Scrollleiste angeben ( [CWnd:: OnHScroll](#onhscroll) und [CWnd:: OnVScroll](#onvscroll)), stellen nur 16 Bits von Positionsdaten bereit. `GetScrollInfo` und `SetScrollInfo` geben 32 Bits von Positions leisten-Positionsdaten an. Daher kann eine Anwendung `GetScrollInfo` bei der Verarbeitung von `CWnd::OnHScroll` oder `CWnd::OnVScroll` zum Abrufen von 32-Bit-Scrollleisten-Positionsdaten abrufen.
 
-##  <a name="getscrolllimit"></a>CWnd:: getscrolllimit
+##  <a name="cwndgetscrolllimit"></a><a name="getscrolllimit"></a>CWnd:: getscrolllimit
 
 Rufen Sie diese Member-Funktion auf, um die maximale Scrollposition der Scrollleiste abzurufen.
 
@@ -4656,7 +4656,7 @@ Gibt den Typ der Bild Lauf Leiste an. Der-Parameter kann einen der folgenden Wer
 
 Gibt die maximale Position einer Schiebe Leiste an, wenn erfolgreich. andernfalls 0.
 
-##  <a name="getscrollpos"></a>CWnd:: getscrollpos
+##  <a name="cwndgetscrollpos"></a><a name="getscrollpos"></a>CWnd:: getscrollpos
 
 Ruft die aktuelle Position des Bild Lauf Felds einer Schiebe Leiste ab.
 
@@ -4677,11 +4677,11 @@ Gibt die zu überprüfende Bild Lauf Leiste an. Der-Parameter kann einen der fol
 
 Gibt die aktuelle Position des Bild Lauf Felds auf der Bild Lauf Leiste an, wenn erfolgreich. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die aktuelle Position ist ein relativer Wert, der vom aktuellen scrollbereich abhängig ist. Wenn der scrollbereich beispielsweise 50 bis 100 und das Bild Lauf Feld in der Mitte des Balkens liegt, ist die aktuelle Position 75.
 
-##  <a name="getscrollrange"></a>CWnd:: getscrollrange
+##  <a name="cwndgetscrollrange"></a><a name="getscrollrange"></a>CWnd:: getscrollrange
 
 Kopiert die aktuellen minimalen und maximalen Schiebe leisten Positionen für die angegebene Bild Lauf Leiste an die von *lpminpos* und *lpmaxpos*angegebenen Speicherorte.
 
@@ -4707,13 +4707,13 @@ Verweist auf die ganzzahlige Variable, die die minimale Position erhalten soll.
 *lpmaxpos*<br/>
 Verweist auf die ganzzahlige Variable, die die maximale Position erhalten soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` keine Scrollleiste hat, kopiert die `GetScrollRange` Member-Funktion 0 in *lpminpos* und *lpmaxpos*.
 
 Der Standardbereich für eine Standard Scrollleiste ist 0 bis 100. Der Standardbereich für ein Bild Lauf leisten-Steuerelement ist leer (beide Werte sind 0).
 
-##  <a name="getstyle"></a>CWnd:: GetStyle
+##  <a name="cwndgetstyle"></a><a name="getstyle"></a>CWnd:: GetStyle
 
 Gibt den aktuellen Fensterstil zurück.
 
@@ -4725,7 +4725,7 @@ DWORD GetStyle() const;
 
 Der Stil des Fensters. Weitere Informationen zu den in MFC verwendeten Fenster Stilen finden Sie unter [Fenster Stile](styles-used-by-mfc.md#window-styles).
 
-##  <a name="getsystemmenu"></a>CWnd:: getsystemmenu
+##  <a name="cwndgetsystemmenu"></a><a name="getsystemmenu"></a>CWnd:: getsystemmenu
 
 Ermöglicht der Anwendung, auf das Steuerelementmenü zuzugreifen, um Kopier- und Änderungsvorgänge vorzunehmen.
 
@@ -4744,7 +4744,7 @@ Gibt eine Kopie des Steuerelement Menüs an, wenn *brevert* den Wert false hat. 
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jedes Fenster, das nicht `GetSystemMenu` verwendet, um eine eigene Kopie des Steuer Elements zu erstellen, erhält das Standardmenü Steuerelement.
 
@@ -4758,7 +4758,7 @@ Windows stellt möglicherweise automatisch Elemente im Menü Standardsteuerung z
 
 [!code-cpp[NVC_MFCWindowing#99](../../mfc/reference/codesnippet/cpp/cwnd-class_39.cpp)]
 
-##  <a name="gettitlebarinfo"></a>CWnd:: gettitlebarinfo
+##  <a name="cwndgettitlebarinfo"></a><a name="gettitlebarinfo"></a>CWnd:: gettitlebarinfo
 
 Ruft Informationen über die angegebene Titelleiste ab.
 
@@ -4771,11 +4771,11 @@ BOOL GetTitleBarInfo(PTITLEBARINFO pti) const;
 *PTI*<br/>
 Zeiger auf eine [titlebarinfo](/windows/win32/api/winuser/ns-winuser-titlebarinfo) -Struktur, die die Informationen empfängt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [gettitlebarinfo](/windows/win32/api/winuser/nf-winuser-gettitlebarinfo)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="gettoplevelframe"></a>CWnd:: gettoplevelframe
+##  <a name="cwndgettoplevelframe"></a><a name="gettoplevelframe"></a>CWnd:: gettoplevelframe
 
 Rufen Sie diese Member-Funktion auf, um das Fenster der obersten Ebene des Fensters (sofern vorhanden) abzurufen.
 
@@ -4789,11 +4789,11 @@ Identifiziert das Rahmen Fenster der obersten Ebene des Fensters.
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` kein angefügtes Fenster aufweist oder das übergeordnete Element der obersten Ebene kein von [CFrameWnd](../../mfc/reference/cframewnd-class.md)abgeleitetes Objekt ist, gibt diese Funktion NULL zurück.
 
-##  <a name="gettoplevelowner"></a>CWnd:: gettoplevelowner
+##  <a name="cwndgettoplevelowner"></a><a name="gettoplevelowner"></a>CWnd:: gettoplevelowner
 
 Rufen Sie diese Member-Funktion auf, um das Fenster der obersten Ebene abzurufen.
 
@@ -4805,11 +4805,11 @@ CWnd* GetTopLevelOwner() const;
 
 Identifiziert das Fenster der obersten Ebene. Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Fenster der obersten Ebene ist das Fenster, das ein untergeordnetes Element des Desktops ist. Wenn `CWnd` kein angefügtes Fenster aufweist, gibt diese Funktion NULL zurück.
 
-##  <a name="gettoplevelparent"></a>CWnd:: gettoplevelparent
+##  <a name="cwndgettoplevelparent"></a><a name="gettoplevelparent"></a>CWnd:: gettoplevelparent
 
 Rufen Sie diese Member-Funktion auf, um das übergeordnete Element der obersten Ebene abzurufen.
 
@@ -4823,11 +4823,11 @@ Gibt das übergeordnete Fenster der obersten Ebene des Fensters an.
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `GetTopLevelParent` ähnelt " [gettoplevelframe](#gettoplevelframe) " und " [gettoplevelowner](#gettoplevelowner);". der als Aktuelles Besitzer Fenster festgelegte Wert wird jedoch ignoriert.
 
-##  <a name="gettopwindow"></a>CWnd:: gettopwindow
+##  <a name="cwndgettopwindow"></a><a name="gettopwindow"></a>CWnd:: gettopwindow
 
 Sucht nach dem untergeordneten Fenster der obersten Ebene, das zu `CWnd`gehört.
 
@@ -4841,11 +4841,11 @@ Identifiziert das untergeordnete Fenster der obersten Ebene in einer `CWnd` verk
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` über keine untergeordneten Elemente verfügt, gibt diese Funktion NULL zurück.
 
-##  <a name="getupdaterect"></a>CWnd:: getupdaterierten
+##  <a name="cwndgetupdaterect"></a><a name="getupdaterect"></a>CWnd:: getupdaterierten
 
 Ruft die Koordinaten des kleinsten Rechtecks ab, das den Update Bereich vollständig einschließt.
 
@@ -4871,7 +4871,7 @@ Gibt den Status des Aktualisierungs Bereichs an. Der Wert ist ungleich 0 (null),
 
 Wenn der *lprect* -Parameter auf NULL festgelegt ist, ist der Rückgabewert ungleich 0 (null), wenn ein Update Bereich vorhanden ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` mit der CS_OWNDC-Formatvorlage erstellt wurde und der Kartenmodus nicht MM_TEXT ist, gibt die `GetUpdateRect` Member-Funktion das Rechteck in logischen Koordinaten an. Andernfalls gibt `GetUpdateRect` das Rechteck in Client Koordinaten. Wenn kein Aktualisierungs Bereich vorhanden ist, wird `GetUpdateRect` das Rechteck als leer festgelegt (legt alle Koordinaten auf 0 fest).
 
@@ -4881,7 +4881,7 @@ Das Update Rechteck, das von der [BeginPaint](#beginpaint) -Element Funktion abg
 
 Die `BeginPaint` Member-Funktion überprüft automatisch den Update Bereich, sodass jeder `GetUpdateRect`, der unmittelbar nach einem `BeginPaint` aufgerufenen aufgerufen wird, einen leeren Update Bereich abruft.
 
-##  <a name="getupdatergn"></a>CWnd:: getupdatergn
+##  <a name="cwndgetupdatergn"></a><a name="getupdatergn"></a>CWnd:: getupdatergn
 
 Ruft den Aktualisierungs Bereich in eine durch *PRGN*identifizierte Region ab.
 
@@ -4911,13 +4911,13 @@ Gibt ein kurzganzzahliges Flag an, das den Typ des resultierenden Bereichs angib
 
 - Fehler: Es wurde keine Region erstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Koordinaten dieses Bereichs sind relativ zur linken oberen Ecke (Client Koordinaten).
 
 Die [BeginPaint](#beginpaint) -Member-Funktion überprüft automatisch den Update Bereich, sodass alle Aufrufe von `GetUpdateRgn` unmittelbar nach einem `BeginPaint` Abruf erfolgen, einen leeren Update Bereich abrufen.
 
-##  <a name="getwindow"></a>CWnd:: GetWindow
+##  <a name="cwndgetwindow"></a><a name="getwindow"></a>CWnd:: GetWindow
 
 Gibt einen Zeiger auf das angeforderte Fenster zurück, oder NULL, wenn keine gefunden wurde.
 
@@ -4946,7 +4946,7 @@ Gibt die Beziehung zwischen `CWnd` und dem zurückgegebenen Fenster an. Der Wert
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-##  <a name="getwindowcontexthelpid"></a>CWnd:: getwindowcontexthelpid
+##  <a name="cwndgetwindowcontexthelpid"></a><a name="getwindowcontexthelpid"></a>CWnd:: getwindowcontexthelpid
 
 Rufen Sie diese Member-Funktion auf, um den dem Fenster zugeordneten Hilfe Kontext Bezeichner abzurufen.
 
@@ -4958,7 +4958,7 @@ DWORD GetWindowContextHelpId() const;
 
 Der Hilfe Kontext Bezeichner. Gibt 0 zurück, wenn das Fenster keinen hat.
 
-##  <a name="getwindowedchildcount"></a>CWnd:: getwindowedchildcount
+##  <a name="cwndgetwindowedchildcount"></a><a name="getwindowedchildcount"></a>CWnd:: getwindowedchildcount
 
 Rufen Sie diese Member-Funktion auf, um die Anzahl der zugeordneten untergeordneten Fenster abzurufen.
 
@@ -4970,7 +4970,7 @@ long GetWindowedChildCount();
 
 Die Anzahl der untergeordneten Fenster, die dem `CWnd` Objekt zugeordnet sind.
 
-##  <a name="getwindowdc"></a>CWnd:: GetWindowDC
+##  <a name="cwndgetwindowdc"></a><a name="getwindowdc"></a>CWnd:: GetWindowDC
 
 Ruft den Anzeige Kontext für das gesamte Fenster ab, einschließlich Titelleiste, Menüs und Bild Lauf leisten.
 
@@ -4984,7 +4984,7 @@ Identifiziert den Anzeige Kontext für das angegebene Fenster, wenn die Funktion
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden. [ReleaseDC](#releasedc) sollte für jeden erfolgreichen Aufruf von `GetWindowDC`einmal aufgerufen werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Fenster Anzeige Kontext lässt das Zeichnen an beliebiger Stelle in `CWnd`zu, da der Ursprung des Kontexts die linke obere Ecke von `CWnd` anstelle des Client Bereichs ist.
 
@@ -4996,7 +4996,7 @@ Mit der Windows-Funktion " [GetSystemMetrics](/windows/win32/api/winuser/nf-winu
 
 Nachdem der Zeichnungs Vorgang fertig ist, muss die [ReleaseDC](#releasedc) -Member-Funktion aufgerufen werden, um den Anzeige kontextfrei zugeben. Wenn Sie den Anzeige Kontext nicht freigeben, wirkt sich dies ernsthaft auf das von Anwendungen angeforderte zeichnen aus, aufgrund von Einschränkungen hinsichtlich der Anzahl von Geräte Kontexten, die gleichzeitig geöffnet werden können.
 
-##  <a name="getwindowinfo"></a>CWnd:: getwindowinfo
+##  <a name="cwndgetwindowinfo"></a><a name="getwindowinfo"></a>CWnd:: getwindowinfo
 
 Ruft Informationen über das Fenster ab.
 
@@ -5009,11 +5009,11 @@ BOOL GetWindowInfo(PWINDOWINFO pwi) const;
 *PWI*<br/>
 Ein Zeiger auf eine [windowinfo](/windows/win32/api/winuser/ns-winuser-windowinfo) -Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [getwindowinfo](/windows/win32/api/winuser/nf-winuser-getwindowinfo)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="getwindowlesschildcount"></a>CWnd:: getwindowlesschildcount
+##  <a name="cwndgetwindowlesschildcount"></a><a name="getwindowlesschildcount"></a>CWnd:: getwindowlesschildcount
 
 Ruft die Anzahl der zugeordneten fensterlosen untergeordneten Fenster ab.
 
@@ -5025,7 +5025,7 @@ long GetWindowlessChildCount();
 
 Die Anzahl der fensterlosen untergeordneten Fenster, die dem `CWnd` Objekt zugeordnet sind.
 
-##  <a name="getwindowplacement"></a>CWnd:: GetWindowPlacement
+##  <a name="cwndgetwindowplacement"></a><a name="getwindowplacement"></a>CWnd:: GetWindowPlacement
 
 Ruft den Anzeigestatus und die normalen (wiederhergestellt), minimierten und maximierten Positionen eines Fensters ab.
 
@@ -5042,11 +5042,11 @@ Verweist auf die `WINDOWPLACEMENT`-Struktur, die die Informationen zum Ansichts 
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `flags` Member der [WINDOWPLACEMENT](/windows/win32/api/winuser/ns-winuser-windowplacement) -Struktur, die von dieser Funktion abgerufen wird, ist immer 0. Wenn `CWnd` maximiert ist, wird der `showCmd` Member von `WINDOWPLACEMENT` SW_SHOWMAXIMIZED. Wenn das Fenster minimiert ist, wird es SW_SHOWMINIMIZED. Andernfalls ist es SW_SHOWNORMAL.
 
-##  <a name="getwindowrect"></a>CWnd:: GetWindowRect
+##  <a name="cwndgetwindowrect"></a><a name="getwindowrect"></a>CWnd:: GetWindowRect
 
 Kopiert die Abmessungen des umgebenden Rechtecks des `CWnd` Objekts in die-Struktur, auf die von *lprect*verwiesen wird.
 
@@ -5059,11 +5059,11 @@ void GetWindowRect(LPRECT lpRect) const;
 *lprect*<br/>
 Verweist auf ein `CRect` Objekt oder eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die Bildschirm Koordinaten der oberen linken und der unteren rechten Ecke empfängt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Abmessungen werden in Bildschirm Koordinaten relativ zur oberen linken Ecke des Bildschirms angezeigt. Die Dimensionen der Beschriftung, des Rahmens und der Bild Lauf leisten, sofern vorhanden, sind eingeschlossen.
 
-##  <a name="getwindowrgn"></a>CWnd:: getwindowrgn
+##  <a name="cwndgetwindowrgn"></a><a name="getwindowrgn"></a>CWnd:: getwindowrgn
 
 Mit dieser Member-Funktion können Sie den Fensterbereich eines Fensters abrufen.
 
@@ -5088,7 +5088,7 @@ Der Rückgabewert gibt den Typ des Bereichs an, den die Funktion erhält. Es kan
 
 - Fehler: ein Fehler ist aufgetreten. die Region ist nicht betroffen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Fensterbereich bestimmt den Bereich innerhalb des Fensters, in dem das Betriebssystem das Zeichnen zulässt. Das Betriebssystem zeigt keinen Teil eines Fensters an, der sich außerhalb des Fenster Bereichs befindet.
 
@@ -5096,7 +5096,7 @@ Die Koordinaten des Fenster Bereichs eines Fensters sind relativ zur linken ober
 
 Um den Fensterbereich eines Fensters festzulegen, nennen Sie [CWnd:: setwindowrgn](#setwindowrgn).
 
-##  <a name="getwindowtext"></a>CWnd:: GetWindowText
+##  <a name="cwndgetwindowtext"></a><a name="getwindowtext"></a>CWnd:: GetWindowText
 
 Kopiert den Titel der `CWnd` Beschriftung (sofern eine) in den Puffer, auf den von *lpszstringbuf* oder der Ziel Zeichenfolge *RString*verwiesen wird.
 
@@ -5124,7 +5124,7 @@ Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, das die
 
 Gibt die Länge der kopierten Zeichenfolge in Zeichen an, ohne das abschließende Null Zeichen. Der Wert ist 0, wenn `CWnd` keine Beschriftung hat oder wenn die Beschriftung leer ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das `CWnd` Objekt ein Steuerelement ist, kopiert die `GetWindowText` Member-Funktion den Text innerhalb des Steuer Elements, anstatt die Beschriftung zu kopieren.
 
@@ -5134,7 +5134,7 @@ Diese Member-Funktion bewirkt, dass die [WM_GETTEXT](/windows/win32/winmsg/wm-ge
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SetWindowText](#setwindowtext).
 
-##  <a name="getwindowtextlength"></a>CWnd:: getwindowtextlength
+##  <a name="cwndgetwindowtextlength"></a><a name="getwindowtextlength"></a>CWnd:: getwindowtextlength
 
 Gibt die Länge des `CWnd` Titel Titel der Beschriftung zurück.
 
@@ -5146,7 +5146,7 @@ int GetWindowTextLength() const;
 
 Gibt die Text Länge in Zeichen an, ohne dass NULL-Beendigungs Zeichen eingeschlossen werden. Der Wert ist 0 (null), wenn kein solcher Text vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` ein Steuerelement ist, gibt die `GetWindowTextLength` Member-Funktion die Länge des Texts im Steuerelement anstelle der Beschriftung zurück.
 
@@ -5156,7 +5156,7 @@ Diese Member-Funktion bewirkt, dass die [WM_GETTEXTLENGTH](/windows/win32/winmsg
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SetWindowText](#setwindowtext).
 
-##  <a name="hidecaret"></a>CWnd:: hideCaret
+##  <a name="cwndhidecaret"></a><a name="hidecaret"></a>CWnd:: hideCaret
 
 Blendet das Caretzeichen aus, indem es auf dem Anzeigebildschirm entfernt wird.
 
@@ -5164,13 +5164,13 @@ Blendet das Caretzeichen aus, indem es auf dem Anzeigebildschirm entfernt wird.
 void HideCaret();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Obwohl die Einfügemarke nicht mehr sichtbar ist, kann Sie mithilfe der [ShowCaret](#showcaret) -Member-Funktion erneut angezeigt werden. Durch das Ausblenden der Einfügemarke wird die aktuelle Form nicht zerstört.
 
 Das Ausblenden ist kumulativ. Wenn `HideCaret` in einer Zeile fünfmal aufgerufen wurde, muss die `ShowCaret` Member-Funktion fünf Mal aufgerufen werden, bevor die Einfügemarke angezeigt wird.
 
-##  <a name="hilitemenuitem"></a>CWnd:: hilitemenuitem
+##  <a name="cwndhilitemenuitem"></a><a name="hilitemenuitem"></a>CWnd:: hilitemenuitem
 
 Hebt die Hervorhebung aus einem Menü Element der obersten Ebene (Menüleiste) hervor oder entfernt Sie.
 
@@ -5204,11 +5204,11 @@ Gibt an, ob das Menü Element hervorgehoben ist oder die Hervorhebung entfernt w
 
 Gibt an, ob das Menü Element hervorgehoben wurde. Ungleich NULL, wenn das Element hervorgehoben wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die MF_HILITE-und MF_UNHILITE Flags können nur mit dieser Member-Funktion verwendet werden. Sie können nicht mit der Member-Funktion [CMenu:: modifymenu](../../mfc/reference/cmenu-class.md#modifymenu) verwendet werden.
 
-##  <a name="htmlhelp"></a>CWnd:: HTMLHelp
+##  <a name="cwndhtmlhelp"></a><a name="htmlhelp"></a>CWnd:: HTMLHelp
 
 Rufen Sie diese Member-Funktion auf, um die HTMLHelp-Anwendung aufzurufen.
 
@@ -5226,11 +5226,11 @@ Gibt zusätzliche Daten an. Der verwendete Wert hängt vom Wert des *ncmd* -Para
 *ncmd*<br/>
 Gibt den Typ der angeforderten Hilfe an. Eine Liste möglicher Werte und deren Auswirkung auf den *dwdata* -Parameter finden Sie unter dem *ucommand* -Parameter, der in der HTML-Hilfe-API-Referenz im Windows SDK beschrieben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: HTMLHelp](../../mfc/reference/cwinapp-class.md#htmlhelp) .
 
-##  <a name="initdynamiclayout"></a>CWnd:: initdynamiclayout
+##  <a name="cwndinitdynamiclayout"></a><a name="initdynamiclayout"></a>CWnd:: initdynamiclayout
 
 Wird durch das Framework aufgerufen, um das dynamische Layout für ein Fenster zu initialisieren.
 
@@ -5238,11 +5238,11 @@ Wird durch das Framework aufgerufen, um das dynamische Layout für ein Fenster z
 void InitDynamicLayout();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Rufen Sie diese Methode nicht direkt auf.
 
-##  <a name="invalidate"></a>CWnd:: Invalidate
+##  <a name="cwndinvalidate"></a><a name="invalidate"></a>CWnd:: Invalidate
 
 Erklärt den gesamten Client Bereich von `CWnd`für ungültig.
 
@@ -5255,7 +5255,7 @@ void Invalidate(BOOL bErase = TRUE);
 *berase*<br/>
 Gibt an, ob der Hintergrund innerhalb des Aktualisierungs Bereichs gelöscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Client Bereich ist zum Zeichnen gekennzeichnet, wenn die nächste [WM_PAINT](#onpaint) Meldung auftritt. Die Region kann auch überprüft werden, bevor eine WM_PAINT Meldung von der [validaterierten](#validaterect) oder [ValidateRgn](#validatergn) -Member-Funktion auftritt.
 
@@ -5267,7 +5267,7 @@ Windows sendet immer dann eine [WM_PAINT](#onpaint) Meldung, wenn der `CWnd` Upd
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: UpdateWindow](#updatewindow).
 
-##  <a name="invalidaterect"></a>CWnd:: invalidateruieren
+##  <a name="cwndinvalidaterect"></a><a name="invalidaterect"></a>CWnd:: invalidateruieren
 
 Macht den Client Bereich innerhalb des angegebenen Rechtecks ungültig, indem dieses Rechteck der `CWnd` Aktualisierungs Region hinzugefügt wird.
 
@@ -5285,7 +5285,7 @@ Verweist auf ein `CRect` Objekt oder eine [Rect-Struktur](/windows/win32/api/win
 *berase*<br/>
 Gibt an, ob der Hintergrund innerhalb des Aktualisierungs Bereichs gelöscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das ungültige Rechteck wird zusammen mit allen anderen Bereichen im Aktualisierungs Bereich zum Zeichnen gekennzeichnet, wenn die nächste [WM_PAINT](#onpaint) Nachricht gesendet wird. Die für ungültig erklärten Bereiche sammeln sich in der Aktualisierungs Region an, bis der Bereich verarbeitet wird, wenn der nächste WM_PAINT aufgerufen wird, oder bis der Bereich von der [validaterierten](#validaterect) oder [ValidateRgn](#validatergn) -Member-Funktion überprüft wird.
 
@@ -5293,7 +5293,7 @@ Der *berase* -Parameter gibt an, ob der Hintergrund im Aktualisierungs Bereich g
 
 Windows sendet immer dann eine [WM_PAINT](#onpaint) Meldung, wenn der `CWnd` Update Bereich nicht leer ist und in der Anwendungs Warteschlange für dieses Fenster keine weiteren Meldungen vorhanden sind.
 
-##  <a name="invalidatergn"></a>CWnd:: InvalidateRgn
+##  <a name="cwndinvalidatergn"></a><a name="invalidatergn"></a>CWnd:: InvalidateRgn
 
 Macht den Client Bereich innerhalb der angegebenen Region ungültig, indem er dem aktuellen Update Bereich von `CWnd`hinzugefügt wird.
 
@@ -5311,7 +5311,7 @@ Ein Zeiger auf ein [crgn](../../mfc/reference/crgn-class.md) -Objekt, das den de
 *berase*<br/>
 Gibt an, ob der Hintergrund innerhalb des Aktualisierungs Bereichs gelöscht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der ungültige Bereich wird zusammen mit allen anderen Bereichen in der Aktualisierungs Region zum Zeichnen gekennzeichnet, wenn die [WM_PAINT](#onpaint) Nachricht das nächste Mal gesendet wird. Die für ungültig erklärten Bereiche sammeln sich in der Update Region an, bis die Region verarbeitet wird, wenn eine WM_PAINT Nachricht das nächste Mal gesendet wird, oder bis der Bereich von der [validaterierten](#validaterect) oder [ValidateRgn](#validatergn) -Member-Funktion überprüft wird.
 
@@ -5321,7 +5321,7 @@ Windows sendet immer dann eine [WM_PAINT](#onpaint) Meldung, wenn der `CWnd` Upd
 
 Der angegebene Bereich muss zuvor von einer der Regions Funktionen erstellt worden sein.
 
-##  <a name="invokehelper"></a>CWnd:: InvokeHelper
+##  <a name="cwndinvokehelper"></a><a name="invokehelper"></a>CWnd:: InvokeHelper
 
 Rufen Sie diese Member-Funktion auf, um die von *dwdispid*angegebene ActiveX-Steuerelement Methode oder-Eigenschaft in dem durch *wFlags*angegebenen Kontext aufzurufen.
 
@@ -5355,7 +5355,7 @@ Zeiger auf eine mit NULL endenden Byte Zeichenfolge, die die Typen der Parameter
 *...*<br/>
 Variable Parameterliste, der in *pbparaminfo*angegebenen Typen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *pbparaminfo* -Parameter gibt die Typen der Parameter an, die an die Methode oder Eigenschaft übergeben werden. Die variable Argumentliste wird in der Syntaxdeklaration durch *...* dargestellt.
 
@@ -5366,7 +5366,7 @@ Diese Funktion konvertiert die Parameter in VARIANTARG-Werte und ruft dann die `
 
 Weitere Informationen zur Verwendung dieser Member-Funktion mit ActiveX-Steuerelement Containern finden Sie im Artikel [ActiveX-Steuerelement Container: Programmieren von ActiveX-Steuerelementen in einem ActiveX-Steuerelement Container](../../mfc/programming-activex-controls-in-a-activex-control-container.md).
 
-##  <a name="ischild"></a>CWnd:: IsChild
+##  <a name="cwndischild"></a><a name="ischild"></a>CWnd:: IsChild
 
 Gibt an, ob das von *pwnd* angegebene Fenster ein untergeordnetes Fenster oder ein anderer direkter Nachfolger von `CWnd`ist.
 
@@ -5383,11 +5383,11 @@ Identifiziert das Fenster, das getestet werden soll.
 
 Gibt das Ergebnis der Funktion an. Der Wert ist ungleich 0 (null), wenn das durch *pwnd* identifizierte Fenster ein untergeordnetes Fenster von `CWnd`ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein untergeordnetes Fenster ist der direkte Nachfolger von `CWnd`, wenn sich das `CWnd` Objekt in der Kette der übergeordneten Fenster befindet, die vom ursprünglichen Popup Fenster zum untergeordneten Fenster führt.
 
-##  <a name="isd2dsupportenabled"></a>CWnd:: IsD2DSupportEnabled
+##  <a name="cwndisd2dsupportenabled"></a><a name="isd2dsupportenabled"></a>CWnd:: IsD2DSupportEnabled
 
 Bestimmt, ob die D2D-Unterstützung aktiviert ist.
 
@@ -5399,7 +5399,7 @@ BOOL IsD2DSupportEnabled();
 
 TRUE, wenn das Feature aktiviert ist. andernfalls false.
 
-##  <a name="isdialogmessage"></a>CWnd:: IsDialogMessage
+##  <a name="cwndisdialogmessage"></a><a name="isdialogmessage"></a>CWnd:: IsDialogMessage
 
 Mit dieser Member-Funktion können Sie feststellen, ob die angegebene Nachricht für ein nicht modalem Dialogfeld vorgesehen ist. Wenn dies der Fall ist, wird die Nachricht von dieser Funktion verarbeitet.
 
@@ -5418,13 +5418,13 @@ Gibt an, ob die Element Funktion die angegebene Nachricht verarbeitet hat. Der W
 
 [!code-cpp[NVC_MFCWindowing#100](../../mfc/reference/codesnippet/cpp/cwnd-class_40.cpp)]
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die `IsDialogMessage`-Funktion eine Nachricht verarbeitet, sucht Sie nach Tastatur Meldungen und konvertiert sie in Auswahl Befehle für das entsprechende Dialogfeld. Beispielsweise wählt die Tab-Taste das nächste Steuerelement oder eine Gruppe von Steuerelementen aus, und die nach-unten-Taste wählt das nächste Steuerelement in einer Gruppe aus.
 
 Sie dürfen eine von `IsDialogMessage` verarbeitete Nachricht nicht an die Windows-Funktionen [translatemess](/windows/win32/api/winuser/nf-winuser-translatemessage) oder [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dispatchmessage) übergeben, da Sie bereits verarbeitet wurde.
 
-##  <a name="isdlgbuttonchecked"></a>CWnd:: isdlgbuttoncheck
+##  <a name="cwndisdlgbuttonchecked"></a><a name="isdlgbuttonchecked"></a>CWnd:: isdlgbuttoncheck
 
 Bestimmt, ob ein Schaltflächen-Steuerelement daneben ein Häkchen aufweist.
 
@@ -5441,11 +5441,11 @@ Gibt den ganzzahligen Bezeichner des Schaltflächen Steuer Elements an.
 
 Ungleich 0 (null), wenn das angegebene Steuerelement aktiviert ist, und 0, wenn es nicht aktiviert ist. Es können nur Options Felder und Kontrollkästchen aktiviert werden. Bei drei-Status-Schaltflächen kann der Rückgabewert 2 sein, wenn die Schaltfläche unbestimmt ist. Diese Member-Funktion gibt 0 für einen PUSHBUTTON zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Schaltfläche ein drei-Status-Steuerelement ist, bestimmt die Member-Funktion, ob Sie abdimmt, überprüft oder keines von beiden ist.
 
-##  <a name="isdynamiclayoutenabled"></a>CWnd:: isdynamiclayoutenabled
+##  <a name="cwndisdynamiclayoutenabled"></a><a name="isdynamiclayoutenabled"></a>CWnd:: isdynamiclayoutenabled
 
 Bestimmt, ob das dynamische Layout in diesem Fenster aktiviert ist. Wenn das dynamische Layout aktiviert ist, können sich die Position und die Größe der untergeordneten Fenster ändern, wenn der Benutzer die Größe des übergeordneten Fensters ändert.
 
@@ -5457,9 +5457,9 @@ BOOL IsDynamicLayoutEnabled() const;
 
 TRUE, wenn das dynamische Layout aktiviert ist, ansonsten FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isiconic"></a>CWnd:: ISIC
+##  <a name="cwndisiconic"></a><a name="isiconic"></a>CWnd:: ISIC
 
 Gibt an, ob `CWnd` minimiert ("Iconic") ist.
 
@@ -5475,7 +5475,7 @@ Ungleich 0 (null), wenn `CWnd` minimiert wird. andernfalls 0.
 
 [!code-cpp[NVC_MFCWindowing#101](../../mfc/reference/codesnippet/cpp/cwnd-class_41.cpp)]
 
-##  <a name="istouchwindow"></a>CWnd:: istouchwindow
+##  <a name="cwndistouchwindow"></a><a name="istouchwindow"></a>CWnd:: istouchwindow
 
 Gibt an, ob `CWnd` über die Fingereingabeunterstützung verfügt.
 
@@ -5487,9 +5487,9 @@ BOOL IsTouchWindow() const;
 
 TRUE, wenn `CWnd` Berührungs Unterstützung hat. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="iswindowenabled"></a>CWnd:: iswindowenabled
+##  <a name="cwndiswindowenabled"></a><a name="iswindowenabled"></a>CWnd:: iswindowenabled
 
 Gibt an, ob `CWnd` für die Maus-und Tastatureingabe aktiviert ist.
 
@@ -5505,7 +5505,7 @@ Ungleich 0 (null), wenn `CWnd` aktiviert ist. andernfalls 0.
 
 [!code-cpp[NVC_MFCWindowing#102](../../mfc/reference/codesnippet/cpp/cwnd-class_42.cpp)]
 
-##  <a name="iswindowvisible"></a>CWnd:: iswindowvisible
+##  <a name="cwndiswindowvisible"></a><a name="iswindowvisible"></a>CWnd:: iswindowvisible
 
 Bestimmt den Sichtbarkeits Zustand des angegebenen Fensters.
 
@@ -5517,7 +5517,7 @@ BOOL IsWindowVisible() const;
 
 Ein Wert ungleich 0 (null), wenn `CWnd` sichtbar ist (für das [WS_VISIBLE](styles-used-by-mfc.md#window-styles) Stilbit festgelegt und das übergeordnete Fenster sichtbar ist). Da der Rückgabewert den Zustand des WS_VISIBLE stilbits widerspiegelt, kann der Rückgabewert nicht NULL sein, auch wenn `CWnd` von anderen Fenstern vollständig verdeckt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Fenster verfügt über einen Sicht barkeits Zustand, der durch das WS_VISIBLE-Stilbit angegeben wird. Wenn dieses Stilbit mit einem-Befehl der [ShowWindow](#showwindow) -Member-Funktion festgelegt wird, wird das Fenster angezeigt, und eine nachfolgende Zeichnung zum Fenster wird angezeigt, solange für das Fenster das Stilbit festgelegt ist.
 
@@ -5527,7 +5527,7 @@ Jede Zeichnung in ein Fenster mit dem WS_VISIBLE-Stil wird nicht angezeigt, wenn
 
 [!code-cpp[NVC_MFCWindowing#103](../../mfc/reference/codesnippet/cpp/cwnd-class_43.cpp)]
 
-##  <a name="iszoomed"></a>CWnd:: IsZoomed
+##  <a name="cwndiszoomed"></a><a name="iszoomed"></a>CWnd:: IsZoomed
 
 Bestimmt, ob `CWnd` maximiert ist.
 
@@ -5539,7 +5539,7 @@ BOOL IsZoomed() const;
 
 Ungleich 0 (null), wenn `CWnd` maximiert ist. andernfalls 0.
 
-##  <a name="killtimer"></a>CWnd:: killtimer
+##  <a name="cwndkilltimer"></a><a name="killtimer"></a>CWnd:: killtimer
 
 Bricht das Zeit Geber *Ereignis ab, das vom vorherigen* `SetTimer`aufgerufen wurde.
 
@@ -5556,7 +5556,7 @@ Der Wert des Zeit Geber Ereignisses, das an die [ENummer](#settimer)-Aktivität 
 
 Gibt das Ergebnis der Funktion an. Der Wert ist ungleich 0 (null), wenn das Ereignis abgebrochen wurde. Der Wert ist 0, wenn die `KillTimer` Member-Funktion das angegebene Zeit Geber Ereignis nicht finden konnte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ausstehende [WM_TIMER](#ontimer) Nachrichten, die dem Timer zugeordnet sind, werden nicht aus der Nachrichten Warteschlange entfernt.
 
@@ -5564,7 +5564,7 @@ Ausstehende [WM_TIMER](#ontimer) Nachrichten, die dem Timer zugeordnet sind, wer
 
   Weitere Informationen finden Sie im Beispiel für [CWnd::](#settimer)*.
 
-##  <a name="loaddynamiclayoutresource"></a>CWnd:: loaddynamiclayoutresource
+##  <a name="cwndloaddynamiclayoutresource"></a><a name="loaddynamiclayoutresource"></a>CWnd:: loaddynamiclayoutresource
 
 Vom Framework aufgerufen, um Informationen zum dynamischen Layout aus der Ressourcendatei zu laden.
 
@@ -5581,11 +5581,11 @@ Der Name der Ressource, die das gewünschte dynamisches Layout für dieses Fenst
 
 Ungleich null, wenn die Funktion erfolgreich ist. Es ist 0, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Rufen Sie diese Methode nicht direkt auf.
 
-##  <a name="lockwindowupdate"></a>CWnd:: lockwindowupdate
+##  <a name="cwndlockwindowupdate"></a><a name="lockwindowupdate"></a>CWnd:: lockwindowupdate
 
 Deaktiviert das Zeichnen im angegebenen Fenster.
 
@@ -5597,7 +5597,7 @@ BOOL LockWindowUpdate();
 
 Ungleich null, wenn die Funktion erfolgreich ist. Der Wert ist 0, wenn ein Fehler auftritt oder wenn die `LockWindowUpdate`-Funktion verwendet wurde, um ein anderes Fenster zu sperren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein gesperrtes Fenster kann nicht verschoben werden. Es kann jeweils nur ein Fenster gesperrt werden. Wenn Sie ein Fenster entsperren möchten, das mit `LockWindowUpdate`gesperrt ist, nennen Sie [unlockwindowupdate](#unlockwindowupdate).
 
@@ -5607,7 +5607,7 @@ Während Fenster Updates gesperrt sind, verfolgt das System das umgebende Rechte
 
 Die `LockWindowUpdate` Member-Funktion macht das angegebene Fenster nicht unsichtbar und löscht das [WS_VISIBLE](styles-used-by-mfc.md#window-styles) Stilbit nicht.
 
-##  <a name="m_hwnd"></a>CWnd:: m_hWnd
+##  <a name="cwndm_hwnd"></a><a name="m_hwnd"></a>CWnd:: m_hWnd
 
 Das Handle des Windows-Fensters, das an dieses `CWnd`angefügt ist.
 
@@ -5615,11 +5615,11 @@ Das Handle des Windows-Fensters, das an dieses `CWnd`angefügt ist.
 HWND m_hWnd;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `m_hWnd` Datenmember ist eine öffentliche Variable vom Typ HWND.
 
-##  <a name="mapwindowpoints"></a>CWnd:: mapwindowpoints
+##  <a name="cwndmapwindowpoints"></a><a name="mapwindowpoints"></a>CWnd:: mapwindowpoints
 
 Konvertiert (Zuordnung) einen Satz von Punkten aus dem Koordinatenbereich von `CWnd` zum Koordinatenbereich des anderen Fensters.
 
@@ -5648,7 +5648,7 @@ Ein Zeiger auf ein Array von [Punkt Strukturen](/windows/win32/api/windef/ns-win
 *nCount*<br/>
 Gibt die Anzahl der `POINT` Strukturen im Array an, auf die von *lpPoint*verwiesen wird.
 
-##  <a name="messagebox"></a>CWnd:: MessageBox
+##  <a name="cwndmessagebox"></a><a name="messagebox"></a>CWnd:: MessageBox
 
 Erstellt ein Fenster, das eine von der Anwendung bereitgestellte Meldung und Beschriftung enthält, sowie eine Kombination der vordefinierten Symbole und Pushbuttons, die in der Liste Meldungs [Feld Stile](../../mfc/reference/styles-used-by-mfc.md#message-box-styles) beschrieben werden, und zeigt es an.
 
@@ -5674,7 +5674,7 @@ Gibt den Inhalt und das Verhalten des Meldungs Felds an.
 
 Diese Methode verwendet die [MessageBox](/windows/win32/api/winuser/nf-winuser-messagebox) -Funktion, wie Sie in der Windows SDK definiert ist. Diese Methode gibt das Ergebnis des Aufruf dieser Funktion zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie die globale Funktion [AfxMessageBox](../../mfc/reference/cstring-formatting-and-message-box-display.md#afxmessagebox) anstelle dieser Member-Funktion, um ein Meldungs Feld in der Anwendung zu implementieren.
 
@@ -5691,7 +5691,7 @@ Im folgenden werden die verschiedenen System Symbole angezeigt, die in einem Mel
 
 [!code-cpp[NVC_MFCWindowing#104](../../mfc/reference/codesnippet/cpp/cwnd-class_44.cpp)]
 
-##  <a name="modifystyle"></a>CWnd:: modifystyle
+##  <a name="cwndmodifystyle"></a><a name="modifystyle"></a>CWnd:: modifystyle
 
 Mit dieser Member-Funktion können Sie den Stil eines Fensters ändern.
 
@@ -5711,13 +5711,13 @@ Gibt Fenster Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt Fenster Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn style erfolgreich geändert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Stile, die hinzugefügt oder entfernt werden sollen, können mithilfe des bitweisen or (&#124;)-Operators kombiniert werden. Informationen zu den verfügbaren Fenster Formaten finden [Sie in den](/windows/win32/api/winuser/nf-winuser-createwindoww) Themen [Fenster Stile](/windows/win32/winmsg/window-styles) und in der Windows SDK.
 
@@ -5740,7 +5740,7 @@ Informationen zum Ändern der erweiterten Stile eines Fensters finden Sie unter 
 
 [!code-cpp[NVC_MFCWindowing#105](../../mfc/reference/codesnippet/cpp/cwnd-class_45.cpp)]
 
-##  <a name="modifystyleex"></a>CWnd:: modifystyleex
+##  <a name="cwndmodifystyleex"></a><a name="modifystyleex"></a>CWnd:: modifystyleex
 
 Mit dieser Member-Funktion können Sie den erweiterten Stil eines Fensters ändern.
 
@@ -5760,13 +5760,13 @@ Gibt erweiterte Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt erweiterte Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn style erfolgreich geändert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Stile, die hinzugefügt oder entfernt werden sollen, können mithilfe des bitweisen or (&#124;)-Operators kombiniert werden. Weitere Informationen zu den verfügbaren erweiterten Stilen finden Sie in den Themen [Erweiterte Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles) [in diesem Buch und in](/windows/win32/api/winuser/nf-winuser-createwindowexw) der Windows SDK.
 
@@ -5786,7 +5786,7 @@ Informationen zum Ändern von Fenstern mithilfe regulärer Fenster Stile finden 
 
 [!code-cpp[NVC_MFCWindowing#106](../../mfc/reference/codesnippet/cpp/cwnd-class_46.cpp)]
 
-##  <a name="movewindow"></a>CWnd:: muvewindow
+##  <a name="cwndmovewindow"></a><a name="movewindow"></a>CWnd:: muvewindow
 
 Ändert die Position und die Dimensionen.
 
@@ -5823,7 +5823,7 @@ Gibt an, ob `CWnd` neu gezeichnet werden soll. TRUE gibt an, dass `CWnd` in sein
 *lprect*<br/>
 Das [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder die [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die neue Größe und Position angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei einem `CWnd` Objekt der obersten Ebene sind die *x* -und *y* -Parameter relativ zur oberen linken Ecke des Bildschirms. Bei einem untergeordneten `CWnd` Objekt sind diese relativ zur oberen linken Ecke des Client Bereichs des übergeordneten Fensters.
 
@@ -5833,7 +5833,7 @@ Die `MoveWindow`-Funktion sendet die [WM_GETMINMAXINFO](#ongetminmaxinfo) Nachri
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: clientdescreen](#clienttoscreen).
 
-##  <a name="notifywinevent"></a>CWnd:: NotifyWinEvent
+##  <a name="cwndnotifywinevent"></a><a name="notifywinevent"></a>CWnd:: NotifyWinEvent
 
 Signalisiert dem System, dass ein vordefiniertes Ereignis aufgetreten ist. Wenn Client Anwendungen eine Hook-Funktion für das Ereignis registriert haben, ruft das System die Hook-Funktion des Clients auf.
 
@@ -5855,11 +5855,11 @@ Identifiziert die Art des Objekts, das das Ereignis generiert hat. Dieser Wert i
 *idobject*<br/>
 Gibt an, ob das Ereignis von einem-Objekt oder einem untergeordneten-Element des-Objekts generiert wurde. Wenn dieser Wert CHILDID_SELF ist, wurde das Ereignis vom Objekt selbst generiert. Wenn dies nicht der Fall ist, ist dieser Wert die untergeordnete ID des Elements, das das Ereignis generiert hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion [NotifyWinEvent](/windows/win32/api/winuser/nf-winuser-notifywinevent), wie im Windows SDK beschrieben.
 
-##  <a name="onactivate"></a>CWnd:: onaktivierungs
+##  <a name="cwndonactivate"></a><a name="onactivate"></a>CWnd:: onaktivierungs
 
 Das Framework ruft diese Member-Funktion auf, wenn ein `CWnd` Objekt aktiviert oder deaktiviert wird.
 
@@ -5889,14 +5889,14 @@ Gibt den minimierten Zustand der `CWnd` an, die aktiviert oder deaktiviert werde
 
 TRUE gibt an, dass die `CWnd` aktiviert wird. Andernfalls deaktiviert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das `CWnd` Objekt mit einem Mausklick aktiviert wird, empfängt es auch einen [onmouseaktivierungs](#onmouseactivate) -Member-Funktions Aufruf.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onactivateapp"></a>CWnd:: onactivateapp
+##  <a name="cwndonactivateapp"></a><a name="onactivateapp"></a>CWnd:: onactivateapp
 
 Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene der Aufgabe auf, die aktiviert wird, und für alle Fenster der obersten Ebene der Aufgabe, die deaktiviert wird.
 
@@ -5914,12 +5914,12 @@ Gibt an, ob der `CWnd` aktiviert oder deaktiviert wird. "True" bedeutet, dass di
 *dwthreadid*<br/>
 Gibt den Wert der Thread-ID an. Wenn *bActive* auf true festgelegt ist, identifiziert *dwthreadid* den Thread, der das `CWnd` deaktivierte. Wenn *bActive* auf false festgelegt ist, identifiziert *dwthreadid* den Thread, der das `CWnd` aktivierte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onambientproperty"></a>CWnd:: onambientproperty
+##  <a name="cwndonambientproperty"></a><a name="onambientproperty"></a>CWnd:: onambientproperty
 
 Das Framework ruft diese Member-Funktion auf, um Ambient-Eigenschaftswerte aus einem Fenster abzurufen, das OLE-Steuerelemente enthält.
 
@@ -5945,11 +5945,11 @@ Ein Zeiger auf eine `VARIANT` Struktur, die vom Aufrufer zugeordnet wird und dur
 
 TRUE, wenn die Ambient-Eigenschaft unterstützt wird. FALSE, wenn nicht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Funktion, um die standardmäßigen Ambient-Eigenschaftswerte, die von einem OLE-Steuerelement Container zurückgegeben werden, Alle Umgebungs Eigenschafts Anforderungen, die nicht von einer über schreibenden Funktion verarbeitet werden, sollten an die Basisklassen Implementierung weitergeleitet werden.
 
-##  <a name="onappcommand"></a>CWnd:: onappcommand
+##  <a name="cwndonappcommand"></a><a name="onappcommand"></a>CWnd:: onappcommand
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer ein Anwendungs Befehls Ereignis generiert. Ein derartiges Ereignis tritt auf, wenn der Benutzer auf eine Anwendungs Befehlsschaltfläche klickt oder einen Anwendungs Befehls Schlüssel eingibt.
 
@@ -5963,21 +5963,21 @@ afx_msg void OnAppCommand(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*folgenden*|in Ein Zeiger auf ein `CWnd` Objekt, das das Fenster darstellt, in dem der Benutzer auf die Befehls Schaltfläche geklickt oder die Befehlstaste gedrückt hat. Dieses Fenster kann ein untergeordnetes Fenster des Fensters sein, in dem die Nachricht empfangen wird.|
 |*ncmd*|in Gibt den Anwendungs Befehl an. Eine Liste möglicher Werte finden Sie unter den Befehlen im *cmd* -Abschnitt des *LPARAM* -Parameters von [WM_APPCOMMAND](/windows/win32/inputdev/wm-appcommand).|
 |*ngerät*|in Das Eingabegerät, das das Eingabe Ereignis generiert hat. Eine Liste möglicher Werte finden Sie im Abschnitt "Geräte" im Abschnitt " *udevice* " des *LPARAM* -Parameters von [WM_APPCOMMAND](/windows/win32/inputdev/wm-appcommand).|
 |*nkey*|in Gibt alle virtuellen Schlüssel an, die insoweit sind, z. b. die STRG-Taste oder die linke Maustaste. Eine Liste möglicher Werte finden Sie unter den Schlüsseln im Abschnitt " *dwkeys* " des *LPARAM* -Parameters von [WM_APPCOMMAND](/windows/win32/inputdev/wm-appcommand). Weitere Informationen finden Sie in der Unterüberschrift "message Parameters" in [about Mouse Input](/windows/win32/inputdev/about-mouse-input).|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_APPCOMMAND](/windows/win32/inputdev/wm-appcommand) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onaskcbformatname"></a>CWnd:: onaskcbformatname
+##  <a name="cwndonaskcbformatname"></a><a name="onaskcbformatname"></a>CWnd:: onaskcbformatname
 
 Das Framework ruft diese Member-Funktion auf, wenn die Zwischenablage ein Daten Handle für das CF_OWNERDISPLAY Format enthält (d. h. wenn der Besitzer der Zwischenablage den Inhalt der Zwischenablage anzeigt).
 
@@ -5995,7 +5995,7 @@ Gibt die maximale Anzahl der zu kopierenden Bytes an.
 *lpszstring*<br/>
 Zeigt auf den Puffer, in dem die Kopie des Format namens gespeichert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Besitzer der Zwischenablage sollte einen Namen für sein Format angeben.
 
@@ -6004,7 +6004,7 @@ Der Besitzer der Zwischenablage sollte einen Namen für sein Format angeben.
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncancelmode"></a>CWnd:: oncancelmode
+##  <a name="cwndoncancelmode"></a><a name="oncancelmode"></a>CWnd:: oncancelmode
 
 Das Framework ruft diese Member-Funktion auf, um `CWnd` zu informieren, dass interner Modus abgebrochen werden soll.
 
@@ -6012,13 +6012,13 @@ Das Framework ruft diese Member-Funktion auf, um `CWnd` zu informieren, dass int
 afx_msg void OnCancelMode();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das `CWnd` Objekt den Fokus hat, wird seine `OnCancelMode` Member-Funktion aufgerufen, wenn ein Dialogfeld oder ein Meldungs Feld angezeigt wird. Dadurch erhält der `CWnd` die Möglichkeit, Modi wie z. b. die Maus Aufzeichnung abzubrechen.
 
 Die Standard Implementierung antwortet durch Aufrufen der [releasecapture](/windows/win32/api/winuser/nf-winuser-releasecapture) -Windows-Funktion. Überschreiben Sie diese Member-Funktion in der abgeleiteten Klasse, um andere Modi zu verarbeiten.
 
-##  <a name="oncapturechanged"></a>CWnd:: oncapturechanged
+##  <a name="cwndoncapturechanged"></a><a name="oncapturechanged"></a>CWnd:: oncapturechanged
 
 Das Framework ruft diese Member-Funktion auf, um das Fenster zu benachrichtigen, das die Maus Aufzeichnung verliert.
 
@@ -6031,7 +6031,7 @@ afx_msg void OnCaptureChanged(CWnd* pWnd);
 *folgenden*<br/>
 Ein Zeiger auf das Fenster, um die Maus Aufzeichnung zu erhalten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Fenster empfängt diese Meldung auch dann, wenn es [releasecapture](/windows/win32/api/winuser/nf-winuser-releasecapture) selbst aufruft. Eine Anwendung sollte nicht versuchen, die Maus Aufzeichnung als Reaktion auf diese Meldung festzulegen. Wenn diese Meldung empfangen wird, sollte sich ein Fenster bei Bedarf selbst neu zeichnen, um den neuen Zustand der Maus Aufzeichnung widerzuspiegeln.
 
@@ -6040,7 +6040,7 @@ Informationen zur `ReleaseCapture` Windows-Funktion finden Sie in der Windows SD
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onchangecbchain"></a>CWnd:: onchangecbchain
+##  <a name="cwndonchangecbchain"></a><a name="onchangecbchain"></a>CWnd:: onchangecbchain
 
 Das Framework ruft diese Member-Funktion für jedes Fenster in der Zwischenablage-Viewer-Kette auf, um Sie zu benachrichtigen, dass ein Fenster aus der Kette entfernt wird.
 
@@ -6058,14 +6058,14 @@ Gibt das Fenster Handle an, das aus der Zwischenablage-Viewer-Kette entfernt wir
 *hwndafter*<br/>
 Gibt das Fenster Handle an, das auf das Fenster folgt, das aus der Zwischenablage-Viewer-Kette entfernt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jedes `CWnd` Objekt, das einen `OnChangeCbChain`-Befehl empfängt, sollte die [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) -Windows-Funktion verwenden, um die [WM_CHANGECBCHAIN](/windows/win32/dataxchg/wm-changecbchain) Nachricht an das nächste Fenster in der Zwischenablage-Viewer-Kette zu senden (das von `SetClipboardViewer`zurückgegebene Handle). Wenn *hwndremove* das nächste Fenster in der Kette ist, wird das von *hwndafter* angegebene Fenster zum nächsten Fenster, und die Zwischenablage Nachrichten werden an das Fenster weitergeleitet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onchangeuistate"></a>CWnd:: onchangeuistate
+##  <a name="cwndonchangeuistate"></a><a name="onchangeuistate"></a>CWnd:: onchangeuistate
 
 Wird aufgerufen, wenn der Benutzeroberflächenstatus (UI) geändert werden sollte.
 
@@ -6078,7 +6078,7 @@ afx_msg void OnChangeUIState(
 ### <a name="parameters"></a>Parameter
 
 *naktionsmeldung*<br/>
-Gibt die Aktion an, die ausgeführt werden soll. Kann einer der folgenden Werte sein:
+Gibt die Aktion an, die ausgeführt werden soll. Es kann sich um einen der folgenden Werte handeln:
 
 - UIS_CLEAR das UI State-Element (angegeben durch *nuielement*) sollte ausgeblendet werden.
 
@@ -6087,7 +6087,7 @@ Gibt die Aktion an, die ausgeführt werden soll. Kann einer der folgenden Werte 
 - UIS_SET das UI State-Element (angegeben durch *nuielement*) angezeigt werden soll.
 
 *nuielement*<br/>
-Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Kann einer der folgenden Werte sein:
+Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Es kann sich um einen der folgenden Werte handeln:
 
 - UISF_HIDEACCEL Tastaturbeschleuniger.
 
@@ -6095,11 +6095,11 @@ Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die 
 
 - UISF_ACTIVE Windows XP: ein Steuerelement sollte in dem Format gezeichnet werden, das für aktive Steuerelemente verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [WM_CHANGEUISTATE](/windows/win32/menurc/wm-changeuistate) Nachricht, wie in der Windows SDK beschrieben.
 
-##  <a name="onchar"></a>CWnd:: OnChar
+##  <a name="cwndonchar"></a><a name="onchar"></a>CWnd:: OnChar
 
 Das Framework ruft diese Member-Funktion auf, wenn eine Tastenkombination in ein nicht-System Zeichen übersetzt wird.
 
@@ -6121,9 +6121,9 @@ Enthält die Wiederholungs Anzahl, die Häufigkeit, mit der der Tastatur Schlag 
 *nFlags*<br/>
 Enthält den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code, wie in der folgenden Liste gezeigt:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
-|0-15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer die Taste gedrückt hält.|
+|0 - 15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer die Taste gedrückt hält.|
 |16-23|Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab.|
 |24|Gibt an, ob der Schlüssel ein erweiterter Schlüssel ist, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Der Wert ist 1, wenn es sich um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0.|
 |25-28|Wird intern von Windows verwendet.|
@@ -6131,7 +6131,7 @@ Enthält den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel
 |30|Gibt den vorherigen Schlüssel Zustand an. Der Wert ist 1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, oder wenn der Schlüssel auf "0" festgelegt ist.|
 |31|Gibt den Übergangszustand an. Der Wert ist 1, wenn der Schlüssel freigegeben wird, oder der Wert ist 0, wenn die Taste gedrückt wird.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird vor der [onkeyup](#onkeyup) -Member-Funktion und nach dem Aufrufen der [OnKeyDown](#onkeydown) -Member-Funktion aufgerufen. `OnChar` enthält den Wert der Tastatur Taste, die gedrückt oder freigegeben wird.
 
@@ -6142,7 +6142,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onchartoitem"></a>CWnd:: onchartoitem
+##  <a name="cwndonchartoitem"></a><a name="onchartoitem"></a>CWnd:: onchartoitem
 
 Wird aufgerufen, wenn ein Listenfeld mit dem [LBS_WANTKEYBOARDINPUT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil seinen Besitzer als Antwort auf eine [WM_CHAR](#onchar) Nachricht als [WM_CHARTOITEM](/windows/win32/Controls/wm-chartoitem) Meldung sendet.
 
@@ -6168,12 +6168,12 @@ Gibt die aktuelle Position der Einfügemarke an.
 
 Das Framework ruft diese Member-Funktion auf, um die Aktion anzugeben, die die Anwendung als Reaktion auf den Aufruf ausgeführt hat. Der Rückgabewert-2 gibt an, dass die Anwendung alle Aspekte der Elementauswahl behandelt hat und keine weitere Aktion im Listenfeld ausführen möchte. Der Rückgabewert-1 gibt an, dass das Listenfeld die Standardaktion als Reaktion auf den Tastatur Strich ausführen soll. Ein Rückgabewert von 0 (null) oder größer gibt den NULL basierten Index eines Elements im Listenfeld an und gibt an, dass im Listenfeld die Standardaktion für den Tastatur Strich für das angegebene Element ausgeführt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onchildactivate"></a>CWnd:: onchildaktivierungs
+##  <a name="cwndonchildactivate"></a><a name="onchildactivate"></a>CWnd:: onchildaktivierungs
 
 Wenn das `CWnd` Objekt ein untergeordnetes MDI-Fenster (Multiple Document Interface) ist, wird `OnChildActivate` vom Framework aufgerufen, wenn der Benutzer auf die Titelleiste des Fensters klickt oder wenn das Fenster aktiviert, verschoben oder verkleinert wird.
 
@@ -6181,7 +6181,7 @@ Wenn das `CWnd` Objekt ein untergeordnetes MDI-Fenster (Multiple Document Interf
 afx_msg void OnChildActivate();
 ```
 
-##  <a name="onchildnotify"></a>CWnd:: OnChildNotify
+##  <a name="cwndonchildnotify"></a><a name="onchildnotify"></a>CWnd:: OnChildNotify
 
 Diese Member-Funktion wird durch das übergeordnete Fenster dieses Fensters aufgerufen, wenn eine Benachrichtigungs Meldung empfangen wird, die für dieses Fenster gilt.
 
@@ -6195,7 +6195,7 @@ virtual BOOL OnChildNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Eine an ein übergeordnetes Fenster gesendete Windows-Meldungs Nummer.
 
 *wParam*<br/>
@@ -6211,7 +6211,7 @@ Ein Zeiger auf einen Wert, der von der Fenster Prozedur des übergeordneten Elem
 
 Ein Wert ungleich 0, wenn dieses Fenster für die Verarbeitung der an das übergeordnete Element gesendeten Nachricht zuständig ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion niemals direkt aufzurufen.
 
@@ -6219,7 +6219,7 @@ Die Standard Implementierung dieser Member-Funktion gibt 0 (null) zurück, was b
 
 Überschreiben Sie diese Member-Funktion, um die Art der Reaktion eines Steuer Elements auf Benachrichtigungs Meldungen zu erweitern
 
-##  <a name="onclipboardupdate"></a>CWnd:: onclipboardupdate
+##  <a name="cwndonclipboardupdate"></a><a name="onclipboardupdate"></a>CWnd:: onclipboardupdate
 
 Das Framework ruft diese Member-Funktion auf, wenn sich der Inhalt der Zwischenablage geändert hat.
 
@@ -6227,7 +6227,7 @@ Das Framework ruft diese Member-Funktion auf, wenn sich der Inhalt der Zwischena
 afx_msg void OnClipboardUpdate();
 ```
 
-##  <a name="onclose"></a>CWnd:: OnClose
+##  <a name="cwndonclose"></a><a name="onclose"></a>CWnd:: OnClose
 
 Das Framework ruft diese Member-Funktion als Signal auf, dass die `CWnd` oder eine Anwendung beendet werden soll.
 
@@ -6235,11 +6235,11 @@ Das Framework ruft diese Member-Funktion als Signal auf, dass die `CWnd` oder ei
 afx_msg void OnClose();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft `DestroyWindow`auf.
 
-##  <a name="oncolorizationcolorchanged"></a>CWnd:: oncolorizationcolorchanged
+##  <a name="cwndoncolorizationcolorchanged"></a><a name="oncolorizationcolorchanged"></a>CWnd:: oncolorizationcolorchanged
 
 Das Framework ruft diesen Member auf, wenn sich die Renderingleistung für den nicht-Client Bereich geändert hat.
 
@@ -6251,19 +6251,19 @@ afx_msg void OnColorizationColorChanged(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*dwcolorizationcolor*|in Gibt die neue farbliche Farbe an.<br /><br /> Das Farb Format ist eine hexadezimale Zahl der Form 0xaarrggbb, wobei jede der vier Komponenten von 0x00 bis 0xFF reicht. Die AA-Komponente ist der Alpha-Wert, RR ist die Farbe Rot, GG ist grün und BB ist blau.|
 |*bopacity*|in TRUE, wenn die neue Farbe mit Deckkraft gemischt ist. FALSE, wenn dies nicht der Fall ist.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_DWMNCRENDERINGCHANGED](/windows/win32/dwm/wm-dwmcolorizationcolorchanged) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncommand"></a>CWnd:: OnCommand
+##  <a name="cwndoncommand"></a><a name="oncommand"></a>CWnd:: OnCommand
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer ein Element aus einem Menü auswählt, wenn ein untergeordnetes Steuerelement eine Benachrichtigungs Meldung sendet oder wenn eine Tastenkombination für die Zugriffstaste übersetzt wird.
 
@@ -6285,7 +6285,7 @@ Bezeichnet das Steuerelement, das die Nachricht sendet, wenn die Meldung von ein
 
 Eine Anwendung gibt einen Wert ungleich NULL zurück, wenn Sie diese Nachricht verarbeitet. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnCommand` verarbeitet die Meldungs Zuordnung für steuerungsbenachrichtigungs-und ON_COMMAND Einträge und ruft die entsprechende Member-Funktion auf.
 
@@ -6294,7 +6294,7 @@ Eine Anwendung gibt einen Wert ungleich NULL zurück, wenn Sie diese Nachricht v
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncompacting"></a>CWnd:: OnCompacting
+##  <a name="cwndoncompacting"></a><a name="oncompacting"></a>CWnd:: OnCompacting
 
 Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene auf, wenn Windows erkennt, dass mehr als 12,5 Prozent der Systemzeit über ein Intervall von 30 bis 60 Sekunden aufgewendet werden.
 
@@ -6307,7 +6307,7 @@ afx_msg void OnCompacting(UINT nCpuTime);
 *ncputime*<br/>
 Gibt das Verhältnis der CPU-Zeit an, die derzeit von Windows-Komprimierungs Speicher für die CPU-Zeit aufgewendet wird Beispielsweise steht 8000h für 50 Prozent der CPU-Zeit, die für den Komprimierungs Speicher aufgewendet wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dies weist darauf hin, dass der Systemspeicher gering ist.
 
@@ -6316,7 +6316,7 @@ Wenn ein `CWnd` Objekt diesen Befehl empfängt, sollte so viel Arbeitsspeicher w
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncompareitem"></a>CWnd:: oncompareitem
+##  <a name="cwndoncompareitem"></a><a name="oncompareitem"></a>CWnd:: oncompareitem
 
 Das Framework ruft diese Member-Funktion auf, um die relative Position eines neuen Elements in einem untergeordneten, sortierten Besitzer-oder Listenfeld anzugeben.
 
@@ -6338,13 +6338,13 @@ Enthält einen Long-Zeiger auf eine [compareitemstruct](/windows/win32/api/winus
 
 Gibt die relative Position der beiden Elemente an. Es kann sich um einen der folgenden Werte handeln:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |-1|Element 1 wird vor Element 2 sortiert.|
 |0|Element 1 und Element 2 Sortieren dasselbe.|
 |1|Element 1 sortiert nach Element 2.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein Kombinations Feld oder ein Listenfeld mit der [CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [LBS_SORT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Formatvorlage erstellt wird, sendet Windows den Kombinations Feld-oder Listenfeld Besitzer eine WM_COMPAREITEM Meldung, wenn die Anwendung ein neues Element hinzufügt.
 
@@ -6355,7 +6355,7 @@ Wenn der `hwndItem` Member der `COMPAREITEMSTRUCT`-Struktur zu einem [CListBox](
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncompositionchanged"></a>CWnd:: oncompositionchanged
+##  <a name="cwndoncompositionchanged"></a><a name="oncompositionchanged"></a>CWnd:: oncompositionchanged
 
 Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene auf, wenn die Desktopfenster-Manager-Komposition (DWM) aktiviert oder deaktiviert ist.
 
@@ -6363,14 +6363,14 @@ Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene au
 afx_msg void OnCompositionChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_DWMCOMPOSITIONCHANGED](/windows/win32/dwm/wm-dwmcompositionchanged) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncontextmenu"></a>CWnd:: oncontextmenu
+##  <a name="cwndoncontextmenu"></a><a name="oncontextmenu"></a>CWnd:: oncontextmenu
 
 Wird von Framework aufgerufen, wenn der Benutzer im Fenster auf die Rechte Maustaste geklickt hat (mit der rechten Maustaste geklickt hat).
 
@@ -6388,13 +6388,13 @@ Handle für das Fenster, in dem der Benutzer mit der rechten Maustaste auf die M
 *pos*<br/>
 Position des Cursors in Bildschirm Koordinaten zum Zeitpunkt der Mausklicks.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können diese Nachricht verarbeiten, indem Sie ein Kontextmenü mithilfe von [TrackPopupMenu](../../mfc/reference/cmenu-class.md#trackpopupmenu)anzeigen.
 
 Wenn Sie kein Kontextmenü anzeigen, sollten Sie diese Meldung an die [defwindowproc](#defwindowproc) -Funktion übergeben. Wenn das Fenster ein untergeordnetes Fenster ist, sendet `DefWindowProc` die Nachricht an das übergeordnete Element. Andernfalls wird `DefWindowProc` ein Standardkontext Menü anzeigt, wenn sich die angegebene Position in der Beschriftung des Fensters befindet.
 
-##  <a name="oncopydata"></a>CWnd:: oncopydata
+##  <a name="cwndoncopydata"></a><a name="oncopydata"></a>CWnd:: oncopydata
 
 Diese Member-Funktion wird vom Framework aufgerufen, um Daten aus einer Anwendung in eine andere zu kopieren.
 
@@ -6416,7 +6416,7 @@ Ein Zeiger auf eine [copydatastruct](/windows/win32/api/winuser/ns-winuser-copyd
 
 Gibt "true" zurück, wenn die empfangende Anwendung die Daten erfolgreich akzeptiert. Andernfalls wird false zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die zu über gebenden Daten dürfen keine Zeiger oder andere Verweise auf Objekte enthalten, auf die die Anwendung, die die Daten empfängt, nicht zugreifen kann.
 
@@ -6429,7 +6429,7 @@ Wenn die empfangende Anwendung Zugriff auf die Daten benötigt, nachdem diese Fu
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oncreate"></a>CWnd:: OnCreate
+##  <a name="cwndoncreate"></a><a name="oncreate"></a>CWnd:: OnCreate
 
 Das Framework ruft diese Member-Funktion auf, wenn eine Anwendung anfordert, dass das Windows-Fenster durch Aufrufen der [Create](#create) -oder [createex](#createex) -Member-Funktion erstellt wird.
 
@@ -6446,7 +6446,7 @@ Verweist auf eine " [foratestruct](/windows/win32/api/winuser/ns-winuser-creates
 
 `OnCreate` muss 0 zurückgeben, um die Erstellung des `CWnd` Objekts fortzusetzen. Wenn die Anwendung-1 zurückgibt, wird das Fenster zerstört.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `CWnd`-Objekt empfängt diesen-Befehl, nachdem das Fenster erstellt wurde, aber bevor es sichtbar wird. `OnCreate` wird aufgerufen, bevor die `Create`-oder `CreateEx` Member-Funktion zurückgegeben wird.
 
@@ -6457,7 +6457,7 @@ Die `CREATESTRUCT`-Struktur enthält Kopien der Parameter, mit denen das Fenster
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onctlcolor"></a>CWnd:: onctlcolor
+##  <a name="cwndonctlcolor"></a><a name="onctlcolor"></a>CWnd:: onctlcolor
 
 Das Framework ruft diese Member-Funktion auf, wenn ein untergeordnetes Steuerelement gezeichnet werden soll.
 
@@ -6497,7 +6497,7 @@ Enthält einen der folgenden Werte, der den Typ des Steuer Elements angibt:
 
 `OnCtlColor` muss ein Handle für den Pinsel zurückgeben, der zum Zeichnen des Steuer Hintergrunds verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die meisten Steuerelemente senden diese Nachricht an das übergeordnete Element (in der Regel ein Dialogfeld), um den *PDC* für das Zeichnen des Steuer Elements mit den richtigen Farben vorzubereiten.
 
@@ -6514,7 +6514,7 @@ Um die Hintergrundfarbe eines einzeiligen Bearbeitungs Steuer Elements zu änder
 
 [!code-cpp[NVC_MFCWindowing#107](../../mfc/reference/codesnippet/cpp/cwnd-class_47.cpp)]
 
-##  <a name="ondeadchar"></a>CWnd:: ondeadchar
+##  <a name="cwndondeadchar"></a><a name="ondeadchar"></a>CWnd:: ondeadchar
 
 Das Framework ruft diese Member-Funktion auf, wenn die [onkeyup](#onkeyup) -Member-Funktion und die [OnKeyDown](#onkeydown) -Element Funktionen aufgerufen werden.
 
@@ -6536,17 +6536,17 @@ Gibt die Wiederholungs Anzahl an.
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Beschreibung|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
 |15|Übergangszustand (1, wenn der Schlüssel freigegeben wird, 0, wenn der Schlüssel gedrückt wird).|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion kann verwendet werden, um den Zeichen Wert eines unzustellbaren Schlüssels anzugeben. Eine unzustellbare Taste ist ein Schlüssel, z. b. das-Zeichen (Doppelpunkt), das mit anderen Zeichen kombiniert wird, um ein zusammengesetztes Zeichen zu bilden. Beispielsweise besteht das Zeichen "belaut-O" aus dem unzustellbaren Schlüssel, dem Wert "belaut" und dem Schlüssel "o".
 
@@ -6559,7 +6559,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ondeleteitem"></a>CWnd:: ondeleteitem
+##  <a name="cwndondeleteitem"></a><a name="ondeleteitem"></a>CWnd:: ondeleteitem
 
 Das Framework ruft diese Member-Funktion auf, um den Besitzer eines Listen Felds oder Kombinations Felds für das Besitzer Zeichen zu informieren, dass das Listenfeld oder Kombinations Feld zerstört wird oder dass Elemente von [CComboBox entfernt wurden::D eletestring](../../mfc/reference/ccombobox-class.md#deletestring), [CListBox::D eletestring](../../mfc/reference/clistbox-class.md#deletestring), [CComboBox:: resetcontent](../../mfc/reference/ccombobox-class.md#resetcontent)oder [CListBox:: resetcontent](../../mfc/reference/clistbox-class.md#resetcontent).
 
@@ -6577,14 +6577,14 @@ Der Bezeichner des Steuer Elements, das die WM_DELETEITEM Nachricht gesendet hat
 *lpdeleteitemstruct*<br/>
 Gibt einen Long-Zeiger auf eine [deleteitemstruct](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) -Datenstruktur an, die Informationen über das gelöschte Listenfeld Element enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der `hwndItem` Member der `DELETEITEMSTRUCT` Struktur zu einem Kombinations Feld oder Listenfeld gehört, wird die virtuelle `DeleteItem`-Funktion der entsprechenden Klasse aufgerufen. Überschreiben Sie die `DeleteItem` Member-Funktion der entsprechenden-Klasse des Steuer Elements, um Element spezifische Daten zu löschen.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ondestroy"></a>CWnd:: OnDestroy
+##  <a name="cwndondestroy"></a><a name="ondestroy"></a>CWnd:: OnDestroy
 
 Das Framework ruft diese Member-Funktion auf, um das `CWnd` Objekt zu informieren, dass es zerstört wird.
 
@@ -6592,7 +6592,7 @@ Das Framework ruft diese Member-Funktion auf, um das `CWnd` Objekt zu informiere
 afx_msg void OnDestroy();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnDestroy` wird aufgerufen, nachdem das `CWnd` Objekt vom Bildschirm entfernt wurde.
 
@@ -6600,7 +6600,7 @@ afx_msg void OnDestroy();
 
 Wenn das `CWnd` Objekt, das zerstört wird, Teil der Zwischenablage-Viewer-Kette ist (durch Aufrufen der [setclipboardviewer](#setclipboardviewer) -Element Funktion festgelegt), muss sich der `CWnd` selbst aus der Zwischenablage-Viewer-Kette entfernen, indem die [changeclipboardchain](#changeclipboardchain) -Element Funktion aufgerufen wird, bevor die `OnDestroy`-Funktion zurückgegeben wird.
 
-##  <a name="ondestroyclipboard"></a>CWnd:: ondestroyclipboard
+##  <a name="cwndondestroyclipboard"></a><a name="ondestroyclipboard"></a>CWnd:: ondestroyclipboard
 
 Das Framework ruft diese Member-Funktion für den Besitzer der Zwischenablage auf, wenn die Zwischenablage durch einen Aufruf der Windows-Funktion [EmptyClipboard](/windows/win32/api/winuser/nf-winuser-emptyclipboard) geleert wird.
 
@@ -6608,7 +6608,7 @@ Das Framework ruft diese Member-Funktion für den Besitzer der Zwischenablage au
 afx_msg void OnDestroyClipboard();
 ```
 
-##  <a name="ondevicechange"></a>CWnd:: ondevicechange
+##  <a name="cwndondevicechange"></a><a name="ondevicechange"></a>CWnd:: ondevicechange
 
 Das Framework ruft diese Member-Funktion auf, um eine Anwendung oder einen Gerätetreiber über eine Änderung an der Hardwarekonfiguration eines Geräts oder Computers zu benachrichtigen.
 
@@ -6626,7 +6626,7 @@ Ein Ereignistyp. Eine Beschreibung der verfügbaren Werte finden Sie im Abschnit
 *dwdata*<br/>
 Die Adresse einer Struktur, die ereignisspezifische Daten enthält. Ihre Bedeutung hängt vom angegebenen Ereignis ab.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bei Geräten, die softwaregesteuerte Features anbieten (z. b. auswerfen und Sperren), sendet das Betriebssystem in der Regel eine DBT_DEVICEREMOVEPENDING Nachricht, damit Anwendungen und Gerätetreiber ihre Verwendung des Geräts ordnungsgemäß beenden können.
 
@@ -6653,7 +6653,7 @@ Der Parameter " *netvent* " kann einen der folgenden Werte aufweisen:
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ondevmodechange"></a>CWnd:: ondevmodechange
+##  <a name="cwndondevmodechange"></a><a name="ondevmodechange"></a>CWnd:: ondevmodechange
 
 Das Framework ruft diese Member-Funktion für alle `CWnd` Objekte der obersten Ebene auf, wenn der Benutzer die Geräte Modus-Einstellungen ändert.
 
@@ -6666,7 +6666,7 @@ afx_msg void OnDevModeChange(LPTSTR lpDeviceName);
 *lpdevicename*<br/>
 Zeigt auf den Gerätenamen, der in der Windows-Initialisierungsdatei "Win" angegeben ist. Geleitet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Anwendungen, die die WM_DEVMODECHANGE Nachricht verarbeiten, können Ihre Geräte Modus-Einstellungen neu initialisieren. Anwendungen, die die Windows `ExtDeviceMode`-Funktion verwenden, um Geräteeinstellungen zu speichern und wiederherzustellen, verarbeiten diese Funktion in der Regel nicht.
 
@@ -6675,7 +6675,7 @@ Diese Funktion wird nicht aufgerufen, wenn der Benutzer den Standarddrucker in d
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ondrawclipboard"></a>CWnd:: ondrawclipboard
+##  <a name="cwndondrawclipboard"></a><a name="ondrawclipboard"></a>CWnd:: ondrawclipboard
 
 Das Framework ruft diese Member-Funktion für jedes Fenster in der Zwischenablage-Viewer-Kette auf, wenn der Inhalt der Zwischenablage geändert wird.
 
@@ -6683,13 +6683,13 @@ Das Framework ruft diese Member-Funktion für jedes Fenster in der Zwischenablag
 afx_msg void OnDrawClipboard();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur Anwendungen, die sich durch Aufrufen der [setclipboardviewer](#setclipboardviewer) -Element Funktion mit der Zwischenablage-Viewer-Kette verknüpft haben, müssen auf diesen Aufruf reagieren.
 
 Jedes Fenster, das einen `OnDrawClipboard`-Befehl empfängt, sollte die [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) -Windows-Funktion anrufen, um eine [WM_DRAWCLIPBOARD](/windows/win32/dataxchg/wm-drawclipboard) Meldung an das nächste Fenster in der Zwischenablage-Viewer-Kette zu übergeben. Das Handle des nächsten Fensters wird von der [setclipboardviewer](#setclipboardviewer) -Member-Funktion zurückgegeben. Sie kann als Reaktion auf einen [onchangecbchain](#onchangecbchain) -Member-Funktions Aufrufwert geändert werden.
 
-##  <a name="ondrawiconicthumbnailorlivepreview"></a>CWnd:: ondrawienicthumbnailorlivepreview
+##  <a name="cwndondrawiconicthumbnailorlivepreview"></a><a name="ondrawiconicthumbnailorlivepreview"></a>CWnd:: ondrawienicthumbnailorlivepreview
 
 Wird durch das Framework aufgerufen, wenn es eine auf der Windows 7-Registerkartenminiaturansicht oder auf dem Client für die Anwendungsvorschau anzuzeigende Bitmap abrufen muss.
 
@@ -6719,11 +6719,11 @@ Gibt an, ob diese Methode für die Miniaturansicht oder Live Vorschau (PEEK) auf
 *balphachannelset*<br/>
 vorgenommen Legen Sie diese Einstellung auf "true" fest, wenn die Implementierung den Alphakanal einer in *DC*ausgewählten Bitmap initialisiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, und zeichnen Sie den angegebenen Gerätekontext, um die Miniaturansicht und die Peek-Methode anzupassen. Wenn *bthumbnail* den Wert true hat, kann *szrequirements dthumbnailsize* ignoriert werden. In diesem Fall sollten Sie sich bewusst sein, dass Sie Bitmap mit voller skalibreite zeichnen (d. h. eine Bitmap, die den gesamten Client Bereich abdeckt). Der Gerätekontext ( *DC*) verfügt über die ausgewählte 32 Bits-Bitmap. Die Standard Implementierung sendet WM_PRINT mit PRF_CLIENT-, PRF_CHILDREN-und PRF_NONCLIENT-Flags an dieses Fenster.
 
-##  <a name="ondrawitem"></a>CWnd:: OnDrawItem
+##  <a name="cwndondrawitem"></a><a name="ondrawitem"></a>CWnd:: OnDrawItem
 
 Das Framework ruft diese Member-Funktion für den Besitzer eines Schaltflächen-Steuer Elements, Kombinations Feld-Steuer Elements, Steuerelement-Steuer Elements oder Menüs auf, wenn sich ein visueller Aspekt des Steuer Elements oder Menüs geändert hat.
 
@@ -6741,7 +6741,7 @@ Enthält den Bezeichner des Steuer Elements, das die WM_DRAWITEM Nachricht gesen
 *lpdrawitemstruct*<br/>
 Gibt einen langen Zeiger auf eine `DRAWITEMSTRUCT` Datenstruktur an, die Informationen über das zu zeichende Element und den Typ der zu zeichnenden Zeichnung enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `itemAction` Member der [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur definiert den auszuführenden Zeichnungs Vorgang. Die Daten in diesem Member ermöglichen dem Besitzer des Steuer Elements, zu bestimmen, welche Zeichnungs Aktion erforderlich ist.
 
@@ -6752,7 +6752,7 @@ Wenn das `hwndItem` Member zu einem [CButton](../../mfc/reference/cbutton-class.
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ondropfiles"></a>CWnd:: ondropfiles
+##  <a name="cwndondropfiles"></a><a name="ondropfiles"></a>CWnd:: ondropfiles
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die linke Maustaste über einem Fenster loslässt, das sich selbst als der Empfänger von gelöschten Dateien registriert hat.
 
@@ -6765,14 +6765,14 @@ afx_msg void OnDropFiles(HDROP hDropInfo);
 *hdropinfo*<br/>
 Ein Zeiger auf eine interne Datenstruktur, die die gelöschten Dateien beschreibt. Dieses Handle wird von den Funktionen `DragFinish`, `DragQueryFile`und `DragQueryPoint` von Windows verwendet, um Informationen zu den gelöschten Dateien abzurufen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In der Regel wird eine abgeleitete Klasse zur Unterstützung von gelöschten Dateien entworfen und bei der Fenster Erstellung registriert.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onenable"></a>CWnd:: onenable
+##  <a name="cwndonenable"></a><a name="onenable"></a>CWnd:: onenable
 
 Das Framework ruft diese Member-Funktion auf, wenn eine Anwendung den aktivierten Zustand des `CWnd` Objekts ändert.
 
@@ -6785,14 +6785,14 @@ afx_msg void OnEnable(BOOL bEnable);
 *benabel*<br/>
 Gibt an, ob das `CWnd` Objekt aktiviert oder deaktiviert wurde. Dieser Parameter ist true, wenn der `CWnd` aktiviert wurde. der Wert ist false, wenn der `CWnd` deaktiviert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnEnable` wird aufgerufen, bevor die [EnableWindow](#enablewindow) -Member-Funktion zurückgegeben wird, aber nachdem der Fenster aktivierte Zustand ( [WS_DISABLED](styles-used-by-mfc.md#window-styles) Style-Bit) geändert wurde.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onendsession"></a>CWnd:: onendsession
+##  <a name="cwndonendsession"></a><a name="onendsession"></a>CWnd:: onendsession
 
 Das Framework ruft diese Element Funktion auf, nachdem das `CWnd`-Objekt einen Wert ungleich 0 (null) aus einem [onqueryendsession](#onqueryendsession) -Member-Funktionsaufruf zurückgegeben hat.
 
@@ -6805,7 +6805,7 @@ afx_msg void OnEndSession(BOOL bEnding);
 *ab*<br/>
 Gibt an, ob die Sitzung beendet wird. Dies ist true, wenn die Sitzung beendet wird. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der `OnEndSession`-Befehl informiert das `CWnd` Objekt darüber, ob die Sitzung tatsächlich beendet wird.
 
@@ -6816,7 +6816,7 @@ Wenn die Sitzung beendet wird, müssen Sie nicht die Windows-Funktion [DestroyWi
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onenteridle"></a>CWnd:: onenteridle
+##  <a name="cwndonenteridle"></a><a name="onenteridle"></a>CWnd:: onenteridle
 
 Das Framework ruft diese Member-Funktion auf, um das Hauptfenster Verfahren einer Anwendung zu informieren, dass ein modales Dialogfeld oder ein Menü in den Leerlauf wechselt.
 
@@ -6838,14 +6838,14 @@ Gibt an, ob die Nachricht das Ergebnis eines Dialog Felds oder eines Menüs ist,
 *pwer*<br/>
 Gibt einen Zeiger auf das Dialogfeld (wenn *nwarum* MSGF_DIALOGBOX) oder das Fenster an, das das angezeigte Menü enthält (wenn *nwarum* MSGF_MENU ist). Dieser Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein modales Dialogfeld oder Menü wechselt in den Leerlaufzustand, wenn keine Nachrichten in der Warteschlange warten, nachdem mindestens eine vorherige Nachricht verarbeitet wurde.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onentermenuloop"></a>CWnd:: onentermenuloop
+##  <a name="cwndonentermenuloop"></a><a name="onentermenuloop"></a>CWnd:: onentermenuloop
 
 Das Framework ruft diese Member-Funktion auf, wenn eine modale Menü Schleife eingegeben wurde.
 
@@ -6858,12 +6858,12 @@ afx_msg void OnEnterMenuLoop(BOOL bIsTrackPopupMenu);
 *bistrackpopupmenu*<br/>
 Gibt an, ob es sich um ein Popup Menü handelt. Hat einen Wert ungleich 0 (null), wenn die Funktion erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onentersizemove"></a>CWnd:: onentersizemove
+##  <a name="cwndonentersizemove"></a><a name="onentersizemove"></a>CWnd:: onentersizemove
 
 Das Framework ruft diese Member-Funktion einmal auf, nachdem das betroffene Fenster in eine modale Verschiebungs-oder Anpassungs Schleife gelangt ist.
 
@@ -6871,7 +6871,7 @@ Das Framework ruft diese Member-Funktion einmal auf, nachdem das betroffene Fens
 afx_msg void OnEnterSizeMove();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_ENTERSIZEMOVE](/windows/win32/winmsg/wm-entersizemove) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
@@ -6880,7 +6880,7 @@ Ein Fenster wechselt in eine modale Verschiebungs-oder Anpassungs Schleife, wenn
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onerasebkgnd"></a>CWnd:: onerasebkgnd
+##  <a name="cwndonerasebkgnd"></a><a name="onerasebkgnd"></a>CWnd:: onerasebkgnd
 
 Das Framework ruft diese Member-Funktion auf, wenn der Hintergrund des `CWnd` Objekts gelöscht werden muss (z. b. bei der Größenänderung).
 
@@ -6897,7 +6897,7 @@ Gibt das Gerätekontext Objekt an.
 
 Ungleich 0 (null), wenn der Hintergrund gelöscht wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie wird aufgerufen, um einen für ungültig erklärten Bereich zum Zeichnen vorzubereiten.
 
@@ -6912,7 +6912,7 @@ Windows geht davon aus, dass der Hintergrund mit dem MM_TEXT Mapping-Modus berec
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onexitmenuloop"></a>CWnd:: onexitmenuloop
+##  <a name="cwndonexitmenuloop"></a><a name="onexitmenuloop"></a>CWnd:: onexitmenuloop
 
 Das Framework ruft diese Member-Funktion auf, wenn eine modale Menü Schleife beendet wurde.
 
@@ -6925,12 +6925,12 @@ afx_msg void OnExitMenuLoop(BOOL bIsTrackPopupMenu);
 *bistrackpopupmenu*<br/>
 Gibt an, ob es sich um ein Popup Menü handelt. Hat einen Wert ungleich 0 (null), wenn die Funktion erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onexitsizemove"></a>CWnd:: onexitsizemove
+##  <a name="cwndonexitsizemove"></a><a name="onexitsizemove"></a>CWnd:: onexitsizemove
 
 Das Framework ruft diese Member-Funktion einmal auf, nachdem das betroffene Fenster eine modale Verschiebungs-oder Anpassungs Schleife beendet hat.
 
@@ -6938,7 +6938,7 @@ Das Framework ruft diese Member-Funktion einmal auf, nachdem das betroffene Fens
 afx_msg void OnExitSizeMove();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_EXITSIZEMOVE](/windows/win32/winmsg/wm-exitsizemove) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
@@ -6947,7 +6947,7 @@ Ein Fenster wechselt in eine modale Verschiebungs-oder Anpassungs Schleife, wenn
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onfontchange"></a>CWnd:: onfontchange
+##  <a name="cwndonfontchange"></a><a name="onfontchange"></a>CWnd:: onfontchange
 
 Alle Fenster der obersten Ebene im System erhalten einen `OnFontChange`-aufrufsbefehl aus dem Framework, nachdem die Anwendung den Pool der Schriftart Ressourcen geändert hat.
 
@@ -6955,13 +6955,13 @@ Alle Fenster der obersten Ebene im System erhalten einen `OnFontChange`-aufrufsb
 afx_msg void OnFontChange();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Anwendung, die Schriftarten aus dem System hinzufügt oder entfernt (z. b. über die Windows-Funktion [AddFontResource](/windows/win32/api/wingdi/nf-wingdi-addfontresourcew) oder [removefontresource](/windows/win32/api/wingdi/nf-wingdi-removefontresourcew) ), sollte die [WM_FONTCHANGE](/windows/win32/gdi/wm-fontchange) Nachricht an alle Fenster der obersten Ebene senden.
 
 Um diese Nachricht zu senden, verwenden Sie die Windows-Funktion [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) , wobei der *HWND* -Parameter auf HWND_BROADCAST festgelegt ist.
 
-##  <a name="ongetdlgcode"></a>CWnd:: ongetdlgcode
+##  <a name="cwndongetdlgcode"></a><a name="ongetdlgcode"></a>CWnd:: ongetdlgcode
 
 Wird für ein Steuerelement aufgerufen, sodass das Steuerelement die Eingabe für die PFEILTASTE und TAB-TASTE selbst verarbeiten kann.
 
@@ -6995,13 +6995,13 @@ Einer oder mehrere der folgenden Werte, die angeben, welche Eingabe von der Anwe
 
 - DLGC_WANTTAB Tab-Taste.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Normalerweise verarbeitet Windows alle Pfeiltasten und Tab-Taste-Eingaben für ein `CWnd` Steuerelement. Wenn Sie `OnGetDlgCode`überschreiben, kann ein `CWnd` Steuerelement einen bestimmten Typ von Eingaben für die Verarbeitung auswählen.
 
 Die Standard `OnGetDlgCode` Funktionen für die vordefinierten Steuerelement Klassen geben einen für jede Klasse geeigneten Code zurück.
 
-##  <a name="ongetminmaxinfo"></a>CWnd:: ongetminmaxinfo
+##  <a name="cwndongetminmaxinfo"></a><a name="ongetminmaxinfo"></a>CWnd:: ongetminmaxinfo
 
 Das Framework ruft diese Member-Funktion immer dann auf, wenn Windows die maximierte Position oder die Größe oder die minimale oder maximale nach Verfolgungs Größe kennen muss.
 
@@ -7014,7 +7014,7 @@ afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 *lpmmi*<br/>
 Verweist auf eine `MINMAXINFO` Struktur, die Informationen über die maximierte Größe und Position eines Fensters und seine minimale und maximale nach Verfolgungs Größe enthält. Weitere Informationen zu dieser Struktur finden Sie in der [minmaxinfo](/windows/win32/api/winuser/ns-winuser-minmaxinfo) -Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die maximierte Größe ist die Größe des Fensters, wenn seine Rahmen vollständig erweitert werden. Die maximale nach Verfolgungs Größe des Fensters ist die größte Fenstergröße, die erreicht werden kann, indem die Rahmen verwendet werden, um das Fenster zu verkleinern. Die minimale nach Verfolgungs Größe des Fensters ist die kleinste Fenstergröße, die erreicht werden kann, indem die Rahmen zum Anpassen des Fensters verwendet werden.
 
@@ -7023,7 +7023,7 @@ Windows füllt ein Array von Punkten aus, wobei die Standardwerte für die versc
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onhelp"></a>CWnd:: onhelp
+##  <a name="cwndonhelp"></a><a name="onhelp"></a>CWnd:: onhelp
 
 Verarbeitet die F1-Hilfe in der Anwendung (unter Verwendung des aktuellen Kontexts).
 
@@ -7031,11 +7031,11 @@ Verarbeitet die F1-Hilfe in der Anwendung (unter Verwendung des aktuellen Kontex
 afx_msg void OnHelp();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: OnHelp](../../mfc/reference/cwinapp-class.md#onhelp) .
 
-##  <a name="onhelpfinder"></a>CWnd:: onhelpfinder
+##  <a name="cwndonhelpfinder"></a><a name="onhelpfinder"></a>CWnd:: onhelpfinder
 
 Behandelt die Befehle ID_HELP_FINDER und ID_DEFAULT_HELP.
 
@@ -7043,11 +7043,11 @@ Behandelt die Befehle ID_HELP_FINDER und ID_DEFAULT_HELP.
 afx_msg void OnHelpFinder();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: onhelpfinder](../../mfc/reference/cwinapp-class.md#onhelpfinder) .
 
-##  <a name="onhelpindex"></a>CWnd:: onhelpindex
+##  <a name="cwndonhelpindex"></a><a name="onhelpindex"></a>CWnd:: onhelpindex
 
 Behandelt den ID_HELP_INDEX Befehl und stellt ein Standard Hilfethema bereit.
 
@@ -7055,11 +7055,11 @@ Behandelt den ID_HELP_INDEX Befehl und stellt ein Standard Hilfethema bereit.
 afx_msg void OnHelpIndex();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: onhelpindex](../../mfc/reference/cwinapp-class.md#onhelpindex) .
 
-##  <a name="onhelpinfo"></a>CWnd:: onhelpinfo
+##  <a name="cwndonhelpinfo"></a><a name="onhelpinfo"></a>CWnd:: onhelpinfo
 
 Wird durch das Framework aufgerufen, wenn der Benutzer die F1-TASTE drückt.
 
@@ -7076,11 +7076,11 @@ Ein Zeiger auf eine [helpinfo](/windows/win32/api/winuser/ns-winuser-helpinfo) -
 
 Gibt true zurück, wenn ein Fenster den Tastaturfokus besitzt oder wenn ein Menü innerhalb eines Fensters aktiv ist. Wenn kein Fenster den Tastaturfokus besitzt, wird false zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein Menü aktiv ist, wenn F1 gedrückt wird, wird WM_HELP an das Fenster gesendet, das dem Menü zugeordnet ist. Andernfalls wird WM_HELP an das Fenster gesendet, das über den Tastaturfokus verfügt. Wenn kein Fenster den Tastaturfokus besitzt, wird WM_HELP an das derzeit aktive Fenster gesendet.
 
-##  <a name="onhelpusing"></a>CWnd:: onhelpusing
+##  <a name="cwndonhelpusing"></a><a name="onhelpusing"></a>CWnd:: onhelpusing
 
 Behandelt den ID_HELP_USING Befehl.
 
@@ -7088,11 +7088,11 @@ Behandelt den ID_HELP_USING Befehl.
 afx_msg void OnHelpUsing();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: onhelpusing](../../mfc/reference/cwinapp-class.md#onhelpusing) .
 
-##  <a name="onhotkey"></a>CWnd:: onhotkey
+##  <a name="cwndonhotkey"></a><a name="onhotkey"></a>CWnd:: onhotkey
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer eine systemweite, heiße Taste drückt.
 
@@ -7105,20 +7105,20 @@ afx_msg void OnHotKey(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nhotkeyid*|in Der Bezeichner für den Hot Key, der die Meldung generiert hat. Wenn die Nachricht von einem System definierten Hot Key generiert wurde, weist dieser Parameter einen der folgenden Werte auf:<br /><br /> -IDHOT_SNAPDESKTOP-die Taste für den Snap-in-Desktop wurde gedrückt.<br />-IDHOT_SNAPWINDOW: die Taste für das Snap-in-Fenster wurde gedrückt.|
-|*nKey1*|in Eine bitweise Kombination (or) von Flags, die die Tasten angeben, die in Kombination mit dem durch den *nKey2* -Parameter angegebenen Schlüssel gedrückt wurden. Mögliche Werte sind:<br /><br /> -MOD_ALT-die Alt-Taste wurde gedrückt.<br />-MOD_CONTROL: entweder wurde die STRG-Taste gedrückt.<br />-MOD_SHIFT: entweder wurde die UMSCHALTTASTE gedrückt.<br />-MOD_WIN: entweder wurde die Windows-Taste angehalten. Diese Schlüssel werden mit dem Microsoft Windows-Logo bezeichnet.|
+|*nKey1*|in Eine bitweise Kombination (or) von Flags, die die Tasten angeben, die in Kombination mit dem durch den *nKey2* -Parameter angegebenen Schlüssel gedrückt wurden. Mögliche Werte:<br /><br /> -MOD_ALT-die Alt-Taste wurde gedrückt.<br />-MOD_CONTROL: entweder wurde die STRG-Taste gedrückt.<br />-MOD_SHIFT: entweder wurde die UMSCHALTTASTE gedrückt.<br />-MOD_WIN: entweder wurde die Windows-Taste angehalten. Diese Schlüssel werden mit dem Microsoft Windows-Logo bezeichnet.|
 |*nKey2*|in Der virtuelle Schlüsselcode der Hot-Taste.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_HOTKEY](/windows/win32/inputdev/wm-hotkey) Benachrichtigung, die in der Windows SDK beschrieben wird. Diese Meldung wird am Anfang der Nachrichten Warteschlange platziert, die dem Thread zugeordnet ist, der den Hot Key registriert hat. Verwenden Sie die [RegisterHotKey](/windows/win32/api/winuser/nf-winuser-registerhotkey) -Funktion, um einen systemweiten Abkürzungs Schlüssel zu registrieren.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onhscroll"></a>CWnd:: OnHScroll
+##  <a name="cwndonhscroll"></a><a name="onhscroll"></a>CWnd:: OnHScroll
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf die horizontale Schiebe Leiste eines Fensters klickt.
 
@@ -7158,7 +7158,7 @@ Gibt die Position des scrollfelds an, wenn der Bild Lauf leisten Code SB_THUMBPO
 *pscrollbar*<br/>
 Wenn die scrollnachricht von einem Schiebe leisten-Steuerelement stammt, enthält einen Zeiger auf das-Steuerelement. Wenn der Benutzer auf die Bild Lauf Leiste eines Fensters geklickt hat, ist dieser Parameter NULL. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der SB_THUMBTRACK ScrollBar-Code wird in der Regel von Anwendungen verwendet, die Feedback geben, während das Bild Lauf Feld gezogen wird.
 
@@ -7171,7 +7171,7 @@ Wenn eine Anwendung einen Bildlauf durch den Inhalt durchführt, der von der Scr
 
 [!code-cpp[NVC_MFCWindowing#108](../../mfc/reference/codesnippet/cpp/cwnd-class_48.cpp)]
 
-##  <a name="onhscrollclipboard"></a>CWnd:: onhscrollclipboard
+##  <a name="cwndonhscrollclipboard"></a><a name="onhscrollclipboard"></a>CWnd:: onhscrollclipboard
 
 Die `OnHScrollClipboard` Member-Funktion der Zwischenablage wird von der Zwischenablage Anzeige aufgerufen, wenn die Zwischenablage Daten das `CF_OWNERDISPLAY` Format aufweisen und ein Ereignis in der horizontalen Schiebe Leiste der Zwischenablage Anzeige vorliegt.
 
@@ -7209,14 +7209,14 @@ Gibt einen der folgenden Bild Lauf leisten Codes im nieder wertigen Wort an:
 *NPOs*<br/>
 Enthält die Position des scrollfelds, wenn der Bild Lauf leisten Code SB_THUMBPOSITION ist. andernfalls nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Besitzer sollte das Zwischenablage Bild scrollen, den entsprechenden Abschnitt ungültig machen und die ScrollBar-Werte aktualisieren.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oniconerasebkgnd"></a>CWnd:: onigerasebkgnd
+##  <a name="cwndoniconerasebkgnd"></a><a name="oniconerasebkgnd"></a>CWnd:: onigerasebkgnd
 
 Das Framework ruft diese Member-Funktion für ein minimiertes (ikonisches) `CWnd` Objekt auf, wenn der Hintergrund des Symbols ausgefüllt werden muss, bevor das Symbol gezeichnet wird.
 
@@ -7229,7 +7229,7 @@ afx_msg void OnIconEraseBkgnd(CDC* pDC);
 *pDC*<br/>
 Gibt das Gerätekontext Objekt des Symbols an. Kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `CWnd` empfängt diesen-Befehl nur, wenn für die Standard Implementierung des Fensters ein Klassen Symbol definiert ist. Andernfalls wird [onerasebkgnd](#onerasebkgnd) aufgerufen.
 
@@ -7238,7 +7238,7 @@ Die Funktion [defwindowproc](#defwindowproc) Member füllt den Symbol Hintergrun
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oninitmenu"></a>CWnd:: oninitmenu
+##  <a name="cwndoninitmenu"></a><a name="oninitmenu"></a>CWnd:: oninitmenu
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Menü aktiv wird.
 
@@ -7251,7 +7251,7 @@ afx_msg void OnInitMenu(CMenu* pMenu);
 *pmenu*<br/>
 Gibt das Menü an, das initialisiert werden soll. Kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnInitMenu` wird aufgerufen, wenn der Benutzer auf ein Element in der Menüleiste klickt oder eine Menü Taste drückt. Überschreiben Sie diese Member-Funktion, um das Menü zu ändern, bevor es angezeigt wird.
 
@@ -7260,7 +7260,7 @@ Gibt das Menü an, das initialisiert werden soll. Kann temporär sein und sollte
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oninitmenupopup"></a>CWnd:: oninitmenupopup
+##  <a name="cwndoninitmenupopup"></a><a name="oninitmenupopup"></a>CWnd:: oninitmenupopup
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Popupmenü aktiv wird.
 
@@ -7282,14 +7282,14 @@ Gibt den Index des Popup Menüs im Hauptmenü an.
 *bsysmenu*<br/>
 TRUE, wenn das Popup Menü das Menü Steuerelement ist. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dadurch kann eine Anwendung das Popup Menü ändern, bevor es angezeigt wird, ohne das gesamte Menü zu ändern.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oninputdevicechange"></a>CWnd:: oninputdevicechange
+##  <a name="cwndoninputdevicechange"></a><a name="oninputdevicechange"></a>CWnd:: oninputdevicechange
 
 Das Framework ruft diese Member-Funktion auf, wenn ein e/a-Gerät zum System hinzugefügt oder daraus entfernt wird.
 
@@ -7299,18 +7299,18 @@ afx_msg void OnInputDeviceChange(unsigned short uFlag);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*uflag*|in Dieses Flag kann die folgenden Werte enthalten:<br /><br /> -GIDC_ARRIVAL: dem System wurde ein neues Gerät hinzugefügt.<br />-GIDC_REMOVAL: ein Gerät wurde aus dem System entfernt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_INPUT_DEVICE_CHANGE](/windows/win32/inputdev/wm-input-device-change) Benachrichtigung, die in der Windows SDK beschrieben wird. Bei handelt es sich um eine generische Eingabegeräte Nachricht.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oninputlangchange"></a>CWnd:: oninputlangchange
+##  <a name="cwndoninputlangchange"></a><a name="oninputlangchange"></a>CWnd:: oninputlangchange
 
 Das Framework ruft diesen Member für das oberste betroffene Fenster auf, nachdem die Eingabe Sprache einer Anwendung geändert wurde.
 
@@ -7322,19 +7322,19 @@ afx_msg void OnInputLangChange(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ncharset*|in Der Zeichensatz des neuen Gebiets Schemas. Weitere Informationen finden Sie unter dem *LF charset* -Parameter der [LOGFONT](/windows/win32/api/wingdi/ns-wingdi-logfontw) -Struktur.|
 |*nlocaleid*|in Der Eingabe Gebiets Schema Bezeichner. Weitere Informationen finden Sie unter [sprach Bezeichner-Konstanten und-](/windows/win32/Intl/language-identifier-constants-and-strings)Zeichen folgen.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_INPUTLANGCHANGE](/windows/win32/winmsg/wm-inputlangchange) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="oninputlangchangerequest"></a>CWnd:: oninputlangchangerequest
+##  <a name="cwndoninputlangchangerequest"></a><a name="oninputlangchangerequest"></a>CWnd:: oninputlangchangerequest
 
 Das Framework ruft diesen Member für Fenster mit dem Fokus auf, wenn der Benutzer eine neue Eingabe Sprache auswählt.
 
@@ -7346,19 +7346,19 @@ afx_msg void OnInputLangChangeRequest(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination von Flags, die angibt, dass das neue Gebiets Schema aus dem vorherigen oder nächsten Gebiets Schema in der installierten Liste der Gebiets Schemas ausgewählt wurde oder dass das Tastaturlayout des neuen Eingabe Gebiets Schemas mit dem System Zeichensatz verwendet werden kann.<br /><br /> Mögliche Werte sind INPUTLANGCHANGE_BACKWARD, INPUTLANGCHANGE_FORWARD und INPUTLANGCHANGE_SYSCHARSET.|
 |*nlocaleid*|in Der Eingabe Gebiets Schema Bezeichner. Weitere Informationen finden Sie unter [sprach Bezeichner-Konstanten und-](/windows/win32/Intl/language-identifier-constants-and-strings)Zeichen folgen.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_INPUTLANGCHANGEREQUEST](/windows/win32/winmsg/wm-inputlangchangerequest) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird. Diese Meldung wird gesendet, wenn der Benutzer eine neue Eingabe Sprache mit einem Hotkey auswählt, der in der System Steuerungsanwendung der Tastatur angegeben ist, oder über den Indikator auf der Taskleiste des Systems.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onkeydown"></a>CWnd:: OnKeyDown
+##  <a name="cwndonkeydown"></a><a name="onkeydown"></a>CWnd:: OnKeyDown
 
 Das Framework ruft diese Member-Funktion auf, wenn eine nicht-System Taste gedrückt wird.
 
@@ -7380,11 +7380,11 @@ Wiederholungs Anzahl (gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Beschreibung|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert).|
 |8|Erweiterter Schlüssel, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -7392,7 +7392,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 
 Bei einer WM_KEYDOWN Nachricht ist das Schlüssel Übergangs Bit (Bit 15) 0 und das Kontext Code Bit (Bit 13) 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine nicht-System Taste ist eine Tastatur Taste, die gedrückt wird, wenn die Alt-Taste nicht gedrückt wird, oder eine Tastatur Taste, die gedrückt wird, wenn `CWnd` den Eingabefokus hat.
 
@@ -7403,7 +7403,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onkeyup"></a>CWnd:: OnKeyUp
+##  <a name="cwndonkeyup"></a><a name="onkeyup"></a>CWnd:: OnKeyUp
 
 Das Framework ruft diese Member-Funktion auf, wenn eine nicht-System Taste losgelassen wird.
 
@@ -7425,11 +7425,11 @@ Wiederholungs Anzahl (gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Beschreibung|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
@@ -7437,7 +7437,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 
 Bei einer WM_KEYUP Nachricht ist das Schlüssel Übergangs Bit (Bit 15) 1, und das Kontext Code Bit (Bit 13) ist 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine nicht-System Taste ist eine Tastatur Taste, die gedrückt wird, wenn die Alt-Taste nicht gedrückt wird, oder eine Tastatur Taste, die gedrückt wird, wenn das `CWnd` den Eingabefokus besitzt.
 
@@ -7446,7 +7446,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onkillfocus"></a>CWnd:: onkillfocus
+##  <a name="cwndonkillfocus"></a><a name="onkillfocus"></a>CWnd:: onkillfocus
 
 Das Framework ruft diese Member-Funktion unmittelbar vor dem Verlust des Eingabefokus auf.
 
@@ -7459,14 +7459,14 @@ afx_msg void OnKillFocus(CWnd* pNewWnd);
 *pnewwnd*<br/>
 Gibt einen Zeiger auf das Fenster an, das den Eingabefokus empfängt (kann NULL oder temporär sein).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das `CWnd` Objekt eine Einfügemarke anzeigt, sollte die Einfügemarke an dieser Stelle zerstört werden.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onlbuttondblclk"></a>CWnd:: OnLButtonDblClk
+##  <a name="cwndonlbuttondblclk"></a><a name="onlbuttondblclk"></a>CWnd:: OnLButtonDblClk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer mit der linken Maustaste doppelklickt.
 
@@ -7494,14 +7494,14 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur Fenster mit dem CS_DBLCLKS [WNDCLASS](/windows/win32/api/winuser/ns-winuser-wndclassw) -Stil empfangen `OnLButtonDblClk` Aufrufe. Dies ist die Standardeinstellung für Microsoft Foundation Class-Windows. Windows ruft `OnLButtonDblClk` auf, wenn der Benutzer die Maustaste drückt, und drückt dann die linke Maustaste erneut innerhalb des Doppelklick Zeitlimits des Systems. Durch Doppelklicken auf die linke Maustaste werden tatsächlich vier Ereignisse generiert: [WM_LBUTTONDOWN](#onlbuttondown), [WM_LBUTTONUP](#onlbuttonup) Meldungen, der WM_LBUTTONDBLCLK-Befehl und eine weitere WM_LBUTTONUP Meldung, wenn die Schaltfläche losgelassen wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onlbuttondown"></a>CWnd:: OnLButtonDown
+##  <a name="cwndonlbuttondown"></a><a name="onlbuttondown"></a>CWnd:: OnLButtonDown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die linke Maustaste drückt.
 
@@ -7529,12 +7529,12 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onlbuttonup"></a>CWnd:: onlbuttonup
+##  <a name="cwndonlbuttonup"></a><a name="onlbuttonup"></a>CWnd:: onlbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die linke Maustaste loslässt.
 
@@ -7560,12 +7560,12 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmbuttondblclk"></a>CWnd:: onmbuttondblclk
+##  <a name="cwndonmbuttondblclk"></a><a name="onmbuttondblclk"></a>CWnd:: onmbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf die mittlere Maustaste doppelklickt.
 
@@ -7593,14 +7593,14 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur Fenster mit dem CS_DBLCLKS [WNDCLASS](/windows/win32/api/winuser/ns-winuser-wndclassw) -Stil empfangen `OnMButtonDblClk` Aufrufe. Dies ist die Standardeinstellung für alle Microsoft Foundation Class-Fenster. Windows generiert einen `OnMButtonDblClk` Aufruf, wenn der Benutzer die Maustaste drückt, und drückt dann die mittlere Maustaste erneut innerhalb des Doppelklick Zeitlimits des Systems. Durch Doppelklicken auf die mittlere Maustaste werden tatsächlich vier Ereignisse generiert: [WM_MBUTTONDOWN](#onmbuttondown) -und [WM_MBUTTONUP](#onmbuttonup) Meldungen, der WM_MBUTTONDBLCLK-Befehl und eine weitere WM_MBUTTONUP Nachricht.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmbuttondown"></a>CWnd:: onmbuttondown
+##  <a name="cwndonmbuttondown"></a><a name="onmbuttondown"></a>CWnd:: onmbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die mittlere Maustaste drückt.
 
@@ -7628,12 +7628,12 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmbuttonup"></a>CWnd:: onmbuttonup
+##  <a name="cwndonmbuttonup"></a><a name="onmbuttonup"></a>CWnd:: onmbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die mittlere Maustaste loslässt.
 
@@ -7659,12 +7659,12 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmdiactivate"></a>CWnd:: onmdiaktivierungs
+##  <a name="cwndonmdiactivate"></a><a name="onmdiactivate"></a>CWnd:: onmdiaktivierungs
 
 Das Framework ruft diese Member-Funktion auf, damit das untergeordnete Fenster deaktiviert und das untergeordnete Fenster aktiviert wird.
 
@@ -7686,14 +7686,14 @@ Enthält einen Zeiger auf das untergeordnete MDI-Fenster, das aktiviert werden s
 *pdebug-WND*<br/>
 Enthält einen Zeiger auf das untergeordnete MDI-Fenster, das deaktiviert wird. Dieser Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein untergeordnetes MDI-Fenster wird unabhängig vom MDI-Rahmen Fenster aktiviert. Wenn der Frame aktiv wird, empfängt das untergeordnete Fenster, das zuletzt mit einem `OnMDIActivate`-Befehl aktiviert wurde, eine [WM_NCACTIVATE](#onncactivate) Meldung, um einen aktiven Fensterrahmen und eine Beschriftungs Leiste zu zeichnen, empfängt aber keinen weiteren `OnMDIActivate`-Befehl.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmeasureitem"></a>CWnd:: OnMeasureItem
+##  <a name="cwndonmeasureitem"></a><a name="onmeasureitem"></a>CWnd:: OnMeasureItem
 
 Das Framework ruft diese Member-Funktion durch das Framework für den Besitzer einer Besitzer zeichenschaltfläche, eines Kombinations Felds, eines Listen Felds oder eines Menü Elements auf, wenn das Steuerelement erstellt wird.
 
@@ -7710,7 +7710,7 @@ Die ID des Steuerelements.
 *lpmeasureitemstruct*<br/>
 Verweist auf eine [measureitemstruct](/windows/win32/api/winuser/ns-winuser-measureitemstruct) -Datenstruktur, die die Abmessungen des Steuer Elements für das Besitzer zeichnen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Überschreiben Sie diese Member-Funktion, und füllen Sie die `MEASUREITEMSTRUCT` Datenstruktur aus, auf die *lpmeasureitemstruct* verweist, und geben Sie zurück. Dadurch werden Fenster über die Abmessungen des Steuer Elements informiert, und Windows kann die Benutzerinteraktion mit dem Steuerelement ordnungsgemäß verarbeiten.
 
@@ -7725,7 +7725,7 @@ Wenn es sich bei dem Element, das gemessen wird, um ein `CMenu`-, `CListBox`-ode
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmenuchar"></a>CWnd:: onmenuchar
+##  <a name="cwndonmenuchar"></a><a name="onmenuchar"></a>CWnd:: onmenuchar
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer ein Menü-marmonisches Zeichen drückt, das mit keinem der vordefinierten mnetmonics im aktuellen Menü identisch ist.
 
@@ -7751,7 +7751,7 @@ Enthält einen Zeiger auf den ausgewählten `CMenu`. Der Zeiger kann temporär s
 
 Das höchst wertige Wort des Rückgabewerts muss einen der folgenden Befehls Codes enthalten:
 
-|Wert|Beschreibung|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
 |0|Weist Windows an, das Zeichen zu verwerfen, das der Benutzer gedrückt hat, und erstellt ein kurzes Signal auf dem System Sprecher.|
 |1|Weist Fenster an, das aktuelle Menü zu schließen.|
@@ -7759,14 +7759,14 @@ Das höchst wertige Wort des Rückgabewerts muss einen der folgenden Befehls Cod
 
 Das nieder wertige Wort wird ignoriert, wenn das höchst wertige Wort 0 oder 1 enthält. Anwendungen sollten diese Nachricht verarbeiten, wenn Tastenkombinationen (Tastenkombinationen) zum Auswählen von Bitmaps verwendet werden, die in einem Menü abgelegt werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie wird an den `CWnd` gesendet, der das Menü besitzt. `OnMenuChar` wird auch aufgerufen, wenn der Benutzer alt und einen anderen Schlüssel drückt, auch wenn der Schlüssel keinem mnetmonischen Zeichen entspricht. In diesem Fall zeigt *pmenu* auf das Menü, das sich im Besitz des `CWnd`befindet, und *nFlags* ist 0.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmenudrag"></a>CWnd:: onmenudrag
+##  <a name="cwndonmenudrag"></a><a name="onmenudrag"></a>CWnd:: onmenudrag
 
 Das Framework ruft diese Member-Funktion des aktuellen Drag & Drop-Menüs auf, wenn der Benutzer mit dem Ziehen eines Menü Elements beginnt.
 
@@ -7778,7 +7778,7 @@ afx_msg UINT OnMenuDrag(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*NPOs*|in Die Indexposition des Menü Elements, wenn der Zieh Vorgang beginnt.|
 |*pmenu*|in Zeiger auf das [CMenu](../../mfc/reference/cmenu-class.md) -Objekt, das das Menü Element enthält.|
@@ -7790,14 +7790,14 @@ afx_msg UINT OnMenuDrag(
 |MND_CONTINUE|Das Menü sollte aktiv bleiben. Wenn die Maus losgelassen wird, sollte Sie ignoriert werden.|
 |MND_ENDMENU|Das Menü sollte beendet werden.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MENUDRAG](/windows/win32/menurc/wm-menudrag) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmenugetobject"></a>CWnd:: onmenugetobject
+##  <a name="cwndonmenugetobject"></a><a name="onmenugetobject"></a>CWnd:: onmenugetobject
 
 Das Framework ruft diese Member-Funktion des aktuellen Drag & Drop-Menüs auf, wenn der Maus Cursor in ein Menü Element oder von der Mitte des Elements zum oberen oder unteren Rand des Elements bewegt wird.
 
@@ -7807,7 +7807,7 @@ afx_msg UINT OnMenuGetObject(MENUGETOBJECTINFO* pMenuGetObjectInfo);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pmenu*|in Zeiger auf eine [menugetobjectinfo](/windows/win32/api/winuser/ns-winuser-menugetobjectinfo) -Struktur, die Informationen über das Drag & amp; Drop-Menü enthält, auf dem sich der Mauszeiger befindet.|
 
@@ -7818,14 +7818,14 @@ afx_msg UINT OnMenuGetObject(MENUGETOBJECTINFO* pMenuGetObjectInfo);
 |MNGO_NOERROR|Ein Schnittstellen Zeiger, der Drag & amp; Drag-Vorgänge unterstützt, wird im `pvObj` Member der [menugetobjectinfo](/windows/win32/api/winuser/ns-winuser-menugetobjectinfo) -Struktur zurückgegeben. Derzeit wird nur die [IDropTarget](/windows/win32/api/oleidl/nn-oleidl-idroptarget) -Schnittstelle unterstützt.|
 |MNGO_NOINTERFACE|Es wird keine Drop-and-Drag-Schnittstelle unterstützt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MENUGETOBJECT](/windows/win32/menurc/wm-menugetobject) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmenurbuttonup"></a>CWnd:: onmenurbuttonup
+##  <a name="cwndonmenurbuttonup"></a><a name="onmenurbuttonup"></a>CWnd:: onmenurbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die Rechte Maustaste loslässt, während sich der Cursor auf einem Menü Element befindet.
 
@@ -7837,19 +7837,19 @@ afx_msg void OnMenuRButtonUp(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*NPOs*|in Die Indexposition des Menü Elements, wenn die Rechte Maustaste losgelassen wurde.|
 |*pmenu*|in Zeiger auf das [CMenu](../../mfc/reference/cmenu-class.md) -Objekt, das das Menü Element enthält.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MENURBUTTONUP](/windows/win32/menurc/wm-menurbuttonup) Benachrichtigung, die in der Windows SDK beschrieben wird. Die [WM_MENURBUTTONUP](/windows/win32/menurc/wm-menurbuttonup) Meldung ermöglicht einer Anwendung das Bereitstellen eines kontextbezogenen Menüs für das Menü Element, das in der Meldung angegeben ist.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmenuselect"></a>CWnd:: onmenuselect
+##  <a name="cwndonmenuselect"></a><a name="onmenuselect"></a>CWnd:: onmenuselect
 
 Wenn das `CWnd` Objekt einem Menü zugeordnet ist, wird `OnMenuSelect` vom Framework aufgerufen, wenn der Benutzer ein Menü Element auswählt.
 
@@ -7889,14 +7889,14 @@ Enthält eine Kombination der folgenden menüflags:
 *hsysmenu*<br/>
 Wenn *nFlags* MF_SYSMENU enthalten, identifiziert das Menü, das der Nachricht zugeordnet ist. Wenn *nFlags* MF_POPUP enthalten, identifiziert das Handle des Hauptmenüs. Wenn *nFlags* weder MF_SYSMENU noch MF_POPUP enthält, wird es nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *nFlags* "0xFFFF" und " *hsysmenu* " den Wert "0" enthält, hat Windows das Menü geschlossen, da der Benutzer die ESC-Taste gedrückt oder außerhalb des Menüs geklickt hat.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmouseactivate"></a>CWnd:: onmoucaktivierungs
+##  <a name="cwndonmouseactivate"></a><a name="onmouseactivate"></a>CWnd:: onmoucaktivierungs
 
 Das Framework ruft diese Member-Funktion auf, wenn sich der Cursor in einem inaktiven Fenster befindet und der Benutzer eine Maustaste drückt.
 
@@ -7915,7 +7915,7 @@ Gibt einen Zeiger auf das übergeordnete Fenster der obersten Ebene des Fensters
 *nhittest*<br/>
 Gibt den Code des [Treffer Test](#onnchittest) Bereichs an. Ein Treffer Test ist ein Test, der die Position des Cursors bestimmt.
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die Nummer der Maus Nachricht an.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -7930,7 +7930,7 @@ Gibt an, ob der `CWnd` aktiviert werden soll und ob das Maus Ereignis verworfen 
 
 - MA_NOACTIVATEANDEAT `CWnd` Objekt nicht aktivieren und das Maus Ereignis verwerfen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung übergibt diese Nachricht an das übergeordnete Fenster, bevor eine Verarbeitung erfolgt. Wenn das übergeordnete Fenster true zurückgibt, wird die Verarbeitung angehalten.
 
@@ -7943,7 +7943,7 @@ Eine Beschreibung der einzelnen Treffer Test-Bereichs Codes finden Sie unter der
 
 [!code-cpp[NVC_MFCAxCtl#9](../../mfc/reference/codesnippet/cpp/cwnd-class_49.cpp)]
 
-##  <a name="onmousehover"></a>CWnd:: onmouanhover
+##  <a name="cwndonmousehover"></a><a name="onmousehover"></a>CWnd:: onmouanhover
 
 Das Framework ruft diese Member-Funktion auf, wenn der Cursor für den Zeitraum, der in einem vorherigen Aufruf von [TrackMouseEvent](/windows/win32/api/winuser/nf-winuser-trackmouseevent)angegeben ist, auf den Client Bereich des Fensters zeigt.
 
@@ -7955,18 +7955,18 @@ afx_msg void OnMouseHover(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MOUSEHOVER](/windows/win32/inputdev/wm-mousehover) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|Beschreibung|
+|Modifizierertaste|BESCHREIBUNG|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -7979,7 +7979,7 @@ Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmousehwheel"></a>CWnd:: onmousehwheel
+##  <a name="cwndonmousehwheel"></a><a name="onmousehwheel"></a>CWnd:: onmousehwheel
 
 Das Framework ruft diesen Member auf, wenn das aktuelle Fenster durch die Desktopfenster-Manager (DWM) zusammengesetzt wird und dieses Fenster maximiert ist.
 
@@ -7992,20 +7992,20 @@ afx_msg void OnMouseHWheel(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.<br /><br /> Eine Liste der Flags finden Sie in der Unterüberschrift "Nachrichten Parameter" in " [about Mouse Input](/windows/win32/inputdev/about-mouse-input)".|
 |*zdelta*|in Gibt an, wie weit das Rad gedreht wird, ausgedrückt in Vielfachen oder WHEEL_DELTA Teilungen, das 120 ist. Ein positiver Wert gibt an, dass das Mausrad nach rechts gedreht wurde. ein negativer Wert gibt an, dass das Rad nach links gedreht wurde.|
 |*pt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MOUSEHWHEEL](/windows/win32/inputdev/wm-mousehwheel) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird. Diese Meldung wird an das Fenster gesendet, das den Fokus besitzt, wenn das horizontale Mausrad der Maus gekippt oder gedreht wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmouseleave"></a>CWnd:: OnMouseLeave
+##  <a name="cwndonmouseleave"></a><a name="onmouseleave"></a>CWnd:: OnMouseLeave
 
 Das Framework ruft diese Member-Funktion auf, wenn der Cursor den Client Bereich des Fensters verlässt, das in einem vorherigen Aufruf von [trackmouserevent](/windows/win32/api/winuser/nf-winuser-trackmouseevent)angegeben wurde.
 
@@ -8013,14 +8013,14 @@ Das Framework ruft diese Member-Funktion auf, wenn der Cursor den Client Bereich
 afx_msg void OnMouseLeave();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_MOUSELEAVE](/windows/win32/inputdev/wm-mouseleave) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmousemove"></a>CWnd:: onmoucmove
+##  <a name="cwndonmousemove"></a><a name="onmousemove"></a>CWnd:: onmoucmove
 
 Das Framework ruft diese Member-Funktion auf, wenn der Mauszeiger bewegt wird.
 
@@ -8048,14 +8048,14 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Maus nicht aufgezeichnet wird, wird die WM_MOUSEMOVE Nachricht vom `CWnd`-Objekt unterhalb des Mauszeigers empfangen. Andernfalls wird die Meldung an das Fenster weitergeleitet, das die Maus erfasst hat.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmousewheel"></a>CWnd:: onmouswheel
+##  <a name="cwndonmousewheel"></a><a name="onmousewheel"></a>CWnd:: onmouswheel
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Benutzer das Mausrad dreht und auf die nächste Kerb des Rades stößt.
 
@@ -8091,7 +8091,7 @@ Gibt die x-und y-Koordinate des Cursors an. Diese Koordinaten sind immer relativ
 
 Ungleich 0 (null), wenn Mausrad Scrollen aktiviert ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `OnMouseWheel` überschrieben wird, wird der Standardwert [WM_MOUSEWHEEL](/windows/win32/inputdev/wm-mousewheel)aufgerufen. Windows leitet die Nachricht automatisch an das Steuerelement oder das untergeordnete Fenster weiter, das den Fokus besitzt. Die Win32-Funktion [defwindowproc](/windows/win32/api/winuser/nf-winuser-defwindowprocw) gibt die Nachricht nach oben in der übergeordneten Kette an das Fenster weiter, in dem Sie verarbeitet wird.
 
@@ -8104,7 +8104,7 @@ WHEEL_DELTA wurde auf 120 festgelegt, um eine feinere Auflösung zu ermöglichen
 > [!NOTE]
 > `OnMouseWheel` behandelt Nachrichten für Windows NT 4,0 und höhere Versionen. Verwenden Sie für die Nachrichten Behandlung in Windows 95/98 oder Windows NT 3,51 [onregisteredmouswheel](#onregisteredmousewheel).
 
-##  <a name="onmove"></a>CWnd:: OnMove
+##  <a name="cwndonmove"></a><a name="onmove"></a>CWnd:: OnMove
 
 Das Framework ruft diese Member-Funktion auf, nachdem das `CWnd` Objekt verschoben wurde.
 
@@ -8122,12 +8122,12 @@ Gibt die neue x-Koordinaten Position der oberen linken Ecke des Client Bereichs 
 *y*<br/>
 Gibt die neue Position der y-Koordinate der oberen linken Ecke des Client Bereichs an. Dieser neue Speicherort wird in Bildschirm Koordinaten für überlappende und Popup Fenster sowie übergeordnete Client Koordinaten für untergeordnete Fenster angegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onmoving"></a>CWnd:: onmoving
+##  <a name="cwndonmoving"></a><a name="onmoving"></a>CWnd:: onmoving
 
 Das Framework ruft diese Member-Funktion auf, während ein Benutzer ein `CWnd` Objekt verschiebt.
 
@@ -8145,12 +8145,12 @@ Der Rand des Fensters, das verschoben werden soll.
 *lprect*<br/>
 Die Adresse der [CRect](../../atl-mfc-shared/reference/crect-class.md) -oder der [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die Koordinaten des Elements enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncactivate"></a>CWnd:: onncaktivierungs
+##  <a name="cwndonncactivate"></a><a name="onncactivate"></a>CWnd:: onncaktivierungs
 
 Das Framework ruft diese Member-Funktion auf, wenn der nicht-Client Bereich geändert werden muss, um einen aktiven oder inaktiven Zustand anzugeben.
 
@@ -8167,14 +8167,14 @@ Gibt an, wann eine Beschriftungs Leiste oder ein Symbol geändert werden muss, u
 
 Ungleich 0 (null), wenn Windows die Standard Verarbeitung fortsetzen soll. 0, um zu verhindern, dass die Beschriftungs Leiste oder das Symbol deaktiviert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung zeichnet die Titelleiste und den Text der Titelleiste in ihren aktiven Farben, wenn *bActive* true ist, und in ihren inaktiven Farben, wenn *bActive* den Wert false hat.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnccalcsize"></a>CWnd:: onnccalcsize
+##  <a name="cwndonnccalcsize"></a><a name="onnccalcsize"></a>CWnd:: onnccalcsize
 
 Das Framework ruft diese Member-Funktion auf, wenn die Größe und Position des Client Bereichs berechnet werden müssen.
 
@@ -8192,7 +8192,7 @@ Gibt an, ob die Anwendung angeben soll, welcher Teil des Client Bereichs gültig
 *lpncsp*<br/>
 Verweist auf eine [NCCALCSIZE_PARAMS](/windows/win32/api/winuser/ns-winuser-nccalcsize_params) Datenstruktur, die Informationen enthält, die eine Anwendung verwenden kann, um die neue Größe und Position des `CWnd` Rechtecks (einschließlich Client Bereich, Rahmen, Beschriftung, Scrollleisten usw.) zu berechnen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch die Verarbeitung dieser Nachricht kann eine Anwendung den Inhalt des Client Bereichs des Fensters steuern, wenn sich die Größe oder Position des Fensters ändert.
 
@@ -8205,7 +8205,7 @@ Die Standard Implementierung berechnet die Größe des Client Bereichs basierend
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnccreate"></a>CWnd:: onnccreate
+##  <a name="cwndonnccreate"></a><a name="onnccreate"></a>CWnd:: onnccreate
 
 Das Framework ruft diese Member-Funktion vor der [WM_CREATE](#oncreate) Meldung auf, wenn das `CWnd` Objekt erstmalig erstellt wird.
 
@@ -8222,12 +8222,12 @@ Verweist auf die Datenstruktur " [foratestruct](/windows/win32/api/winuser/ns-wi
 
 Ungleich 0 (null), wenn der nicht-Client Bereich erstellt wird. Der Wert ist 0, wenn ein Fehler auftritt. die `Create` Funktion gibt in diesem Fall einen **Fehler** zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncdestroy"></a>CWnd:: onncdestroy
+##  <a name="cwndonncdestroy"></a><a name="onncdestroy"></a>CWnd:: onncdestroy
 
 Wird von Framework aufgerufen, wenn der nicht-Client Bereich zerstört wird, und ist die letzte Member-Funktion, die aufgerufen wird, wenn das Windows-Fenster zerstört wird.
 
@@ -8235,13 +8235,13 @@ Wird von Framework aufgerufen, wenn der nicht-Client Bereich zerstört wird, und
 afx_msg void OnNcDestroy();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung führt eine Bereinigung durch und ruft dann die Funktion " [PostNcDestroy](#postncdestroy)" der virtuellen Member auf.
 
 Überschreiben Sie `PostNcDestroy`, wenn Sie eine eigene Bereinigung durchführen möchten, z. b. einen **Lösch** Vorgang. Wenn Sie `OnNcDestroy`überschreiben, müssen Sie `OnNcDestroy` in ihrer Basisklasse aufzurufen, um sicherzustellen, dass alle für das Fenster intern zugewiesenen Speicher freigegeben werden.
 
-##  <a name="onnchittest"></a>CWnd:: onnchittest
+##  <a name="cwndonnchittest"></a><a name="onnchittest"></a>CWnd:: onnchittest
 
 Das Framework ruft diese Member-Funktion für das `CWnd` Objekt auf, das den Cursor (oder das `CWnd` Objekt, das die Funktion " [SetCapture](#setcapture) -Member" zum Erfassen der Maus Eingaben verwendet hat) bei jedem Verschieben des Mauszeigers enthält.
 
@@ -8258,12 +8258,12 @@ Enthält die x-und y-Koordinaten des Cursors. Diese Koordinaten sind immer Bilds
 
 Einer der Enumerationswerte für den Maus Treffer Test. Eine Liste der Werte finden Sie unter [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnclbuttondblclk"></a>CWnd:: onnclbuttondblclk
+##  <a name="cwndonnclbuttondblclk"></a><a name="onnclbuttondblclk"></a>CWnd:: onnclbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer mit der linken Maustaste doppelklickt, während sich der Cursor in einem nicht-Client Bereich `CWnd`befindet.
 
@@ -8281,14 +8281,14 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Falls erforderlich, wird die [WM_SYSCOMMAND](#onsyscommand) Nachricht gesendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnclbuttondown"></a>CWnd:: onnclbuttondown
+##  <a name="cwndonnclbuttondown"></a><a name="onnclbuttondown"></a>CWnd:: onnclbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die linke Maustaste drückt, während sich der Cursor in einem nicht-Client Bereich des `CWnd` Objekts befindet.
 
@@ -8306,14 +8306,14 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Falls erforderlich, wird der [WM_SYSCOMMAND](#onsyscommand) gesendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übermittelt werden, entsprechen den Parametern, die beim Empfang der Nachricht vom Framework empfangen wurden. Wenn Sie die Basisklassen Implementierung dieser Funktion aufzurufen, verwendet diese Implementierung die Parameter, die ursprünglich mit der Nachricht übergeben wurden, und nicht die Parameter, die Sie an die Funktion übergeben.
 
-##  <a name="onnclbuttonup"></a>CWnd:: onnclbuttonup
+##  <a name="cwndonnclbuttonup"></a><a name="onnclbuttonup"></a>CWnd:: onnclbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die linke Maustaste loslässt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8331,14 +8331,14 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Falls erforderlich, wird [WM_SYSCOMMAND](#onsyscommand) gesendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmbuttondblclk"></a>CWnd:: onncmbuttondblclk
+##  <a name="cwndonncmbuttondblclk"></a><a name="onncmbuttondblclk"></a>CWnd:: onncmbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf die mittlere Maustaste doppelklickt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8356,12 +8356,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmbuttondown"></a>CWnd:: onncmbuttondown
+##  <a name="cwndonncmbuttondown"></a><a name="onncmbuttondown"></a>CWnd:: onncmbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die mittlere Maustaste drückt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8379,12 +8379,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmbuttonup"></a>CWnd:: onncmbuttonup
+##  <a name="cwndonncmbuttonup"></a><a name="onncmbuttonup"></a>CWnd:: onncmbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die mittlere Maustaste loslässt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8402,12 +8402,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmousehover"></a>CWnd:: onncmouanhover
+##  <a name="cwndonncmousehover"></a><a name="onncmousehover"></a>CWnd:: onncmouanhover
 
 Das Framework ruft diese Member-Funktion auf, wenn der Cursor für den Zeitraum, der in einem vorherigen Aufruf von [TrackMouseEvent](/windows/win32/api/winuser/nf-winuser-trackmouseevent)angegeben ist, auf den nicht-Client Bereich des Fensters zeigt.
 
@@ -8419,19 +8419,19 @@ afx_msg void OnNcMouseHover(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nhittest*|in Der von der [CWnd::D efwindowproc](#defwindowproc) -Funktion zurückgegebene Treffer Testwert als Ergebnis der Verarbeitung der [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) Nachricht.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Bildschirms angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_NCMOUSEHOVER](/windows/win32/inputdev/wm-ncmousehover) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmouseleave"></a>CWnd:: onncmouseleave
+##  <a name="cwndonncmouseleave"></a><a name="onncmouseleave"></a>CWnd:: onncmouseleave
 
 Das Framework ruft diese Member-Funktion auf, wenn der Cursor den nicht-Client Bereich des Fensters verlässt, das in einem vorherigen Aufruf von [trackmouserevent](/windows/win32/api/winuser/nf-winuser-trackmouseevent)angegeben wurde.
 
@@ -8439,14 +8439,14 @@ Das Framework ruft diese Member-Funktion auf, wenn der Cursor den nicht-Client B
 afx_msg void OnNcMouseLeave();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_NCMOUSELEAVE](/windows/win32/inputdev/wm-ncmouseleave) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncmousemove"></a>CWnd:: onncmouummove
+##  <a name="cwndonncmousemove"></a><a name="onncmousemove"></a>CWnd:: onncmouummove
 
 Das Framework ruft diese Member-Funktion auf, wenn der Cursor in einem nicht-Client Bereich bewegt wird.
 
@@ -8464,14 +8464,14 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Falls erforderlich, wird die [WM_SYSCOMMAND](#onsyscommand) Nachricht gesendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncpaint"></a>CWnd:: onncpaint
+##  <a name="cwndonncpaint"></a><a name="onncpaint"></a>CWnd:: onncpaint
 
 Das Framework ruft diese Member-Funktion auf, wenn der nicht-Client Bereich gezeichnet werden muss.
 
@@ -8479,13 +8479,13 @@ Das Framework ruft diese Member-Funktion auf, wenn der nicht-Client Bereich geze
 afx_msg void OnNcPaint();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung zeichnet den Fensterrahmen.
 
 Eine Anwendung kann diesen-Befehl überschreiben und einen eigenen benutzerdefinierten Fensterrahmen zeichnen. Der Clippingbereich ist immer rechteckig, auch wenn die Form des Frames geändert wird.
 
-##  <a name="onncrbuttondblclk"></a>CWnd:: onncrbuttondblclk
+##  <a name="cwndonncrbuttondblclk"></a><a name="onncrbuttondblclk"></a>CWnd:: onncrbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer mit der rechten Maustaste doppelklickt, während sich der Cursor in einem nicht-Client Bereich `CWnd`befindet.
 
@@ -8503,12 +8503,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncrbuttondown"></a>CWnd:: onncrbuttondown
+##  <a name="cwndonncrbuttondown"></a><a name="onncrbuttondown"></a>CWnd:: onncrbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die Rechte Maustaste drückt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8526,12 +8526,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncrbuttonup"></a>CWnd:: onncrbuttonup
+##  <a name="cwndonncrbuttonup"></a><a name="onncrbuttonup"></a>CWnd:: onncrbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die Rechte Maustaste loslässt, während sich der Cursor in einem nicht-Client Bereich befindet.
 
@@ -8549,12 +8549,12 @@ Gibt den [Treffer Testcode](#onnchittest)an. Ein Treffer Test ist ein Test, der 
 *Punkt*<br/>
 Gibt ein `CPoint` Objekt an, das die x-und y-Bildschirm Koordinaten der Cursorposition enthält. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Bildschirms.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncrenderingchanged"></a>CWnd:: onncrenderingchanged
+##  <a name="cwndonncrenderingchanged"></a><a name="onncrenderingchanged"></a>CWnd:: onncrenderingchanged
 
 Das Framework ruft diesen Member auf, wenn sich die Renderingleistung für den nicht-Client Bereich geändert hat.
 
@@ -8564,18 +8564,18 @@ afx_msg void OnNcRenderingChanged(BOOL bIsRendering);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*bisrendering*|in TRUE, wenn Desktopfenster-Manager (DWM)-Rendering für den nicht-Client Bereich des Fensters aktiviert ist. FALSE, wenn das Rendering deaktiviert ist.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_DWMNCRENDERINGCHANGED](/windows/win32/dwm/wm-dwmncrenderingchanged) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncxbuttondblclk"></a>CWnd:: onncxbuttondblclk
+##  <a name="cwndonncxbuttondblclk"></a><a name="onncxbuttondblclk"></a>CWnd:: onncxbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf XButton1 oder XButton2 doppelklickt, während sich der Cursor im nicht-Client Bereich eines Fensters befindet.
 
@@ -8588,20 +8588,20 @@ void OnNcXButtonDblClk(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nhittest*|in Der von der [CWnd::D efwindowproc](#defwindowproc) -Funktion zurückgegebene Treffer Testwert als Ergebnis der Verarbeitung der [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) Nachricht.|
 |*nschaltfläche*|in Der Wert XButton1, wenn auf die erste Microsoft IntelliMouse x-Schaltfläche Doppel geklickt wird, oder XButton2, wenn auf die zweite x-Schaltfläche Doppel geklickt wird.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_XBUTTONDBLCLK](/windows/win32/inputdev/wm-xbuttondblclk) Benachrichtigung, die in der Windows SDK beschrieben wird. Diese Meldung wird an das Fenster gesendet, das den Cursor enthält. Wenn ein Fenster die Maus erfasst hat, wird diese Meldung nicht gepostet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncxbuttondown"></a>CWnd:: onncxbuttondown
+##  <a name="cwndonncxbuttondown"></a><a name="onncxbuttondown"></a>CWnd:: onncxbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer XButton1 oder XButton2 der Maus drückt, während sich der Cursor im nicht-Client Bereich eines Fensters befindet.
 
@@ -8614,20 +8614,20 @@ afx_msg void OnNcXButtonDown(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nhittest*|in Der von der [CWnd::D efwindowproc](#defwindowproc) -Funktion zurückgegebene Treffer Testwert als Ergebnis der Verarbeitung der [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) Nachricht.|
 |*nschaltfläche*|in Der Wert XButton1, wenn die erste Maustaste gedrückt wird, oder XButton2, wenn die zweite x-Schaltfläche gedrückt wird.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Bildschirms angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_NCXBUTTONDOWN](/windows/win32/inputdev/wm-ncxbuttondown) Benachrichtigung, die in der Windows SDK beschrieben wird. Diese Meldung wird an das Fenster gesendet, das den Cursor enthält. Wenn ein Fenster die Maus erfasst hat, wird diese Meldung nicht gepostet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onncxbuttonup"></a>CWnd:: onncxbuttonup
+##  <a name="cwndonncxbuttonup"></a><a name="onncxbuttonup"></a>CWnd:: onncxbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer XButton1 oder XButton2 der Maus loslässt, während sich der Cursor im nicht-Client Bereich eines Fensters befindet.
 
@@ -8640,20 +8640,20 @@ afx_msg void OnNcXButtonUp(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nhittest*|in Der von der [CWnd::D efwindowproc](#defwindowproc) -Funktion zurückgegebene Treffer Testwert als Ergebnis der Verarbeitung der [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) Nachricht.|
 |*nschaltfläche*|in Der Wert XButton1, wenn die erste Maustaste losgelassen wird, oder XButton2, wenn die zweite x-Schaltfläche losgelassen wird.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Bildschirms angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_NCXBUTTONUP](/windows/win32/inputdev/wm-ncxbuttonup) Benachrichtigung, die in der Windows SDK beschrieben wird. Diese Meldung wird an das Fenster gesendet, das den Cursor enthält. Wenn ein Fenster die Maus erfasst hat, wird diese Meldung nicht gepostet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnextmenu"></a>CWnd:: onnextmenu
+##  <a name="cwndonnextmenu"></a><a name="onnextmenu"></a>CWnd:: onnextmenu
 
 Das Framework ruft diese Member-Funktion auf, wenn mit der nach-rechts-oder der nach-links-Taste zwischen der Menüleiste und dem Systemmenü gewechselt wird.
 
@@ -8665,19 +8665,19 @@ afx_msg void OnNextMenu(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nkey*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.<br /><br /> Eine Liste der Flags finden Sie in der Unterüberschrift "Nachrichten Parameter" in " [about Mouse Input](/windows/win32/inputdev/about-mouse-input)".|
 |*lpmdinextmenu*|in Ein Zeiger auf eine [mdinextmenu](/windows/win32/api/winuser/ns-winuser-mdinextmenu) -Struktur, die Informationen über das zu aktivierende Menü enthält.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_UNINITMENUPOPUP](/windows/win32/menurc/wm-uninitmenupopup) Benachrichtigung, die in der Windows SDK beschrieben wird. Als Antwort auf diese Nachricht kann die Anwendung den `hmenuNext`-Member der [mdinextmenu](/windows/win32/api/winuser/ns-winuser-mdinextmenu) -Struktur festlegen, um das Menü anzugeben, zu dem gewechselt werden soll, und das `hwndNext` Element, um das Fenster für das Empfangen von Menü Benachrichtigungs Meldungen anzugeben.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onnotify"></a>CWnd:: OnNotify
+##  <a name="cwndonnotify"></a><a name="onnotify"></a>CWnd:: OnNotify
 
 Das Framework ruft diese Member-Funktion auf, um das übergeordnete Fenster eines Steuer Elements zu informieren, dass ein Ereignis im Steuerelement aufgetreten ist oder dass das Steuerelement einige Informationen erfordert.
 
@@ -8703,7 +8703,7 @@ Ein Zeiger auf eine LRESULT-Variable, in der der Ergebniscode gespeichert werden
 
 Eine Anwendung gibt einen Wert ungleich NULL zurück, wenn Sie diese Nachricht verarbeitet. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnNotify` verarbeitet die Meldungs Zuordnung zur Steuerung der Benachrichtigung.
 
@@ -8711,7 +8711,7 @@ Eine Anwendung gibt einen Wert ungleich NULL zurück, wenn Sie diese Nachricht v
 
 Weitere Informationen zur WM_NOTIFY Meldung finden Sie unter Technical Note 61 (TN061), [ON_NOTIFY und WM_NOTIFY Messages](../../mfc/tn061-on-notify-and-wm-notify-messages.md). Möglicherweise interessieren Sie sich auch für die verwandten Themen, die unter [Steuerungs Themen](../../mfc/controls-mfc.md)und TN062, [Message Reflection for Windows Controls](../../mfc/tn062-message-reflection-for-windows-controls.md)beschrieben werden.
 
-##  <a name="onnotifyformat"></a>CWnd:: onnotifyformat
+##  <a name="cwndonnotifyformat"></a><a name="onnotifyformat"></a>CWnd:: onnotifyformat
 
 Das Framework ruft diese Member-Funktion auf, um zu bestimmen, ob das aktuelle Fenster ANSI-oder Unicode-Strukturen in der WM_NOTIFY Benachrichtigungs Meldung akzeptiert.
 
@@ -8723,10 +8723,10 @@ afx_msg UINT OnNotifyFormat(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*folgenden*|in Ein Zeiger auf ein `CWnd` Objekt, das das Fenster darstellt, das die [WM_NOTIFY](/windows/win32/controls/wm-notify) Meldung sendet.<br /><br /> Dieser Parameter ist der Zeiger auf ein Steuerelement, wenn der *nCommand* -Parameter NF_QUERY ist, oder der Zeiger auf das übergeordnete Fenster eines Steuer Elements, wenn *nCommand* NF_REQUERY ist.|
-|*nausgeführter Befehl*|in Ein Befehls Wert, der die WM_NOTIFY Nachricht spezialisiert. Mögliche Werte sind:<br /><br /> - NF_QUERY -<br />     Die Meldung ist eine Abfrage, mit der bestimmt wird, ob ANSI-oder Unicode-Strukturen in WM_NOTIFY-Nachrichten verwendet werden sollen. Diese Meldung wird während der Erstellung eines-Steuer Elements von einem-Steuerelement an das übergeordnete Fenster gesendet und als Antwort auf das NF_REQUERY Formular dieser Nachricht.<br />-NF_REQUERY:<br />     Die Meldung ist eine Anforderung für ein Steuerelement, das NF_QUERY Formular dieser Nachricht an das übergeordnete Fenster zu senden. Diese Anforderung wird vom übergeordneten Fenster gesendet und fordert das Steuerelement auf, das übergeordnete Element über den in WM_NOTIFY-Nachrichten zu verwendenden Strukturtyp anzufordern. Wenn der *nCommand* -Parameter NF_REQUERY ist, ist der Rückgabewert das Ergebnis des anfragevorgangs.|
+|*nausgeführter Befehl*|in Ein Befehls Wert, der die WM_NOTIFY Nachricht spezialisiert. Mögliche Werte:<br /><br /> - NF_QUERY -<br />     Die Meldung ist eine Abfrage, mit der bestimmt wird, ob ANSI-oder Unicode-Strukturen in WM_NOTIFY-Nachrichten verwendet werden sollen. Diese Meldung wird während der Erstellung eines-Steuer Elements von einem-Steuerelement an das übergeordnete Fenster gesendet und als Antwort auf das NF_REQUERY Formular dieser Nachricht.<br />-NF_REQUERY:<br />     Die Meldung ist eine Anforderung für ein Steuerelement, das NF_QUERY Formular dieser Nachricht an das übergeordnete Fenster zu senden. Diese Anforderung wird vom übergeordneten Fenster gesendet und fordert das Steuerelement auf, das übergeordnete Element über den in WM_NOTIFY-Nachrichten zu verwendenden Strukturtyp anzufordern. Wenn der *nCommand* -Parameter NF_REQUERY ist, ist der Rückgabewert das Ergebnis des anfragevorgangs.|
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -8734,16 +8734,16 @@ afx_msg UINT OnNotifyFormat(
 |------------------|-------------|
 |NFR_ANSI|ANSI-Strukturen sollten in WM_NOTIFY vom Steuerelement gesendeten Nachrichten verwendet werden.|
 |NFR_UNICODE|Unicode-Strukturen sollten in WM_NOTIFY vom Steuerelement gesendeten Nachrichten verwendet werden.|
-|0|Es ist ein Fehler aufgetreten.|
+|0|Ein Fehler ist aufgetreten.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_NOTIFYFORMAT](/windows/win32/Controls/wm-notifyformat) Benachrichtigung, die in der Windows SDK beschrieben wird. WM_NOTIFY Meldungen werden von einem allgemeinen Steuerelement an das übergeordnete Fenster und vom übergeordneten Fenster an das allgemeine Steuerelement gesendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onpaint"></a>CWnd:: OnPaint
+##  <a name="cwndonpaint"></a><a name="onpaint"></a>CWnd:: OnPaint
 
 Das Framework ruft diese Member-Funktion auf, wenn Windows oder eine Anwendung eine Anforderung sendet, einen Teil des Fensters einer Anwendung neu zu zeichnen.
 
@@ -8751,7 +8751,7 @@ Das Framework ruft diese Member-Funktion auf, wenn Windows oder eine Anwendung e
 afx_msg void OnPaint();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die [WM_PAINT](/windows/win32/gdi/the-wm-paint-message) Meldung wird gesendet, wenn die Element Funktion [UpdateWindow](#updatewindow) oder [redrawwindow](#redrawwindow) aufgerufen wird.
 
@@ -8769,7 +8769,7 @@ Weitere Informationen zur Verwendung von `WM_Paint`finden Sie in den folgenden T
 
 - [Verwenden der WM_PAINT Nachricht](/windows/win32/gdi/using-the-wm-paint-message)
 
-##  <a name="onpaintclipboard"></a>CWnd:: onpaintclipboard
+##  <a name="cwndonpaintclipboard"></a><a name="onpaintclipboard"></a>CWnd:: onpaintclipboard
 
 Die `OnPaintClipboard` Member-Funktion eines Zwischenablage Besitzers wird von einem Zwischenablage-Viewer aufgerufen, wenn der Besitzer der Zwischenablage Daten in der Zwischenablage im CF_OWNERDISPLAY Format abgelegt hat und der Client Bereich der Zwischenablage Anzeige neu gezeichnet werden muss.
 
@@ -8787,7 +8787,7 @@ Gibt einen Zeiger auf das Zwischenablageanwendungsfenster an. Der Zeiger kann te
 *hpaintstruct*<br/>
 Identifiziert eine [PAINTSTRUCT](/windows/win32/api/winuser/ns-winuser-paintstruct) -Datenstruktur, die definiert welcher Teil des Clientbereichs gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um zu ermitteln, ob der gesamte Client Bereich oder nur ein Teil davon neu gezeichnet werden muss, muss der Besitzer der Zwischenablage die Dimensionen des Zeichnungs Bereichs im `rcpaint`-Member der `PAINTSTRUCT`-Struktur mit den Dimensionen vergleichen, die im letzten [onsizeclipboard](#onsizeclipboard) -Member-Funktions Aufrufwert angegeben sind.
 
@@ -8796,7 +8796,7 @@ Um zu ermitteln, ob der gesamte Client Bereich oder nur ein Teil davon neu gezei
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onpalettechanged"></a>CWnd:: OnPaletteChanged
+##  <a name="cwndonpalettechanged"></a><a name="onpalettechanged"></a>CWnd:: OnPaletteChanged
 
 Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene auf, nachdem das Fenster mit dem Eingabefokus seine logische Palette erreicht hat und dadurch die Systempalette geändert wurde.
 
@@ -8809,7 +8809,7 @@ afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
 *pfocus WND*<br/>
 Gibt einen Zeiger auf das Fenster an, das bewirkt hat, dass die Systempalette geändert wurde. Der Zeiger kann temporär sein und sollte nicht gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Befehl ermöglicht ein Fenster ohne den Eingabefokus, das eine Farbpalette verwendet, um seine logischen Paletten zu erkennen und den Client Bereich zu aktualisieren.
 
@@ -8820,7 +8820,7 @@ Um eine Endlosschleife zu vermeiden, sollte das Fenster seine Palette nur dann e
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onpaletteischanging"></a>CWnd:: onpaletteischanging
+##  <a name="cwndonpaletteischanging"></a><a name="onpaletteischanging"></a>CWnd:: onpaletteischanging
 
 Das Framework ruft diese Member-Funktion auf, um Anwendungen zu informieren, dass eine Anwendung ihre logische Palette erkennen wird.
 
@@ -8833,11 +8833,11 @@ afx_msg void OnPaletteIsChanging(CWnd* pRealizeWnd);
 *prealizewnd*<br/>
 Gibt das Fenster an, in dem die logische Palette zu erkennen ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onparentnotify"></a>CWnd:: onparameentnotify
+##  <a name="cwndonparentnotify"></a><a name="onparentnotify"></a>CWnd:: onparameentnotify
 
 Die `OnParentNotify` Member-Funktion eines übergeordneten Elements wird vom Framework aufgerufen, wenn das untergeordnete Fenster erstellt oder zerstört wird oder wenn der Benutzer auf eine Maustaste klickt, während sich der Cursor über dem untergeordneten Fenster befindet.
 
@@ -8849,7 +8849,7 @@ afx_msg void OnParentNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt das Ereignis an, für das das übergeordnete Element benachrichtigt wird, und den Bezeichner des untergeordneten Fensters. Das Ereignis ist das nieder wertige Wort der *Nachricht*. Wenn das Ereignis WM_CREATE oder WM_DESTROY ist, ist das hochwertige Wort der *Nachricht* der Bezeichner des untergeordneten Fensters. Andernfalls ist das hochwertige Wort nicht definiert. Das Ereignis (Word of *Message*in niedriger Reihenfolge) kann einen der folgenden Werte aufweisen:
 
 - WM_CREATE das untergeordnete Fenster erstellt wird.
@@ -8865,7 +8865,7 @@ Gibt das Ereignis an, für das das übergeordnete Element benachrichtigt wird, u
 *lParam*<br/>
 Wenn das Ereignis (Word mit niedriger Ordnung) der *Nachricht* WM_CREATE oder WM_DESTROY ist, gibt *LPARAM* das Fenster Handle des untergeordneten Fensters an. Andernfalls enthält *LPARAM* die x-und y-Koordinaten des Cursors. Die x-Koordinate befindet sich im nieder wertigen Wort, und die y-Koordinate befindet sich im hohen Bestell Wort.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das untergeordnete Fenster erstellt wird, ruft das System `OnParentNotify` auf, kurz bevor die [Create](#create) Member-Funktion, die das Fenster erstellt, zurückgibt. Wenn das untergeordnete Fenster zerstört wird, ruft das System `OnParentNotify` auf, bevor eine Verarbeitung stattfindet, um das Fenster zu zerstören.
 
@@ -8876,7 +8876,7 @@ Alle untergeordneten Fenster mit Ausnahme derjenigen, die den [WS_EX_NOPARENTNOT
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onpowerbroadcast"></a>CWnd:: onpowerbroadcast
+##  <a name="cwndonpowerbroadcast"></a><a name="onpowerbroadcast"></a>CWnd:: onpowerbroadcast
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Energie Verwaltungs Ereignis auftritt.
 
@@ -8888,7 +8888,7 @@ afx_msg UINT OnPowerBroadcast(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*npowerevent*|in Das Energie Verwaltungs Ereignis.|
 |*"netventdata"*|in Ereignisspezifische Daten.|
@@ -8897,7 +8897,7 @@ afx_msg UINT OnPowerBroadcast(
 
 Wenn das Ereignis eine Anforderung ist, müssen Sie "true" zurückgeben, um die Anforderung zu erteilen, oder BROADCAST_QUERY_DENY, die Anforderung zu verweigern.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_POWERBROADCAST](/windows/win32/Power/wm-powerbroadcast) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -8906,7 +8906,7 @@ Der *npowerevent* -Parameter gibt Ereignisse an, z. b. die Stromversorgung ist n
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onquerydragicon"></a>CWnd:: onquerydragicon
+##  <a name="cwndonquerydragicon"></a><a name="onquerydragicon"></a>CWnd:: onquerydragicon
 
 Das Framework ruft diese Member-Funktion in einem minimierten (ikonischen) Fenster auf, für das kein Symbol für die Klasse definiert ist.
 
@@ -8918,11 +8918,11 @@ afx_msg HCURSOR OnQueryDragIcon();
 
 Ein Double Word-Wert, der einen Cursor oder ein Symbol Handle im nieder wertigen Wort enthält. Der Cursor oder das Symbol muss mit der Auflösung des Anzeige Treibers kompatibel sein. Wenn die Anwendung NULL zurückgibt, zeigt das System den Standard Cursor an. Der Standard Rückgabewert ist NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das System ruft diesen Befehl auf, um den Cursor zu erhalten, der angezeigt wird, während der Benutzer das minimierte Fenster zieht. Wenn eine Anwendung das Handle eines Symbols oder Cursors zurückgibt, konvertiert das System Sie in schwarz und weiß. Wenn eine Anwendung ein Handle zurückgibt, muss das Handle einen monochrome Cursor oder ein Symbol identifizieren, der mit der Auflösung des Anzeige Treibers kompatibel ist. Die Anwendung kann die Element Funktionen [CWinApp:: LoadCursor](../../mfc/reference/cwinapp-class.md#loadcursor) oder [CWinApp:: LoadIcon](../../mfc/reference/cwinapp-class.md#loadicon) zum Laden eines Cursors oder Symbols aus den Ressourcen in der ausführbaren Datei und zum Abrufen dieses Handles abrufen.
 
-##  <a name="onqueryendsession"></a>CWnd:: onqueryendsession
+##  <a name="cwndonqueryendsession"></a><a name="onqueryendsession"></a>CWnd:: onqueryendsession
 
 Das Framework ruft diese Member-Funktion auf, wenn sich der Benutzer entscheidet, die Windows-Sitzung zu beenden, oder wenn eine Anwendung die Windows-Funktion [exitwindows](/windows/win32/api/winuser/nf-winuser-exitwindows) aufruft.
 
@@ -8934,11 +8934,11 @@ afx_msg BOOL OnQueryEndSession();
 
 Ungleich 0 (null), wenn eine Anwendung bequem heruntergefahren werden kann. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn eine Anwendung 0 zurückgibt, wird die Windows-Sitzung nicht beendet. Windows beendet den Aufruf von `OnQueryEndSession`, sobald eine Anwendung 0 zurückgibt, und sendet die [WM_ENDSESSION](#onendsession) Nachricht mit dem Parameterwert false für jede Anwendung, die bereits einen Wert ungleich 0 (null) zurückgegeben hat.
 
-##  <a name="onquerynewpalette"></a>CWnd:: OnQueryNewPalette
+##  <a name="cwndonquerynewpalette"></a><a name="onquerynewpalette"></a>CWnd:: OnQueryNewPalette
 
 Das Framework ruft diese Member-Funktion auf, wenn das `CWnd` Objekt im Begriff ist, den Eingabefokus zu erhalten, sodass der `CWnd` die Möglichkeit erhält, seine logische Palette zu erkennen, wenn er den Fokus erhält.
 
@@ -8950,7 +8950,7 @@ afx_msg BOOL OnQueryNewPalette();
 
 Ungleich 0 (null), wenn das `CWnd` seine logische Palette erkennt. andernfalls 0.
 
-##  <a name="onqueryopen"></a>CWnd:: onqueryopen
+##  <a name="cwndonqueryopen"></a><a name="onqueryopen"></a>CWnd:: onqueryopen
 
 Das Framework ruft diese Element Funktion auf, wenn das `CWnd` Objekt minimiert wird und der Benutzer anfordert, dass die `CWnd` in der vorminimierten Größe und Position wieder hergestellt werden soll.
 
@@ -8962,11 +8962,11 @@ afx_msg BOOL OnQueryOpen();
 
 Ungleich 0 (null), wenn das Symbol geöffnet werden kann, oder 0, um zu verhindern, dass das Symbol geöffnet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 In `OnQueryOpen`sollten `CWnd` keine Aktionen ausführen, die eine Aktivierung oder eine Fokus Änderung verursachen würden (z. b. das Erstellen eines Dialog Felds).
 
-##  <a name="onqueryuistate"></a>CWnd:: onqueryuistate
+##  <a name="cwndonqueryuistate"></a><a name="onqueryuistate"></a>CWnd:: onqueryuistate
 
 Wird aufgerufen, um den Benutzeroberflächenstatus (UI) für ein Fenster abzurufen.
 
@@ -8984,11 +8984,11 @@ Der Rückgabewert ist NULL, wenn die Fokus Indikatoren und die Tastaturbeschleun
 
 - UISF_ACTIVE Windows XP: ein Steuerelement sollte in dem Format gezeichnet werden, das für aktive Steuerelemente verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [WM_QUERYUISTATE](/windows/win32/menurc/wm-queryuistate) Nachricht, wie in der Windows SDK beschrieben.
 
-##  <a name="onrawinput"></a>CWnd:: onrawinput
+##  <a name="cwndonrawinput"></a><a name="onrawinput"></a>CWnd:: onrawinput
 
 Das Framework ruft diese Member-Funktion auf, wenn das aktuelle Fenster eine roheingabe erhält.
 
@@ -9000,19 +9000,19 @@ afx_msg void OnRawInput(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*ninputcode*|in Ein Eingabecode, der angibt, ob die Eingabe aufgetreten ist, während sich die Anwendung im Vordergrund befand. In beiden Fällen muss die Anwendung [CWnd::D efwindowproc](#defwindowproc) aufgerufen werden, damit das System eine Bereinigung durchführen kann.<br /><br /> Dieser Parameter kann einen der folgenden Werte aufweisen:<br /><br /> -RIM_INPUT-Eingabe ist aufgetreten, während sich die Anwendung im Vordergrund befand.<br />-RIM_INPUTSINK-Eingabe ist aufgetreten, während sich die Anwendung nicht im Vordergrund befand.|
 |*hrawinput*|in Handle für eine [rawinput](/windows/win32/api/winuser/ns-winuser-rawinput) -Struktur, die die unformatierte Eingabe des Geräts enthält.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_INPUT](/windows/win32/inputdev/wm-appcommand) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onrbuttondblclk"></a>CWnd:: onrbuttondblclk
+##  <a name="cwndonrbuttondblclk"></a><a name="onrbuttondblclk"></a>CWnd:: onrbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer mit der rechten Maustaste doppelklickt.
 
@@ -9040,14 +9040,14 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinaten des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur Fenster mit dem CS_DBLCLKS [WNDCLASS](/windows/win32/api/winuser/ns-winuser-wndclassw) -Stil können `OnRButtonDblClk` Aufrufe empfangen. Dies ist die Standardeinstellung für Windows innerhalb der Microsoft Foundation Class-Bibliothek. Windows ruft `OnRButtonDblClk` auf, wenn der Benutzer die Taste drückt, und drückt dann erneut die Rechte Maustaste im Doppelklick-Zeit Limit des Systems. Durch Doppelklicken auf die Rechte Maustaste werden tatsächlich vier Ereignisse generiert: [WM_RBUTTONDOWN](#onrbuttondown) und [WM_RBUTTONUP](#onrbuttonup) Nachrichten, der `OnRButtonDblClk`-Befehl und eine weitere WM_RBUTTONUP Meldung, wenn die Schaltfläche losgelassen wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onrbuttondown"></a>CWnd:: onrbuttondown
+##  <a name="cwndonrbuttondown"></a><a name="onrbuttondown"></a>CWnd:: onrbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer mit der rechten Maustaste drückt.
 
@@ -9075,11 +9075,11 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinaten des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onrbuttonup"></a>CWnd:: onrbuttonup
+##  <a name="cwndonrbuttonup"></a><a name="onrbuttonup"></a>CWnd:: onrbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer die Rechte Maustaste loslässt.
 
@@ -9105,11 +9105,11 @@ Gibt an, ob verschiedene virtuelle Schlüssel nicht angezeigt werden. Dieser Par
 *Punkt*<br/>
 Gibt die x-und y-Koordinaten des Cursors an. Diese Koordinaten sind immer relativ zur oberen linken Ecke des Fensters.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onregisteredmousewheel"></a>CWnd:: onregisteredmouswheel
+##  <a name="cwndonregisteredmousewheel"></a><a name="onregisteredmousewheel"></a>CWnd:: onregisteredmouswheel
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Benutzer das Mausrad dreht und auf die nächste Kerb des Rades stößt.
 
@@ -9131,7 +9131,7 @@ Vertikale Position des Zeigers.
 
 Zu diesem Zeitpunkt unbedeutend. Immer 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie nicht überschrieben wird, leitet `OnRegisteredMouseWheel` die Nachricht an das entsprechende Fenster (das übergeordnete Fenster mit dem Fokus) weiter und ruft den [WM_MOUSEWHEEL](/windows/win32/inputdev/wm-mousewheel) Handler für dieses Fenster auf.
 
@@ -9140,7 +9140,7 @@ Wenn Sie nicht überschrieben wird, leitet `OnRegisteredMouseWheel` die Nachrich
 > [!NOTE]
 > `OnRegisteredMouseWheel` behandelt Nachrichten für Windows 95/98 und Windows NT 3,51. Verwenden Sie für die Windows NT 4,0-Nachrichtenverarbeitung [onmouswheel](#onmousewheel).
 
-##  <a name="onrenderallformats"></a>CWnd:: onrenderallformats
+##  <a name="cwndonrenderallformats"></a><a name="onrenderallformats"></a>CWnd:: onrenderallformats
 
 Die `OnRenderAllFormats` Member-Funktion der Zwischenablage wird vom Framework aufgerufen, wenn die Besitzer Anwendung zerstört wird.
 
@@ -9148,11 +9148,11 @@ Die `OnRenderAllFormats` Member-Funktion der Zwischenablage wird vom Framework a
 afx_msg void OnRenderAllFormats();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Besitzer der Zwischenablage sollte die Daten in allen Formaten Renderingformate renderingfähig sein und ein Daten Handle für jedes Format an die Zwischenablage übergeben, indem die Windows-Funktion [SetClipboardData](/windows/win32/api/winuser/nf-winuser-setclipboarddata) aufgerufen wird. Dadurch wird sichergestellt, dass die Zwischenablage gültige Daten enthält, obwohl die Anwendung, die die Daten gerendert, zerstört wird. Die Anwendung sollte die [OpenClipboard](#openclipboard) -Element Funktion aufrufen, bevor Sie die Windows-Funktion [SetClipboardData](/windows/win32/api/winuser/nf-winuser-setclipboarddata) aufruft und anschließend die Windows-Funktion [CloseClipboard](/windows/win32/api/winuser/nf-winuser-closeclipboard) aufruft.
 
-##  <a name="onrenderformat"></a>CWnd:: onrenderformat
+##  <a name="cwndonrenderformat"></a><a name="onrenderformat"></a>CWnd:: onrenderformat
 
 Die `OnRenderFormat` Member-Funktion der Zwischenablage wird vom Framework aufgerufen, wenn ein bestimmtes Format mit verzögertem Rendering gerendert werden muss.
 
@@ -9165,7 +9165,7 @@ afx_msg void OnRenderFormat(UINT nFormat);
 *nformat*<br/>
 Gibt das Zwischenablage Format an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Empfänger sollte die Daten in diesem Format Renderingdaten in der Zwischenablage durch Aufrufen der Windows-Funktion [SetClipboardData](/windows/win32/api/winuser/nf-winuser-setclipboarddata) übergeben.
 
@@ -9174,7 +9174,7 @@ Die `OpenClipboard` Member-Funktion oder die `CloseClipboard` Windows-Funktion k
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsessionchange"></a>CWnd:: OnSessionChange
+##  <a name="cwndonsessionchange"></a><a name="onsessionchange"></a>CWnd:: OnSessionChange
 
 Das Framework ruft diese Member-Funktion auf, um eine Anwendung über eine Änderung im Sitzungszustand zu benachrichtigen.
 
@@ -9186,12 +9186,12 @@ afx_msg void OnSessionChange(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nsessionstate*|in Ein Statuscode beschreibt die Sitzungs Zustandsänderung.|
 |*nId*|in Ein Sitzungs Bezeichner.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_WTSSESSION_CHANGE](/windows/win32/TermServ/wm-wtssession-change) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
@@ -9200,7 +9200,7 @@ Der *nsessionstate* -Parameter gibt an, dass eine Sitzung mit der Konsole oder e
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsetcursor"></a>CWnd:: onsetcursor
+##  <a name="cwndonsetcursor"></a><a name="onsetcursor"></a>CWnd:: onsetcursor
 
 Das Framework ruft diese Member-Funktion auf, wenn die Mauseingabe nicht aufgezeichnet wird und die Maus eine Cursor Bewegung innerhalb des `CWnd` Objekts auslöst.
 
@@ -9219,14 +9219,14 @@ Gibt einen Zeiger auf das Fenster an, das den Cursor enthält. Der Zeiger kann t
 *nhittest*<br/>
 Gibt den Code des [Treffer Test](#onnchittest) Bereichs an. Der Treffer Test bestimmt die Position des Cursors.
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die Nummer der Maus Nachricht an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Nicht NULL, um die weitere Verarbeitung anzuhalten, oder 0, um den Vorgang fortzusetzen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung ruft die `OnSetCursor` des übergeordneten Fensters vor der Verarbeitung auf. Wenn das übergeordnete Fenster true zurückgibt, wird die weitere Verarbeitung angehalten. Wenn Sie das übergeordnete Fenster aufrufen, erhält das übergeordnete Fenster Steuerelement über die Cursor Einstellung in einem untergeordneten Fenster.
 
@@ -9239,7 +9239,7 @@ Der *Message* -Parameter ist 0, wenn `CWnd` in den Menü Modus wechselt.
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsetfocus"></a>CWnd:: OnSetFocus
+##  <a name="cwndonsetfocus"></a><a name="onsetfocus"></a>CWnd:: OnSetFocus
 
 Das Framework ruft diese Member-Funktion auf, nachdem der Eingabefokus gewonnen wurde.
 
@@ -9252,14 +9252,14 @@ afx_msg void OnSetFocus(CWnd* pOldWnd);
 *poldwnd*<br/>
 Enthält das `CWnd` Objekt, das den Eingabefokus verliert (kann NULL sein). Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zum Anzeigen einer Einfügemarke sollten `CWnd` an dieser Stelle die entsprechenden Caretzeichen aufrufen.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsettingchange"></a>CWnd:: onsettingchange
+##  <a name="cwndonsettingchange"></a><a name="onsettingchange"></a>CWnd:: onsettingchange
 
 Das Framework ruft `OnSettingChange` für alle Fenster der obersten Ebene auf, wenn die Win32 SystemParametersInfo-Funktion eine systemweite Einstellung ändert.
 
@@ -9277,7 +9277,7 @@ Wenn das System die Nachricht als Ergebnis eines `SystemParametersInfo`-Aufrufes
 *lpszsection*<br/>
 Verweist auf eine Zeichenfolge, die den Namen des geänderten Abschnitts angibt. (Die Zeichenfolge enthält nicht die eckigen Klammern, die den Abschnittsnamen einschließen.)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Anwendung sollte die Nachricht an alle Fenster der obersten Ebene senden, wenn Sie Änderungen an Systemparametern vornimmt, und Windows sendet die Meldung, wenn der Benutzer die Einstellungen über die Systemsteuerung ändert.
 
@@ -9289,7 +9289,7 @@ Die ON_WM_SETTINGCHANGE Nachricht ähnelt der ON_WM_WININICHANGE Meldung mit fol
 
 Sie sollten nur eines dieser Makros in der Meldungs Zuordnung haben. Um ein Programm zu schreiben, das sowohl für Windows 95/98 als auch für Windows NT 4,0 funktioniert, schreiben Sie einen Handler für ON_WM_SETTINGCHANGE. Unter Windows NT 3,51 wird Ihr Handler von `OnSettingChange` und *uFlags* aufgerufen und ist immer 0 (null).
 
-##  <a name="onshowwindow"></a>CWnd:: onshowwindow
+##  <a name="cwndonshowwindow"></a><a name="onshowwindow"></a>CWnd:: onshowwindow
 
 Das Framework ruft diese Member-Funktion auf, wenn das `CWnd` Objekt im Begriff ist, ausgeblendet oder angezeigt zu werden.
 
@@ -9311,14 +9311,14 @@ Gibt den Status des Fensters an, das angezeigt wird. Der Wert ist 0, wenn die Na
 
 - SW_PARENTOPENING übergeordnetes Fenster geöffnet wird (wird angezeigt) oder ein Popup Fenster angezeigt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Fenster wird ausgeblendet oder angezeigt, wenn die `ShowWindow` Member-Funktion aufgerufen wird, wenn ein überlappendes Fenster maximiert oder wieder hergestellt wird oder wenn ein überlappendes oder Popup Fenster geschlossen oder geöffnet wird (auf dem Bildschirm angezeigt). Wenn ein überlappendes Fenster geschlossen wird, werden alle diesem Fenster zugeordneten Popup Fenster ausgeblendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsize"></a>CWnd:: OnSize
+##  <a name="cwndonsize"></a><a name="onsize"></a>CWnd:: OnSize
 
 Das Framework ruft diese Member-Funktion auf, nachdem sich die Fenstergröße geändert hat.
 
@@ -9350,7 +9350,7 @@ Gibt die neue Breite des Client Bereichs an.
 *CY*<br/>
 Gibt die neue Höhe des Client Bereichs an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Member-Funktion [setscrollpos](#setscrollpos) oder [muvewindow](#movewindow) für ein untergeordnetes Fenster von `OnSize`aufgerufen wird, sollte der `bRedraw`-Parameter von `SetScrollPos` oder `MoveWindow` ungleich NULL sein, damit die `CWnd` neu gezeichnet werden kann.
 
@@ -9361,7 +9361,7 @@ Wenn die Member-Funktion [setscrollpos](#setscrollpos) oder [muvewindow](#movewi
 
 [!code-cpp[NVC_MFCWindowing#109](../../mfc/reference/codesnippet/cpp/cwnd-class_50.cpp)]
 
-##  <a name="onsizeclipboard"></a>CWnd:: onsizeclipboard
+##  <a name="cwndonsizeclipboard"></a><a name="onsizeclipboard"></a>CWnd:: onsizeclipboard
 
 Die `OnSizeClipboard` Member-Funktion der Zwischenablage wird von der Zwischenablage Anzeige aufgerufen, wenn die Zwischenablage Daten mit dem `CF_OWNERDISPLAY`-Attribut enthält und sich die Größe des Client Bereichs des Zwischenablage-Viewer-Fensters geändert hat.
 
@@ -9379,7 +9379,7 @@ Bezeichnet das Zwischenablage Anwendungsfenster. Der Zeiger kann temporär sein 
 *hrect*<br/>
 Identifiziert ein globales Speicher Objekt. Das Speicher Objekt enthält eine Rect-Datenstruktur, die den Bereich angibt, in dem der Besitzer der Zwischenablage gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `OnSizeClipboard` Member-Funktion wird mit einem NULL-Rechteck (0, 0, 0, 0) als neue Größe aufgerufen, wenn die Zwischenablage Anwendung zerstört oder minimiert wird. Dadurch wird es dem Besitzer der Zwischenablage ermöglicht, seine Anzeige Ressourcen freizugeben.
 
@@ -9388,7 +9388,7 @@ Innerhalb `OnSizeClipboard`muss eine Anwendung die Windows-Funktion " [GlobalLoc
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsizing"></a>CWnd:: onsizing
+##  <a name="cwndonsizing"></a><a name="onsizing"></a>CWnd:: onsizing
 
 Das Framework ruft diese Member-Funktion auf, um anzugeben, dass der Benutzer die Größe des Rechtecks ändert.
 
@@ -9406,7 +9406,7 @@ Der Rand des Fensters, das verschoben werden soll.
 *lprect*<br/>
 Die Adresse der [CRect](../../atl-mfc-shared/reference/crect-class.md) -oder der [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die Koordinaten des Elements enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch die Verarbeitung dieser Nachricht kann eine Anwendung die Größe und Position des Zieh Rechtecks überwachen und ggf. die Größe oder Position ändern.
 
@@ -9417,7 +9417,7 @@ Durch die Verarbeitung dieser Nachricht kann eine Anwendung die Größe und Posi
 
 [!code-cpp[NVC_MFCWindowing#110](../../mfc/reference/codesnippet/cpp/cwnd-class_51.cpp)]
 
-##  <a name="onspoolerstatus"></a>CWnd:: onspoolerstatus
+##  <a name="cwndonspoolerstatus"></a><a name="onspoolerstatus"></a>CWnd:: onspoolerstatus
 
 Das Framework ruft diese Member-Funktion vom Druck-Manager auf, wenn ein Auftrag der Druck-Manager-Warteschlange hinzugefügt oder daraus entfernt wird.
 
@@ -9435,14 +9435,14 @@ Gibt das SP_JOBSTATUS-Flag an.
 *Njobs*<br/>
 Gibt die Anzahl der verbleibenden Aufträge in der Druck-Manager-Warteschlange an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser-Befehl dient nur zu Informationszwecken.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onstylechanged"></a>CWnd:: OnStyleChanged
+##  <a name="cwndonstylechanged"></a><a name="onstylechanged"></a>CWnd:: OnStyleChanged
 
 Das Framework ruft diese Member-Funktion auf, nachdem die Funktion [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) mindestens einen Stil des Fensters geändert hat.
 
@@ -9464,12 +9464,12 @@ Gibt an, ob sich der erweiterte oder der nicht erweiterte Stil des Fensters geä
 *lpstylestruct*<br/>
 Verweist auf eine [stylestruct](/windows/win32/api/winuser/ns-winuser-stylestruct) -Struktur, die die neuen Stile für das Fenster enthält. Eine Anwendung kann die Stile untersuchen, Sie kann jedoch nicht geändert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onstylechanging"></a>CWnd:: onstylechanging
+##  <a name="cwndonstylechanging"></a><a name="onstylechanging"></a>CWnd:: onstylechanging
 
 Das Framework ruft diese Member-Funktion auf, wenn die [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) -Funktion im Begriff ist, mindestens einen Stil des Fensters zu ändern.
 
@@ -9491,12 +9491,12 @@ Gibt an, ob sich der erweiterte oder der nicht erweiterte Stil des Fensters geä
 *lpstylestruct*<br/>
 Verweist auf eine [stylestruct](/windows/win32/api/winuser/ns-winuser-stylestruct) -Struktur, die die neuen Stile für das Fenster enthält. Eine Anwendung kann die Stile untersuchen und ändern.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsyschar"></a>CWnd:: onsyschar
+##  <a name="cwndonsyschar"></a><a name="onsyschar"></a>CWnd:: onsyschar
 
 Das Framework ruft diese Member-Funktion auf, wenn `CWnd` über den Eingabefokus verfügt und die [WM_SYSKEYUP](#onsyskeyup) -und [WM_SYSKEYDOWN](#onsyskeydown) Meldungen übersetzt werden.
 
@@ -9518,9 +9518,9 @@ Gibt die Wiederholungs Anzahl an (gibt an, wie oft der Tastatur Schlag wiederhol
 *nFlags*<br/>
 Der *nFlags* -Parameter kann folgende Werte aufweisen:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
-|0-15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer den Schlüssel gedrückt hält.|
+|0 - 15|Gibt die Wiederholungs Anzahl an. Der Wert gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn der Benutzer den Schlüssel gedrückt hält.|
 |16-23|Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab.|
 |24|Gibt an, ob der Schlüssel ein erweiterter Schlüssel ist, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Der Wert ist 1, wenn es sich um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0.|
 |25-28|Wird intern von Windows verwendet.|
@@ -9528,7 +9528,7 @@ Der *nFlags* -Parameter kann folgende Werte aufweisen:
 |30|Gibt den vorherigen Schlüssel Zustand an. Der Wert ist 1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, oder wenn der Schlüssel auf "0" festgelegt ist.|
 |31|Gibt den Übergangszustand an. Der Wert ist 1, wenn der Schlüssel freigegeben wird, oder der Wert ist 0, wenn die Taste gedrückt wird.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt den virtuellen Schlüsselcode der Steuerelement Menü Taste an. (Eine Liste der virtuellen Standardschlüssel Codes finden Sie unter Winuser. h).
 
@@ -9539,7 +9539,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsyscolorchange"></a>CWnd:: onsyscolorchange
+##  <a name="cwndonsyscolorchange"></a><a name="onsyscolorchange"></a>CWnd:: onsyscolorchange
 
 Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene auf, wenn eine Änderung in der System Farbeinstellung vorgenommen wird.
 
@@ -9547,13 +9547,13 @@ Das Framework ruft diese Member-Funktion für alle Fenster der obersten Ebene au
 afx_msg void OnSysColorChange();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Windows ruft `OnSysColorChange` für jedes Fenster auf, das von einer System Farbänderung betroffen ist.
 
 Anwendungen mit Pinseln, die die vorhandenen Systemfarben verwenden, sollten diese Pinsel löschen und mit den neuen Systemfarben neu erstellen.
 
-##  <a name="onsyscommand"></a>CWnd:: onsyscommand
+##  <a name="cwndonsyscommand"></a><a name="onsyscommand"></a>CWnd:: onsyscommand
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer einen Befehl aus dem Menü Steuerelement auswählt, oder wenn der Benutzer die Schaltfläche Maximieren oder minimieren auswählt.
 
@@ -9605,7 +9605,7 @@ Wenn ein Steuerelement Menübefehl mit der Maus ausgewählt wird, enthält *LPAR
 
 - SC_SCREENSAVE die im Desktop Abschnitt der Systemsteuerung angegebene Anwendung zum Speichern von Screenshots auszuführen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig führt `OnSysCommand` die Steuerungs Menü Anforderung für die vordefinierten Aktionen aus, die in der obigen Tabelle angegeben sind.
 
@@ -9620,7 +9620,7 @@ Tastenkombinationen (Tastenkombinationen), die für die Auswahl von Elementen au
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsysdeadchar"></a>CWnd:: onsysdeadchar
+##  <a name="cwndonsysdeadchar"></a><a name="onsysdeadchar"></a>CWnd:: onsysdeadchar
 
 Das Framework ruft diese Member-Funktion auf, wenn das `CWnd`-Objekt den Eingabefokus besitzt, wenn die [onsyskeyup](#onsyskeyup) -oder [onsyskeydown](#onsyskeydown) -Member-Funktion aufgerufen wird.
 
@@ -9642,24 +9642,24 @@ Gibt die Wiederholungs Anzahl an.
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird; andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem-Befehl liegt, 0 (null), wenn der Schlüssel aktiv ist).|
 |15|Übergangszustand (1, wenn der Schlüssel freigegeben wird, 0, wenn der Schlüssel gedrückt wird).|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt den Zeichen Wert eines unzustellbaren Schlüssels an.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsyskeydown"></a>CWnd:: onsyskeydown
+##  <a name="cwndonsyskeydown"></a><a name="onsyskeydown"></a>CWnd:: onsyskeydown
 
 Wenn das `CWnd` Objekt über den Eingabefokus verfügt, wird die `OnSysKeyDown` Member-Funktion vom Framework aufgerufen, wenn der Benutzer die Alt-Taste gedrückt hält und dann eine andere Taste drückt.
 
@@ -9681,11 +9681,11 @@ Gibt die Wiederholungs Anzahl an.
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird, andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, 0, wenn der Schlüssel aktiv ist).|
@@ -9693,7 +9693,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 
 Bei `OnSysKeyDown` aufrufen ist das Schlüssel Übergangs Bit (Bit 15) 0. Das Kontext Code Bit (Bit 13) ist 1, wenn die Alt-Taste gedrückt ist, während die Taste gedrückt wird. der Wert ist 0, wenn die Meldung an das aktive Fenster gesendet wird, da kein Fenster den Eingabefokus besitzt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn derzeit kein Fenster den Eingabefokus besitzt, wird die `OnSysKeyDown` Member-Funktion des aktiven Fensters aufgerufen. Das `CWnd` Objekt, das die Nachricht empfängt, kann zwischen diesen beiden Kontexten unterscheiden, indem der Kontext Code in `nFlags`überprüft wird.
 
@@ -9706,7 +9706,7 @@ Für IBM Enhanced 101-und 102-Key-Tastaturen sind erweiterte Schlüssel die Rech
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onsyskeyup"></a>CWnd:: onsyskeyup
+##  <a name="cwndonsyskeyup"></a><a name="onsyskeyup"></a>CWnd:: onsyskeyup
 
 Wenn das `CWnd` Objekt den Fokus besitzt, wird die `OnSysKeyUp` Member-Funktion vom Framework aufgerufen, wenn der Benutzer eine Taste loslässt, die gedrückt wurde, während die Alt-Taste gedrückt gehalten wurde.
 
@@ -9728,11 +9728,11 @@ Gibt die Wiederholungs Anzahl an.
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|Bedeutung|
+|value|Bedeutung|
 |-----------|-------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
-|9-10|Nicht verwendet.|
+|9-10|Wird nicht verwendet.|
 |11-12|Wird intern von Windows verwendet.|
 |13|Kontext Code (1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird, andernfalls 0).|
 |14|Vorheriger Schlüssel Zustand (1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, 0, wenn der Schlüssel aktiv ist).|
@@ -9740,7 +9740,7 @@ Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zus
 
 Bei `OnSysKeyUp` aufrufen ist das Schlüssel Übergangs Bit (Bit 15) 1. Das Kontext Code Bit (Bit 13) ist 1, wenn die Alt-Taste gedrückt ist, während die Taste gedrückt wird. der Wert ist 0, wenn die Meldung an das aktive Fenster gesendet wird, da kein Fenster den Eingabefokus besitzt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn derzeit kein Fenster den Eingabefokus besitzt, wird die `OnSysKeyUp` Member-Funktion des aktiven Fensters aufgerufen. Das `CWnd` Objekt, das den-Befehl empfängt, kann zwischen diesen beiden Kontexten unterscheiden, indem der Kontext Code in *nFlags*überprüft wird.
 
@@ -9760,7 +9760,7 @@ Für nicht-U. S. Erweiterte 102-Key-Tastaturen wird die Rechte ALT-Taste als Tas
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="ontcard"></a>CWnd:: ontcard
+##  <a name="cwndontcard"></a><a name="ontcard"></a>CWnd:: ontcard
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf eine Schaltfläche zum autorierbaren Klicken klickt.
 
@@ -9802,11 +9802,11 @@ Gibt die Aktion an, die der Benutzer ausgeführt hat. Dieser Parameter kann eine
 *dwaktiondata*<br/>
 Wenn *idaction* HELP_TCARD_DATA angibt, ist dieser Parameter eine lange ganze Zahl, die vom Hilfe Autor angegeben wird. Andernfalls ist dieser Parameter gleich 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird nur aufgerufen, wenn eine Anwendung eine Schulungs Karte mit der Windows-Hilfe initiiert hat. Eine Anwendung initiiert eine Schulungs Karte, indem Sie den HELP_TCARD-Befehl in einem aufzurufenden Befehl der [WinHelp](../../mfc/reference/cwinapp-class.md#winhelp) -Funktion angibt.
 
-##  <a name="ontimechange"></a>CWnd:: ontimechange
+##  <a name="cwndontimechange"></a><a name="ontimechange"></a>CWnd:: ontimechange
 
 Das Framework ruft diese Member-Funktion auf, nachdem die Systemzeit geändert wurde.
 
@@ -9814,11 +9814,11 @@ Das Framework ruft diese Member-Funktion auf, nachdem die Systemzeit geändert w
 afx_msg void OnTimeChange();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Alle Anwendungen, die die Systemzeit ändern, senden diese Nachricht an alle Fenster der obersten Ebene. Um die WM_TIMECHANGE Nachricht an alle Fenster der obersten Ebene zu senden, kann eine Anwendung die Windows-Funktion [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) verwenden, wobei der *HWND* -Parameter auf HWND_BROADCAST festgelegt ist.
 
-##  <a name="ontimer"></a>CWnd:: OnTimer
+##  <a name="cwndontimer"></a><a name="ontimer"></a>CWnd:: OnTimer
 
 Das Framework ruft diese Member-Funktion nach jedem Intervall auf, [das in der für](#settimer) die Installation eines Timers verwendeten Funktion "-Member" für das-Element angegeben ist
 
@@ -9831,7 +9831,7 @@ afx_msg void OnTimer(UINT_PTR nIDEvent);
 *nide Vent*<br/>
 Gibt den Bezeichner des Timers an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Windows-Funktion [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dispatchmessage) sendet eine [WM_TIMER](/windows/win32/winmsg/wm-timer) Nachricht, wenn sich keine anderen Nachrichten in der Nachrichten Warteschlange der Anwendung befinden.
 
@@ -9842,7 +9842,7 @@ Die Windows-Funktion [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dis
 
   Weitere Informationen finden Sie im Beispiel in [CWnd::](#settimer)*.
 
-##  <a name="ontoolhittest"></a>CWnd:: ontoolhittest
+##  <a name="cwndontoolhittest"></a><a name="ontoolhittest"></a>CWnd:: ontoolhittest
 
 Das Framework ruft diese Member-Funktion auf, um zu bestimmen, ob sich ein Punkt im umgebenden Rechteck des angegebenen Tools befindet.
 
@@ -9872,7 +9872,7 @@ Ein Zeiger auf eine [toolinfo](/windows/win32/api/commctrl/ns-commctrl-tttoolinf
 
 Wenn das QuickInfo-Steuerelement gefunden wurde, wird die Fenster Steuerelement-ID. Wenn das QuickInfo-Steuerelement nicht gefunden wurde,-1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn sich der Punkt im Rechteck befindet, ruft er Informationen über das Tool ab.
 
@@ -9882,7 +9882,7 @@ Wenn der Bereich, dem die QuickInfo zugeordnet ist, keine Schaltfläche ist, leg
 
 Weitere Informationen zur Struktur finden Sie unter [toolinfo](/windows/win32/api/commctrl/ns-commctrl-tttoolinfoa)im Windows SDK.
 
-##  <a name="ontouchinput"></a>CWnd:: ontouchinput
+##  <a name="cwndontouchinput"></a><a name="ontouchinput"></a>CWnd:: ontouchinput
 
 Verarbeitet die einzelne Eingabe aus Windows Touch.
 
@@ -9912,9 +9912,9 @@ Zeiger auf die TOUCHINPUT-Struktur.
 
 TRUE, wenn die Anwendung die Windows-Eingabe Eingabe verarbeitet. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ontouchinputs"></a>CWnd:: ontouchinputs
+##  <a name="cwndontouchinputs"></a><a name="ontouchinputs"></a>CWnd:: ontouchinputs
 
 Verarbeitet Eingaben aus Windows-Finger Eingaben.
 
@@ -9936,9 +9936,9 @@ Array von TOUCHINPUT.
 
 TRUE, wenn die Anwendung Windows-Berührungs Eingaben verarbeitet. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onunichar"></a>CWnd:: onunichar
+##  <a name="cwndonunichar"></a><a name="onunichar"></a>CWnd:: onunichar
 
 Das Framework ruft diese Member-Funktion auf, wenn eine Taste gedrückt wird. Das heißt, dass das aktuelle Fenster den Tastaturfokus besitzt und eine [WM_KEYDOWN](/windows/win32/inputdev/wm-keydown) Meldung von der [translatemess](/windows/win32/api/winuser/nf-winuser-translatemessage) -Funktion übersetzt wird.
 
@@ -9951,20 +9951,20 @@ afx_msg void OnUniChar(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*NCHAR*|in Gibt den Zeichencode für die gedrückte Taste an.|
 |*nrepcnt*|in Gibt die Wiederholungs Anzahl für die aktuelle Nachricht an. Der Wert gibt an, wie oft der Tastatur Schlag automatisch durchgeführt wird, wenn der Benutzer die Taste gedrückt hält. Wenn die Tastatureingabe lang genug gehalten wird, werden mehrere Nachrichten gesendet. Die Wiederholungs Anzahl ist jedoch nicht kumulativ.|
 |*nFlags*|in Flags, die den Scancode, den erweiterten Schlüssel, den Kontext Code, den vorherigen Schlüssel Zustand und den Übergangszustand angeben, wie in der folgenden Tabelle dargestellt:<br /><br /> **0-7:** Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab.<br /><br /> **8:** Gibt einen erweiterten Schlüssel an, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Das Flag ist 1, wenn es sich bei dem Schlüssel um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0.<br /><br /> **9-12:**  Wird intern von Windows verwendet.<br /><br /> **13:**  Gibt den Kontext Code an. Das Flag ist 1, wenn die Alt-Taste gedrückt gehalten wird, während die Taste gedrückt wird. Andernfalls ist der Wert 0.<br /><br /> **14:**  Gibt den vorherigen Schlüssel Zustand an. Das Flag ist 1, wenn der Schlüssel vor dem Senden der Nachricht nicht angezeigt wird, oder 0 (null), wenn der Schlüssel auf dem neuesten Stand ist.<br /><br /> **15:**  Gibt den Übergangszustand an. Das Flag ist 1, wenn der Schlüssel freigegeben wird, oder 0, wenn die Taste gedrückt wird.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_UNICHAR](/windows/win32/inputdev/wm-unichar) Benachrichtigung, die in der Windows SDK beschrieben wird. Die [WM_UNICHAR](/windows/win32/inputdev/wm-unichar) Nachricht dient zum Senden oder Posten von Unicode-Zeichen an ANSI-Windows. Dies entspricht der [WM_CHAR](/windows/win32/inputdev/wm-char) Nachricht, verwendet jedoch Unicode Transformation Format-32 encoding (UTF-32), während die [WM_CHAR](/windows/win32/inputdev/wm-char) -Nachricht UTF-16 verwendet.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onuninitmenupopup"></a>CWnd:: onuninitmenupopup
+##  <a name="cwndonuninitmenupopup"></a><a name="onuninitmenupopup"></a>CWnd:: onuninitmenupopup
 
 Das Framework ruft diese Member-Funktion auf, wenn ein Dropdown Menü oder ein Untermenü zerstört wurde.
 
@@ -9976,19 +9976,19 @@ afx_msg void OnUnInitMenuPopup(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*pmenu*|in Zeiger auf das [CMenu](../../mfc/reference/cmenu-class.md) -Objekt, das das Menü oder das Untermenü darstellt.|
 |*nFlags*|in Das Menü, das zerstört wurde. Derzeit kann es sich nur um das Menü Fenster (MF_SYSMENU) handeln.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_UNINITMENUPOPUP](/windows/win32/menurc/wm-uninitmenupopup) Benachrichtigung, die in der Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onupdateuistate"></a>CWnd:: onupdateuistate
+##  <a name="cwndonupdateuistate"></a><a name="onupdateuistate"></a>CWnd:: onupdateuistate
 
 Wird aufgerufen, um den Benutzeroberflächenstatus für das angegebene Fenster und alle zugehörigen untergeordneten Fenster zu ändern.
 
@@ -10001,7 +10001,7 @@ afx_msg void OnUpdateUIState(
 ### <a name="parameters"></a>Parameter
 
 *naktionsmeldung*<br/>
-Gibt die auszuführende Aktion an. Kann einer der folgenden Werte sein:
+Gibt die auszuführende Aktion an. Es kann sich um einen der folgenden Werte handeln:
 
 - UIS_CLEAR das UI State-Element (angegeben durch *nuielement*) sollte ausgeblendet werden.
 
@@ -10010,7 +10010,7 @@ Gibt die auszuführende Aktion an. Kann einer der folgenden Werte sein:
 - UIS_SET das UI State-Element (angegeben durch *nuielement*) angezeigt werden soll.
 
 *nuielement*<br/>
-Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Kann einer der folgenden Werte sein:
+Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die Art des Steuer Elements. Es kann sich um einen der folgenden Werte handeln:
 
 - UISF_HIDEACCEL Tastaturbeschleuniger.
 
@@ -10018,11 +10018,11 @@ Gibt an, welche Benutzeroberflächen-Zustands Elemente betroffen sind, oder die 
 
 - UISF_ACTIVE Windows XP: ein Steuerelement sollte in dem Format gezeichnet werden, das für aktive Steuerelemente verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [WM_UPDATEUISTATE](/windows/win32/menurc/wm-updateuistate) Nachricht, wie in der Windows SDK beschrieben.
 
-##  <a name="onuserchanged"></a>CWnd:: onuserchanged
+##  <a name="cwndonuserchanged"></a><a name="onuserchanged"></a>CWnd:: onuserchanged
 
 Das Framework ruft diesen Member für alle Fenster auf, nachdem sich der Benutzer angemeldet oder ausgeschaltet hat.
 
@@ -10030,14 +10030,14 @@ Das Framework ruft diesen Member für alle Fenster auf, nachdem sich der Benutze
 afx_msg void OnUserChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_USERCHANGED](/windows/win32/winmsg/wm-userchanged) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird. Wenn sich der Benutzer anmeldet oder anmeldet, aktualisiert das Betriebssystem die benutzerspezifischen Einstellungen. Das System sendet diese Nachricht sofort nach dem Aktualisieren der Einstellungen.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onvkeytoitem"></a>CWnd:: onvkeytoitem
+##  <a name="cwndonvkeytoitem"></a><a name="onvkeytoitem"></a>CWnd:: onvkeytoitem
 
 Wenn das `CWnd` Objekt ein Listenfeld mit der [LBS_WANTKEYBOARDINPUT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Formatvorlage besitzt, sendet das Listenfeld die WM_VKEYTOITEM Nachricht als Antwort auf eine WM_KEYDOWN Nachricht.
 
@@ -10063,14 +10063,14 @@ Gibt die aktuelle Position der Einfügemarke an.
 
 Gibt die Aktion an, die die Anwendung als Antwort auf die Nachricht ausgeführt hat. Der Rückgabewert-2 gibt an, dass die Anwendung alle Aspekte der Elementauswahl behandelt hat und keine weitere Aktion im Listenfeld erfordert. Der Rückgabewert-1 gibt an, dass das Listenfeld die Standardaktion als Reaktion auf den Tastatur Strich ausführen soll. Ein Rückgabewert von 0 (null) oder größer gibt den NULL basierten Index eines Elements im Listenfeld an und gibt an, dass im Listenfeld die Standardaktion für den Tastatur Strich für das angegebene Element ausgeführt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion wird vom Framework nur für Listenfelder aufgerufen, die den [LBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil aufweisen.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onvscroll"></a>CWnd:: OnVScroll
+##  <a name="cwndonvscroll"></a><a name="onvscroll"></a>CWnd:: OnVScroll
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf die vertikale Schiebe Leiste des Fensters klickt.
 
@@ -10110,7 +10110,7 @@ Enthält die aktuelle Position des scrollfelds, wenn der Bild Lauf leisten Code 
 *pscrollbar*<br/>
 Wenn die scrollnachricht von einem Schiebe leisten-Steuerelement stammt, enthält einen Zeiger auf das-Steuerelement. Wenn der Benutzer auf die Bild Lauf Leiste eines Fensters geklickt hat, ist dieser Parameter NULL. Der Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnVScroll` werden in der Regel von Anwendungen verwendet, die Feedback geben, während das Bild Lauf Feld gezogen wird.
 
@@ -10119,7 +10119,7 @@ Wenn `OnVScroll` den Inhalt des `CWnd` Objekts scrollt, muss auch die Position d
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onvscrollclipboard"></a>CWnd:: onvscrollclipboard
+##  <a name="cwndonvscrollclipboard"></a><a name="onvscrollclipboard"></a>CWnd:: onvscrollclipboard
 
 Die `OnVScrollClipboard` Member-Funktion der Zwischenablage wird von der Zwischenablage Anzeige aufgerufen, wenn die Zwischenablage Daten das CF_OWNERDISPLAY Format aufweisen und ein Ereignis in der vertikalen Schiebe Leiste der Zwischenablage Anzeige vorliegt.
 
@@ -10157,14 +10157,14 @@ Gibt einen der folgenden ScrollBar-Werte an:
 *NPOs*<br/>
 Enthält die Position des scrollfelds, wenn der Bild Lauf leisten Code SB_THUMBPOSITION ist. Andernfalls wird *NPOs* nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Besitzer sollte das Zwischenablage Bild scrollen, den entsprechenden Abschnitt ungültig machen und die ScrollBar-Werte aktualisieren.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onwindowmaximizedchanged"></a>CWnd:: onwindowmaximizedchanged
+##  <a name="cwndonwindowmaximizedchanged"></a><a name="onwindowmaximizedchanged"></a>CWnd:: onwindowmaximizedchanged
 
 Das Framework ruft diesen Member auf, wenn das aktuelle Fenster maximiert ist, und das Fenster besteht aus dem Desktopfenster-Manager (DWM).
 
@@ -10174,18 +10174,18 @@ afx_msg void OnWindowMaximizedChanged(BOOL bIsMaximized);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*bismaximiert*|in TRUE, wenn das aktuelle Fenster maximiert ist, andernfalls false.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_DWMWINDOWMAXIMIZEDCHANGE](/windows/win32/dwm/wm-dwmwindowmaximizedchange) Benachrichtigungs Meldung, die im Windows SDK beschrieben wird.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onwindowposchanged"></a>CWnd:: onwindowposchge
+##  <a name="cwndonwindowposchanged"></a><a name="onwindowposchanged"></a>CWnd:: onwindowposchge
 
 Das Framework ruft diese Member-Funktion auf, wenn sich die Größe, Position oder Z-Reihenfolge infolge eines Aufrufs der [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) -Member-Funktion oder einer anderen Fenster Verwaltungsfunktion geändert hat.
 
@@ -10198,14 +10198,14 @@ afx_msg void OnWindowPosChanged(WINDOWPOS* lpwndpos);
 *lpwndpos*<br/>
 Verweist auf eine [Windows](/windows/win32/api/winuser/ns-winuser-windowpos) -Datenstruktur, die Informationen über die neue Größe und Position des Fensters enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung sendet die [WM_SIZE](/windows/win32/winmsg/wm-size) -und [WM_MOVE](/windows/win32/winmsg/wm-move) Meldungen an das-Fenster. Diese Nachrichten werden nicht gesendet, wenn eine Anwendung den `OnWindowPosChanged` Aufruf behandelt, ohne die zugehörige Basisklasse aufzurufen. Es ist effizienter, die Verarbeitung von verschiebe-oder Größenänderungen während des Aufrufs von `OnWindowPosChanged` auszuführen, ohne seine Basisklasse aufzurufen.
 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onwindowposchanging"></a>CWnd:: onwindowposchanging
+##  <a name="cwndonwindowposchanging"></a><a name="onwindowposchanging"></a>CWnd:: onwindowposchanging
 
 Das Framework ruft diese Member-Funktion auf, wenn sich die Größe, Position oder Z-Reihenfolge im Begriff ist, sich als Ergebnis eines Aufrufs der [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) -Member-Funktion oder einer anderen Fenster Verwaltungsfunktion zu ändern.
 
@@ -10218,7 +10218,7 @@ afx_msg void OnWindowPosChanging(WINDOWPOS* lpwndpos);
 *lpwndpos*<br/>
 Verweist auf eine `WINDOWPOS` Datenstruktur, die Informationen über die neue Größe und Position des Fensters enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Anwendung kann Änderungen am Fenster verhindern, indem Sie die entsprechenden Bits im **Flags** -Member der [WINDOWPOS](/windows/win32/api/winuser/ns-winuser-windowpos) -Struktur festlegt oder löscht.
 
@@ -10227,7 +10227,7 @@ Bei einem Fenster mit dem [WS_OVERLAPPED](styles-used-by-mfc.md#window-styles) o
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onwininichange"></a>CWnd:: onwininichange
+##  <a name="cwndonwininichange"></a><a name="onwininichange"></a>CWnd:: onwininichange
 
 Das Framework ruft diese Member-Funktion auf, nachdem eine Änderung an der Windows-Initialisierungsdatei (Win) vorgenommen wurde. Geleitet.
 
@@ -10240,7 +10240,7 @@ afx_msg void OnWinIniChange(LPCTSTR lpszSection);
 *lpszsection*<br/>
 Verweist auf eine Zeichenfolge, die den Namen des geänderten Abschnitts angibt. (Die Zeichenfolge enthält nicht die eckigen Klammern, die den Abschnittsnamen einschließen.)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Windows-Funktion [SystemParametersInfo](/windows/win32/api/winuser/nf-winuser-systemparametersinfow) ruft `OnWinIniChange` auf, nachdem eine Anwendung die-Funktion verwendet hat, um eine Einstellung im Win zu ändern. INI-Datei.
 
@@ -10253,7 +10253,7 @@ Wenn eine Anwendung einen `OnWinIniChange`-Befehl empfängt, bei dem *lpszsectio
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onwndmsg"></a>CWnd:: onwndmsg
+##  <a name="cwndonwndmsg"></a><a name="onwndmsg"></a>CWnd:: onwndmsg
 
 Diese Member-Funktion wird von `WindowProc`aufgerufen oder während der Nachrichten Reflektion aufgerufen.
 
@@ -10267,7 +10267,7 @@ virtual BOOL OnWndMsg(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -10283,13 +10283,13 @@ Der Rückgabewert von [WindowProc](#windowproc). Hängt von der Nachricht ab. ka
 
 TRUE, wenn die Meldung behandelt wurde. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnWndMsg` bestimmt den Nachrichtentyp und ruft entweder die entsprechende Framework-Funktion auf (z. b. [OnCommand](#oncommand) für WM_COMMAND) oder sucht die entsprechende Nachricht in der Meldungs Zuordnung.
 
 Weitere Informationen zur Nachrichten Reflektion finden Sie unter [Behandeln reflektierter Nachrichten](../../mfc/handling-reflected-messages.md).
 
-##  <a name="onxbuttondblclk"></a>CWnd:: onxbuttondblclk
+##  <a name="cwndonxbuttondblclk"></a><a name="onxbuttondblclk"></a>CWnd:: onxbuttondblclk
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer auf XButton1 oder XButton2 doppelklickt, während sich der Cursor im Client Bereich eines Fensters befindet.
 
@@ -10302,19 +10302,19 @@ afx_msg void OnXButtonDblClk(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.|
 |*nschaltfläche*|in Der Wert XButton1, wenn auf die erste Microsoft IntelliMouse x-Schaltfläche Doppel geklickt wird, oder XButton2, wenn auf die zweite x-Schaltfläche Doppel geklickt wird.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_XBUTTONDBLCLK](/windows/win32/inputdev/wm-xbuttondblclk) Benachrichtigung, die in der Windows SDK beschrieben wird. Wenn die Maus nicht erfasst wird, wird die Nachricht im Fenster unterhalb des Cursors gepostet. Andernfalls wird die Nachricht an das Fenster gesendet, das die Maus erfasst hat.
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|Beschreibung|
+|Modifizierertaste|BESCHREIBUNG|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10327,7 +10327,7 @@ Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onxbuttondown"></a>CWnd:: onxbuttondown
+##  <a name="cwndonxbuttondown"></a><a name="onxbuttondown"></a>CWnd:: onxbuttondown
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer XButton1 oder XButton2 drückt, während sich der Cursor im Client Bereich eines Fensters befindet.
 
@@ -10340,19 +10340,19 @@ afx_msg void OnXButtonDown(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.|
 |*nschaltfläche*|in Der Wert XButton1, wenn auf die erste Microsoft IntelliMouse x-Schaltfläche geklickt wurde, oder XButton2, wenn auf die zweite x-Schaltfläche geklickt wurde.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_XBUTTONDOWN](/windows/win32/inputdev/wm-xbuttondown) Benachrichtigung, die in der Windows SDK beschrieben wird. Wenn die Maus nicht erfasst wird, wird die Nachricht im Fenster unterhalb des Cursors gepostet. Andernfalls wird die Nachricht an das Fenster gesendet, das die Maus erfasst hat.
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|Beschreibung|
+|Modifizierertaste|BESCHREIBUNG|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10365,7 +10365,7 @@ Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="onxbuttonup"></a>CWnd:: onxbuttonup
+##  <a name="cwndonxbuttonup"></a><a name="onxbuttonup"></a>CWnd:: onxbuttonup
 
 Das Framework ruft diese Member-Funktion auf, wenn der Benutzer XButton1 oder XButton2 freigibt, während sich der Cursor im Client Bereich eines Fensters befindet.
 
@@ -10378,19 +10378,19 @@ afx_msg void OnXButtonUp(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*nFlags*|in Eine bitweise Kombination (or) von Flags, die angeben, welche Modifizierertasten gedrückt werden. Das MK_CONTROL-Flag gibt beispielsweise an, dass die STRG-Taste gedrückt wird.|
 |*nschaltfläche*|in Der Wert XButton1, wenn auf die erste Microsoft IntelliMouse x-Schaltfläche Doppel geklickt wurde, oder XButton2, wenn auf die zweite x-Schaltfläche Doppel geklickt wurde.|
 |*Punkt*|in Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die *x* -und *y* -Koordinaten des Cursors relativ zur oberen linken Ecke des Client Bereichs angibt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode empfängt die [WM_XBUTTONUP](/windows/win32/inputdev/wm-xbuttonup) Benachrichtigung, die in der Windows SDK beschrieben wird. Wenn die Maus nicht erfasst wird, wird die Nachricht im Fenster unterhalb des Cursors gepostet. Andernfalls wird die Nachricht an das Fenster gesendet, das die Maus erfasst hat.
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|Beschreibung|
+|Modifizierertaste|BESCHREIBUNG|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10403,7 +10403,7 @@ Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, 
 > [!NOTE]
 > Diese Memberfunktion wird vom Framework aufgerufen, um der Anwendung die Bearbeitung einer Windows-Meldung zu ermöglichen. Die Parameter, die an die Funktion übergeben werden, stellen die Parameter dar, die vom Framework empfangen wurden, als die Nachricht empfangen wurde. Wenn Sie die Basisklassenimplementierung dieser Funktion aufrufen, verwendet diese Implementierung die Parameter, die mit der Meldung ursprünglich übergeben wurden, und nicht die Parameter, die Sie der Funktion übergeben.
 
-##  <a name="openclipboard"></a>CWnd:: OpenClipboard
+##  <a name="cwndopenclipboard"></a><a name="openclipboard"></a>CWnd:: OpenClipboard
 
 Öffnet die Zwischenablage.
 
@@ -10415,7 +10415,7 @@ BOOL OpenClipboard();
 
 Ungleich 0 (null), wenn die Zwischenablage über `CWnd`geöffnet wird, oder 0, wenn die Zwischenablage in einer anderen Anwendung oder einem anderen Fenster
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Andere Anwendungen können die Zwischenablage erst ändern, wenn die Windows-Funktion [CloseClipboard](/windows/win32/api/winuser/nf-winuser-closeclipboard) aufgerufen wird.
 
@@ -10425,7 +10425,7 @@ Das aktuelle `CWnd` Objekt wird erst zum Besitzer der Zwischenablage, wenn die W
 
 [!code-cpp[NVC_MFCWindowing#111](../../mfc/reference/codesnippet/cpp/cwnd-class_52.cpp)]
 
-##  <a name="operator_hwnd"></a>CWnd:: Operator-HWND
+##  <a name="cwndoperator-hwnd"></a><a name="operator_hwnd"></a>CWnd:: Operator-HWND
 
 Verwenden Sie diesen Operator, um das Handle für das `CWnd` Objekt zu erhalten.
 
@@ -10433,7 +10433,7 @@ Verwenden Sie diesen Operator, um das Handle für das `CWnd` Objekt zu erhalten.
 operator HWND() const;
 ```
 
-##  <a name="operator_neq"></a>CWnd:: Operator! =
+##  <a name="cwndoperator-"></a><a name="operator_neq"></a>CWnd:: Operator! =
 
 Vergleicht zwei `CWnd`-Objekte, um zu bestimmen, ob Sie nicht denselben [m_hWnd](#m_hwnd)haben.
 
@@ -10450,7 +10450,7 @@ Ein Verweis auf ein `CWnd`-Objekt.
 
 Ungleich 0 (null), wenn gleich andernfalls 0.
 
-##  <a name="operator_eq_eq"></a>CWnd:: Operator = =
+##  <a name="cwndoperator-"></a><a name="operator_eq_eq"></a>CWnd:: Operator = =
 
 Vergleicht zwei `CWnd`-Objekte, um zu bestimmen, ob Sie denselben [m_hWnd](#m_hwnd)haben.
 
@@ -10467,7 +10467,7 @@ Ein Verweis auf ein `CWnd`-Objekt.
 
 Ungleich 0 (null), wenn gleich andernfalls 0.
 
-##  <a name="paintwindowlesscontrols"></a>CWnd::P aintwindowlesscontrols
+##  <a name="cwndpaintwindowlesscontrols"></a><a name="paintwindowlesscontrols"></a>CWnd::P aintwindowlesscontrols
 
 Zeichnet fensterlose Steuerelemente auf dem Steuerelementcontainer.
 
@@ -10484,7 +10484,7 @@ Der Gerätekontext, auf dem die fensterlosen Steuerelemente gezeichnet werden so
 
 Gibt true zurück, wenn ein Steuerelement Container vorhanden ist und die fensterlosen Steuerelemente erfolgreich gezeichnet werden, andernfalls false.
 
-##  <a name="postmessage"></a>CWnd::P ostmessage
+##  <a name="cwndpostmessage"></a><a name="postmessage"></a>CWnd::P ostmessage
 
 Platziert eine Nachricht in der Nachrichten Warteschlange des Fensters und gibt dann zurück, ohne darauf zu warten, dass das entsprechende Fenster die Nachricht verarbeitet.
 
@@ -10497,7 +10497,7 @@ BOOL PostMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die Meldung an, die gepostet werden soll.
 
 *wParam*<br/>
@@ -10510,7 +10510,7 @@ Gibt zusätzliche Nachrichten Informationen an. Der Inhalt dieses Parameters hä
 
 Ungleich 0 (null), wenn die Meldung gesendet wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nachrichten in einer Nachrichten Warteschlange werden durch Aufrufe der Windows-Funktion [GetMessage](/windows/win32/api/winuser/nf-winuser-getmessage) oder [Peer Message](/windows/win32/api/winuser/nf-winuser-peekmessagew) abgerufen.
 
@@ -10520,7 +10520,7 @@ Die Windows [PostMessage](/windows/win32/api/winuser/nf-winuser-postmessagew) -F
 
   Weitere Informationen finden Sie im Beispiel für [afxgetmainwnd](../../mfc/reference/application-information-and-management.md#afxgetmainwnd).
 
-##  <a name="postncdestroy"></a>CWnd::P ostncdestroy
+##  <a name="cwndpostncdestroy"></a><a name="postncdestroy"></a>CWnd::P ostncdestroy
 
 Wird von der standardmäßigen [onncdestroy](#onncdestroy) -Member-Funktion aufgerufen, nachdem das Fenster zerstört wurde.
 
@@ -10528,11 +10528,11 @@ Wird von der standardmäßigen [onncdestroy](#onncdestroy) -Member-Funktion aufg
 virtual void PostNcDestroy();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Abgeleitete Klassen können diese Funktion für eine benutzerdefinierte Bereinigung verwenden, z. b. das Löschen des **this** -Zeigers.
 
-##  <a name="precreatewindow"></a>CWnd::P neu erstellen
+##  <a name="cwndprecreatewindow"></a><a name="precreatewindow"></a>CWnd::P neu erstellen
 
 Wird von Framework vor der Erstellung des Windows-Fensters aufgerufen, das an dieses `CWnd` Objekt angefügt ist.
 
@@ -10549,7 +10549,7 @@ Eine [foratestruct](/windows/win32/api/winuser/ns-winuser-createstructw) -Strukt
 
 Ungleich NULL, wenn die Fenster Erstellung fortgesetzt werden soll. 0, um einen Erstellungs Fehler anzugeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!WARNING]
 > `CWnd::PreCreateWindow` weist jetzt den HMENU-Member von *CS* dem **this** -Zeiger zu, wenn das Menü NULL ist und der Stil WS_CHILD enthält. Stellen Sie sicher, dass das Dialogfeld Steuerelement über eine ID verfügt, die nicht NULL ist.
@@ -10568,7 +10568,7 @@ Weitere Informationen zum Ändern von Fenster Stilen finden Sie unter [Ändern d
 
 [!code-cpp[NVC_MFCWindowing#112](../../mfc/reference/codesnippet/cpp/cwnd-class_53.cpp)]
 
-##  <a name="presubclasswindow"></a>CWnd::P resubclasswindow
+##  <a name="cwndpresubclasswindow"></a><a name="presubclasswindow"></a>CWnd::P resubclasswindow
 
 Diese Member-Funktion wird vom Framework aufgerufen, um andere erforderliche Unterklassen zuzulassen, bevor das Fenster untergeordnet wird.
 
@@ -10576,11 +10576,11 @@ Diese Member-Funktion wird vom Framework aufgerufen, um andere erforderliche Unt
 virtual void PreSubclassWindow();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Überschreiben dieser Member-Funktion ermöglicht dynamische Unterklassen von-Steuerelementen. Es handelt sich um eine erweiterte über schreibbare.
 
-##  <a name="pretranslatemessage"></a>CWnd::P retranslatemess Age
+##  <a name="cwndpretranslatemessage"></a><a name="pretranslatemessage"></a>CWnd::P retranslatemess Age
 
 Wird von der [CWinApp](../../mfc/reference/cwinapp-class.md) -Klasse verwendet, um Fenstermeldungen zu übersetzen, bevor diese an die Windows-Funktionen [TranslateMessage](/windows/win32/api/winuser/nf-winuser-translatemessage) und [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dispatchmessage) gesendet werden.
 
@@ -10597,7 +10597,7 @@ Verweist auf eine [msg](/windows/win32/api/winuser/ns-winuser-msg) -Struktur, di
 
 Ein Wert ungleich 0 (null), wenn die Nachricht übersetzt wurde und nicht gesendet werden sollte. 0, wenn die Meldung nicht übersetzt wurde und gesendet werden soll.
 
-##  <a name="print"></a>CWnd::P rint
+##  <a name="cwndprint"></a><a name="print"></a>CWnd::P rint
 
 Diese Member-Funktion aufrufen, um das aktuelle Fenster im angegebenen Gerätekontext zu zeichnen, der sich am häufigsten in einem Drucker Gerätekontext befindet.
 
@@ -10627,7 +10627,7 @@ Gibt die Zeichnungsoptionen an. Dieser Parameter kann eine oder mehrere der folg
 
 - PRF_OWNED alle eigenen Fenster zeichnen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 [CWnd::D efwindowproc](#defwindowproc) -Funktion verarbeitet diese Nachricht, je nachdem, welche Zeichnungs Option angegeben ist:
 
@@ -10643,7 +10643,7 @@ Gibt die Zeichnungsoptionen an. Dieser Parameter kann eine oder mehrere der folg
 
 - Wenn PRF_OWNED festgelegt ist, senden Sie jedem sichtbaren eigenen Fenster eine WM_PRINT Meldung.
 
-##  <a name="printclient"></a>CWnd::P rintclient
+##  <a name="cwndprintclient"></a><a name="printclient"></a>CWnd::P rintclient
 
 Diese Member-Funktion aufrufen, um ein beliebiges Fenster im angegebenen Gerätekontext zu zeichnen (normalerweise ein Drucker Gerätekontext).
 
@@ -10673,7 +10673,7 @@ Gibt Zeichnungsoptionen an. Dieser Parameter kann eine oder mehrere der folgende
 
 - PRF_OWNED alle eigenen Fenster zeichnen.
 
-##  <a name="printwindow"></a>CWnd::P rintwindow
+##  <a name="cwndprintwindow"></a><a name="printwindow"></a>CWnd::P rintwindow
 
 Kopiert ein visuelles Fenster in den angegebenen Gerätekontext, für gewöhnlich handelt es sich dabei um einen Druckerdomänencontroller.
 
@@ -10695,11 +10695,11 @@ Gibt die Zeichnungsoptionen an. Eine Liste möglicher Werte finden Sie unter [Pr
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Function [PrintWindow](/windows/win32/api/winuser/nf-winuser-printwindow), wie im Windows SDK beschrieben.
 
-##  <a name="redrawwindow"></a>CWnd:: redrawwindow
+##  <a name="cwndredrawwindow"></a><a name="redrawwindow"></a>CWnd:: redrawwindow
 
 Aktualisiert das angegebene Rechteck oder die angegebene Region im Client Bereich des angegebenen Fensters.
 
@@ -10755,11 +10755,11 @@ Standardmäßig sind die von der `RedrawWindow` Funktion betroffenen Fenster dav
 
 Ungleich 0 (null), wenn das Fenster erfolgreich neu gezeichnet wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die `RedrawWindow` Member-Funktion verwendet wird, um einen Teil des Desktop Fensters ungültig zu machen, empfängt dieses Fenster keine [WM_PAINT](/windows/win32/gdi/wm-paint) Meldung. Zum Neuzeichnen des Desktops sollte eine Anwendung [CWnd:: ValidateRgn](#validatergn), [CWnd:: InvalidateRgn](#invalidatergn), [CWnd:: UpdateWindow](#updatewindow)oder [redrawwindow](/windows/win32/api/winuser/nf-winuser-redrawwindow) verwenden.
 
-##  <a name="reflectchildnotify"></a>CWnd:: reflectchildnotify
+##  <a name="cwndreflectchildnotify"></a><a name="reflectchildnotify"></a>CWnd:: reflectchildnotify
 
 Diese Nachrichten Funktion wird von dem Framework von [OnChildNotify](#onchildnotify)aufgerufen.
 
@@ -10773,7 +10773,7 @@ BOOL ReflectChildNotify(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die Meldung an, die reflektiert werden soll.
 
 *wParam*<br/>
@@ -10783,13 +10783,13 @@ Gibt zusätzliche Nachrichten abhängige Informationen an.
 Gibt zusätzliche Nachrichten abhängige Informationen an.
 
 *pResult*<br/>
-Das Ergebnis, das vom untergeordneten Fenster generiert wird, das vom übergeordneten Fenster zurückgegeben werden soll. Kann NULL sein.
+Das Ergebnis, das vom untergeordneten Fenster generiert wird, das vom übergeordneten Fenster zurückgegeben werden soll. Kann den Wert NULL haben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn die Meldung reflektiert wurde. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dabei handelt es sich um eine Hilfsfunktion, die die *Nachricht* an Ihre Quelle reflektiert.
 
@@ -10797,7 +10797,7 @@ Reflektierte Nachrichten werden direkt an [CWnd:: onwndmsg](#onwndmsg) oder [CCm
 
 Weitere Informationen zur Nachrichten Reflektion finden Sie unter [Behandeln reflektierter Nachrichten](../../mfc/handling-reflected-messages.md).
 
-##  <a name="reflectlastmsg"></a>CWnd:: reflectlastmsg
+##  <a name="cwndreflectlastmsg"></a><a name="reflectlastmsg"></a>CWnd:: reflectlastmsg
 
 Diese Member-Funktion wird vom Framework aufgerufen, um die letzte Meldung an das untergeordnete Fenster widerzuspiegeln.
 
@@ -10813,19 +10813,19 @@ static BOOL PASCAL ReflectLastMsg(
 Ein Handle für ein untergeordnetes Fenster.
 
 *pResult*<br/>
-Das Ergebnis, das vom untergeordneten Fenster generiert wird, das vom übergeordneten Fenster zurückgegeben werden soll. Kann NULL sein.
+Das Ergebnis, das vom untergeordneten Fenster generiert wird, das vom übergeordneten Fenster zurückgegeben werden soll. Kann den Wert NULL haben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0 (null), wenn die Meldung behandelt wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion ruft [sendchildnotifylastmsg](#sendchildnotifylastmsg) auf, wenn das von *hwndchild* identifizierte Fenster ein OLE-Steuerelement oder ein Fenster in der permanenten Zuordnung ist.
 
 Weitere Informationen zur Nachrichten Reflektion finden Sie unter [Behandeln reflektierter Nachrichten](../../mfc/handling-reflected-messages.md).
 
-##  <a name="releasedc"></a>CWnd:: ReleaseDC
+##  <a name="cwndreleasedc"></a><a name="releasedc"></a>CWnd:: ReleaseDC
 
 Gibt einen Gerätekontext frei und gibt ihn für die Verwendung durch andere Anwendungen frei.
 
@@ -10842,13 +10842,13 @@ Identifiziert den Gerätekontext, der freigegeben werden soll.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Auswirkung der `ReleaseDC` Member-Funktion hängt vom Geräte Kontexttyp ab.
 
 Die Anwendung muss die `ReleaseDC` Member-Funktion für jeden Aufrufen der [GetWindowDC](#getwindowdc) -Member-Funktion und für jeden Aufrufen der [GetDC](#getdc) -Member-Funktion aufrufen.
 
-##  <a name="repositionbars"></a>CWnd:: RepositionBars
+##  <a name="cwndrepositionbars"></a><a name="repositionbars"></a>CWnd:: RepositionBars
 
 Wird aufgerufen, um Steuer leisten im Client Bereich eines Fensters neu zu positionieren und die Größe der Steuer leisten zu ändern.
 
@@ -10891,11 +10891,11 @@ Verweist auf eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , di
 *bstretch*<br/>
 Gibt an, ob die Leiste auf die Größe des Frames gestreckt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit den Parametern " *nidfirst* " und " *nidlast* " wird ein Bereich von Steuer leisten-IDs definiert, die im Client Bereich neu positioniert werden sollen. Der Parameter " *nidrestver* " gibt die ID des untergeordneten Fensters an (normalerweise die Ansicht), das neu positioniert und seine Größe angepasst wird, um den Rest des Client Bereichs auszufüllen, der nicht von Steuer leisten aufgefüllt wird.
 
-##  <a name="runmodalloop"></a>CWnd:: runmodzuweisung
+##  <a name="cwndrunmodalloop"></a><a name="runmodalloop"></a>CWnd:: runmodzuweisung
 
 Rufen Sie diese Element Funktion auf, um Nachrichten abzurufen, zu übersetzen oder zu verteilen, bis [continuemodal](#continuemodal) false zurückgibt.
 
@@ -10906,7 +10906,7 @@ int RunModalLoop(DWORD dwFlags = 0);
 ### <a name="parameters"></a>Parameter
 
 *dwFlags*<br/>
-Gibt die zu sendende Windows-Meldung an. Kann einer der folgenden Werte sein:
+Gibt die zu sendende Windows-Meldung an. Es kann sich um einen der folgenden Werte handeln:
 
 - MLF_NOIDLEMSG senden keine [WM_ENTERIDLE](/windows/win32/dlgbox/wm-enteridle) Meldungen an das übergeordnete Element.
 
@@ -10918,11 +10918,11 @@ Gibt die zu sendende Windows-Meldung an. Kann einer der folgenden Werte sein:
 
 Gibt den Wert des *nResult* -Parameters an, der an die [endmodzugewiesene](#endmodalloop) -Member-Funktion übergeben wird, die dann zum Beenden der modalen Schleife verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Standardmäßig gibt `ContinueModal` false zurück, nachdem `EndModalLoop` aufgerufen wurde. Gibt den Wert zurück, der als *nResult* zum `EndModalLoop`bereitgestellt wird.
 
-##  <a name="screentoclient"></a>CWnd:: ScreenToClient
+##  <a name="cwndscreentoclient"></a><a name="screentoclient"></a>CWnd:: ScreenToClient
 
 Konvertiert die Bildschirmkoordinaten eines bestimmten Punkts oder Rechtecks auf der Anzeige zu Clientkoordinaten.
 
@@ -10938,7 +10938,7 @@ Verweist auf ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objek
 *lprect*<br/>
 Verweist auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die die zu konvertierenden Bildschirm Koordinaten enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `ScreenToClient` Member-Funktion ersetzt die in *lpPoint* oder *lprect* angegebenen Bildschirm Koordinaten durch Client Koordinaten. Die neuen Koordinaten sind relativ zur linken oberen Ecke des `CWnd` Client Bereichs.
 
@@ -10946,7 +10946,7 @@ Die `ScreenToClient` Member-Funktion ersetzt die in *lpPoint* oder *lprect* ange
 
   Weitere Informationen finden Sie im Beispiel für [CListCtrl:: GetItemRect](../../mfc/reference/clistctrl-class.md#getitemrect).
 
-##  <a name="scrollwindow"></a>CWnd:: scrollwindow
+##  <a name="cwndscrollwindow"></a><a name="scrollwindow"></a>CWnd:: scrollwindow
 
 Führt einen Bildlauf für den Inhalt des Client Bereichs des aktuellen `CWnd` Objekts aus.
 
@@ -10972,7 +10972,7 @@ Verweist auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt 
 *lpcliprect*<br/>
 Verweist auf ein `CRect` Objekt oder `RECT` Struktur, das das Ausschneide Rechteck angibt, das durchlaufen werden soll. Nur Bits innerhalb dieses Rechtecks werden gescrollt. Bits außerhalb dieses Rechtecks sind nicht betroffen, auch wenn Sie sich im *lprect* -Rechteck befinden. Wenn *lpcliprect* NULL ist, wird kein Clipping für das Schiebe Rechteck ausgeführt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn sich die Einfügemarke in der `CWnd` befindet, in der ein Bildlauf durchgeführt wird, blendet `ScrollWindow` automatisch die Einfügemarke aus, um zu verhindern, dass Sie gelöscht wird Die Position der Einfügemarke wird entsprechend angepasst.
 
@@ -10982,7 +10982,7 @@ Wenn *lprect* den Wert NULL hat, werden die Positionen aller untergeordneten Fen
 
 Wenn *lprect* nicht NULL ist, werden die Positionen der untergeordneten Fenster nicht geändert, und ungültige Bereiche in `CWnd` sind nicht Offset. Um das Aktualisieren von Problemen zu verhindern, wenn *lprect* nicht NULL ist, rufen Sie die `UpdateWindow`-Member-Funktion auf, um `CWnd` vor dem Aufrufen von `ScrollWindow`neu
 
-##  <a name="scrollwindowex"></a>CWnd:: scrollwindowex
+##  <a name="cwndscrollwindowex"></a><a name="scrollwindowex"></a>CWnd:: scrollwindowex
 
 Führt einen Bildlauf durch den Inhalt des Client Bereichs eines Fensters durch.
 
@@ -11030,7 +11030,7 @@ Kann einen der folgenden Werte aufweisen:
 
 Der Rückgabewert ist eine simpleregion (rechteckige, ungültige Region), complexregion (nicht rechteckige ungültige Region; überlappende Rechtecke) oder NULLREGION (keine ungültig geworder Region), wenn die Funktion erfolgreich ist. Andernfalls ist der Rückgabewert "Error".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ähnelt der [scrollwindow](/windows/win32/api/winuser/nf-winuser-scrollwindow) -Funktion mit einigen zusätzlichen Features.
 
@@ -11042,7 +11042,7 @@ Wenn das [SW_SCROLLCHILDREN](/windows/win32/api/winuser/nf-winuser-scrollwindowe
 
 Bei allen Eingabe-und Ausgabe Koordinaten (für *lprectscroll*, *lprectclip*, *lprectupdate*und *prgnupdate*) wird davon ausgegangen, dass Sie sich in Client Koordinaten befinden, unabhängig davon, ob das Fenster den Klassen Stil CS_OWNDC oder CS_CLASSDC hat. Verwenden Sie die Windows-Funktionen [lptodp](/windows/win32/api/wingdi/nf-wingdi-lptodp) und [dptolp](/windows/win32/api/wingdi/nf-wingdi-dptolp) , um ggf. zu und von logischen Koordinaten zu konvertieren.
 
-##  <a name="sendchildnotifylastmsg"></a>CWnd:: sendchildnotifylastmsg
+##  <a name="cwndsendchildnotifylastmsg"></a><a name="sendchildnotifylastmsg"></a>CWnd:: sendchildnotifylastmsg
 
 Diese Member-Funktion wird vom Framework aufgerufen, um eine Benachrichtigungs Meldung an ein untergeordnetes Fenster im übergeordneten Fenster bereitzustellen, damit das untergeordnete Fenster eine Aufgabe verarbeiten kann.
 
@@ -11059,13 +11059,13 @@ Das Ergebnis, das vom untergeordneten Fenster generiert wird, das vom übergeord
 
 Ein Wert ungleich 0, wenn das untergeordnete Fenster die an das übergeordnete Fenster gesendete Nachricht behandelt hat. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SendChildNotifyLastMsg` die aktuelle Nachricht an die Quelle senden, wenn es sich um eine Meldung handelt, die reflektiert wird.
 
 Weitere Informationen zur Nachrichten Reflektion finden Sie unter [Behandeln reflektierter Nachrichten](../../mfc/handling-reflected-messages.md).
 
-##  <a name="senddlgitemmessage"></a>CWnd:: SendDlgItemMess age
+##  <a name="cwndsenddlgitemmessage"></a><a name="senddlgitemmessage"></a>CWnd:: SendDlgItemMess age
 
 Sendet eine Nachricht an ein-Steuerelement.
 
@@ -11082,7 +11082,7 @@ LRESULT SendDlgItemMessage(
 *NID*<br/>
 Gibt den Bezeichner des Dialog Felds an, das die Nachricht empfängt.
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11095,7 +11095,7 @@ Gibt zusätzliche Nachrichten abhängige Informationen an.
 
 Gibt den Wert an, der von der Fenster Prozedur des Steuer Elements zurückgegeben wird, oder 0, wenn das Steuerelement nicht gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `SendDlgItemMessage` Member-Funktion gibt erst zurück, wenn die Nachricht verarbeitet wurde.
 
@@ -11105,7 +11105,7 @@ Die Verwendung von `SendDlgItemMessage` ist identisch mit dem Abrufen eines `CWn
 
 [!code-cpp[NVC_MFCWindowing#113](../../mfc/reference/codesnippet/cpp/cwnd-class_54.cpp)]
 
-##  <a name="sendmessage"></a>CWnd:: SendMessage
+##  <a name="cwndsendmessage"></a><a name="sendmessage"></a>CWnd:: SendMessage
 
 Sendet die angegebene Meldung an dieses Fenster.
 
@@ -11118,7 +11118,7 @@ LRESULT SendMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11131,7 +11131,7 @@ Gibt zusätzliche Nachrichten abhängige Informationen an.
 
 Das Ergebnis der Nachrichtenverarbeitung. der Wert hängt von der gesendeten Nachricht ab.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `SendMessage` Member-Funktion Ruft die Fenster Prozedur direkt auf und gibt erst dann zurück, wenn die Fenster Prozedur die Nachricht verarbeitet hat. Dies steht im Gegensatz zur [PostMessage](#postmessage) -Member-Funktion, die die Nachricht in der Nachrichten Warteschlange des Fensters platziert und sofort zurückgegeben wird.
 
@@ -11139,7 +11139,7 @@ Die `SendMessage` Member-Funktion Ruft die Fenster Prozedur direkt auf und gibt 
 
 [!code-cpp[NVC_MFCWindowing#101](../../mfc/reference/codesnippet/cpp/cwnd-class_41.cpp)]
 
-##  <a name="sendmessagetodescendants"></a>CWnd:: sendmessageto Descendants
+##  <a name="cwndsendmessagetodescendants"></a><a name="sendmessagetodescendants"></a>CWnd:: sendmessageto Descendants
 
 Diese Member-Funktion wird aufgerufen, um die angegebene Windows-Meldung an alle untergeordneten Fenster zu senden.
 
@@ -11154,7 +11154,7 @@ void SendMessageToDescendants(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11169,7 +11169,7 @@ Gibt die Ebene an, nach der gesucht werden soll. Wenn true, werden alle untergeo
 *bonlyperm*<br/>
 Gibt an, ob die Nachricht von temporären Fenstern empfangen wird. TRUE gibt an, dass temporäre Fenster die Nachricht empfangen können. Wenn der Wert false ist, wird die Nachricht nur von permanenten Fenstern empfangen. Weitere Informationen zu temporären Fenstern finden [Sie unter Technical Note 3](../../mfc/tn003-mapping-of-windows-handles-to-objects.md).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn *bdeep* den Wert false aufweist, wird die Nachricht direkt an die unmittelbar untergeordneten Elemente des Fensters gesendet. Andernfalls wird die Nachricht an alle nachfolgenden Fenster gesendet.
 
@@ -11179,7 +11179,7 @@ Wenn *bdeep* und *bonlyperm* true sind, wird die Suche unter temporären Fenster
 
 [!code-cpp[NVC_MFCWindowing#114](../../mfc/reference/codesnippet/cpp/cwnd-class_55.cpp)]
 
-##  <a name="sendnotifymessage"></a>CWnd:: sendnotisymess
+##  <a name="cwndsendnotifymessage"></a><a name="sendnotifymessage"></a>CWnd:: sendnotisymess
 
 Sendet die angegebene Meldung an das Fenster.
 
@@ -11192,7 +11192,7 @@ BOOL SendNotifyMessage(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu sendende Nachricht an.
 
 *wParam*<br/>
@@ -11205,11 +11205,11 @@ Gibt zusätzliche Nachrichten abhängige Informationen an.
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Fenster vom aufrufenden Thread erstellt wurde, ruft `SendNotifyMessage` die Fenster Prozedur für das Fenster auf und gibt erst dann zurück, wenn die Fenster Prozedur die Nachricht verarbeitet hat. Wenn das Fenster von einem anderen Thread erstellt wurde, übergibt `SendNotifyMessage` die Nachricht an die Fenster Prozedur und gibt sofort zurück. Er wartet nicht, bis die Fenster Prozedur die Verarbeitung der Nachricht abgeschlossen hat.
 
-##  <a name="setactivewindow"></a>CWnd:: abtativewindow
+##  <a name="cwndsetactivewindow"></a><a name="setactivewindow"></a>CWnd:: abtativewindow
 
 Macht `CWnd` das aktive Fenster.
 
@@ -11223,11 +11223,11 @@ Das Fenster, das zuvor aktiv war.
 
 Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `SetActiveWindow` Member-Funktion sollte mit Sorgfalt verwendet werden, da eine Anwendung das aktive Fenster und den Eingabefokus beliebig übernehmen kann. Normalerweise übernimmt Windows alle Aktivierungen.
 
-##  <a name="setcapture"></a>CWnd:: SetCapture
+##  <a name="cwndsetcapture"></a><a name="setcapture"></a>CWnd:: SetCapture
 
 Bewirkt, dass alle nachfolgenden Maus Eingaben unabhängig von der Position des Cursors an das aktuelle `CWnd`-Objekt gesendet werden.
 
@@ -11239,13 +11239,13 @@ CWnd* SetCapture();
 
 Ein Zeiger auf das Fenster Objekt, das zuvor alle Maus Eingaben empfangen hat. Der Wert ist NULL, wenn kein solches Fenster vorhanden ist. Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn `CWnd` nicht mehr alle Maus Eingaben erfordert, sollte die Anwendung die [releasecapture](/windows/win32/api/winuser/nf-winuser-releasecapture) -Funktion aufzurufen, damit andere Fenster Maus Eingaben empfangen können.
 
 Während die Maus Eingaben aufgezeichnet werden, werden keine WM_NCHITTEST oder WM_SETCURSOR Meldungen an das aktive Fenster gesendet.
 
-##  <a name="setcaretpos"></a>CWnd:: SetCaretPos
+##  <a name="cwndsetcaretpos"></a><a name="setcaretpos"></a>CWnd:: SetCaretPos
 
 Legt die Position des Caretzeichen fest.
 
@@ -11258,7 +11258,7 @@ static void PASCAL SetCaretPos(POINT point);
 *Punkt*<br/>
 Gibt die neuen x-und y-Koordinaten (in Client Koordinaten) der Einfügemarke an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `SetCaretPos` Member-Funktion verschiebt die Einfügemarke nur dann, wenn Sie im Besitz eines Fensters in der aktuellen Aufgabe ist. `SetCaretPos` verschiebt die Einfügemarke, unabhängig davon, ob die Einfügemarke ausgeblendet ist.
 
@@ -11268,7 +11268,7 @@ Die Einfügemarke ist eine freigegebene Ressource. Ein Fenster sollte die Einfü
 
 [!code-cpp[NVC_MFCWindowing#115](../../mfc/reference/codesnippet/cpp/cwnd-class_56.cpp)]
 
-##  <a name="setclipboardviewer"></a>CWnd:: setclipboardviewer
+##  <a name="cwndsetclipboardviewer"></a><a name="setclipboardviewer"></a>CWnd:: setclipboardviewer
 
 Fügt das Fenster der Windows-Kette hinzu, die benachrichtigt werden, wenn der Inhalt der Zwischenablage geändert wird (mittels der WM_DRAWCLIPBOARD Meldung).
 
@@ -11280,7 +11280,7 @@ HWND SetClipboardViewer();
 
 Ein Handle für das nächste Fenster in der Zwischenablage-Viewer-Kette, wenn erfolgreich. Anwendungen sollten dieses Handle speichern (es kann als Element Variable gespeichert werden) und dieses Handle bei der Reaktion auf Zwischenablage-Viewer-Ketten Meldungen verwenden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Fenster, das Teil der Zwischenablage-Viewer-Kette ist, muss auf [WM_DRAWCLIPBOARD](#ondrawclipboard)-, [WM_CHANGECBCHAIN](#onchangecbchain)-und [WM_DESTROY](#ondestroy) Meldungen Antworten und die Nachricht an das nächste Fenster in der Kette weiterleiten.
 
@@ -11288,7 +11288,7 @@ Diese Member-Funktion sendet eine WM_DRAWCLIPBOARD Meldung an das-Fenster. Da da
 
 Um sich selbst aus der Zwischenablage-Viewer-Kette zu entfernen, muss eine Anwendung die [changeclipboardchain](#changeclipboardchain) -Member-Funktion aufzurufen.
 
-##  <a name="setdlgctrlid"></a>CWnd:: setdlgctrlid
+##  <a name="cwndsetdlgctrlid"></a><a name="setdlgctrlid"></a>CWnd:: setdlgctrlid
 
 Legt die Fenster-ID oder Steuerelement-ID für das Fenster auf einen neuen Wert fest.
 
@@ -11305,11 +11305,11 @@ Der neue Wert, der für den Bezeichner des Steuer Elements festgelegt wird.
 
 Der vorherige Bezeichner des Fensters, wenn erfolgreich. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Fenster kann ein beliebiges untergeordnetes Fenster sein, nicht nur ein Steuerelement in einem Dialogfeld. Das Fenster darf kein Fenster der obersten Ebene sein.
 
-##  <a name="setdlgitemint"></a>CWnd:: setdlgitemint
+##  <a name="cwndsetdlgitemint"></a><a name="setdlgitemint"></a>CWnd:: setdlgitemint
 
 Legt den Text eines angegebenen Steuer Elements in einem Dialogfeld auf die Zeichen folgen Darstellung eines angegebenen ganzzahligen Werts fest.
 
@@ -11331,7 +11331,7 @@ Gibt den ganzzahligen Wert an, mit dem der Element Text generiert wird.
 *bsigniert*<br/>
 Gibt an, ob der ganzzahlige Wert signiert oder nicht signiert ist. Wenn dieser Parameter true ist, wird *nValue* signiert. Wenn dieser Parameter true und *nValue* kleiner als 0 ist, wird vor der ersten Ziffer in der Zeichenfolge ein Minuszeichen eingefügt. Wenn dieser Parameter false ist, wird *nValue* nicht signiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SetDlgItemInt` sendet eine [WM_SETTEXT](/windows/win32/winmsg/wm-settext) Meldung an das angegebene Steuerelement.
 
@@ -11339,7 +11339,7 @@ Gibt an, ob der ganzzahlige Wert signiert oder nicht signiert ist. Wenn dieser P
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SetDlgItemText](#setdlgitemtext).
 
-##  <a name="setdlgitemtext"></a>CWnd:: SetDlgItemText
+##  <a name="cwndsetdlgitemtext"></a><a name="setdlgitemtext"></a>CWnd:: SetDlgItemText
 
 Legt die Beschriftung oder den Text eines Steuer Elements fest, das einem Fenster oder Dialogfeld gehört.
 
@@ -11357,7 +11357,7 @@ Identifiziert das Steuerelement, dessen Text festgelegt werden soll.
 *lpszstring*<br/>
 Verweist auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt oder eine auf NULL endende Zeichenfolge, die den Text enthält, der in das Steuerelement kopiert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `SetDlgItemText` sendet eine [WM_SETTEXT](/windows/win32/winmsg/wm-settext) Meldung an das angegebene Steuerelement.
 
@@ -11365,7 +11365,7 @@ Verweist auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Ob
 
 [!code-cpp[NVC_MFCWindowing#116](../../mfc/reference/codesnippet/cpp/cwnd-class_57.cpp)]
 
-##  <a name="setforegroundwindow"></a>CWnd:: SetForegroundWindow
+##  <a name="cwndsetforegroundwindow"></a><a name="setforegroundwindow"></a>CWnd:: SetForegroundWindow
 
 Versetzt den Thread, durch den das Fenster erstellt wurde, in den Vordergrund und aktiviert das Fenster.
 
@@ -11377,7 +11377,7 @@ BOOL SetForegroundWindow();
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Tastatureingaben werden an das Fenster weitergeleitet, und für den Benutzer werden verschiedene visuelle Hinweise geändert. Das Fenster Vordergrund ist das Fenster, mit dem der Benutzer gerade arbeitet. Das Vordergrund Fenster gilt nur für Fenster der obersten Ebene (Rahmen Fenster oder Dialogfelder).
 
@@ -11385,7 +11385,7 @@ Tastatureingaben werden an das Fenster weitergeleitet, und für den Benutzer wer
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: FindWindow](#findwindow).
 
-##  <a name="setfocus"></a>CWnd:: SetFocus
+##  <a name="cwndsetfocus"></a><a name="setfocus"></a>CWnd:: SetFocus
 
 Beansprucht den Eingabefokus.
 
@@ -11397,7 +11397,7 @@ CWnd* SetFocus();
 
 Ein Zeiger auf das Fenster Objekt, das zuvor den Eingabefokus hatte. Der Wert ist NULL, wenn kein solches Fenster vorhanden ist. Der zurückgegebene Zeiger kann temporär sein und sollte nicht gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Eingabefokus leitet alle nachfolgenden Tastatureingaben zu diesem Fenster. Jedes Fenster, das zuvor den Eingabefokus hatte, verliert es.
 
@@ -11405,7 +11405,7 @@ Die `SetFocus` Member-Funktion sendet eine [WM_KILLFOCUS](/windows/win32/inputde
 
 Wenn das aktuelle Fenster aktiv ist, aber nicht über den Fokus verfügt (d. h., kein Fenster hat den Fokus), erzeugt jeder angedrückte Schlüssel die Nachrichten [WM_SYSCHAR](#onsyschar), [WM_SYSKEYDOWN](#onsyskeydown)oder [WM_SYSKEYUP](#onsyskeyup).
 
-##  <a name="setfont"></a>CWnd:: SetFont
+##  <a name="cwndsetfont"></a><a name="setfont"></a>CWnd:: SetFont
 
 Sendet die WM_SETFONT Meldung an das Fenster, um die angegebene Schriftart zu verwenden.
 
@@ -11423,11 +11423,11 @@ Zeiger auf ein `CFont` Objekt.
 *bredraw*<br/>
 TRUE, damit das Fenster sofort neu gezeichnet wird, nachdem es die WM_SETFONT Nachricht verarbeitet hat. andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode hat keine Auswirkung, es sei denn, das Fenster verarbeitet die WM_SETFONT Meldung. Viele MFC-Klassen, die von abgeleitet werden, `CWnd` diese Nachricht verarbeiten, da Sie an eine vordefinierte Fenster Klasse angefügt werden, die einen Meldungs Handler für die WM_SETFONT Meldung enthält. Um diese Methode verwenden zu können, müssen Klassen, die Sie von `CWnd` ableiten, einen Methoden Handler für die WM_SETFONT Nachricht definieren.
 
-##  <a name="seticon"></a>CWnd:: abticon
+##  <a name="cwndseticon"></a><a name="seticon"></a>CWnd:: abticon
 
 Diese Member-Funktion wird aufgerufen, um das Handle auf ein bestimmtes Symbol festzulegen, wie von *HICON*identifiziert.
 
@@ -11449,7 +11449,7 @@ Gibt das Symbol 32 Pixel um 32 Pixel an, wenn true. Gibt ein 16 Pixel x 16 Pixel
 
 Ein Handle für ein Symbol.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Fenster Klasse registriert ist, wählt Sie ein Symbol aus.
 
@@ -11457,7 +11457,7 @@ Wenn die Fenster Klasse registriert ist, wählt Sie ein Symbol aus.
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: getsystemmenu](#getsystemmenu).
 
-##  <a name="setlayeredwindowattributes"></a>CWnd:: SetLayeredWindowAttributes
+##  <a name="cwndsetlayeredwindowattributes"></a><a name="setlayeredwindowattributes"></a>CWnd:: SetLayeredWindowAttributes
 
 Legt die Deckkraft- und Transparenzfarbenschlüssel eines überlappenden Fensters fest.
 
@@ -11483,11 +11483,11 @@ Gibt eine Aktion an, die ausgeführt werden soll. Dieser Parameter kann einen od
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der [SetLayeredWindowAttributes](/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes)-Funktion, wie im Windows SDK beschrieben.
 
-##  <a name="setmenu"></a>CWnd:: setMenu
+##  <a name="cwndsetmenu"></a><a name="setmenu"></a>CWnd:: setMenu
 
 Legt das aktuelle Menü auf das angegebene Menü fest.
 
@@ -11504,7 +11504,7 @@ Gibt das neue Menü an. Wenn dieser Parameter NULL ist, wird das aktuelle Menü 
 
 Ungleich 0 (null), wenn das Menü geändert wird. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bewirkt, dass das Fenster neu gezeichnet wird, um die Menü Änderung widerzuspiegeln.
 
@@ -11514,7 +11514,7 @@ mit `SetMenu` wird ein vorheriges Menü nicht zerstört. Eine Anwendung sollte d
 
   Weitere Informationen finden Sie im Beispiel für [CMenu:: loadmenu](../../mfc/reference/cmenu-class.md#loadmenu).
 
-##  <a name="setowner"></a>CWnd:: seetowner
+##  <a name="cwndsetowner"></a><a name="setowner"></a>CWnd:: seetowner
 
 Legt den Besitzer des aktuellen Fensters auf das angegebene Fenster Objekt fest.
 
@@ -11527,7 +11527,7 @@ void SetOwner(CWnd* pOwnerWnd);
 *pownerwnd*<br/>
 Identifiziert den neuen Besitzer des Fenster Objekts. Wenn dieser Parameter NULL ist, besitzt das Fenster Objekt keinen Besitzer.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Besitzer kann dann befehlsnachrichten vom aktuellen Fenster Objekt empfangen. Standardmäßig ist das übergeordnete Element des aktuellen Fensters dessen Besitzer.
 
@@ -11535,7 +11535,7 @@ Es ist häufig nützlich, Verbindungen zwischen Fenster Objekten herzustellen, d
 
 Das Besitz Konzept dieser Funktion unterscheidet sich vom Besitz Konzept von [GetWindow](/windows/win32/api/winuser/nf-winuser-getwindow).
 
-##  <a name="setparent"></a>CWnd:: SetParent
+##  <a name="cwndsetparent"></a><a name="setparent"></a>CWnd:: SetParent
 
 Ändert das übergeordnete Fenster eines untergeordneten Fensters.
 
@@ -11552,11 +11552,11 @@ Identifiziert das neue übergeordnete Fenster.
 
 Ein Zeiger auf das vorherige übergeordnete Fenster Objekt, wenn erfolgreich. Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das untergeordnete Fenster sichtbar ist, führt Windows das entsprechende Neuzeichnen und Neuzeichnen aus.
 
-##  <a name="setproperty"></a>CWnd:: SetProperty
+##  <a name="cwndsetproperty"></a><a name="setproperty"></a>CWnd:: SetProperty
 
 Mit dieser Member-Funktion wird die von *dwdispid*angegebene OLE-Steuerelement Eigenschaft festgelegt.
 
@@ -11577,14 +11577,14 @@ Gibt den Typ der festzulegenden Eigenschaft an. Informationen zu den möglichen 
 *...*<br/>
 Ein einzelner Parameter des Typs, der von *vtprop*angegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
 > Diese Funktion sollte nur für ein `CWnd` Objekt aufgerufen werden, das ein OLE-Steuerelement darstellt.
 
 Weitere Informationen zur Verwendung dieser Member-Funktion mit OLE-Steuerungs Containern finden Sie im Artikel [ActiveX-Steuerelement Container: Programmieren von ActiveX-Steuerelementen in einem ActiveX-Steuerelement Container](../../mfc/programming-activex-controls-in-a-activex-control-container.md).
 
-##  <a name="setredraw"></a>CWnd:: abzeichnen
+##  <a name="cwndsetredraw"></a><a name="setredraw"></a>CWnd:: abzeichnen
 
 Eine Anwendung ruft `SetRedraw` auf, damit Änderungen neu gezeichnet werden können, oder um zu verhindern, dass Änderungen neu gezeichnet werden.
 
@@ -11597,7 +11597,7 @@ void SetRedraw(BOOL bRedraw = TRUE);
 *bredraw*<br/>
 Gibt den Status des neu zeichnen-Flags an. Wenn dieser Parameter true ist, wird das neu zeichnen-Flag festgelegt. FALSE gibt an, dass das Flag gelöscht wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit dieser Member-Funktion wird das neu zeichnen-Flag festgelegt oder gelöscht. Obwohl das neu zeichnen-Flag deaktiviert ist, wird der Inhalt nicht nach jeder Änderung aktualisiert und erst dann neu gezeichnet, wenn das neu zeichnen-Flag festgelegt wurde. Beispielsweise kann eine Anwendung, die einem Listenfeld mehrere Elemente hinzufügen muss, das Flag neu zeichnen löschen, die Elemente hinzufügen und dann das Flag neu zeichnen festlegen. Schließlich kann die Anwendung die Funktion " [Invalidate](#invalidate) " oder " [invalidatenmember](#invalidaterect) " aufgerufen werden, damit das Listenfeld neu gezeichnet wird.
 
@@ -11605,7 +11605,7 @@ Mit dieser Member-Funktion wird das neu zeichnen-Flag festgelegt oder gelöscht.
 
 [!code-cpp[NVC_MFCWindowing#117](../../mfc/reference/codesnippet/cpp/cwnd-class_58.cpp)]
 
-##  <a name="setscrollinfo"></a>CWnd:: setScrollInfo
+##  <a name="cwndsetscrollinfo"></a><a name="setscrollinfo"></a>CWnd:: setScrollInfo
 
 Mit dieser Member-Funktion legen Sie die Informationen fest, die von der `SCROLLINFO` Struktur über eine Schiebe Leiste verwaltet werden.
 
@@ -11637,7 +11637,7 @@ Gibt an, ob die Bild Lauf Leiste neu gezeichnet werden soll, um die neue Positio
 
 Bei erfolgreicher Ausführung ist die Rückgabe true. Andernfalls ist Sie false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur enthält Informationen zu einer Schiebe Leiste, einschließlich der minimalen und maximalen scrollpositionen, der Seitengröße und der Position des Bild Lauf Felds (Ziehpunkt). Weitere Informationen zum Ändern der Struktur Standardwerte finden Sie im Thema `SCROLLINFO` Struktur des Windows SDK.
 
@@ -11646,7 +11646,7 @@ Die MFC-Windows-Meldungs Handler, die die Position der Scrollleiste angeben ( [C
 > [!NOTE]
 > [CWnd:: getscrollinfo](#getscrollinfo) ermöglicht Anwendungen die Verwendung von 32-Bit-Scrollleisten Positionen.
 
-##  <a name="setscrollpos"></a>CWnd:: setscrollpos
+##  <a name="cwndsetscrollpos"></a><a name="setscrollpos"></a>CWnd:: setscrollpos
 
 Legt die aktuelle Position eines Bild Lauf Felds fest und zeichnet bei Bedarf die Schiebe Leiste neu, um die neue Position des Bild Lauf Felds widerzuspiegeln.
 
@@ -11676,11 +11676,11 @@ Gibt an, ob die Schiebe Leiste neu gezeichnet werden soll, um die neue Position 
 
 Die vorherige Position des Bild Lauf Felds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Festlegen von *bredraw* auf false ist hilfreich, wenn die Bild Lauf Leiste durch einen nachfolgenden Aufruf einer anderen Funktion neu gezeichnet wird.
 
-##  <a name="setscrollrange"></a>CWnd:: setscrollrange
+##  <a name="cwndsetscrollrange"></a><a name="setscrollrange"></a>CWnd:: setscrollrange
 
 Legt die minimalen und maximalen Positionswerte für die angegebene Scrollleiste fest.
 
@@ -11710,7 +11710,7 @@ Gibt die maximale Scrollposition an.
 *bredraw*<br/>
 Gibt an, ob die Bild Lauf Leiste neu gezeichnet werden soll, um die Änderung widerzuspiegeln. Wenn *bredraw* den Wert true hat, wird die Scrollleiste neu gezeichnet. Wenn der Wert false ist, wird die Schiebe Leiste nicht neu gezeichnet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie kann auch verwendet werden, um Standard Scrollleisten auszublenden oder anzuzeigen.
 
@@ -11720,7 +11720,7 @@ Wenn der Aufrufen von `SetScrollRange` unmittelbar auf einen Aufrufen der [setsc
 
 Der Standardbereich für eine Standard Scrollleiste ist 0 bis 100. Der Standardbereich für ein Schiebe leisten-Steuerelement ist leer (sowohl die *nminpos* -als auch die *nmaxpos* -Werte sind 0). Der Unterschied zwischen den Werten, die von *nminpos* und *nmaxpos* angegeben werden, darf nicht größer sein als INT_MAX.
 
-##  <a name="settimer"></a>CWnd:: Sekunden
+##  <a name="cwndsettimer"></a><a name="settimer"></a>CWnd:: Sekunden
 
 Installiert einen Systemtimer.
 
@@ -11749,7 +11749,7 @@ Gibt die Adresse der von der Anwendung bereitgestellten `TimerProc` Rückruffunk
 
 Der Zeitgeberbezeichner des neuen Zeitgebers, wenn die Funktion erfolgreich ist. Dieser Wert kann mit dem Wert identisch sein, der über den Parameter " *nide Vent* " übergeben wurde. Eine Anwendung sollte den Rückgabewert immer an die [killtimer](#killtimer) -Member-Funktion übergeben, um den Timer zu beenden. Ungleich 0 (null), wenn erfolgreich, andernfalls 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Intervall Wert wird angegeben, und jedes Mal, wenn das Intervall abläuft, sendet das System eine WM_TIMER Nachricht an die Installations Warteschlange der Installation der installierten Anwendung oder übergibt die Nachricht an eine Anwendungs definierte `TimerProc` Rückruffunktion.
 
@@ -11769,7 +11769,7 @@ In diesem Beispiel werden `CWnd::SetTimer`, `CWnd::OnTimer`und `CWnd::KillTimer`
 
 [!code-cpp[NVC_MFCWindowing#118](../../mfc/reference/codesnippet/cpp/cwnd-class_59.cpp)]
 
-##  <a name="setwindowcontexthelpid"></a>CWnd:: setwindowcontexthelpid
+##  <a name="cwndsetwindowcontexthelpid"></a><a name="setwindowcontexthelpid"></a>CWnd:: setwindowcontexthelpid
 
 Diese Member-Funktion wird aufgerufen, um dem angegebenen Fenster einen Hilfe Kontext Bezeichner zuzuordnen.
 
@@ -11786,7 +11786,7 @@ Der Hilfe Kontext Bezeichner.
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein untergeordnetes Fenster keinen Hilfe Kontext Bezeichner hat, erbt es den Bezeichner des übergeordneten Fensters. Wenn ein im Besitz befindlichen Fenster nicht über einen Hilfe Kontext Bezeichner verfügt, erbt er ebenso den Bezeichner seines Besitzer Fensters. Diese Vererbung von Hilfe Kontext Bezeichnern ermöglicht es einer Anwendung, nur einen Bezeichner für ein Dialogfeld und alle zugehörigen Steuerelemente festzulegen.
 
@@ -11794,7 +11794,7 @@ Wenn ein untergeordnetes Fenster keinen Hilfe Kontext Bezeichner hat, erbt es de
 
 [!code-cpp[NVC_MFCWindowing#119](../../mfc/reference/codesnippet/cpp/cwnd-class_60.cpp)]
 
-##  <a name="setwindowplacement"></a>CWnd:: SetWindowPlacement
+##  <a name="cwndsetwindowplacement"></a><a name="setwindowplacement"></a>CWnd:: SetWindowPlacement
 
 Legt den Anzeigestatus und die normalen (wiederhergestellt), minimierten und maximierten Positionen für ein Fenster fest.
 
@@ -11811,7 +11811,7 @@ Verweist auf eine [WINDOWPLACEMENT](/windows/win32/api/winuser/ns-winuser-window
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-##  <a name="setwindowpos"></a>CWnd:: SetWindowPos
+##  <a name="cwndsetwindowpos"></a><a name="setwindowpos"></a>CWnd:: SetWindowPos
 
 Ändert die Größe, Position und Z-Reihenfolge von untergeordneten Fenstern, Popup Fenstern und Fenstern der obersten Ebene.
 
@@ -11885,7 +11885,7 @@ Gibt Größen-und Positions Optionen an. Dieser Parameter kann eine Kombination 
 
 Ungleich 0 (null), wenn die Funktion erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Windows werden auf dem Bildschirm entsprechend ihrer Z-Reihenfolge sortiert. Das Fenster oben in der Z-Reihenfolge wird auf allen anderen Fenstern in der Reihenfolge angezeigt.
 
@@ -11917,7 +11917,7 @@ Wenn `SetWindowPos` aufgerufen wird, wenn der *pwndinsertafter* -Parameter **& w
 
 [!code-cpp[NVC_MFCWindowing#120](../../mfc/reference/codesnippet/cpp/cwnd-class_61.cpp)]
 
-##  <a name="setwindowrgn"></a>CWnd:: setwindowrgn
+##  <a name="cwndsetwindowrgn"></a><a name="setwindowrgn"></a>CWnd:: setwindowrgn
 
 Mit dieser Member-Funktion wird der Bereich eines Fensters festgelegt.
 
@@ -11939,13 +11939,13 @@ TRUE gibt an, dass das Betriebssystem das Fenster nach dem Festlegen des Bereich
 
 Wenn die Funktion erfolgreich ausgeführt wird, ist der Rückgabewert ungleich 0 (null). Wenn die Funktion fehlerhaft ist, ist der Rückgabewert null.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Koordinaten des Fenster Bereichs eines Fensters sind relativ zur linken oberen Ecke des Fensters, nicht zum Client Bereich des Fensters.
 
 Nach einem erfolgreichen `SetWindowRgn`des Aufrufes ist das Betriebssystem im Besitz der Region, die von der Region " *hrgn*" angegeben wird. Das Betriebssystem stellt keine Kopie der Region her, nehmen Sie also keine weiteren Funktionsaufrufe mit diesem Regions handle vor, und schließen Sie dieses Regions Handle nicht.
 
-##  <a name="setwindowtext"></a>CWnd:: SetWindowText
+##  <a name="cwndsetwindowtext"></a><a name="setwindowtext"></a>CWnd:: SetWindowText
 
 Legt den Titel des Fensters auf den angegebenen Text fest.
 
@@ -11958,7 +11958,7 @@ void SetWindowText(LPCTSTR lpszString);
 *lpszstring*<br/>
 Verweist auf ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt oder eine auf NULL endende Zeichenfolge, die als neuer Titel oder Steuerelement Text verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Fenster ein Steuerelement ist, wird der Text im Steuerelement festgelegt.
 
@@ -11968,7 +11968,7 @@ Diese Funktion bewirkt, dass eine [WM_SETTEXT](/windows/win32/winmsg/wm-settext)
 
 [!code-cpp[NVC_MFCWindowing#121](../../mfc/reference/codesnippet/cpp/cwnd-class_62.cpp)]
 
-##  <a name="showcaret"></a>CWnd:: ShowCaret
+##  <a name="cwndshowcaret"></a><a name="showcaret"></a>CWnd:: ShowCaret
 
 Zeigt die Einfügemarke auf dem Bildschirm an der aktuellen Position der Einfügemarke an.
 
@@ -11976,7 +11976,7 @@ Zeigt die Einfügemarke auf dem Bildschirm an der aktuellen Position der Einfüg
 void ShowCaret();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sobald die Anzeige erfolgt, blinkt das Caretzeichen automatisch auf.
 
@@ -11990,7 +11990,7 @@ Die Einfügemarke ist eine freigegebene Ressource. Das Fenster sollte die Einfü
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: kreatecaret](#createcaret).
 
-##  <a name="showownedpopups"></a>CWnd:: showownedpopups
+##  <a name="cwndshowownedpopups"></a><a name="showownedpopups"></a>CWnd:: showownedpopups
 
 Blendet alle Popup Fenster in diesem Fenster ein oder aus.
 
@@ -12007,7 +12007,7 @@ Gibt an, ob Popup Fenster angezeigt oder ausgeblendet werden sollen. Wenn dieser
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SetWindowPos](#setwindowpos).
 
-##  <a name="showscrollbar"></a>CWnd:: ShowScrollbar
+##  <a name="cwndshowscrollbar"></a><a name="showscrollbar"></a>CWnd:: ShowScrollbar
 
 Zeigt eine Schiebe Leiste an oder blendet sie aus.
 
@@ -12031,11 +12031,11 @@ Gibt an, ob die Bild Lauf Leiste ein Steuerelement oder ein Teil des nicht-Clien
 *bShow*<br/>
 Gibt an, ob Windows die Scrollleiste anzeigt oder ausblendet. Wenn dieser Parameter true ist, wird die Scrollleiste angezeigt. Andernfalls wird die Scrollleiste ausgeblendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine Anwendung sollte `ShowScrollBar` nicht aufzurufen, um beim Verarbeiten einer Schiebe leisten-Benachrichtigungs Meldung eine Schiebe Leiste auszublenden.
 
-##  <a name="showwindow"></a>CWnd:: ShowWindow
+##  <a name="cwndshowwindow"></a><a name="showwindow"></a>CWnd:: ShowWindow
 
 Legt den Sichtbarkeits Zustand des Fensters fest.
 
@@ -12072,7 +12072,7 @@ Gibt an, wie die `CWnd` angezeigt werden soll. Es muss sich um einen der folgend
 
 Ungleich 0 (null), wenn das Fenster zuvor sichtbar war. 0, wenn die `CWnd` zuvor ausgeblendet war.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `ShowWindow` nur einmal pro Anwendung für das Hauptfenster mit [CWinApp:: m_nCmdShow](../../mfc/reference/cwinapp-class.md#m_ncmdshow)aufgerufen werden. Bei nachfolgenden Aufrufen von `ShowWindow` muss einer der oben aufgeführten Werte anstelle der von `CWinApp::m_nCmdShow`angegebenen Werte verwendet werden.
 
@@ -12080,7 +12080,7 @@ Ungleich 0 (null), wenn das Fenster zuvor sichtbar war. 0, wenn die `CWnd` zuvor
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: calcwindowrect](#calcwindowrect).
 
-##  <a name="subclassdlgitem"></a>CWnd:: SubclassDlgItem
+##  <a name="cwndsubclassdlgitem"></a><a name="subclassdlgitem"></a>CWnd:: SubclassDlgItem
 
 Mit dieser Member-Funktion können Sie ein Steuerelement, das aus einer Dialogfeld Vorlage erstellt wurde, dynamisch Unterklassen und an dieses `CWnd` Objekt anfügen.
 
@@ -12102,7 +12102,7 @@ Das übergeordnete Element des Steuer Elements (in der Regel ein Dialogfeld).
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein Steuerelement dynamisch untergeordnet ist, werden die Windows-Meldungen über die Meldungs Zuordnung des `CWnd`geleitet und Nachrichten Handler zuerst in der `CWnd`Klasse aufgerufen. Nachrichten, die an die Basisklasse übermittelt werden, werden an den Standard Nachrichten Handler im-Steuerelement übermittelt.
 
@@ -12112,7 +12112,7 @@ Diese Member-Funktion fügt das Windows-Steuerelement an ein `CWnd` Objekt an un
 
 [!code-cpp[NVC_MFCWindowing#122](../../mfc/reference/codesnippet/cpp/cwnd-class_63.cpp)]
 
-##  <a name="subclasswindow"></a>CWnd:: SubclassWindow
+##  <a name="cwndsubclasswindow"></a><a name="subclasswindow"></a>CWnd:: SubclassWindow
 
 Nennen Sie diese Member-Funktion, um ein Fenster dynamisch zu unterordnen und dieses `CWnd` Objekt anzufügen.
 
@@ -12129,7 +12129,7 @@ Ein Handle für das Fenster.
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein Fenster dynamisch untergeordnet ist, werden Windows-Meldungen durch die Meldungs Zuordnung des `CWnd`geleitet und Nachrichten Handler zuerst in der `CWnd`Klasse aufgerufen. Nachrichten, die an die Basisklasse übermittelt werden, werden an den Standard Nachrichten Handler im-Fenster übermittelt.
 
@@ -12142,7 +12142,7 @@ Diese Member-Funktion fügt das Windows-Steuerelement an ein `CWnd` Objekt an un
 
 [!code-cpp[NVC_MFCWindowing#123](../../mfc/reference/codesnippet/cpp/cwnd-class_64.cpp)]
 
-##  <a name="unlockwindowupdate"></a>CWnd:: unlockwindowupdate
+##  <a name="cwndunlockwindowupdate"></a><a name="unlockwindowupdate"></a>CWnd:: unlockwindowupdate
 
 Mit dieser Member-Funktion können Sie ein Fenster entsperren, das mit `CWnd::LockWindowUpdate`gesperrt war.
 
@@ -12150,11 +12150,11 @@ Mit dieser Member-Funktion können Sie ein Fenster entsperren, das mit `CWnd::Lo
 void UnlockWindowUpdate();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Nur ein Fenster zu einem Zeitpunkt kann mit `LockWindowUpdate`gesperrt werden. Weitere Informationen zum Sperren von Fenstern finden Sie unter [CWnd:: lockwindowupdate](#lockwindowupdate) oder die Win32-Funktion [lockwindowupdate](/windows/win32/api/winuser/nf-winuser-lockwindowupdate) .
 
-##  <a name="unsubclasswindow"></a>CWnd:: unsubclasswindow
+##  <a name="cwndunsubclasswindow"></a><a name="unsubclasswindow"></a>CWnd:: unsubclasswindow
 
 Mit dieser Member-Funktion können Sie `WndProc` auf den ursprünglichen Wert zurücksetzen und das von HWND identifizierte Fenster vom `CWnd`-Objekt trennen.
 
@@ -12170,7 +12170,7 @@ Ein Handle für das nicht untergeordnete Fenster.
 
   Weitere Informationen finden Sie im Beispiel für [CWnd:: SubclassWindow](#subclasswindow).
 
-##  <a name="updatedata"></a>CWnd:: UpdateData
+##  <a name="cwndupdatedata"></a><a name="updatedata"></a>CWnd:: UpdateData
 
 Mit dieser Member-Funktion können Sie Daten in einem Dialogfeld initialisieren oder Dialog Daten abrufen und überprüfen.
 
@@ -12187,11 +12187,11 @@ Flag, das angibt, ob das Dialogfeld initialisiert wird (false) oder Daten abgeru
 
 Ungleich 0 (null), wenn der Vorgang erfolgreich ist. andernfalls 0. Wenn *bsaveandvalidat*e true ist, bedeutet der Rückgabewert ungleich 0, dass die Daten erfolgreich überprüft wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Framework ruft automatisch `UpdateData` auf, wobei *bsaveandvalidate* auf false festgelegt ist, wenn ein modales Dialogfeld in der Standard Implementierung von [CDialog:: OnInitDialog](../../mfc/reference/cdialog-class.md#oninitdialog)erstellt wird. Der-Befehl tritt auf, bevor das Dialogfeld sichtbar ist. Die Standard Implementierung von [CDialog:: OnOK](../../mfc/reference/cdialog-class.md#onok) ruft diese Member-Funktion auf, wenn *bsaveandvalidate* auf true festgelegt ist, um die Daten abzurufen, und schließt, wenn erfolgreich, das Dialogfeld. (Wenn im Dialogfeld auf die Schaltfläche Abbrechen geklickt wird, wird das Dialogfeld geschlossen, ohne dass die Daten abgerufen werden.)
 
-##  <a name="updatedialogcontrols"></a>CWnd:: updatedialogcontrols
+##  <a name="cwndupdatedialogcontrols"></a><a name="updatedialogcontrols"></a>CWnd:: updatedialogcontrols
 
 Rufen Sie diese Member-Funktion auf, um den Status von Dialogfeldern und anderen Steuerelementen in einem Dialogfeld oder Fenster zu aktualisieren, das den [ON_UPDATE_COMMAND_UI](message-map-macros-mfc.md#on_update_command_ui) Rückrufmechanismus verwendet.
 
@@ -12209,13 +12209,13 @@ Verweist auf das Hauptrahmen Fenster der Anwendung und wird zum Weiterleiten von
 *bdisableifnohndler*<br/>
 Flag, das angibt, ob ein Steuerelement ohne Update Handler automatisch als deaktiviert angezeigt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn ein untergeordnetes Steuerelement keinen Handler hat und *bdisableifnohndler* den Wert true hat, wird das untergeordnete Steuerelement deaktiviert.
 
 Das Framework ruft diese Member-Funktion für Steuerelemente in Dialog leisten oder Symbolleisten als Teil der Leerlauf Verarbeitung der Anwendung auf.
 
-##  <a name="updatelayeredwindow"></a>CWnd:: UpdateLayeredWindow
+##  <a name="cwndupdatelayeredwindow"></a><a name="updatelayeredwindow"></a>CWnd:: UpdateLayeredWindow
 
 Aktualisiert die Position, Größe, Form, Inhalte und Lichtdurchlässigkeit eines überlappenden Fensters.
 
@@ -12267,11 +12267,11 @@ Gibt eine Aktion an, die ausgeführt werden soll. Dieser Parameter kann einen od
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion emuliert die Funktionalität der Funktion [UpdateLayeredWindow](/windows/win32/api/winuser/nf-winuser-updatelayeredwindow), wie im Windows SDK beschrieben.
 
-##  <a name="updatewindow"></a>CWnd:: UpdateWindow
+##  <a name="cwndupdatewindow"></a><a name="updatewindow"></a>CWnd:: UpdateWindow
 
 Aktualisiert den Client Bereich, indem eine [WM_PAINT](/windows/win32/gdi/wm-paint) Meldung gesendet wird, wenn der Update Bereich nicht leer ist.
 
@@ -12279,7 +12279,7 @@ Aktualisiert den Client Bereich, indem eine [WM_PAINT](/windows/win32/gdi/wm-pai
 void UpdateWindow();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `UpdateWindow` Member-Funktion sendet direkt eine WM_PAINT Nachricht, wobei die Anwendungs Warteschlange umgangen wird. Wenn der Aktualisierungs Bereich leer ist, wird WM_PAINT nicht gesendet.
 
@@ -12287,7 +12287,7 @@ Die `UpdateWindow` Member-Funktion sendet direkt eine WM_PAINT Nachricht, wobei 
 
 [!code-cpp[NVC_MFCWindowing#124](../../mfc/reference/codesnippet/cpp/cwnd-class_65.cpp)]
 
-##  <a name="validaterect"></a>CWnd:: validaterierten
+##  <a name="cwndvalidaterect"></a><a name="validaterect"></a>CWnd:: validaterierten
 
 Überprüft den Client Bereich innerhalb des angegebenen Rechtecks, indem das Rechteck aus dem Aktualisierungs Bereich des Fensters entfernt wird.
 
@@ -12300,13 +12300,13 @@ void ValidateRect(LPCRECT lpRect);
 *lprect*<br/>
 Verweist auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , das Client Koordinaten des Rechtecks enthält, das aus dem Aktualisierungs Bereich entfernt werden soll. Wenn *lprect* den Wert NULL hat, wird das gesamte Fenster überprüft.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die [BeginPaint](#beginpaint) -Member-Funktion überprüft automatisch den gesamten Client Bereich. Weder der `ValidateRect` noch die [ValidateRgn](#validatergn) -Member-Funktion sollte aufgerufen werden, wenn ein Teil des Aktualisierungs Bereichs überprüft werden muss, bevor [WM_PAINT](/windows/win32/gdi/wm-paint) als nächstes generiert wird.
 
 Windows generiert weiterhin WM_PAINT Meldungen, bis der aktuelle Aktualisierungs Bereich überprüft wird.
 
-##  <a name="validatergn"></a>CWnd:: ValidateRgn
+##  <a name="cwndvalidatergn"></a><a name="validatergn"></a>CWnd:: ValidateRgn
 
 Überprüft den Client Bereich innerhalb der angegebenen Region, indem der Bereich aus dem aktuellen Aktualisierungs Bereich des Fensters entfernt wird.
 
@@ -12319,13 +12319,13 @@ void ValidateRgn(CRgn* pRgn);
 *PRGN*<br/>
 Ein Zeiger auf ein [crgn](../../mfc/reference/crgn-class.md) -Objekt, das einen Bereich identifiziert, der den Bereich definiert, der aus dem Aktualisierungs Bereich entfernt werden soll. Wenn dieser Parameter NULL ist, wird der gesamte Client Bereich entfernt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der angegebene Bereich muss zuvor von einer Regions Funktion erstellt worden sein. Die Regions Koordinaten werden als Client Koordinaten angenommen.
 
 Die [BeginPaint](#beginpaint) -Member-Funktion überprüft automatisch den gesamten Client Bereich. Weder die [validattory](#validaterect) -noch die `ValidateRgn` Member-Funktion sollte aufgerufen werden, wenn ein Teil des Aktualisierungs Bereichs überprüft werden muss, bevor die nächste [WM_PAINT](/windows/win32/gdi/wm-paint) Meldung generiert wird.
 
-##  <a name="windowfrompoint"></a>CWnd:: WindowFromPoint
+##  <a name="cwndwindowfrompoint"></a><a name="windowfrompoint"></a>CWnd:: WindowFromPoint
 
 Ruft das Fenster ab, das den angegebenen Punkt enthält. der *Punkt* muss die Bildschirm Koordinaten eines Punkts auf dem Bildschirm angeben.
 
@@ -12342,11 +12342,11 @@ Gibt ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt oder e
 
 Ein Zeiger auf das Fenster Objekt, in dem sich der Punkt befindet. Der Wert ist NULL, wenn am angegebenen Punkt kein Fenster vorhanden ist. Der zurückgegebene Zeiger kann temporär sein und sollte nicht für eine spätere Verwendung gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `WindowFromPoint` ruft kein ausgeblendetes oder deaktiviertes Fenster ab, auch wenn sich der Punkt innerhalb des Fensters befindet. Eine Anwendung sollte die [childwindowfrompoint](#childwindowfrompoint) -Member-Funktion für eine nicht restriktive Suche verwenden.
 
-##  <a name="windowproc"></a>CWnd:: WindowProc
+##  <a name="cwndwindowproc"></a><a name="windowproc"></a>CWnd:: WindowProc
 
 Stellt eine Windows-Prozedur (`WindowProc`) für ein `CWnd` Objekt bereit.
 
@@ -12359,7 +12359,7 @@ virtual LRESULT WindowProc(
 
 ### <a name="parameters"></a>Parameter
 
-*message*<br/>
+*Nachricht*<br/>
 Gibt die zu verarbeitende Windows-Meldung an.
 
 *wParam*<br/>
@@ -12372,11 +12372,11 @@ Stellt zusätzliche Informationen bereit, die beim Verarbeiten der Nachricht ver
 
 Der Rückgabewert hängt von der Nachricht ab.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Er sendet Nachrichten über die Meldungs Zuordnung des Fensters.
 
-##  <a name="winhelp"></a>CWnd:: WinHelp
+##  <a name="cwndwinhelp"></a><a name="winhelp"></a>CWnd:: WinHelp
 
 Wird aufgerufen, um die WinHelp-Anwendung zu initiieren.
 
@@ -12394,11 +12394,11 @@ Gibt zusätzliche Daten an. Der verwendete Wert hängt vom Wert des *ncmd* -Para
 *ncmd*<br/>
 Gibt den Typ der angeforderten Hilfe an. Eine Liste möglicher Werte und deren Auswirkung auf den *dwdata* -Parameter finden Sie in der Windows-Funktion [WinHelp](/windows/win32/api/winuser/nf-winuser-winhelpw) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CWinApp:: WinHelp](../../mfc/reference/cwinapp-class.md#winhelp) .
 
-##  <a name="registertouchwindow"></a>CWnd:: RegisterTouchWindow
+##  <a name="cwndregistertouchwindow"></a><a name="registertouchwindow"></a>CWnd:: RegisterTouchWindow
 
 Registriert oder hebt die Registrierung des Windows-Berührungs Supports auf.
 
@@ -12420,9 +12420,9 @@ Ein Satz von Bitflags, die optionale Änderungen angeben. Dieses Feld kann 0 ode
 
 TRUE, wenn erfolgreich; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="resizedynamiclayout"></a>CWnd:: resizedynamiclayout
+##  <a name="cwndresizedynamiclayout"></a><a name="resizedynamiclayout"></a>CWnd:: resizedynamiclayout
 
 Wird durch das Framework aufgerufen, wenn sich die Fenstergröße ändert, um das Layout der untergeordneten Fenster anzupassen, wenn das dynamische Layout für das Fenster aktiviert ist.
 
@@ -12430,9 +12430,9 @@ Wird durch das Framework aufgerufen, wenn sich die Fenstergröße ändert, um da
 virtual void ResizeDynamicLayout();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

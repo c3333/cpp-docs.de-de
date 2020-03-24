@@ -9,23 +9,23 @@ helpviewer_keywords:
 - databases [C++], connecting to
 - ODBC connections [C++], databases
 ms.assetid: f41a67c7-168d-4657-9999-257535e44c87
-ms.openlocfilehash: 3dc6706f945a5a7b0aa21c9ced8017d0a9905fb1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 29626d9ce98ac5bcd3889ee9417298ddfe3d7f1d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62329763"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212484"
 ---
 # <a name="work-with-odbc-database-connections"></a>Arbeiten mit ODBC-Datenbankverbindungen
 
-In den folgenden Themen wird erläutert, wie ODBC-Datenquellen herstellen.
+In den folgenden Themen wird erläutert, wie Sie eine Verbindung mit ODBC-Datenquellen herstellen.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
 - [Verwalten von ODBC-Datenbankverbindungen](../../data/odbc/data-source-managing-connections-odbc.md)
 
-- [Programmgesteuertes Konfigurieren einer ODBC-Datenquelle](../../data/odbc/data-source-programmatically-configuring-an-odbc-data-source.md)
+- [Programm gesteuertes Konfigurieren einer ODBC-Datenquelle](../../data/odbc/data-source-programmatically-configuring-an-odbc-data-source.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)

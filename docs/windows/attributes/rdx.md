@@ -1,17 +1,17 @@
 ---
-title: RDX (C++-COM-Attribut)
+title: RDX (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.rdx
 helpviewer_keywords:
 - rdx attribute
 ms.assetid: ff8e4312-c1ad-4934-bdaa-86f54409651e
-ms.openlocfilehash: 2790c3de01d21242daee73fc442ad22d88739355
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f0140b759b1d78eb1284213a0dc47d9600b2a83b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407496"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214629"
 ---
 # <a name="rdx"></a>rdx
 
@@ -26,36 +26,36 @@ Erstellt einen Registrierungsschlüssel oder ändert einen vorhandenen Registrie
 ### <a name="parameters"></a>Parameter
 
 *key*<br/>
-Der Name des Schlüssels erstellt oder geöffnet werden.
+Der Name des zu erstellenden oder zu öffnenden Schlüssels.
 
-*valuename*<br/>
-(Optional) Gibt das Wertfeld "festgelegt werden. Wenn ein Wertfeld mit diesem Namen im Schlüssel nicht bereits vorhanden ist, wird sie hinzugefügt.
+*valueName*<br/>
+Optionale Gibt das Wertfeld an, das festgelegt werden soll. Wenn ein Wertfeld mit diesem Namen nicht bereits im Schlüssel vorhanden ist, wird es hinzugefügt.
 
-*regtype*<br/>
-Der Typ des Registrierungsschlüssels, der hinzugefügt wird. Kann einen der folgenden sein: `text`, `dword`, `binary`, oder `CString`.
+*regyp*<br/>
+Der Typ des Registrierungsschlüssels, der hinzugefügt wird. Kann eines der folgenden sein: `text`, `dword`, `binary`oder `CString`.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Rdx** C++-Attribut erstellt oder ändert einen vorhandenen Registrierungsschlüssel für eine COM-Komponente. Das Attribut wird das Objekt, das den Zielmember implementiert ein Makro BEGIN_RDX_MAP hinzugefügt. `RegistryDataExchange`, eine Funktion, die durch das Makro BEGIN_RDX_MAP eingefügt dienen zum Übertragen von Daten zwischen der Registrierung und die Datenelemente
+Das **RDX** C++ -Attribut erstellt oder ändert einen vorhandenen Registrierungsschlüssel für eine COM-Komponente. Das-Attribut fügt dem-Objekt, das den Zielmember implementiert, ein BEGIN_RDX_MAP-Makro hinzu. `RegistryDataExchange`kann eine Funktion, die als Ergebnis des BEGIN_RDX_MAP-Makros eingefügt wurde, zum Übertragen von Daten zwischen der Registrierung und den Datenmembern verwendet werden.
 
-Dieses Attribut kann verwendet werden, in Verbindung mit der [Co-Klasse](coclass.md), [progid](progid.md), oder [Vi_progid](vi-progid.md) Attribute oder andere Attribute, die eines der genannten impliziert.
+Dieses Attribut kann in Verbindung mit den Attributen [Co-Klasse](coclass.md), [ProgID](progid.md)oder [Vi_progid](vi-progid.md) oder anderen Attributen verwendet werden, die eines dieser Attribute impliziert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**Klasse** oder **Struktur** Member|
+|**Betrifft**|**Class** -oder **struct** -Member|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code Fügt einen Registrierungsschlüssel namens MyValue an das System die CMyClass COM-Komponente beschreiben.
+Der folgende Code fügt dem System einen Registrierungsschlüssel namens "myValue" hinzu, der die COM-Komponente "CMyClass" beschreibt.
 
 ```cpp
 // cpp_attr_ref_rdx.cpp
@@ -76,7 +76,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COM-Attribute](com-attributes.md)<br/>
 [registration_script](registration-script.md)

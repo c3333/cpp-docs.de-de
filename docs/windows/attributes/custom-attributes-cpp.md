@@ -5,24 +5,24 @@ helpviewer_keywords:
 - custom attributes
 - custom attributes, defining
 ms.assetid: af9998a5-aa12-4b94-9a43-97ce99026e29
-ms.openlocfilehash: fbb1c629f23c5d70a78d62db2a3634cbfc489967
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7053917ebb3cebfe298e9d89f28e357dc7fdbd83
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62148210"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214902"
 ---
 # <a name="custom-attributes-c"></a>Benutzerdefinierte Attribute (C++)
 
-Ein benutzerdefiniertes Attribut ist eine stark typisierte Technik, die dem Benutzer ermöglicht, die Metadaten zu erweitern. In diesem Thema befasst sich mit der Verwendung von Attributen: Angeben von Parametern und Ziele.
+Ein benutzerdefiniertes Attribut ist eine stark typisierte Technik, mit der der Benutzer Metadaten erweitern kann. In diesem Thema wird die Verwendung von Attributen behandelt: Angeben von Parametern und Zielen.
 
-Informationen zum Definieren des neuen benutzerdefinierten Attribute anzuzeigen,
+Weitere Informationen zum Definieren neuer benutzerdefinierter Attribute finden Sie unter.
 
 - [Benutzerdefinierte Attribute](../../extensions/user-defined-attributes-cpp-component-extensions.md)
 
-- [Attribut](attribute.md) (veraltete Syntax).
+- [Attribute](attribute.md) (als veraltet markierte Syntax).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Attribut](attribute.md)<br/>
+[attribute](attribute.md)<br/>
 [Benutzerdefinierte Attribute (C++)](custom-attributes-cpp.md)

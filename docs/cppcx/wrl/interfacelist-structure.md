@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - InterfaceList structure
 ms.assetid: 6ec3228d-eb3e-4b7e-aef1-7dcf17bdf61a
-ms.openlocfilehash: 745348e81888b5a87c57fbb99d397fcd423c3ee1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7fd06f71bc4d8097366dc0e87d7ff92c5a12a790
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398211"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213862"
 ---
 # <a name="interfacelist-structure"></a>InterfaceList-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -28,34 +28,34 @@ struct InterfaceList;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Schnittstellenname einer; die erste Schnittstelle in der Liste rekursiv.
+Ein Schnittstellen Name; die erste Schnittstelle in der rekursiven Liste.
 
 *U*<br/>
-Der Schnittstellenname einer; die verbleibenden Schnittstellen in der Liste rekursiv.
+Ein Schnittstellen Name; die verbleibenden Schnittstellen in der rekursiven Liste.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Verwendet, um eine rekursive Liste von Schnittstellen erstellen.
+Wird verwendet, um eine rekursive Liste von Schnittstellen zu erstellen.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`FirstT`|Synonym für den Vorlagenparameter *T*.|
-|`RestT`|Synonym für den Vorlagenparameter *U*.|
+|`FirstT`|Synonym für den Vorlagen Parameter *T*.|
+|`RestT`|Synonym für den Vorlagen Parameter *U*.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `InterfaceList`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

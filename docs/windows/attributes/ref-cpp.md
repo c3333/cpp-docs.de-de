@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - ref attribute
 ms.assetid: 67e82d3e-07d9-4ef8-bf2b-0a4491d12557
-ms.openlocfilehash: e7dd927f385b039f1909a4bdf1998ea5a0b39264
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: bfb5cc8c785c7f62f29488a9379c2c7ed229cad8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514116"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214590"
 ---
 # <a name="ref-c"></a>ref (C++)
 
@@ -23,7 +23,7 @@ Bezeichnet einen Verweis Zeiger.
 [ref]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **ref** C++ -Attribut verfügt über die gleiche Funktionalität [wie das-](/windows/win32/Midl/ref) Attribut des Verweis-Attributs.
 
@@ -43,7 +43,7 @@ __interface IFireTabCtrl
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -51,12 +51,12 @@ __interface IFireTabCtrl
 |-|-|
 |**Betrifft**|**typedef**, Schnittstellenparameter, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

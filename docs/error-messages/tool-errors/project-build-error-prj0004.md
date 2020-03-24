@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0004
 ms.assetid: 1858769f-0be4-40ed-ab70-2cee550488c7
-ms.openlocfilehash: ad11e5b81ec31e1ac8a47a0a0ffa31a443f1a107
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 66fccc0d5095373d44b823334402f3188dd1777e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359760"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192912"
 ---
 # <a name="project-build-error-prj0004"></a>Projektbuildfehler PRJ0004
 
-> Konnte nicht generiert werden Befehlszeile für die '*Tool*"Tool.
+> Die Befehlszeile für*das Tool Tool*konnte nicht generiert werden.
 
-Eine oder mehrere Eigenschaften wurden angegeben, so dass die Syntax des Aufrufs von *Tool* unzulässig:
+Mindestens eine Eigenschaft wurde so angegeben, dass die Syntax des " *Tool* "-Aufrufes nicht zulässig ist:
 
-- Sie können nicht wohlgeformter oder unbekannte Makros angegeben haben.
+- Sie haben möglicherweise falsch formatierte oder unbekannte Makros angegeben.
 
-- Der Computer möglicherweise Speicherplatz auf dem frei Datenträger mit niedriger.
+- Der freie Speicherplatz auf dem Computer ist möglicherweise nicht ausreichend.
 
-Sie möchten die Einstellungen für das Tool zu überprüfen, anhand der [Eigenschaftenseite Befehlszeile](../../build/reference/command-line-property-pages.md).
+Sie können die Einstellungen für das Tool überprüfen, indem Sie die [Eigenschaften Seite Befehlszeile](../../build/reference/command-line-property-pages.md)ansehen.

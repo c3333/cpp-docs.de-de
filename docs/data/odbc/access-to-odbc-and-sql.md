@@ -9,21 +9,21 @@ helpviewer_keywords:
 - SQL [C++], calling ODBC API functions
 - ODBC [C++], API functions
 ms.assetid: 5613d7dc-00b7-4646-99ae-1116c05c52b4
-ms.openlocfilehash: 7a539d911bbf4f4d9582da0ebedaeffaa0d8fa7b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0b590ce9309cbbe95285001cc5befe70a1d1961f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396001"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213329"
 ---
 # <a name="access-to-odbc-and-sql"></a>Zugreifen auf ODBC und SQL
 
-Die Microsoft Foundation Class Library kapselt viele Windows-API-Aufrufe und weiterhin können Sie alle Windows-API-Funktion nicht direkt aufrufen. Die Datenbankklassen bieten Ihnen die gleiche Flexibilität im Hinblick auf die ODBC-API. Während der Großteil der Komplexität der ODBC-Datenbankklassen, können Sie die ODBC-API-Funktionen aufrufen, direkt von überall in Ihrem Programm.
+Der Microsoft Foundation Class-Bibliothek kapselt viele Windows-API-Aufrufe ein und ermöglicht es Ihnen weiterhin, jede Windows-API-Funktion direkt aufzurufen. Die Datenbankklassen bieten Ihnen die gleiche Flexibilität in Bezug auf die ODBC-API. Obwohl die Datenbankklassen von vielen der Komplexität von ODBC geschützt werden, können Sie ODBC-API-Funktionen direkt von jedem beliebigen Ort in Ihrem Programm aus aufrufen.
 
-Auf ähnliche Weise die Datenbankklassen Sie weitgehend mit [SQL](../../data/odbc/sql.md), aber Sie können SQL direkt verwenden, wenn Sie möchten. Sie können die Recordset-Objekte anpassen, indem Sie übergeben eine benutzerdefinierte SQL­Anweisung (oder Einstellung Teile der Default-Anweisung) beim Öffnen des Recordsets. Sie können auch direkt mit SQL-Aufrufe, die [ExecuteSQL](../../mfc/reference/cdatabase-class.md#executesql) Memberfunktion der Klasse [CDatabase](../../mfc/reference/cdatabase-class.md).
+Entsprechend können Sie mithilfe der Datenbankklassen nicht viel mit [SQL](../../data/odbc/sql.md)arbeiten, aber Sie können SQL direkt verwenden, wenn Sie möchten. Sie können Recordset-Objekte anpassen, indem Sie eine benutzerdefinierte SQL-Anweisung übergeben (oder Teile der default-Anweisung festlegen), wenn Sie das Recordset öffnen. Sie können SQL-Aufrufe auch direkt mithilfe der [ExecuteSQL](../../mfc/reference/cdatabase-class.md#executesql) -Member-Funktion der [CDatabase](../../mfc/reference/cdatabase-class.md)-Klasse ausführen.
 
-Weitere Informationen finden Sie unter [ODBC: Aufrufen von ODBC-API-Funktionen direkt](../../data/odbc/odbc-calling-odbc-api-functions-directly.md) und [SQL: Durchführen direkter SQL-Aufrufe (ODBC)](../../data/odbc/sql-making-direct-sql-calls-odbc.md).
+Weitere Informationen finden Sie unter [ODBC: direktes Aufrufen von ODBC-API-Funktionen](../../data/odbc/odbc-calling-odbc-api-functions-directly.md) und [SQL: Durchführen direkter SQL-Aufrufe (ODBC)](../../data/odbc/sql-making-direct-sql-calls-odbc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ODBC und MFC](../../data/odbc/odbc-and-mfc.md)

@@ -1,21 +1,21 @@
 ---
-title: Includelib (C++-COM-Attribut)
+title: Includelib (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.includelib
 helpviewer_keywords:
 - includelib attribute
 ms.assetid: cd90ea6e-5ae8-4f11-b8d1-662db95412b2
-ms.openlocfilehash: 57f039eeae527dd03884b12e7d9eb424d87f597f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4022a3f1f2d4ccaabe65c24065be8e1c846d604d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409355"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214843"
 ---
 # <a name="includelib-c"></a>includelib (C++)
 
-Bewirkt, dass eine IDL- oder h-Datei, die in der generierten IDL-Datei eingeschlossen werden.
+Bewirkt, dass eine IDL-oder h-Datei in der generierten IDL-Datei enthalten ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,16 +25,16 @@ Bewirkt, dass eine IDL- oder h-Datei, die in der generierten IDL-Datei eingeschl
 
 ### <a name="parameters"></a>Parameter
 
-*name.idl*<br/>
-Der Name der IDL-Datei, die als Teil der generierten IDL-Datei enthalten sein sollen.
+*Name. idl*<br/>
+Der Name der IDL-Datei, die als Teil der generierten IDL-Datei enthalten sein soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Includelib** C++-Attribut bewirkt, dass eine IDL- oder h-Datei in der generierten IDL-Datei eingeschlossen werden, nach der `importlib` Anweisung.
+Das **Includelib** C++ -Attribut bewirkt, dass eine IDL-oder h-Datei in der generierten IDL-Datei nach der `importlib`-Anweisung eingeschlossen wird.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code wird in einer CPP-Datei dargestellt:
+Der folgende Code wird in einer CPP-Datei angezeigt:
 
 ```cpp
 // cpp_attr_ref_includelib.cpp
@@ -43,7 +43,7 @@ Der folgende Code wird in einer CPP-Datei dargestellt:
 [includelib("includelib.idl")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -51,12 +51,12 @@ Der folgende Code wird in einer CPP-Datei dargestellt:
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Ja|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>

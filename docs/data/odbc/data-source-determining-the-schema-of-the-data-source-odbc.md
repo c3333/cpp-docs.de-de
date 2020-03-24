@@ -6,20 +6,20 @@ helpviewer_keywords:
 - schemas [C++], data sources
 - data sources [C++], determining schema
 ms.assetid: 17284acb-eb10-4f27-9944-ad1d973c0b05
-ms.openlocfilehash: c419a3ac2d870e6a85675492ee6c9b726427a0e9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 60ed77ec8870ba80832d4f8c73a8362062dc9c2a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395975"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213316"
 ---
 # <a name="data-source-determining-the-schema-of-the-data-source-odbc"></a>Datenquelle: Bestimmen des Schemas der Datenquelle (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-Zum Einrichten der Datenmember in Ihrem `CRecordset` -Objekte, müssen Sie wissen, das Schema der Datenquelle, dem Sie eine Verbindung herstellen. Bestimmen des Schemas für die Datenquelle umfasst das Abrufen einer Liste der Tabellen in der Datenquelle, die eine Liste der Spalten in jeder Tabelle, die den Datentyp jeder Spalte und das Vorhandensein von Indizes.
+Zum Einrichten von Datenmembern in ihren `CRecordset` Objekten müssen Sie das Schema der Datenquelle kennen, mit der Sie eine Verbindung herstellen. Das Bestimmen des Schemas einer Datenquelle umfasst das Abrufen einer Liste der Tabellen in der Datenquelle, eine Liste der Spalten in jeder Tabelle, den Datentyp der einzelnen Spalten und das vorhanden sein von Indizes.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenquelle (ODBC)](../../data/odbc/data-source-odbc.md)<br/>
 [Datenquelle: Verwalten von Verbindungen (ODBC)](../../data/odbc/data-source-managing-connections-odbc.md)

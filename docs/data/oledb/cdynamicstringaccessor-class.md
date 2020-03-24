@@ -12,16 +12,16 @@ helpviewer_keywords:
 - GetString method
 - SetString method
 ms.assetid: 138dc4de-c7c3-478c-863e-431e48249027
-ms.openlocfilehash: 6ba56143beb3411734899839a46ab42992dfa4d8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a0590bc015c5487315b8cbd38f0baf91eb3082cc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230994"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211864"
 ---
 # <a name="cdynamicstringaccessor-class"></a>CDynamicStringAccessor-Klasse
 
-Können Sie eine Datenquelle zugreifen, wenn Sie keine Kenntnisse über das Datenbankschema (die zugrunde liegende Struktur) verfügen.
+Ermöglicht den Zugriff auf eine Datenquelle, wenn Sie das Datenbankschema (die zugrunde liegende Struktur der Datenbank) nicht kennen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,34 +30,34 @@ template< typename BaseType, DBTYPEENUM OleDbType >
 class CDynamicStringAccessorT : public CDynamicAccessor
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header**: atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
-|[GetString](#getstring)|Ruft die Daten der angegebenen Spalte als Zeichenfolge ab.|
-|[SetString](#setstring)|Legt die angegebene Spalte als Zeichenfolge fest.|
+|[GetString](#getstring)|Ruft die angegebenen Spaltendaten als Zeichenfolge ab.|
+|[SetString](#setstring)|Legt die angegebenen Spaltendaten als Zeichenfolge fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Während [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) fordert Daten in das systemeigene Format, die vom Anbieter gemeldeten `CDynamicStringAccessor` angefordert wird, dass der Anbieter alle Daten aus dem Datenspeicher als Zeichenfolgedaten abruft. Dies ist besonders nützlich für einfache Aufgaben, die Berechnung der Werte in den Datenspeicher, z. B. anzeigen oder drucken den Data Store Inhalt nicht benötigen.
+Während [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) Daten im vom Anbieter gemeldeten systemeigenen Format anfordert, `CDynamicStringAccessor` Anforderungen, dass der Anbieter alle Daten, auf die aus dem Datenspeicher zugegriffen wird, als Zeichen folgen Daten abruft. Dies ist besonders nützlich für einfache Aufgaben, bei denen keine Berechnung von Werten im Datenspeicher erforderlich ist, z. b. das Anzeigen oder Drucken der Inhalte des Daten Stores.
 
-Der systemeigene Typ des Daten der Spalte im Datenspeicher spielt keine Rolle. solange der Anbieter die Datenkonvertierung unterstützen kann, wird er die Daten in einem Format bereitstellen. Wenn der Anbieter die Konvertierung aus dem systemeigenen Datentyp in eine Zeichenfolge nicht unterstützt (die nicht üblich ist), der anfordernde Aufruf zurück, der Erfolgswert DB_S_ERRORSOCCURED und der Status für die entsprechende Spalte gibt ein Problem Konvertierung mit DBSTATUS_E_CANTCONVERTVALUE.
+Der systemeigene Typ der Spaltendaten im Datenspeicher spielt keine Rolle. solange der Anbieter die Datenkonvertierung unterstützen kann, werden die Daten im Zeichen folgen Format bereitgestellt. Wenn der Anbieter die Konvertierung des systemeigenen Datentyps in eine Zeichenfolge nicht unterstützt (was nicht häufig der Fall ist), gibt der anfordernde-Befehl den Success-Wert DB_S_ERRORSOCCURED zurück, und der Status der entsprechenden Spalte weist auf ein Konvertierungs Problem mit DBSTATUS_E_CANTCONVERTVALUE.
 
-Verwendung `CDynamicStringAccessor` Methoden zum Abrufen der Spalteninformationen. Sie können diese Spalteninformationen verwenden, um einen Accessor dynamisch zur Laufzeit zu erstellen.
+Verwenden Sie `CDynamicStringAccessor` Methoden, um Spalten Informationen zu erhalten. Mit diesen Spalten Informationen können Sie einen Accessor dynamisch zur Laufzeit erstellen.
 
-Die Spalteninformationen befindet sich in einem Puffer, die von dieser Klasse erstellt und verwaltet. Abrufen von Daten aus dem Puffer mithilfe [GetString](../../data/oledb/cdynamicstringaccessor-getstring.md), oder das Speichern in den Puffer mit [SetString](../../data/oledb/cdynamicstringaccessor-setstring.md).
+Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Rufen Sie mithilfe von [GetString](../../data/oledb/cdynamicstringaccessor-getstring.md)Daten aus dem Puffer ab, oder speichern Sie Sie mithilfe von [SetString](../../data/oledb/cdynamicstringaccessor-setstring.md)im Puffer.
 
-Ausführliche Informationen und Beispiele für die Verwendung der dynamischen Accessorklassen, finden Sie unter [mithilfe von dynamischen Zugriffsmethoden](../../data/oledb/using-dynamic-accessors.md).
+Eine Erläuterung und Beispiele für die Verwendung der dynamischen [Accessorklassen finden Sie unter Verwenden dynamischer Accessoren](../../data/oledb/using-dynamic-accessors.md).
 
-## <a name="getstring"></a> CDynamicStringAccessor::GetString
+## <a name="cdynamicstringaccessorgetstring"></a><a name="getstring"></a>CDynamicStringAccessor:: GetString
 
-Ruft die Daten der angegebenen Spalte als Zeichenfolge ab.
+Ruft die angegebenen Spaltendaten als Zeichenfolge ab.
 
 ### <a name="syntax"></a>Syntax
 
@@ -71,23 +71,23 @@ BaseType* GetString(const WCHAR* pColumnName) const throw();
 
 #### <a name="parameters"></a>Parameter
 
-*nColumn*<br/>
-[in] Die Nummer der Spalte. Spaltennummern beginnen bei 1. Ein Wert von 0 verweist auf die Lesezeichenspalte, sofern vorhanden.
+*ncolumn*<br/>
+in Die Spaltennummer. Die Spalten Nummern beginnen mit 1. Der Wert 0 verweist ggf. auf die Lesezeichen Spalte.
 
-*pColumnName*<br/>
-[in] Ein Zeiger auf eine Zeichenfolge, die den Namen der Spalte enthält.
+*pcolumnname*<br/>
+in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Zeichenfolgenwert fest, die aus der angegebenen Spalte abgerufen werden. Der Wert ist vom Typ `BaseType`, der **CHAR** oder **WCHAR** je nachdem, ob _UNICODE oder nicht definiert ist. Gibt NULL zurück, wenn die angegebene Spalte nicht gefunden wird.
+Ein Zeiger auf den Zeichen folgen Wert, der aus der angegebenen Spalte abgerufen wird. Der Wert ist vom Typ `BaseType`, der **char** oder **WCHAR** ist, je nachdem, ob _UNICODE definiert ist oder nicht. Gibt NULL zurück, wenn die angegebene Spalte nicht gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zweite außer Kraft setzen Form akzeptiert den Namen der Spalte als eine ANSI-Zeichenfolge an. Die dritte außer Kraft setzen Form akzeptiert den Namen der Spalte als Unicode-Zeichenfolge an.
+Das zweite Überschreibungs Formular nimmt den Spaltennamen als ANSI-Zeichenfolge an. Das dritte Überschreibungs Formular nimmt den Spaltennamen als Unicode-Zeichenfolge an.
 
-## <a name="setstring"></a> CDynamicStringAccessor::SetString
+## <a name="cdynamicstringaccessorsetstring"></a><a name="setstring"></a>CDynamicStringAccessor:: SetString
 
-Legt die angegebene Spalte als Zeichenfolge fest.
+Legt die angegebenen Spaltendaten als Zeichenfolge fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -104,26 +104,26 @@ HRESULT SetString(const WCHAR* pColumnName,
 
 #### <a name="parameters"></a>Parameter
 
-*nColumn*<br/>
-[in] Die Nummer der Spalte. Spaltennummern beginnen bei 1. Der spezielle Wert 0 verweist auf die Lesezeichenspalte, sofern vorhanden.
+*ncolumn*<br/>
+in Die Spaltennummer. Die Spalten Nummern beginnen mit 1. Der besondere Wert 0 bezieht sich auf die Lesezeichen Spalte, falls vorhanden.
 
-*pColumnName*<br/>
-[in] Ein Zeiger auf eine Zeichenfolge, die den Namen der Spalte enthält.
+*pcolumnname*<br/>
+in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.
 
 *data*<br/>
-[in] Ein Zeiger auf die Daten der Zeichenfolge, an die angegebene Spalte geschrieben werden soll.
+in Ein Zeiger auf die Zeichen folgen Daten, die in die angegebene Spalte geschrieben werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Zeichenfolgenwert fest, auf die angegebene Spalte festgelegt werden soll. Der Wert ist vom Typ `BaseType`, der **CHAR** oder **WCHAR** je nachdem, ob _UNICODE oder nicht definiert ist.
+Ein Zeiger auf den Zeichen folgen Wert, auf den die angegebene Spalte festgelegt werden soll. Der Wert ist vom Typ `BaseType`, der **char** oder **WCHAR** ist, je nachdem, ob _UNICODE definiert ist oder nicht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das zweite überschreiben Form akzeptiert den Spaltennamen als ANSI-Zeichenfolge und das dritte überschreiben Form akzeptiert den Spaltennamen als Unicode-Zeichenfolge.
+Das zweite Überschreibungs Formular übernimmt den Spaltennamen als ANSI-Zeichenfolge, und das dritte Überschreibungs Formular nimmt den Spaltennamen als Unicode-Zeichenfolge an.
 
-Wenn _SECURE_ATL definiert ist, um einen Wert ungleich NULL haben, wird ein Laufzeitfehler für die Assertion generiert, wenn die Eingabe *Daten* Zeichenfolge ist länger als die maximal zulässige Länge der Spalte auf den verwiesen wird. Andernfalls wird die Eingabezeichenfolge abgeschnitten, wenn er länger als die maximal zulässige Länge ist.
+Wenn _SECURE_ATL für einen Wert ungleich 0 (null) definiert ist, wird ein Lauf zeitassertionsfehler generiert, wenn die Eingabe *Daten* Zeichenfolge länger als die maximal zulässige Länge der Datenspalte ist, auf die verwiesen wird. Andernfalls wird die Eingabe Zeichenfolge abgeschnitten, wenn Sie länger als die maximal zulässige Länge ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

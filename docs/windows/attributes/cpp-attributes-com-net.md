@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - attributes [C++/CLI], reference topics
 ms.assetid: 613a3611-b3eb-4347-aa38-99b654600e1c
-ms.openlocfilehash: 4885edf57988d5f83b56ba6a71da85877354d3ce
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 734d82a30df3e143a6f47cb1b3eca2cd778830bd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426678"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214928"
 ---
 # <a name="c-attributes-for-com-and-net"></a>C++-Attribute für COM und .NET
 
@@ -78,7 +78,7 @@ Einige Projekte enthalten mehrere unabhängige IDL-Dateien. Diese werden verwend
 
 Außerdem gibt der visuelle C++ Linker alle IDL-bezogenen Attributinformationen in eine einzelne Mittel l-Datei aus. Es gibt keine Möglichkeit, zwei Typbibliotheken aus einem einzelnen Projekt zu generieren.
 
-## <a name="contexts"></a>Attribut Kontexte
+## <a name="attribute-contexts"></a><a name="contexts"></a>Attribut Kontexte
 
 C++Attribute können über vier grundlegende Felder beschrieben werden: das Ziel, auf das Sie angewendet werden können (**gilt für**), wenn Sie wiederholbar sind oder nicht (**wiederholbar**), das erforderliche vorhanden sein weiterer Attribute (**erforderliche Attribute**) und Inkompatibilitäten mit anderen Attributen (**ungültige Attribute**). Diese Felder sind in einer begleitenden Tabelle im Referenz Thema jedes Attributs aufgelistet. Jedes dieser Felder wird unten beschrieben.
 
@@ -92,7 +92,7 @@ Weitere Informationen finden Sie unter [Attribute by Usage (Attribute nach Verwe
 
 Dieses Feld gibt an, ob das Attribut wiederholt auf dasselbe Ziel angewendet werden kann. Die meisten Attribute sind nicht wiederholbar.
 
-### <a name="required-attributes"></a>Erforderliche Attribute
+### <a name="required-attributes"></a>Erforderliche Attribute.
 
 In diesem Feld werden andere Attribute aufgelistet, die vorhanden sein müssen (d. h. auf dasselbe Ziel angewendet), damit das angegebene Attribut ordnungsgemäß funktioniert. Es ist nicht üblich, dass für ein Attribut Einträge für dieses Feld vorhanden sind.
 

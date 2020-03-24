@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - odl attribute
 ms.assetid: 75dcb314-b50f-4a63-9180-507ac1bc78f3
-ms.openlocfilehash: a4ae1aa7f27348e37c565b35e3dc0b2b1011c9cb
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 2627be876f0c46bb7d72c2c6b825cf76e24b1eb1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514318"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214733"
 ---
 # <a name="odl"></a>odl
 
@@ -23,7 +23,7 @@ Identifiziert eine Schnittstelle als Object Description Language (ODL)-Schnittst
 [odl]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **ODL** C++ -Attribut verfügt über die gleiche Funktionalität wie das [ODL](/windows/win32/Midl/odl) -Attribut "Mittel l".
 
@@ -49,7 +49,7 @@ public:
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -57,12 +57,12 @@ public:
 |-|-|
 |**Betrifft**|**interface**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)

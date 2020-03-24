@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1103
 ms.assetid: c8e9bc54-6a71-471c-899e-6f98122ee3c4
-ms.openlocfilehash: 1dc70044113e06b4a19e1bbe1a054c944761214b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 668b354750171daefe0713d32f84f835134f93c7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255404"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195382"
 ---
 # <a name="linker-tools-error-lnk1103"></a>Linkertoolfehler LNK1103
 
-Debuginformationen beschädigt; Kompilieren Sie Modul erneut
+Debuginformationen beschädigt; neukompilierungs Modul
 
-Dieser Fehler kann verursacht werden, da die Kompilierung beendet wurde, bevor Sie eine gültige Objekt-Datei erstellt wurde.
+Dieser Fehler kann darauf zurückzuführen sein, dass die Kompilierung vor dem Erstellen einer gültigen Objektdatei beendet wurde.
 
-Kompilieren Sie erneut die angegebene Objektdatei. Wenn das Problem durch Erneutes Kompilieren nicht behoben wird, notieren Sie die Umstände des Fehlers, versuchen Sie es, um das Problem zu isolieren und einen reproduzierbaren Testfall zu erstellen. Klicken Sie dann finden Sie in der Hilfedatei für technischen Support oder im technischen Support-Abschnitt eines Ihrer Handbücher.
+Kompilieren Sie die angegebene Objektdatei erneut. Wenn das Problem durch erneutes Kompilieren nicht behoben werden kann, notieren Sie die Umstände des Fehlers, versuchen Sie, das Problem zu isolieren, und erstellen Sie einen reproduzierbaren Testfall. Informieren Sie sich dann in der Hilfedatei des technischen Supports oder im Abschnitt "technischer Support" in einem ihrer Handbücher.

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - unique attribute
 ms.assetid: abd7ed14-5ae7-44a8-8333-0058e9c92b2f
-ms.openlocfilehash: 91e563ed121ba09e0c2ca2660f30c75956232ea0
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: d8c01e2fcee6b906b7f70370a0d539192e348104
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514902"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214434"
 ---
 # <a name="unique-c"></a>unique (C++)
 
@@ -23,7 +23,7 @@ Gibt einen eindeutigen Zeiger an.
 [unique]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **Unique** C++ -Attribut verfügt über die gleiche Funktionalität wie das [eindeutige](/windows/win32/Midl/unique) Mittel l-Attribut.
 
@@ -31,7 +31,7 @@ Das **Unique** C++ -Attribut verfügt über die gleiche Funktionalität wie das 
 
 Ein Beispiel [für die Verwendung](ref-cpp.md) von **Unique**finden Sie im Referenzbeispiel.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -39,12 +39,12 @@ Ein Beispiel [für die Verwendung](ref-cpp.md) von **Unique**finden Sie im Refer
 |-|-|
 |**Betrifft**|**typedef**, **struct**, **Union**, Interface Parameter, Interface Method|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

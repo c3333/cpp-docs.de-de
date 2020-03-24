@@ -61,12 +61,12 @@ helpviewer_keywords:
 - operator CSession*
 - CSession* operator
 ms.assetid: 77432d85-4e20-49ec-a0b0-142137828471
-ms.openlocfilehash: e966ce8d0f8b277c0edde2b0b9b345a11c6a964c
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 385445081f84f65ff7030466a238a5a96abd63be
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545654"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212061"
 ---
 # <a name="cdataconnection-class"></a>CDataConnection-Klasse
 
@@ -78,11 +78,11 @@ Verwaltet die Verbindung mit der Datenquelle.
 class CDataConnection
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -104,7 +104,7 @@ class CDataConnection
 |[Operator CSession-&](#op_csession_amp)|Gibt einen Verweis auf das enthaltene `CSession`-Objekt zurück.|
 |[Operator CSession *](#op_csession_star)|Gibt einen Zeiger auf das enthaltene `CSession`-Objekt zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `CDataConnection` ist eine nützliche Klasse zum Erstellen von Clients, da Sie erforderliche Objekte (Datenquelle und Sitzung) kapselt und einige der Aufgaben, die Sie beim Herstellen einer Verbindung mit einer Datenquelle ausführen müssen.
 
@@ -131,7 +131,7 @@ CDataConnection(const CDataConnection &ds);
 *DS*<br/>
 in Ein Verweis auf eine vorhandene Datenverbindung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beim ersten überschreiben wird ein neues `CDataConnection`-Objekt mit Standardeinstellungen erstellt.
 
@@ -186,7 +186,7 @@ HRESULT OpenNewSession(CSession & session) throw();
 *Sitzung*<br/>
 [in/out] Ein Verweis auf das neue Session-Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die neue Sitzung verwendet das enthaltene Datenquellen Objekt des aktuellen Verbindungs Objekts als übergeordnetes Element und kann auf alle Informationen zugreifen, die von der Datenquelle verwendet werden.
 
@@ -204,7 +204,7 @@ Bestimmt, ob die aktuelle Sitzung geöffnet ist.
 operator BOOL() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt einen **booleschen** Wert (MFC-typedef) zurück. " **True** " bedeutet, dass die aktuelle Sitzung geöffnet ist. **False** bedeutet, dass die aktuelle Sitzung geschlossen wird.
 
@@ -218,7 +218,7 @@ Bestimmt, ob die aktuelle Sitzung geöffnet ist.
 operator bool() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt einen **booleschen** Wert (C++ Datentyp) zurück. " **true** " bedeutet, dass die aktuelle Sitzung geöffnet ist. **false** bedeutet, dass die aktuelle Sitzung geschlossen wird.
 
@@ -232,7 +232,7 @@ Gibt einen Verweis auf das enthaltene `CDataSource`-Objekt zurück.
 operator const CDataSource&() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator gibt einen Verweis auf das enthaltene `CDataSource` Objekt zurück und ermöglicht es Ihnen, ein `CDataConnection` Objekt zu übergeben, in dem ein `CDataSource` Verweis erwartet wird.
 
@@ -254,7 +254,7 @@ Gibt einen Zeiger auf das enthaltene `CDataSource`-Objekt zurück.
 operator const CDataSource*() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator gibt einen Zeiger auf das enthaltene `CDataSource` Objekt zurück und ermöglicht es Ihnen, ein `CDataConnection` Objekt zu übergeben, in dem ein `CDataSource` Zeiger erwartet wird.
 
@@ -270,7 +270,7 @@ Gibt einen Verweis auf das enthaltene `CSession`-Objekt zurück.
 operator const CSession&();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator gibt einen Verweis auf das enthaltene `CSession` Objekt zurück und ermöglicht es Ihnen, ein `CDataConnection` Objekt zu übergeben, in dem ein `CSession` Verweis erwartet wird.
 
@@ -292,7 +292,7 @@ Gibt einen Zeiger auf das enthaltene `CSession`-Objekt zurück.
 operator const CSession*() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator gibt einen Zeiger auf das enthaltene `CSession` Objekt zurück und ermöglicht es Ihnen, ein `CDataConnection` Objekt zu übergeben, in dem ein `CSession` Zeiger erwartet wird.
 
@@ -300,7 +300,7 @@ Dieser Operator gibt einen Zeiger auf das enthaltene `CSession` Objekt zurück u
 
 Ein Verwendungs Beispiel finden Sie unter [Operator CSession &](../../data/oledb/cdataconnection-operator-csession-amp.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

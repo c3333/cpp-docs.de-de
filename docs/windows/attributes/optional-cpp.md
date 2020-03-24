@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - optional attribute
 ms.assetid: 86656a66-8e11-4589-8e30-9b0f34eeed03
-ms.openlocfilehash: 7891d75adbfeba0d91d4a3aed60423975838951f
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 6a4fdcd0b8466d2dbf2c034fc4a3ee9ae2df8d0a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514342"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214659"
 ---
 # <a name="optional-c"></a>optional (C++)
 
@@ -23,7 +23,7 @@ Gibt einen optionalen Parameter für eine Member-Funktion an.
 [optional]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **optionale** C++ -Attribut verfügt über die gleiche Funktionalität wie das [optionale](/windows/win32/Midl/optional) Mittel l-Attribut.
 
@@ -44,7 +44,7 @@ __interface IFireTabCtrl : IDispatch
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -52,12 +52,12 @@ __interface IFireTabCtrl : IDispatch
 |-|-|
 |**Betrifft**|Schnittstellenparameter|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)
