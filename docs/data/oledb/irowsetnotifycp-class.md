@@ -24,12 +24,12 @@ helpviewer_keywords:
 - Fire_OnRowChange method
 - Fire_OnRowsetChange method
 ms.assetid: ccef402b-94a0-4c2e-9a13-7e854ef82390
-ms.openlocfilehash: 481c2c0ec28972e9cef8d1103e49afa2037c2393
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: fa85bc7947b3b446ec7c6d3fdb0d7b62d308fb53
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544567"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210326"
 ---
 # <a name="irowsetnotifycp-class"></a>IRowsetNotifyCP-Klasse
 
@@ -61,11 +61,11 @@ Ein Schnittstellen-ID-Zeiger (`IID*`) für eine `IRowsetNotify` Verbindungspunkt
 *Dynamicunkarray*<br/>
 Ein Array vom Typ [ccomdynamicunkarray](../../atl/reference/ccomdynamicunkarray-class.md), bei dem es sich um ein dynamisch zugewiesenes Array von `IUnknown` Zeigern auf die clientsenke-Schnittstellen handelt.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -75,7 +75,7 @@ Ein Array vom Typ [ccomdynamicunkarray](../../atl/reference/ccomdynamicunkarray-
 |[Fire_OnRowChange](#onrowchange)|Benachrichtigt den Consumer über eine Änderung, die sich auf die Zeilen auswirkt.|
 |[Fire_OnRowsetChange](#onrowsetchange)|Benachrichtigt den Consumer über eine Änderung, die sich auf das gesamte Rowset auswirkt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `IRowsetNotifyCP` implementiert Broadcast Funktionen, um Listener auf dem Verbindungspunkt `IID_IRowsetNotify` Änderungen am Inhalt des Rowsets zu informieren.
 
@@ -139,7 +139,7 @@ HRESULT Fire_OnRowsetChange(IRowset* pRowset,
 
 Weitere Informationen finden Sie unter [IRowsetNotify:: OnRowsetChange](/previous-versions/windows/desktop/ms722669(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

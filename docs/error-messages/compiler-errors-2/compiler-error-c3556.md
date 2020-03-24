@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3556
 ms.assetid: 9b002dcc-494e-414f-9587-20c2a0a39333
-ms.openlocfilehash: 7b87f8c57b0d871a577793936ea3cb7dbab7e58d
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: bc5eae58ac453182fd25853edd45e2c45093f5e5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64344541"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200576"
 ---
 # <a name="compiler-error-c3556"></a>Compilerfehler C3556
 
-> "*Ausdruck*": falsches Argument für "Decltype"
+> "*Ausdruck*": falsches Argument für "decltype"
 
 Der Compiler kann den Typ des Ausdrucks, der das Argument für den `decltype(`*expression*`)` -Typspezifizierer ist, nicht ableiten.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel kann der Compiler den Typ des `myFunction` -Arguments nicht ableiten, weil `myFunction` überladen ist. Um dieses Problem zu beheben, können Sie `static_cast` zum Erstellen einer Instanz eines Zeigers auf den jeweiligen überladene Funktion geben Sie in der `decltype` Ausdruck.
+Im folgenden Codebeispiel kann der Compiler den Typ des `myFunction` -Arguments nicht ableiten, weil `myFunction` überladen ist. Um dieses Problem zu beheben, können Sie `static_cast` verwenden, um eine Instanz eines Zeigers auf die jeweilige überladene Funktion zu erstellen, die im `decltype` Ausdruck angegeben werden soll.
 
 ```cpp
 // C3556.cpp

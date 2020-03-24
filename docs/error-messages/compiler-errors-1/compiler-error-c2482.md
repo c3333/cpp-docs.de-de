@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2482
 ms.assetid: 98c87da2-625c-4cc2-9bf7-78d15921e779
-ms.openlocfilehash: 481920fa2d8c32bc872e7b8805188cc674e6fe28
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5afa81369b2cf329baae02bc1309587015946409
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62375053"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205152"
 ---
 # <a name="compiler-error-c2482"></a>Compilerfehler C2482
 
->"*Bezeichner*": dynamische Initialisierung von "Thread" Daten, die in verwalteten/WinRT-Code nicht zulässig
+>"*Bezeichner*": die dynamische Initialisierung von "Thread"-Daten ist in verwaltetem oder WinRT-Code nicht zulässig.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Beim verwalteten oder WinRT-code, Variablen, die mithilfe der [__declspec(thread)](../../cpp/thread.md) Storage-Class-Modifizierer-Attribut oder das [Thread_local](../../cpp/storage-classes-cpp.md#thread_local) -Speicherklassenspezifizierer kann nicht mit einem Ausdruck initialisiert werden Auswertung zur Laufzeit erforderlich. Ein statischer Ausdruck ist erforderlich, um das Initialisieren `__declspec(thread)` oder `thread_local` Daten in diesen Umgebungen von Common Language Runtime.
+In verwaltetem oder WinRT-Code können Variablen, die mit dem [__declspec (Thread)](../../cpp/thread.md) -speicherklassenmodifiziererattribut oder dem [thread_local](../../cpp/storage-classes-cpp.md#thread_local) Speicherklassenspezifizierer deklariert wurden, nicht mit einem Ausdruck initialisiert werden, der zur Laufzeit ausgewertet werden muss. Ein statischer Ausdruck ist erforderlich, um `__declspec(thread)` oder `thread_local` Daten in diesen Laufzeitumgebungen zu initialisieren.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C2482 generiert in verwaltet (**"/ CLR"**) und in WinRT (**/Zw**) Code:
+Im folgenden Beispiel wird C2482 im verwalteten ( **/CLR**) und in WinRT-Code ( **/ZW**) generiert:
 
 ```cpp
 // C2482.cpp
@@ -36,4 +36,4 @@ int j = j;   // OK in C++; C error
 Thread int tls_i2 = sizeof( tls_i2 );   // Okay in C and C++
 ```
 
-Um dieses Problem beheben, Initialisieren von lokalen Thread-Speicher mithilfe einer Konstanten, **"constexpr"**, oder ein statischer Ausdruck. Initialisierungen threadspezifische separat ausführen.
+Um dieses Problem zu beheben, initialisieren Sie den lokalen Thread Speicher mithilfe eines Konstanten-, **constexpr**-oder static-Ausdrucks. Führen Sie eine beliebige Thread spezifische Initialisierung separat aus.

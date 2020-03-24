@@ -1,5 +1,5 @@
 ---
-title: Zugriffstasten-Editor (C++)
+title: Zugriffstasten-C++Editor ()
 ms.date: 02/14/2019
 f1_keywords:
 - vc.editors.accelerator.F1
@@ -33,164 +33,164 @@ helpviewer_keywords:
 - keyboard shortcuts [C++], property changing
 - accelerator tables [C++], changing properties
 ms.assetid: 013c30b6-5d61-4f1c-acef-8bd15bed7060
-ms.openlocfilehash: f5ae9880719a3a8b799ea8deb751b6f0a85542bd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 80ef6cc9ec956d0041c4aa3fb6a6211868cc9d73
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391035"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167562"
 ---
-# <a name="accelerator-editor-c"></a>Zugriffstasten-Editor (C++)
+# <a name="accelerator-editor-c"></a>Zugriffstasten-C++Editor ()
 
-Eine Zugriffstastentabelle ist eine C++-Windows-Ressource, die enthält eine Liste mit Tastenkombinationen, bekannt als Tastenkombinationen und die Befehls-IDs, die ihnen zugeordnet sind. Ein Programm kann über mehrere Zugriffstastentabellen verfügen.
+Eine Zugriffstasten Tabelle ist C++ eine Windows-Ressource, die eine Liste mit Zugriffstasten, die als Tastenkombinationen bezeichnet wird, sowie die Befehls Bezeichner enthält, die Ihnen zugeordnet sind. Ein Programm kann über mehrere Zugriffstastentabellen verfügen.
 
 Normalerweise werden Zugriffstasten als Tastenkombinationen für Programmbefehle verwendet, die auch in einem Menü oder auf einer Symbolleiste verfügbar sind. Allerdings können Sie die Zugriffstastentabelle auch verwenden, um Tastenkombinationen für Befehle zu definieren, denen kein Objekt auf der Benutzeroberfläche zugeordnet ist.
 
 > [!TIP]
-> Bei Verwendung der **Zugriffstasten-Editor**, mit der rechten Maustaste ein Kontextmenü mit häufig Befehle angezeigt. Die verfügbaren Befehle hängen davon ab, auf was der Zeiger verweist.
+> Wenn Sie den Zugriffstasten- **Editor**verwenden, klicken Sie mit der rechten Maustaste, um ein Kontextmenü mit häufigen Befehlen anzuzeigen. Die verfügbaren Befehle hängen davon ab, auf was der Zeiger verweist.
 
-Sie können die [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) verwenden, um Zugriffstastenbefehle mit Code zu verknüpfen. Eine Liste der vordefinierten Zugriffstasten, finden Sie unter [Zugriffstasten](../windows/predefined-accelerator-keys.md).
-
-> [!NOTE]
-> Windows lässt keine Ihnen die Erstellung leerer Zugriffstastentabellen nicht zu. Wenn Sie eine Zugriffstastentabelle ohne Einträge erstellen, wird diese beim Speichern automatisch gelöscht.
-
-## <a name="accelerator-properties"></a>Eigenschaften für Zugriffstasten
-
-Sie können die Eigenschaften für Zugriffstasten festlegen, der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window) zu einem beliebigen Zeitpunkt. Sie können auch die **Zugriffstasten-Editor** um die tastenkombinationseigenschaften in der tastenkombinationstabelle zu ändern. Änderungen, die mit der **Eigenschaften** Fenster oder der **Zugriffstasten-Editor** führen zum gleichen Ergebnis, Änderungen werden sofort in der tastenkombinationstabelle dargestellt.
-
-Die **ID** -Eigenschaft verweist auf die einzelnen Einträge im Programmcode Accelerator. Dieser Eintrag ist der Befehlswert, den das Programm empfängt, wenn ein Benutzer die Zugriffstaste oder Tastenkombination drückt. Um einer Zugriffstaste identisch mit der ein Menüelement zu machen, stellen die **ID** identisch sind, so lange Sie die **ID** Tabelle der Zugriffstaste ist identisch mit der **ID** für die Menüressource.
-
-Jede Zugriffstaste **ID** verfügt über drei Eigenschaften: **Modifizierer**, **Schlüssel**, und **Typ**
-
-Die **Modifizierer** Eigenschaftensätze Steuerelement Tastenkombinationen für die Zugriffstaste.
+Sie können die [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) verwenden, um Zugriffstastenbefehle mit Code zu verknüpfen. Eine Liste der vordefinierten Zugriffstasten finden Sie unter Zugriffs [Tasten](../windows/predefined-accelerator-keys.md).
 
 > [!NOTE]
-> In der **Eigenschaften** Fenster die **Modifizierer** Eigenschaft wird als drei Separate **booleschen** Eigenschaften, die alle davon unabhängig gesteuert werden können: **ALT**, **STRG**, und **UMSCHALT**.
+> Windows lässt nicht zu, dass leere Zugriffstasten Tabellen erstellt werden. Wenn Sie eine Zugriffstastentabelle ohne Einträge erstellen, wird diese beim Speichern automatisch gelöscht.
 
-Die folgende sind zulässige Einträge für die **Modifizierer** Eigenschaft in der tastenkombinationstabelle:
+## <a name="accelerator-properties"></a>Zugriffstasten Eigenschaften
 
-   |Wert|Beschreibung|
+Sie können Zugriffstasten Eigenschaften jederzeit in der [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) festlegen. Sie können auch den Zugriffstasten- **Editor** verwenden, um die Eigenschaften der Zugriffstaste in der Zugriffstasten Tabelle zu ändern. Änderungen, die über das **Eigenschaften** Fenster oder den Zugriffstasten- **Editor** vorgenommen wurden, haben dasselbe Ergebnis. Änderungen werden sofort in der Zugriffstasten Tabelle widergespiegelt.
+
+Die **ID** -Eigenschaft verweist auf jeden Zugriffstasten Tabelleneintrag im Programmcode. Dieser Eintrag ist der Befehls Wert, den das Programm empfängt, wenn ein Benutzer die Zugriffstaste oder eine Tastenkombination drückt. Um eine Zugriffstaste mit einem Menü Element identisch zu machen, machen Sie die **ID** identisch, solange die **ID** der Zugriffstasten Tabelle mit der **ID** für die Menü Ressource übereinstimmt.
+
+Jede Zugriffstasten- **ID** hat drei Eigenschaften: **Modifizierer**, **Key**und **Type** .
+
+Die **Modifier** -Eigenschaft legt Tastenkombinationen für die Zugriffstaste fest.
+
+> [!NOTE]
+> Im Fenster **Eigenschaften** wird die **modifizierereigenschaft** als drei separate **boolesche** Eigenschaften angezeigt, die alle unabhängig voneinander gesteuert werden können: **alt**, **STRG**und **UMSCHALT**.
+
+Im folgenden sind die rechtlichen Einträge für die **modifizierereigenschaft** in der Zugriffstasten Tabelle aufgeführt:
+
+   |value|BESCHREIBUNG|
    |-----------|-----------------|
-   |**Keine**|Benutzer drückt nur die **Schlüssel** Wert.<br/><br/>Dieser Wert ist am effizientesten mit den ASCII/ANSI-Werten 001 bis 026, was interpretiert wird als ^ A bis ^ Z (**STRG + A** über **STRG + Z**).|
-   |**ALT**|Der Benutzer muss drücken **Alt** vor der **Schlüssel** Wert.|
-   |**STRG**|Der Benutzer muss drücken **STRG** vor der **Schlüssel** Wert, mit dem ASCII-Typ ist ungültig.|
-   |**UMSCHALTTASTE**|Der Benutzer muss drücken **UMSCHALT** vor der **Schlüssel** Wert.|
-   |**Strg + Alt +**|Der Benutzer muss drücken **STRG** und **Alt** vor der **Schlüssel** Wert, mit dem ASCII-Typ ist ungültig.|
-   |**STRG + UMSCHALT**|Der Benutzer muss drücken **STRG** und **UMSCHALT** vor der **Schlüssel** Wert, mit dem ASCII-Typ ist ungültig.|
-   |**ALT + UMSCHALT**|Der Benutzer muss drücken **Alt** und **UMSCHALT** vor der **Schlüssel** Wert, mit dem ASCII-Typ ist ungültig.|
-   |**Strg + Alt + Umschalt**|Der Benutzer muss drücken **STRG**, **Alt**, und **UMSCHALT** vor der **Schlüssel** Wert, mit dem ASCII-Typ ist ungültig.|
+   |**None**|Der Benutzer drückt nur den **Schlüssel** Wert.<br/><br/>Dieser Wert wird am effektivsten mit den ASCII/ANSI-Werten 001 bis 026 verwendet, der als ^ A bis ^ Z (**STRG + A** bis **STRG + Z**) interpretiert wird.|
+   |**Alt**|Der Benutzer muss vor dem **Schlüssel** Wert **alt** drücken.|
+   |**STRG**|Der Benutzer muss vor dem **Schlüssel** Wert **STRG** drücken, der mit dem ASCII-Typ nicht gültig ist.|
+   |**UMSCHALTTASTE**|Der Benutzer muss vor dem Schlüsselwert **UMSCHALT** **Taste** drücken.|
+   |**STRG + ALT**|Der Benutzer muss vor dem **Schlüssel** Wert **STRG** und **alt** drücken, und der ASCII-Typ ist ungültig.|
+   |**STRG + UMSCHALT**|Der Benutzer muss **STRG** und **UMSCHALT** vor dem **Schlüssel** Wert drücken, nicht gültig mit dem ASCII-Typ.|
+   |**Alt + Umschalttaste**|Der Benutzer muss **alt** und **UMSCHALT** vor dem **Schlüssel** Wert drücken, der mit dem ASCII-Typ nicht gültig ist.|
+   |**Strg + Alt + Umschalttaste**|Der Benutzer muss **STRG**, **alt**und **UMSCHALT** vor dem **Schlüssel** Wert drücken, der mit dem ASCII-Typ nicht gültig ist.|
 
-Die **Schlüssel** Eigenschaft legt fest, den tatsächlichen Schlüssel als Zugriffstaste verwenden.
+Die **Key** -Eigenschaft legt den eigentlichen Schlüssel fest, der als Zugriffstaste verwendet werden soll.
 
-Die folgende sind zulässige Einträge für die **Schlüssel** Eigenschaft in der tastenkombinationstabelle:
+Im folgenden sind die rechtlichen Einträge für die Key-Eigenschaft in der Zugriffs **Tasten** Tabelle aufgeführt:
 
-   |Wert|Beschreibung|
+   |value|BESCHREIBUNG|
    |-----------|-----------------|
-   |Eine ganze Zahl zwischen 0 und 255 im Dezimalformat.|Der Wert bestimmt, ob der Wert als ASCII oder ANSI, wie folgt behandelt wird:<br/><br/>   -Einstellige Zahlen werden immer als der entsprechende Schlüssel und nicht als ASCII oder ANSI-Werte interpretiert.<br/>   -Werte von 1 bis 26, wenn Nullen vorangestellt werden als interpretiert ^ A bis ^ Z, steht für den ASCII-Wert, der den Buchstaben des Alphabets, wenn Sie mit gedrückt der **STRG** -Taste gedrückt gehalten.<br/>   -Werte von 27-32 werden immer als drei Ziffern bestehenden Dezimalwerte 027 bis 032 interpretiert.<br/>   -Werte von 033 bis 255, 0 vorangestellt oder nicht als ANSI-Werte interpretiert werden.|
-   |Ein einzelnes Zeichen der Tastatur.|Großbuchstaben von A - Z oder die Ziffern 0 – 9 können entweder ASCII- oder den virtuellen Schlüsselwerte. Alle anderen Zeichen ist ASCII nur an.|
-   |Ein einzelnes Zeichen der Tastatur im Bereich von A - Z (nur Großbuchstaben), ein Caretzeichen (^) vorangestellt sind, z. B. ^ C.|Diese Option gibt den ASCII-Wert des Schlüssels aus, wenn es gedrückt wird, mit der **STRG** -Taste gedrückt gehalten.|
-   |Alle gültigen virtuellen Tastenbezeichner.|Die Dropdownliste **Schlüssel** in der tastenkombinationstabelle enthält eine Liste der standardmäßigen virtuellen Schlüsselbezeichner.|
+   |Eine ganze Zahl zwischen 0 und 255 im Dezimal Format.|Der-Wert bestimmt wie folgt, ob der-Wert als ASCII oder ANSI behandelt wird:<br/><br/>   -Einstellige Zahlen werden immer als der entsprechende Schlüssel interpretiert, nicht als ASCII-oder ANSI-Werte.<br/>   -Werte von 1 bis 26 werden bei vorangestellten Nullen als ^ A bis ^ Z interpretiert, was den ASCII-Wert der Buchstaben des Alphabets darstellt, wenn mit der **STRG** -Taste gedrückt wird.<br/>   -Die Werte aus 27-32 werden immer als dreistellige Dezimalwerte von 027 bis 032 interpretiert.<br/>   -Werte zwischen 033 und 255, ob mit 0 (null) oder nicht, werden als ANSI-Werte interpretiert.|
+   |Ein einzelnes Tastatur Zeichen.|Großbuchstabe A-Z oder die Zahlen 0-9 können entweder ASCII-oder Virtual Key-Werte sein. Jedes andere Zeichen ist nur ASCII.|
+   |Ein einzelnes Tastatur Zeichen im Bereich von a-Z (nur in Großbuchstaben), dem ein Caretzeichen (^) vorangestellt ist, z. b. ^ C.|Diese Option gibt den ASCII-Wert des Schlüssels ein, wenn er mit der **STRG** -Taste gedrückt wird.|
+   |Jeder gültige virtuelle Schlüssel Bezeichner.|Das Dropdown- **Schlüssel** Feld in der Zugriffstasten Tabelle enthält eine Liste mit standardmäßigen virtuellen Schlüssel bezeichnerbezeichner.|
 
 > [!NOTE]
-> Bei der Eingabe von ASCII-Wert, der **Modifizierer** -Optionen beschränkt sind. Ist der einzige Steuerelement verfügbare Schlüssel für die Verwendung der **Alt** Schlüssel.
+> Wenn Sie einen ASCII-Wert eingeben, sind die Eigenschaften Optionen für **Modifizierer** eingeschränkt. Der einzige für die Verwendung verfügbare Steuerungs Schlüssel ist die **alt** -Taste.
 
 > [!TIP]
-> Eine Verknüpfung mit eine Zugriffstaste zu definieren, mit der rechten Maustaste einen Eintrag oder mehrere Einträge in der Zugriffstastentabelle ist, wählen Sie dann **Nächste Taste** und beliebige der Tasten bzw. Tastenkombinationen auf der Tastatur drücken.
+> Eine Tastenkombination zum Definieren einer Zugriffstaste besteht darin, mit der rechten Maustaste auf einen Eintrag oder mehrere Einträge in der Zugriffstasten Tabelle zu klicken. Klicken Sie anschließend auf weiter **typisierte Taste** , und drücken Sie die Tastenkombination oder die Tastenkombination auf der Tastatur.
 >
-> Dies **Nächste Taste** Befehl steht auch auf die **bearbeiten** Menü.
+> Der **nächste Schlüssel** Befehl, der eingegeben wird, ist auch über das Menü **Bearbeiten** verfügbar.
 
-Die **Typ** Eigenschaft bestimmt, ob die Tastenkombination mit der Zugriffstaste verknüpft **ID** wird als ein Schlüssel ASCII/ANSI-Wert oder eine Kombination der Schlüssel für ein virtuelles (VIRTKEY) interpretiert.
+Die **Type** -Eigenschaft bestimmt, ob die Tastenkombination, die der Zugriffstasten- **ID** zugeordnet ist, als ASCII/ANSI-Schlüsselwert oder Virtual Key (VIRTKEY)-Kombination interpretiert wird.
 
-- Wenn die **Typ** Eigenschaft **ASCII**, **Modifizierer** Eigenschaft ist möglicherweise nur `None` oder `Alt`, oder es kann eine Zugriffstaste, die die verwendet**STRG** Schlüssel, den Schlüssel mit abgrenzen, indem Sie gemäß einem `^`.
+- Wenn es sich bei der **Type** -Eigenschaft um **ASCII**handelt, kann die **modifizierereigenschaft** nur `None` oder `Alt`sein, oder Sie kann über eine Zugriffstaste verfügen, die die **STRG** -Taste verwendet, wie durch vorangehenden Schlüssel mit einem `^`angegeben.
 
-- Wenn die **Typ** Eigenschaft **VIRTKEY**, eine beliebige Kombination von **Modifizierer** und **Schlüssel** Werte gilt.
+- Wenn die **Type** -Eigenschaft **VIRTKEY**ist, ist eine beliebige Kombination von **Modifiziererwerten** und **Schlüssel** Werten gültig.
 
 > [!NOTE]
-> Wenn Sie verwenden möchten, geben einen Wert in der Zugriffstastentabelle-Wert behandelt, als ASCII/ANSI, wählen Sie die **Typ** für den Eintrag in der Tabelle und wählen Sie **ASCII** aus der Dropdownliste aus. Jedoch bei Verwendung der **Nächste Taste** Befehl die **bearbeiten** Menü an der **Schlüssel**, müssen Sie ändern die **Typ** Eigenschaft aus **VIRTKEY** zu **ASCII** *vor* eingeben der **Schlüssel** Code.
+> Wenn Sie einen Wert in die Zugriffstasten Tabelle eingeben und den Wert als ASCII/ANSI behandeln möchten, wählen Sie den **Typ** für den Eintrag in der Tabelle aus, und wählen Sie in der Dropdown Liste **ASCII** aus. Wenn Sie jedoch den Befehl " **Next Key typisiert** " im Menü " **Bearbeiten** " verwenden, um den **Schlüssel**anzugeben, müssen Sie die **Type** -Eigenschaft von **VIRTKEY** in **ASCII** ändern, *bevor* Sie den **Schlüssel** Code eingeben.
 
-## <a name="accelerator-tables"></a>Zugriffstastentabellen
+## <a name="accelerator-tables"></a>Zugriffstasten Tabellen
 
-Sie können eine Zugriffstastentabelle in eine C++-Projekt bearbeiten, direkt mit der direkten Bearbeitung in der **Zugriffstasten-Editor**.
+In einem C++ Projekt können Sie eine Zugriffstasten Tabelle direkt mit direkter Bearbeitung im Zugriffstasten- **Editor**bearbeiten.
 
-Die folgenden Verfahren beziehen sich auf die Verwendung von standard-Eigenschaftenseiten können jedoch die direkte Bearbeitung und der Seitenmethode für das gleiche Ergebnis. Änderungen mithilfe von Eigenschaftenseiten oder mithilfe der direkten Bearbeitung werden sofort in der tastenkombinationstabelle dargestellt.
+Die folgenden Verfahren beziehen sich auf die Verwendung von Standard Eigenschafts Seiten. die direkte Bearbeitung und die Eigenschaften Seiten Methode haben jedoch das gleiche Ergebnis. Änderungen, die mithilfe von Eigenschaften Seiten oder der direkten Bearbeitung vorgenommen wurden, werden sofort in der Zugriffstasten Tabelle widergespiegelt.
 
 ### <a name="to-edit-in-an-accelerator-table"></a>So führen Sie die Bearbeitung in einer Zugriffstastentabelle durch
 
-1. Öffnen Sie die Zugriffstastentabelle durch Doppelklicken auf das Symbol im [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources).
+1. Öffnen Sie die Zugriffstasten Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Wählen Sie einen Eintrag in der Tabelle, und wählen Sie auf die um direkte Bearbeitung zu aktivieren.
+1. Wählen Sie einen Eintrag in der Tabelle aus, und wählen Sie aus, um die direkte Bearbeitung zu aktivieren.
 
-1. Wählen Sie aus dem Dropdown-Kombinationsfeld, oder geben Sie Änderungen vornehmen:
+1. Wählen Sie aus dem Dropdown-Kombinations Feld aus, oder geben Sie ein, um Änderungen vorzunehmen:
 
-   - Für **ID**, wählen Sie aus der Liste, oder geben Sie zum Bearbeiten.
+   - Wählen Sie für **ID**aus der Liste oder dem zu bearbeitenden Typ aus.
 
-   - Für **Modifizierer**, wählen Sie aus der Liste.
+   - Wählen Sie für **Modifizierer**aus der Liste aus.
 
-   - Für **Schlüssel**, wählen Sie aus der Liste, oder geben Sie zum Bearbeiten.
+   - Wählen Sie für **Schlüssel**aus der Liste oder dem zu bearbeitenden Typ aus.
 
-   - Für **Typ**Option **ASCII** oder **VIRTKEY** aus der Liste.
+   - Wählen Sie unter **Typ**die Option **ASCII** oder **VIRTKEY** aus der Liste aus.
 
 ### <a name="to-find-an-entry-in-an-open-accelerator-table"></a>So suchen Sie einen Eintrag in einer geöffneten Zugriffstastentabelle
 
-1. Öffnen Sie die Zugriffstastentabelle durch Doppelklicken auf das Symbol im [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources).
+1. Öffnen Sie die Zugriffstasten Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Wählen Sie eine Spaltenüberschrift, um den Inhalt der Spalte alphabetisch zu sortieren. Wählen Sie z. B. **ID** , alle IDs, die in der Zugriffstastentabelle in alphabetischer Reihenfolge anzuzeigen.
+1. Wählen Sie eine Spalten Kopfzeile aus, um den Inhalt der Spalte alphabetisch zu sortieren. Wählen Sie beispielsweise **ID** aus, um alle IDs in der Zugriffstasten Tabelle alphabetisch anzuzeigen.
 
    Sie können die Liste dann durchsuchen und den gewünschten Eintrag finden.
 
 ### <a name="to-add-an-entry-to-an-accelerator-table"></a>So fügen Sie einer Zugriffstastentabelle einen Eintrag hinzu
 
-1. Öffnen Sie die Zugriffstastentabelle durch Doppelklicken auf das Symbol im [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources).
+1. Öffnen Sie die Zugriffstasten Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Mit der rechten Maustaste in die Zugriffstastentabelle, und wählen Sie **neue Zugriffstaste**, oder wählen Sie den Eintrag leere Zeile am unteren Rand der Tabelle.
+1. Klicken Sie mit der rechten Maustaste in die Zugriffstasten Tabelle, und wählen Sie **neue**Zugriffstaste, oder klicken Sie auf den leeren Zeileneintrag unten in der Tabelle.
 
-1. Wählen Sie eine **ID** aus der Dropdown-Liste in der **ID** Feld, oder geben Sie einen neuen *ID* in die **ID** Feld.
+1. Wählen Sie in der Dropdown Liste im Feld **ID** eine **ID** aus, oder geben Sie im Feld **ID** eine neue *ID* ein.
 
-1. Typ der *Schlüssel* Sie verwenden möchten, verwenden Sie als Zugriffstaste, oder mit der rechten Maustaste, und wählen **Nächste Taste** eine Tastenkombination festlegen oder wechseln Sie zum Menü **bearbeiten**  >  **Nächste Taste**.
+1. Geben Sie den *Schlüssel* ein, den Sie als Zugriffstaste verwenden möchten, oder klicken Sie mit der rechten Maustaste, und wählen Sie **weiter Schlüssel eingegeben** aus, um eine Tastenkombination festzulegen, oder wechseln Sie zum Menü **Bearbeiten** > **nächsten eingegebenen Schlüssel**
 
-1. Ändern der **Modifizierer** und **Typ**, falls erforderlich, und drücken Sie die **EINGABETASTE**.
+1. Ändern Sie ggf. den **Modifizierer** und den **Typ**, und drücken **Sie die Eingabe**Taste.
 
 > [!NOTE]
-> Stellen Sie sicher, dass alle von Ihnen definierten Zugriffstasten eindeutig sind. Sie können mehrere Tastenkombinationen ohne weitere Auswirkungen, z. B. dieselbe ID zugewiesen haben **STRG**+**P** und **F8** "id_print" zugewiesen werden. Allerdings müssen Sie eine Tastenkombination zugewiesen mit ID nicht, z. B. funktioniert mehr als einem **STRG**+**Z** sowohl "ID_SPELL_CHECK" und "Dies zugewiesen.
+> Stellen Sie sicher, dass alle von Ihnen definierten Zugriffstasten eindeutig sind. Es können mehrere Tastenkombinationen der gleichen ID ohne Beeinträchtigung zugewiesen werden, z. b. **STRG**+**P** und **F8** können ID_PRINT zugewiesen werden. Eine Tastenkombination, die mehr als einer ID zugewiesen ist, funktioniert jedoch nicht gut, z. b. Wenn **STRG**+**Z** ID_SPELL_CHECK und ID_THESAURUS zugewiesen ist.
 
 ### <a name="to-delete-an-entry-from-an-accelerator-table"></a>So löschen Sie einen Eintrag aus einer Zugriffstastentabelle
 
-1. Öffnen Sie die Zugriffstastentabelle durch Doppelklicken auf das Symbol im [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources).
+1. Öffnen Sie die Zugriffstasten Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Wählen Sie den Eintrag zu löschen, oder halten Sie die **STRG** oder **UMSCHALT** gedrückt, während Sie auswählen, um mehrere Einträge auszuwählen.
+1. Wählen Sie den Eintrag aus, den Sie löschen möchten, oder halten Sie die **STRG** -oder **UMSCHALT** Taste gedrückt, während Sie mehrere Einträge auswählen.
 
-1. Mit der rechten Maustaste, und wählen Sie **löschen**, oder wechseln Sie zum Menü **bearbeiten** > **löschen**.
+1. Klicken Sie mit der rechten Maustaste, und wählen Sie **Löschen**aus, oder wechseln Sie zum Menü **Bearbeiten** > **Löschen**.
 
 > [!TIP]
-> Drücken Sie die **löschen** Schlüssel zu löschen.
+> Sie können auch die ENTF-Taste **zum Löschen drücken** .
 
 ### <a name="to-move-or-copy-an-accelerator-table-entry-to-another-resource-script-file"></a>So verschieben oder kopieren Sie einen Eintrag in einer Zugriffstastentabelle in eine andere Ressourcenskriptdatei
 
-1. Öffnen Sie in beiden Ressourcenskriptdateien die Zugriffstastentabellen, und wählen Sie den Eintrag, die, den Sie verschieben möchten.
+1. Öffnen Sie die Zugriffstasten Tabellen in beiden Ressourcen Skriptdateien, und wählen Sie den Eintrag aus, den Sie verschieben möchten.
 
-1. Von der **bearbeiten** Menü wählen **Kopie** oder **Ausschneiden**.
+1. Wählen Sie im Menü **Bearbeiten** die Option **Kopieren** oder **Ausschneiden**aus.
 
-1. Wählen Sie einen Eintrag in der Ziel-Ressourcenskriptdatei und von der **bearbeiten** Menü wählen **einfügen**.
+1. Wählen Sie einen Eintrag in der Ziel Ressourcen-Skriptdatei aus, und wählen Sie im Menü **Bearbeiten** die Option **Einfügen**aus.
 
 > [!NOTE]
 > Zum Kopieren und Einfügen können Sie auch Tastenkombinationen verwenden.
 
-### <a name="to-change-the-properties-of-multiple-accelerator-keys"></a>Zum Ändern der Eigenschaften mehrerer Zugriffstasten
+### <a name="to-change-the-properties-of-multiple-accelerator-keys"></a>So ändern Sie die Eigenschaften mehrerer Zugriffstasten
 
-1. Öffnen Sie die Zugriffstastentabelle durch Doppelklicken auf das Symbol im [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources).
+1. Öffnen Sie die Zugriffstasten Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
 
-1. Wählen Sie die Zugriffstasten, die Sie ändern, indem Sie sie gedrückt halten, möchten die **STRG** gedrückt, während Sie jede auswählen.
+1. Wählen Sie die Tastenkombinationen aus, die Sie ändern möchten, indem Sie die **STRG** -Taste gedrückt halten, während Sie diese auswählen.
 
-1. Wechseln Sie zu der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window) , und geben Sie die Werte aller ausgewählten Zugriffstasten freigeben.
+1. Wechseln Sie zum [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) , und geben Sie die Werte ein, die von allen ausgewählten Accelerators gemeinsam genutzt werden sollen.
 
 > [!NOTE]
-> Jeder Modifiziererwert angezeigt wird, als eine boolesche Eigenschaft in der **Eigenschaften** Fenster. Wenn Sie ändern eine [Modifizierer](../windows/accelerator-modifier-property.md) Wert in der **Eigenschaften** Fenster die Zugriffstastentabelle behandelt den new-Modifizierer als eine Erweiterung für alle Modifizierer, die bereits vorhanden waren. Aus diesem Grund setzen Sie alle Modifiziererwerte, Sie müssen alle Angaben, um sicherzustellen, dass alle Zugriffstasten dasselbe festlegen **Modifizierer** Einstellungen.
+> Jeder Modifiziererwert wird im **Eigenschaften** Fenster als boolesche Eigenschaft angezeigt. Wenn Sie einen [Modifiziererwert](../windows/accelerator-modifier-property.md) im **Eigenschaften** Fenster ändern, behandelt die Zugriffstasten Tabelle den neuen Modifizierer als Ergänzung zu allen zuvor gefundenen Modifizierern. Wenn Sie daher einen Modifiziererwert festlegen, müssen Sie alle festlegen, um sicherzustellen, dass jede Zugriffstaste die gleichen **Modifizierereinstellungen** gemeinsam nutzt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editor](../windows/resource-editors.md)<br/>
 [Zugriffstasten](../windows/predefined-accelerator-keys.md)<br/>

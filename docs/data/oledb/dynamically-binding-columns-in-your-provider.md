@@ -6,32 +6,32 @@ helpviewer_keywords:
 - dynamic column binding
 - providers [C++], dynamic column binding
 ms.assetid: 45e811e3-f5a7-4627-98cc-bf817c4e556e
-ms.openlocfilehash: 3c66cf58ce1f8b83b2b3308c8dabba6cf8cdf0ef
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8a0b4c399bf25137be86d95102da9723c3116d51
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175542"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210976"
 ---
 # <a name="dynamically-binding-columns-in-your-provider"></a>Dynamisches Binden von Spalten im Anbieter
 
-Stellen Sie sicher, dass Sie dynamische spaltenbindung brauchen. Sie können es da benötigen:
+Stellen Sie sicher, dass Sie wirklich dynamische Spalten Bindungen benötigen. Möglicherweise benötigen Sie Folgendes:
 
-- Die Rowsetspalten werden nicht zum Zeitpunkt der Kompilierung definiert.
+- Die Rowsetspalten werden zum Zeitpunkt der Kompilierung nicht definiert.
 
-- Sie unterstützen, ein Element wie das Lesezeichen, das Spalten hinzugefügt.
+- Sie unterstützen ein Element wie z. b. Lesezeichen, das Spalten hinzufügt
 
-## <a name="to-implement-dynamic-column-binding"></a>Dynamische spaltenbindung implementieren.
+## <a name="to-implement-dynamic-column-binding"></a>So implementieren Sie die dynamische Spalten Bindung
 
-1. Entfernen Sie alle `PROVIDER_COLUMN_MAP`s aus Ihrem Code.
+1. Entfernen Sie alle `PROVIDER_COLUMN_MAP`s aus dem Code.
 
-1. Fügen Sie im Benutzerdatensatz (Ihrer Struktur) die folgende Deklaration hinzu:
+1. Fügen Sie im Benutzerdaten Satz (ihrer Struktur) die folgende Deklaration hinzu:
 
     ```cpp
     static ATLCOLUMNINFO* GetColumnInfo(void* pThis, ULONG* pcCols);
     ```
 
-1. Implementieren der `GetColumnInfo` Funktion. Diese Funktion zeigt wie die Informationen gespeichert werden. Sie müssen Eigenschaften oder andere Informationen für diese Funktion zu erhalten. Möglicherweise möchten Sie erstellen ein Makro verwenden, ähnlich wie die [COLUMN_ENTRY](../../data/oledb/column-entry.md) Makro, um Ihre eigenen Informationen hinzuzufügen.
+1. Implementieren Sie die `GetColumnInfo`-Funktion. Diese Funktion legt fest, wie die Informationen gespeichert werden. Möglicherweise müssen Sie Eigenschaften oder andere Informationen für diese Funktion erhalten. Möglicherweise möchten Sie ein Makro erstellen, das dem [COLUMN_ENTRY](../../data/oledb/column-entry.md) -Makro ähnelt, um eigene Informationen hinzuzufügen.
 
    Das folgende Beispiel zeigt eine `GetColumnInfo` Funktion.
 
@@ -86,6 +86,6 @@ Stellen Sie sicher, dass Sie dynamische spaltenbindung brauchen. Sie können es 
     }
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

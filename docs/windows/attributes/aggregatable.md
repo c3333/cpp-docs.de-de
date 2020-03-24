@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - aggregatable attribute
 ms.assetid: 9253a46a-cd76-41f2-b3b6-86f709bb069c
-ms.openlocfilehash: aa70c2417b3262e98118b5e717ce39d0147024de
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: d929543f699dcd20471ff9a9b45f54119f82a40a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69491015"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168524"
 ---
 # <a name="aggregatable"></a>aggregatable
 
@@ -28,17 +28,17 @@ Gibt an, dass die Klasse Aggregationen unterstützt.
 *value*<br/>
 Optionale Ein Parameter, der angibt, wann das COM-Objekt aggregiert werden kann:
 
-- `never`Das COM-Objekt kann nicht aggregiert werden.
+- `never` das COM-Objekt kann nicht aggregiert werden.
 
-- `allowed`Das COM-Objekt kann direkt erstellt oder aggregiert werden. Dies ist die Standardeinstellung.
+- `allowed` das COM-Objekt direkt erstellt oder aggregiert werden kann. Dies ist die Standardoption.
 
-- `always`Das COM-Objekt kann nicht direkt erstellt werden und kann nur aggregiert werden. Wenn Sie für `CoCreateInstance` dieses Objekt aufzurufen, müssen Sie die- `IUnknown` Schnittstelle des Aggregations Objekts ( `IUnknown`das steuernde) angeben.
+- `always` das COM-Objekt nicht direkt erstellt werden kann und nur aggregiert werden kann. Wenn Sie `CoCreateInstance` für dieses Objekt aufgerufen haben, müssen Sie die `IUnknown`-Schnittstelle des Aggregations Objekts angeben (der Steuerungs `IUnknown`).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das Attribut " **aggregierbare** C++ " hat die gleiche Funktionalität wie das Attribut " [aggregierbare](/windows/win32/Midl/aggregatable) ". Dies bedeutet, dass der Compiler das Attribut " **aggregierbare** " über an die generierte IDL-Datei übergibt.
 
-Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn `progid` z. b. angewendet wird `vi_progid` , `coclass` werden auch und angewendet.
+Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden. Wenn ein einzelnes Attribut verwendet wird, werden die anderen beiden automatisch angewendet. Wenn `progid` z. b. angewendet wird, werden `vi_progid` und `coclass` ebenfalls angewendet.
 
 ### <a name="atl-projects"></a>ATL-Projekte
 
@@ -66,7 +66,7 @@ Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert
 class CMyClass {};
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -75,11 +75,11 @@ class CMyClass {};
 |**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
 |**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

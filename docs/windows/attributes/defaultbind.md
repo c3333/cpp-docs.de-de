@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - defaultbind attribute
 ms.assetid: b20a8437-24e6-4b6d-a2df-09fe5e1006e0
-ms.openlocfilehash: a2f612c4869a62a84a6a2af99057ced365f875f2
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 72d1f5a5720466bf7abf08aaad4acdbab05c408f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69490992"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167159"
 ---
 # <a name="defaultbind"></a>defaultbind
 
@@ -23,7 +23,7 @@ Gibt die einzelne, bindbare Eigenschaft an, die das Objekt am besten darstellt.
 [defaultbind]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **Defaultbind** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Defaultbind](/windows/win32/Midl/defaultbind) -Attribut "mittlerer l".
 
@@ -31,7 +31,7 @@ Das **Defaultbind** C++ -Attribut verfügt über die gleiche Funktionalität wie
 
 Ein Beispiel für die Verwendung von **Defaultbind**finden Sie im Beispiel für [bindbare](bindable.md) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -39,12 +39,12 @@ Ein Beispiel für die Verwendung von **Defaultbind**finden Sie im Beispiel für 
 |-|-|
 |**Betrifft**|Schnittstellenmethode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Methodenattribut](method-attributes.md)<br/>

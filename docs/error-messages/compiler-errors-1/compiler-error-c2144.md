@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - C2144
 ms.assetid: 49f3959b-324f-4c06-9588-c0ecef5dc5b3
-ms.openlocfilehash: a75330d26b0924e60f7e46d10d617341709d7e23
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b917c0a2c15aeb70222c948bce9a6fb275c91068
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62353494"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80207245"
 ---
 # <a name="compiler-error-c2144"></a>Compilerfehler C2144
 
-> Syntaxfehler: "*Typ*"sollte auf folgen"*token*"
+> Syntax Fehler: '*Type*' sollte '*Token*' vorangestellt sein.
 
-Der Compiler erwartet *token* und *Typ* stattdessen.
+Der Compiler hat stattdessen das *Token* und den gefundenen *Typ* erwartet.
 
-Dieser Fehler kann durch eine fehlende schließende geschweifte Klammer, Rechte Klammer und Semikolon verursacht werden.
+Dieser Fehler kann durch eine fehlende schließende geschweifte Klammer, eine Rechte Klammer oder ein Semikolon verursacht werden.
 
-C2144 kann auch auftreten, wenn Sie versuchen, ein Makro aus einem CLR-Schlüsselwort zu erstellen, die ein Leerzeichen enthält.
+C2144 kann auch auftreten, wenn Sie versuchen, ein Makro von einem CLR-Schlüsselwort zu erstellen, das ein Leerzeichen enthält.
 
-Sie können auch C2144 angezeigt, wenn Sie versuchen, die Weiterleitung eingeben. Finden Sie unter [Typweiterleitung (C++ / CLI)](../../extensions/type-forwarding-cpp-cli.md) für Weitere Informationen.
+Möglicherweise wird auch C2144 angezeigt, wenn Sie versuchen, eine Typweiterleitung durchzuführen. Weitere Informationen finden Sie unter [Typweiterleitung (C++/CLI)](../../extensions/type-forwarding-cpp-cli.md) .
 
 ## <a name="examples"></a>Beispiele
 
-Im folgende Beispiel wird die C2144 generiert, und zeigt, wie Sie diesen Fehler beheben:
+Im folgenden Beispiel wird C2144 generiert, und es wird eine Möglichkeit gezeigt, Sie zu beheben:
 
 ```cpp
 // C2144.cpp
@@ -40,7 +40,7 @@ REF struct MyStruct0;   // C2144
 REF1 MyStruct1;
 ```
 
-Im folgende Beispiel wird die C2144 generiert, und zeigt, wie Sie diesen Fehler beheben:
+Im folgenden Beispiel wird C2144 generiert, und es wird eine Möglichkeit gezeigt, Sie zu beheben:
 
 ```cpp
 // C2144_2.cpp

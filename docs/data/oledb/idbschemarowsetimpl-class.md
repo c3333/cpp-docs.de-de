@@ -36,12 +36,12 @@ helpviewer_keywords:
 - GetRowset method
 - GetSchemas method
 ms.assetid: bd7bf0d7-a1c6-4afa-88e3-cfdbdf560703
-ms.openlocfilehash: 3c34f84254fc57b6cd5f8b4763faac313a01636b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f6af0f61ca425a2a1fba98b4041a92163e2f1d4e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544585"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210625"
 ---
 # <a name="idbschemarowsetimpl-class"></a>IDBSchemaRowsetImpl-Klasse
 
@@ -59,11 +59,11 @@ class ATL_NO_VTABLE IDBSchemaRowsetImpl : public IDBSchemaRowset
 *Sessionclass*<br/>
 Die Klasse, mit der `IDBSchemaRowsetImpl` geerbt wird. Diese Klasse ist in der Regel die Sitzungsklasse des Benutzers.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -80,7 +80,7 @@ Die Klasse, mit der `IDBSchemaRowsetImpl` geerbt wird. Diese Klasse ist in der R
 |[GetRowset](#getrowset)|Gibt ein Schemarowset zurück.|
 |[GetSchemas](#getschemas)|Gibt eine Liste der Schemarowsets zurück, auf die [IDBSchemaRowsetImpl::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)zugreifen kann.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Klasse implementiert die [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) -Schnittstelle und die vorlagenbasierte Erstellerfunktion [CreateSchemaRowset](../../data/oledb/idbschemarowsetimpl-createschemarowset.md).
 
@@ -114,7 +114,7 @@ HRESULT CheckRestrictions(REFGUID rguidSchema,
 *rgrestriktionen*<br/>
 [in] Ein Längenarray von *cRestrictions* von festzulegenden Einschränkungswerten. Weitere Informationen finden [Sie in der](../../data/oledb/idbschemarowsetimpl-setrestrictions.md)Beschreibung des *rgRestrictions* -Parameters in "".
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie `CheckRestrictions` , um die Gültigkeit von Einschränkungen für ein Schemarowset zu überprüfen. Es überprüft die Einschränkungen für die Schemarowsets `DBSCHEMA_TABLES`, `DBSCHEMA_COLUMNS`und `DBSCHEMA_PROVIDER_TYPES`. Nennen Sie ihn, um zu bestimmen, ob der `IDBSchemaRowset::GetRowset` eines Consumers korrekt ist. Wenn Sie andere als die oben aufgeführten Schemarowsets unterstützen möchten, sollten Sie Ihre eigene Funktion zum Ausführen dieser Aufgabe erstellen.
 
@@ -170,7 +170,7 @@ vorgenommen Die von *riid*angeforderte ausgehende `IUnknown`. Diese `IUnknown` i
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion implementiert einen generischen Ersteller für alle Typen von Schemarowsets. In der Regel ruft der Benutzer diese Funktion nicht auf. Sie wird durch die Implementierung der Schemazuordnung aufgerufen.
 
@@ -197,7 +197,7 @@ in Die Anzahl der Einschränkungen im *rgRestrictions* -Array und die Anzahl von
 *rgrestriktionen*<br/>
 [in] Ein Längenarray von *cRestrictions* von festzulegenden Einschränkungswerten. Jedes Element entspricht den Einschränkungen für das Schemarowset, das mit der GUID identifiziert wird. Wenn ein Schemarowset nicht vom Anbieter unterstützt wird, wird das Element auf 0 (null) festgelegt. Andernfalls enthält der **ULONG** -Wert eine Bitmaske, die die Einschränkungen darstellt, die für dieses Schemarowset unterstützt werden. Weitere Informationen darüber, welche Einschränkungen einem bestimmten Schemarowset entsprechen, finden Sie in der Tabelle der [Schemarowset-GUIDs in IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB Programmierer-Referenz* im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `IDBSchemaRowset`-Objekt ruft `SetRestrictions` auf, um zu bestimmen, welche Einschränkungen Sie für ein bestimmtes Schemarowset unterstützen (es wird von [GetSchemas](../../data/oledb/idbschemarowsetimpl-getschemas.md) über einen upcasted-Zeiger aufgerufen). Einschränkungen ermöglichen es Consumern, nur die übereinstimmende Zeilen abzurufen (z. B. Suche nach allen Spalten in der Tabelle „MyTable“). Einschränkungen sind optional, und wenn keine unterstützt werden (Standardeinstellung), werden immer alle Daten zurückgegeben.
 
@@ -252,7 +252,7 @@ in Ein äußerer `IUnknown` beim aggregierten; andernfalls NULL.
 *ppRowset*<br/>
 [out] Ein Zeiger auf die angeforderte Schnittstelle für das neu erstellte Schemarowset.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Für diese Methode muss der Benutzer eine Schemazuordnung in der Sitzungsklasse haben. Mithilfe der Schema Zuordnungs Informationen erstellt `GetRowset` ein angegebenes Rowsetobjekt, wenn der *rguidschema* -Parameter mit einem der Zuordnungs Einträge identisch ist. Unter [SCHEMA_ENTRY](../../data/oledb/schema-entry.md) finden Sie eine Beschreibung des Zuordnungseintrags.
 
@@ -281,15 +281,15 @@ STDMETHOD (GetSchema s )(ULONG * pcSchemas,
 *prgRest*<br/>
 [out] Ein Zeiger auf ein Array von **ULONG**s, das mit dem Einschränkungsarray gefüllt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode gibt ein Array aller Schemarowsets zurück, die vom Anbieter unterstützt werden. Weitere Informationen finden Sie im Windows SDK unter [IDBSchemaRowset:: GetSchemas](/previous-versions/windows/desktop/ms719605(v=vs.85)) .
 
 Für die Implementierung dieser Funktion muss der Benutzer eine Schemazuordnung in der Sitzungsklasse haben. Mithilfe der Schemazuordnungsinformationen antwortet die Funktion dann mit dem Array von GUIDs für die Schemas in der Zuordnung. Dies stellt die Schemas dar, die vom Anbieter unterstützt werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schemarowset-Klassen und Typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)<br/>
 [Supporting Schema Rowsets](../../data/oledb/supporting-schema-rowsets.md)<br/>
 [SCHEMA_ENTRY](../../data/oledb/schema-entry.md)<br/>
-[UpdatePV](https://github.com/Microsoft/VCSamples)
+[UpdatePV](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider)

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2855
 ms.assetid: bfcd2619-f1e4-4016-95ee-5bdabe26fbad
-ms.openlocfilehash: 0928f3d921c6ac241a3d99b505e0645db7c1d6b1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a385c5df8614a52826c8a167f159dad278865f5a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385796"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201888"
 ---
 # <a name="compiler-error-c2855"></a>Compilerfehler C2855
 
-die Befehlszeilenoption "Option" inkonsistent mit der vorkompilierten Headerdatei
+die Befehlszeilenoption "Option" ist inkonsistent mit dem vorkompilierten Header.
 
-Die angegebene Befehlszeilenoption unterscheidet sich von der Option zum Erstellen des vorkompilierten Headers verwendet. Erneutes Generieren des vorkompilierten Headers mit der angegebenen Befehlszeilenoption.
+Die angegebene Befehlszeilenoption unterscheidet sich von der Option, die zum Erstellen des vorkompilierten Headers verwendet wurde. Generieren Sie den vorkompilierten Header mit der angegebenen Befehlszeilenoption neu.

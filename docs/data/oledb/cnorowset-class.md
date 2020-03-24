@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - CNoRowset class
 ms.assetid: 55c6c7a4-9e3a-4775-a2dd-c8b333012fa6
-ms.openlocfilehash: 6193e2d461761c53fb05e5c16b3914c56d545173
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 19a1e01fd29c74cf1c44081c24bf384704cf2acd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230476"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211471"
 ---
 # <a name="cnorowset-class"></a>CNoRowset-Klasse
 
-Kann als ein Vorlagenargument verwendet werden (`TRowset`) für [CCommand](../../data/oledb/ccommand-class.md) oder [CTable](../../data/oledb/ctable-class.md).
+Kann als Vorlagen Argument (`TRowset`) für [CCommand](../../data/oledb/ccommand-class.md) [oder zum](../../data/oledb/ctable-class.md)verwenden verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,33 +31,33 @@ class CNoRowset
 ### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Ein Accessor-Klasse. Die Standardeinstellung ist `CAccessorBase`.
+Eine Accessor-Klasse. Der Standardwert lautet `CAccessorBase`.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Verwendung `CNoRowset` als ein Vorlagenargument, wenn der Befehl kein Rowset zurückgibt.
+Verwenden Sie `CNoRowset` als Vorlagen Argument, wenn der Befehl kein Rowset zurückgibt.
 
-`CNoRowset` implementiert die folgenden Stubmethoden, von denen jedes anderen Klassenmethoden Accessor entsprechen:
+`CNoRowset` implementiert die folgenden Stub-Methoden, die jeweils anderen Accessor-Klassen Methoden entsprechen:
 
-- `BindFinished` -Gibt an, wenn die Bindung abgeschlossen ist (gibt `S_OK`).
+- `BindFinished`: zeigt an, wenn die Bindung beendet ist (gibt `S_OK`zurück).
 
-- `Close` -Versionen der Zeilen und die aktuelle IRowset-Schnittstelle.
+- `Close`: gibt Zeilen und die aktuelle IRowset-Schnittstelle frei.
 
-- `GetIID` -Ruft Sie die Schnittstellen-ID eines Verbindungspunkts ab.
+- `GetIID`: Ruft die Schnittstellen-ID eines Verbindungs Punkts ab.
 
-- `GetInterface` -Ruft eine Schnittstelle ab.
+- `GetInterface`: Ruft eine Schnittstelle ab.
 
-- `GetInterfacePtr` -Ruft ab einen gekapselten Schnittstellenzeiger auf.
+- `GetInterfacePtr`-Ruft einen gekapselten Schnittstellen Zeiger ab.
 
-- `SetAccessor` – Legt fest, die dem Accessor einen Zeiger.
+- `SetAccessor`: legt einen Zeiger auf den-Accessor fest.
 
-- `SetupOptionalRowsetInterfaces` – Legt fest, um optionale Schnittstellen für das Rowset.
+- `SetupOptionalRowsetInterfaces`: richtet optionale Schnittstellen für das Rowset ein.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

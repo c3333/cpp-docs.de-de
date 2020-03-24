@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3389
 ms.assetid: eaaffe17-23f2-413c-b1ad-f7220cfa1334
-ms.openlocfilehash: 6a9568f3c3be88438eae1f28e12dc780301ead0b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b166096390169939f01bcb976a57612f10f7df2e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402579"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201135"
 ---
 # <a name="compiler-error-c3389"></a>Compilerfehler C3389
 
-> __declspec (*Schlüsselwort*) kann nicht verwendet werden, mit/clr: pure oder/clr: safe
+> __declspec (*Schlüsselwort*) kann nicht mit/CLR: pure oder/CLR: Safe verwendet werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Ein [__declspec](../../cpp/declspec.md) Modifizierer impliziert einen prozessspezifischen Zustand.  [/ CLR: pure](../../build/reference/clr-common-language-runtime-compilation.md) impliziert eine pro [Appdomain](../../cpp/appdomain.md) Zustand.  Also Deklarieren einer Variablen mit der `keyword` **__declspec** -Modifizierer und die Kompilierung mit **/CLR: pure** ist nicht zulässig.
+Ein [__declspec](../../cpp/declspec.md) Modifizierer, der verwendet wird, impliziert einen Prozess pro Prozess.  [/clr: pure](../../build/reference/clr-common-language-runtime-compilation.md) impliziert einen pro [AppDomain](../../cpp/appdomain.md) -Zustand.  Daher ist das Deklarieren einer Variablen mit dem `keyword` **__declspec** Modifizierers und der Kompilierung mit **/clr: pure** nicht zulässig.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C3389 generiert:
+Im folgenden Beispiel wird C3389 generiert:
 
 ```cpp
 // C3389.cpp

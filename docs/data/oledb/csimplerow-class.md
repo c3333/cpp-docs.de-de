@@ -34,12 +34,12 @@ helpviewer_keywords:
 - m_dwRef
 - m_iRowset
 ms.assetid: 06d9621d-60cc-4508-8b0c-528d1b1a809b
-ms.openlocfilehash: 00d8164425ada573020971f66312b2282cc72c45
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 2b08e0e8f3b5b43f79019c70e3fe32ae9064dee9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545564"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211119"
 ---
 # <a name="csimplerow-class"></a>CSimpleRow-Klasse
 
@@ -51,11 +51,11 @@ Stellt eine Standard Implementierung für das Zeilen Handle bereit, das in der [
 class CSimpleRow
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -73,7 +73,7 @@ class CSimpleRow
 |[m_dwRef](#dwref)|Verweis Zähler auf ein vorhandenes Zeilen handle.|
 |[m_iRowset](#irowset)|Ein Index für das Rowset, das den Cursor darstellt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein Zeilen Handle ist logisch ein eindeutiges Tag für eine Ergebniszeile. `IRowsetImpl` erstellt eine neue `CSimpleRow` für jede in [IRowset timpl:: GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md)angeforderte Zeile. `CSimpleRow` können auch durch ihre eigene Implementierung des Zeilen Handles ersetzt werden, da es sich um ein Standardvorlagen Argument für `IRowsetImpl`handelt. Die einzige Anforderung, diese Klasse zu ersetzen, besteht darin, dass die Ersetzungs Klasse einen Konstruktor bereitstellt, der einen einzelnen Parameter vom Typ **Long**akzeptiert.
 
@@ -121,7 +121,7 @@ CSimpleRow(DBCOUNTITEM iRowsetCur);
 *irowsetcur*<br/>
 in Index für das aktuelle Rowset.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Legt [m_iRowset](../../data/oledb/csimplerow-m-irowset.md) auf *irowsetcur*fest.
 
@@ -155,7 +155,7 @@ Index für das Rowset, das den Cursor darstellt.
 KeyType m_iRowset;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

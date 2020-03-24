@@ -5,19 +5,19 @@ helpviewer_keywords:
 - OLE DB services [OLE DB], enabling and disabling
 - service providers [OLE DB]
 ms.assetid: 445f97eb-32a8-41c2-ad26-1169f78a074f
-ms.openlocfilehash: df17a55950b03d4d63dea2199e3bc19bedb8a7e3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3016126d09b39ec74f4acb758a2176be05052648
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175341"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210963"
 ---
 # <a name="enabling-and-disabling-ole-db-services"></a>Aktivieren und Deaktivieren von OLE DB-Diensten
 
-Der OLE DB Service Standortkomponenten-Manager vergleicht die Eigenschaften, die vom Consumer an den Eigenschaften, die vom Anbieter zu bestimmen, ob einzelne Dienstkomponenten verwendet werden können, um erweiterte Funktionen, die vom Consumer angeforderte erfüllen unterstützt angegeben werden. Verwendet beispielsweise wenn eine Anwendung, welches einen bildlauffähigen Cursor anfordert, und der Anbieter nur einen Vorwärtscursor unterstützt, die Dienst-Standortkomponenten-Manager die Client-Cursor-Engine-Komponente bildlauffähigen Funktionalität bereitstellen. Wenn die Anwendung setzt voraus, erweiterte Funktionen, die standardmäßig für den Anbieter-Rowset unterstützt dass, und die Anwendung nicht explizit legen Sie die Eigenschaften, um anzufordern, dass Funktionen, die Funktionalität nicht in dem vom Client zurückgegebenen Rowset angezeigt werden kann Cursor-Engine. Um interoperable, Anwendungen sollten immer Eigenschaften festlegen, um erweiterte Funktionen explizit anfordern, falls erforderlich.
+Der OLE DB-Dienst Komponenten-Manager vergleicht die vom Consumer angegebenen Eigenschaften mit den Eigenschaften, die vom Anbieter unterstützt werden, um zu bestimmen, ob einzelne Dienst Komponenten zum erfüllen erweiterter Funktionen verwendet werden können, die vom Consumer angefordert werden. Wenn eine Anwendung z. b. einen Bild lauffähigen Cursor anfordert und der Anbieter nur einen Vorwärts Cursor unterstützt, verwendet der Dienst Komponenten-Manager die Client Cursor-Engine-Dienst Komponente, um scrollfähige Funktionen bereitzustellen. Wenn sich die Anwendung auf Erweiterte Funktionen verlässt, die standardmäßig im Rowset des Anbieters unterstützt werden, und die Anwendung die Eigenschaften nicht explizit so festgelegt, dass diese Funktionalität angefordert wird, wird die Funktionalität möglicherweise nicht in dem vom Client zurückgegebenen Rowset angezeigt. Cursor-Engine. Um interoperabel zu sein, sollten Anwendungen immer Eigenschaften festlegen, um bei Bedarf erweiterte Funktionen explizit anzufordern.
 
-In einigen Fällen ist es möglicherweise notwendig, einzelne OLE DB-Dienste auch mit vorhandenen Anwendungen arbeiten, die Annahmen zu den Eigenschaften von einem Anbieter zu deaktivieren. OLE DB-Dienste bieten die Möglichkeit, einzelne Dienste oder alle Dienste, die für eine Verbindungs-von-Verbindung oder für alle Anwendungen, die mit einem einzigen Anbieter deaktivieren.
+In einigen Fällen kann es erforderlich sein, einzelne OLE DB Dienste zu deaktivieren, damit Sie gut mit vorhandenen Anwendungen funktionieren, die Annahmen über die Merkmale eines Anbieters treffen. OLE DB Dienste bieten die Möglichkeit, einzelne Dienste oder alle Dienste entweder auf Verbindungs Basis oder für alle Anwendungen, die einen einzelnen Anbieter verwenden, zu deaktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Ressourcenpooling und -Dienste](../../data/oledb/ole-db-resource-pooling-and-services.md)
