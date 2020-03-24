@@ -4,18 +4,16 @@ ms.date: 05/21/2019
 helpviewer_keywords:
 - tools and platforms [C++]
 ms.assetid: 3d88607b-9cc4-490a-8d4c-31ee7610a26f
-ms.openlocfilehash: a7514e5cc52b24740b82cc067e77955c4784c9f0
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: 03a28c87bd0a122229a7e93b7077b1d6e3fea53f
+ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400640"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80079256"
 ---
 # <a name="c-tools-and-features-in-visual-studio-editions"></a>C++-Tools und -Features in Visual Studio-Editionen
 
-
 ::: moniker range=">=vs-2019"
-
 
 Die folgenden C++-Features stehen in Visual Studio 2019 zur Verfügung. Sofern nicht anders angegeben, sind alle Features in allen Editionen verfügbar: Visual Studio Community, Visual Studio Professional und Visual Studio Enterprise. Einige Features erfordern spezifische Workloads oder optionale Komponenten, die Sie mit dem Visual Studio-Installer installieren können.
 
@@ -35,7 +33,7 @@ Die folgenden C++-Features stehen in Visual Studio 2019 zur Verfügung. Sofern 
 - Clang/LLVM
   - Unter Windows: Clang/LLVM 7.0 für x86 oder x64 (gilt nur für CMake-Unterstützung). Andere Clang-Versionen können funktionieren, jedoch werden diese nicht offiziell unterstützt.
   - Unter Linux: beliebige von der Verteilung unterstützte Installation von Clang/LLVM.
- 
+
 ## <a name="c-workloads"></a>C++-Workloads
 
 Visual Studio enthält die folgenden Workloads für die C++-Entwicklung. Sie können eine beliebige von diesen und anderen Workloads installieren, z. B. .NET Desktopentwicklung, Python-Entwicklung, Azure-Entwicklung, Visual Studio-Extensionentwicklung und mehr.
@@ -136,7 +134,6 @@ Optionale Komponenten:
 - C++ iOS-Entwicklungstools
 - IncrediBuild – Buildbeschleunigung
 
-
 ## <a name="individual-components"></a>Screenshot: Einzelne Komponenten
 
 Sie können diese Komponenten unabhängig von der Workload installieren.
@@ -198,11 +195,11 @@ Universelle Windows-Plattform (C++/CX):
 - Leere App
 - DirectX 11- und XAML-App
 - DirectX 11-App
-- DirectX 12-App 
-- Komponententest-App 
-- DLL 
-- Komponente für Windows-Runtime 
-- Statische Bibliothek 
+- DirectX 12-App
+- Komponententest-App
+- DLL
+- Komponente für Windows-Runtime
+- Statische Bibliothek
 - Paketerstellungsprojekt für Windows-Anwendungen
 
 Linux:
