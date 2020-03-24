@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - RC4002
 ms.assetid: a157bc55-1a75-4337-aee4-e2ba61ff8cfa
-ms.openlocfilehash: ddb16a5ea810d272db5f1d2b7473a6e5d49d69bf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dfe4d75214ed5329d5949f4133e70a01c5283343
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62346235"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172697"
 ---
 # <a name="resource-compiler-warning-rc4002"></a>Ressourcencompiler: Warnung RC4002
 
 Zu viele übergebene Parameter für das Makro "Bezeichner"
 
-Die Anzahl der tatsächlichen Parameter, die mit dem angegebenen Bezeichner angegeben war größer als die Anzahl der formalen Parameter in der Makrodefinition des Bezeichners.
+Die Anzahl der tatsächlichen Parameter, die mit dem angegebenen Bezeichner angegeben wurden, war größer als die Anzahl der formalen Parameter, die in der Makro Definition des Bezeichners angegeben sind.
 
-Die zusätzlichen Parameter wurden gesammelt, jedoch ignoriert, während der Erweiterung des Makros.
+Die zusätzlichen tatsächlichen Parameter wurden gesammelt, aber während der Erweiterung des Makros ignoriert.

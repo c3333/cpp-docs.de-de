@@ -6,12 +6,12 @@ helpviewer_keywords:
 - L-values [C++]
 - conversions, standard
 ms.assetid: ce7ac8d3-5c99-4674-8229-0672de05528d
-ms.openlocfilehash: c51a5ea5aaabb27babb9e4cd355721742088d31e
-ms.sourcegitcommit: c51b2c665849479fa995bc3323a22ebe79d9d7ce
+ms.openlocfilehash: 41ad348b7109451f519c44f685cea0a271f71925
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998897"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161009"
 ---
 # <a name="standard-conversions"></a>Standardkonvertierungen
 
@@ -127,7 +127,7 @@ Im vorherigen Beispiel ist `u` ein **kurzes ganzzahliges Objekt ohne** Vorzeiche
 
 Ein Objekt vom Gleitkommatyp kann gefahrlos in einen genaueren Gleitkommatyp konvertiert werden, d. h. die Konvertierung verursacht keinen Signifikanzverlust. Beispielsweise sind Konvertierungen von **float** in **Double** oder von **Double** in **long Double** sicher, und der Wert ist unverändert.
 
-Ein Objekt eines Gleit Komma Typs kann auch in einen weniger präzisen Typ konvertiert werden, wenn es sich in einem Bereich befindet, der durch diesen Typ dargestellt werden kann. (Weitere Informationen finden Sie unter [Floating Limits](../cpp/floating-limits.md) für die Bereiche von Gleit Komma Typen.) Wenn der ursprüngliche Wert nicht exakt darstellbar ist, kann er in den nächsthöheren oder den nächst niedrigeren darstellbaren Wert konvertiert werden. Das Ergebnis ist nicht definiert, wenn kein solcher Wert vorhanden ist. Betrachten Sie das folgende Beispiel:
+Ein Objekt eines Gleit Komma Typs kann auch in einen weniger präzisen Typ konvertiert werden, wenn es sich in einem Bereich befindet, der durch diesen Typ dargestellt werden kann. (Weitere Informationen finden Sie unter [Floating Limits](../cpp/floating-limits.md) für die Bereiche von Gleit Komma Typen.) Wenn der ursprüngliche Wert nicht exakt darstellbar ist, kann er in den nächsthöheren oder den nächst niedrigeren darstellbaren Wert konvertiert werden. Das Ergebnis ist nicht definiert, wenn kein solcher Wert vorhanden ist. Betrachten Sie das folgenden Beispiel:
 
 ```cpp
 cout << (float)1E300 << endl;
@@ -189,7 +189,7 @@ Der erste Fall tritt auf, wenn auf die bezeichnete Basisklasse zugegriffen werde
 
 Ob auf eine Basisklasse zugegriffen werden kann, hängt von der Art der Vererbung bei der Ableitung ab. Betrachten Sie die Vererbung, wie in der folgenden Abbildung veranschaulicht.
 
-![Vererbungs Diagramm&#45;]mit grundlegenden Barrierefreiheits(../cpp/media/vc38xa1.gif "Vererbungs&#45;Diagramm mit basisklassenbarrierefreiheit") <br/>
+![Vererbungs Diagramm mit&#45;Basisklassen-Barrierefreiheit](../cpp/media/vc38xa1.gif "Vererbungs Diagramm mit&#45;Basisklassen-Barrierefreiheit") <br/>
 Vererbungsdiagramm für Abbildung der Basisklasse-Barrierefreiheit
 
 Die folgende Tabelle zeigt die Zugriffsmöglichkeiten auf die Basisklassen bei der Situation, die in der Abbildung veranschaulicht wird.
@@ -327,6 +327,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++Sprachreferenz](../cpp/cpp-language-reference.md)

@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1215
 ms.assetid: 0774d8e6-f0c1-4efb-8723-7e1be6863d81
-ms.openlocfilehash: cc9763771778118a823d8c54f922026215b534f2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d35279d9f47735489902fde284314a2c94f7a682
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62242772"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195070"
 ---
 # <a name="linker-tools-error-lnk1215"></a>Linkertoolfehler LNK1215
 
-Fehler bei der Metadatenvorgang (HRESULT): Fehler
+Fehler beim Metadatenvorgang (HRESULT): Fehler
 
-Der Linker hat einen Fehler aus der .NET Runtime empfangen, bei dem Versuch, ein Update der Paketmetadaten über die .NET Runtime zu tun.
+Der Linker hat beim Versuch, ein metadatenupdate über die .NET-Laufzeit durchzuführen, einen Fehler von der .NET-Laufzeit erhalten.
 
-`HRESULT` entspricht dem HRESULT von der .NET Common Language Runtime-Methode. `error` ist der. NET-bereitgestellten Text.
+`HRESULT` ist das HRESULT aus der .net-Lauf Zeit Methode. `error` ist. Vom Netzwerk bereitgestellter Text.
 
-Möglicherweise verfügen Sie über eine nicht übereinstimmende Linker und .NET Runtime, Installieren Sie Visual C++ neu.
+Wahrscheinlich haben Sie einen nicht übereinstimmenden Linker und eine .NET-Laufzeit. Installieren Sie Visual C++neu.

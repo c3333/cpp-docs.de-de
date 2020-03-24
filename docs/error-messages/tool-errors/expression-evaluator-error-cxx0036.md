@@ -7,35 +7,35 @@ helpviewer_keywords:
 - CXX0036
 - CAN0036
 ms.assetid: 383404be-df5b-4eec-b113-df21bb5d269d
-ms.openlocfilehash: d7961d92760cc5ac325b4bc9f187d4ee2298479a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 164fd9ee00071e218e5bb4f3ab00febc618725a7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397028"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195499"
 ---
 # <a name="expression-evaluator-error-cxx0036"></a>Ausdrucksauswertungsfehler CXX0036
 
-Falscher Kontext {...} Angabe
+Ungültiger Kontext {...} specification
 
-Diese Meldung kann von einer von mehreren Fehlern bei der Verwendung des Operators Kontext generiert werden (**{}**).
+Diese Meldung kann von einem von mehreren Fehlern bei der Verwendung des Kontext Operators ( **{}** ) generiert werden.
 
-- Die Syntax des Operators Kontext (**{}**) wurde falsch angegeben.
+- Die Syntax des Kontext Operators ( **{}** ) wurde falsch angegeben.
 
-   Die Syntax des Operators Kontext lautet:
+   Die Syntax des Kontext Operators lautet wie folgt:
 
-     {*function*,*module*,*dll*}*expression*
+     {*Function*,*Module*,*dll*} *Ausdruck*
 
-   Dies gibt den Kontext der *Ausdruck*. Der Kontextoperator hat die gleiche Rangfolge und die Verwendung als eine Typumwandlung.
+   Gibt den Kontext des *Ausdrucks*an. Der Kontext Operator hat die gleiche Rangfolge und Verwendung wie eine Typumwandlung.
 
-   Nachfolgende Trennzeichen kann ausgelassen werden. Wenn eine der *Funktion*, *Modul*, oder *Dll* enthält ein Komma, müssen Sie den gesamten Namen in Klammern einschließen.
+   Nachfolgende Kommas können ausgelassen werden. Wenn eine der *Funktionen*, *Module*oder *dll* ein literales Komma enthält, müssen Sie den gesamten Namen in Klammern einschließen.
 
-- Der Funktionsname falsch eingegeben wurde, oder im festgelegten Modul oder Dynamic Link Library nicht vorhanden.
+- Der Funktionsname wurde falsch geschrieben oder ist nicht im angegebenen Modul oder in der Dynamic Link Library vorhanden.
 
-   Da C Groß-/Kleinschreibung beachtet, wird *Funktion* muss genau zugewiesen werden, da es in der Quelle definiert wurde.
+   Da C eine Sprache mit Berücksichtigung von Groß-/Kleinschreibung ist, muss die *Funktion* in genau dem Fall angegeben werden, wie Sie in der Quelle definiert ist.
 
-- Das Modul oder die DLL konnte nicht gefunden werden.
+- Das Modul oder die dll konnte nicht gefunden werden.
 
-   Überprüfen Sie den vollständigen Pfadnamen des angegebenen Moduls oder der DLL.
+   Überprüfen Sie den vollständigen Pfadnamen des angegebenen Moduls oder der dll.
 
 Dieser Fehler ist mit CAN0036 identisch.

@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - D9026
 ms.assetid: 149fe5e3-5329-4be8-b871-49dfd423aaba
-ms.openlocfilehash: 3fd8d442dfabaf2f03d8b564c9fdfb1537f6ff28
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 59dfcdc97fb9caf60a018cb20583ee6fca3dcb27
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214206"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196702"
 ---
 # <a name="command-line-warning-d9026"></a>Befehlszeilenwarnung D9026
 
-Optionen gelten für gesamte Befehlszeile.
+Optionen gelten für die gesamte Befehlszeile.
 
-Nachdem ein Dateiname angegeben wurde, wurde eine Option für einen Befehl angegeben. Die Option wurde in die Datei angewendet, die es vorangestellt.
+In einem Befehl wurde eine Option angegeben, nachdem ein Dateiname angegeben wurde. Die Option wurde auf die vorangegangene Datei angewendet.
 
-Z. B. in den Befehl
+Beispielsweise im Befehl
 
 ```
 CL verdi.c /G5 puccini.c
 ```
 
-die Datei VERDI.c wird mit der Option/G5 und nicht vom Standard/G4 kompiliert werden.
+die Datei "Verdi. c" wird mit der/G5-Option, nicht mit dem/G4-Standard kompiliert.
 
-Dieses Verhalten unterscheidet sich von der einigen früheren Versionen, die angewendet werden, nur die Optionen, die vor dem Dateinamen, wodurch VERDI.c angegeben kompiliert wird, mithilfe von/G4 und wurden mit/G5 kompiliert wird.
+Dieses Verhalten unterscheidet sich von einigen früheren Versionen, die nur die vor dem Dateinamen angegebenen Optionen angewendet haben, was dazu führt, dass Verdi. c mit/G4 und Puccini. c kompiliert wird, die mit/G5. kompiliert werden.

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2004
 ms.assetid: 07645371-e67b-4a2c-b0e0-dde24c94ef7e
-ms.openlocfilehash: 8088494106aa702fda0497fa431e48267167a185
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0d26ab12c5b82d52b7dcbb176d9bfa033d7ddfee
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160418"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194836"
 ---
 # <a name="linker-tools-error-lnk2004"></a>Linkertoolfehler LNK2004
 
-Gp relativer Fixup-Überlauf zu 'Ziel'; short-Abschnitt "Abschnitt" ist zu groß ist oder außerhalb des gültigen Bereichs.
+GP relativer Fixup-Überlauf zu ' target '; der kurze Abschnitt "section" ist zu groß oder liegt außerhalb des zulässigen Bereichs.
 
 Der Abschnitt war zu groß.
 
-Um diesen Fehler zu beheben, verringern Sie die Größe der short-Abschnitts, indem Sie Daten explizit in der long-Abschnitten mit #pragma-Abschnitt (".sectionname", read, Write, Long) einfügen und `__declspec(allocate(".sectionname"))` für Definitionen und Deklarationen.  Ein auf ein Objekt angewendeter
+Um diesen Fehler zu beheben, verringern Sie die Größe des kurzen Abschnitts, indem Sie entweder explizit Daten in den langen Abschnitten über #pragma Abschnitt (". sectionname", Read, Write, Long) und `__declspec(allocate(".sectionname"))` für Daten Definitionen und Deklarationen verwenden.  Beispiel:
 
 ```
 #pragma section(".data$mylong", read, write, long)
@@ -32,7 +32,7 @@ char    rg4[16] = { 1 };
 char    rg5[32] = { 1 };
 ```
 
-Sie können auch logisch gruppierte Daten in ihre eigene Struktur verschieben, die eine Sammlung von Daten, die mehr als 8 Bytes, die der Compiler in einem long-Daten-Abschnitt zuweist.  Ein auf ein Objekt angewendeter
+Sie können logisch gruppierte Daten auch in eine eigene Struktur verschieben, bei der es sich um eine Sammlung von Daten handelt, die größer als 8 Bytes sind, die der Compiler in einem long-Daten Abschnitt zuweist.  Beispiel:
 
 ```
 // from this...
@@ -50,4 +50,4 @@ struct X {
 } x  = { 23, 23*2, 23*3, 23*4 };
 ```
 
-Diesem Fehler folgt der schwerwiegende Fehler `LNK1165`.
+Auf diesen Fehler folgt ein schwerwiegender Fehler `LNK1165`.

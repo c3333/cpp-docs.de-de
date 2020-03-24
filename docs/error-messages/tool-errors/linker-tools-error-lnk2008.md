@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2008
 ms.assetid: bbcd83c5-c8ae-439e-a033-63643a5bb373
-ms.openlocfilehash: 97bb2be18da5d166d1d5fba42e4ec8ce1f0439fe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c7794d09f7eeb9dceba7098ca7af90ccf2eeccad
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386524"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194823"
 ---
 # <a name="linker-tools-error-lnk2008"></a>Linkertoolfehler LNK2008
 
-Das fixupziel ist nicht als 'Symbolname' ausgerichtete
+Das fixupziel ist nicht als "symbol_name" ausgerichtet.
 
-LINK hat ein Fixup-Ziel in der Objektdatei, die nicht ordnungsgemäß ausgerichtet wurde gefunden.
+Link hat ein fixupziel in der Objektdatei gefunden, das nicht ordnungsgemäß ausgerichtet wurde.
 
-Dieser Fehler kann verursacht werden, von der benutzerdefinierten Abschnitt Ausrichtung (z. B. #pragma [Pack](../../preprocessor/pack.md)), [ausrichten](../../cpp/align-cpp.md) Modifizierer oder mithilfe der Assemblysprache-Code, Abschnitt Ausrichtung ändert.
+Dieser Fehler kann durch eine benutzerdefinierte secton-Ausrichtung (z. b. #Pragma [Pack](../../preprocessor/pack.md)), einen [align](../../cpp/align-cpp.md) -Modifizierer oder durch die Verwendung von assemblysprachcode verursacht werden, der die Ausrichtung von secton ändert
 
-Wenn Ihr Code keine der oben genannten verwendet, kann dies durch den Compiler verursacht werden.
+Wenn der Code keine der oben genannten Optionen verwendet, kann dies durch den Compiler verursacht werden.

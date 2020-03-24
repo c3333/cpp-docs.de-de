@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - R6019
 ms.assetid: 8129923e-7db2-40ee-9602-def9365f8d28
-ms.openlocfilehash: 93d340b2a12a00420a9003429251387b2f04ad37
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b647825b7e856be9dc51a5a652be87a4cc6d0e23
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214098"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197261"
 ---
 # <a name="c-runtime-error-r6019"></a>C-Laufzeitfehler R6019
 
-Konsole Gerät kann nicht geöffnet
+das Konsolen Gerät kann nicht geöffnet werden.
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da versucht wurde, Zugriff auf die Konsole, aber es nicht über ausreichende Berechtigungen verfügen. Es gibt mehrere mögliche Gründe für diesen Fehler, aber dies ist normalerweise, weil das Programm als Administrator ausgeführt werden muss oder ein Fehler im Programm vorhanden ist.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP heruntergefahren, weil versucht wurde, auf die Konsole zuzugreifen, aber Sie verfügte nicht über ausreichende Berechtigungen. Es gibt mehrere mögliche Ursachen für diesen Fehler. Dies liegt jedoch in der Regel daran, dass das Programm als Administrator ausgeführt werden muss oder ein Fehler im Programm vorliegt.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Führen Sie das Programm als Administrator an.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Führen Sie das Programm als Administrator aus.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Dieser Fehler tritt auf, da die app eine der hat, das Betriebssystem hat jedoch Zugriff auf die Konsole. Mit Ausnahme von sind im Debugmodus, Konsolenfunktionen in der Regel nicht in Microsoft Store-apps zulässig. Wenn Ihre app Administratorrechte ausführen erfordert, stellen Sie sicher, dass er standardmäßig als Administrator ausführen installiert ist.
+Dieser Fehler tritt auf, weil die APP als Konsolen Funktion bezeichnet wird, das Betriebssystem jedoch keinen Zugriff auf die Konsole gewährt hat. Außer im Debugmodus sind Konsolenfunktionen in Microsoft Store-Apps in der Regel nicht zulässig. Wenn Ihre APP Administratorrechte zum Ausführen erfordert, stellen Sie sicher, dass Sie standardmäßig als Administrator ausgeführt wird.

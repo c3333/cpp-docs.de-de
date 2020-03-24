@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C1902
 ms.assetid: 2dc066cc-fcb1-4725-8bcb-9f44dd0905b7
-ms.openlocfilehash: c425430a6d08ae8a97c4dcd0f5764f44dee43e5f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 10a411dfc942498a98959d9a23cb42dfb93cf2ae
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62165865"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202825"
 ---
 # <a name="fatal-error-c1902"></a>Schwerwiegender Fehler C1902
 
-Programm Datenbank-Manager-Konflikt; Überprüfen Sie die installation
+nicht übereinstimmender Programmdatenbank-Manager. Überprüfen Sie die Installation.
 
-Erstellt eine Programmdatenbankdatei (.pdb) wurde mit einer neueren Version von Mspdb*XXX*DLL-Datei als die der Compiler auf Ihrem System gefunden. Dieser Fehler in der Regel gibt an, dass mspdbsrv.exe mspdbcore.dll fehlen oder weisen verschiedene Versionen als Mspdb*XXX*DLL-Datei. (Die *XXX* Platzhalter in der Mspdb*XXX*DLL-Datei ändert sich mit jeder Produktversion. Beispielsweise wird in Visual Studio 2015 ist der Dateiname mspdb140.dll.)
+Eine Programm Datenbankdatei (. pdb) wurde mit einer neueren Version von Mspdb*xxx*. dll erstellt, als die, die der Compiler auf Ihrem System gefunden hat. Dieser Fehler weist normalerweise darauf hin, dass "mspdbsrv. exe" oder "mspdbcore. dll" fehlen oder andere Versionen als "Mspdb*xxx*. dll" aufweisen. (Der *xxx* -Platzhalter in der Datei "Mspdb*xxx*. dll" ändert sich bei jeder Produktversion. In Visual Studio 2015 lautet der Dateiname beispielsweise Version von mspdb140. dll.)
 
-Stellen Sie sicher übereinstimmende Versionen von mspdbsrv.exe, mspdbcore.dll und Mspdb*XXX*DLL-Datei auf Ihrem System installiert sind. Stellen Sie sicher, dass nicht übereinstimmende Versionen nicht in das Verzeichnis kopiert wurden, die der Compiler und Link-Tools für Ihre Zielplattform enthält. Z. B. Sie möglicherweise haben die Dateien kopiert, damit Sie das Tool Compiler oder einem Link, über die Eingabeaufforderung festlegen, ohne aufgerufen werden konnte die **Pfad** Umgebungsvariable entsprechend.
+Stellen Sie sicher, dass die Versionen von "mspdbsrv. exe", "mspdbcore. dll" und "Mspdb*xxx*. dll" auf dem System installiert sind. Stellen Sie sicher, dass nicht übereinstimmende Versionen nicht in das Verzeichnis kopiert wurden, das die Compilertools und Verknüpfungs Tools für Ihre Zielplattform enthält. Beispielsweise können Sie die Dateien kopiert haben, damit Sie das Compiler-oder Link Tool über die Eingabeaufforderung aufrufen können, ohne die Umgebungsvariable **path** entsprechend festzulegen.

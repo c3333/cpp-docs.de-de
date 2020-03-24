@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C1601
 ms.assetid: 25797c39-f085-4d75-9eab-159ecd36ef49
-ms.openlocfilehash: cade1c216053e61b14bd9ccdd0b50e0325bb5cc7
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 22dfdd47fca596282762873ea86b9382c4d8f997
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64344768"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202916"
 ---
 # <a name="fatal-error-c1601"></a>Schwerwiegender Fehler C1601
 
 Nicht unterstützter Inlineassembly-Opcode.
 
-Dieser Fehler zeigt an, einen Konflikt in Ihre Compiler .exe-Dateien, die möglicherweise aufgrund einer unvollständigen Installation aufgetreten sind. Angenommen, können Sie ein Servicepack, aber nicht die Prozessor-Pack installiert haben. Installieren Sie alle erforderlichen Produkte.
+Dieser Fehler weist auf eine nicht Übereinstimmung in den Compilerdateien auf, die möglicherweise aufgrund einer unvollständigen Installation aufgetreten sind. Beispielsweise haben Sie möglicherweise eine Service Pack installiert, aber nicht das Prozessor Paket. Installieren Sie alle erforderlichen Produkte.

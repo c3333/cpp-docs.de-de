@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1302
 ms.assetid: aea3c753-c2c4-4249-bbc3-f2d4f0164b5e
-ms.openlocfilehash: c3b1117b31db4759b385943323a581da7a58f0c4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8323fa234851ce3ba12083adb74d5ee0fba0ac69
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160444"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194927"
 ---
 # <a name="linker-tools-error-lnk1302"></a>Linkertoolfehler LNK1302
 
-nur die Verknüpfung sicherer .netmodules unterstützt; Datei .netmodule kann nicht verknüpft
+unterstützt nur das Verknüpfen von Safe. netmodules; Datei ". netmodule" kann nicht verknüpft werden.
 
-Eine NETMODULE-Datei (kompiliert mit **/ln**) an den Linker den Versuch eines Benutzers zum Aufrufen der MSIL-Verknüpfung übergeben wurde.  Ein C++-Modul ist gültig für MSIL verknüpfen, wenn die Kompilierung mit **/CLR: safe**.
+Ein. netmodule (mit **/ln**kompiliert) wurde in einem Benutzer Versuch, MSIL-Verknüpfungen aufzurufen, an den Linker übermittelt.  Ein C++ Modul ist für MSIL-Verknüpfungen gültig, wenn es mit **/clr: Safe**kompiliert wird.
 
-Um diesen Fehler zu beheben, kompilieren Sie mit **/CLR: safe** MSIL-linking aktivieren, oder übergeben die **"/ CLR"** oder **/CLR: pure** OBJ-Datei an den Linker anstelle des Moduls.
+Um diesen Fehler zu beheben, kompilieren Sie mit **/clr: Safe** , um das MSIL-verknüpfen zu aktivieren, oder übergeben Sie die **/CLR** -oder **/clr: pure** . obj-Datei an den Linker anstatt an das Modul.
 
 Weitere Informationen finden Sie unter
 

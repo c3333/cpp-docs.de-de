@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - C2891
 ms.assetid: e12cfb2d-df45-4b0d-b155-c51d17e812fa
-ms.openlocfilehash: d9a1cdafdf7d3a2843aee4a20f71c7e6a4693150
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2544cfc9e8cff283a7c3e0ace499408bb84cd046
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366367"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201635"
 ---
 # <a name="compiler-error-c2891"></a>Compilerfehler C2891
 
-'Parameter': die Adresse eines Vorlagenparameters nicht übernehmen
+"Parameter": die Adresse eines Vorlagen Parameters kann nicht übernommen werden.
 
-Sie können nicht die Adresse eines Vorlagenparameters übernehmen, wenn es sich um einen l-Wert ist. Typparameter sind nicht Lvalues, da sie keine Adresse aufweisen. Nichttyp-Werte in Vorlagenparameterlisten, die nicht Lvalues sind müssen sich auch nicht auf eine Adresse aus. Dies ist ein Beispiel für Code, der bewirkt, Compilerfehler C2891 dass, weil der Wert als den Vorlagenparameter übergeben eine vom Compiler generierte Kopie der Template-Argument.
+Sie können die Adresse eines Vorlagen Parameters nur dann übernehmen, wenn es sich um einen lvalue handelt. Typparameter sind keine Lvalues, da Sie keine Adresse aufweisen. Nicht-Typwerte in Vorlagen Parameterlisten, bei denen es sich nicht um Lvalues handelt, verfügen auch nicht über eine Adresse. Dies ist ein Beispiel für Code, der Compilerfehler C2891 verursacht, da der als Vorlagen Parameter übergebener Wert eine vom Compiler generierte Kopie des Vorlagen Arguments ist.
 
 ```
 template <int i> int* f() { return &i; }
 ```
 
-Vorlagenparameter, die l-Werte, z. B. Verweistypen sind, kann ihre Adresse erstellt haben.
+Bei Vorlagen Parametern, bei denen es sich um Lvalues handelt, z. b. Verweis Typen, kann Ihre Adresse übernommen werden
 
 ```
 template <int& r> int* f() { return &r; }
 ```
 
-Um diesen Fehler zu beheben, nehmen Sie nicht die Adresse eines Vorlagenparameters, wenn es sich um einen l-Wert ist.
+Um diesen Fehler zu beheben, nehmen Sie die Adresse eines Vorlagen Parameters nur dann an, wenn es sich um einen lvalue handelt.

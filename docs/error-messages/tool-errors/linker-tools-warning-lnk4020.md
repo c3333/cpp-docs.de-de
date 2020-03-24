@@ -5,17 +5,17 @@ f1_keywords:
 - LNK4020
 helpviewer_keywords:
 - LNK4020
-ms.openlocfilehash: 7810fd9a97a8f6e22ad362819a024358a9f4b07c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e818909cc0b590b0f7727846cfd7b469e8bc0e3f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298580"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194225"
 ---
 # <a name="linker-tools-warning-lnk4020"></a>Linkertoolwarnung LNK4020
 
-> ein Typeneintrag in "*Filename*' ist beschädigt; einige Symbole und Typen möglicherweise nicht zugegriffen werden kann, aus dem Debugger
+> ein typdatensatz in '*filename*' ist beschädigt. auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
 
-Die PDB-Datei *Filename* Typeneinträge beschädigt wurde.
+Der *Dateiname* der PDB-Datei weist einen beschädigten typdatensatz auf.
 
-Dieses Problem tritt häufig auf anderen Buildfehlern sekundären; es sei denn, dies das erste Buildproblem der gemeldeten ist, arbeiten Sie mit den anderen Fehlern und Warnungen erste. Ist dies das erste gemeldeten Problem, müssen Sie die Buildverzeichnisse zu bereinigen und Neuerstellen des Projekts. Wenn Sie parallele Buildprozesse verwenden, finden Sie, wenn der Fehler weiterhin auftritt, wenn Sie Ihren Build serialisieren.
+Dieses Problem ist häufig bei anderen Buildproblemen sekundär. Wenn dies das erste gemeldete Buildproblem ist, behandeln Sie zunächst die anderen Fehler und Warnungen. Wenn dies das erste gemeldete Problem ist, müssen Sie möglicherweise Ihre Buildverzeichnisse bereinigen und das Projekt neu erstellen. Wenn Sie parallele Buildprozesse verwenden, prüfen Sie, ob der Fehler weiterhin auftritt, wenn Sie den Build serialisieren.

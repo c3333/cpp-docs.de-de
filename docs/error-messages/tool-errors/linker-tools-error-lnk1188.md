@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1188
 ms.assetid: 4af574b0-5b41-4580-9a37-52a634add995
-ms.openlocfilehash: 69ac20522aebb7391319c0de210e06b305f3fd0d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b18a93c7434ee3d66f42829f373bd916a65369bd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62226477"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195174"
 ---
 # <a name="linker-tools-error-lnk1188"></a>Linkertoolfehler LNK1188
 
-BADFIXUPSECTION:: Ungültiges Fixup-Ziel 'Symbol'; mögliche Null-Abschnittslänge.
+Badfixupsection:: Ungültiges fixupziel ' Symbol '; möglicher Abschnitt mit einer Länge von NULL
 
-Bei einem VxD-Link das Ziel eine Umsetzung nicht Abschnitt verfügbar. Mit LINK386 (einer älteren Version), OMF GROUP-Datensatz (generiert durch eine MASM-GROUP-Anweisung) verwendet wurde, die Null-Abschnittslänge mit einem anderen nicht-Null-Länge-Abschnitt zu kombinieren. Das COFF-Format unterstützt nicht die GROUP-Anweisung und die Abschnitte mit der Länge 0 (null). Dieser Fehler kann auftreten, wenn der LINK automatisch diese Art von OMF-Objekte in COFF-Format konvertiert.
+Bei einem VxD-Link hat das Ziel einer Verlagerung keinen Abschnitt. Mit LINK386 (eine ältere Version) kann ein OMF-Gruppendaten Satz (generiert durch eine MASM-Gruppen Direktive) verwendet werden, um den Abschnitt mit der Länge 0 (null) mit einem anderen Abschnitt ungleich 0 (null) zu kombinieren. Das COFF-Format unterstützt die Gruppen Direktive und die Abschnitte mit der Länge Null nicht. Wenn der Link diesen Typ von OMF-Objekten automatisch in COFF konvertiert, kann dieser Fehler auftreten.

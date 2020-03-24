@@ -6,22 +6,22 @@ helpviewer_keywords:
 - Microsoft-specific, compiler behavior
 - nonstandard behavior, compliance and compatibility
 ms.assetid: a57dea27-dc79-4f64-8a83-017e84841773
-ms.openlocfilehash: 82c5faae68f9da747017119d76578cc88163d8bb
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: d3bb4ca843833cfe9e027f694f25c989895487bb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222027"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161034"
 ---
 # <a name="nonstandard-behavior"></a>Nicht dem Standard entsprechendes Verhalten
 
-Den folgenden Abschnitten werden einige Bereiche, in denen die Microsoft-Implementierung von C++ stimmt nicht überein, mit der C++ standard. Die unten angegebenen Abschnittszahlen beziehen sich auf die Abschnittszahlen im C++ 11-Standard (ISO/IEC 14882:2011(E)).
+In den folgenden Abschnitten werden einige der Stellen aufgelistet, an denen die C++ Microsoft-Implementierung von nicht C++ dem Standard entspricht. Die unten angegebenen Abschnittszahlen beziehen sich auf die Abschnittszahlen im C++ 11-Standard (ISO/IEC 14882:2011(E)).
 
-Die Liste der Compiler-Grenzen, die von den in der C++-Standard definierten abweichen erhält [Compiler-Grenzen](../cpp/compiler-limits.md).
+Die Liste der compilerlimits, die sich von den im C++ Standard definierten unterscheiden, wird in [compilerlimits](../cpp/compiler-limits.md)angegeben.
 
 ## <a name="covariant-return-types"></a>Kovariante Rückgabetypen
 
-Virtuelle Basisklassen werden nicht als kovariante Rückgabetypen unterstützt, wenn die virtuelle Funktion eine variable Anzahl von Argumenten hat. Dies entspricht nicht Abschnitt 10.3, Absatz 7 der C++ ISO-Spezifikation. Im folgende Beispiel wird nicht kompiliert, sodass Compilerfehler [C2688](../error-messages/compiler-errors-2/compiler-error-c2688.md)
+Virtuelle Basisklassen werden nicht als kovariante Rückgabetypen unterstützt, wenn die virtuelle Funktion eine variable Anzahl von Argumenten hat. Dies entspricht nicht Abschnitt 10.3, Absatz 7 der C++ ISO-Spezifikation. Das folgende Beispiel kompiliert nicht, gibt Compilerfehler an [C2688](../error-messages/compiler-errors-2/compiler-error-c2688.md)
 
 ```cpp
 // CovariantReturn.cpp
@@ -38,7 +38,7 @@ class B : virtual A
 
 ## <a name="binding-nondependent-names-in-templates"></a>Bindung von nicht abhängigen Namen in Vorlagen
 
-Microsoft C++ Compiler unterstützt derzeit nicht von nicht abhängigen Namen bei der Vorlage anfänglich analysiert. Dies entspricht nicht Abschnitt 14.6.3, Absatz 7 der C++ ISO-Spezifikation. Das kann zu Überladungen führen, die deklariert werden, nachdem die Vorlage (aber bevor die Vorlage instanziiert wird) angezeigt werden kann.
+Der Microsoft C++ -Compiler unterstützt derzeit keine Bindung von nicht abhängigen Namen, wenn eine Vorlage anfänglich verarbeitet wird. Dies entspricht nicht Abschnitt 14.6.3, Absatz 7 der C++ ISO-Spezifikation. Das kann zu Überladungen führen, die deklariert werden, nachdem die Vorlage (aber bevor die Vorlage instanziiert wird) angezeigt werden kann.
 
 ```cpp
 #include <iostream>
@@ -64,18 +64,18 @@ int main() {
 
 ## <a name="function-exception-specifiers"></a>Funktionsausnahmebezeichner
 
-Funktionsausnahmebezeichner mit Ausnahme von `throw()` werden analysiert, aber nicht verwendet. Dies entspricht nicht Abschnitt 15.4 der C++ ISO C++-Spezifikation. Zum Beispiel:
+Funktionsausnahmebezeichner mit Ausnahme von `throw()` werden analysiert, aber nicht verwendet. Dies entspricht nicht Abschnitt 15.4 der C++ ISO C++-Spezifikation. Beispiel:
 
 ```cpp
 void f() throw(int); // parsed but not used
 void g() throw();    // parsed and used
 ```
 
-Weitere Informationen zu Ausnahmespezifikationen finden Sie unter [Ausnahmespezifikationen](../cpp/exception-specifications-throw-cpp.md).
+Weitere Informationen zu Ausnahme Spezifikationen finden Sie unter [Ausnahme Spezifikationen](../cpp/exception-specifications-throw-cpp.md).
 
-## <a name="chartraitseof"></a>char_traits::eof()
+## <a name="char_traitseof"></a>char_traits::eof()
 
-Die C++ -Standard gibt an, die [char_traits:: EOF](../standard-library/char-traits-struct.md#eof) muss nicht entsprechen, die eine gültige `char_type` Wert. Microsoft C++ Compiler erzwingt diese Einschränkung für Typ **Char**, jedoch nicht für Typ **"wchar_t"**. Dies entspricht nicht der Anforderung in Tabelle 62, in Abschnitt 12.1.1 der C++ ISO-Spezifikation. Das unten gezeigte Beispiel veranschaulicht dies.
+Der C++ Standardstatus, dass [char_traits:: EOF](../standard-library/char-traits-struct.md#eof) keinem gültigen `char_type` Wert entsprechen darf. Der Microsoft C++ -Compiler erzwingt diese Einschränkung für Typ " **char**", aber nicht für den Typ " **wchar_t**". Dies entspricht nicht der Anforderung in Tabelle 62, in Abschnitt 12.1.1 der C++ ISO-Spezifikation. Das unten gezeigte Beispiel veranschaulicht dies.
 
 ```cpp
 #include <iostream>
@@ -94,4 +94,4 @@ int main()
 
 ## <a name="storage-location-of-objects"></a>Speicherort für Objekte
 
-Der C++-Standard (Abschnitt 1,8, Absatz 6) erfordert vollständige C++-Objekte, um eindeutige Speicherpositionen zu haben. Jedoch mit Microsoft C++, es gibt Fälle, in denen Typen ohne Datenmember einen Speicherort mit anderen Typen für die Lebensdauer des Objekts freigeben werden.
+Der C++-Standard (Abschnitt 1,8, Absatz 6) erfordert vollständige C++-Objekte, um eindeutige Speicherpositionen zu haben. Bei Microsoft C++gibt es jedoch Fälle, in denen Typen ohne Datenmember für die Lebensdauer des Objekts einen Speicherort mit anderen Typen gemeinsam verwenden.

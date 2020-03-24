@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U4007
 ms.assetid: 61ec0417-6961-43c1-ade8-f9d6e93289e9
-ms.openlocfilehash: 796bfd4258c7ad7190cb2e55555549d40f34f258
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3663cb4b94d077719c64a67b500e4901e81c98aa
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396924"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193172"
 ---
 # <a name="nmake-warning-u4007"></a>NMAKE: Warnung U4007
 
-der Dateiname 'Dateiname' zu lang sein. bis 8.3 Abschneiden
+Dateiname ' Dateiname ' ist zu lang. Abschneiden auf 8,3
 
-Der Basisname der angegebenen Datei verfügt über mehr als acht Zeichen oder die Erweiterung hat mehr als drei Zeichen. NMAKE: abgeschnitten, den Namen in eine 8-Zeichen-Basis und eine drei Zeichen.
+Der Basisname der angegebenen Datei enthält mehr als acht Zeichen, oder die Erweiterung hat mehr als drei Zeichen. NMAKE hat den Namen auf eine 8-Zeichen-Basis und eine Erweiterung mit drei Zeichen abgeschnitten.
 
-Wenn von Ihrem Dateisystem lange Dateinamen unterstützt werden, schließen Sie den Namen in doppelte Anführungszeichen (**"**).
+Wenn lange Dateinamen von Ihrem Dateisystem unterstützt werden, müssen Sie den Namen in doppelte Anführungszeichen ( **"** ) einschließen.

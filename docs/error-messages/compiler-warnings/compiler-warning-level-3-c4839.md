@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4839
 ms.assetid: f4f99066-9258-4330-81a8-f4a75a1d95ee
-ms.openlocfilehash: 09b6e5b8dc984b35df7de96f5cf8610f2b0f16af
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2c238dc16359583bf55f7590d2ce7c0363d66df7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62401526"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80198574"
 ---
 # <a name="compiler-warning-level-3-c4839"></a>Compilerwarnung (Stufe 3) C4839
 
-> nicht standardmäßige Verwendung der Klasse*Typ*"als Argument an eine Variadic-Funktion
+> nicht standardmäßige Verwendung der '*Type*'-Klasse als Argument für eine Variadic-Funktion
 
-Klassen oder Strukturen, die an eine Variadic-Funktion, z. B. übergeben werden `printf` muss einfach kopierbar sein. Wenn solche Objekte übergeben werden, macht der Compiler einfach eine bitweise Kopie und ruft keinen Konstruktor oder Destruktor auf.
+Klassen oder Strukturen, die an eine Variadic-Funktion wie z. b. `printf` übermittelt werden, müssen trivial kopiert werden können. Wenn solche Objekte übergeben werden, macht der Compiler einfach eine bitweise Kopie und ruft keinen Konstruktor oder Destruktor auf.
 
-Diese Warnung ist ab, die in Visual Studio 2017 verfügbar.
+Diese Warnung ist ab Visual Studio 2017 verfügbar.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4839 generiert:
+Im folgenden Beispiel wird C4839 generiert:
 
 ```cpp
 // C4839.cpp
@@ -51,7 +51,7 @@ Sie können eine Memberfunktion aufrufen, die einen einfachen kopierbaren Typ zu
     printf("%i\n", i.load());
 ```
 
-Für Zeichenfolgen mit erstellte und verwaltete `CStringW`, bereitgestellten `operator LPCWSTR()` sollte verwendet werden, um die Umwandlung einer `CStringW` Objekt an den C-Zeiger, die von der Formatzeichenfolge erwartet wird.
+Für Zeichen folgen, die mit `CStringW`erstellt und verwaltet werden, sollte die angegebene `operator LPCWSTR()` verwendet werden, um ein `CStringW` Objekt in den von der Format Zeichenfolge erwarteten C-Zeiger umzuwandeln.
 
 ```cpp
     CStringW str1;

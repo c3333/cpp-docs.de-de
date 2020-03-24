@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - BK1516
 ms.assetid: 7f4a8391-f857-4ee8-8e26-34868ca84e29
-ms.openlocfilehash: 07c59d6f70d4e5ab3ecaecda2791293f89479b9e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4edfbdbb070add0c77faefeb77c8db627c260c98
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62325311"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197548"
 ---
 # <a name="bscmake-error-bk1516"></a>BSCMAKE-Fehler BK1516
 
-BSC-Datei ist beschädigt; kann nicht inkrementell aktualisiert werden.
+bscfile beschädigt; Inkrementelles Aktualisieren nicht möglich
 
-Die BSC-Datei wurde möglicherweise aufgrund eines Systemfehlers während des Buildvorgangs beschädigt. BSC-Datei löschen, erstellen Sie alle .sbr-Dateien neu, und die BSC-Datei neu zu erstellen.
+Die BSC-Datei wurde beschädigt, möglicherweise aufgrund eines Systemfehlers während des Builds. Löschen Sie die. BSC-Datei, erstellen Sie alle SBR-Dateien neu, und erstellen Sie dann die BSC-Datei neu.

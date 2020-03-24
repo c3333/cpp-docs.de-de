@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2858
 ms.assetid: 1fb1d770-307e-476e-9984-a1d8f8ce2820
-ms.openlocfilehash: f6cc54a8ffc4771a3a761e3b92da854fcab8327a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e58fb3e1004d58f4e3035355651a22d3697112e9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62351117"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201811"
 ---
 # <a name="compiler-error-c2858"></a>Compilerfehler C2858
 
-Befehlszeilenoption "/ Yc (/ FdDateiname)" nicht mit der vorkompilierten Headerdatei, die "/ FdDateiname"
+die Befehlszeilenoption '/Yc (/Fdfilename) ' ist inkonsistent mit dem vorkompilierten Header, der '/Fdfilename ' verwendet hat.
 
-Die Programmdatenbank, die durch die Verwendung eines vorkompilierten Headers angegeben (["/ Yu"](../../build/reference/yu-use-precompiled-header-file.md)) Option ist nicht angegeben werden, indem Sie die vorherigen vorkompilierten Header erstellen (["/ Yc"](../../build/reference/yc-create-precompiled-header-file.md)) Option.
+Die durch die Option vorkompilierten Header verwenden ([/Yu](../../build/reference/yu-use-precompiled-header-file.md)) angegebene Programmdatenbank ist nicht die durch die vorherige Option vorkompilierten Header erstellen ([/Yc](../../build/reference/yc-create-precompiled-header-file.md)) angegebene Programmdatenbank.

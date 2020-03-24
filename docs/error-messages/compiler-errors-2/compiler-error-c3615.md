@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3615
 ms.assetid: 5ce96ba9-3d31-49f3-9aa8-24e5cdf6dcfc
-ms.openlocfilehash: e966295b5ab63350828ddb73d6791a9e30bb5c59
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c1a5b6edbc87e14de267cf962dc2b1a71dd6be12
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404103"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200537"
 ---
 # <a name="compiler-error-c3615"></a>Compilerfehler C3615
 
-> Constexpr-Funktion "*Funktion*' kann nicht in einem konstanten Ausdruck ergeben
+> die constexpr-Funktion "*Function*" kann keinen konstanten Ausdruck ergeben.
 
-Die Funktion *Funktion* konnte nicht ausgewertet werden, als `constexpr` zum Zeitpunkt der Kompilierung. Sollen `constexpr`, eine Funktion aufrufen kann nur andere `constexpr` Funktionen.
+Die Funktions *Funktion* konnte zum Zeitpunkt der Kompilierung nicht als `constexpr` ausgewertet werden. Um `constexpr`zu werden, kann eine Funktion nur andere `constexpr` Funktionen aufzurufen.
 
 ## <a name="example"></a>Beispiel
 
-Visual Studio 2017 löst ordnungsgemäß einen Fehler, wenn der linke Operand eines bedingten auswertungsvorgangs in ungültig ist eine `constexpr` Kontext. Der folgende Code kompiliert in Visual Studio 2015, aber nicht in Visual Studio 2017.
+Visual Studio 2017 löst ordnungsgemäß einen Fehler aus, wenn der linke Operand eines bedingt auszuwertenden Vorgangs in einem `constexpr` Kontext nicht gültig ist. Der folgende Code wird in Visual Studio 2015 kompiliert, jedoch nicht in Visual Studio 2017.
 
 ```cpp
 // C3615.cpp
@@ -39,4 +39,4 @@ constexpr bool f(const myarray<1> &arr)
 }
 ```
 
-Um dieses Problem zu beheben, deklarieren die `array::size()` fungieren als `constexpr` oder entfernen Sie die `constexpr` aus `f`.
+Um dieses Problem zu beheben, deklarieren Sie entweder die `array::size()` Funktion als `constexpr`, oder entfernen Sie den `constexpr` Qualifizierer aus `f`.

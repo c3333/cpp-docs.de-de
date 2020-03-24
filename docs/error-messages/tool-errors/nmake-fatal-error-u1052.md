@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - U1052
 ms.assetid: b19b3691-e60b-46bd-8822-8426740a9bc7
-ms.openlocfilehash: 58b4a7f8a87658db72048902230e6b4ec3e2eb18
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 34e047bf02c51cf226b29bf291aa8fe0e08f5ee4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395052"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193549"
 ---
 # <a name="nmake-fatal-error-u1052"></a>NMAKE: Schwerwiegender Fehler U1052
 
-> Datei "*Filename*' wurde nicht gefunden.
+> Datei '*Dateiname*' nicht gefunden.
 
-NMAKE: angegebene mit einem der folgenden Datei konnte nicht gefunden werden:
+NMAKE konnte die angegebene Datei nicht finden:
 
-- **/ F** Option
+- **/F** -Option
 
-- **! UMFASSEN** -präprozessanweisung
+- **!** Vorverarbeitung-Direktive einschließen
 
-- At-Zeichen (**\@**) Spezifizierer für eine Antwortdatei
+- At Sign-Spezifizierer ( **\@** ) für eine Antwortdatei
 
-Überprüfen Sie, dass die Datei vorhanden ist und der Dateiname richtig geschrieben ist.
+Überprüfen Sie, ob die Datei vorhanden ist und der Dateiname korrekt geschrieben ist.

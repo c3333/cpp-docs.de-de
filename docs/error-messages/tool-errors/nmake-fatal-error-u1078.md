@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - U1078
 ms.assetid: 24087955-9362-4ddf-9966-e0de43ea4647
-ms.openlocfilehash: cfccb9139fc1081a2651c2f54381517dce765ca8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d1529e98f851accee071f4f233cc9bf518c70324
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366887"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193653"
 ---
 # <a name="nmake-fatal-error-u1078"></a>NMAKE: Schwerwiegender Fehler U1078
 
-Konstantenüberlauf bei 'Ausdruck'
+konstanter Überlauf bei ' Ausdruck '
 
-Der angegebene Ausdruck enthielt eine Konstante, die den Bereich von-2.147.483.648 bis 2.147.483.647 überschritten. Die Konstante wurde in einem der folgenden Situationen angezeigt:
+Der angegebene Ausdruck enthielt eine Konstante, die den Bereich von-2.147.483.648 bis 2.147.483.647 überschreitet. Die Konstante trat in einer der folgenden Situationen auf:
 
-- Ein Ausdruck, der mit einer Präprozessordirektive angegeben
+- Ein mit einer Vorverarbeitungs Anweisung angegebener Ausdruck.
 
-- Eine Fehlerstufe erreicht, die mit den Bindestrich angegeben (**-**) Befehlsmodifizierer
+- Eine mit dem Dash ( **-** )-Befehlsmodifizierer angegebene Fehler Ebene.

@@ -4,12 +4,12 @@ ms.date: 10/21/2019
 helpviewer_keywords:
 - breaking changes [C++]
 ms.assetid: b38385a9-a483-4de9-99a6-797488bc5110
-ms.openlocfilehash: d9e8778e970b6b672d6198770ad0c7ab5a4674b9
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 6dd14bf9f53030920bb5114fb3a52499444ff10a
+ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80076841"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80150757"
 ---
 # <a name="visual-c-change-history-2003---2015"></a>Änderungsverlauf von Visual C++ von 2003 bis 2015
 
@@ -3040,7 +3040,7 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 ### <a name="standard-library"></a>Standardbibliothek
 
-- Als Folge eines Breaking Change zwischen den Standards C++98/03 und C++11 erfolgt bei Verwendung expliziter Vorlagenargumente zum Aufrufen von `make_pair()`, z. B. `make_pair<int, int>(x, y)`, in Visual C++ in Visual Studio 2012 in der Regel keine Kompilierung. Die Lösung besteht darin, `make_pair() ` stets ohne explizite Vorlagenargumente aufzurufen, wie z.B. in `make_pair(x, y)`. Bei Angeben expliziter Vorlagenargumente wird der Zweck der Funktion verfehlt. Wenn eine präzise Steuerung des resultierenden Typs erforderlich ist, verwenden Sie `pair` anstelle von `make_pair`, wie in `pair<short, short>(int1, int2)`.
+- Als Folge eines Breaking Change zwischen den Standards C++98/03 und C++11 erfolgt bei Verwendung expliziter Vorlagenargumente zum Aufrufen von `make_pair()`, z. B. `make_pair<int, int>(x, y)`, in Visual C++ in Visual Studio 2012 in der Regel keine Kompilierung. Die Lösung besteht darin, `make_pair()` immer ohne explizite Vorlagen Argumente aufzurufen – wie in `make_pair(x, y)`. Bei Angeben expliziter Vorlagenargumente wird der Zweck der Funktion verfehlt. Wenn eine präzise Steuerung des resultierenden Typs erforderlich ist, verwenden Sie `pair` anstelle von `make_pair`, wie in `pair<short, short>(int1, int2)`.
 
 - Eine weitere Breaking Change zwischen den Standards c++ 98/03 und c++ 11: Wenn eine implizit in B konvertiert und b implizit in c konvertierbar ist, aber nicht implizit in c konvertiert werden kann, c++ 98/03 und Visual Studio 2010 erlaubt, dass `pair<A, X>` (implizit oder explizit) in `pair<C, X>`konvertiert werden. (Der andere Typ, "X", ist hier nicht von Interesse und nicht spezifisch für den ersten Typ im Paar.) Der C++ Compiler in Visual Studio 2012 erkennt, dass ein nicht implizit in C konvertierbar ist, und entfernt die paar Konvertierung aus der Überladungs Auflösung. Diese Änderung wirkt sich auf viele Szenarios positiv aus. Durch das Überladen von `func(const pair<int, int>&)` und `func(const pair<string, string>&)` und das Aufrufen von `func()` mit `pair<const char *, const char *>` erfolgt die Kompilierung beispielsweise mit dieser Änderung. Diese Änderung unterbricht jedoch Code, der auf aggressiven Paarkonvertierungen beruhte. Solcher Code kann normalerweise korrigiert werden, wenn ein Teil der Konvertierung explizit erfolgt, z.B. indem `make_pair(static_cast<B>(a), x)` an eine Funktion übergeben wird, die `pair<C, X>` erwartet.
 
@@ -3302,7 +3302,7 @@ Die `SchedulerType`-Enumeration von `UmsThreadDefault` ist veraltet. Bei Angabe 
 
 - Die Umgebungsvariable __MSVCRT_HEAP_SELECT wird nicht mehr unterstützt. Diese Umgebungsvariable wurde ersatzlos entfernt.
 
-### <a name="microsoft-macro-assembler-reference"></a>Referenz zum Microsoft Macro Assembler
+### <a name="microsoft-macro-assembler-reference"></a>Microsoft Macro Assembler – Referenz
 
 - Mehrere Direktiven wurden aus der Referenz zum Microsoft Macro Assembler-Compiler entfernt. Die folgenden Anweisungen wurden entfernt: `.186`, `.286`, `.286P`, `.287`, `.8086`, `.8087` und `.NO87`.
 

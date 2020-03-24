@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C2797
 ms.assetid: 9fb26d35-eb5c-46fc-9ff5-756fba5bdaff
-ms.openlocfilehash: ccd007bf193bd6529748004a96745fafcb9f3226
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: 9973ddcccc69e85bdf79e0623fa4bcc1d6689032
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65447825"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202078"
 ---
 # <a name="compiler-error-c2797"></a>Compilerfehler C2797
 
-(Veraltet) Listeninitialisierung in Memberinitialisierer oder nicht statische datenmemberinitialisierer ist nicht implementiert.
+Veralteten Die Listen Initialisierung innerhalb der Member-Initialisiererliste oder ein nicht statischer Datenmember-Initialisierer ist nicht implementiert.
 
-Diese Warnung ist in Visual Studio 2015 veraltet. In Visual Studio 2013 und früheren Versionen, Microsoft C++ Compiler implementiert keine Listen-Initialisierung innerhalb entweder einer Memberinitialisiererliste oder einem nicht statischen datenmemberinitialisierer. Vor dem Visual Studio 2013 Update 3 wurde dies im Hintergrund in einen Funktionsaufruf konvertiert, der zur Generierung von ungültigem Code führen könnte. Visual Studio 2013 Update 3 meldet dies als Fehler.
+Diese Warnung ist in Visual Studio 2015 veraltet. In Visual Studio 2013 und früheren Versionen implementiert der Microsoft C++ -Compiler die Listen Initialisierung weder in einer elementinitialisiererliste noch in einem nicht statischen Datenmember-Initialisierer. Vor dem Visual Studio 2013 Update 3 wurde dies im Hintergrund in einen Funktionsaufruf konvertiert, der zur Generierung von ungültigem Code führen könnte. Visual Studio 2013 Update 3 meldet dies als Fehler.
 
 In diesem Beispiel wird C2797 generiert:
 
@@ -45,7 +45,7 @@ struct S2 {
 };
 ```
 
-Um dieses Problem zu beheben, können Sie die explizite Konstruktion von inneren Listen verwendn. Zum Beispiel:
+Um dieses Problem zu beheben, können Sie die explizite Konstruktion von inneren Listen verwendn. Beispiel:
 
 ```
 #include <vector>

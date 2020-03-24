@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U4010
 ms.assetid: 99d8eb9a-ae31-40d1-b8c5-8c66732127d3
-ms.openlocfilehash: aa4d2355b18a3c6cc6fc3151c7662fbbbaa665d6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f68da1893eec6325ccccfd0e2e2dd0e612f28eb9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298112"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193133"
 ---
 # <a name="nmake-warning-u4010"></a>NMAKE: Warnung U4010
 
-'Target': Build fehlgeschlagen ist. / K angegeben wird, weiterhin wird...
+' target ': Buildfehler. /K angegeben, wird fortgesetzt...
 
-Einen Exitcode ungleich NULL zurückgegeben, ein Befehl in die Befehlsblock-für das angegebene Ziel. Die Option/k mitgeteilt NMAKE und weiter verarbeitet, nicht zusammengehöriger Teile des Builds und einen Exitcode 1 auszugeben, die NMAKE-Sitzung abgeschlossen ist.
+Ein Befehl im Commands-Block für das angegebene Ziel hat einen Exitcode ungleich NULL zurückgegeben. Die/K-Option hat NMAKE angewiesen, die Verarbeitung nicht verknüpftes Teile des Builds fortzusetzen und einen Exitcode 1 auszugeben, wenn die NMAKE-Sitzung abgeschlossen ist.
 
-Wenn das angegebene Ziel, selbst eine abhängige Datei für ein anderes Ziel ist, gibt NMAKE: Warnung [U4011](../../error-messages/tool-errors/nmake-warning-u4011.md) nach dieser Warnung.
+Wenn das angegebene Ziel, ein von einem anderen Ziel abhängiges, ein anderes Ziel ist, gibt NMAKE eine Warnung aus [U4011](../../error-messages/tool-errors/nmake-warning-u4011.md) nach dieser Warnung.

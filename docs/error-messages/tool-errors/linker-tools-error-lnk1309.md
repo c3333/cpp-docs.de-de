@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1309
 ms.assetid: 10146071-883f-4849-97d1-c7468f90efbb
-ms.openlocfilehash: ea675ca835dfc3fe4881e5fabbea746a4442b10a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 88b05512fd45adb6dc96a6c130ceccb74f3ab14e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62187442"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194901"
 ---
 # <a name="linker-tools-error-lnk1309"></a>Linkertoolfehler LNK1309
 
-> *type1* -Modul gefunden; ungültig mit Schalter, / CLRIMAGETYPE:*Typ2*
+> *Typ1* -Modul erkannt; ungültig mit Switch/CLRIMAGETYPE:*Typ2*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine CLR-Imagetyp wurde mit angefordert **/CLRIMAGETYPE** , aber der Linker konnte ein Abbild dieses Typs erzeugen, da ein oder mehrere Module nicht mit diesem Typ kompatibel waren.
+Ein CLR-Imagetyp wurde mit **/CLRIMAGETYPE** angefordert, aber der Linker konnte kein Image dieses Typs ausgeben, da mindestens ein Modul mit diesem Typ nicht kompatibel war.
 
-LNK1309 wird beispielsweise ausgegeben, wenn Sie angeben, **Safe** und übergeben Sie ein Modul mit erstellten **/CLR: pure**.
+Beispielsweise wird Linkertoolfehler LNK1309 angezeigt, wenn Sie **/CLRIMAGETYPE: Safe** angeben und ein Modul übergeben, das mit **/clr: pure**erstellt wurde.
 
-Die **/CLR: pure** und **/CLR: safe** Compiler-Optionen und Support-Bibliotheken sind in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: pure** -und **/clr: Safe** -Compileroptionen und-Unterstützungs Bibliotheken sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Sie können LNK1309 werden auch angezeigt, wenn Sie versuchen, eine teilweise vertrauenswürdige Ptrustu [d]-LIB mit reine CLR-Anwendung zu erstellen. Informationen zum Erstellen einer teilweise vertrauenswürdigen Anwendung finden Sie unter [Vorgehensweise: Erstellen Sie eine teilweise vertrauenswürdige Anwendung durch Entfernen der Abhängigkeit der CRT-Bibliotheks-DLL](../../dotnet/create-a-partially-trusted-application.md).
+Außerdem wird Linkertoolfehler LNK1309 angezeigt, wenn Sie versuchen, eine teilweise vertrauenswürdige CLR-reine Anwendung mithilfe von Ptrustu [d]. lib zu erstellen. Informationen zum Erstellen einer teilweise vertrauenswürdigen Anwendung finden Sie unter Gewusst [wie: Erstellen einer teilweise vertrauenswürdigen Anwendung durch Entfernen der Abhängigkeit von der CRT-Bibliotheks-DLL](../../dotnet/create-a-partially-trusted-application.md).
 
-Weitere Informationen finden Sie unter [/CLR (Common Language Runtime Compilation)](../../build/reference/clr-common-language-runtime-compilation.md) und [/CLRIMAGETYPE (Typ der CLR-Images angeben)](../../build/reference/clrimagetype-specify-type-of-clr-image.md).
+Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) und [/CLRIMAGETYPE (Typ des CLR-Bilds angeben)](../../build/reference/clrimagetype-specify-type-of-clr-image.md).

@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - __unaligned keyword [C++]
 ms.assetid: 0cd83aad-1840-47e3-ad33-59bfcbe6375b
-ms.openlocfilehash: 1090a0f3345f749a2afbd80566a9af7b9ea32d53
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 5f93aaa79fd7c3664ecf80d5007d5954002bce4a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857254"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160644"
 ---
 # <a name="__unaligned"></a>__unaligned
 
 **Microsoft-spezifisch**. Wenn Sie einen Zeiger mit dem **__unaligned** -Modifizierer deklarieren, geht der Compiler davon aus, dass der Zeiger nicht ausgerichtete Daten adressiert. Folglich wird Platt Form geeigneter Code generiert, um nicht ausgerichtete Lese-und Schreibvorgänge über den Zeiger zu verarbeiten.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dieser Modifizierer beschreibt die Ausrichtung der Daten, die vom Zeiger adressiert werden. Es wird davon ausgegangen, dass der Zeiger selbst ausgerichtet wird.
 
@@ -39,6 +39,6 @@ Weitere Informationen zur Ausrichtung finden Sie unter:
 
 - [Beispiele für die Strukturausrichtung](../build/x64-software-conventions.md#examples-of-structure-alignment)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Stichwörter](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

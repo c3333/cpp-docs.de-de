@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4037
 ms.assetid: 9ba02fd3-b04f-4679-bab9-26fa82cf09bb
-ms.openlocfilehash: 9a8121617e622fc12efe5bd26aac23faf2530f24
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 43fae7d0f19f96998d2e1a1739bc3e596bbd9ea9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410303"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194199"
 ---
 # <a name="linker-tools-warning-lnk4037"></a>Linkertoolwarnung LNK4037
 
->"*Symbol*' ist nicht vorhanden; wird ignoriert.
+>'*Symbol*' ist nicht vorhanden. erten
 
-Der ergänzte Name *Symbol* konnte nicht sortiert werden, mithilfe der [/ORDER](../../build/reference/order-put-functions-in-order.md) -Option fest, da es in das Programm nicht gefunden werden konnte. Überprüfen Sie die Angabe von *Symbol* in der Order-Antwortdatei. Weitere Informationen finden Sie unter den [/Order (Reihenfolge von Funktionen)](../../build/reference/order-put-functions-in-order.md) -Linkeroption.
+Das ergänzte namens *Symbol* konnte nicht mithilfe der Option [/Order](../../build/reference/order-put-functions-in-order.md) geordnet werden, da es nicht im Programm gefunden werden konnte. Überprüfen Sie die Spezifikation des *Symbols* in der Auftrags Antwortdatei. Weitere Informationen finden Sie in der Linkeroption [/Order (in Reihenfolge einfügen)](../../build/reference/order-put-functions-in-order.md) .
 
 > [!NOTE]
-> LINK kann nicht statische Funktionen sortieren, da statische Funktionsnamen nicht öffentlichen Symbolnamen sind. Wenn **/ORDER** angegeben wird, diese zu unterdrückenden linkerwarnungen generiert für jedes Symbol in der Order-Antwortdatei, die entweder statisch sind oder nicht gefunden.
+> Der Link kann keine statischen Funktionen Sortieren, da statische Funktionsnamen keine öffentlichen Symbolnamen sind. Wenn **/Order** angegeben wird, wird diese Linker-Warnung für jedes Symbol in der Auftrags Antwortdatei generiert, das entweder statisch ist oder nicht gefunden wurde.

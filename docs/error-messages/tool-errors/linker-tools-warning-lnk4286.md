@@ -5,31 +5,31 @@ f1_keywords:
 - LNK4286
 helpviewer_keywords:
 - LNK4286
-ms.openlocfilehash: 43ed18808ba5ce632dd7dc7095f7bc30e4497ec9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d0205ba065f6e410383c38a0f1c2eaa0da55fe93
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352436"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173867"
 ---
 # <a name="linker-tools-warning-lnk4286"></a>Linkertoolwarnung LNK4286
 
-> Symbol "*Symbol*"definiert "*filename_1.obj*"wird importiert, indem"*filename_2.obj*"
+> das Symbol '*Symbol*', das in '*filename_1. obj*' definiert ist, wird von '*filename_2. obj*' importiert.
 
-[von "__declspec(dllimport)" "](../../cpp/dllexport-dllimport.md) wurde angegeben, für die *Symbol* , obwohl das Symbol, in der Objektdatei definiert ist *filename_1.obj* im gleichen Abbild. Entfernen Sie die `__declspec(dllimport)` Modifizierer, um diese Warnung zu beheben.
+[__declspec (dllimport)](../../cpp/dllexport-dllimport.md) wurde für das *Symbol* angegeben, obwohl das Symbol in der Objektdatei *filename_1. obj* im gleichen Bild definiert ist. Entfernen Sie den `__declspec(dllimport)` Modifizierer, um diese Warnung zu beheben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Warnung LNK4286 ist eine allgemeine Version der [Linker Tools Warning LNK4217](linker-tools-warning-lnk4217.md). Der Linker generiert Warnung LNK4286 aus, wenn sie sehen, welche Objektdatei auf das Symbol verwiesen, aber nicht die Funktion.
+Warnung LNK4286 ist eine allgemeinere Version der [Linker-Tool Warnung Linkertoolwarnung LNK4217](linker-tools-warning-lnk4217.md). Der Linker generiert eine Warnung LNK4286, wenn er feststellen kann, in welcher Objektdatei auf das Symbol verwiesen wurde, jedoch nicht welche Funktion.
 
-Um LNK4286 zu beheben, entfernen Sie die `__declspec(dllimport)` deklarationsmodifizierer aus die Vorwärtsdeklaration *Symbol* verwiesen wird, im *filename_2.obj*.
+Entfernen Sie zum Auflösen von LNK4286 den Modifizierer `__declspec(dllimport)` Deklaration aus der vorwärts Deklaration des *Symbols* , auf das in *filename_2. obj*verwiesen wird.
 
-Der letzte generierte Code ordnungsgemäß verhält sich, zwar ist der Code zum Aufrufen einer importierten Funktion weniger effizient als direkter Aufruf der Funktion. Diese Warnung nicht angezeigt, wenn Sie bei der Kompilierung der ["/ CLR"](../../build/reference/clr-common-language-runtime-compilation.md) Option.
+Obwohl sich der endgültige generierte Code ordnungsgemäß verhält, ist der Code, der zum Aufrufen einer importierten Funktion generiert wurde, weniger effizient, als die Funktion direkt aufzurufen. Diese Warnung wird nicht angezeigt, wenn Sie mit der [/CLR](../../build/reference/clr-common-language-runtime-compilation.md) -Option kompilieren.
 
-Weitere Informationen zum Importieren und Exportieren von Datendeklarationen, finden Sie unter [Dllexport, Dllimport](../../cpp/dllexport-dllimport.md).
+Weitere Informationen zum Importieren und Exportieren von Datendeklarationen finden Sie unter [dllexport, dllimport](../../cpp/dllexport-dllimport.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Linkertoolwarnung Lnk4049](linker-tools-warning-lnk4049.md) \
-[Linkertoolwarnung Lnk4217](linker-tools-warning-lnk4217.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4049](linker-tools-warning-lnk4049.md) \
+[Warnmeldungen für Linker-Tools Linkertoolwarnung LNK4217](linker-tools-warning-lnk4217.md) \
 [dllexport, dllimport](../../cpp/dllexport-dllimport.md)

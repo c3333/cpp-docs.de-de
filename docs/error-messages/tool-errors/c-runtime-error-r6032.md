@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - R6032
 ms.assetid: 52092a63-cc51-444a-bfc3-fad965a3558e
-ms.openlocfilehash: e0ae3acc491658840d74e262f3ab2719e613d60e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b29b946d08cff903cf0ca398ba0d7589cb5d54ea
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62399992"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197092"
 ---
 # <a name="c-runtime-error-r6032"></a>C-Laufzeitfehler R6032
 
-Nicht genügend Speicherplatz für Gebietsschema-Informationen
+Nicht genügend Speicherplatz für Gebiets Schema Informationen.
 
 > [!NOTE]
-> Wenn diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app heruntergefahren, da sie ein Problem des internen Speicher verfügt. Es gibt mehrere mögliche Gründe für diesen Fehler, aber dies wird häufig verursacht durch eine extrem wenig Arbeitsspeicher verfügbar oder durch einen Fehler im Programm.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP heruntergefahren, weil Sie über ein internes Speicherproblem verfügt. Es gibt mehrere mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen extrem wenig Arbeitsspeicher oder durch einen Programmfehler verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Anderen ausgeführten Anwendungen zu schließen, oder Neustart des Computers, um Arbeitsspeicher freizugeben.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Schließen Sie andere laufende Anwendungen, oder starten Sie den Computer neu, um Arbeitsspeicher freizugeben.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Die Common Language Runtime verwaltet Informationen über das Gebietsschema für jeden Thread, sodass sie Aufrufe von gebietsschemaabhängigen Funktionen verarbeiten kann. Wenn die Zuordnung des Arbeitsspeichers für diese Informationen fehlschlägt, ist die Runtime kann nicht fortgesetzt werden, weil zu viele der grundlegenden Funktionen, die davon abhängen.
+Die Laufzeit verwaltet Informationen über das Gebiets Schema auf jedem Thread, sodass Aufrufe an Gebiets Schema bezogene Funktionen verarbeitet werden können. Wenn die Speicher Belegung für diese Informationen fehlschlägt, kann die Laufzeit nicht fortgesetzt werden, da zu viele ihrer grundlegenden Funktionen von ihr abhängig sind.

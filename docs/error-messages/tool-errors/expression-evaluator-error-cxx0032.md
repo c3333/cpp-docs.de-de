@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CXX0032
 - CAN0032
 ms.assetid: 78f56977-6b6d-42e2-b71d-c392525bb18b
-ms.openlocfilehash: 77e17b7a758ea2892115b75a626b6d796ad42234
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 509a9a70eca076fd232901bd9c1cbbb545f98304
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397041"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195552"
 ---
 # <a name="expression-evaluator-error-cxx0032"></a>Ausdrucksauswertungsfehler CXX0032
 
 Division durch 0
 
-Der Ausdruck enthält eine Division durch 0 (null), was nicht zulässig ist. Diese Divisor kann die Zahl 0 (null) sein, oder möglicherweise ein Ausdruck, der mit NULL ausgewertet wird.
+Der Ausdruck enthält einen Divisor von 0 (null), was unzulässig ist. Dieser Divisor kann die Literale Zahl Null sein, oder es kann sich um einen Ausdruck handeln, der zu 0 (null) ausgewertet wird.
 
 Dieser Fehler ist mit CAN0032 identisch.

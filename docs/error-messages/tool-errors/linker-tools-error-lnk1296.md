@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1296
 ms.assetid: f94a3d18-5411-456b-966f-89810fdcfe60
-ms.openlocfilehash: 072ebee25f112ac0bcc6f795e86f4eb5099fdc2f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7fada5a0372703d12f4f53617533ccaa047b7ff7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160600"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194953"
 ---
 # <a name="linker-tools-error-lnk1296"></a>Linkertoolfehler LNK1296
 
-Dateiname kann nicht geladen
+Dateiname kann nicht geladen werden
 
 Die angegebene DLL war nicht verfügbar.
 
-Die möglichen Positionen für die DLL sind das aktuelle Verzeichnis, das Systemverzeichnis, das Windows-Verzeichnis und die in der PATH-Umgebungsvariablen angegebenen Verzeichnisse.
+Die möglichen Speicherorte für die dll sind das aktuelle Verzeichnis, das System Verzeichnis, das Windows-Verzeichnis und die Verzeichnisse, die in der PATH-Umgebungsvariablen angegeben sind.

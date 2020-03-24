@@ -4,19 +4,19 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - new keyword [C++]
 ms.assetid: 69fee812-1c28-4882-8fda-d1ad17860004
-ms.openlocfilehash: bcb7784e59966510970bd9b3ae0157ae982e462d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 21e67f8d44673a15e5d3a5994597caae4cc01a2e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62245386"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161125"
 ---
 # <a name="new-operator-c"></a>new-Operator (C++)
 
-Belegt Speicher für ein Objekt oder Array von Objekten des *Typname* aus dem freien Speicher und gibt einen typisierten Zeiger ungleich NULL zurück, auf das Objekt.
+Ordnet Speicher für ein Objekt oder Array von Objekten vom *Typ "Name* " aus dem freien Speicher zu und gibt einen entsprechend typisierten, nicht-NULL-Zeiger auf das-Objekt zurück.
 
 > [!NOTE]
->  Microsoft-Erweiterungen für C++-Komponente bietet Unterstützung für die **neue** Schlüsselwort, um eine Vtable-Slot Einträge hinzuzufügen. Weitere Informationen finden Sie unter [new (neuer Slot in Vtable)](../extensions/new-new-slot-in-vtable-cpp-component-extensions.md)
+>  Microsoft C++ -Komponenten Erweiterungen unterstützen das **New** -Schlüsselwort, um Vtable-Slot-Einträge hinzuzufügen. Weitere Informationen finden Sie unter [New (neuer Slot in Vtable)](../extensions/new-new-slot-in-vtable-cpp-component-extensions.md) .
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,50 +25,50 @@ Belegt Speicher für ein Objekt oder Array von Objekten des *Typname* aus dem fr
 [::] new [placement] ( type-name ) [new-initializer]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Fehler auftreten, **neue** gibt NULL zurück oder löst eine Ausnahme aus; finden Sie unter [der neuen "und" delete](../cpp/new-and-delete-operators.md) für Weitere Informationen. Sie können dieses Standardverhalten ändern, indem eine benutzerdefinierte Ausnahmebehandlungsroutine schreiben und Aufrufen der [_set_new_handler](../c-runtime-library/reference/set-new-handler.md) -Laufzeitbibliothek-Funktion mit dem Funktionsnamen als Argument.
+Wenn nicht erfolgreich, gibt **New** 0 zurück oder löst eine Ausnahme aus. Weitere Informationen finden Sie [unter den Operatoren New und DELETE](../cpp/new-and-delete-operators.md) . Sie können dieses Standardverhalten ändern, indem Sie eine benutzerdefinierte Ausnahme Behandlungs Routine schreiben und die [_set_new_handler](../c-runtime-library/reference/set-new-handler.md) Lauf Zeit Bibliotheksfunktion mit Ihrem Funktionsnamen als Argument aufrufen.
 
-Weitere Informationen zum Erstellen eines Objekts auf dem verwalteten Heap, finden Sie unter [Gcnew](../extensions/ref-new-gcnew-cpp-component-extensions.md).
+Informationen zum Erstellen eines Objekts auf dem verwalteten Heap finden Sie unter [gcnew](../extensions/ref-new-gcnew-cpp-component-extensions.md).
 
-Wenn **neue** wird verwendet, um Speicher für ein C++-Klassenobjekt zu reservieren, den Konstruktor des Objekts wird aufgerufen, nachdem der Speicher belegt wird.
+Wenn **New** verwendet wird, um Speicher für ein C++ Klassenobjekt zuzuweisen, wird der Konstruktor des Objekts aufgerufen, nachdem der Arbeitsspeicher zugewiesen wurde.
 
-Verwenden der [löschen](../cpp/delete-operator-cpp.md) Operator, um den mit belegten Arbeitsspeicher freizugeben. die **neue** Operator.
+Verwenden Sie den delete-Operator, um den zugeordneten Arbeitsspeicher mit dem **New** -Operator zu [Entfernen](../cpp/delete-operator-cpp.md) .
 
-Im folgenden Beispiel wird ein zweidimensionales Array der Größe `dim` durch 10 zugewiesen und dann freigegeben. Beim Zuweisen eines mehrdimensionalen Arrays müssen alle Dimensionen mit Ausnahme der ersten Konstantenausdrücke sein, die zu positiven Werten ausgewertet werden. Die Arraydimension ganz links kann ein beliebiger Ausdruck sein, der zu einem positiven Wert ausgewertet wird. Beim Zuweisen eines Arrays mithilfe der **neue** Operator an mit, die erste Dimension kann 0 (null) sein, die **neue** Operator gibt einen eindeutigen Zeiger zurück.
+Im folgenden Beispiel wird ein zweidimensionales Array der Größe `dim` durch 10 zugewiesen und dann freigegeben. Beim Zuweisen eines mehrdimensionalen Arrays müssen alle Dimensionen mit Ausnahme der ersten Konstantenausdrücke sein, die zu positiven Werten ausgewertet werden. Die Arraydimension ganz links kann ein beliebiger Ausdruck sein, der zu einem positiven Wert ausgewertet wird. Wenn Sie ein Array mit dem **New** -Operator zuordnen, kann die erste Dimension 0 (null) sein – der **New** -Operator gibt einen eindeutigen Zeiger zurück.
 
 ```cpp
 char (*pchar)[10] = new char[dim][10];
 delete [] pchar;
 ```
 
-Die *Typname* dürfen nicht **const**, **flüchtige**, Klassendeklarationen oder Deklarationen einer Enumeration. Daher ist der folgende Ausdruck ungültig:
+*Type-Name* darf keine **Konstanten**, **flüchtigen**, Klassen Deklarationen oder Enumerationsdeklarationen enthalten. Daher ist der folgende Ausdruck ungültig:
 
 ```cpp
 volatile char *vch = new volatile char[20];
 ```
 
-Die **neue** Operator keine Referenztypen zugewiesen, da diese keine Objekte sind.
+Der **New** -Operator weist keine Verweis Typen zu, da es sich nicht um-Objekte handelt.
 
-Die **neue** Operator kann nicht zum Zuweisen einer Funktion verwendet werden, aber es kann verwendet werden, um Funktionen Zeiger zuzuordnen. Im folgenden Beispiel wird ein Array von sieben Zeigern auf Funktionen, die ganze Zahlen zurückgeben, zugewiesen und dann freigegeben.
+Der **New** -Operator kann nicht verwendet werden, um eine Funktion zuzuordnen, aber er kann verwendet werden, um den Funktionen Zeiger zuzuordnen. Im folgenden Beispiel wird ein Array von sieben Zeigern auf Funktionen, die ganze Zahlen zurückgeben, zugewiesen und dann freigegeben.
 
 ```cpp
 int (**p) () = new (int (*[7]) ());
 delete *p;
 ```
 
-Wenn Sie den Operator verwenden **neue** ohne zusätzliche Argumente, und die Kompilierung mit der [/GX](../build/reference/gx-enable-exception-handling.md), [/EHa](../build/reference/eh-exception-handling-model.md), oder [/EHs](../build/reference/eh-exception-handling-model.md) Option, um der Compiler wird Generieren von Code zum Aufrufen des Operators **löschen** Wenn der Konstruktor eine Ausnahme auslöst.
+Wenn Sie den **New** -Operator ohne zusätzliche Argumente verwenden und mit der [/GX](../build/reference/gx-enable-exception-handling.md)-, [/EHa](../build/reference/eh-exception-handling-model.md)-oder [/EHS](../build/reference/eh-exception-handling-model.md) -Option kompilieren, generiert der Compiler Code, um den Operator **Delete** aufzurufen, wenn der Konstruktor eine Ausnahme auslöst.
 
-Die folgende Liste beschreibt die Grammatikelemente von **neue**:
+In der folgenden Liste werden die Grammatik Elemente von **New**beschrieben:
 
-*placement*<br/>
-Bietet eine Möglichkeit der Übergabe zusätzlicher Argumente, wenn Sie überladen **neue**.
+*Praktika*<br/>
+Bietet eine Möglichkeit, zusätzliche Argumente zu übergeben, wenn Sie **New**überladen.
 
-*type-name*<br/>
+*Typname*<br/>
 Gibt den zuzuweisenden Typ an. Es kann entweder ein integrierter oder ein benutzerdefinierter Typ sein. Eine komplizierte Typspezifikation können Sie in Klammern einschließen, um die Reihenfolge der Bindung zu erzwingen.
 
 *initializer*<br/>
-Stellt einen Wert für das initialisierte Objekt bereit. Für Arrays können keine Initialisierer angegeben werden. Die **neue** -Operator erstellt Arrays von Objekten, nur dann, wenn die Klasse über einen Standardkonstruktor verfügt.
+Stellt einen Wert für das initialisierte Objekt bereit. Für Arrays können keine Initialisierer angegeben werden. Der **New** -Operator erstellt nur dann Arrays von-Objekten, wenn die Klasse über einen Standardkonstruktor verfügt.
 
 ## <a name="example"></a>Beispiel
 
@@ -117,7 +117,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Bei Verwendung die neuen Positionierungsform des der **neue** Operator an, das Formular mit Argumenten zuzüglich der Größe der Zuordnung, der Compiler unterstützt keine Positionierungsform des der **löschen** Operator Wenn die Konstruktor löst eine Ausnahme aus. Zum Beispiel:
+Wenn Sie das neue Formular für die Platzierung des **New** -Operators, das Formular mit Argumenten zusätzlich zur Größe der Zuordnung verwenden, unterstützt der Compiler keine Platzierungs Form des **Delete** -Operators, wenn der Konstruktor eine Ausnahme auslöst. Beispiel:
 
 ```cpp
 // expre_new_Operator2.cpp
@@ -153,7 +153,7 @@ int main() {
 
 ## <a name="initializing-object-allocated-with-new"></a>Initialisieren von mit „new“ zugeordneten Objekten
 
-Eine optionale *Initialisierer* Feld befindet sich in der Grammatik für die **neue** Operator. Dadurch können neue Objekte mit benutzerdefinierten Konstruktoren initialisiert werden. Weitere Informationen dazu, wie die Initialisierung durchgeführt wird, finden Sie unter [Initialisierer](../cpp/initializers.md). Das folgende Beispiel veranschaulicht, wie Sie einen Initialisierungsausdruck mit dem **neue** Operator:
+Ein optionales *initialisiererfeld* ist in der Grammatik für den **New** -Operator enthalten. Dadurch können neue Objekte mit benutzerdefinierten Konstruktoren initialisiert werden. Weitere Informationen zur Initialisierung finden Sie unter [Initialisierer](../cpp/initializers.md). Im folgenden Beispiel wird veranschaulicht, wie ein Initialisierungs Ausdruck mit dem **New** -Operator verwendet wird:
 
 ```cpp
 // expre_Initializing_Objects_Allocated_with_new.cpp
@@ -177,23 +177,23 @@ int main()
 }
 ```
 
-In diesem Beispiel wird das Objekt `CheckingAcct` wird zugeordnet, mit der **neue** -Operator, aber keine standardinitialisierung angegeben ist. Deshalb wird der Standardkonstruktor für die `Acct()`-Klasse aufgerufen. Anschließend wird das Objekt `SavingsAcct` auf die gleiche Weise zugeordnet, mit der Ausnahme, dass es explizit mit 34,98 initialisiert wird. Da 34.98 den Typ aufweist **doppelte**, der Konstruktor, der ein des Typs Argument wird aufgerufen, um die Initialisierung zu bearbeiten. Schließlich wird der Nichtklassentyp `HowMuch` mit 43,0 initialisiert.
+In diesem Beispiel wird das Objekt `CheckingAcct` mit dem **New** -Operator zugeordnet, aber es wurde keine Standard Initialisierung angegeben. Deshalb wird der Standardkonstruktor für die `Acct()`-Klasse aufgerufen. Anschließend wird das Objekt `SavingsAcct` auf die gleiche Weise zugeordnet, mit der Ausnahme, dass es explizit mit 34,98 initialisiert wird. Da 34,98 vom Typ **Double**ist, wird der Konstruktor, der ein Argument dieses Typs annimmt, aufgerufen, um die Initialisierung zu verarbeiten. Schließlich wird der Nichtklassentyp `HowMuch` mit 43,0 initialisiert.
 
-Wenn ein Objekt eines Klassentyps ist, und diese Klasse verfügt über Konstruktoren (wie im vorherigen Beispiel), kann das Objekt initialisiert werden, indem die **neue** Operator nur dann, wenn eine der folgenden Bedingungen erfüllt ist:
+Wenn ein Objekt einen Klassentyp aufweist und diese Klasse über Konstruktoren verfügt (wie im vorherigen Beispiel), kann das Objekt nur dann vom **neuen** Operator initialisiert werden, wenn eine der folgenden Bedingungen erfüllt ist:
 
 - Die Argumente, die im Initialisierer bereitgestellt werden, stimmen mit denen eines Konstruktors überein.
 
 - Die Klasse verfügt über einen Standardkonstruktor (einen Konstruktor, der ohne Argumente aufgerufen werden kann).
 
-Keine Initialisierung pro Element explizit ausgeführt werden kann, beim Zuordnen von mithilfe Arrays der **neue** Operator; nur der Standardkonstruktor, falls vorhanden, aufgerufen wird. Finden Sie unter [Standardargumente](../cpp/default-arguments.md) für Weitere Informationen.
+Beim Zuordnen von Arrays mit dem **New** -Operator kann keine explizite Initialisierung pro Element ausgeführt werden. nur der Standardkonstruktor, falls vorhanden, wird aufgerufen. Weitere Informationen finden Sie unter [Standardargumente](../cpp/default-arguments.md) .
 
-Wenn die speicherbelegung fehlschlägt (**new-Operator** gibt einen Wert von 0 zurück), keine Initialisierung ausgeführt. Dies schützt vor Versuchen, Daten zu initialisieren, die nicht vorhanden sind.
+Wenn die Speicher Belegung fehlschlägt (**Operator new** gibt den Wert 0 zurück), wird keine Initialisierung ausgeführt. Dies schützt vor Versuchen, Daten zu initialisieren, die nicht vorhanden sind.
 
-Wie bei Funktionsaufrufen ist auch bei initialisierten Ausdrücken die Reihenfolge der Auswertung nicht festgelegt. Darüber hinaus sollten Sie sich nicht darauf verlassen, dass diese Ausdrücke vollständig ausgewertet werden, bevor die Speicherbelegung ausgeführt wird. Wenn die speicherbelegung fehlschlägt und die **neue** Operator gibt 0 (null) zurück, die einige Ausdrücke im Initialisierer möglicherweise nicht vollständig ausgewertet.
+Wie bei Funktionsaufrufen ist auch bei initialisierten Ausdrücken die Reihenfolge der Auswertung nicht festgelegt. Darüber hinaus sollten Sie sich nicht darauf verlassen, dass diese Ausdrücke vollständig ausgewertet werden, bevor die Speicherbelegung ausgeführt wird. Wenn die Speicher Belegung fehlschlägt und der **New** -Operator 0 (null) zurückgibt, können einige Ausdrücke im Initialisierer nicht vollständig ausgewertet werden.
 
 ## <a name="lifetime-of-objects-allocated-with-new"></a>Lebensdauer von mit „new“ zugeordneten Objekten
 
-Mit zugeordneten Objekten der **neue** Operator werden nicht gelöscht werden, wenn der Bereich, in dem sie definiert sind, beendet wird. Da die **neue** Operator gibt einen Zeiger auf die er weist Objekte zurück, das Programm muss einen Zeiger mit passendem Gültigkeitsbereich den Zugriff auf diese Objekte definieren. Zum Beispiel:
+Mit dem **New** -Operator zugeordnete Objekte werden nicht zerstört, wenn der Gültigkeitsbereich, in dem Sie definiert sind, beendet wird. Da der **New** -Operator einen Zeiger auf die Objekte zurückgibt, die er zuweist, muss das Programm einen Zeiger mit dem passenden Bereich definieren, um auf diese Objekte zuzugreifen. Beispiel:
 
 ```cpp
 // expre_Lifetime_of_Objects_Allocated_with_new.cpp
@@ -222,38 +222,38 @@ Sobald der Zeiger `AnotherArray` den Gültigkeitsbereich in dem Beispiel verläs
 
 ## <a name="how-new-works"></a>Funktionsweise von „new“
 
-Die *Zuweisungsausdruck* : der Ausdruck enthält das **neue** Operator – bewirkt drei Dinge:
+Der *Zuordnungs Ausdruck* – der Ausdruck, der den **neuen** Operator enthält – führt drei Schritte aus:
 
 - Sucht und reserviert Speicher für das zuzuweisende Objekt bzw. die zuzuweisenden Objekte. Nach Abschluss dieser Phase wird die richtige Menge an Speicherplatz zugewiesen. Es handelt sich jedoch noch nicht um ein Objekt.
 
 - Initialisiert das/die Objekt(e). Sobald die Initialisierung abgeschlossen wurde, sind genügend Informationen vorhanden, damit der zugeordnete Speicher ein Objekt sein kann.
 
-- Gibt ein Zeiger auf die Objekte eines Zeigertyps abgeleitet *neue Typname* oder *Typname*. Das Programm verwendet diesen Zeiger, um auf das neu zugeordnete Objekt zuzugreifen.
+- Gibt einen Zeiger auf die Objekte eines Zeiger Typs zurück, der von *New-Type-Name* oder *Type-Name*abgeleitet wurde. Das Programm verwendet diesen Zeiger, um auf das neu zugeordnete Objekt zuzugreifen.
 
-Die **neue** -Operator Ruft die Funktion **new-Operator**. Für Arrays jeglichen Typs und für Objekte, die nicht von **Klasse**, **Struktur**, oder **Union** Typen, die globale Funktion **:: Operator neue**, ist wird aufgerufen, um Speicher zuzuweisen. Klassentypobjekte können ihre eigenen definieren **new-Operator** statische Memberfunktion auf Basis einer pro-Klasse.
+Der **New** -Operator Ruft den Funktions **Operator new**auf. Für Arrays eines beliebigen Typs und für Objekte, die keine **Klassen**-, **Struktur**-oder **Union** -Typen sind, wird eine globale Funktion, **:: Operator new**, aufgerufen, um Speicher zuzuweisen. Klassentyp Objekte können einen eigenen Operator für eine **neue** statische Member-Funktion pro Klasse definieren.
 
-Wenn der Compiler erkennt die **neue** Operator, um einem Objekt des Typs zugewiesen werden **Typ**, gibt er einen Aufruf von `type` **:: new-Operator (Sizeof (** `type` **))** oder, wenn keine benutzerdefinierte **new-Operator** definiert ist, **:: new-Operator (Sizeof (** `type` **))**. Aus diesem Grund die **neue** Operator kann die richtige Menge an Arbeitsspeicher zugeteilt, für das Objekt.
-
-> [!NOTE]
->  Das Argument für **new-Operator** ist vom Typ `size_t`. Dieser Typ definiert, \<direct.h >, \<malloc.h >, \<memory.h >, \<search.h >, \<stddef.h >, \<stdio.h >, \<stdlib.h >, \<string.h >, und \<time.h >.
-
-Eine Option in der Grammatik ermöglicht die Angabe eines *Platzierung* (finden Sie in der Grammatik für [neuer Operator](../cpp/new-operator-cpp.md)). Die *Platzierung* Parameter kann verwendet werden, nur für benutzerdefinierte Implementierungen der **new-Operator**; damit können weitere Informationen zu übergebenden **new-Operator**. Ein Ausdruck mit einer *Platzierung* Feld, z. B. `T *TObject = new ( 0x0040 ) T;` in übersetzt `T *TObject = T::operator new( sizeof( T ), 0x0040 );` Wenn Klasse T Memberoperator neu, um andernfalls hat `T *TObject = ::operator new( sizeof( T ), 0x0040 );`.
-
-Die ursprüngliche Absicht des der *Platzierung* Feld wurde, können Objekte, die an benutzerspezifischen Adressen zugeordnet werden.
+Wenn der Compiler auf den **New** -Operator trifft, um ein Objekt **vom Typ Type**zuzuordnen, gibt er einen-Rückruf an `type` **:: Operator new (sizeof (** `type` **))** oder, wenn kein benutzerdefinierter **Operator new** definiert ist, **:: Operator new (sizeof (** `type` **))** . Aus diesem Grund kann der **neue** Operator die richtige Arbeitsspeicher Menge für das-Objekt zuweisen.
 
 > [!NOTE]
->  Obwohl das vorherige Beispiel nur ein Argument im zeigt die *Platzierung* Feld, es gibt keine Einschränkung auf wie viele zusätzliche Argumente können, um übergeben werden **new-Operator** auf diese Weise.
+>  Das Argument für **Operator new** ist vom Typ `size_t`. Dieser Typ wird in \<Direct. h->, \<malloc. h->, \<> "Memory. h", \<Search. h >, \<STDDEF. h >, \<stdio. h >, \<STDLIB. h >, \<String. h > und \<time. h > definiert.
 
-Auch wenn **new-Operator** definiert wurde für einen Klassentyp, der globale Operator verwendet werden kann, mit dem Formular dieses Beispiels:
+Eine Option in der Grammatik ermöglicht die Angabe der *Platzierung* (Weitere Informationen finden Sie in der Grammatik für [New-Operator](../cpp/new-operator-cpp.md)). Der *Platzierungs* Parameter kann nur für benutzerdefinierte Implementierungen des **new-Operators**verwendet werden. Dadurch können zusätzliche Informationen an den New- **Operator (New**) übermittelt werden. Ein Ausdruck mit einem *Platzierungs* Feld, z. b. `T *TObject = new ( 0x0040 ) T;`, wird in `T *TObject = T::operator new( sizeof( T ), 0x0040 );` übersetzt, wenn Class t den Member-Operator new aufweist, andernfalls zum `T *TObject = ::operator new( sizeof( T ), 0x0040 );`.
+
+Die ursprüngliche Absicht des *Platzierungs* Felds war es, hardwareabhängige Objekte bei benutzerdefinierten Adressen zuzuweisen.
+
+> [!NOTE]
+>  Obwohl im vorangehenden Beispiel nur ein Argument im Feld " *Platzierung* " angezeigt wird, gibt es keine Einschränkung, wie viele zusätzliche Argumente auf diese Weise an den **Operator new** weitergegeben werden können.
+
+Auch wenn der **Operator new** für einen Klassentyp definiert wurde, kann der globale Operator in der Form dieses Beispiels verwendet werden:
 
 ```cpp
 T *TObject =::new TObject;
 ```
 
-Der Bereichsauflösungsoperator (`::`) erzwingt die Verwendung des globalen **neue** Operator.
+Der Bereichs Auflösungs Operator (`::`) erzwingt die Verwendung des globalen **New** -Operators.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[neue und "delete"](../cpp/new-and-delete-operators.md)
+[New-und DELETE-Operatoren](../cpp/new-and-delete-operators.md)

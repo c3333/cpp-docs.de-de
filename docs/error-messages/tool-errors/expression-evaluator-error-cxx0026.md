@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CXX0026
 - CAN0026
 ms.assetid: b5bc15f2-f179-4b87-ae88-a57e08e43bfa
-ms.openlocfilehash: 4bc3f4977a6b3ab383c61ce410ade33a4b14a360
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9dbe7728b010db4cebb11996a7ccce3398255916
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359942"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195746"
 ---
 # <a name="expression-evaluator-error-cxx0026"></a>Ausdrucksauswertungsfehler CXX0026
 
-Ungültige Formatzeichenfolge
+Ungültige Zeichenfolge.
 
-Eine Zeichenfolge wurde nicht ordnungsgemäß angegeben. Überprüfen Sie die Syntax des Ausdrucks.
+Eine Format Zeichenfolge wurde nicht ordnungsgemäß angegeben. Überprüfen Sie die Syntax des Ausdrucks.
 
 Dieser Fehler ist mit CAN0026 identisch.
 
-Weitere Informationen finden Sie unter [Formatbezeichner in C++](/visualstudio/debugger/format-specifiers-in-cpp).
+Weitere Informationen finden Sie unter [Formatspezifizierer C++in ](/visualstudio/debugger/format-specifiers-in-cpp).

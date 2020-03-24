@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - U1099
 ms.assetid: 6688a805-43e6-4247-a2d0-14be082f0b13
-ms.openlocfilehash: 395f25d8d27bc5e9b6132c87390c8c3bc19b6cc4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c963180059a48d9aa0b09103df1ed54f82b8a2f1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298242"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193393"
 ---
 # <a name="nmake-fatal-error-u1099"></a>NMAKE: Schwerwiegender Fehler U1099
 
 Stapelüberlauf
 
-Das Makefile verarbeitete war zu komplex für den aktuellen Stack-gesamtzuordnung in NMAKE. NMAKE: verfügt über eine Zuweisung von 0 x 3000 (12 KB).
+Das verarbeitete Makefile war für die aktuelle Stapel Zuordnung in NMAKE zu komplex. NMAKE hat eine Zuordnung von 0x3000 (12K).
 
-Um Stapelreservierungsgröße von erhöhen möchten, führen die [Editbin Stapelgröße](../../build/reference/stack.md) -Hilfsprogramm mit einem größeren Stack (Option):
+Um die Stapel Zuordnung von NMAKE zu erhöhen, führen Sie das Hilfsprogramm [(EDITBIN/Stack](../../build/reference/stack.md) mit einer größeren Stapel Option aus:
 
-**EDITBIN /STACK:reserve NMAKE. EXE-DATEI**
+**(EDITBIN/Stack: Reserve NMAKE. Speichert**
 
-wo *reservieren* ist eine Zahl größer als die aktuelle Stapelreservierungsgröße in NMAKE.
+Where *Reserve* ist eine Zahl, die größer als die aktuelle Stapel Zuordnung in NMAKE ist.

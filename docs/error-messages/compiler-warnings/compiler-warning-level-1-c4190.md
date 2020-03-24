@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4190
 ms.assetid: a4d0ad93-a19a-4063-addd-36d605831567
-ms.openlocfilehash: 05984594a57878aad8037861a15ac9284ff65192
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6d110aa70a470382e274546e95599804fa3bc7d6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386498"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80199874"
 ---
 # <a name="compiler-warning-level-1-c4190"></a>Compilerwarnung (Stufe 1) C4190
 
-'Bezeichner1' C-Bindung angegeben wurde, aber gibt UDT "Bezeichner2" ist nicht mit C
+für "Bezeichner1" wurde eine C-Verknüpfung angegeben, es wird jedoch der UDT "Bezeichner2" zurückgegeben, der nicht mit C kompatibel ist
 
-Eine Funktion oder ein Zeiger auf Funktion verfügt über ein UDT (benutzerdefinierte Typ, die eine Klasse, Struktur, Enumeration oder Union ist) als Rückgabetyp und `extern` "C"-Verknüpfung. Dies ist zulässig wenn:
+Eine Funktion oder ein Zeiger auf die Funktion verfügt über einen UDT (benutzerdefinierter Typ, bei dem es sich um eine Klasse, Struktur, Enumeration oder Union handelt) als Rückgabetyp und `extern` "C"-Verknüpfung. Dies ist zulässig, wenn Folgendes gilt:
 
-- Alle Aufrufe dieser Funktion auftreten von C++.
+- Alle Aufrufe dieser Funktion erfolgen von C++.
 
-- Die Definition der Funktion ist in C++.
+- Die Definition der Funktion befindet sich in C++.
 
 ## <a name="example"></a>Beispiel
 

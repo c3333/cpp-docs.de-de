@@ -6,33 +6,33 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1106
 ms.assetid: 528f7e65-04be-4966-b8af-9276837c7cda
-ms.openlocfilehash: 7551e2f3f1efc90913981feb674f48aadb9ace51
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 091d4e173bfb2eff8ffee2b5c30647f4d5e3bc04
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255318"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195369"
 ---
 # <a name="linker-tools-error-lnk1106"></a>Linkertoolfehler LNK1106
 
-Ungültige Datei oder der Datenträger ist voll: kann nicht nach Position suchen
+Ungültige Datei oder Datenträger voll: Suche nach Speicherort nicht möglich.
 
-Das Tool konnte nicht lesen oder Schreiben in `location` in eine Datei mit zugewiesenem Speicher.
+Das Tool konnte in einer Speicher Abbild Datei nicht auf `location` lesen oder schreiben.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Der Datenträger ist voll.
+1. Datenträger ist voll.
 
-   Geben Sie Speicherplatz frei, und erneut auf den link.
+   Freigeben von Speicherplatz und erneutes verknüpfen.
 
-1. Versucht, über ein Netzwerk zu verknüpfen.
+1. Es wird versucht, eine Verknüpfung über ein Netzwerk herzustellen.
 
-   Manche Netzwerke unterstützen nicht vollständig die Speicherabbilddateien, die vom Linker verwendet werden. Versuchen Sie, eine Verknüpfung auf dem lokalen Datenträger.
+   Einige Netzwerke unterstützen die Speicher Abbild Dateien, die vom Linker verwendet werden, nicht vollständig. Versuchen Sie, auf Ihrem lokalen Datenträger zu verknüpfen.
 
-1. Ungültige Block auf dem Datenträger.
+1. Ungültiger Block auf Ihrem Datenträger.
 
-   Obwohl das Betriebssystem und Datenträgerhardware solcher Fehler erkannt haben sollen, empfiehlt es sich zum Ausführen von Programmen datenträgerüberprüfung.
+   Obwohl das Betriebssystem und die Datenträger Hardware einen solchen Fehler feststellen sollten, empfiehlt es sich, ein Programm zur Datenträger Überprüfung auszuführen.
 
-1. Kein weiterer Heapspeicher verfügbar.
+1. Nicht genügend Heap Speicher.
 
-   Finden Sie unter [C1060](../../error-messages/compiler-errors-1/fatal-error-c1060.md) für Weitere Informationen.
+   Weitere Informationen finden Sie unter [C1060](../../error-messages/compiler-errors-1/fatal-error-c1060.md) .

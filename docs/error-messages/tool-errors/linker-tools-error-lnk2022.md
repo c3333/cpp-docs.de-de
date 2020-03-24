@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2022
 ms.assetid: d2128c73-dde3-4b8e-a9b2-0a153acefb3b
-ms.openlocfilehash: e55202274c5ec3982f784ad6cdf074a5a99e922f
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: d30dad6f8ad146ff467eb4eaf32b21dd6950d25f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345338"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194641"
 ---
 # <a name="linker-tools-error-lnk2022"></a>Linkertoolfehler LNK2022
 
-> Fehler beim Metadatenvorgang (*HRESULT*): *Error_message*
+> Fehler beim Metadatenvorgang (*HRESULT*): *ERROR_MESSAGE*
 
-Der Linker hat einen Fehler beim Zusammenführen von Metadaten. Die Metadatenfehler müssen behoben werden, um erfolgreich zu verknüpfen.
+Der Linker hat beim Zusammenführen von Metadaten einen Fehler festgestellt. Die Metadatenfehler müssen aufgelöst werden, damit Sie erfolgreich verknüpft werden können.
 
-Eine Möglichkeit zur diagnose dieses Problems ist die Ausführung **Ildasm-Token** auf die Objektdateien zu ermitteln, welche Typen enthält die Token in aufgeführten `error_message`, und suchen Sie nach der Unterschiede.  In den Metadaten zwei verschiedene Typen mit demselben Namen ist ungültig, selbst wenn das nur LayoutType-Attribut unterscheidet.
+Eine Möglichkeit, dieses Problem zu diagnostizieren, besteht darin, **Ildasm-Tokens** für die Objektdateien auszuführen, um zu ermitteln, welche Typen die in `error_message`aufgeführten Token enthalten, und nach Unterschieden zu suchen.  In Metadaten sind zwei verschiedene Typen mit dem gleichen Namen nicht gültig, auch wenn das Attribut "nur LayoutType" unterschiedlich ist.
 
-Einen Grund für LNK2022 ist, wenn ein Typ (z. B. eine Struktur) in mehrere Compilands, mit dem gleichen Namen, jedoch mit in Konflikt stehende Definitionen vorhanden ist und beim Kompilieren mit ["/ CLR"](../../build/reference/clr-common-language-runtime-compilation.md).  In diesem Fall stellen Sie sicher, dass der Typ eine identische Definition in jeder Kompiliereinheit aufweist.  Der Typname finden `error_message`.
+Ein Grund für Linkertoolfehler LNK2022 ist, wenn ein Typ (z. b. eine Struktur) in mehreren Kompilierungen mit dem gleichen Namen vorhanden ist, jedoch mit in Konflikt stehenden Definitionen und bei der Kompilierung mit [/CLR](../../build/reference/clr-common-language-runtime-compilation.md).  Stellen Sie in diesem Fall sicher, dass der Typ in allen Kompilierungen über eine identische Definition verfügt.  Der Typname wird in `error_message`aufgeführt.
 
-Eine weitere mögliche Ursache LNK2022 der Linker wird eine Datei mit Metadaten in einem anderen Speicherort für den Compiler angegeben wurde (mit [#using](../../preprocessor/hash-using-directive-cpp.md) ). Stellen Sie sicher, dass die Metadaten-Datei (DLL- oder NETMODULE-Datei) am gleichen Speicherort, an den Linker übergeben wird, wie wurde zuvor für den Compiler übergeben wurde.
+Eine weitere mögliche Ursache für Linkertoolfehler LNK2022 ist, wenn der Linker eine Metadatendatei an einem anderen Speicherort findet, als für den Compiler angegeben wurde (mit [#using](../../preprocessor/hash-using-directive-cpp.md) ). Stellen Sie sicher, dass sich die Metadatendatei (. dll oder. netmodule) am gleichen Speicherort befindet, wenn Sie an den Linker übermittelt wird, wie Sie an den Compiler übermittelt wurde.
 
-Beim Erstellen von ATL-Anwendungen, die Verwendung des Makros `_ATL_MIXED` ist in jeder Kompiliereinheit erforderlich, wenn er in mindestens einer verwendet wird.
+Beim Erstellen einer ATL-Anwendung ist die Verwendung des Makro `_ATL_MIXED` in allen Kompilierungen erforderlich, wenn es in mindestens einem verwendet wird.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird einen leeren Typ definiert.
+Im folgenden Beispiel wird ein leerer Typ definiert.
 
 ```cpp
 // LNK2022_a.cpp
@@ -39,9 +39,9 @@ public ref class Test {};
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, dass Sie zwei Quellcodedateien, die Typen, von dem gleichen Namen, aber unterschiedliche Definitionen enthalten keine Verknüpfung möglich.
+Dieses Beispiel zeigt, dass Sie nicht zwei Quell Code Dateien verknüpfen können, die Typen mit demselben Namen, aber unterschiedlichen Definitionen enthalten.
 
-Im folgende Beispiel wird die LNK2022 generiert.
+Im folgenden Beispiel wird Linkertoolfehler LNK2022 generiert.
 
 ```cpp
 // LNK2022_b.cpp

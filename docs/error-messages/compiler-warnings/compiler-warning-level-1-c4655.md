@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4655
 ms.assetid: 540f2c7a-e4a1-49af-84b4-03eeea1bbf41
-ms.openlocfilehash: aff78dbed217a6d9c5bc2a315ef12a33fe6caf0d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d4c409c2d69099853a872142e05ef0fcda5a7655
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62374663"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80199530"
 ---
 # <a name="compiler-warning-level-1-c4655"></a>Compilerwarnung (Stufe 1) C4655
 
-> "*Symbol*': Variablentyp ist neuer als beim letzten Build oder wurde an anderer Stelle unterschiedlich definiert
+> '*Symbol*': der Variablentyp ist seit dem letzten Build neu oder wurde an anderer Stelle unterschiedlich definiert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Seit dem letzten erfolgreichen Build wurde ein Datentyp geändert oder hinzugefügt. „Bearbeiten und fortfahren“ unterstützt keine Änderungen an vorhandenen Datentypen.
 
@@ -27,7 +27,7 @@ Auf diese Warnung folgt ein [Schwerwiegender Fehler C1092](../../error-messages/
 
 1. Ändern Sie den Datentyp wieder in den Zustand, den er vor dem Fehler hatte.
 
-2. Wählen Sie im Menü **Debuggen** den Befehl **Codeänderungen übernehmen**.
+2. Wählen Sie im Menü **Debuggen** den Befehl **Codeänderungen übernehmen**aus.
 
 ### <a name="to-remove-this-warning-without-changing-your-source-code"></a>So entfernen Sie diese Warnung, ohne den Quellcode zu ändern
 

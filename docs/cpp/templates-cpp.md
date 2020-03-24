@@ -7,12 +7,12 @@ helpviewer_keywords:
 - templates, C++
 - templates [C++]
 ms.assetid: 90fcc14a-2092-47af-9d2e-dba26d25b872
-ms.openlocfilehash: 36ada3cc3b933e99e9b29b3b58463f6bc526fc7d
-ms.sourcegitcommit: 00f50ff242031d6069aa63c81bc013e432cae0cd
+ms.openlocfilehash: 5f8322d850084ca53e946dcff1b67dc81b493fe3
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75546405"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160774"
 ---
 # <a name="templates-c"></a>Vorlagen (C++)
 
@@ -57,7 +57,7 @@ int minimum(const int& lhs, const int& rhs)
 
 Die Regeln, wie der Compiler die Typableitung in Funktions Vorlagen ausführt, basieren auf den Regeln für normale Funktionen. Weitere Informationen finden Sie unter [Überladungs Auflösung von Funktions Vorlagen aufrufen](../cpp/overload-resolution-of-function-template-calls.md).
 
-## <a id="type_parameters"></a>Typparameter
+## <a name="type-parameters"></a><a id="type_parameters"></a>Typparameter
 
 Beachten Sie in der obigen `minimum` Vorlage, dass der Typparameter *t* in keiner Weise qualifiziert ist, bis er in den Funktionsaufrufen-Parametern verwendet wird, in denen die Konstanten und Verweis Qualifizierer hinzugefügt werden.
 
@@ -131,7 +131,7 @@ public:
 };
 ```
 
-Beachten Sie die Syntax in der Vorlagen Deklaration. Der `size_t`-Wert wird als Vorlagen Argument zur Kompilierzeit und muss **const** oder ein **constexpr** -Ausdruck sein. Sie verwenden sie folgendermaßen:
+Beachten Sie die Syntax in der Vorlagen Deklaration. Der `size_t`-Wert wird als Vorlagen Argument zur Kompilierzeit und muss **const** oder ein **constexpr** -Ausdruck sein. Sie verwenden Sie wie folgt:
 
 ```cpp
 MyArray<MyClass*, 10> arr;
@@ -151,7 +151,7 @@ auto v2 = constant<true>;   // v2 == true, decltype(v2) is bool
 auto v3 = constant<'a'>;    // v3 == 'a', decltype(v3) is char
 ```
 
-## <a id="template_parameters"></a>Vorlagen als Vorlagen Parameter
+## <a name="templates-as-template-parameters"></a><a id="template_parameters"></a>Vorlagen als Vorlagen Parameter
 
 Eine Vorlage kann ein Vorlagen Parameter sein. In diesem Beispiel verfügt MyClass2 über zwei Vorlagen Parameter: einen tyname-Parameter *T* und einen Vorlagen Parameter *arr*:
 

@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - D9027
 ms.assetid: 2a29edc5-5649-48f2-9058-2057c747284c
-ms.openlocfilehash: f89e7416efe7a0069ee2dae8df921933bbe76bcf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 46ed5750bd1f315f20658ace9b83fac532fbbabb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214115"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196676"
 ---
 # <a name="command-line-warning-d9027"></a>Befehlszeilenwarnung D9027
 
-Quelldatei "\<Dateiname >" ignoriert
+die Quelldatei "\<filename >" wird ignoriert.
 
-CL.exe ignoriert die Eingabequelldatei.
+CL. exe hat die Eingabe Quelldatei ignoriert.
 
-Diese Warnung kann durch ein Leerzeichen zwischen der/Fo-Option und der Name für die Ausgabedatei in einer Befehlszeile mit der Option/c verursacht werden. Zum Beispiel:
+Diese Warnung kann durch ein Leerzeichen zwischen der Option/FO und einem Ausgabe Dateinamen in einer Befehlszeile mit der Option/c verursacht werden. Beispiel:
 
 ```
 cl /c /Fo output.obj input.c
 ```
 
-Da ein Leerzeichen zwischen/FO und `output.obj`, dauert der CL.exe `output.obj` als den Namen der Eingabedatei. Um das Problem zu beheben, entfernen Sie den Speicherplatz:
+Da ein Leerzeichen zwischen/FO und `output.obj`vorhanden ist, nimmt CL. exe `output.obj` als Namen der Eingabedatei an. Entfernen Sie den Speicherplatz, um das Problem zu beheben:
 
 ```
 cl /c /Fooutput.obj input.c

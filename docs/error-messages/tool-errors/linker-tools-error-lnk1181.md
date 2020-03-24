@@ -6,33 +6,33 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1181
 ms.assetid: 984b0db6-e331-4284-b2a7-a212fe96c486
-ms.openlocfilehash: 657e78ece2ce4039eb8dc8561abd455c60aaff75
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d2b28af52a2ca2263a7bad77c8c69242396ff2b4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62254916"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195252"
 ---
 # <a name="linker-tools-error-lnk1181"></a>Linkertoolfehler LNK1181
 
-Die Eingabedatei 'Dateiname' kann nicht geöffnet werden.
+Eingabedatei "Dateiname" kann nicht geöffnet werden.
 
-Der Linker wurde nicht gefunden. `filename` , da er nicht vorhanden oder der Pfad wurde nicht gefunden.
+Der Linker konnte `filename` nicht finden, weil er nicht vorhanden ist oder der Pfad nicht gefunden wurde.
 
-Einige häufige Ursachen für Fehler LNK1181 gehören:
+Einige häufige Fehlerursache LNK1181 sind:
 
-- `filename` verwiesen wird, da eine zusätzliche Abhängigkeit von der Linker-Befehlszeile, aber die Datei nicht vorhanden ist.
+- auf `filename` wird als zusätzliche Abhängigkeit von der Linker-Zeile verwiesen, die Datei ist jedoch nicht vorhanden.
 
-- Ein **/LIBPATH** Anweisung, der angibt, das Verzeichnis mit `filename` ist nicht vorhanden.
+- Eine **/LIBPATH** -Anweisung, die das Verzeichnis angibt, das `filename` enthält.
 
-Um die oben genannten Probleme zu beheben, stellen Sie sicher, dass alle Dateien, die in der Linkerzeile verwiesen wird, auf dem System vorhanden sind.  Stellen Sie außerdem sicher, es gibt eine **/LIBPATH** -Anweisung für jedes Verzeichnis, das eine Linker-abhängige Datei enthält.
+Stellen Sie sicher, dass alle Dateien, auf die in der Linker-Zeile verwiesen wird, auf dem System vorhanden sind  Stellen Sie außerdem sicher, dass eine **/LIBPATH** -Anweisung für jedes Verzeichnis vorhanden ist, das eine Linker-abhängige Datei enthält.
 
-Weitere Informationen finden Sie unter [LIB-Dateien als Linkereingabe](../../build/reference/dot-lib-files-as-linker-input.md).
+Weitere Informationen finden Sie unter [lib-Dateien als Eingabe](../../build/reference/dot-lib-files-as-linker-input.md)für den Linker.
 
-Eine weitere mögliche Ursache für LNK1181 ist, dass ein langer Dateiname mit eingebetteten Leerzeichen nicht in Anführungszeichen eingeschlossen wurde.  In diesem Fall der Linker erkennt nur einen Dateinamen bis zum ersten Leerzeichen, und dann annehmen eine Dateierweiterung aus. obj.  Die Lösung für dieses Problem besteht darin, schließen Sie den langen Dateinamen (Name, Pfad und Dateiname) in Anführungszeichen ein.
+Eine weitere mögliche Ursache für LNK1181 besteht darin, dass ein langer Dateiname mit eingebetteten Leerzeichen nicht in Anführungszeichen eingeschlossen ist.  In diesem Fall erkennt der Linker nur einen Dateinamen bis zum ersten Leerzeichen und übernimmt dann die Dateierweiterung ". obj".  Die Lösung für diese Situation besteht darin, den langen Dateinamen (Pfad und Dateiname) in Anführungszeichen einzuschließen.
 
-Beim Kompilieren mit der [/p (Vorverarbeitung in eine Datei)](../../build/reference/p-preprocess-to-a-file.md) Option kann in LNK1181 führen, da diese Option die Erstellung von OBJ-Dateien unterdrückt.
+Das Kompilieren mit der/P-Option [(Vorverarbeitung in eine Datei)](../../build/reference/p-preprocess-to-a-file.md) kann zu LNK1181 führen, da diese Option die Erstellung von obj-Dateien unterdrückt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [/LIBPATH (Zusätzlicher Libpath-Pfad)](../../build/reference/libpath-additional-libpath.md)

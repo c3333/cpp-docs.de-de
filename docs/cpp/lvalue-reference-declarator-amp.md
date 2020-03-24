@@ -1,5 +1,5 @@
 ---
-title: 'Lvalue-Verweisdeklarator: &amp;'
+title: 'Lvalue-verweisdedeklarator: &amp;'
 ms.date: 11/04/2016
 f1_keywords:
 - '&'
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - reference operator
 - '& operator [C++], reference operator'
 ms.assetid: edf0513d-3dcc-4663-b276-1269795dda51
-ms.openlocfilehash: 7710b6f1efc2de770b26ad50923bde2ee5200f61
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 595f2b683d2abb4cdc8a328dc6e86338ab90f214
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209553"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178066"
 ---
-# <a name="lvalue-reference-declarator-amp"></a>Lvalue-Verweisdeklarator: &amp;
+# <a name="lvalue-reference-declarator-amp"></a>Lvalue-verweisdedeklarator: &amp;
 
 Enthält die Adresse eines Objekts, verhält sich jedoch syntaktisch wie ein Objekt.
 
@@ -24,13 +24,13 @@ Enthält die Adresse eines Objekts, verhält sich jedoch syntaktisch wie ein Obj
 type-id & cast-expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sie können sich einen lvalue-Verweis als einen anderen Namen für ein Objekt vorstellen. Eine lvalue-Verweisdeklaration enthält eine optionale Liste von Bezeichnern, gefolgt von einem Verweisdeklarator. Ein Verweis muss initialisiert werden und kann nicht geändert werden.
 
 Jedes Objekt, dessen Adresse in einen angegebenen Zeigertyp konvertiert werden kann, kann auch in den ähnlichen Referenztyp konvertiert werden. Beispielsweise kann jedes Objekt, dessen Adresse in den Typ `char *` konvertiert werden kann, auch in den Typ `char &` konvertiert werden.
 
-Verwechseln Sie Verweisdeklarationen mit Verwendung von nicht die [Address-of-Operator](../cpp/address-of-operator-amp.md). Wenn die `&` *Bezeichner* ist ein Typ vorangestellt, wie z. B. **Int** oder **Char**, *Bezeichner* deklariert wird, als Verweis auf Der Typ. Wenn `&` *Bezeichner* steht nicht von einem Typ, ist die Verwendung des Address-of-Operators.
+Verwechseln Sie keine Verweis Deklarationen mit der Verwendung des [address-of-Operators](../cpp/address-of-operator-amp.md). Wenn dem `&`*Bezeichner* ein Typ vorangestellt ist, z. b. **int** oder **char**, wird der *Bezeichner* als Verweis auf den Typ deklariert. Wenn `&`*Bezeichner* keinem Typ vorangestellt ist, ist die Verwendung der des address-of-Operators.
 
 ## <a name="example"></a>Beispiel
 
@@ -71,9 +71,9 @@ int main()
 Bill is 40
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verweise](../cpp/references-cpp.md)<br/>
+[Referenzen](../cpp/references-cpp.md)<br/>
 [Verweistyp-Funktionsargumente](../cpp/reference-type-function-arguments.md)<br/>
 [Verweistyp-Funktionsrückgaben](../cpp/reference-type-function-returns.md)<br/>
 [Verweise auf Zeiger](../cpp/references-to-pointers.md)

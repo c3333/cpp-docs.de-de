@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - delegate keyword [C++]
 ms.assetid: 03caf23d-7873-4a23-9b34-becf42aaf429
-ms.openlocfilehash: 29bf305ed5e4845437b90ed672d1ab0c0de9ced6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 388ccb28c9311b4727199e6b7324771c24c2906d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516485"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172437"
 ---
 # <a name="delegate--ccli-and-ccx"></a>delegate (C++/CLI und C++/CX)
 
@@ -23,7 +23,7 @@ Deklariert einen Typ, der einen Funktionszeiger repräsentiert.
 
 Sowohl Windows-Runtime als auch Common Language Runtime unterstützen Delegaten.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 **delegate** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
@@ -47,7 +47,7 @@ delegate-type-identifier
 
 ### <a name="parameters"></a>Parameter
 
-*Zugriff*<br/>
+*access*<br/>
 (Optional) Der Zugriff auf den Delegaten – kann **public** (Standardwert) oder **private** lauten. Der Funktionsprototyp kann auch mit den Schlüsselwörtern **const** oder **volatile** qualifiziert werden.
 
 *return-type*<br/>
@@ -59,11 +59,11 @@ Der Name des deklarierten Delegattyps.
 *parameters*<br/>
 (Optional) Die Typen und Bezeichner des Funktionsprototyps.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie den *delegate-type-identifier*, um ein Ereignis mit dem gleichen Prototypen wie der Delegat zu deklarieren. Weitere Informationen finden Sie unter [Delegaten (C++/CX)](../cppcx/delegates-c-cx.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -81,7 +81,7 @@ function_declaration
 
 ### <a name="parameters"></a>Parameter
 
-*Zugriff*<br/>
+*access*<br/>
 (Optional) Der Zugriff auf den Delegaten außerhalb der Assembly kann „public“ oder „private“ lauten.  Der Standardwert ist „private“.  Innerhalb einer Klasse kann ein Delegat einen beliebigen Zugriff aufweisen.
 
 *function_declaration*<br/>
@@ -89,7 +89,7 @@ Die Signatur der Funktion, die an den Delegaten gebunden werden kann. Der Rückg
 
 Um einen nicht gebundenen Delegaten zu definieren, sollte der erste Parameter in *function_declaration* der Typ des **this**-Zeigers für das Objekt sein.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Delegaten unterstützen eine mehrfache Umwandlung: Der Funktionszeiger kann an eine oder mehrere Methoden innerhalb einer verwalteten Klasse gebunden sein. Das Schlüsselwort **delegate** definiert einen Multicastdelegattypen mit einer bestimmten Methodensignatur.
 
@@ -123,7 +123,7 @@ Weitere Informationen über Delegaten finden Sie unter folgenden Links:
 
 - [Generische Delegaten (C++/CLI)](generic-delegates-visual-cpp.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -200,6 +200,6 @@ in func2 10
 in static func3 11
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

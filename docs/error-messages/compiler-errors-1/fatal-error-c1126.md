@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C1126
 ms.assetid: f22b26a6-8ad7-47cf-a237-196c8ea60aca
-ms.openlocfilehash: 3f4d152163d3b21ddf99644c34e63f35ca15e6e9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a6c9d06cd087eb4462ae475cc1f6d64ba451887f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230011"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203635"
 ---
 # <a name="fatal-error-c1126"></a>Schwerwiegender Fehler C1126
 
-'Bezeichner': automatische speicherbelegung überschreitet die Größe
+"Bezeichner": automatische Zuordnung überschreitet Größe
 
-Speicherplatz für lokale Variablen von einer Funktion (plus eine begrenzte Menge an Speicherplatz, die durch den Compiler an, wie z. B. 20 Bytes für austauschbare Funktionen zusätzlich verwendet) überschreitet den Grenzwert.
+Der für lokale Variablen einer Funktion zugewiesene Speicherplatz (zuzüglich eines begrenzten Speicherplatzes, wie etwa 20 Bytes für austauschbare Funktionen), überschreitet den Grenzwert.
 
-Verwenden Sie zum Beheben dieses Fehlers `malloc` oder `new` zuweisen große Datenmengen.
+Um diesen Fehler zu beheben, verwenden Sie `malloc` oder `new`, um große Datenmengen zuzuordnen.

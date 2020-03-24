@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - R6028
 ms.assetid: 81e99079-4388-4244-a4f7-4641c508871c
-ms.openlocfilehash: 4992641c2456f0322b5c52eb907b159904e4c9f0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1c165b7c9351e34ef6316962cd90663f2b6152ab
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62380512"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197131"
 ---
 # <a name="c-runtime-error-r6028"></a>C-Laufzeitfehler R6028
 
 Heap kann nicht initialisiert werden.
 
 > [!NOTE]
-> Wenn diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app heruntergefahren, da sie ein Problem des internen Speicher verfügt. Es gibt viele mögliche Ursachen für diesen Fehler, aber dies wird häufig verursacht durch eine extrem wenig Arbeitsspeicher verfügbar, einen Fehler im Programm oder defekte Hardware-Treiber.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP heruntergefahren, weil Sie über ein internes Speicherproblem verfügt. Es gibt viele mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen extrem wenig Arbeitsspeicher, einen Programmfehler oder durch fehlerhafte Hardwaretreiber verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Anderen ausgeführten Anwendungen zu schließen, oder Neustart des Computers, um Arbeitsspeicher freizugeben.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Wenn die app vor einer kürzlich durchgeführten Installationen von einer anderen app oder Treiber ordnungsgemäß funktioniert, verwenden Sie die **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** Entfernen der neue app oder -Treiber verwenden, und versuchen Sie es erneut mit Ihrer app.
-> - Überprüfen Sie die Hardware der Website des Herstellers oder **Windows Update** in die **Systemsteuerung** für Software-und Treiberupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Schließen Sie andere laufende Anwendungen, oder starten Sie den Computer neu, um Arbeitsspeicher freizugeben.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Wenn die APP vor einer neuen Installation einer anderen APP oder eines Treibers funktioniert, verwenden Sie die Seite **apps und Features** bzw. **Programme und Funktionen** in der **Systemsteuerung** , um die neue APP oder den Treiber zu entfernen, und wiederholen Sie dann die app.
+> - Überprüfen Sie die Website des Hardware Anbieters, oder **Windows Update** Sie in der **Systemsteuerung** Software-und Treiber Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 

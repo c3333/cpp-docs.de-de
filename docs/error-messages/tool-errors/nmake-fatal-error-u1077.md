@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U1077
 ms.assetid: 70d989f8-ef34-4ad7-8fe0-5b800556b2a1
-ms.openlocfilehash: 6b0e7b13628c9f38231f4a8772e9babadaf90636
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: da50af5a1dc0fc6086629d1f26ebe949a25d6faf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366952"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193498"
 ---
 # <a name="nmake-fatal-error-u1077"></a>NMAKE: Schwerwiegender Fehler U1077
 
-"Program": Rückgabecode 'Value'
+"Program": Rückgabecode "Wert"
 
-Der angegebene Befehl oder ein Programm Namen NMAKE ist fehlgeschlagen, und den angegebene Exitcode zurückgegeben.
+Der angegebene Befehl oder das von NMAKE aufgerufene Programm konnte nicht ausgeführt werden und gab den angegebenen Exitcode zurück.
 
-Dieser Fehler unterdrücken und weiterhin die NMAKE-Sitzung, verwenden Sie die Option/i der **. IGNORIEREN Sie** Punkt-Direktive und den Bindestrich (**-**) Befehlsparameter. Verwenden Sie die/k-Option, um den NMAKE-Sitzung für nicht verbundene Teile der Abhängigkeitsstruktur fortgesetzt.
+Verwenden Sie die Option/I, um diesen Fehler zu unterdrücken und die NMAKE-Sitzung fortzusetzen **. Ignorieren** Sie die Punkt Direktive oder den Dash ( **-** )-Befehlsmodifizierer. Wenn Sie die NMAKE-Sitzung für nicht verknüpfte Teile der Abhängigkeitsstruktur fortsetzen möchten, verwenden Sie die/K-Option.

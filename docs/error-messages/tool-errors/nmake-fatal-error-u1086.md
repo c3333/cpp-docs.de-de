@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - U1086
 ms.assetid: 6d3cd68a-ead6-4a6d-a205-01324785de7e
-ms.openlocfilehash: 2b0768697821b732a918403fedb463bdb127c54b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 166e5b49f765bef4145fe966577dfbaac228ca39
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62399914"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193354"
 ---
 # <a name="nmake-fatal-error-u1086"></a>NMAKE: Schwerwiegender Fehler U1086
 
-**Rückschlussregel kann keine Abhängigkeiten haben.**
+**die Rückschluss Regel kann keine abhängigen Elemente aufweisen.**
 
-Der Doppelpunkt (**:**) in einen Rückschluss muss durch einen der folgenden Regel befolgt werden:
+Auf den Doppelpunkt ( **:** ) in einer Rückschluss Regel muss einer der folgenden Punkte folgen:
 
 - Neue-Zeile-Zeichen
 
-- Durch Semikolons (**;**), dem ein Befehl folgen kann.
+- Semikolon ( **;** ), auf das ein Befehl folgen kann
 
-- Nummernzeichen (**#**), dem ein Kommentar folgen kann.
+- Nummern Zeichen ( **#** ), auf das ein Kommentar folgen kann

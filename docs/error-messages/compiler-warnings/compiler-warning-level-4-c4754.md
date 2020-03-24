@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4754
 ms.assetid: e0e4606a-754a-4f42-a274-21a34978d21d
-ms.openlocfilehash: 203f2b97547c7ff8b1d68e3640e62d531b2600e9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f55d40044fef58275ad0e1fbd281b5f1af43c243
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388578"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80198132"
 ---
 # <a name="compiler-warning-level-4-c4754"></a>Compilerwarnung (Stufe 4) C4754
 
@@ -19,11 +19,11 @@ Aufgrund von Konvertierungsregeln für arithmetische Operationen in einem Vergle
 
 Die Warnung C4754 wird ausgegeben, da das Ergebnis des Vergleichs immer identisch ist. Dies bedeutet, dass einer der Branches der Bedingung nie ausgeführt wird, weil höchstwahrscheinlich der zugehörige ganzzahligen Ausdruck falsch ist. Dieser Fehler tritt häufig in falschen Ganzzahl-Überlaufüberprüfungen in 64-Bit-Architekturen auf.
 
-Konvertierungsregeln für Ganzzahlen sind komplex und enthalten viele subtile Fehlermöglichkeiten. Als Alternative zu jeder C4754-Warnung beheben, können Sie den Code so aktualisieren die [SafeInt-Bibliothek](../../safeint/safeint-library.md).
+Konvertierungsregeln für Ganzzahlen sind komplex und enthalten viele subtile Fehlermöglichkeiten. Als Alternative zum Beheben der einzelnen C4754-Warnungen können Sie den Code so aktualisieren, dass die [safeint-Bibliothek](../../safeint/safeint-library.md)verwendet wird.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird die C4754 generiert:
+In diesem Beispiel wird C4754 generiert:
 
 ```cpp
 // C4754a.cpp
@@ -96,7 +96,7 @@ In diesem Fall würde der geänderte Code dem Folgenden ähneln:
 if (a + (unsigned long)sizeof(unsigned long) < a)
 ```
 
-**Beachten Sie** die Nummer der Zeile, die in compilerwarnungen bezeichnet ist die letzte Zeile einer Anweisung. In einer Warnmeldung zu einer komplexen Bedingungsanweisung, die sich über mehrere Zeilen erstreckt, kann die Zeile mit dem Codefehler einige Zeilen vor der Zeile liegen, die gemeldet wird. Zum Beispiel:
+**Hinweis** Die Zeilennummer, auf die in Compilerwarnungen verwiesen wird, ist die letzte Zeile einer-Anweisung. In einer Warnmeldung zu einer komplexen Bedingungsanweisung, die sich über mehrere Zeilen erstreckt, kann die Zeile mit dem Codefehler einige Zeilen vor der Zeile liegen, die gemeldet wird. Beispiel:
 
 ```cpp
 unsigned long a;

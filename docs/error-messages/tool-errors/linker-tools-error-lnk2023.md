@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2023
 ms.assetid: c99e35a8-739a-4a20-a715-29b8c3744703
-ms.openlocfilehash: c5bc70aeb3a7e39bc60bb745060e7a5740ad7a28
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 363b6ef0ea9991ff5d657044282e99c558257fb9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386303"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194628"
 ---
 # <a name="linker-tools-error-lnk2023"></a>Linkertoolfehler LNK2023
 
-beschädigte Dll oder Einstiegspunkt \<Dll oder Einstiegspunkt >
+Ungültige dll oder Einstiegspunkt \<dll oder Einstiegspunkt >
 
-Der Linker wird eine falsche Version der msobj90.dll geladen. Sicherstellen Sie, dass link.exe und msobj90.dll im Pfad über die gleiche Version verfügen.
+Der Linker lädt eine falsche Version von msobj90. dll. Stellen Sie sicher, dass "Link. exe" und "msobj90. dll" in Ihrem Pfad dieselbe Version aufweisen.
 
-Eine Abhängigkeit von msobj90.dll möglicherweise nicht vorhanden. Die Liste der Abhängigkeiten für msobj90.dll ist:
+Eine Abhängigkeit von msobj90. dll ist möglicherweise nicht vorhanden. Die Abhängigkeits Liste für msobj90. dll lautet:
 
 - Msvcr90.dll
 
 - Kernel32.dll
 
-Überprüfen Sie Ihren Computer für alle anderen Kopien von msobj90.dll, die möglicherweise veraltet.
+Überprüfen Sie Ihren Computer auf andere Kopien von msobj90. dll, die möglicherweise veraltet sind.

@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - R6018
 ms.assetid: f6dd40d1-a119-4d8b-b39e-97350ea23349
-ms.openlocfilehash: b36e2184e5be131645fb4dd58a361fdb9a31da63
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 83ad191fe1518e5e6bab0798840415ef392db71e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214219"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197287"
 ---
 # <a name="c-runtime-error-r6018"></a>C-Laufzeitfehler R6018
 
-unerwarteter Heapfehler
+Unerwarteter Heap Fehler
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da er ein internes Problem aufweist. Es gibt mehrere mögliche Gründe für diesen Fehler, aber dies wird häufig durch einen Fehler in der app-Code verursacht.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP aufgrund eines internen Problems heruntergefahren. Es gibt mehrere mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen Fehler im App-Code verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Das Programm ist einen unerwarteter Fehler beim Ausführen eines Vorgangs für die Speicherverwaltung.
+Unerwarteter Fehler beim Ausführen eines Speicher Verwaltungs Vorgangs durch das Programm.
 
-Dieser Fehler tritt gewöhnlich auf, wenn das Programm die Runtime-Heapdaten versehentlich geändert wird. Es kann jedoch auch durch einen internen Fehler in der Common Language Runtime oder ein Betriebssystem-Code verursacht werden.
+Dieser Fehler tritt normalerweise auf, wenn das Programm versehentlich die Lauf Zeit Heap Daten ändert. Dies kann jedoch auch durch einen internen Fehler im Lauf Zeit-oder Betriebssystem Code verursacht werden.
 
-Um dieses Problem zu beheben, überprüfen Sie die Heap-Beschädigung Fehlern im Code. Weitere Informationen und Beispiele finden Sie unter [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details). Als Nächstes überprüfen Sie, dass Sie die neuesten verteilbaren Dateien für Ihre app-Bereitstellung verwenden. Weitere Informationen finden Sie unter [Bereitstellung in Visual C++](../../windows/deployment-in-visual-cpp.md).
+Um dieses Problem zu beheben, überprüfen Sie, ob Fehler im Code auf Heap Beschädigung auftreten. Weitere Informationen und Beispiele finden Sie unter [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details). Überprüfen Sie als nächstes, ob Sie die neuesten verteilbaren Komponenten für Ihre APP-Bereitstellung verwenden. Weitere Informationen finden Sie unter [Bereitstellung C++in Visual ](../../windows/deployment-in-visual-cpp.md).

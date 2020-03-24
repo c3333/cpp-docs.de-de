@@ -5,12 +5,12 @@ f1_keywords:
 - hash_map/std::operator!=
 - hash_map/std::operator==
 ms.assetid: 24b9bb9e-e983-4060-bce5-2c7c8161ee61
-ms.openlocfilehash: c4cc73feb3c8163a2be9f0122f57eaa0fb8ab3b8
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 50a6c2784b4c861f7cf3bbb4d1e1c8ebd0eea72d
+ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424728"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80150744"
 ---
 # <a name="lthash_mapgt-operators"></a>&lt;hash_map&gt;-Operatoren
 
@@ -19,7 +19,7 @@ ms.locfileid: "79424728"
 |[operator!=](#op_neq)|[operator!= (multimap)](#op_neq_mm)|
 |[operator==](#op_eq_eq)|[operator== (multimap)](#op_eq_eq_mm)|
 
-## <a name="op_neq"></a> operator!=
+## <a name="operator"></a><a name="op_neq"></a> operator!=
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_map-Klasse](unordered-map-class.md).
@@ -42,7 +42,7 @@ Ein Objekt des Typs `hash_map`.
 
 **TRUE**, wenn die hash_maps ungleich sind; **FALSE**, wenn hash_maps gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_map-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_maps sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen, und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -88,7 +88,7 @@ The hash_maps hm1 and hm2 are not equal.
 The hash_maps hm1 and hm3 are equal.
 ```
 
-## <a name="op_eq_eq"></a> operator==
+## <a name="operator"></a><a name="op_eq_eq"></a> operator==
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_map-Klasse](unordered-map-class.md).
@@ -111,7 +111,7 @@ Ein Objekt des Typs `hash_map`.
 
 **TRUE**, wenn die hash_map links vom Operator gleich der hash_map rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_map-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_maps sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen, und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -155,7 +155,7 @@ The hash_maps hm1 and hm2 are not equal.
 The hash_maps hm1 and hm3 are equal.
 ```
 
-## <a name="op_neq_mm"></a>Operator! = (Hash_multimap)
+## <a name="operator-hash_multimap"></a><a name="op_neq_mm"></a>Operator! = (Hash_multimap)
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_multimap Class](unordered-multimap-class.md).
@@ -178,7 +178,7 @@ Ein Objekt des Typs `hash_multimap`.
 
 **TRUE**, wenn die hash_multimaps ungleich sind; **FALSE**, wenn hash_multimaps gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_multimaps sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -222,7 +222,7 @@ The hash_multimaps hm1 and hm2 are not equal.
 The hash_multimaps hm1 and hm3 are equal.
 ```
 
-## <a name="op_eq_eq_mm"></a>Operator = = (Hash_multimap)
+## <a name="operator--hash_multimap"></a><a name="op_eq_eq_mm"></a>Operator = = (Hash_multimap)
 
 > [!NOTE]
 > Diese API ist veraltet. Die Alternative ist [unordered_multimap Class](unordered-multimap-class.md).
@@ -245,7 +245,7 @@ Ein Objekt des Typs `hash_multimap`.
 
 **TRUE**, wenn die hash_multimap links vom Operator gleich der hash_multimap rechts vom Operator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vergleich zwischen den hash_multimap-Objekten basiert auf einem paarweisen Vergleich der entsprechenden Elemente. Zwei hash_multimaps sind gleich, wenn sie über die gleiche Anzahl von Elementen verfügen und die entsprechenden Elemente dieselben Werte aufweisen. Andernfalls sind sie ungleich.
 
@@ -289,6 +289,6 @@ The hash_multimaps hm1 and hm2 are not equal.
 The hash_multimaps hm1 and hm3 are equal.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<hash_map>](hash-map.md)

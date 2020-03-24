@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1000
 ms.assetid: 86421b9a-460a-4285-8dce-9b8257d78122
-ms.openlocfilehash: b0e6eb3ba44216e9300506eb84adb61a6529903d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 48b976f6e996d0e076849dc9b20b4cedd47dfbcd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255460"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195421"
 ---
 # <a name="linker-tools-error-lnk1000"></a>Linkertoolfehler LNK1000
 
-> Unbekannter Fehler Dokumentation für die Optionen für technischen support
+> Unbekannter Fehler. Lesen Sie die Dokumentation zu den technischen Supportoptionen
 
-Notieren Sie die Umstände des Fehlers, und versuchen Sie dann das Problem isolieren und einen reproduzierbaren Testfall zu erstellen. Weitere Informationen zum Überprüfen und diese Fehler zu melden, finden Sie unter [wie Melden eines Problems mit dem Visual C++-Toolset oder Dokumentation](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).
+Beachten Sie die Umstände des Fehlers, versuchen Sie, das Problem zu isolieren, und erstellen Sie einen reproduzierbaren Testfall. Informationen dazu, wie Sie diese Fehler untersuchen und melden, finden Sie unter [melden eines Problems mit dem C++ visuellen Toolset oder der Dokumentation](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).
 
-Sie erhalten diesen Fehler, wenn Sie die standardmäßigen Headerdateien (z. B. Windows.h) und Ihre eigenen Dateien kombinieren. Enthalten Sie einen vorkompilierten Header, aus, wenn alle, erste und dann die standard-Header, Ihren eigenen Headerdateien folgen.
+Dieser Fehler wird möglicherweise angezeigt, wenn Sie Standard Header Dateien (z. b. Windows. h) und ihre eigenen Dateien kombinieren. Fügen Sie zuerst einen vorkompilierten Header (sofern vorhanden) und dann die Standard Header ein, gefolgt von ihren eigenen Header Dateien.
