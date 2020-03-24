@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - R6033
 ms.assetid: f9cffdc9-81bd-4a64-a698-02762cbd82c9
-ms.openlocfilehash: 39d8a20dacb0cdeb2a767529e9716bd476f406dc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 86ac98a2635975b811c7b50020e4d4782675ae4d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400005"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197016"
 ---
 # <a name="c-runtime-error-r6033"></a>C-Laufzeitfehler R6033
 
-Versucht, MSIL-Code aus dieser Assembly während der Initialisierung von nativem Code zu verwenden. Dies gibt einen Fehler in Ihrer Anwendung an. Es ist wahrscheinlich das Ergebnis des Aufrufs einer MSIL-kompiliert (/ Clr)-Funktion von einem einheitlichen Konstruktor oder aus DllMain.
+Versuch der Verwendung von MSIL-Code aus dieser Assembly während der Initialisierung von System eigenem Code. Dies weist auf einen Fehler in der Anwendung hin. Dies ist wahrscheinlich das Ergebnis des Aufrufs einer MSIL-kompilierten (/CLR)-Funktion aus einem systemeigenen Konstruktor oder aus DllMain.
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da er ein internes Problem aufweist. Dieser Fehler kann verursacht werden, indem Sie einen Fehler in der app oder eines Fehlers in einer Add-in oder die Erweiterung, die verwendet.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP aufgrund eines internen Problems heruntergefahren. Dieser Fehler kann durch einen Fehler in der APP oder durch einen Fehler in einem Add-in oder einer Erweiterung verursacht werden, der verwendet wird.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** entfernen, reparieren oder installieren Sie alle Erweiterungen oder -add-ins.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um Erweiterungen oder Add-Ins zu entfernen, zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Diese Diagnose gibt an, dass die MSIL-Anweisungen ausgeführt wurden, während die Loadersperre aufgehoben. Dies kann auftreten, wenn Sie systemeigenes C++ mit dem Flag "/ CLR" kompiliert haben. Verwenden Sie nur das Flag "/ CLR", auf die Module, die verwalteten Code enthalten. Weitere Informationen finden Sie unter [Initialization of Mixed Assemblies](../../dotnet/initialization-of-mixed-assemblies.md).
+Diese Diagnose gibt an, dass MSIL-Anweisungen während der Loadersperre ausgeführt wurden. Dies kann vorkommen, wenn Sie Native C++ mithilfe des/CLR-Flags kompiliert haben. Verwenden Sie nur das/CLR-Flag für Module, die verwalteten Code enthalten. Weitere Informationen finden Sie unter [Initialisierung gemischter](../../dotnet/initialization-of-mixed-assemblies.md)Assemblys.

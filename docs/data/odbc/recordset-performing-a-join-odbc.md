@@ -10,32 +10,32 @@ helpviewer_keywords:
 - ODBC recordsets [C++], joins
 - recordsets [C++], joining tables
 ms.assetid: ca720900-a156-4780-bf01-4293633bea64
-ms.openlocfilehash: 9e589f00ec0512794d14accc6bb33c0e7adbd378
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7e8d42f2b96911cd57aca7c132b53ed7c10162be
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397727"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212796"
 ---
 # <a name="recordset-performing-a-join-odbc"></a>Recordset: Ausführen einer Verknüpfung (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-## <a name="what-a-join-is"></a>Was ist ein Join
+## <a name="what-a-join-is"></a>Was ist ein Join?
 
-Der Verknüpfungsvorgang, der eine häufige Aufgabe für die Datenzugriffs-ermöglicht Ihnen die Arbeit mit Daten aus mehr als eine Tabelle mit einem einzigen Recordset-Objekt. Verknüpfen von zwei oder mehr Tabellen führt zu einem Recordset, die Spalten aus jeder Tabelle darf, sondern wird als eine einzelne Tabelle zu Ihrer Anwendung angezeigt. Manchmal verwendet die Verknüpfung für alle Spalten aus allen Tabellen, aber manchmal SQL **wählen** -Klausel in einer Verknüpfung verwendet nur einige der Spalten aus jeder Tabelle. Die Datenbankklassen unterstützen nur-Lese Joins, aber keine aktualisierbaren Joins.
+Der Joinvorgang, eine gängige Datenzugriffs Aufgabe, ermöglicht Ihnen das Arbeiten mit Daten aus mehr als einer Tabelle mithilfe eines einzelnen Recordset-Objekts. Das beitreten von zwei oder mehr Tabellen ergibt ein Recordset, das Spalten aus jeder Tabelle enthalten kann, aber als eine einzelne Tabelle für Ihre Anwendung angezeigt wird. In manchen Fällen verwendet der Join alle Spalten aus allen Tabellen, aber manchmal verwendet die SQL **Select** -Klausel in einem Join nur einige der Spalten aus jeder Tabelle. Die Datenbankklassen unterstützen schreibgeschützte Joins, aber keine aktualisierbaren Joins.
 
-Um Datensätze mit Spalten aus verknüpften Tabellen auswählen zu können, benötigen Sie Folgendes:
+Um Datensätze mit Spalten aus verbundenen Tabellen auszuwählen, benötigen Sie Folgendes:
 
-- Eine Tabellenliste mit den Namen aller Tabellen verknüpft wird.
+- Eine Tabellenliste, die die Namen aller miteinander verbundenen Tabellen enthält.
 
-- Eine Liste der Spalten, die die Namen aller beteiligten Spalten enthält. Spalten, die mit dem gleichen Namen, aber aus unterschiedlichen Tabellen werden durch den Tabellennamen gekennzeichnet.
+- Eine Spaltenliste, die die Namen aller teilnehmenden Spalten enthält. Spalten mit demselben Namen, aber aus unterschiedlichen Tabellen werden durch den Tabellennamen qualifiziert.
 
-- Ein Filter (SQL **, in denen** Klausel), der gibt an, die Spalten, die auf dem die Tabellen verknüpft sind. Dieser Filter nimmt die Form "Table1.KeyCol Table2.KeyCol =" und den Join führt.
+- Ein Filter (SQL- **Where** -Klausel), der die Spalten angibt, mit denen die Tabellen verknüpft sind. Dieser Filter hat das Format "Table1. KeyCol = Table2. KeyCol" und führt den Join tatsächlich aus.
 
-Sie können mehr als zwei Tabellen auf die gleiche Weise beitreten, indem die Spaltenpaare mehrere Paare von Spalten mithilfe der SQL-Schlüsselwort **und**.
+Sie können mehr als zwei Tabellen auf die gleiche Weise verknüpfen, indem Sie mehrere Spalten Paare zuordnen, wobei jedes Paar mit dem SQL-Schlüsselwort **und**verknüpft ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
 [Recordset: Deklarieren einer Klasse für eine vordefinierte Abfrage (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-predefined-query-odbc.md)<br/>

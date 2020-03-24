@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - switch_type attribute
 ms.assetid: e24544dc-b3bc-48ae-b249-f967db49271e
-ms.openlocfilehash: c3a4187c629238fa464a607c0b653f857fa44b6a
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: b4264681a55f45c8a4a2696e8cebbbd0eb12a4ed
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513951"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214525"
 ---
 # <a name="switch_type"></a>switch_type
 
@@ -27,12 +27,12 @@ type
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Der Switchtyp kann ein Integer-, Zeichen-, boolescher oder Enumerationstyp sein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **Switch_type** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Switch_type](/windows/win32/Midl/switch-type) -Mittell-Attribut.
+Das **Switch_type** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Switch_type](/windows/win32/Midl/switch-type) -Attribut "Mittel".
 
 C++Attribute unterstützen keine [gekapselten Unions](/windows/win32/Midl/encapsulated-unions). [Nicht gekapselte Unions](/windows/win32/Midl/nonencapsulated-unions) werden nur in der folgenden Form unterstützt:
 
@@ -55,9 +55,9 @@ struct SizedValue2 {
 
 ## <a name="example"></a>Beispiel
 
-Eine Beispiel Verwendung von **Switch_type**finden [Sie im Beispiel](case-cpp.md) .
+Ein Beispiel für die Verwendung von **Switch_type**finden Sie im [Fall](case-cpp.md) Beispiel.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -65,12 +65,12 @@ Eine Beispiel Verwendung von **Switch_type**finden [Sie im Beispiel](case-cpp.md
 |-|-|
 |**Betrifft**|**typedef**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

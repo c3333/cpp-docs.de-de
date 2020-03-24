@@ -16,35 +16,35 @@ helpviewer_keywords:
 - declaring events, in COM
 - declaring events, event handling in COM
 ms.assetid: 6b4617d4-a58e-440c-a8a6-1ad1c715b2bb
-ms.openlocfilehash: da255da9fb9ff7a652fa1af796568a8e50759dc4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d54470bdf4b2555b01993582a74f65505858f94b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392179"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189233"
 ---
 # <a name="event-handling-in-com"></a>Ereignisbehandlung in COM
 
-In COM-Ereignisbehandlung richten Sie eine Ereignisquelle und einen Ereignisempfänger mithilfe der [Event_source](../windows/attributes/event-source.md) und [Event_receiver](../windows/attributes/event-receiver.md) -Attribute angeben `type` = `com`. Diese Attribute fügen den geeigneten Code für benutzerdefinierte Schnittstellen, Dispatchschnittstellen und duale Schnittstellen ein, damit die Klassen, auf die sie angewendet werden, Ereignisse über COM-Verbindungspunkte auslösen und behandeln können.
+Bei der com-Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der Attribute " [event_source](../windows/attributes/event-source.md) " und " [event_receiver](../windows/attributes/event-receiver.md) " ein, wobei Sie `type`=`com`angeben. Diese Attribute fügen den geeigneten Code für benutzerdefinierte Schnittstellen, Dispatchschnittstellen und duale Schnittstellen ein, damit die Klassen, auf die sie angewendet werden, Ereignisse über COM-Verbindungspunkte auslösen und behandeln können.
 
 ## <a name="declaring-events"></a>Deklarieren von Ereignissen
 
-In einer ereignisquellklasse verwenden die [__event](../cpp/event.md) -Schlüsselwort in einer Schnittstellendeklaration, um die Methoden dieser Schnittstelle als Ereignisse zu deklarieren. Die Ereignisse der Schnittstelle werden ausgelöst, wenn Sie die Ereignisse als Schnittstellenmethoden aufrufen. Methoden für Ereignisschnittstellen können NULL oder mehr Parameter haben (die muss alle *in* Parameter). Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
+Verwenden Sie in einer Ereignis Quell Klasse das [__event](../cpp/event.md) -Schlüsselwort in einer Schnittstellen Deklaration, um die Methoden dieser Schnittstelle als Ereignisse zu deklarieren. Die Ereignisse der Schnittstelle werden ausgelöst, wenn Sie die Ereignisse als Schnittstellenmethoden aufrufen. Methoden für Ereignis Schnittstellen können NULL oder mehr Parameter aufweisen (die alle *in* Parametern enthalten sein sollten). Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
 
 ## <a name="defining-event-handlers"></a>Definieren von Ereignishandlern
 
-In einer Ereignisempfängerklasse definieren Sie Ereignishandler, die Methoden mit Signaturen sind (Rückgabetypen, Argumente und Aufrufkonventionen), die mit dem Ereignis übereinstimmen, das sie behandeln. Für COM-Ereignisse müssen Aufrufkonventionen nicht übereinstimmen; finden Sie unter [Layoutabhängige COM-Ereignisse](#vcconeventhandlingincomanchorlayoutdependentcomevents) unten Weitere Informationen.
+In einer Ereignisempfängerklasse definieren Sie Ereignishandler, die Methoden mit Signaturen sind (Rückgabetypen, Argumente und Aufrufkonventionen), die mit dem Ereignis übereinstimmen, das sie behandeln. Bei com-Ereignissen müssen Aufruf Konventionen nicht übereinstimmen. Weitere Informationen finden Sie weiter unten unter [Layout Dependent com-Ereignisse](#vcconeventhandlingincomanchorlayoutdependentcomevents) .
 
 ## <a name="hooking-event-handlers-to-events"></a>Verknüpfen von Ereignishandlern mit Ereignissen
 
-In einer Ereignisempfängerklasse, verwenden Sie auch die intrinsische Funktion [__hook](../cpp/hook.md) um Ereignisse Ereignishandlern zuzuordnen und [__unhook](../cpp/unhook.md) um Ereignisse von Ereignishandlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
+Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion [__hook](../cpp/hook.md) , um Ereignisse mit Ereignis Handlern und [__unhook](../cpp/unhook.md) zuzuordnen, um Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
 
 > [!NOTE]
->  Normalerweise gibt es zwei Möglichkeiten, um es einem COM-Ereignisempfänger zu ermöglichen, auf Schnittstellendefinitionen von Ereignisquellen zuzugreifen. Die erste Möglichkeit besteht in einer gemeinsamen Headerdatei, wie unten gezeigt. Die zweite ist die Verwendung [#import](../preprocessor/hash-import-directive-cpp.md) mit der `embedded_idl` Importqualifizierer, damit die Ereignisquellen-Typbibliothek in die TLH-Datei mit der attributgenerierte Code beibehalten geschrieben wird.
+>  Normalerweise gibt es zwei Möglichkeiten, um es einem COM-Ereignisempfänger zu ermöglichen, auf Schnittstellendefinitionen von Ereignisquellen zuzugreifen. Die erste Möglichkeit besteht in einer gemeinsamen Headerdatei, wie unten gezeigt. Die zweite besteht darin, [#Import](../preprocessor/hash-import-directive-cpp.md) mit dem `embedded_idl` Import-Qualifizierer zu verwenden, damit die Ereignis Quellentyp Bibliothek in die TLH-Datei geschrieben wird, wobei der Attribut generierte Code beibehalten wird.
 
 ## <a name="firing-events"></a>Auslösen von Ereignissen
 
-Um ein Ereignis auszulösen, rufen Sie einfach eine Methode in der Schnittstelle deklariert mit dem **__event** Schlüsselwort in der ereignisquellklasse. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
+Um ein Ereignis auszulösen, wird einfach eine Methode in der Schnittstelle aufgerufen, die mit dem **__event** -Schlüsselwort in der Ereignis Quellen Klasse deklariert wurde. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
 
 ### <a name="com-event-code"></a>COM-Ereigniscode
 
@@ -157,13 +157,13 @@ MyHandler1 was called with value 123.
 MyHandler2 was called with value 123.
 ```
 
-##  <a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a> Layoutabhängige COM-Ereignisse
+##  <a name="layout-dependent-com-events"></a><a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a>Layout abhängiger com-Ereignisse
 
 Layoutabhängigkeit ist nur bei der COM-Programmierung ein Problem. Bei systemeigener und verwalteter Ereignisbehandlung müssen die Signaturen (Rückgabetyp, Aufrufkonvention und Argumente) der Handler ihren Ereignissen entsprechen, aber die Handlernamen müssen nicht mit ihren Ereignissen übereinstimmen.
 
-In COM-Ereignisbehandlung, beim Festlegen der *Layout_dependent* Parameter der `event_receiver` zu **"true"**, die Übereinstimmung von Name und Signatur erzwungen wird. Dies bedeutet, dass die Namen und Signaturen der Handler im Ereignisempfänger exakt mit den Namen und Signaturen der Ereignisse übereinstimmen müssen, mit denen sie verknüpft sind.
+Wenn Sie jedoch in der com-Ereignis Behandlung den *layout_dependent* -Parameter von `event_receiver` auf **true**festlegen, wird der Name und der Signatur Abgleich erzwungen. Dies bedeutet, dass die Namen und Signaturen der Handler im Ereignisempfänger exakt mit den Namen und Signaturen der Ereignisse übereinstimmen müssen, mit denen sie verknüpft sind.
 
-Bei *Layout_dependent* nastaven NA hodnotu **"false"**, die aufrufende Konvention und Speicher-Klasse (virtuellen, statisch usw.) kann gemischt und zwischen der auslösenden Ereignismethode und den hookmethoden (die Delegaten). Es ist etwas effizienter, *Layout_dependent*=**"true"**.
+Wenn *layout_dependent* auf **false**festgelegt ist, können die Aufruf Konvention und die Speicher Klasse (virtuell, statisch usw.) gemischt und zwischen der auslösenden Ereignismethode und den Verknüpfungs Methoden (Delegaten) abgeglichen werden. Es ist etwas effizienter, *layout_dependent*=**true**zu haben.
 
 Nehmen Sie z. B. an, `IEventSource` wird definiert, um über die folgenden Methoden zu verfügen:
 
@@ -213,6 +213,6 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ereignisbehandlung](../cpp/event-handling.md)

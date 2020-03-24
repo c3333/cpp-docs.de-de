@@ -7,12 +7,12 @@ helpviewer_keywords:
 - operators [C++], indirection
 - indirection operator [C++], syntax
 ms.assetid: c50309e1-6c02-4184-9fcb-2e13c1f4ac03
-ms.openlocfilehash: a35d8cb28baaee37ad64a61cbcb9d4c76a5aad06
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8f27cfd943455d52b04c41ef2d2d83e6e03a84c0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62183582"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178276"
 ---
 # <a name="indirection-operator-"></a>Dereferenzierungsoperator: *
 
@@ -22,13 +22,13 @@ ms.locfileid: "62183582"
 * cast-expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der unäre Dereferenzierungsoperator (<strong>\*</strong>) dereferenziert einen Zeiger, d. h. einen Zeigerwert in einen l-Wert konvertiert. Der Operand des Dereferenzierungsoperators muss ein Zeiger auf einen Typ sein. Das Ergebnis des Dereferenzierungsausdrucks ist der Typ, aus dem der Zeigertyp abgeleitet wird. Die Verwendung der <strong>\*</strong> -Operators in diesem Kontext unterscheidet sich von seiner Bedeutung als binärer Operator, der Multiplikation ist.
+Der unäre Dereferenzierungsoperator (<strong>\*</strong>) dereferenziert einen Zeiger. Das heißt, dass ein Zeiger Wert in einen l-Wert konvertiert wird. Der Operand des Dereferenzierungsoperators muss ein Zeiger auf einen Typ sein. Das Ergebnis des Dereferenzierungsausdrucks ist der Typ, aus dem der Zeigertyp abgeleitet wird. Die Verwendung des <strong>\*</strong> Operators in diesem Kontext unterscheidet sich von der Bedeutung als binärer Operator, der Multiplikation ist.
 
 Wenn der Operand auf eine Funktion verweist, ist das Ergebnis ein Funktionsbezeichner. Wenn an einen Speicherort verwiesen wird, ist das Ergebnis ein l-Wert, der den Speicherort festlegt.
 
-Der Dereferenzierungsoperator kann kumulativ verwendet werden, um Zeiger zu Zeigern zu dereferenzieren. Zum Beispiel:
+Der Dereferenzierungsoperator kann kumulativ verwendet werden, um Zeiger zu Zeigern zu dereferenzieren. Beispiel:
 
 ```cpp
 // expre_Indirection_Operator.cpp
@@ -60,7 +60,7 @@ Wenn der Zeigerwert ungültig ist, ist das Ergebnis nicht definiert. Die folgend
 
 - Der Zeiger gibt eine Adresse an, die nicht vom ausgeführten Programm verwendet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>

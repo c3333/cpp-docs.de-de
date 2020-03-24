@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3367
 ms.assetid: e675d42b-f5b0-4d43-aab1-1f5024233102
-ms.openlocfilehash: f53312fa9225270ef79d50d2ad351adce790d6fa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bedc94039f8621a93672c0dfa0cad5a54aad796e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62300532"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201161"
 ---
 # <a name="compiler-error-c3367"></a>Compilerfehler C3367
 
@@ -19,7 +19,7 @@ ms.locfileid: "62300532"
 
 Wenn Sie einen ungebundenen Delegaten aufrufen, müssen Sie eine Instanz eines Objekts übergeben. Da eine statische Memberfunktion über den Klassennamen aufgerufen wird, können Sie nur einen ungebundenen Delegaten mit einer Instanzmemberfunktion instanziieren.
 
-Weitere Informationen zu nicht gebundene Delegate, finden Sie unter [Vorgehensweise: Definieren und Verwenden von Delegaten (C++/CLI)](../../dotnet/how-to-define-and-use-delegates-cpp-cli.md).
+Weitere Informationen zu ungebundenen Delegaten finden Sie unter Gewusst [wie: definieren und Verwenden vonC++Delegaten (/CLI)](../../dotnet/how-to-define-and-use-delegates-cpp-cli.md).
 
 ## <a name="example"></a>Beispiel
 

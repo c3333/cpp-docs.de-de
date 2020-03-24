@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - typeid keyword [C++]
 ms.assetid: e9706cae-e7c4-4d6d-b474-646d73df3e70
-ms.openlocfilehash: ec64388d5f71cff01207129e337cf20bb151db1a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 8b22481fecb4b7de5106921fec1c3a43fab81a48
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515985"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181745"
 ---
 # <a name="typeid--ccli-and-ccx"></a>typeid (C++/CLI und C++/CX)
 
@@ -45,11 +45,11 @@ Platform::Type^ type = T::typeid;
 *T*<br/>
 Ein Typname.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 In C++/CX gibt „typeid“ einen [Platform::Type](../cppcx/platform-type-class.md) zurück, der aus Runtimetypinformationen erstellt wird.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -63,10 +63,10 @@ type::typeid
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Der Name eines Typs (abstrakter Deklarator), für den das `System::Type`-Objekt gelten soll.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 `typeid` wird verwendet, um <xref:System.Type> für einen Typ zur Kompilierzeit abzurufen.
 
@@ -78,7 +78,7 @@ Der Name eines Typs (abstrakter Deklarator), für den das `System::Type`-Objekt 
 
 `typeid` funktioniert auch mit systemeigenen Typen, obwohl noch ein System::Type zurückgegeben wird.  Um eine type_info-Struktur abzurufen, verwenden Sie den [typeid-Operator](../cpp/typeid-operator.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -188,6 +188,6 @@ int::typeid != pointer_to_int::typeid, as expected
 int::typeid == handle_to_int::typeid, as expected
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

@@ -16,55 +16,55 @@ helpviewer_keywords:
 - ODBC, timestamp
 - positioning cursors
 ms.assetid: 6608db92-82b1-4164-bb08-78153c227be3
-ms.openlocfilehash: 862303a0dc66fbd49bfcba83336ab29dfc7145c0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 51524604cad34ace18ffda2b5f48cc3c5fd89ad7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395728"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213095"
 ---
 # <a name="odbc-the-odbc-cursor-library"></a>ODBC: Die ODBC-Cursorbibliothek
 
-In diesem Thema wird beschrieben, die ODBC-Cursorbibliothek und erläutert, wie sie. Weitere Informationen finden Sie unter:
+In diesem Thema wird die ODBC-Cursor Bibliothek beschrieben und erläutert, wie Sie verwendet wird. Weitere Informationen finden Sie unter
 
-- [Cursor-Bibliothek und auf Ebene 1 ODBC-Treiber](#_core_the_cursor_library_and_level_1_odbc_drivers)
+- [Cursor Bibliothek und ODBC-Treiber der Ebene 1](#_core_the_cursor_library_and_level_1_odbc_drivers)
 
-- [Positionierte Updates und Timestamp-Spalten](#_core_positioned_updates_and_timestamp_columns)
+- [Positionierte Updates und timestamp-Spalten](#_core_positioned_updates_and_timestamp_columns)
 
-- [Verwenden die Cursorbibliothek](#_core_using_the_cursor_library)
+- [Verwenden der Cursor Bibliothek](#_core_using_the_cursor_library)
 
-Die ODBC-Cursorbibliothek ist eine Dynamic Link Library (DLL), die zwischen der ODBC-Treiber-Manager und der Treiber befindet. In der ODBC-Terminologie verwaltet ein Treiber ein Cursors, zum Nachverfolgen seiner Position im Recordset. Der Cursor markiert die Position in das Recordset, Sie haben bereits ein Bildlauf durchgeführt, den aktuellen Datensatz.
+Bei der ODBC-Cursor Bibliothek handelt es sich um eine DLL (Dynamic Link Library), die sich zwischen dem ODBC-Treiber-Manager und dem Treiber befindet. In ODBC-Begriffen verwaltet ein Treiber einen Cursor, um seine Position im Recordset nachzuverfolgen. Der Cursor markiert die Position im Recordset, für die Sie bereits einen Rollup durchgeführt haben – den aktuellen Datensatz.
 
-##  <a name="_core_the_cursor_library_and_level_1_odbc_drivers"></a> Cursor-Bibliothek und auf Ebene 1 ODBC-Treiber
+##  <a name="cursor-library-and-level-1-odbc-drivers"></a><a name="_core_the_cursor_library_and_level_1_odbc_drivers"></a>Cursor Bibliothek und ODBC-Treiber der Ebene 1
 
-Die ODBC-Cursorbibliothek-Ebene-1-Treiber bietet die folgenden neuen Funktionen:
+Die ODBC-Cursor Bibliothek gibt den Treibern der Ebene 1 die folgenden neuen Funktionen:
 
-- Vorwärts und rückwärts scrollen. Ebene 2-Treiber ist die Cursorbibliothek nicht erforderlich, da sie bereits bildlauffähig sind.
+- Vorwärts-und Rückwärtsscrollen. Treiber der Ebene 2 benötigen die Cursor Bibliothek nicht, da Sie bereits scrollfähig sind.
 
-- Unterstützung für Momentaufnahmen. Die Cursorbibliothek verwaltet einen Puffer mit der Momentaufnahme-Datensätzen. Dieser Puffer spiegelt wider, löschungen und Änderungen an der Datensätze, aber nicht die Hinzufügungen, löschungen oder Änderungen anderer Benutzer Ihres Programms. Aus diesem Grund ist die Momentaufnahme nur so aktuell wie die Cursorbibliothek Puffer. Der Puffer ist nicht reflektiert auch eigene Erweiterungen bis zum Aufruf von `Requery`. Dynasets verwenden Sie die Cursorbibliothek nicht.
+- Unterstützung für Momentaufnahmen. Die Cursor Bibliothek verwaltet einen Puffer, der die Datensätze der Momentaufnahmen enthält. Dieser Puffer reflektiert die Löschungen und Änderungen an den Datensätzen des Programms, aber nicht an den Ergänzungen, Löschungen oder Änderungen anderer Benutzer. Daher ist die Momentaufnahme nur so aktuell wie der Puffer der Cursor Bibliothek. Der Puffer spiegelt auch keine eigenen Ergänzungen wider, bis Sie `Requery`aufgerufen haben. Die Cursor Bibliothek wird von Dynasets nicht verwendet.
 
-Die Cursorbibliothek erhalten Sie Momentaufnahmen (statische Cursor), auch wenn sie vom Treiber nicht unterstützt werden. Wenn der Treiber bereits static-Cursor unterstützt, müssen Sie nicht zum Laden der Cursorbibliothek um Unterstützung zu erhalten. Wenn Sie die Cursorbibliothek verwenden, können Sie nur Momentaufnahmen und Forward-only-Recordsets. Wenn der Treiber Dynasets (KEYSET_DRIVEN-Cursor unterstützt), und Sie sie verwenden möchten, müssen Sie die Cursorbibliothek nicht verwenden. Wenn Sie sowohl Momentaufnahmen und Dynasets verwenden möchten, müssen Sie diese auf zwei unterschiedlichen Grundlage `CDatabase` Objekte (zwei verschiedene Verbindungen), es sei denn, der Treiber beide unterstützt.
+Die Cursor Bibliothek gibt Ihnen Momentaufnahmen (statische Cursor), auch wenn Sie von Ihrem Treiber normalerweise nicht unterstützt werden. Wenn der Treiber bereits statische Cursor unterstützt, müssen Sie die Cursor Bibliothek nicht laden, um die Momentaufnahme Unterstützung zu erhalten. Wenn Sie die Cursor Bibliothek verwenden, können Sie nur Momentaufnahmen und Vorwärts-Recordsets verwenden. Wenn Ihr Treiber Dynasets (KEYSET_DRIVEN Cursor) unterstützt und Sie diese verwenden möchten, dürfen Sie die Cursor Bibliothek nicht verwenden. Wenn Sie sowohl Momentaufnahmen als auch Dynasets verwenden möchten, müssen Sie diese auf zwei verschiedenen `CDatabase` Objekten (zwei verschiedene Verbindungen) aufbauen, es sei denn, der Treiber unterstützt beides.
 
-##  <a name="_core_positioned_updates_and_timestamp_columns"></a> Positionierte Updates und Timestamp-Spalten
+##  <a name="positioned-updates-and-timestamp-columns"></a><a name="_core_positioned_updates_and_timestamp_columns"></a>Positionierte Updates und timestamp-Spalten
 
 > [!NOTE]
 >  Auf ODBC-Datenquellen können Sie über die MFC-ODBC-Klassen zugreifen, wie in diesem Thema beschrieben, oder über die MFC-Datenzugriffsobjekt-Klassen (DAO-Klassen).
 
 > [!NOTE]
->  Wenn der ODBC-Treiber unterstützt `SQLSetPos`MFC verwendet, falls verfügbar, in diesem Thema gilt nicht für Sie.
+>  Wenn Ihr ODBC-Treiber `SQLSetPos`unterstützt, den MFC ggf. verwendet, gilt dieses Thema nicht für Sie.
 
-Positionierte Updates unterstützt die meisten auf Ebene 1-Treiber nicht. Solche Treiber abhängig von der Cursorbibliothek, das die Funktionen auf Ebene 2-Treiber in dieser Hinsicht emulieren. Die Cursorbibliothek emuliert positioniertes Update unterstützen, indem Sie ein gesuchtes Update für die unveränderliche Felder.
+Die meisten Treiber der Ebene 1 unterstützen keine positionierten Updates. Diese Treiber basieren auf der Cursor Bibliothek, um die Funktionen der Treiber der Ebene 2 in dieser Hinsicht zu emulieren. Die Cursor Bibliothek emuliert die Unterstützung für positionierte Updates durch eine durchsuchte Aktualisierung der nicht ändernden Felder.
 
-In einigen Fällen kann ein Recordset eine Timestamp-Spalte als eines dieser unveränderlichen Felder enthalten. In MFC-Recordsets mit Tabellen, die Timestamp-Spalten enthalten zwei Aspekte zu beachten.
+In einigen Fällen kann ein Recordset eine Zeitstempel-Spalte als eines dieser nicht ändernden Felder enthalten. Bei der Verwendung von MFC-Recordsets mit Tabellen, die Zeitstempel-Spalten enthalten, treten zwei Probleme auf.
 
-Das erste Problem betrifft die aktualisierbare Momentaufnahmen für Tabellen mit Timestamp-Spalten. Wenn die Tabelle, die an die die Momentaufnahme gebunden ist eine Timestamp-Spalte enthält, sollten Sie aufrufen `Requery` nach dem Aufruf von `Edit` und `Update`. Wenn dies nicht der Fall ist, wird Sie möglicherweise nicht in der Lage, erneut denselben Datensatz zu bearbeiten. Beim Aufruf `Edit` und dann `Update`, mit der Datenquelle wird der Datensatz geschrieben, und die Timestamp-Spalte wird aktualisiert. Wenn Sie nicht aufrufen `Requery`, die Timestamp-Wert für den Datensatz in der Momentaufnahme mit dem entsprechenden Zeitstempel für die Datenquelle nicht mehr übereinstimmt. Wenn Sie versuchen, den Datensatz erneut zu aktualisieren, kann die Datenquelle des Updates aufgrund des Konflikts unterbinden.
+Das erste Problem betrifft aktualisierbare Momentaufnahmen für Tabellen mit Zeitstempel-Spalten. Wenn die Tabelle, an die die Momentaufnahme gebunden ist, eine Zeitstempel-Spalte enthält, sollten Sie `Requery` abrufen, nachdem Sie `Edit` und `Update`aufgerufen haben. Andernfalls können Sie den gleichen Datensatz möglicherweise nicht mehr bearbeiten. Wenn Sie `Edit` aufzurufen und dann `Update`, wird der Datensatz in die Datenquelle geschrieben, und die Zeitstempel-Spalte wird aktualisiert. Wenn Sie `Requery`nicht aufzurufen, stimmt der Zeitstempelwert für den Datensatz in der Momentaufnahme nicht mehr mit dem entsprechenden Zeitstempel in der Datenquelle überein. Wenn Sie versuchen, den Datensatz erneut zu aktualisieren, kann die Datenquelle die Aktualisierung aufgrund des Konflikts nicht zulassen.
 
-Das zweite Problem bezieht sich auf die Einschränkungen der Klasse [CTime](../../atl-mfc-shared/reference/ctime-class.md) bei Verwendung mit der `RFX_Date` Funktion, um das Datum und die Daten in oder aus einer Tabelle zu übertragen. Verarbeitung der `CTime` Objekt erzwingt Mehraufwand in Form von sehr fortgeschrittene Verarbeitung während der Datenübertragung. Der Datumsbereich des `CTime` Objekte möglicherweise für einige Anwendungen auch zu beschränken. Eine neue Version der `RFX_Date` -Funktion erfordert einen ODBC *TIMESTAMP_STRUCT* -Parameter anstelle des eine `CTime` Objekt. Weitere Informationen finden Sie unter `RFX_Date` in [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md) in die *MFC-Referenz*.
+Das zweite Problem bezieht sich auf die Einschränkungen der [ctime](../../atl-mfc-shared/reference/ctime-class.md) -Klasse, wenn Sie mit der `RFX_Date`-Funktion verwendet wird, um Zeit-und Datumsangaben in eine oder aus einer Tabelle Die Verarbeitung des `CTime` Objekts führt bei der Datenübertragung zu einem gewissen Aufwand in Form einer zusätzlichen zwischen Verarbeitung. Der Datumsbereich von `CTime` Objekten kann für einige Anwendungen ebenfalls zu eingeschränkt sein. Eine neue Version der `RFX_Date` Funktion nimmt einen ODBC- *TIMESTAMP_STRUCT* Parameter anstelle eines `CTime` Objekts an. Weitere Informationen finden Sie unter `RFX_Date` in [Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md) in der *MFC-Referenz*.
 
-##  <a name="_core_using_the_cursor_library"></a> Verwenden die Cursorbibliothek
+##  <a name="using-the-cursor-library"></a><a name="_core_using_the_cursor_library"></a>Verwenden der Cursor Bibliothek
 
-Wenn Sie mit einer Datenquelle verbinden – durch den Aufruf [CDatabase:: OpenEx](../../mfc/reference/cdatabase-class.md#openex) oder [CDatabase:: Open](../../mfc/reference/cdatabase-class.md#open) – Sie können angeben, ob die Cursor-Bibliothek für die Datenquelle verwendet. Wenn Sie Momentaufnahmen für diese Datenquelle erstellen, geben Sie die `CDatabase::useCursorLib` option die `dwOptions` Parameter, um `OpenEx` , oder geben Sie "true", für die *bUseCursorLib* Parameter, um `Open` (der Standardwert ist "TRUE"). Wenn der ODBC-Treiber Dynasets unterstützt, und Sie Dynasets für die Datenquelle öffnen möchten, verwenden Sie nicht die Cursor-Bibliothek (es maskiert einige Treiberfunktionen für Dynasets erforderlich). In diesem Fall geben Sie keine `CDatabase::useCursorLib` in `OpenEx` , oder geben Sie "false" für die *bUseCursorLib* Parameter im `Open`.
+Beim Herstellen einer Verbindung mit einer Datenquelle – durch Aufrufen von [CDatabase:: OpenEx](../../mfc/reference/cdatabase-class.md#openex) oder [CDatabase:: Open](../../mfc/reference/cdatabase-class.md#open) – können Sie angeben, ob die Cursor Bibliothek für die Datenquelle verwendet werden soll. Wenn Sie Momentaufnahmen für diese Datenquelle erstellen, geben Sie die Option `CDatabase::useCursorLib` im `dwOptions`-Parameter an, um `OpenEx`, oder geben Sie true für den Parameter " *bUseCursorLib* " an `Open` (der Standardwert ist "true"). Wenn Ihr ODBC-Treiber Dynasets unterstützt und Sie Dynasets in der Datenquelle öffnen möchten, verwenden Sie die Cursor Bibliothek nicht (Sie maskiert einige für Dynasets erforderliche Treiberfunktionen). Geben Sie in diesem Fall keine `CDatabase::useCursorLib` in `OpenEx` an, oder geben Sie false für den Parameter " *bUseCursorLib* " in `Open`an.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grundlagen zu ODBC](../../data/odbc/odbc-basics.md)

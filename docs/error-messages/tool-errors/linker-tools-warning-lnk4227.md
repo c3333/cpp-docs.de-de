@@ -6,34 +6,34 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4227
 ms.assetid: 941a0414-9964-4e02-8487-f9daa42ef7f9
-ms.openlocfilehash: fb657719c69445ce23d36ccf04ac4a14db0955e4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7b75cff4f03370951245bde1b485d538ffdb4007
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352740"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182941"
 ---
 # <a name="linker-tools-warning-lnk4227"></a>Linkertoolwarnung LNK4227
 
-> Warnung bei Metadatenoperation (*HRESULT*): *Warning_message*
+> Warnung zu Metadatenvorgang (*HRESULT*): *warning_message*
 
-Der Linker entdeckt Unterschiede in den Metadaten beim Zusammenführen von:
+Der Linker hat bei der Zusammenführung metadatenunterschiede erkannt:
 
-- Eine oder mehrere referenzierten Assemblys mit der Assembly, die gerade erstellt wird.
+- Eine oder mehrere referenzierte Assemblys mit der Assembly, die gerade erstellt wird.
 
-- Eine oder mehrere Quellcodedateien in einer Kompilierung.
+- Eine oder mehrere Quell Code Dateien in einer Kompilierung.
 
-Z. B. LNK4227 kann verursacht werden, wenn Sie zwei globale Funktionen, mit dem gleichen Namen, aber Parameterinformationen unterschiedlich deklariert haben (d. h. Deklarationen sind nicht konsistent in allen Compilands Wert). Mithilfe von ildasm.exe/Text/Metadata *Object_file* in jeder OBJ-Datei, um festzustellen, wie die Typen unterscheiden.
+Beispielsweise kann Linkertoolwarnung LNK4227 auftreten, wenn Sie über zwei globale Funktionen mit demselben Namen verfügen, die Parameterinformationen jedoch unterschiedlich deklariert sind (d. h., Deklarationen sind nicht in allen Kompilierungen konsistent). Verwenden Sie Ildasm. exe/Text/Metadata- *object_file* für jede obj-Datei, um zu sehen, wie sich die Typen unterscheiden.
 
-LNK4227 dient auch zum Melden von Problemen, die mit einem anderen Tool stammen. Suchen Sie nach der Warnmeldung, dass weitere Informationen.
+Linkertoolwarnung LNK4227 wird auch verwendet, um Probleme zu melden, die von einem anderen Tool stammen. Suchen Sie nach der Warnmeldung, um weitere Informationen zu finden.
 
-Die Metadaten-Probleme müssen behoben werden, um die Warnung zu beheben.
+Die metadatenprobleme müssen korrigiert werden, um die Warnung zu beheben.
 
 ## <a name="example"></a>Beispiel
 
-LNK4227 wird generiert, wenn es sich bei eine referenzierte Assembly anders als die Assembly signiert wurde, die darauf verweist.
+Linkertoolwarnung LNK4227 wird generiert, wenn eine Assembly, auf die verwiesen wird, anders signiert wurde als die Assembly, die darauf verweist.
 
-Im folgende Beispiel wird die LNK4227 generiert:
+Im folgenden Beispiel wird Linkertoolwarnung LNK4227 generiert:
 
 ```cpp
 // LNK4227.cpp
@@ -64,9 +64,9 @@ ref class MyClass
 
 ## <a name="example"></a>Beispiel
 
-LNK4227 kann auch generiert werden, wenn die Versionsnummern im falschen Format zu Assemblyattributen übergeben werden.  Die ' *' Notation bezieht sich auf die `AssemblyVersionAttribute`.  Um diese Warnung zu beheben, verwenden nur Zahlen in der Version-Attribute als `AssemblyVersionAttribute`.
+Linkertoolwarnung LNK4227 kann auch generiert werden, wenn Versionsnummern im falschen Format an Assemblyattribute übermittelt werden.  Die "*"-Notation ist spezifisch für die `AssemblyVersionAttribute`.  Um diese Warnung zu beheben, verwenden Sie nur Zahlen in den anderen Versions Attributen als `AssemblyVersionAttribute`.
 
-Im folgende Beispiel wird die LNK4227 generiert:
+Im folgenden Beispiel wird Linkertoolwarnung LNK4227 generiert:
 
 ```cpp
 // LNK4227e.cpp

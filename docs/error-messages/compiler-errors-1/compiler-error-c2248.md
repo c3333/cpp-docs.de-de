@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C2248
 ms.assetid: 7a3ba0e8-d3b9-4bb9-95db-81ef17e31d23
-ms.openlocfilehash: d9b9a6c04e7e9a5d88df516125280b6b23894a01
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 843676638037aab9544f1fbd8c5c6d56d351e485
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62302552"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206549"
 ---
 # <a name="compiler-error-c2248"></a>Compilerfehler C2248
 
-"*Member*": kann nicht zugegriffen werden "*Access_level*"Element deklariert in Klasse"*Klasse*"
+"*Member*": auf das in der*Klasse "Class"* deklarierte Element "*access_level*" kann nicht zugegriffen werden.
 
-Member einer abgeleiteten Klasse können nicht zugegriffen werden `private` Member einer Basisklasse. Kann nicht auf `private` oder `protected` Mitglieder von Klasseninstanzen.
+Member einer abgeleiteten Klasse können nicht auf `private` Member einer Basisklasse zugreifen. Sie können nicht auf `private` oder `protected` Member von Klassen Instanzen zugreifen.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel generiert C2248 generiert, wenn der privaten oder geschützten Member einer Klasse von außerhalb der Klasse zugegriffen werden. Um dieses Problem zu beheben, greifen Sie Sie diese Elemente direkt außerhalb der Klasse nicht zu. Verwenden Sie öffentliche Memberdaten und Memberfunktionen, um mit der Klasse zu interagieren.
+Im folgenden Beispiel wird C2248 generiert, wenn von außerhalb der-Klasse auf private oder geschützte Member einer-Klasse zugegriffen wird. Um dieses Problem zu beheben, können Sie nicht direkt außerhalb der Klasse auf diese Member zugreifen. Verwenden Sie öffentliche Elementdaten und Element Funktionen für die Interaktion mit der-Klasse.
 
 ```cpp
 // C2248_access.cpp
@@ -51,7 +51,7 @@ int main() {
 }
 ```
 
-Ein weiteres Problem auf Übereinstimmung mit Standards, das C2248 verfügbar macht, ist die Verwendung von Friend-Vorlagen und Spezialisierung. Um dieses Problem zu beheben, deklarieren Sie Friend Vorlagenfunktionen mit einer leeren Vorlage Parameter Liste <> oder bestimmte Vorlagenparameter.
+Ein weiteres Konformitäts Problem, das C2248 verfügbar macht, ist die Verwendung von Vorlagen-Freunden und Spezialisierung. Um dieses Problem zu beheben, deklarieren Sie Friend-Vorlagen Funktionen, indem Sie entweder eine leere Vorlagen Parameterliste < > oder bestimmte Vorlagen Parameter verwenden.
 
 ```cpp
 // C2248_template.cpp
@@ -79,7 +79,7 @@ int main() {
 }
 ```
 
-Ein weiteres Problem auf Übereinstimmung mit Standards, das C2248 verfügbar macht, ist beim Deklarieren von Friend einer Klasse, und wenn die Klasse nicht für die Friend-Deklaration im Gültigkeitsbereich der Klasse angezeigt wird. Um dieses Problem zu beheben, gewähren Sie Friendship-Klasse der einschließenden Klasse.
+Ein anderes Konformitäts Problem, das C2248 verfügbar macht, ist, wenn Sie versuchen, einen Freund einer Klasse zu deklarieren, und wenn die Klasse für die Friend-Deklaration im Gültigkeitsbereich der Klasse nicht sichtbar ist. Um dieses Problem zu beheben, gewähren Sie der einschließenden Klasse eine Freundschaft.
 
 ```cpp
 // C2248_enclose.cpp

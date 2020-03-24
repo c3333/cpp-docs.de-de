@@ -5,16 +5,16 @@ ms.topic: reference
 f1_keywords:
 - module/Microsoft::WRL::FactoryCacheFlags
 ms.assetid: 6f54258f-0144-4264-9608-414e5905f6fb
-ms.openlocfilehash: 8cf4af2ac0b4557fc6b175b84c47f83dd8a6e4ba
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 250c8c8e7ade72bd1a9cd63f0b515774058f0723
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398458"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214005"
 ---
 # <a name="factorycacheflags-enumeration"></a>FactoryCacheFlags-Enumeration
 
-Bestimmt, ob die Factory-Objekte zwischengespeichert werden.
+Bestimmt, ob Factory-Objekte zwischengespeichert werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -22,22 +22,22 @@ Bestimmt, ob die Factory-Objekte zwischengespeichert werden.
 enum FactoryCacheFlags;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In der Standardeinstellung die Cacherichtlinie Factory angegeben ist, als die [ModuleType](moduletype-enumeration.md) Template-Parameter, die bei der Erstellung einer [Modul](module-class.md) Objekt. Um diese Richtlinie überschreiben, geben Sie einen **FactoryCacheFlags** Wert, wenn Sie ein Factoryobjekt zu erstellen.
+Standardmäßig wird die Richtlinie zum Zwischenspeichern der Factory als [ModuleType](moduletype-enumeration.md) -Vorlagen Parameter angegeben, wenn Sie ein [Modul](module-class.md) Objekt erstellen. Um diese Richtlinie zu überschreiben, geben Sie einen **factorycacheflags** -Wert an, wenn Sie ein Factory-Objekt erstellen.
 
 |||
 |-|-|
-|`FactoryCacheDefault`|Die Cachingrichtlinie für die `Module` Objekt verwendet wird.|
-|`FactoryCacheEnabled`|Aktiviert die Factory Zwischenspeicherung, unabhängig von der `ModuleType` Vorlagenparameter, der zum Erstellen einer `Module` Objekt.|
-|`FactoryCacheDisabled`|Deaktiviert die Factory im Cache unabhängig von der `ModuleType` Vorlagenparameter, der zum Erstellen einer `Module` Objekt.|
+|`FactoryCacheDefault`|Die Cachingrichtlinie des `Module` Objekts wird verwendet.|
+|`FactoryCacheEnabled`|Aktiviert das Zwischenspeichern von Fabriken unabhängig vom `ModuleType` Vorlagen Parameter, der zum Erstellen eines `Module` Objekts verwendet wird.|
+|`FactoryCacheDisabled`|Deaktiviert das Zwischenspeichern von Fabriken unabhängig vom `ModuleType` Vorlagen Parameter, der zum Erstellen eines `Module` Objekts verwendet wird.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - CreateClassFactory function
 ms.assetid: 772d5d1b-8872-4745-81ca-521a39564713
-ms.openlocfilehash: 323fce053707d6d00d1e17b641613d15607ab6f8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0467a9a1341e29a61a3b32d999769b01385f641f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398653"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214057"
 ---
 # <a name="createclassfactory-function"></a>CreateClassFactory-Funktion
 
@@ -33,31 +33,31 @@ inline HRESULT STDMETHODCALLTYPE CreateClassFactory(
 ### <a name="parameters"></a>Parameter
 
 *flags*<br/>
-Eine Kombination aus einem oder mehreren [RuntimeClassType](runtimeclasstype-enumeration.md) -Enumerationswerte fest.
+Eine Kombination aus einem oder mehreren [runtimeclasstype](runtimeclasstype-enumeration.md) -Enumerationswerten.
 
 *entry*<br/>
-Zeiger auf eine [CreatorMap](creatormap-structure.md) mit Initialisierungs- und Registrierung Informationen zum Parameter *Riid*.
+Zeiger auf eine " [kreatormap](creatormap-structure.md) ", die Initialisierungs-und Registrierungsinformationen über den Parameter " *riid*" enthält.
 
 *riid*<br/>
 Verweis auf eine Schnittstellen-ID.
 
-*ppFactory*<br/>
-Wenn dieser Vorgang erfolgreich, einen Zeiger auf eine Klassenfactory ausgeführt wird.
+*ppfactory*<br/>
+Wenn dieser Vorgang erfolgreich abgeschlossen wurde, ein Zeiger auf eine Klassenfactory.
 
 ## <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Assert-Fehler wird ausgegeben, wenn Vorlagenparameter *Factory* nicht abgeleitet werden, aus der Schnittstelle `IClassFactory`.
+Ein Assert-Fehler wird ausgegeben, wenn die Vorlagen *parameterfactory* nicht von der Schnittstelle `IClassFactory`abgeleitet ist.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** module.h
+**Header:** Module. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Wrappers::Details-Namespace](microsoft-wrl-wrappers-details-namespace.md)

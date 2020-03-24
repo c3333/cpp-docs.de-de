@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - final Identifier
 ms.assetid: 649866d0-79d4-449f-ab74-f84b911b79a3
-ms.openlocfilehash: c6400c8060664713fdd004a5aa9536e0617bc0c8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 93e8d9b0b445d1120ec15911eb763ae1d7d2d359
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154775"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188655"
 ---
 # <a name="final-specifier"></a>final-Bezeichner
 
-Können Sie die **endgültige** Schlüsselwort, um virtuelle Funktionen festzulegen, die in einer abgeleiteten Klasse überschrieben werden kann. Sie können es auch verwenden, um Klassen festzulegen, die nicht vererbbar sind.
+Sie können das Schlüsselwort **Final** verwenden, um virtuelle Funktionen festzulegen, die in einer abgeleiteten Klasse nicht überschrieben werden können. Sie können es auch verwenden, um Klassen festzulegen, die nicht vererbbar sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,15 +24,15 @@ function-declaration final;
 class class-name final base-classes
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**letzte** ist kontextbezogen und hat eine besonderen Bedeutung, nur, wenn er wird verwendet, nach der Deklaration einer Funktion oder Klasse; anderenfalls, es kein reserviertes Schlüsselwort ist.
+**Final** ist kontextbezogen und hat nur dann eine besondere Bedeutung, wenn es nach einer Funktionsdeklaration oder einem Klassennamen verwendet wird. andernfalls handelt es sich nicht um ein reserviertes Schlüsselwort.
 
-Wenn **endgültige** wird verwendet, in den Klassendeklarationen `base-classes` ist ein optionaler Teil der Deklaration.
+Wenn **Final** in Klassen Deklarationen verwendet wird, ist `base-classes` ein optionaler Teil der Deklaration.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird die **endgültige** Schlüsselwort, um anzugeben, dass eine virtuelle Funktion nicht überschrieben werden kann.
+Im folgenden Beispiel wird das Schlüsselwort **Final** verwendet, um anzugeben, dass eine virtuelle Funktion nicht überschrieben werden kann.
 
 ```cpp
 class BaseClass
@@ -47,9 +47,9 @@ class DerivedClass: public BaseClass
 };
 ```
 
-Weitere Informationen zur Verwendung, um anzugeben, dass Memberfunktionen überschrieben werden können, finden Sie unter [Überschreibungsspezifizierer](../cpp/override-specifier.md).
+Informationen dazu, wie Sie angeben können, dass Element Funktionen überschrieben werden können, finden Sie unter [Überschreibungsspezifizierer](../cpp/override-specifier.md).
 
-Im nächsten Beispiel wird die **endgültige** Schlüsselwort, um anzugeben, dass eine Klasse nicht geerbt werden kann.
+Im nächsten Beispiel wird das Schlüsselwort **Final** verwendet, um anzugeben, dass eine Klasse nicht vererbt werden kann.
 
 ```cpp
 class BaseClass final
@@ -62,7 +62,7 @@ class DerivedClass: public BaseClass // compiler error: BaseClass is
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [override-Bezeichner](../cpp/override-specifier.md)

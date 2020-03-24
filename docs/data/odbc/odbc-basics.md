@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ODBC, about ODBC
 - ODBC, components
 ms.assetid: ec529702-0fb2-4754-b8de-d1efa8eca18f
-ms.openlocfilehash: e14f5d051b9684cd79a34f5fb50feeb785d2f927
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 042b1ce6d12e4f4a2be57c0e2e8e01d9750f5357
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395793"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213212"
 ---
 # <a name="odbc-basics"></a>Grundlagen zu ODBC
 
@@ -23,15 +23,15 @@ Dieses Thema vermittelt Grundlagen zu ODBC (Open Database Connectivity):
 
 - [Funktionsweise von ODBC-Treibern mit Dynasets](../../data/odbc/odbc-driver-requirements-for-dynasets.md)
 
-- [ODBC-Komponenten, Sie neu zu verteilenden mit Ihren Anwendungen müssen](../../data/odbc/redistributing-odbc-components-to-your-customers.md)
+- [Welche ODBC-Komponenten müssen mit Ihren Anwendungen verteilt werden?](../../data/odbc/redistributing-odbc-components-to-your-customers.md)
 
-Sie sollten auch das verwandte Thema lesen [ODBC: Die ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
+Sie sollten auch das verwandte Thema [ODBC: die ODBC-Cursor Bibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md)lesen.
 
 > [!NOTE]
 > Auf ODBC-Datenquellen können Sie über die MFC-ODBC-Klassen zugreifen, wie in diesem Thema beschrieben, oder über die MFC-Datenzugriffsobjekt-Klassen (DAO-Klassen).
 
 > [!NOTE]
-> Die MFC-ODBC-Klassen unterstützen Unicode und Multithreading. Weitere Informationen über die Multithreadingunterstützung finden Sie unter [ODBC-Klassen und Threads](../../data/odbc/odbc-classes-and-threads.md)
+> Die MFC-ODBC-Klassen unterstützen Unicode und Multithreading. Weitere Informationen zur Unterstützung von Multithreading finden Sie unter [ODBC-Klassen und-Threads](../../data/odbc/odbc-classes-and-threads.md) .
 
 ODBC ist ein Call-Level-Interface, mit dem Anwendungen auf Daten in jeder beliebigen Datenbank zugreifen können, für die ein ODBC-Treiber vorhanden ist. Mithilfe von ODBC können Sie Datenbankanwendungen erstellen, die Zugriff auf jede beliebige Datenbank bieten, für die der Endbenutzer einen ODBC-Treiber hat. ODBC stellt eine API zur Verfügung, die es ermöglicht, eine Anwendung unabhängig vom Quell-Datenbankmanagementsystem (DBMS) zu gestalten.
 
@@ -41,7 +41,7 @@ ODBC besteht aus den folgenden Komponenten:
 
 - ODBC-API
 
-   Eine Bibliothek mit Funktionsaufrufen, eine Anzahl Fehlercodes und eine [SQL](../../data/odbc/sql.md) Syntax für den Zugriff auf Daten eines DBMS.
+   Eine Bibliothek mit Funktionsaufrufen, eine Reihe von Fehlercodes und eine Standard- [SQL](../../data/odbc/sql.md) -Syntax für den Zugriff auf Daten auf DBMSs.
 
 - ODBC-Treiber-Manager
 
@@ -49,7 +49,7 @@ ODBC besteht aus den folgenden Komponenten:
 
 - ODBC-Datenbanktreiber
 
-   Eine oder mehrere DLLs, die ODBC-Funktionsaufrufe für ein bestimmtes DBMS verarbeiten. Eine Liste der bereitgestellten Treiber, finden Sie unter [Liste der ODBC-Treiber](../../data/odbc/odbc-driver-list.md).
+   Eine oder mehrere DLLs, die ODBC-Funktionsaufrufe für ein bestimmtes DBMS verarbeiten. Eine Liste der bereitgestellten Treiber finden Sie unter [Liste der ODBC-Treiber](../../data/odbc/odbc-driver-list.md).
 
 - [ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md)
 
@@ -63,8 +63,8 @@ Eine Anwendung erreicht die Unabhängigkeit von den Datenbank-Management-Systeme
 
 Die Datenbankklassen unterstützen jede Datenquelle, für die ein ODBC-Treiber zur Verfügung steht. Dies könnte z. B. eine relationale Datenbank sein, eine ISAM (Indexed Sequential Access Method)-Datenbank, ein Microsoft Excel-Arbeitsblatt oder eine Textdatei. Die ODBC-Treiber verwalten die Verbindungen zur Datenquelle. Für die Auswahl von Datensätzen aus der Datenbank wird SQL verwendet.
 
-Eine Liste der in dieser Version von Visual C++ mitgelieferten ODBC-Treiber sowie Informationen zum Erwerb zusätzlicher Treiber finden Sie unter [Liste der ODBC-Treiber](../../data/odbc/odbc-driver-list.md).
+Eine Liste der in dieser Version von Visual C++ mitgelieferten ODBC-Treiber sowie Informationen über den Erwerb zusätzlicher Treiber finden Sie unter [Liste der ODBC-Treiber](../../data/odbc/odbc-driver-list.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)

@@ -5,16 +5,16 @@ ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::operator!=
 ms.assetid: 785435da-87a6-4454-9bce-9d288a96dc26
-ms.openlocfilehash: 6068a7ddad78e3347f6987b30cc2884dc3f648fd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7780ecd8d03be6fea4ffe3c0be17ed6e995e3f90
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62232259"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213654"
 ---
 # <a name="operator-operator-microsoftwrl"></a>operator!=-Operator (Microsoft::WRL)
 
-Ungleichheitsoperator für [ComPtr](comptr-class.md) und [ComPtrRef](comptrref-class.md) Objekte.
+Ungleichheits Operator für [comptr](comptr-class.md) -und [comptrref](comptrref-class.md) -Objekte.
 
 ## <a name="syntax"></a>Syntax
 
@@ -63,14 +63,14 @@ Das rechte Objekt.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**"true"** , wenn die Objekte ungleich; andernfalls sind **"false"**.
+**true** , wenn die Objekte nicht gleich sind. andernfalls **false**.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

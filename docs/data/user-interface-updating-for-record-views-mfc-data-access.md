@@ -6,26 +6,26 @@ helpviewer_keywords:
 - menus, updating as context changes
 - record views, user interface
 ms.assetid: 2c7914b6-2dc3-40c3-b2f2-8371da2a4063
-ms.openlocfilehash: de94b28e713459edfd63aff832caecc7ea49ca33
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9bfb907d21c928c605b304c595acb834d0046e35
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152643"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209052"
 ---
 # <a name="user-interface-updating-for-record-views--mfc-data-access"></a>Benutzeroberflächen-Aktualisierung für Datensatzansichten (MFC-Datenzugriff)
 
-`CRecordView` Stellt Standard-Benutzeroberflächen Aktualisierungshandler für die Navigationsbefehle bereit. Diese Handler automatisieren die Aktivierung und Deaktivierung der Benutzeroberflächenobjekte – Menüelemente und Symbolleisten-Schaltflächen. Der Anwendungs-Assistent stellt Standardmenüs bereit und, falls gewünscht die **andockbare Symbolleiste** verwenden, eine Reihe von Symbolleisten-Schaltflächen für die Befehle. Wenn Sie eine Datensatzansichtsklasse mithilfe von `CRecordView` erstellen, können Sie der Anwendung vergleichbare Benutzeroberflächenobjekte hinzufügen.
+`CRecordView` stellt Standard-Benutzeroberflächen-Update Handler für die Navigations Befehle bereit. Diese Handler automatisieren die Aktivierung und Deaktivierung der Benutzeroberflächenobjekte – Menüelemente und Symbolleisten-Schaltflächen. Der Anwendungs-Assistent bietet Standardmenüs und, wenn Sie die Option **andockbare Symbolleiste** auswählen, eine Reihe von Symbolleisten-Schaltflächen für die Befehle. Wenn Sie eine Datensatzansichtsklasse mithilfe von `CRecordView` erstellen, können Sie der Anwendung vergleichbare Benutzeroberflächenobjekte hinzufügen.
 
 ### <a name="to-create-menu-resources-with-the-menu-editor"></a>So erstellen Sie Menüressourcen mit dem Menü-Editor
 
-1. Informieren Sie sich über die Verwendung der [Menü-Editor](../windows/menu-editor.md), erstellen Sie ein eigenes Menü mit denselben vier Befehlen.
+1. Wenn Sie auf die Informationen zur Verwendung des [Menü-Editors](../windows/menu-editor.md)verweisen, erstellen Sie ein eigenes Menü mit denselben vier Befehlen.
 
 #### <a name="to-create-toolbar-buttons-with-the-graphics-editor"></a>So erstellen Sie Symbolleisten-Schaltflächen mit dem Grafik-Editor
 
-1. Informieren Sie sich über die Verwendung der [Symbolleisten-Editor](../windows/toolbar-editor.md), bearbeiten Sie die Symbolleistenressource, um Symbolleisten-Schaltflächen für die Navigationsbefehle des Datensatzes hinzuzufügen.
+1. Wenn Sie die Informationen zur Verwendung des [Symbol](../windows/toolbar-editor.md)leisten-Editors verwenden, bearbeiten Sie die Symbolleisten Ressource, um Symbolleisten Schaltflächen für die Navigations Befehle des Datensatzes
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Navigationsunterstützung in einer Datensatzansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)<br/>
-[Verwenden einer Datensatzansicht](../data/using-a-record-view-mfc-data-access.md)
+[Unterstützen der Navigation in einer Daten Satz Ansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)<br/>
+[Verwenden einer Daten Satz Ansicht](../data/using-a-record-view-mfc-data-access.md)

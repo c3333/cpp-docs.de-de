@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - RC2148
 ms.assetid: 0290065c-35d3-4815-80c5-40bf7132ae1d
-ms.openlocfilehash: 6d9946c20705fa14046823104455c2819fac353f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e2394dbb93dd2d203d65760d805e09f60a692ba4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62173209"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191326"
 ---
 # <a name="resource-compiler-error-rc2148"></a>Ressourcencompiler: Fehler RC2148
 
-UNTERSPRACHEN-ID ist zu groß
+Unter Sprachen-ID zu groß
 
-Der UNTERSPRACHEN-ID-Wert lag außerhalb des Bereichs.
+Der Wert der unter Sprachen-ID lag außerhalb des gültigen Bereichs.
 
 Die **LANGUAGE** -Anweisung hat die folgende Syntax:
 
-**LANGUAGE** *Primäre_Sprache_ID*,*Sekundäre_Sprache_ID*
+**Sprach** *primary_language_ID* *secondary_language_ID*
 
-Gültige UNTERSPRACHEN-IDs werden definiert, wie **SUBLANG_** Konstanten in der Datei "Winnt.h".
+Gültige unter Sprachen-IDs werden als **SUBLANG_** Konstanten in der Datei "Winnt. h" definiert.

@@ -66,12 +66,12 @@ helpviewer_keywords:
 - operator =, bookmarks
 - operator=, bookmarks
 ms.assetid: bc942f95-6f93-41d9-bb6e-bcdae4ae0b7a
-ms.openlocfilehash: 89c7e62e51adbe96bee870b4baa8a35784b61ac0
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: e15be3342b32b432c438b65ec57765cb135f5316
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546026"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212237"
 ---
 # <a name="cbookmark-class"></a>CBookmark-Klasse
 
@@ -92,11 +92,11 @@ class CBookmark< 0 > : public CBookmarkBase
 *nSize*<br/>
 Die Größe des Lesezeichen Puffers in Bytes. Wenn *nSize* gleich 0 (null) ist, wird der Lesezeichen Puffer dynamisch zur Laufzeit erstellt.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -113,7 +113,7 @@ Die Größe des Lesezeichen Puffers in Bytes. Wenn *nSize* gleich 0 (null) ist, 
 |-|-|
 |[Operator =](#operator)|Weist einem anderen eine `CBookmark` Klasse zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 `CBookmark<0>` ist eine Vorlagen Spezialisierung `CBookmark`. der Puffer wird zur Laufzeit dynamisch erstellt.
 
@@ -133,7 +133,7 @@ CBookmark(DBLENGTH nSize);
 *nSize*<br/>
 in Größe des Lesezeichen Puffers in Bytes.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit der ersten Funktion wird der Puffer auf NULL festgelegt, und die Puffergröße wird auf 0 festgelegt. Mit der zweiten Funktion wird die Puffergröße auf *nSize*festgelegt, und der Puffer wird auf ein Bytearray mit *nSize* -Bytes festgelegt.
 
@@ -190,7 +190,7 @@ in Ein Zeiger auf das Bytearray, das den Lesezeichen Wert enthält.
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion ist nur in `CBookmark<0>`verfügbar.
 
@@ -204,11 +204,11 @@ Weist ein `CBookmark` Objekt einem anderen zu.
 CBookmark& operator =(const CBookmark& bookmark) throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Operator wird nur in `CBookmark<0>`benötigt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

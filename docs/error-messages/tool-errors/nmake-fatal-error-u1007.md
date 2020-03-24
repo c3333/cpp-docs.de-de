@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U1007
 ms.assetid: 64fd78a6-5b27-4aa8-92ea-f1c55e6e5edd
-ms.openlocfilehash: 6984c0b573ae43275dc58d41b711cb88d96ec545
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 810eab6edec231918023451b4518ab439ab55b2c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62378387"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173425"
 ---
 # <a name="nmake-fatal-error-u1007"></a>NMAKE: Schwerwiegender Fehler U1007
 
-Doppeltes Anführungszeichen im Namen nicht zulässig
+doppelte Anführungszeichen sind im Namen nicht zulässig.
 
-Die angegebenen Zielnamen oder Dateiname enthalten ein doppeltes Anführungszeichen (**"**).
+Der angegebene Zielname oder Dateiname enthielt ein doppeltes Anführungszeichen ( **"** ).
 
-Doppelte Anführungszeichen können einen Dateinamen umgeben, jedoch nicht darin enthalten sein.
+Doppelte Anführungszeichen können einen Dateinamen umschließen, dürfen aber nicht darin enthalten sein.

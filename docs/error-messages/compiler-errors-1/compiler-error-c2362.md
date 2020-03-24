@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C2362
 ms.assetid: 7aafecbc-b3cf-45a6-9ec3-a17e3f222511
-ms.openlocfilehash: d48806982bbb6cdda4d29e47f6692e7e3601d6de
-ms.sourcegitcommit: ecf274bcfe3a977c48745aaa243e5e731f1fdc5f
+ms.openlocfilehash: 330932f53627f8ba09e9e089cec7809eeeb6ab1c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66503212"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206075"
 ---
 # <a name="compiler-error-c2362"></a>Compilerfehler C2362
 
-> Initialisierung von "*Bezeichner*" wird übersprungen, indem Sie ' Gehe zu *Bezeichnung*"
+> die Initialisierung von "*Identifier*" wird von "GoTo *Label*" übersprungen.
 
-Beim Kompilieren mit [/Za](../../build/reference/za-ze-disable-language-extensions.md), ein Sprung auf die Bezeichnung wird verhindert, dass den Bezeichner initialisiert wird.
+Beim Kompilieren mit [/Za](../../build/reference/za-ze-disable-language-extensions.md)wird durch einen Sprung zur Bezeichnung verhindert, dass der Bezeichner initialisiert wird.
 
-Sie können nur über eine Deklaration mit einem Initialisierer springen, wenn die Deklaration in einem Block eingeschlossen ist, die eingegeben haben, ist nicht oder wenn die Variable bereits initialisiert wurde.
+Sie können nur nach einer Deklaration mit einem Initialisierer springen, wenn die Deklaration in einen nicht eingegebenen Block eingeschlossen ist, oder wenn die Variable bereits initialisiert wurde.
 
-Im folgende Beispiel wird die C2362 generiert:
+Im folgenden Beispiel wird C2362 generiert:
 
 ```cpp
 // C2362.cpp

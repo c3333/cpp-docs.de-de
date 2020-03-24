@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - custom attributes, targets
 ms.assetid: b4e6e224-da77-4520-b6e6-b96846e0ebc1
-ms.openlocfilehash: 502f5ba2e5bbb5bd5a5fcceca16acaa3987db4bc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: fe2c1d27042b51300d01ba70b951b7601d87701e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516145"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172619"
 ---
 # <a name="attribute-targets-ccli-and-ccx"></a>Attributziele (C++/CLI und C++/CX)
 
@@ -193,7 +193,7 @@ Hier sind die gültigen Attributziele aufgelistet:
     };
     ```
 
-Ein Attribut wird in der Regel dem Sprachelement vorangestellt, auf das es angewendet wird. In einigen Fällen reicht jedoch die Position eines Attributs nicht aus, um das beabsichtigte Ziel des Attributs zu bestimmen. Betrachten Sie das folgende Beispiel:
+Ein Attribut wird in der Regel dem Sprachelement vorangestellt, auf das es angewendet wird. In einigen Fällen reicht jedoch die Position eines Attributs nicht aus, um das beabsichtigte Ziel des Attributs zu bestimmen. Betrachten Sie dieses Beispiel:
 
 ```cpp
 [Attr] int MyFn(double x)...
@@ -250,7 +250,7 @@ unterscheidet sich von
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
 Dieses Beispiel zeigt, wie Sie mehrere Ziele angeben.
 
@@ -272,6 +272,6 @@ ref class MyClass {};
 value struct MyStruct {};
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Benutzerdefinierte Attribute](user-defined-attributes-cpp-component-extensions.md)

@@ -61,12 +61,12 @@ helpviewer_keywords:
 - __is_simple_value_class keyword [C++]
 - __has_trivial_constructor keyword [C++]
 ms.assetid: cd440630-0394-48c0-a16b-1580b6ef5844
-ms.openlocfilehash: d068917a02fef0f1d4b7fd46fd6978da2d358872
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 1bfb4308dc76e3393eceddf8dedd6d11e73adc17
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516215"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172529"
 ---
 # <a name="compiler-support-for-type-traits-ccli-and-ccx"></a>Compilerunterstützung für Typmerkmale (C++/CLI und C++/CX)
 
@@ -74,7 +74,7 @@ Der Microsoft C++-Compiler unterstützt  *Typmerkmale* für C++/CLI- und C++/CX-
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Typeigenschaften sind besonders nützlich für Programmierer, die Bibliotheken schreiben.
 
@@ -112,7 +112,7 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
 
 - `__has_finalizer(` *Typ* `)`
 
-   (Nicht unterstützt in C++/CX.) Gibt **true** zurück, wenn der CLR-Typ einen Finalizer aufweist. Weitere Informationen finden Sie im Abschnitt [„Destruktoren und Finalizer“ in „Vorgehensweise: Definieren und Verarbeiten von Klassen und Strukturen (C++/CLI)“](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers).
+   (Wird in C++/CX. nicht unterstützt.) Gibt **true** zurück, wenn der CLR-Typ über einen Finalizer verfügt. Weitere Informationen finden [Sie unter debugtoren und Finalizer in Gewusst wie: definieren und verarbeitenC++von Klassen und Strukturen (/CLI)](../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers) .
 
     ```cpp
     using namespace System;
@@ -322,7 +322,7 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
     }
     ```
 
-- `__is_convertible_to(` `from` `,` `to` `)`
+- `__is_convertible_to(` `from` `,``to` `)`
 
    Gibt **true** zurück, wenn der erste Typ in den zweiten Typ konvertiert werden kann.
 
@@ -520,21 +520,21 @@ Die folgende Liste enthält die Typmerkmale, die vom Compiler unterstützt werde
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Das Typmerkmal `__has_finalizer(`*Typ*`)` wird nicht unterstützt, weil diese Plattform keine Finalizer unterstützt.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 (Es gibt keine plattformspezifischen Hinweise für diese Funktion.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -568,6 +568,6 @@ int main () {
 R is a ref class
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

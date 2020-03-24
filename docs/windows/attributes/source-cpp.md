@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - source attribute
 ms.assetid: 1878d05d-7709-4e97-b114-c62f38f5140e
-ms.openlocfilehash: 79614a345e6c07b03df351da93a847fe12e4b110
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 5f961513b948c3195aea864d97313ac09e97344e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514021"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166223"
 ---
 # <a name="source-c"></a>source (C++)
 
@@ -25,10 +25,10 @@ Gibt für eine Klasse die Quell Schnittstellen der COM-Objekte für Verbindungsp
 
 ### <a name="parameters"></a>Parameter
 
-*interfaces*<br/>
+*Web*<br/>
 Eine oder mehrere Schnittstellen, die Sie angeben, wenn Sie das Quell Attribut auf eine Klasse anwenden. Dieser Parameter wird nicht verwendet, wenn die Quelle auf eine Eigenschaft oder Methode angewendet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **Quell** C++ Attribut verfügt über die gleiche Funktionalität wie das Mittel l- [Quell](/windows/win32/Midl/source) Attribut.
 
@@ -68,7 +68,7 @@ class NN : public b
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -76,12 +76,12 @@ class NN : public b
 |-|-|
 |**Betrifft**|**Klasse**, **Struktur**, **Schnittstelle**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|`coclass`(bei Anwendung auf Klasse oder Struktur)|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|`coclass` (wenn auf Klasse oder Struktur angewendet)|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

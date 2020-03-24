@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - restrict clause (C++ AMP)
 ms.assetid: 07d3291f-7edf-456b-8828-283ac8673661
-ms.openlocfilehash: 3609e3f0541cfd8a8af8559d8d49e6a77c00d91c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a100ece1a0c67be01b31f38bdca17e78c2e1b6f9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403385"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179106"
 ---
 # <a name="restrict-c-amp"></a>restrict (C++ AMP)
 
 Der Einschränkungsspezifizierer kann auf Funktions- und Lambda-Deklarationen angewendet werden. Er erzwingt Einschränkungen für den Code in der Funktion und das Verhalten der Funktion in Anwendungen, die C++ Accelerated Massive Parallelism(C++ AMP)-Laufzeit verwenden.
 
 > [!NOTE]
->  Informationen zu den **einschränken** Schlüsselwort, das Teil ist die **__declspec** speicherklassenattribute, finden Sie unter [einschränken](../cpp/restrict.md).
+>  Informationen zum **Einschränkungs** Schlüsselwort, das Bestandteil der **__declspec** -Speicher Klassenattribute ist, finden Sie unter [einschränken](../cpp/restrict.md).
 
-Die **einschränken** -Klausel nimmt folgende Formen:
+Die **Einschränkungs** Klausel hat die folgenden Formen:
 
-|Klausel|Beschreibung|
+|Klausel|BESCHREIBUNG|
 |------------|-----------------|
 |`restrict(cpu)`|Die Funktion kann die vollständige C++-Programmiersprache verwenden. Es können nur andere Funktionen, die durch die Verwendung von restrict(cpu)-Funktionen deklariert werden, die Funktion aufrufen.|
 |`restrict(amp)`|Die Funktion kann nur die Teilmenge der Programmiersprache C++ verwenden, die mit C++ AMP beschleunigt werden kann.|
 |Eine Sequenz von `restrict(cpu)` und `restrict(amp)`.|Die Funktion muss den Einschränkungen von `restrict(cpu)` und `restrict(amp)` folgen. Die Funktion kann von Funktionen aufgerufen werden, die durch die Verwendung von `restrict(cpu)`, `restrict(amp)`, `restrict(cpu, amp)` oder `restrict(amp, cpu)` deklariert werden.<br /><br /> Das Formular `restrict(A) restrict(B)` kann als `restrict(A,B)` geschrieben werden.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **einschränken** -Schlüsselwort ist ein kontextbezogenes Schlüsselwort. Die Einschränkungsspezifizierer, `cpu` und `amp` sind keine reservierten Wörter. Die Liste der Spezifizierer ist nicht erweiterbar. Eine Funktion, die keinem **einschränken** -Klausel ist identisch mit einer Funktion mit der `restrict(cpu)` Klausel.
+Das **Einschränkungs** Schlüsselwort ist ein Kontext Schlüsselwort Die Einschränkungsspezifizierer, `cpu` und `amp` sind keine reservierten Wörter. Die Liste der Spezifizierer ist nicht erweiterbar. Eine Funktion, die nicht über eine **Einschränkungs** Klausel verfügt, ist identisch mit einer Funktion, die über die `restrict(cpu)`-Klausel verfügt.
 
 Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Einschränkungen:
 
@@ -39,7 +39,7 @@ Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Eins
 
 - Die Funktion muss inlinable sein.
 
-- Die Funktion kann nur deklariert **Int**, **ganze Zahl ohne Vorzeichen**, **"float"**, und **doppelte** Variablen, Klassen und Strukturen, die nur enthalten. Diese Typen. **"bool"** ist ebenfalls zulässig, aber es muss nicht 4-Byte-ausgerichtet, wenn Sie ihn in einem Verbundtyp verwenden.
+- Die Funktion kann nur die Variablen " **int**", " **Ganzzahl ohne Vorzeichen int**", " **float**" und " **Double** " sowie Klassen und Strukturen deklarieren, die nur diese Typen enthalten. **boolescher** Wert ist ebenfalls zulässig, muss jedoch 4-Byte-ausgerichtet sein, wenn Sie ihn in einem Verbund-Typ verwenden.
 
 - Lambda-Funktionen können nicht als Verweis erfassten und können keine Zeiger erfassen.
 
@@ -49,7 +49,7 @@ Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Eins
 
    - Rekursion.
 
-   - Variablen, die mit der [flüchtige](../cpp/volatile-cpp.md) Schlüsselwort.
+   - Mit dem [volatile](../cpp/volatile-cpp.md) -Schlüsselwort deklarierte Variablen.
 
    - Virtuelle Funktionen.
 
@@ -61,29 +61,29 @@ Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Eins
 
    - Zeiger auf Zeiger.
 
-   - **"GoTo"** Anweisungen.
+   - **goto** -Anweisungen.
 
    - Anweisungen mit Bezeichnung.
 
-   - **Versuchen Sie es**, **catch**, oder **auslösen** Anweisungen.
+   - **try**-, **catch**-oder **throw** -Anweisungen.
 
    - Globale Variablen.
 
-   - Statische Variablen. Verwendung [Tile_static-Schlüsselwort](../cpp/tile-static-keyword.md) stattdessen.
+   - Statische Variablen. Verwenden Sie stattdessen [tile_static-Schlüsselwort](../cpp/tile-static-keyword.md) .
 
-   - **Dynamic_cast** Umwandlungen.
+   - **dynamic_cast** Umwandlungen.
 
-   - Die **Typeid** Operator.
+   - Der **typeid** -Operator.
 
    - ASM-Deklarationen.
 
    - Varargs.
 
-Eine Erläuterung der funktionseinschränkungen, finden Sie unter [einschränken (Amp)-Einschränkungen](https://blogs.msdn.microsoft.com/nativeconcurrency/2011/12/19/restrictamp-restrictions-part-0-of-n-introduction/).
+Eine Erläuterung der Funktionseinschränkungen finden Sie unter [Einschränkungen für Einschränkungen (amp)](https://blogs.msdn.microsoft.com/nativeconcurrency/2011/12/19/restrictamp-restrictions-part-0-of-n-introduction/).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie Sie mit der `restrict(amp)`Klausel.
+Im folgenden Beispiel wird gezeigt, wie die `restrict(amp)`-Klausel verwendet wird.
 
 ```cpp
 void functionAmp() restrict(amp) {}
@@ -104,6 +104,6 @@ void callFunctions() restrict(amp)
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)

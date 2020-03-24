@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - implements/Microsoft::WRL::InspectableClass
 ms.assetid: ff390b26-58cc-424f-87ac-1fe3cc692b59
-ms.openlocfilehash: ee2a76edb967923a03ce6720b4163baf1cc48c32
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 755a8f58ffc290d73d6060b0b0924905ecbf6028
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69500476"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213875"
 ---
 # <a name="inspectableclass-macro"></a>InspectableClass-Makro
 
@@ -26,22 +26,22 @@ InspectableClass(
 
 ### <a name="parameters"></a>Parameter
 
-*runtimeClassName*<br/>
+*runtimeclassname*<br/>
 Der vollständige wörtliche Name der Laufzeitklasse.
 
-*trustLevel*<br/>
+*Trust Level*<br/>
 Einer der [Trust Level](/windows/win32/api/inspectable/ne-inspectable-trustlevel) -Enumerationswerte.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **inspectableclass** -Makro kann nur mit Windows-Runtime Typen verwendet werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [RuntimeClass-Klasse](runtimeclass-class.md)

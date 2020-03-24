@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C2410
 ms.assetid: b69b2de1-56f3-4ebc-8913-04ac57ffe8a1
-ms.openlocfilehash: 8b01a2f7b9c55fb57c880df5033538f4e45f76b4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e4d30ff0fbca7428fb1dcf252bcad50bd53488d7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282325"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205693"
 ---
 # <a name="compiler-error-c2410"></a>Compilerfehler C2410
 
-'Bezeichner': Mehrdeutiger Elementname in 'Kontext'
+' Identifier ': mehrdeutiger Elementname in ' context '
 
-Der Bezeichner ist ein Mitglied von mehr als eine Struktur oder Union in diesem Kontext.
+Der Bezeichner ist in diesem Kontext Mitglied von mehr als einer Struktur oder Union.
 
-Verwenden Sie einen Struktur oder Union-Spezifizierer für die Operanden, der den Fehler verursacht hat. Eine Struktur oder Union ist ein Bezeichner des Typs `struct` oder `union` (eine `typedef` Name oder eine Variable des gleichen Typs wie die Struktur oder Union, die auf die verwiesen wird). Der Bezeichner muss der linke Operand des der ersten Objektmember-auswahloperators (.) mit der Operand sein.
+Verwenden Sie einen Struktur-oder Union-Spezifizierer für den Operanden, der den Fehler verursacht hat. Ein Struktur-oder Union-Spezifizierer ist ein Bezeichner des Typs `struct` oder `union` (ein `typedef` Name oder eine Variable desselben Typs wie die Struktur oder Union, auf die verwiesen wird). Der Spezifizierer muss der linke Operand des ersten Member-Selection-Operators (.) sein, um den Operanden zu verwenden.

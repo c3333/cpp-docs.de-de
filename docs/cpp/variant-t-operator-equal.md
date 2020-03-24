@@ -8,14 +8,14 @@ helpviewer_keywords:
 - operator = [C++], variant
 - = operator [C++], with specific Visual C++ objects
 ms.assetid: 77622723-6e49-4dec-9e0f-fa74028f1a3c
-ms.openlocfilehash: 6a8f31e8db6f5ca5a680dd47b5d5391c84ce5025
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 402251592a87b723d75fd1b2cd0786be7b17dbfc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403313"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187621"
 ---
-# <a name="varianttoperator-"></a>_variant_t::operator =
+# <a name="_variant_toperator-"></a>_variant_t::operator =
 
 **Microsoft-spezifisch**
 
@@ -115,44 +115,44 @@ _variant_t& operator=(
 );
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Operator weist dem `_variant_t`-Objekt einen neuen Wert zu:
 
-- **Operator = (***VarSrc***)** weist ein vorhandenes `VARIANT` zu einem `_variant_t` Objekt.
+- **Operator = (** *varSrc* **)** Weist einem `_variant_t` Objekt eine vorhandene `VARIANT` zu.
 
-- **Operator = (***pVarSrc***)** weist ein vorhandenes `VARIANT` zu einem `_variant_t` Objekt.
+- **Operator = (** *pvarSrc* **)** Weist einem `_variant_t` Objekt eine vorhandene `VARIANT` zu.
 
-- **Operator = (***Var_t_Src***)** weist ein vorhandenes `_variant_t` -Objekt an eine `_variant_t` Objekt.    
+- **Operator = (** *var_t_Src* **)** Weist einem `_variant_t`-Objekt ein vorhandenes `_variant_t`-Objekt zu.
 
-- **Operator = (***sSrc***)** weist eine **kurze** ganzzahliger Wert und einem `_variant_t` Objekt.
+- **Operator = (** *SSRC* **)** Weist einem `_variant_t`-Objekt einen **kurzen** ganzzahligen Wert zu.
 
-- **Operator = (**`lSrc`**)** weist eine **lange** ganzzahliger Wert und einem `_variant_t` Objekt.
+- **Operator = (** `lSrc` **)** Weist einem `_variant_t`-Objekt einen **langen** ganzzahligen Wert zu.
 
-- **Operator = (***FltSrc***)** weist eine **"float"** numerischer Wert für eine `_variant_t` Objekt.
+- **Operator = (** *flgsrc* **)** Weist einem `_variant_t`-Objekt einen numerischen **float** -Wert zu.
 
-- **Operator = (***DblSrc***)** weist eine **doppelte** numerischer Wert für eine `_variant_t` Objekt.
+- **Operator = (** *dblsrc* **)** Weist einem `_variant_t`-Objekt einen **doppelten** numerischen Wert zu.
 
-- **Operator = (***CySrc***)** weist eine `CY` -Objekt an eine `_variant_t` Objekt.
+- **Operator = (** *cysrc* **)** Weist einem `_variant_t`-Objekt ein `CY`-Objekt zu.
 
-- **Operator = (***BstrSrc***)** weist eine `BSTR` -Objekt an eine `_variant_t` Objekt.
+- **Operator = (** *bstrausrc* **)** Weist einem `_variant_t`-Objekt ein `BSTR`-Objekt zu.
 
-- **Operator = (***WstrSrc***)** weist eine Unicodezeichenfolge einem `_variant_t` Objekt.
+- **Operator = (**  *wstrinsrc*  **)** Weist einer `_variant_t`-Objekt eine Unicode-Zeichenfolge zu.
 
-- **Operator = (**`strSrc`**)** weist eine Multibytezeichenfolge einem `_variant_t` Objekt.
+- **Operator = (** `strSrc` **)** Weist einer `_variant_t`-Objekt eine Multibytezeichenfolge zu.
 
-- **Operator = (** `bSrc` **)** weist eine **"bool"** -Werts in einen `_variant_t` Objekt.
+- **Operator = (** `bSrc` **)** Weist einem `_variant_t` Objekt einen **booleschen** Wert zu.
 
-- **Operator = (***pDispSrc***)** weist eine `VT_DISPATCH` -Objekt an eine `_variant_t` Objekt.
+- **Operator = (** *pdispsrc* **)** Weist einem `_variant_t`-Objekt ein `VT_DISPATCH`-Objekt zu.
 
-- **Operator = (***pIUnknownSrc***)** weist eine `VT_UNKNOWN` -Objekt an eine `_variant_t` Objekt.
+- **Operator = (** *piunknownsrc* **)** Weist einem `_variant_t`-Objekt ein `VT_UNKNOWN`-Objekt zu.
 
-- **Operator = (***DecSrc***)** weist eine `DECIMAL` -Werts in einen `_variant_t` Objekt.
+- **Operator = (** *decsrc* **)** Weist einem `_variant_t`-Objekt einen `DECIMAL` Wert zu.
 
-- **Operator = (** `bSrc` **)** weist eine `BYTE` -Werts in einen `_variant_t` Objekt.
+- **Operator = (** `bSrc` **)** Weist einem `_variant_t`-Objekt einen `BYTE` Wert zu.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

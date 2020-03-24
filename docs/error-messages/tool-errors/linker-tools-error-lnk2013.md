@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2013
 ms.assetid: 21408e2d-3f56-4d1f-a031-00df70785ed4
-ms.openlocfilehash: 4d932a89f1b0bde27f6de2f84b2ed103dab1b1b0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6ad3f40f06e64422b393edb457a0dcf419828b6f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299067"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194745"
 ---
 # <a name="linker-tools-error-lnk2013"></a>Linkertoolfehler LNK2013
 
@@ -19,7 +19,7 @@ Fixup-Typ Fixup-Überlauf. Ziel 'Symbolname' ist außerhalb des Bereichs
 
 Der Linker kann die erforderliche Adresse bzw. den Offset in die angegebene Anweisung nicht finden, da die Entfernung zwischen Zielsymbol und Anweisung zu groß ist.
 
-Sie können dieses Problem zu beheben, durch die Erstellung mehrerer Abbilder oder mithilfe der [/ORDER](../../build/reference/order-put-functions-in-order.md) option aus, damit die Anweisung und das Ziel näher beieinander.
+Sie können dieses Problem beheben, indem Sie mehrere Images erstellen oder indem Sie die Option [/Order](../../build/reference/order-put-functions-in-order.md) verwenden, damit sich die Anweisung und das Ziel näher beieinander befinden.
 
 Wenn der Symbolname ein benutzerdefiniertes (und kein vom Compiler generiertes) Symbol ist, können Sie auch versuchen, den Fehler mithilfe der folgenden Maßnahmen zu beheben:
 

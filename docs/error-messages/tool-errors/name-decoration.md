@@ -6,12 +6,12 @@ helpviewer_keywords:
 - names [C++], decorated
 - decorated names, calling conventions
 ms.assetid: 8327a27b-bb4f-49f2-8218-b851b9d2a463
-ms.openlocfilehash: d1557f53a07a544ff4f9e5a63f905e6854fb74ce
-ms.sourcegitcommit: 283cb64fd7958a6b7fbf0cd8534de99ac8d408eb
+ms.openlocfilehash: cc00c971eac2a089ccec5bd9eab594bdf4e8348e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64857170"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173516"
 ---
 # <a name="name-decoration"></a>Namensergänzung
 
@@ -21,19 +21,19 @@ Namensergänzungen beziehen in der Regel auf C++-Benennungskonventionen, können
 
 In der folgenden Tabelle ist der Linkername für verschiedene Aufrufkonventionen dargestellt.
 
-|Aufrufkonvention|`extern "C"` oder `.c` Datei|`.cpp`, `.cxx` oder `/TP`|
+|Aufrufkonvention|Datei `extern "C"` oder `.c`|`.cpp`, `.cxx` oder `/TP`|
 |------------------------|---------------------------|------------------------|
 |C-Namenskonvention (`__cdecl`)|`_test`|`?test@@ZAXXZ`|
-|Schnelle aufrufbenennungskonvention (`__fastcall`)|`@test@0`|`?test@@YIXXZ`|
-|Standard aufrufen Benennungskonvention (`__stdcall`)|`_test@0`|`?test@@YGXXZ`|
-|Vector-aufrufbenennungskonvention (`__vectorcall`)|`test@@0`|`?test@@YQXXZ`|
+|Benennungs Konvention für schnelles anrufen (`__fastcall`)|`@test@0`|`?test@@YIXXZ`|
+|Standard mäßige Benennungs Konvention für Aufrufe (`__stdcall`)|`_test@0`|`?test@@YGXXZ`|
+|Benennungs Konvention für Vektor Aufrufe (`__vectorcall`)|`test@@0`|`?test@@YQXXZ`|
 
-Verwendung `extern "C"` aufrufen, eine C-Funktion von C++. `extern "C"` Erzwingt die C-Benennungskonvention für nicht klassenbasierte C++ Funktionen. Achten Sie besonders vorsichtig bei Compilerschaltern **/TC** oder **/TP**, die den Compiler anweisen, die Dateierweiterung zu ignorieren und die Datei als C oder C++ kompiliert. Diese Optionen möglicherweise Linker-Namen, die Sie nicht erwarten.
+Verwenden Sie `extern "C"`, um eine C- C++Funktion von aufzurufen. `extern "C"` erzwingt die Verwendung der C-Benennungs Konvention für C++ nicht-Klassen Funktionen. Beachten Sie die Compilerschalter **/TC** oder **/tp**, die den Compiler anweisen, die Dateinamenerweiterung zu ignorieren und die Datei C++als C bzw. zu kompilieren. Diese Optionen können zu nicht erwarteten Linker-Namen führen.
 
-Funktionsprototypen mit nicht übereinstimmenden Parametern können auch zu diesem Fehler führen. Namensergänzungen fügen die Parameter einer Funktion in den endgültigen ergänzten Funktionsnamen ein. Aufrufen einer Funktion mit den Parametertypen, die nicht mit denen in der Funktionsdeklaration übereinstimmen, kann ebenfalls LNK2001 verursacht.
+Funktionsprototypen mit nicht übereinstimmenden Parametern können auch zu diesem Fehler führen. Namensergänzungen fügen die Parameter einer Funktion in den endgültigen ergänzten Funktionsnamen ein. Das Aufrufen einer Funktion mit den Parametertypen, die nicht mit denen in der Funktionsdeklaration identisch sind, kann auch LNK2001 verursachen.
 
-Es gibt derzeit keine Standards für C++ Benennung zwischen compileranbietern oder sogar zwischen unterschiedlichen Versionen eines Compilers. Verknüpfen von Objektdateien, die von anderen Compilern kompiliert erzeugt möglicherweise nicht dasselbe Benennungsschema, und kann dazu führen, dass nicht aufgelöste externen.
+Zurzeit gibt es keine Standards C++ für die Benennung zwischen compileranbietern oder sogar zwischen verschiedenen Versionen eines Compilers. Das Verknüpfen von Objektdateien, die von anderen Compilern kompiliert werden, erzeugt möglicherweise nicht dasselbe Benennungs Schema und kann zu nicht aufgelösten externalen führen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Linkertoolfehler LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md)

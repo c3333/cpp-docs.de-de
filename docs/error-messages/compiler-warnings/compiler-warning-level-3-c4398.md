@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - C4398
 ms.assetid: b6221432-9fed-4272-a547-a73f587904e6
-ms.openlocfilehash: 4126a1267b41cdf9c0161c7e85a9057b2a301d77
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 041bf9f6bfce17b16f301604bb8706be30095c13
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62401968"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80198665"
 ---
 # <a name="compiler-warning-level-3-c4398"></a>Compilerwarnung (Stufe 3) C4398
 
-> "*Variable*": Prozessspezifische globale Objekte möglicherweise funktionieren nicht ordnungsgemäß bei mehreren Anwendungsdomänen; verwenden Sie ggf. __declspec(appdomain)
+> "*Variable*": das prozessübergreifende globale Objekt funktioniert möglicherweise nicht ordnungsgemäß mit mehreren Anwendungs Domänen. Verwenden Sie __declspec (AppDomain).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine virtuelle Funktion mit [__clrcall](../../cpp/clrcall.md) Aufrufkonvention in einem systemeigenen Typ bewirkt die Erstellung einer anwendungsdomänenspezifischen vtable. Eine solche Variable möglicherweise nicht ordnungsgemäß behoben, bei der Verwendung in mehreren Anwendungsdomänen.
+Eine virtuelle Funktion mit [__clrcall](../../cpp/clrcall.md) Aufruf Konvention in einem systemeigenen Typ bewirkt, dass eine pro Anwendungs Domänen-Vtable erstellt wird. Eine solche Variable ist möglicherweise nicht richtig korrekt, wenn Sie in mehreren Anwendungs Domänen verwendet wird.
 
-Sie können diese Warnung beheben, indem Sie explizite Markierung der Variablen `__declspec(appdomain)`. In Versionen von Visual Studio vor Visual Studio 2017 können Sie diese Warnung beheben, durch die Kompilierung mit **/CLR: pure**, wodurch globale Variablen pro Anwendungsdomäne standardmäßig. Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Sie können diese Warnung beheben, indem Sie die Variable `__declspec(appdomain)`explizit markieren. In Versionen von Visual Studio vor Visual Studio 2017 können Sie diese Warnung beheben, indem Sie eine Kompilierung mit **/clr: pure**durchführt, wodurch globale Variablen pro AppDomain standardmäßig erstellt werden. Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
-Weitere Informationen finden Sie unter [Appdomain](../../cpp/appdomain.md) und [Anwendungsdomänen und Visual C++](../../dotnet/application-domains-and-visual-cpp.md).
+Weitere Informationen finden Sie unter [AppDomain](../../cpp/appdomain.md) und [Anwendungs Domänen und C++Visual ](../../dotnet/application-domains-and-visual-cpp.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4398 generiert.
+Im folgenden Beispiel wird C4398 generiert.
 
 ```cpp
 // C4398.cpp

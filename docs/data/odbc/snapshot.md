@@ -1,5 +1,5 @@
 ---
-title: Snapshot
+title: Momentaufnahme
 ms.date: 11/04/2016
 helpviewer_keywords:
 - ODBC cursor library [ODBC], snapshots
@@ -11,39 +11,39 @@ helpviewer_keywords:
 - cursor library [ODBC], snapshots
 - snapshots
 ms.assetid: b5293a52-0657-43e9-bd71-fe3785b21c7e
-ms.openlocfilehash: 5999f89156d895ff0c87c892be892c6a614a0132
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 62b5952f3052a3248175ce7892b1cf4615f1dd17
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330036"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212692"
 ---
-# <a name="snapshot"></a>Snapshot
+# <a name="snapshot"></a>Momentaufnahme
 
-Eine Momentaufnahme ist ein Recordset, eine statische Ansicht der Daten enthält, wie sie zu dem Zeitpunkt vorhanden waren, die die Momentaufnahme erstellt wurde. Beim Öffnen der Momentaufnahme und verschieben alle Datensätze, die Gruppe von Datensätzen, die sie enthält, und ändern Sie deren Werte nicht, bis Sie durch Aufrufen die Momentaufnahme wiederherstellen `Requery`.
+Eine Momentaufnahme ist ein Recordset, das eine statische Ansicht der Daten darstellt, die zum Zeitpunkt der Erstellung der Momentaufnahme vorhanden waren. Wenn Sie die Momentaufnahme öffnen und zu allen Datensätzen wechseln, ändern sich die darin enthaltenen Datensätze und deren Werte erst, nachdem Sie die Momentaufnahme durch Aufrufen von `Requery`neu erstellt haben.
 
 > [!NOTE]
->  Dieses Thema bezieht sich auf die MFC-ODBC-Klassen. Wenn Sie die MFC-DAO-Klassen anstelle von MFC-ODBC-Klassen verwenden, finden Sie unter [CDaoRecordset:: Open](../../mfc/reference/cdaorecordset-class.md#open) eine Beschreibung der Recordsets vom Typ Snapshot.
+>  Dieses Thema bezieht sich auf die MFC-ODBC-Klassen. Wenn Sie die MFC-DAO-Klassen anstelle der MFC-ODBC-Klassen verwenden, finden Sie weitere Informationen unter [CDaoRecordset:: Open](../../mfc/reference/cdaorecordset-class.md#open) für eine Beschreibung von Recordsets vom Typ "Snapshot".
 
-Sie können Momentaufnahmen aktualisierbar oder schreibgeschützt sind, mit den Datenbankklassen erstellen. Im Gegensatz zu einem Dynaset aktualisierbarer Snapshot spiegelt keine Änderungen zum Aufzeichnen von Werten, die von anderen Benutzern vorgenommene wider, aber es spiegelt wider, Aktualisierungen und Löschvorgänge, die Ihre Anwendung erstellt hat. Hinzugefügte Datensätze zu einer Momentaufnahme werden werden nicht sichtbar, in die Momentaufnahme bis zum Aufruf von `Requery`.
+Mit den Datenbankklassen können Sie aktualisierbare oder schreibgeschützte Momentaufnahmen erstellen. Anders als bei einem Dynaset gibt eine aktualisierbare Momentaufnahme keine Änderungen an den Daten Satz Werten an, die von anderen Benutzern vorgenommen wurden, sondern spiegelt Updates und Löschungen, die von Ihrem Programm vorgenommen werden. Datensätze, die einer Momentaufnahme hinzugefügt werden, werden erst dann für die Momentaufnahme sichtbar, wenn Sie `Requery`
 
 > [!TIP]
->  Eine Momentaufnahme handelt es sich um eine statische ODBC-Cursor. Statische Cursor erhalte nicht tatsächlich eine Zeile mit Daten, bis Sie zu diesem Datensatz wechseln. Um sicherzustellen, dass sofort alle Datensätze abgerufen werden, können Sie einen Bildlauf zum Ende des Recordset und scrollen Sie zu den ersten Datensatz aus, die, den Sie anzeigen möchten. Beachten Sie jedoch, einen Bildlauf bis zum Ende ist der Mehraufwand verbunden und Leistung beeinträchtigt werden kann.
+>  Eine Momentaufnahme ist ein statischer ODBC-Cursor. Statische Cursor erhalten erst dann eine Zeile mit Daten, wenn Sie einen Bildlauf zu diesem Datensatz durchführen. Um sicherzustellen, dass alle Datensätze sofort abgerufen werden, können Sie einen Bildlauf zum Ende des Recordsets durchführen und dann einen Bildlauf zum ersten Datensatz durchführen, den Sie anzeigen möchten. Beachten Sie jedoch, dass der Bildlauf zum Ende zu einem zusätzlichen Aufwand führt und die Leistung verringern kann.
 
-Momentaufnahmen sind besonders hilfreich, wenn Sie die Daten, die fixiert bleiben, während Ihre-Vorgängen, als wenn Sie einen Bericht oder Berechnungen benötigen. Trotzdem kann die Datenquelle erheblich von der Momentaufnahme, voneinander abweichen, sollten Sie möglicherweise von Zeit zu Zeit neu erstellt.
+Momentaufnahmen sind besonders wertvoll, wenn die Daten während der Vorgänge korrigiert bleiben müssen, so als wenn Sie einen Bericht erstellen oder Berechnungen ausführen. Auch wenn sich die Datenquelle erheblich von der Momentaufnahme unterscheiden kann, sollten Sie Sie von Zeit zu Zeit neu erstellen.
 
-Unterstützung von basiert auf der ODBC-Cursorbibliothek, der statische Cursor und positionierte Updates (erforderlich für aktualisierbarkeit) für alle-Ebene-1-Treiber. Die Cursorbibliothek DLL muss für diese Unterstützung im Arbeitsspeicher geladen werden. Beim Erstellen einer `CDatabase` Objekt, und rufen die `OpenEx` Member-Funktion, die Sie angeben müssen die `CDatabase::useCursorLib` Möglichkeit, die *DwOptions* Parameter. Wenn Sie beim Aufrufen der `Open` Member-Funktion, die Cursorbibliothek standardmäßig geladen wird. Wenn Sie anstelle von Momentaufnahmen Dynasets verwenden, möchten Sie nicht dazu führen, dass die Cursorbibliothek geladen werden.
+Die momentaufnahmenunterstützung basiert auf der ODBC-Cursor Bibliothek, die statische Cursor und positionierte Updates (die für Aktualisierbarkeit erforderlich ist) für alle Treiber der Ebene 1 bereitstellt. Die Cursor-Bibliotheks-DLL muss für diese Unterstützung in den Arbeitsspeicher geladen werden. Wenn Sie ein `CDatabase` Objekt erstellen und seine `OpenEx` Member-Funktion aufrufen, müssen Sie die `CDatabase::useCursorLib`-Option des *dwOptions* -Parameters angeben. Wenn Sie die `Open` Member-Funktion aufzurufen, wird die Cursor Bibliothek standardmäßig geladen. Wenn Sie Dynasets anstelle von Momentaufnahmen verwenden, möchten Sie nicht, dass die Cursor Bibliothek geladen wird.
 
-Momentaufnahmen sind nur verfügbar, wenn die ODBC-Cursorbibliothek geladen war die `CDatabase` Objekt erstellt wurde, oder der ODBC-Treiber, die Sie verwenden die statische Cursor unterstützt.
-
-> [!NOTE]
->  Für einige ODBC-Treiber können Momentaufnahmen (statische Cursor) nicht aktualisiert werden. Überprüfen Sie die Dokumentation des Treibers für die unterstützten Cursortypen und die parallelitätstypen, die sie unterstützen. Um aktualisierbaren Momentaufnahmen zu gewährleisten, stellen Sie sicher, dass Sie die Cursorbibliothek in den Arbeitsspeicher geladen, bei der Erstellung einer `CDatabase` Objekt. Weitere Informationen finden Sie unter [ODBC: Die ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
+Momentaufnahmen sind nur verfügbar, wenn die ODBC-Cursor Bibliothek geladen wurde, als das `CDatabase` Objekt erstellt wurde, oder der von Ihnen verwendete ODBC-Treiber unterstützt statische Cursor.
 
 > [!NOTE]
->  Wenn Sie sowohl Momentaufnahmen und Dynasets verwenden möchten, müssen Sie diese auf zwei unterschiedlichen Grundlage `CDatabase` Objekte (zwei verschiedene Verbindungen).
+>  Für einige ODBC-Treiber sind Momentaufnahmen (statische Cursor) möglicherweise nicht aktualisierbar. Überprüfen Sie die Treiber Dokumentation auf unterstützte Cursor Typen und die von Ihnen unterstützten neben läufigkeits Typen. Um aktualisierbare Momentaufnahmen zu gewährleisten, stellen Sie sicher, dass Sie die Cursor Bibliothek in den Arbeitsspeicher laden, wenn Sie ein `CDatabase` Weitere Informationen finden Sie unter [ODBC: die ODBC-Cursor Bibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
 
-Weitere Informationen über gemeinsame Eigenschaften von Snapshots und Recordsets finden Sie unter [Recordsets (ODBC)](../../data/odbc/recordset-odbc.md). Weitere Informationen zu ODBC und Momentaufnahmen, einschließlich der ODBC-Cursorbibliothek, finden Sie unter [ODBC](../../data/odbc/odbc-basics.md).
+> [!NOTE]
+>  Wenn Sie sowohl Momentaufnahmen als auch Dynasets verwenden möchten, müssen Sie Sie auf zwei verschiedenen `CDatabase` Objekten (zwei unterschiedliche Verbindungen) aufbauen.
 
-## <a name="see-also"></a>Siehe auch
+Weitere Informationen zur Freigabe von Eigenschaften Momentaufnahmen für alle Recordsets finden Sie unter [Recordset (ODBC)](../../data/odbc/recordset-odbc.md). Weitere Informationen zu ODBC und Momentaufnahmen, einschließlich der ODBC-Cursor Bibliothek, finden Sie unter [ODBC](../../data/odbc/odbc-basics.md).
+
+## <a name="see-also"></a>Weitere Informationen
 
 [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)

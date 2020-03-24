@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - const_cast keyword [C++]
 ms.assetid: 4d8bb203-ef33-4a10-9f9f-c64d4fbc1687
-ms.openlocfilehash: 389ef84149031fd602ff9ded15d34869258ffd52
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d2711142e4aa73cc0119949876e7e593067cd45d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62399108"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180341"
 ---
-# <a name="constcast-operator"></a>const_cast-Operator
+# <a name="const_cast-operator"></a>const_cast-Operator
 
-Entfernt die **const**, **flüchtige**, und **__unaligned** -Attribute aus einer Klasse.
+Entfernt die **Konstanten**, **flüchtigen**und **__unaligned** Attribute aus einer Klasse.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,13 +23,13 @@ Entfernt die **const**, **flüchtige**, und **__unaligned** -Attribute aus einer
 const_cast <type-id> (expression)
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Zeiger auf einen beliebigen Objekttyp oder ein Zeiger auf einen Datenmember explizit umgewandelt werden kann ein Typ, der identisch ist die **const**, **flüchtige**, und **__unaligned** Qualifizierer. Für Zeiger und Verweise verweist das Ergebnis auf das ursprüngliche Objekt. Für Zeiger auf Datenmember, verweist das Ergebnis auf denselben Member wie der ursprüngliche (uncast) Zeiger auf Datenmember. Je nach Typ des verweisenden Objekts, führt ein Schreibvorgang durch den resultierenden Zeiger, Verweis oder Zeiger auf Datenmember möglicherweise zu nicht definiertem Verhalten.
+Ein Zeiger auf einen beliebigen Objekttyp oder einen Zeiger auf einen Datenmember kann explizit in einen Typ konvertiert werden, der mit Ausnahme der **Konstanten für Konstanten**, **flüchtiger**und **__unaligned** identisch ist. Für Zeiger und Verweise verweist das Ergebnis auf das ursprüngliche Objekt. Für Zeiger auf Datenmember, verweist das Ergebnis auf denselben Member wie der ursprüngliche (uncast) Zeiger auf Datenmember. Je nach Typ des verweisenden Objekts, führt ein Schreibvorgang durch den resultierenden Zeiger, Verweis oder Zeiger auf Datenmember möglicherweise zu nicht definiertem Verhalten.
 
-Sie können keine der **"const_cast"** Operator, um den Konstanten Status einer Konstanten Variable direkt zu überschreiben.
+Mit dem **const_cast** -Operator können Sie den konstanten Status einer Konstanten Variablen nicht direkt überschreiben.
 
-Die **"const_cast"** -Operator konvertiert einen null-Zeiger-Wert, der null-Zeigerwert des Zieltyps.
+Der **const_cast** -Operator konvertiert einen NULL-Zeiger Wert in den NULL-Zeiger Wert des Zieltyps.
 
 ## <a name="example"></a>Beispiel
 
@@ -62,9 +62,9 @@ int main() {
 }
 ```
 
-In der Zeile mit der **"const_cast"**, der Datentyp des der **dies** Zeiger `const CCTest *`. Die **"const_cast"** Operator ändert den Datentyp des der **dies** Zeiger auf `CCTest *`, sodass das Element `number` geändert werden. Die Umwandlung erfolgt nur für den Rest der Anweisung, in der er angezeigt wird.
+In der Zeile, die die **const_cast**enthält, ist der Datentyp **dieses** Zeigers `const CCTest *`. Der **const_cast** -Operator ändert den Datentyp des **this** -Zeigers in `CCTest *`, sodass der Member `number` geändert werden kann. Die Umwandlung erfolgt nur für den Rest der Anweisung, in der er angezeigt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Umwandlungsoperatoren](../cpp/casting-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

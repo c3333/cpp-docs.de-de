@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4224
 ms.assetid: 8624b70e-0b93-43cf-b457-834d38632d0b
-ms.openlocfilehash: eb0a019cc80e5218a52697b8bcd5e91b811d04d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9e52dd533d897e729aba5f2b43ea6c019a024d43
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160392"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182980"
 ---
 # <a name="linker-tools-warning-lnk4224"></a>Linkertoolwarnung LNK4224
 
-> *Option* ist nicht mehr unterstütz; ignoriert
+> die *Option* wird nicht mehr unterstützt. erten
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine ungültige, veraltete-Linkeroption wurde angegeben und wird ignoriert.
+Es wurde eine ungültige, veraltete Linkeroption angegeben und ignoriert.
 
-LNK4224 kann beispielsweise auftreten, wenn in eine/COMMENT-Anweisung angezeigt wird. obj. Die Direktive/Comment würde wurden hinzugefügt, über die [Kommentar (C/C++)](../../preprocessor/comment-c-cpp.md) Pragmas, die als veraltet markierte Exestr verwenden. Verwenden von Dumpbin [/ALL](../../build/reference/all.md) So zeigen Sie die Linker-Anweisungen in einer OBJ-Datei an.
+Beispielsweise kann Linkertoolwarnung Lnk4224 auftreten, wenn eine/comment-Direktive in. obj angezeigt wird. Die/comment-Direktive würde über das [comment-Pragma (C++C/)](../../preprocessor/comment-c-cpp.md) mithilfe der veralteten exestr-Option hinzugefügt worden sein. Verwenden Sie (dumpbin [/all](../../build/reference/all.md) , um die Linker-Direktiven in einer OBJ-Datei anzuzeigen.
 
-Wenn möglich, ändern Sie die Quelle für die .obj, und entfernen Sie das Pragma. Wenn Sie diese Warnung ignorieren, ist es möglich, dass die kompilierte .executable mit **/CLR: pure** nicht wie erwartet ausgeführt wird. Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Ändern Sie nach Möglichkeit die Quelle für die OBJ-Datei, und entfernen Sie das Pragma. Wenn Sie diese Warnung ignorieren, ist es möglich, dass eine mit **/clr: pure** kompilierte ausführbare Datei nicht erwartungsgemäß ausgeführt wird. Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die LNK4224 generiert.
+Im folgenden Beispiel wird Linkertoolwarnung Lnk4224 generiert.
 
 ```cpp
 // LNK4224.cpp

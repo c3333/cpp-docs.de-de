@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - importlib attribute
 ms.assetid: f129e459-b8d3-4aca-a0bc-ee53e18b62ed
-ms.openlocfilehash: 92cf335e5c4754595f2c7af2e1aef30d309d2f5f
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 451204aae52d884b9cbc81d7e589028f5cfefae5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514607"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166808"
 ---
 # <a name="importlib"></a>importlib
 
@@ -28,9 +28,9 @@ Stellt Typen, die bereits in einer anderen Typbibliothek kompiliert wurden, der 
 *tlb_file*<br/>
 Der Name einer TLB-Datei in Anführungszeichen, die in die Typbibliothek des aktuellen Projekts importiert werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **importlib** C++ -Attribut bewirkt `importlib` , dass eine-Anweisung in den Bibliotheks Block der generierten IDL-Datei eingefügt wird. Das **importlib** -Attribut verfügt über die gleiche Funktionalität wie das [importlib](/windows/win32/Midl/importlib) -Attribut "Mittel l".
+Das **importlib** C++ -Attribut bewirkt, dass eine `importlib`-Anweisung in den Bibliotheks Block der generierten IDL-Datei eingefügt wird. Das **importlib** -Attribut verfügt über die gleiche Funktionalität wie das [importlib](/windows/win32/Midl/importlib) -Attribut "Mittel l".
 
 ## <a name="example"></a>Beispiel
 
@@ -43,7 +43,7 @@ Der folgende Code zeigt ein Beispiel für die Verwendung von **importlib**:
 [importlib("importlib.tlb")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -51,12 +51,12 @@ Der folgende Code zeigt ein Beispiel für die Verwendung von **importlib**:
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>

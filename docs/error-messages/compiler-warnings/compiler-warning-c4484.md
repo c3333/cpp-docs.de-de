@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4484
 ms.assetid: 3d30e5b3-2297-45b7-a37a-1360056fdd0e
-ms.openlocfilehash: 4d3f72ddf7675ea7ad73022dc55a60fdc74d4390
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: c168c91f8259b744ed10dd72701d34fd60b98681
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623631"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165157"
 ---
 # <a name="compiler-warning-c4484"></a>Compilerwarnung C4484
 
-"override_function": stimmt mit der "base_class_function"-Basis Methode der Verweis Klasse überein, ist jedoch nicht als "Virtual", "New" oder "override" markiert. "New" (und nicht "Virtual") wird angenommen.
+' override_function ': entspricht der "base_class_function"-Basis Methode der Verweis Klasse, aber nicht als "Virtual", "New" oder "override" markiert. "New" (und nicht "Virtual") wird angenommen.
 
 Beim Kompilieren mit **/CLR**überschreibt der Compiler eine Basisklassen Funktion nicht implizit, was bedeutet, dass die Funktion einen neuen Slot in der vtable erhält. Um aufzulösen, geben Sie explizit an, ob eine Funktion eine außer Kraft Setzung ist.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 - [/clr (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md)
 

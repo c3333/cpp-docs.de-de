@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - InterfaceListHelper structure
 ms.assetid: 4297e419-c96b-45df-8a00-7568062125ba
-ms.openlocfilehash: 03bfed00147daef22fe91e6f061ea6720834090f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1a7b4c19bbcdd4161e9078274f18f96a48f9e7d7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396029"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213849"
 ---
 # <a name="interfacelisthelper-structure"></a>InterfaceListHelper-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,59 +42,59 @@ struct InterfaceListHelper<T0, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil>;
 ### <a name="parameters"></a>Parameter
 
 *T0*<br/>
-Template-Parameter 0 (null) ist erforderlich.
+Der Vorlagen Parameter "0" ist erforderlich.
 
 *T1*<br/>
-Template-Parameter 1, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 1, der standardmäßig nicht angegeben ist.
 
 *T2*<br/>
-Vorlagenparameter 2, die standardmäßig nicht angegeben wird. Der dritte Vorlagenparameter.
+Der Vorlagen Parameter 2, der standardmäßig nicht angegeben ist. Der dritte Vorlagen Parameter.
 
-*T3*<br/>
-Template-Parameter 3, die standardmäßig nicht angegeben wird.
+*Übte*<br/>
+Der Vorlagen Parameter 3, der standardmäßig nicht angegeben ist.
 
 *T4*<br/>
-Vorlagenparameter 4, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 4, der standardmäßig nicht angegeben ist.
 
 *T5*<br/>
-Template-Parameter 5, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 5, der standardmäßig nicht angegeben ist.
 
 *T6*<br/>
-Vorlagenparameter 6, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 6, der standardmäßig nicht angegeben ist.
 
 *T7*<br/>
-Vorlagenparameter 7, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 7, der standardmäßig nicht angegeben ist.
 
 *T8*<br/>
-Vorlagenparameter 8, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 8, der standardmäßig nicht angegeben ist.
 
 *T9*<br/>
-Vorlagenparameter 9, die standardmäßig nicht angegeben wird.
+Der Vorlagen Parameter 9, der standardmäßig nicht angegeben ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Erstellt eine `InterfaceList` Typs rekursiv die angegebenen Parameter Vorlagenargumente angewendet.
+Erstellt einen `InterfaceList` Typ, indem die angegebenen Vorlagen Parameter Argumente rekursiv angewendet werden.
 
-Die **InterfaceListHelper** Vorlage verwendet die Template-Parameter *T0* definieren Sie das erste Element der Daten in eine `InterfaceList` -Struktur, und klicken Sie dann rekursiv gilt die  **InterfaceListHelper** Vorlage, um alle verbleibenden Vorlagenparameter. **InterfaceListHelper** wird beendet, wenn keine verbleibenden Vorlagenparameter vorhanden sind.
+Die Vorlage **interfakelisthelper** verwendet den Vorlagen Parameter *T0* , um den ersten Datenmember in einer `InterfaceList` Struktur zu definieren, und wendet dann rekursiv die Vorlage **interfakelisthelper** auf alle verbleibenden Vorlagen Parameter an. **Interfakelisthelper** wird beendet, wenn keine weiteren Vorlagen Parameter vorhanden sind.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`TypeT`|Ein Synonym für den InterfaceList-Typ.|
+|`TypeT`|Ein Synonym für den interfakelist-Typ.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `InterfaceListHelper`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

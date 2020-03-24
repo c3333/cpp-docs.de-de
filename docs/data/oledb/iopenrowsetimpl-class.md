@@ -13,12 +13,12 @@ helpviewer_keywords:
 - CreateRowset method
 - OpenRowset method
 ms.assetid: d259cedc-1db4-41cf-bc9f-5030907ab486
-ms.openlocfilehash: 66fce9d2ffe63798738be1658a5328e907395a54
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 8ecbcd46e534baa73574f0930e1cbac4dbc49dfb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545906"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210534"
 ---
 # <a name="iopenrowsetimpl-class"></a>IOpenRowsetImpl-Klasse
 
@@ -36,11 +36,11 @@ class IOpenRowsetImpl : public IOpenRowset
 *Sessionclass*<br/>
 Die von `IOpenRowsetImpl`abgeleitete Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -49,7 +49,7 @@ Die von `IOpenRowsetImpl`abgeleitete Klasse.
 |[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt. Wird nicht direkt vom Benutzer aufgerufen.|
 |[OPENROWSET](#openrowset)|Öffnet ein Rowset, das alle Zeilen aus einer einzelnen Basistabelle oder einem einzelnen Index enthält, und gibt es zurück. (Nicht in Atldb. Micha|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die [IOpenRowset](/previous-versions/windows/desktop/ms716946(v=vs.85)) -Schnittstelle ist für ein Sitzungs Objekt obligatorisch. Er wird geöffnet und gibt ein Rowset zurück, das alle Zeilen aus einer einzelnen Basistabelle oder einem einzelnen Index enthält.
 
@@ -101,11 +101,11 @@ HRESULT OpenRowset(IUnknown* pUnkOuter,
 
 Weitere Informationen finden Sie unter [IOpenRowset:: OPENROWSET](/previous-versions/windows/desktop/ms716724(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Methode wurde in Atldb nicht gefunden. Micha. Sie wird vom ATL-Objekt-Assistenten erstellt, wenn Sie einen Anbieter erstellen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

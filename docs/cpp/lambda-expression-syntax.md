@@ -4,28 +4,28 @@ ms.date: 05/07/2019
 helpviewer_keywords:
 - lambda expressions [C++], syntax
 ms.assetid: 5d6154a4-f34d-4a15-970d-7e7de45f54e9
-ms.openlocfilehash: 37e4a512678bf276b5244fd54945f49a37ff8d01
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 9ac2fdea1a8fc8dcf2b03059455c3141daf86aa8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65222391"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179652"
 ---
 # <a name="lambda-expression-syntax"></a>Lambdaausdruckssyntax
 
-Dieser Artikel beschreibt Syntax und Strukturelemente von Lambdaausdrücken. Eine Beschreibung der Lambda-Ausdrücke, finden Sie unter [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md).
+Dieser Artikel beschreibt Syntax und Strukturelemente von Lambdaausdrücken. Eine Beschreibung der Lambda-Ausdrücke finden Sie unter [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md).
 
 ## <a name="function-objects-vs-lambdas"></a>Funktionsobjekte und Lambdas
 
-Wenn Sie Code schreiben, Sie wahrscheinlich verwenden Funktionszeiger und Funktionsobjekte zum Lösen von Problemen und Berechnungen, insbesondere bei Verwendung von [C++-standardbibliotheksalgorithmen](../cpp/algorithms-modern-cpp.md). Funktionszeiger und Funktionsobjekte haben beide Vorteile und Nachteile – z. B. weisen Funktionszeiger minimalen syntaktischen Mehraufwand auf, behalten aber innerhalb eines Bereichs den Zustand nicht bei. Hingegen können Funktionsobjekte den Zustand zwar beibehalten, erfordern allerdings den syntaktischen Mehraufwand einer Klassendefinition.
+Wenn Sie Code schreiben, verwenden Sie wahrscheinlich Funktionszeiger und Funktions Objekte, um Probleme zu lösen und Berechnungen auszuführen, insbesondere bei der Verwendung [ C++ von Standard Bibliotheks Algorithmen](../cpp/algorithms-modern-cpp.md). Funktionszeiger und Funktionsobjekte haben beide Vorteile und Nachteile – z. B. weisen Funktionszeiger minimalen syntaktischen Mehraufwand auf, behalten aber innerhalb eines Bereichs den Zustand nicht bei. Hingegen können Funktionsobjekte den Zustand zwar beibehalten, erfordern allerdings den syntaktischen Mehraufwand einer Klassendefinition.
 
 Bei einem Lambda werden die Vorteile von Funktionszeigern und Funktionsobjekten kombiniert und deren Nachteile gleichzeitig vermieden. Wie bei Funktionsobjekten ist ein Lambda flexibel und kann den Zustand beibehalten, aber anders als ein Funktionsobjekt benötigt seine kompakte Syntax keine explizite Klassendefinition. Mit der Verwendung von Lambdas können Sie Code schreiben, der weniger schwerfällig und weniger fehleranfällig als Code für ein entsprechendes Funktionsobjekt ist.
 
 In den folgenden Beispielen wird die Verwendung eines Lambda-Ausdrucks mit der Verwendung eines Funktionsobjekts verglichen. Im ersten Beispiel wird ein Lambda-Ausdruck verwendet, um auf der Konsole auszugeben, ob jedes Element in einem `vector`-Objekt gerade oder ungerade ist. Im zweiten Beispiel wird für die gleiche Aufgabe ein Funktionsobjekt verwendet.
 
-## <a name="example-1-using-a-lambda"></a>Beispiel 1: Verwenden eines Lambda-Ausdrucks
+## <a name="example-1-using-a-lambda"></a>Beispiel 1: Verwendung eines Lambda-Ausdrucks
 
-In diesem Beispiel übergibt einen Lambda-Ausdruck die **For_each** Funktion. Lambda druckt ein Ergebnis, das besagt, ob jedes Element in einem `vector` -Objekt ist, gerade oder ungerade.
+In diesem Beispiel wird ein Lambda an die **for_each** -Funktion weitergeleitet. Lambda druckt ein Ergebnis, das besagt, ob jedes Element in einem `vector` -Objekt ist, gerade oder ungerade.
 
 ### <a name="code"></a>Code
 
@@ -79,13 +79,13 @@ There are 4 even numbers in the vector.
 
 ### <a name="comments"></a>Kommentare
 
-Im Beispiel ist das dritte Argument für die **For_each** -Funktion ist ein Lambda-Ausdruck. Mit dem `[&evenCount]`-Teil wird die Erfassungsklausel des Ausdrucks angegeben. Mit `(int n)` wird die Parameterliste und mit dem Rest der Text des Ausdrucks angegeben.
+Im Beispiel ist das dritte Argument für die **for_each** -Funktion eine Lambda-Funktion. Mit dem `[&evenCount]`-Teil wird die Erfassungsklausel des Ausdrucks angegeben. Mit `(int n)` wird die Parameterliste und mit dem Rest der Text des Ausdrucks angegeben.
 
 ## <a name="example-2-using-a-function-object"></a>Beispiel 2: Verwendung eines Funktionsobjekts
 
-Manchmal wäre die Ausweitung eines Lambdas über den Umfang des vorherigen Beispiels hinaus zu hinderlich. Im nächsten Beispiel wird ein Funktionsobjekt statt eines Lambda-Ausdrucks zusammen mit den **For_each** -Funktion verwendet, um die gleichen Ergebnisse wie in Beispiel 1 zu erstellen. In beiden Beispielen wird die Anzahl gerader Zahlen in einem `vector`-Objekt gespeichert. Um den Zustand des Vorgangs beizubehalten, wird die `FunctorClass`-Variable von der `m_evenCount`-Klasse mithilfe eines Verweises als Membervariable gespeichert. Zum Ausführen des Vorgangs, `FunctorClass` implementiert den Operator Funktionsaufruf **operator()**. Microsoft C++ -Compiler generiert Code, die in der Größe und Leistung mit dem Lambda-Codebeispiel 1 vergleichbar ist. Bei einem grundlegenden Problem, wie dem in diesem Artikel, ist der einfachere Lambda-Entwurf wahrscheinlich besser geeignet, als der Funktionsobjektentwurf. Wenn Sie allerdings der Meinung sind, die Funktionalität erfordere zukünftig möglicherweise beträchtliche Erweiterungen, verwenden Sie einen Funktionsobjektentwurf. Damit ist die Codeverwaltung einfacher.
+Manchmal wäre die Ausweitung eines Lambdas über den Umfang des vorherigen Beispiels hinaus zu hinderlich. Im nächsten Beispiel wird ein Funktions Objekt anstelle eines Lambda-Ausdrucks in Verbindung mit der **for_each** -Funktion verwendet, um die gleichen Ergebnisse wie in Beispiel 1 zu erzielen. In beiden Beispielen wird die Anzahl gerader Zahlen in einem `vector`-Objekt gespeichert. Um den Zustand des Vorgangs beizubehalten, wird die `FunctorClass`-Variable von der `m_evenCount`-Klasse mithilfe eines Verweises als Membervariable gespeichert. Um den Vorgang auszuführen, `FunctorClass` den Funktions Aufrufoperator **()** implementiert. Der Microsoft C++ -Compiler generiert Code, der in Größe und Leistung mit dem Lambda-Code in Beispiel 1 vergleichbar ist. Bei einem grundlegenden Problem, wie dem in diesem Artikel, ist der einfachere Lambda-Entwurf wahrscheinlich besser geeignet, als der Funktionsobjektentwurf. Wenn Sie allerdings der Meinung sind, die Funktionalität erfordere zukünftig möglicherweise beträchtliche Erweiterungen, verwenden Sie einen Funktionsobjektentwurf. Damit ist die Codeverwaltung einfacher.
 
-Weitere Informationen zu den **operator()**, finden Sie unter [Funktionsaufruf](../cpp/function-call-cpp.md). Weitere Informationen zu den **For_each** funktionieren, finden Sie unter [For_each](../standard-library/algorithm-functions.md#for_each).
+Weitere Informationen zum- **Operator ()** finden Sie unter [Funktionsaufrufe](../cpp/function-call-cpp.md). Weitere Informationen zur **for_each** -Funktion finden Sie unter [for_each](../standard-library/algorithm-functions.md#for_each).
 
 ### <a name="code"></a>Code
 
@@ -157,7 +157,7 @@ int main()
 There are 4 even numbers in the vector.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Lambda-Ausdrücke](../cpp/lambda-expressions-in-cpp.md)<br/>
 [Beispiele für Lambdaausdrücke](../cpp/examples-of-lambda-expressions.md)<br/>

@@ -23,12 +23,12 @@ f1_keywords:
 helpviewer_keywords:
 - _amsg_exit
 ms.assetid: 146d4faf-d763-43a4-b264-12711196456b
-ms.openlocfilehash: 2d577bfcf0584ef982ab43ff98674d0cfadd14ba
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 31979a3181dc57644f1e6877277884e55cebf733
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939695"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170934"
 ---
 # <a name="_amsg_exit"></a>_amsg_exit
 
@@ -45,12 +45,12 @@ void _amsg_exit ( int rterrnum );
 *rterrnum*<br/>
 Die Identifikationsnummer einer systemdefinierten Laufzeit-Fehlermeldung.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktion gibt für Konsolenanwendungen die Laufzeit-Fehlermeldung in **stderr** aus. Für Windows-Anwendungen zeigt sie die Meldung in einem Meldungsfeld an. Im Debugmodus haben Sie die Möglichkeit, den Debugger aufzurufen, bevor Sie die Anwendung beenden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |_amsg_exit|internal.h|

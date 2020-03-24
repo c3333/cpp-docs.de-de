@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C4013
 ms.assetid: 9f9afc71-6e78-463d-9d66-3012d6a3cd5d
-ms.openlocfilehash: 2ec76fa5d83721137a5142d435f9c598527382f3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7aa35b7ebf918bfdc6413df17582ebb747058e52
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402397"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161710"
 ---
 # <a name="compiler-warning-level-3-c4013"></a>Compilerwarnung (Stufe 3) C4013
 
-'Funktion' nicht definiert; Annahme: Extern mit Rückgabetyp int
+"Function" ist nicht definiert. angenommen, extern gibt int zurück
 
-Der Compiler hat einen Aufruf an eine nicht definierte Funktion gefunden.
+Der Compiler hat einen-Rückruf für eine nicht definierte Funktion gefunden.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Falsche Schreibweise des Funktionsnamens
+1. Falsche Schreibweise des Funktionsnamens.
 
-1. Externe Funktionen nicht Prototyp `extern`
+1. Externe Funktionen, für die keine prototyptypisierung durch `extern`

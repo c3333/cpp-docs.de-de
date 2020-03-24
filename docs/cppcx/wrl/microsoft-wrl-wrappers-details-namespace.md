@@ -13,16 +13,16 @@ f1_keywords:
 helpviewer_keywords:
 - Details namespace
 ms.assetid: 6d3f04ac-9b53-4a82-a188-a85309ec34a4
-ms.openlocfilehash: deccd4519b2ddf18725dca5af13b94ac79d6e280
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 005fa79d413708f630b0a6aebbc06782086c81b3
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392010"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213758"
 ---
 # <a name="microsoftwrlwrappersdetails-namespace"></a>Microsoft::WRL::Wrappers::Details-Namespace
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,27 +30,27 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 namespace Microsoft::WRL::Wrappers::Details;
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="classes"></a>Klassen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[SyncLockT-Klasse](synclockt-class.md)|Stellt einen Typ, der exklusiven annehmen kann, oder den gemeinsamen Besitz einer Ressource.|
-|[SyncLockWithStatusT-Klasse](synclockwithstatust-class.md)|Stellt einen Typ, der exklusiven annehmen kann, oder den gemeinsamen Besitz einer Ressource.|
+|[SyncLockT-Klasse](synclockt-class.md)|Stellt einen Typ dar, der einen exklusiven oder freigegebenen Besitz einer Ressource annehmen kann.|
+|[SyncLockWithStatusT-Klasse](synclockwithstatust-class.md)|Stellt einen Typ dar, der einen exklusiven oder freigegebenen Besitz einer Ressource annehmen kann.|
 
 ### <a name="methods"></a>Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CompareStringOrdinal-Methode](comparestringordinal-method.md)|Vergleicht zwei angegebene `HSTRING` Objekte und gibt eine ganze Zahl, die ihre relative Position in einer Sortierreihenfolge angibt.|
+|[CompareStringOrdinal-Methode](comparestringordinal-method.md)|Vergleicht zwei angegebene `HSTRING`-Objekte und gibt eine ganze Zahl zurück, die ihre relative Position in einer Sortierreihenfolge angibt.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** corewrappers.h
+**Header:** corewrappers. h
 
-**Namespace:** Microsoft::WRL::Wrappers::Details
+**Namespace:** Microsoft:: WRL:: Wrappers::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Wrappers-Namespace](microsoft-wrl-wrappers-namespace.md)

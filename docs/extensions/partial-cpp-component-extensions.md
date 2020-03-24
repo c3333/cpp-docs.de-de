@@ -8,12 +8,12 @@ helpviewer_keywords:
 - partial
 - C++/CX, partial
 ms.assetid: 43adf1f5-10c5-44aa-a66f-7507e2bdabf8
-ms.openlocfilehash: 37406060c3569c417c14bcc98561f8f52a7c6201
-ms.sourcegitcommit: 28eae422049ac3381c6b1206664455dbb56cbfb6
+ms.openlocfilehash: ad8faa08a2c85e777cbc8721e5842e708b9e6cb1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "79544399"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181849"
 ---
 # <a name="partial--ccli-and-ccx"></a>partial (C++/CLI und C++/CX)
 
@@ -49,7 +49,7 @@ Ein Schlüsselwort, das eine Klasse oder Struktur deklariert, die durch die Wind
 *identifier*<br/>
 Der Name des definierten Typs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine partielle Klasse unterstützt Szenarien, in denen Sie einen Teil einer Klassendefinition in einer Datei ändern und Software für die automatische Codegenerierung – beispielsweise der XAML Designer – den Code in der gleichen Klasse in einer anderen Datei ändert. Durch Verwendung einer partiellen Klasse können Sie verhindern, dass der automatische Codegenerator Ihren Code überschreibt. In einem Visual Studio-Projekt wird der Modifizierer **partial** automatisch auf die generierte Datei angewendet.
 
@@ -69,7 +69,7 @@ Generika: eine partielle Klasse kann eine generische Klasse sein, wenn die volls
 
 Weitere Informationen zur Verwendung des Schlüsselworts **partial** finden Sie unter [Partielle Klassen (C++/CX)](https://go.microsoft.com/fwlink/p/?LinkId=249023).
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -77,6 +77,6 @@ Compileroption: `/ZW`
 
 (Dieses Sprachfeature gilt nicht für die Common Language Runtime.)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Partielle Klassen (C++-CX)](https://go.microsoft.com/fwlink/p/?LinkId=249023)

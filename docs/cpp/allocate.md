@@ -7,18 +7,18 @@ helpviewer_keywords:
 - __declspec keyword [C++], allocate
 - allocate __declspec keyword
 ms.assetid: 67828b31-de60-4c0e-b0a6-ef3aab22641d
-ms.openlocfilehash: a2284395b09c34b0d22c4499bf804cfcc3a74c4d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6d9429aa7c079f0f99a936019e5945092dc1f006
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62155276"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181524"
 ---
 # <a name="allocate"></a>allocate
 
 **Microsoft-spezifisch**
 
-Die **zuordnen** deklarationsspezifizierer benennt ein Datensegment, in dem das Datenelement zugeordnet werden.
+Der Bezeichner der Zuordnungs **Deklaration** benennt ein Daten Segment, in dem das Datenelement zugeordnet wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,9 +26,9 @@ Die **zuordnen** deklarationsspezifizierer benennt ein Datensegment, in dem das 
    __declspec(allocate("segname")) declarator
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Name *Segname* muss mit einem der folgenden Pragmas deklariert werden:
+Der Name " *segname* " muss mit einem der folgenden Pragmas deklariert werden:
 
 - [code_seg](../preprocessor/code-seg.md)
 
@@ -53,7 +53,7 @@ int main() {
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

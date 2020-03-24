@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - nonextensible attribute
 ms.assetid: c7ef1554-809f-4ea0-a7cd-dc7786d40c3e
-ms.openlocfilehash: f2947e223d068ea6cc92a41abe19cb7f920112b2
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 2a1cd4d685e2fd141c6e11feaea488f44a884c80
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514396"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214670"
 ---
 # <a name="nonextensible"></a>nonextensible
 
-Gibt an, `IDispatch` dass die Implementierung nur die Eigenschaften und Methoden enthält, die in der Schnittstellen Beschreibung aufgeführt sind, und kann zur Laufzeit nicht mit zusätzlichen Membern erweitert werden.
+Gibt an, dass die `IDispatch` Implementierung nur die Eigenschaften und Methoden enthält, die in der Schnittstellen Beschreibung aufgeführt sind, und kann zur Laufzeit nicht mit zusätzlichen Elementen erweitert werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,7 +23,7 @@ Gibt an, `IDispatch` dass die Implementierung nur die Eigenschaften und Methoden
 [nonextensible]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **nonextensible** C++ -Attribut verfügt über die gleiche Funktionalität wie das [nicht erweiterbare](/windows/win32/Midl/nonextensible) Mittel l-Attribut.
 
@@ -48,7 +48,7 @@ __interface IFireTabCtrl
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -56,12 +56,12 @@ __interface IFireTabCtrl
 |-|-|
 |**Betrifft**|**interface**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|`dual`und `oleautomation`oder`dispinterface`|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|`dual` und `oleautomation`oder `dispinterface`|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)

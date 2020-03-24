@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C++]
 ms.assetid: 63739928-8985-4b05-93ce-016322e6da3d
-ms.openlocfilehash: 3dda0b19fffaaf725ab363a0c4fe70d2ca54e3f7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 23d31e1456106d5f82c4a13079c72c231b8477bd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267714"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190481"
 ---
 # <a name="break-statement-c"></a>break-Anweisung (C++)
 
-Die **Break** -Anweisung beendet die Ausführung der nächsten einschließenden Schleife oder bedingungsanweisung, in dem er angezeigt wird. Das Steuerelement wird an die Anweisung übergeben, die auf das Ende der Anweisung folgt, falls vorhanden.
+Die **break** -Anweisung beendet die Ausführung der nächsten einschließenden Schleife oder bedingten Anweisung, in der Sie angezeigt wird. Das Steuerelement wird an die Anweisung übergeben, die auf das Ende der Anweisung folgt, falls vorhanden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,19 +23,19 @@ Die **Break** -Anweisung beendet die Ausführung der nächsten einschließenden 
 break;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Break** Anweisung wird verwendet, mit der bedingten [wechseln](../cpp/switch-statement-cpp.md) Anweisung und die [führen](../cpp/do-while-statement-cpp.md), [für](../cpp/for-statement-cpp.md), und [beim](../cpp/while-statement-cpp.md) schleifenanweisungen.
+Die **break** -Anweisung wird mit der Conditional [Switch](../cpp/switch-statement-cpp.md) -Anweisung und mit den Anweisungen [do](../cpp/do-while-statement-cpp.md), [for](../cpp/for-statement-cpp.md)und [while](../cpp/while-statement-cpp.md) Loop verwendet.
 
-In einem **wechseln** -Anweisung, die **Break** Anweisung bewirkt, dass das Programm zum Ausführen der nächsten Anweisung außerhalb der **wechseln** Anweisung. Ohne eine **Break** -Anweisung wird jede Anweisung von der entsprechenden **Fall** -Bezeichnung bis zum Ende des der **wechseln** -Anweisung, einschließlich der **Standard**-Klausel ausgeführt wird.
+In einer **Switch** -Anweisung bewirkt die **break** -Anweisung, dass das Programm die nächste Anweisung außerhalb der **Switch** -Anweisung ausführt. Ohne eine **break** -Anweisung wird jede Anweisung der übereinstimmenden **Case** -Bezeichnung bis zum Ende der **Switch** -Anweisung ausgeführt, einschließlich der **default** -Klausel.
 
-In Schleifen die **Break** -Anweisung beendet die Ausführung der nächsten einschließenden **führen**, **für**, oder **während** Anweisung. Das Steuerelement wird an die Anweisung übergeben, die auf die beendete Anweisung folgt, falls vorhanden.
+In Schleifen beendet die **break** -Anweisung die Ausführung der nächsten einschließenden **do**-, **for**-oder **while** -Anweisung. Das Steuerelement wird an die Anweisung übergeben, die auf die beendete Anweisung folgt, falls vorhanden.
 
-Innerhalb von geschachtelten Anweisungen der **Break** -Anweisung beendet nur die **führen**, **für**, **wechseln**, oder **beim**-Anweisung, die direkt eingeschlossen. Sie können eine **zurückgeben** oder **"GoTo"** Anweisung, um das Steuerelement von tiefer geschachtelten Strukturen.
+In geschachtelten Anweisungen beendet die **break** -Anweisung nur die **do**-, **for**-, **Switch**-oder **while** -Anweisung, die Sie sofort umschließt. Sie können eine **Return** -oder **goto** -Anweisung verwenden, um die Steuerung von tiefer geschachtelten Strukturen zu übertragen.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie Sie mit der **Break** -Anweisung in einem **für** Schleife.
+Der folgende Code zeigt die Verwendung der **break** -Anweisung in einer **for** -Schleife.
 
 ```cpp
 #include <iostream>
@@ -71,7 +71,7 @@ In each case:
 3
 ```
 
-Der folgende Code zeigt, wie Sie mit **Break** in einer **während** Schleife und einem **führen** Schleife.
+Der folgende Code zeigt, wie Sie die unter **Brechung** in einer **while** -Schleife und einer **do** -Schleife verwenden.
 
 ```cpp
 #include <iostream>
@@ -104,7 +104,7 @@ In each case:
 0123
 ```
 
-Der folgende Code zeigt, wie Sie mit **Break** in einer Switch-Anweisung. Verwenden Sie **Break** in jedem Fall, wenn Sie jeden Fall getrennt behandeln möchten, wenn Sie nicht verwenden **Break**, mit dem nächsten Fall fällt die codeausführung.
+Der folgende Code zeigt, wie Sie **break** in einer Switch-Anweisung verwenden. Sie müssen unter **brechen** in jedem Fall verwenden, wenn Sie die einzelnen Fälle separat behandeln möchten. Wenn Sie keine unter **Brechung**verwenden, greift die Codeausführung auf den nächsten Fall zu.
 
 ```cpp
 #include <iostream>
@@ -151,7 +151,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Sprunganweisungen](../cpp/jump-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

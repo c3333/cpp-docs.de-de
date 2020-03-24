@@ -5,12 +5,12 @@ helpviewer_keywords:
 - statements [C++], expression
 - expression statements
 ms.assetid: 547d7f7a-58be-4ffc-a4b3-d64c7ae7538c
-ms.openlocfilehash: 2973c3e0a1cd59edfc7ef1e771454b780da23cf9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2f12bbbafd9be50f851e36f472098431f9ac0d5d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62400603"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188999"
 ---
 # <a name="expression-statement"></a>Ausdrucksanweisung
 
@@ -24,10 +24,10 @@ Die Syntax für die Ausdrucksanweisung ist einfach
 [expression ] ;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Alle Ausdrücke in einer Ausdrucksanweisung werden ausgewertet und alle Nebeneffekte werden abgeschlossen, bevor die nächste Anweisung ausgeführt wird. Die häufigsten Ausdrucksanweisungen sind Zuweisungen und Funktionsaufrufe.  Da der Ausdruck optional ist, wird ein Semikolon allein als eine leere Ausdrucksanweisung, um genannte betrachtet die [null](../cpp/null-statement.md) Anweisung.
+Alle Ausdrücke in einer Ausdrucksanweisung werden ausgewertet und alle Nebeneffekte werden abgeschlossen, bevor die nächste Anweisung ausgeführt wird. Die häufigsten Ausdrucksanweisungen sind Zuweisungen und Funktionsaufrufe.  Da der Ausdruck optional ist, wird ein Semikolon allein als leere Ausdrucks Anweisung betrachtet, die als [null](../cpp/null-statement.md) -Anweisung bezeichnet wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)

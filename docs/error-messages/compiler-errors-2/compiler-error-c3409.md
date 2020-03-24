@@ -6,38 +6,38 @@ f1_keywords:
 helpviewer_keywords:
 - C3409
 ms.assetid: e372d9fa-230c-4b28-b6d3-6ad81ccf9dbb
-ms.openlocfilehash: 24f107e0c1f74f95afc521c8a4c888a26a35c13a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8ab2e0d152e4c123fa23512bc0111cebd070b3ee
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62173391"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200862"
 ---
 # <a name="compiler-error-c3409"></a>Compilerfehler C3409
 
-> ein leerer Attributblock ist nicht zulässig.
+> ein leerer Attribut Block ist nicht zulässig.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die eckigen Klammern wurden vom Compiler als interpretiert eine [Attribut](../../windows/attributes-alphabetical-reference.md) blockieren, aber keine Attribute gefunden wurden.
+Die eckigen Klammern wurden vom Compiler als [Attribut](../../windows/attributes-alphabetical-reference.md) Block interpretiert, aber es wurden keine Attribute gefunden.
 
-Der Compiler kann diesen Fehler generieren, bei der Verwendung von eckigen Klammern als Teil der Definition eines Lambda-Ausdrucks. Dieser Fehler tritt auf, wenn der Compiler nicht ermitteln kann, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder ein Attributblock sind. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../../cpp/lambda-expressions-in-cpp.md).
+Der Compiler generiert diesen Fehler möglicherweise, wenn Sie eckige Klammern als Teil der Definition eines Lambda-Ausdrucks verwenden. Dieser Fehler tritt auf, wenn der Compiler nicht bestimmen kann, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind. Weitere Informationen zu Lambdaausdrücken finden Sie unter [Lambda Expressions (Lambdaausdrücke)](../../cpp/lambda-expressions-in-cpp.md).
 
 ### <a name="to-correct-this-error"></a>So beheben Sie diesen Fehler
 
-1. Wenn die eckigen Klammern ein Attributblock gehören:
+1. Wenn die eckigen Klammern Teil eines Attribut Blocks sind:
 
-   1. Geben Sie einen oder mehrere Attribute in dem Attributblock.
+   1. Geben Sie ein oder mehrere Attribute im Attribut Block an.
 
-   1. Entfernen Sie den Attributblock.
+   1. Entfernen Sie den-Attribut Block.
 
-1. Wenn die eckigen Klammern Teil eines Lambda-Ausdrucks sind, stellen Sie sicher, dass es sich bei der Lambda-Ausdruck gültiger Syntaxregeln befolgt.
+1. Wenn die eckigen Klammern Teil eines Lambda-Ausdrucks sind, stellen Sie sicher, dass der Lambda-Ausdruck gültige Syntax Regeln befolgt.
 
-   Weitere Informationen zu Lambda-Ausdruckssyntax, finden Sie unter [Lambda-Ausdruckssyntax](../../cpp/lambda-expression-syntax.md).
+   Weitere Informationen zur Syntax von Lambda Ausdrücken finden Sie unter [Lambda](../../cpp/lambda-expression-syntax.md)-Ausdruckssyntax.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C3409 generiert.
+Im folgenden Beispiel wird C3409 generiert.
 
 ```cpp
 // C3409.cpp
@@ -56,7 +56,7 @@ class b : public x {};
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C3409 generiert, da ein Lambda-Ausdruck verwendet die `mutable` -Spezifikation, aber keine Parameterliste bereitstellt. Der Compiler kann nicht bestimmen, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder ein Attributblock sind.
+Im folgenden Beispiel wird C3409 generiert, da ein Lambda-Ausdruck die `mutable` Spezifikation verwendet, aber keine Parameterliste bereitstellt. Der Compiler kann nicht feststellen, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind.
 
 ```cpp
 // C3409b.cpp
@@ -67,8 +67,8 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Attribut](../../windows/attributes-alphabetical-reference.md)<br/>
+[attribute](../../windows/attributes-alphabetical-reference.md)<br/>
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)<br/>
 [Lambdaausdruckssyntax](../../cpp/lambda-expression-syntax.md)

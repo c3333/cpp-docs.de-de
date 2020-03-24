@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4237
 ms.assetid: 87bfec39-5241-464f-9feb-517b49f352ea
-ms.openlocfilehash: 62ce0a0edc7f15bc5a19e4630133976f413da35a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: aaa26393f1ce76d3e1bc40e5ba4978d1bcdb4fc9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352657"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193757"
 ---
 # <a name="linker-tools-warning-lnk4237"></a>Linkertoolwarnung LNK4237
 
-/ Subsystem: native wurde beim Importieren von 'Dll'; angegeben Verwenden Sie Subsystem: Console oder native.
+/Subsystem: nativ angegeben beim Importieren aus "dll". Verwenden Sie/Subsystem: Console oder/Subsystem: Windows.
 
-[/ Subsystem: native](../../build/reference/subsystem-specify-subsystem.md) angegeben wurde, beim Erstellen einer Windows (Win32)-Anwendung, die direkt eine oder mehrere der folgenden verwendet:
+[/Subsystem: Native](../../build/reference/subsystem-specify-subsystem.md) wurde beim Entwickeln einer Windows-Anwendung (Win32) angegeben, die eine oder mehrere der folgenden Aktionen direkt verwendet:
 
 - kernel32.dll
 
-- gdi32.dll
+- gdi32. dll
 
 - user32.dll
 
-- eines der Msvcrt\* Dlls.
+- eine der msvcrt-\* DLLs.
 
-Diese Warnung beheben, indem Sie nicht angeben **/Subsystem: native**.
+Beheben Sie diese Warnung, indem Sie nicht **/Subsystem: Native**angeben.

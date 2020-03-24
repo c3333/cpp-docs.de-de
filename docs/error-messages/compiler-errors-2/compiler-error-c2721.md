@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2721
 ms.assetid: 7a97823c-3ce1-4112-8253-fc1448685235
-ms.openlocfilehash: bf33ebdc3f34efb22809cbc5e62070226df2fd5e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6edda08807c752c9257bf09033538d57ac276ed7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62300770"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202127"
 ---
 # <a name="compiler-error-c2721"></a>Compilerfehler C2721
 
-"Spezifizierer": Speicherklassenspezifizierer zwischen Operator-Schlüsselwort und dem Typ unzulässig
+"Spezifizierer": Speicherklassenspezifizierer zwischen dem Schlüsselwort "Operator" und dem Typ unzulässig
 
-Benutzerdefinierte Konvertierungen gelten für alle Storage-Klassen, sodass in eine typkonvertierung eine Speicherklasse angegeben werden kann.
+Benutzerdefinierte Typkonvertierungen gelten für alle Speicher Klassen, sodass Sie keine Speicher Klasse in einer Typkonvertierung angeben können.

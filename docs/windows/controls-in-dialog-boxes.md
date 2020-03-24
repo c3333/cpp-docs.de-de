@@ -1,5 +1,5 @@
 ---
-title: Dialogfeld-Steuerelemente (C++) | Microsoft-Dokumentation
+title: Dialog Feld-SteuerC++Elemente () | Microsoft-Dokumentation
 ms.date: 02/15/2019
 f1_keywords:
 - Custom Control
@@ -13,93 +13,93 @@ helpviewer_keywords:
 - dialog box controls [C++], custom (user) controls
 - Dialog Editor [C++], custom controls
 ms.assetid: e216c4f9-2fd4-429d-889a-8ebce7bad177
-ms.openlocfilehash: 568754bc514ae017293805fab1b25849d5ffe5f8
-ms.sourcegitcommit: 8bb2bea1384b290b7570b01608a86c7488ae7a02
+ms.openlocfilehash: c79021387de2c8bc8f7f106a93797b7efb07d6df
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400882"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160410"
 ---
-# <a name="dialog-box-controls-c"></a>Dialogfeld-Steuerelemente (C++)
+# <a name="dialog-box-controls-c"></a>Dialog Feld-SteuerC++Elemente ()
 
-Sie können Steuerelemente hinzufügen, um ein Dialogfeld unter Verwendung der **Dialog-Editor** Registerkarte die [Fenster "Toolbox"](/visualstudio/ide/reference/toolbox) , wählen Sie das Steuerelement, Sie möchten, und ziehen Sie es in das Dialogfeld ermöglicht. In der Standardeinstellung die **Toolbox** Fenster automatisch im Hintergrund festgelegt ist. Sie wird als eine Registerkarte am linken Rand Ihrer Lösung bei der **Dialog-Editor** geöffnet ist. Allerdings können Sie anheften der **Toolbox** Fenster an Position durch Auswählen der **automatisch im Hintergrund** Schaltfläche in der oberen rechten Ecke des Fensters. Weitere Informationen zum Steuern des Verhaltens des in diesem Fenster finden Sie unter [Fensterverwaltung](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
+Sie können einem Dialogfeld Steuerelemente hinzufügen, indem Sie die Registerkarte " **Dialog-Editor** " im [Fenster "Toolbox](/visualstudio/ide/reference/toolbox) " verwenden, mit der Sie das gewünschte Steuerelement auswählen und auf das Dialogfeld ziehen können. Standardmäßig ist das Fenster **Toolbox** auf automatisch ausblenden festgelegt. Wenn der **Dialog-Editor** geöffnet ist, wird er als Registerkarte am linken Rand der Projekt Mappe angezeigt. Sie können das **Toolbox** Fenster jedoch an die Position anheften, indem Sie die Schaltfläche **automatisch im Hintergrund** in der oberen rechten Ecke des Fensters auswählen. Weitere Informationen zum Steuern des Verhaltens dieses Fensters finden Sie unter [Fensterverwaltung](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
 
-Die schnellste Möglichkeit zum Hinzufügen von Steuerelementen zu einem Dialogfeld, vorhandene Steuerelemente neu positionieren oder verschieben Sie die Steuerelemente in einem Dialogfeld in eine andere ist die Verwendung die Drag & Drop-Methode. Die Position des Steuerelements wird in einer gepunkteten Linie beschrieben werden, bis sie in das Dialogfeld gelöscht wird. Wenn Sie ein Steuerelement an ein Dialogfeld mit der Drag & Drop-Methode hinzufügen, erhält das Steuerelement eine Standardhöhe für diese Art von Steuerelement geeignet.
+Die schnellste Möglichkeit zum Hinzufügen von Steuerelementen zu einem Dialogfeld, zum Neupositionieren vorhandener Steuerelemente oder zum Verschieben von Steuerelementen von einem Dialogfeld zu einem anderen besteht darin, die Drag & Drop-Methode zu verwenden. Die Position des Steuer Elements wird in einer gepunkteten Linie angezeigt, bis Sie im Dialogfeld abgelegt wird. Wenn Sie einem Dialogfeld mit der Drag-and-Drop-Methode ein Steuerelement hinzufügen, erhält das Steuerelement eine Standardhöhe, die für diese Art von Steuerelement geeignet ist.
 
-Wenn Sie ein Dialogfeld, das ein Steuerelement hinzufügen oder ihn neu anzuordnen, möglicherweise die endgültige Position von Führungslinien oder Ränder bestimmt werden oder ob Sie das Layoutraster aktiviert haben.
+Wenn Sie ein Steuerelement zu einem Dialogfeld hinzufügen oder es neu positionieren, kann die endgültige Platzierung durch Führungslinien oder Ränder bestimmt werden, oder es wird festgelegt, ob das Layoutraster aktiviert ist.
 
-Nachdem Sie das Dialogfeld ein Steuerelement hinzugefügt haben, können Sie Eigenschaften wie z. B. die Beschriftung, im Ändern der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window). Sie können auch mehrere Steuerelemente auswählen und alle gleichzeitig, ihre Eigenschaften ändern.
+Nachdem Sie dem Dialogfeld ein Steuerelement hinzugefügt haben, können Sie Eigenschaften wie die Beschriftung im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window)ändern. Sie können auch mehrere Steuerelemente auswählen und ihre Eigenschaften gleichzeitig ändern.
 
-Weitere Informationen zu den **Dialog-Editor**, finden Sie unter Vorgehensweise [hinzufügen, bearbeiten oder Löschen von Steuerelementen](adding-editing-or-deleting-controls.md), [Layout-Steuerelemente](../windows/arrangement-of-controls-on-dialog-boxes.md), und [Steuern des Zugriffs definieren und Werte](../windows/defining-mnemonics-access-keys.md).
+Weitere Informationen über den **Dialog-Editor**finden Sie unter Vorgehensweise beim [hinzufügen, bearbeiten oder löschen](adding-editing-or-deleting-controls.md)von Steuerelementen, [Layoutsteuerelementen](../windows/arrangement-of-controls-on-dialog-boxes.md)und [Definieren von Steuerelement Zugriff und-Werten](../windows/defining-mnemonics-access-keys.md).
 
-Weitere Informationen zu Steuerelementen und Dialogfelder, finden Sie unter [Steuerelementklassen](../mfc/control-classes.md), [Dialogfeldklassen](../mfc/dialog-box-classes.md), und [Stile des Schiebeleisten Steuerelements](../mfc/reference/styles-used-by-mfc.md#scroll-bar-styles).
+Weitere Informationen zu Steuerelementen und Dialogfeldern finden Sie unter [Steuerelement Klassen](../mfc/control-classes.md), [Dialog Feld Klassen](../mfc/dialog-box-classes.md)und Stile der Bild Lauf [Leiste](../mfc/reference/styles-used-by-mfc.md#scroll-bar-styles).
 
-Die Standardsteuerelemente sind in der **Toolbox** Standardwert Ereignisse sind:
+Die Standard Steuerelemente, die in der **Toolbox** mit Standard Ereignissen verfügbar sind, lauten:
 
-|Steuerelementname|Standardereignis|
+|Steuerelementname|Standard Ereignis|
 |---|---|
-|[Schaltflächen-Steuerelement](../mfc/reference/cbutton-class.md)|BN_CLICKED|
+|[Button-Steuerelement](../mfc/reference/cbutton-class.md)|BN_CLICKED|
 |[Kontrollkästchen-Steuerelement](../mfc/reference/styles-used-by-mfc.md#button-styles)|BN_CLICKED|
-|[Kombinationsfeld-Steuerelement](../mfc/reference/ccombobox-class.md)|CBN_SELCHANGE|
-|[Steuerelement bearbeiten](../mfc/reference/cedit-class.md)|EN_CHANGE-EREIGNIS|
-|Gruppenfeld|(nicht zutreffend)|
+|[Kombinations Feld-Steuerelement](../mfc/reference/ccombobox-class.md)|CBN_SELCHANGE|
+|[Steuerelement bearbeiten](../mfc/reference/cedit-class.md)|EN_CHANGE|
+|Gruppenfeld|(–)|
 |[Listenfeld-Steuerelement](../mfc/reference/clistbox-class.md)|LBN_SELCHANGE|
 |[Optionsfeld-Steuerelement](../mfc/reference/styles-used-by-mfc.md#button-styles)|BN_CLICKED|
-|[Statischer Text-Steuerelement](../mfc/reference/cstatic-class.md)|(nicht zutreffend)|
-|[Bildsteuerelement](../mfc/reference/cpictureholder-class.md)|(nicht zutreffend)|
-|[Rich Edit 2.0-Steuerelement](../mfc/using-cricheditctrl.md)|EN_CHANGE-EREIGNIS|
-|[Bildlaufleisten-Steuerelement](../mfc/reference/cscrollbar-class.md)|NM_THEMECHANGED|
+|[Statisches Text Steuerelement](../mfc/reference/cstatic-class.md)|(–)|
+|[Bild-Steuerelement](../mfc/reference/cpictureholder-class.md)|(–)|
+|[Rich Edit 2,0-Steuerelement](../mfc/using-cricheditctrl.md)|EN_CHANGE|
+|[ScrollBar-Steuerelement](../mfc/reference/cscrollbar-class.md)|NM_THEMECHANGED|
 
 > [!NOTE]
-> Weitere Informationen zur Verwendung der **RichEdit 1.0** mit MFC zu steuern, finden Sie unter [Verwenden des RichEdit 1.0-Steuerelements mit MFC](../windows/using-the-richedit-1-0-control-with-mfc.md) und [Rich bearbeiten Beispiele für](../mfc/rich-edit-control-examples.md).
+> Weitere Informationen zur Verwendung des **RichEdit 1,0** -Steuer Elements mit MFC finden Sie unter [Verwenden des RichEdit 1,0-Steuer Elements mit MFC](../windows/using-the-richedit-1-0-control-with-mfc.md) und [Beispielen für Rich-Edit-Steuer](../mfc/rich-edit-control-examples.md)Elemente.
 
-Die [Windows-Standardsteuerelemente](../mfc/controls-mfc.md) zur Verfügung, in der **Toolbox** angeben, werden umfangreichere Funktionen:
+Die [allgemeinen Windows](../mfc/controls-mfc.md) -Steuerelemente, die in der **Toolbox** verfügbar sind, um mehr Funktionalität bereitzustellen:
 
-|Steuerelementname|Standardereignis|
+|Steuerelementname|Standard Ereignis|
 |---|---|
-|[Schieberegler-Steuerelement](../mfc/slider-control-styles.md)|NM_CUSTOMDRAW|
-|[Drehfeld-Steuerelement](../mfc/using-cspinbuttonctrl.md)|UDN_DELTAPOS|
-|[Statuskontrolle](../mfc/styles-for-the-progress-control.md)|NM_CUSTOMDRAW|
-|[Abkürzungstasten-Steuerelement](../mfc/using-a-hot-key-control.md)|NM_OUTOFMEMORY|
-|[Listensteuerelement](../mfc/list-control-and-list-view.md)|LVN_ITEMCHANGE|
-|[Strukturansicht-Steuerelement](../mfc/tree-control-styles.md)|TVN_SELCHANGE|
-|[Registerkarten-Steuerelement](../mfc/tab-controls-and-property-sheets.md)|TCN_SELCHANGE|
-|[Animation-Steuerelement](../mfc/using-an-animation-control.md)|ACN_START|
-|[Datums-/ Zeitauswahl-Steuerelement](../mfc/creating-the-date-and-time-picker-control.md)|DTN_DATETIMECHANGE|
+|[Slider-Steuerelement](../mfc/slider-control-styles.md)|NM_CUSTOMDRAW|
+|[Dreh Steuerelement](../mfc/using-cspinbuttonctrl.md)|UDN_DELTAPOS|
+|[Fortschrittskontrolle](../mfc/styles-for-the-progress-control.md)|NM_CUSTOMDRAW|
+|[Hot Key-Steuerelement](../mfc/using-a-hot-key-control.md)|NM_OUTOFMEMORY|
+|[Listen Steuerelement](../mfc/list-control-and-list-view.md)|LVN_ITEMCHANGE|
+|[Tree-Steuerelement](../mfc/tree-control-styles.md)|TVN_SELCHANGE|
+|[Register Steuerelement](../mfc/tab-controls-and-property-sheets.md)|TCN_SELCHANGE|
+|[Animations Steuerelement](../mfc/using-an-animation-control.md)|ACN_START|
+|[Steuerelement für Datums-und Uhrzeit](../mfc/creating-the-date-and-time-picker-control.md)|DTN_DATETIMECHANGE|
 |[Monatskalender-Steuerelement](../mfc/month-calendar-control-examples.md)|MCN_SELCHANGE|
-|[IP-Adressensteuerelement](../mfc/reference/cipaddressctrl-class.md)|IPN_FIELDCHANGED|
-|[Erweitertes Kombinationsfeld-Steuerelement](../mfc/creating-an-extended-combo-box-control.md)||
+|[IP-Adress Steuerung](../mfc/reference/cipaddressctrl-class.md)|IPN_FIELDCHANGED|
+|[Erweitertes Kombinations Feld-Steuerelement](../mfc/creating-an-extended-combo-box-control.md)||
 |Benutzerdefiniertes Steuerelement|TTN_GETDISPINFO|
 
 ## <a name="custom-controls"></a>Benutzerdefinierte Steuerelemente
 
-Die **Dialog-Editor** können Sie vorhandene benutzerdefinierte oder Benutzersteuerelemente in einer Dialogfeldvorlage.
+Mit dem **Dialog-Editor** können Sie vorhandene benutzerdefinierte Steuerelemente oder Benutzer Steuerelemente in einer Dialog Feld Vorlage verwenden.
 
 > [!NOTE]
-> Benutzerdefinierte Steuerelemente in diesem Zusammenhang sind nicht zu verwechseln mit ActiveX-Steuerelementen. ActiveX-Steuerelemente wurden benutzerdefinierte OLE-Steuerelemente bezeichnet. Verwechseln Sie nicht auch diese Steuerelemente mit den ownerdrawn-Steuerelementen in Windows.
+> Benutzerdefinierte Steuerelemente in diesem Sinne sollten nicht mit ActiveX-Steuerelementen verwechselt werden. ActiveX-Steuerelemente wurden mitunter als benutzerdefinierte OLE-Steuerelemente bezeichnet Außerdem sollten Sie diese Steuerelemente nicht mit den vom Besitzer gezeichneten Steuerelementen in Windows verwechseln.
 
-Diese Funktion dient als die vom Windows-Steuerelemente verwenden zu können. Zur Laufzeit für das Steuerelement eine Fensterklasse (nicht die gleiche als C++-Klasse) zugeordnet ist. Eine allgemeinere Möglichkeit zum Ausführen der gleichen Aufgabe besteht darin Kontrolle, z. B. ein statisches Steuerelement in einem Dialogfeld zu installieren. Klicken Sie dann zur Laufzeit in die [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog) funktionieren, entfernen Sie das Steuerelement aus, und durch Ihr eigenes benutzerdefiniertes Steuerelement ersetzen.
+Diese Funktion soll es Ihnen ermöglichen, andere Steuerelemente als die von Windows bereitgestellten zu verwenden. Zur Laufzeit wird das Steuerelement einer Fenster Klasse (nicht der gleichen C++ Klasse) zugeordnet. Eine allgemeinere Methode, dieselbe Aufgabe auszuführen, besteht darin, ein beliebiges Steuerelement, z. b. ein statisches Steuerelement, in Ihrem Dialogfeld zu installieren. Entfernen Sie dann zur Laufzeit in der [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog) -Funktion das Steuerelement, und ersetzen Sie es durch ihr eigenes benutzerdefiniertes Steuerelement.
 
 > [!NOTE]
-> Dies ist eine alte Technik. Noch heute in den meisten Fällen sollten Sie ein ActiveX-Steuerelement oder eine Unterklasse eines allgemeinen Steuerelements von Windows zu schreiben.
+> Dies ist eine alte Technik. Heutzutage empfiehlt es sich in den meisten Fällen, ein ActiveX-Steuerelement oder eine Unterklasse mit einem allgemeinen Windows-Steuerelement zu schreiben.
 
-Für benutzerdefinierte Steuerelemente sind Sie auf:
+Für diese benutzerdefinierten Steuerelemente sind Sie auf Folgendes beschränkt:
 
-- Festlegen des Speicherorts im Dialogfeld an.
+- Festlegen der Position im Dialogfeld.
 
 - Eingeben einer Beschriftung.
 
-- Identifizieren den Namen der Windows-Klasse des Steuerelements aus, da Anwendungscode, damit er das Steuerelement mit diesem Namen registrieren muss.
+- Identifizieren des Namens der Windows-Klasse des Steuer Elements, da der Anwendungscode das Steuerelement mit diesem Namen registrieren muss.
 
-- Geben einen 32-Bit-Hexadezimalwert, das Format des Steuerelements legt diese fest.
+- Eingeben eines 32-Bit-hexadezimal Werts, der den Stil des Steuer Elements festlegt.
 
-- Wenn den erweiterten Stil.
+- Festlegen des erweiterten Stils.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dialog-Editor](../windows/dialog-editor.md)
 

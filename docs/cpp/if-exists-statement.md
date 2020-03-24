@@ -8,14 +8,14 @@ helpviewer_keywords:
 - symbols, testing for existence
 - __if_exists keyword [C++]
 ms.assetid: d3eb34b6-f3a9-4063-a286-b62a28c0c7fa
-ms.openlocfilehash: 9d5a0b24bb08a9485b2d212058fa8f0bd82e5842
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ea136ac0312b78519fe2d8ea88ace4d8b0d69946
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62183673"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178417"
 ---
-# <a name="ifexists-statement"></a>__if_exists-Anweisung
+# <a name="__if_exists-statement"></a>__if_exists-Anweisung
 
 Die **__if_exists** -Anweisung testet, ob der angegebene Bezeichner vorhanden ist. Wenn der Bezeichner vorhanden ist, wird der angegebene Anweisungsblock ausgeführt.
 
@@ -29,25 +29,25 @@ statements
 
 #### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*identifier*|Der Bezeichner, dessen Vorhandensein Sie überprüfen möchten.|
-|*statements*|Eine oder mehrere Anweisungen ausgeführt wird, wenn *Bezeichner* vorhanden ist.|
+|*Äußerungen*|Eine oder mehrere auszuführende Anweisungen, wenn der *Bezeichner* vorhanden ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!CAUTION]
->  Um die zuverlässigsten Ergebnisse zu erzielen, verwenden die **__if_exists** Anweisung unter den folgenden Einschränkungen.
+>  Um die zuverlässigsten Ergebnisse zu erzielen, verwenden Sie die **__if_exists** -Anweisung unter den folgenden Einschränkungen.
 
-- Anwenden der **__if_exists** -Anweisung nur einfache Typen, die nicht durch Vorlagen.
+- Wenden Sie die **__if_exists** -Anweisung nur auf einfache Typen, nicht auf Vorlagen an.
 
-- Anwenden der **__if_exists** -Anweisung auf Bezeichner innerhalb oder außerhalb einer Klasse. Wenden Sie keine der **__if_exists** Anweisung, um lokale Variablen.
+- Wenden Sie die **__if_exists** -Anweisung auf Bezeichner innerhalb oder außerhalb einer Klasse an. Wenden Sie die **__if_exists** -Anweisung nicht auf lokale Variablen an.
 
-- Verwenden der **__if_exists** Anweisung nur im Text einer Funktion. Außerhalb des Texts einer Funktion die **__if_exists** -Anweisung kann nur vollständig definierte Typen testen.
+- Verwenden Sie die **__if_exists** -Anweisung nur im Text einer Funktion. Außerhalb des Texts einer Funktion können mit der **__if_exists** -Anweisung nur vollständig definierte Typen getestet werden.
 
 - Wenn Sie auf überladene Funktionen testen, können Sie nicht auf eine bestimmte Form der Überladung testen.
 
-Die Ergänzung der **__if_exists** -Anweisung ist die [__if_not_exists](../cpp/if-not-exists-statement.md) Anweisung.
+Das Komplement der **__if_exists** -Anweisung ist die [__if_not_exists](../cpp/if-not-exists-statement.md) -Anweisung.
 
 ## <a name="example"></a>Beispiel
 
@@ -121,7 +121,7 @@ g_bFlag = 1
 C::f exists
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

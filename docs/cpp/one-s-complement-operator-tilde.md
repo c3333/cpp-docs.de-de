@@ -1,5 +1,5 @@
 ---
-title: 'Eine&#39;s Komplementoperator: ~'
+title: 'Ein&#39;-e-Komplement Operator: ~'
 ms.date: 11/04/2016
 f1_keywords:
 - "~"
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - compl operator
 - ~ operator [C++], syntax
 ms.assetid: 4bf81967-34f7-4b4b-aade-fd03d5da0174
-ms.openlocfilehash: d8fb8ca56932669ff85646f2aa0c10691122013b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 777f253925caf38647863bdaa93fde8d5a03e3f9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62245021"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177715"
 ---
-# <a name="one39s-complement-operator-"></a>Eine&#39;s Komplementoperator: ~
+# <a name="one39s-complement-operator-"></a>Ein&#39;-e-Komplement Operator: ~
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,13 +25,13 @@ ms.locfileid: "62245021"
 ~ cast-expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Einerkomplementoperator (`~`), der manchmal als "bitweiser Komplementoperator" bezeichnet wird, ergibt eine bitweise Einerkomplement seines Operanden. Das bedeutet, dass jedes Bit, das 1 im Operanden ist, 0 im Ergebnis ist. Umgekehrt ist jedes Bit, das 0 im Operanden ist, im Ergebnis 1. Der Operand für den Einerkomplementoperator muss ein ganzzahliger Typ sein.
 
 ## <a name="operator-keyword-for-"></a>Operator-Schlüsselwort für ~
 
-Die **Compl** -Operator ist die ausgeschriebene Variante von `~`. Es gibt zwei Möglichkeiten, den Zugriff auf die **Compl** -Operator in Programmen: Fügen Sie die Headerdatei `iso646.h`, oder Kompilieren Sie mit [/Za](../build/reference/za-ze-disable-language-extensions.md).
+Der **compl** -Operator ist die Text Entsprechung von `~`. Es gibt zwei Möglichkeiten, auf den **compl** -Operator in ihren Programmen zuzugreifen: Schließen Sie die Header Datei `iso646.h`ein, oder kompilieren Sie mit [/Za](../build/reference/za-ze-disable-language-extensions.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -52,9 +52,9 @@ int main () {
 
 In diesem Beispiel ist der neue Wert, der `y` zugewiesen ist, das Einerkomplement des Werts ohne Vorzeichen 0xFFFF oder 0x0000.
 
-Ganzzahlige Erweiterung wird für ganzzahlige Operanden durchgeführt, und der resultierende Typ ist der Typ, auf den der Operand erweitert wird. Finden Sie unter [Standardkonvertierungen](standard-conversions.md) für Weitere Informationen über die Ausführung der heraufstufung.
+Ganzzahlige Erweiterung wird für ganzzahlige Operanden durchgeführt, und der resultierende Typ ist der Typ, auf den der Operand erweitert wird. Weitere Informationen zur Ausführung der herauf Stufung finden Sie unter [Standard Konvertierungen](standard-conversions.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>

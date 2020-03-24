@@ -95,12 +95,12 @@ helpviewer_keywords:
 - ReleaseRows method
 - SetRows method
 ms.assetid: c6bde426-c543-4022-a98a-9519d9e2ae59
-ms.openlocfilehash: a235a38531141f306b33093ac2546ae232830f0e
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: e66a183c7bbafa16b3aefea8da1472255b507468
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545798"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212122"
 ---
 # <a name="cbulkrowset-class"></a>CBulkRowset-Klasse
 
@@ -118,11 +118,11 @@ class CBulkRowset : public CRowset<TAccessor>
 *TAccessor*<br/>
 Eine Accessor-Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -271,7 +271,7 @@ in Der Nenner, der verwendet wird, um die Bruch Position zu bestimmen, von der D
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `MoveToRatio` die Zeilen ungefähr gemäß der folgenden Formel abrufen:
 
@@ -308,11 +308,11 @@ void SetRows(DBROWCOUNT nRows) throw();
 *nRows*<br/>
 in Die neue Größe des Rowsets (Anzahl der Zeilen).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie diese Funktion aufzurufen, muss Sie vor dem Öffnen des Rowsets liegen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

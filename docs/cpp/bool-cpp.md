@@ -8,12 +8,12 @@ helpviewer_keywords:
 - bool keyword [C++]
 - __BOOL_DEFINED macro
 ms.assetid: 9abed3f2-d21c-4eb4-97c5-716342e613d8
-ms.openlocfilehash: a3384bbb118c7363a603b5b9b0c8a375cb3dd185
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: db246cda79c778f37c5afbfda4a68c191c474e12
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301625"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190494"
 ---
 # <a name="bool-c"></a>bool (C++)
 
@@ -50,7 +50,7 @@ Der Postfix-oder Präfix **--** -Operator kann nicht auf eine Variable dieses Ty
 
 Der **bool** -Typ nimmt an ganzzahligen Erweiterungen Teil. Ein r-Wert des Typs " **bool** " kann in einen r-Wert vom Typ " **int**" konvertiert werden, wobei "false" 0 (null) und "true" ist. Als eindeutiger Typ nimmt **bool** an der Überladungs Auflösung Teil.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Integrierte Typen](../cpp/fundamental-types-cpp.md)

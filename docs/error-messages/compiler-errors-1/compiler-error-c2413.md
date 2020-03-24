@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2413
 ms.assetid: d0403952-f41e-4b21-840d-ab4e44171838
-ms.openlocfilehash: 3c29b3ebdb6cca1ff5fcc9f84348f4b9950ae128
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 251818f0dbdf0a73c7c30bf20c1944b5b1087453
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402995"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205725"
 ---
 # <a name="compiler-error-c2413"></a>Compilerfehler C2413
 
-"token": Unzulässige Ausrichtungsgröße
+"Token": unzulässige Ausrichtungs Größe
 
-Die Größe der Verwendung der `ALIGN` -Direktive nicht vorhanden ist oder außerhalb des gültigen Bereichs.
+Die mit der `ALIGN`-Direktive verwendete Größe fehlt oder liegt außerhalb des gültigen Bereichs.

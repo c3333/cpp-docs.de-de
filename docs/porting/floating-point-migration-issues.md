@@ -2,12 +2,12 @@
 title: Gleitkomma-Migrationsprobleme
 ms.date: 05/17/2017
 ms.assetid: 36a1b552-2f2b-4919-bc9d-c17f42434954
-ms.openlocfilehash: 0a84b764d395063f38cae299cff75437318b024e
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 40eb08e4f9c7058d6b11700535e1c25f86548a22
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626981"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215019"
 ---
 # <a name="floating-point-migration-issues"></a>Gleitkomma-Migrationsprobleme
 
@@ -29,7 +29,7 @@ Die Verbesserungen für Richtigkeit bei der Codeerstellung in verschiedenen Glei
 
 In den meisten Fällen führen Gleitkomma-Änderungen in den neuesten Compilern und Bibliotheken zu schnellerem oder genauerem Verhalten, oder beides. Sie erkennen möglicherweise auch eine bessere Prozessorleistung, wenn die SSE2-Anweisungen die x87-Anweisungen ersetzen. Wenn Sie jedoch über Code verfügen, der das Gleitkomma-Verhalten eines älteren Codes exakt replizieren muss, sollten Sie lieber die Visual Studio Funktionen zur nativen Festlegung von Zielversionen verwenden und das betroffene Projekt mit älteren Toolsets erstellen. Weitere Informationen finden Sie unter [Use native multi-targeting in Visual Studio to build old projects (Verwenden der nativen Festlegung von Zielversionen in Visual Studio, um alte Projekte zu erstellen)](use-native-multi-targeting.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Aktualisieren von Projekten aus früheren Versionen von VisualC++](upgrading-projects-from-earlier-versions-of-visual-cpp.md)<br/>
 [Überblick über potenzielle Aktualisierungsprobleme (Visual C++)](overview-of-potential-upgrade-issues-visual-cpp.md)<br/>

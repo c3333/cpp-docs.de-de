@@ -9,38 +9,38 @@ helpviewer_keywords:
 - application wizards [C++], creating record view classes
 - designing record views
 ms.assetid: 1d6f5439-754f-4b8b-a19d-841a4657827b
-ms.openlocfilehash: 15a8afde8c86d3dae8198e8f42b2b7c3b49f0dfa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dfd486c397dffa87295839f5ef62de0bd1ba812a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397964"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213420"
 ---
 # <a name="designing-and-creating-a-record-view--mfc-data-access"></a>Entwerfen und Erstellen einer Datensatzansicht (MFC-Datenzugriff)
 
-Sie können die datensatzansichtsklasse mit erstellen die [MFS-Anwendungsassistenten](../mfc/reference/database-support-mfc-application-wizard.md). Wenn Sie einen Anwendungs-Assistenten verwenden, erstellt er die Datensatzansichtsklasse und eine Dialogfeldvorlagen-Ressource (ohne Steuerelemente). Sie müssen den Visual C++-Dialog-Editor verwenden, um der Dialogfeldvorlagen-Ressource Steuerelemente hinzuzufügen. Andererseits, bei Verwendung von **Klasse hinzufügen**, müssen Sie zunächst die Dialogfeldvorlagen-Ressource im Dialogfeld Editor erstellen und dann die datensatzansichtsklasse erstellen.
+Sie können die Daten Satz Ansichts Klasse mit dem [MFC-Anwendungs-Assistenten](../mfc/reference/database-support-mfc-application-wizard.md)erstellen. Wenn Sie einen Anwendungs-Assistenten verwenden, erstellt er die Datensatzansichtsklasse und eine Dialogfeldvorlagen-Ressource (ohne Steuerelemente). Sie müssen den Visual C++-Dialog-Editor verwenden, um der Dialogfeldvorlagen-Ressource Steuerelemente hinzuzufügen. Wenn Sie hingegen **Klasse hinzufügen**verwenden, müssen Sie zunächst die Dialogfeld Vorlagen Ressource im Dialog-Editor erstellen und dann die Daten Satz Ansichts Klasse erstellen.
 
 #### <a name="to-create-your-record-view-with-the-mfc-application-wizard"></a>So erstellen Sie eine Datensatzansicht mit dem MFC-Anwendungs-Assistenten
 
-1. Finden Sie unter [Datenbankunterstützung, MFC-Anwendungsassistenten](../mfc/reference/database-support-mfc-application-wizard.md).
+1. Siehe [Datenbankunterstützung, MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md).
 
 #### <a name="to-design-your-form"></a>So entwerfen Sie ein Formular
 
-1. Finden Sie unter [Dialog-Editor](../windows/dialog-editor.md).
+1. Siehe [Dialog-Editor](../windows/dialog-editor.md).
 
 #### <a name="to-create-your-record-view-class"></a>So erstellen Sie eine Datensatzansichtsklasse
 
-1. Finden Sie unter [Hinzufügen eines MFC-ODBC-Consumers](../mfc/reference/adding-an-mfc-odbc-consumer.md).
+1. Weitere Informationen finden Sie unter [Hinzufügen eines MFC-ODBC-Consumers](../mfc/reference/adding-an-mfc-odbc-consumer.md).
 
 Die folgenden Themen erläutern die zusätzlichen Informationen zur Verwendung von Datensatzansichten:
 
-- [Datensatzansichten: Navigationsunterstützung in einer Datensatzansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)
+- [Daten Satz Sichten: unterstützen der Navigation in einer Daten Satz Ansicht](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)
 
-- [Datensatzansichten: Verwenden einer Datensatzansicht](../data/using-a-record-view-mfc-data-access.md)
+- [Daten Satz Sichten: Verwenden einer Daten Satz Ansicht](../data/using-a-record-view-mfc-data-access.md)
 
-- [Datensatzansichten: Füllen eines Listenfelds aus einem zweiten Recordset](../data/filling-a-list-box-from-a-second-recordset-mfc-data-access.md)
+- [Daten Satz Ansichten: Füllen eines Listen Felds aus einem zweiten Recordset](../data/filling-a-list-box-from-a-second-recordset-mfc-data-access.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datensatzansichten (MFC-Datenzugriff)](../data/record-views-mfc-data-access.md)<br/>
 [Recordset (ODBC)](../data/odbc/recordset-odbc.md)<br/>

@@ -6,31 +6,31 @@ f1_keywords:
 helpviewer_keywords:
 - D9024
 ms.assetid: daf4896d-223d-4af0-9b6d-89109cf3d1bb
-ms.openlocfilehash: c577aceacef748045f867a6bc253a1dd6c84aafe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5de051b9ca5c09af74b94be4b75616bce6fadf2c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62214154"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196759"
 ---
 # <a name="command-line-warning-d9024"></a>Befehlszeilenwarnung D9024
 
-Unbekannte Quelle file "Typ"Dateiname"", Objektdatei wird angenommen
+Unbekannter Quell Dateityp "Dateiname", Objektdatei wird angenommen.
 
-Die Erweiterung der angegebenen Datei wurde nicht erkannt. Die Datei wurde davon ausgegangen, dass eine Objektdatei und an den Linker übergeben wurde.
+Die Erweiterung der angegebenen Datei wurde nicht erkannt. Es wird davon ausgegangen, dass die Datei eine Objektdatei ist und an den Linker übermittelt wurde.
 
-Es werden die folgenden Erweiterungen erkannt:
+Die folgenden Erweiterungen werden erkannt:
 
-- c (C-Quelldatei)
+- c (c-Quelldatei)
 
-- .cxx (C++-Quelldatei)
+- cxx (C++ Quelldatei)
 
-- .cpp (C++-Quelldatei)
+- cpp (C++ Quelldatei)
 
-- obj (Objekt-Datei)
+- . obj (Objektdatei)
 
-- LIB (Library-Datei)
+- . lib (Bibliotheksdatei)
 
-- DEF (Moduldefinitionsdatei)
+- . def (Modul Definitionsdatei)
 
-- EXP (Linker exportiert erstellt LINK/LIB-Datei)
+- . Exp (linker exportiert Datei, erstellt von Link/lib)

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1158
 ms.assetid: 45febf16-d9e1-42db-af91-532e2717fd6a
-ms.openlocfilehash: 0dbb40fb1fe0405f3685a5e7246ecba2b53ec526
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2602c488db660ce067c672df4a746c388d987120
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62254960"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184059"
 ---
 # <a name="linker-tools-error-lnk1158"></a>Linkertoolfehler LNK1158
 
-'Dateiname' kann nicht ausgeführt werden.
+"filename" kann nicht ausgeführt werden.
 
-Die angegebene ausführbare Datei, die aufgerufen werden, indem [LINK](../../build/reference/linking.md) ist nicht in das Verzeichnis mit LINK noch in einem in der PATH-Umgebungsvariablen angegebenen Verzeichnis.
+Die angegebene ausführbare Datei, die von [Link](../../build/reference/linking.md) aufgerufen wird, befindet sich nicht im Verzeichnis, das den Link enthält, oder in einem Verzeichnis, das in der PATH-Umgebungsvariablen
 
-Beispielsweise erhalten Sie diesen Fehler, wenn Sie versuchen, den PGOPTIMIZE-Parameter, um die ["/ LTCG"](../../build/reference/ltcg-link-time-code-generation.md) Linkeroption auf einem Computer mit einem 32-Bit-Betriebssystem.
+Beispielsweise wird dieser Fehler angezeigt, wenn Sie versuchen, den pgoptimiert-Parameter für die [/LTCG](../../build/reference/ltcg-link-time-code-generation.md) Linker-Option auf einem Computer mit einem 32-Bit-Betriebssystem zu verwenden.

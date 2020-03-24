@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C1108
 ms.assetid: 3cadf07b-b7a7-41c7-ad5c-06ceb8af8c3b
-ms.openlocfilehash: 6e029e5cff5994282e96484d7c1ea04ca61049f8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 39a1891713cfe513f6de63a9e66a0f30147ce96c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62257867"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203698"
 ---
 # <a name="fatal-error-c1108"></a>Schwerwiegender Fehler C1108
 
-> DLL konnte nicht gefunden: '*Dll-Namen*"
+> DLL konnte nicht gefunden werden: "*dll-Name*"
 
-Die angegebene DLL (*Dll-Namen*) wurde im Pfad nicht gefunden.
+Die angegebene DLL (*dll-Name*) wurde nicht im Pfad gefunden.
 
-Um diesen Fehler zu beheben, installieren Sie Visual C++ neu, oder kopieren Sie die entsprechende DLL-Datei von der Installation auf Ihrem Computer.
+Installieren Sie Visual C++ neu, oder kopieren Sie die entsprechende dll-Datei von der Installation auf Ihren Computer, um diesen Fehler zu beheben.

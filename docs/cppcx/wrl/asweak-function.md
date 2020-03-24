@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - AsWeak function
 ms.assetid: a6f10cfc-c1d6-4761-adb9-1a119cc99913
-ms.openlocfilehash: 45df6332fccb2a22284eb6478c7554d87318ca78
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d11f55d57f4053fd6d46b727a8ed91b340d1764b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398848"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214174"
 ---
 # <a name="asweak-function"></a>AsWeak-Funktion
 
@@ -36,19 +36,19 @@ Ein Zeiger auf den Typ des Parameters *p*.
 *p*<br/>
 Eine Instanz eines Typs.
 
-*pWeak*<br/>
-Wenn dieser Vorgang abgeschlossen ist, einen Zeiger auf einen schwachen Verweis auf Parameter *p*.
+*pweak*<br/>
+Wenn dieser Vorgang abgeschlossen ist, ein Zeiger auf einen schwachen Verweis auf den Parameter " *p*".
 
 ## <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn dieser Vorgang erfolgreich ist; andernfalls ein Fehler HRESULT, das die Ursache des Fehlers angibt.
+S_OK, wenn dieser Vorgang erfolgreich ist. andernfalls ein Fehler HRESULT, der die Ursache des Fehlers angibt.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

@@ -1,5 +1,5 @@
 ---
-title: Pointer-to-Member-Operatoren:. * "und" -&gt;*
+title: Pointer-to-Member-Operatoren:. * und-&gt;*
 ms.date: 11/04/2016
 f1_keywords:
 - .*
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - expressions [C++], operators
 - ->* operator
 ms.assetid: 2632be3f-1c81-4523-b56c-982a92a68688
-ms.openlocfilehash: 60dad0e3134662957ee21396d330af795e80918e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1ff7dd26f36f10948dac42783ad61d16f5feda09
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267662"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188336"
 ---
-# <a name="pointer-to-member-operators--and--gt"></a>Pointer-to-Member-Operatoren:. * "und" -&gt;*
+# <a name="pointer-to-member-operators--and--gt"></a>Pointer-to-Member-Operatoren:. * und-&gt;*
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,9 +27,9 @@ expression .* expression
 expression ->* expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Zeiger-auf-Member-Operatoren,. * und ->\*, den Wert eines bestimmten Klassenmembers für das Objekt angegeben wird, auf der linken Seite des Ausdrucks zurückgeben.  Die rechte Seite muss einen Klassenmember angeben.  Im folgenden Beispiel wird die Verwendung dieser Operatoren dargestellt:
+Die Pointer-to-Member-Operatoren. * und->\*geben den Wert eines bestimmten Klassenmembers für das auf der linken Seite des Ausdrucks angegebene Objekt zurück.  Die rechte Seite muss einen Klassenmember angeben.  Im folgenden Beispiel wird die Verwendung dieser Operatoren dargestellt:
 
 ```cpp
 // expre_Expressions_with_Pointer_Member_Operators.cpp
@@ -82,11 +82,11 @@ Im vorherigen Beispiel wird ein Zeiger auf einen Member, `pmfn` verwendet, um di
 
 Der binäre Operator. * kombiniert den ersten Operanden, der ein Objekt des Klassentyps sein muss, mit dem zweiten Operanden, der ein "Pointer-to-Member"-Typ sein muss.
 
-Der binäre Operator -> * kombiniert den ersten Operanden, der sein muss ein Zeiger auf ein Objekt vom Typ der Klasse, mit dem zweiten Operanden, der einen Zeiger-auf-Member-Typ sein muss.
+Der binäre Operator-> * kombiniert den ersten Operanden, der ein Zeiger auf ein Objekt des Klassen Typs sein muss, mit dem zweiten Operanden, der ein Zeiger-auf-Member-Typ sein muss.
 
 In einem Ausdruck, der den .*-Operator enthält, muss der erste Operand vom Klassentyp des Zeigers auf den Member sein (oder er muss auf ihn zugreifen können), der im zweiten Operanden angegeben wurde, oder er muss ein zugreifbarer Typ sein, der eindeutig von dieser Klasse abgeleitet wurde und für diese Klasse zugreifbar ist.
 
-In einem Ausdruck mit der-> *-Operator, der erste Operand muss vom Typ "Zeiger auf den Klassentyp" des Typs angegeben werden im zweiten Operanden, oder es muss von einem Typ eindeutig abgeleitet werden von dieser Klasse.
+In einem Ausdruck, der den-> *-Operator enthält, muss der erste Operand vom Typ "Zeiger auf den Klassentyp" des Typs sein, der im zweiten Operanden angegeben ist, oder er muss von einem Typ sein, der eindeutig von dieser Klasse abgeleitet ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -128,11 +128,11 @@ int main() {
 }
 ```
 
-Das Ergebnis der. * oder der->\* Zeiger-auf-Member-Operatoren ist ein Objekt oder eine Funktion des Typs, in der Deklaration des Zeigers auf den Member angegeben. Im vorherigen Beispiel ist das Ergebnis des Ausdrucks `ADerived.*pmfnFunc1()` ein Zeiger auf eine Funktion, die "void" zurückgibt. Dieses Ergebnis ist ein L-Wert, wenn der zweite Operand ein L-Wert ist.
+Das Ergebnis der\* Zeiger-auf-Member-Operatoren. * oder-> ist ein Objekt oder eine Funktion des Typs, der in der Deklaration des Zeigers auf Member angegeben wird. Im vorherigen Beispiel ist das Ergebnis des Ausdrucks `ADerived.*pmfnFunc1()` ein Zeiger auf eine Funktion, die "void" zurückgibt. Dieses Ergebnis ist ein L-Wert, wenn der zweite Operand ein L-Wert ist.
 
 > [!NOTE]
 >  Wenn das Ergebnis eines der Zeiger-auf-Member-Operatoren eine Funktion ist, kann das Ergebnis nur als Operand für den Funktionsaufrufoperator verwendet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

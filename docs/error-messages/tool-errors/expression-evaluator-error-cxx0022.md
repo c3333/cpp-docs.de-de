@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CXX0022
 - CAN0022
 ms.assetid: f6b299ac-a4ee-492c-bd9f-6fff005bc537
-ms.openlocfilehash: ac726c60d30a13d6458636d31dda6a8fb2cbd02d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5858ce936acfb8b949351c9263f3a9379c73648e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359864"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195824"
 ---
 # <a name="expression-evaluator-error-cxx0022"></a>Ausdrucksauswertungsfehler CXX0022
 
-Funktionsaufruf vor dem _main
+Funktionsaufrufe vor _main
 
-Eine Funktion kann von die C++-ausdrucksauswertung kann nicht ausgewertet werden, bevor der Debugger die Funktion eingegeben hat **_main**. Die Anwendung ist nicht ordnungsgemäß initialisiert bis **_main** aufgerufen wurde.
+Die C-Ausdrucks Auswertung kann eine Funktion nicht auswerten, bevor der Debugger die Funktion **_main**eingegeben hat. Das Programm wird erst ordnungsgemäß initialisiert, wenn **_main** aufgerufen wurde.
 
 Dieser Fehler ist mit CAN0022 identisch.

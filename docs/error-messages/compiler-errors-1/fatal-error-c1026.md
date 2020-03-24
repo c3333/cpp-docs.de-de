@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C1026
 ms.assetid: 89bb9d40-673a-44aa-a9f4-b42c07b49d44
-ms.openlocfilehash: b1a659967a9a62cb79e1084f7d1fa1729bae14da
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a7c7a5da01c8b4a44c307a00f53530acb12a8009
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62347128"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204652"
 ---
 # <a name="fatal-error-c1026"></a>Schwerwiegender Fehler C1026
 
 Stapelüberlauf im Parser, Programm zu komplex
 
-Der Speicherplatz erforderlich, um das Programm analysiert verursacht einen Stapelüberlauf des Compilers.
+Der Speicherplatz, der zum Analysieren des Programms erforderlich ist, verursachte einen compilerstapel Überlauf.
 
-Verringern Sie die Komplexität der Ausdrücke, nach:
+Verringern Sie die Komplexität von Ausdrücken wie folgt:
 
-- Verringern die Schachtelung im `for` und `switch` Anweisungen. Fügen Sie weitere tief geschachtelte Anweisungen in separate Funktionen an.
+- Verringern der Schachtelung in `for`-und `switch`-Anweisungen Fügen Sie tiefer geschachtelte-Anweisungen in separaten Funktionen ein.
 
-- Teilen Sie lange Ausdrücke, die durch Trennzeichen Operatoren oder Funktionsaufrufe einschließen.
+- Aufteilen von langen Ausdrücken, die Komma Operatoren oder Funktionsaufrufe einschließen.

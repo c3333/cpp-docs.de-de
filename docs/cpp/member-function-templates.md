@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - function templates, member functions
 ms.assetid: 83d51835-6a27-40ed-997c-7d90dc9182d8
-ms.openlocfilehash: 6955d755897d326479d2b3789edb02ff66806175
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: ee36d4f33f3e4216e2ad9c434ac1da4ca3aa83e8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345973"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177980"
 ---
 # <a name="member-function-templates"></a>Memberfunktionsvorlagen
 
@@ -85,7 +85,7 @@ Lokale Klassen dürfen keine Membervorlagen haben.
 
 Membervorlagenfunktionen können keine virtuellen Funktionen sein und können keine virtuellen Funktionen einer Basisklasse überschreiben, wenn sie mit dem gleichen Namen wie eine virtuelle Funktion der Basisklasse deklariert werden.
 
-Das folgende Beispiel zeigt eine auf Vorlagen basierende benutzerdefinierte Konvertierungen:
+Das folgende Beispiel zeigt eine auf Vorlagen basierende benutzerdefinierte Konvertierung:
 
 ```cpp
 // templated_user_defined_conversions.cpp
@@ -105,6 +105,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionsvorlagen](../cpp/function-templates.md)

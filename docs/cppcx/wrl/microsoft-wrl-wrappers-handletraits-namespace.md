@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - HandleTraits namespace
 ms.assetid: 2fb5c6d1-bfc2-4e09-91eb-31705064ffb3
-ms.openlocfilehash: 6ed8156b6a0e71d40d1579fc9a33912f698e1773
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b19cc426fc7c1b4fc6ec0638730d59998f8c108a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391971"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213732"
 ---
 # <a name="microsoftwrlwrappershandletraits-namespace"></a>Microsoft::WRL::Wrappers::HandleTraits-Namespace
 
-Beschreibt die Eigenschaften der verwendeten Ressourcentypen von Handles basierende.
+Beschreibt Merkmale allgemeiner handle-basierter Ressourcentypen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,28 +24,28 @@ Beschreibt die Eigenschaften der verwendeten Ressourcentypen von Handles basiere
 namespace Microsoft::WRL::Wrappers::HandleTraits;
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="structures"></a>Strukturen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CriticalSectionTraits-Struktur](criticalsectiontraits-structure.md)|Spezialisiert hat eine `CriticalSection` Objekt, das entweder ein ungültiges kritischen Abschnitt oder eine Funktion, die einen kritischen Abschnitt release unterstützt.|
-|[EventTraits-Struktur](eventtraits-structure.md)|Definiert die Merkmale einer `Event` Klassenhandle.|
-|[FileHandleTraits-Struktur](filehandletraits-structure.md)|Definiert die Merkmale eines Dateihandles.|
-|[HANDLENullTraits-Struktur](handlenulltraits-structure.md)|Definiert die allgemeinen Merkmale eines nicht initialisierten Handles.|
-|[HANDLETraits-Struktur](handletraits-structure.md)|Definiert die allgemeinen Merkmale eines Handles.|
-|[MutexTraits-Struktur](mutextraits-structure.md)|Definiert die allgemeinen Merkmale der [Mutex](mutex-class.md) Klasse.|
-|[SemaphoreTraits-Struktur](semaphoretraits-structure.md)|Definiert die allgemeinen Merkmale einer Semaphorobjekt.|
-|[SRWLockExclusiveTraits-Struktur](srwlockexclusivetraits-structure.md)|Beschreibt die allgemeinen Merkmale der `SRWLock` Klasse im Sperrmodus für exklusive.|
-|[SRWLockSharedTraits-Struktur](srwlocksharedtraits-structure.md)|Beschreibt die allgemeinen Merkmale der `SRWLock` Klasse in freigegebene sperren.|
+|[CriticalSectionTraits-Struktur](criticalsectiontraits-structure.md)|Spezialisiert ein `CriticalSection` Objekt, um entweder einen ungültigen kritischen Abschnitt oder eine Funktion zum Freigeben eines kritischen Abschnitts zu unterstützen.|
+|[EventTraits-Struktur](eventtraits-structure.md)|Definiert Merkmale eines `Event` Class-Handles.|
+|[FileHandleTraits-Struktur](filehandletraits-structure.md)|Definiert die Merkmale eines Datei Handles.|
+|[HANDLENullTraits-Struktur](handlenulltraits-structure.md)|Definiert allgemeine Merkmale eines nicht initialisierten Handles.|
+|[HANDLETraits-Struktur](handletraits-structure.md)|Definiert allgemeine Merkmale eines Handles.|
+|[MutexTraits-Struktur](mutextraits-structure.md)|Definiert allgemeine Merkmale der [Mutex](mutex-class.md) -Klasse.|
+|[SemaphoreTraits-Struktur](semaphoretraits-structure.md)|Definiert allgemeine Merkmale eines Semaphore-Objekts.|
+|[SRWLockExclusiveTraits-Struktur](srwlockexclusivetraits-structure.md)|Beschreibt allgemeine Merkmale der `SRWLock`-Klasse im exklusiven Sperrmodus.|
+|[SRWLockSharedTraits-Struktur](srwlocksharedtraits-structure.md)|Beschreibt allgemeine Merkmale der `SRWLock`-Klasse im Modus für freigegebene Sperren.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** corewrappers.h
+**Header:** corewrappers. h
 
-**Namespace:** Microsoft::WRL::Wrappers
+**Namespace:** Microsoft:: WRL:: Wrapper
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Wrappers-Namespace](microsoft-wrl-wrappers-namespace.md)

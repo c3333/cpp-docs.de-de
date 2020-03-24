@@ -1,21 +1,21 @@
 ---
-title: Requires_category (C++ com-Attribut)
+title: requires_category (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.requires_category
 helpviewer_keywords:
 - requires_category attribute
 ms.assetid: a645fdc6-1ef5-414d-8c56-5fe2686d4687
-ms.openlocfilehash: ec35a1958d9fbcf77fef7f498c6c0dba3ab17df9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 19a454a8bfc959d7d97959d765dbf68d0f766ca1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407366"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214551"
 ---
-# <a name="requirescategory"></a>requires_category
+# <a name="requires_category"></a>requires_category
 
-Gibt die erforderliche Komponentenkategorien der Zielklasse.
+Gibt die erforderlichen Komponenten Kategorien der Zielklasse an.
 
 ## <a name="syntax"></a>Syntax
 
@@ -27,17 +27,17 @@ Gibt die erforderliche Komponentenkategorien der Zielklasse.
 ### <a name="parameters"></a>Parameter
 
 *requires_category*<br/>
-Die ID der Kategorie erforderlich.
+Die ID der erforderlichen Kategorie.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Requires_category** C++ Attribut gibt an, die Komponentenkategorien, die von der Zielklasse benötigt. Weitere Informationen finden Sie unter [REQUIRED_CATEGORY](../../atl/reference/category-macros.md#required_category).
+Das **requires_category** C++ -Attribut gibt die für die Zielklasse erforderlichen Komponenten Kategorien an. Weitere Informationen finden Sie unter [REQUIRED_CATEGORY](../../atl/reference/category-macros.md#required_category).
 
 Dieses Attribut erfordert, dass die Attribute [coclass](coclass.md), [progid](progid.md), oder [vi_progid](vi-progid.md) (oder ein anderes Attribut, das eines der genannten impliziert) auch auf demselben Element angewendet werden.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code erfordert, dass das Objekt die Kategorie "Steuerelement" implementieren.
+Der folgende Code erfordert, dass das-Objekt die Steuerelement Kategorie implementiert.
 
 ```cpp
 // cpp_attr_ref_requires_category.cpp
@@ -53,20 +53,20 @@ Der folgende Code erfordert, dass das Objekt die Kategorie "Steuerelement" imple
 class CMyClass {};
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
 |||
 |-|-|
-|**Betrifft**|**class**, **struct**|
+|**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`, oder `vi_progid`.|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Eine oder mehrere der folgenden: `coclass`, `progid`oder `vi_progid`.|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [COM-Attribute](com-attributes.md)<br/>
 [implements_category](implements-category.md)

@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - RC2001
 ms.assetid: 92bfb4c0-1879-4606-bb9f-ef7368707b4a
-ms.openlocfilehash: f4755e04a744d94636b4b37aaf727e0d733008ef
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 35042687b798b53857becdedba57861bd4f41a05
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62346690"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191721"
 ---
 # <a name="resource-compiler-error-rc2001"></a>Ressourcencompiler: Fehler RC2001
 
-Zeilenvorschub in Konstante.
+Zeilen-Zeilen Ausdruck in konstanter Konstante
 
-Eine Zeichenfolgenkonstante wurde in einer zweiten Zeile ohne einen umgekehrten Schrägstrich fortgesetzt (**\\**) oder geschlossen, und öffnen die doppelten Anführungszeichen (**"**).
+Eine Zeichen folgen Konstante wurde in einer zweiten Zeile ohne einen umgekehrten Schrägstrich ( **\\** ) oder schließende und öffnende doppelte Anführungszeichen ( **"** ) fortgesetzt.
 
-Führen Sie eine der folgenden Schritte aus, um eine Zeichenfolgenkonstante, die in zwei Zeilen in der Quelldatei zu unterbrechen:
+Führen Sie einen der folgenden Schritte aus, um eine Zeichen folgen Konstante, die sich in zwei Zeilen in der Quelldatei befindet, zu unterbrechen:
 
-- Das Ende der ersten Zeile mit dem Zeilenfortsetzungszeichen, einen umgekehrten Schrägstrich.
+- Beenden Sie die erste Zeile mit dem Zeilen Fortsetzungs Zeichen, einem umgekehrten Schrägstrich.
 
-- Schließen Sie die Zeichenfolge in der ersten Zeile mit einem doppelten Anführungszeichen, und öffnen Sie ein weiteres Anführungszeichen der Zeichenfolge in der nächsten Zeile.
+- Schließen Sie die Zeichenfolge in der ersten Zeile mit einem doppelten Anführungszeichen, und öffnen Sie die Zeichenfolge in der nächsten Zeile mit einem weiteren Anführungszeichen.
 
-Es ist nicht ausreichend, um die erste Zeile \n, die-Escapesequenz für das Einbetten von einem Newline-Zeichen in eine Zeichenfolgenkonstante enden.
+Das Beenden der ersten Zeile mit \n, der Escapesequenz zum Einbetten eines Zeilen Vorzeichens in eine Zeichen folgen Konstante ist nicht ausreichend.

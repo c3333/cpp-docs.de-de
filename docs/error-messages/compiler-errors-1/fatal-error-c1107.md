@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C1107
 ms.assetid: 541a4d9f-10bc-4dd8-b68e-15e548f3dc0a
-ms.openlocfilehash: 135e8da1b49eb1d86f6186e8683ced2f5152a3a1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6e8df232b4d3f3b18eb7c37bcc418ca030a93aef
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62257763"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203787"
 ---
 # <a name="fatal-error-c1107"></a>Schwerwiegender Fehler C1107
 
-Assembly 'Datei' wurde nicht gefunden: Geben Sie den Assemblysuchpfad/AI verwenden oder indem Sie die Umgebungsvariable LIBPATH festlegen
+die Assembly "file" konnte nicht gefunden werden: Geben Sie den Assemblysuchpfad mithilfe von/AI oder durch Festlegen der LIBPATH-Umgebungsvariablen an.
 
-Eine Metadatendatei wurde übergeben, um eine [#using](../../preprocessor/hash-using-directive-cpp.md) -Direktive, die der Compiler nicht gefunden wurde.
+Eine Metadatendatei wurde an eine [#using](../../preprocessor/hash-using-directive-cpp.md) Direktive übermittelt, die der Compiler nicht finden konnte.
 
-LIBPATH, die im im Thema beschriebene `#using`, und die [/AI](../../build/reference/ai-specify-metadata-directories.md) Compileroption ermöglicht Ihnen das Angeben von Verzeichnissen, die in der der Compiler nach Metadatendateien verwiesen wird.
+Mit LIBPATH, das im Thema für `#using`und der [/AI](../../build/reference/ai-specify-metadata-directories.md) -Compileroption beschrieben wird, können Sie Verzeichnisse angeben, in denen der Compiler nach referenzierten Metadatendateien sucht.

@@ -91,12 +91,12 @@ helpviewer_keywords:
 - value_type member [STL/CLR]
 - vector member [STL/CLR]
 ms.assetid: f90060d5-097a-4e9d-9a26-a634b5b9c6c2
-ms.openlocfilehash: 5b16319c17b5f5681f6417d8732931da1974b66b
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: bbd4d7b6e7e7668100b2694fdcf3b785d7681ca3
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545780"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208272"
 ---
 # <a name="vector-stlclr"></a>vector (STL/CLR)
 
@@ -125,7 +125,7 @@ template<typename Value>
 *Wert*<br/>
 Der Typ eines Elements in der kontrollierten Sequenz.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** \<cliext/Vector >
 
@@ -133,7 +133,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typdefinition|Beschreibung|
+|Typdefinition|BESCHREIBUNG|
 |---------------------|-----------------|
 |[vector::const_iterator (STL/CLR)](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[vector::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
@@ -149,7 +149,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |[vector::size_type (STL/CLR)](#size_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[vector::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |---------------------|-----------------|
 |[vector::assign (STL/CLR)](#assign)|Ersetzt alle Elemente.|
 |[vector::at (STL/CLR)](#at)|Greift auf ein Element an einer angegebenen Position zu.|
@@ -173,12 +173,12 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |[vector::to_array (STL/CLR)](#to_array)|Kopiert die gesteuerte Sequenz in ein neues Array.|
 |[vector::vector (STL/CLR)](#vector)|Erstellt ein container-Objekt.|
 
-|Eigenschaft|Beschreibung|
+|Eigenschaft|BESCHREIBUNG|
 |--------------|-----------------|
 |[vector::back_item (STL/CLR)](#back_item)|Greift auf das letzte Element zu.|
 |[vector::front_item (STL/CLR)](#front_item)|Greift auf das erste Element zu.|
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |--------------|-----------------|
 |[vector::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
 |[vector::operator(STL/CLR)](#op)|Greift auf ein Element an einer angegebenen Position zu.|
@@ -191,7 +191,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Schnittstelle|Beschreibung|
+|Schnittstelle|BESCHREIBUNG|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
 |<xref:System.Collections.IEnumerable>|Sequenzieren Sie Elemente.|
@@ -201,7 +201,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 |<xref:System.Collections.Generic.IList%601>|Verwaltet eine geordnete Gruppe von typisierten Elementen.|
 |IVector-< Wert\>|Verwalten Sie einen generischen Container.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er durch ein gespeichertes Array von *Wert* Elementen steuert und freigibt, was bei Bedarf zunimmt. Das Wachstum kommt so vor, dass die Kosten für das Anfügen eines neuen Elements zu einer Konstanten Zeit amortisiert werden. Mit anderen Worten, die Kosten für das Hinzufügen von Elementen am Ende werden im Durchschnitt nicht erhöht, da die Länge der kontrollierten Sequenz größer wird. Daher ist ein Vektor ein guter Kandidat für den zugrunde liegenden Container für den Vorlagen Klassen [Stapel (STL/CLR)](../dotnet/stack-stl-clr.md).
 
@@ -213,7 +213,7 @@ Durch das Einfügen oder Löschen von Elementen kann der an einer bestimmten Pos
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente nicht zerstört.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ## <a name="vectorassign-stlclr"></a><a name="assign"></a>Vector:: Assign (STL/CLR)
 
@@ -245,7 +245,7 @@ Enumeration, die eingefügt werden soll.
 *val*<br/>
 Der Wert des einzufügenden Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Member-Funktion ersetzt die gesteuerte Sequenz durch eine Wiederholung der *count* -Elemente des Werts *Val*. Sie verwenden Sie, um den Container mit Elementen auszufüllen, die alle denselben Wert aufweisen.
 
@@ -311,7 +311,7 @@ reference at(size_type pos);
 *pos*<br/>
 Position des Elements, auf das zugegriffen wird
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Verweis auf das-Element der gesteuerten Sequenz an Position *POS*zurück. Sie verwenden Sie, um ein Element zu lesen oder zu schreiben, dessen Position Sie kennen.
 
@@ -358,7 +358,7 @@ Greift auf das letzte Element zu.
 reference back();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Verweis auf das letzte Element der kontrollierten Sequenz zurück, das nicht leer sein darf. Sie verwenden Sie, um auf das letzte Element zuzugreifen, wenn Sie wissen, dass es vorhanden ist.
 
@@ -409,7 +409,7 @@ Greift auf das letzte Element zu.
 property value_type back_item;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Eigenschaft greift auf das letzte Element der kontrollierten Sequenz zu, das nicht leer sein darf. Sie verwenden Sie, um das letzte Element zu lesen oder zu schreiben, wenn Sie wissen, dass es vorhanden ist.
 
@@ -460,7 +460,7 @@ Legt den Anfang der kontrollierten Sequenz fest.
 iterator begin();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Iterator mit zufälligem Zugriff zurück, der das erste Element der kontrollierten Sequenz oder direkt hinter das Ende einer leeren Sequenz festlegt. Sie können damit einen Iterator abrufen, der den `current` Anfang der kontrollierten Sequenz bestimmt; der Zustand kann sich jedoch ändern, sobald sich die Länge der kontrollierten Sequenz ändert.
 
@@ -515,7 +515,7 @@ Ermittelt die Größe des zugeordneten Speichers für den Container.
 size_type capacity();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt den Speicher zurück, der derzeit für die gesteuerte Sequenz reserviert ist, einen Wert, der mindestens so groß wie [Vector:: Size (STL/CLR)](../dotnet/vector-size-stl-clr.md)`()`ist. Sie verwenden es, um zu bestimmen, wie viel der Container vergrößert werden kann, bevor er Speicher für die gesteuerte Sequenz neu zuweisen muss.
 
@@ -565,7 +565,7 @@ Entfernt alle Elemente.
 void clear();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion ruft [Vector:: Erase (STL/CLR)-](../dotnet/vector-erase-stl-clr.md)`(` [Vector:: begin (STL/](../dotnet/vector-begin-stl-clr.md) CLR)`(),` [Vector:: End (STL/CLR)-](../dotnet/vector-end-stl-clr.md)`())`auf. Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
@@ -622,7 +622,7 @@ Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 typedef T2 const_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T2`, das als konstanter Random-Access-Iterator für die gesteuerte Sequenz fungieren kann.
 
@@ -663,7 +663,7 @@ Der Typ eines konstanten Verweises auf ein Element.
 typedef value_type% const_reference;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt einen konstanten Verweis auf ein Element.
 
@@ -707,7 +707,7 @@ Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.
 typedef T4 const_reverse_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T4`, das als konstanter umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
@@ -749,7 +749,7 @@ Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 typedef int difference_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt eine Anzahl von signierten Elementen.
 
@@ -803,7 +803,7 @@ Testet, ob keine Elemente vorhanden sind.
 bool empty();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Vector:: Size (STL/CLR)](../dotnet/vector-size-stl-clr.md)`() == 0`. Sie verwenden es, um zu testen, ob der Vektor leer ist.
 
@@ -854,7 +854,7 @@ Legt das Ende der kontrollierten Sequenz fest.
 iterator end();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Iterator mit zufälligem Zugriff zurück, der auf das Ende der kontrollierten Sequenz verweist. Sie können damit einen Iterator abrufen, der das `current` Ende der kontrollierten Sequenz bestimmt; der Zustand kann sich jedoch ändern, sobald sich die Länge der kontrollierten Sequenz ändert.
 
@@ -922,7 +922,7 @@ Das Ende des zu löschenden Bereichs.
 *where*<br/>
 Zu Lösch Endes Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird. Sie verwenden es, um ein einzelnes Element zu entfernen.
 
@@ -989,7 +989,7 @@ Greift auf das erste Element zu.
 reference front();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen Verweis auf das erste Element der kontrollierten Sequenz zurück, das nicht leer sein darf. Sie verwenden Sie, um das erste Element zu lesen oder zu schreiben, wenn Sie wissen, dass es vorhanden ist.
 
@@ -1039,7 +1039,7 @@ Greift auf das erste Element zu.
 property value_type front_item;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Eigenschaft greift auf das erste Element der kontrollierten Sequenz zu, das nicht leer sein darf. Sie verwenden Sie, um das erste Element zu lesen oder zu schreiben, wenn Sie wissen, dass es vorhanden ist.
 
@@ -1091,7 +1091,7 @@ typedef Microsoft::VisualC::StlClr::
     generic_container;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt die generische Schnittstelle für diese Vorlagen Container Klasse.
 
@@ -1157,7 +1157,7 @@ typedef Microsoft::VisualC::StlClr::Generic::
     generic_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt einen generischen Iterator, der mit der generischen-Schnittstelle für diese Vorlagen Container Klasse verwendet werden kann.
 
@@ -1213,7 +1213,7 @@ typedef Microsoft::VisualC::StlClr::Generic::
     ReverseRandomAccessIterator<generic_value> generic_reverse_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt einen generischen umgekehrten Iterator, der mit der generischen-Schnittstelle für diese Vorlagen Container Klasse verwendet werden kann.
 
@@ -1269,7 +1269,7 @@ Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container
 typedef GValue generic_value;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt ein Objekt vom Typ `GValue`, das den gespeicherten Elementwert zur Verwendung mit der generischen-Schnittstelle für diese Vorlagen Container Klasse beschreibt.
 
@@ -1350,7 +1350,7 @@ Der Wert des einzufügenden Elements.
 *where*<br/>
 WHERE in Container, der vor eingefügt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Jede der Member-Funktionen fügt vor dem Element, auf das von *Where* in der gesteuerten Sequenz verwiesen wird, eine Sequenz ein, die von den verbleibenden Operanden angegeben wird.
 
@@ -1434,7 +1434,7 @@ Der Typ eines Iterators für die gesteuerte Sequenz.
 typedef T1 iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt ein Objekt vom Typ "nicht angegebener Typ" `T1`, das als Iterator für den zufälligen Zugriff für die gesteuerte Sequenz fungieren kann.
 
@@ -1488,7 +1488,7 @@ vector<Value>% operator=(vector<Value>% right);
 *right*<br/>
 Der zu kopierende Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Member-Operator kopiert *direkt* in das-Objekt und gibt dann `*this`zurück. Sie verwenden es, um die gesteuerte Sequenz durch eine Kopie der kontrollierten Sequenz in der *rechten*Ecke zu ersetzen.
 
@@ -1541,7 +1541,7 @@ reference operator[](size_type pos);
 *pos*<br/>
 Position des Elements, auf das zugegriffen wird
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Member-Operator gibt einen Verweis auf das Element an Position *POS*zurück. Sie verwenden Sie für den Zugriff auf ein Element, dessen Position Sie kennen.
 
@@ -1588,7 +1588,7 @@ Entfernt das letzte Element.
 void pop_back();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion entfernt das letzte Element der kontrollierten Sequenz, das nicht leer sein darf. Sie verwenden Sie, um den Vektor um ein Element auf der Rückseite zu verkürzen.
 
@@ -1635,7 +1635,7 @@ Fügt ein neues letztes Element hinzu.
 void push_back(value_type val);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion fügt ein Element mit einem Wert `val` am Ende der kontrollierten Sequenz ein. Sie verwenden es, um ein weiteres Element an den Vektor anzufügen.
 
@@ -1675,7 +1675,7 @@ Legt den Anfang der umgekehrten kontrollierten Sequenz fest.
 reverse_iterator rbegin();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen reverse-Iterator zurück, der das letzte Element der kontrollierten Sequenz festlegt, oder direkt hinter dem Anfang einer leeren Sequenz. Demzufolge wird der `beginning` der umgekehrten Sequenz bestimmt. Sie können damit einen Iterator abrufen, der den `current` Anfang der kontrollierten Sequenz in umgekehrter Reihenfolge bestimmt; der Zustand kann sich jedoch ändern, sobald sich die Länge der kontrollierten Sequenz ändert.
 
@@ -1730,7 +1730,7 @@ Der Typ eines Verweises auf ein Element.
 typedef value_type% reference;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt einen Verweis auf ein Element.
 
@@ -1785,7 +1785,7 @@ Legt das Ende der umgekehrten kontrollierten Sequenz fest.
 reverse_iterator rend();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt einen reverse-Iterator zurück, der direkt hinter den Anfang der kontrollierten Sequenz verweist. Demzufolge wird der `end` der umgekehrten Sequenz bestimmt. Sie können damit einen Iterator abrufen, der das `current` Ende der kontrollierten Sequenz in umgekehrter Reihenfolge bestimmt; der Zustand kann sich jedoch ändern, sobald sich die Länge der kontrollierten Sequenz ändert.
 
@@ -1846,7 +1846,7 @@ void reserve(size_type count);
 *count*<br/>
 Neue Mindestkapazität des Containers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion stellt sicher, dass `capacity()` nach wie vor mindestens *count*zurückgibt. Sie verwenden es, um sicherzustellen, dass der Container Speicher für die kontrollierte Sequenz nicht neu zuordnen muss, bis die angegebene Größe anwächst.
 
@@ -1905,7 +1905,7 @@ Die neue Größe der kontrollierten Sequenz.
 *val*<br/>
 Der Wert des Auffüllung-Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die-Element Funktionen stellen sicher, dass [Vector:: Size (STL/CLR)](../dotnet/vector-size-stl-clr.md)`()` nach wie vor *new_size*zurückgibt. Wenn die gesteuerte Sequenz länger dauern muss, fügt die erste Member-Funktion Elemente mit einem Wert `value_type()`an, während die zweite Element Funktion Elemente mit dem Wert *Val*anfügt. Um die gesteuerte Sequenz zu verkürzen, löschen beide Element Funktionen den letzten Element [Vektor:: Size (STL/CLR)-](../dotnet/vector-size-stl-clr.md)`() -` `new_size` Zeiten. Sie verwenden diese Option, um sicherzustellen, dass die Größe der kontrollierten Sequenz *new_size*ist, indem Sie die aktuelle gesteuerte Sequenz kürzen oder Auffüllen.
 
@@ -1956,7 +1956,7 @@ Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.
 typedef T3 reverse_iterator;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt ein Objekt des nicht angegebenen Typs `T3`, das als umgekehrter Iterator für die gesteuerte Sequenz fungieren kann.
 
@@ -2005,7 +2005,7 @@ Ermittelt die Anzahl von Elementen.
 size_type size();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur sicher sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Vector:: Empty (STL/CLR)](../dotnet/vector-empty-stl-clr.md)`()`.
 
@@ -2058,7 +2058,7 @@ Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 typedef int size_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ beschreibt eine nicht negative Element Anzahl.
 
@@ -2108,7 +2108,7 @@ void swap(vector<Value>% right);
 *right*<br/>
 Container für den Tausch von Inhalten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen `*this` und *Rechts*aus. Dies erfolgt in konstanter Zeit und löst keine Ausnahmen aus. Sie verwenden Sie als schnelle Möglichkeit, um den Inhalt von zwei Containern auszutauschen.
 
@@ -2167,7 +2167,7 @@ Kopiert die gesteuerte Sequenz in ein neues Array.
 cli::array<Value>^ to_array();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion gibt ein Array mit der kontrollierten Sequenz zurück. Sie verwenden Sie, um eine Kopie der kontrollierten Sequenz in Array Form abzurufen.
 
@@ -2216,7 +2216,7 @@ Der Typ eines Elements.
 typedef Value value_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für den Vorlagen Parameter *Wert*.
 
@@ -2285,7 +2285,7 @@ Einzufügendes Objekt bzw. einzufügender Bereich.
 *val*<br/>
 Der Wert des einzufügenden Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Konstruktor:
 
@@ -2416,7 +2416,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt `!(left == right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht identisch ist *, wenn die* beiden Vektoren Element Weise verglichen werden.
 
@@ -2485,7 +2485,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position `i` für die `!(right[i] < left[i])` auch true ist, dass `left[i] < right[i]`. Andernfalls wird zurückgegeben, `left->size() < right->size()` Sie es verwenden, um zu testen, ob *left* vor *Rechts* geordnet ist, wenn die beiden Vektoren Element Weise verglichen werden.
 
@@ -2554,7 +2554,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt `!(right < left)`zurück. Sie verwenden es, um zu testen, ob *left* nach *Rechts* nicht geordnet ist, wenn die beiden Vektoren Element Weise verglichen werden.
 
@@ -2623,7 +2623,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt nur dann true zurück, wenn die von *Links* und *Rechts* gesteuerten Sequenzen die gleiche Länge aufweisen und für jede Position `i``left[i] ==` `right[i]`. Sie verwenden es, um zu überprüfen, ob *left* nach *Rechts* angeordnet wird, wenn die beiden Vektoren Element Weise verglichen werden.
 
@@ -2692,7 +2692,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt `right` `<` `left`zurück. Sie verwenden es, um zu testen, ob *Links* nach *Rechts* angeordnet ist, wenn die beiden Vektoren Element Weise verglichen werden.
 
@@ -2761,7 +2761,7 @@ Linker zu vergleichender Container.
 *right*<br/>
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Operator-Funktion gibt `!(left < right)`zurück. Sie verwenden es, um zu testen, ob *left* nicht vor *Rechts* geordnet ist, wenn die beiden Vektoren Element Weise verglichen werden.
 

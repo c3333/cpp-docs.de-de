@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CreateAccessor method
 - CreateParameterAccessor method
 ms.assetid: a0088074-7135-465c-b228-69097a50b8cc
-ms.openlocfilehash: 80c8f94a417c700f86159de53bd53e4011f78d71
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 4d9fb79bbf5203fa959672faec8c3b076c17f1ca
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546068"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211847"
 ---
 # <a name="cmanualaccessor-class"></a>CManualAccessor-Klasse
 
@@ -47,11 +47,11 @@ Stellt einen Accessortyp dar, der für die Erweiterte Verwendung entworfen wurde
 class CManualAccessor : public CAccessorBase
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -62,7 +62,7 @@ class CManualAccessor : public CAccessorBase
 |[CreateAccessor](#createaccessor)|Weist Speicher für die Spalten Bindungs Strukturen zu und initialisiert die Spalten Datenmember.|
 |[CreateParameterAccessor](#createparameteraccessor)|Weist Speicher für die Parameter Bindungs Strukturen zu und initialisiert die Parameter Datenmember.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Mithilfe `CManualAccessor`können Sie die Parameter-und Ausgabespalten Bindung mithilfe von Lauf Zeit Funktionsaufrufen angeben.
 
@@ -102,7 +102,7 @@ in Ein Zeiger auf die Feldlänge, falls erforderlich.
 *pstatus*<br/>
 in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, falls erforderlich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](../../data/oledb/cmanualaccessor-createaccessor.md)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in `CreateAccessor`angegebenen Spalten.
 
@@ -146,7 +146,7 @@ in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, 
 *eParamIO*<br/>
 in Gibt an, ob der Parameter, mit dem die Bindung verknüpft ist, ein Eingabe-, Eingabe-/Ausgabe-oder Ausgabeparameter ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Um diese Funktion verwenden zu können, müssen Sie zuerst den Befehl "" für "" als " [" aufrufen.](../../data/oledb/cmanualaccessor-createparameteraccessor.md)
 
@@ -177,7 +177,7 @@ in Die Größe des Puffers in Bytes.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion wird aufgerufen, bevor Sie die `CManualAccessor::AddBindEntry`-Funktion aufzurufen.
 
@@ -208,11 +208,11 @@ in Die Größe des Puffers in Bytes.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie müssen diese Funktion aufrufen, bevor Sie [AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md)aufrufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [DBViewer](../../overview/visual-cpp-samples.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>

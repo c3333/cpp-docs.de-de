@@ -9,22 +9,22 @@ helpviewer_keywords:
 - components [C++]
 - components [C++], redistributing
 ms.assetid: 17b065b4-a307-4b89-99ac-d05831cfab87
-ms.openlocfilehash: 1a6ec6f5fdd3c32080d357ca58d31ccea271b7a4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0d4d3948add665c54be3d3b0596a7a6fc0e414f5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330075"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212731"
 ---
 # <a name="redistributing-odbc-components-to-your-customers"></a>Weitervertrieb von ODBC-Komponenten an Kunden
 
-Wenn Sie die Funktionen der ODBC-Administrator-Programme in Ihrer Anwendung zu integrieren, müssen Sie auch für Ihre Benutzer die Dateien verteilen, die diese Programme ausgeführt werden. Diese ODBC-Dateien befinden sich in das Verzeichnis \OS\System der Visual C++-CD. Die Datei Redistrb.wri und den Lizenzvertrag im gleichen Verzeichnis enthalten eine Liste der ODBC-Dateien, die Sie erneut verteilen können.
+Wenn Sie die Funktionalität der ODBC-Administrator Programme in Ihre Anwendung einbinden, müssen Sie die Dateien, die diese Programme ausführen, auch an die Benutzer verteilen. Diese ODBC-Dateien befinden sich im Verzeichnis "\OS\System" C++ der Visual CD-ROM. Die Datei redistraub. WRI und der Lizenzvertrag in demselben Verzeichnis enthalten eine Liste der ODBC-Dateien, die Sie weiterverteilen können.
 
-Lesen Sie die Dokumentation für ODBC-Treiber, die Sie versenden möchten. Sie benötigen, um zu bestimmen, welche DLLs und andere Dateien senden. Lesen Sie auch [Weitervertrieb von ODBC-Komponenten für Ihre Kunden](../../data/odbc/redistributing-odbc-components-to-your-customers.md), die erklärt, wie ODBC-Komponenten neu zu verteilen.
+Informieren Sie sich in der Dokumentation über alle ODBC-Treiber, die Sie versenden möchten. Sie müssen bestimmen, welche DLLs und anderen Dateien ausgeliefert werden sollen. Lesen Sie außerdem die Informationen zum [erneuten Verteilen von ODBC-Komponenten an Ihre Kunden](../../data/odbc/redistributing-odbc-components-to-your-customers.md), in dem erläutert wird, wie Sie ODBC-Komponenten neu verteilen
 
-Darüber hinaus müssen Sie eine andere Datei in den meisten Fällen enthalten. Die Datei Odbccr32.dll ist die ODBC-Cursorbibliothek. Diese Bibliothek kann auf Ebene 1-Treiber den Bildlauf vorwärts und rückwärts. Darüber hinaus die Möglichkeit, Momentaufnahmen zu unterstützen. Weitere Informationen zu den ODBC-Cursorbibliothek, finden Sie unter [ODBC: Die ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
+Außerdem müssen Sie in den meisten Fällen eine andere Datei einschließen. Odbccr32. dll ist die ODBC-Cursor Bibliothek. Diese Bibliothek gibt den Treibern der Ebene 1 die Möglichkeit, vorwärts und Rückwärtsscrollen zu können. Außerdem bietet es die Möglichkeit, Momentaufnahmen zu unterstützen. Weitere Informationen zur ODBC-Cursor Bibliothek finden Sie unter [ODBC: die ODBC-Cursor Bibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
 
-Weitere Informationen zur Verwendung von ODBC mit den Datenbankklassen Sie in den folgenden Themen:
+Die folgenden Themen enthalten weitere Informationen zur Verwendung von ODBC mit den Datenbankklassen:
 
 - [ODBC: Die ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md)
 
@@ -32,7 +32,7 @@ Weitere Informationen zur Verwendung von ODBC mit den Datenbankklassen Sie in de
 
 - [ODBC: Direktes Aufrufen von ODBC-API-Funktionen](../../data/odbc/odbc-calling-odbc-api-functions-directly.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grundlagen zu ODBC](../../data/odbc/odbc-basics.md)<br/>
 [ODBC-Administrator](../../data/odbc/odbc-administrator.md)

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C1081
 ms.assetid: e58adf17-cbe1-4955-a5c7-80622bbba249
-ms.openlocfilehash: f3c9f9bde5da7fb120accbb9a8d72e5715ab9d2b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b8630a26d14c68a5f1abe45bb0b8d0141d0dedbb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62229418"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204190"
 ---
 # <a name="fatal-error-c1081"></a>Schwerwiegender Fehler C1081
 
-'Symbol': Dateiname zu lang
+' Symbol ': der Dateiname ist zu lang.
 
-Die Länge des ein Pfadname der Datei überschreitet `_MAX_PATH` (als 260 Zeichen STDLIB.h definiert). Kürzen Sie den Namen der Datei.
+Die Länge eines Datei Pfadnamens überschreitet `_MAX_PATH` (von "STDLIB. h" als 260 Zeichen definiert). Kürzen Sie den Namen der Datei.
 
-Wenn Sie mit einem kurzen Dateinamen CL.exe aufrufen, muss der Compiler kann einen vollständigen Pfadnamen generieren. Z. B. `cl -c myfile.cpp` kann dazu führen, dass den Compiler generiert:
+Wenn Sie "CL. exe" mit einem kurzen Dateinamen abrufen, muss der Compiler möglicherweise einen vollständigen Pfadnamen generieren. Beispielsweise kann `cl -c myfile.cpp` bewirken, dass der Compiler Folgendes generiert:
 
 ```
 D:\<very-long-directory-path>\myfile.cpp

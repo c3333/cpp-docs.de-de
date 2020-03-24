@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - RuntimeClassType enumeration
 ms.assetid: d380712d-672e-4ea9-b7c5-cf9fa7dbb770
-ms.openlocfilehash: 80e8a120f7e3666721ff839a2a696388a64d734e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 53f0172968c28762bb1305e274bbd47494cdaf4c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403130"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213576"
 ---
 # <a name="runtimeclasstype-enumeration"></a>RuntimeClassType-Enumeration
 
-Gibt den Typ der [RuntimeClass](runtimeclass-class.md) -Instanz, die unterstützt wird.
+Gibt den Typ der unterstützten [runtimeclass](runtimeclass-class.md) -Instanz an.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,25 +24,25 @@ Gibt den Typ der [RuntimeClass](runtimeclass-class.md) -Instanz, die unterstütz
 enum RuntimeClassType;
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`ClassicCom`|Eine klassische COM-Runtime-Klasse.|
+|`ClassicCom`|Eine klassische com-Lauf Zeit Klasse.|
 |`Delegate`|Entspricht `ClassicCom`.|
-|`InhibitFtmBase`|Deaktiviert die `FtmBase` -Unterstützung während der `__WRL_CONFIGURATION_LEGACY__` ist nicht definiert.|
-|`InhibitWeakReference`|Deaktiviert die Unterstützung von schwachen Verweis.|
+|`InhibitFtmBase`|Deaktiviert die `FtmBase` Unterstützung, während `__WRL_CONFIGURATION_LEGACY__` nicht definiert ist.|
+|`InhibitWeakReference`|Deaktiviert die Unterstützung für schwache Verweise.|
 |`WinRt`|Eine Windows-Runtime-Klasse.|
 |`WinRtClassicComMix`|Die Kombination aus `WinRt` und `ClassicCom`.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

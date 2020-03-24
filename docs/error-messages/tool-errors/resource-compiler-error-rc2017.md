@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - RC2017
 ms.assetid: 5fcc0135-cd60-4b1d-a7dd-8a4f2312697b
-ms.openlocfilehash: ce8791e2463ca31fde64500b8b957ecdf5bf6d93
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ee685c44a702acda94f6e6c8aa04f4a63bc6024e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62346612"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191898"
 ---
 # <a name="resource-compiler-error-rc2017"></a>Ressourcencompiler: Fehler RC2017
 
-Ungültige Escapesequenz
+Ungültige Escape-Sequenz
 
-Eine Escapesequenz angezeigt, wo eine nicht erwartet wurde.
+Es wurde eine Escapesequenz angezeigt, die nicht erwartet wurde.
 
-Eine Escapesequenz, einen umgekehrten Schrägstrich ( **\\** ) gefolgt von Buchstaben oder eine Zahl – kann auftreten, nur in einer Zeichen- oder Konstanten.
+Eine Escapesequenz – ein umgekehrter Schrägstrich ( **\\** ), gefolgt von einer Zahl oder einem Buchstaben – kann nur in einer Zeichen-oder Zeichen folgen Konstante vorkommen.

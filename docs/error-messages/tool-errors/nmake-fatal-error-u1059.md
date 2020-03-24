@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - U1059
 ms.assetid: b21d9198-9c63-40d0-b589-80e17294ce24
-ms.openlocfilehash: 3c148bf2feb7ba12686e00b29f5bf90cb9f2f2d7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 33be3312e1f0aaa7f1e8aad64b44ea9aefd25346
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62367290"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182837"
 ---
 # <a name="nmake-fatal-error-u1059"></a>NMAKE: Schwerwiegender Fehler U1059
 
-> Syntaxfehler: '}' fehlt im abhängigen Element
+> Syntax Fehler: "}" fehlt in Abhängigkeit.
 
-Ein Suchpfad für eine abhängige Datei wurde falsch angegeben. Entweder ist ein Leerzeichen im Pfad oder die schließende geschweifte Klammer (**}**) ausgelassen wurde.
+Ein Suchpfad für einen abhängigen wurde falsch angegeben. Es wurde entweder ein Leerzeichen im Pfad oder die schließende geschweifte Klammer ( **}** ) ausgelassen.
 
-Die Syntax für eine Verzeichnisangabe für ein abhängiges Element ist
+Die Syntax für eine Verzeichnis Spezifikation für einen abhängigen ist
 
-> **{** *Verzeichnisse* **} abhängige**
+> **{** *Directories* **} abhängig**
 
-wo *Verzeichnisse* gibt einen oder mehrere Pfade, jeweils getrennt durch ein Semikolon (**;**). Es sind keine Leerzeichen zulässig.
+Where- *Verzeichnisse* gibt einen oder mehrere Pfade an, die jeweils durch ein Semikolon ( **;** ) getrennt sind. Es sind keine Leerzeichen zulässig.
 
-Stellen Sie teilweise oder vollständig einen Suchpfad angeben, die von einem Makro ersetzt wird, sicher, dass keine Leerzeichen enthalten, die in der makroerweiterung vorhanden sind.
+Wenn ein Teil oder ein anderer Suchpfad durch ein Makro ersetzt wird, stellen Sie sicher, dass keine Leerzeichen in der Makro Erweiterung vorhanden sind.

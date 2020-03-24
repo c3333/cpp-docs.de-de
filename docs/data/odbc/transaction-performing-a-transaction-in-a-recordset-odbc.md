@@ -4,29 +4,29 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - transactions, updating recordsets
 ms.assetid: cf1d6b48-7fb8-4903-84f7-a1822054534d
-ms.openlocfilehash: 9e06d61d3d86233e136b0b3fe78f149a6778649b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 94177a27a1f99a8c9c37b7fce3f697fd0088b7c6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62329828"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212588"
 ---
 # <a name="transaction-performing-a-transaction-in-a-recordset-odbc"></a>Transaktion: Ausführen einer Transaktion in einem Recordset (ODBC)
 
-In diesem Thema wird erläutert, wie Sie eine Transaktion in einem Recordset ausführen wird.
+In diesem Thema wird erläutert, wie eine Transaktion in einem Recordset durchgeführt wird.
 
 > [!NOTE]
->  Es wird nur eine Ebene von Transaktionen unterstützt. Sie können keine Transaktionen verschachteln.
+>  Es wird nur eine Ebene von Transaktionen unterstützt. Transaktionen können nicht geschachtelt werden.
 
-#### <a name="to-perform-a-transaction-in-a-recordset"></a>Ausführen eine Transaktion in einem recordset
+#### <a name="to-perform-a-transaction-in-a-recordset"></a>So führen Sie eine Transaktion in einem Recordset aus
 
-1. Rufen Sie die `CDatabase` des Objekts `BeginTrans` Member-Funktion.
+1. Ruft die `BeginTrans` Member-Funktion des `CDatabase` Objekts auf.
 
-1. Wenn Sie das gesammelte Abrufen von Zeilen nicht implementiert haben, rufen Sie die `AddNew/Update`, `Edit/Update`, und `Delete` Memberfunktionen von ein oder mehrere Recordset-Objekte der gleichen Datenbank so oft wie erforderlich. Weitere Informationen finden Sie unter [Recordset: Hinzufügen, aktualisieren und Löschen von Datensätzen (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md). Wenn Sie die gesammelte implementiert haben, müssen Sie Ihre eigenen Funktionen zum Aktualisieren der Datenquelle schreiben.
+1. Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, rufen Sie die `AddNew/Update`-, `Edit/Update`-und `Delete` Member-Funktionen von mindestens einem Recordset-Objekt derselben Datenbank so oft wie nötig auf. Weitere Informationen finden Sie unter [Recordset: Hinzufügen, aktualisieren und Löschen von Datensätzen (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md). Wenn Sie das Massen Abrufen von Zeilen implementiert haben, müssen Sie eigene Funktionen schreiben, um die Datenquelle zu aktualisieren.
 
-1. Rufen Sie abschließend die `CDatabase` des Objekts `CommitTrans` Member-Funktion. Wenn in einem der Updates ein Fehler auftritt, oder Sie entscheiden, um die Änderungen abzubrechen, rufen Sie die `Rollback` Member-Funktion.
+1. Zum Schluss wird die `CommitTrans` Member-Funktion des `CDatabase` Objekts aufgerufen. Wenn ein Fehler in einem der Updates auftritt oder Sie die Änderungen abbrechen möchten, rufen Sie dessen `Rollback` Member-Funktion auf.
 
-Im folgende Beispiel wird mit zwei Recordsets eine Student Registrierung aus einer Datenbank "School"-Registrierung, entfernt der Student, der aus allen Klassen, die in denen der Student, der registriert wird gelöscht. Da die `Delete` Aufrufe in beiden Recordsets müssen erfolgreich sein, eine Transaktion ist erforderlich. Im Beispiel wird davon ausgegangen, `m_dbStudentReg`, eine Membervariable des Typs `CDatabase` bereits Verbindungen mit der Datenquelle und der Recordset-Klassen `CEnrollmentSet` und `CStudentSet`. Die `strStudentID` Variable enthält einen Wert, der vom Benutzer.
+Im folgenden Beispiel werden zwei Recordsets verwendet, um die Registrierung eines Studenten aus einer Schul Registrierungsdatenbank zu löschen, wobei der Student aus allen Klassen entfernt wird, in denen der Student registriert ist. Da die `Delete` Aufrufe in beiden Recordsets erfolgreich sein müssen, ist eine Transaktion erforderlich. Im Beispiel wird davon ausgegangen, dass `m_dbStudentReg`, eine Element Variable vom Typ `CDatabase` bereits mit der Datenquelle verbunden ist, und die Recordset-Klassen `CEnrollmentSet` und `CStudentSet`. Die `strStudentID` Variable enthält einen Wert, der vom Benutzer abgerufen wurde.
 
 ```
 BOOL CEnrollDoc::RemoveStudent( CString strStudentID )
@@ -79,11 +79,11 @@ BOOL CEnrollDoc::RemoveStudent( CString strStudentID )
 ```
 
 > [!NOTE]
->  Aufrufen von `BeginTrans` erneut ohne `CommitTrans` oder `Rollback` ein Fehler auftritt.
+>  Ein erneuter Aufruf von `BeginTrans`, ohne `CommitTrans` oder `Rollback` aufrufen, ist ein Fehler.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Transaktion (ODBC)](../../data/odbc/transaction-odbc.md)<br/>
-[Transaktion: Auswirkungen von Transaktionen auf Aktualisierungen (ODBC)](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)<br/>
+[Transaktion: Wie Transaktionen sich auf Aktualisierungen auswirken (ODBC)](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)<br/>
 [CDatabase-Klasse](../../mfc/reference/cdatabase-class.md)<br/>
 [CRecordset-Klasse](../../mfc/reference/crecordset-class.md)

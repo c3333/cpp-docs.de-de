@@ -1,19 +1,19 @@
 ---
-title: 'Vorgehensweise: Deklarieren von festen Zeigern und Werttypen'
+title: 'Gewusst wie: Deklarieren von festen Zeigern und Werttypen'
 ms.date: 10/12/2018
 ms.topic: reference
 helpviewer_keywords:
 - value types, declaring
 - pinning pointers
 ms.assetid: 57c5ec8a-f85a-48c4-ba8b-a81268bcede0
-ms.openlocfilehash: 901980c76aac5dd364f2fa2fae0e007f5d25f3d8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 88ef7e82161703a272a571392fd66e6055371c61
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515735"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181966"
 ---
-# <a name="how-to-declare-pinning-pointers-and-value-types"></a>Vorgehensweise: Deklarieren von festen Zeigern und Werttypen
+# <a name="how-to-declare-pinning-pointers-and-value-types"></a>Gewusst wie: Deklarieren von festen Zeigern und Werttypen
 
 Ein Werttyp kann implizit geschachtelt werden. Sie können dann einen festen Zeiger auf das Werttypobjekt selbst deklarieren und einen auf den geschachtelten Werttyp zeigenden **pin_ptr** verwenden.
 
@@ -45,6 +45,6 @@ int main() {
 7
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [pin_ptr (C++/CLI)](pin-ptr-cpp-cli.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - protected keyword [C++], member access
 - protected keyword [C++]
 ms.assetid: 863d299f-fc0d-45d5-a1a7-bd24b7778a93
-ms.openlocfilehash: 1cbe88a80b83caa78972d1e2799c1e0d87d1cb0a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 29f57eac7201ac0647275c70c539f9b2f28eb81b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62244527"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179249"
 ---
 # <a name="protected-c"></a>protected (C++)
 
@@ -24,9 +24,9 @@ protected:
 protected base-class
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **geschützt** -Schlüsselwort spezifiziert den Zugriff auf Klassenmember in der *Memberliste* bis zum nächsten Zugriffsspezifizierer (**öffentliche** oder **Private**) oder das Ende der Klassendefinition. Klassenmember deklariert als **geschützt** kann nur mit folgenden verwendet werden:
+Das **Protected** -Schlüsselwort gibt den Zugriff auf Klassenmember in der *Mitgliederliste* bis zum nächsten Zugriffsspezifizierer (**Public** oder **private**) oder das Ende der Klassendefinition an. Klassenmember, die als **geschützt** deklariert sind, können nur von folgendem verwendet werden:
 
 - Memberfunktionen der Klasse, die ursprünglich diese Member deklariert hat.
 
@@ -36,20 +36,20 @@ Die **geschützt** -Schlüsselwort spezifiziert den Zugriff auf Klassenmember in
 
 - Direkt privat abgeleitete Klassen, die auch über privaten Zugriff auf geschützte Member verfügen.
 
-Wenn Sie den Namen einer Basisklasse vorangestellt der **geschützt** Schlüsselwort Gibt an, dass die öffentlichen und geschützten Member der Basisklasse geschützte Member der abgeleiteten Klassen.
+Wenn das **Protected** -Schlüsselwort dem Namen einer Basisklasse vorangestellt ist, gibt es an, dass die öffentlichen und geschützten Member der Basisklasse geschützte Member der abgeleiteten Klassen sind.
 
-Geschützte Member sind nicht so privat wie **private** Elemente, die nur für Member der Klasse zugegriffen werden, in dem sie deklariert werden, aber sie sind nicht so öffentlich wie **öffentliche** Elemente, die in zugegriffen werden kann jede Funktion.
+Geschützte Member sind nicht so privat wie **private** Member, die nur für Member der Klasse zugänglich sind, in der Sie deklariert sind, aber Sie sind nicht so öffentlich wie **öffentliche** Member, auf die in jeder Funktion zugegriffen werden kann.
 
-Geschützte Member, die auch als deklariert werden **statische** für alle Funktionen Friend- oder Memberfunktionen einer abgeleiteten Klasse zugegriffen werden. Geschützte Member, die nicht als deklariert sind **statische** für Friends- und Memberfunktionen in einer abgeleiteten Klasse nur über einen Zeiger / Verweis oder eine Objekt der abgeleiteten Klasse zugänglich sind.
+Geschützte Member, die ebenfalls als **statisch** deklariert werden, sind für alle Friend-oder Member-Funktionen einer abgeleiteten Klasse zugänglich. Geschützte Member, die nicht als **statisch** deklariert werden, sind für Freunde und Element Funktionen in einer abgeleiteten Klasse nur über einen Zeiger auf, einen Verweis auf oder ein Objekt der abgeleiteten Klasse zugänglich.
 
-Weitere Informationen finden Sie unter [Friend](../cpp/friend-cpp.md), [öffentliche](../cpp/public-cpp.md), [private](../cpp/private-cpp.md), und der memberzugriffstabelle in [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md) .
+Weitere Informationen finden Sie unter [Friend](../cpp/friend-cpp.md), [Public](../cpp/public-cpp.md), [private](../cpp/private-cpp.md)und die Element Zugriffs Tabelle Untersteuern des [Zugriffs auf Klassenmember](member-access-control-cpp.md).
 
 ## <a name="clr-specific"></a>"/clr"-spezifisch
 
-In CLR-Typen, die C++ Schlüsselwörter für Zugriffsspezifizierer zugreifen (**öffentliche**, **private**, und **geschützt**) kann die Sichtbarkeit von Typen und Methoden hinsichtlich der Assemblys beeinträchtigen. Weitere Informationen finden Sie unter [Memberzugriffssteuerung](member-access-control-cpp.md).
+In CLR-Typen können C++ die Schlüsselwörter der Zugriffsspezifizierer (**Public**, **private**und **Protected**) die Sichtbarkeit von Typen und Methoden in Bezug auf Assemblys beeinflussen. Weitere Informationen finden Sie unter [Member Access Control](member-access-control-cpp.md).
 
 > [!NOTE]
->  Dateien mit kompiliert [/ln](../build/reference/ln-create-msil-module.md) durch dieses Verhalten nicht betroffen sind. In diesem Fall werden alle verwalteten Klassen (entweder "public" oder "private") angezeigt.
+>  Mit [/ln](../build/reference/ln-create-msil-module.md) kompilierte Dateien sind von diesem Verhalten nicht betroffen. In diesem Fall werden alle verwalteten Klassen (entweder "public" oder "private") angezeigt.
 
 ## <a name="end-clr-specific"></a>"/clr"-spezifisch – Ende
 
@@ -87,7 +87,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

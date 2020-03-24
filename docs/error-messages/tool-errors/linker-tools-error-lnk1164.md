@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1164
 ms.assetid: da89765c-affa-4f88-b170-6d6b19a577cf
-ms.openlocfilehash: 8685a9e0eb356719eaab129af9df9a1cc0ebb085
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5f32fbd455faff449f57cfb9bb38009b03005913
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62254952"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184033"
 ---
 # <a name="linker-tools-error-lnk1164"></a>Linkertoolfehler LNK1164
 
-Abschnitt abschnittsausrichtung (Anzahl) größer als/align-Wert
+Abschnitts Abschnitt Ausrichtung (Zahl) größer als/ALIGN Wert
 
-Die Ausrichtungsgröße für den angegebenen Abschnitt in der Objektdatei überschreitet den Wert, der mit angegebenen die [/ALIGN](../../build/reference/align-section-alignment.md) Option. Die **/ALIGN** Wert muss eine Potenz von 2 sein und muss größer oder gleich die Ausrichtung der Abschnitte in der Objektdatei angegeben.
+Die Ausrichtungs Größe für den angegebenen Abschnitt in der Objektdatei überschreitet den Wert, der mit der [/align](../../build/reference/align-section-alignment.md) -Option angegeben wird. Der **/align** -Wert muss eine Potenz von 2 sein und muss der in der Objektdatei angegebenen Abschnitts Ausrichtung entsprechen oder diese überschreiten.
 
-Entweder kompilieren Sie mit einer kleineren abschnittsausrichtung oder erhöhen Sie die **/ALIGN** Wert.
+Kompilieren Sie entweder mit einer kleineren Abschnitts Ausrichtung neu, oder erhöhen Sie den **/align** -Wert.

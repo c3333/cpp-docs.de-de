@@ -6,33 +6,33 @@ f1_keywords:
 helpviewer_keywords:
 - R6009
 ms.assetid: edfb1f8b-3807-48f4-a994-318923b747ae
-ms.openlocfilehash: 5e1914d5d2f665609cfc24c2db3dc8a123d7e83f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 64391f8ec05a99bb85a9d6cd00d6488a945fdb62
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299750"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197352"
 ---
 # <a name="c-runtime-error-r6009"></a>C-Laufzeitfehler R6009
 
-nicht genügend Speicherplatz für die Umgebung
+nicht genügend Speicherplatz für die Umgebung.
 
 > [!NOTE]
-> Wenn diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app heruntergefahren, da sie ein Problem des internen Speicher verfügt. Es gibt mehrere mögliche Gründe für diesen Fehler, aber dies wird häufig durch eine extrem wenig Arbeitsspeicher verfügbar, zu viel Arbeitsspeicher, die von der Umgebungsvariablen oder eines Fehlers im Programm verursacht.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP heruntergefahren, weil Sie über ein internes Speicherproblem verfügt. Es gibt mehrere mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen extrem wenig Arbeitsspeicher oder durch Umgebungsvariablen oder durch einen Programmfehler verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Anderen ausgeführten Anwendungen zu schließen, oder Neustart des Computers, um Arbeitsspeicher freizugeben.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Schließen Sie andere laufende Anwendungen, oder starten Sie den Computer neu, um Arbeitsspeicher freizugeben.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Gab es genügend Arbeitsspeicher zum Laden des Programms, jedoch nicht genügend Arbeitsspeicher zum Erstellen der **Envp** Array.  Dies kann äußerst wenig Arbeitsspeicher oder Variablenverwendung ungewöhnlich großen Umgebung verursacht werden. Erwägen Sie eine der folgenden Lösungen:
+Zum Laden des Programms war ausreichend Arbeitsspeicher verfügbar, aber nicht genügend Arbeitsspeicher, um das **arvp** -Array zu erstellen.  Dies kann durch extrem wenig Arbeitsspeicher oder durch ungewöhnlich große Umgebungsvariablen verursacht werden. Sehen Sie sich eine der folgenden Lösungen an:
 
-- Erhöhen Sie die Menge an Arbeitsspeicher für die Anwendung verfügbar.
+- Erhöhen Sie die Menge an Arbeitsspeicher, die dem Programm zur Verfügung steht.
 
 - Reduzieren Sie die Anzahl und Größe der Befehlszeilenargumente.
 
-- Verringern Sie die Größe der Umgebung, indem unnötige Variablen entfernen.
+- Reduzieren Sie die Umgebungs Größe, indem Sie unnötige Variablen entfernen.

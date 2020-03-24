@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4092
 ms.assetid: d569ec47-a338-40e1-940b-8a8061459acb
-ms.openlocfilehash: 0b18002135d225a90f7e45adc2ff57a64c0a79f4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 706ab843f4b079b507033af76a7f407816fce820
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62279319"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183357"
 ---
 # <a name="linker-tools-warning-lnk4092"></a>Linkertoolwarnung LNK4092
 
-der freigegebene schreibbare Abschnitt "Abschnitt" enthält umsetzungen; Image kann möglicherweise nicht ordnungsgemäß ausgeführt.
+der freigegebene beschreibbare Abschnitt "section" enthält Umsetzungen; Image wird möglicherweise nicht ordnungsgemäß ausgeführt
 
-Der Linker gibt diese Warnung immer dann, wenn Sie einen gemeinsamen Abschnitt, der über ein potenziell ernste Problem hinweist.
+Der Linker gibt diese Warnung aus, wenn Sie über einen freigegebenen Abschnitt verfügen, um Sie vor einem potenziell ernsten Problem zu warnen.
 
-Ist eine Möglichkeit zum Freigeben von Daten zwischen mehreren Prozessen markieren einen Abschnitt als "freigegeben". Markieren einen Abschnitt als freigegebener kann jedoch Probleme verursachen. Beispielsweise haben Sie eine DLL, die Deklarationen wie folgt in einem freigegebenen Datenabschnitt enthält:
+Eine Möglichkeit zum Freigeben von Daten zwischen mehreren Prozessen besteht darin, einen Abschnitt als "Shared" zu markieren. Das Markieren eines Abschnitts als freigegeben kann jedoch Probleme verursachen. Beispielsweise haben Sie eine DLL, die Deklarationen wie diese in einem freigegebenen Daten Abschnitt enthält:
 
 ```
 int var = 1;
 int *pvar = &var;
 ```
 
-Der Linker kann nicht aufgelöst werden `pvar` , da der Wert hängt davon ab, in dem die DLL in den Arbeitsspeicher geladen wird, daher wird einen Datensatz für die Umsetzung in der DLL. Beim Laden der DLL in den Speicher und die Adresse des `var` aufgelöst werden kann und `pvar` zugewiesen. Wenn ein anderer Prozess dieselbe DLL jedoch nicht gleichzeitig geladen zu beheben, die Umsetzung für die Adresse des `var` wird aktualisiert, für den zweiten Prozess und Adressbereich des ersten Prozesses auf die falsche Adresse verweist.
+Der Linker kann `pvar` nicht auflösen, da sein Wert davon abhängt, wo die dll in den Arbeitsspeicher geladen wird, sodass ein Verschiebungs Daten Satz in die DLL eingefügt wird. Wenn die dll in den Arbeitsspeicher geladen wird, kann die Adresse `var` aufgelöst und `pvar` zugewiesen werden. Wenn die gleiche dll von einem anderen Prozess geladen, aber nicht mit derselben Adresse geladen werden kann, wird die Verschiebung für die Adresse von `var` für den zweiten Prozess aktualisiert, und der Adressbereich des ersten Prozesses verweist auf die falsche Adresse.

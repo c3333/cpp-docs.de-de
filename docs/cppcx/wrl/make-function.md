@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - Make function
 ms.assetid: 66704143-df99-4a95-904d-ed99607e1034
-ms.openlocfilehash: b45337ef773f93968570f62ab73c02d11fae88ff
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ffd0967b741475b260eef80ec24d56874a6bcb1f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398191"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213810"
 ---
 # <a name="make-function"></a>Make-Funktion
 
-Initialisiert die angegebene Windows-Runtime-Klasse. Verwenden Sie diese Funktion, um eine Komponente zu instanziieren, die im Modul definiert ist.
+Initialisiert die angegebene Windows-Runtime-Klasse. Verwenden Sie diese Funktion, um eine Komponente zu instanziieren, die im selben Modul definiert ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -165,76 +165,76 @@ ComPtr<T> Make();
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine benutzerdefinierte-Klasse, die von erbt `WRL::RuntimeClass`.
+Eine benutzerdefinierte Klasse, die von `WRL::RuntimeClass`erbt.
 
 *TArg1*<br/>
-Typ des Arguments 1, der auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 1, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg2*<br/>
-Typ des Arguments, 2, das auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 2, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg3*<br/>
-Typ des Arguments, 3, das auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 3, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg4*<br/>
-Typ des Arguments, 4, der auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 4, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg5*<br/>
-Typ des Arguments, 5, der auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 5, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg6*<br/>
-Typ des Arguments, 6, die an die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 6, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg7*<br/>
-Typ des Arguments, 7, das auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 7, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg8*<br/>
-Typ des Arguments, 8, das auf die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 8, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *TArg9*<br/>
-Typ des Arguments, 9, die an die angegebene Runtime-Klasse übergeben wird.
+Der Typ des Arguments 9, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg1*<br/>
-Argument 1, das an die angegebene Runtime-Klasse übergeben wird.
+Argument 1, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg2*<br/>
-Argument 2, auf die angegebene Runtime-Klasse übergeben wird.
+Argument 2, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg3*<br/>
-Argument 3, das an die angegebene Runtime-Klasse übergeben wird.
+Argument 3, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg4*<br/>
-Argument 4, das an die angegebene Runtime-Klasse übergeben wird.
+Argument 4, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg5*<br/>
-Argument 5, für die angegebene Runtime-Klasse übergeben wird.
+Argument 5, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg6*<br/>
-Argument 6, auf die angegebene Runtime-Klasse übergeben wird.
+Argument 6, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg7*<br/>
-Argument 7, das an die angegebene Runtime-Klasse übergeben wird.
+Argument 7, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg8*<br/>
-Argument 8, das an die angegebene Runtime-Klasse übergeben wird.
+Argument 8, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 *arg9*<br/>
-Argument 9, auf die angegebene Runtime-Klasse übergeben wird.
+Argument 9, das an die angegebene Lauf Zeit Klasse übermittelt wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Ein `ComPtr<T>` -Objekt, wenn erfolgreich; andernfalls `nullptr`.
+Ein `ComPtr<T>` Objekt, wenn erfolgreich; Andernfalls `nullptr`.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [How to: Instanziieren von WRL-Komponenten direkt](how-to-instantiate-wrl-components-directly.md) um die Unterschiede zwischen dieser Funktion zu erfahren und [Microsoft::WRL::Details::MakeAndInitialize](makeandinitialize-function.md), und ein Beispiel.
+Weitere Informationen finden Sie unter Gewusst [wie: direktes Instanziieren von WRL-Komponenten](how-to-instantiate-wrl-components-directly.md) , um die Unterschiede zwischen dieser Funktion und [Microsoft:: WRL::D etails:: makeandinitialize](makeandinitialize-function.md)zu erlernen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

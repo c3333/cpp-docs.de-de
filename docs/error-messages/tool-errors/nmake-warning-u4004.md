@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - U4004
 ms.assetid: 5086bbcb-42d7-4677-a877-1a02202a86a2
-ms.openlocfilehash: 882f6c98b31d23d283f5e8b32b46a46c543b1a76
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d59b5656d76025fa56bfc76bad800659f25acf53
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298151"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193198"
 ---
 # <a name="nmake-warning-u4004"></a>NMAKE: Warnung U4004
 
-zu viele Regeln für Ziel "Zielname"
+zu viele Regeln für Ziel "TargetName"
 
-Mehr als eine Beschreibungsblock wurde angegeben, für das angegebene Ziel, die mit dem Doppelpunkt (**:**) als Trennzeichen verwendet. NMAKE: die Befehle in der ist der erste Beschreibungsblock ausgeführt, und weitere Blöcke ignoriert.
+Für das angegebene Ziel wurde mehr als ein Beschreibungsblock mit einzelnen Doppelpunkten ( **:** ) als Trennzeichen angegeben. NMAKE hat die Befehle im ersten Beschreibungsblock ausgeführt und spätere Blöcke ignoriert.
 
-Um dasselbe Ziel in mehrere Abhängigkeiten zu anzugeben, verwenden Sie zwei Doppelpunkten (`::`) als Trennzeichen in jeder Abhängigkeitszeile.
+Um das gleiche Ziel in mehreren Abhängigkeiten anzugeben, verwenden Sie doppelte Doppelpunkte (`::`) als Trennzeichen in jeder Abhängigkeits Zeile.

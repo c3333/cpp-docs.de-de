@@ -6,25 +6,25 @@ helpviewer_keywords:
 - ODBC connections, configuring
 - configuring ODBC data sources
 ms.assetid: 1cd03e6a-8d59-4eca-a8c6-1010582d5e67
-ms.openlocfilehash: 259f0e2afa61096e4529a50ee2ba7de07b293c46
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 43d385bea34ba885b9ae0f8efb6109e6959c2383
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395780"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213134"
 ---
 # <a name="odbc-configuring-an-odbc-data-source"></a>ODBC: Konfigurieren einer ODBC-Datenquelle
 
-Verwenden einer [Datenquelle](../../data/odbc/data-source-odbc.md) mit einer Anwendung, die Sie entwickelt haben, müssen Sie ODBC-Administrators verwenden, um ihn zu konfigurieren. ODBC-Administrator verfolgt des verfügbaren Datenquellen und ihre Verbindungsinformationen in der Windows-Registrierung. Verwendet ODBC-Administrator hinzufügen, ändern und Löschen von Datenquellen in der **Datenquellen** Dialogfeld und zum Hinzufügen und Löschen von ODBC-Treiber.
+Um eine- [Datenquelle](../../data/odbc/data-source-odbc.md) mit einer von Ihnen entwickelten Anwendung zu verwenden, müssen Sie den ODBC-Administrator verwenden, um Sie zu konfigurieren. Der ODBC-Administrator verfolgt die verfügbaren Datenquellen und deren Verbindungsinformationen in der Windows-Registrierung. Verwenden Sie den ODBC-Administrator zum Hinzufügen, ändern und Löschen von Datenquellen im Dialogfeld **Datenquellen** sowie zum Hinzufügen und Löschen von ODBC-Treibern.
 
 > [!NOTE]
->  Diese Informationen gelten, wenn Sie (MFC-Datenzugriffsobjekt)-Klassen für den ODBC-Zugriff verwenden und bei der Verwendung von MFC-ODBC-Klassen.
+>  Diese Informationen gelten für die Verwendung von MFC-DAO-Klassen (Data Access Object) für ODBC-Zugriff und die Verwendung von MFC-ODBC-Klassen.
 
-ODBC-Administrator wird automatisch mit der Microsoft Foundation Classes (MFC)-Library-datenbankunterstützung installiert. Weitere Informationen zu den ODBC-Administratorprogramm, finden Sie unter [ODBC-Administrator](../../data/odbc/odbc-administrator.md) und in der ODBC-API-Reference-Hilfe.
+Der ODBC-Administrator wird automatisch mit der Datenbankunterstützung der Microsoft Foundation Classes (MFC)-Bibliothek installiert. Weitere Informationen zum ODBC-Administrator Programm finden Sie unter [ODBC-Administrator](../../data/odbc/odbc-administrator.md) und das Online ODBC-API-Referenz Hilfesystem.
 
-Informationen zum Schreiben von ODBC-Einrichtung und Verwaltung von Programmen für MFC-datenbankanwendungen,[technischen Hinweis 48](../../mfc/tn048-writing-odbc-setup-and-administration-programs.md).
+Weitere Informationen zum Schreiben von ODBC-Setup und Verwaltungsprogrammen für MFC-Datenbankanwendungen finden[Sie im technischen Hinweis 48](../../mfc/tn048-writing-odbc-setup-and-administration-programs.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grundlagen zu ODBC](../../data/odbc/odbc-basics.md)<br/>
 [ODBC: Direktes Aufrufen von ODBC-API-Funktionen](../../data/odbc/odbc-calling-odbc-api-functions-directly.md)

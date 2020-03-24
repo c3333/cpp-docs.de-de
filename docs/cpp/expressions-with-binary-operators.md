@@ -6,12 +6,12 @@ helpviewer_keywords:
 - binary operators [C++]
 - expressions [C++], binary operators
 ms.assetid: 6dea3df4-a4bd-42c3-9807-4a27c120ac9a
-ms.openlocfilehash: d3a966a7922c1888defbebf970ac409872fe18ec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2dbda1759dcb37a1f2a8cbe87f24adbb979ca085
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154307"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188986"
 ---
 # <a name="expressions-with-binary-operators"></a>Ausdrücke mit binären Operatoren
 
@@ -25,19 +25,19 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
    - Modulo (%)
 
-- [Operatoren (additiv)](../cpp/additive-operators-plus-and.md)
+- [Additive Operatoren](../cpp/additive-operators-plus-and.md)
 
    - Addition (+)
 
-   - Subtraction (-)
+   - Subtraktion (-)
 
 - [Shift operators (Schiebeoperatoren)](../cpp/left-shift-and-right-shift-operators-input-and-output.md)
 
-   - Verschiebung nach rechts (>>)
+   - Rechte UMSCHALTTASTE (> >)
 
-   - Verschiebung nach links (<<)
+   - Left Shift (< <)
 
-- [Relationale und Gleichheitsoperatoren](../cpp/relational-operators-equal-and-equal.md)
+- [Relationale und Gleichheits Operatoren](../cpp/relational-operators-equal-and-equal.md)
 
    - Kleiner als (\<)
 
@@ -45,15 +45,15 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
    - Kleiner als oder gleich (\<=)
 
-   - Größer als oder gleich (> =)
+   - Größer als oder gleich (>=)
 
    - Ist gleich (==)
 
-   - Ist ungleich (!=)
+   - Ungleich (!=)
 
 - Bitweise Operatoren
 
-   - [Bitweises AND (&)](../cpp/bitwise-and-operator-amp.md)
+   - [Bitweises and (&)](../cpp/bitwise-and-operator-amp.md)
 
    - [Bitweises exklusives OR (^)](../cpp/bitwise-exclusive-or-operator-hat.md)
 
@@ -61,9 +61,9 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
 - Logische Operatoren
 
-   - [Logisches AND (& &)](../cpp/logical-and-operator-amp-amp.md)
+   - [Logisches and (& &)](../cpp/logical-and-operator-amp-amp.md)
 
-   - [Logical OR (&#124;&#124;)](../cpp/logical-or-operator-pipe-pipe.md)
+   - [Logisches OR (&#124;&#124;)](../cpp/logical-or-operator-pipe-pipe.md)
 
 - [Assignment operators (Zuweisungsoperatoren)](../cpp/assignment-operators.md)
 
@@ -71,7 +71,7 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
    - Additionszuweisung (+=)
 
-   - Subtraktionszuweisung (–)
+   - Subtraktions Zuweisung (-=)
 
    - Multiplikationszuweisung (*=)
 
@@ -79,9 +79,9 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
    - Modulozuweisung (%=)
 
-   - Linksschiebezuweisung (<\<=)
+   - Left Shift-Zuweisung (<\<=)
 
-   - Rechtsschiebezuweisung (>> =)
+   - Right Shift-Zuweisung (> > =)
 
    - Bitweise AND-Zuweisung (& =)
 
@@ -89,8 +89,8 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
    - Bitweise inklusive OR-Zuweisung (&#124;=)
 
-- [Komma-Operators](../cpp/comma-operator.md) (,)
+- [Komma Operator](../cpp/comma-operator.md) (,)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdruckstypen](../cpp/types-of-expressions.md)

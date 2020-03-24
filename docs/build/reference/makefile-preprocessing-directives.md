@@ -39,50 +39,50 @@ helpviewer_keywords:
 - ELSE directive
 - ELSEIFDEF directive
 ms.assetid: bcedeccb-d981-469d-b9e8-ab5d097fd8c2
-ms.openlocfilehash: 4825ca180cb1b419a9ffa5232575ba1a24f8805d
-ms.sourcegitcommit: db1ed91fa7451ade91c3fb76bc7a2b857f8a5eef
+ms.openlocfilehash: 1dd30c8e338343626d8a8cc3157d118e44f0ea18
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980514"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170487"
 ---
 # <a name="makefile-preprocessing-directives"></a>Anweisungen für den Präprozessorlauf eines Makefiles
 
 Bei Vorverarbeitungs Anweisungen wird nicht zwischen Groß-und Kleinschreibung Das erste Ausrufezeichen (!) muss am Anfang der Zeile angezeigt werden. Nach dem Ausrufezeichen für den Einzug können NULL oder mehr Leerzeichen oder Tabstopps angezeigt werden.
 
-- `!CMDSWITCHES`{`+` &#124; Option... `-`
+- `!CMDSWITCHES` {`+` &#124; `-`}-*Option* ...
 
-   Schaltet die einzelnen *Optionen* ein oder aus. Leerzeichen oder Tabstopps müssen vor `+` dem `-` or-Operator angezeigt werden. es können keine Leerzeichen zwischen dem Operator und den [options Buchstaben](running-nmake.md#nmake-options)angezeigt werden. Bei Buchstaben wird nicht zwischen Groß-und Kleinschreibung unter`/`schieden Um einige Optionen zu aktivieren und andere zu deaktivieren, verwenden Sie separate Spezifikationen `!CMDSWITCHES`von.
+   Schaltet die einzelnen *Optionen* ein oder aus. Leerzeichen oder Tabstopps müssen vor dem `+` oder `-` Operator angezeigt werden. Es können keine zwischen dem Operator und den [options Buchstaben](running-nmake.md#nmake-options)angezeigt werden. Bei Buchstaben wird nicht zwischen Groß-und Kleinschreibung unterschieden, und Sie werden ohne Schrägstrich (`/` Um einige Optionen zu aktivieren und andere zu deaktivieren, verwenden Sie separate Spezifikationen `!CMDSWITCHES`.
 
    Nur/D,/I,/N und/S können in einem Makefile verwendet werden. In "Tools. ini" sind alle Optionen mit Ausnahme von/F,/Help,/nologo,/X und/? zulässig. Änderungen, die in einem Beschreibungsblock angegeben werden, werden bis zum nächsten Beschreibungsblock nicht wirksam. Diese Direktive aktualisiert **MAKEFLAGS**. Änderungen werden während der Rekursion geerbt, wenn **MAKEFLAGS** angegeben wird.
 
-- `!ERROR`*Text*
+- `!ERROR` *Text*
 
-   Zeigt *Text* in Error U1050 an und beendet NMAKE, auch wenn/K,/I, `.IGNORE`, `!CMDSWITCHES`oder der Bindestrich (`-`)-Befehlsmodifizierer verwendet wird. Leerzeichen oder Tabstopps vor *Text* werden ignoriert.
+   Zeigt *Text* in Error U1050 an und stoppt NMAKE, auch wenn/K,/I, `.IGNORE`, `!CMDSWITCHES`oder der Bindestrich (`-`) verwendet wird. Leerzeichen oder *Tabstopps vor Text* werden ignoriert.
 
-- `!MESSAGE`*Text*
+- `!MESSAGE` *Text*
 
-   Zeigt *Text* in Standardausgabe an. Leerzeichen oder Tabstopps vor *Text* werden ignoriert.
+   Zeigt *Text* in Standardausgabe an. Leerzeichen oder *Tabstopps vor Text* werden ignoriert.
 
-- `!INCLUDE`[ `<` ] *Dateiname* [ `>` ]
+- `!INCLUDE` [`<`] *Dateiname* [`>`]
 
-   Liest *filename* als Makefile und fährt dann mit dem aktuellen Makefile fort. NMAKE sucht zuerst im angegebenen Verzeichnis oder im aktuellen Verzeichnis nach *filename* und dann rekursiv durch Verzeichnisse aller übergeordneten Makefiles. wenn der *Dateiname* in eckige Klammern`< >`() eingeschlossen wird, werden diese in den **vom Include** -Makro, das anfänglich auf die include-Umgebungsvariable festgelegt ist. Es ist hilfreich `.SUFFIXES` , Einstellungen `.PRECIOUS`, und Rückschluss Regeln an rekursive Makefiles zu übergeben.
+   Liest *filename* als Makefile und fährt dann mit dem aktuellen Makefile fort. NMAKE sucht zuerst im angegebenen oder aktuellen Verzeichnis nach *filename* , dann rekursiv durch Verzeichnisse aller übergeordneten Makefiles, dann, wenn der *Dateiname* durch spitzen Klammern (`< >`) eingeschlossen wird, in Verzeichnissen, die durch das **include** -Makro angegeben werden, das anfänglich auf die include-Umgebungsvariable festgelegt ist. Es ist hilfreich, `.SUFFIXES` Einstellungen, `.PRECIOUS`und Rückschluss Regeln an rekursive Makefiles zu übergeben.
 
-- `!IF`*constant_expression*
+- `!IF` *constant_expression*
 
-   Verarbeitet Anweisungen zwischen `!IF` und dem nächsten `!ELSE` oder `!ENDIF` , wenn *constant_expression* zu einem Wert ungleich 0 (null) ausgewertet wird.
+   Verarbeitet Anweisungen zwischen `!IF` und der nächsten `!ELSE` oder `!ENDIF`, wenn *constant_expression* zu einem Wert ungleich 0 (null) ausgewertet wird.
 
-- `!IFDEF`*macroname*
+- `!IFDEF` *macroname*
 
-   Verarbeitet Anweisungen zwischen `!IFDEF` und dem nächsten `!ELSE` oder `!ENDIF` , wenn *macroname* definiert ist. Ein NULL-Makro wird als definiert betrachtet.
+   Verarbeitet Anweisungen zwischen `!IFDEF` und der nächsten `!ELSE` oder `!ENDIF`, wenn *macroname* definiert ist. Ein NULL-Makro wird als definiert betrachtet.
 
-- `!IFNDEF`*macroname*
+- `!IFNDEF` *macroname*
 
-   Verarbeitet Anweisungen zwischen `!IFNDEF` und dem nächsten `!ELSE` oder `!ENDIF` , wenn *macroname* nicht definiert ist.
+   Verarbeitet Anweisungen zwischen `!IFNDEF` und der nächsten `!ELSE` oder `!ENDIF`, wenn *macroname* nicht definiert ist.
 
-- `!ELSE`[`IF` &#124; *constant_expression* macroname`IFNDEF`macroname] `IFDEF` &#124;
+- `!ELSE` [`IF` *constant_expression* &#124; `IFDEF` *macroname* &#124; `IFNDEF` *macroname*]
 
-   Verarbeitet Anweisungen zwischen `!ELSE` und der nächsten `!ENDIF` , wenn die `!IF`vorherige `!IFDEF`-, `!IFNDEF` -oder-Anweisung auf NULL ausgewertet wurde. Die optionalen Schlüsselwörter stellen eine weitere Steuerung der Vorverarbeitung zur Verfügung.
+   Verarbeitet Anweisungen zwischen `!ELSE` und der nächsten `!ENDIF`, wenn die vorherige `!IF`, `!IFDEF`oder `!IFNDEF` Anweisung auf NULL ausgewertet wurde. Die optionalen Schlüsselwörter stellen eine weitere Steuerung der Vorverarbeitung zur Verfügung.
 
 - `!ELSEIF`
 
@@ -98,12 +98,12 @@ Bei Vorverarbeitungs Anweisungen wird nicht zwischen Groß-und Kleinschreibung D
 
 - `!ENDIF`
 
-   Markiert das Ende eines `!IF`-, `!IFDEF`-oder `!IFNDEF` -Blocks. Jeder Text nach `!ENDIF` in derselben Zeile wird ignoriert.
+   Markiert das Ende eines `!IF`-, `!IFDEF`-oder `!IFNDEF`-Blocks. Jeder Text nach `!ENDIF` in derselben Zeile wird ignoriert.
 
-- `!UNDEF`*macroname*
+- `!UNDEF` *macroname*
 
    Definiert " *macroname*".
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Vorverarbeitung eines Makefiles](makefile-preprocessing.md)

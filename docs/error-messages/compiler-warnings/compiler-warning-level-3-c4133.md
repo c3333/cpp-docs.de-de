@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4133
 ms.assetid: bdef87b0-21b3-41ac-9b23-1fa86101a9ac
-ms.openlocfilehash: 58fb35c5ce02f7f790732ae0ff11c6bdad74fec4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 158af15bd4e5f01243a75597c61191bc6ba2cd00
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402293"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80199031"
 ---
 # <a name="compiler-warning-level-3-c4133"></a>Compilerwarnung (Stufe 3) C4133
 
-'Typ': Inkompatible Typen - von 'type1' in 'Typ2'
+"Type": inkompatible Typen-von "Typ1" zu "Typ2"
 
-Diese Warnung kann verursacht werden, indem Sie versuchen, zwei Zeiger verschiedener Typen zu subtrahieren.
+Diese Warnung kann durch den Versuch verursacht werden, zwei Zeiger verschiedener Typen zu subtrahieren.
 
-Um diese Warnung zu vermeiden, geben Sie eine geeignete Typumwandlung.
+Um diese Warnung zu vermeiden, geben Sie eine geeignete Typumwandlung an.

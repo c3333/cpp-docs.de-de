@@ -42,12 +42,12 @@ helpviewer_keywords:
 - operator[], arrays
 - m_nRowsRead
 ms.assetid: 511427e1-73ca-4fd8-9ba1-ae9463557cb6
-ms.openlocfilehash: 66b7607eb28392196f6b7d3790aee976a861f2b6
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 0c5159ac5b834c7c31d980a412f28f8129e15b45
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545612"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212263"
 ---
 # <a name="carrayrowset-class"></a>CArrayRowset-Klasse
 
@@ -67,11 +67,11 @@ class CArrayRowset :
 *TAccessor*<br/>
 Der Typ der Accessorklasse, die vom Rowset verwendet werden soll.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -139,7 +139,7 @@ in Die Nummer der Zeile (Array Element), auf die Sie zugreifen möchten.
 
 Der Inhalt der angeforderten Zeile.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Anzahl der Zeilen im Rowset von *nrow* überschritten wird, wird eine Ausnahme ausgelöst.
 
@@ -153,7 +153,7 @@ Enthält die Anzahl der Zeilen im Rowset, die bereits gelesen wurden.
 ULONG m_nRowsRead;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

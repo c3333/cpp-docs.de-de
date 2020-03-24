@@ -6,32 +6,32 @@ f1_keywords:
 helpviewer_keywords:
 - R6016
 ms.assetid: 7bd3f274-d9c4-4bc4-8252-80bf168c4c3a
-ms.openlocfilehash: b617e3cf6d48a24b01479ef7ef3fb6ac425b3996
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 22bf4b7e8951215d1a013edb29af1ebff7517ffc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62279282"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197339"
 ---
 # <a name="c-runtime-error-r6016"></a>C-Laufzeitfehler R6016
 
 Nicht genügend Speicher für Threaddaten
 
 > [!NOTE]
-> Wenn diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app heruntergefahren, da sie ein Problem des internen Speicher verfügt. Es gibt viele mögliche Ursachen für diesen Fehler, aber dies wird häufig verursacht durch eine extrem wenig Arbeitsspeicher verfügbar, einen Fehler in der app oder durch einen Fehler in einer Add-in oder die Erweiterung, die von der app verwendet.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP heruntergefahren, weil Sie über ein internes Speicherproblem verfügt. Es gibt viele mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen extrem wenig Arbeitsspeicher, einen Fehler in der APP oder durch einen Fehler in einem Add-in oder einer Erweiterung verursacht, die von der APP verwendet wird.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Anderen ausgeführten Anwendungen zu schließen, oder Neustart des Computers, um Arbeitsspeicher freizugeben.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie die app neu.
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** entfernen, reparieren oder neu installieren, add-ins oder Erweiterungen, die von der app verwendet.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Schließen Sie andere laufende Anwendungen, oder starten Sie den Computer neu, um Arbeitsspeicher freizugeben.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um die APP zu reparieren oder neu zu installieren.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um Add-Ins oder Erweiterungen zu entfernen, zu reparieren oder neu zu installieren, die von der APP verwendet werden.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Dieser Fehler tritt auf, weil die Anwendung nicht genügend Arbeitsspeicher vom Betriebssystem ausführen erhalten hat eine [_beginthread](../../c-runtime-library/reference/beginthread-beginthreadex.md) oder `_beginthreadex` Aufruf oder Thread wurde nicht vom lokaler Speicher initialisiert `_beginthread` oder `_beginthreadex`.
+Dieser Fehler tritt auf, weil das Programm nicht genügend Arbeitsspeicher vom Betriebssystem empfangen hat, um einen [_beginthread](../../c-runtime-library/reference/beginthread-beginthreadex.md) oder einen `_beginthreadex`-Aufrufvorgang abzuschließen, oder wenn der Thread lokale Speicher nicht durch `_beginthread` oder `_beginthreadex`initialisiert wurde.
 
 Beim Start eines neuen Threads muss die Bibliothek für diesen eine interne Datenbank anlegen. Wenn der vom Betriebssystem bereitgestellte Speicher nicht zum Erweitern dieser Datenbank ausreicht, wird der Thread nicht gestartet, und der Aufrufprozess wird angehalten. Das kann vorkommen, wenn durch den Prozess zu viele Threads erstellt wurden oder der threadlokale Speicher ausgeschöpft ist.
 
-Es wird empfohlen, eine ausführbare Datei, die die C-Laufzeitbibliothek (CRT) aufruft, zu verwendende `_beginthreadex` zur Threaderstellung und nicht die Windows-API `CreateThread`. `_beginthreadex` initialisiert den internen statischen Speicher, der von vielen CRT-Funktionen im lokalen Threadspeicher verwendet wird. Wenn Sie zur Erstellung eines Threads die `CreateThread`-Funktion verwenden, beendet das CRT den Prozess beim Aufruf einer CRT-Funktion, die initialisierten internen statischen Speicher benötigt, möglicherweise mit R6016.
+Es wird empfohlen, dass eine ausführbare Datei, die die C-Lauf Zeit Bibliothek (CRT) aufruft, `_beginthreadex` für die Thread Erstellung anstelle der Windows-API-`CreateThread`verwendet. `_beginthreadex` initialisiert den internen statischen Speicher, der von vielen CRT-Funktionen im lokalen Threadspeicher verwendet wird. Wenn Sie zur Erstellung eines Threads die `CreateThread`-Funktion verwenden, beendet das CRT den Prozess beim Aufruf einer CRT-Funktion, die initialisierten internen statischen Speicher benötigt, möglicherweise mit R6016.

@@ -1,5 +1,5 @@
 ---
-title: thread
+title: Thread
 ms.date: 05/07/2019
 f1_keywords:
 - thread_cpp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - TLS (thread local storage), compiler implementation
 - __declspec keyword [C++], thread
 ms.assetid: 667f2a77-6d1f-4b41-bee8-05e67324fab8
-ms.openlocfilehash: cc21602764a9a3c2584bdd7da62c75974ffdd5fb
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 30972b5668d3eab9ec2118f3d90d7ced1e087275
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301287"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160696"
 ---
-# <a name="thread"></a>thread
+# <a name="thread"></a>Thread
 
 **Microsoft-spezifisch**
 
@@ -26,7 +26,7 @@ Der erweiterte Speicherklassenmodifizierer **Thread** wird verwendet, um eine Th
 
 *Deklarator* für **__declspec (Thread)**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Threadlokaler Speicher (TLS) ist der Mechanismus, mit dem jeder Thread in einem Multithreadprozess den Speicher für threadspezifische Daten zuordnet. In den standardmäßigen Multithreadprogrammen werden Daten auf allen Threads eines angegebenen Prozesses freigegeben, während der threadlokale Speicher der Mechanismus zum Zuordnen der threadspezifischen Daten ist. Eine umfassende Erörterung der Threads finden Sie unter [Multithreading](../parallel/multithreading-support-for-older-code-visual-cpp.md).
 
@@ -85,8 +85,8 @@ Außerdem müssen Sie diese Richtlinien beachten, wenn Sie Thread lokale Objekte
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Threadlokaler Speicher (TLS)](../parallel/thread-local-storage-tls.md)

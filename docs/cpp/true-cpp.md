@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - true keyword [C++]
 ms.assetid: 96be2a70-51c3-4250-9752-874d25a5a11e
-ms.openlocfilehash: 5cfc99f446499201a0f54c8e5b1dcc2d7152445c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b497c3c9eb1b30074c9b7286c438d0077525e05b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404701"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188037"
 ---
 # <a name="true-c"></a>true (C++)
 
@@ -22,9 +22,9 @@ bool-identifier = true ;
 bool-expression logical-operator true ;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieses Schlüsselwort ist einer der beiden Werte für eine Variable vom Typ ["bool"](../cpp/bool-cpp.md) oder ein bedingter Ausdruck (ein bedingter Ausdruck ist jetzt boolescher Ausdruck "true"). Wenn `i` ist vom Typ **"bool"**, klicken Sie dann die Anweisung `i = true;` weist **"true"** zu `i`.
+Dieses Schlüsselwort ist einer der beiden Werte für eine Variable vom Typ [bool](../cpp/bool-cpp.md) oder ein bedingter Ausdruck (ein bedingter Ausdruck ist jetzt ein echter boolescher Ausdruck). Wenn `i` vom Typ " **bool**" ist, weist die-`i = true;` Anweisung `i`den Wert " **true** " zu.
 
 ## <a name="example"></a>Beispiel
 
@@ -45,6 +45,6 @@ int main()
 0
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)

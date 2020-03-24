@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - C3646
 ms.assetid: 4391ead2-9637-4ca3-aeda-5a991b18d66d
-ms.openlocfilehash: 04ff1d026c97c56611f8b786d8a7254db711e4a8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 13a3ebeb6e7783687abc73cd0dcc018abe827809
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385588"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200472"
 ---
 # <a name="compiler-error-c3646"></a>Compilerfehler C3646
 
-> "Spezifizierer": Unbekannter Überschreibungsspezifizierer
+> "Spezifizierer": Unbekannter Überschreibungsspezifizierer.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Der Compiler hat ein Token gefunden, an der Position, in dem sie ein Überschreibungsspezifizierer wurde erwartet, aber das Token wurde nicht vom Compiler erkannt, wird.
+Der Compiler hat an der Position, an der er einen Überschreibungsspezifizierer erwartet hat, ein Token gefunden, aber das Token wurde vom Compiler nicht erkannt.
 
-Z. B. wenn das nicht erkannte *Spezifizierer* ist **_NOEXCEPT**, ersetzen Sie ihn mit dem Schlüsselwort **"noexcept"**.
+Wenn der unbekannte *Spezifizierer* beispielsweise **_NOEXCEPT**ist, ersetzen Sie ihn durch das Schlüsselwort **noaußer**.
 
 Weitere Informationen finden Sie unter [Überschreibungsspezifizierer](../../extensions/override-specifiers-cpp-component-extensions.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3646 generiert und zeigt, wie Sie diesen Fehler beheben:
+Im folgenden Beispiel wird C3646 generiert und eine Möglichkeit gezeigt, Sie zu beheben:
 
 ```cpp
 // C3646.cpp

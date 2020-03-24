@@ -6,31 +6,31 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0003
 ms.assetid: fc5a84bb-c6d3-41d6-8dd6-475455820778
-ms.openlocfilehash: e30a63ba48434196478b52283880864d3e4ae6ea
-ms.sourcegitcommit: 28eae422049ac3381c6b1206664455dbb56cbfb6
+ms.openlocfilehash: 59028c6d886630ef7db115a2ea93327669b2fcfd
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66450753"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192925"
 ---
 # <a name="project-build-error-prj0003"></a>Projektbuildfehler PRJ0003
 
-> Fehler beim Erstellen des "*Befehlszeile*".
+> Fehler beim Erzeugen der*Befehlszeile*.
 
-Die *Befehlszeile* Befehl formatiert wird, mit der Eingabe in die **Eigenschaftenseiten** Dialogfeld hat einen Fehlercode zurückgegeben, aber keine Informationen angezeigt, der **Ausgabe** Fenster.
+Der *Befehlszeilen* Befehl, der aus der Eingabe im Dialogfeld **Eigenschaften Seiten** gebildet wurde, hat einen Fehlercode zurückgegeben, im **Ausgabe** Fenster werden jedoch keine Informationen angezeigt.
 
 Mögliche Ursachen für diesen Fehler sind:
 
-- Ihr Projekt hängt von ATL-Server ab. Ab Visual Studio 2008, ATL-Server ist nicht mehr als Teil von Visual Studio enthalten, jedoch wurde als shared-Source-Projekt auf CodePlex veröffentlicht. Um den Quellcode für die ATL-Server und die Tools herunterzuladen, wechseln Sie zu [ATL-Serverbibliothek und Tools](https://go.microsoft.com/fwlink/p/?linkid=81979).
+- Ihr Projekt hängt von ATL-Server ab. Ab Visual Studio 2008 ist ATL Server nicht mehr als Teil von Visual Studio enthalten, sondern wurde als frei gegebenes Quell Projekt auf CodePlex veröffentlicht. Informationen zum Herunterladen des ATL-Server Quellcodes und der Tools finden Sie in der [ATL-Server Bibliothek und](https://go.microsoft.com/fwlink/p/?linkid=81979)in den Tools.
 
-- Geringe Systemressourcen. Schließen Sie einige Anwendungen zur Lösung dieses Problems.
+- Geringe Systemressourcen. Schließen Sie einige Anwendungen, um dieses Problem zu beheben.
 
-- Unzureichender Sicherheitsberechtigungen. Stellen Sie sicher, dass Sie über die erforderlichen Sicherheitsrechte verfügen.
+- Unzureichende Sicherheits Berechtigungen. Stellen Sie sicher, dass Sie über ausreichende Sicherheits Berechtigungen verfügen.
 
-- Die ausführbare Datei im angegebenen Pfade **VC++-Verzeichnisse** enthalten nicht den Pfad für das Tool, das Sie ausführen möchten. Weitere Informationen finden Sie unter [Compiler festgelegt, und Erstellen von Eigenschaften](../../build/working-with-project-properties.md)
+- Die in **VC + +-Verzeichnissen** angegebenen ausführbaren Pfade enthalten nicht den Pfad für das Tool, das Sie ausführen möchten. Weitere Informationen finden Sie unter [Set Compiler and Build Properties](../../build/working-with-project-properties.md) .
 
-- Für Makefile-Projekte, fehlt einen Befehl für die Ausführung **Buildbefehlszeile** oder **neu erstellte Befehlszeile**.
+- Für Makefile-Projekte fehlt ein Befehl, der entweder über die **Buildbefehlszeile** oder über die **Befehlszeile Rebuild**erstellt werden kann.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Projektbuildfehler und -warnungen (PRJxxxx)](../../error-messages/tool-errors/project-build-errors-and-warnings-prjxxxx.md)

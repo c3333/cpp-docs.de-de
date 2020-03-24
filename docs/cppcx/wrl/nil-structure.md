@@ -5,16 +5,16 @@ ms.topic: reference
 f1_keywords:
 - implements/Microsoft::WRL::Details::Nil
 ms.assetid: ea6dddc1-2bd0-44eb-804e-477572215712
-ms.openlocfilehash: 143b5133589198341cb68378778631e6a78af006
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a6f71c120e62a11881cf071879ed8a151a9b46b2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379076"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213668"
 ---
 # <a name="nil-structure"></a>Nil-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -22,9 +22,9 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 struct Nil;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wird verwendet, um einen Vorlagenparameter nicht angegeben, optional eine anzugeben.
+Gibt an, dass ein nicht angegebener optionaler Vorlagen Parameter angegeben wird.
 
 **Nil** ist eine leere Struktur.
 
@@ -32,12 +32,12 @@ Wird verwendet, um einen Vorlagenparameter nicht angegeben, optional eine anzuge
 
 `Nil`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - BK1514
 ms.assetid: 7c7e2504-a490-44ab-bb1f-47385ee2f4b0
-ms.openlocfilehash: 410c24b67e76bb2d412e1594abbb4a668c79aa1e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 14f74bba69db5bf3e02aecedd4540ef8a90d576b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62324479"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197625"
 ---
 # <a name="bscmake-error-bk1514"></a>BSCMAKE-Fehler BK1514
 
-Alle. SBR-Dateien abgeschnitten, keine Dateiname gefunden
+allen. SBR-Dateien abgeschnitten, keine in Dateinamen gefunden
 
-Keine der SBR-Dateien für eine Aktualisierung angegeben waren Teil der ursprünglichen Browserinformationsdatei (.bsc). Um die Namen der Dateien zu suchen, die diesen Fehler verursacht hat, lesen Sie die [BK4502](../../error-messages/tool-errors/bscmake-warning-bk4502.md) Warnungen, die ihm voranstehen.
+Keine der SBR-Dateien, die für ein Update angegeben wurden, war Teil der ursprünglichen Browseinformationsdatei (. BSC). Informationen zu den Namen der SBR-Dateien, die diesen Fehler verursacht haben, finden Sie in den [BK4502](../../error-messages/tool-errors/bscmake-warning-bk4502.md) -Warnungen, die Ihnen vorangestellt sind.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Falscher Dateiname angegeben wird, für die SBR-Datei oder BSC.
+1. Falscher Dateiname für SBR oder. BSC angegeben.
 
-1. Beschädigte .bsc-Datei erforderlich, BSCMAKE, um es erneut zu erstellen.
+1. Beschädigte. BSC-Datei erfordert BSCMAKE, um Sie neu zu erstellen.

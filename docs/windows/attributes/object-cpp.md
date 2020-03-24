@@ -1,21 +1,21 @@
 ---
-title: Objekt (C++-COM-Attribut)
+title: Object (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.object
 helpviewer_keywords:
 - object attribute
 ms.assetid: f2d3c231-630d-4b4c-bd15-b1c30df362dd
-ms.openlocfilehash: c0f544e84e5110761dfd01e25abef4352f055ff5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4545d899c13a1eabf8ea5fb6fe3918fb5f05b626
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407535"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214669"
 ---
 # <a name="object-c"></a>object (C++)
 
-Gibt eine benutzerdefinierte Schnittstelle an.
+Identifiziert eine benutzerdefinierte-Schnittstelle.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,17 +23,17 @@ Gibt eine benutzerdefinierte Schnittstelle an.
 [object]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn eine Schnittstellendefinition, vor der **Objekt** C++-Attribut wird die Schnittstelle in der IDL-Datei als eine benutzerdefinierte Schnittstelle platziert werden.
+Wenn eine Schnittstellen Definition vorangestellt wird, bewirkt das **Objekt** C++ Attribut, dass die-Schnittstelle in der IDL-Datei als benutzerdefinierte-Schnittstelle platziert wird.
 
-Alle mit Objekt markierte Schnittstelle erben muss `IUnknown`. Diese Bedingung erfüllt wird, wenn einer der Basisschnittstellen erben `IUnknown`. Wenn keine Basisschnittstellen erben `IUnknown`, der Compiler führt dazu, dass die Schnittstelle, die mit markierten **Objekt** für die Ableitung `IUnknown`.
+Jede mit dem-Objekt markierte Schnittstelle muss von `IUnknown`erben. Diese Bedingung ist erfüllt, wenn eine der Basis Schnittstellen von `IUnknown`erbt. Wenn keine Basis Schnittstellen von `IUnknown`erben, bewirkt der Compiler, dass die mit **Object** markierte Schnittstelle von `IUnknown`abgeleitet wird.
 
 ## <a name="example"></a>Beispiel
 
-Finden Sie unter [Nonbrowsable](nonbrowsable.md) ein Beispiel zur Verwendung für **Objekt**.
+Ein Beispiel für die Verwendung von **Object**finden Sie unter [nicht](nonbrowsable.md) suchbar.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -41,12 +41,12 @@ Finden Sie unter [Nonbrowsable](nonbrowsable.md) ein Beispiel zur Verwendung fü
 |-|-|
 |**Betrifft**|**interface**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)<br/>

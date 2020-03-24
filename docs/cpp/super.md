@@ -6,14 +6,14 @@ f1_keywords:
 helpviewer_keywords:
 - __super keyword [C++]
 ms.assetid: f0957c31-9256-405b-b402-cad182404b5f
-ms.openlocfilehash: a69d177bb83ce404a18d50c8f966be5d81f5fa72
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b6f6a7e108224ab4c97893104c5d6c38d325fa42
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330530"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160826"
 ---
-# <a name="super"></a>__super
+# <a name="__super"></a>__super
 
 **Microsoft-spezifisch**
 
@@ -25,15 +25,15 @@ Ermöglicht es Ihnen, explizit anzugeben, dass Sie eine Basisklassenimplementier
 __super::member_function();
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Alle verfügbaren Basisklassenmethoden werden während der Überladungsauflösungsphase berücksichtigt, und die Funktion, die die beste Übereinstimmung bereitstellt, ist die, die aufgerufen wird.
 
-**__super** kann nur innerhalb des Texts einer Memberfunktion verwendet werden.
+**__super** können nur im Text einer Member-Funktion angezeigt werden.
 
-**__super** kann nicht verwendet werden, mithilfe einer Deklaration. Finden Sie unter [using-Deklaration](../cpp/using-declaration.md) für Weitere Informationen.
+**__super** kann nicht mit einer using-Deklaration verwendet werden. Weitere Informationen finden [Sie unter using-Deklaration](../cpp/using-declaration.md) .
 
-Mit der Einführung von [Attribute](../windows/attributes/attributes-alphabetical-reference.md) , die Code einfügen, kann Ihr Code enthält eine oder mehrere Basisklassen, deren Namen Sie möglicherweise nicht, die aber kennen Methoden enthalten, die Sie aufrufen möchten.
+Mit der Einführung von [Attributen](../windows/attributes/attributes-alphabetical-reference.md) , die Code einfügen, kann Ihr Code eine oder mehrere Basisklassen enthalten, deren Namen Sie möglicherweise nicht kennen, aber die Methoden enthalten, die Sie aufzurufen möchten.
 
 ## <a name="example"></a>Beispiel
 
@@ -60,6 +60,6 @@ struct D : B1, B2 {
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)

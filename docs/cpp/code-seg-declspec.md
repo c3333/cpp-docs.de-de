@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - code_seg __declspec keyword
 ms.assetid: ad3c1105-15d3-4e08-b7b9-e4bd9d7b6aa0
-ms.openlocfilehash: a0b9c6dcd7ee19af59ac39a71498fe41bfc107ea
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 22703e92b1a127378c965ce12bcc4e5475b3e452
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62216553"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180835"
 ---
-# <a name="codeseg-declspec"></a>code_seg (__declspec)
+# <a name="code_seg-__declspec"></a>code_seg (__declspec)
 
 **Microsoft-spezifisch**
 
-Die **Code_seg** -Deklarationsattribut benennt ein ausführbares Textsegment in der OBJ-Datei, die in der der Objektcode für die Funktion oder Klassenmemberfunktionen gespeichert wird.
+Das Attribut **code_seg** Deklaration benennt ein ausführbares Textsegment in der obj-Datei, in dem der Objektcode für die Funktion oder die Klassenmember-Funktionen gespeichert wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,23 +25,23 @@ Die **Code_seg** -Deklarationsattribut benennt ein ausführbares Textsegment in 
 __declspec(code_seg("segname")) declarator
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das `__declspec(code_seg(...))`-Attribut aktiviert die Platzierung von Code in getrennt benannte Segmente, die einzeln ausgelagert oder im Speicher gesperrt werden können. Sie können dieses Attribut verwenden, um die Platzierung instanziierter Vorlagen und von durch den Compiler generiertem Code zu steuern.
 
-Ein *Segment* ist ein benannter Block von Daten in einer OBJ-Datei, die als eine Einheit in den Speicher geladen wird. Ein *Textsegment* ist ein Segment, das ausführbaren Code enthält. Der Begriff *Abschnitt* Segment wird häufig synonym verwendet.
+Ein *Segment* ist ein benannter Datenblock in einer OBJ-Datei, der als Einheit in den Arbeitsspeicher geladen wird. Ein *Textsegment* ist ein Segment, das ausführbaren Code enthält. Der Begriff " *Abschnitt* " wird häufig austauschbar mit Segmenten verwendet.
 
-Objektcode, der generiert wird, wenn `declarator` definiert wird, wird in das durch `segname` angegebene Textsegment platziert, das ein Literal mit schmaler Zeichenfolge ist. Der Name `segname` muss nicht angegeben werden eine [Abschnitt](../preprocessor/section.md) Pragma, bevor es in einer Deklaration verwendet werden kann. Standardmäßig, wenn kein `code_seg` angegeben wird, wird Objektcode in ein Segment mit dem Namen .text platziert. Ein **Code_seg** -Attribut überschreibt jede vorhandene [#pragma Code_seg](../preprocessor/code-seg.md) Richtlinie. Ein **Code_seg** -Attribut auf eine Memberfunktion überschreibt alle **Code_seg** auf der einschließenden Klasse angewendete Attribut.
+Objektcode, der generiert wird, wenn `declarator` definiert wird, wird in das durch `segname` angegebene Textsegment platziert, das ein Literal mit schmaler Zeichenfolge ist. Der Name `segname` muss nicht in einem [Abschnitts](../preprocessor/section.md) -Pragma angegeben werden, bevor er in einer Deklaration verwendet werden kann. Standardmäßig, wenn kein `code_seg` angegeben wird, wird Objektcode in ein Segment mit dem Namen .text platziert. Ein **code_seg** Attribut überschreibt jede vorhandene [#pragma code_seg](../preprocessor/code-seg.md) Direktive. Ein **code_seg** Attribut, das auf eine Element Funktion angewendet wird, überschreibt alle **code_seg** Attribute, die auf die einschließende Klasse angewendet werden.
 
-Wenn eine Entität verfügt über eine **Code_seg** -Attribut, das alle Deklarationen und Definitionen derselben Entität identische benötigen **Code_seg** Attribute. Wenn eine Basisklasse verfügt über eine **Code_seg** abgeleitetes Attribut Klassen müssen dasselbe Attribut verfügen.
+Wenn eine Entität über ein **code_seg** Attribut verfügt, müssen alle Deklarationen und Definitionen derselben Entität identische **code_seg** Attribute aufweisen. Wenn eine Basisklasse über ein **code_seg** Attribut verfügt, müssen abgeleitete Klassen über dasselbe Attribut verfügen.
 
-Wenn eine **Code_seg** Attribut eine Namespace-gültigkeitsbereichsfunktion oder eine Memberfunktion angewendet wird, der Objektcode für diese Funktion in das angegebene Textsegment platziert. Wenn dieses Attribut auf eine Klasse angewendet wird, werden alle Memberfunktionen dieser Klasse und geschachtelter Klassen, was vom Compiler generierte spezielle Memberfunktionen umfasst, in das angegebene Segment platziert. Lokal definierte Klassen – z. B. Klassen, die in einem Funktionsrumpf Member definiert, erben nicht die **Code_seg** Attribut des einschließenden Bereich.
+Wenn ein **code_seg** Attribut auf eine Namespace-Scope-Funktion oder eine Member-Funktion angewendet wird, wird der Objektcode für diese Funktion in das angegebene Textsegment eingefügt. Wenn dieses Attribut auf eine Klasse angewendet wird, werden alle Memberfunktionen dieser Klasse und geschachtelter Klassen, was vom Compiler generierte spezielle Memberfunktionen umfasst, in das angegebene Segment platziert. Lokal definierte Klassen – z. b. Klassen, die in einem Member-Funktions Text definiert sind – erben nicht das **code_seg** -Attribut des einschließenden Bereichs.
 
-Wenn eine **Code_seg** -Attribut auf eine Vorlagenklasse oder eine Vorlagenfunktion angewendet wird, werden alle implizite spezialisierungen der Vorlage in das angegebene Segment platziert. Explizite oder partielle spezialisierungen erben nicht die **Code_seg** Attribut aus der primären Vorlage. Sie können angeben, die denselben oder einen anderen **Code_seg** -Attribut für die Spezialisierung. Ein **Code_seg** Attribut nicht auf eine explizite Vorlageninstanziierung angewendet werden.
+Wenn ein **code_seg** Attribut auf eine Vorlagen Klasse oder eine Vorlagen Funktion angewendet wird, werden alle impliziten Spezialisierungs Funktionen der Vorlage in das angegebene Segment eingefügt. Explizite oder partielle Spezialisierungs Vererbung erbt nicht das **code_seg** Attribut von der primären Vorlage. Sie können das gleiche oder ein anderes **code_seg** Attribut für die Spezialisierung angeben. Ein **code_seg** Attribut kann nicht auf eine explizite Vorlagen Instanziierung angewendet werden.
 
-Standardmäßig wird vom Compiler generierter Code, wie beispielsweise eine spezielle Memberfunktion, in das Segment .text platziert. Die Direktive `#pragma code_seg` überschreibt diesen Standard nicht. Verwenden der **Code_seg** Attribut für die Klasse, Klassenvorlage oder Funktionsvorlage, um steuern, in dem vom Compiler generierte Code platziert wird.
+Standardmäßig wird vom Compiler generierter Code, wie beispielsweise eine spezielle Memberfunktion, in das Segment .text platziert. Die Direktive `#pragma code_seg` überschreibt diesen Standard nicht. Verwenden Sie das **code_seg** -Attribut für die Klasse, die Klassen Vorlage oder die Funktions Vorlage, um zu steuern, wo der vom Compiler generierte Code eingefügt wird.
 
-Lambdas erben **Code_seg** Attribute von ihrem umschließenden Bereich. Um ein Segment für einen Lambda-Ausdruck angeben, gelten eine **Code_seg** Attribut nach der parameterdeklarationsklausel und vor allen änderbaren oder Ausnahmespezifikation, alle nachstehenden rückgabetypspezifikationen und der Lambda-Text. Weitere Informationen finden Sie unter [Lambda-Ausdruckssyntax](../cpp/lambda-expression-syntax.md). In diesem Beispiel wird ein Lambda in einem Segment mit dem Namen PagedMem definiert:
+Lambdas erben **code_seg** Attribute aus Ihrem einschließenden Gültigkeitsbereich. Um ein Segment für einen Lambda anzugeben, wenden Sie ein **code_seg** -Attribut nach der Parameter-Declaration-Klausel und vor jeder änderbaren oder Ausnahme Spezifikation, allen nachfolgenden Rückgabetyp Spezifikationen und dem Lambda-Text an. Weitere Informationen finden Sie unter [Lambda-Ausdrucks Syntax](../cpp/lambda-expression-syntax.md). In diesem Beispiel wird ein Lambda in einem Segment mit dem Namen PagedMem definiert:
 
 ```cpp
 auto Sqr = [](int t) __declspec(code_seg("PagedMem")) -> int { return t*t; };
@@ -51,7 +51,7 @@ Passen Sie auf, wenn Sie spezifische Memberfunktionen – insbesondere virtuelle
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie eine **Code_seg** -Attribut die segmentplatzierung steuert wenn implizite und explizite vorlagenspezialisierung verwendet wird:
+Dieses Beispiel zeigt, wie ein **code_seg** Attribut die Segment Platzierung steuert, wenn implizite und explizite Vorlagen Spezialisierungen verwendet werden:
 
 ```cpp
 // code_seg.cpp
@@ -105,7 +105,7 @@ int main()
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

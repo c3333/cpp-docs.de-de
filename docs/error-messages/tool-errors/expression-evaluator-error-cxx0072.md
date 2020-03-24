@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0072
 - CXX0072
 ms.assetid: fd04e197-cfa9-4097-a070-8fa2111e876d
-ms.openlocfilehash: b8896fa2ad9c3d7cae41c79f129c6b8b8aacf20c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fdd4307c4af9696050d2dcfce4c307d39f46edd0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255656"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184254"
 ---
 # <a name="expression-evaluator-error-cxx0072"></a>Ausdrucksauswertungsfehler CXX0072
 
-Fehler: Geben Sie Informationen zu fehlenden oder "Unbekannt"
+Fehler: Typinformationen fehlen oder sind unbekannt.
 
-Die PCH-Datei nicht verknüpft oder der Code enthält einen Verweis auf einen Typ, der in einem Modul nicht mit "/ Zi" kompiliert wird.
+Die PCH-Datei wurde nicht verknüpft, oder der Code enthält einen Verweis auf einen Typ, der sich in einem Modul befindet, das nicht mit/Zi. kompiliert wurde.
 
 Dieser Fehler ist mit CAN0067 identisch.

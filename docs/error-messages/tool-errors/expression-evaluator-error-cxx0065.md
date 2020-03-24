@@ -7,21 +7,21 @@ helpviewer_keywords:
 - CAN0065
 - CXX0065
 ms.assetid: aac68f87-0b90-4c19-afa6-1c587625a5fd
-ms.openlocfilehash: 7b62e42da2a74d910e2dc56ce2dfcb5cb38f2bfa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b4120deec3c8e7ce14e381f782904cf83a588e43
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299316"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184423"
 ---
 # <a name="expression-evaluator-error-cxx0065"></a>Ausdrucksauswertungsfehler CXX0065
 
-Variable erfordert Stapelrahmen
+Variable benötigt Stapel Rahmen
 
-Ein Ausdruck enthält eine Variable, die im aktuellen Gültigkeitsbereich vorhanden ist, aber nicht noch erstellt wurde.
+Ein Ausdruck enthielt eine Variable, die im aktuellen Bereich vorhanden ist, aber noch nicht erstellt wurde.
 
-Dieser Fehler kann auftreten, wenn Sie der Prolog einer Funktion aber noch nicht richten Sie den Stapelrahmen der Funktion schrittweise ausführen oder Sie haben den Exitcode für die Funktion schrittweise.
+Dieser Fehler kann auftreten, wenn Sie in den Prolog einer Funktion eingetreten sind, den Stapel Rahmen für die Funktion jedoch noch nicht eingerichtet haben, oder wenn Sie den Exitcode für die Funktion abgecheckt haben.
 
-Durchlaufen der Prologcode aus, bis der Stapelrahmen eingerichtet wurde, bevor die Auswertung des Ausdrucks.
+Schrittweises Durchlaufen des Prolog-Codes, bis der Stapel Rahmen eingerichtet wurde, bevor der Ausdruck ausgewertet wird.
 
 Dieser Fehler ist mit CAN0065 identisch.

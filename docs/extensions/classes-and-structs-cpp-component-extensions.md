@@ -13,12 +13,12 @@ helpviewer_keywords:
 - value struct keyword [C++]
 - ref struct keyword [C++]
 ms.assetid: 5c360764-b229-49c6-9357-66213afbc372
-ms.openlocfilehash: dd58f32d031068785cd6020549f9eea4b2182786
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 78cf7cf16c4ccf29f72038fd79c5d7a1689c05ac
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544663"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172567"
 ---
 # <a name="ref-class-and-ref-struct--ccli-and-ccx"></a>Verweisklasse und Referenzstruktur (C++/CLI und C++/CX)
 
@@ -57,7 +57,7 @@ Der Name der Klasse oder Struktur.
 
 Weitere Informationen finden Sie in den sprachspezifischen Beschreibungen für diesen Parameter in den Abschnitten „Windows-Runtime“ und „Common Language Runtime“.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Standardmemberzugriff auf ein mit **ref class** oder **value class** deklariertes Objekt ist **private**. Und der Standardmemberzugriff auf ein mit **ref struct** oder **value struct** deklariertes Objekt ist **public**.
 
@@ -85,7 +85,7 @@ Weitere Informationen über Klassen und Strukturen finden Sie unter
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [Verweisklassen und Strukturen](../cppcx/ref-classes-and-structs-c-cx.md) und [Wertklassen und Strukturen](../cppcx/value-classes-and-structs-c-cx.md).
 
@@ -98,13 +98,13 @@ Wenn Sie ein Objekt mithilfe der Schlüsselwörter **ref class** oder **ref stru
 
 Wenn Sie ein Objekt mithilfe der Schlüsselwörter **value class** oder **value struct** deklarieren, wird die Objektlebensdauer des deklarierten Objekts nicht überwacht. Das Objekt ist wie jede andere Standard-C++-Klasse oder -Struktur.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die folgende Tabelle listet die für C++/CLI spezifischen Unterschiede zu der im Abschnitt **Alle Laufzeiten** gezeigten Syntax auf.
 
@@ -117,10 +117,10 @@ Die Schlüsselwörter **ref class** und **ref struct** teilen dem Compiler mit, 
 
 Die Schlüsselwörter **value class** und **value struct** teilen dem Compiler mit, dass der Wert der zugeordneten Klasse oder Struktur an Funktionen übergeben oder in Membern gespeichert wird.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2011
 ms.assetid: 04991ef5-49d5-46c7-8eee-a9d1d3fc541e
-ms.openlocfilehash: c8c62da6c1b4ea856f7a0854b998946893f2be63
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e08f068099af68375523eae0f0cc4d63960f3261
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299089"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194810"
 ---
 # <a name="linker-tools-error-lnk2011"></a>Linkertoolfehler LNK2011
 
-Vorkompiliertes Objekt nicht verknüpft; Image kann möglicherweise nicht ausgeführt.
+Vorkompiliertes Objekt nicht verknüpft in; Image kann möglicherweise nicht ausgeführt werden
 
-Bei Verwendung vorkompilierter Header erfordert LINK an, dass die Objektdateien mit vorkompilierten Header erstellt alle verknüpft sein muss. Wenn Sie eine Quelldatei, die Sie verwenden verfügen, um einen vorkompilierten Header für die Verwendung mit anderen Quelldateien zu generieren, müssen Sie jetzt die Objektdatei, die erstellt werden, zusammen mit der vorkompilierten Headerdatei einschließen.
+Wenn Sie vorkompilierte Header verwenden, erfordert Link, dass alle mit vorkompilierten Headern erstellten Objektdateien in verknüpft werden müssen. Wenn Sie über eine Quelldatei verfügen, die Sie verwenden, um einen vorkompilierten Header zur Verwendung mit anderen Quelldateien zu generieren, müssen Sie jetzt die Objektdatei einschließen, die zusammen mit dem vorkompilierten Header erstellt wurde.
 
-Z. B. Wenn Sie eine Datei namens STUB.cpp zum Erstellen des vorkompilierten Headers für die Verwendung mit anderen Quelldateien kompilieren, müssen Sie eine Verknüpfung mit STUB.obj, oder Sie erhalten diesen Fehler. In den folgenden Befehlszeilen dient Zeile aus, den vorkompilierten Header COMMON.pch zu erstellen, die in die zweite und dritte PROG1.cpp und PROG2.cpp verwendet wird. Die Datei STUB.cpp nur enthält `#include` Zeilen (das gleiche `#include` wie in PROG1.cpp und PROG2.cpp) und dient nur zum Generieren von vorkompilierten Headern. In der letzten Zeile müssen STUB.obj verknüpft werden, um LNK2011 zu vermeiden.
+Wenn Sie z. b. eine Datei mit dem Namen "Stub. cpp" kompilieren, um einen vorkompilierten Header für die Verwendung mit anderen Quelldateien zu erstellen, müssen Sie eine Verknüpfung mit "Stub. obj" herstellen. andernfalls wird dieser Fehler angezeigt. In den folgenden Befehlszeilen wird Zeile 1 verwendet, um einen vorkompilierten Header (Common. pch) zu erstellen, der mit PROG1. cpp und PROG2. cpp in den Zeilen 2 und 3 verwendet wird. Die Datei Stub. cpp enthält nur `#include` Zeilen (dieselben `#include` Zeilen wie in PROG1. cpp und PROG2. cpp) und wird nur zum Generieren von vorkompilierten Headern verwendet. In der letzten Zeile muss Stub. obj in verknüpft werden, um Linkertoolfehler LNK2011 zu vermeiden.
 
 ```
 cl /c /Yccommon.h stub.cpp

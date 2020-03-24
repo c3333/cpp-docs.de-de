@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - length_is attribute
 ms.assetid: 1d99b883-84bb-4b1e-b098-eb780fc94f40
-ms.openlocfilehash: 4f4bfe233e3228c50aee734de4ad979c38a55fda
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 2f252206f6e364b1a87ee3b7b88b14d0ea19bacb
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514531"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214785"
 ---
 # <a name="length_is"></a>length_is
 
@@ -28,15 +28,15 @@ Gibt die Anzahl der zu übertragenden Array Elemente an.
 *expression*<br/>
 Mindestens ein C-sprach Ausdruck. Leere Argument Slots sind zulässig.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **length_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [length_is](/windows/win32/Midl/length-is) -Mittell-Attribut.
+Das **length_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [length_is](/windows/win32/Midl/length-is) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
 Ein Beispiel für die Angabe eines Abschnitts eines Arrays finden Sie unter [First_is](first-is.md) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -44,12 +44,12 @@ Ein Beispiel für die Angabe eines Abschnitts eines Arrays finden Sie unter [Fir
 |-|-|
 |**Betrifft**|Feld in **Struktur** oder **Union**, Schnittstellenparameter, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

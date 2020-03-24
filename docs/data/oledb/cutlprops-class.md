@@ -29,12 +29,12 @@ helpviewer_keywords:
 - OnPropertyChanged method
 - SetPropValue method
 ms.assetid: bb525178-765c-4e23-a110-c0fd70c05437
-ms.openlocfilehash: bbeae4faad4d650d8dc44a61a22b1fcc63a0bc15
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 3498ec1250d9443007acb3b12ec25983a71587d0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545552"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211106"
 ---
 # <a name="cutlprops-class"></a>CUtlProps-Klasse
 
@@ -52,11 +52,11 @@ class ATL_NO_VTABLE CUtlProps : public CUtlPropsBase
 *T*<br/>
 Die Klasse, die die `BEGIN_PROPSET_MAP`enthält.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -68,7 +68,7 @@ Die Klasse, die die `BEGIN_PROPSET_MAP`enthält.
 |[OnPropertyChanged](#onpropertychanged)|Wird aufgerufen, nachdem eine Eigenschaft zum Verarbeiten verketteter Eigenschaften festgelegt wurde|
 |[SetPropValue](#setpropvalue)|Legt eine Eigenschaft in einem Eigenschaften Satz fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der größte Teil dieser Klasse ist ein Implementierungsdetail.
 
@@ -126,7 +126,7 @@ Die eigen schafts-ID und der neue Wert in einer [DBPROP](/previous-versions/wind
 
 Ein HRESULT-Standard. Der Standard Rückgabewert ist S_OK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie über Validierungs Routinen verfügen, die Sie für einen Wert ausführen möchten, den Sie zum Festlegen einer Eigenschaft verwenden möchten, sollten Sie diese Funktion überschreiben. Beispielsweise können Sie DBPROP_AUTH_PASSWORD anhand einer Kenn Wort Tabelle validieren, um einen gültigen Wert zu bestimmen.
 
@@ -145,7 +145,7 @@ virtual HRESULT CUtlPropsBase::OnInterfaceRequested(REFIID riid);
 *riid*<br/>
 in Die IID für die angeforderte Schnittstelle. Weitere Informationen finden Sie in der Beschreibung des *riid* -Parameters `ICommand::Execute` in der *OLE DB Programmierer-Referenz* (im *MDAC-SDK*).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 `OnInterfaceRequested` behandelt Consumeranforderungen für eine optionale Schnittstelle, wenn ein Consumer eine Methode für eine der Objekt Erstellungs Schnittstellen (z. b. `IDBCreateSession`, `IDBCreateCommand`, `IOpenRowset`oder `ICommand`) aufruft. Die entsprechende OLE DB-Eigenschaft für die angeforderte Schnittstelle wird festgelegt. Wenn der Consumer z. b. `IID_IRowsetLocate`anfordert, legt `OnInterfaceRequested` die `DBPROP_IRowsetLocate`-Schnittstelle fest. Auf diese Weise wird der richtige Zustand während der Rowseterstellung beibehalten.
 
@@ -188,7 +188,7 @@ Die eigen schafts-ID und der neue Wert in einer [DBPROP](/previous-versions/wind
 
 Ein HRESULT-Standard. Der Standard Rückgabewert ist S_OK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn Sie verkettete Eigenschaften verarbeiten möchten, z. b. Lesezeichen oder Updates, deren Werte von einem anderen Eigenschafts Wert abhängen, sollten Sie diese Funktion überschreiben.
 
@@ -225,7 +225,7 @@ in Ein Zeiger auf einen Variant-Wert, der den neuen Eigenschafts Wert enthält.
 
 bei erfolgreicher S_OK `Failure`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

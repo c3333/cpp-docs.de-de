@@ -7,33 +7,33 @@ helpviewer_keywords:
 - Visual C++ debugger, debugging providers
 - Visual C++ debugger
 ms.assetid: 90d4e7db-06ea-4de0-a7f4-4f3751d50d93
-ms.openlocfilehash: 21d4cb455413c3f7cbcbed02cdd4c364a469426d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f80ce5dc82dd2baeefe3410a488a5fefda0e9bf0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176147"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211093"
 ---
 # <a name="debugging-your-provider"></a>Debuggen des Anbieters
 
-Es gibt zwei Möglichkeiten zum Debuggen von Ihrem Anbieters:
+Es gibt zwei Möglichkeiten zum Debuggen des Anbieters:
 
-- Da der Anbieter im Prozess erstellt wurden, können Sie normalerweise mit Hilfe der OLE DB-Consumervorlagen und einen Einzelschritt in den Anbieter erstellen.
+- Da Anbieter in einem Prozess erstellt werden, können Sie mithilfe der OLE DB Consumer-Vorlagen einen Consumercode erstellen und den Anbieter normal ausführen.
 
-- Sie können verschiedene Dienstprogramme, die die im Lieferumfang von Visual C++.
+- Sie können verschiedene Hilfsprogramme verwenden, die im Liefer C++Umfang von Visual enthalten sind.
 
-## <a name="to-use-debugging"></a>Debuggen mit
+## <a name="to-use-debugging"></a>So verwenden Sie das Debugging
 
-1. Öffnen Sie das Anbieterprojekt.
+1. Öffnen Sie das Anbieter Projekt.
 
-1. Auf der **Projekte** Menü klicken Sie auf **Eigenschaften**.
+1. Klicken Sie im Menü **Projekte** auf **Eigenschaften**.
 
-1. In der **Eigenschaftenseiten** Dialogfeld klicken Sie auf die **Debuggen** Registerkarte.
+1. Klicken Sie im Dialogfeld **Eigenschaften Seiten** auf die Registerkarte **Debuggen** .
 
-1. Wählen Sie als erforderlich ist, klicken Sie auf Optionen **OK**.
+1. Wählen Sie die Optionen aus, und klicken Sie auf **OK**.
 
-1. Legen Sie Haltepunkte fest, und klicken Sie dann wie gewohnt debuggen.
+1. Legen Sie Breakpoints fest, und Debuggen Sie wie gewohnt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

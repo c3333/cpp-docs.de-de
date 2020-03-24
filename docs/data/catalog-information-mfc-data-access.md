@@ -8,12 +8,12 @@ helpviewer_keywords:
 - catalog information database [C++]
 - databases [C++], catalog information database
 ms.assetid: c184e80f-ff17-409f-9df8-05275080bb8d
-ms.openlocfilehash: 5958c530d57672a9574ddd90df8ae6ac0b0b04f6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 18b76f3e9d3e2bf17763d433f388647b0261b12b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398013"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213485"
 ---
 # <a name="catalog-information--mfc-data-access"></a>Kataloginformationen (MFC-Datenzugriff)
 
@@ -21,6 +21,6 @@ Informationen zu den Tabellen in einer Datenquelle können die Namen der Tabelle
 
 Weitere Informationen finden Sie unter [Datenquelle: Bestimmen des Schemas der Datenquelle (ODBC)](../data/odbc/data-source-determining-the-schema-of-the-data-source-odbc.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenzugriffsprogrammierung (MFC/ATL)](../data/data-access-programming-mfc-atl.md)

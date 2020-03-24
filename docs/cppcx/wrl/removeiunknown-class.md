@@ -5,16 +5,16 @@ ms.topic: reference
 f1_keywords:
 - client/Microsoft::WRL::Details::RemoveIUnknown
 ms.assetid: 998e711a-7d1a-44c6-a016-e6167aa40863
-ms.openlocfilehash: 3b54f6a3072d82d40db4ac698503f0939e745472
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cfcdefbb8d7cd12d2ebf99710f595fdd2fc16f76
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62231430"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213615"
 ---
 # <a name="removeiunknown-class"></a>RemoveIUnknown-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,21 +29,21 @@ class RemoveIUnknown : public T;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine Klasse.
+Eine-Klasse.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ist einen Typ, der entspricht einer `IUnknown`-Basis-Typ, weist jedoch nicht virtuelle `QueryInterface`, `AddRef`, und `Release` Memberfunktionen.
+Definiert einen Typ, der einem `IUnknown`basierten Typ entspricht, aber über nicht virtuelle `QueryInterface`-, `AddRef`-und `Release` Element Funktionen verfügt.
 
-COM-Methoden in der Standardeinstellung bieten virtuelle `QueryInterface`, `AddRef`, und `Release` Methoden. Allerdings `ComPtr` erfordert nicht die Zusatzaufwand virtueller Methoden. `RemoveIUnknown` entfällt dieser Mehraufwand durch die Bereitstellung von privaten, nicht virtuelle `QueryInterface`, `AddRef`, und `Release` Methoden.
+Standardmäßig stellen com-Methoden die Methoden Virtual `QueryInterface`, `AddRef`und `Release` bereit. Allerdings ist für `ComPtr` nicht der Aufwand von virtuellen Methoden erforderlich. `RemoveIUnknown` entfällt diesen mehr Aufwand, indem private, nicht virtuelle `QueryInterface`-, `AddRef`-und `Release`-Methoden bereitgestellt werden.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`ReturnType`|Ein Synonym für einen Typ, die Template-Parameter entspricht *T* aber nicht virtuelle `IUnknown` Member.|
+|`ReturnType`|Ein Synonym für einen Typ, der dem Vorlagen Parameter *T* entspricht, jedoch nicht virtuelle `IUnknown` Member enthält.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -51,12 +51,12 @@ COM-Methoden in der Standardeinstellung bieten virtuelle `QueryInterface`, `AddR
 
 `RemoveIUnknown`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** client.h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

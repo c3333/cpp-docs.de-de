@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - C4951
 ms.assetid: 669d8bb7-5efa-4ba9-99db-4e65addbf054
-ms.openlocfilehash: 73e048aeaa044c35e09539b07d51398829a0fdfd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d94347df17bac01334cfd85c2bd9f6c8a98b5fc0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408055"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80174595"
 ---
 # <a name="compiler-warning-level-1-c4951"></a>Compilerwarnung (Stufe 1) C4951
 
-> "*Funktion*" wurde bearbeitet wurde, seit die Profildaten erfasst Daten wurden, funktionsprofildaten werden nicht verwendet
+> "*Funktion*" wurde bearbeitet, seit die Profildaten erfasst wurden. die Funktions Profildaten werden nicht verwendet.
 
 Eine Funktion wurde in einem Eingabemodul für [/LTCG:PGUPDATE](../../build/reference/ltcg-link-time-code-generation.md)bearbeitet, sodass die Profildaten jetzt ungültig sind. Das Eingabemodul wurde nach **/LTCG:PGINSTRUMENT** neu kompiliert und verfügt über eine Funktion (*Funktion*) mit einer anderen Ablaufsteuerung als der, die zum Zeitpunkt des **/LTCG:PGINSTRUMENT** -Vorgangs im Modul enthalten war.
 

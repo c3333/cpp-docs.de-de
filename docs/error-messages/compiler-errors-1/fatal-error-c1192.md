@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C1192
 ms.assetid: 54cff717-a3eb-471d-9bd4-1c2e673dbbef
-ms.openlocfilehash: 5fc5e0a17fb3fedca5719065ae426ac8c05db61f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1a15a808c1aff46ba6e63b3e86c0745c8ed7711a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62228955"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203668"
 ---
 # <a name="fatal-error-c1192"></a>Schwerwiegender Fehler C1192
 
-\#Fehler bei 'Datei'
+Fehler bei der \#Verwendung von "file".
 
-Nur eine Datei in die Microsoft Intermediate Language (MSIL)-Format übergeben werden kann, um eine [#using](../../preprocessor/hash-using-directive-cpp.md) Richtlinie. Die ["/ CLR"](../../build/reference/clr-common-language-runtime-compilation.md) Compileroption können Sie eine MSIL-Ausgabedatei zu erstellen. Andere Visual Studio-Sprachen werden auch MSIL-Dateien generiert.
+Nur eine Datei im MSIL-Format (Microsoft Intermediate Language) kann an eine [#using](../../preprocessor/hash-using-directive-cpp.md) -Direktive übermittelt werden. Mit der [/CLR](../../build/reference/clr-common-language-runtime-compilation.md) -Compileroption können Sie eine MSIL-Ausgabedatei erstellen. In anderen Visual Studio-Sprachen werden auch MSIL-Dateien erzeugt.

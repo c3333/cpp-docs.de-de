@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0053
 - CXX0053
 ms.assetid: fe74ed9e-9241-4df1-881f-104348e296c6
-ms.openlocfilehash: 4ba55e7e8f684ed0b0332be4a8f3ae9d52e9150d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ba42e0279cd7c73b575e842cada4fbf569051d19
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299569"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184787"
 ---
 # <a name="expression-evaluator-error-cxx0053"></a>Ausdrucksauswertungsfehler CXX0053
 
-Beim Binden von Haltepunkten mit Funktionssymbol übereinstimmen.
+nicht Funktions Symbol Übereinstimmung beim Binden von Breakpoints
 
-Ein Symbol, das verwendet wird, wie Sie ein Haltepunkt nicht um eine Funktion war. Einen Datenmember als Haltepunkt angeben, wird dieser Fehler kann verursacht.
+Ein als Haltepunkt verwendetes Symbol war keine Funktion. Wenn Sie einen Datenmember als Haltepunkt angeben, kann dies zu diesem Fehler führen.
 
 Dieser Fehler ist mit CAN0053 identisch.

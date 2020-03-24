@@ -6,29 +6,29 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4006
 ms.assetid: 3a637d17-1676-4ea6-bd8b-290137d28d3b
-ms.openlocfilehash: c81c93a6df8c7eef809f243e3dc56164ea548371
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d949ba259de8e131f6191e757119b4c42effc3d4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62187140"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194316"
 ---
 # <a name="linker-tools-warning-lnk4006"></a>Linkertoolwarnung LNK4006
 
-bereits im Objekt definiertes Symbol zweite Definition wurde ignoriert.
+das Symbol ist bereits im Objekt definiert. zweite Definition wird ignoriert.
 
-Das gegebene `symbol`, angezeigt in seiner ergänzten Form, wurde mehrfach definiert. Bei dieser Warnung auftreten `symbol` zweimal hinzugefügt werden, aber nur die erste Form verwendet werden.
+Das gegebene `symbol`, angezeigt in seiner ergänzten Form, wurde mehrfach definiert. Wenn diese Warnung auftritt, wird `symbol` zweimal hinzugefügt, es wird jedoch nur das erste Formular verwendet.
 
-Sie können diese Warnung erhalten, wenn Sie versuchen, zwei Importbibliotheken in einer Zelle zusammenzuführen.
+Sie können diese Warnung erhalten, wenn Sie versuchen, zwei Import Bibliotheken in einer zusammenzuführen.
 
-Wenn Sie die C-Laufzeitbibliothek neu sind, können Sie diese Meldung ignorieren.
+Wenn Sie die C-Lauf Zeit Bibliothek neu erstellen, können Sie diese Meldung ignorieren.
 
 ### <a name="to-fix-by-using-the-following-possible-solutions"></a>So beheben Sie den Fehler (unterschiedliche Lösungsmöglichkeiten)
 
-1. Der angegebene `symbol` möglicherweise eine Paketfunktion, erstellt durch Kompilierung mit [/Gy](../../build/reference/gy-enable-function-level-linking.md). Dieses Symbol in mehr als eine Datei enthalten war, aber zwischen Kompilationen geändert. Kompilieren Sie alle Dateien, enthalten die `symbol`.
+1. Der angegebene `symbol` kann eine Paket Funktion sein, die durch Kompilieren mit [/Gy](../../build/reference/gy-enable-function-level-linking.md)erstellt wird. Dieses Symbol war in mehr als einer Datei enthalten, wurde jedoch zwischen Kompilierungen geändert. Kompilieren Sie alle Dateien neu, die die `symbol`enthalten.
 
-1. Der angegebene `symbol` möglicherweise unterschiedlich definiert sein in zwei Memberobjekten in verschiedenen Bibliotheken.
+1. Der angegebene `symbol` wurde möglicherweise in zwei Member-Objekten in verschiedenen Bibliotheken anders definiert.
 
-1. Ein absoluter möglicherweise zweimal mit einem anderen Wert in jeder Definition definiert wurden.
+1. Ein absoluter Wert wurde möglicherweise zweimal mit einem anderen Wert in jeder Definition definiert.
 
-1. Wenn die Fehlermeldung, beim Kombinieren von Bibliotheken empfangen wird, `symbol` bereits vorhanden ist, in der Bibliothek hinzugefügt wird.
+1. Wenn die Fehlermeldung beim Kombinieren von Bibliotheken empfangen wird, ist `symbol` bereits in der Bibliothek vorhanden, der hinzugefügt wird.

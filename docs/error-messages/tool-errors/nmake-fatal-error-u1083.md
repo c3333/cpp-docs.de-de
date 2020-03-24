@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - U1083
 ms.assetid: b09bc34d-35d5-4676-b000-fd7d434400d9
-ms.openlocfilehash: 304c70e7fe9a7eca4ee56beab2c62494233da55b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e005142e40e1e7e2fc4a75ffd45e0d3aa4a164ce
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366874"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193367"
 ---
 # <a name="nmake-fatal-error-u1083"></a>NMAKE: Schwerwiegender Fehler U1083
 
-Zielmakro "Target" Erweitert zu nichts
+Ziel Makro "Ziel" wird auf "Nothing" erweitert
 
-Das angegebene Ziel handelt es sich um einen Aufruf eines Makros, die nicht definiert wurde oder einen null-Wert. NMAKE: ein null-Ziel kann nicht verarbeitet werden.
+Das angegebene Ziel ist ein Aufruf eines Makros, das nicht definiert wurde oder einen NULL-Wert aufweist. NMAKE kann ein NULL-Ziel nicht verarbeiten.

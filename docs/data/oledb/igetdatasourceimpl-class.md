@@ -14,16 +14,16 @@ helpviewer_keywords:
 - IGetDataSourceImpl class
 - GetDataSource method
 ms.assetid: d63f3178-d663-4f01-8c09-8aab2dd6805a
-ms.openlocfilehash: 2056b93fd6c1d32b72996970352e87670ff406de
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 596dd2ea7f65040ae526662974d210c1f99a0cf2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62408939"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210612"
 ---
 # <a name="igetdatasourceimpl-class"></a>IGetDataSourceImpl-Klasse
 
-Stellt eine Implementierung der [IGetDataSource](/previous-versions/windows/desktop/ms709721(v=vs.85)) Objekt.
+Stellt eine Implementierung des [IGetDataSource](/previous-versions/windows/desktop/ms709721(v=vs.85)) -Objekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,27 +35,27 @@ class ATL_NO_VTABLE IGetDataSourceImpl : public IGetDataSource
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Abgeleitet von die Klasse `IGetDataSourceImpl`.
+Die von `IGetDataSourceImpl`abgeleitete Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** „atldb.h“
+**Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
 |||
 |-|-|
-|[GetDataSource](#getdatasource)|Gibt einen Schnittstellenzeiger auf das Datenquellenobjekt, das die Sitzung erstellt haben.|
+|[GetDataSource](#getdatasource)|Gibt einen Schnittstellen Zeiger für das Datenquellen Objekt zurück, das die Sitzung erstellt hat.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dies ist eine erforderliche Schnittstelle für die Sitzung erhalten Sie einen Schnittstellenzeiger auf das Datenquellenobjekt.
+Dies ist eine erforderliche Schnittstelle für die Sitzung, um einen Schnittstellen Zeiger auf das Datenquellen Objekt zu erhalten.
 
-## <a name="getdatasource"></a> IGetDataSourceImpl::GetDataSource
+## <a name="igetdatasourceimplgetdatasource"></a><a name="getdatasource"></a>Igetdatasourceimpl:: GetDataSource
 
-Gibt einen Schnittstellenzeiger auf das Datenquellenobjekt, das die Sitzung erstellt haben.
+Gibt einen Schnittstellen Zeiger für das Datenquellen Objekt zurück, das die Sitzung erstellt hat.
 
 ### <a name="syntax"></a>Syntax
 
@@ -66,13 +66,13 @@ STDMETHOD(GetDataSource)(REFIID riid,
 
 #### <a name="parameters"></a>Parameter
 
-Finden Sie unter [IGetDataSource::GetDataSource](/previous-versions/windows/desktop/ms725443(v=vs.85)) in die *OLE DB-Programmierreferenz*.
+Weitere Informationen finden Sie unter [IGetDataSource:: GetDataSource](/previous-versions/windows/desktop/ms725443(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nützlich, wenn Sie auf Eigenschaften in das neue Datenquellenobjekt zugreifen müssen.
+Nützlich, wenn Sie auf Eigenschaften im Datenquellen Objekt zugreifen müssen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

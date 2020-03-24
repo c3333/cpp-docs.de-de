@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0008
 ms.assetid: 6bf7f17a-d2a8-4826-99c7-d600d846952f
-ms.openlocfilehash: 5741b7ef8cb9a7ae53d64874d3531e9271c09e0f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7d1c11ab7539f25d371c0bfbd2853b6155c9661c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359487"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192953"
 ---
 # <a name="project-build-error-prj0008"></a>Projektbuildfehler PRJ0008
 
-Datei 'Datei' konnte nicht gelöscht werden.
+Die Datei "file" konnte nicht gelöscht werden.
 
-**Stellen Sie sicher, dass die Datei nicht von einem anderen Prozess geöffnet ist und nicht schreibgeschützt.**
+**Stellen Sie sicher, dass die Datei nicht von einem anderen Prozess geöffnet ist und nicht schreibgeschützt ist.**
 
-Während einer Neuerstellung oder Bereinigung, löscht Visual C++ alle bekannten zwischen- und Ausgabedateien Dateien für den Build, sowie alle Dateien, die die Platzhalterspezifikationen in erfüllen die **Erweiterungen bereinigen zu löschende** -Eigenschaft in der [Allgemein Seite für Konfigurationseinstellungen Eigenschaft](../../build/reference/general-property-page-project.md).
+Beim erneuten Erstellen oder bereinigen löscht C++ Visual alle bekannten zwischen-und Ausgabedateien für den Build sowie alle Dateien, die die Platzhalter Spezifikationen in der Eigenschaft **Erweiterungen zum Löschen bei Clean auf** der Eigenschaften [Seite Allgemeine Konfigurationseinstellungen](../../build/reference/general-property-page-project.md)erfüllen.
 
-Dieser Fehler wird angezeigt, wenn es sich bei Visual C++ nicht zum Löschen einer Datei kann. Um den Fehler zu beheben, müssen Sie die Datei und das Verzeichnis für den Benutzer, die die Erstellung geschrieben.
+Dieser Fehler wird angezeigt, wenn eine C++ Datei von Visual nicht gelöscht werden kann. Um den Fehler zu beheben, machen Sie die Datei und das zugehörige Verzeichnis für den Benutzer, der den Build erstellt, beschreibbar.

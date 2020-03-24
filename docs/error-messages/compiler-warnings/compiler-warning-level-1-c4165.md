@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C4165
 ms.assetid: f5bed515-2290-4f88-8dab-b45d95fe26ef
-ms.openlocfilehash: 4d6377730e262efafb38f5e714989e9075a77a04
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bb036f7672a074e859d3e19083e256bd80c93578
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391737"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80176097"
 ---
 # <a name="compiler-warning-level-1-c4165"></a>Compilerwarnung (Stufe 1) C4165
 
-"HRESULT" wird in "Bool" konvertiert werden sind Sie sicher, dass dies gewünscht ist?
+"HRESULT" wird in "bool" konvertiert. sind Sie sicher, was Sie möchten?
 
-Bei Verwendung von ein HRESULT in einen [Wenn](../../cpp/if-else-statement-cpp.md) -Anweisung, der HRESULT-Wert, werden in den ein ["bool"](../../cpp/bool-cpp.md) es sei denn, Sie explizit für die Variable als ein HRESULT testen. Diese Warnung ist standardmäßig deaktiviert.
+Wenn ein HRESULT in einer [if](../../cpp/if-else-statement-cpp.md) -Anweisung verwendet wird, wird das HRESULT in einen [booleschen](../../cpp/bool-cpp.md) Typ konvertiert, es sei denn, Sie testen explizit die Variable als HRESULT. Diese Warnung ist standardmäßig deaktiviert.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel generiert C4165
+Im folgenden Beispiel wird C4165 generiert.
 
 ```cpp
 // C4165.cpp

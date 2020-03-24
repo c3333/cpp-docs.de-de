@@ -7,22 +7,22 @@ helpviewer_keywords:
 - limits.h header file
 - integer limits
 ms.assetid: 6922bdbf-0f49-443b-bc03-ee182e4cbd57
-ms.openlocfilehash: 0d14f6246dd2ec71c4e0b2286bb1f2b3325085b5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 75cd05e73aba2d2e82e8077e0a289d8b0fae7ec4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62183373"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178223"
 ---
 # <a name="integer-limits"></a>Ganzzahlige Grenzen
 
 **Microsoft-spezifisch**
 
-Die Grenzwerte für ganzzahlige Typen sind in der folgenden Tabelle aufgeführt. Diese Grenzwerte werden auch in der Standardheaderdatei definiert \<limits.h >.
+Die Grenzwerte für ganzzahlige Typen sind in der folgenden Tabelle aufgeführt. Diese Grenzwerte werden auch in der Standard Header Datei \<Limits. h > definiert.
 
 ## <a name="limits-on-integer-constants"></a>Grenzwerte für ganzzahlige Konstanten
 
-|Konstante|Bedeutung|Wert|
+|Dauerhaft|Bedeutung|value|
 |--------------|-------------|-----------|
 |CHAR_BIT|Anzahl von Bits in der kleinsten Variable, die kein Bitfeld ist.|8|
 |SCHAR_MIN|Minimalwert für eine Variable vom Typ **signed char**.|-128|
@@ -40,14 +40,14 @@ Die Grenzwerte für ganzzahlige Typen sind in der folgenden Tabelle aufgeführt.
 |LONG_MIN|Minimalwert für eine Variable vom Typ **long**.|-2147483648|
 |LONG_MAX|Maximalwert für eine Variable vom Typ **long**.|2147483647|
 |ULONG_MAX|Maximalwert für eine Variable vom Typ **unsigned long**.|4294967295 (0xffffffff)|
-|LLONG_MIN|Minimalwert für eine Variable vom Typ **long long**|-9223372036854775808|
-|LLONG_MAX|Maximalwert für eine Variable vom Typ **long long**|9223372036854775807|
-|ULLONG_MAX|Maximalwert für eine Variable vom Typ **long long ohne Vorzeichen**|18446744073709551615 (0xffffffffffffffff)|
+|LLONG_MIN|Minimalwert für eine Variable vom Typ " **Long Long** "|-9223372036854775808|
+|LLONG_MAX|Maximalwert für eine Variable vom Typ " **Long Long** "|9223372036854775807|
+|ULLONG_MAX|Maximalwert für eine Variable vom Typ " **Ganzzahl ohne Vorzeichen long long** "|18446744073709551615 (0xffffffffffffffff)|
 
 Wenn ein Wert die größte Ganzzahldarstellung übersteigt, generiert der Microsoft-Compiler einen Fehler.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Grenzwerte für Gleitkommakonstanten](../cpp/floating-limits.md)

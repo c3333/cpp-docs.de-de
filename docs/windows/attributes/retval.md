@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - retval attribute
 ms.assetid: bfa16f08-157d-4eea-afde-1232c54b8501
-ms.openlocfilehash: 2a2865c1eda229f1a2fcd457c22119b2908c1caa
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 5aded4588614eb4171e31a588f125ea8aa8de7ee
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514045"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166340"
 ---
 # <a name="retval"></a>retval
 
@@ -23,7 +23,7 @@ Gibt den Parameter an, der den Rückgabewert des Members empfängt.
 [retval]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **retval** C++ -Attribut verfügt über die gleiche Funktionalität wie das " [retval](/windows/win32/Midl/retval) "-Attribut "Mittel l".
 
@@ -33,7 +33,7 @@ Das **retval** C++ -Attribut verfügt über die gleiche Funktionalität wie das 
 
 Eine Beispiel Verwendung von **retval**finden Sie im Beispiel für [bindbare](bindable.md) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -46,7 +46,7 @@ Eine Beispiel Verwendung von **retval**finden Sie im Beispiel für [bindbare](bi
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>

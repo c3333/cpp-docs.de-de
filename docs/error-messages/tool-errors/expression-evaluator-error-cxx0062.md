@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0062
 - CGopherFile class, operations
 ms.assetid: 8e4165c4-7753-4f45-90e9-4542cbb9fc7a
-ms.openlocfilehash: 7f18ac438dd6411dbc86c8ac4c380c8ad2b59079
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9efb3347b6afecad79dd063bc3c897704416479c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299464"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184488"
 ---
 # <a name="expression-evaluator-error-cxx0062"></a>Ausdrucksauswertungsfehler CXX0062
 
-Ruft der Konstruktor nicht unterstützt
+Konstruktoraufrufe werden nicht unterstützt.
 
-Ein Ausdruck versucht, einen Aufruf eines Konstruktors. Ausdrücke nicht explizite Aufrufe an die Konstruktoren oder Konvertierungen, die einen Aufruf eines Konstruktors zu erfordern.
+Ein Ausdruck hat einen-Konstruktor aufgerufen. Ausdrücke können keine expliziten Aufrufe von Konstruktoren oder Konvertierungen durchführen, die einen Aufruf an einen Konstruktor erfordern.
 
 Dieser Fehler ist mit CAN0062 identisch.

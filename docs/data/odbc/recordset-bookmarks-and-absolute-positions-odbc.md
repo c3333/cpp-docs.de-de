@@ -1,5 +1,5 @@
 ---
-title: 'Recordset: Lesezeichen und Absolute Positionen (ODBC)'
+title: 'Recordset: Lesezeichen und absolute Positionen (ODBC)'
 ms.date: 11/04/2016
 f1_keywords:
 - SetAbsolutePosition
@@ -21,34 +21,34 @@ helpviewer_keywords:
 - GetBookmark method
 - SetAbsolutePosition method, bookmarks
 ms.assetid: 189788d6-33c1-41c5-9265-97db2a5d43cc
-ms.openlocfilehash: c4a223f01b25b4c321ccfb4f4c03c3c5241381ec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9a25c0fe4c1f08d376824fbc02211d22c7c14435
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395611"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212965"
 ---
-# <a name="recordset-bookmarks-and-absolute-positions-odbc"></a>Recordset: Lesezeichen und Absolute Positionen (ODBC)
+# <a name="recordset-bookmarks-and-absolute-positions-odbc"></a>Recordset: Lesezeichen und absolute Positionen (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-Wenn Sie über ein Recordset zu navigieren, benötigen Sie häufig eine Möglichkeit, zu einem bestimmten Datensatz zurückgeben. Geben Sie zwei Methoden, Lesezeichen und absolute Position eines Datensatzes.
+Wenn Sie durch ein Recordset navigieren, benötigen Sie häufig eine Methode, um zu einem bestimmten Datensatz zurückzukehren. Die Lesezeichen und die absolute Position eines Datensatzes stellen zwei solche Methoden bereit.
 
 In diesem Thema wird Folgendes erläutert:
 
-- [Verwendung von Lesezeichen](#_core_bookmarks_in_mfc_odbc).
+- Gewusst [wie: Verwenden von Lesezeichen](#_core_bookmarks_in_mfc_odbc)
 
-- [Gewusst wie: Festlegen des aktuellen Datensatzes, der mithilfe von absoluter Positionen](#_core_absolute_positions_in_mfc_odbc).
+- [Festlegen des aktuellen Datensatzes mit absoluten Positionen](#_core_absolute_positions_in_mfc_odbc).
 
-##  <a name="_core_bookmarks_in_mfc_odbc"></a> Lesezeichen im MFC-ODBC
+##  <a name="bookmarks-in-mfc-odbc"></a><a name="_core_bookmarks_in_mfc_odbc"></a>Lesezeichen in MFC ODBC
 
-Ein Lesezeichen identifiziert eindeutig einen Datensatz. Wenn Sie über ein Recordset navigieren, können nicht Sie immer auf die absolute Position eines Datensatzes verlassen, da Datensätze aus dem Recordset nicht gelöscht werden können. Die zuverlässige Möglichkeit zum Nachverfolgen die Position eines Datensatzes ist die Verwendung des Lesezeichens. Klasse `CRecordset` stellt Memberfunktionen zur:
+Ein Lesezeichen identifiziert einen Datensatz eindeutig. Wenn Sie durch ein Recordset navigieren, können Sie sich nicht immer auf die absolute Position eines Datensatzes verlassen, da Datensätze aus dem Recordset gelöscht werden können. Die zuverlässige Möglichkeit, die Position eines Datensatzes nachzuverfolgen, ist die Verwendung seines Lesezeichens. Klassen `CRecordset` stellt Element Funktionen für Folgendes bereit:
 
-- Abrufen des Lesezeichens für den aktuellen Datensatz aus, damit Sie sie in einer Variablen speichern können ([GetBookmark](../../mfc/reference/crecordset-class.md#getbookmark)).
+- Das Lesezeichen des aktuellen Datensatzes wird abgerufen, sodass Sie ihn in einer Variablen ([GetBookmark](../../mfc/reference/crecordset-class.md#getbookmark)) speichern können.
 
-- Schnelles Navigieren zu einem bestimmten Datensatz durch Angabe des Lesezeichens, das Sie zuvor in einer Variablen gespeichert ([SetBookmark](../../mfc/reference/crecordset-class.md#setbookmark)).
+- Schnelles verschieben zu einem bestimmten Datensatz durch angeben seines Lesezeichens, das Sie zuvor in einer Variablen ([SetBookmark](../../mfc/reference/crecordset-class.md#setbookmark)) gespeichert haben.
 
-Das folgende Beispiel veranschaulicht, wie Sie markieren den aktuellen Datensatz und später zurückkehren, damit diese Memberfunktionen mit:
+Im folgenden Beispiel wird veranschaulicht, wie diese Member-Funktionen verwendet werden, um den aktuellen Datensatz zu markieren und später dorthin zurückzukehren:
 
 ```cpp
 // rs is a CRecordset or
@@ -63,25 +63,25 @@ rs.GetBookmark( varRecordToReturnTo );
 rs.SetBookmark( varRecordToReturnTo );
 ```
 
-Sie müssen nicht zum Extrahieren des zugrunde liegende Datentyp aus der [CDBVariant-Klasse](../../mfc/reference/cdbvariant-class.md) Objekt. Weisen Sie den Wert mit `GetBookmark` und zurück zu diesem Lesezeichen mit `SetBookmark`.
+Der zugrunde liegende Datentyp muss nicht aus dem [CDBVariant-Klassen](../../mfc/reference/cdbvariant-class.md) Objekt extrahiert werden. Weisen Sie den Wert `GetBookmark` zu, und kehren Sie mit `SetBookmark`zu diesem Lesezeichen zurück.
 
 > [!NOTE]
->  Lesezeichen können je nach ODBC-Treiber und der Recordsettyp nicht unterstützt. Sie können problemlos ermitteln, ob Lesezeichen, durch den Aufruf unterstützt werden [CRecordset:: CanBookmark](../../mfc/reference/crecordset-class.md#canbookmark). Darüber hinaus Lesezeichen unterstützt, Sie müssen explizit auswählen, zur Implementierung durch Angabe der `CRecordset::useBookmarks` option die [CRecordset:: Open](../../mfc/reference/crecordset-class.md#open) Member-Funktion. Sie sollten auch die Beibehaltung von Lesezeichen nach bestimmten Vorgängen Recordset überprüfen. Z. B. Wenn Sie `Requery` eines Recordsets Lesezeichen möglicherweise nicht mehr gültig sein. Rufen Sie [CDatabase:: GetBookmarkPersistence](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence) zu überprüfen, ob Sie sicher aufrufen können `SetBookmark`.
+>  Abhängig von Ihrem ODBC-Treiber und Recordsettyp werden Lesezeichen möglicherweise nicht unterstützt. Sie können leicht feststellen, ob Lesezeichen durch Aufrufen von [CRecordset:: CanBookmark](../../mfc/reference/crecordset-class.md#canbookmark)unterstützt werden. Außerdem müssen Sie, wenn Lesezeichen unterstützt werden, explizit festlegen, dass diese implementiert werden, indem Sie die `CRecordset::useBookmarks`-Option in der [CRecordset:: Open](../../mfc/reference/crecordset-class.md#open) -Member-Funktion angeben. Außerdem sollten Sie die Persistenz von Lesezeichen nach bestimmten recordsetvorgängen überprüfen. Wenn Sie z. b. ein Recordset `Requery`, sind Lesezeichen möglicherweise nicht mehr gültig. [CDatabase:: getbookmarkpersistenz](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence) aufrufen, um zu überprüfen, ob Sie `SetBookmark`sicher aufrufen können.
 
-##  <a name="_core_absolute_positions_in_mfc_odbc"></a> Absolute Positionen in MFC-ODBC
+##  <a name="absolute-positions-in-mfc-odbc"></a><a name="_core_absolute_positions_in_mfc_odbc"></a>Absolute Positionen in MFC ODBC
 
-Neben Lesezeichen Klasse `CRecordset` können Sie den aktuellen Datensatz festlegen, durch eine Ordnungsposition angeben. Dies wird als absolute Positionierung bezeichnet.
-
-> [!NOTE]
->  Es ist nicht verfügbar, auf die Forward-only-Recordsets, absolute Positionierung. Weitere Informationen zu Forward-only-Recordsets, finden Sie unter [Recordsets (ODBC)](../../data/odbc/recordset-odbc.md).
-
-Aufrufen, um den Zeiger für den aktuellen Datensatz mithilfe einer absoluten Position zu verschieben, [CRecordset:: SetAbsolutePosition auf](../../mfc/reference/crecordset-class.md#setabsoluteposition). Wenn Sie einen Wert übergeben `SetAbsolutePosition`, den Datensatz entsprechend, dass die Ordinalposition des aktuellen Datensatzes ist.
+Neben Lesezeichen können Sie mithilfe von Class `CRecordset` den aktuellen Datensatz festlegen, indem Sie eine Ordinalposition angeben. Dies wird als absolute Positionierung bezeichnet.
 
 > [!NOTE]
->  Die absolute Position eines Datensatzes ist möglicherweise unzuverlässig. Wenn der Benutzer die Datensätze aus dem Recordset, die die Ordnungsposition der nachfolgende Datensatz Änderungen löscht. Lesezeichen sind die empfohlene Methode zum Verschieben des aktuellen Datensatzes an. Weitere Informationen finden Sie unter [Lesezeichen in MFC ODBC](#_core_bookmarks_in_mfc_odbc).
+>  Absolute Positionierung ist in Vorwärts Recordsets nicht verfügbar. Weitere Informationen zu Vorwärts-Recordsets finden Sie unter [Recordset (ODBC)](../../data/odbc/recordset-odbc.md).
 
-Weitere Informationen zur Recordsetnavigation, finden Sie unter [Recordset: Scrollen (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).
+Um den aktuellen Daten Satz Zeiger mithilfe der absoluten Position zu verschieben, nennen Sie [CRecordset:: SetAbsolutePosition](../../mfc/reference/crecordset-class.md#setabsoluteposition). Wenn Sie einen Wert an `SetAbsolutePosition`übergeben, wird der Datensatz, der dieser Ordinalposition entspricht, zum aktuellen Datensatz.
 
-## <a name="see-also"></a>Siehe auch
+> [!NOTE]
+>  Die absolute Position eines Datensatzes ist potenziell unzuverlässig. Wenn der Benutzerdaten Sätze aus dem Recordset löscht, ändert sich die Ordinalposition eines nachfolgenden Datensatzes. Lesezeichen sind die empfohlene Methode zum Verschieben des aktuellen Datensatzes. Weitere Informationen finden Sie unter [Lesezeichen in MFC ODBC](#_core_bookmarks_in_mfc_odbc).
+
+Weitere Informationen zur Recordsetnavigation finden Sie unter [Recordset: Scrollen (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).
+
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)

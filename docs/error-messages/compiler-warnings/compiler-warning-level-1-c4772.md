@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C4772
 ms.assetid: dafe6fd8-9faf-41f5-9d66-a55838742c14
-ms.openlocfilehash: 95243ab66d5d0296e1c316ff8dde7add75a030cd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 89156b2f29fd21160e6abddc3ecb21efaee6dde1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385458"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80175130"
 ---
 # <a name="compiler-warning-level-1-c4772"></a>Compilerwarnung (Stufe 1) C4772
 
-> \#Import auf einen Typ aus einer fehlenden Typbibliothek verwiesen; "*fehlende Typ*" als Platzhalter verwendet
+> \#Import hat auf einen Typ aus einer fehlenden Typbibliothek verwiesen. "*Missing-Type*" wird als Platzhalter verwendet.
 
-Eine Typbibliothek mit verwiesen wurde, wird die [#import](../../preprocessor/hash-import-directive-cpp.md) Richtlinie. Die Typbibliothek enthalten einen Verweis auf eine andere Typbibliothek, die nicht in referenziert wurde `#import`. Diese anderen TLB-Datei wurde vom Compiler nicht gefunden.
+Auf eine Typbibliothek wurde mit der [#Import](../../preprocessor/hash-import-directive-cpp.md) -Direktive verwiesen. Allerdings enthielt die Typbibliothek einen Verweis auf eine andere Typbibliothek, auf die mit `#import`nicht verwiesen wurde. Diese andere TLB-Datei wurde vom Compiler nicht gefunden.
 
-Beachten Sie, dass der Compiler Typbibliotheken nicht in verschiedenen Verzeichnissen finden, und wird bei Verwendung der [/i (Zusätzliche Includeverzeichnisse)](../../build/reference/i-additional-include-directories.md) -Compileroption verwenden, um diese Verzeichnisse angeben. Wenn Sie möchten, dass der Compiler Typbibliotheken in verschiedenen Verzeichnissen finden, fügen Sie diese Verzeichnisse zu PATH-Umgebungsvariablen hinzu.
+Beachten Sie, dass der Compiler Typbibliotheken nicht in verschiedenen Verzeichnissen findet, wenn Sie die Compileroption [/I (Zusätzliche Includeverzeichnisse)](../../build/reference/i-additional-include-directories.md) verwenden, um diese Verzeichnisse anzugeben. Wenn der Compiler Typbibliotheken in verschiedenen Verzeichnissen finden soll, fügen Sie diese Verzeichnisse der PATH-Umgebungsvariablen hinzu.
 
-Standardmäßig wird diese Warnung als Fehler ausgegeben. C4772 kann nicht mit/W0 unterdrückt werden.
+Diese Warnung wird standardmäßig als Fehler ausgegeben. C4772 kann nicht mit/W0. unterdrückt werden.
 
 ## <a name="example"></a>Beispiel
 
-Dies ist die erste Typbibliothek erforderlich, um C4772 zu reproduzieren.
+Dies ist die erste Typbibliothek, die benötigt wird, um C4772 zu reproduzieren.
 
 ```IDL
 // c4772a.idl
@@ -40,7 +40,7 @@ library C4772aLib
 };
 ```
 
-Dies ist die zweite Typbibliothek erforderlich, um C4772 zu reproduzieren.
+Dies ist die zweite Typbibliothek, die benötigt wird, um C4772 zu reproduzieren.
 
 ```IDL
 // c4772b.idl
@@ -58,7 +58,7 @@ library C4772bLib
 };
 ```
 
-Im folgende Beispiel wird die C4772 generiert:
+Im folgenden Beispiel wird C4772 generiert:
 
 ```cpp
 // C4772.cpp

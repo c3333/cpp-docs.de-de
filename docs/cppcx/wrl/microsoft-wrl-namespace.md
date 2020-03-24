@@ -14,16 +14,16 @@ f1_keywords:
 helpviewer_keywords:
 - WRL namespace
 ms.assetid: 01118a8f-f564-4859-b87e-9444848585a1
-ms.openlocfilehash: 749469c7ae2acf3a0da92d24a51bbfca9b68971d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c92251dacbfa17e8f1ac0cbdc41aa9b06118ac91
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392023"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213771"
 ---
 # <a name="microsoftwrl-namespace"></a>Microsoft::WRL-Namespace
 
-Definiert die grundlegenden Typen, aus denen die Windows Runtime C++ Template Library besteht.
+Definiert die grundlegenden Typen, die die Windows-Runtime C++ Vorlagen Bibliothek bilden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,17 +31,17 @@ Definiert die grundlegenden Typen, aus denen die Windows Runtime C++ Template Li
 namespace Microsoft::WRL;
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`InhibitWeakReferencePolicy`|`RuntimeClassFlags<WinRt | InhibitWeakReference>`|
 
 ### <a name="classes"></a>Klassen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[ActivationFactory-Klasse](activationfactory-class.md)|Ermöglicht, dass eine oder mehrere Klassen durch die Windows-Runtime aktiviert werden.|
 |[AsyncBase-Klasse](asyncbase-class.md)|Implementiert den asynchronen Zustandsautomat der Windows-Runtime.|
@@ -58,25 +58,25 @@ namespace Microsoft::WRL;
 
 ### <a name="structures"></a>Strukturen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[ChainInterfaces-Struktur](chaininterfaces-structure.md)|Gibt Überprüfungs- und Initialisierungsfunktionen an, die auf einen Satz von Schnittstellen-IDs angewendet werden können.|
-|[CloakedIid-Struktur](cloakediid-structure.md)|Gibt an, um die `RuntimeClass`, `Implements` und `ChainInterfaces` Vorlagen, dass die angegebene Schnittstelle nicht zugegriffen werden kann, in der IID-Liste ist.|
-|[Implements-Struktur](implements-structure.md)|Implementiert `QueryInterface` und `GetIid` für die angegebene Schnittstelle.|
+|[CloakedIid-Struktur](cloakediid-structure.md)|Gibt dem `RuntimeClass`-, `Implements`-und `ChainInterfaces`-Vorlagen an, dass auf die angegebene Schnittstelle in der IID-Liste nicht zugegriffen werden kann.|
+|[Implements-Struktur](implements-structure.md)|Implementiert `QueryInterface` und `GetIid` für die angegebenen Schnittstellen.|
 |[MixIn-Struktur](mixin-structure.md)|Stellt sicher, dass eine Runtime-Klasse aus Windows-Runtime-Schnittstellen (sofern vorhanden) und dann aus klassischen COM-Schnittstellen abgeleitet wird.|
-|[RuntimeClassFlags-Struktur](runtimeclassflags-structure.md)|Enthält den Typ für eine Instanz von einem [RuntimeClass](runtimeclass-class.md).|
+|[RuntimeClassFlags-Struktur](runtimeclassflags-structure.md)|Enthält den Typ für eine Instanz einer [runtimeclass](runtimeclass-class.md).|
 
 ### <a name="enumerations"></a>Enumerationen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[AsyncResultType-Enumeration](asyncresulttype-enumeration.md)|Gibt den Typ der zurückgegebenen Ergebnisse der `GetResults()` Methode.|
-|[ModuleType-Enumeration](moduletype-enumeration.md)|Gibt an, ob ein Modul einen In-Process-Server oder einen Out-of-Process-Server unterstützen sollte. |
-|[RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md)|Gibt den Typ der [RuntimeClass](runtimeclass-class.md) -Instanz, die unterstützt wird.|
+|[AsyncResultType-Enumeration](asyncresulttype-enumeration.md)|Gibt den Ergebnistyp an, der von der `GetResults()` Methode zurückgegeben wird.|
+|[ModuleType-Enumeration](moduletype-enumeration.md)|Gibt an, ob ein Modul einen In-Process-Server oder einen Out-of-Process-Server unterstützen sollte.|
+|[RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md)|Gibt den Typ der unterstützten [runtimeclass](runtimeclass-class.md) -Instanz an.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[AsWeak-Funktion](asweak-function.md)|Ruft einen schwachen Verweis zur angegebenen Instanz ab.|
 |[Rückruffunktion (WRL)](callback-function-wrl.md)|Erstellt ein Objekt, dessen Memberfunktion eine Rückrufmethode ist.|
@@ -84,12 +84,12 @@ namespace Microsoft::WRL;
 |[CreateClassFactory-Funktion](createclassfactory-function.md)|Erstellt eine Factory, die Instanzen der angegebenen Klasse erstellt.|
 |[Make-Funktion](make-function.md)|Initialisiert die angegebene Windows-Runtime-Klasse.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** async.h, client.h, corewrappers.h, event.h, ftm.h, implements.h, internal.h, module.h
+**Header:** Async. h, Client. h, corewrappers. h, Event. h, FTM. h, implementiert. h, Internal. h, Module. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Wrappers-Namespace](microsoft-wrl-wrappers-namespace.md)

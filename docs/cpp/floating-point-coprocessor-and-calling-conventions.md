@@ -5,17 +5,17 @@ helpviewer_keywords:
 - floating-point numbers [C++]
 - floating-point coprocessor
 ms.assetid: 3cc6615a-b308-4cf7-9570-83e192a832b3
-ms.openlocfilehash: 7e9184d66bde26ab0e2b345f8f10c2e28619fd2b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c70dd3b049ca353acc8a504df52b2c61feaf1974
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154242"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188620"
 ---
 # <a name="floating-point-coprocessor-and-calling-conventions"></a>Gleitkomma-Coprozessor und Aufrufkonventionen
 
-Wenn Sie Assemblyroutinen für den zeigen Coprozessor Assembly schreiben sind, müssen Sie beibehalten, die floating-Steuerwort zeigen und den koprozessorstapel bereinigen, es sei denn, die Sie zurückgeben möchten eine **"float"** oder **doppelte** Wert (der die Funktion in St(0) zurückgeben sollte.
+Wenn Sie Assemblyroutinen für den Gleit Komma-Coprozessor schreiben, müssen Sie das Gleit Komma Steuerwort beibehalten und den Coprozessor-Stapel bereinigen, es sei denn, Sie geben einen **float** -oder **Double** -Wert zurück, der von der Funktion in St (0) zurückgegeben werden soll.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Aufrufkonventionen](../cpp/calling-conventions.md)

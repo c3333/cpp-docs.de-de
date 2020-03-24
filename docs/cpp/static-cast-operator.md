@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - static_cast keyword [C++]
 ms.assetid: 1f7c0c1c-b288-476c-89d6-0e2ceda5c293
-ms.openlocfilehash: dca6d5297379e6ddc1c70dba80f35f2f55672e49
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 37708bf50b28eb120af8e8a79e770c3121e6f509
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267127"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178586"
 ---
-# <a name="staticcast-operator"></a>static_cast-Operator
+# <a name="static_cast-operator"></a>static_cast-Operator
 
-Konvertiert eine *Ausdruck* in den Typ des *Typ-Id,* nur auf Grundlage der Typen, die in diesem Ausdruck vorhanden sind.
+Konvertiert einen *Ausdruck* in den Typ *-ID-Typ,* der nur auf den Typen basiert, die im Ausdruck vorhanden sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,13 +23,13 @@ Konvertiert eine *Ausdruck* in den Typ des *Typ-Id,* nur auf Grundlage der Typen
 static_cast <type-id> ( expression )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Im Standard-C++ wird zur Laufzeit keine Typüberprüfung durchgeführt, um die Sicherheit der Konvertierung zu gewährleisten. In C++/CX wird eine Überprüfung der Kompilierzeit und der Laufzeit durchgeführt. Weitere Informationen finden Sie unter [Umwandlung](casting.md)definiert sind.
 
-Die **"static_cast"** -Operator kann für Vorgänge wie das Konvertieren eines Zeigers auf eine Basisklasse in einen Zeiger auf eine abgeleitete Klasse verwendet werden. Solche Konvertierungen sind nicht immer sicher.
+Der **static_cast** -Operator kann für Vorgänge verwendet werden, z. b. die Typumwandlung eines Zeigers auf eine Basisklasse in einen Zeiger auf eine abgeleitete Klasse. Solche Konvertierungen sind nicht immer sicher.
 
-Im Allgemeinen verwenden Sie **"static_cast"** numerische Datentypen wie Enumerationen in Ints oder Ints in Gleitkommas, und Sie konvertieren möchten, sind bestimmte Datentypen bei der Konvertierung beteiligt. **"static_cast"** Konvertierungen sind nicht so sicher wie **Dynamic_cast** Konvertierungen, da **"static_cast"** überprüft keine Laufzeit-Typinformationen auf, während er sich **Dynamic_cast** führt. Ein **Dynamic_cast** zu einem mehrdeutigen Zeiger schlägt fehl, während eine **"static_cast"** zurückgibt, als hätte es kein Problem; Dies kann gefährlich sein. Obwohl **Dynamic_cast** -Konvertierungen sicherer sind, **Dynamic_cast** nur funktioniert auf Zeiger oder Verweise, und die typüberprüfung zur Laufzeit ein Mehraufwand ist. Weitere Informationen finden Sie unter [Dynamic_cast-Operator](../cpp/dynamic-cast-operator.md).
+Im Allgemeinen verwenden Sie **static_cast** , wenn Sie numerische Datentypen, z. b. Enumerationwerte, in eine Gleit Komma Zahl oder einen Wert für Gleit Komma Zahlen konvertieren möchten, und Sie sind sicher, welche Datentypen an der Konvertierung beteiligt sind **static_cast** Konvertierungen sind nicht so sicher wie **dynamic_cast** Konvertierungen, da **static_cast** keine Lauf Zeittyp Überprüfung durchführt, während **dynamic_cast** dies tut. Ein **dynamic_cast** zu einem mehrdeutigen Zeiger schlägt fehl, während ein **static_cast** zurückgibt, als wäre nichts falsch. Dies kann gefährlich sein. Obwohl **dynamic_cast** Konvertierungen sicherer sind, funktioniert **dynamic_cast** nur bei Zeigern oder verweisen, und die Lauf Zeittyp Überprüfung ist ein zusätzlicher Aufwand. Weitere Informationen finden Sie unter [dynamic_cast-Operator](../cpp/dynamic-cast-operator.md).
 
 Im folgende Beispiel ist die Zeile `D* pd2 = static_cast<D*>(pb);` nicht sicher, da `D` Felder und Methoden aufweisen kann, die nicht in `B` enthalten sind. Allerdings ist die Zeile `B* pb2 = static_cast<B*>(pd);` eine sichere Konvertierung, da `D` immer alle Elemente von `B` enthält.
 
@@ -49,9 +49,9 @@ void f(B* pb, D* pd) {
 }
 ```
 
-Im Gegensatz zu [Dynamic_cast](../cpp/dynamic-cast-operator.md), keine Laufzeit wird überprüft, auf die **"static_cast"** Konvertierung `pb`. Das Objekt, auf das mit `pb` gezeigt wird, ist möglicherweise kein Objekt vom Typ `D`. In diesem Fall kann die Verwendung von `*pd2` zu schwerwiegenden Fehlern führen. Beispielsweise kann das Aufrufen einer Funktion, die ein Member der `D`-Klasse, aber nicht der `B`-Klasse ist, eine Zugriffsverletzung verursachen.
+Im Gegensatz zu [dynamic_cast](../cpp/dynamic-cast-operator.md)wird keine Lauf Zeit Überprüfung an der **static_cast** Konvertierung von `pb`vorgenommen. Das Objekt, auf das mit `pb` gezeigt wird, ist möglicherweise kein Objekt vom Typ `D`. In diesem Fall kann die Verwendung von `*pd2` zu schwerwiegenden Fehlern führen. Beispielsweise kann das Aufrufen einer Funktion, die ein Member der `D`-Klasse, aber nicht der `B`-Klasse ist, eine Zugriffsverletzung verursachen.
 
-Die **Dynamic_cast** und **"static_cast"** Operatoren verschieben einen Zeiger innerhalb einer Klassenhierarchie. Allerdings **"static_cast"** basiert ausschließlich auf die Informationen in der Cast-Anweisung angegeben und kann daher unsicher sein. Zum Beispiel:
+Die Operatoren " **dynamic_cast** " und " **static_cast** " verschieben einen Zeiger in eine Klassenhierarchie. **Static_cast** stützt sich jedoch ausschließlich auf die Informationen, die in der CAST-Anweisung bereitgestellt werden, und kann daher unsicher sein. Beispiel:
 
 ```cpp
 // static_cast_Operator_2.cpp
@@ -70,13 +70,13 @@ void f(B* pb) {
 
 Wenn `pb` tatsächlich auf ein Objekt vom Typ `D` zeigt, erhalten `pd1` und `pd2` den gleichen Wert. Sie rufen außerdem den gleichen Wert ab, wenn `pb == 0`.
 
-Wenn `pb` verweist auf ein Objekt des Typs `B` und nicht auf die vollständige `D` Klasse, dann **Dynamic_cast** genug Informationen, um NULL zurückzugeben. Allerdings **"static_cast"** basiert auf der Assertion des Programmierers, `pb` verweist auf ein Objekt des Typs `D` und gibt einfach einen Zeiger auf dieses angenommene `D` Objekt.
+Wenn `pb` auf ein Objekt vom Typ `B` und nicht auf die gesamte `D` Klasse zeigt, wissen **dynamic_cast** genug, um 0 (null) zurückzugeben. **Static_cast** basiert jedoch auf der Behauptung des Programmierers, dass `pb` auf ein Objekt vom Typ `D` verweist und einfach einen Zeiger auf dieses vermeintliche `D` Objekt zurückgibt.
 
-Folglich **"static_cast"** möglich, dass die Umkehrung von impliziten Konvertierungen, die in diesem Fall sind die Ergebnisse nicht definiert. Es ist dem Programmierer überlassen zu überprüfen, ob die Ergebnisse einer **"static_cast"** -Konvertierung sicher sind.
+Folglich können **static_cast** die Umkehrung impliziter Konvertierungen durchführen. in diesem Fall sind die Ergebnisse nicht definiert. Es bleibt dem Programmierer überlassen, zu überprüfen, ob die Ergebnisse einer **static_cast** Konvertierung sicher sind.
 
-Dieses Verhalten gilt auch für andere Typen als Klassentypen. Z. B. **"static_cast"** können verwendet werden, um eine ganze Zahl zum Konvertieren einer **Char**. Allerdings die resultierende **Char** verfügen möglicherweise nicht über genügend Bits zum Speichern des gesamtes **Int** Wert. In diesem Fall es ist dem Programmierer überlassen zu überprüfen, ob die Ergebnisse einer **"static_cast"** -Konvertierung sicher sind.
+Dieses Verhalten gilt auch für andere Typen als Klassentypen. Beispielsweise können **static_cast** verwendet werden, um von einem int-in ein **char**-Zeichen zu konvertieren. Der resultierende **char** -Wert weist jedoch möglicherweise nicht genügend Bits auf, um den gesamten **int** -Wert zu speichern. Auch hier bleibt der Programmierer dabei, zu überprüfen, ob die Ergebnisse einer **static_cast** Konvertierung sicher sind.
 
-Die **"static_cast"** Operator kann auch verwendet werden, um jede implizite Konvertierung, einschließlich standardkonvertierungen und benutzerdefinierte Konvertierungen durchführen. Zum Beispiel:
+Der **static_cast** -Operator kann auch verwendet werden, um eine implizite Konvertierung auszuführen, einschließlich Standard Konvertierungen und benutzerdefinierten Konvertierungen. Beispiel:
 
 ```cpp
 // static_cast_Operator_3.cpp
@@ -95,17 +95,17 @@ void f() {
 }
 ```
 
-Die **"static_cast"** Operator kann explizit einen ganzzahligen Wert in einen Enumerationstyp konvertieren. Wenn der Wert des ganzzahligen Typs nicht innerhalb des Bereichs von Enumerationswerten liegt, ist der resultierende Enumerationswert nicht definiert.
+Der **static_cast** -Operator kann einen ganzzahligen Wert explizit in einen Enumerationstyp konvertieren. Wenn der Wert des ganzzahligen Typs nicht innerhalb des Bereichs von Enumerationswerten liegt, ist der resultierende Enumerationswert nicht definiert.
 
-Die **"static_cast"** -Operator konvertiert einen null-Zeiger-Wert, der null-Zeigerwert des Zieltyps.
+Der **static_cast** -Operator konvertiert einen NULL-Zeiger Wert in den NULL-Zeiger Wert des Zieltyps.
 
-Jeder Ausdruck explizit in den Typ von "void" konvertiert werden kann die **"static_cast"** Operator. Der Zieltyp "void" kann optional enthalten die **const**, **flüchtige**, oder **__unaligned** Attribut.
+Jeder Ausdruck kann vom **static_cast** Operator explizit in den Typ "void" konvertiert werden. Der void-Zieltyp kann **optional das Konstante**-, **volatile**-oder **__unaligned** -Attribut enthalten.
 
-Die **"static_cast"** Operator nicht umwandeln der **const**, **flüchtige**, oder **__unaligned** Attribute. Finden Sie unter [Const_cast-Operator](../cpp/const-cast-operator.md) Informationen zum Entfernen dieser Attribute.
+Der **static_cast** -Operator kann die Attribute " **Konstanten**", " **volatile**" oder " **__unaligned** " nicht umwandeln. Weitere Informationen zum Entfernen dieser Attribute finden Sie unter [const_cast-Operator](../cpp/const-cast-operator.md) .
 
-**C++/CLI:** Aufgrund der Gefahr der Ausführung von ungeprüften Umwandlungen auf einem leistungskritischem Garbage Collector, die Verwendung von **"static_cast"** sollte nur in leistungskritischen Code sein, wenn Sie sicher, dass sie ordnungsgemäß funktioniert sind. Wenn Sie verwenden müssen **"static_cast"** im Releasemodus, ersetzen Sie sie durch ["safe_cast"](../extensions/safe-cast-cpp-component-extensions.md) in den Debugbuilds, um Erfolg zu gewährleisten.
+**C++/CLI:** Aufgrund der Gefahr der Durchführung nicht aktivierter Umwandlungen zusätzlich zu einem Garbage Collector für die Verlagerung sollte die Verwendung **static_cast** nur in Leistungs kritischem Code erfolgen, wenn Sie sicher sind, dass Sie ordnungsgemäß funktioniert. Wenn Sie **static_cast** im Releasemodus verwenden müssen, ersetzen Sie es durch [safe_cast](../extensions/safe-cast-cpp-component-extensions.md) in ihren Debugbuilds, um den Erfolg sicherzustellen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Umwandlungsoperatoren](../cpp/casting-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

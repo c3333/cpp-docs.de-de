@@ -6,26 +6,26 @@ helpviewer_keywords:
 - Visual C, macros
 - __asm keyword [C++], as C macros
 ms.assetid: 677ba11c-21c8-4609-bba7-cd47312243b0
-ms.openlocfilehash: c48298cf802600995dbbf68885896b6feccb807d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 46f0a23fcfd949843e3548354f52970b10b6d63b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62167025"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169486"
 ---
-# <a name="defining-asm-blocks-as-c-macros"></a>Definieren von __asm-Blöcken als C-Makros
+# <a name="defining-__asm-blocks-as-c-macros"></a>Definieren von __asm-Blöcken als C-Makros
 
 **Microsoft-spezifisch**
 
-C-Makros bieten eine bequeme Möglichkeit, den Assemblycode in den Quellcode einfügen, aber sie fordern besonders sorgfältig vor, da ein Makro in eine einzelne logische Zeile erweitert. Um die problemlose Makros zu erstellen, folgen Sie diesen Regeln:
+C-Makros bieten eine bequeme Möglichkeit zum Einfügen von Assemblycode in Ihren Quellcode, Sie erfordern jedoch besondere Sorgfalt, da ein Makro in eine einzelne logische Linie erweitert wird. Gehen Sie folgendermaßen vor, um fehlerfreie Makros zu erstellen:
 
-- Schließen Sie die `__asm` -block in geschweifte Klammern.
+- Schließen Sie den `__asm` Block in geschweifte Klammern ein.
 
-- Platzieren der `__asm` Schlüsselwort vor jede Assemblyanweisung.
+- Fügen Sie das `__asm`-Schlüsselwort vor jeder Assemblyanweisung vor.
 
-- Verwenden der alten C-Kommentare ( `/* comment */`) anstelle von Assembly-Stil Kommentare ( `; comment`) oder eine einzeilige C-Kommentare ( `// comment`).
+- Verwenden Sie im alten Stil c-Kommentare (`/* comment */`) anstelle von Kommentaren im AssemblyFormat (`; comment`) oder einzeiligen c-Kommentaren (`// comment`).
 
-Um zu veranschaulichen, werden im folgenden Beispiel wird ein einfaches Makro definiert:
+Im folgenden Beispiel wird ein einfaches Makro definiert, um dies zu veranschaulichen:
 
 ```cpp
 #define PORTIO __asm      \
@@ -37,24 +37,24 @@ Um zu veranschaulichen, werden im folgenden Beispiel wird ein einfaches Makro de
 }
 ```
 
-Auf die letzten drei ersten Blick `__asm` Schlüsselwörter überflüssig erscheinen. Sie sind jedoch erforderlich, da das Makro in einer einzelnen Zeile erweitert wird:
+Auf den ersten Blick scheinen die letzten drei `__asm` Schlüsselwörter überflüssig zu sein. Sie werden jedoch benötigt, da das Makro in eine einzelne Zeile erweitert wird:
 
 ```cpp
 __asm /* Port output */ { __asm mov al, 2  __asm mov dx, 0xD007 __asm out dx, al }
 ```
 
-Der dritte und vierte `__asm` Schlüsselwörter als Trennzeichen für die Anweisung erforderlich sind. Die einzige Anweisung Trennzeichen erkannt `__asm` Blöcke sind die Zeilenumbruchzeichen und `__asm` Schlüsselwort. Da ein Block, der als Makro definiert eine logische Zeile ist, müssen Sie jede Anweisung mit trennen `__asm`.
+Die dritten und vierten `__asm` Schlüsselwörter werden als Anweisungs Trennzeichen benötigt. Die einzigen Anweisungs Trennzeichen, die in `__asm` Blöcken erkannt werden, sind das Zeilen-und `__asm` Schlüsselwort. Da ein Block, der als Makro definiert ist, eine logische Linie ist, müssen Sie jede Anweisung mit `__asm`trennen.
 
-Die Klammern sind ebenfalls wichtig. Wenn Sie sie weglassen, kann der Compiler von C- oder C++-Anweisungen in der gleichen Zeile rechts vom Makroaufruf verwechselt werden. Ohne die schließende Klammer gefunden, kann nicht dem Compiler mitzuteilen, wo Assemblycode beendet, und C- oder C++-Anweisungen angezeigt, nachdem die `__asm` Block als Assemblyanweisungen.
+Die geschweiften Klammern sind ebenfalls unverzichtbar. Wenn Sie sie weglassen, kann der Compiler durch C-oder C++ -Anweisungen in derselben Zeile rechts neben dem Makro Aufruf verwechselt werden. Ohne die schließende geschweifte Klammer kann der Compiler nicht feststellen, wo der Assemblycode C++ anhält, und es werden C-oder-Anweisungen nach dem `__asm` Block als Assemblyanweisungen
 
-Assembly-Stil-Kommentare, beginnen mit einem Semikolon (**;**) bis zum Ende der Zeile fortgesetzt. Dies verursacht Probleme in Makros, da der Compiler alles, was nach dem Kommentar, ganz nach Ende der logischen Zeile ignoriert. Das gleiche gilt für einzeilige Kommentare für C- oder C++ ( `// comment`). Um Fehler zu vermeiden, verwenden Sie die alten C-Kommentare ( `/* comment */`) in `__asm` Blöcke, die als Makros definiert.
+Kommentare im assemblystil, die mit einem Semikolon ( **;** ) beginnen, werden bis zum Ende der Zeile fortgesetzt. Dies verursacht Probleme in Makros, da der Compiler alles nach dem Kommentar ignoriert, bis zum Ende der logischen Zeile. Das gleiche gilt für einzeilige C-oder C++ -Kommentare (`// comment`). Um Fehler zu vermeiden, verwenden Sie C-Kommentare im alten Stil (`/* comment */`) in `__asm` Blöcke, die als Makros definiert sind.
 
-Ein `__asm` Block geschrieben, wie ein C-Makro Argumente annehmen kann. Im Gegensatz zu eines normale C-Makros, jedoch eine `__asm` Makro kann keinen Wert zurückgeben. Damit Sie diese Makros in C oder C++-Ausdrücken verwenden können.
+Ein als C-Makro geschriebener `__asm` Block kann Argumente annehmen. Anders als bei einem normalen C-Makro kann ein `__asm`-Makro jedoch keinen Wert zurückgeben. Daher können solche Makros in C-oder C++ -Ausdrücken nicht verwendet werden.
 
-Achten Sie darauf, dass Sie nicht wahllos Aufrufen der Makros dieses Typs. Beispielsweise deklariert eine Assemblysprache-Makro in einer Funktion aufrufen, mit der `__fastcall` Konvention kann zu unerwarteten Ergebnissen führen. (Finden Sie unter [verwenden und Beibehalten von Registern in der Inlineassembly](../../assembler/inline/using-and-preserving-registers-in-inline-assembly.md).)
+Achten Sie darauf, dass keine Makros dieses Typs willkürlich aufgerufen werden. Beispielsweise kann das Aufrufen eines assemblysprachenmakros in einer Funktion, die mit der `__fastcall` Konvention deklariert wurde, zu unerwarteten Ergebnissen führen. (Siehe [verwenden und beibehalten von Registern in der Inlineassembly](../../assembler/inline/using-and-preserving-registers-in-inline-assembly.md).)
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>

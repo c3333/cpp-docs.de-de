@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - C2857
 ms.assetid: b57302bd-58ec-45ae-992a-1e282d5eeccc
-ms.openlocfilehash: 10c0ea3b54ded29bf80f83713cea33428dca6ca0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 11b620f9748ac85e731d79b0652c0392375b2ea4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62350438"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201850"
 ---
 # <a name="compiler-error-c2857"></a>Compilerfehler C2857
 
-> ' #include "mit der" / Yc "angegebene Anweisung*Filename* Befehlszeilenoption wurde in der Quelldatei nicht gefunden
+> die mit der/YC*filename* -Befehlszeilenoption angegebene ' #include '-Anweisung wurde in der Quelldatei nicht gefunden.
 
-Die ["/ Yc"](../../build/reference/yc-create-precompiled-header-file.md) Option gibt den Namen einer Include-Datei, die nicht in der Quelldatei kompiliert wird.
+Die Option [/Yc](../../build/reference/yc-create-precompiled-header-file.md) gibt den Namen einer Include-Datei an, die nicht in der zu kompilierenden Quelldatei enthalten ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bei Verwendung der **"/ Yc"**<em>Dateiname</em> muss die Option auf die Quelldatei, erstellen Sie eine Datei, die Datei als source vorkompilierter Headerdateien (PCH) enthalten die *Filename* Headerdatei. Jede Datei, die von der bis zur und einschließlich der angegebenen Quelldatei enthaltenen *Filename*, befindet sich auf die PCH-Datei. In anderen Quelldateien kompiliert werden, mithilfe der **"/ Yu"**<em>Dateiname</em> eine Einbeziehung der Möglichkeit, verwenden den PCH neu Datei *Filename* muss die erste nicht kommentierten Zeile in der Datei. Der Compiler ignoriert alle Elemente in der Quelldatei, bevor Sie diese einschließen.
+Wenn Sie die Option **/Yc**<em>filename</em> für eine Quelldatei verwenden, um eine vorkompilierte Header Datei (PCH) zu erstellen, muss diese Quelldatei die Datei *Namen* Header Datei enthalten. Alle Dateien, die in der Quelldatei enthalten sind, einschließlich des angegebenen Datei *namens*, sind in der PCH-Datei enthalten. In anderen Quelldateien, die mit der **/Yu**<em>filename</em> -Option kompiliert wurden, um die PCH-Datei zu verwenden, muss der *Dateiname "filename* " die erste nicht-Kommentarzeile in der Datei sein. Der Compiler ignoriert vor diesem einschließen alles in der Quelldatei.
 
-Dieser Fehler kann verursacht werden, indem ein `#include "filename"` Anweisung in einem Block von für die bedingte Kompilierung, die nicht in der PCH-Quelldatei kompiliert wird.
+Dieser Fehler kann durch eine `#include "filename"` Anweisung in einem Block für die bedingte Kompilierung verursacht werden, der nicht in der PCH-Quelldatei kompiliert wird.
 
 ## <a name="example"></a>Beispiel
 
-Klicken Sie in der typischen Verwendung einer Quelldatei im Projekt wird festgelegt, wie die PCH-Quelldatei, und eine Headerdatei wird als die PCH-Headerdatei verwendet. Eine typische PCH-Headerdatei enthält alle den Bibliothek-Header, die in Ihrem Projekt verwendet, aber nicht für lokale Header, die noch in Entwicklung sind. In diesem Beispiel heißt die PCH-Headerdatei *my_pch.h*.
+Bei der typischen Verwendung wird eine Quelldatei in Ihrem Projekt als PCH-Quelldatei festgelegt, und eine Header Datei wird als PCH-Header Datei verwendet. Eine typische PCH-Header Datei enthält alle Bibliotheks Header, die in Ihrem Projekt verwendet werden, aber keine lokalen Header, die sich noch in der Entwicklung befinden. In diesem Beispiel hat die PCH-Header Datei den Namen *my_pch. h*.
 
 ```cpp
 // my_pch.h
@@ -35,7 +35,7 @@ Klicken Sie in der typischen Verwendung einer Quelldatei im Projekt wird festgel
 #include <stdio.h>
 ```
 
-Die PCH-Quelldatei kompiliert wird, mithilfe der **"/ Yc"**<em>my_pch.h</em> Option. Wenn der Compiler eine einschließen dieser PCH-Headerdatei nicht findet, wird es C2857 generiert:
+Die PCH-Quelldatei wird mithilfe der Option **/Yc**<em>my_pch. h</em> kompiliert. Wenn der Compiler keinen include-Vorgang für diese PCH-Header Datei findet, generiert er C2857:
 
 ```cpp
 // my_pch.cpp
@@ -46,7 +46,7 @@ Die PCH-Quelldatei kompiliert wird, mithilfe der **"/ Yc"**<em>my_pch.h</em> Opt
 #endif
 ```
 
-Um diese PCH-Datei zu verwenden, müssen mithilfe von Quelldateien kompiliert werden die **"/ Yu"**<em>my_pch.h</em> Option. Die PCH-Headerdatei muss in zuerst in Quelldateien verwendet werden, die den PCH neu zu verwenden:
+Um diese PCH-Datei zu verwenden, müssen Quelldateien mit der Option **/Yu**<em>my_pch. h</em> kompiliert werden. Die PCH-Header Datei muss zuerst in Quelldateien eingeschlossen werden, die den PCH verwenden:
 
 ```cpp
 // C2857.cpp

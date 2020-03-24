@@ -12,22 +12,22 @@ helpviewer_keywords:
 - __sptr modifier
 - __uptr modifier
 ms.assetid: c7f5f3b2-9106-4a0b-a6de-d1588ab153ed
-ms.openlocfilehash: 957f744ca6c5a7be807c1dc68fcd2b602b72300e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bfa468c96196c417415801239925707c43a49c4e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330958"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178677"
 ---
-# <a name="sptr-uptr"></a>__sptr, __uptr
+# <a name="__sptr-__uptr"></a>__sptr, __uptr
 
 **Microsoft-spezifisch**
 
-Verwenden der **__sptr** oder **__uptr** Modifizierer für eine 32-Bit-Zeigerdeklaration, um anzugeben, wie der Compiler einen 32-Bit-Zeiger in einen 64-Bit-Zeiger konvertiert. Ein 32-Bit-Zeiger wird beispielsweise konvertiert, wenn er einer 64-Bit-Zeigervariablen zugewiesen oder auf einer 64-Bit-Plattform dereferenziert wird.
+Verwenden Sie den **__sptr** oder **__uptr** Modifizierer in einer 32-Bit-Zeiger Deklaration, um anzugeben, wie der Compiler einen 32-Bit-Zeiger in einen 64-Bit-Zeiger konvertiert. Ein 32-Bit-Zeiger wird beispielsweise konvertiert, wenn er einer 64-Bit-Zeigervariablen zugewiesen oder auf einer 64-Bit-Plattform dereferenziert wird.
 
 In der Microsoft-Dokumentation zur Unterstützung von 64-Bit-Plattformen wird das wichtigste Bit eines 32-Bit-Zeigers gelegentlich als signiertes Bit bezeichnet. Standardmäßig verwendet der Compiler eine Vorzeichenerweiterung, um einen 32-Bit-Zeiger in einen 64-Bit-Zeiger zu konvertieren. Das heißt, die unwichtigsten 32 Bits des 64-Bit-Zeigers werden auf den Wert des 32-Bit-Zeigers festgelegt, und die wichtigsten 32 Bits werden auf den Wert des signierten Bits des 32-Bit-Zeigers festgelegt. Diese Konvertierung ergibt korrekte Ergebnisse, wenn das signierte Bit 0 ist. Wenn das signierte Bit 1 ist, sind die Ergebnisse nicht korrekt. Beispielsweise ergibt die 32-Bit-Adresse "0x7FFFFFFF" die entsprechende 64-Bit-Adresse "0x000000007FFFFFFF", die 32-Bit-Adresse "0x80000000" wurde jedoch inkorrekt auf "0xFFFFFFFF80000000" geändert.
 
-Die **__sptr**, bzw. der signierte Zeiger %(Dateiname) gibt an, dass eine zeigerkonvertierung die wichtigsten Bits eines 64-Bit-Zeigers auf das signierte Bit des 32-Bit-Zeigers festgelegt. Die **__uptr**, oder nicht signierte Zeiger %(Dateiname) gibt an, dass eine Konvertierung die wichtigsten Bits auf NULL festgelegt. Die folgenden Deklarationen sind die **__sptr** und **__uptr** Modifizierer, die mit zwei nicht qualifizierten Zeigern, die verwendet werden, mit zwei Zeiger qualifiziert die [__ptr32](../cpp/ptr32-ptr64.md) Typ, und die Funktion der Parameter.
+Der Modifizierer **__sptr**oder signierter Zeiger gibt an, dass eine Zeiger Konvertierung die signifikantesten Bits eines 64-Bit-Zeigers auf das Signier Bit des 32-Bit-Zeigers festlegt. Der Modifizierer " **__uptr**" oder "Ganzzahl ohne Vorzeichen Pointer" gibt an, dass bei einer Konvertierung die signifikantesten Bits auf NULL gesetzt werden. Die folgenden Deklarationen zeigen die **__sptr** und **__uptr** Modifizierer, die mit zwei nicht qualifizierten Zeigern verwendet werden, zwei mit dem [__ptr32](../cpp/ptr32-ptr64.md) Typ qualifizierte Zeiger und einen Funktionsparameter.
 
 ```cpp
 int * __sptr psp;
@@ -37,13 +37,13 @@ int * __ptr32 __uptr pup32;
 void MyFunction(char * __uptr __ptr32 myValue);
 ```
 
-Verwenden der **__sptr** und **__uptr** Modifizierer mit Zeigerdeklarationen. Verwenden Sie die in die Position des ein [zeigertypqualifizierers](../c-language/pointer-declarations.md), was bedeutet, dass den Modifizierer dem Sternchen nachgestellt muss. Sie können keine die Modifizierer mit [Zeiger auf Member](../cpp/pointers-to-members.md). Die Modifizierer beeinflussen nicht die Nichtzeigerdeklarationen.
+Verwenden Sie die **__sptr** -und **__uptr** Modifizierer mit Zeiger Deklarationen. Verwenden Sie die Modifizierer an der Position eines [Zeigertyp Qualifizierers](../c-language/pointer-declarations.md). Dies bedeutet, dass der Modifizierer dem Sternchen folgen muss. Die Modifizierer können nicht mit [Zeigern auf](../cpp/pointers-to-members.md)Member verwendet werden. Die Modifizierer beeinflussen nicht die Nichtzeigerdeklarationen.
 
-Für die Kompatibilität mit früheren Versionen **_sptr** und **_uptr** sind Synonyme für **__sptr** und **__uptr** , wenn -Compileroption[/Za \(spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) angegeben ist.
+Aus Kompatibilitätsgründen mit früheren Versionen sind **_sptr** und **_uptr** Synonyme für **__sptr** und **__uptr** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel deklariert die 32-Bit-Zeiger, mit denen die **__sptr** und **__uptr** Modifizierer, jeden 32-Bit-Zeiger einer 64-Bit-Zeigervariablen zugewiesen, und klicken Sie dann zeigt den hexadezimalen Wert der einzelnen 64 - Bit-Zeiger. Das Beispiel wird mit dem systemeigenen 64-Bit-Compiler kompiliert und auf einer 64-Bit-Plattform ausgeführt.
+Im folgenden Beispiel werden 32-Bit-Zeiger deklariert, die die **__sptr** -und **__uptr** -Modifizierer verwenden, jeder 32-Bit-Zeiger einer 64-Bit-Zeiger Variablen zugewiesen und dann der hexadezimale Wert jedes 64-Bit-Zeigers angezeigt. Das Beispiel wird mit dem systemeigenen 64-Bit-Compiler kompiliert und auf einer 64-Bit-Plattform ausgeführt.
 
 ```cpp
 // sptr_uptr.cpp
@@ -94,6 +94,6 @@ p32u: p64 = 0000000087654321
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft-spezifische Modifizierer](../cpp/microsoft-specific-modifiers.md)

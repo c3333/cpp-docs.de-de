@@ -1,5 +1,5 @@
 ---
-title: 'Indizierung '
+title: Indizierung
 ms.date: 11/04/2016
 helpviewer_keywords:
 - subscript operator [C++], overloaded
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - operator overloading [C++], examples
 - subscript operator
 ms.assetid: eb151281-6733-401d-9787-39ab6754c62c
-ms.openlocfilehash: 376cacc3f70995c271a29b741ad266049da45785
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8974f6619af462050fc8a02798fe44007ea928e4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62330549"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160891"
 ---
-# <a name="subscripting"></a>Indizierung 
+# <a name="subscripting"></a>Indizierung
 
-Der Indexoperator (**[]**), wie der Funktionsaufrufoperator wird als binärer Operator betrachtet. Der Indexoperator muss eine nicht statische Memberfunktion sein, die ein einzelnes Argument akzeptiert. Dieses Argument kann einen beliebigen Typ aufweisen und legt den gewünschten Arrayindex fest.
+Der Index Operator ( **[]** ) wird, wie der Funktions Aufrufoperator, als binärer Operator betrachtet. Der Indexoperator muss eine nicht statische Memberfunktion sein, die ein einzelnes Argument akzeptiert. Dieses Argument kann einen beliebigen Typ aufweisen und legt den gewünschten Arrayindex fest.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie einen Vektor vom Typ erstellen **Int** , die Überprüfung der Begrenzungen implementiert:
+Im folgenden Beispiel wird veranschaulicht, wie ein Vektor vom Typ **int** erstellt wird, der die Überprüfung von Begrenzungen implementiert:
 
 ```cpp
 // subscripting.cpp
@@ -91,10 +91,10 @@ Element: [10] = 10
 
 ## <a name="comments"></a>Kommentare
 
-Wenn `i` in der vorangehenden Programm 10 erreicht **[]-Operator** erkennt, dass ein Index außerhalb des gültigen Bereichs verwendet wird und eine Fehlermeldung ausgegeben.
+Wenn `i` im vorangehenden Programm 10 erreicht, erkennt **Operator []** , dass ein Index außerhalb des gültigen Bereichs verwendet wird, und gibt eine Fehlermeldung aus.
 
-Beachten Sie, dass die Funktion **[]-Operator** einen Verweistyp zurückgibt. Dadurch wird sie zu einem L-Wert, und Sie können auf beiden Seiten von Zuweisungsoperatoren indizierte Ausdrücke verwenden.
+Beachten Sie, dass der Funktions **Operator []** einen Verweistyp zurückgibt. Dadurch wird sie zu einem L-Wert, und Sie können auf beiden Seiten von Zuweisungsoperatoren indizierte Ausdrücke verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Operatorüberladung](../cpp/operator-overloading.md)

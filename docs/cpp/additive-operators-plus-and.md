@@ -12,12 +12,12 @@ helpviewer_keywords:
 - arithmetic operators [C++], additive operators
 - '- operator [C++], additive operators in C++'
 ms.assetid: d4afafe7-e201-4c69-a649-37f17756e784
-ms.openlocfilehash: be9e1830ea44223aa46ad9a7f5c6cee6734fa9e6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 739132ce1889b7e73b7ae19f5072a1dfec9c066d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385049"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181667"
 ---
 # <a name="additive-operators--and--"></a>Additive Operatoren: + und -
 
@@ -28,43 +28,43 @@ expression + expression
 expression - expression
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die additiven Operatoren sind:
 
-- Addition (**+**)
+- Addition ( **+** )
 
-- Subtraktion (**-**)
+- Subtraktion ( **-** )
 
 Diese binären Operatoren weisen eine Assoziativität von links nach rechts auf.
 
-Die additiven Operatoren nehmen Operanden der arithmetischen Operatoren oder Zeigertypen. Das Ergebnis der Addition (**+**) ist die Summe der Operanden. Das Ergebnis der Subtraktion (**-**) ist die Differenz zwischen den Operanden. Wenn einer oder beide der Operanden Zeiger sind, müssen sie Zeiger auf Objekte, nicht auf Funktionen sein. Wenn beide Operanden Zeiger sind, sind die Ergebnisse nicht aussagekräftig, wenn nicht beide Zeiger auf Objekte im selben Array verweisen.
+Die additiven Operatoren nehmen Operanden der arithmetischen Operatoren oder Zeigertypen. Das Ergebnis des Additions Operators ( **+** ) ist die Summe der Operanden. Das Ergebnis des Subtraktions Operators ( **-** ) ist der Unterschied zwischen den Operanden. Wenn einer oder beide der Operanden Zeiger sind, müssen sie Zeiger auf Objekte, nicht auf Funktionen sein. Wenn beide Operanden Zeiger sind, sind die Ergebnisse nicht aussagekräftig, wenn nicht beide Zeiger auf Objekte im selben Array verweisen.
 
-Additive Operatoren nehmen Operanden vom Typ *arithmetische*, *ganzzahligen*, und *skalare* Typen. Diese sind in der folgenden Tabelle definiert.
+Additive Operatoren nehmen Operanden *arithmetischer* *, ganzzahliger und* *skalarer* Typen auf. Diese sind in der folgenden Tabelle definiert.
 
 ### <a name="types-used-with-additive-operators"></a>Mit additiven Operatoren verwendete Typen
 
-|Typ|Bedeutung|
+|type|Bedeutung|
 |----------|-------------|
-|*arithmetic*|Ganzzahlige und nicht verankerte Typen werden kollektiv als "arithmetische" Typen bezeichnet.|
-|*integral*|Die Typen "char" und "int" in sämtlichen Größen ("long", "short") und Enumerationen sind ganzzahlige Typen.|
-|*scalar*|Skalare Operanden sind entweder arithmetische oder Zeiger-Operanden.|
+|*Arithmetisch*|Ganzzahlige und nicht verankerte Typen werden kollektiv als "arithmetische" Typen bezeichnet.|
+|*ganzzahligen*|Die Typen "char" und "int" in sämtlichen Größen ("long", "short") und Enumerationen sind ganzzahlige Typen.|
+|*skalare*|Skalare Operanden sind entweder arithmetische oder Zeiger-Operanden.|
 
 Die gültigen Kombinationen für diese Operatoren sind:
 
-*arithmetic* + *arithmetic*
+*arithmetische* + *Arithmetik*
 
-*scalar* + *integral*
+*Skalar* + *integral* Ganzzahl
 
-*integral* + *scalar*
+*integral* ganzzahliger + *Skalar*
 
-*arithmetic* - *arithmetic*
+*arithmetische* - *Arithmetik*
 
-*scalar* - *scalar*
+*Skalar* - *Skalarwert*
 
 Beachten Sie, dass Addition und Subtraktion keine äquivalenten Vorgänge sind.
 
-Wenn beide Operanden arithmetisch sind, werden die Konvertierungen in behandelt [Standardkonvertierungen](standard-conversions.md) sind auf die Operanden angewendet, und das Ergebnis ist, der den konvertierten Typ.
+Wenn beide Operanden einen arithmetischen Typ haben, werden die in [Standard Konvertierungen](standard-conversions.md) behandelten Konvertierungen auf die Operanden angewendet, und das Ergebnis ist vom konvertierten Typ.
 
 ## <a name="example"></a>Beispiel
 
@@ -109,11 +109,11 @@ Obwohl der Ganzzahlwert 1 zu `pIntArray` addiert wird, bedeutet dies nicht "1 zu
 
 ## <a name="pointer-subtraction"></a>Zeigersubtraktion
 
-Wenn beide Operanden Zeiger sind, ist das Ergebnis der Subtraktion die Differenz (in Arrayelementen) zwischen den Operanden. Der subtraktionsausdruck gibt ein ganzzahliges Ergebnis mit Vorzeichen vom Typ `ptrdiff_t` (definiert in der standardincludedatei \<stddef.h >).
+Wenn beide Operanden Zeiger sind, ist das Ergebnis der Subtraktion die Differenz (in Arrayelementen) zwischen den Operanden. Der Subtraktions Ausdruck ergibt ein ganzzahliges Ergebnis mit Vorzeichen vom Typ `ptrdiff_t` (definiert in der standardmäßigen Includedatei \<STDDEF. h >).
 
-Einer der Operanden kann vom ganzzahligen Typ sein, solange er der zweite Operand ist. Das Ergebnis der Subtraktion ist vom selben Datentyp wie der ursprüngliche Zeiger. Der Wert der Subtraktion ist ein Zeiger auf die (*n* - *ich*) te Arrayelement, in denen *n* Elements verweist den ursprünglichen Zeiger und den *ich* ist der ganzzahlige Wert des zweiten Operanden.
+Einer der Operanden kann vom ganzzahligen Typ sein, solange er der zweite Operand ist. Das Ergebnis der Subtraktion ist vom selben Datentyp wie der ursprüngliche Zeiger. Der Wert der Subtraktion ist ein Zeiger auf das Array Element (*n* - *i*). dabei ist *n* das Element, auf das der ursprüngliche Zeiger zeigt, und *Ich bin* der ganzzahlige Wert des zweiten Operanden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit binären Operatoren](../cpp/expressions-with-binary-operators.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>

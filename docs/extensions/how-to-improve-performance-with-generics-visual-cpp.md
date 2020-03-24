@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Verbessern der Leistung mit Generics (C++/CLI)'
+title: 'Vorgehensweise: verbessern der Leistung mit GenerikaC++(/CLI)'
 ms.date: 10/12/2018
 ms.topic: reference
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - C++, generics
 - generics [C++], performance
 ms.assetid: f14a175b-301f-46cc-86e4-c82d35f9aa3e
-ms.openlocfilehash: 958da08716022bedaa8d0fe217814fa2bd86c065
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: a460456a383fcb3eb81e17c1ad5817f790f3c399
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515715"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181940"
 ---
-# <a name="how-to-improve-performance-with-generics-ccli"></a>Vorgehensweise: Verbessern der Leistung mit Generics (C++/CLI)
+# <a name="how-to-improve-performance-with-generics-ccli"></a>Vorgehensweise: verbessern der Leistung mit GenerikaC++(/CLI)
 
 Mit Generics können Sie wiederverwendbaren Code auf Basis eines Typparameters erstellen. Der tatsächliche Typ des Typparameters wird zurückgestellt, bis er vom Clientcode aufgerufen wird. Weitere Informationen zu Generika finden Sie unter [Generics](generics-cpp-component-extensions.md).
 
@@ -124,6 +124,6 @@ int main()
 14
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Generics](generics-cpp-component-extensions.md)

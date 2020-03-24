@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C3805
 ms.assetid: 166bbc35-5488-46b4-8e4c-9cd26ee5644e
-ms.openlocfilehash: 4560fb4bb264f2ddd79ddc80a063925d874094b3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2da70c31eab756f83bf0f4ad279700730f2619c8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391906"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165638"
 ---
 # <a name="compiler-error-c3805"></a>Compilerfehler C3805
 
-'token': Unerwartetes Token erwartet entweder '}' oder ID
+"Token": Unerwartetes Token, erwartet wurde entweder "}" oder ein Bezeichner.
 
-Wenn Sie eine Eigenschaft zu definieren, wurde ein ungültiges Token gefunden. Entfernen Sie das Token ungültige.
+Beim Definieren einer Eigenschaft wurde ein ungültiges Token gefunden. Entfernen Sie das ungültige Token.

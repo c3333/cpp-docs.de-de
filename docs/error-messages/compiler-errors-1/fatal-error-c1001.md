@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C1001
 ms.assetid: 5736cdb3-22c8-4fad-aa85-d5e0d2b232f4
-ms.openlocfilehash: beb382b9c6ccf80d01f5a0262832e7fb7e1ea0a4
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: e1255578883c8d2bc278184a02575a0a51ed9b6c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345658"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204957"
 ---
 # <a name="fatal-error-c1001"></a>Schwerwiegender Fehler C1001
 
-> Interner Compilerfehler ERROR(compiler file *file*, line *number*)
+> Interner Compilerfehler (compilerdateidatei, Zeilen *Nummer*) *file*
 
-Der Compiler kann nicht die korrekten Code für ein Konstrukt, häufig aufgrund der Kombination aus einem bestimmten Ausdruck und eine Optimierungsoption oder ein Problem bei der Analyse generieren. Verfügt die Compilerdatei aufgelisteten eine utc oder der C2-OData-Pfadsegment, ist es wahrscheinlich ein Fehler für die Optimierung. Wenn die Datei ein Pfadsegment Cxxfe oder c1xx hat oder msc1.cpp ist, ist es wahrscheinlich ein Fehler im Parser. Wenn die Datei, die mit dem Namen cl.exe ist, ist keine weiteren Informationen verfügbar.
+Der Compiler kann keinen korrekten Code für ein Konstrukt generieren, häufig aufgrund der Kombination eines bestimmten Ausdrucks und einer Optimierungs Option oder eines Problems bei der Verarbeitung. Wenn die aufgelistete Compilerdatei ein UTC-oder C2-Pfad Segment enthält, ist dies wahrscheinlich ein Optimierungs Fehler. Wenn die Datei ein cxxfe-oder c1xx Path-Segment aufweist oder msc1. cpp ist, ist dies wahrscheinlich ein Parserfehler. Wenn die Datei "CL. exe" lautet, sind keine weiteren Informationen verfügbar.
 
-Sie können häufig eine Optimierungsproblem beheben, durch das Entfernen von ein oder mehrere Optimierungsoptionen. Um zu bestimmen, welche Option fehlerhaft ist, entfernen Sie Optionen eine Neukompilierung und bis die Fehlermeldung angezeigt verschwindet. Die Optionen, die am häufigsten verantwortlich sind [/Og (globale Optimierungen)](../../build/reference/og-global-optimizations.md) und [/Oi (systeminterne Funktionen erstellen)](../../build/reference/oi-generate-intrinsic-functions.md). Wenn Sie bestimmen, welche Optimierungsoption verantwortlich ist, können Sie es deaktivieren, um die Funktion, in dem der Fehler tritt auf, mit, der [optimieren](../../preprocessor/optimize.md) Pragma und weiterhin die Option für den Rest des Moduls verwenden. Weitere Informationen zu den Optimierungsoptionen, finden Sie unter [bewährten Methoden zur Datenbankoptimierung](../../build/optimization-best-practices.md).
+Sie können ein Optimierungsproblem häufig beheben, indem Sie eine oder mehrere Optimierungs Optionen entfernen. Um zu ermitteln, welche Option fehlerhaft ist, entfernen Sie die Optionen nacheinander, und kompilieren Sie Sie neu, bis die Fehlermeldung entfernt wird. Die am häufigsten Verantwortlichen Optionen sind [/og (globale Optimierungen)](../../build/reference/og-global-optimizations.md) und [/Oi (intrinsische Funktionen generieren)](../../build/reference/oi-generate-intrinsic-functions.md). Nachdem Sie festgestellt haben, welche Optimierungs Option verantwortlich ist, können Sie Sie um die Funktion deaktivieren, in der der Fehler auftritt, indem Sie das Pragma [optimieren](../../preprocessor/optimize.md) verwenden und die Option für den Rest des Moduls weiterhin verwenden. Weitere Informationen zu Optimierungs Optionen finden Sie unter [bewährte Methoden](../../build/optimization-best-practices.md)für die Optimierung.
 
-Wenn Optimierungen nicht für den Fehler verantwortlich sind, versuchen Sie es Umschreiben der Zeile, in dem der Fehler gemeldet wird, oder mehrere Zeilen von Code im Zusammenhang mit dieser Zeile. Den Code die Möglichkeit erhalten nach dem Präprozessorlauf der Compiler erkennt können Sie die [/p (Vorverarbeitung in eine Datei)](../../build/reference/p-preprocess-to-a-file.md) Option.
+Wenn Optimierungen für den Fehler nicht verantwortlich sind, versuchen Sie, die Zeile, in der der Fehler gemeldet wird, oder mehrere Codezeilen, die diese Zeile betreffen, neu zu schreiben. Um den Code so anzuzeigen, wie der Compiler ihn nach der Vorverarbeitung sieht, können Sie die Option [/P (Vorverarbeitung in eine Datei)](../../build/reference/p-preprocess-to-a-file.md) verwenden.
 
-Weitere Informationen wie die Quelle des Fehlers zu isolieren und einen internen Compilerfehler an Microsoft zu melden, finden Sie unter [wie Melden eines Problems mit dem Visual C++-Toolset](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).
+Weitere Informationen dazu, wie Sie die Fehlerquelle isolieren und einen internen Compilerfehler an Microsoft melden, finden Sie unter [melden eines Problems mit dem visuellen C++ Toolset](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).

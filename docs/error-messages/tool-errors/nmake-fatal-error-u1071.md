@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - U1071
 ms.assetid: 328a0c1f-a867-410e-943d-7b6b75a975ab
-ms.openlocfilehash: d9bf335e05993df774bac0684a68197650973bee
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f696915aafec25d49ba0aea555e447ab899e8988
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62367134"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182707"
 ---
 # <a name="nmake-fatal-error-u1071"></a>NMAKE: Schwerwiegender Fehler U1071
 
-Schleife im Abhängigkeitsstruktur für Ziel "Zielname"
+Schleifen in Abhängigkeitsstruktur für Ziel "TargetName"
 
-Eine zirkuläre Abhängigkeit vorhanden ist, in der Abhängigkeitsstruktur für das angegebene Ziel. Das angegebene Ziel ist ein abhängiges Element eines die abhängigen Elemente des angegebenen Ziels. Ringabhängigkeiten sind ungültig.
+In der Abhängigkeitsstruktur für das angegebene Ziel ist eine zirkuläre Abhängigkeit vorhanden. Das angegebene Ziel ist eine abhängige Abhängigkeit von einer der abhängigen Elemente des angegebenen Ziels. Zirkuläre Abhängigkeiten sind ungültig.

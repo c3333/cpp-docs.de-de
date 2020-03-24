@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - C4799
 ms.assetid: 8ecbd06f-c778-4371-a2fb-c690b6743ec8
-ms.openlocfilehash: 475451b47d461e7ea1428eb715a876fb023694d1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ec92da425718cd5ddc579d1d733a0bc4e56dc04a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62152215"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80175102"
 ---
 # <a name="compiler-warning-level-1-c4799"></a>Compilerwarnung (Stufe 1) C4799
 
-> Keine EMMS-Funktion "*Funktion*"
+> Keine EMMS am Ende der Funktion "*Function*"
 
-Die Funktion verfügt über mindestens eine MMX-Anweisung, aber verfügt nicht über eine `EMMS` Anweisung. Wenn eine multimedia-Anweisung verwendet wird, eine `EMMS` Anweisung oder `_mm_empty` systeminterne sollte auch zum Deaktivieren Sie des Worts multimedia-Tag, am Ende der MMX-Code verwendet werden.
+Die Funktion verfügt über mindestens eine MMX-Anweisung, verfügt jedoch nicht über eine `EMMS` Anweisung. Wenn eine Multimedia-Anweisung verwendet wird, sollte auch eine `EMMS` Anweisung oder eine systeminterne `_mm_empty` verwendet werden, um das Multimedia-Tagwort am Ende des MMX-Codes zu löschen.
 
-Sie erhalten möglicherweise C4799, bei der Verwendung von ivec.h, dass der Code nicht ordnungsgemäß verwendet wird, führen die EMMS-Anweisung vor der Rückgabe. Dies ist eine "false" Warnung für diese Header. Sie können Sie deaktivieren, indem _SILENCE_IVEC_C4799 in ivec.h definieren. Bedenken Sie jedoch, dass dies auch den Compiler aus, sodass richtige Warnungen dieses Typs beibehält.
+Sie erhalten möglicherweise C4799 bei Verwendung von "ivec. h", was darauf hinweist, dass der Code die EMMS-Anweisung vor der Rückgabe nicht ordnungsgemäß ausführt. Dies ist eine falsche Warnung für diese Header. Sie können diese deaktivieren, indem Sie _SILENCE_IVEC_C4799 in "ivec. h" definieren. Beachten Sie jedoch, dass dies auch dazu führt, dass der Compiler keine korrekten Warnungen dieses Typs gibt.
 
-Weitere Informationen finden Sie unter [Intel MMX-Befehlssatz](../../assembler/inline/intel-s-mmx-instruction-set.md).
+Weitere Informationen finden Sie im [MMX-Anweisungs Satz von Intel](../../assembler/inline/intel-s-mmx-instruction-set.md).

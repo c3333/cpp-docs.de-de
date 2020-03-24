@@ -1,20 +1,20 @@
 ---
-title: B. Stubs für Funktionen der Laufzeitbibliothek
+title: B. Stubs für Funktionen der Runtimebibliothek
 ms.date: 01/22/2019
 ms.assetid: fdfdabe0-f678-4551-80d5-827b62354427
-ms.openlocfilehash: 1e8d439eefad005c673cfb6c4ea12399b8236fb5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9089bd6ef1f0a8f2f2ed94a7c496943c9bdd5e64
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62362984"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215058"
 ---
-# <a name="b-stubs-for-run-time-library-functions"></a>B. Stubs für Funktionen der Laufzeitbibliothek
+# <a name="b-stubs-for-run-time-library-functions"></a>B. Stubs für Funktionen der Runtimebibliothek
 
-Dieser Abschnitt enthält Stubs für die Laufzeitbibliothek-Funktionen, die in der OpenMP-C- und C++-API definiert. Die Stubs werden bereitgestellt, um Portabilität auf Plattformen zu ermöglichen, die der OpenMP-C- und C++-API nicht unterstützt. OpenMP-Programme müssen mit einer Bibliothek, die diese Stubfunktionen enthalten verknüpft werden, auf diesen Plattformen. Die Stubfunktionen wird davon ausgegangen, dass die Anweisungen in der OpenMP-Programm ignoriert werden. Daher ist es möglich, emulieren sie serielle Semantik.
+Dieser Abschnitt enthält Stub für die Lauf Zeit Bibliotheksfunktionen, die in OpenMP C und C++ API definiert sind. Die Stub werden bereitgestellt, um die Portabilität für Plattformen zu ermöglichen, die C++ OpenMP C und API nicht unterstützen. Auf diesen Plattformen müssen OpenMP-Programme mit einer Bibliothek verknüpft sein, die diese Stub-Funktionen enthält. Die Stub-Funktionen gehen davon aus, dass die Anweisungen im OpenMP-Programm ignoriert werden. Daher emulieren Sie serielle Semantik.
 
 > [!NOTE]
-> Die Sperren der Variable, die in der Lock-Funktionen angezeigt wird, muss exklusiv über diese Funktionen zugegriffen werden. Es sollte nicht initialisiert oder andernfalls geändert werden in der Anwendung für Benutzer. Benutzer sollten keine Annahmen über die Mechanismen, die von OpenMP-C- und C++-Implementierungen verwendet werden, um Sperren auf Grundlage des Schemas, die von der Stubfunktionen zu implementieren vornehmen.
+> Auf die in den Sperr Funktionen angezeigte Sperr Variable muss ausschließlich über diese Funktionen zugegriffen werden. Er sollte nicht initialisiert oder anderweitig im Benutzerprogramm geändert werden. Benutzer sollten keine Annahmen über Mechanismen treffen, die von OpenMP C C++ und Implementierungen verwendet werden, um Sperren basierend auf dem Schema zu implementieren, das von den Stub-Funktionen verwendet wird.
 
 ## <a name="code"></a>Code
 

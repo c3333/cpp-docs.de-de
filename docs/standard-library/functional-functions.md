@@ -29,12 +29,12 @@ helpviewer_keywords:
 - std::bit_xor [C++]
 - std::cref [C++]
 ms.assetid: c34d0b45-50a7-447a-9368-2210d06339a4
-ms.openlocfilehash: 546d8c61e875dd7c295e892359e39fa5a76867b4
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: d5a1b0d106774ede13b0e23d4bacb8fbbc47d28f
+ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427092"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80150679"
 ---
 # <a name="ltfunctionalgt-functions"></a>&lt;functional&gt;-Funktionen
 
@@ -51,7 +51,7 @@ Diese Funktionen sind in c++ 17 veraltet:
 |-|-|
 |[not1](#not1)|[not2](#not2)|
 
-## <a name="bind"></a>Zwick
+## <a name="bind"></a><a name="bind"></a>Zwick
 
 Bindet Argumente an ein aufrufbares Objekt.
 
@@ -77,11 +77,11 @@ Das aufzurufende Objekt.
 *tN* -\
 Das n-te Aufrufargument.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Typen `FT, T1, T2, ..., TN` müssen kopierbar sein, und `INVOKE(fn, t1, ..., tN)` müssen ein gültiger Ausdruck für einige Werte `w1, w2, ..., wN`sein.
 
-Die erste Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem schwachen Ergebnistyp zurück. Die Auswirkungen von `g(u1, u2, ..., uM)` sind `INVOKE(f, v1, v2, ..., vN, `[invoke_result](../standard-library/invoke-result-class.md)`<FT cv (V1, V2, ..., VN)>::type)`, wobei `cv` die CV-Qualifizierer `g` ist und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten angegeben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste zu erhalten.
+Die erste Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem schwachen Ergebnistyp zurück. Die Auswirkungen von `g(u1, u2, ..., uM)` sind `INVOKE(f, v1, v2, ..., vN,` [invoke_result](../standard-library/invoke-result-class.md)`<FT cv (V1, V2, ..., VN)>::type)`, wobei `cv` die CV-Qualifizierer `g` ist und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten angegeben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste zu erhalten.
 
 Die zweite Vorlagenfunktion gibt einen weiterleitenden Aufrufwrapper `g` mit einem geschachtelten Typ `result_type` zurück, der ein Synonym für `RTy` darstellt. `g(u1, u2, ..., uM)` bewirkt `INVOKE(f, v1, v2, ..., vN, RTy)`, wo `cv` der CV-Qualifizierer von `g` ist, und die Werte und Typen der gebundenen Argumente `v1, v2, ..., vN` wie unten beschrieben bestimmt werden. Damit binden Sie Argumente an aufrufbare Objekte, um aufrufbare Objekte mit einer angepassten Argumentliste und einem angegebenen Rückgabetypen zu erhalten.
 
@@ -152,7 +152,7 @@ int main()
 3^2 == 9
 ```
 
-## <a name="bind1st"></a>bind1st
+## <a name="bind1st"></a><a name="bind1st"></a>bind1st
 
 Eine hilfsvorlagen Funktion, mit der ein Adapter erstellt wird, um ein binäres Funktions Objekt in ein unäres Funktions Objekt zu konvertieren. Es bindet das erste Argument der binären Funktion an einen angegebenen Wert. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -173,7 +173,7 @@ Der Wert, an den das erste Argument des binären Funktionsobjekts gebunden werde
 
 Das unäre Funktions Objekt, das sich aus der Bindung des ersten Arguments des binären Funktions Objekts an den *linken*Wert ergibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Funktions Binder sind eine Art von Funktions Adaptor. Da Sie Funktions Objekte zurückgeben, können Sie in bestimmten Typen von Funktions Komposition verwendet werden, um kompliziertere und leistungsfähigere Ausdrücke zu erstellen.
 
@@ -246,7 +246,7 @@ The number of elements in v1 greater than 5 is: 4.
 The number of elements in v1 less than 10 is: 2.
 ```
 
-## <a name="bind2nd"></a>bind2nd
+## <a name="bind2nd"></a><a name="bind2nd"></a>bind2nd
 
 Eine hilfsvorlagen Funktion, mit der ein Adapter erstellt wird, um ein binäres Funktions Objekt in ein unäres Funktions Objekt zu konvertieren. Es bindet das zweite Argument der binären Funktion an einen angegebenen Wert. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -267,7 +267,7 @@ Der Wert, an den das zweite Argument des binären Funktionsobjekts gebunden werd
 
 Das unäre Funktions Objekt Ergebnis, das das zweite Argument des binären Funktions Objekts an *right*bindet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Funktions Binder sind eine Art von Funktions Adaptor. Da Sie Funktions Objekte zurückgeben, können Sie in bestimmten Typen von Funktions Komposition verwendet werden, um kompliziertere und leistungsfähigere Ausdrücke zu erstellen.
 
@@ -340,7 +340,7 @@ The number of elements in v1 greater than 15 is: 2.
 The number of elements in v1 less than 10 is: 2.
 ```
 
-## <a name="bit_and"></a>bit_and
+## <a name="bit_and"></a><a name="bit_and"></a>bit_and
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise AND-Operation (binäres `operator&`) für die Argumente durchführt.
 
@@ -377,11 +377,11 @@ Der rechte Operand des bitweisen AND-Vorgangs. Die nicht spezialisierte Vorlage 
 
 Das Ergebnis von `Left & Right`. Die spezialisierte Vorlage vervollkommnet die Weiterleitung des Ergebnisses mit dem von `operator&` zurückgegebenen Typs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `bit_and`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator&`-Element implementieren.
 
-## <a name="bit_not"></a>bit_not
+## <a name="bit_not"></a><a name="bit_not"></a>bit_not
 
 Ein vordefiniertes Funktions Objekt, das einen bitweisen Komplement (Not)-Vorgang (unäres `operator~`) für sein Argument durchführt. In c++ 14 hinzugefügt.
 
@@ -413,11 +413,11 @@ Der Operand des bitweisen komplementären Vorgangs. Die nicht spezialisierte Vor
 
 Das Ergebnis von `~ Right`. Die spezialisierte Vorlage vervollkommnet die Weiterleitung des Ergebnisses mit dem von `operator~` zurückgegebenen Typs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `bit_not`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator~`-Element implementieren.
 
-## <a name="bit_or"></a>bit_or
+## <a name="bit_or"></a><a name="bit_or"></a>bit_or
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise OR-Operation (`operator|`) auf den Argumenten durchführt.
 
@@ -454,11 +454,11 @@ Der rechte Operand des bitweisen OR-Vorgangs. Die nicht spezialisierte Vorlage b
 
 Das Ergebnis von `Left | Right`. Die spezialisierte Vorlage vervollkommnet die Weiterleitung des Ergebnisses mit dem von `operator|` zurückgegebenen Typs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `bit_or`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die `operator|` implementieren.
 
-## <a name="bit_xor"></a>bit_xor
+## <a name="bit_xor"></a><a name="bit_xor"></a>bit_xor
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise XOR-Operation (binäres `operator^`) für die Argumente durchführt.
 
@@ -495,11 +495,11 @@ Der rechte Operand des bitweisen XOR-Vorgangs. Die nicht spezialisierte Vorlage 
 
 Das Ergebnis von `Left ^ Right`. Die spezialisierte Vorlage vervollkommnet die Weiterleitung des Ergebnisses mit dem von `operator^` zurückgegebenen Typs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das `bit_xor`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator^`-Element implementieren.
 
-## <a name="cref"></a>cref
+## <a name="cref"></a><a name="cref"></a>cref
 
 Erstellt ein konstantes `reference_wrapper`-Element aus einem Argument.
 
@@ -519,7 +519,7 @@ Der Typ des zu umschließenden Arguments.
 *arg*\
 Das zu umschließende Argument.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese erste Funktion gibt `reference_wrapper<const Ty>(arg.get())` zurück. Damit können Sie einen const-Verweis umschließen. Die zweite Funktion gibt `reference_wrapper<const Ty>(arg)` zurück. Damit können Sie einen bereits umschlossenen Verweis erneut als const-Verweis umschließen.
 
@@ -555,7 +555,7 @@ cref(i) = 1
 cref(neg)(i) = -1
 ```
 
-## <a name="invoke"></a>Blaze
+## <a name="invoke"></a><a name="invoke"></a>Blaze
 
 Ruft jedes Aufruf Bare Objekt mit den angegebenen Argumenten auf. Hinzugefügt in c++ 17.
 
@@ -582,7 +582,7 @@ Den Aufrufargumente.
 *Spezifikations*\
 Die **noaußer** -Spezifikation `std::is_nothrow_invocable_v<Callable, Args>)`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ruft das Aufruf Bare Objekt " *FN* " mithilfe der Parameter " *args*" auf. `INVOKE(std::forward<Callable>(fn), std::forward<Args>(args)...)`, wobei die Pseudo Funktion `INVOKE(f, t1, t2, ..., tN)` eines der folgenden Elemente bedeutet:
 
@@ -676,7 +676,7 @@ pd->n_: 42
 42 is divisible by 7.
 ```
 
-## <a name="mem_fn"></a>mem_fn
+## <a name="mem_fn"></a><a name="mem_fn"></a>mem_fn
 
 Generiert einen einfachen Aufrufwrapper.
 
@@ -693,7 +693,7 @@ Der Rückgabetyp der umschlossenen Funktion.
 *Ty* -\
 Der Typ des Memberfunktionszeigers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagen Funktion gibt einen einfachen Wrapper `cw`mit einem schwachen Ergebnistyp zurück, sodass der Ausdruck `cw(t, a2, ..., aN)` identisch mit dem `INVOKE(pm, t, a2, ..., aN)`ist. Sie löst keine Ausnahmen aus.
 
@@ -739,7 +739,7 @@ int main()
 3*2 == 6
 ```
 
-## <a name="mem_fun"></a>mem_fun
+## <a name="mem_fun"></a><a name="mem_fun"></a>mem_fun
 
 Hilfevorlagenfunktionen, die verwendet werden, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, wenn Sie mit Zeigerargumenten initialisiert werden. In c++ 11 als veraltet markiert, um [mem_fn](#mem_fn) und [Bind](#bind)zu erhalten und in c++ 17 entfernt zu werden.
 
@@ -826,7 +826,7 @@ int main( )
 }
 ```
 
-## <a name="mem_fun_ref"></a>mem_fun_ref
+## <a name="mem_fun_ref"></a><a name="mem_fun_ref"></a>mem_fun_ref
 
 Hilfevorlagenfunktionen, die verwendet werden, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, indem Sie mit Verweisargumenten initialisiert werden. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -931,7 +931,7 @@ The original values stored in v2 are: 1 2 3 4 5 6 7 8 9 10 11 12 13
 With the even numbers removed, the remaining values are: 1 3 5 7 9 11 13
 ```
 
-## <a name="not1"></a>not1
+## <a name="not1"></a><a name="not1"></a>not1
 
 Gibt das Komplement eines unären Prädikats zurück. Veraltet für [not_fn](#not_fn) in c++ 17.
 
@@ -949,7 +949,7 @@ Das zu negierende unäre Prädikat.
 
 Ein unäres Prädikat, das die Negation des modifizierten unären Prädikats ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn eine `unary_negate` aus einem unären Prädikat `predicate(x)`erstellt wird, wird `!predicate(x)`zurückgegeben.
 
@@ -1003,7 +1003,7 @@ The number of elements in v1 greater than 10 is: 5.
 The number of elements in v1 not greater than 10 is: 3.
 ```
 
-## <a name="not2"></a>not2
+## <a name="not2"></a><a name="not2"></a>not2
 
 Gibt das Komplement eines binären Prädikats zurück. Veraltet für [not_fn](#not_fn) in c++ 17.
 
@@ -1021,7 +1021,7 @@ Das zu negierende binäre Prädikat.
 
 Ein binäres Prädikat, das die Negation des modifizierten binären Prädikats ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn eine `binary_negate` aus einem binären Prädikat `binary_predicate(x, y)`erstellt wird, wird `!binary_predicate(x, y)`zurückgegeben.
 
@@ -1079,7 +1079,7 @@ Sorted vector v1 = ( 41 6262 6262 6334 18467 19169 26500 )
 Resorted vector v1 = ( 26500 19169 18467 6334 6262 6262 41 )
 ```
 
-## <a name="not_fn"></a>not_fn
+## <a name="not_fn"></a><a name="not_fn"></a>not_fn
 
 Die `not_fn`-Funktions Vorlage nimmt ein Aufruf bares Objekt an und gibt ein Aufruf bares Objekt zurück. Wenn das zurückgegebene Aufruf Bare Objekt später mit einigen Argumenten aufgerufen wird, übergibt es diese an das ursprüngliche Aufruf Bare Objekt und negiert das Ergebnis logisch. Es behält das Konstante Qualifikations-und wertkategorieverhalten des umschaufenen Aufruf baren Objekts bei. `not_fn` ist in c++ 17 neu und ersetzt die veralteten `std::not1`, `std::not2`, `std::unary_negate`und `std::binary_negate`.
 
@@ -1093,7 +1093,7 @@ template <class Callable>
 *Func* -\
 Ein Aufruf bares Objekt, das verwendet wird, um den Weiterleitungs Aufruf Wrapper zu erstellen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagen Funktion gibt einen aufrufswrapper wie `return call_wrapper(std::forward<Callable>(func))`zurück, der auf dieser reinen Ausstellungs Klasse basiert:
 
@@ -1179,7 +1179,7 @@ Elements divisible by three: 2
 Elements not divisible by three: 5
 ```
 
-## <a name="ptr_fun"></a>ptr_fun
+## <a name="ptr_fun"></a><a name="ptr_fun"></a>ptr_fun
 
 Hilfevorlagenfunktionen, die verwendet werden, um die jeweiligen unären und binären Funktionszeiger in die unären und binären anwendbaren Funktionen zu konvertieren. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -1202,7 +1202,7 @@ Die erste Vorlagen Funktion gibt die unäre Funktion [Pointer_to_unary_function]
 
 Die zweite Vorlagen Funktion gibt die binäre Funktion [pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md) \<**arg1**, **arg2**, **Result**> (\* `pfunc`) zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Funktionszeiger ist ein Funktions Objekt. Es kann an jeden Algorithmus übergeben werden, der eine Funktion als Parameter erwartet, aber er ist nicht anpassbar. Informationen zu den darin enthaltenen Typen sind erforderlich, damit Sie mit einem Adapter verwendet werden können, um z. b. einen Wert an ihn zu binden oder ihn zu negieren. Durch die Konvertierung von unären und binären Funktionszeigern mithilfe der Hilfsfunktion `ptr_fun` können die Funktionsadapter mit unären und binären Funktionszeigern arbeiten.
 
@@ -1210,7 +1210,7 @@ Ein Funktionszeiger ist ein Funktions Objekt. Es kann an jeden Algorithmus über
 
 [!code-cpp[functional_ptr_fun#1](../standard-library/codesnippet/CPP/functional-functions_1.cpp)]
 
-## <a name="ref"></a>atur
+## <a name="ref"></a><a name="ref"></a>atur
 
 Konstruiert ein `reference_wrapper` aus einem Argument.
 
@@ -1302,7 +1302,7 @@ tiger lion cougar
 tiger cougar
 ```
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a>Wechsel
 
 Tauscht zwei `function`-Objekte.
 
@@ -1322,7 +1322,7 @@ Das erste Funktionsobjekt.
 *F2* -\
 Das zweite Funktionsobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt `f1.swap(f2)`zurück.
 

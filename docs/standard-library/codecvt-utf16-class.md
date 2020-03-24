@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - codecvt_utf16 class
 ms.assetid: a9897f98-f84d-4db6-90ad-858b2727570c
-ms.openlocfilehash: a84ca6da22825ca3fa7ab43e43a574fb05caa1a8
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 73177985727f4da5cf3ca4eb9e3cc3fb5976f76d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689826"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215279"
 ---
 # <a name="codecvt_utf16"></a>codecvt_utf16
 
@@ -30,17 +30,17 @@ Der Breitzeichen-Elementtyp.
 *Maxcode* -\
 Die maximale Anzahl der Zeichen für das Gebietsschemafacet.
 
-*Modus* \
+*Modus*\
 Konfigurationsinformationen für das Gebietsschemafacet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klassen Vorlage konvertiert zwischen breit Zeichen, die als UCS-2 oder UCS-4 codiert sind, und einem Byte Datenstrom, der als UTF-16LE codiert ist, wenn Mode & LITTLE_ENDIAN, oder UTF-16BE andernfalls.
+Diese Klassen Vorlage konvertiert zwischen breit Zeichen, die als UCS-2 oder UCS-4 codiert sind, und einem Byte Datenstrom, der als UTF-16LE codiert ist, wenn Mode & LITTLE_ENDIAN oder UTF-16BE andernfalls.
 
 Der Bytestream muss in eine binäre Datei geschrieben werden. Er kann beschädigt werden, wenn er in eine Textdatei geschrieben wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-Header: \<codecvt >
+Header: \<Codecvt >
 
-Namespace: Std
+Namespace: std

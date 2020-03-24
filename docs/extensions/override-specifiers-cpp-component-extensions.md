@@ -6,12 +6,12 @@ helpviewer_keywords:
 - override specifiers, C++
 - override specifiers
 ms.assetid: 155bbf6f-4722-4654-afb1-9cb52af799fb
-ms.openlocfilehash: c1e8e7db2879b0226eaff562f5b5b826bce14caf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 410fe9ecc48b92c68132f7b1b8057c2549c8afcf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515745"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181901"
 ---
 # <a name="override-specifiers--ccli-and-ccx"></a>Überschreibungsspezifizierer (C++/CLI und C++/CX)
 
@@ -19,7 +19,7 @@ ms.locfileid: "65515745"
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zu Überschreibungsspezifizierern finden Sie unter:
 
@@ -41,7 +41,7 @@ Informationen zu den Funktionen zum expliziten Überschreiben von Basisklassen f
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -49,10 +49,10 @@ Compileroption: `/ZW`
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Common Language Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

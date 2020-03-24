@@ -7,14 +7,14 @@ helpviewer_keywords:
 - _variant_t class [C++], constructor
 - _variant_t method [C++]
 ms.assetid: a50e5b33-d4c6-4a26-8e7e-a0a25fd9895b
-ms.openlocfilehash: b3575226199c15c4a9796fb439f65efb5a539225
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fff116ef04967a1887eaa075d92d3ea0283d5427
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403281"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187530"
 ---
-# <a name="varianttvariantt"></a>_variant_t::_variant_t
+# <a name="_variant_t_variant_t"></a>_variant_t::_variant_t
 
 **Microsoft-spezifisch**
 
@@ -134,108 +134,108 @@ _variant_t(
 Ein `VARIANT`-Objekt, das in das neue `_variant_t`-Objekt kopiert werden soll.
 
 *pVarSrc*<br/>
-Zeiger auf eine `VARIANT` Objekt, das in die neue kopiert werden `_variant_t` Objekt.
+Ein Zeiger auf ein `VARIANT` Objekt, das in das neue `_variant_t`-Objekt kopiert werden soll.
 
 *var_t_Src*<br/>
 Ein `_variant_t`-Objekt, das in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*fCopy*<br/>
-Wenn **"false"**, dem angegebenen `VARIANT` auf das neue Objekt angefügt ist `_variant_t` Objekt, ohne dass eine neue Kopie von `VariantCopy`.
+*Kopie*<br/>
+Wenn der Wert **false**ist, wird das angegebene `VARIANT` Objekt an das neue `_variant_t`-Objekt angefügt, ohne dass eine neue Kopie von `VariantCopy`wird.
 
-*ISrc, sSrc*<br/>
+*ISRC, SSRC*<br/>
 Ein ganzer Wert, der in das neue `_variant_t` -Objekt kopiert werden soll.
 
-*vtSrc*<br/>
-Die `VARTYPE` für das neue `_variant_t` Objekt.
+*VFS*<br/>
+Der `VARTYPE` für das neue `_variant_t`-Objekt.
 
-*fltSrc, dblSrc*<br/>
+*flwahrheits RC, dblsrc*<br/>
 Ein in das neue `_variant_t`-Objekt zu kopierender numerischer Wert.
 
-*cySrc*<br/>
+*cysrc*<br/>
 Ein `CY`-Objekt, das in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*bstrSrc*<br/>
+*bstrausrc*<br/>
 Ein `_bstr_t`-Objekt, das in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*strSrc, wstrSrc*<br/>
+*"Straume", "wstrausrc"*<br/>
 Eine Zeichenfolge, die in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*bSrc*<br/>
-Ein **"bool"** Wert in die neue kopiert werden `_variant_t` Objekt.
+*bsrc*<br/>
+Ein **boolescher** Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*pIUknownSrc*<br/>
-COM-Schnittstellenzeiger auf ein Objekt "VT_UNKNOWN" gekapselt werden, in das neue `_variant_t` Objekt.
+*piuknownsrc*<br/>
+Ein COM-Schnittstellen Zeiger auf ein VT_UNKNOWN Objekt, das in das neue `_variant_t`-Objekt gekapselt werden soll.
 
-*pDispSrc*<br/>
-COM-Schnittstellenzeiger auf ein Objekt "VT_DISPATCH" gekapselt werden, in das neue `_variant_t` Objekt.
+*pdispsrc*<br/>
+Ein COM-Schnittstellen Zeiger auf ein VT_DISPATCH Objekt, das in das neue `_variant_t`-Objekt gekapselt werden soll.
 
-*decSrc*<br/>
+*decsrc*<br/>
 Ein `DECIMAL`-Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*bSrc*<br/>
+*bsrc*<br/>
 Ein `BYTE`-Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*cSrc*<br/>
-Ein **Char** Wert in die neue kopiert werden `_variant_t` Objekt.
+*CSRC*<br/>
+Ein **char** -Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*usSrc*<br/>
-Ein **unsigned short** Wert in die neue kopiert werden `_variant_t` Objekt.
+*ussrc*<br/>
+Ein **Kurzwert ohne** Vorzeichen, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*ulSrc*<br/>
-Ein **unsigned long** Wert in die neue kopiert werden `_variant_t` Objekt.
+*ulsrc*<br/>
+Ein **Long** -Wert ohne Vorzeichen, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*iSrc*<br/>
-Ein **Int** Wert in die neue kopiert werden `_variant_t` Objekt.
+*ISRC*<br/>
+Ein **int** -Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-*uiSrc*<br/>
-Ein **ganze Zahl ohne Vorzeichen** Wert in die neue kopiert werden `_variant_t` Objekt.
+*uisrc*<br/>
+Ein **int** -Wert ohne Vorzeichen, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
 *i8Src*<br/>
-Ein **__int64** Wert in die neue kopiert werden `_variant_t` Objekt.
+Ein **__int64** Wert, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
 *ui8Src*<br/>
-Ein **__int64 ohne Vorzeichen** Wert in die neue kopiert werden `_variant_t` Objekt.
+Ein **__int64 Wert ohne** Vorzeichen, der in das neue `_variant_t`-Objekt kopiert werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-- **_variant_t ()** erstellt ein leeres `_variant_t` Objekt `VT_EMPTY`.
+- **_variant_t ()** Erstellt ein leeres `_variant_t` Objekt, `VT_EMPTY`.
 
-- **_variant_t (VARIANT &**  *VarSrc*  **)** erstellt eine `_variant_t` Objekt aus einer Kopie der `VARIANT` Objekt.     Der Varianttyp wird beibehalten.
+- **_variant_t (Variant &**  *varSrc*  **)** Erstellt ein `_variant_t`-Objekt aus einer Kopie des `VARIANT` Objekts. Der Varianttyp wird beibehalten.
 
-- **_variant_t (VARIANT**<strong>\*</strong>*pVarSrc*  **)** erstellt eine `_variant_t` Objekt aus einer Kopie der `VARIANT` Objekt.     Der Varianttyp wird beibehalten.
+- **_variant_t (Variant** <strong>\*</strong> *pvarSrc* **)** Erstellt ein `_variant_t`-Objekt aus einer Kopie des `VARIANT` Objekts. Der Varianttyp wird beibehalten.
 
-- **_variant_t (_variant_t &***Var_t_Src***)** erstellt eine `_variant_t` Objekt von einem anderen `_variant_t` Objekt.     Der Varianttyp wird beibehalten.
+- **_variant_t (_variant_t &**  *var_t_Src*  **)** Erstellt ein `_variant_t` Objekt aus einem anderen `_variant_t`-Objekt. Der Varianttyp wird beibehalten.
 
-- **_variant_t (VARIANT &**  *VarSrc* **, "bool"**`fCopy`**)** erstellt eine `_variant_t` -Objekt aus einem vorhandenen `VARIANT` -Objekt.       Wenn *fCopy* ist **"false"**, **VARIANT** Objekt ist auf das neue Objekt angefügt, ohne dass eine Kopie.
+- **_variant_t (Variant &** *varSrc* **, bool**`fCopy` **)** Erstellt ein `_variant_t` Objekt aus einem vorhandenen `VARIANT`-Objekt. Wenn *fCopy* auf **false**festgelegt ist, wird das **Variant** -Objekt an das neue Objekt angefügt, ohne eine Kopie zu erstellen.
 
-- **_variant_t (short**  *sSrc* **, VARTYPE**  `vtSrc`  **= VT_I2)** erstellt eine `_variant_t` Objekt des Typs, die von einem VT_I2oderVT_BOOL**kurze** Integer-Wert. Alle anderen `VARTYPE` führt zu einem Fehler E_INVALIDARG zurückgegeben.
+- **_variant_t (kurzes***SSRC* **, VarType**`vtSrc` **= VT_I2)** Erstellt ein `_variant_t` Objekt vom Typ VT_I2 oder VT_BOOL aus einem **kurzen** ganzzahligen Wert. Alle anderen `VARTYPE` führen zu einem E_INVALIDARG Fehler.
 
-- **_variant_t (long** `lSrc` **, VARTYPE**`vtSrc`**= VT_I4)** erstellt eine `_variant_t` Objekt des Typs VT_I4, VT_BOOL oder VT_ERROR aus einer **lange**  Integer-Wert.       Alle anderen `VARTYPE` führt zu einem Fehler E_INVALIDARG zurückgegeben.
+- **_variant_t (Long**`lSrc` **, VarType**`vtSrc` **= VT_I4)** Erstellt ein `_variant_t` Objekt vom Typ "VT_I4", "VT_BOOL" oder "VT_ERROR" aus einem **Long** Integer-Wert. Alle anderen `VARTYPE` führen zu einem E_INVALIDARG Fehler.
 
-- **_variant_t (Float**`fltSrc`**)** erstellt eine `_variant_t` Objekt des Typs VT_R4 aus einer **"float"** numerischer Wert.    
+- **_variant_t (float** -`fltSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ VT_R4 **aus einem numerischen** Gleit Komma Wert.
 
-- **_variant_t (double** `dblSrc` **, VARTYPE**`vtSrc`**= VT_R8)** erstellt eine `_variant_t` Objekt vom Typ VT_R8 oder VT_DATE aus einem **Double** numerischer Wert.       Alle anderen `VARTYPE` führt zu einem Fehler E_INVALIDARG zurückgegeben.
+- **_variant_t (Double**`dblSrc` **, VarType**`vtSrc` **= VT_R8)** Erstellt ein `_variant_t` Objekt vom Typ VT_R8 oder VT_DATE aus einem **doppelten** numerischen Wert. Alle anderen `VARTYPE` führen zu einem E_INVALIDARG Fehler.
 
-- **_variant_t (CY &**`cySrc`**)** erstellt eine `_variant_t` Objekt des Typs VT_CY aus einem `CY` Objekt.    
+- **_variant_t (CY &** `cySrc` **)** Erstellt ein `_variant_t` Objekt vom Typ VT_CY aus einem `CY`-Objekt.
 
-- **_variant_t (_bstr_t &**`bstrSrc`**)** erstellt eine `_variant_t` Objekt vom Typ VT_BSTR aus einem `_bstr_t` Objekt.     Ein neues `BSTR` wird zugeordnet.
+- **_variant_t (_bstr_t &** `bstrSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ VT_BSTR aus einem `_bstr_t`-Objekt. Ein neues `BSTR` wird zugeordnet.
 
-- **_variant_t (Wchar_t** <strong>\*</strong> *WstrSrc*  **)** erstellt eine `_variant_t` Objekt vom Typ "VT_BSTR" von Unicode-Zeichenfolge.   Ein neues `BSTR` wird zugeordnet.
+- **_variant_t (wchar_t** <strong>\*</strong> *wstrinsrc*  **)** Erstellt ein `_variant_t` Objekt vom Typ, das aus einer Unicode-Zeichenfolge VT_BSTR. Ein neues `BSTR` wird zugeordnet.
 
-- **_variant_t (Char**<strong>\*</strong>  `strSrc`  **)** erstellt eine `_variant_t` Objekt vom Typ VT_BSTR aus einer Zeichenfolge. Ein neues `BSTR` wird zugeordnet.
+- **_variant_t (Char** <strong>\*</strong>`strSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ, das aus einer Zeichenfolge VT_BSTR. Ein neues `BSTR` wird zugeordnet.
 
-- **_variant_t (Bool**`bSrc`**)** erstellt eine `_variant_t` Objekt des Typs VT_BOOL aus einer **"bool"** Wert.    
+- **_variant_t (bool**`bSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ VT_BOOL aus einem **booleschen** Wert.
 
-- **_variant_t (IUnknown**<strong>\*</strong>  `pIUknownSrc` **, "bool"**  `fAddRef`**= True)** erstellt eine `_variant_t` Objekt des Typs VT_UNKNOWN aus einem COM-Schnittstellenzeiger. Wenn `fAddRef` ist **"true"**, klicken Sie dann `AddRef` für den bereitgestellten Schnittstellenzeiger auf den Aufruf von entsprechend aufgerufen wird `Release` erfolgt, die bei der `_variant_t` -Objekt zerstört wird. Es liegt bei Ihnen Aufrufen `Release` auf den bereitgestellten Schnittstellenzeiger auf. Wenn `fAddRef` ist **"false"**, übernimmt dieser Konstruktor den Besitz des angegebenen Schnittstellenzeigers, rufen Sie keine `Release` auf den bereitgestellten Schnittstellenzeiger auf.
+- **_variant_t (IUnknown** <strong>\*</strong>`pIUknownSrc` **, bool**`fAddRef` **= true)** Erstellt ein `_variant_t` Objekt vom Typ VT_UNKNOWN aus einem COM-Schnittstellen Zeiger. Wenn `fAddRef` **true**ist, wird `AddRef` für den angegebenen Schnittstellen Zeiger aufgerufen, um den Aufruf von `Release` abzugleichen, der auftritt, wenn das `_variant_t` Objekt zerstört wird. Sie müssen `Release` für den angegebenen Schnittstellen Zeiger aufzurufen. Wenn `fAddRef` **false**ist, übernimmt dieser Konstruktor den Besitz des angegebenen Schnittstellen Zeigers. `Release` für den angegebenen Schnittstellen Zeiger nicht aufzurufen.
 
-- **_variant_t (IDispatch** <strong>\*</strong> `pDispSrc` **, "bool"**`fAddRef`**= True)** erstellt eine `_variant_t` Objekt Geben Sie "VT_DISPATCH" aus einem COM-Schnittstellenzeiger.       Wenn `fAddRef` ist **"true"**, klicken Sie dann `AddRef` für den bereitgestellten Schnittstellenzeiger auf den Aufruf von entsprechend aufgerufen wird `Release` erfolgt, die bei der `_variant_t` -Objekt zerstört wird. Es liegt bei Ihnen Aufrufen `Release` auf den bereitgestellten Schnittstellenzeiger auf. Wenn `fAddRef` ist **"false"**, übernimmt dieser Konstruktor den Besitz des angegebenen Schnittstellenzeigers, rufen Sie keine `Release` auf den bereitgestellten Schnittstellenzeiger auf.
+- **_variant_t (IDispatch** <strong>\*</strong>`pDispSrc` **, bool**`fAddRef` **= true)** Erstellt ein `_variant_t` Objekt vom Typ VT_DISPATCH aus einem COM-Schnittstellen Zeiger. Wenn `fAddRef` **true**ist, wird `AddRef` für den angegebenen Schnittstellen Zeiger aufgerufen, um den Aufruf von `Release` abzugleichen, der auftritt, wenn das `_variant_t` Objekt zerstört wird. Sie müssen `Release` für den angegebenen Schnittstellen Zeiger aufzurufen. Wenn `fAddRef` **false**ist, übernimmt dieser Konstruktor den Besitz des angegebenen Schnittstellen Zeigers. `Release` für den angegebenen Schnittstellen Zeiger nicht aufzurufen.
 
-- **_variant_t (DECIMAL &**`decSrc`**)** erstellt eine `_variant_t` Objekt des Typs VT_DECIMAL aus einem `DECIMAL` Wert.    
+- **_variant_t (Decimal &** `decSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ VT_DECIMAL aus einem `DECIMAL` Wert.
 
-- **_variant_t (BYTE**`bSrc`**)** erstellt eine `_variant_t` Objekt des Typs `VT_UI1` aus einem `BYTE` Wert.    
+- **_variant_t (Byte**`bSrc` **)** Erstellt ein `_variant_t` Objekt vom Typ `VT_UI1` aus einem `BYTE` Wert.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_variant_t-Klasse](../cpp/variant-t-class.md)

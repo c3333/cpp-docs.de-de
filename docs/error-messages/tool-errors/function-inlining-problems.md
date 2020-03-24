@@ -9,20 +9,20 @@ helpviewer_keywords:
 - -Ob2 C++ compiler option
 - function inlining problems
 ms.assetid: 65d59943-4b3c-4a43-aeb6-dccbf7686740
-ms.openlocfilehash: f088b0f3ec94ad59c9c5576e6090a895bb88c3ad
-ms.sourcegitcommit: 283cb64fd7958a6b7fbf0cd8534de99ac8d408eb
+ms.openlocfilehash: cb4653bd2f03683b9abad1eea0e9ffa88222090e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64856886"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184241"
 ---
 # <a name="function-inlining-problems"></a>Probleme bei Inlinefunktionen
 
-Wenn Sie Inlinefunktionen verwenden, müssen Sie folgende Schritte ausführen:
+Wenn Sie das Inlining von Funktionen verwenden, müssen Sie folgende Schritte ausführen:
 
-- Haben Sie die Inlinefunktionen, die implementiert werden, in der Headerdatei, die Sie aufnehmen.
+- Die Inline Funktionen müssen in der Header Datei implementiert werden, die Sie einschließen.
 
-- Haben inlining in der Headerdatei aktiviert.
+- Aktivieren von Inlining in der Header Datei.
 
 ```cpp
 // LNK2019_function_inline.cpp
@@ -54,11 +54,11 @@ int main() {
 }
 ```
 
-Bei Verwendung der `#pragma inline_depth` Compiler, stellen Sie sicher, dass Sie einen Wert von 2 oder höher festgelegt haben. Der Wert 0 (null) deaktiviert inlineersetzung. Stellen Sie außerdem sicher, dass Sie die **/Ob1** oder **/Ob2** Compileroptionen.
+Wenn Sie die `#pragma inline_depth`-Compilerdirektive verwenden, stellen Sie sicher, dass Sie den Wert 2 oder höher festgelegt haben. Der Wert 0 deaktiviert das inlining. Stellen Sie außerdem sicher, dass Sie die **/ob1** -oder **/Ob2** -Compileroptionen verwenden.
 
-Das Kombinieren von Inline- und nicht Kompilierungsoptionen auf verschiedene Module kann gelegentlich Probleme verursachen. Wenn eine C++-Bibliothek mit Inlinefunktionen eingeschaltet erstellt wird ([/Ob1](../../build/reference/ob-inline-function-expansion.md) oder [/Ob2](../../build/reference/ob-inline-function-expansion.md)) jedoch die entsprechende Headerdatei, beschreibt die Funktionen hat inlining (keine Option) deaktiviert, erhalten Sie die Fehlermeldung LNK2001. Die Funktionen sind nicht "inline" in den Code aus der Headerdatei, aber da sie nicht in der Library-Datei können keine Adresse auflösen des Verweises vorhanden ist.
+Das Mischen von Inline-und nicht-Inline-Kompilierungsoptionen für verschiedene Module kann manchmal zu Problemen führen. Wenn eine C++ Bibliothek mit aktivierter Funktion Inlining ([/ob1](../../build/reference/ob-inline-function-expansion.md) oder [/Ob2](../../build/reference/ob-inline-function-expansion.md)) erstellt wird, aber in der entsprechenden Header Datei, die die Funktionen beschreibt, das Inlining deaktiviert ist (keine Option), erhalten Sie den Fehler LNK2001. Die Funktionen werden nicht in den Code aus der Header Datei eingefügt, aber da Sie sich nicht in der Bibliotheksdatei befinden, gibt es keine Adresse zum Auflösen des Verweises.
 
-Auf ähnliche Weise definiert ein Projekt, verwendet der inlineersetzung, noch die Funktionen in einer CPP-Datei anstelle Datei in der Kopfzeile auch LNK2019 erhält. Die Header-Datei enthalten ist überall als geeignet, aber die Funktionen sind nur inline, wenn die CPP-Datei durch den Compiler; übergibt aus diesem Grund wird der Linker die Funktionen als nicht aufgelöste externe bei der Verwendung in anderen Modulen angezeigt.
+Ebenso werden von einem Projekt, das Funktionen Inlining verwendet, die Funktionen in einer CPP-Datei und nicht in der Header Datei definiert. Außerdem wird LNK2019 angezeigt. Die Header Datei ist überall als geeignet enthalten, aber die Funktionen sind nur ineinandergeschaltet, wenn die CPP-Datei den Compiler durchläuft. Daher sieht der Linker die Funktionen als nicht aufgelöste externe, wenn Sie in anderen Modulen verwendet werden.
 
 ```cpp
 // LNK2019_FIP.h
@@ -91,6 +91,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Linkertoolfehler LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

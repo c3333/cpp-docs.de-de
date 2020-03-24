@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - R6017
 ms.assetid: df3ec5f5-6771-4648-ba06-0e26c6a1cc6a
-ms.openlocfilehash: 45f3b07f540cb72a955b19420130a5a806b750d7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2d868939425c11f13dffd84e28c1afee45e3b11a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299659"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197301"
 ---
 # <a name="c-runtime-error-r6017"></a>C-Laufzeitfehler R6017
 
-Fehler beim unerwarteten multithread-Sperren
+unerwarteter Multithread-Sperr Fehler.
 
 > [!NOTE]
-> Wenn Sie diese Fehlermeldung beim Ausführen einer app auftritt, wurde die app beendet, da er ein internes Problem aufweist. Es gibt mehrere mögliche Gründe für diesen Fehler, aber dies wird häufig durch einen Fehler in der app-Code verursacht.
+> Wenn diese Fehlermeldung beim Ausführen einer App angezeigt wird, wurde die APP aufgrund eines internen Problems heruntergefahren. Es gibt mehrere mögliche Ursachen für diesen Fehler, aber häufig wird er durch einen Fehler im App-Code verursacht.
 >
 > Sie können versuchen, diesen Fehler zu beheben, indem Sie folgende Schritte ausführen:
 >
-> - Verwenden der **Apps und Features** oder **Programme und Funktionen** auf der Seite die **Systemsteuerung** zu reparieren oder installieren Sie das Programm neu.
-> - Überprüfen Sie **Windows Update** in die **Systemsteuerung** für Softwareupdates.
-> - Überprüfen Sie nach einer aktualisierten Version der app. Wenn das Problem weiterhin besteht, wenden Sie sich an den app-Anbieter.
+> - Verwenden Sie die Seite **apps und Features** oder **Programme und Features** in der **Systemsteuerung** , um das Programm zu reparieren oder neu zu installieren.
+> - Überprüfen Sie **Windows Update** in der **Systemsteuerung** auf Software Updates.
+> - Überprüfen Sie, ob eine aktualisierte Version der App angezeigt wird. Wenn das Problem weiterhin besteht, wenden Sie sich an den Anbieter der APP
 
 **Informationen für Programmierer**
 
-Der Prozess empfangen einen unerwarteten Fehler beim Versuch, eine C-Laufzeit multithread-Sperre auf eine Systemressource zugreifen. Dieser Fehler tritt gewöhnlich auf, wenn der Prozess der Common Language Runtime-Heap-Daten versehentlich geändert wird. Es kann jedoch auch durch einen internen Fehler in der Common Language Runtime-Bibliothek oder ein Betriebssystem-Code verursacht werden.
+Der Prozess hat einen unerwarteten Fehler beim Zugreifen auf eine C-Laufzeit-multithreadsperre für eine System Ressource erhalten. Dieser Fehler tritt normalerweise auf, wenn der Prozess die Laufzeitheap-Daten versehentlich ändert. Sie kann jedoch auch durch einen internen Fehler in der Lauf Zeit Bibliothek oder im Betriebssystem Code verursacht werden.
 
-Um dieses Problem zu beheben, überprüfen Sie die Heap-Beschädigung Fehlern im Code. Weitere Informationen und Beispiele finden Sie unter [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details). Als Nächstes überprüfen Sie, dass Sie die neuesten verteilbaren Dateien für Ihre app-Bereitstellung verwenden. Weitere Informationen finden Sie unter [Bereitstellung in Visual C++](../../windows/deployment-in-visual-cpp.md).
+Um dieses Problem zu beheben, überprüfen Sie, ob Fehler im Code auf Heap Beschädigung auftreten. Weitere Informationen und Beispiele finden Sie unter [CRT Debug Heap Details](/visualstudio/debugger/crt-debug-heap-details). Überprüfen Sie als nächstes, ob Sie die neuesten verteilbaren Komponenten für Ihre APP-Bereitstellung verwenden. Weitere Informationen finden Sie unter [Bereitstellung C++in Visual ](../../windows/deployment-in-visual-cpp.md).

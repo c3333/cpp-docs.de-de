@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3268
 ms.assetid: d74a630c-daea-4e29-9759-83efef7fb184
-ms.openlocfilehash: d9954c12fb1065a4aa5e7afbdecd1f96758acaf9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 191456a1e290b568897ba76cd5bdccb8f83c310b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62365662"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201460"
 ---
 # <a name="compiler-error-c3268"></a>Compilerfehler C3268
 
-> "*Funktion*': eine generische Funktion oder eine Memberfunktion einer generischen Klasse kann keine Variablenparameterliste haben
+> "*Function*": eine generische Funktion oder eine Member-Funktion einer generischen Klasse darf keine Variablen Parameterliste aufweisen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Finden Sie unter [Generika](../../extensions/generics-cpp-component-extensions.md) für Weitere Informationen.
+Weitere Informationen finden Sie unter [Generika](../../extensions/generics-cpp-component-extensions.md) .
 
 ## <a name="example"></a>Beispiel
 

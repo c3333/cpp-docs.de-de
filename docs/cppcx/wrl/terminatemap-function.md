@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - TerminateMap function
 ms.assetid: 1c314a61-da5d-49bb-ac44-c34ee3c23b66
-ms.openlocfilehash: 2a451bf68bfb543ee5e82a9a48097cac7e8a9821
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 560f563e43fc8b818b04cd0bda6b01fbc916cb84
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398120"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213550"
 ---
 # <a name="terminatemap-function"></a>TerminateMap-Funktion
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,25 +33,25 @@ inline bool TerminateMap(
 Ein [Modul](module-class.md).
 
 *serverName*<br/>
-Der Name einer Teilmenge von Klassenfactorys in das Modul, das vom Parameter angegebene *Modul*.
+Der Name einer Teilmenge der Klassenfactorys in dem Modul, das durch das Parameter *Modul*angegeben wird.
 
-*forceTerminate*<br/>
-**"true"** zum Beenden der Klasse sind Factorys unabhängig von der sie aktiv ist; **"false"** Klassenfactorys nicht beendet, wenn jede Factory aktiv ist.
+*forcebeendigung*<br/>
+**true** , um die Klassenfactorys unabhängig davon zu beenden, welche aktiv sind. **false** , um die Klassenfactorys nicht zu beenden, wenn eine Factory aktiv ist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**"true"** wären alle Klassenfactorys beendet ist, andernfalls **"false"**.
+**true** , wenn alle Klassenfactorys beendet wurden. andernfalls **false**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Klassenfactorys im angegebenen Modul wird heruntergefahren.
+Fährt die Klassenfactorys im angegebenen Modul herunter.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** module.h
+**Header:** Module. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

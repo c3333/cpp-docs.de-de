@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C2567
 ms.assetid: 9c140ac9-7059-47e6-9ba1-e7939c8c0dc3
-ms.openlocfilehash: eec529f43e23810843651888ef5722c5d0a0b2c9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 921992c678c1de0b74f99f544173478ebe809b2c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366354"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177455"
 ---
 # <a name="compiler-error-c2567"></a>Compilerfehler C2567
 
-kann nicht zum Öffnen der Metadaten in 'Datei', Datei möglicherweise verschoben oder gelöscht wurden
+die Metadaten in "file" können nicht geöffnet werden. die Datei wurde möglicherweise gelöscht oder verschoben.
 
-Eine Datei mit Metadaten, die in der Quelle verwiesen wurde (mit `#using`) wurde nicht gefunden im gleichen Verzeichnis des Compiler-Back-End-Prozesses durch den Compiler-Front-End-Prozess vorlag. Finden Sie unter [#using-Direktive](../../preprocessor/hash-using-directive-cpp.md) für Weitere Informationen.
+Eine Metadatendatei, auf die in der Quelle (mit `#using`) verwiesen wurde, wurde vom Compiler-Back-End-Prozess nicht im selben Verzeichnis gefunden wie der Compiler-Front-End-Prozess. Weitere Informationen finden Sie unter [#using-Direktive](../../preprocessor/hash-using-directive-cpp.md) .
 
-C2567 verursacht werden, wenn Sie mit der Kompilierung **/c** klicken Sie auf einem Computer, und versuchen Sie dann auf einen Link-zeitcodegenerierung auf einem anderen Computer. Weitere Informationen finden Sie unter [/LTCG (Link-Time Code Generation)](../../build/reference/ltcg-link-time-code-generation.md)).
+C2567 kann verursacht werden, wenn Sie eine Kompilierung mit **/c** auf einem Computer durchführen und dann versuchen, eine Link-Zeit Codegenerierung auf einem anderen Computer durchzuführen. Weitere Informationen finden Sie unter [/LTCG (Link-Time Code Generation)](../../build/reference/ltcg-link-time-code-generation.md)).
 
-Es möglicherweise, dass es sich bei Ihrem Computer kein weiterer Speicher haben.
+Es kann auch darauf hindeuten, dass der Computer nicht mehr über genügend Arbeitsspeicher verfügt.
 
-Um diesen Fehler zu beheben, stellen Sie sicher, dass die Metadatendatei im gleichen Verzeichnis für alle Phasen des Buildprozesses ist.
+Um diesen Fehler zu beheben, stellen Sie sicher, dass sich die Metadatendatei für alle Phasen des Buildprozesses in demselben Verzeichnis Speicherort befindet.

@@ -1,21 +1,21 @@
 ---
-title: Library_block (C++ com-Attribut)
+title: library_block (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.library_block
 helpviewer_keywords:
 - library_block attribute
 ms.assetid: ae7a7ebe-5e1a-4eda-a058-11bbd058ece8
-ms.openlocfilehash: 219f6a89dd7f80246e0337c2ef3bcad43540b165
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 405cc1cd5af7dcd689e833764f3da2fdc6d5f703
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409251"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214772"
 ---
-# <a name="libraryblock"></a>library_block
+# <a name="library_block"></a>library_block
 
-Fügt ein Konstrukt in den bibliotheksblock IDL.
+Platziert ein Konstrukt innerhalb des IDL-Bibliotheks Blocks.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,13 +23,13 @@ Fügt ein Konstrukt in den bibliotheksblock IDL.
 [library_block]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie ein Konstrukt in den bibliotheksblock platzieren, stellen Sie sicher, dass er übergeben wird in der Typbibliothek, unabhängig davon, ob die Funktion verwiesen wird. Standardmäßig nur Konstrukte geändert, indem die [Co-Klasse](coclass.md), [Dispinterface](dispinterface.md), und [Idl_module](idl-module.md) Attribute in den bibliotheksblock platziert werden.
+Wenn Sie ein Konstrukt innerhalb des Bibliotheks Blocks platzieren, stellen Sie sicher, dass es an die Typbibliothek übermittelt wird, unabhängig davon, ob darauf verwiesen wird. Standardmäßig werden nur durch die Attribute [Co-Klasse](coclass.md), [dispinterface](dispinterface.md)und [idl_module](idl-module.md) geänderte Konstrukte in den Bibliotheks Block eingefügt.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Code wird eine benutzerdefinierte Schnittstelle in den bibliotheksblock platziert.
+Im folgenden Code wird eine benutzerdefinierte Schnittstelle in den Bibliotheks Block eingefügt.
 
 ```cpp
 // cpp_attr_ref_library_block.cpp
@@ -42,7 +42,7 @@ __interface IMyInterface {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -50,12 +50,12 @@ __interface IMyInterface {
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)

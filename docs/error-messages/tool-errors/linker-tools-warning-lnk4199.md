@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4199
 ms.assetid: 724f1ca8-ee9a-4ca3-b5c6-c0284a5195e7
-ms.openlocfilehash: 8d6967d47f63399b881674a09ef3a7c400aa46aa
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dac6659ec03c4e64b1dc6f21db35fc23560dbde5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396941"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193913"
 ---
 # <a name="linker-tools-warning-lnk4199"></a>Linkertoolwarnung LNK4199
 
-/DELAYLOAD:dllName ignoriert; keine Importe von DLL-Name gefunden
+/DELAYLOAD: dllName wird ignoriert. Es wurden keine Importe aus "dllname" gefunden.
 
-Der vom Linker ignoriert `dllname` , da es nicht, dass jede der Funktionen notwendigerweise, die `dllname` exportiert.
+Der Linker ignoriert `dllname`, weil er keine der Funktionen benötigt, die von `dllname` exportiert werden.

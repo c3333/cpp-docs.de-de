@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4070
 ms.assetid: f95f179a-fff9-427e-bd51-466b3934517f
-ms.openlocfilehash: e7139b21f053ea8633356c7194cd719a6a4aef35
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 391a477625b51fd37eacc5d455801ce90d2abbc2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410264"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194004"
 ---
 # <a name="linker-tools-warning-lnk4070"></a>Linkertoolwarnung LNK4070
 
--Direktive in/out: Dateiname. EXP weicht vom Ausgabedateinamen 'Dateiname'; Direktive wird ignoriert
+/Out: filename-Direktive in. Das Exp unterscheidet sich vom Ausgabe Dateinamen "filename". Direktive wird ignoriert
 
-Die `filename` Angabe in der [Namen](../../build/reference/name-c-cpp.md) oder [Bibliothek](../../build/reference/library.md) -Anweisung, wenn die EXP-Datei erstellt wurde, unterscheidet sich von der Ausgabe `filename` , entweder standardmäßig oder mit der angegebenwurde[/OUT](../../build/reference/out-output-file-name.md) Option.
+Der `filename`, der in der Anweisung " [Name](../../build/reference/name-c-cpp.md) " oder " [Library](../../build/reference/library.md) " beim Erstellen der EXP-Datei angegeben wurde, unterscheidet sich vom Ausgabe `filename`, der entweder standardmäßig angenommen oder mit der [/out](../../build/reference/out-output-file-name.md) -Option angegeben wurde.
 
-Sie sehen diese Warnung, wenn Sie ändern den Namen der Ausgabedatei in der Entwicklungsumgebung und, in der DEF-Datei des Projekts nicht aktualisiert wurde. Manuell aktualisieren Sie, die DEF-Datei, um diese Warnung zu beheben.
+Diese Warnung wird angezeigt, wenn Sie den Namen einer Ausgabedatei in der Entwicklungsumgebung ändern und die DEF-Datei des Projekts nicht aktualisiert wurde. Aktualisieren Sie die DEF-Datei manuell, um diese Warnung zu beheben.
 
-Ein Clientprogramm, das die resultierende DLL verwendet, kann Probleme auftreten.
+Bei einem Client Programm, das die resultierende DLL verwendet, treten möglicherweise Probleme auf.

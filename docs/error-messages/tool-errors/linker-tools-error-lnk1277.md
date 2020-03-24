@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1277
 ms.assetid: afca3de0-50cc-4140-af7a-13493a170835
-ms.openlocfilehash: 137aa15dd9dad4b08d52af55da60a9cdf8b58055
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7c00fb32e4b36eff119195efbb34d536d80df6a9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160548"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183656"
 ---
 # <a name="linker-tools-error-lnk1277"></a>Linkertoolfehler LNK1277
 
-Objektdatensatz wurde in Pgd (Dateiname) nicht gefunden.
+Objektdaten Satz wurde in PGD (Dateiname) nicht gefunden.
 
-Bei Verwendung [PGOPTIMZE](../../build/reference/ltcg-link-time-code-generation.md), der Pfad einer Eingabe lib, Def oder OBJ-Dateien aus dem Pfad, auf denen sie während der/LTCG: PGINSTRUMENT gefunden wurden, verschiedene wurde. Dies kann durch eine Änderung in der LIB-Umgebungsvariablen nach/LTCG: PGINSTRUMENT erläutert werden. Der vollständige Pfad zu den Eingabedateien ist in die PGD-Datei gespeichert.
+Bei Verwendung von " [/LTCG: PGOPTIMZE](../../build/reference/ltcg-link-time-code-generation.md)" unterscheidet sich der Pfad einer der Eingaben "Input. lib", "Def" oder ". obj" von dem Pfad, in dem Sie während "/LTCG: PGINSTRUMENT" gefunden wurden. Dies kann durch eine Änderung in der LIB-Umgebungsvariablen nach/LTCG: PGINSTRUMENT erläutert werden. Der vollständige Pfad zu den Eingabedateien wird in der PGD-Datei gespeichert.
 
-/ LTCG: PGOPTIMIZE erfordert, dass die Eingaben identisch mit der/LTCG: PGINSTRUMENT-Phase.
+/LTCG: pgoptimiert erfordert, dass die Eingaben mit der/LTCG: PGINSTRUMENT-Phase identisch sind.
 
-Führen Sie eine der folgenden Schritte aus, um diese Warnung zu beheben:
+Um diese Warnung zu beheben, führen Sie einen der folgenden Schritte aus:
 
-- Führen Sie/LTCG: PGINSTRUMENT, wiederholen Sie alle Testläufe und führen Sie/LTCG: PGOPTIMIZE.
+- Führen Sie/LTCG: PGINSTRUMENT aus, wiederholen Sie alle Testläufe, und führen Sie/LTCG: pgoptimiert aus.
 
-- Ändern Sie die LIB-Umgebungsvariablen, wenn Sie/LTCG: PGINSTRUMENT ausgeführt haben.
+- Ändern Sie die lib-Umgebungsvariable in das, was Sie beim Ausführen von/LTCG: PGINSTRUMENT war.
 
-Es wird nicht empfohlen, dass Sie mithilfe von/LTCG: PGUPDATE LNK1277 arbeiten.
+Es wird nicht empfohlen, Linkertoolfehler LNK1277 mit/LTCG: PGUPDATE zu umgehen.

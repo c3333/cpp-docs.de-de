@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - LNK2031
 ms.assetid: 18ed4b6e-3e75-443c-bbd8-2f6030dc89ee
-ms.openlocfilehash: 003b9a58bfb08130f034530f59e2de27efa2ae8d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 096ccb7ff443d24e0d53e73a5950faa1e85aeae6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298918"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194563"
 ---
 # <a name="linker-tools-error-lnk2031"></a>Linkertoolfehler LNK2031
 
-> kann nicht generiert werden für p/invoke "*Function_declaration*" *ergänzter_Name*; in den Metadaten fehlt die Aufrufkonvention
+> p/Aufruf für "*Function_declaration*" *decorated_name*kann nicht generiert werden. die Aufruf Konvention fehlt in den Metadaten.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Beim Versuch, eine native Funktion in einem reinen Image importieren, denken Sie daran, dass die Konventionen für die impliziten Aufrufen zwischen systemeigenen und reinen Kompilierungen unterscheiden. Weitere Informationen zu reinen Bildern finden Sie unter [reiner und überprüfbarer Code (C++ / CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
+Wenn Sie versuchen, eine native Funktion in ein reines Image zu importieren, denken Sie daran, dass sich die impliziten Aufruf Konventionen zwischen nativen und reinen Kompilierungen unterscheiden. Weitere Informationen zu reinen Bildern finden Sie unter [reiner und überprüfbarerC++Code (/CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
 
-Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Codebeispiel wird eine Komponente mit einer exportierten, systemeigen-Funktion, deren Aufrufkonvention implizit wird, generiert [__cdecl](../../cpp/cdecl.md).
+In diesem Codebeispiel wird eine Komponente mit einer exportierten, systemeigenen Funktion generiert, deren Aufruf Konvention implizit [__cdecl](../../cpp/cdecl.md)ist.
 
 ```cpp
 // LNK2031.cpp
@@ -37,7 +37,7 @@ extern "C" {
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel erstellt einen reinen Client, der in der nativen Funktion benötigt. Allerdings die Aufrufkonvention unter **/CLR: pure** ist [__clrcall](../../cpp/clrcall.md). Im folgende Beispiel wird die LNK2031 generiert.
+Im folgenden Beispiel wird ein reiner Client erstellt, der die native Funktion nutzt. Die Aufruf Konvention unter **/clr: pure** ist jedoch [__clrcall](../../cpp/clrcall.md). Im folgenden Beispiel wird Linkertoolfehler LNK2031 generiert.
 
 ```cpp
 // LNK2031_b.cpp
@@ -52,7 +52,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie die systemeigene Funktion in einem reinen Image genutzt wird. Beachten Sie den expliziten **__cdecl** Spezifizierer der Aufrufkonvention.
+Im folgenden Beispiel wird gezeigt, wie die native Funktion aus einem reinen Image verwendet wird. Beachten Sie den expliziten **__cdecl** Aufruf Konvention-Spezifizierer.
 
 ```cpp
 // LNK2031_c.cpp

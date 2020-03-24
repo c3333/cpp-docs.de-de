@@ -2,12 +2,12 @@
 title: Überblick über potenzielle Aktualisierungsprobleme (Visual C++)
 ms.date: 05/03/2019
 ms.assetid: 2c99a8cb-098f-4a9d-bf2c-b80fd06ace43
-ms.openlocfilehash: 2b310760b1a6623a18a00e36e3bd5378d2ebb76e
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: ef088f4881dfbd9967f90a009e4a8e397a70b134
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73627236"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214980"
 ---
 # <a name="overview-of-potential-upgrade-issues-visual-c"></a>Überblick über potenzielle Aktualisierungsprobleme (Visual C++)
 
@@ -80,7 +80,7 @@ Für nicht aufgelöste Symbole müssen Sie die Projekteinstellungen möglicherwe
 
 - Stimmen die Typen der Argumente an der Aufrufsite tatsächlich mit einer vorhandenen Funktionsüberladung überein? Stellen Sie sicher, dass die zugrunde liegenden Typen für alle Typdefinitionen in der Signatur der Funktion und im Code, der die Funktion aufruft, Ihren Erwartungen entsprechen.
 
-Um nicht aufgelöste Symbolfehler zu beheben, können Sie mit „dumpbin.exe“ versuchen, die in einer Binärdatei definierten Symbole zu überprüfen. Verwenden Sie zum Anzeigen der in einer Bibliothek definierten Symbole die folgende Befehlszeile:
+Um nicht aufgelöste Symbolfehler zu beheben, können Sie mit dumpbin.exe versuchen, die in einer Binärdatei definierten Symbole zu überprüfen. Verwenden Sie zum Anzeigen der in einer Bibliothek definierten Symbole die folgende Befehlszeile:
 
 ```cmd
 dumpbin.exe /LINKERMEMBER somelibrary.lib
@@ -101,7 +101,7 @@ In der folgenden Tabelle werden die Bibliotheken angezeigt, deren Inhalt seit Vi
 |||
 |-|-|
 |Bisher verwendet:|Sie müssen diese Bibliotheken verwenden:|
-|LIBCMT.lib|libucrt.lib, libvcruntime.lib|
+|libcmt.lib|libucrt.lib, libvcruntime.lib|
 |libcmtd.lib|libucrtd.lib, libvcruntimed.lib|
 |msvcrt.lib|msvcrt.lib, ucrt.lib, vcruntime.lib|
 |msvcrtd.lib|msvcrtd.lib, ucrtd.lib, vcruntimed.lib|
@@ -184,7 +184,7 @@ Bevor Unicode standardisiert wurde, verwendeten viele Programme den Mehrbyte-Zei
 
 Weitere Informationen finden Sie unter [Portieren von MBCS zu Unicode](porting-guide-spy-increment.md#porting_to_unicode). Allgemeine Informationen zu MBCS und Unicode finden Sie unter [Text und Zeichen folgen in Visual C++ ](../text/text-and-strings-in-visual-cpp.md) Studio und [Internationalisierung](../c-runtime-library/internationalization.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Aktualisieren von Projekten aus früheren Versionen von VisualC++](upgrading-projects-from-earlier-versions-of-visual-cpp.md)<br/>
 [Verbesserungen der C++-Konformität in Visual Studio](../overview/cpp-conformance-improvements.md)

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4204
 ms.assetid: 14adda20-0cbe-407b-90f6-9f81c93530e2
-ms.openlocfilehash: 790b0fa25bbf41c38b843e1a2ea757fdc0d10b9a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 98c53c9b998e9bd544c1cc72bd2b0c3fd2b0a418
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395104"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193861"
 ---
 # <a name="linker-tools-warning-lnk4204"></a>Linkertoolwarnung LNK4204
 
-'Dateiname' fehlen Debuginformationen für das Verweismodul; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären
+im Dateinamen fehlen Debuginformationen für das Verweis Modul; Objekt wird verknüpft, als ob keine Debuginformationen
 
-Die PDB-Datei hat eine falsche Signatur. Der Linker wird fortgesetzt, um das Objekt ohne Debuginformationen zu verknüpfen. Möglicherweise möchten Sie das Objekt mit recompile der ["/ Zi"](../../build/reference/z7-zi-zi-debug-information-format.md) Option.
+Die PDB-Datei hat eine fehlerhafte Signatur. Der Linker verknüpft das Objekt weiterhin ohne Debuginformationen. Möglicherweise möchten Sie die Objektdatei mit der [/Zi](../../build/reference/z7-zi-zi-debug-information-format.md) -Option neu kompilieren.
 
-LNK4204 kann auftreten, wenn einige der Objekte in der Bibliothek in eine Datei verweisen, die nicht mehr vorhanden ist. Dies kann vorkommen, wenn die Projektmappe neu erstellen z. B.; eine Objektdatei möglicherweise gelöscht und nicht aufgrund eines Fehlers Kompilierung neu erstellt werden. Kompilieren Sie in diesem Fall mit **"/ Z7"**, oder **/FD**, um die Objekte, die auf eine einzelne Datei pro-Bibliothek zu verweisen (das nicht den Standardnamen der PDB-Datei) zu aktualisieren.  Weitere Informationen finden Sie unter [/Fd (Programmdatenbank-Dateiname)](../../build/reference/fd-program-database-file-name.md).  Stellen Sie sicher, dass die PDB-Datei mit der Bibliothek gespeichert wird, jedes Mal, wenn sie in das Quellcodeverwaltungssystem aktualisiert wird.
+Linkertoolwarnung LNK4204 kann auftreten, wenn einige der Objekte in der Bibliothek auf eine Datei verweisen, die nicht mehr vorhanden ist. Dies kann bei der Neuerstellung der Lösung vorkommen, z. b. eine Objektdatei wird möglicherweise gelöscht und aufgrund eines Kompilierungs Fehlers nicht neu erstellt. Kompilieren Sie in diesem Fall entweder mit **/Z7**oder **/FD**, um die Objekte so zu aktualisieren, dass Sie auf eine einzelne Datei pro Bibliothek verweisen (Dies ist nicht der Standardname der PDB-Datei).  Weitere Informationen finden Sie unter [/Fd (Programmdatenbank-Dateiname)](../../build/reference/fd-program-database-file-name.md).  Stellen Sie sicher, dass die PDB-Datei bei jeder Aktualisierung im Quell Code Verwaltungssystem mit der Bibliothek gespeichert wird.

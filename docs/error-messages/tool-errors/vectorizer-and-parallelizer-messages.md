@@ -8,24 +8,24 @@ f1_keywords:
 - C5001
 - C5012
 ms.assetid: d8f4844a-f414-42ab-b9a5-925a5da9d365
-ms.openlocfilehash: c38bfca4c1b93d373c86bbc710ccb30c43dafd4f
-ms.sourcegitcommit: 283cb64fd7958a6b7fbf0cd8534de99ac8d408eb
+ms.openlocfilehash: 4f105558d7795210e1edb2470af4e50326f49de6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64857455"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182200"
 ---
 # <a name="vectorizer-and-parallelizer-messages"></a>Vektorisierungs- und Parallelisierungsmeldungen
 
-Können Sie die Microsoft C++ Compileroptionen [/qpar-Report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) und [/Qvec-report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) Festlegen der [automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) Ausgabe Grund Fehlercodes und informationsmeldungen über ihre Aktivitäten. Dieser Artikel beschreibt die Ursachencodes und Nachrichten.
+Sie können C++ die Microsoft-Compileroptionen [/QPAR-Report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) und [/Qvec-Report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) verwenden, um die [Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) so festzulegen, dass Ursachen Codes und Informationsmeldungen über Ihre Aktivität ausgegeben werden. Dieser Artikel beschreibt die Ursachencodes und Nachrichten.
 
-## <a name="BKMK_InformationalMessages"></a> Informationsmeldungen
+## <a name="informational-messages"></a><a name="BKMK_InformationalMessages"></a>Informationsmeldungen
 
 Abhängig von der Berichterstellungsebene, die Sie angeben, wird eine der folgenden Informationsmeldungen für jede Schleife ausgegeben.
 
 Informationen zu Ursachencodes finden Sie im nächsten Teil dieses Artikels.
 
-|Informationsnachricht|Beschreibung|
+|Informationsnachricht|BESCHREIBUNG|
 |---------------------------|-----------------|
 |5001|`Loop vectorized.`|
 |5002|`Loop not vectorized due to reason '*description*'.`|
@@ -33,15 +33,15 @@ Informationen zu Ursachencodes finden Sie im nächsten Teil dieses Artikels.
 |5012|`Loop not parallelized due to reason '*description*'.`|
 |5021|`Unable to associate loop with pragma.`|
 
-Die folgenden Abschnitte enthalten mögliche Ursachencodes für die Parallelisierung und Vektorisierung.
+In den folgenden Abschnitten werden mögliche Ursachen Codes für den Parallelisierung und Vectorizer aufgelistet.
 
-## <a name="BKMK_ReasonCode50x"></a> Ursachencodes "5xx"
+## <a name="5xx-reason-codes"></a><a name="BKMK_ReasonCode50x"></a>5xx-Ursachen Codes
 
-Die 5*Xx* -Ursachencodes gelten für den parallelisierer und den vektorisierer.
+Die 5-*xx* -Ursachen Codes gelten für den Parallelisierung und den Vectorizer.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
-|500|Eine generische Meldung, die mehrere Fall abdeckt, z. B. die Schleife mehrere Austrittspunkte oder durch erhöhen die induktionsvariable schleifenheader endet jedoch nicht.|
+|500|Eine generische Nachricht, die mehrere Fälle abdeckt, z. –. die-Schleife umfasst mehrere-Beendigungen, oder der Schleifen Header endet nicht durch Erhöhen der-einfügervariable.|
 |501|`Induction variable is not local; or upper bound is not loop-invariant.`|
 |502|`Induction variable is stepped in some manner other than a simple +1.`|
 |503|`Loop includes exception-handling or switch statements.`|
@@ -198,9 +198,9 @@ void code_504(int *A) {
 }
 ```
 
-## <a name="BKMK_ReasonCode100x"></a> Ursachencodes 10xx
+## <a name="10xx-reason-codes"></a><a name="BKMK_ReasonCode100x"></a>10xx-Ursachen Codes
 
-Die 10*Xx* -Ursachencodes gelten für die Parallelisierung.
+Die 10-*xx* -Ursachen Codes gelten für den parallelizer.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -407,9 +407,9 @@ void code_1010()
 }
 ```
 
-## <a name="BKMK_ReasonCode110x"></a> Ursachencodes 11xx
+## <a name="11xx-reason-codes"></a><a name="BKMK_ReasonCode110x"></a>11xx Ursachen Codes
 
-Der 11*Xx* -Ursachencodes gelten für die Vektorisierung.
+Die 11*xx* -Ursachen Codes gelten für den Vectorizer.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -555,9 +555,9 @@ void code_1106(int *A)
 }
 ```
 
-## <a name="BKMK_ReasonCode120x"></a> Ursachencodes 12xx
+## <a name="12xx-reason-codes"></a><a name="BKMK_ReasonCode120x"></a>12xx-Ursachen Codes
 
-Die 12*Xx* -Ursachencodes gelten für die Vektorisierung.
+Die 12-*xx* -Ursachen Codes gelten für den Vectorizer.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -630,9 +630,9 @@ void code_1203(int *A)
 }
 ```
 
-## <a name="BKMK_ReasonCode130x"></a> Ursachencodes 13xx
+## <a name="13xx-reason-codes"></a><a name="BKMK_ReasonCode130x"></a>13xx-Ursachen Codes
 
-Die 13*Xx* -Ursachencodes gelten für die Vektorisierung.
+Die 13*xx* -Ursachen Codes gelten für den Vectorizer.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -641,7 +641,7 @@ Die 13*Xx* -Ursachencodes gelten für die Vektorisierung.
 |1302|`Loop is a "do-while".`|
 |1303|`Too few loop iterations for vectorization to provide value.`|
 |1304|`Loop includes assignments that are of different sizes.`|
-|1305|`Not enough type information.`|
+|1\.305|`Not enough type information.`|
 
 ```cpp
 void code_1300(int *A, int *B)
@@ -762,9 +762,9 @@ void code_1305( S_1305 *s, S_1305 x)
 }
 ```
 
-## <a name="BKMK_ReasonCode140x"></a> Ursachencodes 14xx
+## <a name="14xx-reason-codes"></a><a name="BKMK_ReasonCode140x"></a>14xx-Ursachen Codes
 
-Die 14*Xx* -Ursachencodes treten, wenn eine Option aus, mit der Vektorisierung nicht kompatibel ist, angegeben wird.
+Die 14*xx* -Ursachen Codes treten auf, wenn eine Option angegeben ist, die nicht mit Vektorisierung kompatibel ist.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -834,9 +834,9 @@ void code_1404(int *A)
 }
 ```
 
-## <a name="BKMK_ReasonCode150x"></a> Ursachencodes 15xx
+## <a name="15xx-reason-codes"></a><a name="BKMK_ReasonCode150x"></a>15xx-Ursachen Codes
 
-Die 15*Xx* -Ursachencodes gelten für das Aliasing. Aliasing tritt auf, wenn auf einen Speicherort im Arbeitsspeicher unter zwei unterschiedlichen Namen zugegriffen werden kann.
+Die 15-*xx* -Ursachen Codes gelten für Aliasing. Aliasing tritt auf, wenn auf einen Speicherort im Arbeitsspeicher unter zwei unterschiedlichen Namen zugegriffen werden kann.
 
 |Ursachencode|Erklärung|
 |-----------------|-----------------|
@@ -962,12 +962,12 @@ void code_1505(int *A, int *B)
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[C /C++ Compiler- und Build tools, Fehler und Warnungen](../compiler-errors-1/c-cpp-build-errors.md)
-[automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) \
-[Auto-Vektorisierer in Visual Studio 2012 – Übersicht](https://blogs.msdn.microsoft.com/nativeconcurrency/2012/04/12/auto-vectorizer-in-visual-studio-2012-overview/) \
-[#pragma loop()](../../preprocessor/loop.md) \
-[/ Q-Optionen (Operationen auf niedriger Ebene)](../../build/reference/q-options-low-level-operations.md) \
-[/ Qpar-Report-(Auto-Parallelizer-Berichtsebene)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) \
+[Fehler undC++ Warnungen für C/Compiler und Buildtools](../compiler-errors-1/c-cpp-build-errors.md)
+[Automatische Parallelisierung und automatische Vektorisierung](../../parallel/auto-parallelization-and-auto-vectorization.md) \
+[Automatische Vektorisierung in Visual Studio 2012 – Übersicht](https://blogs.msdn.microsoft.com/nativeconcurrency/2012/04/12/auto-vectorizer-in-visual-studio-2012-overview/) \
+[#pragma Schleife ()](../../preprocessor/loop.md) \
+[/Q-Optionen (Low-Level-Vorgänge)](../../build/reference/q-options-low-level-operations.md) \
+[/QPAR-Report (Berichts Ebene mit automatischer Parallelisierung)](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) \
 [/Qvec-report (Berichtebene der automatischen Vektorisierung)](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)

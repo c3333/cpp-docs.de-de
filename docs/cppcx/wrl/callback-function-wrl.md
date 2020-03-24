@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - event/Microsoft::WRL::Callback
 ms.assetid: afb15d25-3230-44f7-b321-e17c54872943
-ms.openlocfilehash: 10fb053ed97aaca0f4a31e3843d96aa194d8949d
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.openlocfilehash: 138ad9d5d3bd4cf9e5263845f950dbbe7971fde6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821687"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214135"
 ---
 # <a name="callback-function-wrl"></a>Callback-Funktion (WRL)
 
@@ -189,15 +189,15 @@ ComPtr<TDelegateInterface> Callback(
 );
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*TDelegateInterface*<br/>
+*Tdelegateingeterface*<br/>
 Ein Vorlagenparameter, der die Schnittstelle des Delegaten angibt, der beim Eintreten eines Ereignisses aufgerufen wird.
 
-*TCallback*<br/>
+*Tcallback*<br/>
 Ein Vorlagenparameter, der den Typ eines Objekts angibt, das ein Objekt und seine Rückrufmemberfunktion darstellt.
 
-*TCallbackObject*<br/>
+*Tcallbackobject*<br/>
 Ein Vorlagenparameter, der das Objekt angibt, dessen Memberfunktion die Methode ist, die beim Eintreten eines Ereignisses aufgerufen wird.
 
 *TArg1*<br/>
@@ -227,29 +227,29 @@ Ein Vorlagen Parameter, der den Typ des achten Rückruf Methoden Arguments angib
 *TArg9*<br/>
 Ein Vorlagenparameter, der den Typ des neunten Rückrufmethodenarguments angibt.
 
-*callback*<br/>
+*Rück*<br/>
 Ein Objekt, das das Rückrufobjekt und seine Memberfunktion darstellt.
 
 *object*<br/>
 Das Objekt, dessen Memberfunktion beim Eintreten eines Ereignisses aufgerufen wird.
 
-*anzuwenden*<br/>
+*method*<br/>
 Die Memberfunktion, die beim Eintreten eines Ereignisses aufgerufen wird.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Ein Objekt, dessen Memberfunktion die angegebene Rückrufmethode ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Basis eines Delegatobjekts muss `IUnknown`und nicht `IInspectable`sein.
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Event. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

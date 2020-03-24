@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - context-sensitive keywords
 ms.assetid: e33da089-f434-44e9-8cce-4668d05a8939
-ms.openlocfilehash: ca289a7ebd4578d5c67bb5d3e403d2a9a2756520
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 53fcaf13eb56ae14841861bffd1a29376304b8d6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516125"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182174"
 ---
 # <a name="context-sensitive-keywords--ccli-and-ccx"></a>Kontextbezogene Schlüsselwörter (C++/CLI und C++/CX)
 
@@ -20,7 +20,7 @@ ms.locfileid: "65516125"
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Die folgende Liste enthält die kontextbezogenen Schlüsselwörter:
 
@@ -42,7 +42,7 @@ Die folgende Liste enthält die kontextbezogenen Schlüsselwörter:
 
 - [override](override-cpp-component-extensions.md)
 
-- [Eigenschaft](property-cpp-component-extensions.md)
+- [property](property-cpp-component-extensions.md)
 
 - [sealed](sealed-cpp-component-extensions.md)
 
@@ -52,21 +52,21 @@ Um die Lesbarkeit zu erhöhen, sollten Sie die Verwendung von kontextbezogenen S
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 (Es gibt keine plattformspezifischen Hinweise für diese Funktion.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 (Es gibt keine plattformspezifischen Hinweise für diese Funktion.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -99,6 +99,6 @@ int main() {
 100
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

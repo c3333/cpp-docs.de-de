@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4278
 ms.assetid: 4b6053fb-df62-4c04-b6c8-c011759557b8
-ms.openlocfilehash: 8c5c15105581602566116d3ed82b89a6337435c9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7994ae05d6cb16b5ddc9775b1044de7f3a22d542
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402163"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80174231"
 ---
 # <a name="compiler-warning-level-3-c4278"></a>Compilerwarnung (Stufe 3) C4278
 
-> "*Bezeichner*": Bezeichner in der Typbibliothek "*Tlb*' ist bereits ein Makro; benutzen Sie den"Rename"-Qualifizierer
+> "*Bezeichner*": der Bezeichner in der Typbibliothek "*tlb*" ist bereits ein Makro. "Rename"-Qualifizierer verwenden
 
-Bei Verwendung [#import](../../preprocessor/hash-import-directive-cpp.md), ein Bezeichner in der Typbibliothek, die Sie importieren versucht, einen Bezeichner zu deklarieren *Bezeichner*. Dies ist jedoch bereits ein gültiges Symbol.
+Wenn Sie [#Import](../../preprocessor/hash-import-directive-cpp.md)verwenden, versucht ein Bezeichner in der Typbibliothek, die Sie importieren, einen bezeichnerbezeichner zu deklarieren. *identifier* Dies ist jedoch bereits ein gültiges Symbol.
 
-Verwenden der `#import` **umbenennen** Attribut, auf das Symbol in der Typbibliothek einen Alias zuzuweisen.
+Verwenden Sie das `#import` **Rename** -Attribut, um dem Symbol in der Typbibliothek einen Alias zuzuweisen.

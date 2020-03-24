@@ -11,55 +11,55 @@ helpviewer_keywords:
 - scrolling [C++], recordsets
 - Move method (recordsets)
 ms.assetid: f38d2dcb-1e88-4e41-af25-98b00c276be4
-ms.openlocfilehash: 5df8151664bd7e726087cb5323c1e4622264ad23
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8a8305d2acacc79f5d7fe395087a0bd13dcbd196
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397718"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212770"
 ---
 # <a name="recordset-scrolling-odbc"></a>Recordset: Scrollen (ODBC)
 
 Dieses Thema bezieht sich auf die MFC-ODBC-Klassen.
 
-Nach dem Öffnen eines Recordsets, müssen Sie die Datensätze zum Anzeigen von Werten, den Zugriff auf Berechnungen ausführen, Generieren von Berichten und so weiter. Scrollen können, die Sie von Datensatz zu Datensatz im Recordset verschieben.
+Nachdem Sie ein Recordset geöffnet haben, müssen Sie auf die Datensätze zugreifen, um Werte anzuzeigen, Berechnungen durchzuführen, Berichte zu generieren usw. Beim Scrollen können Sie von Datensatz zu Datensatz innerhalb Ihres Recordsets wechseln.
 
 In diesem Thema wird Folgendes erläutert:
 
-- [Wie Sie von einem Datensatz in eine andere in einem Recordset Scrollen](#_core_scrolling_from_one_record_to_another).
+- Gewusst [wie: Scrollen von einem Datensatz zu einem anderen Datensatz in einem Recordset](#_core_scrolling_from_one_record_to_another)
 
-- [Unter welche Umständen Durchführen eines Bildlaufs ist und wird nicht unterstützt](#_core_when_scrolling_is_supported).
+- [Unter welchen Umständen ist das Scrollen und wird nicht unterstützt](#_core_when_scrolling_is_supported).
 
-##  <a name="_core_scrolling_from_one_record_to_another"></a> Durchführen eines Bildlaufs aus einem Datensatz in eine andere
+##  <a name="scrolling-from-one-record-to-another"></a><a name="_core_scrolling_from_one_record_to_another"></a>Scrollen von einem Datensatz zu einem anderen
 
-Klasse `CRecordset` bietet die `Move` Memberfunktionen für das Scrollen innerhalb eines Recordsets. Diese Funktionen Verschieben des aktuellen Datensatzes von Rowsets. Wenn Sie implementiert haben, gesammelte eine `Move` Vorgang verschiebt das Recordset, um die Größe des Rowsets. Wenn Sie das gesammelte Abrufen von, handelt es sich bei einem Aufruf von nicht implementiert haben eine `Move` -Funktion verschiebt das Recordset um einen Datensatz jeweils. Weitere Informationen zu gesammelten Abrufens von Zeilen, finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammeloperation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
+Class `CRecordset` stellt die `Move` Member-Funktionen zum Scrollen innerhalb eines Recordsets bereit. Diese Funktionen verschieben den aktuellen Datensatz nach Rowsets. Wenn Sie das Massen Abrufen von Zeilen implementiert haben, positioniert ein `Move`-Vorgang das Recordset um die Größe des Rowsets neu. Wenn Sie das Massen Abrufen von Zeilen nicht implementiert haben, wird das Recordset durch einen Aufruf einer `Move`-Funktion jedes Mal um einen Datensatz neu positioniert. Weitere Informationen zum Abrufen von Massen Zeilen finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammel Operation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
 
 > [!NOTE]
->  Beim Verschieben von durch ein Recordset möglicherweise gelöschte Datensätze werden nicht übersprungen. Weitere Informationen finden Sie unter den [IsDeleted](../../mfc/reference/crecordset-class.md#isdeleted) Member-Funktion.
+>  Beim Durchlaufen eines Recordsets werden gelöschte Datensätze möglicherweise nicht übersprungen. Weitere Informationen finden Sie unter der [isDeleted](../../mfc/reference/crecordset-class.md#isdeleted) -Member-Funktion.
 
-Zusätzlich zu den `Move` Funktionen `CRecordset` stellt Memberfunktionen zum Überprüfen, ob Sie über das Ende oder Anfang des Recordset gescrollt haben.
+Zusätzlich zu den `Move` Funktionen stellt `CRecordset` Member-Funktionen bereit, mit denen überprüft werden kann, ob Sie einen Rollup hinter dem Ende oder vor dem Anfang des Recordsets durchgeführt haben.
 
-Um zu bestimmen, ob Scrollen im Recordset möglich ist, rufen Sie die `CanScroll` Member-Funktion.
+Um zu ermitteln, ob ein Bildlauf im Recordset möglich ist, können Sie die `CanScroll` Member-Funktion aufzurufen.
 
-#### <a name="to-scroll"></a>Scrollen
+#### <a name="to-scroll"></a>So Scrollen Sie
 
-1. Einen Datensatz oder ein Rowset vorwärts: Rufen Sie die [MoveNext](../../mfc/reference/crecordset-class.md#movenext) Member-Funktion.
+1. Einen Datensatz oder ein Rowset weiterleiten: nennen Sie die Member-Funktion von " [wvenext](../../mfc/reference/crecordset-class.md#movenext) ".
 
-1. Rückwärts einen Datensatz oder ein Rowset: Rufen Sie die [MovePrev](../../mfc/reference/crecordset-class.md#moveprev) Member-Funktion.
+1. Rückwärts ein Datensatz oder ein Rowset: Rufen Sie die Member-Funktion von " [muveprev](../../mfc/reference/crecordset-class.md#moveprev) " auf.
 
-1. Zu den ersten Datensatz im Recordset: Rufen Sie die [MoveFirst](../../mfc/reference/crecordset-class.md#movefirst) Member-Funktion.
+1. Zum ersten Datensatz im Recordset: Ruft die Member-Funktion von " [muvefirst](../../mfc/reference/crecordset-class.md#movefirst) " auf.
 
-1. Um den letzten Datensatz im Recordset oder des letzten Rowsets: Rufen Sie die [MoveLast](../../mfc/reference/crecordset-class.md#movelast) Member-Funktion.
+1. Mit dem letzten Datensatz im Recordset oder dem letzten Rowset: Ruft die Member-Funktion von " [wvelast](../../mfc/reference/crecordset-class.md#movelast) " auf.
 
-1. *N* Datensätze relativ zur aktuellen Position: Rufen Sie die [verschieben](../../mfc/reference/crecordset-class.md#move) Member-Funktion.
+1. *N* Datensätze relativ zur aktuellen Position: Ruft die [Move](../../mfc/reference/crecordset-class.md#move) Member-Funktion auf.
 
-#### <a name="to-test-for-the-end-or-the-beginning-of-the-recordset"></a>So testen Sie das Ende oder Anfang des Recordset-Objekts
+#### <a name="to-test-for-the-end-or-the-beginning-of-the-recordset"></a>So testen Sie das Ende oder den Anfang des Recordsets
 
-1. Haben Sie hinter dem letzten Datensatz werden gescrollt? Rufen Sie die [IsEOF](../../mfc/reference/crecordset-class.md#iseof) Member-Funktion.
+1. Haben Sie einen Rollup des letzten Datensatzes durchgeführt? Ruft die [IsEOF](../../mfc/reference/crecordset-class.md#iseof) -Member-Funktion auf.
 
-1. Haben Sie einen Bildlauf vor den ersten Datensatz (rückwärts) durchgeführt? Rufen Sie die [IsBOF](../../mfc/reference/crecordset-class.md#isbof) Member-Funktion.
+1. Haben Sie den ersten Datensatz vor dem ersten Datensatz verschoben (rückwärts)? Ruft die [IsBOF](../../mfc/reference/crecordset-class.md#isbof) -Member-Funktion auf.
 
-Das folgende Codebeispiel verwendet `IsBOF` und `IsEOF` um die Grenzen eines Recordsets in beide Richtungen Durchführen eines Bildlaufs zu erkennen.
+Im folgenden Codebeispiel wird `IsBOF` und `IsEOF` verwendet, um die Grenzwerte eines Recordsets beim Scrollen in beide Richtungen zu erkennen.
 
 ```
 // Open a recordset; first record is current
@@ -87,23 +87,23 @@ while( !rsCustSet.IsBOF( ) )
 rsCustSet.MoveFirst( );
 ```
 
-`IsEOF` Gibt einen Wert ungleich NULL zurück, wenn das Recordset hinter dem letzten Datensatz positioniert ist. `IsBOF` Gibt einen Wert ungleich NULL zurück, wenn das Recordset, vor dem ersten Datensatz (vor allen Datensätzen positioniert ist). In beiden Fällen besteht kein aktueller Datensatz zu verarbeitende zur Verfügung. Aufrufen `MovePrev` beim `IsBOF` ist bereits auf "true" fest, oder rufen Sie `MoveNext` beim `IsEOF` bereits TRUE ist, löst das Framework eine `CDBException`. Sie können auch `IsBOF` und `IsEOF` zu prüfen, eine leere Datensatzgruppe.
+`IsEOF` gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset hinter dem letzten Datensatz positioniert ist. `IsBOF` gibt einen Wert ungleich 0 (null) zurück, wenn das Recordset vor dem ersten Datensatz (vor allen Datensätzen) positioniert ist. In beiden Fällen gibt es keinen aktuellen Datensatz, mit dem Sie arbeiten können. Wenn Sie `MovePrev` aufzurufen, wenn `IsBOF` bereits true ist, oder `MoveNext` aufruft, wenn `IsEOF` bereits true ist, löst das Framework eine `CDBException`aus. Sie können auch `IsBOF` und `IsEOF` verwenden, um nach einem leeren Recordset zu suchen.
 
-Weitere Informationen zur Recordsetnavigation, finden Sie unter [Recordset: Lesezeichen und absolute Positionen (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md).
+Weitere Informationen zur Recordsetnavigation finden Sie unter [Recordset: Lesezeichen und absolute Positionen (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md).
 
-##  <a name="_core_when_scrolling_is_supported"></a> Beim Durchführen eines Bildlaufs unterstützt wird
+##  <a name="when-scrolling-is-supported"></a><a name="_core_when_scrolling_is_supported"></a>Beim Scrollen wird unterstützt.
 
-Als ursprünglich entwickelte SQL bereitgestellten Bildlauf ausschließlich vorwärts ausgeführt, aber ODBC erweitert die Bildlauf-Funktionen. Das verfügbare Maß an Unterstützung für das Scrollen, hängt die ODBC-Treiber, die die Anwendung mit ODBC-API-Konformitätsgrad des Treibers funktioniert, und gibt an, ob die ODBC-Cursorbibliothek geladen ist. Weitere Informationen finden Sie unter [ODBC](../../data/odbc/odbc-basics.md) und [ODBC: Die ODBC-Cursorbibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
+Wie ursprünglich entworfen, war SQL nur vorwärts scrollen, aber ODBC erweitert die scrollfunktionen. Der verfügbare Grad der Unterstützung für den Bildlauf hängt von den ODBC-Treibern ab, mit denen Ihre Anwendung arbeitet, von der ODBC-API-Konformität Ihres Treibers und davon, ob die ODBC-Cursor Bibliothek in den Speicher geladen wird Weitere Informationen finden Sie unter [ODBC](../../data/odbc/odbc-basics.md) und [ODBC: die ODBC-Cursor Bibliothek](../../data/odbc/odbc-the-odbc-cursor-library.md).
 
 > [!TIP]
->  Sie können steuern, ob die Cursorbibliothek verwendet wird. Finden Sie unter den *bUseCursorLib* und *DwOptions* Parameter [CDatabase:: Open](../../mfc/reference/cdatabase-class.md#open).
+>  Sie können steuern, ob die Cursor Bibliothek verwendet wird. Weitere Informationen finden Sie in den Parametern *bUseCursorLib* und *dwOptions* für [CDatabase:: Open](../../mfc/reference/cdatabase-class.md#open).
 
 > [!NOTE]
->  Im Gegensatz zu den MFC-DAO-Klassen, die MFC-ODBC-Klassen nicht bieten eine Reihe von `Find` Funktionen für Suchen der nächsten (oder vorherigen) Datensatzes, erfüllt die Kriterien angegeben.
+>  Im Gegensatz zu den MFC-DAO-Klassen bieten die MFC-ODBC-Klassen keinen Satz von `Find` Funktionen zum Suchen des nächsten (oder vorherigen) Datensatzes, der die angegebenen Kriterien erfüllt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Recordset (ODBC)](../../data/odbc/recordset-odbc.md)<br/>
-[CRecordset::CanScroll](../../mfc/reference/crecordset-class.md#canscroll)<br/>
-[CRecordset::CheckRowsetError](../../mfc/reference/crecordset-class.md#checkrowseterror)<br/>
+[CRecordset:: CanScroll](../../mfc/reference/crecordset-class.md#canscroll)<br/>
+[CRecordset:: checkrowseterror](../../mfc/reference/crecordset-class.md#checkrowseterror)<br/>
 [Recordset: Filtern von Datensätzen (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)

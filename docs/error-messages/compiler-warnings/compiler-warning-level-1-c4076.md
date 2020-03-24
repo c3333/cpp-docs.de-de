@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4076
 ms.assetid: 04581066-313a-4a11-bb60-721e6d038d75
-ms.openlocfilehash: 3a56e58d9bec1034a55f4e588dbddd0dba03f348
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 77efeae27a67ea844759fd9980801d3daf788e89
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62208026"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200256"
 ---
 # <a name="compiler-warning-level-1-c4076"></a>Compilerwarnung (Stufe 1) C4076
 
-> "*Typmodifizierer*": kann nicht verwendet werden, mit dem Typ '*Typename*"
+> "*Typmodifizierer*": kann nicht mit Typ "*Typname*" verwendet werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Typmodifizierer kann, ob **signiert** oder **ohne Vorzeichen**, kann nicht mit einem nicht ganzzahligen Datentyp verwendet werden. *Typmodifizierer* wird ignoriert.
+Ein Typmodifizierer, ob er **signiert** oder **nicht signiert**ist, kann nicht mit einem nicht ganzzahligen Typ verwendet werden. der *Typmodifizierer* wird ignoriert.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C4076 generiert; Um dies zu beheben, entfernen Sie die **ohne Vorzeichen** Typmodifizierer:
+Im folgenden Beispiel wird C4076 generiert. Entfernen Sie den Typmodifizierer **ohne** Vorzeichen, um ihn zu beheben:
 
 ```cpp
 // C4076.cpp

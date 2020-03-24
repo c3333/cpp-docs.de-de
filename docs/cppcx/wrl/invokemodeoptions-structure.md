@@ -1,5 +1,5 @@
 ---
-title: InvokeModeOptions-Struktur
+title: Invokemodeoptions-Struktur
 ms.date: 03/22/2018
 ms.topic: reference
 f1_keywords:
@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - InvokeModeOptions structure
 - InvokeMode enum
-ms.openlocfilehash: 0e5b45042c9959b87ad5db97ab755e49de469149
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9bca49479d97ee371f6728f90a9aa96da0387f54
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62386043"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213836"
 ---
-# <a name="invokemodeoptions-structure"></a>InvokeModeOptions-Struktur
+# <a name="invokemodeoptions-structure"></a>Invokemodeoptions-Struktur
 
-Gibt an, ob alle Ereignisse in der Warteschlange Delegaten ausgelöst werden, oder beim Beenden ausgelöst wird, nachdem ein Fehler ausgelöst wird. Die zulässigen Werte werden angegeben, der `InvokeMode` Enum.
+Gibt an, ob alle Ereignisse in der delegatwarteschlange ausgelöst oder nach dem Auslösen eines Fehlers nicht mehr ausgelöst werden soll. Die zulässigen Werte werden in der `InvokeMode` Enumeration angegeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,13 +33,13 @@ struct InvokeModeOptions
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** event.h
+**Header:** Event. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)<br/>
-[Microsoft::wrl::AgileEventSource-Klasse](agileeventsource-class.md)
+[Microsoft:: WRL:: agileeventsource-Klasse](agileeventsource-class.md)

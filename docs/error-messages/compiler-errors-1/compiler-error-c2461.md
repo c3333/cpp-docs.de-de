@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2461
 ms.assetid: e64ba651-f441-4fdb-b5cb-4209bbbe4db4
-ms.openlocfilehash: e8f82ed4ce8ad77a22961a42c8e9a256e6f647db
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3d290bd2288f76d0ddefa2057e3e01c9edc3cbc7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368031"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205321"
 ---
 # <a name="compiler-error-c2461"></a>Compilerfehler C2461
 
-> "*Klasse*": Formale Parameterliste für Konstruktor fehlt
+> "*Class*": in der Konstruktorsyntax fehlen formale Parameter.
 
-Der Konstruktor für die Klasse gibt keine formalen Parameter. Die Deklaration eines Konstruktors muss es sich um eine Liste formaler Parameter angeben. Die Liste kann leer sein.
+Der Konstruktor für die-Klasse gibt keine formalen Parameter an. Die Deklaration eines Konstruktors muss eine Liste formaler Parameter angeben. Die Liste kann leer sein.
 
-Um dieses Problem zu beheben, fügen Sie ein Klammernpaar nach der Deklaration von *Klasse*:: **Klasse*.
+Um dieses Problem zu beheben, fügen Sie nach der Deklaration der *Klasse*::**Klasse*ein paar Klammern hinzu.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie C2461 generiert Fehler beheben:
+Im folgenden Beispiel wird gezeigt, wie C2461 behoben wird:
 
 ```cpp
 // C2461.cpp

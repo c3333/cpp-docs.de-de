@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - __identifier keyword [C++]
 ms.assetid: 348428af-afa7-4ff3-b571-acf874301cf2
-ms.openlocfilehash: 395f1443f4eef16d9eea44c23a6e3288daf03d14
-ms.sourcegitcommit: c4528a7424d35039454f17778baf1b5f98fbbee7
+ms.openlocfilehash: 0da32aae9a8c2c7f21ee9576e1e1147822314a36
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "79545468"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172177"
 ---
 # <a name="__identifier-ccli"></a>__identifier (C++/CLI)
 
@@ -27,13 +27,13 @@ Ermöglicht die Verwendung von C++-Schlüsselwörtern als Bezeichner.
 __identifier(C++_keyword)
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Verwendung des **__identifier**-Schlüsselworts für Bezeichner, die keine Schlüsselwörter sind, ist zulässig, jedoch wird aufgrund stilistischer Aspekte dringend davon abgeraten.
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -63,11 +63,11 @@ int main() {
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das **__identifier**-Schlüsselwort ist mit der `/clr`-Compileroption gültig.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -94,7 +94,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

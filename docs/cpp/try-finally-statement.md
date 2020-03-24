@@ -20,12 +20,12 @@ helpviewer_keywords:
 - __leave keyword [C++], try-finally statement
 - structured exception handling [C++], try-finally
 ms.assetid: 826e0347-ddfe-4f6e-a7bc-0398e0edc7c2
-ms.openlocfilehash: 045d2bf5617c81bcc4d7a202f36b112d5f0142a6
-ms.sourcegitcommit: 654aecaeb5d3e3fe6bc926bafd6d5ace0d20a80e
+ms.openlocfilehash: a463b807d39addfdaa64b829720266bf0502fa7e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74246304"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188076"
 ---
 # <a name="try-finally-statement"></a>try-finally-Anweisung
 
@@ -45,7 +45,7 @@ Die folgende Syntax beschreibt die **try-endlich-** Anweisung:
 ## <a name="grammar"></a>Grammatik
 
 *try-finally-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **\_** \_\_zum **Schluss** eine *Verbund Anweisung \_*
+&nbsp;&nbsp;&nbsp;&nbsp; **\_** \_\_zum **Schluss** *compound-statement* eine *Verbund Anweisung \_*
 
 Bei der **Try-End-** Anweisung handelt es sich um eine Microsoft C++ -Erweiterung für C und Sprachen, die es Zielanwendungen ermöglichen, die Ausführung von Bereinigungs Code zu gewährleisten, wenn die Ausführung eines Code Blocks unterbrochen wird. Die Bereinigung besteht aus Aufgaben wie z. B. Neuzuweisung von Arbeitsspeicher, Schließen von Dateien und Freigeben von Dateihandles. Die **try-schließlich-** Anweisung ist besonders nützlich für Routinen mit mehreren Stellen, an denen eine Überprüfung auf einen Fehler erfolgt, der eine vorzeitige Rückgabe von der Routine verursachen könnte.
 
@@ -92,9 +92,9 @@ Der Beendigungs Handler wird nicht aufgerufen, wenn ein Prozess in der Mitte der
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schreiben eines Beendigungs Handlers](../cpp/writing-a-termination-handler.md)<br/>
-[Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
+[Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Beendigungs HandlerSyntax](/windows/win32/Debug/termination-handler-syntax)

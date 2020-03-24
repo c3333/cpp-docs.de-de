@@ -7,17 +7,17 @@ helpviewer_keywords:
 - CAN0014
 - CXX0014
 ms.assetid: 3bb0278d-3dd6-4626-9945-3cf29afbbacb
-ms.openlocfilehash: 686c3767ab071b444e922e1c47fdc0a7f939b238
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c3aa6df2de3bf3203fb6e5c1ba4aa90a2a07965b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397171"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196078"
 ---
 # <a name="expression-evaluator-error-cxx0014"></a>Ausdrucksauswertungsfehler CXX0014
 
-Operand fehlt
+fehlender Operand
 
-Ein Operator wurde ohne einen erforderlichen Operanden angegeben. Überprüfen Sie die Syntax des Ausdrucks.
+Es wurde ein Operator ohne einen erforderlichen Operanden angegeben. Überprüfen Sie die Syntax des Ausdrucks.
 
 Dieser Fehler ist mit CAN0014 identisch.

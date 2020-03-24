@@ -6,21 +6,21 @@ helpviewer_keywords:
 - selection statements [C++], syntax
 - selection statements
 ms.assetid: 2ce662fc-5e62-461b-ac31-2c159d8ef33b
-ms.openlocfilehash: 51165a4fa609f79c19b81b7660a23127a7520358
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 35ae97c23b802faaa2cfafe74940ea6a22d52e8b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62267244"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178834"
 ---
 # <a name="selection-statements-c"></a>Auswahlanweisungen (C++)
 
-Die C++-auswahlanweisungen [Wenn](../cpp/if-else-statement-cpp.md) und [wechseln](../cpp/switch-statement-cpp.md), bieten eine Möglichkeit, Codeabschnitte bedingt auszuführen.
+Die C++ Auswahl Anweisungen, [if](../cpp/if-else-statement-cpp.md) und [Switch](../cpp/switch-statement-cpp.md), bieten eine Möglichkeit, Code Abschnitte bedingt auszuführen.
 
-Die [__if_exists](../cpp/if-exists-statement.md) und [__if_not_exists](../cpp/if-not-exists-statement.md) -Anweisungen ermöglichen Ihnen, Code abhängig vom Vorhandensein eines Symbols bedingt einschließen möchten.
+Mit den [__if_exists](../cpp/if-exists-statement.md) -und [__if_not_exists](../cpp/if-not-exists-statement.md) -Anweisungen können Sie Code bedingt in Abhängigkeit vom vorhanden sein eines Symbols einschließen.
 
 Weitere Informationen über die Syntax für jede Anweisung erhalten Sie in den einzelnen Themen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)

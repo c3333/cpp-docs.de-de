@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - defaultvalue attribute
 ms.assetid: efa5d050-b2cc-4d9e-9b8e-79954f218d3a
-ms.openlocfilehash: b2057658b5881efd0c3ff095d51e5ee88c9c533e
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: aaa2290c871df3a2482294794461e53afe00568d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69490919"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214842"
 ---
 # <a name="defaultvalue"></a>defaultvalue
 
@@ -26,9 +26,9 @@ Ermöglicht die Angabe eines Standardwerts für einen eingegebenen optionalen Pa
 ### <a name="parameters"></a>Parameter
 
 *value*<br/>
-Der Standardwert für den-Parameter.
+Der Standardwert für den Parameter.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **DefaultValue** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut [DefaultValue](/windows/win32/Midl/defaultvalue) .
 
@@ -54,7 +54,7 @@ __interface IFireTabCtrl : IDispatch {
 [ module(name="ATLFIRELib", uuid="479B29E1-9A2C-11D0-B696-00A0C903487A",    version="1.0", helpstring="ATLFire 1.0 Type Library") ];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -62,12 +62,12 @@ __interface IFireTabCtrl : IDispatch {
 |-|-|
 |**Betrifft**|Schnittstellenparameter|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>

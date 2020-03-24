@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4931
 ms.assetid: cfbf08c7-94e4-4a91-a691-479d1dbe527a
-ms.openlocfilehash: e4103ddbae108b9371a39cf3a93cd708b96ddc65
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3ec03227754c845424d1550e38ff81f1dd4680c1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62280359"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80185190"
 ---
 # <a name="compiler-warning-level-4-c4931"></a>Compilerwarnung (Stufe 4) C4931
 
-> Es wird angenommen, die Typbibliothek erstellt wurde, für die *Anzahl*-bit-Zeiger
+> Wir gehen davon aus, dass die Typbibliothek für *Zahlen*-Bit-Zeiger erstellt wurde.
 
-Explizite Informationen wurde nicht im Lieferumfang der **Ptrsize** Attribut der [#import](../../preprocessor/hash-import-directive-cpp.md) ; der Compiler hat ergeben, dass die Größe des Zeigers der Typbibliothek ist die Richtlinie *Anzahl*.
+Es wurden keine expliziten Informationen mit dem **ptrsize** -Attribut der [#Import](../../preprocessor/hash-import-directive-cpp.md) -Direktive angegeben. der Compiler hat festgestellt, dass die Zeiger Größe der Typbibliothek " *Number*" ist.
 
 Diese Warnung ist standardmäßig deaktiviert. Weitere Informationen finden Sie unter [Standardmäßig deaktivierte Compilerwarnungen](../../preprocessor/compiler-warnings-that-are-off-by-default.md) .

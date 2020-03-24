@@ -9,21 +9,21 @@ helpviewer_keywords:
 - data [MFC]
 - data [MFC], displaying in a form
 ms.assetid: c56185c4-12cb-40b1-b499-02b29ea83e3a
-ms.openlocfilehash: e50c433e701fbae2e607d79d7abb34efe8eba5b5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6b663fabd0c87d9a2773e6f5a2796bcc8f57ce29
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395910"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213251"
 ---
 # <a name="displaying-and-manipulating-data-in-a-form"></a>Anzeigen und Verändern von Daten in einem Formular
 
-Viele formularbasierten datenzugriffsanwendungen Daten auswählen und in die Felder in einem Formular angezeigt wird. Die Datenbankklasse [CRecordView](../../mfc/reference/crecordview-class.md) bietet Ihnen eine [CFormView](../../mfc/reference/cformview-class.md) Objekt direkt mit einem Recordset-Objekt verbunden. Verwendet die Datensatzansicht [Dialogdatenaustausch (DDX)](../../mfc/dialog-data-exchange-and-validation.md) um die Werte der Felder des aktuellen Datensatzes aus dem Recordset in die Steuerelemente im Formular zu verschieben und aktualisierte Informationen zurück, das Recordset zu verschieben. Das Recordset verwendet im Gegenzug Datensatzfeldaustausch (RFX) zum Verschieben von Daten zwischen der Felddatenmember und die entsprechenden Spalten in einer Tabelle in der Datenquelle.
+Viele Datenzugriffs Anwendungen wählen Daten aus und zeigen Sie in Feldern in einem Formular an. Die Datenbankklasse [CRecordView](../../mfc/reference/crecordview-class.md) gibt ein [CFormView](../../mfc/reference/cformview-class.md) -Objekt an, das direkt mit einem Recordset-Objekt verbunden ist. Die Daten Satz Ansicht verwendet den [Dialog Datenaustausch (DDX)](../../mfc/dialog-data-exchange-and-validation.md) , um die Werte der Felder des aktuellen Datensatzes aus dem Recordset in die Steuerelemente im Formular zu verschieben und aktualisierte Informationen zurück in das Recordset zu verschieben. Das Recordset verwendet wiederum Daten Satz Feld Austausch (RFX), um Daten zwischen den Felddatenmembern und den entsprechenden Spalten in einer Tabelle in der Datenquelle zu verschieben.
 
-Sie können den Assistenten zum MFC-Anwendungen verwenden oder **Klasse hinzufügen** (wie in beschrieben [Hinzufügen eines MFC-ODBC-Consumers](../../mfc/reference/adding-an-mfc-odbc-consumer.md)) die View-Klasse und ihrer zugehörigen Recordset-Klasse in Verbindung zu erstellen.
+Sie können den MFC-Anwendungs-Assistenten oder die **Add-Klasse** (wie unter [Hinzufügen eines MFC-ODBC](../../mfc/reference/adding-an-mfc-odbc-consumer.md)-Consumers beschrieben) verwenden, um die Ansichts Klasse und die zugehörige Recordsetklasse in Verbindung zu erstellen.
 
-Der Datensatzansicht und dessen Recordset werden zerstört, wenn Sie das Dokument zu schließen. Weitere Informationen zu Datensatzansichten finden Sie unter [Datensatzansichten](../../data/record-views-mfc-data-access.md). Weitere Informationen über RFX finden Sie unter [Datensatzfeldaustausch (RFX)](../../data/odbc/record-field-exchange-rfx.md).
+Die Daten Satz Ansicht und das zugehörige Recordset werden beim Schließen des Dokuments zerstört. Weitere Informationen zu Daten Satz Sichten finden Sie unter [Daten Satz Ansichten](../../data/record-views-mfc-data-access.md). Weitere Informationen zu RFX finden Sie unter [Daten Satz Feld Austausch (RFX)](../../data/odbc/record-field-exchange-rfx.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ODBC und MFC](../../data/odbc/odbc-and-mfc.md)

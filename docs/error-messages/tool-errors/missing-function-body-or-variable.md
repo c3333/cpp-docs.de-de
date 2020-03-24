@@ -5,20 +5,20 @@ helpviewer_keywords:
 - function body
 - variables, missing
 ms.assetid: 1a88d809-b14f-46a4-97c4-3e48beb418f2
-ms.openlocfilehash: 5e3436054d69da7fb67c240c1d684585734635c3
-ms.sourcegitcommit: 283cb64fd7958a6b7fbf0cd8534de99ac8d408eb
+ms.openlocfilehash: 6d2ef22b90009d320485fb6fe3f7e308ae05c442
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64857160"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173620"
 ---
 # <a name="missing-function-body-or-variable"></a>Fehlender Funktionsrumpf oder fehlende Variable
 
-Klicken Sie mit nur einem Funktionsprototyp der Compiler kann ohne Fehler weiterhin, aber der Linker kann keinen Aufruf an eine Adresse nicht aufgelöst werden, da keine Funktionscode variablenspeicher reserviert oder. Dieser Fehler wird nicht angezeigt werden, bis Sie einen Aufruf der Funktion erstellen, die der Linker auflösen müssen.
+Mit nur einem Funktionsprototyp kann der Compiler ohne Fehler fortfahren, aber der Linker kann einen Rückruf einer Adresse nicht auflösen, da kein Funktionscode oder variabler Speicherplatz reserviert ist. Dieser Fehler wird erst angezeigt, wenn Sie einen Rückruf für die Funktion erstellen, die der Linker auflösen muss.
 
 ## <a name="example"></a>Beispiel
 
-Der Funktionsaufruf in Main wird Fehler LNK2019 führen, da der Prototyp dem Compiler ermöglicht, die Ihrer Meinung nach die Funktion vorhanden ist.  Der Linker sucht nach, dass dies nicht der Fall.
+Der Funktions aufrufin Main bewirkt LNK2019, da der Prototyp dem Compiler den Eindruck gibt, dass die Funktion vorhanden ist.  Der Linker findet, dass dies nicht der Fall ist.
 
 ```cpp
 // LNK2019_MFBV.cpp
@@ -31,7 +31,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-C++ stellen Sie sicher, dass Sie die Implementierung einer bestimmten Funktion für eine Klasse und nicht nur einen Prototyp in der Klassendefinition einschließen. Wenn Sie die Klasse außerhalb der Header-Datei definieren, müssen Sie den Namen der Klasse, bevor die Funktion enthalten (`Classname::memberfunction`).
+Stellen C++Sie in sicher, dass Sie die Implementierung einer bestimmten Funktion für eine Klasse und nicht nur einen Prototyp in der Klassendefinition einschließen. Wenn Sie die Klasse außerhalb der Header Datei definieren, achten Sie darauf, dass Sie den Klassennamen vor der Funktion (`Classname::memberfunction`) einschließen.
 
 ```cpp
 // LNK2019_MFBV_2.cpp
@@ -49,6 +49,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Linkertoolfehler LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

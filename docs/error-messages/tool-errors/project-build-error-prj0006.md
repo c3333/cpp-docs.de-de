@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0006
 ms.assetid: ce092be4-1652-414f-8cb5-b97ef5841f89
-ms.openlocfilehash: d62c774411fda80a3e94044b3272567177328ff5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 816355276a203adba1401841ce02eb94a18085b6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359656"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192782"
 ---
 # <a name="project-build-error-prj0006"></a>Projektbuildfehler PRJ0006
 
-Die temporäre Datei "File" konnte nicht geöffnet werden. Stellen Sie sicher, dass die Datei vorhanden ist und dass das Verzeichnis nicht schreibgeschützt ist.
+Die temporäre Datei "file" konnte nicht geöffnet werden. Stellen Sie sicher, dass die Datei vorhanden ist und dass das Verzeichnis nicht schreibgeschützt ist.
 
-Visual C++ konnte eine temporäre Datei nicht während des Buildprozesses erstellt werden. Die Gründe hierfür sind:
+Visual C++ konnte während des Buildprozesses keine temporäre Datei erstellen. Gründe hierfür sind:
 
-- Keine temporären Verzeichnis.
+- Kein Temp-Verzeichnis.
 
-- Nur-Lese temp-Verzeichnis.
+- Schreib geschütztes Temp-Verzeichnis.
 
-- Nicht genügend Speicherplatz vorhanden.
+- Nicht genügend Speicherplatz.
 
-- Der Ordner $(IntDir) ist entweder schreibgeschützt oder temporären Dateien enthält, die schreibgeschützt sind.
+- Der $ (IntDir)-Ordner ist entweder schreibgeschützt oder enthält temporäre Dateien, die schreibgeschützt sind.
 
-Dieser Fehler tritt auch folgende Fehler PRJ0007: Das Ausgabeverzeichnis "Verzeichnis" konnte nicht erstellt werden. Fehler-PRJ0007 bedeutet, dass das $(IntDir) Verzeichnis konnte nicht erstellt werden, dass dies die Erstellung von vorübergehend Dateien schlägt auch fehl.
+Dieser Fehler tritt auch nach dem Fehler Projektbuildfehler PRJ0007 auf: das Ausgabeverzeichnis "Verzeichnis" konnte nicht erstellt werden. Fehler Projektbuildfehler PRJ0007 bedeutet, dass das Verzeichnis "$ (IntDir)" nicht erstellt werden konnte. Dies impliziert, dass die Erstellung temporär Dateien auch fehlschlägt.
 
-Wenn Sie angeben, werden temporäre Dateien erstellt:
+Temporäre Dateien werden immer dann erstellt, wenn Sie Folgendes angeben:
 
 - Eine Antwortdatei.
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::IDisposable Interface
 ms.assetid: f4344056-7030-42ed-bc98-b140edffddcd
-ms.openlocfilehash: f114959321c0ed3879a089b944a5ff1b19843118
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0024edbad0bb3311a0497be67fc8bcfc954602e1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62257828"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214239"
 ---
 # <a name="platformidisposable-interface"></a>Platform::IDisposable-Schnittstelle
 
@@ -24,13 +24,13 @@ Wird verwendet, um nicht verwaltete Ressourcen freizugeben.
 public interface class IDisposable
 ```
 
-## <a name="attributes"></a>Attribute
+## <a name="attributes"></a>Attributes
 
 **GuidAttribute**("de0cbaea-8065-4a45-b196-c9d443f9bab3")
 
-**VersionAttribute**(NTDDI_WIN8)
+**Versionattribute**(NTDDI_WIN8)
 
-### <a name="members"></a>Member
+### <a name="members"></a>Members
 
 Die IDisposable-Schnittstelle erbt von der IUnknown-Schnittstelle. IDisposable verfügt auch über die folgenden Membertypen:
 
@@ -38,14 +38,14 @@ Die IDisposable-Schnittstelle erbt von der IUnknown-Schnittstelle. IDisposable v
 
 Die IDisposable-Schnittstelle verfügt über die folgenden Methoden.
 
-|Methode|Beschreibung|
+|Methode|BESCHREIBUNG|
 |------------|-----------------|
-|Löschen|Wird verwendet, um nicht verwaltete Ressourcen freizugeben.|
+|Dispose|Wird verwendet, um nicht verwaltete Ressourcen freizugeben.|
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Unterstützter Client (Min.):** Windows 8
+**Mindestens unterstützter Client:** Windows 8
 
-**Unterstützter Server (Min.):** Windows Server 2012
+**Mindestens unterstützter Server:** Windows Server 2012
 
-**Namespace:** Plattform
+**Namespace:** Platform

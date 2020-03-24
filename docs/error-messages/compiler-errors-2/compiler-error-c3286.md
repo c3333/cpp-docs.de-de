@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3286
 ms.assetid: 554328c8-cf44-4f7d-a8d2-def74d28ecdd
-ms.openlocfilehash: 8c09ea34c7dabf2cadecad7c76d766c9496f5a5a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4c87e98f11a560d0d92be8ea7bc624edd4e09ad2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62381349"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201395"
 ---
 # <a name="compiler-error-c3286"></a>Compilerfehler C3286
 
-> "*Spezifizierer*': eine Iterationsvariable darf keine Speicherklassenspezifizierer aufweisen
+> "*Spezifizierer*": eine Iterations Variable darf keine Speicherklassenspezifizierer aufweisen.
 
-Eine Speicherklasse kann nicht auf eine Iterationsvariable angegeben werden. Weitere Informationen finden Sie unter [Speicherklassen (C++)](../../cpp/storage-classes-cpp.md) und [für jedes im](../../dotnet/for-each-in.md).
+Eine Speicher Klasse kann nicht für eine Iterations Variable angegeben werden. Weitere Informationen finden Sie unter [Speicher Klassen (C++)](../../cpp/storage-classes-cpp.md) und [für jede in](../../dotnet/for-each-in.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird C3286 generiert und zeigt auch die richtige Verwendung.
+Im folgenden Beispiel wird C3286 generiert. Außerdem wird die korrekte Verwendung veranschaulicht.
 
 ```cpp
 // C3286.cpp

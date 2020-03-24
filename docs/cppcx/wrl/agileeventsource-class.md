@@ -6,12 +6,12 @@ f1_keywords:
 - event/Microsoft::WRL::AgileEventSource
 helpviewer_keywords:
 - AgileEventSource class
-ms.openlocfilehash: 7a919c0b2aa778ba1db19c3bfc3871542e8f9569
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 71a70f783d8f8967d755bb788f4aae4861340d64
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79441268"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214187"
 ---
 # <a name="agileeventsource-class"></a>Agileeventsource-Klasse
 
@@ -61,7 +61,7 @@ Bei den meisten Komponenten in der Windows-Runtime handelt es sich um Agile-Komp
 |----------|-----------------|
 |[Agileeventsource:: Add-Methode](#add)|Fügt den von der angegebenen delegatschnittstelle dargestellten Agile-Ereignishandler an den Satz von Ereignis Handlern für das aktuelle **agileeventsource** -Objekt an.|
 
-## <a name="add"></a>Agileeventsource:: Add-Methode
+## <a name="agileeventsourceadd-method"></a><a name="add"></a>Agileeventsource:: Add-Methode
 
 Fügt den Ereignishandler, der durch die angegebene delegatschnittstelle dargestellt wird, an den Satz von Ereignis Handlern für das aktuelle [eventSource](eventsource-class.md) -Objekt an.
 

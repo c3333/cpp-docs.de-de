@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C3276
 ms.assetid: dd6b4fd2-094d-4d34-a467-a9afd59789f7
-ms.openlocfilehash: 671fda26958d50340ccc628a8d50d19ea74f7939
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4037c5191c0b7316218100123f1cf1823f9d135b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62382098"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201447"
 ---
 # <a name="compiler-error-c3276"></a>Compilerfehler C3276
 
-'Schlüsselwort': Aussprung aus __finally/finally-Block hat ein undefiniertes Verhalten während der Abbruchbehandlung
+' Schlüsselwort ': springen aus __finally/finally-Block weist ein undefiniertes Verhalten während der Abbruch Behandlung auf.
 
-Dieser Fehler ist identisch mit der [C4532](../../error-messages/compiler-warnings/compiler-warning-level-1-c4532.md) Warnung. Aber wenn Sie "/ CLR" verwenden, diese Bedingung kann nicht deaktiviert werden mit der [Warnung](../../preprocessor/warning.md) Pragma.
+Dieser Fehler ist mit der [C4532](../../error-messages/compiler-warnings/compiler-warning-level-1-c4532.md) -Warnung identisch. Wenn Sie jedoch/CLR verwenden, kann diese Bedingung mit dem [Warning](../../preprocessor/warning.md) -Pragma nicht deaktiviert werden.

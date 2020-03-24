@@ -10,12 +10,12 @@ helpviewer_keywords:
 - multiple concurrent threads
 - multithreading [C++]
 ms.assetid: 24425b1f-5031-4c6b-aac7-017115a40e7c
-ms.openlocfilehash: 649e26c3f0704dfd6740b1a250613545e29316a3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6f76ff42d2e28afe251ce234220051111736d3c9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62407743"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215084"
 ---
 # <a name="multithreading-support-for-older-code-visual-c"></a>Multithreadingunterstützung für älteren Code (Visual C++)
 
@@ -30,7 +30,7 @@ Bietet Unterstützung beim Erstellen von Multithreadanwendungen mit Microsoft Wi
 Definiert Prozesse und Threads und erörtert, wie Multithreading in MFC gehandhabt wird.
 
 [Multithreading und Gebietsschemas](multithreading-and-locales.md)<br/>
-Erläutert Probleme, die auftreten, wenn Sie die Gebietsschema-Funktionen von C-Laufzeitbibliothek und C++-Standardbibliothek in einer Multithreadanwendung zu verwenden.
+Erläutert Probleme, die auftreten, wenn die Gebiets Schema Funktionen der C-Lauf Zeit Bibliothek C++ und der Standard Bibliothek in einer Multithread-Anwendung verwendet werden.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 

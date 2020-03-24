@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - RC2109
 ms.assetid: b800aa67-33c0-42f5-81a2-7a64a3b6b824
-ms.openlocfilehash: adfbc32adc9e55f4cc0e1a49d3b5505efead5d25
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 49edd32da192816ba22cb030958f87cd049ec59c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62399901"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191560"
 ---
 # <a name="resource-compiler-error-rc2109"></a>Ressourcencompiler: Fehler RC2109
 
-erwartete numerische Dialog-Konstante
+numerische Dialog Konstante erwartet
 
-Ein **Dialogfeld** -Anweisung erfordert ganzzahlige Werte für die *X, y, Breite*, und *Höhe* Felder. Stellen Sie sicher, dass diese Werte nach der **Dialogfeld** -Schlüsselwort und, dass sie nicht negativ sind.
+Eine **Dialog** Feld Anweisung erfordert ganzzahlige Werte für die Felder *x, y, Width*und *height* . Stellen Sie sicher, dass diese Werte nach dem Schlüsselwort " **Dialog** " eingefügt werden und nicht negativ sind.

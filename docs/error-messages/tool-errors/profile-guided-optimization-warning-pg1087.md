@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - PG1087
 ms.assetid: 50785d68-17a2-4d82-bee2-8c514faf61c6
-ms.openlocfilehash: 2e214560996ff69aa049da3f905a6f7acbe9927b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1d0d908e53812a666cf354976aca416e9f2736da
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359721"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80193029"
 ---
 # <a name="profile-guided-optimization-warning-pg1087"></a>Warnung bei profilgesteuerter Optimierung: PG1087
 
-Die PGC-Datei 'File' ist ungültig.
+Die PGC-Datei "file" ist ungültig.
 
-Eine PGC-Datei ist beschädigt, möglicherweise aufgrund von nicht ordnungsgemäße Beenden an einer Profilerstellungssitzung beginnen.  Führen Sie die profilerstellung Szenario erneut aus, und beenden Sie normalerweise zu.
+Eine PGC-Datei ist beschädigt, möglicherweise aufgrund eines ungewöhnlichen Endes einer Profil Erstellungs Sitzung.  Erneutes Ausführen des Profil Erstellungs Szenarios und ordnungsgemäße Beendigung.

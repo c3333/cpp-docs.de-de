@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2026
 ms.assetid: 8e64b6e1-b967-479b-be97-d12dc4a8e389
-ms.openlocfilehash: da4c03c681f95efaa5edb159869315b41d027e99
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9747b1edadc76ceeb502b2c6fd03496b91769f5a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62303527"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208064"
 ---
 # <a name="compiler-error-c2026"></a>Compilerfehler C2026
 
-die Zeichenfolge ist zu lang, Zeichen am Ende wurden
+Zeichenfolge zu groß, nachfolgende Zeichen abgeschnitten
 
-Die Zeichenfolge war länger als das Limit von 16380 Einzelbyte-Zeichen.
+Die Zeichenfolge ist länger als der Grenzwert von 16380 Einzel Byte Zeichen.
 
-Vor der angrenzende Zeichenfolgen verkettet werden darf keine Zeichenfolge länger als 16380 Einzelbyte-Zeichen sein.
+Bevor angrenzende Zeichen folgen verkettet werden, darf eine Zeichenfolge nicht länger als 16380 Einzel Byte Zeichen sein.
 
-Eine Unicode-Zeichenfolge von etwa halb so lang würde auch diesen Fehler generieren.
+Eine Unicode-Zeichenfolge mit ungefähr einer Hälfte dieser Länge würde ebenfalls diesen Fehler generieren.
 
-Wenn Sie eine Zeichenfolge, die wie folgt definiert haben, werden C2026 generiert:
+Wenn Sie eine Zeichenfolge wie folgt definiert haben, generiert Sie C2026:
 
 ```
 char sz[] =
@@ -33,7 +33,7 @@ long string here\
 ";
 ```
 
-Sie können es wie folgt aufteilen:
+Sie können Sie wie folgt unterbrechen:
 
 ```
 char sz[] =
@@ -43,4 +43,4 @@ imagine a really, really "
 ";
 ```
 
-Möglicherweise möchten Sie zum Speichern von sehr umfangreiche Zeichenfolgenliterale (32 KB oder mehr) aus einer benutzerdefinierten Ressource oder eine externe Datei. Finden Sie unter [Erstellen einer neuen benutzerdefinierten Ressource oder Datenressource](../../windows/creating-a-new-custom-or-data-resource.md) für Weitere Informationen.
+Möglicherweise möchten Sie in einer benutzerdefinierten Ressource oder einer externen Datei besonders große Zeichenfolgenliterale (32 KB oder mehr) speichern. Weitere Informationen finden Sie unter [Erstellen einer neuen benutzerdefinierten Ressource oder Daten Ressource](../../windows/creating-a-new-custom-or-data-resource.md) .

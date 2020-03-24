@@ -9,16 +9,16 @@ helpviewer_keywords:
 - databases [C++], MFC programming model
 - Windows programming MFC symbols [C++]
 ms.assetid: c1e689c4-45d7-40a3-8ee9-f47676cc3bbb
-ms.openlocfilehash: e9e4f9f62a3004e171eea9e3552d8a0f58923075
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 76279b24002460b51bc2f67d4395ff271752d964
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62376457"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80215175"
 ---
 # <a name="mfc-predefined-symbols"></a>Vordefinierte MFC-Symbole
 
-MFC-Projekte enthalten immer mehrere Headerdateien, die von Windows unterstützt. Diese werden hinzugefügt, über `#include` Anweisungen in der `StdAfx.h` Datei:
+MFC-Projekte enthalten immer mehrere Header Dateien, die Windows unterstützen. Diese werden über `#include`-Anweisungen in der `StdAfx.h`-Datei hinzugefügt:
 
 ```cpp
 #include <afxwin.h>      //MFC core and standard components
@@ -28,7 +28,7 @@ MFC-Projekte enthalten immer mehrere Headerdateien, die von Windows unterstützt
 #include <afxcmn.h>      //MFC support for Windows common controls.
 ```
 
-Die Headerdateien enthalten die Symbol-ID-Werte für allgemeine MFC-Werte. Diese Symbole sind nur verfügbar, wenn Sie in einem MFC-Projekt arbeiten. Die `AFX_` Präfix folgt die standardmäßige Namenspräfixe.
+Die Header Dateien enthalten Symbol-ID-Werte für allgemeine MFC-Werte. Diese Symbole sind nur verfügbar, wenn Sie in einem MFC-Projekt arbeiten. Auf das `AFX_` Präfix folgen die Standard Präfixe für Symbolnamen.
 
 |||
 |-|-|
@@ -85,7 +85,7 @@ Die Headerdateien enthalten die Symbol-ID-Werte für allgemeine MFC-Werte. Diese
 |AFX_IDP_ASK_TO_SAVE|AFX_IDP_ASK_TO_UPDATE|
 |AFX_IDP_BAD_VERB|AFX_IDP_COMMAND_FAILURE|
 |AFX_IDP_DAO_BADBINDINFO|AFX_IDP_DAO_COLUMNUNAVAILABLE|
-|AFX_IDP_DAO_DFX_BIND|AFX_IDP_DAO_ENGINE_ INITIALIZATION|
+|AFX_IDP_DAO_DFX_BIND|AFX_IDP_DAO_ENGINE_ Initialisierung|
 |AFX_IDP_DAO_OBJECT_NOT_OPEN|AFX_IDP_DAO_ROWTOOSHORT|
 |AFX_IDP_DLL_BAD_VERSION|AFX_IDP_DLL_LOAD_FAILED|
 |AFX_IDP_E_BADFILEMODE|AFX_IDP_E_BADFILENAME|
@@ -95,18 +95,18 @@ Die Headerdateien enthalten die Symbol-ID-Werte für allgemeine MFC-Werte. Diese
 |AFX_IDP_E_DISKFULL|AFX_IDP_E_DISKNOTREADY|
 |AFX_IDP_E_DIVISIONBYZERO|AFX_IDP_E_FILEALREADYEXISTS|
 |AFX_IDP_E_FILEALREADYOPEN|AFX_IDP_E_FILENOTFOUND|
-|AFX_IDP_E_GETNOTSUPPORTED|AFX_IDP_E_ GETNOTSUPPORTEDATRUNTIME|
-|AFX_IDP_E_ILLEGALFUNCTIONCALL|AFX_IDP_E_ INVALIDCLIPBOARDFORMAT|
+|AFX_IDP_E_GETNOTSUPPORTED|AFX_IDP_E_ getnotsupportedatruntime|
+|AFX_IDP_E_ILLEGALFUNCTIONCALL|AFX_IDP_E_ invalidclipboardformat|
 |AFX_IDP_E_INVALIDFILEFORMAT|AFX_IDP_E_INVALIDPATTERNSTRING|
-|AFX_IDP_E_INVALIDPICTURE|AFX_IDP_E_ INVALIDPROPERTYARRAYINDEX|
+|AFX_IDP_E_INVALIDPICTURE|AFX_IDP_E_ invalidpropertyarrayindex|
 |AFX_IDP_E_INVALIDPROPERTYVALUE|AFX_IDP_E_INVALIDUSEOFNULL|
-|AFX_IDP_E_ NEEDPROPERTYARRAYINDEX|AFX_IDP_E_OUTOFMEMORY|
+|AFX_IDP_E_ needpropertyarrayindex|AFX_IDP_E_OUTOFMEMORY|
 |AFX_IDP_E_OUTOFSTACKSPACE|AFX_IDP_E_OVERFLOW|
 |AFX_IDP_E_PATHFILEACCESSERROR|AFX_IDP_E_PATHNOTTFOUND|
 |AFX_IDP_E_PERMISSIONDENIED|AFX_IDP_E_PRINTERERROR|
 |AFX_IDP_E_PROPERTYNOTFOUND|AFX_IDP_E_REPLACEMENTSTOOLONG|
 |AFX_IDP_E_SEARCHTEXTNOTFOUND|AFX_IDP_E_SETNOTPERMITTED|
-|AFX_IDP_E_SETNOTSUPPORTED|AFX_IDP_E_ SETNOTSUPPORTEDATRUNTIME|
+|AFX_IDP_E_SETNOTSUPPORTED|AFX_IDP_E_ setnotsupportedatruntime|
 |AFX_IDP_E_TOOMANYFILES|AFX_IDP_FAILED_ACCESS_READ|
 |AFX_IDP_FAILED_ACCESS_WRITE|AFX_IDP_FAILED_DISK_FULL|
 |AFX_IDP_FAILED_INVALID_FORMAT|AFX_IDP_FAILED_INVALID_PATH|
@@ -181,7 +181,7 @@ Die Headerdateien enthalten die Symbol-ID-Werte für allgemeine MFC-Werte. Diese
 |AFX_IDS_LINKSOURCE_FORMAT|AFX_IDS_MANUAL|
 |AFX_IDS_MDICHILD|AFX_IDS_MEMORY_EXCEPTION|
 |AFX_IDS_METAFILE_FORMAT|AFX_IDS_MINI-FONT|
-|AFX_IDS_NOT_DOCOBJECT|AFX_IDS_NOT_SUPPORTED_ EXCEPTION|
+|AFX_IDS_NOT_DOCOBJECT|AFX_IDS_NOT_SUPPORTED_ Ausnahme|
 |AFX_IDS_OBJ_TITLE_INPLACE|AFX_IDS_OBJECT_MENUITEM|
 |AFX_IDS_OCC_SCALEUNITS_PIXELS|AFX_IDS_ONEPAGE|
 |AFX_IDS_OPENFILE|AFX_IDS_PASTELINKEDTYPE|
@@ -211,9 +211,9 @@ Die Headerdateien enthalten die Symbol-ID-Werte für allgemeine MFC-Werte. Diese
 |AFX_IDS_UPDATING_ITEMS|AFX_IDS_USER_EXCEPTION|
 |AFX_IDS_VERB_EDIT|AFX_IDS_VERB_PROPERTIES|
 
-## <a name="mfc-database-programming"></a>MFC-Datenbank Programmierung
+## <a name="mfc-database-programming"></a>MFC-Datenbankprogrammierung
 
-Die Symbole in dieser Tabelle werden nur in einem MFC-Projekt angezeigt, wenn datenbankunterstützung hinzugefügt wurde. Die MFC-Verbindung mit SQL-Server und datenbankprogrammierung unterstützt.
+Die Symbole in dieser Tabelle werden nur in einem MFC-Projekt angezeigt, wenn die Datenbankunterstützung hinzugefügt wurde. Sie unterstützen die MFC-Verbindung mit SQL-Servern und der Datenbankprogrammierung.
 
 |||
 |-|-|
@@ -221,7 +221,7 @@ Die Symbole in dieser Tabelle werden nur in einem MFC-Projekt angezeigt, wenn da
 |AFX_IDP_SQL_BOOKMARKS_ NOT_SUPPORTED|AFX_IDP_SQL_CONNECT_FAIL|
 |AFX_IDP_SQL_DATA_TRUNCATED|AFX_IDP_SQL_DYNAMIC_CURSOR_ NOT_SUPPORTED|
 |AFX_IDP_SQL_DYNASET_ NOT_SUPPORTED|AFX_IDP_SQL_EMPTY_COLUMN_LIST|
-|AFX_IDP_SQL_FIELD_NOT_FOUND|AFX_IDP_SQL_FILED_SCHEMA_ MISMATCH|
+|AFX_IDP_SQL_FIELD_NOT_FOUND|AFX_IDP_SQL_FILED_SCHEMA_ stimmt nicht überein.|
 |AFX_IDP_SQL_ILLEGAL_MODE|AFX_IDP_SQL_INCORRECT_ODBC|
 |AFX_IDP_SQL_LOCK_MODE_ NOT_SUPPORTED|AFX_IDP_SQL_MULTIPLE_ ROWS_AFFECTED|
 |AFX_IDP_SQL_NO_CURRENT_RECORD|AFX_IDP_SQL_NO_DATA_FOUND|
@@ -234,9 +234,9 @@ Die Symbole in dieser Tabelle werden nur in einem MFC-Projekt angezeigt, wenn da
 
 ## <a name="mfc-windows-programming"></a>MFC-Windows-Programmierung
 
-Diese Symbole stellen ebenfalls einen Teil der MFC-Unterstützungsdateien, aber sie die Standardfunktionen für Windows-Anwendung und Aktionen unterstützen. Diese Symbole werden mit Menüs verwendet.
+Diese Symbole sind ebenfalls Teil der MFC-Unterstützungs Dateien, unterstützen jedoch standardmäßige Windows-Anwendungsfunktionen und-Aktionen. Diese Symbole werden mit Menüs verwendet.
 
-Beim Arbeiten mit Menüs in die **Menü-Editor**, diese Symbole werden angezeigt, der **Eigenschaft** zugeordnete allgemeine Befehle im Menü Fenster. Z. B. wenn die Anwendung verfügt eine **Datei** Menü mit einer **beenden** Befehl ",", mit dem Befehl mit dem Symbol ID_APP_EXIT verknüpft werden in der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window).
+Wenn Sie im **Menü-Editor**mit Menüs arbeiten, werden diese Symbole im **Eigenschaften** Fenster angezeigt, das mit allgemeinen Menübefehlen verknüpft ist. Wenn die Anwendung beispielsweise über ein Menü **Datei** mit einem Befehl **Exit** verfügt, wird dieser Befehl dem Symbol ID_APP_EXIT in der [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)zugeordnet.
 
 ||||
 |-|-|-|
@@ -258,7 +258,7 @@ Beim Arbeiten mit Menüs in die **Menü-Editor**, diese Symbole werden angezeigt
 |ID_FILE_SAVE|ID_FILE_SAVE_AS|ID_FILE_SAVE_COPY_AS|
 |ID_FILE_SEND_MAIL|ID_FILE_UPDATE|ID_FORMAT_FONT|
 |ID_HELP|ID_HELP_FINDER|ID_HELP_INDEX|
-|ID_HELP+USING|ID_INDICATOR_CAPS|ID_INDICATOR_EXT|
+|ID_HELP + Verwendung|ID_INDICATOR_CAPS|ID_INDICATOR_EXT|
 |ID_INDICATOR_KANA|ID_INDICATOR_NUM|ID_INDICATOR_OVR|
 |ID_INDICATOR_REC|ID_INDICATOR_SCRL|ID_NEXT_PANE|
 |ID_OLE_EDIT_CHANGE_ICON|ID_OLE_EDIT_CONVERT|ID_OLE_EDIT_LINKS|
@@ -276,11 +276,11 @@ Beim Arbeiten mit Menüs in die **Menü-Editor**, diese Symbole werden angezeigt
 |IDNO|IDOK|IDP_OLE_INIT_FAILED|
 |IDRETRY|IDYES||
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 MFC
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vordefinierte Symbol-IDs](../windows/predefined-symbol-ids.md)<br/>
 [Vordefinierte ATL-Symbole](../windows/atl-predefined-symbols.md)<br/>

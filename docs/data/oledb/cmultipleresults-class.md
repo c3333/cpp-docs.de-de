@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMultipleResults class
 ms.assetid: 6ce5bbb9-b551-483c-988a-e6aee9135a19
-ms.openlocfilehash: 5bc1bb9ab1e0b6f5f8b2914e4249361ff37cce08
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 88bc956c3a08c6dddbd7d26a18cfc10f778cabcf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62230826"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211827"
 ---
 # <a name="cmultipleresults-class"></a>CMultipleResults-Klasse
 
-Wenn Sie einen Befehl aus, um mehrere Resultsets verarbeiten möchten, verwenden Sie `CMultipleResults` für die `CCommand` Vorlagenargument *TMultiple*.
+Wenn Sie möchten, dass ein Befehl mehrere Resultsets behandelt, verwenden Sie `CMultipleResults` für das `CCommand` Template-Argument *TMultiple*.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,15 +25,15 @@ Wenn Sie einen Befehl aus, um mehrere Resultsets verarbeiten möchten, verwenden
 class CMultipleResults
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Behandeln von mehreren Resultsets festlegt, [CCommand](../../data/oledb/ccommand-class.md) muss von dieser Klasse erben.
+Um mehrere Resultsets zu verarbeiten, muss [CCommand](../../data/oledb/ccommand-class.md) von dieser Klasse erben.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

@@ -6,40 +6,40 @@ f1_keywords:
 helpviewer_keywords:
 - U1033
 ms.assetid: c146f7b5-7d5c-4329-a522-28a648546016
-ms.openlocfilehash: 3b1df28e3cd7b27a9e7a130d9d71c1af68db9aec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4511b15c84479c3531a3bea85964e2768de0181f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62324362"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173386"
 ---
 # <a name="nmake-fatal-error-u1033"></a>NMAKE: Schwerwiegender Fehler U1033
 
-Syntaxfehler: "String" Unerwarteter
+Syntax Fehler: "String" ist unerwartet.
 
-Die Zeichenfolge ist nicht Teil der gültige Syntax für ein Makefile.
+Die Zeichenfolge ist nicht Teil der gültigen Syntax für ein Makefile.
 
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>Dieser Fehler kann eine der folgenden Ursachen haben:
 
-1. Falls die schließende spitze Klammern (**<<**) für eine Inline-Datei an, die nicht am Anfang einer Zeile sind, tritt der folgende Fehler auf:
+1. Wenn sich der schließende Satz von spitzen Klammern ( **<<** ) für eine Inline Datei nicht am Anfang einer Zeile befindet, tritt der folgende Fehler auf:
 
     ```
     syntax error : 'EOF' unexpected
     ```
 
-1. Wenn eine Makrodefinition in das Makefile ein Gleichheitszeichen enthält (**=**) ohne einen vorangestellten Namen, oder wenn der Name definiert wird, wird ein Makro, das nicht erweitert, tritt der folgende Fehler auf:
+1. Wenn eine Makro Definition in Makefile ein Gleichheitszeichen ( **=** ) ohne einen vorangehenden Namen enthielt oder wenn der definierte Name ein Makro ist, das zu "Nothing" erweitert wird, tritt der folgende Fehler auf:
 
     ```
     syntax error : '=' unexpected
     ```
 
-1. Wenn das Semikolon (**;**) in einer Kommentarzeile in TOOLS. INI ist nicht am Anfang der Zeile, tritt der folgende Fehler auf:
+1. , Wenn sich das Semikolon ( **;** ) in einer Kommentarzeile in den-Tools befinden. Die ini befindet sich nicht am Anfang der Zeile, der folgende Fehler tritt auf:
 
     ```
     syntax error : ';' unexpected
     ```
 
-1. Wenn das Makefile durch ein Textverarbeitungsprogramm formatiert wurde, kann der folgende Fehler auftreten:
+1. Wenn Makefile von einem Textprozessor formatiert wurde, kann der folgende Fehler auftreten:
 
     ```
     syntax error : ':' unexpected

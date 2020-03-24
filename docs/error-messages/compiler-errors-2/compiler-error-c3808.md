@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3808
 ms.assetid: 2ee8ac97-3ea4-417a-8710-be73a7f98cf4
-ms.openlocfilehash: 0a1b0b82241c6e48d2c1941ff8122697d11492eb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e854764dc3f8d3ede79965302b62055b91df0a4c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62352987"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165625"
 ---
 # <a name="compiler-error-c3808"></a>Compilerfehler C3808
 
-> "*Typ*': eine Klasse mit dem ComImport-Attribut die Member kann nicht definiert"*Member*", nur abstrakte oder Dllimport-Funktionen sind zulässig
+> "*Typ*": eine Klasse mit dem ComImport-Attribut kann Member "*Member*" nicht definieren, es sind nur abstrakte Funktionen oder DllImport-Funktionen zulässig.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Typ, der von abgeleitet <xref:System.Runtime.InteropServices.ComImportAttribute> kann nicht definiert *Member*.
+Ein Typ, der von <xref:System.Runtime.InteropServices.ComImportAttribute> abgeleitet ist, kann *Member*nicht definieren.
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C3808 generiert.
+Im folgenden Beispiel wird C3808 generiert.
 
 ```cpp
 // C3808.cpp

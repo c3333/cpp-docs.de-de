@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - C4124
 ms.assetid: c08c3a65-9584-47a1-a147-44f00c4b230e
-ms.openlocfilehash: 04732619571420e777244b81bf4b93b775477a20
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6408185c99a54d5411fa5b1058cd5ec09d3326d6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62310980"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80176311"
 ---
 # <a name="compiler-warning-level-1-c4124"></a>Compilerwarnung (Stufe 1) C4124
 
-__fastcall mit stapelüberprüfung ist ineffizient
+__fastcall mit Stapel Überprüfung ist ineffizient
 
-Die `__fastcall` Schlüsselwort wurde verwendet, mit stapelüberprüfung aktiviert.
+Das `__fastcall`-Schlüsselwort wurde mit aktivierter Stapel Überprüfung verwendet.
 
-Die `__fastcall` Konvention generiert schnelleren Code, aber die stapelüberprüfung verursacht langsamere Code. Bei Verwendung `__fastcall`, deaktivieren Sie die stapelüberprüfung mit der **Check_stack** Pragma oder/GS.
+Die `__fastcall` Konvention generiert schnelleren Code, aber die Stapel Überprüfung verursacht langsameren Code. Wenn Sie `__fastcall`verwenden, deaktivieren Sie die Stapel Überprüfung mit dem **check_stack** -Pragma oder/GS.
 
-Diese Warnung wird nur für die erste Funktion deklariert, die unter diesen Bedingungen ausgegeben.
+Diese Warnung wird nur für die erste, unter diesen Bedingungen deklarierte Funktion ausgegeben.

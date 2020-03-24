@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - ActivationFactoryCallback function
 ms.assetid: dd40c79b-1273-4f2a-8c24-ae9926fb4fd9
-ms.openlocfilehash: 4743e7724c5aba4171cb017654267afaac676f24
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0be4bebcc561cdf1df3f2502c8cc1927bdc65564
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62303876"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214213"
 ---
 # <a name="activationfactorycallback-function"></a>ActivationFactoryCallback-Funktion
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,27 +30,27 @@ inline HRESULT STDAPICALLTYPE ActivationFactoryCallback(
 ### <a name="parameters"></a>Parameter
 
 *activationId*<br/>
-Handle für eine Zeichenfolge, die einen Common Language Runtime-Klassennamen angibt.
+Handle für eine Zeichenfolge, die einen Lauf Zeit Klassennamen angibt.
 
-*ppFactory*<br/>
-Wenn dieser Vorgang abgeschlossen ist, eine aktivierungsfactory, der Parameter entspricht *ActivationId*.
+*ppfactory*<br/>
+Wenn dieser Vorgang abgeschlossen ist, eine aktivierungfactory, die dem Parameter *ActivationID*entspricht.
 
 ## <a name="return-value"></a>Rückgabewert
 
-„S_OK“ im Erfolgsfall, andernfalls ein HRESULT, das den Fehler beschreibt. Wahrscheinlich Fehler-HRESULTs sind CLASS_E_CLASSNOTAVAILABLE und E_INVALIDARG zurückgegeben.
+„S_OK“ im Erfolgsfall, andernfalls ein HRESULT, das den Fehler beschreibt. Wahrscheinliche Fehler-HRESULTs sind CLASS_E_CLASSNOTAVAILABLE und E_INVALIDARG.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ruft die aktivierungsfactory für die Aktivierung der angegebenen ID.
+Ruft die aktivierungsfactory für die angegebene Aktivierungs-ID ab.
 
-Die Windows-Runtime ruft diese Callback-Funktion, um ein Objekt, das durch den Namen der Common Language Runtime-Klasse angegebenen anzufordern.
+Der Windows-Runtime ruft diese Rückruffunktion auf, um ein Objekt anzufordern, das durch den Namen der Lauf Zeit Klasse angegeben wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** module.h
+**Header:** Module. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3418
 ms.assetid: 54042c04-3c45-41c1-bad7-90f9ee05a21b
-ms.openlocfilehash: 8456e9b17b72cd4ac98349d2f2871a1c59f56911
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 21023bfb551a1894e25cc4940892dde0f0440a0e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62311490"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200879"
 ---
 # <a name="compiler-error-c3418"></a>Compilerfehler C3418
 
 Der Zugriffsspezifizierer "Spezifizierer" wird nicht unterstützt.
 
-Ein CLR-Zugriffsspezifizierer wurde falsch angegeben.  Weitere Informationen finden Sie unter typsichtbarkeit und membersichtbarkeit in [Vorgehensweise: Definieren und Verarbeiten von Klassen und Strukturen (C++ / CLI)](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md).
+Ein CLR-Zugriffsspezifizierer wurde falsch angegeben.  Weitere Informationen finden Sie unter Typsichtbarkeit und Element Sichtbarkeit in Gewusst [wie: definieren und Verarbeiten von Klassen undC++Strukturen (/CLI)](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md).
 
 ## <a name="example"></a>Beispiel
 

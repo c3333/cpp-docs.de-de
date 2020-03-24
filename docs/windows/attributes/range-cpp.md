@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - range attribute
 ms.assetid: f352f79e-ecb3-4cdd-9cdd-8406ef473594
-ms.openlocfilehash: d1221192eb1813d759f293fe5555d7aaa5b367ab
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 380f7c9e15a3682b486217c842f00c944251e631
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514143"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214616"
 ---
 # <a name="range-c"></a>range (C++)
 
@@ -31,7 +31,7 @@ Der niedrige Bereichs Wert.
 *high*<br/>
 Der Wert für den hohen Bereich.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **Range** C++ -Attribut verfügt über die gleiche Funktionalität [wie das-](/windows/win32/Midl/range) bereichsmittell-Attribut.
 
@@ -51,7 +51,7 @@ __interface ICustom {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -59,12 +59,12 @@ __interface ICustom {
 |-|-|
 |**Betrifft**|Schnittstellen Methode, Schnittstellenparameter|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Methodenattribut](method-attributes.md)<br/>

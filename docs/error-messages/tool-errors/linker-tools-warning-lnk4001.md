@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4001
 ms.assetid: 0a8b1c3a-64ce-4311-b7c0-065995059246
-ms.openlocfilehash: 75ca9ec92bbba1c15efc11a731b3894ea03e33dd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d9659b0cf372ff8ebc225b890fb68866872bb3d6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62298788"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194407"
 ---
 # <a name="linker-tools-warning-lnk4001"></a>Linkertoolwarnung LNK4001
 
-keine Objektdateien angegeben; Bibliotheken, verwendet werden
+Es wurden keine Objektdateien angegeben. verwendete Bibliotheken
 
-Der Linker wurde mindestens eine LIB-Dateien, aber keine OBJ-Dateien übergeben.
+An den Linker wurden mindestens eine LIB-Datei, aber keine OBJ-Dateien weitergeleitet.
 
-Da der Linker nicht auf Informationen in einer LIB-Datei zugreifen, die sie in einer OBJ-Datei zugreifen kann, gibt diese Warnung an, dass Sie andere Optionen des Linkers explizit angeben müssen. Angenommen, Sie geben möglicherweise den [/MACHINE](../../build/reference/machine-specify-target-platform.md), [/OUT](../../build/reference/out-output-file-name.md), oder [/Entry](../../build/reference/entry-entry-point-symbol.md) Optionen.
+Da der Linker nicht in der Lage ist, auf Informationen in einer LIB-Datei zuzugreifen, auf die in einer OBJ-Datei zugegriffen werden kann, weist diese Warnung darauf hin, dass Sie explizit andere Linkeroptionen angeben müssen. Möglicherweise müssen Sie z. b. die Optionen [/Machine](../../build/reference/machine-specify-target-platform.md), [/out](../../build/reference/out-output-file-name.md)oder [/Entry](../../build/reference/entry-entry-point-symbol.md) angeben.

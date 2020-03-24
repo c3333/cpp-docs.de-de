@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CStreamRowset class, constructor
 - Close method
 ms.assetid: a106e953-a38a-464e-8ea5-28963d9e4811
-ms.openlocfilehash: 4a0e67ff1e800ff0f838b863eaaf839d4456ed82
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 300933fd6d10f5da39d9276db746ab789851a9a1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545558"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211171"
 ---
 # <a name="cstreamrowset-class"></a>CStreamRowset-Klasse
 
@@ -49,11 +49,11 @@ class CStreamRowset
 *TAccessor*<br/>
 Eine Accessor-Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -62,7 +62,7 @@ Eine Accessor-Klasse.
 |[CStreamRowset](#cstreamrowset)|Konstruktor. Instanziiert und initialisiert das `CStreamRowset`-Objekt.|
 |[Close](#close)|Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie `CStreamRowset` in der `CCommand`-oder `CTable` Deklaration, z. b.:
 
@@ -101,7 +101,7 @@ Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85
 void Close();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

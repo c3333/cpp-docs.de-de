@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data type conversion [C++], explicit
 - type conversion [C++], explicit conversions
 ms.assetid: 54272006-5ffb-45ed-8283-27152ab97529
-ms.openlocfilehash: 9dc9440db9ea1ff7285ff9b682f6be9900c2a1ff
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 079a3390df56ba55bd4d71a320faa249266abb54
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62184312"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189012"
 ---
 # <a name="explicit-type-conversion-operator-"></a>Operator für die explizite Typkonvertierung: ()
 
@@ -25,15 +25,15 @@ C++ lässt die explizite Typkonvertierung mithilfe der Syntax ähnlich der Synta
 simple-type-name ( expression-list )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein *Simple-Type-Name* gefolgt von einem *-Ausdrucksliste* eingeschlossen in Klammern erstellt ein Objekt des genannten Typs mithilfe der angegebenen Ausdrücke. Das folgende Beispiel zeigt eine explizite Typkonvertierung in den Typ "int":
+Ein *Simple-Type-Name* , gefolgt von einer in Klammern eingeschlossenen *Ausdrucks Liste, erstellt* mithilfe der angegebenen Ausdrücke ein Objekt vom angegebenen Typ. Das folgende Beispiel zeigt eine explizite Typkonvertierung in den Typ "int":
 
 ```cpp
 int i = int( d );
 ```
 
-Das folgende Beispiel zeigt eine `Point` Klasse.
+Das folgende Beispiel zeigt eine `Point`-Klasse.
 
 ## <a name="example"></a>Beispiel
 
@@ -88,7 +88,7 @@ x = 20, y = 10
 x = 0, y = 0
 ```
 
-Obwohl das obige Beispiel die explizite Typkonvertierung mithilfe von Konstanten demonstriert, funktioniert das gleiche Verfahren, um diese Konvertierungen für Objekte auszuführen. Der folgende Codeausschnitt stellt dies dar:
+Obwohl das obige Beispiel die explizite Typkonvertierung mithilfe von Konstanten demonstriert, funktioniert das gleiche Verfahren, um diese Konvertierungen für Objekte auszuführen. Dies wird im folgenden Codefragment dargestellt:
 
 ```cpp
 int i = 7;
@@ -116,16 +116,16 @@ struct Point
 Point pt = Point( 3, 10 );
 ```
 
-Im vorherige Beispiel, das funktionskonvertierung verwendet wird, zeigt, wie zwei Werte konvertiert (eines für *x* und eine für *y*) in den benutzerdefinierten Typ `Point`.
+Im vorherigen Beispiel, in dem die Funktionsweise Konvertierung verwendet wird, wird veranschaulicht, wie zwei Werte (eine für *x* und eine für *y*) in den benutzerdefinierten Typ `Point`konvertiert werden.
 
 > [!CAUTION]
 >  Verwenden Sie die expliziten Typkonvertierungen mit Bedacht, da sie die integrierte Typüberprüfung des C++-Compilers überschreiben.
 
-Die [Umwandlung](../cpp/cast-operator-parens.md) -Schreibweise muss für Konvertierungen in Typen, die nicht verwendet werden eine *Simple-Type-Name* (Zeiger oder Verweis Typen, z. B.). Die Konvertierung in Typen, die mit ausgedrückt werden, kann ein *Simple-Type-Name* können in jeder Form geschrieben werden.
+Die [Cast](../cpp/cast-operator-parens.md) Notation muss für Konvertierungen in Typen verwendet werden, die nicht über einen *einfachen Typnamen* (z. b. Zeiger-oder Verweis Typen) verfügen. Die Konvertierung in Typen, die mit einem *Simple-Type-Name* ausgedrückt werden können, kann in beide Formen geschrieben werden.
 
 Eine Typdefinition innerhalb von Umwandlungen ist unzulässig.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Postfixausdrücke](../cpp/postfix-expressions.md)<br/>
 [C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)

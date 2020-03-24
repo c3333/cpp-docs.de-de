@@ -10,18 +10,18 @@ helpviewer_keywords:
 - derived classes [C++], single base class
 - inheritance, single
 ms.assetid: 1cb946ed-8b1b-4cf1-bde0-d9cecbfdc622
-ms.openlocfilehash: 96af0c42a32f14280fd8c208a3e4eaec38a8ca3a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5f8f08bcea1a44199d15da82b3ddbd37b676b347
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62331121"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178794"
 ---
 # <a name="single-inheritance"></a>Einfache Vererbung
 
 In der einfachen Vererbung, eine häufige Art der Vererbung, haben Klassen nur eine Basisklasse. Betrachten Sie die Beziehung, wie in der folgenden Abbildung veranschaulicht.
 
-![Grundlegende einzelne&#45;Vererbungsdiagramm](../cpp/media/vc38xj1.gif "grundlegenden einzelnen&#45;Inheritance-Diagramm") <br/>
+![Einfaches einzelnes&#45;Vererbungs Diagramm](../cpp/media/vc38xj1.gif "Einfaches einzelnes&#45;Vererbungs Diagramm") <br/>
 Einfaches Diagramm für einzelne Vererbung
 
 Beachten Sie den Ablauf von allgemein zu spezifisch in der Abbildung. Ein anderes häufiges Attribut, das im Entwurf der meisten Klassenhierarchien zu finden ist, ist, dass die abgeleitete Klasse "eine Art" Beziehung mit der Basisklasse hat. In der Abbildung ist `Book` eine Art `PrintedDocument` und `PaperbackBook` eine Art `book`.
@@ -44,11 +44,11 @@ class PaperbackBook : public Book {};
 
 Die Basisklasse, von der jeder Klasse abgeleitet ist, wird vor der Deklaration der abgeleiteten Klasse deklariert. Es genügt nicht, eine Vorwärtsverweis-Deklaration für eine Basisklasse bereitzustellen, es muss eine vollständige Deklaration sein.
 
-Im vorherigen Beispiel, dem Zugriffsspezifizierer **öffentliche** verwendet wird. Die Bedeutung von öffentlichen, geschützten und privater Vererbung wird im beschrieben [Memberzugriffssteuerung.](../cpp/member-access-control-cpp.md)
+Im vorherigen Beispiel wird der **Public** -Zugriffsspezifizierer verwendet. Die Bedeutung der öffentlichen, geschützten und privaten Vererbung wird in [Member-Access Control beschrieben.](../cpp/member-access-control-cpp.md)
 
 Eine Klasse kann als Basisklasse für viele bestimmte Klassen dienen, wie in der folgenden Abbildung veranschaulicht.
 
-![Gesteuerte azyklisches Diagramm](../cpp/media/vc38xj2.gif "gesteuerte azyklisches Diagramm") <br/>
+![Gerichtetes azyklisches Diagramm](../cpp/media/vc38xj2.gif "Gerichteter azyklischer Graph (Directed Acyclic Graph, DAG)") <br/>
 Beispiel für gerichtetes azyklisches Diagramm
 
 Im oben gezeigten Diagramm, das "gerichtetes azyklisches Diagramm" (oder "DAG") genannt wird, sind einige der Klassen Basisklassen für mehrere abgeleitete Klassen. Umgekehrt ist dies jedoch nicht wahr: Es gibt nur eine direkte Basisklasse für jede abgeleitete Klasse. Das Diagramm in der Abbildung stellt eine Struktur mit einfacher Vererbung dar.
@@ -56,7 +56,7 @@ Im oben gezeigten Diagramm, das "gerichtetes azyklisches Diagramm" (oder "DAG") 
 > [!NOTE]
 > Gerichtete azyklische Diagramme sind nicht eindeutig für die einfache Vererbung. Sie werden auch verwendet, um Mehrfachvererbungsdiagramme darzustellen.
 
-Bei der Vererbung enthält die abgeleitete Klasse die Member der Basisklasse plus alle neuen Member, die Sie hinzufügen. Daher kann eine abgeleitete Klasse auf Member der Basisklasse verweisen (es sei denn, diese Member werden in der abgeleiteten Klasse neu definiert). Der Bereichsauflösungsoperator (`::`) kann verwendet werden, um auf Member von direkten oder indirekten Basisklassen zu verweisen, wenn diese Member in der abgeleiteten Klasse neu definiert wurden. Betrachten Sie das folgende Beispiel:
+Bei der Vererbung enthält die abgeleitete Klasse die Member der Basisklasse plus alle neuen Member, die Sie hinzufügen. Daher kann eine abgeleitete Klasse auf Member der Basisklasse verweisen (es sei denn, diese Member werden in der abgeleiteten Klasse neu definiert). Der Bereichsauflösungsoperator (`::`) kann verwendet werden, um auf Member von direkten oder indirekten Basisklassen zu verweisen, wenn diese Member in der abgeleiteten Klasse neu definiert wurden. Betrachten Sie dieses Beispiel:
 
 ```cpp
 // deriv_SingleInheritance2.cpp
@@ -154,4 +154,4 @@ Im vorherigen Beispiel werden verschiedene Typen erstellt. Da diese Typen aber a
 Da die `Document`-Klasse eine `PrintNameOf`-Funktion aufweist, kann sie den Namen jedes Buch in der Bibliothek drucken. Möglicherweise lässt sie jedoch einen Teil der spezifische Informationen zum Typ des Dokuments weg (Seitenanzahl für `Book`, Anzahl von Bytes für `HelpFile` usw.).
 
 > [!NOTE]
->  Die Basisklasse zu zwingen, eine Funktion wie `PrintNameOf` zu implementieren, führt häufig nicht zum optimalen Entwurf. [Virtuelle Funktionen](../cpp/virtual-functions.md) bieten andere Entwurfsalternativen.
+>  Die Basisklasse zu zwingen, eine Funktion wie `PrintNameOf` zu implementieren, führt häufig nicht zum optimalen Entwurf. [Virtuelle Funktionen](../cpp/virtual-functions.md) bieten andere Entwurfs Alternativen.

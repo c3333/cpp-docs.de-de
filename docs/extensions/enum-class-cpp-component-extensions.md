@@ -3,12 +3,12 @@ title: Enumerationsklasse (C++/CLI und C++/CX)
 ms.date: 10/12/2018
 ms.topic: reference
 ms.assetid: 8010fa8c-bad6-45b4-8214-b4db64d7ffe1
-ms.openlocfilehash: da9097a02de08fd1615f5401d08c438c5f64c139
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 6305d41febfe4d55b2b84062e76ff62c3ea2b18a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516595"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80182135"
 ---
 # <a name="enum-class--ccli-and-ccx"></a>Enumerationsklasse (C++/CLI und C++/CX)
 
@@ -16,7 +16,7 @@ Deklariert eine Enumeration im Namespacebereich, die ein benutzerdefinierter Typ
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 C++/CX und C++/CLI unterstützen **öffentliche Enumerationsklassen** und **private Enumerationsklassen**, die der standardmäßigen **Enumerationsklasse** von C++ ähneln, jedoch zusätzlich einen Zugriffsspezifizierer besitzen. Unter **/clr**ist der C++11-Typ **enum class** zulässig, jedoch wird die Warnung C4472 generiert, die sicherstellen soll, dass Sie tatsächlich den ISO-Enumerationstyp und nicht den C++/CX- und C++/CLI-Typ verwenden möchten. Weitere Informationen zum C++-Schlüsselwort **enum** nach ISO-Standard finden Sie unter [Enumerationen](../cpp/enumerations-cpp.md).
 
@@ -34,7 +34,7 @@ accessenum structenumeration-identifier[:underlying-type] { enumerator-list } [v
 
 ### <a name="parameters"></a>Parameter
 
-*Zugriff*<br/>
+*access*<br/>
 Der Zugriff auf die Enumeration, der öffentlich (**public**) oder privat (**private**) sein kann.
 
 *enumeration-identifier*<br/>
@@ -53,7 +53,7 @@ Der Wert jedes Enumerators ist ein konstanter Ausdruck, der entweder implizit vo
 *var*<br/>
 (Optional) Der Name einer Variablen des Enumerationstyps.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen und Beispiele finden Sie unter [Enums](../cppcx/enums-c-cx.md).
 
@@ -61,11 +61,11 @@ Beachten Sie, dass der Compiler Fehlermeldungen ausgibt, wenn der konstante Ausd
 
 - Wenn der *underlying-type* numerisch ist und ein Enumerator den maximalen Wert für diesen Typ angibt, kann der Wert der folgenden implizit definierten Enumeration nicht dargestellt werden.
 
-- Wenn der *underlying-type* **bool** ist und mehr als zwei Enumeratoren implizit definiert werden, können die Enumeratoren, die auf die ersten beiden folgen, nicht dargestellt werden.
+- Wenn der *underlying-type***bool** ist und mehr als zwei Enumeratoren implizit definiert werden, können die Enumeratoren, die auf die ersten beiden folgen, nicht dargestellt werden.
 
-- Wenn der *underlying-type* `char16`ist und der Enumerationswert von 0xD800 bis 0xDFFF reicht, kann der Wert dargestellt werden. Der Wert ist jedoch logisch falsch, da er die Hälfte ein Unicode-Ersatzzeichenpaars darstellt und nicht isoliert angezeigt werden soll.
+- Wenn der *underlying-type*`char16`ist und der Enumerationswert von 0xD800 bis 0xDFFF reicht, kann der Wert dargestellt werden. Der Wert ist jedoch logisch falsch, da er die Hälfte ein Unicode-Ersatzzeichenpaars darstellt und nicht isoliert angezeigt werden soll.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -82,7 +82,7 @@ accessenum structname [:type] { enumerator-list } var;
 
 ### <a name="parameters"></a>Parameter
 
-*Zugriff*<br/>
+*access*<br/>
 Die Zugriff der Enumeration. Er kann entweder öffentlich (**public**) oder privat (**private**) sein.
 
 *enumerator-list*<br/>
@@ -91,13 +91,13 @@ Eine durch Komma getrennte Liste der Bezeichner (Enumeratoren) in der Enumeratio
 *name*<br/>
 Der Name der Enumeration. Anonyme verwaltete Enumerationen sind nicht zulässig.
 
-*Typ*<br/>
+*type*<br/>
 (Optional) Der zugrunde liegende Typ der *Bezeichner*. Dabei kann es sich um einen beliebigen skalaren Typ handeln, wie Versionen von **int**, **short** oder **long** mit oder ohne Vorzeichen.  **bool** oder **char** sind ebenfalls zulässig.
 
 *var*<br/>
 (Optional) Der Name einer Variablen des Enumerationstyps.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 **enum class** und **enum struct** sind entsprechende Deklarationen.
 
@@ -174,7 +174,7 @@ Weitere Informationen zu CLR-Enumerationen finden Sie unter:
 
 - [Zugrunde liegender Typ eines Enumerators](../dotnet/how-to-define-and-consume-enums-in-cpp-cli.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -219,6 +219,6 @@ convert to int: 1
 1
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

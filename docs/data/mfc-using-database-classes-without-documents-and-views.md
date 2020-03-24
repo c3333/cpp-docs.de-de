@@ -17,108 +17,108 @@ helpviewer_keywords:
 - database applications [C++], without documents
 - user interface [C++], drawing information
 ms.assetid: 15bf52d4-91cf-4b1d-8b37-87c3ae70123a
-ms.openlocfilehash: ab9946609fa20c4644873a684a754cbc8a41742f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 57a7abd89bc9bfb465912a35c21f9780668f4466
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396014"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213355"
 ---
 # <a name="mfc-using-database-classes-without-documents-and-views"></a>MFC: Verwenden von Datenbankklassen ohne Dokumente und Ansichten
 
-In einigen Fällen können Sie nicht die Framework Dokument-/Ansichtarchitektur in datenbankanwendungen verwenden möchten. In diesem Thema wird Folgendes erläutert:
+In manchen Fällen möchten Sie die Dokument-/Ansichtarchitektur des Frameworks in ihren Datenbankanwendungen nicht verwenden. In diesem Thema wird Folgendes erläutert:
 
-- [Wenn Sie nicht möchten Dokumente](#_core_when_you_don.92.t_need_documents) z. B. die Dokumentserialisierung.
+- [Wenn Sie keine Dokumente wie die](#_core_when_you_don.92.t_need_documents) Dokumentserialisierung verwenden müssen.
 
-- [Assistenten-Optionen für Anwendungen](#_core_appwizard_options_for_documents_and_views) zur Unterstützung von Anwendungen ohne Serialisierung und dokumentbezogene **Datei** Menübefehle, z. B. **neu**, **öffnen** , **Speichern**, und **speichern als**.
+- [Optionen des Anwendungs-Assistenten](#_core_appwizard_options_for_documents_and_views) zur Unterstützung von Anwendungen ohne Serialisierung und ohne Dokument bezogene **Datei** Menübefehle wie " **neu**", " **Öffnen**", " **Speichern**" und " **Speichern**unter".
 
-- [Gewusst wie: Arbeiten mit einer Anwendung, die eine minimale Dokumente verwendet](#_core_applications_with_minimal_documents).
+- [Arbeiten mit einer Anwendung, die ein minimales Dokument verwendet](#_core_applications_with_minimal_documents).
 
-- [Wie Sie eine Anwendung keine Dokumente oder Ansichten strukturieren](#_core_applications_with_no_document).
+- [Struktur einer Anwendung ohne Dokument oder Sicht](#_core_applications_with_no_document).
 
-##  <a name="_core_when_you_don.92.t_need_documents"></a> Wann benötigen Sie keine Dokumente
+##  <a name="when-you-do-not-need-documents"></a><a name="_core_when_you_don.92.t_need_documents"></a>Wenn Sie keine Dokumente benötigen
 
-Einige Anwendungen verfügen, unterscheidet sich vom Konzept eines Dokuments. Diese Anwendungen in der Regel Laden einer Datei die meisten oder alle aus dem Speicher in den Arbeitsspeicher mit einem **Datei öffnen** Befehl. Die aktualisierte Datei wieder auf den Datenträger geschrieben gleichzeitig mit einer **Datei speichern** oder **speichern** Befehl. Welche dem Benutzer angezeigt wird, ist eine Datendatei.
+Einige Anwendungen verfügen über ein eindeutiges Konzept eines Dokuments. Diese Anwendungen laden in der Regel alle oder die meisten Dateien aus dem Speicher in den Arbeitsspeicher mit einem Befehl zum **Öffnen von Dateien** . Sie schreiben die aktualisierte Datei mit dem Befehl **Datei speichern** oder **Speichern** unter in den Speicher. Was dem Benutzer angezeigt wird, ist eine Datendatei.
 
-Einige Kategorien von Anwendungen ist ein Dokument jedoch nicht erforderlich. Datenbankanwendungen, die im Hinblick auf Transaktionen ausgeführt werden. Die Anwendung wählt die Datensätze einer Datenbank und präsentiert diese dem Benutzer, häufig jeweils einzeln. Welche dem Benutzer angezeigt wird, ist normalerweise ein einzelner aktueller Datensatz an, der möglicherweise die einzige im Arbeitsspeicher.
+Einige Kategorien von Anwendungen erfordern jedoch kein Dokument. Datenbankanwendungen arbeiten in Bezug auf Transaktionen. Die Anwendung wählt Datensätze aus einer Datenbank aus und präsentiert Sie dem Benutzer, häufig nacheinander. Was dem Benutzer angezeigt wird, ist normalerweise ein einzelner Aktueller Datensatz, bei dem es sich möglicherweise um den einzigen im Arbeitsspeicher handelt.
 
-Wenn Ihre Anwendung kein Dokuments zum Speichern von Daten erfordert, können Sie einige oder alle der Framework Dokument-/Ansichtarchitektur verzichten. Wie viel Sie verzichten, hängt von der von Ihnen bevorzugten Ansatz. Sie können:
+Wenn für Ihre Anwendung kein Dokument zum Speichern von Daten erforderlich ist, können Sie die Dokument-/Ansichtsarchitektur des Frameworks auf einige oder alle Anwendungen verzichten. Die Menge, die Sie ausgeben, hängt von dem bevorzugten Ansatz ab. Sie können Folgendes tun:
 
-- Verwenden Sie minimale Dokumente als Ort, um eine Verbindung mit der Datenquelle zu speichern, aber mit normalen Dokumentfunktionen, z. B. die Serialisierung verteilen. Dies ist nützlich, wenn Sie mehrere Ansichten der Daten und synchronisiert werden alle Ansichten sollen, aktualisieren sie alle auf einmal und so weiter.
+- Verwenden Sie ein minimales Dokument als Speicherort, um eine Verbindung mit der Datenquelle zu speichern, und verwenden Sie normale Dokument Funktionen wie z. b. die Serialisierung. Dies ist hilfreich, wenn Sie mehrere Ansichten der Daten synchronisieren möchten und alle Sichten synchronisieren und alle Sichten gleichzeitig aktualisieren möchten.
 
-- Verwenden Sie ein Rahmenfenster, in dem Sie direkt zeichnen, anstatt mit einer Ansicht. Sie können in diesem Fall lassen Sie das Dokument und Speichern von Daten oder die datenverbindungen in dem Rahmenfenster-Objekt.
+- Verwenden Sie ein Rahmen Fenster, in das Sie direkt zeichnen, anstatt eine Ansicht zu verwenden. In diesem Fall lassen Sie das Dokument aus, und speichern Sie alle Daten oder Datenverbindungen im Rahmen Fenster Objekt.
 
-##  <a name="_core_appwizard_options_for_documents_and_views"></a> Application-Assistent-Optionen für Dokumente und Ansichten
+##  <a name="application-wizard-options-for-documents-and-views"></a><a name="_core_appwizard_options_for_documents_and_views"></a>Optionen des Anwendungs-Assistenten für Dokumente und Ansichten
 
-Der MFC-Anwendung-Assistent bietet mehrere Optionen **wählen datenbankunterstützung**, die in der folgenden Tabelle aufgeführt sind. Wenn Sie den MFS-Anwendungsassistenten verwenden, um eine Anwendung zu erstellen, erzeugen alle Optionen Anwendungen mit Dokumenten und Ansichten. Einige Optionen bieten die Dokumente und Ansichten, die nicht benötigten Dokument Funktionalität auslassen. Weitere Informationen finden Sie unter [Datenbankunterstützung, MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md).
+Der MFC-Anwendungs-Assistent bietet **Unterstützung für Datenbanken auswählen**verschiedene Optionen, die in der folgenden Tabelle aufgeführt sind. Wenn Sie den MFC-Anwendungs-Assistenten zum Erstellen einer Anwendung verwenden, werden mit all diesen Optionen Anwendungen mit Dokumenten und Ansichten erstellt. Einige Optionen bieten Dokumente und Sichten, die nicht benötigte Dokument Funktionen weglassen. Weitere Informationen finden Sie unter [Datenbankunterstützung, MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md).
 
-|Option|Ansicht|Dokument|
+|Option|Sicht|Dokument|
 |------------|----------|--------------|
-|**Keine**|Abgeleitet von `CView`.|Bietet keine datenbankunterstützung. Dies ist die Standardoption.<br /><br /> Bei Auswahl der **Unterstützung für die Dokument-/Ansicht** option die [Anwendungstyp, MFC-Anwendungs-Assistent](../mfc/reference/application-type-mfc-application-wizard.md) Seite erhalten Sie vollständige Document-Unterstützung, einschließlich der Serialisierung und **neu** , **Öffnen**, **speichern**, und **speichern** von Befehlen auf die **Datei** Menü. Finden Sie unter [Anwendungen ohne Dokument](#_core_applications_with_no_document).|
-|**Nur Headerdateien**|Abgeleitet von `CView`.|Stellt die Basisebene der datenbankunterstützung für Ihre Anwendung bereit.<br /><br /> Enthält Afxdb.h. Fügt der DLLs, aber erstellt keine Datenbank-spezifische Klassen. Sie können die Recordsets später erstellen und verwenden diese zum Überprüfen und Aktualisieren von Datensätzen.|
-|**Datenbankansicht ohne dateiunterstützung**|Abgeleitet von `CRecordView`|Bietet dokumentunterstützung aber keine Serialisierungsunterstützung. Dokument speichern Recordset und Koordinieren von mehreren Ansichten; unterstützt keine Serialisierung oder **neu**, **öffnen**, **speichern**, und **speichern** Befehle. Finden Sie unter [Anwendungen mit minimalen Dokumente](#_core_applications_with_minimal_documents). Wenn Sie eine Ansicht einfügen, müssen Sie die Quelle der Daten angeben.<br /><br /> Enthält Datenbank-Header-Dateien, DLLs, einer Datensatzansicht und einem Recordset. (Nur für Anwendungen mit der **Unterstützung für die Dokument-/Ansicht** Option ausgewählt wird, auf die [Anwendungstyp, MFC-Anwendungs-Assistent](../mfc/reference/application-type-mfc-application-wizard.md) Seite.)|
-|**Datenbankansicht mit dateiunterstützung**|Abgeleitet von `CRecordView`|Unterstützt vollständige Dokument, einschließlich Serialisierung und dokumentbezogene **Datei** Menübefehle. Datenbankanwendungen arbeiten in der Regel individuell für einzelne Datensätze, statt auf einer pro-Datei-Basis und daher keine Serialisierung erforderlich ist. Allerdings müssen Sie eine besondere Verwendung für die Serialisierung möglicherweise. Finden Sie unter [Anwendungen mit minimalen Dokumente](#_core_applications_with_minimal_documents). Wenn Sie eine Ansicht einfügen, müssen Sie die Quelle der Daten angeben.<br /><br /> Enthält Datenbank-Header-Dateien, DLLs, einer Datensatzansicht und einem Recordset. (Nur für Anwendungen mit der **Unterstützung für die Dokument-/Ansicht** Option ausgewählt wird, auf die [Anwendungstyp, MFC-Anwendungs-Assistent](../mfc/reference/application-type-mfc-application-wizard.md) Seite.)|
+|**None**|Abgeleitet von `CView`.|Bietet keine Unterstützung für Datenbanken. Dies ist die Standardoption.<br /><br /> Wenn Sie auf der Seite [Anwendungstyp, MFC-Anwendungs-Assistent](../mfc/reference/application-type-mfc-application-wizard.md) die Option **Unterstützung für Dokument-/Ansichtarchitektur** auswählen, erhalten Sie vollständige Dokument Unterstützung einschließlich der Befehle Serialisierung und **neu**, **Öffnen**, **Speichern**und **Speichern** unter im Menü **Datei** . Weitere Informationen finden Sie [unter Anwendungen ohne Dokument](#_core_applications_with_no_document).|
+|**Nur Header Dateien**|Abgeleitet von `CView`.|Stellt die grundlegende Ebene der Datenbankunterstützung für Ihre Anwendung bereit.<br /><br /> Schließt AFXDB. h ein. Fügt Verknüpfungs Bibliotheken hinzu, erstellt jedoch keine datenbankspezifischen Klassen. Sie können später Recordsets erstellen und verwenden, um Datensätze zu überprüfen und zu aktualisieren.|
+|**Daten Bank Ansicht ohne Dateiunterstützung**|Abgeleitet von `CRecordView`|Bietet Dokument Unterstützung, aber keine Unterstützung für die Serialisierung. Dokumente können Recordsets speichern und mehrere Sichten koordinieren. unterstützt keine Serialisierung oder die Befehle " **New**", " **Open**", " **Save**" und " **Speichern** unter". Weitere [Informationen finden Sie unter Anwendungen mit minimalen Dokumenten](#_core_applications_with_minimal_documents). Wenn Sie eine Daten Bank Sicht einschließen, müssen Sie die Quelle der Daten angeben.<br /><br /> Umfasst Daten Bank Header Dateien, Linkbibliotheken, eine Daten Satz Ansicht und ein Recordset. (Nur verfügbar für Anwendungen, bei denen die **Unterstützung für Dokument-/Ansichtarchitektur** auf der Seite [Anwendungstyp, MFC-Anwendungs-Assistent ausgewählt ist](../mfc/reference/application-type-mfc-application-wizard.md) .)|
+|**Daten Bank Ansicht mit Dateiunterstützung**|Abgeleitet von `CRecordView`|Bietet vollständige Dokument Unterstützung, einschließlich Serialisierungs-und Dokument bezogener **Datei** Menübefehle. Datenbankanwendungen arbeiten in der Regel pro Datensatz und nicht auf Datei Basis, sodass keine Serialisierung erforderlich ist. Möglicherweise haben Sie jedoch eine besondere Verwendung für die Serialisierung. Weitere [Informationen finden Sie unter Anwendungen mit minimalen Dokumenten](#_core_applications_with_minimal_documents). Wenn Sie eine Daten Bank Sicht einschließen, müssen Sie die Quelle der Daten angeben.<br /><br /> Umfasst Daten Bank Header Dateien, Linkbibliotheken, eine Daten Satz Ansicht und ein Recordset. (Nur verfügbar für Anwendungen, bei denen die **Unterstützung für Dokument-/Ansichtarchitektur** auf der Seite [Anwendungstyp, MFC-Anwendungs-Assistent ausgewählt ist](../mfc/reference/application-type-mfc-application-wizard.md) .)|
 
-Eine Erläuterung der alternativen zur Serialisierung und andere Verwendungszwecke der Serialisierung, finden Sie unter [Serialisierung: Serialisierung im Vergleich zur Datenbank-e/a](../mfc/serialization-serialization-vs-database-input-output.md).
+Eine Erörterung von Alternativen zur Serialisierung und alternativen Verwendungsmöglichkeiten für die Serialisierung finden Sie unter [Serialisierung: Serialisierung im Vergleich zur Daten Bank Eingabe/-Ausgabe](../mfc/serialization-serialization-vs-database-input-output.md).
 
-##  <a name="_core_applications_with_minimal_documents"></a> Anwendungen mit minimalen Dokumente
+##  <a name="applications-with-minimal-documents"></a><a name="_core_applications_with_minimal_documents"></a>Anwendungen mit minimalen Dokumenten
 
-Der MFC-Anwendung-Assistent verfügt über zwei Optionen, die Unterstützung von formularbasierten datenzugriffsanwendungen. Jede Option erstellt eine `CRecordView`-abgeleiteten Ansichtsklasse und ein Dokument. Sie unterscheiden sich in was eine aus dem Dokument verlassen.
+Der MFC-Anwendungs-Assistent bietet zwei Optionen, die Formular basierte Datenzugriffs Anwendungen unterstützen. Jede Option erstellt eine `CRecordView`abgeleitete Ansichts Klasse und ein Dokument. Sie unterscheiden sich darin, was Sie aus dem Dokument verlassen.
 
-###  <a name="_core_a_document_without_file_support"></a> Dokument ohne Dateiunterstützung
+###  <a name="document-without-file-support"></a><a name="_core_a_document_without_file_support"></a>Dokumente ohne Dateiunterstützung
 
-Wählen Sie die Anwendung-Assistent-Datenbankoption **-Datenbanksicht ohne dateiunterstützung** Wenn Sie nicht die Dokumentserialisierung erforderlich ist. Das Dokument erfüllt folgende Zwecke hilfreich:
+Wählen Sie die Datenbankoption Daten Bank Ansicht des Anwendungs-Assistenten **ohne Dateiunterstützung** aus, wenn Sie keine Dokumentserialisierung benötigen. Das Dokument dient den folgenden nützlichen Zwecken:
 
-- Es ist ein praktischer Ort zum Speichern einer `CRecordset` Objekt.
+- Es ist ein guter Ort zum Speichern eines `CRecordset` Objekts.
 
-   Diese Verwendung entspricht normalen Dokumentkonzepte: das Dokument speichert die Daten (oder in diesem Fall eine Gruppe von Datensätzen) und die Ansicht ist eine Ansicht des Dokuments.
+   Diese Verwendung ähnelt normalen Dokument Konzepten: das Dokument speichert die Daten (oder in diesem Fall eine Gruppe von Datensätzen), und die Sicht ist eine Ansicht des Dokuments.
 
-- Wenn Ihre Anwendung mehrere Ansichten (z. B. mehrere Datensatzansichten) vorweisen, unterstützt ein Dokument mit der Koordination der Ansichten.
+- Wenn Ihre Anwendung mehrere Sichten (z. b. mehrere Daten Satz Sichten) anzeigt, unterstützt ein Dokument das Koordinieren der Ansichten.
 
-   Wenn mehrere Ansichten der gleichen Daten anzeigen möchten, können Sie mithilfe der `CDocument::UpdateAllViews` Memberfunktion zum Koordinieren von Updates für alle Ansichten bei Änderung von einer beliebigen Ansicht der Daten.
+   Wenn die gleichen Daten in mehreren Ansichten angezeigt werden, können Sie die `CDocument::UpdateAllViews` Member-Funktion verwenden, um Updates für alle Sichten zu koordinieren, wenn die Daten von einer Ansicht geändert werden.
 
-In der Regel verwenden Sie diese Option für einfache, formularbasierte Anwendungen. Der Anwendungs-Assistent unterstützt eine einfache Struktur für solche Anwendungen automatisch.
+In der Regel verwenden Sie diese Option für einfache Formular basierte Anwendungen. Der Anwendungs-Assistent unterstützt automatisch eine bequeme Struktur für solche Anwendungen.
 
-###  <a name="_core_a_document_with_file_support"></a> Dokument mit Dateiunterstützung
+###  <a name="document-with-file-support"></a><a name="_core_a_document_with_file_support"></a>Dokument mit Dateiunterstützung
 
-Wählen Sie die Anwendung-Assistent-Datenbankoption **-Datenbanksicht mit dateiunterstützung** , wenn Sie haben eine alternative Verwendung für die dokumentbezogene **Datei** Menübefehle und Dokumentserialisierung. Für den Datenzugriff Teil des Programms, können Sie das Dokument auf die gleiche Weise wie in beschrieben [Dokument ohne Dateiunterstützung](#_core_a_document_without_file_support). Serialisierung-Funktion des Dokuments ab, können zum Beispiel lesen und Schreiben eines Dokuments der serialisierte Benutzer-Profil, das die Einstellungen des Benutzers und weitere nützliche Informationen speichert. Weitere Ideen finden Sie unter [Serialisierung: Serialisierung im Vergleich zur Datenbank-e/a](../mfc/serialization-serialization-vs-database-input-output.md).
+Wählen Sie die Datenbankoption Daten Bank Sicht der Anwendungs-Assistent **mit Dateiunterstützung** aus, wenn Sie für die Dokument bezogenen **Datei** Menübefehle und die Dokumentserialisierung eine Alternative verwenden möchten. Für den Datenzugriffs Teil des Programms können Sie das Dokument auf die gleiche Weise wie in [Dokument ohne Dateiunterstützung](#_core_a_document_without_file_support)beschrieben verwenden. Sie können z. b. die Serialisierungsfunktion des Dokuments verwenden, um ein serialisiertes Benutzerprofil Dokument zu lesen und zu schreiben, in dem die Benutzereinstellungen oder andere nützliche Informationen gespeichert werden. Weitere Ideen finden Sie unter [Serialisierung: Serialisierung im Vergleich zur Daten Bank Eingabe/-Ausgabe](../mfc/serialization-serialization-vs-database-input-output.md).
 
-Der Anwendungs-Assistent unterstützt diese Option, aber Sie müssen den Code, der das Dokument serialisiert schreiben. Store die serialisierte Informationen im Dokument-Datenmember.
+Diese Option wird vom Anwendungs-Assistenten unterstützt, Sie müssen jedoch den Code schreiben, der das Dokument serialisiert. Speichert die serialisierten Informationen in dokumentdatenmembern.
 
-##  <a name="_core_applications_with_no_document"></a> Anwendungen ohne Dokument
+##  <a name="applications-with-no-document"></a><a name="_core_applications_with_no_document"></a>Anwendungen ohne Dokument
 
-Möglicherweise möchten Sie manchmal eine Anwendung schreiben, die keine Dokumente oder Ansichten verwendet. Ohne Dokumente, die Sie speichern Ihre Daten (z. B. eine `CRecordset` Objekt) in Ihrer Klasse oder Ihrer Anwendungsklasse. Ggf. zusätzlichen Anforderungen hängen davon ab, ob die Anwendung eine Benutzeroberfläche verfügt.
+Manchmal möchten Sie möglicherweise eine Anwendung schreiben, die keine Dokumente oder Sichten verwendet. Ohne Dokumente speichern Sie Ihre Daten (z. b. ein `CRecordset` Objekt) in der Rahmen Fenster Klasse oder Ihrer Anwendungsklasse. Alle zusätzlichen Anforderungen hängen davon ab, ob die Anwendung eine Benutzeroberfläche darstellt.
 
-###  <a name="_core_database_support_with_a_user_interface"></a> Unterstützung von Datenbanken mit einer Benutzeroberfläche
+###  <a name="database-support-with-a-user-interface"></a><a name="_core_database_support_with_a_user_interface"></a>Datenbankunterstützung mit einer Benutzeroberfläche
 
-Wenn Sie eine Benutzeroberfläche (außer, z. B. eine Konsole-Befehlszeilen-Schnittstelle) verfügen, zeichnet die Anwendung direkt in den Clientbereich des Rahmenfensters statt in einer Ansicht. Eine solche Anwendung verwendet keine `CRecordView`, `CFormView`, oder `CDialog` für die primäre Benutzeroberfläche, aber normalerweise verwenden `CDialog` für normale Dialogfelder.
+Wenn Sie über eine Benutzeroberfläche verfügen (z. b. eine Konsolen-Befehlszeilenschnittstelle), wird Ihre Anwendung direkt in den Client Bereich des Frame Fensters und nicht in eine Ansicht gezeichnet. Eine solche Anwendung verwendet `CRecordView`, `CFormView`oder `CDialog` nicht für die Hauptbenutzer Oberfläche, sondern verwendet normalerweise `CDialog` für normale Dialoge.
 
-###  <a name="_core_writing_applications_without_documents"></a> Schreiben von Anwendungen ohne Dokumente
+###  <a name="writing-applications-without-documents"></a><a name="_core_writing_applications_without_documents"></a>Schreiben von Anwendungen ohne Dokumente
 
-Da Sie der Assistenten zum Erstellen von Anwendungen ohne Dokumente nicht unterstützt, müssen Sie schreiben Ihre eigenen `CWinApp`-abgeleiteten Klasse, und erstellen Sie bei Bedarf auch einen `CFrameWnd` oder `CMDIFrameWnd` Klasse. Außer Kraft setzen `CWinApp::InitInstance` und ein Anwendungsobjekt als deklarieren:
+Da der Anwendungs-Assistent keine Unterstützung für das Erstellen von Anwendungen ohne Dokumente bietet, müssen Sie eine eigene `CWinApp`abgeleitete Klasse schreiben und bei Bedarf auch eine `CFrameWnd` oder `CMDIFrameWnd` Klasse erstellen. Überschreiben Sie `CWinApp::InitInstance` und deklarieren Sie ein Anwendungs Objekt wie folgt:
 
 ```cpp
 CYourNameApp theApp;
 ```
 
-Das Framework stellt immer noch der meldungszuordnungsmechanismus und viele weitere Funktionen bereit.
+Das Framework stellt weiterhin den Nachrichten Zuordnungs Mechanismus und viele weitere Funktionen bereit.
 
-###  <a name="_core_database_support_separate_from_the_user_interface"></a> Datenbank-Unterstützung von separaten über die Benutzeroberfläche
+###  <a name="database-support-separate-from-the-user-interface"></a><a name="_core_database_support_separate_from_the_user_interface"></a>Datenbankunterstützung getrennt von der Benutzeroberfläche
 
-Einige Anwendungen benötigen keine Benutzeroberfläche oder nur eine minimale ein. Nehmen wir beispielsweise an, dass Sie schreiben:
+Einige Anwendungen benötigen keine Benutzeroberfläche oder nur eine minimale Benutzeroberfläche. Nehmen Sie beispielsweise an, dass Sie Folgendes schreiben:
 
-- Ein intermediate Datenzugriff-Objekt, das Aufrufen von anderen Anwendungen (Clients) zur speziellen Verarbeitung von Daten zwischen der Anwendung und der Datenquelle.
+- Ein zwischen Datenzugriffs Objekt, das von anderen Anwendungen (Clients) für die spezielle Verarbeitung von Daten zwischen der Anwendung und der Datenquelle aufgerufen wird.
 
-- Eine Anwendung, die Daten ohne Eingreifen des Benutzers, z. B. eine Anwendung verarbeitet werden, die Daten aus einem Datenbankformat in ein anderes oder ein, die Berechnungen und führt BatchUpdates durch verschoben.
+- Eine Anwendung, die Daten ohne Benutzereingriff verarbeitet, z. b. eine Anwendung, die Daten aus einem Datenbankformat in einen anderen verschiebt, oder eine Anwendung, die Berechnungen ausführt und Batch Aktualisierungen ausführt.
 
-Da kein Dokument besitzt die `CRecordset` Objekt, möchten Sie wahrscheinlich als eine eingebettete Datenmember in speichern Ihre `CWinApp`-Application-Klasse abgeleitet. Alternativen sind:
+Da kein Dokument das `CRecordset` Objekt besitzt, möchten Sie es wahrscheinlich als eingebetteten Datenmember in der von `CWinApp`abgeleiteten Anwendungsklasse speichern. Zu den Alternativen gehören:
 
-- Kein permanentes `CRecordset` überhaupt Objekt. Sie können NULL an die Konstruktoren der Recordset-Klasse übergeben. In diesem Fall erstellt das Framework eine temporäre `CDatabase` Objekt anhand der Informationen in der Recordsets `GetDefaultConnect` Member-Funktion. Dies ist die am wahrscheinlichsten alternative Vorgehensweise.
+- Beibehalten eines permanenten `CRecordset` Objekts überhaupt nicht. Sie können NULL an die Recordset-Klassenkonstruktoren übergeben. In diesem Fall erstellt das Framework ein temporäres `CDatabase` Objekt mithilfe der Informationen in der `GetDefaultConnect` Member-Funktion des Recordsets. Dies ist die wahrscheinlichste Alternative Methode.
 
-- Wodurch die `CRecordset` -Objekt eine globale Variable. Diese Variable muss ein Zeiger auf ein Recordsetobjekt, das Sie dynamisch erstellen Ihre `CWinApp::InitInstance` außer Kraft setzen. Dadurch wird vermieden, es wird versucht, die das Objekt zu erstellen, bevor das Framework initialisiert wird.
+- Festlegen des `CRecordset` Objekts zu einer globalen Variablen. Bei dieser Variablen sollte es sich um einen Zeiger auf ein Recordset-Objekt handeln, das Sie in der `CWinApp::InitInstance` Außerkraftsetzung dynamisch erstellen. Dadurch wird vermieden, dass versucht wird, das Objekt zu erstellen, bevor das Framework initialisiert wird.
 
-- Recordset-Objekte verwenden, wie Sie innerhalb des Kontexts eines Dokuments oder einer Ansicht. Erstellen Sie durch Recordsets im Member Funktionen Ihrer Anwendung oder ein Rahmenfenster Objekte.
+- Verwenden von Recordset-Objekten wie im Kontext eines Dokuments oder einer Ansicht. Erstellen Sie Recordsets in den Element Funktionen Ihrer Anwendung oder von Rahmen Fenster Objekten.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Datenbankklassen](../data/mfc-database-classes-odbc-and-dao.md)

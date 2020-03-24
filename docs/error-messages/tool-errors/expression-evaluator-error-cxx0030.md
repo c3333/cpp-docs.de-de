@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CAN0030
 - CXX0030
 ms.assetid: ada8b48c-09c8-49bf-ae23-313ed663c4fe
-ms.openlocfilehash: 1e52b238905fba5c310a89377b81548a1c6b5784
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 477ec31d18924e91baf2d8b7b732bc7a50eee53b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359799"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195616"
 ---
 # <a name="expression-evaluator-error-cxx0030"></a>Ausdrucksauswertungsfehler CXX0030
 
-Ausdruck kann nicht ausgewertet werden
+Ausdruck nicht auswerstellbar
 
-Ausdrucksauswertung des Debuggers konnte einen Wert für den Ausdruck nicht abrufen, laut. Eine wahrscheinliche Ursache ist, dass der Ausdruck in den Speicher verweist, die außerhalb des Programms-Adressraum ist (einen null-Zeiger zu dereferenzieren, ist ein Beispiel). Windows lässt sich nicht auf den Zugriff auf den Speicher aus, die außerhalb des Programms Adressraum ist.
+Die Ausdrucks Auswertung des Debuggers konnte keinen Wert für den Ausdruck abrufen, wie er geschrieben wurde. Eine wahrscheinliche Ursache ist, dass sich der Ausdruck auf den Speicher bezieht, der sich außerhalb des Adressraums des Programms befindet (Dereferenzierung ein NULL-Zeiger ist ein Beispiel). Windows lässt keinen Zugriff auf Arbeitsspeicher zu, der außerhalb des Adressraums des Programms liegt.
 
-Möglicherweise möchten den Ausdruck, der die Verwendung von Klammern zur Steuerung der Reihenfolge der Auswertung zu schreiben.
+Möglicherweise möchten Sie Ihren Ausdruck mithilfe von Klammern umschreiben, um die Reihenfolge der Auswertung zu steuern.
 
 Dieser Fehler ist mit CAN0030 identisch.

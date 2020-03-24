@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - BK1503
 ms.assetid: e6582344-b91e-486f-baf3-4f9028d83c3b
-ms.openlocfilehash: c81e955b912e03b322c0429097410fae74713b9d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e0f05b3979024cb053394c51fa9337197b5de7bf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62280138"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80197859"
 ---
 # <a name="bscmake-error-bk1503"></a>BSCMAKE-Fehler BK1503
 
-Datei "Dateiname" kann nicht geschrieben werden. [: Grund]
+in Datei "Dateiname" kann nicht geschrieben werden [: Reason]
 
-BSCMAKE kombiniert die SBR-Dateien, die während der Kompilierung in einer Browserdatenbank generiert. Wenn die resultierende Browserdatenbank 64 MB übersteigt oder die Anzahl der Eingabedateien (.sbr) 4.092 überschreitet, wird dieser Fehler ausgegeben werden.
+BSCMAKE kombiniert die SBR-Dateien, die während der Kompilierung generiert werden, in einer Browser Datenbank. Wenn die resultierende Browser Datenbank 64 MB überschreitet oder wenn die Anzahl der Eingabedateien (. SBR) 4092 überschreitet, wird dieser Fehler ausgegeben.
 
-Wenn das Problem durch mehr als 4.092 SBR-Dateien verursacht wird, müssen Sie die Anzahl der Eingabedateien reduzieren. Von in Visual Studio, dies kann erreicht werden durch [/FR](../../build/reference/fr-fr-create-dot-sbr-file.md) Ihr gesamtes Projekt, und klicken Sie auf erneute zugriffsprüfung während pro Datei.
+Wenn das Problem durch mehr als 4092. SBR-Dateien verursacht wird, müssen Sie die Anzahl der Eingabedateien reduzieren. In Visual Studio kann dies durch das [/fr](../../build/reference/fr-fr-create-dot-sbr-file.md) Ihres gesamten Projekts erreicht werden. Anschließend wird eine Datei auf Datei Basis erneut überprüft.
 
-Wenn das Problem durch eine BSC-Datei, die größer als 64 MB verursacht wird, wird verringert die Anzahl der SBR-Dateien als Eingabe die resultierende BSC-Datei zu verkleinern. Darüber hinaus kann die Menge von Browserinformationen durch die Verwendung der/em (ausschließen Makro erweiterte Symbole), El (lokale Variablen ausschließen) und/es einsetzen (Ausschließen von Systemdateien) reduziert werden.
+Wenn das Problem durch eine BSC-Datei mit einer Größe von mehr als 64 MB verursacht wird, verringert sich die Anzahl der SBR-Dateien als Eingabe, um die Größe der resultierenden BSC-Datei zu verringern. Außerdem kann die Menge der Browseinformationen durch die Verwendung der/EM (Erweiterte Symbole ausschließen),/El (lokale Variablen ausschließen) und/es (Ausschließen von System Dateien) reduziert werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [BSCMAKE-Optionen](../../build/reference/bscmake-options.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - string support with /clr
 - /clr compiler option [C++], string support
 ms.assetid: c695f965-9be0-4e20-9661-373bfee6557e
-ms.openlocfilehash: 8440ddf510f99618c28a6b6d585c8628df85f9cb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: b9da900ffbfff34dc596d8981095d8285bf37208
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516025"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171943"
 ---
 # <a name="string--ccli-and-ccx"></a>Zeichenfolge (C++/CLI und C++/CX)
 
@@ -32,7 +32,7 @@ using namespace default;
    String^ MyString3 = "Hello, world!";
 ```
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -59,7 +59,7 @@ Wenn ein <xref:System.String> übergeben wird, wird das Objekt (mit ToString) mi
 
 Weitere Informationen finden Sie unter [Zeichenfolgen- und Zeichenliterale (C++)](../cpp/string-and-character-literals-cpp.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: **/clr**
 
@@ -259,7 +259,7 @@ System.SByte*
 System.String
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
 [Zeichenfolgen- und Zeichenliterale](../cpp/string-and-character-literals-cpp.md)<br/>

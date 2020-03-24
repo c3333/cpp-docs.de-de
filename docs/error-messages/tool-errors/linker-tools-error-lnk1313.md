@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1313
 ms.assetid: 5df0b72e-bb3f-428c-8d84-6084238f9827
-ms.openlocfilehash: 380df2bff305acc47e423d69ea702d77c4eafdfd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a2314f160dc6add45547082c7804ec5e2c8f2349
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160431"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80194862"
 ---
 # <a name="linker-tools-error-lnk1313"></a>Linkertoolfehler LNK1313
 
 > IJW/Native-Modul gefunden; kann mit reinen Modulen nicht verknüpft werden
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die aktuelle Version von Visual C++ unterstützt nicht das Verknüpfen von systemeigenen oder gemischten verwalteten/systemeigenen .obj-Dateien mit .objdateien mit kompiliert **/CLR: pure**.
+Die aktuelle Version von Visual C++ unterstützt das Verknüpfen von systemeigenen oder gemischten verwalteten/systemeigenen. obj-Dateien mit mit **/clr: pure**kompilierten OBJ-Dateien nicht.
 
-Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
 ## <a name="example"></a>Beispiel
 

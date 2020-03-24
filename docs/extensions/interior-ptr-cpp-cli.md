@@ -9,14 +9,14 @@ f1_keywords:
 helpviewer_keywords:
 - interior_ptr keyword [C++]
 ms.assetid: 25160f74-569e-492d-9e3c-67ece7486baa
-ms.openlocfilehash: 0fba04efeaa634f5e21600768297aee0d999d1c6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 264ac0a56996b0dcbeeb64246623eca1a3fc73ff
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515695"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172151"
 ---
-# <a name="interiorptr-ccli"></a>interior_ptr (C++/CLI)
+# <a name="interior_ptr-ccli"></a>interior_ptr (C++/CLI)
 
 Ein *innerer Zeiger* deklariert einen Zeiger in einen Verweistyp, aber nicht auf das Objekt selbst. Ein innerer Zeiger kann auf ein Verweishandle, einen Werttyp, das Handle eines Boxed-Typs, einen Member eines verwalteten Typs oder ein Element eines verwalteten Arrays zeigen.
 
@@ -28,7 +28,7 @@ Ein *innerer Zeiger* deklariert einen Zeiger in einen Verweistyp, aber nicht auf
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -47,7 +47,7 @@ cli::interior_ptr<cv_qualifier type> var = &initializer;
 *cv_qualifier*<br/>
 Qualifizierer **const** oder **volatile**.
 
-*Typ*<br/>
+*type*<br/>
 Der Typ von *initializer*.
 
 *var*<br/>
@@ -56,7 +56,7 @@ Der Name der **interior_ptr**-Variablen.
 *initializer*<br/>
 Ein Member eines Verweistyps, ein Element eines verwalteten Arrays oder jedes andere Objekt, das Sie einem nativen Zeiger zuweisen können.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Ein nativer Zeiger kann kein Element nachverfolgen, da sein Speicherort sich auf dem verwalteten Heap ändert, was dazu führt, dass der Garbage Collector Instanzen eines Objekts verschiebt. Damit ein Zeiger ordnungsgemäß auf die Instanz verweisen kann, muss die Runtime den Zeiger mit dem neu positionierten Objekt aktualisieren.
 
@@ -82,7 +82,7 @@ Weitere Informationen zu inneren Zeigern finden Sie unter
 
 - [Vorgehensweise: Deklarieren von inneren Zeigern mit dem const-Schlüsselwort (C++/CLI)](how-to-declare-interior-pointers-with-the-const-keyword-cpp-cli.md)
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -122,6 +122,6 @@ int main() {
 3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

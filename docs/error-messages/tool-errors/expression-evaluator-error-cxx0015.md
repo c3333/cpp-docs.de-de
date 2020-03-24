@@ -7,23 +7,23 @@ helpviewer_keywords:
 - CXX0015
 - CAN0015
 ms.assetid: 35efaf77-d578-48d8-bfc5-fdeb2a46a8b5
-ms.openlocfilehash: f73aef18563426d28a81b92b3c37d1b7e345d0d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 19cf47d6b7b718eb19b987bcc16854af3266069b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62397145"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80196065"
 ---
 # <a name="expression-evaluator-error-cxx0015"></a>Ausdrucksauswertungsfehler CXX0015
 
 Ausdruck zu komplex (Stapelüberlauf)
 
-Der eingegebene Ausdruck war zu komplex oder geschachtelte zu tief für die Menge an Speicherplatz für die C++-ausdrucksauswertung.
+Der eingegebene Ausdruck war zu komplex oder zu tief geschachtelt für die Menge an Speicher, die der Ausdrucks Auswertung von C zur Verfügung steht.
 
-Überlauf tritt auf, in der Regel, da zu viele ausstehende Berechnungen.
+Ein Überlauf tritt normalerweise auf, weil zu viele ausstehende Berechnungen ausgeführt werden.
 
-Ordnen Sie den Ausdruck so, dass jede Komponente des Ausdrucks ausgewertet werden kann, wenn es gefunden wird, anstatt zu warten, bis andere Teile des Ausdrucks berechnet werden soll.
+Ordnen Sie den Ausdruck so an, dass jede Komponente des Ausdrucks so ausgewertet werden kann, wie er gefunden wird, anstatt zu warten, bis andere Teile des Ausdrucks berechnet werden.
 
-Unterbrechen Sie mehrere Befehle mit den Ausdruck.
+Unterbrechen Sie den Ausdruck in mehrere Befehle.
 
 Dieser Fehler ist mit CAN0015 identisch.

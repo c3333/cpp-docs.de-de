@@ -7,12 +7,12 @@ helpviewer_keywords:
 - abstract classes [C++]
 - derived classes [C++], abstract classes [C++]
 ms.assetid: f0c5975b-39de-4d68-9640-6ce57f4632e6
-ms.openlocfilehash: a7b41a2cabc2cff2eca24cf50c6c30d5190d39a9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2ea9d3765f65434cb738c2b7c53f9499bba24545
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385088"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181693"
 ---
 # <a name="abstract-classes-c"></a>Abstrakte Klassen (C++)
 
@@ -20,7 +20,7 @@ Abstrakte Klassen fungieren als Ausdrücke allgemeiner Konzepte, von denen spezi
 
 Eine Klasse, die mindestens eine rein virtuelle Funktion enthält, wird als abstrakte Klasse angesehen. Klassen, die von der abstrakten Klasse abgeleitet sind, müssen die rein virtuelle Funktion implementieren, um nicht selbst als abstrakte Klasse angesehen zu werden.
 
-Betrachten Sie das Beispiel [virtuelle Funktionen](../cpp/virtual-functions.md). Mit der `Account`-Klasse soll eine allgemeine Funktionalität gewährleistet werden, aber Objekte vom Typ `Account` sind zu allgemein, um von Nutzen zu sein. Daher ist `Account` ein guter Kandidat für eine abstrakte Klasse:
+Sehen Sie sich das in [Virtual Functions](../cpp/virtual-functions.md)gezeigte Beispiel an. Mit der `Account`-Klasse soll eine allgemeine Funktionalität gewährleistet werden, aber Objekte vom Typ `Account` sind zu allgemein, um von Nutzen zu sein. Daher ist `Account` ein guter Kandidat für eine abstrakte Klasse:
 
 ```cpp
 // deriv_AbstractClasses.cpp
@@ -53,9 +53,9 @@ Eine weitere Einschränkung ist, dass, wenn der Konstruktor für eine abstrakte 
 
 Rein virtuelle Funktionen können für abstrakte Klassen definiert werden, sie können aber nur mithilfe folgender Syntax direkt aufgerufen werden:
 
-*abstract-class-name*::*function-name*()
+*abstract-class-Name*::*Function-Name*()
 
-Dies ist hilfreich beim Entwerfen von Klassenhierarchien, deren Basisklasse()n rein virtuelle Destruktoren enthält/enthalten, da Basisklassendestruktoren immer beim Zerstören eines Objekts aufgerufen werden. Betrachten Sie das folgende Beispiel:
+Dies ist hilfreich beim Entwerfen von Klassenhierarchien, deren Basisklasse()n rein virtuelle Destruktoren enthält/enthalten, da Basisklassendestruktoren immer beim Zerstören eines Objekts aufgerufen werden. Betrachten Sie das folgenden Beispiel:
 
 ```cpp
 // Declare an abstract base class with a pure virtual destructor.
@@ -86,6 +86,6 @@ Wenn das Objekt, auf das `pDerived` zeigt, gelöscht wird, wird der Destruktor f
 > [!NOTE]
 > Im vorherigen Beispiel wird die rein virtuelle Funktion `base::~base` implizit von `derived::~derived` aufgerufen. Es ist auch möglich, rein virtuelle Funktionen explizit mithilfe eines vollqualifizierten Memberfunktionsnamens aufzurufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vererbung](../cpp/inheritance-cpp.md)

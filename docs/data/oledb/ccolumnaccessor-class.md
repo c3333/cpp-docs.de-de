@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CColumnAccessor class
 ms.assetid: 6ce1e67f-6a20-490d-9326-c168b43eee7e
-ms.openlocfilehash: 2d65fb047e758f449ed76c954bb4ac0c3623f6dd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2a3b1dac51a8300a915a7177c36f15512b583fa0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209294"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212109"
 ---
 # <a name="ccolumnaccessor-class"></a>CColumnAccessor-Klasse
 
-Generiert Consumercode für eingefügte.
+Generiert injizierten Consumer-Code.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,33 +25,33 @@ Generiert Consumercode für eingefügte.
 class CColumnAccessor : public CAccessorBase
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In den injizierten Code verwenden wird jede Spalte als einen separaten Accessor gebunden. Sie sollten bedenken, dass diese Klasse in den injizierten Code verwendet wird (z. B. stoßen sollten sie beim Debuggen), aber Sie in der Regel nie direkt sie oder ihre Methoden zu verwenden.
+Im injizierten Code ist jede Spalte als separater Accessor gebunden. Sie sollten sich bewusst sein, dass diese Klasse im eingefügten Code verwendet wird (z. b. beim Debuggen), aber Sie müssen Sie in der Regel niemals direkt verwenden.
 
-`CColumnAccessor` implementiert die folgenden Stubmethoden, von denen jede an der Funktionalität und der andere Accessor-Klassenmethoden entsprechen:
+`CColumnAccessor` implementiert die folgenden Stub-Methoden, von denen jede Funktionalität anderen Methoden der Accessorklasse entspricht:
 
-- `CColumnAccessor` Der Konstruktor; instanziiert und initialisiert die `CColumnAccessor` Objekt.
+- `CColumnAccessor` den Konstruktor ein. instanziiert und initialisiert das `CColumnAccessor`-Objekt.
 
-- `CreateAccessor` Belegt Speicher für die Spalte bindungsstrukturen aus, und der Spaltenelemente für die Daten initialisiert.
+- `CreateAccessor` weist Speicher für die Spalten Bindungs Strukturen zu und initialisiert die Spalten Datenmember.
 
-- `BindColumns` Bindet Spalten Accessoren.
+- `BindColumns` bindet Spalten an Accessoren.
 
-- `SetParameterBuffer` Ordnet Puffer für Parameter.
+- `SetParameterBuffer` ordnet Puffer für Parameter zu.
 
-- `AddParameter` Die Parameter-Eintrag-Strukturen wird ein Parametereintrag hinzugefügt.
+- `AddParameter` fügt den Parameter Eintrags Strukturen einen Parameter Eintrag hinzu.
 
-- `HasOutputColumns` Bestimmt, ob der Accessor Spalten ausgegeben hat
+- `HasOutputColumns` bestimmt, ob der Accessor über Ausgabespalten verfügt.
 
-- `HasParameters` Bestimmt, ob der Accessor über Parameter verfügt.
+- `HasParameters` bestimmt, ob der Accessor über Parameter verfügt.
 
-- `BindParameters` Wird die erstellte Parameter an Spalten gebunden.
+- `BindParameters` bindet die erstellten Parameter an Spalten.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

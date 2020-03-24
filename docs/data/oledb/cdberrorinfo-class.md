@@ -38,12 +38,12 @@ helpviewer_keywords:
 - GetErrorParameters method
 - GetErrorRecords method
 ms.assetid: 9a5c18a2-ee3e-40f5-ab4c-581288d7f737
-ms.openlocfilehash: 2d2b21652fd5ee3604c3c72c2168c3d9a495caf1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 8c91beb2a305604f663d5e81b4a534a1699705cf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546128"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212021"
 ---
 # <a name="cdberrorinfo-class"></a>CDBErrorInfo-Klasse
 
@@ -55,11 +55,11 @@ Bietet Unterstützung für die OLE DB Fehler Verarbeitung mithilfe der OLE DB [I
 class CDBErrorInfo
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -72,7 +72,7 @@ class CDBErrorInfo
 |[GetErrorParameters](#geterrorparameters)|Ruft [IErrorRecords:: GetErrorParameters](/previous-versions/windows/desktop/ms715793(v=vs.85)) auf, um die Fehler Parameter zurückzugeben.|
 |[GetErrorRecords](#geterrorrecords)|Ruft Fehler Datensätze für das angegebene Objekt ab.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Schnittstelle gibt einen oder mehrere Fehler Datensätze an den Benutzer zurück. Nennen Sie zuerst [CDBErrorInfo:: geterrorrecords](../../data/oledb/cdberrorinfo-geterrorrecords.md) , um die Anzahl der Fehler Datensätze abzurufen. Rufen Sie dann eine der Zugriffs Funktionen (z. b. [CDBErrorInfo:: getallerrorinfo](../../data/oledb/cdberrorinfo-getallerrorinfo.md)) auf, um Fehlerinformationen für jeden Datensatz abzurufen.
 
@@ -118,7 +118,7 @@ vorgenommen Ein Zeiger auf eine Zeichenfolge, die den Pfad zur Hilfedatei enthä
 
 S_OK, wenn erfolgreich. Weitere Rückgabewerte finden Sie unter [IErrorRecords:: GetErrorInfo](/previous-versions/windows/desktop/ms711230(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Ausgabewert von *pbstrdescription* wird intern durch Aufrufen von `IErrorInfo::GetDescription`abgerufen. Dadurch wird der Wert auf NULL festgelegt, wenn das Gebiets Schema nicht unterstützt wird, oder wenn die beiden folgenden Bedingungen zutreffen:
 
@@ -231,11 +231,11 @@ vorgenommen Ein Zeiger auf die (eine-basierte) Anzahl von Fehler Datensätzen.
 
 Ein HRESULT-Standard.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie die erste Form der-Funktion, wenn Sie überprüfen möchten, welche Schnittstelle die Fehlerinformationen erhalten soll. Andernfalls verwenden Sie die zweite Form.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [DBViewer](../../overview/visual-cpp-samples.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>

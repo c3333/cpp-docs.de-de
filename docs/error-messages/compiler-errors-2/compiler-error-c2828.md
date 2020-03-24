@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - C2828
 ms.assetid: d8df6ed4-5954-46c2-b59b-52881d4e923d
-ms.openlocfilehash: d6dc742a181d8aebc041d9ffadd6256d3b7c9348
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e5984573074b07ae4cbd961ad7d8821173e0b04b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406859"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80201891"
 ---
 # <a name="compiler-error-c2828"></a>Compilerfehler C2828
 
-'Operator Operator' kann in binärer Form kann nicht global überschrieben werden
+"Operator Operator" kann nicht global mit Binär Form überschrieben werden.
 
-Der Operator kann nicht außerhalb eines Objekts Binärformat aufweisen.
+Der Operator kann nicht über ein binäres Formular außerhalb eines Objekts verfügen.
 
 ### <a name="to-fix-by-using-the-following-possible-solutions"></a>So beheben Sie den Fehler (unterschiedliche Lösungsmöglichkeiten)
 
-1. Stellen Sie den überladenen Operator lokale, auf ein Objekt.
+1. Legen Sie den überladenen Operator lokal auf ein Objekt.
 
-1. Wählen Sie einen entsprechenden unäroperator überladen.
+1. Wählen Sie einen geeigneten unären Operator für die Überlastung aus.

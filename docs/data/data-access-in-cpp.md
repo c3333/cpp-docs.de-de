@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data [C++], data access technologies
 - data access [C++], class libraries for databases
 ms.assetid: 95da6237-bbe2-480a-ae50-3a520051ceff
-ms.openlocfilehash: e9222f16ef6356c2d89401690bda7e6d27f8aba6
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: a1645c1116daa66c578a6d6e697ab168e4006af9
+ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65708033"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80150952"
 ---
 # <a name="data-access-in-visual-c"></a>Datenzugriff in Visual C++
 
@@ -43,18 +43,18 @@ Herstellen einer Verbindung mit Azure SQL-Datenbank aus C- oder C++-Anwendungen
 [ODBC-Treiber für SQL Server](/sql/connect/odbc/microsoft-odbc-driver-for-sql-server)<br/>
 Der aktuelle ODBC-Treiber bietet zuverlässigen Datenzugriff auf Microsoft SQL Server und Microsoft Azure SQL-Datenbank für Anwendungen auf C/C++-Basis. Er bietet Unterstützung für Funktionen, z.B. Always Encrypted, Azure Active Directory und Always On-Verfügbarkeitsgruppen. Auch für MacOS und Linux verfügbar.
 
-[Microsoft OLE DB-Treiber für SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server)<br/>
+[OLE DB-Treiber für SQL-Server](/sql/connect/oledb/oledb-driver-for-sql-server)<br/>
 Der neueste OLE DB-Treiber ist eine eigenständige Anwendungsprogrammierschnittstelle (API) für Datenzugriffe, die Microsoft SQL Server und Microsoft Azure SQL-Datenbank unterstützt.
 
 [Microsoft Azure C und C++ Developer Center](https://azure.microsoft.com/develop/cpp/)<br/>
 Azure vereinfacht die C++-Anwendungsentwicklung mit mehr Flexibilität, Skalierbarkeit und Zuverlässigkeit mithilfe von Tools, die Sie lieben werden.
 
 [Verwenden des Blob-Speichers mit C++](https://docs.microsoft.com/azure/storage/storage-c-plus-plus-how-to-use-blobs)<br/>
-Azure Blob Storage ist ein Dienst, der unstrukturierte Daten in der Cloud als Objekte/Blobs speichert. Blob Storage kann beliebige Typen von Text oder Binärdaten speichern, z.B. Dokumente, Mediendateien oder Installationsprogramme für Anwendungen. Blob Storage wird auch als Objektspeicher bezeichnet.
+Azure Blob Storage ist ein Dienst, bei dem unstrukturierte Daten in der Cloud als Objekte/Blobs gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Der Blobspeicher wird auch als Objektspeicher bezeichnet.
 
 [ODBC-Programmierreferenz](https://docs.microsoft.com/sql/odbc/reference/odbc-programmer-s-reference)<br/>
-Die ODBC-Schnittstelle dient zur Verwendung mit der Programmiersprache C. Ein Verwenden der ODBC-Schnittstelle betrifft drei Bereiche: SQL-Anweisungen, ODBC-Funktionsaufrufe und C-Programmierung.
+Die ODBC-Schnittstelle dient zur Verwendung mit der Programmiersprache C. Die Verwendung der ODBC-Schnittstelle umfasst drei Bereiche: SQL-Anweisungen, ODBC-Funktionsaufrufe und C-Programmierung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++ in Visual Studio](../overview/visual-cpp-in-visual-studio.md)

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1221
 ms.assetid: 70654bf9-1520-4fa3-a063-1219dd88abf7
-ms.openlocfilehash: 99e2354a45b6f0d5cfcd1dece2b705ba1c88ca16
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4a8dc8122b9d97b108bdb14022477ab9df720113
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62242707"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80183942"
 ---
 # <a name="linker-tools-error-lnk1221"></a>Linkertoolfehler LNK1221
 
-ein Subsystem kann nicht abgeleitet werden und muss definiert werden
+ein Subsystem kann nicht abgeleitet werden und muss definiert werden.
 
-Der Linker verfügt nicht genügend Informationen, welches Subsystem abzuleiten, dass Ihre gewünschte Zielversion.
+Der Linker verfügt nicht über genügend Informationen, um das Subsystem zu ableiten, auf das Sie abzielen möchten.
 
-Verwenden Sie zum Beheben dieses Fehlers [/Subsystem](../../build/reference/subsystem-specify-subsystem.md).
+Verwenden Sie [/Subsystem](../../build/reference/subsystem-specify-subsystem.md), um diesen Fehler zu beheben.

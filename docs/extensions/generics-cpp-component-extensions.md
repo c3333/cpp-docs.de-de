@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - generics [C++]
 ms.assetid: c7ccc316-a411-4c00-b2e2-f0c0eadc6cfd
-ms.openlocfilehash: 31998cf77e3f3cfdc6bc19ad2fc57a50da77e0f6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 29c6b22189ea1f644c0fa52ec0f4d605604361ba
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516345"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181992"
 ---
 # <a name="generics--ccli-and-ccx"></a>Generics (C++/CLI und C++/CX)
 
@@ -51,9 +51,9 @@ Informationen zum Definieren und Verwenden von generischen Klassen.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-[Vorgehensweise: Durchlaufen einer generischen Auflistung mit „for each“](../dotnet/how-to-iterate-over-a-generic-collection-with-for-each.md)<br/>
+[Vorgehensweise: Durchlaufen einer generischen Auflistung mit der for-each-Klausel](../dotnet/how-to-iterate-over-a-generic-collection-with-for-each.md)<br/>
 Verwenden des [for each, in](../dotnet/for-each-in.md)-Schlüsselworts in einer generischen Auflistung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

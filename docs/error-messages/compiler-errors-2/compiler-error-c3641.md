@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3641
 ms.assetid: e8d3613e-5e8d-46fe-a516-eb7d1de7cd21
-ms.openlocfilehash: f6c27067e4f07c89b4226cf4d26adf2afb0b07ee
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 44356fb1a1818a02102d23e6b308457f2f39506b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385653"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80200511"
 ---
 # <a name="compiler-error-c3641"></a>Compilerfehler C3641
 
-> "*Funktion*': ungültige Aufrufkonvention 'Aufrufkonvention' für die Funktion, die mit/CLR kompiliert: pure oder/clr: safe
+> "*Function*": Ungültige Aufruf Konvention "calling_convention" für die mit/CLR: pure oder/CLR: safe kompilierte Funktion
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Nur [__clrcall](../../cpp/clrcall.md) Aufrufkonvention kann mit [/CLR: pure](../../build/reference/clr-common-language-runtime-compilation.md).
+Nur [__clrcall](../../cpp/clrcall.md) Aufruf Konvention ist mit [/clr: pure](../../build/reference/clr-common-language-runtime-compilation.md)zulässig.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C3641 generiert:
+Im folgenden Beispiel wird C3641 generiert:
 
 ```cpp
 // C3641.cpp

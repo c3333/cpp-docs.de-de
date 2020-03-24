@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - CAccessor class
 ms.assetid: b2ba959f-a686-46f3-8837-176248aef748
-ms.openlocfilehash: cfc91f971fc975bcdd2c8ae37d798ff2f5a1cab0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2b30cef2baf8c13c5001e44901b984aa1293494d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62283963"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80212302"
 ---
 # <a name="caccessor-class"></a>CAccessor-Klasse
 
-Stellt einen Accessor Typen dar.
+Stellt einen der Accessortypen dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,21 +31,21 @@ class CAccessor : public CAccessorBase, public T
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Benutzerdatensatz-Klasse.
+Die Benutzerdaten Satz-Klasse.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Sie wird verwendet, wenn ein Datensatz statisch mit einer Datenquelle gebunden ist. Der Datensatz enthält den Puffer. Diese Klasse unterstützt mehrere Accessoren für ein Rowset.
+Sie wird verwendet, wenn ein Datensatz statisch an eine Datenquelle gebunden ist. Der Datensatz enthält den Puffer. Diese Klasse unterstützt mehrere Accessoren für ein Rowset.
 
-Verwenden Sie diesen Accessortyp, wenn Sie wissen, dass die Struktur und den Typ der Datenbank.
+Verwenden Sie diesen Accessortyp, wenn Sie die Struktur und den Typ der Datenbank kennen.
 
-Wenn Ihre Accessor Felder enthält, die in den Speicher zu verweisen (wie z. B. eine `BSTR` oder Schnittstelle) muss freigegeben ist, rufen Sie die Memberfunktion [CAccessorRowset:: Freerecordmemory](../../data/oledb/caccessorrowset-freerecordmemory.md) bis zur nächsten Datensatz gelesen wird.
+Wenn der-Accessor Felder enthält, die auf den Speicher zeigen (z. b. eine `BSTR` oder eine Schnittstelle), der freigegeben werden muss, müssen Sie die Member-Funktion [CAccessorRowset:: freerecordmemory](../../data/oledb/caccessorrowset-freerecordmemory.md) abrufen, bevor der nächste Datensatz gelesen wird.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

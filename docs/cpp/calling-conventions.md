@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - calling conventions
 ms.assetid: 11b1e45c-8fd1-420b-bca0-a19e294c1d85
-ms.openlocfilehash: cc79a0636f900aa49e31f0dc35ee19657c3e1ccb
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 432cb1b6910db5ea735288edfbf6aa9e10f0a486
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345123"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190286"
 ---
 # <a name="calling-conventions"></a>Aufrufkonventionen
 
@@ -17,20 +17,20 @@ Der Compiler für Visual C/C++ stellt mehrere unterschiedliche Konventionen für
 
 In diesen Themen werden die Unterschiede zwischen den Aufrufkonventionen, wie Argumente übergeben werden und wie Werte über Funktionen zurückgegeben werden, erläutert. Es werden auch reine Funktionsaufrufe, eine erweiterte Funktion, die es erlaubt, Ihren eigenen Einleitungs- und Epilogcode zu schreiben, besprochen.
 
-Informationen zu den Aufrufkonventionen für X64-Prozessoren finden Sie unter [Aufrufkonvention](../build/x64-calling-convention.md).
+Weitere Informationen zu Aufruf Konventionen für x64-Prozessoren finden Sie unter [Aufruf Konvention](../build/x64-calling-convention.md).
 
 ## <a name="topics-in-this-section"></a>Themen in diesem Abschnitt
 
-- [Argumentübergabe und Benennungskonventionen](../cpp/argument-passing-and-naming-conventions.md) (`__cdecl`, `__stdcall`, `__fastcall`, usw.)
+- [Argument Übergabe und Benennungs Konventionen](../cpp/argument-passing-and-naming-conventions.md) (`__cdecl`, `__stdcall`, `__fastcall`und andere)
 
-- [Aufrufbeispiel: Funktionsprototyp und Aufruf](../cpp/calling-example-function-prototype-and-call.md)
+- [Aufrufbeispiel:Funktionsprototyp und Aufruf](../cpp/calling-example-function-prototype-and-call.md)
 
-- [Verwendung von naked-Funktionsaufrufe, um benutzerdefinierte Prolog-und Epilogcode zu schreiben.](../cpp/naked-function-calls.md)
+- [Verwenden von Naked-Funktionsaufrufen zum Schreiben von benutzerdefiniertem Prolog-/Epilogcode](../cpp/naked-function-calls.md)
 
 - [Gleitkomma-Coprozessor und Aufrufkonventionen](../cpp/floating-point-coprocessor-and-calling-conventions.md)
 
-- [Veraltete Aufrufkonventionen](../cpp/obsolete-calling-conventions.md)
+- [Veraltete Aufruf Konventionen](../cpp/obsolete-calling-conventions.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft-spezifische Modifizierer](../cpp/microsoft-specific-modifiers.md)

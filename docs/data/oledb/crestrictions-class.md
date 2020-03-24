@@ -13,16 +13,16 @@ helpviewer_keywords:
 - CRestrictions class
 - Open method
 ms.assetid: 0aaa2364-641c-4318-b110-7446aada4b4f
-ms.openlocfilehash: 309bb7e707d649cf78528f3d0df6cf8e43201823
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4a4c86987ceff0f04986d32011ba941e0d2319fe
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62361867"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211301"
 ---
 # <a name="crestrictions-class"></a>CRestrictions-Klasse
 
-Eine generische Klasse, die Sie Einschränkungen für Schemarowsets angeben kann.
+Eine generische Klasse, die Ihnen das Festlegen von Einschränkungen für Schemarowsets ermöglicht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,29 +35,29 @@ class CRestrictions :
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die Klasse, die für den Accessor verwendet wird.
+Die für den-Accessor verwendete-Klasse.
 
-*nRestrictions*<br/>
-Die Anzahl der Einschränkungsspalten für das Schemarowset.
+*neinschränkungen*<br/>
+Die Anzahl der Einschränkungs Spalten für das Schemarowset.
 
 *pguid*<br/>
 Ein Zeiger auf die GUID für das Schema.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldbsch.h
+**Header:** Atldbsch. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
 |||
 |-|-|
-|[Öffnen](#open)|Gibt ein Resultset, die gemäß den vom Benutzer anzugebende Einschränkungen zurück.|
+|[Öffnen](#open)|Gibt ein Resultset gemäß den vom Benutzer bereitgestellten Einschränkungen zurück.|
 
-## <a name="open"></a> CRestrictions::Open
+## <a name="crestrictionsopen"></a><a name="open"></a>"Krestrictions:: Open"
 
-Gibt ein Resultset, die gemäß den vom Benutzer anzugebende Einschränkungen zurück.
+Gibt ein Resultset gemäß den vom Benutzer bereitgestellten Einschränkungen zurück.
 
 ### <a name="syntax"></a>Syntax
 
@@ -75,26 +75,26 @@ HRESULT Open(const CSession& session,
 
 #### <a name="parameters"></a>Parameter
 
-*session*<br/>
-[in] Gibt ein vorhandenes Session-Objekt, das für die Verbindung mit der Datenquelle verwendet.
+*Sitzung*<br/>
+in Gibt ein vorhandenes Sitzungs Objekt an, mit dem eine Verbindung mit der Datenquelle hergestellt wird.
 
-*lpszParam*<br/>
-[in] Gibt die Einschränkungen für das Schemarowset.
+*lpszparam*<br/>
+in Gibt die Einschränkungen für das Schemarowset an.
 
-*bBind*<br/>
-[in] Gibt an, ob die spaltenzuordnung automatisch zu binden. Der Standardwert ist **"true"**, der bewirkt, dass der spaltenzuordnung automatisch gebunden werden soll. Festlegen von *bBind* zu **"false"** wird verhindert, dass die automatische Bindung der Spalte-Zuordnung aus, damit Sie manuell binden können. (Manuelle Bindung ist von besonderem Interesse für OLAP-Benutzer.)
+*bbind*<br/>
+in Gibt an, ob die Spalten Zuordnung automatisch gebunden werden soll. Der Standardwert ist **true**, was bewirkt, dass die Spalten Zuordnung automatisch gebunden wird. Wenn *bbind* auf **false** festgelegt wird, wird die automatische Bindung der Spalten Zuordnung verhindert, sodass Sie die Bindung manuell vornehmen können. (Manuelle Bindung ist für OLAP-Benutzer besonders interessant.)
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der standardmäßigen HRESULT-Werte.
+Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können maximal sieben Einschränkungen für ein Schemarowset angeben.
+Für ein Schemarowset können maximal sieben Einschränkungen angegeben werden.
 
-Finden Sie unter [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) für Informationen zu den definierten Einschränkungen für jedes Schemarowset.
+Informationen zu den definierten Einschränkungen der einzelnen [Schemarowsets finden Sie unter IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

@@ -5,16 +5,16 @@ ms.topic: reference
 f1_keywords:
 - implements/Microsoft::WRL::GetModuleBase
 ms.assetid: 123d3b14-2eaf-4e02-8dcd-b6567917c6a6
-ms.openlocfilehash: 4d8c8467b7aeb9c21bf5f4ee19c60e6e60880688
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0d130fffa9fad9ae327d03eaa01d84742094cc67
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398393"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80213966"
 ---
 # <a name="getmodulebase-function"></a>GetModuleBase-Funktion
 
-Ruft eine [ModuleBase](modulebase-class.md) Zeiger, der inkrementiert und dekrementiert den Verweiszähler des ermöglicht eine [RuntimeClass](runtimeclass-class.md) Objekt.
+Ruft einen [modulebase](modulebase-class.md) -Zeiger ab, der das Inkrementieren und Dekrementieren des Verweis zähgers eines [runtimeclass](runtimeclass-class.md) -Objekts ermöglicht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,20 +24,20 @@ inline Details::ModuleBase* GetModuleBase() throw()
 
 ## <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `ModuleBase` -Objekt.
+Ein Zeiger auf ein `ModuleBase`-Objekt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird intern zum Inkrementieren und Dekrementieren verwendet Verweiszähler des Objekts.
+Diese Funktion wird intern zum Inkrement und Dekrement der Objekt Verweis Anzahl verwendet.
 
-Sie können diese Funktion verwenden, zum Steuern der Verweiszähler durch Aufrufen von [modulebase:: Incrementobjectcount](modulebase-class.md#incrementobjectcount) und [modulebase:: Decrementobjectcount](modulebase-class.md#decrementobjectcount).
+Sie können diese Funktion verwenden, um Verweis Zähler durch Aufrufen von [modulebase:: incrementobjectcount](modulebase-class.md#incrementobjectcount) und [modulebase::D ecrementobjectcount](modulebase-class.md#decrementobjectcount)zu steuern.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** implements.h
+**Header:** implementiert. h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)

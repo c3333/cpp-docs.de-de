@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - DerefHelper structure
 ms.assetid: 86ded58b-c3ee-4a4f-bb86-4f67b895d427
-ms.openlocfilehash: 96b7e83a854765fb872b87d062928311731cfd26
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 43453d3162de697fa1cfcf0581953c91bbe3934f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398562"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80214044"
 ---
 # <a name="derefhelper-structure"></a>DerefHelper-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung im Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,32 +31,32 @@ struct DerefHelper<T*>;
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Ein Vorlagenparameter.
+Ein Vorlagen Parameter.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Einen dereferenzierter Zeiger zum Darstellen der `T*` Template-Parameter.
+Stellt einen dereferenzierten Zeiger auf den `T*` Template-Parameter dar.
 
-**DerefHelper** wie z. B. in einem Ausdruck verwendet wird: `ComPtr<Details::DerefHelper<ProgressTraits::Arg1Type>::DerefType> operationInterface;`.
+**Derefhelper** wird in einem Ausdruck wie z. b.: `ComPtr<Details::DerefHelper<ProgressTraits::Arg1Type>::DerefType> operationInterface;`verwendet.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`DerefType`|Bezeichner für den Vorlagenparameter von dereferenziert `T*`.|
+|`DerefType`|Der Bezeichner für den dereferenzierten Vorlagen Parameter `T*`.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `DerefHelper`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** async.h
+**Header:** Async. h
 
-**Namespace:** Microsoft::WRL::Details
+**Namespace:** Microsoft:: WRL::D etails
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Microsoft::WRL::Details-Namespace](microsoft-wrl-details-namespace.md)

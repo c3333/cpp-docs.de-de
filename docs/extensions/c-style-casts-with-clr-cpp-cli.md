@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - C-style casts and /clr
 ms.assetid: d2a4401a-156a-4da9-8d12-923743e26913
-ms.openlocfilehash: d9544e3002cfa489e9700b83367b15b164e9b513
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 2b7e492c62047e3b38224637f842d8a7fcbae84f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516135"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172593"
 ---
 # <a name="c-style-casts-with-clr-ccli"></a>C-stilartige Umwandlungen mit /clr (C++/CLI)
 
@@ -30,9 +30,9 @@ Bei Verwendung mit CLR-Typen versucht der Compiler C-stilartige Umwandlungen ein
 
 Wenn keine der oben aufgeführten Umwandlungen gültig ist und der Typ des Ausdrucks sowie der Zieltyp CLR-Verweistypen sind, wird eine C-stilartige Umwandlung (Castclass-MSIL-Anweisung) einer Laufzeitüberprüfung zugeordnet. Andernfalls wird eine C-stilartige Umwandlung als ungültig betrachtet, und der Compiler gibt einen Fehler aus.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
-Eine C-stilartige Umwandlung wird nicht empfohlen. Verwenden Sie beim Kompilieren mit [/clr (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md) [safe_cast](safe-cast-cpp-component-extensions.md).
+Eine C-stilartige Umwandlung wird nicht empfohlen. Verwenden Sie beim Kompilieren mit [/clr (Common Language Runtime Compilation)](../build/reference/clr-common-language-runtime-compilation.md)[safe_cast](safe-cast-cpp-component-extensions.md).
 
 Das folgende Beispiel zeigt eine C-stilartige Umwandlung, die zu **const_cast** zuordnet.
 
@@ -156,10 +156,10 @@ int main() {
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

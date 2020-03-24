@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4537
 ms.assetid: 9454493c-d419-475e-8f35-9c00233c9329
-ms.openlocfilehash: 2f97be4e1aaa5143df685cb95935d350e6f02534
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 81058f153228d3d8fbf4097c140962d0cb9677e5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62161081"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80186360"
 ---
 # <a name="compiler-warning-level-1-c4537"></a>Compilerwarnung (Stufe 1) C4537
 
-> "*Objekt*': '*Operator*" auf nicht-UDT-Typ angewendet wird
+> '*Object*': '*Operator*' angewendet auf einen nicht-UDT-Typ
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Verweis wurde übergeben, obwohl ein Objekt (UDT) erwartet wurde. Ein Verweis ist kein Objekt allerdings Inlineassemblercode kann nicht auf die Unterscheidung vornehmen zu können. Der Compiler generiert Code, als ob *Objekt* wurden von eine Instanz.
+Es wurde ein Verweis übermittelt, bei dem ein Objekt (benutzerdefinierter Typ) erwartet wurde. Ein Verweis ist kein Objekt, aber der Inline Assemblercode kann den Unterschied nicht unterscheiden. Der Compiler generiert Code, als wäre *Object* eine-Instanz.
 
 ## <a name="example"></a>Beispiel
 

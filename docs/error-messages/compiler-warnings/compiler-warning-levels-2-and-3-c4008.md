@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4008
 ms.assetid: fb45e535-cb68-4743-80e9-a6e34cfffeca
-ms.openlocfilehash: 99b78e1426cf1618e68ae74ae7e16dd0f08606ba
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9b6fb56045d53cd18689f3903bb3d7a08c3d4e4d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359968"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80198003"
 ---
 # <a name="compiler-warning-levels-2-and-3-c4008"></a>Compilerwarnung (Stufen 2 und 3) C4008
 

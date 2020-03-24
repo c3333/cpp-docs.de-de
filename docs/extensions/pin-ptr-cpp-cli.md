@@ -10,14 +10,14 @@ helpviewer_keywords:
 - pinning pointers
 - pin_ptr keyword [C++]
 ms.assetid: 6c2e6c73-4ec2-4dce-8e1f-ccf3a9f9d0aa
-ms.openlocfilehash: a8c6733a9f6e5c9650333f96a92ff18eedb9c356
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 920135943c9dfb46b00ee6ceb2535fde128dffb0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516495"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172034"
 ---
-# <a name="pinptr-ccli"></a>pin_ptr (C++/CLI)
+# <a name="pin_ptr-ccli"></a>pin_ptr (C++/CLI)
 
 Deklariert einen *festen Zeiger*, der nur mit der Common Language Runtime verwendet wird.
 
@@ -44,7 +44,7 @@ Ein *fester Zeiger* ist ein innerer Zeiger, der verhindert, dass das Objekt, auf
 *cv_qualifier*<br/>
 Qualifizierer **const** oder **volatile**. Standardmäßig ist ein fester Zeiger flüchtig (**volatile**). Es ist redundant, aber kein Fehler, einen festen Zeiger als **volatile** zu deklarieren.
 
-*Typ*<br/>
+*type*<br/>
 Der Typ von *initializer*.
 
 *var*<br/>
@@ -53,7 +53,7 @@ Der Name der Variable **pin_ptr**.
 *initializer*<br/>
 Ein Member eines Verweistyps, ein Element eines verwalteten Arrays oder jedes andere Objekt, das Sie einem nativen Zeiger zuweisen können.
 
-### <a name="remarks"></a>Anmerkungen
+### <a name="remarks"></a>Bemerkungen
 
 Ein **pin_ptr** repräsentiert eine Obermenge der Funktionalität eines nativen Zeigers. Daher kann alles, was einem nativen Zeiger zugewiesen werden kann, auch einem **pin_ptr** zugewiesen werden. Ein innerer Zeiger darf die gleichen Vorgänge ausführen wie native Zeiger, einschließlich Vergleichs- und Zeigerarithmetik.
 
@@ -89,9 +89,9 @@ Feste Zeiger können nicht für Folgendes verwendet werden:
 
 Weitere Informationen zu inneren Zeigern finden Sie unter [interior_ptr (C++/CLI)](interior-ptr-cpp-cli.md).
 
-Weitere Informationen über feste Zeiger finden Sie unter [Vorgehensweise: Anheften von Zeigern und Arrays](how-to-pin-pointers-and-arrays.md) und [Vorgehensweise: Deklarieren von festen Zeigern und Werttypen](how-to-declare-pinning-pointers-and-value-types.md).
+Weitere Informationen zum Anheften von Zeigern finden Sie unter Gewusst wie: Anheften von Zeigern [und Arrays](how-to-pin-pointers-and-arrays.md) und Gewusst [wie: Deklarieren von anheften und Werttypen](how-to-declare-pinning-pointers-and-value-types.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 

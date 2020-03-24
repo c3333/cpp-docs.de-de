@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C1189
 ms.assetid: 2e5c8a78-edd4-411c-b619-558a96be148a
-ms.openlocfilehash: 06d42316a0109ac063bba43cefebd9aab71c2e72
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2217b865109cc48151e4e96b2d38b88764c0c64f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62229058"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80203633"
 ---
 # <a name="fatal-error-c1189"></a>Schwerwiegender Fehler C1189
 
-> **\#Fehler:** *benutzerdefinierte Fehlermeldung*
+> **\#Fehler:** vom *Benutzer angegebene Fehlermeldung*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-C1189 wird generiert, indem die `#error` Richtlinie. Der Entwickler, der die Direktive codes gibt den Text der Fehlermeldung an. Weitere Informationen finden Sie unter [#error-Direktive (C/C++)](../../preprocessor/hash-error-directive-c-cpp.md).
+C1189 wird von der `#error`-Direktive generiert. Der Entwickler, der die Direktive codiert, gibt den Text der Fehlermeldung an. Weitere Informationen finden Sie unter [#Error-Direktive (C++C/)](../../preprocessor/hash-error-directive-c-cpp.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C1189 generiert. In diesem Beispiel gibt der Entwickler eine benutzerdefinierte Fehlermeldung, da die `_WIN32` Bezeichner ist nicht definiert:
+Im folgenden Beispiel wird C1189 generiert. Im Beispiel gibt der Entwickler eine benutzerdefinierte Fehlermeldung aus, da der `_WIN32` Bezeichner nicht definiert ist:
 
 ```cpp
 // C1189.cpp
@@ -33,6 +33,6 @@ Im folgende Beispiel wird die C1189 generiert. In diesem Beispiel gibt der Entwi
 #endif
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [#define-Direktive (C/C++)](../../preprocessor/hash-define-directive-c-cpp.md)

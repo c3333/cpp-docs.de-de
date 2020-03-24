@@ -7,19 +7,19 @@ helpviewer_keywords:
 - CXX0029
 - CAN0029
 ms.assetid: 562b2132-e9cb-4591-a5bf-bc7179a7f40e
-ms.openlocfilehash: 4d6fbeaeb2524fd1e4ef2c8e79846003d916b357
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 205e0e0ceb0cfdadce612dd02819467542185264
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359851"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80195629"
 ---
 # <a name="expression-evaluator-error-cxx0029"></a>Ausdrucksauswertungsfehler CXX0029
 
-kein Struct-Zeiger
+Not-Struktur Zeiger
 
-Die Objektmember-auswahloperators (**->**) angewendet wurde, um einen Ausdruck, der kein Zeiger auf eine Struktur ist.
+Der Member-Selection-Operator ( **->** ) wurde auf einen Ausdruck angewendet, der kein Zeiger auf eine-Struktur ist.
 
-Überprüfen Sie, dass der gesamte Ausdruck in Klammern ordnungsgemäß oder den Adressausdruck in die entsprechende Struktur Zeigertyp umgewandelt.
+Überprüfen Sie, ob der gesamte Ausdruck ordnungsgemäß formatiert ist, oder wandeln Sie den Adress Ausdruck in den entsprechenden Struktur Zeigertyp um.
 
 Dieser Fehler ist mit CAN0029 identisch.

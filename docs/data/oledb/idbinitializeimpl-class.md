@@ -38,12 +38,12 @@ helpviewer_keywords:
 - m_dwStatus
 - m_pCUtlPropInfo
 ms.assetid: e4182f81-0443-44f5-a0d3-e7e075d6f883
-ms.openlocfilehash: 1fc60db6db341d0667e24a81ae0f1394f54497ff
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: ff74ae93f01c7e8588a0eff1f48d3f6f0e6d5e81
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546062"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210768"
 ---
 # <a name="idbinitializeimpl-class"></a>IDBInitializeImpl-Klasse
 
@@ -61,11 +61,11 @@ class ATL_NO_VTABLE IDBInitializeImpl : public IDBInitialize
 *T*<br/>
 Die von `IDBInitializeImpl`abgeleitete Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -87,7 +87,7 @@ Die von `IDBInitializeImpl`abgeleitete Klasse.
 |[m_dwStatus](#dwstatus)|Datenquellenflags.|
 |[m_pCUtlPropInfo](#pcutlpropinfo)|Ein Zeiger auf die Implementierung von DB-Eigenschaften Informationen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine erforderliche Schnittstelle für Datenquellen Objekte und eine optionale Schnittstelle für Enumeratoren.
 
@@ -101,7 +101,7 @@ Der Konstruktor.
 IDBInitializeImpl();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Initialisiert alle Datenmember.
 
@@ -115,7 +115,7 @@ Initialisiert das Datenquellen Objekt, indem seine Eigenschafts Unterstützung v
 STDMETHOD(Initialize)(void);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Siehe [IDBInitialize:: Initialize](/previous-versions/windows/desktop/ms718026(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
@@ -129,7 +129,7 @@ Fügt das Datenquellen Objekt in einen nicht initialisierten Zustand ein, indem 
 STDMETHOD(Uninitialize)(void);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDBInitialize:: Uninitialize](/previous-versions/windows/desktop/ms719648(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
@@ -143,7 +143,7 @@ Datenquellenflags.
 DWORD m_dwStatus;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Flags geben den Status verschiedener Attribute für das Datenquellen Objekt an oder geben ihn an. Enthält mindestens einen **der folgenden** Enumerationswerte:
 
@@ -171,7 +171,7 @@ Ein Zeiger auf das Implementierungs Objekt für Informationen zu Daten Bank Eige
 CUtlPropInfo< T >* m_pCUtlPropInfo;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2175
 ms.assetid: 3a8fa90b-2b29-414a-bb55-cf27c2bf989a
-ms.openlocfilehash: 4c4af877d771d4e45c9336f1eb4a29fd45fa79fd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c7d045accae170f4f7f17835ff535a044ff91219
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175484"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80206920"
 ---
 # <a name="compiler-error-c2175"></a>Compilerfehler C2175
 
-"Locale": Ungültiges Gebietsschema
+"locale": Ungültiges Gebiets Schema
 
-Das angegebene Gebietsschema ist ungültig. Finden Sie unter [Sprach- und Länder-/Regionszeichenfolgen](../../c-runtime-library/locale-names-languages-and-country-region-strings.md) in die *Run-Time Library Reference* unterstützten Gebietsschemas.
+Das angegebene Gebiets Schema ist ungültig. Weitere Informationen finden Sie unter [sprach-und Länder-](../../c-runtime-library/locale-names-languages-and-country-region-strings.md) /regionszeichenfolgen in der *Lauf Zeit Bibliotheks Referenz* für unterstützte

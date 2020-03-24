@@ -7,18 +7,18 @@ helpviewer_keywords:
 - CXX0045
 - CAN0045
 ms.assetid: 32181bc8-e79c-4ad7-a82f-47c62ec06d7d
-ms.openlocfilehash: 04ce1d8332a92c6221bf91e122e753f709911036
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b50e7c1ace58055b3c13568d396c478497acb2f4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299607"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80184956"
 ---
 # <a name="expression-evaluator-error-cxx0045"></a>Ausdrucksauswertungsfehler CXX0045
 
-keine-Funktion
+keine Funktion
 
-Eine Argumentliste wurde für ein Symbol in der Anwendung bereitgestellt, die nicht den Namen einer Funktion ist.
+Eine Argumentliste wurde für ein Symbol im Programm bereitgestellt, das nicht der Name einer Funktion ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -26,6 +26,6 @@ Eine Argumentliste wurde für ein Symbol in der Anwendung bereitgestellt, die ni
 queue( alpha, beta )
 ```
 
-Wenn `queue` ist keine Funktion.
+Wenn `queue` keine Funktion ist.
 
 Dieser Fehler ist mit CAN0045 identisch.

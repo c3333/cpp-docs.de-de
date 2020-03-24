@@ -5,16 +5,16 @@ helpviewer_keywords:
 - sample applications [C++], OLE DB Templates
 - OLE DB consumer templates, about consumer templates
 ms.assetid: 526aa897-5961-4396-85cb-c84f77113551
-ms.openlocfilehash: 81bb80446ef3df09eaed7a8728e789de67c27122
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f1cc18d2192a42d22e31ee346f1e233cd7615ac0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395546"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209260"
 ---
 # <a name="working-with-ole-db-consumer-templates"></a>Arbeiten mit OLE DB-Consumervorlagen
 
-Die folgenden Themen werden Beispiele zur Verwendung der OLE DB-Consumervorlagen in gängigen Szenarien:
+In den folgenden Themen finden Sie einige Beispiele für die Verwendung der OLE DB Consumer-Vorlagen in gängigen Szenarien:
 
 - [Vereinfachen des Datenzugriffs mit Datenbankattributen](../../data/oledb/simplifying-data-access-with-database-attributes.md)
 
@@ -42,22 +42,22 @@ Die folgenden Themen werden Beispiele zur Verwendung der OLE DB-Consumervorlagen
 
 - [Aktualisieren einer Spalte, wenn eine andere Tabelle einen Verweis auf die Zeile enthält](../../data/oledb/updating-a-column-when-another-table-contains-a-reference-to-the-row.md)
 
-- [Verwenden von Lesezeichen](../../data/oledb/using-bookmarks.md)
+- [Using Bookmarks (Verwenden von Textmarken)](../../data/oledb/using-bookmarks.md)
 
 - [Abrufen eines BLOBs](../../data/oledb/retrieving-a-blob.md)
 
 - [Empfangen von Benachrichtigungen](../../data/oledb/receiving-notifications.md)
 
-Ein Beispiel für das Erstellen und Implementieren eines OLE DB-Consumers, finden Sie unter [Erstellen eines einfachen Consumers](../../data/oledb/creating-an-ole-db-consumer.md).
+Ein Beispiel für das Erstellen und Implementieren eines OLE DB Consumers finden Sie unter [Creating a Simple Consumer](../../data/oledb/creating-an-ole-db-consumer.md).
 
-Sie finden auch Beispiele für die OLE DB-Consumervorlagen in den folgenden Beispielen verwenden:
+Beispiele für die Verwendung der OLE DB Consumer-Vorlagen finden Sie in den folgenden Beispielen:
 
-- [CatDB](https://github.com/Microsoft/VCSamples)
+- [CatDB](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer)
 
-- [DBViewer](https://github.com/Microsoft/VCSamples)
+- [DBViewer](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer)
 
-- [MultiRead](https://github.com/Microsoft/VCSamples)
+- [MultiRead](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)
