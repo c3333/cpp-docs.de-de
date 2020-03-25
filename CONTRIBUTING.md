@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: e2b88bb1c60c97c9f63caacfb98ba87e0443e799
+ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79509440"
+---
 # <a name="contributing"></a>Beitragen
 
 Vielen Dank für Ihr Interesse und Ihre Bereitschaft, an der Visual C++-Dokumentation mitzuwirken!
@@ -14,14 +22,14 @@ In diesem Thema werden folgende Punkte behandelt:
 
 ## <a name="process-for-contributing"></a>Mitwirkungsprozess
 
-**Schritt 1:** Öffnen Sie ein Problem (Ticket), in dem Sie sowohl den Artikel beschreiben, den Sie schreiben möchten, als auch beschreiben, wie er mit vorhandenen Inhalten zusammenhängt.
+**Schritt 1:** Öffnen Sie ein Problem (Ticket), in dem Sie sowohl den Artikel beschreiben, den Sie schreiben möchten, als auch, wie er mit vorhandenem Inhalt zusammenhängt.
 Der Inhalt im Ordner **docs** ist in Abschnitte unterteilt, die nach Inhaltsbereichen (z. B. Debugger) strukturiert sind. Versuchen Sie, den richtigen Ordner für Ihren neuen Inhalt zu ermitteln. Warten Sie auf Feedback zu Ihrem Vorschlag.
 
 Für kleine Änderungen können Sie diesen ersten Schritt überspringen.
 
 **Schritt 2:** Forken Sie das `MicrosoftDocs/cpp-docs`-Repository.
 
-**Schritt 3:** Erstellen Sie einen `branch` für Ihren Artikel.
+**Schritt 3:** Erstellen Sie ein `branch` für Ihren Artikel.
 
 **Schritt 4:** Schreiben Sie Ihren Artikel.
 
@@ -36,11 +44,13 @@ Achten Sie darauf, die richtige Markdownsyntax einzuhalten. Weitere Informatione
 
 ### <a name="example-structure"></a>Beispielstruktur
 
-    docs
-        /standard-library
-            wstring-convert-class.md
-            /media
-                wstring-conversion.png
+```
+docs
+    /standard-library
+        wstring-convert-class.md
+        /media
+            wstring-conversion.png
+```
 
 **Schritt 5:** Übermitteln Sie einen Pull Request (PR) von Ihrem Branch an `MicrosoftDocs/cpp-docs/master`.
 
@@ -48,7 +58,7 @@ Wenn sich Ihr PR auf ein vorhandenes Problem bezieht, fügen Sie der Commit-Nach
 
 Das Visual Studio-Team überprüft Ihren PR und teilt Ihnen mit, ob die Änderung in Ordnung geht oder ob für die Genehmigung noch weitere Aktualisierungen/Änderungen erforderlich sind.
 
-**Schritt 6:** Nehmen Sie, wie mit dem Team besprochen, alle erforderlichen Aktualisierungen in Ihrem Branch vor.
+**Schritt 6:** Nehmen Sie, wie mit dem Team besprochen, alle erforderlichen Aktualisierungen in Ihrem Branch vor.
 
 Nachdem das Feedback angewendet und die Änderung als in Ordnung eingestuft wurde, führen die Verwalter Ihren PR mit dem Master-Branch zusammen.
 
@@ -76,7 +86,7 @@ Wenn Sie die Dokumente lokal erstellen möchten, müssen Sie [DocFX](https://dot
 
 Es gibt mehrere Möglichkeiten, DocFX zu verwenden, und die meisten dieser Möglichkeiten sind unter [Getting Started with DocFX](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) beschrieben. In den folgenden Anweisungen wird die [befehlszeilenbasierte](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool) Version des Tools verwendet. Wenn Sie mit anderen Möglichkeiten vertraut sind, die unter dem obigen Link aufgeführt sind, können Sie diese verwenden.
 
-**Hinweis:** Derzeit ist für DocFX das .NET Framework für Windows oder Mono (für Linux oder MacOS)erforderlich. Es ist geplant, dies zukünftig in .NET Core zu portieren.
+**Hinweis**: Derzeit ist für DocFX das .NET Framework für Windows oder Mono (für Linux oder macOS) erforderlich. Es ist geplant, dies zukünftig in .NET Core zu portieren.
 
 Sie können die resultierende Website lokal über einen integrierten Webserver erstellen und in der Vorschau anzeigen. Navigieren Sie zum Ordner `cpp-docs\docs` auf Ihrem Computer, und geben Sie den folgenden Befehl ein:
 
