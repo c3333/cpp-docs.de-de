@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0036
 ms.assetid: ee215cd1-2d66-474d-9a63-b9096f1c4923
-ms.openlocfilehash: 9b9232583c464548167e22d0104e0c6098093eab
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 67a225f907d06cd240ec2ebef236c0b4e0b849e2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62348392"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192098"
 ---
 # <a name="project-build-error-prj0036"></a>Projektbuildfehler PRJ0036
 
-Die 'Additional Files'-Eigenschaft für das Web Deployment Tool enthalten einen ungültigen Eintrag.
+Die Eigenschaft "zusätzliche Dateien" für das Webbereitstellungs Tool enthielt einen ungültigen Eintrag.
 
-Die Eigenschaft "zusätzliche Dateien" auf der Eigenschaftenseite für die Webbereitstellung enthalten einen Fehler, möglicherweise aufgrund eines Problems der Makro-Evaluierung. Dass der Pfad enthält Zeichen oder eine Kombination von Zeichen, die in einem Dateipfad unzulässig sind falsch formatiert wurde, wird von dieser Fehler auch bedeuten.
+Die Eigenschaft zusätzliche Dateien auf der Eigenschaften Seite für die Webbereitstellung enthielt einen Fehler, möglicherweise aufgrund eines Makro Evaluierungs Problems. Dieser Fehler kann auch bedeuten, dass der Pfad falsch formatiert ist und Zeichen oder Zeichenkombinationen enthält, die in einem Dateipfad unzulässig sind.
 
-Um diesen Fehler zu beheben, korrigieren Sie das Makro oder die Pfadangabe. Der ausgewertete Pfad ist ein absoluter Pfad vom Projektverzeichnis.
+Um diesen Fehler zu beheben, korrigieren Sie das Makro, oder korrigieren Sie die Pfadspezifikation. Der ausgewertete Pfad ist ein absoluter Pfad aus dem Projektverzeichnis.
 
-Dieser Fehler kann auch bedeuten, dass eine der Dateien auf die verwiesen wird nicht vorhanden.
+Dieser Fehler kann auch bedeuten, dass eine der Dateien, auf die verwiesen wird, nicht vorhanden ist.

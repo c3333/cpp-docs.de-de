@@ -15,12 +15,12 @@ helpviewer_keywords:
 - multiplicative operators [C++]
 - division operator
 ms.assetid: b53ea5da-d0b4-40dc-98f3-0aa52d548293
-ms.openlocfilehash: 9a01672976703634c06724c9c655605bb433facf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bc6359d3d7d2045d44af07f80b3e101da356d4b1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62301824"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179353"
 ---
 # <a name="multiplicative-operators-and-the-modulus-operator"></a>Multiplikationsoperatoren und der Modulus-Operator
 
@@ -38,19 +38,19 @@ Die multiplikativen Operatoren sind:
 
 - Multiplikation (<strong>\*</strong>)
 
-- Division (**/**)
+- Division ( **/** )
 
-- Modulo (Rest aus Division) (**%**)
+- Modulus (Rest von Division) ( **%** )
 
 Diese binären Operatoren weisen eine Assoziativität von links nach rechts auf.
 
-Die Multiplikationsoperatoren akzeptieren Operanden arithmetischer Typen. Der Modulo-Operator (**%**) sind Sie strengere erforderlich, dass die Operanden eines ganzzahligen Typs sein müssen. (Um den Rest einer Gleitkommadivision abzurufen, verwenden Sie die Funktion zur Laufzeit [Fmod](../c-runtime-library/reference/fmod-fmodf.md).) Die Konvertierungen finden Sie im [Standardkonvertierungen](standard-conversions.md) sind auf die Operanden angewendet, und das Ergebnis ist, der den konvertierten Typ.
+Die Multiplikationsoperatoren akzeptieren Operanden arithmetischer Typen. Der Modulo-Operator ( **%** ) hat eine strengere Anforderung, dass seine Operanden einen ganzzahligen Typ aufweisen müssen. (Um den Rest einer Gleit Komma Division zu erhalten, verwenden Sie die Lauf Zeitfunktion [FMOD](../c-runtime-library/reference/fmod-fmodf.md).) Die in [Standard Konvertierungen](standard-conversions.md) behandelten Konvertierungen werden auf die Operanden angewendet, und das Ergebnis ist vom konvertierten Typ.
 
 Der Multiplikationsoperator ergibt das Ergebnis der Multiplikation des ersten Operanden mit dem zweiten.
 
 Der Divisionsoperator ergibt das Ergebnis der Division des ersten Operanden durch den zweiten.
 
-Der Modulo-Operator liefert den Rest durch den folgenden Ausdruck, in denen *e1* ist der erste Operand und *e2* ist die zweite: *e1* -(*e1*  /  *e2*) \* *e2*, wobei beide Operanden von ganzzahligen Typen sind.
+Der Modulo-Operator liefert den Rest, der durch den folgenden Ausdruck angegeben wird, wobei *E1* der erste Operand und *E2* das zweite ist: *E1* -(*E1* / *E2*) \* *E2*, wobei beide Operanden ganzzahlige Typen sind.
 
 Division durch 0 (null) entweder in einer Division oder in einem Modulo-Ausdruck ist nicht definiert und verursacht einen Laufzeitfehler. Daher generieren die folgenden Begriffe nicht definierte, fehlerhafte Resultate:
 
@@ -70,13 +70,13 @@ In Microsoft C++ ist das Ergebnis eines Modulo-Ausdrucks immer dasselbe wie das 
 
 **Ende Microsoft-spezifisch**
 
-Wenn die berechnete Division von zwei ganzen Zahlen ungenau ist und nur ein Operand negativ ist, ist das Ergebnis der Betrags (Wert ohne Vorzeichen) der größten Ganzzahl, die kleiner ist als der exakte Wert, den die Division ergeben würde. Angenommen, der berechnete Wert des-11 / 3 ist-3.666666666. Das Ergebnis dieser ganzzahligen Division ist-3.
+Wenn die berechnete Division von zwei ganzen Zahlen ungenau ist und nur ein Operand negativ ist, ist das Ergebnis der Betrags (Wert ohne Vorzeichen) der größten Ganzzahl, die kleiner ist als der exakte Wert, den die Division ergeben würde. Der berechnete Wert von-11/3 ist beispielsweise-3,666666666. Das Ergebnis dieser integralen Division ist-3.
 
-Die Beziehung zwischen den Multiplikationsoperatoren ist von der Identität angegeben (*e1* / *e2*) \* *e2*  +  *e1* % *e2* == *e1*.
+Die Beziehung zwischen den Multiplikations Operatoren wird von der Identity (*E1* / *E2*) *\* E2* + *E1* % *E2* == *E1*angegeben.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Programm demonstriert die multiplikativen Operatoren. Beachten Sie, dass jeder Operand von `10 / 3` muss explizit in Typ umgewandelt werden **"float"** um das Abschneiden vermeiden, sodass beide Operanden vom Typ sind **"float"** vor Division.
+Das folgende Programm demonstriert die multiplikativen Operatoren. Beachten Sie, dass beide Operanden von `10 / 3` explizit in den Typ " **float** " umgewandelt werden müssen, um das Abschneiden zu vermeiden, sodass beide Operanden vom Typ " **float** " vor der Division sind.
 
 ```cpp
 // expre_Multiplicative_Operators.cpp

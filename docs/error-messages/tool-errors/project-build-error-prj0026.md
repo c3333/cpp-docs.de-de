@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0026
 ms.assetid: c52bc9b5-8b22-4015-b477-8645ae56c489
-ms.openlocfilehash: 7450d655e4cc8cc073940ef13f8bd57db2ad5219
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9193d91d6abd3b1c9a4fbac1e3c50c045658ddff
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384018"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192275"
 ---
 # <a name="project-build-error-prj0026"></a>Projektbuildfehler PRJ0026
 
-> Die Antwortdatei "*Datei*" enthält Unicodeinhalt, der nicht in ANSI-Codepage des Benutzers übersetzt werden konnte.
+> Die Antwortdatei "*File*" enthält Unicode-Inhalt, der nicht in die ANSI-Codepage des Benutzers übersetzt werden konnte.
 >
 > *Unicode-Inhalt der Datei*
 
-Das Projektsystem hat Unicode-Inhalt in einer Antwortdatei, die ordnungsgemäß auf der aktuellen ANSI-Codepage des Benutzers übersetzt werden, kann nicht gefunden.
+Das Projekt System hat Unicode-Inhalte in einer Antwortdatei gefunden, die nicht ordnungsgemäß in die aktuelle ANSI-Codepage des Benutzers übersetzt werden kann.
 
-Die Auflösung für diesen Fehler ist, aktualisieren Sie den Inhalt der Antwortdatei mit ANSI oder zu installieren. die Codepage auf dem Computer als dem als Standard festgelegt.
+Die Lösung für diesen Fehler besteht darin, den Inhalt der Antwortdatei so zu aktualisieren, dass ANSI verwendet wird, oder die Codepage auf dem Computer zu installieren und als Standardsystem festzulegen.

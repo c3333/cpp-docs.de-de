@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0028
 ms.assetid: 0a6e0da7-cb3d-40b6-81a6-6196a9c2526b
-ms.openlocfilehash: 9b74c64cee2b5734beab2bf30475b129160e67ab
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 34cfe15d1f2a8f767dfecb11adae362778b3898d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62265411"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192262"
 ---
 # <a name="project-build-error-prj0028"></a>Projektbuildfehler PRJ0028
 
-Temporäre Datei "Datei" enthält Unicodeinhalt, die nicht in ANSI-Codepage des Benutzers übersetzt werden konnte.
+Die temporäre Datei "file" enthält Unicode-Inhalt, der nicht in die ANSI-Codepage des Benutzers übersetzt werden konnte.
 
-Ein Wert angegeben wurde, mit der [/MIDL (Optionen für MIDL-Befehlszeile festlegen)](../../build/reference/midl-specify-midl-command-line-options.md) -Linkeroption, die durch die Codepage des Systems nicht aufgelöst werden konnte.
+Ein Wert wurde mit der Linkeroption [/MIDL (Mittell-Befehlszeilenoptionen angeben)](../../build/reference/midl-specify-midl-command-line-options.md) angegeben, die nicht von der System Codepage aufgelöst werden konnte.
 
-Die Codepage verwendet, bei der Angabe des MIDL-Befehls (die Eingabe Codepage) muss identisch mit der Codepage des Systems sein.
+Die Codepage, die verwendet wird, wenn Sie den Befehl "Mittel l" angeben (die Eingabe Codepage) muss mit der System Codepage identisch sein.

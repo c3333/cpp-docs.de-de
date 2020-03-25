@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0031
 ms.assetid: b42435c6-e570-4f8e-9ad5-12a7ea69ccb2
-ms.openlocfilehash: e5edae0c1b7464e4a3a5e9523332ce956d0dcf92
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: e13236f65aaca778a297cdd2942c07b75dd701d0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345312"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192496"
 ---
 # <a name="project-build-error-prj0031"></a>Projektbuildfehler PRJ0031
 
-Die 'Outputs'-Eigenschaft für den benutzerdefinierten Build Schritt für die Datei "Datei" enthalten "Makro" das ausgewertet wird zu "Macro_expansion".
+Die Outputs-Eigenschaft für den benutzerdefinierten Buildschritt für die Datei ' file ' enthielt ' Macro ', das als ' macro_expansion ' ausgewertet wird.
 
-Ein benutzerdefinierter Buildschritt für eine Datei musste ungültige Ausgabe wahrscheinlich aufgrund eines Problems der Makro-Evaluierung. Dass der Pfad enthält Zeichen oder eine Kombination von Zeichen, die in einem Dateipfad unzulässig sind falsch formatiert wurde, wird von dieser Fehler auch bedeuten.
+Ein benutzerdefinierter Buildschritt in einer Datei hat wahrscheinlich aufgrund eines Makro Auswertungs Problems eine schlechte Ausgabe verursacht. Dieser Fehler kann auch bedeuten, dass der Pfad falsch formatiert ist und Zeichen oder Zeichenkombinationen enthält, die in einem Dateipfad unzulässig sind.
 
-Um diesen Fehler zu beheben, korrigieren Sie das Makro oder die Pfadangabe. Der ausgewertete Pfad ist ein absoluter Pfad vom Projektverzeichnis.
+Um diesen Fehler zu beheben, korrigieren Sie das Makro, oder korrigieren Sie die Pfadspezifikation. Der ausgewertete Pfad ist ein absoluter Pfad aus dem Projektverzeichnis.
