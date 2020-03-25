@@ -155,7 +155,7 @@ F1 = Add( F2, 23 );
 
 Die vorhergehende Anweisung erstellt zwei Sätze:
 
-|Satz 1: Kandidatenfunktionen, deren erstes Argument vom Typ „fraction“ ist|Satz 2: Kandidaten Funktionen, deren zweites Argument in den Typ " **int** " konvertiert werden kann|
+|Satz 1: Kandidaten Funktionen, die ein erstes Argument vom Typ "Bruchteil" aufweisen|Satz 2: Kandidaten Funktionen, deren zweites Argument in den Typ " **int** " konvertiert werden kann|
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 |Variant 1|Variante 1 (**int** kann mit einer Standard Konvertierung in **Long** konvertiert werden)|
 |Variant 3||
@@ -170,7 +170,7 @@ F1 = Add( 3, 6 );
 
 Der vorhergehende Funktionsaufruf erstellt die folgenden Sätze:
 
-|Set 1: Kandidaten Funktionen, die ein erstes Argument vom Typ " **int** " aufweisen|Menge 2: Kandidaten Funktionen, die ein zweites Argument vom Typ " **int** " aufweisen|
+|Satz 1: Kandidaten Funktionen, die ein erstes Argument vom Typ " **int** " aufweisen|Satz 2: Kandidaten Funktionen, die ein zweites Argument vom Typ " **int** " aufweisen|
 |---------------------------------------------------------------------|----------------------------------------------------------------------|
 |Variant 2 (**int** kann mit einer Standard Konvertierung in **Long** konvertiert werden)|Variante 1 (**int** kann mit einer Standard Konvertierung in **Long** konvertiert werden)|
 
@@ -216,7 +216,7 @@ int main() {
 }
 ```
 
-### <a name="output"></a>Output
+### <a name="output"></a>Ausgabe
 
 ```Output
 Over default constructor
@@ -251,12 +251,12 @@ Die folgende Tabelle zeigt eine Gruppe von Konvertierungen, die als triviale Kon
 
 |Konvertieren von Typ|Konvertiert in Typ|
 |-----------------------|---------------------|
-|*Typname*|*Typname* **&**|
-|*Typname* **&**|*Typname*|
+|*type-name*|*Typname* **&**|
+|*Typname* **&**|*type-name*|
 |*Typname* **[]**|*Typname* __\*__|
 |*Typname* **(** *Argument-List* **)**|**(** __\*__ *Type-Name* **) (** *Argument-List* **)**|
-|*Typname*|**const** konstanter *Typname*|
-|*Typname*|**flüchtiger** *Typname*|
+|*type-name*|**const** konstanter *Typname*|
+|*type-name*|**flüchtiger** *Typname*|
 |*Typname* __\*__|__\*__ für den **Konstanten** *Typnamen*|
 |*Typname* __\*__|**flüchtiger** *Typname* __\*__|
 
@@ -337,9 +337,9 @@ UDC udc;
 LogToFile( udc );
 ```
 
-Im vorherigen Beispiel wird die benutzerdefinierte Konvertierung, **Operator Long**, aufgerufen, um `udc` in den Typ **Long**zu konvertieren. Wenn keine benutzerdefinierte Konvertierung in den Typ **Long** definiert wurde, würde die Konvertierung wie folgt verlaufen: Type `UDC` hätte mithilfe der benutzerdefinierten Konvertierung in den Typ **int** konvertiert. Die Standard Konvertierung vom Typ " **int** " in den Typ " **Long** " würde dann angewendet, um dem Argument in der Deklaration zu entsprechen.
+Im vorherigen Beispiel wird die benutzerdefinierte Konvertierung, **Operator Long**, aufgerufen, um `udc` in den Typ **Long**zu konvertieren. Wenn keine benutzerdefinierte Konvertierung in den Typ **Long** definiert wurde, würde die Konvertierung wie folgt verlaufen: Der Typ `UDC` der mithilfe der benutzerdefinierten Konvertierung in den Typ " **int** " konvertiert worden wäre. Die Standard Konvertierung vom Typ " **int** " in den Typ " **Long** " würde dann angewendet, um dem Argument in der Deklaration zu entsprechen.
 
-Wenn benutzerdefinierte Konvertierungen erforderlich sind, um einem Argument zu entsprechen, werden die Standard Konvertierungen beim Auswerten der besten Entsprechung nicht verwendet. Auch wenn mehr als eine Kandidaten Funktion eine benutzerdefinierte Konvertierung erfordert, werden die Funktionen als gleich betrachtet. Beispiel:
+Wenn benutzerdefinierte Konvertierungen erforderlich sind, um einem Argument zu entsprechen, werden die Standard Konvertierungen beim Auswerten der besten Entsprechung nicht verwendet. Auch wenn mehr als eine Kandidaten Funktion eine benutzerdefinierte Konvertierung erfordert, werden die Funktionen als gleich betrachtet. Zum Beispiel:
 
 ```cpp
 // argument_matching2.cpp
@@ -489,7 +489,7 @@ Der Klassen Bereich wird strikt beachtet. Daher befindet sich eine Funktion, die
 
 Wenn die Basisklassen Funktion nicht als "Virtual" deklariert ist, wird Sie von der abgeleiteten Klassen Funktion *ausgeblendet* . Sowohl das Überschreiben als auch das Ausblenden unterscheiden sich vom überladen.
 
-Block Bereich wird strikt beachtet. Daher befindet sich eine Funktion, die im Datei Bereich deklariert ist, nicht im selben Bereich wie eine lokal deklarierte Funktion. Wenn eine lokal deklarierte Funktion den gleichen Namen wie eine Funktion besitzt, die im Dateibereich deklariert wird, blendet die lokal deklarierte Funktion die Funktion im Dateibereich aus, und es erfolgt keine Überladung. Beispiel:
+Block Bereich wird strikt beachtet. Daher befindet sich eine Funktion, die im Datei Bereich deklariert ist, nicht im selben Bereich wie eine lokal deklarierte Funktion. Wenn eine lokal deklarierte Funktion den gleichen Namen wie eine Funktion besitzt, die im Dateibereich deklariert wird, blendet die lokal deklarierte Funktion die Funktion im Dateibereich aus, und es erfolgt keine Überladung. Zum Beispiel:
 
 ```cpp
 // declaration_matching1.cpp
@@ -569,6 +569,6 @@ double Account::Deposit( double dAmount, char *szPassword )
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen (C++)](../cpp/functions-cpp.md)
