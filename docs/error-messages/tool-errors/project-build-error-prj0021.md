@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0021
 ms.assetid: bcab794d-4a6d-4b4d-aaca-73676c0cec75
-ms.openlocfilehash: c815e821b4049a0fc35a04cab284bf9b6e80864b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2f838bc2fdf03b2e1056e76caa7a06155f5535e2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62359331"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192392"
 ---
 # <a name="project-build-error-prj0021"></a>Projektbuildfehler PRJ0021
 
-> Tool "*Tool*", Eigenschaft "*Eigenschaft*" enthält den ungültigen Dateinamen.
+> Tool "*Tool*", Eigenschaft "*Property*" enthält einen ungültigen Dateinamen.
 
-In der Eigenschaft angegebene Dateiname *Eigenschaft* für das Tool *Tool* war ungültig.
+Der in *der Eigenschaft Eigenschaft für das* Tool *Tool* angegebene Dateiname war ungültig.
 
-Möglicherweise haben Sie einen unbekannten oder ungültigen-Makro verwendet.
+Möglicherweise haben Sie ein unbekanntes oder ungültiges Makro verwendet.
 
-Finden Sie unter [Einstellung von Visual C++-Projekteigenschaften](../../build/working-with-project-properties.md) Informationen zu den Eigenschaften Ihres Projekts zuzugreifen.
+Informationen dazu, wie Sie auf die Eigenschaften des Projekts zugreifen, finden Sie unter [Festlegen von C++ visuellen Projekteigenschaften](../../build/working-with-project-properties.md) .

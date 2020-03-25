@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0034
 ms.assetid: 1da4a55b-231b-4476-8545-6997628fbc00
-ms.openlocfilehash: 7c078a3d2aef24df9151cb10f81c1b7423809e68
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bcb7e22d6a09e3435eb2236532101a1836c08a03
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62347586"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192187"
 ---
 # <a name="project-build-error-prj0034"></a>Projektbuildfehler PRJ0034
 
-Die 'Additional Dependencies'-Eigenschaft für das benutzerdefinierte auf Projektebene erstellen enthaltenen Schritt "Makro" als "Macro_expansion" ausgewertet wird.
+Die Eigenschaft "zusätzliche Abhängigkeiten" für den benutzerdefinierten Buildschritt auf Projektebene enthielt "Makro", das in "macro_expansion" ausgewertet wird.
 
-Ein benutzerdefinierten Buildschritt an einem Projekt enthielt einen Fehler in seiner zusätzliche Abhängigkeit wahrscheinlich aufgrund eines Problems der Makro-Evaluierung. Dass der Pfad enthält Zeichen oder eine Kombination von Zeichen, die in einem Dateipfad unzulässig sind falsch formatiert wurde, wird von dieser Fehler auch bedeuten.
+Ein benutzerdefinierter Buildschritt in einem Projekt enthielt einen Fehler in seiner zusätzlichen Abhängigkeit, wahrscheinlich aufgrund eines Makro Evaluierungs Problems. Dieser Fehler kann auch bedeuten, dass der Pfad falsch formatiert ist und Zeichen oder Zeichenkombinationen enthält, die in einem Dateipfad unzulässig sind.
 
-Um diesen Fehler zu beheben, korrigieren Sie das Makro oder die Pfadangabe. Der ausgewertete Pfad ist ein absoluter Pfad vom Projektverzeichnis.
+Um diesen Fehler zu beheben, korrigieren Sie das Makro, oder korrigieren Sie die Pfadspezifikation. Der ausgewertete Pfad ist ein absoluter Pfad aus dem Projektverzeichnis.

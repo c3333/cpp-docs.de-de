@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0041
 ms.assetid: dc9f4cf9-6bd5-4222-89e8-7802a59bb96b
-ms.openlocfilehash: b0fceff05ffe35515965b7e0a880c8b4c941b07e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bb6469b1daf193223a9b3361cc3e4bfb96d0c751
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62297722"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80191930"
 ---
 # <a name="project-build-warning-prj0041"></a>Projektbuildwarnung PRJ0041
 
-Kann nicht gefunden werden fehlende Abhängigkeit 'Abhängigkeit' Datei 'File'. Das Projekt kann zwar erstellt, ist aber nicht mehr aktuell angezeigt werden, bis diese Datei gefunden wird.
+Fehlende Abhängigkeit ' Abhängigkeit ' für Datei ' Datei ' wurde nicht gefunden. Das Projekt wird möglicherweise weiterhin erstellt, wird jedoch möglicherweise nicht mehr aktuell angezeigt, bis diese Datei gefunden wird.
 
-Eine Datei (Ressourcendatei oder.idl/.odl-Datei, z. B. enthalten eine Include-Anweisung, die das Projektsystem nicht aufgelöst werden kann konnte.
+Eine Datei (Ressourcen Datei oder IDL/ODL-Datei) enthielt beispielsweise eine include-Anweisung, die vom Projekt System nicht aufgelöst werden konnte.
 
-Da das Projektsystem präprozessoranweisungen (z. B. "#if") nicht verarbeitet, kann die problematische Anweisung kein Teil des Builds sein.
+Da das Projekt System keine Präprozessoranweisungen verarbeitet (z. b. #if), ist die angreifende Anweisung möglicherweise nicht Teil des Builds.
 
-Um diese Warnung zu beheben, löschen Sie alle unnötigen Code in der RC-Dateien, oder fügen Sie die Platzhalterdateien mit dem entsprechenden Namen.
+Um diese Warnung zu beheben, löschen Sie den gesamten unnötigen Code in RC-Dateien, oder fügen Sie Platzhalter Dateien mit dem entsprechenden Namen hinzu.

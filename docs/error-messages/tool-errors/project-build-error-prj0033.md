@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0033
 ms.assetid: 84d4a052-0586-4b78-9315-81c1e8386c1e
-ms.openlocfilehash: e074ee18508271b56686aa16f9012085ed3bd77d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 141355ac49ec4722e85b5d4c25240e8048a72c9a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62346920"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192191"
 ---
 # <a name="project-build-error-prj0033"></a>Projektbuildfehler PRJ0033
 
-Die 'Additional Dependencies'-Eigenschaft für den benutzerdefinierten Build Schritt für die Datei "Datei" enthalten "Makro" das ausgewertet wird zu "Macro_expansion".
+Die ' zusätzliche Abhängigkeiten '-Eigenschaft für den benutzerdefinierten Buildschritt für die Datei ' file ' enthielt ' Macro ', das als ' macro_expansion ' ausgewertet wird.
 
-Ein benutzerdefinierten Buildschritt auf eine Datei enthielt einen Fehler in seiner zusätzliche Abhängigkeit wahrscheinlich aufgrund eines Problems der Makro-Evaluierung. Dass der Pfad enthält Zeichen oder eine Kombination von Zeichen, die in einem Dateipfad unzulässig sind falsch formatiert wurde, wird von dieser Fehler auch bedeuten.
+Ein benutzerdefinierter Buildschritt in einer Datei enthielt einen Fehler in seiner zusätzlichen Abhängigkeit, wahrscheinlich aufgrund eines Makro Evaluierungs Problems. Dieser Fehler kann auch bedeuten, dass der Pfad falsch formatiert ist und Zeichen oder Zeichenkombinationen enthält, die in einem Dateipfad unzulässig sind.
 
-Um diesen Fehler zu beheben, korrigieren Sie das Makro oder die Pfadangabe. Der ausgewertete Pfad ist ein absoluter Pfad vom Projektverzeichnis.
+Um diesen Fehler zu beheben, korrigieren Sie das Makro, oder korrigieren Sie die Pfadspezifikation. Der ausgewertete Pfad ist ein absoluter Pfad aus dem Projektverzeichnis.

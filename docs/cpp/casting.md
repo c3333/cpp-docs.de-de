@@ -10,12 +10,12 @@ helpviewer_keywords:
 - polymorphic classes [C++]
 - classes [C++], polymorphism
 ms.assetid: 3dbeb06e-2f4b-4693-832d-624bc8ec95de
-ms.openlocfilehash: 02ade663ee92d3a301fda95bb385c3ffa48ead12
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: bb06db3af6aee031b6cb2d69b38a9404304420fc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64345075"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190129"
 ---
 # <a name="casting"></a>Umwandlung
 
@@ -28,20 +28,20 @@ Klassenhierarchie
 
 Ein Objekt vom Typ `C` könnte visualisiert werden, wie in der folgenden Abbildung zu sehen ist.
 
-![Klasse C mit Sub&#45;Objekte B und A](../cpp/media/vc38zz2.gif "Klasse C mit Sub&#45;Objekte B und A") <br/>
+![Klasse C mit unter&#45;geordneten Objekten B und A](../cpp/media/vc38zz2.gif "Klasse C mit unter&#45;geordneten Objekten B und A") <br/>
 Klasse C mit Unterobjekten B und A
 
 Bei einer Instanz der Klasse `C`, gibt es die Unterobjekte `B` und `A`. Die Instanz von `C`, einschließlich der Unterobjekte `A` und `B`, ist das "vollständige Objekt".
 
-Mit Laufzeit-Typeninformation können Sie prüfen, ob ein Zeiger tatsächlich auf ein vollständiges Objekt zeigt und auch sicher umgewandelt werden kann, um auf ein anderes Objekt in seiner Hierarchie zu zeigen. Die [Dynamic_cast](../cpp/dynamic-cast-operator.md) Operator kann verwendet werden, um diese Arten von Umwandlungen zu machen. Außerdem wird die Laufzeitüberprüfung ausgeführt, die erforderlich ist, um den Vorgang sicher zu gestalten.
+Mit Laufzeit-Typeninformation können Sie prüfen, ob ein Zeiger tatsächlich auf ein vollständiges Objekt zeigt und auch sicher umgewandelt werden kann, um auf ein anderes Objekt in seiner Hierarchie zu zeigen. Der [dynamic_cast](../cpp/dynamic-cast-operator.md) -Operator kann verwendet werden, um diese Typen von Umwandlungen zu erstellen. Außerdem wird die Laufzeitüberprüfung ausgeführt, die erforderlich ist, um den Vorgang sicher zu gestalten.
 
-Für die Konvertierung von nicht polymorphen Typen, können Sie die ["static_cast"](../cpp/static-cast-operator.md) Operator (in diesem Thema erläutert den Unterschied zwischen statischen und dynamischen umwandlungskonvertierungen erklärt, und wann sie jeweils zu verwenden sind).
+Für die Konvertierung von nicht polymorphen Typen können Sie den [static_cast](../cpp/static-cast-operator.md) -Operator verwenden (in diesem Thema wird der Unterschied zwischen statischen und dynamischen Umwandlungs Konvertierungen erläutert, und wann diese verwendet werden kann).
 
-In diesem Abschnitt werden die folgenden Themen behandelt:
+In diesem Abschnitt werden folgende Themen behandelt:
 
-- [Umwandlungsoperatoren](../cpp/casting-operators.md)
+- [Umwandlungs Operatoren](../cpp/casting-operators.md)
 
-- [Laufzeit Typinformationen](../cpp/run-time-type-information.md)
+- [Lauf Zeittyp Informationen](../cpp/run-time-type-information.md)
 
 ## <a name="see-also"></a>Siehe auch
 

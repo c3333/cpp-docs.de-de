@@ -6,19 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - PRJ0024
 ms.assetid: 8bde6368-6c1b-4e04-bc5e-3c6d0b8fa1d7
-ms.openlocfilehash: 645b898bdffcc6d7b397c25eb3c41cea25cb361f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bcfdcce54618acca0e22daa54e95083cf3ee9d50
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384101"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80192613"
 ---
 # <a name="project-build-error-prj0024"></a>Projektbuildfehler PRJ0024
 
-> Unicodepfad '*Pfad*' konnte nicht in ANSI-Codepage des Benutzers übersetzt werden.
+> Der Unicode-Pfad "*path*" konnte nicht in die ANSI-Codepage des Benutzers übersetzt werden.
 
-*Pfad* ist die ursprüngliche Unicode-Version von der Path-Zeichenfolge. Dieser Fehler kann in Fällen auftreten, wenn ein Unicodepfad, der für die aktuelle Codepage des Systems nicht direkt in ANSI übersetzt werden kann nicht vorhanden ist.
+*path* ist die ursprüngliche Unicode-Version der Pfad Zeichenfolge. Dieser Fehler kann auftreten, wenn ein Unicode-Pfad vorhanden ist, der für die aktuelle System Codepage nicht direkt in ANSI übersetzt werden kann.
 
-Dieser Fehler kann auftreten, wenn Sie arbeiten mit einem Projekt, das entwickelt wurde auf einem System, das Verwenden einer Codepage, die nicht auf Ihrem Computer vorhanden ist.
+Dieser Fehler kann auftreten, wenn Sie mit einem Projekt arbeiten, das auf einem System mithilfe einer Codepage entwickelt wurde, die sich nicht auf Ihrem Computer befindet.
 
-Die Auflösung für diesen Fehler ist, aktualisieren Sie den Pfad zur Verwendung von ANSI-Text oder um die Codepage auf dem Computer installieren und als dem als Standard festgelegt haben.
+Die Lösung für diesen Fehler besteht darin, den Pfad für die Verwendung von ANSI-Text zu aktualisieren oder die Codepage auf dem Computer zu installieren und als System Standardwert festzulegen.
