@@ -1,24 +1,24 @@
 ---
-title: Arbeiten mit Ressourcen Dateien (C++)
+title: Arbeiten mit Ressourcendateien (C++)
 ms.date: 02/14/2019
 helpviewer_keywords:
 - resources [C++], about resources
 - resources [C++], about resource files
 - resource files [C++], about resource files
 ms.assetid: 2699a539-b369-4b78-80f0-df03eb7b6780
-ms.openlocfilehash: d9f6c6b9798bc708bb5334eafc0585471f25c059
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 142a9120e0b6b95e659fcb47c275653fbefd8cbe
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513592"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165885"
 ---
 # <a name="working-with-resource-files"></a>Arbeiten mit Ressourcendateien
 
 > [!WARNING]
 > Dieser Abschnitt gilt für in C++ erstellte Windows-Desktopanwendungen.
 >
-> Weitere Informationen zu Ressourcen in C++universelle Windows-Plattform in geschriebenen apps finden Sie unter Definieren von APP- [Ressourcen](/windows/uwp/app-resources/)oder hinzufügen C++von Ressourcen zu/CLI (verwalteten) Projekten. Weitere Informationen finden Sie unter [Ressourcen in Desktop-Apps](/dotnet/framework/resources/index) im .NET Framework Developer es Lenken.
+> Informationen zu Ressourcen in universelle Windows-Plattform C++in geschriebenen apps finden Sie unter [Definieren von App-Ressourcen](/windows/uwp/app-resources/)oder Hinzufügen von C++Ressourcen zu/CLI (verwalteten) Projekten. Weitere Informationen finden Sie unter [Ressourcen in Desktop-Apps](/dotnet/framework/resources/index) im Entwicklerhandbuch zu .NET Framework.
 
 Ressourcen können aus einer Vielzahl von Elementen bestehen, wie z. b.:
 
@@ -55,7 +55,7 @@ Enthält Links zur Visual C++-Dokumentation
 [Sprechen Sie mit uns](/visualstudio/ide/talk-to-us)<br/>
 Bietet Links zu Informationen über die Verwendung des Dokumentationssatzes, Support-Kontaktdaten sowie über die Bereitstellung von Barrierefreiheitsfunktionen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows-Desktop Anwendungen](../windows/windows-desktop-applications-cpp.md)<br/>
 [Menüs und weitere Ressourcen](/windows/win32/menurc/resources)

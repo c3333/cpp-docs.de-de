@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operator overloading [C++], examples
 - function call operator ()
 ms.assetid: 5094254a-045b-46f7-8653-69bc91e80dce
-ms.openlocfilehash: 0064b17f0adf5cadf732321fbb62403a1da5db76
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6c7326b0f9c9592cb2b3be973a5ba1747a2015a0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154229"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179808"
 ---
 # <a name="function-call-c"></a>Funktionsaufruf (C++)
 
@@ -28,7 +28,7 @@ Der Funktionsaufrufoperator, aufgerufen unter Verwendung von Klammern, ist ein b
 primary-expression ( expression-list )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 In diesem Kontext ist `primary-expression` der erste Operand, und `expression-list`, eine möglicherweise leere Liste von Argumenten, ist der zweite Operand. Der Funktionsaufrufoperator wird für Vorgänge verwendet, die eine Anzahl von Parametern benötigen. Dies funktioniert, da eine `expression-list` eine Liste und kein einzelner Operand ist. Der Funktionsaufrufoperator muss eine nicht statische Memberfunktion sein.
 
@@ -84,6 +84,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Operatorüberladung](../cpp/operator-overloading.md)

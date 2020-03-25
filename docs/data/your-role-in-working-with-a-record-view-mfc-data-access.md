@@ -5,12 +5,12 @@ helpviewer_keywords:
 - record views, customizing default code
 - MFC, record views
 ms.assetid: 691e89a5-ff21-4ca3-9278-69d4678288bb
-ms.openlocfilehash: c5c35208f654cff90e3cdf87e697e654bdfbe307
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 351aa2d5ce950017aa8c1b3d99c8d297a423ad9f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153332"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209000"
 ---
 # <a name="your-role-in-working-with-a-record-view--mfc-data-access"></a>Aufgaben bei der Arbeit mit Datensatzansichten (MFC-Datenzugriff)
 
@@ -18,20 +18,20 @@ Die folgende Tabelle zeigt, was Sie in der Regel tun müssen, um mit einer Daten
 
 ### <a name="working-with-a-record-view-you-and-the-framework"></a>Arbeiten mit einer Datensatzansicht: Sie und das Framework
 
-|Benutzer|Das Framework|
+|Sie|Das Framework|
 |---------|-------------------|
 |Verwenden Sie zum Entwerfen des Formulars den Visual C++-Dialog-Editor.|Erstellt eine Dialogfeldvorlagen-Ressource mit Steuerelementen.|
-|Verwenden der [MFS-Anwendungsassistenten](../mfc/reference/database-support-mfc-application-wizard.md) zum Erstellen von abgeleiteten Klassen [CRecordView](../mfc/reference/crecordview-class.md) und [CRecordset](../mfc/reference/crecordset-class.md).|Schreibt die Klassen für Sie.|
+|Verwenden Sie den [MFC-Anwendungs-Assistenten](../mfc/reference/database-support-mfc-application-wizard.md) zum Erstellen von Klassen, die von [CRecordView](../mfc/reference/crecordview-class.md) und [CRecordset](../mfc/reference/crecordset-class.md)abgeleitet werden.|Schreibt die Klassen für Sie.|
 |Weisen Sie Datensatzansichts-Steuerelemente Recordset-Felddatenmembern zu.|Stellt DDX zwischen den Steuerelementen und den Recordset-Feldern bereit.|
-||Befehlshandler für das stellt **erste verschieben**, **letzte verschieben**, **nächste verschieben**, und **vorherige verschieben** Befehle in Menüs oder einer Symbolleiste Schaltflächen.|
+||Stellt Standard Befehls Handler für " **zuerst verschieben**", " **Letzte verschieben**", "weiter **verschieben**" und " **vorherige Befehle verschieben** " aus Menüs oder Symbolleisten-Schaltflächen bereit|
 ||Aktualisiert Änderungen in der Datenbank.|
 |[Optional] Schreiben Sie Code, um Listen- oder Kombinationsfelder oder andere Steuerelemente mit Daten aus einem zweiten Recordset zu füllen.||
 |[Optional] Schreiben Sie Code für spezielle Validierungen.||
 |[Optional] Schreiben Sie Code zum Hinzufügen oder Löschen von Datensätzen.||
 
-Formularbasierte Programmierung ist nur eine Herangehensweise für die Arbeit mit einer Datenbank. Weitere Informationen zu Anwendungen, die über eine andere Benutzeroberfläche oder keine Benutzeroberfläche, finden Sie unter [MFC: Verwenden von Datenbankklassen mit Dokumenten und Ansichten](../data/mfc-using-database-classes-with-documents-and-views.md) und [MFC: Verwenden von Datenbankklassen ohne Dokumente und Ansichten](../data/mfc-using-database-classes-without-documents-and-views.md). Alternative Ansätze zum Anzeigen von Datenbankdatensätzen finden Sie unter Klassen [CListView](../mfc/reference/clistview-class.md) und [CTreeView](../mfc/reference/ctreeview-class.md).
+Formularbasierte Programmierung ist nur eine Herangehensweise für die Arbeit mit einer Datenbank. Informationen zu Anwendungen, die eine andere Benutzeroberfläche oder keine Benutzeroberfläche verwenden, finden Sie unter [MFC: Verwenden von Datenbankklassen mit Dokumenten und Sichten](../data/mfc-using-database-classes-with-documents-and-views.md) und [MFC: Verwenden von Datenbankklassen ohne Dokumente und Sichten](../data/mfc-using-database-classes-without-documents-and-views.md). Alternative Ansätze zum Anzeigen von Datenbankdaten Sätzen finden Sie Unterklassen [CListView](../mfc/reference/clistview-class.md) und [CTreeView](../mfc/reference/ctreeview-class.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datensatzansichten (MFC-Datenzugriff)](../data/record-views-mfc-data-access.md)<br/>
 [Liste der ODBC-Treiber](../data/odbc/odbc-driver-list.md)

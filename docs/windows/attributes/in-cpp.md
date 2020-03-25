@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - in attribute
 ms.assetid: 7b450cc4-4d2e-4910-a195-7487c6b7c373
-ms.openlocfilehash: e97008d0399764beeca73dbbc5914e4b891df748
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f25f15148621d7092858577825dbdd6caa1ae0be
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514594"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166795"
 ---
 # <a name="in-c"></a>in (C++)
 
@@ -23,7 +23,7 @@ Gibt an, dass ein Parameter von der aufrufenden Prozedur an die aufgerufene Proz
 [in]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **in** C++ -Attribut verfügt über die gleiche Funktionalität wie das [in](/windows/win32/Midl/in) -Attribut.
 
@@ -31,7 +31,7 @@ Das **in** C++ -Attribut verfügt über die gleiche Funktionalität wie das [in]
 
 Unter [bindbare](bindable.md) finden Sie ein Beispiel für die Verwendung von **in**.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -39,16 +39,16 @@ Unter [bindbare](bindable.md) finden Sie ein Beispiel für die Verwendung von **
 |-|-|
 |**Betrifft**|Schnittstellenparameter, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
+|**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|**retval**|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
 [Methodenattribut](method-attributes.md)<br/>
 [defaultvalue](defaultvalue.md)<br/>
-[ID](id.md)<br/>
+[id](id.md)<br/>
 [out](out-cpp.md)

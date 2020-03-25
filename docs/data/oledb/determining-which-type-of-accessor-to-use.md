@@ -5,12 +5,12 @@ helpviewer_keywords:
 - rowsets [C++], data types
 - accessors [C++], types
 ms.assetid: 22483dd2-f4e0-4dcb-8e4d-cd43a9c1a3db
-ms.openlocfilehash: d729e2cf5b08ae227d0cc2e4d5ab7f8ac865cdc4
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 31efa36bcd61caa154cd3e4c147ad5ed8728b04c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80079656"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210989"
 ---
 # <a name="determining-which-type-of-accessor-to-use"></a>Bestimmen des geeigneten Zugriffsmethodentyps
 
@@ -28,7 +28,7 @@ Die folgende Tabelle enthält die Typen der Accessoren, die in den Consumervorla
 |`CDynamicAccessor`|Automatisch.|Nein.|Nützlich, wenn Sie den Typ der Daten in einem Rowset nicht kennen.|
 |`CDynamicParameterAccessor`|Automatisch, kann jedoch [überschrieben](../../data/oledb/overriding-a-dynamic-accessor.md) werden.|Ja, wenn der Anbieter `ICommandWithParameters` unterstützt. Parameter werden automatisch gebunden.|Langsamer als `CDynamicAccessor`, aber hilfreich zum Aufrufen generischer gespeicherter Prozeduren.|
 |`CDynamicStringAccessor[A,W]`|Automatisch.|Nein.|Ruft Daten aus dem Datenspeicher, auf die zugegriffen wird, als Zeichenfolgendaten ab.|
-|`CManualAccessor`|Manuell mithilfe von `AddBindEntry`.|Manuell mithilfe von `AddParameterEntry`.|Schnell; Parameter und Spalten werden nur einmal gebunden. Sie bestimmen den zu verwendenden Datentyp. (Ein Beispiel finden Sie unter [DBViewer](https://github.com/Microsoft/VCSamples) Sample.) Erfordert mehr Code als `CDynamicAccessor` oder `CAccessor`. Entspricht eher dem direkten Aufruf von OLE DB.|
+|`CManualAccessor`|Manuell mithilfe von `AddBindEntry`.|Manuell mithilfe von `AddParameterEntry`.|Schnell; Parameter und Spalten werden nur einmal gebunden. Sie bestimmen den zu verwendenden Datentyp. (Ein Beispiel finden Sie unter [DBViewer](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer) Sample.) Erfordert mehr Code als `CDynamicAccessor` oder `CAccessor`. Entspricht eher dem direkten Aufruf von OLE DB.|
 |`CXMLAccessor`|Automatisch.|Nein.|Ruft Daten aus dem Datenspeicher, auf die zugegriffen wird, als Zeichenfolgendaten ab, und formatiert sie als XML-markierte Daten.|
 
 ## <a name="see-also"></a>Weitere Informationen

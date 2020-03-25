@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - property keyword [C++]
 ms.assetid: cc79d2b2-f013-4d81-8252-eece97a18704
-ms.openlocfilehash: 46501717755933b2bdc11ee4ee6249bfea9f18cd
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: b961a93628752b11cd1d147268a4947acf29f67a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545756"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171975"
 ---
 # <a name="property--ccli-and-ccx"></a>property (C++/CLI und C++/CX)
 
@@ -85,7 +85,7 @@ Der Methodentext der Eigenschaft des set- oder get-Accessors. *property_body* ka
 
 Weitere Informationen finden Sie unter [Eigenschaften (C++/CX)](../cppcx/properties-c-cx.md).
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -122,7 +122,7 @@ Parameter für die Raise-Methode; muss der Signatur des Delegaten entsprechen.
 *index_list*<br/>
 Eine durch Kommata getrennte Liste von einem oder mehreren Indizes, die in eckigen Klammern (der Indexoperator, ([])) angegeben werden. Geben Sie für jeden Index einen Typ und optional einen Bezeichner an, der im Methodentext der Eigenschaft verwendet werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das erste Syntaxbeispiel zeigt eine einfache Eigenschaft (*simple property*), die implizit eine `set`- und eine `get`-Methode deklariert. Der Compiler erstellt automatisch ein privates Feld für die Speicherung des Werts der Eigenschaft.
 
@@ -160,7 +160,7 @@ Für die Zugriffsmethoden sind unterschiedliche Zugriffsmöglichkeiten in einem 
 
 **property** ist ein kontextbezogenes Schlüsselwort.  Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
@@ -210,6 +210,6 @@ test
 21
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

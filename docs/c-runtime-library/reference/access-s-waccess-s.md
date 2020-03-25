@@ -33,12 +33,12 @@ helpviewer_keywords:
 - _access_s function
 - _waccess_s function
 ms.assetid: fb3004fc-dcd3-4569-8b27-d817546e947e
-ms.openlocfilehash: 0550b8fb42cb62d1a175960d6b0d4ed4dbecdcac
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e7e61369635a1a59ef16aa6262650d9648277eb0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939902"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171319"
 ---
 # <a name="_access_s-_waccess_s"></a>_access_s, _waccess_s
 
@@ -71,15 +71,15 @@ Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet.
 
 |errno-Wert|Bedingung|
 |-|-|
-`EACCES`|Zugriff verweigert. Aufgrund der Berechtigungen wird der Zugriff im angegebenen Modus verweigert.
+`EACCES`|Der Zugriff wurde verweigert. Aufgrund der Berechtigungen wird der Zugriff im angegebenen Modus verweigert.
 `ENOENT`|Der Dateiname oder der Pfad wurde nicht gefunden.
 `EINVAL`|Ungültiger Parameter.
 
 Weitere Informationen finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bei Verwendung mit-Dateien bestimmt die **_access_s** -Funktion, ob die angegebene Datei vorhanden ist und wie im Wert des- *Modus*angegeben darauf zugegriffen werden kann. Bei Verwendung mit Verzeichnissen bestimmt **_access_s** nur, ob das angegebene Verzeichnis vorhanden ist. In Windows 2000 und neueren Betriebssystemen haben alle Verzeichnisse Lese-und Schreibzugriff.
+Bei Verwendung mit-Dateien bestimmt die **_access_s** Funktion, ob die angegebene Datei vorhanden ist und wie im Wert des- *Modus*angegeben auf Sie zugegriffen werden kann. Bei der Verwendung mit Verzeichnissen bestimmt **_access_s** nur, ob das angegebene Verzeichnis vorhanden ist. In Windows 2000 und neueren Betriebssystemen haben alle Verzeichnisse Lese-und Schreibzugriff.
 
 |Moduswert|überprüft nur, ob die Datei|
 |----------------|---------------------|
@@ -90,7 +90,7 @@ Bei Verwendung mit-Dateien bestimmt die **_access_s** -Funktion, ob die angegebe
 
 Die Berechtigung zum Lesen oder Schreiben einer Datei garantiert nicht, dass diese Datei auch geöffnet werden kann. Wenn eine Datei z. b. von einem anderen Prozess gesperrt ist, ist Sie möglicherweise nicht verfügbar, obwohl **_access_s** 0 zurückgibt.
 
-**_waccess_s** ist eine breit Zeichen Version von **_access_s**, wobei das *path* -Argument für **_waccess_s** eine Zeichenfolge mit breit Zeichen ist. Andernfalls Verhalten sich **_waccess_s** und **_access_s** identisch.
+**_waccess_s** ist eine breit Zeichen Version von **_access_s**, bei der das *Pfad* Argument für **_waccess_s** eine Zeichenfolge mit breit Zeichen ist. Andernfalls Verhalten sich **_waccess_s** und **_access_s** identisch.
 
 Diese Funktionen überprüfen ihre Parameter. Wenn der *Pfad* NULL ist oder der *Modus* keinen gültigen Modus angibt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, stellen diese Funktionen `errno` auf `EINVAL` ein und geben `EINVAL` zurück.
 
@@ -100,16 +100,16 @@ Diese Funktionen überprüfen ihre Parameter. Wenn der *Pfad* NULL ist oder der 
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |`_taccess_s`|**_access_s**|**_access_s**|**_waccess_s**|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_access_s**|\<io.h>|\<errno.h>|
 |**_waccess_s**|\<wchar.h> oder \<io.h>|\<errno.h>|
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird **_access_s** verwendet, um die Datei mit dem Namen crt_access_s. c zu überprüfen und festzustellen, ob Sie vorhanden ist und ob Schreibvorgänge zulässig
+In diesem Beispiel wird **_access_s** verwendet, um die Datei crt_access_s. c zu überprüfen, um festzustellen, ob Sie vorhanden ist und ob Schreibvorgänge zulässig sind.
 
 ```C
 // crt_access_s.c
@@ -151,11 +151,11 @@ File crt_access_s.c exists.
 File crt_access_s.c does not have write permission.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
 [_access, _waccess](access-waccess.md)<br/>
 [_chmod, _wchmod](chmod-wchmod.md)<br/>
 [_fstat, _fstat32, _fstat64, _fstati64, _fstat32i64, _fstat64i32](fstat-fstat32-fstat64-fstati64-fstat32i64-fstat64i32.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>
-[_stat- und _wstat-Funktionen](stat-functions.md)
+[_stat, _wstat Functions](stat-functions.md)

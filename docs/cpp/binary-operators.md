@@ -6,12 +6,12 @@ helpviewer_keywords:
 - operators [C++], binary
 - binary operators [C++]
 ms.assetid: c0e7fbff-bc87-4708-8333-504ac09ee83e
-ms.openlocfilehash: 700d8fd784862c3e9f81fcde839063ff0a4696bb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 030ae71fec7a0d1572804f30d09f6f9b2749e436
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62176654"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181303"
 ---
 # <a name="binary-operators"></a>Binäre Operatoren
 
@@ -22,8 +22,8 @@ Die folgende Tabelle zeigt eine Liste von Operatoren, die überladen werden kön
 |Operator|Name|
 |--------------|----------|
 |**,**|Komma|
-|**\!=**|Ungleichheit|
-|**%**|Modulooperator|
+|**!=**|Ungleichheit|
+|**%**|Modulus|
 |**%=**|Modulo/Zuweisung|
 |**&**|Bitweises AND|
 |**&&**|Logisches AND|
@@ -41,11 +41,11 @@ Die folgende Tabelle zeigt eine Liste von Operatoren, die überladen werden kön
 |**<**|Kleiner als|
 |**<<**|Nach links verschieben|
 |**<<=**|Nach links verschieben/Zuweisung|
-|**<=**|Kleiner oder gleich|
+|**<=**|Kleiner als oder gleich|
 |**=**|Zuweisung|
 |**==**|Gleichheit|
 |**>**|Größer als|
-|**>=**|Größer oder gleich|
+|**>=**|Größer als oder gleich|
 |**>>**|Nach rechts verschieben|
 |**>>=**|Nach rechts verschieben/Zuweisung|
 |**^**|Exklusives OR|
@@ -56,19 +56,19 @@ Die folgende Tabelle zeigt eine Liste von Operatoren, die überladen werden kön
 
 Um eine binäre Operatorfunktion als nicht statischen Member zu deklarieren, muss sie im folgenden Format deklariert werden:
 
-> *ret-type* **operator** *op* **(** *arg* **)**
+> *ret-Type-* **Operator** *op* **(** *arg* **)**
 
-in denen *ret-Type* ist der Rückgabetyp, *Op* ist einer der in der obigen Tabelle aufgeführten Operatoren und *Arg* ist ein Argument eines beliebigen Typs.
+Wenn der " *ret-Type* " der Rückgabetyp ist, ist " *op* " einer der in der obigen Tabelle aufgelisteten Operatoren, und " *arg* " ist ein Argument eines beliebigen Typs.
 
 Um eine binäre Operatorfunktion als globale Funktion zu deklarieren, muss sie im folgenden Format deklariert werden:
 
-> *ret-type* **operator** *op* **(** _arg1_**,** _arg2_ **)**
+> *ret-Type-* **Operator** *op* **(** _arg1_ **,** _arg2_ **)**
 
-in denen *ret-Type* und *Op* sind für Member-Operatorfunktionen beschrieben und *arg1* und *arg2* sind Argumente. Mindestens eines der Argumente muss ein Klassentyp sein.
+Dabei sind " *ret-Type* " und " *op* " wie für Member-Operator Funktionen beschrieben und *arg1* und *arg2* sind Argumente. Mindestens eines der Argumente muss ein Klassentyp sein.
 
 > [!NOTE]
 > Es gibt keine Einschränkung für die Rückgabetypen der binären Operatoren. Die meisten benutzerdefinierten binären Operatoren geben jedoch entweder einen Klassentyp oder einen Verweis auf einen Klassentyp zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Operatorüberladung](../cpp/operator-overloading.md)

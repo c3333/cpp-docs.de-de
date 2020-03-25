@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - __stdcall keyword [C++]
 ms.assetid: e212594b-1827-4d07-9527-7d412b300df8
-ms.openlocfilehash: df753241c093db75202a10b106631ce36cf73379
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 3abd1d020e4181a42a7bc38319e5e17e69ef0507
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857280"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178537"
 ---
 # <a name="__stdcall"></a>__stdcall
 
@@ -21,9 +21,9 @@ Die **__stdcall** -Aufruf Konvention wird zum Aufrufen von Win32-API-Funktionen 
 
 ## <a name="syntax"></a>Syntax
 
-> *Rückgabetyp* **\_\_stdcallfunktionsname**[ **(** *Argument-List* **)** ]
+> *Rückgabetyp* **\_\_stdcallfunktionsname** *function-name*[ **(** *Argument-List* **)** ]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die folgende Liste zeigt die Implementierung dieser Aufrufkonvention.
 
@@ -51,7 +51,7 @@ struct CMyClass {
 };
 ```
 
-this
+diesen
 
 ```cpp
 void CMyClass::mymethod() { return; }
@@ -74,7 +74,7 @@ Im folgenden Beispiel führt die Verwendung von **__stdcall** dazu, dass alle `W
 typedef BOOL (__stdcall *funcname_ptr)(void * arg1, const char * arg2, DWORD flags, ...);
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Argumentübergabe und Benennungskonventionen](../cpp/argument-passing-and-naming-conventions.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)
+[Schlüsselwörter](../cpp/keywords-cpp.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - module attributes
 ms.assetid: 02223b2a-62b5-4262-832f-564b1e11e58e
-ms.openlocfilehash: daa0ae4aea5ff2a1a3312efcf3c39f43b541abf6
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: e93073a1728063038ddd4e28dbb313854ee3c8c5
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514914"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166691"
 ---
 # <a name="module-c"></a>module (C++)
 
@@ -25,16 +25,16 @@ Definiert den Bibliotheksblock in der IDL-Datei.
 
 ### <a name="parameters"></a>Parameter
 
-*Typ*<br/>
+*type*<br/>
 Optionale Kann eines der folgenden sein:
 
-- `dll`Fügt Funktionen und Klassen hinzu, mit denen die resultierende DLL als in-Process-COM-Server fungieren kann. Dies ist der Standardwert.
+- `dll` fügt Funktionen und Klassen hinzu, mit denen die resultierende DLL als in-Process-COM-Server fungieren kann. Dies ist der Standardwert.
 
-- `exe`Fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als out-of-Process-COM-Server fungieren kann.
+- `exe` fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als out-of-Process-COM-Server fungieren kann.
 
-- `service`Fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als NT-Dienst fungieren kann.
+- `service` fügt Funktionen und Klassen hinzu, mit denen die resultierende ausführbare Datei als NT-Dienst fungieren kann.
 
-- `unspecified`Deaktiviert die Injektion von ATL-Code im Zusammenhang mit dem Modul Attribut: der Injection der ATL-Modul Klasse, der globalen Instanz _AtlModule und der Einstiegspunkt Funktionen. Einfügen von ATL-Code aufgrund von anderen Attributen im Projekt wird nicht deaktiviert.
+- `unspecified` deaktiviert die Injektion von ATL-Code im Zusammenhang mit dem Modul Attribut: der Einschleusung der ATL-Modul Klasse, der globalen Instanz _AtlModule und der Einstiegspunkt Funktionen. Einfügen von ATL-Code aufgrund von anderen Attributen im Projekt wird nicht deaktiviert.
 
 *name*<br/>
 Optionale Der Name des Bibliotheks Blocks.
@@ -85,7 +85,7 @@ Die Zeichenfolgenressource-ID der RGS-Datei, die verwendet wird, um die APP-ID d
 > [!NOTE]
 > Die RGS-Datei und die Zeichenfolge, die den Namen des Diensts enthält, sollten den gleichen numerischen Wert enthalten.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn Sie nicht den Parameter *restricted* auf [emitidl](emitidl.md)setzen, ist **module** in jedem Programm erforderlich, das C++-Attribute verwendet.
 
@@ -93,7 +93,7 @@ Ein Bibliotheksblock wird erstellt, wenn Sie zusätzlich zum **module** -Attribu
 
 Pro IDL-Datei ist ein Bibliotheksblock zulässig. Mehrere Modul-Einträge im Quellcode werden zusammengeführt und die neuesten Parameterwerte werden implementiert.
 
-Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zum obigen Verhalten fügt das Attribut auch ein globales Objekt (mit dem Namen `_AtlModule`) des richtigen Typs und zusätzlichen Unterstützungs Codes ein. Wenn das Attribut eigenständig ist, wird eine von dem richtigen Modultyp abgeleitete Klasse eingefügt. Wenn das Attribut auf eine Klasse angewendet wird, wird eine Basisklasse des richtigen Modultyps hinzugefügt. Der richtige Typ wird durch den Wert des Typparameters bestimmt:
+Wenn dieses Attribut in einem Projekt verwendet wird, das ATL verwendet, ändert sich das Verhalten des Attributs. Zusätzlich zum obigen Verhalten fügt das Attribut auch ein globales Objekt (mit dem Namen `_AtlModule`) des richtigen Typs und zusätzlichen Unterstützungs Codes ein. Wenn das Attribut eigenständig ist, wird eine von dem richtigen Modultyp abgeleitete Klasse eingefügt. Wenn das Attribut auf eine Klasse angewendet wird, wird eine Basisklasse des richtigen Modultyps hinzugefügt. Der richtige Typ wird durch den Wert des *Typparameters* bestimmt:
 
 - `type` = **dll**
 
@@ -146,7 +146,7 @@ BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -154,12 +154,12 @@ BOOL WINAPI DllMain(DWORD dwReason, LPVOID lpReserved) {
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>

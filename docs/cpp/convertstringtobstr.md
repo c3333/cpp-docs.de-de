@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - ConvertStringToBSTR function
 ms.assetid: 071f9b3b-9643-4e06-a1e5-de96ed15bab2
-ms.openlocfilehash: 5e7d8abd29033fc88dae1e83fcc6467fb0ace46f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2065011ee6bbf98ce2c83be494f1e6631af9f7cf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154619"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170708"
 ---
 # <a name="convertstringtobstr"></a>ConvertStringToBSTR
 
 **Microsoft-spezifisch**
 
-Konvertiert eine `char *` -Werts in einen `BSTR`.
+Konvertiert einen `char *`-Wert in einen `BSTR`.
 
 ## <a name="syntax"></a>Syntax
 
@@ -28,7 +28,7 @@ BSTR __stdcall ConvertStringToBSTR(const char* pSrc)
 #### <a name="parameters"></a>Parameter
 
 *pSrc*<br/>
-Ein `char *` Variable.
+Eine `char *` Variable.
 
 ## <a name="example"></a>Beispiel
 
@@ -58,12 +58,12 @@ BSTR text: Test
 
 **Ende Microsoft-spezifisch**
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<comutil.h>
+**Header:** \<comutil. h >
 
-**LIB:** comsuppw.lib oder comsuppwd.lib (finden Sie unter [/Zc: wchar_t (Wchar_t ist der systemeigene Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) Informationen)
+**Lib:** comsuppw. lib oder comsuppwd. lib (siehe [/Zc: wchar_t (wchar_t ist System eigener Typ)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md) , um weitere Informationen zu erhalten)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Globale COM-Funktionen des Compilers](../cpp/compiler-com-global-functions.md)

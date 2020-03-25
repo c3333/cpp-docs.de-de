@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C2668
 ms.assetid: 041e9627-1c76-420e-a653-cfc83f933bd3
-ms.openlocfilehash: 1920af8873578c63ab768dae4bcdf4d91fe7cd57
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f59cb33bed15847ed1a7a2dbe99ea030babf3337
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62164812"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177156"
 ---
 # <a name="compiler-error-c2668"></a>Compilerfehler C2668
 
-'Funktion': Mehrdeutiger Aufruf einer überladenen Funktion
+"Function": mehrdeutiger aufladener Funktions aufzurufen
 
-Der Aufruf angegebenen überladenen Funktion konnte nicht aufgelöst werden. Sie sollten mindestens eine der übergebenen Parameter explizit umgewandelt.
+Der angegebene überladene Funktions aufrufsbefehl konnte nicht aufgelöst werden. Möglicherweise möchten Sie einen oder mehrere der eigentlichen Parameter explizit umwandeln.
 
-Sie können diesen Fehler auch mithilfe der Vorlage abrufen. Wenn Sie in der gleichen Klasse, Sie eine reguläre Memberfunktion und eine auf Vorlagen basierenden Memberfunktion mit der gleichen Signatur verfügen, muss die auf Vorlagen basierenden ein zuerst aufgeführt werden. Dies ist eine Einschränkung des die aktuelle Implementierung von Visual C++.
+Dieser Fehler kann auch über die Vorlagen Verwendung angezeigt werden. Wenn Sie in derselben Klasse über eine reguläre Element Funktion und eine auf Vorlagen basierende Element Funktion mit derselben Signatur verfügen, muss die auf Vorlagen basierende Vorlage zuerst vorhanden sein. Dies ist eine Einschränkung der aktuellen Implementierung von Visual C++.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C2668 generiert:
+Im folgenden Beispiel wird C2668 generiert:
 
 ```cpp
 // C2668.cpp
@@ -43,7 +43,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Eine weitere Möglichkeit zum Beheben dieses Fehlers ist mit einem [using-Deklaration](../../cpp/using-declaration.md):
+Eine andere Möglichkeit, diesen Fehler zu beheben, ist die [Verwendung einer using-Deklaration](../../cpp/using-declaration.md):
 
 ```cpp
 // C2668b.cpp
@@ -86,9 +86,9 @@ class MyTestCase : public AppTestCase {
 
 ## <a name="example"></a>Beispiel
 
-Dieser Fehler kann außerdem infolge einer konformitätsverbesserung für Compiler, die für Visual Studio .NET 2003 durchgeführt wurde, generiert werden: Mehrdeutige Konvertierung bei der Umwandlung von Konstanten 0.
+Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003 ausgeführt wurde: mehrdeutige Konvertierung bei Umwandlung von Konstante 0.
 
-Konvertierung bei der eine Umwandlung, die mit der Konstante 0 ist mehrdeutig, da Int eine Konvertierung sowohl zu lange und Void * erforderlich ist. Wandeln Sie 0 in den genauen Typ, der den Funktionsparameter, die, dem Sie für die verwendet wird, damit keine Konvertierungen müssen stattfinden (dieser Code wird in der Visual Studio .NET 2003 und Visual Studio .NET Versionen von Visual C++ gültig sein), um diesen Fehler zu beheben.
+Die Konvertierung in eine Typumwandlung mithilfe von Konstante 0 ist mehrdeutig, da int eine Konvertierung zwischen "Long" und "void *" erfordert. Um diesen Fehler zu beheben, wandeln Sie 0 in den exakten Typ des Funktions Parameters um, für den es verwendet wird, sodass keine Konvertierungen stattfinden müssen (dieser Code ist in den Visual Studio .NET 2003-und Visual Studio .net- C++Versionen von Visual Studio gültig).
 
 ```cpp
 // C2668c.cpp
@@ -110,7 +110,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Dieser Fehler kann auftreten, da die CRT jetzt "float" und doppelte Formen der alle mathematischen Funktionen verfügt.
+Dieser Fehler kann auftreten, wenn die CRT jetzt über float-und Double-Formen aller mathematischen Funktionen verfügt.
 
 ```cpp
 // C2668d.cpp
@@ -125,7 +125,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Dieser Fehler kann auftreten, da pow (Int, Int) aus "Math.h", in der CRT entfernt wurde.
+Dieser Fehler kann auftreten, wenn der Pow (int, int) aus Math. h in der CRT entfernt wurde.
 
 ```cpp
 // C2668e.cpp
@@ -138,7 +138,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Dieser Code in Visual Studio 2015 ist erfolgreich, aber in Visual Studio 2017 und höher mit C2668 schlägt fehl. In Visual Studio 2015 behandelt der Compiler fälschlicherweise eine copy-list-Initialisierung auf die gleiche Weise wie eine Kopierinitialisierung. Er konvertiert nur die Konstruktoren für die Überladungsauflösung.
+Dieser Code ist in Visual Studio 2015 erfolgreich, schlägt jedoch in Visual Studio 2017 und höher mit C2668 fehl. In Visual Studio 2015 behandelt der Compiler fälschlicherweise eine copy-list-Initialisierung auf die gleiche Weise wie eine Kopierinitialisierung. Er konvertiert nur die Konstruktoren für die Überladungsauflösung.
 
 ```cpp
 struct A {

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4950
 ms.assetid: 50226a5c-c664-4d09-ac59-e9e874ca244f
-ms.openlocfilehash: 784179af68ff55ba70c61255c88688105ecb1738
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 52c4de94dfe087b4dcf407295e556c9350b2cb8b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62208095"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164988"
 ---
 # <a name="compiler-warning-c4950"></a>Compilerwarnung C4950
 
-„type_or_member“: als veraltet markiert.
+'type_or_member': als veraltet markiert.
 
-Ein Member oder Typ wurde mit als veraltet markiert die <xref:System.ObsoleteAttribute> Attribut.
+Ein Member oder Typ wurde mit dem <xref:System.ObsoleteAttribute>-Attribut als veraltet markiert.
 
-C4950 wird immer als Fehler ausgegeben. Sie können diese Warnung deaktivieren, mit der [Warnung](../../preprocessor/warning.md) Pragma-Direktive oder [/WD](../../build/reference/compiler-option-warning-level.md) -Compileroption.
+C4950 wird immer als Fehler ausgegeben. Sie können diese Warnung mithilfe der [Warning](../../preprocessor/warning.md) -pragma-Direktive oder der [/WD](../../build/reference/compiler-option-warning-level.md) -Compileroption deaktivieren.
 
 ## <a name="example"></a>Beispiel
 

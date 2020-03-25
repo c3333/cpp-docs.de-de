@@ -8,14 +8,14 @@ helpviewer_keywords:
 - += operator [C++], appending strings
 - + operator [C++], _bstr_t objects
 ms.assetid: d28316ce-c2c8-4a38-bdb3-44fa4e582c44
-ms.openlocfilehash: 0a2c374fc160a0575e0a17cc85ab51c65fa9392a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b9eddca85d66f4978e1b33299ca655cd880cf45e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62390828"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80181147"
 ---
-# <a name="bstrtoperator--"></a>_bstr_t::operator +=, +
+# <a name="_bstr_toperator--"></a>_bstr_t::operator +=, +
 
 **Microsoft-spezifisch**
 
@@ -33,28 +33,28 @@ friend _bstr_t operator+( const wchar_t* s3, const _bstr_t& s1);
 #### <a name="parameters"></a>Parameter
 
 *s1*<br/>
-Ein `_bstr_t`-Objekt.
+Ein `_bstr_t` -Objekt.
 
 *s2*<br/>
 Eine Mehrbytezeichenfolge.
 
-*s3*<br/>
+*S3*<br/>
 Eine Unicode-Zeichenfolge.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Operatoren führen eine Zeichenfolgenverkettung aus:
 
-- **Operator += (***s1***)** fügt die Zeichen im gekapselten `BSTR` von *s1* am Ende dieses Objekts gekapselten `BSTR`.
+- **Operator + = (**  *S1*  **)** Fügt die Zeichen in der gekapselten `BSTR` von *S1* an das Ende der gekapselten `BSTR`dieses Objekts an.
 
-- **Operator + (***s1***)** gibt die neue `_bstr_t` sein, der durch die Verkettung dieses Objekts `BSTR` mit dem *s1*.
+- **Operator + (**  *S1*  **)** Gibt die neue `_bstr_t` zurück, die durch Verkettung des `BSTR` dieses Objekts mit dem von *S1*gebildet wird.
 
-- **Operator + (***s2***&#124;***s1***)** gibt ein neues `_bstr_t` sein, der durch die Verkettung ein Multibyte-Zeichenfolge *s2*, umgewandelt in Unicode, mit der `BSTR` in gekapselt *s1*.
+- **Operator + (**  *S2*  **&#124;**  *S1*  **)** Gibt eine neue `_bstr_t` zurück, die durch Verkettung einer in Unicode konvertierten Multibytezeichen-Zeichenfolge *S2*gebildet wird, wobei die `BSTR` in *S1*gekapselt ist.
 
-- **Operator + (***s3* **,***s1***)** gibt ein neues `_bstr_t` sein, der durch die Verkettung einer Unicode-Zeichenfolge *s3* mit der `BSTR` in gekapselt *s1*.
+- **Operator + (** *S3* **,** *S1* **)** Gibt eine neue `_bstr_t` zurück, die durch Verkettung einer Unicode-Zeichenfolge *S3* mit der in *S1*gekapselten `BSTR` gebildet wird.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_bstr_t-Klasse](../cpp/bstr-t-class.md)

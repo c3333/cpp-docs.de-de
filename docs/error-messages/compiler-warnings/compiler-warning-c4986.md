@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - C4986
 ms.assetid: a3a7b008-29dd-4203-85f3-7740ab6790bb
-ms.openlocfilehash: fb52e33ceeadda03105e391d8e0b5b3f6234d6b9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: df6fc88ffe98dd2b4a3129800c7881f26d4f625b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62280593"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164819"
 ---
 # <a name="compiler-warning-c4986"></a>Compilerwarnung C4986
 
-'Funktion': Ausnahmespezifikation stimmt nicht mit der vorherigen Deklaration überein
+"Function": die Ausnahme Spezifikation stimmt nicht mit der vorherigen Deklaration.
 
-Diese Warnung kann generiert werden, wenn eine Ausnahmespezifikation, die in einer Deklaration und nicht in der anderen vorhanden ist.
+Diese Warnung kann generiert werden, wenn eine Ausnahme Spezifikation in einer Deklaration und nicht in der anderen vorliegt.
 
-Standardmäßig ist C4986 deaktiviert. Weitere Informationen finden Sie unter [Compiler Warnings That Are Off by Default](../../preprocessor/compiler-warnings-that-are-off-by-default.md).
+Standardmäßig ist C4986 auf OFF eingestellt. Weitere Informationen finden Sie unter [Compiler Warnings That Are Off by Default](../../preprocessor/compiler-warnings-that-are-off-by-default.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird C4986 generiert.
+Im folgenden Beispiel wird C4986 generiert.
 
 ```cpp
 class X { };
@@ -37,7 +37,7 @@ void f1()
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel beseitigt diese Warnung.
+Im folgenden Beispiel wird diese Warnung vermieden.
 
 ```cpp
 class X { };

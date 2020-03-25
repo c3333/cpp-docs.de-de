@@ -9,12 +9,12 @@ helpviewer_keywords:
 - character sets [C++], Unicode
 - localization [C++], character sets
 - Unicode [C++], installing support
-ms.openlocfilehash: c30cb1fbfb1930b5e4b026e58c478f0099e8ecdf
-ms.sourcegitcommit: effb516760c0f956c6308eeded48851accc96b92
+ms.openlocfilehash: 0b61407920a0ce35a1c6a8466458736e983e271e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929918"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168563"
 ---
 # <a name="support-for-unicode"></a>Unterstützung für Unicode
 
@@ -22,7 +22,7 @@ Unicode ist eine Spezifikation für die Unterstützung aller Zeichensätze, eins
 
 Ein Breitzeichen ist ein mehrsprachiger 2-Byte-Zeichencode. Zehntausende von Zeichen, die fast alle in modernen Computing weltweit verwendeten Zeichen, einschließlich technischer Symbole und spezieller Veröffentlichungs Zeichen, umfassen, können gemäß der Unicode-Spezifikation als einzelnes breit Zeichen dargestellt werden, das von Verwenden von UTF-16. Zeichen, die nicht in nur einem breit Zeichen dargestellt werden können, können mithilfe der Unicode-Ersatz Zeichenpaar Funktion in einem Unicode-Paar dargestellt werden. Da fast jedes verwendete Zeichen in UTF-16 in einem einzelnen 16-Bit-breit Zeichen dargestellt wird, vereinfacht die Verwendung von breit Zeichen das Programmieren mit internationalen Zeichensätzen. Mithilfe von UTF-16LE (für Little-Endian) codierte breit Zeichen sind das Native Zeichenformat für Windows.
 
-Eine Breitzeichenzeichenfolge wird als `wchar_t[]`-Array dargestellt, auf das mit einem `wchar_t*`-Zeiger gezeigt wird. Jedes ASCII-Zeichen kann als Breitzeichen dargestellt werden, indem der Buchstabe L dem Zeichen vorangestellt wird. L ' \ 0 ' ist beispielsweise das abschließende (16-Bit) NULL-Zeichen. Auf ähnliche Weise kann jedes ASCII-Zeichenfolgenliteral als Breitzeichen-Zeichenfolgenliteral dargestellt werden, indem der Buchstabe L dem ASCII-Literal vorangestellt wird (L"Hello").
+Eine Breitzeichenzeichenfolge wird als `wchar_t[]`-Array dargestellt, auf das mit einem `wchar_t*`-Zeiger gezeigt wird. Jedes ASCII-Zeichen kann als Breitzeichen dargestellt werden, indem der Buchstabe L dem Zeichen vorangestellt wird. L'\0' ist beispielsweise das abschließende (16-Bit) NULL-Breitzeichen. Auf ähnliche Weise kann jedes ASCII-Zeichenfolgenliteral als Breitzeichen-Zeichenfolgenliteral dargestellt werden, indem der Buchstabe L dem ASCII-Literal vorangestellt wird (L"Hello").
 
 Im Allgemeinen benötigen Breitzeichen mehr Platz im Arbeitsspeicher als Multibytezeichen, werden aber schneller verarbeitet. Außerdem kann jeweils nur ein Gebiets Schema in einer multibytecodierung dargestellt werden, während alle Zeichensätze der Welt gleichzeitig von der Unicode-Darstellung dargestellt werden.
 
@@ -33,12 +33,12 @@ Das MFC-Framework ist komplett Unicode-fähig, und MFC erreicht die Unicode-Fäh
 |Nicht portable Datendatentypen|Ersetzt durch dieses Makro|
 |-----------------------------|----------------------------|
 |`char`, `wchar_t`|`_TCHAR`|
-|`char*`, `LPSTR` (Win32-Datentyp),`LPWSTR`|`LPTSTR`|
-|`const char*`, `LPCSTR` (Win32-Datentyp),`LPCWSTR`|`LPCTSTR`|
+|`char*``LPSTR` (Win32-Datentyp), `LPWSTR`|`LPTSTR`|
+|`const char*``LPCSTR` (Win32-Datentyp), `LPCWSTR`|`LPCTSTR`|
 
-Die `CString` Klasse `_TCHAR` verwendet als Basis und stellt Konstruktoren und Operatoren für einfache Konvertierungen bereit. Die meisten Zeichenfolgenvorgänge für Unicode können durch dieselbe Logik geschrieben werden, die für die Verarbeitung des Windows-ANSI-Zeichensatzes verwendet wird, mit der Ausnahme, dass die grundlegende Einheit für Vorgänge ein 16-Bit-Zeichen anstelle eines 8-Bit-Zeichens ist. Im Gegensatz zur Arbeit mit Multibytezeichensätzen müssen (und sollten) Sie ein Unicode-Zeichen nicht behandeln, als bestünde es aus zwei unterschiedlichen Bytes. Sie müssen jedoch die Möglichkeit eines einzelnen Zeichens behandeln, das durch ein Ersatz Zeichenpaar von breit Zeichen dargestellt wird. Schreiben Sie im Allgemeinen keinen Code, der annimmt, dass die Länge einer Zeichenfolge mit der Anzahl der Zeichen übereinstimmt, die in der Zeichenfolge enthalten sind.
+Class `CString` verwendet `_TCHAR` als Basis und stellt Konstruktoren und Operatoren für einfache Konvertierungen bereit. Die meisten Zeichenfolgenvorgänge für Unicode können durch dieselbe Logik geschrieben werden, die für die Verarbeitung des Windows-ANSI-Zeichensatzes verwendet wird, mit der Ausnahme, dass die grundlegende Einheit für Vorgänge ein 16-Bit-Zeichen anstelle eines 8-Bit-Zeichens ist. Im Gegensatz zur Arbeit mit Multibytezeichensätzen müssen (und sollten) Sie ein Unicode-Zeichen nicht behandeln, als bestünde es aus zwei unterschiedlichen Bytes. Sie müssen jedoch die Möglichkeit eines einzelnen Zeichens behandeln, das durch ein Ersatz Zeichenpaar von breit Zeichen dargestellt wird. Schreiben Sie im Allgemeinen keinen Code, der annimmt, dass die Länge einer Zeichenfolge mit der Anzahl der Zeichen übereinstimmt, die in der Zeichenfolge enthalten sind.
 
-## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
 - [MFC-Unicode-und Multibyte-Zeichensatz Unterstützung (MBCS) verwenden](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)
 
@@ -56,7 +56,7 @@ Die `CString` Klasse `_TCHAR` verwendet als Basis und stellt Konstruktoren und O
 
 - [Weitere Informationen zu generischen Text Zuordnungen für die Übertragbarkeit von Byte Breite](../text/generic-text-mappings-in-tchar-h.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Text und Zeichenfolgen](../text/text-and-strings-in-visual-cpp.md)<br/>
 [Unterstützung für die Verwendung von wmain](../text/support-for-using-wmain.md)

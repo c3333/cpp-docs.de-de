@@ -1,21 +1,21 @@
 ---
-title: Importidl (C++-COM-Attribut)
+title: importidl (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.importidl
 helpviewer_keywords:
 - importidl attribute
 ms.assetid: 4b0a4b55-6c57-4e6e-bc7b-a12cc8063941
-ms.openlocfilehash: 9db62d4f2a36b8cc0592c924b113077a758915c0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6e41a98bef079c92b6df6e7eff203301aa9ceae4
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409433"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166821"
 ---
 # <a name="importidl"></a>importidl
 
-Fügt die angegebenen IDL-Datei in der generierten IDL-Datei an.
+Fügt die angegebene IDL-Datei in die generierte IDL-Datei ein.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,13 +26,13 @@ Fügt die angegebenen IDL-Datei in der generierten IDL-Datei an.
 ### <a name="parameters"></a>Parameter
 
 *idl_file*<br/>
-Identifiziert den Namen der IDL-Datei, die mit der IDL-Datei, die generiert wird, und für Ihre Anwendung zusammengeführt werden sollen.
+Identifiziert den Namen der IDL-Datei, die Sie mit der IDL-Datei zusammenführen möchten, die für die Anwendung generiert wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Importidl** C++ Attribut wird im Abschnitt außerhalb des bibliotheksblocks (in *Idl_file*) in der generierten IDL-Datei des Programms und die Bibliothekabschnitt (in *Idl_file*) in der Bibliotheksabschnitt der generierten IDL-Datei des Programms.
+Das **importidl** C++ -Attribut platziert den Abschnitt außerhalb des Bibliotheks Blocks (in *idl_file*) in der generierten IDL-Datei des Programms und im Bibliotheks Abschnitt (in *idl_file*) in den Bibliotheks Abschnitt der generierten IDL-Datei des Programms.
 
-Sie verwenden möchten **Importidl**, z. B. Wenn Sie eine handcodierten IDL-Datei mit der generierten IDL-Datei verwenden möchten.
+Sie können beispielsweise **importidl**verwenden, wenn Sie eine Hand codierte IDL-Datei mit der generierten IDL-Datei verwenden möchten.
 
 ## <a name="example"></a>Beispiel
 
@@ -43,7 +43,7 @@ Sie verwenden möchten **Importidl**, z. B. Wenn Sie eine handcodierten IDL-Date
 [importidl("import.idl")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -51,12 +51,12 @@ Sie verwenden möchten **Importidl**, z. B. Wenn Sie eine handcodierten IDL-Date
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>

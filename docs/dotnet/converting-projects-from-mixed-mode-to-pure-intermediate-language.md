@@ -7,12 +7,12 @@ helpviewer_keywords:
 - mixed-mode applications, intermediate language
 - projects [C++], converting to intermediate language
 ms.assetid: 855f9e3c-4f09-4bfe-8eab-a45f68292be9
-ms.openlocfilehash: 05ece23e6d79fc399085099deebcde0aa4a92c64
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: 8b22f3aaf706fa096f6c25ab8e9fdab6dc512cd8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "79544735"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208803"
 ---
 # <a name="converting-projects-from-mixed-mode-to-pure-intermediate-language"></a>Konvertieren von Projekten im gemischten Modus in reine Zwischensprache
 
@@ -45,7 +45,7 @@ Wenn Sie eine frühere Version des Microsoft C++ -compilertoolsets verwenden, da
       // #include <tchar.h>
       ```
 
-       \- oder -
+       Oder
 
        Beispielsweise in Windows Forms Anwendungen:
 
@@ -75,7 +75,7 @@ Wenn Sie eine frühere Version des Microsoft C++ -compilertoolsets verwenden, da
 
    Ersetzen Sie bei Bedarf nicht verwaltete Typen durch Verweise auf Strukturen aus dem [System](/dotnet/api/system) -Namespace. Allgemeine verwaltete Typen sind in der folgenden Tabelle aufgeführt:
 
-   |Struktur|Beschreibung|
+   |Struktur|BESCHREIBUNG|
    |---------------|-----------------|
    |[Boolescher Wert](/dotnet/api/system.boolean)|Stellt einen booleschen Wert dar.|
    |[Byte](/dotnet/api/system.byte)|Stellt eine 8-Bit-Ganzzahl ohne Vorzeichen dar.|

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - idl_module attribute
 ms.assetid: 3578b337-e38a-4334-b747-15404c02dbc0
-ms.openlocfilehash: 8838a833552ae7066dbcf17b4f676d6626c069f8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 6dd0a34d5d957838613bde2c9e05d5ef26a1f678
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514673"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168043"
 ---
 # <a name="idl_module"></a>idl_module
 
@@ -53,15 +53,15 @@ Optionale Member der Bibliothek können nicht willkürlich aufgerufen werden. We
 *Funktionsdeklaration*<br/>
 Die Funktion, die Sie definieren.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Mit dem **idl_module** C++ -Attribut können Sie den Einstiegspunkt in einer DLL-Datei angeben, die es Ihnen ermöglicht, aus einer DLL-Datei zu importieren.
 
-Das **idl_module** -Attribut verfügt über eine ähnliche Funktionalität wie das- [Modul](/windows/win32/Midl/module) -Mittel l-Attribut.
+Das **idl_module** -Attribut verfügt über eine ähnliche Funktionalität wie das- [modulmittell](/windows/win32/Midl/module) -Attribut.
 
 Sie können beliebige Elemente aus einem COM-Objekt exportieren, das Sie aus einer DLL-Datei exportieren können, indem Sie einen DLL-Einstiegspunkt in den Bibliotheks Block einer IDL-Datei einfügen.
 
-Ihr muss **idl_module** in zwei Schritten verwenden. Zunächst müssen Sie ein Name-DLL-Paar definieren. Wenn Sie dann **idl_module** verwenden, um einen Einstiegspunkt anzugeben, geben Sie den Namen und alle zusätzlichen Attribute an.
+In müssen Sie **idl_module** in zwei Schritten verwenden. Zunächst müssen Sie ein Name-DLL-Paar definieren. Wenn Sie dann **idl_module** verwenden, um einen Einstiegspunkt anzugeben, geben Sie den Namen und alle zusätzlichen Attribute an.
 
 ## <a name="example"></a>Beispiel
 
@@ -76,7 +76,7 @@ Der folgende Code zeigt, wie das **idl_module** -Attribut verwendet wird:
 void FuncName(int i);
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -84,12 +84,12 @@ void FuncName(int i);
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>

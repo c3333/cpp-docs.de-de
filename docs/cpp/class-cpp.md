@@ -7,16 +7,16 @@ helpviewer_keywords:
 - class types [C++], class statements
 - class keyword [C++]
 ms.assetid: dd23c09f-6598-4069-8bff-69c7f2518b9f
-ms.openlocfilehash: c4ef9690a41737147354ee0976f6912c4711ff67
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c1b9d8f6510dfe15644f0e47cad7e0aecbac36c9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62331076"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180975"
 ---
 # <a name="class-c"></a>class (C++)
 
-Die **Klasse** -Schlüsselwort deklariert einen Klassentyp oder definiert ein Objekt eines Klassentyps.
+Das **Class** -Schlüsselwort deklariert einen Klassentyp oder definiert ein Objekt eines Klassen Typs.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,28 +31,28 @@ class [ms-decl-spec] [tag [: base-list ]]
 
 #### <a name="parameters"></a>Parameter
 
-*template-spec*<br/>
+*Vorlagen Spezifikation*<br/>
 Optionale Vorlagenspezifikationen. Weitere Informationen finden Sie unter [Vorlagen](templates-cpp.md).
 
 *class*<br/>
-Die **Klasse** Schlüsselwort.
+Das **Class** -Schlüsselwort.
 
-*ms-decl-spec*<br/>
-Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie in der [__declspec](../cpp/declspec.md) Schlüsselwort.
+*MS-decl-spec*<br/>
+Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie unter [__declspec](../cpp/declspec.md) -Schlüsselwort.
 
-*tag*<br/>
+*Tag*<br/>
 Der Typname, der für die Klasse angegeben wurde. Das Tag ist ein reserviertes Wort innerhalb des Gültigkeitsbereichs der Klasse. Das Tag ist optional. Wenn es nicht angegeben wird, wird eine anonyme Klasse definiert. Weitere Informationen finden Sie unter [Anonyme Klassentypen](../cpp/anonymous-class-types.md).
 
 *base-list*<br/>
-Optionale Liste von Klassen oder Strukturen, von denen diese Klasse ihre Member ableitet. Finden Sie unter [Basisklassen](../cpp/base-classes.md) für Weitere Informationen. Jede Klasse oder Struktur Basisnamen kann einen Zugriffsspezifizierer vorangestellt werden ([öffentliche](../cpp/public-cpp.md), [private](../cpp/private-cpp.md), [geschützt](../cpp/protected-cpp.md)) und die [virtuellen](../cpp/virtual-cpp.md) Schlüsselwort. Finden Sie in der memberzugriffstabelle in [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md) für Weitere Informationen.
+Optionale Liste von Klassen oder Strukturen, von denen diese Klasse ihre Member ableitet. Weitere Informationen finden Sie unter [Basisklassen](../cpp/base-classes.md) . Jedem Basisklassen-oder Struktur Namen kann ein Zugriffsspezifizierer ([Public](../cpp/public-cpp.md), [private](../cpp/private-cpp.md), [Protected](../cpp/protected-cpp.md)) und das [Virtual](../cpp/virtual-cpp.md) -Schlüsselwort vorangestellt werden. Weitere Informationen finden Sie in der Tabelle "Member-Access" unter [Steuern des Zugriffs auf Klassenmember](member-access-control-cpp.md) .
 
-*member-list*<br/>
-Liste von Klassenmembern. Finden Sie unter [Member-Klassenübersicht](../cpp/class-member-overview.md) für Weitere Informationen.
+*Mitgliederliste*<br/>
+Liste von Klassenmembern. Weitere Informationen finden Sie unter [Übersicht über Klassenmember](../cpp/class-member-overview.md) .
 
-*Deklaratoren*<br/>
-Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisierungslisten enthalten, wenn alle Datenmember der Klasse sind **öffentliche**. Dies ist häufiger in Strukturen, deren Datenmember sind **öffentliche** standardmäßig als in Klassen. Finden Sie unter [Übersicht von Deklaratoren](../cpp/overview-of-declarators.md) für Weitere Informationen.
+*declarators*<br/>
+Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der Klasse **öffentlich**sind. Dies kommt häufiger in Strukturen vor, deren Datenmember standardmäßig **öffentlich** sind, als in Klassen. Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zu Klassen im Allgemeinen finden Sie in einem der folgenden Themen:
 
@@ -66,7 +66,7 @@ Weitere Informationen zu Klassen im Allgemeinen finden Sie in einem der folgende
 
 - [__virtual_inheritance](../cpp/inheritance-keywords.md)
 
-Informationen über verwaltete Klassen und strukte in C++ / CLI und C++ / CX, finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md)
+Informationen zu verwalteten Klassen und Strukturen in C++/CLI und C++/CX finden Sie unter [Klassen und Strukturen](../extensions/classes-and-structs-cpp-component-extensions.md) .
 
 ## <a name="example"></a>Beispiel
 
@@ -141,7 +141,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

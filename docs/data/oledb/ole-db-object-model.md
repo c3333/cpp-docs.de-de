@@ -5,78 +5,78 @@ helpviewer_keywords:
 - rowsets, OLE DB object model
 - OLE DB, object model
 ms.assetid: 1a274a25-c310-4430-a1ec-bd2bd8120eff
-ms.openlocfilehash: 303ad4166f0f1126182956fae9c19f513be7cfb3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 192195d02b034546e50b1cb860b1f11c47dc2b65
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62283810"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210118"
 ---
 # <a name="ole-db-object-model"></a>OLE DB-Objektmodell
 
-Der OLE DB-Objektmodell besteht aus den folgenden Objekten oder Komponenten. Die ersten vier Objekte oder aufgeführten Komponenten (Datenquellen, Sitzungen, Befehle und Rowsets) können Sie mit einer Datenquelle verbinden und anzeigen. Die Rest-, beginnend mit den Accessoren beziehen sich auf arbeiten mit den Daten, wenn er angezeigt wird.
+Das OLE DB-Objektmodell besteht aus den folgenden Objekten oder Komponenten. Mit den ersten vier aufgeführten Objekten oder Komponenten (Datenquellen, Sitzungen, Befehle und Rowsets) können Sie eine Verbindung mit einer Datenquelle herstellen und diese anzeigen. Der Rest, beginnend mit Accessoren, bezieht sich auf die Arbeit mit den Daten, wenn Sie angezeigt wird.
 
-## <a name="data-sources"></a>Datenquellen
+## <a name="data-sources"></a>Projektmappen-Explorer
 
-Datenquellenobjekte können Sie für die Verbindung mit einer Datenquelle, z. B. eine Datei oder DBMS. Ein Datenquellenobjekt erstellt und verwaltet die Verbindung und Berechtigungen und Authentifizierungen Informationen (z. B. Anmeldenamen und Kennwort) enthält. Ein Datenquellenobjekt kann eine oder mehrere Sitzungen erstellen.
+Mit Datenquellen Objekten können Sie eine Verbindung mit einer Datenquelle, z. b. einer Datei oder einem DBMS, herstellen. Ein Datenquellen Objekt erstellt und verwaltet die Verbindung und enthält Berechtigungen und Authentifizierungen (z. b. Anmelde Name und Kennwort). Ein Datenquellen Objekt kann eine oder mehrere Sitzungen erstellen.
 
 ## <a name="sessions"></a>Sitzungen
 
-Eine Sitzung verwaltet eine spezielle Interaktion mit der Datenquelle zum Abfragen und Abrufen von Daten. Jede Sitzung ist eine einzelne Transaktion. Eine Transaktion ist eine unteilbare Arbeitseinheit, die von der Lackmustest definiert. Eine Definition von ACID verfügen, finden Sie unter [Transaktionen](#vcconoledbcomponents_transactions).
+Eine Sitzung verwaltet eine bestimmte Interaktion mit der Datenquelle, um Daten abzufragen und abzurufen. Jede Sitzung ist eine einzelne Transaktion. Eine Transaktion ist eine unteilbare Arbeitseinheit, die durch den Acid-Test definiert wird. Eine Definition von Acid finden Sie unter [Transaktionen](#vcconoledbcomponents_transactions).
 
-Sitzungen werden wichtige Aufgaben wie das Öffnen des Rowsets und die Rückgabe des Datenquellenobjekt, das sie erstellt haben. Sitzungen können auch Metadaten oder Informationen zu der Datenquelle selbst (z. B. Tabelleninformationen) zurückgeben.
+Sitzungen führen wichtige Aufgaben aus, z. b. das Öffnen von Rowsets und das Zurückgeben des Datenquellen Objekts, das es erstellt Sitzungen können auch Metadaten oder Informationen über die Datenquelle selbst (z. b. Tabellen Informationen) zurückgeben.
 
-Eine Sitzung kann einem oder mehreren Befehlen erstellen.
+Eine Sitzung kann mindestens einen Befehl erstellen.
 
 ## <a name="commands"></a>Befehle
 
-Befehle ausführen, einen Textbefehl, z. B. eine SQL­Anweisung. Der Textbefehl ein Rowset, z. B. eine SQL angegeben **wählen** -Anweisung, dem Befehl wird das Rowset erstellt.
+Befehle führen einen Textbefehl aus, z. b. eine SQL-Anweisung. Wenn der Text-Befehl ein Rowset (z. b. eine SQL- **Select** -Anweisung) angibt, erstellt der Befehl das Rowset.
 
-Ein Befehl ist lediglich ein Container für einen Textbefehl, der eine Zeichenfolge (z. B. eine SQL-Anweisung) von einem Consumer auf ein Datenquellenobjekt für die Ausführung durch den Anbieter des zugrunde liegenden Datenspeicher gespeichert ist. In der Regel der Textbefehl ist eine SQL **wählen** Anweisung (in diesem Fall ist, da SQL **wählen** gibt ein Rowset, erstellt der Befehl automatisch ein Rowset).
+Ein Befehl ist einfach ein Container für einen Textbefehl, bei dem es sich um eine Zeichenfolge (z. b. eine SQL-Anweisung) handelt, die von einem Consumer an ein Datenquellen Objekt zur Ausführung durch den zugrunde liegenden Datenspeicher des Anbieters übermittelt wird. In der Regel handelt es sich bei dem Textbefehl um eine SQL **Select** -Anweisung (in diesem Fall, da SQL **Select** ein Rowset angibt, erstellt der Befehl automatisch ein Rowset).
 
 ## <a name="rowsets"></a>Rowsets
 
-Rowsets werden Daten im Tabellenformat angezeigt. Ein Index ist ein Sonderfall eines Rowsets. Sie können die Rowsets aus der Sitzung oder den Befehl erstellen.
+Rowsets zeigen Daten im Tabellenformat an. Ein Index ist ein Sonderfall eines Rowsets. Sie können Rowsets aus der Sitzung oder dem Befehl erstellen.
 
 ### <a name="schema-rowsets"></a>Schemarowsets
 
-Schemas sind Metadaten (Strukturinformationen) zu einer Datenbank. Schemarowsets sind Rowsets, die Schemainformationen zu haben. Einige OLE DB-Anbieter für DBMS unterstützen Schemarowset-Objekte. Weitere Informationen zu Schemarowsets finden Sie unter [Abrufen von Metadaten mit Schemarowsets](../../data/oledb/obtaining-metadata-with-schema-rowsets.md) und [Schemarowset-Klassen und TypeDef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md).
+Schemas verfügen über Metadaten (Strukturinformationen) zu einer Datenbank. Schemarowsets sind Rowsets mit Schema Informationen. Einige OLE DB Anbieter für DBMS unterstützen Schemarowsetobjekte. Weitere Informationen zu Schemarowsets finden Sie unter Abrufen von [Metadaten mit Schemarowsets](../../data/oledb/obtaining-metadata-with-schema-rowsets.md) und [Schemarowset-Klassen und typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md).
 
 ### <a name="view-objects"></a>Objekte anzeigen
 
-Ein Objekt definiert eine Teilmenge der Zeilen und Spalten aus einem Rowset. Es verfügt über keine eigenen Daten. Objekte können nicht auf Daten aus mehreren Rowsets kombinieren.
+Ein View-Objekt definiert eine Teilmenge der Zeilen und Spalten eines Rowsets. Sie verfügt über keine eigenen Daten. Ansichts Objekte können keine Daten aus mehreren Rowsets kombinieren.
 
-## <a name="accessors"></a>Zugriffsmethoden
+## <a name="accessors"></a>Accessoren
 
-Nur OLE DB verwendet das Konzept der Accessoren. Ein Accessor wird beschrieben, wie Daten in einem Consumer gespeichert werden. Er besitzt einen Satz von Bindungen (eine spaltenzuordnung bezeichnet), zwischen Rowset-Feldern (Spalten) und Datenelemente, die Sie in der Consumer nicht deklarieren.
+Nur OLE DB verwendet das Konzept von Accessoren. Ein Accessor beschreibt, wie Daten in einem Consumer gespeichert werden. Sie verfügt über einen Satz von Bindungen (eine Spalten Zuordnung genannt) zwischen Rowsetfeldern (Spalten) und Datenmembern, die Sie im Consumer deklarieren.
 
-##  <a name="vcconoledbcomponents_transactions"></a> Transaktionen
+##  <a name="transactions"></a><a name="vcconoledbcomponents_transactions"></a> Transaktionen
 
-Transaktionsobjekte werden verwendet, wenn durch Commit oder Abbruch von geschachtelten Transaktionen auf als der untersten Ebene. Eine Transaktion ist eine unteilbare Arbeitseinheit, die von der Lackmustest definiert. ACID steht für:
+Transaktions Objekte werden beim committen oder Abbrechen von nicht der niedrigsten Ebene verwendet. Eine Transaktion ist eine unteilbare Arbeitseinheit, die durch den Acid-Test definiert wird. ACID steht für:
 
-- Unteilbarkeit, kann nicht in kleinere Arbeitseinheiten unterteilt werden
+- Atomizität, kann nicht in kleinere Arbeitseinheiten aufgeteilt werden
 
-- Parallelität kann mehr als eine Transaktion zu einem Zeitpunkt ausgeführt.
+- Parallelität, mehrere Transaktionen können gleichzeitig ausgeführt werden.
 
-- Isolation, eine Transaktion verfügt über Kenntnisse über Änderungen, die von einem anderen beschränkt.
+- Isolation: eine Transaktion hat nur eingeschränkte Kenntnisse über Änderungen, die von einer anderen vorgenommen wurden.
 
-- Dauerhaftigkeit, nimmt die Transaktion permanente Änderungen
+- Dauerhaftigkeit: die Transaktion führt persistente Änderungen aus.
 
 ## <a name="enumerators"></a>Enumeratoren
 
-Enumeratoren suchen Sie nach verfügbaren Datenquellen und anderen Enumeratoren. Kunden, die für eine bestimmte Datenquelle angepasst werden nicht verwenden Enumeratoren, um für eine Datenquelle zu verwenden, zu suchen.
+Enumeratoren suchen nach verfügbaren Datenquellen und anderen Enumeratoren. Consumer, die nicht für eine bestimmte Datenquelle angepasst sind, verwenden Enumeratoren für die Suche nach einer Datenquelle, die verwendet werden soll.
 
-Ein Stammenumerator, der im Lieferumfang von Microsoft Data Access SDK, durchläuft die Registrierung von Datenquellen und anderen Enumeratoren nach. Andere Enumeratoren Durchlaufen der Registrierung oder die Suche in einer anbieterspezifischen Weise.
+Ein root-Enumerator, der im Microsoft Data Access SDK enthalten ist, durchläuft die Registrierung nach Datenquellen und anderen Enumeratoren. Andere Enumeratoren durchlaufen die Registrierung oder suchen auf anbieterspezifische Weise.
 
-## <a name="errors"></a>Fehler
+## <a name="errors"></a>Errors
 
-Jede Schnittstelle auf jedem OLE DB-Objekt kann Fehler verursachen. Weitere Informationen zu einem Fehler, einschließlich eine optionale benutzerdefinierte Fehlerobjekt auch Fehler sein. Diese Informationen werden in ein HRESULT gespeichert.
+Eine beliebige Schnittstelle für ein beliebiges OLE DB Objekt kann Fehler erzeugen. Fehler enthalten zusätzliche Informationen zu einem Fehler, einschließlich eines optionalen benutzerdefinierten Fehler Objekts. Diese Informationen werden in einem HRESULT gespeichert.
 
 ## <a name="notifications"></a>Benachrichtigungen
 
-Benachrichtigungen werden von miteinander kommunizierenden consumergruppen, die Freigabe eines Rowsets verwendet (, in denen bedeutet freigeben, dass Consumer davon ausgegangen, dass werden innerhalb derselben Transaktion arbeiten). Aktivieren Benachrichtigungen miteinander kommunizierenden Consumer Freigabe eines Rowsets über Aktionen für das Rowset, das von ihren Kollegen ausgeführten informiert werden.
+Benachrichtigungen werden von Gruppen von kooperierenden Consumern verwendet, die ein Rowset gemeinsam nutzen (die Freigabe bedeutet, dass die Consumer in derselben Transaktion arbeiten). Mithilfe von Benachrichtigungen können kooperierende Consumer, die ein Rowset gemeinsam nutzen, über Aktionen für das von ihren Peers ausgeführte Rowset informiert werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Programmierung](../../data/oledb/ole-db-programming.md)<br/>
 [Übersicht über die OLE DB-Programmierung](../../data/oledb/ole-db-programming-overview.md)

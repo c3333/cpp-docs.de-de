@@ -6,18 +6,18 @@ helpviewer_keywords:
 - constants, literals
 - literals [C++]
 ms.assetid: 17c09fc3-3ad7-47e2-8b48-ba8ae994edc8
-ms.openlocfilehash: 467300501ffbbf8063e203d4c7395af34a954ed0
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 21685af5fc4f2dcf042698e054430e50531163b7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301365"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177741"
 ---
 # <a name="numeric-boolean-and-pointer-literals"></a>Numerische, boolesche und Zeiger Literale
 
 Bei einem Literal handelt es sich um ein Programmelement, das direkt einen Wert darstellt. In diesem Artikel werden Literale der Typen Ganzzahl, Gleitkomma, Boolesch und Zeiger erläutert. Informationen zu Zeichen folgen-und Zeichen literalen finden Sie unter [Zeichen folgen-undC++Zeichen Literale ()](../cpp/string-and-character-literals-cpp.md). Sie können auch eigene Literale auf der Grundlage einer dieser Kategorien definieren. Weitere Informationen finden Sie unter [benutzerdefinierte Literale (C++)](../cpp/user-defined-literals-cpp.md) .
 
-. Sie können Literale in vielen Kontexten verwenden, aber am häufigsten zum Initialisieren von benannten Variablen und zum Weitergeben der Argumente an Funktionen:
+erforderlich. Sie können Literale in vielen Kontexten verwenden, aber am häufigsten zum Initialisieren von benannten Variablen und zum Weitergeben der Argumente an Funktionen:
 
 ```cpp
 const int answer = 42; // integer literal
@@ -103,7 +103,7 @@ Obwohl **long Double** und **Double** dieselbe Darstellung aufweisen, weisen Sie
 void func( double );
 ```
 
-und
+and
 
 ```cpp
 void func( long double );
@@ -137,7 +137,7 @@ if (num < 100)
 
 Im vorherigen Beispiel empfiehlt sich eher die Verwendung einer benannten Konstante, die eine klare Bedeutung vermittelt, beispielsweise „MAXIMUM_ERROR_THRESHOLD“. Wenn Endbenutzer den Rückgabewert „Success“ anzeigen, empfiehlt sich eher die Verwendung einer benannten Zeichenfolgenkonstante, die an einer einzelnen Position in einer Datei gespeichert werden kann, wo sie in mehrere Sprachen lokalisiert werden kann. Die Verwendung von benannten Konstanten hilft anderen Benutzern und Ihnen, den Zweck des Codes zu verstehen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Lexikalische Konventionen](../cpp/lexical-conventions.md)<br/>
 [C++Zeichen folgen Literale](../cpp/string-and-character-literals-cpp.md)<br/>

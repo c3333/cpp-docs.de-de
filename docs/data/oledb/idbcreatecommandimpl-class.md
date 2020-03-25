@@ -11,12 +11,12 @@ helpviewer_keywords:
 - IDBCreateCommandImpl class
 - CreateCommand method
 ms.assetid: eac4755e-1668-42e1-958e-a35620c385ae
-ms.openlocfilehash: 27ca1fd20e8f358d936789da695611d96a6e7aa1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 4a4978401ba90e3a7a91ac40cc1b0668adf12ee8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545822"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210716"
 ---
 # <a name="idbcreatecommandimpl-class"></a>IDBCreateCommandImpl-Klasse
 
@@ -38,11 +38,11 @@ Das Sitzungs Objekt, das von `IDBCreateCommandImpl`abgeleitet ist.
 *CommandClass*<br/>
 Ihre Befehls Klasse.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
@@ -50,7 +50,7 @@ Ihre Befehls Klasse.
 |-|-|
 |[CreateCommand](#createcommand)|Erstellt einen neuen Befehl.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine optionale Schnittstelle für das Sitzungs Objekt zum Abrufen eines neuen Befehls.
 
@@ -76,7 +76,7 @@ Einige Parameter entsprechen *OLE DB Programmier Verweis* Parametern unterschied
 |--------------------------------|------------------------------------------------|
 |*ppvcommand*|*ppcommand*|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - expression evaluation
 - expression evaluation, about expression evaluation
 ms.assetid: 4a792154-533b-48b9-8709-31bfc170f0a7
-ms.openlocfilehash: 6770d3fb314222c7c58b6b97fa42d74cbc1e9b33
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 5213fc7972f3a2590ceac5038a7b5e07495df594
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857319"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178848"
 ---
 # <a name="semantics-of-expressions"></a>Semantik von Ausdrücken
 
@@ -20,7 +20,7 @@ Ausdrücke werden entsprechend der Rangfolge und Gruppierung ihrer Operatoren au
 
 ## <a name="order-of-evaluation"></a>Reihenfolge der Auswertung
 
-Betrachten Sie das folgende Beispiel:
+Betrachten Sie dieses Beispiel:
 
 ```cpp
 // Order_of_Evaluation.cpp
@@ -69,16 +69,16 @@ Die Programmiersprache C++ gibt beim Angeben von Operanden bestimmte Kompatibili
 
 |Typ erwartet|Typen zulässig|
 |-------------------|-------------------|
-|*Typ*|`const`- *Typ*<br /> `volatile`- *Typ*<br /> *type*&<br /> `const` *Typ*&<br /> `volatile` *Typ*&<br /> `volatile const`- *Typ*<br /> `volatile const` *Typ*&|
+|*type*|`const`- *Typ*<br /> `volatile`- *Typ*<br /> *Typ*&<br /> `const` *Typ*&<br /> `volatile` *Typ*&<br /> `volatile const`- *Typ*<br /> `volatile const` *Typ*&|
 |\* *eingeben*|\* *eingeben*<br /> `const` *Typ* \*<br /> `volatile` *Typ* \*<br /> `volatile const` *Typ* \*|
-|`const`- *Typ*|*Typ*<br /> `const`- *Typ*<br />`const` *Typ*&|
-|`volatile`- *Typ*|*Typ*<br /> `volatile`- *Typ*<br /> `volatile` *Typ*&|
+|`const`- *Typ*|*type*<br /> `const`- *Typ*<br />`const` *Typ*&|
+|`volatile`- *Typ*|*type*<br /> `volatile`- *Typ*<br /> `volatile` *Typ*&|
 
 Da die vorangehenden Regeln immer in Kombination verwendet werden können, kann ein const-Zeiger auf ein flüchtiges Objekt angegeben werden, wo ein Zeiger erwartet wird.
 
 ## <a name="ambiguous-expressions"></a>Mehrdeutige Ausdrücke
 
-Bestimmte Ausdrücke sind mehrdeutig. Diese Ausdrücke treten am häufigsten auf, wenn der Wert eines Objekts mehrfach im selben Ausdruck geändert wird. Diese Ausdrücke basieren auf einer bestimmten Auswertungsreihenfolge, wenn sie von der Sprache nicht definiert wird. Betrachten Sie das folgende Beispiel:
+Bestimmte Ausdrücke sind mehrdeutig. Diese Ausdrücke treten am häufigsten auf, wenn der Wert eines Objekts mehrfach im selben Ausdruck geändert wird. Diese Ausdrücke basieren auf einer bestimmten Auswertungsreihenfolge, wenn sie von der Sprache nicht definiert wird. Betrachten Sie das folgenden Beispiel:
 
 ```
 int i = 7;
@@ -116,6 +116,6 @@ Die C++-Sprachendefinition gibt derzeit keine Sequenzpunkte an. Microsoft C++ ve
 
 - Der Ausdruck in einer return-Anweisung. Der Ausdruck wird vollständig ausgewertet, und alle Nebeneffekte werden abgeschlossen, bevor die Steuerung an die aufrufende Funktion zurückgegeben wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke](../cpp/expressions-cpp.md)

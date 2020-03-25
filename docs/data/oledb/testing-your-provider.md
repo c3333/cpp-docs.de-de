@@ -6,12 +6,12 @@ helpviewer_keywords:
 - testing providers
 - OLE DB providers, testing
 ms.assetid: bf824fe4-81af-4ffb-beb3-4fa2928dc450
-ms.openlocfilehash: 722757b93d3423b02340c382b16e08a31626bc01
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: b1f068c928abd0a6656bed0702422d9bda843208
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "79544537"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209500"
 ---
 # <a name="testing-your-provider"></a>Testen des Anbieters
 
@@ -23,6 +23,6 @@ Vor dem Freigeben eines Anbieters sollten Sie die folgenden Tests in der angegeb
 
 1. Führen Sie die OLE DB Übereinstimmungs Tests (einschließlich ADO-Konformitätstests) aus, um anzuzeigen, dass Ihr Anbieter den Standardwert der Ebene 0 für OLE DB Anbieter erfüllt. (Eine Erläuterung der Ebene 0 finden Sie in [OLE DB Programmierer-Anleitung](/sql/connect/oledb/ole-db/oledb-driver-for-sql-server-programming)nach **OLE DB Konformitäts Tests der Ebene 0** . Diese Tests und die zugehörige Dokumentation sind in C++ Visual im Data Access SDK enthalten. Anhand dieser Tests können Sie auch anzeigen, dass der Anbieter gut ausgeführt wird, wenn er von anderen [Dienstanbietern](../../data/oledb/ole-db-resource-pooling-and-services.md) aggregiert wird. Dies ist besonders nützlich, wenn Sie Eigenschaften ändern oder hinzufügen. Weitere Informationen zu den Konformitätstests finden Sie in der Infodatei für das Datenzugriffs-SDK, das sich auf einer der Visual Studio-CDs befindet.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

@@ -31,12 +31,12 @@ helpviewer_keywords:
 - SetData method
 - FlushData method
 ms.assetid: 1e9fee15-ed9e-4387-af8f-215569beca6c
-ms.openlocfilehash: 1e07289a2d0fb283a20657797db5f915c06a39ad
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: b069cd08814855a0528806ac6d19ed8f5beb6f37
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545900"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210456"
 ---
 # <a name="irowsetchangeimpl-class"></a>IRowsetChangeImpl-Klasse
 
@@ -71,11 +71,11 @@ Die Speichereinheit für das Zeilen handle.
 *Mapclass*<br/>
 Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods-used-with-irowsetchange"></a>Schnittstellen Methoden (mit IRowsetChange verwendet)
 
@@ -91,7 +91,7 @@ Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 |-|-|
 |[FlushData](#flushdata)|Wird vom Anbieter überschrieben, um Daten in seinen Speicher zu übertragen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Schnittstelle ist für sofortige Schreibvorgänge in einem Datenspeicher verantwortlich. "Immediate" bedeutet, dass diese Änderungen sofort an den Datenspeicher übertragen werden (und nicht rückgängig gemacht werden können), wenn der Endbenutzer (die Person, die den Consumer verwendet) Änderungen vornimmt.
 
@@ -181,7 +181,7 @@ in Handle für den-Accessor, der Bindungs Informationen und Typinformationen im 
 
 Ein HRESULT-Standard.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

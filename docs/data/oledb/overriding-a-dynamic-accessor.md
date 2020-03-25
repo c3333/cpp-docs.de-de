@@ -6,18 +6,18 @@ helpviewer_keywords:
 - dynamic accessors
 - overriding, dynamic accessors
 ms.assetid: cbefd156-6da5-490d-b795-c2d7d874f7ce
-ms.openlocfilehash: 01beab80fb8574e0caa4ad3054d174c60106ce94
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d46531f2d4075df98081886dfdfd1f2cf65d9948
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282935"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209845"
 ---
 # <a name="overriding-a-dynamic-accessor"></a>Überschreiben einer dynamischen Zugriffsmethode
 
-Bei Verwendung eine dynamische Zugriffsmethode wie z. B. `CDynamicAccessor`, den Befehl `Open` Methode erstellt einen Accessor, automatisch, basierend auf die Spalteninformationen des geöffneten Rowsets. Sie können die dynamischen Zugriffsmethode aus, um zu steuern, wie genau die Spalten gebunden sind, überschreiben.
+Wenn Sie einen dynamischen Accessor wie z. b. `CDynamicAccessor`verwenden, erstellt der Befehl `Open` Methode basierend auf den Spalten Informationen des geöffneten Rowsets automatisch einen Accessor für Sie. Sie können den dynamischen Accessor überschreiben, um genau zu steuern, wie die Spalten gebunden werden.
 
-Um die dynamischen Zugriffsmethode überschreiben möchten, übergeben **"false"** als letzten Parameter für die `CCommand::Open` Methode. Dies verhindert, dass `Open` aus einen Accessor automatisch erstellt. Sie können dann aufrufen `GetColumnInfo` , und rufen Sie `AddBindEntry` für jede Spalte, die Sie binden möchten. Der folgende Code zeigt, wie es geht:
+Übergeben Sie zum Überschreiben des dynamischen Accessors **false** als letzten Parameter an die `CCommand::Open`-Methode. Dadurch wird verhindert, dass `Open` einen Accessor automatisch erstellt. Sie können dann `GetColumnInfo` und `AddBindEntry` für jede Spalte, die Sie binden möchten, abrufen. Der folgende Code zeigt, wie Sie dies tun:
 
 ```cpp
 USES_CONVERSION;
@@ -69,6 +69,6 @@ while (product.MoveNext() == S_OK)
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)

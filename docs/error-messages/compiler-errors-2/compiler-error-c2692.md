@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2692
 ms.assetid: 02ade3b4-b757-448b-b065-d7d71bc3f441
-ms.openlocfilehash: c469f4944417c9116c7316b01642dd4b370b8c4b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7ce57cd50e9ec83cf80ec64e14f49eb9714f9208
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62257815"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80177091"
 ---
 # <a name="compiler-error-c2692"></a>Compilerfehler C2692
 
-"Funktionsname": vollständige Funktionen mit Prototyp erforderlich sind, im C-Compiler mit der "/ Clr" Option
+' function_name ': vollständig Prototypfunktionen, die im C-Compiler mit der Option '/CLR ' erforderlich sind
 
-Wenn Code Kompilieren für .NET verwaltet werden, erfordert der C-Compiler Funktionsdeklarationen ANSI. Darüber hinaus, wenn eine Funktion keine Parameter akzeptiert, sie müssen explizit deklarieren `void` als Parametertyp.
+Beim Kompilieren für verwalteten .NET-Code erfordert der C-Compiler ANSI-Funktions Deklarationen. Wenn eine Funktion keine Parameter annimmt, muss Sie außerdem explizit `void` als Parametertyp deklarieren.

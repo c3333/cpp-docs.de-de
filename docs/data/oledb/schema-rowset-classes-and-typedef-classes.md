@@ -548,12 +548,12 @@ helpviewer_keywords:
 - TABLE_NAME
 - TABLE_SCHEMA
 ms.assetid: 4bd881b3-26ca-4bdb-9226-d67560864f29
-ms.openlocfilehash: 2c47b167f12cd98a752806369df6281d5b20c696
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 82401ae88ea95d0e05659fa662a3621a27ef4531
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545738"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209702"
 ---
 # <a name="schema-rowset-classes-and-typedef-classes"></a>Schemarowset-Klassen und Typedef-Klassen
 
@@ -602,7 +602,7 @@ In der folgenden Tabelle werden die einzelnen OLE DB Schemarowsets und die zugeh
 
 Aufrufen der TypeDef-Klasse `CAssertions`, um die Parameter Klasse `CAssertionInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -617,13 +617,13 @@ In der folgenden Tabelle werden die Klassendatenmember für `CAssertionInfo` und
 |m_szName|CONSTRAINT_NAME|
 |m_bIsDeferrable|IS_DEFERRABLE|
 |m_bInitiallyDeferred|INITIALLY_DEFERRED|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="ccatalogs-ccataloginfo"></a><a name="catalog"></a>Ccatalogs, ccataloginfo
 
 Aufrufen der TypeDef-Klasse `CCatalogs`, um die Parameter Klasse `CCatalogInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -634,13 +634,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |Datenmember|OLE DB Spalten|
 |------------------|--------------------|
 |m_szName|CATALOG_NAME|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="ccharactersets-ccharactersetinfo"></a><a name="characterset"></a>Ccharakterisets, ccharakterisetinfo
 
 Aufrufen der TypeDef-Klasse `CCharacterSets`, um die Parameter Klasse `CCharacterSetInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -663,7 +663,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CCheckConstraints`, um die Parameter Klasse `CCheckConstraintInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -677,13 +677,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szSchema|CONSTRAINT_SCHEMA|
 |m_szName|CONSTRAINT_NAME|
 |m_szCheckClause|CHECK_CLAUSE|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="ccollations-ccollationinfo"></a><a name="collation"></a>Ccollations, ccollationinfo
 
 Aufrufen der TypeDef-Klasse `CCollations`, um die Parameter Klasse `CCollationInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -705,7 +705,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CColumnDomainUsage`, um die Parameter Klasse `CColumnDomainUsageInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -720,7 +720,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szName|DOMAIN_NAME|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -729,7 +729,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CColumnPrivileges`, um die Parameter Klasse `CColumnPrivilegeInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -743,7 +743,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szGrantee|GRANTEE|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -754,7 +754,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CColumns`, um die Parameter Klasse `CColumnsInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -766,7 +766,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -791,13 +791,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szDomainCatalog|DOMAIN_CATALOG|
 |m_szDomainSchema|DOMAIN_SCHEMA|
 |m_szDomainName|DOMAIN_NAME|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cconstraintcolumnusage-cconstraintcolumnusageinfo"></a><a name="constraintcolumnusage"></a>Ceinschränintcolumnusage, ceinschränintcolumnusageinfo
 
 Aufrufen der TypeDef-Klasse `CConstraintColumnUsage`, um die Parameter Klasse `CConstraintColumnUsageInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -809,7 +809,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -821,7 +821,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CConstraintTableUsage`, um die Parameter Klasse `CConstraintTableUsageInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -833,7 +833,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szConstraintCatalog|CONSTRAINT_CATALOG|
 |m_szConstraintSchema|CONSTRAINT_SCHEMA|
 |m_szConstraintName|CONSTRAINT_NAME|
@@ -842,7 +842,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CForeignKeys`, um die Parameter Klasse `CForeignKeysInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -872,7 +872,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CIndexes`, um die Parameter Klasse `CIndexInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -884,14 +884,14 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szIndexCatalog|INDEX_CATALOG|
 |m_szIndexSchema|INDEX_SCHEMA|
 |m_szIndexName|INDEX_NAME|
 |m_bPrimaryKey|PRIMARY_KEY|
-|m_bUnique|EINDEUTIG|
+|m_bUnique|UNIQUE|
 |m_bClustered|CLUSTERED|
-|m_nType|TYP|
+|m_nType|TYPE|
 |m_nFillFactor|FILL_FACTOR|
 |m_nInitialSize|INITIAL_SIZE|
 |m_nNulls|NULLS|
@@ -902,7 +902,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
-|m_nCollation|SORTIERUNG|
+|m_nCollation|COLLATION|
 |m_nCardinality|CARDINALITY|
 |m_nPages|PAGES|
 |m_szFilterCondition|FILTER_CONDITION|
@@ -911,7 +911,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CKeyColumns`, um die Parameter Klasse `CKeyColumnInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -926,7 +926,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szConstraintName|CONSTRAINT_NAME|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -936,7 +936,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CPrimaryKeys`, um die Parameter Klasse `CPrimaryKeyInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -948,7 +948,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -958,7 +958,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CProcedureColumns`, um die Parameter Klasse `CProcedureColumnInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -983,13 +983,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_nOctetLength|CHARACTER_OCTET_LENGTH|
 |m_nPrecision|NUMERIC_PRECISION|
 |m_nScale|NUMERIC_SCALE|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cprocedureparameters-cprocedureparaminfo"></a><a name="procedureparam"></a>CProcedureParameters cproceduverbindaminfo
 
 Aufrufen der TypeDef-Klasse `CProcedureParameters`, um die Parameter Klasse `CProcedureParamInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1013,13 +1013,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_nOctetLength|CHARACTER_OCTET_LENGTH|
 |m_nPrecision|NUMERIC_PRECISION|
 |m_nScale|NUMERIC_SCALE|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cprocedures-cprocedureinfo"></a><a name="procedure"></a>Cprozeduren, cprocedureinfo
 
 Aufrufen der TypeDef-Klasse `CProcedures`, um die Parameter Klasse `CProcedureInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1034,13 +1034,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szName|PROCEDURE_NAME|
 |m_nType|PROCEDURE_TYPE|
 |m_szDefinition|PROCEDURE_DEFINITION|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cprovidertypes-cproviderinfo"></a><a name="provider"></a>Cprovidertypes, cproviderinfo
 
 Aufrufen der TypeDef-Klasse `CProviderTypes`, um die Parameter Klasse `CProviderInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1058,7 +1058,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szCreateParams|CREATE_PARAMS|
 |m_bIsNullable|IS_NULLABLE|
 |m_bCaseSensitive|CASE_SENSITIVE|
-|m_nSearchable|DURCHSUCHBAR|
+|m_nSearchable|SEARCHABLE|
 |m_bUnsignedAttribute|UNSIGNED_ATTRIBUTE|
 |m_bFixedPrecScale|FIXED_PREC_SCALE|
 |m_bAutoUniqueValue|AUTO_UNIQUE_VALUE|
@@ -1075,7 +1075,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CReferentialConstraints`, um die Parameter Klasse `CReferentialConstraintInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1094,13 +1094,13 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szMatchOption|MATCH_OPTION|
 |m_szUpdateRule|UPDATE_RULE|
 |m_szDeleteRule|DELETE_RULE|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cschemata-cschematainfo"></a><a name="schemata"></a>CSchemata, cschematainfo
 
 Aufrufen der TypeDef-Klasse `CSchemata`, um die Parameter Klasse `CSchemataInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1121,7 +1121,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CSQLLanguages`, um die Parameter Klasse `CSQLLanguageInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1143,7 +1143,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CStatistics`, um die Parameter Klasse `CStatisticInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1155,14 +1155,14 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_nCardinality|CARDINALITY|
 
 ## <a name="ctableconstraints-ctableconstraintinfo"></a><a name="tableconstraint"></a>Ctableeinschränkungen, ctableeinschränintinfo
 
 Aufrufen der TypeDef-Klasse `CTableConstraints`, um die Parameter Klasse `CTableConstraintInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1177,17 +1177,17 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szName|CONSTRAINT_NAME|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szType|CONSTRAINT_TYPE|
 |m_bIsDeferrable|IS_DEFERRABLE|
 |m_bInitiallyDeferred|INITIALLY_DEFERRED|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="ctableprivileges-ctableprivilegeinfo"></a><a name="tableprivilege"></a>Ctableprivileges, ctableprivilegilegeingefo
 
 Aufrufen der TypeDef-Klasse `CTablePrivileges`, um die Parameter Klasse `CTablePrivilegeInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1201,7 +1201,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szGrantee|GRANTEE|
 |m_szCatalog|TABLE_CATALOG|
 |m_szSchema|TABLE_SCHEMA|
-|m_szName|TABLE_NAME|
+|m_szName|table_name|
 |m_szType|PRIVILEGE_TYPE|
 |m_bIsGrantable|IS_GRANTABLE|
 
@@ -1209,7 +1209,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CTables`, um die Parameter Klasse `CTableInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1221,16 +1221,16 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szCatalog|TABLE_CATALOG|
 |m_szSchema|TABLE_SCHEMA|
-|m_szName|TABLE_NAME|
+|m_szName|table_name|
 |m_szType|TABLE_TYPE|
 |m_guidTable|TABLE_GUID|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="ctranslations-ctranslationinfo"></a><a name="translation"></a>Ctranslations, ctranslationinfo
 
 Aufrufen der TypeDef-Klasse `CTranslations`, um die Parameter Klasse `CTranslationInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1254,7 +1254,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CUsagePrivileges`, um die Parameter Klasse `CUsagePrivilegeInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1277,7 +1277,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CViewColumnUsage`, um die Parameter Klasse `CViewColumnInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1292,7 +1292,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szName|VIEW_NAME|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szColumnName|COLUMN_NAME|
 |m_guidColumn|COLUMN_GUID|
 |m_nColumnPropID|COLUMN_PROPID|
@@ -1301,7 +1301,7 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 
 Aufrufen der TypeDef-Klasse `CViews`, um die Parameter Klasse `CViewInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1313,17 +1313,17 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |------------------|--------------------|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 |m_szDefinition|VIEW_DEFINITION|
 |m_bCheckOption|CHECK_OPTION|
 |m_bIsUpdatable|IS_UPDATABLE|
-|m_szDescription|BESCHREIBUNG|
+|m_szDescription|DESCRIPTION|
 
 ## <a name="cviewtableusage-cviewtableinfo"></a><a name="viewtable"></a>Cviewtableusage, cviewtableinfo
 
 Aufrufen der TypeDef-Klasse `CViewTableUsage`, um die Parameter Klasse `CViewTableInfo`zu implementieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zur Verwendung von typedef-Klassen finden Sie unter [Schemarowset-Klassen und typedef-](../../data/oledb/schema-rowset-classes-and-typedef-classes.md) Klassen.
 
@@ -1338,12 +1338,12 @@ In der folgenden Tabelle werden die Klassendatenmember und ihre entsprechenden O
 |m_szName|VIEW_NAME|
 |m_szTableCatalog|TABLE_CATALOG|
 |m_szTableSchema|TABLE_SCHEMA|
-|m_szTableName|TABLE_NAME|
+|m_szTableName|table_name|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** Atldbsch. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [CRestrictions-Klasse](../../data/oledb/crestrictions-class.md)

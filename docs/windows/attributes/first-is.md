@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - first_is attribute
 ms.assetid: 89acbf56-3b38-4d44-83e8-1ce2f6f74ffd
-ms.openlocfilehash: 9d06435caaeb53beb76bd145c92c470446cae3a7
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 4ac7142ed4f81d6011894681311e1aa5f129380b
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501556"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80167016"
 ---
 # <a name="first_is"></a>first_is
 
@@ -28,9 +28,9 @@ Gibt den Index des ersten Array Elements an, das übertragen werden soll.
 *expression*<br/>
 Mindestens ein C-sprach Ausdruck. Leere Argument Slots sind zulässig.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **First_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [First_is](/windows/win32/Midl/first-is) -Mittell-Attribut.
+Das **First_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [First_is](/windows/win32/Midl/first-is) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -56,7 +56,7 @@ requestedit] HRESULT get_I([out, retval]long *i);
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -64,12 +64,12 @@ requestedit] HRESULT get_I([out, retval]long *i);
 |-|-|
 |**Betrifft**|Feld in **Struktur** oder **Union**, Schnittstellenparameter, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>

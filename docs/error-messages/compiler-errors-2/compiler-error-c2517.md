@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2517
 ms.assetid: d79348d5-e271-4aad-b973-8264515f8e90
-ms.openlocfilehash: 63523670fe1292d23327112f627e7d1a9dafeca6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a66b7657869c70b6f6175e7f3cccc1dfb4d2614f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62395494"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80202647"
 ---
 # <a name="compiler-error-c2517"></a>Compilerfehler C2517
 
-'Bezeichner': rechts in der '::' ist nicht definiert
+' Identifier ': rechts von ':: ' ist nicht definiert.
 
-Der Bezeichner für die rechts neben der Bereichsauflösungsoperator (`::`) muss ein definiertes Element von der Klasse, Struktur oder Union auf der linken Seite. Wenn Sie keine Klasse, Struktur oder Union benannt wird, muss der Bezeichner auf der rechten Seite mit globalem Gültigkeitsbereich deklariert werden.
+Der Bezeichner auf der rechten Seite des Bereichs Auflösungs Operators (`::`) muss ein definierter Member der Klasse, Struktur oder Union auf der linken Seite sein. Wenn keine Klasse, Struktur oder Union benannt ist, muss der Bezeichner auf der rechten Seite mit globalem Gültigkeitsbereich deklariert werden.

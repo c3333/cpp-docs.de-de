@@ -8,12 +8,12 @@ helpviewer_keywords:
 - where keyword [C++]
 - constraints, C++
 ms.assetid: eb828cc9-684f-48a3-a898-b327700c0a63
-ms.openlocfilehash: 6eefb6a7d888a031f6ff7f88d08da4d67a4dc8c3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: be5af8f6b2edaa8f93fef7ae06b2175b54b25396
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65516205"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172477"
 ---
 # <a name="constraints-on-generic-type-parameters-ccli"></a>Einschränkungen für generische Typparameter (C++/CLI)
 
@@ -41,7 +41,7 @@ Sie können auch mit **gcnew()** angeben, dass das Typargument einen öffentlich
 
 Sie können auch einen generischen Parameter als Einschränkung angeben. Das für den einzuschränkenden Typ bereitgestellte Typargument muss vom Typ der Einschränkung sein oder von diesem Typ abgeleitet werden. Dies wird als reine Typeinschränkung bezeichnet.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Die Einschränkungsklausel besteht aus **where**, gefolgt von einem Typparameter, einem Doppelpunkt ( **:** ) und der Einschränkung (Constraint), die die Art der Beschränkung im Typparameter angibt. **where** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md). Trennen Sie mehrere **where**-Klauseln durch Leerzeichen.
 
@@ -198,6 +198,6 @@ where A : C
 ref struct SampleClass {};
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Generics](generics-cpp-component-extensions.md)

@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4326
 ms.assetid: d44d2c4e-9456-42d3-b35b-4ba4b2d42ec7
-ms.openlocfilehash: d14a1902db4dcf2224ce6a58db120a81ebb5620f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 32bcd85b1cd1bb6c89678daae02f4f31a9318b6d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62327352"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80162971"
 ---
 # <a name="compiler-warning-level-1-c4326"></a>Compilerwarnung (Stufe 1) C4326
 
-> der Rückgabetyp des '*Funktion*'muss'*type1*"anstelle von"*Typ2*"
+> der Rückgabetyp von "*Function*" sollte "*Typ1*" anstelle von "*Typ2*" lauten.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Funktion hat einen Typ zurückgegeben, außer *type1*. Verwenden Sie beispielsweise [/Za](../../build/reference/za-ze-disable-language-extensions.md), **main** hat keine zurückgegeben ein **Int**.
+Eine Funktion hat einen anderen Typ als *Typ1*zurückgegeben. Bei Verwendung von [/Za](../../build/reference/za-ze-disable-language-extensions.md)hat **Main** z. b. keinen **int**-Wert zurückgegeben.
 
 ## <a name="example"></a>Beispiel
 

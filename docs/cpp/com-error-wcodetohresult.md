@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - WCodeToHRESULT method [C++]
 ms.assetid: 0ec43a4b-ca91-42d5-b270-3fde9c8412ea
-ms.openlocfilehash: f2fc84be53d95754d21c30eaea8dd981447453d6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f2194e0e54a93d3227b84d893f9d3f208d972d09
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154928"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180510"
 ---
-# <a name="comerrorwcodetohresult"></a>_com_error::WCodeToHRESULT
+# <a name="_com_errorwcodetohresult"></a>_com_error::WCodeToHRESULT
 
 **Microsoft-spezifisch**
 
-Ordnet die 16-Bit- *wCode* in 32-Bit-HRESULT.
+Ordnet einen 16-Bit- *wCode* dem 32-Bit-HRESULT zu.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,19 +30,19 @@ static HRESULT WCodeToHRESULT(
 #### <a name="parameters"></a>Parameter
 
 *wCode*<br/>
-Die 16-Bit- *wCode* , 32-Bit-HRESULT zugeordnet werden soll.
+Der 16-Bit- *wCode* , der 32-Bit-HRESULT zugeordnet werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-zugeordnet aus dem 16-Bit-32-Bit-HRESULT *wCode*.
+32-Bit-HRESULT, das aus dem 16-Bit- *wCode*zugeordnet ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter den [WCode](../cpp/com-error-wcode.md) Member-Funktion.
+Weitere Informationen finden Sie unter [wCode](../cpp/com-error-wcode.md) -Member-Funktion.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_com_error::WCode](../cpp/com-error-wcode.md)<br/>
 [_com_error::HRESULTToWCode](../cpp/com-error-hresulttowcode.md)<br/>

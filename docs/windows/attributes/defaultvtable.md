@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - defaultvtable attribute
 ms.assetid: 5b3ed483-f69e-44dd-80fc-952028eb9d73
-ms.openlocfilehash: 8ab37af4deab516dc01f55f986811668737cf18c
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a15b3552e6b67fb0347a14c48414741edf31ac93
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501645"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168265"
 ---
 # <a name="defaultvtable"></a>defaultvtable
 
@@ -28,7 +28,7 @@ Definiert eine Schnittstelle als standardmäßige Vtable-Schnittstelle für ein 
 *interface*<br/>
 Die angegebene Schnittstelle, für die die Standard-Vtable für das COM-Objekt festgelegt werden soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **defaultvtable** C++ -Attribut verfügt über die gleiche Funktionalität wie das Attribut " [defaultvtable](/windows/win32/Midl/defaultvtable) " in der Mitte.
 
@@ -62,7 +62,7 @@ uuid("00000000-0000-0000-0000-000000000004")]
 class CMyC3 : public IMyI3 {};
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -71,11 +71,11 @@ class CMyC3 : public IMyI3 {};
 |**Betrifft**|**Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
 |**Erforderliche Attribute**|**coclass**|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)

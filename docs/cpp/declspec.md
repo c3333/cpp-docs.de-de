@@ -7,38 +7,38 @@ f1_keywords:
 - _declspec
 helpviewer_keywords:
 - __declspec keyword [C++]
-ms.openlocfilehash: e924f3e4a038f900e084dbf84d85430d815c8e8f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e0c99ea9379aa6e29096250e8bd36ce3d4f183e8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154502"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180224"
 ---
-# <a name="declspec"></a>__declspec
+# <a name="__declspec"></a>__declspec
 
 **Microsoft-spezifisch**
 
-Die erweiterte Attributsyntax für die Angabe von Storage speicherklasseninformationen verwendet das **__declspec** Schlüsselwort, das angibt, dass eine Instanz eines angegebenen Typs mit einem Microsoft-spezifische Speicherklassen-Attribut, die unten aufgeführten gespeichert werden. Beispiele anderer Speicherklassenmodifizierer umfassen die **statische** und **"extern"** Schlüsselwörter. Allerdings sind diese Schlüsselwörter Teil der ANSI-Spezifikation der Programmiersprachen C- und C++ und werden als solche nicht von der erweiterten Attributsyntax abgedeckt. Die erweiterte Attributsyntax vereinfacht und standardisiert Microsoft-spezifische Erweiterungen der Programmiersprachen C und C++.
+Die erweiterte Attribut Syntax zum Angeben von Speicher Klassen Informationen verwendet das **__declspec** -Schlüsselwort, das angibt, dass eine Instanz eines bestimmten Typs mit einem Microsoft-spezifischen Speicher Klassen Attribut gespeichert werden soll, das unten aufgeführt ist. Beispiele für andere Speicherklassenmodifizierer sind die **statischen** und **externen** Schlüsselwörter. Allerdings sind diese Schlüsselwörter Teil der ANSI-Spezifikation der Programmiersprachen C- und C++ und werden als solche nicht von der erweiterten Attributsyntax abgedeckt. Die erweiterte Attributsyntax vereinfacht und standardisiert Microsoft-spezifische Erweiterungen der Programmiersprachen C und C++.
 
 ## <a name="grammar"></a>Grammatik
 
-*decl-specifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**__declspec (**  *extended-decl-modifier-seq*  **)**
+*decl-Spezifizierer*:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; **__declspec (** *Extended-decl-modifier-* * **)**
 
 *extended-decl-modifier-seq*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier*<sub>opt</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*extended-decl-modifier* *extended-decl-modifier-seq*
+&nbsp;&nbsp;&nbsp;&nbsp;*Extended-decl-modifier* *Extended-decl-modifier-netq*
 
 *extended-decl-modifier*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**align(** *#* **)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**allocate("** *segname* **")**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**allocator**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**appdomain**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**code_seg("** *segname* **")**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**Als veraltet markiert**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**Ausrichten (** *#* **)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**zuordnen ("** *segname* **")**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**Zuweisung**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**AppDomain**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**code_seg ("** *segname* **")**<br/>
+&nbsp;&nbsp;&nbsp;**veraltet** &nbsp;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**dllimport**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**dllexport**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**jitintrinsic**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**jitintrinsisch**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**naked**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**noalias**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**noinline**<br/>
@@ -46,31 +46,31 @@ Die erweiterte Attributsyntax für die Angabe von Storage speicherklasseninforma
 &nbsp;&nbsp;&nbsp;&nbsp;**nothrow**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**novtable**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**Prozess**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**property(** { **get=**_get_func_name_ &#124; **,put=**_put_func_name_ } **)**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**restrict**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**Eigenschaft (** { **Get =** _get_func_name_ &#124; **, Put =** _put_func_name_ } **)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**einschränken**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**safebuffers**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**selectany**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**spectre(nomitigation)**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**Selectany**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;**Spectre (noentschärfung)**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;**thread**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**uuid("** *ComObjectGUID* **")**
+&nbsp;&nbsp;&nbsp;&nbsp;**UUID ("** *comobjectguid* **")**
 
 Die Deklarationsmodifizierersequenz ist durch Leerzeichen getrennt. Beispiele finden Sie in späteren Abschnitten.
 
-Erweitertes Attribut-Grammatik unterstützt diese Microsoft-spezifische Speicherklassen-Attribute: [ausrichten](../cpp/align-cpp.md), [zuordnen](../cpp/allocate.md), [Allocator](../cpp/allocator.md), [Appdomain](../cpp/appdomain.md), [Code_seg](../cpp/code-seg-declspec.md), [veraltet](../cpp/deprecated-cpp.md), [Dllexport](../cpp/dllexport-dllimport.md), [Dllimport](../cpp/dllexport-dllimport.md), [Jitintrinsic](../cpp/jitintrinsic.md), [naked](../cpp/naked-cpp.md), [Noalias](../cpp/noalias.md), [Noinline](../cpp/noinline.md), [Noreturn](../cpp/noreturn.md), [Nothrow](../cpp/nothrow-cpp.md), [Novtable](../cpp/novtable.md), [Prozess](../cpp/process.md), [einschränken](../cpp/restrict.md), [Safebuffers](../cpp/safebuffers.md), [Selectany](../cpp/selectany.md), [Spectre](../cpp/spectre.md), und [Thread](../cpp/thread.md). Sie unterstützt auch diese COM-Objektattribute: [Eigenschaft](../cpp/property-cpp.md) und [Uuid](../cpp/uuid-cpp.md).
+Die erweiterte Attribut Grammatik unterstützt diese Microsoft-spezifischen Speicher Klassenattribute [: Align](../cpp/align-cpp.md), [zuordnen](../cpp/allocate.md), [Allocator](../cpp/allocator.md), [AppDomain](../cpp/appdomain.md), [code_seg](../cpp/code-seg-declspec.md), [veraltet](../cpp/deprecated-cpp.md), [dllexport](../cpp/dllexport-dllimport.md), [DllImport](../cpp/dllexport-dllimport.md), [jitintrinsisch](../cpp/jitintrinsic.md), [Naked](../cpp/naked-cpp.md), [noalias](../cpp/noalias.md), [noinline](../cpp/noinline.md), [noreturn](../cpp/noreturn.md), [nothrow](../cpp/nothrow-cpp.md), [novtable](../cpp/novtable.md), [Process](../cpp/process.md), [Limit](../cpp/restrict.md), [safebuffers](../cpp/safebuffers.md), [Selectany](../cpp/selectany.md), [ Spectre](../cpp/spectre.md)und [Thread](../cpp/thread.md). Außerdem werden diese COM-Objekt Attribute unterstützt: [Eigenschaft](../cpp/property-cpp.md) und [UUID](../cpp/uuid-cpp.md).
 
-Die **Code_seg**, **Dllexport**, **Dllimport**, **naked**, **Noalias**, **Nothrow** , **Eigenschaft**, **einschränken**, **Selectany**, **Thread**, und **Uuid**Speicherklassen-Attribute sind Eigenschaften nur der Deklaration des Objekts oder der Funktion, die sie angewendet werden. Die **Thread** Attribut wirkt sich auf Daten und nur für die Objekte. Die **naked** und **Spectre** Attribute beeinflussen nur Funktionen. Die **Dllimport** und **Dllexport** Attribute beeinflussen, Funktionen, Daten und Objekte. Die **Eigenschaft**, **Selectany**, und **Uuid** Attribute beeinflussen COM-Objekte.
+Die Speicher Klassenattribute **code_seg**, **dllexport**, **DllImport**, **Naked**, **noalias**, **nothrow**, **Property**, **Limit**, **Selectany**, **Thread**und **UUID** sind nur Eigenschaften der Deklaration des Objekts oder der Funktion, auf die Sie angewendet werden. Das **Thread** Attribut wirkt sich nur auf Daten und Objekte aus. Die **Naked** -und **Spectre** -Attribute wirken sich nur auf Funktionen aus. Die Attribute **DllImport** und **dllexport** wirken sich auf Funktionen, Daten und Objekte aus. Die Attribute " **Property**", " **Selectany**" und " **UUID** " betreffen com-Objekte.
 
-Für die Kompatibilität mit früheren Versionen **_declspec** ist ein Synonym für **__declspec** , wenn Compileroption [/Za \(spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Gründen der Kompatibilität mit früheren Versionen ist **_declspec** ein Synonym für **__declspec** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
-Die **__declspec** Schlüsselwörter sollten am Anfang einer einfachen Deklaration platziert werden. Der Compiler ignoriert ohne Warnung alle **__declspec** Schlüsselwörter platziert nach * oder & und vor dem Variablenbezeichner in einer Deklaration.
+Die **__declspec** Schlüsselwörter sollten am Anfang einer einfachen Deklaration platziert werden. Der Compiler ignoriert ohne Warnung alle **__declspec** Schlüsselwörter, die nach * oder & und vor dem Variablen Bezeichner in einer Deklaration platziert werden.
 
-Ein **__declspec** Attribut am Anfang einer benutzerdefinierten Typdeklaration angegeben, die auf die Variable dieses Typs angewendet wird. Zum Beispiel:
+Ein **__declspec** Attribut, das am Anfang einer Deklaration eines benutzerdefinierten Typs angegeben ist, gilt für die Variable dieses Typs. Beispiel:
 
 ```cpp
 __declspec(dllimport) class X {} varX;
 ```
 
-In diesem Fall wird das Attribut auf `varX` angewendet. Ein **__declspec** Attribut platziert werden, nachdem die **Klasse** oder **Struktur** -Schlüsselwort gilt für den benutzerdefinierten Typ. Zum Beispiel:
+In diesem Fall wird das Attribut auf `varX` angewendet. Ein **__declspec** Attribut, das nach dem **Klassen** -oder **struct** -Schlüsselwort platziert wird, gilt für den benutzerdefinierten Typ. Beispiel:
 
 ```cpp
 class __declspec(dllimport) X {};
@@ -78,11 +78,11 @@ class __declspec(dllimport) X {};
 
 In diesem Fall wird das Attribut auf `X` angewendet.
 
-Die allgemeine Richtlinie für die Verwendung der **__declspec** -Attributs für einfache Deklarationen lautet wie folgt:
+Die allgemeine Richtlinie für die Verwendung des **__declspec** -Attributs für einfache Deklarationen lautet wie folgt:
 
-*decl-specifier-seq* *init-declarator-list*;
+*decl-specifier-setq* *Init-declarator-List*;
 
-Die *Decl-Specifier-Seq* enthalten soll, unter anderem einen Basistyp (z. B. **Int**, **"float"**, **Typedef**, oder einen Klassennamen), Speicherklasse (z. B. **statische**, **"extern"**), oder die **__declspec** Erweiterung. Die *Init-Declarator-List* enthalten soll, unter anderem den zeigerteil von Deklarationen. Zum Beispiel:
+*Decl-specifier-SSQ* sollte u. a. einen Basistyp (z. b. " **int**", " **float**", " **typedef**" oder einen Klassennamen), eine Speicher Klasse (z. b. " **static**", " **extern**") oder die **__declspec** Erweiterung enthalten. Die *Init-declarator-List* sollte unter anderem den Zeiger Teil der Deklarationen enthalten. Beispiel:
 
 ```cpp
 __declspec(selectany) int * pi1 = 0;   //Recommended, selectany & int both part of decl-specifier
@@ -99,7 +99,7 @@ __declspec( thread ) int tls_i = 1;
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [C-Speicherklassenattribute (erweitert)](../c-language/c-extended-storage-class-attributes.md)

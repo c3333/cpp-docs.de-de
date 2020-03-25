@@ -5,30 +5,30 @@ helpviewer_keywords:
 - iteration statements
 - loop structures, iteration statements
 ms.assetid: bf6d75f7-ead2-426a-9c47-33847f59b8c7
-ms.openlocfilehash: 72f81e2fc58a31db0c4cd3f77ba182bd8b8152a4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e8f064fd19e69de2819673f48a7f14e26d60b87e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62366575"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80178254"
 ---
 # <a name="iteration-statements-c"></a>Iterationsanweisungen (C++)
 
-Iterationsanweisungen bewirken, dass Anweisungen (oder Verbundanweisungen) NULL mal oder mehrmals ausgeführt werden, je nach LOOP-Beendigungskriterien. Wenn diese Anweisungen verbundanweisungen sind, sie werden nacheinander ausgeführt, außer wenn entweder die [Break](../cpp/break-statement-cpp.md) Anweisung oder der [weiterhin](../cpp/continue-statement-cpp.md) -Anweisung gefunden.
+Iterationsanweisungen bewirken, dass Anweisungen (oder Verbundanweisungen) NULL mal oder mehrmals ausgeführt werden, je nach LOOP-Beendigungskriterien. Wenn diese Anweisungen Verbund Anweisungen sind, werden Sie in der angegebenen Reihenfolge ausgeführt, es sei denn, die [break](../cpp/break-statement-cpp.md) -Anweisung oder die [Continue](../cpp/continue-statement-cpp.md) -Anweisung ist aufgetreten.
 
-C++ stellt vier iterationsanweisungen bereit – [während](../cpp/while-statement-cpp.md), [führen](../cpp/do-while-statement-cpp.md), [für](../cpp/for-statement-cpp.md), und [bereichsbasierte for](../cpp/range-based-for-statement-cpp.md). Jede dieser durchläuft, bis der beendigungsausdruck mit Null (False) ausgewertet wird oder bis die Beendigung der Schleife erzwungen wird, mit einer **Break** Anweisung. In der folgenden Tabelle werden diese Anweisungen und ihre Aktionen zusammengefasst. Jede von ihnen wird in den folgenden Abschnitten im Detail behandelt.
+C++bietet vier Iterations Anweisungen – [while](../cpp/while-statement-cpp.md), [do](../cpp/do-while-statement-cpp.md), [for](../cpp/for-statement-cpp.md)und [Range-based for](../cpp/range-based-for-statement-cpp.md). Jede dieser Iteration durchläuft, bis der Beendigungs Ausdruck NULL (false) ergibt, oder bis die Beendigung der Schleife mit einer **break** -Anweisung erzwungen wird. In der folgenden Tabelle werden diese Anweisungen und ihre Aktionen zusammengefasst. Jede von ihnen wird in den folgenden Abschnitten im Detail behandelt.
 
 ### <a name="iteration-statements"></a>Iterationsanweisungen
 
-|Anweisung|Ausgewertet an|Initialisierung|Inkrement|
+|-Anweisung.|Ausgewertet an|Initialisierung|Increment|
 |---------------|------------------|--------------------|---------------|
 |**while**|Anfang der Schleife|Nein|Nein|
 |**do**|Ende der Schleife|Nein|Nein|
 |**for**|Anfang der Schleife|Ja|Ja|
-|**bereichsbasierte for**|Anfang der Schleife|Ja|Ja|
+|**Bereichs basiert für**|Anfang der Schleife|Ja|Ja|
 
 Der Anweisungsteil einer Iterationsanweisung kann keine Deklaration sein. Es kann jedoch eine Verbundanweisung sein, die eine Deklaration enthält.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Übersicht über C++-Anweisungen](../cpp/overview-of-cpp-statements.md)

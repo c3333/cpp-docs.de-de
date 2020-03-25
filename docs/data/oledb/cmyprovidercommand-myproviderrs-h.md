@@ -9,12 +9,12 @@ helpviewer_keywords:
 - CMyProviderCommand class in MyProviderRS.H
 - CCustomCommand class in CustomRS.H
 ms.assetid: b30b956e-cc91-4cf5-9fe6-f8b1ce9cc2a5
-ms.openlocfilehash: 61bd60b63490303c65729843c3c0351a570a8056
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: afa8571173117a23962eb84f6fa5b4cf2c3c46e7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545726"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211756"
 ---
 # <a name="ccustomcommand-customrsh"></a>CCustomCommand (CustomRS.H)
 
@@ -39,6 +39,6 @@ Das Command-Objekt stellt außerdem eine Implementierung von `IColumnsInfo`berei
 
 Der Anbieter enthält auch eine Schnittstelle mit dem Namen `IObjectWithSite`. Die `IObjectWithSite`-Schnittstelle wurde in ATL 2,0 implementiert und ermöglicht dem Implementierer, Informationen über sich selbst an das untergeordnete Element zu übergeben. Das Command-Objekt verwendet die `IObjectWithSite` Informationen, um generierte Rowsetobjekte darüber zu informieren, wer Sie erstellt hat.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vom Anbieter-Assistenten generierte Dateien](../../data/oledb/provider-wizard-generated-files.md)

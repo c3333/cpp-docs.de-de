@@ -14,12 +14,12 @@ helpviewer_keywords:
 - .def files
 - licensing ActiveX controls
 ms.assetid: 2b0ee2e0-ae81-4185-9bb9-11da3c99a283
-ms.openlocfilehash: 078c83a9c95c1b143af2037240d5cc0a16211827
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 27e15f8dec693c6b7e70f3e03f274dcbc4f04677
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69492868"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169018"
 ---
 # <a name="file-types-created-for-visual-studio-c-projects"></a>Für Visual Studio C++ -Projekte erstellte Dateitypen
 
@@ -47,43 +47,43 @@ Projekte generieren für gewöhnlich entweder eine EXE- oder eine DLL-Datei. Pro
 
 In der folgenden Tabelle werden allgemeine Dateien in einem Visual Studio-Projekt angezeigt und mit ihrer Dateierweiterung identifiziert.
 
-|Dateierweiterung|Typ|Inhalt|
+|Dateierweiterung|type|Contents|
 |--------------------|----------|--------------|
-|.asmx|Quelle|Bereitstellungsdatei.|
-|.asp|Source|Aktive Serverseitendatei|
-|.atp|Projekt|Anwendungsvorlagen-Projektdatei.|
-|.bmp, .dib, .gif, .jpg, .jpeg, .png|Ressource|Allgemeine Bilddateien.|
+|.asmx|`Source`|Bereitstellungsdatei.|
+|.asp|`Source`|Aktive Serverseitendatei|
+|.atp|Project|Anwendungsvorlagen-Projektdatei.|
+|.bmp, .dib, .gif, .jpg, .jpeg, .png|Resource|Allgemeine Bilddateien.|
 |.bsc|Kompilieren|Browsercodedatei.|
-|. cpp,. c|Source|Haupt-Quellcodedateien für Ihre Anwendung.|
-|.cur|Ressource|Cursorbitmap-Grafikdatei.|
-|.dbp|Projekt|Datenbankprojektdatei.|
-|.disco|Source|Dynamische Ermittlungsdokumentdatei. Verarbeitet die XML-Webdienstermittlung.|
-|.exe, .dll|Projekt|Ausführbare oder Dynamic-Link Library-Dateien.|
-|H|Source|Headerdatei (include).|
-|.htm, .html, .xsp, .asp, .htc, .hta, .xml|Ressource|Allgemeine Webdateien.|
-|.HxC|Projekt|Hilfsprojektdatei.|
-|.ico|Ressource|Symbolbitmap-Grafikdatei.|
+|. cpp,. c|`Source`|Haupt-Quellcodedateien für Ihre Anwendung.|
+|.cur|Resource|Cursorbitmap-Grafikdatei.|
+|.dbp|Project|Datenbankprojektdatei.|
+|.disco|`Source`|Dynamische Ermittlungsdokumentdatei. Verarbeitet die XML-Webdienstermittlung.|
+|.exe, .dll|Project|Ausführbare oder Dynamic-Link Library-Dateien.|
+|.h|`Source`|Headerdatei (include).|
+|.htm, .html, .xsp, .asp, .htc, .hta, .xml|Resource|Allgemeine Webdateien.|
+|.HxC|Project|Hilfsprojektdatei.|
+|.ico|Resource|Symbolbitmap-Grafikdatei.|
 |.idb|Kompilieren|Die Zustands Datei mit Abhängigkeitsinformationen zwischen Quelldateien und Klassendefinitionen. Sie kann vom Compiler während der inkrementellen Kompilierung verwendet werden. Verwenden Sie die Compileroption [/Fd](fd-program-database-file-name.md) zum Angeben des Namens der IDB-Datei.|
 |.idl|Kompilieren|Eine IDL-Datei. Weitere Informationen finden Sie im Windows SDK unter [Interface Definition (IDL) File (Schnittstellendefinitionsdatei)](/windows/win32/Rpc/the-interface-definition-language-idl-file).|
 |.ilk|Verknüpfen|Datei für inkrementelle Verknüpfung. Weitere Informationen finden Sie unter [/Incremental](incremental-link-incrementally.md).|
 |.map|Verknüpfen|Eine Textdatei mit Linkerinformationen. Verwenden Sie die Compileroption [/Fm](fm-name-mapfile.md) , um die MAP-Datei zu benennen. Weitere Informationen finden Sie unter [/map](map-generate-mapfile.md).|
-|.mfcribbon-ms|Ressource|Eine Ressourcen Datei, die den XML-Code enthält, der die MFC-Schaltflächen, Steuerelemente und Attribute im Menüband definiert. Weitere Informationen finden Sie unter [Ribbon Designer](../../mfc/ribbon-designer-mfc.md).|
+|.mfcribbon-ms|Resource|Eine Ressourcen Datei, die den XML-Code enthält, der die MFC-Schaltflächen, Steuerelemente und Attribute im Menüband definiert. Weitere Informationen finden Sie unter [Ribbon Designer](../../mfc/ribbon-designer-mfc.md).|
 |.obj, .o||Objektdateien, kompiliert, aber nicht verknüpft.|
-|.pch|Debug|Vorkompilierte Headerdatei.|
-|.rc, .rc2|Ressource|[Ressourcenskriptdateien](../../windows/working-with-resource-files.md) zum Generieren von Ressourcen.|
+|.pch|Debuggen|Vorkompilierte Headerdatei.|
+|.rc, .rc2|Resource|[Ressourcenskriptdateien](../../windows/working-with-resource-files.md) zum Generieren von Ressourcen.|
 |.sbr|Kompilieren|Zwischendatei des Quellbrowsers. Die Eingabedatei für [BSCMAKE](bscmake-options.md).|
 |.sln|Lösung|Die [Projektmappen](/visualstudio/ide/solutions-and-projects-in-visual-studio) datei.|
 |.suo|Lösung|Die Datei mit den Projektmappenoptionen.|
-|.txt|Ressource|Eine Textdatei, in der Regel die Infodatei.|
-|.vap|Projekt|Eine Visual Studio Analyzer-Projektdatei.|
+|.txt|Resource|Eine Textdatei, in der Regel die Infodatei.|
+|.vap|Project|Eine Visual Studio Analyzer-Projektdatei.|
 |.vbg|Lösung|Eine kompatible Projektgruppendatei.|
-|.vbp, .vip, .vbproj|Projekt|Die Visual Basic-Projektdatei.|
-|.vcxitems|Projekt|Ein Projekt mit freigegebenen Elementen zum Freigeben von Codedateien zwischen mehreren C++-Projekten. Weitere Informationen finden Sie unter [Projekt-und Projektmappendateien](project-and-solution-files.md).|
-|.vcxproj|Projekt|Die Visual Studio-Projektdatei. Weitere Informationen finden Sie unter [Projekt-und Projektmappendateien](project-and-solution-files.md).|
-|.vcxproj.filters|Projekt|Wird verwendet, wenn Sie Projektmappen-Explorer zum Hinzufügen einer Datei zu einem Projekt verwenden. Die Filterdatei definiert, wo die Datei in der Projektmappen-Explorer Strukturansicht basierend auf der Dateinamenerweiterung hinzugefügt wird.|
-|.vdproj|Projekt|Die Visual Studio-Bereitstellungsprojektdatei.|
-|.vmx|Projekt|Die Makro-Projektdatei.|
-|.vup|Projekt|Der Hilfsprogramm-Projektdatei.|
+|.vbp, .vip, .vbproj|Project|Die Visual Basic-Projektdatei.|
+|.vcxitems|Project|Ein Projekt mit freigegebenen Elementen zum Freigeben von Codedateien zwischen mehreren C++-Projekten. Weitere Informationen finden Sie unter [Projekt-und Projektmappendateien](project-and-solution-files.md).|
+|.vcxproj|Project|Die Visual Studio-Projektdatei. Weitere Informationen finden Sie unter [Projekt-und Projektmappendateien](project-and-solution-files.md).|
+|.vcxproj.filters|Project|Wird verwendet, wenn Sie Projektmappen-Explorer zum Hinzufügen einer Datei zu einem Projekt verwenden. Die Filterdatei definiert, wo die Datei in der Projektmappen-Explorer Strukturansicht basierend auf der Dateinamenerweiterung hinzugefügt wird.|
+|.vdproj|Project|Die Visual Studio-Bereitstellungsprojektdatei.|
+|.vmx|Project|Die Makro-Projektdatei.|
+|.vup|Project|Der Hilfsprogramm-Projektdatei.|
 
 Weitere Informationen über andere mit Visual Studio verknüpfte Dateien finden Sie unter [Dateitypen und Dateierweiterungen in Visual Studio .NET](/visualstudio/ide/reference/project-and-solution-file-types).
 
@@ -91,7 +91,7 @@ Projektdateien sind in Ordnern im Projektmappen-Explorer organisiert. Visual Stu
 
 Wenn Sie einem Projekt ein Element hinzufügen, fügen Sie das Element allen Konfigurationen für dieses Projekt hinzu. Das Element wird hinzugefügt, unabhängig davon, ob es Erstell Bar ist. Wenn Sie beispielsweise über ein Projekt mit dem Namen „MeinProjekt“ verfügen, wird das Element durch das Hinzufügen zu den Debug- und Release-Projektkonfigurationen hinzugefügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen und Verwalten von Visual C++ Studio-Projekten](../creating-and-managing-visual-cpp-projects.md)<br>
 [Visual Studio C++ -Projekttypen](visual-cpp-project-types.md)<br>

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - restricted attribute
 ms.assetid: 504a96be-b904-4269-8be1-920feba201b4
-ms.openlocfilehash: 01dabcd15eb1a14734c16b9e54c0ab2e030d0479
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a47c56673e19f891b24ff433b9c614804f0bd51c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514059"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166366"
 ---
 # <a name="restricted"></a>restricted
 
@@ -27,10 +27,10 @@ Gibt an, dass ein Member eines Moduls, einer Schnittstelle oder einer dispinterf
 
 ### <a name="parameters"></a>Parameter
 
-*interfaces*<br/>
+*Web*<br/>
 Eine oder mehrere Schnittstellen, die möglicherweise nicht willkürlich für ein COM-Objekt aufgerufen werden. Dieser Parameter ist nur gültig, wenn er auf eine Klasse angewendet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **restricted** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Eingeschränkte](/windows/win32/Midl/restricted) Mittel l-Attribut.
 
@@ -61,7 +61,7 @@ class c : public a, public b
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -70,11 +70,11 @@ class c : public a, public b
 |**Betrifft**|Schnittstellen Methode, **Schnittstelle**, **Klasse**, **Struktur**|
 |**Wiederholbar**|Nein|
 |**Erforderliche Attribute**|**Co-Klasse** (bei Anwendung auf **Klasse** oder **Struktur**)|
-|**Ungültige Attribute**|None|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)<br/>

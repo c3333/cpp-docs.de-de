@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C3728
 ms.assetid: 6b510cb1-887f-4fcd-9a1f-3bb720417ed1
-ms.openlocfilehash: 68aa23843b0470f15f409b6f3b58624f979ccfae
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8aec3ae1ff629ef7fa000182cde29e306a471315
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62328106"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165873"
 ---
 # <a name="compiler-error-c3728"></a>Compilerfehler C3728
 
-'Ereignis': Ereignis hat keine Raise-Methode
+"Ereignis": das Ereignis hat keine Raise-Methode.
 
-Metadaten erstellt mit einer anderen Sprache, wie z. B. c#, die kein Ereignis zulässt, von außerhalb der Klasse ausgelöst werden, in dem sie definiert wurde, enthalten war die [#using](../../preprocessor/hash-using-directive-cpp.md) Richtlinie und eine CLR-Programmierung, es wurde versucht, mit Visual C++-Programm Auslösen des Ereignisses an.
+Metadaten, die mit einer Sprache erstellt werden C#, z. b., die nicht zulässt, dass ein Ereignis von außerhalb der Klasse, in der Sie definiert wurde, ausgelöst werden, in der [#using](../../preprocessor/hash-using-directive-cpp.md) -Direktive enthalten waren und ein visuelles C++ Programm, das die CLR-Programmierung verwendet, versuchte, das Ereignis zu erhöhen
 
-Zum Auslösen eines Ereignisses in einem Programm, das in einer Sprache wie c# entwickelt muss die Klasse, die das Ereignis enthält auch eine öffentliche Methode definieren, die das Ereignis auslöst.
+Zum Auslösen eines Ereignisses in einem Programm C#, das in einer Sprache wie z. b. entwickelt wurde, muss die Klasse, die das Ereignis enthält, auch eine öffentliche Methode definieren, die das Ereignis auslöst.

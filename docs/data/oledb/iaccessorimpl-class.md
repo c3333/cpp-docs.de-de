@@ -36,12 +36,12 @@ helpviewer_keywords:
 - GetBindings method
 - ReleaseAccessor method
 ms.assetid: 768606da-8b71-417c-a62c-88069ce7730d
-ms.openlocfilehash: f1865089100ac7f60e8c011e72eedb3d0a3f8470
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 6b9830ac2b6f1eacedd1b59184292f2148087093
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79545990"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210861"
 ---
 # <a name="iaccessorimpl-class"></a>IAccessorImpl-Klasse
 
@@ -67,11 +67,11 @@ Speichereinheit für Bindungs Informationen. Der Standardwert ist die `ATLBINDIN
 *Bindingvector*<br/>
 Speichereinheit für Spalten Informationen. Der Standardwert ist "", wobei das Schlüsselelement ein HACCESSOR- [Wert ist und](../../atl/reference/catlmap-class.md) das Value-Element ein Zeiger auf eine `BindType`-Struktur ist.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -88,7 +88,7 @@ Speichereinheit für Spalten Informationen. Der Standardwert ist "", wobei das S
 |[GetBindings](#getbindings)|Gibt die Bindungen in einem Accessor zurück.|
 |[ReleaseAccessor](#releaseaccessor)|Gibt einen Accessor frei.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dies ist für Rowsets und Befehle obligatorisch. OLE DB erfordert, dass Anbieter einen HACCESSOR implementieren, bei dem es sich um ein Tag für ein Array von [DBBINDING](/previous-versions/windows/desktop/ms716845(v=vs.85)) -Strukturen handelt. Die von `IAccessorImpl` bereitgestellten haccessoren sind Adressen der `BindType` Strukturen. Standardmäßig ist `BindType` als `ATLBINDINGS` in der Vorlagen Definition `IAccessorImpl`definiert. `BindType` stellt einen Mechanismus bereit, der von `IAccessorImpl` verwendet wird, um die Anzahl der Elemente im `DBBINDING` Array sowie einen Verweis Zähler und accessorflags zu verfolgen.
 
@@ -168,7 +168,7 @@ STDMETHOD(ReleaseAccessor)(HACCESSOR hAccessor,
 
 Weitere Informationen finden Sie unter [IAccessor:: ReleaseAccessor](/previous-versions/windows/desktop/ms719717(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)

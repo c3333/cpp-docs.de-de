@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fields [C++], bit
 - bit fields
 ms.assetid: 6f4b62e3-cc1d-4e5d-bf34-05904104f71a
-ms.openlocfilehash: bba57d495553e9622fcece9d036fc4f6eff3fa04
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: b952ca0aab5c4417f22fd958514894c53a39f800
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301599"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170604"
 ---
 # <a name="c-bit-fields"></a>C++-Bitfelder
 
@@ -21,7 +21,7 @@ Klassen und Strukturen können Member enthalten, die weniger Speicher als ein ga
 
 *Deklarator* **:** *Constant-Expression*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der *Deklarator* (optional) ist der Name, mit dem im Programm auf den Member zugegriffen wird. Es muss ein ganzzahliger Typ sein (einschließlich Enumerationstypen). *Constant-Expression* gibt die Anzahl der Bits an, die der Member in der Struktur einnimmt. Anonyme Bitfelder, also Bitfeldmember ohne Bezeichner, können zur Auffüllung verwendet werden.
 
@@ -85,6 +85,6 @@ Die folgende Liste zeigt Einzelheiten zu fehlerhaften Operationen in Bitfeldern:
 
 - Initialisieren eines nicht**Konstanten** Verweises mit einem Bitfeld.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

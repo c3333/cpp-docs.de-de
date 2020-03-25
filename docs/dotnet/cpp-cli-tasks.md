@@ -2,16 +2,16 @@
 title: C++/CLI-Aufgaben
 ms.date: 11/04/2016
 ms.assetid: 5851b113-91f9-4062-9427-c0669f333636
-ms.openlocfilehash: a3cd7ef99511c3ad2dc6e14d0d5374a86ab3a85f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fb11d774557a72c167639e2e809c115bd66374cc
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62209149"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208851"
 ---
 # <a name="ccli-tasks"></a>C++/CLI-Aufgaben
 
-Die Artikel in diesem Abschnitt der Dokumentation zu veranschaulichen, wie verschiedene Funktionen von C++ / CLI.
+Die Artikel in diesem Abschnitt der Dokumentation veranschaulichen, wie verschiedene Features von C++/CLI. verwendet werden.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 

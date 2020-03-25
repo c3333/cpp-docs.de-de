@@ -6,28 +6,28 @@ helpviewer_keywords:
 - connections [C++], data source
 - OLE DB consumer templates [C++], data sources
 ms.assetid: 6ee52216-e082-4869-a1d6-ce561cfb76e5
-ms.openlocfilehash: 2c11230d106b50e8120dfa9f4e283e97700d2739
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0514f6a9285936c85608f08774c1d377fd72d6ab
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62175997"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211054"
 ---
 # <a name="data-sources-and-sessions"></a>Datenquellen und Sitzungen
 
-Die folgende Abbildung zeigt die Klassen, die eine Verbindung mit und Zugreifen auf eine Datenquelle zu unterstützen. Jede Klasse basiert auf eine Standardimplementierung der OLE DB-Komponente.
+Die folgende Abbildung zeigt die Klassen, die das Herstellen einer Verbindung mit und das Zugreifen auf eine Datenquelle unterstützen. Jede Klasse basiert auf einer Standard Implementierung der OLE DB-Komponente.
 
-![Daten-Datenquelle und Sitzungsklassen](../../data/oledb/media/vcdatasourcesessionclasses.gif "Daten Datenquelle und Sitzungsklassen") <br/>
+![Datenquellen-und Sitzungs Klassen](../../data/oledb/media/vcdatasourcesessionclasses.gif "Datenquelle und Sitzungsklassen") <br/>
 Datenquelle und Sitzungsklassen
 
-Die Klassen sind:
+Die Klassen lauten:
 
-- [CDataSource](../../data/oledb/cdatasource-class.md) diese Klasse instanziiert das Datenquellenobjekt, das erstellt und verwaltet eine Verbindung mit einer Datenquelle über einen OLE DB-Anbieter. Die Datenquelle hat Informationen wie z. B. die Adresse und Authentifizierungsinformationen Datenquelleninformationen in Form einer Verbindungszeichenfolge.
+- [CDataSource](../../data/oledb/cdatasource-class.md) Diese Klasse instanziiert das Datenquellen Objekt, das über einen OLE DB Anbieter eine Verbindung mit einer Datenquelle erstellt und verwaltet. Die Datenquelle übernimmt Informationen wie die Datenquellen Adresse und Authentifizierungsinformationen in Form einer Verbindungs Zeichenfolge.
 
-   Es ist auch Beachten Sie, dass die Hilfsklasse [CEnumerator](../../data/oledb/cenumerator-class.md) wird häufig verwendet werden, bevor eine Verbindung hergestellt wird, zum Abrufen einer Liste der verfügbaren Anbieter in einem System registriert. Dadurch können Sie zur Auswahl eines Anbieters als Datenquelle. Z. B. die **Datenlinkeigenschaften** Dialogfeld verwendet diese Klasse zum Auffüllen der Liste der Anbieter auf dem **Anbieter** Registerkarte. Es entspricht dem `SQLBrowseConnect` oder `SQLDriverConnect` Funktion.
+   Beachten Sie auch, dass die Hilfsklasse [cenenumerator](../../data/oledb/cenumerator-class.md) häufig verwendet wird, bevor eine Verbindung hergestellt wird, um eine Liste der verfügbaren Anbieter zu erhalten, die auf einem System registriert sind. Auf diese Weise können Sie einen Anbieter als Datenquelle auswählen. Im Dialogfeld **Daten Link Eigenschaften** wird diese Klasse beispielsweise verwendet, um die Liste der Anbieter auf der Registerkarte **Anbieter** aufzufüllen. Sie entspricht der `SQLBrowseConnect`-oder `SQLDriverConnect`-Funktion.
 
-- [CSession](../../data/oledb/csession-class.md) diese Klasse instanziiert das Sitzungsobjekt, das eine einzelnen Access-Sitzung mit der Datenquelle darstellt. Allerdings können Sie mehrere Sitzungen für eine Datenquelle erstellen. Für jede Sitzung können Sie Rowsets, Befehle und andere Objekte, zum Zugreifen auf Daten aus der Datenquelle erstellen. Die Sitzung verarbeitet Transaktionen.
+- [CSession](../../data/oledb/csession-class.md) Diese Klasse instanziiert das Sitzungs Objekt, das eine einzelne Zugriffssitzung auf die Datenquelle darstellt. Sie können jedoch mehrere Sitzungen für eine Datenquelle erstellen. Für jede Sitzung können Sie Rowsets, Befehle und andere Objekte erstellen, um auf Daten aus der Datenquelle zuzugreifen. Die Sitzung verarbeitet Transaktionen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)

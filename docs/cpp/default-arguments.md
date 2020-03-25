@@ -10,16 +10,16 @@ helpviewer_keywords:
 - arguments [C++], default
 - defaults [C++], arguments
 ms.assetid: d32cf516-05cb-4d4d-b169-92f5649fdfa2
-ms.openlocfilehash: 5ffc0301e7a89a379a2ea1eda9a113276df7a88e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0202aaca47964f8923aa57d84515dc70ae8c8a2d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154515"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80189545"
 ---
 # <a name="default-arguments"></a>Standardargumente
 
-In vielen Fällen haben Funktionen Argumente, die so selten verwendet werden, dass ein Standardwert genügt. Für dieses Szenario ermöglicht die Standardargumentfunktion, nur die Argumente für eine Funktion anzugeben, die für einen bestimmten Aufruf von Bedeutung sind. Um dieses Konzept zu veranschaulichen, betrachten Sie in das Beispiel [Funktionsüberladung](../cpp/function-overloading.md).
+In vielen Fällen haben Funktionen Argumente, die so selten verwendet werden, dass ein Standardwert genügt. Für dieses Szenario ermöglicht die Standardargumentfunktion, nur die Argumente für eine Funktion anzugeben, die für einen bestimmten Aufruf von Bedeutung sind. Um dieses Konzept zu veranschaulichen, sehen Sie sich das Beispiel unter [Funktions Überladung](../cpp/function-overloading.md)an.
 
 ```cpp
 // Prototype three print functions.
@@ -38,7 +38,7 @@ int print( double dvalue, int prec=2 );  // Print a double with a
 //  given precision.
 ```
 
-Die Implementierung der `print` Funktion ist leicht verändert, um die Tatsache widerzuspiegeln, dass nur eine solche Funktion für den Typ vorhanden ist **doppelte**:
+Die Implementierung der `print`-Funktion wird leicht geändert, um die Tatsache widerzuspiegeln, dass nur eine solche Funktion für den Typ **Double**vorhanden ist:
 
 ```cpp
 // default_arguments.cpp
@@ -106,7 +106,7 @@ Beachten Sie diese Punkte, wenn Standardargumente verwendet werden:
 
 - Zusätzliche Standardargumente können durch neuere Deklarationen hinzugefügt werden.
 
-- Standardargumente können für Zeiger auf Funktionen bereitgestellt werden. Zum Beispiel:
+- Standardargumente können für Zeiger auf Funktionen bereitgestellt werden. Beispiel:
 
     ```cpp
     int (*pShowIntVal)( int i = 0 );

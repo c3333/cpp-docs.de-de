@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C4957
 ms.assetid: a18c52d4-23e2-44f1-b4b5-f7fa5a7f3987
-ms.openlocfilehash: 79a1b516db1508c755693b67ca2e4070095839da
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 340c26c97d0b5b686eee487cd3fd8b6b05bdf373
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388662"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80164904"
 ---
 # <a name="compiler-warning-c4957"></a>Compilerwarnung C4957
 
-> "*Umwandlung*": explizite Umwandlung von '*Cast_from*'to'*Cast_to*' kann nicht überprüft werden
+> '*Cast*': die explizite Umwandlung von '*cast_from*' in '*cast_to*' ist nicht überprüfbar.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Eine Umwandlung ergibt ein nicht überprüfbares Image.
 
 Einige Umwandlungen sind sicher (z. B. eine `static_cast` die benutzerdefinierte Umwandlungen auslöst, und eine `const_cast`). Eine [safe_cast](../../extensions/safe-cast-cpp-component-extensions.md) generiert auf jeden Fall überprüfbaren Code.
 
-Weitere Informationen finden Sie unter [reiner und überprüfbarer Code (C++ / CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
+Weitere Informationen finden Sie unter [reiner und überprüfbarerC++Code (/CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md).
 
-Die **/CLR: safe** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: Safe** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
 Diese Warnung wird als Fehler ausgegeben. Sie kann mithilfe des [warning](../../preprocessor/warning.md) -Pragmas oder der Compileroption [/wd](../../build/reference/compiler-option-warning-level.md) deaktiviert werden.
 

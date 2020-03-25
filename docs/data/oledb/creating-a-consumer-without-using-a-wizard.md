@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB consumers, creating
 ms.assetid: e8241cfe-5faf-48f8-9de3-241203de020b
-ms.openlocfilehash: 85e95afa92c8a968865d9a3031e1a309e68ae7d3
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: fff4146681e31f0f1fea9fbaa559de7c722740d2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "79544699"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80211457"
 ---
 # <a name="creating-a-consumer-without-using-a-wizard"></a>Erstellen eines Consumers ohne Assistent
 
@@ -76,6 +76,6 @@ Programmgesteuert führt ein Consumer in der Regel die folgende Sequenz von Vorg
     CoUninitialize();
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen eines OLE DB-Consumers](../../data/oledb/creating-an-ole-db-consumer.md)

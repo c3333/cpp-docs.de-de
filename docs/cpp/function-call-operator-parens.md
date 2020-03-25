@@ -10,12 +10,12 @@ helpviewer_keywords:
 - functions [C++], function-call operator
 - function call operator ()
 ms.assetid: 50c92e59-a4bf-415a-a6ab-d66c679ee80a
-ms.openlocfilehash: 3194c34bacfe7b2ed758ab245c5858eadb18e64e
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 08c60ff261e944ed5b54b51a013a6d331f212154
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301521"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179769"
 ---
 # <a name="function-call-operator-"></a>Funktionsaufrufoperator: ()
 
@@ -28,7 +28,7 @@ postfix-expression
 ( [argument-expression-list ] )
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Argumente für den Funktionsaufrufoperator sind null oder mehr Ausdrücke, die durch Trennzeichen getrennt sind – die tatsächlichen Argumente der Funktion.
 
@@ -176,8 +176,8 @@ int main() {
 
 Funktionen können rekursiv aufgerufen werden. Weitere Informationen zu Funktions Deklarationen finden Sie unter [Functions](functions-cpp.md). Verwandte Materialien sind [Übersetzungseinheiten und Verknüpfungen](../cpp/program-and-linkage-cpp.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Postfixausdrücke](../cpp/postfix-expressions.md)<br/>
-[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Funktionsaufruf](../c-language/function-call-c.md)

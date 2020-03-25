@@ -5,18 +5,18 @@ helpviewer_keywords:
 - IDE [C++]
 - Visual Studio IDE [C++]
 ms.assetid: d985c230-8e81-49d6-92be-2db9cac8d023
-ms.openlocfilehash: 7a9559f1aac9f0bd26b35dd03729ab86ad695b04
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 2cf2844fd4247c3c69648823302a6ad56ff5fd45
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "66182770"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171775"
 ---
 # <a name="using-the-visual-studio-ide-for-c-desktop-development"></a>Verwenden der Visual Studio-IDE für C++-Desktopentwicklung
 
 Die Visual Studio-IDE bietet eine Reihe von Features, die Ihnen beim Verwalten großer und kleiner Codeprojekte, beim Schreiben und Umgestalten des Codes und beim Ermitteln und Korrigieren von Fehlern helfen, indem sowohl statische Analyse und leistungsstarke Debugtools verwendet werden. Diese Artikelreihe begleitet Sie bei der Ausführung der Schritte zum Verwalten Ihrer Projekte, zum Schreiben, Testen und Debuggen Ihres Codes und zum Bereitstellen auf einem anderen Computer.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Installieren Sie Visual Studio, falls Sie das noch nicht getan haben. Downloadlinks und eine kurze Anleitung finden Sie unter [Installieren der C++-Unterstützung in Visual Studio](../build/vscpp-step-0-installation.md). Weitere Informationen zur allgemeinen Installation von Visual Studio sowie Ratschläge zur Problembehandlung finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio). Achten Sie darauf, die Workload **Desktopentwicklung mit C++** auszuwählen, um den C++-Compiler, C++-Tools und C++-Bibliotheken bei der Installation von Visual Studio einzuschließen. Diese werden nicht standardmäßig installiert.
 
@@ -42,7 +42,7 @@ Sobald die Visual Studio-Installation abgeschlossen ist, können Sie anfangen.
 
 Arbeiten Sie sich der Reihe nach durch diese Themen, um C++-Apps mit der Visual Studio-IDE zu erstellen. Jedes Thema baut auf das vorherige auf:
 
-- [Exemplarische Vorgehensweise: Arbeiten mit Projekten und Projektmappen (C++)](walkthrough-working-with-projects-and-solutions-cpp.md)
+- [Exemplarische Vorgehensweise: Arbeiten mit Projekten und Lösungen (C++)](walkthrough-working-with-projects-and-solutions-cpp.md)
 
 - [Exemplarische Vorgehensweise: Erstellen eines Projekts (C++)](walkthrough-building-a-project-cpp.md)
 
@@ -56,6 +56,6 @@ Arbeiten Sie sich der Reihe nach durch diese Themen, um C++-Apps mit der Visual 
 
 Sobald Sie diese exemplarischen Vorgehensweisen abgeschlossen haben, sind Sie bereit, mit dem Erstellen Ihrer eigenen Projekte anzufangen. Weitere Informationen und Ressourcen zur C++-Entwicklung finden Sie unter [C++ in Visual Studio](../overview/visual-cpp-in-visual-studio.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erste Schritte bei der Entwicklung in Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)

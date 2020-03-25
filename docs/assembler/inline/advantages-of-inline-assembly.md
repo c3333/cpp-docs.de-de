@@ -6,33 +6,33 @@ helpviewer_keywords:
 - inline assembly [C++], about inline assembly
 - inline assembly [C++], using
 ms.assetid: 94364d97-faa7-4bdf-8473-570956986c51
-ms.openlocfilehash: ecf1598ec90a8600e1fa9aae565724c254dc11e6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7e634f78eca753487cf122ac95df55828bb64625
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62167399"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169655"
 ---
 # <a name="advantages-of-inline-assembly"></a>Vorteile von Inlineassemblys
 
 **Microsoft-spezifisch**
 
-Da der Inlineassembler keine separaten Assembly- und Verknüpfungsschritte erfordert, ist er einfacher als ein getrennter Assembler. Der Inlineassemblycode kann alle C-Variablen und -Funktionsnamen verwenden, die sich im Gültigkeitsbereich befinden. Daher ist es einfach, ihn in den C-Programmcode zu integrieren. Da der Assemblycode Inline mit C oder C++-Anweisungen kombiniert werden, kann, können sie Aufgaben ausführen, die mühsam oder unmöglich in C oder C++ sind.
+Da der Inlineassembler keine separaten Assembly- und Verknüpfungsschritte erfordert, ist er einfacher als ein getrennter Assembler. Der Inlineassemblycode kann alle C-Variablen und -Funktionsnamen verwenden, die sich im Gültigkeitsbereich befinden. Daher ist es einfach, ihn in den C-Programmcode zu integrieren. Da der Assemblycode Inline mit c-oder C++ -Anweisungen gemischt werden kann, kann er Aufgaben ausführen, die in c C++oder nicht möglich sind.
 
-Die Verwendung von Inlineassemblys gehören:
+Die Verwendung der Inlineassembly umfasst Folgendes:
 
-- Schreiben von Funktionen in der Assemblysprache.
+- Schreiben von Funktionen in Assemblysprache.
 
-- Stelle – Optimieren der Geschwindigkeit kritische Abschnitte des Codes.
+- Punktuelles Optimieren von Geschwindigkeits kritischen Code Abschnitten.
 
-- Machen direkten Hardwarezugriff für Gerätetreiber.
+- Herstellen von direktem Hardware Zugriff für Gerätetreiber.
 
-- Schreiben von Prolog- und epilogsequenzen Code für "naked" Aufrufe.
+- Schreiben von Prolog-und Epilogcode für "Naked"-Aufrufe.
 
-Inlineassembly ist ein spezielles Tool. Wenn Sie eine Anwendung auf verschiedenen Computern zu portieren möchten, sollten Sie wahrscheinlich computerspezifische Code in einem separaten Modul zu platzieren. Da der Inlineassembler aller Microsoft Macro Assembler (MASM) nicht unterstützt-Makro und Daten Anweisungen Umständen ist es praktischer MASM für solcher Module verwenden.
+Die Inlineassembly ist ein spezielles Tool. Wenn Sie beabsichtigen, eine Anwendung auf verschiedene Computer zu portieren, möchten Sie wahrscheinlich computerspezifischen Code in einem separaten Modul platzieren. Da der Inline Assembler nicht alle MASM-Makros und Daten Direktiven von Microsoft Macro Assembler unterstützt, ist es möglicherweise bequemer, MASM für solche Module zu verwenden.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>

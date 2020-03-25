@@ -9,25 +9,25 @@ helpviewer_keywords:
 - OLE DB services [OLE DB]
 - OLE DB providers, resource pooling
 ms.assetid: 360c36e2-25ae-4caf-8ee7-d4a6b6898f68
-ms.openlocfilehash: f46c6f493ae41570c75c384fcc836707faeab99f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 67eeffff2bf165a5ccbdbaa546ad5b9ca9a57914
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62284006"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210027"
 ---
 # <a name="ole-db-resource-pooling-and-services"></a>OLE DB-Ressourcenpooling und -Dienste
 
-Um mit OLE DB-pooling oder bei jedem anderen OLE DB-Dienst funktioniert, muss Ihr Anbieter Aggregation aller Objekte unterstützen. Dies ist eine Voraussetzung für alle OLE DB-1.5 oder höher Anbieter. Es ist wichtig für die Nutzung von Diensten. Anbieter, die Aggregation nicht unterstützen können nicht in Pools zusammengefasst werden, und keine zusätzliche Dienste bereitgestellt werden.
+Damit Sie gut mit OLE DB Pooling oder mit einem beliebigen OLE DB Dienst zusammenarbeiten können, muss der Anbieter die Aggregation aller Objekte unterstützen. Dies ist eine Voraussetzung für alle OLE DB 1,5-Anbieter oder höher. Es ist wichtig für die Nutzung von Diensten. Anbieter, die keine Aggregationen unterstützen, können nicht in einem Pool zusammengefasst werden.
 
-Zum Pool hinzugefügt werden soll, müssen der Anbieter des freien Thread-Modells unterstützen. Der Ressourcenpool bestimmt das Modell des Anbieters Thread gemäß der DBPROP_THREADMODEL-Eigenschaft.
+Um in einem Pool zusammengefasst zu werden, müssen Anbieter das kostenlose Thread Modell unterstützen. Der Ressourcenpool bestimmt das Thread Modell des Anbieters entsprechend der DBPROP_THREADMODEL-Eigenschaft.
 
-Wenn der Anbieter einen globalen Verbindungszustand, der sich ändern kann verfügt, während sich die Datenquelle im initialisierten Zustand befindet, sollte er die neue DBPROP_RESETDATASOURCE-Eigenschaft unterstützen. Diese Eigenschaft wird aufgerufen, bevor eine Verbindung erneut verwendet wird und gibt dem Anbieter die Möglichkeit, um den Zustand vor der nächsten Verwendung zu bereinigen. Wenn der Anbieter sich einem Zustand der Verbindung zugeordnete bereinigen kann, kann es DBPROPSTATUS_NOTSETTABLE zurückgegeben, für die Eigenschaft, und die Verbindung wird nicht wiederverwendet werden.
+Wenn der Anbieter über einen globalen Verbindungsstatus verfügt, der sich ändern kann, während sich die Datenquelle in einem initialisierten Zustand befindet, sollte Sie die neue DBPROP_RESETDATASOURCE-Eigenschaft unterstützen. Diese Eigenschaft wird aufgerufen, bevor eine Verbindung wieder verwendet wird, und gibt dem Anbieter die Möglichkeit, den Zustand vor der nächsten Verwendung zu bereinigen. Wenn der Anbieter einen Zustand, der der Verbindung zugeordnet ist, nicht bereinigen kann, kann er DBPROPSTATUS_NOTSETTABLE für die Eigenschaft zurückgeben, und die Verbindung wird nicht wieder verwendet.
 
-Anbieter, die mit einer Remotedatenbank verbunden und können erkennen, ob die Verbindung verloren gehen kann, sollte die DBPROP_CONNECTIONSTATUS-Eigenschaft unterstützen. Diese Eigenschaft gibt die OLE DB-Dienste die Möglichkeit, inaktive Verbindungen zu erkennen, und stellen Sie sicher, dass sie sich an den Pool zurückgegeben werden nicht.
+Anbieter, die eine Verbindung mit einer Remote Datenbank herstellen und erkennen können, ob diese Verbindung möglicherweise verloren geht, sollten die DBPROP_CONNECTIONSTATUS-Eigenschaft unterstützen. Diese Eigenschaft gibt dem OLE DB-Diensten die Möglichkeit, unzustellbare Verbindungen zu erkennen und sicherzustellen, dass Sie nicht an den Pool zurückgegeben werden.
 
-Zum Schluss funktioniert automatische Eintragung von Transaktionen in der Regel nicht, wenn sie auf der gleichen Ebene implementiert ist, das pooling. Anbieter, die automatische Eintragung von Transaktionen unterstützen sollten unterstützen deaktivieren diese Eintragung durch die DBPROP_INIT_OLEDBSERVICES-Eigenschaft und die Eintragung deaktivieren, wenn DBPROPVAL_OS_TXNENLISTMENT deaktiviert wird.
+Zum Schluss funktioniert die automatische Transaktions Eintragung in der Regel nur, wenn Sie auf der gleichen Ebene wie das Pooling implementiert wird. Anbieter, die die automatische Transaktions Eintragung unterstützen, sollten die Deaktivierung dieser Eintragung unterstützen, indem Sie die DBPROP_INIT_OLEDBSERVICES-Eigenschaft verfügbar machen und die Eintragung deaktivieren, wenn die DBPROPVAL_OS_TXNENLISTMENT deaktiviert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erweiterte Anbietertechniken](../../data/oledb/advanced-provider-techniques.md)

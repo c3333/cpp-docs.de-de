@@ -2,24 +2,24 @@
 title: Ausnahmen in C++/CLI
 ms.date: 11/04/2016
 ms.assetid: 0010e205-4487-49a9-a8db-4a8ec63cfc83
-ms.openlocfilehash: 6036a4c1155beb7f45f133609cbe4b0ac8105a9a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bd133ee8de7b15e981b02e65e2195ddf36107261
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404441"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80208778"
 ---
 # <a name="exceptions-in-ccli"></a>Ausnahmen in C++/CLI
 
-Die Artikel in diesem Abschnitt der Dokumentation wird erläutert, für die Ausnahmebehandlung in C++ / CLI und wie es standardmäßige Ausnahmebehandlung unterscheidet.
+In den Artikeln in diesem Abschnitt der Dokumentation wird die Ausnahmebehandlung C++in/CLI erläutert und erläutert, wie Sie sich von der Standard Ausnahmebehandlung unterscheidet.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-|Titel|Beschreibung|
+|Titel|BESCHREIBUNG|
 |-----------|-----------------|
-|[Grundlegende Konzepte zur Verwendung verwalteter Ausnahmen](../dotnet/basic-concepts-in-using-managed-exceptions.md)|Beschreibt die Behandlung von Ausnahmen in verwalteten Anwendungen.|
-|[Unterschiede im Ausnahmebehandlungsverhalten unter/CLR](../dotnet/differences-in-exception-handling-behavior-under-clr.md)|Erläutert die Unterschiede zwischen standardmäßige Ausnahmebehandlung und Ausnahmebehandlung in C++ / CLI.|
-|[finally](../dotnet/finally.md)|Beschreibt die `finally` Block, der verwendet wird, um Ressourcen zu bereinigen, die überlassen werden, nachdem eine Ausnahme auftritt.|
-|[Vorgehensweise: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code](../dotnet/how-to-catch-exceptions-in-native-code-thrown-from-msil.md)|Veranschaulicht, wie `__try` und `__except` zum Abfangen von Ausnahmen in nativem Code, die von der MSIL ausgelöst werden.|
-|[Vorgehensweise: Definieren und Installieren eines globalen Ausnahmehandlers](../dotnet/how-to-define-and-install-a-global-exception-handler.md)|Veranschaulicht, wie nicht behandelte Ausnahmen zu erfassen.|
-|[.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)|Der übergeordnete Artikel für .NET-Programmierung in Visual C++-Dokumentation.|
+|[Grundlegende Konzepte zur Verwendung verwalteter Ausnahmen](../dotnet/basic-concepts-in-using-managed-exceptions.md)|Erläutert die Ausnahmebehandlung in verwalteten Anwendungen.|
+|[Unterschiede im Ausnahme Behandlungs Verhalten unter/CLR](../dotnet/differences-in-exception-handling-behavior-under-clr.md)|Erläutert die Unterschiede zwischen der Standard Ausnahmebehandlung und der C++Ausnahmebehandlung in/CLI.|
+|[finally](../dotnet/finally.md)|Beschreibt den `finally`-Block, der verwendet wird, um Ressourcen zu bereinigen, die nach dem Auftreten einer Ausnahme verbleiben.|
+|[Vorgehensweise: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code](../dotnet/how-to-catch-exceptions-in-native-code-thrown-from-msil.md)|Veranschaulicht, wie `__try` und `__except` verwendet werden, um Ausnahmen in nativem Code abzufangen, die von MSIL ausgelöst werden.|
+|[Vorgehensweise: Definieren und Installieren eines globalen Ausnahmehandlers](../dotnet/how-to-define-and-install-a-global-exception-handler.md)|Veranschaulicht, wie nicht behandelte Ausnahmen erfasst werden.|
+|[.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)|Der Artikel der obersten Ebene für die .NET-Programmierung in C++ der visuellen Dokumentation.|

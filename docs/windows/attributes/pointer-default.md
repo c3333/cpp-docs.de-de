@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - pointer_default attribute
 ms.assetid: 2d0c7bbc-a1e8-4337-9e54-e304523e2735
-ms.openlocfilehash: c70c372e5f1c3a9c2f620a1fa3505fb9d0436e79
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: d0c5832623c1e418f4c6e8bdb606d1d363503483
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69514257"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166535"
 ---
 # <a name="pointer_default"></a>pointer_default
 
@@ -28,15 +28,15 @@ Gibt das Standard Zeiger Attribut für alle Zeiger an, ausgenommen Zeiger der ob
 *value*<br/>
 Ein Wert, der den Zeigertyp beschreibt: " **ptr**", " **ref**" oder " **Unique**".
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **Pointer_default** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Pointer_default](/windows/win32/Midl/pointer-default) -Mittell-Attribut.
+Das **Pointer_default** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Pointer_default](/windows/win32/Midl/pointer-default) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
-Im Beispiel für [DefaultValue](defaultvalue.md) finden Sie eine Beispiel Verwendung von **Pointer_default**.
+Ein Beispiel für die Verwendung von **Pointer_default**finden Sie im Beispiel für [DefaultValue](defaultvalue.md) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -44,12 +44,12 @@ Im Beispiel für [DefaultValue](defaultvalue.md) finden Sie eine Beispiel Verwen
 |-|-|
 |**Betrifft**|**interface**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)

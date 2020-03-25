@@ -6,12 +6,12 @@ helpviewer_keywords:
 - variable argument lists
 - parameter arrays
 ms.assetid: db1a27f4-02a8-4318-8690-1f2893f52b38
-ms.openlocfilehash: 4db75653251a558d6f43f5be63098fbb26e1e6ff
-ms.sourcegitcommit: c4528a7424d35039454f17778baf1b5f98fbbee7
+ms.openlocfilehash: dfe40d20fc8bb795b0e530b3288b1c2101bc55ab
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "79545462"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171878"
 ---
 # <a name="variable-argument-lists--ccli"></a>Variable Argumentlisten (...) (C++/CLI)
 
@@ -101,6 +101,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Arrays](arrays-cpp-component-extensions.md)

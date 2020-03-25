@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - v1_enum attribute
 ms.assetid: 2fe92d92-81b9-4a1c-b6ce-437d0eb770ca
-ms.openlocfilehash: c67f6303e73da42db5efd006bd6cdf3ded5bb8cf
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 1a189f6f1c5ef9d4ae77df9f1eda3f3671ddaf52
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69513869"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80166106"
 ---
 # <a name="v1_enum"></a>v1_enum
 
@@ -23,9 +23,9 @@ Leitet, dass der angegebene Enumerationstyp als 32-Bit-Entität und nicht als 16
 [v1_enum]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **v1_enum** C++ -Attribut verfügt über die gleiche Funktionalität wie das [v1_enum](/windows/win32/Midl/v1-enum) -Mittell-Attribut.
+Das **v1_enum** C++ -Attribut verfügt über die gleiche Funktionalität wie das [v1_enum](/windows/win32/Midl/v1-enum) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -42,7 +42,7 @@ enum eList {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -50,12 +50,12 @@ enum eList {
 |-|-|
 |**Betrifft**|Enumerierter Typ|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)

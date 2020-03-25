@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - idl_quote attribute
 ms.assetid: a370e1b7-948b-4e67-9a25-58facf24e4c9
-ms.openlocfilehash: 3fbec210d973926a312d3e750e806dd9ef13f5f9
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
+ms.openlocfilehash: 4b05da6d237d71e0cc645ad0f626f75ecd85c827
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65448531"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168028"
 ---
-# <a name="idlquote"></a>idl_quote
+# <a name="idl_quote"></a>idl_quote
 
-Ermöglicht es Ihnen, die IDL-Konstrukte verwenden, die in der aktuellen Version von Visual C++ nicht unterstützt werden, und lassen sie die an der generierten IDL-Datei übergeben.
+Ermöglicht die Verwendung von IDL-Konstrukten, die in der aktuellen Version von Visual C++ nicht unterstützt werden und die Sie an die generierte IDL-Datei weiterleiten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,16 +25,16 @@ Ermöglicht es Ihnen, die IDL-Konstrukte verwenden, die in der aktuellen Version
 
 ### <a name="parameters"></a>Parameter
 
-*Text*<br/>
-Der Attributname, dass Sie, Microsoft beabsichtigen C++ Compiler an, über der generierten IDL-Datei übergeben, ohne einen Compilerfehler zurückzugeben.
+*text*<br/>
+Der Attribut Name, den der Microsoft C++ -Compiler an die generierte IDL-Datei weitergeben soll, ohne einen Compilerfehler zurückzugeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn die **Idl_quote** C++ Attribut werden als eigenständige Attribut (durch ein Semikolon nach der schließenden Klammer), klicken Sie dann *Text* befindet sich in der zusammengeführten IDL-Datei unverändert. Wenn **Idl_quote** wird verwendet, auf ein Symbol, *Text* befindet sich innerhalb des Attributblocks für das Symbol.
+Wenn das **Idl_quote** C++ -Attribut als eigenständiges Attribut verwendet wird (mit einem Semikolon nach der schließenden Klammer), wird der *Text* in die zusammengeführte IDL-Datei eingefügt, unverändert. Wenn **Idl_quote** für ein Symbol verwendet wird, wird der *Text* im Attribut Block für das Symbol platziert.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie Sie ein nicht unterstütztes Attribut angeben können (mit **in**, das unterstützt wird) und das Definieren und verwenden Sie ein nicht definierter IDL-Konstrukt:
+Der folgende Code zeigt, wie Sie ein nicht unterstütztes Attribut angeben können (unter Verwendung von **in**, das unterstützt wird) und wie Sie ein nicht definiertes IDL-Konstrukt definieren und verwenden:
 
 ```cpp
 // cpp_attr_ref_idl_quote.cpp
@@ -69,9 +69,9 @@ __interface IStatic{
 };
 ```
 
-Dieser Code verursacht `MYFLOT` und `MYDUB` und *Text* Eintrag in der generierten IDL-Datei platziert werden. Die *Namen* erzwingt, dass Parameter *Text* , vor allem platziert werden soll, die verweist *Namen* in der generierten IDL-Datei. Die *Abhängigkeiten* Parameter erzwingt, dass die Abhängigkeit Listendefinitionen, bevor Sie platziert werden soll *Text* in der generierten IDL-Datei.
+Dieser Code bewirkt, dass `MYFLOT` und `MYDUB` und der *Text* Eintrag in der generierten IDL-Datei platziert werden. Der *Name* -Parameter erzwingt das Platzieren von *Text* vor dem Verweis auf den *Namen* in der generierten IDL-Datei. Der *Abhängigkeiten* -Parameter erzwingt, dass die Abhängigkeits Listen Definitionen vor *Text* in der generierten IDL-Datei platziert werden.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -79,12 +79,12 @@ Dieser Code verursacht `MYFLOT` und `MYDUB` und *Text* Eintrag in der generierte
 |-|-|
 |**Betrifft**|Überall|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
-|**Ungültige Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)

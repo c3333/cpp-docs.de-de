@@ -13,21 +13,21 @@ helpviewer_keywords:
 - MASM (Microsoft Macro Assembler), operators
 - structures [C++], MASM
 ms.assetid: fb7410c7-156a-4131-bcfc-211aa70533e3
-ms.openlocfilehash: 52e20c37f3066122a062e3fc9c64ced576b6c302
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 916dce0346bebfc5ff65ca558ae75317a187660a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62167230"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169538"
 ---
 # <a name="data-directives-and-operators-in-inline-assembly"></a>Datendirektiven und Operatoren in der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Obwohl eine `__asm` blockieren kann C- oder C++-Datentypen und Objekte verweisen, die Datenobjekte mit MASM-Direktiven oder Operatoren nicht definiert. Insbesondere können keine die Definition-Direktiven **DB**, `DW`, **TT**, `DQ`, `DT`, und `DF`, oder die Operatoren `DUP` oder  **Dies**. MASM-Strukturen und Datensätze sind ebenfalls nicht verfügbar. Der Inlineassembler keine akzeptieren Sie die Anweisungen `STRUC`, `RECORD`, **Breite**, oder **MASKE**.
+Obwohl ein `__asm` Block auf C-oder C++ -Datentypen und-Objekte verweisen kann, kann er keine Datenobjekte mit MASM-Direktiven oder-Operatoren definieren. Insbesondere können Sie die Definitions Direktiven **DB**, `DW`, **DD**, `DQ`, `DT`und `DF`oder die Operatoren `DUP` oder nicht verwenden **.** MASM-Strukturen und-Einträge sind ebenfalls nicht verfügbar. Der Inline Assembler akzeptiert nicht die Direktiven `STRUC`, `RECORD`, **Width**oder **Mask**.
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden der Assemblysprache in __asm-Blöcken](../../assembler/inline/using-assembly-language-in-asm-blocks.md)<br/>

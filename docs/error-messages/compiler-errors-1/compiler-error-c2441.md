@@ -6,30 +6,30 @@ f1_keywords:
 helpviewer_keywords:
 - C2441
 ms.assetid: ffbd6573-777a-48dd-892f-5cf4a758dcab
-ms.openlocfilehash: 7fcf333f62253eb676c0f0ada1c927ab962ae1ca
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4e5d5335717ec77c61069ad08e209f9e1851dc2f
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62338921"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205308"
 ---
 # <a name="compiler-error-c2441"></a>Compilerfehler C2441
 
-> "*Variable*": ein mit __declspec(process) deklariertes Symbol muss const im/CLR: pure-Modus
+> '*Variable*': ein mit __declspec (Process) deklariertes Symbol muss im/CLR: pure-Modus konstant sein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** und **/CLR: safe** Compileroptionen in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt werden.
+Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-Variablen werden standardmäßig pro Anwendungsdomäne unter **/CLR: pure**. Markiert eine Variable `__declspec(process)` unter **/CLR: pure** fehleranfällig, wenn in einer Anwendungsdomäne geändert und in einer anderen gelesen wird.
+Standardmäßig liegen Variablen pro Anwendungsdomäne unter **/clr: pure**vor. Eine Variable, die als `__declspec(process)` unter **/clr: pure** gekennzeichnet ist, ist anfällig für Fehler, wenn Sie in einer Anwendungsdomäne geändert und in einem anderen gelesen wird.
 
-Aus diesem Grund der Compiler erzwingt prozessspezifische Variablen `const` unter **/CLR: pure**, machen diese lesen in allen Anwendungsdomänen.
+Daher erzwingt der Compiler, dass pro Prozessvariablen unter **/clr: pure**`const` werden, sodass Sie in allen Anwendungs Domänen schreibgeschützt sind.
 
-Weitere Informationen finden Sie unter [Prozess](../../cpp/process.md) und [/CLR (Common Language Runtime Compilation)](../../build/reference/clr-common-language-runtime-compilation.md).
+Weitere Informationen finden Sie unter [Process](../../cpp/process.md) and [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C2441 generiert.
+Im folgenden Beispiel wird C2441 generiert.
 
 ```cpp
 // C2441.cpp

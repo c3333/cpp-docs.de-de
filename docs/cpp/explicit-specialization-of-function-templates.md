@@ -8,22 +8,22 @@ helpviewer_keywords:
 - declaring functions [C++], specialization of function template
 - specialization of function templates
 ms.assetid: eb0fcb73-eaed-42a1-9b83-14b055a34bf8
-ms.openlocfilehash: 3d91383f895f1a8be983efe42f685419ca988823
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c9d77cef790bdd0a65651ffb7246e685175482b1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62184269"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179990"
 ---
 # <a name="explicit-specialization-of-function-templates"></a>Explizite Spezialisierung von Funktionsvorlagen
 
-Bei einer Funktionsvorlage können Sie ein spezielles Verhalten für einen bestimmten Typ definieren, indem Sie eine explizite Spezialisierung (Überschreibung) der Funktionsvorlage für diesen Typ angeben. Zum Beispiel:
+Bei einer Funktionsvorlage können Sie ein spezielles Verhalten für einen bestimmten Typ definieren, indem Sie eine explizite Spezialisierung (Überschreibung) der Funktionsvorlage für diesen Typ angeben. Beispiel:
 
 ```cpp
 template<> void MySwap(double a, double b);
 ```
 
-Diese Deklaration können Sie eine andere Funktion für definieren **doppelte** Variablen. Ebenso wie nicht auf Vorlagen basierende Funktionen, standardmäßige typkonvertierungen (z. B. Höherstufen einer Variable des Typs **"float"** zu **doppelte**) angewendet werden.
+Diese Deklaration ermöglicht es Ihnen, eine andere Funktion für **doppelte** Variablen zu definieren. Wie nicht-Vorlagen Funktionen werden Standard Typkonvertierungen (z. b. das herauf Stufen einer Variablen vom Typ " **float** " in " **Double**") angewendet.
 
 ## <a name="example"></a>Beispiel
 
@@ -51,6 +51,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionsvorlagen](../cpp/function-templates.md)

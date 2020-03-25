@@ -88,12 +88,12 @@ helpviewer_keywords:
 - m_iRowset
 - m_rgRowHandles
 ms.assetid: 6a9189af-7556-45b1-adcb-9d62bb36704c
-ms.openlocfilehash: 2fbe461bfc812c5ac9b9a09aa3ed31c0a2a638e1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: db12af1aecc094e6c04ab37b5a70a0acd97e39e9
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79546044"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80210417"
 ---
 # <a name="irowsetimpl-class"></a>IRowsetImpl-Klasse
 
@@ -126,11 +126,11 @@ Speichereinheit für die `HROW`.
 *Mapclass*<br/>
 Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldb.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -157,7 +157,7 @@ Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 |[m_iRowset](#irowset)|Ein Index für das Rowset, das den Cursor darstellt.|
 |[m_rgRowHandles](#rgrowhandles)|Eine Liste der Zeilen Handles.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 [IRowset](/previous-versions/windows/desktop/ms720986(v=vs.85)) ist die basisrowsetschnittstelle.
 
@@ -201,7 +201,7 @@ Ein Verweis, der an den Benutzer zurückgegeben wird, der die Anzahl der erstell
 *rwächst*<br/>
 Ein Array von `HROW`s, das mit den neu erstellten Zeilen Handles an den Aufrufer zurückgegeben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Zeile vorhanden ist, ruft diese Methode " [adressfrows](../../data/oledb/irowsetimpl-addrefrows.md) " auf und gibt zurück. Andernfalls wird eine neue Instanz der RowClass-Vorlagen Variablen zugewiesen, und Sie wird [m_rgRowHandles](../../data/oledb/irowsetimpl-m-rgrowhandles.md)hinzugefügt.
 
@@ -227,7 +227,7 @@ Einige Parameter entsprechen *OLE DB Programmier Verweis* Parametern unterschied
 |--------------------------------|------------------------------------------------|
 |*pdstdata*|*pData*|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Behandelt auch die Datenkonvertierung mithilfe der OLE DB Daten Konvertierungs-DLL.
 
@@ -282,7 +282,7 @@ Der Konstruktor.
 IRowsetImpl();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Normalerweise ist es nicht erforderlich, diese Methode direkt aufzurufen.
 
@@ -340,7 +340,7 @@ STDMETHOD(RestartPosition )(HCHAPTER /* hReserved */);
 
 Weitere Informationen finden Sie unter [IRowset:: RestartPosition](/previous-versions/windows/desktop/ms712877(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Rowsetposition ist nicht definiert, bis `GetNextRow` aufgerufen wird. Sie können sich rückwärts in einem ronass bewegen, indem Sie `RestartPosition` aufrufen und dann den Abruf oder den Bildlauf rückwärts ausführen.
 
@@ -371,7 +371,7 @@ Die Spalte, für die der Status festgelegt wird.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Anbieter überschreibt diese Funktion, um eine spezielle Verarbeitung für DBSTATUS_S_ISNULL und DBSTATUS_S_DEFAULT bereitzustellen.
 
@@ -385,7 +385,7 @@ Gibt an, ob ein Anbieter das rückwärts abrufen unterstützt.
 unsigned m_bCanFetchBack:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verknüpft mit der `DBPROP_CANFETCHBACKWARDS`-Eigenschaft in der `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss `DBPROP_CANFETCHBACKWARDS` für `m_bCanFetchBackwards` unter **stützen.**
 
@@ -399,7 +399,7 @@ Gibt an, ob der Cursor von einem Anbieter Rückwärtsscrollen kann.
 unsigned  m_bCanScrollBack:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verknüpft mit der `DBPROP_CANSCROLLBACKWARDS`-Eigenschaft in der `DBPROPSET_ROWSET` Gruppe. Der Anbieter muss `DBPROP_CANSCROLLBACKWARDS` für `m_bCanFetchBackwards` unter **stützen.**
 
@@ -413,7 +413,7 @@ Ein Bitflag, das verwendet wird, um zu bestimmen, ob die Cursorposition für das
 unsigned m_bReset:1;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der Consumer [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) mit einem negativen `lOffset` oder *Crows* aufruft und `m_bReset` true ist, wechselt `GetNextRows` zum Ende des Rowsets. Wenn `m_bReset` false ist, empfängt der Consumer in Übereinstimmung mit der OLE DB Spezifikation einen Fehlercode. Das `m_bReset`-Flag wird auf **true** festgelegt, wenn das Rowset erstmalig erstellt wird, und wenn der Consumer [IRowsetImpl:: RestartPosition](../../data/oledb/irowsetimpl-restartposition.md)aufruft. Wenn Sie `GetNextRows`aufzurufen, wird er auf " **false** " festgelegt.
 
@@ -437,11 +437,11 @@ Eine Zuordnung von Zeilen Handles, die derzeit im Anbieter als Reaktion auf `Get
 MapClass m_rgRowHandles;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Zeilen Handles werden durch Aufrufen von `ReleaseRows`entfernt. Weitere Informationen zur Definition von *mapclass*finden Sie unter [irowctimpl Overview](../../data/oledb/irowsetimpl-class.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
 [Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)<br/>

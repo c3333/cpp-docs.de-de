@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C1046
 ms.assetid: 822ec5f5-b0b0-4711-99e1-fc237b619af6
-ms.openlocfilehash: e8ce3bda246c990c4b58c6270e26a88835903886
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e8b3a7fdb5e34d32495a182aed198cf781410f0d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62243660"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80204528"
 ---
 # <a name="fatal-error-c1046"></a>Schwerwiegender Fehler C1046
 
-Compilerlimit: zu tiefe Schachtelung von Struktur
+Compilerlimit: Struktur zu tief geschachtelt
 
-Die Struktur, Union oder Klasse hat die Schachtelungstiefe von 15 Ebenen überschritten. Schreiben Sie die Definition, um die Schachtelungsebene zu reduzieren. Teilen die Struktur, Union oder Klasse in zwei oder mehr Teile mithilfe `typedef` um eine oder mehrere der geschachtelten Strukturen zu definieren.
+Die Struktur, Union oder Klasse hat das Schachtelungs Limit überschritten, d. h. 15 Ebenen. Schreiben Sie die Definition neu, um die Schachtelungs Ebene zu verringern Teilen Sie die Struktur, Union oder Klasse in zwei oder mehr Teile auf, indem Sie `typedef` verwenden, um eine oder mehrere der-Strukturen zu definieren.

@@ -1,17 +1,17 @@
 ---
-title: Empfohlene Tags für Dokumentationskommentare (C++-Dokumentationskommentare)
+title: Empfohlene Tags für Dokumentations Kommentare (C++ Dokumentations Kommentare)
 ms.date: 11/04/2016
 ms.assetid: 6548e798-5235-4a38-9482-bdc7b88f40a9
-ms.openlocfilehash: 2a6a2c3983c10579a6cd96b69be81aa7df8b8ee7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4e0937b79012f65ba136e18ac81f014be23688f8
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62319147"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168862"
 ---
 # <a name="recommended-tags-for-documentation-comments"></a>Empfohlene Tags für Dokumentationskommentare
 
-Der MSVC-Compiler verarbeitet Dokumentationskommentare in Ihrem Code und erstellt eine XDC-Datei für jede Kompiliereinheit und xdcmake.exe verarbeitet die XDC-Dateien in eine XML-Datei. Die Verarbeitung der XML-Datei zum Erstellen der Dokumentation muss an Ihrem Standort implementiert werden.
+Der MSVC-Compiler verarbeitet Dokumentations Kommentare in Ihrem Code und erstellt eine XDC-Datei für jede kompiand-Datei, und xdcmake. exe verarbeitet die XDC-Dateien in eine XML-Datei. Die Verarbeitung der XML-Datei zum Erstellen der Dokumentation muss an Ihrem Standort implementiert werden.
 
 Tags werden auf der Basis von Konstrukten wie Typen und Typmember verarbeitet.
 
@@ -33,8 +33,8 @@ Der Compiler verarbeitet alle Tags, die gültige XML sind. Die folgenden Tags st
 
 1. Der Compiler überprüft die Syntax.
 
-In der aktuellen Version der MSVC-Compiler unterstützt keine `<paramref>`, ein Tag, das von anderen Visual Studio-Compiler unterstützt wird. Möglicherweise unterstützt Visual C++ `<paramref>` in einem zukünftigen Release.
+In der aktuellen Version unterstützt der MSVC-Compiler `<paramref>`nicht, ein Tag, das von anderen Visual Studio-Compilern unterstützt wird. Möglicherweise unterstützt Visual C++ `<paramref>` in einem zukünftigen Release.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [XML-Dokumentation](xml-documentation-visual-cpp.md)

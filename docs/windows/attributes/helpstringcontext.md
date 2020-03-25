@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpstringcontext attribute [C++]
 ms.assetid: d4cd135e-d91c-4aa3-9353-8aeb096f52cf
-ms.openlocfilehash: ae48c6216b1f1d987b33eff50acf9d82dc551400
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 339d65070efe8bf2dafae2cf76e92c75a1bebc18
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69501490"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168148"
 ---
 # <a name="helpstringcontext"></a>helpstringcontext
 
@@ -28,7 +28,7 @@ Gibt die ID eines Hilfe Themas in einer. hlp-oder CHM-Datei an.
 *contextID*<br/>
 Ein 32-Bit-Hilfe Kontext Bezeichner in der **Hilfe** Datei.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **helpstringcontext** C++ -Attribut verfügt über die gleiche Funktionalität wie das [helpstringcontext](/windows/win32/Midl/helpstringcontext) -ODL-Attribut.
 
@@ -48,7 +48,7 @@ __interface IMyI
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -56,12 +56,12 @@ __interface IMyI
 |-|-|
 |**Betrifft**|**Klasse**, **Schnittstelle**, Schnittstellen Methode|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|None|
-|**Ungültige Attribute**|None|
+|**Erforderliche Attribute**|Keine|
+|**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellenattribut](interface-attributes.md)<br/>

@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - C4116
 ms.assetid: 25434ef3-061e-4252-91a5-0fe2a4b2ffb3
-ms.openlocfilehash: 93b207bc01a725e721001c15fa69c0da1a4bb86c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0e43bc352ed23e38c1d0eb583685629f56ede910
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62299970"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80163715"
 ---
 # <a name="compiler-warning-level-1-c4116"></a>Compilerwarnung (Stufe 1) C4116
 
-Unbenannte Typdefinition in runden Klammern
+unbenannte Typdefinition in runden Klammern
 
-Einen Struktur-, Union- oder Enumerationstyp ohne Namen ist in einem Ausdruck in Klammern definiert. Die Typdefinition ist ohne Bedeutung.
+Ein Struktur-, Union-oder enumerierter Typ ohne Namen wird in einem Klammer Ausdruck definiert. Die Typdefinition ist bedeutungslos.
 
-Bei einem C-Funktionsaufruf weist die Definition einen globalen Gültigkeitsbereich auf. In einem C++-Funktionsaufruf weist die Definition denselben Gültigkeitsbereich wie die aufgerufene Funktion.
+Bei einem C-Funktionsaufruf weist die Definition einen globalen Gültigkeitsbereich auf. In einem C++ Funktionsaufruf weist die Definition denselben Gültigkeitsbereich wie die aufgerufene Funktion auf.

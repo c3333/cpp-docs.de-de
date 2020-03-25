@@ -17,45 +17,45 @@ helpviewer_keywords:
 - linker [C++], reserved words
 - reserved words [C++]
 ms.assetid: 9b9f49e5-0739-45ab-a37e-81e3915ceb25
-ms.openlocfilehash: 7d51f599dfb81dfa860e1bdba86c4372e80379fb
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 16caacb77e052eebc8e2cd101990ee373535bd6e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62319420"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171150"
 ---
 # <a name="reserved-words"></a>Reservierte Wörter
 
-Die folgenden Wörter sind vom Linker reserviert. Diese Namen können verwendet werden, als Argumente in [moduldefinitionsanweisungen](module-definition-dot-def-files.md) nur dann, wenn der Name in doppelte Anführungszeichen eingeschlossen wird ("").
+Die folgenden Wörter sind vom Linker reserviert. Diese Namen können nur in [Modul Definitions Anweisungen](module-definition-dot-def-files.md) als Argumente verwendet werden, wenn der Name in doppelte Anführungszeichen ("") eingeschlossen ist.
 
 ||||
 |-|-|-|
-|**APPLOADER**<sup>1</sup>|**INITINSTANCE**<sup>2</sup>|**VORAB LADEN**|
-|**BASE**|**IOPL**|**PRIVATE**|
-|**CODE**|**BIBLIOTHEK**<sup>1</sup>|**PROTMODE**<sup>2</sup>|
-|**ENTSPRECHEN**|**LOADONCALL**<sup>1</sup>|**REINE**<sup>1</sup>|
-|**DATA**|**LONGNAMES**<sup>2</sup>|**READONLY**|
-|**BESCHREIBUNG**|**MOVABLE**<sup>1</sup>|**READWRITE**|
-|**DEV386**|**MOVEABLE**<sup>1</sup>|**REALMODE**<sup>1</sup>|
-|**ENTFERNBARE**|**MULTIPLE**|**RESIDENT**|
-|**DYNAMIC**|**NAME**|**RESIDENTNAME**<sup>1</sup>|
-|**NUR AUSFÜHREN**|**NEWFILES**<sup>2</sup>|**ABSCHNITTE**|
-|**EXECUTEONLY**|**NODATA**<sup>1</sup>|**SEGMENTE**|
-|**AUSFÜHRENLESEN**|**NOIOPL**<sup>1</sup>|**FREIGEGEBENE**|
-|**EXETYPE**|**NONAME**|**EINZELNE**|
-|**EXPORTE**|**NICHT KONFORME**<sup>1</sup>|**STACKSIZE**|
-|**FESTE**<sup>1</sup>|**NONDISCARDABLE**|**STUB**|
-|**FUNKTIONEN**<sup>2</sup>|**NONE**|**VERSION**|
-|**HEAPSIZE**|**NICHT FREIGEGEBENE**|**WINDOWAPI**|
-|**IMPORTS**|**NOTWINDOWCOMPAT**<sup>1</sup>|**WINDOWCOMPAT**|
-|**UNSAUBEREN**<sup>1</sup>|**OBJEKTE**|**WINDOWS**|
-|**UMFASSEN**<sup>2</sup>|**OLD**<sup>1</sup>||
+|**Apploader**<sup>1</sup>|**InitInstance**<sup>2</sup>|**Vorab laden**|
+|**Sock**|**Iopl**|**Private**|
+|**Ordnung**|**Bibliothek**<sup>1</sup>|**PROTMODE**<sup>2</sup>|
+|**Menden**|**Loadoncall1**<sup>1</sup>|**Rein**<sup>1</sup>|
+|**Vorrats**|**Longnames**<sup>2</sup>|**ReadOnly**|
+|**BESCHREIBUNG**|**Verschieb**Bare<sup>1</sup>|**ReadWrite**|
+|**DEV386**|**Kann**<sup>1</sup>|**Realmode**<sup>1</sup>|
+|**Entfernbare**|**Mehr**|**Bewohnten**|
+|**Schem**|**NAME**|**RESIDENTNAME**<sup>1</sup>|
+|**nur ausführen**|**Newfiles**<sup>2</sup>|**Strecken**|
+|**EXECUTEONLY**|**NODATA**<sup>1</sup>|**Vergeben**|
+|**EXECUTEREAD**|**NOIOPL**<sup>1</sup>|**Genu**|
+|**EXETYPE**|**Noname**|**Gänger**|
+|**EXPORTE**|**Nicht konform**<sup>1</sup>|**STACKSIZE**|
+|**Korrigiert**<sup>1</sup>|**Nicht verwerfbar**|**STUB**|
+|**Funktionen**<sup>2</sup>|**NONE**|**VERSION**|
+|**HEAPSIZE**|**Nicht freigegebene**|**Windowapi**|
+|**Importiert**|**Notwindowcompat**<sup>1</sup>|**Windows compat**|
+|**Impure**<sup>1</sup>|**Gütern**|**Windows**|
+|**INCLUDE**<sup>2</sup> einschließen|**Alt**<sup>1</sup>||
 
-<sup>1</sup> der Linker eine Warnung ("ignoriert") gibt, wenn dieser Begriff gefunden. Das Wort ist jedoch weiterhin reserviert.
+<sup>1</sup> der Linker gibt eine Warnung ("ignoriert") aus, wenn dieser Begriff auftritt. Allerdings ist das Wort immer noch reserviert.
 
-<sup>2</sup> vom Linker ignoriert dieses Wort, jedoch keine Warnung ausgegeben.
+<sup>2</sup> der Linker ignoriert dieses Wort, gibt jedoch keine Warnung aus.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [MSVC-Linkerreferenz](linking.md)
 - [MSVC-Linkeroptionen](linker-options.md)

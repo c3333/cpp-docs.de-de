@@ -8,14 +8,14 @@ helpviewer_keywords:
 - _bstr_t method [C++]
 - _bstr_t class
 ms.assetid: 116d994e-5a72-4351-afbe-866c80b4c165
-ms.openlocfilehash: 44a301b8b2a1c53636c27be6f59f61aa0dcd46b1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3384da733586c828496a8728a0f5855f92eeec35
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62385010"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80190468"
 ---
-# <a name="bstrtbstrt"></a>_bstr_t::_bstr_t
+# <a name="_bstr_t_bstr_t"></a>_bstr_t::_bstr_t
 
 **Microsoft-spezifisch**
 
@@ -51,34 +51,34 @@ Ein `_bstr_t`-Objekt, das kopiert werden soll.
 *s2*<br/>
 Eine Mehrbytezeichenfolge.
 
-*s3*<br/>
+*S3*<br/>
 Eine Unicode-Zeichenfolge
 
 *var*<br/>
-Ein [_variant_t](../cpp/variant-t-class.md) Objekt.
+Ein [_variant_t](../cpp/variant-t-class.md) -Objekt.
 
-*bstr*<br/>
+*BSTR*<br/>
 Ein vorhandenes `BSTR`-Objekt.
 
-*fCopy*<br/>
-False gibt an, die *Bstr* Argument in das neue Objekt angefügt, ohne dass eine Kopie durch den Aufruf `SysAllocString`.
+*Kopie*<br/>
+Wenn der Wert false ist, wird das *BSTR* -Argument an das neue Objekt angefügt, ohne dass eine Kopie durch Aufrufen von `SysAllocString`wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 In der folgenden Tabelle werden die `_bstr_t`-Konstruktoren beschrieben.
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-----------------|-----------------|
-|`_bstr_t( )`|Erstellt ein standardmäßiges `_bstr_t` -Objekt, ein NULL-Wert kapselt `BSTR` Objekt.|
-|`_bstr_t( _bstr_t&`  `s1`  `)`|Erstellt ein `_bstr_t`-Objekt als Kopie eines anderen.<br /><br /> Dies ist eine *flache* Kopie, die inkrementiert den Verweiszähler des gekapselten `BSTR` Objekt statt einen neuen zu erstellen.|
+|`_bstr_t( )`|Erstellt ein Standard `_bstr_t`-Objekt, das ein NULL-`BSTR` Objekt kapselt.|
+|`_bstr_t( _bstr_t&`  `s1`  `)`|Erstellt ein `_bstr_t`-Objekt als Kopie eines anderen.<br /><br /> Dies ist eine *flache* Kopie, bei der der Verweis Zähler des gekapselten `BSTR` Objekts erhöht wird, anstatt einen neuen zu erstellen.|
 |`_bstr_t( char*`  `s2`  `)`|Erstellt ein `_bstr_t`-Objekt durch Aufrufen von `SysAllocString`, um ein neues `BSTR`-Objekt zu erstellen und es dann zu kapseln.<br /><br /> Dieser Konstruktor führt zuerst eine Konvertierung von Multibyte in Unicode aus.|
 |`_bstr_t( wchar_t*`  `s3`  `)`|Erstellt ein `_bstr_t`-Objekt durch Aufrufen von `SysAllocString`, um ein neues `BSTR`-Objekt zu erstellen und es dann zu kapseln.|
 |`_bstr_t( _variant_t&`  `var`  `)`|Erstellt ein `_bstr_t`-Objekt aus einem `_variant_t`-Objekt, indem zunächst ein `BSTR`-Objekt aus dem gekapselten VARIANT-Objekt abgerufen wird.|
-|`_bstr_t( BSTR`  `bstr` `, bool`  `fCopy`  `)`|Erstellt ein `_bstr_t`-Objekt aus einem vorhandenen `BSTR` (im Gegensatz zu einer `wchar_t*`-Zeichenfolge). Wenn *fCopy* ist "false", dem angegebenen `BSTR` auf das neue Objekt angefügt, ohne dass eine neue Kopie mit `SysAllocString`.<br /><br /> Dieser Konstruktor wird von Wrapperfunktionen in Typbibliothekheadern verwendet, um den von einer Schnittstellenmethode zurückgegebenen `BSTR` zu kapseln und dessen Besitz zu übernehmen.|
+|`_bstr_t( BSTR``bstr` `, bool``fCopy``)`|Erstellt ein `_bstr_t`-Objekt aus einem vorhandenen `BSTR` (im Gegensatz zu einer `wchar_t*`-Zeichenfolge). Wenn *fCopy* auf false festgelegt ist, wird der angegebene `BSTR` an das neue Objekt angefügt, ohne dass eine neue Kopie mit `SysAllocString`gemacht wird.<br /><br /> Dieser Konstruktor wird von Wrapperfunktionen in Typbibliothekheadern verwendet, um den von einer Schnittstellenmethode zurückgegebenen `BSTR` zu kapseln und dessen Besitz zu übernehmen.|
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_bstr_t-Klasse](../cpp/bstr-t-class.md)<br/>
 [_variant_t-Klasse](../cpp/variant-t-class.md)

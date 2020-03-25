@@ -26,12 +26,12 @@ helpviewer_keywords:
 - maximum macro
 - __max macro
 ms.assetid: 05c936f6-0e22-45d6-a58d-4bc102e9dae2
-ms.openlocfilehash: dac82ecd1c96d1edf9175a29797d93c65bc19c99
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4cdfd99ec344cd357900d76dfc7f9400046e448a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952750"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170188"
 ---
 # <a name="__max"></a>__max
 
@@ -52,13 +52,13 @@ Werte von einem numerischen Datentyp, der verglichen werden soll.
 
 **__max** gibt die größere der Argumente zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **__max** -Makro vergleicht zwei Werte und gibt den Wert der größeren zurück. Die Argumente können von einen beliebigen Datentyp stammen, signed oder unsigned. Beide Argumente sowie der Rückgabewert müssen demselben Datentyp entsprechen.
 
-Das zurückgegebene Argument wird zweimal durch das Makro ausgewertet. Dies kann zu unerwarteten Ergebnissen führen, wenn das Argument ein Ausdruck ist, der seinen Wert bei der Auswertung ändert, z `*p++`. b.
+Das zurückgegebene Argument wird zweimal durch das Makro ausgewertet. Dies kann zu unerwarteten Ergebnissen führen, wenn das Argument ein Ausdruck ist, der seinen Wert bei der Auswertung ändert, z. b. `*p++`.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Makro|Erforderlicher Header|
 |-------------|---------------------|
@@ -68,7 +68,7 @@ Das zurückgegebene Argument wird zweimal durch das Makro ausgewertet. Dies kann
 
 Weitere Informationen finden Sie im Beispiel für [__min](min.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [__min](min.md)<br/>

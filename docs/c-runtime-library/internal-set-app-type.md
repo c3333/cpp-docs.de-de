@@ -22,12 +22,12 @@ f1_keywords:
 helpviewer_keywords:
 - __set_app_type
 ms.assetid: f0ac0f4d-70e6-4e96-9e43-eb9d1515490c
-ms.openlocfilehash: 4d72eecd454e6c01e88c6869c96b628902690383
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 8efe2159618f728cfaad33493dd482fbdd5375f7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940223"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171488"
 ---
 # <a name="__set_app_type"></a>__set_app_type
 
@@ -44,18 +44,18 @@ void __set_app_type (
 #### <a name="parameters"></a>Parameter
 
 *at*<br/>
-Ein Wert, der den Anwendungstyp angibt. Mögliche Werte sind:
+Ein Wert, der den Anwendungstyp angibt. Mögliche Werte:
 
-|Wert|BESCHREIBUNG|
+|value|BESCHREIBUNG|
 |-----------|-----------------|
 |_UNKNOWN_APP|Unbekannter Anwendungstyp.|
 |_CONSOLE_APP|Konsolenanwendung (für Befehlszeilen).|
-|_GUI_APP|GUI-Anwendung (in Windows).|
+|_GUI_APP|GUI-(Windows)-Anwendung.|
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |__set_app_type|internal.h|

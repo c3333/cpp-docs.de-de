@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - C4656
 ms.assetid: b5aaef74-2320-4345-a6ae-b813881a491c
-ms.openlocfilehash: 4285ce20f6131c2503304ed1bdb1bde02b2efcec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a78da51a99aa924eadbf5c9f458ceb0a75889141
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62375248"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80175648"
 ---
 # <a name="compiler-warning-level-1-c4656"></a>Compilerwarnung (Stufe 1) C4656
 
-'Symbol': Datentyp ist neu oder seit dem letzten Build geändert wurde oder wird an anderer Stelle unterschiedlich definiert
+' Symbol ': der Datentyp ist neu oder wurde seit dem letzten Build geändert, oder er wurde an anderer Stelle unterschiedlich definiert.
 
 Sie haben einen Datentyp hinzugefügt oder geändert, der seit dem letzten erfolgreichen Build neu zum Quellcode hinzugekommen ist. „Bearbeiten und fortfahren“ unterstützt keine Änderungen an vorhandenen Datentypen.
 

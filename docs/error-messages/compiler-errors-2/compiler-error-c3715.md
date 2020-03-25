@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C3715
 ms.assetid: ee5dce88-ddc4-4bdb-9464-47467ce1674f
-ms.openlocfilehash: 94a451bbe936507ac3b33747065a9b6aac9edd02
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 13befc17b94fdf2c22cb84bc64ed55b9375b3473
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62328327"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165911"
 ---
 # <a name="compiler-error-c3715"></a>Compilerfehler C3715
 
-"Zeiger": muss ein Zeiger auf "Klasse"
+' Pointer ': muss ein Zeiger auf ' class ' sein.
 
-Angabe ein Zeigers in [__hook](../../cpp/hook.md) oder [__unhook](../../cpp/unhook.md) zeigen, die Sie nicht auf eine gültige Klasse. Um diesen Fehler zu beheben, stellen sicher, dass Ihre `__hook` und `__unhook` Aufrufe geben Zeiger zu den gültigen Klassen.
+Sie haben einen Zeiger in [__hook](../../cpp/hook.md) oder [__unhook](../../cpp/unhook.md) angegeben, die nicht auf eine gültige Klasse zeigen. Um diesen Fehler zu beheben, stellen Sie sicher, dass die `__hook`-und `__unhook` Aufrufe Zeiger auf gültige Klassen angeben.

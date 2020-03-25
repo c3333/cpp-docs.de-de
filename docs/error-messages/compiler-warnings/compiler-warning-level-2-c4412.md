@@ -6,34 +6,34 @@ f1_keywords:
 helpviewer_keywords:
 - C4412
 ms.assetid: f28dc531-1a98-497b-a366-0a13e1bc81c7
-ms.openlocfilehash: 2c9d50fc3433321c0ca92366a512892212545754
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 601b99eec4625e9b598ece4cbb74d0039ad04bf0
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62402436"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80161788"
 ---
 # <a name="compiler-warning-level-2-c4412"></a>Compilerwarnung (Stufe 2) C4412
 
-> "*Funktion*': Funktionssignatur enthält Typ '*Typ*'; C++-Objekte sind nicht sicher zwischen reinem Code übergeben und gemischtem bzw. systemeigenem.
+> '*Function*': die Funktions Signatur enthält den Typ '*Type*'; C++ Objekte sind unsicher, um zwischen reinem und gemischtem oder nativem Code zu übergeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt. Wenn Sie über Code, die verfügen als reine benötigt, es wird empfohlen, dass Sie damit Portieren C#.
+Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt. Wenn Sie über Code verfügen, der rein sein muss, empfiehlt es sich, ihn in C#zu portieren.
 
-Der Compiler hat eine potenziell unsichere Situation, die einen Laufzeitfehler verursachen könnte: erfolgt ein Aufruf von eine **/CLR: pure** Kompiliereinheit an eine Funktion, die über Dllimport und die Funktionssignatur importiert wurde, enthält einen unsicheren Typ . Ein Typ ist unsicher, wenn sie eine Memberfunktion enthält oder einen Datenmember, der einem unsicheren Typ oder eine Dereferenzierung zu einem unsicheren Typ ist.
+Der Compiler hat eine potenziell unsichere Situation festgestellt, die zu einem Laufzeitfehler führen könnte: ein-Rückruf wird von einer **/clr: pure** -Kompilierungen zu einer Funktion ausgelöst, die über dllimport importiert wurde, und die Funktions Signatur enthält einen unsicheren Typ. Ein Typ ist unsicher, wenn er eine Element Funktion oder einen Datenmember enthält, der ein unsicherer Typ oder eine Dereferenzierung zu einem unsicheren Typ ist.
 
-Dies ist unsicher aufgrund der Unterschied in der Standard-Aufrufkonventionen zwischen reinen und systemeigenem Code (oder gemischten systemeigenen und verwalteten). Beim Importieren (über `dllimport`) eine Funktion in eine **/CLR: pure** Kompiliereinheit, stellen Sie sicher, dass die Deklarationen der einzelnen Typen in der Signatur in der Kompiliereinheit identisch, die die Funktion sind (Achten Sie besonders auf exportiert Unterschiede bei der impliziten Aufrufkonventionen).
+Dies ist aufgrund der Unterschiede in den Standard Aufruf Konventionen zwischen reinem und nativem Code (oder gemischt Native und verwaltete) unsicher. Wenn Sie eine Funktion (über `dllimport`) in eine **/clr: pure** -Kompilierungen importieren, stellen Sie sicher, dass die Deklarationen der einzelnen Typen in der Signatur mit denen in der Kompilierungen identisch sind, die die Funktion exportiert (besonders vorsichtig bei den Unterschieden bei impliziten Aufruf Konventionen).
 
-Eine virtuelle Memberfunktion ist besonders anfällig für unerwartete Ergebnisse zurückgibt.  Allerdings sollten auch eine nicht virtuelle Funktion getestet werden, um sicherzustellen, dass Sie die richtigen Ergebnisse zu erhalten. Wenn Sie sicher sind, dass Sie die richtigen Ergebnisse erhalten, können Sie diese Warnung ignorieren.
+Eine virtuelle Member-Funktion ist besonders anfällig für unerwartete Ergebnisse.  Allerdings sollte auch eine nicht virtuelle Funktion getestet werden, um sicherzustellen, dass Sie die richtigen Ergebnisse erhalten. Wenn Sie sicher sind, dass Sie die richtigen Ergebnisse erhalten, können Sie diese Warnung ignorieren.
 
-C4412 ist standardmäßig deaktiviert. Finden Sie unter [Compiler Warnings, die Are Off standardmäßig](../../preprocessor/compiler-warnings-that-are-off-by-default.md) und [Dllexport, Dllimport](../../cpp/dllexport-dllimport.md) für Weitere Informationen.
+C4412 ist standardmäßig deaktiviert. Weitere Informationen finden Sie [unter standardmäßig](../../preprocessor/compiler-warnings-that-are-off-by-default.md) deaktivierte Compilerwarnungen und [dllexport, dllimport](../../cpp/dllexport-dllimport.md) .
 
-Um diese Warnung zu beheben, entfernen Sie alle Funktionen, von dem Typ.
+Entfernen Sie alle Funktionen aus dem Typ, um diese Warnung zu beheben.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird die C4412 generiert.
+Im folgenden Beispiel wird C4412 generiert.
 
 ```cpp
 // C4412.cpp
@@ -61,7 +61,7 @@ int main() {
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird eine Headerdatei, die zwei Typen deklariert. Die `Unsafe` Typ ist unsicher, da sie über eine Memberfunktion verfügt.
+Das folgende Beispiel ist eine Header Datei, die zwei Typen deklariert. Der `Unsafe` Typ ist unsicher, weil er über eine Member-Funktion verfügt.
 
 ```cpp
 // C4412.h
@@ -81,7 +81,7 @@ struct Safe {
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel werden Funktionen mit den in der Headerdatei definierten Typen exportiert.
+In diesem Beispiel werden Funktionen mit den Typen exportiert, die in der Header Datei definiert sind.
 
 ```cpp
 // C4412_2.cpp
@@ -98,9 +98,9 @@ __declspec(dllexport) Safe * __cdecl func2() { return new Safe; }
 
 ## <a name="example"></a>Beispiel
 
-Die Standardaufrufkonvention einem **/CLR: pure** Kompilierung unterscheidet sich von der systeminterne Kompilierung.  Wenn C4412.h eingeschlossen ist, wird `Test` standardmäßig `__clrcall`. Wenn Sie kompilieren und führen Sie dieses Programm (verwenden Sie keine **/c**), die Anwendung wird eine Ausnahme ausgelöst.
+Die Standard Aufruf Konvention in einer **/clr: pure** -Kompilierung unterscheidet sich von einer nativen Kompilierung.  Wenn C4412. h eingeschlossen ist, `Test` standardmäßig `__clrcall`. Wenn Sie dieses Programm kompilieren und ausführen ( **/c**nicht verwenden), löst das Programm eine Ausnahme aus.
 
-Im folgende Beispiel wird die C4412 generiert.
+Im folgenden Beispiel wird C4412 generiert.
 
 ```cpp
 // C4412_3.cpp

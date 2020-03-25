@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C4936
 ms.assetid: 6676de35-bf1b-4d0b-a70f-b5734130336c
-ms.openlocfilehash: bbb69cccbf93be6e97d13db5008780f57e63f9da
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c6d54cf8b6704eec2a9e6af890c5c80c67106995
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62280853"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80165001"
 ---
 # <a name="compiler-warning-c4936"></a>Compilerwarnung C4936
 
 > __declspec wird nur bei einer Kompilierung mit /clr oder /clr:pure unterstützt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/CLR: pure** Compileroption ist in Visual Studio 2015 als veraltet markiert und in Visual Studio 2017 nicht unterstützt.
+Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
 Ein `__declspec` -Modifizierer wurde verwendet, der `__declspec` -Modifizierer ist aber nur gültig, wenn er mit einer der [/clr](../../build/reference/clr-common-language-runtime-compilation.md) -Optionen kompiliert wird.
 

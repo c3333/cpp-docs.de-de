@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - M6205
 ms.assetid: fd28e7c9-a463-4a9c-a863-cc9e75315550
-ms.openlocfilehash: cdcaa714836f77d6238cc790457a5422cc825889
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: eb9c646329a4db224b853bea91e69576bee04be6
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62393206"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80173633"
 ---
 # <a name="math-error-m6205"></a>Mathematischer Fehler M6205
 
-'Funktion': _TLOSS-Fehler
+"Function": _TLOSS Fehler
 
-Ein Verlust der gesamten Signifikanz (Genauigkeit) ist aufgetreten.
+Ein gesamter Verlust der Bedeutung (Genauigkeit) ist aufgetreten.
 
-Dieser Fehler kann durch eine große Anzahl als Operand sin, sodass verursacht werden, cos, oder tan, da der Operand auf eine Zahl zwischen 0 und 2 reduziert werden muss * Pi.
+Dieser Fehler kann dadurch verursacht werden, dass eine sehr große Zahl als Operand von Sin, cos oder Tan ausgegeben wird, da der Operand auf eine Zahl zwischen 0 und 2 * PI reduziert werden muss.

@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - C2487
 ms.assetid: 95d734fb-64ac-488d-b799-64f084eecb09
-ms.openlocfilehash: 8b888b46ea44af5855ad21b3e6bc16c09493e08c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 33824d6e88aa4885aa5e330f8f5c9c6ee0065860
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62361593"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80205074"
 ---
 # <a name="compiler-error-c2487"></a>Compilerfehler C2487
 
-'Bezeichner': Member der Klasse darf nicht mit Dll-Schnittstelle deklariert werden
+"Bezeichner": Member der DLL-Schnittstellen Klasse darf nicht mit DLL-Schnittstelle deklariert werden.
 
-Sie können eine ganze Klasse oder bestimmte Member einer Klasse-fremde DLL-Schnittstelle, mit der DLL-Schnittstelle deklarieren. Sie können nicht deklarieren Sie eine Klasse mit DLL-Schnittstelle, und klicken Sie dann einen Member dieser Klasse mit DLL-Schnittstelle deklarieren.
+Sie können eine ganze Klasse oder bestimmte Member einer nicht-dll-Schnittstellen Klasse mit DLL-Schnittstelle deklarieren. Sie können keine Klasse mit DLL-Schnittstelle deklarieren und dann einen Member dieser Klasse mit der DLL-Schnittstelle deklarieren.

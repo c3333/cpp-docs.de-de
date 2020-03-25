@@ -7,25 +7,25 @@ helpviewer_keywords:
 - OLE DB, resource pooling
 - OLE DB providers, resource pooling
 ms.assetid: 2ead1bcf-bbd4-43ea-a307-bb694b992fc1
-ms.openlocfilehash: 786c2b31bb93b0691d80885c86377e2afba8c1dc
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3604f6eaaf0f34a0ff7e54826923c2aa92eef4a2
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62243962"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80209768"
 ---
 # <a name="resource-pooling-in-your-ole-db-application"></a>Ressourcenpooling in OLE DB-Anwendungen
 
-Um in Ihrer Anwendung nutzen zu können, stellen Sie sicher, OLE DB-Dienste werden aufgerufen, durch Abrufen der Datenquelle über `IDataInitialize` oder `IDBPromptInitialize`. Wenn Sie direkt `CoCreateInstance` zum Aufrufen des Anbieters basierend auf der CLSID des Anbieters keine OLE DB-Dienste aufgerufen werden.
+Um Pooling in Ihrer Anwendung zu nutzen, müssen Sie sicherstellen, dass OLE DB Dienste aufgerufen werden, indem Sie Ihre Datenquelle über `IDataInitialize` oder `IDBPromptInitialize`erhalten. Wenn Sie `CoCreateInstance` direkt verwenden, um den Anbieter auf der Grundlage der CLSID des Anbieters aufzurufen, werden keine OLE DB Dienste aufgerufen.
 
-Pools verbundenen Datenquellen so lange wie ein Verweis auf die OLE DB-Dienste verwaltet, `IDataInitialize` oder `IDBPromptInitialize` ist unterbrochene oder so lange, wie eine Verbindung verwendet. Pools sind auch automatisch innerhalb einer Umgebung COM+ 1.0-Dienste oder (Internet Information Services, IIS) verwaltet. Wenn Ihre Anwendung externe in einer COM+ 1.0 Services oder IIS-Umgebung nutzt, sollten Sie einen Verweis auf halten `IDataInitialize` oder `IDBPromptInitialize` oder mindestens eine Verbindung daran festhalten. Um sicherzustellen, dass der Pool nicht zerstört zu erhalten, bei die letzte Verbindung von der Anwendung veröffentlicht wird, behalten Sie den Verweis, oder halten Sie auf, um die Verbindung für die Lebensdauer der Anwendung.
+Die OLE DB-Dienste behalten Pools verbundener Datenquellen, solange ein Verweis auf `IDataInitialize` oder `IDBPromptInitialize` gespeichert wird oder wenn eine Verbindung verwendet wird. Pools werden auch automatisch innerhalb einer com+ 1,0-Dienste oder Internetinformationsdienste (IIS)-Umgebung verwaltet. Wenn Ihre Anwendung das Pooling außerhalb einer com+ 1,0-Dienste oder IIS-Umgebung nutzt, sollten Sie einen Verweis auf `IDataInitialize` oder auf `IDBPromptInitialize` oder auf mindestens eine Verbindung halten. Um sicherzustellen, dass der Pool nicht zerstört wird, wenn die letzte Verbindung von der Anwendung freigegeben wird, behalten Sie den Verweis bei, oder halten Sie sich für die Lebensdauer Ihrer Anwendung auf die Verbindung.
 
-OLE DB-Dienste zu identifizieren, den Pool, die von dem die Verbindung, die zum Zeitpunkt erstellt wird, `Initialize` aufgerufen wird. Nachdem die Verbindung aus einem Pool gezeichnet wird, kann es in einen anderen Pool verschoben werden. Vermeiden Sie deshalb das Dingen in Ihrer Anwendung, die Initialisierungsinformationen, wie ein Aufruf ändern `UnInitialize` oder Aufrufen `QueryInterface` für einen Anbieter spezifische Schnittstelle vor dem Aufruf `Initialize`. Darüber hinaus werden nicht in einem Pool Verbindungen mit einem anderen DBPROMPT_NOPROMPT Eingabeaufforderung Wert zusammengefasst. Allerdings kann die Initialisierungszeichenfolge aus eine Verbindung hergestellt wird, über die Eingabeaufforderung verwendet werden, um zusätzliche gepoolte Verbindungen mit derselben Datenquelle herzustellen.
+OLE DB Dienste identifizieren den Pool, aus dem die Verbindung zu dem Zeitpunkt gezeichnet wird, zu dem `Initialize` aufgerufen wird. Nachdem die Verbindung aus einem Pool gezeichnet wurde, kann Sie nicht in einen anderen Pool verschoben werden. Vermeiden Sie daher die Durchführung von Aufgaben in Ihrer Anwendung, die Initialisierungs Informationen ändern, z. b. das Aufrufen von `UnInitialize` oder das Aufrufen von `QueryInterface` für eine anbieterspezifische Schnittstelle vor dem `Initialize`Aufrufen von Außerdem werden Verbindungen mit einem anderen Aufforderungs Wert als DBPROMPT_NOPROMPT nicht in einem Pool zusammengefasst. Die Initialisierungs Zeichenfolge, die von einer mit einer Eingabeaufforderung eingerichteten Verbindung abgerufen wird, kann jedoch verwendet werden, um zusätzliche Pool Verbindungen mit derselben Datenquelle herzustellen.
 
-Einige Anbieter müssen für jede Sitzung eine eigene Verbindung. Diese zusätzlichen Verbindungen müssen separat in der verteilten Transaktion eingetragen werden, sofern vorhanden. OLE DB services-Caches und eine einzigen Sitzung pro Datenquelle verwendet, aber wenn die Anwendung mehr als eine Sitzung zu einem Zeitpunkt von einer einzelnen Datenquelle anfordert, der Anbieter kann am Ende zusätzliche Verbindungen zu machen und zusätzliche transaktionseintragungen ausführen, werden nicht in einem Pool zusammengefasst. Es ist effizienter, Erstellen von einer anderen Datenquelle, für jede Sitzung in einer Umgebung in einem Pool zusammengefasste, als mehrere Sitzungen aus einer einzelnen Datenquelle zu erstellen.
+Einige Anbieter müssen für jede Sitzung eine separate Verbindung herstellen. Diese zusätzlichen Verbindungen müssen separat in der verteilten Transaktion eingetragen werden, sofern vorhanden. In OLE DB Services wird eine einzelne Sitzung pro Datenquelle zwischengespeichert und wieder verwendet. wenn die Anwendung jedoch mehr als eine Sitzung gleichzeitig aus einer einzelnen Datenquelle anfordert, stellt der Anbieter möglicherweise zusätzliche Verbindungen her und durchläuft zusätzliche Transaktions Zustellungen, die nicht in einem Pool zusammengefasst. Es ist effizienter, eine separate Datenquelle für jede Sitzung in einer gepoolten Umgebung zu erstellen, als mehrere Sitzungen aus einer einzelnen Datenquelle zu erstellen.
 
-Schließlich, da ADO wird automatisch für die Verwendung von OLE DB Services, Sie können ADO verwenden, um Verbindungen herzustellen und das pooling und die Eintragung erfolgt automatisch.
+Da ADO automatisch OLE DB Dienste verwendet, können Sie auch ADO verwenden, um Verbindungen herzustellen, und das Pooling und die Eintragung erfolgen automatisch.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Ressourcenpooling und -Dienste](../../data/oledb/ole-db-resource-pooling-and-services.md)

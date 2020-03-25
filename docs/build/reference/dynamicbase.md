@@ -8,28 +8,28 @@ helpviewer_keywords:
 - DYNAMICBASE editbin option
 - /DYNAMICBASE editbin option
 ms.assetid: edb3df90-7b07-42fb-a94a-f5a4c1d325d6
-ms.openlocfilehash: 13987b4ba9c25db0f5417da562ff86f4230937d7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ab7682c8344d6fc36ded03e7ef885c83d2f19ab7
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62271826"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169044"
 ---
 # <a name="dynamicbase"></a>/DYNAMICBASE
 
-Gibt an, ob ein ausführbares Image generiert werden, das nach dem Zufallsprinzip ein REBASE können zur Ladezeit ausgeführt werden mit der Address Space Layout Randomization (ASLR)-Funktion von Windows, die zuerst in Windows Vista verfügbar war.
+Gibt an, ob ein ausführbares Image generiert werden soll, das zur Ladezeit nach dem Zufallsprinzip zur Ladezeit neu erstellt werden kann, indem das ASLR (Address Space Layout Anordnung)-Feature von Windows verwendet wird, das erstmals in Windows Vista
 
 ## <a name="syntax"></a>Syntax
 
-> **/DYNAMICBASE**[**:NO**]
+> **/DynamicBase**[ **: No**]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **/DynamicBase** Option ändert den Header einer *ausführbares Image*, eine .dll oder .exe-Datei, um anzugeben, ob die Anwendung nach dem Zufallsprinzip ein zur Ladezeit REBASE sollte und ermöglicht es virtuelle Adresse Zuordnung Randomization, das wirkt sich die virtuellen Speicheradresse des Heaps, stapeln und anderen Betriebssystem-Zuordnungen. Die **/DynamicBase** Option gilt für 32-Bit- und 64-Bit-Images. ASLR wird unter Windows Vista und späteren Betriebssystemen unterstützt. Die Option wird von älteren Betriebssystemen ignoriert.
+Die Option **/DynamicBase** ändert den Header eines *ausführbaren Images*, eine DLL-oder exe-Datei, um anzugeben, ob die Anwendung zur Ladezeit nach dem Zufallsprinzip neu erstellt werden soll, und ermöglicht die zufällige Zuordnung von virtuellen Adressen, die sich auf den Speicherort des virtuellen Speichers von Heaps, Stapeln und anderen Betriebssystem Zuordnungen auswirkt. Die **/DynamicBase** -Option gilt sowohl für 32-Bit-als auch für 64-Bit-Images. ASLR wird unter Windows Vista und höheren Betriebssystemen unterstützt. Die Option wird von älteren Betriebssystemen ignoriert.
 
-In der Standardeinstellung **/DynamicBase** aktiviert ist. Verwenden Sie zum Deaktivieren dieser Option **/DYNAMICBASE:NO**. Die **/DynamicBase** Option ist erforderlich, damit die [/highentropyva](highentropyva-support-64-bit-aslr.md) Option aus, um die Auswirkungen haben.
+Standardmäßig ist **/DynamicBase** aktiviert. Verwenden Sie **/DynamicBase: No**, um diese Option zu deaktivieren. Die **/DynamicBase** -Option ist erforderlich, damit die [/HIGHENTROPYVA](highentropyva-support-64-bit-aslr.md) -Option wirksam wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [EDITBIN-Optionen](editbin-options.md)
-- [Windows ISV-Softwaresicherheitsmaßnahmen](https://msdn.microsoft.com/library/bb430720.aspx)
+- [Schutzmaßnahmen für Windows ISV-Software](https://msdn.microsoft.com/library/bb430720.aspx)

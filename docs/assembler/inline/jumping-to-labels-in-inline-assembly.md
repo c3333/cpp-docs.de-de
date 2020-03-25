@@ -9,22 +9,22 @@ helpviewer_keywords:
 - labels, in __asm blocks
 - jumping to labels in inline assembly
 ms.assetid: 36c18b97-8981-4631-9dfd-af6c14a04297
-ms.openlocfilehash: 7653dc990e2f4b490bcbe333ed6f7586ac966d2e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 199156a08af13f4a70793609b37c70b0c95bf9ba
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62166905"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80169330"
 ---
 # <a name="jumping-to-labels-in-inline-assembly"></a>Springen zu Bezeichnungen in der Inlineassembly
 
 **Microsoft-spezifisch**
 
-Wie eine normale C oder C++ Bezeichnung und eine Bezeichnung in einem `__asm` -Block ist der Gültigkeitsbereich der Funktion, die in der sie (nicht nur im Block definiert ist). Beide Assemblyanweisungen und `goto` Anweisungen können springen zu Bezeichnungen innerhalb oder außerhalb der `__asm` Block.
+Wie bei einer normalen C C++ -oder-Bezeichnung hat eine Bezeichnung in einem `__asm`-Block einen Bereich in der Funktion, in der Sie definiert ist (nicht nur im-Block). Sowohl Assemblyanweisungen als auch `goto` Anweisungen können zu Bezeichnungen innerhalb oder außerhalb des `__asm` Blocks springen.
 
-Bezeichnungen `__asm` Blöcke sind nicht in der Groß-/Kleinschreibung beachtet; `goto` Anweisungen und Assemblyanweisungen können auf diese Bezeichnungen ohne Berücksichtigung verweisen. C- und C++-Bezeichnungen sind Groß-/ Kleinschreibung erst bei durch `goto` Anweisungen. Assemblyanweisungen können in eine Bezeichnung für C- oder C++ ohne Berücksichtigung springen.
+In `__asm` Blöcken definierte Bezeichnungen unterliegen nicht der Groß-/Kleinschreibung. sowohl `goto`-als auch Assemblyanweisungen können diese Bezeichnungen ohne Berücksichtigung der Groß-/Kleinschreibung bezeichnen. Bei C C++ -und-Bezeichnungen wird nur dann `goto` nach Groß-/Kleinschreibung unterschieden, wenn Assemblyanweisungen können ohne Berücksichtigung der C++ Groß-/Kleinschreibung zu einer C-oder-Bezeichnung
 
-Der folgende Code zeigt alle Strukturvarianten:
+Der folgende Code zeigt alle Permutationen:
 
 ```cpp
 void func( void )
@@ -54,7 +54,7 @@ int main()
 }
 ```
 
-Verwenden Sie nicht als Bezeichnungen in der C-Bibliothek-Funktionsnamen `__asm` Blöcke. Versucht, verwenden Sie z. B. möglicherweise `exit` als eine Bezeichnung wie folgt:
+Verwenden Sie keine C-Bibliotheks Funktionsnamen als Bezeichnungen in `__asm` Blöcken. Beispielsweise ist es möglicherweise verlockend, `exit` wie folgt als Bezeichnung zu verwenden:
 
 ```cpp
 ; BAD TECHNIQUE: using library function name as label
@@ -66,9 +66,9 @@ exit:
    ; More __asm code follows
 ```
 
-Da **beenden** ist der Name einer C-Bibliothek-Funktion, dieser Code kann dazu führen, dass einen Sprung zu den **beenden** -Funktion anstelle von an die gewünschte Position.
+Da **Exit** der Name einer C-Bibliotheksfunktion ist, kann dieser Code einen Sprung zur **Exit** -Funktion statt an die gewünschte Position auslösen.
 
-Wie bei den MASM-Programme, Dollarsymbols (`$`) dient als den aktuellen Speicherort Leistungsindikator. Es ist eine Bezeichnung für die Anweisung, die gerade zusammengesetzt wird. In `__asm` Blöcke sein Hauptverwendungszweck ist es, lange bedingte Sprüngen:
+Wie bei MASM-Programmen fungiert das Dollarsymbol (`$`) als aktueller Speicherort. Es handelt sich um eine Bezeichnung für die zurzeit assemblierte Anweisung. In `__asm` Blöcken besteht der Haupt Verwendungs Umfang darin, lange bedingte Sprünge zu erstellen:
 
 ```cpp
    jne $+5 ; next instruction is 5 bytes long
@@ -81,6 +81,6 @@ farlabel:
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Inlineassembler](../../assembler/inline/inline-assembler.md)<br/>

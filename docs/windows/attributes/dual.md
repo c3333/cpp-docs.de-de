@@ -1,21 +1,21 @@
 ---
-title: Dual (C++-COM-Attribut)
+title: Dual (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.dual
 helpviewer_keywords:
 - dual attribute
 ms.assetid: 5d4a9069-d819-42cd-ba56-bbcda17157d9
-ms.openlocfilehash: 8f02f6b69b31f10b41d5c920cfc2ad62dfa1cef2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 66cd6eb9141244397609cc6421ead74d1eb8547e
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62409680"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80168212"
 ---
 # <a name="dual"></a>dual
 
-Fügt eine Schnittstelle in der IDL-Datei als eine duale Schnittstelle an.
+Fügt eine Schnittstelle in die IDL-Datei als duale Schnittstelle ein.
 
 ## <a name="syntax"></a>Syntax
 
@@ -23,13 +23,13 @@ Fügt eine Schnittstelle in der IDL-Datei als eine duale Schnittstelle an.
 [dual]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn die **dual** C++-Attribut einer Schnittstelle vorangeht, wird die Schnittstelle, in den bibliotheksblock in der generierten IDL-Datei platziert werden soll.
+Wenn das **Dual** C++ -Attribut einer Schnittstelle vorangestellt wird, bewirkt dies, dass die Schnittstelle innerhalb des Bibliotheks Blocks in der generierten IDL-Datei platziert wird.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code ist ein Attributblock, die verwendet **dual** vor einer Schnittstellendefinition:
+Der folgende Code ist ein Attribut Block, der **Dual** vor einer Schnittstellen Definition verwendet:
 
 ```cpp
 // cpp_attr_ref_dual.cpp
@@ -53,7 +53,7 @@ __interface IStatic : IDispatch
 [cpp_quote("#include file.h")];
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 ### <a name="attribute-context"></a>Attributkontext
 
@@ -61,12 +61,12 @@ __interface IStatic : IDispatch
 |-|-|
 |**Betrifft**|**interface**|
 |**Wiederholbar**|Nein|
-|**Erforderliche Attribute**|Keiner|
+|**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|`dispinterface`|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Attribute nach Verwendung](attributes-by-usage.md)<br/>

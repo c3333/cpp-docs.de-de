@@ -2,12 +2,12 @@
 title: Bereichsbasiert für Anweisung (C++)
 ms.date: 11/04/2016
 ms.assetid: 5750ba1d-ba48-4236-a923-e32de8345c2d
-ms.openlocfilehash: af9811fd707d4dbc28158dba3b6b3fbfcc43e4fe
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 504f177cf68b978642f15ba4799cab8cb517f447
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80077184"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80188349"
 ---
 # <a name="range-based-for-statement-c"></a>Bereichsbasiert für Anweisung (C++)
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - property __declspec keyword
 - __declspec keyword [C++], property
 ms.assetid: f3b850ba-bf48-4df7-a1d6-8259d97309ce
-ms.openlocfilehash: ece1016b7a18873dfa477b0f8b6ae4271a0f8001
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 03f71739698fd20a01fd72567ce5b9babc176327
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62301486"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179301"
 ---
 # <a name="property-c"></a>property (C++)
 
@@ -28,11 +28,11 @@ Dieses Attribut kann auf nicht statische "virtuelle Datenmember" in einer Klasse
    __declspec( property( get=get_func_name, put=put_func_name ) ) declarator
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Erkennt der Compiler einen Datenmember, die mit diesem Attribut deklariert werden, auf der rechten Seite eines Operators Memberauswahl ("**.**"oder"**->**"), konvertiert sie den Vorgang zu einem `get` oder `put` -Funktion, je nachdem, ob ein solcher Ausdruck ein l-Wert oder r-Wert. In den schwierigeren Kontexten, z. B. "`+=`", erfolgt eine Neuerstellung beider Ansätze `get` und `put`.
+Wenn der Compiler einen Datenmember erkennt, der mit diesem Attribut auf der rechten Seite eines Elementauswahl Operators (" **.** " oder " **->** ") deklariert wurde, konvertiert er den Vorgang in eine `get`-oder `put` Funktion, je nachdem, ob ein solcher Ausdruck ein l-Wert oder ein r-Wert ist. In komplizierteren Kontexten, wie z. b. "`+=`", wird ein umschreiben durchgeführt, indem sowohl `get` als auch `put`ausgeführt werden.
 
-Dieses Attribut kann in der Deklaration eines leeren Arrays in einer Klassen- oder Strukturdefinition ebenfalls verwendet werden. Zum Beispiel:
+Dieses Attribut kann in der Deklaration eines leeren Arrays in einer Klassen- oder Strukturdefinition ebenfalls verwendet werden. Beispiel:
 
 ```cpp
 __declspec(property(get=GetX, put=PutX)) int x[];
@@ -66,7 +66,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [__declspec](../cpp/declspec.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

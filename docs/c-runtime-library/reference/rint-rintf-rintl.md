@@ -30,12 +30,12 @@ helpviewer_keywords:
 - rint function
 - rintl function
 ms.assetid: 312ae3e6-278c-459a-9393-11b8f87d9184
-ms.openlocfilehash: 57c4dc60d6b4d29e5c46fa6f1d03d0710ed44309
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ac9db3ee5a50bb334754a8a1191638a319829b97
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949266"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170890"
 ---
 # <a name="rint-rintf-rintl"></a>rint, rintf, rintl
 
@@ -56,23 +56,23 @@ long double rint( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*x*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **rint** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste Ganzzahl in *x*darstellt. Die halbwerte werden entsprechend der aktuellen Einstellung des Gleit Komma-Rundungs Modus gerundet, identisch mit den **nearbyint** -Funktionen. Im Gegensatz zu den **nearbyint** -Funktionen können die **rint** -Funktionen die **FE_INEXACT** -Gleit Komma Ausnahme ausgelöst werden, wenn sich das Ergebnis in dem Wert des-Arguments unterscheidet. Es gibt keine Fehlerrückgabe.
+Die **rint** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste Ganzzahl in *x*darstellt. Die halbwerte werden entsprechend der aktuellen Einstellung des Gleit Komma-Rundungs Modus gerundet, identisch mit den **nearbyint** -Funktionen. Im Gegensatz zu den **nearbyint** -Funktionen können die **rint** -Funktionen die **FE_INEXACT** -Gleit Komma Ausnahme auslöst, wenn sich das Ergebnis in dem Wert des-Arguments unterscheidet. Es gibt keine Fehlerrückgabe.
 
 |Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
 |-----------|-------------------|--------------------------|
 |± ∞, QNAN, IND|none|none|
 |Abbrüche|EXCEPTION_FLT_UNDERFLOW|none|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Da C++ das überladen zulässt, können Sie über Ladungen von **rint** aufzurufen, die **float** -und **Long** **Double** -Werte akzeptieren und zurückgeben. In einem C-Programm nimmt **rint** immer einen **Double**-Wert an und gibt ihn zurück.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
@@ -116,7 +116,7 @@ rintl(2.500000) is 3
 rintl(-2.500000) is -3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

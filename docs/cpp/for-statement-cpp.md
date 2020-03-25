@@ -4,16 +4,16 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - for keyword [C++]
 ms.assetid: 6c7d01b3-c4c1-4c6a-aa58-e2d198f33d4a
-ms.openlocfilehash: a6b1823fe93c45abd8dabbd22116924e0a64f19a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e3dfdb45bdf8a508eca9d29e90b3f7c05e7b147d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62154216"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179912"
 ---
 # <a name="for-statement-c"></a>for-Anweisung (C++)
 
-Führt eine Anweisung wiederholt aus, bis die Bedingung false ergibt. Weitere Informationen zu den bereichsbasierter for-Anweisung, finden Sie unter [bereichsbasiert für Anweisung (C++)](../cpp/range-based-for-statement-cpp.md).
+Führt eine Anweisung wiederholt aus, bis die Bedingung false ergibt. Weitere Informationen zur Bereichs basierten for-Anweisung finden Sie unter [Range-based for-AnweisungC++()](../cpp/range-based-for-statement-cpp.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -22,21 +22,21 @@ for ( init-expression ; cond-expression ; loop-expression )
     statement;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Verwenden der **für** Anweisung zum Erstellen von Schleifen, die eine angegebene Anzahl von Malen ausgeführt werden muss.
+Verwenden Sie die **for** -Anweisung zum Erstellen von Schleifen, die eine angegebene Anzahl von Wiederholungen ausführen müssen.
 
-Die **für** Anweisung besteht aus drei optionalen Komponenten, wie in der folgenden Tabelle gezeigt.
+Die **for** -Anweisung besteht aus drei optionalen teilen, wie in der folgenden Tabelle dargestellt.
 
 ### <a name="for-loop-elements"></a>for-Schleifenelemente
 
-|Syntaxname|Ausführung bei|Beschreibung|
+|Syntaxname|Ausführung bei|BESCHREIBUNG|
 |-----------------|-------------------|-----------------|
-|`init-expression`|Vor jedem anderen Element von der **für** Anweisung `init-expression` wird nur einmal ausgeführt. Das Steuerelement wird dann an `cond-expression` übergeben.|Wird häufig zum Initialisieren von Schleifenindizes verwendet. Es können Ausdrücke oder Deklarationen enthalten sein.|
+|`init-expression`|Vor jedem anderen Element der **for** -Anweisung wird `init-expression` nur einmal ausgeführt. Das Steuerelement wird dann an `cond-expression` übergeben.|Wird häufig zum Initialisieren von Schleifenindizes verwendet. Es können Ausdrücke oder Deklarationen enthalten sein.|
 |`cond-expression`|Vor der Ausführung jeder Iteration von `statement`, einschließlich der ersten Iteration. `statement` wird nur ausgeführt, wenn `cond-expression` den Wert „True“ (ungleich 0 (null)) annimmt.|Ein Ausdruck, der einen Ganzzahltyp oder einen Klassentyp ergibt, der über eine eindeutige Konvertierung in einen Ganzzahltyp verfügt. Wird normalerweise zum Testen von Beendigungskriterien für Schleifen verwendet.|
 |`loop-expression`|Am Ende jeder Iteration von `statement`. Nachdem `loop-expression` ausgeführt wird, wird `cond-expression` ausgewertet.|Wird normalerweise zum Erhöhen von Schleifenindizes verwendet.|
 
-Die folgenden Beispiele zeigen verschiedene Verwendungsmöglichkeiten der **für** Anweisung.
+Die folgenden Beispiele zeigen verschiedene Möglichkeiten, die **for** -Anweisung zu verwenden.
 
 ```cpp
 #include <iostream>
@@ -63,7 +63,7 @@ int main() {
     // Output: 012
 ```
 
-`init-expression` und `loop-expression` können mehrere durch Kommas getrennte Anweisungen enthalten. Zum Beispiel:
+`init-expression` und `loop-expression` können mehrere durch Kommas getrennte Anweisungen enthalten. Beispiel:
 
 ```cpp
 #include <iostream>
@@ -98,11 +98,11 @@ for (int i = 10; i > 0; i--) {
     // Output: 10 12 14 16 18
 ```
 
-Ein **für** Schleife wird beendet, wenn eine [Break](../cpp/break-statement-cpp.md), [zurückgeben](../cpp/return-statement-cpp.md), oder [Goto](../cpp/goto-statement-cpp.md) (eine Anweisung mit Bezeichnung außerhalb der **für**Schleife) innerhalb von `statement` ausgeführt wird. Ein [weiterhin](../cpp/continue-statement-cpp.md) -Anweisung in einem **für** -Schleife wird nur die aktuelle Iteration beendet.
+Eine **for** -Schleife wird beendet, wenn eine [break](../cpp/break-statement-cpp.md)-, [Return](../cpp/return-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md) -Anweisung (an eine Anweisung mit Bezeichnung außerhalb der **for** -Schleife) innerhalb `statement` ausgeführt wird. Eine [Continue](../cpp/continue-statement-cpp.md) -Anweisung in einer **for** -Schleife beendet nur die aktuelle Iterations Anweisung.
 
-Wenn `cond-expression` wird weggelassen wird, gilt es als "true" und die **für** Schleife nicht beendet, ohne eine **Break**, **zurückgeben**, oder **Goto** in `statement`.
+Wenn `cond-expression` weggelassen wird, wird es als true angesehen, und die **for** -Schleife wird nicht ohne **Pause**, **Return**oder **goto** innerhalb `statement`beendet.
 
-Obwohl die drei Felder der **für** Anweisung normalerweise zum Initialisieren, Testen auf Beendigung und inkrementieren verwendet werden, sind nicht auf dieser Verwendungsmöglichkeiten begrenzt. Beispielsweise gibt der folgende Code die Zahlen 0 bis 4 aus. In diesem Fall handelt es sich bei `statement` um die null-Anweisung:
+Obwohl die drei Felder der **for** -Anweisung normalerweise für die Initialisierung, das Testen auf Beendigung und das Inkrementieren verwendet werden, sind Sie nicht auf diese Verwendungszwecke beschränkt. Beispielsweise gibt der folgende Code die Zahlen 0 bis 4 aus. In diesem Fall handelt es sich bei `statement` um die null-Anweisung:
 
 ```cpp
 #include <iostream>
@@ -119,7 +119,7 @@ int main()
 
 ## <a name="for-loops-and-the-c-standard"></a>for-Schleifen und der C++-Standard
 
-Die C++-Standard besagt, dass eine Variable in deklariert eine **für** Schleife wird verlassen den Gültigkeitsbereich nach Beenden der **für** Schleife. Zum Beispiel:
+Der C++ Standard besagt, dass eine in einer **for** -Schleife deklarierte Variable außerhalb des Gültigkeits Bereichs liegt, wenn die **for** -Schleife beendet wird. Beispiel:
 
 ```cpp
 for (int i = 0 ; i < 5 ; i++) {
@@ -128,11 +128,11 @@ for (int i = 0 ; i < 5 ; i++) {
 // i is now out of scope under /Za or /Zc:forScope
 ```
 
-In der Standardeinstellung unter [/Ze](../build/reference/za-ze-disable-language-extensions.md), eine Variable deklariert, die einer **für** Schleife bleibt im Gültigkeitsbereich, bis die **für** Schleife des einschließenden Bereich endet.
+Standardmäßig bleibt unter [/Ze](../build/reference/za-ze-disable-language-extensions.md)eine in einer **for** -Schleife deklarierte Variable im Gültigkeitsbereich, bis der einschließende Bereich der **for** -Schleife beendet wird.
 
-[/ Zc: forScope](../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md) ermöglicht Standardverhalten der ohne Angabe in for-Schleifen deklarierten Variablen `/Za`.
+[/Zc: forScope](../build/reference/zc-forscope-force-conformance-in-for-loop-scope.md) ermöglicht das Standardverhalten von in for-Schleifen deklarierten Variablen, ohne `/Za`angeben zu müssen.
 
-Es ist auch möglich, mit der Bereichsdefinition Differenzen der **für** Schleife um Deklarieren von Variablen unter `/Ze` wie folgt:
+Es ist auch möglich, die Bereichs Unterschiede der **for** -Schleife zum erneuten Deklarieren von Variablen unter `/Ze` wie folgt zu verwenden:
 
 ```cpp
 // for_statement5.cpp
@@ -144,9 +144,9 @@ int main(){
 }
 ```
 
-Dies genauer imitiert das Standardverhalten einer Variablen, die in deklariert eine **für** -Schleife, die Variablen, die in erfordert eine **für** Schleife zum Verlassen des Bereichs nach die Schleife abgeschlossen ist. Beim Deklarieren einer Variablen einem **für** Schleife der Compiler intern stuft sie auf eine lokale Variable in der **für** Schleife des einschließenden Bereich, selbst wenn bereits eine lokale Variable mit dem gleichen Namen vorhanden ist.
+Dadurch wird das Standardverhalten einer Variablen, die in einer **for** -Schleife deklariert ist, genauer imitiert. Dies erfordert, dass in einer **for** -Schleife deklarierte Variablen außerhalb des Gültigkeits Bereichs liegen, nachdem die Schleife abgeschlossen wurde. Wenn eine Variable in einer **for** -Schleife deklariert wird, stuft der Compiler Sie intern auf eine lokale Variable im einschließenden Bereich der **for** -Schleife herauf, auch wenn bereits eine lokale Variable mit demselben Namen vorhanden ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Iterationsanweisungen](../cpp/iteration-statements-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>

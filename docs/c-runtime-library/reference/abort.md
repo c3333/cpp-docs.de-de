@@ -25,12 +25,12 @@ helpviewer_keywords:
 - aborting current process
 - abort function
 - processes, aborting
-ms.openlocfilehash: 3f183d6fbf9d7bce7f638e44cdc3f3b450def57b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 46c8e25483799df3211a5022be6c4338f2c4732a
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70943988"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170396"
 ---
 # <a name="abort"></a>abort
 
@@ -49,7 +49,7 @@ void abort( void );
 
 **Abbruch** gibt die Steuerung nicht an den aufrufenden Prozess zurück. Standardmäßig sucht es nach einem Abbruchsignalhandler und löst `SIGABRT` aus, sofern vorhanden. Anschließend beendet **Abbruch** den aktuellen Prozess und gibt einen Exitcode an den übergeordneten Prozess zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **Microsoft-spezifisch**
 
@@ -63,19 +63,19 @@ In früheren Versionen der C-Laufzeitbibliothek wurde diese Meldung angezeigt:
 
 Wenn das Programm im Debugmodus kompiliert wird, zeigt das Meldungsfeld Optionen zum **Abbrechen**, **Wiederholen** oder **Ignorieren** an. Wenn der Benutzer **Abbrechen** auswählt, wird das Programm sofort beendet und gibt einen Exitcode von 3 zurück. Wenn der Benutzer **Wiederholen** auswählt, wird ein Debugger für Just-In-Time-Debuggen aufgerufen, falls verfügbar. Wenn der Benutzer **ignorieren**auswählt, wird die normale Verarbeitung von **Abbruch** fortgesetzt.
 
-Beim Retail-und Debugbuild prüft **Abbruch** dann, ob ein abbruchsignal Handler festgelegt ist. Wenn ein nicht standardmäßiger Signalhandler festgelegt ist, werden Aufrufe `raise(SIGABRT)` **abgebrochen** . Verwenden Sie die Funktion [Signal](signal.md), um eine Abbruchsignalhandler-Funktion zum `SIGABRT`-Signal zuzuordnen. Sie können benutzerdefinierte Aktionen wie das Bereinigen von Logressourcen oder Loginformationen ausführen und die App mit Ihrem eigenen Fehlercode in der Handlerfunktion beenden. Wenn kein benutzerdefinierter Signalhandler definiert ist, wird das `SIGABRT` Signal von **Abbruch** nicht angehoben.
+Beim Retail-und Debugbuild prüft **Abbruch** dann, ob ein abbruchsignal Handler festgelegt ist. Wenn ein nicht standardmäßiger Signalhandler festgelegt ist, werden bei **Abbruch** -aufrufen `raise(SIGABRT)`. Verwenden Sie die Funktion [Signal](signal.md), um eine Abbruchsignalhandler-Funktion zum `SIGABRT`-Signal zuzuordnen. Sie können benutzerdefinierte Aktionen wie das Bereinigen von Logressourcen oder Loginformationen ausführen und die App mit Ihrem eigenen Fehlercode in der Handlerfunktion beenden. Wenn kein benutzerdefinierter Signalhandler definiert ist, wird das `SIGABRT` Signal von **Abbruch** nicht angehoben.
 
-In nicht Debugbuilds von Desktop-oder Konsolen-apps ruft **Abbruch** standardmäßig den Windows-Fehlerberichterstattung Service-Mechanismus (früher als "Dr" bezeichnet) auf. Watson) auf, um fehlgeschlagene Operationen an Microsoft zu melden. Dieses Verhalten kann aktiviert oder deaktiviert werden, indem `_set_abort_behavior` aufgerufen und das `_CALL_REPORTFAULT`-Flag festlegt oder maskiert wird. Wenn das Flag festgelegt ist, zeigt Windows ein Meldungsfeld mit einem Text an, der in etwa wie folgt lautet: Ein Problem hat dazu geführt, dass das Programm gestoppt wurde oder nicht mehr ordnungsgemäß ausgeführt wird. Der Benutzer kann dann entweder einen Debugger über die Schaltfläche **Debuggen** aufrufen oder die Schaltfläche **Programm** schließen auswählen, um die App mit einem vom Betriebssystem definierten Fehlercode beenden.
+In nicht Debugbuilds von Desktop-oder Konsolen-apps ruft **Abbruch** standardmäßig den Windows-Fehlerberichterstattung Service-Mechanismus (ehemals Dr. Watson) auf, um Fehler an Microsoft zu melden. Dieses Verhalten kann aktiviert oder deaktiviert werden, indem `_set_abort_behavior` aufgerufen und das `_CALL_REPORTFAULT`-Flag festlegt oder maskiert wird. Wenn das Flag festgelegt ist, zeigt Windows ein Meldungsfeld mit einem Text an, der in etwa wie folgt lautet: Ein Problem hat dazu geführt, dass das Programm gestoppt wurde oder nicht mehr ordnungsgemäß ausgeführt wird. Der Benutzer kann dann entweder einen Debugger über die Schaltfläche **Debuggen** aufrufen oder die Schaltfläche **Programm** schließen auswählen, um die App mit einem vom Betriebssystem definierten Fehlercode beenden.
 
-Wenn der Windows-Fehlerberichts Handler nicht aufgerufen wird, ruft **Abbruch** [_exit](exit-exit-exit.md) auf, um den Prozess mit Exitcode 3 zu beenden, und gibt die Steuerung an den übergeordneten Prozess oder das Betriebssystem zurück. Von `_exit` werden weder Streampuffer geleert noch eine `atexit`/`_onexit`-Verarbeitung ausgeführt.
+Wenn der Windows-Fehlerberichts Handler nicht aufgerufen wird, **rufen Sie** auf, [_exit](exit-exit-exit.md) aus, um den Prozess mit Exitcode 3 zu beenden und die Steuerung an den übergeordneten Prozess oder das Betriebssystem zurückgegeben. Von `_exit` werden weder Streampuffer geleert noch eine `atexit`/`_onexit`-Verarbeitung ausgeführt.
 
-Weitere Informationen zum CRT-Debugging finden Sie unter [CRT-Debugverfahren](/visualstudio/debugger/crt-debugging-techniques).
+Weitere Informationen zum CRT-Debugging (C Runtime Library) finden Sie unter [CRT-Debugverfahren](/visualstudio/debugger/crt-debugging-techniques).
 
-**Ende Microsoft-spezifisch**
+**End Microsoft Specific**
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**abort**|\<process.h> oder\<stdlib.h>|
 
@@ -115,7 +115,7 @@ int main( void )
 File could not be opened: No such file or directory
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden von „abort“](../../cpp/using-abort.md)<br/>
 [abort-Funktion](../../c-language/abort-function-c.md)<br/>

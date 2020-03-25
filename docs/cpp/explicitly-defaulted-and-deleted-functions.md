@@ -2,12 +2,12 @@
 title: Explizit vorgegebene und gelöschte Funktionen
 ms.date: 11/04/2016
 ms.assetid: 5a588478-fda2-4b3f-a279-db3967f5e07e
-ms.openlocfilehash: aa03ca826eebe467e45e2bb7e0bc47537d40f366
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b43588aac1d246c83f5281456625eeb0ff36b94d
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62184325"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80179977"
 ---
 # <a name="explicitly-defaulted-and-deleted-functions"></a>Explizit vorgegebene und gelöschte Funktionen
 
@@ -15,7 +15,7 @@ In C++11 erhalten Sie durch Defaulted- und Deleted-Funktionen explizite Kontroll
 
 ## <a name="benefits-of-explicitly-defaulted-and-deleted-functions"></a>Vorteile von expliziten Defaulted- und Deleted-Funktionen
 
-In C++ generiert der Compiler automatisch den Standardkonstruktor, den Kopierkonstruktor, den Kopierzuweisungsoperator und den Destruktor für einen Typ, wenn es keinen eigenen deklariert. Diese Funktionen werden als bezeichnet die *spezielle Memberfunktionen*, und was stellen einfache benutzerdefinierte Typen in C++ verhalten sich wie Strukturen in c. Sie können, also erstellen, kopieren und ohne zusätzlichen Codierungsaufwand wieder zu löschen. C++11 stellt Verschiebesemantik für die Sprache bereit und fügt den Bewegungskonstruktor und den Bewegungszuweisungsoperator zur Liste der speziellen Memberfunktionen hinzu, die der Compiler automatisch generieren kann.
+In C++ generiert der Compiler automatisch den Standardkonstruktor, den Kopierkonstruktor, den Kopierzuweisungsoperator und den Destruktor für einen Typ, wenn es keinen eigenen deklariert. Diese Funktionen werden als *spezielle Member-Funktionen*bezeichnet und bewirken, dass einfache benutzerdefinierte Typen sich wie Strukturen in C++ C Verhalten. Das heißt, Sie können diese ohne zusätzlichen Codierungsaufwand erstellen, kopieren und zerstören. C++11 stellt Verschiebesemantik für die Sprache bereit und fügt den Bewegungskonstruktor und den Bewegungszuweisungsoperator zur Liste der speziellen Memberfunktionen hinzu, die der Compiler automatisch generieren kann.
 
 Dies ist für einfache Typen praktisch, komplexe Typen definieren jedoch häufig mindestens eine der speziellen Memberfunktionen selbst, wodurch verhindert werden kann, dass andere spezielle Memberfunktionen automatisch generiert werden. In der Praxis:
 
@@ -43,7 +43,7 @@ Dies ist für einfache Typen praktisch, komplexe Typen definieren jedoch häufig
 >
 > In beiden Fällen werden die erforderlichen Funktionen weiterhin automatisch von Visual Studio implizit generiert, und es wird keine Warnung+ ausgegeben.
 
-Die Folgen dieser Regeln können auch in Objekthierarchien einfließen. Z. B., wenn aus irgendeinem Grund keine Basisklasse einen Standardkonstruktor verfügen, die von einer abgeleiteten Klasse aufgerufen werden kann –, also eine **öffentliche** oder **geschützt** Konstruktor, der keine Parameter akzeptiert, klicken Sie dann eine Klasse abgeleitet, die ihren eigenen Standardkonstruktor können nicht automatisch generiert.
+Die Folgen dieser Regeln können auch in Objekthierarchien einfließen. Wenn z. b. aus irgendeinem Grund eine Basisklasse keinen Standardkonstruktor hat, der von einer abgeleiteten Klasse aufgerufen werden kann, d. –. ein **öffentlicher** oder **geschützter** Konstruktor, der keine Parameter annimmt –, kann eine Klasse, die von ihr abgeleitet ist, nicht automatisch Ihren eigenen Standardkonstruktor generieren.
 
 Diese Regeln können die Implementierung einfacher, benutzerdefinierter Typen und allgemeiner C++-Idiome erschweren, wenn beispielsweise ein benutzerdefinierter Typ als non-copyable festgelegt wird, indem der Kopierkonstruktor und der Kopierzuweisungsoperator als privat deklariert und nicht definiert werden.
 
@@ -132,7 +132,7 @@ void call_with_true_double_only(float) =delete;
 void call_with_true_double_only(double param) { return; }
 ```
 
-Beachten Sie, dass der Aufruf im vorstehenden Beispiel `call_with_true_double_only` mithilfe einer **"float"** Argument würde einen Compilerfehler, aber ein Aufruf `call_with_true_double_only` mithilfe einer **Int** -Arguments nicht; in der **Int** Fall das Argument wird höher gestuft werden, von **Int** zu **doppelte** und der Aufruf erfolgreich die **doppelte** Version der Funktion Obwohl, die möglicherweise nicht beabsichtigt war. Um sicherzustellen, dass jeder Aufruf dieser Funktion mithilfe eines non-double-Arguments einen Compilerfehler verursacht, können Sie eine Vorlagenversion der gelöschten Funktion deklarieren.
+Beachten Sie im vorhergehenden Beispiel, dass das Aufrufen von `call_with_true_double_only` mithilfe eines **float** -Arguments einen Compilerfehler verursachen würde, aber das Aufrufen von `call_with_true_double_only` mithilfe eines **int** -Arguments nicht. im **int** -Fall wird das Argument von " **int** " in " **Double** " herauf gestuft und die **doppelte** Version der Funktion aufgerufen, obwohl dies möglicherweise nicht beabsichtigt ist. Um sicherzustellen, dass jeder Aufruf dieser Funktion mithilfe eines non-double-Arguments einen Compilerfehler verursacht, können Sie eine Vorlagenversion der gelöschten Funktion deklarieren.
 
 ```cpp
 template < typename T >

@@ -10,14 +10,14 @@ helpviewer_keywords:
 - __uuidof keyword [C++]
 - __LIBID_ keyword [C++]
 ms.assetid: badfe709-809b-4b66-ad48-ee35039d25c6
-ms.openlocfilehash: a14ef9043ec2196ff930a37d0eff95e90024d3d5
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 09348d061fde4cb09eb6eb351f146404f355e184
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62244156"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80187790"
 ---
-# <a name="uuidof-operator"></a>__uuidof-Operator
+# <a name="__uuidof-operator"></a>__uuidof-Operator
 
 **Microsoft-spezifisch**
 
@@ -29,22 +29,22 @@ Ruft die GUID ab, die dem Ausdruck angefügt ist.
 __uuidof (expression)
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die *Ausdruck* kann ein Typname, Zeiger, Verweis oder Array dieses Typs aufweisen, eine Vorlage, die auf diese Typen oder eine Variable dieser Typen spezialisiert. Das Argument ist gültig, solange der Compiler es verwenden kann, um das angefügte GUID zu suchen.
+Der *Ausdruck* kann ein Typname, ein Zeiger, ein Verweis oder ein Array dieses Typs, eine Vorlage, die auf diese Typen spezialisiert ist, oder eine Variable dieser Typen sein. Das Argument ist gültig, solange der Compiler es verwenden kann, um das angefügte GUID zu suchen.
 
-Ist ein Sonderfall dieser systeminternen Funktion, wenn entweder **0** oder NULL als Argument angegeben wird. In diesem Fall **__uuidof** gibt eine GUID, die Nullen besteht.
+Ein Sonderfall dieses intrinsischen Werts ist, wenn **0** oder NULL als Argument angegeben wird. In diesem Fall gibt **__uuidof** eine GUID zurück, die aus Nullen besteht.
 
 Verwenden Sie dieses Schlüsselwort, um die an folgende Elemente angefügte GUID zu extrahieren:
 
-- Ein Objekt durch die [Uuid](../cpp/uuid-cpp.md) erweitertes Attribut.
+- Ein-Objekt durch das erweiterte [UUID](../cpp/uuid-cpp.md) -Attribut.
 
-- Ein bibliotheksblock erstellt, mit der [Modul](../windows/attributes/module-cpp.md) Attribut.
+- Ein Bibliotheks Block, der mit dem [Modul](../windows/attributes/module-cpp.md) Attribut erstellt wurde.
 
 > [!NOTE]
-> In einem Debugbuild **__uuidof** immer Initialisiert ein Objekt dynamisch (zur Laufzeit). In einem Releasebuild **__uuidof** können statisch (zur Kompilierzeit) initialisieren ein Objekts.
+> In einem Debugbuild initialisiert **__uuidof** ein Objekt immer dynamisch (zur Laufzeit). In einem Releasebuild können **__uuidof** statisch (zur Kompilierzeit) ein Objekt initialisieren.
 
-Für die Kompatibilität mit früheren Versionen **_uuidof** ist ein Synonym für **__uuidof** , wenn Compileroption [/Za \(spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Gründen der Kompatibilität mit früheren Versionen ist **_uuidof** ein Synonym für **__uuidof** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 ## <a name="example"></a>Beispiel
 
@@ -73,7 +73,7 @@ int main() {
 
 ## <a name="comments"></a>Kommentare
 
-In Fällen, die den Namen der Bibliothek nicht mehr in deren Bereich ist, können Sie `__LIBID_` anstelle von **__uuidof**. Zum Beispiel:
+In Fällen, in denen sich der Bibliotheksname nicht mehr im Gültigkeitsbereich befindet, können Sie `__LIBID_` anstelle von **__uuidof**verwenden. Beispiel:
 
 ```cpp
 StringFromCLSID(__LIBID_, &lpolestr);
@@ -81,7 +81,7 @@ StringFromCLSID(__LIBID_, &lpolestr);
 
 **Ende Microsoft-spezifisch**
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)

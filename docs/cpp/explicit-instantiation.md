@@ -6,18 +6,18 @@ helpviewer_keywords:
 - explicit instantiation
 - instantiation, explicit
 ms.assetid: 8b0d4e32-45a6-49d5-8041-1ebdd674410e
-ms.openlocfilehash: 45661653b4b8f1a4f94ece1c53aa86f4a431700b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dbe8bebf91a174e07c7c5cce8e9caf1cf3432edf
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392205"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80180029"
 ---
 # <a name="explicit-instantiation"></a>Explizite Instantiierung
 
 Mit expliziter Instanziierung können Sie eine Instanziierung einer auf Vorlagen basierenden Klasse oder Funktion erstellen, ohne sie tatsächlich im Code zu verwenden. Da dies nützlich ist, wenn Sie Bibliotheksdateien (LIB-Dateien) erstellen, die Vorlagen zur Verteilung verwenden, werden nicht instanziierte Vorlagendefinitionen nicht in Objektdateien (OBJ-Dateien) abgelegt.
 
-Dieser Code explizit instanziiert `MyStack` für **Int** -Variablen und sechs Elemente:
+Dieser Code instanziiert explizit `MyStack` für **int** -Variablen und sechs Elemente:
 
 ```cpp
 template class MyStack<int, 6>;
@@ -31,9 +31,9 @@ Die nächste Zeile instanziiert explizit nur die Konstruktormemberfunktion:
 template MyStack<int, 6>::MyStack( void );
 ```
 
-Sie können Funktionsvorlagen explizit instanziieren, indem ein bestimmtes Typargument, um sie erneut zu deklarieren, wie im Beispiel in [Funktionsvorlageninstanziierung](../cpp/function-template-instantiation.md).
+Sie können Funktions Vorlagen explizit instanziieren, indem Sie ein bestimmtes Typargument verwenden, um Sie erneut zu deklarieren, wie im Beispiel unter [Funktions Vorlagen Instanziierung](../cpp/function-template-instantiation.md)gezeigt.
 
-Sie können die **"extern"** Schlüsselwort, um zu verhindern, dass die automatische Instanziierung von Membern. Zum Beispiel:
+Sie können das **extern** -Schlüsselwort verwenden, um die automatische Instanziierung von Membern zu verhindern. Beispiel:
 
 ```cpp
 extern template class MyStack<int, 6>;
@@ -45,11 +45,11 @@ Entsprechend können Sie bestimmte Member als nicht instanziiert und extern kenn
 extern template MyStack<int, 6>::MyStack( void );
 ```
 
-Sie können die **"extern"** Schlüsselwort, um zu verhindern, dass den Compiler generiert den gleichen Instanziierungscode in mehr als einem Objektmodul. Sie müssen die Vorlagenfunktion instanziieren, indem Sie die angegebenen expliziten Vorlagenparameter in mindestens einem verknüpften Modul verwenden, wenn die Funktion aufgerufen wird. Andernfalls erhalten Sie einen Linkerfehler, wenn das Programm erstellt wird.
+Sie können das **extern** -Schlüsselwort verwenden, um zu verhindern, dass der Compiler denselben instanziationcode in mehr als einem Objekt Modul erzeugt. Sie müssen die Vorlagenfunktion instanziieren, indem Sie die angegebenen expliziten Vorlagenparameter in mindestens einem verknüpften Modul verwenden, wenn die Funktion aufgerufen wird. Andernfalls erhalten Sie einen Linkerfehler, wenn das Programm erstellt wird.
 
 > [!NOTE]
->  Die **"extern"** Schlüsselwort in der Spezialisierung gilt nur für Memberfunktionen, die außerhalb des Texts der Klasse definiert. Die Funktionen, die in der Klassendeklaration definiert werden, gelten als Inlinefunktionen und werden immer instanziiert.
+>  Das **extern** -Schlüsselwort in der Spezialisierung gilt nur für Member-Funktionen, die außerhalb des Texts der Klasse definiert sind. Die Funktionen, die in der Klassendeklaration definiert werden, gelten als Inlinefunktionen und werden immer instanziiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Funktionsvorlagen](../cpp/function-templates.md)

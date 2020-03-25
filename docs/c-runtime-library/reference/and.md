@@ -1,5 +1,5 @@
 ---
-title: und
+title: and
 ms.date: 11/04/2016
 api_location:
 - msvcrt.dll
@@ -23,14 +23,14 @@ f1_keywords:
 helpviewer_keywords:
 - and macro
 ms.assetid: 2644ab57-8e1b-48f0-9021-cafe3e26bdc4
-ms.openlocfilehash: 5940cd9c9cf7bb37b7731f62b1d3ff9d0101f748
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 1318139610cd99d22fa709a0ce8ad11c22775be1
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939688"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80170903"
 ---
-# <a name="and"></a>und
+# <a name="and"></a>and
 
 Eine Alternative zum &&-Operator.
 
@@ -41,7 +41,7 @@ Eine Alternative zum &&-Operator.
 #define and &&
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das Makro gibt den Operator && aus.
 
@@ -73,6 +73,6 @@ false
 false
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<iso646.h>
+**Header:** \<iso646. h >

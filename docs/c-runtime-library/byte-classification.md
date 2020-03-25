@@ -8,12 +8,12 @@ helpviewer_keywords:
 - byte classification routines
 - bytes, testing
 ms.assetid: 1cb52d71-fb0c-46ca-aad7-6472c1103370
-ms.openlocfilehash: 9c00d0c0165bdae15ba5fc413d00a99bf4601b21
-ms.sourcegitcommit: 6052185696adca270bc9bdbec45a626dd89cdcdd
-ms.translationtype: HT
+ms.openlocfilehash: 7272170bd3a1e765e728451afc245947111ee947
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50632400"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80171566"
 ---
 # <a name="byte-classification"></a>Byteklassifizierung
 
@@ -26,7 +26,7 @@ Die vordefinierten Konstanten in der folgenden Tabelle sind in \<ctype.h> defini
 
 ## <a name="multibyte-character-byte-classification-routines"></a>Byteklassifizierungsroutinen für Multibytezeichen
 
-|-Routine zurückgegebener Wert|Bytetestbedingung|
+|Routine|Bytetestbedingung|
 |-------------|-------------------------|
 |[isleadbyte, _isleadbyte_l](../c-runtime-library/reference/isleadbyte-isleadbyte-l.md)|Führendes Byte; Testergebnis hängt von der Kategorieeinstellung **LC_CTYPE** des aktuellen Gebietsschemas ab|
 |[_ismbbalnum, _ismbbalnum_l](../c-runtime-library/reference/ismbbalnum-ismbbalnum-l.md)|**isalnum** &#124;&#124; **_ismbbkalnum**|
@@ -46,8 +46,8 @@ Die vordefinierten Konstanten in der folgenden Tabelle sind in \<ctype.h> defini
 |[_mbsbtype, _mbsbtype_l](../c-runtime-library/reference/mbsbtype-mbsbtype-l.md)|Gibt den Bytetyp in der Zeichenfolge zurück|
 |[mbsinit](../c-runtime-library/reference/mbsinit.md)|Verfolgt den Zustand einer Multibytezeichen-Konvertierung.|
 
-Das in \<limits.h> definierte Makro **MB_LEN_MAX** erweitert auf die maximale Länge in Bytes, die ein Multibytezeichen aufweisen kann. Das in \<stdlib.h> definierte **MB_CUR_MAX** erweitert auf die maximale Länge in Bytes eines beliebigen Multibytezeichens im aktuellen Gebietsschema.
+Das in **limits.h> definierte Makro** MB_LEN_MAX\< erweitert auf die maximale Länge in Bytes, die ein Multibytezeichen aufweisen kann. Das in **stdlib.h> definierte** MB_CUR_MAX\< erweitert auf die maximale Länge in Bytes eines beliebigen Multibytezeichens im aktuellen Gebietsschema.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)

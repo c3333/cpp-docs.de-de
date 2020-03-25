@@ -6,18 +6,18 @@ helpviewer_keywords:
 - overriding, override keyword [C++]
 - override keyword [C++]
 ms.assetid: 34d19257-1686-4fcd-96f5-af07c70ba914
-ms.openlocfilehash: 8dc7a0a0e6cf759d956fd701d033bd773e572af3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
-ms.translationtype: HT
+ms.openlocfilehash: 32c825539efe670528eab7416afefe07d4cb1b6c
+ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65515655"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80172099"
 ---
 # <a name="override--ccli-and-ccx"></a>override (C++/CLI und C++/CX)
 
 Das kontextbezogene **override**-Schlüsselwort gibt an, dass ein Member eines Typs eine Basisklasse oder einen Basisschnittstellen-Member überschreibt.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Das **override**-Schlüsselwort ist beim Kompilieren für native Ziele (standardmäßige Compileroption), für Windows-Runtime-Ziele (`/ZW`-Compileroption) oder Common Language Runtime-Ziele (`/clr`-Compileroption) gültig.
 
@@ -57,7 +57,7 @@ ref struct X : public I1 {
 };
 ```
 
-#### <a name="requirements"></a>Anforderungen
+#### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/ZW`
 
@@ -77,11 +77,11 @@ ref struct X : public I1 {
 };
 ```
 
-#### <a name="requirements"></a>Anforderungen
+#### <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [override-Bezeichner](../cpp/override-specifier.md)<br/>
 [Überschreibungsspezifizierer](override-specifiers-cpp-component-extensions.md)
