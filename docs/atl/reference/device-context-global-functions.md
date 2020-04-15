@@ -1,17 +1,17 @@
 ---
-title: Globale Funktionen des Geräte Kontexts
+title: Globale Funktionen des Gerätekontexts
 ms.date: 11/04/2016
 f1_keywords:
 - atlwin/ATL::AtlCreateTargetDC
 ms.assetid: 08ec28f6-daff-4882-9544-e8a4639d05c4
-ms.openlocfilehash: d225bd0cd996fd908479b5a93aad81ea0428900b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: e640f310a1976c29a39f0ab7c2575dfd1073c889
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496099"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330154"
 ---
-# <a name="device-context-global-functions"></a>Globale Funktionen des Geräte Kontexts
+# <a name="device-context-global-functions"></a>Globale Funktionen des Gerätekontexts
 
 Diese Funktion erstellt einen Gerätekontext für ein bestimmtes Gerät.
 
@@ -19,9 +19,9 @@ Diese Funktion erstellt einen Gerätekontext für ein bestimmtes Gerät.
 |-|-|
 |[AtlCreateTargetDC](#atlcreatetargetdc)|Erstellt einen Gerätekontext.|
 
-##  <a name="atlcreatetargetdc"></a>Atlkreatetargetdc
+## <a name="atlcreatetargetdc"></a><a name="atlcreatetargetdc"></a>AtlCreateTargetDC
 
-Erstellt einen Gerätekontext für das Gerät, das in der [DVTARGETDEVICE](/windows/win32/api/objidl/ns-objidl-dvtargetdevice) -Struktur angegeben ist.
+Erstellt einen Gerätekontext für das in der [DVTARGETDEVICE-Struktur](/windows/win32/api/objidl/ns-objidl-dvtargetdevice) angegebene Gerät.
 
 ```
 HDC AtlCreateTargetDC(HDC hdc, DVTARGETDEVICE* ptd);
@@ -29,26 +29,26 @@ HDC AtlCreateTargetDC(HDC hdc, DVTARGETDEVICE* ptd);
 
 ### <a name="parameters"></a>Parameter
 
-*hdc*<br/>
-in Das vorhandene Handle eines Geräte Kontexts oder NULL.
+*Hdc*<br/>
+[in] Das vorhandene Handle eines Gerätekontexts oder NULL.
 
-*ptd*<br/>
-in Ein Zeiger auf die `DVTARGETDEVICE` -Struktur, die Informationen über das Zielgerät enthält.
+*Ptd*<br/>
+[in] Ein Zeiger auf `DVTARGETDEVICE` die Struktur, die Informationen über das Zielgerät enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Handle für einen Gerätekontext für das Gerät zurück, das `DVTARGETDEVICE`in angegeben ist. Wenn kein Gerät angegeben ist, wird das Handle an das Standard Anzeigegerät zurückgegeben.
+Gibt das Handle an einen Gerätekontext `DVTARGETDEVICE`für das gerät zurück, das im angegeben ist. Wenn kein Gerät angegeben ist, wird das Handle an das Standardanzeigegerät zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die-Struktur NULL ist und *hdc* NULL ist, erstellt einen Gerätekontext für das Standard Anzeigegerät.
+Wenn die Struktur NULL und *hdc* NULL ist, wird ein Gerätekontext für das Standardanzeigegerät erstellt.
 
-Wenn *hdc* nicht NULL ist und *ptd* NULL ist, gibt die Funktion den vorhandenen *hdc*zurück.
+Wenn *hdc* nicht NULL und *ptd* NULL ist, gibt die Funktion die vorhandene *hdc*zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlwin. h
+**Kopfzeile:** atlwin.h
 
 ## <a name="see-also"></a>Siehe auch
 
-[Funktionen](../../atl/reference/atl-functions.md)
+[Functions](../../atl/reference/atl-functions.md)

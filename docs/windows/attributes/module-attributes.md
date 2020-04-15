@@ -1,24 +1,25 @@
 ---
-title: Modul Attribute (C++ com)
+title: Modulattribute (C++ COM)
 ms.date: 10/02/2018
 helpviewer_keywords:
 - module attributes
 - attributes [C++/CLI], reference topics
 ms.assetid: 46d135dc-613f-4810-90a4-e155ab8ed91a
-ms.openlocfilehash: c71fd4bf007d1a74d9cf959388fdfe37922c60fc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 70c6c135f61ef1771acc7e0e6c6ab6398ba16a01
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166743"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321844"
 ---
 # <a name="module-attributes"></a>Modulattribute
-Das folgende Attribut kann nur auf das [Modul](module-cpp.md) Attribut angewendet werden.
 
-|attribute|BESCHREIBUNG|
+Das folgende Attribut kann nur auf das [Modulattribut](module-cpp.md) angewendet werden.
+
+|Attribut|BESCHREIBUNG|
 |---------------|-----------------|
-|[helpstringdll](helpstringdll.md)|Gibt den Namen der dll an, die verwendet werden soll, um die Suche nach Dokument Zeichenfolgen (Lokalisierung) auszuführen.|
+|[helpstringdll](helpstringdll.md)|Gibt den Namen der DLL an, die zum Ausführen der Dokumentzeichenfolgensuche (Lokalisierung) verwendet werden soll.|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Attribute nach Verwendung](attributes-by-usage.md)

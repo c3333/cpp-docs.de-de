@@ -20,16 +20,16 @@ f1_keywords:
 helpviewer_keywords:
 - reference counting
 ms.assetid: 894a3d7c-2daf-4fd0-8fa4-e6a05bcfb631
-ms.openlocfilehash: 8fa4e7a035ded2e1a20dd278a5d54d40252e1958
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: e8db86f6214f95cd9bb08d3b5f6c6c1a38ca475c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423321"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81327609"
 ---
 # <a name="ccomobjectrootex-class"></a>CComObjectRootEx-Klasse
 
-Diese Klasse stellt Methoden bereit, um die Verwaltung der Objekt Verweis Zählung sowohl für nicht aggregierte als auch für aggregierte Objekte zu behandeln.
+Diese Klasse stellt Methoden zum Behandeln der Objektverweisanzahlverwaltung für nicht aggregierte und aggregierte Objekte bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,8 +40,8 @@ class CComObjectRootEx : public CComObjectRootBase
 
 #### <a name="parameters"></a>Parameter
 
-*Thread Model*<br/>
-Die Klasse, deren Methoden das gewünschte Threading Modell implementieren. Sie können das Threading Modell explizit auswählen, indem Sie *threadmodel* auf " [CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)", " [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)" oder " [ccommultithreadmodelnocs](../../atl/reference/ccommultithreadmodelnocs-class.md)" festlegen. Sie können das Standard Thread Modell des Servers akzeptieren, indem Sie *threadmodel* auf [ccomobjectthreadmodel](atl-typedefs.md#ccomobjectthreadmodel) oder [ccomglobalsthread Model](atl-typedefs.md#ccomglobalsthreadmodel)festlegen.
+*ThreadModel*<br/>
+Die Klasse, deren Methoden das gewünschte Threadingmodell implementieren. Sie können das Threadingmodell explizit auswählen, indem Sie *ThreadModel* auf [CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md), [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)oder [CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)festlegen. Sie können das Standardthreadmodell des Servers akzeptieren, indem Sie *ThreadModel* auf [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel) oder [CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)festlegen.
 
 ## <a name="members"></a>Member
 
@@ -49,67 +49,67 @@ Die Klasse, deren Methoden das gewünschte Threading Modell implementieren. Sie 
 
 |||
 |-|-|
-|[CComObjectRootEx](#ccomobjectrootex)|Konstruktor.|
-|[InternalAddRef](#internaladdref)|Inkremente den Verweis Zähler für ein nicht aggregiertes Objekt.|
-|[InternalRelease](#internalrelease)|Dekremente den Verweis Zähler für ein nicht aggregiertes Objekt.|
-|[Sperre](#lock)|Wenn das Thread Modell Multithreaded ist, erhält den Besitz eines kritischen Abschnitts Objekts.|
-|[Entsperren](#unlock)|Wenn das Thread Modell Multithreaded ist, gibt den Besitz eines kritischen Abschnitts Objekts frei.|
+|[Ccomobjectrootex](#ccomobjectrootex)|Konstruktor.|
+|[InternAddRef](#internaladdref)|Inkrementiert die Referenzanzahl für ein nicht aggregiertes Objekt.|
+|[InternalRelease](#internalrelease)|Dekrementiert die Referenzanzahl für ein nicht aggregiertes Objekt.|
+|[Sperre](#lock)|Wenn das Threadmodell multithreaded ist, erhält der Besitz eines kritischen Abschnittsobjekts.|
+|[Entsperren](#unlock)|Wenn das Threadmodell multithreaded ist, wird der Besitz eines kritischen Abschnittsobjekts freigegeben.|
 
-### <a name="ccomobjectrootbase-methods"></a>Ccomobjectrootbase-Methoden
+### <a name="ccomobjectrootbase-methods"></a>CComObjectRootBase-Methoden
 
 |||
 |-|-|
-|[FinalConstruct](#finalconstruct)|Überschreiben Sie in der-Klasse, um alle für Ihr Objekt erforderlichen Initialisierungen auszuführen.|
-|[FinalRelease](#finalrelease)|Überschreiben Sie in der-Klasse, um alle für Ihr Objekt erforderlichen Bereinigungs Vorgänge auszuführen.|
-|[Outeradressf](#outeraddref)|Erhöht den Verweis Zähler für ein aggregiertes Objekt.|
-|[Outerqueryinterface](#outerqueryinterface)|Delegiert an den äußeren `IUnknown` eines aggregierten Objekts.|
-|[Outerrelease](#outerrelease)|Dekremente den Verweis Zähler für ein aggregiertes Objekt.|
+|[FinalConstruct](#finalconstruct)|Überschreiben Sie in Ihrer Klasse, um eine initialisierung durchzuführen, die für Ihr Objekt erforderlich ist.|
+|[FinalRelease](#finalrelease)|Überschreiben Sie in Ihrer Klasse, um alle bereinigungen durchzuführen, die für Ihr Objekt erforderlich sind.|
+|[OuterAddRef](#outeraddref)|Inkrementiert die Referenzanzahl für ein aggregiertes Objekt.|
+|[OuterQueryInterface](#outerqueryinterface)|Delegierte an `IUnknown` das Äußere eines aggregierten Objekts.|
+|[OuterRelease](#outerrelease)|Dekrementiert die Referenzanzahl für ein aggregiertes Objekt.|
 
 ### <a name="static-functions"></a>Statische Funktionen
 
 |||
 |-|-|
-|[InternalQueryInterface](#internalqueryinterface)|Delegiert an den `IUnknown` eines nicht aggregierten Objekts.|
-|[Objectmain](#objectmain)|Wird während der Initialisierung und Beendigung von Modulen für abgeleitete Klassen aufgerufen, die in der Objekt Zuordnung aufgeführt sind.|
+|[InternalQueryInterface](#internalqueryinterface)|Delegiert `IUnknown` an das eines nicht aggregierten Objekts.|
+|[ObjectMain](#objectmain)|Wird während der Modulinitialisierung und -beendigung für abgeleitete Klassen aufgerufen, die in der Objektzuordnung aufgeführt sind.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|[m_dwRef](#m_dwref)|Mit `m_pOuterUnknown`, Teil einer Union. Wird verwendet, wenn das Objekt nicht aggregiert wird, um den Verweis Zähler `AddRef` und `Release`zu speichern.|
-|[m_pOuterUnknown](#m_pouterunknown)|Mit `m_dwRef`, Teil einer Union. Wird verwendet, wenn das Objekt aggregiert wird, um einen Zeiger auf das äußere unbekannte festzuhalten.|
+|[m_dwRef](#m_dwref)|Mit `m_pOuterUnknown`, Teil einer Union. Wird verwendet, wenn das Objekt nicht aggregiert `AddRef` `Release`wird, um die Referenzanzahl von und zu enthalten.|
+|[m_pOuterUnknown](#m_pouterunknown)|Mit `m_dwRef`, Teil einer Union. Wird verwendet, wenn das Objekt aggregiert wird, um einen Zeiger auf das äußere Unbekannte zu halten.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComObjectRootEx` behandelt die Verwaltung der Objekt Verweis Zählung sowohl für nicht aggregierte als auch für aggregierte Objekte. Sie enthält den Objekt Verweis Zähler, wenn das Objekt nicht aggregiert wird, und enthält den Zeiger auf das äußere unbekannte, wenn das Objekt aggregiert wird. Bei aggregierten Objekten können `CComObjectRootEx` Methoden verwendet werden, um den Fehler des inneren Objekts zu verarbeiten und das äußere Objekt vor dem Löschen zu schützen, wenn innere Schnittstellen freigegeben werden oder das innere Objekt gelöscht wird.
+`CComObjectRootEx`behandelt die Verwaltung der Objektverweisanzahl sowohl für nicht aggregierte als auch für aggregierte Objekte. Sie enthält die Objektverweisanzahl, wenn das Objekt nicht aggregiert wird, und hält den Zeiger auf das äußere Unbekannte, wenn das Objekt aggregiert wird. Bei aggregierten `CComObjectRootEx` Objekten können Methoden verwendet werden, um den Fehler des zu konstruierenden inneren Objekts zu behandeln und das äußere Objekt vor dem Löschen zu schützen, wenn innere Schnittstellen freigegeben oder das innere Objekt gelöscht wird.
 
-Eine Klasse, die einen com-Server implementiert, muss von `CComObjectRootEx` oder [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)erben.
+Eine Klasse, die einen COM-Server `CComObjectRootEx` implementiert, muss von oder [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)erben.
 
-Wenn die Klassendefinition das [DECLARE_POLY_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_poly_aggregatable) Makro angibt, erstellt ATL eine Instanz von `CComPolyObject<CYourClass>`, wenn `IClassFactory::CreateInstance` aufgerufen wird. Während der Erstellung wird der Wert des äußeren unbekannten-Werts geprüft. Wenn er NULL ist, wird `IUnknown` für ein nicht aggregiertes Objekt implementiert. Wenn das äußere unbekannte nicht NULL ist, wird `IUnknown` für ein aggregiertes Objekt implementiert.
+Wenn Ihre Klassendefinition das [DECLARE_POLY_AGGREGATABLE-Makro](aggregation-and-class-factory-macros.md#declare_poly_aggregatable) spezifiziert, erstellt ATL eine Instanz von `CComPolyObject<CYourClass>` when `IClassFactory::CreateInstance` wird aufgerufen. Während der Erstellung wird der Wert des äußeren Unbekannten überprüft. Wenn es NULL `IUnknown` ist, wird für ein nicht aggregiertes Objekt implementiert. Wenn der äußere Unbekannte `IUnknown` nicht NULL ist, wird für ein aggregiertes Objekt implementiert.
 
-Wenn die Klasse das DECLARE_POLY_AGGREGATABLE Makro nicht angibt, erstellt ATL eine Instanz von `CAggComObject<CYourClass>` für aggregierte Objekte oder eine Instanz von `CComObject<CYourClass>` für nicht aggregierte Objekte.
+Wenn Ihre Klasse das DECLARE_POLY_AGGREGATABLE-Makro spezifiziert, `CAggComObject<CYourClass>` erstellt ATL eine `CComObject<CYourClass>` Instanz für aggregierte Objekte oder eine Instanz von für nicht aggregierte Objekte.
 
-Der Vorteil der Verwendung von `CComPolyObject` besteht darin, dass Sie vermeiden, dass sowohl `CComAggObject` als auch `CComObject` in Ihrem Modul vorhanden sind, um die aggregierten und nicht aggregierten Fälle zu verarbeiten. Ein einzelnes `CComPolyObject` Objekt behandelt beide Fälle. Daher ist nur eine Kopie der vtable und eine Kopie der Funktionen in Ihrem Modul vorhanden. Wenn Ihre Vtable groß ist, kann dies die Modulgröße erheblich verringern. Wenn die Vtable jedoch klein ist, kann die Verwendung `CComPolyObject` zu einer etwas größeren Modulgröße führen, da Sie nicht für ein aggregiertes oder nicht aggregiertes Objekt, wie `CComAggObject` und `CComObject`, optimiert ist.
+Der Vorteil `CComPolyObject` der Verwendung besteht `CComAggObject` darin, dass Sie vermeiden, dass sowohl als `CComObject` auch in Ihrem Modul die aggregierten und nicht aggregierten Anfragen behandelt werden. Ein `CComPolyObject` einzelnes Objekt behandelt beide Fälle. Daher sind nur eine Kopie des vtable und eine Kopie der Funktionen in Ihrem Modul vorhanden. Wenn Ihr vtable groß ist, kann dies die Modulgröße erheblich verringern. Wenn Ihr vtable jedoch klein `CComPolyObject` ist, kann die Verwendung zu einer etwas größeren Modulgröße führen, da `CComAggObject` `CComObject`sie nicht für ein aggregiertes oder nicht aggregiertes Objekt optimiert ist, wie es sich in und befindet.
 
-Wenn das Objekt aggregiert wird, wird [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) von `CComAggObject` oder `CComPolyObject`implementiert. Diese Klassen delegieren `QueryInterface`, `AddRef`und `Release` Aufrufe an `CComObjectRootEx``OuterQueryInterface`, `OuterAddRef`und `OuterRelease`, um Sie an den äußeren unbekannten weiterzuleiten. In der Regel überschreiben Sie `CComObjectRootEx::FinalConstruct` in der-Klasse, um aggregierte Objekte zu erstellen, und überschreiben `CComObjectRootEx::FinalRelease`, um alle aggregierten Objekte freizugeben.
+Wenn Ihr Objekt aggregiert ist, wird `CComAggObject` `CComPolyObject` [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) von oder implementiert. Diese Klassen `QueryInterface` `AddRef`delegieren `CComObjectRootEx`, `OuterQueryInterface`und `OuterAddRef` `Release` rufen `OuterRelease` an 's , an und leiten sie an das äußere Unbekannte weiter. In der Regel `CComObjectRootEx::FinalConstruct` überschreiben Sie in Ihrer Klasse, `CComObjectRootEx::FinalRelease` um aggregierte Objekte zu erstellen, und überschreiben, um alle aggregierten Objekte freizugeben.
 
-Wenn das Objekt nicht aggregiert wird, wird `IUnknown` von `CComObject` oder `CComPolyObject`implementiert. In diesem Fall werden Aufrufe von `QueryInterface`, `AddRef`und `Release` an `CComObjectRootEx``InternalQueryInterface`, `InternalAddRef`und `InternalRelease` delegiert, um die eigentlichen Vorgänge auszuführen.
+Wenn Ihr Objekt nicht `IUnknown` aggregiert ist, wird es von `CComObject` oder `CComPolyObject`implementiert. In diesem Fall `QueryInterface`ruft `AddRef`an `Release` , und `CComObjectRootEx`werden `InternalQueryInterface` `InternalAddRef`an `InternalRelease` ' ' , delegiert, und um die eigentlichen Vorgänge auszuführen.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** Atlcom. h
+**Kopfzeile:** atlcom.h
 
-##  <a name="ccomobjectrootex"></a>CComObjectRootEx:: CComObjectRootEx
+## <a name="ccomobjectrootexccomobjectrootex"></a><a name="ccomobjectrootex"></a>CComObjectRootex::CComObjectRootex
 
-Der-Konstruktor initialisiert den Verweis Zähler auf 0.
+Der Konstruktor initialisiert die Referenzanzahl auf 0.
 
 ```
 CComObjectRootEx();
 ```
 
-##  <a name="finalconstruct"></a>CComObjectRootEx:: FinalConstruct
+## <a name="ccomobjectrootexfinalconstruct"></a><a name="finalconstruct"></a>CComObjectRootEx::FinalConstruct
 
-Sie können diese Methode in der abgeleiteten Klasse überschreiben, um die für Ihr Objekt erforderliche Initialisierung auszuführen.
+Sie können diese Methode in der abgeleiteten Klasse überschreiben, um die für Ihr Objekt erforderlichen Initialisierungen durchzuführen.
 
 ```
 HRESULT FinalConstruct();
@@ -117,57 +117,57 @@ HRESULT FinalConstruct();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Rückgabe S_OK bei Erfolg oder einer der Standardfehler-HRESULT-Werte.
+Geben Sie S_OK bei Erfolg oder einem der Standardfehler-HRESULT-Werte zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig gibt `CComObjectRootEx::FinalConstruct` einfach S_OK zurück.
+Standardmäßig werden `CComObjectRootEx::FinalConstruct` einfach S_OK zurückgegeben.
 
-Die Initialisierung in `FinalConstruct` und nicht der Konstruktor Ihrer Klasse hat Vorteile:
+Die Initialisierung in `FinalConstruct` der Klasse hat Vorteile:
 
-- Sie können keinen Statuscode von einem Konstruktor zurückgeben, aber Sie können ein HRESULT mit dem Rückgabewert `FinalConstruct`zurückgeben. Wenn Objekte der Klasse mit der standardmäßigen Klassenfactory von ATL erstellt werden, wird dieser Rückgabewert zurück an den com-Client weitergegeben, sodass Sie ausführliche Fehlerinformationen bereitstellen können.
+- Sie können keinen Statuscode von einem Konstruktor zurückgeben, aber `FinalConstruct`Sie können ein HRESULT über den Rückgabewert von zurückgeben. Wenn Objekte Ihrer Klasse mit der von ATL bereitgestellten Standardklassenfactory erstellt werden, wird dieser Rückgabewert an den COM-Client zurückgegeben, sodass Sie ihnen detaillierte Fehlerinformationen zur Verfügung stellen können.
 
-- Virtuelle Funktionen können nicht über den Mechanismus der virtuellen Funktion aus dem Konstruktor einer Klasse aufgerufen werden. Das Aufrufen einer virtuellen Funktion aus dem Konstruktor einer Klasse führt zu einem statisch aufgelösten Aufruf der Funktion, wie Sie an diesem Punkt in der Vererbungs Hierarchie definiert ist. Aufrufe von reinen virtuellen Funktionen führen zu Linker-Fehlern.
+- Sie können virtuelle Funktionen nicht über den virtuellen Funktionsmechanismus aus dem Konstruktor einer Klasse aufrufen. Das Aufrufen einer virtuellen Funktion aus dem Konstruktor einer Klasse führt zu einem statisch aufgelösten Aufruf der Funktion, wie sie an diesem Punkt in der Vererbungshierarchie definiert ist. Aufrufe reiner virtueller Funktionen führen zu Linkerfehlern.
 
-   Die Klasse ist nicht die am meisten abgeleitete Klasse in der Vererbungs Hierarchie – Sie basiert auf einer von ATL bereitgestellten abgeleiteten Klasse, um einige Funktionen bereitzustellen. Es besteht die Möglichkeit, dass Ihre Initialisierung die von dieser Klasse bereitgestellten Funktionen verwendet (Dies trifft sicherlich zu, wenn Objekte Ihrer Klasse andere Objekte aggregieren müssen), aber der Konstruktor in der Klasse hat keine Möglichkeit, auf diese Funktionen zuzugreifen. Der Konstruktions Code für die Klasse wird ausgeführt, bevor die am meisten abgeleitete Klasse vollständig konstruiert ist.
+   Ihre Klasse ist nicht die am häufigsten abgeleitete Klasse in der Vererbungshierarchie – sie basiert auf einer abgeleiteten Klasse, die von ATL bereitgestellt wird, um einen Teil ihrer Funktionalität bereitzustellen. Es besteht eine gute Wahrscheinlichkeit, dass Ihre Initialisierung die von dieser Klasse bereitgestellten Features verwenden muss (dies trifft sicherlich zu, wenn Objekte Ihrer Klasse andere Objekte aggregieren müssen), aber der Konstruktor in Ihrer Klasse hat keine Möglichkeit, auf diese Features zuzugreifen. Der Konstruktionscode für Ihre Klasse wird ausgeführt, bevor die am meisten abgeleitete Klasse vollständig erstellt wird.
 
-   `FinalConstruct` wird jedoch unmittelbar nach dem vollständigen Konstruieren der abgeleiteten Klasse aufgerufen, sodass Sie virtuelle Funktionen aufrufen und die von ATL bereitgestellte Implementierung der Verweis Zählung verwenden können.
+   Wird `FinalConstruct` jedoch sofort aufgerufen, nachdem die am weitesten abgeleitete Klasse vollständig erstellt wurde, sodass Sie virtuelle Funktionen aufrufen und die von ATL bereitgestellte Referenzzählungsimplementierung verwenden können.
 
 ### <a name="example"></a>Beispiel
 
-Überschreiben Sie diese Methode in der Regel in der von `CComObjectRootEx` abgeleiteten Klasse, um aggregierte Objekte zu erstellen. Beispiel:
+Überschreiben Sie diese Methode in `CComObjectRootEx` der Klasse, von der abgeleitet wird, um aggregierte Objekte zu erstellen. Beispiel:
 
 [!code-cpp[NVC_ATL_COM#40](../../atl/codesnippet/cpp/ccomobjectrootex-class_1.h)]
 
-Wenn die Konstruktion fehlschlägt, können Sie einen Fehler zurückgeben. Sie können auch das Makro [DECLARE_PROTECT_FINAL_CONSTRUCT](aggregation-and-class-factory-macros.md#declare_protect_final_construct) verwenden, um Ihr Äußeres Objekt vor dem Löschen zu schützen, wenn das interne aggregierte Objekt während der Erstellung den Verweis Zähler Inkremente erhöht und dann die Anzahl auf 0 dekreert.
+Wenn die Konstruktion fehlschlägt, können Sie einen Fehler zurückgeben. Sie können auch das Makro [DECLARE_PROTECT_FINAL_CONSTRUCT](aggregation-and-class-factory-macros.md#declare_protect_final_construct) verwenden, um das äußere Objekt vor dem Löschen zu schützen, wenn das interne aggregierte Objekt während der Erstellung die Referenzanzahl erhöht und dann die Anzahl auf 0 dekrementiert.
 
-Im folgenden finden Sie eine typische Möglichkeit zum Erstellen eines Aggregats:
+Hier ist eine typische Möglichkeit, ein Aggregat zu erstellen:
 
-- Fügen Sie dem Klassenobjekt einen `IUnknown` Zeiger hinzu, und initialisieren Sie ihn im Konstruktor mit NULL.
+- Fügen `IUnknown` Sie dem Klassenobjekt einen Zeiger hinzu, und initialisieren Sie es im Konstruktor zu NULL.
 
-- Überschreiben Sie `FinalConstruct`, um das Aggregat zu erstellen.
+- Überschreiben, `FinalConstruct` um das Aggregat zu erstellen.
 
-- Verwenden Sie den `IUnknown` Zeiger, den Sie als Parameter für das [COM_INTERFACE_ENTRY_AGGREGATE](com-interface-entry-macros.md#com_interface_entry_aggregate) -Makro definiert haben.
+- Verwenden `IUnknown` Sie den Zeiger, den Sie als Parameter definiert haben, auf das [COM_INTERFACE_ENTRY_AGGREGATE](com-interface-entry-macros.md#com_interface_entry_aggregate) Makro.
 
-- Überschreiben Sie `FinalRelease`, um den `IUnknown` Zeiger freizugeben.
+- Überschreiben, `FinalRelease` um `IUnknown` den Zeiger freizugeben.
 
-##  <a name="finalrelease"></a>CComObjectRootEx:: FinalRelease
+## <a name="ccomobjectrootexfinalrelease"></a><a name="finalrelease"></a>CComObjectRootEx::FinalRelease
 
-Sie können diese Methode in der abgeleiteten Klasse überschreiben, um alle für Ihr Objekt erforderlichen Bereinigungs Vorgänge auszuführen.
+Sie können diese Methode in der abgeleiteten Klasse überschreiben, um die für Ihr Objekt erforderlichen Bereinigungen durchzuführen.
 
 ```
 void FinalRelease();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt `CComObjectRootEx::FinalRelease` keine Aktion aus.
+Tut standardmäßig `CComObjectRootEx::FinalRelease` nichts.
 
-Das Ausführen von Bereinigung in `FinalRelease` empfiehlt sich dem Hinzufügen von Code zum Dekonstruktor ihrer Klasse, da das Objekt noch vollständig an dem Punkt, an dem `FinalRelease` aufgerufen wird, vollständig konstruiert ist. Dies ermöglicht den sicheren Zugriff auf die Methoden, die von der am weitesten abgeleiteten Klasse bereitgestellt werden. Dies ist besonders wichtig für das Freigeben von aggregierten Objekten vor dem Löschen.
+Das Durchführen `FinalRelease` von Bereinigungen in ist dem Hinzufügen von Code zum Destruktor Ihrer `FinalRelease` Klasse vorzuziehen, da das Objekt an dem Punkt, an dem aufgerufen wird, noch vollständig erstellt ist. Auf diese Weise können Sie sicher auf die Methoden zugreifen, die von der am häufigsten abgeleiteten Klasse bereitgestellt werden. Dies ist besonders wichtig, um alle aggregierten Objekte vor dem Löschen freizugeben.
 
-##  <a name="internaladdref"></a>CComObjectRootEx:: internaladressf
+## <a name="ccomobjectrootexinternaladdref"></a><a name="internaladdref"></a>CComObjectRootEx::InternalAddRef
 
-Erhöht den Verweis Zähler eines nicht aggregierten Objekts um 1.
+Erhöht die Referenzanzahl eines nicht aggregierten Objekts um 1.
 
 ```
 ULONG InternalAddRef();
@@ -175,13 +175,13 @@ ULONG InternalAddRef();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der für die Diagnose und das Testen nützlich sein kann.
+Ein Wert, der für Diagnosen und Tests nützlich sein kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Thread Modell Multithreaded ist, wird `InterlockedIncrement` verwendet, um zu verhindern, dass mehrere Threads gleichzeitig den Verweis Zähler ändern.
+Wenn das Threadmodell Multithread `InterlockedIncrement` ist, wird verwendet, um zu verhindern, dass mehrere Threads gleichzeitig die Referenzanzahl ändern.
 
-##  <a name="internalqueryinterface"></a>CComObjectRootEx:: InternalQueryInterface
+## <a name="ccomobjectrootexinternalqueryinterface"></a><a name="internalqueryinterface"></a>CComObjectRootEx::InternalQueryInterface
 
 Ruft einen Zeiger auf die angeforderte Schnittstelle ab.
 
@@ -196,28 +196,28 @@ static HRESULT InternalQueryInterface(
 ### <a name="parameters"></a>Parameter
 
 *pThis*<br/>
-in Ein Zeiger auf das-Objekt, das die com-Zuordnung der Schnittstellen enthält, die `QueryInterface`verfügbar gemacht werden.
+[in] Ein Zeiger auf das Objekt, das die COM-Zuordnung der Schnittstellen enthält, die für `QueryInterface`verfügbar gemacht werden.
 
-*pentries*<br/>
-in Ein Zeiger auf die `_ATL_INTMAP_ENTRY`-Struktur, die auf eine Karte der verfügbaren Schnittstellen zugreift.
+*pEntries*<br/>
+[in] Ein Zeiger auf `_ATL_INTMAP_ENTRY` die Struktur, die auf eine Karte verfügbarer Schnittstellen zugreift.
 
-*IID*<br/>
-in Der GUID der angeforderten Schnittstelle.
+*Iid*<br/>
+[in] Die GUID der angeforderten Schnittstelle.
 
 *ppvObject*<br/>
-vorgenommen Ein Zeiger auf den in *IID*angegebenen Schnittstellen Zeiger oder NULL, wenn die Schnittstelle nicht gefunden wurde.
+[out] Ein Zeiger auf den in *iid*, oder NULL angegebenen Schnittstellenzeiger, wenn die Schnittstelle nicht gefunden wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`InternalQueryInterface` behandelt nur Schnittstellen in der com-Zuordnungs Tabelle. Wenn das Objekt aggregiert wird, wird `InternalQueryInterface` nicht an das äußere unbekannte delegiert. Sie können Schnittstellen in die com-Zuordnungs Tabelle mit dem Makro [COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry) oder einer der Varianten eingeben.
+`InternalQueryInterface`verarbeitet nur Schnittstellen in der COM-Map-Tabelle. Wenn Ihr Objekt aggregiert `InternalQueryInterface` ist, wird nicht an das äußere Unbekannte delegiert. Sie können Schnittstellen in die COM-Map-Tabelle mit dem Makro [COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry) oder einer seiner Varianten eingeben.
 
-##  <a name="internalrelease"></a>CComObjectRootEx:: internalrelease
+## <a name="ccomobjectrootexinternalrelease"></a><a name="internalrelease"></a>CComObjectRootEx::InternalRelease
 
-Dekremente den Verweis Zähler eines nicht aggregierten Objekts um 1.
+Dekrementiert die Referenzanzahl eines nicht aggregierten Objekts um 1.
 
 ```
 ULONG InternalRelease();
@@ -225,35 +225,35 @@ ULONG InternalRelease();
 
 ### <a name="return-value"></a>Rückgabewert
 
-In nicht-Debug-und Debugbuilds gibt diese Funktion einen Wert zurück, der möglicherweise für Diagnose-oder Testzwecke nützlich ist. Der genaue zurückgegebene Wert hängt von vielen Faktoren ab, wie z. b. dem verwendeten Betriebssystem, und möglicherweise dem Verweis Zähler.
+Sowohl in Nicht-Debug- als auch in Debugbuilds gibt diese Funktion einen Wert zurück, der für Diagnosen oder Tests nützlich sein kann. Der genaue zurückgegebene Wert hängt von vielen Faktoren ab, z. B. vom verwendeten Betriebssystem, und kann die Referenzanzahl sein oder auch nicht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Thread Modell Multithreaded ist, wird `InterlockedDecrement` verwendet, um zu verhindern, dass mehrere Threads gleichzeitig den Verweis Zähler ändern.
+Wenn das Threadmodell Multithread `InterlockedDecrement` ist, wird verwendet, um zu verhindern, dass mehrere Threads gleichzeitig die Referenzanzahl ändern.
 
-##  <a name="lock"></a>CComObjectRootEx:: Lock
+## <a name="ccomobjectrootexlock"></a><a name="lock"></a>CComObjectRootEx::Sperren
 
-Wenn das Thread Modell Multithreaded ist, ruft diese Methode die Win32-API-Funktion " [EnterCriticalSection](/windows/win32/api/synchapi/nf-synchapi-entercriticalsection)" auf, die wartet, bis der Thread den Besitz des kritischen Abschnitts Objekts übernimmt, das über ein privates Datenmember abgerufen wurde.
+Wenn das Threadmodell Multithread ist, ruft diese Methode die Win32-API-Funktion [EnterCriticalSection](/windows/win32/api/synchapi/nf-synchapi-entercriticalsection)auf, die wartet, bis der Thread den Besitz des kritischen Abschnittsobjekts übernehmen kann, das über ein privates Datenmember abgerufen wurde.
 
 ```
 void Lock();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Ausführung des geschützten Codes abgeschlossen ist, muss der Thread `Unlock` aufgerufen werden, um den Besitz des kritischen Abschnitts freizugeben.
+Wenn die Ausführung des geschützten Codes `Unlock` abgeschlossen ist, muss der Thread aufrufen, um den Besitz des kritischen Abschnitts freizugeben.
 
-Wenn das Thread Modell Single Thread ist, führt diese Methode keine Aktion aus.
+Wenn das Gewindemodell einfädelig ist, führt diese Methode nichts aus.
 
-##  <a name="m_dwref"></a>CComObjectRootEx:: m_dwRef
+## <a name="ccomobjectrootexm_dwref"></a><a name="m_dwref"></a>CComObjectRootEx::m_dwRef
 
-Ein Teil einer Union, der auf vier Byte Arbeitsspeicher zugreift.
+Teil einer Union, die auf vier Byte Arbeitsspeicher zugreift.
 
 ```
 long m_dwRef;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit `m_pOuterUnknown`, Teil einer Union:
 
@@ -264,18 +264,18 @@ union {
 };
 ```
 
-Wenn das Objekt nicht aggregiert wird, wird der Verweis Zähler, auf den `AddRef` und `Release` zugreifen, in `m_dwRef`gespeichert. Wenn das Objekt aggregiert wird, wird der Zeiger auf das äußere unbekannte in [m_pOuterUnknown](#m_pouterunknown)gespeichert.
+Wenn das Objekt nicht aggregiert ist, `AddRef` wird `Release` auf `m_dwRef`die Referenzanzahl zugegriffen, auf die von zugegriffen wird und die in gespeichert wird. Wenn das Objekt aggregiert wird, wird der Zeiger auf das äußere Unbekannte in [m_pOuterUnknown](#m_pouterunknown)gespeichert.
 
-##  <a name="m_pouterunknown"></a>CComObjectRootEx:: m_pOuterUnknown
+## <a name="ccomobjectrootexm_pouterunknown"></a><a name="m_pouterunknown"></a>CComObjectRootEx::m_pOuterUnknown
 
-Ein Teil einer Union, der auf vier Byte Arbeitsspeicher zugreift.
+Teil einer Union, die auf vier Byte Arbeitsspeicher zugreift.
 
 ```
 IUnknown*
     m_pOuterUnknown;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit `m_dwRef`, Teil einer Union:
 
@@ -286,11 +286,11 @@ union {
 };
 ```
 
-Wenn das Objekt aggregiert wird, wird der Zeiger auf das äußere unbekannte in `m_pOuterUnknown`gespeichert. Wenn das Objekt nicht aggregiert wird, wird der Verweis Zähler, auf den `AddRef` und `Release` zugreifen, in [m_dwRef](#m_dwref)gespeichert.
+Wenn das Objekt aggregiert wird, wird der Zeiger `m_pOuterUnknown`auf das äußere Unbekannte in gespeichert. Wenn das Objekt nicht aggregiert ist, `AddRef` wird `Release` auf die Referenzanzahl zugegriffen, auf die von m_dwRef zugegriffen wird und in [m_dwRef](#m_dwref)gespeichert wird.
 
-##  <a name="objectmain"></a>CComObjectRootEx:: objectmain
+## <a name="ccomobjectrootexobjectmain"></a><a name="objectmain"></a>CComObjectRootEx::ObjectMain
 
-Für jede Klasse, die in der Objekt Zuordnung aufgeführt ist, wird diese Funktion einmal aufgerufen, wenn das Modul initialisiert wird, und wenn Sie beendet wird.
+Für jede in der Objektzuordnung aufgeführte Klasse wird diese Funktion einmal aufgerufen, wenn das Modul initialisiert wird, und erneut, wenn sie beendet wird.
 
 ```
 static void WINAPI ObjectMain(bool bStarting);
@@ -298,22 +298,22 @@ static void WINAPI ObjectMain(bool bStarting);
 
 ### <a name="parameters"></a>Parameter
 
-*bstarting*<br/>
-vorgenommen Der Wert ist "true", wenn die Klasse initialisiert wird. andernfalls false.
+*bStart*<br/>
+[out] Der Wert ist TRUE, wenn die Klasse initialisiert wird. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Wert des *bstarting* -Parameters gibt an, ob das Modul initialisiert oder beendet wird. Die Standard Implementierung von `ObjectMain` führt keine Aktion aus, aber Sie können diese Funktion in der Klasse überschreiben, um Ressourcen zu initialisieren oder zu bereinigen, die Sie für die Klasse zuordnen möchten. Beachten Sie, dass `ObjectMain` aufgerufen wird, bevor Instanzen der-Klasse angefordert werden.
+Der Wert des *Parameters bStarting* gibt an, ob das Modul initialisiert oder beendet wird. Die Standardimplementierung `ObjectMain` von tut nichts, aber Sie können diese Funktion in Ihrer Klasse überschreiben, um Ressourcen zu initialisieren oder zu bereinigen, die Sie für die Klasse zuweisen möchten. Hinweis, `ObjectMain` der aufgerufen wird, bevor Instanzen der Klasse angefordert werden.
 
-`ObjectMain` wird vom Einstiegspunkt der dll aufgerufen, sodass der Typ des Vorgangs, der von der Einstiegspunkt Funktion durchgeführt werden kann, eingeschränkt ist. Weitere Informationen zu diesen Einschränkungen finden Sie unter [DLLs und Verhalten C++ der visuellen Lauf Zeit Bibliothek](../../build/run-time-library-behavior.md) und [DllMain](/windows/win32/Dlls/dllmain).
+`ObjectMain`wird vom Einstiegspunkt der DLL aufgerufen, sodass der Typ des Vorgangs, den die Einstiegspunktfunktion ausführen kann, eingeschränkt ist. Weitere Informationen zu diesen Einschränkungen finden Sie unter [DLLs und Visual C++-Laufzeitbibliotheksverhalten](../../build/run-time-library-behavior.md) und [DllMain](/windows/win32/Dlls/dllmain).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_COM#41](../../atl/codesnippet/cpp/ccomobjectrootex-class_2.h)]
 
-##  <a name="outeraddref"></a>CComObjectRootEx:: outeradressf
+## <a name="ccomobjectrootexouteraddref"></a><a name="outeraddref"></a>CComObjectRootex::OuterAddRef
 
-Inkremente den Verweis Zähler des äußeren unbekannten einer Aggregation.
+Inkrementiert die Referenzanzahl des äußeren Unbekannten einer Aggregation.
 
 ```
 ULONG OuterAddRef();
@@ -321,9 +321,9 @@ ULONG OuterAddRef();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der für die Diagnose und das Testen nützlich sein kann.
+Ein Wert, der für Diagnosen und Tests nützlich sein kann.
 
-##  <a name="outerqueryinterface"></a>CComObjectRootEx:: outerqueryinterface
+## <a name="ccomobjectrootexouterqueryinterface"></a><a name="outerqueryinterface"></a>CComObjectRootEx::OuterQueryInterface
 
 Ruft einen indirekten Zeiger auf die angeforderte Schnittstelle ab.
 
@@ -333,19 +333,19 @@ HRESULT OuterQueryInterface(REFIID iid, void** ppvObject);
 
 ### <a name="parameters"></a>Parameter
 
-*IID*<br/>
-in Der GUID der angeforderten Schnittstelle.
+*Iid*<br/>
+[in] Die GUID der angeforderten Schnittstelle.
 
 *ppvObject*<br/>
-vorgenommen Ein Zeiger auf den in *IID*angegebenen Schnittstellen Zeiger oder NULL, wenn die Aggregation die-Schnittstelle nicht unterstützt.
+[out] Ein Zeiger auf den in *iid*oder NULL angegebenen Schnittstellenzeiger, wenn die Aggregation die Schnittstelle nicht unterstützt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Einer der HRESULT-Standardwerte.
+Einer der Standard-HRESULT-Werte.
 
-##  <a name="outerrelease"></a>CComObjectRootEx:: outerrelease
+## <a name="ccomobjectrootexouterrelease"></a><a name="outerrelease"></a>CComObjectRootEx::OuterRelease
 
-Dekremente den Verweis Zähler des äußeren unbekannten einer Aggregation.
+Dekrementiert die Referenzanzahl des äußeren Unbekannten einer Aggregation.
 
 ```
 ULONG OuterRelease();
@@ -353,25 +353,25 @@ ULONG OuterRelease();
 
 ### <a name="return-value"></a>Rückgabewert
 
-In nicht Debugbuilds gibt immer 0 zurück. In Debugbuilds gibt einen Wert zurück, der für die Diagnose oder das Testen nützlich sein kann.
+Gibt in Nicht-Debug-Builds immer 0 zurück. Gibt in Debugbuilds einen Wert zurück, der für Diagnosen oder Tests nützlich sein kann.
 
-##  <a name="unlock"></a>CComObjectRootEx:: Unlock
+## <a name="ccomobjectrootexunlock"></a><a name="unlock"></a>CComObjectRootEx::Entsperren
 
-Wenn das Thread Modell Multithreaded ist, ruft diese Methode die Win32-API-Funktion [LeaveCriticalSection](/windows/win32/api/synchapi/nf-synchapi-leavecriticalsection)auf, die den Besitz des kritischen Abschnitts Objekts freigibt, das über ein privates Datenmember abgerufen wird.
+Wenn das Threadmodell Multithread ist, ruft diese Methode die Win32-API-Funktion [LeaveCriticalSection](/windows/win32/api/synchapi/nf-synchapi-leavecriticalsection)auf, die den Besitz des kritischen Abschnittsobjekts freigibt, das über ein privates Datenmember abgerufen wird.
 
 ```
 void Unlock();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um den Besitz zu erhalten, muss der Thread `Lock`abrufen. Jeder `Lock` Aufrufe erfordert einen entsprechenden-Aufruf`Unlock`, um den Besitz des kritischen Abschnitts freizugeben.
+Um den Besitz zu `Lock`erhalten, muss der Thread aufrufen. Jeder Aufruf `Lock` erfordert einen `Unlock` entsprechenden Aufruf, um den Besitz des kritischen Abschnitts freizugeben.
 
-Wenn das Thread Modell Single Thread ist, führt diese Methode keine Aktion aus.
+Wenn das Gewindemodell einfädelig ist, führt diese Methode nichts aus.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComAggObject-Klasse](../../atl/reference/ccomaggobject-class.md)<br/>
 [CComObject-Klasse](../../atl/reference/ccomobject-class.md)<br/>
 [CComPolyObject-Klasse](../../atl/reference/ccompolyobject-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

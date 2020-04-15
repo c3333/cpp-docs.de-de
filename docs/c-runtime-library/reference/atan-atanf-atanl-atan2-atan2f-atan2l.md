@@ -1,6 +1,6 @@
 ---
 title: atan, atanf, atanl, atan2, atan2f, atan2l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - atan2f
 - atan2l
@@ -8,6 +8,8 @@ api_name:
 - atanf
 - atan
 - atanl
+- _o_atan
+- _o_atan2
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -41,16 +44,16 @@ helpviewer_keywords:
 - trigonometric functions
 - atan2f function
 ms.assetid: 7a87a18e-c94d-4727-9cb1-1bb5c2725ae4
-ms.openlocfilehash: 8c485dea281d2b754628c9663e38ea10a9b6ab57
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3b8411f9839022477dff3100792e271e2f0b572b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939608"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334121"
 ---
 # <a name="atan-atanf-atanl-atan2-atan2f-atan2l"></a>atan, atanf, atanl, atan2, atan2f, atan2l
 
-Berechnet den Arkus Tangens **von x** (**Atan**, **atanf**und **atanl**) oder den Arkus Tangens **von y**/**x** (**atan2**, **atan2f**und **atan2l**).
+Berechnet die Arctangent von **x** (**atan**, **atanf**, und **atanl**) oder die Arctangent von **y**/**x** (**atan2**, **atan2f**, und **atan2l**).
 
 ## <a name="syntax"></a>Syntax
 
@@ -79,25 +82,27 @@ Alle Zahlen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**Atan** gibt den Arkus Tangens von *x* im Bereich von Bereich-/2 zu adressiert/2 zurück. **atan2** gibt den Arkus Tangens von *y*/*x* im Bereich von Bereich zu adressiert zurück. Wenn *x* 0 ist, gibt **Atan** 0 zurück. Wenn beide Parameter von **atan2** 0 sind, gibt die Funktion 0 zurück. Alle Ergebnisse sind in Bogenmaß.
+**atan** gibt den Bogentangen von *x* im Bereich -/2 bis 2 Radianten zurück. **atan2** gibt den Bogentangen von *y*/*x* im Bereich -- bis -radians zurück. Wenn *x* 0 ist, gibt **atan** 0 zurück. Wenn beide Parameter von **atan2** 0 sind, gibt die Funktion 0 zurück. Alle Ergebnisse sind in Bogenmaß.
 
-**atan2** verwendet die Zeichen beider Parameter, um den Quadranten des Rückgabewerts zu bestimmen.
+**atan2** verwendet die Vorzeichen beider Parameter, um den Quadranten des Rückgabewertes zu bestimmen.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|none|**_DOMAIN**|
+|• **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Atan** -Funktion berechnet den Arkus Tangens (die umgekehrte Tangens Funktion) von *x*. **atan2** berechnet den Arkus Tangens von *y*/*x* (wenn *x* gleich 0 ist, gibt **atan2** den Wert 1 zurück, wenn *y* positiv ist, d/2, wenn *y* negativ ist, oder 0, wenn *y* gleich 0 ist.)
+Die **atan-Funktion** berechnet die Arctangent (die inverse Tangentenfunktion) von *x*. **atan2** berechnet die Arctangent von *y*/*x* (wenn *x* gleich 0 ist, gibt **atan2** 2 zurück, wenn *y* positiv ist, -/2, wenn *y* negativ ist, oder 0, wenn *y* 0 ist.)
 
-**Atan** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
+**atan** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Atan** und **atan2** mit **float** -oder **Long** **Double** -Argumenten aufzurufen. In einem C-Programm akzeptieren **Atan** und **atan2** immer **doppelte** Argumente und geben einen **Double**-Wert zurück.
+Da C++ eine Überladung ermöglicht, können Sie Überladungen von **atan** und **atan2** aufrufen, die **float-** oder **lange** **Doppelargumente** annehmen. In einem C-Programm nehmen **atan** und **atan2** immer **doppelte** Argumente und geben eine **doppelte**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
 |**atan**, **atan2**, **atanf**, **atan2f**, **atanl**, **atan2l**|\<math.h>|\<cmath> oder \<math.h>|
 

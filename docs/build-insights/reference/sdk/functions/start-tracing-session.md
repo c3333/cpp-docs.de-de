@@ -1,6 +1,6 @@
 ---
-title: Starttracingsession
-description: Die C++ buildinsights-SDK-starttracingsession-Funktionsreferenz.
+title: StartTracingSession
+description: Der C++ Build Insights SDK StartTracingSession-Funktionsverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: de9d46b4a684d66bf01f76e7ea753694cf40d2cd
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 6da81ce54948e5ddbacfc9af50f1be12736fdba7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334223"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323741"
 ---
-# <a name="starttracingsession"></a>Starttracingsession
+# <a name="starttracingsession"></a>StartTracingSession
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `StartTracingSession`-Funktion startet eine Ablauf Verfolgungs Sitzung. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
+Die `StartTracingSession` Funktion startet eine Ablaufverfolgungssitzung. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -41,14 +41,14 @@ RESULT_CODE StartTracingSession(
 
 ### <a name="parameters"></a>Parameter
 
-*Sessionname* -\
-Der Name der Ablauf Verfolgungs Sitzung, die gestartet werden soll. Verwenden Sie den gleichen Namen, wenn Sie [stoptracingsession](stop-tracing-session.md) oder eine beliebige andere Stop-Ablauf Verfolgungs Funktion aufrufen.
+*sessionName*\
+Der Name der zu startenden Ablaufverfolgungssitzung. Verwenden Sie denselben Namen, wenn Sie [StopTracingSession](stop-tracing-session.md) oder eine andere Stop-Trace-Funktion aufrufen.
 
 *Optionen*\
-Zeiger auf ein [TRACING_SESSION_OPTIONS](../other-types/tracing-session-options-struct.md) Objekt. Verwenden Sie dieses Objekt, um auszuwählen, welche Ereignisse von der Ablauf Verfolgungs Sitzung gesammelt werden sollen.
+Zeiger auf ein [TRACING_SESSION_OPTIONS](../other-types/tracing-session-options-struct.md) Objekt. Verwenden Sie dieses Objekt, um auszuwählen, welche Ereignisse von der Ablaufverfolgungssitzung erfasst werden sollen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ::: moniker-end

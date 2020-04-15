@@ -1,6 +1,6 @@
 ---
-title: Backendpass-Klasse
-description: Die C++ backendpass-Klassenreferenz für das Build Insights SDK.
+title: BackEndPass-Klasse
+description: Der C++ Build Insights SDK BackEndpass-Klassenverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: c159fa09b5d8a4156fc6bd886fc36da09a66db73
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 2b4b1a219abdbe418efaab4537f1c6dc9a22afb3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78335015"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325241"
 ---
-# <a name="backendpass-class"></a>Backendpass-Klasse
+# <a name="backendpass-class"></a>BackEndPass-Klasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `BackEndPass`-Klasse wird mit den Funktionen [matchevent](../functions/match-event.md), [matcheventinmitgliedfunction](../functions/match-event-in-member-function.md), [matcheventstack](../functions/match-event-stack.md)und [matcheventstackinmembership Function](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um ein [BACK_END_PASS](../event-table.md#back-end-pass) Ereignis abzugleichen.
+Die `BackEndPass` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um ein [BACK_END_PASS](../event-table.md#back-end-pass) Ereignis abzugleichen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,15 +37,15 @@ public:
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
-Zusammen mit den geerbten Membern aus der [compilerpass](compiler-pass.md) -Basisklasse enthält die `BackEndPass`-Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus `BackEndPass` der [CompilerPass-Basisklasse](compiler-pass.md) enthält die Klasse die folgenden Member:
 
 ### <a name="constructors"></a>Konstruktoren
 
-[Backendpass](#back-end-pass)
+[BackEndPass](#back-end-pass)
 
-## <a name="back-end-pass"></a>Backendpass
+## <a name="backendpass"></a><a name="back-end-pass"></a>BackEndPass
 
 ```cpp
 BackEndPass(const RawEvent& event);

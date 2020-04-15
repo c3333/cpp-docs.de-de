@@ -1,6 +1,6 @@
 ---
-title: Matcheventstackinmembership-Funktion
-description: Die C++ Funktionsreferenz für das Build Insights SDK matcheventstackinmitgliedfunction.
+title: MatcheventStackInMemberFunktion
+description: Der C++ Build Insights SDK MatchEventStackInMemberFunction-Funktionsverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 2a966ea5209a25a62c08cb0873d0565299a15d27
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 28842a02e7edc2e00266d8c7941798f4ce714ded
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334367"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323883"
 ---
-# <a name="matcheventstackinmemberfunction"></a>Matcheventstackinmembership-Funktion
+# <a name="matcheventstackinmemberfunction"></a>MatcheventStackInMemberFunktion
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MatchEventStackInMemberFunction`-Funktion wird verwendet, um einen Ereignis Stapel mit einer bestimmten Ereignis Hierarchie abzugleichen, die in der Parameterliste einer Member-Funktion beschrieben wird. Übereinstimmende Hierarchien werden zur weiteren Verarbeitung an die Member-Funktion weitergeleitet. Weitere Informationen zu Ereignissen, Ereignis Stapeln und Hierarchien finden Sie unter [Ereignis Tabelle](../event-table.md).
+Die `MatchEventStackInMemberFunction` Funktion wird verwendet, um einen Ereignisstapel mit einer bestimmten Ereignishierarchie abzugleichen, die durch die Parameterliste einer Memberfunktion beschrieben wird. Abgestimmte Hierarchien werden zur weiteren Verarbeitung an die Memberfunktion weitergeleitet. Weitere Informationen zu Ereignissen, Ereignisstapeln und Hierarchien finden Sie in der [Ereignistabelle](../event-table.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -81,42 +81,42 @@ bool MatchEventStackInMemberFunction(
 
 ### <a name="parameters"></a>Parameter
 
-*TInterface* -\
-Der Typ, der die Member-Funktion enthält.
+*TInterface*\
+Der Typ, der die Memberfunktion enthält.
 
-*Treturn* -\
-Der Rückgabetyp der Member-Funktion.
+*TReturn*\
+Der Rückgabetyp der Memberfunktion.
 
-*T1*,..., *T10*\
-Die Typen, die die Abzugleichende Ereignis Hierarchie beschreiben.
+*T1*, ..., *T10*\
+Die Typen, die die übereinstimmende Ereignishierarchie beschreiben.
 
-*Textraparameams* -\
-Die Typen der zusätzlichen Parameter, die von der Member-Funktion akzeptiert werden, und die Ereignis Hierarchietypen.
+*TExtraParams*\
+Die Typen der zusätzlichen Parameter, die von der Memberfunktion akzeptiert werden, und die Ereignishierarchietypen.
 
-*Textraargs*\
-Die Typen der zusätzlichen Argumente, die an `MatchEventStackInMemberFunction`übermittelt wurden.
+*TExtraArgs*\
+Die Typen der zusätzlichen Argumente, `MatchEventStackInMemberFunction`die an übergeben wurden.
 
-*Event Stack* -\
-Der Ereignis Stapel, der mit der von *T1* bis *T10*beschriebenen Ereignistyp Hierarchie abgeglichen werden soll.
+*eventStack*\
+Der Ereignisstapel, der mit der von *T1* bis *T10*beschriebenen Ereignistyphierarchie übereinstimmen soll.
 
-*objectptr* -\
-Ein Zeiger auf ein Objekt, für das der *mitgliedsemember* aufgerufen wird.
+*objectPtr*\
+Ein Zeiger auf ein Objekt, auf dem *memberFunc* aufgerufen wird.
 
-*Mitglied\*
-Die Member-Funktion, die die abzugleichenden Ereignistyp Hierarchie beschreibt.
+*MitgliedFunc*\
+Die Memberfunktion, die die übereinstimmende Ereignistyphierarchie beschreibt.
 
-*extraargs*\
-Die Argumente, die perfekt mit den Ereignistyp-Hierarchie Parametern an die *Mitgliedsart* weitergeleitet werden.
+*extraArgs*\
+Die Argumente, die zusammen mit den Parametern der Ereignistyphierarchie perfekt an *memberFunc* weitergeleitet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein **boolescher** Wert, der **true** ist, wenn die Übereinstimmung erfolgreich war, andernfalls **false** .
+Ein **bool-Wert,** der **wahr** ist, wenn der Abgleich erfolgreich war, oder andernfalls **false.**
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das letzte Ereignis in *eventstack* wird immer mit dem letzten Eintrag in der Ereignistyp Hierarchie abgeglichen, um eine Übereinstimmung zu finden. Alle anderen Typen in der Ereignistyp Hierarchie können mit einer beliebigen Position in *eventstack* außer der letzten übereinstimmen, vorausgesetzt, Sie befinden sich in der gleichen Reihenfolge.
+Das letzte Ereignis in *eventStack* wird immer mit dem letzten Eintrag in der übereinstimmenden Ereignistyphierarchie abgeglichen. Alle anderen Typen in der Ereignistyphierarchie können mit jeder Position in *eventStack* mit Ausnahme der letzten übereinstimmen, sofern sie in der gleichen Reihenfolge sind.
 
-Ereignis Typen, die für die Parameter *T1* bis *T10* verwendet werden sollen, werden aus einer Liste von *Erfassungs Klassen*ausgewählt. Eine Liste der Ereignisse und der Erfassungs Klassen, die Sie verwenden können, finden Sie unter [Ereignis Tabelle](../event-table.md).
+Ereignistypen, die für die Parameter *T1* bis *T10* verwendet werden sollen, werden aus einer Liste von *Erfassungsklassen*ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
 
 ## <a name="example"></a>Beispiel
 

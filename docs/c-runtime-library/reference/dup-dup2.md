@@ -1,9 +1,11 @@
 ---
 title: _dup, _dup2
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _dup
 - _dup2
+- _o__dup
+- _o__dup2
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,16 +34,16 @@ helpviewer_keywords:
 - dup2 function
 - _dup function
 ms.assetid: 4d07e92c-0d76-4832-a770-dfec0e7a0cfa
-ms.openlocfilehash: da47d6f040b62906d30107f9036ffa2a3ea05a1c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 239f857bb40c9609cb6f7ff373295a7a1f8523a9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70937788"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348115"
 ---
 # <a name="_dup-_dup2"></a>_dup, _dup2
 
-Erstellt einen zweiten Dateideskriptor für eine geöffnete Datei ( **_dup**) oder weist einen Dateideskriptor neu zu ( **_dup2**).
+Erstellt einen zweiten Dateideskriptor für eine geöffnete Datei (**_dup**) oder weist einen Dateideskriptor (**_dup2**) neu zu.
 
 ## <a name="syntax"></a>Syntax
 
@@ -59,28 +62,30 @@ Jeder beliebige Dateideskriptor.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_dup** gibt einen neuen Dateideskriptor zurück. **_dup2** gibt 0 zurück, um einen Erfolg anzugeben. Wenn ein Fehler auftritt, gibt jede Funktion-1 zurück und legt **errno** auf **EBADF** fest, wenn der Dateideskriptor ungültig **ist, oder, wenn keine** weiteren Dateideskriptoren verfügbar sind. Bei einem ungültigen Dateideskriptor ruft die Funktion auch den Handler für ungültige Parameter auf, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben.
+**_dup** gibt einen neuen Dateideskriptor zurück. **_dup2** gibt 0 zurück, um den Erfolg anzuzeigen. Wenn ein Fehler auftritt, gibt jede Funktion -1 zurück und setzt **errno** auf **EBADF,** wenn der Dateideskriptor ungültig ist, oder auf **EMFILE,** wenn keine weiteren Dateideskriptoren verfügbar sind. Bei einem ungültigen Dateideskriptor ruft die Funktion auch den Handler für ungültige Parameter auf, wie unter [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Funktionen **_dup** und **_dup2** ordnen einen zweiten Dateideskriptor einer momentan geöffneten Datei zu. Diese Funktionen können verwendet werden, um einen vordefinierten Dateideskriptor (z. b. " **stdout**") einer anderen Datei zuzuordnen. Das Durchführen von Operationen an der Datei ist mit jedem der beiden Dateideskriptoren möglich. Der für die Datei zulässige Zugriffstyp ist von der Erstellung eines neuen Deskriptors nicht betroffen. **_dup** gibt den nächsten verfügbaren Dateideskriptor für die angegebene Datei zurück. **_dup2** erzwingt *FD2* , auf dieselbe Datei wie *FD1*zu verweisen. Wenn *FD2* zum Zeitpunkt des Aufrufes einer geöffneten Datei zugeordnet ist, wird diese Datei geschlossen.
+Die **_dup-** und **_dup2-Funktionen** verknüpfen einen zweiten Dateideskriptor mit einer aktuell geöffneten Datei. Diese Funktionen können verwendet werden, um einen vordefinierten Dateideskriptor, z. B. den für **stdout**, einer anderen Datei zuzuordnen. Das Durchführen von Operationen an der Datei ist mit jedem der beiden Dateideskriptoren möglich. Der für die Datei zulässige Zugriffstyp ist von der Erstellung eines neuen Deskriptors nicht betroffen. **_dup** gibt den nächsten verfügbaren Dateideskriptor für die angegebene Datei zurück. **_dup2** zwingt *fd2,* auf dieselbe Datei wie *fd1*zu verweisen. Wenn *fd2* zum Zeitpunkt des Aufrufs einer geöffneten Datei zugeordnet ist, wird diese Datei geschlossen.
 
-Sowohl **_dup** als auch **_dup2** akzeptieren Dateideskriptoren als Parameter. Um einen Stream (`FILE *`) an eine dieser Funktionen zu übergeben, verwenden Sie [_fileno](fileno.md). Die **fileno** -Routine gibt den Dateideskriptor zurück, der derzeit dem angegebenen Stream zugeordnet ist. Im folgenden Beispiel wird gezeigt, wie **stderr** (definiert als `FILE *` in stdio. h) einem Dateideskriptor zugeordnet wird:
+Sowohl **_dup** **als auch _dup2** Dateideskriptoren als Parameter akzeptieren. Um einen Stream`FILE *`( ) an eine dieser Funktionen zu übergeben, verwenden Sie [_fileno](fileno.md). Die **fileno-Routine** gibt den Dateideskriptor zurück, der derzeit dem angegebenen Stream zugeordnet ist. Das folgende Beispiel zeigt, wie **stderr** (definiert als `FILE *` in Stdio.h) einem Dateideskriptor zugeordnet wird:
 
 ```C
 int cstderr = _dup( _fileno( stderr ));
 ```
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_dup**|\<io.h>|
 |**_dup2**|\<io.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -145,7 +150,7 @@ This goes to file 'data'
 
 ## <a name="see-also"></a>Siehe auch
 
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
 [_close](close.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>

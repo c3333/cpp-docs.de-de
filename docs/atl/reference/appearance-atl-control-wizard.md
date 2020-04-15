@@ -6,90 +6,90 @@ f1_keywords:
 helpviewer_keywords:
 - ATL Control Wizard, appearance
 ms.assetid: cc16d7ff-74d7-4c15-9ebd-4b19201ff457
-ms.openlocfilehash: e07dc017241848f1a670c17b12c2254de6d1b8e1
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 3484fb5d0f919af0dfd18b584e96d4675e2baea8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69492191"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81319394"
 ---
 # <a name="appearance-atl-control-wizard"></a>Darstellung, ATL-Steuerelement-Assistent
 
-Verwenden Sie diese Seite des Assistenten, um zusätzliche Benutzer Element Optionen für das Steuerelement zu identifizieren. Diese Seite ist für Steuerelemente verfügbar, die auf der Seite [Optionen, ATL-Steuer](../../atl/reference/options-atl-control-wizard.md) Element-Assistent als **Standard Steuerelemente** unter Steuerungstyp identifiziert werden.
+Verwenden Sie diese Seite des Assistenten, um zusätzliche Benutzerelementoptionen für das Steuerelement zu identifizieren. Diese Seite ist für Steuerelemente verfügbar, die **unter** Steuerelementtyp unter **Steuerelementtyp** auf der Seite [Optionen, ATL-Steuerungs-Assistent](../../atl/reference/options-atl-control-wizard.md) gekennzeichnet sind.
 
 ## <a name="uielement-list"></a>Liste der Benutzeroberflächenelemente
 
-- **Status anzeigen**
+- **Anzeigen des Status**
 
-   Legt die Darstellung des Steuer Elements im Container fest.
+   Legt die Darstellung des Steuerelements innerhalb des Containers fest.
 
-   - Nicht transparent: Legt das VIEWSTATUS_OPAQUE-Bit in der [VIEWSTATUS](/windows/win32/api/ocidl/ne-ocidl-viewstatus) -Enumeration fest und zeichnet das gesamte Steuerelement Rechteck, das an die [CComControlBase:: OnDraw](../../atl/reference/ccomcontrolbase-class.md#ondraw) -Methode übergeben wird. Das-Steuerelement wird vollständig nicht transparent angezeigt, und der Container wird hinter den Steuerelement Grenzen nicht angezeigt.
+  - **Opaque**: Legt das VIEWSTATUS_OPAQUE Bit in der VIEWSTATUS-Enumeration fest und zeichnet das gesamte Steuerelementrechteck, das an die [CComControlBase::OnDraw-Methode](../../atl/reference/ccomcontrolbase-class.md#ondraw) übergeben wird. [VIEWSTATUS](/windows/win32/api/ocidl/ne-ocidl-viewstatus) Das Steuerelement erscheint völlig undurchsichtig, und keiner der Container wird hinter den Kontrollgrenzen angezeigt.
 
-      Mit dieser Einstellung kann der Container das Steuerelement schneller zeichnen. Wenn diese Option nicht ausgewählt ist, kann das Steuerelement transparente Teile enthalten.
+      Diese Einstellung hilft dem Container, das Steuerelement schneller zu zeichnen. Wenn diese Option nicht ausgewählt ist, kann das Steuerelement transparente Teile enthalten.
 
-      Nur ein undurchsichtiges Steuerelement kann über einen voll soliden Hintergrund verfügen.
+      Nur ein undurchsichtiges Steuerelement kann einen soliden Hintergrund haben.
 
-   - Voll **solider Hintergrund**: Legt das VIEWSTATUS_SOLIDBKGND-Bit in der VIEWSTATUS-Enumeration fest. Der Hintergrund des Steuer Elements wird als voll Tonfarbe ohne Muster angezeigt.
+  - **Solider Hintergrund**: Legt das VIEWSTATUS_SOLIDBKGND Bit in der VIEWSTATUS-Enumeration fest. Der Hintergrund des Steuerelements wird als Volltonfarbe ohne Muster angezeigt.
 
-      Diese Option ist nur verfügbar, wenn die Option nicht transparent ausgewählt ist.
+      Diese Option ist nur verfügbar, wenn die Option **"Opaque"** ebenfalls ausgewählt ist.
 
-- **Steuerelement hinzufügen basierend auf**
+- **Hinzufügen von Steuerelementen basierend auf**
 
-   Legt fest, dass das Steuerelement auf einem Windows-Steuer Elementtyp basiert, indem der Klasse, die das Steuerelement implementiert, ein [CContainedWindow](ccontainedwindowt-class.md) -Datenmember hinzugefügt Außerdem werden eine nachrichtenmap und nachrichtenhandlerfunktionen zum Verarbeiten von Windows-Meldungen für das Steuerelement hinzugefügt. Wählen Sie in der Liste den Typ des Windows-Steuer Elements aus, den Sie erstellen möchten (sofern vorhanden).
+   Legt fest, dass das Steuerelement auf einem Windows-Steuerelementtyp basiert, indem der Klasse, die das Steuerelement implementiert, ein [CContainedWindow-Datenmember](ccontainedwindowt-class.md) hinzugefügt wird. Außerdem werden eine Meldungszuordnung und Nachrichtenhandlerfunktionen hinzugefügt, um Windows-Nachrichten für das Steuerelement zu verarbeiten. Wählen Sie aus der Liste den Typ des Windows-Steuerelements aus, das Sie erstellen möchten, falls vorhanden.
 
-   - **Button** (Schaltfläche)
+  - **Schaltfläche**
 
-   - **ListBox**
+  - **ListBox**
 
-   - **SysAnimate32**
+  - **SysAnimate32**
 
-   - **SysListView32**
+  - **SysListView32**
 
-   - **ComboBox**
+  - **ComboBox**
 
-   - **RichEdit**
+  - **RichEdit**
 
-   - **SysDateTimePick32**
+  - **SysDateTimePick32**
 
-   - **SysMonthCal32**
+  - **SysMonthCal32**
 
-   - **ComboBoxEx32**
+  - **ComboBoxEx32**
 
-   - **ScrollBar**
+  - **ScrollBar**
 
-   - **SysHeader32**
+  - **SysHeader32**
 
-   - **SysTabControl32**
+  - **SysTabControl32**
 
-   - **Bearbeiten**
+  - **Bearbeiten**
 
-   - **Static**
+  - **Statische**
 
-   - **SysIPAddress32**
+  - **SysIPAddress32**
 
-   - **SysTreeView32**
+  - **SysTreeView32**
 
 - **Misc-Status**
 
-   Legt zusätzliche Optionen für Darstellung und Verhalten für das-Steuerelement fest.
+   Legt zusätzliche Darstellungs- und Verhaltensoptionen für das Steuerelement fest.
 
-   - **Unsichtbar zur Laufzeit**: Legt fest, dass das Steuerelement zur Laufzeit unsichtbar ist. Sie können nicht sichtbare Steuerelemente verwenden, um Vorgänge im Hintergrund auszuführen, z. b. das Auslösen von Ereignissen in zeitgesteuerten Intervallen.
+  - **Unsichtbar zur Laufzeit:** Legt fest, dass das Steuerelement zur Laufzeit unsichtbar ist. Sie können unsichtbare Steuerelemente verwenden, um Vorgänge im Hintergrund auszuführen, z. B. Das Auslösen von Ereignissen in zeitgesteuerten Intervallen.
 
-   - **Verhält sich wie Schaltfläche**: Legt das OLEMISC_ACTSLIKEBUTTON-Bit in der [OLEMISC](/windows/win32/api/oleidl/ne-oleidl-olemisc) -Enumeration fest, damit ein Steuerelement wie eine Schaltfläche ausgeführt werden kann. Wenn der Container die Client Site des Steuer Elements als Standard Schaltfläche markiert hat, ermöglicht die Auswahl dieser Option dem Schaltflächen-Steuerelement, sich selbst als Standard Schaltfläche anzuzeigen, indem es sich mit einem dickeren Rahmen zeichnet. Weitere Informationen finden Sie unter [CComControlBase:: GetAmbientDisplayAsDefault](../../atl/reference/ccomcontrolbase-class.md#getambientdisplayasdefault) .
+  - **Funktioniert wie die Schaltfläche**: Legt das OLEMISC_ACTSLIKEBUTTON Bit in der [OLEMISC-Enumeration](/windows/win32/api/oleidl/ne-oleidl-olemisc) fest, damit ein Steuerelement wie eine Schaltfläche funktioniert. Wenn der Container die Clientsite des Steuerelements als Standardschaltfläche markiert hat, ermöglicht die Auswahl dieser Option, dass sich das Schaltflächensteuerelement selbst als Standardschaltfläche anzeigen kann, indem es sich selbst mit einem dickeren Rahmen zeichnet. Weitere Informationen finden Sie unter [CComControlBase::GetAmbientDisplayAsDefault.](../../atl/reference/ccomcontrolbase-class.md#getambientdisplayasdefault)
 
-   - **Verhält sich wie die Bezeichnung**: Legt das OLEMISC_ACTSLIKELABEL-Bit in der OLEMISC-Enumeration fest, damit ein Steuerelement die systemeigene Bezeichnung des Containers ersetzen kann. Der Container bestimmt, was mit diesem Flag geschehen soll, sofern nichts.
+  - **Funktioniert wie label**: Legt das OLEMISC_ACTSLIKELABEL Bit in der OLEMISC-Enumeration fest, damit ein Steuerelement die systemeigene Bezeichnung des Containers ersetzen kann. Der Container bestimmt, was mit diesem Flag zu tun ist, wenn überhaupt.
 
 - **Andere**
 
-   Legt zusätzliche Verhaltens Optionen für das-Steuerelement fest.
+   Legt zusätzliche Verhaltensoptionen für das Steuerelement fest.
 
-   - **Normalisierter DC**: Legt fest, dass das Steuerelement einen normalisierten Gerätekontext erstellt, wenn es aufgerufen wird, um sich selbst zu zeichnen. Durch diese Aktion wird die Darstellung des Steuer Elements standardisiert, aber das Zeichnen ist weniger effizient.
+  - **Normalisierter Domänencontroller**: Legt fest, dass das Steuerelement einen normalisierten Gerätekontext erstellt, wenn es aufgerufen wird, sich selbst zu zeichnen. Diese Aktion standardisiert die Darstellung des Steuerelements, macht das Zeichnen jedoch weniger effizient.
 
-   - **Nur Fenster**: Gibt an, dass das Steuerelement nicht fensterlose sein darf. Wenn Sie diese Option nicht auswählen, wird das Steuerelement in Containern, die fensterlose Objekte unterstützen, automatisch fensterloser angezeigt, und es wird automatisch in Containern angezeigt, die keine fensterlosen Objekte unterstützen. Wenn Sie diese Option auswählen, wird auch in Containern, die fensterlose Objekte unterstützen, das Fenster des Steuer Elements angezeigt.
+  - **Nur Fenster**: Gibt an, dass das Steuerelement nicht fensterlos sein kann. Wenn Sie diese Option nicht auswählen, wird das Steuerelement in Containern, die fensterlose Objekte unterstützen, automatisch fensterlos und automatisch in Containern angezeigt, die keine fensterlosen Objekte unterstützen. Wenn Sie diese Option auswählen, muss das Steuerelement auch in Containern, die fensterlose Objekte unterstützen, in einem Fenster gefenstert werden.
 
-   - **Insertable**: Wählen Sie diese Option aus, damit das Steuerelement im Dialogfeld **Objekt einfügen** von Anwendungen wie Word und Excel angezeigt wird. Das Steuerelement kann dann von jeder Anwendung eingefügt werden, die eingebettete Objekte in diesem Dialogfeld unterstützt.
+  - **Einfügung**: Wählen Sie diese Option aus, damit das Steuerelement im Dialogfeld **Objekt** einfügen von Anwendungen wie Word und Excel angezeigt wird. Das Steuerelement kann dann von jeder Anwendung eingefügt werden, die eingebettete Objekte über dieses Dialogfeld unterstützt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[ATL-Steuerelement-Assistent](../../atl/reference/atl-control-wizard.md)<br/>
-[SUBEDIT-Beispiel: SuperClasses a Standard Windows-Steuerelement](https://github.com/Microsoft/VCSamples/tree/master/VC2008Samples/ATL/Controls/SubEdit)
+[ATL-Steuerungs-Assistent](../../atl/reference/atl-control-wizard.md)<br/>
+[SUBEDIT-Beispiel: Superclasses ein Standard-Windows-Steuerelement](https://github.com/Microsoft/VCSamples/tree/master/VC2008Samples/ATL/Controls/SubEdit)

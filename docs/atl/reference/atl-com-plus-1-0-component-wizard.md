@@ -4,12 +4,12 @@ ms.date: 05/08/2019
 helpviewer_keywords:
 - ATL projects, adding components
 ms.assetid: 11670681-8671-4122-96a4-2e52f8dadce0
-ms.openlocfilehash: eaecd0d4e6e2b024ce3312719e7104298d3f9a66
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: d5c0c0c8edb6b698d3d8f50736121d987af98492
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075280"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321693"
 ---
 # <a name="atl-com-10-component-wizard"></a>ATL COM+ 1.0 Komponenten-Assistent
 
@@ -43,7 +43,7 @@ Geben Sie die Namen für das Objekt, die Schnittstelle und die Klassen an, das b
 
    Der Assistent überschreibt Dateien nicht. Wenn Sie den Namen einer vorhandenen Datei auswählen, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendeklaration an die Inhalte der Datei angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Datei anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
 
-- **Klasse**
+- **Class**
 
    Legt den Namen der zu erstellenden Klasse fest. Dieser Name basiert auf dem Namen, den Sie unter **Kurzname** angeben. Dem Namen ist „C“ vorangestellt, das typische Präfix für einen Klassennamen.
 
@@ -72,7 +72,7 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
    Legt den Namen der Komponentenklasse fest, die eine Liste der vom Objekt unterstützten Schnittstellen enthält.
 
 > [!NOTE]
->  Wenn Sie Ihr Projekt unter Verwendung von Attributen erstellen oder auf dieser Seite des Assistenten angeben, dass die COM+ 1.0-Komponente Attribute verwendet, können Sie diese Option nicht ändern, da ATL das `coclass`-Attribut nicht enthält.
+> Wenn Sie Ihr Projekt unter Verwendung von Attributen erstellen oder auf dieser Seite des Assistenten angeben, dass die COM+ 1.0-Komponente Attribute verwendet, können Sie diese Option nicht ändern, da ATL das `coclass`-Attribut nicht enthält.
 
 - **Typ**
 
@@ -82,12 +82,12 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
 
    Legt die Schnittstelle fest, die Sie für Ihr Objekt erstellen. Diese Schnittstelle enthält Ihre benutzerdefinierten Methoden.
 
-- **ProgID**
+- **Progid**
 
    Legt den Namen fest, den Container anstelle der CLSID des Objekts verwenden können.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [ATL COM+ 1.0-Komponente](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)

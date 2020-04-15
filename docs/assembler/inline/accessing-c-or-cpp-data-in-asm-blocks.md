@@ -7,26 +7,26 @@ helpviewer_keywords:
 - __asm keyword [C++], data members
 - structure types in __asm blocks
 ms.assetid: e99f5a28-0381-4090-8ece-6af8f2436a49
-ms.openlocfilehash: 1f56cc5c049c1501ea09c76f31be3ab9dea5ed10
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: b4341f87226118906749dcdb18b9227e68be6a23
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62167607"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318088"
 ---
-# <a name="accessing-c-or-c-data-in-asm-blocks"></a>Zugreifen auf C- oder C++-Daten in __asm-Blöcken
+# <a name="accessing-c-or-c-data-in-__asm-blocks"></a>Zugreifen auf C- oder C++-Daten in __asm-Blöcken
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Ein praktisches Feature der Inlineassembly ist die Möglichkeit, die auf C- oder C++-Variablen anhand des Namens verweisen. Ein `__asm` Block verweisen auf die Symbole, einschließlich der Variablennamen, die im Gültigkeitsbereich befinden, in der Block angezeigt wird. Z. B. wenn die C-Variable `var` befindet sich im Bereich, der die Anweisung
+Eine große Bequemlichkeit der Inline-Assembly ist die Möglichkeit, auf C- oder C++-Variablen nach Namen zu verweisen. Ein `__asm` Block kann auf alle Symbole verweisen, einschließlich Variablennamen, die sich im Bereich befinden, in dem der Block angezeigt wird. Wenn z. B. `var` die Variable C im Gültigkeitsbereich ist, wird die Anweisung
 
 ```cpp
 __asm mov eax, var
 ```
 
-Speichert den Wert des `var` im "eax".
+speichert den `var` Wert von in EAX.
 
-Wenn eine Klasse, Struktur oder union-Member einen eindeutigen Namen hat, eine `__asm` Block kann mit nur den Membernamen, ohne die Variable verweisen oder `typedef` Namen vor dem Punkt (**.**) Operator. Wenn Sie der Namen des Members nicht eindeutig ist, jedoch muss man eine Variable oder `typedef` Name unmittelbar vor dem Punkt-Operator. Z. B. die Strukturtypen in der folgenden Beispiel-Freigabe `same_name` als ihren Membernamen:.
+Wenn eine Klasse, Struktur oder ein Union-Member einen eindeutigen Namen hat, kann ein `__asm` Block `typedef` nur mit dem Membernamen darauf verweisen, ohne die Variable oder den Namen vor dem Periodenoperator (**.**) anzugeben. Wenn der Membername jedoch nicht eindeutig ist, `typedef` müssen Sie eine Variable oder einen Namen unmittelbar vor dem Periodenoperator platzieren. Beispielsweise geben die Strukturtypen im `same_name` folgenden Beispiel die Freigabe als Membername:.
 
 Wenn Sie Variablen mit den Typen deklarieren
 
@@ -35,7 +35,7 @@ struct first_type hal;
 struct second_type oat;
 ```
 
-alle Verweise auf das Element `same_name` müssen den Namen den Variablen verwenden, da `same_name` ist nicht eindeutig. Aber das Element `weasel` einen eindeutigen Namen hat, sodass Sie nur die Elementnamen mit verweisen können:
+Alle Verweise auf `same_name` den Member müssen `same_name` den Variablennamen verwenden, da er nicht eindeutig ist. Das Mitglied `weasel` hat jedoch einen eindeutigen Namen, sodass Sie nur mit seinem Mitgliedsnamen darauf verweisen können:
 
 ```cpp
 // InlineAssembler_Accessing_C_asm_Blocks.cpp
@@ -68,11 +68,11 @@ int main()
 }
 ```
 
-Beachten Sie, dass das Auslassen der Variablenname einfach Schreiben von Code aus Gründen der benutzerfreundlichkeit. Die gleiche Assemblyanweisungen generiert werden, und zwar unabhängig davon, ob der Variable Name vorhanden ist.
+Beachten Sie, dass das Weglassen des Variablennamens lediglich eine Codierungs-Komfort ist. Es werden dieselben Assemblyanweisungen generiert, unabhängig davon, ob der Variablenname vorhanden ist oder nicht.
 
-Sie können Datenelemente in C++ ohne Berücksichtigung der zugriffseinschränkungen zugreifen. Sie können keine Member jedoch Funktionen aufrufen.
+Sie können ohne Rücksicht auf Zugriffsbeschränkungen auf Datenmember in C++ zugreifen. Sie können jedoch keine Memberfunktionen aufrufen.
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

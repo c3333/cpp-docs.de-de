@@ -15,19 +15,19 @@ f1_keywords:
 helpviewer_keywords:
 - CWorkerThread class
 ms.assetid: be79a832-1345-4a36-a13e-a406cc65286f
-ms.openlocfilehash: f1aa76514b98bbf12f8e516d3d54f68e8ef4dd7d
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 05e6b432d44927fa7e276792643e29c80c42d822
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423141"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330210"
 ---
 # <a name="cworkerthread-class"></a>CWorkerThread-Klasse
 
-Diese Klasse erstellt einen Arbeits Thread oder verwendet einen vorhandenen Thread, wartet auf ein oder mehrere Kernel Objekt Handles und führt eine angegebene Client Funktion aus, wenn eines der Handles signalisiert wird.
+Diese Klasse erstellt einen Arbeitsthread oder verwendet einen vorhandenen, wartet auf ein oder mehrere Kernelobjekthandles und führt eine angegebene Clientfunktion aus, wenn eines der Handles signalisiert wird.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,63 +38,63 @@ class CWorkerThread
 
 ### <a name="parameters"></a>Parameter
 
-*Thread Merkmale*<br/>
-Die Klasse, die die Thread Erstellungs Funktion bereitstellt, z. [b. crtthreadmerkmalen](../../atl/reference/crtthreadtraits-class.md) oder [Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md).
+*ThreadTraits*<br/>
+Die Klasse, die die Threaderstellungsfunktion bereitstellt, z. B. [CRTThreadTraits](../../atl/reference/crtthreadtraits-class.md) oder [Win32ThreadTraits](../../atl/reference/win32threadtraits-class.md).
 
 ## <a name="members"></a>Member
 
 ### <a name="protected-structures"></a>Geschützte Strukturen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`WorkerClientEntry`||
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CWorkerThread:: CWorkerThread](#cworkerthread)|Der Konstruktor für den Arbeits Thread.|
-|[CWorkerThread:: ~ CWorkerThread](#dtor)|Der Dekonstruktor für den Arbeits Thread.|
+|[CWorkerThread::CWorkerThread](#cworkerthread)|Der Konstruktor für den Arbeitsthread.|
+|[CWorkerThread::'CWorkerThread](#dtor)|Der Destruktor für den Arbeitsthread.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CWorkerThread:: addhandle](#addhandle)|Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, das Handle eines wabbaren Objekts hinzufügen.|
-|[CWorkerThread:: addTIMER](#addtimer)|Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, einen periodischen, aufnutzbaren Timer hinzufügen.|
-|[CWorkerThread:: getthreadhandle](#getthreadhandle)|Mit dieser Methode können Sie das Thread Handle des Arbeitsthreads abrufen.|
-|[CWorkerThread:: getthreadid](#getthreadid)|Mit dieser Methode können Sie die Thread-ID des Arbeitsthreads abrufen.|
-|[CWorkerThread:: Initialize](#initialize)|Ruft diese Methode auf, um den Arbeits Thread zu initialisieren.|
-|[CWorkerThread:: removehandle](#removehandle)|Mit dieser Methode können Sie ein Handle aus der Liste der aufnutzbaren Objekte entfernen.|
-|[CWorkerThread:: Shutdown](#shutdown)|Mit dieser Methode können Sie den Arbeits Thread beenden.|
+|[CWorkerThread::AddHandle](#addhandle)|Rufen Sie diese Methode auf, um der Liste, die vom Arbeitsthread verwaltet wird, das Handle eines abwartenden Objekts hinzuzufügen.|
+|[CWorkerThread::AddTimer](#addtimer)|Rufen Sie diese Methode auf, um der Liste, die vom Arbeitsthread verwaltet wird, einen periodischen, abprüfbaren Timer hinzuzufügen.|
+|[CWorkerThread::GetThreadHandle](#getthreadhandle)|Rufen Sie diese Methode auf, um das Threadhandle des Arbeitsthreads abzurufen.|
+|[CWorkerThread::GetThreadId](#getthreadid)|Rufen Sie diese Methode auf, um die Thread-ID des Arbeitsthreads abzurufen.|
+|[CWorkerThread::Initialisieren](#initialize)|Rufen Sie diese Methode auf, um den Arbeitsthread zu initialisieren.|
+|[CWorkerThread::RemoveHandle](#removehandle)|Rufen Sie diese Methode auf, um ein Handle aus der Liste der abwätbaren Objekte zu entfernen.|
+|[CWorkerThread::Shutdown](#shutdown)|Rufen Sie diese Methode auf, um den Arbeitsthread herunterzufahren.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 ### <a name="to-use-cworkerthread"></a>So verwenden Sie CWorkerThread
 
 1. Erstellen Sie eine Instanz dieser Klasse.
 
-1. [CWorkerThread:: Initialize](#initialize)aufruft.
+1. Aufrufen von [CWorkerThread::Initialize](#initialize).
 
-1. Ruft [CWorkerThread:: addhandle](#addhandle) mit dem Handle eines Kernel Objekts und einem Zeiger auf eine Implementierung von [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md)auf.
+1. Rufen Sie [CWorkerThread::AddHandle](#addhandle) mit dem Handle eines Kernelobjekts und einem Zeiger auf eine Implementierung von [IWorkerThreadClient](../../atl/reference/iworkerthreadclient-interface.md)auf.
 
    \- oder -
 
-   Ruft [CWorkerThread:: addTIMER](#addtimer) mit einem Zeiger auf eine Implementierung von [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md)auf.
+   Rufen Sie [CWorkerThread::AddTimer](#addtimer) mit einem Zeiger auf eine Implementierung von [IWorkerThreadClient](../../atl/reference/iworkerthreadclient-interface.md)auf.
 
-1. Implementieren Sie [iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) , um eine Aktion auszuführen, wenn das Handle oder der Timer signalisiert wird.
+1. Implementieren Sie [IWorkerThreadClient::Ausführen,](../../atl/reference/iworkerthreadclient-interface.md#execute) um Aktionen auszuführen, wenn das Handle oder der Timer signalisiert wird.
 
-1. Um ein Objekt aus der Liste der aufnutzbaren Objekte zu entfernen, nennen Sie [CWorkerThread:: removehandle](#removehandle).
+1. Um ein Objekt aus der Liste der abwätbaren Objekte zu entfernen, rufen Sie [CWorkerThread::RemoveHandle](#removehandle)auf.
 
-1. Um den Thread zu beenden, nennen Sie [CWorkerThread:: Shutdown](#shutdown).
+1. Um den Thread zu beenden, rufen Sie [CWorkerThread::Shutdown](#shutdown)auf.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** atlutil. h
+**Kopfzeile:** atlutil.h
 
-##  <a name="addhandle"></a>CWorkerThread:: addhandle
+## <a name="cworkerthreadaddhandle"></a><a name="addhandle"></a>CWorkerThread::AddHandle
 
-Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, das Handle eines wabbaren Objekts hinzufügen.
+Rufen Sie diese Methode auf, um der Liste, die vom Arbeitsthread verwaltet wird, das Handle eines abwartenden Objekts hinzuzufügen.
 
 ```
 HRESULT AddHandle(
@@ -105,26 +105,26 @@ HRESULT AddHandle(
 
 ### <a name="parameters"></a>Parameter
 
-*hobject*<br/>
-Das Handle für ein Objekt, das nicht mehr nutzbar ist.
+*hObject*<br/>
+Das Handle für ein abwartendes Objekt.
 
-*pclient*<br/>
-Der Zeiger auf die [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md) -Schnittstelle auf dem Objekt, das aufgerufen werden soll, wenn das Handle signalisiert wird.
+*pClient*<br/>
+Der Zeiger auf die [IWorkerThreadClient-Schnittstelle](../../atl/reference/iworkerthreadclient-interface.md) für das Objekt, das aufgerufen werden soll, wenn der Handle signalisiert wird.
 
-*dwparam*<br/>
-Der Parameter, der an [iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) übergeben werden soll, wenn das Handle signalisiert wird.
+*dwParam*<br/>
+Der Parameter, der an [IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) übergeben werden soll, wenn das Handle signalisiert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-[Iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pclient* aufgerufen, wenn das Handle, *hobject*, signalisiert wird.
+[IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pClient* aufgerufen, wenn das Handle *hObject*signalisiert wird.
 
-##  <a name="addtimer"></a>CWorkerThread:: addTIMER
+## <a name="cworkerthreadaddtimer"></a><a name="addtimer"></a>CWorkerThread::AddTimer
 
-Mit dieser Methode können Sie der Liste, die vom Arbeits Thread verwaltet wird, einen periodischen, aufnutzbaren Timer hinzufügen.
+Rufen Sie diese Methode auf, um der Liste, die vom Arbeitsthread verwaltet wird, einen periodischen, abprüfbaren Timer hinzuzufügen.
 
 ```
 HRESULT AddTimer(
@@ -136,29 +136,29 @@ HRESULT AddTimer(
 
 ### <a name="parameters"></a>Parameter
 
-*dwinterval*<br/>
+*dwInterval*<br/>
 Gibt den Zeitraum des Timers in Millisekunden an.
 
-*pclient*<br/>
-Der Zeiger auf die [iworkerthreadclient](../../atl/reference/iworkerthreadclient-interface.md) -Schnittstelle auf dem Objekt, das aufgerufen werden soll, wenn das Handle signalisiert wird.
+*pClient*<br/>
+Der Zeiger auf die [IWorkerThreadClient-Schnittstelle](../../atl/reference/iworkerthreadclient-interface.md) für das Objekt, das aufgerufen werden soll, wenn der Handle signalisiert wird.
 
-*dwparam*<br/>
-Der Parameter, der an [iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) übergeben werden soll, wenn das Handle signalisiert wird.
+*dwParam*<br/>
+Der Parameter, der an [IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) übergeben werden soll, wenn das Handle signalisiert wird.
 
-*phtimer*<br/>
-vorgenommen Adresse der Handle-Variablen, die bei Erfolg das Handle für den neu erstellten Timer empfängt.
+*phTimer*<br/>
+[out] Adresse der HANDLE-Variablen, die bei Erfolg das Handle an den neu erstellten Timer empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-[Iworkerthreadclient:: Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pclient* aufgerufen, wenn der Timer signalisiert wird.
+[IWorkerThreadClient::Execute](../../atl/reference/iworkerthreadclient-interface.md#execute) wird über *pClient* aufgerufen, wenn der Timer signalisiert wird.
 
-Übergeben Sie das Timer-Handle von *phtimer* an [CWorkerThread:: removehandle](#removehandle) , um den Timer zu schließen.
+Übergeben Sie das Timerhandle von *phTimer* an [CWorkerThread::RemoveHandle,](#removehandle) um den Timer zu schließen.
 
-##  <a name="cworkerthread"></a>CWorkerThread:: CWorkerThread
+## <a name="cworkerthreadcworkerthread"></a><a name="cworkerthread"></a>CWorkerThread::CWorkerThread
 
 Der Konstruktor.
 
@@ -166,7 +166,7 @@ Der Konstruktor.
 CWorkerThread() throw();
 ```
 
-##  <a name="dtor"></a>CWorkerThread:: ~ CWorkerThread
+## <a name="cworkerthreadcworkerthread"></a><a name="dtor"></a>CWorkerThread::'CWorkerThread
 
 Der Destruktor.
 
@@ -174,13 +174,13 @@ Der Destruktor.
 ~CWorkerThread() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft [CWorkerThread:: Shutdown](#shutdown)auf.
+Ruft [CWorkerThread::Shutdown](#shutdown)auf.
 
-##  <a name="getthreadhandle"></a>CWorkerThread:: getthreadhandle
+## <a name="cworkerthreadgetthreadhandle"></a><a name="getthreadhandle"></a>CWorkerThread::GetThreadHandle
 
-Mit dieser Methode können Sie das Thread Handle des Arbeitsthreads abrufen.
+Rufen Sie diese Methode auf, um das Threadhandle des Arbeitsthreads abzurufen.
 
 ```
 HANDLE GetThreadHandle() throw();
@@ -188,11 +188,11 @@ HANDLE GetThreadHandle() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Thread handle oder NULL zurück, wenn der Arbeits Thread nicht initialisiert wurde.
+Gibt das Threadhandle oder NULL zurück, wenn der Arbeitsthread nicht initialisiert wurde.
 
-##  <a name="getthreadid"></a>CWorkerThread:: getthreadid
+## <a name="cworkerthreadgetthreadid"></a><a name="getthreadid"></a>CWorkerThread::GetThreadId
 
-Mit dieser Methode können Sie die Thread-ID des Arbeitsthreads abrufen.
+Rufen Sie diese Methode auf, um die Thread-ID des Arbeitsthreads abzurufen.
 
 ```
 DWORD GetThreadId() throw();
@@ -200,11 +200,11 @@ DWORD GetThreadId() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Thread-ID oder NULL zurück, wenn der Arbeits Thread nicht initialisiert wurde.
+Gibt die Thread-ID oder NULL zurück, wenn der Arbeitsthread nicht initialisiert wurde.
 
-##  <a name="initialize"></a>CWorkerThread:: Initialize
+## <a name="cworkerthreadinitialize"></a><a name="initialize"></a>CWorkerThread::Initialisieren
 
-Ruft diese Methode auf, um den Arbeits Thread zu initialisieren.
+Rufen Sie diese Methode auf, um den Arbeitsthread zu initialisieren.
 
 ```
 HRESULT Initialize() throw();
@@ -214,24 +214,24 @@ HRESULT Initialize(CWorkerThread<ThreadTraits>* pThread) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pThread*<br/>
-Ein vorhandener Arbeits Thread.
+*Pthread*<br/>
+Ein vorhandener Arbeitsthread.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sollte aufgerufen werden, um das Objekt nach der Erstellung oder nach einem Aufruf von [CWorkerThread:: Shutdown](#shutdown)zu initialisieren.
+Diese Methode sollte aufgerufen werden, um das Objekt nach der Erstellung oder nach einem Aufruf von [CWorkerThread::Shutdown](#shutdown)zu initialisieren.
 
-Wenn zwei oder mehr `CWorkerThread` Objekten denselben Arbeits Thread verwenden, initialisieren Sie einen von Ihnen, ohne Argumente zu übergeben, und übergeben Sie dann einen Zeiger auf das Objekt an die `Initialize` Methoden der anderen. Die-Objekte, die mit dem-Zeiger initialisiert werden, sollten vor dem-Objekt heruntergefahren werden, um Sie zu initialisieren.
+Wenn zwei oder `CWorkerThread` mehr Objekte denselben Arbeitsthread verwenden, initialisieren Sie eines von ihnen, ohne `Initialize` Argumente zu übergeben, und übergeben Sie dann einen Zeiger an dieses Objekt an die Methoden der anderen. Die mit dem Zeiger initialisierten Objekte sollten vor dem Objekt, das zum Initialisieren verwendet wird, heruntergefahren werden.
 
-Informationen dazu, wie sich das Verhalten dieser Methode ändert, wenn Sie mithilfe eines Zeigers auf ein vorhandenes Objekt initialisiert wird, finden Sie unter [CWorkerThread:: Shutdown](#shutdown) .
+Unter [CWorkerThread::Shutdown](#shutdown) finden Sie Informationen darüber, wie sich das Verhalten dieser Methode ändert, wenn sie mithilfe eines Zeigers auf ein vorhandenes Objekt initialisiert wird.
 
-##  <a name="removehandle"></a>CWorkerThread:: removehandle
+## <a name="cworkerthreadremovehandle"></a><a name="removehandle"></a>CWorkerThread::RemoveHandle
 
-Mit dieser Methode können Sie ein Handle aus der Liste der aufnutzbaren Objekte entfernen.
+Rufen Sie diese Methode auf, um ein Handle aus der Liste der abwätbaren Objekte zu entfernen.
 
 ```
 HRESULT RemoveHandle(HANDLE hObject) throw();
@@ -239,20 +239,20 @@ HRESULT RemoveHandle(HANDLE hObject) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*hobject*<br/>
-Das Handle, das entfernt werden soll.
+*hObject*<br/>
+Das zu entfernende Handle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Handle entfernt wird, wird [iworkerthreadclient:: CloseHandle](../../atl/reference/iworkerthreadclient-interface.md#closehandle) für das zugeordnete Objekt aufgerufen, das an [addhandle](#addhandle)weitergeleitet wurde. Wenn dieser Rückruf fehlschlägt, ruft `CWorkerThread` die Windows [CloseHandle](/windows/win32/api/handleapi/nf-handleapi-closehandle) -Funktion für das Handle auf.
+Wenn das Handle entfernt wird, wird [IWorkerThreadClient::CloseHandle](../../atl/reference/iworkerthreadclient-interface.md#closehandle) für das zugeordnete Objekt aufgerufen, das an [AddHandle](#addhandle)übergeben wurde. Wenn dieser Aufruf `CWorkerThread` fehlschlägt, wird die Windows [CloseHandle-Funktion](/windows/win32/api/handleapi/nf-handleapi-closehandle) für das Handle aufrufen.
 
-##  <a name="shutdown"></a>CWorkerThread:: Shutdown
+## <a name="cworkerthreadshutdown"></a><a name="shutdown"></a>CWorkerThread::Shutdown
 
-Mit dieser Methode können Sie den Arbeits Thread beenden.
+Rufen Sie diese Methode auf, um den Arbeitsthread herunterzufahren.
 
 ```
 HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
@@ -260,22 +260,22 @@ HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*dwwait*<br/>
-Die Zeit in Millisekunden, die auf das Herunterfahren des Arbeitsthreads gewartet werden soll. ATL_WORKER_THREAD_WAIT standardmäßig 10 Sekunden. Falls erforderlich, können Sie einen eigenen Wert für dieses Symbol definieren, bevor Sie "atlutil. h" einschließen.
+*dwWait*<br/>
+Die Zeit in Millisekunden, die auf das Herunterfahren des Arbeitsthreads gewartet werden soll. ATL_WORKER_THREAD_WAIT beträgt standardmäßig 10 Sekunden. Bei Bedarf können Sie einen eigenen Wert für dieses Symbol definieren, bevor Sie atlutil.h einschließen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen Fehler HRESULT bei einem Fehler zurück, z. b. wenn der Timeout Wert, *dwwait*, überschritten wird.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück, z. B. wenn der Timeoutwert *dwWait*überschritten wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um das-Objekt wiederzuverwenden, rufen Sie [CWorkerThread:: Initialize](#initialize) nach dem Aufruf dieser Methode auf.
+Um das Objekt wiederzuverwenden, rufen Sie [CWorkerThread::Initialize](#initialize) auf, nachdem Sie diese Methode aufgerufen haben.
 
-Beachten Sie, dass das Aufrufen von `Shutdown` für ein Objekt, das mit einem Zeiger auf ein anderes `CWorkerThread` Objekt initialisiert wird, keine Auswirkung hat und immer S_OK zurückgibt
+Beachten Sie, dass das Aufrufen `Shutdown` eines Objekts, das mit einem Zeiger auf ein anderes `CWorkerThread` Objekt initialisiert wurde, keine Auswirkungen hat und immer S_OK zurückgibt.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Defaultthreadmerkmalen](atl-typedefs.md#defaultthreadtraits)<br/>
+[DefaultThreadTraits](atl-typedefs.md#defaultthreadtraits)<br/>
 [Klassen](../../atl/reference/atl-classes.md)<br/>
 [Multithreading: Erstellen von Arbeitsthreads](../../parallel/multithreading-creating-worker-threads.md)<br/>
 [IWorkerThreadClient-Schnittstelle](../../atl/reference/iworkerthreadclient-interface.md)

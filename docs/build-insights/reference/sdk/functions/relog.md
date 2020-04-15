@@ -1,6 +1,6 @@
 ---
-title: Erneut aufzuzeichnen
-description: Die C++ Funktionsreferenz für den Build Insights SDK-Relog.
+title: Relog
+description: Der C++ Build Insights SDK Relog-Funktionsverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 1ce09101deebd957de4b9305762dc37f38b53f4e
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 28b290d2bf2880ce2f534fa1cd91750890e2fead
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334283"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323781"
 ---
-# <a name="relog"></a>Erneut aufzuzeichnen
+# <a name="relog"></a>Relog
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Mit der `Relog`-Funktion werden MSVC-Ereignisse aus einer etw-Ablauf Verfolgung (Event Tracing for Windows, Ereignis Ablauf Verfolgung für Windows) gelesen und in eine neue, geänderte etw-Ablauf Verfolgung geschrieben.
+Die `Relog` Funktion wird verwendet, um MSVC-Ereignisse aus einer Ereignisablaufverfolgung für Windows (ETW) zu lesen und in eine neue, geänderte ETW-Ablaufverfolgung zu schreiben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -55,38 +55,38 @@ RESULT_CODE Relog(
 
 ### <a name="parameters"></a>Parameter
 
-*Tanalyzergroupmembers* -\
+*TAnalyzerGroupMembers*\
 Dieser Parameter wird immer abgeleitet.
 
-*Treloggergroupmembers* -\
+*TReloggerGroupMitglieder*\
 Dieser Parameter wird immer abgeleitet.
 
-*inputlogfile* -\
-Die Eingabe-etw-Ablauf Verfolgung, von der Ereignisse gelesen werden sollen.
+*inputLogFile*\
+Die Eingabe-ETW-Ablaufverfolgung, aus der Sie Ereignisse lesen möchten.
 
-*outputlogfile* -\
+*outputLogFile*\
 Die Datei, in die die neuen Ereignisse geschrieben werden sollen.
 
-" *numofanalysispasses* "\
-Die Anzahl der an der Eingabe Ablauf Verfolgung zu testenden Analysen. Die Ablauf Verfolgung wird einmal pro Analyse Durchlauf durch die angegebene Analysegruppe weitergeleitet.
+*numberOfAnalysisPasses*\
+Die Anzahl der Analysedurchläufe, die für die Eingabeablaufverfolgung ausgeführt werden sollen. Die Ablaufverfolgung wird einmal pro Analysedurchlauf durch die bereitgestellte Analysegruppe geleitet.
 
-*systemeventsretentionflags* -\
-Eine Bitmaske, die angibt, welche System-ETW-Ereignisse in der protokollierten Ablauf Verfolgung aufbewahrt werden sollen. Weitere Informationen finden Sie unter [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](../other-types/relog-retention-system-event-flags-constants.md).
+*systemEventsRetentionFlags*\
+Eine Bitmaske, die angibt, welche System-ETW-Ereignisse in der erneut protokollierten Ablaufverfolgung beibehalten werden sollen. Weitere Informationen finden Sie unter [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](../other-types/relog-retention-system-event-flags-constants.md).
 
-*analyzergroup* -\
-Die Analyzer-Gruppe, die für die Analysephase der erneuten Protokollierungs Sitzung verwendet wird. Rufen Sie [makestaticanalyzergroup](make-static-analyzer-group.md) auf, um eine Analysegruppe zu erstellen. Wenn Sie eine dynamische Analysegruppe verwenden möchten, die von [makedynamicanalyzergroup](make-dynamic-analyzer-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in einer statischen Analysegruppe, indem Sie die Adresse an `MakeStaticAnalyzerGroup`übergeben.
+*analyzerGroup*\
+Die Analysegruppe, die für die Analysephase der Relogging-Sitzung verwendet wird. Rufen Sie [MakeStaticAnalyzerGroup](make-static-analyzer-group.md) auf, um eine Analyzer-Gruppe zu erstellen. Um eine dynamische Analysatorgruppe zu verwenden, die von [MakeDynamicAnalyzerGroup](make-dynamic-analyzer-group.md)abgerufen wurde, kapseln Sie sie zunächst in einer statischen Analysatorgruppe ein, indem Sie ihre Adresse an `MakeStaticAnalyzerGroup`übergeben.
 
-*reloggergroup* -\
-Die der reloggersitzung-Gruppe, die Ereignisse in der in *outputlogfile*angegebenen Ablauf Verfolgungs Datei erneut protokolliert. Rufen Sie [makestatikreloggergroup](make-static-relogger-group.md) auf, um eine der reloggersitzung-Gruppe zu erstellen. Wenn Sie eine dynamische der reloggersitzung-Gruppe verwenden möchten, die von [makedynamideloggergroup](make-dynamic-relogger-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in eine statische der reloggersitzung-Gruppe, indem Sie die Adresse an `MakeStaticReloggerGroup`übergeben.
+*reloggerGroup*\
+Die Reloggergruppe, die Ereignisse in die in *outputLogFile*angegebene Ablaufverfolgungsdatei neu protokolliert. Rufen Sie [MakeStaticReloggerGroup](make-static-relogger-group.md) auf, um eine Reloggergruppe zu erstellen. Um eine dynamische Reloggergruppe zu verwenden, die von [MakeDynamicReloggerGroup](make-dynamic-relogger-group.md)abgerufen wurde, kapseln `MakeStaticReloggerGroup`Sie sie zunächst in einer statischen Reloggergruppe ein, indem Sie ihre Adresse an übergeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ### <a name="remark"></a>Anmerkung
 
-Die Eingabe Ablauf Verfolgung wird durch die "Analyzer"-Gruppe " *anzahlungsanalysispasses* " geleitet. Es gibt keine ähnliche Option für die erneute Protokollierung. Die Ablauf Verfolgung wird nur einmal über die Gruppe der reloggersitzung übergeben, nachdem alle Analyse Durchläufen vollständig sind.
+Die Eingabeablaufverfolgung wird durch die *Analyzer-GruppenanzahlOfAnalysisPasses-Zeiten* übergeben. Es gibt keine ähnliche Option für das Erneuteinloggen von Durchläufen. Die Spur wird durch die Reloggergruppe nur einmal übergeben, nachdem alle Analysedurchläufe abgeschlossen sind.
 
-Die erneute Protokollierung von System Ereignissen wie CPU-Beispielen aus einer der reloggersitzung-Klasse wird nicht unterstützt. Verwenden Sie den Parameter " *systemeventsretentionflags* ", um zu entscheiden, welche Systemereignisse in der Ausgabe Ablauf Verfolgung aufbewahrt werden sollen.
+Das Relogging von Systemereignissen wie CPU-Samples innerhalb einer Reloggerklasse wird nicht unterstützt. Verwenden Sie den Parameter *systemEventsRetentionFlags,* um zu entscheiden, welche Systemereignisse in der Ausgabeablaufverfolgung beibehalten werden sollen.
 
 ::: moniker-end

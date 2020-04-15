@@ -1,16 +1,16 @@
 ---
-title: 'Vorgehensweise: C++-Projekteigenschaften und Ziele zu ändern, ohne die Projektdatei'
+title: 'Gewusst wie: Ändern von C++-Projekteigenschaften und -zielen, ohne die Projektdatei zu ändern'
 ms.date: 11/28/2018
 helpviewer_keywords:
 - project properties [C++], modifying outside project file
-ms.openlocfilehash: ad527d8ee69a1786be7d325571f9c9ac4f9a8574
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 72107b572e35f222c0b03959e0edd2d23bd0130a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62273338"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328462"
 ---
-# <a name="how-to-modify-c-project-properties-and-targets-without-changing-the-project-file"></a>Vorgehensweise: C++-Projekteigenschaften und Ziele zu ändern, ohne die Projektdatei
+# <a name="how-to-modify-c-project-properties-and-targets-without-changing-the-project-file"></a>Gewusst wie: Ändern von C++-Projekteigenschaften und -zielen, ohne die Projektdatei zu ändern
 
 Sie können Projekteigenschaften und -ziele über die MSBuild-Eingabeaufforderung überschreiben, ohne die Projektdatei zu ändern. Dies ist nützlich, wenn Sie einige Eigenschaften vorübergehend oder gelegentlich anwenden möchten. MSBuild-Kenntnisse sind hierbei von Vorteil. Weitere Informationen finden Sie unter [MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild).
 

@@ -1,6 +1,6 @@
 ---
-title: Makestatikreloggergroup
-description: Die C++ Funktionsreferenz für das Build Insights SDK makestatikreloggergroup.
+title: MakeStaticReloggerGroup
+description: Die C++ Build Insights SDK MakeStaticReloggerGroup-Funktionsreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 06927af89b16d9de1148e555868dd2022c59b171
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 75b638537cb8e0cdeeb5476a3f5277e8e90d9baf
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334385"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323914"
 ---
-# <a name="makestaticreloggergroup"></a>Makestatikreloggergroup
+# <a name="makestaticreloggergroup"></a>MakeStaticReloggerGroup
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MakeStaticReloggerGroup`-Funktion wird verwendet, um eine statische der reloggersitzung-Gruppe zu erstellen, die an Funktionen wie z. b. [relog](relog.md)übergeben werden kann. Mitglieder einer der reloggersitzung-Gruppe empfangen Ereignisse nacheinander von links nach rechts, bis alle Ereignisse in einer Ablauf Verfolgung verarbeitet wurden.
+Die `MakeStaticReloggerGroup` Funktion wird verwendet, um eine statische Reloggergruppe zu erstellen, die an Funktionen wie [Relog](relog.md)übergeben werden kann. Mitglieder einer Reloggergruppe empfangen Ereignisse nacheinander von links nach rechts, bis alle Ereignisse in einer Ablaufverfolgung verarbeitet wurden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,18 +36,18 @@ auto MakeStaticReloggerGroup(TReloggerPtrs... reloggers);
 
 ### <a name="parameters"></a>Parameter
 
-*Treloggerptrs* -\
+*TReloggerPtrs*\
 Dieser Parameter wird immer abgeleitet.
 
 *reloggers*\
-Ein Parameter Paket von [irelogger](../other-types/irelogger-class.md) -Zeigern, das in der statischen der reloggersitzung-Gruppe enthalten ist. Diese Zeiger können RAW, `std::unique_ptr`oder `std::shared_ptr`sein. [Ianalyzer](../other-types/ianalyzer-class.md) -Zeiger werden aufgrund einer Vererbungs Beziehung auch als `IRelogger` Zeiger betrachtet.
+Ein Parameterpaket mit [IRelogger-Zeigern,](../other-types/irelogger-class.md) das in der statischen Reloggergruppe enthalten ist. Diese Zeiger können roh, `std::unique_ptr`oder `std::shared_ptr`sein. [IAnalyzer-Zeiger](../other-types/ianalyzer-class.md) werden aufgrund `IRelogger` einer Vererbungsbeziehung auch als Zeiger betrachtet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine statische der reloggersitzung-Gruppe. Verwenden Sie das Schlüsselwort " **Auto** ", um den Rückgabewert aufzuzeichnen.
+Eine statische Reloggergruppe. Verwenden Sie das **Schlüsselwort auto,** um den Rückgabewert zu erfassen.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Anders als dynamische der reloggersitzung-Gruppen müssen die Mitglieder einer statischen der reloggersitzung-Gruppe zum Zeitpunkt der Kompilierung bekannt sein. Darüber hinaus enthält eine statische der reloggersitzung-Gruppe [irelogger](../other-types/irelogger-class.md) -Zeiger, die kein polymorphes Verhalten aufweisen. Wenn eine statische der reloggersitzung-Gruppe verwendet wird, um eine ETW-Ablauf Verfolgung (Event Tracing for Windows, Ereignis Ablauf Verfolgung für Windows) zu analysieren, werden Aufrufe der `IRelogger`-Schnittstelle immer in das Objekt aufgelöst, auf das das Gruppenelement der reloggersitzung Dieser Verlust von Flexibilität bietet die Möglichkeit, schnellere Ereignis Verarbeitungszeiten zu verursachen. Wenn die Mitglieder einer der reloggersitzung-Gruppe zum Zeitpunkt der Kompilierung nicht bekannt sein können oder wenn Sie polymorphe Verhalten auf den `IRelogger` Zeigern benötigen, sollten Sie die Verwendung einer dynamischen der reloggersitzung-Gruppe in Erwägung gezogen. Sie können eine dynamische der reloggersitzung-Gruppe verwenden, indem Sie stattdessen [makedynamicreloggergroup](make-dynamic-relogger-group.md) aufrufen.
+Im Gegensatz zu dynamischen Reloggergruppen müssen die Mitglieder einer statischen Reloggergruppe zur Kompilierungszeit bekannt sein. Darüber hinaus enthält eine statische Reloggergruppe [IRelogger-Zeiger,](../other-types/irelogger-class.md) die kein polymorphes Verhalten aufweisen. Wenn Sie eine statische Reloggergruppe zum Analysieren einer Ereignisablaufverfolgung für `IRelogger` Windows (ETW) verwenden, werden Aufrufe der Schnittstelle immer auf das Objekt aufgelöst, auf das direkt vom Reloggergruppenmitglied verwiesen wird. Dieser Verlust an Flexibilität bringt die Möglichkeit schnellerer Ereignisverarbeitungszeiten mit sich. Wenn die Mitglieder einer Reloggergruppe zum Zeitpunkt der Kompilierung nicht bekannt sind `IRelogger` oder wenn Sie polymorphes Verhalten für Ihre Zeiger benötigen, sollten Sie eine dynamische Reloggergruppe verwenden. Sie können eine dynamische Reloggergruppe verwenden, indem Sie stattdessen [MakeDynamicReloggerGroup](make-dynamic-relogger-group.md) aufrufen.
 
 ::: moniker-end
