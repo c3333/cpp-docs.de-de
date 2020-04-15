@@ -5,20 +5,20 @@ f1_keywords:
 - scoped_allocator/std::operator!=
 - scoped_allocator/std::operator==
 ms.assetid: 4dfe0805-cc6e-479f-887f-a1c164f73837
-ms.openlocfilehash: 071fc3b73cd3378b110d6d412bb7575e35a77478
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 45da89793c3f4ea131404fc3392413e7aea9ef3e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425172"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373378"
 ---
 # <a name="ltscoped_allocatorgt-operators"></a>&lt;scoped_allocator&gt;-Header
 
 |||
 |-|-|
-|[operator!=](#op_neq)|[operator==](#op_eq_eq)|
+|[Operator!=](#op_neq)|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
 
-## <a name="op_neq"></a> operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator!=
 
 Überprüft zwei `scoped_allocator_adaptor`-Objekte auf Ungleichheit.
 
@@ -31,17 +31,17 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `scoped_allocator_adaptor`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `scoped_allocator_adaptor`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `!(left == right)`
 
-## <a name="op_eq_eq"></a> operator==
+## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
 
 Überprüft zwei `scoped_allocator_adaptor`-Objekte auf Gleichheit.
 
@@ -54,10 +54,10 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
+*Links*\
 Das linke `scoped_allocator_adaptor`-Objekt.
 
-*Rechte*\
+*Richting*\
 Das rechte `scoped_allocator_adaptor`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert

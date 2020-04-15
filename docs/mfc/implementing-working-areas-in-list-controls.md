@@ -5,35 +5,35 @@ helpviewer_keywords:
 - list controls [MFC], working areas
 - working areas in list control [MFC]
 ms.assetid: fbbb356b-3359-4348-8603-f1cb114cadde
-ms.openlocfilehash: 01b166243c9032a113d46ff297b9f6e53429da21
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 91577203163247bd230fecb083cf1c50e2875b98
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62297215"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81377221"
 ---
 # <a name="implementing-working-areas-in-list-controls"></a>Implementieren von Arbeitsbereichen in Listensteuerelementen
 
-Standardmäßig ordnet einem Steuerelement alle Elemente in einer Weise Standardraster. Allerdings wird eine andere Methode unterstützt, arbeiten Bereiche, die die Listenelemente in rechteckige Gruppen angeordnet. Für ein Bild eines Steuerelements, das Arbeitsbereiche implementiert, finden Sie unter Verwendung Listenansicht-Steuerelemente im Windows SDK.
+Standardmäßig ordnet ein Listensteuerelement alle Elemente in einer Standardraster-Mode an. Eine andere Methode wird jedoch unterstützt, Arbeitsbereiche, die die Listenelemente in rechteckige Gruppen anordnen. Ein Abbild eines Listensteuerelements, das Arbeitsbereiche implementiert, finden Sie unter Verwenden von Listenansichtssteuerelementen im Windows SDK.
 
 > [!NOTE]
->  Arbeitsbereiche sind sichtbar, nur, wenn das Strukturelement-Steuerelement im Symbol "oder" kleines Symbol-Modus befindet. Alle aktuellen Arbeitsbereiche werden jedoch beibehalten, wenn die Ansicht in den Bericht oder eine Liste-Modus aktiviert ist.
+> Arbeitsbereiche sind nur sichtbar, wenn sich das Listensteuerelement im Symbol- oder kleinen Symbolmodus befindet. Alle aktuellen Arbeitsbereiche werden jedoch beibehalten, wenn die Ansicht in den Berichts- oder Listenmodus geschaltet wird.
 
-Arbeitsbereiche können verwendet werden, zum Anzeigen eines leeren Rahmens (auf die Links, oben und/oder rechts von den Elementen) oder dazu führen, dass eine horizontale Schiebeleiste angezeigt, wenn es normalerweise wäre nicht möglich. Eine weitere häufige Verwendung ist die Erstellung mehrerer Arbeitsbereiche auf die Elemente verschoben oder gelöscht werden können. Mit dieser Methode können Sie Bereiche erstellen, in einer einzigen Ansicht, die unterschiedliche Bedeutungen haben. Der Benutzer konnte klicken Sie dann die Elemente kategorisieren, indem Sie sie in einer anderen Region zu platzieren. Ein Beispiel hierfür wäre eine Ansicht eines Dateisystems, die einen Bereich für Dateien mit Lese-/Schreibzugriff und ein weiterer Bereich für schreibgeschützte Dateien aufweist. Wenn ein Element mit Datei in den schreibgeschützten Bereich verschoben wurden, wird es automatisch schreibgeschützt werden. Verschieben einer Datei im Bereich "schreibgeschützt" in den Bereich von Lese-/Schreibzugriff, würde die Datei Lese-/Schreibzugriff machen.
+Arbeitsbereiche können verwendet werden, um einen leeren Rahmen anzuzeigen (links, oben und/oder rechts von den Elementen) oder eine horizontale Bildlaufleiste anzuzeigen, wenn es normalerweise keinen gibt. Eine weitere häufige Verwendung besteht darin, mehrere Arbeitsbereiche zu erstellen, in die Elemente verschoben oder gelöscht werden können. Mit dieser Methode können Sie Bereiche in einer einzigen Ansicht erstellen, die unterschiedliche Bedeutungen haben. Der Benutzer kann die Elemente dann kategorisieren, indem er sie in einem anderen Bereich platziert. Ein Beispiel hierfür wäre eine Ansicht eines Dateisystems mit einem Bereich für Lese-/Schreibdateien und ein anderer Bereich für schreibgeschützte Dateien. Wenn ein Dateielement in den schreibgeschützten Bereich verschoben wird, wird es automatisch schreibgeschützt. Das Verschieben einer Datei aus dem schreibgeschützten Bereich in den Lese-/Schreibbereich würde die Datei zum Lesen/Schreiben bringen.
 
-`CListCtrl` stellt mehrere Memberfunktionen zum Erstellen und Verwalten von Arbeitsbereichen in Listensteuerelementen bereit. [GetWorkAreas](../mfc/reference/clistctrl-class.md#getworkareas) und [SetWorkAreas](../mfc/reference/clistctrl-class.md#setworkareas) abzurufen und festzulegen, ein Array von `CRect` Objekte (oder `RECT` Strukturen), der für das Listensteuerelement der derzeit implementierten Arbeitsbereichen gespeichert. Darüber hinaus [ruft GetNumberOfWorkAreas](../mfc/reference/clistctrl-class.md#getnumberofworkareas) Ruft die aktuelle Anzahl von Arbeitsbereichen für das Listensteuerelement (standardmäßig null).
+`CListCtrl`bietet mehrere Memberfunktionen zum Erstellen und Verwalten von Arbeitsbereichen in Ihrem Listensteuerelement. [GetWorkAreas](../mfc/reference/clistctrl-class.md#getworkareas) und [SetWorkAreas](../mfc/reference/clistctrl-class.md#setworkareas) rufen ein `CRect` Array `RECT` von Objekten (oder Strukturen) ab und legen diese fest, die die aktuell implementierten Arbeitsbereiche für das Listensteuerelement speichern. Darüber hinaus ruft [GetNumberOfWorkAreas](../mfc/reference/clistctrl-class.md#getnumberofworkareas) die aktuelle Anzahl von Arbeitsbereichen für ihr Listensteuerelement ab (standardmäßig Null).
 
-## <a name="items-and-working-areas"></a>Elemente und Arbeitsbereiche
+## <a name="items-and-working-areas"></a>Artikel und Arbeitsbereiche
 
-Wenn ein Arbeitsbereich erstellt wird, werden die Elemente, die innerhalb der Arbeitsbereich ihrer Mitglieder. Wenn ein Element in einem Arbeitsbereich verschoben wird, wird es auf ähnliche Weise ein Mitglied über den Arbeitsbereich auf dem er verschoben wurde. Wenn ein Element nicht in keinem Arbeitsbereich liegt, wird es automatisch ein Element der ersten (Index 0) Arbeitsbereich. Wenn ein Element zu erstellen, und lassen Sie sie in einem bestimmten Arbeitsbereich platziert werden sollen, müssen Sie das Element erstellt werden, und verschieben Sie sie in den gewünschten Arbeitsbereich mit einem Aufruf von [SetItemPosition](../mfc/reference/clistctrl-class.md#setitemposition). Das zweite Beispiel unten wird diese Technik veranschaulicht.
+Wenn ein Arbeitsbereich erstellt wird, werden Elemente, die innerhalb des Arbeitsbereichs liegen, Mitglieder. Wenn ein Element in einen Arbeitsbereich verschoben wird, wird es ebenfalls Mitglied des Arbeitsbereichs, in den es verschoben wurde. Wenn ein Element nicht innerhalb eines Arbeitsbereichs liegt, wird es automatisch Mitglied des ersten Arbeitsbereichs (Index 0). Wenn Sie ein Element erstellen und in einem bestimmten Arbeitsbereich einlegen möchten, müssen Sie das Element erstellen und dann mit einem Aufruf von [SetItemPosition](../mfc/reference/clistctrl-class.md#setitemposition)in den gewünschten Arbeitsbereich verschieben. Das zweite Beispiel unten veranschaulicht diese Technik.
 
-Das folgende Beispiel implementiert vier Arbeitsbereiche (`rcWorkAreas`), gleicher Größe mit einem 10 Pixel breiten Rahmen jeder Arbeitsbereich, in einem Listensteuerelement (`m_WorkAreaListCtrl`).
+Im folgenden Beispiel werden vier`rcWorkAreas`Arbeitsbereiche ( ) gleicher Größe mit einem 10 Pixel breiten`m_WorkAreaListCtrl`Rahmen um jeden Arbeitsbereich in einem Listensteuerelement ( ) implementiert.
 
 [!code-cpp[NVC_MFCControlLadenDialog#20](../mfc/codesnippet/cpp/implementing-working-areas-in-list-controls_1.cpp)]
 
-Der Aufruf von [ApproximateViewRect](../mfc/reference/clistctrl-class.md#approximateviewrect) wurde versucht, eine Schätzung der Fläche erforderlich, um das Anzeigen aller Elemente in einer Region zu erhalten. Diese Schätzung ist dann in vier Bereiche unterteilt und mit einem 5 Pixel breiten Rahmen aufgefüllt.
+Der Aufruf von [ApproximateViewRect](../mfc/reference/clistctrl-class.md#approximateviewrect) wurde durchgeführt, um eine Schätzung der Gesamtfläche zu erhalten, die erforderlich ist, um alle Elemente in einer Region anzuzeigen. Diese Schätzung wird dann in vier Bereiche unterteilt und mit einem 5-Pixel-breiten Rahmen aufgepolstert.
 
-Im nächste Beispiel weist die vorhandenen Listenelemente für jede Gruppe (`rcWorkAreas`) und aktualisiert die Ansicht des Steuerelement (`m_WorkAreaListCtrl`) um den Effekt abzuschließen.
+Im nächsten Beispiel werden die vorhandenen Listenelemente jeder Gruppe (`rcWorkAreas``m_WorkAreaListCtrl`) zugewiesen und die Steuerelementansicht ( ) aktualisiert, um den Effekt abzuschließen.
 
 [!code-cpp[NVC_MFCControlLadenDialog#21](../mfc/codesnippet/cpp/implementing-working-areas-in-list-controls_2.cpp)]
 

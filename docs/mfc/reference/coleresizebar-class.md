@@ -10,12 +10,12 @@ helpviewer_keywords:
 - COleResizeBar [MFC], COleResizeBar
 - COleResizeBar [MFC], Create
 ms.assetid: 56a708d9-28c5-4eb0-9404-77b688d91c63
-ms.openlocfilehash: 0b950e7533ba6f95c76ef8d4569980a9a82ea591
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: beb0c37b6ac23310b7d5c8506fbdaf677dd74d8d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62224409"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376153"
 ---
 # <a name="coleresizebar-class"></a>COleResizeBar-Klasse
 
@@ -31,27 +31,27 @@ class COleResizeBar : public CControlBar
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[COleResizeBar::COleResizeBar](#coleresizebar)|Erstellt ein `COleResizeBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleResizeBar::Create](#create)|Erstellt und initialisiert ein untergeordnetes Fenster von Windows und ordnet es die `COleResizeBar` Objekt.|
+|[COleResizeBar::Erstellen](#create)|Erstellt und initialisiert ein untergeordnetes Windows-Fenster und ordnet es dem `COleResizeBar` Objekt zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`COleResizeBar` Objekte werden als eine [CRectTracker](../../mfc/reference/crecttracker-class.md) mit schraffiert und äußeren Handles zur Größenänderung.
+`COleResizeBar`Objekte werden als [CRectTracker](../../mfc/reference/crecttracker-class.md) mit einem geschlüpften Rahmen und äußeren Größenumziehblättern angezeigt.
 
-`COleResizeBar` Objekte sind in der Regel eingebettete Elemente der abgeleitete Rahmenfenster Objekte der [COleIPFrameWnd](../../mfc/reference/coleipframewnd-class.md) Klasse.
+`COleResizeBar`Objekte sind in der Regel eingebettete Member von Frame-Window-Objekten, die von der [COleIPFrameWnd-Klasse](../../mfc/reference/coleipframewnd-class.md) abgeleitet sind.
 
 Weitere Informationen finden Sie im Artikel [Aktivierung](../../mfc/activation-cpp.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -63,9 +63,9 @@ Weitere Informationen finden Sie im Artikel [Aktivierung](../../mfc/activation-c
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxole.h
+**Kopfzeile:** afxole.h
 
-##  <a name="coleresizebar"></a>  COleResizeBar::COleResizeBar
+## <a name="coleresizebarcoleresizebar"></a><a name="coleresizebar"></a>COleResizeBar::COleResizeBar
 
 Erstellt ein `COleResizeBar`-Objekt.
 
@@ -73,13 +73,13 @@ Erstellt ein `COleResizeBar`-Objekt.
 COleResizeBar();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie `Create` das Ändern der Größe Bar-Objekt zu erstellen.
+Rufen `Create` Sie auf, um das Größenänderungsbalkenobjekt zu erstellen.
 
-##  <a name="create"></a>  COleResizeBar::Create
+## <a name="coleresizebarcreate"></a><a name="create"></a>COleResizeBar::Erstellen
 
-Erstellt ein untergeordnetes Fenster und ordnet ihn dem `COleResizeBar` Objekt.
+Erstellt ein untergeordnetes Fenster `COleResizeBar` und ordnet es dem Objekt zu.
 
 ```
 virtual BOOL Create(
@@ -91,17 +91,17 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-Zeiger auf das übergeordnete Fenster der Größe angezeigt.
+Zeigen Sie mit dem Zeiger auf das übergeordnete Fenster der Größenleiste.
 
 *dwStyle*<br/>
-Gibt an, die [Fensterstil](../../mfc/reference/styles-used-by-mfc.md#window-styles) Attribute.
+Gibt die [Fensterstilattribute](../../mfc/reference/styles-used-by-mfc.md#window-styles) an.
 
 *nID*<br/>
-Die Größe des Balkens untergeordneten Fensters-ID.
+Die untergeordnete Fenster-ID der Größenleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Größenänderung Leiste erstellt wurde; andernfalls 0.
+Ein Wert ungleich Null, wenn der Größenblock erstellt wurde; andernfalls 0.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -42,16 +42,16 @@ helpviewer_keywords:
 - std::sqrt [C++]
 - std::tan [C++]
 - std::tanh [C++]
-ms.openlocfilehash: 5ecba1de1419203d75ba6a97fbd651469a472905
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: bc61022b52105a976f4e43779d554f43cb6e6efe
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423972"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81358718"
 ---
 # <a name="ltcomplexgt-functions"></a>&lt;complex&gt;-Funktionen
 
-## <a name="abs"></a>Stäbchen
+## <a name="abs"></a><a name="abs"></a>Abs
 
 Berechnet den Betrag einer komplexen Zahl.
 
@@ -62,14 +62,14 @@ Type abs(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Betrag bestimmt werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Betrag einer komplexen Zahl
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der *Betrag* einer komplexen Zahl ist ein Maß für die Länge des Vektors, der die komplexe Zahl darstellt. Der Betrag einer komplexen Zahl                         a + bi ist                         sqrt (a<sup>2</sup> + b<sup>2</sup>), geschrieben als                         &#124;a + bi&#124;. Die *Norm* einer komplexen Zahl                         a + bi ist (a<sup>2</sup> + b<sup>2</sup>). Damit entspricht der Betrag der Quadratwurzel seiner Norm.
 
@@ -138,19 +138,19 @@ arg ( c2 ) = 0.523599 radians, which is 30 degrees.
 The complex numbers c2 & c3 have the same principal arguments.
 ```
 
-## <a name="acos"></a>ACOS
+## <a name="acos"></a><a name="acos"></a>Acos
 
 ```cpp
 template<class T> complex<T> acos(const complex<T>&);
 ```
 
-## <a name="acosh"></a>acosh
+## <a name="acosh"></a><a name="acosh"></a>acosh
 
 ```cpp
 template<class T> complex<T> acosh(const complex<T>&);
 ```
 
-## <a name="arg"></a>gebeut
+## <a name="arg"></a><a name="arg"></a>arg
 
 Extrahiert das Argument aus einer komplexen Zahl.
 
@@ -161,16 +161,16 @@ Type arg(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Argument bestimmt werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das Argument der komplexen Zahl
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das- *Argument* ist der Winkel, den der komplexe Vektor mit der positiven reellen Achse in der komplexen Ebene macht. Für eine komplexe Zahl *a + BI*ist das Argument gleich ARCTAN (*b/a*). Der Winkel ist positiv, wenn er von der positiven realen Achse im Uhrzeigersinn gemessen wird. Er ist negativ, wenn er entgegen dem Uhrzeigersinn gemessen wird. Die Prinzipal Werte sind größer als-PI und kleiner oder gleich + pi.
+Das *Argument* ist der Winkel, den der komplexe Vektor mit der positiven realen Achse in der komplexen Ebene macht. Bei einer komplexen Zahl *a + bi*ist das Argument gleich arctan(*b/a*). Der Winkel ist positiv, wenn er von der positiven realen Achse im Uhrzeigersinn gemessen wird. Er ist negativ, wenn er entgegen dem Uhrzeigersinn gemessen wird. Die Hauptwerte sind größer als -pi und kleiner oder gleich +pi.
 
 ### <a name="example"></a>Beispiel
 
@@ -237,31 +237,31 @@ arg ( c2 ) = 0.523599 radians, which is 30 degrees.
 The complex numbers c2 & c3 have the same principal arguments.
 ```
 
-## <a name="asin"></a>ASIN
+## <a name="asin"></a><a name="asin"></a>Asin
 
 ```cpp
 template<class T> complex<T> asin(const complex<T>&);
 ```
 
-## <a name="asinh"></a>asinh
+## <a name="asinh"></a><a name="asinh"></a>asinh
 
 ```cpp
 template<class T> complex<T> asinh(const complex<T>&);
 ```
 
-## <a name="atan"></a>Atan
+## <a name="atan"></a><a name="atan"></a>Atan
 
 ```cpp
 template<class T> complex<T> atan(const complex<T>&);
 ```
 
-## <a name="atanh"></a>atanh
+## <a name="atanh"></a><a name="atanh"></a>atanh
 
 ```cpp
 template<class T> complex<T> atanh(const complex<T>&);
 ```
 
-## <a name="conj"></a> conj
+## <a name="conj"></a><a name="conj"></a>Conj
 
 Gibt die konjugierte Zahl einer komplexen Zahl zurück.
 
@@ -272,16 +272,16 @@ complex<Type> conj(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren konjugierte Zahl zurückgegeben wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die konjugierte Zahl einer komplexen Eingabezahl
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das komplexe konjugierte einer komplexen Zahl *a + BI* ist *a-BI*. Das Produkt einer komplexen Zahl und ihrer konjugierten Zahl entspricht der Norm der Zahl *a*2 + *b*2.
+Das komplexe Konjugat einer komplexen Zahl *a + bi* ist ein - *bi*. Das Produkt einer komplexen Zahl und ihrer konjugierten Zahl entspricht der Norm der Zahl *a*2 + *b*2.
 
 ### <a name="example"></a>Beispiel
 
@@ -336,7 +336,7 @@ The imaginary part of c2 is imag ( c2 ) = -3.
 The norm of (c1 * conj (c1) ) is c1 * c2 = 25
 ```
 
-## <a name="cos"></a>Erzeugnissen
+## <a name="cos"></a><a name="cos"></a>Cos
 
 Gibt den Kosinus einer komplexen Zahl zurück.
 
@@ -347,20 +347,20 @@ complex<Type> cos(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Kosinus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Kosinus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die komplexe Kosinus definieren:
 
-cos (*z*) = (1/2)\*(Exp (*iz*) + Exp (- *iz*))
+cos (*z*) =\*(1/2) (exp (*iz*) + exp (- *iz*) )
 
-cos (*z*) = cos (*a* + *BI*) = cos (*a*) cosh ( *b*)-ISIN (*a*) Sinh (*b*)
+cos (*z*) = cos (*a* + *bi*) = cos (*a*) cosh ( *b*) - isin (*a*) sinh (*b*)
 
 ### <a name="example"></a>Beispiel
 
@@ -427,7 +427,7 @@ The complex components cos (vci), where abs (vci) = 1
 (0.540302,-1.74036e-013)
 ```
 
-## <a name="cosh"></a>cosh
+## <a name="cosh"></a><a name="cosh"></a>Cosh
 
 Gibt den Kosinus Hyperbolicus einer komplexen Zahl zurück.
 
@@ -438,20 +438,20 @@ complex<Type> cosh(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Kosinus Hyperbolicus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Kosinus Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die komplexe Kosinus Hyperbolicus definieren:
 
-cos (*z*) = (1/2)\*(Exp (*z*) + Exp (- *z*))
+cos (*z*) =\*(1/2) ( exp (*z*) + exp (- *z*) )
 
-cos (*z*) = cosh (*a + BI*) = cosh (*a*) cos (*b*) + isinh (*a*) sin (*b*)
+cos (*z*) = cosh (*a + bi*) = cosh (*a*) cos (*b*) + isinh (*a*) sin (*b*)
 
 ### <a name="example"></a>Beispiel
 
@@ -518,7 +518,7 @@ The complex components cosh (vci), where abs (vci) = 1
 (1.54308,2.43059e-013)
 ```
 
-## <a name="exp"></a>Exp
+## <a name="exp"></a><a name="exp"></a>Exp
 
 Gibt die Exponentialfunktion einer komplexen Zahl zurück.
 
@@ -529,7 +529,7 @@ complex<Type> exp(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Exponentialfunktion bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
@@ -589,7 +589,7 @@ int main() {
 }
 ```
 
-## <a name="imag"></a>IMAG
+## <a name="imag"></a><a name="imag"></a>Imag
 
 Extrahiert die imaginäre Komponente einer komplexen Zahl.
 
@@ -600,14 +600,14 @@ Type imag(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren reeller Teil extrahiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der imaginäre Teil der komplexen Zahl als globale Funktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion kann nicht zum Ändern des reellen Teils der komplexen Zahl verwendet werden. Dem Komponentenwert muss eine neue komplexe Zahl zugewiesen werden, um den reellen Teil zu ändern.
 
@@ -641,7 +641,7 @@ The real part of c1 is real ( c1 ) = 4.
 The imaginary part of c1 is imag ( c1 ) = 3.
 ```
 
-## <a name="log"></a>angezeigt
+## <a name="log"></a><a name="log"></a>Protokoll
 
 Gibt den natürlichen Logarithmus einer komplexen Zahl zurück.
 
@@ -652,14 +652,14 @@ complex<Type> log(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren natürlicher Logarithmus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem natürlichen Logarithmus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Achsenabschnitte liegen auf der negativen reellen Achse.
 
@@ -711,7 +711,7 @@ int main() {
 }
 ```
 
-## <a name="log10"></a>LOG10
+## <a name="log10"></a><a name="log10"></a>log10
 
 Gibt den Zehnerlogarithmus einer komplexen Zahl zurück.
 
@@ -722,14 +722,14 @@ complex<Type> log10(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Zehnerlogarithmus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Zehnerlogarithmus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Achsenabschnitte liegen auf der negativen reellen Achse.
 
@@ -781,7 +781,7 @@ int main() {
 }
 ```
 
-## <a name="norm"></a>Regel
+## <a name="norm"></a><a name="norm"></a>Norm
 
 Extrahiert die Norm einer komplexen Zahl.
 
@@ -792,16 +792,16 @@ Type norm(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Norm bestimmt werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Norm einer komplexen Zahl
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Norm einer komplexen Zahl *a + BI* ist *(a*<sup>2</sup> *+ b*<sup>2</sup> *).* Die Norm einer komplexen Zahl entspricht der Quadratwurzel ihres Betrags. Der Betrag einer komplexen Zahl ist ein Maß für die Länge des Vektors, der die komplexe Zahl darstellt. Der Modulo einer komplexen Zahl *a + BI* ist `sqrt` *(a*<sup>2</sup> *+ b*<sup>2</sup> *),* geschriebene  *&#124;a + BI&#124;.*
+Die Norm einer komplexen Zahl *a + bi* ist *(a*<sup>2</sup> *+ b*<sup>2</sup>*).* Die Norm einer komplexen Zahl entspricht der Quadratwurzel ihres Betrags. Der Betrag einer komplexen Zahl ist ein Maß für die Länge des Vektors, der die komplexe Zahl darstellt. Der Betrag einer komplexen Zahl *a + bi* ist `sqrt`*(a*<sup>2</sup> *+ b*<sup>2</sup>*)* geschrieben als *&#124;a + bi&#124;.*
 
 ### <a name="example"></a>Beispiel
 
@@ -864,7 +864,7 @@ The norm of c2 given by: norm ( c2 ) = 25
 The modulus of c2 is the square root of the norm: sqrt ( normc2 ) = 5.
 ```
 
-## <a name="polar"></a>Bär
+## <a name="polar"></a><a name="polar"></a>Polar
 
 Gibt die komplexe Zahl, die einem angegebenen Betrag und Argument entspricht, in kartesischer Form zurück.
 
@@ -885,9 +885,9 @@ Das Argument der komplexen Zahl, die eingegeben wird
 
 Kartesische Form der komplexen Zahl, die in Polarform dargestellt wird
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Polar Form einer komplexen Zahl stellt den Modulo *r* und das Argument *p*bereit, wobei diese Parameter mit den tatsächlichen und imaginären kartesischen Komponenten *a* und *b* von den Gleichungen *a* = r \* cos *p* und *b* = *r* \* Sin *p*verknüpft sind.
+Die polare Form einer komplexen Zahl liefert den Modul *r* und das Argument *p*, wobei diese Parameter mit den \* realen und imaginären kartesischen Komponenten *a* und *b* durch die Gleichungen *a* = r cos *p* und *b* = *r* \* sin *p*zusammenhängen.
 
 ### <a name="example"></a>Beispiel
 
@@ -941,7 +941,7 @@ Argument of c2 is recovered from c2 using:
 arg ( c2 ) = 0.523599 radians, which is 30 degrees.
 ```
 
-## <a name="pow"></a>Pow
+## <a name="pow"></a><a name="pow"></a>Pow
 
 Wertet die komplexe Zahl aus, die sich dadurch ergibt, dass eine Basis, die eine komplexe Zahl ist, mit einer anderen komplexen Zahl potenziert wird.
 
@@ -971,7 +971,7 @@ Ganze Zahl oder komplexe Zahl oder Zahl vom Parametertyp einer komplexen Zahl, d
 
 Die komplexe Zahl, die sich durch die angegebene Potenzierung der angegebenen Basis ergibt
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktionen konvertieren beide Operanden in den Rückgabetyp und übergeben die konvertierten **linksseitigen Werte** an die **rechtsseitige Potenzfunktion**.
 
@@ -1086,13 +1086,13 @@ The modulus of ce4 is: 9.8696
 The argument of ce4 is: -1.14473 radians, which is -65.5882 degrees.
 ```
 
-## <a name="proj"></a>proj
+## <a name="proj"></a><a name="proj"></a>Proj
 
 ```cpp
 template<class T> complex<T> proj(const complex<T>&);
 ```
 
-## <a name="real"></a>wirkliche
+## <a name="real"></a><a name="real"></a>Real
 
 Extrahiert die reelle Komponente einer komplexen Zahl.
 
@@ -1103,14 +1103,14 @@ Type real(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren reeller Teil extrahiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der reelle Teil der komplexen Zahl als globale Funktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Vorlagenfunktion kann nicht zum Ändern des reellen Teils der komplexen Zahl verwendet werden. Dem Komponentenwert muss eine neue komplexe Zahl zugewiesen werden, um den reellen Teil zu ändern.
 
@@ -1144,7 +1144,7 @@ The real part of c1 is real ( c1 ) = 4.
 The imaginary part of c1 is imag ( c1 ) = 3.
 ```
 
-## <a name="sin"></a>Tod
+## <a name="sin"></a><a name="sin"></a>Sünde
 
 Gibt den Sinus einer komplexen Zahl zurück.
 
@@ -1155,20 +1155,20 @@ complex<Type> sin(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Sinus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Sinus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die komplexe Sinus definieren:
 
-Sin (*z*) = (1/2 *i*)\*(Exp (*iz*)-Exp (- *iz*))
+sin (*z*) = (1/2 *i*)\*( exp (*iz*) - exp (- *iz*) )
 
-Sin (*z*) = sin (*a + BI*) = sin (*a*) cosh (*b*) + ICOS (*a*) Sinh (*b*)
+sin (*z*) = sin (*a + bi*) = sin (*a*) cosh (*b*) + icos (*a*) sinh (*b*)
 
 ### <a name="example"></a>Beispiel
 
@@ -1235,7 +1235,7 @@ The complex components sin (vci), where abs (vci) = 1
 (-0.841471,-1.11747e-013)
 ```
 
-## <a name="sinh"></a>sinh
+## <a name="sinh"></a><a name="sinh"></a>Sinh
 
 Gibt den Sinus Hyperbolicus einer komplexen Zahl zurück.
 
@@ -1246,20 +1246,20 @@ complex<Type> sinh(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Sinus Hyperbolicus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Sinus Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die die komplexen Sinus Hyperbolicus definieren:
 
-sinh (*z*) = (1/2)\*(Exp (*z*)-Exp (- *z*))
+sinh (*z*) =\*(1/2) ( exp (*z*) - exp (- *z*) )
 
-sinh (*z*) = Sinh (*a + BI*) = Sinh (*a*) cos (*b*) + *i*cosh (*a*) sin (*b*)
+sinh (*z*) = sinh (*a + bi*) = sinh (*a*) cos (*b*) + *i*cosh (*a*) sin (*b*)
 
 ### <a name="example"></a>Beispiel
 
@@ -1326,7 +1326,7 @@ The complex components sinh (vci), where abs (vci) = 1
 (-1.1752,-3.19145e-013)
 ```
 
-## <a name="sqrt"></a>SQRT
+## <a name="sqrt"></a><a name="sqrt"></a>Sqrt
 
 Berechnet die Quadratwurzel einer komplexen Zahl
 
@@ -1337,14 +1337,14 @@ complex<Type> sqrt(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Quadratwurzel bestimmt werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Quadratwurzel einer komplexen Zahl
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Quadratwurzel hat einen Phasenwinkel im halb geöffneten Intervall (-Pi/2 und Pi/2].
 
@@ -1403,7 +1403,7 @@ The argument of c2 = ( 1 / 2 ) * arg ( c1 ) =0.785398 radians,
 which is 45 degrees.
 ```
 
-## <a name="tan"></a> tan
+## <a name="tan"></a><a name="tan"></a>Tan
 
 Gibt den Tangens einer komplexen Zahl zurück.
 
@@ -1414,18 +1414,18 @@ complex<Type> tan(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Tangens bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Tangens der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die den komplexen Tangens definieren:
 
-Tan (*z*) = sin (*z*)/cos (*z*) = (Exp (*iz*)-Exp (- *iz*))/ *i*(Exp (*iz*) + Exp (- *iz*))
+tan (*z*) = sin (*z*) / cos (*z*) = ( exp (*iz*) - exp (- *iz*) ) / *i*( exp (*iz*) + exp (- *iz*) )
 
 ### <a name="example"></a>Beispiel
 
@@ -1492,7 +1492,7 @@ The complex components tan (vci), where abs (vci) = 1
 (-1.55741,-7.08476e-013)
 ```
 
-## <a name="tanh"></a>tanh
+## <a name="tanh"></a><a name="tanh"></a>Tanh
 
 Gibt den Tangens Hyperbolicus einer komplexen Zahl zurück.
 
@@ -1503,18 +1503,18 @@ complex<Type> tanh(const complex<Type>& complexNum);
 
 ### <a name="parameters"></a>Parameter
 
-*complexnum* -\
+*complexNum*\
 Die komplexe Zahl, deren Tangens Hyperbolicus bestimmt wird
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die komplexe Zahl, die dem Tangens Hyperbolicus der eingegebenen komplexen Zahl entspricht
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Identitäten, die komplexe Kotangens Hyperbolicus definieren:
 
-tanh (*z*) = Sinh (*z*)/cosh (*z*) = (Exp (*z*)-Exp (- *z*))/(Exp (*z*) + Exp (- *z*))
+tanh (*z*) = sinh (*z*) / cosh (*z*) = ( exp (*z*) - exp (- *z*) / ( exp (*z*) + exp (- *z*) )
 
 ### <a name="example"></a>Beispiel
 

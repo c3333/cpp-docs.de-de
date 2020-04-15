@@ -10,16 +10,16 @@ helpviewer_keywords:
 - __except keyword [C], in try-except
 - try-catch keyword [C], try-except keyword [C]
 ms.assetid: f76db9d1-fc78-417f-b71f-18e545fc01c3
-ms.openlocfilehash: 9940fdf983f6141c0de207509bb800533b0f1eb8
-ms.sourcegitcommit: f4be868c0d1d78e550fba105d4d3c993743a1f4b
-ms.translationtype: HT
+ms.openlocfilehash: 2ca5299a5ab20b8985a520f25bb654ead0c25e2b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56152325"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81349743"
 ---
 # <a name="try-except-statement-c"></a>try-except-Anweisung (C)
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
 Die **try-except**-Anweisung ist eine Microsoft-Erweiterung zur Programmiersprache C, mit deren Hilfe Anwendungen bei Ereignissen, die normalerweise zur Beendigung eines Programms führen, die Steuerung des Programms übernehmen können. Diese Ereignisse werden als Ausnahmen bezeichnet, und der Mechanismus, der die Ausnahmen behandelt, wird als strukturierte Ausnahmebehandlung bezeichnet.
 
@@ -27,9 +27,9 @@ Ausnahmen können entweder hardware- oder softwarebasiert sein. Auch wenn Anwend
 
 ## <a name="syntax"></a>Syntax
 
-*try-except-statement*: **__try** *compound-statement*
+*try-except-statement*: **__try**  *compound-statement*
 
-**__except (** *expression* **)** *compound-statement*
+**__except (**  *Ausdruck*  **)**  *zusammengesetzte Anweisung*
 
 Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Die Verbundanweisung nach der `__except`-Klausel ist der Ausnahmehandler. Der Handler gibt eine Reihe von Aktionen an, die abgerufen werden, wenn eine Ausnahme während der Ausführung des geschützten Abschnitts ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
 
@@ -48,10 +48,10 @@ Die Verbundanweisung nach der `__try`-Klausel ist der abgesicherte Abschnitt. Di
 Da der `__except`-Ausdruck als C-Ausdruck ausgewertet wird, wird er auf einen Einzelwert beschränkt, den Operator des bedingten Ausdrucks oder den Komma-Operator. Wenn eine erweiterte Verarbeitung erforderlich ist, kann der Ausdruck eine Routine aufrufen, die einen der drei Werte zurückgibt, die oben aufgelistet sind.
 
 > [!NOTE]
->  Die strukturierte Ausnahmebehandlung arbeitet mit C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Der C++-Ausnahmebehandlungsmechanismus ist außerdem viel flexibler, da er Ausnahmen eines beliebigen Typs behandeln kann.
+> Die strukturierte Ausnahmebehandlung arbeitet mit C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Der C++-Ausnahmebehandlungsmechanismus ist außerdem viel flexibler, da er Ausnahmen eines beliebigen Typs behandeln kann.
 
 > [!NOTE]
->  Für C++-Programme sollte die C++-Ausnahmebehandlung anstelle der strukturierten Ausnahmebehandlung verwendet werden. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md) in *C++-Sprachreferenz*.
+> Für C++-Programme sollte die C++-Ausnahmebehandlung anstelle der strukturierten Ausnahmebehandlung verwendet werden. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md) in *C++-Sprachreferenz*.
 
 Jede Routine in einer Anwendung kann einen eigenen Ausnahmehandler aufweisen. Der `__except`-Ausdruck wird im Bereich des `__try`-Rumpfes ausgeführt. Dies bedeutet, dass alle lokalen Variablen verfügbar sind, die dort deklariert wurden.
 
@@ -94,7 +94,7 @@ in except           /* transfer control to selected handler */
 world               /* flow out of handler                  */
 ```
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

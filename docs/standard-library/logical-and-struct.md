@@ -7,12 +7,12 @@ helpviewer_keywords:
 - logical_and class
 - logical_and struct
 ms.assetid: 1a375cc2-0592-4d57-a553-78009c7ad610
-ms.openlocfilehash: cc75c93d5173ceb7fa12b9722a797499b4225a53
-ms.sourcegitcommit: b8c22e6d555cf833510753cba7a368d57e5886db
+ms.openlocfilehash: 7036ebf9fed3877a395e44d8383776002b9afcae
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821615"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351688"
 ---
 # <a name="logical_and-struct"></a>logical_and-Struktur
 
@@ -20,7 +20,7 @@ Ein vordefiniertes Funktionsobjekt, mit dem der logische Konjunktionsvorgang (`o
 
 ## <a name="syntax"></a>Syntax
 
-```
+```cpp
 template <class Type = void>
 struct logical_and : public binary_function<Type, Type, bool>
 {
@@ -37,22 +37,22 @@ struct logical_and<void>
 };
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*Type*, *T*, *U*\
+*Typ*, *T*, *U*\
 Jeder Typ, der ein `operator&&`-Element unterstützt, das Operanden angegebener oder abgeleiteter Typen akzeptiert.
 
-*Linker*\
-Der linke Operand des logischen Konjunktionsvorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage bewirkt eine perfekte Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *T*.
+*Links*\
+Der linke Operand des logischen Konjunktionsvorgangs. Die nicht spezialisierte Vorlage verwendet ein lvalue-Referenzargument vom Typ *Typ*. Die spezialisierte Vorlage führt eine perfekte Weiterleitung von lvalue- und rvalue-Referenzargumenten des abgeleiteten Typs *T*durch.
 
-*Rechte*\
-Der rechte Operand des logischen Konjunktionsvorgangs. Die nicht spezialisierte Vorlage besitzt ein Lvalue-Verweis Argument vom *Typ Type.* Die spezialisierte Vorlage ist perfekt für die Weiterleitung von lvalue-und rvalue-Verweis Argumenten des abgeleiteten Typs *U*.
+*Richting*\
+Der rechte Operand des logischen Konjunktionsvorgangs. Die nicht spezialisierte Vorlage verwendet ein lvalue-Referenzargument vom Typ *Typ*. Die spezialisierte Vorlage führt eine perfekte Weiterleitung von lvalue- und rvalue-Referenzargumenten des abgeleiteten Typs *U*durch.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Das Ergebnis von `Left && Right`. Die spezialisierte Vorlage vervollkommnet die Weiterleitung des Ergebnisses mit dem von `operator&&` zurückgegebenen Typs.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Bei benutzerdefinierten Typen gibt es keine verkürzte Operandenauswertung. Beide Argumente werden von `operator&&` ausgewertet.
 

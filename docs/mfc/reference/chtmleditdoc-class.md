@@ -14,16 +14,16 @@ helpviewer_keywords:
 - CHtmlEditDoc [MFC], IsModified
 - CHtmlEditDoc [MFC], OpenURL
 ms.assetid: b2cca61f-e5d6-4099-b0d1-46bf85f0bd64
-ms.openlocfilehash: c2a00b2501647f6101fed8ed1d4cd23dad7ab209
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 8b500f651da1a73040fdb0469f2f023babe25e85
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346187"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81352174"
 ---
 # <a name="chtmleditdoc-class"></a>CHtmlEditDoc-Klasse
 
-Mit [CHtmlEditView](../../mfc/reference/chtmleditview-class.md), stellt die Funktionalität der WebBrowser-Bearbeitungsplattform im Rahmen der MFC Dokument-/ Ansichtarchitektur bereit.
+Mit [CHtmlEditView](../../mfc/reference/chtmleditview-class.md)stellt die Funktionalität der WebBrowser-Bearbeitungsplattform im Kontext der MFC-Dokumentansichtsarchitektur zur Verfügung.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,21 +35,21 @@ class AFX_NOVTABLE CHtmlEditDoc : public CDocument
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHtmlEditDoc::CHtmlEditDoc](#chtmleditdoc)|Erstellt ein `CHtmlEditDoc`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHtmlEditDoc::GetView](#getview)|Ruft die `CHtmlEditView` Objekt angefügt, um in diesem Dokument.|
-|[CHtmlEditDoc::IsModified](#ismodified)|Gibt zurück, ob die zugeordnete Ansicht WebBrowser-Steuerelement, ein Dokument enthält, die vom Benutzer geändert wurde.|
-|[CHtmlEditDoc::OpenURL](#openurl)|Öffnet eine URL an.|
+|[CHtmlEditDoc::GetView](#getview)|Ruft das `CHtmlEditView` diesem Dokument zugeordnete Objekt ab.|
+|[CHtmlEditDoc::IsModified](#ismodified)|Gibt zurück, ob das WebBrowser-Steuerelement der zugeordneten Ansicht ein Dokument enthält, das vom Benutzer geändert wurde.|
+|[CHtmlEditDoc::OpenURL](#openurl)|Öffnet eine URL.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -61,7 +61,7 @@ class AFX_NOVTABLE CHtmlEditDoc : public CDocument
 
 **Header:** afxhtml.h
 
-##  <a name="chtmleditdoc"></a>  CHtmlEditDoc::CHtmlEditDoc
+## <a name="chtmleditdocchtmleditdoc"></a><a name="chtmleditdoc"></a>CHtmlEditDoc::CHtmlEditDoc
 
 Erstellt ein `CHtmlEditDoc`-Objekt.
 
@@ -69,9 +69,9 @@ Erstellt ein `CHtmlEditDoc`-Objekt.
 CHtmlEditDoc();
 ```
 
-##  <a name="getview"></a>  CHtmlEditDoc::GetView
+## <a name="chtmleditdocgetview"></a><a name="getview"></a>CHtmlEditDoc::GetView
 
-Ruft die [CHtmlEditView](../../mfc/reference/chtmleditview-class.md) Objekt angefügt, um in diesem Dokument.
+Ruft das [CHtmlEditView-Objekt](../../mfc/reference/chtmleditview-class.md) ab, das diesem Dokument zugeordnet ist.
 
 ```
 virtual CHtmlEditView* GetView() const;
@@ -79,19 +79,19 @@ virtual CHtmlEditView* GetView() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf des Dokuments des `CHtmlEditView` Objekt.
+Gibt einen Zeiger auf das `CHtmlEditView` Dokumentobjekt zurück.
 
-##  <a name="ismodified"></a>  CHtmlEditDoc::IsModified
+## <a name="chtmleditdocismodified"></a><a name="ismodified"></a>CHtmlEditDoc::IsModified
 
-Gibt zurück, ob die zugeordnete Ansicht WebBrowser-Steuerelement, ein Dokument enthält, die vom Benutzer geändert wurde.
+Gibt zurück, ob das WebBrowser-Steuerelement der zugeordneten Ansicht ein Dokument enthält, das vom Benutzer geändert wurde.
 
 ```
 virtual BOOL IsModified();
 ```
 
-##  <a name="openurl"></a>  CHtmlEditDoc::OpenURL
+## <a name="chtmleditdocopenurl"></a><a name="openurl"></a>CHtmlEditDoc::OpenURL
 
-Öffnet eine URL an.
+Öffnet eine URL.
 
 ```
 virtual BOOL OpenURL(LPCTSTR lpszURL);
@@ -100,11 +100,11 @@ virtual BOOL OpenURL(LPCTSTR lpszURL);
 ### <a name="parameters"></a>Parameter
 
 *lpszURL*<br/>
-Die URL zu öffnen.
+Die zu öffnende URL.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" bei Erfolg bei "false".
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
 ## <a name="see-also"></a>Siehe auch
 

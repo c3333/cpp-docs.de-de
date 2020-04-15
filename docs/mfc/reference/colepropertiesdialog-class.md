@@ -22,12 +22,12 @@ helpviewer_keywords:
 - COlePropertiesDialog [MFC], m_psh
 - COlePropertiesDialog [MFC], m_vp
 ms.assetid: a54dbc89-1447-4329-bd01-00e98ec9e935
-ms.openlocfilehash: b819bc430868717a2df01a086b482dfe6d56cc0f
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f065894ff49af755ab4020f71b0213b19db49054
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69504167"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374897"
 ---
 # <a name="colepropertiesdialog-class"></a>COlePropertiesDialog-Klasse
 
@@ -43,40 +43,40 @@ class COlePropertiesDialog : public COleDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePropertiesDialog:: COlePropertiesDialog](#colepropertiesdialog)|Erstellt ein `COlePropertiesDialog`-Objekt.|
+|[COlePropertiesDialog::COlePropertiesDialog](#colepropertiesdialog)|Erstellt ein `COlePropertiesDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePropertiesDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl vorzunehmen.|
-|[COlePropertiesDialog::OnApplyScale](#onapplyscale)|Wird von Framework aufgerufen, wenn sich die Skalierung des Dokument Elements geändert hat.|
+|[COlePropertiesDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl zu treffen.|
+|[COlePropertiesDialog::OnApplyScale](#onapplyscale)|Wird vom Framework aufgerufen, wenn sich die Skalierung des Dokumentelements geändert hat.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COlePropertiesDialog:: m_gp](#m_gp)|Eine-Struktur, die zum Initialisieren der allgemeinen Seite eines `COlePropertiesDialog` -Objekts verwendet wird.|
-|[COlePropertiesDialog::m_lp](#m_lp)|Eine-Struktur, die verwendet wird, um die Linkseite eines `COlePropertiesDialog` -Objekts zu initialisieren.|
-|[COlePropertiesDialog:: m_Op](#m_op)|Eine-Struktur, die zum Initialisieren des `COlePropertiesDialog` -Objekts verwendet wird.|
-|[COlePropertiesDialog:: m_psh](#m_psh)|Eine-Struktur, mit der zusätzliche benutzerdefinierte Eigenschaften Seiten hinzugefügt werden.|
-|[COlePropertiesDialog:: m_vp](#m_vp)|Eine-Struktur, die verwendet wird, um die Seite " `COlePropertiesDialog` Ansicht" eines-Objekts anzupassen.|
+|[COlePropertiesDialog::m_gp](#m_gp)|Eine Struktur, die zum Initialisieren der `COlePropertiesDialog` Seite "Allgemein" eines Objekts verwendet wird.|
+|[COlePropertiesDialog::m_lp](#m_lp)|Eine Struktur, die zum Initialisieren der `COlePropertiesDialog` Seite "Link" eines Objekts verwendet wird.|
+|[COlePropertiesDialog::m_op](#m_op)|Eine Struktur, die `COlePropertiesDialog` zum Initialisieren des Objekts verwendet wird.|
+|[COlePropertiesDialog::m_psh](#m_psh)|Eine Struktur, die zum Hinzufügen zusätzlicher benutzerdefinierter Eigenschaftenseiten verwendet wird.|
+|[COlePropertiesDialog::m_vp](#m_vp)|Eine Struktur, die zum Anpassen der `COlePropertiesDialog` Seite "Ansicht" eines Objekts verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Allgemeine Eigenschaften von OLE-Objekteigenschaften stellen eine einfache Möglichkeit dar, die Eigenschaften eines OLE-Dokument Elements in Übereinstimmung mit Windows-Standards anzuzeigen und zu ändern. Zu diesen Eigenschaften gehören unter anderem Informationen zu der durch das Dokument Element dargestellten Datei, Optionen zum Anzeigen des Symbols und der Bildskalierung sowie Informationen zum Link des Elements (wenn das Element verknüpft ist).
+Die allgemeinen Dialogfelder zu den OLE-Objekteigenschaften bieten eine einfache Möglichkeit, die Eigenschaften eines OLE-Dokumentelements in einer Weise anzuzeigen und zu ändern, die mit den Windows-Standards konsistent ist. Zu diesen Eigenschaften gehören unter anderem Informationen über die Datei, die durch das Dokumentelement dargestellt wird, Optionen zum Anzeigen des Symbols und der Bildskalierung sowie Informationen über den Link des Elements (wenn das Element verknüpft ist).
 
-Um ein `COlePropertiesDialog` -Objekt zu verwenden, erstellen Sie zunächst das `COlePropertiesDialog` -Objekt mit dem-Konstruktor. Nachdem das Dialogfeld erstellt wurde, können Sie die `DoModal` Member-Funktion aufrufen, um das Dialogfeld anzuzeigen und dem Benutzer zu ermöglichen, alle Eigenschaften des Elements zu ändern. `DoModal`Gibt zurück, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat. Zusätzlich zu den Schaltflächen OK und Abbrechen gibt es eine Schaltfläche anwenden. Wenn der Benutzer übernehmen auswählt, werden alle Änderungen an den Eigenschaften des Dokument Elements auf das Element angewendet, und das Bild wird automatisch aktualisiert, bleibt jedoch aktiv.
+Um ein `COlePropertiesDialog` Objekt zu verwenden, `COlePropertiesDialog` erstellen Sie das Objekt zuerst mit dem Konstruktor. Nachdem das Dialogfeld erstellt wurde, rufen Sie die `DoModal` Memberfunktion auf, um das Dialogfeld anzuzeigen, und ermöglichen Sie dem Benutzer, alle Eigenschaften des Elements zu ändern. `DoModal`gibt an, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat. Zusätzlich zu den Schaltflächen OK und Abbrechen gibt es eine Schaltfläche Anwenden. Wenn der Benutzer Übernehmen auswählt, werden alle an den Eigenschaften des Dokumentelements vorgenommenen Änderungen auf das Element angewendet, und sein Bild wird automatisch aktualisiert, bleibt jedoch aktiv.
 
-Der [m_psh](#m_psh) -Datenmember ist ein Zeiger auf `PROPSHEETHEADER` eine Struktur, und in den meisten Fällen müssen Sie nicht explizit darauf zugreifen. Eine Ausnahme ist, wenn Sie zusätzliche Eigenschaften Seiten benötigen, die über die allgemeinen Standard-, Ansichts-und Link Seiten hinausgehen. In diesem Fall können Sie den `m_psh` Datenmember so ändern, dass die benutzerdefinierten Seiten eingeschlossen werden, bevor Sie die `DoModal` Member-Funktion aufrufen.
+Der [m_psh](#m_psh) Datenmember ist ein `PROPSHEETHEADER` Zeiger auf eine Struktur, und in den meisten Fällen müssen Sie nicht explizit darauf zugreifen. Eine Ausnahme ist, wenn Sie zusätzliche Eigenschaftenseiten benötigen, die über die Standardseiten "Allgemein", "Ansicht" und "Verknüpfen" hinausgehen. In diesem Fall können `m_psh` Sie das Datenelement so ändern, dass es Ihre benutzerdefinierten Seiten einschließt, bevor Sie die `DoModal` Memberfunktion aufrufen.
 
-Weitere Informationen zu OLE-Dialogfeldern finden Sie in den Artikel [Dialogfeldern in OLE](../../mfc/dialog-boxes-in-ole.md).
+Weitere Informationen zu OLE-Dialogfeldern finden Sie im Artikel [Dialogfelder in OLE](../../mfc/dialog-boxes-in-ole.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -92,11 +92,11 @@ Weitere Informationen zu OLE-Dialogfeldern finden Sie in den Artikel [Dialogfeld
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxodlgs. h
+**Kopf:** afxodlgs.h
 
-##  <a name="colepropertiesdialog"></a>COlePropertiesDialog:: COlePropertiesDialog
+## <a name="colepropertiesdialogcolepropertiesdialog"></a><a name="colepropertiesdialog"></a>COlePropertiesDialog::COlePropertiesDialog
 
-Erstellt ein `COlePropertiesDialog`-Objekt.
+Erstellt ein `COlePropertiesDialog` -Objekt.
 
 ```
 COlePropertiesDialog(
@@ -109,40 +109,40 @@ COlePropertiesDialog(
 ### <a name="parameters"></a>Parameter
 
 *pItem*<br/>
-Zeiger auf das Dokument Element, auf dessen Eigenschaften zugegriffen wird.
+Zeigen Sie auf das Dokumentelement, auf dessen Eigenschaften zugegriffen wird.
 
 *nScaleMin*<br/>
-Minimaler Skalierungs Prozentsatz für das Dokument Element Image.
+Minimaler Skalierungsprozentsatz für das Dokumentelementbild.
 
 *nScaleMax*<br/>
-Maximaler Skalierungs Prozentsatz für das Dokument Element Image.
+Maximaler Skalierungsprozentsatz für das Dokumentelementbild.
 
 *pParentWnd*<br/>
-Zeiger auf das übergeordnete Element oder den Besitzer des Dialog Felds.
+Zeigen Sie mit dem Zeiger auf das übergeordnete elementge oder den Besitzer des Dialogfelds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Leiten Sie die allgemeine Dialogfeld Klasse von OLE `COlePropertiesDialog` -Objekteigenschaften von ab, um die Skalierung für die Dokument Elemente zu implementieren. Alle Dialogfelder, die von einer Instanz dieser Klasse implementiert werden, unterstützen keine Skalierung des Dokument Elements.
+Leiten Sie die allgemeine DIALOGklasse `COlePropertiesDialog` ole Objekteigenschaften ab, um die Skalierung für Ihre Dokumentelemente zu implementieren. Dialogfelder, die von einer Instanz dieser Klasse implementiert werden, unterstützen die Skalierung des Dokumentelements nicht.
 
-Standardmäßig verfügt das Dialogfeld Eigenschaften des allgemeinen OLE-Objekts über drei Standardseiten:
+Standardmäßig verfügt das allgemeine Dialogfeld OLE-Objekteigenschaften über drei Standardseiten:
 
 - Allgemein
 
-   Diese Seite enthält Systeminformationen für die Datei, die vom ausgewählten Dokument Element dargestellt wird. Auf dieser Seite kann der Benutzer das ausgewählte Element in einen anderen Typ konvertieren.
+   Diese Seite enthält Systeminformationen für die Datei, die durch das ausgewählte Dokumentelement dargestellt wird. Auf dieser Seite kann der Benutzer das ausgewählte Element in einen anderen Typ konvertieren.
 
-- Ansicht
+- Sicht
 
-   Diese Seite enthält Optionen zum Anzeigen des Elements, zum Ändern des Symbols und zum Ändern der Skalierung des Bilds.
+   Diese Seite enthält Optionen zum Anzeigen des Elements, Zum Ändern des Symbols und zum Ändern der Skalierung des Bildes.
 
 - Link
 
-   Diese Seite enthält Optionen, mit denen Sie den Speicherort des verknüpften Elements ändern und das verknüpfte Element aktualisieren. Auf dieser Seite kann der Benutzer die Verknüpfung des ausgewählten Elements unterbrechen.
+   Diese Seite enthält Optionen zum Ändern des Speicherorts des verknüpften Elements und zum Aktualisieren des verknüpften Elements. Auf dieser Seite kann der Benutzer den Link des ausgewählten Elements unterbrechen.
 
-Um Seiten hinzuzufügen, die über die standardmäßig bereitgestellten verfügen, ändern Sie die [m_psh](#m_psh) -Element Variable `COlePropertiesDialog`, bevor Sie den Konstruktor der von abgeleiteten Klasse beenden. Dies ist eine erweiterte Implementierung des `COlePropertiesDialog` -Konstruktors.
+Um Seiten hinzuzufügen, die über [m_psh](#m_psh) die standardmäßig bereitgestellten seiten hinausgehen, `COlePropertiesDialog`ändern Sie die m_psh Membervariable, bevor Sie den Konstruktor Ihrer -derived-Klasse beenden. Dies ist eine `COlePropertiesDialog` erweiterte Implementierung des Konstruktors.
 
-##  <a name="domodal"></a>COlePropertiesDialog::D omodal
+## <a name="colepropertiesdialogdomodal"></a><a name="domodal"></a>COlePropertiesDialog::DoModal
 
-Mit dieser Member-Funktion können Sie das Eigenschaften Dialogfeld für das allgemeine Windows-OLE-Objekt anzeigen und dem Benutzer die Möglichkeit geben, die verschiedenen Eigenschaften des Dokument Elements anzuzeigen und/oder zu ändern.
+Rufen Sie diese Memberfunktion auf, um das Dialogfeld allgemeine OLE-Objekteigenschaften von Windows anzuzeigen und dem Benutzer zu ermöglichen, die verschiedenen Eigenschaften des Dokumentelements anzuzeigen und/oder zu ändern.
 
 ```
 virtual INT_PTR DoModal();
@@ -152,83 +152,83 @@ virtual INT_PTR DoModal();
 
 IDOK oder IDCANCEL, wenn erfolgreich; andernfalls 0. IDOK und IDCANCEL sind Konstanten, die angeben, ob der Benutzer die Schaltfläche OK oder Abbrechen ausgewählt hat.
 
-Wenn IDCANCEL zurückgegeben wird, können Sie die Windows-Funktion [commdlgextendederror](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) aufrufen, um zu bestimmen, ob ein Fehler aufgetreten ist.
+Wenn IDCANCEL zurückgegeben wird, können Sie die Windows [CommDlgExtendedError-Funktion](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) aufrufen, um zu ermitteln, ob ein Fehler aufgetreten ist.
 
-##  <a name="m_gp"></a>COlePropertiesDialog:: m_gp
+## <a name="colepropertiesdialogm_gp"></a><a name="m_gp"></a>COlePropertiesDialog::m_gp
 
-Eine Struktur vom Typ [oleuignrlproperties](/windows/win32/api/oledlg/ns-oledlg-oleuignrlpropsw), die verwendet wird, um die Seite Allgemein des Dialog Felds OLE-Objekteigenschaften zu initialisieren.
+Eine Struktur vom Typ [OLEUIGNRLPROPS](/windows/win32/api/oledlg/ns-oledlg-oleuignrlpropsw), die zum Initialisieren der Seite Allgemein des Dialogfelds OLE-Objekteigenschaften verwendet wird.
 
 ```
 OLEUIGNRLPROPS m_gp;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Seite zeigt den Typ und die Größe einer Einbettung an und ermöglicht dem Benutzer den Zugriff auf das Dialogfeld "konvertieren". Diese Seite zeigt auch das Linkziel an, wenn es sich bei dem Objekt um einen Link handelt.
+Diese Seite zeigt den Typ und die Größe einer Einbettung und ermöglicht dem Benutzer den Zugriff auf das Dialogfeld Konvertieren. Auf dieser Seite wird auch das Linkziel angezeigt, wenn es sich bei dem Objekt um einen Link handelt.
 
-Weitere Informationen zur- `OLEUIGNRLPROPS` Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur `OLEUIGNRLPROPS` Struktur finden Sie im Windows SDK.
 
-##  <a name="m_lp"></a>COlePropertiesDialog:: m_lp
+## <a name="colepropertiesdialogm_lp"></a><a name="m_lp"></a>COlePropertiesDialog::m_lp
 
-Eine Struktur vom Typ [oleuilinkproperties](/windows/win32/api/oledlg/ns-oledlg-oleuilinkpropsw), die verwendet wird, um die Linkseite des Dialog Felds OLE-Objekteigenschaften zu initialisieren.
+Eine Struktur vom Typ [OLEUILINKPROPS](/windows/win32/api/oledlg/ns-oledlg-oleuilinkpropsw), die zum Initialisieren der Seite Verknüpfen des Dialogfelds OLE-Objekteigenschaften verwendet wird.
 
 ```
 OLEUILINKPROPS m_lp;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Seite zeigt den Speicherort des verknüpften Elements an und ermöglicht dem Benutzer, den Link zum Element zu aktualisieren oder zu unterbrechen.
+Diese Seite zeigt den Speicherort des verknüpften Elements an und ermöglicht es dem Benutzer, den Link zum Element zu aktualisieren oder zu unterbrechen.
 
-Weitere Informationen zur- `OLEUILINKPROPS` Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur `OLEUILINKPROPS` Struktur finden Sie im Windows SDK.
 
-##  <a name="m_op"></a>COlePropertiesDialog:: m_Op
+## <a name="colepropertiesdialogm_op"></a><a name="m_op"></a>COlePropertiesDialog::m_op
 
-Eine Struktur vom Typ [oleuiobjectproperties](/windows/win32/api/oledlg/ns-oledlg-oleuiobjectpropsw), die verwendet wird, um das Dialogfeld allgemeine OLE-Objekteigenschaften zu initialisieren.
+Eine Struktur vom Typ [OLEUIOBJECTPROPS](/windows/win32/api/oledlg/ns-oledlg-oleuiobjectpropsw), die zum Initialisieren des allgemeinen Dialogfelds OLE-Objekteigenschaften verwendet wird.
 
 ```
 OLEUIOBJECTPROPS m_op;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Struktur enthält Elemente, die zum Initialisieren der allgemeinen, Link-und Ansichts Seiten verwendet werden.
+Diese Struktur enthält Elemente, die zum Initialisieren der Seiten Allgemein, Verknüpfung und Anzeigen verwendet werden.
 
-Weitere Informationen finden Sie in den oleuiobject-und [oleuilinkrequik-Strukturen](/windows/win32/api/oledlg/ns-oledlg-oleuilinkpropsw) in der Windows SDK.
+Weitere Informationen finden Sie in den Strukturen OLEUIOBJECTPROPS und [OLEUILINKPROPS](/windows/win32/api/oledlg/ns-oledlg-oleuilinkpropsw) im Windows SDK.
 
-##  <a name="m_psh"></a>COlePropertiesDialog:: m_psh
+## <a name="colepropertiesdialogm_psh"></a><a name="m_psh"></a>COlePropertiesDialog::m_psh
 
-Eine Struktur vom Typ " [propsheederader](/windows/win32/api/prsht/ns-prsht-propsheetheadera_v2)", deren Member die Merkmale des Dialog Objekts speichern.
+Eine Struktur vom Typ [PROPSHEETHEADER](/windows/win32/api/prsht/ns-prsht-propsheetheadera_v2), deren Member die Eigenschaften des Dialogobjekts speichern.
 
 ```
 PROPSHEETHEADER m_psh;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie ein `COlePropertiesDialog` -Objekt erstellt haben, `m_psh` können Sie verwenden, um verschiedene Aspekte des Dialog Felds vor `DoModal` dem Aufruf der Member-Funktion festzulegen.
+Nach dem `COlePropertiesDialog` Erstellen eines `m_psh` Objekts können Sie verschiedene Aspekte `DoModal` des Dialogfelds festlegen, bevor Sie die Memberfunktion aufrufen.
 
-Wenn Sie den `m_psh` Datenmember direkt ändern, überschreiben Sie jedes Standardverhalten.
+Wenn Sie `m_psh` das Datenelement direkt ändern, überschreiben Sie jedes Standardverhalten.
 
-Weitere Informationen zur- `PROPSHEETHEADER` Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur `PROPSHEETHEADER` Struktur finden Sie im Windows SDK.
 
-##  <a name="m_vp"></a>COlePropertiesDialog:: m_vp
+## <a name="colepropertiesdialogm_vp"></a><a name="m_vp"></a>COlePropertiesDialog::m_vp
 
-Eine Struktur vom Typ [oleuiviewproperties](/windows/win32/api/oledlg/ns-oledlg-oleuiviewpropsw), die verwendet wird, um die Ansichts Seite des Dialog Felds OLE-Objekteigenschaften zu initialisieren.
+Eine Struktur vom Typ [OLEUIVIEWPROPS](/windows/win32/api/oledlg/ns-oledlg-oleuiviewpropsw), die zum Initialisieren der Seite Ansicht des Dialogfelds OLE-Objekteigenschaften verwendet wird.
 
 ```
 OLEUIVIEWPROPS m_vp;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Auf dieser Seite kann der Benutzer zwischen den Ansichten "Content" und "Iconic" des Objekts umschalten und die Skalierung im Container ändern. Außerdem ermöglicht Sie dem Benutzer den Zugriff auf das Dialogfeld "Symbol ändern", wenn das Objekt als Symbol angezeigt wird.
+Auf dieser Seite kann der Benutzer zwischen "Inhalt"- und "iconic"-Ansichten des Objekts wechseln und seine Skalierung innerhalb des Containers ändern. Es ermöglicht dem Benutzer auch den Zugriff auf das Dialogfeld Symbol ändern, wenn das Objekt als Symbol angezeigt wird.
 
-Weitere Informationen zur- `OLEUIVIEWPROPS` Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur `OLEUIVIEWPROPS` Struktur finden Sie im Windows SDK.
 
-##  <a name="onapplyscale"></a>COlePropertiesDialog:: onapplyscale
+## <a name="colepropertiesdialogonapplyscale"></a><a name="onapplyscale"></a>COlePropertiesDialog::OnApplyScale
 
-Wird von Framework aufgerufen, wenn der Skalierungs Wert geändert wurde und entweder OK oder Apply ausgewählt wurde.
+Wird vom Framework aufgerufen, wenn sich der Skalierungswert geändert hat und entweder OK oder Apply ausgewählt wurde.
 
 ```
 virtual BOOL OnApplyScale(
@@ -240,28 +240,28 @@ virtual BOOL OnApplyScale(
 ### <a name="parameters"></a>Parameter
 
 *pItem*<br/>
-Zeiger auf das Dokument Element, auf dessen Eigenschaften zugegriffen wird.
+Zeigen Sie auf das Dokumentelement, auf dessen Eigenschaften zugegriffen wird.
 
 *nCurrentScale*<br/>
-Numerischer Wert der Dialogfeld Skala.
+Numerischer Wert der Dialogskala.
 
 *bRelativeToOrig*<br/>
-Gibt an, ob die Skalierung für die ursprüngliche Größe des Dokument Elements gilt.
+Gibt an, ob die Skalierung auf die ursprüngliche Größe des Dokumentelements zutrifft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Nicht NULL, wenn behandelt; andernfalls 0.
+Ungleich Null, wenn behandelt; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei der Standardimplementierung wird keine Aktion ausgeführt. Sie müssen diese Funktion überschreiben, um die Skalierungs Steuerelemente zu aktivieren.
+Bei der Standardimplementierung wird keine Aktion ausgeführt. Sie müssen diese Funktion überschreiben, um die Skalierungssteuerelemente zu aktivieren.
 
 > [!NOTE]
->  Bevor das Dialogfeld allgemeine OLE-Objekteigenschaften angezeigt wird, ruft das Framework diese Funktion mit einem NULL-Wert für *pitem* und einem-1 für *ncurrentscale*auf. Dies geschieht, um zu bestimmen, ob die Skalierungs Steuerelemente aktiviert werden sollen.
+> Bevor das allgemeine Dialogfeld OLE-Objekteigenschaften angezeigt wird, ruft das Framework diese Funktion mit einem NULL für *pItem* und einem - 1 für *nCurrentScale*auf. Dadurch wird ermittelt, ob die Skalierungssteuerelemente aktiviert werden sollen.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-beispielcirc](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel CIRC](../../overview/visual-cpp-samples.md)<br/>
 [COleDialog-Klasse](../../mfc/reference/coledialog-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleDialog-Klasse](../../mfc/reference/coledialog-class.md)<br/>

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - COleIPFrameWnd [MFC], OnCreateControlBars
 - COleIPFrameWnd [MFC], RepositionFrame
 ms.assetid: 24abb2cb-826c-4dda-a287-d8a8900a5763
-ms.openlocfilehash: 8eab2ddfc778900b53d77105f1d8215a2c095e9f
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 01e259cf01c42add26088b0cbd2f6dab311eb9b1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70741561"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374958"
 ---
 # <a name="coleipframewnd-class"></a>COleIPFrameWnd-Klasse
 
@@ -33,26 +33,26 @@ class COleIPFrameWnd : public CFrameWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[COleIPFrameWnd::COleIPFrameWnd](#coleipframewnd)|Erstellt ein `COleIPFrameWnd`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleIPFrameWnd::OnCreateControlBars](#oncreatecontrolbars)|Wird von Framework aufgerufen, wenn ein Element für die direkte Bearbeitung aktiviert wird.|
-|[COleIPFrameWnd::RepositionFrame](#repositionframe)|Wird von Framework aufgerufen, um das direkte Bearbeitungsfenster neu zu positionieren.|
+|[COleIPFrameWnd::OnCreateControlBars](#oncreatecontrolbars)|Wird vom Framework aufgerufen, wenn ein Element für die ortsspezifische Bearbeitung aktiviert ist.|
+|[COleIPFrameWnd::RepositionFrame](#repositionframe)|Wird vom Framework aufgerufen, um das ortsnahe Bearbeitungsfenster neu zu positionieren.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse erstellt und positioniert Steuer leisten im Dokument Fenster der Containeranwendung. Außerdem werden von einem eingebetteten [COleResizeBar](../../mfc/reference/coleresizebar-class.md) -Objekt generierte Benachrichtigungen verarbeitet, wenn der Benutzer die Größe des Fensters für die direkte Bearbeitung ändert.
+Diese Klasse erstellt und positioniert Steuerleisten im Dokumentfenster der Containeranwendung. Es verarbeitet auch Benachrichtigungen, die von einem eingebetteten [COleResizeBar-Objekt](../../mfc/reference/coleresizebar-class.md) generiert werden, wenn der Benutzer die Größe des an Ort ändernden Bearbeitungsfensters ändert.
 
-Weitere Informationen zur Verwendung von `COleIPFrameWnd`finden Sie im Artikel [Activation (Aktivierung](../../mfc/activation-cpp.md)).
+Weitere Informationen zur `COleIPFrameWnd`Verwendung finden Sie im Artikel [Aktivierung](../../mfc/activation-cpp.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -64,23 +64,23 @@ Weitere Informationen zur Verwendung von `COleIPFrameWnd`finden Sie im Artikel [
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Afxole. h
+**Kopfzeile:** afxole.h
 
-##  <a name="coleipframewnd"></a>COleIPFrameWnd:: COleIPFrameWnd
+## <a name="coleipframewndcoleipframewnd"></a><a name="coleipframewnd"></a>COleIPFrameWnd::COleIPFrameWnd
 
-Erstellt ein `COleIPFrameWnd` -Objekt und initialisiert seine direkten Zustandsinformationen, die in einer Struktur des Typs oleinplaceframeinfo gespeichert werden.
+Erstellt ein `COleIPFrameWnd` Objekt und initialisiert seine in-Place-Statusinformationen, die in einer Struktur vom Typ OLEINPLACEFRAMEINFO gespeichert sind.
 
 ```
 COleIPFrameWnd();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [oleinplaceframeinfo](/windows/win32/api/oleidl/ns-oleidl-oleinplaceframeinfo) in der Windows SDK.
+Weitere Informationen finden Sie unter [OLEINPLACEFRAMEINFO](/windows/win32/api/oleidl/ns-oleidl-oleinplaceframeinfo) im Windows SDK.
 
-##  <a name="oncreatecontrolbars"></a>COleIPFrameWnd:: onkreatecontrolbars
+## <a name="coleipframewndoncreatecontrolbars"></a><a name="oncreatecontrolbars"></a>COleIPFrameWnd::OnCreateControlBars
 
-Das Framework ruft die `OnCreateControlBars` -Funktion auf, wenn ein Element für die direkte Bearbeitung aktiviert wird.
+Das Framework `OnCreateControlBars` ruft die Funktion auf, wenn ein Element für die ortsspezifische Bearbeitung aktiviert wird.
 
 ```
 virtual BOOL OnCreateControlBars(
@@ -95,22 +95,22 @@ virtual BOOL OnCreateControlBars(
 ### <a name="parameters"></a>Parameter
 
 *pWndFrame*<br/>
-Zeiger auf das Rahmen Fenster der Containeranwendung.
+Zeigen Sie mit dem Zeiger auf das Rahmenfenster der Containeranwendung.
 
 *pWndDoc*<br/>
-Zeiger auf das Fenster auf Dokument Ebene des Containers. Kann NULL sein, wenn der Container eine SDI-Anwendung ist.
+Zeigen Sie auf das Fenster auf Dokumentebene des Containers. Kann NULL sein, wenn es sich bei dem Container um eine SDI-Anwendung handelt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Nicht NULL bei Erfolg; andernfalls 0.
+Ungleich Null auf Erfolg; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um besondere Verarbeitungsschritte auszuführen, die beim Erstellen von Steuer leisten erforderlich sind.
+Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um eine spezielle Verarbeitung durchzuführen, die beim Erstellen von Steuerleisten erforderlich ist.
 
-##  <a name="repositionframe"></a>COleIPFrameWnd:: repositionframe
+## <a name="coleipframewndrepositionframe"></a><a name="repositionframe"></a>COleIPFrameWnd::RepositionFrame
 
-Das Framework ruft die `RepositionFrame` Member-Funktion auf, um Steuer leisten anzuordnen und das direkte Bearbeitungsfenster neu zu positionieren, damit alles sichtbar ist.
+Das Framework `RepositionFrame` ruft die Memberfunktion auf, um Kontrollleisten zu legen und das an Ort und Stelle neu positionierte Bearbeitungsfenster neu zu positionieren, damit alles sichtbar ist.
 
 ```
 virtual void RepositionFrame(
@@ -121,18 +121,18 @@ virtual void RepositionFrame(
 ### <a name="parameters"></a>Parameter
 
 *lpPosRect*<br/>
-Ein Zeiger auf `RECT` eine-Struktur `CRect` oder ein-Objekt, das die aktuellen Positionskoordinaten des direkten Frame Fensters in Pixel relativ zum Client Bereich enthält.
+Zeigen Sie `RECT` mit dem `CRect` Zeiger auf eine Struktur oder ein Objekt, das die aktuellen Positionskoordinaten des ortsplatzierten Rahmenfensters in Pixel relativ zum Clientbereich enthält.
 
 *lpClipRect*<br/>
-Ein Zeiger auf `RECT` eine-Struktur `CRect` oder ein-Objekt, das die aktuellen Clipping-Rechteck-Koordinaten des direkten Frame Fensters in Pixel relativ zum Client Bereich enthält.
+Zeigen Sie `RECT` mit dem `CRect` Zeiger auf eine Struktur oder ein Objekt, das die aktuellen Clipping-Rechteck-Koordinaten des ortsplatzierten Rahmenfensters in Pixel relativ zum Clientbereich enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Layout der Steuer leisten im Containerfenster unterscheidet sich von dem, das von einem nicht-OLE-Rahmen Fenster ausgeführt wird. Das nicht-OLE-Rahmen Fenster berechnet die Positionen von Steuer leisten und anderen Objekten aus einer angegebenen Rahmen Fenstergröße, wie in einem [CFrameWnd:: Neues.](../../mfc/reference/cframewnd-class.md#recalclayout) Der Client Bereich bleibt, nachdem der Speicherplatz für Steuer leisten und andere Objekte subtrahiert wurden. Ein `COleIPFrameWnd` Fenster positioniert auf der anderen Seite Symbolleisten in Übereinstimmung mit einem bestimmten Client Bereich. Anders ausgedrückt: `CFrameWnd::RecalcLayout` funktioniert "von außen nach außen", während `COleIPFrameWnd::RepositionFrame` "von innen nach außen" funktioniert.
+Das Layout der Steuerleisten im Containerfenster unterscheidet sich von dem Layout eines Nicht-OLE-Rahmenfensters. Das Nicht-OLE-Rahmenfenster berechnet die Positionen von Steuerleisten und anderen Objekten aus einer bestimmten Frame-Fenstergröße, wie bei einem Aufruf von [CFrameWnd::RecalcLayout](../../mfc/reference/cframewnd-class.md#recalclayout). Der Clientbereich ist das, was nach dem Platz für Steuerleisten verbleibt und andere Objekte subtrahiert werden. Ein `COleIPFrameWnd` Fenster hingegen positioniert Symbolleisten entsprechend einem bestimmten Clientbereich. Mit anderen `CFrameWnd::RecalcLayout` Worten, Werke "von außen `COleIPFrameWnd::RepositionFrame` nach innen", während Werke "von innen nach außen".
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [CFrameWnd-Klasse](../../mfc/reference/cframewnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CFrameWnd-Klasse](../../mfc/reference/cframewnd-class.md)

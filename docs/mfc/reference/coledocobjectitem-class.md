@@ -24,12 +24,12 @@ helpviewer_keywords:
 - COleDocObjectItem [MFC], QueryCommand
 - COleDocObjectItem [MFC], Release
 ms.assetid: d150d306-8fd3-4831-b06d-afbe71d8fc9b
-ms.openlocfilehash: c6e00bf42cf20b46c949c218efe1820cc7ce0f9b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a696226185dd99b9e277e74d92cbe15c95cc900a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69504010"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375048"
 ---
 # <a name="coledocobjectitem-class"></a>COleDocObjectItem-Klasse
 
@@ -45,42 +45,42 @@ class COleDocObjectItem : public COleClientItem
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[COleDocObjectItem::COleDocObjectItem](#coledocobjectitem)|Erstellt ein `COleDocObject` Element.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDocObjectItem::DoDefaultPrinting](#dodefaultprinting)|Druckt das Dokument der Containeranwendung mithilfe der Standarddrucker Einstellungen.|
+|[COleDocObjectItem::DoDefaultPrinting](#dodefaultprinting)|Druckt das Dokument der Containeranwendung mit den Standarddruckereinstellungen.|
 |[COleDocObjectItem::ExecCommand](#execcommand)|Führt den vom Benutzer angegebenen Befehl aus.|
 |[COleDocObjectItem::GetActiveView](#getactiveview)|Ruft die aktive Ansicht des Dokuments ab.|
 |[COleDocObjectItem::GetPageCount](#getpagecount)|Ruft die Anzahl der Seiten im Dokument der Containeranwendung ab.|
-|[COleDocObjectItem::OnPreparePrinting](#onprepareprinting)|Bereitet das Dokument der Containeranwendung zum Drucken vor.|
+|[COleDocObjectItem::OnPreparePrinting](#onprepareprinting)|Bereitet das Dokument der Containeranwendung für den Druck vor.|
 |[COleDocObjectItem::OnPrint](#onprint)|Druckt das Dokument der Containeranwendung.|
 |[COleDocObjectItem::QueryCommand](#querycommand)|Fragt den Status von Befehlen ab, die von Ereignissen auf der Benutzeroberfläche generiert wurden.|
-|[COleDocObjectItem::Release](#release)|Gibt die Verbindung zu einem mit OLE verknüpften Element frei und schließt es, wenn es geöffnet war. Das Client Element wird nicht zerstört.|
+|[COleDocObjectItem::Release](#release)|Gibt die Verbindung zu einem ole verknüpften Element frei und schließt sie, wenn sie geöffnet war. Zerstört das Clientelement nicht.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-In MFC wird ein aktives Dokument ähnlich wie eine reguläre, bearbeitbare bearbeitbare Einbettung mit den folgenden Unterschieden behandelt:
+In MFC wird ein active-Dokument ähnlich wie eine reguläre, direkte bearbeitbare Einbettung behandelt, mit den folgenden Unterschieden:
 
-- Die `COleDocument`von abgeleitete Klasse behält immer noch eine Liste der aktuell eingebetteten Elemente bei. diese Elemente können jedoch `COleDocObjectItem`von abgeleitete Elemente sein.
+- Die `COleDocument`-derived-Klasse verwaltet weiterhin eine Liste der aktuell eingebetteten Elemente. Diese Elemente können `COleDocObjectItem`jedoch -abgeleitete Elemente sein.
 
-- Wenn ein aktives Dokument aktiv ist, nimmt es den gesamten Client Bereich der Ansicht an, wenn es aktiv ist.
+- Wenn ein aktives Dokument aktiv ist, nimmt es den gesamten Clientbereich der Ansicht ein, wenn es an Ort und Stelle aktiv ist.
 
-- Ein aktiver Dokument Container hat die vollständige Kontrolle über das Menü **Hilfe** .
+- Ein Active-Dokumentcontainer hat die volle Kontrolle über das **Hilfemenü.**
 
-- Das Menü **Hilfe** enthält Menü Elemente für den aktiven Dokument Container und den Server.
+- Das **Hilfemenü** enthält Menüelemente für den Aktiven Dokumentcontainer und den Server.
 
-Da der aktive Dokument Container das Menü **Hilfe** besitzt, ist der Container für die Weiterleitung von Server **Hilfe** -Menü Meldungen an den Server zuständig. Diese Integration wird von `COleDocObjectItem`behandelt.
+Da der Container "Aktives Dokument" eigentümer das **Hilfemenü** ist, ist der Container für die Weiterleitung von **Serverhilfemenünachrichten** an den Server verantwortlich. Diese Integration wird `COleDocObjectItem`von behandelt.
 
-Weitere Informationen zum Zusammenführen von Menüs und zum Aktivieren von aktiven Dokumenten finden Sie unter Übersicht über die [aktive Dokument](../../mfc/active-document-containment.md)Kapselung.
+Weitere Informationen zum Menüzusammenführen und Aktivieren von aktiven Dokumenten finden Sie unter Übersicht über [die Eindämmung aktiver Dokumente](../../mfc/active-document-containment.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -92,11 +92,11 @@ Weitere Informationen zum Zusammenführen von Menüs und zum Aktivieren von akti
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Afxole. h
+**Kopfzeile:** afxole.h
 
-##  <a name="coledocobjectitem"></a>COleDocObjectItem:: COleDocObjectItem
+## <a name="coledocobjectitemcoledocobjectitem"></a><a name="coledocobjectitem"></a>COleDocObjectItem::COleDocObjectItem
 
-Diese Member-Funktion zum Initialisieren des `COleDocObjectItem` -Objekts aufzurufen.
+Rufen Sie diese Memberfunktion `COleDocObjectItem` auf, um das Objekt zu initialisieren.
 
 ```
 COleDocObjectItem(COleDocument* pContainerDoc = NULL);
@@ -105,11 +105,11 @@ COleDocObjectItem(COleDocument* pContainerDoc = NULL);
 ### <a name="parameters"></a>Parameter
 
 *pContainerDoc*<br/>
-Ein Zeiger auf das `COleDocument` Objekt, das als aktiver Dokument Container fungiert. Dieser Parameter muss NULL sein, um IMPLEMENT_SERIALIZE zu aktivieren. Normalerweise werden OLE-Elemente mit einem Dokument Zeiger ungleich NULL erstellt.
+Ein Zeiger auf `COleDocument` das Objekt, das als aktiver Dokumentcontainer fungiert. Dieser Parameter muss NULL sein, um IMPLEMENT_SERIALIZE zu aktivieren. Normalerweise werden OLE-Elemente mit einem Nicht-NULL-Dokumentzeiger erstellt.
 
-##  <a name="dodefaultprinting"></a>COleDocObjectItem::D odefaultprinting
+## <a name="coledocobjectitemdodefaultprinting"></a><a name="dodefaultprinting"></a>COleDocObjectItem::DoDefaultPrinting
 
-Wird vom Framework in einem Dokument mithilfe der Standardeinstellungen aufgerufen.
+Wird vom Framework für ein Dokument mit den Standardeinstellungen aufgerufen.
 
 ```
 static HRESULT DoDefaultPrinting(
@@ -120,14 +120,14 @@ static HRESULT DoDefaultPrinting(
 ### <a name="parameters"></a>Parameter
 
 *pCaller*<br/>
-Ein Zeiger auf ein [CView](../../mfc/reference/cview-class.md) -Objekt, das den Print-Befehl sendet.
+Ein Zeiger auf ein [CView-Objekt,](../../mfc/reference/cview-class.md) das den Druckbefehl sendet.
 
-*pInfo*<br/>
-Ein Zeiger auf ein [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Objekt, das den zu druckenden Auftrag beschreibt.
+*Pinfo*<br/>
+Ein Zeiger auf ein [CPrintInfo-Objekt,](../../mfc/reference/cprintinfo-structure.md) das den zu druckenden Auftrag beschreibt.
 
-##  <a name="execcommand"></a>COleDocObjectItem:: execCommand
+## <a name="coledocobjectitemexeccommand"></a><a name="execcommand"></a>COleDocObjectItem::ExecCommand
 
-Mit dieser Member-Funktion können Sie den vom Benutzer angegebenen Befehl ausführen.
+Rufen Sie diese Memberfunktion auf, um den vom Benutzer angegebenen Befehl auszuführen.
 
 ```
 HRESULT ExecCommand(
@@ -139,13 +139,13 @@ HRESULT ExecCommand(
 ### <a name="parameters"></a>Parameter
 
 *nCmdID*<br/>
-Der Bezeichner des auszuführenden Befehls. Muss in der durch *pguidcmdgroup*identifizierten Gruppe sein.
+Der Bezeichner des auszuführenden Befehls. Muss sich in der von *pguidCmdGroup*identifizierten Gruppe aufgeben.
 
 *nCmdExecOpt*<br/>
-Gibt Befehls Ausführungs Optionen an. Standardmäßig legen Sie fest, um den Befehl auszuführen, ohne den Benutzer aufzufordern. Eine Liste der Werte finden Sie unter [olecmdexecopt](/windows/win32/api/docobj/ne-docobj-olecmdexecopt) .
+Gibt Befehlsausführungsoptionen an. Legen Sie standardmäßig fest, dass der Befehl ausgeführt wird, ohne den Benutzer dazu aufzufordert. Eine Liste der Werte finden Sie unter [OLECMDEXECOPT.](/windows/win32/api/docobj/ne-docobj-olecmdexecopt)
 
 *pguidCmdGroup*<br/>
-Eindeutiger Bezeichner der Befehlsgruppe. Standardmäßig ist der Wert NULL, der die Standardgruppe angibt. Der in *nCmdId* über gegebene Befehl muss zur Gruppe gehören.
+Eindeutiger Bezeichner der Befehlsgruppe. Standardmäßig NULL, das die Standardgruppe angibt. Der in *nCmdID* übergebene Befehl muss zur Gruppe gehören.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -154,21 +154,21 @@ Gibt S_OK zurück, wenn erfolgreich; Andernfalls wird einer der folgenden Fehler
 |Wert|Beschreibung|
 |-----------|-----------------|
 |E_UNEXPECTED|Unerwarteter Fehler.|
-|E_FAIL|Fehler aufgetreten.|
-|E_NOTIMPL|Gibt an, dass MFC selbst versuchen soll, den Befehl zu übersetzen und zu verteilen.|
-|OLECMDERR_E_UNKNOWNGROUP|*pguidcmdgroup* ist nicht NULL, gibt jedoch keine erkannte Befehlsgruppe an.|
-|OLECMDERR_E_NOTSUPPORTED|*nCmdId* wird nicht als gültiger Befehl in der Gruppe "pgroup" erkannt.|
-|OLECMDERR_DISABLED|Der von *nCmdId* identifizierte Befehl ist deaktiviert und kann nicht ausgeführt werden.|
-|OLECMDERR_NOHELP|Der Aufrufer hat Hilfe zu dem Befehl angefordert, der von *nCmdId identifiziert wurde* , aber es ist keine Hilfe verfügbar|
+|E_FAIL|Fehler.|
+|E_NOTIMPL|Gibt an, dass MFC selbst versuchen sollte, den Befehl zu übersetzen und zu versenden.|
+|OLECMDERR_E_UNKNOWNGROUP|*pguidCmdGroup* ist nicht NULL, gibt jedoch keine erkannte Befehlsgruppe an.|
+|OLECMDERR_E_NOTSUPPORTED|*nCmdID* wird in der Gruppe pGroup nicht als gültiger Befehl erkannt.|
+|OLECMDERR_DISABLED|Der von *nCmdID* identifizierte Befehl ist deaktiviert und kann nicht ausgeführt werden.|
+|OLECMDERR_NOHELP|Der Anrufer bat um Hilfe für den von *nCmdID* identifizierten Befehl, aber es ist keine Hilfe verfügbar.|
 |OLECMDERR_CANCELLED|Der Benutzer hat die Ausführung abgebrochen.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit den Parametern *pguidcmdgroup* und *nCmdId* wird der aufzurufende Befehl eindeutig identifiziert. Der *nCmdexecopt* -Parameter gibt die genaue Aktion an, die ausgeführt werden soll.
+Die *pguidCmdGroup* und die *parameter nCmdID* zusammen identifizieren den befehl, der aufgerufen werden soll. Der Parameter *nCmdExecOpt* gibt die genaue Aktion an.
 
-##  <a name="getactiveview"></a>COleDocObjectItem:: GetActiveView
+## <a name="coledocobjectitemgetactiveview"></a><a name="getactiveview"></a>COleDocObjectItem::GetActiveView
 
-Mit dieser Member-Funktion können Sie einen Zeiger auf `IOleDocumentView` die-Schnittstelle der derzeit aktiven Ansicht abrufen.
+Rufen Sie diese Memberfunktion auf, `IOleDocumentView` um einen Zeiger auf die Schnittstelle der aktuell aktiven Ansicht abzurufen.
 
 ```
 LPOLEDOCUMENTVIEW GetActiveView() const;
@@ -176,15 +176,15 @@ LPOLEDOCUMENTVIEW GetActiveView() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die [IOleDocumentView](/windows/win32/api/docobj/nn-docobj-ioledocumentview) -Schnittstelle der derzeit aktiven Ansicht. Wenn keine aktuelle Ansicht vorhanden ist, wird NULL zurückgegeben.
+Ein Zeiger auf die [IOleDocumentView-Schnittstelle](/windows/win32/api/docobj/nn-docobj-ioledocumentview) der aktuell aktiven Ansicht. Wenn keine aktuelle Ansicht vorhanden ist, wird NULL zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Verweis Zähler für den zurück `IOleDocumentView` gegebenen Zeiger wird nicht inkrementiert, bevor er von dieser Funktion zurückgegeben wird.
+Die Verweisanzahl für `IOleDocumentView` den zurückgegebenen Zeiger wird nicht erhöht, bevor er von dieser Funktion zurückgegeben wird.
 
-##  <a name="getpagecount"></a>COleDocObjectItem:: getPageCount
+## <a name="coledocobjectitemgetpagecount"></a><a name="getpagecount"></a>COleDocObjectItem::GetPageCount
 
-Rufen Sie diese Member-Funktion auf, um die Anzahl der Seiten im Dokument abzurufen.
+Rufen Sie diese Memberfunktion auf, um die Anzahl der Seiten im Dokument abzurufen.
 
 ```
 BOOL GetPageCount(
@@ -195,18 +195,18 @@ BOOL GetPageCount(
 ### <a name="parameters"></a>Parameter
 
 *pnFirstPage*<br/>
-Ein Zeiger auf die Nummer der ersten Seite des Dokuments. Kann NULL sein, was bedeutet, dass der Aufrufer diese Zahl nicht benötigt.
+Ein Zeiger auf die Nummer der ersten Seite des Dokuments. Kann NULL sein, was angibt, dass der Aufrufer diese Nummer nicht benötigt.
 
-*pcpages*<br/>
-Ein Zeiger auf die Gesamtzahl der Seiten im Dokument. Kann NULL sein, was bedeutet, dass der Aufrufer diese Zahl nicht benötigt.
+*pcPages*<br/>
+Ein Zeiger auf die Gesamtzahl der Seiten im Dokument. Kann NULL sein, was angibt, dass der Aufrufer diese Nummer nicht benötigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-##  <a name="onprepareprinting"></a>COleDocObjectItem:: OnPreparePrinting
+## <a name="coledocobjectitemonprepareprinting"></a><a name="onprepareprinting"></a>COleDocObjectItem::OnPreparePrinting
 
-Diese Member-Funktion wird vom Framework aufgerufen, um ein Dokument für das Drucken vorzubereiten.
+Diese Memberfunktion wird vom Framework aufgerufen, um ein Dokument für den Druck vorzubereiten.
 
 ```
 static BOOL OnPreparePrinting(
@@ -218,10 +218,10 @@ static BOOL OnPreparePrinting(
 ### <a name="parameters"></a>Parameter
 
 *pCaller*<br/>
-Ein Zeiger auf ein [CView](../../mfc/reference/cview-class.md) -Objekt, das den Print-Befehl sendet.
+Ein Zeiger auf ein [CView-Objekt,](../../mfc/reference/cview-class.md) das den Druckbefehl sendet.
 
-*pInfo*<br/>
-Ein Zeiger auf ein [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Objekt, das den zu druckenden Auftrag beschreibt.
+*Pinfo*<br/>
+Ein Zeiger auf ein [CPrintInfo-Objekt,](../../mfc/reference/cprintinfo-structure.md) das den zu druckenden Auftrag beschreibt.
 
 *bPrintAll*<br/>
 Gibt an, ob das gesamte Dokument gedruckt werden soll.
@@ -230,9 +230,9 @@ Gibt an, ob das gesamte Dokument gedruckt werden soll.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-##  <a name="onprint"></a>COleDocObjectItem:: OnPrint
+## <a name="coledocobjectitemonprint"></a><a name="onprint"></a>COleDocObjectItem::OnPrint
 
-Diese Member-Funktion wird vom Framework aufgerufen, um ein Dokument zu drucken.
+Diese Memberfunktion wird vom Framework aufgerufen, um ein Dokument zu drucken.
 
 ```
 static void OnPrint(
@@ -244,15 +244,15 @@ static void OnPrint(
 ### <a name="parameters"></a>Parameter
 
 *pCaller*<br/>
-Ein Zeiger auf ein CView-Objekt, das den Print-Befehl sendet.
+Ein Zeiger auf ein CView-Objekt, das den Druckbefehl sendet.
 
-*pInfo*<br/>
-Ein Zeiger auf ein [CPrintInfo](../../mfc/reference/cprintinfo-structure.md) -Objekt, das den zu druckenden Auftrag beschreibt.
+*Pinfo*<br/>
+Ein Zeiger auf ein [CPrintInfo-Objekt,](../../mfc/reference/cprintinfo-structure.md) das den zu druckenden Auftrag beschreibt.
 
 *bPrintAll*<br/>
 Gibt an, ob das gesamte Dokument gedruckt werden soll.
 
-##  <a name="querycommand"></a>COleDocObjectItem:: querycommand
+## <a name="coledocobjectitemquerycommand"></a><a name="querycommand"></a>COleDocObjectItem::QueryCommand
 
 Fragt den Status von Befehlen ab, die von Ereignissen auf der Benutzeroberfläche generiert wurden.
 
@@ -267,28 +267,28 @@ HRESULT QueryCommand(
 ### <a name="parameters"></a>Parameter
 
 *nCmdID*<br/>
-der Bezeichner des Befehls, der abgefragt wird.
+Bezeichner des Abgefragten Befehls.
 
 *pdwStatus*<br/>
 Ein Zeiger auf die Flags, die als Ergebnis der Abfrage zurückgegeben werden. Eine Liste möglicher Werte finden Sie unter [OLECMDF](/windows/win32/api/docobj/ne-docobj-olecmdf).
 
 *pCmdText*<br/>
-Ein Zeiger auf eine [olecmdtext](/windows/win32/api/docobj/ns-docobj-olecmdtext) -Struktur, in der die Namen-und Statusinformationen für einen einzelnen Befehl zurückgegeben werden sollen. Kann NULL sein, um anzugeben, dass der Aufrufer diese Informationen nicht benötigt.
+Zeiger auf eine [OLECMDTEXT-Struktur,](/windows/win32/api/docobj/ns-docobj-olecmdtext) in der Namens- und Statusinformationen für einen einzelnen Befehl zurückgegeben werden sollen. Kann NULL sein, um anzugeben, dass der Aufrufer diese Informationen nicht benötigt.
 
 *pguidCmdGroup*<br/>
 Eindeutiger Bezeichner der Befehlsgruppe; kann NULL sein, um die Standardgruppe anzugeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine umfassende Liste der Rückgabewerte finden Sie unter [IOleCommandTarget:: QueryStatus](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-querystatus) in der Windows SDK.
+Eine vollständige Auflistung der Rückgabewerte finden Sie unter [IOleCommandTarget::QueryStatus](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-querystatus) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion emuliert die Funktionalität der [IOleCommandTarget:: QueryStatus](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-querystatus) -Methode, wie im Windows SDK beschrieben.
+Diese Memberfunktion emuliert die Funktionalität der [IOleCommandTarget::QueryStatus-Methode,](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-querystatus) wie im Windows SDK beschrieben.
 
-##  <a name="release"></a>COleDocObjectItem:: Release
+## <a name="coledocobjectitemrelease"></a><a name="release"></a>COleDocObjectItem::Release
 
-Gibt die Verbindung zu einem mit OLE verknüpften Element frei und schließt es, wenn es geöffnet war. Das Client Element wird nicht zerstört.
+Gibt die Verbindung zu einem ole verknüpften Element frei und schließt sie, wenn sie geöffnet war. Zerstört das Clientelement nicht.
 
 ```
 virtual void Release(OLECLOSE dwCloseOption = OLECLOSE_NOSAVE);
@@ -297,11 +297,11 @@ virtual void Release(OLECLOSE dwCloseOption = OLECLOSE_NOSAVE);
 ### <a name="parameters"></a>Parameter
 
 *dwCloseOption*<br/>
-Flag, das angibt, unter welchen Umständen das OLE-Element beim zurückkehren in den geladenen Zustand gespeichert wird. Eine Liste möglicher Werte finden Sie unter [COleClientItem:: Close](../../mfc/reference/coleclientitem-class.md#close).
+Flag, das angibt, unter welchen Umständen das OLE-Element gespeichert wird, wenn es in den geladenen Zustand zurückkehrt. Eine Liste möglicher Werte finden Sie unter [COleClientItem::Close](../../mfc/reference/coleclientitem-class.md#close).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Client Element wird nicht zerstört.
+Zerstört das Clientelement nicht.
 
 ## <a name="see-also"></a>Siehe auch
 

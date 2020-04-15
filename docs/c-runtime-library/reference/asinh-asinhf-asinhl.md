@@ -1,10 +1,13 @@
 ---
 title: asinh, asinhf, asinhl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - asinh
 - asinhf
 - asinhl
+- _o_asinh
+- _o_asinhf
+- _o_asinhl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +34,12 @@ helpviewer_keywords:
 - asinhl function
 - asinhf function
 ms.assetid: 4488babe-1a7e-44ca-8b7b-c2db0a70084f
-ms.openlocfilehash: f4d93f121c0124293a5bdff9041d0adfaab5d83c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 299ee0ff3014dcfd2f6ab712d01766119fab5894
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939642"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81350466"
 ---
 # <a name="asinh-asinhf-asinhl"></a>asinh, asinhf, asinhl
 
@@ -56,28 +60,30 @@ long double asinh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **asinh** -Funktionen geben den umgekehrten hyberbolischen Sinus (hyperbolischen Arkus Sinus) von *x*zurück. Diese Funktion ist über der Gleitkommadomäne gültig. Wenn *x* eine Stille Nan, unbegrenzt oder unendlich ist, wird derselbe Wert zurückgegeben.
+Die **Asinh-Funktionen** geben den inversen hyberbischen Sinus (arc hyperbolic sine) von *x*zurück. Diese Funktion ist über der Gleitkommadomäne gültig. Wenn *x* ein ruhiger NaN, unbestimmt oder unendlich ist, wird der gleiche Wert zurückgegeben.
 
-|Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
+|Eingabe|SEH-Ausnahme|**_matherr** Ausnahme|
 |-----------|-------------------|--------------------------|
-|± QNAN, IND, INF|none|none|
+|± QNAN, IND, INF|Keine|Keine|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie verwenden C++, können Sie über Ladungen von **asinh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **asinh** immer Double und gibt **Double**zurück.
+Wenn Sie C++ verwenden, können Sie Überladungen von **Asinh** aufrufen, die **float-** oder **lange** **Doppelwerte** annehmen und zurückgeben. In einem C-Programm nimmt und gibt **asinh** immer **double**ein.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|--------------|------------------|
-|**asinh**, **asinhf**, **asinhl**|\<math.h>|\<cmath-> \<oder Math. h-<|
+|**asinh**, **asinhf**, **asinhl**|\<math.h>|\<cmath> \<oder math.h<|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

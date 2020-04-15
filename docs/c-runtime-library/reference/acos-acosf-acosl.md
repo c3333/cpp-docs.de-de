@@ -1,10 +1,11 @@
 ---
 title: acos, acosf, acosl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - acosf
 - acos
 - acosl
+- _o_acos
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -34,12 +36,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arccosine function
 ms.assetid: 00b89c48-8faf-4824-aa95-fa4349a4975d
-ms.openlocfilehash: 4933e4b3757161621676133ea8b9725ce140e80c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 4dd467ab807875dcf4236e4fbb744c77ec47880d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171293"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348975"
 ---
 # <a name="acos-acosf-acosl"></a>acos, acosf, acosl
 
@@ -60,30 +62,32 @@ long double acos( long double x );   // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
-Der Wert zwischen-1 und 1, für den der Arkus Kosinus berechnet werden soll (umgekehrter Kosinus).
+*X*<br/>
+Wert zwischen -1 und 1, für den das Arccosin (der inverse Kosinus) berechnet werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **ACOS** -Funktion gibt den Arkus Kosinus von *x* im Bereich 0 bis adressiert zurück.
+Die **acos-Funktion** gibt den Arccosin von *x* im Bereich von 0 bis -B-Bogenmaßen zurück.
 
-Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ACOS** standardmäßig einen unbestimmten Wert zurück.
+Wenn *x* kleiner als -1 oder größer als 1 ist, gibt **acos** standardmäßig eine unbestimmte Zeit zurück.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
 |± ∞|INVALID|_DOMAIN|
-|± QNAN,IND|none|_DOMAIN|
+|± QNAN,IND|Keine|_DOMAIN|
 |&#124;x&#124;>1|INVALID|_DOMAIN|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ACOS** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **ACOS** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Acos** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **acos** immer ein **Double**und gibt es zurück.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
-|**ACOS**, **Acosf**, **acosl**|\<math.h>|\<errno.h>|
+|**acos**, **acosf**, **acosl**|\<math.h>|\<errno.h>|
 
 ## <a name="example"></a>Beispiel
 
@@ -135,7 +139,7 @@ Arcsine of 0.000000 = 0.000000
 Arccosine of 0.000000 = 1.570796
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [asin, asinf, asinl](asin-asinf-asinl.md)<br/>

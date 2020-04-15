@@ -56,12 +56,12 @@ helpviewer_keywords:
 - _exec function
 - _texecvpe function
 ms.assetid: a261df93-206a-4fdc-b8ac-66aa7db83bc6
-ms.openlocfilehash: dab670c5baef1c51c39a4c936380fab92c5103cc
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: 52c9727db544d8b124b37cc5beae369ae06abe10
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75300302"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351665"
 ---
 # <a name="_exec-_wexec-functions"></a>_exec- und _wexec-Funktionen
 
@@ -76,14 +76,14 @@ Jede Funktion in dieser Familie lädt einen neuen Prozess und führt ihn aus:
 
 Der Buchstabe am Ende des Funktionsnamens bestimmt die Variante.
 
-|_exec-Funktionssuffix|Beschreibung|
+|_exec-Funktionssuffix|BESCHREIBUNG|
 |----------------------------|-----------------|
 |`e`|`envp`: Array von Zeigern zu Umgebungseinstellungen, wird an den neuen Prozess übergeben.|
 |`l`|Befehlszeilenargumente werden einzeln an die `_exec`-Funktion übergeben. Wird normalerweise verwendet, wenn die Anzahl der Parameter im neuen Prozess im Voraus bekannt ist.|
 |`p`|Die `PATH`-Umgebungsvariable wird verwendet, um die auszuführende Datei zu suchen.|
 |`v`|`argv`: Array von Zeigern zu Befehlszeilenargumenten, wird an die `_exec`-Funktion übergeben. Wird normalerweise verwendet, wenn die Anzahl der Parameter im neuen Prozess variabel ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede `_exec`-Funktion lädt einen neuen Prozess und führt ihn aus. Alle `_exec`-Funktionen verwenden die gleiche Betriebssystemfunktion ([CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw)). Die `_exec`-Funktionen behandeln ggf. automatisch Argumente mit Multibyte-Zeichenfolgen, wobei Multibyte-Zeichensequenzen entsprechend der derzeit verwendeten Multibyte-Codepage erkannt werden. Die `_wexec`-Funktionen sind Breitzeichenversionen der `_exec`-Funktionen. Die `_wexec`-Funktionen verhalten sich genauso wie ihre entsprechenden `_exec`-Familien, allerdings behandeln sie keine Multibyte-Zeichenfolgen.
 
@@ -105,10 +105,10 @@ Der `cmdname`-Parameter gibt die Datei an, die als neuer Prozess ausgeführt wer
 Parameter werden an den neuen Prozess übergeben, indem ein oder mehrere Zeiger als Parameter im `_exec`-Aufruf an die Zeichenfolgen übergeben werden. Diese Zeichenfolgen bilden die Parameterliste für den neuen Prozess. Die kombinierte Länge der geerbten Umgebungseinstellungen und der Zeichenfolgen, die die Parameterliste für den neuen Prozess bilden, darf 32 KB nicht überschreiten. Das abschließende Nullzeichen ('\0') für jede Zeichenfolge ist nicht in der Zählung enthalten, es werden jedoch die Leerzeichen gezählt (sie werden automatisch eingefügt, um die Parameter zu trennen).
 
 > [!NOTE]
->  Die in den Zeichenfolgen eingebetteten Leerzeichen können zu einem unerwarteten Verhalten führen. Zum Beispiel führt die Zeichenfolge `_exec` durch die Übergabe von `"hi there"` dazu, dass der neue Prozess zwei Argumente erhält: `"hi"` und `"there"`. Wenn der neue Prozess die benannte Datei "hi there" öffnen sollte, schlägt der Prozess fehl. Sie können dies verhindern, indem Sie die Zeichenfolge in Anführungszeichen setzen: `"\"hi there\""`.
+> Die in den Zeichenfolgen eingebetteten Leerzeichen können zu einem unerwarteten Verhalten führen. Zum Beispiel führt die Zeichenfolge `_exec` durch die Übergabe von `"hi there"` dazu, dass der neue Prozess zwei Argumente erhält: `"hi"` und `"there"`. Wenn der neue Prozess die benannte Datei "hi there" öffnen sollte, schlägt der Prozess fehl. Sie können dies verhindern, indem Sie die Zeichenfolge in Anführungszeichen setzen: `"\"hi there\""`.
 
 > [!IMPORTANT]
->  Übergeben Sie Benutzereingaben nicht an `_exec`, ohne den Inhalt explizit zu überprüfen. `_exec` führt zu einem Aufruf von [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). Beachten Sie daher, dass nicht qualifizierte Pfadnamen zu potenziellen Sicherheitslücken führen können.
+> Übergeben Sie Benutzereingaben nicht an `_exec`, ohne den Inhalt explizit zu überprüfen. `_exec` führt zu einem Aufruf von [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). Beachten Sie daher, dass nicht qualifizierte Pfadnamen zu potenziellen Sicherheitslücken führen können.
 
 Die `_exec`-Funktionen überprüfen ihre Parameter. Wenn erwartete Parameter NULL-Zeiger oder leere Zeichenfolgen sind bzw. ausgelassen werden, ruft die `_exec`-Funktion den Handler für ungültige Parameter auf, wie unter [Parametervalidierung](../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, stellen diese Funktionen `errno` auf `EINVAL` ein und geben -1 zurück. Es wird kein neuer Prozess ausgeführt.
 
@@ -118,7 +118,7 @@ Die `_execl`-, `_execle`-, `_execlp`- und `_execlpe`-Aufrufe werden normalerweis
 
 Die `_execv`-, `_execve`-, `_execvp`- und `_execvpe`-Aufrufe sind nützlich, wenn die Anzahl der Parameter im neuen Prozess variabel ist. Zeiger auf Parameter werden als Array, nämlich `argv`, übergeben. Der `argv`[0]-Parameter ist normalerweise ein Zeiger auf `cmdname`. Die Parameter von `argv`[1] bis `argv`[`n`] weisen auf die Zeichenfolgen hin, aus denen die neue Parameterliste besteht. Der `argv`[`n`+1]-Parameter muss ein **NULL**-Zeiger sein, um das Ende der Parameterliste zu markieren.
 
-Dateien, die beim Aufrufen von `_exec` geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_execl`-, `_execlp`-, `_execv`- und `_execvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. `_execle`-, `_execlpe`-, `_execve`- und `_execvpe`-Aufrufe ändern die Umgebung für den neuen Prozess, indem eine Liste der Umgebungseinstellungen durch den `envp`-Parameter übergeben wird. `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten Sie, dass `value` nicht in doppelte Anführungszeichen eingeschlossen ist.) Das letzte Element des `envp` Arrays muss **null**sein. Wenn `envp` selbst **NULL** ist, erbt der neue Prozess die Umgebungseinstellungen des aufrufenden Prozesses.
+Dateien, die beim Aufrufen von `_exec` geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_execl`-, `_execlp`-, `_execv`- und `_execvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. `_execle`-, `_execlpe`-, `_execve`- und `_execvpe`-Aufrufe ändern die Umgebung für den neuen Prozess, indem eine Liste der Umgebungseinstellungen durch den `envp`-Parameter übergeben wird. `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten `value` Sie, dass dies nicht in doppelten Anführungszeichen eingeschlossen ist.) Das letzte Element `envp` des Arrays sollte **NULL**sein. Wenn `envp` selbst **NULL** ist, erbt der neue Prozess die Umgebungseinstellungen des aufrufenden Prozesses.
 
 Ein Programm, das mit einer der `_exec`-Funktionen ausgeführt wird, wird immer in den Speicher geladen, als ob das Feld für die maximale Speicherbelegung in der Kopfzeile der EXE-Datei des Programms auf den Standardwert "0xFFFFH" festgelegt wäre.
 
@@ -232,14 +232,14 @@ int main( int ac, char* av[] )
 }
 ```
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** process.h
 
 ## <a name="see-also"></a>Siehe auch
 
-[Prozess- und Umgebungssteuerung](../c-runtime-library/process-and-environment-control.md)<br/>
-[abort](../c-runtime-library/reference/abort.md)<br/>
+[Prozess- und Umweltkontrolle](../c-runtime-library/process-and-environment-control.md)<br/>
+[Abbrechen](../c-runtime-library/reference/abort.md)<br/>
 [atexit](../c-runtime-library/reference/atexit.md)<br/>
 [exit, _Exit, _exit](../c-runtime-library/reference/exit-exit-exit.md)<br/>
 [_onexit, _onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)<br/>
