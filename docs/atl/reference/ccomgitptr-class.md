@@ -14,16 +14,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComGITPtr class
 ms.assetid: af895acb-525a-4555-bb67-b241b7df515b
-ms.openlocfilehash: 00265cc445191a5a539ab21d6f64b255849495e9
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 230eeb1577189d2057e530e1df8ef99c611fb32b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497262"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81327839"
 ---
 # <a name="ccomgitptr-class"></a>CComGITPtr-Klasse
 
-Diese Klasse stellt Methoden für den Umgang mit Schnittstellen Zeigern und der globalen Schnittstellen Tabelle (git) bereit.
+Diese Klasse stellt Methoden für den Umgang mit Schnittstellenzeigern und der globalen Schnittstellentabelle (GIT) bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,54 +35,54 @@ class CComGITPtr
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ des Schnittstellen Zeigers, der im git gespeichert werden soll.
+Der Typ des Schnittstellenzeigers, der im GIT gespeichert werden soll.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComGITPtr::CComGITPtr](#ccomgitptr)|Der Konstruktor.|
-|[CComGITPtr::~CComGITPtr](#dtor)|Der Destruktor.|
+|[CComGITPtr::'CComGITPtr](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComGITPtr::Attach](#attach)|Mit dieser Methode wird der Schnittstellen Zeiger in der globalen Schnittstellen Tabelle (git) registriert.|
-|[CComGITPtr::CopyTo](#copyto)|Mit dieser Methode wird die-Schnittstelle aus der globalen Schnittstellen Tabelle (git) in den bestandenen Zeiger kopiert.|
-|[CComGITPtr::Detach](#detach)|Mit dieser Methode können Sie die Zuordnung der-Schnitt `CComGITPtr` Stelle zum-Objekt aufheben.|
-|[CComGITPtr::GetCookie](#getcookie)|Ruft diese Methode auf, um das Cookie aus `CComGITPtr` dem-Objekt zurückzugeben.|
-|[CComGITPtr::Revoke](#revoke)|Diese Methode wird aufgerufen, um die-Schnittstelle aus der globalen Schnittstellen Tabelle (git) zu entfernen.|
+|[CComGITPtr::Anfügen](#attach)|Rufen Sie diese Methode auf, um den Schnittstellenzeiger in der globalen Schnittstellentabelle (GIT) zu registrieren.|
+|[CComGITPtr::CopyTo](#copyto)|Rufen Sie diese Methode auf, um die Schnittstelle aus der globalen Schnittstellentabelle (GIT) in den übergebenen Zeiger zu kopieren.|
+|[CComGITPtr::Detach](#detach)|Rufen Sie diese Methode auf, `CComGITPtr` um die Zuordnung der Schnittstelle vom Objekt zu trennen.|
+|[CComGITPtr::GetCookie](#getcookie)|Rufen Sie diese Methode auf, um das Cookie vom `CComGITPtr` Objekt zurückzugeben.|
+|[CComGITPtr::Widerrufen](#revoke)|Rufen Sie diese Methode auf, um die Schnittstelle aus der globalen Schnittstellentabelle (GIT) zu entfernen.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComGITPtr:: Operator DWORD](#operator_dword)|Gibt das Cookie aus dem `CComGITPtr` -Objekt zurück.|
-|[CComGITPtr::operator =](#operator_eq)|Zuweisungsoperator.|
+|[CComGITPtr::operator DWORD](#operator_dword)|Gibt das Cookie `CComGITPtr` aus dem Objekt zurück.|
+|[CComGITPtr::Operator =](#operator_eq)|Zuweisungsoperator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComGITPtr::m_dwCookie](#m_dwcookie)|Das Cookie.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Objekte, die den Free Thread-Mars Haller aggregieren und Schnittstellen Zeiger verwenden müssen, die von anderen Objekten abgerufen werden, müssen zusätzliche Schritte ausführen, um sicherzustellen, dass die Schnittstellen ordnungsgemäß gemarshallt werden. Dies umfasst in der Regel das Speichern der Schnittstellen Zeiger im git und das erhalten des Zeigers aus dem git bei jeder Verwendung. Die- `CComGITPtr` Klasse wird bereitgestellt, um die Verwendung von im git gespeicherten Schnittstellen Zeigern zu erleichtern.
+Objekte, die den Freithread-Marshaller aggregieren und Schnittstellenzeiger verwenden müssen, die von anderen Objekten abgerufen werden, müssen zusätzliche Schritte ausführen, um sicherzustellen, dass die Schnittstellen ordnungsgemäß gemarshallt sind. In der Regel umfasst dies das Speichern der Schnittstellenzeiger im GIT und das Abrufen des Zeigers aus dem GIT bei jeder Verwendung. Die `CComGITPtr` Klasse wird bereitgestellt, um Ihnen bei der Verwendung von Im GIT gespeicherten Schnittstellenzeigern zu helfen.
 
 > [!NOTE]
->  Die globale Schnittstellen Tabellen Funktion ist nur unter Windows 95 mit DCOM-Version 1,1 und höher, Windows 98, Windows NT 4,0 mit Service Pack 3 und höher und Windows 2000 verfügbar.
+> Die globale Schnittstellentabellenfunktion ist nur unter Windows 95 mit DCOM Version 1.1 und höher, Windows 98, Windows NT 4.0 mit Service Pack 3 und höher und Windows 2000 verfügbar.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase. h
+**Kopfzeile:** atlbase.h
 
-##  <a name="attach"></a>CComGITPtr:: Attach
+## <a name="ccomgitptrattach"></a><a name="attach"></a>CComGITPtr::Anfügen
 
-Mit dieser Methode wird der Schnittstellen Zeiger in der globalen Schnittstellen Tabelle (git) registriert.
+Rufen Sie diese Methode auf, um den Schnittstellenzeiger in der globalen Schnittstellentabelle (GIT) zu registrieren.
 
 ```
 HRESULT Attach(T* p) throw();
@@ -92,21 +92,21 @@ HRESULT Attach(DWORD dwCookie) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-Der Schnittstellen Zeiger, der dem git hinzugefügt werden soll.
+*P*<br/>
+Der Schnittstellenzeiger, der dem GIT hinzugefügt werden soll.
 
 *dwCookie*<br/>
-Das Cookie, das zum Identifizieren des Schnittstellen Zeigers verwendet wird.
+Das Cookie, das zum Identifizieren des Schnittstellenzeigers verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In Debugbuilds tritt ein Fehler auf, wenn das git ungültig ist oder wenn das Cookie gleich NULL ist.
+In Debugbuilds tritt ein Assertionsfehler auf, wenn der GIT ungültig ist oder wenn das Cookie gleich NULL ist.
 
-##  <a name="ccomgitptr"></a>CComGITPtr:: CComGITPtr
+## <a name="ccomgitptrccomgitptr"></a><a name="ccomgitptr"></a>CComGITPtr::CComGITPtr
 
 Der Konstruktor.
 
@@ -120,25 +120,25 @@ CComGITPtr(CComGITPtr&& rv);
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-in Ein Schnittstellen Zeiger, der in der globalen Schnittstellen Tabelle (git) gespeichert werden soll.
+*P*<br/>
+[in] Ein Schnittstellenzeiger, der in der globalen Schnittstellentabelle (GIT) gespeichert werden soll.
 
-*git*<br/>
-in Ein Verweis auf ein vorhandenes `CComGITPtr` -Objekt.
+*Git*<br/>
+[in] Ein Verweis auf `CComGITPtr` ein vorhandenes Objekt.
 
 *dwCookie*<br/>
-in Ein Cookie, das zum Identifizieren des Schnittstellen Zeigers verwendet wird.
+[in] Ein Cookie, das zum Identifizieren des Schnittstellenzeigers verwendet wird.
 
-*rv*<br/>
-in Das Quell `CComGITPtr` Objekt, aus dem Daten verschoben werden sollen.
+*Rv*<br/>
+[in] Das `CComGITPtr` Quellobjekt, aus dem Daten verschoben werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt ein neues `CComGITPtr` -Objekt und verwendet optional ein `CComGITPtr` vorhandenes-Objekt.
+Erstellt ein `CComGITPtr` neues Objekt, optional `CComGITPtr` mit einem vorhandenen Objekt.
 
-Der Konstruktor, der *RV* nutzt, ist ein bewegungskonstruktor. Die Daten werden aus der Quelle, dem *RV*und dem *RV* gelöscht.
+Der Konstruktor, der *rv* verwendet, ist ein Verschiebungskonstruktor. Die Daten werden von der Quelle *rv*verschoben und dann *rv* gelöscht.
 
-##  <a name="dtor"></a>CComGITPtr:: ~ CComGITPtr
+## <a name="ccomgitptrccomgitptr"></a><a name="dtor"></a>CComGITPtr::'CComGITPtr
 
 Der Destruktor.
 
@@ -146,13 +146,13 @@ Der Destruktor.
 ~CComGITPtr() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Entfernt die-Schnittstelle aus der globalen Schnittstellen Tabelle (git) mithilfe von [CComGITPtr:: Widerruf](#revoke).
+Entfernt die Schnittstelle aus der globalen Schnittstellentabelle (Global Interface Table, GIT) mit [CComGITPtr::Revoke](#revoke).
 
-##  <a name="copyto"></a>CComGITPtr:: CopyTo
+## <a name="ccomgitptrcopyto"></a><a name="copyto"></a>CComGITPtr::CopyTo
 
-Mit dieser Methode wird die-Schnittstelle aus der globalen Schnittstellen Tabelle (git) in den bestandenen Zeiger kopiert.
+Rufen Sie diese Methode auf, um die Schnittstelle aus der globalen Schnittstellentabelle (GIT) in den übergebenen Zeiger zu kopieren.
 
 ```
 HRESULT CopyTo(T** pp) const throw();
@@ -160,20 +160,20 @@ HRESULT CopyTo(T** pp) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*pp*<br/>
-Der Zeiger, der die-Schnittstelle empfangen soll.
+*Pp*<br/>
+Der Zeiger, der die Schnittstelle empfangen soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Schnittstelle aus git wird in den bestandenen Zeiger kopiert. Der Zeiger muss vom Aufrufer freigegeben werden, wenn er nicht mehr benötigt wird.
+Die Schnittstelle aus dem GIT wird in den übergebenen Zeiger kopiert. Der Zeiger muss vom Aufrufer freigegeben werden, wenn er nicht mehr benötigt wird.
 
-##  <a name="detach"></a>CComGITPtr::D Etach
+## <a name="ccomgitptrdetach"></a><a name="detach"></a>CComGITPtr::Detach
 
-Mit dieser Methode können Sie die Zuordnung der-Schnitt `CComGITPtr` Stelle zum-Objekt aufheben.
+Rufen Sie diese Methode auf, `CComGITPtr` um die Zuordnung der Schnittstelle vom Objekt zu trennen.
 
 ```
 DWORD Detach() throw();
@@ -181,15 +181,15 @@ DWORD Detach() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Cookie aus dem `CComGITPtr` -Objekt zurück.
+Gibt das Cookie `CComGITPtr` aus dem Objekt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Aufrufer muss die Schnittstelle aus dem git entfernen, indem er [CComGITPtr::](#revoke)revoverwendet.
+Es liegt am Aufrufer, die Schnittstelle aus dem GIT zu entfernen, indem [CComGITPtr::Revoke verwendet](#revoke)wird.
 
-##  <a name="getcookie"></a>CComGITPtr:: GetCookie
+## <a name="ccomgitptrgetcookie"></a><a name="getcookie"></a>CComGITPtr::GetCookie
 
-Ruft diese Methode auf, um das Cookie aus `CComGITPtr` dem-Objekt zurückzugeben.
+Rufen Sie diese Methode auf, um das Cookie vom `CComGITPtr` Objekt zurückzugeben.
 
 ```
 DWORD GetCookie() const;
@@ -199,11 +199,11 @@ DWORD GetCookie() const;
 
 Gibt das Cookie zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Cookie ist eine Variable, die zum Identifizieren einer Schnittstelle und ihrer Position verwendet wird.
+Das Cookie ist eine Variable, die verwendet wird, um eine Schnittstelle und ihren Speicherort zu identifizieren.
 
-##  <a name="m_dwcookie"></a>CComGITPtr:: m_dwCookie
+## <a name="ccomgitptrm_dwcookie"></a><a name="m_dwcookie"></a>CComGITPtr::m_dwCookie
 
 Das Cookie.
 
@@ -211,13 +211,13 @@ Das Cookie.
 DWORD m_dwCookie;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Cookie ist eine Element Variable, die zum Identifizieren einer Schnittstelle und ihrer Position verwendet wird.
+Das Cookie ist eine Membervariable, die verwendet wird, um eine Schnittstelle und ihren Speicherort zu identifizieren.
 
-##  <a name="operator_eq"></a>CComGITPtr:: Operator =
+## <a name="ccomgitptroperator-"></a><a name="operator_eq"></a>CComGITPtr::Operator =
 
-Der Zuweisungs Operator.
+Der Zuweisungsoperator.
 
 ```
 CComGITPtr& operator= (T* p);
@@ -228,41 +228,41 @@ CComGITPtr& operator= (CComGITPtr&& rv);
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
-in Ein Zeiger auf eine-Schnittstelle.
+*P*<br/>
+[in] Ein Zeiger auf eine Schnittstelle.
 
-*git*<br/>
-in Ein Verweis auf ein `CComGITPtr` -Objekt.
+*Git*<br/>
+[in] Ein Verweis `CComGITPtr` auf ein Objekt.
 
 *dwCookie*<br/>
-in Ein Cookie, das zum Identifizieren des Schnittstellen Zeigers verwendet wird.
+[in] Ein Cookie, das zum Identifizieren des Schnittstellenzeigers verwendet wird.
 
-*rv*<br/>
-in Der `CComGITPtr` zum Verschieben von Daten aus.
+*Rv*<br/>
+[in] Der `CComGITPtr` zum Verschieben von Daten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das aktualisierte `CComGITPtr` Objekt zurück.
+Gibt das `CComGITPtr` aktualisierte Objekt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weist einem `CComGITPtr` -Objekt einen neuen Wert zu, entweder aus einem vorhandenen-Objekt oder einem Verweis auf eine globale Schnittstellen Tabelle.
+Weist einem `CComGITPtr` Objekt einen neuen Wert zu, entweder aus einem vorhandenen Objekt oder aus einem Verweis auf eine globale Schnittstellentabelle.
 
-##  <a name="operator_dword"></a>CComGITPtr:: Operator DWORD
+## <a name="ccomgitptroperator-dword"></a><a name="operator_dword"></a>CComGITPtr::operator DWORD
 
-Gibt das Cookie zurück, das `CComGITPtr` dem-Objekt zugeordnet ist.
+Gibt das dem `CComGITPtr` Objekt zugeordnete Cookie zurück.
 
 ```
 operator DWORD() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Cookie ist eine Variable, die zum Identifizieren einer Schnittstelle und ihrer Position verwendet wird.
+Das Cookie ist eine Variable, die verwendet wird, um eine Schnittstelle und ihren Speicherort zu identifizieren.
 
-##  <a name="revoke"></a>CComGITPtr:: Widerruf
+## <a name="ccomgitptrrevoke"></a><a name="revoke"></a>CComGITPtr::Widerrufen
 
-Ruft diese Methode auf, um die aktuelle Schnittstelle aus der globalen Schnittstellen Tabelle (git) zu entfernen.
+Rufen Sie diese Methode auf, um die aktuelle Schnittstelle aus der globalen Schnittstellentabelle (GIT) zu entfernen.
 
 ```
 HRESULT Revoke() throw();
@@ -270,15 +270,15 @@ HRESULT Revoke() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Entfernt die-Schnittstelle aus git.
+Entfernt die Schnittstelle aus dem GIT.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Freethreaded Marshaler](../../atl/atl-and-the-free-threaded-marshaler.md)<br/>
-[Zugreifen auf Schnittstellen über mehrere Apartments](/windows/win32/com/accessing-interfaces-across-apartments)<br/>
-[Verwendungszwecke der globalen Schnittstellen Tabelle](/windows/win32/com/when-to-use-the-global-interface-table)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Freethreaded Marshaller](../../atl/atl-and-the-free-threaded-marshaler.md)<br/>
+[Zugriff auf Schnittstellen in den Wohnungen](/windows/win32/com/accessing-interfaces-across-apartments)<br/>
+[Verwendung der globalen Schnittstellentabelle](/windows/win32/com/when-to-use-the-global-interface-table)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)

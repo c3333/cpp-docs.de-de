@@ -1,6 +1,6 @@
 ---
-title: Makedynamicanalyzergroup
-description: Die C++ Funktionsreferenz für das Build Insights SDK makedynamicanalyzergroup.
+title: MakeDynamicAnalyzerGroup
+description: Die C++ Build Insights SDK MakeDynamicAnalyzerGroup-Funktionsreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: f409d685c6af6514b73cd837d668a962c1a0d01a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 148eeea41f29ac6dd75653feed7f3f3f8c301911
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334403"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323961"
 ---
-# <a name="makedynamicanalyzergroup"></a>Makedynamicanalyzergroup
+# <a name="makedynamicanalyzergroup"></a>MakeDynamicAnalyzerGroup
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `MakeDynamicAnalyzerGroup`-Funktion wird zum Erstellen einer dynamischen Analysegruppe verwendet. Mitglieder einer Analysegruppe empfangen Ereignisse nacheinander von links nach rechts, bis alle Ereignisse in einer Ablauf Verfolgung analysiert werden.
+Die `MakeDynamicAnalyzerGroup` Funktion wird verwendet, um eine dynamische Analysatorgruppe zu erstellen. Mitglieder einer Analysegruppe empfangen Ereignisse nacheinander von links nach rechts, bis alle Ereignisse in einer Ablaufverfolgung analysiert werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,17 +39,17 @@ auto MakeDynamicAnalyzerGroup(std::vector<std::unique_ptr<IAnalyzer>> analyzers)
 
 ### <a name="parameters"></a>Parameter
 
-\ *Analysen*
-Ein Vektor von [ianalyzer](../other-types/ianalyzer-class.md) -Zeigern, der in der dynamischen Analysegruppe enthalten ist. Diese Zeiger können RAW, `std::unique_ptr`oder `std::shared_ptr`sein.
+*Analysatoren*\
+Ein Vektor von [IAnalyzer-Zeigern,](../other-types/ianalyzer-class.md) die in der dynamischen Analysegruppe enthalten sind. Diese Zeiger können roh, `std::unique_ptr`oder `std::shared_ptr`sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine dynamische Analysegruppe. Verwenden Sie das Schlüsselwort " **Auto** ", um den Rückgabewert aufzuzeichnen.
+Eine dynamische Analysatorgruppe. Verwenden Sie das **Schlüsselwort auto,** um den Rückgabewert zu erfassen.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Im Unterschied zu statischen Analyzer-Gruppen müssen die Mitglieder einer dynamischen Analysegruppe zum Zeitpunkt der Kompilierung nicht bekannt sein. Sie können Analyzer-Gruppenmitglieder zur Laufzeit basierend auf der Programm Eingabe oder basierend auf anderen Werten auswählen, die zum Zeitpunkt der Kompilierung unbekannt sind. Im Unterschied zu statischen Analyzer-Gruppen weisen [ianalyzer](../other-types/ianalyzer-class.md) -Zeiger innerhalb einer dynamischen Analysegruppe polymorphe Verhalten auf, und virtuelle Funktionsaufrufe werden ordnungsgemäß weitergeleitet. Diese Flexibilität ergibt sich aus einer möglicherweise langsameren Ereignis Verarbeitungszeit. Wenn alle analyzergruppenmember zum Zeitpunkt der Kompilierung bekannt sind und Sie kein polymorphes Verhalten benötigen, sollten Sie die Verwendung einer statischen Analysegruppe in Erwägung gezogen. Wenn Sie eine statische Analysegruppe verwenden möchten, führen Sie stattdessen [makestaticanalyzergroup](make-static-analyzer-group.md) aus.
+Im Gegensatz zu statischen Analysegruppen müssen die Mitglieder einer dynamischen Analysegruppe zur Kompilierungszeit nicht bekannt sein. Sie können Analyzer-Gruppenmitglieder zur Laufzeit basierend auf Programmeingaben oder basierend auf anderen Werten auswählen, die zur Kompilierungszeit unbekannt sind. Im Gegensatz zu statischen Analysegruppen weisen [IAnalyzer-Zeiger](../other-types/ianalyzer-class.md) innerhalb einer dynamischen Analyzergruppe ein polymorphes Verhalten auf, und virtuelle Funktionsaufrufe werden korrekt ausgelöst. Diese Flexibilität geht zu Kosten einer möglicherweise langsameren Ereignisverarbeitungszeit. Wenn alle Mitglieder der Analyzer-Gruppe zur Kompilierungszeit bekannt sind und Sie kein polymorphes Verhalten benötigen, sollten Sie eine statische Analysatorgruppe verwenden. Um eine statische Analysatorgruppe zu verwenden, rufen Sie stattdessen [MakeStaticAnalyzerGroup](make-static-analyzer-group.md) auf.
 
-Eine dynamische Analysegruppe kann in einer statischen Analysegruppe gekapselt werden. Dies erfolgt durch Übergabe der Adresse an [makestaticanalyzergroup](make-static-analyzer-group.md). Verwenden Sie dieses Verfahren, um dynamische Analyse Gruppen an Funktionen wie " [analysieren](analyze.md)" zu übergeben, die nur statische Analyse Gruppen akzeptieren.
+Eine dynamische Analysatorgruppe kann innerhalb einer statischen Analysatorgruppe gekapselt werden. Dies geschieht durch Übergeben der Adresse an [MakeStaticAnalyzerGroup](make-static-analyzer-group.md). Verwenden Sie diese Technik zum Übergeben dynamischer Analysegruppen an Funktionen wie [Analysieren](analyze.md), die nur statische Analysatorgruppen akzeptieren.
 
 ::: moniker-end

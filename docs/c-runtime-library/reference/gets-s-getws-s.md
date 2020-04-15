@@ -1,9 +1,11 @@
 ---
 title: gets_s, _getws_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _getws_s
 - gets_s
+- _o__getws_s
+- _o_gets_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -34,16 +37,16 @@ helpviewer_keywords:
 - gets_s function
 - standard input, reading from
 ms.assetid: 5880c36f-122c-4061-a1a5-aeeced6fe58c
-ms.openlocfilehash: f282b4e8de12185a19e07374cf565788dc549136
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: aac64a42a2979623f4314f7bf28d7e4917eaee18
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954976"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81344216"
 ---
 # <a name="gets_s-_getws_s"></a>gets_s, _getws_s
 
-Ruft eine Zeile aus dem **stdin** -Datenstrom ab. Diese Versionen von [gets, _getws](../../c-runtime-library/gets-getws.md) enthalten Sicherheitserweiterungen, wie unter [Sicherheitserweiterungen im CRT](../../c-runtime-library/security-features-in-the-crt.md) beschrieben wird.
+Ruft eine Linie aus dem **stdin-Stream** ab. Diese Versionen von [gets, _getws](../../c-runtime-library/gets-getws.md) enthalten Sicherheitserweiterungen, wie unter [Sicherheitserweiterungen im CRT](../../c-runtime-library/security-features-in-the-crt.md) beschrieben wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -68,7 +71,7 @@ wchar_t *_getws_s( wchar_t (&buffer)[size] ); // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*Puffer*<br/>
 Speicherort für die Eingabezeichenfolge.
 
 *sizeInCharacters*<br/>
@@ -76,19 +79,21 @@ Die Größe des Puffers.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt den *Puffer* zurück, wenn erfolgreich. Ein **NULL**-Zeiger weist auf einen Fehler oder eine Dateiendebedingung hin. Verwenden Sie [ferror](ferror.md) oder [feof](feof.md) , um festzulegen, was aufgetreten ist.
+Gibt *den Puffer* zurück, wenn er erfolgreich ist. Ein **NULL**-Zeiger weist auf einen Fehler oder eine Dateiendebedingung hin. Verwenden Sie [ferror](ferror.md) oder [feof](feof.md), um festzulegen, was aufgetreten ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **gets_s** -Funktion liest eine Zeile aus dem Standardeingabestream **stdin** und speichert Sie im *Puffer*. Die Zeile enthält alle Zeichen einschließlich des ersten Zeilenumbruchzeichens ('\n'). **gets_s** ersetzt dann vor der Rückgabe der Zeile das Zeilen vorzeilenzeichen durch ein NULL-Zeichen (' \ 0 '). Im Gegensatz dazu behält die **fgets_s** -Funktion das Zeilen einzeilenzeichen bei.
+Die **gets_s-Funktion** liest eine Zeile aus dem Standard-Eingabestream **stdin** und speichert sie im *Puffer*. Die Zeile enthält alle Zeichen einschließlich des ersten Zeilenumbruchzeichens ('\n'). **gets_s** ersetzt dann das Zeilenumszeichen durch ein Nullzeichen ('''''), bevor die Zeile zurückgegeben wird. Im Gegensatz dazu behält die **fgets_s** Funktion das Zeilenumleinenzeichen bei.
 
-Wenn das erste gelesene Zeichen das Dateiendezeichen ist, wird ein NULL-Zeichen am Anfang des *Puffers* gespeichert, und es wird **null** zurückgegeben.
+Wenn der erste gelesene Zeichen das End-of-File-Zeichen ist, wird ein NULL-Zeichen am Anfang des *Puffers* gespeichert und **NULL** zurückgegeben.
 
-**_getws_s** ist eine breit Zeichen Version von **gets_s**. Das Argument und der Rückgabewert sind Zeichen folgen mit breit Zeichen.
+**_getws_s** ist eine breitgefächerte Version von **gets_s**; sein Argument und rückgabewert sind Zeichenfolgen mit großen Zeichen.
 
-Wenn der Puffer **null** ist oder *sizeincharacter* kleiner oder gleich 0 (null) ist, oder wenn der Puffer zu klein ist, um die Eingabezeile und null-Terminator zu enthalten, rufen diese Funktionen einen Handler für ungültige Parameter auf, wie in Parameter beschrieben. [ Validierung](../../c-runtime-library/parameter-validation.md). Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **null** zurück und legen errno auf **ERANGE**fest.
+Wenn *buffer* **NULL** oder *sizeInCharacters* kleiner oder gleich Null ist oder wenn der Puffer zu klein ist, um die Eingabezeile und den NULL-Terminator zu enthalten, rufen diese Funktionen einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **NULL** zurück und setzen errno auf **ERANGE**.
 
-In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -98,12 +103,12 @@ In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinf
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**gets_s**|\<stdio.h>|
 |**_getws_s**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

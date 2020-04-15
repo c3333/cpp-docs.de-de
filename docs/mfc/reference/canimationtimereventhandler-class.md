@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CAnimationTimerEventHandler [MFC], OnRenderingTooSlow
 - CAnimationTimerEventHandler [MFC], SetAnimationController
 ms.assetid: 188dea3b-4b5e-4f6b-8df9-09d993a21619
-ms.openlocfilehash: e5e6b0a22d438f9c26318129e2d04df96d386cda
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 72b6e5d8d9d4823795a1fb053c5f2374cb80fba4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391334"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81320014"
 ---
 # <a name="canimationtimereventhandler-class"></a>CAnimationTimerEventHandler-Klasse
 
@@ -37,17 +37,17 @@ class CAnimationTimerEventHandler : public CUIAnimationTimerEventHandlerBase<CAn
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationTimerEventHandler::CreateInstance](#createinstance)|Erstellt eine Instanz des `CAnimationTimerEventHandler` Rückruf.|
-|[CAnimationTimerEventHandler::OnPostUpdate](#onpostupdate)|Behandelt Ereignisse, die auftreten, nachdem ein Animationsupdate abgeschlossen ist. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnPostUpdate`.)|
-|[CAnimationTimerEventHandler::OnPreUpdate](#onpreupdate)|Behandelt Ereignisse, die auftreten, bevor ein Animationsupdate beginnt. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnPreUpdate`.)|
-|[CAnimationTimerEventHandler::OnRenderingTooSlow](#onrenderingtooslow)|Behandelt Ereignisse, die auftreten, wenn die minimale wünschenswert Framerate die Rendering-Framerate für eine Animation unterschreitet. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnRenderingTooSlow`.)|
-|[CAnimationTimerEventHandler::SetAnimationController](#setanimationcontroller)|Speichert einen Zeiger auf den Animationscontroller zum Weiterleiten von Ereignissen.|
+|[CAnimationTimerEventHandler::CreateInstance](#createinstance)|Erstellt eine `CAnimationTimerEventHandler` Instanz des Rückrufs.|
+|[CanimationTimerEventhandler::OnPostUpdate](#onpostupdate)|Behandelt Ereignisse, die nach Abschluss einer Animationsaktualisierung auftreten. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnPostUpdate`.)|
+|[CanimationTimerEventhandler::OnPreupdate](#onpreupdate)|Behandelt Ereignisse, die auftreten, bevor eine Animationsaktualisierung beginnt. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnPreUpdate`.)|
+|[CanimationTimerEventhandler::OnRenderingTooSlow](#onrenderingtooslow)|Behandelt Ereignisse, die auftreten, wenn die Renderbildrate für eine Animation unter die wünschenswerte Mindestbildrate fällt. (Überschreibt `CUIAnimationTimerEventHandlerBase::OnRenderingTooSlow`.)|
+|[CAnimationTimerEventHandler::SetAnimationController](#setanimationcontroller)|Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieser Ereignishandler wird erstellt und an SetTimerEventHandler übergeben übergeben wird, wenn Sie mit CAnimationController:: EnableAnimationTimerEventHandler aufrufen.
+Dieser Ereignishandler wird erstellt und an IUIAnimationTimer::SetTimerEventHandler übergeben, wenn Sie CAnimationController::EnableAnimationTimerEventHandler aufrufen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -61,9 +61,9 @@ Dieser Ereignishandler wird erstellt und an SetTimerEventHandler übergeben übe
 
 **Header:** afxanimationcontroller.h
 
-##  <a name="createinstance"></a>  CAnimationTimerEventHandler::CreateInstance
+## <a name="canimationtimereventhandlercreateinstance"></a><a name="createinstance"></a>CAnimationTimerEventHandler::CreateInstance
 
-Erstellt eine Instanz der CAnimationTimerEventHandler-Rückrufs.
+Erstellt eine Instanz von CAnimationTimerEventHandler-Rückruf.
 
 ```
 static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
@@ -80,11 +80,11 @@ Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird einen HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="onpostupdate"></a>  CAnimationTimerEventHandler::OnPostUpdate
+## <a name="canimationtimereventhandleronpostupdate"></a><a name="onpostupdate"></a>CanimationTimerEventhandler::OnPostUpdate
 
-Behandelt Ereignisse, die auftreten, nachdem ein Animationsupdate abgeschlossen ist.
+Behandelt Ereignisse, die nach Abschluss einer Animationsaktualisierung auftreten.
 
 ```
 IFACEMETHOD(OnPostUpdate)();
@@ -92,11 +92,11 @@ IFACEMETHOD(OnPostUpdate)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn die Methode erfolgreich ist; andernfalls E_FAIL.
+S_OK, ob die Methode erfolgreich ist. andernfalls E_FAIL.
 
-##  <a name="onpreupdate"></a>  CAnimationTimerEventHandler::OnPreUpdate
+## <a name="canimationtimereventhandleronpreupdate"></a><a name="onpreupdate"></a>CanimationTimerEventhandler::OnPreupdate
 
-Behandelt Ereignisse, die auftreten, bevor ein Animationsupdate beginnt.
+Behandelt Ereignisse, die auftreten, bevor eine Animationsaktualisierung beginnt.
 
 ```
 IFACEMETHOD(OnPreUpdate)();
@@ -104,11 +104,11 @@ IFACEMETHOD(OnPreUpdate)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn die Methode erfolgreich ist; andernfalls E_FAIL.
+S_OK, ob die Methode erfolgreich ist. andernfalls E_FAIL.
 
-##  <a name="onrenderingtooslow"></a>  CAnimationTimerEventHandler::OnRenderingTooSlow
+## <a name="canimationtimereventhandleronrenderingtooslow"></a><a name="onrenderingtooslow"></a>CanimationTimerEventhandler::OnRenderingTooSlow
 
-Behandelt Ereignisse, die auftreten, wenn die minimale wünschenswert Framerate die Rendering-Framerate für eine Animation unterschreitet.
+Behandelt Ereignisse, die auftreten, wenn die Renderbildrate für eine Animation unter die wünschenswerte Mindestbildrate fällt.
 
 ```
 IFACEMETHOD(OnRenderingTooSlow)(UINT32 fps);
@@ -116,15 +116,15 @@ IFACEMETHOD(OnRenderingTooSlow)(UINT32 fps);
 
 ### <a name="parameters"></a>Parameter
 
-*fps*
+*Fps*
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn die Methode erfolgreich ist; andernfalls E_FAIL.
+S_OK, ob die Methode erfolgreich ist. andernfalls E_FAIL.
 
-##  <a name="setanimationcontroller"></a>  CAnimationTimerEventHandler::SetAnimationController
+## <a name="canimationtimereventhandlersetanimationcontroller"></a><a name="setanimationcontroller"></a>CAnimationTimerEventHandler::SetAnimationController
 
-Speichert einen Zeiger auf den Animationscontroller zum Weiterleiten von Ereignissen.
+Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.
 
 ```
 void SetAnimationController(CAnimationController* pAnimationController);

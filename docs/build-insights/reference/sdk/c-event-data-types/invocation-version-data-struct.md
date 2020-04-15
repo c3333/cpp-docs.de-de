@@ -1,6 +1,6 @@
 ---
 title: INVOCATION_VERSION_DATA Struktur
-description: Das C++ Build Insights SDK INVOCATION_VERSION_DATA Struktur Referenz.
+description: Das C++ Build Insights SDK INVOCATION_VERSION_DATA Strukturreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 040b0f90b14133ec2b25f7a12d35b88d382c4f7a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 1211b4eb999fd63767af71c6884d7d20d6920df0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78335129"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325470"
 ---
 # <a name="invocation_version_data-structure"></a>INVOCATION_VERSION_DATA Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-In der `INVOCATION_VERSION_DATA` Struktur wird eine Versionsnummer als Gruppe ganzzahliger Werte beschrieben.
+Die `INVOCATION_VERSION_DATA` Struktur beschreibt eine Versionsnummer als eine Gruppe von integralen Werten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,13 +40,13 @@ typedef struct INVOCATION_VERSION_DATA_TAG
 } INVOCATION_VERSION_DATA;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |  |  |
 |--|--|
 | `VersionMajor` | Die Hauptnummer der Version. |
-| `VersionMinor` | Die neben Nummer der Version. |
+| `VersionMinor` | Die Nebennummer der Version. |
 | `BuildNumberMajor` | Die Hauptnummer des Builds. |
-| `BuildNumberMinor` | Die neben Nummer des Builds. |
+| `BuildNumberMinor` | Die untergeordnete Zahl des Builds. |
 
 ::: moniker-end

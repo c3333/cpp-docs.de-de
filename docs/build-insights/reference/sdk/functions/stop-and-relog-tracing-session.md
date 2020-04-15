@@ -1,6 +1,6 @@
 ---
-title: Stopandrelogtracingsession
-description: Die C++ Funktion "Build Insights SDK stopandrelogtracingsession".
+title: StopAndRelogTracingSession
+description: Der C++ Build Insights SDK StopAndRelogTracingSession-Funktionsverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: e99568f9b509b89ccd0f0711433dec9d96d904bc
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 1f6f5af63d25504226707d977791430463374328
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334199"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323670"
 ---
-# <a name="stopandrelogtracingsession"></a>Stopandrelogtracingsession
+# <a name="stopandrelogtracingsession"></a>StopAndRelogTracingSession
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `StopAndRelogTracingSession`-Funktion beendet eine laufende Ablauf Verfolgungs Sitzung und speichert die resultierende Ablauf Verfolgung in einer temporären Datei. Eine erneute Protokollierungs Sitzung wird dann sofort mit der temporären Datei als Eingabe gestartet. Die abschließende von der relogging-Sitzung erzeugte, erneut protokollierte Ablauf Verfolgung wird in einer Datei gespeichert, die vom Aufrufer angegeben wird. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
+Die `StopAndRelogTracingSession` Funktion beendet eine fortlaufende Ablaufverfolgungssitzung und speichert die resultierende Ablaufverfolgung in einer temporären Datei. Eine Relogging-Sitzung wird dann sofort mit der temporären Datei als Eingabe gestartet. Die letzte erneut protokollierte Ablaufverfolgung, die von der Relogging-Sitzung erzeugt wird, wird in einer vom Aufrufer angegebenen Datei gespeichert. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -57,35 +57,35 @@ RESULT_CODE StopAndRelogTracingSession(
 
 ### <a name="parameters"></a>Parameter
 
-*Sessionname* -\
-Der Name der Ablauf Verfolgungs Sitzung, die angehalten werden soll. Verwenden Sie den gleichen Sitzungs Namen wie der, der an [starttracingsession](start-tracing-session.md), [starttracingsessiona](start-tracing-session-a.md)oder [starttracingsessionw](start-tracing-session-w.md)übergeben wird.
+*sessionName*\
+Der Name der zu beendenden Ablaufverfolgungssitzung. Verwenden Sie denselben Sitzungsnamen wie an [StartTracingSession](start-tracing-session.md), [StartTracingSessionA](start-tracing-session-a.md)oder [StartTracingSessionW](start-tracing-session-w.md)übergeben.
 
-*outputlogfile* -\
-Die Datei, in die die neu protokollierte Ablauf Verfolgung geschrieben werden soll, die von der erneuten Protokollierungs Sitzung erstellt wurde
+*outputLogFile*\
+Die Datei, in die die erneut etologierte Ablaufverfolgung geschrieben werden soll, die von der Relogging-Sitzung erzeugt wurde.
 
-*Statistik*\
-Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md) Objekt. `StopAndRelogTracingSession` schreibt Statistiken der Ablauf Verfolgungs Sammlung in dieses Objekt, bevor Sie zurückgegeben wird
+*Statistiken*\
+Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md) Objekt. `StopAndRelogTracingSession`schreibt Ablaufverfolgungssammlungsstatistiken in diesem Objekt, bevor es zurückgegeben wird.
 
-" *numofanalysispasses* "\
-Die Anzahl der für die Ablauf Verfolgung zu testenden Analyse Durchläufen. Die Ablauf Verfolgung wird einmal pro Analyse Durchlauf durch die angegebene Analysegruppe weitergeleitet.
+*numberOfAnalysisPasses*\
+Die Anzahl der Analysedurchläufe, die für die Ablaufverfolgung ausgeführt werden sollen. Die Ablaufverfolgung wird einmal pro Analysedurchlauf durch die bereitgestellte Analysegruppe geleitet.
 
-*systemeventsretentionflags* -\
-Eine [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](../other-types/relog-retention-system-event-flags-constants.md) Bitmaske, die angibt, welche System-ETW-Ereignisse in der protokollierten Ablauf Verfolgung aufbewahrt werden sollen.
+*systemEventsRetentionFlags*\
+Eine [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](../other-types/relog-retention-system-event-flags-constants.md) Bitmaske an, die angibt, welche System-ETW-Ereignisse in der erneut protokollierten Ablaufverfolgung beibehalten werden sollen.
 
-*analyzergroup* -\
-Die Analyzer-Gruppe, die für die Analysephase der erneuten Protokollierungs Sitzung verwendet wird. Rufen Sie [makestaticanalyzergroup](make-static-analyzer-group.md) auf, um eine Analysegruppe zu erstellen. Wenn Sie eine dynamische Analysegruppe verwenden möchten, die von [makedynamicanalyzergroup](make-dynamic-analyzer-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in einer statischen Analysegruppe, indem Sie die Adresse an `MakeStaticAnalyzerGroup`übergeben.
+*analyzerGroup*\
+Die Analysegruppe, die für die Analysephase der Relogging-Sitzung verwendet wird. Rufen Sie [MakeStaticAnalyzerGroup](make-static-analyzer-group.md) auf, um eine Analyzer-Gruppe zu erstellen. Wenn Sie eine dynamische Analysatorgruppe verwenden möchten, die von [MakeDynamicAnalyzerGroup](make-dynamic-analyzer-group.md)abgerufen wurde, kapseln `MakeStaticAnalyzerGroup`Sie sie zunächst in einer statischen Analyzergruppe ein, indem Sie ihre Adresse an übergeben.
 
-*reloggergroup* -\
-Die der reloggersitzung-Gruppe, die Ereignisse in der in *outputlogfile*angegebenen Ablauf Verfolgungs Datei erneut protokolliert. Rufen Sie [makestatikreloggergroup](make-static-relogger-group.md) auf, um eine der reloggersitzung-Gruppe zu erstellen. Wenn Sie eine dynamische der reloggersitzung-Gruppe verwenden möchten, die von [makedynamideloggergroup](make-dynamic-relogger-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in eine statische der reloggersitzung-Gruppe, indem Sie die Adresse an `MakeStaticReloggerGroup`übergeben.
+*reloggerGroup*\
+Die Reloggergruppe, die Ereignisse in die in *outputLogFile*angegebene Ablaufverfolgungsdatei neu protokolliert. Rufen Sie [MakeStaticReloggerGroup](make-static-relogger-group.md) auf, um eine Reloggergruppe zu erstellen. Wenn Sie eine dynamische Reloggergruppe verwenden möchten, die von [MakeDynamicReloggerGroup](make-dynamic-relogger-group.md)abgerufen wurde, kapseln `MakeStaticReloggerGroup`Sie sie zuerst in einer statischen Reloggergruppe ein, indem Sie ihre Adresse an übergeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Eingabe Ablauf Verfolgung wird durch die "Analyzer"-Gruppe " *anzahlungsanalysispasses* " geleitet. Es gibt keine ähnliche Option für die erneute Protokollierung. Die Ablauf Verfolgung wird nur einmal über die Gruppe der reloggersitzung übergeben, nachdem alle Analyse Durchläufen vollständig sind.
+Die Eingabeablaufverfolgung wird durch die *Analyzer-GruppenanzahlOfAnalysisPasses-Zeiten* übergeben. Es gibt keine ähnliche Option für das Erneuteinloggen von Durchläufen. Die Spur wird durch die Reloggergruppe nur einmal übergeben, nachdem alle Analysedurchläufe abgeschlossen sind.
 
-Die erneute Protokollierung von System Ereignissen wie CPU-Beispielen aus einer der reloggersitzung-Klasse wird nicht unterstützt. Verwenden Sie den Parameter " *systemeventsretentionflags* ", um zu entscheiden, welche Systemereignisse in der Ausgabe Ablauf Verfolgung aufbewahrt werden sollen.
+Das Relogging von Systemereignissen wie CPU-Samples innerhalb einer Reloggerklasse wird nicht unterstützt. Verwenden Sie den Parameter *systemEventsRetentionFlags,* um zu entscheiden, welche Systemereignisse in der Ausgabeablaufverfolgung beibehalten werden sollen.
 
 ::: moniker-end

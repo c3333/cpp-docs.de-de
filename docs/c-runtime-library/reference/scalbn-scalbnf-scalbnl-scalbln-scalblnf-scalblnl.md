@@ -1,6 +1,6 @@
 ---
 title: scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - scalblnl
 - scalbnl
@@ -8,6 +8,12 @@ api_name:
 - scalblnf
 - scalbn
 - scalbln
+- _o_scalbln
+- _o_scalblnf
+- _o_scalblnl
+- _o_scalbn
+- _o_scalbnf
+- _o_scalbnl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +46,12 @@ helpviewer_keywords:
 - scalbnf function
 - scalblnf function
 ms.assetid: df2f1543-8e39-4af4-a5cf-29307e64807d
-ms.openlocfilehash: 794d0bdceb13aafb83de85fb29e47a4fa3125cd6
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d0c7f6db7ad6970be85203eef76e5ccb152e2200
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948919"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332601"
 ---
 # <a name="scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl"></a>scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
 
@@ -97,23 +104,25 @@ long double scalblnl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Gleitkommawert.
 
-*exp*<br/>
+*Exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **scalbn** -Funktionen geben den Wert von *x* \* **FLT_RADIX**<sup>Exp</sup> zurück, wenn erfolgreich. Bei einem Überlauf (abhängig vom Vorzeichen von *x*) gibt **scalbn** +/- **HUGE_VAL**; zurück. der **errno** -Wert ist auf **ERANGE**festgelegt.
+Die **scalbn-Funktionen** geben den Wert *x* \* **FLT_RADIX**<sup>exp</sup> zurück, wenn sie erfolgreich sind. Bei Überlauf (je nach Vorzeichen von *x*), **scalbn** returns +/- **HUGE_VAL**; Der **errno-Wert** ist auf **ERANGE**festgelegt.
 
-Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu **errno-** und möglichen Fehlerrückgabewerten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**FLT_RADIX** wird in \<float. h > als systemeigene Gleit Komma Basis definiert; in binären Systemen hat es den Wert 2, und **scalbn** entspricht [LDE XP](ldexp.md).
+**FLT_RADIX** ist \<in float.h> als natives Gleitkomma-Radix definiert; auf binären Systemen hat es einen Wert von 2, und **scalbn** entspricht [ldexp](ldexp.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die **float** -oder **Long** **Double** -Typen verwenden und zurückgeben. In einem C-Programm nimmt **scalbn** immer einen **Double** -und einen **int** -Wert an und gibt einen **Double**-Wert zurück. **scalbln** nimmt immer einen **Double** -Wert und einen **Long** -Wert und gibt einen **Double**zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Scalbn** und **Scalbln** aufrufen, die **Float-** oder **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **scalbn** immer ein **Double** und ein **int** und gibt ein **Double**zurück, und **scalbln** nimmt immer ein **Double** und ein **Long** und gibt ein **Double**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -121,7 +130,7 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **
 |--------------|--------------|------------------|
 |**scalbn**, **scalbnf**, **scalbnl**, **scalbln**, **scalblnf**, **scalblnl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -141,7 +150,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 6.4 times FLT_RADIX to the power of 3 is 51.2

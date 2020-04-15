@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CSliderCtrl [MFC], SetTipSide
 - CSliderCtrl [MFC], SetToolTips
 ms.assetid: dd12b084-4eda-4550-a810-8f3cfb06b871
-ms.openlocfilehash: 8fffdfc002b25fdcd72dcbbf53e7e6c321f55296
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 24e1cb18f979d1144f15cf6ffedc6cace5f5361e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69502521"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318215"
 ---
 # <a name="csliderctrl-class"></a>CSliderCtrl-Klasse
 
@@ -95,65 +95,65 @@ class CSliderCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CSliderCtrl::CSliderCtrl](#csliderctrl)|Erstellt ein `CSliderCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CSliderCtrl::ClearSel](#clearsel)|Löscht die aktuelle Auswahl in einem Schieberegler-Steuerelement.|
-|[CSliderCtrl::ClearTics](#cleartics)|Entfernt die aktuellen Teil Striche von einem Schieberegler-Steuerelement.|
-|[CSliderCtrl::Create](#create)|Erstellt ein Schieberegler-Steuerelement und fügt `CSliderCtrl` es an ein-Objekt an.|
-|[CSliderCtrl::CreateEx](#createex)|Erstellt ein Schieberegler-Steuerelement mit den angegebenen erweiterten Windows-Stilen und `CSliderCtrl` fügt es an ein-Objekt an.|
-|[CSliderCtrl::GetBuddy](#getbuddy)|Ruft das Handle für ein Fenster des Schieberegler-Steuerelement-Steuer Elements an einem angegebenen Speicherort ab.|
-|[CSliderCtrl::GetChannelRect](#getchannelrect)|Ruft die Größe des Kanals des Schieberegler-Steuer Elements ab.|
-|[CSliderCtrl::GetLineSize](#getlinesize)|Ruft die Zeilengröße eines Schieberegler-Steuer Elements ab.|
-|[CSliderCtrl::GetNumTics](#getnumtics)|Ruft die Anzahl von Teil Strichen in einem Schieberegler-Steuerelement ab.|
-|[CSliderCtrl::GetPageSize](#getpagesize)|Ruft die Seitengröße eines Schieberegler-Steuer Elements ab.|
+|[CSliderCtrl::ClearTics](#cleartics)|Entfernt die aktuellen Teilstriche aus einem Schieberegler-Steuerelement.|
+|[CSliderCtrl::Erstellen](#create)|Erstellt ein Schiebereglersteuerelement und `CSliderCtrl` fügt es an ein Objekt an.|
+|[CSliderCtrl::CreateEx](#createex)|Erstellt ein Schiebereglersteuerelement mit den angegebenen erweiterten `CSliderCtrl` Windows-Stilen und fügt es an ein Objekt an.|
+|[CSliderCtrl::GetBuddy](#getbuddy)|Ruft das Handle zu einem Schieberegler-Steuerelement-Buddy-Fenster an einer bestimmten Position ab.|
+|[CSliderCtrl::GetChannelRect](#getchannelrect)|Ruft die Größe des Kanals des Schiebereglersteuerelements ab.|
+|[CSliderCtrl::GetLineSize](#getlinesize)|Ruft die Zeilengröße eines Schiebereglersteuerelements ab.|
+|[CSliderCtrl::GetNumTics](#getnumtics)|Ruft die Anzahl der Teilstriche in einem Schieberegler-Steuerelement ab.|
+|[CSliderCtrl::GetPageSize](#getpagesize)|Ruft die Seitengröße eines Schiebereglersteuerelements ab.|
 |[CSliderCtrl::GetPos](#getpos)|Ruft die aktuelle Position des Schiebereglers ab.|
 |[CSliderCtrl::GetRange](#getrange)|Ruft die minimalen und maximalen Positionen für einen Schieberegler ab.|
 |[CSliderCtrl::GetRangeMax](#getrangemax)|Ruft die maximale Position für einen Schieberegler ab.|
-|[CSliderCtrl::GetRangeMin](#getrangemin)|Ruft die minimale Position für einen Schieberegler ab.|
+|[CSliderCtrl::GetRangeMin](#getrangemin)|Ruft die Mindestposition für einen Schieberegler ab.|
 |[CSliderCtrl::GetSelection](#getselection)|Ruft den Bereich der aktuellen Auswahl ab.|
-|[CSliderCtrl::GetThumbLength](#getthumblength)|Ruft die Länge des Schiebereglers im aktuellen TrackBar-Steuerelement ab.|
-|[CSliderCtrl::GetThumbRect](#getthumbrect)|Ruft die Größe des Zieh Punkts des Schieberegler-Steuer Elements ab.|
-|[CSliderCtrl::GetTic](#gettic)|Ruft die Position des angegebenen Teil Strichs ab.|
-|[CSliderCtrl::GetTicArray](#getticarray)|Ruft das Array von Teil Strich Positionen für ein Schieberegler-Steuerelement ab.|
-|[CSliderCtrl::GetTicPos](#getticpos)|Ruft die Position des angegebenen Teil Strichs in Client Koordinaten ab.|
-|[CSliderCtrl::GetToolTips](#gettooltips)|Ruft das Handle für das QuickInfo-Steuerelement ab, das dem Schieberegler-Steuerelement zugewiesen ist, sofern vorhanden|
+|[CSliderCtrl::GetThumbLength](#getthumblength)|Ruft die Länge des Schiebereglers im aktuellen Spurleistensteuerelement ab.|
+|[CSliderCtrl::GetThumbRect](#getthumbrect)|Ruft die Größe des Daumens des Schiebereglersteuerelements ab.|
+|[CSliderCtrl::GetTic](#gettic)|Ruft die Position des angegebenen Häkchens zeichen ab.|
+|[CSliderCtrl::GetTicArray](#getticarray)|Ruft das Array von Teilstrichpositionen für ein Schiebereglersteuerelement ab.|
+|[CSliderCtrl::GetTicPos](#getticpos)|Ruft die Position des angegebenen Teilstrichs in Clientkoordinaten ab.|
+|[CSliderCtrl::GetToolTipps](#gettooltips)|Ruft das Handle für das QuickInfo-Steuerelement ab, das dem Schieberegler-Steuerelement zugewiesen ist, falls vorhanden.|
 |[CSliderCtrl::SetBuddy](#setbuddy)|Weist ein Fenster als Buddy-Fenster für ein Schieberegler-Steuerelement zu.|
-|[CSliderCtrl::SetLineSize](#setlinesize)|Legt die Zeilengröße eines Schieberegler-Steuer Elements fest.|
-|[CSliderCtrl::SetPageSize](#setpagesize)|Legt die Seitengröße eines Schieberegler-Steuer Elements fest.|
+|[CSliderCtrl::SetLineSize](#setlinesize)|Legt die Liniengröße eines Schiebereglersteuerelements fest.|
+|[CSliderCtrl::SetPageSize](#setpagesize)|Legt die Seitengröße eines Schiebereglersteuerelements fest.|
 |[CSliderCtrl::SetPos](#setpos)|Legt die aktuelle Position des Schiebereglers fest.|
 |[CSliderCtrl::SetRange](#setrange)|Legt die minimalen und maximalen Positionen für einen Schieberegler fest.|
 |[CSliderCtrl::SetRangeMax](#setrangemax)|Legt die maximale Position für einen Schieberegler fest.|
-|[CSliderCtrl::SetRangeMin](#setrangemin)|Legt die minimale Position für einen Schieberegler fest.|
+|[CSliderCtrl::SetRangeMin](#setrangemin)|Legt die Mindestposition für einen Schieberegler fest.|
 |[CSliderCtrl::SetSelection](#setselection)|Legt den Bereich der aktuellen Auswahl fest.|
-|[CSliderCtrl::SetThumbLength](#setthumblength)|Legt die Länge des Schiebereglers im aktuellen TrackBar-Steuerelement fest.|
-|[CSliderCtrl::SetTic](#settic)|Legt die Position des angegebenen Teil Strichs fest.|
-|[CSliderCtrl::SetTicFreq](#setticfreq)|Legt die Häufigkeit von Teil Strichen pro Schieberegler-Steuerelement Inkrement fest.|
-|[CSliderCtrl::SetTipSide](#settipside)|Positioniert ein QuickInfo-Steuerelement von einem TrackBar-Steuerelement.|
-|[CSliderCtrl::SetToolTips](#settooltips)|Weist einem Schieberegler-Steuerelement ein ToolTip-Steuerelement zu.|
+|[CSliderCtrl::SetThumbLength](#setthumblength)|Legt die Länge des Schiebereglers im aktuellen Spurleistensteuerelement fest.|
+|[CSliderCtrl::SetTic](#settic)|Legt die Position des angegebenen Häkchens zeichen fest.|
+|[CSliderCtrl::SetTicFreq](#setticfreq)|Legt die Häufigkeit von Teilstrichen pro Schieberegler-Steuerschrittinkrement fest.|
+|[CSliderCtrl::SetTipSide](#settipside)|Positioniert ein QuickInfo-Steuerelement, das von einem Spurleistensteuerelement verwendet wird.|
+|[CSliderCtrl::SetToolTips](#settooltips)|Weist einem Schiebereglersteuerelement ein QuickInfo-Steuerelement zu.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein "Schieberegler-Steuerelement" (auch als TrackBar bezeichnet) ist ein Fenster mit einem Schieberegler und optionalen Teil Strichen. Wenn der Benutzer den Schieberegler mit der Maus oder der Richtungs Taste verschiebt, sendet das Steuerelement Benachrichtigungs Meldungen, um die Änderung anzugeben.
+Ein "Schieberegler" (auch als Trackbar bezeichnet) ist ein Fenster mit einem Schieberegler und optionalen Teilstrichen. Wenn der Benutzer den Schieberegler mit der Maus oder den Richtungstasten bewegt, sendet das Steuerelement Benachrichtigungen, um die Änderung anzuzeigen.
 
-Schieberegler-Steuerelemente sind hilfreich, wenn Sie möchten, dass der Benutzer einen diskreten Wert oder einen Satz aufeinander folgender Werte in einem Bereich auswählt. Beispielsweise können Sie ein Schieberegler-Steuerelement verwenden, um dem Benutzer die Möglichkeit zu geben, die Wiederholungsrate der Tastatur festzulegen, indem Sie den Schieberegler auf einen bestimmten Teil Strich verschieben.
+Schiebereglersteuerelemente sind nützlich, wenn der Benutzer einen diskreten Wert oder einen Satz aufeinander folgender Werte in einem Bereich auswählen soll. Sie können z. B. ein Schieberegler-Steuerelement verwenden, um dem Benutzer zu ermöglichen, die Wiederholungsrate der Tastatur festzulegen, indem Sie den Schieberegler auf ein bestimmtes Häkchen verschieben.
 
-Dieses Steuerelement (und damit `CSliderCtrl` auch die-Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT, Version 3,51 und höher, ausgeführt werden.
+Dieses Steuerelement (und `CSliderCtrl` damit die Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT Version 3.51 und höher ausgeführt werden.
 
-Der Schieberegler wird in Inkrementen verschoben, die Sie bei der Erstellung angeben. Wenn Sie z. b. angeben, dass der Schieberegler einen Bereich von fünf aufweisen soll, kann der Schieberegler nur sechs Positionen belegen: eine Position auf der linken Seite des Schieberegler-Steuer Elements und eine Position für jedes Inkrement im Bereich. In der Regel wird jede dieser Positionen durch einen Teil Strich identifiziert.
+Der Schieberegler wird in Schritten verschoben, die Sie beim Erstellen angeben. Wenn Sie z. B. angeben, dass der Schieberegler einen Bereich von fünf haben soll, kann der Schieberegler nur sechs Positionen einnehmen: eine Position auf der linken Seite des Schiebereglers und eine Position für jedes Inkrement im Bereich. In der Regel wird jede dieser Positionen durch ein Häkchen gekennzeichnet.
 
-Sie erstellen einen Schieberegler, indem Sie den-Konstruktor und `Create` die `CSliderCtrl`-Member-Funktion von verwenden. Nachdem Sie ein Schieberegler-Steuerelement erstellt haben, können Sie mit `CSliderCtrl` Element Funktionen in viele seiner Eigenschaften ändern. Zu den Änderungen, die Sie vornehmen können, gehören das Festlegen der minimalen und maximalen Positionen für den Schieberegler, das Zeichnen von Teil Strichen, das Festlegen eines Auswahl Bereichs und das Neupositionieren des Schiebereglers
+Sie erstellen einen Schieberegler mithilfe `Create` des `CSliderCtrl`Konstruktors und der Memberfunktion von . Nachdem Sie ein Schiebereglersteuerelement erstellt haben, können Sie Memberfunktionen in `CSliderCtrl` verwenden, um viele seiner Eigenschaften zu ändern. Zu den Änderungen, die Sie vornehmen können, gehören das Festlegen der minimalen und maximalen Positionen für den Schieberegler, das Zeichnen von Teilstrichen, das Festlegen eines Auswahlbereichs und das Neupositionieren des Schiebereglers.
 
-Weitere Informationen zum Verwenden von `CSliderCtrl`finden Sie unter Steuer [Elemente](../../mfc/controls-mfc.md) und [Verwenden von CSliderCtrl](../../mfc/using-csliderctrl.md).
+Weitere Informationen zur `CSliderCtrl`Verwendung finden Sie unter [Steuerelemente](../../mfc/controls-mfc.md) und [Verwenden von CSliderCtrl](../../mfc/using-csliderctrl.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -165,7 +165,7 @@ Weitere Informationen zum Verwenden von `CSliderCtrl`finden Sie unter Steuer [El
 
 **Header:** afxcmn.h
 
-##  <a name="clearsel"></a>CSliderCtrl:: ClearSEL
+## <a name="csliderctrlclearsel"></a><a name="clearsel"></a>CSliderCtrl::ClearSel
 
 Löscht die aktuelle Auswahl in einem Schieberegler-Steuerelement.
 
@@ -175,12 +175,12 @@ void ClearSel(BOOL bRedraw = FALSE);
 
 ### <a name="parameters"></a>Parameter
 
-*bRedraw*<br/>
-Flag neu zeichnen. Wenn dieser Parameter true ist, wird der Schieberegler nach dem Löschen der Auswahl neu gezeichnet. Andernfalls wird der Schieberegler nicht neu gezeichnet.
+*bZeichnung*<br/>
+Zeichnen Sie die Flagge neu. Wenn dieser Parameter TRUE ist, wird der Schieberegler neu gezeichnet, nachdem die Auswahl gelöscht wurde. Andernfalls wird der Schieberegler nicht neu gezeichnet.
 
-##  <a name="cleartics"></a>CSliderCtrl:: ClearTics
+## <a name="csliderctrlcleartics"></a><a name="cleartics"></a>CSliderCtrl::ClearTics
 
-Entfernt die aktuellen Teil Striche von einem Schieberegler-Steuerelement.
+Entfernt die aktuellen Teilstriche aus einem Schieberegler-Steuerelement.
 
 ```
 void ClearTics(BOOL bRedraw = FALSE);
@@ -188,12 +188,12 @@ void ClearTics(BOOL bRedraw = FALSE);
 
 ### <a name="parameters"></a>Parameter
 
-*bRedraw*<br/>
-Flag neu zeichnen. Wenn dieser Parameter true ist, wird der Schieberegler neu gezeichnet, nachdem die Teil Striche gelöscht wurden. Andernfalls wird der Schieberegler nicht neu gezeichnet.
+*bZeichnung*<br/>
+Zeichnen Sie die Flagge neu. Wenn dieser Parameter TRUE ist, wird der Schieberegler neu gezeichnet, nachdem die Teilstriche gelöscht wurden. Andernfalls wird der Schieberegler nicht neu gezeichnet.
 
-##  <a name="create"></a>CSliderCtrl:: Create
+## <a name="csliderctrlcreate"></a><a name="create"></a>CSliderCtrl::Erstellen
 
-Erstellt ein Schieberegler-Steuerelement und fügt `CSliderCtrl` es an ein-Objekt an.
+Erstellt ein Schiebereglersteuerelement und `CSliderCtrl` fügt es an ein Objekt an.
 
 ```
 virtual BOOL Create(
@@ -206,32 +206,32 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *dwStyle*<br/>
-Gibt den Stil des Schieberegler-Steuer Elements an. Wenden Sie eine beliebige Kombination aus [Schieberegler-Steuerelement Stilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement
+Gibt den Stil des Schiebereglersteuerelements an. Wenden Sie eine beliebige Kombination von [Schiebereglersteuerelementstilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement an.
 
 *Rect*<br/>
-Gibt die Größe und Position des Schieberegler-Steuer Elements an. Dabei kann es sich entweder um ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder um eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur handeln.
+Gibt die Größe und Position des Schiebereglersteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/previous-versions/dd162897\(v=vs.85\)) handelt.
 
 *pParentWnd*<br/>
-Gibt das übergeordnete Fenster des Schieberegler-Steuer `CDialog`Elements an, normalerweise ein Er darf nicht NULL sein.
+Gibt das übergeordnete Fenster des Schiebereglersteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
 
 *nID*<br/>
-Gibt die ID des Schieberegler-Steuer Elements an.
+Gibt die ID des Schiebereglersteuerelements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Initialisierung erfolgreich war. andernfalls 0.
+Ein Wert ungleich Null, wenn die Initialisierung erfolgreich war; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen einen `CSliderCtrl` in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen, und dann `Create`wird aufgerufen, wodurch das Schieberegler-Steuerelement erstellt `CSliderCtrl` und an das-Objekt angefügt wird.
+Sie erstellen `CSliderCtrl` eine in zwei Schritten. Rufen Sie zuerst den Konstruktor `Create`auf, und rufen Sie dann `CSliderCtrl` auf, das das Schiebereglersteuerelement erstellt und an das Objekt anfügt.
 
-Abhängig von den für *dwstyle*festgelegten Werten kann das Schieberegler-Steuerelement entweder vertikal oder horizontal ausgerichtet sein. Es können Teil Striche auf beiden Seiten, beide Seiten oder keines der beiden Seiten vorhanden sein. Sie kann auch verwendet werden, um einen Bereich von aufeinander folgenden Werten anzugeben.
+Abhängig von den für *dwStyle*festgelegten Werten kann das Schiebereglersteuerelement entweder eine vertikale oder horizontale Ausrichtung aufweisen. Es kann Zeckenzeichen auf beiden Seiten haben, auf beiden Seiten, oder keine. Es kann auch verwendet werden, um einen Bereich von aufeinander folgenden Werten anzugeben.
 
-Um erweiterte Fenster Stile auf das Schieberegler-Steuerelement anzuwenden [, aufrufen Sie](#createex) anstelle `Create`von den Befehl "".
+Um erweiterte Fensterstile auf das Schiebereglersteuerelement `Create`anzuwenden, rufen Sie [CreateEx](#createex) anstelle von auf.
 
-##  <a name="createex"></a>CSliderCtrl:: kreateex
+## <a name="csliderctrlcreateex"></a><a name="createex"></a>CSliderCtrl::CreateEx
 
-Erstellt ein-Steuerelement (ein untergeordnetes Fenster) und ordnet `CSliderCtrl` es dem-Objekt zu.
+Erstellt ein Steuerelement (ein untergeordnetes Fenster) und ordnet es dem `CSliderCtrl` Objekt zu.
 
 ```
 virtual BOOL CreateEx(
@@ -245,29 +245,29 @@ virtual BOOL CreateEx(
 ### <a name="parameters"></a>Parameter
 
 *dwExStyle*<br/>
-Gibt die erweiterte Art des zu erstellenden Steuer Elements an. Eine Liste erweiterter Windows-Stile finden Sie unter dem *dwExStyle* -Parameter für " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw) " in der Windows SDK.
+Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der erweiterten Windows-Stile finden Sie im *dwExStyle-Parameter* für [CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw) im Windows SDK.
 
 *dwStyle*<br/>
-Gibt den Stil des Schieberegler-Steuer Elements an. Wenden Sie eine beliebige Kombination aus [Schieberegler-Steuerelement Stilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement
+Gibt den Stil des Schiebereglersteuerelements an. Wenden Sie eine beliebige Kombination von [Schiebereglersteuerelementstilen](/windows/win32/Controls/trackbar-control-styles), die im Windows SDK beschrieben werden, auf das Steuerelement an.
 
 *Rect*<br/>
-Ein Verweis auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die die Größe und Position des zu erstellenden Fensters in Client Koordinaten von *pparser*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
-Ein Zeiger auf das Fenster, das das übergeordnete Element des Steuer Elements ist.
+Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
 
 *nID*<br/>
-Die ID des untergeordneten Fensters des Steuer Elements.
+Die untergeordnete Fenster-ID des Steuerelements.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden `CreateEx` Sie anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
+Verwenden `CreateEx` Sie anstelle von [Erstellen,](#create) um erweiterte Windows-Formatvorlagen anzuwenden, die durch das Erweiterte Windows-Stilvorwort **WS_EX_** angegeben werden.
 
-##  <a name="csliderctrl"></a>CSliderCtrl:: CSliderCtrl
+## <a name="csliderctrlcsliderctrl"></a><a name="csliderctrl"></a>CSliderCtrl::CSliderCtrl
 
 Erstellt ein `CSliderCtrl`-Objekt.
 
@@ -275,9 +275,9 @@ Erstellt ein `CSliderCtrl`-Objekt.
 CSliderCtrl();
 ```
 
-##  <a name="getbuddy"></a>CSliderCtrl:: GetBuddy
+## <a name="csliderctrlgetbuddy"></a><a name="getbuddy"></a>CSliderCtrl::GetBuddy
 
-Ruft das Handle für ein Fenster des Schieberegler-Steuerelement-Steuer Elements an einem angegebenen Speicherort ab.
+Ruft das Handle zu einem Schieberegler-Steuerelement-Buddy-Fenster an einer bestimmten Position ab.
 
 ```
 CWnd* GetBuddy(BOOL fLocation = TRUE) const;
@@ -286,23 +286,23 @@ CWnd* GetBuddy(BOOL fLocation = TRUE) const;
 ### <a name="parameters"></a>Parameter
 
 *fLocation*<br/>
-Ein boolescher Wert, der angibt, welcher der beiden zu abzurufenden Buddy-Fenster Handles. Kann einer der folgenden Werte sein:
+Ein boolescher Wert, der angibt, welche der beiden Buddy-Fenster-Handles abgerufen werden sollen. Es kann sich um einen der folgenden Werte handeln:
 
-- TRUE Ruft das Handle für den Kumpel auf der linken Seite des Schiebereglers ab. Wenn das Schieberegler-Steuerelement den TBS_VERT-Stil verwendet, ruft die Meldung den Kumpel oberhalb des Schiebereglers ab.
+- TRUE Ruft das Handle an den Buddy links neben dem Schieberegler ab. Wenn das Schiebereglersteuerelement den TBS_VERT-Stil verwendet, ruft die Nachricht den Buddy über dem Schieberegler ab.
 
-- FALSE Ruft das Handle für den Buddy rechts vom Schieberegler ab. Wenn das Schieberegler-Steuerelement den TBS_VERT-Stil verwendet, ruft die Meldung den Kumpel unterhalb des Schiebereglers ab.
+- FALSE Ruft das Handle an den Buddy rechts neben dem Schieberegler ab. Wenn das Schiebereglersteuerelement den TBS_VERT-Stil verwendet, ruft die Nachricht den Buddy unter dem Schieberegler ab.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, bei dem es sich um das Buddy-Fenster an der durch *flokation*angegebenen Position handelt, oder NULL, wenn kein Buddy-Fenster an diesem Speicherort vorhanden ist.
+Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das Buddy-Fenster an der von *fLocation*angegebenen Position oder NULL ist, wenn an dieser Position kein Buddy-Fenster vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TBM_GETBUDDY](/windows/win32/Controls/tbm-getbuddy), wie im Windows SDK beschrieben. Eine Beschreibung der Stile des Schieberegler-Steuer Elements finden Sie unter [TrackBar-Steuerelement Stile](/windows/win32/Controls/trackbar-control-styles) in der Windows SDK.
+Diese Memberfunktion implementiert das Verhalten der [TBM_GETBUDDY](/windows/win32/Controls/tbm-getbuddy)Win32-TBM_GETBUDDY , wie im Windows SDK beschrieben. Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
-##  <a name="getchannelrect"></a>CSliderCtrl:: GetChannelRect
+## <a name="csliderctrlgetchannelrect"></a><a name="getchannelrect"></a>CSliderCtrl::GetChannelRect
 
-Ruft die Größe und Position des umgebenden Rechtecks für den Channel eines Schieberegler-Steuer Elements ab.
+Ruft die Größe und Position des umgrenzenden Rechtecks für den Kanal eines Schiebereglersteuerelements ab.
 
 ```
 void GetChannelRect(LPRECT lprc) const;
@@ -311,15 +311,15 @@ void GetChannelRect(LPRECT lprc) const;
 ### <a name="parameters"></a>Parameter
 
 *lprc*<br/>
-Ein Zeiger auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das die Größe und Position des umgebenden Rechtecks des Kanals enthält, wenn die Funktion zurückgibt.
+Ein Zeiger auf ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das die Größe und Position des umgrenzten Rechtecks des Kanals enthält, wenn die Funktion zurückkehrt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Kanal ist der Bereich, in dem der Schieberegler verschoben wird und der die Hervorhebung enthält, wenn ein Bereich ausgewählt wird.
+Der Kanal ist der Bereich, über den sich der Schieberegler bewegt und der die Hervorhebung enthält, wenn ein Bereich ausgewählt wird.
 
-##  <a name="getlinesize"></a>CSliderCtrl:: getlinesize
+## <a name="csliderctrlgetlinesize"></a><a name="getlinesize"></a>CSliderCtrl::GetLineSize
 
-Ruft die Größe der Zeile für ein Schieberegler-Steuerelement ab.
+Ruft die Größe der Linie für ein Schiebereglersteuerelement ab.
 
 ```
 int GetLineSize() const;
@@ -327,15 +327,15 @@ int GetLineSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe einer Zeile für das Schieberegler-Steuerelement.
+Die Größe einer Linie für das Schiebereglersteuerelement.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Zeilengröße wirkt sich darauf aus, wie viel der Schieberegler für die Benachrichtigungen TB_LINEUP und TB_LINEDOWN verschoben wird. Die Standardeinstellung für die Zeilengröße ist 1.
+Die Liniengröße wirkt sich darauf aus, wie stark sich der Schieberegler für die TB_LINEUP und TB_LINEDOWN Benachrichtigungen bewegt. Die Standardeinstellung für die Zeilengröße ist 1.
 
-##  <a name="getnumtics"></a>CSliderCtrl:: GetNumTics
+## <a name="csliderctrlgetnumtics"></a><a name="getnumtics"></a>CSliderCtrl::GetNumTics
 
-Ruft die Anzahl von Teil Strichen in einem Schieberegler-Steuerelement ab.
+Ruft die Anzahl der Teilstriche in einem Schieberegler-Steuerelement ab.
 
 ```
 UINT GetNumTics() const;
@@ -343,11 +343,11 @@ UINT GetNumTics() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Teil Striche im Schieberegler-Steuerelement.
+Die Anzahl der Teilstriche im Schieberegler-Steuerelement.
 
-##  <a name="getpagesize"></a>CSliderCtrl:: getpagesize
+## <a name="csliderctrlgetpagesize"></a><a name="getpagesize"></a>CSliderCtrl::GetPageSize
 
-Ruft die Größe der Seite für ein Schieberegler-Steuerelement ab.
+Ruft die Größe der Seite für ein Schiebereglersteuerelement ab.
 
 ```
 int GetPageSize() const;
@@ -355,13 +355,13 @@ int GetPageSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe einer Seite für das Schieberegler-Steuerelement.
+Die Größe einer Seite für das Schiebereglersteuerelement.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Seitengröße wirkt sich darauf aus, wie viel der Schieberegler für die Benachrichtigungen TB_PAGEUP und TB_PAGEDOWN verschoben wird.
+Die Seitengröße wirkt sich darauf aus, wie stark sich der Schieberegler für die TB_PAGEUP und TB_PAGEDOWN Benachrichtigungen bewegt.
 
-##  <a name="getpos"></a>CSliderCtrl:: GetPos
+## <a name="csliderctrlgetpos"></a><a name="getpos"></a>CSliderCtrl::GetPos
 
 Ruft die aktuelle Position des Schiebereglers in einem Schieberegler-Steuerelement ab.
 
@@ -373,7 +373,7 @@ int GetPos() const;
 
 Die aktuelle Position.
 
-##  <a name="getrange"></a>CSliderCtrl:: GetRange
+## <a name="csliderctrlgetrange"></a><a name="getrange"></a>CSliderCtrl::GetRange
 
 Ruft die maximalen und minimalen Positionen für den Schieberegler in einem Schieberegler-Steuerelement ab.
 
@@ -385,17 +385,17 @@ void GetRange(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
-Verweis auf eine Ganzzahl, die die minimale Position empfängt.
+*Nmin*<br/>
+Verweis auf eine ganze Zahl, die die Mindestposition empfängt.
 
 *nMax*<br/>
-Verweis auf eine Ganzzahl, die die maximale Position empfängt.
+Verweis auf eine ganze Zahl, die die maximale Position empfängt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion kopiert die Werte in die ganzen Zahlen, auf die von *nmin* und *nmax*verwiesen wird.
+Diese Funktion kopiert die Werte in die ganzen Zahlen, auf die *nMin* und *nMax*verweisen.
 
-##  <a name="getrangemax"></a>CSliderCtrl:: getrangemax
+## <a name="csliderctrlgetrangemax"></a><a name="getrangemax"></a>CSliderCtrl::GetRangeMax
 
 Ruft die maximale Position für den Schieberegler in einem Schieberegler-Steuerelement ab.
 
@@ -405,11 +405,11 @@ int GetRangeMax() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die maximale Position des-Steuer Elements.
+Die maximale Position des Steuerelements.
 
-##  <a name="getrangemin"></a>CSliderCtrl:: getrangemin
+## <a name="csliderctrlgetrangemin"></a><a name="getrangemin"></a>CSliderCtrl::GetRangeMin
 
-Ruft die minimale Position für den Schieberegler in einem Schieberegler-Steuerelement ab.
+Ruft die Mindestposition für den Schieberegler in einem Schieberegler-Steuerelement ab.
 
 ```
 int GetRangeMin() const;
@@ -417,11 +417,11 @@ int GetRangeMin() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die minimale Position des Steuer Elements.
+Die Mindestposition des Steuerelements.
 
-##  <a name="getselection"></a>CSliderCtrl:: GetSelection
+## <a name="csliderctrlgetselection"></a><a name="getselection"></a>CSliderCtrl::GetSelection
 
-Ruft die Anfangs-und Endpositionen der aktuellen Auswahl in einem Schieberegler-Steuerelement ab.
+Ruft die Start- und Endpositionen der aktuellen Auswahl in einem Schieberegler-Steuerelement ab.
 
 ```
 void GetSelection(
@@ -431,15 +431,15 @@ void GetSelection(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
-Verweis auf eine Ganzzahl, die die Anfangsposition der aktuellen Auswahl empfängt.
+*Nmin*<br/>
+Verweis auf eine ganze Zahl, die die Startposition der aktuellen Auswahl empfängt.
 
 *nMax*<br/>
-Verweis auf eine Ganzzahl, die die Endposition der aktuellen Auswahl empfängt.
+Verweis auf eine ganze Zahl, die die Endposition der aktuellen Auswahl empfängt.
 
-##  <a name="getthumblength"></a>CSliderCtrl:: getthumblength
+## <a name="csliderctrlgetthumblength"></a><a name="getthumblength"></a>CSliderCtrl::GetThumbLength
 
-Ruft die Länge des Schiebereglers im aktuellen TrackBar-Steuerelement ab.
+Ruft die Länge des Schiebereglers im aktuellen Spurleistensteuerelement ab.
 
 ```
 int GetThumbLength() const;
@@ -449,13 +449,13 @@ int GetThumbLength() const;
 
 Die Länge des Schiebereglers in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [TBM_GETTHUMBLENGTH](/windows/win32/Controls/tbm-getthumblength) -Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [TBM_GETTHUMBLENGTH](/windows/win32/Controls/tbm-getthumblength) Nachricht, die im Windows SDK beschrieben wird.
 
-##  <a name="getthumbrect"></a>CSliderCtrl:: getthumbrect
+## <a name="csliderctrlgetthumbrect"></a><a name="getthumbrect"></a>CSliderCtrl::GetThumbRect
 
-Ruft die Größe und Position des umgebenden Rechtecks für den Schieberegler (Thumb) in einem Schieberegler-Steuerelement ab.
+Ruft die Größe und Position des umgrenzenden Rechtecks für den Schieberegler (Daumen) in einem Schieberegler-Steuerelement ab.
 
 ```
 void GetThumbRect(LPRECT lprc) const;
@@ -464,11 +464,11 @@ void GetThumbRect(LPRECT lprc) const;
 ### <a name="parameters"></a>Parameter
 
 *lprc*<br/>
-Ein Zeiger auf ein `CRect` -Objekt, das das umschließende Rechteck für den Schieberegler enthält, wenn die Funktion zurückgegeben wird.
+Ein Zeiger auf `CRect` ein Objekt, das das umgrenzende Rechteck für den Schieberegler enthält, wenn die Funktion zurückkehrt.
 
-##  <a name="gettic"></a>CSliderCtrl:: GetTic
+## <a name="csliderctrlgettic"></a><a name="gettic"></a>CSliderCtrl::GetTic
 
-Ruft die Position eines Teil Strichs in einem Schieberegler-Steuerelement ab.
+Ruft die Position eines Teilstrichs in einem Schieberegler-Steuerelement ab.
 
 ```
 int GetTic(int nTic) const;
@@ -477,15 +477,15 @@ int GetTic(int nTic) const;
 ### <a name="parameters"></a>Parameter
 
 *nTic*<br/>
-NULL basierter Index, der einen Teil Strich identifiziert.
+Nullbasierter Index, der ein Teilstrich identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Position des angegebenen Teil Strichs oder-1, wenn *NTIC* keinen gültigen Index angibt.
+Die Position des angegebenen Häkchens oder - 1, wenn *nTic* keinen gültigen Index angibt.
 
-##  <a name="getticarray"></a>CSliderCtrl:: GetTicArray
+## <a name="csliderctrlgetticarray"></a><a name="getticarray"></a>CSliderCtrl::GetTicArray
 
-Ruft die Adresse des Arrays ab, das die Positionen von Teil Strichen für ein Schieberegler-Steuerelement enthält.
+Ruft die Adresse des Arrays ab, das die Positionen von Teilstrichen für ein Schiebereglersteuerelement enthält.
 
 ```
 DWORD* GetTicArray() const;
@@ -493,11 +493,11 @@ DWORD* GetTicArray() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Adresse des Arrays, das Teil Strich Positionen für das Schieberegler-Steuerelement enthält.
+Die Adresse des Arrays, das Tick-Mark-Positionen für das Schiebereglersteuerelement enthält.
 
-##  <a name="getticpos"></a>CSliderCtrl:: GetTicPos
+## <a name="csliderctrlgetticpos"></a><a name="getticpos"></a>CSliderCtrl::GetTicPos
 
-Ruft die aktuelle physische Position eines Teil Strichs in einem Schieberegler-Steuerelement ab.
+Ruft die aktuelle physische Position eines Teilstrichs in einem Schieberegler-Steuerelement ab.
 
 ```
 int GetTicPos(int nTic) const;
@@ -506,15 +506,15 @@ int GetTicPos(int nTic) const;
 ### <a name="parameters"></a>Parameter
 
 *nTic*<br/>
-NULL basierter Index, der einen Teil Strich identifiziert.
+Nullbasierter Index, der ein Teilstrich identifiziert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die physische Position des angegebenen Teil Strichs in Client Koordinaten oder-1, wenn *NTIC* keinen gültigen Index angibt.
+Die physische Position in Client-Koordinaten des angegebenen Teilstrichs oder - 1, wenn *nTic* keinen gültigen Index angibt.
 
-##  <a name="gettooltips"></a>CSliderCtrl:: gettooltips
+## <a name="csliderctrlgettooltips"></a><a name="gettooltips"></a>CSliderCtrl::GetToolTipps
 
-Ruft das Handle für das QuickInfo-Steuerelement ab, das dem Schieberegler-Steuerelement zugewiesen ist, sofern vorhanden
+Ruft das Handle für das QuickInfo-Steuerelement ab, das dem Schieberegler-Steuerelement zugewiesen ist, falls vorhanden.
 
 ```
 CToolTipCtrl* GetToolTips() const;
@@ -522,15 +522,15 @@ CToolTipCtrl* GetToolTips() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt oder NULL, wenn Quick Infos nicht verwendet werden. Wenn das Schieberegler-Steuerelement den TBS_TOOLTIPS-Stil nicht verwendet, ist der Rückgabewert NULL.
+Ein Zeiger auf ein [CToolTipCtrl-Objekt](../../mfc/reference/ctooltipctrl-class.md) oder NULL, wenn QuickInfos nicht verwendet werden. Wenn das Schiebereglersteuerelement den Stil TBS_TOOLTIPS nicht verwendet, lautet der Rückgabewert NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TBM_GETTOOLTIPS](/windows/win32/Controls/tbm-gettooltips), wie im Windows SDK beschrieben. Beachten Sie, dass diese Member- `CToolTipCtrl` Funktion anstelle eines Handles an ein-Steuerelement ein-Objekt zurückgibt.
+Diese Memberfunktion implementiert das Verhalten der [TBM_GETTOOLTIPS](/windows/win32/Controls/tbm-gettooltips)Win32-TBM_GETTOOLTIPS , wie im Windows SDK beschrieben. Beachten Sie, dass `CToolTipCtrl` diese Memberfunktion ein Objekt anstelle eines Handles an ein Steuerelement zurückgibt.
 
-Eine Beschreibung der Stile des Schieberegler-Steuer Elements finden Sie unter [TrackBar-Steuerelement Stile](/windows/win32/Controls/trackbar-control-styles) in der Windows SDK.
+Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
-##  <a name="setbuddy"></a>CSliderCtrl:: SetBuddy
+## <a name="csliderctrlsetbuddy"></a><a name="setbuddy"></a>CSliderCtrl::SetBuddy
 
 Weist ein Fenster als Buddy-Fenster für ein Schieberegler-Steuerelement zu.
 
@@ -543,28 +543,28 @@ CWnd* SetBuddy(
 ### <a name="parameters"></a>Parameter
 
 *pWndBuddy*<br/>
-Ein Zeiger auf ein `CWnd` -Objekt, das als Buddy des Schiebereglers festgelegt wird.
+Ein Zeiger auf `CWnd` ein Objekt, das als Buddy des Schiebereglersteuerelements festgelegt wird.
 
 *fLocation*<br/>
--Wert, der die Position angibt, an der das Buddy-Fenster angezeigt werden soll. Folgende Werte sind möglich:
+Wert, der die Position angibt, an der das Buddy-Fenster angezeigt werden soll. Die folgenden Werte sind möglich:
 
-- TRUE, wenn das TrackBar-Steuerelement den TBS_HORZ-Stil verwendet, wird der Kollege links neben der TrackBar angezeigt. Wenn die TrackBar den TBS_VERT-Stil verwendet, wird der Kumpel über dem TrackBar-Steuerelement angezeigt.
+- TRUE Der Buddy wird links neben der Spurleiste angezeigt, wenn das Trackbar-Steuerelement den stil TBS_HORZ verwendet. Wenn die Trackbar den TBS_VERT-Stil verwendet, wird der Buddy über dem Spurleistensteuerelement angezeigt.
 
-- FALSE: der Kumpel wird rechts von der TrackBar angezeigt, wenn das TrackBar-Steuerelement den TBS_HORZ-Stil verwendet. Wenn die TrackBar den TBS_VERT-Stil verwendet, wird der Buddy unterhalb des TrackBar-Steuer Elements angezeigt.
+- FALSE Der Buddy wird rechts neben der Spurleiste angezeigt, wenn das Trackbar-Steuerelement den TBS_HORZ-Stil verwendet. Wenn die Spurleiste den TBS_VERT-Stil verwendet, wird der Buddy unter dem Spurleistensteuerelement angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, das zuvor dem Schieberegler-Steuerelement an dieser Position zugewiesen wurde.
+Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das zuvor dem Schiebereglersteuerelement an dieser Position zugewiesen wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TBM_SETBUDDY](/windows/win32/Controls/tbm-setbuddy), wie im Windows SDK beschrieben. Beachten Sie, dass diese Member-Funktion `CWnd` Zeiger auf-Objekte und nicht auf Fenster Handles sowohl für den Rückgabewert als auch für den-Parameter verwendet.
+Diese Memberfunktion implementiert das Verhalten der [TBM_SETBUDDY](/windows/win32/Controls/tbm-setbuddy)Win32-TBM_SETBUDDY , wie im Windows SDK beschrieben. Beachten Sie, dass diese Memberfunktion Zeiger auf `CWnd` Objekte anstelle von Fensterhandles für den Rückgabewert und den Parameter verwendet.
 
-Eine Beschreibung der Stile des Schieberegler-Steuer Elements finden Sie unter [TrackBar-Steuerelement Stile](/windows/win32/Controls/trackbar-control-styles) in der Windows SDK.
+Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
-##  <a name="setlinesize"></a>CSliderCtrl:: setlinesize
+## <a name="csliderctrlsetlinesize"></a><a name="setlinesize"></a>CSliderCtrl::SetLineSize
 
-Legt die Größe der Linie für ein Schieberegler-Steuerelement fest.
+Legt die Größe der Linie für ein Schiebereglersteuerelement fest.
 
 ```
 int SetLineSize(int nSize);
@@ -572,20 +572,20 @@ int SetLineSize(int nSize);
 
 ### <a name="parameters"></a>Parameter
 
-*nSize*<br/>
-Die neue Zeilengröße des Schieberegler-Steuer Elements.
+*nGröße*<br/>
+Die neue Liniengröße des Schiebereglersteuerelements.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die vorherige Zeilengröße.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Zeilengröße wirkt sich darauf aus, wie viel der Schieberegler für die Benachrichtigungen TB_LINEUP und TB_LINEDOWN verschoben wird.
+Die Liniengröße wirkt sich darauf aus, wie stark sich der Schieberegler für die TB_LINEUP und TB_LINEDOWN Benachrichtigungen bewegt.
 
-##  <a name="setpagesize"></a>CSliderCtrl:: setPageSize
+## <a name="csliderctrlsetpagesize"></a><a name="setpagesize"></a>CSliderCtrl::SetPageSize
 
-Legt die Größe der Seite für ein Schieberegler-Steuerelement fest.
+Legt die Größe der Seite für ein Schiebereglersteuerelement fest.
 
 ```
 int SetPageSize(int nSize);
@@ -593,20 +593,20 @@ int SetPageSize(int nSize);
 
 ### <a name="parameters"></a>Parameter
 
-*nSize*<br/>
-Die neue Seitengröße des Schieberegler-Steuer Elements.
+*nGröße*<br/>
+Die neue Seitengröße des Schiebereglersteuerelements.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die vorherige Seitengröße.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Seitengröße wirkt sich darauf aus, wie viel der Schieberegler für die Benachrichtigungen TB_PAGEUP und TB_PAGEDOWN verschoben wird.
+Die Seitengröße wirkt sich darauf aus, wie stark sich der Schieberegler für die TB_PAGEUP und TB_PAGEDOWN Benachrichtigungen bewegt.
 
-##  <a name="setpos"></a>CSliderCtrl:: SetPos
+## <a name="csliderctrlsetpos"></a><a name="setpos"></a>CSliderCtrl::SetPos
 
-Legt die aktuelle Position des Schiebereglers in einem Schieberegler-Steuerelement fest.
+Legt die aktuelle Position des Schiebereglers in einem Schiebereglerfest fest.
 
 ```
 void SetPos(int nPos);
@@ -614,12 +614,12 @@ void SetPos(int nPos);
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
-Gibt die neue Position des Schiebereglers an.
+*Npos*<br/>
+Gibt die neue Schiebereglerposition an.
 
-##  <a name="setrange"></a>CSliderCtrl:: abge
+## <a name="csliderctrlsetrange"></a><a name="setrange"></a>CSliderCtrl::SetRange
 
-Legt den Bereich (minimale und maximale Position) für den Schieberegler in einem Schieberegler-Steuerelement fest.
+Legt den Bereich (minimale und maximale Positionen) für den Schieberegler in einem Schiebereglerfest fest.
 
 ```
 void SetRange(
@@ -630,16 +630,16 @@ void SetRange(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
+*Nmin*<br/>
 Minimale Position für den Schieberegler.
 
 *nMax*<br/>
 Maximale Position für den Schieberegler.
 
-*bRedraw*<br/>
-Das neu zeichnen-Flag. Wenn dieser Parameter true ist, wird der Schieberegler nach dem Festlegen des Bereichs neu gezeichnet. Andernfalls wird der Schieberegler nicht neu gezeichnet.
+*bZeichnung*<br/>
+Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler neu gezeichnet, nachdem der Bereich festgelegt wurde. Andernfalls wird der Schieberegler nicht neu gezeichnet.
 
-##  <a name="setrangemax"></a>CSliderCtrl:: s-max
+## <a name="csliderctrlsetrangemax"></a><a name="setrangemax"></a>CSliderCtrl::SetRangeMax
 
 Legt den maximalen Bereich für den Schieberegler in einem Schieberegler-Steuerelement fest.
 
@@ -654,12 +654,12 @@ void SetRangeMax(
 *nMax*<br/>
 Maximale Position für den Schieberegler.
 
-*bRedraw*<br/>
-Das neu zeichnen-Flag. Wenn dieser Parameter true ist, wird der Schieberegler nach dem Festlegen des Bereichs neu gezeichnet. Andernfalls wird der Schieberegler nicht neu gezeichnet.
+*bZeichnung*<br/>
+Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler neu gezeichnet, nachdem der Bereich festgelegt wurde. Andernfalls wird der Schieberegler nicht neu gezeichnet.
 
-##  <a name="setrangemin"></a>CSliderCtrl:: Server
+## <a name="csliderctrlsetrangemin"></a><a name="setrangemin"></a>CSliderCtrl::SetRangeMin
 
-Legt den minimalen Bereich für den Schieberegler in einem Schieberegler-Steuerelement fest.
+Legt den Minimalbereich für den Schieberegler in einem Schiebereglerfest fest.
 
 ```
 void SetRangeMin(
@@ -669,15 +669,15 @@ void SetRangeMin(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
+*Nmin*<br/>
 Minimale Position für den Schieberegler.
 
-*bRedraw*<br/>
-Das neu zeichnen-Flag. Wenn dieser Parameter true ist, wird der Schieberegler nach dem Festlegen des Bereichs neu gezeichnet. Andernfalls wird der Schieberegler nicht neu gezeichnet.
+*bZeichnung*<br/>
+Das Neuzeichnungsflag. Wenn dieser Parameter TRUE ist, wird der Schieberegler neu gezeichnet, nachdem der Bereich festgelegt wurde. Andernfalls wird der Schieberegler nicht neu gezeichnet.
 
-##  <a name="setselection"></a>CSliderCtrl:: setSelection
+## <a name="csliderctrlsetselection"></a><a name="setselection"></a>CSliderCtrl::SetSelection
 
-Legt die Anfangs-und Endpositionen für die aktuelle Auswahl in einem Schieberegler-Steuerelement fest.
+Legt die Start- und Endpositionen für die aktuelle Auswahl in einem Schieberegler-Steuerelement fest.
 
 ```
 void SetSelection(
@@ -687,15 +687,15 @@ void SetSelection(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
-Die Anfangsposition für den Schieberegler.
+*Nmin*<br/>
+Startposition für den Schieberegler.
 
 *nMax*<br/>
 Endposition für den Schieberegler.
 
-##  <a name="setthumblength"></a>CSliderCtrl:: setthumblength
+## <a name="csliderctrlsetthumblength"></a><a name="setthumblength"></a>CSliderCtrl::SetThumbLength
 
-Legt die Länge des Schiebereglers im aktuellen TrackBar-Steuerelement fest.
+Legt die Länge des Schiebereglers im aktuellen Spurleistensteuerelement fest.
 
 ```
 void SetThumbLength(int nLength);
@@ -703,31 +703,31 @@ void SetThumbLength(int nLength);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*nLength*|in Länge des Schiebereglers in Pixel.|
+|*nLänge*|[in] Länge des Schiebereglers in Pixel.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode erfordert, dass das TrackBar-Steuerelement auf [TBS_FIXEDLENGTH](/windows/win32/Controls/trackbar-control-styles) Style festgelegt ist.
+Diese Methode erfordert, dass das Spurleistensteuerelement auf [TBS_FIXEDLENGTH](/windows/win32/Controls/trackbar-control-styles) Stil festgelegt wird.
 
-Diese Methode sendet die [TBM_SETTHUMBLENGTH](/windows/win32/Controls/tbm-setthumblength) -Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [TBM_SETTHUMBLENGTH](/windows/win32/Controls/tbm-setthumblength) Nachricht, die im Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird die-Variable `m_sliderCtrl`definiert, die für den Zugriff auf das aktuelle TrackBar-Steuerelement verwendet wird. Im Beispiel wird auch eine-Variable `thumbLength`definiert, die zum Speichern der Standardlänge der Thumb-Komponente des TrackBar-Steuer Elements verwendet wird. Diese Variablen werden im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird `m_sliderCtrl`die Variable , definiert, die für den Zugriff auf das aktuelle Spurleistensteuerelement verwendet wird. Im Beispiel wird auch `thumbLength`eine Variable definiert, , die zum Speichern der Standardlänge der Daumenkomponente des Spurleistensteuerelements verwendet wird. Diese Variablen werden im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CSliderCtrl_s1#1](../../mfc/reference/codesnippet/cpp/csliderctrl-class_1.h)]
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird die Thumb-Komponente des TrackBar-Steuer Elements auf die doppelte Standardlänge festgelegt.
+Im folgenden Codebeispiel wird die Daumenkomponente des Spurleistensteuerelements auf die doppelte Standardlänge festgelegt.
 
 [!code-cpp[NVC_MFC_CSliderCtrl_s1#2](../../mfc/reference/codesnippet/cpp/csliderctrl-class_2.cpp)]
 
-##  <a name="settic"></a>CSliderCtrl:: SetTic
+## <a name="csliderctrlsettic"></a><a name="settic"></a>CSliderCtrl::SetTic
 
-Legt die Position eines Teil Strichs in einem Schieberegler-Steuerelement fest.
+Legt die Position eines Teilstrichs in einem Schieberegler-Steuerelement fest.
 
 ```
 BOOL SetTic(int nTic);
@@ -736,15 +736,15 @@ BOOL SetTic(int nTic);
 ### <a name="parameters"></a>Parameter
 
 *nTic*<br/>
-Position des Teil Strichs. Dieser Parameter muss einen positiven Wert angeben.
+Position des Häkchens. Dieser Parameter muss einen positiven Wert angeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Teil Strich festgelegt ist. andernfalls 0.
+Ein Wert ungleich Null, wenn das Häkchen gesetzt ist; andernfalls 0.
 
-##  <a name="setticfreq"></a>CSliderCtrl:: absorcfreq
+## <a name="csliderctrlsetticfreq"></a><a name="setticfreq"></a>CSliderCtrl::SetTicFreq
 
-Legt die Häufigkeit fest, mit der Teil Striche in einem Schieberegler angezeigt werden.
+Legt die Häufigkeit fest, mit der Teilstriche in einem Schieberegler angezeigt werden.
 
 ```
 void SetTicFreq(int nFreq);
@@ -753,17 +753,17 @@ void SetTicFreq(int nFreq);
 ### <a name="parameters"></a>Parameter
 
 *nFreq*<br/>
-Häufigkeit der Teil Striche.
+Häufigkeit der Teilstriche.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Häufigkeit beispielsweise auf 2 festgelegt ist, wird für jedes andere Inkrement im Gültigkeitsbereich des Schiebereglers ein Teil Strich angezeigt. Die Standardeinstellung für die Häufigkeit ist 1 (d. h., jedes Inkrement im Bereich ist einem Teil Strich zugeordnet).
+Wenn die Frequenz beispielsweise auf 2 eingestellt ist, wird für jedes zweite Inkrement im Bereich des Schiebereglers ein Häkchen angezeigt. Die Standardeinstellung für die Frequenz ist 1 (d. h., jedes Inkrement im Bereich ist mit einem Häkchen verknüpft).
 
-Sie müssen das-Steuerelement mit dem TBS_AUTOTICKS-Stil erstellen, um diese Funktion zu verwenden. Weitere Informationen finden Sie unter [CSliderCtrl:: Create](#create).
+Sie müssen das Steuerelement mit dem TBS_AUTOTICKS-Stil erstellen, um diese Funktion verwenden zu können. Weitere Informationen finden Sie unter [CSliderCtrl::Create](#create).
 
-##  <a name="settipside"></a>CSliderCtrl:: Setup Page
+## <a name="csliderctrlsettipside"></a><a name="settipside"></a>CSliderCtrl::SetTipSide
 
-Positioniert ein QuickInfo-Steuerelement von einem TrackBar-Steuerelement.
+Positioniert ein QuickInfo-Steuerelement, das von einem Spurleistensteuerelement verwendet wird.
 
 ```
 int SetTipSide(int nLocation);
@@ -772,19 +772,19 @@ int SetTipSide(int nLocation);
 ### <a name="parameters"></a>Parameter
 
 *nLocation*<br/>
-Wert, der die Position darstellt, an der das QuickInfo-Steuerelement angezeigt werden soll Eine Liste möglicher Werte finden Sie unter Win32 Message [TBM_SETTIPSIDE](/windows/win32/Controls/tbm-settipside), wie im Windows SDK beschrieben.
+Wert, der die Position darstellt, an der das QuickInfo-Steuerelement angezeigt werden soll. Eine Liste möglicher Werte finden Sie in [TBM_SETTIPSIDE](/windows/win32/Controls/tbm-settipside)der Win32-TBM_SETTIPSIDE , wie im Windows SDK beschrieben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein-Wert, der die vorherige Position des QuickInfo-Steuer Elements darstellt. Der Rückgabewert ist mit einem der möglichen Werte für *nlocation*.
+Ein Wert, der die vorherige Position des QuickInfo-Steuerelements darstellt. Der Rückgabewert entspricht einem der möglichen Werte für *nLocation*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht TBM_SETTIPSIDE, wie im Windows SDK beschrieben. Schieberegler-Steuerelemente, die das Format "TBS_TOOLTIPS" anzeigen. Eine Beschreibung der Stile des Schieberegler-Steuer Elements finden Sie unter [TrackBar-Steuerelement Stile](/windows/win32/Controls/trackbar-control-styles) in der Windows SDK.
+Diese Memberfunktion implementiert das Verhalten der Win32-TBM_SETTIPSIDE, wie im Windows SDK beschrieben. Schiebereglersteuerelemente, die die TBS_TOOLTIPS Stilanzeige-Quickinfos verwenden. Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
-##  <a name="settooltips"></a>CSliderCtrl:: SetToolTips
+## <a name="csliderctrlsettooltips"></a><a name="settooltips"></a>CSliderCtrl::SetToolTips
 
-Weist einem Schieberegler-Steuerelement ein ToolTip-Steuerelement zu.
+Weist einem Schiebereglersteuerelement ein QuickInfo-Steuerelement zu.
 
 ```
 void SetToolTips(CToolTipCtrl* pWndTip);
@@ -793,11 +793,11 @@ void SetToolTips(CToolTipCtrl* pWndTip);
 ### <a name="parameters"></a>Parameter
 
 *pWndTip*<br/>
-Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt, das die Quick Infos enthält, die mit dem Schieberegler-Steuerelement verwendet werden.
+Ein Zeiger auf ein [CToolTipCtrl-Objekt,](../../mfc/reference/ctooltipctrl-class.md) das die QuickInfos enthält, die mit dem Schieberegler-Steuerelement verwendet werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [TBM_SETTOOLTIPS](/windows/win32/Controls/tbm-settooltips), wie im Windows SDK beschrieben. Wenn ein Schieberegler-Steuerelement mit dem Format TBS_TOOLTIPS erstellt wird, wird ein Standardmäßiges QuickInfo-Steuerelement erstellt, das neben dem Schieberegler angezeigt wird und die aktuelle Position des Schiebereglers anzeigt Eine Beschreibung der Stile des Schieberegler-Steuer Elements finden Sie unter [TrackBar-Steuerelement Stile](/windows/win32/Controls/trackbar-control-styles) in der Windows SDK.
+Diese Memberfunktion implementiert das Verhalten der Win32-Nachricht [TBM_SETTOOLTIPS](/windows/win32/Controls/tbm-settooltips), wie im Windows SDK beschrieben. Wenn ein Schiebereglersteuerelement mit dem stil TBS_TOOLTIPS erstellt wird, wird ein Standard-Quickinfo-Steuerelement erstellt, das neben dem Schieberegler angezeigt wird und die aktuelle Position des Schiebereglers anzeigt. Eine Beschreibung der Schiebereglersteuerungsstile finden Sie unter [Spurleistensteuerungsstile](/windows/win32/Controls/trackbar-control-styles) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 

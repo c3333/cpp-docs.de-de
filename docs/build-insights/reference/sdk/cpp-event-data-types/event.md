@@ -1,6 +1,6 @@
 ---
 title: Ereignisklasse
-description: Die C++ Build Insights SDK-Ereignis Klassenreferenz.
+description: Der C++ Build Insights SDK-Ereignisverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 205a4e0ca9dd9449933f38f02d4ceafd5df8ead2
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 25d58f642a1c314e48ddff62553394bcc65e4717
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334889"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81324963"
 ---
 # <a name="event-class"></a>Ereignisklasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `Event`-Klasse wird mit den Funktionen [matchevent](../functions/match-event.md), [matcheventinmitgliedfunction](../functions/match-event-in-member-function.md), [matcheventstack](../functions/match-event-stack.md)und [matcheventstackinmembership Function](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um eine Entsprechung für jedes beliebige Ereignis
+Die `Event` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um jedem Ereignis zu entsprechen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,7 +47,7 @@ public:
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -55,18 +55,18 @@ public:
 
 ### <a name="functions"></a>Functions
 
-[Daten](#data)
-[EventID-](#event-id)\
-[Eventinstanceid](#event-instance-id)\
-[Ereignis Name](#event-name)\
-[Eventwidename](#event-wide-name) -\
-\ [ProcessID](#process-id)
-[Processorindex](#processor-index) -\
-[ThreadId](#thread-id)\
-[TickFrequency](#tick-frequency) -\
+[Data](#data)
+[Datenereignis-Id](#event-id)\
+[EventInstanceId](#event-instance-id)\
+[Eventname](#event-name)\
+[EventWideName](#event-wide-name)\
+[Processid](#process-id)\
+[ProcessorIndex](#processor-index)\
+[Threadid](#thread-id)\
+[Tickfrequency](#tick-frequency)\
 [Timestamp](#timestamp)
 
-## <a name="entity"></a>Veranstalter
+## <a name="event"></a><a name="entity"></a> -Ereignis
 
 ```cpp
 Event(const RawEvent& event);
@@ -75,9 +75,9 @@ Event(const RawEvent& event);
 ### <a name="parameters"></a>Parameter
 
 *Ereignis*\
-Beliebiges Ereignis.
+Jedes Ereignis.
 
-## <a name="data"></a>Vorrats
+## <a name="data"></a><a name="data"></a>Daten
 
 ```cpp
 const void* Data() const;
@@ -85,9 +85,9 @@ const void* Data() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf zusätzliche Daten, die in diesem Ereignis enthalten sind. Weitere Informationen zum Interpretieren dieses Felds finden Sie unter [EVENT_DATA](../c-event-data-types/event-data-struct.md).
+Ein Zeiger auf zusätzliche Daten, die in diesem Ereignis enthalten sind. Weitere Informationen zum Interpretieren dieses Felds finden Sie [unter EVENT_DATA](../c-event-data-types/event-data-struct.md).
 
-## <a name="event-id"></a>EventID
+## <a name="eventid"></a><a name="event-id"></a>Eventid
 
 ```cpp
 const unsigned short& EventId() const;
@@ -95,9 +95,9 @@ const unsigned short& EventId() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Zahl, die den Ereignistyp identifiziert. Eine Liste der Ereignis Bezeichner finden Sie unter [event_id](../c-event-data-types/event-id-enum.md).
+Eine Zahl, die den Ereignistyp identifiziert. Eine Liste der Ereignisbezeichner finden Sie unter [EVENT_ID](../c-event-data-types/event-id-enum.md).
 
-## <a name="event-instance-id"></a>Eventinstanceid
+## <a name="eventinstanceid"></a><a name="event-instance-id"></a>EventInstanceId
 
 ```cpp
 const unsigned long long& EventInstanceId() const;
@@ -105,9 +105,9 @@ const unsigned long long& EventInstanceId() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Zahl, die das Ereignis innerhalb einer Ablauf Verfolgung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Ablauf Verfolgung mehrmals analysiert oder neu protokolliert wird. Verwenden Sie diesen Wert, um das gleiche Ereignis in mehreren Analysen zu identifizieren oder die erneute Protokollierung über dieselbe Ablauf Verfolgung durchzuführen.
+Eine Zahl, die das Ereignis innerhalb einer Ablaufverfolgung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Ablaufverfolgung mehrmals analysiert oder neu protokolliert wird. Verwenden Sie diesen Wert, um dasselbe Ereignis in mehreren Analyse- oder Relogging-Durchläufen über dieselbe Ablaufverfolgung zu identifizieren.
 
-## <a name="event-name"></a>EventName
+## <a name="eventname"></a><a name="event-name"></a>Eventname
 
 ```cpp
 const char* EventName() const;
@@ -115,9 +115,9 @@ const char* EventName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine ANSI-Zeichenfolge, die den Namen des von [EventID](#event-id)identifizierten Ereignis Typs enthält.
+Eine ANSI-Zeichenfolge, die den Namen des ereignistyps enthält, der durch [EventId](#event-id)identifiziert wird.
 
-## <a name="event-wide-name"></a>Eventwidename
+## <a name="eventwidename"></a><a name="event-wide-name"></a>EventWideName
 
 ```cpp
 const wchar_t* EventWideName() const;
@@ -125,9 +125,9 @@ const wchar_t* EventWideName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Breite Zeichenfolge, die den Namen des von [EventID](#event-id)identifizierten Ereignisses enthält.
+Eine breite Zeichenfolge, die den Namen des von [EventId](#event-id)identifizierten Ereignisses enthält.
 
-## <a name="process-id"></a>ProcessID
+## <a name="processid"></a><a name="process-id"></a>Processid
 
 ```cpp
 const unsigned long& ProcessId() const;
@@ -137,7 +137,7 @@ const unsigned long& ProcessId() const;
 
 Der Bezeichner für den Prozess, in dem das Ereignis aufgetreten ist.
 
-## <a name="processor-index"></a>Processorindex
+## <a name="processorindex"></a><a name="processor-index"></a>ProcessorIndex
 
 ```cpp
 const unsigned short& ProcessorIndex() const;
@@ -145,9 +145,9 @@ const unsigned short& ProcessorIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index für den logischen Prozessor, auf dem das Ereignis aufgetreten ist.
+Der nullbasierte Index für den logischen Prozessor, auf dem das Ereignis aufgetreten ist.
 
-## <a name="thread-id"></a>ThreadID
+## <a name="threadid"></a><a name="thread-id"></a>Threadid
 
 ```cpp
 const unsigned long& ThreadId() const;
@@ -157,7 +157,7 @@ const unsigned long& ThreadId() const;
 
 Der Bezeichner für den Thread, in dem das Ereignis aufgetreten ist.
 
-## <a name="tick-frequency"></a>TickFrequency
+## <a name="tickfrequency"></a><a name="tick-frequency"></a>Tickfrequency
 
 ```cpp
 const long long& TickFrequency() const;
@@ -165,9 +165,9 @@ const long long& TickFrequency() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Ticks pro Sekunde, die verwendet werden sollen, wenn eine in Ticks für dieses Ereignis gemessene Dauer ausgewertet wird.
+Die Anzahl der Ticks pro Sekunde, die bei der Auswertung einer in Ticks für dieses Ereignis gemessenen Dauer verwendet werden sollen.
 
-## <a name="timestamp"></a>Zeitstempel
+## <a name="timestamp"></a><a name="timestamp"></a>Timestamp
 
 ```cpp
 const long long& Timestamp() const;
@@ -175,6 +175,6 @@ const long long& Timestamp() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn es sich bei dem Ereignis um eine Aktivität handelt, gibt diese Funktion einen Tick-Wert zurück, der zum Zeitpunkt der Aktivitäts Starts aufgezeichnet wurde. Bei einem einfachen Ereignis gibt diese Funktion einen Tick-Wert zurück, der zum Zeitpunkt des Auftretens des Ereignisses erfasst wurde.
+Wenn es sich bei dem Ereignis um eine Aktivität handelt, gibt diese Funktion einen Tickwert zurück, der zum Zeitpunkt des Startens der Aktivität erfasst wurde. Für ein einfaches Ereignis gibt diese Funktion einen Tick-Wert zurück, der zum Zeitpunkt des Auftretens des Ereignisses erfasst wurde.
 
 ::: moniker-end

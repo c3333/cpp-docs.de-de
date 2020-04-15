@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - CW2CWEX class
 ms.assetid: d654b22b-05a6-410f-a0ec-9a2cbbb4cca7
-ms.openlocfilehash: d1f960f8ec94b8e573490d4e708d4240b894b5ec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 07dd0319586054403d8ed0c8efc813b4061e355a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62277151"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330438"
 ---
 # <a name="cw2cwex-class"></a>CW2CWEX-Klasse
 
-Diese Klasse wird von der Zeichenfolgen-konvertierungsmakros CW2CTEX und CT2CWEX und der Typedef CW2W verwendet.
+Diese Klasse wird von den Zeichenfolgenkonvertierungsmakros CW2CTEX und CT2CWEX sowie vom typedef CW2W verwendet.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,56 +33,56 @@ class CW2CWEX
 #### <a name="parameters"></a>Parameter
 
 *t_nBufferLength*<br/>
-Die Größe des Puffers, die in der Übersetzungsprozess verwendet werden soll. Die Standardeinstellung ist 128 Bytes.
+Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Byte.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CW2CWEX::CW2CWEX](#cw2cwex)|Der Konstruktor.|
-|[CW2CWEX::~CW2CWEX](#dtor)|Der Destruktor.|
+|[CW2CWEX::-CW2CWEX](#dtor)|Der Destruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CW2CWEX::Operator LPCWSTR](#operator_lpcwstr)|Konvertierungsoperator.|
+|[CW2CWEX::operator LPCWSTR](#operator_lpcwstr)|Konvertierungsoperator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CW2CWEX::m_psz](#m_psz)|Der Datenmember, die die Quellzeichenfolge speichert.|
+|[CW2CWEX::m_psz](#m_psz)|Das Datenelement, das die Quellzeichenfolge speichert.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn zusätzliche Funktionalität erforderlich ist, verwenden Sie in Ihrem Code CW2CTEX, CT2CWEX oder CW2W an.
+Verwenden Sie CW2CTEX, CT2CWEX oder CW2W in Ihrem Code, es sei denn, zusätzliche Funktionen sind erforderlich.
 
-Diese Klasse wird sicher in Schleifen verwendet, und es wird nicht zu einem Stapelüberlauf. Standardmäßig verwenden die ATL-konvertierungsklassen und-Makros ANSI-Codepage des aktuellen Threads für die Konvertierung.
+Diese Klasse ist sicher in Schleifen zu verwenden und überläuft den Stapel nicht. Standardmäßig verwenden die ATL-Konvertierungsklassen und Makros die ANSI-Codepage des aktuellen Threads für die Konvertierung.
 
-Die folgenden Makros basieren auf diese Klasse:
+Die folgenden Makros basieren auf dieser Klasse:
 
 - CW2CTEX
 
 - CT2CWEX
 
-Die folgende Typedef basiert auf diese Klasse:
+Die folgende typedef basiert auf dieser Klasse:
 
 - CW2W
 
-Eine Erläuterung der diese textkonvertierungsmakros, finden Sie unter [ATL- und MFC-Zeichenfolgen-Konvertierungsmakros](string-conversion-macros.md).
+Eine Erläuterung dieser Textkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros](string-conversion-macros.md).
 
 ## <a name="example"></a>Beispiel
 
-Finden Sie unter [ATL- und MFC-Zeichenfolgen-Konvertierungsmakros](string-conversion-macros.md) für ein Beispiel für diese Zeichenfolgen-konvertierungsmakros.
+Ein Beispiel für die Verwendung dieser Zeichenfolgenkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros.](string-conversion-macros.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlconv.h
+**Kopfzeile:** atlconv.h
 
-##  <a name="cw2cwex"></a>  CW2CWEX::CW2CWEX
+## <a name="cw2cwexcw2cwex"></a><a name="cw2cwex"></a>CW2CWEX::CW2CWEX
 
 Der Konstruktor.
 
@@ -93,17 +93,17 @@ CW2CWEX(LPCWSTR psz) throw(...);
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
-Die Textzeichenfolge, die konvertiert werden.
+*Psz*<br/>
+Die zu konvertierende Textzeichenfolge.
 
 *nCodePage*<br/>
-Die Codepage. In dieser Klasse verwendet nicht.
+Die Codepage. Wird in dieser Klasse nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weist den Puffer, in der Übersetzungsprozess verwendet.
+Ordnet den puffer zu, der im Übersetzungsprozess verwendet wird.
 
-##  <a name="dtor"></a>  CW2CWEX:: ~ CW2CWEX
+## <a name="cw2cwexcw2cwex"></a><a name="dtor"></a>CW2CWEX::-CW2CWEX
 
 Der Destruktor.
 
@@ -111,19 +111,19 @@ Der Destruktor.
 ~CW2CWEX() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den zugeordneten Puffer frei.
+Gibt den zugewiesenen Puffer frei.
 
-##  <a name="m_psz"></a>  CW2CWEX::m_psz
+## <a name="cw2cwexm_psz"></a><a name="m_psz"></a>CW2CWEX::m_psz
 
-Der Datenmember, die die Quellzeichenfolge speichert.
+Das Datenelement, das die Quellzeichenfolge speichert.
 
 ```
 LPCWSTR m_psz;
 ```
 
-##  <a name="operator_lpcwstr"></a>  CW2CWEX::Operator LPCWSTR
+## <a name="cw2cwexoperator-lpcwstr"></a><a name="operator_lpcwstr"></a>CW2CWEX::operator LPCWSTR
 
 Konvertierungsoperator.
 
@@ -133,7 +133,7 @@ operator LPCWSTR() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Zeichenfolge zurück, als Typ LPCWSTR.
+Gibt die Textzeichenfolge als Typ LPCWSTR zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
@@ -142,4 +142,4 @@ Gibt die Zeichenfolge zurück, als Typ LPCWSTR.
 [CA2WEX-Klasse](../../atl/reference/ca2wex-class.md)<br/>
 [CW2AEX-Klasse](../../atl/reference/cw2aex-class.md)<br/>
 [CW2WEX-Klasse](../../atl/reference/cw2wex-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

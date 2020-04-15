@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CSingleDocTemplate [MFC], CSingleDocTemplate
 ms.assetid: 4f3a8212-81ee-48a0-ad22-e0ed7c36a391
-ms.openlocfilehash: 4d1361734f38d903e2171839b95888863126974a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5a014b35a6cd2d12367e190e4d6dd689e28eae66
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62324182"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318347"
 ---
 # <a name="csingledoctemplate-class"></a>CSingleDocTemplate-Klasse
 
@@ -29,31 +29,31 @@ class CSingleDocTemplate : public CDocTemplate
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CSingleDocTemplate::CSingleDocTemplate](#csingledoctemplate)|Erstellt ein `CSingleDocTemplate`-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine SDI-Anwendung verwendet das Hauptrahmenfenster, ein Dokument anzuzeigen. zu einem Zeitpunkt kann nur ein Dokument geöffnet sein.
+Eine SDI-Anwendung verwendet das Hauptrahmenfenster, um ein Dokument anzuzeigen. es kann jeweils nur ein Dokument geöffnet sein.
 
-Eine Dokumentvorlage definiert die Beziehung zwischen drei Typen von Klassen:
+Eine Dokumentvorlage definiert die Beziehung zwischen drei Klassentypen:
 
-- Eine Dokumentenklasse, die Sie von abgeleitet werden `CDocument`.
+- Eine Dokumentklasse, von der `CDocument`Sie ableiten.
 
-- Eine Ansichtsklasse, die Daten aus der Dokumentenklasse, die oben aufgeführten anzeigt. Sie können diese Klasse von ableiten `CView`, `CScrollView`, `CFormView`, oder `CEditView`. (Sie können auch `CEditView` direkt.)
+- Eine Ansichtsklasse, die Daten aus der oben aufgeführten Dokumentklasse anzeigt. Sie können diese Klasse `CView` `CScrollView`von `CFormView`, `CEditView`, oder ableiten. (Sie können `CEditView` es auch direkt verwenden.)
 
-- Ein Frame Fenster-Klasse, die die Sicht enthält. Für eine SDI-Dokumentvorlage, Sie können diese Klasse von ableiten `CFrameWnd`; Wenn Sie nicht, zum Anpassen des Verhaltens der Haupt-benötigen frame-Fensters, können Sie mit `CFrameWnd` direkt, ohne eine eigene Klasse ableiten.
+- Eine Rahmenfensterklasse, die die Ansicht enthält. Für eine SDI-Dokumentvorlage können Sie `CFrameWnd`diese Klasse von ableiten. Wenn Sie das Verhalten des Hauptrahmenfensters nicht anpassen `CFrameWnd` müssen, können Sie es direkt verwenden, ohne eine eigene Klasse abzuleiten.
 
-Eine SDI-Anwendung unterstützt einen Typ des Dokuments, in der Regel, es gelten somit nur eine `CSingleDocTemplate` Objekt. Zu einem Zeitpunkt kann nur ein Dokument geöffnet sein.
+Eine SDI-Anwendung unterstützt in der Regel einen `CSingleDocTemplate` Dokumenttyp, sodass nur ein Objekt enthalten ist. Es kann jeweils nur ein Dokument geöffnet sein.
 
-Sie müssen keine Member aufzurufen `CSingleDocTemplate` außer den Konstruktor. Die Framework-Handles `CSingleDocTemplate` Objekte intern.
+Sie müssen keine Memberfunktionen außer `CSingleDocTemplate` dem Konstruktor aufrufen. Das Framework `CSingleDocTemplate` verarbeitet Objekte intern.
 
-Weitere Informationen zur Verwendung von `CSingleDocTemplate`, finden Sie unter [Dokumentvorlagen und der Erstellungsvorgang für Dokumente und Ansichten](../../mfc/document-templates-and-the-document-view-creation-process.md).
+Weitere Informationen zur `CSingleDocTemplate`Verwendung finden Sie unter [Dokumentvorlagen und den Dokument-/Ansichtserstellungsprozess](../../mfc/document-templates-and-the-document-view-creation-process.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -65,7 +65,7 @@ Weitere Informationen zur Verwendung von `CSingleDocTemplate`, finden Sie unter 
 
 **Header:** afxwin.h
 
-##  <a name="csingledoctemplate"></a>  CSingleDocTemplate::CSingleDocTemplate
+## <a name="csingledoctemplatecsingledoctemplate"></a><a name="csingledoctemplate"></a>CSingleDocTemplate::CSingleDocTemplate
 
 Erstellt ein `CSingleDocTemplate`-Objekt.
 
@@ -80,9 +80,9 @@ CSingleDocTemplate(
 ### <a name="parameters"></a>Parameter
 
 *nIDResource*<br/>
-Gibt die ID der mit dem Dokument verwendeten Ressourcen. Dies kann im Menü "," Symbol "," Zugriffstastentabelle "und" Zeichenfolgenressourcen enthalten.
+Gibt die ID der Ressourcen an, die mit dem Dokumenttyp verwendet werden. Dies kann Menü-, Symbol-, Beschleunigertabelle und Zeichenfolgenressourcen umfassen.
 
-Die Zeichenfolgenressource besteht aus bis zu sieben Teilzeichenfolgen, die durch das Zeichen '\n' getrennte (das Zeichen '\n' wird als Platzhalter benötigt, wenn eine untergeordnete Zeichenfolge nicht enthalten ist; nachfolgende '\n'-Zeichen sind jedoch nicht erforderlich); Diese Teilzeichenfolgen beschreiben den Dokumenttyp an. Weitere Informationen zu den Teilzeichenfolgen, finden Sie unter [CDocTemplate::GetDocString](../../mfc/reference/cdoctemplate-class.md#getdocstring). Diese Zeichenfolgenressource in die Ressourcendatei der Anwendung gefunden. Zum Beispiel:
+Die Zeichenfolgenressource besteht aus bis zu sieben Teilzeichenfolgen, die durch das Zeichen ''n' getrennt sind (das Zeichen ''n' wird als Platzhalter benötigt, wenn eine Teilzeichenfolge nicht enthalten ist; jedoch sind nachfolgende 'n'-Zeichen nicht erforderlich); Diese Teilzeichenfolgen beschreiben den Dokumenttyp. Informationen zu den Teilzeichenfolgen finden Sie unter [CDocTemplate::GetDocString](../../mfc/reference/cdoctemplate-class.md#getdocstring). Diese Zeichenfolgenressource befindet sich in der Ressourcendatei der Anwendung. Beispiel:
 
 ```RC
 // MYCALC.RC
@@ -92,22 +92,22 @@ BEGIN
 END
 ```
 
-Sie können diese Zeichenfolge, die mit den Zeichenfolgen-Editor bearbeiten. die gesamte Zeichenfolge wird als einzelner Eintrag in den Editor für Zeichenfolgen, nicht als sieben separate Einträge angezeigt.
+Sie können diese Zeichenfolge mit dem Zeichenfolgen-Editor bearbeiten. Die gesamte Zeichenfolge wird als einzelner Eintrag im String-Editor und nicht als sieben separate Einträge angezeigt.
 
-Weitere Informationen zu dieser Ressourcentypen finden Sie unter den [Zeichenfolgen-Editor](../../windows/string-editor.md).
+Weitere Informationen zu diesen Ressourcentypen finden Sie im [Zeichenfolgen-Editor](../../windows/string-editor.md).
 
 *pDocClass*<br/>
-Verweist auf die `CRuntimeClass` Objekt der Document-Klasse. Diese Klasse ist eine `CDocument`-abgeleitete Klasse, die Sie definieren, um die Darstellung von Dokumenten.
+Zeigt auf `CRuntimeClass` das Objekt der Dokumentklasse. Diese Klasse `CDocument`ist eine -abgeleitete Klasse, die Sie definieren, um Ihre Dokumente darzustellen.
 
 *pFrameClass*<br/>
-Verweist auf die `CRuntimeClass` Objekt das Rahmenfenster (Klasse). Diese Klasse kann sein, eine `CFrameWnd`-abgeleitete Klasse, oder es kann sein `CFrameWnd` selbst, wenn Sie Standardverhalten für das Hauptrahmenfenster verwenden möchten.
+Zeigt auf `CRuntimeClass` das Objekt der Rahmenfensterklasse. Diese Klasse kann `CFrameWnd`eine -derived-Klasse `CFrameWnd` sein, oder sie kann selbst sein, wenn Sie das Standardverhalten für das Hauptframefenster verwenden möchten.
 
 *pViewClass*<br/>
-Verweist auf die `CRuntimeClass` Objekt der Klasse anzeigen. Diese Klasse ist eine `CView`-abgeleitete Klasse, die Sie definieren, um die Anzeige von Dokumenten.
+Zeigt auf `CRuntimeClass` das Objekt der Ansichtsklasse. Diese Klasse `CView`ist eine -abgeleitete Klasse, die Sie zum Anzeigen Ihrer Dokumente definieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dynamisch Zuordnen einer `CSingleDocTemplate` -Objekt und übergeben es an `CWinApp::AddDocTemplate` aus der `InitInstance` Memberfunktion der Anwendungsklasse.
+Weisen Sie `CSingleDocTemplate` ein Objekt `CWinApp::AddDocTemplate` dynamisch `InitInstance` zu und übergeben Sie es an die Memberfunktion Ihrer Anwendungsklasse.
 
 ### <a name="example"></a>Beispiel
 

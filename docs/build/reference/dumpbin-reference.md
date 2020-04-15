@@ -10,21 +10,21 @@ helpviewer_keywords:
 - COFF files, displaying information about
 - binary file dumper
 ms.assetid: 4bc06822-5330-44b4-8a3f-6180dfd41dfb
-ms.openlocfilehash: 45f6b9c71eaea93597e90de93c704d2ea260235e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6ad421b0c90ad55126f69a899503d6a73184979f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62273273"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81320536"
 ---
 # <a name="dumpbin-reference"></a>DUMPBIN-Referenz
 
-Die Microsoft COFF-Binärdateidumper (DUMPBIN. EXE-Datei) zeigt Informationen über Common Object File Format (COFF)-Binärdateien. Sie können DUMPBIN verwenden, um COFF-Objektdateien, standard-Bibliotheken von COFF-Objekten, ausführbaren Dateien und Dynamic Link Libraries (DLLs) zu überprüfen.
+Der Microsoft COFF Binary File Dumper (DUMPBIN. EXE) zeigt Informationen zu COFF-Binärdateien (Common Object File Format) an. Sie können DUMPBIN verwenden, um COFF-Objektdateien, Standardbibliotheken von COFF-Objekten, ausführbare Dateien und DLLs (Dynamic Link Libraries) zu untersuchen.
 
 > [!NOTE]
->  Sie können dieses Tool nur über die Visual Studio-Eingabeaufforderung starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
+> Sie können dieses Tool nur über die Eingabeaufforderung für die Eingabeaufforderung Visual Studio starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
 
-Nur die [/Headers](headers.md) DUMPBIN-Option ist verfügbar für die Verwendung in Dateien mit der ["/ GL"](gl-whole-program-optimization.md) -Compileroption.
+Für Dateien, die mit der [/GL](gl-whole-program-optimization.md)-Compileroption erstellt wurden, kann nur die Option [/HEADERS](headers.md) DUMPBIN verwendet werden.
 
 - [DUMPBIN-Befehlszeile](dumpbin-command-line.md)
 

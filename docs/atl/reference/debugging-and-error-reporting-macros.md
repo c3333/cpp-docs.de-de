@@ -1,5 +1,5 @@
 ---
-title: Debugging-und Fehlerberichterstattungs-Makros
+title: Debuggen und Fehlerberichterstattungsmakros
 ms.date: 05/06/2019
 f1_keywords:
 - atldef/ATL::_ATL_DEBUG_INTERFACES
@@ -11,75 +11,75 @@ f1_keywords:
 helpviewer_keywords:
 - macros, error reporting
 ms.assetid: 4da9b87f-ec5c-4a32-ab93-637780909b9d
-ms.openlocfilehash: b666ba3debe164118c9b40b90313646592b04876
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 69ab6e17bfb1ec85ddb5b8c19c18010a9b4f3df6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423165"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330188"
 ---
-# <a name="debugging-and-error-reporting-macros"></a>Debugging-und Fehlerberichterstattungs-Makros
+# <a name="debugging-and-error-reporting-macros"></a>Debuggen und Fehlerberichterstattungsmakros
 
-Diese Makros bieten nützliche Debugging-und Ablauf Verfolgungs Funktionen.
+Diese Makros bieten nützliche Debugging- und Ablaufverfolgungsfunktionen.
 
 |||
 |-|-|
-|[_ATL_DEBUG_INTERFACES](#_atl_debug_interfaces)|Schreibt im Ausgabefenster alle Schnittstellen Lecks, die beim Aufrufen `_Module.Term` erkannt werden.|
-|[_ATL_DEBUG_QI](#_atl_debug_qi)|Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.|
-|[ATLASSERT](#atlassert)|Führt die gleiche Funktionalität wie das [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) Makro in der C-Lauf Zeit Bibliothek aus.|
-|[Atlsicher](#atlensure)|Führt die Parameter Validierung aus. `AtlThrow` bei Bedarf anrufen|
-|[Atltracenotimpl](#atltracenotimpl)|Sendet eine Meldung an das dumpgerät, dass die angegebene Funktion nicht implementiert ist.|
-|[ATLTRACE](#atltrace)|Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen. Aus Gründen der Abwärtskompatibilität eingeschlossen.|
-|[ATLTRACE2](#atltrace2)|Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen.|
+|[_ATL_DEBUG_INTERFACES](#_atl_debug_interfaces)|Schreibt in das Ausgabefenster alle Schnittstellenlecks, `_Module.Term` die beim Aufruf erkannt werden.|
+|[_ATL_DEBUG_QI](#_atl_debug_qi)|Schreibt alle `QueryInterface` Aufrufe in das Ausgabefenster.|
+|[ATLASSERT](#atlassert)|Führt die gleiche Funktionalität aus wie das [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) Makros, das in der C-Laufzeitbibliothek gefunden wurde.|
+|[ATLENSURE](#atlensure)|Führt die Parameterüberprüfung durch. Anruf `AtlThrow` bei Bedarf|
+|[ATLTRACENOTIMPL](#atltracenotimpl)|Sendet eine Meldung an das Dumpgerät, dass die angegebene Funktion nicht implementiert ist.|
+|[ATLTRACE](#atltrace)|Meldet Warnungen an ein Ausgabegerät, z. B. das Debuggerfenster, entsprechend den angegebenen Flags und Ebenen. Für Abwärtskompatibilität enthalten.|
+|[ATLTRACE2](#atltrace2)|Meldet Warnungen an ein Ausgabegerät, z. B. das Debuggerfenster, entsprechend den angegebenen Flags und Ebenen.|
 
-##  <a name="_atl_debug_interfaces"></a>_ATL_DEBUG_INTERFACES
+## <a name="_atl_debug_interfaces"></a><a name="_atl_debug_interfaces"></a>_ATL_DEBUG_INTERFACES
 
-Definieren Sie dieses Makro, bevor Sie ATL-Header Dateien einschließen, um alle `AddRef` und `Release` Aufrufe der Schnittstellen ihrer Komponenten zum Ausgabefenster zu verfolgen.
+Definieren Sie dieses Makro, bevor Sie `AddRef` ATL-Headerdateien einschließen, um alle Schnittstellen Ihrer `Release` Komponenten und Aufrufe zum Ausgabefenster nachzuverfolgen.
 
 ```
 #define _ATL_DEBUG_INTERFACES
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Ausgabe der Ablauf Verfolgung wird wie unten dargestellt angezeigt:
+Die Ablaufverfolgungsausgabe wird wie unten gezeigt angezeigt:
 
 `ATL: QIThunk - 2008         AddRef  :   Object = 0x00d81ba0   Refcount = 1   CBug - IBug`
 
-Der erste Teil jeder Ablauf Verfolgung wird immer `ATL: QIThunk`. Next ist ein Wert, der den bestimmten *Schnittstellen Thunk* identifiziert, der verwendet wird. Ein Schnittstellen Thunk ist ein Objekt, das verwendet wird, um einen Verweis Zähler beizubehalten und die hier verwendete Ablauf Verfolgungs Funktion bereitzustellen. Ein neuer Schnittstellen Thunk wird bei jedem Aufruf von `QueryInterface` erstellt, außer bei Anforderungen für die `IUnknown`-Schnittstelle (in diesem Fall wird jedes Mal derselbe Thunk zurückgegeben, um die com-Identitäts Regeln einzuhalten).
+Der erste Teil jeder Ablaufverfolgung ist `ATL: QIThunk`immer . Als Nächstes ist ein Wert, der den verwendeten *Schnittstellen-Thunk* identifiziert. Ein Schnittstellen-Thunk ist ein Objekt, das verwendet wird, um eine Verweisanzahl beizubehalten und die hier verwendete Ablaufverfolgungsfunktion bereitzustellen. Bei jedem Aufruf wird ein neuer `QueryInterface` Schnittstellen-Thunk `IUnknown` erstellt, mit Ausnahme von Anforderungen für die Schnittstelle (in diesem Fall wird derselbe Thunk jedes Mal zurückgegeben, um die Identitätsregeln von COM einzuhalten).
 
-Als nächstes sehen Sie `AddRef` oder `Release`, die angeben, welche Methode aufgerufen wurde. Danach sehen Sie einen Wert, der das Objekt identifiziert, dessen Verweis Zähler für die Schnittstelle geändert wurde. Der Wert, der verfolgt wird, ist der **this** -Zeiger des-Objekts.
+Als Nächstes sehen `AddRef` `Release` oder geben Sie an, welche Methode aufgerufen wurde. Anschließend wird ein Wert angezeigt, der das Objekt identifiziert, dessen Schnittstellenverweisanzahl geändert wurde. Der nachverfolgte Wert ist der **Zeiger** des Objekts.
 
-Der Verweis Zähler, der nachverfolgt wird, ist der Verweis Zähler für diesen Thunk, nachdem `AddRef` oder `Release` aufgerufen wurde. Beachten Sie, dass dieser Verweis Zähler möglicherweise nicht mit dem Verweis Zähler für das Objekt identisch ist. Jeder Thunk behält seinen eigenen Verweis Zähler, um Sie bei der vollständigen Einhaltung der Regeln für die Verweis Zählung von com zu unterstützen.
+Die Referenzanzahl, die verfolgt wird, ist die `AddRef` `Release` Referenzanzahl für diesen Thunk nach oder wurde aufgerufen. Beachten Sie, dass diese Verweisanzahl möglicherweise nicht mit der Referenzanzahl für das Objekt übereinstimmt. Jeder Thunk behält seine eigene Referenzanzahl bei, damit Sie die Referenzzählregeln von COM vollständig einhalten können.
 
-Die letzten Informationen, die nachverfolgt werden, sind der Name des Objekts und die Schnittstelle, die vom `AddRef` oder `Release` aufgerufen wird.
+Die letzte zurückverfolgte Information ist der Name des Objekts `AddRef` `Release` und die Schnittstelle, die von dem oder Aufruf betroffen ist.
 
-Alle Schnittstellen Lecks, die erkannt werden, wenn der Server heruntergefahren und `_Module.Term` aufgerufen wird, werden wie folgt protokolliert:
+Alle Schnittstellenlecks, die beim Herunterfahren `_Module.Term` des Servers erkannt werden und aufgerufen werden, werden wie folgt protokolliert:
 
 `ATL: QIThunk - 2005         LEAK    :   Object = 0x00d81ca0   Refcount = 1   MaxRefCount = 1   CBug - IBug`
 
-Die Informationen, die hier bereitgestellt werden, werden direkt den Informationen in den vorherigen Ablauf Verfolgungs Anweisungen zugeordnet, damit Sie die Verweis Zähler während der gesamten Lebensdauer eines Schnittstellen Thunk untersuchen können. Außerdem erhalten Sie einen Hinweis auf den maximalen Verweis Zähler für diesen Schnittstellen Thunk.
+Die hier bereitgestellten Informationen werden direkt den Informationen in den vorherigen Ablaufverfolgungsanweisungen zugeordnet, sodass Sie die Referenzanzahl über die gesamte Lebensdauer eines Schnittstellen-Thunks untersuchen können. Darüber hinaus erhalten Sie eine Angabe der maximalen Referenzanzahl auf diesem Schnittstellen-Thunk.
 
 > [!NOTE]
-> _ATL_DEBUG_INTERFACES können in Einzelhandels Builds verwendet werden.
+> _ATL_DEBUG_INTERFACES kann in Einzelhandelsbuilds verwendet werden.
 
-##  <a name="_atl_debug_qi"></a>_ATL_DEBUG_QI
+## <a name="_atl_debug_qi"></a><a name="_atl_debug_qi"></a>_ATL_DEBUG_QI
 
-Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.
+Schreibt alle `QueryInterface` Aufrufe in das Ausgabefenster.
 
 ```
 #define _ATL_DEBUG_QI
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn beim Aufrufen von `QueryInterface` ein Fehler aufgetreten ist, wird im Ausgabefenster Folgendes angezeigt:
+Wenn ein `QueryInterface` Aufruf zum Fehler auftritt, wird im Ausgabefenster folgende Anzeigen angezeigt:
 
-*Schnittstellen Name* - `failed`
+*Schnittstellenname* - `failed`
 
-##  <a name="atlassert"></a>ATLASSERT
+## <a name="atlassert"></a><a name="atlassert"></a>ATLASSERT
 
-Das ATLASSERT-Makro führt die gleiche Funktionalität wie das [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) Makro in der C-Lauf Zeit Bibliothek aus.
+Das ATLASSERT-Makro führt die gleiche Funktionalität aus wie das [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) Makroin der C-Laufzeitbibliothek.
 
 ```
 ATLASSERT(booleanExpression);
@@ -88,19 +88,19 @@ ATLASSERT(booleanExpression);
 ### <a name="parameters"></a>Parameter
 
 *booleanExpression*<br/>
-Ausdruck (einschließlich Zeiger), der als ungleich 0 (null) oder 0 ausgewertet wird.
+Ausdruck (einschließlich Zeiger), der auf Uneinlauter oder 0 ausgewertet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In Debugbuilds wertet ATLASSERT " *booleanExpression* " aus und generiert einen Debugbericht, wenn das Ergebnis "false" ist.
+In Debugbuilds wertet ATLASSERT *booleanExpression* aus und generiert einen Debugbericht, wenn das Ergebnis false ist.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** atldef. h
+**Kopfzeile:** atldef.h
 
-##  <a name="atlensure"></a>Atlsicher
+## <a name="atlensure"></a><a name="atlensure"></a>ATLENSURE
 
-Dieses Makro wird verwendet, um Parameter zu überprüfen, die an eine Funktion geleitet werden.
+Dieses Makro wird verwendet, um Parameter zu überprüfen, die an eine Funktion übergeben werden.
 
 ```
 ATLENSURE(booleanExpression);
@@ -112,32 +112,32 @@ ATLENSURE_THROW(booleanExpression, hr);
 *booleanExpression*<br/>
 Gibt einen booleschen Ausdruck an, der getestet werden soll.
 
-*HR*<br/>
-Gibt einen Fehlercode an, der zurückgegeben werden soll.
+*Hr*<br/>
+Gibt einen zurückzugebenden Fehlercode an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Makros bieten einen Mechanismus zum erkennen und Benachrichtigen des Benutzers über eine falsche Parameter Verwendung.
+Diese Makros bieten einen Mechanismus, um den Benutzer über eine falsche Parameterverwendung zu erkennen und zu benachrichtigen.
 
-Das-Makro ruft ATLASSERT auf, und wenn die Bedingung fehlschlägt, ruft `AtlThrow`auf.
+Das Makro ruft ATLASSERT auf `AtlThrow`und ruft, wenn die Bedingung fehlschlägt, auf .
 
-Im atlsicher-Fall wird `AtlThrow` mit E_FAIL aufgerufen.
+Im Fall ATLENSURE `AtlThrow` wird mit E_FAIL aufgerufen.
 
-Im ATLENSURE_THROW Fall wird `AtlThrow` mit dem angegebenen HRESULT aufgerufen.
+Im ATLENSURE_THROW Fall `AtlThrow` wird mit dem angegebenen HRESULT aufgerufen.
 
-Der Unterschied zwischen atlsicher und ATLASSERT besteht darin, dass ATL-sicher eine Ausnahme in Releasebuilds sowie in Debugbuilds auslöst.
+Der Unterschied zwischen ATLENSURE und ATLASSERT besteht darin, dass ATLENSURE sowohl in Release-Builds als auch in Debug-Builds eine Ausnahme auslöst.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#108](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_1.cpp)]
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afx.h
+**Kopf:** afx.h
 
-##  <a name="atltracenotimpl"></a>Atltracenotimpl
+## <a name="atltracenotimpl"></a><a name="atltracenotimpl"></a>ATLTRACENOTIMPL
 
-In Debugbuilds von ATL sendet die Zeichenfolge " *funcname* ist nicht implementiert" an das dumpgerät und gibt E_NOTIMPL zurück.
+In Debugbuilds von ATL sendet die Zeichenfolge *"funcname* is not implemented" an das Dump-Gerät und gibt E_NOTIMPL zurück.
 
 ```
 ATLTRACENOTIMPL(funcname);
@@ -145,24 +145,24 @@ ATLTRACENOTIMPL(funcname);
 
 ### <a name="parameters"></a>Parameter
 
-*funcname*<br/>
-in Eine Zeichenfolge, die den Namen der nicht implementierten Funktion enthält.
+*Funcname*<br/>
+[in] Eine Zeichenfolge, die den Namen der Funktion enthält, die nicht implementiert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt in Releasebuilds einfach E_NOTIMPL zurück.
+In Release-Builds gibt einfach E_NOTIMPL zurück.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#127](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_2.cpp)]
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** ATLTRACE. h
+**Kopfzeile:** atltrace.h
 
-##  <a name="atltrace"></a>ATLTRACE
+## <a name="atltrace"></a><a name="atltrace"></a>ATLTRACE
 
-Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen. Aus Gründen der Abwärtskompatibilität eingeschlossen.
+Meldet Warnungen an ein Ausgabegerät, z. B. das Debuggerfenster, entsprechend den angegebenen Flags und Ebenen. Für Abwärtskompatibilität enthalten.
 
 ```
 ATLTRACE(exp);
@@ -175,25 +175,25 @@ ATLTRACE(
 
 ### <a name="parameters"></a>Parameter
 
-*exp*<br/>
-in Die Zeichenfolge und Variablen, die an das Ausgabefenster oder an eine beliebige Anwendung gesendet werden, die diese Nachrichten abfängt
+*Exp*<br/>
+[in] Die Zeichenfolge und die Variablen, die an das Ausgabefenster oder eine Anwendung gesendet werden sollen, die diese Nachrichten abfängt.
 
 *category*<br/>
-in Typ des Ereignisses oder der Methode, für die ein Bericht ausgegeben werden soll. Eine Liste der Kategorien finden Sie in den hinweisen.
+[in] Typ des Ereignisses oder der Methode, für die berichten soll. Eine Liste der Kategorien finden Sie in den Anmerkungen.
 
-*level*<br/>
-in Die Ebene der Ablauf Verfolgung, die gemeldet werden soll. Weitere Informationen finden Sie in den hinweisen.
+*Ebene*<br/>
+[in] Die Ebene der zu meldenden Ablaufverfolgung. Weitere Informationen finden Sie in den Erläuterungen.
 
-*lpszformat*<br/>
-in Die formatierte Zeichenfolge, die an das dumpgerät gesendet werden soll.
+*lpszFormat*<br/>
+[in] Die formatierte Zeichenfolge, die an das Dumpgerät gesendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Beschreibung von ATLTRACE finden Sie unter [ATLTRACE2](#atltrace2) . ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität eingeschlossen.
+Eine Beschreibung von ATLTRACE finden Sie unter [ATLTRACE2.](#atltrace2) ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität enthalten.
 
-##  <a name="atltrace2"></a>ATLTRACE2
+## <a name="atltrace2"></a><a name="atltrace2"></a>ATLTRACE2
 
-Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen.
+Meldet Warnungen an ein Ausgabegerät, z. B. das Debuggerfenster, entsprechend den angegebenen Flags und Ebenen.
 
 ```
 ATLTRACE2(exp);
@@ -206,78 +206,78 @@ ATLTRACE2(
 
 ### <a name="parameters"></a>Parameter
 
-*exp*<br/>
-in Die Zeichenfolge, die an das Ausgabefenster oder eine beliebige Anwendung gesendet wird, die diese Nachrichten abfängt.
+*Exp*<br/>
+[in] Die Zeichenfolge, die an das Ausgabefenster oder eine Anwendung gesendet werden soll, die diese Nachrichten abfängt.
 
 *category*<br/>
-in Typ des Ereignisses oder der Methode, für die ein Bericht ausgegeben werden soll. Eine Liste der Kategorien finden Sie in den hinweisen.
+[in] Typ des Ereignisses oder der Methode, für die berichten soll. Eine Liste der Kategorien finden Sie in den Anmerkungen.
 
-*level*<br/>
-in Die Ebene der Ablauf Verfolgung, die gemeldet werden soll. Weitere Informationen finden Sie in den hinweisen.
+*Ebene*<br/>
+[in] Die Ebene der zu meldenden Ablaufverfolgung. Weitere Informationen finden Sie in den Erläuterungen.
 
-*lpszformat*<br/>
-in Die Format Zeichenfolge im `printf`Format, mit der eine Zeichenfolge erstellt wird, die an das dumpgerät gesendet werden soll.
+*lpszFormat*<br/>
+[in] Die `printf`Formatzeichenfolge -style, die zum Erstellen einer Zeichenfolge verwendet werden soll, die an das Dumpgerät gesendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Kurzform von ATLTRACE2 schreibt eine Zeichenfolge in das Ausgabefenster des Debuggers. Die zweite Form von ATLTRACE2 schreibt auch die Ausgabe in das Ausgabefenster des Debuggers, unterliegt jedoch den Einstellungen des ATL/MFC-Ablauf Verfolgungs Tools (siehe [AtlTraceTool-Beispiel](../../overview/visual-cpp-samples.md)). Wenn Sie z. b. *Level* auf 4 festlegen und das ATL/MFC-Ablaufverfolgungs-Tool auf Level 0 festgelegt ist, wird die Meldung nicht angezeigt. die *Ebene* kann 0, 1, 2, 3 oder 4 sein. Der Standardwert ist 0 und meldet nur die schwerwiegendsten Probleme.
+Die Kurzform von ATLTRACE2 schreibt eine Zeichenfolge in das Ausgabefenster des Debuggers. Die zweite Form von ATLTRACE2 schreibt auch die Ausgabe in das Ausgabefenster des Debuggers, unterliegt jedoch den Einstellungen des ATL/MFC Trace Tool (siehe [ATLTraceTool-Beispiel](../../overview/visual-cpp-samples.md)). Wenn Sie beispielsweise *Die Stufe* auf 4 und das ATL/MFC-Ablaufverfolgungstool auf Stufe 0 festlegen, wird die Meldung nicht angezeigt. *0,* 1, 2, 3 oder 4 sein. Die Standardeinstellung 0 meldet nur die schwerwiegendsten Probleme.
 
-Der Parameter *Category* listet die festzulegenden Ablaufverfolgungsflags auf. Diese Flags entsprechen den Methoden Typen, für die Sie Berichte schreiben möchten. Die folgenden Tabellen enthalten die gültigen Ablaufverfolgungsflags, die Sie für den *Category* -Parameter verwenden können.
+Der *Kategorieparameter* listet die festzulegenden Ablaufverfolgungsflags auf. Diese Flags entsprechen den Methodentypen, für die Sie Bericht erstatten möchten. In den folgenden Tabellen sind die gültigen Ablaufverfolgungsflags aufgeführt, die Sie für den *Kategorieparameter* verwenden können.
 
-### <a name="atl-trace-flags"></a>ATL-Ablauf Verfolgungs Flags
+### <a name="atl-trace-flags"></a>ATL-Ablaufverfolgungsflags
 
-|ATL-Kategorie|Beschreibung|
+|ATL-Kategorie|BESCHREIBUNG|
 |------------------|-----------------|
 |`atlTraceGeneral`|Berichte zu allen ATL-Anwendungen. Der Standardwert.|
-|`atlTraceCOM`|Berichte zu com-Methoden.|
-|`atlTraceQI`|Berichte zu QueryInterface-aufrufen.|
-|`atlTraceRegistrar`|Meldet die Registrierung von-Objekten.|
-|`atlTraceRefcount`|Meldet über das Ändern der Verweis Anzahl.|
-|`atlTraceWindowing`|Berichte zu Windows-Methoden Beispielsweise meldet eine ungültige Meldungs Zuordnungs-ID.|
-|`atlTraceControls`|Berichte zu Steuerelementen; Beispielsweise meldet, wenn ein Steuerelement oder sein Fenster zerstört wird.|
-|`atlTraceHosting`|Meldet das Hosting von Nachrichten. Beispielsweise meldet, wenn ein Client in einem Container aktiviert wird.|
-|`atlTraceDBClient`|Berichte über OLE DB consumervorlage Wenn z. b. beim Aufrufen von GetData ein Fehler auftritt, kann die Ausgabe das HRESULT enthalten.|
-|`atlTraceDBProvider`|Berichte über OLE DB Anbieter Vorlage Beispielsweise meldet, ob die Erstellung einer Spalte fehlgeschlagen ist.|
-|`atlTraceSnapin`|Berichte für die MMC-Snap-in-Anwendung.|
-|`atlTraceNotImpl`|Meldet, dass die festgestellte Funktion nicht implementiert ist.|
-|`atlTraceAllocation`|Meldet die von den speicherdebuggingtools in atldbgmem. h gedruckten Nachrichten.|
+|`atlTraceCOM`|Berichte zu COM-Methoden.|
+|`atlTraceQI`|Berichte zu QueryInterface-Aufrufen.|
+|`atlTraceRegistrar`|Berichte über die Registrierung von Objekten.|
+|`atlTraceRefcount`|Berichte über die Änderung der Referenzanzahl.|
+|`atlTraceWindowing`|Berichte zu Windows-Methoden; meldet z. B. eine ungültige Nachrichtenzuordnungs-ID.|
+|`atlTraceControls`|Berichte über Kontrollen; z. B. Berichte, wenn ein Steuerelement oder sein Fenster zerstört wird.|
+|`atlTraceHosting`|Berichte zum Hosten von Nachrichten; z. B. Berichte, wenn ein Client in einem Container aktiviert ist.|
+|`atlTraceDBClient`|Berichte zur OLE DB Consumer Template; Wenn z. B. ein Aufruf von GetData fehlschlägt, kann die Ausgabe das HRESULT enthalten.|
+|`atlTraceDBProvider`|Berichte zur OLE DB-Anbietervorlage; Z. B. Berichte, wenn die Erstellung einer Spalte fehlgeschlagen ist.|
+|`atlTraceSnapin`|Berichte für MMC SnapIn-Anwendung.|
+|`atlTraceNotImpl`|Meldet, dass die angegebene Funktion nicht implementiert ist.|
+|`atlTraceAllocation`|Meldet Nachrichten, die von den Speicherdebuggingtools in atldbgmem.h gedruckt werden.|
 
-### <a name="mfc-trace-flags"></a>MFC-Trace-Flags
+### <a name="mfc-trace-flags"></a>MFC-Ablaufverfolgungsflags
 
-|MFC-Kategorie|Beschreibung|
+|MFC-Kategorie|BESCHREIBUNG|
 |------------------|-----------------|
-|`traceAppMsg`|Allgemeine MFC-Nachrichten. Wird immer empfohlen.|
-|`traceDumpContext`|Nachrichten aus [CDumpContext](../../mfc/reference/cdumpcontext-class.md).|
-|`traceWinMsg`|Nachrichten aus dem Nachrichten Behandlungs Code von MFC.|
+|`traceAppMsg`|Allgemeiner Zweck, MFC-Nachrichten. Immer zu empfehlen.|
+|`traceDumpContext`|Nachrichten von [CDumpContext](../../mfc/reference/cdumpcontext-class.md).|
+|`traceWinMsg`|Nachrichten aus dem MFC-Nachrichtenbehandlungscode.|
 |`traceMemory`|Nachrichten aus dem Speicherverwaltungscode von MFC.|
-|`traceCmdRouting`|Nachrichten aus dem Windows-Befehls Weiterleitungs Code von MFC.|
-|`traceHtml`|Nachrichten von der MFC-Unterstützung des DHTML-Dialogs.|
+|`traceCmdRouting`|Nachrichten aus dem Windows-Befehlsroutingcode von MFC.|
+|`traceHtml`|Nachrichten aus dem DHTML-Dialog von MFC unterstützen.|
 |`traceSocket`|Nachrichten von der MFC-Socketunterstützung.|
-|`traceOle`|Nachrichten von der MFC-OLE-Unterstützung.|
-|`traceDatabase`|Nachrichten von der MFC-Datenbankunterstützung.|
-|`traceInternet`|Nachrichten von der MFC-Internet Unterstützung.|
+|`traceOle`|Nachrichten von der OLE-Unterstützung von MFC.|
+|`traceDatabase`|Nachrichten aus der MFC-Datenbankunterstützung.|
+|`traceInternet`|Nachrichten aus der Internetunterstützung von MFC.|
 
-Um eine benutzerdefinierte Ablauf Verfolgungs Kategorie zu deklarieren, deklarieren Sie eine globale Instanz der `CTraceCategory`-Klasse wie folgt:
+Um eine benutzerdefinierte Ablaufverfolgungskategorie zu `CTraceCategory` deklarieren, deklarieren Sie eine globale Instanz der Klasse wie folgt:
 
 [!code-cpp[NVC_ATL_Utilities#109](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_3.cpp)]
 
-Der Kategoriename MY_CATEGORY in diesem Beispiel ist der Name, den Sie für den *Category* -Parameter angeben. Der erste Parameter ist der Kategoriename, der im ATL/MFC-Ablauf Verfolgungs Tool angezeigt wird. Der zweite Parameter ist die Standard Ablauf Verfolgungs Ebene. Dieser Parameter ist optional, und die Standard Ablauf Verfolgungs Ebene ist 0.
+Der Kategoriename, MY_CATEGORY in diesem Beispiel, ist der Name, den Sie für den *Kategorieparameter* angeben. Der erste Parameter ist der Kategoriename, der im ATL/MFC-Ablaufverfolgungstool angezeigt wird. Der zweite Parameter ist die Standardablaufverfolgungsebene. Dieser Parameter ist optional, und die Standardablaufverfolgungsebene ist 0.
 
 So verwenden Sie eine benutzerdefinierte Kategorie:
 
 [!code-cpp[NVC_ATL_Utilities#110](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_4.cpp)]
 
-Wenn Sie angeben möchten, dass die Ablauf Verfolgungs Meldungen gefiltert werden sollen, fügen Sie vor der `#include <atlbase.h>`-Anweisung Definitionen für diese Makros in stdafx. h ein.
+Um anzugeben, dass Sie die Ablaufverfolgungsmeldungen filtern möchten, fügen Sie vor `#include <atlbase.h>` der Anweisung Definitionen für diese Makros in Stdafx.h ein.
 
-Alternativ können Sie den Filter in den Präprozessordirektiven im Dialogfeld **Eigenschaften Seiten** festlegen. Klicken Sie auf die Registerkarte **Präprozessor** , und fügen Sie dann den globalen in das Bearbeitungsfeld **Präprozessordefinitionen** ein.
+Alternativ können Sie den Filter in den Präprozessordirektiven im Dialogfeld **Eigenschaftenseiten** festlegen. Klicken Sie auf die Registerkarte **Präprozessor,** und fügen Sie dann die globale in das Bearbeitungsfeld **Präprozessordefinitionen** ein.
 
-Atlbase. h enthält Standarddefinitionen der ATLTRACE2-Makros. diese Definitionen werden verwendet, wenn Sie diese Symbole nicht vor der Verarbeitung von "atlbase. h" definieren.
+Atlbase.h enthält Standarddefinitionen der ATLTRACE2-Makros und diese Definitionen werden verwendet, wenn Sie diese Symbole nicht definieren, bevor atlbase.h verarbeitet wird.
 
-In Releasebuilds kompiliert ATLTRACE2 in `(void) 0`.
+In Release-Builds kompiliert ATLTRACE2 in `(void) 0`.
 
-ATLTRACE2 schränkt die Inhalte der Zeichenfolge ein, die nach der Formatierung nicht mehr als 1023 Zeichen an das dumpgerät gesendet werden soll.
+ATLTRACE2 beschränkt den Inhalt der Zeichenfolge, die nach der Formatierung an das Dumpgerät gesendet werden soll, auf nicht mehr als 1023 Zeichen.
 
-ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität eingeschlossen.
+ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität enthalten.
 
 ### <a name="example"></a>Beispiel
 
@@ -286,4 +286,4 @@ ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen de
 ## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)<br/>
-[Debuggen und globale Funktionen für die Fehlerberichterstattung](../../atl/reference/debugging-and-error-reporting-global-functions.md)
+[Debuggen und Fehlerberichterstattung Globale Funktionen](../../atl/reference/debugging-and-error-reporting-global-functions.md)

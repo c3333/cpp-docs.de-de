@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - CAutoPtrElementTraits class
 ms.assetid: 777c1b14-6ab7-491f-b9a5-be149e71d4a2
-ms.openlocfilehash: d217441048403b0ff5361f8049b76367174812f1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ac29116dc9beedf587c42cc0e52f8c9dbaf3d782
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62246736"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318877"
 ---
 # <a name="cautoptrelementtraits-class"></a>CAutoPtrElementTraits-Klasse
 
-Diese Klasse stellt die Methoden, statische Funktionen und Typdefinitionen hilfreich zum Erstellen von Sammlungen von intelligenten Zeigern.
+Diese Klasse stellt Methoden, statische Funktionen und typdefs bereit, die beim Erstellen von Auflistungen intelligenter Zeiger nützlich sind.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,14 +40,14 @@ Der Zeigertyp.
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAutoPtrElementTraits::INARGTYPE](#inargtype)|Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.|
-|[CAutoPtrElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.|
+|[CAutoPtrElementTraits::INARGTYPE](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.|
+|[CAutoPtrElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt die Methoden, statische Funktionen und Typedefs für dadurch die Erstellung von Auflistungsobjekten-Klasse, die intelligente Zeiger. Die Klassen [CAutoPtrArray](../../atl/reference/cautoptrarray-class.md) und [CAutoPtrList](../../atl/reference/cautoptrlist-class.md) abgeleitet `CAutoPtrElementTraits`. Wenn beim Erstellen einer Auflistung von intelligenten Zeigern, die neue Vektor und Delete-Operatoren erfordert, verwenden [CAutoVectorPtrElementTraits](../../atl/reference/cautovectorptrelementtraits-class.md) stattdessen.
+Diese Klasse stellt Methoden, statische Funktionen und typedefs bereit, um die Erstellung von Auflistungsklassenobjekten zu unterstützen, die intelligente Zeiger enthalten. Die Klassen [CAutoPtrArray](../../atl/reference/cautoptrarray-class.md) und [CAutoPtrList](../../atl/reference/cautoptrlist-class.md) leiten sich von ab. `CAutoPtrElementTraits` Wenn Sie eine Sammlung von intelligenten Zeigern erstellen, die Vektor-Neu- und Löschoperatoren erfordert, verwenden Sie stattdessen [CAutoVectorPtrElementTraits.](../../atl/reference/cautovectorptrelementtraits-class.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -63,19 +63,19 @@ Diese Klasse stellt die Methoden, statische Funktionen und Typedefs für dadurch
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcoll.h
+**Kopfzeile:** atlcoll.h
 
-##  <a name="inargtype"></a>  CAutoPtrElementTraits::INARGTYPE
+## <a name="cautoptrelementtraitsinargtype"></a><a name="inargtype"></a>CAutoPtrElementTraits::INARGTYPE
 
-Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.
+Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef CAutoPtr<T>& INARGTYPE;
 ```
 
-##  <a name="outargtype"></a>  CAutoPtrElementTraits::OUTARGTYPE
+## <a name="cautoptrelementtraitsoutargtype"></a><a name="outargtype"></a>CAutoPtrElementTraits::OUTARGTYPE
 
-Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.
+Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef T *& OUTARGTYPE;
@@ -84,4 +84,4 @@ typedef T *& OUTARGTYPE;
 ## <a name="see-also"></a>Siehe auch
 
 [CDefaultElementTraits-Klasse](../../atl/reference/cdefaultelementtraits-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

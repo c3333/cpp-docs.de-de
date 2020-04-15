@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCWindowsManagerDialog [MFC], CMFCWindowsManagerDialog
 ms.assetid: 35b4b0db-33c4-4b22-94d8-5e3396341340
-ms.openlocfilehash: 5089decc7a118cd867aa14df51f5d7e269221108
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e3928c0d3ae4f607dceb99c0762277e8ea9ddbde
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62373660"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81319823"
 ---
 # <a name="cmfcwindowsmanagerdialog-class"></a>CMFCWindowsManagerDialog-Klasse
 
-Die `CMFCWindowsManagerDialog` Objekt kann ein Benutzer zum Verwalten von untergeordneten MDI-Fenster in einer MDI-Anwendung.
+Das `CMFCWindowsManagerDialog` Objekt ermöglicht es einem Benutzer, untergeordnete MDI-Fenster in einer MDI-Anwendung zu verwalten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,25 +29,25 @@ class CMFCWindowsManagerDialog : public CDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCWindowsManagerDialog::CMFCWindowsManagerDialog](#cmfcwindowsmanagerdialog)|Erstellt ein `CMFCWindowsManagerDialog`-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `CMFCWindowsManagerDialog` enthält eine Liste von untergeordneten MDI-Fenster, die derzeit in der Anwendung geöffnet sind. Der Benutzer kann den Zustand des untergeordneten MDI-Fenster mithilfe dieses Dialogfelds manuell steuern.
+Der `CMFCWindowsManagerDialog` enthält eine Liste der untergeordneten MDI-Fenster, die derzeit in der Anwendung geöffnet sind. Der Benutzer kann den Status der untergeordneten MDI-Fenster manuell steuern, indem er dieses Dialogfeld verwendet.
 
-`CMFCWindowsManagerDialog` eingebettet in der [CMDIFrameWndEx-Klasse](../../mfc/reference/cmdiframewndex-class.md). Die `CMFCWindowsManagerDialog` ist keine Klasse, die manuell erstellt werden soll. Rufen Sie stattdessen die Funktion [CMDIFrameWndEx::ShowWindowsDialog](../../mfc/reference/cmdiframewndex-class.md#showwindowsdialog), und er erstellt und zeigt eine `CMFCWindowsManagerDialog` Objekt.
+`CMFCWindowsManagerDialog`ist in die [CMDIFrameWndEx-Klasse](../../mfc/reference/cmdiframewndex-class.md)eingebettet. Der `CMFCWindowsManagerDialog` ist keine Klasse, die Sie manuell erstellen sollten. Rufen Sie stattdessen die Funktion [CMDIFrameWndEx::ShowWindowsDialog](../../mfc/reference/cmdiframewndex-class.md#showwindowsdialog)auf, `CMFCWindowsManagerDialog` und es wird ein Objekt erstellt und angezeigt.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht das Erstellen einer `CMFCWindowsManagerDialog` Objekt durch Aufrufen von `CMDIFrameWndEx::ShowWindowsDialog`. Dieser Codeausschnitt ist Teil der [Visual Studio-Demobeispiel](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird `CMFCWindowsManagerDialog` veranschaulicht, `CMDIFrameWndEx::ShowWindowsDialog`wie ein Objekt durch Aufrufen erstellt wird. Dieser Codeausschnitt ist Teil des [Visual Studio Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#18](../../mfc/codesnippet/cpp/cmfcwindowsmanagerdialog-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -61,9 +61,9 @@ Das folgende Beispiel veranschaulicht das Erstellen einer `CMFCWindowsManagerDia
 
 **Header:** afxWindowsManagerDialog.h
 
-##  <a name="cmfcwindowsmanagerdialog"></a>  CMFCWindowsManagerDialog::CMFCWindowsManagerDialog
+## <a name="cmfcwindowsmanagerdialogcmfcwindowsmanagerdialog"></a><a name="cmfcwindowsmanagerdialog"></a>CMFCWindowsManagerDialog::CMFCWindowsManagerDialog
 
-Erstellt eine [CMFCWindowsManagerDialog](../../mfc/reference/cmfcwindowsmanagerdialog-class.md) Objekt.
+Erstellt ein [CMFCWindowsManagerDialog-Objekt.](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)
 
 ```
 CMFCWindowsManagerDialog(
@@ -74,14 +74,14 @@ CMFCWindowsManagerDialog(
 ### <a name="parameters"></a>Parameter
 
 *pMDIFrame*<br/>
-[in] Ein Zeiger auf das übergeordnete Element oder Besitzer-Fenster.
+[in] Ein Zeiger auf das übergeordnete oder Besitzerfenster.
 
 *bHelpButton*<br/>
-[in] Ein boolescher Parameter, der angibt, ob das Framework zeigt eine **Hilfe** Schaltfläche.
+[in] Ein boolescher Parameter, der angibt, ob das Framework eine **Hilfeschaltfläche** anzeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zu Erscheinungsbild-Manager, finden Sie unter [Visualisierungs-Manager](../../mfc/visualization-manager.md).
+Weitere Informationen zu visuellen Managern finden Sie unter [Visualisierungs-Manager](../../mfc/visualization-manager.md).
 
 ## <a name="see-also"></a>Siehe auch
 

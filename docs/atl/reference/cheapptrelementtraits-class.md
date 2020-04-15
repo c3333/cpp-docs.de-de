@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - CHeapPtrElementTraits class
 ms.assetid: 910e0e06-3c8b-4242-bf00-b57eb74fbc77
-ms.openlocfilehash: e535afb3a49a5720c8394cc1ab9186c360527fea
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f09da968b264463eba759372e4e0756397e9978e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62258922"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326875"
 ---
 # <a name="cheapptrelementtraits-class"></a>CHeapPtrElementTraits-Klasse
 
-Diese Klasse stellt die Methoden, statische Funktionen und Typdefinitionen hilfreich zum Erstellen von Sammlungen von Heap-Zeigern.
+Diese Klasse stellt Methoden, statische Funktionen und typdefs bereit, die beim Erstellen von Auflistungen von Heapzeigern nützlich sind.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,23 +34,23 @@ class CHeapPtrElementTraits :
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Objekttyp in der Auflistungsklasse gespeichert werden.
+Der Objekttyp, der in der Auflistungsklasse gespeichert werden soll.
 
-*Allocator*<br/>
-Die Speicher-Allocation-Klasse verwenden. Der Standardwert ist [CCRTAllocator](../../atl/reference/ccrtallocator-class.md).
+*Zuweisung*<br/>
+Die zu verwendende Speicherzuweisungsklasse. Der Standardwert ist [CCRTAllocator](../../atl/reference/ccrtallocator-class.md).
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHeapPtrElementTraits::INARGTYPE](#inargtype)|Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.|
-|[CHeapPtrElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.|
+|[CHeapPtrElementTraits::INARGTYPE](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.|
+|[CHeapPtrElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt die Methoden, statische Funktionen und Typedefs für dadurch die Erstellung von Auflistungsobjekten-Klasse, die Heap-Zeiger. Die Klasse `CHeapPtrList` leitet sich von `CHeapPtrElementTraits`.
+Diese Klasse stellt Methoden, statische Funktionen und typedefs bereit, um die Erstellung von Auflistungsklassenobjekten zu unterstützen, die Heapzeiger enthalten. Die `CHeapPtrList` Klasse leitet `CHeapPtrElementTraits`sich von ab.
 
 Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
@@ -68,19 +68,19 @@ Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-co
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcoll.h
+**Kopfzeile:** atlcoll.h
 
-##  <a name="inargtype"></a>  CHeapPtrElementTraits::INARGTYPE
+## <a name="cheapptrelementtraitsinargtype"></a><a name="inargtype"></a>CHeapPtrElementTraits::INARGTYPE
 
-Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.
+Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef CHeapPtr<T, Allocator>& INARGTYPE;
 ```
 
-##  <a name="outargtype"></a>  CHeapPtrElementTraits::OUTARGTYPE
+## <a name="cheapptrelementtraitsoutargtype"></a><a name="outargtype"></a>CHeapPtrElementTraits::OUTARGTYPE
 
-Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.
+Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef T *& OUTARGTYPE;
@@ -90,4 +90,4 @@ typedef T *& OUTARGTYPE;
 
 [CDefaultElementTraits-Klasse](../../atl/reference/cdefaultelementtraits-class.md)<br/>
 [CComHeapPtr-Klasse](../../atl/reference/ccomheapptr-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

@@ -1,6 +1,6 @@
 ---
 title: _ismbcl0, _ismbcl0_l, _ismbcl1, _ismbcl1_l, _ismbcl2, _ismbcl2_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbcl2
 - _ismbcl1
@@ -8,6 +8,12 @@ api_name:
 - _ismbcl2_l
 - _ismbcl1_l
 - _ismbcl0_l
+- _o__ismbcl0
+- _o__ismbcl0_l
+- _o__ismbcl1
+- _o__ismbcl1_l
+- _o__ismbcl2
+- _o__ismbcl2_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -51,12 +58,12 @@ helpviewer_keywords:
 - _ismbcl2_l function
 - _ismbcl0 function
 ms.assetid: ee15ebd1-462c-4a43-95f3-6735836d626a
-ms.openlocfilehash: 04560b7dd3a7188531e247499bc2ffd18bc23ca5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5d9481ecc8e574b602124103f8524e07270fe058
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953851"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343224"
 ---
 # <a name="_ismbcl0-_ismbcl0_l-_ismbcl1-_ismbcl1_l-_ismbcl2-_ismbcl2_l"></a>_ismbcl0, _ismbcl0_l, _ismbcl1, _ismbcl1_l, _ismbcl2, _ismbcl2_l
 
@@ -93,7 +100,7 @@ int _ismbcl2_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende Zeichen.
 
 *locale*<br/>
@@ -101,30 +108,32 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* < = 255 und es eine entsprechende **_ismbb** -Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
+Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c* <= 255 und es eine entsprechende **_ismbb** Routine gibt (z. B. **entspricht _ismbcalnum** **_ismbbalnum),** ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** Routine.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegebene Bedingung.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-|-Routine zurückgegebener Wert|Testbedingung (nur Codepage 932)|
+|Routine|Testbedingung (nur Codepage 932)|
 |-------------|-------------------------------------------|
-|**_ismbcl0**|JIS Nicht-Kanji: 0x8140<=*c*<=0x889E.|
-|**_ismbcl0_l**|JIS Nicht-Kanji: 0x8140<=*c*<=0x889E.|
-|**_ismbcl1**|JIS-Bereich 1: 0x889F<=*c*<=0x9872.|
-|**_ismbcl1_l**|JIS-Bereich 1: 0x889F<=*c*<=0x9872.|
-|**_ismbcl2**|JIS-Bereich 2: 0x989f < =*c*< = 0xeaa4.|
-|**_ismbcl2_l**|JIS-Bereich 2: 0x989f < =*c*< = 0xeaa4.|
+|**_ismbcl0**|JIS non-Kanji: 0x8140<=*c*<=0x889E.|
+|**_ismbcl0_l**|JIS non-Kanji: 0x8140<=*c*<=0x889E.|
+|**_ismbcl1**|JIS Level-1: 0x889F<=*c*<=0x9872.|
+|**_ismbcl1_l**|JIS Level-1: 0x889F<=*c*<=0x9872.|
+|**_ismbcl2**|JIS Level-2: 0x989F<=*c*<=0xEAA4.|
+|**_ismbcl2_l**|JIS Level-2: 0x989F<=*c*<=0xEAA4.|
 
-Die Funktionen überprüfen, ob der angegebene Wert *c* den oben beschriebenen Testbedingungen entspricht. es wird jedoch nicht überprüft, ob *c* ein gültiges Multibytezeichen ist. Wenn das untere Byte in den Bereichen 0x00–0x3F, 0x7F oder 0xFD–0xFF liegt, geben diese Funktionen einen Wert ungleich 0 (null) zurück. Dies gibt an, dass das Zeichen die Testbedingung erfüllt. Verwenden Sie [_ismbbtrail](ismbbtrail-ismbbtrail-l.md), um zu prüfen, ob das Multibytezeichen definiert ist.
+Die Funktionen überprüfen, ob der angegebene Wert *c* den oben beschriebenen Testbedingungen entspricht, überprüfen jedoch nicht, ob *c* ein gültiges Multibyte-Zeichen ist. Wenn das untere Byte in den Bereichen 0x00–0x3F, 0x7F oder 0xFD–0xFF liegt, geben diese Funktionen einen Wert ungleich 0 (null) zurück. Dies gibt an, dass das Zeichen die Testbedingung erfüllt. Verwenden Sie [_ismbbtrail](ismbbtrail-ismbbtrail-l.md), um zu prüfen, ob das Multibytezeichen definiert ist.
 
-**Ende der Codepage 932 (spezifisch)**
+**Endcodeseite 932 Spezifisch**
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_ismbcl0**|\<mbstring.h>|
 |**_ismbcl0_l**|\<mbstring.h>|
@@ -133,10 +142,10 @@ Die Funktionen überprüfen, ob der angegebene Wert *c* den oben beschriebenen T
 |**_ismbcl2**|\<mbstring.h>|
 |**_ismbcl2_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
-[ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>

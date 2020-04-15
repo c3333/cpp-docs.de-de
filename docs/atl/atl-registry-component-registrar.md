@@ -10,27 +10,27 @@ helpviewer_keywords:
 - scripts, Registrar scripts
 - registry, Registrar
 ms.assetid: 106752ae-4cfc-4030-8cb2-d36a1d635a2e
-ms.openlocfilehash: c64d47be6df515a0bd4a8d2cfef51f8d56311f4a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9b4492ea393c01b3fa382828d3ca6097d52493f0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62252013"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317365"
 ---
 # <a name="atl-registry-component-registrar"></a>ATL-Registrierungskomponente (Registrar)
 
-Der ATL-Registrierung bietet optimierten Zugriff auf die Registrierung des Systems durch eine benutzerdefinierte Schnittstelle. Die Registrierungsstelle ist Freethread- und ermöglicht die statische Verknüpfung von Code für C++-Clients.
+Der ATL-Registrar bietet einen optimierten Zugriff auf die Systemregistrierung über eine benutzerdefinierte Schnittstelle. Der Registrar ist freigefädelt und ermöglicht die statische Verknüpfung von Code für C++-Clients.
 
 > [!NOTE]
->  Der Quellcode für die ATL-Registrierung finden Sie in atlmfc\include\atliface.h.
+> Der Quellcode für den ATL-Registrar befindet sich in atlmfc-include-atliface.h.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
 [Erstellen von Registrierungsskripts](../atl/creating-registrar-scripts.md)<br/>
-Eine Anleitung zum Erstellen von Skripts für die Registrierung. Enthält Themen, in der BNF-Syntax in analysestrukturen, Registrierung-Skriptbeispielen, mithilfe von ersetzbaren Parametern und das Aufrufen von Skripts.
+Eine Anleitung zum Erstellen von Registrierungsskripts. Enthält Themen zur BNF-Syntax, Analysestrukturen, Beispiele für Registrierungsskripts, Verwendung austauschbarer Parameter und Aufrufen von Skripts.
 
-[Das Einrichten eines statischen Links zum Registrierungscode (nur C++)](../atl/setting-up-a-static-link-to-the-registrar-code-cpp-only.md)<br/>
-Listet die Schritte zum Einrichten der statischen Verknüpfung mit der Registrierungsstelle.
+[Einrichten einer statischen Verknüpfung mit dem Registrarcode (nur C++)](../atl/setting-up-a-static-link-to-the-registrar-code-cpp-only.md)<br/>
+Listet die Schritte zum Einrichten einer statischen Verknüpfung mit dem Registrar auf.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 

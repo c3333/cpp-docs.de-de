@@ -1,6 +1,6 @@
 ---
-title: FILE_TYPE_CODE-Aufzählung
-description: Das C++ Build Insights SDK FILE_TYPE_CODE-Aufzählungs Verweis.
+title: FILE_TYPE_CODE Enumerat
+description: Das C++ Build Insights SDK FILE_TYPE_CODE Enumerierungsreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,34 +9,34 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: e64f9315c62ce40c436032d6c96fdfa725847a7f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: dea603a072d7b2f472112a75b2e9ccded78399a9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78335165"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325564"
 ---
-# <a name="file_type_code-enum"></a>FILE_TYPE_CODE-Aufzählung
+# <a name="file_type_code-enum"></a>FILE_TYPE_CODE Enumerat
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `FILE_TYPE_CODE`-Aufzählung beschreibt den Typ einer Datei.
+Die `FILE_TYPE_CODE` Enumerat beschreibt den Typ einer Datei.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
-| Name | value | BESCHREIBUNG |
+| Name | Wert | BESCHREIBUNG |
 |--|--|--|
-| `FILE_TYPE_CODE_OTHER` | 0 (0x00000000) | Ein Dateityp, der in dieser Aufzählung nicht aufgeführt ist. |
-| `FILE_TYPE_CODE_OBJ` | 1 (0x00000001) | Eine Objektdatei (\*. obj). |
-| `FILE_TYPE_CODE_EXECUTABLE_IMAGE` | 2 (0x00000002) | Eine ausführbare Datei (\*. exe) oder eine DLL-Datei (\*. dll). |
-| `FILE_TYPE_CODE_LIB` | 3 (0x00000003) | Eine statische Bibliotheksdatei (*. lib). |
-| `FILE_TYPE_CODE_IMP_LIB` | 4 (0x00000004) | Eine Import Bibliothek (*. lib) |
-| `FILE_TYPE_CODE_EXP` | 5 (0x00000005 bei der) | Eine Exportdatei (*. exp). |
+| `FILE_TYPE_CODE_OTHER` | 0 (0x00000000) | Ein Dateityp, der in dieser Enumerat nicht aufgeführt ist. |
+| `FILE_TYPE_CODE_OBJ` | 1 (0x00000001) | Eine Objektdatei (\*.obj). |
+| `FILE_TYPE_CODE_EXECUTABLE_IMAGE` | 2 (0x00000002) | Eine ausführbare Datei (\*.exe) oder DLL (\*.dll). |
+| `FILE_TYPE_CODE_LIB` | 3 (0x00000003) | Eine statische Bibliotheksdatei (*.lib). |
+| `FILE_TYPE_CODE_IMP_LIB` | 4 (0x00000004) | Eine Importbibliothek (*.lib) |
+| `FILE_TYPE_CODE_EXP` | 5 (0x00000005) | Eine Exportdatei (*.exp). |
 
 ## <a name="remarks"></a>Bemerkungen
 

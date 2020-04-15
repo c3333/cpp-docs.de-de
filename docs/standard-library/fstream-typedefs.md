@@ -11,58 +11,58 @@ f1_keywords:
 - fstream/std::wifstream
 - fstream/std::wofstream
 ms.assetid: 8dddef2d-7f17-42a6-ba08-6f6f20597d23
-ms.openlocfilehash: 3f4104b28f5becfdbf62ede16faa81e855fcac8c
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 57e481c131a6e4a1111b1ed88217b891d6fc96a8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427074"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317190"
 ---
 # <a name="ltfstreamgt-typedefs"></a>&lt;fstream&gt; typedefs (<fstream>-Typdefinitionen)
 
 ||||
 |-|-|-|
-|[filebuf](#filebuf)|[fstream](#fstream)|[ifstream](#ifstream)|
+|[filebuf](#filebuf)|[Fstream](#fstream)|[ifstream](#ifstream)|
 |[ofstream](#ofstream)|[wfilebuf](#wfilebuf)|[wfstream](#wfstream)|
 |[wifstream](#wifstream)|[wofstream](#wofstream)|
 
-## <a name="filebuf"></a> filebuf
+## <a name="filebuf"></a><a name="filebuf"></a>filebuf
 
-Ein Typ `basic_filebuf` spezialisiert auf **char** -Vorlagen Parameter.
+Ein `basic_filebuf` Typ, der auf **char-Vorlagenparameter** spezialisiert ist.
 
 ```cpp
 typedef basic_filebuf<char, char_traits<char>> filebuf;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [Basic_filebuf](../standard-library/basic-filebuf-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_filebuf](../standard-library/basic-filebuf-class.md), spezialisiert auf Elemente vom Typ **char** mit Standardzeichenmerkmalen.
 
-## <a name="fstream"></a> fstream
+## <a name="fstream"></a><a name="fstream"></a>Fstream
 
-Ein Typ `basic_fstream` spezialisiert auf **char** -Vorlagen Parameter.
+Ein `basic_fstream` Typ, der auf **char-Vorlagenparameter** spezialisiert ist.
 
 ```cpp
 typedef basic_fstream<char, char_traits<char>> fstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [Basic_fstream](../standard-library/basic-fstream-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_fstream](../standard-library/basic-fstream-class.md), spezialisiert auf Elemente vom Typ **char** mit Standardzeichenmerkmalen.
 
-## <a name="ifstream"></a> ifstream
+## <a name="ifstream"></a><a name="ifstream"></a>Ifstream
 
-Definiert einen Stream, der für das serielle Lesen von Einzelbyte-Zeichendaten aus einer Datei verwendet werden soll. `ifstream` ist eine typedef, die die Klassen Vorlage auf **char**spezialisiert `basic_ifstream`.
+Definiert einen Stream, der für das serielle Lesen von Einzelbyte-Zeichendaten aus einer Datei verwendet werden soll. `ifstream`ist ein typedef, der die `basic_ifstream` Klassenvorlage für **char**spezialisiert.
 
-Es gibt auch `wifstream`, eine typedef, die `basic_ifstream`, um **wchar_t** doppelte Zeichen zu lesen. Weitere Informationen finden Sie unter [wifstream](../standard-library/fstream-typedefs.md#wifstream).
+Es gibt `wifstream`auch , eine typedef, die sich `basic_ifstream` darauf spezialisiert hat, **wchar_t** doppelt breiten Zeichen zu lesen. Weitere Informationen finden Sie unter [wifstream](../standard-library/fstream-typedefs.md#wifstream).
 
 ```cpp
 typedef basic_ifstream<char, char_traits<char>> ifstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ifstream](../standard-library/basic-ifstream-class.md), die auf Elemente vom Typ "char" mit Standard Zeichen Merkmalen spezialisiert ist. Ein Beispiel ist
+Der Typ ist ein Synonym für Klassenvorlage [basic_ifstream](../standard-library/basic-ifstream-class.md), spezialisiert auf Elemente vom Typ char mit Standardzeichenmerkmalen. Ein Beispiel ist
 
 ```cpp
 using namespace std;
@@ -76,65 +76,65 @@ if (!infile.bad())
 }
 ```
 
-## <a name="ofstream"></a> ofstream
+## <a name="ofstream"></a><a name="ofstream"></a>ofstream
 
-Ein Typ `basic_ofstream` spezialisiert auf **char** -Vorlagen Parameter.
+Ein `basic_ofstream` Typ, der auf **char-Vorlagenparameter** spezialisiert ist.
 
 ```cpp
 typedef basic_ofstream<char, char_traits<char>> ofstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ofstream](../standard-library/basic-ofstream-class.md), die auf Elemente vom Typ " **char** " mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_ofstream](../standard-library/basic-ofstream-class.md), spezialisiert auf Elemente vom Typ **char** mit Standardzeichenmerkmalen.
 
-## <a name="wfstream"></a> wfstream
+## <a name="wfstream"></a><a name="wfstream"></a>wfstream
 
-Ein Typ, `basic_fstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
+Ein `basic_fstream` Typ, der auf **wchar_t** Vorlagenparametern spezialisiert ist.
 
 ```cpp
 typedef basic_fstream<wchar_t, char_traits<wchar_t>> wfstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [Basic_fstream](../standard-library/basic-fstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_fstream](../standard-library/basic-fstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t** mit Standardzeichenmerkmalen.
 
-## <a name="wifstream"></a> wifstream
+## <a name="wifstream"></a><a name="wifstream"></a>wifstream
 
-Ein Typ, `basic_ifstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
+Ein `basic_ifstream` Typ, der auf **wchar_t** Vorlagenparametern spezialisiert ist.
 
 ```cpp
 typedef basic_ifstream<wchar_t, char_traits<wchar_t>> wifstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ifstream](../standard-library/basic-ifstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_ifstream](../standard-library/basic-ifstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t** mit Standardzeichenmerkmalen.
 
-## <a name="wofstream"></a> wofstream
+## <a name="wofstream"></a><a name="wofstream"></a>wofstream
 
-Ein Typ, `basic_ofstream` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
+Ein `basic_ofstream` Typ, der auf **wchar_t** Vorlagenparametern spezialisiert ist.
 
 ```cpp
 typedef basic_ofstream<wchar_t, char_traits<wchar_t>> wofstream;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ofstream](../standard-library/basic-ofstream-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_ofstream](../standard-library/basic-ofstream-class.md), spezialisiert auf Elemente vom Typ **wchar_t** mit Standardzeichenmerkmalen.
 
-## <a name="wfilebuf"></a> wfilebuf
+## <a name="wfilebuf"></a><a name="wfilebuf"></a>wfilebuf
 
-Ein Typ, `basic_filebuf` auf **wchar_t** Vorlagen Parameter spezialisiert ist.
+Ein `basic_filebuf` Typ, der auf **wchar_t** Vorlagenparametern spezialisiert ist.
 
 ```cpp
 typedef basic_filebuf<wchar_t, char_traits<wchar_t>> wfilebuf;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für Klassen Vorlagen [Basic_filebuf](../standard-library/basic-filebuf-class.md), die auf Elemente des Typs **wchar_t** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für Klassenvorlage [basic_filebuf](../standard-library/basic-filebuf-class.md), spezialisiert auf Elemente vom Typ **wchar_t** mit Standardzeichenmerkmalen.
 
 ## <a name="see-also"></a>Siehe auch
 

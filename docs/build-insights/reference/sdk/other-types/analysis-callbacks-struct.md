@@ -1,6 +1,6 @@
 ---
 title: ANALYSIS_CALLBACKS Struktur
-description: Das C++ Build Insights SDK ANALYSIS_CALLBACKS Struktur Referenz.
+description: Das C++ Build Insights SDK ANALYSIS_CALLBACKS Strukturreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 8c35e740d97488969a6b69467d54412297e49227
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 3c6de999b19657f999f884075ee53e21a4d2f2b5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334145"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323513"
 ---
 # <a name="analysis_callbacks-structure"></a>ANALYSIS_CALLBACKS Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `ANALYSIS_CALLBACKS`-Struktur wird verwendet, wenn ein [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md) -oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md) -Objekt initialisiert wird. Gibt an, welche Funktionen während der Analyse oder Neuprotokollierung einer etw-Ablauf Verfolgung (Ereignis Ablauf Verfolgung für Windows) aufgerufen werden.
+Die `ANALYSIS_CALLBACKS` Struktur wird beim Initialisieren eines [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md) oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md) Objekts verwendet. Es gibt an, welche Funktionen während der Analyse oder Neuprotokollierung einer ETW-Ablaufverfolgung (Event Tracing for Windows) aufzurufen sind.
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,25 +43,25 @@ typedef struct ANALYSIS_CALLBACKS_TAG
 } ANALYSIS_CALLBACKS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |  |  |
 |--|--|
-| `OnStartActivity` | Wird aufgerufen, um ein Aktivitäts Start Ereignis zu verarbeiten. |
-| `OnStopActivity` | Wird aufgerufen, um ein Aktivitäts beenden-Ereignis zu verarbeiten. |
+| `OnStartActivity` | Wird aufgerufen, um ein Aktivitätsstartereignis zu verarbeiten. |
+| `OnStopActivity` | Wird aufgerufen, um ein Aktivitätsstoppereignis zu verarbeiten. |
 | `OnSimpleEvent` | Wird aufgerufen, um ein einfaches Ereignis zu verarbeiten. |
-| `OnTraceInfo` | Für Analyse Sitzungen, die zu Beginn jeder Analysephase aufgerufen werden. Zum erneuten Protokollieren von Sitzungen, die zu Beginn der einzelnen Analyse durchlaufen werden, und wieder am Anfang der erneuten Protokollierungs Phase. Diese Funktion wird nur aufgerufen, nachdem onbeginanalysispass aufgerufen wurde. |
-| `OnBeginAnalysis` | Für Analyse Sitzungen, die aufgerufen werden, bevor ein Analyse Durchlauf begonnen hat. Zum erneuten Protokollieren von Sitzungen, die vor Beginn der Analysephase zweimal aufgerufen werden: einmal, um den Beginn der erneuten Protokollierungs Sitzung anzukündigen, und noch einmal, um den Beginn der Analysephase ankündigen zu können. |
-| `OnEndAnalysis` | Für Analyse Sitzungen wird diese Funktion aufgerufen, nachdem alle Analyse Durchläufen beendet wurden. Zum erneuten Protokollieren von Sitzungen wird diese Funktion aufgerufen, wenn alle Analyse Durchläufen der Analysephase beendet wurden. Anschließend wird Sie erneut aufgerufen, nachdem die erneute Protokollierung abgeschlossen wurde. |
-| `OnBeginAnalysisPass` | Wird aufgerufen, wenn ein Analyse Durchlauf oder der neuprotokollierungs Durchlauf begonnen wird, bevor ein Ereignis verarbeitet wird. |
-| `OnEndAnalysisPass` | Wird aufgerufen, wenn ein Analyse Durchlauf oder der neuprotokollierungs Durchlauf beendet wird, nachdem alle Ereignisse verarbeitet wurden. |
+| `OnTraceInfo` | Für Analysesitzungen, die am Anfang jedes Analysedurchlaufs aufgerufen werden. Für Relogging-Sitzungen, die zu Beginn jedes Analysedurchlaufs und erneut zu Beginn des Relogging-Durchlaufs aufgerufen werden. Diese Funktion wird erst aufgerufen, nachdem OnBeginAnalysisPass aufgerufen wurde. |
+| `OnBeginAnalysis` | Für Analysesitzungen, die aufgerufen werden, bevor ein Analysedurchlauf begonnen hat. Für Relogging-Sitzungen, die zweimal aufgerufen werden, bevor die Analysephase begonnen hat: einmal, um den Beginn der Relogging-Sitzung anzukündigen, und noch einmal, um den Beginn der Analysephase anzukündigen. |
+| `OnEndAnalysis` | Bei Analysesitzungen wird diese Funktion aufgerufen, nachdem alle Analysedurchläufe beendet wurden. Bei Relogging-Sitzungen wird diese Funktion aufgerufen, wenn alle Analysedurchläufe der Analysephase beendet sind. Dann wird es wieder aufgerufen, nachdem der Relogging-Pass beendet wurde. |
+| `OnBeginAnalysisPass` | Wird aufgerufen, wenn ein Analysedurchlauf oder der Relogging-Durchlauf vor der Verarbeitung eines Ereignisses aufgerufen wird. |
+| `OnEndAnalysisPass` | Wird aufgerufen, wenn ein Analysedurchlauf oder der Relogging-Durchlauf nach der Verarbeitung aller Ereignisse beendet wird. |
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Analysephase einer erneuten Protokollierungs Sitzung wird als Teil der Sitzung für die erneute Protokollierung angesehen und kann mehrere Analyse Durchläufen enthalten. Aus diesem Grund wird `OnBeginAnalysis` zweimal in einer Zeile zu Beginn einer erneuten Protokollierungs Sitzung aufgerufen. `OnEndAnalysis` wird am Ende der Analysephase aufgerufen, bevor die neuprotokollierungs Phase beginnt, und wieder am Ende der Phase der erneuten Protokollierung. Die neuprotokollierungs Phase enthält immer einen einzelnen erneuten Protokollierungs Durchlauf.
+Die Analysephase einer Relogging-Sitzung wird als Teil der Relogging-Sitzung betrachtet und kann mehrere Analysedurchläufe enthalten. Aus diesem `OnBeginAnalysis` Grund wird zu Beginn einer Relogging-Sitzung zweimal hintereinander aufgerufen. `OnEndAnalysis`wird am Ende der Analysephase aufgerufen, bevor die Relogging-Phase und erneut am Ende der Relogging-Phase gestartet wird. Die Relogging-Phase enthält immer einen einzelnen Relogging-Durchlauf.
 
-Es ist möglich, dass Analysen sowohl in der Analyse als auch in der neuprotokollierungs Phase einer erneuten Protokollierungs Sitzung enthalten sind. Diese Analysemodule können bestimmen, welche Phase zurzeit durchgeführt wird, indem Sie die onbeginanalysis-und `OnEndAnalysis`-rufpaare nachverfolgen. Zwei `OnBeginAnalysis` Aufrufe ohne `OnEndAnalysis` Aufruf bedeutet, dass die Analysephase fortlaufend ist. Zwei `OnBeginAnalysis` Aufrufe und ein `OnEndAnalysis` Aufruf bedeutet, dass die erneute Protokollierungs Phase fortlaufend ist. Zwei Phasen vom onbeginanalysis-und zwei-`OnEndAnalysis` bedeutet, dass beide Phasen beendet wurden.
+Es ist möglich, dass Analysatoren sowohl Teil der Analyse- als auch der Relogging-Phase einer Relogging-Sitzung sind. Diese Analysatoren können bestimmen, welche Phase derzeit läuft, `OnEndAnalysis` indem sie die OnBeginAnalysis- und Anrufpaare nachverfolgen. Zwei `OnBeginAnalysis` Anrufe `OnEndAnalysis` ohne Aufruf bedeutet, dass die Analysephase im Gange ist. Zwei `OnBeginAnalysis` Anrufe `OnEndAnalysis` und ein Anruf bedeuten, dass die Relogging-Phase im Gange ist. Zwei OnBeginAnalysis `OnEndAnalysis` und zwei Aufrufe bedeuten, dass beide Phasen beendet wurden.
 
-Alle Elemente der `ANALYSIS_CALLBACKS` Struktur müssen auf eine gültige Funktion verweisen. Weitere Informationen zu den akzeptierten Funktions Signaturen finden Sie unter [onanalysisiebziger Func](on-analysis-event-func-typedef.md), [ontraceinfofunc](on-trace-info-func-typedef.md)und [onbeginendpassfunc](on-begin-end-pass-func-typedef.md).
+Alle Elemente `ANALYSIS_CALLBACKS` der Struktur müssen auf eine gültige Funktion verweisen. Weitere Informationen zu den akzeptierten Funktionssignaturen finden Sie unter [OnAnalysisEventFunc](on-analysis-event-func-typedef.md), [OnTraceInfoFunc](on-trace-info-func-typedef.md)und [OnBeginEndPassFunc](on-begin-end-pass-func-typedef.md).
 
 ::: moniker-end

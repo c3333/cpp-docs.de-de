@@ -48,12 +48,12 @@ helpviewer_keywords:
 - tspawnlpe function
 - _tspawnle function
 ms.assetid: bb47c703-5216-4e09-8023-8cf25bbf2cf9
-ms.openlocfilehash: 81f4bf6c60a0c0e4011536e8d3bc104bbc33e04f
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: a22f5b0c401dd888bbda451504e644557294544d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301703"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81322960"
 ---
 # <a name="_spawn-_wspawn-functions"></a>_spawn-, _wspawn-Funktionen
 
@@ -68,14 +68,14 @@ Jede der `_spawn`-Funktionen erstellt einen neuen Prozess und führt ihn aus:
 
 Die Buchstaben am Ende des Funktionsnamens bestimmen die Variante.
 
-|Buchstabe|Variante|
+|Buchstabe|Variant|
 |-|-|
 | `e`  | `envp`: Array von Zeigern zu Umgebungseinstellungen, wird an den neuen Prozess übergeben.  |
 | `l`  | Befehlszeilenargumente werden einzeln an die `_spawn`-Funktion übergeben. Dieses Suffix wird normalerweise verwendet, wenn die Anzahl der Parameter im neuen Prozess im Voraus bekannt ist.  |
 | `p`  | Die `PATH`-Umgebungsvariable wird verwendet, um die auszuführende Datei zu suchen.  |
 | `v`  | `argv`: Array von Zeigern zu Befehlszeilenargumenten, wird an die `_spawn`-Funktion übergeben. Dieses Suffix wird normalerweise verwendet, wenn die Anzahl der Parameter im neuen Prozess variabel ist.  |
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die `_spawn`-Funktionen erstellen und führen einen neuen Prozess aus. Sie behandeln Multibyte-Zeichenfolgenargumente automatisch richtig. Die Erkennung von Multibyte-Zeichenfolgen erfolgt auf der Grundlage der aktuell verwendeten Multibyte-Codeseite. Die `_wspawn`-Funktionen sind Breitzeichenversionen der `_spawn`-Funktionen; sie behandeln keine Multibyte-Zeichenfolgen. Andernfalls verhalten sich die `_wspawn`-Funktionen genauso wie ihre `_spawn`-Gegenstücke.
 
@@ -110,27 +110,27 @@ Wenn der `cmdname`-Parameter eine Laufwerksangabe oder einen Schrägstrich enth�
 In der Vergangenheit haben einige dieser Funktionen `errno` bei Erfolg auf null gesetzt; das aktuelle Verhalten lässt `errno` gemäß dem C-Standard unverändert. Wenn Sie das alte Verhalten emulieren müssen, setzen Sie `errno` auf null, unmittelbar bevor Sie diese Funktionen aufrufen.
 
 > [!NOTE]
->  Um eine ordnungsgemäße Überlagerungsinitialisierung und -beendigung sicherzustellen, verwenden Sie die Funktion `setjmp` oder `longjmp` nicht, um eine Überlagerungsroutine einzugeben oder zu verlassen.
+> Um eine ordnungsgemäße Überlagerungsinitialisierung und -beendigung sicherzustellen, verwenden Sie die Funktion `setjmp` oder `longjmp` nicht, um eine Überlagerungsroutine einzugeben oder zu verlassen.
 
 ## <a name="arguments-for-the-spawned-process"></a>Argumente für den erzeugten Prozess
 
 Um Argumente an den neuen Prozess zu übergeben, geben Sie mindestens einen Zeiger auf Zeichenfolgen als Argument im `_spawn`-Aufruf an. Diese Zeichenfolgen bilden die Argumentliste für den erzeugten Prozess. Die kombinierte Länge der Zeichenfolgen, die die Argumentliste für den neuen Prozess bilden, darf 1024 Bytes nicht überschreiten. Das abschließende NULL-Zeichen ('\0') für jede Zeichenfolge ist nicht in der Zählung enthalten. Es werden jedoch die Leerzeichen berücksichtigt (sie werden automatisch eingefügt, um Argumente zu trennen).
 
 > [!NOTE]
->  Die in den Zeichenfolgen eingebetteten Leerzeichen können zu einem unerwarteten Verhalten führen. Zum Beispiel führt die Zeichenfolge `_spawn` durch die Übergabe von `"hi there"` dazu, dass der neue Prozess zwei Argumente erhält: `"hi"` und `"there"`. Wenn der neue Prozess die benannte Datei "hi there" öffnen sollte, schlägt der Prozess fehl. Sie können dies verhindern, indem Sie die Zeichenfolge in Anführungszeichen setzen: `"\"hi there\""`.
+> Die in den Zeichenfolgen eingebetteten Leerzeichen können zu einem unerwarteten Verhalten führen. Zum Beispiel führt die Zeichenfolge `_spawn` durch die Übergabe von `"hi there"` dazu, dass der neue Prozess zwei Argumente erhält: `"hi"` und `"there"`. Wenn der neue Prozess die benannte Datei "hi there" öffnen sollte, schlägt der Prozess fehl. Sie können dies verhindern, indem Sie die Zeichenfolge in Anführungszeichen setzen: `"\"hi there\""`.
 
 > [!IMPORTANT]
->  Übergeben Sie Benutzereingaben nicht an `_spawn`, ohne den Inhalt explizit zu überprüfen. `_spawn` führt zu einem Aufruf von [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). Beachten Sie daher, dass nicht qualifizierte Pfadnamen zu potenziellen Sicherheitslücken führen können.
+> Übergeben Sie Benutzereingaben nicht an `_spawn`, ohne den Inhalt explizit zu überprüfen. `_spawn` führt zu einem Aufruf von [CreateProcess](/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw). Beachten Sie daher, dass nicht qualifizierte Pfadnamen zu potenziellen Sicherheitslücken führen können.
 
 Sie können Argumentzeiger als separate Parameter übergeben (in `_spawnl`, `_spawnle`, `_spawnlp` und `_spawnlpe`) oder als ein Array von Zeigern (in `_spawnv`, `_spawnve`, `_spawnvp` und `_spawnvpe`). Sie müssen mindestens ein Argument, `arg0` oder `argv`[0], an den erzeugten Prozess übergeben. Gemäß Konvention ist dieses Argument der Name des Programms so, wie Sie ihn auf der Befehlszeile eingeben würden. Ein anderer Wert erzeugt keinen Fehler.
 
 Die `_spawnl`-, `_spawnle`-, `_spawnlp`- und `_spawnlpe`-Aufrufe werden normalerweise verwendet, wenn die Anzahl der Argumente im Voraus bekannt ist. Das `arg0`-Argument ist normalerweise ein Zeiger auf `cmdname`. Die Argumente `arg1` bis `argn` sind Zeiger auf Zeichenfolgen, die die Argumentliste neu bilden. Nach `argn` muss ein **NULL**-Zeiger stehen, mit dem das Ende der Argumentliste markiert wird.
 
-Die `_spawnv`-, `_spawnve`-, `_spawnvp`- und `_spawnvpe`-Aufrufe sind nützlich, wenn die Anzahl der Argumente im neuen Prozess variabel ist. Zeiger auf Argumente werden als Array, `argv` *, übergeben.* Das `argv`[0]-Argument ist gewöhnlich ein Zeiger auf einen Pfad im Echtzeitmodus oder auf den Programmnamen im geschützten Modus und `argv`[1] bis `argv`[`n`] sind Zeiger auf die Zeichenfolgen, die die neue Argumentliste bilden. Das Argument `argv`[`n` +1] muss ein **NULL**-Zeiger sein, um das Ende der Argumentliste zu markieren.
+Die `_spawnv`-, `_spawnve`-, `_spawnvp`- und `_spawnvpe`-Aufrufe sind nützlich, wenn die Anzahl der Argumente im neuen Prozess variabel ist. Zeiger auf Argumente werden als Array, `argv`*, übergeben.* Das `argv`[0]-Argument ist gewöhnlich ein Zeiger auf einen Pfad im Echtzeitmodus oder auf den Programmnamen im geschützten Modus und `argv`[1] bis `argv`[`n`] sind Zeiger auf die Zeichenfolgen, die die neue Argumentliste bilden. Das Argument `argv`[`n` +1] muss ein **NULL**-Zeiger sein, um das Ende der Argumentliste zu markieren.
 
 ## <a name="environment-of-the-spawned-process"></a>Umgebung des erzeugten Prozesses
 
-Dateien, die bei einem `_spawn`-Aufruf geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_spawnl`-, `_spawnlp`-, `_spawnv`- und `_spawnvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. Sie können mit `_spawnle`-, `_spawnlpe`-, `_spawnve`- und `_spawnvpe`-Aufrufen die Umgebung für den neuen Prozess ändern, indem eine Liste der Umgebungseinstellungen durch das `envp`-Argument übergeben wird. Das Argument `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten Sie, dass `value` nicht in doppelte Anführungszeichen eingeschlossen ist.) Das letzte Element des `envp` Arrays muss **null**sein. Wenn `envp` selbst **NULL** ist, erbt der generierte Prozess die Umgebungseinstellungen des übergeordneten Prozesses.
+Dateien, die bei einem `_spawn`-Aufruf geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_spawnl`-, `_spawnlp`-, `_spawnv`- und `_spawnvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. Sie können mit `_spawnle`-, `_spawnlpe`-, `_spawnve`- und `_spawnvpe`-Aufrufen die Umgebung für den neuen Prozess ändern, indem eine Liste der Umgebungseinstellungen durch das `envp`-Argument übergeben wird. Das Argument `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten `value` Sie, dass dies nicht in doppelten Anführungszeichen eingeschlossen ist.) Das letzte Element `envp` des Arrays sollte **NULL**sein. Wenn `envp` selbst **NULL** ist, erbt der generierte Prozess die Umgebungseinstellungen des übergeordneten Prozesses.
 
 Die `_spawn`-Funktionen können alle Informationen über geöffnete Dateien, auch den Übersetzungsmodus, an den neuen Prozess übergeben. Diese Informationen werden im Echtzeitmodus über den `C_FILE_INFO`-Eintrag in der Umgebung übergeben. Der Startcode verarbeitet normalerweise diesen Eintrag und löscht ihn dann aus der Umgebung. Wenn jedoch eine `_spawn`-Funktion einen anderen als einen C-Prozess erzeugt, verbleibt der Eintrag in der Umgebung. Durch Drucken der Umgebung werden Grafikzeichen in der Definitionszeichenfolge für diesen Eintrag angezeigt, da die Umgebungsinformationen in binärer Form im Echtzeitmodus übergeben werden. Dies sollte keine andere Auswirkung auf den normalen Betrieb haben. Im geschützten Modus werden die Umgebungsinformationen in Textform übergeben und enthalten daher keine Grafikzeichen.
 
@@ -231,10 +231,10 @@ from SPAWN!
 
 ## <a name="see-also"></a>Siehe auch
 
-[Prozess- und Umgebungssteuerung](../c-runtime-library/process-and-environment-control.md)<br/>
-[abort](../c-runtime-library/reference/abort.md)<br/>
+[Prozess- und Umweltkontrolle](../c-runtime-library/process-and-environment-control.md)<br/>
+[Abbrechen](../c-runtime-library/reference/abort.md)<br/>
 [atexit](../c-runtime-library/reference/atexit.md)<br/>
-[_exec- und _wexec-Funktionen](../c-runtime-library/exec-wexec-functions.md)<br/>
+[_exec, _wexec Funktionen](../c-runtime-library/exec-wexec-functions.md)<br/>
 [exit, _Exit, _exit](../c-runtime-library/reference/exit-exit-exit.md)<br/>
 [_flushall](../c-runtime-library/reference/flushall.md)<br/>
 [_getmbcp](../c-runtime-library/reference/getmbcp.md)<br/>

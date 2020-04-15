@@ -1,9 +1,11 @@
 ---
 title: _searchenv, _wsearchenv
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _searchenv
 - _wsearchenv
+- _o__searchenv
+- _o__wsearchenv
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-environment-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +40,12 @@ helpviewer_keywords:
 - searchenv function
 - environment paths
 ms.assetid: 9c944a27-d326-409b-aee6-410e8762d9d3
-ms.openlocfilehash: a3139ab87335ba581ef65707602c5da1819ce4a1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 22a8ca8fa7e56a84289d7e90ffb519073f006b5c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948775"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332384"
 ---
 # <a name="_searchenv-_wsearchenv"></a>_searchenv, _wsearchenv
 
@@ -80,32 +83,34 @@ void _wsearchenv(
 
 ### <a name="parameters"></a>Parameter
 
-*filename*<br/>
+*Dateiname*<br/>
 Der Name der zu suchenden Datei.
 
-*varname*<br/>
+*Varname*<br/>
 Zu durchsuchende Umgebung.
 
 *Pfadnamen*<br/>
 Puffer zum Speichern des vollständigen Pfades.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_searchenv** -Routine sucht in der angegebenen Domäne nach der Zieldatei. Die *varname* -Variable kann eine beliebige Umgebung oder eine benutzerdefinierte Variable sein – z. b. **path**, **lib**oder **include**–, die eine Liste von Verzeichnis Pfaden angibt. Da bei **_searchenv** die Groß-/Kleinschreibung beachtet wird, sollte *varname* dem Fall der Umgebungsvariablen entsprechen.
+Die **_searchenv-Routine** sucht nach der Zieldatei in der angegebenen Domäne. Die *varname-Variable* kann eine beliebige Umgebung oder benutzerdefinierte Variable sein, z. B. **PATH**, **LIB**oder **INCLUDE**–, die eine Liste von Verzeichnispfaden angibt. Da **_searchenv** groß ist, sollte *varname* mit der Groß-/Kleinschreibung der Umgebungsvariablen übereinstimmen.
 
-Die Routine sucht zuerst im aktuellen Arbeitsverzeichnis nach der Datei. Wenn die Datei dort nicht gefunden wird, werden die in der Umgebungsvariablen angegebenen Verzeichnisse durchsucht. Wenn sich die Zieldatei in einem dieser Verzeichnisse befindet, wird der neu erstellte Pfad in *Pfadnamen*kopiert. Wenn die Datei *Namen* Datei nicht gefunden wird, enthält *Pfadnamen* eine leere NULL-terminierte Zeichenfolge.
+Die Routine sucht zuerst im aktuellen Arbeitsverzeichnis nach der Datei. Wenn die Datei dort nicht gefunden wird, werden die in der Umgebungsvariablen angegebenen Verzeichnisse durchsucht. Wenn sich die Zieldatei in einem dieser Verzeichnisse befindet, wird der neu erstellte Pfad in *den Pfadnamen*kopiert. Wenn die *Dateinamedatei* nicht gefunden wird, enthält *pathname* eine leere null-terminierte Zeichenfolge.
 
-Der *Pfadname* -Puffer muss mindestens **_MAX_PATH** Zeichen lang sein, um die vollständige Länge des erstellten Pfadnamens zu berücksichtigen. Andernfalls kann **_searchenv** den *Pfadnamen* -Puffer überlaufen und ein unerwartetes Verhalten verursachen.
+Der *Pfadnamenpuffer* sollte mindestens **_MAX_PATH** Zeichen lang sein, um die gesamte Länge des erstellten Pfadnamens aufzunehmen. Andernfalls **_searchenv** den *Pfadnamenpuffer* überlaufen und unerwartetes Verhalten verursachen.
 
-**_wsearchenv** ist eine breit Zeichen Version von **_searchenv**, und die Argumente für **_wsearchenv** sind Zeichen folgen mit breit Zeichen. **_wsearchenv** und **_searchenv** Verhalten sich andernfalls identisch.
+**_wsearchenv** ist eine breitstellige Version von **_searchenv**, und die Argumente für **_wsearchenv** sind Zeichenfolgen mit großen Zeichen. **_wsearchenv** und **_searchenv** verhalten sich ansonsten gleich.
 
 Wenn *filename* eine leere Zeichenfolge ist, geben diese Funktionen **ENOENT**zurück.
 
-Wenn *filename* oder *Pfadnamen* ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
+Wenn *filename* oder *pathname* ein **NULL-Zeiger** ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen -1 zurück und setzen **errno** auf **EINVAL**.
 
-Weitere Informationen zu **errno** und Fehlercodes finden Sie unter [Errno-Konstanten](../../c-runtime-library/errno-constants.md).
+Weitere Informationen zu **Errno-** und Fehlercodes finden Sie unter [errno Constants](../../c-runtime-library/errno-constants.md).
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -115,12 +120,12 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_searchenv**|\<stdlib.h>|
 |**_wsearchenv**|\<stdlib.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
