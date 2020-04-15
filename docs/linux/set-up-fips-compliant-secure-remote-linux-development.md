@@ -3,10 +3,10 @@ title: Einrichten einer FIPS-konformen sicheren Linux-Remoteentwicklung
 description: Einrichten einer mit FIPS kompatiblen kryptografischen Verbindung zwischen Visual Studio und einem Linux-Computer für Remoteentwicklung.
 ms.date: 01/17/2020
 ms.openlocfilehash: 9a0e87f4ddf69bf489b52d4f83934d3279f2d085
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "76520462"
 ---
 # <a name="set-up-fips-compliant-secure-remote-linux-development"></a>Einrichten einer FIPS-konformen sicheren Linux-Remoteentwicklung

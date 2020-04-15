@@ -3,12 +3,12 @@ title: Erstellen eines neuen C++ Projekts unter Linux in Visual Studio
 ms.date: 10/24/2019
 description: Erstellen Sie ein neues MSBuild-basiertes Linux-Projekt in Visual Studio.
 ms.assetid: 5d7c1d67-bc31-4f96-8622-2b4cf91372fd
-ms.openlocfilehash: 5d5fa67566d86edb2ed0389fdbe38866b47e2211
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 1e79dd50756b71aabae7ccec75e57178898e7720
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626720"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364353"
 ---
 # <a name="create-a-new-linux-project"></a>Erstellen eines neuen Linux-Projekts
 
@@ -33,7 +33,7 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 
    ![Neues Linux-Projekt](media/newproject.png)
 
-   | Projekttyp | BESCHREIBUNG |
+   | Projekttyp | Beschreibung |
    | ------------ | --- |
    | **Blink (Raspberry)**           | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
    | **Konsolenanwendung (Linux)** | Projekt für alle Linux-Computer mit Beispielcode für die Ausgabe von Text an die Konsole |
@@ -63,7 +63,7 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 
    ![Neues Linux-Projekt](media/newproject-vs2019.png)
 
-   | Projekttyp | BESCHREIBUNG |
+   | Projekttyp | Beschreibung |
    | ------------ | --- |
    | **Blink (Raspberry)**           | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
    | **Konsolenanwendung (Linux)** | Projekt für alle Linux-Computer mit Beispielcode für die Ausgabe von Text an die Konsole |

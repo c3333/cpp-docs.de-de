@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 69468f9ebbfaed62fd2148a634d16057519323f5
-ms.sourcegitcommit: 010ecc2bb9a15deea192a34975176ec0426aa3d8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 04/14/2020
 ms.locfileid: "66265617"
 ---
 # <a name="visual-studio-documentation-for-microsoft-c"></a>Visual Studio-Dokumentation für Microsoft Visual C++
