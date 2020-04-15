@@ -1,17 +1,17 @@
 ---
-title: Übersetzungseinheiten und VerknüpfungenC++()
+title: Übersetzungseinheiten und Verknüpfungen (C++)
 ms.date: 12/11/2019
 ms.assetid: a6493ba0-24e2-4c89-956e-9da1dea660cb
-ms.openlocfilehash: e4e86dc15280bc7aa079f552014975b7ddc68e51
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 791ec53d4df863b218db463f2b9b9401bf6f466d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188323"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374319"
 ---
 # <a name="translation-units-and-linkage"></a>Übersetzungseinheiten und Verknüpfungen
 
-In einem C++ Programm kann ein *Symbol*(z. b. ein Variablen-oder Funktionsname) beliebig oft innerhalb des Gültigkeits Bereichs deklariert werden, es kann jedoch nur einmal definiert werden. Diese Regel ist die "One Definition Rule" (ODR). Eine- *Deklaration* führt einen Namen in das Programm ein (oder führt ihn erneut ein). Eine *Definition* führt einen Namen ein. Wenn der Name eine Variable darstellt, wird er von einer Definition explizit initialisiert. Eine *Funktionsdefinition* besteht aus der Signatur und dem Funktions Rumpf. Eine Klassendefinition besteht aus dem Klassennamen, gefolgt von einem-Block, der alle Klassenmember auflistet. (Die Textkörper der Element Funktionen können optional separat in einer anderen Datei definiert werden.)
+In einem C++-Programm kann ein *Symbol,* z. B. eine Variable oder ein Funktionsname, bemalbar innerhalb seines Gültigkeitsbereichs bemalbar deklariert werden, es kann jedoch nur einmal definiert werden. Diese Regel ist die "One Definition Rule" (ODR). Eine *Deklaration* führt einen Namen in das Programm ein (oder führt ihn erneut ein). Eine *Definition* führt einen Namen ein. Wenn der Name eine Variable darstellt, wird sie von einer Definition explizit initialisiert. Eine *Funktionsdefinition* besteht aus der Signatur plus dem Funktionstext. Eine Klassendefinition besteht aus dem Klassennamen gefolgt von einem Block, der alle Klassenmember auflistet. (Die Körper der Memberfunktionen können optional separat in einer anderen Datei definiert werden.)
 
 Das folgende Beispiel zeigt einige Deklarationen:
 
@@ -32,34 +32,35 @@ public:
 };
 ```
 
-Ein Programm besteht aus einer oder mehreren *Übersetzungseinheiten*. Eine Übersetzungseinheit besteht aus einer Implementierungs Datei und allen Headern, die Sie direkt oder indirekt enthält. Implementierungs Dateien verfügen in der Regel über die Dateierweiterung *cpp* oder *cxx*. Header Dateien haben in der Regel eine Erweiterung von *h* oder *HPP*. Jede Übersetzungseinheit wird vom Compiler unabhängig kompiliert. Nach Abschluss der Kompilierung führt der Linker die kompilierten Übersetzungseinheiten in einem einzigen *Programm*zusammen. Verstöße gegen die ODR-Regel werden in der Regel als Linker-Fehler angezeigt. Linker-Fehler treten auf, wenn derselbe Name über zwei unterschiedliche Definitionen in verschiedenen Übersetzungseinheiten verfügt.
+Ein Programm besteht aus einer oder mehreren *Übersetzungseinheiten*. Eine Übersetzungseinheit besteht aus einer Implementierungsdatei und allen Kopfzeilen, die sie direkt oder indirekt enthält. Implementierungsdateien haben in der Regel die Dateierweiterung *cpp* oder *cxx*. Headerdateien haben in der Regel die Erweiterung von *h* oder *hpp*. Jede Übersetzungseinheit wird unabhängig vom Compiler kompiliert. Nach Abschluss der Kompilierung führt der Linker die kompilierten Übersetzungseinheiten zu einem einzigen *Programm*zusammen. Verstöße gegen die ODR-Regel werden in der Regel als Linkerfehler angezeigt. Linkerfehler treten auf, wenn derselbe Name zwei unterschiedliche Definitionen in verschiedenen Übersetzungseinheiten aufweist.
 
-Im Allgemeinen ist die beste Möglichkeit, eine Variable in mehreren Dateien sichtbar zu machen, darin, Sie in eine Header Datei einzufügen. Fügen Sie dann in jeder *cpp* -Datei, die die Deklaration erfordert, eine #include-Anweisung hinzu. Durch Hinzufügen von *include-Wächter* um den Header Inhalt müssen Sie sicherstellen, dass die deklarierenden Namen nur einmal definiert werden.
+Im Allgemeinen ist es am besten, eine Variable über mehrere Dateien hinweg sichtbar zu machen, wenn sie in einer Headerdatei abgelegt wird. Fügen Sie dann in jeder *cpp-Datei,* die die Deklaration erfordert, eine #include-Direktive hinzu. Durch Hinzufügen von *Include-Wächtern* um den Headerinhalt stellen Sie sicher, dass die deklarierten Namen nur einmal definiert werden.
 
-In c++ 20 werden [Module](modules-cpp.md) als verbesserte Alternative zu Header Dateien eingeführt.
+In C++20 werden [Module](modules-cpp.md) als verbesserte Alternative zu Headerdateien eingeführt.
 
-In einigen Fällen kann es erforderlich sein, eine globale Variable oder Klasse in einer *cpp* -Datei zu deklarieren. In diesen Fällen benötigen Sie eine Möglichkeit, um dem Compiler und dem Linker mitzuteilen, welche Art von *Verknüpfung* der Name aufweist. Der Typ der Verknüpfung gibt an, ob der Name des Objekts nur für eine Datei oder für alle Dateien gilt. Das Konzept der Verknüpfung gilt nur für globale Namen. Das Konzept der Verknüpfung gilt nicht für Namen, die in einem Bereich deklariert werden. Ein Bereich wird durch eine Reihe von einschließenden geschweiften Klammern angegeben, z. b. in Funktions-oder Klassendefinitionen.
+In einigen Fällen kann es erforderlich sein, eine globale Variable oder Klasse in einer *cpp-Datei* zu deklarieren. In diesen Fällen benötigen Sie eine Möglichkeit, dem Compiler und Linker mitzuteilen, welche Art von *Verknüpfung* der Name hat. Der Verknüpfungstyp gibt an, ob der Name des Objekts nur auf eine Datei oder auf alle Dateien angewendet wird. Das Konzept der Verknüpfung gilt nur für globale Namen. Der Begriff der Verknüpfung gilt nicht für Namen, die innerhalb eines Bereichs deklariert werden. Ein Bereich wird durch eine Reihe von einschließenden geschweiften Klammern angegeben, z. B. in Funktions- oder Klassendefinitionen.
 
-## <a name="external-vs-internal-linkage"></a>Externe und interne Verknüpfung
+## <a name="external-vs-internal-linkage"></a>Externe vs. interne Verknüpfung
 
-Eine *Free-Funktion* ist eine Funktion, die im globalen oder im Namespace-Gültigkeitsbereich definiert ist. Nicht konstante globale Variablen und freie Funktionen haben standardmäßig eine *externe Verknüpfung*. Sie sind in allen Übersetzungseinheiten des Programms sichtbar. Daher kann kein anderes globales Objekt den Namen haben. Ein Symbol mit *interner Verknüpfung* oder *ohne Verknüpfung* ist nur innerhalb der Übersetzungseinheit sichtbar, in der es deklariert ist. Wenn ein Name eine interne Verknüpfung aufweist, kann derselbe Name in einer anderen Übersetzungseinheit vorhanden sein. Mit Klassendefinitionen oder Funktions Texten deklarierte Variablen haben keine Verknüpfung.
+Eine *freie Funktion* ist eine Funktion, die im globalen oder Namespacebereich definiert ist. Nicht-const globale Variablen und freie Funktionen haben standardmäßig *externe Verknüpfung;* sie sind von jeder Übersetzungseinheit im Programm aus sichtbar. Daher kann kein anderes globales Objekt diesen Namen haben. Ein Symbol mit *interner Verknüpfung* oder *ohne Verknüpfung* ist nur innerhalb der Übersetzungseinheit sichtbar, in der es deklariert ist. Wenn ein Name eine interne Verknüpfung hat, kann derselbe Name in einer anderen Übersetzungseinheit vorhanden sein. Variablen, die mit Klassendefinitionen oder Funktionstexten deklariert wurden, haben keine Verknüpfung.
 
-Sie können erzwingen, dass ein globaler Name eine interne Verknüpfung hat, indem Sie ihn explizit als **statisch**deklarieren. Dadurch wird die Sichtbarkeit auf dieselbe Übersetzungseinheit beschränkt, in der Sie deklariert ist. In diesem Kontext bedeutet **static** etwas anderes als bei Anwendung auf lokale Variablen.
+Sie können erzwingen, dass ein globaler Name über eine interne Verknüpfung verfügen muss, indem Sie ihn explizit als **statisch**deklarieren. Dadurch wird die Sichtbarkeit auf dieselbe Übersetzungseinheit beschränkt, in der sie deklariert ist. In diesem Zusammenhang bedeutet **statisch** etwas anderes als bei Anwendung auf lokale Variablen.
 
-Die folgenden Objekte haben standardmäßig eine interne Verknüpfung:
-- Konstante Objekte
+Die folgenden Objekte verfügen standardmäßig über eine interne Verknüpfung:
+
+- const-Objekte
 - constexpr-Objekte
 - Typedefs
-- statische Objekte im Namespace-Gültigkeitsbereich
+- Statische Objekte im Namespacebereich
 
-Um einem konstanten Objekt eine externe Verknüpfung zuzuweisen, deklarieren Sie es als **extern** , und weisen Sie ihm einen Wert zu:
+Um einem const-Objekt eine externe Verknüpfung zu geben, deklarieren Sie es als **extern** und weisen Sie ihm einen Wert zu:
 
 ```cpp
 extern const int value = 42;
 ```
 
-Weitere Informationen finden Sie unter [extern](extern-cpp.md) .
+Weitere Informationen finden Sie [unter extern.](extern-cpp.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Grundlegende Konzepte](../cpp/basic-concepts-cpp.md)
+[Grundkonzepte](../cpp/basic-concepts-cpp.md)

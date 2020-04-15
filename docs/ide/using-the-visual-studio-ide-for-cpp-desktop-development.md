@@ -5,12 +5,12 @@ helpviewer_keywords:
 - IDE [C++]
 - Visual Studio IDE [C++]
 ms.assetid: d985c230-8e81-49d6-92be-2db9cac8d023
-ms.openlocfilehash: 2cf2844fd4247c3c69648823302a6ad56ff5fd45
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 082aa353d3046d9c9b20669e075e200c96017bce
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171775"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371763"
 ---
 # <a name="using-the-visual-studio-ide-for-c-desktop-development"></a>Verwenden der Visual Studio-IDE für C++-Desktopentwicklung
 
@@ -30,7 +30,7 @@ Sie können Visual Studio 2019 auf der [Visual Studio-Website „Downloads“](h
 
 **Installieren von Visual Studio 2017**
 
-Sie können Visual Studio 2017 auf der [Visual Studio-Website für Downloads älterer Versionen](https://www.visualstudio.com/vs/older-downloads/) herunterladen. Achten Sie darauf, dass die C++-Entwicklungstools in der Installation von Visual Studio enthalten sind, da sie nicht standardmäßig installiert werden. Weitere Informationen zum Installieren von Visual Studio finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio). Legen Sie dort die Versionsauswahl links auf der Seite auf **Visual Studio 2017** fest.
+Sie können Visual Studio 2017 auf der [Visual Studio-Website für Downloads älterer Versionen](https://www.visualstudio.com/vs/older-downloads/) herunterladen. Achten Sie darauf, dass die C++-Entwicklungstools in der Installation von Visual Studio enthalten sind, da sie nicht standardmäßig installiert werden. Weitere Informationen über das Installieren von Visual Studio finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio). Um die Anweisungen für Visual Studio 2017 anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** auf Visual Studio 2017 fest. Sie befindet sich oben im Inhaltsverzeichnis auf der Seite.
 
 **Installieren von Visual Studio 2015**
 
@@ -56,6 +56,6 @@ Arbeiten Sie sich der Reihe nach durch diese Themen, um C++-Apps mit der Visual 
 
 Sobald Sie diese exemplarischen Vorgehensweisen abgeschlossen haben, sind Sie bereit, mit dem Erstellen Ihrer eigenen Projekte anzufangen. Weitere Informationen und Ressourcen zur C++-Entwicklung finden Sie unter [C++ in Visual Studio](../overview/visual-cpp-in-visual-studio.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erste Schritte bei der Entwicklung in Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)

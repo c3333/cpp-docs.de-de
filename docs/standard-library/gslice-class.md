@@ -12,26 +12,26 @@ helpviewer_keywords:
 - std::gslice [C++], start
 - std::gslice [C++], stride
 ms.assetid: f47cffd0-ea59-4b13-848b-7a5ce1d7e2a3
-ms.openlocfilehash: 9290fabc86ffbdb051b7c61fe1600cd2f7f17dca
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 07c987fb08a213bb66da628bec3021a3bf9ba24a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427038"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370626"
 ---
 # <a name="gslice-class"></a>gslice-Klasse
 
 Eine Hilfsprogrammklasse zu valarray, die zum Definieren von mehrdimensionaler Teilmengen von einem valarray verwendet wird. Wenn ein valarray als mehrdimensionale Matrix mit allen Elementen in einem Array angesehen wird, extrahiert das Segment einen Vektor aus dem mehrdimensionalen Array.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klasse speichert die Parameter, die ein Objekt des Typs [gslice_array](../standard-library/gslice-array-class.md) charakterisieren. Die Teilmenge von einem valarray wird indirekt erstellt, wenn ein Objekt der gslice-Klasse als ein Argument für ein Objekt der Klasse [valarray](../standard-library/valarray-class.md#op_at) **\<Typ>** erscheint. Die gespeicherten Werte, die die aus dem übergeordneten valarray ausgewählte Teilmenge angeben, enthalten:
+Die Klasse speichert die Parameter, die ein Objekt des Typs [gslice_array](../standard-library/gslice-array-class.md) charakterisieren. Die Teilmenge eines Valarrays wird indirekt erstellt, wenn ein Objekt der Klasse gslice als Argument für ein Objekt des [Klassen-Valarray-Typs](../standard-library/valarray-class.md#op_at)**\<>** angezeigt wird. Die gespeicherten Werte, die die aus dem übergeordneten valarray ausgewählte Teilmenge angeben, enthalten:
 
 - Einen Startindex.
 
-- Ein Längen Vektor der Klasse `valarray<size_t>`.
+- Ein Längenvektor `valarray<size_t>`der Klasse .
 
-- Ein Stride-Vektor der Klasse `valarray<size_t>`.
+- Ein Schrittvektor `valarray<size_t>`der Klasse .
 
 Die beiden Vektoren müssen dieselbe Länge haben.
 
@@ -41,25 +41,25 @@ Vorgänge für valarrays sind nur garantiert, wenn die durch die gslices definie
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[gslice](#gslice)|Definiert eine Teilmenge von `valarray`, die aus mehreren Segmenten von `valarray` besteht, die alle bei einem angegebenen Element beginnen.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[size](#size)|Sucht die Arraywerte durch Angabe der Anzahl von Elementen in einem allgemeinen Segment von `valarray`.|
-|[start](#start)|Sucht den Startindex eines allgemeinen Segments von `valarray`.|
-|[stride](#stride)|Sucht den Abstand zwischen Elementen in einem allgemeinen Segment von `valarray`.|
+|[Größe](#size)|Sucht die Arraywerte durch Angabe der Anzahl von Elementen in einem allgemeinen Segment von `valarray`.|
+|[Starten](#start)|Sucht den Startindex eines allgemeinen Segments von `valarray`.|
+|[Schritt](#stride)|Sucht den Abstand zwischen Elementen in einem allgemeinen Segment von `valarray`.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Valarray->
+**Header:** \<valarray>
 
 **Namespace:** std
 
-## <a name="gslice"></a> gslice::gslice
+## <a name="gslicegslice"></a><a name="gslice"></a>gslice::gslice
 
 Eine Hilfsklasse der valarray-Klasse, die zum Definieren von mehrdimensionalen Segmenten eines valarray-Objekts verwendet wird.
 
@@ -85,11 +85,11 @@ Ein Array, das die Sprünge in jedem Segment angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Standardkonstruktor speichert 0 (null) für den Startindex und leere Vektoren für die Längen- und Sprungvektoren. Der zweite Konstruktor speichert *_StartIndex* für den Start Index, *_LenArray* für das Längen Array und *_IncArray* für das STRIDE-Array.
+Der Standardkonstruktor speichert 0 (null) für den Startindex und leere Vektoren für die Längen- und Sprungvektoren. Der zweite Konstruktor speichert *_StartIndex* für den Startindex, *_LenArray* für das Längenarray und *_IncArray* für das Schrittarray.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**gslice** definiert eine Teilmenge eines valarray, die aus mehreren Segmenten des valarray besteht, und die jeweils am gleichen angegebenen Element beginnen. Die Möglichkeit, Arrays zu verwenden, um mehrere Segmente zu definieren, ist der einzige Unterschied zwischen `gslice` und [slice:: slice](../standard-library/slice-class.md#slice). Der erste Slice verfügt über ein erstes Element mit einem Index *_StartIndex*, eine Reihe von Elementen, die durch das erste Element von *_LenArray*angegeben werden, und einen Stride, der durch das erste Element von *_IncArray*angegeben wird. Der erste Satz der orthogonalen Segmente hat erste Elemente, die durch das erste Segment angegeben wurden. Das zweite Element von *_LenArray* gibt die Anzahl der Elemente an. Der Stride wird durch das zweite Element von *_IncArray*angegeben. Eine dritte Dimension der Segmente würde die Elemente des zweidimensionalen Arrays als Startelemente nehmen und analog verfahren.
+**gslice** definiert eine Teilmenge eines valarray, die aus mehreren Segmenten des valarray besteht, und die jeweils am gleichen angegebenen Element beginnen. Die Möglichkeit, Arrays zu verwenden, um mehrere Segmente zu definieren, ist der einzige Unterschied zwischen `gslice` und [slice:: slice](../standard-library/slice-class.md#slice). Das erste Slice hat ein erstes Element mit einem Index von *_StartIndex*, einer Reihe von Elementen, die durch das erste Element von *_LenArray*angegeben werden, und einem Schritt, der vom ersten Element *_IncArray*gegeben wird. Der erste Satz der orthogonalen Segmente hat erste Elemente, die durch das erste Segment angegeben wurden. Das zweite Element von *_LenArray* gibt die Anzahl der Elemente an. Der Schritt wird durch das zweite Element von *_IncArray*gegeben. Eine dritte Dimension der Segmente würde die Elemente des zweidimensionalen Arrays als Startelemente nehmen und analog verfahren.
 
 ### <a name="example"></a>Beispiel
 
@@ -138,7 +138,7 @@ The valarray for vaGSlice is vaResult:
 va[vaGSlice] = ( 0 4 8 12 7 11 15 19)
 ```
 
-## <a name="size"></a> gslice::size
+## <a name="gslicesize"></a><a name="size"></a>gslice::Größe
 
 Sucht die Arraywerte durch Angabe der Anzahl von Elementen in einem allgemeinen Segment eines valarray.
 
@@ -150,7 +150,7 @@ valarray<size_t> size() const;
 
 Ein valarray, das die Anzahl der Elemente in jedem Segment eines allgemeinen Segments eines valarray angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt die gespeicherten Segmentlängen zurück.
 
@@ -216,7 +216,7 @@ The size of vaResult is:
 vaGSlice.size ( ) = ( 4 4 ).
 ```
 
-## <a name="start"></a> gslice::start
+## <a name="gslicestart"></a><a name="start"></a>gslice::start
 
 Sucht den Startindex eines allgemeinen Segments eines valarray.
 
@@ -279,7 +279,7 @@ va[vaGSlice] = ( 0 4 8 12 7 11 15 19 ).
 The index of the first element of vaResult is: 0.
 ```
 
-## <a name="stride"></a> gslice::stride
+## <a name="gslicestride"></a><a name="stride"></a>gslice::stride
 
 Sucht den Abstand zwischen Elementen in einem allgemeinen Segment eines valarray.
 

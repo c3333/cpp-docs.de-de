@@ -2,22 +2,22 @@
 title: Attribute (C++/CX)
 ms.date: 12/30/2016
 ms.assetid: 4438e03c-4de3-433d-abcc-31aa863bc0e0
-ms.openlocfilehash: 77962dc2d4b7f6bda90a5376e5154782365a4106
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 437432ce32497311a9a91237118d6088881662a1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740383"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371872"
 ---
 # <a name="attributes-ccx"></a>Attribute (C++/CX)
 
-Ein Attribut ist eine spezielle Verweis Klasse, die Windows-Runtime Typen und Methoden in eckigen Klammern vorangestellt werden kann, um bestimmte Verhalten bei der Metadatenerstellung anzugeben. Mehrere vordefinierte Attribute – z. b. [Windows:: Foundation:: Metadata:: webhosthidden](/uwp/api/Windows.Foundation.Metadata.WebHostHiddenAttribute)– werden häufig C++in/CX-Code verwendet. Dieses Beispiel zeigt, wie das Attribut auf eine Klasse angewendet wird:
+Ein Attribut ist eine spezielle Art von ref-Klasse, die windows-Runtime-Typen und -Methoden in eckigen Klammern vorangestellt werden kann, um bestimmte Verhaltensweisen bei der Metadatenerstellung anzugeben. Mehrere vordefinierte Attribute, z. B. [Windows::Foundation::Metadata::WebHostHidden,](/uwp/api/Windows.Foundation.Metadata.WebHostHiddenAttribute)werden häufig im C++/CX-Code verwendet. Dieses Beispiel zeigt, wie das Attribut auf eine Klasse angewendet wird:
 
 [!code-cpp[cx_attributes#01](../cppcx/codesnippet/CPP/cx_attributes/class1.h#01)]
 
 ## <a name="custom-attributes"></a>Benutzerdefinierte Attribute
 
-Sie können auch benutzerdefinierte Attribute definieren. Benutzerdefinierte Attribute müssen diesen Windows-Runtime Regeln entsprechen:
+Sie können auch benutzerdefinierte Attribute definieren. Benutzerdefinierte Attribute müssen diesen Windows-Runtime-Regeln entsprechen:
 
 - Benutzerdefinierte Attribute können nur öffentliche Felder enthalten.
 
@@ -25,19 +25,19 @@ Sie können auch benutzerdefinierte Attribute definieren. Benutzerdefinierte Att
 
 - Ein Feld kann einer dieser Typen sein:
 
-   - int32 (int)
+  - int32 (int)
 
-   - uint32 (int ohne Vorzeichen)
+  - uint32 (int ohne Vorzeichen)
 
-   - bool
+  - bool
 
-   - Platform::String^
+  - Platform::String^
 
-   - Windows::Foundation::HResult
+  - Windows::Foundation::HResult
 
-   - Platform::Type^
+  - Platform::Type^
 
-   - öffentliche Enumerationsklasse (enthält benutzerdefinierte Enumerationen)
+  - öffentliche Enumerationsklasse (enthält benutzerdefinierte Enumerationen)
 
 Das nächste Beispiel zeigt, wie ein benutzerdefiniertes Attribut definiert und anschließend zur Verwendung initialisiert wird.
 
@@ -45,6 +45,6 @@ Das nächste Beispiel zeigt, wie ein benutzerdefiniertes Attribut definiert und 
 
 ## <a name="see-also"></a>Siehe auch
 
-[Typsystem (C++/CX)](../cppcx/type-system-c-cx.md)<br/>
+[Typsystem (C++-CX)](../cppcx/type-system-c-cx.md)<br/>
 [C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
-[Referenz zu Namespaces](../cppcx/namespaces-reference-c-cx.md)
+[Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)

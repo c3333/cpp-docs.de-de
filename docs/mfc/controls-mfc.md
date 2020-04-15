@@ -6,12 +6,12 @@ helpviewer_keywords:
 - common controls [MFC]
 - controls [MFC]
 ms.assetid: b2842884-6435-4b8f-933b-21671bf8af95
-ms.openlocfilehash: 3155889f2fd4002286340ccec7f4a35d1a6a9c20
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 454a76e8fdf55f43d75abb63d7d98a9fe4926127
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69508799"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365327"
 ---
 # <a name="controls-mfc"></a>Steuerelemente (MFC)
 
@@ -31,7 +31,7 @@ Die Klasse [CWnd](../mfc/reference/cwnd-class.md) ist die Basisklasse aller Fens
 
 ## <a name="activex-controls"></a>ActiveX-Steuerelemente
 
-ActiveX-Steuerelemente, früher bekannt als OLE-Steuerelemente, können in Dialogfeldern in Anwendungen für Windows oder auf HTML-Seiten im World Wide Web verwendet werden. Weitere Informationen finden Sie unter [MFC-ActiveX-Steuerelemente](../mfc/mfc-activex-controls.md).
+ActiveX-Steuerelemente, früher bekannt als OLE-Steuerelemente, können in Dialogfeldern in Anwendungen für Windows oder auf HTML-Seiten im World Wide Web verwendet werden. Weitere Informationen finden Sie unter [MFC ActiveX Controls](../mfc/mfc-activex-controls.md).
 
 ## <a name="other-mfc-control-classes"></a>Andere MFC-Steuerelementklassen
 
@@ -43,27 +43,27 @@ Zusätzlich zu den Klassen, die alle allgemeinen Windows-Steuerelemente umfassen
 
 - [CDragListBox](../mfc/reference/cdraglistbox-class.md)
 
-##  <a name="_core_finding_information_about_windows_common_controls"></a> Suchen von Informationen über allgemeine Windows-Steuerelemente
+## <a name="finding-information-about-windows-common-controls"></a><a name="_core_finding_information_about_windows_common_controls"></a> Suchen von Informationen über allgemeine Windows-Steuerelemente
 
 In der folgenden Tabelle werden die einzelnen allgemeinen Windows-Steuerelemente, einschließlich der MFC-Wrapperklasse des jeweiligen Steuerelements kurz beschrieben.
 
-### <a name="_core_windows_common_controls_and_mfc_classes"></a>  Allgemeine Windows-Steuerelemente und MFC-Klassen
+### <a name="windows-common-controls-and-mfc-classes"></a><a name="_core_windows_common_controls_and_mfc_classes"></a>Allgemeine Windows-Steuerelemente und MFC-Klassen
 
-|Steuerelement|MFC-Klasse|Beschreibung|Neu in Windows 95|
+|Control|MFC-Klasse|BESCHREIBUNG|Neu in Windows 95|
 |-------------|---------------|-----------------|------------------------|
 |[Animation](../mfc/using-canimatectrl.md)|[CAnimateCtrl](../mfc/reference/canimatectrl-class.md)|Zeigt aufeinander folgende Rahmen eines AVI-Videoclips an|Ja|
-|Schaltfläche|[CButton](../mfc/reference/cbutton-class.md)|Druckknöpfe, die eine Aktion auslösen; wird auch für Kontrollkästchen, Optionsfelder und Gruppenfelder verwendet|Nein|
+|Schaltfläche |[CButton](../mfc/reference/cbutton-class.md)|Druckknöpfe, die eine Aktion auslösen; wird auch für Kontrollkästchen, Optionsfelder und Gruppenfelder verwendet|Nein|
 |Kombinationsfeld|[CComboBox](../mfc/reference/ccombobox-class.md)|Kombination eines Eingabefelds und eines Listenfelds|Nein|
 |[Datums-/Zeitauswahl](../mfc/using-cdatetimectrl.md)|[CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)|Ermöglicht es Benutzern, ein bestimmtes Datum oder einen Zeitwert auszuwählen|Ja|
 |Eingabefeld|[CEdit](../mfc/reference/cedit-class.md)|Felder zum Eingeben von Text|Nein|
 |[Erweitertes Kombinationsfeld](../mfc/using-ccomboboxex.md)|[CComboBoxEx](../mfc/reference/ccomboboxex-class.md)|Ein Kombinationsfeld-Steuerelement mit der Möglichkeit der Anzeige von Bildern|Ja|
-|[header](../mfc/using-cheaderctrl.md)|[CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)|Schaltfläche, die über einer Textspalte angezeigt wird; steuert die Breite des angezeigten Texts|Ja|
+|[Header](../mfc/using-cheaderctrl.md)|[CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)|Schaltfläche, die über einer Textspalte angezeigt wird; steuert die Breite des angezeigten Texts|Ja|
 |[Hotkey](../mfc/using-chotkeyctrl.md)|[CHotKeyCtrl](../mfc/reference/chotkeyctrl-class.md)|Fenster, in dem Benutzer eine "Abkürzungstaste" erstellen können, mit der eine Aktion schnell ausgeführt werden kann|Ja|
 |[Bildliste](../mfc/using-cimagelist.md)|[CImageList](../mfc/reference/cimagelist-class.md)|Sammlung von Bildern, mit der große Mengen von Symbolen oder Bitmaps verwaltet werden (bei der Bildliste handelt es sich nicht um ein richtiges Steuerelement; es unterstützt die Listen, die von anderen Steuerelementen verwendet werden)|Ja|
 |[list](../mfc/using-clistctrl.md)|[CListCtrl](../mfc/reference/clistctrl-class.md)|Fenster, in dem eine Liste von Text mit Symbolen anzeigt wird|Ja|
 |Listenfeld|[CListBox](../mfc/reference/clistbox-class.md)|Feld, das eine Liste von Zeichenfolgen enthält|Nein|
 |[Monatskalender](../mfc/using-cmonthcalctrl.md)|[CMonthCalCtrl](../mfc/reference/cmonthcalctrl-class.md)|Steuerelement, mit dem Datumsinformationen angezeigt werden|Ja|
-|[progress](../mfc/using-cprogressctrl.md)|[CProgressCtrl](../mfc/reference/cprogressctrl-class.md)|Fenster, in dem der Status eines langen Vorgangs angezeigt wird|Ja|
+|[Fortschritt](../mfc/using-cprogressctrl.md)|[CProgressCtrl](../mfc/reference/cprogressctrl-class.md)|Fenster, in dem der Status eines langen Vorgangs angezeigt wird|Ja|
 |[Infoleiste](../mfc/using-crebarctrl.md)|[CRebarCtrl](../mfc/reference/crebarctrl-class.md)|Symbolleiste, die zusätzliche untergeordnete Fenster in Form von Steuerelementen enthalten kann|Ja|
 |[Rich-Edit](../mfc/using-cricheditctrl.md)|[CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)|Fenster, das ein Benutzer mit Zeichen- und Absatzformatierung bearbeiten kann (siehe [Klassen für Rich-Edit-Steuerelemente](../mfc/classes-related-to-rich-edit-controls.md))|Ja|
 |Bildlaufleiste|[CScrollBar](../mfc/reference/cscrollbar-class.md)|Bildlaufleiste, die als Steuerelement innerhalb eines Dialogfelds (nicht in einem Fenster) verwendet wird|Nein|
@@ -73,10 +73,10 @@ In der folgenden Tabelle werden die einzelnen allgemeinen Windows-Steuerelemente
 |[Statusleiste](../mfc/using-cstatusbarctrl.md)|[CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)|Fenster zum Anzeigen von Statusinformationen, ähnlich der MFC-Klasse `CStatusBar`|Ja|
 |[Registerkarte](../mfc/using-ctabctrl.md)|[CTabCtrl](../mfc/reference/ctabctrl-class.md)|Analog den Trennblättern in einem Ordner; wird in Dialogfeldern auf Registerkarten oder in Eigenschaftenblättern verwendet|Ja|
 |[Symbolleiste](../mfc/using-ctoolbarctrl.md)|[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)|Fenster mit den Schaltflächen zum Generieren von Befehlen, ähnlich der MFC-Klasse `CToolBar`|Ja|
-|[QuickInfo](../mfc/using-ctooltipctrl.md)|[CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md)|Kleines Popupfenster, in dem der Zweck einer Symbolleisten-Schaltfläche oder eines anderen Werkzeugs beschrieben wird|Ja|
-|[Struktur](../mfc/using-ctreectrl.md)|[CTreeCtrl](../mfc/reference/ctreectrl-class.md)|Fenster, in dem eine hierarchische Liste von Elementen angezeigt wird|Ja|
+|[Werkzeugspitze](../mfc/using-ctooltipctrl.md)|[CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md)|Kleines Popupfenster, in dem der Zweck einer Symbolleisten-Schaltfläche oder eines anderen Werkzeugs beschrieben wird|Ja|
+|[Baum](../mfc/using-ctreectrl.md)|[CTreeCtrl](../mfc/reference/ctreectrl-class.md)|Fenster, in dem eine hierarchische Liste von Elementen angezeigt wird|Ja|
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
 - Ein einzelnes Steuerelement: Links zu allen Steuerelementen finden Sie in der Tabelle [Allgemeine Windows-Steuerelemente und MFC-Klassen](#_core_windows_common_controls_and_mfc_classes) in diesem Thema
 
@@ -102,9 +102,9 @@ In der folgenden Tabelle werden die einzelnen allgemeinen Windows-Steuerelemente
 
 - [Beispiele](../mfc/common-control-sample-list.md)
 
-Informationen zu allgemeinen Windows-Steuerelementen in der Windows SDK finden Sie unter [Allgemeine Steuerelemente](/windows/win32/Controls/common-controls-intro).
+Informationen zu allgemeinen Windows-Steuerelementen im Windows SDK finden Sie unter [Allgemeine Steuerelemente](/windows/win32/Controls/common-controls-intro).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)<br/>
+[Benutzeroberflächenelemente](../mfc/user-interface-elements-mfc.md)<br/>
 [Dialog-Editor](../windows/dialog-editor.md)

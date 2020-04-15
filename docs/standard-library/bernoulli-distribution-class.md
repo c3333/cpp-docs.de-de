@@ -23,14 +23,14 @@ helpviewer_keywords:
 - std::bernoulli_distribution [C++], param_type
 - std::bernoulli_distribution [C++], param_type
 ms.assetid: 586bcde1-95ca-411a-bf17-4aaf19482f34
-ms.openlocfilehash: faadc99b6351af884331e6658e1e11de8def2195
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 6a53707d823ced7316604f75691194dc6e05545e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68447774"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364860"
 ---
-# <a name="bernoullidistribution-class"></a>bernoulli_distribution-Klasse
+# <a name="bernoulli_distribution-class"></a>bernoulli_distribution-Klasse
 
 Generiert eine Bernoulli-Verteilung.
 
@@ -67,11 +67,11 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *URNG*\
-Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
+Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klasse beschreibt eine Verteilung, die Werte vom Typ " **bool**" erzeugt, die entsprechend der diskreten Wahrscheinlichkeitsfunktion der Bernoulli-Verteilung verteilt werden. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klasse beschreibt eine Verteilung, die Werte des Typs **bool**erzeugt, die gemäß der diskreten Wahrscheinlichkeitsfunktion Bernoulli-Verteilung verteilt werden. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -80,7 +80,7 @@ Die Klasse beschreibt eine Verteilung, die Werte vom Typ " **bool**" erzeugt, di
 
 Das Eigenschaftsmember `p()` gibt den aktuell gespeicherten Verteilungsparameterwert `p` zurück.
 
-Der Eigenschaftenmember `param()` legt das gespeicherte Verteilungsparameterpaket `param_type` fest oder gibt es zurück.
+Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
 
 Die `min()`- und `max()`-Memberfunktion gibt das jeweils kleinst- und größtmögliche Ergebnis zurück.
 
@@ -88,7 +88,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 Ausführliche Informationen über die diskrete Wahrscheinlichkeitsfunktion zur Bernoulli-Verteilung finden Sie im Wolfram MathWorld-Artikel [Bernoulli Distribution](https://go.microsoft.com/fwlink/p/?linkid=398467).
 
@@ -158,7 +158,7 @@ true :::::::::::::::::::::::::::::::::::::::::
 
 **Namespace:** std
 
-## <a name="bernoulli_distribution"></a> bernoulli_distribution::bernoulli_distribution
+## <a name="bernoulli_distributionbernoulli_distribution"></a><a name="bernoulli_distribution"></a>bernoulli_distribution::bernoulli_distribution
 
 Erstellt die Verteilung.
 
@@ -169,39 +169,39 @@ explicit bernoulli_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*cker*\
+*P*\
 Der gespeicherte `p`-Verteilungsparameter.
 
-*parm*\
+*Parm*\
 Die für die Erstellung der Verteilung verwendete `param_type`-Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 ≤ p ≤ 1.0`
+**Voraussetzung:**`0.0 ≤ p ≤ 1.0`
 
 Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `p`-Wert den Wert *p* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> bernoulli_distribution::param_type
+## <a name="bernoulli_distributionparam_type"></a><a name="param_type"></a>bernoulli_distribution::param_type
 
 Enthält die Parameter der Verteilung.
 
-struct param_type {typedef bernoulli_distribution distribution_type; param_type (Double p = 0,5); Double p () Konstanten;
+struct param_type ' typedef bernoulli_distribution distribution_type; param_type(double p = 0.5); double p() const;
 
    bool operator==(const param_type& right) const; bool operator!=(const param_type& right) const; };
 
 ### <a name="parameters"></a>Parameter
 
-*cker*\
+*P*\
 Der gespeicherte `p`-Verteilungsparameter.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 ≤ p ≤ 1.0`
+**Voraussetzung:**`0.0 ≤ p ≤ 1.0`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

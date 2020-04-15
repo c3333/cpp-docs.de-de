@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - restrict clause (C++ AMP)
 ms.assetid: 07d3291f-7edf-456b-8828-283ac8673661
-ms.openlocfilehash: a100ece1a0c67be01b31f38bdca17e78c2e1b6f9
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5a0011d11e4a59c9ca3a5e18f44d4cf831b21582
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179106"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366647"
 ---
 # <a name="restrict-c-amp"></a>restrict (C++ AMP)
 
 Der Einschränkungsspezifizierer kann auf Funktions- und Lambda-Deklarationen angewendet werden. Er erzwingt Einschränkungen für den Code in der Funktion und das Verhalten der Funktion in Anwendungen, die C++ Accelerated Massive Parallelism(C++ AMP)-Laufzeit verwenden.
 
 > [!NOTE]
->  Informationen zum **Einschränkungs** Schlüsselwort, das Bestandteil der **__declspec** -Speicher Klassenattribute ist, finden Sie unter [einschränken](../cpp/restrict.md).
+> Informationen zum **Schlüsselwort restrict,** das Teil der **__declspec** Speicherklassenattribute ist, finden Sie unter [einschränken](../cpp/restrict.md).
 
-Die **Einschränkungs** Klausel hat die folgenden Formen:
+Die **Einschränkungsklausel** hat folgende Formen:
 
 |Klausel|BESCHREIBUNG|
 |------------|-----------------|
@@ -31,7 +31,7 @@ Die **Einschränkungs** Klausel hat die folgenden Formen:
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Einschränkungs** Schlüsselwort ist ein Kontext Schlüsselwort Die Einschränkungsspezifizierer, `cpu` und `amp` sind keine reservierten Wörter. Die Liste der Spezifizierer ist nicht erweiterbar. Eine Funktion, die nicht über eine **Einschränkungs** Klausel verfügt, ist identisch mit einer Funktion, die über die `restrict(cpu)`-Klausel verfügt.
+Das **Schlüsselwort restrict** ist ein kontextbezogenes Schlüsselwort. Die Einschränkungsspezifizierer, `cpu` und `amp` sind keine reservierten Wörter. Die Liste der Spezifizierer ist nicht erweiterbar. Eine Funktion, die keine **Einschränkungsklausel** hat, ist `restrict(cpu)` identisch mit einer Funktion, die die Klausel enthält.
 
 Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Einschränkungen:
 
@@ -39,7 +39,7 @@ Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Eins
 
 - Die Funktion muss inlinable sein.
 
-- Die Funktion kann nur die Variablen " **int**", " **Ganzzahl ohne Vorzeichen int**", " **float**" und " **Double** " sowie Klassen und Strukturen deklarieren, die nur diese Typen enthalten. **boolescher** Wert ist ebenfalls zulässig, muss jedoch 4-Byte-ausgerichtet sein, wenn Sie ihn in einem Verbund-Typ verwenden.
+- Die Funktion kann nur **int**, **unsigned int**, **float**und **double** variables sowie Klassen und Strukturen deklarieren, die nur diese Typen enthalten. **bool** ist ebenfalls zulässig, muss jedoch 4-Byte-ausgerichtet sein, wenn Sie es in einem zusammengesetzten Typ verwenden.
 
 - Lambda-Funktionen können nicht als Verweis erfassten und können keine Zeiger erfassen.
 
@@ -47,43 +47,43 @@ Eine Funktion, die über die `restrict(amp)`-Klausel verfügt, hat folgende Eins
 
 - Folgendes ist nicht zulässig:
 
-   - Rekursion.
+  - Rekursion.
 
-   - Mit dem [volatile](../cpp/volatile-cpp.md) -Schlüsselwort deklarierte Variablen.
+  - Variablen, die [volatile](../cpp/volatile-cpp.md) mit dem volatile-Schlüsselwort deklariert wurden.
 
-   - Virtuelle Funktionen.
+  - Virtuelle Funktionen.
 
-   - Zeiger auf Funktionen.
+  - Zeiger auf Funktionen.
 
-   - Zeiger auf die Memberfunktionen.
+  - Zeiger auf die Memberfunktionen.
 
-   - Zeiger in Strukturen.
+  - Zeiger in Strukturen.
 
-   - Zeiger auf Zeiger.
+  - Zeiger auf Zeiger.
 
-   - **goto** -Anweisungen.
+  - **goto-Anweisungen.**
 
-   - Anweisungen mit Bezeichnung.
+  - Anweisungen mit Bezeichnung.
 
-   - **try**-, **catch**-oder **throw** -Anweisungen.
+  - **try**, **catch**oder **throw** statements.
 
-   - Globale Variablen.
+  - Globale Variablen.
 
-   - Statische Variablen. Verwenden Sie stattdessen [tile_static-Schlüsselwort](../cpp/tile-static-keyword.md) .
+  - Statische Variablen. Verwenden Sie stattdessen [tile_static Keyword.](../cpp/tile-static-keyword.md)
 
-   - **dynamic_cast** Umwandlungen.
+  - **dynamic_cast** Gussteile.
 
-   - Der **typeid** -Operator.
+  - Der **typeid-Operator.**
 
-   - ASM-Deklarationen.
+  - ASM-Deklarationen.
 
-   - Varargs.
+  - Varargs.
 
-Eine Erläuterung der Funktionseinschränkungen finden Sie unter [Einschränkungen für Einschränkungen (amp)](https://blogs.msdn.microsoft.com/nativeconcurrency/2011/12/19/restrictamp-restrictions-part-0-of-n-introduction/).
+Eine Erläuterung zu Funktionseinschränkungen finden Sie [unter Einschränken (Amp)-Einschränkungen](https://blogs.msdn.microsoft.com/nativeconcurrency/2011/12/19/restrictamp-restrictions-part-0-of-n-introduction/).
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird gezeigt, wie die `restrict(amp)`-Klausel verwendet wird.
+Das folgende Beispiel zeigt, `restrict(amp)`wie die Klausel verwendet wird.
 
 ```cpp
 void functionAmp() restrict(amp) {}
@@ -104,6 +104,6 @@ void callFunctions() restrict(amp)
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)

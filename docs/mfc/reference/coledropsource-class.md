@@ -14,16 +14,16 @@ helpviewer_keywords:
 - COleDropSource [MFC], OnBeginDrag
 - COleDropSource [MFC], QueryContinueDrag
 ms.assetid: d3eecc5f-a70b-4a01-b705-7d2c098ebe17
-ms.openlocfilehash: d93eb3de87b50f337f0d3edad65f5dc3013e8327
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 324c4b7273f021b43c319fb0a494ac843856c78a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77127456"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375023"
 ---
 # <a name="coledropsource-class"></a>COleDropSource-Klasse
 
-Ermöglicht, dass Daten auf ein Ablage Ziel gezogen werden.
+Ermöglicht das Ziehen von Daten an ein Ablageziel.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,45 +31,45 @@ Ermöglicht, dass Daten auf ein Ablage Ziel gezogen werden.
 class COleDropSource : public CCmdTarget
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDropSource:: COleDropSource](#coledropsource)|Erstellt ein `COleDropSource`-Objekt.|
+|[COleDropSource::COleDropSource](#coledropsource)|Erstellt ein `COleDropSource`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDropSource:: GiveFeedback](#givefeedback)|Ändert den Cursor während eines Drag & Drop-Vorgangs.|
-|[COleDropSource:: OnBeginDrag](#onbegindrag)|Behandelt die Maus Aufzeichnung während eines Drag & Drop-Vorgangs.|
-|[COleDropSource:: QueryContinueDrag](#querycontinuedrag)|Prüft, ob das ziehen fortgesetzt werden soll.|
+|[COleDropSource::GiveFeedback](#givefeedback)|Ändert den Cursor während eines Drag-and-Drop-Vorgangs.|
+|[ColeDropSource::OnBeginDrag](#onbegindrag)|Behandelt die Mausaufnahme während eines Drag-and-Drop-Vorgangs.|
+|[COleDropSource::QueryContinueDrag](#querycontinuedrag)|Überprüft, ob das Ziehen fortgesetzt werden soll.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die [COleDropTarget](../../mfc/reference/coledroptarget-class.md) -Klasse verarbeitet den empfangenden Teil des Drag & Drop-Vorgangs. Das `COleDropSource` Objekt ist dafür verantwortlich, zu bestimmen, wann ein Zieh Vorgang beginnt, während des Zieh Vorgangs Feedback bereitzustellen und zu bestimmen, wann der Zieh Vorgang beendet wird.
+Die [COleDropTarget-Klasse](../../mfc/reference/coledroptarget-class.md) verarbeitet den empfangenden Teil des Drag-and-Drop-Vorgangs. Das `COleDropSource` Objekt ist dafür verantwortlich, zu bestimmen, wann ein Ziehvorgang beginnt, Feedback während des Ziehvorgangs bereitzustellen und zu bestimmen, wann der Ziehvorgang endet.
 
-Um ein `COleDropSource` Objekt zu verwenden, nennen Sie einfach den-Konstruktor. Dadurch wird der Prozess zum Bestimmen der Ereignisse, z. b. mit einem Mausklick, mit der Verwendung von [COleDataSource::D odragdrop](../../mfc/reference/coledatasource-class.md#dodragdrop), [COleClientItem::D odragdrop](../../mfc/reference/coleclientitem-class.md#dodragdrop)oder [COleServerItem::D odragdrop](../../mfc/reference/coleserveritem-class.md#dodragdrop) -Funktion vereinfacht. Mit diesen Funktionen wird ein `COleDropSource`-Objekt für Sie erstellt. Möglicherweise möchten Sie das Standardverhalten der `COleDropSource` Überschreib baren Funktionen ändern. Diese Member-Funktionen werden zu den entsprechenden Zeitpunkten des Frameworks aufgerufen.
+Um ein `COleDropSource` Objekt zu verwenden, rufen Sie einfach den Konstruktor auf. Dies vereinfacht das Bestimmen, welche Ereignisse, z. B. ein Mausklick, einen Ziehvorgang mit [COleDataSource::DoDragDrop](../../mfc/reference/coledatasource-class.md#dodragdrop), [COleClientItem::DoDragDrop](../../mfc/reference/coleclientitem-class.md#dodragdrop)oder [COleServerItem::DoDragDrop-Funktion](../../mfc/reference/coleserveritem-class.md#dodragdrop) starten. Diese Funktionen erstellen `COleDropSource` ein Objekt für Sie. Sie können das Standardverhalten der `COleDropSource` überschreibbaren Funktionen ändern. Diese Memberfunktionen werden zu den entsprechenden Zeiten vom Framework aufgerufen.
 
-Weitere Informationen zu Drag & Drop-Vorgängen mit OLE finden Sie im Artikel [OLE Drag](../../mfc/drag-and-drop-ole.md)& amp; Drop.
+Weitere Informationen zu Drag-and-Drop-Vorgängen mit OLE finden Sie im Artikel [OLE drag and drop](../../mfc/drag-and-drop-ole.md).
 
-Weitere Informationen finden Sie unter [IDropSource](/windows/win32/api/oleidl/nn-oleidl-idropsource) in der Windows SDK.
+Weitere Informationen finden Sie unter [IDropSource](/windows/win32/api/oleidl/nn-oleidl-idropsource) im Windows SDK.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
 `COleDropSource`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** Afxole. h
+**Kopfzeile:** afxole.h
 
-##  <a name="coledropsource"></a>COleDropSource:: COleDropSource
+## <a name="coledropsourcecoledropsource"></a><a name="coledropsource"></a>COleDropSource::COleDropSource
 
 Erstellt ein `COleDropSource`-Objekt.
 
@@ -77,9 +77,9 @@ Erstellt ein `COleDropSource`-Objekt.
 COleDropSource();
 ```
 
-##  <a name="givefeedback"></a>COleDropSource:: GiveFeedback
+## <a name="coledropsourcegivefeedback"></a><a name="givefeedback"></a>COleDropSource::GiveFeedback
 
-Wird vom Framework aufgerufen, nachdem [COleDropTarget:: OnDragOver](../../mfc/reference/coledroptarget-class.md#ondragover) oder [COleDropTarget::D ragenter](../../mfc/reference/coledroptarget-class.md#ondragenter)aufgerufen wurde.
+Wird vom Framework nach dem Aufruf von [COleDropTarget::OnDragOver](../../mfc/reference/coledroptarget-class.md#ondragover) oder [COleDropTarget::DragEnter](../../mfc/reference/coledroptarget-class.md#ondragenter)aufgerufen.
 
 ```
 virtual SCODE GiveFeedback(DROPEFFECT dropEffect);
@@ -87,32 +87,32 @@ virtual SCODE GiveFeedback(DROPEFFECT dropEffect);
 
 ### <a name="parameters"></a>Parameter
 
-*dropffect*<br/>
-Die Auswirkung, die dem Benutzer angezeigt werden soll, und gibt in der Regel an, was passiert, wenn an diesem Punkt mit den ausgewählten Daten ein Löschvorgang stattgefunden hat. In der Regel ist dies der Wert, der durch den letzten Aufruf von [CView:: OnDragEnter](../../mfc/reference/cview-class.md#ondragenter) oder [CView:: OnDragOver](../../mfc/reference/cview-class.md#ondragover)zurückgegeben wird. Dabei kann es sich um eine oder mehrere der folgenden handeln:
+*dropEffect*<br/>
+Der Effekt, den Sie dem Benutzer anzeigen möchten, der in der Regel angibt, was passieren würde, wenn an dieser Stelle ein Drop mit den ausgewählten Daten auftritt. In der Regel ist dies der Wert, der vom letzten Aufruf von [CView::OnDragEnter](../../mfc/reference/cview-class.md#ondragenter) oder [CView::OnDragOver](../../mfc/reference/cview-class.md#ondragover)zurückgegeben wird. Es kann einer oder mehrere der folgenden sein:
 
-- DROPEFFECT_NONE Drop wäre nicht zulässig.
+- DROPEFFECT_NONE Ein Tropfen wäre nicht erlaubt.
 
-- DROPEFFECT_COPY ein Kopiervorgang ausgeführt wird.
+- DROPEFFECT_COPY ein Kopiervorgang durchgeführt.
 
-- DROPEFFECT_MOVE ein Verschiebe Vorgang ausgeführt wird.
+- DROPEFFECT_MOVE Ein Umzugsvorgang wird ausgeführt.
 
-- DROPEFFECT_LINK eine Verknüpfung von den gelöschten Daten zu den ursprünglichen Daten erstellt werden.
+- DROPEFFECT_LINK Eine Verknüpfung von den gelöschten Daten zu den ursprünglichen Daten hergestellt werden würde.
 
-- DROPEFFECT_SCROLL ein Drag & Drop-Vorgang im Ziel auftritt oder im Ziel auftritt.
+- DROPEFFECT_SCROLL Ein Ziehbildvorgang wird im Begriff sein oder im Ziel auftreten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt DRAGDROP_S_USEDEFAULTCURSORS zurück, wenn der Zieh Vorgang ausgeführt wird, andernfalls noError.
+Gibt DRAGDROP_S_USEDEFAULTCURSORS zurück, wenn das Ziehen ausgeführt wird, NOERROR, wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, um dem Benutzer Feedback darüber zu geben, was passiert, wenn zu diesem Zeitpunkt ein Löschvorgang aufgetreten ist. Die Standard Implementierung verwendet die OLE-standardcursorn. Weitere Informationen zu Drag & Drop-Vorgängen mit OLE finden Sie im Artikel [OLE Drag](../../mfc/drag-and-drop-ole.md)& amp; Drop.
+Überschreiben Sie diese Funktion, um dem Benutzer Feedback darüber zu geben, was passieren würde, wenn zu diesem Zeitpunkt ein Drop eintritt. Die Standardimplementierung verwendet die OLE-Standardcursor. Weitere Informationen zu Drag-and-Drop-Vorgängen mit OLE finden Sie im Artikel [OLE drag and drop](../../mfc/drag-and-drop-ole.md).
 
-Weitere Informationen finden Sie unter [IDropSource:: GiveFeedback](/windows/win32/api/oleidl/nf-oleidl-idropsource-givefeedback), [IDropTarget::D ragover](/windows/win32/api/oleidl/nf-oleidl-idroptarget-dragover)und [IDropTarget::D ragenter](/windows/win32/api/oleidl/nf-oleidl-idroptarget-dragenter) im Windows SDK.
+Weitere Informationen finden Sie unter [IDropSource::GiveFeedback](/windows/win32/api/oleidl/nf-oleidl-idropsource-givefeedback), [IDropTarget::DragOver](/windows/win32/api/oleidl/nf-oleidl-idroptarget-dragover)und [IDropTarget::DragEnter](/windows/win32/api/oleidl/nf-oleidl-idroptarget-dragenter) im Windows SDK.
 
-##  <a name="onbegindrag"></a>COleDropSource:: OnBeginDrag
+## <a name="coledropsourceonbegindrag"></a><a name="onbegindrag"></a>ColeDropSource::OnBeginDrag
 
-Wird von Framework aufgerufen, wenn ein Ereignis auftritt, das einen Zieh Vorgang, z. b. das Drücken der linken Maustaste, einleiten könnte.
+Wird vom Framework aufgerufen, wenn ein Ereignis auftritt, das einen Ziehvorgang starten könnte, z. B. durch Drücken der linken Maustaste.
 
 ```
 virtual BOOL OnBeginDrag(CWnd* pWnd);
@@ -120,20 +120,20 @@ virtual BOOL OnBeginDrag(CWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-Verweist auf das Fenster, das die ausgewählten Daten enthält.
+*pWnd*<br/>
+Zeigt auf das Fenster, das die ausgewählten Daten enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das ziehen zulässig ist, andernfalls 0.
+Ein Wert ungleich Null, wenn das Ziehen zulässig ist, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, wenn Sie die Art und Weise ändern möchten, wie der Zieh Vorgang gestartet wird. Die Standard Implementierung erfasst die Maus und verbleibt im Zieh Modus, bis der Benutzer auf die linke oder die Rechte Maustaste klickt oder auf ESC trifft. zu diesem Zeitpunkt wird die Maus losgelassen.
+Überschreiben Sie diese Funktion, wenn Sie die Art und Weise ändern möchten, wie der Ziehvorgang gestartet wird. Die Standardimplementierung erfasst die Maus und bleibt im Drag-Modus, bis der Benutzer auf die linke oder rechte Maustaste klickt oder ESC trifft.
 
-##  <a name="querycontinuedrag"></a>COleDropSource:: QueryContinueDrag
+## <a name="coledropsourcequerycontinuedrag"></a><a name="querycontinuedrag"></a>COleDropSource::QueryContinueDrag
 
-Nachdem der Zieh Vorgang begonnen hat, wird diese Funktion vom Framework wiederholt aufgerufen, bis der Zieh Vorgang entweder abgebrochen oder abgeschlossen wird.
+Nachdem das Ziehen begonnen wurde, wird diese Funktion vom Framework wiederholt aufgerufen, bis der Ziehvorgang abgebrochen oder abgeschlossen wird.
 
 ```
 virtual SCODE QueryContinueDrag(
@@ -143,27 +143,27 @@ virtual SCODE QueryContinueDrag(
 
 ### <a name="parameters"></a>Parameter
 
-*bescapegedrückt*<br/>
-Gibt an, ob die ESC-Taste seit dem letzten `COleDropSource::QueryContinueDrag`aufgerufen wurde.
+*bEscapePressed*<br/>
+gibt an, ob der ESC-Schlüssel `COleDropSource::QueryContinueDrag`seit dem letzten Aufruf an gedrückt wurde.
 
-*dwkeystate*<br/>
-Enthält den Zustand der Modifizierertasten auf der Tastatur. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.
+*dwKeyState*<br/>
+Enthält den Status der Modifikatortasten auf der Tastatur. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.
 
 ### <a name="return-value"></a>Rückgabewert
 
-DRAGDROP_S_CANCEL, wenn die ESC-Taste oder die Rechte Schaltfläche gedrückt wird oder die linke Schaltfläche vor dem ziehen ausgelöst wird. DRAGDROP_S_DROP, wenn ein Ablage Vorgang erfolgen soll. Andernfalls S_OK.
+DRAGDROP_S_CANCEL, wenn die ESC-Taste oder die rechte Taste gedrückt wird oder die linke Taste ausgelöst wird, bevor das Ziehen beginnt. DRAGDROP_S_DROP, wenn ein Ablagevorgang auftreten soll. Sonst S_OK.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, wenn Sie den Punkt ändern möchten, an dem der Zieh Vorgang abgebrochen wird oder ein Ablage Vorgang auftritt.
+Überschreiben Sie diese Funktion, wenn Sie den Punkt ändern möchten, an dem das Ziehen abgebrochen wird oder ein Drop auftritt.
 
-Die Standard Implementierung initiiert den Löschvorgang oder bricht den Zieh Vorgang wie folgt ab. Ein Drag-Vorgang wird abgebrochen, wenn die ESC-Taste oder die Rechte Maustaste gedrückt wird. Er initiiert einen Drop-Vorgang, wenn die linke Maustaste nach dem Start des Zieh Vorgangs ausgelöst wird. Andernfalls wird S_OK zurückgegeben, und es werden keine weiteren Vorgänge durchführt.
+Die Standardimplementierung initiiert das Ablegen oder bricht den Drag wie folgt ab. Es bricht einen Ziehvorgang ab, wenn die ESC-Taste oder die rechte Maustaste gedrückt wird. Es initiiert einen Drop-Vorgang, wenn die linke Maustaste nach dem Ziehen ausgelöst wird. Andernfalls gibt sie S_OK zurück und führt keine weiteren Vorgänge aus.
 
-Da diese Funktion häufig aufgerufen wird, sollte Sie so weit wie möglich optimiert werden.
+Da diese Funktion häufig aufgerufen wird, sollte sie so weit wie möglich optimiert werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel OCLIENT](../../overview/visual-cpp-samples.md)<br/>
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

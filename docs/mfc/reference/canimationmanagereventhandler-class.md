@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CAnimationManagerEventHandler [MFC], OnManagerStatusChanged
 - CAnimationManagerEventHandler [MFC], SetAnimationController
 ms.assetid: 6089ec07-e661-4805-b227-823b4652aade
-ms.openlocfilehash: bd13ba4d0dd60f65372b2c1f51d70d338566301e
-ms.sourcegitcommit: 46d24d6e70c03e05484923d9efc6ed5150e96a64
+ms.openlocfilehash: a4e97c2a1188071b5bde0781630d0dfe52e8a72f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68916262"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369723"
 ---
 # <a name="canimationmanagereventhandler-class"></a>CAnimationManagerEventHandler-Klasse
 
@@ -35,21 +35,21 @@ class CAnimationManagerEventHandler : public CUIAnimationManagerEventHandlerBase
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAnimationManagerEventHandler::CAnimationManagerEventHandler](#canimationmanagereventhandler)|Erstellt ein `CAnimationManagerEventHandler`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationManagerEventHandler::CreateInstance](#createinstance)|Erstellt eine Instanz des `CAnimationManagerEventHandler` -Objekts.|
-|[CAnimationManagerEventHandler::OnManagerStatusChanged](#onmanagerstatuschanged)|Wird aufgerufen, wenn sich der Status des Animations-Managers geändert hat. (Überschreibt `CUIAnimationManagerEventHandlerBase::OnManagerStatusChanged`.)|
-|[CAnimationManagerEventHandler::SetAnimationController](#setanimationcontroller)|Speichert einen Zeiger auf den Animations Controller zum Weiterleiten von Ereignissen.|
+|[CAnimationManagerEventHandler::CreateInstance](#createinstance)|Erstellt eine `CAnimationManagerEventHandler` Instanz des Objekts.|
+|[CanimationManagerEventHandler::OnManagerStatusChanged](#onmanagerstatuschanged)|Wird aufgerufen, wenn sich der Status des Animations-Managers geändert hat. (Überschreibt `CUIAnimationManagerEventHandlerBase::OnManagerStatusChanged`.)|
+|[CAnimationManagerEventHandler::SetAnimationController](#setanimationcontroller)|Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Dieser Ereignishandler wird erstellt und an die iuianimationmanager:: setmanagereventhandler-Methode übergeben, wenn Sie canimationcontroller:: enableanimationmanagerevent aufrufen.
+Dieser Ereignishandler wird erstellt und an iUIAnimationManager::SetManagerEventHandler-Methode übergeben, wenn Sie CAnimationController::EnableAnimationManagerEvent aufrufen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -63,21 +63,21 @@ Dieser Ereignishandler wird erstellt und an die iuianimationmanager:: setmanager
 
 **Header:** afxanimationcontroller.h
 
-##  <a name="canimationmanagereventhandler"></a>Canimationmanagereventhandler:: canimationmanagereventhandler
+## <a name="canimationmanagereventhandlercanimationmanagereventhandler"></a><a name="canimationmanagereventhandler"></a>CAnimationManagerEventHandler::CAnimationManagerEventHandler
 
 Visual Studio 2010 SP1 wird benötigt.
 
-Erstellt ein canimationmanagereventhandler-Objekt.
+Erstellt ein CAnimationManagerEventHandler-Objekt.
 
 ```
 CAnimationManagerEventHandler();
 ```
 
-##  <a name="createinstance"></a>Canimationmanagereventhandler:: forateinstance
+## <a name="canimationmanagereventhandlercreateinstance"></a><a name="createinstance"></a>CAnimationManagerEventHandler::CreateInstance
 
 Visual Studio 2010 SP1 wird benötigt.
 
-Erstellt eine Instanz des canimationmanagereventhandler-Objekts.
+Erstellt eine Instanz des CAnimationManagerEventHandler-Objekts.
 
 ```
 static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
@@ -88,16 +88,16 @@ static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
 ### <a name="parameters"></a>Parameter
 
 *pAnimationController*<br/>
-Ein Zeiger auf den Animations Controller, von dem Ereignisse empfangen werden.
+Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
 *ppManagerEventHandler*<br/>
-Ausgeben. Wenn die Methode erfolgreich ausgeführt wird, enthält Sie einen Zeiger auf ein COM-Objekt, das Statusaktualisierungen für einen Animations-Manager behandelt.
+Ausgabe Wenn die Methode erfolgreich ist, enthält sie einen Zeiger auf das COM-Objekt, das Statusaktualisierungen an einen Animations-Manager verarbeitet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ausgeführt wird, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="onmanagerstatuschanged"></a>Canimationmanagereventhandler:: onmanagerstatuschangi
+## <a name="canimationmanagereventhandleronmanagerstatuschanged"></a><a name="onmanagerstatuschanged"></a>CanimationManagerEventHandler::OnManagerStatusChanged
 
 Visual Studio 2010 SP1 wird benötigt.
 
@@ -121,11 +121,11 @@ Vorheriger Status.
 
 Die aktuelle Implementierung gibt immer S_OK zurück.
 
-##  <a name="setanimationcontroller"></a>Canimationmanagereventhandler:: "abationcontroller"
+## <a name="canimationmanagereventhandlersetanimationcontroller"></a><a name="setanimationcontroller"></a>CAnimationManagerEventHandler::SetAnimationController
 
 Visual Studio 2010 SP1 wird benötigt.
 
-Speichert einen Zeiger auf den Animations Controller zum Weiterleiten von Ereignissen.
+Speichert einen Zeiger auf den Animationscontroller, um Ereignisse weiterzuleiten.
 
 ```
 void SetAnimationController(CAnimationController* pAnimationController);
@@ -134,7 +134,7 @@ void SetAnimationController(CAnimationController* pAnimationController);
 ### <a name="parameters"></a>Parameter
 
 *pAnimationController*<br/>
-Ein Zeiger auf den Animations Controller, von dem Ereignisse empfangen werden.
+Ein Zeiger auf den Animationscontroller, der Ereignisse empfängt.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -8,24 +8,24 @@ helpviewer_keywords:
 - tracking references
 - '% tracking reference [C++]'
 ms.assetid: 142a7269-ab69-4b54-a6d7-833bef06228f
-ms.openlocfilehash: ab1b11d3f8d3416a6e9ed345085d63ce86d56010
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ccd31b3e334dc5a4cd2e48b94c9dbe85cf13c16b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181784"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368234"
 ---
 # <a name="tracking-reference-operator-ccli-and-ccx"></a>Nachverfolgungsverweisoperator (C++/CLI und C++/CX)
 
-Ein *Nachverfolgungsverweis* (`%`) verhält sich fast wie ein normaler C++-Verweis (`&`) – der Unterschied ist, dass nach der Zuweisung eines Objekts zu einem Nachverfolgungsverweis der Verweiszähler des Objekts inkrementiert wird.
+Ein *Tracking-Verweis* (`%`) verhält sich wie`&`ein gewöhnlicher C++-Verweis ( ), mit der Ausnahme, dass, wenn ein Objekt einem Tracking-Verweis zugewiesen wird, die Referenzanzahl des Objekts erhöht wird.
 
 ## <a name="all-platforms"></a>Alle Plattformen
 
 Ein Nachverfolgungsverweis verfügt über die folgenden Eigenschaften.
 
-- Die Zuweisung eines Objekts zu einem Nachverfolgungsverweis bewirkt, dass der Verweiszähler des Objekts erhöht wird.
+- Die Zuweisung eines Objekts zu einem Nachverfolgungsverweis bewirkt, dass die Referenzanzahl des Objekts erhöht wird.
 
-- Wenn Sie einen `&` dereferenzieren, ist das Ergebnis ein nativer Verweis (`*`). Wenn Sie einen `%` dereferenzieren, ist das Ergebnis ein Nachverfolgungsverweis (`^`). Solange Sie über einen `%` zu einem Objekt verfügen, bleibt das Objekt im Speicher erhalten.
+- Wenn Sie einen `*` dereferenzieren, ist das Ergebnis ein nativer Verweis (`&`). Wenn Sie einen `^` dereferenzieren, ist das Ergebnis ein Nachverfolgungsverweis (`%`). Solange Sie über einen `%` zu einem Objekt verfügen, bleibt das Objekt im Speicher erhalten.
 
 - Der Punktzugriffsoperator (`.`) für Member wird verwendet, um auf einen Member des Objekts zuzugreifen.
 

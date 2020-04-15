@@ -6,16 +6,16 @@ helpviewer_keywords:
 - record views, refreshing controls
 - record views, application wizard code
 ms.assetid: 18fd4703-5939-491d-b759-985f767b951f
-ms.openlocfilehash: 69bebe978d03e5777f20765ac0bcf9a344f69320
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 69481299980329b98e378f02e090670fa3d7ece2
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209156"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376023"
 ---
 # <a name="record-view-code-created-by-application-wizard--mfc-data-access"></a>Vom Anwendungs-Assistenten erstellter Datensatzansichts-Code (MFC-Datenzugriff)
 
-Der [MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md) überschreibt die `OnInitialUpdate`-und `OnGetRecordset` Member-Funktionen der Ansicht. Nachdem das Framework das Rahmenfenster, Dokument und die Ansicht erstellt hat, wird `OnInitialUpdate` aufgerufen, um die Ansicht zu initialisieren. `OnInitialUpdate` erhält einen Zeiger auf das Recordset aus dem Dokument. Ein Aufrufder [CView:: OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate) -Basisklasse öffnet das Recordset. Der folgende Code zeigt diesen Prozess für eine `CRecordView`:
+Der [MFC-Anwendungs-Assistent](../mfc/reference/database-support-mfc-application-wizard.md) überschreibt `OnInitialUpdate` `OnGetRecordset` die Funktionen der Ansicht und des Members. Nachdem das Framework das Rahmenfenster, Dokument und die Ansicht erstellt hat, wird `OnInitialUpdate` aufgerufen, um die Ansicht zu initialisieren. `OnInitialUpdate` erhält einen Zeiger auf das Recordset aus dem Dokument. Ein Aufruf der Basisklasse [CView::OnInitialUpdate-Funktion](../mfc/reference/cview-class.md#oninitialupdate) öffnet das Recordset. Der folgende Code zeigt `CRecordView`diesen Prozess für eine:
 
 ```cpp
 void CSectionForm::OnInitialUpdate()
@@ -25,11 +25,11 @@ void CSectionForm::OnInitialUpdate()
 }
 ```
 
-Beim Öffnen des Recordsets werden Datensätze ausgewählt. [CRecordset:: Open](../mfc/reference/crecordset-class.md#open) macht den ersten Datensatz zum aktuellen Datensatz, und DDX verschiebt Daten aus den Felddatenmembern des Recordsets in die entsprechenden Formular Steuerelemente in der Ansicht. Weitere Informationen zu RFX finden Sie unter [Daten Satz Feld Austausch (RFX)](../data/odbc/record-field-exchange-rfx.md). Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../mfc/dialog-data-exchange-and-validation.md). Weitere Informationen zum Erstellen von Dokumenten/Ansichten finden Sie unter [Verwenden der Klassen zum Schreiben von Anwendungen für Windows](../mfc/using-the-classes-to-write-applications-for-windows.md).
+Beim Öffnen des Recordsets werden Datensätze ausgewählt. [CRecordset::Open](../mfc/reference/crecordset-class.md#open) erstellt den ersten Datensatz zum aktuellen Datensatz, und DDX verschiebt Daten aus den Felddatenelementen des Recordsets in die entsprechenden Formularsteuerelemente in der Ansicht. Weitere Informationen zu RFX finden Sie unter [Datensatzfeldaustausch (RFX)](../data/odbc/record-field-exchange-rfx.md). Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -validierung](../mfc/dialog-data-exchange-and-validation.md). Informationen zum Dokument-/Ansichtserstellungsprozess finden Sie unter [Verwenden der Klassen zum Schreiben](../mfc/using-the-classes-to-write-applications-for-windows.md)von Anwendungen für Windows .
 
 > [!NOTE]
->  Sie sollten den Endbenutzern die Möglichkeit geben, die Steuerelemente der Datensatzansicht vom Recordset zu aktualisieren. Ohne diese Funktion kann der Benutzer den aktuellen Datensatz möglicherweise nicht verlassen, wenn er als Wert für ein Steuerelement einen unzulässigen Wert eingibt. Um die Steuerelemente zu aktualisieren, müssen Sie die `CWnd` Member-Funktion [UpdateData](../mfc/reference/cwnd-class.md#updatedata) mit dem Parameter false aufrufen.
+> Sie sollten den Endbenutzern die Möglichkeit geben, die Steuerelemente der Datensatzansicht vom Recordset zu aktualisieren. Ohne diese Funktion kann der Benutzer den aktuellen Datensatz möglicherweise nicht verlassen, wenn er als Wert für ein Steuerelement einen unzulässigen Wert eingibt. Um die Steuerelemente zu `CWnd` aktualisieren, rufen Sie die Memberfunktion [UpdateData](../mfc/reference/cwnd-class.md#updatedata) mit dem Parameter FALSE auf.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Verwenden einer Daten Satz Ansicht](../data/using-a-record-view-mfc-data-access.md)
+[Verwenden einer Datensatzansicht](../data/using-a-record-view-mfc-data-access.md)

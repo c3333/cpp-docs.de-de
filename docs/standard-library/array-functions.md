@@ -10,22 +10,22 @@ helpviewer_keywords:
 - std::array [C++], get
 - std::get [C++]
 - std::swap [C++]
-ms.openlocfilehash: 61b5404d0f22cd902e35f6bee680df3c719804f2
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: d54e430853959c77b4042092409a8640a169e4c8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424068"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364931"
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt;-Funktionen
 
-Das \<Array >-Header enthält zwei nicht-Member-Funktionen, `get` und `swap`, die für **Array** Objekte verwendet werden.
+Der \<Array->-Header enthält zwei `get` `swap`Nicht-Member-Funktionen und , die für **Arrayobjekte** ausgeführt werden.
 
 |||
 |-|-|
 |[get](#get)|[swap](#swap)|
 
-## <a name="get"></a> get
+## <a name="get"></a><a name="get"></a>Erhalten
 
 Gibt einen Verweis auf das angegebene Element des Arrays zurück.
 
@@ -51,7 +51,7 @@ Der Typ eines Elements.
 *N*\
 Die Anzahl der Elemente im Array.
 
-*arr* -\
+*Arr*\
 Das Array, aus dem die Auswahl erfolgt.
 
 ### <a name="example"></a>Beispiel
@@ -86,9 +86,9 @@ int main()
 1 3
 ```
 
-## <a name="swap"></a> swap
+## <a name="swap"></a><a name="swap"></a>Swap
 
-Eine nicht-Member-Vorlagen Spezialisierung von `std::swap`, die zwei **Array** Objekte tauscht.
+Eine Spezialisierung ohne `std::swap` Mitgliedsvorlage, bei der zwei **Arrayobjekte** ausgetauscht werden.
 
 ```cpp
 template <class Ty, std::size_t N>
@@ -97,19 +97,19 @@ void swap(array<Ty, N>& left, array<Ty, N>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Das erste auszutauschende Array.
 
-*Rechte*\
+*Richting*\
 Das zweite auszutauschende Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
@@ -161,4 +161,4 @@ int main()
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<array>](../standard-library/array.md)
+[\<Array->](../standard-library/array.md)

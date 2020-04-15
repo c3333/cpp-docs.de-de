@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CD2DRectU [MFC], CD2DRectU
 - CD2DRectU [MFC], IsNull
 ms.assetid: a62f17d1-011d-4867-8f51-fd7e7c00561d
-ms.openlocfilehash: 4bbf7014fc1b612804289dcb647f85b5e7905aeb
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 26e647ae01a498a6ad8ca2d7c866f33b01910881
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68244392"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369113"
 ---
 # <a name="cd2drectu-class"></a>CD2DRectU-Klasse
 
@@ -31,21 +31,21 @@ class CD2DRectU : public D2D1_RECT_U;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DRectU::CD2DRectU](#cd2drectu)|Überladen. Erstellt eine `CD2DRectU` -Sitzungsobjekts `D2D1_RECT_U` Objekt.|
+|[CD2DRectU::CD2DRectU](#cd2drectu)|Ist überladen. Erstellt ein `CD2DRectU` Objekt `D2D1_RECT_U` aus einem Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DRectU::IsNull](#isnull)|Gibt eine **booleschen** Wert, der angibt, ob ein Ausdruck keine gültigen Daten (NULL) enthält.|
+|[CD2DRectU::IsNull](#isnull)|Gibt einen **booleschen** Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (NULL) enthält.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DRectU::Operator CRect](#operator_crect)|Konvertiert `CD2DRectU` zu `CRect` Objekt.|
+|[CD2DRectU::operator CRect](#operator_crect)|Konvertiert `CD2DRectU` in `CRect` ein Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -55,11 +55,11 @@ class CD2DRectU : public D2D1_RECT_U;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="cd2drectu"></a>  CD2DRectU::CD2DRectU
+## <a name="cd2drectucd2drectu"></a><a name="cd2drectu"></a>CD2DRectU::CD2DRectU
 
-Erstellt ein Objekt CD2DRectU aus CRect-Objekt.
+Erstellt ein CD2DRectU-Objekt aus dem CRect-Objekt.
 
 ```
 CD2DRectU(const CRect& rect);
@@ -79,20 +79,20 @@ CD2DRectU(
 Quellrechteck
 
 *uLeft*<br/>
-linke Koordinate der Quelle
+Quell-Links-Koordinate
 
 *uTop*<br/>
-obere Koordinate der Quelle
+Quell-Top-Koordinate
 
 *uRight*<br/>
-Quelle, die rechte Koordinate
+Quell-Rechte-Koordinate
 
 *uBottom*<br/>
-die untere Quellkoordinate
+Quell-Bodenkoordinate
 
-##  <a name="isnull"></a>  CD2DRectU::IsNull
+## <a name="cd2drectuisnull"></a><a name="isnull"></a>CD2DRectU::IsNull
 
-Gibt einen booleschen Wert, der angibt, ob ein Ausdruck keine gültigen Daten (Null) enthält.
+Gibt einen booleschen Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (Null) enthält.
 
 ```
 BOOL IsNull() const;
@@ -100,11 +100,11 @@ BOOL IsNull() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn oben, links, unteren und rechten Werte des Rechtecks alle gleich 0 sind. andernfalls "false".
+TRUE, wenn die oberen, linken, unteren und rechten Werte des Rechtecks alle gleich 0 sind. andernfalls FALSE.
 
-##  <a name="operator_crect"></a>  CD2DRectU::Operator CRect
+## <a name="cd2drectuoperator-crect"></a><a name="operator_crect"></a>CD2DRectU::operator CRect
 
-CD2DRectU konvertiert in CRect-Objekt.
+Konvertiert CD2DRectU in CRect-Objekt.
 
 ```
 operator CRect();
@@ -112,7 +112,7 @@ operator CRect();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Aktuelle Wert der D2D-Rechteck.
+Aktueller Wert des D2D-Rechtecks.
 
 ## <a name="see-also"></a>Siehe auch
 

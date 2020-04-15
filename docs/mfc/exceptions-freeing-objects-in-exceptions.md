@@ -11,56 +11,56 @@ helpviewer_keywords:
 - throwing exceptions [MFC], after destroying
 - exception handling [MFC], destroying objects
 ms.assetid: 3b14b4ee-e789-4ed2-b8e3-984950441d97
-ms.openlocfilehash: 23fe85018d1bc2c41371afec2ad6931755e4e682
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 49c7c6b0481f90baa23609c1bb1596deda49f7bd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62406066"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371989"
 ---
 # <a name="exceptions-freeing-objects-in-exceptions"></a>Ausnahmen: Freigeben von Objekten in Ausnahmen
 
-Dieser Artikel beschreibt die Notwendigkeit und die-Methode der Objekte freigeben, wenn eine Ausnahme auftritt. Folgende Themen werden behandelt:
+In diesem Artikel werden die Notwendigkeit und die Methode zum Freiwerden von Objekten erläutert, wenn eine Ausnahme auftritt. Dabei werden folgende Themen behandelt:
 
-- [Behandlung der Ausnahme lokal](#_core_handling_the_exception_locally)
+- [Behandeln der Ausnahme lokal](#_core_handling_the_exception_locally)
 
 - [Auslösen von Ausnahmen nach dem Zerstören von Objekten](#_core_throwing_exceptions_after_destroying_objects)
 
-Ausnahmen ausgelöst werden, indem Sie das Framework oder Ihrer Anwendung Unterbrechung des normalen Programmablauf. Daher ist es sehr wichtig, das Schließen von Objekten nachzuverfolgen, damit Sie ordnungsgemäß entfernt können für den Fall, dass eine Ausnahme ausgelöst wird.
+Ausnahmen, die vom Framework oder von Ihrer Anwendung ausgelöst werden, unterbrechen den normalen Programmfluss. Daher ist es sehr wichtig, Objekte genau zu verfolgen, damit Sie sie ordnungsgemäß entsorgen können, falls eine Ausnahme ausgelöst wird.
 
-Es gibt zwei Hauptmethoden, um dies zu tun.
+Dazu gibt es zwei primäre Methoden.
 
-- Behandeln von Ausnahmen, die lokal mithilfe der **versuchen** und **catch** Schlüsselwörter, zerstören Sie anschließend alle Objekte mit einer Anweisung.
+- Behandeln Sie Ausnahmen lokal mit den **try** and **catch-Schlüsselwörtern,** und zerstören Sie dann alle Objekte mit einer Anweisung.
 
-- Löschen Sie ein Objekt in der **catch** Block vor dem Auslösen der Ausnahme außerhalb des Blocks für die weitere Verarbeitung.
+- Zerstören Sie jedes Objekt im **Catch-Block,** bevor Sie die Ausnahme zur weiteren Behandlung außerhalb des Blocks auslösen.
 
-Diese beiden Ansätze werden im folgenden als Lösungen, die im folgenden Beispiel für die problematische dargestellt:
+Diese beiden Ansätze werden im Folgenden als Lösung für das folgende problematische Beispiel veranschaulicht:
 
 [!code-cpp[NVC_MFCExceptions#14](../mfc/codesnippet/cpp/exceptions-freeing-objects-in-exceptions_1.cpp)]
 
-Wie oben beschrieben eingeben, `myPerson` wird nicht gelöscht werden, wenn eine Ausnahme, indem ausgelöst wird `SomeFunc`. Springt direkt an den nächsten äußeren Ausnahme-Handler, umgehen die normale Funktion beenden und den Code, der das Objekt wird gelöscht. Der Zeiger auf das Objekt den Gültigkeitsbereich verlässt, wenn die Ausnahme bewirkt, die Funktion dass, und der vom Objekt belegte Arbeitsspeicher wird nie wiederhergestellt werden, solange das Programm ausgeführt wird. Hierbei handelt es sich um einen Speicherverlust. Sie würden die Speicherdiagnose mit erkannt werden.
+Wie oben `myPerson` geschrieben, wird nicht gelöscht, `SomeFunc`wenn eine Ausnahme von ausgelöst wird. Die Ausführung springt direkt zum nächsten äußeren Ausnahmehandler, unter Umgehung des normalen Funktionsausgangs und des Codes, der das Objekt löscht. Der Zeiger auf das Objekt geht aus dem Gültigkeitsbereich, wenn die Ausnahme die Funktion verlässt, und der vom Objekt belegte Speicher wird nie wiederhergestellt, solange das Programm ausgeführt wird. Dies ist ein Speicherleck; Sie wird mithilfe der Speicherdiagnose erkannt.
 
-##  <a name="_core_handling_the_exception_locally"></a> Behandlung der Ausnahme lokal
+## <a name="handling-the-exception-locally"></a><a name="_core_handling_the_exception_locally"></a>Behandeln der Ausnahme lokal
 
-Die **Try/Catch-** Paradigma bietet eine defensive Programmierung-Methode für die Speicherverluste zu vermeiden und sicherzustellen, dass Ihre Objekte zerstört werden, wenn Ausnahmen auftreten. Im Beispiel weiter oben in diesem Artikel vorgestellte könnte beispielsweise wie folgt umgeschrieben werden:
+Das **try/catch-Paradigma** bietet eine defensive Programmiermethode, um Speicherverluste zu vermeiden und sicherzustellen, dass Ihre Objekte zerstört werden, wenn Ausnahmen auftreten. Beispielsweise könnte das oben in diesem Artikel gezeigte Beispiel wie folgt umgeschrieben werden:
 
 [!code-cpp[NVC_MFCExceptions#15](../mfc/codesnippet/cpp/exceptions-freeing-objects-in-exceptions_2.cpp)]
 
-Dieses neue Beispiel richtet einen Ausnahmehandler, der die Ausnahme abfangen und behandeln ihn lokal aus. Klicken Sie dann die Funktion normalerweise beendet, und das Objekt zerstört wird. Der wichtigste Aspekt dieses Beispiels ist, dass ein Kontext, der die Ausnahme abfangen eingerichtet wird, mit der **Try/Catch-** Blöcke. Ohne einen Frame mit Ausnahme der lokalen, würde die Funktion nie wissen, dass eine Ausnahme ausgelöst wurde und die Möglichkeit, normal beendet, und zerstört das Objekt keine.
+In diesem neuen Beispiel wird ein Ausnahmehandler eingerichtet, um die Ausnahme abzufangen und lokal zu behandeln. Anschließend wird die Funktion normal beendet und das Objekt zerstört. Der wichtige Aspekt dieses Beispiels ist, dass ein Kontext zum Abfangen der Ausnahme mit den **try/catch-Blöcken** eingerichtet wird. Ohne einen lokalen Ausnahmerahmen würde die Funktion nie wissen, dass eine Ausnahme ausgelöst wurde, und hätte nicht die Möglichkeit, das Objekt normal zu beenden und zu zerstören.
 
-##  <a name="_core_throwing_exceptions_after_destroying_objects"></a> Auslösen von Ausnahmen nach dem Zerstören von Objekten
+## <a name="throwing-exceptions-after-destroying-objects"></a><a name="_core_throwing_exceptions_after_destroying_objects"></a>Auslösen von Ausnahmen nach dem Zerstören von Objekten
 
-Eine weitere Möglichkeit, Ausnahmen zu behandeln ist an den nächsten äußeren Ausnahmebehandlung-Kontext übergeben. In Ihrer **catch** blockieren, die Ihnen einige Bereinigungsschritte der lokal zugeordneten Objekte und dann auf die Ausnahme auslöst, zur weiteren Verarbeitung.
+Eine andere Möglichkeit, Ausnahmen zu behandeln, besteht darin, sie an den nächsten äußeren Ausnahmebehandlungskontext weiterzugeben. In Ihrem **Catch-Block** können Sie einige Bereinigungen Ihrer lokal zugewiesenen Objekte tun und dann die Ausnahme zur weiteren Verarbeitung auslösen.
 
-Die auslösende Funktion kann oder nicht Heap-Objekte freigeben müssen. Wenn die Funktion immer das heapobjekt vor der Rückgabe im Normalfall, Zuordnung, und klicken Sie dann die Funktion auch das heapobjekt Aufheben der Zuordnung sollte vor dem Auslösen der Ausnahme. Auf der anderen Seite, wenn die Funktion nicht normalerweise das Objekt heben die Zuordnung vor der Rückgabe im Normalfall müssen Sie auf von Fall zu Fall entscheiden, ob das heapobjekt aufgehoben werden soll.
+Die Wurffunktion muss heap-Objekte möglicherweise deallocatezuweisen. Wenn die Funktion das Heapobjekt immer auflöst, bevor es im normalen Fall zurückgegeben wird, sollte die Funktion auch das Heapobjekt aufteilen, bevor die Ausnahme ausgelöst wird. Wenn die Funktion hingegen das Objekt normalerweise nicht abteilt, bevor es im Normalfall zurückgegeben wird, müssen Sie von Fall zu Fall entscheiden, ob das Heapobjekt zugeordnet werden soll.
 
-Das folgende Beispiel zeigt, wie lokal zugewiesene Objekte können bereinigt werden:
+Das folgende Beispiel zeigt, wie lokal zugeordnete Objekte bereinigt werden können:
 
 [!code-cpp[NVC_MFCExceptions#16](../mfc/codesnippet/cpp/exceptions-freeing-objects-in-exceptions_3.cpp)]
 
-Der Ausnahmemechanismus wird automatisch die Keyframe-Objekte; der Destruktor des Frameobjekts wird auch bezeichnet.
+Der Ausnahmemechanismus weist Frameobjekte automatisch auf. der Destruktor des Frameobjekts wird auch aufgerufen.
 
-Wenn Sie Funktionen, die Ausnahmen auslösen kann aufrufen, können Sie **Try/Catch-** Blöcke, um sicherzustellen, dass Sie die Ausnahmen abfangen und haben die Möglichkeit, Objekte zu zerstören Sie erstellt haben. Bedenken Sie insbesondere darauf, dass viele Funktionen von MFC-Ausnahmen auslösen können.
+Wenn Sie Funktionen aufrufen, die Ausnahmen auslösen können, können Sie **try/catch-Blöcke** verwenden, um sicherzustellen, dass Sie die Ausnahmen abfangen und die Möglichkeit haben, alle von Ihnen erstellten Objekte zu zerstören. Beachten Sie insbesondere, dass viele MFC-Funktionen Ausnahmen auslösen können.
 
 Weitere Informationen finden Sie unter [Ausnahmen: Abfangen und Löschen von Ausnahmen](../mfc/exceptions-catching-and-deleting-exceptions.md).
 

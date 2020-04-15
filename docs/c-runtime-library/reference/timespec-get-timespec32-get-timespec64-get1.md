@@ -1,10 +1,12 @@
 ---
 title: timespec_get, _timespec32_get, _timespec64_get1
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - timespec_get
 - _timespec32_get
 - _timespec64_get
+- _o__timespec32_get
+- _o__timespec64_get
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _timespec32_get function
 - _timespec64_get function
 ms.assetid: ed757258-b4f2-4c1d-a91b-22ea6ffce4ab
-ms.openlocfilehash: c0517c974bf58d502133ccd9868149bd178790d6
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fc6d91b076f2dd2e25c55d9cf7062e81c3fab11a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957617"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362492"
 ---
 # <a name="timespec_get-_timespec32_get-_timespec64_get"></a>timespec_get, _timespec32_get, _timespec64_get
 
@@ -74,29 +77,31 @@ Ein implementierungsspezifischer Wert ungleich null, der die Zeitbasis angibt.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der Wert von *Base* , wenn erfolgreich, andernfalls wird NULL zurückgegeben.
+Der Wert der *Basis,* wenn sie erfolgreich ist, andernfalls gibt sie Null zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **timespec_get** -Funktionen legen die aktuelle Zeit in der Struktur fest, auf die durch das *time_spec* -Argument verwiesen wird. Alle Versionen dieser Struktur haben zwei Member, **tv_sec** und **tv_nsec**. Der **tv_sec** -Wert ist auf die ganze Anzahl von Sekunden und **tv_nsec** auf die ganzzahlige Anzahl von Nanosekunden festgelegt, auf die Auflösung der Systemuhr gerundet, seit dem Beginn der Epoche, die durch *Base*angegeben wird.
+Die **timespec_get-Funktionen** legen die aktuelle Zeit in der Struktur fest, auf die das *Argument time_spec* zeigt. Alle Versionen dieser Struktur haben zwei Member, **tv_sec** und **tv_nsec**. Der **tv_sec** Wert wird auf die gesamte Anzahl der Sekunden festgelegt und **tv_nsec** auf die integrale Anzahl von Nanosekunden, gerundet auf die Auflösung der Systemuhr, seit dem Beginn der Epoche durch *Basis*angegeben .
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Diese Funktionen unterstützen nur **TIME_UTC** als *Basiswert* . Dadurch wird der *time_spec* -Wert auf die Anzahl der Sekunden und Nanosekunden seit dem Beginn der Epoche, Mitternacht, 1. Januar 1970, koordinierte Weltzeit (UTC) festgelegt. In einer **Struktur** **_timespec32**ist **tv_sec** ein **__time32_t** -Wert. In einer **Struktur** **_timespec64**ist **tv_sec** ein **__time64_t** -Wert. In einer **Struktur** **timespec**ist **tv_sec** ein **time_t** -Typ, bei dem es sich um 32 Bits oder 64 Bits handelt, abhängig davon, ob das Präprozessormakro _USE_32BIT_TIME_T definiert ist. Die **timespec_get** -Funktion ist eine Inline Funktion, die **_timespec32_get** aufruft, wenn _USE_32BIT_TIME_T definiert ist. Andernfalls wird **_timespec64_get**aufgerufen.
+Diese Funktionen unterstützen nur **TIME_UTC** als *Basiswert.* Dadurch wird der *time_spec* Wert auf die Anzahl der Sekunden und Nanosekunden seit dem Epochenbeginn, Mitternacht, 1. Januar 1970, Koordinierte Weltzeit (UTC) festgelegt. In einer **Struktur** **_timespec32**ist **tv_sec** ein **__time32_t** Wert. In einer **Struktur** **_timespec64**ist **tv_sec** ein **__time64_t** Wert. In einer **Strukturzeitspezifikation** **ist tv_sec** ein **struct** **time_t** Typ, der 32 Bit oder 64 Bit lang ist, je nachdem, ob das Präprozessormakro _USE_32BIT_TIME_T definiert ist. Die **timespec_get-Funktion** ist eine Inline-Funktion, die **_timespec32_get** aufruft, wenn _USE_32BIT_TIME_T definiert ist. Andernfalls ruft sie **_timespec64_get**auf.
 
 **Ende Microsoft-spezifisch**
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**timespec_get**, **_timespec32_get**, **_timespec64_get**|C: \<time.h>, C++: \<ctime> oder \<time.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>
 [asctime_s, _wasctime_s](asctime-s-wasctime-s.md)<br/>
 [_ftime, _ftime32, _ftime64](ftime-ftime32-ftime64.md)<br/>

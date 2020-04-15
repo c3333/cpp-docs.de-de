@@ -43,22 +43,22 @@ helpviewer_keywords:
 - registry, writing to
 - Visual C++, writing to Windows Registry
 ms.assetid: b9a75cb4-0589-4d5b-92cb-5e8be42b4ac0
-ms.openlocfilehash: 413ccc3b66d76f8779861d4d65eb262ee8640725
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 99fce804ad30e01bdbaa99b1636a5238ff535f8b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384373"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371770"
 ---
 # <a name="windows-operations-ccli"></a>Windows-Vorgänge (C++/CLI)
 
-Veranschaulicht verschiedene Windows-spezifische Aufgaben, die mit dem Windows SDK.
+Veranschaulicht verschiedene Windows-spezifische Aufgaben mithilfe des Windows SDK.
 
-In den folgenden Themen veranschaulichen die verschiedenen Windows-Operationen mit dem Windows SDK, die mit Visual C++.
+In den folgenden Themen werden verschiedene Windows-Vorgänge veranschaulicht, die mit dem Windows SDK mit Visual C++ ausgeführt werden.
 
-## <a name="determine_shutdown"></a> Bestimmt, ob das Herunterfahren begonnen hat
+## <a name="determine-if-shutdown-has-started"></a><a name="determine_shutdown"></a>Stellen Sie fest, ob Shutdown gestartet wurde
 
-Im folgenden Codebeispiel wird veranschaulicht, zu bestimmen, ob die Anwendung oder .NET Framework gerade beendet wird. Dies ist nützlich für den Zugriff auf statische Elemente in .NET Framework, da während des Herunterfahrens können diese Konstrukte durch das System beendet werden und können nicht zuverlässig verwendet werden kann. Durch Überprüfen der <xref:System.Environment.HasShutdownStarted%2A> Eigenschaft zunächst können Sie potenzielle Fehler vermeiden, indem Sie nicht auf diese Elemente zugreifen.
+Im folgenden Codebeispiel wird veranschaulicht, wie Sie ermitteln, ob die Anwendung oder .NET Framework derzeit beendet wird. Dies ist nützlich für den Zugriff auf statische Elemente in .NET Framework, da diese Konstrukte während des Herunterfahrens vom System abgeschlossen werden und nicht zuverlässig verwendet werden können. Wenn Sie <xref:System.Environment.HasShutdownStarted%2A> zuerst die Eigenschaft überprüfen, können Sie potenzielle Fehler vermeiden, indem Sie nicht auf diese Elemente zugreifen.
 
 ### <a name="example"></a>Beispiel
 
@@ -76,9 +76,9 @@ int main()
 }
 ```
 
-## <a name="determine_user"></a> Ermitteln des interaktiven Zustands
+## <a name="determine-the-user-interactive-state"></a><a name="determine_user"></a>Bestimmen des interaktiven Benutzerstatus
 
-Im folgenden Codebeispiel wird veranschaulicht, zu bestimmen, ob der Code in einem interaktiven Kontext ausgeführt wird. Wenn <xref:System.Environment.UserInteractive%2A> ist "false", und klicken Sie dann der Code als ein Dienstprozess ausgeführt wird, oder aus in einer Webanwendung, in diesem Fall Sie nicht versuchen sollten, mit dem Benutzer interagieren.
+Im folgenden Codebeispiel wird veranschaulicht, wie Sie ermitteln, ob Code in einem benutzerinteraktiven Kontext ausgeführt wird. Wenn <xref:System.Environment.UserInteractive%2A> false ist, wird der Code als Dienstprozess oder innerhalb einer Webanwendung ausgeführt.
 
 ### <a name="example"></a>Beispiel
 
@@ -97,9 +97,9 @@ int main()
 }
 ```
 
-## <a name="read_registry"></a> Lesen von Daten aus der Windows-Registrierung
+## <a name="read-data-from-the-windows-registry"></a><a name="read_registry"></a>Lesen von Daten aus der Windows-Registrierung
 
-Im folgenden Codebeispiel wird der <xref:Microsoft.Win32.Registry.CurrentUser>-Schlüssel verwendet, um Daten aus der Windows-Registrierung zu lesen. Zunächst werden die Unterschlüssel mit aufgelistet der <xref:Microsoft.Win32.RegistryKey.GetSubKeyNames%2A> -Methode, und klicken Sie dann der Identities-Unterschlüssel mit geöffnet wird die <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A> Methode. Jeder Unterschlüssel wird wie ein Stammschlüssel durch die <xref:Microsoft.Win32.RegistryKey>-Klasse dargestellt. Schließlich werden mit dem neuen <xref:Microsoft.Win32.RegistryKey>-Objekt die Schlüssel/Wert-Paare aufgelistet.
+Im folgenden Codebeispiel wird der <xref:Microsoft.Win32.Registry.CurrentUser>-Schlüssel verwendet, um Daten aus der Windows-Registrierung zu lesen. Zuerst werden die Unterschlüssel mit der <xref:Microsoft.Win32.RegistryKey.GetSubKeyNames%2A> Methode aufgezählt, und dann <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A> wird der Unterschlüssel Identitäten mit der Methode geöffnet. Jeder Unterschlüssel wird wie ein Stammschlüssel durch die <xref:Microsoft.Win32.RegistryKey>-Klasse dargestellt. Schließlich werden mit dem neuen <xref:Microsoft.Win32.RegistryKey>-Objekt die Schlüssel/Wert-Paare aufgelistet.
 
 ### <a name="example"></a>Beispiel
 
@@ -140,22 +140,22 @@ int main( )
 }
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die <xref:Microsoft.Win32.Registry>-Klasse ist lediglich ein Container für statische Instanzen von <xref:Microsoft.Win32.RegistryKey>. Jede Instanz stellt einen Stammregistrierungsknoten dar. Die Instanzen sind <xref:Microsoft.Win32.Registry.ClassesRoot>, <xref:Microsoft.Win32.Registry.CurrentConfig>, <xref:Microsoft.Win32.Registry.CurrentUser>, <xref:Microsoft.Win32.Registry.LocalMachine> und <xref:Microsoft.Win32.Registry.Users>.
 
-Die Objekte innerhalb der <xref:Microsoft.Win32.Registry>-Klasse sind nicht nur statisch, sondern auch schreibgeschützt. Darüber hinaus sind Instanzen der <xref:Microsoft.Win32.RegistryKey>-Klasse, die für den Zugriff auf den Inhalt der Registrierungsobjekte erstellt wurden, ebenfalls schreibgeschützt. Ein Beispiel zum Überschreiben dieses Verhaltens finden Sie unter [Vorgehensweise: Schreiben von Daten in der Windows-Registrierung (C++ / CLI)](../dotnet/how-to-write-data-to-the-windows-registry-cpp-cli.md).
+Die Objekte innerhalb der <xref:Microsoft.Win32.Registry>-Klasse sind nicht nur statisch, sondern auch schreibgeschützt. Darüber hinaus sind Instanzen der <xref:Microsoft.Win32.RegistryKey>-Klasse, die für den Zugriff auf den Inhalt der Registrierungsobjekte erstellt wurden, ebenfalls schreibgeschützt. Ein Beispiel für das Überschreiben dieses Verhaltens finden Sie unter [Gewusst wie: Schreiben von Daten in die Windows-Registrierung (C++/CLI)](../dotnet/how-to-write-data-to-the-windows-registry-cpp-cli.md).
 
-In der <xref:Microsoft.Win32.Registry>-Klasse stehen zwei weitere Objekte zur Verfügung: <xref:Microsoft.Win32.Registry.DynData> und <xref:Microsoft.Win32.Registry.PerformanceData>. Bei beiden Objekten handelt es sich um Instanzen der <xref:Microsoft.Win32.RegistryKey>-Klasse. Die <xref:Microsoft.Win32.Registry.DynData> -Objekt enthält dynamische Registrierungsinformationen, die nur unter Windows 98 und Windows Me unterstützt wird Das <xref:Microsoft.Win32.Registry.PerformanceData>-Objekt dient dem Zugriff auf Informationen zu Leistungsindikatoren für Anwendungen, die das Leistungsüberwachungssystem von Windows verwenden. Die <xref:Microsoft.Win32.Registry.PerformanceData> Knoten enthält Informationen, die eigentlich nicht in der Registrierung gespeichert und daher nicht mit Regedit.exe angezeigt werden können.
+In der <xref:Microsoft.Win32.Registry>-Klasse stehen zwei weitere Objekte zur Verfügung: <xref:Microsoft.Win32.Registry.DynData> und <xref:Microsoft.Win32.Registry.PerformanceData>. Bei beiden Objekten handelt es sich um Instanzen der <xref:Microsoft.Win32.RegistryKey>-Klasse. Das <xref:Microsoft.Win32.Registry.DynData> Objekt enthält dynamische Registrierungsinformationen, die nur in Windows 98 und Windows Me unterstützt werden. Das <xref:Microsoft.Win32.Registry.PerformanceData>-Objekt dient dem Zugriff auf Informationen zu Leistungsindikatoren für Anwendungen, die das Leistungsüberwachungssystem von Windows verwenden. Der <xref:Microsoft.Win32.Registry.PerformanceData> Knoten stellt Informationen dar, die nicht tatsächlich in der Registrierung gespeichert sind und daher nicht mit Regedit.exe angezeigt werden können.
 
-## <a name="read_performance"></a> Lesen von Windows-Leistungsindikatoren
+## <a name="read-windows-performance-counters"></a><a name="read_performance"></a>Lesen von Windows-Leistungsindikatoren
 
-Einige Anwendungen und Windows-Subsysteme verfügbar machen Leistungsdaten über die Windows-Leistung-System. Diese Leistungsindikatoren können zugegriffen werden, mithilfe der <xref:System.Diagnostics.PerformanceCounterCategory> und <xref:System.Diagnostics.PerformanceCounter> Klassen, die in befinden die <xref:System.Diagnostics?displayProperty=fullName> Namespace.
+Einige Anwendungen und Windows-Subsysteme machen Leistungsdaten über das Windows-Leistungssystem verfügbar. Auf diese Leistungsindikatoren kann <xref:System.Diagnostics.PerformanceCounterCategory> <xref:System.Diagnostics.PerformanceCounter> mithilfe der und-Klassen zugegriffen werden, die sich im <xref:System.Diagnostics?displayProperty=fullName> Namespace befinden.
 
-Im folgenden Codebeispiel verwendet diese Klassen zum Abrufen und Anzeigen von einen Indikator, der aktualisiert wird, indem Windows an, dass der Prozentsatz der Zeit, die der Prozessor ausgelastet ist.
+Im folgenden Codebeispiel werden diese Klassen zum Abrufen und Anzeigen eines Leistungsindikators verwendet, der von Windows aktualisiert wird, um den Prozentsatz der Zeit anzugeben, die der Prozessor ausgelastet ist.
 
 > [!NOTE]
->  Für dieses Beispiel benötigen Sie Administratorrechte, um es unter Windows Vista auszuführen.
+> Für dieses Beispiel benötigen Sie Administratorrechte, um es unter Windows Vista auszuführen.
 
 ### <a name="example"></a>Beispiel
 
@@ -246,9 +246,9 @@ int main()
 }
 ```
 
-## <a name="retrieve_text"></a> Abrufen von Text aus der Zwischenablage
+## <a name="retrieve-text-from-the-clipboard"></a><a name="retrieve_text"></a>Abrufen von Text aus der Zwischenablage
 
-Im folgenden Codebeispiel wird die <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> Member-Funktion zur Rückgabe eines Zeigers auf die <xref:System.Windows.Forms.IDataObject> Schnittstelle. Diese Schnittstelle kann dann abgefragt, die für das Format der Daten und verwendet, um die eigentlichen Daten abzurufen.
+Im folgenden Codebeispiel <xref:System.Windows.Forms.Clipboard.GetDataObject%2A> wird die Memberfunktion verwendet, um einen Zeiger auf die <xref:System.Windows.Forms.IDataObject> Schnittstelle zurückzugeben. Diese Schnittstelle kann dann nach dem Format der Daten abgefragt und zum Abrufen der tatsächlichen Daten verwendet werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -286,9 +286,9 @@ using namespace System::Windows::Forms;
 }
 ```
 
-## <a name="retrieve_current"></a> Abrufen des aktuellen Benutzernamens
+## <a name="retrieve-the-current-username"></a><a name="retrieve_current"></a>Abrufen des aktuellen Benutzernamens
 
-Das folgende Codebeispiel veranschaulicht das Abrufen des aktuellen Benutzernamens (der Name des Benutzers bei Windows angemeldet ist). Der Name befindet sich in der <xref:System.Environment.UserName%2A> Zeichenfolge, die in definierten die <xref:System.Environment> Namespace.
+Das folgende Codebeispiel veranschaulicht den Abruf des aktuellen Benutzernamens (der Name des bei Windows angemeldeten Benutzers). Der Name wird <xref:System.Environment.UserName%2A> in der Zeichenfolge gespeichert, die im <xref:System.Environment> Namespace definiert ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -304,9 +304,9 @@ int main()
 }
 ```
 
-## <a name="retrieve_dotnet"></a> Abrufen der .NET Framework-Version
+## <a name="retrieve-the-net-framework-version"></a><a name="retrieve_dotnet"></a>Abrufen der .NET Framework-Version
 
-Im folgenden Codebeispiel wird veranschaulicht, wie zum Ermitteln der Version der installierten .NET Framework mit der <xref:System.Environment.Version%2A> -Eigenschaft, die ein Zeiger auf eine <xref:System.Version> Objekt, das die Versionsinformationen enthält.
+Im folgenden Codebeispiel wird veranschaulicht, wie die Version von <xref:System.Environment.Version%2A> .NET Framework mit der <xref:System.Version> Eigenschaft bestimmt wird, bei der es sich um einen Zeiger auf ein Objekt handelt, das die Versionsinformationen enthält.
 
 ### <a name="example"></a>Beispiel
 
@@ -331,9 +331,9 @@ int main()
 }
 ```
 
-## <a name="retrieve_local"></a> Abrufen des lokalen Computernamens
+## <a name="retrieve-the-local-machine-name"></a><a name="retrieve_local"></a>Abrufen des lokalen Computernamens
 
-Das folgende Codebeispiel veranschaulicht das Abrufen des lokalen Computernamens (in einem Netzwerk wird der Name des Computers, wie er angezeigt). Sie erreichen dies durch Abrufen der <xref:System.Environment.MachineName%2A> Zeichenfolge, die in definiert ist die <xref:System.Environment> Namespace.
+Im folgenden Codebeispiel wird der Abruf des lokalen Computernamens (der Name des Computers, wie er in einem Netzwerk angezeigt wird) veranschaulicht. Sie können dies <xref:System.Environment.MachineName%2A> erreichen, indem Sie <xref:System.Environment> die Zeichenfolge abrufen, die im Namespace definiert ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -349,9 +349,9 @@ int main()
 }
 ```
 
-## <a name="retrieve_version"></a> Rufen Sie die Windows-Version
+## <a name="retrieve-the-windows-version"></a><a name="retrieve_version"></a>Abrufen der Windows-Version
 
-Im folgenden Codebeispiel wird veranschaulicht, wie zum Abrufen der Plattform und-Version Informationen des aktuellen Betriebssystems wird. Diese Informationen werden gespeichert, der <xref:System.Environment.OSVersion%2A?displayProperty=fullName> Eigenschaft besteht aus einer Enumeration, die die Version von Windows im großen und ganzen beschreibt und <xref:System.Environment.Version%2A> -Objekt, das den genauen Build des Betriebssystems enthält.
+Im folgenden Codebeispiel wird veranschaulicht, wie die Plattform- und Versionsinformationen des aktuellen Betriebssystems abgerufen werden. Diese Informationen werden <xref:System.Environment.OSVersion%2A?displayProperty=fullName> in der Eigenschaft gespeichert und bestehen aus einer Enumeration, die die Windows-Version in groben Zügen beschreibt, und einem <xref:System.Environment.Version%2A> Objekt, das den genauen Build des Betriebssystems enthält.
 
 ### <a name="example"></a>Beispiel
 
@@ -391,9 +391,9 @@ int main()
 }
 ```
 
-## <a name="retrieve_time"></a> Abrufen der vergangenen Zeit seit dem Start
+## <a name="retrieve-time-elapsed-since-startup"></a><a name="retrieve_time"></a>Abruf der seit dem Start verstrichenen Zeit
 
-Im folgenden Codebeispiel wird veranschaulicht, um zu bestimmen, die Anzahl der Ticks, oder die Anzahl der Millisekunden, die seit Windows vergangen sind, wurde gestartet. Dieser Wert befindet sich in der <xref:System.Environment.TickCount%2A?displayProperty=fullName> Member und, da es sich um einen 32-Bit-Wert handelt, wird auf Null zurückgesetzt ungefähr alle 24,9 Tage.
+Im folgenden Codebeispiel wird veranschaulicht, wie Sie die Tickanzahl oder die Anzahl der Millisekunden bestimmen, die seit dem Start von Windows verstrichen sind. Dieser Wert wird <xref:System.Environment.TickCount%2A?displayProperty=fullName> im Member gespeichert und, da es sich um einen 32-Bit-Wert handelt, ungefähr alle 24,9 Tage auf Null zurückgesetzt.
 
 ### <a name="example"></a>Beispiel
 
@@ -420,9 +420,9 @@ int main( )
 }
 ```
 
-## <a name="store_text"></a> Store-Text in der Zwischenablage
+## <a name="store-text-in-the-clipboard"></a><a name="store_text"></a>Speichern von Text in der Zwischenablage
 
-Im folgenden Codebeispiel wird die <xref:System.Windows.Forms.Clipboard> Objekt definiert, der <xref:System.Windows.Forms> Namespace zum Speichern einer Zeichenfolge. Dieses Objekt stellt zwei Memberfunktionen: <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> und <xref:System.Windows.Forms.Clipboard.GetDataObject%2A>. Daten werden in der Zwischenablage gespeichert, per jedes Objekt abgeleitet <xref:System.Object> zu <xref:System.Windows.Forms.Clipboard.SetDataObject%2A>.
+Im folgenden Codebeispiel <xref:System.Windows.Forms.Clipboard> wird das <xref:System.Windows.Forms> im Namespace definierte Objekt zum Speichern einer Zeichenfolge verwendet. Dieses Objekt stellt zwei <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> <xref:System.Windows.Forms.Clipboard.GetDataObject%2A>Memberfunktionen bereit: und . Die Daten werden in der Zwischenablage <xref:System.Object> <xref:System.Windows.Forms.Clipboard.SetDataObject%2A>gespeichert, indem jedes von abgeleitete Objekt an gesendet wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -451,9 +451,9 @@ using namespace System::Windows::Forms;
 }
 ```
 
-## <a name="write_data"></a> Schreiben von Daten in der Windows-Registrierung
+## <a name="write-data-to-the-windows-registry"></a><a name="write_data"></a>Schreiben von Daten in die Windows-Registrierung
 
-Im folgenden Codebeispiel wird die <xref:Microsoft.Win32.Registry.CurrentUser> zu eine schreibbare Instanz der zu erstellenden Schlüssels, der <xref:Microsoft.Win32.RegistryKey> Klasse entspricht dem **Software** Schlüssel. Anschließend wird die <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>-Methode verwendet, um einen neuen Schlüssel zu erstellen und Schlüssel/Wert-Paare hinzuzufügen.
+Im folgenden Codebeispiel <xref:Microsoft.Win32.Registry.CurrentUser> wird der Schlüssel verwendet, <xref:Microsoft.Win32.RegistryKey> um eine beschreibbare Instanz der Klasse zu erstellen, die dem **Softwareschlüssel** entspricht. Anschließend wird die <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>-Methode verwendet, um einen neuen Schlüssel zu erstellen und Schlüssel/Wert-Paare hinzuzufügen.
 
 ### <a name="example"></a>Beispiel
 
@@ -501,9 +501,9 @@ int main()
 }
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können .NET Framework verwenden, um Zugriff auf die Registrierung mit der <xref:Microsoft.Win32.Registry> und <xref:Microsoft.Win32.RegistryKey> Klassen, die beide sind definiert, der <xref:Microsoft.Win32> Namespace. Die **Registrierung** Klasse ist ein Container für statische Instanzen von der <xref:Microsoft.Win32.RegistryKey> Klasse. Jede Instanz stellt einen Stammregistrierungsknoten dar. Die Instanzen sind <xref:Microsoft.Win32.Registry.ClassesRoot>, <xref:Microsoft.Win32.Registry.CurrentConfig>, <xref:Microsoft.Win32.Registry.CurrentUser>, <xref:Microsoft.Win32.Registry.LocalMachine> und <xref:Microsoft.Win32.Registry.Users>.
+Sie können .NET Framework verwenden, um <xref:Microsoft.Win32.Registry> <xref:Microsoft.Win32.RegistryKey> auf die Registrierung mit <xref:Microsoft.Win32> den und-Klassen zuzugreifen, die beide im Namespace definiert sind. Die **Registry-Klasse** ist ein Container <xref:Microsoft.Win32.RegistryKey> für statische Instanzen der Klasse. Jede Instanz stellt einen Stammregistrierungsknoten dar. Die Instanzen sind <xref:Microsoft.Win32.Registry.ClassesRoot>, <xref:Microsoft.Win32.Registry.CurrentConfig>, <xref:Microsoft.Win32.Registry.CurrentUser>, <xref:Microsoft.Win32.Registry.LocalMachine> und <xref:Microsoft.Win32.Registry.Users>.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
@@ -511,4 +511,4 @@ Sie können .NET Framework verwenden, um Zugriff auf die Registrierung mit der <
 
 ## <a name="see-also"></a>Siehe auch
 
-[.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+[.NET Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

@@ -1,61 +1,112 @@
 ---
 title: C++-Beispielprojekt für die Codeanalyse
-ms.date: 11/04/2016
+description: Erstellen einer Beispiellösung für die Verwendung in der exemplarischen Vorgehensweise für Die Codeanalyse für Microsoft C++ in Visual Studio.
+ms.date: 04/14/2020
 ms.topic: sample
 helpviewer_keywords:
 - demo sample [Visual Studio ALM]
 - code analysis, samples
 ms.assetid: 09e1b9f7-5916-4ed6-a001-5c2d7e710682
-ms.openlocfilehash: 1966e9cec5825ae37728bbf28c0f21ff4eed62fc
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: c2a1b8c80b7e7aebd1f1530c66ade5859b392028
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "79467220"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372061"
 ---
 # <a name="sample-c-project-for-code-analysis"></a>C++-Beispielprojekt für die Codeanalyse
 
-In den folgenden Vorgehensweisen wird veranschaulicht, wie Sie das Beispiel für Exemplarische Vorgehensweise [: Analysieren von C/C++ Code auf Fehler](../code-quality/walkthrough-analyzing-c-cpp-code-for-defects.md)erstellen. Mithilfe dieser Prozeduren wird Folgendes erstellt:
+Die folgenden Verfahren zeigen Ihnen, wie Sie das Beispiel für [die exemplarische Vorgehensweise erstellen: Analysieren sie C/C++-Code für Fehler](../code-quality/walkthrough-analyzing-c-cpp-code-for-defects.md). Mithilfe dieser Prozeduren wird Folgendes erstellt:
 
-- Eine Visual Studio-Projektmappe namens „CppDemo“
+- Eine Visual Studio-Lösung mit dem Namen *CppDemo*.
 
-- Ein statisches Bibliotheksprojekt namens „CodeDefects“
+- Ein statisches Bibliotheksprojekt mit dem Namen *CodeDefects*.
 
-- Ein statisches Bibliotheksprojekt namens „Annotations“
+- Ein *statisches Bibliotheksprojekt*mit dem Namen Annotations .
 
 Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien für die statischen Bibliotheken bereit.
 
 ## <a name="create-the-cppdemo-solution-and-the-codedefects-project"></a>Erstellen der CppDemo-Projektmappe und des CodeDefects-Projekts
 
-1. Öffnen Sie Visual Studio, und wählen Sie **Neues Projekt erstellen** aus.
+::: moniker range=">=vs-2019"
 
-1. Ändern Sie den Sprachfilter in **C++** .
+1. Öffnen Sie Visual Studio, und wählen **Sie Erstellen eines neuen Projekts** aus.
 
-1. Wählen Sie **Leeres Projekt** aus und klicken Sie auf **Weiter**.
+1. Ändern Sie im **Dialogfeld Erstellen eines neuen Projekts** den Sprachfilter in **C++**.
 
-1. Geben Sie im Textfeld **Projektname** **CodeDefects** ein.
+1. Wählen Sie **den Windows-Desktop-Assistenten** aus, und wählen Sie die Schaltfläche **Weiter** aus.
 
-1. Geben Sie im Textfeld **Projektmappenname** **CppDemo** ein.
+1. Geben Sie auf der Seite **Konfigurieren der neuen Projektseite** im Textfeld **Projektname** *CodeDefects*ein.
 
-1. Klicken Sie auf **Erstellen**
+1. Geben Sie im Textfeld **Lösungsname** *CppDemo*ein.
 
-## <a name="configure-the-codedefects-project-as-a-static-library"></a>Konfigurieren des CodeDefects-Projekts als statische Bibliothek
+1. Wählen Sie **Erstellen**.
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **CodeDefects**, und klicken Sie dann auf **Eigenschaften**.
+1. Ändern Sie im Dialogfeld **Windows Desktop Project** den **Anwendungstyp** in **Statische Bibliothek (.lib).**
 
-1. Erweitern Sie **Konfigurationseigenschaften**, und klicken Sie dann auf **Allgemein**.
+1. Wählen Sie unter **Zusätzliche Optionen**die Option **Leeres Projekt**aus.
 
-1. Ändern Sie in der Liste **Allgemein** die Option **Konfigurationstyp** in **Statische Bibliothek (.lib)** .
+1. Wählen Sie **OK,** um die Projektmappe und das Projekt zu erstellen.
 
-1. Ändern Sie in der Liste **Erweitert** die **Zieldateierweiterung** in **.lib**.
+::: moniker-end
+
+::: moniker range="vs-2017"
+
+1. Öffnen Sie Visual Studio. Wählen Sie in der Menüleiste **Datei** > **neues** > **Projekt**aus.
+
+1. Wählen Sie im Dialogfeld **Neues Projekt** **Visual C++** > **Windows Desktop**aus.
+
+1. Wählen Sie **den Windows-Desktop-Assistenten**aus.
+
+1. Geben Sie im Textfeld **Name** *CodeDefects ein.*
+
+1. Geben Sie im Textfeld **Lösungsname** *CppDemo*ein.
+
+1. Wählen Sie **OK**.
+
+1. Ändern Sie im Dialogfeld **Windows Desktop Project** den **Anwendungstyp** in **Statische Bibliothek (.lib).**
+
+1. Wählen Sie unter **Zusätzliche Optionen**die Option **Leeres Projekt**aus.
+
+1. Wählen Sie **OK,** um die Projektmappe und das Projekt zu erstellen.
+
+::: moniker-end
+
+::: moniker range="vs-2015"
+
+1. Öffnen Sie Visual Studio. Wählen Sie in der Menüleiste **Datei** > **neues** > **Projekt**aus.
+
+1. Wählen Sie im Dialogfeld **Neues Projekt** Die Option **Vorlagen** > **Visual C++** > **Win32**aus.
+
+1. Wählen Sie **Win32 Console Application**.
+
+1. Geben Sie im Textfeld **Name** *CodeDefects ein.*
+
+1. Geben Sie im Textfeld **Lösungsname** *CppDemo*ein.
+
+1. Wählen Sie **OK**.
+
+1. Wählen Sie im Dialogfeld **Win32 Application Wizard** die Schaltfläche **Weiter** aus.
+
+1. Ändern Sie den **Anwendungstyp** in **Statische Bibliothek**.
+
+1. Unter **Zusätzliche Optionen**die Option **Vorkompilierter Header**aufklicken.
+
+1. Wählen Sie **Fertig stellen** aus, um die Projektmappe und das Projekt zu erstellen.
+
+::: moniker-end
 
 ## <a name="add-the-header-and-source-file-to-the-codedefects-project"></a>Hinzufügen der Kopf- und Quelldatei zum CodeDefects-Projekt
 
-1. Erweitern Sie im Projektmappen-Explorer **CodeDefects**, klicken Sie mit der rechten Maustaste auf **Headerdateien**, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Element**.
+1. Erweitern Sie im Projektmappen-Explorer **CodeDefects**.
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Code** und dann auf **Headerdatei (.h)** .
+1. Klicken Sie mit der rechten Maustaste, um das Kontextmenü für **Headerdateien**zu öffnen. Wählen Sie**Neues Element** **hinzufügen** > .
 
-1. Geben Sie im Feld **Name** die Bezeichnung **Bug.h** ein, und klicken Sie dann auf **Hinzufügen**.
+1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option Visual **C++** > **Code**aus, und wählen Sie dann Header **Datei (.h)** aus.
+
+1. Geben Sie im Bearbeitungsfeld **Name** *Bug.h*ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
+
+1. Wählen Sie im Bearbeitungsfenster für *Bug.h*den Inhalt aus und löschen Sie ihn.
 
 1. Kopieren Sie den folgenden Code und fügen Sie ihn im Editor in der Datei *Bug.h* ein.
 
@@ -64,9 +115,8 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
 
     #include <windows.h>
 
-    // These functions are consumed by the sample
-    // but are not defined. This project cannot be linked!
-    bool CheckDomain(LPCTSTR);
+    // Function prototypes
+    bool CheckDomain(wchar_t const *);
     HRESULT ReadUserAccount();
 
     // These constants define the common sizes of the
@@ -75,11 +125,11 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
     const int ACCOUNT_DOMAIN_LEN = 128;
     ```
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Quelldateien**, zeigen Sie auf **Neu**, und klicken Sie anschließend auf **Neues Element**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste, um das Kontextmenü für **Quelldateien**zu öffnen. Wählen Sie**Neues Element** **hinzufügen** > .
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)** .
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**.
 
-1. Geben Sie im Feld **Name** die Bezeichnung **Bug.cpp** ein, und klicken Sie dann auf **Hinzufügen**.
+1. Geben Sie im Bearbeitungsfeld **Name** *Bug.cpp*ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
 
 1. Kopieren Sie den folgenden Code und fügen Sie ihn im Editor in der Datei *Bug.cpp* ein.
 
@@ -87,12 +137,22 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
     #include "Bug.h"
 
     // the user account
-    TCHAR g_userAccount[USER_ACCOUNT_LEN] = {};
+    wchar_t g_userAccount[USER_ACCOUNT_LEN] = { L"domain\\user" };
     int len = 0;
+
+    bool CheckDomain(wchar_t const* domain)
+    {
+        return (wcsnlen_s(domain, USER_ACCOUNT_LEN) > 0);
+    }
+
+    HRESULT ReadUserAccount()
+    {
+        return S_OK;
+    }
 
     bool ProcessDomain()
     {
-        TCHAR* domain = new TCHAR[ACCOUNT_DOMAIN_LEN];
+        wchar_t* domain = new wchar_t[ACCOUNT_DOMAIN_LEN];
         // ReadUserAccount gets a 'domain\user' input from
         //the user into the global 'g_userAccount'
         if (ReadUserAccount())
@@ -101,14 +161,14 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
             // character onto the 'domain' buffer
             for (len = 0; (len < ACCOUNT_DOMAIN_LEN) && (g_userAccount[len] != L'\0'); len++)
             {
-                if (g_userAccount[len] == '\\')
+                if (g_userAccount[len] == L'\\')
                 {
                     // Stops copying on the domain and user separator ('\')
                     break;
                 }
                 domain[len] = g_userAccount[len];
             }
-            if ((len = ACCOUNT_DOMAIN_LEN) || (g_userAccount[len] != '\\'))
+            if ((len = ACCOUNT_DOMAIN_LEN) || (g_userAccount[len] != L'\\'))
             {
                 // '\' was not found. Invalid domain\user string.
                 delete[] domain;
@@ -116,7 +176,7 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
             }
             else
             {
-                domain[len] = '\0';
+                domain[len] = L'\0';
             }
             // Process domain string
             bool result = CheckDomain(domain);
@@ -139,31 +199,77 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
     }
     ```
 
-1. Klicken Sie auf das Menü **Datei** und dann auf **Alle speichern**.
+1. Wählen Sie in der Menüleiste **Datei** > **speichern alle**aus.
 
 ## <a name="add-the-annotations-project-and-configure-it-as-a-static-library"></a>Hinzufügen des Annotations-Projekts und Konfigurieren dieses Projekts als statische Bibliothek
 
-1. Klicken Sie im Projektmappen-Explorer auf **CppDemo**, zeigen Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Projekt**.
+::: moniker range=">=vs-2019"
 
-1. Ändern Sie im Dialogfeld **Neues Projekt hinzufügen** den Sprachfilter in **C++** , wählen Sie **Leeres Projekt** aus und klicken Sie auf **Weiter**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **CppDemo,** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus .
 
-1. Geben Sie im Textfeld **Projektname** den Namen **Annotations** ein, und klicken Sie dann auf **Erstellen**.
+1. Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** die Option Windows Desktop **Wizard**aus, und wählen Sie dann die Schaltfläche **Weiter** aus.
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Annotations**, und klicken Sie dann auf **Eigenschaften**.
+1. Geben Sie auf der Seite **Konfigurieren der neuen Projektseite** im Textfeld **Projektname** *Anmerkungen*ein, und wählen Sie dann **Erstellen**aus.
 
-1. Erweitern Sie **Konfigurationseigenschaften**, und klicken Sie dann auf **Allgemein**.
+1. Ändern Sie im Dialogfeld **Windows Desktop Project** den **Anwendungstyp** in **Statische Bibliothek (.lib).**
 
-1. Ändern Sie in der Liste **Allgemein** die Option **Konfigurationstyp** und klicken Sie dann auf **Statische Bibliothek (.lib)** .
+1. Wählen Sie unter **Zusätzliche Optionen**die Option **Leeres Projekt**aus.
 
-1. Wählen Sie in der Liste **Erweitert** den Text in der Spalte neben **Zieldateierweiterung** aus, und geben Sie dann **.lib** ein.
+1. Wählen Sie **OK,** um das Projekt zu erstellen.
+
+::: moniker-end
+
+::: moniker range="vs-2017"
+
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **CppDemo,** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus .
+
+1. Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** die Option Visual **C++** > **Windows Desktop**aus.
+
+1. Wählen Sie **den Windows-Desktop-Assistenten**aus.
+
+1. Geben Sie im Textfeld **Name** *Anmerkungen*ein, und wählen Sie dann **OK**aus.
+
+1. Ändern Sie im Dialogfeld **Windows Desktop Project** den **Anwendungstyp** in **Statische Bibliothek (.lib).**
+
+1. Wählen Sie unter **Zusätzliche Optionen**die Option **Leeres Projekt**aus.
+
+1. Wählen Sie **OK,** um das Projekt zu erstellen.
+
+::: moniker-end
+
+::: moniker range="vs-2015"
+
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **CppDemo,** um das Kontextmenü zu öffnen. Wählen Sie**Neues Projekt** **hinzufügen** > aus .
+
+1. Wählen Sie im Dialogfeld **Neues Projekt hinzufügen** die Option Visual **C++** > **Win32**aus.
+
+1. Wählen Sie **Win32 Console Application**.
+
+1. Geben Sie im Textfeld **Name** *Anmerkungen*ein.
+
+1. Wählen Sie **OK**.
+
+1. Wählen Sie im Dialogfeld **Win32 Application Wizard** die Schaltfläche **Weiter** aus.
+
+1. Ändern Sie den **Anwendungstyp** in **Statische Bibliothek**.
+
+1. Unter **Zusätzliche Optionen**die Option **Vorkompilierter Header**aufklicken.
+
+1. Wählen Sie **Fertig stellen** aus, um das Projekt zu erstellen.
+
+::: moniker-end
 
 ## <a name="add-the-header-file-and-source-file-to-the-annotations-project"></a>Hinzufügen der Headerdatei und Quelldatei zum Annotations-Projekt
 
-1. Erweitern Sie im Projektmappen-Explorer **Annotations**, klicken Sie mit der rechten Maustaste auf **Headerdateien**, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Element**.
+1. Erweitern Sie im Projektmappen-Explorer **Anmerkungen**.
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Headerdatei (.h)** .
+1. Klicken Sie mit der rechten Maustaste, um das Kontextmenü für **Headerdateien** unter **Anmerkungen**zu öffnen. Wählen Sie**Neues Element** **hinzufügen** > .
 
-1. Geben Sie im Feld **Name** den **annotations.h** ein, und klicken Sie dann auf **Hinzufügen**.
+1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option Visual **C++** > **Code**aus, und wählen Sie dann Header **Datei (.h)** aus.
+
+1. Geben Sie im Bearbeitungsfeld **Name** *annotations.h*ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
+
+1. Wählen Sie im Bearbeitungsfenster für *annotations.h*den Inhalt aus und löschen Sie ihn.
 
 1. Kopieren Sie den folgenden Code, und fügen Sie ihn im Editor in der Datei *annotations.h* ein.
 
@@ -182,16 +288,23 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
     _Ret_maybenull_ LinkedList* AllocateNode();
     ```
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Quelldateien**, zeigen Sie auf **Neu**, und klicken Sie anschließend auf **Neues Element**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste, um das Kontextmenü für **Quelldateien** unter **Anmerkungen**zu öffnen. Wählen Sie**Neues Element** **hinzufügen** > .
 
-1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **Code** und dann auf **C++-Datei (.cpp)** .
+1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**.
 
-1. Geben Sie im Feld **Name** den **annotations.cpp** ein, und klicken Sie dann auf **Hinzufügen**.
+1. Geben Sie im Bearbeitungsfeld **Name** *annotations.cpp*ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
 
 1. Kopieren Sie den folgenden Code, und fügen Sie ihn im Editor in der Datei *annotations.cpp* ein.
 
     ```cpp
     #include "annotations.h"
+    #include <malloc.h>
+
+    _Ret_maybenull_ LinkedList* AllocateNode()
+    {
+        LinkedList* result = static_cast<LinkedList*>(malloc(sizeof(LinkedList)));
+        return result;
+    }
 
     LinkedList* AddTail(LinkedList* node, int value)
     {
@@ -211,6 +324,13 @@ Die Prozeduren stellen zudem den Code für den Header und die *.cpp*-Dateien fü
     }
     ```
 
-1. Klicken Sie auf das Menü **Datei** und dann auf **Alle speichern**.
+1. Wählen Sie in der Menüleiste **Datei** > **speichern alle**aus.
 
 Die Projektmappe ist jetzt fertig und sollte ohne Fehler erstellt werden.
+
+::: moniker range="vs-2017"
+
+> [!NOTE]
+> In Visual Studio 2017 wird möglicherweise `E1097 unknown attribute "no_init_all"` eine falsche Warnung im IntelliSense-Modul angezeigt. Sie können diese Warnung problemlos ignorieren.
+
+::: moniker-end

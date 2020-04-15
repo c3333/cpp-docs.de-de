@@ -6,56 +6,56 @@ helpviewer_keywords:
 - ATL, module classes
 - module classes
 ms.assetid: fd75382d-c955-46ba-a38e-37728b7fa00f
-ms.openlocfilehash: 2fe659b47893f821aab4cda31ab1a4e9a6788ec6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2b72cac0da06b70a40e01fcc75da52f1678f3f64
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62252069"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317374"
 ---
 # <a name="atl-module-classes"></a>ATL-Modulklassen
 
-Dieses Thema behandelt die Modulklassen, die neu in ATL 7.0 waren.
+In diesem Thema werden die Modulklassen erläutert, die in ATL 7.0 neu waren.
 
-## <a name="ccommodule-replacement-classes"></a>CComModule-Ersatz-Klassen
+## <a name="ccommodule-replacement-classes"></a>CComModule-Ersatzklassen
 
-Frühere Versionen von ATL verwendet `CComModule`. In ATL 7.0 `CComModule` Funktionalität wird von mehreren Klassen ersetzt:
+Frühere Versionen von `CComModule`ATL verwendet . In ATL 7.0 wird die `CComModule` Funktionalität durch mehrere Klassen ersetzt:
 
-- [CAtlBaseModule](../atl/reference/catlbasemodule-class.md) enthält Informationen, die von den meisten Anwendungen, die ATL verwenden erforderlich Enthält die HINSTANCE des Moduls und die Ressourceninstanz an.
+- [CAtlBaseModule](../atl/reference/catlbasemodule-class.md) Enthält Informationen, die von den meisten Anwendungen benötigt werden, die ATL verwenden. Enthält die HINSTANCE des Moduls und die Ressourceninstanz.
 
-- [CAtlComModule](../atl/reference/catlcommodule-class.md) enthält Informationen, die durch die COM-Klassen in ATL erforderlich
+- [CAtlComModule](../atl/reference/catlcommodule-class.md) Enthält Informationen, die für die COM-Klassen in ATL erforderlich sind.
 
-- [CAtlWinModule](../atl/reference/catlwinmodule-class.md) enthält Informationen, die von den Windowing-Klassen in ATL erforderlich
+- [CAtlWinModule](../atl/reference/catlwinmodule-class.md) Enthält Informationen, die für die Fensterklassen in ATL erforderlich sind.
 
-- [CAtlDebugInterfacesModule](../atl/reference/catldebuginterfacesmodule-class.md) enthält Unterstützung für das Debuggen.
+- [CAtlDebugInterfacesModule](../atl/reference/catldebuginterfacesmodule-class.md) Enthält Unterstützung für das Debuggen von Schnittstellen.
 
-- [CAtlModule](../atl/reference/catlmodule-class.md) Folgendes `CAtlModule`-abgeleitete Klassen werden angepasst, um die erforderlichen Informationen in einem bestimmten Anwendungstyp enthalten. Die meisten Elemente in diesen Klassen können überschrieben werden:
+- [CAtlModule](../atl/reference/catlmodule-class.md) Die `CAtlModule`folgenden -abgeleiteten Klassen werden so angepasst, dass sie Informationen enthalten, die in einem bestimmten Anwendungstyp erforderlich sind. Die meisten Member in diesen Klassen können überschrieben werden:
 
-   - [CAtlDllModuleT](../atl/reference/catldllmodulet-class.md) in DLL-Anwendungen verwendet. Stellt den Code für die standard-Exporte bereit.
+  - [CAtlDllModuleT](../atl/reference/catldllmodulet-class.md) Wird in DLL-Anwendungen verwendet. Stellt Code für die Standardexporte bereit.
 
-   - [CAtlExeModuleT](../atl/reference/catlexemodulet-class.md) in EXE-Anwendungen verwendet. Enthält Code, die in einer EXE-Datei erforderlich.
+  - [CAtlExeModuleT](../atl/reference/catlexemodulet-class.md) Wird in EXE-Anwendungen verwendet. Stellt Code bereit, der in einer EXE erforderlich ist.
 
-   - [CAtlServiceModuleT](../atl/reference/catlservicemodulet-class.md) bietet Unterstützung zum Erstellen von Windows NT und Windows 2000-Diensten.
+  - [CAtlServiceModuleT](../atl/reference/catlservicemodulet-class.md) Bietet Unterstützung zum Erstellen von Windows NT- und Windows 2000-Diensten.
 
-`CComModule` ist für die Abwärtskompatibilität noch verfügbar.
+`CComModule`ist weiterhin für die Abwärtskompatibilität verfügbar.
 
-## <a name="reasons-for-distributing-ccommodule-functionality"></a>Gründe für die Verteilung der CComModule-Funktion
+## <a name="reasons-for-distributing-ccommodule-functionality"></a>Gründe für das Verteilen der CComModule-Funktionalität
 
-Die Funktionalität von `CComModule` in mehrere neue Klassen verteilt wurde, den folgenden Gründen:
+Die Funktionalität `CComModule` von wurde aus folgenden Gründen in mehrere neue Klassen verteilt:
 
-- Stellen Sie die Funktionalität in `CComModule` präzise.
+- Machen Sie `CComModule` die Funktionalität granular.
 
-   Unterstützung für COM, Windowing, Debuggen von Schnittstellen und anwendungsspezifischen Features für (DLL oder EXE-Datei) ist jetzt in separaten Klassen.
+   Die Unterstützung für COM-, Fenster-, Schnittstellendebugging- und anwendungsspezifische Features (DLL oder EXE) befindet sich jetzt in separaten Klassen.
 
-- Deklarieren Sie globale Instanz für jedes dieser Module automatisch.
+- Deklarieren Sie automatisch die globale Instanz jedes dieser Module.
 
-   Eine globale Instanz das erforderliche Modul-Klassen, die in das Projekt verknüpft ist.
+   Eine globale Instanz der erforderlichen Modulklassen ist mit dem Projekt verknüpft.
 
-- Entfernen Sie die Notwendigkeit, Init "und" Begriff Methoden aufrufen.
+- Entfernen Sie die Notwendigkeit, Init- und Term-Methoden aufzurufen.
 
-   Init "und" Begriff Methoden wurden in den Konstruktoren und Destruktoren für Modulklassen verschoben; Es ist nicht mehr Init "und" Begriff aufrufen müssen.
+   Init- und Term-Methoden wurden in die Konstruktoren und Destruktoren für die Modulklassen verschoben. es besteht keine Notwendigkeit mehr, Init und Term anzurufen.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Konzepte](../atl/active-template-library-atl-concepts.md)<br/>
-[Übersicht über die Klasse](../atl/atl-class-overview.md)
+[Klassenübersicht](../atl/atl-class-overview.md)

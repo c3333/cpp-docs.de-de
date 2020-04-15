@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CPropExchange [MFC], IsAsynchronous
 - CPropExchange [MFC], IsLoading
 ms.assetid: ed872180-e770-4942-892a-92139d501fab
-ms.openlocfilehash: e9ad7c363f2580200af20baeb0acd7a93c1f603b
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 7818b15e502bb32640d6b9dbfe1a6e4927c70650
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426402"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81363966"
 ---
 # <a name="cpropexchange-class"></a>CPropExchange-Klasse
 
@@ -43,44 +43,44 @@ class AFX_NOVTABLE CPropExchange
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPropExchange:: exchangeblobprop](#exchangeblobprop)|Tauscht eine Binary Large Object-Eigenschaft (BLOB) aus.|
-|[CPropExchange:: exchangefontprop](#exchangefontprop)|Tauscht eine Schriftart Eigenschaft aus.|
-|[CPropExchange:: exchangepersistentprop](#exchangepersistentprop)|Tauscht eine Eigenschaft zwischen einem Steuerelement und einer Datei aus.|
-|[CPropExchange:: exchangeprop](#exchangeprop)|Tauscht Eigenschaften beliebiger integrierter Typen aus.|
-|[CPropExchange:: ExchangeVersion](#exchangeversion)|Tauscht die Versionsnummer eines OLE-Steuer Elements aus.|
-|[CPropExchange:: GetVersion](#getversion)|Ruft die Versionsnummer eines OLE-Steuer Elements ab.|
-|[CPropExchange:: IsAsynchronous](#isasynchronous)|Bestimmt, ob der Austausch von Eigenschaften asynchron erfolgt.|
-|[CPropExchange:: isload](#isloading)|Gibt an, ob Eigenschaften in das Steuerelement geladen oder daraus gespeichert werden.|
+|[CPropExchange::ExchangeBlobProp](#exchangeblobprop)|Tauscht eine bLOB-Eigenschaft (Binary Large Object).|
+|[CPropExchange::ExchangeFontProp](#exchangefontprop)|Tauscht eine Schriftarteigenschaft aus.|
+|[CPropExchange::ExchangePersistentProp](#exchangepersistentprop)|Tauscht eine Eigenschaft zwischen einem Steuerelement und einer Datei.|
+|[CPropExchange::ExchangeProp](#exchangeprop)|Tauscht Eigenschaften eines beliebigen integrierten Typs aus.|
+|[CPropExchange::ExchangeVersion](#exchangeversion)|Tauscht die Versionsnummer eines OLE-Steuerelements aus.|
+|[CPropExchange::GetVersion](#getversion)|Ruft die Versionsnummer eines OLE-Steuerelements ab.|
+|[CPropExchange::IsAsynchron](#isasynchronous)|Legt fest, ob der Austausch von Eigenschaften asynchron erfolgt.|
+|[CPropExchange::IsLoading](#isloading)|Gibt an, ob Eigenschaften in das Steuerelement geladen oder darin gespeichert werden.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CPropExchange` verfügt nicht über eine Basisklasse.
+`CPropExchange`hat keine Basisklasse.
 
-Legt den Kontext und die Richtung eines Eigenschaften Austauschs fest.
+Legt den Kontext und die Richtung eines Immobilienaustauschs fest.
 
-Persistenz ist der Austausch der Zustandsinformationen des Steuer Elements (in der Regel durch seine Eigenschaften dargestellt) zwischen dem Steuerelement selbst und einem Mittel.
+Persistenz ist der Austausch der Statusinformationen des Steuerelements, die normalerweise durch seine Eigenschaften dargestellt werden, zwischen dem Steuerelement selbst und einem Medium.
 
-Das Framework erstellt ein Objekt, das von `CPropExchange` abgeleitet ist, wenn benachrichtigt wird, dass die Eigenschaften eines OLE-Steuer Elements aus dem permanenten Speicher geladen oder in den persistenten Speicher gespeichert werden sollen.
+Das Framework erstellt ein `CPropExchange` Objekt, das von der Benachrichtigung abgeleitet wird, dass die Eigenschaften eines OLE-Steuerelements aus persistentem Speicher geladen oder dort gespeichert werden sollen.
 
-Das Framework übergibt einen Zeiger auf dieses `CPropExchange` Objekt an die `DoPropExchange` Funktion Ihres Steuer Elements. Wenn Sie einen Assistenten zum Erstellen der Starter Dateien für das Steuerelement verwendet haben, ruft die `DoPropExchange`-Funktion des Steuer Elements `COleControl::DoPropExchange`auf. Die Basisklassen Version tauscht die vordefinierten Eigenschaften des Steuer Elements aus. Sie ändern die Version der abgeleiteten Klasse in Exchange-Eigenschaften, die Sie dem Steuerelement hinzugefügt haben.
+Das Framework übergibt einen `CPropExchange` Zeiger auf dieses `DoPropExchange` Objekt an die Funktion des Steuerelements. Wenn Sie einen Assistenten verwendet haben, um die Startdateien für ihr Steuerelement zu erstellen, ruft die Funktion des Steuerelements `DoPropExchange` auf. `COleControl::DoPropExchange` Die Basisklasse-Version tauscht die Bestandseigenschaften des Steuerelements aus. Sie ändern die Version der abgeleiteten Klasse, um Eigenschaften auszutauschen, die Sie dem Steuerelement hinzugefügt haben.
 
-`CPropExchange` kann verwendet werden, um die Eigenschaften eines Steuer Elements zu serialisieren oder die Eigenschaften eines Steuer Elements beim Laden oder Erstellen eines Steuer Elements zu initialisieren. Die Funktionen `ExchangeProp` und `ExchangeFontProp` Member von `CPropExchange` können Eigenschaften in speichern und von anderen Medien laden.
+`CPropExchange`kann verwendet werden, um die Eigenschaften eines Steuerelements zu serialisieren oder die Eigenschaften eines Steuerelements beim Laden oder Erstellen eines Steuerelements zu initialisieren. Die `ExchangeProp` `ExchangeFontProp` und Memberfunktionen von `CPropExchange` sind in der Lage, Eigenschaften auf verschiedenen Medien zu speichern und von ihnen zu laden.
 
-Weitere Informationen zur Verwendung von `CPropExchange`finden Sie im Artikel [MFC-ActiveX-Steuerelemente: Eigenschaften Seiten](../../mfc/mfc-activex-controls-property-pages.md).
+Weitere Informationen zur `CPropExchange`Verwendung finden Sie im Artikel [MFC ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `CPropExchange`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxctl. h
+**Kopf:** afxctl.h
 
-##  <a name="exchangeblobprop"></a>CPropExchange:: exchangeblobprop
+## <a name="cpropexchangeexchangeblobprop"></a><a name="exchangeblobprop"></a>CPropExchange::ExchangeBlobProp
 
-Serialisiert eine Eigenschaft, die Binary Large Object (BLOB)-Daten speichert.
+Serialisiert eine Eigenschaft, die bLOB-Daten (Binary Large Object) speichert.
 
 ```
 virtual BOOL ExchangeBlobProp(
@@ -92,27 +92,27 @@ virtual BOOL ExchangeBlobProp(
 ### <a name="parameters"></a>Parameter
 
 *pszPropName*<br/>
-Der Name der Eigenschaft, die ausgetauscht wird.
+Der Name der ausgetauschten Eigenschaft.
 
-*phblob*<br/>
-Ein Zeiger auf eine Variable, die auf den Speicherort der Eigenschaft zeigt (Variable ist in der Regel ein Member der Klasse).
+*phBlob*<br/>
+Zeiger auf eine Variable, die auf die Stelle zeigt, an der die Eigenschaft gespeichert ist (Variable ist in der Regel ein Member Ihrer Klasse).
 
-*hblobdefault*<br/>
-Der Standardwert für die-Eigenschaft.
+*hBlobDefault*<br/>
+Standardwert für die Eigenschaft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
+Ein Wert ungleich Null, wenn der Austausch erfolgreich war; 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Wert der Eigenschaft wird nach Bedarf aus der von *phblob*referenzierten Variablen gelesen oder in diese geschrieben. Wenn *hblobdefault* angegeben wird, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn die Serialisierung des Steuer Elements aus irgendeinem Grund fehlschlägt.
+Der Wert der Eigenschaft wird aus der Variablen gelesen oder in die Variable geschrieben, auf die von *phBlob*verwiesen wird. Wenn *hBlobDefault* angegeben ist, wird es als Standardwert der Eigenschaft verwendet. Dieser Wert wird verwendet, wenn die Serialisierung des Steuerelements aus irgendeinem Grund fehlschlägt.
 
-Die Funktionen `CArchivePropExchange::ExchangeBlobProp`, `CResetPropExchange::ExchangeBlobProp`und `CPropsetPropExchange::ExchangeBlobProp` überschreiben diese reine virtuelle Funktion.
+Die `CArchivePropExchange::ExchangeBlobProp`Funktionen `CResetPropExchange::ExchangeBlobProp`, `CPropsetPropExchange::ExchangeBlobProp` , und überschreiben diese reine virtuelle Funktion.
 
-##  <a name="exchangefontprop"></a>CPropExchange:: exchangefontprop
+## <a name="cpropexchangeexchangefontprop"></a><a name="exchangefontprop"></a>CPropExchange::ExchangeFontProp
 
-Tauscht eine Schriftart Eigenschaft zwischen einem Speichermedium und dem Steuerelement aus.
+Tauscht eine Schriftarteigenschaft zwischen einem Speichermedium und dem Steuerelement aus.
 
 ```
 virtual BOOL ExchangeFontProp(
@@ -125,28 +125,28 @@ virtual BOOL ExchangeFontProp(
 ### <a name="parameters"></a>Parameter
 
 *pszPropName*<br/>
-Der Name der Eigenschaft, die ausgetauscht wird.
+Der Name der ausgetauschten Eigenschaft.
 
-*Raster*<br/>
-Ein Verweis auf ein [cfontholder](../../mfc/reference/cfontholder-class.md) -Objekt, das die Eigenschaft Schriftart enthält.
+*Schriftart*<br/>
+Ein Verweis auf ein [CFontHolder-Objekt,](../../mfc/reference/cfontholder-class.md) das die font-Eigenschaft enthält.
 
-*pfontde*<br/>
-Ein Zeiger auf eine [fontdebug](/windows/win32/api/olectl/ns-olectl-fontdesc) -Struktur, die Werte zum Initialisieren des Standardstatus der Schriftart Eigenschaft enthält, wenn *pfontdispambient* NULL ist.
+*pFontDesc*<br/>
+Ein Zeiger auf eine [FONTDESC-Struktur,](/windows/win32/api/olectl/ns-olectl-fontdesc) die Werte zum Initialisieren des Standardstatus der font-Eigenschaft enthält, wenn *pFontDispAmbient* NULL ist.
 
-*pfontdispambient*<br/>
-Ein Zeiger auf die `IFontDisp`-Schnittstelle einer Schriftart, die zum Initialisieren des Standardstatus der Schriftart Eigenschaft verwendet werden soll.
+*pFontDispAmbient*<br/>
+Ein Zeiger auf `IFontDisp` die Schnittstelle einer Schriftart, die zum Initialisieren des Standardstatus der font-Eigenschaft verwendet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
+Ein Wert ungleich Null, wenn der Austausch erfolgreich war; 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Font-Eigenschaft vom Medium in das-Steuerelement geladen wird, werden die Eigenschaften der Schriftart vom Medium abgerufen, und das `CFontHolder` Objekt, auf das von *Font* verwiesen wird, wird mit Ihnen initialisiert. Wenn die Eigenschaft Schriftart gespeichert wird, werden die Merkmale im Schriftart Objekt auf das Medium geschrieben.
+Wenn die font-Eigenschaft vom Medium in das Steuerelement geladen wird, werden die `CFontHolder` Eigenschaften der Schriftart vom Medium abgerufen und das Objekt, auf das von *der Schriftart* verwiesen wird, mit ihnen initialisiert. Wenn die font-Eigenschaft gespeichert wird, werden die Merkmale im Font-Objekt auf das Medium geschrieben.
 
-Die Funktionen `CArchivePropExchange::ExchangeFontProp`, `CResetPropExchange::ExchangeFontProp`und `CPropsetPropExchange::ExchangeFontProp` überschreiben diese reine virtuelle Funktion.
+Die `CArchivePropExchange::ExchangeFontProp`Funktionen `CResetPropExchange::ExchangeFontProp`, `CPropsetPropExchange::ExchangeFontProp` , und überschreiben diese reine virtuelle Funktion.
 
-##  <a name="exchangepersistentprop"></a>CPropExchange:: exchangepersistentprop
+## <a name="cpropexchangeexchangepersistentprop"></a><a name="exchangepersistentprop"></a>CPropExchange::ExchangePersistentProp
 
 Tauscht eine Eigenschaft zwischen dem Steuerelement und einer Datei aus.
 
@@ -161,28 +161,28 @@ virtual BOOL ExchangePersistentProp(
 ### <a name="parameters"></a>Parameter
 
 *pszPropName*<br/>
-Der Name der Eigenschaft, die ausgetauscht wird.
+Der Name der ausgetauschten Eigenschaft.
 
 *ppUnk*<br/>
-Ein Zeiger auf eine Variable mit einem Zeiger auf die `IUnknown`-Schnittstelle der Eigenschaft (diese Variable ist in der Regel ein Member der Klasse).
+Ein Zeiger auf eine Variable, die einen `IUnknown` Zeiger auf die Schnittstelle der Eigenschaft enthält (diese Variable ist in der Regel ein Member Ihrer Klasse).
 
-*IID*<br/>
-Schnittstellen-ID der Schnittstelle für die Eigenschaft, die vom Steuerelement verwendet wird.
+*Iid*<br/>
+Schnittstellen-ID der Schnittstelle auf der Eigenschaft, die das Steuerelement verwendet.
 
-*punkdefault*<br/>
-Der Standardwert für die-Eigenschaft.
+*pUnkDefault*<br/>
+Standardwert für die Eigenschaft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
+Ein Wert ungleich Null, wenn der Austausch erfolgreich war; 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Eigenschaft aus der Datei in das-Steuerelement geladen wird, wird die-Eigenschaft aus der Datei erstellt und initialisiert. Wenn die Eigenschaft gespeichert wird, wird der Wert in die Datei geschrieben.
+Wenn die Eigenschaft aus der Datei in das Steuerelement geladen wird, wird die Eigenschaft erstellt und aus der Datei initialisiert. Wenn die Eigenschaft gespeichert wird, wird ihr Wert in die Datei geschrieben.
 
-Die Funktionen `CArchivePropExchange::ExchangePersistentProp`, `CResetPropExchange::ExchangePersistentProp`und `CPropsetPropExchange::ExchangePersistentProp` überschreiben diese reine virtuelle Funktion.
+Die `CArchivePropExchange::ExchangePersistentProp`Funktionen `CResetPropExchange::ExchangePersistentProp`, `CPropsetPropExchange::ExchangePersistentProp` , und überschreiben diese reine virtuelle Funktion.
 
-##  <a name="exchangeprop"></a>CPropExchange:: exchangeprop
+## <a name="cpropexchangeexchangeprop"></a><a name="exchangeprop"></a>CPropExchange::ExchangeProp
 
 Tauscht eine Eigenschaft zwischen einem Speichermedium und dem Steuerelement aus.
 
@@ -197,40 +197,40 @@ virtual BOOL ExchangeProp(
 ### <a name="parameters"></a>Parameter
 
 *pszPropName*<br/>
-Der Name der Eigenschaft, die ausgetauscht wird.
+Der Name der ausgetauschten Eigenschaft.
 
-*vtprop*<br/>
-Ein Symbol, das den Typ der ausgetauschten Eigenschaft angibt. Dabei sind folgende Werte möglich:
+*vtProp*<br/>
+Ein Symbol, das den Typ der ausgetauschten Eigenschaft angibt. Mögliche Werte:
 
-|Symbol|Eigenschaftstyp|
+|Symbol|Eigenschaftentyp|
 |------------|-------------------|
 |VT_I2|**short**|
-|VT_I4|**long**|
-|VT_BOOL|**BOOL**|
+|VT_I4|**Lange**|
+|VT_BOOL|**Bool**|
 |VT_BSTR|`CString`|
 |VT_CY|**CY**|
 |VT_R4|**float**|
 |VT_R8|**double**|
 
-*pvprop*<br/>
+*pvProp*<br/>
 Ein Zeiger auf den Wert der Eigenschaft.
 
-*pvdefault*<br/>
-Zeiger auf einen Standardwert für die-Eigenschaft.
+*pvDefault*<br/>
+Zeiger auf einen Standardwert für die Eigenschaft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Austausch erfolgreich war. 0, wenn nicht erfolgreich.
+Ein Wert ungleich Null, wenn der Austausch erfolgreich war; 0, wenn nicht erfolgreich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Eigenschaft vom Medium in das-Steuerelement geladen wird, wird der Wert der Eigenschaft vom Medium abgerufen und in dem Objekt gespeichert, auf das von *pvprop*verwiesen wird. Wenn die Eigenschaft auf dem Medium gespeichert wird, wird der Wert des Objekts, auf das *pvprop* zeigt, auf das Medium geschrieben.
+Wenn die Eigenschaft vom Medium in das Steuerelement geladen wird, wird der Wert der Eigenschaft vom Medium abgerufen und im Objekt gespeichert, auf das von *pvProp*verwiesen wird. Wenn die Eigenschaft auf dem Medium gespeichert wird, wird der Wert des Objekts, auf das *pvProp* zeigt, auf das Medium geschrieben.
 
-Die Funktionen `CArchivePropExchange::ExchangeProp`, `CResetPropExchange::ExchangeProp`und `CPropsetPropExchange::ExchangeProp` überschreiben diese reine virtuelle Funktion.
+Die `CArchivePropExchange::ExchangeProp`Funktionen `CResetPropExchange::ExchangeProp`, `CPropsetPropExchange::ExchangeProp` , und überschreiben diese reine virtuelle Funktion.
 
-##  <a name="exchangeversion"></a>CPropExchange:: ExchangeVersion
+## <a name="cpropexchangeexchangeversion"></a><a name="exchangeversion"></a>CPropExchange::ExchangeVersion
 
-Wird von Framework aufgerufen, um die Persistenz einer Versionsnummer zu verarbeiten.
+Wird vom Framework aufgerufen, um die Persistenz einer Versionsnummer zu behandeln.
 
 ```
 virtual BOOL ExchangeVersion(
@@ -241,22 +241,22 @@ virtual BOOL ExchangeVersion(
 
 ### <a name="parameters"></a>Parameter
 
-*dwversionloaded*<br/>
-Verweis auf eine Variable, bei der die Versionsnummer der persistenten Daten, die geladen werden, gespeichert wird.
+*dwVersionLoaded*<br/>
+Verweis auf eine Variable, bei der die Versionsnummer der geladenen persistenten Daten gespeichert wird.
 
-*dwversiondefault*<br/>
-Die aktuelle Versionsnummer des Steuer Elements.
+*dwVersionDefault*<br/>
+Die aktuelle Versionsnummer des Steuerelements.
 
-*bconvert*<br/>
-Gibt an, ob persistente Daten in die aktuelle Version konvertiert oder in derselben Version aufbewahrt werden sollen, die geladen wurde.
+*bKonvertieren*<br/>
+Gibt an, ob persistente Daten in die aktuelle Version konvertiert oder auf derselben Version beibehalten werden sollen, die geladen wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
+Ein Wert ungleich Null, wenn die Funktion erfolgreich war; 0 sonst.
 
-##  <a name="getversion"></a>CPropExchange:: GetVersion
+## <a name="cpropexchangegetversion"></a><a name="getversion"></a>CPropExchange::GetVersion
 
-Rufen Sie diese Funktion auf, um die Versionsnummer des Steuer Elements abzurufen.
+Rufen Sie diese Funktion auf, um die Versionsnummer des Steuerelements abzurufen.
 
 ```
 DWORD GetVersion();
@@ -264,11 +264,11 @@ DWORD GetVersion();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Versionsnummer des Steuer Elements.
+Die Versionsnummer des Steuerelements.
 
-##  <a name="isasynchronous"></a>CPropExchange:: IsAsynchronous
+## <a name="cpropexchangeisasynchronous"></a><a name="isasynchronous"></a>CPropExchange::IsAsynchron
 
-Bestimmt, ob der Austausch von Eigenschaften asynchron erfolgt.
+Legt fest, ob der Austausch von Eigenschaften asynchron erfolgt.
 
 ```
 BOOL IsAsynchronous();
@@ -276,11 +276,11 @@ BOOL IsAsynchronous();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn Eigenschaften asynchron ausgetauscht werden, andernfalls false.
+Gibt TRUE zurück, wenn Eigenschaften asynchron ausgetauscht werden, andernfalls FALSE.
 
-##  <a name="isloading"></a>CPropExchange:: isload
+## <a name="cpropexchangeisloading"></a><a name="isloading"></a>CPropExchange::IsLoading
 
-Diese Funktion wird aufgerufen, um zu bestimmen, ob Eigenschaften in das Steuerelement geladen oder daraus gespeichert werden.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob Eigenschaften in das Steuerelement geladen oder von diesem gespeichert werden.
 
 ```
 BOOL IsLoading();
@@ -288,9 +288,9 @@ BOOL IsLoading();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn Eigenschaften geladen werden. andernfalls 0.
+Ein Wert ungleich Null, wenn Eigenschaften geladen werden; andernfalls 0.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[COleControl::D opropexchange](../../mfc/reference/colecontrol-class.md#dopropexchange)
+[COleControl::DoPropExchange](../../mfc/reference/colecontrol-class.md#dopropexchange)

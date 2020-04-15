@@ -1,5 +1,5 @@
 ---
-title: Cdockingmanager-Klasse
+title: CDockingManager-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CDockingManager
@@ -160,14 +160,14 @@ helpviewer_keywords:
 - CDockingManager [MFC], m_nTimeOutBeforeDockingBarDock
 - CDockingManager [MFC], m_nTimeOutBeforeToolBarDock
 ms.assetid: 98e69c43-55d8-4f43-b861-4fda80ec1e32
-ms.openlocfilehash: 8709b3a4eb3f57a3d2700ad7aaed16df994245c5
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 339e5d5e464aacb51d1c4ab8fe3c2957a3afbd4e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425952"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375581"
 ---
-# <a name="cdockingmanager-class"></a>Cdockingmanager-Klasse
+# <a name="cdockingmanager-class"></a>CDockingManager-Klasse
 
 Implementiert die Kernfunktionen, die das Andocklayout in einem Hauptrahmenfenster steuern.
 
@@ -181,104 +181,104 @@ class CDockingManager : public CObject
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cdockingmanager:: adddocksite](#adddocksite)|Erstellt einen Andock Bereich und fügt ihn der Liste der Steuer leisten hinzu.|
-|[Cdockingmanager:: addhiddenmditabbedbar](#addhiddenmditabbedbar)|Fügt ein Handle zu einem Balken Bereich der Liste der ausgeblendeten Fensterbereiche im Registerkarten Format hinzu.|
-|[Cdockingmanager:: addminiframe](#addminiframe)|Fügt der Liste der Mini Frames einen Frame hinzu.|
-|[Cdockingmanager:: addpane](#addpane)|Registriert einen Bereich beim Docking-Manager.|
-|[Cdockingmanager:: Anpassungen dockinglayout](#adjustdockinglayout)|Berechnet und passt das Layout aller Bereiche in einem Rahmen Fenster neu an.|
-|[Cdockingmanager:: "Anpassungen"](#adjustpaneframes)|Bewirkt, dass die WM_NCCALCSIZE Nachricht an alle Bereiche und `CPaneFrameWnd` Fenster gesendet wird.|
-|[Cdockingmanager:: Anpassung rectto ClientArea](#adjustrecttoclientarea)|Passt die Ausrichtung eines Rechtecks an.|
-|[Cdockingmanager:: alignautohidepane](#alignautohidepane)|Ändert die Größe eines andockbaren Bereichs im Automatisches Ausblenden-Modus, sodass er die vollständige Breite oder Höhe des Client Bereichs des Frames in der Nähe von Dock Standorten einnimmt.|
-|[Cdockingmanager:: autohidepane](#autohidepane)|Erstellt eine Symbolleiste für das automatische ausblenden.|
-|[Cdockingmanager:: bringbarstotop](#bringbarstotop)|Führt die angedockten Balken mit der angegebenen Ausrichtung am oberen Rand.|
-|[Cdockingmanager:: buildpanesmenu](#buildpanesmenu)|Fügt einem Menü Namen von andockbaren Bereichen und Symbolleisten hinzu.|
-|[Cdockingmanager:: calcexpecteddockedrect](#calcexpecteddockedrect)|Berechnet das erwartete Rechteck eines angedockten Fensters.|
-|[Cdockingmanager:: Create](#create)|Erstellt einen Docking-Manager.|
-|[Cdockingmanager::D eterminepaneandstatus](#determinepaneandstatus)|Bestimmt den Bereich, der einen angegebenen Punkt und den zugehörigen Andock Status enthält.|
-|[Cdockingmanager::D isablerestoredockstate](#disablerestoredockstate)|Aktiviert oder deaktiviert das Laden von Docking Layout aus der Registrierung.|
-|[Cdockingmanager::D ockpane](#dockpane)|Dockt einen Bereich an einen anderen Bereich oder an ein Rahmen Fenster an.|
-|[Cdockingmanager::D ockpaneleftof](#dockpaneleftof)|Dockt einen Bereich auf der linken Seite eines anderen Bereichs an.|
-|[Cdockingmanager:: enableautohidebereiche](#enableautohidepanes)|Aktiviert das Andocken des Bereichs in den Hauptrahmen, erstellt einen Dock Bereich und fügt ihn der Liste der Steuer leisten hinzu.|
-|[Cdockingmanager:: EnableDocking](#enabledocking)|Erstellt einen Andock Bereich und ermöglicht das Andocken des Bereichs in den Hauptframe.|
-|[Cdockingmanager:: enabledocksitemenu](#enabledocksitemenu)|Zeigt eine zusätzliche Schaltfläche an, die ein Popup Menü mit den Beschriftungen aller andockbaren Bereiche öffnet.|
-|[Cdockingmanager:: enablepanecontextmenu](#enablepanecontextmenu)|Weist die Bibliothek an, ein spezielles Kontextmenü anzuzeigen, das eine Liste von Anwendungssymbol leisten und Andock Bereichen enthält, wenn der Benutzer mit der rechten Maustaste klickt und die WM_CONTEXTMENU Nachricht von der Bibliothek verarbeitet wird.|
-|[Cdockingmanager:: finddocksite](#finddocksite)|Ruft den Leistenbereich an der angegebenen Position ab, der über die angegebene Ausrichtung verfügt.|
-|[Cdockingmanager:: finddocksitebypane](#finddocksitebypane)|Gibt den Leistenbereich mit der ID des Ziel leisten Bereichs zurück.|
-|[Cdockingmanager:: findpanebyid](#findpanebyid)|Sucht einen Bereich anhand der angegebenen Steuerelement-ID.|
-|[Cdockingmanager:: fixupvirtualrects](#fixupvirtualrects)|Übergibt alle aktuellen Symbolleisten Positionen an virtuelle Rechtecke.|
-|[Cdockingmanager:: framefrompoint](#framefrompoint)|Gibt den Frame zurück, der den angegebenen Punkt enthält.|
-|[Cdockingmanager:: getclientareabounds](#getclientareabounds)|Ruft das Rechteck ab, das die Begrenzungen des Client Bereichs enthält.|
-|[Cdockingmanager:: getdockingmode](#getdockingmode)|Gibt den aktuellen Andock Modus zurück.|
-|[Cdockingmanager:: getdocksiteframewnd](#getdocksiteframewnd)|Ruft einen Zeiger auf den übergeordneten Fensterrahmen ab.|
-|[Cdockingmanager:: getenabledaudehidealignment](#getenabledautohidealignment)|Gibt die aktivierte Ausrichtung der Bereiche zurück.|
-|[Cdockingmanager:: getminiframes](#getminiframes)|Ruft eine Liste von Miniframes ab.|
-|[Cdockingmanager:: getouteredgebounds](#getouteredgebounds)|Ruft ein Rechteck ab, das die äußeren Kanten des Frames enthält.|
-|[Cdockingmanager:: getpanelist](#getpanelist)|Gibt eine Liste der Bereiche zurück, die zum Docking-Manager gehören. Dies schließt alle gleitenden Bereiche ein.|
-|[Cdockingmanager:: gezmartdockingmanager](#getsmartdockingmanager)|Ruft einen Zeiger auf den intelligenten Docking-Manager ab.|
-|[Cdockingmanager:: gezmartdockingmanagerpermanent](#getsmartdockingmanagerpermanent)|Ruft einen Zeiger auf den intelligenten Docking-Manager ab.|
-|[Cdockingmanager:: gezmartdockingparametriams](#getsmartdockingparams)|Gibt die intelligenten Andock Parameter für den Docking-Manager zurück.|
-|[Cdockingmanager:: gezmartdockingtheme](#getsmartdockingtheme)|Eine statische Methode, die ein Design zurückgibt, das zum Anzeigen intelligenter Docking Marker verwendet wird.|
-|[Cdockingmanager:: hideautohidebereiche](#hideautohidepanes)|Blendet einen Bereich aus, der sich im Automatisches Ausblenden-Modus befindet.|
-|[Cdockingmanager:: insertdocksite](#insertdocksite)|Erstellt einen Andock Bereich und fügt ihn in die Liste der Steuer leisten ein.|
-|[Cdockingmanager:: insertpane](#insertpane)|Fügt einen Steuerungs Bereich in die Liste der Steuer leisten ein.|
-|[Cdockingmanager:: isdocksitemenu](#isdocksitemenu)|Gibt an, ob ein Popup Menü in den Beschriftungen aller Bereiche angezeigt wird.|
-|[Cdockingmanager:: isintoblayout](#isinadjustlayout)|Bestimmt, ob die Layouts aller Bereiche angepasst werden.|
-|[Cdockingmanager:: isolecontainermode](#isolecontainermode)|Gibt an, ob sich der Docking-Manager im OLE-Container Modus befindet.|
-|[Cdockingmanager:: ispointneardocksite](#ispointneardocksite)|Bestimmt, ob sich ein angegebener Punkt in der Nähe des Dock Standorts befindet|
-|[Cdockingmanager:: isprintpreviewvalid](#isprintpreviewvalid)|Bestimmt, ob der Seiten Ansichtsmodus festgelegt ist.|
-|[Cdockingmanager:: LoadState](#loadstate)|Lädt den Zustand des Docking-Managers aus der Registrierung.|
-|[Cdockingmanager:: lockupdate](#lockupdate)|Sperrt das angegebene Fenster.|
-|[Cdockingmanager:: onactivateframe](#onactivateframe)|Wird von Framework aufgerufen, wenn das Rahmen Fenster aktiviert oder deaktiviert wird.|
-|[Cdockingmanager:: onclosepopupmenu](#onclosepopupmenu)|Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.|
-|[Cdockingmanager:: onmoveminiframe](#onmoveminiframe)|Wird von Framework aufgerufen, um ein Mini Rahmen Fenster zu verschieben.|
-|[Cdockingmanager:: onpanecontextmenu](#onpanecontextmenu)|Wird vom Framework aufgerufen, wenn ein Menü mit einer Liste von Bereichen erstellt wird.|
-|[Cdockingmanager::P anefrompoint](#panefrompoint)|Gibt den Bereich zurück, der den angegebenen Punkt enthält.|
-|[Cdockingmanager::P rocesspanecontextmenucommand](#processpanecontextmenucommand)|Wird von Framework aufgerufen, um ein Kontrollkästchen für den angegebenen Befehl auszuwählen oder zu deaktivieren und das Layout eines angezeigten Bereichs neu zu berechnen.|
-|[Cdockingmanager:: Neuberechnung](#recalclayout)|Berechnet das interne Layout der Steuerelemente, die in der Liste der Steuerelemente vorhanden sind, neu.|
-|[Cdockingmanager:: releaseemptypanecontainer](#releaseemptypanecontainers)|Gibt die leeren Bereichs Container frei.|
-|[Cdockingmanager:: removehiddenmditabbedbar](#removehiddenmditabbedbar)|Entfernt den angegebenen ausgeblendeten Balken Bereich.|
-|[Cdockingmanager:: removeminiframe](#removeminiframe)|Entfernt einen angegebenen Frame aus der Liste der Mini Frames.|
-|[Cdockingmanager:: removepanefromdockmanager](#removepanefromdockmanager)|Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der Liste im Docking-Manager.|
-|[Cdockingmanager:: replacepane](#replacepane)|Ersetzt einen Bereich durch einen anderen.|
-|[Cdockingmanager:: resortminiframesforzorder](#resortminiframesforzorder)|Gibt die Frames in der Liste der Mini Rahmen an.|
-|[Cdockingmanager:: SaveState](#savestate)|Speichert den Zustand des Docking-Managers in der Registrierung.|
-|[Cdockingmanager:: sendmessagetominiframes](#sendmessagetominiframes)|Sendet die angegebene Nachricht an alle Mini Frames.|
-|[Cdockingmanager:: Serialize](#serialize)|Schreibt den Docking-Manager in ein Archiv. (Überschreibt [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize).)|
-|[Cdockingmanager:: abtaugehidezorder](#setautohidezorder)|Legt die Größe, die Breite und die Höhe der Steuer leisten und den angegebenen Bereich fest.|
-|[Cdockingmanager:: setdockingmode](#setdockingmode)|Legt den Andock Modus fest.|
-|[Cdockingmanager:: setdockstate](#setdockstate)|Legt den Andock Zustand der Steuer leisten, der Mini Frames und der Automatisches Ausblenden-leisten fest.|
-|[Cdockingmanager:: setprintpreviewmode](#setprintpreviewmode)|Legt den Seiten Ansichtsmodus der Balken fest, die in der Seitenansicht angezeigt werden.|
-|[Cdockingmanager:: ab.](#setsmartdockingparams)|Legt die Parameter fest, die das Verhalten des intelligenten andockbaren definieren.|
-|[Cdockingmanager:: showdelta-showminiframes](#showdelayshowminiframes)|Zeigt die Fenster der Mini Frames an oder blendet sie aus.|
-|[Cdockingmanager:: showbereichs](#showpanes)|Ein-oder Ausblenden der Bereiche des Steuer Elements und der automatischen Ausblenden von Balken.|
-|[Cdockingmanager:: staranddocking](#startsdocking)|Startet das intelligente Andocken des angegebenen Fensters gemäß der Ausrichtung des intelligenten Docking-Managers.|
-|[Cdockingmanager:: stopsdocking](#stopsdocking)|Beendet das intelligente andocken.|
+|[CDockingManager::AddDockSite](#adddocksite)|Erstellt einen Dockbereich und fügt ihn der Liste der Steuerleisten hinzu.|
+|[CDockingManager::AddHiddenMDITabbedBar](#addhiddenmditabbedbar)|Fügt der Liste der ausgeblendeten MDI-Registerkartenfenster einen Ziehpunkt zu einem Balkenbereich hinzu.|
+|[CDockingManager::AddMiniFrame](#addminiframe)|Fügt der Liste der Miniframes einen Rahmen hinzu.|
+|[CDockingManager::AddPane](#addpane)|Registriert einen Bereich beim Docking-Manager.|
+|[CDockingManager::AdjustDockingLayout](#adjustdockinglayout)|Berechnet und passt das Layout aller Bereiche in einem Rahmenfenster neu an.|
+|[CDockingManager::AdjustPaneFrames](#adjustpaneframes)|Bewirkt, dass die WM_NCCALCSIZE Nachricht `CPaneFrameWnd` an alle Bereiche und Fenster gesendet wird.|
+|[CDockingManager::AdjustRectToClientArea](#adjustrecttoclientarea)|Passt die Ausrichtung eines Rechtecks an.|
+|[CDockingManager::AlignAutoHidePane](#alignautohidepane)|Ändert die Größe eines Andockbereichs im Autohide-Modus so, dass er die volle Breite oder Höhe des Clientbereichs des Frames benötigt, der von Docksites umgeben ist.|
+|[CDockingManager::AutoHidePane](#autohidepane)|Erstellt eine Autohide-Symbolleiste.|
+|[CDockingManager::BringBarsToTop](#bringbarstotop)|Bringt die angedockten Balken mit der angegebenen Ausrichtung nach oben.|
+|[CDockingManager::BuildPanesMenu](#buildpanesmenu)|Fügt einem Menü Namen von Docking-Bereichen und Symbolleisten hinzu.|
+|[CDockingManager::CalcExpectedDockedRect](#calcexpecteddockedrect)|Berechnet das erwartete Rechteck eines angedockten Fensters.|
+|[CDockingManager::Erstellen](#create)|Erstellt einen Andock-Manager.|
+|[CDockingManager::DeterminePaneAndStatus](#determinepaneandstatus)|Bestimmt den Bereich, der einen bestimmten Punkt enthält, und dessen Andockstatus.|
+|[CDockingManager::DisableRestoreDockState](#disablerestoredockstate)|Aktiviert oder deaktiviert das Laden des Andocklayouts aus der Registrierung.|
+|[CDockingManager::DockPane](#dockpane)|Dockt einen Bereich an einen anderen Bereich oder an ein Rahmenfenster an.|
+|[CDockingManager::DockPaneLeftOf](#dockpaneleftof)|Dockt einen Bereich auf der linken Seite eines anderen Bereichs an.|
+|[CDockingManager::EnableAutoHidePanes](#enableautohidepanes)|Ermöglicht das Andocken des Bereichs an den Hauptrahmen, erstellt einen Dockbereich und fügt ihn der Liste der Steuerleisten hinzu.|
+|[CDockingManager::EnableDocking](#enabledocking)|Erstellt einen Dockbereich und ermöglicht das Andocken des Bereichs an den Hauptrahmen.|
+|[CDockingManager::EnableDockSiteMenu](#enabledocksitemenu)|Zeigt eine zusätzliche Schaltfläche an, die ein Popupmenü in den Beschriftungen aller Docking-Bereiche öffnet.|
+|[CDockingManager::EnablePaneContextMenu](#enablepanecontextmenu)|Weist die Bibliothek an, ein spezielles Kontextmenü mit einer Liste von Anwendungssymbolleisten und Docking-Bereichen anzuzeigen, wenn der Benutzer auf die rechte Maustaste klickt und die Bibliothek die WM_CONTEXTMENU-Nachricht verarbeitet.|
+|[CDockingManager::FindDockSite](#finddocksite)|Ruft den Balkenbereich ab, der sich an der angegebenen Position befindet und die angegebene Ausrichtung hat.|
+|[CDockingManager::FindDockSiteByPane](#finddocksitebypane)|Gibt den Balkenbereich zurück, der die ID des Zielleistenbereichs enthält.|
+|[CDockingManager::FindPaneByID](#findpanebyid)|Sucht einen Bereich anhand der angegebenen Steuerelement-ID.|
+|[CDockingManager::FixupVirtualRects](#fixupvirtualrects)|Überträgt alle aktuellen Symbolleistenpositionen auf virtuelle Rechtecke.|
+|[CDockingManager::FrameFromPoint](#framefrompoint)|Gibt den Rahmen zurück, der den angegebenen Punkt enthält.|
+|[CDockingManager::GetClientAreaBounds](#getclientareabounds)|Ruft das Rechteck ab, das die Grenzen des Clientbereichs enthält.|
+|[CDockingManager::GetDockingMode](#getdockingmode)|Gibt den aktuellen Andockmodus zurück.|
+|[CDockingManager::GetDockSiteFrameWnd](#getdocksiteframewnd)|Ruft einen Zeiger auf den übergeordneten Fensterrahmen ab.|
+|[CDockingManager::GetEnabledAutoHideAlignment](#getenabledautohidealignment)|Gibt die aktivierte Ausrichtung der Bereiche zurück.|
+|[CDockingManager::GetMiniFrames](#getminiframes)|Ruft eine Liste von Miniframes ab.|
+|[CDockingManager::GetOuterEdgeBounds](#getouteredgebounds)|Ruft ein Rechteck ab, das die äußeren Ränder des Rahmens enthält.|
+|[CDockingManager::GetPaneList](#getpanelist)|Gibt eine Liste der Bereiche zurück, die zum Docking-Manager gehören. Dazu gehören alle schwebenden Bereiche.|
+|[CDockingManager::GetSmartDockingManager](#getsmartdockingmanager)|Ruft einen Zeiger auf den Smart Docking-Manager ab.|
+|[CDockingManager::GetSmartDockingManagerPermanent](#getsmartdockingmanagerpermanent)|Ruft einen Zeiger auf den Smart Docking-Manager ab.|
+|[CDockingManager::GetSmartDockingParams](#getsmartdockingparams)|Gibt die Smart Docking-Parameter für den Docking-Manager zurück.|
+|[CDockingManager::GetSmartDockingThema](#getsmartdockingtheme)|Eine statische Methode, die ein Design zurückgibt, das zum Anzeigen intelligenter Docking-Marker verwendet wird.|
+|[CDockingManager::HideAutoHidePanes](#hideautohidepanes)|Blendet einen Bereich aus, der sich im Autohide-Modus befindet.|
+|[CDockingManager::InsertDockSite](#insertdocksite)|Erstellt einen Dockbereich und fügt ihn in die Liste der Steuerleisten ein.|
+|[CDockingManager::InsertPane](#insertpane)|Fügt einen Steuerbereich in die Liste der Steuerleisten ein.|
+|[CDockingManager::IsDockSiteMenu](#isdocksitemenu)|Gibt an, ob ein Popupmenü in den Beschriftungen aller Bereiche angezeigt wird.|
+|[CDockingManager::IsInAdjustLayout](#isinadjustlayout)|Legt fest, ob die Layouts aller Bereiche angepasst werden.|
+|[CDockingManager::IsOLEContainerMode](#isolecontainermode)|Gibt an, ob sich der Andock-Manager im OLE-Containermodus befindet.|
+|[CDockingManager::IsPointNearDockSite](#ispointneardocksite)|Bestimmt, ob sich ein angegebener Punkt in der Nähe des Dock-Standorts befindet.|
+|[CDockingManager::IsPrintPreviewValid](#isprintpreviewvalid)|Legt fest, ob der Druckvorschaumodus eingestellt ist.|
+|[CDockingManager::LoadState](#loadstate)|Lädt den Status des Andock-Managers aus der Registrierung.|
+|[CDockingManager::LockUpdate](#lockupdate)|Sperrt das angegebene Fenster.|
+|[CDockingManager::OnActivateFrame](#onactivateframe)|Wird vom Framework aufgerufen, wenn das Rahmenfenster aktiv oder deaktiviert wird.|
+|[CDockingManager::OnClosePopupMenu](#onclosepopupmenu)|Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.|
+|[CDockingManager::OnMoveMiniFrame](#onmoveminiframe)|Wird vom Framework aufgerufen, um ein Minirahmenfenster zu verschieben.|
+|[CDockingManager::OnPaneContextMenu](#onpanecontextmenu)|Wird vom Framework aufgerufen, wenn es ein Menü mit einer Liste von Bereichen erstellt.|
+|[CDockingManager::PaneFromPoint](#panefrompoint)|Gibt den Bereich zurück, der den angegebenen Punkt enthält.|
+|[CDockingManager::ProcessPaneContextMenuCommand](#processpanecontextmenucommand)|Wird vom Framework aufgerufen, um ein Kontrollkästchen für den angegebenen Befehl auszuwählen oder zu deaktivieren und das Layout eines angezeigten Bereichs neu zu berechnen.|
+|[CDockingManager::RecalcLayout](#recalclayout)|Berechnet das interne Layout der Steuerelemente in der Liste der Steuerelemente neu.|
+|[CDockingManager::ReleaseEmptyPaneContainers](#releaseemptypanecontainers)|Gibt die leeren Bereichscontainer frei.|
+|[CDockingManager::RemoveHiddenMDITabbedBar](#removehiddenmditabbedbar)|Entfernt den angegebenen ausgeblendeten Balkenbereich.|
+|[CDockingManager::RemoveMiniFrame](#removeminiframe)|Entfernt einen angegebenen Rahmen aus der Liste der Miniframes.|
+|[CDockingManager::RemovePaneFromDockManager](#removepanefromdockmanager)|Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der Liste im Docking-Manager.|
+|[CDockingManager::ReplacePane](#replacepane)|Ersetzt einen Bereich durch einen anderen.|
+|[CDockingManager::ResortMiniFramesForZOrder](#resortminiframesforzorder)|Resorts die Rahmen in der Liste der Miniframes.|
+|[CDockingManager::SaveState](#savestate)|Speichert den Status des Andock-Managers in der Registrierung.|
+|[CDockingManager::SendMessageToMiniFrames](#sendmessagetominiframes)|Sendet die angegebene Nachricht an alle Miniframes.|
+|[CDockingManager::Serialisieren](#serialize)|Schreibt den Andock-Manager in ein Archiv. (Überschreibt [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize).)|
+|[CDockingManager::SetAutohideZOrder](#setautohidezorder)|Legt die Größe, Breite und Höhe der Steuerleisten und des angegebenen Bereichs fest.|
+|[CDockingManager::SetDockingMode](#setdockingmode)|Legt den Andockmodus fest.|
+|[CDockingManager::SetDockState](#setdockstate)|Legt den Andockstatus der Steuerleisten, der Minirahmen und der Autohide-Leisten fest.|
+|[CDockingManager::SetPrintPreviewMode](#setprintpreviewmode)|Legt den Druckvorschaumodus der Balken fest, die in der Druckvorschau angezeigt werden.|
+|[CDockingManager::SetSmartDockingParams](#setsmartdockingparams)|Legt die Parameter fest, die das Verhalten des intelligenten Andockens definieren.|
+|[CDockingManager::ShowDelayShowMiniFrames](#showdelayshowminiframes)|Zeigt die Fenster der Minirahmen an oder blendet sie aus.|
+|[CDockingManager::ShowPanes](#showpanes)|Zeigt die Bereiche des Steuerelements und der Autohide-Leisten an oder blendet sie aus.|
+|[CDockingManager::StartSDocking](#startsdocking)|Startet das intelligente Andocken des angegebenen Fensters entsprechend der Ausrichtung des Smart Docking Managers.|
+|[CDockingManager::StopSDocking](#stopsdocking)|Beendet das intelligente Andocken.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cdockingmanager:: m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode)|Gibt an, ob der Docking-Manager Bereiche im OLE-Container Modus ausblendet.|
-|[Cdockingmanager:: m_dockModeGlobal](#m_dockmodeglobal)|Gibt den globalen Andock Modus an.|
-|[Cdockingmanager:: m_nDockSensitivity](#m_ndocksensitivity)|Gibt die Andock Empfindlichkeit an.|
-|[Cdockingmanager:: m_nTimeOutBeforeDockingBarDock](#m_ntimeoutbeforedockingbardock)|Gibt die Zeit in Millisekunden an, bevor ein andockbarer Bereich im unmittelbaren Andock Modus angedockt wird.|
-|[Cdockingmanager:: m_nTimeOutBeforeToolBarDock](#m_ntimeoutbeforetoolbardock)|Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmen Fenster angedockt wird.|
+|[CDockingManager::m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode)|Gibt an, ob der Andock-Manager Bereiche im OLE-Containermodus ausblendet.|
+|[CDockingManager::m_dockModeGlobal](#m_dockmodeglobal)|Gibt den globalen Andockmodus an.|
+|[CDockingManager::m_nDockSensitivity](#m_ndocksensitivity)|Gibt die Andockempfindlichkeit an.|
+|[CDockingManager::m_nTimeOutBeforeDockingBarDock](#m_ntimeoutbeforedockingbardock)|Gibt die Zeit in Millisekunden an, bevor ein Andockbereich im unmittelbaren Andockmodus angedockt wird.|
+|[CDockingManager::m_nTimeOutBeforeToolBarDock](#m_ntimeoutbeforetoolbardock)|Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmenfenster angedockt wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das Hauptrahmen Fenster erstellt und initialisiert diese Klasse automatisch.
+Das Hauptrahmenfenster erstellt und initialisiert diese Klasse automatisch.
 
-Das Docking Manager-Objekt enthält eine Liste aller Bereiche, die sich im Docking Layout befinden, sowie eine Liste aller [cpaneframewnd](../../mfc/reference/cpaneframewnd-class.md) -Fenster, die zum Hauptrahmen Fenster gehören.
+Das Docking-Manager-Objekt enthält eine Liste aller Bereiche, die sich im Dockinglayout befinden, sowie eine Liste aller [CPaneFrameWnd-Fenster,](../../mfc/reference/cpaneframewnd-class.md) die zum Hauptrahmenfenster gehören.
 
-Die `CDockingManager`-Klasse implementiert einige Dienste, die Sie verwenden können, um einen Bereich oder ein `CPaneFrameWnd` Fenster zu suchen. Diese Dienste werden in der Regel nicht direkt aufgerufen, da Sie im Hauptrahmen Fenster-Objekt umschließt werden. Weitere Informationen finden Sie unter [cpaneframewnd-Klasse](../../mfc/reference/cpaneframewnd-class.md).
+Die `CDockingManager` Klasse implementiert einige Dienste, die Sie verwenden `CPaneFrameWnd` können, um einen Bereich oder ein Fenster zu suchen. Normalerweise rufen Sie diese Dienste nicht direkt auf, da sie im Hauptrahmenfensterobjekt eingeschlossen sind. Weitere Informationen finden Sie unter [CPaneFrameWnd Class](../../mfc/reference/cpaneframewnd-class.md).
 
 ## <a name="customization-tips"></a>Anpassungstipps
 
-Die folgenden Tipps gelten für `CDockingManager`-Objekte:
+Die folgenden Tipps `CDockingManager` gelten für Objekte:
 
-- Die [cdockingmanager-Klasse](../../mfc/reference/cdockingmanager-class.md) unterstützt diese Andock Modi:
+- [Die CDockingManager-Klasse](../../mfc/reference/cdockingmanager-class.md) unterstützt die folgenden Docking-Modi:
 
   - `AFX_DOCK_TYPE::DT_IMMEDIATE`
 
@@ -286,29 +286,29 @@ Die folgenden Tipps gelten für `CDockingManager`-Objekte:
 
   - `AFX_DOCK_TYPE::DT_SMART`
 
-  Diese Andock Modi werden durch [cdockingmanager:: m_dockModeGlobal](#m_dockmodeglobal) definiert und durch Aufrufen von [cdockingmanager:: setdockingmode](#setdockingmode)festgelegt.
+  Diese Andockmodi werden von [CDockingManager::m_dockModeGlobal](#m_dockmodeglobal) definiert und durch Aufrufen von [CDockingManager::SetDockingMode](#setdockingmode)festgelegt.
 
-- Wenn Sie einen nicht Gleit Komma Bereich erstellen möchten, der nicht in der Größe geändert werden kann, rufen Sie die [cdockingmanager:: addpane](#addpane) -Methode auf. Diese Methode registriert den Bereich beim Docking-Manager, der für das Layout des Bereichs zuständig ist.
+- Wenn Sie einen nicht schwebenden, nicht veränderbaren Bereich erstellen möchten, rufen Sie die [CDockingManager::AddPane-Methode](#addpane) auf. Diese Methode registriert den Bereich beim Docking-Manager, der für das Layout des Bereichs verantwortlich ist.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie verschiedene Methoden in der `CDockingManager`-Klasse verwendet werden, um ein `CDockingManager`-Objekt zu konfigurieren. Das Beispiel zeigt, wie eine zusätzliche Schaltfläche angezeigt wird, die ein Popup Menü mit den Beschriftungen aller andockbaren Bereiche öffnet und wie der Andock Modus des Objekts festgelegt wird. Dieser Code Ausschnitt ist Teil des [Visual Studio-Demo](../../overview/visual-cpp-samples.md)Beispiels.
+Im folgenden Beispiel wird veranschaulicht, `CDockingManager` wie verschiedene `CDockingManager` Methoden in der Klasse zum Konfigurieren eines Objekts verwendet werden. Das Beispiel zeigt, wie eine zusätzliche Schaltfläche angezeigt wird, die ein Popupmenü in den Beschriftungen aller Dockingbereiche öffnet, und wie der Andockmodus des Objekts festgelegt wird. Dieser Codeausschnitt ist Teil des [Visual Studio Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#24](../../mfc/codesnippet/cpp/cdockingmanager-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CDockingManager](../../mfc/reference/cdockingmanager-class.md)
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdockingmanager. h
+**Kopfzeile:** afxDockingManager.h
 
-##  <a name="adddocksite"></a>Cdockingmanager:: adddocksite
+## <a name="cdockingmanageradddocksite"></a><a name="adddocksite"></a>CDockingManager::AddDockSite
 
-Erstellt einen Andock Bereich und fügt ihn der Liste der Steuer leisten hinzu.
+Erstellt einen Dockbereich und fügt ihn der Liste der Steuerleisten hinzu.
 
 ```
 BOOL AddDockSite(
@@ -319,18 +319,18 @@ BOOL AddDockSite(
 ### <a name="parameters"></a>Parameter
 
 *info*<br/>
-in Ein Verweis auf eine Informationsstruktur, die die Ausrichtung des Andock Bereichs enthält.
+[in] Ein Verweis auf eine Infostruktur, die die Ausrichtung des Dockbereichs enthält.
 
-*ppdockbar*<br/>
-vorgenommen Ein Zeiger auf einen Zeiger auf den neuen Andock Bereich.
+*ppDockBar*<br/>
+[out] Ein Zeiger auf einen Zeiger auf den neuen Dockbereich.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Andock Bereich erfolgreich erstellt wurde. Andernfalls false.
+TRUE, wenn der Dockbereich erfolgreich erstellt wurde; FALSE sonst.
 
-##  <a name="addhiddenmditabbedbar"></a>Cdockingmanager:: addhiddenmditabbedbar
+## <a name="cdockingmanageraddhiddenmditabbedbar"></a><a name="addhiddenmditabbedbar"></a>CDockingManager::AddHiddenMDITabbedBar
 
-Fügt ein Handle zu einem Balken Bereich der Liste der ausgeblendeten Fensterbereiche im Registerkarten Format hinzu.
+Fügt der Liste der ausgeblendeten MDI-Registerkartenfenster einen Ziehpunkt zu einem Balkenbereich hinzu.
 
 ```
 void AddHiddenMDITabbedBar(CDockablePane* pBar);
@@ -338,10 +338,10 @@ void AddHiddenMDITabbedBar(CDockablePane* pBar);
 
 ### <a name="parameters"></a>Parameter
 
-*pbar*<br/>
-in Ein Zeiger auf einen Balken Bereich.
+*Pbar*<br/>
+[in] Ein Zeiger auf einen Balkenbereich
 
-##  <a name="addpane"></a>Cdockingmanager:: addpane
+## <a name="cdockingmanageraddpane"></a><a name="addpane"></a>CDockingManager::AddPane
 
 Registriert einen Bereich beim Docking-Manager.
 
@@ -355,29 +355,29 @@ BOOL AddPane(
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-[in, out] Gibt den Bereich an, der dem Docking-Manager hinzugefügt werden soll.
+*pWnd*<br/>
+[in, out] Gibt den Bereich an, der dem Andock-Manager hinzugefügt werden soll.
 
-*btail*<br/>
-in "True", um den Bereich am Ende der Liste der Bereiche für den Docking-Manager hinzuzufügen. andernfalls false.
+*bTail*<br/>
+[in] TRUE, um den Bereich am Ende der Liste der Bereiche für den Docking-Manager hinzuzufügen; andernfalls FALSE.
 
-*bauherum ausblenden*<br/>
-in Nur zur internen Verwendung. Verwenden Sie immer den Standardwert false.
+*bAutoHide*<br/>
+[in] Nur für den internen Gebrauch. Verwenden Sie immer den Standardwert FALSE.
 
-*binsertforouteredge*<br/>
-in Nur zur internen Verwendung. Verwenden Sie immer den Standardwert false.
+*bInsertForOuterEdge*<br/>
+[in] Nur für den internen Gebrauch. Verwenden Sie immer den Standardwert FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Bereich erfolgreich beim Docking-Manager registriert wurde. andernfalls false.
+TRUE, wenn der Bereich erfolgreich beim Docking-Manager registriert wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Methode können Sie nicht unverankerte Bereiche, die nicht in der Größe geändert werden können, mit dem Docking-Manager registrieren. Wenn Sie die Bereiche nicht registrieren, werden Sie beim Layout des Docking-Managers nicht ordnungsgemäß angezeigt.
+Rufen Sie diese Methode auf, um nicht schwebende, nicht veränderbare Bereiche beim Docking-Manager zu registrieren. Wenn Sie die Bereiche nicht registrieren, werden sie nicht korrekt angezeigt, wenn der Docking-Manager angeordnet ist.
 
-##  <a name="adjustdockinglayout"></a>Cdockingmanager:: Anpassungen dockinglayout
+## <a name="cdockingmanageradjustdockinglayout"></a><a name="adjustdockinglayout"></a>CDockingManager::AdjustDockingLayout
 
-Berechnet und passt das Layout aller Bereiche in einem Rahmen Fenster neu an.
+Berechnet und passt das Layout aller Bereiche in einem Rahmenfenster neu an.
 
 ```
 virtual void AdjustDockingLayout(HDWP hdwp = NULL);
@@ -386,13 +386,13 @@ virtual void AdjustDockingLayout(HDWP hdwp = NULL);
 ### <a name="parameters"></a>Parameter
 
 *hdwp*<br/>
-in Gibt die verzögerte Fenster Positions Struktur an. Weitere Informationen finden Sie unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
+[in] Gibt die Struktur der verzögerten Fensterposition an. Weitere Informationen finden Sie unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="addminiframe"></a>Cdockingmanager:: addminiframe
+## <a name="cdockingmanageraddminiframe"></a><a name="addminiframe"></a>CDockingManager::AddMiniFrame
 
-Fügt der Liste der Mini Frames einen Frame hinzu.
+Fügt der Liste der Miniframes einen Rahmen hinzu.
 
 ```
 virtual BOOL AddMiniFrame(CPaneFrameWnd* pWnd);
@@ -400,24 +400,24 @@ virtual BOOL AddMiniFrame(CPaneFrameWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-in Ein Zeiger auf einen Frame.
+*pWnd*<br/>
+[in] Ein Zeiger auf einen Rahmen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Frame nicht in der Liste der Mini Frames enthalten ist und erfolgreich hinzugefügt wurde. Andernfalls false.
+TRUE, wenn der Frame nicht in der Liste der Miniframes enthalten ist und erfolgreich hinzugefügt wurde; FALSE sonst.
 
-##  <a name="adjustpaneframes"></a>Cdockingmanager:: "Anpassungen"
+## <a name="cdockingmanageradjustpaneframes"></a><a name="adjustpaneframes"></a>CDockingManager::AdjustPaneFrames
 
-Bewirkt, dass die WM_NCCALCSIZE Nachricht an alle Bereiche und `CPaneFrameWnd` Fenster gesendet wird.
+Bewirkt, dass die WM_NCCALCSIZE Nachricht `CPaneFrameWnd` an alle Bereiche und Fenster gesendet wird.
 
 ```
 virtual void AdjustPaneFrames();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="adjustrecttoclientarea"></a>Cdockingmanager:: Anpassung rectto ClientArea
+## <a name="cdockingmanageradjustrecttoclientarea"></a><a name="adjustrecttoclientarea"></a>CDockingManager::AdjustRectToClientArea
 
 Passt die Ausrichtung eines Rechtecks an.
 
@@ -429,19 +429,19 @@ virtual BOOL AdjustRectToClientArea(
 
 ### <a name="parameters"></a>Parameter
 
-*rectresult*<br/>
-in Ein Verweis auf ein `CRect` Objekt.
+*rectResult*<br/>
+[in] Ein Verweis `CRect` auf ein Objekt
 
-*dwalignment*<br/>
-in Die Ausrichtung des `CRect` Objekts.
+*dwAlignment*<br/>
+[in] Die Ausrichtung `CRect` des Objekts
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Ausrichtung des `CRect` Objekts angepasst wurde. Andernfalls false.
+TRUE, wenn die `CRect` Ausrichtung des Objekts angepasst wurde; FALSE sonst.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der *dwalignment* -Parameter kann einen der folgenden Werte aufweisen:
+Der *Parameter dwAlignment* kann einen der folgenden Werte haben:
 
 - CBRS_ALIGN_TOP
 
@@ -451,9 +451,9 @@ Der *dwalignment* -Parameter kann einen der folgenden Werte aufweisen:
 
 - CBRS_ALIGN_RIGHT
 
-##  <a name="alignautohidepane"></a>Cdockingmanager:: alignautohidepane
+## <a name="cdockingmanageralignautohidepane"></a><a name="alignautohidepane"></a>CDockingManager::AlignAutoHidePane
 
-Ändert die Größe eines andockbaren Bereichs im Automatisches Ausblenden-Modus, sodass er die vollständige Breite oder Höhe des Client Bereichs des Frames in der Nähe von Dock Standorten einnimmt.
+Ändert die Größe eines Andockbereichs im Autohide-Modus so, dass er die volle Breite oder Höhe des Clientbereichs des Frames benötigt, der von Docksites umgeben ist.
 
 ```
 void AlignAutoHidePane(
@@ -463,15 +463,15 @@ void AlignAutoHidePane(
 
 ### <a name="parameters"></a>Parameter
 
-*pdefaulzlider*<br/>
-in Der andockbare Schieberegler.
+*pDefaultSlider*<br/>
+[in] Der Schiebereglerbereich für das Andocken.
 
 *bIsVisible*<br/>
-in TRUE, wenn der Andock Bereich sichtbar ist. Andernfalls false.
+[in] TRUE, wenn der Andockbereich sichtbar ist; FALSE sonst.
 
-##  <a name="autohidepane"></a>Cdockingmanager:: autohidepane
+## <a name="cdockingmanagerautohidepane"></a><a name="autohidepane"></a>CDockingManager::AutoHidePane
 
-Erstellt eine Symbolleiste für das automatische ausblenden.
+Erstellt eine Autohide-Symbolleiste.
 
 ```
 CMFCAutoHideToolBar* AutoHidePane(
@@ -481,19 +481,19 @@ CMFCAutoHideToolBar* AutoHidePane(
 
 ### <a name="parameters"></a>Parameter
 
-*pbar*<br/>
-in Ein Zeiger auf den Balken Bereich.
+*Pbar*<br/>
+[in] Ein Zeiger auf den Balkenbereich.
 
-*pcurrraudehidetoolbar*<br/>
-in Ein Zeiger auf eine Symbolleiste zum automatischen ausblenden.
+*pCurrAutoHideToolBar*<br/>
+[in] Ein Zeiger auf eine Symbolleiste zum automatischen Ausblenden.
 
 ### <a name="return-value"></a>Rückgabewert
 
 NULL, wenn die Symbolleiste zum automatischen Ausblenden nicht erstellt wurde. andernfalls ein Zeiger auf die neue Symbolleiste.
 
-##  <a name="bringbarstotop"></a>Cdockingmanager:: bringbarstotop
+## <a name="cdockingmanagerbringbarstotop"></a><a name="bringbarstotop"></a>CDockingManager::BringBarsToTop
 
-Führt die angedockten Balken mit der angegebenen Ausrichtung am oberen Rand.
+Bringt die angedockten Balken mit der angegebenen Ausrichtung nach oben.
 
 ```
 void BringBarsToTop(
@@ -503,15 +503,15 @@ void BringBarsToTop(
 
 ### <a name="parameters"></a>Parameter
 
-*dwalignment*<br/>
-in Die Ausrichtung der Andock leisten, die an den oberen Rand von anderen Fenstern geleitet werden.
+*dwAlignment*<br/>
+[in] Die Ausrichtung der Dockleisten, die an den oberen Rand anderer Fenster gebracht werden.
 
-*bexcludodockedbars*<br/>
-in "True", um die angedockten Balken von oben zu schließen. andernfalls false.
+*bExcludeDockedBars*<br/>
+[in] TRUE, um die angedockten Balken von der Oberseite auszuschließen; andernfalls FALSE.
 
-##  <a name="buildpanesmenu"></a>Cdockingmanager:: buildpanesmenu
+## <a name="cdockingmanagerbuildpanesmenu"></a><a name="buildpanesmenu"></a>CDockingManager::BuildPanesMenu
 
-Fügt einem Menü Namen von andockbaren Bereichen und Symbolleisten hinzu.
+Fügt einem Menü Namen von Docking-Bereichen und Symbolleisten hinzu.
 
 ```
 void BuildPanesMenu(
@@ -521,13 +521,13 @@ void BuildPanesMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*stehen*<br/>
-in Ein Menü, dem die Namen der andockbaren Bereiche und Symbolleisten hinzugefügt werden sollen.
+*Menü*<br/>
+[in] Ein Menü, dem die Namen von Docking-Bereichen und Symbolleisten hinzugefügt werden sollen.
 
-*btoolbarsonly*<br/>
-in TRUE, wenn dem Menü nur Symbolleisten Namen hinzugefügt werden sollen. Andernfalls false.
+*bToolbarsNur*<br/>
+[in] TRUE, um dem Menü nur Symbolleistennamen hinzuzufügen; FALSE sonst.
 
-##  <a name="calcexpecteddockedrect"></a>Cdockingmanager:: calcexpecteddockedrect
+## <a name="cdockingmanagercalcexpecteddockedrect"></a><a name="calcexpecteddockedrect"></a>CDockingManager::CalcExpectedDockedRect
 
 Berechnet das erwartete Rechteck eines angedockten Fensters.
 
@@ -542,28 +542,28 @@ void CalcExpectedDockedRect(
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-in Ein Zeiger auf das Fenster, das Andocken soll.
+*pWnd*<br/>
+[in] Ein Zeiger auf das anzuzeigenden Fenster.
 
-*ptmouse*<br/>
-in Die Mausposition.
+*ptMouse*<br/>
+[in] Die Mausposition.
 
-*rectresult*<br/>
-vorgenommen Das berechnete Rechteck.
+*rectResult*<br/>
+[out] Das berechnete Rechteck.
 
-*bdrawtab*<br/>
-in TRUE, wenn eine Registerkarte gezeichnet werden soll. andernfalls false.
+*bDrawTab*<br/>
+[in] TRUE, um eine Registerkarte zu zeichnen; andernfalls FALSE.
 
-*pptargetbar*<br/>
-vorgenommen Ein Zeiger auf einen Zeiger auf den Zielbereich.
+*ppTargetBar*<br/>
+[out] Ein Zeiger auf einen Zeiger auf den Zielbereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode berechnet das Rechteck, das ein Fenster einnimmt, wenn ein Benutzer das Fenster an den von *ptmouse* angegebenen Punkt gezogen und dort angedockt hat.
+Diese Methode berechnet das Rechteck, das ein Fenster einnehmen würde, wenn ein Benutzer das Fenster an den von *ptMouse* angegebenen Punkt zog und dort andockte.
 
-##  <a name="create"></a>Cdockingmanager:: Create
+## <a name="cdockingmanagercreate"></a><a name="create"></a>CDockingManager::Erstellen
 
-Erstellt einen Docking-Manager.
+Erstellt einen Andock-Manager.
 
 ```
 BOOL Create(CFrameWnd* pParentWnd);
@@ -571,16 +571,16 @@ BOOL Create(CFrameWnd* pParentWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pparser*<br/>
-in Ein Zeiger auf den übergeordneten Frame des Docking-Managers. Dieser Wert darf nicht NULL sein.
+*pParentWnd*<br/>
+[in] Ein Zeiger auf den übergeordneten Frame des Andock-Managers. Dieser Wert darf nicht NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Immer true.
+TRUE immer.
 
-##  <a name="determinepaneandstatus"></a>Cdockingmanager::D eterminepaneandstatus
+## <a name="cdockingmanagerdeterminepaneandstatus"></a><a name="determinepaneandstatus"></a>CDockingManager::DeterminePaneAndStatus
 
-Bestimmt den Bereich, der einen angegebenen Punkt und den zugehörigen Andock Status enthält.
+Bestimmt den Bereich, der einen bestimmten Punkt enthält, und dessen Andockstatus.
 
 ```
 virtual AFX_CS_STATUS DeterminePaneAndStatus(
@@ -594,42 +594,42 @@ virtual AFX_CS_STATUS DeterminePaneAndStatus(
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
-in Der Speicherort des zu Überprüfung enden Bereichs.
+*Pt*<br/>
+[in] Der Speicherort des zu überprüfenden Bereichs.
 
-*nsensitivität*<br/>
-in Der Wert zum Vergrößern des Fenster Rechtecks für jeden aktivierten Bereich. Ein Bereich erfüllt die Suchkriterien, wenn sich der angegebene Punkt in dieser erweiterten Region befindet.
+*nEmpfindlichkeit*<br/>
+[in] Der Wert, um das Fensterrechteck jedes geprüften Bereichs zu vergrößern. Ein Bereich erfüllt die Suchkriterien, wenn sich der angegebene Punkt in dieser vergrößerten Region befindet.
 
-*dwenabledalignment*<br/>
-in Die Ausrichtung des Andock Bereichs.
+*dwEnabledAlignment*<br/>
+[in] Die Ausrichtung des Andockbereichs.
 
-*pptargetbar*<br/>
-vorgenommen Ein Zeiger auf einen Zeiger auf den Zielbereich.
+*ppTargetBar*<br/>
+[out] Ein Zeiger auf einen Zeiger auf den Zielbereich.
 
-*pbartoignore*<br/>
-in Der Bereich, den die Methode ignoriert.
+*pBarToIgnore*<br/>
+[in] Der Bereich, den die Methode ignoriert.
 
-*pbartodock*<br/>
-in Der Bereich, der angedockt ist.
+*pBarToDock*<br/>
+[in] Der Bereich, der angedockt ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Andock Status.
+Der Andockstatus.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Andock Status kann einer der folgenden Werte sein:
+Der Andockstatus kann einer der folgenden Werte sein:
 
 |AFX_CS_STATUS Wert|Bedeutung|
 |---------------------------|-------------|
-|CS_NOTHING|Der Zeiger befindet sich nicht über einer Dock Site. Daher bleibt der Bereich unverankert.|
-|CS_DOCK_IMMEDIATELY|Der Zeiger befindet sich über der Andock Site im unmittelbaren Modus (DT_IMMEDIATE Stil ist aktiviert), sodass der Bereich sofort angedockt werden muss.|
-|CS_DELAY_DOCK|Der Zeiger befindet sich über einer Dock Site, bei der es sich um einen anderen Docking Bereich handelt oder um einen Rand des Hauptrahmens.|
-|CS_DELAY_DOCK_TO_TAB|Der Zeiger befindet sich über einer Dock Site, die bewirkt, dass der Bereich in einem Fenster im Registerkarten Format angedockt wird. Dies tritt auf, wenn sich der Mauszeiger über einer Beschriftung eines anderen Docking Bereichs oder über einem Tabstopp Bereich eines Bereichs im Registerkarten Format befindet.|
+|CS_NOTHING|Der Zeiger befindet sich nicht über einer Docksite. Halten Sie daher den Bereich schwebend.|
+|CS_DOCK_IMMEDIATELY|Der Zeiger befindet sich über der Dock-Site im unmittelbaren Modus (DT_IMMEDIATE-Stil aktiviert ist), daher muss der Bereich sofort angedockt werden.|
+|CS_DELAY_DOCK|Der Zeiger befindet sich über einer Docksite, die sich um einen anderen Andockbereich oder um eine Kante des Hauptrahmens handelt.|
+|CS_DELAY_DOCK_TO_TAB|Der Zeiger befindet sich über einer Docksite, wodurch der Bereich in einem Registerkartenfenster angedockt wird. Dies tritt auf, wenn sich die Maus über eine Beschriftung eines anderen Andockbereichs oder über einen Tabstoppbereich eines Registerkartenbereichs befindet.|
 
-##  <a name="disablerestoredockstate"></a>Cdockingmanager::D isablerestoredockstate
+## <a name="cdockingmanagerdisablerestoredockstate"></a><a name="disablerestoredockstate"></a>CDockingManager::DisableRestoreDockState
 
-Aktiviert oder deaktiviert das Laden von Docking Layout aus der Registrierung.
+Aktiviert oder deaktiviert das Laden des Andocklayouts aus der Registrierung.
 
 ```
 void DisableRestoreDockState(BOOL bDisable = TRUE);
@@ -638,15 +638,15 @@ void DisableRestoreDockState(BOOL bDisable = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bDeaktivieren*<br/>
-in "True", um das Laden des Docking Layouts aus der Registrierung zu deaktivieren. andernfalls false.
+[in] TRUE, um das Laden des Docking-Layouts aus der Registrierung zu deaktivieren; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft diese Methode auf, wenn Sie das aktuelle Layout der Andock Bereiche und Symbolleisten beibehalten müssen, wenn der Anwendungs Zustand geladen wird.
+Rufen Sie diese Methode auf, wenn Sie das aktuelle Layout von Dockingbereichen und Symbolleisten beibehalten müssen, wenn der Anwendungsstatus geladen wird.
 
-##  <a name="dockpane"></a>Cdockingmanager::D ockpane
+## <a name="cdockingmanagerdockpane"></a><a name="dockpane"></a>CDockingManager::DockPane
 
-Dockt einen Bereich an einen anderen Bereich oder an ein Rahmen Fenster an.
+Dockt einen Bereich an einen anderen Bereich oder an ein Rahmenfenster an.
 
 ```
 void DockPane(
@@ -657,16 +657,16 @@ void DockPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pbar*<br/>
-in Ein Zeiger auf einen Balken Bereich zum Andocken.
+*Pbar*<br/>
+[in] Ein Zeiger auf einen Balkenbereich, an den angedockt werden soll.
 
-*ndockbarid*<br/>
-in Die ID der anzudockenden Leiste.
+*nDockBarID*<br/>
+[in] Die ID der zu andockenden Leiste.
 
-*lprect*<br/>
-in Das Ziel Rechteck.
+*lpRect*<br/>
+[in] Das Zielrechteck.
 
-##  <a name="dockpaneleftof"></a>Cdockingmanager::D ockpaneleftof
+## <a name="cdockingmanagerdockpaneleftof"></a><a name="dockpaneleftof"></a>CDockingManager::DockPaneLeftOf
 
 Dockt einen Bereich auf der linken Seite eines anderen Bereichs an.
 
@@ -678,19 +678,19 @@ BOOL DockPaneLeftOf(
 
 ### <a name="parameters"></a>Parameter
 
-*pbartodock*<br/>
-in Ein Zeiger auf den Bereich, der Links neben *ptargetbar*angedockt werden soll.
+*pBarToDock*<br/>
+[in] Ein Zeiger auf den Bereich, der links von *pTargetBar*angedockt werden soll.
 
-*ptargetbar*<br/>
-in Ein Zeiger auf den Zielbereich.
+*pTargetBar*<br/>
+[in] Ein Zeiger auf den Zielbereich.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Bereich erfolgreich angedockt wurde. andernfalls false.
+TRUE, wenn der Bereich erfolgreich angedockt wurde; andernfalls FALSE.
 
-##  <a name="enableautohidepanes"></a>Cdockingmanager:: enableautohidebereiche
+## <a name="cdockingmanagerenableautohidepanes"></a><a name="enableautohidepanes"></a>CDockingManager::EnableAutoHidePanes
 
-Aktiviert das Andocken des Bereichs in den Hauptrahmen, erstellt einen Dock Bereich und fügt ihn der Liste der Steuer leisten hinzu.
+Ermöglicht das Andocken des Bereichs an den Hauptrahmen, erstellt einen Dockbereich und fügt ihn der Liste der Steuerleisten hinzu.
 
 ```
 BOOL EnableAutoHidePanes(DWORD dwStyle);
@@ -698,16 +698,16 @@ BOOL EnableAutoHidePanes(DWORD dwStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwstyle*<br/>
-in Die Andock Ausrichtung.
+*dwStyle*<br/>
+[in] Die Dockingausrichtung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Andock Bereich erfolgreich erstellt wurde. Andernfalls false.
+TRUE, wenn der Dockbereich erfolgreich erstellt wurde; FALSE sonst.
 
-##  <a name="enabledocking"></a>Cdockingmanager:: EnableDocking
+## <a name="cdockingmanagerenabledocking"></a><a name="enabledocking"></a>CDockingManager::EnableDocking
 
-Erstellt einen Andock Bereich und ermöglicht das Andocken des Bereichs in den Hauptframe.
+Erstellt einen Dockbereich und ermöglicht das Andocken des Bereichs an den Hauptrahmen.
 
 ```
 BOOL EnableDocking(DWORD dwStyle);
@@ -715,16 +715,16 @@ BOOL EnableDocking(DWORD dwStyle);
 
 ### <a name="parameters"></a>Parameter
 
-*dwstyle*<br/>
-in Die Andock Ausrichtung.
+*dwStyle*<br/>
+[in] Die Dockingausrichtung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Andock Bereich erfolgreich erstellt wurde. Andernfalls false.
+TRUE, wenn der Dockbereich erfolgreich erstellt wurde; FALSE sonst.
 
-##  <a name="enabledocksitemenu"></a>Cdockingmanager:: enabledocksitemenu
+## <a name="cdockingmanagerenabledocksitemenu"></a><a name="enabledocksitemenu"></a>CDockingManager::EnableDockSiteMenu
 
-Zeigt eine zusätzliche Schaltfläche an, die ein Popup Menü mit den Beschriftungen aller andockbaren Bereiche öffnet.
+Zeigt eine zusätzliche Schaltfläche an, die ein Popupmenü in den Beschriftungen aller Docking-Bereiche öffnet.
 
 ```
 static void EnableDockSiteMenu(BOOL bEnable = TRUE);
@@ -732,26 +732,26 @@ static void EnableDockSiteMenu(BOOL bEnable = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*benabel*<br/>
-in TRUE, um das Menü Dock Site zu aktivieren. andernfalls false.
+*bEnable*<br/>
+[in] TRUE, um das Dock-Site-Menü zu aktivieren; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Im Menü Dock Site werden die folgenden Optionen zum Ändern des Andock Status des Bereichs angezeigt:
+Im Docksite-Menü werden die folgenden Optionen zum Ändern des Andockstatus des Bereichs angezeigt:
 
-- `Floating` einen Bereich
+- `Floating`- Floats eine Scheibe
 
-- `Docking` einen Bereich am Hauptframe an der Position, an der der Bereich zuletzt angedockt war.
+- `Docking`- Dockt eine Scheibe am Hauptrahmen an der Stelle an, an der die Scheibe zuletzt angedockt wurde
 
-- `AutoHide`: schaltet den Bereich in den Automatisches Ausblenden-Modus um.
+- `AutoHide`- Schaltet den Bereich in den Autohide-Modus
 
-- `Hide`: Blendet einen Bereich aus.
+- `Hide`- Blendet einen Bereich aus
 
 Standardmäßig wird dieses Menü nicht angezeigt.
 
-##  <a name="enablepanecontextmenu"></a>Cdockingmanager:: enablepanecontextmenu
+## <a name="cdockingmanagerenablepanecontextmenu"></a><a name="enablepanecontextmenu"></a>CDockingManager::EnablePaneContextMenu
 
-Weist die Bibliothek an, ein spezielles Kontextmenü anzuzeigen, das eine Liste von Anwendungssymbol leisten und Andock Bereichen enthält, wenn der Benutzer mit der rechten Maustaste klickt und die WM_CONTEXTMENU Nachricht von der Bibliothek verarbeitet wird.
+Weist die Bibliothek an, ein spezielles Kontextmenü mit einer Liste von Anwendungssymbolleisten und Docking-Bereichen anzuzeigen, wenn der Benutzer auf die rechte Maustaste klickt und die Bibliothek die WM_CONTEXTMENU-Nachricht verarbeitet.
 
 ```
 void EnablePaneContextMenu(
@@ -763,21 +763,21 @@ void EnablePaneContextMenu(
 
 ### <a name="parameters"></a>Parameter
 
-*benabel*<br/>
-in TRUE gibt an, dass die Bibliothek die Unterstützung für das automatische Kontextmenü einschaltet. FALSE gibt an, dass die Bibliothek die Unterstützung für automatisches Kontextmenü deaktiviert.
+*bEnable*<br/>
+[in] Wenn TRUE, schaltet die Bibliothek die Unterstützung für das automatische Kontextmenü ein. Wenn FALSE die Bibliothek deaktiviert die Unterstützung für automatische Kontextmenü.
 
-*uicustomizecmd*<br/>
-in Eine Befehls-ID für das Element zum **Anpassen** im Menü.
+*uiCustomizeCmd*<br/>
+[in] Eine Befehls-ID für das **Element Anpassen** im Menü.
 
-*"Straume"*<br/>
-in Der Text des Elements, das **angepasst** werden soll.
+*strCustomizeText*<br/>
+[in] Der Text des **Elements Anpassen.**
 
-*btoolbarsonly*<br/>
-in TRUE gibt an, dass im Menü nur eine Liste von Anwendungssymbol leisten angezeigt wird. Wenn der Wert false ist, fügt die Bibliothek dieser Liste anwendungsdocking-Bereiche hinzu.
+*bToolbarsNur*<br/>
+[in] Wenn TRUE, zeigt das Menü nur eine Liste der Anwendungssymbolleisten an. Wenn FALSE, fügt die Bibliothek Anwendungsdocking-Bereiche zu dieser Liste hinzu.
 
-##  <a name="finddocksite"></a>Cdockingmanager:: finddocksite
+## <a name="cdockingmanagerfinddocksite"></a><a name="finddocksite"></a>CDockingManager::FindDockSite
 
-Ruft den Leistenbereich an der angegebenen Position ab, der über die angegebene Ausrichtung verfügt.
+Ruft den Balkenbereich ab, der sich an der angegebenen Position befindet und die angegebene Ausrichtung hat.
 
 ```
 virtual CDockSite* FindDockSite(
@@ -787,17 +787,17 @@ virtual CDockSite* FindDockSite(
 
 ### <a name="parameters"></a>Parameter
 
-*dwalignment*<br/>
-in Die Ausrichtung des Balken Bereichs.
+*dwAlignment*<br/>
+[in] Die Ausrichtung des Balkenbereichs.
 
-*Bouter*<br/>
-in Wenn der Wert true ist, wird die Leiste in der Hauptposition in der Liste der Steuer leisten abgerufen. Andernfalls rufen Sie den Balken an der Endposition in der Liste der Steuer leisten ab.
+*bOuter*<br/>
+[in] Wenn TRUE, rufen Sie die Leiste in der Kopfposition in der Liste der Steuerleisten ab. Andernfalls rufen Sie den Balken in der Endposition in der Liste der Steuerleisten ab.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Andock Bereich, der über die angegebene Ausrichtung verfügt. Andernfalls NULL.
+Der Andockbereich mit der angegebenen Ausrichtung; NULL andernfalls.
 
-##  <a name="findpanebyid"></a>Cdockingmanager:: findpanebyid
+## <a name="cdockingmanagerfindpanebyid"></a><a name="findpanebyid"></a>CDockingManager::FindPaneByID
 
 Sucht einen Bereich anhand der angegebenen Steuerelement-ID.
 
@@ -809,21 +809,21 @@ virtual CBasePane* FindPaneByID(
 
 ### <a name="parameters"></a>Parameter
 
-*ubarid*<br/>
-in Gibt die Steuerelement-ID des zu suchenden Bereichs an.
+*uBarID*<br/>
+[in] Gibt die Steuerelement-ID des zu suchenden Bereichs an.
 
-*bsearchminiframes*<br/>
-in TRUE, wenn alle Gleit Komma Bereiche in die Suche eingeschlossen werden sollen. FALSE, wenn nur die angedockten Bereiche eingeschlossen werden sollen.
+*bSearchMiniFrames*<br/>
+[in] TRUE, um alle schwebenden Bereiche in die Suche einzubeziehen. FALSE, um nur die angedockten Bereiche einzuschließen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das [cbasepane](../../mfc/reference/cbasepane-class.md) -Objekt, das über die angegebene Steuerelement-ID verfügt, oder NULL, wenn der angegebene Bereich nicht gefunden werden kann.
+Das [CBasePane-Objekt](../../mfc/reference/cbasepane-class.md) mit der angegebenen Steuerelement-ID oder NULL, wenn der angegebene Bereich nicht gefunden werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="finddocksitebypane"></a>Cdockingmanager:: finddocksitebypane
+## <a name="cdockingmanagerfinddocksitebypane"></a><a name="finddocksitebypane"></a>CDockingManager::FindDockSiteByPane
 
-Gibt den Leistenbereich mit der ID des Ziel leisten Bereichs zurück.
+Gibt den Balkenbereich zurück, der die ID des Zielleistenbereichs enthält.
 
 ```
 virtual CDockSite* FindDockSiteByPane(CPane* pTargetBar);
@@ -831,28 +831,28 @@ virtual CDockSite* FindDockSiteByPane(CPane* pTargetBar);
 
 ### <a name="parameters"></a>Parameter
 
-*ptargetbar*<br/>
-in Ein Zeiger auf den Ziel Leistenbereich.
+*pTargetBar*<br/>
+[in] Ein Zeiger auf den Zielleistenbereich.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Balken Bereich mit der ID des Ziel leisten Bereichs. NULL, wenn kein solcher Balken Bereich vorhanden ist.
+Der Balkenbereich mit der ID des Zielleistenbereichs; NULL, wenn kein solcher Balkenbereich vorhanden ist.
 
-##  <a name="fixupvirtualrects"></a>Cdockingmanager:: fixupvirtualrects
+## <a name="cdockingmanagerfixupvirtualrects"></a><a name="fixupvirtualrects"></a>CDockingManager::FixupVirtualRects
 
-Übergibt alle aktuellen Symbolleisten Positionen an virtuelle Rechtecke.
+Überträgt alle aktuellen Symbolleistenpositionen auf virtuelle Rechtecke.
 
 ```
 virtual void FixupVirtualRects();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer mit dem Ziehen einer Symbolleiste beginnt, speichert die Anwendung seine ursprüngliche Position im *virtuellen Rechteck*. Wenn der Benutzer eine Symbolleiste über seine Dock Site verschiebt, verschiebt die Symbolleiste möglicherweise andere Symbolleisten. Die ursprünglichen Positionen der anderen Symbolleisten werden in den entsprechenden virtuellen Rechtecke gespeichert.
+Wenn der Benutzer beginnt, eine Symbolleiste zu ziehen, merkt sich die Anwendung ihre ursprüngliche Position im *virtuellen Rechteck*. Wenn der Benutzer eine Symbolleiste über seine Dock-Site verschiebt, verschiebt die Symbolleiste möglicherweise andere Symbolleisten. Die ursprünglichen Positionen der anderen Symbolleisten werden in den entsprechenden virtuellen Rechtecken gespeichert.
 
-##  <a name="framefrompoint"></a>Cdockingmanager:: framefrompoint
+## <a name="cdockingmanagerframefrompoint"></a><a name="framefrompoint"></a>CDockingManager::FrameFromPoint
 
-Gibt den Frame zurück, der den angegebenen Punkt enthält.
+Gibt den Rahmen zurück, der den angegebenen Punkt enthält.
 
 ```
 virtual CPaneFrameWnd* FrameFromPoint(
@@ -863,22 +863,22 @@ virtual CPaneFrameWnd* FrameFromPoint(
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
-in Gibt den Punkt in Bildschirm Koordinaten an, der überprüft werden soll.
+*Pt*<br/>
+[in] Gibt den Punkt in Bildschirmkoordinaten an, den überprüft werden soll.
 
-*pframeservice Exclude*<br/>
-in Ein Zeiger auf einen auszuschließenden Frame.
+*pFrameToExclude*<br/>
+[in] Ein Zeiger auf einen auszuschließenden Rahmen.
 
-*bfloatmultionly*<br/>
-in TRUE, wenn Frames ausgeschlossen werden sollen, die keine Instanzen von `CMultiPaneFrameWnd`sind; Andernfalls false.
+*bFloatMultiOnly*<br/>
+[in] TRUE zum Ausschließen von Frames, die keine Instanzen von `CMultiPaneFrameWnd`sind; FALSE sonst.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Frame, der den angegebenen Punkt enthält. Andernfalls NULL.
+Der Rahmen, der den angegebenen Punkt enthält; NULL andernfalls.
 
-##  <a name="getclientareabounds"></a>Cdockingmanager:: getclientareabounds
+## <a name="cdockingmanagergetclientareabounds"></a><a name="getclientareabounds"></a>CDockingManager::GetClientAreaBounds
 
-Ruft das Rechteck ab, das die Begrenzungen des Client Bereichs enthält.
+Ruft das Rechteck ab, das die Grenzen des Clientbereichs enthält.
 
 ```
 CRect GetClientAreaBounds() const;
@@ -888,16 +888,16 @@ void GetClientAreaBounds(CRect& rcClient);
 
 ### <a name="parameters"></a>Parameter
 
-*rcclient*<br/>
-vorgenommen Ein Verweis auf das Rechteck, das die Begrenzungen des Client Bereichs enthält.
+*rcClient*<br/>
+[out] Ein Verweis auf das Rechteck, das die Grenzen des Clientbereichs enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Rechteck, das die Begrenzungen des Client Bereichs enthält.
+Das Rechteck, das die Grenzen des Clientbereichs enthält.
 
-##  <a name="getdockingmode"></a>Cdockingmanager:: getdockingmode
+## <a name="cdockingmanagergetdockingmode"></a><a name="getdockingmode"></a>CDockingManager::GetDockingMode
 
-Gibt den aktuellen Andock Modus zurück.
+Gibt den aktuellen Andockmodus zurück.
 
 ```
 static AFX_DOCK_TYPE GetDockingMode();
@@ -905,7 +905,7 @@ static AFX_DOCK_TYPE GetDockingMode();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Enumeratorwert, der den aktuellen Andock Modus darstellt. Es kann sich um einen der folgenden Werte handeln:
+Ein Enumeratorwert, der den aktuellen Andockmodus darstellt. Es kann sich um einen der folgenden Werte handeln:
 
 - DT_STANDARD
 
@@ -913,11 +913,11 @@ Ein Enumeratorwert, der den aktuellen Andock Modus darstellt. Es kann sich um ei
 
 - DT_SMART
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um den Andock Modus festzulegen, nennen Sie [cdockingmanager:: setdockingmode](#setdockingmode).
+Um den Andockmodus einzustellen, rufen Sie [CDockingManager::SetDockingMode](#setdockingmode)auf.
 
-##  <a name="getdocksiteframewnd"></a>Cdockingmanager:: getdocksiteframewnd
+## <a name="cdockingmanagergetdocksiteframewnd"></a><a name="getdocksiteframewnd"></a>CDockingManager::GetDockSiteFrameWnd
 
 Ruft einen Zeiger auf den übergeordneten Fensterrahmen ab.
 
@@ -929,7 +929,7 @@ CFrameWnd* GetDockSiteFrameWnd() const;
 
 Ein Zeiger auf den übergeordneten Fensterrahmen.
 
-##  <a name="getenabledautohidealignment"></a>Cdockingmanager:: getenabledaudehidealignment
+## <a name="cdockingmanagergetenabledautohidealignment"></a><a name="getenabledautohidealignment"></a>CDockingManager::GetEnabledAutoHideAlignment
 
 Gibt die aktivierte Ausrichtung der Bereiche zurück.
 
@@ -939,13 +939,13 @@ DWORD GetEnabledAutoHideAlignment() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine bitweise Kombination von CBRS_ALIGN_-Flags oder 0, wenn Bereiche zum automatischen Ausblenden nicht aktiviert sind. Weitere Informationen finden Sie unter [CFrameWnd:: EnableDocking](../../mfc/reference/cframewnd-class.md#enabledocking).
+Eine bitweise Kombination aus CBRS_ALIGN_-Flags oder 0, wenn Autohide-Bereiche nicht aktiviert sind. Weitere Informationen finden Sie unter [CFrameWnd::EnableDocking](../../mfc/reference/cframewnd-class.md#enabledocking).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Methode gibt die aktivierte Ausrichtung für automatische Ausblenden von Steuer leisten zurück. Um die Automatisches Ausblenden-leisten zu aktivieren, müssen Sie [CFrameWndEx:: enableautohidebereiche](../../mfc/reference/cframewndex-class.md#enableautohidepanes)abrufen.
+Die Methode gibt die aktivierte Ausrichtung für Autohide-Steuerleisten zurück. Um Autohide-Leisten zu aktivieren, rufen Sie [CFrameWndEx::EnableAutoHidePanes](../../mfc/reference/cframewndex-class.md#enableautohidepanes)auf.
 
-##  <a name="getminiframes"></a>Cdockingmanager:: getminiframes
+## <a name="cdockingmanagergetminiframes"></a><a name="getminiframes"></a>CDockingManager::GetMiniFrames
 
 Ruft eine Liste von Miniframes ab.
 
@@ -955,11 +955,11 @@ const CObList& GetMiniFrames() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Liste von Miniframes, die die Steuer leisten enthalten, die zum Docking-Manager gehören.
+Eine Liste von Miniframes, die die Steuerleisten enthalten, die zum Docking-Manager gehören.
 
-##  <a name="getouteredgebounds"></a>Cdockingmanager:: getouteredgebounds
+## <a name="cdockingmanagergetouteredgebounds"></a><a name="getouteredgebounds"></a>CDockingManager::GetOuterEdgeBounds
 
-Ruft ein Rechteck ab, das die äußeren Kanten des Frames enthält.
+Ruft ein Rechteck ab, das die äußeren Ränder des Rahmens enthält.
 
 ```
 CRect GetOuterEdgeBounds() const;
@@ -967,11 +967,11 @@ CRect GetOuterEdgeBounds() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Rechteck, das die äußeren Kanten des Frames enthält.
+Ein Rechteck, das die äußeren Ränder des Rahmens enthält.
 
-##  <a name="getpanelist"></a>Cdockingmanager:: getpanelist
+## <a name="cdockingmanagergetpanelist"></a><a name="getpanelist"></a>CDockingManager::GetPaneList
 
-Gibt eine Liste der Bereiche zurück, die zum Docking-Manager gehören. Dies schließt alle gleitenden Bereiche ein.
+Gibt eine Liste der Bereiche zurück, die zum Docking-Manager gehören. Dazu gehören alle schwebenden Bereiche.
 
 ```
 void GetPaneList(
@@ -983,27 +983,27 @@ void GetPaneList(
 
 ### <a name="parameters"></a>Parameter
 
-*lstbars*<br/>
-[in, out] Enthält alle Bereiche des aktuellen Docking-Managers.
+*lstBars*<br/>
+[in, out] Enthält alle Bereiche des aktuellen Andock-Managers.
 
-*bincludeautohide*<br/>
-in TRUE, um die Bereiche einzuschließen, die sich im Automatisches Ausblenden-Modus befinden. andernfalls false.
+*bIncludeAutohide*<br/>
+[in] TRUE, um die Bereiche einzuschließen, die sich im Autohide-Modus befinden; andernfalls FALSE.
 
-*prtcfilter*<br/>
-in Wenn der Wert nicht NULL ist, enthält die zurückgegebene Liste nur Bereiche der angegebenen Lauf Zeit Klasse.
+*pRTCFilter*<br/>
+[in] Wenn nicht NULL, enthält die zurückgegebene Liste nur Bereiche der angegebenen Laufzeitklasse.
 
-*bincludetabs*<br/>
-in TRUE zum Einschließen von Registerkarten. andernfalls false.
+*bIncludeTabs*<br/>
+[in] TRUE, um Registerkarten einzuschließen; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn im Docking-Manager Bereiche im Registerkarten Format vorhanden sind, gibt die Methode Zeiger auf [cbasetabbedpane-Klassen](../../mfc/reference/cbasetabbedpane-class.md) Objekte zurück, und Sie müssen die Registerkarten explizit auflisten.
+Wenn im Docking-Manager Registerkartenbereiche vorhanden sind, gibt die Methode Zeiger auf [CBaseTabbedPane-Klassenobjekte](../../mfc/reference/cbasetabbedpane-class.md) zurück, und Sie müssen die Registerkarten explizit aufzählen.
 
-Verwenden Sie *prtcfilter* , um eine bestimmte Klasse von Bereichen zu erhalten. Beispielsweise können Sie nur Symbolleisten abrufen, indem Sie diesen Wert entsprechend festlegen.
+Verwenden Sie *pRTCFilter,* um eine bestimmte Klasse von Bereichen zu erhalten. Sie können z. B. nur Symbolleisten abrufen, indem Sie diesen Wert entsprechend festlegen.
 
-##  <a name="getsmartdockingmanager"></a>Cdockingmanager:: gezmartdockingmanager
+## <a name="cdockingmanagergetsmartdockingmanager"></a><a name="getsmartdockingmanager"></a>CDockingManager::GetSmartDockingManager
 
-Ruft einen Zeiger auf den intelligenten Docking-Manager ab.
+Ruft einen Zeiger auf den Smart Docking-Manager ab.
 
 ```
 CSmartDockingManager* GetSmartDockingManager();
@@ -1011,11 +1011,11 @@ CSmartDockingManager* GetSmartDockingManager();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den intelligenten Docking-Manager.
+Ein Zeiger auf den smarten Docking-Manager.
 
-##  <a name="getsmartdockingmanagerpermanent"></a>Cdockingmanager:: gezmartdockingmanagerpermanent
+## <a name="cdockingmanagergetsmartdockingmanagerpermanent"></a><a name="getsmartdockingmanagerpermanent"></a>CDockingManager::GetSmartDockingManagerPermanent
 
-Ruft einen Zeiger auf den intelligenten Docking-Manager ab.
+Ruft einen Zeiger auf den Smart Docking-Manager ab.
 
 ```
 CSmartDockingManager* GetSmartDockingManagerPermanent() const;
@@ -1023,11 +1023,11 @@ CSmartDockingManager* GetSmartDockingManagerPermanent() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den intelligenten Docking-Manager.
+Ein Zeiger auf den smarten Docking-Manager.
 
-##  <a name="getsmartdockingparams"></a>Cdockingmanager:: gezmartdockingparametriams
+## <a name="cdockingmanagergetsmartdockingparams"></a><a name="getsmartdockingparams"></a>CDockingManager::GetSmartDockingParams
 
-Gibt die intelligenten Andock Parameter für den Docking-Manager zurück.
+Gibt die Smart Docking-Parameter für den Docking-Manager zurück.
 
 ```
 static CSmartDockingInfo& GetSmartDockingParams();
@@ -1035,13 +1035,13 @@ static CSmartDockingInfo& GetSmartDockingParams();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Klasse, die die intelligenten Andock Parameter für den aktuellen Docking-Manager enthält. Weitere Informationen finden Sie unter [csmartdockinginfo-Klasse](../../mfc/reference/csmartdockinginfo-class.md).
+Die Klasse, die die Smart Docking-Parameter für den aktuellen Andock-Manager enthält. Weitere Informationen finden Sie unter [CSmartDockingInfo Class](../../mfc/reference/csmartdockinginfo-class.md).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="hideautohidepanes"></a>Cdockingmanager:: hideautohidebereiche
+## <a name="cdockingmanagerhideautohidepanes"></a><a name="hideautohidepanes"></a>CDockingManager::HideAutoHidePanes
 
-Blendet einen Bereich aus, der sich im Automatisches Ausblenden-Modus befindet.
+Blendet einen Bereich aus, der sich im Autohide-Modus befindet.
 
 ```
 void HideAutoHidePanes(
@@ -1051,15 +1051,15 @@ void HideAutoHidePanes(
 
 ### <a name="parameters"></a>Parameter
 
-*pbartoexclude*<br/>
-in Ein Zeiger auf einen Balken, der aus dem ausblenden ausgeschlossen werden soll.
+*pBarToAusschließen*<br/>
+[in] Ein Zeiger auf einen Balken, der vom Ausblenden ausgeschlossen werden soll.
 
-*bimmediately*<br/>
-in TRUE, um den Bereich sofort auszublenden. FALSE, um den Bereich mit dem Effekt für automatisches ausblenden auszublenden.
+*bSofort*<br/>
+[in] TRUE, um den Bereich sofort auszublenden; FALSE, um den Bereich mit dem Autohide-Effekt auszublenden.
 
-##  <a name="insertdocksite"></a>Cdockingmanager:: insertdocksite
+## <a name="cdockingmanagerinsertdocksite"></a><a name="insertdocksite"></a>CDockingManager::InsertDockSite
 
-Erstellt einen Andock Bereich und fügt ihn in die Liste der Steuer leisten ein.
+Erstellt einen Dockbereich und fügt ihn in die Liste der Steuerleisten ein.
 
 ```
 BOOL InsertDockSite(
@@ -1071,21 +1071,21 @@ BOOL InsertDockSite(
 ### <a name="parameters"></a>Parameter
 
 *info*<br/>
-in Eine-Struktur, die die Ausrichtungs Informationen über den Andock Bereich enthält.
+[in] Eine Struktur, die die Ausrichtungsinformationen zum Dockbereich enthält.
 
-*dwalignin InsertAfter*<br/>
-in Ausrichtung des Andock Bereichs.
+*dwAlignToInsertAfter*<br/>
+[in] Ausrichtung des Dockbereichs.
 
-*ppdockbar*<br/>
-vorgenommen Ein Zeiger auf einen Zeiger auf einen Andock Bereich.
+*ppDockBar*<br/>
+[out] Ein Zeiger auf einen Zeiger auf einen Dockbereich.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Andock Bereich erfolgreich erstellt wurde. Andernfalls false.
+TRUE, wenn der Dockbereich erfolgreich erstellt wurde; FALSE sonst.
 
-##  <a name="insertpane"></a>Cdockingmanager:: insertpane
+## <a name="cdockingmanagerinsertpane"></a><a name="insertpane"></a>CDockingManager::InsertPane
 
-Fügt einen Steuerungs Bereich in die Liste der Steuer leisten ein.
+Fügt einen Steuerbereich in die Liste der Steuerleisten ein.
 
 ```
 BOOL InsertPane(
@@ -1096,26 +1096,26 @@ BOOL InsertPane(
 
 ### <a name="parameters"></a>Parameter
 
-*pcontrolbar*<br/>
-in Ein Zeiger auf einen Steuerelement Bereich.
+*pControlBar*<br/>
+[in] Ein Zeiger auf einen Steuerbereich.
 
-*pTARGET*<br/>
-in Ein Zeiger auf einen Zielbereich.
+*pTarget*<br/>
+[in] Ein Zeiger auf einen Zielbereich.
 
-*bafter*<br/>
-in TRUE, wenn der Bereich nach der Position des Zielbereichs eingefügt werden soll. Andernfalls false.
+*bNach*<br/>
+[in] TRUE, um den Bereich nach der Position des Zielbereichs einzufügen; FALSE sonst.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Steuerelement Bereich der Liste der Steuer leisten erfolgreich hinzugefügt wurde. Andernfalls false.
+TRUE, wenn der Steuerbereich erfolgreich zur Liste der Steuerleisten hinzugefügt wurde; FALSE sonst.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode gibt false zurück, wenn der Steuerelement Bereich bereits in der Liste der Steuer leisten vorhanden ist, oder wenn der Zielbereich nicht in der Liste der Steuer leisten vorhanden ist.
+Diese Methode gibt false zurück, wenn sich der Steuerbereich bereits in der Liste der Steuerleisten befindet oder wenn der Zielbereich nicht in der Liste der Steuerleisten vorhanden ist.
 
-##  <a name="isdocksitemenu"></a>Cdockingmanager:: isdocksitemenu
+## <a name="cdockingmanagerisdocksitemenu"></a><a name="isdocksitemenu"></a>CDockingManager::IsDockSiteMenu
 
-Gibt an, ob ein Popup Menü in den Beschriftungen aller Bereiche angezeigt wird.
+Gibt an, ob ein Popupmenü in den Beschriftungen aller Bereiche angezeigt wird.
 
 ```
 static BOOL IsDockSiteMenu();
@@ -1123,15 +1123,15 @@ static BOOL IsDockSiteMenu();
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das Menü Dock Site bei den Beschriftungen aller andockbaren Bereiche angezeigt wird. andernfalls false.
+TRUE, wenn ein Docksite-Menü in den Beschriftungen aller Docking-Bereiche angezeigt wird; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können das Menü Dock Site aktivieren, indem Sie [cdockingmanager:: enabledocksitemenu](#enabledocksitemenu)aufrufen.
+Sie können das Docksitemenü aktivieren, indem Sie [CDockingManager::EnableDockSiteMenu](#enabledocksitemenu)aufrufen.
 
-##  <a name="isinadjustlayout"></a>Cdockingmanager:: isintoblayout
+## <a name="cdockingmanagerisinadjustlayout"></a><a name="isinadjustlayout"></a>CDockingManager::IsInAdjustLayout
 
-Bestimmt, ob die Layouts aller Bereiche angepasst werden.
+Legt fest, ob die Layouts aller Bereiche angepasst werden.
 
 ```
 BOOL IsInAdjustLayout() const;
@@ -1139,11 +1139,11 @@ BOOL IsInAdjustLayout() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Layouts aller Bereiche angepasst werden. Andernfalls false.
+TRUE, wenn die Layouts aller Bereiche angepasst werden; FALSE sonst.
 
-##  <a name="isolecontainermode"></a>Cdockingmanager:: isolecontainermode
+## <a name="cdockingmanagerisolecontainermode"></a><a name="isolecontainermode"></a>CDockingManager::IsOLEContainerMode
 
-Gibt an, ob sich der Docking-Manager im OLE-Container Modus befindet.
+Gibt an, ob sich der Andock-Manager im OLE-Containermodus befindet.
 
 ```
 BOOL IsOLEContainerMode() const;
@@ -1151,15 +1151,15 @@ BOOL IsOLEContainerMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn sich der Andock-Manager im OLE-Container Modus befindet. andernfalls false.
+TRUE, wenn sich der Andock-Manager im OLE-Containermodus befindet; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Im OLE-Container Modus werden alle andockbaren Bereiche und Anwendungssymbol leisten ausgeblendet. Die Bereiche werden auch in diesem Modus ausgeblendet, wenn Sie [cdockingmanager:: m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode) auf true festgelegt haben.
+Im OLE-Containermodus werden alle Dockingbereiche und Anwendungssymbolleisten ausgeblendet. Die Bereiche sind auch in diesem Modus ausgeblendet, wenn Sie [CDockingManager::m_bHideDockingBarsInContainerMode](#m_bhidedockingbarsincontainermode) auf TRUE gesetzt haben.
 
-##  <a name="ispointneardocksite"></a>Cdockingmanager:: ispointneardocksite
+## <a name="cdockingmanagerispointneardocksite"></a><a name="ispointneardocksite"></a>CDockingManager::IsPointNearDockSite
 
-Bestimmt, ob sich ein angegebener Punkt in der Nähe des Dock Standorts befindet
+Bestimmt, ob sich ein angegebener Punkt in der Nähe des Dock-Standorts befindet.
 
 ```
 BOOL IsPointNearDockSite(
@@ -1171,21 +1171,21 @@ BOOL IsPointNearDockSite(
 ### <a name="parameters"></a>Parameter
 
 *Punkt*<br/>
-in Der angegebene Punkt.
+[in] Der angegebene Punkt.
 
-*dwbaralignment*<br/>
-vorgenommen Gibt an, an welchem Rand sich der Punkt nähert. Mögliche Werte sind CBRS_ALIGN_LEFT, CBRS_ALIGN_RIGHT, CBRS_ALIGN_TOP und CBRS_ALIGN_BOTTOM.
+*dwBarAlignment*<br/>
+[out] Gibt an, an welcher Kante sich der Punkt befindet. Mögliche Werte sind CBRS_ALIGN_LEFT, CBRS_ALIGN_RIGHT, CBRS_ALIGN_TOP und CBRS_ALIGN_BOTTOM.
 
-*bouteredge*<br/>
-vorgenommen TRUE, wenn sich der Punkt in der Nähe des äußeren Rahmens der Dock Site befindet. Andernfalls false.
+*bOuterEdge*<br/>
+[out] TRUE, wenn sich der Punkt in der Nähe des äußeren Rahmens des Dock-Standorts befindet; FALSE sonst.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn sich der Punkt in der Nähe der Dock Site befindet. andernfalls false.
+TRUE, wenn sich der Punkt in der Nähe des Dock-Standorts befindet; andernfalls FALSE.
 
-##  <a name="isprintpreviewvalid"></a>Cdockingmanager:: isprintpreviewvalid
+## <a name="cdockingmanagerisprintpreviewvalid"></a><a name="isprintpreviewvalid"></a>CDockingManager::IsPrintPreviewValid
 
-Bestimmt, ob der Seiten Ansichtsmodus festgelegt ist.
+Legt fest, ob der Druckvorschaumodus eingestellt ist.
 
 ```
 BOOL IsPrintPreviewValid() const;
@@ -1193,11 +1193,11 @@ BOOL IsPrintPreviewValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Druckvor Schau Modus festgelegt ist. Andernfalls false.
+TRUE, wenn der Druckvorschaumodus eingestellt ist; FALSE sonst.
 
-##  <a name="loadstate"></a>Cdockingmanager:: LoadState
+## <a name="cdockingmanagerloadstate"></a><a name="loadstate"></a>CDockingManager::LoadState
 
-Lädt den Zustand des Docking-Managers aus der Registrierung.
+Lädt den Status des Andock-Managers aus der Registrierung.
 
 ```
 virtual BOOL LoadState(
@@ -1207,17 +1207,17 @@ virtual BOOL LoadState(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszprofilename*<br/>
-in Profilname.
+*lpszProfileName*<br/>
+[in] Profilname.
 
-*uiid*<br/>
-in Die ID des Docking-Managers.
+*uiID*<br/>
+[in] Die ID des Docking-Managers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Andock-Manager-Status erfolgreich geladen wurde. andernfalls false.
+TRUE, wenn der Docking-Managerstatus erfolgreich geladen wurde; andernfalls FALSE.
 
-##  <a name="lockupdate"></a>Cdockingmanager:: lockupdate
+## <a name="cdockingmanagerlockupdate"></a><a name="lockupdate"></a>CDockingManager::LockUpdate
 
 Sperrt das angegebene Fenster.
 
@@ -1227,76 +1227,76 @@ void LockUpdate(BOOL bLock);
 
 ### <a name="parameters"></a>Parameter
 
-*Baustein*<br/>
-in TRUE, wenn das Fenster gesperrt ist. Andernfalls false.
+*Block*<br/>
+[in] TRUE, wenn das Fenster gesperrt ist; FALSE sonst.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Fenster gesperrt ist, kann es nicht verschoben werden und kann nicht neu gezeichnet werden.
+Wenn ein Fenster gesperrt ist, kann es nicht verschoben und nicht neu gezeichnet werden.
 
-##  <a name="m_bhidedockingbarsincontainermode"></a>Cdockingmanager:: m_bHideDockingBarsInContainerMode
+## <a name="cdockingmanagerm_bhidedockingbarsincontainermode"></a><a name="m_bhidedockingbarsincontainermode"></a>CDockingManager::m_bHideDockingBarsInContainerMode
 
-Gibt an, ob der Docking-Manager Bereiche im OLE-Container Modus ausblendet.
+Gibt an, ob der Andock-Manager Bereiche im OLE-Containermodus ausblendet.
 
 ```
 AFX_IMPORT_DATA static BOOL m_bHideDockingBarsInContainerMode;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legen Sie diesen Wert auf false fest, wenn alle Bereiche, die an den Hauptrahmen angedockt sind, sichtbar bleiben sollen, wenn sich die Anwendung im OLE-Container Modus befindet. Standardmäßig ist dieser Wert "true".
+Legen Sie diesen Wert auf FALSE fest, wenn Sie alle Bereiche, die an den Hauptrahmen angedockt sind, sichtbar halten möchten, wenn sich die Anwendung im OLE-Containermodus befindet. Standardmäßig ist dieser Wert TRUE.
 
-##  <a name="m_dockmodeglobal"></a>Cdockingmanager:: m_dockModeGlobal
+## <a name="cdockingmanagerm_dockmodeglobal"></a><a name="m_dockmodeglobal"></a>CDockingManager::m_dockModeGlobal
 
-Gibt den globalen Andock Modus an.
+Gibt den globalen Andockmodus an.
 
 ```
 AFX_IMPORT_DATA static AFX_DOCK_TYPE m_dockModeGlobal;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig wird in jedem Docking Bereich dieser Andock Modus verwendet. Weitere Informationen zu den Werten, auf die dieses Feld festgelegt werden kann, finden Sie unter [cbasepane:: getdockingmode](../../mfc/reference/cbasepane-class.md#getdockingmode).
+Standardmäßig verwendet jeder Andockbereich diesen Andockmodus. Weitere Informationen zu den Werten, auf die dieses Feld festgelegt werden kann, finden Sie unter [CBasePane::GetDockingMode](../../mfc/reference/cbasepane-class.md#getdockingmode).
 
-##  <a name="m_ndocksensitivity"></a>Cdockingmanager:: m_nDockSensitivity
+## <a name="cdockingmanagerm_ndocksensitivity"></a><a name="m_ndocksensitivity"></a>CDockingManager::m_nDockSensitivity
 
-Gibt die Andock Empfindlichkeit an.
+Gibt die Andockempfindlichkeit an.
 
 ```
 AFX_IMPORT_DATA static int m_nDockSensitivity;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Andock Sensitivität definiert, wie geschlossen ein unverankerter Bereich einem andockbaren Bereich, einer Docking Site oder einem anderen Bereich entspricht, bevor das Framework seinen Zustand in angedockt wechselt.
+Die Docking-Empfindlichkeit definiert, wie nah ein unverankerter Bereich sich einem Andockbereich, einer Andockstelle oder einem anderen Bereich nähern kann, bevor das Framework seinen Status in docked ändert.
 
-##  <a name="m_ntimeoutbeforedockingbardock"></a>Cdockingmanager:: m_nTimeOutBeforeDockingBarDock
+## <a name="cdockingmanagerm_ntimeoutbeforedockingbardock"></a><a name="m_ntimeoutbeforedockingbardock"></a>CDockingManager::m_nTimeOutBeforeDockingBarDock
 
-Gibt die Zeit in Millisekunden an, bevor ein andockbarer Bereich im unmittelbaren Andock Modus angedockt wird.
+Gibt die Zeit in Millisekunden an, bevor ein Andockbereich im unmittelbaren Andockmodus angedockt wird.
 
 ```
 static UINT m_nTimeOutBeforeDockingBarDock;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bevor ein Bereich angedockt wird, wartet das Framework die angegebene Zeitspanne. Dadurch wird verhindert, dass der Bereich versehentlich an eine Position angedockt wird, während der Benutzer Sie immer noch zieht.
+Bevor ein Bereich angedockt wird, wartet das Framework die angegebene Zeit. Dadurch wird verhindert, dass der Bereich versehentlich an einen Speicherort angedockt wird, während der Benutzer ihn noch zieht.
 
-##  <a name="m_ntimeoutbeforetoolbardock"></a>Cdockingmanager:: m_nTimeOutBeforeToolBarDock
+## <a name="cdockingmanagerm_ntimeoutbeforetoolbardock"></a><a name="m_ntimeoutbeforetoolbardock"></a>CDockingManager::m_nTimeOutBeforeToolBarDock
 
-Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmen Fenster angedockt wird.
+Gibt die Zeit in Millisekunden an, bevor eine Symbolleiste an das Hauptrahmenfenster angedockt wird.
 
 ```
 static UINT m_nTimeOutBeforeToolBarDock;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bevor eine Symbolleiste angedockt wird, wartet das Framework die angegebene Zeitspanne. Dadurch wird verhindert, dass die Symbolleiste versehentlich an eine Position angedockt wird, während der Benutzer Sie immer noch zieht.
+Bevor eine Symbolleiste angedockt wird, wartet das Framework auf die angegebene Zeit. Dadurch wird verhindert, dass die Symbolleiste versehentlich an einen Speicherort angedockt wird, während der Benutzer sie noch zieht.
 
-##  <a name="onactivateframe"></a>Cdockingmanager:: onactivateframe
+## <a name="cdockingmanageronactivateframe"></a><a name="onactivateframe"></a>CDockingManager::OnActivateFrame
 
-Wird von Framework aufgerufen, wenn das Rahmen Fenster aktiviert oder deaktiviert wird.
+Wird vom Framework aufgerufen, wenn das Rahmenfenster aktiv oder deaktiviert wird.
 
 ```
 virtual void OnActivateFrame(BOOL bActivate);
@@ -1304,10 +1304,10 @@ virtual void OnActivateFrame(BOOL bActivate);
 
 ### <a name="parameters"></a>Parameter
 
-*bactivate*<br/>
-in TRUE gibt an, dass das Rahmen Fenster aktiviert ist. Wenn der Wert false ist, wird das Rahmen Fenster deaktiviert.
+*bAktivieren*<br/>
+[in] Wenn TRUE, wird das Rahmenfenster aktiviert. wenn FALSE, ist das Rahmenfenster deaktiviert.
 
-##  <a name="onclosepopupmenu"></a>Cdockingmanager:: onclosepopupmenu
+## <a name="cdockingmanageronclosepopupmenu"></a><a name="onclosepopupmenu"></a>CDockingManager::OnClosePopupMenu
 
 Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldung verarbeitet.
 
@@ -1315,13 +1315,13 @@ Wird vom Framework aufgerufen, wenn ein aktives Popupmenü eine WM_DESTROY-Meldu
 void OnClosePopupMenu();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework sendet eine WM_DESTROY Nachricht, wenn es im Begriff ist, das aktuelle Hauptfenster zu schließen. Überschreiben Sie diese Methode, um Benachrichtigungen von `CMFCPopupMenu`-Objekten zu verarbeiten, die zum Rahmen Fenster gehören, wenn ein `CMFCPopupMenu`-Objekt eine WM_DESTROY Nachricht verarbeitet.
+Das Framework sendet eine WM_DESTROY Nachricht, wenn es das aktuelle Hauptfenster schließen wird. Überschreiben Sie diese Methode, `CMFCPopupMenu` um Benachrichtigungen von Objekten `CMFCPopupMenu` zu behandeln, die zum Rahmenfenster gehören, wenn ein Objekt eine WM_DESTROY Nachricht verarbeitet.
 
-##  <a name="onmoveminiframe"></a>Cdockingmanager:: onmoveminiframe
+## <a name="cdockingmanageronmoveminiframe"></a><a name="onmoveminiframe"></a>CDockingManager::OnMoveMiniFrame
 
-Wird von Framework aufgerufen, um ein Mini Rahmen Fenster zu verschieben.
+Wird vom Framework aufgerufen, um ein Minirahmenfenster zu verschieben.
 
 ```
 virtual BOOL OnMoveMiniFrame(CWnd* pFrame);
@@ -1330,15 +1330,15 @@ virtual BOOL OnMoveMiniFrame(CWnd* pFrame);
 ### <a name="parameters"></a>Parameter
 
 *pFrame*<br/>
-in Ein Zeiger auf ein Mini Rahmen Fenster.
+[in] Ein Zeiger auf ein Minirahmenfenster.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Methode erfolgreich ist. andernfalls false.
+TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
-##  <a name="onpanecontextmenu"></a>Cdockingmanager:: onpanecontextmenu
+## <a name="cdockingmanageronpanecontextmenu"></a><a name="onpanecontextmenu"></a>CDockingManager::OnPaneContextMenu
 
-Wird vom Framework aufgerufen, wenn ein Menü mit einer Liste von Bereichen erstellt wird.
+Wird vom Framework aufgerufen, wenn es ein Menü mit einer Liste von Bereichen erstellt.
 
 ```
 void OnPaneContextMenu(CPoint point);
@@ -1347,9 +1347,9 @@ void OnPaneContextMenu(CPoint point);
 ### <a name="parameters"></a>Parameter
 
 *Punkt*<br/>
-in Gibt den Speicherort des Menüs an.
+[in] Gibt den Speicherort des Menüs an.
 
-##  <a name="panefrompoint"></a>Cdockingmanager::P anefrompoint
+## <a name="cdockingmanagerpanefrompoint"></a><a name="panefrompoint"></a>CDockingManager::PaneFromPoint
 
 Gibt den Bereich zurück, der den angegebenen Punkt enthält.
 
@@ -1373,37 +1373,37 @@ virtual CBasePane* PaneFromPoint(
 ### <a name="parameters"></a>Parameter
 
 *Punkt*<br/>
-in Gibt den Punkt in Bildschirm Koordinaten an, der überprüft werden soll.
+[in] Gibt den Punkt in Bildschirmkoordinaten an, den überprüft werden soll.
 
-*nsensitivität*<br/>
-in Der Wert zum Erhöhen des Fenster Rechtecks für jeden aktivierten Bereich. Ein Bereich erfüllt die Suchkriterien, wenn sich der angegebene Punkt in dieser aufgeblähten Region befindet.
+*nEmpfindlichkeit*<br/>
+[in] Der Wert, mit dem das Fensterrechteck jedes überprüften Bereichs aufgeblasen werden soll. Ein Bereich erfüllt die Suchkriterien, wenn sich der angegebene Punkt in diesem aufgeblasenen Bereich befindet.
 
-*bexactbar*<br/>
-in TRUE, um den *nsensitivitäts* -Parameter zu ignorieren. andernfalls false.
+*bExactBar*<br/>
+[in] TRUE, um den *nSensitivity-Parameter* zu ignorieren; andernfalls FALSE.
 
-*prtcbartype*<br/>
-in Wenn nicht NULL, durchsucht die Methode nur die Bereiche des angegebenen Typs.
+*pRTCBarType*<br/>
+[in] Wenn nicht NULL, durchsucht die Methode nur die Bereiche des angegebenen Typs.
 
-*bcheckvisibility*<br/>
-in TRUE, um nur sichtbare Bereiche zu überprüfen. andernfalls false.
+*bCheckVisibility*<br/>
+[in] TRUE, um nur sichtbare Bereiche zu überprüfen; andernfalls FALSE.
 
-*dwalignment*<br/>
-vorgenommen Wenn ein Bereich am angegebenen Punkt gefunden wird, enthält dieser Parameter die Seite des Bereichs, die dem angegebenen Punkt am nächsten liegt. Weitere Informationen finden Sie im Abschnitt "Hinweise".
+*dwAlignment*<br/>
+[out] Wenn ein Bereich am angegebenen Punkt gefunden wird, enthält dieser Parameter die Seite des Bereichs, die dem angegebenen Punkt am nächsten war. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
 
-*pbartoignore*<br/>
-in Wenn der Wert nicht NULL ist, ignoriert die Methode die von diesem Parameter angegebenen Bereiche.
+*pBarToIgnore*<br/>
+[in] Wenn nicht NULL, ignoriert die Methode die durch diesen Parameter angegebenen Bereiche.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das von [cbasepane](../../mfc/reference/cbasepane-class.md)abgeleitete Objekt, das den angegebenen Punkt enthält, oder NULL, wenn kein Bereich gefunden wurde.
+Das [CBasePane](../../mfc/reference/cbasepane-class.md)-derived-Objekt, das den angegebenen Punkt enthält, oder NULL, wenn kein Bereich gefunden wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Funktion zurückgibt und ein Bereich gefunden wurde, enthält *dwalignment* die Ausrichtung des angegebenen Punkts. Wenn der Punkt z. b. am oberen Rand des Bereichs liegt, wird *dwalignment* auf CBRS_ALIGN_TOP festgelegt.
+Wenn die Funktion zurückgegeben wird und ein Bereich gefunden wurde, enthält *dwAlignment* die Ausrichtung des angegebenen Punkts. Wenn der Punkt beispielsweise am oberen Rand des Bereichs lag, wird *dwAlignment* auf CBRS_ALIGN_TOP festgelegt.
 
-##  <a name="processpanecontextmenucommand"></a>Cdockingmanager::P rocesspanecontextmenucommand
+## <a name="cdockingmanagerprocesspanecontextmenucommand"></a><a name="processpanecontextmenucommand"></a>CDockingManager::ProcessPaneContextMenuCommand
 
-Wird von Framework aufgerufen, um ein Kontrollkästchen für den angegebenen Befehl auszuwählen oder zu deaktivieren und das Layout eines angezeigten Bereichs neu zu berechnen.
+Wird vom Framework aufgerufen, um ein Kontrollkästchen für den angegebenen Befehl auszuwählen oder zu deaktivieren und das Layout eines angezeigten Bereichs neu zu berechnen.
 
 ```
 BOOL ProcessPaneContextMenuCommand(
@@ -1415,25 +1415,25 @@ BOOL ProcessPaneContextMenuCommand(
 
 ### <a name="parameters"></a>Parameter
 
-*NID*<br/>
-in Die ID einer Steuerleiste im Menü.
+*nID*<br/>
+[in] Die ID einer Steuerleiste im Menü.
 
 *nCode*<br/>
-in Der Befehls Benachrichtigungs Code.
+[in] Der Befehlsbenachrichtigungscode.
 
-*pextra*<br/>
-in Ein Zeiger auf "void", der in einen Zeiger auf "`CCmdUI`" eingefügt wird, wenn *nCode* CN_UPDATE_COMMAND_UI ist.
+*pExtra*<br/>
+[in] Ein Zeiger auf void, der auf einen `CCmdUI` Zeiger umgeworfen wird, wenn *nCode* CN_UPDATE_COMMAND_UI ist.
 
-*phandlerinfo*<br/>
-in Ein Zeiger auf eine Informationsstruktur. Dieser Parameter wird nicht verwendet.
+*pHandlerInfo*<br/>
+[in] Ein Zeiger auf eine Infostruktur. Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn *pextra* nicht NULL ist und *nCode* CN_UPDATE_COMMAND_UI entspricht, oder wenn eine Steuerleiste mit dem angegebenen *NID*vorhanden ist.
+TRUE, wenn *pEXtra* nicht NULL ist und *nCode* gleich CN_UPDATE_COMMAND_UI ist, oder wenn eine Steuerleiste mit der angegebenen *nID*vorhanden ist.
 
-##  <a name="recalclayout"></a>Cdockingmanager:: Neuberechnung
+## <a name="cdockingmanagerrecalclayout"></a><a name="recalclayout"></a>CDockingManager::RecalcLayout
 
-Berechnet das interne Layout der Steuerelemente, die in der Liste der Steuerelemente vorhanden sind, neu.
+Berechnet das interne Layout der Steuerelemente in der Liste der Steuerelemente neu.
 
 ```
 virtual void RecalcLayout(BOOL bNotify = TRUE);
@@ -1441,20 +1441,20 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bbenachrichtigen*<br/>
-in Dieser Parameter wird nicht verwendet.
+*bNotify*<br/>
+[in] Dieser Parameter wird nicht verwendet.
 
-##  <a name="releaseemptypanecontainers"></a>Cdockingmanager:: releaseemptypanecontainer
+## <a name="cdockingmanagerreleaseemptypanecontainers"></a><a name="releaseemptypanecontainers"></a>CDockingManager::ReleaseEmptyPaneContainers
 
-Gibt die leeren Bereichs Container frei.
+Gibt die leeren Bereichscontainer frei.
 
 ```
 void ReleaseEmptyPaneContainers();
 ```
 
-##  <a name="removehiddenmditabbedbar"></a>Cdockingmanager:: removehiddenmditabbedbar
+## <a name="cdockingmanagerremovehiddenmditabbedbar"></a><a name="removehiddenmditabbedbar"></a>CDockingManager::RemoveHiddenMDITabbedBar
 
-Entfernt den angegebenen ausgeblendeten Balken Bereich.
+Entfernt den angegebenen ausgeblendeten Balkenbereich.
 
 ```
 void RemoveHiddenMDITabbedBar(CDockablePane* pBar);
@@ -1462,12 +1462,12 @@ void RemoveHiddenMDITabbedBar(CDockablePane* pBar);
 
 ### <a name="parameters"></a>Parameter
 
-*pbar*<br/>
-in Ein Zeiger auf einen Balken Bereich, der entfernt werden soll.
+*Pbar*<br/>
+[in] Ein Zeiger auf einen Balkenbereich, den entfernt werden soll.
 
-##  <a name="removeminiframe"></a>Cdockingmanager:: removeminiframe
+## <a name="cdockingmanagerremoveminiframe"></a><a name="removeminiframe"></a>CDockingManager::RemoveMiniFrame
 
-Entfernt einen angegebenen Frame aus der Liste der Mini Frames.
+Entfernt einen angegebenen Rahmen aus der Liste der Miniframes.
 
 ```
 virtual BOOL RemoveMiniFrame(CPaneFrameWnd* pWnd);
@@ -1475,14 +1475,14 @@ virtual BOOL RemoveMiniFrame(CPaneFrameWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-in Ein Zeiger auf einen Frame, der entfernt werden soll.
+*pWnd*<br/>
+[in] Ein Zeiger auf einen zu entfernenden Rahmen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der angegebene Frame entfernt wurde. Andernfalls false.
+TRUE, wenn der angegebene Frame entfernt wird; FALSE sonst.
 
-##  <a name="removepanefromdockmanager"></a>Cdockingmanager:: removepanefromdockmanager
+## <a name="cdockingmanagerremovepanefromdockmanager"></a><a name="removepanefromdockmanager"></a>CDockingManager::RemovePaneFromDockManager
 
 Hebt die Registrierung eines Bereichs auf und entfernt ihn aus der Liste im Docking-Manager.
 
@@ -1497,22 +1497,22 @@ void RemovePaneFromDockManager(
 
 ### <a name="parameters"></a>Parameter
 
-*folgenden*<br/>
-in Ein Zeiger auf einen Bereich, der entfernt werden soll.
+*pWnd*<br/>
+[in] Ein Zeiger auf einen zu entfernenden Bereich.
 
-*bdestroy*<br/>
-in TRUE gibt an, dass der entfernte Bereich zerstört wird.
+*bDestroy*<br/>
+[in] Wenn TRUE, wird der entfernte Bereich zerstört.
 
-*banpassungen-Layout*<br/>
-in Wenn true, passen Sie das Andock Layout sofort an.
+*bAdjustLayout*<br/>
+[in] Wenn TRUE, passen Sie das Andocklayout sofort an.
 
-*bauherum ausblenden*<br/>
-in TRUE gibt an, dass der Bereich aus der Liste der Automatisches Ausblenden-Balken entfernt wird. Wenn der Wert false ist, wird der Bereich aus der Liste der regulären Bereiche entfernt.
+*bAutoHide*<br/>
+[in] Wenn TRUE, wird der Bereich aus der Liste der autohide-Balken entfernt. Wenn FALSE, wird der Bereich aus der Liste der regulären Bereiche entfernt.
 
-*pbarreplace*<br/>
-in Ein Zeiger auf einen Bereich, der den entfernten Bereich ersetzt.
+*pBarErsatz*<br/>
+[in] Ein Zeiger auf einen Bereich, der den entfernten Bereich ersetzt.
 
-##  <a name="replacepane"></a>Cdockingmanager:: replacepane
+## <a name="cdockingmanagerreplacepane"></a><a name="replacepane"></a>CDockingManager::ReplacePane
 
 Ersetzt einen Bereich durch einen anderen.
 
@@ -1524,27 +1524,27 @@ BOOL ReplacePane(
 
 ### <a name="parameters"></a>Parameter
 
-*poriginalbar*<br/>
-in Ein Zeiger auf den ursprünglichen Bereich.
+*pOriginalBar*<br/>
+[in] Ein Zeiger auf den ursprünglichen Bereich.
 
-*pnewbar*<br/>
-in Ein Zeiger auf den Bereich, der den ursprünglichen Bereich ersetzt.
+*pNewBar*<br/>
+[in] Ein Zeiger auf den Bereich, der den ursprünglichen Bereich ersetzt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Bereich erfolgreich ersetzt wurde. Andernfalls false.
+TRUE, wenn der Bereich erfolgreich ersetzt wurde; FALSE sonst.
 
-##  <a name="resortminiframesforzorder"></a>Cdockingmanager:: resortminiframesforzorder
+## <a name="cdockingmanagerresortminiframesforzorder"></a><a name="resortminiframesforzorder"></a>CDockingManager::ResortMiniFramesForZOrder
 
-Gibt die Frames in der Liste der Mini Rahmen an.
+Resorts die Rahmen in der Liste der Miniframes.
 
 ```
 void ResortMiniFramesForZOrder();
 ```
 
-##  <a name="savestate"></a>Cdockingmanager:: SaveState
+## <a name="cdockingmanagersavestate"></a><a name="savestate"></a>CDockingManager::SaveState
 
-Speichert den Zustand des Docking-Managers in der Registrierung.
+Speichert den Status des Andock-Managers in der Registrierung.
 
 ```
 virtual BOOL SaveState(
@@ -1554,23 +1554,23 @@ virtual BOOL SaveState(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszprofilename*<br/>
-in Ein Pfad zu einem Registrierungsschlüssel.
+*lpszProfileName*<br/>
+[in] Ein Pfad zu einem Registrierungsschlüssel.
 
-*uiid*<br/>
-in Die ID des Docking-Managers.
+*uiID*<br/>
+[in] Die Docking-Manager-ID.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Zustand erfolgreich gespeichert wurde. andernfalls false.
+TRUE, wenn der Status erfolgreich gespeichert wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Speichern des Zustands des Docking-Managers in der Registrierung umfasst das Speichern der Zustände der Steuer leisten, die Zustände der automatisch Ausblend baren Balken und die Zustände der Mini Frames, die im Docking-Manager vorhanden sind.
+Das Speichern des Docking-Managers in der Registrierung umfasst das Speichern der Status der Steuerleisten, der Status der Autohide-Leisten und der Zustände der Miniframes, die im Docking-Manager vorhanden sind.
 
-##  <a name="sendmessagetominiframes"></a>Cdockingmanager:: sendmessagetominiframes
+## <a name="cdockingmanagersendmessagetominiframes"></a><a name="sendmessagetominiframes"></a>CDockingManager::SendMessageToMiniFrames
 
-Sendet die angegebene Nachricht an alle Mini Frames.
+Sendet die angegebene Nachricht an alle Miniframes.
 
 ```
 BOOL SendMessageToMiniFrames(
@@ -1581,22 +1581,22 @@ BOOL SendMessageToMiniFrames(
 
 ### <a name="parameters"></a>Parameter
 
-*nach-oben*<br/>
-in Die zu sendende Nachricht.
+*uMessage*<br/>
+[in] Die zu sendende Nachricht.
 
 *wParam*<br/>
-in Zusätzliche Nachrichten abhängige Informationen.
+[in] Zusätzliche nachrichtenabhängige Informationen.
 
 *lParam*<br/>
-in Zusätzliche Nachrichten abhängige Informationen.
+[in] Zusätzliche nachrichtenabhängige Informationen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Immer true.
+TRUE immer.
 
-##  <a name="serialize"></a>Cdockingmanager:: Serialize
+## <a name="cdockingmanagerserialize"></a><a name="serialize"></a>CDockingManager::Serialisieren
 
-Schreibt den Docking-Manager in ein Archiv.
+Schreibt den Andock-Manager in ein Archiv.
 
 ```
 void Serialize(CArchive& ar);
@@ -1604,16 +1604,16 @@ void Serialize(CArchive& ar);
 
 ### <a name="parameters"></a>Parameter
 
-*Tempel*<br/>
-in Ein Verweis auf ein Archiv Objekt.
+*ar*<br/>
+[in] Ein Verweis auf ein Archivobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Schreiben des Docking-Managers in ein Archiv umfasst das Bestimmen der Anzahl der andockbaren Steuer leisten und Schieberegler sowie das Schreiben der Steuer leisten, der Mini Frames, der Auto ausblenden-Balken und der MDI-Balken im Registerkarten Format in das Archiv.
+Das Schreiben des Docking-Managers in ein Archiv umfasst die Bestimmung der Anzahl der Docking-Steuerleisten und -schieberegler sowie das Schreiben der Steuerleisten, der Minirahmen, der Autohide-Leisten und der MDI-Tabbed-Leisten in das Archiv.
 
-##  <a name="setautohidezorder"></a>Cdockingmanager:: abtaugehidezorder
+## <a name="cdockingmanagersetautohidezorder"></a><a name="setautohidezorder"></a>CDockingManager::SetAutohideZOrder
 
-Legt die Größe, die Breite und die Höhe der Steuer leisten und den angegebenen Bereich fest.
+Legt die Größe, Breite und Höhe der Steuerleisten und des angegebenen Bereichs fest.
 
 ```
 void SetAutohideZOrder(CDockablePane* pAHDockingBar);
@@ -1621,12 +1621,12 @@ void SetAutohideZOrder(CDockablePane* pAHDockingBar);
 
 ### <a name="parameters"></a>Parameter
 
-*phdockingbar*<br/>
-in Ein Zeiger auf einen andockbaren Bereich.
+*pAHDockingBar*<br/>
+[in] Ein Zeiger auf einen andockbaren Bereich.
 
-##  <a name="setdockingmode"></a>Cdockingmanager:: setdockingmode
+## <a name="cdockingmanagersetdockingmode"></a><a name="setdockingmode"></a>CDockingManager::SetDockingMode
 
-Legt den Andock Modus fest.
+Legt den Andockmodus fest.
 
 ```
 static void SetDockingMode(
@@ -1636,35 +1636,35 @@ static void SetDockingMode(
 
 ### <a name="parameters"></a>Parameter
 
-*dockmode*<br/>
-Gibt den neuen Andock Modus an. Weitere Informationen finden Sie im Abschnitt "Hinweise".
+*dockMode*<br/>
+Gibt den neuen Andockmodus an. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
 
-*Titel*<br/>
-Gibt das Design an, das für smardockmarker verwendet werden soll. Dabei kann es sich um einen der folgenden Enumerationswerte handeln: AFX_SDT_DEFAULT, AFX_SDT_VS2005 AFX_SDT_VS2008.
+*Thema*<br/>
+Gibt das Design an, das für intelligente Docking-Marker verwendet werden soll. Es kann einer der folgenden aufgezählten Werte sein: AFX_SDT_DEFAULT, AFX_SDT_VS2005, AFX_SDT_VS2008.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft diese statische Methode auf, um den Andock Modus festzulegen.
+Rufen Sie diese statische Methode auf, um den Andockmodus festzulegen.
 
-bei *dockmode* kann es sich um einen der folgenden Werte handeln:
+*dockMode* kann einer der folgenden Werte sein:
 
-- DT_STANDARD-Standard-Docking Modus, wie in Visual Studio .NET 2003 implementiert. Bereiche werden ohne Zieh Kontext gezogen.
+- DT_STANDARD - Standard-Dockingmodus, wie in Visual Studio .NET 2003 implementiert. Bereiche werden ohne zieher kontextgezogen.
 
-- DT_IMMEDIATE-sofortiger Andock Modus, wie in Microsoft Visio implementiert. Bereiche werden mit einem Zieh Kontext gezogen, es werden jedoch keine Marker angezeigt.
+- DT_IMMEDIATE - Sofortiger Andockmodus, wie in Microsoft Visio implementiert. Bereiche werden mit einem Ziehkontext gezogen, es werden jedoch keine Markierungen angezeigt.
 
-- DT_SMART intelligenter Andock Modus, wie in Visual Studio 2005 implementiert. Bereiche werden mit einem Zieh Kontext gezogen, und intelligente Marker werden angezeigt, die anzeigen, wo der Bereich angedockt werden kann.
+- DT_SMART – Smart Docking-Modus, wie in Visual Studio 2005 implementiert. Bereiche werden mit einem Ziehkontext gezogen, und es werden intelligente Markierungen angezeigt, die anzeigen, wo der Bereich angedockt werden kann.
 
-##  <a name="setdockstate"></a>Cdockingmanager:: setdockstate
+## <a name="cdockingmanagersetdockstate"></a><a name="setdockstate"></a>CDockingManager::SetDockState
 
-Legt den Andock Zustand der Steuer leisten, der Mini Frames und der Automatisches Ausblenden-leisten fest.
+Legt den Andockstatus der Steuerleisten, der Minirahmen und der Autohide-Leisten fest.
 
 ```
 virtual void SetDockState();
 ```
 
-##  <a name="setprintpreviewmode"></a>Cdockingmanager:: setprintpreviewmode
+## <a name="cdockingmanagersetprintpreviewmode"></a><a name="setprintpreviewmode"></a>CDockingManager::SetPrintPreviewMode
 
-Legt den Seiten Ansichtsmodus der Balken fest, die in der Seitenansicht angezeigt werden.
+Legt den Druckvorschaumodus der Balken fest, die in der Druckvorschau angezeigt werden.
 
 ```
 void SetPrintPreviewMode(
@@ -1674,15 +1674,15 @@ void SetPrintPreviewMode(
 
 ### <a name="parameters"></a>Parameter
 
-*bpreview*<br/>
-in TRUE, wenn der Druckvor Schau Modus festgelegt ist. Andernfalls false.
+*bVorschau*<br/>
+[in] TRUE, wenn der Druckvorschaumodus eingestellt ist; FALSE sonst.
 
 *pState*<br/>
-in Ein Zeiger auf einen Vorschau Zustand. Dieser Parameter wird nicht verwendet.
+[in] Ein Zeiger auf einen Vorschaustatus. Dieser Parameter wird nicht verwendet.
 
-##  <a name="setsmartdockingparams"></a>Cdockingmanager:: ab.
+## <a name="cdockingmanagersetsmartdockingparams"></a><a name="setsmartdockingparams"></a>CDockingManager::SetSmartDockingParams
 
-Legt die Parameter fest, die das Verhalten des intelligenten andockbaren definieren.
+Legt die Parameter fest, die das Verhalten des intelligenten Andockens definieren.
 
 ```
 static void SetSmartDockingParams(CSmartDockingInfo& params);
@@ -1691,17 +1691,17 @@ static void SetSmartDockingParams(CSmartDockingInfo& params);
 ### <a name="parameters"></a>Parameter
 
 *params*<br/>
-[in, out] Definiert die Parameter für das intelligente andocken.
+[in, out] Definiert die Parameter für das intelligente Andocken.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die Darstellung, die Farbe oder die Form der intelligenten Docking Marker anpassen möchten, wird diese Methode aufgerufen.
+Rufen Sie diese Methode auf, wenn Sie die Darstellung, Farbe oder Form der intelligenten Docking-Marker anpassen möchten.
 
-Wenn Sie die Standardsuche nach intelligenten Andock Markern verwenden möchten, übergeben Sie eine nicht initialisierte Instanz der [csmartdockinginfo-Klasse](../../mfc/reference/csmartdockinginfo-class.md) *an den Parameter.*
+Um die Standardsuche für intelligente Docking-Marker zu verwenden, übergeben Sie eine nicht initialisierte Instanz der [CSmartDockingInfo-Klasse](../../mfc/reference/csmartdockinginfo-class.md) an *params*.
 
-##  <a name="showdelayshowminiframes"></a>Cdockingmanager:: showdelta-showminiframes
+## <a name="cdockingmanagershowdelayshowminiframes"></a><a name="showdelayshowminiframes"></a>CDockingManager::ShowDelayShowMiniFrames
 
-Zeigt die Fenster der Mini Frames an oder blendet sie aus.
+Zeigt die Fenster der Minirahmen an oder blendet sie aus.
 
 ```
 void ShowDelayShowMiniFrames(BOOL bshow);
@@ -1710,11 +1710,11 @@ void ShowDelayShowMiniFrames(BOOL bshow);
 ### <a name="parameters"></a>Parameter
 
 *bShow*<br/>
-in TRUE, um das Fenster des angezeigten Frames aktiv zu machen. FALSE, um das Fenster des Frames auszublenden.
+[in] TRUE, um das Fenster des angezeigten Rahmens aktiv zu machen; FALSE, um das Fenster des Rahmens auszublenden.
 
-##  <a name="showpanes"></a>Cdockingmanager:: showbereichs
+## <a name="cdockingmanagershowpanes"></a><a name="showpanes"></a>CDockingManager::ShowPanes
 
-Ein-oder Ausblenden der Bereiche des Steuer Elements und der automatischen Ausblenden von Balken.
+Zeigt die Bereiche des Steuerelements und der Autohide-Leisten an oder blendet sie aus.
 
 ```
 virtual BOOL ShowPanes(BOOL bShow);
@@ -1723,15 +1723,15 @@ virtual BOOL ShowPanes(BOOL bShow);
 ### <a name="parameters"></a>Parameter
 
 *bShow*<br/>
-in TRUE, um die Bereiche anzuzeigen. FALSE, um die Bereiche auszublenden.
+[in] TRUE, um die Scheiben anzuzeigen; FALSE, um die Bereiche auszublenden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Immer FALSE.
+Immer FALSE
 
-##  <a name="startsdocking"></a>Cdockingmanager:: staranddocking
+## <a name="cdockingmanagerstartsdocking"></a><a name="startsdocking"></a>CDockingManager::StartSDocking
 
-Startet das intelligente Andocken des angegebenen Fensters gemäß der Ausrichtung des intelligenten Docking-Managers.
+Startet das intelligente Andocken des angegebenen Fensters entsprechend der Ausrichtung des Smart Docking Managers.
 
 ```
 void StartSDocking(CWnd* pDockingWnd);
@@ -1739,20 +1739,20 @@ void StartSDocking(CWnd* pDockingWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pdockingwnd*<br/>
-in Ein Zeiger auf ein Fenster, das Andocken soll.
+*pDockingWnd*<br/>
+[in] Ein Zeiger auf ein zu andockendes Fenster.
 
-##  <a name="stopsdocking"></a>Cdockingmanager:: stopsdocking
+## <a name="cdockingmanagerstopsdocking"></a><a name="stopsdocking"></a>CDockingManager::StopSDocking
 
-Beendet das intelligente andocken.
+Beendet das intelligente Andocken.
 
 ```
 void StopSDocking();
 ```
 
-##  <a name="getsmartdockingtheme"></a>Cdockingmanager:: gezmartdockingtheme
+## <a name="cdockingmanagergetsmartdockingtheme"></a><a name="getsmartdockingtheme"></a>CDockingManager::GetSmartDockingThema
 
-Eine statische Methode, die ein Design zurückgibt, das zum Anzeigen intelligenter Docking Marker verwendet wird.
+Eine statische Methode, die ein Design zurückgibt, das zum Anzeigen intelligenter Docking-Marker verwendet wird.
 
 ```
 static AFX_SMARTDOCK_THEME __stdcall GetSmartDockingTheme();
@@ -1760,9 +1760,9 @@ static AFX_SMARTDOCK_THEME __stdcall GetSmartDockingTheme();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen der folgenden Enumerationswerte zurück: AFX_SDT_DEFAULT, AFX_SDT_VS2005 AFX_SDT_VS2008.
+Gibt einen der folgenden aufgezählten Werte zurück: AFX_SDT_DEFAULT, AFX_SDT_VS2005, AFX_SDT_VS2008.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
@@ -1770,5 +1770,5 @@ Gibt einen der folgenden Enumerationswerte zurück: AFX_SDT_DEFAULT, AFX_SDT_VS2
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
 [CObject-Klasse](../../mfc/reference/cobject-class.md)<br/>
 [CFrameWndEx-Klasse](../../mfc/reference/cframewndex-class.md)<br/>
-[CDockablePane Class](../../mfc/reference/cdockablepane-class.md)<br/>
+[CDockablePane-Klasse](../../mfc/reference/cdockablepane-class.md)<br/>
 [CPaneFrameWnd-Klasse](../../mfc/reference/cpaneframewnd-class.md)

@@ -1,28 +1,28 @@
 ---
-title: 'Vorgehensweise: Deklarieren von Überschreibungsbezeichnern (C++ / CLI)'
+title: 'Gewusst wie: Überschreiben von Bezeichnern deklarieren (C++/CLI)'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - override specifiers in native compilation, overriding
 ms.assetid: d0551836-9ac7-41eb-a6e9-a4b3ef60767d
-ms.openlocfilehash: db74ef226242ec8f4f70f2769fbc8ba102a808c8
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9f3f6855f257d0af250b9bbdd2c0360b308ce775
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387421"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374450"
 ---
-# <a name="how-to-declare-override-specifiers-in-native-compilations-ccli"></a>Vorgehensweise: Deklarieren von Überschreibungsbezeichnern in nativen Kompilierungen (C++ / CLI)
+# <a name="how-to-declare-override-specifiers-in-native-compilations-ccli"></a>Gewusst wie: Deklarieren von Überschreibungsbezeichnern in nativen Kompilierungen (C++/CLI)
 
-[versiegelte](../extensions/sealed-cpp-component-extensions.md), [abstrakte](../extensions/abstract-cpp-component-extensions.md), und [überschreiben](../extensions/override-cpp-component-extensions.md) stehen in Kompilierungen, die keine **/Zw** oder ["/ CLR"](../build/reference/clr-common-language-runtime-compilation.md).
+[Sealed](../extensions/sealed-cpp-component-extensions.md), [abstract](../extensions/abstract-cpp-component-extensions.md)und [override](../extensions/override-cpp-component-extensions.md) sind in Kompilierungen verfügbar, die **/ZW** oder [/clr](../build/reference/clr-common-language-runtime-compilation.md)nicht verwenden.
 
 > [!NOTE]
->  Hat der ISO C ++ 11-Standardsprache der [außer Kraft setzen](../cpp/override-specifier.md) Bezeichner und die [endgültige](../cpp/final-specifier.md) Bezeichner, und beide werden in Visual Studio verwenden unterstützt `final` anstelle von `sealed` in Code, der zum vorgesehen ist als nur nativ kompiliert werden.
+> Die ISO C++11-Standardsprache verfügt über den [Außerkraftsetzungsbezeichner](../cpp/override-specifier.md) `final` und `sealed` den [endgültigen](../cpp/final-specifier.md) Bezeichner, und beide werden in Visual Studio Use anstelle von Code unterstützt, der als nur systemeigener Code kompiliert werden soll.
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Das folgende Beispiel zeigt, dass `sealed` in nativen Kompilierungen gültig ist.
+Das folgende Beispiel `sealed` zeigt, dass dies in systemeigenen Kompilierungen gültig ist.
 
 ### <a name="code"></a>Code
 
@@ -49,9 +49,9 @@ public:
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Das nächste Beispiel zeigt, dass `override` in nativen Kompilierungen gültig ist.
+Das nächste Beispiel `override` zeigt, dass dies in systemeigenen Kompilierungen gültig ist.
 
 ### <a name="code"></a>Code
 
@@ -71,9 +71,9 @@ public:
 
 ## <a name="example"></a>Beispiel
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Dieses Beispiel zeigt, dass `abstract` in nativen Kompilierungen gültig ist.
+Dieses Beispiel `abstract` zeigt, dass dies in systemeigenen Kompilierungen gültig ist.
 
 ### <a name="code"></a>Code
 

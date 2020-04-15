@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::Array Class
 ms.assetid: 7815ab40-88c5-42b0-83b8-081cef0cda31
-ms.openlocfilehash: 7d9fca4de954b5ba9c7cbcb3bdfce0fe3263dbd7
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: d625d80df67a3c8207467ad629afd4c2bf88db18
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79445795"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318654"
 ---
 # <a name="platformarray-class"></a>Platform::Array-Klasse
 
@@ -28,43 +28,43 @@ private ref class Array<TArg, 1> :
     public IBoxArray<TArg>
 ```
 
-### <a name="members"></a>Members
+### <a name="members"></a>Member
 
-Platform:: Array erbt all seine Methoden von der [Platform:: Write](../cppcx/platform-writeonlyarray-class.md) Sample-Klasse und implementiert die `Value`-Eigenschaft der [Platform:: iboxarray-Schnittstelle](../cppcx/platform-iboxarray-interface.md).
+Platform::Array erbt alle seine Methoden von [Platform::WriteOnlyArray-Klasse](../cppcx/platform-writeonlyarray-class.md) und implementiert die `Value` Eigenschaft der [Platform::IBoxArray Interface](../cppcx/platform-iboxarray-interface.md).
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Array-Konstruktoren](#ctor)|Initialisiert ein eindimensionales, änderbares Array von Typen, die vom Klassen Vorlagen Parameter *T*angegeben werden.|
+|[Array-Konstruktoren](#ctor)|Initialisiert ein eindimensionales, veränderbares Array von Typen, die durch den Klassenvorlagenparameter *T*angegeben werden.|
 
 ### <a name="methods"></a>Methoden
 
-Siehe [Platform:: Beschreib teonlyarray-Klasse](../cppcx/platform-writeonlyarray-class.md).
+Siehe [Plattform::WriteOnlyArray-Klasse](../cppcx/platform-writeonlyarray-class.md).
 
 ### <a name="properties"></a>Eigenschaften
 
 |||
 |-|-|
-|[Array:: Value](#value)|Ruft ein Handle für das aktuelle Array ab.|
+|[Array::Wert](#value)|Ruft ein Handle für das aktuelle Array ab.|
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Array-Klasse wird versiegelt und kann nicht vererbt werden.
 
-Das Windows-Runtime-Typsystem unterstützt das Konzept von verzweigten Arrays nicht. Daher können Sie ein IVector < Platform:: Array\<t-> > nicht als Rückgabewert oder Methoden Parameter übergeben. Um ein verzweigtes Array oder eine Sequenz von Sequenzen an die ABI zu übergeben, verwenden Sie `IVector<IVector<T>^>`.
+Das Windows-Runtime-Typsystem unterstützt nicht das Konzept von gezackten Arrays, und\<daher können Sie einen IVector<Platform::Array T>> als Rückgabewert oder Methodenparameter nicht übergeben. Um ein verzweigtes Array oder eine Sequenz von Sequenzen an die ABI zu übergeben, verwenden Sie `IVector<IVector<T>^>`.
 
-Weitere Informationen dazu, wann und wie Platform:: Array verwendet wird, finden Sie unter [Array und beschreiteonlyarray](../cppcx/array-and-writeonlyarray-c-cx.md).
+Weitere Informationen dazu, wann und wie Platform::Array verwendet wird, finden Sie unter [Array und WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md).
 
-Diese Klasse wird im Header "vccorlib.h" definiert, der automatisch vom Compiler eingeschlossen wird. Es ist in IntelliSense, aber nicht in Objektkatalog sichtbar, da es sich nicht um einen in Platform. winmd definierten öffentlichen Typ handelt.
+Diese Klasse wird im Header "vccorlib.h" definiert, der automatisch vom Compiler eingeschlossen wird. Es ist in IntelliSense sichtbar, aber nicht im Objektbrowser, da es sich nicht um einen öffentlichen Typ handelt, der in platform.winmd definiert ist.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: **/ZW**
 
-## <a name="ctor"></a>Array-Konstruktoren
+## <a name="array-constructors"></a><a name="ctor"></a>Arraykonstruktoren
 
-Initialisiert ein eindimensionales, änderbares Array von Typen, die vom Klassen Vorlagen Parameter *T*angegeben werden.
+Initialisiert ein eindimensionales, veränderbares Array von Typen, die durch den Klassenvorlagenparameter *T*angegeben werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -78,17 +78,17 @@ Array(T* data, unsigned int size);
 *T*<br/>
 Klassenvorlagenparameter.
 
-*size*<br/>
+*Größe*<br/>
 Die Anzahl der Elemente im Array.
 
-*data*<br/>
+*Daten*<br/>
 Ein Zeiger auf ein Array von Daten des Typs `T`, der verwendet wird, um dieses Arrayobjekt zu initialisieren.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zum Erstellen von Instanzen von Platform:: Array finden Sie unter [Array und beschreiteonlyarray](../cppcx/array-and-writeonlyarray-c-cx.md).
+Weitere Informationen zum Erstellen von Instances von Platform::Array finden Sie unter [Array und WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md).
 
-## <a name="get"></a>Array:: Get-Methode
+## <a name="arrayget-method"></a><a name="get"></a>Array::get-Methode
 
 Ruft einen Verweis auf das Arrayelement an der angegebenen Indexposition ab.
 
@@ -101,13 +101,13 @@ T& get(unsigned int index)  const;
 #### <a name="parameters"></a>Parameter
 
 *Index*<br/>
-Ein nullbasierter Index, der ein Element im Array identifiziert. Der minimale Index ist 0, und der maximale Index ist der Wert, der vom `size`-Parameter im [Arraykonstruktor](#ctor)angegeben wird.
+Ein nullbasierter Index, der ein Element im Array identifiziert. Der minimale Index ist 0, und der `size` maximale Index ist der Wert, der durch den Parameter im [Arraykonstruktor](#ctor)angegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Das durch den `index`-Parameter spezifizierte Arrayelement.
 
-## <a name="value"></a>Array:: Value-Eigenschaft
+## <a name="arrayvalue-property"></a><a name="value"></a>Array::Value-Eigenschaft
 
 Ruft ein Handle für das aktuelle Array ab.
 
@@ -121,7 +121,7 @@ property Array^ Value;
 
 Ein Handle für das aktuelle Array.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Plattformnamespace](../cppcx/platform-namespace-c-cx.md)<br/>
 [Array und WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)

@@ -1,5 +1,5 @@
 ---
-title: Klasse von "-Klasse"
+title: CAtlWinModule-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlWinModule
@@ -10,19 +10,19 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlWinModule class
 ms.assetid: 7ec844af-0f68-4a34-b0c8-9de50a025df0
-ms.openlocfilehash: d0bc98fa48f84e67ab38106dea3fe22d5ad1757d
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 40385fd592563837546b483bb80978cde6a56555
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423405"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321274"
 ---
-# <a name="catlwinmodule-class"></a>Klasse von "-Klasse"
+# <a name="catlwinmodule-class"></a>CAtlWinModule-Klasse
 
-Diese Klasse bietet Unterstützung für ATL-windowingkomponenten.
+Diese Klasse bietet Unterstützung für ATL-Fensterkomponenten.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,21 +34,21 @@ class CAtlWinModule : public _ATL_WIN_MODULE
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|["" Für ""](#catlwinmodule)|Der Konstruktor.|
-|["" Für ""](#dtor)|Der Destruktor.|
+|[CAtlWinModule::CAtlWinModule](#catlwinmodule)|Der Konstruktor.|
+|[CAtlWinModule::-CAtlWinModule](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|["": Addkreatewnddata](#addcreatewnddata)|Fügt ein Datenobjekt hinzu.|
-|["": Extractkreatewnddata](#extractcreatewnddata)|Gibt einen Zeiger auf das Datenobjekt des Fenster Moduls zurück.|
+|[CAtlWinModule::AddCreateWndData](#addcreatewnddata)|Fügt ein Datenobjekt hinzu.|
+|[CAtlWinModule::ExtractCreateWndData](#extractcreatewnddata)|Gibt einen Zeiger auf das Datenobjekt des Fenstermoduls zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse bietet Unterstützung für alle ATL-Klassen, für die windowingfunktionen erforderlich sind.
+Diese Klasse bietet Unterstützung für alle ATL-Klassen, die Fensterfunktionen erfordern.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -56,13 +56,13 @@ Diese Klasse bietet Unterstützung für alle ATL-Klassen, für die windowingfunk
 
 `CAtlWinModule`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase. h
+**Kopfzeile:** atlbase.h
 
-##  <a name="addcreatewnddata"></a>"": Addkreatewnddata
+## <a name="catlwinmoduleaddcreatewnddata"></a><a name="addcreatewnddata"></a>CAtlWinModule::AddCreateWndData
 
-Diese Methode initialisiert eine `_AtlCreateWndData`-Struktur und fügt Sie hinzu.
+Diese Methode initialisiert und `_AtlCreateWndData` fügt eine Struktur hinzu.
 
 ```
 void AddCreateWndData(_AtlCreateWndData* pData, void* pObject);
@@ -71,16 +71,16 @@ void AddCreateWndData(_AtlCreateWndData* pData, void* pObject);
 ### <a name="parameters"></a>Parameter
 
 *pData*<br/>
-Ein Zeiger auf die `_AtlCreateWndData`-Struktur, die initialisiert und dem aktuellen Modul hinzugefügt werden soll.
+Zeiger auf `_AtlCreateWndData` die zu initialisierende Struktur, die dem aktuellen Modul hinzugefügt werden soll.
 
 *pObject*<br/>
-Zeiger auf den **this** -Zeiger eines Objekts.
+Zeiger auf den **Zeiger** eines Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft [atlwinmoduleaddkreatewnddata](winmodule-global-functions.md#atlwinmoduleaddcreatewnddata) auf, das eine [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md) Struktur initialisiert. Diese-Struktur speichert den **this** -Zeiger, der zum Abrufen der Klasseninstanz in Fenster Prozeduren verwendet wird.
+Diese Methode ruft [AtlWinModuleAddCreateWndData](winmodule-global-functions.md#atlwinmoduleaddcreatewnddata) auf, das eine [_AtlCreateWndData-Struktur](../../atl/reference/atlcreatewnddata-structure.md) initialisiert. Diese Struktur speichert den **zeiger,** der zum Abrufen der Klasseninstanz in Fensterprozeduren verwendet wird.
 
-##  <a name="catlwinmodule"></a>"" Für ""
+## <a name="catlwinmodulecatlwinmodule"></a><a name="catlwinmodule"></a>CAtlWinModule::CAtlWinModule
 
 Der Konstruktor.
 
@@ -88,11 +88,11 @@ Der Konstruktor.
 CAtlWinModule();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn die Initialisierung fehlschlägt, wird eine **EXCEPTION_NONCONTINUABLE** Ausnahme ausgelöst.
 
-##  <a name="dtor"></a>"" Für ""
+## <a name="catlwinmodulecatlwinmodule"></a><a name="dtor"></a>CAtlWinModule::-CAtlWinModule
 
 Der Destruktor.
 
@@ -100,13 +100,13 @@ Der Destruktor.
 ~CAtlWinModule();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt alle zugeordneten Ressourcen frei.
+Gibt alle zugewiesenen Ressourcen frei.
 
-##  <a name="extractcreatewnddata"></a>"": Extractkreatewnddata
+## <a name="catlwinmoduleextractcreatewnddata"></a><a name="extractcreatewnddata"></a>CAtlWinModule::ExtractCreateWndData
 
-Diese Methode gibt einen Zeiger auf eine `_AtlCreateWndData`-Struktur zurück.
+Diese Methode gibt einen `_AtlCreateWndData` Zeiger auf eine Struktur zurück.
 
 ```
 void* ExtractCreateWndData();
@@ -114,10 +114,10 @@ void* ExtractCreateWndData();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die `_AtlCreateWndData`-Struktur zurück, die [zuvor mit "](#addcreatewnddata)" "" "" "" "" "" "" "mit" "" "" "" "mit" "" ".
+Gibt einen Zeiger `_AtlCreateWndData` auf die Struktur zurück, die zuvor mit [CAtlWinModule::AddCreateWndData](#addcreatewnddata)oder NULL hinzugefügt wurde, wenn kein Objekt verfügbar ist.
 
 ## <a name="see-also"></a>Siehe auch
 
 [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)<br/>
-[Modul Klassen](../../atl/atl-module-classes.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
+[Modulklassen](../../atl/atl-module-classes.md)

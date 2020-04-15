@@ -14,12 +14,12 @@ f1_keywords:
 helpviewer_keywords:
 - IScheduler structure
 ms.assetid: 471de85a-2b1a-4b6d-ab81-2eff2737161e
-ms.openlocfilehash: cd7b04b0dc5ca1bc496ce87a6459d00ed5813bf7
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: ccd82b5c5112bc322717f2b58d79d4c8f34f5bbd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427440"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368177"
 ---
 # <a name="ischeduler-structure"></a>IScheduler-Struktur
 
@@ -35,33 +35,33 @@ struct IScheduler;
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IScheduler:: addvirtualprocessor](#addvirtualprocessors)|Stellt einen Planer mit einem Satz virtueller Prozessor Stämme für seine Verwendung bereit. Jede `IVirtualProcessorRoot`-Schnittstelle stellt das Recht dar, einen einzelnen Thread auszuführen, der im Auftrag des Planers Arbeit ausführen kann.|
-|[IScheduler:: GetId](#getid)|Gibt einen eindeutigen Bezeichner für den Scheduler zurück.|
-|[IScheduler:: GetPolicy](#getpolicy)|Gibt eine Kopie der Richtlinie des Schedulers zurück. Weitere Informationen zu Scheduler-Richtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).|
-|[IScheduler:: NotifyResourcesExternallyBusy](#notifyresourcesexternallybusy)|Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch die Gruppe der virtuellen Prozessor Stämme im Array `ppVirtualProcessorRoots` dargestellt werden, nun von anderen Zeit Planungs Modulen verwendet werden.|
-|[IScheduler:: notifyresourcesexternallyidle](#notifyresourcesexternallyidle)|Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den Satz virtueller Prozessor Stämme im Array `ppVirtualProcessorRoots` dargestellt werden, von anderen Zeit Planungs Modulen nicht verwendet werden.|
-|[IScheduler:: removevirtualprocessor](#removevirtualprocessors)|Initiiert das Entfernen virtueller Prozessor Stämme, die zuvor diesem Scheduler zugeordnet wurden.|
-|[IScheduler:: Statistics](#statistics)|Stellt Informationen im Zusammenhang mit den Eingangs-und Abschluss Raten der Aufgabe sowie eine Änderung der Warteschlangen Länge für einen Scheduler bereit.|
+|[IScheduler::AddVirtualProcessors](#addvirtualprocessors)|Stellt einen Planer mit einer Reihe virtueller Prozessorwurzeln für seine Verwendung bereit. Jede `IVirtualProcessorRoot` Schnittstelle stellt das Recht dar, einen einzelnen Thread auszuführen, der Arbeiten im Auftrag des Planers ausführen kann.|
+|[IScheduler::GetId](#getid)|Gibt einen eindeutigen Bezeichner für den Planer zurück.|
+|[IScheduler::GetPolicy](#getpolicy)|Gibt eine Kopie der Richtlinie des Planers zurück. Weitere Informationen zu Planerrichtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).|
+|[IScheduler::NotifyResourcesExternallyBusy](#notifyresourcesexternallybusy)|Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den `ppVirtualProcessorRoots` Satz virtueller Prozessorwurzeln im Array dargestellt werden, jetzt von anderen Planern verwendet werden.|
+|[IScheduler::NotifyResourcesExternallyIdle](#notifyresourcesexternallyidle)|Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den `ppVirtualProcessorRoots` Satz virtueller Prozessorwurzeln im Array dargestellt werden, nicht von anderen Planern verwendet werden.|
+|[IScheduler::RemoveVirtualProcessors](#removevirtualprocessors)|Initiiert das Entfernen von virtuellen Prozessorwurzeln, die zuvor diesem Planer zugewiesen wurden.|
+|[IScheduler::Statistik](#statistics)|Enthält Informationen zu den Ankunfts- und Abschlussraten von Aufgaben und zur Änderung der Warteschlangenlänge für einen Planer.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn Sie einen benutzerdefinierten Planer implementieren, der mit dem Ressourcen-Manager kommuniziert, sollten Sie eine Implementierung der `IScheduler`-Schnittstelle bereitstellen. Diese Schnittstelle ist ein Ende eines bidirektionalen Kommunikationskanals zwischen einem Scheduler und dem Ressourcen-Manager. Das andere Ende wird durch die `IResourceManager`-und `ISchedulerProxy`-Schnittstellen dargestellt, die vom Ressourcen-Manager implementiert werden.
+Wenn Sie einen benutzerdefinierten Planer implementieren, der mit dem Ressourcen-Manager `IScheduler` kommuniziert, sollten Sie eine Implementierung der Schnittstelle bereitstellen. Diese Schnittstelle ist ein Ende eines zweiseitigen Kommunikationskanals zwischen einem Planer und dem Ressourcen-Manager. Das andere Ende wird `IResourceManager` `ISchedulerProxy` durch die und Schnittstellen dargestellt, die vom Ressourcen-Manager implementiert werden.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `IScheduler`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** concrtrm. h
+**Kopfzeile:** concrtrm.h
 
 **Namespace:** Parallelität
 
-## <a name="addvirtualprocessors"></a>IScheduler:: addvirtualprocessor-Methode
+## <a name="ischeduleraddvirtualprocessors-method"></a><a name="addvirtualprocessors"></a>IScheduler::AddVirtualProcessors-Methode
 
-Stellt einen Planer mit einem Satz virtueller Prozessor Stämme für seine Verwendung bereit. Jede `IVirtualProcessorRoot`-Schnittstelle stellt das Recht dar, einen einzelnen Thread auszuführen, der im Auftrag des Planers Arbeit ausführen kann.
+Stellt einen Planer mit einer Reihe virtueller Prozessorwurzeln für seine Verwendung bereit. Jede `IVirtualProcessorRoot` Schnittstelle stellt das Recht dar, einen einzelnen Thread auszuführen, der Arbeiten im Auftrag des Planers ausführen kann.
 
 ```cpp
 virtual void AddVirtualProcessors(
@@ -71,19 +71,19 @@ virtual void AddVirtualProcessors(
 
 ### <a name="parameters"></a>Parameter
 
-*ppvirtualprocessorroots*<br/>
-Ein Array von `IVirtualProcessorRoot` Schnittstellen, die die dem Scheduler hinzugefügten virtuellen Prozessor Stämme darstellen.
+*ppVirtualProcessorRoots*<br/>
+Ein Array `IVirtualProcessorRoot` von Schnittstellen, die die virtuellen Prozessorwurzeln darstellen, die dem Planer hinzugefügt werden.
 
 *count*<br/>
-Die Anzahl der `IVirtualProcessorRoot` Schnittstellen im Array.
+Die Anzahl `IVirtualProcessorRoot` der Schnittstellen im Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Ressourcen-Manager ruft die `AddVirtualProcessor`-Methode auf, um einem Planer einen anfänglichen Satz virtueller Prozessor Stämme zu gewähren. Sie kann auch die-Methode aufrufen, um dem Scheduler virtuelle Prozessor Stämme hinzuzufügen, wenn er Ressourcen Zwischenzeit Planungs Modulen umgleicht.
+Der Ressourcen-Manager `AddVirtualProcessor` ruft die Methode auf, um einem Planer einen anfänglichen Satz virtueller Prozessorwurzeln zu gewähren. Es könnte auch die Methode aufrufen, um dem Planer virtuelle Prozessorwurzeln hinzuzufügen, wenn Ressourcen zwischen Planern neu ausbalanciert werden.
 
-## <a name="getid"></a>IScheduler:: GetId-Methode
+## <a name="ischedulergetid-method"></a><a name="getid"></a>IScheduler::GetId-Methode
 
-Gibt einen eindeutigen Bezeichner für den Scheduler zurück.
+Gibt einen eindeutigen Bezeichner für den Planer zurück.
 
 ```cpp
 virtual unsigned int GetId() const = 0;
@@ -91,17 +91,17 @@ virtual unsigned int GetId() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine eindeutige ganzzahlige Kennung.
+Ein eindeutiger Ganzzahlbezeichner.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie sollten die [GetSchedulerId-](concurrency-namespace-functions.md) Funktion verwenden, um einen eindeutigen Bezeichner für das Objekt zu erhalten, das die `IScheduler`-Schnittstelle implementiert, bevor Sie die-Schnittstelle als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden. Es wird erwartet, dass Sie denselben Bezeichner zurückgeben, wenn die `GetId`-Funktion aufgerufen wird.
+Sie sollten die [GetSchedulerId-Funktion](concurrency-namespace-functions.md) verwenden, um einen eindeutigen Bezeichner für das Objekt zu erhalten, das die `IScheduler` Schnittstelle implementiert, bevor Sie die Schnittstelle als Parameter für Methoden verwenden, die vom Ressourcen-Manager bereitgestellt werden. Es wird erwartet, dass Sie `GetId` denselben Bezeichner zurückgeben, wenn die Funktion aufgerufen wird.
 
-Ein Bezeichner aus einer anderen Quelle kann zu undefiniertem Verhalten führen.
+Ein Bezeichner, der aus einer anderen Quelle abgerufen wird, kann zu einem undefinierten Verhalten führen.
 
-## <a name="getpolicy"></a>IScheduler:: GetPolicy-Methode
+## <a name="ischedulergetpolicy-method"></a><a name="getpolicy"></a>IScheduler::GetPolicy-Methode
 
-Gibt eine Kopie der Richtlinie des Schedulers zurück. Weitere Informationen zu Scheduler-Richtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
+Gibt eine Kopie der Richtlinie des Planers zurück. Weitere Informationen zu Planerrichtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
 
 ```cpp
 virtual SchedulerPolicy GetPolicy() const = 0;
@@ -109,11 +109,11 @@ virtual SchedulerPolicy GetPolicy() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Kopie der Richtlinie des Schedulers.
+Eine Kopie der Richtlinie des Planers.
 
-## <a name="notifyresourcesexternallybusy"></a>IScheduler:: NotifyResourcesExternallyBusy-Methode
+## <a name="ischedulernotifyresourcesexternallybusy-method"></a><a name="notifyresourcesexternallybusy"></a>IScheduler::NotifyResourcesExternallyBusy-Methode
 
-Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch die Gruppe der virtuellen Prozessor Stämme im Array `ppVirtualProcessorRoots` dargestellt werden, nun von anderen Zeit Planungs Modulen verwendet werden.
+Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den `ppVirtualProcessorRoots` Satz virtueller Prozessorwurzeln im Array dargestellt werden, jetzt von anderen Planern verwendet werden.
 
 ```cpp
 virtual void NotifyResourcesExternallyBusy(
@@ -123,25 +123,25 @@ virtual void NotifyResourcesExternallyBusy(
 
 ### <a name="parameters"></a>Parameter
 
-*ppvirtualprocessorroots*<br/>
-Ein Array von `IVirtualProcessorRoot` Schnittstellen, die den Hardwarethreads zugeordnet sind, auf denen andere Planer ausgelastet sind.
+*ppVirtualProcessorRoots*<br/>
+Ein Array `IVirtualProcessorRoot` von Schnittstellen, die den Hardwarethreads zugeordnet sind, auf denen andere Planer beschäftigt sind.
 
 *count*<br/>
-Die Anzahl der `IVirtualProcessorRoot` Schnittstellen im Array.
+Die Anzahl `IVirtualProcessorRoot` der Schnittstellen im Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es ist möglich, dass ein bestimmter Hardware Thread gleichzeitig mehreren Zeit Planungs Modulen zugewiesen wird. Ein Grund hierfür könnte sein, dass auf dem System nicht genügend Hardwarethreads vorhanden sind, um die minimale Parallelität für alle Planer zu erfüllen, ohne Ressourcen gemeinsam zu nutzen. Eine weitere Möglichkeit besteht darin, dass Ressourcen temporär anderen Zeit Planungs Modulen zugewiesen werden, wenn Sie vom besitzenden Planer nicht verwendet werden, und zwar über alle virtuellen Prozessor Stämme auf dem deaktivierten Hardware Thread.
+Es ist möglich, dass ein bestimmter Hardwarethread mehreren Planern gleichzeitig zugewiesen wird. Ein Grund dafür könnte sein, dass nicht genügend Hardwarethreads auf dem System vorhanden sind, um die Mindestparallelität für alle Planer zu erfüllen, ohne Ressourcen gemeinsam zu nutzen. Eine weitere Möglichkeit besteht darin, dass Ressourcen vorübergehend anderen Planern zugewiesen werden, wenn der besitzende Planer sie nicht verwendet, und alle virtuellen Prozessorwurzeln auf diesem Hardwarethread deaktiviert werden.
 
-Die Abonnement Ebene eines Hardware Threads wird durch die Anzahl der abonnierten und aktivierten virtuellen Prozessor Stämme gekennzeichnet, die mit diesem Hardware Thread verknüpft sind. Aus Sicht eines bestimmten Zeit Planungs Moduls ist die externe Abonnement Ebene eines Hardware Threads der Teil des Abonnements, zu dem andere Planer beitragen. Benachrichtigungen, dass Ressourcen extern ausgelastet sind, werden an einen Planer gesendet, wenn die externe Abonnement Stufe für einen Hardware Thread von NULL in positives Gebiet verschoben wird.
+Die Abonnementebene eines Hardwarethreads wird durch die Anzahl der abonnierten Threads und aktivierten virtuellen Prozessorwurzeln bezeichnet, die diesem Hardwarethread zugeordnet sind. Aus der Sicht eines bestimmten Planers ist die externe Abonnementebene eines Hardwarethreads der Teil des Abonnements, zu dem andere Planer beitragen. Benachrichtigungen, dass Ressourcen extern ausgelastet sind, werden an einen Planer gesendet, wenn die externe Abonnementebene für einen Hardwarethread von Null in den positiven Bereich verschoben wird.
 
-Benachrichtigungen über diese Methode werden nur an Planer gesendet, die über eine Richtlinie verfügen, bei der der Wert für den `MinConcurrency` Richtlinien Schlüssel gleich dem Wert für den `MaxConcurrency` Richtlinien Schlüssel ist. Weitere Informationen zu Scheduler-Richtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
+Benachrichtigungen über diese Methode werden nur an Planer gesendet, `MinConcurrency` die über eine Richtlinie verfügen, bei der der Wert für den Richtlinienschlüssel dem Wert für den `MaxConcurrency` Richtlinienschlüssel entspricht. Weitere Informationen zu Planerrichtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
 
-Ein Scheduler, der für Benachrichtigungen qualifiziert ist, erhält bei der Erstellung eine Reihe von anfänglichen Benachrichtigungen, die darauf hingewiesen werden, ob die soeben zugewiesenen Ressourcen extern ausgelastet sind oder sich im Leerlauf befinden.
+Ein Planer, der für Benachrichtigungen qualifiziert ist, ruft beim Erstellen eine Reihe von Anfangsbenachrichtigungen ab und informiert ihn darüber, ob die Ressourcen, die er gerade zugewiesen wurde, extern ausgelastet oder im Leerlauf sind.
 
-## <a name="notifyresourcesexternallyidle"></a>IScheduler:: notifyresourcesexternallyidle-Methode
+## <a name="ischedulernotifyresourcesexternallyidle-method"></a><a name="notifyresourcesexternallyidle"></a>IScheduler::NotifyResourcesExternallyIdle-Methode
 
-Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den Satz virtueller Prozessor Stämme im Array `ppVirtualProcessorRoots` dargestellt werden, von anderen Zeit Planungs Modulen nicht verwendet werden.
+Benachrichtigt diesen Planer, dass die Hardwarethreads, die durch den `ppVirtualProcessorRoots` Satz virtueller Prozessorwurzeln im Array dargestellt werden, nicht von anderen Planern verwendet werden.
 
 ```cpp
 virtual void NotifyResourcesExternallyIdle(
@@ -151,25 +151,25 @@ virtual void NotifyResourcesExternallyIdle(
 
 ### <a name="parameters"></a>Parameter
 
-*ppvirtualprocessorroots*<br/>
-Ein Array von `IVirtualProcessorRoot` Schnittstellen, die Hardwarethreads zugeordnet sind, auf denen andere Zeit Planungs Module sich im Leerlauf befinden.
+*ppVirtualProcessorRoots*<br/>
+Ein Array `IVirtualProcessorRoot` von Schnittstellen, die Mithardwarethreads zugeordnet sind, bei denen andere Planer im Leerlauf sind.
 
 *count*<br/>
-Die Anzahl der `IVirtualProcessorRoot` Schnittstellen im Array.
+Die Anzahl `IVirtualProcessorRoot` der Schnittstellen im Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es ist möglich, dass ein bestimmter Hardware Thread gleichzeitig mehreren Zeit Planungs Modulen zugewiesen wird. Ein Grund hierfür könnte sein, dass auf dem System nicht genügend Hardwarethreads vorhanden sind, um die minimale Parallelität für alle Planer zu erfüllen, ohne Ressourcen gemeinsam zu nutzen. Eine weitere Möglichkeit besteht darin, dass Ressourcen temporär anderen Zeit Planungs Modulen zugewiesen werden, wenn Sie vom besitzenden Planer nicht verwendet werden, und zwar über alle virtuellen Prozessor Stämme auf dem deaktivierten Hardware Thread.
+Es ist möglich, dass ein bestimmter Hardwarethread mehreren Planern gleichzeitig zugewiesen wird. Ein Grund dafür könnte sein, dass nicht genügend Hardwarethreads auf dem System vorhanden sind, um die Mindestparallelität für alle Planer zu erfüllen, ohne Ressourcen gemeinsam zu nutzen. Eine weitere Möglichkeit besteht darin, dass Ressourcen vorübergehend anderen Planern zugewiesen werden, wenn der besitzende Planer sie nicht verwendet, und alle virtuellen Prozessorwurzeln auf diesem Hardwarethread deaktiviert werden.
 
-Die Abonnement Ebene eines Hardware Threads wird durch die Anzahl der abonnierten und aktivierten virtuellen Prozessor Stämme gekennzeichnet, die mit diesem Hardware Thread verknüpft sind. Aus Sicht eines bestimmten Zeit Planungs Moduls ist die externe Abonnement Ebene eines Hardware Threads der Teil des Abonnements, zu dem andere Planer beitragen. Benachrichtigungen, dass Ressourcen extern ausgelastet sind, werden an einen Planer gesendet, wenn die externe Abonnement Ebene für einen Hardware Thread von einem vorherigen positiven Wert auf 0 (null) fällt.
+Die Abonnementebene eines Hardwarethreads wird durch die Anzahl der abonnierten Threads und aktivierten virtuellen Prozessorwurzeln bezeichnet, die diesem Hardwarethread zugeordnet sind. Aus der Sicht eines bestimmten Planers ist die externe Abonnementebene eines Hardwarethreads der Teil des Abonnements, zu dem andere Planer beitragen. Benachrichtigungen, dass Ressourcen extern ausgelastet sind, werden an einen Planer gesendet, wenn die externe Abonnementebene für einen Hardwarethread von einem vorherigen positiven Wert auf Null fällt.
 
-Benachrichtigungen über diese Methode werden nur an Planer gesendet, die über eine Richtlinie verfügen, bei der der Wert für den `MinConcurrency` Richtlinien Schlüssel gleich dem Wert für den `MaxConcurrency` Richtlinien Schlüssel ist. Weitere Informationen zu Scheduler-Richtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
+Benachrichtigungen über diese Methode werden nur an Planer gesendet, `MinConcurrency` die über eine Richtlinie verfügen, bei der der Wert für den Richtlinienschlüssel dem Wert für den `MaxConcurrency` Richtlinienschlüssel entspricht. Weitere Informationen zu Planerrichtlinien finden Sie unter [SchedulerPolicy](schedulerpolicy-class.md).
 
-Ein Scheduler, der für Benachrichtigungen qualifiziert ist, erhält bei der Erstellung eine Reihe von anfänglichen Benachrichtigungen, die darauf hingewiesen werden, ob die soeben zugewiesenen Ressourcen extern ausgelastet sind oder sich im Leerlauf befinden.
+Ein Planer, der für Benachrichtigungen qualifiziert ist, ruft beim Erstellen eine Reihe von Anfangsbenachrichtigungen ab und informiert ihn darüber, ob die Ressourcen, die er gerade zugewiesen wurde, extern ausgelastet oder im Leerlauf sind.
 
-## <a name="removevirtualprocessors"></a>IScheduler:: removevirtualprocessor-Methode
+## <a name="ischedulerremovevirtualprocessors-method"></a><a name="removevirtualprocessors"></a>IScheduler::RemoveVirtualProcessors-Methode
 
-Initiiert das Entfernen virtueller Prozessor Stämme, die zuvor diesem Scheduler zugeordnet wurden.
+Initiiert das Entfernen von virtuellen Prozessorwurzeln, die zuvor diesem Planer zugewiesen wurden.
 
 ```cpp
 virtual void RemoveVirtualProcessors(
@@ -179,21 +179,21 @@ virtual void RemoveVirtualProcessors(
 
 ### <a name="parameters"></a>Parameter
 
-*ppvirtualprocessorroots*<br/>
-Ein Array von `IVirtualProcessorRoot`-Schnittstellen, die die zu entfernenden virtuellen Prozessor Stämme darstellen.
+*ppVirtualProcessorRoots*<br/>
+Ein Array `IVirtualProcessorRoot` von Schnittstellen, die die zu entfernenden virtuellen Prozessorwurzeln darstellen.
 
 *count*<br/>
-Die Anzahl der `IVirtualProcessorRoot` Schnittstellen im Array.
+Die Anzahl `IVirtualProcessorRoot` der Schnittstellen im Array.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Ressourcen-Manager ruft die `RemoveVirtualProcessors`-Methode auf, um einen Satz virtueller Prozessor Stämme von einem Planer zurück zu nehmen. Der Planer muss die [Remove](iexecutionresource-structure.md#remove) -Methode für jede Schnittstelle aufrufen, wenn dies mit den virtuellen Prozessor Stämmen erfolgt. Verwenden Sie keine `IVirtualProcessorRoot`-Schnittstelle, nachdem Sie die `Remove`-Methode dafür aufgerufen haben.
+Der Ressourcen-Manager `RemoveVirtualProcessors` ruft die Methode auf, um einen Satz virtueller Prozessorwurzeln von einem Planer zurückzunehmen. Es wird erwartet, dass der Planer die [Remove-Methode](iexecutionresource-structure.md#remove) auf jeder Schnittstelle aufruft, wenn dies mit den Stammverzeichnissen des virtuellen Prozessors erfolgt. Verwenden Sie `IVirtualProcessorRoot` keine Schnittstelle, nachdem `Remove` Sie die Methode darauf aufgerufen haben.
 
-Der-Parameter `ppVirtualProcessorRoots` verweist auf ein Array von-Schnittstellen. Unter dem Satz der zu entfernenden virtuellen Prozessor Stämme können die Stämme nicht sofort mit der `Remove`-Methode zurückgegeben werden. Die Stamm Elemente, die aktiviert wurden und entweder Arbeiten ausführen oder deaktiviert wurden und auf das Eintreffen der Arbeit warten, sollten asynchron zurückgegeben werden. Der Planer muss jeden Versuch durchführen, den virtuellen Prozessor Stamm so schnell wie möglich zu entfernen. Das Verzögern der Entfernung der virtuellen Prozessor Stämme kann zu unbeabsichtigtem Überschreiben innerhalb des Planers führen.
+Der `ppVirtualProcessorRoots` Parameter verweist auf ein Array von Schnittstellen. Unter den zu entfernenden virtuellen Prozessorwurzeln können die Roots nie aktiviert `Remove` werden, um sofort mit der Methode zurückgegeben zu werden. Die Wurzeln, die aktiviert wurden und entweder Arbeit ausführen oder deaktiviert wurden und auf das Eintreffen der Arbeit warten, sollten asynchron zurückgegeben werden. Der Planer muss jeden Versuch unternehmen, den Stamm des virtuellen Prozessors so schnell wie möglich zu entfernen. Das Verzögern des Entfernens der virtuellen Prozessorwurzeln kann zu einer unbeabsichtigten Überzeichnung innerhalb des Planers führen.
 
-## <a name="statistics"></a>IScheduler:: Statistics-Methode
+## <a name="ischedulerstatistics-method"></a><a name="statistics"></a>IScheduler::Statistikmethode
 
-Stellt Informationen im Zusammenhang mit den Eingangs-und Abschluss Raten der Aufgabe sowie eine Änderung der Warteschlangen Länge für einen Scheduler bereit.
+Enthält Informationen zu den Ankunfts- und Abschlussraten von Aufgaben und zur Änderung der Warteschlangenlänge für einen Planer.
 
 ```cpp
 virtual void Statistics(
@@ -204,22 +204,22 @@ virtual void Statistics(
 
 ### <a name="parameters"></a>Parameter
 
-*ptaskcompletionrate*<br/>
-Die Anzahl der Aufgaben, die seit dem letzten aufrufungsvorgang durch den Scheduler abgeschlossen wurden.
+*pTaskCompletionRate*<br/>
+Die Anzahl der Vorgänge, die vom Planer seit dem letzten Aufruf dieser Methode abgeschlossen wurden.
 
-*ptaskarrivalrate*<br/>
-Die Anzahl der Aufgaben, die seit dem letzten aufrufenen aufrufungsmethode im Scheduler eingetroffen sind.
+*pTaskArrivalRate*<br/>
+Die Anzahl der Vorgänge, die seit dem letzten Aufruf dieser Methode im Planer angekommen sind.
 
-*pnumoftasksenqueued*<br/>
-Die Gesamtanzahl der Aufgaben in allen Scheduler-Warteschlangen.
+*pNumberOfTasksEnqueued*<br/>
+Die Gesamtanzahl der Vorgänge in allen Planerwarteschlangen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird vom Ressourcen-Manager aufgerufen, um Statistiken für einen Planer zu erfassen. Die hier gesammelten Statistiken werden verwendet, um dynamische Feedback Algorithmen zu erstellen, um zu bestimmen, wann es sinnvoll ist, dem Scheduler mehr Ressourcen zuzuweisen, und wann Ressourcen entfernt werden sollen. Die vom Scheduler bereitgestellten Werte können optimistisch sein und müssen nicht unbedingt die aktuelle Anzahl genau widerspiegeln.
+Diese Methode wird vom Ressourcen-Manager aufgerufen, um Statistiken für einen Planer zu sammeln. Die hier gesammelten Statistiken werden verwendet, um dynamische Feedbackalgorithmen zu entwickeln, um zu bestimmen, wann es sinnvoll ist, dem Planer weitere Ressourcen zuzuweisen und wann Ressourcen entfernt werden. Die vom Planer bereitgestellten Werte können optimistisch sein und müssen nicht unbedingt die aktuelle Anzahl genau widerspiegeln.
 
-Sie sollten diese Methode implementieren, wenn Sie möchten, dass das Ressourcen-Manager Feedback zu solchen Dingen wie z. b. die Aufgaben Ankunft verwendet, um zu bestimmen, wie die Ressourcen zwischen Ihrem Planer und anderen Zeit Planungs Modulen, die beim Ressourcen-Manager registriert sind, ausgeglichen Wenn Sie keine Statistiken sammeln möchten, können Sie den Richtlinien Schlüssel `DynamicProgressFeedback` auf den Wert festlegen, der in der Richtlinie des Planers `DynamicProgressFeedbackDisabled` ist, und die Ressourcen-Manager ruft diese Methode nicht für Ihren Scheduler auf.
+Sie sollten diese Methode implementieren, wenn der Ressourcen-Manager Feedback zu z. B. beim Eintreffen von Aufgaben verwenden soll, um zu bestimmen, wie Die Ressource zwischen Dem Planer und anderen beim Ressourcen-Manager registrierten Planern ausgeglichen werden kann. Wenn Sie keine Statistiken sammeln möchten, können `DynamicProgressFeedback` Sie `DynamicProgressFeedbackDisabled` den Richtlinienschlüssel auf den Wert in der Richtlinie des Planers festlegen, und der Ressourcen-Manager ruft diese Methode nicht auf dem Planer auf.
 
-Wenn keine statistischen Informationen vorhanden sind, werden die Ressourcen-Manager Hardware-Thread Abonnement Ebenen verwenden, um die Ressourcen Zuordnung und die Migrationsentscheidungen zu treffen. Weitere Informationen zu Abonnement Ebenen finden Sie unter [IExecutionResource:: currentabonneptionlevel](iexecutionresource-structure.md#currentsubscriptionlevel).
+In Ermangelung statistischer Informationen verwendet der Ressourcen-Manager Hardwarethreadabonnementebenen, um Ressourcenzuweisungs- und Migrationsentscheidungen zu treffen. Weitere Informationen zu Abonnementebenen finden Sie unter [IExecutionResource::CurrentSubscriptionLevel](iexecutionresource-structure.md#currentsubscriptionlevel).
 
 ## <a name="see-also"></a>Siehe auch
 

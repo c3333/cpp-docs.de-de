@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Microsoft::WRL::ChainInterfaces::IidCount constant
 - Microsoft::WRL::ChainInterfaces::Verify method
 ms.assetid: d7415b59-5468-4bef-a3fd-8d82b12f0e9c
-ms.openlocfilehash: 9fd315f017d3dcc9823054ea99e845ec99bc4192
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: dd1af3fb5c1079a40d8248dc71ae4972537aa856
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398744"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372652"
 ---
 # <a name="chaininterfaces-structure"></a>ChainInterfaces-Struktur
 
@@ -98,7 +98,7 @@ struct ChainInterfaces<
 (Optional) Schnittstellen-ID 8.
 
 *I9*<br/>
-(Optional) Schnittstellen-ID-9.
+(Optional) Schnittstellen-ID 9.
 
 *DerivedType*<br/>
 Ein abgeleiteter Typ.
@@ -107,24 +107,24 @@ Ein abgeleiteter Typ.
 Der Basistyp eines abgeleiteten Typs.
 
 *hasImplements*<br/>
-Ein boolescher Wert, auch wenn **"true"**, bedeutet, dass Sie nicht verwenden eine [MixIn](mixin-structure.md) Struktur mit einer Klasse, die nicht von abgeleitet ist die [implementiert](implements-structure.md) abgeschrägten Designs.
+Ein boolescher Wert, der, wenn **true**, bedeutet, dass Sie keine [MixIn-Struktur](mixin-structure.md) mit einer Klasse verwenden können, die nicht von der [Implementierungsstruktur](implements-structure.md) abstammt.
 
 ## <a name="members"></a>Member
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-Name                                                   | Beschreibung
+Name                                                   | BESCHREIBUNG
 ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[ChainInterfaces::CanCastTo](#cancastto)               | Gibt an, ob die angegebene Schnittstellen-ID in jede der von definiert spezialisierungen umgewandelt werden kann die `ChainInterface` Vorlagenparameter.
-[ChainInterfaces::CastToUnknown](#casttounknown)       | Wandelt den Schnittstellenzeiger, der den vom definierten Typ der *I0* Template-Parameter auf einen Zeiger auf `IUnknown`.
-[ChainInterfaces::FillArrayWithIid](#fillarraywithiid) | Speichert die Schnittstellen-ID, durch definiert die *I0* Template-Parameter in einer angegebenen Position in einem angegebenen Array von Schnittstellen-IDs.
-[ChainInterfaces::Verify](#verify)                     | Stellt sicher, dass jede Schnittstelle Vorlagenparameter definiert *I0* über *I9* erbt `IUnknown` und/oder `IInspectable`, und dass *I0* erbt von *I1* über *I9*.
+[ChainInterfaces::CanCastTo](#cancastto)               | Gibt an, ob die angegebene Schnittstellen-ID in jede `ChainInterface` der durch die Vorlagenparameter definierten Spezialisierungen umgegeuzt werden kann.
+[ChainInterfaces::CastToUnknown](#casttounknown)       | Übergibt den Schnittstellenzeiger des Typs, der durch den I0-Vorlagenparameter definiert *ist,* auf einen Zeiger auf `IUnknown`.
+[ChainInterfaces::FillArrayWithIid](#fillarraywithiid) | Speichert die durch den *I0-Vorlagenparameter* definierte Schnittstellen-ID an einem angegebenen Speicherort in einem angegebenen Array von Schnittstellen-IDs.
+[ChainInterfaces::Überprüfen](#verify)                     | Überprüft, ob jede Durch vorlageparameter *I0* bis *I9* `IUnknown` definierte `IInspectable`Schnittstelle von und/oder erbt und dass *I0* von *I1* bis *I9*erbt.
 
 ### <a name="protected-constants"></a>Geschützte Konstanten
 
-Name                                   | Beschreibung
+Name                                   | BESCHREIBUNG
 -------------------------------------- | -----------------------------------------------------------------------------------------------------------------
-[ChainInterfaces::IidCount](#iidcount) | Die Gesamtanzahl der Schnittstellen-IDs enthalten, die in den Schnittstellen, die vom Vorlagenparameter angegeben *I0* über *I9*.
+[ChainInterfaces::IidCount](#iidcount) | Die Gesamtanzahl der Schnittstellen-IDs, die in den Schnittstellen enthalten sind, die durch die Vorlagenparameter *I0* bis *I9*angegeben sind.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -138,9 +138,9 @@ Name                                   | Beschreibung
 
 **Namespace:** Microsoft::WRL
 
-## <a name="cancastto"></a>ChainInterfaces::CanCastTo
+## <a name="chaininterfacescancastto"></a><a name="cancastto"></a>ChainInterfaces::CanCastTo
 
-Gibt an, ob die angegebene Schnittstellen-ID in jede der durch die nicht dem Standard-Vorlagenparameter definiert spezialisierungen umgewandelt werden kann.
+Gibt an, ob die angegebene Schnittstellen-ID in jede der Spezialisierungen umgecastet werden kann, die durch die nicht standardmäßigen Vorlagenparameter definiert sind.
 
 ```cpp
 __forceinline bool CanCastTo(
@@ -154,16 +154,16 @@ __forceinline bool CanCastTo(
 *riid*<br/>
 Eine Schnittstellen-ID.
 
-*ppv*<br/>
-Ein Zeiger auf die letzte Schnittstellen-ID, die erfolgreich umgewandelt wurde.
+*Ppv*<br/>
+Ein Zeiger auf die letzte Schnittstellen-ID, die erfolgreich gecastet wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**"true"** Wenn alle Umwandlungsvorgänge erfolgreich war; andernfalls **"false"**.
+**true,** wenn alle Umwandlungsvorgänge erfolgreich waren; andernfalls **false**.
 
-## <a name="casttounknown"></a>ChainInterfaces::CastToUnknown
+## <a name="chaininterfacescasttounknown"></a><a name="casttounknown"></a>ChainInterfaces::CastToUnknown
 
-Wandelt den Schnittstellenzeiger, der den vom definierten Typ der *I0* Template-Parameter auf einen Zeiger auf `IUnknown`.
+Übergibt den Schnittstellenzeiger des Typs, der durch den I0-Vorlagenparameter definiert *ist,* auf einen Zeiger auf `IUnknown`.
 
 ```cpp
 __forceinline IUnknown* CastToUnknown();
@@ -173,9 +173,9 @@ __forceinline IUnknown* CastToUnknown();
 
 Ein Zeiger auf `IUnknown`.
 
-## <a name="fillarraywithiid"></a>ChainInterfaces::FillArrayWithIid
+## <a name="chaininterfacesfillarraywithiid"></a><a name="fillarraywithiid"></a>ChainInterfaces::FillArrayWithIid
 
-Speichert die Schnittstellen-ID, durch definiert die *I0* Template-Parameter in einer angegebenen Position in einem angegebenen Array von Schnittstellen-IDs.
+Speichert die durch den *I0-Vorlagenparameter* definierte Schnittstellen-ID an einem angegebenen Speicherort in einem angegebenen Array von Schnittstellen-IDs.
 
 ```cpp
 __forceinline static void FillArrayWithIid(
@@ -186,15 +186,15 @@ __forceinline static void FillArrayWithIid(
 
 ### <a name="parameters"></a>Parameter
 
-*index*<br/>
-Zeiger auf einen Indexwert in der *Iids* Array.
+*Index*<br/>
+Zeiger auf einen Indexwert im *iids-Array.*
 
 *iids*<br/>
 Ein Array von Schnittstellen-IDs.
 
-## <a name="iidcount"></a>ChainInterfaces::IidCount
+## <a name="chaininterfacesiidcount"></a><a name="iidcount"></a>ChainInterfaces::IidCount
 
-Die Gesamtanzahl der Schnittstellen-IDs enthalten, die in den Schnittstellen, die vom Vorlagenparameter angegeben *I0* über *I9*.
+Die Gesamtanzahl der Schnittstellen-IDs, die in den Schnittstellen enthalten sind, die durch die Vorlagenparameter *I0* bis *I9*angegeben sind.
 
 ```cpp
 static const unsigned long IidCount = Details::InterfaceTraits<I0>::IidCount + Details::InterfaceTraits<I1>::IidCount + Details::InterfaceTraits<I2>::IidCount + Details::InterfaceTraits<I3>::IidCount + Details::InterfaceTraits<I4>::IidCount + Details::InterfaceTraits<I5>::IidCount + Details::InterfaceTraits<I6>::IidCount + Details::InterfaceTraits<I7>::IidCount + Details::InterfaceTraits<I8>::IidCount + Details::InterfaceTraits<I9>::IidCount;
@@ -204,20 +204,20 @@ static const unsigned long IidCount = Details::InterfaceTraits<I0>::IidCount + D
 
 Die Gesamtanzahl der Schnittstellen-IDs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Vorlagenparameter *I0* und *I1* sind erforderlich, und die Parameter *I2* über *I9* sind optional. Die Anzahl der IID jeder Schnittstelle ist in der Regel 1.
+Die Vorlagenparameter *I0* und *I1* sind erforderlich, und die Parameter *I2* bis *I9* sind optional. Die IID-Anzahl jeder Schnittstelle ist in der Regel 1.
 
-## <a name="verify"></a>ChainInterfaces::Verify
+## <a name="chaininterfacesverify"></a><a name="verify"></a>ChainInterfaces::Überprüfen
 
-Stellt sicher, dass jede Schnittstelle Vorlagenparameter definiert *I0* über *I9* erbt `IUnknown` und/oder `IInspectable`, und dass *I0* erbt von *I1* über *I9*.
+Überprüft, ob jede Durch vorlageparameter *I0* bis *I9* `IUnknown` definierte `IInspectable`Schnittstelle von und/oder erbt und dass *I0* von *I1* bis *I9*erbt.
 
 ```cpp
 WRL_NOTHROW __forceinline static void Verify();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Überprüfungsvorgang fehlschlägt, eine `static_assert` gibt eine Fehlermeldung, die den Fehler beschreibt.
+Wenn der Überprüfungsvorgang `static_assert` fehlschlägt, wird eine Fehlermeldung gesendet, die den Fehler beschreibt.
 
-Vorlagenparameter *I0* und *I1* sind erforderlich, und die Parameter *I2* über *I9* sind optional.
+Die Vorlagenparameter *I0* und *I1* sind erforderlich, und die Parameter *I2* bis *I9* sind optional.

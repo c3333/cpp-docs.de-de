@@ -24,18 +24,18 @@ helpviewer_keywords:
 - CMenuTearOffManager [MFC], SetInUse
 - CMenuTearOffManager [MFC], SetupTearOffMenus
 ms.assetid: ab7ca272-ce42-4678-95f7-6ad75038f5a0
-ms.openlocfilehash: 8b92ddad9d3a6de41cf6914dee268f6e54b5d420
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f41937179dc055213f3af093e107bcb08c8a8fcc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62163707"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369965"
 ---
 # <a name="cmenutearoffmanager-class"></a>CMenuTearOffManager-Klasse
 
 Verwaltet abtrennbare Menüs. Ein abtrennbares Menü ist ein Menü in der Menüleiste. Der Benutzer kann ein solches Menü von der Menüleiste abtrennen, wodurch das Menü beliebig positionierbar wird.
 
-   Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+   Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,44 +47,44 @@ class CMenuTearOffManager : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMenuTearOffManager::CMenuTearOffManager](#cmenutearoffmanager)|Erstellt ein `CMenuTearOffManager`-Objekt.|
+|[CMenuTearoffManager::CMenuTearOffManager](#cmenutearoffmanager)|Erstellt ein `CMenuTearOffManager`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMenuTearOffManager::Build](#build)||
 |[CMenuTearOffManager::GetRegPath](#getregpath)||
-|[CMenuTearOffManager::Initialize](#initialize)|Initialisiert eine `CMenuTearOffManager` Objekt.|
+|[CMenuTearOffManager::Initialisieren](#initialize)|Initialisiert ein `CMenuTearOffManager`-Objekt.|
 |[CMenuTearOffManager::IsDynamicID](#isdynamicid)||
 |[CMenuTearOffManager::Parse](#parse)||
 |[CMenuTearOffManager::Reset](#reset)||
-|[CMenuTearOffManager::SetInUse](#setinuse)||
+|[CMenutearoffManager::SetInUse](#setinuse)||
 |[CMenuTearOffManager::SetupTearOffMenus](#setuptearoffmenus)||
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Um abtrennbare Menüs in Ihrer Anwendung verwenden zu können, benötigen Sie eine `CMenuTearOffManager` Objekt. In den meisten Fällen nicht erstellen oder Initialisieren einer `CMenuTearOffManager` direkt. Dies wird für Sie erledigt, beim Aufrufen der [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus) Funktion.
+Um Abreißmenüs in Ihrer Anwendung verwenden zu `CMenuTearOffManager` können, benötigen Sie ein Objekt. In den meisten Fällen erstellen oder initialisieren Sie ein `CMenuTearOffManager` Objekt nicht direkt. Dies wird für Sie behandelt, wenn Sie die [CWinAppEx::EnableTearOffMenus-Funktion](../../mfc/reference/cwinappex-class.md#enabletearoffmenus) aufrufen.
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird veranschaulicht, wie zum Erstellen und initialisieren eine `CMenuTearOffManager` -Objekt durch Aufrufen der `CWinAppEX::EnableTearOffMenus` Methode. Dieser Codeausschnitt ist Teil des [WordPad-Beispiels](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, `CMenuTearOffManager` wie ein `CWinAppEX::EnableTearOffMenus` Objekt durch Aufrufen der Methode erstellt und initialisiert wird. Dieser Codeausschnitt ist Teil des [WordPad-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_WordPad#12](../../mfc/reference/codesnippet/cpp/cmenutearoffmanager-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 `CMenuTearOffManager`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxmenutearoffmanager.h
+**Kopf:** afxmenutearoffmanager.h
 
-##  <a name="build"></a>  CMenuTearOffManager::Build
+## <a name="cmenutearoffmanagerbuild"></a><a name="build"></a>CMenuTearOffManager::Build
 
 ```
 void Build(
@@ -94,25 +94,25 @@ void Build(
 
 ### <a name="parameters"></a>Parameter
 
-[in] *UiTearOffBarID*<br/>
+[in] *uiTearOffBarID*<br/>
 
 [in] *strText*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="cmenutearoffmanager"></a>  CMenuTearOffManager::CMenuTearOffManager
+## <a name="cmenutearoffmanagercmenutearoffmanager"></a><a name="cmenutearoffmanager"></a>CMenuTearoffManager::CMenuTearOffManager
 
-Erstellt eine [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md) Objekt.
+Erstellt ein [CMenuTearOffManager-Objekt.](../../mfc/reference/cmenutearoffmanager-class.md)
 
 ```
 CMenuTearOffManager();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In den meisten Fällen sollten Sie keine erstellen eine `CMenuTearOffManager` manuell. Das Framework der Anwendung erstellt die `CMenuTearOffManager` Objekt beim Aufrufen [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus).
+In den meisten Fällen sollten `CMenuTearOffManager` Sie keine manuell erstellen. Das Framework Ihrer Anwendung `CMenuTearOffManager` erstellt das Objekt, wenn Sie [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus)aufrufen.
 
-##  <a name="getregpath"></a>  CMenuTearOffManager::GetRegPath
+## <a name="cmenutearoffmanagergetregpath"></a><a name="getregpath"></a>CMenuTearOffManager::GetRegPath
 
 ```
 LPCTSTR GetRegPath() const;
@@ -120,11 +120,11 @@ LPCTSTR GetRegPath() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="initialize"></a>  CMenuTearOffManager::Initialize
+## <a name="cmenutearoffmanagerinitialize"></a><a name="initialize"></a>CMenuTearOffManager::Initialisieren
 
-Initialisiert eine [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md) Objekt.
+Initialisiert ein [CMenuTearOffManager-Objekt.](../../mfc/reference/cmenutearoffmanager-class.md)
 
 ```
 BOOL Initialize(
@@ -136,23 +136,23 @@ BOOL Initialize(
 ### <a name="parameters"></a>Parameter
 
 *lpszRegEntry*<br/>
-[in] Eine Zeichenfolge, die den Pfad eines Registrierungseintrags enthält. Ihre Anwendungen speichert die Einstellungen für abtrennbare Balken in diesen Registrierungseintrag an.
+[in] Eine Zeichenfolge, die den Pfad eines Registrierungseintrags enthält. Ihre Anwendungen speichern die Einstellungen für Abreißbalken in diesem Registrierungseintrag.
 
 *uiTearOffMenuFirst*<br/>
-[in] Das erste Menü-ID für ein abtrennbares Menü.
+[in] Die erste Menü-ID für ein Abreißmenü.
 
 *uiTearOffMenuLast*<br/>
-[in] Die letzte Menü-ID für ein abtrennbares Menü.
+[in] Die letzte Menü-ID für ein Abreißmenü.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Den Bereich der Menü-ID von *UiTearOffMenuFirst* zu *UiTearOffMenuLast* muss eine fortlaufende Intervall sein. Das Intervall definiert die Anzahl der abtrennbare Menüs, die zur gleichen Zeit in der Anwendung angezeigt werden können.
+Der Bereich der Menü-IDs von *uiTearOffMenuFirst* bis *uiTearOffMenuLast* muss ein kontinuierliches Intervall sein. Das Intervall definiert die Anzahl der Abreißmenüs, die gleichzeitig in der Anwendung angezeigt werden können.
 
-##  <a name="isdynamicid"></a>  CMenuTearOffManager::IsDynamicID
+## <a name="cmenutearoffmanagerisdynamicid"></a><a name="isdynamicid"></a>CMenuTearOffManager::IsDynamicID
 
 ```
 BOOL IsDynamicID(UINT uiID) const;
@@ -164,9 +164,9 @@ BOOL IsDynamicID(UINT uiID) const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="parse"></a>  CMenuTearOffManager::Parse
+## <a name="cmenutearoffmanagerparse"></a><a name="parse"></a>CMenuTearOffManager::Parse
 
 ```
 UINT Parse(CString& str);
@@ -178,9 +178,9 @@ UINT Parse(CString& str);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="reset"></a>  CMenuTearOffManager::Reset
+## <a name="cmenutearoffmanagerreset"></a><a name="reset"></a>CMenuTearOffManager::Reset
 
 ```
 void Reset(HMENU hmenu);
@@ -190,9 +190,9 @@ void Reset(HMENU hmenu);
 
 [in] *hmenu*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setinuse"></a>  CMenuTearOffManager::SetInUse
+## <a name="cmenutearoffmanagersetinuse"></a><a name="setinuse"></a>CMenutearoffManager::SetInUse
 
 ```
 void SetInUse(
@@ -202,13 +202,13 @@ void SetInUse(
 
 ### <a name="parameters"></a>Parameter
 
-[in] *UiCmdId*<br/>
+[in] *uiCmdId*<br/>
 
-[in] *bUse*<br/>
+[in] *bVerwenden*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setuptearoffmenus"></a>  CMenuTearOffManager::SetupTearOffMenus
+## <a name="cmenutearoffmanagersetuptearoffmenus"></a><a name="setuptearoffmenus"></a>CMenuTearOffManager::SetupTearOffMenus
 
 ```
 void SetupTearOffMenus(HMENU hMenu);
@@ -218,7 +218,7 @@ void SetupTearOffMenus(HMENU hMenu);
 
 [in] *hMenu*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

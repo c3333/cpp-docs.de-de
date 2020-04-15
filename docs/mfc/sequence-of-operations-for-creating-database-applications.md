@@ -7,31 +7,31 @@ helpviewer_keywords:
 - database applications [MFC], creating
 - MFC, database applications
 ms.assetid: 9371da59-8536-43cd-8314-706ad320e2ec
-ms.openlocfilehash: efd6b12b186ce0ef1c0caf57f313f6aa50425fec
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c393269d6af108ee82786e9d59f81aad11428157
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62308497"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372775"
 ---
 # <a name="sequence-of-operations-for-creating-database-applications"></a>Reihenfolge der Operationen zur Erstellung Datenbankanwendungen
 
-Die folgende Tabelle zeigt Ihre Rolle und des Frameworks zum Schreiben von datenbankanwendungen.
+Die folgende Tabelle zeigt Ihre Rolle und die Rolle des Frameworks beim Schreiben von Datenbankanwendungen.
 
 > [!NOTE]
->  Die Visual C++-Umgebung und den Assistenten unterstützen DAO keine (obwohl die DAO-Klassen enthalten sind, und Sie können diese weiterhin verwenden). Microsoft empfiehlt die Verwendung von ODBC für neue MFC-Projekte. Sie sollten nur DAO Verwaltung bereits vorhandener Anwendungen verwenden.
+> Die Visual C++-Umgebung und die Assistenten unterstützen DAO nicht (obwohl die DAO-Klassen enthalten sind und Sie sie weiterhin verwenden können). Microsoft empfiehlt, ODBC für neue MFC-Projekte zu verwenden. Sie sollten DAO nur bei der Verwaltung vorhandener Anwendungen verwenden.
 
 ### <a name="creating-database-applications"></a>Erstellen von Datenbankanwendungen
 
-|Aufgabe|Sie tun|Das Framework ermöglicht|
+|Aufgabe|Sie tun|Der Rahmen|
 |----------|------------|------------------------|
-|Entscheiden Sie, ob die MFC-ODBC oder DAO-Klassen verwenden.|Verwenden von ODBC für neue MFC-Projekte. Verwenden Sie DAO, nur für vorhandene Anwendungen zu verwalten. Weitere Informationen finden Sie im Artikel [Datenzugriffsprogrammierung](../data/data-access-programming-mfc-atl.md).|Das Framework stellt Klassen, die Zugriff auf die Datenbank zu unterstützen.|
-|Erstellen Sie Ihre skelettanwendung mit Database-Optionen.|Führen Sie den Assistenten zum MFC-Anwendungen. Wählen Sie Optionen auf der Seite Datenbank-Unterstützung. Wenn Sie eine Option, die eine Datensatzansicht erstellt auswählen, auch Folgendes angeben:<br /><br />-Data Source "und" Tabelle oder die Namen<br />-Fragen Sie oder die Namen ab.|Der MFC-Anwendung-Assistent erstellt Dateien, und gibt an, dass die erforderlichen enthält. Abhängig von den Optionen, die Sie angeben, können die Dateien eine Recordset-Klasse enthalten.|
-|Entwerfen Sie Ihr mindestens ein Datenbankformular.|Verwenden Sie den Visual C++-Dialog-Editor, um Steuerelemente auf die Ressourcen der Dialogfeldvorlage für Ihre Datensatzansichts-Klassen zu platzieren.|Die MFC-Anwendungs-Assistent erstellt eine leere Dialogfeldvorlagen-Ressource für Sie ausgefüllt.|
-|Erstellen Sie nach Bedarf zusätzliche aufzeichnen und Recordset-Klassen.|Verwenden Sie Klassenansicht, um die Klassen und das Dialogfeld-Editor, um die Sichten entwerfen, erstellen.|Klassenansicht erstellt zusätzliche Dateien für die neuen Klassen.|
-|Erstellen Sie Recordset-Objekte nach Bedarf in Ihrem Code. Verwenden Sie jedes Recordsets Datensätze bearbeiten...|Die Recordsets basieren auf die von abgeleiteten Klassen [CRecordset](../mfc/reference/crecordset-class.md) mit den Assistenten.|ODBC verwendet die Datensatzfeldaustausch (RFX) zum Austauschen von Daten zwischen der Datenbank und des Recordset-Felddatenmembern. Bei Verwendung eine Datensatzansicht Datenaustausch Dialogdatenaustausch (DDX) zwischen dem Recordset und die Steuerelemente der Datensatzansicht angezeigt.|
-|... oder erstellen Sie eine explizite [CDatabase](../mfc/reference/cdatabase-class.md) in Ihrem Code für jede Datenbank, die Sie öffnen möchten.|Basieren Sie Ihre Recordset-Objekte, für die Datenbankobjekte.|Das Database-Objekt stellt eine Schnittstelle mit der Datenquelle bereit.|
-|Binden von Datenspalten dynamisch an das Recordset.|Fügen Sie Code hinzu abgeleiteten Recordset-Klasse die Bindung zu verwalten, in ODBC. Finden Sie im Artikel [Recordset: Dynamisches Binden von Datenspalten (ODBC)](../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).||
+|Entscheiden Sie, ob die MFC ODBC- oder DAO-Klassen verwendet werden sollen.|Verwenden Sie ODBC für neue MFC-Projekte. Verwenden Sie DAO nur, um vorhandene Anwendungen zu verwalten. Allgemeine Informationen finden Sie im Artikel [Data Access Programming](../data/data-access-programming-mfc-atl.md).|Das Framework stellt Klassen zur Verfügung, die den Datenbankzugriff unterstützen.|
+|Erstellen Sie Ihre Skelettanwendung mit Datenbankoptionen.|Führen Sie den MFC-Anwendungs-Assistenten aus. Wählen Sie Optionen auf der Seite Datenbanksupport aus. Wenn Sie eine Option auswählen, die eine Datensatzansicht erstellt, geben Sie auch Folgendes an:<br /><br />- Datenquellen- und Tabellennamen oder -namen<br />- Abfragenamen oder -namen.|Der MFC-Anwendungs-Assistent erstellt Dateien und gibt die erforderlichen Includes an. Abhängig von den von Ihnen angegebenen Optionen können die Dateien eine Recordset-Klasse enthalten.|
+|Entwerfen Sie das Datenbankformular oder die Formulare.|Verwenden Sie den Visual C++-Dialogeditor, um Steuerelemente in den Dialogvorlagenressourcen für Ihre Datensatzansichtsklassen zu platzieren.|Der MFC-Anwendungs-Assistent erstellt eine leere Dialogvorlagenressource, die Sie ausfüllen können.|
+|Erstellen Sie bei Bedarf zusätzliche Datensatzansichts- und Recordsetklassen.|Verwenden Sie die Klassenansicht, um die Klassen und den Dialogeditor zum Entwerfen der Ansichten zu erstellen.|Die Klassenansicht erstellt zusätzliche Dateien für Ihre neuen Klassen.|
+|Erstellen Sie Recordset-Objekte nach Bedarf in Ihrem Code. Verwenden Sie jedes Recordset, um Datensätze zu bearbeiten...|Ihre Recordsets basieren auf den Klassen, die von [CRecordset](../mfc/reference/crecordset-class.md) mit den Assistenten abgeleitet wurden.|ODBC verwendet Datensatzfeldaustausch (Record Field Exchange, RFX), um Daten zwischen der Datenbank und den Felddatenmembern Ihres Recordsets auszutauschen. Wenn Sie eine Datensatzansicht verwenden, tauscht der Dialogdatenaustausch (DDX) Daten zwischen dem Recordset und den Steuerelementen in der Datensatzansicht aus.|
+|... oder erstellen Sie eine explizite [CDatabase](../mfc/reference/cdatabase-class.md) in Ihrem Code für jede Datenbank, die Sie öffnen möchten.|Legen Sie Ihre Recordset-Objekte auf den Datenbankobjekten ab.|Das Datenbankobjekt stellt eine Schnittstelle zur Datenquelle bereit.|
+|Binden Sie Datenspalten dynamisch an Ihr Recordset.|Fügen Sie in ODBC der abgeleiteten Recordset-Klasse Code hinzu, um die Bindung zu verwalten. Siehe den Artikel [Recordset: Dynamically Binding Data Columns (ODBC)](../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).||
 
 ## <a name="see-also"></a>Siehe auch
 

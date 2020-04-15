@@ -1,33 +1,33 @@
 ---
-title: 'Vorgehensweise: Befehl "hinzufügen" Routing an das Windows Forms-Steuerelement'
+title: 'Gewusst wie: Hinzufügen von Befehlsrouting zum Windows Forms-Steuerelement'
 ms.custom: get-started-article
 ms.date: 11/04/2016
 helpviewer_keywords:
 - command routing [C++], adding to Windows Forms controls
 - Windows Forms controls [C++], command routing
 ms.assetid: bf138ece-b463-442a-b0a0-de7063a760c0
-ms.openlocfilehash: 8f633cf744314833409a3ffeacf8c850429e099c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ad64a12051c22a0cfca99d3ec9c5abef579902f4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62222909"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365169"
 ---
-# <a name="how-to-add-command-routing-to-the-windows-forms-control"></a>Vorgehensweise: Befehl "hinzufügen" Routing an das Windows Forms-Steuerelement
+# <a name="how-to-add-command-routing-to-the-windows-forms-control"></a>Gewusst wie: Hinzufügen von Befehlsrouting zum Windows Forms-Steuerelement
 
-[CWinFormsView](../mfc/reference/cwinformsview-class.md) leitet Befehle und Update-befehlsmeldungen Benutzeroberfläche auf das Benutzersteuerelement, damit Sie die MFC-Befehle (z. B. Frame Menüelemente und Symbolleistenschaltflächen) verarbeiten kann.
+[CWinFormsView](../mfc/reference/cwinformsview-class.md) leitet Befehle und Befehlsnachrichten mit Update-Befehlen an das Benutzersteuerelement weiter, damit es MFC-Befehle verarbeiten kann (z. B. Framemenüelemente und Symbolleistenschaltflächen).
 
-Das Benutzersteuerelement verwendet [ICommandTarget:: Initialize](../mfc/reference/icommandtarget-interface.md#initialize) speichern einen Verweis auf das Befehlsquellobjekt in `m_CmdSrc`, wie im folgenden Beispiel gezeigt. Um `ICommandTarget` zu verwenden, müssen Sie einen Verweis auf mfcmifc80.dll hinzufügen.
+Das Benutzersteuerelement verwendet [ICommandTarget::Initialize,](../mfc/reference/icommandtarget-interface.md#initialize) um einen Verweis `m_CmdSrc`auf das Befehlsquellobjekt in zu speichern, wie im folgenden Beispiel gezeigt. Um `ICommandTarget` zu verwenden, müssen Sie einen Verweis auf mfcmifc80.dll hinzufügen.
 
-Durch `CWinFormsView` werden einige der allgemeinen MFC-Anzeigenbenachrichtigungen verarbeitet, indem diese an das verwaltete Benutzersteuerelement weitergeleitet werden. Diese Benachrichtigungen schließen die [OnInitialUpdate](../mfc/reference/iview-interface.md#oninitialupdate), [OnUpdate](../mfc/reference/iview-interface.md#onupdate) und [OnActivateView](../mfc/reference/iview-interface.md#onactivateview) Methoden.
+Durch `CWinFormsView` werden einige der allgemeinen MFC-Anzeigenbenachrichtigungen verarbeitet, indem diese an das verwaltete Benutzersteuerelement weitergeleitet werden. Zu diesen Benachrichtigungen gehören die Methoden [OnInitialUpdate](../mfc/reference/iview-interface.md#oninitialupdate), [OnUpdate](../mfc/reference/iview-interface.md#onupdate) und [OnActivateView.](../mfc/reference/iview-interface.md#onactivateview)
 
-In diesem Thema wird vorausgesetzt, Sie haben zuvor [Vorgehensweise: Erstellen des Benutzersteuerelements und Hosten in einem Dialogfeld](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md) und [Vorgehensweise: Erstellen des Benutzersteuerelements und Hosten MDI-Ansicht](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md).
+In diesem Thema wird davon ausgegangen, dass Sie [zuvor die Folgenden: Erstellen der Benutzersteuerung und des Hosts in einem Dialogfeld](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md) und [Gewusst wie: Erstellen der Benutzersteuerung und der Host-MDI-Ansicht](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)abgeschlossen haben.
 
 ### <a name="to-create-the-mfc-host-application"></a>So erstellen Sie die MFC-Hostanwendung
 
-1. Öffnen Sie Windows Forms-Steuerelementbibliothek im erstellten [Vorgehensweise: Erstellen des Benutzersteuerelements und Hosten in einem Dialogfeld](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md).
+1. Öffnen Sie die Windows Forms Control Library, die Sie in [Gewusst wie: Erstellen der Benutzersteuerung und](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md)des Hosts in einem Dialogfeld erstellt haben.
 
-1. Fügen Sie einen Verweis auf mfcmifc80.dll, dies können Sie per Rechtsklick auf den Projektknoten im **Projektmappen-Explorer**, wählen **hinzufügen**, **Verweis**, und klicken Sie dann zu wechseln. Microsoft Visual Studio 10.0\VC\atlmfc\lib.
+1. Fügen Sie einen Verweis auf mfcmifc80.dll hinzu, den Sie tun können, indem Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektknoten klicken, **Hinzufügen**auswählen , **Referenz**, und dann zu Microsoft Visual Studio 10.0-VC-atlmfc-lib navigieren.
 
 1. Öffnen Sie UserControl1.Designer.cs, und fügen Sie die folgende using-Anweisung hinzu:
 
@@ -41,7 +41,7 @@ In diesem Thema wird vorausgesetzt, Sie haben zuvor [Vorgehensweise: Erstellen d
     partial class UserControl1
     ```
 
-   in:
+   Und zwar in diesen Code:
 
     ```
     partial class UserControl1 : System.Windows.Forms.UserControl, ICommandTarget
@@ -70,21 +70,21 @@ In diesem Thema wird vorausgesetzt, Sie haben zuvor [Vorgehensweise: Erstellen d
     }
     ```
 
-1. Öffnen Sie die MFC-Anwendung, die Sie erstellt, im haben [Vorgehensweise: Erstellen des Benutzersteuerelements und Hosten MDI-Ansicht](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md).
+1. Öffnen Sie die MFC-Anwendung, die Sie unter [Gewusst wie: Erstellen der Benutzersteuerung und der Host-MDI-Ansicht](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)erstellt haben.
 
 1. Fügen Sie eine Menüoption hinzu, die `singleMenuHandler` aufruft.
 
-   Wechseln Sie zu **Ressourcenansicht** (STRG + UMSCHALT + E), erweitern Sie die **Menü** Ordner, und doppelklicken Sie dann auf **IDR_MFC02TYPE**. Der Menü-Editor wird angezeigt.
+   Wechseln Sie **zu Ressourcenansicht** (Strg+Umschalt+E), erweitern Sie den **Menüordner,** und doppelklicken Sie dann auf **IDR_MFC02TYPE**. Der Menü-Editor wird angezeigt.
 
-   Fügen Sie eine Menüoption im am unteren Rand der **Ansicht** Menü. Beachten Sie, dass die ID der Menüoption im der **Eigenschaften** Fenster. Speichern Sie die Datei.
+   Fügen Sie eine Menüoption am unteren Rand des **Menüs Ansicht** hinzu. Beachten Sie die ID der Menüoption im **Eigenschaftenfenster.** Speichern Sie die Datei .
 
-   In **Projektmappen-Explorer**, Resource.h-Datei zu öffnen, kopieren Sie den ID-Wert für die Menüoption "-", die Sie gerade hinzugefügt haben, und fügen Sie diesen Wert als der erste Parameter für die `m_CmdSrc.AddCommandHandler` rufen Sie in der C#-Projekts `Initialize` (als Ersatz für Methode`32771` bei Bedarf).
+   Öffnen Sie im **Projektmappen-Explorer**die Datei Resource.h, kopieren Sie den ID-Wert für `m_CmdSrc.AddCommandHandler` die Menüoption, die `Initialize` Sie gerade `32771` hinzugefügt haben, und fügen Sie diesen Wert als ersten Parameter in die Methode des C-Projekts ein (ggf. ersetzt).
 
-9. Erstellen Sie das Projekt, und führen Sie es aus.
+1. Erstellen Sie das Projekt, und führen Sie es aus.
 
-   Klicken Sie im Menü **Erstellen** auf **Projektmappe erstellen**.
+   Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
 
-   Auf der **Debuggen** Menü klicken Sie auf **Starten ohne debugging**.
+   Klicken Sie im **Menü Debuggen** auf **Start ohne Debugging**.
 
    Wählen Sie die hinzugefügte Menüoption aus. Beachten Sie, dass die Methode in der DLL aufgerufen wird.
 

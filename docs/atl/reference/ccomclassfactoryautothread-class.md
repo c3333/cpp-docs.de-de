@@ -1,5 +1,5 @@
 ---
-title: Ccomclassfactoryautothread-Klasse
+title: CComClassFactoryAutoThread-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CComClassFactoryAutoThread
@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - CComClassFactoryAutoThread class
 ms.assetid: 22008042-533f-4dd9-bf7e-191ee571f9a1
-ms.openlocfilehash: 73879a73a48290e19d2a27307884953129826df7
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: e997d92adfa9df46c82dacbd297db495b037c6e6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497491"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81320907"
 ---
-# <a name="ccomclassfactoryautothread-class"></a>Ccomclassfactoryautothread-Klasse
+# <a name="ccomclassfactoryautothread-class"></a>CComClassFactoryAutoThread-Klasse
 
-Diese Klasse implementiert die [IClassFactory](/windows/win32/api/unknwnbase/nn-unknwnbase-iclassfactory) -Schnittstelle und ermöglicht das Erstellen von Objekten in mehreren Apartments.
+Diese Klasse implementiert die [IClassFactory-Schnittstelle](/windows/win32/api/unknwnbase/nn-unknwnbase-iclassfactory) und ermöglicht das Erstellen von Objekten in mehreren Apartments.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,16 +35,16 @@ class CComClassFactoryAutoThread
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComClassFactoryAutoThread::CreateInstance](#createinstance)|Erstellt ein Objekt der angegebenen CLSID.|
-|[CComClassFactoryAutoThread::LockServer](#lockserver)|Sperrt die Klassenfactory im Arbeitsspeicher.|
+|[CComClassFactoryAutoThread::LockServer](#lockserver)|Sperrt die Klassenfactory im Speicher.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComClassFactoryAutoThread`ähnelt [CComClassFactory](../../atl/reference/ccomclassfactory-class.md), ermöglicht aber das Erstellen von Objekten in mehreren Apartments. Um diese Unterstützung zu nutzen, leiten Sie das exe-Modul von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)ab.
+`CComClassFactoryAutoThread`[cComClassFactory](../../atl/reference/ccomclassfactory-class.md)ähnelt, ermöglicht jedoch das Erstellen von Objekten in mehreren Apartments. Um diese Unterstützung nutzen zu können, leiten Sie Ihr EXE-Modul von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)ab.
 
-ATL-Objekte erhalten normalerweise eine Klassenfactory durch Ableiten von [CComCoClass](../../atl/reference/ccomcoclass-class.md). Diese Klasse enthält das Makro [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory), das [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als Standardklassenfactory deklariert. Um zu `CComClassFactoryAutoThread`verwenden, geben Sie das [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread) -Makro in der Klassendefinition Ihres Objekts an. Beispiel:
+ATL-Objekte erwerben normalerweise eine Klassenfactory, indem sie von [CComCoClass](../../atl/reference/ccomcoclass-class.md)ableiten. Diese Klasse enthält das Makro [DECLARE_CLASSFACTORY](aggregation-and-class-factory-macros.md#declare_classfactory), das [CComClassFactory](../../atl/reference/ccomclassfactory-class.md) als Standardklassenfactory deklariert. Um `CComClassFactoryAutoThread`sie zu verwenden, geben Sie das [DECLARE_CLASSFACTORY_AUTO_THREAD](aggregation-and-class-factory-macros.md#declare_classfactory_auto_thread) Makros in der Klassendefinition des Objekts an. Beispiel:
 
 [!code-cpp[NVC_ATL_COM#9](../../atl/codesnippet/cpp/ccomclassfactoryautothread-class_1.h)]
 
@@ -52,7 +52,7 @@ ATL-Objekte erhalten normalerweise eine Klassenfactory durch Ableiten von [CComC
 
 `CComObjectRootBase`
 
-[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)
+[Ccomobjectrootex](../../atl/reference/ccomobjectrootex-class.md)
 
 `IClassFactory`
 
@@ -60,11 +60,11 @@ ATL-Objekte erhalten normalerweise eine Klassenfactory durch Ableiten von [CComC
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Atlcom. h
+**Kopfzeile:** atlcom.h
 
-##  <a name="createinstance"></a>Ccomclassfactoriyautothread:: forateinstance
+## <a name="ccomclassfactoryautothreadcreateinstance"></a><a name="createinstance"></a>CComClassFactoryAutoThread::CreateInstance
 
-Erstellt ein Objekt der angegebenen CLSID und Ruft einen Schnittstellen Zeiger auf dieses Objekt ab.
+Erstellt ein Objekt der angegebenen CLSID und ruft einen Schnittstellenzeiger für dieses Objekt ab.
 
 ```
 STDMETHODIMP CreateInstance(
@@ -76,25 +76,25 @@ STDMETHODIMP CreateInstance(
 ### <a name="parameters"></a>Parameter
 
 *pUnkOuter*<br/>
-in Wenn das Objekt als Teil eines Aggregats erstellt wird, muss es sich bei *pUnkOuter* um das äußere unbekannte Element handeln. Andernfalls muss " *pUnkOuter* " NULL sein.
+[in] Wenn das Objekt als Teil eines Aggregats erstellt wird, muss *pUnkOuter* das äußere Unbekannte sein. Andernfalls muss *pUnkOuter* NULL sein.
 
 *riid*<br/>
-in Die IID der angeforderten Schnittstelle. Wenn ' *pUnkOuter* ' nicht NULL ist, muss ' *riid* ' lauten `IID_IUnknown`.
+[in] Die IID der angeforderten Schnittstelle. Wenn *pUnkOuter* nicht NULL ist, `IID_IUnknown`muss *riid* sein.
 
 *ppvObj*<br/>
-vorgenommen Ein Zeiger auf den Schnittstellen Zeiger, der durch *riid*identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *ppvObj* auf NULL festgelegt.
+[out] Ein Zeiger auf den Schnittstellenzeiger, der von *riid*identifiziert wird. Wenn das Objekt diese Schnittstelle nicht unterstützt, wird *ppvObj* auf NULL gesetzt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standardwert.
+Ein Standard-HRESULT-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Modul von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)abgeleitet ist `CreateInstance` , wählt zuerst einen Thread aus, um das Objekt im zugeordneten Apartment zu erstellen.
+Wenn Ihr Modul von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md)abstammt, `CreateInstance` wählt zuerst einen Thread aus, um das Objekt in der zugeordneten Wohnung zu erstellen.
 
-##  <a name="lockserver"></a>Ccomclassfactoriyautothread:: LockServer
+## <a name="ccomclassfactoryautothreadlockserver"></a><a name="lockserver"></a>CComClassFactoryAutoThread::LockServer
 
-Inkrementen und Dekrement der Modul Sperr Anzahl durch `_Module::Lock` aufrufen `_Module::Unlock`von bzw.
+Inkrementiert und dekrementiert `_Module::Lock` die `_Module::Unlock`Modulsperre durch Aufrufen bzw. Dekrementiert die Modulsperre.
 
 ```
 STDMETHODIMP LockServer(BOOL fLock);
@@ -102,18 +102,18 @@ STDMETHODIMP LockServer(BOOL fLock);
 
 ### <a name="parameters"></a>Parameter
 
-*fLock*<br/>
-in TRUE gibt an, dass die Sperrenanzahl inkrementiert wird. Andernfalls wird die Sperrenanzahl dekrementiert.
+*Herde*<br/>
+[in] Wenn TRUE, wird die Sperranzahl erhöht. Andernfalls wird die Sperranzahl verringert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standardwert.
+Ein Standard-HRESULT-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn verwendet `CComClassFactoryAutoThread`wird `_Module` , verweist in der Regel auf die globale Instanz von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md).
+Bei `CComClassFactoryAutoThread`Verwendung `_Module` von , bezieht sich in der Regel auf die globale Instanz von [CComAutoThreadModule](../../atl/reference/ccomautothreadmodule-class.md).
 
-Das `LockServer` Aufrufen von ermöglicht es einem Client, eine Klassenfactory anzuhalten, sodass mehrere Objekte schnell erstellt werden können.
+Durch `LockServer` Aufrufen kann ein Client an einer Klassenfactory festhalten, sodass mehrere Objekte schnell erstellt werden können.
 
 ## <a name="see-also"></a>Siehe auch
 
@@ -122,4 +122,4 @@ Das `LockServer` Aufrufen von ermöglicht es einem Client, eine Klassenfactory a
 [CComClassFactorySingleton-Klasse](../../atl/reference/ccomclassfactorysingleton-class.md)<br/>
 [CComObjectRootEx-Klasse](../../atl/reference/ccomobjectrootex-class.md)<br/>
 [CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

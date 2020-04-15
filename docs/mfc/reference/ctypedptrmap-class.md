@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CTypedPtrMap [MFC], RemoveKey
 - CTypedPtrMap [MFC], SetAt
 ms.assetid: 9f377385-c6e9-4471-8b40-8fe220c50164
-ms.openlocfilehash: bc164125f867cf3e2f27b74e69b826cbed31ff1d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 41416c8223ac94364e8f83028ea93189e9f3f60c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62323569"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373260"
 ---
 # <a name="ctypedptrmap-class"></a>CTypedPtrMap-Klasse
 
@@ -35,38 +35,38 @@ class CTypedPtrMap : public BASE_CLASS
 #### <a name="parameters"></a>Parameter
 
 *BASE_CLASS*<br/>
-Die Basisklasse der typisierter Zeiger Map-Klasse; muss eine Zeiger-Map-Klasse ( `CMapPtrToPtr`, `CMapPtrToWord`, `CMapWordToPtr`, oder `CMapStringToPtr`).
+Basisklasse der typisierten Zeigerzuordnungsklasse; muss eine Zeigerzuordnungsklasse `CMapPtrToPtr` `CMapPtrToWord`( `CMapWordToPtr`, `CMapStringToPtr`, , oder ) sein.
 
-*KEY*<br/>
-Die Klasse des Objekts als Schlüssel für die Karte verwendet.
+*Schlüssel*<br/>
+Klasse des Objekts, das als Schlüssel für die Karte verwendet wird.
 
-*WERT*<br/>
-Die Klasse des Objekts in der Zuordnung gespeichert.
+*Wert*<br/>
+Klasse des in der Karte gespeicherten Objekts.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CTypedPtrMap::GetNextAssoc](#getnextassoc)|Ruft das nächste Element durchlaufen werden können.|
-|[CTypedPtrMap::Lookup](#lookup)|Gibt eine `KEY` basierend auf einer `VALUE`.|
-|[CTypedPtrMap::RemoveKey](#removekey)|Entfernt ein Element mit einem Schlüssel angegeben.|
-|[CTypedPtrMap::SetAt](#setat)|Fügt ein Element in der Karte; ersetzt ein vorhandenes Element an, wenn ein passender Schlüssel gefunden wird.|
+|[CTypedPtrMap::GetNextAssoc](#getnextassoc)|Ruft das nächste Element zum Iterieren ab.|
+|[CTypedPtrMap::Suche](#lookup)|Gibt `KEY` eine basierend `VALUE`auf einer zurück.|
+|[CTypedPtrMap::RemoveKey](#removekey)|Entfernt ein Element, das durch einen Schlüssel angegeben wird.|
+|[CTypedPtrMap::SetAt](#setat)|Fügt ein Element in die Karte ein. ersetzt ein vorhandenes Element, wenn ein übereinstimmender Schlüssel gefunden wird.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CTypedPtrMap::operator \[ \]](#operator_at)|Fügt ein Element in der Zuordnung.|
+|[CTypedPtrMap::Operator \[\]](#operator_at)|Fügt ein Element in die Karte ein.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bei Verwendung von `CTypedPtrMap`, die Typprüfung C++-Funktion hilft, Fehler aufgrund nicht übereinstimmender Zeigertypen zu vermeiden.
+Wenn Sie `CTypedPtrMap`verwenden, hilft die C++-Typüberprüfungsfunktion, Fehler zu beseitigen, die durch nicht übereinstimmende Zeigertypen verursacht werden.
 
-Da alle `CTypedPtrMap` Funktionen werden Inline, die Verwendung dieser Vorlage erheblich wirkt sich nicht die Größe oder Geschwindigkeit Ihres Codes.
+Da `CTypedPtrMap` alle Funktionen inline sind, wirkt sich die Verwendung dieser Vorlage nicht wesentlich auf die Größe oder Geschwindigkeit des Codes aus.
 
-Weitere Informationen zur Verwendung von `CTypedPtrMap`, finden Sie in den Artikeln [Sammlungen](../../mfc/collections.md) und [vorlagenbasierte Klassen](../../mfc/template-based-classes.md).
+Weitere Informationen zur `CTypedPtrMap`Verwendung finden Sie in den Artikeln [Sammlungen](../../mfc/collections.md) und [Vorlagenbasierte Klassen](../../mfc/template-based-classes.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -78,9 +78,9 @@ Weitere Informationen zur Verwendung von `CTypedPtrMap`, finden Sie in den Artik
 
 **Header:** afxtempl.h
 
-##  <a name="getnextassoc"></a>  CTypedPtrMap::GetNextAssoc
+## <a name="ctypedptrmapgetnextassoc"></a><a name="getnextassoc"></a>CTypedPtrMap::GetNextAssoc
 
-Ruft das kartenelement auf `rNextPosition`, und aktualisiert dann `rNextPosition` zum Verweisen auf das nächste Element in der Zuordnung.
+Ruft das Kartenelement `rNextPosition`unter `rNextPosition` ab und aktualisiert dann, um auf das nächste Element in der Karte zu verweisen.
 
 ```
 void GetNextAssoc(
@@ -91,32 +91,32 @@ void GetNextAssoc(
 
 ### <a name="parameters"></a>Parameter
 
-*rPosition*<br/>
-Gibt einen Verweis auf eine Positionswert, der von einem vorherigen zurückgegebene `GetNextAssoc` oder `BASE_CLASS` **:: GetStartPosition** aufrufen.
+*Rposition*<br/>
+Gibt einen Verweis auf einen POSITION-Wert an, der von einem vorherigen `GetNextAssoc` oder `BASE_CLASS` **::GetStartPosition-Aufruf** zurückgegeben wird.
 
-*KEY*<br/>
-Template-Parameter, die den Typ der Map-Schlüssel angibt.
+*Schlüssel*<br/>
+Vorlagenparameter, der den Typ der Kartenschlüssel angibt.
 
 *rKey*<br/>
-Gibt den zurückgegebenen Schlüssel des Elements abgerufen.
+Gibt den zurückgegebenen Schlüssel des abgerufenen Elements an.
 
-*WERT*<br/>
-Der Vorlagenparameter, die den Typ der Werte von der Zuordnung angibt.
+*Wert*<br/>
+Vorlagenparameter, der den Typ der Kartenwerte angibt.
 
-*rValue*<br/>
-Gibt den Rückgabewert des abgerufenen Elements an.
+*Rvalue*<br/>
+Gibt den zurückgegebenen Wert des abgerufenen Elements an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion ist besonders hilfreich für die Iteration durch alle Elemente in der Zuordnung. Beachten Sie, dass die Sequenz Position nicht unbedingt identisch mit der Sequenz von Schlüssel-Wert ist.
+Diese Funktion ist besonders nützlich, um alle Elemente in der Karte zu durchlaufen. Beachten Sie, dass die Positionssequenz nicht unbedingt mit der Schlüsselwertsequenz identisch ist.
 
-Ist das abgerufene Element das letzte in der Zuordnung klicken Sie dann den neuen Wert des `rNextPosition` auf NULL festgelegt ist.
+Wenn das abgerufene Element das letzte element in `rNextPosition` der Karte ist, wird der neue Wert von auf NULL gesetzt.
 
-Diese Inlinefunktion ruft `BASE_CLASS` **:: GetNextAssoc**.
+Diese Inlinefunktion `BASE_CLASS`ruft **::GetNextAssoc**auf.
 
-##  <a name="lookup"></a>  CTypedPtrMap::Lookup
+## <a name="ctypedptrmaplookup"></a><a name="lookup"></a>CTypedPtrMap::Suche
 
-`Lookup` verwendet einen Hashalgorithmus auf um das kartenelement schnell mit einem Schlüssel zu finden, die genau übereinstimmt.
+`Lookup`verwendet einen Hashalgorithmus, um das Kartenelement schnell mit einem Schlüssel zu finden, der genau übereinstimmt.
 
 ```
 BOOL Lookup(BASE_CLASS ::BASE_ARG_KEY key, VALUE& rValue) const;
@@ -125,28 +125,28 @@ BOOL Lookup(BASE_CLASS ::BASE_ARG_KEY key, VALUE& rValue) const;
 ### <a name="parameters"></a>Parameter
 
 *BASE_CLASS*<br/>
-Template-Parameter, die die Basisklasse dieser Map-Klasse angeben.
+Vorlagenparameter, der die Basisklasse der Klasse dieser Zuordnung angibt.
 
 *key*<br/>
-Der Schlüssel des Elements, das gesucht werden sollen.
+Der Schlüssel des zu erkundübenden Elements.
 
-*WERT*<br/>
-Template-Parameter, die den Typ des in dieser Zuordnung gespeicherten Werte angibt.
+*Wert*<br/>
+Vorlagenparameter, der den Typ der in dieser Zuordnung gespeicherten Werte angibt.
 
-*rValue*<br/>
-Gibt den Rückgabewert des abgerufenen Elements an.
+*Rvalue*<br/>
+Gibt den zurückgegebenen Wert des abgerufenen Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das Element gefunden wurde; andernfalls 0.
+Ein Wert ungleich Null, wenn das Element gefunden wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Inlinefunktion ruft `BASE_CLASS` **:: Lookup**.
+Diese Inlinefunktion `BASE_CLASS`ruft **::Lookup**auf.
 
-##  <a name="operator_at"></a>  CTypedPtrMap::operator]
+## <a name="ctypedptrmapoperator--"></a><a name="operator_at"></a>CTypedPtrMap::Operator [ ]
 
-Dieser Operator kann nur auf der linken Seite einer zuweisungsanweisung (ein l-Wert) verwendet werden.
+Dieser Operator kann nur auf der linken Seite einer Zuweisungsanweisung (ein l-Wert) verwendet werden.
 
 ```
 VALUE& operator[ ](base_class ::base_arg_key key);
@@ -154,22 +154,22 @@ VALUE& operator[ ](base_class ::base_arg_key key);
 
 ### <a name="parameters"></a>Parameter
 
-*WERT*<br/>
-Template-Parameter, die den Typ des in dieser Zuordnung gespeicherten Werte angibt.
+*Wert*<br/>
+Vorlagenparameter, der den Typ der in dieser Zuordnung gespeicherten Werte angibt.
 
 *BASE_CLASS*<br/>
-Template-Parameter, die die Basisklasse dieser Map-Klasse angeben.
+Vorlagenparameter, der die Basisklasse der Klasse dieser Zuordnung angibt.
 
 *key*<br/>
-Der Schlüssel des Elements, das gesucht werden oder in der Zuordnung erstellt werden.
+Der Schlüssel des Elements, das in der Karte gesucht oder erstellt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn kein Map-Element mit dem angegebenen Schlüssel vorhanden ist, wird ein neues Element erstellt. Es gibt keine "rechts" (r), die dieser Operator entspricht, da es sich bei besteht die Möglichkeit, die ein Schlüssel in der Zuordnung nicht gefunden werden kann. Verwenden der `Lookup` Member-Funktion für Abruf von Listenelementen.
+Wenn kein Kartenelement mit dem angegebenen Schlüssel vorhanden ist, wird ein neues Element erstellt. Es gibt keine "rechte Seite" (r-Wert) äquivalent zu diesem Operator, da es eine Möglichkeit, dass ein Schlüssel nicht in der Karte gefunden werden. Verwenden `Lookup` Sie die Memberfunktion für den Elementabruf.
 
-##  <a name="removekey"></a>  CTypedPtrMap::RemoveKey
+## <a name="ctypedptrmapremovekey"></a><a name="removekey"></a>CTypedPtrMap::RemoveKey
 
-Diese Memberfunktion ruft `BASE_CLASS` **:: RemoveKey**.
+Diese Memberfunktion `BASE_CLASS`ruft **::RemoveKey**auf.
 
 ```
 BOOL RemoveKey(KEY key);
@@ -177,23 +177,23 @@ BOOL RemoveKey(KEY key);
 
 ### <a name="parameters"></a>Parameter
 
-*KEY*<br/>
-Template-Parameter, die den Typ der Map-Schlüssel angibt.
+*Schlüssel*<br/>
+Vorlagenparameter, der den Typ der Kartenschlüssel angibt.
 
 *key*<br/>
-Der Schlüssel für das Element entfernt werden soll.
+Schlüssel für das zu entfernende Element.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn der Eintrag gefunden und erfolgreich entfernt wurde; andernfalls 0.
+Ein Wert ungleich Null, wenn der Eintrag gefunden und erfolgreich entfernt wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Hinweise finden Sie unter [CMapStringToOb::RemoveKey](../../mfc/reference/cmapstringtoob-class.md#removekey).
+Ausführlichere Anmerkungen finden Sie unter [CMapStringToOb::RemoveKey](../../mfc/reference/cmapstringtoob-class.md#removekey).
 
-##  <a name="setat"></a>  CTypedPtrMap::SetAt
+## <a name="ctypedptrmapsetat"></a><a name="setat"></a>CTypedPtrMap::SetAt
 
-Diese Memberfunktion ruft `BASE_CLASS` **:: SetAt**.
+Diese Memberfunktion `BASE_CLASS`ruft **::SetAt**auf.
 
 ```
 void SetAt(KEY key, VALUE newValue);
@@ -201,22 +201,22 @@ void SetAt(KEY key, VALUE newValue);
 
 ### <a name="parameters"></a>Parameter
 
-*KEY*<br/>
-Template-Parameter, die den Typ der Map-Schlüssel angibt.
+*Schlüssel*<br/>
+Vorlagenparameter, der den Typ der Kartenschlüssel angibt.
 
 *key*<br/>
-Gibt den Wert des der NewValue Schlüssels an.
+Gibt den Schlüsselwert des newValue an.
 
 *newValue*<br/>
-Gibt den Objektzeiger, das der Wert des neuen Elements an.
+Gibt den Objektzeiger an, der der Wert des neuen Elements ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Hinweise finden Sie unter [CMapStringToOb::SetAt](../../mfc/reference/cmapstringtoob-class.md#setat).
+Ausführlichere Anmerkungen finden Sie unter [CMapStringToOb::SetAt](../../mfc/reference/cmapstringtoob-class.md#setat).
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel erfassen](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel COLLECT](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CMapPtrToPtr-Klasse](../../mfc/reference/cmapptrtoptr-class.md)<br/>
 [CMapPtrToWord-Klasse](../../mfc/reference/cmapptrtoword-class.md)<br/>

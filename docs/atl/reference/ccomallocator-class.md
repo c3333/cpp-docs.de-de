@@ -1,5 +1,5 @@
 ---
-title: Ccomzucator-Klasse
+title: CComAllocator-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CComAllocator
@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - CComAllocator class
 ms.assetid: 0cd706fd-0c7b-42d3-9054-febe2966fc8e
-ms.openlocfilehash: de302c7a58bf1b15e63e7cd391621ed9558e5a70
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 165cdb8b0b16a4872214f4556c26ee141e6a4d89
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497598"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321143"
 ---
-# <a name="ccomallocator-class"></a>Ccomzucator-Klasse
+# <a name="ccomallocator-class"></a>CComAllocator-Klasse
 
-Diese Klasse stellt Methoden zum Verwalten von Speicher mithilfe von com-Speicher Routinen bereit.
+Diese Klasse stellt Methoden zum Verwalten von Arbeitsspeicher mithilfe von COM-Speicherroutinen bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,21 +31,21 @@ class CComAllocator
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComAllocator::Allocate](#allocate)|Nennen Sie diese statische Methode, um Arbeitsspeicher zuzuweisen.|
-|[CComAllocator::Free](#free)|Diese statische Methode zum Freigeben von zugewiesener Arbeitsspeicher aufzurufen.|
-|[CComAllocator::Reallocate](#reallocate)|Diese statische Methode zum erneuten Zuweisen von Arbeitsspeicher verwenden.|
+|[CComAllocator::Zuweisen](#allocate)|Rufen Sie diese statische Methode auf, um Speicher zuzuweisen.|
+|[CComAllocator::Kostenlos](#free)|Rufen Sie diese statische Methode auf, um zugewiesenen Speicher freizugeben.|
+|[CComAllocator::Neuzuordnen](#reallocate)|Rufen Sie diese statische Methode auf, um Denspeicher neu zuzuweisen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse wird von [ccomheapptr](../../atl/reference/ccomheapptr-class.md) verwendet, um die com-Speicher Belegungs Routinen bereitzustellen. Die gegen Klasse [ccrtallocator](../../atl/reference/ccrtallocator-class.md)stellt die gleichen Methoden mithilfe von CRT-Routinen bereit.
+Diese Klasse wird von [CComHeapPtr](../../atl/reference/ccomheapptr-class.md) verwendet, um die COM-Speicherzuweisungsroutinen bereitzustellen. Die Counterpartklasse [CCRTAllocator](../../atl/reference/ccrtallocator-class.md)stellt dieselben Methoden mit CRT-Routinen bereit.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase. h
+**Kopfzeile:** atlbase.h
 
-##  <a name="allocate"></a>Ccomallocator:: zuordnen
+## <a name="ccomallocatorallocate"></a><a name="allocate"></a>CComAllocator::Zuweisen
 
 Rufen Sie diese statische Funktion auf, um Arbeitsspeicher zu belegen.
 
@@ -62,13 +62,13 @@ Die Anzahl der zu belegenden Bytes.
 
 Gibt einen void-Zeiger auf den belegten Speicherplatz oder NULL zurück, wenn nicht genügend Speicher verfügbar ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Belegt Arbeitsspeicher. Weitere Informationen finden Sie unter [cotaskmemzuweisung](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemalloc) .
+Belegt Arbeitsspeicher. Weitere Informationen finden Sie unter [CoTaskMemAlloc.](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemalloc)
 
-##  <a name="free"></a>Ccomzucator:: Free
+## <a name="ccomallocatorfree"></a><a name="free"></a>CComAllocator::Kostenlos
 
-Diese statische Funktion zum Freigeben von zugewiesener Arbeitsspeicher aufzurufen.
+Rufen Sie diese statische Funktion auf, um zugewiesenen Speicher freizugeben.
 
 ```
 static void Free(void* p) throw();
@@ -76,14 +76,14 @@ static void Free(void* p) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
+*P*<br/>
 Zeiger auf zugewiesenen Speicher.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den zugewiesenen Arbeitsspeicher frei. Weitere Informationen finden Sie unter " [CoTaskMemFree](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemfree) ".
+Gibt den zugewiesenen Speicher frei. Weitere Informationen finden Sie unter [CoTaskMemFree.](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemfree)
 
-##  <a name="reallocate"></a>Ccomallocator:: Neuzuordnung
+## <a name="ccomallocatorreallocate"></a><a name="reallocate"></a>CComAllocator::Neuzuordnen
 
 Rufen Sie diese statischen Funktion auf, um Arbeitsspeicher neu zuzuordnen.
 
@@ -93,7 +93,7 @@ static void* Reallocate(void* p, size_t nBytes) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*p*<br/>
+*P*<br/>
 Zeiger auf zugewiesenen Speicher.
 
 *nBytes*<br/>
@@ -101,14 +101,14 @@ Die Anzahl der zuzuordnenden Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen void-Zeiger auf den zugeordneten Speicherplatz oder NULL zurück, wenn nicht genügend Arbeitsspeicher vorhanden ist.
+Gibt einen leeren Zeiger auf den zugewiesenen Speicherplatz oder NULL zurück, wenn nicht genügend Arbeitsspeicher vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ändert die Größe des belegten Speichers. Weitere Informationen finden Sie unter [cotaskmemrezuweisungen](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemrealloc) .
+Ändert die Größe des belegten Speichers. Weitere Informationen finden Sie unter [CoTaskMemRealloc.](/windows/win32/api/combaseapi/nf-combaseapi-cotaskmemrealloc)
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComHeapPtr-Klasse](../../atl/reference/ccomheapptr-class.md)<br/>
 [CCRTAllocator-Klasse](../../atl/reference/ccrtallocator-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

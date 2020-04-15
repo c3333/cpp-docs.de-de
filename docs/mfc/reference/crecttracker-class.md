@@ -38,16 +38,16 @@ helpviewer_keywords:
 - CRectTracker [MFC], m_rect
 - CRectTracker [MFC], m_sizeMin
 ms.assetid: 99caa7f2-3c0d-4a42-bbee-e5d1d342d4ee
-ms.openlocfilehash: 9c54cdfecfa6c4ff0eef7e16003ab2097553953d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4d262ab5f88481d56de1c236effb66fcbf6a706a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62372262"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368377"
 ---
 # <a name="crecttracker-class"></a>CRectTracker-Klasse
 
-Ermöglicht es einem Element angezeigt werden, verschoben und in unterschiedlichen Größen dargestellt werden soll.
+Ermöglicht die Anzeige, Beschreibung und Größe eines Elements auf unterschiedliche Weise.
 
 ## <a name="syntax"></a>Syntax
 
@@ -59,46 +59,46 @@ class CRectTracker
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CRectTracker::CRectTracker](#crecttracker)|Erstellt ein `CRectTracker`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CRectTracker::AdjustRect](#adjustrect)|Aufgerufen, wenn die Größe des Rechtecks geändert wird.|
+|[CRectTracker::AdjustRect](#adjustrect)|Wird aufgerufen, wenn die Größe des Rechtecks geändert wird.|
 |[CRectTracker::Draw](#draw)|Rendert das Rechteck.|
-|[CRectTracker::DrawTrackerRect](#drawtrackerrect)|Wird aufgerufen, wenn es sich bei der Rahmen gezeichnet eine `CRectTracker` Objekt.|
-|[CRectTracker::GetHandleMask](#gethandlemask)|Wird aufgerufen, um das Abrufen der Maske einer `CRectTracker` Handles zur Größenänderung des Elements.|
-|[CRectTracker::GetTrueRect](#gettruerect)|Gibt zurück, Breite und Höhe des Rechtecks, einschließlich des Handles zur Größenänderung.|
-|[CRectTracker::HitTest](#hittest)|Gibt die aktuelle Position des Cursors im Zusammenhang mit der `CRectTracker` Objekt.|
-|[CRectTracker::NormalizeHit](#normalizehit)|Normalisiert einen Treffertest-Code.|
-|[CRectTracker::OnChangedRect](#onchangedrect)|Wird aufgerufen, wenn das Rechteck geändert oder verschoben wurde.|
-|[CRectTracker::SetCursor](#setcursor)|Legt den Cursor je nach Position seine über das Rechteck fest.|
-|[CRectTracker::Track](#track)|Ermöglicht dem Benutzer das Rechteck zu bearbeiten.|
-|[CRectTracker::TrackRubberBand](#trackrubberband)|Ermöglicht dem Benutzer "Gummiband" die Auswahl.|
+|[CRectTracker::DrawTrackerRect](#drawtrackerrect)|Wird beim Zeichnen des `CRectTracker` Rahmens eines Objekts aufgerufen.|
+|[CRectTracker::GetHandleMask](#gethandlemask)|Wird aufgerufen, um `CRectTracker` die Maske der Ziehpunkte für die Größenänderung eines Elements abzusuchen.|
+|[CRectTracker::GetTrueRect](#gettruerect)|Gibt Breite und Höhe des Rechtecks zurück, einschließlich Größenänderungsziehpunkte.|
+|[CRectTracker::HitTest](#hittest)|Gibt die aktuelle Position des `CRectTracker` Cursors zurück, der sich auf das Objekt bezieht.|
+|[CRectTracker::NormalizeHit](#normalizehit)|Normalisiert einen Treffertestcode.|
+|[CRectTracker::OnChangedRect](#onchangedrect)|Wird aufgerufen, wenn die Größe des Rechtecks geändert oder verschoben wurde.|
+|[CRectTracker::SetCursor](#setcursor)|Legt den Cursor in Abhängigkeit von seiner Position über dem Rechteck fest.|
+|[CRectTracker::Track](#track)|Ermöglicht es dem Benutzer, das Rechteck zu bearbeiten.|
+|[CRectTracker::TrackRubberBand](#trackrubberband)|Ermöglicht es dem Benutzer, die Auswahl "gummi-band" zu machen.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CRectTracker::m_nHandleSize](#m_nhandlesize)|Bestimmt die Größe des Handles zur Größenänderung.|
-|[CRectTracker::m_nStyle](#m_nstyle)|Aktuelle Style(s) Tracker.|
+|[CRectTracker::m_nHandleSize](#m_nhandlesize)|Bestimmt die Größe der Ziehpunkte für die Größenänderung.|
+|[CRectTracker::m_nStyle](#m_nstyle)|Aktuelle Stile des Trackers.|
 |[CRectTracker::m_rect](#m_rect)|Aktuelle Position (in Pixel) des Rechtecks.|
-|[CRectTracker::m_sizeMin](#m_sizemin)|Bestimmt, minimale Rechteck Breite und Höhe.|
+|[CRectTracker::m_sizeMin](#m_sizemin)|Bestimmt die minimale Rechteckbreite und -höhe.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CRectTracker` eine Basisklasse keinen.
+`CRectTracker`hat keine Basisklasse.
 
-Obwohl die `CRectTracker` Klasse soll es den Benutzer, die OLE-Elementen interagieren mit einer grafischen Oberfläche ermöglicht, ihre Verwendung ist nicht auf OLE-fähigen Anwendungen beschränkt. Es kann verwendet werden an einer beliebigen Stelle eine solche Benutzeroberfläche erforderlich ist.
+Obwohl `CRectTracker` die Klasse so konzipiert ist, dass der Benutzer mit OLE-Elementen mithilfe einer grafischen Oberfläche interagieren kann, ist ihre Verwendung nicht auf OLE-fähige Anwendungen beschränkt. Es kann überall dort verwendet werden, wo eine solche Benutzeroberfläche benötigt wird.
 
-`CRectTracker` Rahmen können solid sein oder die gepunkteten Linien. Das Element möglich angegebenen schraffiert oder zusammen mit einer Schraffur an die unterschiedlichen Zustände des Elements. Sie können acht Ziehpunkte platzieren, auf der Außenseite oder den inneren Rahmen des Elements. (Eine Erläuterung der die Handles zur Größenänderung, finden Sie unter [GetHandleMask](#gethandlemask).) Zum Schluss eine `CRectTracker` können Sie die Ausrichtung eines Elements während der Größenänderung ändern.
+`CRectTracker`Rahmen können durchgezogene oder gepunktete Linien sein. Das Element kann einen geschlüpften Rahmen oder überlagert mit einem schraffierten Muster erhalten, um verschiedene Zustände des Elements anzuzeigen. Sie können acht Ziehpunkte zur Größenänderung entweder am äußeren oder am inneren Rand des Elements platzieren. (Eine Erläuterung der Ziehpunkte zur Größenänderung finden Sie unter [GetHandleMask](#gethandlemask).) Schließlich können `CRectTracker` Sie mit a die Ausrichtung eines Elements während der Größenänderung ändern.
 
-Mit `CRectTracker`, erstellen Sie eine `CRectTracker` Objekt, und geben Sie die Anzeige, welche Status initialisiert werden. Anschließend können Sie diese Schnittstelle die Benutzer auf den aktuellen Status des zugeordneten OLE-Elements ein visuelles Feedback die `CRectTracker` Objekt.
+Um `CRectTracker`zu verwenden, erstellen Sie ein `CRectTracker` Objekt und geben Sie an, welche Anzeigezustände initialisiert werden. Sie können diese Schnittstelle dann verwenden, um dem Benutzer visuelles Feedback `CRectTracker` zum aktuellen Status des OLE-Elements zu geben, das dem Objekt zugeordnet ist.
 
-Weitere Informationen zur Verwendung von `CRectTracker`, finden Sie im Artikel [Nachverfolgungsmodule](../../mfc/trackers.md).
+Weitere Informationen zur `CRectTracker`Verwendung finden Sie im Artikel [Trackers](../../mfc/trackers.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -106,11 +106,11 @@ Weitere Informationen zur Verwendung von `CRectTracker`, finden Sie im Artikel [
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxext.h
+**Kopf:** afxext.h
 
-##  <a name="adjustrect"></a>  CRectTracker::AdjustRect
+## <a name="crecttrackeradjustrect"></a><a name="adjustrect"></a>CRectTracker::AdjustRect
 
-Vom Framework aufgerufen, wenn das Rechteck für die Überwachung unter Verwendung eines Handles Ändern der Größe geändert wird.
+Wird vom Framework aufgerufen, wenn die Größe des Nachverfolgungsrechtecks mithilfe eines Ziehpunkts zum Ändern der Größe geändert wird.
 
 ```
 virtual void AdjustRect(
@@ -121,22 +121,22 @@ virtual void AdjustRect(
 ### <a name="parameters"></a>Parameter
 
 *nHandle*<br/>
-Der Index des Handles verwendet.
+Index des verwendeten Handles.
 
 *lpRect*<br/>
 Zeiger auf die aktuelle Größe des Rechtecks. (Die Größe eines Rechtecks wird durch seine Höhe und Breite angegeben.)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Standardverhalten dieser Funktion ermöglicht die Ausrichtung des Rechtecks, so ändern Sie nur, wenn `Track` und `TrackRubberBand` heißen mit invertieren zulässig.
+Das Standardverhalten dieser Funktion ermöglicht es, die `Track` Ausrichtung `TrackRubberBand` des Rechtecks nur zu ändern, wenn und aufgerufen werden, wenn invertieren erlaubt.
 
-Überschreiben Sie diese Funktion, um die Anpassung des Rechtecks nachverfolgen, während ein Ziehvorgang zu steuern. Eine Methode besteht darin, passen Sie den angegebenen Koordinaten *LpRect* vor der Rückgabe.
+Überschreiben Sie diese Funktion, um die Anpassung des Nachverfolgungsrechtecks während eines Ziehvorgangs zu steuern. Eine Methode besteht darin, die von *lpRect* angegebenen Koordinaten vor der Rückgabe anzupassen.
 
-Spezielle Features, die von nicht direkt unterstützt werden `CRectTracker`, wie z.B. Snap-in-Raster oder-Seitenverhältnis beibehalten, können durch das überschreiben diese Funktion implementiert werden.
+Spezielle Funktionen, die nicht `CRectTracker`direkt von unterstützt werden, wie Snap-to-Grid oder Keep-Aspect-Ratio, können durch Überschreiben dieser Funktion implementiert werden.
 
-##  <a name="crecttracker"></a>  CRectTracker::CRectTracker
+## <a name="crecttrackercrecttracker"></a><a name="crecttracker"></a>CRectTracker::CRectTracker
 
-Erstellt und initialisiert ein `CRectTracker` Objekt.
+Erstellt und initialisiert ein `CRectTracker`-Objekt.
 
 ```
 CRectTracker();
@@ -149,30 +149,30 @@ CRectTracker(
 ### <a name="parameters"></a>Parameter
 
 *lpSrcRect*<br/>
-Die Koordinaten des Rectangle-Objekts.
+Die Koordinaten des Rechteckobjekts.
 
 *nStyle*<br/>
-Gibt an, der die Darstellung der `CRectTracker` Objekt. Die folgenden Formate werden unterstützt:
+Gibt den Stil `CRectTracker` des Objekts an. Die folgenden Stile werden unterstützt:
 
-- `CRectTracker::solidLine` Verwenden Sie eine durchgehende Linie für den Rand des Rechtecks.
+- `CRectTracker::solidLine`Verwenden Sie eine durchgezogene Linie für den Rechteckrahmen.
 
-- `CRectTracker::dottedLine` Verwenden Sie eine gepunktete Linie für den Rand des Rechtecks.
+- `CRectTracker::dottedLine`Verwenden Sie eine gepunktete Linie für den Rechteckrahmen.
 
-- `CRectTracker::hatchedBorder` Verwenden Sie eine Schraffurmuster für den Rand des Rechtecks.
+- `CRectTracker::hatchedBorder`Verwenden Sie ein Schraffurmuster für den Rechteckrahmen.
 
-- `CRectTracker::resizeInside` Ziehpunkte, die innerhalb des Rechtecks.
+- `CRectTracker::resizeInside`Ändern der Größe von Ziehgriffen, die sich innerhalb des Rechtecks befinden.
 
-- `CRectTracker::resizeOutside` Befindet sich außerhalb des Rechtecks Handles zur Größenänderung.
+- `CRectTracker::resizeOutside`Ändern der Größe von Ziehgriffen, die sich außerhalb des Rechtecks befinden.
 
-- `CRectTracker::hatchInside` Ausgebrütet Muster deckt das gesamte Rechteck.
+- `CRectTracker::hatchInside`Das Schraffurmuster bedeckt das gesamte Rechteck.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Standardkonstruktor initialisiert die `CRectTracker` Objekt mit den Werten aus *LpSrcRect* und andere Größen Systemstandards initialisiert. Wenn das Objekt, ohne Parameter erstellt wird der `m_rect` und `m_nStyle` Datenmember sind nicht initialisiert.
+Der Standardkonstruktor initialisiert `CRectTracker` das Objekt mit den Werten aus *lpSrcRect* und initialisiert andere Größen in Systemstandards. Wenn das Objekt ohne Parameter `m_rect` erstellt `m_nStyle` wird, werden die und die Datenmember nicht initialisiert.
 
-##  <a name="draw"></a>  CRectTracker::Draw
+## <a name="crecttrackerdraw"></a><a name="draw"></a>CRectTracker::Draw
 
-Rufen Sie diese Funktion, um die Zeilen der äußeren und inneren Region des Rechtecks gezeichnet werden soll.
+Rufen Sie diese Funktion auf, um die äußeren Linien und den inneren Bereich des Rechtecks zu zeichnen.
 
 ```
 void Draw(CDC* pDC) const;
@@ -181,15 +181,15 @@ void Draw(CDC* pDC) const;
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Zeiger auf den Gerätekontext, in dem gezeichnet werden soll.
+Zeiger auf den Gerätekontext, auf den gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Den Stil für die nachverfolgung wird bestimmt, wie die Zeichnung erfolgt. Finden Sie im Konstruktor für `CRectTracker` für Weitere Informationen zu den Formaten zur Verfügung.
+Der Stil des Trackers bestimmt, wie die Zeichnung ausgeführt wird. Weitere Informationen zu `CRectTracker` den verfügbaren Stilen finden Sie im Konstruktor.
 
-##  <a name="drawtrackerrect"></a>  CRectTracker::DrawTrackerRect
+## <a name="crecttrackerdrawtrackerrect"></a><a name="drawtrackerrect"></a>CRectTracker::DrawTrackerRect
 
-Vom Framework aufgerufen, wenn die Position der nachverfolgung geändert hat zwar innerhalb der `Track` oder `TrackRubberBand` Member-Funktion.
+Wird vom Framework aufgerufen, wenn sich die `Track` Position `TrackRubberBand` des Trackers innerhalb der oder Memberfunktion geändert hat.
 
 ```
 virtual void DrawTrackerRect(
@@ -202,26 +202,26 @@ virtual void DrawTrackerRect(
 ### <a name="parameters"></a>Parameter
 
 *lpRect*<br/>
-Zeiger auf die `RECT` , die zu zeichnenden Rechtecks enthält.
+Zeigen Sie `RECT` mit dem, der das zu zeichnende Rechteck enthält.
 
 *pWndClipTo*<br/>
-Zeiger auf das Fenster, in das Rechteck verwendet.
+Zeigen Sie mit dem Zeiger auf das Fenster, das zum Ausschneiden des Rechtecks verwendet werden soll.
 
 *pDC*<br/>
-Zeiger auf den Gerätekontext, in dem gezeichnet werden soll.
+Zeiger auf den Gerätekontext, auf den gezeichnet werden soll.
 
 *pWnd*<br/>
-Zeiger auf das Fenster auf dem die Zeichnung ausgeführt wird.
+Zeigen Sie mit dem Zeiger auf das Fenster, in dem die Zeichnung ausgeführt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standardimplementierung ruft `CDC::DrawFocusRect`, die einen gepunkteten Rahmen zeichnet.
+Die Standardimplementierung ruft `CDC::DrawFocusRect`einen auf, der ein gepunktetes Rechteck zeichnet.
 
-Überschreiben Sie diese Funktion Informationen zu anderen Feedback während des nachverfolgungsvorgangs.
+Überschreiben Sie diese Funktion, um während des Überwachungsvorgangs unterschiedliches Feedback bereitzustellen.
 
-##  <a name="gethandlemask"></a>  CRectTracker::GetHandleMask
+## <a name="crecttrackergethandlemask"></a><a name="gethandlemask"></a>CRectTracker::GetHandleMask
 
-Das Framework ruft diese Memberfunktion zum Abrufen von der Maske für Handles Größe eines Rechtecks zu ändern.
+Das Framework ruft diese Memberfunktion auf, um die Maske für die Größenänderungshandles eines Rechtecks abzurufen.
 
 ```
 virtual UINT GetHandleMask() const;
@@ -229,23 +229,23 @@ virtual UINT GetHandleMask() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Maske einer `CRectTracker` Handles zur Größenänderung des Elements.
+Die Maske `CRectTracker` der Ziehpunkte für die Größenänderung eines Elements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Handles zur Größenänderung werden auf den Seiten und die Ecken des Rechtecks angezeigt und ermöglicht dem Benutzer, die die Form und Größe des Rechtecks zu steuern.
+Die Ziehpunkte zur Größenänderung werden an den Seiten und Ecken des Rechtecks angezeigt und ermöglichen es dem Benutzer, die Form und Größe des Rechtecks zu steuern.
 
-Ein Rechteck ist 8 Handles zur Größenänderung nummeriert von 0 bis 7. Jede Ziehpunkt wird durch ein wenig in der Maske dargestellt; der Wert dieses Bit ist 2 ^ *n*, wobei *n* ist die Anzahl der Größenänderung-Handle. Bits 0 bis 3 entsprechen die Ecke Ziehpunkte, die oben links, gleitenden im Uhrzeigersinn ab. Bits 4 bis 7 auf der Seite entsprechen Ziehpunkte, die oben im Uhrzeigersinn verschieben. Die folgende Abbildung zeigt das Ändern der Größe eines Rechtecks behandelt und die entsprechenden Nummern der Ziehpunkte und Werte Größe:
+Ein Rechteck hat 8 Ziehpunkte zur Größenänderung mit der Nummer 0-7. Jeder Ziehpunkt zur Größenänderung wird durch ein Bit in der Maske dargestellt. Der Wert dieses Bits ist 2 *n*, wobei *n* die Größe der Handlenummer ist. Bits 0-3 entsprechen den Eckgrößengriffen, beginnend oben links im Uhrzeigersinn. Bits 4-7 entsprechen den seitlichen Größenänderungsgriffen, die oben im Uhrzeigersinn beginnen. Die folgende Abbildung zeigt die Größenänderungshandles eines Rechtecks und die entsprechenden Ziehgriffzahlen und -werte für die Größenänderung:
 
-![Ändern Sie die Nummern der Ziehpunkte Größe](../../mfc/reference/media/vc35dp1.gif "Nummern der Ziehpunkte ändern")
+![Ändern der Größe von Handlenummern](../../mfc/reference/media/vc35dp1.gif "Nummern der Ziehpunkte zur Größenänderung")
 
-Die standardmäßige Implementierung des `GetHandleMask` gibt die Maske der Bits zurück, sodass die Handles zur Größenänderung angezeigt werden. Wenn es sich bei den einzelne Bit aktiviert ist, wird der entsprechenden Ziehpunkt gezeichnet.
+Die Standardimplementierung `GetHandleMask` von gibt die Maske der Bits zurück, sodass die Ziehpunkte zur Größenänderung angezeigt werden. Wenn das einzelne Bit eingeschaltet ist, wird der entsprechende Ziehpunkt zur Größenänderung gezeichnet.
 
-Überschreiben Sie diese Memberfunktion zum aus- oder einblenden, dass das angezeigte Ziehpunkte an.
+Überschreiben Sie diese Memberfunktion, um die angegebenen Ziehpunkte zur Größenänderung auszublenden oder anzuzeigen.
 
-##  <a name="gettruerect"></a>  CRectTracker::GetTrueRect
+## <a name="crecttrackergettruerect"></a><a name="gettruerect"></a>CRectTracker::GetTrueRect
 
-Rufen Sie diese Funktion zum Abrufen der Koordinaten des Rechtecks.
+Rufen Sie diese Funktion auf, um die Koordinaten des Rechtecks abzurufen.
 
 ```
 void GetTrueRect(LPRECT lpTrueRect) const;
@@ -254,15 +254,15 @@ void GetTrueRect(LPRECT lpTrueRect) const;
 ### <a name="parameters"></a>Parameter
 
 *lpTrueRect*<br/>
-Zeiger auf die `RECT` Struktur, die das Gerät enthalten Koordinaten, der die `CRectTracker` Objekt.
+Zeigen Sie `RECT` mit dem Zeiger auf die `CRectTracker` Struktur, die die Gerätekoordinaten des Objekts enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Abmessungen des Rechtecks enthalten die Höhe und Breite der alle Handles zur Größenänderung befindet sich auf der äußere Rahmen. Nach dem Beenden, *LpTrueRect* ist immer ein normalisierter Rechteck in Gerätekoordinaten.
+Die Abmessungen des Rechtecks umfassen die Höhe und Breite aller Ziehpunkte für die Größenänderung, die sich am äußeren Rand befinden. Bei der Rückkehr ist *lpTrueRect* immer ein normalisiertes Rechteck in den Gerätekoordinaten.
 
-##  <a name="hittest"></a>  CRectTracker::HitTest
+## <a name="crecttrackerhittest"></a><a name="hittest"></a>CRectTracker::HitTest
 
-Rufen Sie diese Funktion finden Sie heraus, ob der Benutzer einen Ziehpunkt repräsentierte, hat.
+Rufen Sie diese Funktion auf, um herauszufinden, ob der Benutzer ein Handle zum Ändern der Größe gegriffen hat.
 
 ```
 int HitTest(CPoint point) const;
@@ -270,80 +270,80 @@ int HitTest(CPoint point) const;
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
-Der Punkt in Gerätekoordinaten, um zu testen.
+*Punkt*<br/>
+Der Punkt in den Gerätekoordinaten, der getestet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der zurückgegebene Wert basiert auf den enumerierten Typ `CRectTracker::TrackerHit` und kann einen der folgenden Werte aufweisen:
+Der zurückgegebene Wert basiert auf dem `CRectTracker::TrackerHit` aufgezählten Typ und kann einen der folgenden Werte aufweisen:
 
 - `CRectTracker::hitNothing` -1
 
 - `CRectTracker::hitTopLeft` 0
 
-- `CRectTracker::hitTopRight` 1
+- `CRectTracker::hitTopRight`1
 
-- `CRectTracker::hitBottomRight` 2
+- `CRectTracker::hitBottomRight`2
 
-- `CRectTracker::hitBottomLeft` 3
+- `CRectTracker::hitBottomLeft`3
 
-- `CRectTracker::hitTop` 4
+- `CRectTracker::hitTop`4
 
-- `CRectTracker::hitRight` 5
+- `CRectTracker::hitRight`5
 
-- `CRectTracker::hitBottom` 6
+- `CRectTracker::hitBottom`6
 
-- `CRectTracker::hitLeft` 7
+- `CRectTracker::hitLeft`7
 
-- `CRectTracker::hitMiddle` 8
+- `CRectTracker::hitMiddle`8
 
-##  <a name="m_nhandlesize"></a>  CRectTracker::m_nHandleSize
+## <a name="crecttrackerm_nhandlesize"></a><a name="m_nhandlesize"></a>CRectTracker::m_nHandleSize
 
-Die Größe in Pixel an, der die `CRectTracker` Handles zur Größenänderung.
+Die Größe der `CRectTracker` Ziehpunkte zur Größenänderung in Pixel.
 
 ```
 int m_nHandleSize;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert mit den standardmäßigen Systemwert.
+Initialisiert mit dem Standardsystemwert.
 
-##  <a name="m_rect"></a>  CRectTracker::m_rect
+## <a name="crecttrackerm_rect"></a><a name="m_rect"></a>CRectTracker::m_rect
 
-Die aktuelle Position des Rechtecks in Clientkoordinaten (in Pixel).
+Die aktuelle Position des Rechtecks in den Clientkoordinaten (Pixel).
 
 ```
 CRect m_rect;
 ```
 
-##  <a name="m_sizemin"></a>  CRectTracker::m_sizeMin
+## <a name="crecttrackerm_sizemin"></a><a name="m_sizemin"></a>CRectTracker::m_sizeMin
 
-Die minimale Größe des Rechtecks.
+Die Minimale Größe des Rechtecks.
 
 ```
 CSize m_sizeMin;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Beide Standardwerte `cx` und `cy`, aus den standardmäßigen Systemwert für die Breite des Rahmens berechnet werden. Dieses Datenelement wird nur verwendet, die `AdjustRect` Member-Funktion.
+Sowohl die `cx` Standardwerte als auch `cy`der werden aus dem Standardsystemwert für die Rahmenbreite berechnet. Dieses Datenelement wird nur `AdjustRect` von der Memberfunktion verwendet.
 
-##  <a name="m_nstyle"></a>  CRectTracker::m_nStyle
+## <a name="crecttrackerm_nstyle"></a><a name="m_nstyle"></a>CRectTracker::m_nStyle
 
-Aktuelle Stil des Rechtecks.
+Aktueller Stil des Rechtecks.
 
 ```
 UINT m_nStyle;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter [CRectTracker::CRectTracker](#crecttracker) eine Liste der möglichen Formate.
+Eine Liste möglicher Stile finden Sie unter [CRectTracker::CRectTracker.](#crecttracker)
 
-##  <a name="normalizehit"></a>  CRectTracker::NormalizeHit
+## <a name="crecttrackernormalizehit"></a><a name="normalizehit"></a>CRectTracker::NormalizeHit
 
-Rufen Sie diese Funktion zum Konvertieren von einem potenziell invertierten Handle.
+Rufen Sie diese Funktion auf, um ein potenziell invertiertes Handle zu konvertieren.
 
 ```
 int NormalizeHit(int nHandle) const;
@@ -352,19 +352,19 @@ int NormalizeHit(int nHandle) const;
 ### <a name="parameters"></a>Parameter
 
 *nHandle*<br/>
-Der Handle vom Benutzer ausgewählt wurde.
+Handle, das vom Benutzer ausgewählt wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Index des Handles normalisierte.
+Der Index des normalisierten Handles.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn `CRectTracker::Track` oder `CRectTracker::TrackRubberBand` heißt mit invertieren zulässig, es ist möglich, für das Rechteck auf der x-Achse, y-Achse oder beides umgekehrt werden soll. In diesem Fall `HitTest` Handles, die in Bezug auf das Rechteck auch umgekehrt werden zurück. Dies ist für zeichnen Cursor Feedback nicht geeignet, da das Feedback von die Bildschirmposition des Rechtecks nicht den Teil der Datenstruktur Rechteck abhängig ist, die geändert wird.
+Wenn `CRectTracker::Track` `CRectTracker::TrackRubberBand` oder wenn invertieren erlaubt aufgerufen wird, ist es möglich, dass das Rechteck auf der x-Achse, der y-Achse oder beidem invertiert wird. Wenn dies `HitTest` geschieht, werden Handles zurückgegeben, die auch in Bezug auf das Rechteck invertiert sind. Dies ist für das Zeichnen von Cursorfeedback ungeeignet, da das Feedback von der Bildschirmposition des Rechtecks abhängt, nicht von dem Teil der Rechteckdatenstruktur, der geändert wird.
 
-##  <a name="onchangedrect"></a>  CRectTracker::OnChangedRect
+## <a name="crecttrackeronchangedrect"></a><a name="onchangedrect"></a>CRectTracker::OnChangedRect
 
-Vom Framework aufgerufen, wenn das Rechteck Tracker während des Aufrufs geändert hat `Track`.
+Wird vom Framework aufgerufen, wenn sich das `Track`Tracker-Rechteck während eines Aufrufs von geändert hat.
 
 ```
 virtual void OnChangedRect(const CRect& rectOld);
@@ -373,17 +373,17 @@ virtual void OnChangedRect(const CRect& rectOld);
 ### <a name="parameters"></a>Parameter
 
 *rectOld*<br/>
-Mit den Gerätekoordinaten der alten von der `CRectTracker` Objekt.
+Enthält die alten Gerätekoordinaten des `CRectTracker` Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zum Zeitpunkt dieser Funktion aufgerufen wird, Ihr Feedback mit gezeichneten `DrawTrackerRect` wurde entfernt. Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt.
+Wenn diese Funktion aufgerufen wird, wurde `DrawTrackerRect` das gesamte mit gezeichnete Feedback entfernt. Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt.
 
-Überschreiben Sie diese Funktion, wenn Sie möchten, dass zur Ausführung von Aktionen nach der Größe des Rechtecks geändert wurde.
+Überschreiben Sie diese Funktion, wenn Sie Aktionen ausführen möchten, nachdem die Größe des Rechtecks geändert wurde.
 
-##  <a name="setcursor"></a>  CRectTracker:: SetCursor
+## <a name="crecttrackersetcursor"></a><a name="setcursor"></a>CRectTracker::SetCursor
 
-Mit dieser Funktion können Sie die Cursorform zu ändern, während er über ist die `CRectTracker` des Objekts Region.
+Rufen Sie diese Funktion auf, um `CRectTracker` die Cursor-Form zu ändern, während sie sich über dem Bereich des Objekts befindet.
 
 ```
 BOOL SetCursor(
@@ -394,22 +394,22 @@ BOOL SetCursor(
 ### <a name="parameters"></a>Parameter
 
 *pWnd*<br/>
-Verweist auf das Fenster, das derzeit den Cursor enthält.
+Zeigt auf das Fenster, das derzeit den Cursor enthält.
 
 *nHitTest*<br/>
-Die Ergebnisse des vorherigen Treffertests, aus der WM_SETCURSOR-Nachricht.
+Ergebnisse des vorherigen Treffertests aus der WM_SETCURSOR Meldung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn das vorherige ermittelte über das Rechteck zur objektnachverfolgung wurde; andernfalls 0.
+Ein Wert ungleich Null, wenn sich der vorherige Treffer über dem Tracker-Rechteck befand. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Funktion aus wird innerhalb der Funktion des Fensters, das die WM_SETCURSOR-Nachricht verarbeitet (in der Regel `OnSetCursor`).
+Rufen Sie diese Funktion innerhalb der Funktion Ihres Fensters `OnSetCursor`auf, das die WM_SETCURSOR Nachricht verarbeitet (normalerweise ).
 
-##  <a name="track"></a>  CRectTracker::Track
+## <a name="crecttrackertrack"></a><a name="track"></a>CRectTracker::Track
 
-Rufen Sie diese Funktion, um die Benutzeroberfläche zum Ändern der Größe des Rechtecks anzuzeigen.
+Rufen Sie diese Funktion auf, um die Benutzeroberfläche zum Ändern der Größe des Rechtecks anzuzeigen.
 
 ```
 BOOL Track(
@@ -422,32 +422,32 @@ BOOL Track(
 ### <a name="parameters"></a>Parameter
 
 *pWnd*<br/>
-Das Window-Objekt, das das Rechteck enthält.
+Das Fensterobjekt, das das Rechteck enthält.
 
-*point*<br/>
-Gerätekoordinaten von der aktuellen Mausposition relativ zum Clientbereich.
+*Punkt*<br/>
+Gerätekoordinaten der aktuellen Mausposition relativ zum Clientbereich.
 
 *bAllowInvert*<br/>
-Bei "true", kann das Rechteck entlang der x-Achse oder y-Achse umgekehrt werden soll; andernfalls "false".
+Wenn TRUE, kann das Rechteck entlang der x-Achse oder y-Achse invertiert werden. andernfalls FALSE.
 
 *pWndClipTo*<br/>
-Das Fenster, dem Zeichenvorgänge auf abgeschnitten wird. Wenn der Wert NULL, *aufnehmen* dient als das Clippingrechteck an.
+Das Fenster, in das Zeichnungsvorgänge abgeschnitten werden. Wenn NULL, wird *pWnd* als Clipping-Rechteck verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die ESC-Taste gedrückt wird, wird der Prozess der nachverfolgung angehalten, das Rechteck in die nachverfolgung gespeichert wird nicht geändert und wird 0 zurückgegeben. Wenn die Änderung ein Commit ausgeführt wurde, durch Bewegen der Maus und die linke Maustaste loslassen, die neue Position und/oder die Größe in die nachverfolgung des Rechtecks aufgezeichnet wird und ungleich NULL zurückgegeben.
+Wenn die ESC-Taste gedrückt wird, wird der Verfolgungsprozess angehalten, das im Tracker gespeicherte Rechteck wird nicht geändert, und 0 wird zurückgegeben. Wenn die Änderung festgeschrieben wird, wird durch Bewegen der Maus und Loslassen der linken Maustaste die neue Position und/oder Größe im Rechteck des Trackers aufgezeichnet und ein Wert von ungleich Null zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies wird in der Regel von bezeichnet, in der Funktion Ihrer Anwendung, die behandelt die `WM_LBUTTONDOWN` Nachricht (in der Regel `OnLButtonDown`).
+Dies wird in der Regel von innerhalb `WM_LBUTTONDOWN` der Funktion `OnLButtonDown`Ihrer Anwendung aufgerufen, die die Nachricht verarbeitet (in der Regel ).
 
-Diese Funktion wird die Maus erfassen, bis der Benutzer die linke Maustaste loslässt, die ESC-Taste drückt oder die rechte Maustaste drückt. Wenn der Benutzer den Mauszeiger bewegt, wird das Feedback durch den Aufruf aktualisiert `DrawTrackerRect` und `OnChangedRect`.
+Diese Funktion erfasst die Maus, bis der Benutzer die linke Maustaste loslässt, die ESC-Taste drückt oder die rechte Maustaste drückt. Wenn der Benutzer den Mauszeiger bewegt, `DrawTrackerRect` wird `OnChangedRect`das Feedback durch Aufrufen und aktualisiert.
 
-Wenn *bAllowInvert* ist "true", das Rechteck für die nachverfolgung auf der x-Achse oder y-Achse umgekehrt werden kann.
+Wenn *bAllowInvert* TRUE ist, kann das Tracking-Rechteck entweder auf der x-Achse oder auf der y-Achse invertiert werden.
 
-##  <a name="trackrubberband"></a>  CRectTracker::TrackRubberBand
+## <a name="crecttrackertrackrubberband"></a><a name="trackrubberband"></a>CRectTracker::TrackRubberBand
 
-Rufen Sie diese Funktion dazu Gummibandauswahl.
+Rufen Sie diese Funktion auf, um die Gummibandauswahl zu erledigen.
 
 ```
 BOOL TrackRubberBand(
@@ -459,29 +459,29 @@ BOOL TrackRubberBand(
 ### <a name="parameters"></a>Parameter
 
 *pWnd*<br/>
-Das Window-Objekt, das das Rechteck enthält.
+Das Fensterobjekt, das das Rechteck enthält.
 
-*point*<br/>
-Gerätekoordinaten von der aktuellen Mausposition relativ zum Clientbereich.
+*Punkt*<br/>
+Gerätekoordinaten der aktuellen Mausposition relativ zum Clientbereich.
 
 *bAllowInvert*<br/>
-Bei "true", kann das Rechteck entlang der x-Achse oder y-Achse umgekehrt werden soll; andernfalls "false".
+Wenn TRUE, kann das Rechteck entlang der x-Achse oder y-Achse invertiert werden. andernfalls FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL ist, wenn der Mauszeiger bewegt hat und nicht das Rechteck leer ist; andernfalls 0.
+Ein Wert ungleich Null, wenn sich die Maus bewegt hat und das Rechteck nicht leer ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie wird in der Regel aus aufgerufen, innerhalb der Funktion der Anwendung, die die Nachricht WM_LBUTTONDOWN verarbeitet (in der Regel `OnLButtonDown`).
+Es wird in der Regel von innerhalb der Funktion Ihrer `OnLButtonDown`Anwendung aufgerufen, die die WM_LBUTTONDOWN Nachricht verarbeitet (in der Regel ).
 
-Diese Funktion wird die Maus erfassen, bis der Benutzer die linke Maustaste loslässt, die ESC-Taste drückt oder die rechte Maustaste drückt. Wenn der Benutzer den Mauszeiger bewegt, wird das Feedback durch den Aufruf aktualisiert `DrawTrackerRect` und `OnChangedRect`.
+Diese Funktion erfasst die Maus, bis der Benutzer die linke Maustaste loslässt, die ESC-Taste drückt oder die rechte Maustaste drückt. Wenn der Benutzer den Mauszeiger bewegt, `DrawTrackerRect` wird `OnChangedRect`das Feedback durch Aufrufen und aktualisiert.
 
-Überwachung wird mit einer Kunststoff-Band-Type-Auswahl aus der unteren rechten Handle ausgeführt. Wenn invertieren zulässig ist, kann das Rechteck ziehen entweder oben und links oder nach unten und rechts Größe angepasst werden.
+Die Verfolgung erfolgt mit einer Gummiband-Auswahl vom unteren rechten Griff. Wenn invertieren zulässig ist, kann die Größe des Rechtecks durch Ziehen nach oben und nach links oder unten und nach rechts geändert werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel zur OBJEKTNACHVERFOLGUNG](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel-TRACKER](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel DRAWCLI](../../overview/visual-cpp-samples.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [COleResizeBar-Klasse](../../mfc/reference/coleresizebar-class.md)<br/>

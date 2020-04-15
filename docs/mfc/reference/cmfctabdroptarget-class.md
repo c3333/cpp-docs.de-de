@@ -1,5 +1,5 @@
 ---
-title: Cmfctabdroptarget-Klasse
+title: CMFCTabDropTarget-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCTabDropTarget
@@ -16,16 +16,16 @@ helpviewer_keywords:
 - CMFCTabDropTarget [MFC], OnDropEx
 - CMFCTabDropTarget [MFC], Register
 ms.assetid: 9777b7b6-10da-4c4b-b1d1-7ea795b0f1cb
-ms.openlocfilehash: d0090386b1ebb4d89b9a7613a0b2a28529decbe5
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 83432fdb90fe28214fb1faaf843556deb2f44750
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77127428"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367353"
 ---
-# <a name="cmfctabdroptarget-class"></a>Cmfctabdroptarget-Klasse
+# <a name="cmfctabdroptarget-class"></a>CMFCTabDropTarget-Klasse
 
-Stellt den Kommunikationsmechanismus zwischen einem Registerkarten-Steuerelement und den OLE-Bibliotheken bereit.
+Stellt den Kommunikationsmechanismus zwischen einem Registerkartensteuerelement und den OLE-Bibliotheken bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,7 +33,7 @@ Stellt den Kommunikationsmechanismus zwischen einem Registerkarten-Steuerelement
 class CMFCTabDropTarget : public COleDropTarget
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -47,17 +47,17 @@ class CMFCTabDropTarget : public COleDropTarget
 |||
 |-|-|
 |Name|BESCHREIBUNG|
-|[Cmfctabdroptarget:: OnDragEnter](#ondragenter)|Wird von Framework aufgerufen, wenn der Benutzer ein Objekt in ein Registerkarten Fenster zieht. (Überschreibt [COleDropTarget:: OnDragEnter](../../mfc/reference/coledroptarget-class.md#ondragenter).)|
-|[Cmfctabdroptarget:: OnDragLeave](#ondragleave)|Wird von Framework aufgerufen, wenn der Benutzer ein Objekt außerhalb des Registerkarten Fensters zieht, das den Fokus besitzt. (Überschreibt [COleDropTarget:: OnDragLeave](../../mfc/reference/coledroptarget-class.md#ondragleave).)|
-|[Cmfctabdroptarget:: OnDragOver](#ondragover)|Wird von Framework aufgerufen, wenn der Benutzer ein Objekt auf das Registerkarten Fenster zieht, das den Fokus besitzt. (Überschreibt [COleDropTarget:: OnDragOver](../../mfc/reference/coledroptarget-class.md#ondragover).)|
-|[Cmfctabdroptarget:: ondropex](#ondropex)|Wird von Framework aufgerufen, wenn der Benutzer die Maustaste am Ende eines Zieh Vorgangs loslässt. (Überschreibt [COleDropTarget:: ondropex](../../mfc/reference/coledroptarget-class.md#ondropex).)|
-|[Cmfctabdroptarget:: Register](#register)|Registriert das-Steuerelement als das Ziel eines OLE-Drag & Drop-Vorgangs.|
+|[CMFCTabDropTarget::OnDragEnter](#ondragenter)|Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt in ein Registerkartenfenster zieht. (Überschreibt [COleDropTarget::OnDragEnter](../../mfc/reference/coledroptarget-class.md#ondragenter).)|
+|[CMFCTabDropTarget::OnDragLeave](#ondragleave)|Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt außerhalb des Registerkartenfensters mit Fokus zieht. (Überschreibt [COleDropTarget::OnDragLeave](../../mfc/reference/coledroptarget-class.md#ondragleave).)|
+|[CMFCTabDropTarget::OnDragOver](#ondragover)|Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt auf das Registerkartenfenster mit Fokus zieht. (Überschreibt [COleDropTarget::OnDragOver](../../mfc/reference/coledroptarget-class.md#ondragover).)|
+|[CMFCTabDropTarget::OnDropEx](#ondropex)|Wird vom Framework aufgerufen, wenn der Benutzer die Maustaste am Ende eines Ziehvorgangs loslässt. (Überschreibt [COleDropTarget::OnDropEx](../../mfc/reference/coledroptarget-class.md#ondropex).)|
+|[CMFCTabDropTarget::Registrieren](#register)|Registriert das Steuerelement als ein Steuerelement, das das Ziel eines OLE-Drag-and-Drop-Vorgangs sein kann.|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse bietet Drag & Drop-Unterstützung für die `CMFCBaseTabCtrl`-Klasse. Wenn Ihre Anwendung die OLE-Bibliotheken mithilfe der [AfxOLEInit](ole-initialization.md#afxoleinit) -Funktion initialisiert, registrieren sich `CMFCBaseTabCtrl` Objekte selbst für Drag & Drop-Vorgänge.
+Diese Klasse bietet Drag-and-Drop-Unterstützung für die `CMFCBaseTabCtrl` Klasse. Wenn Ihre Anwendung die OLE-Bibliotheken mithilfe der Funktion `CMFCBaseTabCtrl` [AfxOleInit](ole-initialization.md#afxoleinit) initialisiert, registrieren sich Objekte selbst für Drag-and-Drop-Vorgänge.
 
-Die `CMFCTabDropTarget` Klasse erweitert die Basisklasse, indem die Registerkarte, die sich unter dem Cursor befindet, beim aktiven Drag-Vorgang aktiviert wird. Weitere Informationen zu Drag & amp; Drop-Vorgängen finden Sie unter [OLE Drag & Drop](../../mfc/drag-and-drop-ole.md).
+Die `CMFCTabDropTarget` Klasse erweitert ihre Basisklasse, indem sie die Registerkarte unter dem Cursor macht, wenn ein Ziehvorgang ausgeführt wird. Weitere Informationen zu Drag-and-Drop-Vorgängen finden Sie unter [OLE Drag & Drop](../../mfc/drag-and-drop-ole.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -67,21 +67,21 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCTabDropTarget`-Ob
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
 [COleDropTarget](../../mfc/reference/coledroptarget-class.md)
 
-[Cmfctabdroptarget](../../mfc/reference/cmfctabdroptarget-class.md)
+[CMFCTabDropTarget](../../mfc/reference/cmfctabdroptarget-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxbasetabctrl.h
 
-##  <a name="ondragenter"></a>Cmfctabdroptarget:: OnDragEnter
+## <a name="cmfctabdroptargetondragenter"></a><a name="ondragenter"></a>CMFCTabDropTarget::OnDragEnter
 
-Wird von Framework aufgerufen, wenn der Benutzer ein Objekt in ein Registerkarten Fenster zieht.
+Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt in ein Registerkartenfenster zieht.
 
 ```
 virtual DROPEFFECT OnDragEnter(
@@ -95,15 +95,15 @@ virtual DROPEFFECT OnDragEnter(
 
 |||
 |-|-|
-|Parameter|BESCHREIBUNG|
-|*folgenden*|[in] Nicht verwendet.|
-|*pDataObject*|in Ein Zeiger auf das Objekt, das vom Benutzer gezogen wird.|
-|*dwkeystate*|in Enthält den Zustand der Modifizierertasten. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.|
-|*Punkt*|in Die Position des Cursors in Client Koordinaten.|
+|Parameter|Beschreibung|
+|*pWnd*|[in] Nicht verwendet.|
+|*pDataObject*|[in] Ein Zeiger auf das Objekt, das der Benutzer zieht.|
+|*dwKeyState*|[in] Enthält den Status der Modifikatorschlüssel. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.|
+|*Punkt*|[in] Die Position des Cursors in den Clientkoordinaten.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Auswirkung, die ergibt, wenn der Ablage Vorgang an der durch *Punkt*angegebenen Position auftritt. Dabei kann es sich um eine oder mehrere der folgenden handeln:
+Der Effekt, der entsteht, wenn der Abwurf an der durch *Punkt*angegebenen Position auftritt. Es kann einer oder mehrere der folgenden sein:
 
 - DROPEFFECT_NONE
 
@@ -117,13 +117,13 @@ Die Auswirkung, die ergibt, wenn der Ablage Vorgang an der durch *Punkt*angegebe
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode gibt DROPEFFECT_NONE zurück, wenn sich das Symbolleisten Framework nicht im Anpassungsmodus befindet oder wenn das Datenformat der Zwischenablage nicht verfügbar ist. Andernfalls wird das Ergebnis der aufrufenden `CMFCBaseTabCtrl::OnDragEnter` mit den bereitgestellten Parametern zurückgegeben.
+Diese Methode gibt DROPEFFECT_NONE zurück, wenn sich das Symbolleistenframework nicht im Anpassungsmodus befindet oder das Datenformat zwischen der Ablage nicht verfügbar ist. Andernfalls wird das Ergebnis `CMFCBaseTabCtrl::OnDragEnter` des Aufrufs mit den angegebenen Parametern zurückgegeben.
 
-Weitere Informationen zum Anpassungsmodus finden Sie unter [cmfctoolbar:: iscustomizemode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu den Datenformaten der Zwischenablage finden Sie unter [COleDataObject:: IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
+Weitere Informationen zum Anpassungsmodus finden Sie unter [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu Clipboard-Datenformaten finden Sie unter [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
 
-##  <a name="ondragleave"></a>Cmfctabdroptarget:: OnDragLeave
+## <a name="cmfctabdroptargetondragleave"></a><a name="ondragleave"></a>CMFCTabDropTarget::OnDragLeave
 
-Wird von Framework aufgerufen, wenn der Benutzer ein Objekt außerhalb des Registerkarten Fensters zieht, das den Fokus besitzt.
+Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt außerhalb des Registerkartenfensters mit Fokus zieht.
 
 ```
 virtual void OnDragLeave(CWnd* pWnd);
@@ -133,16 +133,16 @@ virtual void OnDragLeave(CWnd* pWnd);
 
 |||
 |-|-|
-|Parameter|BESCHREIBUNG|
-|*folgenden*|[in] Nicht verwendet.|
+|Parameter|Beschreibung|
+|*pWnd*|[in] Nicht verwendet.|
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft die `CMFCBaseTabCtrl::OnDragLeave`-Methode auf, um den Zieh Vorgang auszuführen.
+Diese Methode `CMFCBaseTabCtrl::OnDragLeave` ruft die Methode auf, um den Ziehvorgang auszuführen.
 
-##  <a name="ondragover"></a>Cmfctabdroptarget:: OnDragOver
+## <a name="cmfctabdroptargetondragover"></a><a name="ondragover"></a>CMFCTabDropTarget::OnDragOver
 
-Wird von Framework aufgerufen, wenn der Benutzer ein Objekt auf das Registerkarten Fenster zieht, das den Fokus besitzt.
+Wird vom Framework aufgerufen, wenn der Benutzer ein Objekt auf das Registerkartenfenster mit Fokus zieht.
 
 ```
 virtual DROPEFFECT OnDragOver(
@@ -156,15 +156,15 @@ virtual DROPEFFECT OnDragOver(
 
 |||
 |-|-|
-|Parameter|BESCHREIBUNG|
-|*folgenden*|[in] Nicht verwendet.|
-|*pDataObject*|in Ein Zeiger auf das Objekt, das vom Benutzer gezogen wird.|
-|*dwkeystate*|in Enthält den Zustand der Modifizierertasten. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.|
-|*Punkt*|in Die Position des Mauszeigers in Client Koordinaten.|
+|Parameter|Beschreibung|
+|*pWnd*|[in] Nicht verwendet.|
+|*pDataObject*|[in] Ein Zeiger auf das Objekt, das der Benutzer zieht.|
+|*dwKeyState*|[in] Enthält den Status der Modifikatorschlüssel. Dies ist eine Kombination aus einer beliebigen Anzahl von folgenden: MK_CONTROL, MK_SHIFT, MK_ALT, MK_LBUTTON, MK_MBUTTON und MK_RBUTTON.|
+|*Punkt*|[in] Die Position des Mauszeigers in Clientkoordinaten.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Auswirkung, die ergibt, wenn der Ablage Vorgang an der durch *Punkt*angegebenen Position auftritt. Dabei kann es sich um eine oder mehrere der folgenden handeln:
+Der Effekt, der entsteht, wenn der Abwurf an der durch *Punkt*angegebenen Position auftritt. Es kann einer oder mehrere der folgenden sein:
 
 - DROPEFFECT_NONE
 
@@ -178,13 +178,13 @@ Die Auswirkung, die ergibt, wenn der Ablage Vorgang an der durch *Punkt*angegebe
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode macht die Registerkarte, die sich unter dem Cursor befindet, wenn ein Zieh Vorgang aktiv ist. Sie gibt DROPEFFECT_NONE zurück, wenn sich das Symbolleisten Framework nicht im Anpassungsmodus befindet oder wenn das Datenformat der Zwischenablage nicht verfügbar ist. Andernfalls wird das Ergebnis der aufrufenden `CMFCBaseTabCtrl::OnDragOver` mit den bereitgestellten Parametern zurückgegeben.
+Diese Methode macht die Registerkarte, die sich unter dem Cursor befindet, wenn ein Ziehvorgang ausgeführt wird, aktiv. Es wird DROPEFFECT_NONE zurückgegeben, wenn sich das Symbolleistenframework nicht im Anpassungsmodus befindet oder das Datenformat zwischen der Ablage nicht verfügbar ist. Andernfalls wird das Ergebnis `CMFCBaseTabCtrl::OnDragOver` des Aufrufs mit den angegebenen Parametern zurückgegeben.
 
-Weitere Informationen zum Anpassungsmodus finden Sie unter [cmfctoolbar:: iscustomizemode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu den Datenformaten der Zwischenablage finden Sie unter [COleDataObject:: IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
+Weitere Informationen zum Anpassungsmodus finden Sie unter [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu Clipboard-Datenformaten finden Sie unter [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
 
-##  <a name="ondropex"></a>Cmfctabdroptarget:: ondropex
+## <a name="cmfctabdroptargetondropex"></a><a name="ondropex"></a>CMFCTabDropTarget::OnDropEx
 
-Wird von Framework aufgerufen, wenn der Benutzer die Maustaste am Ende eines Zieh Vorgangs loslässt.
+Wird vom Framework aufgerufen, wenn der Benutzer die Maustaste am Ende eines Ziehvorgangs loslässt.
 
 ```
 virtual DROPEFFECT OnDropEx(
@@ -200,15 +200,15 @@ virtual DROPEFFECT OnDropEx(
 |||
 |-|-|
 |Parameter|BESCHREIBUNG|
-|*folgenden*|[in] Nicht verwendet.|
-|*pDataObject*|in Ein Zeiger auf das Objekt, das vom Benutzer gezogen wird.|
-|*dropffect*|in Der Standard-Drop-Vorgang.|
-|*droplist*|[in] Nicht verwendet.|
-|*Punkt*|in Die Position des Mauszeigers in Client Koordinaten.|
+|*pWnd*|[in] Nicht verwendet.|
+|*pDataObject*|[in] Ein Zeiger auf das Objekt, das der Benutzer zieht.|
+|*dropEffect*|[in] Der Standard-Ablagevorgang.|
+|*dropList*|[in] Nicht verwendet.|
+|*Punkt*|[in] Die Position des Mauszeigers in Clientkoordinaten.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der resultierende Ablage Effekt. Dabei kann es sich um eine oder mehrere der folgenden handeln:
+Der resultierende Drop-Effekt. Es kann einer oder mehrere der folgenden sein:
 
 - DROPEFFECT_NONE
 
@@ -222,13 +222,13 @@ Der resultierende Ablage Effekt. Dabei kann es sich um eine oder mehrere der fol
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft `CMFCBaseTabCtrl::OnDrop` auf, wenn sich das Symbolleisten Framework im Anpassungsmodus befindet und das Datenformat der Zwischenablage verfügbar ist. Wenn der `CMFCBaseTabCtrl::OnDrop`-Aufrufwert einen Wert ungleich 0 (null) zurückgibt, gibt diese Methode den von *dropeer ffect*angegebenen Standard Ablage Effekt zurück. Andernfalls gibt diese Methode DROPEFFECT_NONE zurück. Weitere Informationen zu Drop Effects finden Sie unter [COleDropTarget:: ondropex](../../mfc/reference/coledroptarget-class.md#ondropex).
+Diese Methode `CMFCBaseTabCtrl::OnDrop` wird aufruft, wenn sich das Symbolleistenframework im Anpassungsmodus befindet und das Datenformat zwischen der Ablage verfügbar ist. Wenn der `CMFCBaseTabCtrl::OnDrop` Aufruf von einen Wert ungleich Null zurückgegeben wird, gibt diese Methode den von *dropEffect*angegebenen Standard-Dropeffekt zurück. Andernfalls gibt diese Methode DROPEFFECT_NONE zurück. Weitere Informationen zu Drop-Effekten finden Sie unter [COleDropTarget::OnDropEx](../../mfc/reference/coledroptarget-class.md#ondropex).
 
-Weitere Informationen zum Anpassungsmodus finden Sie unter [cmfctoolbar:: iscustomizemode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu den Datenformaten der Zwischenablage finden Sie unter [COleDataObject:: IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
+Weitere Informationen zum Anpassungsmodus finden Sie unter [CMFCToolBar::IsCustomizeMode](../../mfc/reference/cmfctoolbar-class.md#iscustomizemode). Weitere Informationen zu Clipboard-Datenformaten finden Sie unter [COleDataObject::IsDataAvailable](../../mfc/reference/coledataobject-class.md#isdataavailable).
 
-##  <a name="register"></a>Cmfctabdroptarget:: Register
+## <a name="cmfctabdroptargetregister"></a><a name="register"></a>CMFCTabDropTarget::Registrieren
 
-Registriert das-Steuerelement als das Ziel eines OLE-Drag & Drop-Vorgangs.
+Registriert das Steuerelement als ein Steuerelement, das das Ziel eines OLE-Drag-and-Drop-Vorgangs sein kann.
 
 ```
 BOOL Register(CMFCBaseTabCtrl *pOwner);
@@ -239,18 +239,18 @@ BOOL Register(CMFCBaseTabCtrl *pOwner);
 |||
 |-|-|
 |Parameter|BESCHREIBUNG|
-|*powner*|in Das Registerkarten-Steuerelement, das als Ablage Ziel registriert werden soll.|
+|*pOwner*|[in] Das Registerkartensteuerelement, das als Ablageziel registriert werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Registrierung erfolgreich war. andernfalls 0.
+Ein Wert ungleich Null, wenn die Registrierung erfolgreich war; andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft [COleDropTarget:: Register](../../mfc/reference/coledroptarget-class.md#register) auf, um das Steuerelement für Drag & Drop-Vorgänge zu registrieren.
+Diese Methode ruft [COleDropTarget::Register](../../mfc/reference/coledroptarget-class.md#register) auf, um das Steuerelement für Drag-and-Drop-Vorgänge zu registrieren.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[OLE-Drag & Drop](../../mfc/drag-and-drop-ole.md)
+[Drag &amp; Drop (OLE)](../../mfc/drag-and-drop-ole.md)

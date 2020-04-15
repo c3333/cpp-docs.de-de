@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CReversalTransition [MFC], Create
 - CReversalTransition [MFC], m_duration
 ms.assetid: e89516be-2d07-4885-95a8-fc278f46e3ad
-ms.openlocfilehash: 4bd60ca13ff4a162ddd674e271291a1a3f09a856
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 73d12fb6bbaefcfac1437248ebe11f3a5c24c45b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62372126"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368318"
 ---
 # <a name="creversaltransition-class"></a>CReversalTransition-Klasse
 
@@ -33,29 +33,29 @@ class CReversalTransition : public CBaseTransition;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CReversalTransition::CReversalTransition](#creversaltransition)|Wird eine Umkehrung-Übergang-Objekt erstellt und initialisiert seine Dauer.|
+|[CReversalTransition::CReversalTransition](#creversaltransition)|Erstellt ein Umkehrübergangsobjekt und initialisiert dessen Dauer.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CReversalTransition::Create](#create)|Ruft den Übergangsbibliothek, um gekapselte COM-Übergangsobjekt zu erstellen. (Überschreibt [CBaseTransition:: Create](../../mfc/reference/cbasetransition-class.md#create).)|
+|[CReversalTransition::Erstellen](#create)|Ruft die Übergangsbibliothek auf, um ein gekapseltes COM-Übergangsobjekt zu erstellen. (Überschreibt [CBaseTransition::Create](../../mfc/reference/cbasetransition-class.md#create).)|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CReversalTransition::m_duration](#m_duration)|Die Dauer des Übergangs.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Umkehrübergang ändert reibungslos Richtung über einen bestimmten Zeitraum. Der endgültige Wert wird der Anfangswert identisch sein, und die endgültige Geschwindigkeit werden den negativen Wert, der die ursprüngliche Geschwindigkeit. Da alle Übergänge automatisch gelöscht werden, es wird empfohlen, sie mit dem Operator new. Das gekapselte IUIAnimationTransition COM-Objekt wird von CAnimationController:: erst erstellt, ist es auf NULL. Ändern Membervariablen des Typs an, nach der Erstellung dieses COM-Objekt hat keine Auswirkungen.
+Ein Umkehrübergang ändert sanft die Richtung über eine bestimmte Dauer. Der Endwert entspricht dem Anfangswert und die Endgeschwindigkeit ist das Negativ der Anfangsgeschwindigkeit. Da alle Übergänge automatisch gelöscht werden, wird empfohlen, sie mit dem Operator new zuzuweisen. Das gekapselte IUIAnimationTransition COM-Objekt wird von CAnimationController::AnimateGroup erstellt, bis es NULL ist. Das Ändern von Membervariablen nach der Erstellung dieses COM-Objekts hat keine Auswirkungen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CBaseTransition](../../mfc/reference/cbasetransition-class.md)
 
@@ -65,9 +65,9 @@ Ein Umkehrübergang ändert reibungslos Richtung über einen bestimmten Zeitraum
 
 **Header:** afxanimationcontroller.h
 
-##  <a name="create"></a>  CReversalTransition::Create
+## <a name="creversaltransitioncreate"></a><a name="create"></a>CReversalTransition::Erstellen
 
-Ruft den Übergangsbibliothek, um gekapselte COM-Übergangsobjekt zu erstellen.
+Ruft die Übergangsbibliothek auf, um ein gekapseltes COM-Übergangsobjekt zu erstellen.
 
 ```
 virtual BOOL Create(
@@ -78,15 +78,15 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pLibrary*<br/>
-Ein Zeiger auf den Übergangsbibliothek, die für die Erstellung der standard-Übergänge zuständig ist.
+Ein Zeiger auf die Übergangsbibliothek, die für die Erstellung von Standardübergängen verantwortlich ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Übergang erfolgreich erstellt wurde. andernfalls "false".
+TRUE, wenn der Übergang erfolgreich erstellt wurde; andernfalls FALSE.
 
-##  <a name="creversaltransition"></a>  CReversalTransition::CReversalTransition
+## <a name="creversaltransitioncreversaltransition"></a><a name="creversaltransition"></a>CReversalTransition::CReversalTransition
 
-Wird eine Umkehrung-Übergang-Objekt erstellt und initialisiert seine Dauer.
+Erstellt ein Umkehrübergangsobjekt und initialisiert dessen Dauer.
 
 ```
 CReversalTransition(UI_ANIMATION_SECONDS duration);
@@ -97,7 +97,7 @@ CReversalTransition(UI_ANIMATION_SECONDS duration);
 *duration*<br/>
 Die Dauer des Übergangs.
 
-##  <a name="m_duration"></a>  CReversalTransition::m_duration
+## <a name="creversaltransitionm_duration"></a><a name="m_duration"></a>CReversalTransition::m_duration
 
 Die Dauer des Übergangs.
 

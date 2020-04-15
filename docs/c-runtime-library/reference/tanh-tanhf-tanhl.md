@@ -1,10 +1,11 @@
 ---
 title: tanh, tanhf, tanhl
-ms.date: 04/10/2018
+ms.date: 4/2/2020
 api_name:
 - tanh
 - tanhf
 - tanhl
+- _o_tanh
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,16 +35,16 @@ helpviewer_keywords:
 - tanhf function
 - trigonometric functions
 - hyperbolic functions
-ms.openlocfilehash: 0d249768ed26a55e639cced55bae6b923dbf521b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 626252285a11ae4cbcb8bd2e5658512b85bfd3d3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957533"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362617"
 ---
 # <a name="tanh-tanhf-tanhl"></a>tanh, tanhf, tanhl
 
-Berechnet den hyperbolischen Tangens.
+Berechnet die hyperbolische Tangente.
 
 ## <a name="syntax"></a>Syntax
 
@@ -59,28 +61,30 @@ long double tanh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **tanh** -Funktionen geben den hyperbolischen Tangens von *x*zurück. Es gibt keine Fehlerrückgabe.
+Die **Tanh-Funktionen** geben die hyperbolische Tangente von *x*zurück. Es gibt keine Fehlerrückgabe.
 
-|Eingabe|SEH-Ausnahme|**Matherr** Distanzieren|
+|Eingabe|SEH-Ausnahme|**Matherr** Ausnahme|
 |-----------|-------------------|-------------------------|
-|± QNAN,IND|none|_DOMAIN|
+|± QNAN,IND|Keine|_DOMAIN|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **tanh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **tanh** immer Double und gibt **Double**zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Tanh** aufrufen, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **tanh** immer **doppelt**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C)|
+|Routine|Erforderlicher Header (C)|Erforderlicher Header (C)|
 |-------------|---------------------|-|
 |**tanh**, **tanhf**, **tanhl**|\<math.h>|\<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

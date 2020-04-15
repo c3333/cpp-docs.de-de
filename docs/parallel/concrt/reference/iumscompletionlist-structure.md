@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - IUMSCompletionList structure
 ms.assetid: 81b5250e-3065-492c-b20d-2cdabf12271a
-ms.openlocfilehash: 02382ef4606a6e73804fcbd5ce7735ecf2f0dcc7
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: c388cc98aedbd35b2d0e00a4653a85a47abcb838
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77140049"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368120"
 ---
 # <a name="iumscompletionlist-structure"></a>IUMSCompletionList-Struktur
 
@@ -25,31 +25,31 @@ Stellt eine UMS-Vervollständigungsliste dar. Wenn ein UMS-Thread blockiert wird
 struct IUMSCompletionList;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IUMSCompletionList:: getunblocknotification](#getunblocknotifications)|Ruft eine Kette von `IUMSUnblockNotification`-Schnittstellen ab, die Ausführungs Kontexte darstellen, deren zugeordnete Thread Proxys seit dem letzten Aufruf dieser Methode entsperrt wurden.|
+|[IUMSCompletionList::GetUnblockNotifications](#getunblocknotifications)|Ruft eine Kette `IUMSUnblockNotification` von Schnittstellen ab, die Ausführungskontexte darstellen, deren zugeordnete Threadproxys seit dem letzten Aufruf dieser Methode die Blockblockierte aufgehoben haben.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein Planer muss besonders sorgfältig darauf achten, welche Aktionen nach dem Verwenden dieser Schnittstelle ausgeführt werden, um Elemente aus der Vervollständigungsliste aus der Warteschlange zu entfernen. Die Elemente sollten in der Liste der ausführbaren Kontexte des Planers abgelegt werden und sind in der Regel so schnell wie möglich zugänglich. Es ist durchaus möglich, dass eines der aus der Warteschlange befindlichen Elemente den Besitz einer willkürlichen Sperre erhält. Der Planer kann keine beliebigen Funktionsaufrufe vornehmen, die zwischen dem Aufruf zum Entfernen von Elementen aus der Warteschlange und der Platzierung dieser Elemente in einer Liste blockiert werden können, auf die im Zeit Planungs Modul normalerweise zugegriffen werden kann.
+Ein Planer muss außerordentlich vorsichtig sein, welche Aktionen ausgeführt werden, nachdem er diese Schnittstelle verwendet hat, um Elemente aus der Abschlussliste zu entren. Die Elemente sollten in die Liste der ausfetzbaren Kontexte des Planers aufgenommen werden und so schnell wie möglich allgemein zugänglich sein. Es ist durchaus möglich, dass einem der aus der Warteschlange entfernten Elemente das Eigentum an einer willkürlichen Sperre übertragen wurde. Der Planer kann keine beliebigen Funktionsaufrufe tätigen, die zwischen dem Aufruf zum Entstellen von Elementen und der Platzierung dieser Elemente in einer Liste blockieren können, auf die im Allgemeinen innerhalb des Planers zugegriffen werden kann.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `IUMSCompletionList`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** concrtrm. h
+**Kopfzeile:** concrtrm.h
 
 **Namespace:** Parallelität
 
-## <a name="getunblocknotifications"></a>IUMSCompletionList:: getunblocknotification-Methode
+## <a name="iumscompletionlistgetunblocknotifications-method"></a><a name="getunblocknotifications"></a>IUMSCompletionList::GetUnblockNotifications-Methode
 
-Ruft eine Kette von `IUMSUnblockNotification`-Schnittstellen ab, die Ausführungs Kontexte darstellen, deren zugeordnete Thread Proxys seit dem letzten Aufruf dieser Methode entsperrt wurden.
+Ruft eine Kette `IUMSUnblockNotification` von Schnittstellen ab, die Ausführungskontexte darstellen, deren zugeordnete Threadproxys seit dem letzten Aufruf dieser Methode die Blockblockierte aufgehoben haben.
 
 ```cpp
 virtual IUMSUnblockNotification *GetUnblockNotifications() = 0;
@@ -57,13 +57,13 @@ virtual IUMSUnblockNotification *GetUnblockNotifications() = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Kette von `IUMSUnblockNotification` Schnittstellen.
+Eine Kette `IUMSUnblockNotification` von Schnittstellen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die zurückgegebenen Benachrichtigungen sind ungültig, sobald die Ausführungs Kontexte neu geplant wurden.
+Die zurückgegebenen Benachrichtigungen sind ungültig, sobald die Ausführungskontexte neu geplant werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)<br/>
 [IUMSScheduler-Struktur](iumsscheduler-structure.md)<br/>

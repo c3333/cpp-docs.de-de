@@ -1,20 +1,20 @@
 ---
-title: boyer_moore_searcher-Klasse
+title: boyer_moore_searcher Klasse
 ms.date: 08/03/2019
 f1_keywords:
 - functional/std::boyer_moore_searcher
 helpviewer_keywords:
 - std::boyer_moore_searcher [C++]
-ms.openlocfilehash: 3a6741a8ee9988a9842dea691a4ef01254872ed1
-ms.sourcegitcommit: 16c0392fc8d96e814c3a40b0c5346d7389aeb525
+ms.openlocfilehash: 54e5c4b7c9fe27d6df32f56d57eb1207fa09332c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68957130"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366772"
 ---
-# <a name="boyer_moore_searcher-class"></a>boyer_moore_searcher-Klasse
+# <a name="boyer_moore_searcher-class"></a>boyer_moore_searcher Klasse
 
-Die `boyer_moore_searcher` -Klasse ist ein Funktions Objekttyp, der den Boyer-Moore-Algorithmus verwendet, um nach einer im Konstruktor des Objekts angegebenen Sequenz zu suchen. Die Suche erfolgt innerhalb einer anderen Sequenz, die für den Funktions Aufrufoperator des Objekts bereitgestellt wird. Diese Klasse wird als Parameter an eine der über Ladungen von " [Std:: Search](algorithm-functions.md#search)" übergeben.
+Die `boyer_moore_searcher` Klasse ist ein Funktionsobjekttyp, der den Boyer-Moore-Algorithmus verwendet, um nach einer Sequenz zu suchen, die im Konstruktor des Objekts angegeben ist. Die Suche erfolgt in einer anderen Sequenz, die dem Funktionsaufrufoperator des Objekts bereitgestellt wird. Diese Klasse wird als Parameter an eine der Überladungen von [std::search](algorithm-functions.md#search)übergeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,9 +47,9 @@ class boyer_moore_searcher
 | **Operatoren** | |
 | [Operator()](#operator-call) | |
 
-## <a name="boyer-moore-searcher-constructor"></a>boyer_moore_searcher-Konstruktor
+## <a name="boyer_moore_searcher-constructor"></a><a name="boyer-moore-searcher-constructor"></a>boyer_moore_searcher Konstruktor
 
-Erstellt ein `boyer_moore_searcher` Funktions Objekt, indem die zu suchende Sequenz, ein Hash Funktions Objekt und ein Gleichheits Prädikat verwendet werden.
+Erstellt ein `boyer_moore_searcher` Funktionsobjekt mithilfe der sequenziumsierenden Suche, eines Hashfunktionsobjekts und eines Gleichheitsprädikats.
 
 ```cpp
 boyer_moore_searcher(
@@ -62,26 +62,26 @@ boyer_moore_searcher(
 ### <a name="parameters"></a>Parameter
 
 *pat_first*\
-Das ursprüngliche Element der Sequenz, nach der gesucht werden soll.
+Das anfangse Element der Sequenz, nach der gesucht werden soll.
 
 *pat_last*\
 Das Ende der Sequenz, nach der gesucht werden soll.
 
-*HF*\
-Ein Aufruf bares Objekt, das zum Hash der Sequenz Elemente verwendet wird.
+*Hf*\
+Ein aufrufbares Objekt, das zum Hashen der Sequenzelemente verwendet wird.
 
-*pred*\
-Das optionale Gleichheits Vergleichs Prädikat für Sequenz Elemente. Wenn kein Gleichheits Vergleichstyp angegeben wird, ist `std::equal_to`der Standardwert.
+*Pred*\
+Das optionale Gleichheitsvergleichsprädikat für Sequenzelemente. Wenn kein Gleichheitsvergleichstyp angegeben ist, `std::equal_to`lautet der Standardwert .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löst eine beliebige Ausnahme aus, die vom Kopierkonstruktor der Typen *BinaryPredicate*, *Hash*oder *RandomAccessIterator* ausgelöst wird, oder den calloperator von *BinaryPredicate* oder *Hash*.
+Löst eine Ausnahme aus, die vom Kopierkonstruktor der *Typen BinaryPredicate*, *Hash*oder *RandomAccessIterator* oder vom Aufrufoperator von *BinaryPredicate* oder *Hash*ausgelöst wird.
 
-Diese Klasse ist neu in c++ 17.
+Diese Klasse ist neu in C++17.
 
-## <a name="operator-call"></a>Operator ()
+## <a name="operator"></a><a name="operator-call"></a>Operator()
 
-Der calloperator des Funktions Objekts. Sucht innerhalb der Argument Sequenz `[first, last)` nach der Sequenz, die für den Konstruktor angegeben wird.
+Der Aufrufoperator des Funktionsobjekts. Sucht innerhalb der `[first, last)` Argumentsequenz nach der Sequenz, die dem Konstruktor angegeben ist.
 
 ```cpp
 template <class ForwardIterator2>
@@ -92,21 +92,21 @@ pair<RandomAccessIterator2, RandomAccessIterator2> operator()(
 
 ### <a name="parameters"></a>Parameter
 
-*erstes*\
-Das ursprüngliche Element der Sequenz, in der gesucht werden soll.
+*Ersten*\
+Das anfangse Element der Sequenz, innerhalb der gesucht werden soll.
 
-*letzten*\
-Das Ende der Sequenz, in der gesucht werden soll.
+*letzte*\
+Das Ende der Sequenz, innerhalb der gesucht werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Suchmuster `[pat_first, pat_last)` leer ist, wird `make_pair(first, first)`zurückgegeben. Wenn das Suchmuster nicht gefunden wird, `make_pair(last, last)`wird zurückgegeben. Andernfalls wird ein paar von Iteratoren an den Anfang und das Ende einer Sequenz in `[first, last)` zurückgegeben, das `[pat_first, pat_last)` entsprechend der Prädikat- *präd*gleich ist.
+Wenn das `[pat_first, pat_last)` Suchmuster leer `make_pair(first, first)`ist, wird zurückgegeben. Wenn das Suchmuster nicht gefunden `make_pair(last, last)`wird, wird zurückgegeben. Andernfalls wird ein Paar von Iteratoren an den `[first, last)` Anfang und `[pat_first, pat_last)` das Ende einer Sequenz zurückgegeben, die gemäß dem Prädikat *sprädikats .*
 
-Diese Klasse ist neu in c++ 17.
+Diese Klasse ist neu in C++17.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<functional>](functional.md)\
-[algorithmusfunktionen](algorithm-functions.md)\
-[boyer_moore_horspool_searcher-Klasse](boyer-moore-horspool-searcher-class.md)\
-[Std:: Search](algorithm-functions.md#search)
+[\<funktionale>](functional.md)\
+[Algorithmusfunktionen](algorithm-functions.md)\
+[boyer_moore_horspool_searcher Klasse](boyer-moore-horspool-searcher-class.md)\
+[std::suchen](algorithm-functions.md#search)
