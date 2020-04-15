@@ -5,16 +5,16 @@ ms.topic: reference
 helpviewer_keywords:
 - ^ handle to object [C++]
 ms.assetid: 70c411e6-be57-4468-a944-6ea7be89f392
-ms.openlocfilehash: bdf19b6b472cd4d224d749f59c75ca77d11c34f8
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
-ms.translationtype: HT
+ms.openlocfilehash: 3d08b2294da1599282feeb1739331c31d64a9e59
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "65516695"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81358328"
 ---
 # <a name="handle-to-object-operator---ccli-and-ccx"></a>Handle für Objektoperator (^) (C++/CLI und C++/CX)
 
-Der *Handledeklarator* (`^`) modifiziert den [Spezifizierer](../cpp/overview-of-declarators.md) des Typs so, dass das deklarierte Objekt automatisch gelöscht wird, wenn das System feststellt, dass auf das Objekt nicht mehr zugegriffen werden kann.
+Der *Handledeklarator* (`^`, ausgesprochen "hat"), ändert den [Typbezeichner](../cpp/overview-of-declarators.md) so, dass das deklarierte Objekt automatisch gelöscht werden soll, wenn das System feststellt, dass auf das Objekt nicht mehr zugegriffen werden kann.
 
 ## <a name="accessing-the-declared-object"></a>Zugreifen auf das deklarierte Objekt
 
@@ -38,7 +38,7 @@ Das System verwendet den CLR-*Garbage Collector*-Mechanismus, um zu bestimmen, w
 
 Weil aber systemeigene C++-Zeiger (`*`) und Verweise (`&`) keine verwalteten Verweise sind, kann der Garbage Collector die Adressen, auf die sie zeigen, nicht automatisch aktualisieren. Zur Umgehung dieses Problems verwenden Sie den Handledeklarator, um für eine Variable festzulegen, dass sie vom Garbage Collector verwaltet und automatisch aktualisiert werden soll.
 
-Weitere Informationen finden Sie unter [Vorgehensweise: Deklarieren von Handles in nativen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
+Weitere Informationen finden Sie unter [Gewusst wie: Deklarieren von Handles in systemeigenen Typen](../dotnet/how-to-declare-handles-in-native-types.md).
 
 ### <a name="examples"></a>Beispiele
 
@@ -195,7 +195,7 @@ Array value: 7
 Cannot access array element 11, size is 10
 ```
 
-Dieses Beispiel zeigt, dass ein nativer Verweis (`&`) nicht an einen **int**-Member eines verwalteten Typs binden kann, da **int** möglicherweise im Garbage Collection-Heap gespeichert wird und native Verweise die Objektverschiebungen im verwalteten Heap nicht nachverfolgen. Zur Behebung dieses Problems können Sie eine lokale Variable verwenden, oder ändern Sie `&` in `%`, um einen Nachverfolgungsverweis zu erhalten.
+Dieses Beispiel zeigt, dass`&`ein systemeigener Verweis ( ) nicht an einen **int-Member** eines verwalteten Typs gebunden werden kann, da die **int** möglicherweise im Garbage Collection-Heap gespeichert wird und systemeigene Verweise die Objektbewegung im verwalteten Heap nicht nachverfolgen. Zur Behebung dieses Problems können Sie eine lokale Variable verwenden, oder ändern Sie `&` in `%`, um einen Nachverfolgungsverweis zu erhalten.
 
 ```cpp
 // mcppv2_handle_5.cpp
@@ -224,4 +224,4 @@ Compileroption: `/clr`
 ## <a name="see-also"></a>Siehe auch
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)<br/>
-[Nachverfolgungsverweisoperator](tracking-reference-operator-cpp-component-extensions.md)
+[Tracking-Referenzoperator](tracking-reference-operator-cpp-component-extensions.md)

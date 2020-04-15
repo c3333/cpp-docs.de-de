@@ -8,109 +8,109 @@ helpviewer_keywords:
 - ActiveX controls [C++], hosting
 - controls [ATL]
 ms.assetid: d4bdfbe0-82ca-4f2f-bb95-cb89bdcc9b53
-ms.openlocfilehash: 42f9b41b99e13fcfe2fb003acb348c9464e0fd05
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 36ff3381447b46b28908522d65be9f34fe23addf
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62223316"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317398"
 ---
 # <a name="atl-control-containment-faq"></a>Fragen und Antworten zur ATL-Steuerelementkapselung
 
-## <a name="which-atl-classes-facilitate-activex-control-containment"></a>Welche ATL-Klassen machen die Kapselung von ActiveX-Steuerelement?
+## <a name="which-atl-classes-facilitate-activex-control-containment"></a>Welche ATL-Klassen machen die Kapselung von ActiveX-Steuerelementen verfügbar?
 
-Der ATL-steuerelementhostings Code erfordern nicht Ihnen die Verwendung von ATL-Klassen; Erstellen Sie einfach ein **"AtlAxWin80"** und anschließend mit der Steuerelement-hosting-API bei Bedarf (Weitere Informationen finden Sie unter **Neuerungen der ATL-Steuerelement-Hosting-API**. Stellen Sie jedoch die folgenden Klassen die Containment-Features einfacher zu verwenden.
+Der Kontrollhostingcode von ATL erfordert nicht, dass Sie ATL-Klassen verwenden. Sie können einfach ein **"AtlAxWin80"-Fenster** erstellen und bei Bedarf die Control-Hosting-API verwenden (weitere Informationen finden Sie unter **Was ist die ATL Control-Hosting API**. Die folgenden Klassen erleichtern jedoch die Verwendung der Containment-Features.
 
-|Klasse|Beschreibung|
+|Klasse|BESCHREIBUNG|
 |-----------|-----------------|
-|[CAxWindow](../atl/reference/caxwindow-class.md)|Umschließt ein **"AtlAxWin80"** Fenster Methoden für das Erstellen des Fensters, erstellen ein Steuerelement und/oder Anfügen eines Steuerelements an das Fenster und Abrufen von Schnittstellenzeigern auf das Hostobjekt bereitstellt.|
-|[CAxWindow2T](../atl/reference/caxwindow2t-class.md)|Umschließt ein **"AtlAxWinLic80"** Fenster Methoden für das Erstellen des Fensters, erstellen ein Steuerelement und/oder ein lizenziertes Steuerelement anfügen, um das Fenster und Abrufen von Schnittstellenzeigern auf das Hostobjekt bereitstellt.|
-|[CComCompositeControl](../atl/reference/ccomcompositecontrol-class.md)|Fungiert als Basisklasse für ActiveX-Steuerelementklassen basierend auf einer Ressource. Solche Steuerelemente können andere ActiveX-Steuerelemente enthalten.|
-|[CAxDialogImpl](../atl/reference/caxdialogimpl-class.md)|Fungiert als Basisklasse für Klassen basierend auf einer Ressource. Diese Dialogfelder können ActiveX-Steuerelemente enthalten.|
-|[CWindow](../atl/reference/cwindow-class.md)|Stellt eine Methode, [GetDlgControl](../atl/reference/cwindow-class.md#getdlgcontrol), einen Schnittstellenzeiger zurückgegeben, für ein Steuerelement anhand der ID des Hostfensters. Darüber hinaus die Windows-API-Wrapper von verfügbar gemachten `CWindow` in der Regel fensterverwaltung erleichtern.|
+|[CAxWindow](../atl/reference/caxwindow-class.md)|Umschließt ein **"AtlAxWin80"-Fenster,** stellt Methoden zum Erstellen des Fensters, erstellen eines Steuerelements und/oder Anfügen eines Steuerelements an das Fenster und Abrufen von Schnittstellenzeigern auf dem Hostobjekt bereit.|
+|[CAxWindow2T](../atl/reference/caxwindow2t-class.md)|Umschließt ein **"AtlAxWinLic80"-Fenster,** stellt Methoden zum Erstellen des Fensters, zum Erstellen eines Steuerelements und/oder zum Anfügen eines lizenzierten Steuerelements an das Fenster und zum Abrufen von Schnittstellenzeigern auf dem Hostobjekt bereit.|
+|[CComCompositeControl](../atl/reference/ccomcompositecontrol-class.md)|Fungiert als Basisklasse für ActiveX-Steuerelementklassen basierend auf einer Dialogressource. Solche Steuerelemente können andere ActiveX-Steuerelemente enthalten.|
+|[CAxDialogImpl](../atl/reference/caxdialogimpl-class.md)|Fungiert als Basisklasse für Dialogklassen, die auf einer Dialogressource basieren. Solche Dialogfelder können ActiveX-Steuerelemente enthalten.|
+|[CWindow](../atl/reference/cwindow-class.md)|Stellt eine Methode bereit, [GetDlgControl](../atl/reference/cwindow-class.md#getdlgcontrol), die einen Schnittstellenzeiger für ein Steuerelement zurückgibt, wenn die ID des Hostfensters angegeben wird. Darüber hinaus erleichtern die Windows-API-Wrapper die Fensterverwaltung `CWindow` im Allgemeinen.|
 
-## <a name="what-is-the-atl-control-hosting-api"></a>Was ist die ATL-Steuerelement-Hosting-API?
+## <a name="what-is-the-atl-control-hosting-api"></a>Was ist die API des ATL-Steuerelementhostings?
 
-ATL des Steuerelement-hosting-API ist der Satz von Funktionen, die einem beliebigen Fenster, das als ein ActiveX-Steuerelementcontainer fungiert ermöglicht. Diese Funktionen können statisch oder dynamisch in Ihr Projekt verknüpft werden, da sie als Quellcode zur Verfügung stehen und von ATL90.dll verfügbar gemacht werden. Die Steuerelement-hosting-Funktionen sind in der folgenden Tabelle aufgeführt.
+Die Control-Hosting-API von ATL ist der Satz von Funktionen, mit denen jedes Fenster als ActiveX-Steuerelementcontainer fungieren kann. Diese Funktionen können statisch oder dynamisch mit Ihrem Projekt verknüpft werden, da sie als Quellcode verfügbar sind und von ATL90.dll verfügbar gemacht werden. Die Steuerungshostingfunktionen sind in der folgenden Tabelle aufgeführt.
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |--------------|-----------------|
-|[AtlAxAttachControl](reference/composite-control-global-functions.md#atlaxattachcontrol)|Erstellt ein Objekt, mit dem bereitgestellten Fenster verbunden, und fügt ein vorhandenes Steuerelement.|
-|[AtlAxCreateControl](reference/composite-control-global-functions.md#atlaxcreatecontrol)|Erstellt ein Objekt, mit dem bereitgestellten Fenster verbunden, und lädt dann ein Steuerelement.|
-|[AtlAxCreateControlLic](reference/composite-control-global-functions.md#atlaxcreatecontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster ähnelt [AtlAxCreateControl](reference/composite-control-global-functions.md#atlaxcreatecontrol).|
-|[AtlAxCreateControlEx](reference/composite-control-global-functions.md#atlaxcreatecontrolex)|Erstellt ein Objekt, mit dem bereitgestellten Fenster verbunden und lädt dann ein Steuerelement (auch Ereignissenken um eingerichtet werden können).|
-|[AtlAxCreateControlLicEx](reference/composite-control-global-functions.md#atlaxcreatecontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster ähnelt [AtlAxCreateControlLic](reference/composite-control-global-functions.md#atlaxcreatecontrollic).|
-|[AtlAxCreateDialog](reference/composite-control-global-functions.md#atlaxcreatedialog)|Erstellt ein nicht modales Dialogfeld aus einer Ressource, und gibt das Fensterhandle zurück.|
-|[AtlAxDialogBox](reference/composite-control-global-functions.md#atlaxdialogbox)|Erstellt ein modales Dialogfeld aus einer Ressource an.|
-|[AtlAxGetControl](reference/composite-control-global-functions.md#atlaxgetcontrol)|Gibt die **IUnknown** Schnittstellenzeiger des Steuerelements in einem Fenster gehostet.|
-|[AtlAxGetHost](reference/composite-control-global-functions.md#atlaxgethost)|Gibt die **IUnknown** Schnittstellenzeiger des Hostobjekts an ein Fenster verbunden.|
-|[AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit)|Initialisiert den Steuerelement-hosting-Code.|
-|[AtlAxWinTerm](reference/composite-control-global-functions.md#atlaxwinterm)|Hebt die Initialisierung des Steuerelement-hosting-Codes.|
+|[AtlAxAttachControl](reference/composite-control-global-functions.md#atlaxattachcontrol)|Erstellt ein Hostobjekt, verbindet es mit dem angegebenen Fenster und fügt dann ein vorhandenes Steuerelement an.|
+|[AtlAxCreateControl](reference/composite-control-global-functions.md#atlaxcreatecontrol)|Erstellt ein Hostobjekt, verbindet es mit dem bereitgestellten Fenster und lädt dann ein Steuerelement.|
+|[AtlAxCreateControlLic](reference/composite-control-global-functions.md#atlaxcreatecontrollic)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster, ähnlich wie [AtlAxCreateControl](reference/composite-control-global-functions.md#atlaxcreatecontrol).|
+|[AtlAxCreateControlEx](reference/composite-control-global-functions.md#atlaxcreatecontrolex)|Erstellt ein Hostobjekt, verbindet es mit dem angegebenen Fenster und lädt dann ein Steuerelement (außerdem können Ereignissenken eingerichtet werden).|
+|[AtlAxCreateControlLicEx](reference/composite-control-global-functions.md#atlaxcreatecontrollicex)|Erstellt ein lizenziertes ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster, ähnlich wie [AtlAxCreateControlLic](reference/composite-control-global-functions.md#atlaxcreatecontrollic).|
+|[AtlAxCreateDialog](reference/composite-control-global-functions.md#atlaxcreatedialog)|Erstellt ein modusloses Dialogfeld aus einer Dialogressource und gibt das Fensterhandle zurück.|
+|[AtlAxDialogBox](reference/composite-control-global-functions.md#atlaxdialogbox)|Erstellt ein modales Dialogfeld aus einer Dialogressource.|
+|[AtlAxGetControl](reference/composite-control-global-functions.md#atlaxgetcontrol)|Gibt den **IUnknown-Schnittstellenzeiger** des in einem Fenster gehosteten Steuerelements zurück.|
+|[AtlAxGetHost](reference/composite-control-global-functions.md#atlaxgethost)|Gibt den **IUnknown-Schnittstellenzeiger** des Hostobjekts zurück, das mit einem Fenster verbunden ist.|
+|[AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit)|Initialisiert den Steuerelementhostingcode.|
+|[AtlAxWinTerm](reference/composite-control-global-functions.md#atlaxwinterm)|Der Code für das Steuerelementhosting wird nicht initialisiert.|
 
-Die `HWND` Parameter in der ersten drei Funktionen müssen ein vorhandenes Fenster (nahezu) in einen beliebigen Typ sein. Wenn Sie eine dieser drei Funktionen explizit aufrufen (in der Regel müssen Sie keine), übergeben Sie ein Handle nicht an ein Fenster, das bereits als Host fungiert (Wenn Sie dies tun, das vorhandene Hostobjekt wird nicht freigegeben werden).
+Die `HWND` Parameter in den ersten drei Funktionen müssen ein vorhandenes Fenster (fast) jedes Typs sein. Wenn Sie eine dieser drei Funktionen explizit aufrufen (in der Regel müssen Sie es nicht), übergeben Sie kein Handle an ein Fenster, das bereits als Host fungiert (wenn Sie dies tun, wird das vorhandene Hostobjekt nicht freigegeben).
 
-Rufen Sie die ersten sieben Funktionen [AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit) implizit.
+Die ersten sieben Funktionen rufen [AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit) implizit auf.
 
 > [!NOTE]
->  Die Steuerelement-hosting-API bildet die Grundlage für ATLs-Unterstützung für ActiveX-Steuerelementcontainern. Es besteht jedoch in der Regel kaum Bedarf, diese Funktionen direkt aufzurufen, wenn Sie nutzen, oder ATLs-Wrapperklassen nutzen. Weitere Informationen finden Sie unter [der ATL-Klassen vereinfachen ActiveX-Steuerelementcontainern](which-atl-classes-facilitate-activex-control-containment-q.md).
+> Die Control-Hosting-API bildet die Grundlage für die Unterstützung von ATL für Die ActiveX-Steuerelementbeschränkung. In der Regel ist es jedoch wenig notwendig, diese Funktionen direkt aufzurufen, wenn Sie die Wrapperklassen von ATL nutzen oder voll ausnutzen. Weitere Informationen finden Sie unter [Welche ATL-Klassen ActiveX Control Containment erleichtern.](which-atl-classes-facilitate-activex-control-containment-q.md)
 
-## <a name="what-is-atlaxwin100"></a>What Is AtlAxWin100?
+## <a name="what-is-atlaxwin100"></a>Was ist AtlAxWin100?
 
-`AtlAxWin100` ist der Name einer Fenster-Klasse, die ATLs-steuerelementhostings Funktionalität bietet. Wenn Sie eine Instanz dieser Klasse erstellen, verwendet die Fensterprozedur automatisch die Steuerelement-hosting-API erstellen ein Objekt mit dem Fenster verknüpft ist, und laden, mit dem Steuerelement, das Sie als Titel des Fensters angeben.
+`AtlAxWin100`ist der Name einer Fensterklasse, die die Steuerungshostingfunktionalität von ATL bereitstellt. Wenn Sie eine Instanz dieser Klasse erstellen, verwendet die Fensterprozedur automatisch die Steuerelementhosting-API, um ein Hostobjekt zu erstellen, das dem Fenster zugeordnet ist, und es mit dem Steuerelement zu laden, das Sie als Titel des Fensters angeben.
 
 ## <a name="when-do-i-need-to-call-atlaxwininit"></a>Wann muss ich AtlAxWinInit aufrufen?
 
-[AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit) registriert die **"AtlAxWin80"** Fensterklasse (sowie eine Reihe von benutzerdefinierten fenstermeldungen), damit diese Funktion aufgerufen werden muss, bevor Sie versuchen, ein Hostfenster zu erstellen. Müssen Sie jedoch nicht immer diese Funktion explizit aufzurufen, da das hosting-APIs (und die Klassen, die sie verwenden) rufen Sie diese Funktion häufig für Sie. Es gibt keinen Schaden in diese Funktion mehr als einmal aufgerufen.
+[AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwininit) registriert die Fensterklasse **"AtlAxWin80"** (plus ein paar benutzerdefinierte Fenstermeldungen), daher muss diese Funktion aufgerufen werden, bevor Sie versuchen, ein Hostfenster zu erstellen. Sie müssen diese Funktion jedoch nicht immer explizit aufrufen, da die Hosting-APIs (und die Klassen, die sie verwenden) diese Funktion häufig für Sie aufrufen. Es schadet nicht, diese Funktion mehr als einmal aufzurufen.
 
 ## <a name="what-is-a-host-object"></a>Was ist ein Hostobjekt?
 
-Ein-Objekt ist ein COM-Objekt, den ActiveX-Steuerelementcontainer, die vom ATL für ein bestimmtes Fenster darstellt. Der Host Objekt Unterklassen der Fenster "Container", damit Nachrichten an das Steuerelement widerspiegeln, bietet die notwendigen Containerschnittstellen, die vom Steuerelement verwendet werden und macht die [IAxWinHostWindow](../atl/reference/iaxwinhostwindow-interface.md) und [ IAxWinAmbientDispatch](../atl/reference/iaxwinambientdispatch-interface.md) Schnittstellen, die Ihnen ermöglichen, konfigurieren Sie die Umgebung des Steuerelements.
+Ein Hostobjekt ist ein COM-Objekt, das den ActiveX-Steuerelementcontainer darstellt, der von ATL für ein bestimmtes Fenster bereitgestellt wird. Das Hostobjekt unterklassen das Containerfenster, sodass es Nachrichten an das Steuerelement reflektieren kann, stellt die erforderlichen Containerschnittstellen bereit, die vom Steuerelement verwendet werden sollen, und es macht die [Schnittstellen IAxWinHostWindow](../atl/reference/iaxwinhostwindow-interface.md) und [IAxWinAmbientDispatch](../atl/reference/iaxwinambientdispatch-interface.md) verfügbar, damit Sie die Umgebung des Steuerelements konfigurieren können.
 
-Sie können das Hostobjekt, das zum Festlegen der ambient-Eigenschaften des Containers verwenden.
+Sie können das Hostobjekt verwenden, um die Umgebungseigenschaften des Containers festzulegen.
 
-## <a name="can-i-host-more-than-one-control-in-a-single-window"></a>Kann ich mehr als ein Steuerelement in einem einzelnen Fenster hosten?
+## <a name="can-i-host-more-than-one-control-in-a-single-window"></a>Kann ich in einem Fenster mehrere Steuerelemente hosten?
 
-Es ist nicht möglich, mehr als ein Steuerelement in einem einzelnen Fenster der ATL-Host zu hosten. Jedes Hostfenster soll genau ein Steuerelement zu einem Zeitpunkt aufnehmen (Dies ermöglicht einen einfachen Mechanismus für die Verarbeitung der Nachricht Reflektion und pro-Control-ambient-Eigenschaften). Wenn Sie mehrere Steuerelemente in einem einzelnen Fenster finden Sie unter den Benutzer benötigen, ist es jedoch einfach, die mehrere Hostfenster als untergeordnete Elemente dieses Fensters zu erstellen.
+Es ist nicht möglich, mehr als ein Steuerelement in einem einzelnen ATL-Hostfenster zu hosten. Jedes Hostfenster ist so konzipiert, dass es jeweils genau ein Steuerelement enthält (dies ermöglicht einen einfachen Mechanismus für die Verarbeitung von Nachrichtenreflexion und Umgebungseigenschaften pro Steuerung). Wenn Sie jedoch mehrere Steuerelemente in einem einzigen Fenster anzeigen müssen, ist es einfach, mehrere Hostfenster als untergeordnete Elemente dieses Fensters zu erstellen.
 
 ## <a name="can-i-reuse-a-host-window"></a>Kann ich ein Hostfenster wiederverwenden?
 
-Es wird nicht empfohlen, dass Sie Hostfenster wiederverwenden. Um die Stabilität des Codes zu gewährleisten, sollten Sie die Lebensdauer des Hostfensters an die Lebensdauer der ein einzelnes Steuerelement binden.
+Es wird nicht empfohlen, Hostfenster wiederzuverwenden. Um die Robustheit des Codes zu gewährleisten, sollten Sie die Lebensdauer des Hostfensters an die Lebensdauer eines einzelnen Steuerelements binden.
 
 ## <a name="when-do-i-need-to-call-atlaxwinterm"></a>Wann muss ich AtlAxWinInit aufrufen?
 
-[AtlAxWinInit](reference/composite-control-global-functions.md#atlaxwinterm) hebt die Registrierung der **"AtlAxWin80"** Fensterklasse. Sie sollten diese Funktion aufrufen, (Wenn Sie sich nicht mehr benötigen, die zum Erstellen von Host-Windows), nachdem alle vorhandenen Hostfenster zerstört wurden. Wenn Sie diese Funktion nicht aufrufen, werden die Fensterklasse aufgehoben automatisch beim Beenden des Prozesses.
+[AtlAxWinTerm](reference/composite-control-global-functions.md#atlaxwinterm) entregistriert die Fensterklasse **"AtlAxWin80".** Sie sollten diese Funktion aufrufen (wenn Sie keine Hostfenster mehr erstellen müssen), nachdem alle vorhandenen Hostfenster zerstört wurden. Wenn Sie diese Funktion nicht aufrufen, wird die Registrierung der Fensterklasse automatisch aufgehoben, wenn der Prozess beendet wird.
 
-## <a name="hosting-activex-controls-using-atl-axhost"></a>Hosten von ActiveX-Steuerelementen mit ATL-xhost
+## <a name="hosting-activex-controls-using-atl-axhost"></a>Hosten eines ActiveX-Steuerelement mit ATL-XHost
 
-Das Beispiel in diesem Abschnitt zeigt wie AXHost erstellen und Hosten ein ActiveX-Steuerelements, die verschiedene ATL-Funktionen verwenden. Darüber hinaus erfahren Sie, wie die Kontrolle und die Senke Ereignisse zugreifen (mit [IDispEventImpl](../atl/reference/idispeventimpl-class.md)) aus dem Steuerelement, das gehostet wird. Das Beispiel hostet das Kalender-Steuerelement in ein Hauptfenster oder in einem untergeordneten Fenster.
+Das Beispiel in diesem Abschnitt zeigt, wie AXHost erstellt wird und wie ein ActiveX-Steuerelement mit verschiedenen ATL-Funktionen hosten wird. Außerdem wird gezeigt, wie Sie über das gehostete Steuerelement auf die Steuerelement- und Senkenereignisse (mit [IDispEventImpl)](../atl/reference/idispeventimpl-class.md)zugreifen können. Das Beispiel hostet das Kalendersteuerelement in einem Hauptfenster oder in einem untergeordneten Fenster.
 
-Beachten Sie, dass die Definition der `USE_METHOD` Symbol. Sie können den Wert dieses Symbols variiert zwischen 1 und 8 ändern. Der Wert des Symbols wird bestimmt, wie das Steuerelement erstellt wird:
+Beachten Sie die `USE_METHOD` Definition des Symbols. Sie können den Wert dieses Symbols so ändern, dass er zwischen 1 und 8 variiert. Der Wert des Symbols bestimmt, wie das Steuerelement erstellt wird:
 
-- Für Werte des gerade `USE_METHOD`, der Aufruf zum Host Unterklassen eines Fensters erstellen und in einem Steuerelementhost konvertiert wird. Ungerade Werte erstellt der Code ein untergeordneten Fensters, das als Host fungiert.
+- Für gerade Nummerierte `USE_METHOD`Werte von wird der Aufruf zum Erstellen der Hostunterklassen ein Fenster erstellt und in einen Steuerelementhost konvertiert. Bei ungeraden Werten erstellt der Code ein untergeordnetes Fenster, das als Host fungiert.
 
-- Für Werte des `USE_METHOD` zwischen 1 und 4, der Zugriff auf das Steuerelement und das Auffangen von Ereignissen werden erreicht, in der Aufruf, der auch auf den Host erstellt. Werte zwischen 5 und 8 den Host für die Schnittstellen Abfragen und verknüpfen Sie die Senke.
+- Bei Werten `USE_METHOD` zwischen 1 und 4 wird der Zugriff auf die Steuerung und das Senken von Ereignissen in dem Aufruf ausgeführt, der auch den Host erstellt. Werte zwischen 5 und 8 abfragen den Host nach Schnittstellen und hooken die Senke.
 
 Hier finden Sie eine Zusammenfassung:
 
-|USE_METHOD|Host|Steuern des Zugriffs und Auffangen|Gezeigt Funktion|
+|USE_METHOD|Host|Steuerung des Zugriffs und Fallen von Ereignis|Funktion demonstriert|
 |-----------------|----------|--------------------------------------|---------------------------|
-|1|Untergeordnete Fenster|Ein Schritt|CreateControlLicEx|
-|2|Klicken Sie im Hauptfenster|Ein Schritt|AtlAxCreateControlLicEx|
-|3|Untergeordnete Fenster|Ein Schritt|CreateControlEx|
-|4|Klicken Sie im Hauptfenster|Ein Schritt|AtlAxCreateControlEx|
-|5|Untergeordnete Fenster|Mehrere Schritte|CreateControlLic|
-|6|Klicken Sie im Hauptfenster|Mehrere Schritte|AtlAxCreateControlLic|
-|7|Untergeordnete Fenster|Mehrere Schritte|CreateControl|
-|8|Klicken Sie im Hauptfenster|Mehrere Schritte|AtlAxCreateControl|
+|1|Kinderfenster|Ein Schritt|CreateControlLicEx|
+|2|Hauptfenster|Ein Schritt|AtlAxCreateControlLicEx|
+|3|Kinderfenster|Ein Schritt|CreateControlEx|
+|4|Hauptfenster|Ein Schritt|AtlAxCreateControlEx|
+|5|Kinderfenster|Mehrere Schritte|CreateControlLic|
+|6|Hauptfenster|Mehrere Schritte|AtlAxCreateControlLic|
+|7|Kinderfenster|Mehrere Schritte|CreateControl|
+|8|Hauptfenster|Mehrere Schritte|AtlAxCreateControl|
 
 [!code-cpp[NVC_ATL_AxHost#1](../atl/codesnippet/cpp/hosting-activex-controls-using-atl-axhost_1.cpp)]
 
 ## <a name="see-also"></a>Siehe auch
 
-[Steuerelementkapselung – häufig gestellte Fragen](../atl/atl-control-containment-faq.md)<br/>
+[Fragen und Antworten zur Steuerelementkapselung](../atl/atl-control-containment-faq.md)<br/>
 [AtlAxCreateControl](reference/composite-control-global-functions.md#atlaxcreatecontrol)<br/>
 [AtlAxCreateControlEx](reference/composite-control-global-functions.md#atlaxcreatecontrolex)<br/>
 [AtlAxCreateControlLic](reference/composite-control-global-functions.md#atlaxcreatecontrollic)<br/>
 [AtlAxCreateControlLicEx](reference/composite-control-global-functions.md#atlaxcreatecontrolex)<br/>
 [CAxWindow2T-Klasse](../atl/reference/caxwindow2t-class.md)<br/>
-[IAxWinHostWindowLic-Schnittstelle](../atl/reference/iaxwinhostwindowlic-interface.md)
+[IAxWinHostWindowlic-Schnittstelle](../atl/reference/iaxwinhostwindowlic-interface.md)

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - views [MFC], active documents
 - active documents [MFC], views
 ms.assetid: 1378f18e-aaa6-420b-8501-4b974905baa0
-ms.openlocfilehash: 519dd51ab9b46adf862999104e97c6e478ccd86b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cbea3e032932477006820c5a71fbbf3e40123bdf
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62394948"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81322076"
 ---
 # <a name="active-documents"></a>Aktive Dokumente
 
-Aktive Dokumente erweitern die Verbunddokument-Technologie von OLE. Diese Erweiterungen werden in Form von zusätzlichen Schnittstellen bereitgestellt, die Ansichten zu verwalten, damit Objekte in Containern funktionieren und noch behalten die Kontrolle über ihre anzeigen und Drucken Funktionen können. Dieser Prozess ermöglicht es, Dokumente in fremde Frames (z. B. der Microsoft Office Binder oder Microsoft Internet Explorer) und in nativen Frames (z. B. das Anzeigen der Ports des Produkts) angezeigt.
+Aktive Dokumente erweitern die zusammengesetzte Dokumenttechnologie von OLE. Diese Erweiterungen werden in Form zusätzlicher Schnittstellen bereitgestellt, die Ansichten verwalten, sodass Objekte in Containern funktionieren und dennoch die Kontrolle über ihre Anzeige- und Druckfunktionen behalten können. Dieser Prozess ermöglicht die Anzeige von Dokumenten sowohl in fremden Frames (z. B. Microsoft Office Binder oder Microsoft Internet Explorer) als auch in systemeigenen Frames (z. B. in den produkteigenen Ansichtsports).
 
-In diesem Abschnitt wird beschrieben, die funktionale [Anforderungen für aktive Dokumente](#requirements_for_active_documents). Das aktive Dokument besitzt einen Satz von Daten und hat Zugriff auf Speicher, in denen die Daten gespeichert und abgerufen werden kann. Sie erstellen und Verwalten einer oder mehreren Ansichten auf ihre Daten. Zusätzlich zur Unterstützung für die Einbettung und direkte Aktivierungsschnittstellen von OLE-Dokumente, kommuniziert das aktive Dokument die Möglichkeit zum Erstellen von Sichten über `IOleDocument`. Über diese Oberfläche lassen der Container zu erstellen (und ggf. die Enumeration) die Ansichten, die das aktive Dokument angezeigt werden kann. Über diese Schnittstelle bieten das aktive Dokument auch verschiedene Informationen über sich selbst, wie z. B., ob es sich um mehrere Ansichten oder komplexe Rechtecke unterstützt.
+In diesem Abschnitt werden die funktionalen [Anforderungen für aktive Dokumente](#requirements_for_active_documents)beschrieben. Das aktive Dokument besitzt einen Datensatz und hat Zugriff auf den Speicher, auf dem die Daten gespeichert und abgerufen werden können. Es kann eine oder mehrere Ansichten für seine Daten erstellen und verwalten. Das aktive Dokument unterstützt nicht nur die üblichen Einbettungs- und direkte Aktivierungsschnittstellen `IOleDocument`von OLE-Dokumenten, sondern auch seine Fähigkeit, Ansichten über zu erstellen. Über diese Schnittstelle kann der Container anfordern, die Ansichten zu erstellen (und möglicherweise aufzuzählen), die das aktive Dokument anzeigen kann. Über diese Schnittstelle kann das aktive Dokument auch verschiedene Informationen über sich selbst bereitstellen, z. B. ob es mehrere Ansichten oder komplexe Rechtecke unterstützt.
 
-Im folgenden finden Sie die `IOleDocument` Schnittstelle. Beachten Sie, dass die `IEnumOleDocumentViews` Schnittstelle ist ein standard-OLE-Enumerator für `IOleDocumentView*` Typen.
+Im Folgenden `IOleDocument` finden Sie die Schnittstelle. Beachten Sie, dass die `IEnumOleDocumentViews` Schnittstelle ein Standard-OLE-Enumerator für `IOleDocumentView*` Typen ist.
 
 ```
 interface IOleDocument : IUnknown
@@ -41,29 +41,29 @@ interface IOleDocument : IUnknown
     }
 ```
 
-Alle aktiven Dokument muss ein sichtanbieter-Frame mit dieser Schnittstelle haben. Wenn das Dokument nicht innerhalb eines Containers eingebettet ist, muss die active Document-Server selbst die Ansichtsframe angeben. Wenn das aktive Dokument in einem Container aktive Dokument eingebettet ist, bietet jedoch der Container der Frame anzeigen.
+Jedes aktive Dokument muss über einen Ansichtsrahmenanbieter mit dieser Schnittstelle verfügen. Wenn das Dokument nicht in einen Container eingebettet ist, muss der aktive Dokumentserver selbst den Ansichtsrahmen bereitstellen. Wenn das aktive Dokument jedoch in einen aktiven Dokumentcontainer eingebettet ist, stellt der Container den Ansichtsrahmen bereit.
 
-Erstellen Sie ein aktiven Dokuments kann einen oder mehrere Typen von [Ansichten](#requirements_for_view_objects) Daten (z. B. normal, gliedern, Seitenlayouts, usw.). Ansichten dienen, wie Filter, die über den die Daten angezeigt werden. Selbst wenn das Dokument nur eine Art von Ansicht verfügt, Sie können weiterhin mehrere Ansichten als Mittel zur Unterstützung neuer Funktionen für Fenster unterstützen möchten (z. B. die **neues Fenster** Element auf der **Fenster** Menü in Office Anwendungen).
+Ein aktives Dokument kann einen oder mehrere Arten von [Ansichten](#requirements_for_view_objects) seiner Daten erstellen (z. B. Normal, Gliederung, Seitenlayout usw.). Ansichten wirken wie Filter, durch die die Daten angezeigt werden können. Auch wenn das Dokument nur über einen Ansichtstyp verfügt, können Sie dennoch mehrere Ansichten unterstützen, um neue Fensterfunktionen zu unterstützen (z. B. das Element **"Neues Fenster"** im Menü **Fenster** in Office-Anwendungen).
 
-##  <a name="requirements_for_active_documents"></a> Anforderungen für aktive Dokumente
+## <a name="requirements-for-active-documents"></a><a name="requirements_for_active_documents"></a>Anforderungen an aktive Dokumente
 
-Müssen eine aktive Dokument, das in einer active Document-Container angezeigt werden kann:
+Ein aktives Dokument, das in einem aktiven Dokumentcontainer angezeigt werden kann, muss:
 
-- Verwenden des OLE-Verbunddateien als Speichermechanismus, durch die Implementierung `IPersistStorage`.
+- Verwenden Sie die zusammengesetzten Dateien von `IPersistStorage`OLE als Speichermechanismus, indem Sie .
 
-- Unterstützt die grundlegende Einbettungsfunktionen von OLE-Dokumente, einschließlich **aus Datei erstellen**. Dies erfordert, dass die Schnittstellen `IPersistFile`, `IOleObject`, und `IDataObject`.
+- Unterstützen Sie die grundlegenden Einbettungsfunktionen von OLE-Dokumenten, einschließlich **Erstellen aus Datei**. Dies erfordert die Schnittstellen `IPersistFile`, `IOleObject`, `IDataObject`und .
 
-- Unterstützt eine oder mehrere Ansichten, von die jeder die direkte Aktivierung kann. Unterstützen, also die Ansichten müssen die Schnittstelle `IOleDocumentView` sowie die Schnittstellen `IOleInPlaceObject` und `IOleInPlaceActiveObject` (mithilfe des Containers `IOleInPlaceSite` und `IOleInPlaceFrame` Schnittstellen).
+- Unterstützen Sie eine oder mehrere Ansichten, von denen jede eine Ortsaktivierung kann. Das heißt, die Ansichten `IOleDocumentView` müssen die Schnittstelle `IOleInPlaceObject` sowie `IOleInPlaceActiveObject` die Schnittstellen und `IOleInPlaceSite` `IOleInPlaceFrame` (mit den Containern und Schnittstellen) unterstützen.
 
-- Die standardmäßigen active Document-Schnittstellen unterstützen `IOleDocument`, `IOleCommandTarget`, und `IPrint`.
+- Unterstützen Sie die `IOleDocument`standardmäßigen `IOleCommandTarget`aktiven `IPrint`Dokumentschnittstellen , und .
 
-Wissen, wann und wie Sie die Container-Seite-Schnittstellen zu verwenden, wird diese Anforderungen impliziert.
+In diesen Anforderungen wird bekannt, wann und wie die containerseitigen Schnittstellen verwendet werden.
 
-##  <a name="requirements_for_view_objects"></a> Anforderungen für die Objekte anzeigen
+## <a name="requirements-for-view-objects"></a><a name="requirements_for_view_objects"></a>Anforderungen für Ansichtsobjekte
 
-Ein aktives Dokument kann eine oder mehrere Ansichten der Daten erstellen. Funktionell sind diese Ansichten wie Ports für eine bestimmte Methode zum Anzeigen der Daten ein. Wenn ein aktives Dokument nur eine einzigen Ansicht unterstützt, können das aktive Dokument und die einzelne Ansicht über eine einzelne Klasse implementiert werden. `IOleDocument::CreateView` Gibt zurück, des gleichen Objekts `IOleDocumentView` Schnittstellenzeiger auf.
+Ein aktives Dokument kann eine oder mehrere Ansichten seiner Daten erstellen. Funktionell sind diese Ansichten wie Ports auf einer bestimmten Methode zum Anzeigen der Daten. Wenn ein aktives Dokument nur eine einzelne Ansicht unterstützt, können das aktive Dokument und diese einzelne Ansicht mit einer einzelnen Klasse implementiert werden. `IOleDocument::CreateView`gibt den Schnittstellenzeiger `IOleDocumentView` desselben Objekts zurück.
 
-Um in einer active Document-Container dargestellt werden, muss eine Ansichtskomponente unterstützen `IOleInPlaceObject` und `IOleInPlaceActiveObject` zusätzlich zu `IOleDocumentView`:
+Um in einem aktiven Dokumentcontainer dargestellt zu `IOleInPlaceObject` `IOleInPlaceActiveObject` werden, `IOleDocumentView`muss eine Ansichtskomponente zusätzlich unterstützen und zusätzlich:
 
 ```
 interface IOleDocumentView : IUnknown
@@ -90,14 +90,14 @@ interface IOleDocumentView : IUnknown
     }
 ```
 
-Jede Ansicht verfügt über eine zugeordnete Ansicht-Website, die die Ansichtsframe und der Viewport (HWND und eines rechteckigen Bereichs, in diesem Fenster) kapselt. Die Website bietet diese Funktionalität jedoch den Standard `IOleInPlaceSite` Schnittstelle. Beachten Sie, dass es möglich ist, haben mehrere Viewport auf ein einzelnes HWND.
+Jede Ansicht verfügt über eine zugeordnete Ansichtssite, die den Ansichtsrahmen und den Ansichtsport (HWND und einen rechteckigen Bereich in diesem Fenster) kapselt. Die Website macht diese Funktionalität `IOleInPlaceSite` über die Standardschnittstelle verfügbar. Beachten Sie, dass es möglich ist, mehr als einen Ansichtsport auf einem einzelnen HWND zu haben.
 
-Jede Art von Ansicht wurde in der Regel eine andere gedruckte Darstellung. Daher Ansichten und die entsprechende Ansicht Standorte sollten die Drucken Schnittstellen implementieren Wenn `IPrint` und `IContinueCallback`bzw. Die Ansichtsframe muss mit dem ansichtsanbieter über aushandeln `IPrint` bei Beginn des Druckens, sodass Kopfzeilen, Fußzeilen, Seitenränder und verwandten Elementen ordnungsgemäß gedruckt werden. Benachrichtigt den Rahmen der Ereignisse in Zusammenhang mit der ansichtsanbieter `IContinueCallback`. Weitere Informationen zur Verwendung dieser Schnittstellen finden Sie unter [programmgesteuerten Drucken](../mfc/programmatic-printing.md).
+In der Regel weist jeder Ansichtstyp eine andere gedruckte Darstellung auf. Daher sollten Ansichten und die entsprechenden Ansichtssites die Druckschnittstellen implementieren, wenn `IPrint` bzw. `IContinueCallback`. Der Ansichtsrahmen muss mit `IPrint` dem Ansichtsanbieter ausgehandelt werden, wenn der Druckvorgang beginnt, sodass Kopfzeilen, Fußzeilen, Ränder und verwandte Elemente korrekt gedruckt werden. Der Ansichtsanbieter benachrichtigt den Rahmen von `IContinueCallback`druckbezogenen Ereignissen über . Weitere Informationen zur Verwendung dieser Schnittstellen finden Sie unter [Programmgesteuertes Drucken](../mfc/programmatic-printing.md).
 
-Beachten Sie, wenn ein aktives Dokument nur eine einzigen Ansicht unterstützt, klicken Sie dann das aktive Dokument und die einzelne Ansicht implementiert werden können mit einer einzigen konkreten Klasse. `IOleDocument::CreateView` Gibt zurück, des gleichen Objekts einfach `IOleDocumentView` Schnittstellenzeiger auf. Kurz gesagt, ist es nicht erforderlich, die zwei separate Instanzen vorhanden sein, wenn nur eine Ansicht erforderlich ist.
+Beachten Sie, dass, wenn ein aktives Dokument nur eine einzelne Ansicht unterstützt, das aktive Dokument und diese einzelne Ansicht mit einer einzelnen konkreten Klasse implementiert werden können. `IOleDocument::CreateView`gibt einfach den Schnittstellenzeiger desselben Objekts `IOleDocumentView` zurück. Kurz gesagt, es ist nicht notwendig, dass es zwei separate Objektinstanzen gibt, wenn nur eine Ansicht erforderlich ist.
 
-Ein Objekt kann auch ein Befehlsziel sein. Durch die Implementierung `IOleCommandTarget` eine Sicht erhalten Befehle, die in der Benutzeroberfläche des Containers stammen (z. B. **neu**, **öffnen**, **speichern**,  **Drucken** auf die **Datei** Menü und **Kopie**, **einfügen**, **Rückgängig** auf die **Bearbeiten** Menü). Weitere Informationen finden Sie unter [Nachrichtenbehandlung und Befehlsziele](../mfc/message-handling-and-command-targets.md).
+Ein Ansichtsobjekt kann auch ein Befehlsziel sein. Durch `IOleCommandTarget` implementieren einer Ansicht können Befehle empfangen werden, die von der Benutzeroberfläche des Containers stammen (z. B. **Neu**, **Öffnen**, **Speichern unter**, **Drucken** im Menü **Datei;** und **Kopieren**, **Einfügen**, **Rückgängig** machen im Menü **Bearbeiten).** Weitere Informationen finden Sie unter [Nachrichtenverarbeitung und Befehlsziele](../mfc/message-handling-and-command-targets.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Aktive Dokumente-Container](../mfc/active-document-containment.md)
+[Active Document-Container](../mfc/active-document-containment.md)

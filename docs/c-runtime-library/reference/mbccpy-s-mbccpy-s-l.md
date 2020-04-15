@@ -1,9 +1,11 @@
 ---
 title: _mbccpy_s, _mbccpy_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbccpy_s
 - _mbccpy_s_l
+- _o__mbccpy_s
+- _o__mbccpy_s_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +38,12 @@ helpviewer_keywords:
 - _tccpy_s_l function
 - _mbccpy_s_l function
 ms.assetid: b6e965fa-53c1-4ec3-85ef-a1c4b4f2b2da
-ms.openlocfilehash: 26fad83c5b7847e0050fe490cad30e0643aefd74
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 08df395c6978c84b3f53ed0b07ce988afd0249f6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952631"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81341232"
 ---
 # <a name="_mbccpy_s-_mbccpy_s_l"></a>_mbccpy_s, _mbccpy_s_l
 
@@ -89,7 +92,7 @@ Kopierziel.
 Größe des Zielpuffers.
 
 *pCopied*<br/>
-Wird mit der Anzahl kopierter Bytes gefüllt (bei Erfolg 1 oder 2). Übergeben Sie **null** , wenn die Zahl nicht relevant ist.
+Wird mit der Anzahl kopierter Bytes gefüllt (bei Erfolg 1 oder 2). Übergeben Sie **NULL,** wenn Sie sich nicht um die Zahl kümmern.
 
 *src*<br/>
 Zu kopierendes Multibytezeichen.
@@ -99,28 +102,30 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt. Wenn *src* oder *dest* **null**ist oder wenn mehr als **buffsizin Bytes** in das *dest*-Element kopiert werden, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben die Funktionen **EINVAL** zurück, und **errno** ist auf **EINVAL**festgelegt.
+Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt. Wenn *src* oder *dest* **NULL**ist oder wenn mehr als **buffSizeinBytes** Bytes in *dest*kopiert werden, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben die Funktionen **EINVAL** zurück und **errno** wird auf **EINVAL**gesetzt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_mbccpy_s** -Funktion kopiert ein Multibytezeichen von *src* in *dest*. Wenn *src* nicht auf das führende Byte eines multibytezeichens zeigt, wie durch einen impliziten [_ismbblead](ismbblead-ismbblead-l.md)-aufrufungspunkt festgelegt, wird das einzelne Byte, auf das *src* verweist, kopiert. Wenn *src* auf ein führendes Byte zeigt, aber das folgende Byte 0 und somit ungültig ist, wird 0 nach *dest*kopiert, **errno** ist auf **EILSEQ**festgelegt, und die Funktion gibt " **EILSEQ**" zurück.
+Die **_mbccpy_s-Funktion** kopiert ein Multibyte-Zeichen von *src* nach *dest*. Wenn *src* nicht auf das Leadbyte eines Multibyte-Zeichens zeigt, wie durch einen impliziten Aufruf von [_ismbblead](ismbblead-ismbblead-l.md)bestimmt, wird das einzelne Byte kopiert, auf das *src* verweist. Wenn *src* auf ein Leadbyte verweist, aber das folgende Byte 0 und damit ungültig ist, wird 0 in *dest*kopiert, **errno** wird auf **EILSEQ**gesetzt, und die Funktion gibt **EILSEQ**zurück.
 
-**_mbccpy_s** fügt keinen null-Terminator an; Wenn *src* jedoch auf ein NULL-Zeichen zeigt, wird dieser NULL-Wert in das *dest* -Zeichen kopiert (Dies ist nur eine reguläre Einzel Byte Kopie).
+**_mbccpy_s** fügt keinen Null-Terminator an. Wenn *src* jedoch auf ein Nullzeichen verweist, wird dieser NULL-Wert in *dest* kopiert (dies ist nur eine normale Single-Byte-Kopie).
 
-Der Wert in " *pkopiert* " wird mit der Anzahl der kopierten Bytes aufgefüllt. Mögliche Werte sind 1 und 2, wenn der Vorgang erfolgreich ist. Wenn **null** übergeben wird, wird dieser Parameter ignoriert.
+Der Wert in *pCopied* wird mit der Anzahl der kopierten Bytes gefüllt. Mögliche Werte sind 1 und 2, wenn der Vorgang erfolgreich ist. Wenn **NULL** übergeben wird, wird dieser Parameter ignoriert.
 
-|*src*|in *dest* kopiert|*pCopied*|Rückgabewert|
+|*src*|kopiert in *dest*|*pCopied*|Rückgabewert|
 |-----------|----------------------|---------------|------------------|
 |kein führendes Byte|kein führendes Byte|1|0|
 |0|0|1|0|
 |führendes Byte gefolgt von Nicht-0|führendes Byte gefolgt von Nicht-0|2|0|
 |führendes Byte gefolgt von 0|0|1|**EILSEQ**|
 
-Beachten Sie, dass die zweite Zeile nur ein Sonderfall der ersten ist. Beachten Sie außerdem, dass in der Tabelle " *buffsizone Bytes* >= " mit "*pkopiert*"
+Beachten Sie, dass die zweite Zeile nur ein Sonderfall der ersten ist. Beachten Sie auch, dass die Tabelle von *buffSizeInBytes* >= *pCopied*ausgeht.
 
-**_mbccpy_s** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_mbccpy_s_l** ist mit **_mbccpy_s** identisch, mit der Ausnahme, dass **_mbccpy_s_l** das übergebene Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten verwendet.
+**_mbccpy_s** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_mbccpy_s_l** ist identisch mit **_mbccpy_s** mit der Ausnahme, dass **_mbccpy_s_l** das Gebietsschema verwendet, das für ein gebietsschemaabhängiges Verhalten übergeben wird.
 
-Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen vorhanden) vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Secure Template Overloads (Sichere Vorlagenüberladungen)](../../c-runtime-library/secure-template-overloads.md).
+Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen vorhanden) vereinfacht. Überladungen können automatisch die Pufferlänge ableiten, sodass kein Größenargument angegeben werden muss. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -130,12 +135,12 @@ Die Verwendung dieser Funktionen in C++ wird durch Überladungen (als Vorlagen v
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbccpy_s**|\<mbstring.h>|
 |**_mbccpy_s_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

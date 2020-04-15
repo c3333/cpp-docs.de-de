@@ -1,5 +1,5 @@
 ---
-title: Klasse von "Klasse"
+title: CAtlTemporaryFile-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CAtlTemporaryFile
@@ -22,19 +22,19 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlTemporaryFile class
 ms.assetid: 05f0f2a5-94f6-4594-8dae-b114292ff5f9
-ms.openlocfilehash: d6a7a61d1886a264f8575e8d7325d6639d21338d
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 605e4bcbe7208b18d8d1a50507e8e142a93bde5e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497712"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321305"
 ---
-# <a name="catltemporaryfile-class"></a>Klasse von "Klasse"
+# <a name="catltemporaryfile-class"></a>CAtlTemporaryFile-Klasse
 
 Diese Klasse stellt Methoden zum Erstellen und Verwenden einer temporären Datei bereit.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -46,49 +46,49 @@ class CAtlTemporaryFile
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile)|Der Konstruktor.|
-|[CAtlTemporaryFile::~CAtlTemporaryFile](#dtor)|Der Destruktor.|
+|[CAtlTemporaryFile::'CAtlTemporaryFile](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlTemporaryFile::Close](#close)|Mit dieser Methode können Sie eine temporäre Datei schließen und ihre Inhalte entweder löschen oder unter dem angegebenen Dateinamen speichern.|
-|[CAtlTemporaryFile::Create](#create)|Rufen Sie diese Methode auf, um eine temporäre Datei zu erstellen.|
-|["":](#flush)|Mit dieser Methode können Sie erzwingen, dass alle im Datei Puffer verbleibenden Daten in die temporäre Datei geschrieben werden.|
-|[CAtlTemporaryFile::GetPosition](#getposition)|Mit dieser Methode können Sie die aktuelle Dateizeiger Position abrufen.|
-|[CAtlTemporaryFile::GetSize](#getsize)|Mit dieser Methode können Sie die Größe der temporären Datei in Byte abrufen.|
-|[CAtlTemporaryFile::HandsOff](#handsoff)|Mit dieser Methode wird die Zuordnung der Datei `CAtlTemporaryFile` zum-Objekt aufgehoben.|
-|[CAtlTemporaryFile::HandsOn](#handson)|Diese Methode wird aufgerufen, um eine vorhandene temporäre Datei zu öffnen und den Zeiger am Ende der Datei zu positionieren.|
-|[CAtlTemporaryFile::LockRange](#lockrange)|Wenn Sie diese Methode aufrufen, wird ein Bereich in der Datei gesperrt, um zu verhindern, dass andere Prozesse darauf zugreifen.|
-|["": Lesen](#read)|Mit dieser Methode können Sie Daten aus der temporären Datei beginnend an der durch den Dateizeiger gekennzeichneten Position lesen.|
-|[CAtlTemporaryFile::Seek](#seek)|Mit dieser Methode können Sie den Dateizeiger der temporären Datei verschieben.|
-|[CAtlTemporaryFile::SetSize](#setsize)|Mit dieser Methode können Sie die Größe der temporären Datei festlegen.|
-|[CAtlTemporaryFile::TempFileName](#tempfilename)|Mit dieser Methode wird der Name der temporären Datei zurückgegeben.|
-|[CAtlTemporaryFile::UnlockRange](#unlockrange)|Mit dieser Methode wird ein Bereich der temporären Datei entsperrt.|
-|[CAtlTemporaryFile::Write](#write)|Ruft diese Methode auf, um Daten in die temporäre Datei zu schreiben, beginnend an der durch den Dateizeiger gekennzeichneten Position.|
+|[CAtlTemporaryFile::Schließen](#close)|Rufen Sie diese Methode auf, um eine temporäre Datei zu schließen und ihren Inhalt zu löschen oder unter dem angegebenen Dateinamen zu speichern.|
+|[CAtlTemporaryFile::Erstellen](#create)|Rufen Sie diese Methode auf, um eine temporäre Datei zu erstellen.|
+|[CAtlTemporaryFile::Flush](#flush)|Rufen Sie diese Methode auf, um zu erzwingen, dass alle im Dateipuffer verbleibenden Daten in die temporäre Datei geschrieben werden.|
+|[CAtlTemporaryFile::GetPosition](#getposition)|Rufen Sie diese Methode auf, um die aktuelle Dateizeigerposition abzurufen.|
+|[CAtlTemporaryFile::GetSize](#getsize)|Rufen Sie diese Methode auf, um die Größe in Bytes der temporären Datei abzurufen.|
+|[CAtlTemporaryFile::HandsOff](#handsoff)|Rufen Sie diese Methode auf, `CAtlTemporaryFile` um die Zuordnung der Datei vom Objekt zu trennen.|
+|[CAtlTemporaryFile::HandsOn](#handson)|Rufen Sie diese Methode auf, um eine vorhandene temporäre Datei zu öffnen und den Zeiger am Ende der Datei zu positionieren.|
+|[CAtlTemporaryFile::LockRange](#lockrange)|Rufen Sie diese Methode auf, um einen Bereich in der Datei zu sperren, um zu verhindern, dass andere Prozesse darauf zugreifen.|
+|[CAtlTemporaryFile::Lesen](#read)|Rufen Sie diese Methode auf, um Daten aus der temporären Datei zu lesen, die an der vom Dateizeiger angegebenen Position beginnen.|
+|[CAtlTemporaryFile::Suchen](#seek)|Rufen Sie diese Methode auf, um den Dateizeiger der temporären Datei zu verschieben.|
+|[CAtlTemporaryFile::SetSize](#setsize)|Rufen Sie diese Methode auf, um die Größe der temporären Datei festzulegen.|
+|[CAtlTemporaryFile::TempFileName](#tempfilename)|Rufen Sie diese Methode auf, um den Namen der temporären Datei zurückzugeben.|
+|[CAtlTemporaryFile::UnlockRange](#unlockrange)|Rufen Sie diese Methode auf, um einen Bereich der temporären Datei freizuschalten.|
+|[CAtlTemporaryFile::Schreiben](#write)|Rufen Sie diese Methode auf, um Daten in die temporäre Datei zu schreiben, beginnend an der Position, die vom Dateizeiger angegeben wird.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[""-Operator handle](#operator_handle)|Gibt ein Handle für die temporäre Datei zurück.|
+|[CAtlTemporaryFile::operator HANDLE](#operator_handle)|Gibt ein Handle an die temporäre Datei zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CAtlTemporaryFile`macht es einfach, eine temporäre Datei zu erstellen und zu verwenden. Die Datei wird automatisch benannt, geöffnet, geschlossen und gelöscht. Wenn der Inhalt der Datei nach dem Schließen der Datei erforderlich ist, können Sie in einer neuen Datei mit einem angegebenen Namen gespeichert werden.
+`CAtlTemporaryFile`erleichtert das Erstellen und Verwenden einer temporären Datei. Die Datei wird automatisch benannt, geöffnet, geschlossen und gelöscht. Wenn der Dateiinhalt nach dem Schließen der Datei erforderlich ist, können sie in einer neuen Datei mit einem angegebenen Namen gespeichert werden.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlfile. h
+**Kopfzeile:** atlfile.h
 
 ## <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="catltemporaryfile"></a>"" "" "".
+## <a name="catltemporaryfilecatltemporaryfile"></a><a name="catltemporaryfile"></a>CAtlTemporaryFile::CAtlTemporaryFile
 
 Der Konstruktor.
 
@@ -96,15 +96,15 @@ Der Konstruktor.
 CAtlTemporaryFile() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Datei wird erst [geöffnet, wenn](#create)ein Aufrufen von "" für "" "" "" ".
+Eine Datei wird erst geöffnet, wenn [CAtlTemporaryFile::Create](#create)aufgerufen wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#73](../../atl/codesnippet/cpp/catltemporaryfile-class_1.cpp)]
 
-##  <a name="dtor"></a>"" "" "".
+## <a name="catltemporaryfilecatltemporaryfile"></a><a name="dtor"></a>CAtlTemporaryFile::'CAtlTemporaryFile
 
 Der Destruktor.
 
@@ -112,13 +112,13 @@ Der Destruktor.
 ~CAtlTemporaryFile() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Dekonstruktor Ruft die [Datei](#close)"".
+Der Destruktor ruft [CAtlTemporaryFile::Close](#close)auf.
 
-##  <a name="close"></a>"":
+## <a name="catltemporaryfileclose"></a><a name="close"></a>CAtlTemporaryFile::Schließen
 
-Mit dieser Methode können Sie eine temporäre Datei schließen und ihre Inhalte entweder löschen oder unter dem angegebenen Dateinamen speichern.
+Rufen Sie diese Methode auf, um eine temporäre Datei zu schließen und ihren Inhalt zu löschen oder unter dem angegebenen Dateinamen zu speichern.
 
 ```
 HRESULT Close(LPCTSTR szNewName = NULL) throw();
@@ -127,17 +127,17 @@ HRESULT Close(LPCTSTR szNewName = NULL) throw();
 ### <a name="parameters"></a>Parameter
 
 *szNewName*<br/>
-Der Name der neuen Datei, in der der Inhalt der temporären Datei gespeichert werden soll. Wenn dieses Argument NULL ist, wird der Inhalt der temporären Datei gelöscht.
+Der Name für die neue Datei, in der der Inhalt der temporären Datei gespeichert werden soll. Wenn dieses Argument NULL ist, wird der Inhalt der temporären Datei gelöscht.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="create"></a>"": Create
+## <a name="catltemporaryfilecreate"></a><a name="create"></a>CAtlTemporaryFile::Erstellen
 
 Rufen Sie diese Methode auf, um eine temporäre Datei zu erstellen.
 
@@ -148,22 +148,22 @@ HRESULT Create(LPCTSTR pszDir = NULL, DWORD dwDesiredAccess = GENERIC_WRITE) thr
 ### <a name="parameters"></a>Parameter
 
 *pszDir*<br/>
-Der Pfad für die temporäre Datei. Wenn dieser Wert NULL ist, wird [GetTempPath](/windows/win32/api/fileapi/nf-fileapi-gettemppathw) aufgerufen, um einen Pfad zuzuweisen.
+Der Pfad für die temporäre Datei. Wenn dies NULL ist, wird [GetTempPath](/windows/win32/api/fileapi/nf-fileapi-gettemppathw) aufgerufen, um einen Pfad zuzuweisen.
 
 *dwDesiredAccess*<br/>
-Der gewünschte Zugriff. Weitere Informationen finden Sie in der Windows SDK unter *dwDesiredAccess* in der [Datei](/windows/win32/api/fileapi/nf-fileapi-createfilew) "".
+Der gewünschte Zugriff. Siehe *dwDesiredAccess* in [CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilew) im Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="flush"></a>"":
+## <a name="catltemporaryfileflush"></a><a name="flush"></a>CAtlTemporaryFile::Flush
 
-Mit dieser Methode können Sie erzwingen, dass alle im Datei Puffer verbleibenden Daten in die temporäre Datei geschrieben werden.
+Rufen Sie diese Methode auf, um zu erzwingen, dass alle im Dateipuffer verbleibenden Daten in die temporäre Datei geschrieben werden.
 
 ```
 HRESULT Flush() throw();
@@ -171,19 +171,19 @@ HRESULT Flush() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ähnlich wie [bei der](#handsoff)Datei "" von "" mit "", mit dem Unterschied, dass die Datei nicht geschlossen ist.
+Ähnlich wie [CAtlTemporaryFile::HandsOff](#handsoff), außer dass die Datei nicht geschlossen ist.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="getposition"></a>' ' ' ' ' ' ' ' ' ' ' ' ' '
+## <a name="catltemporaryfilegetposition"></a><a name="getposition"></a>CAtlTemporaryFile::GetPosition
 
-Mit dieser Methode können Sie die aktuelle Dateizeiger Position abrufen.
+Rufen Sie diese Methode auf, um die aktuelle Dateizeigerposition abzurufen.
 
 ```
 HRESULT GetPosition(ULONGLONG& nPos) const throw();
@@ -191,20 +191,20 @@ HRESULT GetPosition(ULONGLONG& nPos) const throw();
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
+*Npos*<br/>
 Die Position in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um die Position des Dateizeigers zu ändern, verwenden Sie " [chanltemporaryfile:: Seek](#seek)".
+Um die Dateizeigerposition zu ändern, verwenden Sie [CAtlTemporaryFile::Seek](#seek).
 
-##  <a name="getsize"></a>"" "" ".
+## <a name="catltemporaryfilegetsize"></a><a name="getsize"></a>CAtlTemporaryFile::GetSize
 
-Mit dieser Methode können Sie die Größe der temporären Datei in Byte abrufen.
+Rufen Sie diese Methode auf, um die Größe in Bytes der temporären Datei abzurufen.
 
 ```
 HRESULT GetSize(ULONGLONG& nLen) const throw();
@@ -217,11 +217,11 @@ Die Anzahl der Bytes in der Datei.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-##  <a name="handsoff"></a>"" "".
+## <a name="catltemporaryfilehandsoff"></a><a name="handsoff"></a>CAtlTemporaryFile::HandsOff
 
-Mit dieser Methode wird die Zuordnung der Datei `CAtlTemporaryFile` zum-Objekt aufgehoben.
+Rufen Sie diese Methode auf, `CAtlTemporaryFile` um die Zuordnung der Datei vom Objekt zu trennen.
 
 ```
 HRESULT HandsOff() throw();
@@ -229,15 +229,15 @@ HRESULT HandsOff() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`HandsOff`und [die Datei "](#handson) " mit "" ("" "), um die Zuordnung der Datei zum Objekt aufzuheben und bei Bedarf erneut anzufügen. `HandsOff`erzwingt, dass alle im Datei Puffer verbleibenden Daten in die temporäre Datei geschrieben werden, und schließt dann die Datei. Wenn Sie die Datei dauerhaft schließen und löschen möchten, oder wenn Sie den Inhalt der Datei mit einem bestimmten Namen schließen und beibehalten möchten [, verwenden Sie die Datei "](#close)".
+`HandsOff`und [CAtlTemporaryFile::HandsOn](#handson) werden verwendet, um die Zuordnung der Datei vom Objekt zu trennen und bei Bedarf erneut anzufügen. `HandsOff`erzwingt, dass alle im Dateipuffer verbleibenden Daten in die temporäre Datei geschrieben werden, und schließt dann die Datei. Wenn Sie die Datei dauerhaft schließen und löschen möchten oder wenn Sie den Inhalt der Datei mit einem bestimmten Namen schließen und beibehalten möchten, verwenden Sie [CAtlTemporaryFile::Close](#close).
 
-##  <a name="handson"></a>"" "" "" ".
+## <a name="catltemporaryfilehandson"></a><a name="handson"></a>CAtlTemporaryFile::HandsOn
 
-Diese Methode wird aufgerufen, um eine vorhandene temporäre Datei zu öffnen und den Zeiger am Ende der Datei zu positionieren.
+Rufen Sie diese Methode auf, um eine vorhandene temporäre Datei zu öffnen und den Zeiger am Ende der Datei zu positionieren.
 
 ```
 HRESULT HandsOn() throw();
@@ -245,15 +245,15 @@ HRESULT HandsOn() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-"" Mit "" "", "" und `HandsOn` "" wird verwendet, um die Zuordnung der Datei zum Objekt [aufzuheben und bei](#handsoff) Bedarf erneut anzufügen.
+[CAtlTemporaryFile::HandsOff](#handsoff) `HandsOn` und werden verwendet, um die Zuordnung der Datei vom Objekt zu trennen und bei Bedarf erneut anzufügen.
 
-##  <a name="lockrange"></a>"' ' ' ' ' ' ' ' ': ' '
+## <a name="catltemporaryfilelockrange"></a><a name="lockrange"></a>CAtlTemporaryFile::LockRange
 
-Wenn Sie diese Methode aufrufen, wird ein Bereich in der temporären Datei gesperrt, um zu verhindern, dass andere Prozesse darauf zugreifen.
+Rufen Sie diese Methode auf, um einen Bereich in der temporären Datei zu sperren, um zu verhindern, dass andere Prozesse darauf zugreifen.
 
 ```
 HRESULT LockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
@@ -261,31 +261,31 @@ HRESULT LockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
+*Npos*<br/>
 Die Position in der Datei, an der die Sperre beginnen soll.
 
 *nCount*<br/>
-Die Länge des zu sperrenden Byte Bereichs.
+Die Länge des zu verriegelnden Bytebereichs.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Sie können mehr als einen Bereich einer Dateisperren, aber es sind keine überlappenden Bereiche zulässig. Wenn Sie einen Bereich erfolgreich entsperren möchten [, verwenden Sie](#unlockrange)"" "" "" "" "" "". `LockRange`angrenzende Bereiche werden nicht zusammengeführt. Wenn zwei gesperrte Bereiche nebeneinander liegen, müssen Sie diese separat entsperren.
+Das Sperren von Bytes in einer Datei verhindert den Zugriff auf diese Bytes durch andere Prozesse. Sie können mehr als einen Bereich einer Datei sperren, aber es sind keine überlappenden Bereiche zulässig. Um eine Region erfolgreich zu entsperren, verwenden Sie [CAtlTemporaryFile::UnlockRange](#unlockrange), um sicherzustellen, dass der Bytebereich genau dem Bereich entspricht, der zuvor gesperrt war. `LockRange`führt keine angrenzenden Regionen zusammen; Wenn zwei gesperrte Bereiche nebeneinander liegen, müssen Sie jeden separat entsperren.
 
-##  <a name="operator_handle"></a>""-Operator handle
+## <a name="catltemporaryfileoperator-handle"></a><a name="operator_handle"></a>CAtlTemporaryFile::operator HANDLE
 
-Gibt ein Handle für die temporäre Datei zurück.
+Gibt ein Handle an die temporäre Datei zurück.
 
 ```
 operator HANDLE() throw();
 ```
 
-##  <a name="read"></a>"": Lesen
+## <a name="catltemporaryfileread"></a><a name="read"></a>CAtlTemporaryFile::Lesen
 
-Mit dieser Methode können Sie Daten aus der temporären Datei beginnend an der durch den Dateizeiger gekennzeichneten Position lesen.
+Rufen Sie diese Methode auf, um Daten aus der temporären Datei zu lesen, die an der vom Dateizeiger angegebenen Position beginnen.
 
 ```
 HRESULT Read(
@@ -303,23 +303,23 @@ Zeiger auf den Puffer, der die aus der Datei gelesenen Daten empfängt.
 Die Puffergröße in Byte.
 
 *nBytesRead*<br/>
-Die Anzahl von gelesenen Bytes.
+Die Anzahl der gelesenen Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ["](../../atl/reference/catlfile-class.md#read)" "". Um die Position des Dateizeigers zu ändern, nennen Sie " [chanltemporaryfile:: Seek](#seek)".
+Ruft [CAtlFile::Read](../../atl/reference/catlfile-class.md#read)auf. Um die Position des Dateizeigers zu ändern, rufen Sie [CAtlTemporaryFile::Seek](#seek)auf.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="seek"></a>"":
+## <a name="catltemporaryfileseek"></a><a name="seek"></a>CAtlTemporaryFile::Suchen
 
-Mit dieser Methode können Sie den Dateizeiger der temporären Datei verschieben.
+Rufen Sie diese Methode auf, um den Dateizeiger der temporären Datei zu verschieben.
 
 ```
 HRESULT Seek(LONGLONG nOffset, DWORD dwFrom = FILE_CURRENT) throw();
@@ -328,26 +328,26 @@ HRESULT Seek(LONGLONG nOffset, DWORD dwFrom = FILE_CURRENT) throw();
 ### <a name="parameters"></a>Parameter
 
 *nOffset*<br/>
-Der Offset in Bytes vom Startpunkt, der von *dwfrom* angegeben wird.
+Der Offset in Bytes vom von *dwFrom* angegebenen Startpunkt.
 
-*dwFrom*<br/>
-Der Anfangspunkt (FILE_BEGIN, FILE_CURRENT oder FILE_END).
+*dwVon*<br/>
+Der Startpunkt (FILE_BEGIN, FILE_CURRENT oder FILE_END).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ["](../../atl/reference/catlfile-class.md#seek)" "". Rufen Sie zum Abrufen der aktuellen Position des Dateizeigers [die Datei "](#getposition)" mit "".
+Ruft [CAtlFile::Seek](../../atl/reference/catlfile-class.md#seek)auf. Um die aktuelle Dateizeigerposition zu erhalten, rufen Sie [CAtlTemporaryFile::GetPosition](#getposition)auf.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
-##  <a name="setsize"></a>"" "".
+## <a name="catltemporaryfilesetsize"></a><a name="setsize"></a>CAtlTemporaryFile::SetSize
 
-Mit dieser Methode können Sie die Größe der temporären Datei festlegen.
+Rufen Sie diese Methode auf, um die Größe der temporären Datei festzulegen.
 
 ```
 HRESULT SetSize(ULONGLONG nNewLen) throw();
@@ -360,15 +360,15 @@ Die neue Länge der Datei in Bytes.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ["](../../atl/reference/catlfile-class.md#setsize)" "". Bei der Rückgabe wird der Dateizeiger am Ende der Datei positioniert.
+Ruft [CAtlFile::SetSize](../../atl/reference/catlfile-class.md#setsize)auf. Bei der Rückgabe wird der Dateizeiger am Ende der Datei positioniert.
 
-##  <a name="tempfilename"></a>"" "" ".
+## <a name="catltemporaryfiletempfilename"></a><a name="tempfilename"></a>CAtlTemporaryFile::TempFileName
 
-Mit dieser Methode wird der Name der temporären Datei zurückgegeben.
+Rufen Sie diese Methode auf, um den Namen der temporären Datei zurückzugeben.
 
 ```
 LPCTSTR TempFileName() throw();
@@ -376,15 +376,15 @@ LPCTSTR TempFileName() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt den LPCTSTR zurück, der auf den Dateinamen zeigt.
+Gibt den LPCTSTR zurück, der auf den Dateinamen verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Dateiname [wird in der Datei "](#catltemporaryfile) " mit der Funktion " [gettempfile](/windows/win32/api/fileapi/nf-fileapi-gettempfilenamew)Windows SDK" generiert. Die Dateierweiterung ist für die temporäre Datei immer "TFR".
+Der Dateiname wird in [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile) mit einem Aufruf der [GetTempFile](/windows/win32/api/fileapi/nf-fileapi-gettempfilenamew)Windows SDK-Funktion generiert. Die Dateierweiterung ist immer "TFR" für die temporäre Datei.
 
-##  <a name="unlockrange"></a>' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+## <a name="catltemporaryfileunlockrange"></a><a name="unlockrange"></a>CAtlTemporaryFile::UnlockRange
 
-Mit dieser Methode wird ein Bereich der temporären Datei entsperrt.
+Rufen Sie diese Methode auf, um einen Bereich der temporären Datei freizuschalten.
 
 ```
 HRESULT UnlockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
@@ -392,23 +392,23 @@ HRESULT UnlockRange(ULONGLONG nPos, ULONGLONG nCount) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
+*Npos*<br/>
 Die Position in der Datei, an der die Entsperrung beginnen soll.
 
 *nCount*<br/>
-Die Länge des zu entsperrenden Byte Bereichs.
+Die Länge des freizuschaltenden Bytebereichs.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ["](../../atl/reference/catlfile-class.md#unlockrange)" "".
+Ruft [CAtlFile::UnlockRange](../../atl/reference/catlfile-class.md#unlockrange)auf.
 
-##  <a name="write"></a>"":
+## <a name="catltemporaryfilewrite"></a><a name="write"></a>CAtlTemporaryFile::Schreiben
 
-Ruft diese Methode auf, um Daten in die temporäre Datei zu schreiben, beginnend an der durch den Dateizeiger gekennzeichneten Position.
+Rufen Sie diese Methode auf, um Daten in die temporäre Datei zu schreiben, beginnend an der Position, die vom Dateizeiger angegeben wird.
 
 ```
 HRESULT Write(
@@ -426,21 +426,21 @@ Der Puffer, der die Daten enthält, die in die Datei geschrieben werden sollen.
 Die Anzahl der Bytes, die aus dem Puffer übertragen werden sollen.
 
 *pnBytesWritten*<br/>
-Die Anzahl der geschriebenen Bytes.
+Die Anzahl der geschriebenen Byte
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg S_OK oder einen fehlerhaften HRESULT bei einem Fehler zurück.
+Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ruft ["](../../atl/reference/catlfile-class.md#write)" "".
+Ruft [CAtlFile::Write](../../atl/reference/catlfile-class.md#write)auf.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie im Beispiel für die [Datei](#catltemporaryfile)"".
+Siehe Beispiel für [CAtlTemporaryFile::CAtlTemporaryFile](#catltemporaryfile).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Klassen Übersicht](../../atl/atl-class-overview.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
 [CAtlFile-Klasse](../../atl/reference/catlfile-class.md)

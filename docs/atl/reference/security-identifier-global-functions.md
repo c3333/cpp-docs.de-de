@@ -1,5 +1,5 @@
 ---
-title: Globale Sicherheitsfunktionen für Bezeichner
+title: Globale Funktionen von Security Identifier
 ms.date: 11/04/2016
 f1_keywords:
 - atlsecurity/ATL::Sids::AccountOps
@@ -37,19 +37,19 @@ helpviewer_keywords:
 - security IDs [C++]
 - SIDs [C++], returning SID objects
 ms.assetid: 85404dcb-c59b-4535-ab3d-66cfa37e87de
-ms.openlocfilehash: ab5d743c7c6abf7ee3a849a28916ebd32788ef40
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 83326c13de7585806ab841f728f587f1131b5e8d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62274944"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325995"
 ---
-# <a name="security-identifier-global-functions"></a>Globale Sicherheitsfunktionen für Bezeichner
+# <a name="security-identifier-global-functions"></a>Globale Funktionen von Security Identifier
 
-Diese Funktionen geben häufig bekannte SID Objekte zurück.
+Diese Funktionen geben gängige bekannte SID-Objekte zurück.
 
 > [!IMPORTANT]
->  In der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Die in der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 |||
 |-|-|
@@ -88,9 +88,9 @@ Diese Funktionen geben häufig bekannte SID Objekte zurück.
 
 ### <a name="requirements"></a>Anforderungen
 
-**Header:** atlsecurity.h
+**Kopfzeile:** atlsecurity.h
 
-##  <a name="accountops"></a>  Sids::AccountOps
+## <a name="sidsaccountops"></a><a name="accountops"></a>Sids::AccountOps
 
 Gibt die DOMAIN_ALIAS_RID_ACCOUNT_OPS-SID zurück.
 
@@ -98,7 +98,7 @@ Gibt die DOMAIN_ALIAS_RID_ACCOUNT_OPS-SID zurück.
 CSid AccountOps() throw(...);
 ```
 
-##  <a name="admins"></a>  SIDs::Admins
+## <a name="sidsadmins"></a><a name="admins"></a>Sids::Admins
 
 Gibt die DOMAIN_ALIAS_RID_ADMINS-SID zurück.
 
@@ -106,7 +106,7 @@ Gibt die DOMAIN_ALIAS_RID_ADMINS-SID zurück.
 CSid Admins() throw(...);
 ```
 
-##  <a name="anonymouslogon"></a>  SIDs::AnonymousLogon
+## <a name="sidsanonymouslogon"></a><a name="anonymouslogon"></a>Sids::AnonymousLogon
 
 Gibt die SECURITY_ANONYMOUS_LOGON_RID-SID zurück.
 
@@ -114,7 +114,7 @@ Gibt die SECURITY_ANONYMOUS_LOGON_RID-SID zurück.
 CSid AnonymousLogon() throw(...);
 ```
 
-##  <a name="authenticateduser"></a>  SIDs::AuthenticatedUser
+## <a name="sidsauthenticateduser"></a><a name="authenticateduser"></a>Sids::AuthenticatedUser
 
 Gibt die SECURITY_AUTHENTICATED_USER_RID-SID zurück.
 
@@ -122,7 +122,7 @@ Gibt die SECURITY_AUTHENTICATED_USER_RID-SID zurück.
 CSid AuthenticatedUser() throw(...);
 ```
 
-##  <a name="backupops"></a>  SIDs::BackupOps
+## <a name="sidsbackupops"></a><a name="backupops"></a>Sids::BackupOps
 
 Gibt die DOMAIN_ALIAS_RID_BACKUP_OPS-SID zurück.
 
@@ -130,7 +130,7 @@ Gibt die DOMAIN_ALIAS_RID_BACKUP_OPS-SID zurück.
 CSid BackupOps() throw(...);
 ```
 
-##  <a name="batch"></a>  SIDs::Batch
+## <a name="sidsbatch"></a><a name="batch"></a>Sids::Batch
 
 Gibt die SECURITY_BATCH_RID-SID zurück.
 
@@ -138,7 +138,7 @@ Gibt die SECURITY_BATCH_RID-SID zurück.
 CSid Batch() throw(...);
 ```
 
-##  <a name="creatorgroup"></a>  SIDs::CreatorGroup
+## <a name="sidscreatorgroup"></a><a name="creatorgroup"></a>Sids::CreatorGroup
 
 Gibt die SECURITY_CREATOR_GROUP_RID-SID zurück.
 
@@ -146,7 +146,7 @@ Gibt die SECURITY_CREATOR_GROUP_RID-SID zurück.
 CSid CreatorGroup() throw(...);
 ```
 
-##  <a name="creatorgroupserver"></a>  SIDs::CreatorGroupServer
+## <a name="sidscreatorgroupserver"></a><a name="creatorgroupserver"></a>Sids::CreatorGroupServer
 
 Gibt die SECURITY_CREATOR_GROUP_SERVER_RID-SID zurück.
 
@@ -154,7 +154,7 @@ Gibt die SECURITY_CREATOR_GROUP_SERVER_RID-SID zurück.
 CSid CreatorGroupServer() throw(...);
 ```
 
-##  <a name="creatorowner"></a>  SIDs::CreatorOwner
+## <a name="sidscreatorowner"></a><a name="creatorowner"></a>Sids::CreatorOwner
 
 Gibt die SECURITY_CREATOR_OWNER_RID-SID zurück.
 
@@ -162,7 +162,7 @@ Gibt die SECURITY_CREATOR_OWNER_RID-SID zurück.
 CSid CreatorOwner() throw(...);
 ```
 
-##  <a name="creatorownerserver"></a>  SIDs::CreatorOwnerServer
+## <a name="sidscreatorownerserver"></a><a name="creatorownerserver"></a>Sids::CreatorOwnerServer
 
 Gibt die SECURITY_CREATOR_OWNER_SERVER_RID-SID zurück.
 
@@ -170,7 +170,7 @@ Gibt die SECURITY_CREATOR_OWNER_SERVER_RID-SID zurück.
 CSid CreatorOwnerServer() throw(...);
 ```
 
-##  <a name="dialup"></a>  SIDs::Dialup
+## <a name="sidsdialup"></a><a name="dialup"></a>Sids::Dialup
 
 Gibt die SECURITY_DIALUP_RID-SID zurück.
 
@@ -178,7 +178,7 @@ Gibt die SECURITY_DIALUP_RID-SID zurück.
 CSid Dialup() throw(...);
 ```
 
-##  <a name="guests"></a>  SIDs::Guests
+## <a name="sidsguests"></a><a name="guests"></a>Sids::Gäste
 
 Gibt die DOMAIN_ALIAS_RID_GUESTS-SID zurück.
 
@@ -186,7 +186,7 @@ Gibt die DOMAIN_ALIAS_RID_GUESTS-SID zurück.
 CSid Guests() throw(...);
 ```
 
-##  <a name="interactive"></a>  SIDs::Interactive
+## <a name="sidsinteractive"></a><a name="interactive"></a>Sids::Interaktiv
 
 Gibt die SECURITY_INTERACTIVE_RID-SID zurück.
 
@@ -194,7 +194,7 @@ Gibt die SECURITY_INTERACTIVE_RID-SID zurück.
 CSid Interactive() throw(...);
 ```
 
-##  <a name="local"></a>  Sids::Local
+## <a name="sidslocal"></a><a name="local"></a>Sids::Lokal
 
 Gibt die SECURITY_LOCAL_RID-SID zurück.
 
@@ -202,7 +202,7 @@ Gibt die SECURITY_LOCAL_RID-SID zurück.
 CSid Local() throw(...);
 ```
 
-##  <a name="network"></a>  SIDs::Network
+## <a name="sidsnetwork"></a><a name="network"></a>Sids::Netzwerk
 
 Gibt die SECURITY_NETWORK_RID-SID zurück.
 
@@ -210,7 +210,7 @@ Gibt die SECURITY_NETWORK_RID-SID zurück.
 CSid Network() throw(...);
 ```
 
-##  <a name="networkservice"></a>  SIDs::NetworkService
+## <a name="sidsnetworkservice"></a><a name="networkservice"></a>Sids::NetworkService
 
 Gibt die SECURITY_NETWORK_SERVICE_RID-SID zurück.
 
@@ -218,13 +218,13 @@ Gibt die SECURITY_NETWORK_SERVICE_RID-SID zurück.
 CSid NetworkService() throw(...);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie "NetworkService", um der Benutzer NT AUTHORITY\NetworkService ein Sicherheitsobjekt CPerfMon lesen kann. NetworkService hinzugefügt ATLServer Code, der DLL, die Anmeldung unter dem Netzwerkdienstkonto auf Windows XP Home Edition, Windows XP Professional, Windows Server 2003 und höher Betriebssystem ermöglichen, wird eine SecurityAttribute.
+Verwenden Sie NetworkService, um dem NT AUTHORITY-NetworkService-Benutzer das Lesen eines CPerfMon-Sicherheitsobjekts zu ermöglichen. NetworkService fügt dem ATLServer-Code ein SecurityAttribute hinzu, mit dem sich die DLL unter dem NetworkService-Konto unter Windows XP Home Edition, Windows XP Professional, Windows Server 2003 und einem größeren Betriebssystem anmelden kann.
 
-Wenn Indikatoren des benutzerdefinierten Protokolls mit ATLServer CPerfMon-Klasse in der Perfmon-MMC erstellt werden, möglicherweise die Indikatoren nicht angezeigt, wenn die Protokolldatei anzeigen, obwohl sie ordnungsgemäß in der Ansicht in Echtzeit angezeigt werden. Benutzerdefinierte Leistungsindikatoren CPerfMon nicht die erforderlichen Berechtigungen für den Dienst "Performance-Protokolle und Warnungen" (smlogsvc.exe) auf unter Windows XP Home Edition, Windows XP Professional, Windows Server 2003 (oder höher)-Betriebssystemen ausgeführt werden müssen. Dieser Dienst wird ausgeführt, unter dem Konto "NT AUTHORITY\NetworkService".
+Wenn benutzerdefinierte Protokollindikatoren mit der ATLServer CPerfMon-Klasse in der Perfmon MMC erstellt werden, werden die Leistungsindikatoren möglicherweise nicht angezeigt, wenn die Protokolldatei angezeigt wird, obwohl sie in der Echtzeitansicht korrekt angezeigt werden. Benutzerdefinierte Leistungsindikatoren von CPerfMon verfügen nicht über die erforderlichen Berechtigungen, um unter dem Dienst "Leistungsprotokolle und Warnungen" (smlogsvc.exe) unter Windows XP Home Edition, Windows XP Professional, Windows Server 2003 (oder höher) Betriebssystemen ausgeführt zu werden. Dieser Dienst wird unter dem Konto "NT AUTHORITY-NetworkService" ausgeführt.
 
-##  <a name="null"></a>  SIDs::NULL
+## <a name="sidsnull"></a><a name="null"></a>Sids::Null
 
 Gibt die SECURITY_NULL_RID-SID zurück.
 
@@ -232,7 +232,7 @@ Gibt die SECURITY_NULL_RID-SID zurück.
 CSid Null() throw(...);
 ```
 
-##  <a name="prew2kaccess"></a>  Sids::PreW2KAccess
+## <a name="sidsprew2kaccess"></a><a name="prew2kaccess"></a>Sids::PreW2KAccess
 
 Gibt die DOMAIN_ALIAS_RID_PREW2KCOMPACCESS-SID zurück.
 
@@ -240,7 +240,7 @@ Gibt die DOMAIN_ALIAS_RID_PREW2KCOMPACCESS-SID zurück.
 CSid PreW2KAccess() throw(...);
 ```
 
-##  <a name="powerusers"></a>  SIDs::PowerUsers
+## <a name="sidspowerusers"></a><a name="powerusers"></a>Sids::PowerBenutzer
 
 Gibt die DOMAIN_ALIAS_RID_POWER_USERS-SID zurück.
 
@@ -248,7 +248,7 @@ Gibt die DOMAIN_ALIAS_RID_POWER_USERS-SID zurück.
 CSid PowerUsers() throw(...);
 ```
 
-##  <a name="printops"></a>  Sids::PrintOps
+## <a name="sidsprintops"></a><a name="printops"></a>Sids::PrintOps
 
 Gibt die DOMAIN_ALIAS_RID_PRINT_OPS-SID zurück.
 
@@ -256,7 +256,7 @@ Gibt die DOMAIN_ALIAS_RID_PRINT_OPS-SID zurück.
 CSid PrintOps() throw(...);
 ```
 
-##  <a name="proxy"></a>  SIDs::Proxy
+## <a name="sidsproxy"></a><a name="proxy"></a>Sids::Proxy
 
 Gibt die SECURITY_PROXY_RID-SID zurück.
 
@@ -264,7 +264,7 @@ Gibt die SECURITY_PROXY_RID-SID zurück.
 CSid Proxy() throw(...);
 ```
 
-##  <a name="rasservers"></a>  SIDs::RasServers
+## <a name="sidsrasservers"></a><a name="rasservers"></a>Sids::RasServers
 
 Gibt die DOMAIN_ALIAS_RID_RAS_SERVERS-SID zurück.
 
@@ -272,7 +272,7 @@ Gibt die DOMAIN_ALIAS_RID_RAS_SERVERS-SID zurück.
 CSid RasServers() throw(...);
 ```
 
-##  <a name="replicator"></a>  SIDs::Replicator
+## <a name="sidsreplicator"></a><a name="replicator"></a>Sids::Replikator
 
 Gibt die DOMAIN_ALIAS_RID_REPLICATOR-SID zurück.
 
@@ -280,7 +280,7 @@ Gibt die DOMAIN_ALIAS_RID_REPLICATOR-SID zurück.
 CSid Replicator() throw(...);
 ```
 
-##  <a name="restrictedcode"></a>  SIDs::RestrictedCode
+## <a name="sidsrestrictedcode"></a><a name="restrictedcode"></a>Sids::RestrictedCode
 
 Gibt die SECURITY_RESTRICTED_CODE_RID-SID zurück.
 
@@ -288,7 +288,7 @@ Gibt die SECURITY_RESTRICTED_CODE_RID-SID zurück.
 CSid RestrictedCode() throw(...);
 ```
 
-##  <a name="self"></a>  SIDs::Self
+## <a name="sidsself"></a><a name="self"></a>Sids::Selbst
 
 Gibt die SECURITY_PRINCIPAL_SELF_RID-SID zurück.
 
@@ -296,7 +296,7 @@ Gibt die SECURITY_PRINCIPAL_SELF_RID-SID zurück.
 CSid Self() throw(...);
 ```
 
-##  <a name="serverlogon"></a>  SIDs::ServerLogon
+## <a name="sidsserverlogon"></a><a name="serverlogon"></a>Sids::ServerLogon
 
 Gibt die SECURITY_SERVER_LOGON_RID-SID zurück.
 
@@ -304,7 +304,7 @@ Gibt die SECURITY_SERVER_LOGON_RID-SID zurück.
 CSid ServerLogon() throw(...);
 ```
 
-##  <a name="service"></a>  SIDs::Service
+## <a name="sidsservice"></a><a name="service"></a>Sids::Service
 
 Gibt die SECURITY_SERVICE_RID-SID zurück.
 
@@ -312,7 +312,7 @@ Gibt die SECURITY_SERVICE_RID-SID zurück.
 CSid Service() throw(...);
 ```
 
-##  <a name="system"></a>  SIDs::System
+## <a name="sidssystem"></a><a name="system"></a>Sids::System
 
 Gibt die SECURITY_LOCAL_SYSTEM_RID-SID zurück.
 
@@ -320,7 +320,7 @@ Gibt die SECURITY_LOCAL_SYSTEM_RID-SID zurück.
 CSid System() throw(...);
 ```
 
-##  <a name="systemops"></a>  SIDs::SystemOps
+## <a name="sidssystemops"></a><a name="systemops"></a>Sids::SystemOps
 
 Gibt die DOMAIN_ALIAS_RID_SYSTEM_OPS-SID zurück.
 
@@ -328,7 +328,7 @@ Gibt die DOMAIN_ALIAS_RID_SYSTEM_OPS-SID zurück.
 CSid SystemOps() throw(...);
 ```
 
-##  <a name="terminalserver"></a>  SIDs::Terminalserver
+## <a name="sidsterminalserver"></a><a name="terminalserver"></a>Sids::TerminalServer
 
 Gibt die SECURITY_TERMINAL_SERVER_RID-SID zurück.
 
@@ -336,7 +336,7 @@ Gibt die SECURITY_TERMINAL_SERVER_RID-SID zurück.
 CSid TerminalServer() throw(...);
 ```
 
-##  <a name="users"></a>  SIDs::Users
+## <a name="sidsusers"></a><a name="users"></a>Sids::Benutzer
 
 Gibt die DOMAIN_ALIAS_RID_USERS-SID zurück.
 
@@ -344,7 +344,7 @@ Gibt die DOMAIN_ALIAS_RID_USERS-SID zurück.
 CSid Users() throw(...);
 ```
 
-##  <a name="world"></a>  Sids::World
+## <a name="sidsworld"></a><a name="world"></a>Sids::Welt
 
 Gibt die SECURITY_WORLD_RID-SID zurück.
 
@@ -354,4 +354,4 @@ CSid World() throw(...);
 
 ## <a name="see-also"></a>Siehe auch
 
-[Funktionen](../../atl/reference/atl-functions.md)
+[Functions](../../atl/reference/atl-functions.md)

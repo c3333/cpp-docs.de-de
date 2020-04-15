@@ -1,11 +1,13 @@
 ---
 title: strcspn, wcscspn, _mbscspn, _mbscspn_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbscspn_l
 - wcscspn
 - _mbscspn
 - strcspn
+- _o__mbscspn
+- _o__mbscspn_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +21,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -42,12 +45,12 @@ helpviewer_keywords:
 - mbscspn function
 - _tcscspn function
 ms.assetid: f73f51dd-b533-4e46-ba29-d05c553708a6
-ms.openlocfilehash: 501732cd4758d14a32aba3bdf503c5d314eee7f9
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 2ba3c2941736d185ad93c7c6e44cb83c82ebb478
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940768"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81358880"
 ---
 # <a name="strcspn-wcscspn-_mbscspn-_mbscspn_l"></a>strcspn, wcscspn, _mbscspn, _mbscspn_l
 
@@ -80,7 +83,7 @@ size_t _mbscspn_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Auf NULL endende gesuchte Zeichenfolge.
 
 *strCharSet*<br/>
@@ -91,34 +94,36 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Diese Funktionen geben den Index des ersten Zeichens in *Str* zurück, das in " *strincharset*" ist. Wenn keines der Zeichen in *Str* in " *darcharset*" enthalten ist, ist der Rückgabewert die Länge von *Str*.
+Diese Funktionen geben den Index des ersten Zeichens in *str* zurück, das sich in *strCharSet*befindet. Wenn sich keines der Zeichen in *strCharSet*befindet, ist der Rückgabewert die Länge von *str* *str*.
 
 Kein Rückgabewert ist zur Fehleranzeige reserviert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**wcscspn** und **_mbscspn** sind breit Zeichen-und multibytezeichenversionen von " **strincspn**". Die Argumente von **wcscspn** sind Zeichen folgen mit breit Zeichen. bei den **_mbscspn** handelt es sich um Multibyte-Zeichen folgen.
+**wcscspn** und **_mbscspn** sind Breitzeichen- und Multibyte-Zeichenversionen von **strcspn**. Die Argumente von **wcscspn** sind Zeichenfolgen mit großen Zeichen. bei **_mbscspn** sind Zeichenfolgen mit mehreren Bytezeichen.
 
-**_mbscspn** überprüft seine Parameter. Wenn entweder *Str* oder *Strauch Satz* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion 0 zurück und legt **errno** auf **EINVAL**fest. die Parameter werden von " **straucspn** " und " **wcscspn** " nicht überprüft. Diese drei Funktionen verhalten sich andernfalls identisch.
+**_mbscspn** überprüft seine Parameter. Wenn *str* oder *strCharSet* ein NULL-Zeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion 0 zurück und setzt **errno** auf **EINVAL**. **strcspn** und **wcscspn** überprüfen ihre Parameter nicht. Diese drei Funktionen verhalten sich andernfalls identisch.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |TCHAR.H-Routine|_UNICODE und _MBCS nicht definiert.|_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tcscspn**|**strcspn**|**_mbscspn**|**wcscspn**|
-|n/v|n/v|**_mbscspn_l**|n/v|
+|–|–|**_mbscspn_l**|–|
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strcspn**|\<string.h>|
 |**wcscspn**|\<string.h> oder \<wchar.h>|
 |**_mbscspn**, **_mbscspn_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -156,7 +161,7 @@ strcspn( "", "" ) = 0
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strncat, _strncat_l, wcsncat, _wcsncat_l, _mbsncat, _mbsncat_l](strncat-strncat-l-wcsncat-wcsncat-l-mbsncat-mbsncat-l.md)<br/>

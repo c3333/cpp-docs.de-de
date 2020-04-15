@@ -1,9 +1,11 @@
 ---
 title: exit, _Exit, _exit
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - _exit
 - exit
+- _o__exit
+- _o_exit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,19 +36,19 @@ helpviewer_keywords:
 - processes, terminating
 - function calls, terminating
 - process termination, calling
-ms.openlocfilehash: fd988ca6339c00b454d673d3bec6f137753ac83a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5bdb5ff5c8309e03a49f9518f65a45d5757e9bfa
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941653"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81347633"
 ---
 # <a name="exit-_exit-_exit"></a>exit, _Exit, _exit
 
-Beendet den aufrufenden Prozess. Die **Exit** -Funktion beendet Sie nach der Bereinigung. **_exit** und **_exit** beenden Sie sofort.
+Beendet den aufrufenden Prozess. Die **Exit-Funktion** beendet sie nach dem Bereinigen. **_exit** und **_Exit** sofort beenden.
 
 > [!NOTE]
-> Verwenden Sie diese Methode nicht zum Herunterfahren einer universelle Windows-Plattform-app (UWP), mit Ausnahme von Test-oder Debugszenarien. Programmgesteuerte oder UI-Methoden zum Schließen einer Store-App sind gemäß den [Microsoft Store Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle). Weitere Informationen zu Windows 10-Apps finden Sie unter [Anleitungen für Windows 10-Apps](https://developer.microsoft.com/windows/apps).
+> Verwenden Sie diese Methode nicht, um eine UWP-App (Universelle Windows-Plattform) herunterzufahren, außer in Test- oder Debugszenarios. Programmgesteuerte oder UI-Möglichkeiten zum Schließen einer Store-App sind gemäß den [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle). Weitere Informationen zu Windows 10-Apps finden Sie unter [Anleitungen für Windows 10-Apps](https://developer.microsoft.com/windows/apps).
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,24 +69,24 @@ void _exit(
 *Status*<br/>
 Beendigungsstatuscode.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Funktionen **Exit**, **_Exit** und **_Exit** beenden den aufrufenden Prozess. Die **Exit** -Funktion ruft Dekonstruktoren für Thread lokale Objekte auf und ruft dann – in LIFO-Reihenfolge (Last-in-First-Out) – die Funktionen auf, die von **atexit** und **_onexit**registriert werden, und leert alle Datei Puffer, bevor Sie beendet wird. ESS. Die **_Exit** -Funktion und die **_Exit** -Funktion beenden den Prozess, ohne Thread lokale Objekte zu zerstören oder **atexit** -oder **_onexit** -Funktionen zu verarbeiten, ohne Streampuffer zu leeren.
+Die **Funktionen exit**, **_Exit** und **_exit** beenden den Aufrufenprozess. Die **Exit-Funktion** ruft Destruktoren für threadlokale Objekte auf, ruft dann – in LIFO-Reihenfolge (Last-in-First-Out) – die Funktionen auf, die von **atexit** und **_onexit**registriert werden, und löscht dann alle Dateipuffer, bevor sie den Prozess beendet. Die **_Exit-** und **_exit-Funktionen** beenden den Prozess, ohne threadlokale Objekte zu zerstören oder **atexit-** oder **_onexit-Funktionen** zu verarbeiten und ohne Streampuffer zu leeren.
 
-Obwohl der **Exit**-, der **_Exit** -und der **_Exit** -Aufruf keinen Wert zurückgeben, wird der Wert in *Status* für die Host Umgebung verfügbar gemacht oder der aufrufende Prozess, sofern vorhanden, nachdem der Prozess beendet wurde. Normalerweise legt der Aufrufer den *Status* Wert auf 0 fest, um einen normalen Exit anzugeben, oder auf einen anderen Wert, um einen Fehler anzugeben. Der *Status* Wert ist für den Betriebssystem-Batch Befehl **ERRORLEVEL** verfügbar und wird durch eine von zwei Konstanten dargestellt: **EXIT_SUCCESS**, der den Wert 0 oder **EXIT_FAILURE**darstellt, der den Wert 1 darstellt.
+Obwohl **exit**, **_Exit** und **_exit** Aufrufe keinen Wert zurückgeben, wird der *Statuswert* nach dem Beenden des Prozesses für die Hostumgebung oder den wartenden Aufrufprozess verfügbar gemacht, sofern vorhanden. In der Regel legt der Aufrufer den *Statuswert* auf 0 fest, um einen normalen Ausgang oder einen anderen Wert anzuzeigen, um einen Fehler anzuzeigen. Der *Statuswert* ist für den Betriebssystembatchbefehl **ERRORLEVEL** verfügbar und wird durch eine von zwei Konstanten dargestellt: **EXIT_SUCCESS**, die einen Wert von 0 darstellt, oder **EXIT_FAILURE**, der einen Wert von 1 darstellt.
 
-Die Funktionen **Exit**, **_Exit**, **_Exit**, **quick_exit**, **_cexit**und **_c_exit** Verhalten sich wie folgt.
+Die Funktionen **exit**, **_Exit**, **_exit**, **quick_exit** **, _cexit**und **_c_exit** verhalten sich wie folgt.
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |--------------|-----------------|
-|**exit**|Führt vollständige C-Bibliotheksbeendigungsprozeduren aus, beendet den Prozess und übergibt den angegebenen Statuscode der Hostumgebung.|
+|**Ausfahrt**|Führt vollständige C-Bibliotheksbeendigungsprozeduren aus, beendet den Prozess und übergibt den angegebenen Statuscode der Hostumgebung.|
 |**_Exit**|Führt minimale C-Bibliotheksbeendigungsprozeduren aus, beendet den Prozess und übergibt den angegebenen Statuscode der Hostumgebung.|
 |**_exit**|Führt minimale C-Bibliotheksbeendigungsprozeduren aus, beendet den Prozess und übergibt den angegebenen Statuscode der Hostumgebung.|
 |**quick_exit**|Führt schnelle C-Bibliotheksbeendigungsprozeduren aus, beendet den Prozess und übergibt den angegebenen Statuscode der Hostumgebung.|
 |**_cexit**|Führt vollständige C-Bibliotheksbeendigungsprozeduren aus und kehrt zum Aufrufer zurück. Der Prozess wird nicht beendet.|
 |**_c_exit**|Führt minimale C-Bibliotheksbeendigungsprozeduren aus und kehrt zum Aufrufer zurück. Der Prozess wird nicht beendet.|
 
-Wenn Sie die Funktion **Exit**, **_Exit** oder **_Exit** aufrufen, werden die Dekonstruktoren für alle temporären oder automatischen Objekte, die zum Zeitpunkt des Aufrufs vorhanden sind, nicht aufgerufen. Ein automatisches Objekt ist ein nicht statisches lokales Objekt, das in einer Funktion definiert ist. Ein temporäres Objekt ist ein Objekt, das vom Compiler erstellt wird, z. b. ein von einem Funktions Aufrufwert zurückgegebener Wert. Zum Zerstören eines automatischen Objekts, bevor Sie **Exit**, **_Exit**oder **_Exit**aufzurufen, wird der Dekonstruktor für das Objekt explizit aufgerufen, wie hier gezeigt:
+Wenn Sie die **Funktion exit** **, _Exit** oder **_exit** aufrufen, werden die Destruktoren für temporäre oder automatische Objekte, die zum Zeitpunkt des Aufrufs vorhanden sind, nicht aufgerufen. Ein automatisches Objekt ist ein nicht statisches lokales Objekt, das in einer Funktion definiert ist. Ein temporäres Objekt ist ein Objekt, das vom Compiler erstellt wird, z. B. ein Wert, der von einem Funktionsaufruf zurückgegeben wird. Um ein automatisches Objekt zu zerstören, bevor Sie **exit**, **_Exit**oder **_exit**aufrufen, rufen Sie explizit den Destruktor für das Objekt auf, wie hier gezeigt:
 
 ```cpp
 void last_fn() {}
@@ -94,15 +97,17 @@ void last_fn() {}
 }
 ```
 
-Verwenden Sie **DLL_PROCESS_ATTACH** nicht, um **Exit** from **DllMain**aufzurufen. Wenn Sie die **DllMain** -Funktion beenden möchten, geben Sie **false** von **DLL_PROCESS_ATTACH**zurück.
+Verwenden Sie **DLL_PROCESS_ATTACH** nicht, um **Exit** von **DllMain**aufzurufen. Um die **DLLMain-Funktion** zu beenden, geben Sie **FALSE** aus **DLL_PROCESS_ATTACH**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**exit**, **_Exit**, **_exit**|\<process.h> oder\<stdlib.h>|
+|**exit**, **_Exit**, **_exit**|\<process.h> oder \<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -121,11 +126,11 @@ int main( void )
 
 ## <a name="see-also"></a>Siehe auch
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[abort](abort.md)<br/>
+[Prozess- und Umweltkontrolle](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Abbrechen](abort.md)<br/>
 [atexit](atexit.md)<br/>
 [_cexit, _c_exit](cexit-c-exit.md)<br/>
-[_exec- und _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
 [_onexit, _onexit_m](onexit-onexit-m.md)<br/>
 [quick_exit](quick-exit1.md)<br/>
 [_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>

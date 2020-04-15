@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::HandleTraits::SemaphoreTraits structure
 - Microsoft::WRL::Wrappers::HandleTraits::SemaphoreTraits::Unlock method
 ms.assetid: eddb8576-d063-409b-9201-cc87ca5d111e
-ms.openlocfilehash: e7bd2e5d0993c8e4be7223d98ffb1dbec14cbb74
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 11719576c9fc7b23f4cd318ee1b3ed9ca3f5edaa
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403112"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360738"
 ---
 # <a name="semaphoretraits-structure"></a>SemaphoreTraits-Struktur
 
-Definiert die allgemeinen Merkmale einer `Semaphore` Objekt.
+Definiert allgemeine Merkmale `Semaphore` eines Objekts.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,9 +30,9 @@ struct SemaphoreTraits : HANDLENullTraits;
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                               | Beschreibung
+Name                               | BESCHREIBUNG
 ---------------------------------- | --------------------------------------
-[SemaphoreTraits::Unlock](#unlock) | Releases-Steuerelement eine gemeinsam genutzte Ressource.
+[SemaphoreTraits::Entsperren](#unlock) | Gibt die Steuerung einer freigegebenen Ressource frei.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -42,13 +42,13 @@ Name                               | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers::HandleTraits
 
-## <a name="unlock"></a>SemaphoreTraits::Unlock
+## <a name="semaphoretraitsunlock"></a><a name="unlock"></a>SemaphoreTraits::Entsperren
 
-Releases-Steuerelement eine gemeinsam genutzte Ressource.
+Gibt die Steuerung einer freigegebenen Ressource frei.
 
 ```cpp
 inline static void Unlock(
@@ -58,9 +58,9 @@ inline static void Unlock(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Handle für ein `Semaphore` Objekt.
+*H*<br/>
+Handle für `Semaphore` ein Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn sich "Entsperren"-Vorgangs nicht erfolgreich ist `Unlock()` gibt einen Fehler, der die Ursache des Fehlers angibt.
+Wenn der Entsperrvorgang `Unlock()` fehlschlägt, wird ein Fehler ausgesendet, der auf die Ursache des Fehlers hinweist.

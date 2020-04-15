@@ -1,6 +1,6 @@
 ---
-title: Reloga
-description: Die C++ reloga-Funktionsreferenz für das Build Insights SDK.
+title: RelogA
+description: Die C++ Build Insights SDK RelogA-Funktionsreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: c4427aa0ac85e34bfb9d569913a8ccf6ab264f52
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 5a772b1156fc69eeef39514afe401c549c3b7c38
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334319"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323850"
 ---
-# <a name="reloga"></a>Reloga
+# <a name="reloga"></a>RelogA
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Mit der `RelogA`-Funktion werden MSVC-Ereignisse aus einer etw-Ablauf Verfolgung (Event Tracing for Windows, Ereignis Ablauf Verfolgung für Windows) gelesen und in eine neue, geänderte etw-Ablauf Verfolgung geschrieben.
+Die `RelogA` Funktion wird verwendet, um MSVC-Ereignisse aus einer Ereignisablaufverfolgung für Windows (ETW) zu lesen und in eine neue, geänderte ETW-Ablaufverfolgung zu schreiben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,17 +38,17 @@ enum RESULT_CODE RelogA(
 
 ### <a name="parameters"></a>Parameter
 
-*inputlogfile* -\
-Die Eingabe-etw-Ablauf Verfolgung, von der Ereignisse gelesen werden sollen.
+*inputLogFile*\
+Die Eingabe-ETW-Ablaufverfolgung, aus der Sie Ereignisse lesen möchten.
 
-*outputlogfile* -\
+*outputLogFile*\
 Die Datei, in die die neuen Ereignisse geschrieben werden sollen.
 
-*relogdescriptor* -\
-Zeiger auf ein [RELOG_DESCRIPTOR](../other-types/relog-descriptor-struct.md) Objekt. Verwenden Sie dieses Objekt, um die relogging-Sitzung zu konfigurieren.
+*relogDescriptor*\
+Zeiger auf ein [RELOG_DESCRIPTOR](../other-types/relog-descriptor-struct.md) Objekt. Verwenden Sie dieses Objekt, um die Relogging-Sitzung zu konfigurieren.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ::: moniker-end

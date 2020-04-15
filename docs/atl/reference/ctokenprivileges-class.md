@@ -18,19 +18,19 @@ f1_keywords:
 helpviewer_keywords:
 - CTokenPrivileges class
 ms.assetid: 89590105-f001-4014-870d-142926091231
-ms.openlocfilehash: f4ecc96ee53d6c688d17afa9957ccbf5060ca3fd
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: ceb9aeca6b99e7fc9d08625e11cbdb182fb3dc9e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69496283"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330544"
 ---
 # <a name="ctokenprivileges-class"></a>CTokenPrivileges-Klasse
 
-Diese Klasse ist ein Wrapper für die `TOKEN_PRIVILEGES` -Struktur.
+Diese Klasse ist ein `TOKEN_PRIVILEGES` Wrapper für die Struktur.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,50 +42,50 @@ class CTokenPrivileges
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CTokenPrivileges::CTokenPrivileges](#ctokenprivileges)|Der Konstruktor.|
-|[CTokenPrivileges::~CTokenPrivileges](#dtor)|Der Destruktor.|
+|[CTokenPrivileges::'CTokenPrivileges](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CTokenPrivileges::Add](#add)|Fügt dem `CTokenPrivileges` -Objekt mindestens eine Berechtigung hinzu.|
-|[CTokenPrivileges::Delete](#delete)|Löscht eine Berechtigung aus dem `CTokenPrivileges` -Objekt.|
-|[CTokenPrivileges::DeleteAll](#deleteall)|Löscht alle Berechtigungen aus dem `CTokenPrivileges` -Objekt.|
-|[CTokenPrivileges::GetCount](#getcount)|Gibt die Anzahl der Berechtigungs Einträge im `CTokenPrivileges` -Objekt zurück.|
-|[CTokenPrivileges::GetDisplayNames](#getdisplaynames)|Ruft die anzeigen Amen für die im `CTokenPrivileges` -Objekt enthaltenen Berechtigungen ab.|
-|[CTokenPrivileges::GetLength](#getlength)|Gibt die Puffergröße in Bytes zurück, die zum `TOKEN_PRIVILEGES` Speichern der durch das `CTokenPrivileges` -Objekt dargestellten Struktur erforderlich ist.|
-|[CTokenPrivileges::GetLuidsAndAttributes](#getluidsandattributes)|Ruft die lokalen eindeutigen Bezeichner (LUIDs) und Attributflags aus dem `CTokenPrivileges` -Objekt ab.|
-|[CTokenPrivileges::GetNamesAndAttributes](#getnamesandattributes)|Ruft die Berechtigungs Namen und Attributflags aus `CTokenPrivileges` dem-Objekt ab.|
-|[CTokenPrivileges:: GetPTOKEN_PRIVILEGES](#getptoken_privileges)|Gibt einen Zeiger auf die `TOKEN_PRIVILEGES` -Struktur zurück.|
-|[CTokenPrivileges::LookupPrivilege](#lookupprivilege)|Ruft das Attribut ab, das einem angegebenen Berechtigungs Namen zugeordnet ist.|
+|[CTokenPrivileges::Hinzufügen](#add)|Fügt dem `CTokenPrivileges` Objekt eine oder mehrere Berechtigungen hinzu.|
+|[CTokenPrivileges::Delete](#delete)|Löscht eine Berechtigung `CTokenPrivileges` aus dem Objekt.|
+|[CTokenPrivileges::DeleteAll](#deleteall)|Löscht alle Berechtigungen aus `CTokenPrivileges` dem Objekt.|
+|[CTokenPrivileges::GetCount](#getcount)|Gibt die Anzahl der `CTokenPrivileges` Berechtigungseinträge im Objekt zurück.|
+|[CTokenPrivileges::GetDisplayNames](#getdisplaynames)|Ruft Anzeigenamen für die im `CTokenPrivileges` Objekt enthaltenen Berechtigungen ab.|
+|[CTokenPrivileges::GetLength](#getlength)|Gibt die Puffergröße in Bytes `TOKEN_PRIVILEGES` zurück, `CTokenPrivileges` die erforderlich ist, um die durch das Objekt dargestellte Struktur zu halten.|
+|[CTokenPrivileges::GetLuidsAndAttributes](#getluidsandattributes)|Ruft die lokal eindeutigen Bezeichner (LUIDs) und Attributflags aus dem `CTokenPrivileges` Objekt ab.|
+|[CTokenPrivileges::GetNamesAndAttributes](#getnamesandattributes)|Ruft die Berechtigungsnamen und `CTokenPrivileges` Attributflags aus dem Objekt ab.|
+|[CTokenPrivileges::GetPTOKEN_PRIVILEGES](#getptoken_privileges)|Gibt einen Zeiger `TOKEN_PRIVILEGES` auf die Struktur zurück.|
+|[CTokenPrivileges::LookupPrivilege](#lookupprivilege)|Ruft das Attribut ab, das einem bestimmten Berechtigungsnamen zugeordnet ist.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CTokenPrivileges:: Operator Konstanten TOKEN_PRIVILEGES *](#operator_const_token_privileges__star)|Wandelt einen Wert in einen Zeiger auf die `TOKEN_PRIVILEGES` -Struktur um.|
-|[CTokenPrivileges:: Operator =](#operator_eq)|Zuweisungsoperator.|
+|[CTokenPrivileges::operator const TOKEN_PRIVILEGES *](#operator_const_token_privileges__star)|Gibt einen Wert auf einen `TOKEN_PRIVILEGES` Zeiger auf die Struktur um.|
+|[CTokenPrivileges::operator =](#operator_eq)|Zuweisungsoperator.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein [Zugriffs Token](/windows/win32/SecAuthZ/access-tokens) ist ein Objekt, das den Sicherheitskontext eines Prozesses oder Threads beschreibt und jedem Benutzer zugeordnet ist, der bei einem Windows-System angemeldet ist.
+Ein [Zugriffstoken](/windows/win32/SecAuthZ/access-tokens) ist ein Objekt, das den Sicherheitskontext eines Prozesses oder Threads beschreibt und jedem Benutzer zugewiesen wird, der bei einem Windows-System angemeldet ist.
 
-Das Zugriffs Token wird verwendet, um die verschiedenen Sicherheits Privilegien zu beschreiben, die den einzelnen Benutzern gewährt werden. Ein-Privileg besteht aus einer 64-Bit-Nummer, die als lokale eindeutige Kennung ( [LUID](/windows/win32/api/winnt/ns-winnt-luid)) und einer Deskriptorzeichenfolge bezeichnet wird.
+Das Zugriffstoken wird verwendet, um die verschiedenen Sicherheitsberechtigungen zu beschreiben, die jedem Benutzer gewährt werden. Eine Berechtigung besteht aus einer 64-Bit-Nummer, die als lokal eindeutiger Bezeichner ( [LUID](/windows/win32/api/winnt/ns-winnt-luid)) bezeichnet wird, und einer Deskriptorzeichenfolge.
 
-Die `CTokenPrivileges` -Klasse ist ein Wrapper für die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur und enthält 0 oder mehr Berechtigungen. Berechtigungen können mithilfe der angegebenen Klassen Methoden hinzugefügt, gelöscht oder abgefragt werden.
+Die `CTokenPrivileges` Klasse ist ein Wrapper für die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Struktur und enthält 0 oder mehr Berechtigungen. Berechtigungen können mithilfe der bereitgestellten Klassenmethoden hinzugefügt, gelöscht oder abgefragt werden.
 
-Eine Einführung zum Zugriffs Steuerungsmodell in Windows finden Sie unter [Access Control](/windows/win32/SecAuthZ/access-control) in der Windows SDK.
+Eine Einführung in das Zugriffssteuerungsmodell in Windows finden Sie unter [Zugriffssteuerung](/windows/win32/SecAuthZ/access-control) im Windows SDK.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** ATLSecurity. h
+**Kopfzeile:** atlsecurity.h
 
-##  <a name="add"></a>CTokenPrivileges:: Add
+## <a name="ctokenprivilegesadd"></a><a name="add"></a>CTokenPrivileges::Hinzufügen
 
-Fügt dem `CTokenPrivileges` zugriffstokenobjekt mindestens eine Berechtigung hinzu.
+Fügt dem `CTokenPrivileges` Zugriffstokenobjekt eine oder mehrere Berechtigungen hinzu.
 
 ```
 bool Add(LPCTSTR pszPrivilege, bool bEnable) throw(...);
@@ -95,19 +95,19 @@ void Add(const TOKEN_PRIVILEGES& rPrivileges) throw(...);
 ### <a name="parameters"></a>Parameter
 
 *pszPrivilege*<br/>
-Zeiger auf eine mit NULL endenden Zeichenfolge, die den Namen der Berechtigung angibt, wie in WinNT definiert. H-Header Datei.
+Zeiger auf eine null-terminierte Zeichenfolge, die den Namen der Berechtigung angibt, wie in WINNT definiert. H-Headerdatei.
 
 *bEnable*<br/>
-True gibt an, dass die Berechtigung aktiviert ist. Der Wert false gibt an, dass die Berechtigung deaktiviert ist.
+Wenn true, ist die Berechtigung aktiviert. Wenn false, ist die Berechtigung deaktiviert.
 
-*rprivileges*<br/>
-Verweis auf eine [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur. Die Berechtigungen und Attribute werden aus dieser Struktur kopiert und dem `CTokenPrivileges` -Objekt hinzugefügt.
+*rPrivileges*<br/>
+Verweis auf eine [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Struktur. Die Berechtigungen und Attribute werden aus dieser Struktur `CTokenPrivileges` kopiert und dem Objekt hinzugefügt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die erste Form dieser Methode gibt true zurück, wenn die Berechtigungen erfolgreich hinzugefügt wurden, andernfalls false.
 
-##  <a name="ctokenprivileges"></a>CTokenPrivileges:: CTokenPrivileges
+## <a name="ctokenprivilegesctokenprivileges"></a><a name="ctokenprivileges"></a>CTokenPrivileges::CTokenPrivileges
 
 Der Konstruktor.
 
@@ -120,16 +120,16 @@ CTokenPrivileges(const TOKEN_PRIVILEGES& rPrivileges) throw(...);
 ### <a name="parameters"></a>Parameter
 
 *rhs*<br/>
-Das `CTokenPrivileges` -Objekt, das dem neuen-Objekt zugewiesen werden soll.
+Das `CTokenPrivileges` Objekt, das dem neuen Objekt zugewiesen werden soll.
 
-*rprivileges*<br/>
-Die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur, die dem neuen `CTokenPrivileges` -Objekt zugewiesen werden soll.
+*rPrivileges*<br/>
+Die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Struktur, die `CTokenPrivileges` dem neuen Objekt zugewiesen werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das `CTokenPrivileges` Objekt kann optional mithilfe einer `TOKEN_PRIVILEGES` Struktur oder eines zuvor definierten `CTokenPrivileges` Objekts erstellt werden.
+Das `CTokenPrivileges` Objekt kann optional mit `TOKEN_PRIVILEGES` einer Struktur `CTokenPrivileges` oder einem zuvor definierten Objekt erstellt werden.
 
-##  <a name="dtor"></a>CTokenPrivileges:: ~ CTokenPrivileges
+## <a name="ctokenprivilegesctokenprivileges"></a><a name="dtor"></a>CTokenPrivileges::'CTokenPrivileges
 
 Der Destruktor.
 
@@ -137,13 +137,13 @@ Der Destruktor.
 virtual ~CTokenPrivileges() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Dekonstruktor gibt alle zugeordneten Ressourcen frei.
+Der Destruktor gibt alle zugewiesenen Ressourcen frei.
 
-##  <a name="delete"></a>CTokenPrivileges::D Elete
+## <a name="ctokenprivilegesdelete"></a><a name="delete"></a>CTokenPrivileges::Delete
 
-Löscht eine Berechtigung aus dem `CTokenPrivileges` zugriffstokenobjekt.
+Löscht eine Berechtigung `CTokenPrivileges` aus dem Zugriffstokenobjekt.
 
 ```
 bool Delete(LPCTSTR pszPrivilege) throw();
@@ -152,31 +152,31 @@ bool Delete(LPCTSTR pszPrivilege) throw();
 ### <a name="parameters"></a>Parameter
 
 *pszPrivilege*<br/>
-Zeiger auf eine mit NULL endenden Zeichenfolge, die den Namen der Berechtigung angibt, wie in WinNT definiert. H-Header Datei. Mit diesem Parameter kann beispielsweise die Konstante SE_SECURITY_NAME oder die zugehörige Zeichenfolge "SeSecurityPrivilege" angegeben werden.
+Zeiger auf eine null-terminierte Zeichenfolge, die den Namen der Berechtigung angibt, wie in WINNT definiert. H-Headerdatei. Dieser Parameter könnte z. B. die Konstante SE_SECURITY_NAME oder die entsprechende Zeichenfolge "SeSecurityPrivilege" angeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn die Berechtigung erfolgreich gelöscht wurde, andernfalls "false".
+Gibt true zurück, wenn die Berechtigung erfolgreich gelöscht wurde, andernfalls false.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ist als Tool zum Erstellen von eingeschränkten Token nützlich.
+Diese Methode ist als Werkzeug zum Erstellen eingeschränkter Token nützlich.
 
-##  <a name="deleteall"></a>CTokenPrivileges::D eleteall
+## <a name="ctokenprivilegesdeleteall"></a><a name="deleteall"></a>CTokenPrivileges::DeleteAll
 
-Löscht alle Berechtigungen aus dem `CTokenPrivileges` zugriffstokenobjekt.
+Löscht alle Berechtigungen aus `CTokenPrivileges` dem Zugriffstokenobjekt.
 
 ```
 void DeleteAll() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Löscht alle im `CTokenPrivileges` zugriffstokenobjekt enthaltenen Berechtigungen.
+Löscht alle im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen Berechtigungen.
 
-##  <a name="getdisplaynames"></a>CTokenPrivileges:: getdisplaynames
+## <a name="ctokenprivilegesgetdisplaynames"></a><a name="getdisplaynames"></a>CTokenPrivileges::GetDisplayNames
 
-Ruft die anzeigen Amen für die im `CTokenPrivileges` zugriffstokenobjekt enthaltenen Berechtigungen ab.
+Ruft Anzeigenamen für die im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen Berechtigungen ab.
 
 ```
 void GetDisplayNames(CNames* pDisplayNames) const throw(...);
@@ -185,17 +185,17 @@ void GetDisplayNames(CNames* pDisplayNames) const throw(...);
 ### <a name="parameters"></a>Parameter
 
 *pDisplayNames*<br/>
-Ein Zeiger auf ein Array von `CString`-Objekten. `CNames`ist als typedef: `CTokenPrivileges::CAtlArray<CString>`definiert.
+Ein Zeiger auf ein Array von `CString`-Objekten. `CNames`ist definiert als typedef: `CTokenPrivileges::CAtlArray<CString>`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der- `pDisplayNames` Parameter ist ein Zeiger auf ein Array `CString` von-Objekten, das die anzeigen Amen erhält, die `CTokenPrivileges` den im-Objekt enthaltenen Berechtigungen entsprechen. Diese Methode ruft nur anzeigen Amen für die Berechtigungen ab, die im Abschnitt "definierte Privilegien" von Winnt angegeben sind. Micha.
+Der `pDisplayNames` Parameter ist ein Zeiger `CString` auf ein Array von Objekten, die die `CTokenPrivileges` Anzeigenamen erhalten, die den im Objekt enthaltenen Berechtigungen entsprechen. Diese Methode ruft Anzeigenamen nur für die berechtigungen ab, die im Abschnitt Definierte Berechtigungen von WINNT angegeben sind. H.
 
-Diese Methode ruft einen anzeigbaren Namen ab. wenn der Attribut Name beispielsweise "SE_REMOTE_SHUTDOWN_NAME" lautet, lautet der anzeigbare Name "das Herunterfahren von einem Remote System aus". Verwenden Sie zum Abrufen des System namens [CTokenPrivileges:: getnamesandattributs](#getnamesandattributes).
+Diese Methode ruft einen anzeigebaren Namen ab: Wenn der Attributname beispielsweise SE_REMOTE_SHUTDOWN_NAME ist, lautet der anzeigebare Name "Das Herunterfahren von einem Remotesystem erzwingen". Um den Systemnamen zu erhalten, verwenden Sie [CTokenPrivileges::GetNamesAndAttributes](#getnamesandattributes).
 
-##  <a name="getcount"></a>CTokenPrivileges:: GetCount
+## <a name="ctokenprivilegesgetcount"></a><a name="getcount"></a>CTokenPrivileges::GetCount
 
-Gibt die Anzahl der Berechtigungs Einträge im `CTokenPrivileges` -Objekt zurück.
+Gibt die Anzahl der `CTokenPrivileges` Berechtigungseinträge im Objekt zurück.
 
 ```
 UINT GetCount() const throw();
@@ -203,11 +203,11 @@ UINT GetCount() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der im `CTokenPrivileges` -Objekt enthaltenen Berechtigungen zurück.
+Gibt die Anzahl der im `CTokenPrivileges` Objekt enthaltenen Berechtigungen zurück.
 
-##  <a name="getlength"></a>CTokenPrivileges:: GetLength
+## <a name="ctokenprivilegesgetlength"></a><a name="getlength"></a>CTokenPrivileges::GetLength
 
-Gibt die Länge des `CTokenPrivileges` -Objekts zurück.
+Gibt die Länge `CTokenPrivileges` des Objekts zurück.
 
 ```
 UINT GetLength() const throw();
@@ -215,11 +215,11 @@ UINT GetLength() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der Bytes zurück, die für `TOKEN_PRIVILEGES` eine durch das `CTokenPrivileges` -Objekt dargestellte Struktur erforderlich sind, einschließlich aller darin enthaltenen Berechtigungs Einträge.
+Gibt die Anzahl der Bytes `TOKEN_PRIVILEGES` zurück, `CTokenPrivileges` die erforderlich sind, um eine Struktur zu enthalten, die durch das Objekt dargestellt wird, einschließlich aller darin enthaltenen Berechtigungseinträge.
 
-##  <a name="getluidsandattributes"></a>CTokenPrivileges:: getluidsandattribute
+## <a name="ctokenprivilegesgetluidsandattributes"></a><a name="getluidsandattributes"></a>CTokenPrivileges::GetLuidsAndAttributes
 
-Ruft die lokalen eindeutigen Bezeichner (LUIDs) und Attributflags aus dem `CTokenPrivileges` -Objekt ab.
+Ruft die lokal eindeutigen Bezeichner (LUIDs) und Attributflags aus dem `CTokenPrivileges` Objekt ab.
 
 ```
 void GetLuidsAndAttributes(
@@ -229,19 +229,19 @@ void GetLuidsAndAttributes(
 
 ### <a name="parameters"></a>Parameter
 
-*pprivileges*<br/>
-Zeiger auf ein Array von [LUID](/windows/win32/api/winnt/ns-winnt-luid) -Objekten. `CLUIDArray`ist eine typedef, die `CAtlArray<LUID> CLUIDArray`als definiert ist.
+*pPrivileges*<br/>
+Zeiger auf ein Array von [LUID-Objekten.](/windows/win32/api/winnt/ns-winnt-luid) `CLUIDArray`ist ein typedef, der als `CAtlArray<LUID> CLUIDArray`definiert ist.
 
-*pattributes*<br/>
-Zeiger auf ein Array von DWORD-Objekten. Wenn dieser Parameter ausgelassen wird oder NULL ist, werden die Attribute nicht abgerufen. `CAttributes`ist eine typedef, die `CAtlArray <DWORD> CAttributes`als definiert ist.
+*pAttributes*<br/>
+Zeiger auf ein Array von DWORD-Objekten. Wenn dieser Parameter weggelassen wird oder NULL, werden die Attribute nicht abgerufen. `CAttributes`ist ein typedef, der als `CAtlArray <DWORD> CAttributes`definiert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode listet alle im `CTokenPrivileges` zugriffstokenobjekt enthaltenen Berechtigungen auf und platziert die einzelnen LUIDs und (optional) die Attributflags in Array Objekten.
+Diese Methode führt alle im `CTokenPrivileges` Zugriffstokenobjekt enthaltenen Berechtigungen auf und platziert die einzelnen LUIDs und (optional) die Attributflags in Arrayobjekten.
 
-##  <a name="getnamesandattributes"></a>CTokenPrivileges:: getnamesandattribute
+## <a name="ctokenprivilegesgetnamesandattributes"></a><a name="getnamesandattributes"></a>CTokenPrivileges::GetNamesAndAttributes
 
-Ruft die Namen-und Attributflags aus `CTokenPrivileges` dem-Objekt ab.
+Ruft den Namen und die `CTokenPrivileges` Attributflags aus dem Objekt ab.
 
 ```
 void GetNamesAndAttributes(
@@ -251,21 +251,21 @@ void GetNamesAndAttributes(
 
 ### <a name="parameters"></a>Parameter
 
-*pNames*<br/>
-Zeiger auf ein Array von `CString` -Objekten. `CNames`ist eine typedef, die `CAtlArray <CString> CNames`als definiert ist.
+*pNamen*<br/>
+Zeiger auf ein `CString` Array von Objekten. `CNames`ist ein typedef, der als `CAtlArray <CString> CNames`definiert ist.
 
-*pattributes*<br/>
-Zeiger auf ein Array von DWORD-Objekten. Wenn dieser Parameter ausgelassen wird oder NULL ist, werden die Attribute nicht abgerufen. `CAttributes`ist eine typedef, die `CAtlArray <DWORD> CAttributes`als definiert ist.
+*pAttributes*<br/>
+Zeiger auf ein Array von DWORD-Objekten. Wenn dieser Parameter weggelassen wird oder NULL, werden die Attribute nicht abgerufen. `CAttributes`ist ein typedef, der als `CAtlArray <DWORD> CAttributes`definiert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode listet alle im- `CTokenPrivileges` Objekt enthaltenen Berechtigungen auf, wobei der Name und (optional) die Attributflags in Array Objekten abgelegt werden.
+Diese Methode führt alle im `CTokenPrivileges` Objekt enthaltenen Berechtigungen auf und platziert den Namen und (optional) die Attributflags in Arrayobjekten.
 
-Diese Methode ruft den Attributnamen anstelle des anzeigbaren namens ab. wenn der Attribut Name beispielsweise SE_REMOTE_SHUTDOWN_NAME lautet, lautet der Systemname "SeRemoteShutdownPrivilege". Verwenden Sie zum Abrufen des anzeigbaren namens die Methode [CTokenPrivileges:: getdisplaynames](#getdisplaynames).
+Diese Methode ruft den Attributnamen und nicht den anzeigebaren Namen ab: Wenn der Attributname beispielsweise SE_REMOTE_SHUTDOWN_NAME ist, lautet der Systemname "SeRemoteShutdownPrivilege". Um den anzeigebaren Namen zu erhalten, verwenden Sie die Methode [CTokenPrivileges::GetDisplayNames](#getdisplaynames).
 
-##  <a name="getptoken_privileges"></a>CTokenPrivileges:: GetPTOKEN_PRIVILEGES
+## <a name="ctokenprivilegesgetptoken_privileges"></a><a name="getptoken_privileges"></a>CTokenPrivileges::GetPTOKEN_PRIVILEGES
 
-Gibt einen Zeiger auf die `TOKEN_PRIVILEGES` -Struktur zurück.
+Gibt einen Zeiger `TOKEN_PRIVILEGES` auf die Struktur zurück.
 
 ```
 const TOKEN_PRIVILEGES* GetPTOKEN_PRIVILEGES() const throw(...);
@@ -273,11 +273,11 @@ const TOKEN_PRIVILEGES* GetPTOKEN_PRIVILEGES() const throw(...);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur zurück.
+Gibt einen Zeiger auf die [TOKEN_PRIVILEGES-Struktur](/windows/win32/api/winnt/ns-winnt-token_privileges) zurück.
 
-##  <a name="lookupprivilege"></a>CTokenPrivileges:: lookupprivilege
+## <a name="ctokenprivilegeslookupprivilege"></a><a name="lookupprivilege"></a>CTokenPrivileges::LookupPrivilege
 
-Ruft das Attribut ab, das einem angegebenen Berechtigungs Namen zugeordnet ist.
+Ruft das Attribut ab, das einem bestimmten Berechtigungsnamen zugeordnet ist.
 
 ```
 bool LookupPrivilege(
@@ -288,16 +288,16 @@ bool LookupPrivilege(
 ### <a name="parameters"></a>Parameter
 
 *pszPrivilege*<br/>
-Zeiger auf eine mit NULL endenden Zeichenfolge, die den Namen der Berechtigung angibt, wie in WinNT definiert. H-Header Datei. Mit diesem Parameter kann beispielsweise die Konstante SE_SECURITY_NAME oder die zugehörige Zeichenfolge "SeSecurityPrivilege" angegeben werden.
+Zeiger auf eine null-terminierte Zeichenfolge, die den Namen der Berechtigung angibt, wie in WINNT definiert. H-Headerdatei. Dieser Parameter könnte z. B. die Konstante SE_SECURITY_NAME oder die entsprechende Zeichenfolge "SeSecurityPrivilege" angeben.
 
 *pdwAttributes*<br/>
-Ein Zeiger auf eine Variable, die die Attribute empfängt.
+Zeiger auf eine Variable, die die Attribute empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Gibt true zurück, wenn das Attribut erfolgreich abgerufen wurde, andernfalls false.
 
-##  <a name="operator_eq"></a>CTokenPrivileges:: Operator =
+## <a name="ctokenprivilegesoperator-"></a><a name="operator_eq"></a>CTokenPrivileges::operator =
 
 Zuweisungsoperator.
 
@@ -308,33 +308,33 @@ CTokenPrivileges& operator= (const CTokenPrivileges& rhs) throw(...);
 
 ### <a name="parameters"></a>Parameter
 
-*rprivileges*<br/>
-Die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur, die dem `CTokenPrivileges` -Objekt zugewiesen werden soll.
+*rPrivileges*<br/>
+Die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Struktur, `CTokenPrivileges` die dem Objekt zugewiesen werden soll.
 
 *rhs*<br/>
-Das `CTokenPrivileges` -Objekt, das dem-Objekt zugewiesen werden soll.
+Das `CTokenPrivileges` Objekt, das dem Objekt zugewiesen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das aktualisierte `CTokenPrivileges` Objekt zurück.
+Gibt das `CTokenPrivileges` aktualisierte Objekt zurück.
 
-##  <a name="operator_const_token_privileges__star"></a>CTokenPrivileges:: Operator Konstanten TOKEN_PRIVILEGES\*
+## <a name="ctokenprivilegesoperator-const-token_privileges-"></a><a name="operator_const_token_privileges__star"></a>CTokenPrivileges::operator const TOKEN_PRIVILEGES\*
 
-Wandelt einen Wert in einen Zeiger auf die `TOKEN_PRIVILEGES` -Struktur um.
+Gibt einen Wert auf einen `TOKEN_PRIVILEGES` Zeiger auf die Struktur um.
 
 ```
 operator const TOKEN_PRIVILEGES *() const throw(...);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wandelt einen Wert in einen Zeiger auf die [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) -Struktur um.
+Gibt einen Wert auf einen [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges) Zeiger auf die TOKEN_PRIVILEGES-Struktur.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Sicherheits Beispiel](../../overview/visual-cpp-samples.md)<br/>
+[Sicherheitsbeispiel](../../overview/visual-cpp-samples.md)<br/>
 [TOKEN_PRIVILEGES](/windows/win32/api/winnt/ns-winnt-token_privileges)<br/>
-[LUID](/windows/win32/api/winnt/ns-winnt-luid)<br/>
+[Luid](/windows/win32/api/winnt/ns-winnt-luid)<br/>
 [LUID_AND_ATTRIBUTES](/windows/win32/api/winnt/ns-winnt-luid_and_attributes)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)<br/>
+[Klassenübersicht](../../atl/atl-class-overview.md)<br/>
 [Globale Sicherheitsfunktionen](../../atl/reference/security-global-functions.md)

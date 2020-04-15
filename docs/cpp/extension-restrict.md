@@ -8,31 +8,31 @@ f1_keywords:
 helpviewer_keywords:
 - __restrict keyword [C++]
 ms.assetid: 2d151b4d-f930-49df-bd16-d8757ec7fa83
-ms.openlocfilehash: cb340554bc20516175400c4d14a5d0dba934a313
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 27ac76251456d9a0bf5908ad6d1fc2bee7534e9f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188960"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360817"
 ---
 # <a name="__restrict"></a>__restrict
 
-Wie der **__declspec ( [Einschränkungs](../cpp/restrict.md)**  -Modifizierer) gibt das **__restrict** -Schlüsselwort an, dass ein Symbol im aktuellen Gültigkeitsbereich nicht mit einem Alias versehen ist. Das **__restrict** -Schlüsselwort unterscheidet sich wie folgt vom `__declspec ( restrict )`-Modifizierer:
+Wie der Modifikator **__declspec ( [einschränken](../cpp/restrict.md) )** gibt das **Schlüsselwort __restrict** an, dass ein Symbol im aktuellen Bereich nicht aliasiert wird. Das **Schlüsselwort __restrict** `__declspec ( restrict )` unterscheidet sich wie folgt vom Modifikator:
 
-- Das **__restrict** -Schlüsselwort ist nur für-Variablen gültig, und `__declspec ( restrict )` ist nur für Funktions Deklarationen und-Definitionen gültig.
+- Das **Schlüsselwort __restrict** ist nur `__declspec ( restrict )` für Variablen gültig und nur für Funktionsdeklarationen und Definitionen gültig.
 
-- **__restrict** ähnelt der Verwendung der C99- **Spezifikation, aber** **__restrict** können in C++ -oder-C-Programmen verwendet werden.
+- **__restrict** ist ähnlich wie die C99-Spezifikation **einschränken,** aber **__restrict** können in C++- oder C-Programmen verwendet werden.
 
-- Wenn **__restrict** verwendet wird, gibt der Compiler die No-Alias-Eigenschaft einer Variablen nicht weiter. Das heißt, wenn Sie einer Variablen, die nicht **__restrict** ist, eine **__restrict** Variable zuweisen, lässt der Compiler weiterhin zu, dass die nicht-__restrict Variable als Alias verwendet wird. Dies unterscheidet sich vom Verhalten des **Einschränkungs** Schlüsselworts aus der C99-Spezifikation.
+- Wenn **__restrict** verwendet wird, gibt der Compiler die no-alias-Eigenschaft einer Variablen nicht aus. Das heißt, wenn Sie einer nicht **__restrict** Variablen eine **__restrict** zuweisen, lässt der Compiler weiterhin zu, dass die nicht __restrict Variable aliasiert wird. Dies unterscheidet sich vom Verhalten des **Schlüsselworts restrict** aus der C99-Spezifikation.
 
 Wenn Sie das Verhalten einer vollständigen Funktion beeinflussen, ist es im Allgemeinen besser, `__declspec ( restrict )` anstatt das Schlüsselwort zu verwenden.
 
-Aus Gründen der Kompatibilität mit früheren Versionen ist **_Restrict** ein Synonym für **__restrict** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Kompatibilität mit früheren Versionen ist **_restrict** ein Synonym für **__restrict** es sei denn, die Compileroption [/Za \(Disable language extensions)](../build/reference/za-ze-disable-language-extensions.md) wird angegeben.
 
-In Visual Studio 2015 und höher können **__restrict** für C++ Verweise verwendet werden.
+In Visual Studio 2015 und höher können **__restrict** für C++-Referenzen verwendet werden.
 
 > [!NOTE]
->  Bei Verwendung in einer Variablen, die auch das [volatile](../cpp/volatile-cpp.md) -Schlüsselwort aufweist, hat **volatile** Vorrang.
+> Bei Verwendung für eine Variable, die auch das [volatile](../cpp/volatile-cpp.md) Schlüsselwort hat, hat **volatile** Vorrang.
 
 ## <a name="example"></a>Beispiel
 
@@ -58,6 +58,6 @@ union z {
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Schlüsselwörter](../cpp/keywords-cpp.md)
+[Keywords](../cpp/keywords-cpp.md)

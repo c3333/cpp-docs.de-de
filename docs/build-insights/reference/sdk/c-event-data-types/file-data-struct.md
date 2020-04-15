@@ -1,6 +1,6 @@
 ---
 title: FILE_DATA Struktur
-description: Das C++ Build Insights SDK FILE_DATA Struktur Referenz.
+description: Das C++ Build Insights SDK FILE_DATA Strukturreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 72cae8c8eb81bdb8d94897c46c5af90c89e92ab4
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 6b7b0129c54fa4b1d5285bafb38761da45bab4e5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78335195"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325592"
 ---
 # <a name="file_data-structure"></a>FILE_DATA Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `FILE_DATA`-Struktur beschreibt eine Dateieingabe oder-Ausgabe.
+Die `FILE_DATA` Struktur beschreibt eine Dateieingabe oder -ausgabe.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,11 +38,11 @@ typedef struct FILE_DATA_TAG
 } FILE_DATA;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |  |  |
 |--|--|
-| `Path` | Der absolute Pfad der Datei. |
-| `TypeCode` | Ein Code, der den Typ der Datei beschreibt. Weitere Informationen finden Sie unter [FILE_TYPE_CODE](file-type-code-enum.md). |
+| `Path` | Der absolute Pfad der Datei |
+| `TypeCode` | Ein Code, der den Dateityp beschreibt. Weitere Informationen finden Sie [unter FILE_TYPE_CODE](file-type-code-enum.md). |
 
 ::: moniker-end

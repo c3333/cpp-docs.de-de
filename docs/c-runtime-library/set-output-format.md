@@ -25,19 +25,19 @@ helpviewer_keywords:
 - _set_output_format function
 - set_output_format function
 ms.assetid: 1cb48df8-44b4-4400-bd27-287831d6b3ff
-ms.openlocfilehash: b67abb58f4d62c7c54b61d1b1699f09c1bd51b40
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: c855df4c29a53fd898b920f6446afe4e568ba5bb
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957308"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360921"
 ---
 # <a name="_set_output_format"></a>_set_output_format
 
 Passt die von den Funktionen für formatierte E/A verwendeten Ausgabeformate an.
 
 > [!IMPORTANT]
->  Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
+> Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -56,7 +56,7 @@ unsigned int _set_output_format(
 
 Das vorherige Ausgabeformat.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 `_set_output_format` wird verwendet, um die Ausgabe von formatierten E/A-Funktionen, wie z.B. [printf_s](../c-runtime-library/reference/printf-s-printf-s-l-wprintf-s-wprintf-s-l.md), zu konfigurieren. Zurzeit ist die einzige Formatierungskonvention, die von dieser Funktion geändert werden kann, die Anzahl der Stellen, die in Exponenten in der Ausgabe von Gleitkommazahlen angezeigt werden.
 
@@ -64,13 +64,13 @@ Standardmäßig erfolgt die Ausgabe von Gleitkommazahlen durch Funktionen wie `p
 
 Um zweistellige Exponenten zu aktivieren, rufen Sie diese Funktion mit dem Parameter `_TWO_DIGIT_EXPONENT`auf, wie im Beispiel gezeigt. Um die zweistelligen Exponenten zu deaktivieren, rufen Sie diese Funktion mit dem Argument „0“ auf.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`_set_output_format`|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../c-runtime-library/compatibility.md) in der Einführung.
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../c-runtime-library/compatibility.md) in der Einführung.
 
 ## <a name="example"></a>Beispiel
 

@@ -1,9 +1,11 @@
 ---
 title: _putc_nolock, _putwc_nolock
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _putc_nolock
 - _putwc_nolock
+- _o__putc_nolock
+- _o__putwc_nolock
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +40,12 @@ helpviewer_keywords:
 - _puttc_nolock function
 - _putwc_nolock function
 ms.assetid: 3cfc7f21-c9e8-4b7f-b0fb-af0d4d85e7e1
-ms.openlocfilehash: fdec6373f79fd711b371014fc58e17c190a26e95
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: aa96275b29d2510400622f52fa34c58ae251ff6c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70950121"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338476"
 ---
 # <a name="_putc_nolock-_putwc_nolock"></a>_putc_nolock, _putwc_nolock
 
@@ -63,21 +66,23 @@ wint_t _putwc_nolock(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu schreibende Zeichen.
 
-*stream*<br/>
-Zeiger auf die **FILE**-Struktur.
+*Stream*<br/>
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Siehe **putc, putwc**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**_putc_nolock** und **_putwc_nolock** sind mit den Versionen ohne das Suffix **_nolock** identisch, mit dem Unterschied, dass Sie nicht vor Störungen durch andere Threads geschützt sind. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsicheren Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
+**_putc_nolock** und **_putwc_nolock** sind identisch mit den Versionen ohne **das _nolock** Suffix, außer dass sie nicht vor Interferenzen durch andere Threads geschützt sind. Sie sind möglicherweise schneller, da kein Mehraufwand zur Sperrung anderer Threads erforderlich ist. Verwenden Sie diese Funktionen nur in threadsichere Kontexten wie z. B. in Singlethreadanwendungen oder in Fällen, in denen der aufrufende Bereich die Threadisolation bereits handhabt.
 
-**_putwc_nolock** ist die breit Zeichen Version von **_putc_nolock**; die beiden Funktionen Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **_putc_nolock** unterstützt derzeit nicht die Ausgabe in einen Unicode-Stream.
+**_putwc_nolock** ist die breitgefächerte Version von **_putc_nolock**; Die beiden Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet wird. **_putc_nolock** unterstützt derzeit keine Ausgabe in einem UNICODE-Stream.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -87,12 +92,12 @@ Siehe **putc, putwc**.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_putc_nolock**|\<stdio.h>|
 |**_putwc_nolock**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -123,7 +128,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 This is the line of output

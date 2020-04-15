@@ -1,10 +1,13 @@
 ---
 title: rint, rintf, rintl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - rintf
 - rintl
 - rint
+- _o_rint
+- _o_rintf
+- _o_rintl
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +34,12 @@ helpviewer_keywords:
 - rint function
 - rintl function
 ms.assetid: 312ae3e6-278c-459a-9393-11b8f87d9184
-ms.openlocfilehash: ac9db3ee5a50bb334754a8a1191638a319829b97
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6489b7ebed5246738fb660dffd07a0b8f8ed9743
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170890"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332762"
 ---
 # <a name="rint-rintf-rintl"></a>rint, rintf, rintl
 
@@ -56,29 +60,31 @@ long double rint( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*X*<br/>
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **rint** -Funktionen geben einen Gleit Komma Wert zurück, der die nächste Ganzzahl in *x*darstellt. Die halbwerte werden entsprechend der aktuellen Einstellung des Gleit Komma-Rundungs Modus gerundet, identisch mit den **nearbyint** -Funktionen. Im Gegensatz zu den **nearbyint** -Funktionen können die **rint** -Funktionen die **FE_INEXACT** -Gleit Komma Ausnahme auslöst, wenn sich das Ergebnis in dem Wert des-Arguments unterscheidet. Es gibt keine Fehlerrückgabe.
+Die **Rint-Funktionen** geben einen Gleitkommawert zurück, der die nächste ganze Zahl bis *x*darstellt. Halbwerte werden entsprechend der aktuellen Einstellung des Gleitkommarundungsmodus gerundet, wie die **Nearbyint-Funktionen.** Im Gegensatz zu den **Nearbyint-Funktionen** können die **Rint-Funktionen** die **FE_INEXACT** Gleitkommaausnahme auslösen, wenn sich das Ergebnis im Wert vom Argument unterscheidet. Es gibt keine Fehlerrückgabe.
 
-|Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
+|Eingabe|SEH-Ausnahme|**_matherr** Ausnahme|
 |-----------|-------------------|--------------------------|
-|± ∞, QNAN, IND|none|none|
-|Abbrüche|EXCEPTION_FLT_UNDERFLOW|none|
+|± ∞, QNAN, IND|Keine|Keine|
+|Abbrüche|EXCEPTION_FLT_UNDERFLOW|Keine|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **rint** aufzurufen, die **float** -und **Long** **Double** -Werte akzeptieren und zurückgeben. In einem C-Programm nimmt **rint** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **Rint** aufrufen, die **Float-** und **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **rint** immer ein **Double**zurück.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**rint**, **rintf**, **rintl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -116,7 +122,7 @@ rintl(2.500000) is 3
 rintl(-2.500000) is -3
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ceil, ceilf, ceill](ceil-ceilf-ceill.md)<br/>

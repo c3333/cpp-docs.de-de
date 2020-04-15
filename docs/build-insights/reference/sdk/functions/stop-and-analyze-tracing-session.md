@@ -1,6 +1,6 @@
 ---
-title: Stopandanalyzetracingsession
-description: Die C++ Funktionsreferenz für das Build Insights SDK stopandanalyzetracingsession.
+title: StopAndAnalyzeTracingSession
+description: Der C++ Build Insights SDK StopAndAnalyzeTracingSession-Funktionsverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: b1c605bb63ac093f90128a03c37b186226130912
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 9c9bd4a092c22dfcdfb6d463b74207ec11ee6d64
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334217"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323706"
 ---
-# <a name="stopandanalyzetracingsession"></a>Stopandanalyzetracingsession
+# <a name="stopandanalyzetracingsession"></a>StopAndAnalyzeTracingSession
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `StopAndAnalyzeTracingSession`-Funktion beendet eine laufende Ablauf Verfolgungs Sitzung und speichert die resultierende Ablauf Verfolgung in einer temporären Datei. Eine Analyse Sitzung wird dann sofort mit der temporären Datei als Eingabe gestartet. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
+Die `StopAndAnalyzeTracingSession` Funktion beendet eine fortlaufende Ablaufverfolgungssitzung und speichert die resultierende Ablaufverfolgung in einer temporären Datei. Eine Analysesitzung wird dann sofort mit der temporären Datei als Eingabe gestartet. Ausführbare Dateien, die diese Funktion aufrufen, müssen über Administratorrechte verfügen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,20 +47,20 @@ RESULT_CODE StopAndAnalyzeTracingSession(
 
 ### <a name="parameters"></a>Parameter
 
-*Sessionname* -\
-Der Name der Ablauf Verfolgungs Sitzung, die angehalten werden soll. Verwenden Sie den gleichen Sitzungs Namen wie der, der an [starttracingsession](start-tracing-session.md), [starttracingsessiona](start-tracing-session-a.md)oder [starttracingsessionw](start-tracing-session-w.md)übergeben wird.
+*sessionName*\
+Der Name der zu beendenden Ablaufverfolgungssitzung. Verwenden Sie denselben Sitzungsnamen wie an [StartTracingSession](start-tracing-session.md), [StartTracingSessionA](start-tracing-session-a.md)oder [StartTracingSessionW](start-tracing-session-w.md)übergeben.
 
-" *numofanalysispasses* "\
-Die Anzahl der für die Ablauf Verfolgung zu testenden Analyse Durchläufen. Die Ablauf Verfolgung wird einmal pro Analyse Durchlauf durch die angegebene Analysegruppe weitergeleitet.
+*numberOfAnalysisPasses*\
+Die Anzahl der Analysedurchläufe, die für die Ablaufverfolgung ausgeführt werden sollen. Die Ablaufverfolgung wird einmal pro Analysedurchlauf durch die bereitgestellte Analysegruppe geleitet.
 
-*Statistik*\
-Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md) Objekt. `StopAndAnalyzeTracingSession` schreibt Statistiken der Ablauf Verfolgungs Sammlung in dieses Objekt, bevor Sie zurückgegeben wird
+*Statistiken*\
+Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md) Objekt. `StopAndAnalyzeTracingSession`schreibt Ablaufverfolgungssammlungsstatistiken in diesem Objekt, bevor es zurückgegeben wird.
 
-*analyzergroup* -\
-Die Analyzer-Gruppe, die für die Analyse verwendet wird. Rufen Sie [makestaticanalyzergroup](make-static-analyzer-group.md) auf, um eine Analysegruppe zu erstellen. Wenn Sie eine dynamische Analysegruppe verwenden möchten, die von [makedynamicanalyzergroup](make-dynamic-analyzer-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in einer statischen Analysegruppe, indem Sie die Adresse an `MakeStaticAnalyzerGroup`übergeben.
+*analyzerGroup*\
+Die für die Analyse verwendete Analysegruppe. Rufen Sie [MakeStaticAnalyzerGroup](make-static-analyzer-group.md) auf, um eine Analyzer-Gruppe zu erstellen. Wenn Sie eine dynamische Analysatorgruppe verwenden möchten, die von [MakeDynamicAnalyzerGroup](make-dynamic-analyzer-group.md)abgerufen wurde, kapseln `MakeStaticAnalyzerGroup`Sie sie zunächst in einer statischen Analyzergruppe ein, indem Sie ihre Adresse an übergeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ::: moniker-end

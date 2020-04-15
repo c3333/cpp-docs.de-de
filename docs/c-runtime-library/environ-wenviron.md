@@ -13,19 +13,19 @@ helpviewer_keywords:
 - process environment
 - wenviron function
 ms.assetid: 7e639962-6536-47cd-8095-0cbe44a56e03
-ms.openlocfilehash: 56f6f1d06d834ccab68daf859fac065cf215582c
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 8d67947c93d1387bfdc38c3bae5b3f978024a725
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57748922"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81349379"
 ---
-# <a name="environ-wenviron"></a>_environ, _wenviron
+# <a name="_environ-_wenviron"></a>_environ, _wenviron
 
 Die `_environ`-Variable ist ein Zeiger auf ein Array von Zeigern auf Multibyte-Zeichenfolgen, die die Prozessumgebung darstellen. Diese globale Variable ist für die sichereren funktionalen Versionen [getenv_s, _wgetenv_s](../c-runtime-library/reference/getenv-s-wgetenv-s.md) und [_putenv_s, _wputenv_s](../c-runtime-library/reference/putenv-s-wputenv-s.md) veraltet, die anstelle der globalen Variablen verwendet werden sollten. `_environ` wird in Stdlib.h deklariert.
 
 > [!IMPORTANT]
->  Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,7 +33,7 @@ Die `_environ`-Variable ist ein Zeiger auf ein Array von Zeigern auf Multibyte-Z
 extern char **_environ;
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 `_environ` wird in einem Programm, das die `main`-Funktion verwendet, gemäß den Einstellungen aus der Betriebssystemumgebung beim Programmstart initialisiert. Die Umgebung besteht aus mehreren Einträgen, die folgendes Format aufweisen:
 
@@ -56,7 +56,7 @@ In einem Programm, das `wmain` verwendet, ist `_environ` dementsprechend anfangs
 Wenn in einem Programm zwei Kopien der Umgebung (MBCS und Unicode) gleichzeitig vorhanden sind, muss das Laufzeitsystem beide Kopien verwalten, wodurch sich die Ausführungszeit verlangsamt. Beispielsweise erfolgt bei jedem Aufruf von `_putenv` automatisch auch ein Aufruf von `_wputenv`, damit die beiden Umgebungszeichenfolgen übereinstimmen.
 
 > [!CAUTION]
->  In seltenen Fällen, wenn das Laufzeitsystem sowohl eine Unicodeversion als auch eine Multibyteversion der Umgebung verwaltet, stimmen diese zwei Versionen möglicherweise nicht exakt überein. Dies liegt daran, dass die Zuordnung von einer eindeutigen Unicodezeichenfolge zu einer Multibyte-Zeichenfolge nicht unbedingt eindeutig ist, obwohl sich jede eindeutige Multibyte-Zeichenfolge einer eindeutigen Unicodezeichenfolge zuordnen lässt. Aus diesem Grund sind möglicherweise zwei unterschiedliche Unicodezeichenfolgen der gleichen Multibyte-Zeichenfolge zugeordnet.
+> In seltenen Fällen, wenn das Laufzeitsystem sowohl eine Unicodeversion als auch eine Multibyteversion der Umgebung verwaltet, stimmen diese zwei Versionen möglicherweise nicht exakt überein. Dies liegt daran, dass die Zuordnung von einer eindeutigen Unicodezeichenfolge zu einer Multibyte-Zeichenfolge nicht unbedingt eindeutig ist, obwohl sich jede eindeutige Multibyte-Zeichenfolge einer eindeutigen Unicodezeichenfolge zuordnen lässt. Aus diesem Grund sind möglicherweise zwei unterschiedliche Unicodezeichenfolgen der gleichen Multibyte-Zeichenfolge zugeordnet.
 
 Der Abruf von `_environ` in einem Unicodekontext ist bei Verwendung einer [/MD](../build/reference/md-mt-ld-use-run-time-library.md)- oder `/MDd`-Verknüpfung ohne Bedeutung. Für die CRT-DLL ist der Typ des Programms (Breitzeichen oder Multibytezeichen) unbekannt. Es wird nur der Multibyte-Zeichentyp erstellt, da dies das wahrscheinlichste Szenario ist.
 

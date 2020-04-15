@@ -1,9 +1,11 @@
 ---
 title: _cgets, _cgetws
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cgetws
 - _cgets
+- _o__cgets
+- _o__cgetws
 api_location:
 - msvcr100.dll
 - msvcr110.dll
@@ -14,6 +16,7 @@ api_location:
 - msvcr110_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,22 +33,22 @@ helpviewer_keywords:
 - cgetws function
 - cgets function
 ms.assetid: 4d5e134a-58c3-4f62-befd-5d235b0212f4
-ms.openlocfilehash: 97a8de0a7fd0f278e6b0e3730a52ca3d0be6e07a
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: afffb691ca8bf8d180cac11ac5f16a84d871b1b9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75298999"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334414"
 ---
 # <a name="_cgets-_cgetws"></a>_cgets, _cgetws
 
 Ruft eine Zeichenfolge aus der Konsole ab. Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
 
 > [!IMPORTANT]
->  Diese Funktionen sind veraltet. Von Visual Studio 2015 an sind sie nicht in der CRT verfügbar. Dies sicheren Versionen dieser Funktionen, „_cgets_s“ und „_cgetws_s“, stehen noch zur Verfügung. Informationen zu diesen alternativen Funktionen finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
+> Diese Funktionen sind veraltet. Von Visual Studio 2015 an sind sie nicht in der CRT verfügbar. Dies sicheren Versionen dieser Funktionen, „_cgets_s“ und „_cgetws_s“, stehen noch zur Verfügung. Informationen zu diesen alternativen Funktionen finden Sie unter [_cgets_s, _cgetws_s](../c-runtime-library/reference/cgets-s-cgetws-s.md).
 
 > [!IMPORTANT]
->  Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> Diese API kann nicht in Anwendungen verwendet werden, die in Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,16 +69,16 @@ wchar_t *_cgetws(
 ); // C++ only
 ```
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*Puffer*<br/>
 Speicherort für Daten.
 
 ## <a name="return-value"></a>Rückgabewert
 
 `_cgets` und `_cgetws` geben bei `buffer[2]`einen Zeiger auf den Anfang der Zeichenfolge zurück. Wenn `buffer`**NULL** ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **NULL** zurückgegeben und `errno` auf `EINVAL` festgelegt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen lesen eine Zeichenfolge von der Konsole und speichern die Zeichenfolge und ihre Länge im Speicherort, auf den `buffer`zeigt. Der `buffer` -Parameter muss ein Zeiger auf ein Zeichenarray sein. `buffer[0]`, das erste Element des Arrays, muss die maximale Länge (in Zeichen) der zu lesenden Zeichenfolge enthalten. Das Array muss genügend Elemente enthalten, um die Zeichenfolge, ein abschließendes Nullzeichen ('\0') und zwei zusätzliche Bytes einzuschließen. Die Funktion liest die Zeichen bis zu einer Kombination aus Wagenrücklauf und Zeilenvorschub (CR-LF) oder bis die angegebene Anzahl von Zeichen gelesen ist. Die Zeichenfolge wird ab `buffer[2]`gespeichert. Wenn die Funktion ein CR-LF liest, speichert sie das NULL-Zeichen ('\0'). Die Funktion speichert dann im zweiten Arrayelement `buffer[1]`die tatsächliche Länge der Zeichenfolge.
 
@@ -83,15 +86,17 @@ Da alle Bearbeitungsschlüssel aktiv sind, wenn `_cgets` oder `_cgetws` in einem
 
 In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
+
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |`_cgetts`|`_cgets`|`_cgets`|`_cgetws`|
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`_cgets`|\<conio.h>|
 |`_cgetws`|\<conio.h> oder \<wchar.h>|
@@ -144,5 +149,5 @@ Text = A line of input.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Konsole und Port-E/A](../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsole und Port-I/O](../c-runtime-library/console-and-port-i-o.md)<br/>
 [_getch, _getwch](../c-runtime-library/reference/getch-getwch.md)

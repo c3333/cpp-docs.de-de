@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - ICommandTarget interface [MFC]
 ms.assetid: dd9927f6-3479-4e7c-8ef9-13206cf901f3
-ms.openlocfilehash: a224b868ea1923bb4f84b0d682c71fadb63da572
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 865a8a27d96f84f536e40ec5a7bbbbdd9837dfcd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62322068"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81356918"
 ---
 # <a name="icommandtarget-interface"></a>ICommandTarget-Schnittstelle
 
-Stellt ein Steuerelement mit einer Schnittstelle empfangen Befehle von einem Befehlsquellobjekt bereit.
+Stellt ein Benutzersteuerelement mit einer Schnittstelle zum Empfangen von Befehlen von einem Befehlsquellobjekt bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,25 +29,25 @@ interface class ICommandTarget
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[ICommandTarget::Initialize](#initialize)|Initialisiert das Zielobjekt für den Befehl.|
+|[ICommandTarget::Initialisieren](#initialize)|Initialisiert das Befehlszielobjekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Beim Hosten eines Benutzersteuerelements in MFC-Ansicht, [CWinFormsView](../../mfc/reference/cwinformsview-class.md) Routen Befehle und Update-Befehl UI-Nachrichten an das Steuerelement, damit Sie die MFC-Befehle (z. B. Frame Menüelemente und Symbolleistenschaltflächen) verarbeiten kann. Durch die Implementierung `ICommandTarget`, geben Sie dem Benutzersteuerelement einen Verweis auf die [ICommandSource](../../mfc/reference/icommandsource-interface.md) Objekt.
+Wenn Sie ein Benutzersteuerelement in einer MFC-Ansicht hosten, leitet [CWinFormsView](../../mfc/reference/cwinformsview-class.md) Befehle weiter und aktualisiert Befehlsbenutzer-UI-Meldungen an das Benutzersteuerelement, damit es MFC-Befehle verarbeiten kann (z. B. Framemenüelemente und Symbolleistenschaltflächen). Durch `ICommandTarget`implementieren sie , geben Sie dem Benutzersteuerelement einen Verweis auf das [ICommandSource-Objekt.](../../mfc/reference/icommandsource-interface.md)
 
-Weitere Informationen finden Sie unter [How to: Hinzufügen von Befehlsrouting an der Windows Forms-Steuerelement](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) ein Beispiel zur Verwendung für `ICommandTarget`.
+Weitere Informationen [finden Sie unter Gewusst wie: Hinzufügen von Befehlsrouting zum Windows-Formularsteuerelement](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) für ein Beispiel für die Verwendung `ICommandTarget`von .
 
-Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [verwenden ein Windows Form-Benutzersteuerelements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
+Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwenden einer Windows Form Benutzersteuerung in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxwinforms.h (definiert in der Assembly atlmfc\lib\mfcmifc80.dll)
+**Header:** afxwinforms.h (definiert in assembly atlmfc-lib-mfcmifc80.dll)
 
-##  <a name="initialize"></a> ICommandTarget:: Initialize
+## <a name="icommandtargetinitialize"></a><a name="initialize"></a>ICommandTarget::Initialisieren
 
-Initialisiert das Zielobjekt für den Befehl.
+Initialisiert das Befehlszielobjekt.
 
 ```
 void Initialize(ICommandSource^ cmdSource);
@@ -55,14 +55,14 @@ void Initialize(ICommandSource^ cmdSource);
 
 ### <a name="parameters"></a>Parameter
 
-*cmdSource*<br/>
+*cmdQuelle*<br/>
 Ein Handle für das Befehlsquellobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Beim Hosten eines Benutzersteuerelements in MFC-Ansicht, leitet CWinFormsView Befehle und UI-befehlsmeldungen Update auf das Benutzersteuerelement, damit Sie die MFC-Befehle verarbeiten kann.
+Wenn Sie ein Benutzersteuerelement in einer MFC-Ansicht hosten, leitet CWinFormsView Befehle weiter und aktualisiert Befehlsbenutzer-UI-Meldungen an das Benutzersteuerelement, damit es MFC-Befehle verarbeiten kann.
 
-Diese Methode das Zielobjekt für den Befehl initialisiert und verknüpft es mit den angegebenen Befehl Quelle Objekt CmdSource. Es sollte in der Implementierung der Benutzer Control-Klasse aufgerufen werden. Bei der Initialisierung sollten Sie mit das Befehlsquellobjekt vom aufrufenden ICommandSource::AddCommandHandler in der Initialize-Implementierung Befehlshandler registrieren. Siehe Gewusst wie: Hinzufügen von Befehlsrouting für das Windows Forms-Steuerelement für ein Beispiel zum Initialisieren, die zu diesem Zweck verwenden.
+Diese Methode initialisiert das Befehlszielobjekt und ordnet es dem angegebenen Befehlsquellobjekt cmdSource zu. Sie sollte in der Implementierung der Benutzersteuerungsklasse aufgerufen werden. Bei der Initialisierung sollten Sie Befehlshandler beim Befehlsquellobjekt registrieren, indem Sie ICommandSource::AddCommandHandler in der Initialize-Implementierung aufrufen. Weitere Informationen finden Sie unter Gewusst wie: Hinzufügen von Befehlsrouting zum Windows-Formularsteuerelement, um ein Beispiel dafür zu finden, wie Sie initialisieren verwenden.
 
 ## <a name="see-also"></a>Siehe auch
 

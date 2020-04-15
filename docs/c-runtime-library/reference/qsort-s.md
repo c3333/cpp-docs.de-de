@@ -1,8 +1,9 @@
 ---
 title: qsort_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - qsort_s
+- _o_qsort_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - qsort_s function
 - sorting arrays
 ms.assetid: 6ee817b0-4408-4355-a5d4-6605e419ab91
-ms.openlocfilehash: aa911dbf2990bb976341a19cdb1eb88707c90e79
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 6013098199e1b69d03dc9cf2780cbf4376abcc0d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949752"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332974"
 ---
 # <a name="qsort_s"></a>qsort_s
 
@@ -62,15 +64,15 @@ Arraygröße in Elementen.
 *width*<br/>
 Elementgröße in Bytes.
 
-*compare*<br/>
-Vergleichsfunktion. Das erste Argument ist der *Kontext* Zeiger. Das zweite Argument ist ein Zeiger auf den *Schlüssel* für die Suche. Das dritte Argument ist ein Zeiger auf das Array Element, das mit *Key*verglichen werden soll.
+*Vergleichen*<br/>
+Vergleichsfunktion. Das erste Argument ist der *Kontextzeiger.* Das zweite Argument ist ein Zeiger auf den *Schlüssel* für die Suche. Das dritte Argument ist ein Zeiger auf das Arrayelement, das mit *key*verglichen werden soll.
 
 *context*<br/>
-Ein Zeiger auf einen Kontext, bei dem es sich um ein beliebiges Objekt handeln kann, auf das die *Vergleichs* Routine zugreifen muss.
+Ein Zeiger auf einen Kontext, der jedes Objekt sein kann, auf das die *Vergleichsroutine* zugreifen muss.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **qsort_s** -Funktion implementiert einen Quick-Sort-Algorithmus, um ein Array von *Zahlen* Elementen zu sortieren, wobei jede *Breite* von Bytes ist. Die Argument *Basis* ist ein Zeiger auf die Basis des Arrays, das sortiert werden soll. **qsort_s** überschreibt dieses Array mit den sortierten Elementen. Beim Argument *Compare* handelt es sich um einen Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Array Elemente vergleicht und einen Wert zurückgibt, der Ihre Beziehung angibt. **qsort_s** Ruft die *Vergleichs* Routine einmal oder mehrmals während der Sortierung auf, wobei bei jedem Aufruf Zeiger auf zwei Array Elemente übergeben werden:
+Die **qsort_s-Funktion** implementiert einen Schnellsorsierungsalgorithmus, um ein Array von *Zahlenelementen* mit jeweils *großen* Bytes zu sortieren. Die *Argumentbasis* ist ein Zeiger auf die Basis des zu sortierenden Arrays. **qsort_s** überschreibt dieses Array mit den sortierten Elementen. Der *Argumentvergleich* ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Arrayelemente vergleicht und einen Wert zurückgibt, der ihre Beziehung angibt. **qsort_s** ruft die *Vergleichsroutine* ein oder mehrere Male während der Sortierung auf und übergibt Zeiger an zwei Arrayelemente bei jedem Aufruf:
 
 ```C
 compare( context, (void *) & elem1, (void *) & elem2 );
@@ -78,40 +80,42 @@ compare( context, (void *) & elem1, (void *) & elem2 );
 
 Die Routine muss die Elemente vergleichen und einen der folgenden Werte zurückgeben:
 
-|Rückgabewert|Beschreibung|
+|Rückgabewert|BESCHREIBUNG|
 |------------------|-----------------|
 |< 0|**elem1** kleiner als **elem2**|
-|0|**elem1** Äquivalent zu **elem2**|
+|0|**elem1** entspricht **elem2**|
 |> 0|**elem1** größer als **elem2**|
 
-Das Array wird in aufsteigender Reihenfolge sortiert, wie von der Vergleichsfunktion definiert. Kehren Sie die Richtung „größer als“ und „kleiner als“ in der Vergleichsfunktion um, um ein Array in absteigender Reihenfolge zu sortieren.
+Das Array wird in aufsteigender Reihenfolge sortiert, wie von der Vergleichsfunktion definiert. Kehren Sie den Sinn der „größer als“ und „kleiner als“ in der Vergleichsfunktion um, um ein Array in absteigender Reihenfolge zu sortieren.
 
-Wenn ungültige Parameter an die Funktion übergeben werden, ruft sie den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parametervalidierung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion zurück, und **errno** ist auf **EINVAL**festgelegt. Weitere Informationen finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Wenn ungültige Parameter an die Funktion übergeben werden, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion zurück und **errno** wird auf **EINVAL**gesetzt. Weitere Informationen finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|Key|Basis|compare|num|Breite|errno|
+|Schlüssel|base|compare|num|width|errno|
 |---------|----------|-------------|---------|-----------|-----------|
-|**NULL**|any|any|any|any|**EINVAL**|
-|any|**NULL**|any|!= 0|any|**EINVAL**|
-|any|any|any|any|<= 0|**EINVAL**|
-|any|any|**NULL**|any|any|**EINVAL**|
+|**Null**|any|any|any|any|**Einval**|
+|any|**Null**|any|!= 0|any|**Einval**|
+|any|any|any|any|<= 0|**Einval**|
+|any|any|**Null**|any|any|**Einval**|
 
-**qsort_s** hat das gleiche Verhalten wie **qsort** , verfügt aber über den *Kontext* Parameter und legt **errno**fest. Durch die Übergabe eines *Kontext* Parameters können Vergleichsfunktionen einen Objekt Zeiger verwenden, um auf Objektfunktionen oder andere Informationen zuzugreifen, auf die über einen Element Zeiger nicht zugegriffen werden kann. Durch das Hinzufügen des *Kontext* Parameters wird **qsort_s** sicherer, da der *Kontext* verwendet werden kann, um Fehler beim erneuten eintreten zu vermeiden, die durch die Verwendung statischer Variablen zur Bereitstellung von freigegebenen Informationen für die *Vergleichs* Funktion eingeführt werden.
+**qsort_s** hat das gleiche Verhalten wie **qsort,** hat aber den *Kontextparameter* und setzt **errno**. Durch Übergeben eines *Kontextparameters* können Vergleichsfunktionen einen Objektzeiger verwenden, um auf Objektfunktionen oder andere Informationen zuzugreifen, auf die nicht über einen Elementzeiger zugegriffen werden kann. Das Hinzufügen des *Kontextparameters* macht **qsort_s** sicherer, da *Kontext* verwendet werden kann, um Reentrancy-Fehler zu vermeiden, die durch die Verwendung statischer Variablen eingeführt werden, um freigegebene Informationen für die *Vergleichsfunktion* verfügbar zu machen.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**qsort_s**|\<stdlib.h> und \<search.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-**Bibliotheken** Alle Versionen der [CRT-Bibliotheksfunktionen](../../c-runtime-library/crt-library-features.md).
+**Bibliotheken:** Alle Versionen der [CRT-Bibliotheksfunktionen](../../c-runtime-library/crt-library-features.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie der *context* -Parameter in der **qsort_s** -Funktion verwendet wird. Der *Kontext* Parameter erleichtert das Ausführen Thread sicherer Sortierungen. Anstatt statische Variablen zu verwenden, die synchronisiert werden müssen, um die Thread Sicherheit sicherzustellen, übergeben Sie in jeder Sortierreihenfolge einen anderen *Kontext* Parameter. In diesem Beispiel wird ein Gebiets Schema Objekt als *Kontext* Parameter verwendet.
+Im folgenden Beispiel wird veranschaulicht, wie der *Kontextparameter* in der **qsort_s-Funktion** verwendet wird. Der *Kontextparameter* erleichtert die Threadsichere Sortierung. Anstatt statische Variablen zu verwenden, die synchronisiert werden müssen, um die Threadsicherheit zu gewährleisten, übergeben Sie in jeder Sortierung einen anderen *Kontextparameter.* In diesem Beispiel wird ein Gebietsschemaobjekt als *Kontextparameter* verwendet.
 
 ```cpp
 // crt_qsort_s.cpp

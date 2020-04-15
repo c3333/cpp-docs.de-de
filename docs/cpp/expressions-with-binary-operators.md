@@ -6,12 +6,12 @@ helpviewer_keywords:
 - binary operators [C++]
 - expressions [C++], binary operators
 ms.assetid: 6dea3df4-a4bd-42c3-9807-4a27c120ac9a
-ms.openlocfilehash: 2dbda1759dcb37a1f2a8cbe87f24adbb979ca085
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a5c9127db4714575cdf037147cc97601a4523e93
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188986"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360847"
 ---
 # <a name="expressions-with-binary-operators"></a>Ausdrücke mit binären Operatoren
 
@@ -19,78 +19,78 @@ Binäre Operatoren agieren in zwei Operanden in einem Ausdruck. Die binären Ope
 
 - [Multiplikative Operatoren](../cpp/multiplicative-operators-and-the-modulus-operator.md)
 
-   - Multiplikation (*)
+  - Multiplikation (*)
 
-   - Division (/)
+  - Division (/)
 
-   - Modulo (%)
+  - Modulo (%)
 
 - [Additive Operatoren](../cpp/additive-operators-plus-and.md)
 
-   - Addition (+)
+  - Addition (+)
 
-   - Subtraktion (-)
+  - Subtraktion (-)
 
-- [Shift operators (Schiebeoperatoren)](../cpp/left-shift-and-right-shift-operators-input-and-output.md)
+- [Schichtoperatoren](../cpp/left-shift-and-right-shift-operators-input-and-output.md)
 
-   - Rechte UMSCHALTTASTE (> >)
+  - Rechtsruck (>>)
 
-   - Left Shift (< <)
+  - Linksverschiebung (<<)
 
-- [Relationale und Gleichheits Operatoren](../cpp/relational-operators-equal-and-equal.md)
+- [Relationale und Gleichstellungsakteure](../cpp/relational-operators-equal-and-equal.md)
 
-   - Kleiner als (\<)
+  - Kleiner als (\<)
 
-   - Größer als (>)
+  - Größer als (>)
 
-   - Kleiner als oder gleich (\<=)
+  - Kleiner oder gleich\<( =)
 
-   - Größer als oder gleich (>=)
+  - Größer als oder gleich (>=)
 
-   - Ist gleich (==)
+  - Ist gleich (==)
 
-   - Ungleich (!=)
+  - Ungleich (!=)
 
 - Bitweise Operatoren
 
-   - [Bitweises and (&)](../cpp/bitwise-and-operator-amp.md)
+  - [Bitweise und (&)](../cpp/bitwise-and-operator-amp.md)
 
-   - [Bitweises exklusives OR (^)](../cpp/bitwise-exclusive-or-operator-hat.md)
+  - [Bitweise exklusiveS ODER ()-](../cpp/bitwise-exclusive-or-operator-hat.md)
 
-   - [Bitweises inklusives OR (&#124;)](../cpp/bitwise-inclusive-or-operator-pipe.md)
+  - [Bitweise inklusive ODER (&#124;)](../cpp/bitwise-inclusive-or-operator-pipe.md)
 
 - Logische Operatoren
 
-   - [Logisches and (& &)](../cpp/logical-and-operator-amp-amp.md)
+  - [Logisches UND (&&)](../cpp/logical-and-operator-amp-amp.md)
 
-   - [Logisches OR (&#124;&#124;)](../cpp/logical-or-operator-pipe-pipe.md)
+  - [Logisches ODER (&#124;&#124;)](../cpp/logical-or-operator-pipe-pipe.md)
 
-- [Assignment operators (Zuweisungsoperatoren)](../cpp/assignment-operators.md)
+- [Zuweisungsoperatoren](../cpp/assignment-operators.md)
 
-   - Zuweisung (=)
+  - Zuweisung (=)
 
-   - Additionszuweisung (+=)
+  - Additionszuweisung (+=)
 
-   - Subtraktions Zuweisung (-=)
+  - Subtraktionszuweisung (-=)
 
-   - Multiplikationszuweisung (*=)
+  - Multiplikationszuweisung (*=)
 
-   - Divisionszuweisung (/=)
+  - Divisionszuweisung (/=)
 
-   - Modulozuweisung (%=)
+  - Modulozuweisung (%=)
 
-   - Left Shift-Zuweisung (<\<=)
+  - Linksverschiebungszuweisung \<(<=)
 
-   - Right Shift-Zuweisung (> > =)
+  - Rechtsverschiebungszuweisung (>>=)
 
-   - Bitweise AND-Zuweisung (& =)
+  - Bitweise UND Zuordnung (&=)
 
-   - Bitweise exklusive OR-Zuweisung (^=)
+  - Bitweise exklusive OR-Zuweisung (^=)
 
-   - Bitweise inklusive OR-Zuweisung (&#124;=)
+  - Bitweise inklusive ODER-Zuweisung (&#124;=)
 
-- [Komma Operator](../cpp/comma-operator.md) (,)
+- [Komma-Operator](../cpp/comma-operator.md) (,)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Ausdruckstypen](../cpp/types-of-expressions.md)

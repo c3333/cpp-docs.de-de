@@ -1,8 +1,9 @@
 ---
 title: _set_abort_behavior
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - _set_abort_behavior
+- _o__set_abort_behavior
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,19 +28,19 @@ helpviewer_keywords:
 - aborting programs
 - _set_abort_behavior function
 - set_abort_behavior function
-ms.openlocfilehash: a63d4e77a91dafa4500d5fef8e9b5e94ee28cfbd
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fd3a3c2f99d1702cdccf68328c2122b965b2d078
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948669"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81337868"
 ---
 # <a name="_set_abort_behavior"></a>_set_abort_behavior
 
 Gibt die Aktion an, die ausgeführt werden soll, wenn ein Programm nicht normal beendet wird.
 
 > [!NOTE]
-> Verwenden Sie die [Abbruch](abort.md) -Funktion nicht zum Herunterfahren einer Microsoft Store-App, mit Ausnahme von Test-oder Debugszenarien. Programmgesteuerte oder UI-Methoden zum Schließen einer Store-App sind gemäß den [Microsoft Store Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle).
+> Verwenden Sie die [Abbruchfunktion](abort.md) nicht, um eine Microsoft Store-App herunterzufahren, außer in Test- oder Debugszenarios. Programmgesteuerte oder UI-Möglichkeiten zum Schließen einer Store-App sind gemäß den [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)nicht zulässig. Weitere Informationen finden Sie unter [UWP-App-Lebenszyklus](/windows/uwp/launch-resume/app-lifecycle).
 
 ## <a name="syntax"></a>Syntax
 
@@ -51,27 +53,29 @@ unsigned int _set_abort_behavior(
 
 ### <a name="parameters"></a>Parameter
 
-*flags*<br/>
-Neuer Wert der [Abbruch](abort.md) -Flags.
+*Flaggen*<br/>
+Neuer Wert der [Abbruchflags.](abort.md)
 
-*chel*<br/>
-Maske für die festzulegenden [Abbruch](abort.md) -Flags-Bits.
+*mask*<br/>
+Maske für die [abzubrechenden](abort.md) Flags Bits, die festgelegt werden sollen.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Der alte Wert der Flags.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Es gibt zwei [Abbruch](abort.md) -Flags: **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm nicht normal beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruch](abort.md) -Funktion aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. **_CALL_REPORTFAULT**, sofern festgelegt, gibt an, dass ein Watson-Absturz Abbild generiert und gemeldet wird, wenn [Abbruch](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
+Es gibt zwei [Abbruchflags:](abort.md) **_WRITE_ABORT_MSG** und **_CALL_REPORTFAULT**. **_WRITE_ABORT_MSG** bestimmt, ob eine hilfreiche Textnachricht gedruckt wird, wenn ein Programm ungewöhnlich beendet wird. Die Meldung besagt, dass die Anwendung die [Abbruchfunktion](abort.md) aufgerufen hat. Beim Standardverhalten wird die Meldung ausgeben. **_CALL_REPORTFAULT**, wenn festgelegt, gibt an, dass ein Watson-Absturzabbild generiert und gemeldet wird, wenn [abort](abort.md) aufgerufen wird. Standardmäßig ist die Absturzabbildberichterstellung in den Nichtdebugversionen aktiviert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_set_abort_behavior**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -96,4 +100,4 @@ Suppressing the abort message. If successful, this message will be the only outp
 
 ## <a name="see-also"></a>Siehe auch
 
-[abort](abort.md)<br/>
+[Abbrechen](abort.md)<br/>

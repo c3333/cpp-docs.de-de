@@ -1,6 +1,6 @@
 ---
 title: _atodbl, _atodbl_l, _atoldbl, _atoldbl_l, _atoflt, _atoflt_l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _atoldbl
 - _atoldbl_l
@@ -8,6 +8,12 @@ api_name:
 - _atoflt
 - _atoflt_l
 - _atodbl_l
+- _o__atodbl
+- _o__atodbl_l
+- _o__atoflt
+- _o__atoflt_l
+- _o__atoldbl
+- _o__atoldbl_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -20,6 +26,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -52,16 +59,16 @@ helpviewer_keywords:
 - _atoflt function
 - _atodbl_l function
 ms.assetid: 2d2530f4-4bd4-42e3-8083-f2d2fbc8432a
-ms.openlocfilehash: 3f3b164042006cab22d0dfd9a7968e2d2e494f5c
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5f304fd163c2ba1c57a4daee8c2a3307d8ba870a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70943623"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348960"
 ---
 # <a name="_atodbl-_atodbl_l-_atoldbl-_atoldbl_l-_atoflt-_atoflt_l"></a>_atodbl, _atodbl_l, _atoldbl, _atoldbl_l, _atoflt, _atoflt_l
 
-Konvertiert eine Zeichenfolge in einen Double-Wert ( **_atodbl**), long Double ( **_atoldbl**) oder float ( **_atoflt**).
+Konvertiert eine Zeichenfolge in ein Double (**_atodbl**), Long Double (**_atoldbl**) oder float (**_atoflt**).
 
 ## <a name="syntax"></a>Syntax
 
@@ -79,7 +86,7 @@ int _atoflt_l( _CRT_FLOAT * value, const char * str, locale_t locale );
 *value*<br/>
 Der double-, long double- oder float-Wert, der erstellt wird, indem die Zeichenfolge in einen Gleitkommawert konvertiert wird. Diese Werte werden in eine Struktur eingeschlossen.
 
-*str*<br/>
+*Str*<br/>
 Die zu analysierende Zeichenfolge, die in einen Gleitkommawert konvertiert wird.
 
 *locale*<br/>
@@ -87,15 +94,17 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg 0 zurück. Mögliche Fehlercodes sind " **_UNDERFLOW** " oder " **_OVERFLOW**", die in der \<Header Datei "Math. h" > definiert sind.
+Gibt bei Erfolg 0 zurück. Mögliche Fehlercodes sind **_UNDERFLOW** oder **_OVERFLOW**, \<die in der Headerdatei math.h> definiert sind.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Funktionen konvertieren eine Zeichenfolge in einen Gleitkommawert. Der Unterschied zwischen diesen Funktionen und der **atof** -Funktions Familie besteht darin, dass diese Funktionen keinen Gleit Komma Code generieren und keine Hardware Ausnahmen verursachen. Stattdessen werden Fehlerzustände als Fehlercodes gemeldet.
+Diese Funktionen konvertieren eine Zeichenfolge in einen Gleitkommawert. Der Unterschied zwischen diesen Funktionen und der **atof-Funktionsfamilie** besteht darin, dass diese Funktionen keinen Gleitkommacode generieren und keine Hardwareausnahmen verursachen. Stattdessen werden Fehlerzustände als Fehlercodes gemeldet.
 
-Wenn eine Zeichenfolge keine gültige Interpretation als Gleit Komma Wert aufweist, wird der *Wert* auf 0 (null) festgelegt, und der Rückgabewert ist 0 (null).
+Wenn eine Zeichenfolge keine gültige Interpretation als Gleitkommawert hat, wird der *Wert* auf Null gesetzt, und der Rückgabewert ist Null.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind identisch mit den Versionen, die nicht über das-Suffix verfügen, mit dem Unterschied, dass Sie den Gebiets *Schema Parameter verwenden, der anstelle* des aktuellen Thread Gebiets Schemas übergeben wurde.
+Die Versionen dieser Funktionen, die über das **suffix _l** verfügen, sind identisch mit den Versionen, die nicht über das Suffix verfügen, mit der Ausnahme, dass sie den *Gebietsschemaparameter* verwenden, der anstelle des aktuellen Threadgebietsschemas übergeben wird.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 

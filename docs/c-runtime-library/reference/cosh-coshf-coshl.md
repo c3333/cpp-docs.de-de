@@ -1,10 +1,11 @@
 ---
 title: cosh, coshf, coshl
-ms.date: 04/11/2018
+ms.date: 4/2/2020
 api_name:
 - cosh
 - coshf
 - coshl
+- _o_cosh
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +33,12 @@ helpviewer_keywords:
 - coshl function
 - trigonometric functions
 - hyperbolic functions
-ms.openlocfilehash: 446988e67ca6e3b4a3839a9336f1ea4e2755c124
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d7d2050be406e7f2be66ca200d1e3cfd9c2960b0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70938997"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348441"
 ---
 # <a name="cosh-coshf-coshl"></a>cosh, coshf, coshl
 
@@ -57,35 +59,37 @@ long double cosh( long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Der hyperbolische Kosinus von *x*.
 
-Wenn das Ergebnis in einem **cosh**-, **coshf**-oder **coshl** -Befehl zu groß ist, gibt die Funktion standardmäßig **HUGE_VAL** zurück und legt **errno** auf **ERANGE**fest.
+Wenn das Ergebnis in einem **cosh**-, **coshf-** oder **coshl-Aufruf** zu groß ist, gibt die Funktion standardmäßig **HUGE_VAL** zurück und setzt **errno** auf **ERANGE**.
 
 |Eingabe|SEH-Ausnahme|Matherr-Ausnahme|
 |-----------|-------------------|-----------------------|
-|± **QNAN**, **IND**|none|**_DOMAIN**|
-|*x* ≥ 7.104760e+002|**UNGENAUER**+**ÜBERLAUF**|**LÄUFEN**|
+|• **QNAN**, **IND**|Keine|**_DOMAIN**|
+|*x* bei 7,104760e+002|**UNGENAUER**+**ÜBERLAUF**|**Überlauf**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **cosh** aufzurufen, die **float** -oder **Long** **Double** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **cosh** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ eine Überladung ermöglicht, können Sie Überladungen von **cosh** aufrufen, die **Float-** oder **lange** **Doppelwerte** aufnehmen und zurückgeben. In einem C-Programm nimmt **cosh** immer ein **Double**und gibt es zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
+|Routine|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
 |**coshf**, **cosl**, **coshl**|\<math.h>|\<cmath> oder \<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
-Siehe das Beispiel in [sinh, Sinhf, sinhl](sinh-sinhf-sinhl.md).
+Siehe das Beispiel in [sinh, sinhf, sinhl](sinh-sinhf-sinhl.md).
 
 ## <a name="see-also"></a>Siehe auch
 

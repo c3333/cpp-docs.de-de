@@ -1,8 +1,9 @@
 ---
 title: setbuf
-ms.date: 04/08/2019
+ms.date: 4/2/2020
 api_name:
 - setbuf
+- _o_setbuf
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -25,12 +27,12 @@ helpviewer_keywords:
 - setbuf function
 - stream buffering
 ms.assetid: 13beda22-7b56-455d-8a6c-f2eb636885b9
-ms.openlocfilehash: c6c78297b1818131dcfcb10f4f2eaadd752d8ef4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: f96cffb8770cda78ebff8d873b441ddc288bc41f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948276"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332079"
 ---
 # <a name="setbuf"></a>setbuf
 
@@ -47,25 +49,27 @@ void setbuf(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
-*buffer*<br/>
-Vom Benutzer zugewiesener Puffer.
+*Puffer*<br/>
+Vom Benutzer zugeordneter Speicher.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **setbuf** -Funktion steuert die Pufferung für *Stream*. Das *Stream* -Argument muss auf eine geöffnete Datei verweisen, die nicht gelesen oder geschrieben wurde. Wenn das *Puffer* Argument **null**ist, wird der Datenstrom nicht gepuffert. Andernfalls muss der Puffer auf ein Zeichen Array der Länge " **BUFSIZ**" zeigen, wobei " **BUFSIZ** " die in stdio definierte Puffergröße ist. Micha. Für den E/A-Pufferbetrieb wird anstelle des systemseitig für den gegebenen Stream reservierten Puffers der vom Benutzer angegebene Puffer verwendet. Der **stderr** -Datenstrom ist standardmäßig nicht gepuffert, Sie können jedoch " **setbuf** " verwenden, um Puffer zu " **stderr**" zuzuweisen.
+Die **setbuf-Funktion** steuert die Pufferung für *stream*. Das *Streamargument* muss sich auf eine geöffnete Datei beziehen, die nicht gelesen oder geschrieben wurde. Wenn das *Pufferargument* **NULL**ist, wird der Stream gepuffert. Ist dies nicht der Fall, muss der Puffer auf ein Zeichenarray der Länge **BUFSIZ**verweisen, wobei **BUFSIZ** die in STDIO definierte Puffergröße ist. H. Für den E/A-Pufferbetrieb wird anstelle des systemseitig für den gegebenen Stream reservierten Puffers der vom Benutzer angegebene Puffer verwendet. Der **stderr-Stream** ist standardmäßig entpuffert, aber Sie können **setbuf** verwenden, um **stderr**Puffer zuzuweisen.
 
-**setbuf** wurde durch [setvbuf](setvbuf.md)ersetzt, was die bevorzugte Routine für neuen Code ist. Im Gegensatz zu **setvbuf**kann **setbuf** keine Fehler melden. mit **setvbuf** können Sie auch den Puffer Modus und die Puffergröße steuern. **setbuf** ist für die Kompatibilität mit vorhandenem Code vorhanden.
+**setbuf** wurde durch [setvbuf](setvbuf.md)ersetzt, die bevorzugte Routine für neuen Code. Im Gegensatz zu **setvbuf**hat **setbuf** keine Möglichkeit, Fehler zu melden. **mit setvbuf** können Sie sowohl den Puffermodus als auch die Puffergröße steuern. **setbuf** ist für die Kompatibilität mit vorhandenem Code vorhanden.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**setbuf**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
