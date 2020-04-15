@@ -15,16 +15,16 @@ helpviewer_keywords:
 - cache, ATL cached tear-off objects
 - CComCachedTearOffObject class
 ms.assetid: ae19507d-a1de-4dbc-a988-da9f75a50c95
-ms.openlocfilehash: d993a349d38342bda30a83dfdbe25577953799b3
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 43f914a52666788fc0bf394d9d14830b28f5adc7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69497540"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321041"
 ---
 # <a name="ccomcachedtearoffobject-class"></a>CComCachedTearOffObject-Klasse
 
-Diese Klasse implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für eine abtrennbare Schnittstelle.
+Diese Klasse implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für eine Abreißschnittstelle.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,47 +39,47 @@ public CComObjectRootEx<contained
 
 #### <a name="parameters"></a>Parameter
 
-*ständige*<br/>
-Die von abgeleitete Klasse, die von `CComTearOffObjectBase` abgeleitet ist, und die Schnittstellen, die von dem abzurufenden Objekt unterstützt werden sollen.
+*Enthalten*<br/>
+Ihre Abreißklasse, abgeleitet `CComTearOffObjectBase` von und den Schnittstellen, die Ihr Abreißobjekt unterstützen soll.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComCachedTearOffObject::CComCachedTearOffObject](#ccomcachedtearoffobject)|Der Konstruktor.|
-|[CComCachedTearOffObject::~CComCachedTearOffObject](#dtor)|Der Destruktor.|
+|[CComCachedTearOffObject::'CComCachedTearOffObject](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComCachedTearOffObject::AddRef](#addref)|Erhöht den Verweis Zähler für ein `CComCachedTearOffObject` -Objekt.|
-|[CComCachedTearOffObject::FinalConstruct](#finalconstruct)|Ruft den `m_contained::FinalConstruct` (die Methode der abtrenn Methode der Klasse) auf.|
-|[CComCachedTearOffObject::FinalRelease](#finalrelease)|Ruft den `m_contained::FinalRelease` (die Methode der abtrenn Methode der Klasse) auf.|
-|[CComCachedTearOffObject::QueryInterface](#queryinterface)|Gibt einen Zeiger auf die `IUnknown` `CComCachedTearOffObject` des-Objekts oder auf die angeforderte Schnittstelle der abtrenn Klasse (der-Klasse `contained`) zurück.|
-|[CComCachedTearOffObject::Release](#release)|Verringert den Verweis Zähler für ein `CComCachedTearOffObject` -Objekt und zerstört ihn, wenn der Verweis Zähler 0 (null) ist.|
+|[CComCachedTearOffObject::AddRef](#addref)|Inkrementiert die `CComCachedTearOffObject` Verweisanzahl für ein Objekt.|
+|[CComCachedTearOffObject::FinalConstruct](#finalconstruct)|Ruft `m_contained::FinalConstruct` die Methode (die Abreißklasse) auf.|
+|[CComCachedTearOffObject::FinalRelease](#finalrelease)|Ruft `m_contained::FinalRelease` die Methode (die Abreißklasse) auf.|
+|[CComCachedTearOffObject::QueryInterface](#queryinterface)|Gibt einen Zeiger `IUnknown` auf `CComCachedTearOffObject` die des Objekts oder auf die angeforderte `contained`Schnittstelle in der Abreißklasse (die Klasse ) zurück.|
+|[CComCachedTearOffObject::Release](#release)|Dekrementiert die Referenzanzahl für ein `CComCachedTearOffObject` Objekt und zerstört sie, wenn die Referenzanzahl 0 ist.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CComCachedTearOffObject::m_contained](#m_contained)|Ein `CComContainedObject` -Objekt, das von der abgeleiteten Klasse (der `contained`-Klasse) abgeleitet ist.|
+|[CComCachedTearOffObject::m_contained](#m_contained)|Ein `CComContainedObject` Objekt, das von Ihrer Abreißklasse (der Klasse `contained`) abgeleitet wurde.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CComCachedTearOffObject`implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für eine abtrennbare Schnittstelle. Diese Klasse unterscheidet `CComTearOffObject` sich von `CComCachedTearOffObject` in, der `IUnknown`über eine eigene, getrennt vom Besitzer `IUnknown` Objekt (der Besitzer ist das Objekt, für das das Abbild erstellt wird). `CComCachedTearOffObject`behält seinen eigenen Verweis Zähler für den `IUnknown` und löscht sich selbst, sobald der Verweis Zähler Null ist. Wenn Sie jedoch eine Abfrage für eine der abtrenn Schnittstellen durch `IUnknown` führt, wird der Verweis Zähler der Besitzer Objekte inkrementiert.
+`CComCachedTearOffObject`implementiert [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) für eine Abreißschnittstelle. Diese Klasse unterscheidet `CComTearOffObject` sich `CComCachedTearOffObject` von `IUnknown`der eigenen , getrennt `IUnknown` vom Owner-Objekt (der Besitzer ist das Objekt, für das der Abriss erstellt wird). `CComCachedTearOffObject`behält seine eigene Referenzanzahl auf seiner `IUnknown` und löscht sich selbst, sobald seine Referenzanzahl Null ist. Wenn Sie jedoch eine der Abreißschnittstellen abfragen, wird die Referenzanzahl `IUnknown` der des Besitzerobjekts erhöht.
 
-Wenn das `CComCachedTearOffObject` Objekt, das das Abbild implementiert, bereits instanziiert ist und die abtrenn Schnittstelle erneut abgefragt wird, wird das gleiche `CComCachedTearOffObject` Objekt wieder verwendet. Wenn im Gegensatz dazu eine durch eine `CComTearOffObject` implementierte Schnittstelle, die durch das Besitzer Objekt erneut abgefragt wird, eine andere instanziiert wird, wird eine andere `CComTearOffObject` instanziiert.
+Wenn `CComCachedTearOffObject` das Objekt, das das Abreißvorgang implementiert, bereits instanziiert ist und die `CComCachedTearOffObject` Abreißschnittstelle erneut abgefragt wird, wird dasselbe Objekt wiederverwendet. Wenn dagegen eine von einem `CComTearOffObject` implementierte Abreißschnittstelle erneut über das `CComTearOffObject` Besitzerobjekt abgefragt wird, wird eine andere instanziiert.
 
-Die Owner-Klasse muss `FinalRelease` implementieren und `Release` für den zwischen `IUnknown` gespeicherten für `CComCachedTearOffObject`den aufzurufen, wodurch der Verweis Zähler verringert wird. Dies bewirkt `CComCachedTearOffObject` `FinalRelease` , dass der aufgerufen wird und die Löschung gelöscht wird.
+Die Owner-Klasse `FinalRelease` muss `Release` die `IUnknown` zwischengespeicherte `CComCachedTearOffObject`für die implementieren und aufrufen, die ihre Verweisanzahl dekrementiert. Dies `CComCachedTearOffObject`führt `FinalRelease` dazu, dass aufgerufen wird und der Abriss gelöscht wird.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `CComObjectRootBase`
 
-[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)
+[Ccomobjectrootex](../../atl/reference/ccomobjectrootex-class.md)
 
 `IUnknown`
 
@@ -87,11 +87,11 @@ Die Owner-Klasse muss `FinalRelease` implementieren und `Release` für den zwisc
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Atlcom. h
+**Kopfzeile:** atlcom.h
 
-##  <a name="addref"></a>CComCachedTearOffObject:: adressf
+## <a name="ccomcachedtearoffobjectaddref"></a><a name="addref"></a>CComCachedTearOffObject::AddRef
 
-Erhöht den Verweis Zähler des `CComCachedTearOffObject` -Objekts um 1.
+Erhöht die Referenzanzahl `CComCachedTearOffObject` des Objekts um 1.
 
 ```
 STDMETHOD_(ULONG, AddRef)();
@@ -99,9 +99,9 @@ STDMETHOD_(ULONG, AddRef)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der für die Diagnose und das Testen nützlich sein kann.
+Ein Wert, der für Diagnosen und Tests nützlich sein kann.
 
-##  <a name="ccomcachedtearoffobject"></a>CComCachedTearOffObject:: CComCachedTearOffObject
+## <a name="ccomcachedtearoffobjectccomcachedtearoffobject"></a><a name="ccomcachedtearoffobject"></a>CComCachedTearOffObject::CComCachedTearOffObject
 
 Der Konstruktor.
 
@@ -111,14 +111,14 @@ CComCachedTearOffObject(void* pv);
 
 ### <a name="parameters"></a>Parameter
 
-*teuren*<br/>
-in Zeiger auf den `IUnknown` `CComCachedTearOffObject`von.
+*Pv*<br/>
+[in] Zeiger auf `IUnknown` die `CComCachedTearOffObject`der .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert den `CComContainedObject` Member, [m_contained](#m_contained).
+Initialisiert das `CComContainedObject` [Member, m_contained](#m_contained).
 
-##  <a name="dtor"></a>CComCachedTearOffObject:: ~ CComCachedTearOffObject
+## <a name="ccomcachedtearoffobjectccomcachedtearoffobject"></a><a name="dtor"></a>CComCachedTearOffObject::'CComCachedTearOffObject
 
 Der Destruktor.
 
@@ -126,13 +126,13 @@ Der Destruktor.
 ~CComCachedTearOffObject();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Gibt alle zugeordneten Ressourcen frei und ruft [FinalRelease](#finalrelease)auf.
 
-##  <a name="finalconstruct"></a>CComCachedTearOffObject:: FinalConstruct
+## <a name="ccomcachedtearoffobjectfinalconstruct"></a><a name="finalconstruct"></a>CComCachedTearOffObject::FinalConstruct
 
-Aufrufe `m_contained::FinalConstruct` von Create `m_contained`, das `CComContainedObject`> Objekt, das <  `contained`für den Zugriff auf die Schnittstelle verwendet wird, die von ihrer abtrenn Klasse implementiert wird.
+Aufrufe `m_contained::FinalConstruct` zum `m_contained`Erstellen `CComContainedObject` <  `contained` von , das> Objekt, das für den Zugriff auf die von Ihrer Abreißklasse implementierte Schnittstelle verwendet wird.
 
 ```
 HRESULT FinalConstruct();
@@ -140,19 +140,19 @@ HRESULT FinalConstruct();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standardwert.
+Ein Standard-HRESULT-Wert.
 
-##  <a name="finalrelease"></a>CComCachedTearOffObject:: FinalRelease
+## <a name="ccomcachedtearoffobjectfinalrelease"></a><a name="finalrelease"></a>CComCachedTearOffObject::FinalRelease
 
-Aufrufe `m_contained::FinalRelease` von Free `m_contained`, das `CComContainedObject` >-Objekt`contained`. < 
+Ruft `m_contained::FinalRelease` die `m_contained`Freigabe `CComContainedObject` <  `contained` von , das> Objekt auf.
 
 ```
 void FinalRelease();
 ```
 
-##  <a name="m_contained"></a>CComCachedTearOffObject:: m_contained
+## <a name="ccomcachedtearoffobjectm_contained"></a><a name="m_contained"></a>CComCachedTearOffObject::m_contained
 
-Ein [ccomcontainedobject](../../atl/reference/ccomcontainedobject-class.md) -Objekt, das von der abgeleiteten Klasse abgeleitet ist.
+Ein [CComContainedObject-Objekt,](../../atl/reference/ccomcontainedobject-class.md) das von Ihrer Abreißklasse abgeleitet wurde.
 
 ```
 CcomContainedObject <contained> m_contained;
@@ -160,14 +160,14 @@ CcomContainedObject <contained> m_contained;
 
 ### <a name="parameters"></a>Parameter
 
-*ständige*<br/>
-in Die von abgeleitete Klasse, die von `CComTearOffObjectBase` abgeleitet ist, und die Schnittstellen, die von dem abzurufenden Objekt unterstützt werden sollen.
+*Enthalten*<br/>
+[in] Ihre Abreißklasse, abgeleitet `CComTearOffObjectBase` von und den Schnittstellen, die Ihr Abreißobjekt unterstützen soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die- `m_contained` `QueryInterface`Methoden erben werden verwendet, um auf die abtrennbare Schnittstelle in der abzurufenden Klasse durch das zwischengespeicherte, `FinalConstruct`und `FinalRelease`das zwischengespeicherte abzurufende Objekt zuzugreifen.
+Die `m_contained` Erben werden verwendet, um über die abzugehörigen Objekte `QueryInterface`, `FinalConstruct`und `FinalRelease`auf die Abreißschnittstelle in ihrer Abreißklasse zuzugreifen.
 
-##  <a name="queryinterface"></a>CComCachedTearOffObject:: QueryInterface
+## <a name="ccomcachedtearoffobjectqueryinterface"></a><a name="queryinterface"></a>CComCachedTearOffObject::QueryInterface
 
 Ruft einen Zeiger auf die angeforderte Schnittstelle ab.
 
@@ -177,23 +177,23 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
 
 ### <a name="parameters"></a>Parameter
 
-*iid*<br/>
-in Der GUID der angeforderten Schnittstelle.
+*Iid*<br/>
+[in] Die GUID der angeforderten Schnittstelle.
 
 *ppvObject*<br/>
-vorgenommen Ein Zeiger auf den Schnittstellen Zeiger, der durch *IID*identifiziert wird, oder NULL, wenn die Schnittstelle nicht gefunden wurde.
+[out] Ein Zeiger auf den Schnittstellenzeiger, der von *iid*oder NULL identifiziert wird, wenn die Schnittstelle nicht gefunden wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein HRESULT-Standardwert.
+Ein Standard-HRESULT-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die angeforderte Schnitt `IUnknown`Stelle ist, gibt einen Zeiger `CComCachedTearOffObject`auf die `IUnknown` eigene zurück und erhöht den Verweis Zähler. Andernfalls werden Abfragen für die-Schnittstelle in ihrer abtrenn Klasse mithilfe der [InternalQueryInterface](ccomobjectrootex-class.md#internalqueryinterface) -Methode `CComObjectRootEx`, die von geerbt wurde.
+Wenn die angeforderte Schnittstelle ist `IUnknown`, `CComCachedTearOffObject`gibt `IUnknown` einen Zeiger auf die eigene zurück und erhöht die Referenzanzahl. Andernfalls werden Abfragen für die Schnittstelle in Ihrer Abreißklasse mithilfe `CComObjectRootEx`der [InternalQueryInterface-Methode,](ccomobjectrootex-class.md#internalqueryinterface) die von geerbt wurde, abgefragt.
 
-##  <a name="release"></a>CComCachedTearOffObject:: Release
+## <a name="ccomcachedtearoffobjectrelease"></a><a name="release"></a>CComCachedTearOffObject::Release
 
-Dekremente den Verweis Zähler um 1 und, wenn der Verweis Zähler 0 ist, das `CComCachedTearOffObject` -Objekt.
+Dekrementiert die Referenzanzahl um 1 und löscht das `CComCachedTearOffObject` Objekt, wenn die Referenzanzahl 0 ist.
 
 ```
 STDMETHOD_(ULONG, Release)();
@@ -201,10 +201,10 @@ STDMETHOD_(ULONG, Release)();
 
 ### <a name="return-value"></a>Rückgabewert
 
-In nicht Debugbuilds gibt immer 0 zurück. In Debugbuilds gibt einen Wert zurück, der für die Diagnose oder das Testen nützlich sein kann.
+Gibt in Nicht-Debug-Builds immer 0 zurück. Gibt in Debugbuilds einen Wert zurück, der für Diagnosen oder Tests nützlich sein kann.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComTearOffObject-Klasse](../../atl/reference/ccomtearoffobject-class.md)<br/>
 [CComObjectRootEx-Klasse](../../atl/reference/ccomobjectrootex-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CAnimationValue [MFC], GetAnimationVariableList
 - CAnimationValue [MFC], m_value
 ms.assetid: 78c5ae19-ede5-4f20-bfbe-68b467b603c2
-ms.openlocfilehash: 86a2caa8946bcafeabf85687a24b2430ecefe790
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0437f0fc66f64ccb99157330154bf5aa4b5666b3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62338687"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81321976"
 ---
 # <a name="canimationvalue-class"></a>CAnimationValue-Klasse
 
@@ -41,46 +41,46 @@ class CAnimationValue : public CAnimationBaseObject;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationValue::CAnimationValue](#canimationvalue)|Überladen. Erstellt ein CAnimationValue-Objekt.|
+|[CAnimationValue::CAnimationValue](#canimationvalue)|Ist überladen. Erstellt ein CAnimationValue-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationValue::AddTransition](#addtransition)|Fügt einen Übergang zu einem Wert angewendet werden.|
-|[CAnimationValue::GetValue](#getvalue)|Überladen. Ruft den aktuellen Wert.|
+|[CAnimationValue::AddTransition](#addtransition)|Fügt einen Übergang hinzu, der auf einen Wert angewendet werden soll.|
+|[CAnimationValue::GetValue](#getvalue)|Ist überladen. Ruft den aktuellen Wert ab.|
 |[CAnimationValue::GetVariable](#getvariable)|Bietet Zugriff auf gekapselte Animationsvariable.|
 |[CAnimationValue::SetDefaultValue](#setdefaultvalue)|Legt den Standardwert fest.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationValue::GetAnimationVariableList](#getanimationvariablelist)|Legt die gekapselte Animationsvariable in einer Liste an. (Overrides [CAnimationBaseObject::GetAnimationVariableList](../../mfc/reference/canimationbaseobject-class.md#getanimationvariablelist).)|
+|[CAnimationValue::GetAnimationVariableList](#getanimationvariablelist)|Fügt die gekapselte Animationsvariable in eine Liste ein. (Überschreibt [CAnimationBaseObject::GetAnimationVariableList](../../mfc/reference/canimationbaseobject-class.md#getanimationvariablelist).)|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationValue::operator DOUBLE](#operator_double)|Stellt die Konvertierung zwischen CAnimationValue und Double-Wert.|
-|[CAnimationValue::operator INT32](#operator_int32)|Stellt die Konvertierung zwischen CAnimationValue und INT32.|
-|[CAnimationValue::operator=](#operator_eq)|Überladen. CAnimationValue wird einen INT32-Wert zugewiesen.|
+|[CAnimationValue::operator DOUBLE](#operator_double)|Stellt die Konvertierung zwischen CAnimationValue und DOUBLE bereit.|
+|[CAnimationValue::operator INT32](#operator_int32)|Stellt die Konvertierung zwischen CAnimationValue und INT32 bereit.|
+|[CAnimationValue::operator=](#operator_eq)|Ist überladen. Weist CAnimationValue einen INT32-Wert zu.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAnimationValue::m_value](#m_value)|Die gekapselte Animationsvariable, die Animationswert darstellt.|
+|[CAnimationValue::m_value](#m_value)|Die gekapselte Animationsvariable, die den Animationswert darstellt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-CAnimationValue-Klasse kapselt ein einzelnes CAnimationVariable-Objekt und kann in Anwendungen einen einzelnen animierten Wert darstellen. Beispielsweise können Sie diese Klasse verwenden, für Winkel des animierten Transparenz (Ausblendeffekt), (zum Drehen von Objekten) oder bei allen anderen Fällen, wenn Sie eine Animation, je nach einem einzelnen animierten Wert erstellen müssen. Um diese Klasse in der Anwendung verwenden zu können, einfach instanziieren Sie ein Objekt dieser Klasse, Animationscontroller AddAnimationObject hinzugefügt, und rufen Sie für jeden Übergang AddTransition, auf den Wert angewendet wird.
+Die CAnimationValue-Klasse kapselt ein einzelnes CAnimationVariable-Objekt und kann in Anwendungen einen einzelnen animierten Wert darstellen. Sie können diese Klasse beispielsweise für animierte Transparenz (Fade-Effekt), Winkel (zum Drehen von Objekten) oder für andere Fall verwenden, wenn Sie eine Animation je nach einem einzelnen animierten Wert erstellen müssen. Um diese Klasse in der Anwendung zu verwenden, instanziieren Sie einfach ein Objekt dieser Klasse, fügen Sie es dem Animationscontroller mit CAnimationController::AddAnimationObject hinzu, und rufen Sie AddTransition für jeden Übergang auf, der auf den Wert angewendet werden soll.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CAnimationBaseObject](../../mfc/reference/canimationbaseobject-class.md)
 
@@ -90,9 +90,9 @@ CAnimationValue-Klasse kapselt ein einzelnes CAnimationVariable-Objekt und kann 
 
 **Header:** afxanimationcontroller.h
 
-##  <a name="addtransition"></a>  CAnimationValue::AddTransition
+## <a name="canimationvalueaddtransition"></a><a name="addtransition"></a>CAnimationValue::AddTransition
 
-Fügt einen Übergang zu einem Wert angewendet werden.
+Fügt einen Übergang hinzu, der auf einen Wert angewendet werden soll.
 
 ```
 void AddTransition(CBaseTransition* pTransition);
@@ -101,13 +101,13 @@ void AddTransition(CBaseTransition* pTransition);
 ### <a name="parameters"></a>Parameter
 
 *pTransition*<br/>
-Ein Zeiger auf den Übergangsobjekt.
+Ein Zeiger auf das Übergangsobjekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion zum Hinzufügen eines Übergangs internen Liste von Übergängen, die auf eine Animationsvariable angewendet werden. Wenn Sie Übergänge hinzufügen, werden sie nicht sofort angewendet und in einer internen Liste gespeichert werden soll. Übergänge werden angewendet (hinzugefügt zu einem Storyboard für einen bestimmten Wert) beim Aufruf CAnimationController:: AnimateGroup.
+Rufen Sie diese Funktion auf, um einen Übergang zur internen Liste der Übergänge hinzuzufügen, die auf eine Animationsvariable angewendet werden sollen. Wenn Sie Übergänge hinzufügen, werden sie nicht sofort angewendet und in einer internen Liste gespeichert. Übergänge werden angewendet (zu einem Storyboard für einen bestimmten Wert hinzugefügt), wenn Sie CAnimationController::AnimateGroup aufrufen.
 
-##  <a name="canimationvalue"></a>  CAnimationValue::CAnimationValue
+## <a name="canimationvaluecanimationvalue"></a><a name="canimationvalue"></a>CAnimationValue::CAnimationValue
 
 Erstellt ein CAnimationValue-Objekt.
 
@@ -127,21 +127,21 @@ CAnimationValue(
 Gibt den Standardwert an.
 
 *nGroupID*<br/>
-Gibt die Gruppen-ID.
+Gibt die Gruppen-ID an.
 
 *nObjectID*<br/>
-Gibt die Objekt-ID.
+Gibt die Objekt-ID an.
 
 *dwUserData*<br/>
-Gibt die benutzerdefinierten Daten.
+gibt benutzerdefinierte Daten an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-CAnimationValue-Objekt mit Eigenschaften erstellt: Standardwert, die Gruppen-ID und Objekt-ID werden auf 0 festgelegt.
+Erstellt CAnimationValue-Objekte mit Standardeigenschaften: Standardwert, Gruppen-ID und Objekt-ID werden auf 0 gesetzt.
 
-##  <a name="getanimationvariablelist"></a>  CAnimationValue::GetAnimationVariableList
+## <a name="canimationvaluegetanimationvariablelist"></a><a name="getanimationvariablelist"></a>CAnimationValue::GetAnimationVariableList
 
-Legt die gekapselte Animationsvariable in einer Liste an.
+Fügt die gekapselte Animationsvariable in eine Liste ein.
 
 ```
 virtual void GetAnimationVariableList(
@@ -151,12 +151,12 @@ virtual void GetAnimationVariableList(
 
 ### <a name="parameters"></a>Parameter
 
-*lst*<br/>
-Wenn die Funktion zurückgibt, enthält es sich um einen Zeiger auf CAnimationVariable, die den animierten Wert darstellt.
+*Lst*<br/>
+Wenn die Funktion zurückkehrt, enthält sie einen Zeiger auf CAnimationVariable, der den animierten Wert darstellt.
 
-##  <a name="getvalue"></a>  CAnimationValue::GetValue
+## <a name="canimationvaluegetvalue"></a><a name="getvalue"></a>CAnimationValue::GetValue
 
-Ruft den aktuellen Wert.
+Ruft den aktuellen Wert ab.
 
 ```
 BOOL GetValue(DOUBLE& dblValue);
@@ -166,20 +166,20 @@ BOOL GetValue(INT32& nValue);
 ### <a name="parameters"></a>Parameter
 
 *dblValue*<br/>
-Die Ausgabe. Bei Rückgabe der Funktion enthält es einen aktuellen Wert der Animationsvariablen an.
+Ausgabe Wenn die Funktion zurückkehrt, enthält sie einen aktuellen Wert der Animationsvariablen.
 
 *nValue*<br/>
-Die Ausgabe. Bei Rückgabe der Funktion enthält es einen aktuellen Wert der Animationsvariablen an.
+Ausgabe Wenn die Funktion zurückkehrt, enthält sie einen aktuellen Wert der Animationsvariablen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der aktuelle Wert erfolgreich abgerufen wurde. andernfalls "false".
+TRUE, wenn der aktuelle Wert erfolgreich abgerufen wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion zum Abrufen des aktuellen Werts. Diese Implementierung ruft die gekapselte COM-Objekt, und wenn der Aufruf fehlschlägt, gibt diese Methode den Standardwert, der zuvor im Konstruktor oder mit SetDefaultValue festgelegt wurde.
+Rufen Sie diese Funktion auf, um den aktuellen Wert abzurufen. Diese Implementierung ruft das gekapselte COM-Objekt auf, und wenn der Aufruf fehlschlägt, gibt diese Methode den Standardwert zurück, der zuvor im Konstruktor oder mit SetDefaultValue festgelegt wurde.
 
-##  <a name="getvariable"></a>  CAnimationValue::GetVariable
+## <a name="canimationvaluegetvariable"></a><a name="getvariable"></a>CAnimationValue::GetVariable
 
 Bietet Zugriff auf gekapselte Animationsvariable.
 
@@ -191,21 +191,21 @@ CAnimationVariable& GetVariable();
 
 Ein Verweis auf die gekapselte Animationsvariable.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um die gekapselte Animationsvariable zuzugreifen. Von CAnimationVariable erhalten Sie Zugriff auf zugrunde liegende IUIAnimationVariable-Objekt, dessen Zeiger NULL sein kann, wenn der Animationsvariablen nicht erstellt wurde.
+Verwenden Sie diese Methode, um auf die gekapselte Animationsvariable zuzugreifen. Von CAnimationVariable erhalten Sie Zugriff auf das zugrunde liegende IUIAnimationVariable-Objekt, dessen Zeiger NULL sein kann, wenn keine Animationsvariable erstellt wurde.
 
-##  <a name="m_value"></a>  CAnimationValue::m_value
+## <a name="canimationvaluem_value"></a><a name="m_value"></a>CAnimationValue::m_value
 
-Die gekapselte Animationsvariable, die Animationswert darstellt.
+Die gekapselte Animationsvariable, die den Animationswert darstellt.
 
 ```
 CAnimationVariable m_value;
 ```
 
-##  <a name="operator_double"></a>  CAnimationValue::operator DOUBLE
+## <a name="canimationvalueoperator-double"></a><a name="operator_double"></a>CAnimationValue::operator DOUBLE
 
-Stellt die Konvertierung zwischen CAnimationValue und Double-Wert.
+Stellt die Konvertierung zwischen CAnimationValue und DOUBLE bereit.
 
 ```
 operator DOUBLE();
@@ -213,15 +213,15 @@ operator DOUBLE();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Aktuelle Wert der Animation-Wert.
+Aktueller Wert von Animationswert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Stellt die Konvertierung zwischen CAnimationValue und Double-Wert. Diese Methode wird intern "GetValue" aufruft, und nicht auf Fehler überprüfen. Wenn "GetValue" ein Fehler auftritt, wird der zurückgegebene Wert einen Standardwert, der zuvor festgelegten im Konstruktor oder mit SetDefaultValue enthalten.
+Stellt die Konvertierung zwischen CAnimationValue und DOUBLE bereit. Diese Methode ruft getValue intern auf und überprüft nicht auf Fehler. Wenn GetValue fehlschlägt, enthält der zurückgegebene Wert einen Standardwert, der zuvor im Konstruktor oder mit SetDefaultValue festgelegt wurde.
 
-##  <a name="operator_int32"></a>  CAnimationValue::operator INT32
+## <a name="canimationvalueoperator-int32"></a><a name="operator_int32"></a>CAnimationValue::operator INT32
 
-Stellt die Konvertierung zwischen CAnimationValue und INT32.
+Stellt die Konvertierung zwischen CAnimationValue und INT32 bereit.
 
 ```
 operator INT32();
@@ -229,15 +229,15 @@ operator INT32();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Aktuelle Wert der Animation-Wert als ganze Zahl.
+Aktueller Wert des Animationswerts als ganzzahlige Datei.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Stellt die Konvertierung zwischen CAnimationValue und INT32. Diese Methode wird intern "GetValue" aufruft, und nicht auf Fehler überprüfen. Wenn "GetValue" ein Fehler auftritt, wird der zurückgegebene Wert einen Standardwert, der zuvor festgelegten im Konstruktor oder mit SetDefaultValue enthalten.
+Stellt die Konvertierung zwischen CAnimationValue und INT32 bereit. Diese Methode ruft getValue intern auf und überprüft nicht auf Fehler. Wenn GetValue fehlschlägt, enthält der zurückgegebene Wert einen Standardwert, der zuvor im Konstruktor oder mit SetDefaultValue festgelegt wurde.
 
-##  <a name="operator_eq"></a>  CAnimationValue::operator =
+## <a name="canimationvalueoperator"></a><a name="operator_eq"></a>CAnimationValue::operator=
 
-Weist einen doppelten Wert CAnimationValue zu.
+Weist CAnimationValue einen DOUBLE-Wert zu.
 
 ```
 void operator=(DOUBLE dblVal);
@@ -247,16 +247,16 @@ void operator=(INT32 nVal);
 ### <a name="parameters"></a>Parameter
 
 *dblVal*<br/>
-Gibt den Wert, der Wert der Animation zugewiesen werden soll.
+Gibt den Wert an, der dem Animationswert zugewiesen werden soll.
 
 *nVal*<br/>
-Gibt den Wert, der Wert der Animation zugewiesen werden soll.
+Gibt den Wert an, der dem Animationswert zugewiesen werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weist einen doppelten Wert CAnimationValue zu. Dieser Wert wird als Standardwert für gekapselte Animationsvariable festgelegt. Wenn Sie diese "Animation"-Objekts auf Ereignisse (ValueChanged oder IntegerValueChanged) abonniert haben, müssen Sie diese Ereignisse erneut zu aktivieren.
+Weist CAnimationValue einen DOUBLE-Wert zu. Dieser Wert wird als Standardwert für gekapselte Animationsvariable festgelegt. Wenn Sie dieses Animationsobjekt für Ereignisse (ValueChanged oder IntegerValueChanged) abonniert haben, müssen Sie diese Ereignisse erneut aktivieren.
 
-##  <a name="setdefaultvalue"></a>  CAnimationValue::SetDefaultValue
+## <a name="canimationvaluesetdefaultvalue"></a><a name="setdefaultvalue"></a>CAnimationValue::SetDefaultValue
 
 Legt den Standardwert fest.
 
@@ -269,9 +269,9 @@ void SetDefaultValue(DOUBLE dblDefaultValue);
 *dblDefaultValue*<br/>
 Gibt den Standardwert an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um einen Standardwert festzulegen. Ein Standardwert ist auf die Anwendung zurückgegeben, wenn Animation nicht gestartet wurde, bzw. zugrunde liegenden COM-Objekt wurde nicht erstellt. Wenn das zugrunde liegende COM-Objekt, das in den CAnimationVarible gekapselt ist bereits erstellt wurde, wird diese Methode erstellt, aus diesem Grund müssen möglicherweise EnableValueChanged/EnableIntegerValueChanged Methoden erneut aufrufen.
+Verwenden Sie diese Methode, um einen Standardwert festzulegen. Ein Standardwert wird an die Anwendung zurückgegeben, wenn die Animation nicht gestartet wurde und/oder das zugrunde liegende COM-Objekt nicht erstellt wurde. Wenn das zugrunde liegende COM-Objekt, das in CAnimationVarible gekapselt wurde, bereits erstellt wurde, erstellt diese Methode es neu, daher müssen Sie möglicherweise enableValueChanged/EnableIntegerValueChanged-Methoden erneut aufrufen.
 
 ## <a name="see-also"></a>Siehe auch
 

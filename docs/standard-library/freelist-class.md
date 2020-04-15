@@ -10,16 +10,16 @@ helpviewer_keywords:
 - stdext::freelist [C++], pop
 - stdext::freelist [C++], push
 ms.assetid: 8ad7e35c-4c80-4479-8ede-1a2497b06d71
-ms.openlocfilehash: e37b2371238211033d6a8a0847a41677b4e908a2
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 712c1f1638b954d1580eb527dd9eab7401917517
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688052"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317205"
 ---
 # <a name="freelist-class"></a>freelist-Klasse
 
-Verwaltet eine Liste von Speicherblöcken.
+Verwaltet eine Liste von Speicherblöcken
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,26 +30,26 @@ class freelist : public Max
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*RT*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*Sz*|Die Anzahl der zuzuweisenden Elemente im Array|
 |*Max*|Die max-Klasse, die die maximale Anzahl von Elementen darstellt, die in der freien Liste gespeichert werden. Die Klasse kann [max_none](../standard-library/max-none-class.md), [max_unbounded](../standard-library/max-unbounded-class.md), [max_fixed_size](../standard-library/max-fixed-size-class.md) oder [max_variable_size](../standard-library/max-variable-size-class.md) sein.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klassen Vorlage verwaltet eine Liste von Speicherblöcken der Größe- *SZ* mit der maximalen Länge der Liste, die durch die max-Klasse festgelegt wird, *die maximal überschritten wird.*
+Diese Klassenvorlage verwaltet eine Liste von Speicherblöcken der Größe *Sz* mit der maximalen Länge der Liste, die durch die in *Max*übergebene max-Klasse bestimmt wird.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[freelist](#freelist)|Konstruiert ein Objekt vom Typ `freelist`.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[pop](#pop)|Entfernt den ersten Speicherblock aus der freien Liste|
+|[Pop](#pop)|Entfernt den ersten Speicherblock aus der freien Liste|
 |[push](#push)|Fügt der Liste einen Speicherblock hinzu|
 
 ## <a name="requirements"></a>Anforderungen
@@ -58,7 +58,7 @@ Diese Klassen Vorlage verwaltet eine Liste von Speicherblöcken der Größe- *SZ
 
 **Namespace:** stdext
 
-## <a name="freelist"></a> freelist::freelist
+## <a name="freelistfreelist"></a><a name="freelist"></a>freelist::freelist
 
 Konstruiert ein Objekt vom Typ `freelist`.
 
@@ -66,9 +66,9 @@ Konstruiert ein Objekt vom Typ `freelist`.
 freelist();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="pop"></a> freelist::pop
+## <a name="freelistpop"></a><a name="pop"></a>freie Liste::pop
 
 Entfernt den ersten Speicherblock aus der freien Liste
 
@@ -80,11 +80,11 @@ void *pop();
 
 Gibt einen Zeiger auf den Speicherblock zurück, der aus der Liste entfernt wurde
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt NULL zurück, wenn die Liste leer ist. Andernfalls entfernt sie den ersten Speicherblock aus der Liste.
+Die Memberfunktion gibt NULL zurück, wenn die Liste leer ist. Andernfalls entfernt sie den ersten Speicherblock aus der Liste.
 
-## <a name="push"></a> freelist::push
+## <a name="freelistpush"></a><a name="push"></a>freelist::push
 
 Fügt der Liste einen Speicherblock hinzu
 
@@ -94,18 +94,18 @@ bool push(void* ptr);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf den Speicherblock, der der freien Liste hinzugefügt werden soll|
+|*Ptr*|Ein Zeiger auf den Speicherblock, der der freien Liste hinzugefügt werden soll|
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn die `full`-Funktion der Max-Klasse **false**zurückgibt. Andernfalls gibt die `push`-Funktion **false**zurück.
+**true,** `full` wenn die Funktion der max-Klasse **false**zurückgibt; Andernfalls gibt `push` die Funktion **false**zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die `full`-Funktion der Max-Klasse **false**zurückgibt, fügt diese Member-Funktion den Speicherblock, auf den *ptr* zeigt, an den Anfang der Liste an.
+Wenn `full` die Funktion der max-Klasse **false**zurückgibt, fügt diese Memberfunktion den Speicherblock, auf den *ptr* zeigt, an den Kopf der Liste an.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)
