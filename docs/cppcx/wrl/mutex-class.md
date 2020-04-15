@@ -13,16 +13,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::Mutex::Mutex, constructor
 - Microsoft::WRL::Wrappers::Mutex::operator= operator
 ms.assetid: 682a0963-721c-46a2-8871-000e9997505b
-ms.openlocfilehash: 93de43ac7e5314501d0391e2cde862ba32be0b4b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 36466bd00c5b100f20ee87173e68fdef4131ec23
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62379141"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371241"
 ---
 # <a name="mutex-class"></a>Mutex-Klasse
 
-Stellt ein Synchronisierungsobjekt, das ausschließlich auf eine freigegebene Ressource steuert.
+Stellt ein Synchronisierungsobjekt dar, das ausschließlich eine freigegebene Ressource steuert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,27 +34,27 @@ class Mutex : public HandleT<HandleTraits::MutexTraits>;
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name       | Beschreibung
+Name       | BESCHREIBUNG
 ---------- | ------------------------------------------------------
 `SyncLock` | Ein Synonym für eine Klasse, die synchrone Sperren unterstützt.
 
-### <a name="public-constructor"></a>Öffentlicher Konstruktor
+### <a name="public-constructor"></a>Öffentlicher Konstrukteur
 
-Name                   | Beschreibung
+Name                   | BESCHREIBUNG
 ---------------------- | ------------------------------------------------
-[Mutex::Mutex](#mutex) | Initialisiert eine neue Instanz der `Mutex`-Klasse.
+[Mutex::Mutex](#mutex) | Initialisiert eine neue Instanz der Klasse `Mutex`.
 
-### <a name="public-members"></a>Öffentliche Member
+### <a name="public-members"></a>Öffentliche Mitglieder
 
-Name                 | Beschreibung
+Name                 | BESCHREIBUNG
 -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------
-[Mutex::Lock](#lock) | Wartet, bis das aktuelle Objekt, oder die `Mutex` Objekt verknüpft, die mit dem angegebenen Handle, Versionen, die den Mutex oder das angegebene Timeoutintervall verstrichen ist.
+[Mutex::Sperre](#lock) | Wartet, bis das aktuelle `Mutex` Objekt oder das dem angegebenen Handle zugeordnete Objekt den Mutex freigibt oder das angegebene Timeoutintervall abgelaufen ist.
 
-### <a name="public-operator"></a>Öffentlicher Operator
+### <a name="public-operator"></a>Öffentlicher Betreiber
 
-Name                                 | Beschreibung
+Name                                 | BESCHREIBUNG
 ------------------------------------ | ---------------------------------------------------------------------------
-[Mutex::operator=](#operator-assign) | Zugewiesen (bewegt) der angegebenen `Mutex` -Objekt mit dem aktuellen `Mutex` Objekt.
+[Mutex::operator=](#operator-assign) | Weist das angegebene `Mutex` Objekt dem aktuellen `Mutex` Objekt zu.( verschiebt) es dem aktuellen Objekt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -62,13 +62,13 @@ Name                                 | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers
 
-## <a name="lock"></a>Mutex::Lock
+## <a name="mutexlock"></a><a name="lock"></a>Mutex::Sperre
 
-Wartet, bis das aktuelle Objekt, oder die `Mutex` Objekt verknüpft, die mit dem angegebenen Handle, Versionen, die den Mutex oder das angegebene Timeoutintervall verstrichen ist.
+Wartet, bis das aktuelle `Mutex` Objekt oder das dem angegebenen Handle zugeordnete Objekt den Mutex freigibt oder das angegebene Timeoutintervall abgelaufen ist.
 
 ```cpp
 SyncLock Lock(
@@ -83,17 +83,17 @@ static SyncLock Lock(
 
 ### <a name="parameters"></a>Parameter
 
-*milliseconds*<br/>
-Das Timeoutintervall in Millisekunden. Der Standardwert ist UNENDLICH sein, was die unbegrenzt wartet.
+*Millisekunden*<br/>
+Das Timeoutintervall in Millisekunden. Der Standardwert ist INFINITE, der auf unbestimmte Zeit wartet.
 
-*h*<br/>
-Das Handle für ein `Mutex` Objekt.
+*H*<br/>
+Das Handle `Mutex` eines Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
-## <a name="mutex"></a>Mutex::Mutex
+## <a name="mutexmutex"></a><a name="mutex"></a>Mutex::Mutex
 
-Initialisiert eine neue Instanz der `Mutex`-Klasse.
+Initialisiert eine neue Instanz der Klasse `Mutex`.
 
 ```cpp
 explicit Mutex(
@@ -107,16 +107,16 @@ Mutex(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Ein Handle oder einen Rvalue-Verweis auf ein Handle, um eine `Mutex` Objekt.
+*H*<br/>
+Ein Handle oder ein rvalue-Verweis auf `Mutex` ein Handle auf ein Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor initialisiert ein `Mutex` Objekt aus dem angegebenen Handle. Der zweite Konstruktor initialisiert ein `Mutex` -Objekt aus dem angegebenen Handle, und klicken Sie dann wechselt der Besitz des Mutex, mit dem aktuellen `Mutex` Objekt.
+Der erste Konstruktor initialisiert ein `Mutex` Objekt aus dem angegebenen Handle. Der zweite Konstruktor initialisiert ein `Mutex` Objekt aus dem angegebenen Handle und verschiebt dann den Besitz des Mutex auf das aktuelle `Mutex` Objekt.
 
-## <a name="operator-assign"></a>Mutex::operator=
+## <a name="mutexoperator"></a><a name="operator-assign"></a>Mutex::operator=
 
-Zugewiesen (bewegt) der angegebenen `Mutex` -Objekt mit dem aktuellen `Mutex` Objekt.
+Weist das angegebene `Mutex` Objekt dem aktuellen `Mutex` Objekt zu.( verschiebt) es dem aktuellen Objekt.
 
 ```cpp
 Mutex& operator=(
@@ -126,13 +126,13 @@ Mutex& operator=(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Ein Rvalue-Verweis auf eine `Mutex` Objekt.
+*H*<br/>
+Ein rvalue-Verweis `Mutex` auf ein Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das aktuelle `Mutex` Objekt.
+Ein Verweis auf `Mutex` das aktuelle Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter den **verschieben Semantik** Abschnitt [Rvalue-Verweisdeklarator: & &](../../cpp/rvalue-reference-declarator-amp-amp.md).
+Weitere Informationen finden Sie im Abschnitt **Move Semantics** von [Rvalue Reference Declarator: &&](../../cpp/rvalue-reference-declarator-amp-amp.md).

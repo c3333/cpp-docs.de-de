@@ -2,63 +2,63 @@
 title: Verwendung von Stapeln bei x64-Systemen
 ms.date: 12/17/2018
 ms.assetid: 383f0072-0438-489f-8829-cca89582408c
-ms.openlocfilehash: 902e4304ac124be46c6edf0860118dc522b34890
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: b598c33fbdd56630ca3e5ef0da551f38a73baa26
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422751"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81335535"
 ---
 # <a name="x64-stack-usage"></a>Verwendung von Stapeln bei x64-Systemen
 
-Der gesamte Arbeitsspeicher, der über die aktuelle RSP-Adresse hinausgeht, gilt als flüchtig: das Betriebssystem oder ein Debugger kann diesen Arbeitsspeicher während einer benutzerdebugsitzung oder eines Interrupthandlers überschreiben Daher muss RSP immer festgelegt werden, bevor versucht wird, Werte in einen Stapel Rahmen zu lesen oder zu schreiben.
+Der gesamte Speicher, der über die aktuelle Adresse von RSP hinausgeht, wird als flüchtig betrachtet: Das Betriebssystem oder ein Debugger kann diesen Speicher während einer Benutzerdebugsitzung oder eines Interrupthandlers überschreiben. Daher muss RSP immer festgelegt werden, bevor versucht wird, Werte in einen Stapelrahmen zu lesen oder zu schreiben.
 
-In diesem Abschnitt wird die Zuordnung von Stapel Speicher für lokale Variablen und die systeminterne **alloca** -Funktion erläutert.
+In diesem Abschnitt wird die Zuweisung von Stapelspeicher für lokale Variablen und die intrinsische **Zuordnung** erläutert.
 
-## <a name="stack-allocation"></a>Stapel Zuordnung
+## <a name="stack-allocation"></a>Stack allocation (Stapelreservierung)
 
-Der Prolog einer Funktion ist dafür verantwortlich, Stapel Speicher für lokale Variablen, gespeicherte Register, Stapel Parameter und Register Parameter zuzuordnen.
+Der Prolog einer Funktion ist für die Zuweisung von Stapelspeicher für lokale Variablen, gespeicherte Register, Stapelparameter und Registerparameter verantwortlich.
 
-Der Parameter Bereich befindet sich immer am unteren Rand des Stapels (auch wenn `alloca` verwendet wird), sodass er während eines beliebigen Funktions Aufrufes immer an die Rückgabeadresse angrenzt. Sie enthält mindestens vier Einträge, aber immer genug Platz, um alle Parameter zu speichern, die von einer Funktion benötigt werden, die aufgerufen werden kann. Beachten Sie, dass Speicherplatz immer für die Register Parameter zugewiesen wird, auch wenn die Parameter selbst niemals dem Stapel zugeordnet werden. bei einem aufgerufenen ist sichergestellt, dass der Speicherplatz für alle seine Parameter reserviert wurde. Privatadressen werden für die Register Argumente benötigt, damit ein zusammenhängender Bereich verfügbar ist, wenn die aufgerufene Funktion die Adresse der Argumentliste (va_list) oder eines einzelnen Arguments annehmen muss. Dieser Bereich bietet auch eine praktische Möglichkeit zum Speichern von Register Argumenten während der Thunk-Ausführung und als Debugoption (z. b., wenn die Argumente beim Debuggen an ihrer eigenen Adresse gespeichert werden). Auch wenn die aufgerufene Funktion über weniger als vier Parameter verfügt, sind diese vier Stapel Speicherorte im Besitz der aufgerufenen Funktion und können von der aufgerufenen Funktion für andere Zwecke verwendet werden, neben dem Speichern der Parameter Registerwerte.  Folglich speichert der Aufrufer möglicherweise keine Informationen in diesem Stapelbereich über einen Funktionsaufruf.
+Der Parameterbereich befindet sich immer am unteren `alloca` Rand des Stapels (auch wenn er verwendet wird), so dass er während eines Funktionsaufrufs immer an die Rückgabeadresse angrenzt. Es enthält mindestens vier Einträge, aber immer genug Platz, um alle Parameter zu enthalten, die für jede Funktion benötigt werden, die aufgerufen werden kann. Beachten Sie, dass für die Registerparameter immer Speicherplatz reserviert ist, auch wenn die Parameter selbst nie im Stapel enthalten sind. Ein Angerufener ist garantiert, dass Platz für alle parameter zugewiesen wurde. Für die Registerargumente sind Startadressen erforderlich, sodass ein zusammenhängender Bereich verfügbar ist, falls die aufgerufene Funktion die Adresse der Argumentliste (va_list) oder eines einzelnen Arguments annehmen muss. Dieser Bereich bietet auch einen bequemen Ort, um Registerargumente während der Thunk-Ausführung und als Debugging-Option zu speichern (z. B. macht es die Argumente beim Debuggen leicht zu finden, wenn sie an ihren Stammadressen im Prolog-Code gespeichert sind). Selbst wenn die aufgerufene Funktion weniger als 4 Parameter hat, sind diese 4 Stapelpositionen effektiv im Besitz der aufgerufenen Funktion und können von der aufgerufenen Funktion für andere Zwecke außer dem Speichern von Parameterregisterwerten verwendet werden.  Daher kann der Aufrufer keine Informationen in diesem Bereich des Stapels über einen Funktionsaufruf speichern.
 
-Wenn Speicherplatz dynamisch (`alloca`) in einer Funktion zugewiesen wird, muss ein nicht flüchtiges Register als Frame Zeiger verwendet werden, um die Basis des fixierten Teils des Stapels zu markieren, und dieses Register muss im Prolog gespeichert und initialisiert werden. Beachten Sie, dass bei der Verwendung von `alloca` die Aufrufe desselben Aufrufers von demselben Aufrufer möglicherweise unterschiedliche Privatadressen für die Register Parameter aufweisen.
+Wenn In einer`alloca`Funktion dynamisch Platz zugewiesen wird ( ), muss ein nichtflüchtiges Register als Framezeiger verwendet werden, um die Basis des festen Teils des Stapels zu markieren, und dieses Register muss im Prolog gespeichert und initialisiert werden. Beachten Sie, dass Anrufe an denselben Angerufenen vom gleichen Aufrufer unterschiedliche Startadressen für ihre Registerparameter haben können, wenn `alloca` sie verwendet werden.
 
-Der Stapel wird immer mit einem 16-Byte-Ausrichtung verwaltet, mit Ausnahme des Prologs (z. b. Nachdem die Rückgabeadresse gedrückt wurde) und mit Ausnahme der Angabe in den [Funktionstypen](#function-types) für eine bestimmte Klasse von Frame Funktionen.
+Der Stapel wird immer 16-Byte ausgerichtet gehalten, außer innerhalb des Prologs (z. B. nachdem die Rückgabeadresse gedrückt wurde), und es sei denn, dies ist in [Funktionstypen](#function-types) für eine bestimmte Klasse von Framefunktionen angegeben.
 
-Im folgenden finden Sie ein Beispiel für das Stapel Layout, bei dem Funktion a eine nicht Blatt Funktion B aufruft. der Prolog von function a hat bereits Speicherplatz für alle Register-und Stapel Parameter zugewiesen, die von B am unteren Rand des Stapels benötigt werden. Der-Befehl überträgt die Rückgabeadresse, und der Prolog von B ordnet Speicherplatz für die lokalen Variablen, nicht flüchtige Register und den Speicherplatz zu, der benötigt wird, um Funktionen aufzurufen. Wenn B `alloca`verwendet, wird der Speicherplatz zwischen dem lokalen Variablen/dem nicht flüchtigen Registrierungs Speicherbereich und dem Parameter Stapelbereich zugeordnet.
+Im Folgenden finden Sie ein Beispiel für das Stapellayout, bei dem Funktion A eine Nicht-Blattfunktion B aufruft. Der Prolog von Funktion A hat bereits Platz für alle Register- und Stapelparameter zugewiesen, die von B am unteren Rand des Stapels benötigt werden. Der Aufruf überträgt die Rückgabeadresse, und Bs Prolog weist Platz für seine lokalen Variablen, nichtflüchtigen Register und den Platz zu, der für den Aufruf von Funktionen benötigt wird. Wenn B `alloca`verwendet, wird der Abstand zwischen dem lokalen Variablen-/Nichtflüchtigen-Registerspeicherbereich und dem Parameterstapelbereich zugewiesen.
 
-![AMD-Konvertierungs Beispiel](../build/media/vcamd_conv_ex_5.png "AMD-Konvertierungsbeispiel")
+![AMD-Konvertierungsbeispiel](../build/media/vcamd_conv_ex_5.png "AMD-Konvertierungsbeispiel")
 
-Wenn die Funktion B eine andere Funktion aufruft, wird die Rückgabeadresse direkt unterhalb der Home-Adresse für RCX übermittelt.
+Wenn die Funktion B eine andere Funktion aufruft, wird die Rücksendeadresse knapp unter die Home-Adresse für RCX gedrückt.
 
-## <a name="dynamic-parameter-stack-area-construction"></a>Dynamische Parameter Stapel Bereichs Konstruktion
+## <a name="dynamic-parameter-stack-area-construction"></a>Dynamische Parameter-Stack-Flächenkonstruktion
 
-Wenn ein Frame Zeiger verwendet wird, ist die Option vorhanden, um den Parameter Stapelbereich dynamisch zu erstellen. Dies erfolgt zurzeit nicht im x64-Compiler.
+Wenn ein Framezeiger verwendet wird, ist die Option zum dynamischen Erstellen des Parameterstapelbereichs vorhanden. Dies geschieht derzeit nicht im x64-Compiler.
 
 ## <a name="function-types"></a>Funktionstypen
 
-Es gibt im Grunde zwei Arten von Funktionen. Eine Funktion, die einen Stapel Rahmen erfordert, wird als *Frame Funktion*bezeichnet. Eine Funktion, die keinen Stapel Rahmen erfordert, wird als *Blatt Funktion*bezeichnet.
+Es gibt im Grunde zwei Arten von Funktionen. Eine Funktion, die einen Stapelrahmen erfordert, wird als *Framefunktion*bezeichnet. Eine Funktion, die keinen Stapelrahmen erfordert, wird als *Blattfunktion*bezeichnet.
 
-Eine Frame-Funktion ist eine Funktion, die Stapel Speicher belegt, andere Funktionen aufruft, nicht flüchtige Register speichert oder die Ausnahmebehandlung verwendet. Außerdem ist ein Funktionstabellen Eintrag erforderlich. Eine Frame-Funktion erfordert einen Prolog und ein Epilog. Eine Frame-Funktion kann Stapel Speicher dynamisch zuordnen und einen Frame Zeiger verwenden. Eine Frame Funktion verfügt über die vollständigen Funktionen dieses aufrufenden Standards.
+Eine Frame-Funktion ist eine Funktion, die Stapelspeicher zuweist, andere Funktionen aufruft, nichtflüchtige Register speichert oder Ausnahmebehandlung verwendet. Es erfordert auch einen Funktionstabelleneintrag. Eine Frame-Funktion erfordert einen Prolog und einen Epilog. Eine Frame-Funktion kann stapelbaren Speicherplatz dynamisch zuweisen und einen Framezeiger verwenden. Eine Frame-Funktion verfügt über die vollen Funktionen dieses Aufrufstandards.
 
-Wenn eine Frame-Funktion keine andere Funktion aufruft, muss der Stapel nicht ausgerichtet werden (in der Abschnitts [Stapel Zuordnung](#stack-allocation)wird darauf verwiesen).
+Wenn eine Frame-Funktion keine andere Funktion aufruft, ist es nicht erforderlich, den Stapel auszurichten (im Abschnitt [Stack Allocation](#stack-allocation)referenziert).
 
-Eine Blatt Funktion ist ein Eintrag, der keinen Funktionstabellen Eintrag erfordert. Es können keine Änderungen an nicht flüchtigen Registern vorgenommen werden, einschließlich RSP. Dies bedeutet, dass keine Funktionen aufgerufen oder Stapel Speicher belegt werden kann. Der Stapel kann während der Ausführung nicht ausgerichtet bleiben.
+Eine Blattfunktion ist eine Funktion, die keinen Funktionstabelleneintrag erfordert. Es kann keine Änderungen an nichtflüchtigen Registern vornehmen, einschließlich RSP, was bedeutet, dass es keine Funktionen aufrufen oder Stapelspeicher zuweisen kann. Es ist erlaubt, den Stapel nicht ausgerichtet zu lassen, während er ausgeführt wird.
 
-## <a name="malloc-alignment"></a>malloc-Ausrichtung
+## <a name="malloc-alignment"></a>malloc Ausrichtung
 
-[malloc](../c-runtime-library/reference/malloc.md) gibt sicher einen Speicher zurück, der für das Speichern von Objekten geeignet ist, die eine grundlegende Ausrichtung haben und in den zugeordneten Arbeitsspeicher passen. Eine *grundlegende Ausrichtung* ist eine Ausrichtung, die kleiner oder gleich der größten Ausrichtung ist, die von der Implementierung ohne eine Ausrichtungs Spezifikation unterstützt wird. (In Visual C++ ist dies die Ausrichtung, die für einen `double` oder 8 Bytes erforderlich ist. In Code, der auf 64-Bit-Plattformen ausgerichtet ist, sind es 16 Bytes.) Beispielsweise würde eine 4-Byte-Zuordnung an einer Begrenzung ausgerichtet sein, die ein beliebiges vier-Byte-Objekt unterstützt.
+[malloc](../c-runtime-library/reference/malloc.md) gibt garantiert Speicher zurück, der für die Speicherung eines Objekts, das eine grundlegende Ausrichtung hat und in die zugewiesene Speichermenge passen könnte, angemessen ausgerichtet ist. Eine *grundlegende Ausrichtung* ist eine Ausrichtung, die kleiner oder gleich der größten Ausrichtung ist, die von der Implementierung ohne Ausrichtungsspezifikation unterstützt wird. (In Visual C++ ist dies die Ausrichtung, die für einen `double` oder 8 Bytes erforderlich ist. In Code, der auf 64-Bit-Plattformen abzielt, sind es 16 Bytes.) Beispielsweise würde eine Zuweisung mit vier Byte an einer Grenze ausgerichtet, die ein beliebiges Vierbyte- oder kleineres Objekt unterstützt.
 
-Visual C++ lässt Typen zu, die über *Erweiterte Ausrichtung*verfügen und auch als *über ausgerichtete* Typen bezeichnet werden. Beispielsweise haben die SSE-Typen [__m128](../cpp/m128.md) und `__m256`, und Typen, die mithilfe `__declspec(align( n ))` deklariert werden, bei denen `n` größer als 8 ist, haben die Ausrichtung erweitert. Eine Speicherausrichtung an einer Grenze, die für ein Objekt geeignet ist, das eine erweiterte Ausrichtung erfordert, wird von `malloc` nicht gewährleistet. Um Arbeitsspeicher für über ausgerichtete Typen zuzuweisen, verwenden Sie [_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) und verwandte Funktionen.
+Visual C++ ermöglicht Typen mit *erweiterter Ausrichtung*, die auch als *überausgerichtete* Typen bezeichnet werden. Beispielsweise weisen die SSE-Typen [__m128](../cpp/m128.md) und `__m256`, `__declspec(align( n ))` und `n` die Typen, die mit der Verwendung von where größer als 8 deklariert werden, eine erweiterte Ausrichtung. Eine Speicherausrichtung an einer Grenze, die für ein Objekt geeignet ist, das eine erweiterte Ausrichtung erfordert, wird von `malloc` nicht gewährleistet. Um Speicher für überausgerichtete Typen zuzuweisen, verwenden Sie [_aligned_malloc](../c-runtime-library/reference/aligned-malloc.md) und verwandte Funktionen.
 
 ## <a name="alloca"></a>alloca
 
-[_alloca](../c-runtime-library/reference/alloca.md) muss 16-Byte-ausgerichtet sein, und zusätzlich muss ein Frame Zeiger verwendet werden.
+[_alloca](../c-runtime-library/reference/alloca.md) ist erforderlich, um 16-Byte-ausgerichtet zu sein und zusätzlich erforderlich, um einen Frame-Zeiger zu verwenden.
 
-Der zugeordnete Stapel muss nach ihm für Parameter der später aufgerufenen Funktionen Leerzeichen enthalten, wie in der [Stapel Zuordnung](#stack-allocation)erläutert.
+Der zugeordnete Stapel muss Speicherplatz für Parameter von später aufgerufenen Funktionen enthalten, wie in [Stack Allocation](#stack-allocation)erläutert.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Softwarekonventionen bei x64-Systemen](../build/x64-software-conventions.md)<br/>
-[align](../cpp/align-cpp.md)<br/>
+[Ausrichten](../cpp/align-cpp.md)<br/>
 [__declspec](../cpp/declspec.md)

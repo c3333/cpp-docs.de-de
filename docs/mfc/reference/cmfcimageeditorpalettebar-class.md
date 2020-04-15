@@ -10,16 +10,16 @@ helpviewer_keywords:
 - CMFCImageEditorPaletteBar [MFC], GetRowHeight
 - CMFCImageEditorPaletteBar [MFC], IsButtonExtraSizeAvailable
 ms.assetid: 3fb7ba8e-f254-4d56-b913-9941b4ed8138
-ms.openlocfilehash: 6812f3f425186484ef892d7f5c626c0dfce0f863
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 33d4bc0c72718d028031ac11bc67da6aec5e4907
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62378101"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374426"
 ---
 # <a name="cmfcimageeditorpalettebar-class"></a>CMFCImageEditorPaletteBar-Klasse
 
-Der Funktionsumfang Palette Balken zu einer Bild-Editor (Dialogfeld).
+Stellt Palettenleistenfunktionen für ein Bildeditor-Dialogfeld bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,19 +33,19 @@ class CMFCImageEditorPaletteBar : public CMFCToolBar
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[CMFCImageEditorPaletteBar::GetRowHeight](#getrowheight)|Gibt die Höhe von Symbolleisten-Schaltflächen. (Überschreibt [CMFCToolBar::GetRowHeight](../../mfc/reference/cmfctoolbar-class.md#getrowheight).)|
-|[CMFCImageEditorPaletteBar::IsButtonExtraSizeAvailable](#isbuttonextrasizeavailable)|Bestimmt, ob die Symbolleiste Schaltflächen angezeigt werden kann, die Rahmen erweitert haben. (Überschreibt [CMFCToolBar::IsButtonExtraSizeAvailable](../../mfc/reference/cmfctoolbar-class.md#isbuttonextrasizeavailable).)|
+|Name|BESCHREIBUNG|
+|[CMFCImageEditorPaletteBar::GetRowHeight](#getrowheight)|Gibt die Höhe der Symbolleistenschaltflächen zurück. (Überschreibt [CMFCToolBar::GetRowHeight](../../mfc/reference/cmfctoolbar-class.md#getrowheight).)|
+|[CMFCImageEditorPaletteBar::IsButtonExtraSizeverfügbar](#isbuttonextrasizeavailable)|Bestimmt, ob die Symbolleiste Schaltflächen mit erweiterten Rahmen anzeigen kann. (Überschreibt [CMFCToolBar::IsButtonExtraSizeVerfügbar](../../mfc/reference/cmfctoolbar-class.md#isbuttonextrasizeavailable).)|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Klasse ist nicht vorgesehen, direkt aus Ihrem Code verwendet werden.
+Diese Klasse ist nicht für die direkte Verwendung im Code vorgesehen.
 
-Das Framework verwendet diese Klasse, um eine Palette-Leiste in einem Bild-Editor-Dialogfeld angezeigt wird. Weitere Informationen zu diesem Bild-Editor-Dialogfeld finden Sie unter [CMFCImageEditorDialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md).
+Das Framework verwendet diese Klasse, um eine Palettenleiste in einem Bildeditor-Dialogfeld anzuzeigen. Weitere Informationen zum Dialogfeld Bildeditor finden Sie unter [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -63,11 +63,11 @@ Das Framework verwendet diese Klasse, um eine Palette-Leiste in einem Bild-Edito
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afximageeditordialog.h
+**Kopfzeile:** afximageeditordialog.h
 
-##  <a name="getrowheight"></a>  CMFCImageEditorPaletteBar::GetRowHeight
+## <a name="cmfcimageeditorpalettebargetrowheight"></a><a name="getrowheight"></a>CMFCImageEditorPaletteBar::GetRowHeight
 
-Gibt die Höhe von Symbolleisten-Schaltflächen.
+Gibt die Höhe der Symbolleistenschaltflächen zurück.
 
 ```
 virtual int GetRowHeight() const;
@@ -75,11 +75,11 @@ virtual int GetRowHeight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Höhe der einzelnen Schaltflächen auf der Symbolleiste.
+Die Höhe jeder Schaltfläche auf der Symbolleiste.
 
-##  <a name="isbuttonextrasizeavailable"></a>  CMFCImageEditorPaletteBar::IsButtonExtraSizeAvailable
+## <a name="cmfcimageeditorpalettebarisbuttonextrasizeavailable"></a><a name="isbuttonextrasizeavailable"></a>CMFCImageEditorPaletteBar::IsButtonExtraSizeverfügbar
 
-Bestimmt, ob die Symbolleiste Schaltflächen angezeigt werden kann, die Rahmen erweitert haben.
+Bestimmt, ob die Symbolleiste Schaltflächen mit erweiterten Rahmen anzeigen kann.
 
 ```
 virtual BOOL IsButtonExtraSizeAvailable() const;

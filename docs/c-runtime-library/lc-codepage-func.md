@@ -1,8 +1,9 @@
 ---
 title: ___lc_codepage_func
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - ___lc_codepage_func
+- _o____lc_codepage_func
 api_location:
 - msvcr120.dll
 - msvcr110_clr0400.dll
@@ -11,6 +12,7 @@ api_location:
 - msvcr90.dll
 - msvcr110.dll
 - msvcrt.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -21,12 +23,12 @@ f1_keywords:
 helpviewer_keywords:
 - ___lc_codepage_func
 ms.assetid: 6a663bd0-5a63-4a2f-9507-872ec1582aae
-ms.openlocfilehash: dbadf8239652f5c96e7177dedd91d340e545b9fe
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 2f3eeb4611a0a41ff1782e0b162cd65d86d3ef65
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944927"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81351232"
 ---
 # <a name="___lc_codepage_func"></a>___lc_codepage_func
 
@@ -42,17 +44,19 @@ UINT ___lc_codepage_func(void);
 
 Die aktuelle Codepage des Threads.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 `___lc_codepage_func` ist eine interne CRT-Funktion, die von anderen CRT-Funktionen verwendet wird, um die aktuelle Codepage aus dem lokalen Threadspeicher für CRT-Daten abzurufen. Diese Information kann auch durch Verwendung der [_get_current_locale](../c-runtime-library/reference/get-current-locale.md)-Funktion gewonnen werden.
 
-Eine *Codepage* ist eine Zuordnung von Einzelbyte- oder Doppelbytecodes zu einzelnen Zeichen. Zu verschiedenen Codepages gehören verschiedene spezielle Zeichen, die normalerweise für eine Sprache oder eine Gruppe von Sprachen angepasst sind. Weitere Informationen zu Codepages finden Sie unter [Code Pages](../c-runtime-library/code-pages.md).
+Eine *Codepage* ist eine Zuordnung von Einzelbyte- oder Doppelbytecodes zu einzelnen Zeichen. Zu verschiedenen Codepages gehören verschiedene spezielle Zeichen, die normalerweise für eine Sprache oder eine Gruppe von Sprachen angepasst sind. Weitere Informationen zu Codepages finden Sie unter [Codepages](../c-runtime-library/code-pages.md).
 
 Interne CRT-Funktionen sind implementierungsspezifisch und mit jedem neuen Release Änderungen unterworfen. Ihre Verwendung in einem Code wird nicht empfohlen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+## <a name="requirements"></a>Anforderungen
+
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |`___lc_codepage_func`|crt\src\setlocal.h|
 

@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::money_get [C++], do_get
 - std::money_get [C++], get
 ms.assetid: 692d3374-3fe7-4b46-8aeb-f8d91ed66b2e
-ms.openlocfilehash: d882edd5ce55b15d03512ca9a55a49bc3424ee7a
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: ac85e99bfb834fd970a804269f25ec9f20960a23
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72687671"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375903"
 ---
 # <a name="money_get-class"></a>money_get-Klasse
 
-Die Klassen Vorlage beschreibt ein Objekt, das als Gebiets Schema Aspekt fungieren kann, um Konvertierungen von Sequenzen vom Typ `CharType` in monetäre Werte zu steuern.
+Die Klassenvorlage beschreibt ein Objekt, das als Gebietsschema dienen kann, `CharType` um Konvertierungen von Sequenzen vom Typ in monetäre Werte zu steuern.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,25 +36,25 @@ class money_get : public locale::facet;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der innerhalb eines Programms zum Codieren von Zeichen in einem Gebietsschema verwendet wird.
 
-*InputIterator* -\
+*Inputiterator*\
 Der Typ des Iterators, von dem die get-Funktionen ihre Eingabe lesen.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird in **id** ein eindeutiger positiver Wert gespeichert.
+Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in **id** gespeichert.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[money_get](#money_get)|Der Konstruktor für Objekte vom Typ `money_get`, die verwendet werden, um numerische Werte aus Sequenzen zu extrahieren, die monetäre Werte darstellen.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.|
 |[iter_type](#iter_type)|Ein Typ, der einen Eingabeiterator beschreibt.|
@@ -62,7 +62,7 @@ Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[do_get](#do_get)|Eine virtuelle Funktion, die aufgerufen wird, um einen Zahlenwert aus einer Zeichenfolge zu extrahieren, die einen monetären Wert darstellt.|
 |[get](#get)|Extrahiert einen numerischen Wert aus einer Zeichenfolge, die einen monetären Wert darstellt.|
@@ -73,7 +73,7 @@ Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen
 
 **Namespace:** std
 
-## <a name="char_type"></a> money_get::char_type
+## <a name="money_getchar_type"></a><a name="char_type"></a>money_get::char_type
 
 Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.
 
@@ -81,11 +81,11 @@ Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwe
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ stellt ein Synonym für den Vorlagenparameter *CharType* dar.
 
-## <a name="do_get"></a> money_get::do_get
+## <a name="money_getdo_get"></a><a name="do_get"></a>money_get::do_get
 
 Eine virtuelle Funktion, die aufgerufen wird, um einen Zahlenwert aus einer Zeichenfolge zu extrahieren, die einen monetären Wert darstellt.
 
@@ -105,35 +105,35 @@ virtual iter_type do_get(iter_type first,
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*Ersten*\
 Der Eingabeiterator, der den Anfang der zu konvertierenden Sequenz adressiert.
 
-*Letzter* \
+*letzte*\
 Der Eingabeiterator, der das Ende der zu konvertierenden Sequenz adressiert.
 
-*Intl* -\
+*Intl*\
 Ein boolescher Wert, der den Typ des in der Sequenz vorgesehenen Währungssymbols angibt (**TRUE**, wenn international; **FALSE**, wenn national).
 
-*Iosbase* -\
-Ein Formatkennzeichen, das bei Verwendung angibt, dass das Währungssymbol optional ist. Ansonsten ist das Währungssymbol erforderlich.
+*Iosbase*\
+Ein Format-Flag, das wenn eingestellt angibt, dass das Währungssymbol optional ist, andernfalls ist es erforderlich.
 
-*Status* \
+*Staat*\
 Je nachdem, ob die Vorgänge erfolgreich waren, legt dieses Element die entsprechenden Bitmaskenelemente für den Streamstatus fest.
 
-*Val* -\
+*Val*\
 Eine Zeichenfolge zum Speichern der konvertierten Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Eingabeiterator,der das erste Element nach dem Eingabefeld für den monetären Wert adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste virtuelle geschützte Memberfunktion versucht, sequenzielle Elemente zuzuordnen. Sie beginnt zuerst in der Sequenz [ `first`, `last`), bis sie ein vollständiges, nicht leeres Eingabefeld für monetäre Werte erkannt hat. Bei Erfolg konvertiert Sie dieses Feld in eine Sequenz von einer oder mehreren Dezimalziffern, wobei optional ein Minuszeichen (`-`) vorangestellt wird, um den Betrag darzustellen, und speichert das Ergebnis im [string_type](#string_type) -Objekt *Val*. Sie gibt einen Iterator zurück, der das erste Element nach dem Eingabefeld für monetäre Werte festlegt. Andernfalls speichert die Funktion eine leere Sequenz in *Val* und legt `ios_base::failbit` im *Zustand fest*. Sie gibt einen Iterator zurück, der das erste Element nach jedem Präfix eines gültigen Eingabefelds für monetäre Werte festlegt. In beiden Fällen legt die Funktion `State` für `ios_base::eofbit` fest, wenn der Rückgabewert `last` entspricht.
+Die erste virtuelle geschützte Memberfunktion versucht, sequenzielle Elemente zuzuordnen. Sie beginnt zuerst in der Sequenz [ `first`, `last`), bis sie ein vollständiges, nicht leeres Eingabefeld für monetäre Werte erkannt hat. Bei Erfolg konvertiert dieses Feld in eine Sequenz aus einer oder mehreren Dezimalstellen, `-`der optional ein Minuszeichen ( vorangestellt ist, um den Betrag darzustellen, und speichert das Ergebnis im [string_type](#string_type) Objekt *val*. Sie gibt einen Iterator zurück, der das erste Element nach dem Eingabefeld für monetäre Werte festlegt. Andernfalls speichert die Funktion eine leere `ios_base::failbit` Sequenz in *val* und setzt im *Zustand*. Sie gibt einen Iterator zurück, der das erste Element nach jedem Präfix eines gültigen Eingabefelds für monetäre Werte festlegt. In beiden Fällen legt die Funktion `State` für `ios_base::eofbit` fest, wenn der Rückgabewert `last` entspricht.
 
-Die zweite virtuelle geschützte Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass bei erfolgreicher Ausführung die optional signierte Ziffern Sequenz in einen Wert vom Typ **long Double** konvertiert und dieser Wert in *Val*gespeichert wird.
+Die zweite virtual protected Member-Funktion verhält sich genauso wie die erste, mit der Ausnahme, dass sie bei Erfolg die optional signierte Ziffernsequenz in einen Wert vom Typ **long double** konvertiert und diesen Wert in *val*speichert.
 
-Das Format eines Eingabefelds für monetäre Werte richtet sich nach dem [Gebietsschemafacet](../standard-library/locale-class.md#facet_class) **fac**, das durch den effektiven Aufruf [use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md)\< **CharType**, **intl**>>( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)).
+Das Format eines Eingabefelds für monetäre Werte richtet sich nach dem [Gebietsschemafacet](../standard-library/locale-class.md#facet_class)**fac**, das durch den effektiven Aufruf [use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md)\< **CharType**, **intl**>>( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)) zurückgegeben wird.
 
 Dies gilt insbesondere in folgenden Fällen:
 
@@ -153,19 +153,19 @@ Dies gilt insbesondere in folgenden Fällen:
 
 - **fac**. [frac_digits](../standard-library/moneypunct-class.md#frac_digits) bestimmt die Anzahl signifikanter Ziffern auf der rechten Seite eines Dezimaltrennzeichens. Wird ein Geldbetrag mit mehr Bruchziffern analysiert, als durch `frac_digits` aufgerufen werden, beendet `do_get` die Analyse, wenn höchstens `frac_digits`-Zeichen verbraucht wurden.
 
-Wenn die Zeichenfolge ( **fac**. `negative_sign` oder **fac**. `positive_sign`) über mehr als ein Element verfügt, wird nur das erste Element zugeordnet, bei dem das dem **money_base::sign** entsprechende Element im Formatmuster ( **fac**. `neg_format`) angezeigt wird. Alle übrigen Elemente werden am Ende des Eingabefelds für monetäre Werte zugeordnet. Wenn keine Zeichenfolge über ein erstes Element verfügt, das dem nächsten Element im Eingabefeld für monetäre Werte entspricht, wird die Zeichenfolge als leer angenommen. Das Vorzeichen ist in diesem Fall positiv.
+Wenn die Zeichenfolge ( **fac**. `negative_sign` oder **fac**. `positive_sign`) über mehr als ein Element verfügt, wird nur das erste Element zugeordnet, bei dem das dem **money_base::sign** entsprechende Element im Formatmuster ( **fac**. `neg_format`). Alle übrigen Elemente werden am Ende des Eingabefelds für monetäre Werte zugeordnet. Wenn keine Zeichenfolge über ein erstes Element verfügt, das dem nächsten Element im Eingabefeld für monetäre Werte entspricht, wird die Zeichenfolge als leer angenommen. Das Vorzeichen ist in diesem Fall positiv.
 
-Wenn **iosbase**. [flags](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) ungleich null ist, muss die Zeichenfolge **fac**. `curr_symbol` dort zugeordnet werden, wo das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird. Andernfalls gilt: Wenn **money_base::symbol** am Ende des Formatmusters auftritt und keine weiteren Elemente der Zeichenfolge verbleiben, wird das Währungssymbol nicht zugeordnet. Ansonsten wird das Währungssymbol optional zugeordnet.
+Wenn **iosbase**. [Flags](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) ist ungleich Null, die Zeichenfolge **fac**. `curr_symbol` dort zugeordnet werden, wo das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird. Andernfalls gilt: Wenn **money_base::symbol** am Ende des Formatmusters auftritt und keine weiteren Elemente der Zeichenfolge verbleiben, wird das Währungssymbol nicht zugeordnet. Ansonsten wird das Währungssymbol optional zugeordnet.
 
 Wenn keine Instanzen von **fac**. `thousands_sep` im Wertteil des Eingabefelds für monetäre Werte (in dem das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird) auftritt, erfolgt keine Gruppierungseinschränkung. Andernfalls werden alle durch **fac**. **grouping** auferlegte Gruppierungseinschränkungen erzwungen. Bitte beachten Sie, dass die resultierende Ziffernsequenz einer ganzen Zahl entspricht, deren niederwertige **fac**. `frac_digits`-Dezimalstellen auf der rechten Seite des Dezimaltrennzeichens berücksichtigt werden.
 
-Dort, wo das dem **money_base::space** entsprechende Element im Formatmuster angezeigt wird, werden beliebig viele Leerstellen zugeordnet, wenn das Element nicht am Ende des Formatmusters angezeigt wird. Andernfalls werden keine internen Leerzeichen zugeordnet. Ein Element *ch* gilt als Leerzeichen, wenn [use_facet](../standard-library/locale-functions.md#use_facet) < [Ctype](../standard-library/ctype-class.md) \< **CharType**> >( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)). [is](../standard-library/ctype-class.md#is)( **ctype_base::space**, *ch*) **TRUE** ist.
+Dort, wo das dem **money_base::space** entsprechende Element im Formatmuster angezeigt wird, werden beliebig viele Leerstellen zugeordnet, wenn das Element nicht am Ende des Formatmusters angezeigt wird. Andernfalls werden keine internen Leerzeichen zugeordnet. Ein Element *ch* gilt als Leerzeichen, wenn [use_facet](../standard-library/locale-functions.md#use_facet) < [Ctype](../standard-library/ctype-class.md)\< **CharType**> >( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)) zurückgegeben wird. [is](../standard-library/ctype-class.md#is)( **ctype_base::space**, *ch*) **TRUE** ist.
 
 ### <a name="example"></a>Beispiel
 
-Informationen hierzu finden Sie im Beispiel für [get](#get), das `do_get` aufruft.
+Siehe das Beispiel für [get](#get), mit dem `do_get` aufgerufen wird.
 
-## <a name="get"></a> money_get::get
+## <a name="money_getget"></a><a name="get"></a>money_get::get
 
 Extrahiert einen numerischen Wert aus einer Zeichenfolge, die einen monetären Wert darstellt.
 
@@ -187,31 +187,31 @@ iter_type get(iter_type first,
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*Ersten*\
 Der Eingabeiterator, der den Anfang der zu konvertierenden Sequenz adressiert.
 
-*Letzter* \
+*letzte*\
 Der Eingabeiterator, der das Ende der zu konvertierenden Sequenz adressiert.
 
-*Intl* -\
+*Intl*\
 Ein boolescher Wert, der den Typ des in der Sequenz vorgesehenen Währungssymbols angibt (**TRUE**, wenn international; **FALSE**, wenn national).
 
-*Iosbase* -\
+*Iosbase*\
 Ein Formatkennzeichen, das bei Verwendung angibt, dass das Währungssymbol optional ist. Ansonsten ist das Währungssymbol erforderlich.
 
-*Status* \
-Je nachdem, ob die Vorgänge erfolgreich waren, legt dieses Element die entsprechenden Bitmaskenelemente für den Streamstatus fest.
+*Staat*\
+Legt die entsprechenden Bitmaskenelemente für den Streamstatus fest, je nachdem, ob die Vorgänge erfolgreich waren.
 
-*Val* -\
+*Val*\
 Eine Zeichenfolge zum Speichern der konvertierten Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Eingabeiterator,der das erste Element nach dem Eingabefeld für den monetären Wert adressiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Beide Member-Funktionen geben [do_get](#do_get) -`(first, last, Intl, Iosbase, State, val)` zurück.
+Beide Memberfunktionen geben [do_get](#do_get)`(first, last, Intl, Iosbase, State, val)`zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -262,7 +262,7 @@ int main( )
 };
 ```
 
-## <a name="iter_type"></a> money_get::iter_type
+## <a name="money_getiter_type"></a><a name="iter_type"></a>money_get::iter_type
 
 Ein Typ, der einen Eingabeiterator beschreibt.
 
@@ -270,11 +270,11 @@ Ein Typ, der einen Eingabeiterator beschreibt.
 typedef InputIterator iter_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für den Vorlagenparameter **InputIterator**.
 
-## <a name="money_get"></a> money_get::money_get
+## <a name="money_getmoney_get"></a><a name="money_get"></a>money_get::money_get
 
 Der Konstruktor für Objekte vom Typ `money_get`, die verwendet werden, um numerische Werte aus Sequenzen zu extrahieren, die monetäre Werte darstellen.
 
@@ -284,24 +284,24 @@ explicit money_get(size_t _Refs = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs* \
+*_refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den Parameter *_Refs* und ihre Bedeutung lauten:
+Die möglichen Werte für den *parameter _Refs* und deren Signifikanz sind:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
 - 1: Die Lebensdauer des Objekts muss manuell verwaltet werden.
 
-- \> 1: diese Werte sind nicht definiert.
+- \>1: Diese Werte sind nicht definiert.
 
 Direkte Beispiele sind nicht möglich, da der Destruktor geschützt ist.
 
-Der Konstruktor initialisiert sein Basisobjekt mit **locale::** [Face(](../standard-library/locale-class.md#facet_class) *_Refs*).
+Der Konstruktor initialisiert sein Basisobjekt mit **locale::**[facet](../standard-library/locale-class.md#facet_class)(*_Refs*).
 
-## <a name="string_type"></a> money_get::string_type
+## <a name="money_getstring_type"></a><a name="string_type"></a>money_get::string_type
 
 Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen des Typs **CharType** enthält.
 
@@ -309,12 +309,12 @@ Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen des Typs **CharType** ent
 typedef basic_string<CharType, Traits, Allocator> string_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt eine Spezialisierung der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md).
+Der Typ beschreibt eine Spezialisierung der Klassenvorlage [basic_string](../standard-library/basic-string-class.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<locale>](../standard-library/locale.md)\
-[facet-Klasse](../standard-library/locale-class.md#facet_class)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[\<Gebietsschema>](../standard-library/locale.md)\
+[Facette Klasse](../standard-library/locale-class.md#facet_class)\
+[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

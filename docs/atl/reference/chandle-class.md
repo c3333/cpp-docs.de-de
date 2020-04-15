@@ -12,16 +12,16 @@ f1_keywords:
 helpviewer_keywords:
 - CHandle class
 ms.assetid: 883e9db5-40ec-4e29-9c74-4dd2ddd2e35d
-ms.openlocfilehash: 86d2cba6c3ee2e914d96ae2a09b642d556d46027
-ms.sourcegitcommit: 07b34ca1c1fecced9fadc95de15dc5fee4f31e5a
+ms.openlocfilehash: 7c72ded75298ed69efe73c1a81abf404545ea9b9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67693400"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326925"
 ---
 # <a name="chandle-class"></a>CHandle-Klasse
 
-Diese Klasse stellt Methoden zum Erstellen und Verwenden eines Handleobjekts.
+Diese Klasse stellt Methoden zum Erstellen und Verwenden eines Handleobjekts bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,46 +33,46 @@ class CHandle
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHandle::CHandle](#chandle)|Der Konstruktor.|
-|[CHandle::~CHandle](#dtor)|Der Destruktor.|
+|[CHandle::-CHandle](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHandle::Attach](#attach)|Rufen Sie diese Methode zum Anfügen der `CHandle` Objekt eines vorhandenen Handles.|
-|[CHandle::Close](#close)|Rufen Sie diese Methode zum Schließen einer `CHandle` Objekt.|
-|[CHandle::Detach](#detach)|Rufen Sie diese Methode zum Trennen von einem Handle von einem `CHandle` Objekt.|
+|[CHandle::Attach](#attach)|Rufen Sie diese `CHandle` Methode auf, um das Objekt an ein vorhandenes Handle anzufügen.|
+|[CHandle::Schließen](#close)|Rufen Sie diese `CHandle` Methode auf, um ein Objekt zu schließen.|
+|[CHandle::Detach](#detach)|Rufen Sie diese Methode auf, `CHandle` um ein Handle von einem Objekt zu trennen.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHandle::operator HANDLE](#operator_handle)|Gibt den Wert des gespeicherten Handles.|
+|[CHandle::operator HANDLE](#operator_handle)|Gibt den Wert des gespeicherten Handles zurück.|
 |[CHandle::operator =](#operator_eq)|Zuweisungsoperator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHandle::m_h](#m_h)|Die Membervariable, die das Handle speichert.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein `CHandle` Objekt kann verwendet werden, wenn ein Handle erforderlich ist: Der Hauptunterschied besteht darin, die die `CHandle` Objekt automatisch gelöscht werden.
+Ein `CHandle` Objekt kann immer dann verwendet werden, wenn `CHandle` ein Handle erforderlich ist: Der Hauptunterschied besteht darin, dass das Objekt automatisch gelöscht wird.
 
 > [!NOTE]
->  Manche API-Funktionen werden NULL als ein leerer oder ungültiger Handle verwenden, während andere INVALID_HANDLE_VALUE verwenden. `CHandle` verwendet NULL und wird nur behandeln INVALID_HANDLE_VALUE als echte Handle. Wenn Sie eine API der INVALID_HANDLE_VALUE zurückgegeben werden können aufrufen, sollten Sie überprüfen, für diesen Wert vor dem Aufruf [CHandle::Attach](#attach) oder Übergabe an die `CHandle` -Konstruktor, und übergeben Sie stattdessen NULL.
+> Einige API-Funktionen verwenden NULL als leeres oder ungültiges Handle, während andere INVALID_HANDLE_VALUE verwenden. `CHandle`verwendet nur NULL und behandelt INVALID_HANDLE_VALUE als echtes Handle. Wenn Sie eine API aufrufen, die INVALID_HANDLE_VALUE zurückgeben kann, sollten Sie nach diesem `CHandle` Wert suchen, bevor Sie [CHandle::Attach](#attach) aufrufen oder an den Konstruktor übergeben, und stattdessen NULL übergeben.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlbase.h
+**Kopfzeile:** atlbase.h
 
-##  <a name="attach"></a>  CHandle::Attach
+## <a name="chandleattach"></a><a name="attach"></a>CHandle::Attach
 
-Rufen Sie diese Methode zum Anfügen der `CHandle` Objekt eines vorhandenen Handles.
+Rufen Sie diese `CHandle` Methode auf, um das Objekt an ein vorhandenes Handle anzufügen.
 
 ```
 void Attach(HANDLE h) throw();
@@ -80,14 +80,14 @@ void Attach(HANDLE h) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-`CHandle` übernimmt dann den Besitz des Handles *h*.
+*H*<br/>
+`CHandle`übernimmt das Handle *h*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weist die `CHandle` -Objekt an die *h* Handle und ruft dann **h.Detach()** . In debuggt-Builds ein ATLASSERT wird ausgelöst, wenn *h* ist NULL. Es erfolgt keine weitere Überprüfung hinsichtlich der Gültigkeit des Handles.
+Weist das `CHandle` Objekt dem *h-Handle* zu und ruft dann **h.Detach()** auf. In Debugbuilds wird ein ATLASSERT ausgelöst, wenn *h* NULL ist. Es wird keine andere Prüfung der Gültigkeit des Griffs vorgenommen.
 
-##  <a name="chandle"></a>  CHandle::CHandle
+## <a name="chandlechandle"></a><a name="chandle"></a>CHandle::CHandle
 
 Der Konstruktor.
 
@@ -99,14 +99,14 @@ explicit CHandle(HANDLE h) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Eine vorhandene Handle oder `CHandle`.
+*H*<br/>
+Ein vorhandenes `CHandle`Handle oder .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt ein neues `CHandle` Objekt, um optional mithilfe eines vorhandenen Handles oder `CHandle` Objekt.
+Erstellt ein `CHandle` neues Objekt, optional mit `CHandle` einem vorhandenen Handle oder Objekt.
 
-##  <a name="dtor"></a>  CHandle:: ~ CHandle
+## <a name="chandlechandle"></a><a name="dtor"></a>CHandle::-CHandle
 
 Der Destruktor.
 
@@ -114,25 +114,25 @@ Der Destruktor.
 ~CHandle() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt frei, die `CHandle` Objekt durch Aufrufen von [CHandle::Close](#close).
+Gibt das `CHandle` Objekt frei, indem [CHandle::Close](#close)aufgerufen wird.
 
-##  <a name="close"></a>  CHandle::Close
+## <a name="chandleclose"></a><a name="close"></a>CHandle::Schließen
 
-Rufen Sie diese Methode zum Schließen einer `CHandle` Objekt.
+Rufen Sie diese `CHandle` Methode auf, um ein Objekt zu schließen.
 
 ```
 void Close() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Schließt ein Objekthandle für die öffnen. Wenn das Handle NULL ist, ist dies der Fall, wenn `Close` wurde bereits aufgerufen wird, eine ATLASSERT ausgelöst in Debugbuilds.
+Schließt ein geöffnetes Objekthandle. Wenn das Handle NULL ist, was `Close` der Fall sein wird, wenn es bereits aufgerufen wurde, wird ein ATLASSERT in Debugbuilds ausgelöst.
 
-##  <a name="detach"></a>  CHandle::Detach
+## <a name="chandledetach"></a><a name="detach"></a>CHandle::Detach
 
-Rufen Sie diese Methode zum Trennen von einem Handle von einem `CHandle` Objekt.
+Rufen Sie diese Methode auf, `CHandle` um ein Handle von einem Objekt zu trennen.
 
 ```
 HANDLE Detach() throw();
@@ -140,13 +140,13 @@ HANDLE Detach() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Handle, das getrennt wird.
+Gibt den abgetrennten Ziehpunkt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den Besitz des Handles.
+Gibt den Besitz des Handles frei.
 
-##  <a name="m_h"></a>  CHandle::m_h
+## <a name="chandlem_h"></a><a name="m_h"></a>CHandle::m_h
 
 Die Membervariable, die das Handle speichert.
 
@@ -154,7 +154,7 @@ Die Membervariable, die das Handle speichert.
 HANDLE m_h;
 ```
 
-##  <a name="operator_eq"></a>  CHandle::operator =
+## <a name="chandleoperator-"></a><a name="operator_eq"></a>CHandle::operator =
 
 Der Zuweisungsoperator.
 
@@ -164,29 +164,29 @@ CHandle& operator=(CHandle& h) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-`CHandle` übernimmt dann den Besitz des Handles *h*.
+*H*<br/>
+`CHandle`übernimmt das Handle *h*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Verweis auf das neue `CHandle` Objekt.
+Gibt einen Verweis `CHandle` auf das neue Objekt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die `CHandle` Objekt derzeit ein Handle enthält, wird Sie geschlossen. Die `CHandle` -Objekt übergebene wird über dessen Handle-Verweis, der auf NULL festgelegt. Dadurch wird sichergestellt, dass zwei `CHandle` Objekte nie active dasselbe Handle enthält.
+Wenn `CHandle` das Objekt derzeit ein Handle enthält, wird es geschlossen. Für `CHandle` das übergebene Objekt ist der Handleverweis auf NULL festgelegt. Dadurch wird `CHandle` sichergestellt, dass zwei Objekte niemals denselben aktiven Handle enthalten.
 
-##  <a name="operator_handle"></a>  CHandle::operator HANDLE
+## <a name="chandleoperator-handle"></a><a name="operator_handle"></a>CHandle::operator HANDLE
 
-Gibt den Wert des gespeicherten Handles.
+Gibt den Wert des gespeicherten Handles zurück.
 
 ```
 operator HANDLE() const throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den Wert, der in gespeicherten [CHandle::m_h](#m_h).
+Gibt den in [CHandle::m_h](#m_h)gespeicherten Wert zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

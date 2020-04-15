@@ -7,52 +7,52 @@ helpviewer_keywords:
 - printing [MFC], from framework
 - printing [MFC]
 ms.assetid: be465e8d-b0c9-4fc5-9fa8-d10486064f76
-ms.openlocfilehash: e0cd2d6d85cb9820b23495a003068994b13f9c85
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: a46096592c9983d04d2122bfabb56ece9346c4bc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64339572"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371203"
 ---
 # <a name="printing"></a>Drucken
 
-Microsoft Windows implementiert geräteunabhängige anzeigen. In MFC, dies bedeutet, dass die gleichen zeichnen-Aufrufe, in der `OnDraw` Memberfunktion der Klasse anzeigen, sind verantwortlich für das Zeichnen auf die Anzeige und auf anderen Geräten, wie z. B. Drucker. Für die Seitenansicht ist das Zielgerät eine simulierte Drucker, auf dem Bildschirm ausgegeben.
+Microsoft Windows implementiert eine geräteunabhängige Anzeige. In MFC bedeutet dies, dass dieselben `OnDraw` Zeichnungsaufrufe in der Memberfunktion Ihrer Ansichtsklasse für das Zeichnen auf dem Display und auf anderen Geräten, z. B. Druckern, verantwortlich sind. Für die Druckvorschau ist das Zielgerät eine simulierte Druckerausgabe für das Display.
 
-##  <a name="_core_your_role_in_printing_vs.._the_framework.92.s_role"></a> Ihre Rolle beim Drucken im Vergleich zu die Framework Rolle
+## <a name="your-role-in-printing-vs-the-frameworks-role"></a><a name="_core_your_role_in_printing_vs.._the_framework.92.s_role"></a>Ihre Rolle im Druck im Vergleich zur Rolle des Frameworks
 
-Die Ansichtsklasse hat die folgenden Verantwortungen:
+Ihre Ansichtsklasse hat die folgenden Aufgaben:
 
-- Informieren Sie das Framework, wie viele Seiten im Dokument sind.
+- Informieren Sie das Framework, wie viele Seiten sich im Dokument befinden.
 
-- Wenn Sie aufgefordert, eine angegebene Seite gedruckt, zeichnen Sie diesen Teil des Dokuments.
+- Wenn Sie aufgefordert werden, eine angegebene Seite zu drucken, zeichnen Sie diesen Teil des Dokuments.
 
-- Die Zuordnung, und heben Sie die Zuordnung alle Schriftarten oder andere Graphics Device Interface (GDI) Ressourcen, die für das Drucken benötigten.
+- Zuweisen und Zuweisen von Schriftarten oder anderen GDI-Ressourcen (Graphics Device Interface), die für das Drucken erforderlich sind.
 
-- Bei Bedarf zu senden alle umschaltcodes, die erforderlich sind, den Druckermodus zu ändern, bevor Sie eine bestimmte Seite, z. B. drucken, um die Drucken Ausrichtung auf einer Basis pro Seite ändern.
+- Senden Sie ggf. Escapecodes, die zum Ändern des Druckermodus erforderlich sind, bevor Sie eine bestimmte Seite drucken, z. B. um die Druckausrichtung pro Seite zu ändern.
 
-Die Framework Aufgaben sind wie folgt aus:
+Der Rahmen hat folgende Aufgaben:
 
-- Anzeigen der **Drucken** Dialogfeld.
+- Zeigen Sie das Dialogfeld **Drucken** an.
 
-- Erstellen Sie eine [CDC](../mfc/reference/cdc-class.md) Objekt für den Drucker.
+- Erstellen Sie ein [CDC-Objekt](../mfc/reference/cdc-class.md) für den Drucker.
 
-- Rufen Sie die [StartDoc](../mfc/reference/cdc-class.md#startdoc) und [EndDoc](../mfc/reference/cdc-class.md#enddoc) Memberfunktionen der `CDC` Objekt.
+- Rufen Sie die [StartDoc-](../mfc/reference/cdc-class.md#startdoc) und `CDC` [EndDoc-Memberfunktionen](../mfc/reference/cdc-class.md#enddoc) des Objekts auf.
 
-- Wiederholt Aufrufen der [StartPage](../mfc/reference/cdc-class.md#startpage) Memberfunktion die `CDC` Objekt, informiert die View-Klasse, welche Seite gedruckt werden soll, und rufen, die [EndPage](../mfc/reference/cdc-class.md#endpage) Memberfunktion die `CDC` Objekt.
+- Rufen Sie wiederholt die [StartPage-Memberfunktion](../mfc/reference/cdc-class.md#startpage) des `CDC` Objekts auf, informieren Sie die Ansichtsklasse, welche Seite gedruckt werden soll, und rufen Sie die [EndPage-Memberfunktion](../mfc/reference/cdc-class.md#endpage) des `CDC` Objekts auf.
 
-- Rufen Sie überschreibbare-Funktionen in der Ansicht zum richtigen Zeitpunkt.
+- Rufen Sie überschreibbare Funktionen in der Ansicht zu den entsprechenden Zeiten auf.
 
-In den folgenden Artikeln wird erläutert, wie das Framework drucken und Druckvorschau unterstützt:
+In den folgenden Artikeln wird erläutert, wie das Framework Drucken und Druckvorschau unterstützt:
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
-- [Wie standarddrucks](../mfc/how-default-printing-is-done.md)
+- [Wie Standarddruck erfolgt](../mfc/how-default-printing-is-done.md)
 
 - [Mehrseitige Dokumente](../mfc/multipage-documents.md)
 
 - [Kopf- und Fußzeilen](../mfc/headers-and-footers.md)
 
-- [Zuordnen von GDI-Ressourcen für Drucken](../mfc/allocating-gdi-resources.md)
+- [Zuweisen von GDI-Ressourcen für den Druck](../mfc/allocating-gdi-resources.md)
 
 - [Seitenansicht](../mfc/print-preview-architecture.md)
 

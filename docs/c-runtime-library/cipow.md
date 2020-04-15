@@ -1,8 +1,9 @@
 ---
 title: _CIpow
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _CIpow
+- _o__CIpow
 api_location:
 - msvcr100.dll
 - msvcr110.dll
@@ -12,6 +13,7 @@ api_location:
 - msvcrt.dll
 - msvcr90.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -23,12 +25,12 @@ helpviewer_keywords:
 - CIpow intrinsic
 - _CIpow intrinsic
 ms.assetid: 477aaf0c-ac58-4252-89dd-9f3e35d47536
-ms.openlocfilehash: b32d7c550d465052f7c1dcd4a81baab803ec28f0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 1b0c900fbd9cb3070f7666a3b032ee7e44f9f881
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940521"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81349421"
 ---
 # <a name="_cipow"></a>_CIpow
 
@@ -40,13 +42,15 @@ Berechnet *x* potenziert mit *y* anhand der obersten Werte im Stapel.
 void __cdecl _CIpow();
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Diese Version der `pow`-Funktion verfügt über eine spezielle Aufrufkonvention, die der Compiler versteht. Sie beschleunigt die Ausführung, da sie das Generieren von Kopien verhindert und bei der Registerzuweisung hilft.
 
 Der resultierende Wert wird oben auf dem Stapel abgelegt.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 **Plattform:** x86
 

@@ -132,12 +132,12 @@ helpviewer_keywords:
 - CDockablePane [MFC], m_bHideInAutoHideMode
 - CDockablePane [MFC], m_nSlideSteps
 ms.assetid: e2495f4c-765f-48f9-a2e2-e45e47608d91
-ms.openlocfilehash: 9ba5cfa2fc30c19cabc3f9f45a10f2c23e7d4269
-ms.sourcegitcommit: 9b904e490b1e262293a602bd1291a8f3045e755b
+ms.openlocfilehash: ae8dbed46dbcd7d2bd317c2113b2195d0531bce9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67552324"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375606"
 ---
 # <a name="cdockablepane-class"></a>CDockablePane Class
 
@@ -153,151 +153,151 @@ class CDockablePane : public CPane
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDockablePane::CDockablePane](#cdockablepane)|Erstellt und initialisiert ein `CDockablePane`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDockablePane::AttachToTabWnd](#attachtotabwnd)|Fügt einen Bereich in einen anderen Bereich. Dadurch wird ein Fenster mit Registerkarten erstellt.|
-|[CDockablePane::CalcFixedLayout](#calcfixedlayout)|Gibt die Größe des Rechtecks im Bereich zurück.|
-|[CDockablePane::CanAcceptMiniFrame](#canacceptminiframe)|Bestimmt, ob der angegebene Mini-Frame in den Bereich angedockt werden kann.|
-|[CDockablePane::CanAcceptPane](#canacceptpane)|Bestimmt, ob ein weiterer Bereich, in den aktuellen Bereich angedockt werden kann.|
-|[CDockablePane::CanAutoHide](#canautohide)|Bestimmt, ob der Bereich automatisch ausblendbaren-Modus unterstützt. (Überschreibt [CBasePane::CanAutoHide](../../mfc/reference/cbasepane-class.md#canautohide).)|
-|[CDockablePane::CanBeAttached](#canbeattached)|Bestimmt, ob der aktuelle Bereich in einen anderen Bereich angedockt werden kann.|
-|[CDockablePane::ConvertToTabbedDocument](#converttotabbeddocument)|Konvertiert einen oder mehrere andockbare Bereiche im Registerkartenformat MDI-Dokumenten.|
-|[CDockablePane::CopyState](#copystate)|Kopiert den Zustand des einen andockbaren Bereich an.|
-|[CDockablePane::Create](#create)|Erstellt die Windows-Steuerelement, und fügt es der `CDockablePane` Objekt.|
-|[CDockablePane::CreateDefaultPaneDivider](#createdefaultpanedivider)|Erstellt einen Unterteiler Standardwert für den Bereich an, wie es um ein Framefenster angedockt wird.|
-|[CDockablePane::CreateEx](#createex)|Erstellt die Windows-Steuerelement, und fügt es der `CDockablePane` Objekt.|
-|[CDockablePane::CreateTabbedPane](#createtabbedpane)|Erstellt einen Bereich im Registerkartenformat im aktuellen Bereich.|
-|[CDockablePane::DockPaneContainer](#dockpanecontainer)|Dockt einen Container in den Bereich an.|
-|[CDockablePane::DockPaneStandard](#dockpanestandard)|Dockt einen Bereich mithilfe der Gliederung (standard) Andocken an.|
-|`CDockablePane::DockToFrameWindow`|Wird intern verwendet. Verwenden Sie einen Bereich für das Andocken [CPane::DockPane](../../mfc/reference/cpane-class.md#dockpane) oder [CDockablePane::DockToWindow](#docktowindow).|
-|[CDockablePane::DockToRecentPos](#docktorecentpos)|Dockt einen Bereich auf die aktuelle gespeicherte dockingposition an.|
-|[CDockablePane::DockToWindow](#docktowindow)|Dockt einen andockbaren Bereich auf einen anderen andockbaren Bereich an.|
-|[CDockablePane::EnableAutohideAll](#enableautohideall)|Aktiviert oder deaktiviert die automatischen Ausblendemodus für diesen Bereich zusammen mit anderen Bereichen im Container.|
-|[CDockablePane::EnableGripper](#enablegripper)|Anzeigen oder ausblenden die Beschriftung (Ziehpunkt).|
-|[CDockablePane::GetAHRestoredRect](#getahrestoredrect)|Gibt die Position des Bereichs, wenn im Modus "automatisch ausblenden" angezeigt.|
-|[CDockablePane::GetAHSlideMode](#getahslidemode)|Ruft die Auto-Modus zum Folie ausblenden für den Bereich ab.|
+|[CDockablePane::AttachToTabWnd](#attachtotabwnd)|Fügt einen Bereich an einen anderen Bereich an. Dadurch wird ein Registerkartenbereich erstellt.|
+|[CDockablePane::CalcFixedLayout](#calcfixedlayout)|Gibt die Größe des Bereichsrechtecks zurück.|
+|[CDockablePane::CanAcceptMiniFrame](#canacceptminiframe)|Legt fest, ob der angegebene Minirahmen an den Bereich angedockt werden kann.|
+|[CDockablePane::CanAcceptPane](#canacceptpane)|Legt fest, ob ein anderer Bereich an den aktuellen Bereich angedockt werden kann.|
+|[CDockablePane::CanAutoHide](#canautohide)|Legt fest, ob der Bereich den Auto-Hide-Modus unterstützt. (Überschreibt [CBasePane::CanAutoHide](../../mfc/reference/cbasepane-class.md#canautohide).)|
+|[CDockablePane::CanBeAttached](#canbeattached)|Legt fest, ob der aktuelle Bereich an einen anderen Bereich angedockt werden kann.|
+|[CDockablePane::ConvertToTabbedDocument](#converttotabbeddocument)|Konvertiert einen oder mehrere andockbare Bereiche in MDI-Tabbed-Dokumente.|
+|[CDockablePane::CopyState](#copystate)|Kopiert den Status eines andockbaren Bereichs.|
+|[CDockablePane::Erstellen](#create)|Erstellt das Windows-Steuerelement und `CDockablePane` fügt es an das Objekt an.|
+|[CDockablePane::CreateDefaultPaneDivider](#createdefaultpanedivider)|Erstellt eine Standardtrennwand für den Bereich, der an ein Rahmenfenster angedockt wird.|
+|[CDockablePane::CreateEx](#createex)|Erstellt das Windows-Steuerelement und `CDockablePane` fügt es an das Objekt an.|
+|[CDockablePane::CreateTabbedPane](#createtabbedpane)|Erstellt einen Registerkartenbereich aus dem aktuellen Bereich.|
+|[CDockablePane::DockPaneContainer](#dockpanecontainer)|Dockt einen Container an den Bereich an.|
+|[CDockablePane::DockPaneStandard](#dockpanestandard)|Dockt einen Bereich mithilfe des Gliederungsandandings (Standarddocking) an.|
+|`CDockablePane::DockToFrameWindow`|Wird intern verwendet. Verwenden Sie zum Andocken eines Bereichs [CPane::DockPane](../../mfc/reference/cpane-class.md#dockpane) oder [CDockablePane::DockToWindow](#docktowindow).|
+|[CDockablePane::DockToRecentPos](#docktorecentpos)|Dockt einen Bereich an die gespeicherte letzte Dockingposition an.|
+|[CDockablePane::DockToWindow](#docktowindow)|Dockt einen Dockingbereich an einen anderen Dockingbereich an.|
+|[CDockablePane::EnableAutohideAll](#enableautohideall)|Aktiviert oder deaktiviert den automatischen Ausblendmodus für diesen Bereich zusammen mit anderen Bereichen im Container.|
+|[CDockablePane::EnableGripper](#enablegripper)|Zeigt die Beschriftung ein oder blendet sie aus (Greifer).|
+|[CDockablePane::GetAHRestoredRect](#getahrestoredrect)|Gibt die Position des Bereichs an, wenn er im Auto-Ausblendmodus sichtbar ist.|
+|[CDockablePane::GetAHSlideMode](#getahslidemode)|Ruft den automatischen Ausblendmodus für den Bereich ab.|
 |`CDockablePane::GetAutoHideButton`|Wird intern verwendet.|
 |`CDockablePane::GetAutoHideToolBar`|Wird intern verwendet.|
-|[CDockablePane::GetCaptionHeight](#getcaptionheight)|Gibt die Höhe des die aktuelle Beschriftung zurück.|
-|[CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider)|Gibt standardmäßige bereichsteiler für den Bereich des Containers zurück.|
-|[CDockablePane::GetDockingStatus](#getdockingstatus)|Bestimmt, ob die Möglichkeit, einen Bereich angedockt werden abhängig von der angegebenen Position.|
-|[CDockablePane::GetDragSensitivity](#getdragsensitivity)|Gibt die Vertraulichkeit ziehen Sie einen andockbaren Bereich zurück.|
-|[CDockablePane::GetLastPercentInPaneContainer](#getlastpercentinpanecontainer)|Ruft den Prozentsatz des Speicherplatzes, die ein Bereich, in dessen Container belegt ab.|
-|[CDockablePane::GetTabArea](#gettabarea)|Ruft den Registerkartenbereich für den Bereich.|
-|[CDockablePane::GetTabbedPaneRTC](#gettabbedpanertc)|Gibt zurück, die laufzeitklasseninformationen zu einem Fenster im Registerkartenformat, die erstellt wird, wenn ein weiterer Bereich in den aktuellen Bereich angedockt.|
-|[CDockablePane::HasAutoHideMode](#hasautohidemode)|Gibt an, ob ein andockbarer Bereich, den Modus "automatisch ausblenden" umgeschaltet werden kann.|
-|[CDockablePane::HitTest](#hittest)|Gibt die bestimmte Position in einem Bereich, in denen der Benutzer die Maus klickt.|
+|[CDockablePane::GetCaptionHeight](#getcaptionheight)|Gibt die Höhe der aktuellen Beschriftung zurück.|
+|[CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider)|Gibt den Standardbereichsteiler für den Container des Bereichs zurück.|
+|[CDockablePane::GetDockingStatus](#getdockingstatus)|Bestimmt die Fähigkeit eines Bereichs, der basierend auf der angegebenen Zeigerposition angedockt werden soll.|
+|[CDockablePane::GetDragSensitivity](#getdragsensitivity)|Gibt die Ziehempfindlichkeit eines Andockbereichs zurück.|
+|[CDockablePane::GetLastPercentInPaneContainer](#getlastpercentinpanecontainer)|Ruft den Prozentsatz des Speicherplatzes ab, den ein Bereich in seinem Container belegt.|
+|[CDockablePane::GetTabArea](#gettabarea)|Ruft den Registerkartenbereich für den Bereich ab.|
+|[CDockablePane::GetTabbedPaneRTC](#gettabbedpanertc)|Gibt die Laufzeitklasseninformationen zu einem Registerkartenfenster zurück, das erstellt wird, wenn ein anderer Bereich an den aktuellen Bereich angedockt wird.|
+|[CDockablePane::HasAutoHideMode](#hasautohidemode)|Gibt an, ob ein Andockbereich in den automatischen Ausblendmodus geschaltet werden kann.|
+|[CDockablePane::HitTest](#hittest)|Gibt die bestimmte Position in einem Bereich an, in dem der Benutzer mit der Maus klickt.|
 |`CDockablePane::IsAccessibilityCompatible`|Wird intern verwendet.|
-|[CDockablePane::IsAutohideAllEnabled](#isautohideallenabled)|Gibt an, ob die andockbaren Bereich, und alle anderen Bereiche in den Container im Modus "automatisch ausblenden" platziert werden können.|
-|[CDockablePane::IsAutoHideMode](#isautohidemode)|Bestimmt, ob ein Bereich im Modus "automatisch ausblenden".|
+|[CDockablePane::IsAutohideAllEnabled](#isautohideallenabled)|Gibt an, ob der Andockbereich und alle anderen Bereiche im Container im Auto-Ausblendmodus platziert werden können.|
+|[CDockablePane::IsAutoHideMode](#isautohidemode)|Bestimmt, ob sich ein Bereich im Auto-Ausblendmodus befindet.|
 |`CDockablePane::IsChangeState`|Wird intern verwendet.|
 |[CDockablePane::IsDocked](#isdocked)|Bestimmt, ob der aktuelle Bereich angedockt ist.|
-|[CDockablePane::IsHideInAutoHideMode](#ishideinautohidemode)|Bestimmt das Verhalten eines Bereichs, der im Modus "automatisch ausblenden" ist, wenn sie (durch Aufrufen von ein- oder ausgeblendet ist) `ShowPane`.|
-|[CDockablePane::IsInFloatingMultiPaneFrameWnd](#isinfloatingmultipaneframewnd)|Gibt an, ob der Bereich in einem Multipane-Rahmenfenster ist.|
-|[CDockablePane::IsResizable](#isresizable)|Gibt an, ob der Bereich geändert werden kann.|
-|[CDockablePane::IsTabLocationBottom](#istablocationbottom)|Gibt an, ob die Registerkarten oben oder unteren Rand des Bereichs befinden.|
+|[CDockablePane::IsHideInAutoHideMode](#ishideinautohidemode)|Bestimmt das Verhalten eines Bereichs, der sich im Auto-Ausblendmodus `ShowPane`befindet, wenn er durch Aufrufen angezeigt (oder ausgeblendet) wird.|
+|[CDockablePane::IsInFloatingMultiPaneFrameWnd](#isinfloatingmultipaneframewnd)|Gibt an, ob sich der Bereich in einem Rahmenfenster mit mehreren Fenstern befindet.|
+|[CDockablePane::IsResizable](#isresizable)|Gibt an, ob die Geänderte Formataum geändert werden kann.|
+|[CDockablePane::IsTabLocationBottom](#istablocationbottom)|Gibt an, ob sich Registerkarten am oberen oder unteren Rand des Bereichs befinden.|
 |[CDockablePane::IsTracked](#istracked)|Gibt an, ob ein Bereich vom Benutzer gezogen wird.|
-|[CDockablePane::IsVisible](#isvisible)|Bestimmt, ob der aktuelle Bereich angezeigt wird.|
+|[CDockablePane::IsVisible](#isvisible)|Bestimmt, ob der aktuelle Bereich sichtbar ist.|
 |[CDockablePane::LoadState](#loadstate)|Wird intern verwendet.|
-|[CDockablePane::OnAfterChangeParent](#onafterchangeparent)|Wird vom Framework aufgerufen, wenn das übergeordnete Element eines Bereichs geändert wurde. (Überschreibt [CPane::OnAfterChangeParent](../../mfc/reference/cpane-class.md#onafterchangeparent).)|
-|[CDockablePane::OnAfterDockFromMiniFrame](#onafterdockfromminiframe)|Vom Framework aufgerufen, wenn eine unverankerte andockleiste an ein Framefenster angedockt.|
-|[CDockablePane::OnBeforeChangeParent](#onbeforechangeparent)|Vom Framework aufgerufen, wenn das übergeordnete Element des Bereichs geändert wird. (Überschreibt [CPane::OnBeforeChangeParent](../../mfc/reference/cpane-class.md#onbeforechangeparent).)|
-|[CDockablePane::OnBeforeFloat](#onbeforefloat)|Vom Framework aufgerufen, wenn ein Bereich, der auf "float" geht. (Überschreibt [CPane::OnBeforeFloat](../../mfc/reference/cpane-class.md#onbeforefloat).)|
-|[CDockablePane::RemoveFromDefaultPaneDividier](#removefromdefaultpanedividier)|Das Framework ruft diese Methode auf, wenn ein Bereich wird abgedockt wird.|
-|[CDockablePane::ReplacePane](#replacepane)|Ersetzt den Bereich mit einem angegebenen Bereich.|
-|[CDockablePane::RestoreDefaultPaneDivider](#restoredefaultpanedivider)|Das Framework ruft diese Methode auf, wenn ein Bereich zum Wiederherstellen der Standard-bereichsteiler deserialisiert wird.|
+|[CDockablePane::OnAfterChangeParent](#onafterchangeparent)|Wird vom Framework aufgerufen, wenn sich das übergeordnete Element eines Bereichs geändert hat. (Überschreibt [CPane::OnAfterChangeParent](../../mfc/reference/cpane-class.md#onafterchangeparent).)|
+|[CDockablePane::OnAfterDockFromMiniFrame](#onafterdockfromminiframe)|Wird vom Framework aufgerufen, wenn eine schwebende Dockingleiste an einem Rahmenfenster andockt.|
+|[CDockablePane::OnBeforeChangeParent](#onbeforechangeparent)|Wird vom Framework aufgerufen, wenn sich das übergeordnete Element des Bereichs ändern wird. (Überschreibt [CPane::OnBeforeChangeParent](../../mfc/reference/cpane-class.md#onbeforechangeparent).)|
+|[CDockablePane::OnBeforeFloat](#onbeforefloat)|Wird vom Framework aufgerufen, wenn ein Bereich schweben soll. (Überschreibt [CPane::OnBeforeFloat](../../mfc/reference/cpane-class.md#onbeforefloat).)|
+|[CDockablePane::RemoveFromDefaultPaneDividier](#removefromdefaultpanedividier)|Das Framework ruft diese Methode auf, wenn ein Bereich abgedockt wird.|
+|[CDockablePane::ReplacePane](#replacepane)|Ersetzt den Bereich durch einen angegebenen Bereich.|
+|[CDockablePane::RestoreDefaultPaneDivider](#restoredefaultpanedivider)|Das Framework ruft diese Methode auf, da ein Bereich deserialisiert wird, um den Standardbereichsteiler wiederherzustellen.|
 |`CDockablePane::SaveState`|Wird intern verwendet.|
-|`CDockablePane::Serialize`|Serialisiert den Bereich an. (Überschreibt `CBasePane::Serialize`.)|
-|[CDockablePane::SetAutoHideMode](#setautohidemode)|Schaltet die andockbaren Bereich zwischen sichtbar und automatischen Ausblendemodus.|
-|[CDockablePane::SetAutoHideParents](#setautohideparents)|Legt fest, der automatisch ausblendbaren Schaltfläche und der automatisch ausblendbaren-Symbolleiste für den Bereich.|
+|`CDockablePane::Serialize`|Serialisiert den Bereich. (Überschreibt `CBasePane::Serialize`.)|
+|[CDockablePane::SetAutoHideMode](#setautohidemode)|Schaltet den Andockbereich zwischen sichtbarem und automatischem Ausblendmodus um.|
+|[CDockablePane::SetAutoHideParents](#setautohideparents)|Legt die Schaltfläche "Auto-Hide" und die Symbolleiste für das automatische Ausblenden für den Bereich fest.|
 |`CDockablePane::SetDefaultPaneDivider`|Wird intern verwendet.|
-|[CDockablePane::SetLastPercentInPaneContainer](#setlastpercentinpanecontainer)|Bestimmt den Prozentsatz des Speicherplatzes, der ein Bereich in dessen Container einnimmt.|
+|[CDockablePane::SetLastPercentInPaneContainer](#setlastpercentinpanecontainer)|Legt den Prozentsatz des Speicherplatzes fest, den ein Bereich in seinem Container belegt.|
 |`CDockablePane::SetResizeMode`|Wird intern verwendet.|
-|[CDockablePane::SetRestoredDefaultPaneDivider](#setrestoreddefaultpanedivider)|Wird die wiederhergestellte Standard Trennlinie.|
-|[CDockablePane::SetTabbedPaneRTC](#settabbedpanertc)|Legt die laufzeitklasseninformationen für ein Fenster im Registerkartenformat, die erstellt wird, wenn zwei Bereiche zusammen docken fest.|
-|[CDockablePane::ShowPane](#showpane)|Anzeigen oder ausblenden ein Bereichs.|
-|[CDockablePane::Slide](#slide)|Anzeigen oder ausblenden ein Bereichs mit einem gleitenden Animation aus, die angezeigt wird, nur, wenn der Bereich in den Modus "automatisch ausblenden" ist.|
-|[CDockablePane::ToggleAutoHide](#toggleautohide)|Schaltet automatischen Ausblendemodus. (Überschreibt [CPane::ToggleAutoHide](../../mfc/reference/cpane-class.md#toggleautohide) .)|
-|[CDockablePane::UndockPane](#undockpane)|Dockt einen Bereich von Hauptrahmenfenster oder einen Benutzer im Fenster-Container.|
-|`CDockablePane::UnSetAutoHideMode`|Wird intern verwendet. Verwenden Sie zum Festlegen der automatischen Ausblendemodus [CDockablePane::SetAutoHideMode](#setautohidemode)|
+|[CDockablePane::SetRestoredDefaultPaneDivider](#setrestoreddefaultpanedivider)|Legt den wiederhergestellten Standardbereichsteiler fest.|
+|[CDockablePane::SetTabbedPaneRTC](#settabbedpanertc)|Legt die Laufzeitklasseninformationen für ein Registerkartenfenster fest, das erstellt wird, wenn zwei Bereiche zusammen andocken.|
+|[CDockablePane::ShowPane](#showpane)|Zeigt einen Bereich ein oder blendet ihn aus.|
+|[CDockablePane::Folie](#slide)|Zeigt einen Bereich mit einer schiedenden Animation ein oder blendet ihn aus, der nur angezeigt wird, wenn sich der Bereich im Auto-Ausblendmodus befindet.|
+|[CDockablePane::ToggleAutoHide](#toggleautohide)|Schaltet den Auto-Hide-Modus um. (Überschreibt [CPane::ToggleAutoHide](../../mfc/reference/cpane-class.md#toggleautohide) .)|
+|[CDockablePane::UndockPane](#undockpane)|Entfernt einen Bereich aus dem Hauptrahmenfenster oder einem Miniframe-Fenstercontainer.|
+|`CDockablePane::UnSetAutoHideMode`|Wird intern verwendet. Um den Auto-Hide-Modus einzustellen, verwenden Sie [CDockablePane::SetAutoHideMode](#setautohidemode)|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDockablePane::CheckAutoHideCondition](#checkautohidecondition)|Bestimmt, ob die andockbare Bereich (im Modus "automatisch ausblenden") ausgeblendet ist.|
-|[CDockablePane::CheckStopSlideCondition](#checkstopslidecondition)|Bestimmt, wann ein andockbarer Bereich der automatisch ausblendbaren gleitendes beendet werden soll.|
-|[CDockablePane::DrawCaption](#drawcaption)|Zeichnet die andockbaren Bereich Beschriftung (Ziehpunkt) an.|
-|[CDockablePane::OnPressButtons](#onpressbuttons)|Wird aufgerufen, wenn der Benutzer mit Ausnahme der Schaltflächen AFX_HTCLOSE und AFX_HTMAXBUTTON eine Titelleisten-Schaltfläche drückt.|
-|[CDockablePane::OnSlide](#onslide)|Vom Framework aufgerufen, der automatisch ausblendbaren Abrolleffekt gerendert werden soll, wenn der Bereich entweder ein- oder ausgeblendet ist.|
+|[CDockablePane::CheckAutoHideCondition](#checkautohidecondition)|Bestimmt, ob der Andockbereich ausgeblendet ist (im Auto-Ausblendmodus).|
+|[CDockablePane::CheckStopSlideCondition](#checkstopslidecondition)|Bestimmt, wann ein automatisch ausblendender Andockbereich nicht mehr gleitet.|
+|[CDockablePane::DrawCaption](#drawcaption)|Zeichnet die Beschriftung des Andockbereichs (Greifer).|
+|[CDockablePane::OnPressButtons](#onpressbuttons)|Wird aufgerufen, wenn der Benutzer eine andere Beschriftungsschaltfläche als die AFX_HTCLOSE- und AFX_HTMAXBUTTON-Schaltflächen drückt.|
+|[CDockablePane::OnSlide](#onslide)|Wird vom Framework aufgerufen, um den automatischen Folieneffekt zu rendern, wenn der Bereich entweder angezeigt oder ausgeblendet wird.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDockablePane::m_bDisableAnimation](#m_bdisableanimation)|Gibt an, ob der automatisch ausblendbaren Animation andockbaren Bereich deaktiviert ist.|
-|[CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode)|Bestimmt das Verhalten des Bereichs an, wenn der Bereich in den Modus "automatisch ausblenden" ist.|
-|[CDockablePane::m_nSlideSteps](#m_nslidesteps)|Gibt die Geschwindigkeit der Animation des Bereichs an, wenn es gerade angezeigt oder ausgeblendet wird, im Modus "automatisch ausblenden".|
+|[CDockablePane::m_bDisableAnimation](#m_bdisableanimation)|Gibt an, ob die automatische Ausblendanimation des andockbaren Bereichs deaktiviert ist.|
+|[CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode)|Bestimmt das Verhalten des Bereichs, wenn sich der Bereich im Auto-Ausblendmodus befindet.|
+|[CDockablePane::m_nSlideSteps](#m_nslidesteps)|Gibt die Animationsgeschwindigkeit des Bereichs an, wenn er im Auto-Ausblendmodus angezeigt oder ausgeblendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CDockablePane` implementiert die folgende Funktionen:
+`CDockablePane`implementiert die folgenden Funktionen:
 
-- Einen Bereich andocken ein Hauptrahmenfenster.
+- Andocken eines Bereichs an ein Hauptrahmenfenster.
 
-- Wechseln zum automatischen Ausblendemodus einen Bereich.
+- Wechseln eines Bereichs in den Auto-Hide-Modus.
 
-- Anfügen eines Bereichs einem Fenster im Registerkartenformat.
+- Anfügen eines Bereichs an ein Registerkartenfenster.
 
-- Gleitkommatyp in einem Minirahmenfenster in einen Bereich.
+- Schweben einer Scheibe in einem Miniframe-Fenster.
 
-- Andocken eines Bereichs in einen anderen Bereich, der in einem Minirahmenfenster unverankert ist.
+- Andocken eines Bereichs an einen anderen Bereich, der in einem Miniframefenster schwebend ist.
 
 - Ändern der Größe eines Bereichs.
 
-- Laden und Speichern des Zustands für einen andockbaren Bereich.
+- Lade- und Speicherstatus für einen Andockbereich.
 
     > [!NOTE]
-    >  Zustandsinformationen wird in der Windows-Registrierung gespeichert.
+    >  Statusinformationen werden in der Windows-Registrierung gespeichert.
 
-- Erstellen einen Bereich mit oder ohne eine Beschriftung. Die Beschriftung kann eine textbezeichnung und sie können mit einem Farbverlauf gefüllt werden.
+- Erstellen eines Bereichs mit oder ohne Beschriftung. Die Beschriftung kann eine Textbeschriftung haben und mit einer Farbverlaufsfarbe gefüllt werden.
 
-- Ziehen einen Bereich beim Anzeigen des Inhalts des Bereichs
+- Ziehen eines Bereichs beim Anzeigen des Inhalts des Bereichs
 
-- Ziehen einen Bereich beim Anzeigen eines Rechtecks ziehen Sie aus.
+- Ziehen eines Bereichs beim Anzeigen eines Ziehrechtecks.
 
-Um einen andockbaren Bereich in Ihrer Anwendung zu verwenden, leiten Sie eine Klasse im Bereich von der `CDockablePane` Klasse. Betten Sie entweder das abgeleitete Objekt, in die Hauptframe-Window-Objekt oder ein Window-Objekt, das die Instanz von Ihr Bereich steuert. Rufen Sie dann die [CDockablePane::Create](#create) Methode oder der [CDockablePane:: CreateEx](#createex) Methode, wenn Sie die WM_CREATE-Meldung in das Hauptrahmenfenster verarbeiten. Richten Sie das Objekt im Bereich durch den Aufruf [CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking), [cbasepane:: Dockpane](../../mfc/reference/cbasepane-class.md#dockpane), oder [CDockablePane:: Attachtotabwnd](#attachtotabwnd).
+Um einen Andockbereich in ihrer Anwendung zu verwenden, leiten Sie die Bereichsklasse von der `CDockablePane` Klasse ab. Betten Sie das abgeleitete Objekt entweder in das Hauptrahmenfensterobjekt oder in ein Fensterobjekt ein, das die Instanz des Bereichs steuert. Rufen Sie dann die [CDockablePane::Create-Methode](#create) oder die [CDockablePane::CreateEx-Methode](#createex) auf, wenn Sie die WM_CREATE Nachricht im Hauptbildfenster verarbeiten. Richten Sie schließlich das Bereichsobjekt ein, indem Sie [CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking), [CBasePane::DockPane](../../mfc/reference/cbasepane-class.md#dockpane)oder [cDockablePane::AttachToTabWnd aufrufen.](#attachtotabwnd)
 
 ## <a name="customization-tips"></a>Anpassungstipps
 
-Die folgenden Tipps beziehen sich auf `CDockablePane` Objekte:
+Die folgenden Tipps `CDockablePane` gelten für Objekte:
 
-- Wenn Sie aufrufen [CDockablePane:: Attachtotabwnd](#attachtotabwnd) für zwei nicht im Registerkartenformat, andockbare Bereiche, wird ein Zeiger auf ein Fenster im Registerkartenformat zurückgegeben werden die *PpTabbedControlBar* Parameter. Sie können weiterhin auf Registerkarten Fenster im Registerkartenformat hinzufügen, indem Sie mithilfe dieses Parameters.
+- Wenn Sie [CDockablePane::AttachToTabWnd](#attachtotabwnd) für zwei nicht launbare, andockbare Bereiche aufrufen, wird ein Zeiger auf ein Registerkartenfenster im Parameter *ppTabbedControlBar* zurückgegeben. Sie können weiterhin Registerkarten zum Registerkartenfenster hinzufügen, indem Sie diesen Parameter verwenden.
 
-- Die Art der Bereich im Registerkartenformat von erstellt wird [CDockablePane:: Attachtotabwnd](#attachtotabwnd) richtet sich nach der `CDockablePane` -Objekt in der *pTabControlBarAttachTo* Parameter. Rufen Sie [CDockablePane:: Settabbedpanertc](#settabbedpanertc) auf der Art der Bereich im Registerkartenformat festlegen, die die `CDockablePane` erstellt. Der Standardtyp richtet sich nach der `dwTabbedStyle` von [CDockablePane::Create](#create) beim ersten Erstellen der `CDockablePane`. Wenn *DwTabbedStyle* ist der Standardtyp ist AFX_CBRS_OUTLOOK_TABS [CMFCOutlookBar-Klasse](../../mfc/reference/cmfcoutlookbar-class.md); Wenn *DwTabbedStyle* AFX_CBRS_REGULAR_TABS der Standardtyp ist [ CTabbedPane-Klasse](../../mfc/reference/ctabbedpane-class.md).
+- Die Art des Registerkartenbereichs, der von [CDockablePane::AttachToTabWnd](#attachtotabwnd) erstellt wird, wird durch das `CDockablePane` Objekt im Parameter *pTabControlBarAttachTo* bestimmt. Sie können [CDockablePane::SetTabbedPaneRTC](#settabbedpanertc) aufrufen, um die Art `CDockablePane` des Tabbed-Bereichs festzulegen, den der erstellt. Der Standardtyp wird `dwTabbedStyle` durch [cDockablePane::Create](#create) beim ersten `CDockablePane`Erstellen der bestimmt. Wenn *dwTabbedStyle* AFX_CBRS_OUTLOOK_TABS ist der Standardtyp [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md); Wenn *dwTabbedStyle* AFX_CBRS_REGULAR_TABS ist der Standardtyp [CTabbedPane Class](../../mfc/reference/ctabbedpane-class.md).
 
-- Wenn Sie einen andockbaren Bereich in eine andere andocken möchten, rufen Sie die [CDockablePane::DockToWindow](#docktowindow) Methode. An einer Stelle muss im ursprüngliche Bereich angedockt sein, bevor Sie diese Methode aufrufen.
+- Wenn Sie einen andockfähigen Bereich an einen anderen andocken möchten, rufen Sie die [CDockablePane::DockToWindow-Methode](#docktowindow) auf. Der ursprüngliche Bereich muss irgendwo angedockt werden, bevor Sie diese Methode aufrufen.
 
-- Die Membervariable [CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode) Verhalten von andockbare Bereiche in Automatisches Ausblenden von Steuerelementen Modus beim Aufrufen [CDockablePane::ShowPane](#showpane). Wenn diese Membervariable auf "true" festgelegt ist, werden andockbare Bereiche sowie die Auto-ausblenden-Schaltflächen ausgeblendet. Andernfalls werden sie ein-und schieben.
+- Die Membervariable [CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode) steuert, wie sich andockbare Bereiche im automatischen Ausblendmodus verhalten, wenn Sie [CDockablePane::ShowPane](#showpane)aufrufen. Wenn diese Membervariable auf TRUE festgelegt ist, werden andockbare Bereiche und ihre Auto-Ausblendtasten ausgeblendet. Andernfalls rutschen sie ein und aus.
 
-- Sie können automatisch ausblendbaren Animation deaktivieren, indem die [CDockablePane::m_bDisableAnimation](#m_bdisableanimation) Membervariable auf "true".
+- Sie können die automatische Ausblendung der Animation deaktivieren, indem Sie die Membervariable [CDockablePane::m_bDisableAnimation](#m_bdisableanimation) auf TRUE festlegen.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie Sie konfigurieren eine `CDockablePane` -Objekt unter Verwendung verschiedener Methoden in der `CDockablePane` Klasse. Das Beispiel veranschaulicht, wie Sie der automatisch ausblendbaren alle Feature für den andockbaren Bereich aktivieren, aktivieren Sie die Beschriftung oder die Ziehpunkte, aktivieren den automatischen Ausblendemodus, des Bereichs und animieren einen Bereich, der im Modus "automatisch ausblenden" befindet. Dieser Codeausschnitt ist Teil der [Visual Studio-Demobeispiel](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird `CDockablePane` veranschaulicht, wie ein `CDockablePane` Objekt mithilfe verschiedener Methoden in der Klasse konfiguriert wird. Das Beispiel veranschaulicht, wie Sie das Feature für das automatische Ausblenden aller Features für den dockbaren Bereich aktivieren, die Beschriftung oder den Greifer aktivieren, den Auto-Hide-Modus aktivieren, den Bereich anzeigen und einen Bereich animieren, der sich im Auto-Ausblendmodus befindet. Dieser Codeausschnitt ist Teil des [Visual Studio Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#27](../../mfc/codesnippet/cpp/cdockablepane-class_1.cpp)]
 [!code-cpp[NVC_MFC_VisualStudioDemo#28](../../mfc/codesnippet/cpp/cdockablepane-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -311,11 +311,11 @@ Das folgende Beispiel zeigt, wie Sie konfigurieren eine `CDockablePane` -Objekt 
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxDockablePane.h
+**Kopfzeile:** afxDockablePane.h
 
-##  <a name="attachtotabwnd"></a>  CDockablePane:: Attachtotabwnd
+## <a name="cdockablepaneattachtotabwnd"></a><a name="attachtotabwnd"></a>CDockablePane::AttachToTabWnd
 
-Fügt den aktuellen Bereich an ein Zielbereich, und erstellen einen Bereich im Registerkartenformat an.
+Fügt den aktuellen Bereich an einen Zielbereich an und erstellt einen Registerkartenbereich.
 
 ```
 virtual CDockablePane* AttachToTabWnd(
@@ -328,46 +328,46 @@ virtual CDockablePane* AttachToTabWnd(
 ### <a name="parameters"></a>Parameter
 
 *pTabControlBarAttachTo*<br/>
-[in, out] Gibt den Bereich "Ziel", dem im aktuelle Bereich an anfügt. Der Bereich "Ziel" muss es sich um einen andockbaren Bereich sein.
+[in, out] Gibt den Zielbereich an, an den der aktuelle Bereich angefügt wird. Der Zielbereich muss ein andockbarer Bereich sein.
 
-*dockMethod*<br/>
-[in] Gibt die docking-Methode.
+*dockMethode*<br/>
+[in] Gibt die Andockmethode an.
 
 *bSetActive*<br/>
-[in] True, um den Bereich im Registerkartenformat zu aktivieren, nachdem der Anfügevorgang. andernfalls "false".
+[in] TRUE, um den Registerkartenbereich nach dem Anfügevorgang zu aktivieren; andernfalls FALSE.
 
 *ppTabbedControlBar*<br/>
-[out] Enthält der Bereich im Registerkartenformat, die durch den Anfügevorgang entsteht.
+[out] Enthält den Registerkartenbereich, der sich aus dem Anfügevorgang ergibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den aktuellen Bereich, wenn es sich nicht um einen Bereich im Registerkartenformat ist; andernfalls ein Zeiger auf den Bereich im Registerkartenformat, die durch den Anfügevorgang entsteht. Der Rückgabewert ist NULL, wenn im aktuelle Bereich kann nicht angefügt werden, oder wenn ein Fehler auftritt.
+Ein Zeiger auf den aktuellen Bereich, wenn es sich nicht um einen Registerkartenbereich handelt. Andernfalls ein Zeiger auf den Registerkartenbereich, der sich aus dem Anfügevorgang ergibt. Der Rückgabewert ist NULL, wenn der aktuelle Bereich nicht angefügt werden kann oder wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn zu einem anderen Bereich, die mit dieser Methode einen andockbaren Bereich angefügt wird, geschieht Folgendes:
+Wenn ein andockbarer Bereich mit dieser Methode an einen anderen Bereich angefügt wird, tritt Folgendes auf:
 
-1. Die Framework-sicherheitsüberprüfungen, ob der Bereich "Ziel" *pTabControlBarAttachTo* ist eine reguläre andocken, Bereich, oder wenn es von abgeleitet ist [CBaseTabbedPane](../../mfc/reference/cbasetabbedpane-class.md).
+1. Das Framework prüft, ob der Zielbereich *pTabControlBarAttachTo* ein regulärer Andockbereich ist oder ob er von [CBaseTabbedPane](../../mfc/reference/cbasetabbedpane-class.md)abgeleitet ist.
 
-1. Wenn der Bereich "Ziel" einen Bereich im Registerkartenformat ist, fügt das Framework im aktuellen Bereich darauf als Registerkarte an.
+1. Wenn es sich bei dem Zielbereich um einen Registerkartenbereich handelt, fügt das Framework ihm den aktuellen Bereich als Registerkarte hinzu.
 
-1. Wenn der Bereich "Ziel" einen regulären andockbaren Bereich ist, erstellt das Framework einen Bereich im Registerkartenformat.
+1. Wenn es sich bei dem Zielbereich um einen regulären Andockbereich handelt, erstellt das Framework einen Registerkartenbereich.
 
-   - Das Framework ruft `pTabControlBarAttachTo->CreateTabbedPane`. Hängt von die Darstellung der neue Bereich im Registerkartenformat der `m_pTabbedControlBarRTC` Member. Standardmäßig ist dieser Member in der Common Language Runtime-Klasse des festgelegt [CTabbedPane](../../mfc/reference/ctabbedpane-class.md). Wenn Sie den Stil AFX_CBRS_OUTLOOK_TABS als übergeben die *DwTabbedStyle* Parameter, um die [CDockablePane::Create](#create) -Methode, das Laufzeitobjekt für die Klasse wird festgelegt, auf die Common Language Runtime-Klasse des [ CMFCOutlookBar](../../mfc/reference/cmfcoutlookbar-class.md). Sie können diesen Member zu einem beliebigen Zeitpunkt so ändern Sie das Format des neuen Bereichs ändern.
+   - Der Rahmen `pTabControlBarAttachTo->CreateTabbedPane`ruft auf. Der Stil des neuen Registerkartenbereichs `m_pTabbedControlBarRTC` hängt vom Element ab. Standardmäßig ist dieser Member auf die Laufzeitklasse von [CTabbedPane](../../mfc/reference/ctabbedpane-class.md)festgelegt. Wenn Sie den AFX_CBRS_OUTLOOK_TABS-Stil als *dwTabbedStyle-Parameter* an die [CDockablePane::Create-Methode](#create) übergeben, wird das Laufzeitklassenobjekt auf die Laufzeitklasse von [CMFCOutlookBar](../../mfc/reference/cmfcoutlookbar-class.md)festgelegt. Sie können dieses Element jederzeit ändern, um den Stil des neuen Bereichs zu ändern.
 
-   - Wenn diese Methode einen Bereich im Registerkartenformat erstellt, ersetzt das Framework den Zeiger auf *pTabControlBarAttachTo* (wenn der Bereich in einem Multi-Benutzer-Fenster angedockt oder unverankert ist) mit einem Zeiger auf den neuen Bereich im Registerkartenformat.
+   - Wenn diese Methode einen Registerkartenbereich erstellt, ersetzt das Framework den Zeiger auf *pTabControlBarAttachTo* (wenn der Bereich in einem Fenster mit mehreren Miniframes angedockt oder schwebend ist) durch einen Zeiger auf den neuen Registerkartenbereich.
 
-   - Das Framework fügt der *pTabControlBarAttachTo* Bereich, um den Bereich im Registerkartenformat als erste Registerkarte. Das Framework fügt dann im aktuellen Bereich als eine zweite Registerkarte hinzu.
+   - Das Framework fügt den Bereich *pTabControlBarAttachTo* als erste Registerkarte dem Registerkartenbereich hinzu. Das Framework fügt dann den aktuellen Bereich als zweite Registerkarte hinzu.
 
-1. Wenn im aktuelle Bereich von abgeleitet ist `CBaseTabbedPane`, werden alle Registerkarten in verschoben *pTabControlBarAttachTo* und im aktuelle Bereich zerstört wird. Aus diesem Grund vorsichtig sein, wenn Sie diese Methode aufrufen, da ein Zeiger auf den aktuellen Bereich ungültig sein kann, wenn die Methode zurückgegeben.
+1. Wenn der aktuelle Bereich `CBaseTabbedPane`von abgeleitet wird, werden alle Registerkarten nach *pTabControlBarAttachTo* verschoben, und der aktuelle Bereich wird zerstört. Seien Sie daher vorsichtig, wenn Sie diese Methode aufrufen, da ein Zeiger auf den aktuellen Bereich ungültig sein kann, wenn die Methode zurückgegeben wird.
 
-Wenn Sie einen Bereich in einen anderen anfügen, wenn ein docking-Layout erstellen, legen Sie `dockMethod` zu DM_SHOW.
+Wenn Sie beim Erstellen eines Andocklayouts `dockMethod` einen Bereich an einen anderen anfügen, legen Sie DM_SHOW fest.
 
-Sie sollten den ersten Bereich andocken, bevor Sie einen anderen Bereich anfügen.
+Sie sollten den ersten Bereich andocken, bevor Sie einen anderen Bereich an ihn anfügen.
 
-##  <a name="calcfixedlayout"></a>  CDockablePane::CalcFixedLayout
+## <a name="cdockablepanecalcfixedlayout"></a><a name="calcfixedlayout"></a>CDockablePane::CalcFixedLayout
 
-Gibt die Größe des Rechtecks im Bereich zurück.
+Gibt die Größe des Bereichsrechtecks zurück.
 
 ```
 virtual CSize CalcFixedLayout(
@@ -378,18 +378,18 @@ virtual CSize CalcFixedLayout(
 ### <a name="parameters"></a>Parameter
 
 *bStretch*<br/>
-[in] Nicht verwendet.
+[in] Wird nicht verwendet.
 
 *bHorz*<br/>
-[in] Nicht verwendet.
+[in] Wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CSize` Objekt, das die Größe des Rechtecks im Bereich enthält.
+Ein `CSize` Objekt, das die Größe des Bereichsrechtecks enthält.
 
-##  <a name="canacceptminiframe"></a>  CDockablePane::CanAcceptMiniFrame
+## <a name="cdockablepanecanacceptminiframe"></a><a name="canacceptminiframe"></a>CDockablePane::CanAcceptMiniFrame
 
-Bestimmt, ob der angegebene Minirahmenfensters in den Bereich angedockt werden kann.
+Legt fest, ob der angegebene Miniframe an den Bereich angedockt werden kann.
 
 ```
 virtual BOOL CanAcceptMiniFrame(CPaneFrameWnd* pMiniFrame) const;
@@ -398,15 +398,15 @@ virtual BOOL CanAcceptMiniFrame(CPaneFrameWnd* pMiniFrame) const;
 ### <a name="parameters"></a>Parameter
 
 *pMiniFrame*<br/>
-[in] Zeiger auf eine `CPaneFrameWnd` Objekt.
+[in] Zeiger auf `CPaneFrameWnd` ein Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn *pMiniFrame* möglich in den Bereich angedockt ist, andernfalls "false".
+TRUE, wenn *pMiniFrame* an den Bereich angedockt werden kann; andernfalls FALSE.
 
-##  <a name="canacceptpane"></a>  CDockablePane::CanAcceptPane
+## <a name="cdockablepanecanacceptpane"></a><a name="canacceptpane"></a>CDockablePane::CanAcceptPane
 
-Bestimmt, ob ein weiterer Bereich, in den aktuellen Bereich angedockt werden kann.
+Legt fest, ob ein anderer Bereich an den aktuellen Bereich angedockt werden kann.
 
 ```
 virtual BOOL CanAcceptPane(const CBasePane* pBar) const;
@@ -414,22 +414,22 @@ virtual BOOL CanAcceptPane(const CBasePane* pBar) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
-[in] Gibt den Bereich, um den aktuellen Bereich angedockt.
+*Pbar*<br/>
+[in] Gibt den Bereich an, der an den aktuellen Bereich angedockt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der angegebene Bereich in diesen Bereich angedockt werden kann. andernfalls "false".
+TRUE, wenn der angegebene Bereich an diesen Bereich angedockt werden kann; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode auf, bevor Sie ein Bereich in den aktuellen Bereich angedockt ist.
+Das Framework ruft diese Methode auf, bevor ein Bereich an den aktuellen Bereich angedockt wird.
 
-Überschreiben Sie diese Funktion in einer abgeleiteten Klasse zum Aktivieren oder deaktivieren auf einen bestimmten Bereich andocken.
+Überschreiben Sie diese Funktion in einer abgeleiteten Klasse, um das Andocken an einen bestimmten Bereich zu aktivieren oder zu deaktivieren.
 
-Standardmäßig diese Methode gibt TRUE zurück, wenn entweder *pBar* oder das übergeordnete Element ist vom Typ `CDockablePane`.
+Standardmäßig gibt diese Methode TRUE zurück, wenn entweder `CDockablePane` *pBar* oder ihr übergeordnetes Element vom Typ ist.
 
-##  <a name="canautohide"></a>  CDockablePane::CanAutoHide
+## <a name="cdockablepanecanautohide"></a><a name="canautohide"></a>CDockablePane::CanAutoHide
 
 Bestimmt, ob der Bereich automatisch ausblenden kann.
 
@@ -439,21 +439,21 @@ virtual BOOL CanAutoHide() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Bereich automatisch im Hintergrund kann; andernfalls "false".
+TRUE, wenn der Bereich automatisch ausblenden kann; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`CDockablePane::CanAutoHide` "false" werden in den folgenden Situationen zurückgegeben:
+`CDockablePane::CanAutoHide`gibt FALSE in einer der folgenden Situationen zurück:
 
-- Im Bereich besitzt kein übergeordnetes Element.
+- Der Bereich hat kein übergeordnetes Element.
 
-- Dock-Manager lässt sich nicht auf Bereiche, zum automatischen Ausblenden aus.
+- Der Andock-Manager lässt nicht zu, dass Bereiche automatisch ausgeblendet werden.
 
-- Der Bereich wird nicht angedockt.
+- Der Bereich ist nicht angedockt.
 
-##  <a name="canbeattached"></a>  CDockablePane::CanBeAttached
+## <a name="cdockablepanecanbeattached"></a><a name="canbeattached"></a>CDockablePane::CanBeAttached
 
-Bestimmt, ob der aktuelle Bereich in einen anderen Bereich angedockt werden kann.
+Legt fest, ob der aktuelle Bereich an einen anderen Bereich angedockt werden kann.
 
 ```
 virtual BOOL CanBeAttached() const;
@@ -461,27 +461,27 @@ virtual BOOL CanBeAttached() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich in einen anderen Bereich oder an das Hauptrahmenfenster angedockt werden kann. andernfalls "false".
+TRUE, wenn der andockbare Bereich an einen anderen Bereich oder an das Hauptrahmenfenster angedockt werden kann. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig gibt diese Methode immer "true" zurück. Überschreiben Sie diese Methode in einer abgeleiteten Klasse zum Aktivieren oder deaktivieren, ohne Andocken [CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking).
+Standardmäßig gibt diese Methode immer TRUE zurück. Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um das Andocken zu aktivieren oder zu deaktivieren, ohne [CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking)aufzurufen.
 
-##  <a name="cdockablepane"></a>  CDockablePane::CDockablePane
+## <a name="cdockablepanecdockablepane"></a><a name="cdockablepane"></a>CDockablePane::CDockablePane
 
-Erstellt und initialisiert ein [CDockablePane](../../mfc/reference/cdockablepane-class.md) Objekt.
+Erstellt und initialisiert ein [CDockablePane-Objekt.](../../mfc/reference/cdockablepane-class.md)
 
 ```
 CDockablePane();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie einen andockbaren Bereich-Objekt erstellen, rufen [CDockablePane::Create](#create) oder [CDockablePane:: CreateEx](#createex) , ihn zu erstellen.
+Nachdem Sie ein dockbares Bereichsobjekt erstellt haben, rufen Sie [CDockablePane::Create](#create) oder [CDockablePane::CreateEx](#createex) auf, um es zu erstellen.
 
-##  <a name="converttotabbeddocument"></a>  CDockablePane::ConvertToTabbedDocument
+## <a name="cdockablepaneconverttotabbeddocument"></a><a name="converttotabbeddocument"></a>CDockablePane::ConvertToTabbedDocument
 
-Konvertiert einen oder mehrere andockbare Bereiche im Registerkartenformat MDI-Dokumenten.
+Konvertiert einen oder mehrere andockbare Bereiche in MDI-Tabbed-Dokumente.
 
 ```
 virtual void ConvertToTabbedDocument(BOOL bActiveTabOnly = TRUE);
@@ -490,11 +490,11 @@ virtual void ConvertToTabbedDocument(BOOL bActiveTabOnly = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bActiveTabOnly*<br/>
-[in] Bei der Konvertierung einer `CTabbedPane`, geben Sie "true", um nur die aktive Registerkarte zu konvertieren. Geben Sie "false", um alle Registerkarten in den Bereich zu konvertieren.
+[in] Wenn Sie `CTabbedPane`eine konvertieren, geben Sie TRUE an, um nur die aktive Registerkarte zu konvertieren. Geben Sie FALSE an, um alle Registerkarten im Bereich zu konvertieren.
 
-##  <a name="checkautohidecondition"></a>  CDockablePane::CheckAutoHideCondition
+## <a name="cdockablepanecheckautohidecondition"></a><a name="checkautohidecondition"></a>CDockablePane::CheckAutoHideCondition
 
-Bestimmt, ob die andockbare Bereich ausgeblendet ist (auch als in den Hintergrundmodus bezeichnet).
+Bestimmt, ob der Dockingbereich ausgeblendet ist (auch als Autohide-Modus bezeichnet).
 
 ```
 virtual BOOL CheckAutoHideCondition();
@@ -502,17 +502,17 @@ virtual BOOL CheckAutoHideCondition();
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die ausblenden Bedingung erfüllt ist. andernfalls "false".
+TRUE, wenn die Ausblendbedingung erfüllt ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework verwendet einen Timer, um in regelmäßigen Abständen überprüfen, ob einen Automatisches Ausblenden andockbaren Bereich ausgeblendet. Die Methode gibt TRUE zurück, wenn der Bereich nicht aktiv ist, im Bereich nicht geändert werden und der Mauszeiger befindet sich nicht über den Bereich.
+Das Framework verwendet einen Timer, um regelmäßig zu überprüfen, ob ein automatisch ausblendbarer Dockbereich ausgeblendet werden soll. Die Methode gibt TRUE zurück, wenn der Bereich nicht aktiv ist, die Größe des Bereichs nicht geändert wird und sich der Mauszeiger nicht über dem Bereich befindet.
 
-Wenn alle Bedingungen erfüllt sind, um das Framework ruft [CDockablePane::Slide](#slide) Bereich ausgeblendet.
+Wenn alle vorherigen Bedingungen erfüllt sind, ruft das Framework [CDockablePane::Slide](#slide) auf, um den Bereich auszublenden.
 
-##  <a name="checkstopslidecondition"></a>  CDockablePane::CheckStopSlideCondition
+## <a name="cdockablepanecheckstopslidecondition"></a><a name="checkstopslidecondition"></a>CDockablePane::CheckStopSlideCondition
 
-Bestimmt, wenn ein Automatisches Ausblenden andockbaren Bereich gleitend beendet werden soll.
+Legt fest, wann ein automatischausblendender Andockbereich nicht mehr gleiten soll.
 
 ```
 virtual BOOL CheckStopSlideCondition(BOOL bDirection);
@@ -520,22 +520,22 @@ virtual BOOL CheckStopSlideCondition(BOOL bDirection);
 
 ### <a name="parameters"></a>Parameter
 
-*bDirection*<br/>
-[in] True, wenn der Bereich angezeigt wird. "False", wenn der Bereich ausgeblendet ist.
+*bDirektion*<br/>
+[in] TRUE, wenn der Bereich sichtbar ist; FALSE, wenn der Bereich ausgeblendet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die beenden-Bedingung erfüllt ist. andernfalls "false".
+TRUE, wenn die Stoppbedingung erfüllt ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn in den Hintergrundmodus ein andockbaren Bereich festgelegt ist, verwendet das Framework gleitende Effekte anzeigen oder Ausblenden des Bereichs. Das Framework ruft diese Funktion an, wenn im Bereich gleitend ist. `CheckStopSlideCondition` Gibt TRUE zurück, wenn der Bereich vollständig sichtbar ist oder wenn es vollständig ausgeblendet ist.
+Wenn ein dockbarer Bereich auf den Autohide-Modus eingestellt ist, verwendet das Framework Schiebeeffekte, um den Bereich ein- oder auszublenden. Das Framework ruft diese Funktion auf, wenn der Bereich verschiebt. `CheckStopSlideCondition`gibt TRUE zurück, wenn der Bereich vollständig sichtbar ist oder wenn er vollständig ausgeblendet ist.
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse zum Implementieren von benutzerdefinierten automatisch im Hintergrund Auswirkungen.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um benutzerdefinierte Autohide-Effekte zu implementieren.
 
-##  <a name="copystate"></a>  CDockablePane::CopyState
+## <a name="cdockablepanecopystate"></a><a name="copystate"></a>CDockablePane::CopyState
 
-Kopiert den Zustand des einen andockbaren Bereich an.
+Kopiert den Status eines andockbaren Bereichs.
 
 ```
 virtual void CopyState(CDockablePane* pOrgBar);
@@ -546,9 +546,9 @@ virtual void CopyState(CDockablePane* pOrgBar);
 *pOrgBar*<br/>
 [in] Ein Zeiger auf einen andockbaren Bereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`CDockablePane::CopyState` kopiert den Status der *pOrgBar* in den aktuellen Bereich durch Aufrufen der folgenden Methoden:
+`CDockablePane::CopyState`kopiert den Status der *pOrgBar* in den aktuellen Bereich, indem die folgenden Methoden aufgerufen werden:
 
 - [CPane::CopyState](../../mfc/reference/cpane-class.md#copystate)
 
@@ -560,9 +560,9 @@ virtual void CopyState(CDockablePane* pOrgBar);
 
 - [CDockablePane::IsAutohideAllEnabled](#isautohideallenabled)
 
-##  <a name="create"></a>  CDockablePane::Create
+## <a name="cdockablepanecreate"></a><a name="create"></a>CDockablePane::Erstellen
 
-Erstellt die Windows-Steuerelement, und fügt es der [CDockablePane](../../mfc/reference/cdockablepane-class.md) Objekt.
+Erstellt das Windows-Steuerelement und fügt es an das [CDockablePane-Objekt](../../mfc/reference/cdockablepane-class.md) an.
 
 ```
 virtual BOOL Create(
@@ -590,53 +590,53 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *lpszCaption*<br/>
-[in] Gibt den Fensternamen.
+[in] Gibt den Fensternamen an.
 
 *pParentWnd*<br/>
 [in, out] Gibt das übergeordnete Fenster an.
 
-*rect*<br/>
-[in] Gibt die Größe und Position des Fensters, in Clientkoordinaten des *pParentWnd*.
+*Rect*<br/>
+[in] Gibt die Größe und Position des Fensters in den Clientkoordinaten von *pParentWnd*an.
 
 *bHasGripper*<br/>
-[in] "True", um den Bereich mit einer Beschriftung zu erstellen; andernfalls "false".
+[in] TRUE, um den Bereich mit einer Beschriftung zu erstellen; andernfalls FALSE.
 
 *nID*<br/>
-[in] Gibt die ID des untergeordneten Fensters. Dieser Wert muss eindeutig sein, wenn für diesen andockbaren Bereich Andockstatus gespeichert werden soll.
+[in] Gibt die ID des untergeordneten Fensters an. Dieser Wert muss eindeutig sein, wenn Sie den Andockstatus für diesen Andockbereich speichern möchten.
 
 *dwStyle*<br/>
-[in] Gibt an, der die Stilattribute für Fenster.
+[in] Gibt die Fensterstilattribute an.
 
 *dwTabbedStyle*<br/>
-[in] Gibt das Format im Registerkartenformat, der ein Fenster im Registerkartenformat, die erstellt wird, wenn der Benutzer einen Bereich in der Titelleiste dieses Bereichs zieht.
+[in] Gibt den Registerkartenstil eines Registerkartenfensters an, das erstellt wird, wenn der Benutzer einen Bereich in die Beschriftung dieses Bereichs zieht.
 
 *dwControlBarStyle*<br/>
-[in] Gibt zusätzliche Stilattribute.
+[in] Gibt zusätzliche Stilattribute an.
 
 *pContext*<br/>
-[in, out] Gibt den Kontext Erstellen des Fensters.
+[in, out] Gibt den Erstellungskontext des Fensters an.
 
 *lpszWindowName*<br/>
-[in] Gibt den Fensternamen.
+[in] Gibt den Fensternamen an.
 
-*sizeDefault*<br/>
-[in] Gibt die Größe des Fensters.
+*sizeStandard*<br/>
+[in] Gibt die Größe des Fensters an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich wurde erfolgreich erstellt wird. andernfalls "false".
+TRUE, wenn der dockbare Bereich erfolgreich erstellt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt einen Windows-Bereich und fügt es der `CDockablePane` Objekt.
+Erstellt einen Windows-Bereich und `CDockablePane` fügt ihn an das Objekt an.
 
-Wenn die *DwStyle* Fensterstil ist das CBRS_FLOAT_MULTI-Flag, das Minirahmenfenster kann mit anderen Bereichen im Fenster "Benutzer" "float". Standardmäßig kann andockbare Bereiche nur einzeln "float".
+Wenn der *dwStyle-Fensterstil* das CBRS_FLOAT_MULTI-Flag hat, kann das Miniframe-Fenster mit anderen Bereichen im Miniframe-Fenster schweben. Standardmäßig können Docking-Bereiche nur einzeln schweben.
 
-Wenn die *DwTabbedStyle* Parameter hat das AFX_CBRS_OUTLOOK_TABS-Flag angegeben, im Bereich erstellt im Outlook-Stil im Registerkartenformat Bereiche aus, wenn ein weiterer Bereich angefügt wird, um diesen Bereich mit der [CDockablePane:: Attachtotabwnd](#attachtotabwnd) Methode. Standardmäßig erstellen andockbare Bereiche im Registerkartenformat mit Typ regulären [CTabbedPane](../../mfc/reference/ctabbedpane-class.md).
+Wenn für den Parameter *dwTabbedStyle* das AFX_CBRS_OUTLOOK_TABS-Flag angegeben ist, erstellt der Bereich Registerkartenbereiche im Outlook-Stil, wenn mit der [CDockablePane::AttachToTabWnd-Methode](#attachtotabwnd) ein anderer Bereich an diesen Bereich angefügt wird. Standardmäßig erstellen andockbare Bereiche regelmäßige Registerkarten bereiche vom Typ [CTabbedPane](../../mfc/reference/ctabbedpane-class.md).
 
-##  <a name="createdefaultpanedivider"></a>  CDockablePane::CreateDefaultPaneDivider
+## <a name="cdockablepanecreatedefaultpanedivider"></a><a name="createdefaultpanedivider"></a>CDockablePane::CreateDefaultPaneDivider
 
-Erstellt einen Unterteiler Standardwert für den Bereich an, wie es um ein Framefenster angedockt wird.
+Erstellt eine Standardtrennwand für den Bereich, der an ein Rahmenfenster angedockt wird.
 
 ```
 static CPaneDivider* __stdcall CreateDefaultPaneDivider(
@@ -648,32 +648,32 @@ static CPaneDivider* __stdcall CreateDefaultPaneDivider(
 ### <a name="parameters"></a>Parameter
 
 *dwAlignment*<br/>
-[in] Gibt die Seite den Hauptframe, zu dem der Bereich angedockt wird. Wenn *DwAlignment* enthält das Flag CBRS_ALIGN_LEFT oder CBRS_ALIGN_RIGHT diese Methode erstellt eine vertikale (`CPaneDivider::SS_VERT`) Unterteiler; andernfalls wird diese Methode erstellt eine horizontale (`CPaneDivider::SS_HORZ`) Unterteiler.
+[in] Gibt die Seite des Hauptrahmens an, an die der Bereich angedockt wird. Wenn *dwAlignment* das CBRS_ALIGN_LEFT oder CBRS_ALIGN_RIGHT Flag enthält, erstellt diese Methode einen vertikalen (`CPaneDivider::SS_VERT`) Teiler; Andernfalls erstellt diese Methode`CPaneDivider::SS_HORZ`einen horizontalen ( ) Teiler.
 
 *pParent*<br/>
 [in] Zeiger auf den übergeordneten Frame.
 
 *pSliderRTC*<br/>
-[in] Nicht verwendet.
+[in] Wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Methode gibt einen Zeiger auf den neu erstellten Unterteiler, oder NULL, wenn Unterteiler Datenbankerstellung fehlgeschlagen ist.
+Diese Methode gibt einen Zeiger auf den neu erstellten Teiler oder NULL zurück, wenn die Trennteilerstellung fehlschlägt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-*DwAlignment* kann eines der folgenden Werte sein:
+*dwAlignment* kann einer der folgenden Werte sein:
 
-|Wert|Beschreibung|
+|Wert|BESCHREIBUNG|
 |-----------|-----------------|
-|CBRS_ALIGN_TOP|Der Bereich wird am oberen Rand der Clientbereich eines Rahmenfensters angedockt wird.|
-|CBRS_ALIGN_BOTTOM|Der Bereich wird am unteren Rand der Clientbereich eines Rahmenfensters angedockt wird.|
-|CBRS_ALIGN_LEFT|Der Bereich ist auf die linke Seite des Clientbereichs Rand eines Rahmenfensters angedockt wird.|
-|CBRS_ALIGN_RIGHT|Der Bereich ist auf die rechte Seite des Clientbereichs Rand eines Rahmenfensters angedockt wird.|
+|CBRS_ALIGN_TOP|Der Bereich wird an den oberen Rand des Clientbereichs eines Rahmenfensters angedockt.|
+|CBRS_ALIGN_BOTTOM|Der Bereich wird an den unteren Rand des Clientbereichs eines Rahmenfensters angedockt.|
+|CBRS_ALIGN_LEFT|Der Bereich wird an die linke Seite des Clientbereichs eines Rahmenfensters angedockt.|
+|CBRS_ALIGN_RIGHT|Der Bereich wird an die rechte Seite des Clientbereichs eines Rahmenfensters angedockt.|
 
-##  <a name="createex"></a>  CDockablePane:: CreateEx
+## <a name="cdockablepanecreateex"></a><a name="createex"></a>CDockablePane::CreateEx
 
-Erstellt die Windows-Steuerelement, und fügt es der [CDockablePane](../../mfc/reference/cdockablepane-class.md) Objekt.
+Erstellt das Windows-Steuerelement und fügt es an das [CDockablePane-Objekt](../../mfc/reference/cdockablepane-class.md) an.
 
 ```
 virtual BOOL CreateEx(
@@ -692,50 +692,50 @@ virtual BOOL CreateEx(
 ### <a name="parameters"></a>Parameter
 
 *dwStyleEx*<br/>
-[in] Gibt die erweiterten Stilattribute für das neue Fenster.
+[in] Gibt die erweiterten Stilattribute für das neue Fenster an.
 
 *lpszCaption*<br/>
-[in] Gibt den Fensternamen.
+[in] Gibt den Fensternamen an.
 
 *pParentWnd*<br/>
 [in, out] Gibt das übergeordnete Fenster an.
 
-*rect*<br/>
-[in] Gibt die Größe und Position des Fensters, in Clientkoordinaten des *pParentWnd*.
+*Rect*<br/>
+[in] Gibt die Größe und Position des Fensters in den Clientkoordinaten von *pParentWnd*an.
 
 *bHasGripper*<br/>
-[in] "True", um den Bereich mit einer Beschriftung zu erstellen; andernfalls "false".
+[in] TRUE, um den Bereich mit einer Beschriftung zu erstellen; andernfalls FALSE.
 
 *nID*<br/>
-[in] Gibt die ID des untergeordneten Fensters. Dieser Wert muss eindeutig sein, wenn Sie den andockzustand für diesen andockbaren Bereich speichern möchten.
+[in] Gibt die ID des untergeordneten Fensters an. Dieser Wert muss eindeutig sein, wenn Sie den Andockstatus für diesen Andockbereich speichern möchten.
 
 *dwStyle*<br/>
-[in] Gibt an, der die Stilattribute für Fenster.
+[in] Gibt die Fensterstilattribute an.
 
 *dwTabbedStyle*<br/>
-[in] Gibt das Format im Registerkartenformat, der ein Fenster im Registerkartenformat, die erstellt wird, wenn der Benutzer einen Bereich in der Titelleiste dieses Bereichs zieht.
+[in] Gibt den Registerkartenstil eines Registerkartenfensters an, das erstellt wird, wenn der Benutzer einen Bereich in die Beschriftung dieses Bereichs zieht.
 
 *dwControlBarStyle*<br/>
-[in] Gibt an, die zusätzliche Stilattribute.
+[in] Gibt die zusätzlichen Stilattribute an.
 
 *pContext*<br/>
-[in, out] Gibt den Kontext Erstellen des Fensters.
+[in, out] Gibt den Erstellungskontext des Fensters an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich wurde erfolgreich erstellt wird. andernfalls "false".
+TRUE, wenn der dockbare Bereich erfolgreich erstellt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt einen Windows-Bereich und fügt es der `CDockablePane` Objekt.
+Erstellt einen Windows-Bereich und `CDockablePane` fügt ihn an das Objekt an.
 
-Wenn die *DwStyle* Fensterstil ist das CBRS_FLOAT_MULTI-Flag, das Minirahmenfenster kann mit anderen Bereichen im Fenster "Benutzer" "float". Standardmäßig kann andockbare Bereiche nur einzeln "float".
+Wenn der *dwStyle-Fensterstil* das CBRS_FLOAT_MULTI-Flag hat, kann das Miniframe-Fenster mit anderen Bereichen im Miniframe-Fenster schweben. Standardmäßig können Docking-Bereiche nur einzeln schweben.
 
-Wenn die *DwTabbedStyle* Parameter hat das AFX_CBRS_OUTLOOK_TABS-Flag angegeben, im Bereich erstellt im Outlook-Stil im Registerkartenformat Bereiche aus, wenn ein weiterer Bereich angefügt wird, um diesen Bereich mit der [CDockablePane:: Attachtotabwnd](#attachtotabwnd) Methode. Standardmäßig erstellen andockbare Bereiche im Registerkartenformat mit Typ regulären [CTabbedPane](../../mfc/reference/ctabbedpane-class.md).
+Wenn für den Parameter *dwTabbedStyle* das AFX_CBRS_OUTLOOK_TABS-Flag angegeben ist, erstellt der Bereich Registerkartenbereiche im Outlook-Stil, wenn mit der [CDockablePane::AttachToTabWnd-Methode](#attachtotabwnd) ein anderer Bereich an diesen Bereich angefügt wird. Standardmäßig erstellen andockbare Bereiche regelmäßige Registerkarten bereiche vom Typ [CTabbedPane](../../mfc/reference/ctabbedpane-class.md).
 
-##  <a name="createtabbedpane"></a>  CDockablePane::CreateTabbedPane
+## <a name="cdockablepanecreatetabbedpane"></a><a name="createtabbedpane"></a>CDockablePane::CreateTabbedPane
 
-Erstellt einen Bereich im Registerkartenformat im aktuellen Bereich.
+Erstellt einen Registerkartenbereich aus dem aktuellen Bereich.
 
 ```
 virtual CTabbedPane* CreateTabbedPane();
@@ -743,19 +743,19 @@ virtual CTabbedPane* CreateTabbedPane();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die neue Seite im Registerformat oder NULL, wenn der Erstellungsvorgang ist fehlgeschlagen.
+Der neue Registerkartenbereich oder NULL, wenn der Erstellungsvorgang fehlgeschlagen ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode auf, wenn es sich um einen Bereich im Registerkartenformat, ersetzen in diesem Bereich erstellt. Weitere Informationen finden Sie unter [CDockablePane:: Attachtotabwnd](#attachtotabwnd).
+Das Framework ruft diese Methode auf, wenn es einen Registerkartenbereich erstellt, um diesen Bereich zu ersetzen. Weitere Informationen finden Sie unter [CDockablePane::AttachToTabWnd](#attachtotabwnd).
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse zum Anpassen, wie Seiten im Registerformat erstellt und initialisiert werden.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um anzupassen, wie Registerkartenbereiche erstellt und initialisiert werden.
 
-Bereich im Registerkartenformat ist gemäß den Laufzeit-Klasseninformationen in gespeicherten erstellt die `m_pTabbedControlBarRTC` Member, der durch initialisiert wird und die [CDockablePane:: CreateEx](#createex) Methode.
+Der Registerkartenbereich wird entsprechend den in der `m_pTabbedControlBarRTC` Member gespeicherten Laufzeitklasseninformationen erstellt, die von der [CDockablePane::CreateEx-Methode](#createex) initialisiert werden.
 
-##  <a name="dockpanecontainer"></a>  CDockablePane::DockPaneContainer
+## <a name="cdockablepanedockpanecontainer"></a><a name="dockpanecontainer"></a>CDockablePane::DockPaneContainer
 
-Dockt einen Container in den Bereich an.
+Dockt einen Container an den Bereich an.
 
 ```
 virtual BOOL DockPaneContainer(
@@ -767,32 +767,32 @@ virtual BOOL DockPaneContainer(
 ### <a name="parameters"></a>Parameter
 
 *barContainerManager*<br/>
-[in] Ein Verweis auf den Manager des Containers, der angedockt wird.
+[in] Ein Verweis auf den Container-Manager des Containers, der angedockt wird.
 
 *dwAlignment*<br/>
-[in] DWORD, das den Rand des Bereichs angibt, der der Container angedockt wird.
+[in] DWORD, das die Seite des Bereichs angibt, an den der Container angedockt wird.
 
-*dockMethod*<br/>
-[in] Nicht verwendet.
+*dockMethode*<br/>
+[in] Wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Container wurde erfolgreich in den Bereich angedockt ist. andernfalls "false".
+TRUE, wenn der Container erfolgreich an den Bereich angedockt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-*DwAlignment* kann eines der folgenden Werte sein:
+*dwAlignment* kann einer der folgenden Werte sein:
 
-|Wert|Beschreibung|
+|Wert|BESCHREIBUNG|
 |-----------|-----------------|
-|CBRS_ALIGN_TOP|Der Container wird am oberen Rand der Bereich angedockt wird.|
-|CBRS_ALIGN_BOTTOM|Der Container wird am unteren Rand der Bereich angedockt wird.|
-|CBRS_ALIGN_LEFT|Der Container wird auf der linken Seite im Bereich angedockt wird.|
-|CBRS_ALIGN_RIGHT|Der Container wird rechts neben dem Bereich angedockt wird.|
+|CBRS_ALIGN_TOP|Der Container wird am oberen Rand des Bereichs angedockt.|
+|CBRS_ALIGN_BOTTOM|Der Container wird an den unteren Rand des Bereichs angedockt.|
+|CBRS_ALIGN_LEFT|Der Container wird links neben dem Bereich angedockt.|
+|CBRS_ALIGN_RIGHT|Der Container wird rechts neben dem Bereich angedockt.|
 
-##  <a name="dockpanestandard"></a>  CDockablePane::DockPaneStandard
+## <a name="cdockablepanedockpanestandard"></a><a name="dockpanestandard"></a>CDockablePane::DockPaneStandard
 
-Dockt einen Bereich mithilfe der Gliederung (standard) Andocken an.
+Dockt einen Bereich mithilfe des Gliederungsandandings (Standarddocking) an.
 
 ```
 virtual CPane* DockPaneStandard(BOOL& bWasDocked);
@@ -801,15 +801,15 @@ virtual CPane* DockPaneStandard(BOOL& bWasDocked);
 ### <a name="parameters"></a>Parameter
 
 *bWasDocked*<br/>
-[in] Bei der Rückgabe der Methode enthält dieser Wert "true" auf, wenn der Bereich erfolgreich angedockt wurde; Andernfalls enthält er "false".
+[in] Wenn die Methode zurückgegeben wird, enthält dieser Wert TRUE, wenn der Bereich erfolgreich angedockt wurde. Andernfalls enthält es FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn der Bereich einem Fenster im Registerkartenformat angedockt wurde oder wenn ein Fenster im Registerkartenformat aufgrund der Dockingstation erstellt wurde, gibt diese Methode einen Zeiger auf Fenster im Registerkartenformat. Wenn der Bereich, andernfalls erfolgreich angedockt wurde, gibt diese Methode die **dies** Zeiger. Wenn Andocken fehlgeschlagen ist, gibt diese Methode NULL zurück.
+Wenn der Bereich an ein Registerkartenfenster angedockt wurde oder wenn ein Registerkartenfenster als Ergebnis des Andockens erstellt wurde, gibt diese Methode einen Zeiger auf das Registerkartenfenster zurück. Wenn der Bereich andernfalls erfolgreich angedockt wurde, gibt diese Methode den **Zeiger** zurück. Wenn das Andocken fehlgeschlagen ist, gibt diese Methode NULL zurück.
 
-##  <a name="docktorecentpos"></a>  CDockablePane::DockToRecentPos
+## <a name="cdockablepanedocktorecentpos"></a><a name="docktorecentpos"></a>CDockablePane::DockToRecentPos
 
-Dockt einen Bereich auf die gespeicherten verankerten Position an.
+Dockt einen Bereich an seine gespeicherte Andockposition an.
 
 ```
 BOOL CDockablePane::DockToRecentPos();
@@ -817,15 +817,15 @@ BOOL CDockablePane::DockToRecentPos();
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich erfolgreich angedockt ist. andernfalls "false".
+TRUE, wenn der Bereich erfolgreich angedockt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Andockbare Bereiche speichern aktuelle docking-Informationen in einem [CRecentDockSiteInfo](../../mfc/reference/crecentdocksiteinfo-class.md) Objekt.
+Dockable-Bereiche speichern aktuelle Docking-Informationen in einem [CRecentDockSiteInfo-Objekt.](../../mfc/reference/crecentdocksiteinfo-class.md)
 
-##  <a name="docktowindow"></a>  CDockablePane::DockToWindow
+## <a name="cdockablepanedocktowindow"></a><a name="docktowindow"></a>CDockablePane::DockToWindow
 
-Dockt einen andockbaren Bereich auf einen anderen andockbaren Bereich an.
+Dockt einen Dockingbereich an einen anderen Dockingbereich an.
 
 ```
 virtual BOOL DockToWindow(
@@ -837,25 +837,25 @@ virtual BOOL DockToWindow(
 ### <a name="parameters"></a>Parameter
 
 *pTargetWindow*<br/>
-[in, out] Gibt an, andockbaren Bereich um diesem Bereich anzudocken.
+[in, out] Gibt den andockbaren Bereich an, an den dieser Bereich andocken soll.
 
 *dwAlignment*<br/>
-[in] Gibt die Ausrichtung des andockbaren Bereich an. Dabei kann es sich um CBRS_ALIGN_LEFT, CBRS_ALIGN_TOP, CBRS_ALIGN_RIGHT, CBRS_ALIGN_BOTTOM oder CBRS_ALIGN_ANY sein. (Die in afxres.h definiert.)
+[in] Gibt die Andockausrichtung für den Bereich an. Kann einer von CBRS_ALIGN_LEFT, CBRS_ALIGN_TOP, CBRS_ALIGN_RIGHT, CBRS_ALIGN_BOTTOM oder CBRS_ALIGN_ANY sein. (Definiert in afxres.h.)
 
 *lpRect*<br/>
-[in] Gibt das Andocken Rechteck für den Bereich.
+[in] Gibt das Andockrechteck für den Bereich an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich erfolgreich angedockt wurde. andernfalls "false".
+TRUE, wenn der Bereich erfolgreich angedockt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode, um einen Bereich in einen anderen Bereich mit die Ausrichtung anhand des Andocken *DwAlignment*.
+Rufen Sie diese Methode auf, um einen Bereich mit der von *dwAlignment*angegebenen Ausrichtung an einen anderen Bereich anzudocken.
 
-##  <a name="drawcaption"></a>  CDockablePane::DrawCaption
+## <a name="cdockablepanedrawcaption"></a><a name="drawcaption"></a>CDockablePane::DrawCaption
 
-Zeichnet die Beschriftung, die (auch als ziehelements bezeichnet), der einen andockbaren Bereich an.
+Zeichnet die Beschriftung (auch Greifer genannt) eines Andockbereichs.
 
 ```
 virtual void DrawCaption(
@@ -866,20 +866,20 @@ virtual void DrawCaption(
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-[in] Stellt den Gerätekontext zum Zeichnen verwendet.
+[in] Stellt den Gerätekontext dar, der für das Zeichnen verwendet wird.
 
 *rectCaption*<br/>
-[in] Gibt das umschließende Rechteck der Beschriftung für den Bereich an.
+[in] Gibt das umgrenzende Rechteck der Beschriftung des Bereichs an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode, um die Beschriftung des einen andockbaren Bereich gezeichnet werden soll.
+Das Framework ruft diese Methode auf, um die Beschriftung eines andockbaren Bereichs zu zeichnen.
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse zum Anpassen der Darstellung der Beschriftung.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um die Darstellung der Beschriftung anzupassen.
 
-##  <a name="enableautohideall"></a>  CDockablePane::EnableAutohideAll
+## <a name="cdockablepaneenableautohideall"></a><a name="enableautohideall"></a>CDockablePane::EnableAutohideAll
 
-Aktiviert oder deaktiviert den Hintergrundmodus, für diesen Bereich, und für andere Bereiche im Container.
+Aktiviert oder deaktiviert den Autohide-Modus für diesen Bereich und für andere Bereiche im Container.
 
 ```
 void EnableAutohideAll(BOOL bEnable = TRUE);
@@ -888,17 +888,17 @@ void EnableAutohideAll(BOOL bEnable = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bEnable*<br/>
-[in] "True", die automatisch im Hintergrund alle Feature für den andockbaren Bereich zu aktivieren; andernfalls "false".
+[in] TRUE, um das Autohide-Feature für den dockbaren Bereich zu aktivieren; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Benutzer hält die **STRG** Schlüssel und klickt auf die Schaltfläche "anheften", um einen Bereich in den Hintergrundmodus, alle anderen Bereiche im selben Container zu wechseln, werden auch in den Hintergrundmodus gewechselt.
+Wenn ein Benutzer die **Strg-Taste** hält und auf die Stifttaste klickt, um einen Bereich in den Autohide-Modus zu schalten, werden alle anderen Bereiche im selben Container ebenfalls in den Autohide-Modus geschaltet.
 
-Beim Aufrufen dieser Methode *bAktivieren* auf "false" festgelegt, um dieses Feature für einen bestimmten Bereich deaktivieren.
+Rufen Sie diese Methode auf, wobei *bEnable* auf FALSE gesetzt ist, um dieses Feature für einen bestimmten Bereich zu deaktivieren.
 
-##  <a name="enablegripper"></a>  CDockablePane::EnableGripper
+## <a name="cdockablepaneenablegripper"></a><a name="enablegripper"></a>CDockablePane::EnableGripper
 
-Anzeigen oder ausblenden die Beschriftung (auch als ziehelements bezeichnet).
+Zeigt oder blendet die Beschriftung aus (auch Greifer genannt).
 
 ```
 virtual void EnableGripper(BOOL bEnable);
@@ -907,17 +907,17 @@ virtual void EnableGripper(BOOL bEnable);
 ### <a name="parameters"></a>Parameter
 
 *bEnable*<br/>
-[in] True, um die Beschriftung zu aktivieren. andernfalls "false".
+[in] TRUE, um die Beschriftung zu aktivieren; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Framework andockbare Bereiche erstellt wird, verfügen sie nicht den Fensterstil WS_STYLE, über selbst wenn angegeben. Dies bedeutet, dass im Bereich der Beschriftung einer nicht-Clientbereich, die vom Framework gesteuert wird, aber in diesem Bereich unterscheidet sich die standardmäßige fensterbeschriftung.
+Wenn das Framework andockbare Bereiche erstellt, haben sie nicht den WS_STYLE Fensterstil, auch wenn angegeben. Dies bedeutet, dass die Beschriftung des Bereichs ein Nicht-Client-Bereich ist, der vom Framework gesteuert wird, aber dieser Bereich unterscheidet sich von der Standardfensterbeschriftung.
 
-Sie können ein- oder ausblenden die Beschriftung zu einem beliebigen Zeitpunkt. Das Framework die Beschriftung wird ausgeblendet, wenn ein Bereich als Registerkarte hinzugefügt wird, ein Fenster im Registerkartenformat oder ein Bereich in einem Minirahmenfenster abgedockt wird.
+Sie können die Beschriftung jederzeit ein- oder ausblenden. Das Framework blendet die Beschriftung aus, wenn ein Bereich als Registerkarte zu einem Registerkartenfenster hinzugefügt wird oder wenn ein Bereich in einem Miniframefenster überspielt wird.
 
-##  <a name="getahrestoredrect"></a>  CDockablePane::GetAHRestoredRect
+## <a name="cdockablepanegetahrestoredrect"></a><a name="getahrestoredrect"></a>CDockablePane::GetAHRestoredRect
 
-Gibt die Position des Bereichs im Modus "automatisch ausblenden".
+Gibt die Position des Bereichs im Auto-Ausblendmodus an.
 
 ```
 CRect GetAHRestoredRect() const;
@@ -925,13 +925,13 @@ CRect GetAHRestoredRect() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CRect` Objekt, das die Position des Bereichs enthält, wenn er im Modus "automatisch ausblenden" ist.
+Ein `CRect` Objekt, das die Position des Bereichs enthält, wenn er sich im Auto-Ausblendmodus befindet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getahslidemode"></a>  CDockablePane::GetAHSlideMode
+## <a name="cdockablepanegetahslidemode"></a><a name="getahslidemode"></a>CDockablePane::GetAHSlideMode
 
-Ruft ab, der automatisch ausblendbaren Folienmodus für den Bereich.
+Ruft den automatischen Folienmodus für den Bereich ab.
 
 ```
 virtual UINT GetAHSlideMode() const;
@@ -939,13 +939,13 @@ virtual UINT GetAHSlideMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-UINT, der angibt, der automatisch ausblendbaren Folienmodus für den Bereich. Der Rückgabewert kann entweder AFX_AHSM_MOVE oder AFX_AHSM_STRETCH sein, aber die Implementierung nur AFX_AHSM_MOVE verwendet.
+Ein UINT, der den automatischen Ausblendmodus für den Bereich angibt. Der Rückgabewert kann entweder AFX_AHSM_MOVE oder AFX_AHSM_STRETCH sein, aber die Implementierung verwendet nur AFX_AHSM_MOVE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getcaptionheight"></a>  CDockablePane::GetCaptionHeight
+## <a name="cdockablepanegetcaptionheight"></a><a name="getcaptionheight"></a>CDockablePane::GetCaptionHeight
 
-Gibt die Höhe des die aktuelle Beschriftung in Pixel zurück.
+Gibt die Höhe der aktuellen Beschriftung in Pixel zurück.
 
 ```
 virtual int GetCaptionHeight() const;
@@ -955,13 +955,13 @@ virtual int GetCaptionHeight() const;
 
 Die Höhe der Beschriftung in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Überschriftenhöhe ist 0, wenn die Beschriftung von ausgeblendet wurde die [CDockablePane::EnableGripper](#enablegripper) -Methode, oder wenn der Bereich nicht über eine Beschriftung verfügt.
+Die Beschriftungshöhe ist 0, wenn die Beschriftung von der [CDockablePane::EnableGripper-Methode](#enablegripper) ausgeblendet wurde oder wenn der Bereich keine Beschriftung hat.
 
-##  <a name="getdefaultpanedivider"></a>  CDockablePane::GetDefaultPaneDivider
+## <a name="cdockablepanegetdefaultpanedivider"></a><a name="getdefaultpanedivider"></a>CDockablePane::GetDefaultPaneDivider
 
-Gibt standardmäßige bereichsteiler für den Bereich des Containers zurück.
+Gibt den Standardbereichsteiler für den Container des Bereichs zurück.
 
 ```
 CPaneDivider* GetDefaultPaneDivider() const;
@@ -969,15 +969,15 @@ CPaneDivider* GetDefaultPaneDivider() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein gültiger [CPaneDivider](../../mfc/reference/cpanedivider-class.md) -Objekt, wenn das Hauptrahmenfenster andockbare Bereich angedockt ist oder `NULL` Wenn andockbare Bereich nicht angedockt ist, oder wenn es sich bei schwimmen.
+Ein gültiges [CPaneDivider-Objekt,](../../mfc/reference/cpanedivider-class.md) wenn der andockbare Bereich `NULL` an das Hauptrahmenfenster angedockt ist oder wenn der andockbare Bereich nicht angedockt ist oder wenn er unverankert ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zum bereichsteiler, finden Sie unter [CPaneDivider-Klasse](../../mfc/reference/cpanedivider-class.md).
+Weitere Informationen zu Bereichsteilern finden Sie unter [CPaneDivider Class](../../mfc/reference/cpanedivider-class.md).
 
-##  <a name="getdockingstatus"></a>  CDockablePane::GetDockingStatus
+## <a name="cdockablepanegetdockingstatus"></a><a name="getdockingstatus"></a>CDockablePane::GetDockingStatus
 
-Bestimmt, ob die Möglichkeit, einen Bereich angedockt werden abhängig von der angegebenen Position.
+Bestimmt die Fähigkeit eines Bereichs, der basierend auf der angegebenen Zeigerposition angedockt werden soll.
 
 ```
 virtual AFX_CS_STATUS GetDockingStatus(
@@ -987,34 +987,34 @@ virtual AFX_CS_STATUS GetDockingStatus(
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
-[in] Die Position des Mauszeigers in Bildschirmkoordinaten.
+*Pt*<br/>
+[in] Die Position des Zeigers in Bildschirmkoordinaten.
 
-*nSensitivity*<br/>
-[in] Die Entfernung in Pixel von der Kante eines Rechtecks muss der Zeiger so aktivieren Sie das Andocken.
+*nEmpfindlichkeit*<br/>
+[in] Der Abstand (in Pixel) vom Rand eines Rechtecks muss der Zeiger sein, um das Andocken zu aktivieren.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine der folgenden Statuswerte:
+Einer der folgenden Statuswerte:
 
-|AFX_CS_STATUS value|Bedeutung|
+|AFX_CS_STATUS Wert|Bedeutung|
 |---------------------------|-------------|
-|CS_NOTHING|Der Zeiger ist nicht über eine docksite. Das Framework ist nicht auf den Bereich anzudocken.|
-|CS_DOCK_IMMEDIATELY|Der Zeiger befindet sich über der DockPosition in unmittelbarer Modus (der Bereich verwendet den Andockmodus DT_IMMEDIATE). Das Framework Dockt den Bereich sofort an.|
-|CS_DELAY_DOCK|Der Zeiger ist, über eine docksite, die eine andere andockbaren Bereich oder eine Kante der Hauptframe ist. Das Framework Dockt den Bereich an, nach einer Verzögerung. Finden Sie im Abschnitt "Hinweise" Weitere Informationen zu dieser Verzögerung.|
-|CS_DELAY_DOCK_TO_TAB|Der Zeiger befindet sich über eine docksite, die bewirkt, dass den Bereich in einem Fenster im Registerkartenformat angedockt werden. Dies tritt auf, wenn der Mauszeiger über die Beschriftung von einem anderen andockbaren Bereich oder der Registerkartenbereich von einem Bereich im Registerkartenformat gefunden wird.|
+|CS_NOTHING|Der Zeiger befindet sich nicht über einer Docksite. Das Framework dockt den Bereich nicht an.|
+|CS_DOCK_IMMEDIATELY|Der Zeiger befindet sich über der Dock-Site im unmittelbaren Modus (der Bereich verwendet den DT_IMMEDIATE Andockmodus). Das Framework dockt den Bereich sofort an.|
+|CS_DELAY_DOCK|Der Zeiger befindet sich über einer Docksite, die sich um einen anderen Andockbereich oder um eine Kante des Hauptrahmens handelt. Das Framework dockt den Bereich nach einer Verzögerung an. Weitere Informationen zu dieser Verzögerung finden Sie im Abschnitt "Bemerkungen".|
+|CS_DELAY_DOCK_TO_TAB|Der Zeiger befindet sich über einer Docksite, wodurch der Bereich in einem Registerkartenfenster angedockt wird. Dies tritt auf, wenn sich der Zeiger über der Beschriftung eines anderen Andockbereichs oder über dem Tabstoppbereich eines Registerkartenbereichs befindet.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode zum Behandeln von Andocken eines unverankerten Bereichs.
+Das Framework ruft diese Methode auf, um das Andocken eines unverankerten Bereichs zu behandeln.
 
-Für unverankerte Symbolleisten sowie andockbare Bereiche, die den Andockmodus DT_IMMEDIATE verwenden verzögert das Framework die Dock-Befehl aus, um dem Benutzer ermöglichen, bevor Andocken auftritt, verschieben Sie das Fenster aus den Clientbereich des übergeordneten Rahmens. Die Länge der Verzögerung in Millisekunden gemessen wird und wird gesteuert, indem die [CDockingManager::m_nTimeOutBeforeToolBarDock](../../mfc/reference/cdockingmanager-class.md#m_ntimeoutbeforetoolbardock) Datenmember... Der Standardwert von [CDockingManager::m_nTimeOutBeforeToolBarDock](../../mfc/reference/cdockingmanager-class.md#m_ntimeoutbeforetoolbardock) ist 200. Dieses Verhalten emuliert das Andockverhalten des Microsoft Word 2007.
+Bei unverankerten Symbolleisten oder Dockingbereichen, die den DT_IMMEDIATE-Dockingmodus verwenden, verzögert das Framework den Dockbefehl, damit der Benutzer das Fenster aus dem Clientbereich des übergeordneten Frames verschieben kann, bevor das Andocken erfolgt. Die Länge der Verzögerung wird in Millisekunden gemessen und vom [CDockingManager::m_nTimeOutBeforeToolBarDock](../../mfc/reference/cdockingmanager-class.md#m_ntimeoutbeforetoolbardock) Datenmember gesteuert. Der Standardwert von [CDockingManager::m_nTimeOutBeforeToolBarDock](../../mfc/reference/cdockingmanager-class.md#m_ntimeoutbeforetoolbardock) ist 200. Dieses Verhalten emuliert das Andockverhalten von Microsoft Word 2007.
 
-Für verzögerte Andocken Staaten (CS_DELAY_DOCK und CS_DELAY_DOCK_TO_TAB) führt das Framework keine andocken, bis der Benutzer die Maustaste loslässt. Wenn ein Bereich den Andockmodus DT_STANDARD verwendet wird, zeigt das Framework ein Rechteck auf die voraussichtliche Andockposition aus. Wenn ein Bereich den Andockmodus DT_SMART verwendet wird, zeigt das Framework intelligente andockmarker und halb transparent Rechtecke an die voraussichtliche Andockposition an. Rufen Sie zum Angeben des Andockmodus für die im Eigenschaftenbereich die [CBasePane::SetDockingMode](../../mfc/reference/cbasepane-class.md#setdockingmode) Methode. Weitere Informationen zu intelligentes Andocken, finden Sie unter [CDockingManager::GetSmartDockingParams](../../mfc/reference/cdockingmanager-class.md#getsmartdockingparams).
+Bei verzögerten Andockzuständen (CS_DELAY_DOCK und CS_DELAY_DOCK_TO_TAB) führt das Framework erst das Andocken durch, wenn der Benutzer die Maustaste loslässt. Wenn ein Bereich den DT_STANDARD-Dockingmodus verwendet, zeigt das Framework ein Rechteck an der projizierten Andockposition an. Wenn ein Bereich den DT_SMART-Dockingmodus verwendet, zeigt das Framework intelligente Andockmarkierungen und halbtransparente Rechtecke an der projizierten Andockposition an. Um den Andockmodus für Ihren Bereich anzugeben, rufen Sie die [CBasePane::SetDockingMode-Methode](../../mfc/reference/cbasepane-class.md#setdockingmode) auf. Weitere Informationen zum Smart Docking finden Sie unter [CDockingManager::GetSmartDockingParams](../../mfc/reference/cdockingmanager-class.md#getsmartdockingparams).
 
-##  <a name="getdragsensitivity"></a>  CDockablePane::GetDragSensitivity
+## <a name="cdockablepanegetdragsensitivity"></a><a name="getdragsensitivity"></a>CDockablePane::GetDragSensitivity
 
-Gibt die Vertraulichkeit ziehen Sie einen andockbaren Bereich zurück.
+Gibt die Ziehempfindlichkeit eines Andockbereichs zurück.
 
 ```
 static const CSize& GetDragSensitivity();
@@ -1022,11 +1022,11 @@ static const CSize& GetDragSensitivity();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) Objekt, das die Breite und Höhe in Pixel eines Rechtecks, dessen Mitte sich an einem Ziehpunkt befindet, enthält. Der Ziehvorgang beginnt nicht, bis der Mauszeiger bewegt, außerhalb dieses Rechteck wird.
+Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die Breite und Höhe eines Rechtecks in Pixel enthält, das auf einem Ziehpunkt zentriert ist. Der Ziehvorgang beginnt erst, wenn sich der Mauszeiger außerhalb dieses Rechtecks bewegt.
 
-##  <a name="getlastpercentinpanecontainer"></a>  CDockablePane::GetLastPercentInPaneContainer
+## <a name="cdockablepanegetlastpercentinpanecontainer"></a><a name="getlastpercentinpanecontainer"></a>CDockablePane::GetLastPercentInPaneContainer
 
-Ruft den Prozentsatz des Speicherplatzes, der ein Bereich in einem Container belegt ( [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)).
+Ruft den Prozentsatz des Speicherplatzes ab, den ein Bereich in seinem Container ( [CPaneContainer-Klasse](../../mfc/reference/cpanecontainer-class.md)) belegt.
 
 ```
 int GetLastPercentInPaneContainer() const;
@@ -1034,15 +1034,15 @@ int GetLastPercentInPaneContainer() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein *Int* , der den Prozentsatz des Speicherplatzes, der der Bereich in einem Container belegt angibt.
+Ein *int,* der den Prozentsatz des Speicherplatzes angibt, den der Bereich in seinem Container belegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird verwendet, wenn der Container das Layout angepasst wird.
+Diese Methode wird verwendet, wenn der Container sein Layout anpasst.
 
-##  <a name="gettabarea"></a>  CDockablePane::GetTabArea
+## <a name="cdockablepanegettabarea"></a><a name="gettabarea"></a>CDockablePane::GetTabArea
 
-Ruft den Registerkartenbereich für den Bereich.
+Ruft den Registerkartenbereich für den Bereich ab.
 
 ```
 virtual void GetTabArea(
@@ -1053,18 +1053,18 @@ virtual void GetTabArea(
 ### <a name="parameters"></a>Parameter
 
 *rectTabAreaTop*<br/>
-[in] `GetTabArea` füllt Sie diese Variable mit der Registerkartenbereich, wenn die Registerkarten am oberen Rand des Bereichs befinden. Wenn die Registerkarten am unteren Rand des Bereichs befinden, wird diese Variable mit einem leeren Rechteck gefüllt.
+[in] `GetTabArea` füllt diese Variable mit dem Registerkartenbereich, wenn sich Registerkarten am oberen Rand des Bereichs befinden. Wenn sich Registerkarten am unteren Rand des Bereichs befinden, wird diese Variable mit einem leeren Rechteck gefüllt.
 
 *rectTabAreaBottom*<br/>
-[in] `GetTabArea` füllt Sie diese Variable mit der Registerkartenbereich, wenn die Registerkarten am unteren Rand des Bereichs befinden. Wenn die Registerkarten am oberen Rand des Bereichs befinden, wird diese Variable mit einem leeren Rechteck gefüllt.
+[in] `GetTabArea` füllt diese Variable mit dem Registerkartenbereich, wenn sich Registerkarten am unteren Rand des Bereichs befinden. Wenn sich Registerkarten am oberen Rand des Bereichs befinden, wird diese Variable mit einem leeren Rechteck gefüllt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird nur in von abgeleiteten Klassen verwendet `CDockablePane` und Registerkarten angezeigt. Weitere Informationen finden Sie unter [CTabbedPane::GetTabArea](../../mfc/reference/ctabbedpane-class.md#gettabarea) und [CMFCOutlookBar::GetTabArea](../../mfc/reference/cmfcoutlookbar-class.md#gettabarea).
+Diese Methode wird nur in Klassen `CDockablePane` verwendet, die von Registerkarten abgeleitet sind und über Registerkarten verfügen. Weitere Informationen finden Sie unter [CTabbedPane::GetTabArea](../../mfc/reference/ctabbedpane-class.md#gettabarea) und [CMFCOutlookBar::GetTabArea](../../mfc/reference/cmfcoutlookbar-class.md#gettabarea).
 
-##  <a name="gettabbedpanertc"></a>  CDockablePane::GetTabbedPaneRTC
+## <a name="cdockablepanegettabbedpanertc"></a><a name="gettabbedpanertc"></a>CDockablePane::GetTabbedPaneRTC
 
-Gibt zurück, die laufzeitklasseninformationen zu einem Fenster im Registerkartenformat, die erstellt wird, wenn ein weiterer Bereich in den aktuellen Bereich angedockt.
+Gibt die Laufzeitklasseninformationen zu einem Registerkartenfenster zurück, das erstellt wird, wenn ein anderer Bereich an den aktuellen Bereich angedockt wird.
 
 ```
 CRuntimeClass* GetTabbedPaneRTC() const;
@@ -1072,17 +1072,17 @@ CRuntimeClass* GetTabbedPaneRTC() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Laufzeit-Klasseninformationen für den andockbaren Bereich.
+Die Laufzeitklasseninformationen für den dockbaren Bereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode, um die laufzeitklasseninformationen für Seiten im Registerformat abzurufen, die dynamisch erstellt werden. Dies kann auftreten, wenn ein Benutzer einen Bereich auf die Beschriftung des anderen Bereichs zieht, oder rufen Sie die [CDockablePane:: Attachtotabwnd](#attachtotabwnd) Methode, um einen Bereich im Registerkartenformat aus zwei andockbare Bereiche programmgesteuert zu erstellen.
+Rufen Sie diese Methode auf, um die Laufzeitklasseninformationen für Registerkartenbereiche abzurufen, die dynamisch erstellt werden. Dies kann auftreten, wenn ein Benutzer einen Bereich in die Beschriftung eines anderen Bereichs zieht oder wenn Sie die [CDockablePane::AttachToTabWnd-Methode](#attachtotabwnd) aufrufen, um programmgesteuert einen Registerkartenbereich aus zwei andockbaren Bereichen zu erstellen.
 
-Sie können die laufzeitklasseninformationen festlegen, durch den Aufruf der [CDockablePane:: Settabbedpanertc](#settabbedpanertc) Methode.
+Sie können die Laufzeitklasseninformationen festlegen, indem Sie die [CDockablePane::SetTabbedPaneRTC-Methode](#settabbedpanertc) aufrufen.
 
-##  <a name="hasautohidemode"></a>  CDockablePane::HasAutoHideMode
+## <a name="cdockablepanehasautohidemode"></a><a name="hasautohidemode"></a>CDockablePane::HasAutoHideMode
 
-Gibt an, ob ein andockbarer Bereich in den Hintergrundmodus gewechselt werden kann.
+Gibt an, ob ein Andockbereich in den Autohide-Modus geschaltet werden kann.
 
 ```
 virtual BOOL HasAutoHideMode() const;
@@ -1090,15 +1090,15 @@ virtual BOOL HasAutoHideMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich, in den Hintergrundmodus gewechselt werden kann. andernfalls "false".
+TRUE, wenn der dockbare Bereich in den Autohide-Modus geschaltet werden kann; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse den Hintergrundmodus für ein bestimmtes andockbare Fenster zu deaktivieren.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um den Autohide-Modus für einen bestimmten dockbaren Bereich zu deaktivieren.
 
-##  <a name="hittest"></a>  CDockablePane::HitTest
+## <a name="cdockablepanehittest"></a><a name="hittest"></a>CDockablePane::HitTest
 
-Gibt den Speicherort in einem Bereich, in denen der Benutzer die Maus klickt.
+Gibt den Speicherort in einem Bereich an, in dem der Benutzer mit der Maus klickt.
 
 ```
 virtual int HitTest(
@@ -1108,29 +1108,29 @@ virtual int HitTest(
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
-[in] Legt den Punkt zu testen.
+*Punkt*<br/>
+[in] Gibt den zu testenden Punkt an.
 
 *bDetectCaption*<br/>
-[in] True, wenn der HTCAPTION zurückgegeben werden soll, wenn der Punkt, auf den Bereich der Beschriftung ist. andernfalls "false".
+[in] TRUE, wenn HTCAPTION zurückgegeben werden soll, wenn sich der Punkt in der Beschriftung des Bereichs befindet; andernfalls FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Einer der folgenden Werte:
 
-- HTNOWHERE Wenn *zeigen* befindet sich nicht in der andockbaren Bereich.
+- HTNOWHERE, wenn sich *der Punkt* nicht im andockbaren Bereich befindet.
 
-- HTCLIENT Wenn *zeigen* befindet sich in den Clientbereich des andockbaren Bereich.
+- HTCLIENT, wenn sich *der Punkt* im Clientbereich des Dockable-Bereichs befindet.
 
-- HTCAPTION Wenn *zeigen* befindet sich im Headerbereich des andockbaren Bereich.
+- HTCAPTION, wenn sich der *Punkt* im Beschriftungsbereich des dockbaren Bereichs befindet.
 
-- AFX_HTCLOSE Wenn *zeigen* befindet sich auf die Schaltfläche "Schließen".
+- AFX_HTCLOSE, ob sich der *Punkt* auf der Schließen-Schaltfläche befindet.
 
-- HTMAXBUTTON Wenn *zeigen* befindet sich auf die Schaltfläche "anheften".
+- HTMAXBUTTON, wenn sich der *Punkt* auf der Stifttaste befindet.
 
-##  <a name="isautohideallenabled"></a>  CDockablePane::IsAutohideAllEnabled
+## <a name="cdockablepaneisautohideallenabled"></a><a name="isautohideallenabled"></a>CDockablePane::IsAutohideAllEnabled
 
-Gibt an, ob die andockbaren Bereich, und alle anderen Bereiche im Container in den Hintergrundmodus gewechselt werden können.
+Gibt an, ob der Andockbereich und alle anderen Bereiche im Container in den Autohide-Modus geschaltet werden können.
 
 ```
 virtual BOOL IsAutohideAllEnabled() const;
@@ -1138,17 +1138,17 @@ virtual BOOL IsAutohideAllEnabled() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbaren Bereich, und alle anderen Bereiche in den Container, in den Hintergrundmodus gewechselt werden können. andernfalls "false".
+TRUE, wenn der andockbare Bereich und alle anderen Bereiche im Container in den Autohide-Modus geschaltet werden können. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Benutzer kann den Hintergrundmodus, indem Sie auf das Andocken Schaltfläche "anheften" bei gedrückter der **STRG** Schlüssel
+Ein Benutzer aktiviert den Autohide-Modus, indem er auf die Pin-Schaltfläche für das Andocken klickt, während er die **Strg-Taste** gedrückt hält.
 
-Rufen Sie zum Aktivieren oder Deaktivieren dieses Verhalten, das [CDockablePane::EnableAutohideAll](#enableautohideall) Methode.
+Um dieses Verhalten zu aktivieren oder zu deaktivieren, rufen Sie die [CDockablePane::EnableAutohideAll-Methode](#enableautohideall) auf.
 
-##  <a name="isautohidemode"></a>  CDockablePane::IsAutoHideMode
+## <a name="cdockablepaneisautohidemode"></a><a name="isautohidemode"></a>CDockablePane::IsAutoHideMode
 
-Bestimmt, ob ein Bereich in den Hintergrundmodus.
+Bestimmt, ob sich ein Bereich im Autohide-Modus befindet.
 
 ```
 virtual BOOL IsAutoHideMode() const;
@@ -1156,9 +1156,9 @@ virtual BOOL IsAutoHideMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich in den Hintergrundmodus ist. andernfalls "false".
+TRUE, wenn sich der dockbare Bereich im Autohide-Modus befindet; andernfalls FALSE.
 
-##  <a name="isdocked"></a>  CDockablePane::IsDocked
+## <a name="cdockablepaneisdocked"></a><a name="isdocked"></a>CDockablePane::IsDocked
 
 Bestimmt, ob der aktuelle Bereich angedockt ist.
 
@@ -1168,15 +1168,15 @@ virtual BOOL IsDocked() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-"True", wenn der andockbare Bereich nicht zu einem Minirahmenfenster gehört oder in einem Minirahmenfenster mit einem anderen Bereich schwimmen. "False", wenn der Bereich ein untergeordnetes Element des ein Minirahmenfenster ist und es keine andere Bereiche gibt, die das Minirahmenfenster angehören.
+TRUE, wenn der andockbare Bereich nicht zu einem Miniframefenster gehört oder wenn er in einem Miniframefenster mit einem anderen Fenster schwebt. FALSE, wenn der Bereich ein untergeordnetes Element eines Miniframefensters ist und keine anderen Bereiche zum Miniframefenster gehören.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Aufrufen, um zu bestimmen, ob der Bereich, an das Hauptrahmenfenster angedockt ist, [CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider). Wenn die Methode einen nicht-NULL-Zeiger zurückgibt, wird der Bereich an das Hauptrahmenfenster angedockt.
+Um zu bestimmen, ob der Bereich an das Hauptrahmenfenster angedockt ist, rufen Sie [CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider)auf. Wenn die Methode einen Nicht-NULL-Zeiger zurückgibt, wird der Bereich am Hauptrahmenfenster angedockt.
 
-##  <a name="ishideinautohidemode"></a>  CDockablePane::IsHideInAutoHideMode
+## <a name="cdockablepaneishideinautohidemode"></a><a name="ishideinautohidemode"></a>CDockablePane::IsHideInAutoHideMode
 
-Bestimmt das Verhalten eines Bereichs, der in den Hintergrundmodus ist, wenn sie (durch Aufrufen von ein- oder ausgeblendet ist) [CDockablePane::ShowPane](#showpane).
+Bestimmt das Verhalten eines Bereichs im Autohide-Modus, wenn er angezeigt (oder ausgeblendet) wird, indem [CDockablePane::ShowPane](#showpane)aufgerufen wird.
 
 ```
 virtual BOOL IsHideInAutoHideMode() const;
@@ -1184,19 +1184,19 @@ virtual BOOL IsHideInAutoHideMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich, in den Hintergrundmodus ausgeblendet werden soll. andernfalls "false".
+TRUE, wenn der dockbare Bereich im Autohide-Modus ausgeblendet werden soll; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn in den Hintergrundmodus ein andockbaren Bereich ist, es verhält sich anders beim Aufruf `ShowPane` ein-und Ausblenden des Bereichs. Dieses Verhalten wird gesteuert, indem Sie den statischen Member [CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode). Wenn dieser Member "true", andockbaren Bereich und seiner zugehörigen automatisch im Hintergrund-Symbolleiste ist oder AutoAusblenden-Schaltfläche angezeigt oder ausgeblendet wird beim Aufruf `ShowPane`. Andernfalls andockbare Bereich aktiviert oder deaktiviert, und der zugehörigen automatisch im Hintergrund-Symbolleiste oder die AutoAusblenden-Schaltfläche ist immer sichtbar.
+Wenn sich ein andockbarer Bereich im Autohide-Modus `ShowPane` befindet, verhält er sich anders, wenn Sie aufrufen, um den Bereich auszublenden oder anzuzeigen. Dieses Verhalten wird vom statischen Member [CDockablePane::m_bHideInAutoHideMode](#m_bhideinautohidemode)gesteuert. Wenn dieser Member TRUE ist, wird der dockbare Bereich und die zugehörige Autohide-Symbolleiste oder Autohide-Schaltfläche ausgeblendet oder beim Aufrufen angezeigt. `ShowPane` Andernfalls wird der dockbare Bereich aktiviert oder deaktiviert, und die zugehörige Autohide-Symbolleiste oder Autohide-Schaltfläche ist immer sichtbar.
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse das Standardverhalten für die einzelnen Bereiche zu ändern.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um das Standardverhalten für einzelne Bereiche zu ändern.
 
-Der Standardwert für `m_bHideInAutoHideMode` ist "false".
+Der Standardwert `m_bHideInAutoHideMode` für ist FALSE.
 
-##  <a name="isinfloatingmultipaneframewnd"></a>  CDockablePane::IsInFloatingMultiPaneFrameWnd
+## <a name="cdockablepaneisinfloatingmultipaneframewnd"></a><a name="isinfloatingmultipaneframewnd"></a>CDockablePane::IsInFloatingMultiPaneFrameWnd
 
-Gibt an, ob der Bereich in einem Multipane-Rahmenfenster ist ( [CMultiPaneFrameWnd-Klasse](../../mfc/reference/cmultipaneframewnd-class.md)).
+Gibt an, ob sich der Bereich in einem Rahmenfenster mit mehreren Fenstern befindet ( [CMultiPaneFrameWnd Class](../../mfc/reference/cmultipaneframewnd-class.md)).
 
 ```
 virtual BOOL IsInFloatingMultiPaneFrameWnd() const;
@@ -1204,13 +1204,13 @@ virtual BOOL IsInFloatingMultiPaneFrameWnd() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich in einem Fenster mit mehreren Rahmen. andernfalls "false".
+TRUE, wenn sich der Bereich in einem Rahmenfenster mit mehreren Fenstern befindet; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isresizable"></a>  CDockablePane::IsResizable
+## <a name="cdockablepaneisresizable"></a><a name="isresizable"></a>CDockablePane::IsResizable
 
-Gibt an, ob der Bereich geändert werden kann.
+Gibt an, ob die Geänderte Formataum geändert werden kann.
 
 ```
 virtual BOOL IsResizable() const;
@@ -1218,17 +1218,17 @@ virtual BOOL IsResizable() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich geändert werden kann. andernfalls "false".
+TRUE, wenn die Se- und Se- und Schreibweite geändert werden kann; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig sind andockbare Bereiche mit veränderbarer Größe. Um zu verhindern, Größenänderung, überschreiben Sie diese Methode in einer abgeleiteten Klasse, und gibt "false". Beachten Sie, die ein FALSE-Wert zu einem Fehler führt **ASSERT** in [CPane::DockPane](../../mfc/reference/cpane-class.md#dockpane). Verwendung [CDockingManager::AddPane](../../mfc/reference/cdockingmanager-class.md#addpane) stattdessen einen Bereich innerhalb eines übergeordneten Rahmens angedockt.
+Standardmäßig können andockbare Bereiche die Setzwerte geändert werden. Um eine Größenänderung zu verhindern, überschreiben Sie diese Methode in einer abgeleiteten Klasse, und geben False zurück. Beachten Sie, dass ein FALSE-Wert zu einem fehlgeschlagenen **ASSERT** in [CPane::DockPane](../../mfc/reference/cpane-class.md#dockpane)führt. Verwenden Sie [stattdessen CDockingManager::AddPane,](../../mfc/reference/cdockingmanager-class.md#addpane) um einen Bereich innerhalb eines übergeordneten Frames anzudocken.
 
-Bereiche, die nicht verändert werden können können weder "float" und geben Sie die automatischen Ausblendemodus und befinden sich immer am äußeren Rand des übergeordneten Rahmens.
+Bereiche, deren Größe nicht geändert werden kann, können weder schweben noch in den Auto-Hide-Modus wechseln und befinden sich immer am äußeren Rand des übergeordneten Rahmens.
 
-##  <a name="istablocationbottom"></a>  CDockablePane::IsTabLocationBottom
+## <a name="cdockablepaneistablocationbottom"></a><a name="istablocationbottom"></a>CDockablePane::IsTabLocationBottom
 
-Gibt an, ob die Registerkarten oben oder unteren Rand des Bereichs befinden.
+Gibt an, ob sich Registerkarten am oberen oder unteren Rand des Bereichs befinden.
 
 ```
 virtual BOOL IsTabLocationBottom() const;
@@ -1236,13 +1236,13 @@ virtual BOOL IsTabLocationBottom() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Registerkarten am unteren Rand des Bereichs befinden. FALSE, wenn die Registerkarten am oberen Rand des Bereichs befinden.
+TRUE, wenn sich Registerkarten am unteren Rand des Bereichs befinden; FALSE, wenn sich Registerkarten am oberen Rand des Bereichs befinden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [CTabbedPane::IsTabLocationBottom](../../mfc/reference/ctabbedpane-class.md#istablocationbottom).
 
-##  <a name="istracked"></a>  CDockablePane::IsTracked
+## <a name="cdockablepaneistracked"></a><a name="istracked"></a>CDockablePane::IsTracked
 
 Gibt an, ob ein Bereich vom Benutzer verschoben wird.
 
@@ -1252,11 +1252,11 @@ BOOL IsTracked() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich verschoben wird. andernfalls "false".
+TRUE, wenn der Bereich verschoben wird; andernfalls FALSE.
 
-##  <a name="isvisible"></a>  CDockablePane::IsVisible
+## <a name="cdockablepaneisvisible"></a><a name="isvisible"></a>CDockablePane::IsVisible
 
-Bestimmt, ob der aktuelle Bereich angezeigt wird.
+Bestimmt, ob der aktuelle Bereich sichtbar ist.
 
 ```
 virtual BOOL IsVisible() const;
@@ -1264,21 +1264,21 @@ virtual BOOL IsVisible() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der andockbare Bereich angezeigt wird. andernfalls "false".
+TRUE, wenn der andockbare Bereich sichtbar ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode, um zu bestimmen, ob ein andockbares Fenster sichtbar ist. Sie können diese Methode verwenden, statt [CWnd::IsWindowVisible](../../mfc/reference/cwnd-class.md#iswindowvisible) oder für das Format WS_VISIBLE testen. Der zurückgegebene Sichtbarkeitszustand hängt davon ab, ob in den Hintergrundmodus aktiviert oder deaktiviert ist und auf dem Wert der [CDockablePane::IsHideInAutoHideMode](#ishideinautohidemode) Eigenschaft.
+Rufen Sie diese Methode auf, um zu bestimmen, ob ein andockbarer Bereich sichtbar ist. Sie können diese Methode verwenden, anstatt [CWnd::IsWindowVisible](../../mfc/reference/cwnd-class.md#iswindowvisible) aufzurufen oder den WS_VISIBLE-Stil zu testen. Der zurückgegebene Sichtbarkeitsstatus hängt davon ab, ob der Autohide-Modus aktiviert oder deaktiviert ist, und vom Wert der [CDockablePane::IsHideInAutoHideMode-Eigenschaft.](#ishideinautohidemode)
 
-Wenn der andockbare Bereich in den Hintergrundmodus ist und `IsHideInAutoHideMode` gibt "false" den Sichtbarkeitszustand ist immer "false".
+Wenn sich der dockbare Bereich `IsHideInAutoHideMode` im Autohide-Modus befindet und FALSE zurückgibt, ist der Sichtbarkeitsstatus immer FALSE.
 
-Wenn der andockbare Bereich in den Hintergrundmodus ist und `IsHideInAutoHideMode` gibt TRUE zurück, der Sichtbarkeitszustand hängt von den Sichtbarkeitsstatus der zugehörigen automatisch im Hintergrund-Symbolleiste.
+Wenn sich der dockbare Bereich `IsHideInAutoHideMode` im Autohide-Modus befindet und TRUE zurückgibt, hängt der Sichtbarkeitsstatus vom Sichtbarkeitsstatus der zugehörigen Autohide-Symbolleiste ab.
 
-Ist der andockbare Bereich nicht in den Hintergrundmodus, wird durch der Sichtbarkeitszustand bestimmt die [CBasePane::IsVisible](../../mfc/reference/cbasepane-class.md#isvisible) Methode.
+Wenn sich der dockbare Bereich nicht im Autohide-Modus befindet, wird der Sichtbarkeitsstatus durch die [CBasePane::IsVisible-Methode](../../mfc/reference/cbasepane-class.md#isvisible) bestimmt.
 
-## ##  <a name="loadstate"></a>  CDockablePane:: LoadState
+## <a name="---cdockablepaneloadstate"></a>##  <a name="loadstate"></a>CDockablePane::LoadState
 
-Nur für interne Verwendung. Ausführliche Informationen finden Sie im Quellcode des Ordners VC\atlmfc\src\mfc der Visual Studio-Installation.
+Nur zur internen Verwendung. Ausführliche Informationen finden Sie im Quellcode des Ordners VC\atlmfc\src\mfc der Visual Studio-Installation.
 
 ```
 virtual BOOL LoadState(
@@ -1288,45 +1288,45 @@ virtual BOOL LoadState(
 );
 ```
 
-##  <a name="m_bdisableanimation"></a>  CDockablePane::m_bDisableAnimation
+## <a name="cdockablepanem_bdisableanimation"></a><a name="m_bdisableanimation"></a>CDockablePane::m_bDisableAnimation
 
-Gibt an, ob die Animation andockbaren Bereich automatisch im Hintergrund deaktiviert ist.
+Gibt an, ob die automatische Ausblendanimation des dockbaren Bereichs deaktiviert ist.
 
 ```
 AFX_IMPORT_DATA static BOOL m_bDisableAnimation;
 ```
 
-##  <a name="m_bhideinautohidemode"></a>  CDockablePane::m_bHideInAutoHideMode
+## <a name="cdockablepanem_bhideinautohidemode"></a><a name="m_bhideinautohidemode"></a>CDockablePane::m_bHideInAutoHideMode
 
-Bestimmt das Verhalten des Bereichs an, wenn der Bereich in den Hintergrundmodus ist.
+Bestimmt das Verhalten des Bereichs, wenn sich der Bereich im Autohide-Modus befindet.
 
 ```
 AFX_IMPORT_DATA static BOOL m_bHideInAutoHideMode;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert wirkt sich auf alle andockbare Bereiche in der Anwendung.
+Dieser Wert wirkt sich auf alle Dockingbereiche in der Anwendung aus.
 
-Wenn Sie dieses Element auf "true" werden andockbare Bereiche festgelegt sind, ausgeblendet oder mit ihren entsprechenden automatisch im Hintergrund Symbolleisten und Schaltflächen angezeigt wird, beim Aufrufen [CDockablePane::ShowPane](#showpane).
+Wenn Sie dieses Element auf TRUE festlegen, werden andockbare Bereiche ausgeblendet oder mit den zugehörigen Autohide-Symbolleisten und -schaltflächen angezeigt, wenn Sie [CDockablePane::ShowPane](#showpane)aufrufen.
 
-Wenn Sie dieses Element auf "false", andockbare Bereiche festlegen aktiviert oder deaktiviert werden, wenn Sie aufrufen [CDockablePane::ShowPane](#showpane).
+Wenn Sie dieses Element auf FALSE festlegen, werden andockbare Bereiche aktiviert oder deaktiviert, wenn Sie [CDockablePane::ShowPane](#showpane)aufrufen.
 
-##  <a name="m_nslidesteps"></a>  CDockablePane::m_nSlideSteps
+## <a name="cdockablepanem_nslidesteps"></a><a name="m_nslidesteps"></a>CDockablePane::m_nSlideSteps
 
-Gibt die Geschwindigkeit der Animation des Bereichs an, wenn er sich in den Hintergrundmodus.
+Gibt die Animationsgeschwindigkeit des Bereichs an, wenn er sich im Autohide-Modus befindet.
 
 ```
 AFX_IMPORT_DATA static int m_nSlideSteps;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Reduzieren Sie für eine schnellere Animationseffekt diesen Wert. Erhöhen Sie für den Animationseffekt langsamer diesen Wert.
+Verringern Sie diesen Wert für einen schnelleren Animationseffekt. Erhöhen Sie diesen Wert für einen langsameren Animationseffekt.
 
-##  <a name="onafterchangeparent"></a>  CDockablePane::OnAfterChangeParent
+## <a name="cdockablepaneonafterchangeparent"></a><a name="onafterchangeparent"></a>CDockablePane::OnAfterChangeParent
 
-Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ```
 virtual void OnAfterChangeParent(CWnd* pWndOldParent);
@@ -1336,23 +1336,23 @@ virtual void OnAfterChangeParent(CWnd* pWndOldParent);
 
 [in] *pWndOldParent*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onafterdockfromminiframe"></a>  CDockablePane::OnAfterDockFromMiniFrame
+## <a name="cdockablepaneonafterdockfromminiframe"></a><a name="onafterdockfromminiframe"></a>CDockablePane::OnAfterDockFromMiniFrame
 
-Vom Framework aufgerufen, wenn eine unverankerte andockleiste an ein Framefenster angedockt.
+Wird vom Framework aufgerufen, wenn eine schwebende Dockingleiste an einem Rahmenfenster andockt.
 
 ```
 virtual void OnAfterDockFromMiniFrame();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Methode keine Aktion.
+Standardmäßig führt diese Methode nichts aus.
 
-##  <a name="onbeforechangeparent"></a>  CDockablePane::OnBeforeChangeParent
+## <a name="cdockablepaneonbeforechangeparent"></a><a name="onbeforechangeparent"></a>CDockablePane::OnBeforeChangeParent
 
-Das Framework ruft diese Methode auf, bevor das übergeordnete Element des Bereichs geändert.
+Das Framework ruft diese Methode auf, bevor es das übergeordnete Element des Bereichs ändert.
 
 ```
 virtual void OnBeforeChangeParent(
@@ -1366,17 +1366,17 @@ virtual void OnBeforeChangeParent(
 [in] Ein Zeiger auf das neue übergeordnete Fenster.
 
 *bDelay*<br/>
-[in] Boolescher Wert, der angibt, ob eine neuberechnung der Layout des Docks zu verzögern, wenn der Bereich nicht in der Dockingstation ist. Weitere Informationen finden Sie unter [CDockablePane::UndockPane](#undockpane).
+[in] BOOL, das angibt, ob die Neuberechnung des Andocklayouts verzögert werden soll, wenn der Bereich abgedockt ist. Weitere Informationen finden Sie unter [CDockablePane::UndockPane](#undockpane).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Bereich angedockt ist, und das neue übergeordnete Element lässt nicht zu andocken, wird diese Methode im Bereich abgedockt.
+Wenn der Bereich angedockt ist und das neue übergeordnete Element das Andocken nicht zulässt, wird der Bereich durch diese Methode abgedockt.
 
-Wenn der Bereich in ein Dokument im Registerkartenformat konvertiert wird, speichert diese Methode die aktuelle verankerten Position. Das Framework verwendet die aktuelle dockingposition der Position des Bereichs wiederherstellen, wenn es wieder in einem angedockten Zustand konvertiert wird.
+Wenn der Bereich in ein Dokument mit Registerkarten konvertiert wird, speichert diese Methode ihre aktuelle Andockposition. Das Framework verwendet die aktuelle Andockposition, um die Position des Bereichs wiederherzustellen, wenn er wieder in einen angedockten Zustand konvertiert wird.
 
-##  <a name="onbeforefloat"></a>  CDockablePane::OnBeforeFloat
+## <a name="cdockablepaneonbeforefloat"></a><a name="onbeforefloat"></a>CDockablePane::OnBeforeFloat
 
-Das Framework ruft diese Methode vor einen Bereich geht in einen unverankerten Zustand.
+Das Framework ruft diese Methode auf, bevor ein Bereich in einen gleitenzustand übergeht.
 
 ```
 virtual BOOL OnBeforeFloat(
@@ -1387,22 +1387,22 @@ virtual BOOL OnBeforeFloat(
 ### <a name="parameters"></a>Parameter
 
 *rectFloat*<br/>
-[in] Gibt die Position und Größe des Bereichs an, wenn es in einen unverankerten Zustand befindet.
+[in] Gibt die Position und Größe des Bereichs an, wenn er sich in einem gleitaden Zustand befindet.
 
-*dockMethod*<br/>
-[in] Gibt die docking-Methode. Finden Sie unter [CPane::DockPane](../../mfc/reference/cpane-class.md#dockpane) eine Liste von möglichen Werten.
+*dockMethode*<br/>
+[in] Gibt die Andockmethode an. Eine Liste möglicher Werte finden Sie unter [CPane::DockPane.](../../mfc/reference/cpane-class.md#dockpane)
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der Bereich abgedockt werden kann. andernfalls "false".
+TRUE, wenn der Bereich schweben kann; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird vom Framework aufgerufen, wenn ein Bereich, der auf "float" geht. Sie können diese Methode in einer abgeleiteten Klasse überschreiben, wenn die Verarbeitung auszuführen, bevor der Bereich wird verschoben werden sollen.
+Diese Methode wird vom Framework aufgerufen, wenn ein Bereich schweben soll. Sie können diese Methode in einer abgeleiteten Klasse überschreiben, wenn Sie eine Verarbeitung durchführen möchten, bevor der Bereich überlaufen wird.
 
-##  <a name="onpressbuttons"></a>  CDockablePane::OnPressButtons
+## <a name="cdockablepaneonpressbuttons"></a><a name="onpressbuttons"></a>CDockablePane::OnPressButtons
 
-Wird aufgerufen, wenn der Benutzer mit Ausnahme der Schaltflächen AFX_HTCLOSE und AFX_HTMAXBUTTON eine Titelleisten-Schaltfläche drückt.
+Wird aufgerufen, wenn der Benutzer eine andere Beschriftungsschaltfläche als die AFX_HTCLOSE- und AFX_HTMAXBUTTON-Schaltflächen drückt.
 
 ```
 virtual void OnPressButtons(UINT nHit);
@@ -1413,13 +1413,13 @@ virtual void OnPressButtons(UINT nHit);
 *nHit*<br/>
 [in] Dieser Parameter wird nicht verwendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie eine benutzerdefinierte Schaltfläche auf die Beschriftung des einen andockbaren Bereich hinzufügen, überschreiben Sie diese Methode, um Benachrichtigungen zu erhalten, wenn ein Benutzer die Schaltfläche klickt.
+Wenn Sie der Beschriftung eines andockbaren Bereichs eine benutzerdefinierte Schaltfläche hinzufügen, überschreiben Sie diese Methode, um Benachrichtigungen zu erhalten, wenn ein Benutzer die Schaltfläche drückt.
 
-##  <a name="onslide"></a>  CDockablePane::OnSlide
+## <a name="cdockablepaneonslide"></a><a name="onslide"></a>CDockablePane::OnSlide
 
-Wird aufgerufen, durch das Framework den Bereich zu animieren, wenn er sich in den Hintergrundmodus.
+Wird vom Framework aufgerufen, um den Bereich zu animieren, wenn er sich im Autohide-Modus befindet.
 
 ```
 virtual void OnSlide(BOOL bSlideOut);
@@ -1428,27 +1428,27 @@ virtual void OnSlide(BOOL bSlideOut);
 ### <a name="parameters"></a>Parameter
 
 *bSlideOut*<br/>
-[in] True, um im Bereich angezeigt. "False" zum Ausblenden des Fensters.
+[in] TRUE, um den Bereich anzuzeigen; FALSE, um den Bereich auszublenden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse zum Implementieren von benutzerdefinierten automatisch im Hintergrund Auswirkungen.
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um benutzerdefinierte Autohide-Effekte zu implementieren.
 
-##  <a name="removefromdefaultpanedividier"></a>  CDockablePane:: removefromdefaultpanedividier wurde
+## <a name="cdockablepaneremovefromdefaultpanedividier"></a><a name="removefromdefaultpanedividier"></a>CDockablePane::RemoveFromDefaultPaneDividier
 
-Das Framework ruft diese Methode auf, wenn ein Bereich wird abgedockt wird.
+Das Framework ruft diese Methode auf, wenn ein Bereich abgedockt wird.
 
 ```
 void RemoveFromDefaultPaneDividier();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode legt bereichsteiler standardmäßig auf NULL fest und entfernt im Bereich von seinem Container.
+Diese Methode legt den Standardbereichsteiler auf NULL fest und entfernt den Bereich aus seinem Container.
 
-##  <a name="replacepane"></a>  CDockablePane::ReplacePane
+## <a name="cdockablepanereplacepane"></a><a name="replacepane"></a>CDockablePane::ReplacePane
 
-Ersetzt den Bereich mit einem angegebenen Bereich.
+Ersetzt den Bereich durch einen angegebenen Bereich.
 
 ```
 BOOL ReplacePane(
@@ -1462,31 +1462,31 @@ BOOL ReplacePane(
 *pBarToReplaceWith*<br/>
 [in] Ein Zeiger auf einen andockbaren Bereich.
 
-*dockMethod*<br/>
-[in] Nicht verwendet.
+*dockMethode*<br/>
+[in] Wird nicht verwendet.
 
 *bRegisterWithFrame*<br/>
-[in] Wenn "true" ist im neuen beim Dock-Manager des übergeordneten Elements des alten Bereichs registriert. Der neue Bereich wird am Index aus der alten Bereich in der Liste der Bereiche eingefügt, die von Dock-Manager verwaltet wird.
+[in] Wenn TRUE, wird der neue Bereich beim Andock-Manager des übergeordneten Bereichs des alten Bereichs registriert. Der neue Bereich wird am Index des alten Bereichs in die Liste der Bereiche eingefügt, die vom Andock-Manager verwaltet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Ersetzung erfolgreich ist. andernfalls "false".
+TRUE, wenn der Austausch erfolgreich ist; andernfalls FALSE.
 
-##  <a name="restoredefaultpanedivider"></a>  CDockablePane::RestoreDefaultPaneDivider
+## <a name="cdockablepanerestoredefaultpanedivider"></a><a name="restoredefaultpanedivider"></a>CDockablePane::RestoreDefaultPaneDivider
 
-Wenn ein Bereich deserialisiert wird, ruft das Framework diese Methode, um die standardmäßige bereichsteiler wiederherstellen.
+Wenn ein Bereich deserialisiert wird, ruft das Framework diese Methode auf, um den Standardbereichsteiler wiederherzustellen.
 
 ```
 void RestoreDefaultPaneDivider();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bereichsteiler wiederhergestellten standardmäßig ersetzt der aktuelle Standard-bereichsteiler, falls vorhanden.
+Der wiederhergestellte Standardbereichsteiler ersetzt den aktuellen Standardbereichsteiler, sofern vorhanden.
 
-##  <a name="setautohidemode"></a>  CDockablePane::SetAutoHideMode
+## <a name="cdockablepanesetautohidemode"></a><a name="setautohidemode"></a>CDockablePane::SetAutoHideMode
 
-Schaltet die andockbaren Bereich zwischen sichtbar und in den Hintergrundmodus.
+Schaltet den Dockingbereich zwischen sichtbarem und autohide-Modus um.
 
 ```
 virtual CMFCAutoHideBar* SetAutoHideMode(
@@ -1499,30 +1499,30 @@ virtual CMFCAutoHideBar* SetAutoHideMode(
 ### <a name="parameters"></a>Parameter
 
 *bMode*<br/>
-[in] True, um den Hintergrundmodus zu aktivieren. "False", um reguläre Andockmodus zu aktivieren.
+[in] TRUE, um den Autohide-Modus zu aktivieren; FALSE, um den regulären Andockmodus zu aktivieren.
 
 *dwAlignment*<br/>
-[in] Gibt die Ausrichtung des Bereichs automatisch im Hintergrund zu erstellen.
+[in] Gibt die Ausrichtung des zu erstellenden Autohide-Bereichs an.
 
 *pCurrAutoHideBar*<br/>
-[in, out] Ein Zeiger auf der Symbolleiste des aktuellen automatisch im Hintergrund. NULL kann sein.
+[in, out] Ein Zeiger auf die aktuelle Autohide-Symbolleiste. Kann den Wert NULL haben.
 
 *bUseTimer*<br/>
-[in] Gibt an, ob Sie den Effekt automatisch im Hintergrund verwenden, wenn der Benutzer den Bereich in den Hintergrundmodus wechselt oder Sie den Bereich unmittelbar ausblenden.
+[in] Gibt an, ob der Autohide-Effekt verwendet werden soll, wenn der Benutzer den Bereich in den Autohide-Modus wechselt oder den Bereich sofort ausblendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die automatisch im Hintergrund-Symbolleiste, die als Ergebnis der Wechsel zu den Hintergrundmodus oder NULL erstellt wurde.
+Die Autohide-Symbolleiste, die als Ergebnis des Wechsels in den Autohide-Modus (NULL) erstellt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode aus, klickt ein Benutzer die Schaltfläche "anheften" andockbaren Bereich in den Hintergrundmodus oder regulären Andockmodus wechseln.
+Das Framework ruft diese Methode auf, wenn ein Benutzer auf die Pin-Schaltfläche klickt, um den Dockable-Bereich in den Autohide-Modus oder in den regulären Andockmodus zu wechseln.
 
-Rufen Sie diese Methode, um einen andockbaren Bereich in den Hintergrundmodus programmgesteuert zu wechseln. Der Bereich angedockt werden muss, an das Hauptrahmenfenster ( [CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider) muss einen gültigen Zeiger auf Zurückgeben der [CPaneDivider](../../mfc/reference/cpanedivider-class.md)).
+Rufen Sie diese Methode auf, um einen andockbaren Bereich programmgesteuert in den Autohide-Modus zu schalten. Der Bereich muss an das Hauptrahmenfenster angedockt werden ( [CDockablePane::GetDefaultPaneDivider](#getdefaultpanedivider) muss einen gültigen Zeiger auf den [CPaneDivider](../../mfc/reference/cpanedivider-class.md)zurückgeben).
 
-##  <a name="setautohideparents"></a>  CDockablePane::SetAutoHideParents
+## <a name="cdockablepanesetautohideparents"></a><a name="setautohideparents"></a>CDockablePane::SetAutoHideParents
 
-Legt fest, der automatisch ausblendbaren Schaltfläche und der automatisch ausblendbaren-Symbolleiste für den Bereich.
+Legt die Schaltfläche "Auto-Hide" und die Symbolleiste für das automatische Ausblenden für den Bereich fest.
 
 ```
 void SetAutoHideParents(
@@ -1533,14 +1533,14 @@ void SetAutoHideParents(
 ### <a name="parameters"></a>Parameter
 
 *pToolBar*<br/>
-[in] Zeiger auf ein solches.
+[in] Zeiger auf eine Symbolleiste, die automatisch ausblendet wird.
 
 *pBtn*<br/>
-[in] Zeiger auf eine Schaltfläche zum automatischen ausblenden.
+[in] Zeiger auf eine Auto-Hide-Schaltfläche.
 
-##  <a name="setlastpercentinpanecontainer"></a>  CDockablePane::SetLastPercentInPaneContainer
+## <a name="cdockablepanesetlastpercentinpanecontainer"></a><a name="setlastpercentinpanecontainer"></a>CDockablePane::SetLastPercentInPaneContainer
 
-Bestimmt den Prozentsatz des Speicherplatzes, der ein Bereich in einem Container einnimmt.
+Legt den Prozentsatz des Speicherplatzes fest, den ein Bereich in seinem Container belegt.
 
 ```
 void SetLastPercentInPaneContainer(int n);
@@ -1549,15 +1549,15 @@ void SetLastPercentInPaneContainer(int n);
 ### <a name="parameters"></a>Parameter
 
 *n*<br/>
-[in] Ein **Int** , der den Prozentsatz des Speicherplatzes, der der Bereich in einem Container belegt angibt.
+[in] Ein **int,** der den Prozentsatz des Speicherplatzes angibt, den der Bereich in seinem Container belegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework passt den Bereich, um den neuen Wert zu verwenden, wenn das Layout neu berechnet wird.
+Das Framework passt den Bereich so an, dass der neue Wert verwendet wird, wenn das Layout neu berechnet wird.
 
-##  <a name="setrestoreddefaultpanedivider"></a>  CDockablePane::SetRestoredDefaultPaneDivider
+## <a name="cdockablepanesetrestoreddefaultpanedivider"></a><a name="setrestoreddefaultpanedivider"></a>CDockablePane::SetRestoredDefaultPaneDivider
 
-Wird die wiederhergestellte Standard Trennlinie.
+Legt den wiederhergestellten Standardbereichsteiler fest.
 
 ```
 void SetRestoredDefaultPaneDivider(HWND hRestoredSlider);
@@ -1566,15 +1566,15 @@ void SetRestoredDefaultPaneDivider(HWND hRestoredSlider);
 ### <a name="parameters"></a>Parameter
 
 *hRestoredSlider*<br/>
-[in] Ein Handle für einen bereichsteiler (Schieberegler).
+[in] Ein Handle zu einem Bereichsteiler (Schieberegler).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein bereichsteiler wiederhergestellten Standard wird abgerufen, wenn ein Bereich deserialisiert wird. Weitere Informationen finden Sie unter [CDockablePane::RestoreDefaultPaneDivider](#restoredefaultpanedivider).
+Ein wiederhergestellter Standardbereichsteiler wird abgerufen, wenn ein Bereich deserialisiert wird. Weitere Informationen finden Sie unter [CDockablePane::RestoreDefaultPaneDivider](#restoredefaultpanedivider).
 
-##  <a name="settabbedpanertc"></a>  CDockablePane:: Settabbedpanertc
+## <a name="cdockablepanesettabbedpanertc"></a><a name="settabbedpanertc"></a>CDockablePane::SetTabbedPaneRTC
 
-Legt die laufzeitklasseninformationen für ein Fenster im Registerkartenformat, die erstellt wird, wenn zwei Bereiche zusammen docken fest.
+Legt die Laufzeitklasseninformationen für ein Registerkartenfenster fest, das erstellt wird, wenn zwei Bereiche zusammen andocken.
 
 ```
 void SetTabbedPaneRTC(CRuntimeClass* pRTC);
@@ -1582,14 +1582,14 @@ void SetTabbedPaneRTC(CRuntimeClass* pRTC);
 
 ### <a name="parameters"></a>Parameter
 
-*pRTC*<br/>
-[in] Die Laufzeit-Klasseninformationen für die Seite im Registerformat.
+*Prtc*<br/>
+[in] Die Laufzeitklasseninformationen für den Registerkartenbereich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode, um die laufzeitklasseninformationen für Bereiche im Registerkartenformat festlegen, die dynamisch erstellt werden. Dies kann auftreten, wenn ein Benutzer einen Bereich auf die Beschriftung des anderen Bereichs zieht, oder rufen Sie die [CDockablePane:: Attachtotabwnd](#attachtotabwnd) Methode, um einen Bereich im Registerkartenformat aus zwei andockbare Bereiche programmgesteuert zu erstellen.
+Rufen Sie diese Methode auf, um die Laufzeitklasseninformationen für Registerkartenbereiche festzulegen, die dynamisch erstellt werden. Dies kann auftreten, wenn ein Benutzer einen Bereich in die Beschriftung eines anderen Bereichs zieht oder wenn Sie die [CDockablePane::AttachToTabWnd-Methode](#attachtotabwnd) aufrufen, um programmgesteuert einen Registerkartenbereich aus zwei andockbaren Bereichen zu erstellen.
 
-Die Standardklasse für die Common Language Runtime wird festgelegt, gemäß der *DwTabbedStyle* Parameter [CDockablePane::Create](#create) und [CDockablePane:: CreateEx](#createex). Um die neue Registerkartenformat anzupassen, leiten Sie die Klasse von einer der folgenden Klassen:
+Die Standardlaufzeitklasse wird gemäß dem *parameter dwTabbedStyle* von [CDockablePane::Create](#create) und [CDockablePane::CreateEx](#createex)festgelegt. Um die neuen Registerkartenbereiche anzupassen, leiten Sie Ihre Klasse aus einer der folgenden Klassen ab:
 
 - [CBaseTabbedPane-Klasse](../../mfc/reference/cbasetabbedpane-class.md)
 
@@ -1597,11 +1597,11 @@ Die Standardklasse für die Common Language Runtime wird festgelegt, gemäß der
 
 - [CMFCOutlookBar-Klasse](../../mfc/reference/cmfcoutlookbar-class.md).
 
-Anschließend rufen Sie diese Methode mit dem Zeiger auf die Laufzeit-Klasseninformationen an.
+Rufen Sie dann diese Methode mit dem Zeiger auf die Laufzeitklasseninformationen auf.
 
-##  <a name="showpane"></a>  CDockablePane::ShowPane
+## <a name="cdockablepaneshowpane"></a><a name="showpane"></a>CDockablePane::ShowPane
 
-Anzeigen oder ausblenden ein Bereichs.
+Zeigt einen Bereich ein oder blendet ihn aus.
 
 ```
 virtual void ShowPane(
@@ -1613,21 +1613,21 @@ virtual void ShowPane(
 ### <a name="parameters"></a>Parameter
 
 *bShow*<br/>
-[in] True, um im Bereich angezeigt. "False" zum Ausblenden des Fensters.
+[in] TRUE, um den Bereich anzuzeigen; FALSE, um den Bereich auszublenden.
 
 *bDelay*<br/>
-[in] Anpassen von "true" Verzögerung Layout des Docks; FALSE, um das Layout des Docks sofort anpassen.
+[in] TRUE, um das Anpassen des Docking-Layouts zu verzögern; FALSE, um das Docking-Layout sofort anzupassen.
 
-*bActivate*<br/>
-[in] TRUE, aktivieren Sie im Bereich, wenn Sie angezeigt werden soll andernfalls "false".
+*bAktivieren*<br/>
+[in] TRUE, um den Bereich zu aktivieren, wenn er angezeigt wird; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode statt der [ShowWindow](../../mfc/reference/cwnd-class.md#showwindow) beim ein- bzw. ausblenden andockbare Bereiche.
+Rufen Sie diese Methode anstelle des [CWnd::ShowWindow](../../mfc/reference/cwnd-class.md#showwindow) auf, wenn Sie andockbare Bereiche anzeigen oder ausblenden.
 
-##  <a name="slide"></a>  CDockablePane::Slide
+## <a name="cdockablepaneslide"></a><a name="slide"></a>CDockablePane::Folie
 
-Führt eine Animation einen Bereich, der in den Hintergrundmodus ist.
+Animiert einen Bereich im Autohide-Modus.
 
 ```
 virtual void Slide(
@@ -1638,32 +1638,32 @@ virtual void Slide(
 ### <a name="parameters"></a>Parameter
 
 *bSlideOut*<br/>
-[in] True, um im Bereich angezeigt. "False" zum Ausblenden des Fensters.
+[in] TRUE, um den Bereich anzuzeigen; FALSE, um den Bereich auszublenden.
 
 *bUseTimer*<br/>
-[in] True, um ein- oder Ausblenden des Bereichs mit dem Effekt automatisch im Hintergrund. "False" zum Anzeigen oder Ausblenden des Bereichs sofort.
+[in] TRUE, um den Bereich mit dem Autohide-Effekt ein- oder auszublenden; FALSE, um den Bereich sofort ein- oder auszublenden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode, um einen Bereich zu animieren, der in den Hintergrundmodus ist.
+Das Framework ruft diese Methode auf, um einen Bereich im Autohide-Modus zu animieren.
 
-Diese Methode verwendet die `CDockablePane::m_nSlideDefaultTimeOut` um das Timeout für die Abrolleffekt zu bestimmen. Der Standardwert für das Timeout ist 1. Wenn Sie den Algorithmus automatisch im Hintergrund anpassen, ändern Sie dieses Element aus, um das Timeout zu ändern.
+Diese Methode `CDockablePane::m_nSlideDefaultTimeOut` verwendet den Wert, um die Zeitfürst für den Folieneffekt zu bestimmen. Der Standardwert für das Timeout ist 1. Wenn Sie den Autohide-Algorithmus anpassen, ändern Sie dieses Element, um das Timeout zu ändern.
 
-##  <a name="toggleautohide"></a>  CDockablePane::ToggleAutoHide
+## <a name="cdockablepanetoggleautohide"></a><a name="toggleautohide"></a>CDockablePane::ToggleAutoHide
 
-Schaltet den Bereich zwischen immer sichtbar und den automatischen Ausblendemodus.
+Schaltet den Bereich zwischen immer sichtbarem und automatischem Ausblendmodus um.
 
 ```
 virtual void ToggleAutoHide();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode schaltet den automatischen Ausblendemodus für den Bereich durch den Aufruf [CDockablePane::SetAutoHideMode](#setautohidemode).
+Diese Methode schaltet den automatischen Ausblendmodus für den Bereich um, indem [cDockablePane::SetAutoHideMode](#setautohidemode)aufgerufen wird.
 
-##  <a name="undockpane"></a>  CDockablePane::UndockPane
+## <a name="cdockablepaneundockpane"></a><a name="undockpane"></a>CDockablePane::UndockPane
 
-Dockt einen Bereich von Hauptrahmenfenster oder einen Benutzer im Fenster-Container.
+Entfernt einen Bereich aus dem Hauptrahmenfenster oder einem Miniframe-Fenstercontainer.
 
 ```
 virtual void UndockPane(BOOL bDelay = FALSE);
@@ -1672,18 +1672,18 @@ virtual void UndockPane(BOOL bDelay = FALSE);
 ### <a name="parameters"></a>Parameter
 
 *bDelay*<br/>
-[in] Berechnen von "true" Verzögerung Layout des Docks; "False", um das Layout des Docks neuberechnung sofort auszuführen.
+[in] TRUE, um die Berechnung des Docking-Layouts zu verzögern; FALSE, um das Andocklayout sofort neu zu berechnen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode, um einen Bereich von Hauptrahmenfenster oder aus einem Container für Multi-Benutzer-Fenster (ein Bereich, der in einem einzelnen Benutzer-Fenster mit anderen Bereichen unverankert ist) zu lösen.
+Rufen Sie diese Methode auf, um einen Bereich aus dem Hauptrahmenfenster oder aus einem Fenstercontainer mit mehreren Miniframes abzudocken (ein Bereich, der in einem einzelnen Miniframefenster mit anderen Bereichen schwebt).
 
-Sie müssen einen Bereich abdocken, bevor Sie alle externen Vorgänge ausführen, die nicht von ausgeführt wird die [CDockingManager](../../mfc/reference/cdockingmanager-class.md). Beispielsweise müssen Sie einen Bereich zu verschieben programmgesteuert von einem Speicherort in einen anderen lösen.
+Sie müssen einen Bereich abdocken, bevor Sie einen externen Vorgang ausführen, der nicht vom [CDockingManager](../../mfc/reference/cdockingmanager-class.md)ausgeführt wird. Sie müssen z. B. einen Bereich abdocken, um ihn programmgesteuert von einer Position an eine andere zu verschieben.
 
-Das Framework wird abgedockt automatisch auf die Bereiche aus, bevor sie zerstört werden.
+Das Framework schaltet automatisch Bereiche ab, bevor sie zerstört werden.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[CPane-Klasse](../../mfc/reference/cpane-class.md)
+[CPane Class](../../mfc/reference/cpane-class.md)

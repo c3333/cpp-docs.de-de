@@ -16,16 +16,16 @@ helpviewer_keywords:
 - std::money_put [C++], do_put
 - std::money_put [C++], put
 ms.assetid: f439fd56-c9b1-414c-95e1-66c918c6eee6
-ms.openlocfilehash: aafa6f9498ee315c25e73833baf3c13d99d36743
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 035cc4e7b9cfac262979509bf7b4570e2c55336c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689303"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81377425"
 ---
 # <a name="money_put-class"></a>money_put-Klasse
 
-Die Klassen Vorlage beschreibt ein Objekt, das als Gebiets Schema Aspekt fungieren kann, um Konvertierungen von Währungswerten in Sequenzen vom Typ `CharType` zu steuern.
+Die Klassenvorlage beschreibt ein Objekt, das als Gebietsschema dienen kann, um Konvertierungen von monetären Werten in Sequenzen vom Typ `CharType`zu steuern.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,25 +37,25 @@ class money_put : public locale::facet;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der innerhalb eines Programms zum Codieren von Zeichen in einem Gebietsschema verwendet wird.
 
-*OutputIterator* -\
+*OutputIterator*\
 Der Typ des Iterators, in den die monetären Put-Funktionen ihre Ausgabe schreiben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird in **id** ein eindeutiger positiver Wert gespeichert.
+Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in **id** gespeichert.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[money_put](#money_put)|Der Konstruktor für Objekte des Typs `money_put`.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.|
 |[iter_type](#iter_type)|Ein Typ, der einen Ausgabeiterator beschreibt.|
@@ -63,10 +63,10 @@ Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[do_put](#do_put)|Eine virtuelle Funktion, die aufgerufen wird, um entweder eine Zahl oder eine Zeichenfolge in eine Zeichenfolge zu konvertieren, die einen monetären Wert darstellt.|
-|[put](#put)|Konvertiert entweder eine Zahl oder eine Zeichenfolge in eine Zeichenfolge, die einen monetären Wert darstellt.|
+|[setzen](#put)|Konvertiert entweder eine Zahl oder eine Zeichenfolge in eine Zeichenfolge, die einen monetären Wert darstellt.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -74,7 +74,7 @@ Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen
 
 **Namespace:** std
 
-## <a name="char_type"></a> money_put::char_type
+## <a name="money_putchar_type"></a><a name="char_type"></a>money_put::char_type
 
 Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.
 
@@ -82,11 +82,11 @@ Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwe
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ stellt ein Synonym für den Vorlagenparameter **CharType** dar.
 
-## <a name="do_put"></a> money_put::do_put
+## <a name="money_putdo_put"></a><a name="do_put"></a>money_put::do_put
 
 Eine virtuelle Funktion, die aufgerufen wird, um entweder eine Zahl oder eine Zeichenfolge in eine Zeichenfolge zu konvertieren, die einen monetären Wert darstellt.
 
@@ -108,32 +108,32 @@ virtual iter_type do_put(
 
 ### <a name="parameters"></a>Parameter
 
-*nächste* \
+*nächster*\
 Ein Iterator, der das erste Element in der eingefügten Zeichenfolge adressiert.
 
-*_Intl* \
+*_Intl*\
 Ein boolescher Wert, der den Typ des in der Sequenz vorgesehenen Währungssymbols angibt (**TRUE**, wenn international; **FALSE**, wenn national).
 
-*_Iosbase* \
+*_iosbase*\
 Ein Formatkennzeichen, das bei Verwendung angibt, dass das Währungssymbol optional ist. Ansonsten ist das Währungssymbol erforderlich.
 
-*_Fill* \
+*_Fill*\
 Ein Zeichen, das Leerzeichen einfügt.
 
-*Val* -\
+*Val*\
 Ein zu konvertierendes Zeichenfolgenobjekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der auf die erste Position nach dem jeweils letzten Element verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste virtuelle geschützte Member-Funktion generiert sequenzielle Elemente, beginnend bei *Next* , um ein monetäre Ausgabefeld aus dem [string_type](#string_type) -Objekt *Val*zu erzeugen. Die von *Val* gesteuerte Sequenz muss mit einer oder mehreren Dezimalziffern beginnen, wobei optional ein Minuszeichen (-) vorangestellt wird, das den Betrag darstellt. Die Funktion gibt einen Iterator zurück, der das erste Element nach dem generierten Ausgabefeld für monetäre Werte festlegt.
+Die erste virtual protected Member-Funktion generiert sequenzielle Elemente, die *nebenan* beginnen, um ein monetäres Ausgabefeld aus dem [string_type-Objekt](#string_type) *val*zu erzeugen. Die von *val* gesteuerte Sequenz muss mit einer oder mehreren Dezimalstellen beginnen, optional vor einem Minuszeichen (-), das den Betrag darstellt. Die Funktion gibt einen Iterator zurück, der das erste Element nach dem generierten Ausgabefeld für monetäre Werte festlegt.
 
-Die zweite virtuelle geschützte Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass Sie zuerst *Val* in eine Folge von Dezimalziffern konvertiert, optional mit einem Minuszeichen, und dann diese Sequenz wie oben beschrieben konvertiert.
+Die zweite virtuelle geschützte Memberfunktion verhält sich genauso wie die erste, mit der Ausnahme, dass sie effektiv zuerst *val* in eine Folge von Dezimalstellen konvertiert, optional einem Minuszeichen vorangestellt ist, und dann diese Sequenz wie oben konvertiert.
 
-Das Format eines Eingabefelds für monetäre Werte richtet sich nach dem [Gebietsschemafacet](../standard-library/locale-class.md#facet_class) „fac“, das durch den (effektiven) Aufruf [use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md)\< **CharType**, **intl**> >( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)).
+Das Format eines Eingabefelds für monetäre Werte richtet sich nach dem [Gebietsschemafacet](../standard-library/locale-class.md#facet_class) „fac“, das durch den (effektiven) Aufruf [use_facet](../standard-library/locale-functions.md#use_facet) < [moneypunct](../standard-library/moneypunct-class.md)\< **CharType**, **intl**> >( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)) zurückgegeben wird.
 
 Dies gilt insbesondere in folgenden Fällen:
 
@@ -155,9 +155,9 @@ Dies gilt insbesondere in folgenden Fällen:
 
 - **fac**. [frac_digits](../standard-library/moneypunct-class.md#frac_digits) bestimmt die Anzahl signifikanter Ziffern auf der rechten Seite eines Dezimaltrennzeichens.
 
-Wenn die Zeichenfolge ( **fac**. `negative_sign` oder **fac**. `positive_sign`) über mehr als ein Element verfügt, wird nur das erste Element generiert, bei dem das dem **money_base::sign** entsprechende Element im Formatmuster ( **fac**. `neg_format` oder **fac**. `pos_format`) angezeigt wird. Alle übrigen Elemente werden am Ende des Ausgabefelds für monetäre Werte generiert.
+Wenn die Zeichenfolge ( **fac**. `negative_sign` oder **fac**. `positive_sign`) über mehr als ein Element verfügt, wird nur das erste Element generiert, bei dem das dem **money_base::sign** entsprechende Element im Formatmuster ( **fac**. `neg_format` oder **fac**. `pos_format`). Alle übrigen Elemente werden am Ende des Ausgabefelds für monetäre Werte generiert.
 
-Wenn **iosbase**. [flags](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) ungleich null ist, muss die Zeichenfolge **fac**. `curr_symbol` dort generiert, wo das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird. Andernfalls wird kein Währungssymbol generiert.
+Wenn **iosbase**. [Flags](../standard-library/ios-base-class.md#flags) & [showbase](../standard-library/ios-functions.md#showbase) ist ungleich Null, die Zeichenfolge **fac**. `curr_symbol` dort generiert, wo das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird. Andernfalls wird kein Währungssymbol generiert.
 
 Erfolgen keine Gruppierungseinschränkungen durch **fac**. **grouping** (sein erstes Element weist den Wert CHAR_MAX auf), werden keine Instanzen von **fac**. `thousands_sep` im Wertteil des Ausgabefelds für monetäre Werte generiert (in dem das dem **money_base::symbol** entsprechende Element im Formatmuster angezeigt wird). Wenn **fac**. `frac_digits` 0 (null) ist, wird keine Instanz von **fac**. `decimal_point` nach den Dezimalstellen generiert. Ansonsten platziert das jeweilige Ausgabefeld für monetäre Werte die niederwertigen **fac**. `frac_digits`-Dezimalstellen auf der rechten Seite des Dezimaltrennzeichens.
 
@@ -169,7 +169,7 @@ Die Funktion ruft **iosbase**. **width**(0) auf, um die Feldbreite auf null zur�
 
 Informationen hierzu finden Sie im Beispiel für [put](#put), bei dem die virtuelle Memberfunktion durch **put** aufgerufen wird.
 
-## <a name="iter_type"></a> money_put::iter_type
+## <a name="money_putiter_type"></a><a name="iter_type"></a>money_put::iter_type
 
 Ein Typ, der einen Ausgabeiterator beschreibt.
 
@@ -177,11 +177,11 @@ Ein Typ, der einen Ausgabeiterator beschreibt.
 typedef OutputIterator iter_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für den Vorlagenparameter **OutputIterator**.
 
-## <a name="money_put"></a> money_put::money_put
+## <a name="money_putmoney_put"></a><a name="money_put"></a>money_put::money_put
 
 Der Konstruktor für Objekte des Typs `money_put`.
 
@@ -191,24 +191,24 @@ explicit money_put(size_t _Refs = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs* \
+*_refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den Parameter *_Refs* und ihre Bedeutung lauten:
+Die möglichen Werte für den *parameter _Refs* und deren Signifikanz sind:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
 - 1: Die Lebensdauer des Objekts muss manuell verwaltet werden.
 
-- \> 1: diese Werte sind nicht definiert.
+- \>1: Diese Werte sind nicht definiert.
 
 Direkte Beispiele sind nicht möglich, da der Destruktor geschützt ist.
 
-Der Konstruktor initialisiert sein Basisobjekt mit **locale::** [facet](../standard-library/locale-class.md#facet_class)( `_Refs`).
+Der Konstruktor initialisiert sein Basisobjekt mit **locale::**[facet](../standard-library/locale-class.md#facet_class)( `_Refs`).
 
-## <a name="put"></a> money_put::put
+## <a name="money_putput"></a><a name="put"></a>money_put::put
 
 Konvertiert entweder eine Zahl oder eine Zeichenfolge in eine Zeichenfolge, die einen monetären Wert darstellt.
 
@@ -230,28 +230,28 @@ iter_type put(
 
 ### <a name="parameters"></a>Parameter
 
-*nächste* \
+*nächster*\
 Ein Iterator, der das erste Element in der eingefügten Zeichenfolge adressiert.
 
-*_Intl* \
+*_Intl*\
 Ein boolescher Wert, der den Typ des in der Sequenz vorgesehenen Währungssymbols angibt (**TRUE**, wenn international; **FALSE**, wenn national).
 
-*_Iosbase* \
+*_iosbase*\
 Ein Formatkennzeichen, das bei Verwendung angibt, dass das Währungssymbol optional ist. Ansonsten ist das Währungssymbol erforderlich.
 
-*_Fill* \
+*_Fill*\
 Ein Zeichen, das Leerzeichen einfügt.
 
-*Val* -\
+*Val*\
 Ein zu konvertierendes Zeichenfolgenobjekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Ausgabeiterator, der auf die erste Position nach dem jeweils letzten Element verweist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Beide Memberfunktionen geben [do_put](#do_put)( `next`, `_Intl`, `_Iosbase`, `_Fill`, `val`) zurück.
+Beide Memberfunktionen [do_put](#do_put)geben `next` `_Intl`do_put `_Iosbase` `_Fill`zurück `val`( , , , , .
 
 ### <a name="example"></a>Beispiel
 
@@ -281,7 +281,7 @@ int main()
 money_put() = "EUR1.000,12"
 ```
 
-## <a name="string_type"></a> money_put::string_type
+## <a name="money_putstring_type"></a><a name="string_type"></a>money_put::string_type
 
 Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen vom Typ `CharType` enthält.
 
@@ -289,12 +289,12 @@ Ein Typ, der eine Zeichenfolge beschreibt, die Zeichen vom Typ `CharType` enthä
 typedef basic_string<CharType, Traits, Allocator> string_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt eine Spezialisierung der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) , deren Objekte Sequenzen von Elementen aus der Quell Sequenz speichern können.
+Der Typ beschreibt eine Spezialisierung von [Klassenvorlagenbasic_string](../standard-library/basic-string-class.md) deren Objekte Sequenzen von Elementen aus der Quellsequenz speichern können.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<locale>](../standard-library/locale.md)\
-[facet-Klasse](../standard-library/locale-class.md#facet_class)\
-[Thread Safety in the C++ Standard Library (Threadsicherheit in der C++-Standardbibliothek)](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+[\<Gebietsschema>](../standard-library/locale.md)\
+[Facette Klasse](../standard-library/locale-class.md#facet_class)\
+[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

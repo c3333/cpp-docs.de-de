@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CPalette [MFC], ResizePalette
 - CPalette [MFC], SetPaletteEntries
 ms.assetid: 8cd95498-53ed-4852-85e1-70e522541114
-ms.openlocfilehash: 27f4f14c9e93091728e256c890dcffee26a43de4
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 83cd125fa7ab64aa39c606bc048022400d158e72
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426972"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374765"
 ---
 # <a name="cpalette-class"></a>CPalette-Klasse
 
@@ -47,53 +47,53 @@ class CPalette : public CGdiObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPalette:: CPalette](#cpalette)|Erstellt ein `CPalette` Objekt ohne angehängte Windows-Palette. Sie müssen das `CPalette`-Objekt mit einer der initialisierungsmember-Funktionen initialisieren, bevor es verwendet werden kann.|
+|[CPalette::CPalette](#cpalette)|Erstellt ein `CPalette` Objekt ohne angefügte Windows-Palette. Sie müssen das `CPalette` Objekt mit einer der Initialisierungsmemberfunktionen initialisieren, bevor es verwendet werden kann.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPalette:: AnimatePalette](#animatepalette)|Ersetzt Einträge in der logischen Palette, die durch das `CPalette` Objekt identifiziert wird. Die Anwendung muss ihren Client Bereich nicht aktualisieren, da die neuen Einträge von Windows sofort der Systempalette zugeordnet werden.|
-|[CPalette:: CreateHalftonePalette](#createhalftonepalette)|Erstellt eine halbftone-Palette für den Gerätekontext und fügt Sie an das `CPalette`-Objekt an.|
-|[CPalette:: CreatePalette](#createpalette)|Erstellt eine Windows-Farbpalette und fügt Sie an das `CPalette`-Objekt an.|
-|[CPalette:: FromHandle](#fromhandle)|Gibt einen Zeiger auf ein `CPalette` Objekt zurück, wenn ein Handle für ein Windows-Palettenobjekt angegeben wird.|
-|[CPalette:: getentrycount](#getentrycount)|Ruft die Anzahl der Paletteneinträge in einer logischen Palette ab.|
-|[CPalette:: getnearestpaletteingedex](#getnearestpaletteindex)|Gibt den Index des Eintrags in der logischen Palette zurück, der mit einem Farbwert am ehesten übereinstimmt.|
-|[CPalette:: GetPaletteEntries](#getpaletteentries)|Ruft einen Bereich von paletteneinträgen in einer logischen Palette ab.|
-|[CPalette:: ResizePalette](#resizepalette)|Ändert die Größe der logischen Palette, die vom `CPalette`-Objekt angegeben wird, in die angegebene Anzahl von Einträgen.|
-|[CPalette:: setpaletteentries](#setpaletteentries)|Legt RGB-Farbwerte und-Flags in einem Bereich von Einträgen in einer logischen Palette fest.|
+|[CPalette::AnimatePalette](#animatepalette)|Ersetzt Einträge in der logischen `CPalette` Palette, die vom Objekt identifiziert werden. Die Anwendung muss ihren Clientbereich nicht aktualisieren, da Windows die neuen Einträge sofort der Systempalette zuordnet.|
+|[CPalette::ErstellenHalftonePalette](#createhalftonepalette)|Erstellt eine Halbtonpalette für den Gerätekontext `CPalette` und fügt sie an das Objekt an.|
+|[CPalette::CreatePalette](#createpalette)|Erstellt eine Windows-Farbpalette und `CPalette` fügt sie an das Objekt an.|
+|[Cpalette::FromHandle](#fromhandle)|Gibt einen Zeiger `CPalette` auf ein Objekt zurück, wenn einem Windows-Palettenobjekt ein Handle übergeben wird.|
+|[CPalette::GetEntryCount](#getentrycount)|Ruft die Anzahl der Paletteneinträge in einer logischen Palette ab.|
+|[CPalette::GetNearestPaletteIndex](#getnearestpaletteindex)|Gibt den Index des Eintrags in der logischen Palette zurück, der am ehesten mit einem Farbwert übereinstimmt.|
+|[CPalette::GetPaletteEntries](#getpaletteentries)|Ruft eine Reihe von Paletteneinträgen in einer logischen Palette ab.|
+|[CPalette::Größenpalette ändern](#resizepalette)|Ändert die Größe der vom `CPalette` Objekt angegebenen logischen Palette in die angegebene Anzahl von Einträgen.|
+|[CPalette::SetPaletteEntries](#setpaletteentries)|Legt RGB-Farbwerte und -Flags in einem Bereich von Einträgen in einer logischen Palette fest.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPalette:: Operator hpalette](#operator_hpalette)|Gibt die an den `CPalette`angefügte hpalette zurück.|
+|[CPalette::operator HPALETTE](#operator_hpalette)|Gibt die HPALETTE `CPalette`zurück, die an die angehängt ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Palette bietet eine Schnittstelle zwischen einer Anwendung und einem Farbausgabe Gerät (z. b. einem Anzeigegerät). Die-Schnittstelle ermöglicht es der Anwendung, die Farbfunktionen des Ausgabegeräts in vollem Umfang zu nutzen, ohne die von anderen Anwendungen angezeigten Farben schwer zu beeinträchtigen. Windows verwendet die logische Palette der Anwendung (eine Liste der erforderlichen Farben) und die Systempalette (die verfügbare Farben definiert), um die verwendeten Farben zu bestimmen.
+Eine Palette stellt eine Schnittstelle zwischen einer Anwendung und einem Farbausgabegerät (z. B. einem Anzeigegerät) bereit. Die Schnittstelle ermöglicht es der Anwendung, die Farbfunktionen des Ausgabegeräts voll auszuschöpfen, ohne die von anderen Anwendungen angezeigten Farben stark zu beeinträchtigen. Windows verwendet die logische Palette der Anwendung (eine Liste der benötigten Farben) und die Systempalette (die verfügbare Farben definiert), um die verwendeten Farben zu bestimmen.
 
-Ein `CPalette`-Objekt stellt Element Funktionen zum Bearbeiten der Palette bereit, auf die vom-Objekt verwiesen wird. Erstellen Sie ein `CPalette` Objekt, und verwenden Sie seine Member-Funktionen, um die tatsächliche Palette, ein GDI-Objekt (Graphics Device Interface) zu erstellen und die zugehörigen Einträge und anderen Eigenschaften zu bearbeiten.
+Ein `CPalette` Objekt stellt Memberfunktionen zum Bearbeiten der Palette bereit, auf die das Objekt verweist. Erstellen `CPalette` Sie ein Objekt, und verwenden Sie seine Memberfunktionen, um die eigentliche Palette, ein GDI-Objekt (Graphics Device Interface) zu erstellen und seine Einträge und andere Eigenschaften zu bearbeiten.
 
-Weitere Informationen zur Verwendung von `CPalette`finden Sie unter [Graphic Objects](../../mfc/graphic-objects.md).
+Weitere Informationen zur `CPalette`Verwendung finden Sie unter [Grafikobjekte](../../mfc/graphic-objects.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CGdiObject](../../mfc/reference/cgdiobject-class.md)
 
 `CPalette`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-##  <a name="animatepalette"></a>CPalette:: AnimatePalette
+## <a name="cpaletteanimatepalette"></a><a name="animatepalette"></a>CPalette::AnimatePalette
 
-Ersetzt Einträge in der logischen Palette, die an das `CPalette` Objekt angefügt ist.
+Ersetzt Einträge in der logischen `CPalette` Palette, die dem Objekt zugeordnet sind.
 
 ```
 void AnimatePalette(
@@ -104,22 +104,22 @@ void AnimatePalette(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartindex*<br/>
+*nStartIndex*<br/>
 Gibt den ersten Eintrag in der Palette an, der animiert werden soll.
 
-*nnumentries*<br/>
-Gibt die Anzahl der zu animierenden Einträge in der Palette an.
+*nNumEntries*<br/>
+Gibt die Anzahl der Einträge in der Palette an, die animiert werden soll.
 
-*lppalettecolors*<br/>
-Verweist auf das erste Element eines Arrays von [PaletteEntry](/previous-versions/dd162769\(v=vs.85\)) -Strukturen, um die durch *nstartindex* und *nnumentries*identifizierten Paletteneinträge zu ersetzen.
+*lpPaletteFarben*<br/>
+Zeigt auf das erste Element eines Arrays von [PALETTEENTRY-Strukturen,](/previous-versions/dd162769\(v=vs.85\)) um die Paletteneinträge zu ersetzen, die durch *nStartIndex* und *nNumEntries*identifiziert wurden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Anwendung `AnimatePalette`aufruft, muss Sie Ihren Client Bereich nicht aktualisieren, da die neuen Einträge von Windows sofort der Systempalette zugeordnet werden.
+Wenn eine `AnimatePalette`Anwendung aufruft, muss sie ihren Clientbereich nicht aktualisieren, da Windows die neuen Einträge sofort der Systempalette zuordnet.
 
-Die `AnimatePalette`-Funktion ändert nur Einträge mit dem PC_RESERVED-Flag, das im entsprechenden `palPaletteEntry` Member der [LOGPALETTE](/windows/win32/api/wingdi/ns-wingdi-logpalette) -Struktur festgelegt ist, die an das `CPalette` Objekt angefügt ist. Weitere Informationen zu dieser Struktur finden Sie unter LOGPALETTE in der Windows SDK.
+Die `AnimatePalette` Funktion ändert nur Einträge, wobei das `palPaletteEntry` PC_RESERVED Flag im entsprechenden Member `CPalette` der [LOGPALETTE-Struktur](/windows/win32/api/wingdi/ns-wingdi-logpalette) festgelegt ist, die dem Objekt zugeordnet ist. Weitere Informationen zu dieser Struktur finden Sie unter LOGPALETTE im Windows SDK.
 
-##  <a name="cpalette"></a>CPalette:: CPalette
+## <a name="cpalettecpalette"></a><a name="cpalette"></a>CPalette::CPalette
 
 Erstellt ein `CPalette`-Objekt.
 
@@ -127,13 +127,13 @@ Erstellt ein `CPalette`-Objekt.
 CPalette();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das-Objekt hat keine angefügte Palette, bis Sie `CreatePalette` zum Anfügen eines anfügen.
+Das Objekt verfügt über keine `CreatePalette` angefügte Palette, bis Sie eine anfügen.
 
-##  <a name="createhalftonepalette"></a>CPalette:: CreateHalftonePalette
+## <a name="cpalettecreatehalftonepalette"></a><a name="createhalftonepalette"></a>CPalette::ErstellenHalftonePalette
 
-Erstellt eine halbftone-Palette für den Gerätekontext.
+Erstellt eine Halbtonpalette für den Gerätekontext.
 
 ```
 BOOL CreateHalftonePalette(CDC* pDC);
@@ -148,15 +148,15 @@ Identifiziert den Gerätekontext.
 
 Ist ungleich null (0), wenn die Funktion erfolgreich ausgeführt wird, andernfalls null (0).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Anwendung sollte eine halbftone-Palette erstellen, wenn der streckungs Modus eines Geräte Kontexts auf "Halbton" festgelegt ist. Die von der [CreateHalftonePalette](/windows/win32/api/wingdi/nf-wingdi-createhalftonepalette) -Member-Funktion zurückgegebene logische Halbton-Palette sollte dann ausgewählt und in den Gerätekontext umgesetzt werden, bevor die [CDC:: StretchBlt](../../mfc/reference/cdc-class.md#stretchblt) -Funktion oder die [StretchDIBits](/windows/win32/api/wingdi/nf-wingdi-stretchdibits) -Funktion aufgerufen wird.
+Eine Anwendung sollte eine Halbtonpalette erstellen, wenn der Dehnmodus eines Gerätekontexts auf HALFTONE festgelegt ist. Die logische Halbtonpalette, die von der [Memberfunktion CreateHalftonePalette](/windows/win32/api/wingdi/nf-wingdi-createhalftonepalette) zurückgegeben wird, sollte dann ausgewählt und in den Gerätekontext umgesetzt werden, bevor die [CDC::StretchBlt-](../../mfc/reference/cdc-class.md#stretchblt) oder [StretchDIBits-Funktion](/windows/win32/api/wingdi/nf-wingdi-stretchdibits) aufgerufen wird.
 
-Weitere Informationen zu `CreateHalftonePalette` und `StretchDIBits`finden Sie in der Windows SDK.
+Weitere Informationen zu `CreateHalftonePalette` und `StretchDIBits`.
 
-##  <a name="createpalette"></a>CPalette:: CreatePalette
+## <a name="cpalettecreatepalette"></a><a name="createpalette"></a>CPalette::CreatePalette
 
-Initialisiert eine `CPalette`-Objekt, indem eine logische Windows-Farbpalette erstellt und an das `CPalette` Objekt angefügt wird.
+Initialisiert ein `CPalette` Objekt, indem eine logische Windows-Farbpalette `CPalette` erstellt und an das Objekt angefügt wird.
 
 ```
 BOOL CreatePalette(LPLOGPALETTE lpLogPalette);
@@ -164,20 +164,20 @@ BOOL CreatePalette(LPLOGPALETTE lpLogPalette);
 
 ### <a name="parameters"></a>Parameter
 
-*lplogpalette*<br/>
-Verweist auf eine [LOGPALETTE](/windows/win32/api/wingdi/ns-wingdi-logpalette) -Struktur, die Informationen zu den Farben in der logischen Palette enthält.
+*lpLogPalette*<br/>
+Zeigt auf eine [LOGPALETTE-Struktur,](/windows/win32/api/wingdi/ns-wingdi-logpalette) die Informationen zu den Farben in der logischen Palette enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zur `LOGPALETTE` Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur `LOGPALETTE` Struktur finden Sie im Windows SDK.
 
-##  <a name="fromhandle"></a>CPalette:: FromHandle
+## <a name="cpalettefromhandle"></a><a name="fromhandle"></a>Cpalette::FromHandle
 
-Gibt einen Zeiger auf ein `CPalette` Objekt zurück, wenn ein Handle für ein Windows-Palettenobjekt angegeben wird.
+Gibt einen Zeiger `CPalette` auf ein Objekt zurück, wenn einem Windows-Palettenobjekt ein Handle übergeben wird.
 
 ```
 static CPalette* PASCAL FromHandle(HPALETTE hPalette);
@@ -186,19 +186,19 @@ static CPalette* PASCAL FromHandle(HPALETTE hPalette);
 ### <a name="parameters"></a>Parameter
 
 *hPalette*<br/>
-Ein Handle für eine Windows-GDI-Farbpalette.
+Ein Handle für eine Windows GDI-Farbpalette.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CPalette` Objekt, wenn erfolgreich. andernfalls NULL.
+Ein Zeiger auf `CPalette` ein Objekt, wenn erfolgreich; andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein `CPalette` Objekt nicht bereits an die Windows-Palette angefügt ist, wird ein temporäres `CPalette` Objekt erstellt und angefügt. Dieses temporäre `CPalette` Objekt ist nur gültig, bis das nächste Mal die Leerlaufzeit der Anwendung in der Ereignisschleife liegt. zu diesem Zeitpunkt werden alle temporären Grafik Objekte gelöscht. Das heißt, dass das temporäre Objekt nur während der Verarbeitung einer Fenster Nachricht gültig ist.
+Wenn `CPalette` ein Objekt noch nicht an die `CPalette` Windows-Palette angefügt ist, wird ein temporäres Objekt erstellt und angefügt. Dieses `CPalette` temporäre Objekt ist nur gültig, bis die Anwendung das nächste Mal Leerlaufzeit in ihrer Ereignisschleife hat, zu diesem Zeitpunkt alle temporären Grafikobjekte gelöscht werden. Mit anderen Worten, das temporäre Objekt ist nur während der Verarbeitung einer Fensternachricht gültig.
 
-##  <a name="getentrycount"></a>CPalette:: getentrycount
+## <a name="cpalettegetentrycount"></a><a name="getentrycount"></a>CPalette::GetEntryCount
 
-Rufen Sie diese Member-Funktion auf, um die Anzahl von Einträgen in einer gegebenen logischen Palette abzurufen.
+Rufen Sie diese Memberfunktion auf, um die Anzahl der Einträge in einer bestimmten logischen Palette abzurufen.
 
 ```
 int GetEntryCount();
@@ -206,11 +206,11 @@ int GetEntryCount();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Anzahl von Einträgen in einer logischen Palette.
+Anzahl der Einträge in einer logischen Palette.
 
-##  <a name="getnearestpaletteindex"></a>CPalette:: getnearestpaletteingedex
+## <a name="cpalettegetnearestpaletteindex"></a><a name="getnearestpaletteindex"></a>CPalette::GetNearestPaletteIndex
 
-Gibt den Index des Eintrags in der logischen Palette zurück, der am ehesten mit dem angegebenen Farbwert übereinstimmt.
+Gibt den Index des Eintrags in der logischen Palette zurück, der dem angegebenen Farbwert am ehesten entspricht.
 
 ```
 UINT GetNearestPaletteIndex(COLORREF crColor) const;
@@ -218,16 +218,16 @@ UINT GetNearestPaletteIndex(COLORREF crColor) const;
 
 ### <a name="parameters"></a>Parameter
 
-*crcolor*<br/>
+*crColor*<br/>
 Gibt die Farbe an, die abgeglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Index eines Eintrags in einer logischen Palette. Der Eintrag enthält die Farbe, die fast mit der angegebenen Farbe übereinstimmt.
 
-##  <a name="getpaletteentries"></a>CPalette:: GetPaletteEntries
+## <a name="cpalettegetpaletteentries"></a><a name="getpaletteentries"></a>CPalette::GetPaletteEntries
 
-Ruft einen Bereich von paletteneinträgen in einer logischen Palette ab.
+Ruft eine Reihe von Paletteneinträgen in einer logischen Palette ab.
 
 ```
 UINT GetPaletteEntries(
@@ -238,22 +238,22 @@ UINT GetPaletteEntries(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartindex*<br/>
+*nStartIndex*<br/>
 Gibt den ersten Eintrag in der logischen Palette an, der abgerufen werden soll.
 
-*nnumentries*<br/>
+*nNumEntries*<br/>
 Gibt die Anzahl der Einträge in der logischen Palette an, die abgerufen werden soll.
 
-*lppalettecolors*<br/>
-Verweist auf ein Array von [PaletteEntry](/previous-versions/dd162769\(v=vs.85\)) -Datenstrukturen, um die Paletteneinträge zu empfangen. Das Array muss mindestens so viele Datenstrukturen enthalten, wie von *nnumentries*angegeben.
+*lpPaletteFarben*<br/>
+Zeigt auf ein [PALETTEENTRY](/previous-versions/dd162769\(v=vs.85\)) Array von PALETTEENTRY-Datenstrukturen, um die Paletteneinträge zu empfangen. Das Array muss mindestens so viele Datenstrukturen enthalten, wie von *nNumEntries*angegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl von Einträgen, die aus der logischen Palette abgerufen wurden. 0, wenn die Funktion nicht ausgeführt werden konnte.
+Die Anzahl der Einträge, die aus der logischen Palette abgerufen wurden; 0, wenn die Funktion fehlgeschlagen ist.
 
-##  <a name="operator_hpalette"></a>CPalette:: Operator hpalette
+## <a name="cpaletteoperator-hpalette"></a><a name="operator_hpalette"></a>CPalette::operator HPALETTE
 
-Verwenden Sie diesen Operator, um das angefügte Windows-GDI-Handle des `CPalette` Objekts zu erhalten.
+Verwenden Sie diesen Operator, um das `CPalette` angefügte Windows GDI-Handle des Objekts abzubekommen.
 
 ```
 operator HPALETTE() const;
@@ -261,17 +261,17 @@ operator HPALETTE() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei Erfolg ein Handle für das Windows-GDI-Objekt, das durch das `CPalette`-Objekt dargestellt wird. andernfalls NULL.
+Wenn erfolgreich, ein Handle für das Windows `CPalette` GDI-Objekt, das durch das Objekt dargestellt wird; andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator ist ein Typumwandlungs Operator, der die direkte Verwendung eines hpalette-Objekts unterstützt.
+Dieser Operator ist ein Gießoperator, der die direkte Verwendung eines HPALETTE-Objekts unterstützt.
 
-Weitere Informationen zum Verwenden von Grafikobjekten finden Sie im Artikel [Graphic Objects](/windows/win32/gdi/graphic-objects) in the Windows SDK.
+Weitere Informationen zur Verwendung von Grafikobjekten finden Sie im Artikel [Grafikobjekte](/windows/win32/gdi/graphic-objects) im Windows SDK.
 
-##  <a name="resizepalette"></a>CPalette:: ResizePalette
+## <a name="cpaletteresizepalette"></a><a name="resizepalette"></a>CPalette::Größenpalette ändern
 
-Ändert die Größe der logischen Palette, die an das `CPalette`-Objekt angefügt ist, an die Anzahl der durch *nnumentries*angegebenen Einträge.
+Ändert die Größe der dem `CPalette` Objekt zugeordneten logischen Palette in die Anzahl der Einträge, die von *nNumEntries*angegeben werden.
 
 ```
 BOOL ResizePalette(UINT nNumEntries);
@@ -279,22 +279,22 @@ BOOL ResizePalette(UINT nNumEntries);
 
 ### <a name="parameters"></a>Parameter
 
-*nnumentries*<br/>
+*nNumEntries*<br/>
 Gibt die Anzahl der Einträge in der Palette an, nachdem die Größe geändert wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Größe der Palette erfolgreich geändert wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn die Größe der Palette erfolgreich geändert wurde. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine Anwendung `ResizePalette` aufruft, um die Größe der Palette zu verringern, sind die in der Palette der Größe verbleibenden Einträge unverändert. Wenn die Anwendung `ResizePalette` aufruft, um die Palette zu vergrößern, werden die zusätzlichen Paletteneinträge auf schwarz festgelegt (die roten, grünen und blauen Werte sind alle 0), und die Flags für alle zusätzlichen Einträge werden auf 0 festgelegt.
+Wenn eine `ResizePalette` Anwendung aufruft, um die Größe der Palette zu reduzieren, bleiben die Einträge in der geänderten Palette unverändert. Wenn die `ResizePalette` Anwendung aufruft, um die Palette zu vergrößern, werden die zusätzlichen Paletteneinträge auf Schwarz (die roten, grünen und blauen Werte sind alle 0) und die Flags für alle zusätzlichen Einträge auf 0 gesetzt.
 
 Weitere Informationen zur Windows-API `ResizePalette`finden Sie unter [ResizePalette](/windows/win32/api/wingdi/nf-wingdi-resizepalette) im Windows SDK.
 
-##  <a name="setpaletteentries"></a>CPalette:: setpaletteentries
+## <a name="cpalettesetpaletteentries"></a><a name="setpaletteentries"></a>CPalette::SetPaletteEntries
 
-Legt RGB-Farbwerte und-Flags in einem Bereich von Einträgen in einer logischen Palette fest.
+Legt RGB-Farbwerte und -Flags in einem Bereich von Einträgen in einer logischen Palette fest.
 
 ```
 UINT SetPaletteEntries(
@@ -305,29 +305,29 @@ UINT SetPaletteEntries(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartindex*<br/>
-Gibt den ersten Eintrag in der logischen Palette an, der festgelegt werden soll.
+*nStartIndex*<br/>
+Gibt den ersten Eintrag in der festzulegenden logischen Palette an.
 
-*nnumentries*<br/>
-Gibt die Anzahl der Einträge in der logischen Palette an, die festgelegt werden soll.
+*nNumEntries*<br/>
+Gibt die Anzahl der Einträge in der festzulegenden logischen Palette an.
 
-*lppalettecolors*<br/>
-Verweist auf ein Array von [PaletteEntry](/previous-versions/dd162769\(v=vs.85\)) -Datenstrukturen, um die Paletteneinträge zu empfangen. Das Array muss mindestens so viele Datenstrukturen enthalten, wie von *nnumentries*angegeben.
+*lpPaletteFarben*<br/>
+Zeigt auf ein [PALETTEENTRY](/previous-versions/dd162769\(v=vs.85\)) Array von PALETTEENTRY-Datenstrukturen, um die Paletteneinträge zu empfangen. Das Array muss mindestens so viele Datenstrukturen enthalten, wie von *nNumEntries*angegeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl von Einträgen, die in der logischen Palette festgelegt sind. 0, wenn die Funktion nicht ausgeführt werden konnte.
+Die Anzahl der Einträge, die in der logischen Palette festgelegt wurden; 0, wenn die Funktion fehlgeschlagen ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die logische Palette in einen Gerätekontext ausgewählt wird, wenn die Anwendung `SetPaletteEntries`aufruft, werden die Änderungen erst wirksam, wenn die Anwendung [CDC:: RealizePalette](../../mfc/reference/cdc-class.md#realizepalette)aufruft.
+Wenn die logische Palette beim Aufrufen `SetPaletteEntries`der Anwendung in einem Gerätekontext ausgewählt ist, werden die Änderungen erst wirksam, wenn die Anwendung [CDC::RealizePalette](../../mfc/reference/cdc-class.md#realizepalette)aufruft.
 
-Weitere Informationen finden Sie unter [PaletteEntry](/previous-versions/dd162769\(v=vs.85\)) in der Windows SDK.
+Weitere Informationen finden Sie unter [PALETTEENTRY](/previous-versions/dd162769\(v=vs.85\)) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 
 [MFC-Beispiel DIBLOOK](../../overview/visual-cpp-samples.md)<br/>
 [CGdiObject-Klasse](../../mfc/reference/cgdiobject-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[CPalette:: GetPaletteEntries](#getpaletteentries)<br/>
-[CPalette:: setpaletteentries](#setpaletteentries)
+[CPalette::GetPaletteEntries](#getpaletteentries)<br/>
+[CPalette::SetPaletteEntries](#setpaletteentries)

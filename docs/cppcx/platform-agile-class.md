@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::Agile
 ms.assetid: e34459a9-c429-4c79-97fd-030c43ca4155
-ms.openlocfilehash: 86a535bc106e17b276dc5f42a59773aa0de8c361
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0822cef10b199a5bc3b33f116065816e380bf8a8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62161660"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376501"
 ---
 # <a name="platformagile-class"></a>Platform::Agile-Klasse
 
@@ -35,9 +35,9 @@ class Agile;
 *T*<br/>
 Der Typname für die Nicht-Agile-Klasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die meisten Klassen in der Windows-Runtime sind agile. Ein Agile-Objekt kann ein „in-proc“- oder „out-of-proc“-Objekt in demselben oder einem anderen Thread aufrufen oder von diesem aufgerufen werden. Wenn es sich nicht um ein Agile-Objekt handelt, schließen Sie das Nicht-Agile-Objekt in ein `Agile<T>` -Objekt ein, das agil ist. Dann kann das `Agile<T>` -Objekt gemarshallt und das zugrunde liegende Nicht-Agile-Objekt verwendet werden.
+Die meisten Klassen in der Windows-Runtime sind agil. Ein Agile-Objekt kann ein „in-proc“- oder „out-of-proc“-Objekt in demselben oder einem anderen Thread aufrufen oder von diesem aufgerufen werden. Wenn es sich nicht um ein Agile-Objekt handelt, schließen Sie das Nicht-Agile-Objekt in ein `Agile<T>` -Objekt ein, das agil ist. Dann kann das `Agile<T>` -Objekt gemarshallt und das zugrunde liegende Nicht-Agile-Objekt verwendet werden.
 
 Die `Agile<T>` -Klasse ist eine systemeigene C++-Standardklasse und erfordert `agile.h`. Es stellt das Nicht-Agile-Objekt und den *Kontext*des Agile-Objekts dar. Der Kontext gibt das Threadmodell und Marshallingverhalten eines Agile-Objekts an. Das Betriebssystem verwendet den Kontext, um zu ermitteln, wie ein Objekt gemarshallt wird.
 
@@ -45,14 +45,14 @@ Die `Agile<T>` -Klasse ist eine systemeigene C++-Standardklasse und erfordert `a
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Agile::Agile](#ctor)|Initialisiert eine neue Instanz der Agile-Klasse.|
+|[Agil::Agile](#ctor)|Initialisiert eine neue Instanz der Agile-Klasse.|
 |[Agile::~Agile-Destruktor](#dtor)|Zerstört die aktuelle Instanz der Agile-Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[Agile::Get](#get)|Gibt den Handle auf das Objekt zurück, das vom aktuellen Agile-Objekt dargestellt wird.|
 |[Agile::GetAddressOf](#getaddressof)|Initialisiert das aktuelle Agile-Objekt neu und gibt dann die Adresse eines Handles für ein Objekt vom Typ `T`zurück.|
@@ -61,9 +61,9 @@ Die `Agile<T>` -Klasse ist eine systemeigene C++-Standardklasse und erfordert `a
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Agile::operator->](#operator-arrow)|Ruft ein Handle auf das Objekt ab, das vom aktuellen Agile-Objekt dargestellt wird.|
+|[Agil::Operator->](#operator-arrow)|Ruft ein Handle auf das Objekt ab, das vom aktuellen Agile-Objekt dargestellt wird.|
 |[Agile::operator=](#operator-assign)|Weist dem aktuellen Agile-Objekt den angegebenen Wert zu.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
@@ -74,15 +74,15 @@ Die `Agile<T>` -Klasse ist eine systemeigene C++-Standardklasse und erfordert `a
 
 ### <a name="requirements"></a>Anforderungen
 
-**Unterstützter Client (Min.):** Windows 8
+**Mindestens unterstützter Client:** Windows 8
 
-**Unterstützter Server (Min.):** Windows Server 2012
+**Minimal unterstützter Server:** Windows Server 2012
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
 **Header:** agile.h
 
-## <a name="ctor"></a>  Agile:: Agile-Konstruktor
+## <a name="agileagile-constructor"></a><a name="ctor"></a>Agil::Agile Konstruktor
 
 Initialisiert eine neue Instanz der Agile-Klasse.
 
@@ -100,14 +100,14 @@ Agile(Agile<T>&& object);
 *T*<br/>
 Ein Typ, der durch den Typnamenparameter der Vorlage spezifiziert wird.
 
-*object*<br/>
+*Objekt*<br/>
 In der zweiten Version dieses Konstruktors wird ein Objekt verwendet, um eine neue Agile-Instanz zu initialisieren. In der dritten Version das Objekt, das zur neuen Agile-Instanz kopiert wird. In der vierten Version das Objekt, das zur neuen Agile-Instanz verschoben wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Version dieses Konstruktors ist der Standardkonstruktor. Die zweite Version initialisiert eine neue Agile-Instanzklasse aus dem Objekt, das durch den `object`-Parameter spezifiziert wird. Die dritte Version ist der Kopierkonstruktor. Die vierte Version ist der Verschiebungskonstruktor. Dieser Konstruktor kann keine Ausnahmen auslösen.
 
-## <a name="dtor"></a>  Agile:: ~ Agile-Destruktor
+## <a name="agileagile-destructor"></a><a name="dtor"></a>Agil::'Agile Destruktor
 
 Zerstört die aktuelle Instanz der Agile-Klasse.
 
@@ -117,11 +117,11 @@ Zerstört die aktuelle Instanz der Agile-Klasse.
 ~Agile();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Destruktor gibt auch das Objekt frei, das vom aktuellen Agile-Objekt dargestellt wird.
 
-## <a name="get"></a>   Agile:: Get-Methode
+## <a name="agileget-method"></a><a name="get"></a>Agil::Get-Methode
 
 Gibt den Handle auf das Objekt zurück, das vom aktuellen Agile-Objekt dargestellt wird.
 
@@ -135,9 +135,9 @@ T^ Get() const;
 
 Ein Handle auf das Objekt, das vom aktuellen Agile-Objekt dargestellt wird.
 
-Der Typ des Rückgabewerts ist eigentlich ein nicht genannter interner Typ. Eine einfache Möglichkeit, den zurückgegebenen Wert aufzunehmen, ist es einer Variablen zuweisen, die mit deklariert ist die **automatisch** typableitungs-Schlüsselwort. Beispielsweise `auto x = myAgileTvariable->Get();`.
+Der Typ des Rückgabewerts ist eigentlich ein nicht genannter interner Typ. Eine bequeme Möglichkeit, den Rückgabewert zu halten, besteht darin, ihn einer Variablen zuzuweisen, die mit dem Schlüsselwort **"Auto** type deduction" deklariert wird. Beispiel: `auto x = myAgileTvariable->Get();`.
 
-## <a name="getaddressof"></a>  Agile:: getaddressof-Methode
+## <a name="agilegetaddressof-method"></a><a name="getaddressof"></a>Agile::GetAddressOf-Methode
 
 Initialisiert das aktuelle Agile-Objekt neu und gibt dann die Adresse eines Handles für ein Objekt vom Typ `T`zurück.
 
@@ -156,11 +156,11 @@ Ein Typ, der durch den Typnamenparameter der Vorlage spezifiziert wird.
 
 Die Adresse eines Handles für ein Objekt des Typs `T`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Vorgang gibt die aktuelle Darstellung eines Objekts vom Typ `T` frei, sofern vorhanden. Dann werden die Datenmember des Agile-Objekts initialisiert, der aktuelle Threadingkontext abgerufen und anschließend die Adresse einer handle-to-object-Variablen zurückgegeben, die ein Nicht-Agile-Objekt darstellen kann. Damit eine Agile-Klasseninstanz ein Objekt dargestellt wird, verwenden Sie den Zuweisungsoperator ([Agile:: =](#operator-assign)) auf das Objekt für die Agile-Klasseninstanz zuzuweisen.
+Dieser Vorgang gibt die aktuelle Darstellung eines Objekts vom Typ `T` frei, sofern vorhanden. Dann werden die Datenmember des Agile-Objekts initialisiert, der aktuelle Threadingkontext abgerufen und anschließend die Adresse einer handle-to-object-Variablen zurückgegeben, die ein Nicht-Agile-Objekt darstellen kann. Um zu bewirken, dass eine Agile-Klasseninstanz ein Objekt darstellt, verwenden Sie den Zuweisungsoperator ([Agile::operator=](#operator-assign)), um das Objekt der Agile-Klasseninstanz zuzuweisen.
 
-## <a name="getaddressofforinout"></a>  Agile:: getaddressofforinout-Methode
+## <a name="agilegetaddressofforinout-method"></a><a name="getaddressofforinout"></a>Agile::GetAddressOfForInOut-Methode
 
 Gibt die Adresse eines Handles zum Objekt zurück, das vom aktuellen Agile-Objekt dargestellt wird.
 
@@ -179,11 +179,11 @@ Ein Typ, der durch den Typnamenparameter der Vorlage spezifiziert wird.
 
 Die Adresse eines Handles zum Objekt, das vom aktuellen Agile-Objekt dargestellt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Durch diesen Vorgang wird der aktuelle Threadingkontext abgerufen und dann die Adresse eines Handles zum zugrunde liegenden Objekt zurückgegeben.
 
-## <a name="release"></a>  Agile:: Release-Methode
+## <a name="agilerelease-method"></a><a name="release"></a>Agile::Release-Methode
 
 Verwirft das Objekt und den Kontext, die dem aktuellen Agile-Objekt zugrunde liegen.
 
@@ -193,11 +193,11 @@ Verwirft das Objekt und den Kontext, die dem aktuellen Agile-Objekt zugrunde lie
 void Release() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Objekt und der Kontext, die dem aktuellen Agile-Objekt zugrunde liegen, werden verworfen, falls sie vorhanden sind. Anschließend wird der Wert des Agile-Objekts auf Null gesetzt.
 
-## <a name="operator-arrow"></a>  Agile:: -&gt; Operator
+## <a name="agileoperator-gt-operator"></a><a name="operator-arrow"></a>Agil::Operator-&gt; Operator
 
 Ruft ein Handle auf das Objekt ab, das vom aktuellen Agile-Objekt dargestellt wird.
 
@@ -211,9 +211,9 @@ T^ operator->() const throw();
 
 Ein Handle auf das Objekt, das vom aktuellen Agile-Objekt dargestellt wird.
 
-Dieser Operator gibt tatsächlich einen nicht veröffentlichten internen Typ zurück. Eine einfache Möglichkeit, den zurückgegebenen Wert aufzunehmen, ist es einer Variablen zuweisen, die mit deklariert ist die **automatisch** typableitungs-Schlüsselwort.
+Dieser Operator gibt tatsächlich einen nicht veröffentlichten internen Typ zurück. Eine bequeme Möglichkeit, den Rückgabewert zu halten, besteht darin, ihn einer Variablen zuzuweisen, die mit dem Schlüsselwort **"Auto** type deduction" deklariert wird.
 
-## <a name="operator-assign"></a>  Agile:: Operator =-Operator
+## <a name="agileoperator-operator"></a><a name="operator-assign"></a>Agile::operator= Operator
 
 Weist das angegebene Objekt dem aktuellen Agile-Objekt zu.
 
@@ -231,17 +231,17 @@ T^ operator=( IUnknown* lp ) throw();
 *T*<br/>
 Der durch den Vorlagentypnamen spezifizierte Typ.
 
-*object*<br/>
+*Objekt*<br/>
 Das Objekt oder das Handle für ein Objekt, das auf das aktuelle Agile-Objekt kopiert oder verschoben wird.
 
-*lp*<br/>
+*Lp*<br/>
 Der IUnknown-Schnittstellenzeiger eines Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Handle für ein Objekt des Typs `T`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Version des Zuweisungsoperators kopiert ein Handle für einen Verweistyp zum aktuellen Agile-Objekt. Die zweite Version kopiert einen Verweis zu einem Agile-Typ zum aktuellen Agile-Objekt. Die dritte Version verschiebt einen Agile-Typ zum aktuellen Agile-Objekt. Die vierte Version verschiebt einen Zeiger auf ein COM-Objekt zum aktuellen Agile-Objekt.
 

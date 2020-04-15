@@ -1,5 +1,5 @@
 ---
-title: Zeichen folgen-C++Editor ()
+title: String-Editor (C++)
 ms.date: 02/14/2019
 f1_keywords:
 - vc.editors.string.F1
@@ -32,145 +32,145 @@ helpviewer_keywords:
 - strings [C++], formatting
 - strings [C++], special characters
 ms.assetid: f71ab8de-3068-4e29-8e28-5a33d18dd416
-ms.openlocfilehash: 1f9b21893bd361d02b3446360b24a97f4d1d1365
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b0fb077752cf1912e07175c68cdc8acfe758b0c4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214408"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370240"
 ---
-# <a name="string-editor-c"></a>Zeichen folgen-C++Editor ()
+# <a name="string-editor-c"></a>String-Editor (C++)
 
 Eine Zeichenfolgentabelle in einer Windows-Ressource, die eine Liste mit IDs, Werten und Beschriftungen für alle Zeichenfolgen Ihrer Anwendung enthält. Beispielsweise befinden sich die Statusleistenmeldungen in der Zeichenfolgentabelle.
 
 Beim Entwickeln einer Anwendung können Sie mehrere Zeichenfolgentabellen verwenden – eine für jede Sprache oder Bedingung. Ein ausführbares Moduls weist jedoch nur eine Zeichenfolgentabelle auf. Eine ausgeführte Anwendung kann auf verschiedene Zeichenfolgentabellen verweisen, wenn Sie die Tabellen in verschiedenen DLLs platzieren.
 
-Mithilfe von Zeichenfolgentabellen können Sie Ihre Anwendung bequem in verschiedene Sprachen lokalisieren. Wenn sich alle Zeichenfolgen in einer Zeichenfolgentabelle befinden, können Sie die Anwendung lokalisieren, indem Sie die Zeichenfolgen (und andere Ressourcen) übersetzen, ohne den Quellcode zu ändern. Diese Situation ist besser erwünscht als das manuelle suchen und ersetzen verschiedener Zeichen folgen in Quelldateien.
+Mithilfe von Zeichenfolgentabellen können Sie Ihre Anwendung bequem in verschiedene Sprachen lokalisieren. Wenn sich alle Zeichenfolgen in einer Zeichenfolgentabelle befinden, können Sie die Anwendung lokalisieren, indem Sie die Zeichenfolgen (und andere Ressourcen) übersetzen, ohne den Quellcode zu ändern. Diese Situation ist wünschenswerter als das manuelle Suchen und Ersetzen verschiedener Zeichenfolgen in Quelldateien.
 
 > [!NOTE]
-> Windows lässt die Erstellung leerer Zeichen folgen Tabellen nicht zu. Wenn Sie eine Zeichenfolgentabelle ohne Einträge erstellen, wird sie beim Speichern der Ressourcendatei automatisch gelöscht.
+> Windows lässt die Erstellung leerer Zeichenfolgentabellen nicht zu. Wenn Sie eine Zeichenfolgentabelle ohne Einträge erstellen, wird sie beim Speichern der Ressourcendatei automatisch gelöscht.
 
 ## <a name="how-to"></a>Vorgehensweise
 
-Der **Zeichen** folgen-Editor ermöglicht Ihnen Folgendes:
+Der **String-Editor** ermöglicht Ihnen:
 
-### <a name="to-find-a-string-resource-in-the-string-table"></a>So suchen Sie eine Zeichen folgen Ressource in der Zeichen folgen Tabelle
+### <a name="to-find-a-string-resource-in-the-string-table"></a>So suchen Sie eine Zeichenfolgenressource in der Zeichenfolgentabelle
 
-1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
+1. Öffnen Sie die Zeichenfolgentabelle, indem Sie auf ihr Symbol in [der Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)doppelklicken.
 
-1. Wechseln Sie zum Menü **Bearbeiten** > **Suchen und ersetzen** , und klicken Sie auf **Suchen**.
+1. Gehen Sie zum Menü **Suchen** > **suchen und Ersetzen und** wählen Sie **Suchen**.
 
-1. Wählen Sie im Feld **Suchen** nach eine vorherige Such Zeichenfolge aus der Dropdown Liste aus, oder geben Sie den Beschriftungs Text oder den Ressourcen Bezeichner der Zeichenfolge ein, die Sie suchen möchten.
+1. Wählen Sie im Feld **Suchen Was** eine vorherige Suchzeichenfolge aus der Dropdownliste aus, oder geben Sie den Beschriftungstext oder Ressourcenbezeichner der Zeichenfolge ein, die Sie suchen möchten.
 
-1. Wählen Sie **eine der Suchoptionen aus** , und klicken Sie auf **weiter suchen**.
+1. Wählen Sie eine der **Suchoptionen** aus, und wählen Sie **Weiter suchen**aus.
 
 > [!TIP]
-> Um [reguläre Ausdrücke](/visualstudio/ide/using-regular-expressions-in-visual-studio) beim Durchsuchen von Dateien zu verwenden, verwenden Sie den Befehl **in Dateien suchen** im Menü **Bearbeiten** .
+> Um [reguläre Ausdrücke](/visualstudio/ide/using-regular-expressions-in-visual-studio) beim Suchen von Dateien zu verwenden, verwenden Sie den Befehl **Dateien suchen** im Menü **Bearbeiten.**
 >
-> Geben Sie einen regulären Ausdruck ein, um eine Entsprechung für ein Muster festzustellen, oder klicken Sie auf die Schaltfläche rechts neben dem Feld **Suchen** nach, um eine Liste regulärer Such Ausdrücke anzuzeigen Wenn Sie einen Ausdruck aus dieser Liste auswählen, wird dieser als Suchtext **im Feld Suchen** nach ersetzt.
+> Geben Sie einen regulären Ausdruck ein, der einem Muster entspricht, oder wählen Sie die Schaltfläche rechts neben dem Feld **Suchen was** aus, um eine Liste regulärer Suchausdrücke anzuzeigen. Wenn Sie einen Ausdruck aus dieser Liste auswählen, wird er als Suchtext im Feld **Suchen ersetzt.**
 >
-> Wenn Sie reguläre Ausdrücke verwenden, stellen Sie sicher, dass das Kontrollkästchen **use: reguläre Ausdrücke** aktiviert ist.
+> Wenn Sie reguläre Ausdrücke verwenden, stellen Sie sicher, dass das Kontrollkästchen **Verwenden: Reguläre Ausdrücke** aktiviert ist.
 
-### <a name="to-add-or-delete-a-string-resource"></a>So können Sie eine Zeichen folgen Ressource hinzufügen oder löschen
+### <a name="to-add-or-delete-a-string-resource"></a>So fügen Sie eine Zeichenfolgenressource hinzu oder löschen sie
 
-Mithilfe des Zeichen folgen- **Editors**können Sie schnell Einträge in die Zeichen folgen Tabelle einfügen oder löschen. Neue Zeichen folgen werden am Ende der Tabelle platziert und erhalten den nächsten verfügbaren Bezeichner. Sie können die Eigenschaften " **ID**", " **Wert**" oder " **Caption** " im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) nach Bedarf bearbeiten.
+Mit dem **String-Editor**können Sie schnell Einträge in die Zeichenfolgentabelle einfügen oder löschen. Neue Zeichenfolgen werden am Ende der Tabelle platziert und erhalten den nächsten verfügbaren Bezeichner. Sie können die **Eigenschaften ID**, **Wert**oder **Beschriftung** im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) nach Bedarf bearbeiten.
 
-Der **Zeichen** folgen-Editor stellt sicher, dass Sie keine ID verwenden, die bereits verwendet wird. Wenn Sie eine bereits verwendete ID auswählen, werden Sie vom Zeichen folgen- **Editor** benachrichtigt, und anschließend wird eine generische eindeutige ID zugewiesen, z. b. `IDS_STRING58113`.
+Der **Zeichenfolgen-Editor** stellt sicher, dass Sie keine ID verwenden, die bereits verwendet wird. Wenn Sie eine bereits in Gebrauch eggf. ID auswählen, benachrichtigen `IDS_STRING58113`Sie der **String-Editor** und weisen dann eine generische eindeutige ID zu, z. B. .
 
-#### <a name="to-add-a-string-table-entry"></a>So fügen Sie einen Eintrag der Zeichen folgen Tabelle hinzu
+#### <a name="to-add-a-string-table-entry"></a>So fügen Sie einen Zeichenfolgentabelleneintrag hinzu
 
-1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
+1. Öffnen Sie die Zeichenfolgentabelle, indem Sie auf ihr Symbol in [der Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)doppelklicken.
 
-1. Klicken Sie mit der rechten Maustaste in die Zeichen folgen Tabelle, und wählen Sie **neue Zeichenfolge**
+1. Klicken Sie mit der rechten Maustaste in die Zeichenfolgentabelle, und wählen Sie **Neue Zeichenfolge**aus.
 
-1. Wählen Sie **im Zeichen**folgen-Editor in der Dropdown Liste **ID** eine **ID** aus, oder geben Sie direkt direkt eine *ID* ein.
+1. Wählen Sie im **String-Editor**eine **ID** aus der Dropdown-Liste **ID** aus, oder geben Sie eine *ID* direkt ein.
 
-1. Bearbeiten Sie ggf. den **Wert**.
+1. Bearbeiten Sie ggf. den **Wert.**
 
 1. Geben Sie einen Eintrag für die **Beschriftung**ein.
 
    > [!NOTE]
-   > NULL-Zeichen folgen sind in Windows-Zeichen folgen Tabellen nicht zulässig. Wenn Sie einen Eintrag in der Zeichen folgen Tabelle erstellen, bei der es sich um eine NULL-Zeichenfolge handelt, erhalten Sie eine Meldung, in der Sie aufgefordert werden, **eine Zeichenfolge für diesen Tabelleneintrag einzugeben**.
+   > Nullzeichenfolgen sind in Windows-Zeichenfolgentabellen nicht zulässig. Wenn Sie einen Eintrag in der Zeichenfolgentabelle erstellen, der eine Nullzeichenfolge ist, erhalten Sie eine Meldung, in der Sie aufgefordert werden, **eine Zeichenfolge für diesen Tabelleneintrag einzugeben.**
 
-#### <a name="to-delete-a-string-table-entry"></a>So löschen Sie einen Eintrag für eine Zeichen folgen Tabelle
+#### <a name="to-delete-a-string-table-entry"></a>So löschen Sie einen Zeichenfolgentabelleneintrag
 
-Wählen Sie den Eintrag aus, den Sie löschen möchten, und führen Sie einen der folgenden Schritte aus:
+Wählen Sie den Eintrag aus, den Sie löschen möchten, und wählen Sie einen der folgenden Schritte aus:
 
-- Wechseln Sie zum Menü **Bearbeiten** > **Löschen**.
+- Gehen Sie zum Menü **Löschen** > **bearbeiten**.
 
-- Klicken Sie mit der rechten Maustaste auf die zu löschende Zeichenfolge, **und wählen**
+- Klicken Sie mit der rechten Maustaste auf die zu löschende Zeichenfolge, und wählen Sie **Löschen**aus.
 
-- Drücken Sie **die** ENTF-Taste.
+- Drücken Sie die **Löschtaste.**
 
-### <a name="to-move-a-string-from-one-resource-script-file-to-another"></a>So verschieben Sie eine Zeichenfolge aus einer Ressourcen Skriptdatei in eine andere
+### <a name="to-move-a-string-from-one-resource-script-file-to-another"></a>So verschieben Sie eine Zeichenfolge von einer Ressourcenskriptdatei in eine andere
 
-1. [Öffnen Sie die Zeichen folgen Tabellen in beiden RC-Dateien](../windows/how-to-create-a-resource-script-file.md).
+1. [Öffnen Sie die Zeichenfolgentabellen in beiden .rc-Dateien](../windows/how-to-create-a-resource-script-file.md).
 
-1. Klicken Sie mit der rechten Maustaste auf die Zeichenfolge, und wählen Sie **Ausschneiden**
+1. Klicken Sie mit der rechten Maustaste auf die Zeichenfolge, um sie zu verschieben, und wählen Sie **Ausschneiden**aus.
 
-1. Platzieren Sie den Cursor im Fenster Ziel-Zeichen folgen- **Editor** .
+1. Platzieren Sie den Cursor im **Ziel-String-Editor-Fenster.**
 
-1. Klicken Sie in der *RC* -Datei, in die Sie die Zeichenfolge verschieben möchten, mit der rechten Maustaste, und wählen Sie **Einfügen**aus.
-
-> [!NOTE]
-> Wenn die **ID** oder der **Wert** der verschostellenden Zeichenfolge mit einer vorhandenen **ID** oder einem **Wert** in der Zieldatei in Konflikt steht, ändert sich entweder die **ID** oder der **Wert der verschostellenden** Zeichenfolge.
-
-### <a name="to-change-the-properties-of-a-string-resource"></a>So ändern Sie die Eigenschaften einer Zeichen folgen Ressource
-
-Sie können die direkte Bearbeitung verwenden, um die Eigenschaften " **ID**", " **Wert**" und " **Beschriftung** " zu ändern.
+1. Klicken Sie in der *.rc-Datei,* in die Sie die Zeichenfolge verschieben möchten, mit der rechten Maustaste und wählen **Sie Einfügen**.
 
 > [!NOTE]
->  Sie können auch die Eigenschaften einer Zeichenfolge in der [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)bearbeiten.
+> Wenn die **ID** oder der **Wert** der verschobenen Zeichenfolge mit einer vorhandenen **ID** oder einem **vorhandenen Wert** in der Zieldatei in Konflikt steht, ändert sich entweder diese **ID** oder der **Wert** der verschobenen Zeichenfolge.
 
-#### <a name="to-change-a-string-or-its-identifier"></a>So ändern Sie eine Zeichenfolge oder Ihren Bezeichner
+### <a name="to-change-the-properties-of-a-string-resource"></a>So ändern Sie die Eigenschaften einer Zeichenfolgenressource
 
-1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
+Sie können die Ortsbearbeitung verwenden, um die **Eigenschaften ID**, **Wert**und **Beschriftung** zu ändern.
 
-1. Wählen Sie die Zeichenfolge aus, die Sie bearbeiten möchten, und doppelklicken Sie auf die Spalte **ID**, **Wert**oder **Beschriftung** , dann können Sie folgende Aktionen ausführen:
+> [!NOTE]
+> Sie können auch die Eigenschaften einer Zeichenfolge im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)bearbeiten.
 
-   - Wählen Sie in der Dropdown Liste **ID** eine **ID** aus, oder geben Sie direkt direkt eine *ID* ein.
+#### <a name="to-change-a-string-or-its-identifier"></a>So ändern Sie eine Zeichenfolge oder ihren Bezeichner
+
+1. Öffnen Sie die Zeichenfolgentabelle, indem Sie auf ihr Symbol in [der Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)doppelklicken.
+
+1. Wählen Sie die Zeichenfolge aus, die Sie bearbeiten möchten, und doppelklicken Sie auf die Spalte **ID**, **Wert**oder **Beschriftung,** und können Sie dann:
+
+   - Wählen Sie eine **ID** aus der Dropdown-Liste **ID** aus, oder geben Sie eine *ID* direkt an Ort und Stelle ein.
 
    - Geben Sie eine andere Zahl in die Spalte **Wert** ein.
 
-   - Geben Sie in der Spalte **Beschriftung** bearbeitbare Änderungen ein.
+   - Geben Sie Bearbeitungen in der **Spalte Beschriftung** ein.
 
-#### <a name="to-change-the-caption-property-of-multiple-string-resources"></a>So ändern Sie die Caption-Eigenschaft mehrerer Zeichen folgen Ressourcen
+#### <a name="to-change-the-caption-property-of-multiple-string-resources"></a>So ändern Sie die Beschriftungseigenschaft mehrerer Zeichenfolgenressourcen
 
-1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
+1. Öffnen Sie die Zeichenfolgentabelle, indem Sie auf ihr Symbol in [der Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)doppelklicken.
 
-1. Wählen Sie die Zeichen folgen aus, die Sie ändern möchten, indem Sie die **STRG** -Taste gedrückt halten, während Sie diese auswählen.
+1. Wählen Sie die Zeichenfolgen aus, die Sie ändern möchten, indem Sie die **Strg-Taste** gedrückt halten, während Sie jede Zeichenfolge auswählen.
 
-1. Geben Sie im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window)einen neuen Wert für die Eigenschaft ein, die Sie ändern möchten.
+1. Geben Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)einen neuen Wert für die Eigenschaft ein, die Sie ändern möchten.
 
 1. Drücken Sie die **EINGABETASTE**.
 
-### <a name="to-add-formatting-or-special-characters-to-a-string-resource"></a>So fügen Sie einer Zeichen folgen Ressource Formatierungen oder Sonderzeichen hinzu
+### <a name="to-add-formatting-or-special-characters-to-a-string-resource"></a>So fügen Sie einer Zeichenfolgenressource Formatierungen oder Sonderzeichen hinzu
 
-1. Öffnen Sie die Zeichen folgen Tabelle, indem Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)auf das zugehörige Symbol doppelklicken.
+1. Öffnen Sie die Zeichenfolgentabelle, indem Sie auf ihr Symbol in [der Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)doppelklicken.
 
 1. Wählen Sie die Zeichenfolge aus, die Sie ändern möchten.
 
-1. Fügen Sie im [Fenster Eigenschaften](/visualstudio/ide/reference/properties-window)eine der unten aufgeführten Standard-Escapesequenzen dem Text im Feld **Beschriftung** hinzu, und drücken **Sie die Eingabe**Taste.
+1. Fügen Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)eine der unten aufgeführten Standardescapesequenzen zum Text im Feld **Beschriftung** hinzu, und drücken Sie die **Eingabetaste**.
 
-   |Um dies zu erreichen...|Eingeben...|
+   |Um dies zu bekommen...|Geben Sie diese ein...|
    |-----------------|---------------|
    | Neue Zeile | \\n |
-   | Wagenrücklauf | \\r |
+   | Wagenrücklauf | \\R |
    | Registerkarte | \\t |
    | Umgekehrter Schrägstrich (\\) | \\\\ |
-   | ASCII-Zeichen | \\ddd (Oktale Notation) |
-   | Warnung (Glocken) | \\a |
+   | ASCII-Zeichen | \\ddd (oktale Notation) |
+   | Warnung (Glocke) | \\a |
 
    > [!NOTE]
-   > Der **Zeichen** folgen-Editor unterstützt nicht den vollständigen Satz mit Escapezeichen. Sie können nur die oben aufgeführten verwenden.
+   > Der **Zeichenfolgen-Editor** unterstützt nicht den vollständigen Satz von escape-asCI-Zeichen mit Escapezeichen. Sie können nur die oben aufgeführten verwenden.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Win32
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Ressourcen-Editoren](../windows/resource-editors.md) [
-Zeichen](/windows/win32/menurc/strings) folgen<br/>
+[Resource Editors](../windows/resource-editors.md)
+[Strings](/windows/win32/menurc/strings)<br/>
 [Informationen über Zeichenfolgen](/windows/win32/menurc/about-strings)<br/>
 [Anpassen von Fensterlayouts](/visualstudio/ide/customizing-window-layouts-in-visual-studio)

@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::scoped_allocator_adaptor::outer_allocator
 - std::scoped_allocator_adaptor::select_on_container_copy_construction
 ms.assetid: 0d9b06a1-9a4a-4669-9470-8805cae48e89
-ms.openlocfilehash: 6ba135d0c3a69293415d1c46d70679d9f8bc8a37
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: b08cf1858cb0f9bf4dc6201edc2502d48754ff77
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72686553"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373396"
 ---
 # <a name="scoped_allocator_adaptor-class"></a>scoped_allocator_adaptor-Klasse
 
@@ -41,23 +41,23 @@ template <class Outer, class... Inner>
 class scoped_allocator_adaptor;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage kapselt eine Schachtelung von einem oder mehreren Zuweisungen. Jede Klasse hat einen äußersten Zuweiser vom Typ `outer_allocator_type`, ein Synonym für `Outer`, das eine öffentliche Basis des `scoped_allocator_adaptor`-Objekts darstellt. Mit `Outer` wird der von einem Container zu verwendende Speicher zugewiesen. Sie erhalten einen Verweis auf dieses Zuweiserbasisobjekt, indem Sie `outer_allocator` aufrufen.
+Die Klassenvorlage kapselt ein Nest mit einem oder mehreren Zuschreibungen. Jede Klasse hat einen äußersten Zuweiser vom Typ `outer_allocator_type`, ein Synonym für `Outer`, das eine öffentliche Basis des `scoped_allocator_adaptor`-Objekts darstellt. Mit `Outer` wird der von einem Container zu verwendende Speicher zugewiesen. Sie erhalten einen Verweis auf dieses Zuweiserbasisobjekt, indem Sie `outer_allocator` aufrufen.
 
 Der Rest des Satzes weist Typ `inner_allocator_type` auf. Mit einem inneren Zuweiser wird Speicher für Elemente in einem Container zugewiesen. Sie erhalten einen Verweis auf das gespeicherte Objekt dieses Typs, indem Sie `inner_allocator` aufrufen. Wenn `Inner...` nicht leer ist, weist `inner_allocator_type` den Typ `scoped_allocator_adaptor<Inner...>` auf, und `inner_allocator` kennzeichnet ein Memberobjekt. Andernfalls weist `inner_allocator_type` den Typ `scoped_allocator_adaptor<Outer>` auf, und `inner_allocator` kennzeichnet das gesamte Objekt.
 
 Der Satz verhält sich so, als hätte er eine beliebige Tiefe, wobei nach Bedarf der innerste gekapselte Zuweiser repliziert wird.
 
-Verschiedene Konzepte, die nicht Teil der sichtbaren Schnittstelle sind, erleichtern das Beschreiben des Verhaltens dieser Klassen Vorlage. Ein *äußerster Zuweiser* vermittelt alle Aufrufe an die construct- und die destroy-Methode. Er wird durch die rekursive Funktion `OUTERMOST(X)` definiert, wobei `OUTERMOST(X)` eines der folgenden Elemente ist.
+Mehrere Konzepte, die nicht Teil der sichtbaren Schnittstelle sind, helfen bei der Beschreibung des Verhaltens dieser Klassenvorlage. Ein *äußerster Zuweiser* vermittelt alle Aufrufe an die construct- und die destroy-Methode. Er wird durch die rekursive Funktion `OUTERMOST(X)` definiert, wobei `OUTERMOST(X)` eines der folgenden Elemente ist.
 
 - Wenn `X.outer_allocator()` wohlgeformt ist, ist `OUTERMOST(X)` gleich `OUTERMOST(X.outer_allocator())`.
 
-- Andernfalls lautet `OUTERMOST(X)` `X`.
+- Andernfalls lautet `OUTERMOST(X)``X`.
 
 Drei Typen werden zum Zwecke der Darstellung generiert:
 
-|Geben Sie Folgendes ein:|Beschreibung|
+|type|BESCHREIBUNG|
 |----------|-----------------|
 |`Outermost`|Der `OUTERMOST(*this)`-Typ.|
 |`Outermost_traits`|`allocator_traits<Outermost>`|
@@ -65,13 +65,13 @@ Drei Typen werden zum Zwecke der Darstellung generiert:
 
 ### <a name="constructors"></a>Konstruktoren
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[scoped_allocator_adaptor](#scoped_allocator_adaptor)|Erstellt ein `scoped_allocator_adaptor`-Objekt.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`const_pointer`|Dieser Typ ist ein Synonym für den `const_pointer`, der dem Zuweiser `Outer` zugeordnet ist.|
 |`const_void_pointer`|Dieser Typ ist ein Synonym für den `const_void_pointer`, der dem Zuweiser `Outer` zugeordnet ist.|
@@ -88,29 +88,29 @@ Drei Typen werden zum Zwecke der Darstellung generiert:
 
 ### <a name="structs"></a>Strukturen
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[scoped_allocator_adaptor::rebind Struct](#rebind_struct)|Definiert den Typ `Outer::rebind\<Other>::other` als Synonym für `scoped_allocator_adaptor\<Other, Inner...>`.|
+|[scoped_allocator_adaptor::Struct neu binden](#rebind_struct)|Definiert den Typ `Outer::rebind\<Other>::other` als Synonym für `scoped_allocator_adaptor\<Other, Inner...>`.|
 
 ### <a name="methods"></a>Methoden
 
-|-Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[allocate](#allocate)|Weist Speicher mithilfe des `Outer`-Zuweisers zu|
-|[construct](#construct)|Erstellt ein Objekt|
-|[deallocate](#deallocate)|Hebt die Zuweisung von Objekten mithilfe des äußeren Zuweisers auf|
-|[destroy](#destroy)|Zerstört ein angegebenes Objekt|
+|[Zuordnen](#allocate)|Weist Speicher mithilfe des `Outer`-Zuweisers zu|
+|[Erstellen](#construct)|Erstellt ein Objekt|
+|[Freigeben](#deallocate)|Hebt die Zuweisung von Objekten mithilfe des äußeren Zuweisers auf|
+|[Zerstören](#destroy)|Zerstört ein angegebenes Objekt|
 |[inner_allocator](#inner_allocator)|Ruft einen Verweis auf das gespeicherte Objekt vom Typ `inner_allocator_type` ab|
-|[max_size](#max_size)|Bestimmt die maximale Anzahl von Objekten, die vom äußeren Zuweiser zugewiesen werden kann.|
+|[Max_size](#max_size)|Bestimmt die maximale Anzahl von Objekten, die vom äußeren Zuweiser zugewiesen werden kann.|
 |[outer_allocator](#outer_allocator)|Ruft einen Verweis auf das gespeicherte Objekt vom Typ `outer_allocator_type` ab|
 |[select_on_container_copy_construction](#select_on_container_copy_construction)|Erstellt ein neues `scoped_allocator_adaptor`-Objekt mit jedem gespeicherten Zuweiserobjekt, das durch Aufrufen von `select_on_container_copy_construction` für jeden entsprechenden Zuweiser initialisiert wird.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator=](#op_as)||
-|[operator==](#op_eq_eq)||
+|[Operator=](#op_as)||
+|[Betreiber== Einzelnachweise ==](#op_eq_eq)||
 |[Operator!=](#op_noeq)||
 
 ## <a name="requirements"></a>Anforderungen
@@ -119,7 +119,7 @@ Drei Typen werden zum Zwecke der Darstellung generiert:
 
 **Namespace:** std
 
-## <a name="allocate"></a>scoped_allocator_adaptor:: zuordnen
+## <a name="scoped_allocator_adaptorallocate"></a><a name="allocate"></a>scoped_allocator_adaptor::zuweisen
 
 Weist Speicher mithilfe des `Outer`-Zuweisers zu
 
@@ -129,17 +129,17 @@ pointer allocate(size_type count);pointer allocate(size_type count, const_void_p
 
 ### <a name="parameters"></a>Parameter
 
-*Anzahl* \
+*Count*\
 Die Anzahl von Elementen, für die ausreichend Speicher zugewiesen werden soll.
 
-*Hinweis* \
+*Hinweis*\
 Ein Zeiger, der möglicherweise das Zuweiserobjekt unterstützt, indem er die Adresse eines Objekts sucht, das vor der Anforderung zugewiesen wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die erste Memberfunktion gibt `Outer_traits::allocate(outer_allocator(), count)` zurück. Die zweite Memberfunktion gibt `Outer_traits::allocate(outer_allocator(), count, hint)` zurück.
 
-## <a name="construct"></a>scoped_allocator_adaptor:: Construct
+## <a name="scoped_allocator_adaptorconstruct"></a><a name="construct"></a>scoped_allocator_adaptor::konstrukt
 
 Erstellt ein Objekt
 
@@ -168,24 +168,24 @@ void construct(pair<Ty1, Ty2>* ptr, pair<Uy1, Uy2>&& right);
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Zeiger auf den Speicherort, in dem das Objekt erstellt werden soll.
 
-*args* \
+*Args*\
 Liste von Argumenten
 
-*erste* \
+*Ersten*\
 Objekt des ersten Typs in einem Paar
 
-*zweites* \
+*Zweite*\
 Objekt des zweiten Typs in einem Paar
 
-*Rechte* \
+*Richting*\
 Zu verschiebendes oder kopierendes vorhandenes Objekt
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Methode erstellt das Objekt auf *ptr* , indem `Outermost_traits::construct(OUTERMOST(*this), ptr, xargs...)` aufgerufen wird, wobei `xargs...` einer der folgenden ist.
+Die erste Methode erstellt das Objekt `Outermost_traits::construct(OUTERMOST(*this), ptr, xargs...)`bei `xargs...` *ptr,* indem sie aufruft, wobei eine der folgenden Methoden aufgerufen wird.
 
 - Wenn `uses_allocator<Ty, inner_allocator_type>` FALSE enthält, dann ist `xargs...` gleich `args...`.
 
@@ -193,7 +193,7 @@ Die erste Methode erstellt das Objekt auf *ptr* , indem `Outermost_traits::const
 
 - Wenn `uses_allocator<Ty, inner_allocator_type>` und `is_constructible<Ty, args..., inner_allocator()>` TRUE enthalten, ist `xargs...` gleich `args..., inner_allocator()`.
 
-Die zweite Methode erstellt das Pair-Objekt beim *ptr* , indem `Outermost_traits::construct(OUTERMOST(*this), &ptr->first, xargs...)` aufgerufen wird, in dem `xargs...` wie in der obigen Liste `first...` geändert wird, und `Outermost_traits::construct(OUTERMOST(*this), &ptr->second, xargs...)`, bei dem `xargs...` wie in der obigen Liste `second...` geändert wird.
+Die zweite Methode erstellt das paar Objekt `Outermost_traits::construct(OUTERMOST(*this), &ptr->first, xargs...)`bei `xargs...` `first...` *ptr,* indem aufgerufen wird, `xargs...` `second...` wobei , wo sie wie in der obigen Liste geändert wird, und `Outermost_traits::construct(OUTERMOST(*this), &ptr->second, xargs...)`, wo sie wie in der obigen Liste geändert wird.
 
 Die dritte Methode verhält sich wie `this->construct(ptr, piecewise_construct, tuple<>, tuple<>)`.
 
@@ -203,7 +203,7 @@ Die fünfte Methode verhält sich wie `this->construct(ptr, piecewise_construct,
 
 Die sechste Methode verhält sich wie `this->construct(ptr, piecewise_construct, forward_as_tuple(std::forward<Uy1>(right.first), forward_as_tuple(std::forward<Uy2>(right.second))`.
 
-## <a name="deallocate"></a>scoped_allocator_adaptor::d ezuordnen
+## <a name="scoped_allocator_adaptordeallocate"></a><a name="deallocate"></a>scoped_allocator_adaptor::deallocate
 
 Hebt die Zuweisung von Objekten mithilfe des äußeren Zuweisers auf
 
@@ -213,13 +213,13 @@ void deallocate(pointer ptr, size_type count);
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
-Ein Zeiger auf den Anfangsort des Objekts, dessen Zuweisung aufzuheben ist.
+*Ptr*\
+Ein Zeiger auf den Anfangsort der freizugebenden Objekte.
 
-*Anzahl* \
-Die Anzahl von Objekten, deren Zuweisung aufzuheben ist.
+*Count*\
+Die Anzahl der freizugebenden Objekte.
 
-## <a name="destroy"></a>scoped_allocator_adaptor::d estroy
+## <a name="scoped_allocator_adaptordestroy"></a><a name="destroy"></a>scoped_allocator_adaptor::destroy
 
 Zerstört ein angegebenes Objekt
 
@@ -230,14 +230,14 @@ void destroy(Ty* ptr)
 
 ### <a name="parameters"></a>Parameter
 
-*ptr* -\
+*Ptr*\
 Ein Zeiger auf das Objekt, das zerstört werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `Outermost_traits::destroy(OUTERMOST(*this), ptr)`
 
-## <a name="inner_allocator"></a>scoped_allocator_adaptor::inner_allocator
+## <a name="scoped_allocator_adaptorinner_allocator"></a><a name="inner_allocator"></a>scoped_allocator_adaptor::inner_allocator
 
 Ruft einen Verweis auf das gespeicherte Objekt vom Typ `inner_allocator_type` ab
 
@@ -250,7 +250,7 @@ const inner_allocator_type& inner_allocator() const noexcept;
 
 Ein Verweis auf das gespeicherte Objekt vom Typ `inner_allocator_type`
 
-## <a name="max_size"></a>scoped_allocator_adaptor::max_size
+## <a name="scoped_allocator_adaptormax_size"></a><a name="max_size"></a>scoped_allocator_adaptor::max_size
 
 Bestimmt die maximale Anzahl von Objekten, die vom äußeren Zuweiser zugewiesen werden kann.
 
@@ -262,14 +262,14 @@ size_type max_size();
 
 `Outer_traits::max_size(outer_allocator())`
 
-## <a name="a-nameop_as--scoped_allocator_adaptoroperator"></a><a name="op_as"> scoped_allocator_adaptor:: Operator =
+## <a name="a-nameop_as--scoped_allocator_adaptoroperator"></a><a name="op_as">scoped_allocator_adaptor::operator=
 
 ```cpp
 scoped_allocator_adaptor& operator=(const scoped_allocator_adaptor&) = default;
 scoped_allocator_adaptor& operator=(scoped_allocator_adaptor&&) = default;
 ```
 
-## <a name="a-nameop_eq_eq--scoped_allocator_adaptoroperator"></a><a name="op_eq_eq"> scoped_allocator_adaptor:: Operator = =
+## <a name="a-nameop_eq_eq--scoped_allocator_adaptoroperator"></a><a name="op_eq_eq">scoped_allocator_adaptor::Operator==
 
 ```cpp
 template <class OuterA1, class OuterA2, class... InnerAllocs>
@@ -277,7 +277,7 @@ bool operator==(const scoped_allocator_adaptor<OuterA1, InnerAllocs...>& a,
 const scoped_allocator_adaptor<OuterA2, InnerAllocs...>& b) noexcept;
 ```
 
-## <a name="a-nameop_noeq--scoped_allocator_adaptoroperator"></a><a name="op_noeq"> scoped_allocator_adaptor:: Operator! =
+## <a name="a-nameop_noeq--scoped_allocator_adaptoroperator"></a><a name="op_noeq">scoped_allocator_adaptor::Operator!=
 
 ```cpp
 template <class OuterA1, class OuterA2, class... InnerAllocs>
@@ -285,7 +285,7 @@ bool operator!=(const scoped_allocator_adaptor<OuterA1, InnerAllocs...>& a,
 const scoped_allocator_adaptor<OuterA2, InnerAllocs...>& b) noexcept;
 ```
 
-## <a name="outer_allocator"></a>scoped_allocator_adaptor::outer_allocator
+## <a name="scoped_allocator_adaptorouter_allocator"></a><a name="outer_allocator"></a>scoped_allocator_adaptor::outer_allocator
 
 Ruft einen Verweis auf das gespeicherte Objekt vom Typ `outer_allocator_type` ab
 
@@ -298,15 +298,15 @@ const outer_allocator_type& outer_allocator() const noexcept;
 
 Ein Verweis auf das gespeicherte Objekt vom Typ `outer_allocator_type`
 
-## <a name="rebind_struct"></a> scoped_allocator_adaptor::rebind-Struct
+## <a name="scoped_allocator_adaptorrebind-struct"></a><a name="rebind_struct"></a>scoped_allocator_adaptor::Struct neu binden
 
 Definiert den Typ `Outer::rebind\<Other>::other` als Synonym für `scoped_allocator_adaptor\<Other, Inner...>`.
 
-Struktur Rebind {typedef Other_traits:: Rebind \<Other > Other_alloc; typedef scoped_allocator_adaptor \<Other_alloc, Inner... Andere >; };
+struct rebind- typedef Other_traits::rebind\<Andere>\<Other_alloc; typedef scoped_allocator_adaptor Other_alloc, Inner...> andere;
 
-## <a name="scoped_allocator_adaptor"></a> scoped_allocator_adaptor::scoped_allocator_adaptor-Konstruktor
+## <a name="scoped_allocator_adaptorscoped_allocator_adaptor-constructor"></a><a name="scoped_allocator_adaptor"></a>scoped_allocator_adaptor::scoped_allocator_adaptor Konstrukteur
 
-Erstellt ein `scoped_allocator_adaptor`-Objekt. Schließt außerdem einen Dekonstruktor ein.
+Erstellt ein `scoped_allocator_adaptor`-Objekt. Enthält auch einen Destruktor.
 
 ```cpp
 scoped_allocator_adaptor();
@@ -327,20 +327,20 @@ scoped_allocator_adaptor(Outer2&& al,
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Ein vorhandener `scoped_allocator_adaptor`.
 
-*Al* -\
+*Al*\
 Eine vorhandener Zuweiser, der als äußerer Zuweiser verwendet werden soll.
 
-*Rest* -\
+*Ruhepause*\
 Eine Liste von Zuweisern, die als innere Zuweiser verwendet werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktorstandard erstellt seine gespeicherten Zuweiserobjekte. Jeder der nächsten drei Konstruktoren erstellt seine gespeicherten zuordnerobjekte aus den entsprechenden Objekten in der *rechten*Ecke. Der letzte Konstruktor erstellt seine gespeicherten Zuweiserobjekte aus den entsprechenden Argumenten in der Argumentliste.
+Der erste Konstruktorstandard erstellt seine gespeicherten Zuweiserobjekte. Jeder der nächsten drei Konstruktoren erstellt seine gespeicherten Zuweisungsobjekte aus den entsprechenden Objekten *rechts*. Der letzte Konstruktor erstellt seine gespeicherten Zuweiserobjekte aus den entsprechenden Argumenten in der Argumentliste.
 
-## <a name="select_on_container_copy_construction"></a>scoped_allocator_adaptor::select_on_container_copy_construction
+## <a name="scoped_allocator_adaptorselect_on_container_copy_construction"></a><a name="select_on_container_copy_construction"></a>scoped_allocator_adaptor::select_on_container_copy_construction
 
 Erstellt ein neues `scoped_allocator_adaptor`-Objekt mit jedem gespeicherten Zuweiserobjekt, das durch Aufrufen von `select_on_container_copy_construction` für jeden entsprechenden Zuweiser initialisiert wird.
 
@@ -350,7 +350,7 @@ scoped_allocator_adaptor select_on_container_copy_construction();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Methode gibt `scoped_allocator_adaptor(Outer_traits::select_on_container_copy_construction(*this), inner_allocator().select_on_container_copy_construction())` zurück. Das Ergebnis ist ein neues `scoped_allocator_adaptor`-Objekt mit jedem gespeicherten Zuordnungs Objekt, das durch Aufrufen von `al.select_on_container_copy_construction()` für den entsprechenden Zuweiser initialisiert *wird.*
+Diese Methode gibt `scoped_allocator_adaptor(Outer_traits::select_on_container_copy_construction(*this), inner_allocator().select_on_container_copy_construction())` zurück. Das Ergebnis ist `scoped_allocator_adaptor` ein neues Objekt, bei dem jedes `al.select_on_container_copy_construction()` gespeicherte Zuweisungsobjekt durch Aufrufen des entsprechenden Allokators *al*initialisiert wird.
 
 ## <a name="see-also"></a>Siehe auch
 

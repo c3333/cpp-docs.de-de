@@ -8,49 +8,49 @@ helpviewer_keywords:
 - CommitTrans method
 - Rollback method, ODBC transactions
 ms.assetid: 9e00bbf4-e9fb-4332-87fc-ec8ac61b3f68
-ms.openlocfilehash: d03ec3f71c38f7790d66fbf6f800b7647e080147
-ms.sourcegitcommit: 0e3da5cea44437c132b5c2ea522bd229ea000a10
+ms.openlocfilehash: 8a87176ecb20beaf46583e1190b0ad458d508b31
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "79544423"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376425"
 ---
 # <a name="transaction-how-transactions-affect-updates-odbc"></a>Transaktion: Auswirkungen von Transaktionen auf Aktualisierungen (ODBC)
 
-Aktualisierungen an der [Datenquelle](../../data/odbc/data-source-odbc.md) werden während der Transaktionen durch die Verwendung eines Bearbeitungs Puffers (dieselbe Methode, die außerhalb der Transaktionen verwendet wird) verwaltet. Die Felddatenmember eines Recordsets fungieren kollektiv als Bearbeitungs Puffer, der den aktuellen Datensatz enthält, den das Recordset während einer `AddNew` oder `Edit`vorübergehend sichert. Während eines `Delete` Vorgangs wird der aktuelle Datensatz nicht innerhalb einer Transaktion gesichert. Weitere Informationen zum Bearbeitungs Puffer und zum Speichern des aktuellen Datensatzes durch Updates finden Sie unter [Recordset: Wie Recordsets Datensätze aktualisieren (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md).
+Aktualisierungen der [Datenquelle](../../data/odbc/data-source-odbc.md) werden während Transaktionen mithilfe eines Bearbeitungspuffers (der gleichen Methode, die außerhalb von Transaktionen verwendet wird) verwaltet. Die Felddatenmember eines Recordsets dienen zusammen als Bearbeitungspuffer, der den aktuellen Datensatz enthält, `AddNew` `Edit`den das Recordset während eines oder vorübergehend zurückhält. Während `Delete` eines Vorgangs wird der aktuelle Datensatz nicht innerhalb einer Transaktion gesichert. Weitere Informationen zum Bearbeitungspuffer und zum Speichern des aktuellen Datensatzes durch Updates finden Sie unter [Recordset: How Recordsets Update Records (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md).
 
 > [!NOTE]
->  Wenn Sie das Massen Abrufen von Zeilen implementiert haben, können Sie `AddNew`, `Edit`oder `Delete`nicht aufzurufen. Stattdessen müssen Sie eigene Funktionen schreiben, um Updates für die Datenquelle auszuführen. Weitere Informationen zum Abrufen von Massen Zeilen finden Sie unter [Recordset: Abrufen von Datensätzen in einer Sammel Operation (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
+> Wenn Sie das Abrufen von Massenzeilen `AddNew` `Edit`implementiert `Delete`haben, können Sie , oder aufrufen. Sie müssen stattdessen eigene Funktionen schreiben, um Aktualisierungen an der Datenquelle durchzuführen. Weitere Informationen zum Abrufen von Massenzeilen finden Sie unter [Recordset: Abrufen von Datensätzen in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).
 
-Während der Transaktionen können für `AddNew`, `Edit`und `Delete` Vorgänge ein Commit oder ein Rollback ausgeführt werden. Die Auswirkungen von `CommitTrans` und `Rollback` können dazu führen, dass der aktuelle Datensatz nicht im Bearbeitungs Puffer wieder hergestellt wird. Um sicherzustellen, dass der aktuelle Datensatz ordnungsgemäß wieder hergestellt wird, ist es wichtig zu verstehen, wie die Funktionen `CommitTrans` und `Rollback` Member von `CDatabase` mit den Update Funktionen von `CRecordset`funktionieren.
+Während Transaktionen `AddNew`können `Edit`, `Delete` und Vorgänge festgeschrieben oder zurückgesetzt werden. Die Auswirkungen `CommitTrans` `Rollback` des aktuellen Datensatzes und können dazu führen, dass der aktuelle Datensatz nicht im Bearbeitungspuffer wiederhergestellt wird. Um sicherzustellen, dass der aktuelle Datensatz ordnungsgemäß wiederhergestellt wird, ist `CDatabase` es wichtig zu `CRecordset`verstehen, wie die `CommitTrans` und `Rollback` Memberfunktionen von arbeiten mit den Aktualisierungsfunktionen von .
 
-##  <a name="how-committrans-affects-updates"></a><a name="_core_how_committrans_affects_updates"></a>Auswirkungen von CommitTrans auf Updates
+## <a name="how-committrans-affects-updates"></a><a name="_core_how_committrans_affects_updates"></a>Auswirkungen von CommitTrans auf Updates
 
-In der folgenden Tabelle werden die Auswirkungen der `CommitTrans` auf Transaktionen erläutert.
+In der folgenden Tabelle `CommitTrans` werden die Auswirkungen von Transaktionen erläutert.
 
 ### <a name="how-committrans-affects-updates"></a>Auswirkungen von CommitTrans auf Updates
 
 |Vorgang|Status der Datenquelle|
 |---------------|---------------------------|
-|`AddNew` und `Update`und dann `CommitTrans`|Der Datenquelle wird ein neuer Datensatz hinzugefügt.|
-|`AddNew` (ohne `Update`) und dann `CommitTrans`|Der neue Datensatz geht verloren. Der Datensatz wurde nicht der Datenquelle hinzugefügt.|
-|`Edit` und `Update`und dann `CommitTrans`|Bearbeitbare Änderungen an der Datenquelle.|
-|`Edit` (ohne `Update`) und dann `CommitTrans`|Änderungen an dem Datensatz gehen verloren. Der Datensatz bleibt in der Datenquelle unverändert.|
-|`Delete` `CommitTrans`|Aus der Datenquelle gelöschte Datensätze.|
+|`AddNew`und `Update`, und dann`CommitTrans`|Neue Datensätze werden der Datenquelle hinzugefügt.|
+|`AddNew`(ohne `Update`), und dann`CommitTrans`|Neuer Rekord geht verloren. Datensatz, der der Datenquelle nicht hinzugefügt wurde.|
+|`Edit`und `Update`, und dann`CommitTrans`|Bearbeitungen, die an die Datenquelle gebunden sind.|
+|`Edit`(ohne `Update`), und dann`CommitTrans`|Bearbeitungen des Datensatzes gehen verloren. Der Datensatz bleibt in der Datenquelle unverändert.|
+|`Delete`Dann`CommitTrans`|Datensätze, die aus der Datenquelle gelöscht wurden.|
 
-##  <a name="how-rollback-affects-transactions"></a><a name="_core_how_rollback_affects_updates"></a>Auswirkungen des Rollbacks auf Transaktionen
+## <a name="how-rollback-affects-transactions"></a><a name="_core_how_rollback_affects_updates"></a>Auswirkungen des Rollbacks auf Transaktionen
 
-In der folgenden Tabelle werden die Auswirkungen der `Rollback` auf Transaktionen erläutert.
+In der folgenden Tabelle `Rollback` werden die Auswirkungen von Transaktionen erläutert.
 
 ### <a name="how-rollback-affects-transactions"></a>Auswirkungen des Rollbacks auf Transaktionen
 
-|Vorgang|Status des aktuellen Datensatzes|Außerdem müssen Sie|Status der Datenquelle|
+|Vorgang|Status des aktuellen Datensatzes|Sie müssen auch|Status der Datenquelle|
 |---------------|------------------------------|-------------------|---------------------------|
-|`AddNew` und `Update`dann `Rollback`|Der Inhalt des aktuellen Datensatzes wird temporär gespeichert, um Platz für neuen Datensatz zu schaffen. Ein neuer Datensatz wird in den Bearbeitungs Puffer eingegeben. Nachdem `Update` aufgerufen wurde, wird der aktuelle Datensatz im Bearbeitungs Puffer wieder hergestellt.||Das Hinzufügen zu einer durch `Update` vorgenommenen Datenquelle wird umgekehrt.|
-|`AddNew` (ohne `Update`), `Rollback`|Der Inhalt des aktuellen Datensatzes wird temporär gespeichert, um Platz für neuen Datensatz zu schaffen. Der Bearbeitungs Puffer enthält einen neuen Datensatz.|Wenden Sie `AddNew` erneut an, um den Bearbeitungs Puffer in einem leeren, neuen Datensatz wiederherzustellen. Oder `Move`(0), um die alten Werte im Bearbeitungs Puffer wiederherzustellen.|Da `Update` nicht aufgerufen wurde, wurden keine Änderungen an der Datenquelle vorgenommen.|
-|`Edit` und `Update`dann `Rollback`|Eine nicht bearbeitete Version des aktuellen Datensatzes wird temporär gespeichert. Änderungen werden an dem Inhalt des Bearbeitungs Puffers vorgenommen. Nachdem `Update` aufgerufen wurde, wird die nicht bearbeitete Version des Datensatzes weiterhin temporär gespeichert.|*Dynaset*: Scrollen Sie nach dem aktuellen Datensatz und dann zurück, um die unveränderte Version des Datensatzes in den Bearbeitungs Puffer wiederherzustellen.<br /><br /> *Snapshot*: `Requery` aufgerufen, um das Recordset aus der Datenquelle zu aktualisieren.|Änderungen an der Datenquelle, die von `Update` vorgenommen werden, werden umgekehrt.|
-|`Edit` (ohne `Update`), `Rollback`|Eine nicht bearbeitete Version des aktuellen Datensatzes wird temporär gespeichert. Änderungen werden an dem Inhalt des Bearbeitungs Puffers vorgenommen.|Wenden Sie `Edit` erneut an, um die nicht bearbeitete Version des Datensatzes im Bearbeitungs Puffer wiederherzustellen.|Da `Update` nicht aufgerufen wurde, wurden keine Änderungen an der Datenquelle vorgenommen.|
-|`Delete` `Rollback`|Der Inhalt des aktuellen Datensatzes wird gelöscht.|Ruft `Requery` auf, um den Inhalt des aktuellen Datensatzes aus der Datenquelle wiederherzustellen.|Das Löschen von Daten aus der Datenquelle wird rückgängig gemacht.|
+|`AddNew`und `Update`, dann`Rollback`|Der Inhalt des aktuellen Datensatzes wird vorübergehend gespeichert, um Platz für einen neuen Datensatz zu schaffen. Ein neuer Datensatz wird in den Bearbeitungspuffer eingegeben. Nach `Update` dem Aufruf wird der aktuelle Datensatz im Bearbeitungspuffer wiederhergestellt.||Das Hinzufügen zur `Update` Datenquelle, die durch gemacht wird, wird umgekehrt.|
+|`AddNew`(ohne `Update`), dann`Rollback`|Der Inhalt des aktuellen Datensatzes wird vorübergehend gespeichert, um Platz für einen neuen Datensatz zu schaffen. Der Bearbeitungspuffer enthält einen neuen Datensatz.|Rufen `AddNew` Sie erneut auf, um den Bearbeitungspuffer in einem leeren, neuen Datensatz wiederherzustellen. Oder `Move`rufen Sie (0) auf, um die alten Werte im Bearbeitungspuffer wiederherzustellen.|Da `Update` nicht aufgerufen wurde, wurden keine Änderungen an der Datenquelle vorgenommen.|
+|`Edit`und `Update`, dann`Rollback`|Eine unbearbeitete Version des aktuellen Datensatzes wird temporär gespeichert. Der Inhalt des Bearbeitungspuffers wird bearbeitet. Nach `Update` dem Aufruf wird die unbearbeitete Version des Datensatzes weiterhin temporär gespeichert.|*Dynaset*: Scrollen Sie den aktuellen Datensatz und dann wieder, um die unbearbeitete Version des Datensatzes im Bearbeitungspuffer wiederherzustellen.<br /><br /> *Snapshot*: `Requery` Aufruf zum Aktualisieren des Recordsets aus der Datenquelle.|Änderungen an der `Update` Datenquelle, die von vorgenommen wurden, werden rückgängig gemacht.|
+|`Edit`(ohne `Update`), dann`Rollback`|Eine unbearbeitete Version des aktuellen Datensatzes wird temporär gespeichert. Der Inhalt des Bearbeitungspuffers wird bearbeitet.|Rufen `Edit` Sie erneut auf, um die unbearbeitete Version des Datensatzes im Bearbeitungspuffer wiederherzustellen.|Da `Update` nicht aufgerufen wurde, wurden keine Änderungen an der Datenquelle vorgenommen.|
+|`Delete`Dann`Rollback`|Der Inhalt des aktuellen Datensatzes wird gelöscht.|Rufen `Requery` Sie auf, um den Inhalt des aktuellen Datensatzes aus der Datenquelle wiederherzustellen.|Das Löschen von Daten aus der Datenquelle wird rückgängig gemacht.|
 
 ## <a name="see-also"></a>Siehe auch
 

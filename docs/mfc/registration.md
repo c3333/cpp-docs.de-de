@@ -11,55 +11,55 @@ helpviewer_keywords:
 - servers [MFC], installing
 - OLE server applications [MFC], registering servers
 ms.assetid: 991d5684-72c1-4f9e-a09a-9184ed12bbb9
-ms.openlocfilehash: 0bc606acfba26d27d0ab36045e4772593e760e98
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 82411e53620e92eff3484f7d3f7955030fd439ac
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62309095"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372841"
 ---
 # <a name="registration"></a>Registrierung
 
-Wenn ein Benutzer ein OLE-Element in eine Anwendung eingefügt möchte, stellt OLE eine Liste von Objekttypen zur Auswahl. OLE ruft diese Liste ab, aus der Datenbank der System-Registrierung, die von serveranwendungen für alle bereitgestellte Informationen enthält. Selbst ein Server registriert wird, die Einträge, die in der Registrierungsdatenbank "System" (die Registrierung) wird beschrieben, jede Art von Objekt, das es bereitstellt, file Extensions und den Pfad zu sich selbst, u. a.
+Wenn ein Benutzer ein OLE-Element in eine Anwendung einfügen möchte, stellt OLE eine Liste der Objekttypen zur Auswahl. OLE ruft diese Liste aus der Systemregistrierungsdatenbank ab, die Informationen enthält, die von allen Serveranwendungen bereitgestellt werden. Wenn sich ein Server selbst registriert, beschreiben die Einträge, die er in die Systemregistrierungsdatenbank (die Registrierung) eingibt, unter anderem jeden Von-Objekt-Typ, den er bereitstellt, Dateierweiterungen und den Pfad zu sich selbst.
 
-Das Framework und die OLE-System Dynamic Link Libraries (DLL) verwenden diese Registrierung, um zu bestimmen, welche Arten von OLE-Elemente auf dem System verfügbar sind. Das OLE-System Verwenden von DLLs auch diese Registrierung um zu bestimmen, wie eine Serveranwendung zu starten, wenn ein verknüpftes oder eingebettetes Objekt aktiviert wird.
+Das Framework und die Ole-System-Dynamic-Link-Bibliotheken (DLL) verwenden diese Registrierung, um zu bestimmen, welche Typen von OLE-Elementen auf dem System verfügbar sind. Die OLE-System-DLLs verwenden diese Registrierung auch, um zu bestimmen, wie eine Serveranwendung gestartet wird, wenn ein verknüpftes oder eingebettetes Objekt aktiviert wird.
 
-In diesem Artikel wird beschrieben, was jede Anwendung muss bei der Installation, und jedes Mal, die sie ausgeführt wird.
+In diesem Artikel wird beschrieben, was jede Serveranwendung tun muss, wenn sie installiert wird und bei jeder Ausführung.
 
-Ausführliche Informationen über die Systemregistrierungsdatenbank und das Format der reg-Dateien verwendet, um es zu aktualisieren, finden Sie die *OLE-Programmierreferenz*.
+Ausführliche Informationen zur Systemregistrierungsdatenbank und zum Format der zu ihrer Aktualisierung verwendeten .reg-Dateien finden Sie in der *Referenz des OLE-Programmierers*.
 
-##  <a name="_core_server_installation"></a> Server-Installation
+## <a name="server-installation"></a><a name="_core_server_installation"></a>Serverinstallation
 
-Bei der Installation von Ihrer Serveranwendung sollten sie alle Typen von OLE-Elemente registrieren, die es unterstützt. Sie können auch festlegen, dass der Server, auf die Systemdatenbank für die Registrierung aktualisieren, jedes Mal, wenn sie als eigenständige Anwendung ausgeführt wird. Damit bleibt die Registrierungsdatenbank auf dem neuesten Stand, wenn die ausführbare Datei des Servers verschoben wird.
-
-> [!NOTE]
->  MFC-Anwendungen, die automatisch vom Anwendungs-Assistenten generiert registrieren sich selbst, wenn sie als eigenständige Anwendungen ausgeführt werden.
-
-Wenn Sie Ihre Anwendung während der Installation registrieren möchten, verwenden Sie das Programm RegEdit.exe. Wenn Sie ein Setup-Programm mit der Anwendung einschließen, haben Sie das Setup-Programm ausführen "RegEdit" / s " *Appname*. reg". (Das Flag "/ s" gibt an, automatischer Vorgang, d. h. nicht angezeigt im Dialogfeld reporting erfolgreichen Abschluss des Befehls). Weisen Sie andernfalls, den Benutzer an, "regedit" manuell ausführen.
+Wenn Sie Ihre Serveranwendung zum ersten Mal installieren, sollte sie alle Typen von OLE-Elementen registrieren, die sie unterstützt. Sie können den Server auch jedes Mal aktualisieren lassen, wenn er als eigenständige Anwendung ausgeführt wird. Dadurch wird die Registrierungsdatenbank auf dem neuesten Stand, wenn die ausführbare Datei des Servers verschoben wird.
 
 > [!NOTE]
->  Die vom Anwendungs-Assistenten erstellte reg-Datei enthält den vollständigen Pfad für die ausführbare Datei keine. Ihr Installationsprogramm muss entweder die Registrierungsdatei, um den vollständigen Pfad zur ausführbaren Datei enthalten, oder Ändern der Umgebungsvariablen PATH, um das Installationsverzeichnis einzuschließen ändern.
+> MFC-Anwendungen, die vom Anwendungsassistenten generiert werden, registrieren sich automatisch selbst, wenn sie als eigenständige Anwendungen ausgeführt werden.
 
-"Regedit" führt den Inhalt der .reg-Textdatei in der Registrierungsdatenbank zusammen. Um die Datenbank zu überprüfen oder zu reparieren, verwenden Sie den Registrierungs-Editor. Achten Sie darauf, um löschen die wichtigen OLE-Einträge zu vermeiden.
+Wenn Sie Ihre Anwendung während der Installation registrieren möchten, verwenden Sie das Programm RegEdit.exe. Wenn Sie ihrer Anwendung ein Setupprogramm beifügen, führen Sie das Setupprogramm "RegEdit /S *appname*.reg" aus. (Das /S-Flag zeigt einen stillen Vorgang an, d. h., es zeigt das Dialogfeld nicht an, in dem der erfolgreiche Abschluss des Befehls gemeldet wird.) Weisen Sie andernfalls den Benutzer an, RegEdit manuell auszuführen.
 
-##  <a name="_core_server_initialization"></a> Initialisierung
+> [!NOTE]
+> Die vom Anwendungsassistenten erstellte .reg-Datei enthält nicht den vollständigen Pfad für die ausführbare Datei. Das Installationsprogramm muss entweder die .reg-Datei so ändern, dass sie den vollständigen Pfad zur ausführbaren Datei enthält, oder die PATH-Umgebungsvariable so ändern, dass sie das Installationsverzeichnis enthält.
 
-Wenn Sie eine Server-Anwendung mit der Anwendungs-Assistenten erstellen, schließt der Assistent alle Initialisierungsaufgaben für Sie automatisch ein. In diesem Abschnitt wird beschrieben, was Sie tun müssen, wenn Sie eine Serveranwendung manuell schreiben.
+RegEdit führt den Inhalt der .reg-Textdatei in der Registrierungsdatenbank zusammen. Verwenden Sie den Registrierungseditor, um die Datenbank zu überprüfen oder zu reparieren. Achten Sie darauf, wesentliche OLE-Einträge nicht zu löschen.
 
-Wenn eine Serveranwendung eine Container-Anwendung gestartet wird, die OLE-System-DLLs fügen die Option "/ einbetten" des Servers Befehlszeile hinzu. Eine Serveranwendung Verhalten hängt davon ab, ob sie von einem Container gestartet wurde also eine Anwendung tun, Beginn der Ausführung als erstes überprüfen den "/ einbetten" oder "-Embedding" Option in der Befehlszeile. Wenn dieser Schalter vorhanden ist, laden Sie einen anderen Satz von Ressourcen, die der Server als entweder direkt aktiv angezeigt, oder öffnen Sie vollständig. Weitere Informationen finden Sie unter [Menüs und Ressourcen: Servererweiterungen](../mfc/menus-and-resources-server-additions.md).
+## <a name="server-initialization"></a><a name="_core_server_initialization"></a>Serverinitialisierung
 
-Die Server-Anwendung sollte auch aufrufen, die `CWinApp::RunEmbedded` Funktion, um die Befehlszeile zu analysieren. Wenn sie einen Wert ungleich NULL zurückgibt, sollte die Anwendung nicht das Fenster angezeigt, da er von einer containeranwendung, nicht als eigenständige Anwendung ausgeführt wurde. Diese Funktion aktualisiert den Eintrag des Servers in der Registrierung der Systemdatenbank und ruft die `RegisterAll` Member-Funktion für Sie die Registrierung der Instanz.
+Wenn Sie eine Serveranwendung mit dem Anwendungsassistenten erstellen, führt der Assistent alle Initialisierungsaufgaben automatisch aus. In diesem Abschnitt wird beschrieben, was Sie tun müssen, wenn Sie eine Serveranwendung manuell schreiben.
 
-Wenn die Server-Anwendung gestartet wird, müssen Sie sicherstellen, die Registrierung der Instanz ausgeführt werden kann. Registrierung der Instanz informiert der OLE-System-DLLs, dass es sich bei der Server aktiv ist und Anforderungen von Containern empfangen wird. Es ist nicht der Registrierungsdatenbank einen Eintrag hinzufügen. Führen Sie die Registrierung der Instanz des Servers durch Aufrufen der `ConnectTemplate` -Memberfunktion von definiert `COleTemplateServer`. Dies verbindet die `CDocTemplate` -Objekt an die `COleTemplateServer` Objekt.
+Wenn eine Serveranwendung von einer Containeranwendung gestartet wird, fügen die OLE-System-DLLs der Befehlszeile des Servers die Option "/Embedding" hinzu. Das Verhalten einer Serveranwendung unterscheidet sich je nachdem, ob sie von einem Container gestartet wurde, daher ist das erste, was eine Anwendung tun sollte, wenn sie mit der Ausführung beginnt, die Option "/Embedding" oder "-Embedding" in der Befehlszeile. Wenn dieser Switch vorhanden ist, laden Sie einen anderen Satz von Ressourcen, die den Server entweder als aktiv oder vollständig geöffnet anzeigen. Weitere Informationen finden Sie unter [Menüs und Ressourcen: Servererweiterungen](../mfc/menus-and-resources-server-additions.md).
 
-Die `ConnectTemplate` Funktion akzeptiert drei Parameter: des Servers *CLSID*, ein Zeiger auf die `CDocTemplate` Objekt und ein Flag, das angibt, ob der Server mehrere Instanzen unterstützt. Ein Miniserver muss in der Lage, mehrere Instanzen unterstützen, d. h. es muss möglich sein für mehrere Instanzen des Servers, der gleichzeitig eine für jeden Container ausgeführt. Übergeben Sie daher **"true"** für dieses Flag, wenn ein Miniserver zu starten.
+Ihre Serveranwendung sollte `CWinApp::RunEmbedded` auch ihre Funktion aufrufen, um die Befehlszeile zu analysieren. Wenn ein Wert ungleich Null zurückgegeben wird, sollte die Anwendung ihr Fenster nicht anzeigen, da es von einer Containeranwendung ausgeführt wurde, nicht als eigenständige Anwendung. Diese Funktion aktualisiert den Eintrag des Servers in `RegisterAll` der Systemregistrierungsdatenbank und ruft die Memberfunktion für Sie auf, indem sie die Instanzregistrierung durchführt.
 
-Wenn Sie ein Miniserver schreiben, wird durch Definition es immer von einem Container gestartet. Sie sollten immer noch die Befehlszeile zu prüfen, die Option "/ einbetten" analysiert werden. Das Fehlen dieser Option in der Befehlszeile bedeutet, dass der Benutzer versucht hat, um den Miniserver als eigenständige Anwendung zu starten. In diesem Fall registrieren den Server mit der System-Registrierungsdatenbank, und zeigen ein Meldungsfeld den Benutzer zum Starten der Miniserver von einer containeranwendung zu informieren.
+Wenn Ihre Serveranwendung gestartet wird, müssen Sie sicherstellen, dass sie die Instance-Registrierung durchführen kann. Die Instanzregistrierung informiert die OLE-System-DLLs, dass der Server aktiv ist und zum Empfangen von Anforderungen von Containern bereit ist. Es wird kein Eintrag zur Registrierungsdatenbank hinzugefügt. Führen Sie die Instanzregistrierung `ConnectTemplate` des Servers `COleTemplateServer`durch, indem Sie die member-Funktion aufrufen, die durch definiert ist. Dadurch wird `CDocTemplate` das `COleTemplateServer` Objekt mit dem Objekt verbunden.
+
+Die `ConnectTemplate` Funktion verwendet drei Parameter: die *CLSID*des `CDocTemplate` Servers , einen Zeiger auf das Objekt und ein Flag, das angibt, ob der Server mehrere Instanzen unterstützt. Ein Miniserver muss in der Lage sein, mehrere Instanzen zu unterstützen, d. h., es muss möglich sein, dass mehrere Instanzen des Servers gleichzeitig ausgeführt werden können, eine für jeden Container. Übergeben Sie **daher TRUE** für dieses Flag, wenn Sie einen Miniserver starten.
+
+Wenn Sie einen Miniserver schreiben, wird er per Definition immer von einem Container gestartet. Sie sollten die Befehlszeile dennoch analysieren, um nach der Option "/Embedding" zu suchen. Das Fehlen dieser Option in der Befehlszeile bedeutet, dass der Benutzer versucht hat, den Miniserver als eigenständige Anwendung zu starten. Registrieren Sie in diesem Fall den Server bei der Systemregistrierungsdatenbank, und zeigen Sie dann ein Meldungsfeld an, in dem der Benutzer darüber informiert wird, den Miniserver von einer Containeranwendung aus zu starten.
 
 ## <a name="see-also"></a>Siehe auch
 
 [OLE](../mfc/ole-in-mfc.md)<br/>
 [Server](../mfc/servers.md)<br/>
-[CWinApp::RunAutomated](../mfc/reference/cwinapp-class.md#runautomated)<br/>
+[CWinApp::RunAutomatisiert](../mfc/reference/cwinapp-class.md#runautomated)<br/>
 [CWinApp::RunEmbedded](../mfc/reference/cwinapp-class.md#runembedded)<br/>
 [COleTemplateServer-Klasse](../mfc/reference/coletemplateserver-class.md)

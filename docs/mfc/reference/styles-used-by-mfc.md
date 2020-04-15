@@ -194,333 +194,333 @@ helpviewer_keywords:
 - WS_EX_TRANSPARENT constant [MFC]
 - WS_EX_WINDOWEDGE constant [MFC]
 ms.assetid: d3b9af37-31b5-4c97-a8ad-189fd724b04c
-ms.openlocfilehash: 0c5f5aaacf96eef52b36421534b02f9d2a5fff6c
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 1fe8e0e167ee1fe6150487dfff436a72a2d55868
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426792"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372913"
 ---
 # <a name="styles-used-by-mfc"></a>Von MFC verwendete Stile
 
-Verwenden Sie die folgenden stilflags, um die Darstellung und das Verhalten von Fenstern und Steuerelementen anzugeben, wenn Sie das entsprechende MFC-Objekt erstellen. In den meisten Fällen werden diese Stile im *dwstyle* -Parameter der-Klasse `Create`-Funktion festgelegt.
+Verwenden Sie die folgenden Stilflags, um die Darstellung und das Verhalten des Fensters oder Steuerelements anzugeben, wenn Sie das entsprechende MFC-Objekt erstellen. In den meisten Fällen werden diese Stile im `Create` *dwStyle-Parameter* der Klassenfunktion festgelegt.
 
-## <a name="button-styles"></a>Schaltflächen Stile
+## <a name="button-styles"></a><a name="button-styles"></a>Button-Stile
 
-Schaltflächen Stile gelten für [CButton-Klassen](../../mfc/reference/cbutton-class.md) Objekte, z. b. Options Felder, Kontrollkästchen und Pushbuttons. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [CButton:: Create](../../mfc/reference/cbutton-class.md#create)an. Weitere Informationen zu Schaltflächen Formaten in Windows finden Sie unter [Schaltflächen Stile (Windows)](/windows/win32/Controls/button-styles).
+Schaltflächenstile gelten für [CButton-Klasse-Objekte,](../../mfc/reference/cbutton-class.md) z. B. Optionsfelder, Kontrollkästchen und Drucktasten. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CButton::Create](../../mfc/reference/cbutton-class.md#create)an. Weitere Informationen zu Schaltflächenstilen in Windows finden Sie unter [Schaltflächenstile (Windows)](/windows/win32/Controls/button-styles).
 
-### <a name="button-types"></a>Schaltflächen Typen
+### <a name="button-types"></a>Schaltflächentypen
 
-In der folgenden Tabelle werden Schaltflächentypen aufgeführt. Sie können optional eine der folgenden Möglichkeiten auswählen. Wenn Sie keinen Schalt Flächentyp angeben, wird der Standardwert BS_PUSHBUTTON.
+In der folgenden Tabelle werden Schaltflächentypen aufgeführt. Sie können optional eine der folgenden Möglichkeiten auswählen. Wenn Sie keinen Schaltflächentyp angeben, ist die Standardeinstellung BS_PUSHBUTTON.
 
-|Typ|Beschreibung|
+|type|BESCHREIBUNG|
 |----------|-----------------|
-|BS_3STATE|Erstellt eine Kontrollkästchen-Schaltfläche mit drei Zuständen: BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, der Zustand der Schaltfläche wird jedoch nicht geändert. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Zum Anzeigen von Text auf der linken Seite des Kontrollkästchens verwenden Sie den BS_LEFTTEXT-oder BS_RIGHTBUTTON-Stil.|
-|BS_AUTO3STATE|Erstellt eine Kontrollkästchen-Schaltfläche mit drei Zuständen: BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, und der Zustand der Schaltfläche wird geändert. Die Schaltflächen Zustände werden in der Reihenfolge BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED durchläuft. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Zum Anzeigen von Text auf der linken Seite des Kontrollkästchens verwenden Sie den BS_LEFTTEXT-oder BS_RIGHTBUTTON-Stil.|
-|BS_AUTOCHECKBOX|Erstellt eine Kontrollkästchen-Schaltfläche mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, und der Zustand der Schaltfläche wird geändert. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Zum Anzeigen von Text auf der linken Seite des Kontrollkästchens verwenden Sie den BS_LEFTTEXT-oder BS_RIGHTBUTTON-Stil.|
-|BS_AUTORADIOBUTTON|Erstellt ein Optionsfeld mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Optionsfelder werden normalerweise in Gruppen verwendet, wobei jede Gruppe über maximal eine aktivierte Option auf einmal verfügt. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, der Zustand des Options Felds, BST_CHECKED auf das geklickt wird, und die Zustände aller anderen Options Felder in der Schaltflächen Gruppe auf BST_UNCHECKED festgelegt. Standardmäßig wird zugehöriger Text auf der rechten Seite des Optionsfelds angezeigt. Zum Anzeigen von Text auf der linken Seite des Options Felds verwenden Sie den BS_LEFTTEXT oder BS_RIGHTBUTTON Stil.|
-|BS_CHECKBOX|Erstellt eine Kontrollkästchen-Schaltfläche mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, der Zustand der Schaltfläche wird jedoch nicht geändert. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Zum Anzeigen von Text auf der linken Seite des Kontrollkästchens verwenden Sie den BS_LEFTTEXT-oder BS_RIGHTBUTTON-Stil.|
-|BS_COMMANDLINK|Erstellt eine Befehlslinkschaltfläche. Eine Befehls Link Schaltfläche ist eine spezielle Befehls Schaltfläche für Windows Vista, die einen grünen Pfeil links neben dem Haupttext anzeigt, und einen Hinweis unterhalb des Haupt Texts. Sie können den Hinweis Text mit [CButton:: setnote](../../mfc/reference/cbutton-class.md#setnote)festlegen.|
-|BS_DEFCOMMANDLINK|Erstellt eine Befehlslinkschaltfläche. Eine Befehls Link Schaltfläche ist eine spezielle Befehls Schaltfläche für Windows Vista, die einen grünen Pfeil links neben dem Haupttext anzeigt, und einen Hinweis unterhalb des Haupt Texts. Sie können den Hinweis Text mit [CButton:: setnote](../../mfc/reference/cbutton-class.md#setnote)festlegen. Wenn sich die Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der EINGABETASTE eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus besitzt.|
-|BS_DEFPUSHBUTTON|Erstellt eine Befehlsschaltfläche mit einem dicken schwarzen Rand. Wenn sich die Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der EINGABETASTE eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus besitzt.|
-|BS_DEFSPLITBUTTON|Erstellt eine unterteilte Schaltfläche. Eine unterteilte Schaltfläche ist eine spezielle Befehls Schaltfläche für Windows Vista, die eine Schaltfläche neben einem Dropdown Pfeil enthält. Wenn Sie auf die Schaltfläche klicken, wird der standardmäßige Befehl ausgeführt. Wenn Sie auf den Dropdownpfeil klicken, wird ein Menü mit zusätzlichen Befehlen angezeigt. Wenn sich die unterteilte Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der EINGABETASTE eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus besitzt.|
+|BS_3STATE|Erstellt eine Kontrollkästchenschaltfläche mit drei Zuständen: BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzerfenster gesendet, der Status der Schaltfläche jedoch nicht geändert wird. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Um Text links neben dem Kontrollkästchen anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_AUTO3STATE|Erstellt eine Kontrollkästchenschaltfläche mit drei Zuständen: BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED. Ein Klick auf die Schaltfläche sendet eine BN_CLICKED Benachrichtigung an das Besitzerfenster und ändert den Status der Schaltfläche. Der Schaltflächenzustände wird in der Reihenfolge von BST_CHECKED, BST_INDETERMINATE und BST_UNCHECKED. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Um Text links neben dem Kontrollkästchen anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_AUTOCHECKBOX|Erstellt eine Kontrollkästchenschaltfläche mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Ein Klick auf die Schaltfläche sendet eine BN_CLICKED Benachrichtigung an das Besitzerfenster und ändert den Status der Schaltfläche. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Um Text links neben dem Kontrollkästchen anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_AUTORADIOBUTTON|Erstellt ein Optionsfeld mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Optionsfelder werden normalerweise in Gruppen verwendet, wobei jede Gruppe über maximal eine aktivierte Option auf einmal verfügt. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzerfenster gesendet, der Status des angeklickten Optionsfelds auf BST_CHECKED festgelegt und die Zustände aller anderen Optionsfelder in der Schaltflächengruppe auf BST_UNCHECKED festgelegt. Standardmäßig wird zugehöriger Text auf der rechten Seite des Optionsfelds angezeigt. Um Text links neben dem Optionsfeld anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_CHECKBOX|Erstellt eine Kontrollkästchenschaltfläche mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzerfenster gesendet, der Status der Schaltfläche jedoch nicht geändert wird. Standardmäßig wird zugehöriger Text auf der rechten Seite des Kontrollkästchens angezeigt. Um Text links neben dem Kontrollkästchen anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_COMMANDLINK|Erstellt eine Befehlslinkschaltfläche. Eine Befehlsverknüpfungsschaltfläche ist eine für Windows Vista spezifische Befehlsschaltfläche, die einen grünen Pfeil links vom Haupttext und eine Notiz unter dem Haupttext anzeigt. Sie können den Notiztext mit [CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote)festlegen.|
+|BS_DEFCOMMANDLINK|Erstellt eine Befehlslinkschaltfläche. Eine Befehlsverknüpfungsschaltfläche ist eine für Windows Vista spezifische Befehlsschaltfläche, die einen grünen Pfeil links vom Haupttext und eine Notiz unter dem Haupttext anzeigt. Sie können den Notiztext mit [CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote)festlegen. Wenn sich die Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der ENTER-Taste eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus hat.|
+|BS_DEFPUSHBUTTON|Erstellt eine Befehlsschaltfläche mit einem dicken schwarzen Rand. Wenn sich die Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der ENTER-Taste eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus hat.|
+|BS_DEFSPLITBUTTON|Erstellt eine unterteilte Schaltfläche. Eine geteilte Schaltfläche ist eine für Windows Vista spezifische Befehlsschaltfläche, die eine Schaltfläche neben einem Dropdownpfeil enthält. Wenn Sie auf die Schaltfläche klicken, wird der standardmäßige Befehl ausgeführt. Wenn Sie auf den Dropdownpfeil klicken, wird ein Menü mit zusätzlichen Befehlen angezeigt. Wenn sich die geteilte Schaltfläche in einem Dialogfeld befindet, sendet das Drücken der ENTER-Taste eine BN_CLICKED Benachrichtigung an das Dialogfeld, auch wenn die Schaltfläche nicht den Eingabefokus hat.|
 |BS_GROUPBOX|Erstellt ein Rechteck, in dem andere Schaltflächen gruppiert werden können. Text, der diesem Stil zugeordnet ist, wird in der oberen linken Ecke des Rechtecks angezeigt.|
 |BS_OWNERDRAW|Erstellt eine Ownerdrawn-Schaltfläche. Die `DrawItem`-Methode wird vom Framework aufgerufen, wenn sich ein visueller Aspekt der Schaltfläche geändert hat. Dieser Stil muss bei Verwendung der `CBitmapButton`-Klasse festgelegt werden.|
-|BS_PUSHBUTTON|Erstellt eine Befehls Schaltfläche, die eine BN_CLICKED Benachrichtigung an das Besitzer Fenster sendet, wenn der Benutzer auf die Schaltfläche klickt.|
-|BS_RADIOBUTTON|Erstellt ein Optionsfeld mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Optionsfelder werden normalerweise in Gruppen verwendet, wobei jede Gruppe über maximal eine aktivierte Option auf einmal verfügt. Wenn Sie auf die Schaltfläche klicken, wird eine BN_CLICKED Benachrichtigung an das Besitzer Fenster gesendet, der Zustand einer Schaltfläche in der Gruppe wird jedoch nicht automatisch geändert. Standardmäßig wird zugehöriger Text auf der rechten Seite des Optionsfelds angezeigt. Zum Anzeigen von Text auf der linken Seite des Options Felds verwenden Sie den BS_LEFTTEXT oder BS_RIGHTBUTTON Stil.|
-|BS_SPLITBUTTON|Erstellt eine unterteilte Schaltfläche. Eine unterteilte Schaltfläche ist eine spezielle Befehls Schaltfläche für Windows Vista, die eine Schaltfläche neben einem Dropdown Pfeil enthält. Wenn Sie auf die Schaltfläche klicken, wird der standardmäßige Befehl ausgeführt. Wenn Sie auf den Dropdownpfeil klicken, wird ein Menü mit zusätzlichen Befehlen angezeigt.|
+|BS_PUSHBUTTON|Erstellt eine Befehlsschaltfläche, die eine BN_CLICKED Benachrichtigung an das Besitzerfenster sendet, wenn der Benutzer auf die Schaltfläche klickt.|
+|BS_RADIOBUTTON|Erstellt ein Optionsfeld mit zwei Zuständen: BST_CHECKED und BST_UNCHECKED. Optionsfelder werden normalerweise in Gruppen verwendet, wobei jede Gruppe über maximal eine aktivierte Option auf einmal verfügt. Ein Klick auf die Schaltfläche sendet eine BN_CLICKED Benachrichtigung an das Besitzerfenster, ändert jedoch nicht automatisch den Status einer Schaltfläche in der Gruppe. Standardmäßig wird zugehöriger Text auf der rechten Seite des Optionsfelds angezeigt. Um Text links neben dem Optionsfeld anzuzeigen, verwenden Sie den BS_LEFTTEXT- oder BS_RIGHTBUTTON-Stil.|
+|BS_SPLITBUTTON|Erstellt eine unterteilte Schaltfläche. Eine geteilte Schaltfläche ist eine für Windows Vista spezifische Befehlsschaltfläche, die eine Schaltfläche neben einem Dropdownpfeil enthält. Wenn Sie auf die Schaltfläche klicken, wird der standardmäßige Befehl ausgeführt. Wenn Sie auf den Dropdownpfeil klicken, wird ein Menü mit zusätzlichen Befehlen angezeigt.|
 |BS_USERBUTTON|Veraltet, wird jedoch für die Kompatibilität mit 16-Bit-Versionen von Windows bereitgestellt. Win32-basierte Anwendungen sollten stattdessen BS_OWNERDRAW verwenden.|
 
-### <a name="radio-button-and-check-box-styles"></a>Options Felder und Kontrollkästchen Stile
+### <a name="radio-button-and-check-box-styles"></a>Radio-Taste und Kontrollkästchen Stile
 
 In der folgenden Tabelle werden Stile aufgeführt, die für Optionsfelder und Kontrollkästchen spezifisch sind. Diese Stile werden bei allen anderen Schaltflächentypen ignoriert. Sie können optional mindestens eine der folgenden Möglichkeiten auswählen.
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_LEFTTEXT|Bei Kombination mit einem Optionsfeld- oder Kontrollkästchenstil wird der Text auf der linken Seite des Optionsfelds oder Kontrollkästchens angezeigt.|
-|BS_RIGHTBUTTON|Bei Kombination mit einem Optionsfeld- oder Kontrollkästchenstil wird der Text auf der linken Seite des Optionsfelds oder Kontrollkästchens angezeigt. Dieser Stil ist mit dem BS_LEFTTEXT Stil identisch.|
-|BS_PUSHLIKE|Dadurch wird ein Kontrollkästchen- oder Optionsfeld im Aussehen und Verhalten zu einer Befehlsschaltfläche. Die Schaltfläche wird gedrückt angezeigt, wenn Ihr Zustand BST_CHECKED, gedrückt und abgeblendet ist, wenn der Zustand BST_INDETERMINATE ist, und wenn der Zustand BST_UNCHECKED ist.|
+|BS_RIGHTBUTTON|Bei Kombination mit einem Optionsfeld- oder Kontrollkästchenstil wird der Text auf der linken Seite des Optionsfelds oder Kontrollkästchens angezeigt. Dieser Stil ist identisch mit dem BS_LEFTTEXT Stil.|
+|BS_PUSHLIKE|Dadurch wird ein Kontrollkästchen- oder Optionsfeld im Aussehen und Verhalten zu einer Befehlsschaltfläche. Die Taste wird gedrückt, wenn ihr Zustand BST_CHECKED, gedrückt und gedimmt wird, wenn ihr Zustand BST_INDETERMINATE ist, und freigegeben, wenn ihr Zustand BST_UNCHECKED ist.|
 
-### <a name="button-text-alignment-styles"></a>Ausrichtungs Stile für Schaltflächen Text
+### <a name="button-text-alignment-styles"></a>Schaltflächentextausrichtungsstile
 
 In der folgenden Tabelle werden die Optionen für horizontale und vertikale Textausrichtung aufgeführt. Sie können optional eine der folgenden Möglichkeiten auswählen.
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|BS_LEFT|Links richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld handelt, das nicht den BS_RIGHTBUTTON Stil hat, wird der Text auf der rechten Seite des Kontrollkästchens oder des Options Felds ausgerichtet.|
-|BS_RIGHT|Rechts richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld handelt, das nicht den BS_RIGHTBUTTON Stil hat, wird der Text rechts auf der rechten Seite des Kontrollkästchens oder des Options Felds ausgerichtet.|
+|BS_LEFT|Links richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld mit der BS_RIGHTBUTTON-Formats handelt, wird der Text auf der rechten Seite des Kontrollkästchens oder Optionsfelds links ausgerichtet.|
+|BS_RIGHT|Rechts richtet den Text im Schaltflächenrechteck aus. Wenn es sich bei der Schaltfläche jedoch um ein Kontrollkästchen oder ein Optionsfeld mit der BS_RIGHTBUTTON-Formats handelt, ist der Text rechts auf der rechten Seite des Kontrollkästchens oder Optionsfelds ausgerichtet.|
 |BS_CENTER|Zentriert Text horizontal im Schaltflächenrechteck.|
 |BS_TOP|Setzt Text an den oberen Rand des Schaltflächenrechtecks.|
 |BS_BOTTOM|Setzt Text an den unteren Rand des Schaltflächenrechtecks.|
 |BS_VCENTER|Zentriert Text vertikal im Schaltflächenrechteck.|
 
-### <a name="button-content-options"></a>Schaltflächen Inhalts Optionen
+### <a name="button-content-options"></a>Schaltflächeninhaltsoptionen
 
 In der folgenden Tabelle sind die Optionen aufgeführt, die angeben, was in der Schaltfläche angezeigt wird. Schaltflächentypen, die nur Text anzeigen, ignorieren diese Stile. Sie können optional eine der folgenden Möglichkeiten auswählen.
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_BITMAP|Gibt an, dass die Schaltfläche eine Bitmap anzeigt.|
 |BS_ICON|Gibt an, dass die Schaltfläche ein Symbol anzeigt.|
 |BS_TEXT|Gibt an, dass die Schaltfläche Text anzeigt.|
 
-### <a name="other-button-options"></a>Andere Schaltflächen Optionen
+### <a name="other-button-options"></a>Andere Schaltflächenoptionen
 
 In der folgenden Tabelle werden zusätzliche Optionen aufgeführt, die Sie mit jedem Schaltflächentyp verwenden können. Sie können optional mindestens eine der folgenden Möglichkeiten auswählen.
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
 |BS_FLAT|Gibt an, dass die Schaltfläche zweidimensional ist und nicht zum Erstellen eines dreidimensionalen Bilds mit Standardschattierung gezeichnet wird.|
 |BS_MULTILINE|Bricht den Schaltflächentext in mehrere Zeilen um, wenn die Zeichenfolge für eine einzelne Zeile im Schaltflächenrechteck zu lang ist.|
-|BS_NOTIFY|Aktiviert eine Schaltfläche zum Senden von BN_DBLCLK, BN_KILLFOCUS und BN_SETFOCUS von Benachrichtigungs Meldungen an das übergeordnete Fenster. Beachten Sie, dass Schaltflächen die BN_CLICKED Benachrichtigung senden, unabhängig davon, ob dieser Stil angegeben ist.|
+|BS_NOTIFY|Ermöglicht eine Schaltfläche, BN_DBLCLK, BN_KILLFOCUS und BN_SETFOCUS Benachrichtigungen an das übergeordnete Fenster zu senden. Beachten Sie, dass Schaltflächen die BN_CLICKED Benachrichtigung senden, unabhängig davon, ob dieser Stil angegeben ist.|
 
-## <a name="combo-box-styles"></a>Kombinations Feld Stile
+## <a name="combo-box-styles"></a><a name="combo-box-styles"></a>Combo-Box-Stile
 
-In MFC sind die folgenden Stile für Kombinationsfelder verfügbar. Weitere Informationen zu Kombinations Feld Stilen in Windows finden Sie unter Kombinations [Feld Stile (Windows)](/windows/win32/Controls/combo-box-styles).
+In MFC sind die folgenden Stile für Kombinationsfelder verfügbar. Weitere Informationen zu Kombinationsboxstilen in Windows finden Sie unter [Combo Box Styles (Windows)](/windows/win32/Controls/combo-box-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|CBS_AUTOHSCROLL|Scrollt den Text im Bearbeitungs Steuerelement automatisch nach rechts, wenn der Benutzer am Ende der Zeile ein Zeichen eingibt. Wenn dieser Stil nicht festgelegt ist, ist nur Text zulässig, der in die rechteckige Begrenzung passt.|
-|CBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Scrollleiste an, wenn das Listenfeld nicht genügend Elemente enthält, die Sie scrollen können. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
-|CBS_DROPDOWN|Ähnlich wie CBS_SIMPLE, außer dass das Listenfeld nur angezeigt wird, wenn der Benutzer ein Symbol neben dem Bearbeitungs Steuerelement auswählt.|
-|CBS_DROPDOWNLIST|Vergleichbar mit CBS_DROPDOWN, mit dem Unterschied, dass das Bearbeitungs Steuerelement durch ein statisches Textelement ersetzt wird, das die aktuelle Auswahl im Listenfeld anzeigt.|
-|CBS_HASSTRINGS|Ein Kombinations Feld zum Erstellen eines Besitzers enthält Elemente, die aus Zeichen folgen bestehen. Das Kombinationsfeld verwaltet den Arbeitsspeicher und die Zeiger für die Zeichenfolgen, sodass die Anwendung die `GetText` -Memberfunktion verwenden kann, um den Text für ein bestimmtes Element abzurufen.|
-|CBS_LOWERCASE|Konvertiert in den gesamten Text in Kleinbuchstaben sowohl im Auswahlfeld als auch in der Liste.|
-|CBS_NOINTEGRALHEIGHT|Gibt an, dass die Größe des Kombinations Felds genau der Größe entspricht, die von der Anwendung beim Erstellen des Kombinations Felds angegeben wurde. Üblicherweise passt Windows die Größen von Kombinationsfeldern an, damit Elemente nicht nur teilweise angezeigt werden.|
-|CBS_OEMCONVERT|Der im Kombinations Feld-Bearbeitungs Steuerelement eingegebene Text wird vom ANSI-Zeichensatz in den OEM-Zeichensatz und dann zurück zu ANSI konvertiert. Dies stellt eine ordnungsgemäße Zeichenkonvertierung sicher, wenn die Anwendung die Windows-Funktion `AnsiToOem` aufruft, um eine ANSI-Zeichenfolge im Kombinationsfeld in OEM-Zeichen zu konvertieren. Dieser Stil ist sehr nützlich für Kombinationsfelder, die Dateinamen enthalten, und kann nur auf Kombinationsfelder angewendet werden, die mit den Stilen CBS_SIMPLE oder CBS_DROPDOWN erstellt wurden.|
-|CBS_OWNERDRAWFIXED|Der Besitzer des Listen Felds ist für das Zeichnen des Inhalts verantwortlich. die Elemente im Listenfeld haben dieselbe Höhe.|
-|CBS_OWNERDRAWVARIABLE|Der Besitzer des Listen Felds ist für das Zeichnen des Inhalts verantwortlich. die Elemente im Listenfeld sind variabel in Höhe.|
-|CBS_SIMPLE|Das Listenfeld wird immer angezeigt. Die aktuelle Auswahl im Listenfeld wird im Bearbeitungssteuerelement angezeigt.|
-|CBS_SORT|Sortiert in das Listenfeld eingegebene Zeichen folgen automatisch.|
-|CBS_UPPERCASE|Konvertiert in Großbuchstaben den gesamten Text sowohl im Auswahlfeld als auch in der Liste.|
+|CBS_AUTOHSCROLL|Scrollt automatisch den Text im Bearbeitungssteuerelement nach rechts, wenn der Benutzer ein Zeichen am Ende der Zeile eingibt. Wenn dieser Stil nicht festgelegt ist, ist nur Text zulässig, der in die rechteckige Begrenzung passt.|
+|CBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Bildlaufleiste an, wenn das Listenfeld nicht genügend Elemente zum Scrollen enthält. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
+|CBS_DROPDOWN|Ähnlich wie CBS_SIMPLE, mit der Ausnahme, dass das Listenfeld nur angezeigt wird, wenn der Benutzer ein Symbol neben dem Bearbeitungssteuerelement auswählt.|
+|CBS_DROPDOWNLIST|Ähnlich wie CBS_DROPDOWN, mit der Ausnahme, dass das Bearbeitungssteuerelement durch ein statisches Textelement ersetzt wird, das die aktuelle Auswahl im Listenfeld anzeigt.|
+|CBS_HASSTRINGS|Ein Kombinationsfeld zum Zeichnen von Besitzern enthält Elemente, die aus Zeichenfolgen bestehen. Das Kombinationsfeld verwaltet den Arbeitsspeicher und die Zeiger für die Zeichenfolgen, sodass die Anwendung die `GetText` -Memberfunktion verwenden kann, um den Text für ein bestimmtes Element abzurufen.|
+|CBS_LOWERCASE|Konvertiert den gesamten Text im Auswahlfeld und in der Liste in Kleinbuchstaben.|
+|CBS_NOINTEGRALHEIGHT|Gibt an, dass die Größe des Kombinationsfelds genau der Größe entspricht, die von der Anwendung beim Erstellen des Kombinationsfelds angegeben wurde. Üblicherweise passt Windows die Größen von Kombinationsfeldern an, damit Elemente nicht nur teilweise angezeigt werden.|
+|CBS_OEMCONVERT|Text, der im Bearbeitungssteuerelement des Kombinationsfelds eingegeben wird, wird vom ANSI-Zeichensatz in den OEM-Zeichensatz und dann wieder in ANSI konvertiert. Dies stellt eine ordnungsgemäße Zeichenkonvertierung sicher, wenn die Anwendung die Windows-Funktion `AnsiToOem` aufruft, um eine ANSI-Zeichenfolge im Kombinationsfeld in OEM-Zeichen zu konvertieren. Dieser Stil ist sehr nützlich für Kombinationsfelder, die Dateinamen enthalten, und kann nur auf Kombinationsfelder angewendet werden, die mit den Stilen CBS_SIMPLE oder CBS_DROPDOWN erstellt wurden.|
+|CBS_OWNERDRAWFIXED|Der Besitzer des Listenfelds ist für das Zeichnen des Inhalts verantwortlich. Die Elemente im Listenfeld sind alle gleich hoch.|
+|CBS_OWNERDRAWVARIABLE|Der Besitzer des Listenfelds ist für das Zeichnen des Inhalts verantwortlich. Die Elemente im Listenfeld sind in der Höhe variabel.|
+|CBS_SIMPLE|Das Listenfeld wird jederzeit angezeigt. Die aktuelle Auswahl im Listenfeld wird im Bearbeitungssteuerelement angezeigt.|
+|CBS_SORT|Automatisches Sortiert von Zeichenfolgen, die in das Listenfeld eingegeben wurden.|
+|CBS_UPPERCASE|Konvertiert den gesamten Text in Großbuchstaben sowohl im Auswahlfeld als auch in der Liste.|
 
-## <a name="edit-styles"></a>Stile bearbeiten
+## <a name="edit-styles"></a><a name="edit-styles"></a>Bearbeiten von Stilen
 
-Bearbeitungs Stile gelten für [CEdit-Klassen](../../mfc/reference/cedit-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [CEdit:: Create](../../mfc/reference/cedit-class.md#create)an. Weitere Informationen zum Bearbeiten von Steuerelement Stilen in Windows finden Sie unter [Edit Control Styles (Windows)](/windows/win32/Controls/edit-control-styles).
+Bearbeitungsstile gelten für [CEdit-Klassenobjekte.](../../mfc/reference/cedit-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CEdit::Create](../../mfc/reference/cedit-class.md#create)an. Weitere Informationen zum Bearbeiten von Steuerelementstilen in Windows finden Sie unter Bearbeiten von [Steuerelementvorlagen (Windows)](/windows/win32/Controls/edit-control-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|ES_AUTOHSCROLL|Führt einen automatischen Bildlauf nach rechts um 10 Zeichen durch, wenn der Benutzer am Ende der Zeile ein Zeichen eingibt. Wenn der Benutzer die EINGABETASTE drückt, scrollt das Steuerelement den gesamten Text zurück an Position 0.|
-|ES_AUTOVSCROLL|Führt automatisch einen Bildlauf nach oben eine Seite durch, wenn der Benutzer in der letzten Zeile die EINGABETASTE drückt.|
-|ES_CENTER|Zentriert den Text in einem einzeiligen oder mehrzeiligen Bearbeitungs Steuerelement.|
-|ES_LEFT|Linksbündig ausrichten von Text in einem einzeiligen oder mehrzeiligen Bearbeitungs Steuerelement.|
-|ES_LOWERCASE|Konvertiert alle Zeichen in Kleinbuchstaben, wenn Sie in das Bearbeitungs Steuerelement eingegeben werden.|
-|ES_MULTILINE|Bezeichnet ein Bearbeitungs Steuerelement mit mehreren Zeilen. (Der Standardwert ist eine einzelne Zeile.) Wenn der ES_AUTOVSCROLL Stil angegeben ist, zeigt das Bearbeitungs Steuerelement so viele Zeilen wie möglich an und führt einen vertikalen Bildlauf durch, wenn der Benutzer die EINGABETASTE drückt. Wenn ES_AUTOVSCROLL nicht angegeben ist, zeigt das Bearbeitungs Steuerelement so viele Zeilen wie möglich an, und gibt an, ob die EINGABETASTE gedrückt wird, wenn keine weiteren Zeilen angezeigt werden können. Wenn das ES_AUTOHSCROLL Format angegeben wird, wird das mehrzeilige Bearbeitungs Steuerelement automatisch horizontal bewegt, wenn die Einfügemarke den rechten Rand des Steuer Elements überschreitet. Um eine neue Zeile zu starten, muss der Benutzer die EINGABETASTE drücken. Wenn ES_AUTOHSCROLL nicht angegeben wird, umschließt das-Steuerelement bei Bedarf automatisch den Anfang der nächsten Zeile. eine neue Zeile wird auch gestartet, wenn die EINGABETASTE gedrückt wird. Die Position von WordWrap wird durch die Fenstergröße bestimmt. Wenn sich die Fenstergröße ändert, ändert sich die WordWrap-Position, und der Text wird erneut angezeigt. Mehrzeilige Bearbeitungs Steuerelemente können Scrollleisten aufweisen. Ein Bearbeitungs Steuerelement mit Bild Lauf leisten verarbeitet seine eigenen Bild Lauf leisten Meldungen. Bearbeiten von Steuerelementen ohne Bild Lauf leisten Scrollen Sie wie oben beschrieben, und verarbeiten Sie alle vom übergeordneten Fenster gesendeten Bild Lauf Nachrichten.|
-|ES_NOHIDESEL|Normalerweise blendet ein Bearbeitungs Steuerelement die Auswahl aus, wenn das Steuerelement den Eingabefokus verliert, und kehrt die Auswahl um, wenn das Steuerelement den Eingabefokus erhält. Durch Angeben von ES_NOHIDESEL wird diese Standardaktion gelöscht.|
-|ES_NUMBER|Ermöglicht, dass nur Ziffern in das Bearbeitungs Steuerelement eingegeben werden.|
-|ES_OEMCONVERT|Der im Bearbeitungs Steuerelement eingegebene Text wird vom ANSI-Zeichensatz in den OEM-Zeichensatz und dann zurück zu ANSI konvertiert. Dies stellt eine ordnungsgemäße Zeichen Konvertierung sicher, wenn die Anwendung die `AnsiToOem` Windows-Funktion aufruft, um eine ANSI-Zeichenfolge im Bearbeitungs Steuerelement in OEM-Zeichen zu konvertieren Dieser Stil ist besonders nützlich für Bearbeitungs Steuerelemente, die Dateinamen enthalten.|
-|ES_PASSWORD|Zeigt alle Zeichen als Sternchen ( __\*__ ) an, wenn Sie in das Bearbeitungs Steuerelement eingegeben werden. Eine Anwendung kann die `SetPasswordChar` Member-Funktion verwenden, um das angezeigte Zeichen zu ändern.|
-|ES_READONLY|Verhindert, dass der Benutzer Text im Bearbeitungs Steuerelement eingeben oder bearbeiten soll.|
-|ES_RIGHT|Richtet Text direkt in einem einzeiligen oder mehrzeiligen Bearbeitungs Steuerelement aus.|
-|ES_UPPERCASE|Konvertiert alle Zeichen in Großbuchstaben, wenn Sie in das Bearbeitungs Steuerelement eingegeben werden.|
-|ES_WANTRETURN|Gibt an, dass ein Wagen Rücklauf Zeichen eingefügt werden soll, wenn der Benutzer die EINGABETASTE drückt, während Text in ein mehrzeilige Bearbeitungs Steuerelement in einem Dialogfeld eingegeben wird. Ohne diesen Stil hat das Drücken der EINGABETASTE denselben Effekt wie das Drücken der Dialogfelder default Push Button. Dieser Stil hat keine Auswirkung auf ein einzeilige Bearbeitungs Steuerelement.|
+|ES_AUTOHSCROLL|Scrollt automatisch Text nach rechts um 10 Zeichen, wenn der Benutzer ein Zeichen am Ende der Zeile eingibt. Wenn der Benutzer die ENTER-Taste drückt, scrollt das Steuerelement den gesamten Text zurück an Position 0.|
+|ES_AUTOVSCROLL|Scrollt automatisch Text um eine Seite nach oben, wenn der Benutzer in der letzten Zeile die EINGABEtaste drückt.|
+|ES_CENTER|Zentriert Text in einem einzeiligen oder mehrzeiligen Bearbeitungssteuerelement.|
+|ES_LEFT|Linksbündiger Text in einem einzeiligen oder mehrzeiligen Bearbeitungssteuerelement.|
+|ES_LOWERCASE|Konvertiert alle Zeichen in Kleinbuchstaben, wenn sie in das Bearbeitungssteuerelement eingegeben werden.|
+|Es_multiline|Legt ein mehrzeiliges Bearbeitungssteuerelement fest. (Der Standardwert ist einzeilig.) Wenn der ES_AUTOVSCROLL-Stil angegeben ist, zeigt das Bearbeitungssteuerelement so viele Zeilen wie möglich an und scrollt vertikal, wenn der Benutzer die ENTER-Taste drückt. Wenn ES_AUTOVSCROLL nicht angegeben ist, zeigt das Bearbeitungssteuerelement so viele Zeilen wie möglich an und gibt einen Signalton aus, wenn ENTER gedrückt wird, wenn keine weiteren Zeilen angezeigt werden können. Wenn der stilES_AUTOHSCROLL angegeben ist, scrollt das mehrzeilige Bearbeitungssteuerelement automatisch horizontal, wenn die Einstellte am rechten Rand des Steuerelements vorbeigeht. Um eine neue Zeile zu starten, muss der Benutzer die EINGABETASTE drücken. Wenn ES_AUTOHSCROLL nicht angegeben wird, umschließt das Steuerelement bei Bedarf automatisch Wörter an den Anfang der nächsten Zeile. eine neue Zeile wird ebenfalls gestartet, wenn ENTER gedrückt wird. Die Position des Wordwraps wird durch die Fenstergröße bestimmt. Wenn sich die Fenstergröße ändert, ändert sich die Wortumbruchposition, und der Text wird erneut angezeigt. Mehrzeilige Bearbeitungssteuerelemente können über Bildlaufleisten verfügen. Ein Bearbeitungssteuerelement mit Bildlaufleisten verarbeitet seine eigenen Bildlaufleistenmeldungen. Bearbeiten Sie Steuerelemente ohne Bildlaufleisten, wie oben beschrieben, und verarbeiten Sie alle Bildlaufnachrichten, die vom übergeordneten Fenster gesendet werden.|
+|ES_NOHIDESEL|Normalerweise blendet ein Bearbeitungssteuerelement die Auswahl aus, wenn das Steuerelement den Eingabefokus verliert, und kehrt die Auswahl um, wenn das Steuerelement den Eingabefokus empfängt. Durch die Angabe ES_NOHIDESEL wird diese Standardaktion gelöscht.|
+|ES_NUMBER|Lässt nur Ziffern in das Bearbeitungssteuerelement ein.|
+|ES_OEMCONVERT|Text, der im Bearbeitungssteuerelement eingegeben wird, wird vom ANSI-Zeichensatz in den OEM-Zeichensatz und dann wieder in ANSI konvertiert. Dadurch wird die korrekte Zeichenkonvertierung sichergestellt, wenn die Anwendung die `AnsiToOem` Windows-Funktion aufruft, um eine ANSI-Zeichenfolge im Bearbeitungssteuerelement in OEM-Zeichen zu konvertieren. Dieser Stil eignet sich am besten zum Bearbeiten von Steuerelementen, die Dateinamen enthalten.|
+|ES_PASSWORD|Zeigt alle Zeichen als Sternchen (__\*__) an, während sie in das Bearbeitungssteuerelement eingegeben werden. Eine Anwendung kann `SetPasswordChar` die Memberfunktion verwenden, um das angezeigte Zeichen zu ändern.|
+|ES_READONLY|Verhindert, dass der Benutzer Text in das Bearbeitungssteuerelement eingibt oder bearbeitet.|
+|ES_RIGHT|Rechtsbündiger Text in einem einzeiligen oder mehrzeiligen Bearbeitungssteuerelement.|
+|ES_UPPERCASE|Konvertiert alle Zeichen in Großbuchstaben, wenn sie in das Bearbeitungssteuerelement eingegeben werden.|
+|ES_WANTRETURN|Gibt an, dass eine Wagenrückgabe eingefügt wird, wenn der Benutzer die ENTER-Taste drückt, während Er Text in ein mehrzeiliges Bearbeitungssteuerelement in einem Dialogfeld eingibt. Ohne diesen Stil hat das Drücken der ENTER-Taste den gleichen Effekt wie das Drücken der Standard-Taste der Dialogfelder. Dieser Stil hat keine Auswirkungen auf ein einzeiliges Bearbeitungssteuerelement.|
 
-## <a name="frame-window-styles-mfc"></a>Rahmen Fenster Stile
+## <a name="frame-window-styles"></a><a name="frame-window-styles-mfc"></a>Rahmenfensterstile
 
-Frame-Window-Stile gelten für [CFrameWnd-Klassen](../../mfc/reference/cframewnd-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [CFrameWnd:: Create](../../mfc/reference/cframewnd-class.md#create)an.
+Rahmenfensterstile gelten für [CFrameWnd](../../mfc/reference/cframewnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CFrameWnd::Create](../../mfc/reference/cframewnd-class.md#create)an.
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|FWS_ADDTOTITLE|Gibt Informationen an, die am Ende eines Rahmen Fenster Titels angefügt werden sollen. Beispiel: "Microsoft Draw-Drawing in Document1". Sie können die Zeichen folgen angeben, die auf der Registerkarte Zeichen folgen für Dokumentvorlagen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, überschreiben Sie die `CWnd::PreCreateWindow` Member-Funktion.|
-|FWS_PREFIXTITLE|Zeigt den Dokumentnamen vor dem Anwendungsnamen in einem Rahmen Fenstertitel an. Beispiel: "Document-WordPad". Sie können die Zeichen folgen angeben, die auf der Registerkarte Zeichen folgen für Dokumentvorlagen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, überschreiben Sie die `CWnd::PreCreateWindow` Member-Funktion.|
-|FWS_SNAPTOBARS|Steuert die Größe des Rahmen Fensters, das eine Steuerleiste einschließt, wenn Sie sich in einem unverankerten Fenster befindet und nicht an ein Rahmen Fenster angedockt ist. Dieser Stil passt die Größe des Fensters an die Steuerleiste an.|
+|FWS_ADDTOTITLE|Gibt Informationen an, die an das Ende eines Rahmenfenstertitels angehängt werden sollen. Beispiel: "Microsoft Draw - Drawing in Document1". Sie können die Zeichenfolgen angeben, die auf der Registerkarte Dokumentvorlagenzeichenfolgen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, `CWnd::PreCreateWindow` überschreiben Sie die Memberfunktion.|
+|FWS_PREFIXTITLE|Zeigt den Dokumentnamen vor dem Anwendungsnamen in einem Framefenstertitel an. Beispiel: "Dokument - WordPad". Sie können die Zeichenfolgen angeben, die auf der Registerkarte Dokumentvorlagenzeichenfolgen im Anwendungs-Assistenten angezeigt werden. Wenn Sie diese Option deaktivieren müssen, `CWnd::PreCreateWindow` überschreiben Sie die Memberfunktion.|
+|FWS_SNAPTOBARS|Steuert die Größe des Rahmenfensters, das eine Steuerleiste umschließt, wenn sie sich in einem schwebenden Fenster befindet und nicht an ein Rahmenfenster angedockt ist. Dieser Stil passt das Fenster an die Steuerleiste an.|
 
-## <a name="list-box-styles"></a>Listenfeld Stile
+## <a name="list-box-styles"></a><a name="list-box-styles"></a>List-Box-Stile
 
-Listenfeld Stile gelten für [CListBox-Klassen](../../mfc/reference/clistbox-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [CListBox:: Create](../../mfc/reference/clistbox-class.md#create)an. Weitere Informationen zu Listenfeld Stilen in Windows finden Sie unter [Listenfeld Stile (Windows)](/windows/win32/Controls/list-box-styles).
+Listenfeldstile gelten für [CListBox-Klassenobjekte.](../../mfc/reference/clistbox-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CListBox::Create](../../mfc/reference/clistbox-class.md#create)an. Weitere Informationen zu Listenfeldstilen in Windows finden Sie unter [Listenfeldformatvorlagen (Windows)](/windows/win32/Controls/list-box-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|LBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Scrollleiste an, wenn das Listenfeld nicht genügend Elemente enthält, die Sie scrollen können. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
-|LBS_EXTENDEDSEL|Der Benutzer kann mehrere Elemente mithilfe der Umschalttaste und der Tastenkombinationen für die Maus oder die Tastenkombination auswählen.|
-|LBS_HASSTRINGS|Gibt ein Listenfeld zum Zeichnen von Besitzern an, das Elemente enthält, die aus Zeichen folgen bestehen. Das Listenfeld verwaltet den Arbeitsspeicher und Zeiger für die Zeichen folgen, damit die Anwendung den Text für ein bestimmtes Element mit der `GetText` Member-Funktion abrufen kann.|
-|LBS_MULTICOLUMN|Gibt ein mehrspaltige Listenfeld an, das horizontal scrollt. Die `SetColumnWidth` Member-Funktion legt die Breite der Spalten fest.|
-|LBS_MULTIPLESEL|Die Zeichen folgen Auswahl wird jedes Mal ein-und ausgeschaltet, wenn der Benutzer auf die Zeichenfolge klickt oder doppelklickt. Es kann eine beliebige Anzahl von Zeichen folgen ausgewählt werden.|
-|LBS_NODATA|Gibt ein Listenfeld ohne Daten an. Geben Sie diesen Stil an, wenn die Anzahl der Elemente im Listenfeld 1000 überschreitet. Ein Listenfeld ohne Daten muss ebenfalls den LBS_OWNERDRAWFIXED Stil aufweisen, darf jedoch nicht über die LBS_SORT oder LBS_HASSTRINGS Stil verfügen.<br/><br/> Ein Listenfeld ohne Daten ähnelt einem von einem Besitzer gezeichneten Listenfeld, mit dem Unterschied, dass es keine Zeichen folgen-oder Bitmapdaten für ein Element enthält. Durch Befehle zum Hinzufügen, einfügen oder Löschen eines Elements werden alle angegebenen Elementdaten immer ignoriert. bei Anforderungen zum Suchen nach einer Zeichenfolge innerhalb des Listen Felds tritt immer ein Fehler auf. Das System sendet die WM_DRAWITEM Meldung an das Besitzer Fenster, wenn ein Element gezeichnet werden muss. Der Itemid-Member der `DRAWITEMSTRUCT`-Struktur, die mit der WM_DRAWITEM Meldung übertragen wird, gibt die Zeilennummer des Elements an, das gezeichnet werden soll. Ein Listenfeld ohne Daten sendet keine WM_DELETEITEM Nachricht.|
-|LBS_NOINTEGRALHEIGHT|Die Größe des Listen Felds entspricht genau der Größe, die von der Anwendung beim Erstellen des Listen Felds festgelegt wurde. In der Regel wird in Windows ein Listenfeld mit der Größe angezeigt, sodass keine partiellen Elemente im Listenfeld angezeigt werden.|
-|LBS_NOREDRAW|Die Listenfeld Anzeige wird nicht aktualisiert, wenn Änderungen vorgenommen werden. Dieser Stil kann jederzeit durch Senden einer WM_SETREDRAW Nachricht geändert werden.|
+|LBS_DISABLENOSCROLL|Das Listenfeld zeigt eine deaktivierte vertikale Bildlaufleiste an, wenn das Listenfeld nicht genügend Elemente zum Scrollen enthält. Ohne diesen Stil wird die Scrollleiste ausgeblendet, wenn das Listenfeld nicht genügend Elemente enthält.|
+|LBS_EXTENDEDSEL|Der Benutzer kann mehrere Elemente mit der UMSCHALTtaste und der Maus oder speziellen Tastenkombinationen auswählen.|
+|LBS_HASSTRINGS|Gibt ein Listenfeld für die Besitzerzeichnung an, das Elemente enthält, die aus Zeichenfolgen bestehen. Das Listenfeld verwaltet den Speicher und die Zeiger für `GetText` die Zeichenfolgen, sodass die Anwendung die Memberfunktion verwenden kann, um den Text für ein bestimmtes Element abzurufen.|
+|LBS_MULTICOLUMN|Gibt ein mehrspaltiges Listenfeld an, das horizontal gescrollt wird. Die `SetColumnWidth` Memberfunktion legt die Breite der Spalten fest.|
+|LBS_MULTIPLESEL|Die Zeichenfolgenauswahl wird jedes Mal umgeschaltet, wenn der Benutzer auf die Zeichenfolge klickt oder auf die Zeichenfolge doppelklickt. Es kann eine beliebige Anzahl von Zeichenfolgen ausgewählt werden.|
+|LBS_NODATA|Gibt ein Listenfeld ohne Daten an. Geben Sie diesen Stil an, wenn die Anzahl der Elemente im Listenfeld tausend überschreitet. Ein Listenfeld ohne Daten muss auch den LBS_OWNERDRAWFIXED-Stil haben, darf jedoch nicht über die LBS_SORT oder LBS_HASSTRINGS-Stil verfügen.<br/><br/> Ein Listenfeld ohne Daten ähnelt einem vom Besitzer gezeichneten Listenfeld, mit der Ausnahme, dass es keine Zeichenfolgen- oder Bitmapdaten für ein Element enthält. Befehle zum Hinzufügen, Einfügen oder Löschen eines Elements ignorieren immer alle angegebenen Elementdaten. Anforderungen, eine Zeichenfolge im Listenfeld zu finden, schlagen immer fehl. Das System sendet die WM_DRAWITEM Nachricht an das Besitzerfenster, wenn ein Element gezeichnet werden muss. Das itemID-Element `DRAWITEMSTRUCT` der Struktur, die mit der Meldung WM_DRAWITEM übergeben wurde, gibt die Zeilennummer des zu zeichnenden Elements an. Ein Listenfeld ohne Daten sendet keine WM_DELETEITEM Nachricht.|
+|LBS_NOINTEGRALHEIGHT|Die Größe des Listenfelds entspricht genau der Größe, die von der Anwendung beim Erstellen des Listenfelds angegeben wurde. Normalerweise vergrößert Windows ein Listenfeld, sodass im Listenfeld keine Teilelemente angezeigt werden.|
+|LBS_NOREDRAW|Die Listenfeldanzeige wird nicht aktualisiert, wenn Änderungen vorgenommen werden. Dieser Stil kann jederzeit durch Senden einer WM_SETREDRAW Nachricht geändert werden.|
 |LBS_NOSEL|Gibt an, dass das Listenfeld Elemente enthält, die angezeigt, aber nicht ausgewählt werden können.|
-|LBS_NOTIFY|Das übergeordnete Fenster empfängt eine Eingabe Nachricht, wenn der Benutzer auf eine Zeichenfolge klickt oder doppelklickt.|
-|LBS_OWNERDRAWFIXED|Der Besitzer des Listen Felds ist für das Zeichnen des Inhalts verantwortlich. die Elemente im Listenfeld weisen die gleiche Höhe auf.|
-|LBS_OWNERDRAWVARIABLE|Der Besitzer des Listen Felds ist für das Zeichnen des Inhalts verantwortlich. die Elemente im Listenfeld sind variabel in Höhe.|
-|LBS_SORT|Zeichen folgen im Listenfeld sind alphabetisch sortiert.|
-|LBS_STANDARD|Zeichen folgen im Listenfeld sind alphabetisch sortiert, und das übergeordnete Fenster empfängt eine Eingabe Nachricht, sobald der Benutzer auf eine Zeichenfolge klickt oder doppelklickt. Das Listenfeld enthält die Rahmen auf allen Seiten.|
-|LBS_USETABSTOPS|Ermöglicht einem Listenfeld, beim Zeichnen der Zeichen folgen Tabstopps zu erkennen und zu erweitern. Die Standard Registerkarten Positionen sind 32 Dialog Einheiten. (Eine Dialog Einheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialog Einheit ist gleich 1-vierte der aktuellen Dialogfeld Basis-breiten Einheit. Die Dialog Basiseinheiten werden basierend auf der Höhe und der Breite der aktuellen System Schriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialog Basiseinheiten des Dialog Felds in Pixel zurück.) Dieser Stil sollte nicht mit LBS_OWNERDRAWFIXED verwendet werden.|
-|LBS_WANTKEYBOARDINPUT|Der Besitzer des Listen Felds empfängt WM_VKEYTOITEM oder WM_CHARTOITEM Meldungen, wenn der Benutzer eine Taste drückt, während das Listenfeld den Eingabefokus besitzt. Dies ermöglicht es einer Anwendung, eine spezielle Verarbeitung der Tastatureingaben auszuführen.|
+|LBS_NOTIFY|Das übergeordnete Fenster empfängt eine Eingabenachricht, wenn der Benutzer auf eine Zeichenfolge klickt oder auf eine Zeichenfolge doppelklickt.|
+|LBS_OWNERDRAWFIXED|Der Besitzer des Listenfelds ist für das Zeichnen des Inhalts verantwortlich. Die Elemente im Listenfeld haben die gleiche Höhe.|
+|LBS_OWNERDRAWVARIABLE|Der Besitzer des Listenfelds ist für das Zeichnen des Inhalts verantwortlich. Die Elemente im Listenfeld sind in der Höhe variabel.|
+|LBS_SORT|Zeichenfolgen im Listenfeld werden alphabetisch sortiert.|
+|Lbs_standard|Zeichenfolgen im Listenfeld werden alphabetisch sortiert, und das übergeordnete Fenster erhält eine Eingabemeldung, wenn der Benutzer auf eine Zeichenfolge klickt oder doppelklickt. Das Listenfeld enthält Aufzählungsgrenzen auf allen Seiten.|
+|LBS_USETABSTOPS|Ermöglicht einem Listenfeld das Erkennen und Erweitern von Tabstoppzeichen beim Zeichnen der Zeichenfolgen. Die Standard-Tabstopppositionen sind 32 Dialogeinheiten. (Eine Dialogeinheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialogeinheit entspricht einem Viertel der aktuellen Dialogbasisbreiteneinheit. Die Dialogbasiseinheiten werden basierend auf der Höhe und Breite der aktuellen Systemschriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialogbasiseinheiten in Pixel zurück.) Dieser Stil sollte nicht mit LBS_OWNERDRAWFIXED verwendet werden.|
+|LBS_WANTKEYBOARDINPUT|Der Besitzer des Listenfelds erhält WM_VKEYTOITEM oder WM_CHARTOITEM Nachrichten, wenn der Benutzer eine Taste drückt, während das Listenfeld den Eingabefokus hat. Dadurch kann eine Anwendung eine spezielle Verarbeitung am Tastatureingang durchführen.|
 
-## <a name="message-box-styles"></a>Meldungs Feld Stile
+## <a name="message-box-styles"></a><a name="message-box-styles"></a>Message-Box-Stile
 
-Meldungs Feld Stile gelten für [AfxMessageBox](../../mfc/reference/cstring-formatting-and-message-box-display.md#afxmessagebox) -Elemente. Geben Sie eine Kombination der Stile im *nType* -Parameter von `AfxMessageBox`an. Weitere Informationen zu MessageBox-Stilen in Windows finden Sie unter [MessageBox-Funktion (Windows)](/windows/win32/api/winuser/nf-winuser-messagebox).
+Meldungsfeldstile gelten für [AfxMessageBox-Elemente.](../../mfc/reference/cstring-formatting-and-message-box-display.md#afxmessagebox) Geben Sie eine Kombination von Stilen im *nType-Parameter* von `AfxMessageBox`an. Weitere Informationen zu Meldungsfeldstilen in Windows finden Sie unter [MessageBox Function (Windows)](/windows/win32/api/winuser/nf-winuser-messagebox).
 
-Die folgenden Meldungs Feld Stile sind verfügbar.
+Die folgenden Meldungsfeldstile sind verfügbar.
 
-### <a name="message-box-types"></a>Nachrichtenfeld Typen
+### <a name="message-box-types"></a>Message-Box-Typen
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|MB_ABORTRETRYIGNORE|Das Meldungs Feld enthält drei Pushbuttons: Abbrechen, wiederholen und ignorieren.|
-|MB_OK|Das Meldungs Feld enthält eine PUSHBUTTON: OK.|
-|MB_OKCANCEL|Das Meldungs Feld enthält zwei Pushbuttons: OK und Abbrechen.|
-|MB_RETRYCANCEL|Das Meldungs Feld enthält zwei Pushbuttons: wiederholen und Abbrechen.|
-|MB_YESNO|Das Meldungs Feld enthält zwei Pushbuttons: Ja und Nein.|
-|MB_YESNOCANCEL|Das Meldungs Feld enthält drei Pushbuttons: Ja, Nein und Abbrechen.|
+|MB_ABORTRETRYIGNORE|Das Meldungsfeld enthält drei Drucktasten: Abbrechen, Wiederholen und Ignorieren.|
+|Mb_ok|Das Meldungsfeld enthält einen Druckknopf: OK.|
+|MB_OKCANCEL|Das Meldungsfeld enthält zwei Drucktasten: OK und Abbrechen.|
+|MB_RETRYCANCEL|Das Meldungsfeld enthält zwei Drucktasten: Wiederholen und Abbrechen.|
+|MB_YESNO|Das Meldungsfeld enthält zwei Drucktasten: Ja und Nein.|
+|MB_YESNOCANCEL|Das Meldungsfeld enthält drei Drucktasten: Ja, Nein und Abbrechen.|
 
-### <a name="message-box-modality"></a>Meldungs Feld-Modalität
+### <a name="message-box-modality"></a>Message-Box-Modalität
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|MB_APPLMODAL|Der Benutzer muss auf das Meldungs Feld reagieren, bevor die Arbeit im aktuellen Fenster fortgesetzt wird. Der Benutzer kann jedoch zu den Fenstern anderer Anwendungen wechseln und in diesen Fenstern arbeiten. Der Standardwert ist MB_APPLMODAL, wenn weder MB_SYSTEMMODAL noch MB_TASKMODAL angegeben ist.|
-|MB_SYSTEMMODAL|Alle Anwendungen werden angehalten, bis der Benutzer auf das Meldungs Feld antwortet. System modale Meldungs Felder werden verwendet, um den Benutzer über ernsthafte, potenziell schädliche Fehler zu benachrichtigen, die sofortige Aufmerksamkeit erfordern und sparsam verwendet werden sollten.|
-|MB_TASKMODAL|Vergleichbar mit MB_APPLMODAL, aber nicht in einer Microsoft Foundation Class-Anwendung. Dieses Flag ist für eine aufrufenden Anwendung oder Bibliothek reserviert, für die kein Fenster Handle verfügbar ist.|
+|MB_APPLMODAL|Der Benutzer muss auf das Meldungsfeld antworten, bevor er die Arbeit im aktuellen Fenster fortsetzt. Der Benutzer kann jedoch zu den Fenstern anderer Anwendungen wechseln und in diesen Fenstern arbeiten. Der Standardwert ist MB_APPLMODAL, wenn weder MB_SYSTEMMODAL noch MB_TASKMODAL angegeben ist.|
+|MB_SYSTEMMODAL|Alle Anwendungen werden angehalten, bis der Benutzer auf das Meldungsfeld antwortet. Systemmodale Meldungsfelder werden verwendet, um den Benutzer über schwerwiegende, potenziell schädliche Fehler zu informieren, die sofortige Aufmerksamkeit erfordern und sparsam verwendet werden sollten.|
+|MB_TASKMODAL|Ähnlich wie MB_APPLMODAL, aber nicht nützlich in einer Microsoft Foundation-Klassenanwendung. Dieses Flag ist für eine aufrufende Anwendung oder Bibliothek reserviert, für die kein Fensterhandle verfügbar ist.|
 
-### <a name="message-box-icons"></a>Meldungs Feldsymbole
+### <a name="message-box-icons"></a>Message-Box-Symbole
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|MB_ICONEXCLAMATION|Im Meldungs Feld wird ein Ausrufezeichen Symbol angezeigt.|
-|MB_ICONINFORMATION|Ein Symbol, das aus einem "I" in einem Kreis besteht, wird im Meldungs Feld angezeigt.|
-|MB_ICONQUESTION|Im Meldungs Feld wird ein Fragezeichen Symbol angezeigt.|
-|MB_ICONSTOP|Im Meldungs Feld wird ein Symbol für das Abbrechen von Zeichen angezeigt.|
+|MB_ICONEXCLAMATION|Im Meldungsfeld wird ein Ausrufezeichensymbol angezeigt.|
+|MB_ICONINFORMATION|Im Meldungsfeld wird ein Symbol angezeigt, das aus einem "I" in einem Kreis besteht.|
+|MB_ICONQUESTION|Im Meldungsfeld wird ein Fragezeichensymbol angezeigt.|
+|MB_ICONSTOP|Im Meldungsfeld wird ein Stoppzeichensymbol angezeigt.|
 
-### <a name="message-box-default-buttons"></a>Standard Schaltflächen für Meldungs Felder
+### <a name="message-box-default-buttons"></a>Message-Box-Standardschaltflächen
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|MB_DEFBUTTON1|Die erste Schaltfläche ist die Standardeinstellung. Beachten Sie, dass die erste Schaltfläche immer der Standardwert ist, es sei denn, MB_DEFBUTTON2 oder MB_DEFBUTTON3 ist angegeben|
+|MB_DEFBUTTON1|Die erste Schaltfläche ist die Standardeinstellung. Beachten Sie, dass die erste Schaltfläche immer die Standardeinstellung ist, es sei denn, MB_DEFBUTTON2 oder MB_DEFBUTTON3 angegeben ist.|
 |MB_DEFBUTTON2|Die zweite Schaltfläche ist die Standardschaltfläche.|
 |MB_DEFBUTTON3|Die dritte Schaltfläche ist die Standardschaltfläche.|
 
-## <a name="scroll-bar-styles"></a>ScrollBar-Stile
+## <a name="scroll-bar-styles"></a><a name="scroll-bar-styles"></a>Scroll-Bar-Stile
 
-ScrollBar-Stile gelten für [cscrollbar-Klassen](../../mfc/reference/cscrollbar-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [cscrollbar:: Create](../../mfc/reference/cscrollbar-class.md#create)an. Weitere Informationen zu ScrollBar-Steuerelement Stilen in Windows finden Sie unter [ScrollBar-Steuerelement Stile (Windows)](/windows/win32/Controls/scroll-bar-control-styles).
+Scrollleistenstile gelten für [CScrollBar-Klassenobjekte.](../../mfc/reference/cscrollbar-class.md) Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CScrollBar::Create](../../mfc/reference/cscrollbar-class.md#create)an. Weitere Informationen zu Bildlaufleistensteuerelementen in Windows finden Sie unter [Scroll leistenSteuerformatvorlagen (Windows)](/windows/win32/Controls/scroll-bar-control-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|SBS_BOTTOMALIGN|Wird mit dem SBS_HORZ Stil verwendet. Der untere Rand der Bild Lauf Leiste wird am unteren Rand des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben wird. Die Bild Lauf Leiste verfügt über die Standardhöhe für System Scrollleisten.|
-|SBS_HORZ|Legt eine horizontale Schiebe Leiste fest. Wenn weder der SBS_BOTTOMALIGN noch SBS_TOPALIGN Stil angegeben ist, weist die Scrollleiste die Höhe, Breite und Position in der `Create` Member-Funktion auf.|
-|SBS_LEFTALIGN|Wird mit dem SBS_VERT Stil verwendet. Der linke Rand der Scrollleiste wird am linken Rand des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben ist. Die Bild Lauf Leiste verfügt über die Standardbreite für System Scrollleisten.|
-|SBS_RIGHTALIGN|Wird mit dem SBS_VERT Stil verwendet. Der Rechte Rand der Scrollleiste wird am rechten Rand des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben ist. Die Bild Lauf Leiste verfügt über die Standardbreite für System Scrollleisten.|
-|SBS_SIZEBOX|Legt ein Größen Feld fest. Wenn weder der SBS_SIZEBOXBOTTOMRIGHTALIGN noch SBS_SIZEBOXTOPLEFTALIGN Stil angegeben ist, weist das Feld Größe die Höhe, die Breite und die Position in der `Create` Member-Funktion auf.|
-|SBS_SIZEBOXBOTTOMRIGHTALIGN|Wird mit dem SBS_SIZEBOX Stil verwendet. Die untere rechte Ecke des Felds Größe wird an der unteren rechten Ecke des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben ist. Das Feld Größe hat die Standardgröße für die Felder Systemgröße.|
-|SBS_SIZEBOXTOPLEFTALIGN|Wird mit dem SBS_SIZEBOX Stil verwendet. Die linke obere Ecke des Felds Größe wird an der oberen linken Ecke des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben ist. Das Feld Größe hat die Standardgröße für die Felder Systemgröße.|
-|SBS_SIZEGRIP|Identisch mit SBS_SIZEBOX, aber mit einer erhöhten Kante.|
-|SBS_TOPALIGN|Wird mit dem SBS_HORZ Stil verwendet. Der obere Rand der Scrollleiste wird am oberen Rand des Rechtecks ausgerichtet, das in der `Create` Member-Funktion angegeben ist. Die Bild Lauf Leiste verfügt über die Standardhöhe für System Scrollleisten.|
-|SBS_VERT|Bezeichnet eine vertikale Schiebe Leiste. Wenn weder der SBS_RIGHTALIGN noch SBS_LEFTALIGN Stil angegeben ist, weist die Scrollleiste die Höhe, Breite und Position in der `Create` Member-Funktion auf.|
+|SBS_BOTTOMALIGN|Wird mit dem SBS_HORZ-Stil verwendet. Der untere Rand der Bildlaufleiste wird am unteren `Create` Rand des in der Memberfunktion angegebenen Rechtecks ausgerichtet. Die Bildlaufleiste hat die Standardhöhe für Systembildlaufleisten.|
+|SBS_HORZ|Bezeichnet eine horizontale Bildlaufleiste. Wenn weder die SBS_BOTTOMALIGN noch SBS_TOPALIGN Stil angegeben ist, weist die `Create` Bildlaufleiste die Höhe, Breite und Position auf, die in der Memberfunktion angegeben ist.|
+|SBS_LEFTALIGN|Wird mit dem SBS_VERT-Stil verwendet. Der linke Rand der Bildlaufleiste wird am linken Rand des in der `Create` Memberfunktion angegebenen Rechtecks ausgerichtet. Die Bildlaufleiste hat die Standardbreite für Systembildlaufleisten.|
+|SBS_RIGHTALIGN|Wird mit dem SBS_VERT-Stil verwendet. Der rechte Rand der Bildlaufleiste wird am rechten Rand des in der `Create` Memberfunktion angegebenen Rechtecks ausgerichtet. Die Bildlaufleiste hat die Standardbreite für Systembildlaufleisten.|
+|SBS_SIZEBOX|Bezeichnet ein Größenfeld. Wenn weder die SBS_SIZEBOXBOTTOMRIGHTALIGN noch SBS_SIZEBOXTOPLEFTALIGN Stil angegeben ist, weist das `Create` Größenfeld die Höhe, Breite und Position auf, die in der Memberfunktion angegeben sind.|
+|SBS_SIZEBOXBOTTOMRIGHTALIGN|Wird mit dem SBS_SIZEBOX-Stil verwendet. Die untere rechte Ecke des Größenfelds wird an der unteren rechten `Create` Ecke des Rechtecks ausgerichtet, die in der Memberfunktion angegeben ist. Das Größenfeld hat die Standardgröße für Systemgrößenfelder.|
+|SBS_SIZEBOXTOPLEFTALIGN|Wird mit dem SBS_SIZEBOX-Stil verwendet. Die obere linke Ecke des Größenfelds wird an der oberen linken `Create` Ecke des rechteckigen Rechtecks ausgerichtet, die in der Memberfunktion angegeben ist. Das Größenfeld hat die Standardgröße für Systemgrößenfelder.|
+|SBS_SIZEGRIP|Genauso wie SBS_SIZEBOX, aber mit erhöhter Kante.|
+|SBS_TOPALIGN|Wird mit dem SBS_HORZ-Stil verwendet. Der obere Rand der Bildlaufleiste wird am oberen Rand des in der `Create` Memberfunktion angegebenen Rechtecks ausgerichtet. Die Bildlaufleiste hat die Standardhöhe für Systembildlaufleisten.|
+|SBS_VERT|Bezeichnet eine vertikale Bildlaufleiste. Wenn weder die SBS_RIGHTALIGN noch SBS_LEFTALIGN Stil angegeben ist, weist die `Create` Bildlaufleiste die Höhe, Breite und Position auf, die in der Memberfunktion angegeben ist.|
 
-## <a name="static-styles"></a>Statische Stile
+## <a name="static-styles"></a><a name="static-styles"></a>Statische Stile
 
-Statische Stile gelten für [cstatic-Klassen](../../mfc/reference/cstatic-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwstyle* -Parameter von [cstatic:: Create](../../mfc/reference/cstatic-class.md#create)an. Weitere Informationen zu statischen Steuerelement Stilen in Windows finden Sie unter [statische Steuerelement Stile (Windows)](/windows/win32/Controls/static-control-styles).
+Statische Stile gelten für [CStatic](../../mfc/reference/cstatic-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* [von CStatic::Create](../../mfc/reference/cstatic-class.md#create)an. Weitere Informationen zu statischen Steuerelementstilen in Windows finden Sie unter [Statische Steuerelementstile (Windows)](/windows/win32/Controls/static-control-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|SS_BITMAP|Gibt an, dass eine Bitmap im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Bitmap (kein Dateiname), die an anderer Stelle in der Ressourcen Datei definiert ist. Der Stil ignoriert die Parameter "nwidth" und "nheight". das-Steuerelement passt sich automatisch an die Bitmap an.|
-|SS_BLACKFRAME|Gibt ein Feld mit einem Frame an, der mit der gleichen Farbe wie Fensterrahmen gezeichnet wird. Die Standardeinstellung ist schwarz.|
-|SS_BLACKRECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, mit der Fensterrahmen gezeichnet werden. Die Standardeinstellung ist schwarz.|
-|SS_CENTER|Gibt ein einfaches Rechteck an und zeigt den angegebenen Text an, der im Rechteck zentriert ist. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die über das Ende einer Linie hinaus erweitert werden, werden automatisch an den Anfang der nächsten zentrierten Linie umschließt.|
-|SS_CENTERIMAGE|Gibt an, dass der Rest des Client Bereichs mit der Farbe des Pixels in der oberen linken Ecke der Bitmap oder des Symbols gefüllt ist, wenn die Bitmap oder das Symbol kleiner als der Client Bereich des statischen Steuer Elements ist. Wenn das statische Steuerelement eine einzelne Textzeile enthält, wird der Text im Client Bereich des Steuer Elements vertikal zentriert.|
-|SS_ENDELLIPSIS|oder SS_PATHELLIPSIS ersetzt bei Bedarf einen Teil der angegebenen Zeichenfolge durch Ellipsen, damit das Ergebnis in das angegebene Rechteck passt. <br /><br />Sie können angeben, SS_END_ELLIPSIS Zeichen am Ende der Zeichenfolge zu ersetzen, oder SS_PATHELLIPSIS, um Zeichen in der Mitte der Zeichenfolge zu ersetzen. Wenn die Zeichenfolge einen umgekehrten Schrägstrich (\\) enthält, behält SS_PATHELLIPSIS so viel Text nach dem letzten umgekehrten Schrägstrich wie möglich bei.|
-|SS_ENHMETAFILE|Gibt an, dass eine erweiterte Metadatei im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Metadatei. Ein statisches Steuerelement für Erweiterte Metadateien hat eine Größe mit fester Größe. die Metadatei wird so skaliert, dass Sie in den Client Bereich des statischen Steuer Elements passt.|
-|SS_ETCHEDFRAME|Zeichnet den Rahmen des statischen-Steuer Elements unter Verwendung des EDGE_ETCHED Edge-Stils.|
-|SS_ETCHEDHORZ|Zeichnet den oberen und unteren Rand des statischen Steuer Elements unter Verwendung des EDGE_ETCHED Edge-Stils.|
-|SS_ETCHEDVERT|Zeichnet den linken und rechten Rand des statischen Steuer Elements unter Verwendung des EDGE_ETCHED Edge-Stils.|
-|SS_GRAYFRAME|Gibt ein Feld mit einem Frame an, der mit der gleichen Farbe wie der Bildschirmhintergrund (Desktop) gezeichnet wird. Die Standardeinstellung ist grau.|
-|SS_GRAYRECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, mit der der Bildschirmhintergrund ausgefüllt wird. Die Standardeinstellung ist grau.|
-|SS_ICON|Gibt ein Symbol an, das im Dialogfeld angezeigt wird. Der angegebene Text ist der Name eines Symbols (kein Dateiname), das an anderer Stelle in der Ressourcen Datei definiert ist. Die Parameter " *nwidth* " und " *nheight* " werden ignoriert. das Symbol passt sich automatisch an.|
-|SS_LEFT|Gibt ein einfaches Rechteck an und zeigt die angegebene Text Leerung Links im Rechteck an. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die über das Ende einer Linie hinaus erweitert werden, werden automatisch an den Anfang der nächsten Leerungs linken Zeile umschließt.|
-|SS_LEFTNOWORDWRAP|Gibt ein einfaches Rechteck an und zeigt die angegebene Text Leerung Links im Rechteck an. Registerkarten werden erweitert, aber Wörter werden nicht umschließt. Text, der über das Ende einer Zeile hinausgeht, wird abgeschnitten.|
-|SS_NOPREFIX|Wenn dieser Stil nicht angegeben wird, interpretiert Windows alle kaufmännischen und-Zeichen (&) im Text des Steuer Elements als Zugriffstasten Präfix Zeichen. In diesem Fall wird das kaufmännische und-Zeichen entfernt, und das nächste Zeichen in der Zeichenfolge wird unterstrichen. Wenn ein statisches Steuerelement Text enthalten soll, in dem diese Funktion nicht erwünscht ist, können SS_NOPREFIX hinzugefügt werden. Dieser Stil für statisches Steuerelement kann in einem der definierten statischen Steuerelemente enthalten sein. Sie können SS_NOPREFIX mithilfe des bitweisen OR-Operators mit anderen Stilen kombinieren. Dies wird am häufigsten verwendet, wenn Dateinamen oder andere Zeichen folgen, die möglicherweise ein kaufmännisches und-Zeichen enthalten, in einem statischen Steuerelement in einem Dialogfeld angezeigt werden müssen.|
-|SS_NOTIFY|Sendet das übergeordnete Fenster STN_CLICKED, STN_DBLCLK, STN_DISABLE und STN_ENABLE Benachrichtigungs Meldungen, wenn der Benutzer auf das Steuerelement klickt oder doppelklickt.|
-|SS_OWNERDRAW|Gibt an, dass der Besitzer des statischen Steuer Elements für das Zeichnen des Steuer Elements verantwortlich ist. Das Besitzer Fenster empfängt eine WM_DRAWITEM Nachricht, wenn das Steuerelement gezeichnet werden muss.|
-|SS_REALSIZEIMAGE|Verhindert, dass ein statisches Symbol oder Bitmap-Steuerelement (d. h. statische Steuerelemente, bei denen die SS_ICON oder SS_BITMAP Formatvorlagen) in der Größe geändert werden, während Sie geladen oder gezeichnet werden. Wenn das Symbol oder die Bitmap größer als der Zielbereich ist, wird das Bild abgeschnitten.|
-|SS_RIGHT|Legt ein einfaches Rechteck fest und zeigt das angegebene Text Leerungs Recht im Rechteck an. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die über das Ende einer Linie hinaus erweitert werden, werden automatisch an den Anfang der nächsten Leerungs rechten Zeile umschließt.|
-|SS_RIGHTJUST|Gibt an, dass die untere rechte Ecke eines statischen Steuer Elements mit dem SS_BITMAP oder SS_ICON Stil korrigiert bleiben soll, wenn die Größe des Steuer Elements geändert wird. Nur die obere und linke Seite werden angepasst, um eine neue Bitmap oder ein neues Symbol zu bieten.|
-|SS_SIMPLE|Gibt ein einfaches Rechteck an und zeigt eine einzelne Textzeile im Rechteck an. Die Textzeile kann in keiner Weise gekürzt oder geändert werden. (Das übergeordnete Fenster oder Dialogfeld des Steuer Elements darf die WM_CTLCOLOR Nachricht nicht verarbeiten.)|
-|SS_SUNKEN|Zeichnet einen halb abgesenkten Rahmen um ein statisches-Steuerelement.|
+|SS_BITMAP|Gibt an, dass eine Bitmap im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Bitmap (kein Dateiname), die an anderer Stelle in der Ressourcendatei definiert ist. Der Stil ignoriert die Parameter nWidth und nHeight. Das Steuerelement wird automatisch an die Bitmap angepasst.|
+|Ss_blackframe|Gibt ein Feld mit einem Rahmen an, der mit der gleichen Farbe wie Fensterrahmen gezeichnet ist. Die Standardeinstellung ist schwarz.|
+|SS_BLACKRECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, die zum Zeichnen von Fensterrahmen verwendet wird. Die Standardeinstellung ist schwarz.|
+|SS_CENTER|Bezeichnet ein einfaches Rechteck und zeigt den angegebenen Text an, der im Rechteck zentriert ist. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die sich über das Ende einer Zeile erstrecken, werden automatisch an den Anfang der nächsten zentrierten Zeile umbrochen.|
+|SS_CENTERIMAGE|Gibt an, dass, wenn die Bitmap oder das Symbol kleiner als der Clientbereich des statischen Steuerelements ist, der Rest des Clientbereichs mit der Farbe des Pixels in der oberen linken Ecke der Bitmap oder des Symbols gefüllt ist. Wenn das statische Steuerelement eine einzelne Textzeile enthält, wird der Text vertikal im Clientbereich des Steuerelements zentriert.|
+|SS_ENDELLIPSIS|oder SS_PATHELLIPSIS Ersetzt bei Bedarf einen Teil der angegebenen Zeichenfolge durch Ellipsen, sodass das Ergebnis in das angegebene Rechteck passt. <br /><br />Sie können SS_END_ELLIPSIS angeben, um Zeichen am Ende der Zeichenfolge zu ersetzen, oder SS_PATHELLIPSIS Zeichen in der Mitte der Zeichenfolge ersetzen. Wenn die Zeichenfolge umgekehrte\\Schrägstriche ( ) enthält, behält SS_PATHELLIPSIS so viel textwie möglich nach dem letzten umgekehrten Schrägstrich bei.|
+|SS_ENHMETAFILE|Gibt an, dass eine erweiterte Metadatei im statischen Steuerelement angezeigt werden soll. Der angegebene Text ist der Name einer Metadatei. Ein erweitertes statisches Metadateisteuerelement hat eine feste Größe. Die Metadatei wird so skaliert, dass sie an den Clientbereich des statischen Steuerelements passt.|
+|SS_ETCHEDFRAME|Zeichnet den Rahmen des statischen Steuerelements mit dem EDGE_ETCHED Kantenstil.|
+|SS_ETCHEDHORZ|Zeichnet die oberen und unteren Ränder des statischen Steuerelements mit dem EDGE_ETCHED Kantenstil.|
+|SS_ETCHEDVERT|Zeichnet den linken und rechten Rand des statischen Steuerelements mithilfe des EDGE_ETCHED Kantenstil.|
+|SS_GRAYFRAME|Gibt ein Feld mit einem Rahmen an, der mit der gleichen Farbe wie der Bildschirmhintergrund (Desktop) gezeichnet ist. Die Standardeinstellung ist grau.|
+|SS_GRAYRECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, die zum Ausfüllen des Bildschirmhintergrunds verwendet wird. Die Standardeinstellung ist grau.|
+|SS_ICON|Legt ein Symbol fest, das im Dialogfeld angezeigt wird. Der angegebene Text ist der Name eines Symbols (kein Dateiname), das an anderer Stelle in der Ressourcendatei definiert ist. Die Parameter *nWidth* und *nHeight* werden ignoriert. das Symbol wird automatisch selbst angepasst.|
+|SS_LEFT|Bezeichnet ein einfaches Rechteck und zeigt den angegebenen Text bündig links im Rechteck an. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die sich über das Ende einer Zeile erstrecken, werden automatisch an den Anfang der nächsten flush-left-Zeile umbrochen.|
+|SS_LEFTNOWORDWRAP|Bezeichnet ein einfaches Rechteck und zeigt den angegebenen Text bündig links im Rechteck an. Registerkarten werden erweitert, Aber Wörter werden nicht umbrochen. Text, der sich über das Ende einer Zeile erstreckt, wird abgeschnitten.|
+|SS_NOPREFIX|Sofern dieser Stil nicht angegeben wird, interpretiert Windows alle & Zeichen im Text des Steuerelements als Beschleunigerpräfixzeichen. In diesem Fall wird das spersand entfernt und das nächste Zeichen in der Zeichenfolge unterstrichen. Wenn ein statisches Steuerelement Text enthalten soll, bei dem dieses Feature nicht gewünscht wird, kann SS_NOPREFIX hinzugefügt werden. Dieser statische Steuerungsstil kann in einem der definierten statischen Steuerelemente enthalten sein. Sie können SS_NOPREFIX mit anderen Stilen kombinieren, indem Sie den bitweisen ODER-Operator verwenden. Dies wird am häufigsten verwendet, wenn Dateinamen oder andere Zeichenfolgen, die möglicherweise ein bildnerziels enthalten, in einem statischen Steuerelement in einem Dialogfeld angezeigt werden müssen.|
+|SS_NOTIFY|Sendet das übergeordnete Fenster STN_CLICKED, STN_DBLCLK, STN_DISABLE und STN_ENABLE Benachrichtigungen, wenn der Benutzer auf das Steuerelement klickt oder auf das Steuerelement doppelklickt.|
+|SS_OWNERDRAW|Gibt an, dass der Besitzer des statischen Steuerelements für das Zeichnen des Steuerelements verantwortlich ist. Das Besitzerfenster erhält eine WM_DRAWITEM Nachricht, wenn das Steuerelement gezeichnet werden muss.|
+|SS_REALSIZEIMAGE|Verhindert, dass die Größe eines statischen Symbols oder Bitmapsteuerelements (d. h. statische Steuerelemente mit dem SS_ICON oder SS_BITMAP Stil) beim Laden oder Zeichnen geändert wird. Wenn das Symbol oder die Bitmap größer als der Zielbereich ist, wird das Bild abgeschnitten.|
+|SS_RIGHT|Bezeichnet ein einfaches Rechteck und zeigt den angegebenen Text bündig rechts im Rechteck an. Der Text wird formatiert, bevor er angezeigt wird. Wörter, die sich über das Ende einer Zeile erstrecken, werden automatisch an den Anfang der nächsten flush-rechten Zeile umbrochen.|
+|SS_RIGHTJUST|Gibt an, dass die untere rechte Ecke eines statischen Steuerelements mit dem stil SS_BITMAP oder SS_ICON beibehalten werden soll, wenn die Größe des Steuerelements geändert wird. Nur die obere und linke Seite werden angepasst, um eine neue Bitmap oder ein neues Symbol aufzunehmen.|
+|SS_SIMPLE|Bezeichnet ein einfaches Rechteck und zeigt eine einzelne Textzeile links im Rechteck an. Die Textzeile kann in keiner Weise gekürzt oder geändert werden. (Das übergeordnete Fenster oder Dialogfeld des Steuerelements darf die WM_CTLCOLOR Nachricht nicht verarbeiten.)|
+|SS_SUNKEN|Zeichnet einen halb versunkenen Rahmen um ein statisches Steuerelement.|
 |SS_USERITEM|Gibt ein benutzerdefiniertes Element an.|
-|SS_WHITEFRAME|Gibt ein Feld mit einem Frame an, der mit der gleichen Farbe wie der Fenster Hintergrund gezeichnet wird. Der Standardwert ist Weiß.|
-|SS_WHITERECT|Gibt ein Rechteck mit der Farbe an, mit der der Hintergrund des Fensters aufgefüllt wird. Der Standardwert ist Weiß.|
-|SS_WORDELLIPSIS|Verkürzt Text, der nicht passt, und fügt Ellipsen hinzu.|
+|SS_WHITEFRAME|Gibt ein Feld mit einem Rahmen an, der mit der gleichen Farbe wie der Fensterhintergrund gezeichnet ist. Der Standardwert ist Weiß.|
+|SS_WHITERECT|Gibt ein Rechteck an, das mit der Farbe gefüllt ist, die zum Ausfüllen des Fensterhintergrunds verwendet wird. Der Standardwert ist Weiß.|
+|SS_WORDELLIPSIS|Truncates Text, der nicht passt, und fügt Ellipsen hinzu.|
 
-## <a name="window-styles"></a>Fenster Stile
+## <a name="window-styles"></a><a name="window-styles"></a>Fensterstile
 
-Fenster Stile gelten für [CWnd-Klassen](../../mfc/reference/cwnd-class.md) Objekte. Geben Sie eine Kombination der Stile im Parameter " *dwstyle* " von [CWnd:: Create](../../mfc/reference/cwnd-class.md#create) oder [CWnd:: foateex](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu Fenster Stilen in Windows finden Sie unter [Fenster Stile (Windows)](/windows/win32/winmsg/window-styles).
+Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwStyle-Parameter* von [CWnd::Create](../../mfc/reference/cwnd-class.md#create) oder [CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu Fensterstilen in Windows finden Sie unter [Fensterformate (Windows)](/windows/win32/winmsg/window-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|WS_BORDER|Erstellt ein Fenster mit einem Rahmen.|
-|WS_CAPTION|Erstellt ein Fenster, das über eine Titelleiste verfügt (impliziert den WS_BORDER Stil). Kann nicht mit dem WS_DLGFRAME-Stil verwendet werden.|
-|WS_CHILD|Erstellt ein untergeordnetes Fenster. Kann nicht mit dem WS_POPUP Stil verwendet werden.|
-|WS_CHILDWINDOW|Identisch mit dem WS_CHILD Stil.|
-|WS_CLIPCHILDREN|Schließt den von untergeordneten Fenstern belegten Bereich aus, wenn Sie innerhalb des übergeordneten Fensters zeichnen. Wird verwendet, wenn Sie das übergeordnete Fenster erstellen.|
-|WS_CLIPSIBLINGS|Schneidet untergeordnete Fenster relativ zueinander ab. Das heißt, wenn ein bestimmtes untergeordnetes Fenster eine Paint-Meldung empfängt, schneidet der WS_CLIPSIBLINGS Stil alle anderen überlappenden untergeordneten Fenster aus dem Bereich des untergeordneten Fensters ab, das aktualisiert werden soll. (Wenn WS_CLIPSIBLINGS nicht angegeben wird und untergeordnete Fenster überlappen, ist es möglich, im Client Bereich eines untergeordneten Fensters zu zeichnen, wenn Sie im Client Bereich eines untergeordneten Fensters zeichnen.) Nur für die Verwendung mit dem WS_CHILD-Stil.|
-|WS_DISABLED|Erstellt ein Fenster, das anfänglich deaktiviert ist.|
+|Ws_border|   Erstellt ein Fenster mit einem Rahmen.|
+|WS_CAPTION|Erstellt ein Fenster mit einer Titelleiste (impliziert den stilWS_BORDER Stil). Kann nicht mit dem WS_DLGFRAME-Stil verwendet werden.|
+|Ws_child|Erstellt ein untergeordnetes Fenster. Kann nicht mit dem WS_POPUP-Stil verwendet werden.|
+|WS_CHILDWINDOW|Genauso wie der WS_CHILD-Stil.|
+|Ws_clipchildren|Schließt den Bereich aus, der von untergeordneten Fenstern belegt wird, wenn Sie innerhalb des übergeordneten Fensters zeichnen. Wird verwendet, wenn Sie das übergeordnete Fenster erstellen.|
+|WS_CLIPSIBLINGS|Schneidet untergeordnete Fenster relativ zueinander; Wenn also ein bestimmtes untergeordnetes Fenster eine Paint-Meldung empfängt, schneidet der WS_CLIPSIBLINGS Stil alle anderen überlappenden untergeordneten Fenster aus dem Bereich des zu aktualisierenden untergeordneten Fensters ab. (Wenn WS_CLIPSIBLINGS nicht angegeben ist und sich untergeordnete Fenster überlappen, ist es beim Zeichnen innerhalb des Clientbereichs eines untergeordneten Fensters möglich, innerhalb des Clientbereichs eines benachbarten untergeordneten Fensters zu zeichnen.) Nur zur Verwendung mit dem stilisten WS_CHILD.|
+|Ws_disabled|Erstellt ein Fenster, das zunächst deaktiviert ist.|
 |WS_DLGFRAME|Erstellt ein Fenster mit einem doppelten Rahmen, aber ohne Titel.|
 |WS_GROUP|Gibt das erste Steuerelement einer Gruppe von Steuerelementen an, in der der Benutzer mit den Pfeiltasten von einem Steuerelement zum nächsten wechseln kann. Alle Steuerelemente, die nach dem ersten Steuerelement mit dem WS_GROUP-Stil FALSE definiert wurden, gehören zu derselben Gruppe. Mit dem nächsten Steuerelement im WS_GROUP-Stil beginnt die nächste Gruppe (das heißt, eine Gruppe endet dort, wo die folgende beginnt).|
-|WS_HSCROLL|Erstellt ein Fenster mit einer horizontalen Schiebe Leiste.|
-|WS_ICONIC|Erstellt ein Fenster, das anfänglich minimiert wird. Identisch mit dem WS_MINIMIZE-Stil.|
-|WS_MAXIMIZE|Erstellt ein Fenster mit der maximalen Größe.|
-|WS_MAXIMIZEBOX|Erstellt ein Fenster mit einer Schaltfläche zum maximieren.|
-|WS_MINIMIZE|Erstellt ein Fenster, das anfänglich minimiert wird. Nur zur Verwendung mit dem WS_OVERLAPPED-Stil.|
-|WS_MINIMIZEBOX|Erstellt ein Fenster mit der Schaltfläche minimieren.|
+|WS_HSCROLL|Erstellt ein Fenster mit einer horizontalen Bildlaufleiste.|
+|WS_ICONIC|Erstellt ein Fenster, das zunächst minimiert wird. Identisch mit dem WS_MINIMIZE-Stil.|
+|WS_MAXIMIZE|Erstellt ein Fenster mit maximaler Größe.|
+|WS_MAXIMIZEBOX|Erstellt ein Fenster mit einer Schaltfläche Maximieren.|
+|WS_MINIMIZE|Erstellt ein Fenster, das zunächst minimiert wird. Nur zur Verwendung mit dem WS_OVERLAPPED-Stil.|
+|WS_MINIMIZEBOX|Erstellt ein Fenster mit einer Schaltfläche Minimieren.|
 |WS_OVERLAPPED|Erstellt ein überlappendes Fenster. Ein überlappende Fenster hat normalerweise eine Beschriftung und einen Rahmen.|
-|WS_OVERLAPPEDWINDOW|Erstellt ein überlappendes Fenster mit den Stilen WS_OVERLAPPED, WS_CAPTION, WS_SYSMENU, WS_THICKFRAME, WS_MINIMIZEBOX und WS_MAXIMIZEBOX.|
-|WS_POPUP|Erstellt ein Popup Fenster. Kann nicht mit dem WS_CHILD-Stil verwendet werden.|
-|WS_POPUPWINDOW|Erstellt ein Popup Fenster mit den Formaten WS_BORDER, WS_POPUP und WS_SYSMENU. Der WS_CAPTION-Stil muss mit dem WS_POPUPWINDOW-Stil kombiniert werden, um das Systemmenü sichtbar zu machen.|
-|WS_SIZEBOX|Erstellt ein Fenster, das über einen Größen Anpassungsrahmen verfügt. Identisch mit dem WS_THICKFRAME-Stil.|
-|WS_SYSMENU|Erstellt ein Fenster, das in der Titelleiste ein Menü Feld mit einem Steuerelement enthält. Nur zur Verwendung für Fenster mit Titelleisten.|
-|WS_TABSTOP|Gibt eine beliebige Anzahl von Steuerelementen an, über die der Benutzer mit der Tab-Taste bewegt werden kann. Mit der TAB-TASTE wechselt der Benutzer zum nächsten Steuerelement, das durch den WS_TABSTOP-Stil angegeben ist.|
-|WS_THICKFRAME|Erstellt ein Fenster mit einem dicken Rahmen, der verwendet werden kann, um das Fenster zu verkleinern.|
-|WS_TILED|Erstellt ein überlappendes Fenster. Ein überlappendes Fenster hat eine Titelleiste und einen Rahmen. Identisch mit dem WS_OVERLAPPED Stil.|
-|WS_TILEDWINDOW|Erstellt ein überlappendes Fenster mit den Stilen WS_OVERLAPPED, WS_CAPTION, WS_SYSMENU, WS_THICKFRAME, WS_MINIMIZEBOX und WS_MAXIMIZEBOX. Identisch mit dem WS_OVERLAPPEDWINDOW-Stil.|
-|WS_VISIBLE|Erstellt ein Fenster, das anfänglich sichtbar ist.|
-|WS_VSCROLL|Erstellt ein Fenster mit einer vertikalen Bild Lauf Leiste.|
+|WS_OVERLAPPEDWINDOW|Erstellt ein überlappendes Fenster mit den WS_OVERLAPPED-, WS_CAPTION-, WS_SYSMENU-, WS_THICKFRAME-, WS_MINIMIZEBOX- und WS_MAXIMIZEBOX-Formatvorlagen.|
+|WS_POPUP|   Erstellt ein Popupfenster. Kann nicht mit dem WS_CHILD-Stil verwendet werden.|
+|WS_POPUPWINDOW|Erstellt ein Popupfenster mit den WS_BORDER-, WS_POPUP- und WS_SYSMENU-Stilen. Der WS_CAPTION-Stil muss mit dem WS_POPUPWINDOW-Stil kombiniert werden, um das Systemmenü sichtbar zu machen.|
+|WS_SIZEBOX|Erstellt ein Fenster mit einem Größenrahmen. Identisch mit dem WS_THICKFRAME-Stil.|
+|Ws_sysmenu|Erstellt ein Fenster mit einem Steuerelementmenüfeld in der Titelleiste. Nur zur Verwendung für Fenster mit Titelleisten.|
+|Ws_tabstop|Gibt eines von einer beliebigen Anzahl von Steuerelementen an, durch die der Benutzer mithilfe der TAB-Taste wechseln kann. Mit der TAB-TASTE wechselt der Benutzer zum nächsten Steuerelement, das durch den WS_TABSTOP-Stil angegeben ist.|
+|WS_THICKFRAME|Erstellt ein Fenster mit einem dicken Rahmen, mit dem das Fenster vergrößert werden kann.|
+|WS_TILED|Erstellt ein überlappendes Fenster. Ein überlappendes Fenster hat eine Titelleiste und einen Rahmen. Genauso wie der WS_OVERLAPPED-Stil.|
+|WS_TILEDWINDOW|Erstellt ein überlappendes Fenster mit den WS_OVERLAPPED-, WS_CAPTION-, WS_SYSMENU-, WS_THICKFRAME-, WS_MINIMIZEBOX- und WS_MAXIMIZEBOX-Formatvorlagen. Identisch mit dem WS_OVERLAPPEDWINDOW-Stil.|
+|Ws_visible|Erstellt ein Fenster, das zunächst sichtbar ist.|
+|WS_VSCROLL|Erstellt ein Fenster mit einer vertikalen Bildlaufleiste.|
 
-## <a name="extended-window-styles"></a>Erweiterte Fenster Stile
+## <a name="extended-window-styles"></a><a name="extended-window-styles"></a>Erweiterte Fensterstile
 
-Erweiterte Fenster Stile gelten für [CWnd-Klassen](../../mfc/reference/cwnd-class.md) Objekte. Geben Sie eine Kombination der Stile im *dwExStyle* -Parameter von [CWnd:: foateex](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu erweiterten Fenster Stilen in Windows finden Sie unter [Erweiterte Fenster Stile (Windows)](/windows/win32/winmsg/extended-window-styles).
+Erweiterte Fensterstile gelten für [CWnd](../../mfc/reference/cwnd-class.md) Class-Objekte. Geben Sie eine Kombination von Stilen im *dwExStyle-Parameter* von [CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex)an. Weitere Informationen zu erweiterten Fensterstilen in Windows finden Sie unter [Erweiterte Fensterstile (Windows)](/windows/win32/winmsg/extended-window-styles).
 
-|Stil|Beschreibung|
+|Stil|BESCHREIBUNG|
 |-----------|-----------------|
-|WS_EX_ACCEPTFILES|Gibt an, dass ein Fenster, das mit diesem Stil erstellt wird, Drag & Drop-Dateien akzeptiert.|
+|WS_EX_ACCEPTFILES|Gibt an, dass ein mit diesem Stil erstelltes Fenster Drag-and-Drop-Dateien akzeptiert.|
 |WS_EX_APPWINDOW|Erzwingt ein Fenster der obersten Ebene auf der Taskleiste, wenn das Fenster sichtbar ist.|
-|WS_EX_CLIENTEDGE|Gibt an, dass ein Fenster einen 3D-Look hat, d. –. einen Rahmen mit einem abgesenkten Rand.|
-|WS_EX_CONTEXTHELP|Schließt ein Fragezeichen in der Titelleiste des Fensters ein. Wenn der Benutzer auf das Fragezeichen klickt, wird der Cursor zu einem Fragezeichen geändert. Wenn der Benutzer anschließend auf ein untergeordnetes Fenster klickt, empfängt das untergeordnete Fenster eine WM_HELP-Meldung.|
-|WS_EX_CONTROLPARENT|Ermöglicht dem Benutzer, mithilfe der Tab-Taste zwischen den untergeordneten Fenstern des Fensters zu navigieren.|
-|WS_EX_DLGMODALFRAME|Legt ein Fenster mit einem doppelten Rahmen fest, das (optional) mit einer Titelleiste erstellt werden kann, wenn Sie das WS_CAPTION Style-Flag im *dwstyle* -Parameter angeben.|
-|WS_EX_LAYERED|Das Fenster ist ein überlappendes [Fenster](/windows/win32/winmsg/window-features). Dieser Stil kann nicht verwendet werden, wenn das Fenster einen [Klassen Stil](/windows/win32/winmsg/about-window-classes) von CS_OWNDC oder CS_CLASSDC hat. Microsoft Windows 8 unterstützt jedoch den WS_EX_LAYERED Stil für untergeordnete Fenster, in denen frühere Windows-Versionen dies nur für Windows der obersten Ebene unterstützen.|
-|WS_EX_LEFT|Übergibt Fenster generische Links ausgerichtete Eigenschaften. Dies ist die Standardeinstellung.|
-|WS_EX_LEFTSCROLLBAR|Platziert eine vertikale Schiebe Leiste auf der linken Seite des Client Bereichs.|
-|WS_EX_LTRREADING|Zeigt den Fenster Text mit Lese Reihen folgen Eigenschaften von links nach rechts an. Dies ist die Standardeinstellung.|
+|WS_EX_CLIENTEDGE|Gibt an, dass ein Fenster eine 3D-Look-Funktion hat, d. h. einen Rahmen mit einer versunkenen Kante.|
+|WS_EX_CONTEXTHELP|Enthält ein Fragezeichen in der Titelleiste des Fensters. Wenn der Benutzer auf das Fragezeichen klickt, wird der Cursor zu einem Fragezeichen geändert. Wenn der Benutzer anschließend auf ein untergeordnetes Fenster klickt, empfängt das untergeordnete Fenster eine WM_HELP-Meldung.|
+|WS_EX_CONTROLPARENT|Ermöglicht es dem Benutzer, mithilfe der TAB-TASTE zwischen den untergeordneten Fenstern des Fensters zu navigieren.|
+|WS_EX_DLGMODALFRAME|Legt ein Fenster mit einem doppelten Rahmen fest, das (optional) mit einer Titelleiste erstellt werden kann, wenn Sie das WS_CAPTION Stilflag im *parameter dwStyle* angeben.|
+|WS_EX_LAYERED|Das Fenster ist ein [geschichtetes Fenster](/windows/win32/winmsg/window-features). Dieser Stil kann nicht verwendet werden, wenn das Fenster einen [Klassenstil](/windows/win32/winmsg/about-window-classes) von CS_OWNDC oder CS_CLASSDC hat. Microsoft Windows 8 unterstützt jedoch den WS_EX_LAYERED Stil für untergeordnete Fenster, in denen frühere Windows-Versionen dies nur für Fenster der obersten Ebene unterstützen.|
+|WS_EX_LEFT|Gibt generische linksbündig ausgerichtete Eigenschaften des Fensters an. Dies ist die Standardoption.|
+|WS_EX_LEFTSCROLLBAR|Platziert eine vertikale Bildlaufleiste links vom Clientbereich.|
+|WS_EX_LTRREADING|Zeigt den Fenstertext mit Dendatenreihenfolgeeigenschaften von links nach rechts an. Dies ist die Standardoption.|
 |WS_EX_MDICHILD|Erstellt ein untergeordnetes MDI-Fenster.|
-|WS_EX_NOPARENTNOTIFY|Gibt an, dass ein untergeordnetes Fenster, das mit diesem Format erstellt wird, die WM_PARENTNOTIFY Nachricht nicht an das übergeordnete Fenster sendet, wenn das untergeordnete Fenster erstellt oder zerstört wird.|
-|WS_EX_OVERLAPPEDWINDOW|Kombiniert die WS_EX_CLIENTEDGE-und WS_EX_WINDOWEDGE Stile|
-|WS_EX_PALETTEWINDOW|Kombiniert die WS_EX_WINDOWEDGE-und WS_EX_TOPMOST Stile.|
-|WS_EX_RIGHT|Gibt eine Fenster generische rechtsbündig ausgerichtete Eigenschaften an. Dies hängt von der Fensterklasse ab.|
-|WS_EX_RIGHTSCROLLBAR|Platziert eine vertikale Schiebe Leiste (sofern vorhanden) rechts neben dem Client Bereich. Dies ist die Standardeinstellung.|
-|WS_EX_RTLREADING|Zeigt den Fenster Text mit Lese Reihen folgen Eigenschaften von rechts nach links an.|
-|WS_EX_STATICEDGE|Erstellt ein Fenster mit einer dreidimensionalen Rahmenart, die für Elemente verwendet werden soll, die keine Benutzereingaben akzeptieren.|
-|WS_EX_TOOLWINDOW|Erstellt ein Tool Fenster, das ein Fenster ist, das als unverankerte Symbolleiste verwendet werden soll. Ein Toolfenster hat eine Titelleiste, die kürzer ist als eine normale Titelleiste, und der Fenstertitel wird mit einer kleineren Schriftart gezeichnet. Es wird kein Toolfenster in der Taskleiste oder in dem Fenster angezeigt, das beim Drücken von ALT+TAB angezeigt wird.|
-|WS_EX_TOPMOST|Gibt an, dass ein Fenster, das mit diesem Format erstellt wird, über allen nicht obersten Fenstern platziert werden soll, und auch wenn das Fenster deaktiviert ist. Eine Anwendung kann die `SetWindowPos`-Memberfunktion verwenden, um dieses Attribut hinzuzufügen oder zu entfernen.|
-|WS_EX_TRANSPARENT|Gibt an, dass ein Fenster, das mit diesem Stil erstellt wurde, transparent sein soll. Das heißt, dass alle Fenster, die unter diesem Fenster liegen, nicht von dem Fenster verdeckt werden. Ein Fenster, das mit diesem Format erstellt wird, empfängt WM_PAINT Meldungen erst, nachdem alle untergeordneten Fenster untergeordneten Fenster aktualisiert wurden.|
+|WS_EX_NOPARENTNOTIFY|Gibt an, dass ein mit diesem Stil erstelltes untergeordnetes Fenster die WM_PARENTNOTIFY Nachricht nicht an das übergeordnete Fenster sendet, wenn das untergeordnete Fenster erstellt oder zerstört wird.|
+|WS_EX_OVERLAPPEDWINDOW|Kombiniert die WS_EX_CLIENTEDGE- und WS_EX_WINDOWEDGE-Stile|
+|WS_EX_PALETTEWINDOW|Kombiniert die WS_EX_WINDOWEDGE und WS_EX_TOPMOST Stile.|
+|WS_EX_RIGHT|Gibt einem Fenster generische rechtsbündigausgerichtete Eigenschaften an. Dies hängt von der Fensterklasse ab.|
+|WS_EX_RIGHTSCROLLBAR|Platziert eine vertikale Bildlaufleiste (falls vorhanden) rechts vom Clientbereich. Dies ist die Standardoption.|
+|WS_EX_RTLREADING|Zeigt den Fenstertext mit Dendatenreihenfolgeeigenschaften von rechts nach links an.|
+|WS_EX_STATICEDGE|Erstellt ein Fenster mit einem dreidimensionalen Rahmenstil, der für Elemente verwendet werden soll, die keine Benutzereingaben akzeptieren.|
+|WS_EX_TOOLWINDOW|Erstellt ein Werkzeugfenster, bei dem es sich um ein Fenster handelt, das als unverankerte Symbolleiste verwendet werden soll. Ein Toolfenster hat eine Titelleiste, die kürzer ist als eine normale Titelleiste, und der Fenstertitel wird mit einer kleineren Schriftart gezeichnet. Es wird kein Toolfenster in der Taskleiste oder in dem Fenster angezeigt, das beim Drücken von ALT+TAB angezeigt wird.|
+|WS_EX_TOPMOST|Gibt an, dass ein mit diesem Stil erstelltes Fenster über allen nicht topmost Fenstern platziert werden soll und auch bei deaktiviertem Fenster darüber bleibt. Eine Anwendung kann die `SetWindowPos`-Memberfunktion verwenden, um dieses Attribut hinzuzufügen oder zu entfernen.|
+|WS_EX_TRANSPARENT|Gibt an, dass ein fenster, das mit diesem Stil erstellt wurde, transparent sein soll. Das heißt, dass alle Fenster, die unter diesem Fenster liegen, nicht von dem Fenster verdeckt werden. Ein mit diesem Stil erstelltes Fenster empfängt WM_PAINT Nachrichten erst, nachdem alle darunter liegenden gleichgeordneten Fenster aktualisiert wurden.|
 |WS_EX_WINDOWEDGE|Gibt an, dass ein Fenster einen Rahmen mit einer erhöhten Kante hat.|
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Klassen Übersicht](../../mfc/class-library-overview.md)<br/>
-[CWnd:: Create](../../mfc/reference/cwnd-class.md#create)<br/>
-[CWnd:: up-Ex](../../mfc/reference/cwnd-class.md#createex)<br/>
-[CEdit:: Create](../../mfc/reference/cedit-class.md#create)<br/>
-[Cscrollbar:: Create](../../mfc/reference/cscrollbar-class.md#create)<br/>
-[Cstatic:: Create](../../mfc/reference/cstatic-class.md#create)<br/>
+[MFC-Klassenübersicht](../../mfc/class-library-overview.md)<br/>
+[CWnd::Create](../../mfc/reference/cwnd-class.md#create)<br/>
+[CWnd::CreateEx](../../mfc/reference/cwnd-class.md#createex)<br/>
+[CEdit::Erstellen](../../mfc/reference/cedit-class.md#create)<br/>
+[CScrollBar::Erstellen](../../mfc/reference/cscrollbar-class.md#create)<br/>
+[CStatic::Erstellen](../../mfc/reference/cstatic-class.md#create)<br/>
 [AfxMessageBox](../../mfc/reference/cstring-formatting-and-message-box-display.md#afxmessagebox)<br/>
-[CreateWindow](/windows/win32/api/winuser/nf-winuser-createwindoww)<br/>
-[CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw)<br/>
-[Schaltflächen Stile (Fenster)](/windows/win32/Controls/button-styles)<br/>
-[Kombinations Feld Stile (Fenster)](/windows/win32/Controls/combo-box-styles)<br/>
-[Bearbeiten von Steuerelement Stilen (Fenster)](/windows/win32/Controls/edit-control-styles)<br/>
-[Listenfeld Stile (Fenster)](/windows/win32/Controls/list-box-styles)<br/>
+[Createwindow](/windows/win32/api/winuser/nf-winuser-createwindoww)<br/>
+[Createwindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw)<br/>
+[Schaltflächenformatvorlagen (Windows)](/windows/win32/Controls/button-styles)<br/>
+[Combo-Box-Stile (Windows)](/windows/win32/Controls/combo-box-styles)<br/>
+[Steuerelementstile bearbeiten (Windows)](/windows/win32/Controls/edit-control-styles)<br/>
+[Listenfeldformatvorlagen (Windows)](/windows/win32/Controls/list-box-styles)<br/>
 [MessageBox-Funktion (Windows)](/windows/win32/api/winuser/nf-winuser-messagebox)<br/>
-[ScrollBar-Steuerelement Stile (Fenster)](/windows/win32/Controls/scroll-bar-control-styles)<br/>
-[Statische Steuerelement Stile (Windows)](/windows/win32/Controls/static-control-styles)<br/>
-[Fenster Stile (Fenster)](/windows/win32/winmsg/window-styles)<br/>
-[Erweiterte Fenster Stile (Fenster)](/windows/win32/winmsg/extended-window-styles)
+[Scrollleistensteuerungsformate (Windows)](/windows/win32/Controls/scroll-bar-control-styles)<br/>
+[Statische Steuerelementstile (Windows)](/windows/win32/Controls/static-control-styles)<br/>
+[Fensterstile (Windows)](/windows/win32/winmsg/window-styles)<br/>
+[Erweiterte Fensterstile (Windows)](/windows/win32/winmsg/extended-window-styles)

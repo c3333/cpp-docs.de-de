@@ -5,12 +5,12 @@ f1_keywords:
 - amp/Concurrency::access_type
 - amp/Concurrency::queuing_mode
 ms.assetid: 4c87457e-184f-4992-81ab-ca75e7d524ab
-ms.openlocfilehash: a4feb2f98fc288fa79c0f9d81e4ed882027eddf8
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 2467db27ad36dfcda31dfb5bb45067ada5470d07
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424974"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376317"
 ---
 # <a name="concurrency-namespace-enums-amp"></a>Concurrency-Namespace-Enumerationen (AMP)
 
@@ -18,7 +18,7 @@ ms.locfileid: "79424974"
 |-|-|
 |[access_type-Enumeration](#access_type)|[queuing_mode-Enumeration](#queuing_mode)|
 
-## <a name="access_type"></a>access_type-Enumeration
+## <a name="access_type-enumeration"></a><a name="access_type"></a>access_type-Enumeration
 
 Enumerationstyp wurde verwendet, um die verschiedenen Datenzugriffstypen anzugeben.
 
@@ -28,7 +28,7 @@ enum access_type;
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`access_type_auto`|Wählen Sie automatisch das beste `access_type`-Objekt für die Zugriffstaste aus.|
 |`access_type_none`|Dediziert. Auf die Speicherbelegung kann nur auf der Zugriffstaste und nicht auf der CPU zugegriffen werden.|
@@ -36,7 +36,7 @@ enum access_type;
 |`access_type_read_write`|Freigegeben. Auf die Speicherbelegung kann auf der Zugriffstaste zugegriffen werden und sie ist auf der CPU schreibbar.|
 |`access_type_write`|Freigegeben. Auf die Speicherbelegung kann auf der Zugriffstaste zugegriffen werden und sie ist auf der CPU les- und schreibbar.|
 
-## <a name="queuing_mode"></a>queuing_mode-Enumeration
+## <a name="queuing_mode-enumeration"></a><a name="queuing_mode"></a>queuing_mode-Enumeration
 
 Gibt die Modi für das Hinzufügen zur Warteschlange an, die auf dem Beschleuniger unterstützt werden.
 
@@ -46,11 +46,11 @@ enum queuing_mode;
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`queuing_mode_immediate`|Ein queuingmodus, der angibt, dass alle Befehle, z. b. [Parallel_for_each Funktion (C++ amp)](concurrency-namespace-functions-amp.md#parallel_for_each), an das entsprechende Zugriffstasten Gerät gesendet werden, sobald Sie zum Aufrufer zurückkehren.|
-|`queuing_mode_automatic`|Ein queuingmodus, der angibt, dass Befehle in einer Befehls Warteschlange in die Warteschlange eingereiht werden, die dem [accelerator_view](accelerator-view-class.md) Objekt entspricht. Befehle werden an das Gerät gesendet, wenn [accelerator_view:: Flush](accelerator-view-class.md#flush) aufgerufen wird.|
+|`queuing_mode_immediate`|Ein Warteschlangenmodus, der angibt, dass alle Befehle, z. B. [parallel_for_each Function (C++ AMP),](concurrency-namespace-functions-amp.md#parallel_for_each)an das entsprechende Beschleunigergerät gesendet werden, sobald sie an den Aufrufer zurückkehren.|
+|`queuing_mode_automatic`|Ein Warteschlangenmodus, der angibt, dass Befehle in einer Befehlswarteschlange in die Warteschlange eingereiht werden, die dem [accelerator_view-Objekts](accelerator-view-class.md) entspricht. Befehle werden an das Gerät gesendet, wenn [accelerator_view::flush](accelerator-view-class.md#flush) aufgerufen wird.|
 
 ## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+[Parallelitätsnamespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

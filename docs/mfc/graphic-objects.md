@@ -41,19 +41,19 @@ helpviewer_keywords:
 - painting and device context [MFC]
 - CPalette class [MFC], HPALETTE handle type
 ms.assetid: 41963b25-34b7-4343-8446-34ba516b83ca
-ms.openlocfilehash: 4abc2764abd0f31b83253f37b8cb459be638ae5a
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 0201e53114b71c02877762f89cc65fc46d17700c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69508537"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370530"
 ---
 # <a name="graphic-objects"></a>Grafikobjekte
 
 Windows bietet eine Reihe von Zeichentools an, die in Gerätekontexten verwendet werden können. Es bietet Stifte zum Zeichnen von Linien, Pinsel zum Auffüllen von Innenbereichen und Schriftarten zum Zeichnen von Text. MFC stellt Grafikobjektklassen bereit, die den Zeichentools in Windows ähneln. In der folgenden Tabelle werden die verfügbaren Klassen und die entsprechenden Windows-GDI-Handletypen (Graphics Device Interface) gezeigt.
 
 > [!NOTE]
->  Weitere Informationen finden Sie in der [GDI+-SDK-Dokumentation](/windows/win32/gdiplus/-gdiplus-gdi-start).
+> Weitere Informationen finden Sie in der [GDI+ SDK-Dokumentation](/windows/win32/gdiplus/-gdiplus-gdi-start).
 
 Dieser Artikel beschreibt die Verwendung von diesen Grafikobjektklassen:
 
@@ -69,11 +69,11 @@ Dieser Artikel beschreibt die Verwendung von diesen Grafikobjektklassen:
 |[CRgn](../mfc/reference/crgn-class.md)|**HRGN**|
 
 > [!NOTE]
->  Die Klasse [CImage](../atl-mfc-shared/reference/cimage-class.md) bietet erweiterte Unterstützung für Bitmap.
+> Die Klasse [CImage](../atl-mfc-shared/reference/cimage-class.md) bietet erweiterte Bitmap-Unterstützung.
 
 Jede Grafikobjektklasse in der Klassenbibliothek verfügt über einen Konstruktor, mit dem Sie grafische Objekte dieser Klasse erstellen können. Diese müssen Sie anschließend mit der entsprechenden „create“-Funktion wie `CreatePen` initialisieren.
 
-Jede Grafikobjektklasse in der Klassenbibliothek verfügt über einen „cast“-Operator, der ein MFC-Objekt zum zugehörigen Windows-Handle umwandelt. Das resultierende Handle ist gültig, bis das zugeordnete Objekt es trennt. Verwenden Sie die Member `Detach` -Funktion des-Objekts, um das Handle zu trennen.
+Jede Grafikobjektklasse in der Klassenbibliothek verfügt über einen „cast“-Operator, der ein MFC-Objekt zum zugehörigen Windows-Handle umwandelt. Das resultierende Handle ist gültig, bis das zugeordnete Objekt es trennt. Verwenden Sie die `Detach` Memberfunktion des Objekts, um das Handle zu trennen.
 
 Im folgenden Code wird ein `CPen`-Objekt zu einem Windows-Handle umgewandelt:
 
@@ -81,26 +81,26 @@ Im folgenden Code wird ein `CPen`-Objekt zu einem Windows-Handle umgewandelt:
 
 #### <a name="to-create-a-graphic-object-in-a-device-context"></a>So erstellen Sie ein Grafikobjekt in einem Gerätekontext
 
-1. Definieren Sie ein Grafikobjekt im Stapelrahmen. Initialisieren Sie das Objekt mit der „type“-spezifischen „create“-Funktion wie `CreatePen`. Initialisieren Sie alternativ das Objekt im Konstruktor. Sehen Sie sich die Erörterung der [einstufigen und zweistufigen Erstellung](../mfc/one-stage-and-two-stage-construction-of-objects.md)an, die Beispielcode enthält.
+1. Definieren Sie ein Grafikobjekt im Stapelrahmen. Initialisieren Sie das Objekt mit der „type“-spezifischen „create“-Funktion wie `CreatePen`. Initialisieren Sie alternativ das Objekt im Konstruktor. Sehen Sie sich die Diskussion über [die ein- und zweistufige Erstellung an,](../mfc/one-stage-and-two-stage-construction-of-objects.md)die Beispielcode enthält.
 
-1. [Wählen Sie das Objekt im aktuellen Gerätekontext](../mfc/selecting-a-graphic-object-into-a-device-context.md)aus, und speichern Sie das alte Grafik Objekt, das zuvor ausgewählt wurde.
+1. [Wählen Sie das Objekt im aktuellen Gerätekontext](../mfc/selecting-a-graphic-object-into-a-device-context.md)aus, und speichern Sie das alte Grafikobjekt, das zuvor ausgewählt wurde.
 
 1. Wenn Sie mit dem aktuellen Grafikobjekt fertig sind, wählen Sie das alte Grafikobjekt zurück im Gerätekontext aus, um dessen Status wiederherzustellen.
 
 1. Ermöglichen Sie dem „frame“-zugewiesenen Grafikobjekt, automatisch gelöscht zu werden, wenn der Bereich verlassen wird.
 
 > [!NOTE]
->  Wenn Sie ein Grafikobjekt wiederholt verwenden, können Sie es einmal zuordnen und es im Gerätekontext auswählen, sobald es benötigt wird. Stellen Sie sicher, ein derartiges Objekt zu löschen, wenn Sie es nicht mehr benötigen.
+> Wenn Sie ein Grafikobjekt wiederholt verwenden, können Sie es einmal zuordnen und es im Gerätekontext auswählen, sobald es benötigt wird. Stellen Sie sicher, ein derartiges Objekt zu löschen, wenn Sie es nicht mehr benötigen.
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren?
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
-- [Ein-und zweistufige Konstruktion von Grafikobjekten](../mfc/one-stage-and-two-stage-construction-of-objects.md)
+- [Ein- und zweistufige Konstruktion von Grafikobjekten](../mfc/one-stage-and-two-stage-construction-of-objects.md)
 
-- [Beispiel für das Erstellen eines Stifts in einer und zwei Phasen](../mfc/one-stage-and-two-stage-construction-of-objects.md)
+- [Beispiel für das Erstellen eines Stifts in einer oder zwei Phasen](../mfc/one-stage-and-two-stage-construction-of-objects.md)
 
 - [Auswählen eines Grafikobjekts für einen Gerätekontext](../mfc/selecting-a-graphic-object-into-a-device-context.md)
 
-- [Geräte Kontexte](../mfc/device-contexts.md)
+- [Gerätekontexte](../mfc/device-contexts.md)
 
 ## <a name="see-also"></a>Siehe auch
 

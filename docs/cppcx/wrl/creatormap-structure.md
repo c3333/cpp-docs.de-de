@@ -16,16 +16,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::CreatorMap::factoryCreator data member
 - Microsoft::WRL::Details::CreatorMap::serverName data member
 ms.assetid: 94e40927-90c3-4107-bca3-3ad2dc4beda9
-ms.openlocfilehash: 44d06f317661059bea92d8c6f27955606a964bb7
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1527f81694d1d809d585f3f6504c0e6433a2c26b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398614"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372600"
 ---
 # <a name="creatormap-structure"></a>CreatorMap-Struktur
 
-Unterstützt die Windows Runtime C++ Template Library-Infrastruktur, und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die Windows Runtime C++-Vorlagenbibliotheksinfrastruktur und ist nicht für die direkte Verwendung aus Ihrem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,28 +33,28 @@ Unterstützt die Windows Runtime C++ Template Library-Infrastruktur, und nicht d
 struct CreatorMap;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Enthält Informationen zum Initialisieren, registrieren und Aufheben der Registrierung Objekten.
+Enthält Informationen zum Initialisieren, Registrieren und Aufheben der Registrierung von Objekten.
 
 `CreatorMap` enthält folgende Informationen:
 
-- So initialisieren, registrieren und Aufheben der Registrierung Objekten.
+- Initialisieren, Registrieren und Aufheben der Registrierung von Objekten.
 
-- Wie Aktivierungsdaten abhängig von einer klassischen COM- oder Windows-Runtime-Factory verglichen.
+- Vergleichen von Aktivierungsdaten in Abhängigkeit von einer klassischen COM- oder Windows-Runtime-Factory.
 
-- Informationen zu den Factory Cache und Server-Namen für eine Schnittstelle.
+- Informationen zum Factorycache und zum Servernamen für eine Schnittstelle.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-Name                                          | Beschreibung
+Name                                          | BESCHREIBUNG
 --------------------------------------------- | ------------------------------------------------------------------------------------------------------
-[CreatorMap::activationId](#activationid)     | Stellt eine Objekt-ID, die durch eine klassische COM-Klassen-ID oder einen Namen für die Windows-Runtime identifiziert wird.
-[CreatorMap::factoryCache](#factorycache)     | Speichert den Zeiger auf den Cache Factory für die `CreatorMap`.
-[CreatorMap::factoryCreator](#factorycreator) | Erstellt eine Factory für den angegebenen `CreatorMap`.
-[CreatorMap::serverName](#servername)         | Speichert den Servernamen für die `CreatorMap`.
+[CreatorMap::activationId](#activationid)     | Stellt eine Objekt-ID dar, die entweder durch eine klassische COM-Klassen-ID oder einen Windows-Runtime-Namen identifiziert wird.
+[CreatorMap::factoryCache](#factorycache)     | Speichert den Zeiger auf den `CreatorMap`Factorycache für die .
+[CreatorMap::factoryCreator](#factorycreator) | Erstellt eine Factory `CreatorMap`für die angegebene .
+[CreatorMap::serverName](#servername)         | Speichert den Servernamen `CreatorMap`für die .
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -62,13 +62,13 @@ Name                                          | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** module.h
+**Kopfzeile:** module.h
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="activationid"></a>CreatorMap::activationId
+## <a name="creatormapactivationid"></a><a name="activationid"></a>CreatorMap::activationId
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 union {
@@ -83,27 +83,27 @@ union {
 Eine Schnittstellen-ID.
 
 *getRuntimeName*<br/>
-Eine Funktion, die den Windows-Runtime-Namen eines Objekts abruft.
+Eine Funktion, die den Windows-Laufzeitnamen eines Objekts abruft.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Stellt eine Objekt-ID, die durch eine klassische COM-Klassen-ID oder Name einer Windows-Runtime identifiziert wird.
+Stellt eine Objekt-ID dar, die entweder durch eine klassische COM-Klassen-ID oder einen Windows-Laufzeitnamen identifiziert wird.
 
-## <a name="factorycache"></a>CreatorMap::factoryCache
+## <a name="creatormapfactorycache"></a><a name="factorycache"></a>CreatorMap::factoryCache
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 FactoryCache* factoryCache;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Speichert den Zeiger auf den Cache Factory für die `CreatorMap`.
+Speichert den Zeiger auf den `CreatorMap`Factorycache für die .
 
-## <a name="factorycreator"></a>CreatorMap::factoryCreator
+## <a name="creatormapfactorycreator"></a><a name="factorycreator"></a>CreatorMap::factoryCreator
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 HRESULT (*factoryCreator)(
@@ -116,33 +116,33 @@ IUnknown** factory);
 ### <a name="parameters"></a>Parameter
 
 *currentflags*<br/>
-Eines der [RuntimeClassType](runtimeclasstype-enumeration.md) Enumeratoren.
+Einer der RuntimeClassType-Enumeratoren. [RuntimeClassType](runtimeclasstype-enumeration.md)
 
-*entry*<br/>
+*Eintrag*<br/>
 Eine CreatorMap.
 
 *iidClassFactory*<br/>
-Die Schnittstellen-ID von einer Klassenfactory.
+Die Schnittstellen-ID einer Klassenfactory.
 
-*factory*<br/>
-Wenn der Vorgang abgeschlossen ist, die Adresse einer Klassenfactory.
+*Fabrik*<br/>
+Wenn der Vorgang abgeschlossen ist, wird die Adresse einer Klassenfabrik.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt eine Factory für die angegebene CreatorMap an.
+Erstellt eine Factory für die angegebene CreatorMap.
 
-## <a name="servername"></a>CreatorMap::serverName
+## <a name="creatormapservername"></a><a name="servername"></a>CreatorMap::serverName
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 const wchar_t* serverName;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Speichert den Servernamen für die CreatorMap an.
+Speichert den Servernamen für die CreatorMap.

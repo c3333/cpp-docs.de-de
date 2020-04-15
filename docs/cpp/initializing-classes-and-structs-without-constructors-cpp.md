@@ -1,14 +1,14 @@
 ---
-title: Initialisierung der geschweiften Klammer für Klassen, Strukturen und Unions
-description: Initialisierung von Klammern mit einer beliebigen C++ Klasse, Struktur oder Union verwenden
+title: Brace-Initialisierung für Klassen, Strukturen und Unions
+description: Verwenden der Geschweifkontoinitialisierung mit jeder C++-Klasse, -Struktur oder -Union
 ms.date: 11/19/2019
 ms.assetid: 3e55c3d6-1c6b-4084-b9e5-221b151402f4
-ms.openlocfilehash: 2f04401c7fca417baec09fa3023e14b9b85ea63c
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 4628ffe8935fc32e86468c631d5d9e9622d63d2e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075878"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374075"
 ---
 # <a name="brace-initialization"></a>Initialisierung mit geschweiften Klammern
 
@@ -61,7 +61,7 @@ int main()
 }
 ```
 
-Beachten Sie Folgendes: Wenn eine Klasse oder Struktur keinen Konstruktor aufweist, stellen Sie die Listenelemente in der Reihenfolge bereit, in der die Member in der Klasse deklariert werden. Wenn die Klasse über einen Konstruktor verfügt, stellen Sie die Elemente in der Reihenfolge der Parameter bereit. Wenn ein Typ einen Standardkonstruktor hat, der entweder implizit oder explizit deklariert wurde, können Sie die Standardinitialisierung mit geschweiften klammern verwenden (mit leeren Klammern). Beispielsweise kann die folgende Klasse durch Verwenden der standardmäßigen und nicht standardmäßigen Initialisierung mit geschweiften Klammern initialisiert werden:
+Beachten Sie, dass Sie die Listenelemente in der Reihenfolge bereitstellen, in der die Member in der Klasse deklariert werden, wenn eine Klasse oder Struktur keinen Konstruktor hat. Wenn die Klasse über einen Konstruktor verfügt, geben Sie die Elemente in der Reihenfolge der Parameter an. Wenn ein Typ einen Standardkonstruktor hat, der entweder implizit oder explizit deklariert wurde, können Sie die Standardinitialisierung mit geschweiften klammern verwenden (mit leeren Klammern). Beispielsweise kann die folgende Klasse durch Verwenden der standardmäßigen und nicht standardmäßigen Initialisierung mit geschweiften Klammern initialisiert werden:
 
 ```cpp
 #include <string>
@@ -128,7 +128,7 @@ int main()
 }
 ```
 
-Sie können die Initialisierung von geschweifter Klammern überall dort verwenden, wo Sie normalerweise initialisiert werden – z. b. als Funktionsparameter oder Rückgabewert oder mit dem **New** -Schlüsselwort:
+Sie können die Geschweiseninitialisierung überall dort verwenden, wo Sie normalerweise initialisieren würden, z. B. als Funktionsparameter oder Rückgabewert oder mit dem **neuen** Schlüsselwort:
 
 ```cpp
 class_d* cf = new class_d{4.5};
@@ -136,9 +136,9 @@ kr->add_d({ 4.5 });
 return { 4.5 };
 ```
 
-Im **/Std: c++ 17** -Modus sind die Regeln für eine leere Initialisierung der geschweifter Klammer etwas restriktiver. Siehe [abgeleitete Konstruktoren und erweiterte Aggregat Initialisierung](constructors-cpp.md#extended_aggregate).
+Im **Modus /std:c++17** sind die Regeln für die leere Initialisierung von Klammern etwas restriktiver. Siehe [Abgeleitete Konstruktoren und erweiterte Aggregatinitialisierung](constructors-cpp.md#extended_aggregate).
 
-## <a name="initializer_list-constructors"></a>initializer_list-Konstruktoren
+## <a name="initializer_list-constructors"></a>initializer_list Konstruktoren
 
 Die [initializer_list-Klasse](../standard-library/initializer-list-class.md) stellt eine Liste von Objekten eines angegebenen Typs dar, die in einem Konstruktor und in anderen Kontexten verwendet werden können. Sie können ein initializer_list-Objekt durch Verwenden der Initialisierung mit geschweiften Klammern erstellen:
 
@@ -147,7 +147,7 @@ initializer_list<int> int_list{5, 6, 7};
 ```
 
 > [!IMPORTANT]
->  Um diese Klasse zu verwenden, müssen Sie den [\<initializer_list >](../standard-library/initializer-list.md) -Header einschließen.
+> Um diese Klasse verwenden zu [ \<](../standard-library/initializer-list.md) können, müssen Sie den initializer_list>-Header einschließen.
 
 Ein `initializer_list`-Objekt kann kopiert werden. In diesem Fall sind die Member der neuen Liste Verweise auf die Member der ursprünglichen Liste:
 
@@ -167,7 +167,7 @@ string s{ 'a', 'b', 'c' };
 regex rgx{ 'x', 'y', 'z' };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)<br/>
 [Konstruktoren](../cpp/constructors-cpp.md)

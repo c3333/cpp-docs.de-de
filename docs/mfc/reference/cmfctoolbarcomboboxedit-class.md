@@ -1,5 +1,5 @@
 ---
-title: Cmfctoolbarcomboboxedit-Klasse
+title: CMFCToolBarComboBoxEdit-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCToolBarComboBoxEdit
@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCToolBarComboBoxEdit [MFC], CMFCToolBarComboBoxEdit
 ms.assetid: 4789c34a-ce58-48ba-a26f-38748b601352
-ms.openlocfilehash: 2a0ab1766f42d34c86339cffb86f876358c97a4a
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: dfbf24f5833d143adc6d21b6cb54dd9ac81c2f0a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69504868"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372200"
 ---
-# <a name="cmfctoolbarcomboboxedit-class"></a>Cmfctoolbarcomboboxedit-Klasse
+# <a name="cmfctoolbarcomboboxedit-class"></a>CMFCToolBarComboBoxEdit-Klasse
 
-Das Framework verwendet die `CMFCToolBarComboBoxEdit` -Klasse zum Erstellen einer Symbolleisten-Schaltfläche, die sich wie ein bearbeitbares Kombinations Feld-Steuerelement verhält
+Das Framework `CMFCToolBarComboBoxEdit` verwendet die Klasse, um eine Symbolleistenschaltfläche zu erstellen, die sich wie ein bearbeitbares Kombinationsfeldsteuerelement verhält.
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,24 +29,24 @@ class CMFCToolBarComboBoxEdit : public CEdit
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cmfctoolbarcomboboxedit:: cmfctoolbarcomboboxedit](#cmfctoolbarcomboboxedit)|Erstellt ein `CMFCToolBarComboBoxEdit`-Objekt.|
+|[CMFCToolBarComboBoxBearbeiten::CMFCToolBarComboBoxBearbeiten](#cmfctoolbarcomboboxedit)|Erstellt ein `CMFCToolBarComboBoxEdit`-Objekt.|
 |`CMFCToolBarComboBoxEdit::~CMFCToolBarComboBoxEdit`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`CMFCToolBarComboBoxEdit::PreTranslateMessage`|Übersetzt Fenster Meldungen, bevor diese an die Windows-Funktionen [translatemess](/windows/win32/api/winuser/nf-winuser-translatemessage) und [DispatchMessage](/windows/win32/api/winuser/nf-winuser-dispatchmessage) gesendet werden. (Überschreibt [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|
+|`CMFCToolBarComboBoxEdit::PreTranslateMessage`|Übersetzt Fensternachrichten, bevor sie an die [TranslateMessage-](/windows/win32/api/winuser/nf-winuser-translatemessage) und [DispatchMessage-Windows-Funktionen](/windows/win32/api/winuser/nf-winuser-dispatchmessage) gesendet werden. (Überschreibt [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Leiten Sie eine Klasse von `CMFCToolBarComboBoxEdit` der-Klasse ab, um die Bearbeitungsvorgänge anzupassen.
+Leiten Sie eine `CMFCToolBarComboBoxEdit` Klasse von der Klasse ab, um ihre Bearbeitungsvorgänge anzupassen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -58,9 +58,9 @@ Leiten Sie eine Klasse von `CMFCToolBarComboBoxEdit` der-Klasse ab, um die Bearb
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxtoolbarcomboboxbutton. h
+**Kopfzeile:** afxtoolbarcomboboxbutton.h
 
-##  <a name="cmfctoolbarcomboboxedit"></a>Cmfctoolbarcomboboxedit:: cmfctoolbarcomboboxedit
+## <a name="cmfctoolbarcomboboxeditcmfctoolbarcomboboxedit"></a><a name="cmfctoolbarcomboboxedit"></a>CMFCToolBarComboBoxBearbeiten::CMFCToolBarComboBoxBearbeiten
 
 Erstellt ein `CMFCToolBarComboBoxEdit`-Objekt.
 
@@ -70,12 +70,12 @@ CMFCToolBarComboBoxEdit(CMFCToolBarComboBoxButton& combo);
 
 ### <a name="parameters"></a>Parameter
 
-*combo*<br/>
-in Ein Verweis auf ein [cmfctoolbarcomboboxbutton](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md) -Objekt, das eine Symbolleisten-Schaltfläche ist, die ein Kombinations Feld-Steuerelement enthält.
+*Verbunddiagramm*<br/>
+[in] Ein Verweis auf ein [CMFCToolBarComboBoxButton-Objekt,](../../mfc/reference/cmfctoolbarcomboboxbutton-class.md) bei dem es sich um eine Symbolleistenschaltfläche handelt, die ein Kombinationsfeldsteuerelement enthält.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie ein Objekt der `CMFCToolBarComboBoxEdit` -Klasse erstellt wird. Dieser Code Ausschnitt ist Teil des IE- [Demo](../../overview/visual-cpp-samples.md)Beispiels.
+Im folgenden Beispiel wird veranschaulicht, `CMFCToolBarComboBoxEdit` wie ein Objekt der Klasse erstellt wird. Dieser Codeausschnitt ist Teil des [IE-Demobeispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_IEDemo#5](../../mfc/reference/codesnippet/cpp/cmfctoolbarcomboboxedit-class_1.cpp)]
 

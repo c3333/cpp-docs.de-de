@@ -12,14 +12,14 @@ helpviewer_keywords:
 - stdext::sync_shared [C++], deallocate
 - stdext::sync_shared [C++], equals
 ms.assetid: cab3af9e-3d1a-4f2c-8580-0f89e5687d8e
-ms.openlocfilehash: 72ed21d3a0fb519bca2e19b7fbface05d5ac64ce
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 029edea59f29534491232d5d99353ccb093447bd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68450250"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376526"
 ---
-# <a name="syncshared-class"></a>sync_shared-Klasse
+# <a name="sync_shared-class"></a>sync_shared-Klasse
 
 Beschreibt einen [Synchronisierungsfilter](../standard-library/allocators-header.md), in dem ein Mutex verwendet wird, um den Zugriff auf ein Cache-Objekt zu steuern, das von allen Zuweisungen (allocator-Objekten) gemeinsam verwendet wird.
 
@@ -32,16 +32,16 @@ class sync_shared
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Cache*|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll. Dieser kann [cache_chunklist](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[allocate](#allocate)|Belegt einen Speicherblock.|
-|[deallocate](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
+|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
 ## <a name="requirements"></a>Anforderungen
@@ -50,7 +50,7 @@ class sync_shared
 
 **Namespace:** stdext
 
-## <a name="allocate"></a> sync_shared::allocate
+## <a name="sync_sharedallocate"></a><a name="allocate"></a>sync_shared::zuweisen
 
 Belegt einen Speicherblock.
 
@@ -60,19 +60,19 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*count*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion sperrt den Mutex, ruft `cache.allocate(count)` auf, entsperrt den Mutex und gibt das Ergebnis des früheren Aufrufs an `cache.allocate(count)` zurück. `cache` stellt das aktuelle Cache-Objekt dar.
 
-## <a name="deallocate"></a> sync_shared::deallocate
+## <a name="sync_shareddeallocate"></a><a name="deallocate"></a>sync_shared::deallocate
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -82,16 +82,16 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuweisung zum Speicher aufgehoben werden soll.|
+|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Memberfunktion sperrt den Mutex, ruft `cache.deallocate(ptr, count)` auf, wobei `cache` das Cache-Objekt darstellt, und entsperrt dann den Mutex.
 
-## <a name="equals"></a> sync_shared::equals
+## <a name="sync_sharedequals"></a><a name="equals"></a>sync_shared::gleich
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -101,17 +101,17 @@ bool equals(const sync_shared<Cache>& Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
 |*Cache*|Der Cachetyp, der diesem Synchronisierungsfilter zugeordnet werden soll.|
 |*Andere*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Ergebnis `cache.equals(Other.cache)`von, `cache` wobei das Cache Objekt darstellt, **true**ist, andernfalls **false**.
+**true,** wenn `cache.equals(Other.cache)`das `cache` Ergebnis von , wo das Cacheobjekt darstellt, **true**ist; andernfalls **false**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

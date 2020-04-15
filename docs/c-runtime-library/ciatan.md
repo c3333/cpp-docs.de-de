@@ -1,8 +1,9 @@
 ---
 title: _CIatan
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _CIatan
+- _o__CIatan
 api_location:
 - msvcr120.dll
 - msvcr110.dll
@@ -12,6 +13,7 @@ api_location:
 - msvcr90.dll
 - msvcr110_clr0400.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -23,12 +25,12 @@ helpviewer_keywords:
 - CIatan intrinsic
 - _CIatan intrinsic
 ms.assetid: 3baa0429-fe46-4bab-8b00-868e2186dc8c
-ms.openlocfilehash: a932f305f43ecf1d6df978e733f39d7fa91f3e78
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 7b3f70ebcf6debbf5fe881fc0c64b407b9bd4ef3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940613"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81334405"
 ---
 # <a name="_ciatan"></a>_CIatan
 
@@ -40,13 +42,15 @@ Berechnet den Arkustangens des obersten Werts im Stapel.
 void __cdecl _CIatan();
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Diese Version der `atan`-Funktion verfügt über eine spezielle Aufrufkonvention, die der Compiler versteht. Sie beschleunigt die Ausführung, da sie das Generieren von Kopien verhindert und bei der Registerzuweisung hilft.
 
 Der resultierende Wert wird oben auf dem Stapel abgelegt.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 **Plattform:** x86
 

@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::geometric_distribution [C++], param_type
 - std::geometric_distribution [C++], param_type
 ms.assetid: 38f933af-3b49-492e-9d26-b6b272a60013
-ms.openlocfilehash: 66af7aba99d1510b6d4416543e54890a9e891f7e
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 44b624995ed274212a2699cb457c91dfa4530f03
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688005"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370635"
 ---
 # <a name="geometric_distribution-class"></a>geometric_distribution-Klasse
 
@@ -66,15 +66,15 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*Inttype* -\
-Der ganzzahlige Ergebnistyp, der Standardwert ist **int**. Informationen zu möglichen Typen finden Sie unter [\<random >](../standard-library/random.md).
+*IntType*\
+Der ganzzahlige Ergebnistyp wird standardmäßig **int**. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-*URNG* \
-Die einheitliche Zufallszahlengenerator-Engine. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+*URNG*\
+Die einheitliche Zufallszahlengenerator-Engine. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs mit einer geometrischen Verteilung produziert. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps mit einer geometrischen Verteilung erzeugt. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -91,7 +91,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 Ausführliche Informationen über die Chi-Quadrat-Verteilung finden Sie im Wolfram MathWorld-Artikel [Geometric Distribution (Geometrische Verteilung)](https://go.microsoft.com/fwlink/p/?linkid=400529).
 
@@ -209,7 +209,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="geometric_distribution"></a> geometric_distribution::geometric_distribution
+## <a name="geometric_distributiongeometric_distribution"></a><a name="geometric_distribution"></a>geometric_distribution::geometric_distribution
 
 Erstellt die Verteilung.
 
@@ -220,21 +220,21 @@ explicit geometric_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*p* -\
+*P*\
 Der `p`-Verteilungsparameter.
 
-*\ für* den
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < p && p < 1.0`
+**Voraussetzung:**`0.0 < p && p < 1.0`
 
 Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `p`-Wert den Wert *p* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> geometric_distribution::param_type
+## <a name="geometric_distributionparam_type"></a><a name="param_type"></a>geometric_distribution::param_type
 
 Speichert die Parameter der Verteilung.
 
@@ -251,18 +251,18 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*p* -\
+*P*\
 Der `p`-Verteilungsparameter.
 
-*Rechte* \
+*Richting*\
 Die `param_type`-Instanz, mit der verglichen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < p && p < 1.0`
+**Voraussetzung:**`0.0 < p && p < 1.0`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

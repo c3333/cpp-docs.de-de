@@ -6,21 +6,21 @@ helpviewer_keywords:
 - documents [MFC], cleaning up
 - documents [MFC], closing
 ms.assetid: 0c454db2-3644-434d-9e53-8108a7aedfe1
-ms.openlocfilehash: 940c768823d26950d9710fb1d1a52e6a1955fead
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 06ff60a2cf6245f64e80d899c13a8444558fcf0b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62327157"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374622"
 ---
 # <a name="cleaning-up-documents-and-views"></a>Bereinigen von Dokumenten und Ansichten
 
-Wenn ein Dokument geschlossen wird, ruft das Framework zuerst seine [DeleteContents](../mfc/reference/cdocument-class.md#deletecontents) Member-Funktion. Wenn Sie im Verlauf des Vorgangs des Dokuments, auf dem Heap Arbeitsspeicher zugeordnet `DeleteContents` ist der beste Ort für die Zuordnung aufheben.
+Wenn ein Dokument geschlossen wird, ruft das Framework zuerst seine [DeleteContents-Memberfunktion](../mfc/reference/cdocument-class.md#deletecontents) auf. Wenn Sie während des Vorgangs des Dokuments Speicher `DeleteContents` auf dem Heap zugewiesen haben, ist dies der beste Ort, um die Zuweisung zu zuweisen.
 
 > [!NOTE]
->  Sie sollten nicht die Dokumentendaten in der Destruktor des Dokuments Zuordnung aufheben. Im Fall einer SDI-Anwendung kann das Document-Objekt wiederverwendet werden.
+> Sie sollten die Zuordnung von Dokumentdaten im Destruktor des Dokuments nicht aufteilen. Im Fall einer SDI-Anwendung kann das Dokumentobjekt wiederverwendet werden.
 
-Sie können eine Ansicht des-Destruktor, um den Arbeitsspeicher freigeben, die, den Sie auf dem Heap reserviert, überschreiben.
+Sie können den Destruktor einer Ansicht überschreiben, um den speicherzuweisungsspeicher, der Auf dem Heap zugewiesen wurde, zu verteilen.
 
 ## <a name="see-also"></a>Siehe auch
 

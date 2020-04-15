@@ -16,83 +16,83 @@ helpviewer_keywords:
 - serialization [MFC], serializable classes
 - no default constructor
 ms.assetid: 59a14d32-1cc8-4275-9829-99639beee27c
-ms.openlocfilehash: 995744381c8f82dc637e4aa0452e37af170b168b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9648bd4f516a5f174534336b1ca3b42bb51ca0c4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62308100"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372705"
 ---
 # <a name="serialization-making-a-serializable-class"></a>Serialisierung: Erstellen einer serialisierbaren Klasse
 
-Fünf Schritte sind erforderlich, um eine Klasse serialisierbar zu machen. Sie sind unten aufgeführt und in den folgenden Abschnitten beschrieben:
+Fünf Hauptschritte sind erforderlich, um eine Klasse serialisierbar zu machen. Sie sind unten aufgeführt und in den folgenden Abschnitten erläutert:
 
-1. [Ableiten einer Klasse von CObject](#_core_deriving_your_class_from_cobject) (oder von einer Klasse abgeleitet `CObject`).
+1. [Ableiten der Klasse von CObject](#_core_deriving_your_class_from_cobject) (oder `CObject`von einer von ) abgeleiteten Klasse).
 
-1. [Überschreiben die Serialize-Memberfunktion](#_core_overriding_the_serialize_member_function).
+1. [Überschreiben der Serialize-Memberfunktion](#_core_overriding_the_serialize_member_function).
 
-1. [Mit dem DECLARE_SERIAL-Makro](#_core_using_the_declare_serial_macro) in der Klassendeklaration.
+1. [Verwenden des DECLARE_SERIAL-Makros](#_core_using_the_declare_serial_macro) in der Klassendeklaration.
 
-1. [Definieren einen Konstruktor, der keine Argumente akzeptiert](#_core_defining_a_constructor_with_no_arguments).
+1. [Definieren eines Konstruktors, der keine Argumente verwendet.](#_core_defining_a_constructor_with_no_arguments)
 
-1. [Mit dem IMPLEMENT_SERIAL-Makro in der Implementierungsdatei](#_core_using_the_implement_serial_macro_in_the_implementation_file) für die Klasse.
+1. [Verwenden des IMPLEMENT_SERIAL-Makros in der Implementierungsdatei](#_core_using_the_implement_serial_macro_in_the_implementation_file) für Ihre Klasse.
 
-Aufrufen `Serialize` direkt statt über die >> und << Operatoren [CArchive](../mfc/reference/carchive-class.md), die letzten drei Schritte sind nicht für die Serialisierung erforderlich.
+Wenn Sie `Serialize` direkt und nicht über die >> und << Operatoren von [CArchive](../mfc/reference/carchive-class.md)aufrufen, sind die letzten drei Schritte für die Serialisierung nicht erforderlich.
 
-##  <a name="_core_deriving_your_class_from_cobject"></a> Ableiten einer Klasse von CObject
+## <a name="deriving-your-class-from-cobject"></a><a name="_core_deriving_your_class_from_cobject"></a>Ableiten Ihrer Klasse von CObject
 
-Die einfache Serialisierung-Protokoll und die Funktionen werden definiert, der `CObject` Klasse. Durch Ableiten einer Klasse von `CObject` (oder aus einer Klasse abgeleitet `CObject`), wie in der folgenden Deklaration der Klasse gezeigt `CPerson`, erhalten Sie Zugriff auf die Serialisierungsprotokoll und die Funktionalität von `CObject`.
+Das grundlegende Serialisierungsprotokoll und `CObject` die Funktionalität sind in der Klasse definiert. Durch Ableiten Ihrer `CObject` Klasse aus (oder `CObject`aus einer von ) abgeleiteten Klasse, wie in der folgenden Klassendeklaration `CPerson`gezeigt, erhalten Sie Zugriff auf das Serialisierungsprotokoll und die Funktionalität von `CObject`.
 
-##  <a name="_core_overriding_the_serialize_member_function"></a> Überschreiben der serialisieren Member-Funktion
+## <a name="overriding-the-serialize-member-function"></a><a name="_core_overriding_the_serialize_member_function"></a>Überschreiben der Serialize-Memberfunktion
 
-Die `Serialize` Member-Funktion, die in definiert ist die `CObject` Klasse, die für die eigentliche Serialisierung zum Erfassen der aktuellen Zustand des Objekts erforderlichen Daten verantwortlich ist. Die `Serialize` Funktion verfügt über eine `CArchive` Argument, das zum Lesen und Schreiben von Daten des Objekts verwendet. Die [CArchive](../mfc/reference/carchive-class.md) Objekt verfügt über eine Memberfunktion `IsStoring`, gibt an, ob `Serialize` speichern (Schreiben von Daten) ist, oder laden (Lesen von Daten). Mit den Ergebnissen `IsStoring` als Leitfaden, Sie entweder Daten einfügen, des Objekts in der `CArchive` Objekt mit den Einfügeoperator (**<\<**) oder Extrahieren von Daten mit den Extraktionsoperator ( **>>**).
+Die `Serialize` Memberfunktion, die in `CObject` der Klasse definiert ist, ist für die faktische Serialisierung der Daten verantwortlich, die zum Erfassen des aktuellen Status eines Objekts erforderlich sind. Die `Serialize` Funktion `CArchive` verfügt über ein Argument, das zum Lesen und Schreiben der Objektdaten verwendet wird. Das [CArchive-Objekt](../mfc/reference/carchive-class.md) verfügt `IsStoring`über eine `Serialize` Memberfunktion , die angibt, ob Daten gespeichert (Schreiben) oder geladen (Daten gelesen) werden. Anhand der `IsStoring` Ergebnisse von als Leitfaden fügen Sie entweder `CArchive` die Daten Ihres**<** Objekts mit dem Einfügeoperator ( ) in das Objekt ein oder extrahieren Daten mit dem Extraktionsoperator (**>>**).
 
-Erwägen Sie eine abgeleitete Klasse, von `CObject` und verfügt über zwei neue Membervariablen Typen `CString` und **WORD**. Das folgende Fragment des Klasse-Deklaration zeigt das neue Element aus, und die Deklaration für die überschriebene `Serialize` Memberfunktion:
+Betrachten Sie eine Klasse, die von `CObject` zwei neuen `CString` Membervariablen abgeleitet ist und über zwei neue Membervariablen verfügt, von Typen und **WORD**. Das folgende Klassendeklarationsfragment zeigt die neuen Membervariablen und die Deklaration für die überschriebene `Serialize` Memberfunktion:
 
 [!code-cpp[NVC_MFCSerialization#1](../mfc/codesnippet/cpp/serialization-making-a-serializable-class_1.h)]
 
-#### <a name="to-override-the-serialize-member-function"></a>Überschreiben Sie die Serialize-Member-Funktion
+#### <a name="to-override-the-serialize-member-function"></a>So überschreiben Sie die Serialize-Memberfunktion
 
-1. Rufen Sie die Basisklassenversion von `Serialize` um sicherzustellen, dass die geerbte Teil des Objekts serialisiert wird.
+1. Rufen Sie Ihre `Serialize` Basisklassenversion von auf, um sicherzustellen, dass der geerbte Teil des Objekts serialisiert wird.
 
-1. Fügen Sie ein oder Extrahieren Sie die Membervariablen, die spezifisch für Ihre Klasse.
+1. Fügen Sie die für Ihre Klasse spezifischen Membervariablen ein oder extrahieren Sie sie.
 
-   Die Operatoren zum Einfügung und Extraktion interagieren Sie mit der Archivklasse zum Lesen und Schreiben der das. Das folgende Beispiel veranschaulicht das implementieren `Serialize` für die `CPerson` Klasse deklariert wird, oben:
+   Die Einfüge- und Extraktionsoperatoren interagieren mit der Archivklasse, um die Daten zu lesen und zu schreiben. Das folgende Beispiel zeigt, `CPerson` wie Sie die oben deklarierte Klasse implementieren: `Serialize`
 
    [!code-cpp[NVC_MFCSerialization#2](../mfc/codesnippet/cpp/serialization-making-a-serializable-class_2.cpp)]
 
-Sie können auch die [CArchive:: Read](../mfc/reference/carchive-class.md#read) und [CArchive::Write](../mfc/reference/carchive-class.md#write) Memberfunktionen zum Lesen und Schreiben große Mengen von nicht typisierten Daten.
+Sie können auch die [Memberfunktionen CArchive::Read](../mfc/reference/carchive-class.md#read) und [CArchive::Write](../mfc/reference/carchive-class.md#write) verwenden, um große Mengen nicht typisierter Daten zu lesen und zu schreiben.
 
-##  <a name="_core_using_the_declare_serial_macro"></a> Verwenden die DECLARE_SERIAL-Makro
+## <a name="using-the-declare_serial-macro"></a><a name="_core_using_the_declare_serial_macro"></a>Verwenden des DECLARE_SERIAL-Makros
 
-Die DECLARE_SERIAL-Makro ist erforderlich, in der Deklaration von Klassen, die Serialisierung unterstützt, wie hier gezeigt:
+Das DECLARE_SERIAL Makro in der Deklaration von Klassen erforderlich, die die Serialisierung unterstützen, wie hier gezeigt:
 
 [!code-cpp[NVC_MFCSerialization#3](../mfc/codesnippet/cpp/serialization-making-a-serializable-class_3.h)]
 
-##  <a name="_core_defining_a_constructor_with_no_arguments"></a> Definieren einen Konstruktor ohne Argumente
+## <a name="defining-a-constructor-with-no-arguments"></a><a name="_core_defining_a_constructor_with_no_arguments"></a>Definieren eines Konstruktors ohne Argumente
 
-MFC erfordert einen standardmäßigen Konstruktor aus, wenn sie Ihre Objekte neu während der Deserialisierung (vom Datenträger geladen) erstellt. Bei der Deserialisierung werden alle Membervariablen mit den Werten, das zum Neuerstellen des Objekts erforderlich ausfüllen.
+MFC erfordert einen Standardkonstruktor, wenn er Ihre Objekte neu erstellt, wenn sie deserialisiert (vom Datenträger geladen) werden. Der Deserialisierungsprozess füllt alle Membervariablen mit den Werten aus, die zum erneuten Erstellen des Objekts erforderlich sind.
 
-Dieser Konstruktor kann öffentlich, geschützt oder privat deklariert werden. Wenn Sie es geschützt oder privat vornehmen, können Sie sicherstellen, dass er nur von den Serialisierungsfunktionen verwendet wird. Der Konstruktor muss das Objekt in den Status versetzen, die sie bei Bedarf gelöscht werden können.
+Dieser Konstruktor kann als öffentlich, geschützt oder privat deklariert werden. Wenn Sie es geschützt oder privat machen, stellen Sie sicher, dass es nur von den Serialisierungsfunktionen verwendet wird. Der Konstruktor muss das Objekt in einen Zustand versetzen, in dem es bei Bedarf gelöscht werden kann.
 
 > [!NOTE]
->  Wenn Sie vergessen, einen Konstruktor ohne Argumente in einer Klasse zu definieren, die die DECLARE_SERIAL und IMPLEMENT_SERIAL-Makros verwendet, erhalten eine compilerwarnung "kein Standardkonstruktor verfügbar" in der Zeile Sie, wo die IMPLEMENT_SERIAL-Makro verwendet wird.
+> Wenn Sie vergessen, einen Konstruktor ohne Argumente in einer Klasse zu definieren, die die DECLARE_SERIAL- und IMPLEMENT_SERIAL-Makros verwendet, erhalten Sie in der Zeile, in der das IMPLEMENT_SERIAL-Makro verwendet wird, eine Compilerwarnung "kein Standardkonstruktor verfügbar".
 
-##  <a name="_core_using_the_implement_serial_macro_in_the_implementation_file"></a> Verwenden in der Implementierungsdatei die IMPLEMENT_SERIAL-Makro
+## <a name="using-the-implement_serial-macro-in-the-implementation-file"></a><a name="_core_using_the_implement_serial_macro_in_the_implementation_file"></a>Verwenden des IMPLEMENT_SERIAL-Makros in der Implementierungsdatei
 
-Das IMPLEMENT_SERIAL-Makro wird verwendet, um die verschiedenen Funktionen definieren benötigt beim Ableiten einer serialisierbaren Klasse aus `CObject`. Verwenden Sie dieses Makro in der Implementierungsdatei (. CPP) für die Klasse. Die ersten beiden Argumente in das Makro gibt den Namen der Klasse und den Namen des den direkten Basisklassen.
+Das IMPLEMENT_SERIAL Makro wird verwendet, um die verschiedenen Funktionen zu `CObject`definieren, die beim Ableiten einer serialisierbaren Klasse von erforderlich sind. Sie verwenden dieses Makro in der Implementierungsdatei (. CPP) für Ihre Klasse. Die ersten beiden Argumente für das Makro sind der Name der Klasse und der Name ihrer unmittelbaren Basisklasse.
 
-Das dritte Argument für dieses Makro wird eine Reihe von Schemas. Die Schema-Anzahl ist im Wesentlichen eine Versionsnummer für Objekte der Klasse. Verwenden Sie eine ganze Zahl größer als oder gleich 0, für die Schema-Anzahl. (Verwechseln Sie nicht diese Zahl Schema mit der datenbankterminologie.)
+Das dritte Argument für dieses Makro ist eine Schemanummer. Die Schemanummer ist im Wesentlichen eine Versionsnummer für Objekte der Klasse. Verwenden Sie eine ganze Zahl größer oder gleich 0 für die Schemanummer. (Verwechseln Sie diese Schemanummer nicht mit der Datenbankterminologie.)
 
-Der MFC-Serialisierungscode überprüft die Schema-Anzahl, beim Lesen von Objekten in den Arbeitsspeicher. Wenn die Anzahl der Schema des Objekts auf dem Datenträger die Anzahl von Schema für die Klasse im Arbeitsspeicher nicht übereinstimmt, löst die Bibliothek eine `CArchiveException`, verhindert, dass das Programm eine falsche Version des Objekts zu lesen.
+Der MFC-Serialisierungscode überprüft die Schemanummer beim Lesen von Objekten in den Speicher. Wenn die Schemanummer des Objekts auf dem Datenträger nicht mit der Schemanummer `CArchiveException`der Klasse im Arbeitsspeicher übereinstimmt, löst die Bibliothek eine aus, die verhindert, dass das Programm eine falsche Version des Objekts liest.
 
-Wenn Sie möchten Ihre `Serialize` Memberfunktion versucht, mehrere Versionen lesen können – d. h. Dateien, die mit verschiedenen Versionen der Anwendung geschrieben – können Sie den Wert *VERSIONABLE_SCHEMA* als Argument an die IMPLEMENT_SERIAL -Makro. Weitere Informationen zur Verwendung und ein Beispiel finden Sie unter den `GetObjectSchema` Memberfunktion der Klasse `CArchive`.
+Wenn Sie `Serialize` möchten, dass Ihre Memberfunktion mehrere Versionen lesen kann, d. h. Dateien, die mit verschiedenen Versionen der Anwendung geschrieben wurden, können Sie den Wert *VERSIONABLE_SCHEMA* als Argument für das IMPLEMENT_SERIAL-Makro verwenden. Verwendungsinformationen und ein Beispiel `GetObjectSchema` finden Sie `CArchive`in der Memberfunktion von class .
 
-Das folgende Beispiel zeigt, wie für eine Klasse, die mit IMPLEMENT_SERIAL `CPerson`, d. h. abgeleitet `CObject`:
+Das folgende Beispiel zeigt, wie IMPLEMENT_SERIAL `CPerson`für eine `CObject`Klasse verwendet wird, die von : abgeleitet ist:
 
 [!code-cpp[NVC_MFCSerialization#4](../mfc/codesnippet/cpp/serialization-making-a-serializable-class_4.cpp)]
 
-Nachdem Sie eine serialisierbare Klasse haben, können Sie Objekte der Klasse serialisieren, wie im folgenden Artikel beschrieben [Serialisierung: Serialisieren eines Objekts](../mfc/serialization-serializing-an-object.md).
+Sobald Sie über eine serialisierbare Klasse verfügen, können Sie Objekte der Klasse serialisieren, wie im Artikel [Serialisierung: Serialisieren eines Objekts](../mfc/serialization-serializing-an-object.md)beschrieben.
 
 ## <a name="see-also"></a>Siehe auch
 

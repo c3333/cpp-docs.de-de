@@ -16,16 +16,16 @@ helpviewer_keywords:
 - CEvent [MFC], SetEvent
 - CEvent [MFC], Unlock
 ms.assetid: df676042-ce27-4702-800a-e73ff4f44395
-ms.openlocfilehash: fbf2d834163199107aae44bd5723ceff79e36f91
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 009a17342cb92025d67bf2fe0df1b9d5c7c0c6f0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69506687"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373959"
 ---
 # <a name="cevent-class"></a>CEvent-Klasse
 
-Stellt ein Ereignis dar, bei dem es sich um ein Synchronisierungs Objekt handelt, das einem Thread ermöglicht, einen anderen zu benachrichtigen, dass ein Ereignis aufgetreten
+Stellt ein Ereignis dar, bei dem es sich um ein Synchronisierungsobjekt handelt, das es einem Thread ermöglicht, einen anderen thread zu benachrichtigen, dass ein Ereignis aufgetreten ist.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,36 +37,36 @@ class CEvent : public CSyncObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CEvent:: CEvent](#cevent)|Erstellt ein `CEvent`-Objekt.|
+|[CEvent::CEvent](#cevent)|Erstellt ein `CEvent`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CEvent::PulseEvent](#pulseevent)|Legt das Ereignis auf verfügbar (signalisiert) fest, gibt wartende Threads frei und legt das Ereignis auf nicht verfügbar (nicht signalisiert) fest.|
-|[CEvent::ResetEvent](#resetevent)|Legt das Ereignis auf "nicht verfügbar" (nicht signalisiert) fest.|
+|[CEvent::PulseEvent](#pulseevent)|Legt das Ereignis auf verfügbar (signalisiert), gibt wartende Threads frei und legt das Ereignis auf nicht verfügbar (nicht signalisiert) fest.|
+|[CEvent::ResetEvent](#resetevent)|Legt fest, dass das Ereignis nicht verfügbar ist (nicht signalisiert).|
 |[CEvent::SetEvent](#setevent)|Legt das Ereignis auf verfügbar (signalisiert) fest und gibt alle wartenden Threads frei.|
-|[CEvent::Unlock](#unlock)|Gibt das Ereignis Objekt frei.|
+|[CEvent::Entsperren](#unlock)|Gibt das Ereignisobjekt frei.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ereignisse sind nützlich, wenn ein Thread wissen muss, wann seine Aufgabe durchgeführt werden muss. Beispielsweise muss ein Thread, der Daten in ein Datenarchiv kopiert, benachrichtigt werden, wenn neue Daten verfügbar sind. Wenn Sie den `CEvent` Kopier Thread mithilfe eines-Objekts benachrichtigen, wenn neue Daten verfügbar sind, kann der Thread seine Aufgabe so schnell wie möglich ausführen.
+Ereignisse sind nützlich, wenn ein Thread wissen muss, wann seine Aufgabe ausgeführt werden muss. Beispielsweise muss ein Thread, der Daten in ein Datenarchiv kopiert, benachrichtigt werden, wenn neue Daten verfügbar sind. Wenn Sie `CEvent` ein Objekt verwenden, um den Kopierthread zu benachrichtigen, wenn neue Daten verfügbar sind, kann der Thread seine Aufgabe so schnell wie möglich ausführen.
 
-`CEvent`-Objekte haben zwei Typen: manuell und automatisch.
+`CEvent`Objekte haben zwei Typen: manuell und automatisch.
 
-Ein automatisches `CEvent` Objekt kehrt automatisch in einen nicht signalisierten Zustand (nicht verfügbar) zurück, nachdem mindestens ein Thread freigegeben wurde. Standardmäßig wird ein `CEvent` -Objekt automatisch ausgeführt, es `TRUE` sei denn, Sie übergeben bei der Erstellung für den *bManualReset* -Parameter.
+Ein `CEvent` automatisches Objekt kehrt automatisch in einen nicht signalisierten (nicht verfügbaren) Zustand zurück, nachdem mindestens ein Thread freigegeben wurde. Standardmäßig ist `CEvent` ein Objekt automatisch, `TRUE` es sei denn, Sie übergeben den *Parameter bManualReset* während der Konstruktion.
 
-Ein manuelles `CEvent` Objekt verbleibt in dem Zustand, der von [SetEvent](#setevent) oder [ResetEvent](#resetevent) festgelegt wird, bis die andere Funktion aufgerufen wird. Wenn Sie ein manuelles `CEvent` Objekt erstellen möchten, übergeben `TRUE` Sie für den `bManualReset` -Parameter während der Erstellung.
+Ein `CEvent` manuelles Objekt verbleibt in dem zustand, der von [SetEvent](#setevent) oder [ResetEvent](#resetevent) festgelegt wurde, bis die andere Funktion aufgerufen wird. Um ein `CEvent` manuelles `TRUE` Objekt `bManualReset` zu erstellen, übergeben Sie den Parameter während der Konstruktion.
 
-Um ein `CEvent` -Objekt zu verwenden, `CEvent` erstellen Sie das-Objekt, wenn es erforderlich ist. Geben Sie den Namen des Ereignisses an, auf das gewartet werden soll, und geben Sie außerdem an, dass die Anwendung das Ereignis anfänglich besitzen soll. Sie können dann auf das-Ereignis zugreifen, wenn der Konstruktor zurückgibt. Aufrufen von [SetEvent](#setevent) zum signalisieren (verfügbar machen) des Ereignis Objekts und anschließendes Aufrufen von [Unlock](#unlock) , wenn Sie mit dem Zugriff auf die kontrollierte Ressource abgeschlossen sind.
+Um ein `CEvent` Objekt zu `CEvent` verwenden, erstellen Sie das Objekt, wenn es erforderlich ist. Geben Sie den Namen des Ereignisses an, auf das Sie warten möchten, und geben Sie außerdem an, dass die Anwendung zunächst Eigentümer des Ereignisses sein soll. Sie können dann auf das Ereignis zugreifen, wenn der Konstruktor zurückkehrt. Rufen Sie [SetEvent](#setevent) auf, um das Ereignisobjekt zu signalisieren (verfügbar zu machen), und rufen Sie dann [Unlock](#unlock) auf, wenn Sie mit dem Zugriff auf die gesteuerte Ressource fertig sind.
 
-Eine alternative Methode zum verwenden `CEvent` von-Objekten besteht darin, der Klasse `CEvent` , die Sie steuern möchten, eine Variable vom Typ als Datenmember hinzuzufügen. Beim Erstellen des kontrollierten Objekts wird der Konstruktor des `CEvent` Datenmembers aufgerufen und angegeben, ob das Ereignis anfänglich signalisiert wird, und es wird auch der Typ des gewünschten Ereignis Objekts angegeben, der Name des Ereignisses (wenn es Prozess übergreifend verwendet wird). Grenzen) und alle gewünschten Sicherheits Attribute.
+Eine alternative Methode `CEvent` zum Verwenden von Objekten `CEvent` besteht darin, der Klasse, die Sie steuern möchten, eine Variable des Typs als Datenmember hinzuzufügen. Rufen Sie während der Konstruktion des gesteuerten Objekts den Konstruktor des `CEvent` Datenmembers auf, und geben Sie an, ob das Ereignis anfänglich signalisiert wird, und geben Sie auch den gewünschten Ereignistyp, den Namen des Ereignisses (falls es über Prozessgrenzen hinweg verwendet wird) und alle gewünschten Sicherheitsattribute an.
 
-Um auf eine auf diese Weise von `CEvent` einem-Objekt gesteuerte Ressource zuzugreifen, erstellen Sie zunächst eine Variable vom Typ [CSingleLock](../../mfc/reference/csinglelock-class.md) , oder geben Sie [CMultiLock](../../mfc/reference/cmultilock-class.md) in der Zugriffsmethode der Ressource ein. Anschließend wird die `Lock` -Methode des Lock-Objekts aufgerufen (z. b. [CMultiLock:: Lock](../../mfc/reference/cmultilock-class.md#lock)). An diesem Punkt erhält der Thread entweder Zugriff auf die Ressource, wartet, bis die Ressource freigegeben wird, und erhält Zugriff, oder er wartet darauf, dass die Ressource freigegeben wird, ein Timeout und kann nicht auf die Ressource zugreifen. In jedem Fall wurde auf Ihre Ressource Thread sicher zugegriffen. Um die Ressource freizugeben, `SetEvent` verwenden Sie, um das Ereignis Objekt zu signalisieren, `Unlock` und verwenden Sie dann die-Methode des Sperr Objekts (z. b. [CMultiLock:: Unlock](../../mfc/reference/cmultilock-class.md#unlock)), oder lassen Sie das Sperr Objekt den Gültigkeitsbereich verlassen.
+Um auf diese Weise `CEvent` auf eine von einem Objekt gesteuerte Ressource zuzugreifen, erstellen Sie zunächst eine Variable vom Typ [CSingleLock](../../mfc/reference/csinglelock-class.md) oder in der Zugriffsmethode Ihrer Ressource [cMultiLock.](../../mfc/reference/cmultilock-class.md) Rufen Sie `Lock` dann die Methode des Sperrobjekts auf (z. B. [CMultiLock::Lock](../../mfc/reference/cmultilock-class.md#lock)). An diesem Punkt erhält der Thread entweder Zugriff auf die Ressource, wartet auf die Freigabe der Ressource und erhält Zugriff, oder wartet, bis die Ressource freigegeben wird, eine Zeitauszeit und kein Zugriff auf die Ressource. In jedem Fall wurde auf Ihre Ressource threadsicher zugegriffen. Um die Ressource `SetEvent` freizugeben, rufen Sie das Ereignisobjekt auf, um das Ereignisobjekt zu signalisieren, und verwenden Sie dann die `Unlock` Methode des Sperrobjekts (z. B. [CMultiLock::Unlock](../../mfc/reference/cmultilock-class.md#unlock)), oder lassen Sie das Sperrobjekt aus dem Gültigkeitsbereich fallen.
 
-Weitere Informationen zur Verwendung `CEvent` von Objekten finden [Sie unter Multithreading: Verwenden der Synchronisierungs Klassen](../../parallel/multithreading-how-to-use-the-synchronization-classes.md)
+Weitere Informationen zur Verwendung `CEvent` von Objekten finden Sie unter [Multithreading: Verwenden der Synchronisierungsklassen](../../parallel/multithreading-how-to-use-the-synchronization-classes.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -76,7 +76,7 @@ Weitere Informationen zur Verwendung `CEvent` von Objekten finden [Sie unter Mul
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CSyncObject](../../mfc/reference/csyncobject-class.md)
 
@@ -84,11 +84,11 @@ Weitere Informationen zur Verwendung `CEvent` von Objekten finden [Sie unter Mul
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxmt.h
+**Kopf:** afxmt.h
 
-##  <a name="cevent"></a>CEvent:: CEvent
+## <a name="ceventcevent"></a><a name="cevent"></a>CEvent::CEvent
 
-Erstellt ein benanntes `CEvent` oder Unbenanntes Objekt.
+Erstellt ein benanntes `CEvent` oder unbenanntes Objekt.
 
 ```
 CEvent(
@@ -101,29 +101,29 @@ CEvent(
 ### <a name="parameters"></a>Parameter
 
 *bInitiallyOwn*<br/>
-TRUE gibt an, dass der Thread `CMultilock` für `CSingleLock` das-Objekt oder das-Objekt aktiviert ist. Andernfalls müssen alle Threads, die auf die Ressource zugreifen möchten, warten.
+Wenn TRUE, ist `CMultilock` der `CSingleLock` Thread für das oder-Objekt aktiviert. Andernfalls müssen alle Threads, die auf die Ressource zugreifen möchten, warten.
 
 *bManualReset*<br/>
-TRUE gibt an, dass das Ereignis Objekt ein manuelles Ereignis ist, da das Ereignis Objekt andernfalls ein automatisches Ereignis ist.
+Wenn TRUE, gibt an, dass das Ereignisobjekt ein manuelles Ereignis ist, andernfalls ist das Ereignisobjekt ein automatisches Ereignis.
 
-*Wert*<br/>
-Name des `CEvent`-Objekts. Muss angegeben werden, wenn das-Objekt über Prozess Grenzen hinweg verwendet wird. Wenn der Name mit einem vorhandenen Ereignis übereinstimmt, erstellt der Konstruktor `CEvent` ein neues-Objekt, das auf das-Ereignis dieses Namens verweist. Wenn der Name mit einem vorhandenen Synchronisierungs Objekt übereinstimmt, das kein Ereignis ist, tritt bei der Erstellung ein Fehler auf. Wenn der Wert NULL ist, ist der Name NULL.
+*lpszName*<br/>
+Name des `CEvent`-Objekts. Muss angegeben werden, wenn das Objekt über Prozessgrenzen hinweg verwendet wird. Wenn der Name mit einem vorhandenen Ereignis `CEvent` übereinstimmt, erstellt der Konstruktor ein neues Objekt, das auf das Ereignis dieses Namens verweist. Wenn der Name mit einem vorhandenen Synchronisierungsobjekt übereinstimmt, das kein Ereignis ist, schlägt die Konstruktion fehl. Wenn NULL, ist der Name NULL.
 
 *lpsaAttribute*<br/>
-Sicherheits Attribute für das Ereignis Objekt. Eine vollständige Beschreibung dieser Struktur finden Sie unter [SECURITY_ATTRIBUTES](/previous-versions/windows/desktop/legacy/aa379560\(v=vs.85\)) im Windows SDK.
+Sicherheitsattribute für das Ereignisobjekt. Eine vollständige Beschreibung dieser Struktur finden Sie unter [SECURITY_ATTRIBUTES](/previous-versions/windows/desktop/legacy/aa379560\(v=vs.85\)) im Windows SDK.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`CEvent` Erstellen Sie ein [CMultiLock](../../mfc/reference/cmultilock-class.md) -oder [CSingleLock](../../mfc/reference/csinglelock-class.md) -Objekt, und rufen Sie seine [Lock](../../mfc/reference/csinglelock-class.md#lock) -und [Unlock](../../mfc/reference/csinglelock-class.md#unlock) -Member-Funktionen auf, um auf ein-Objekt zuzugreifen
+Um auf ein `CEvent` Objekt zuzugreifen oder es freizugeben, erstellen Sie ein [CMultiLock-](../../mfc/reference/cmultilock-class.md) oder [CSingleLock-Objekt](../../mfc/reference/csinglelock-class.md) und rufen die [Mitgliedsfunktionen Sperren](../../mfc/reference/csinglelock-class.md#lock) und [Entsperren](../../mfc/reference/csinglelock-class.md#unlock) auf.
 
-Um den Zustand eines `CEvent` -Objekts in "signalisiert" (Threads müssen nicht gewartet werden) zu ändern, wird " [SetEvent](#setevent) " oder " [PulseEvent](#pulseevent)" aufgerufen. Um den Zustand eines `CEvent` -Objekts auf nicht signalisiert festzulegen (Threads müssen warten), wenden Sie [ResetEvent](#resetevent)an.
+Um den Status `CEvent` eines Objekts in signalisiert zu ändern (Threads müssen nicht warten), rufen Sie [SetEvent](#setevent) oder [PulseEvent](#pulseevent)auf. Um den Status `CEvent` eines Objekts auf nicht signalisiert festzulegen (Threads müssen warten), rufen Sie [ResetEvent](#resetevent)auf.
 
 > [!IMPORTANT]
->  Nachdem Sie das `CEvent` Objekt erstellt haben, verwenden Sie [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) , um sicherzustellen, dass der Mutex nicht bereits vorhanden ist. Wenn der Mutex unerwartet vorhanden war, deutet dies möglicherweise darauf hin, dass ein nicht autorisierter Prozess besetzt wird und die Mutex böswillig verwenden könnte. In diesem Fall besteht das empfohlene sicherheitsbewusste Verfahren darin, das Handle zu schließen und den Vorgang fortzusetzen, als ob bei der Erstellung des Objekts ein Fehler aufgetreten ist.
+> Verwenden Sie `CEvent` nach dem Erstellen des Objekts [GetLastError,](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) um sicherzustellen, dass der Mutex noch nicht vorhanden ist. Wenn der Mutex unerwartet existierte, kann dies darauf hindeuten, dass ein Nichtautorisiertes Prozess hockt und möglicherweise beabsichtigt, den Mutex böswillig zu verwenden. In diesem Fall wird das empfohlene sicherheitsbewusste Verfahren darin durchgeführt, das Handle zu schließen und so fortzufahren, als ob beim Erstellen des Objekts ein Fehler aufgetreten wäre.
 
-##  <a name="pulseevent"></a>CEvent::P ulcevent
+## <a name="ceventpulseevent"></a><a name="pulseevent"></a>CEvent::PulseEvent
 
-Legt den Zustand des Ereignisses auf "signalisiert (verfügbar)" fest, gibt alle wartenden Threads frei und setzt Sie automatisch auf "nicht signalisiert" (nicht verfügbar) zurück.
+Legt den Status des Ereignisses auf signalisiert (verfügbar) fest, gibt alle wartenden Threads frei und setzt es automatisch auf nicht signalisiert (nicht verfügbar) zurück.
 
 ```
 BOOL PulseEvent();
@@ -131,19 +131,19 @@ BOOL PulseEvent();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
+Ein Wert ungleich Null, wenn die Funktion erfolgreich war; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Ereignis manuell ist, werden alle wartenden Threads freigegeben, das Ereignis ist auf "nicht signalisiert" `PulseEvent` festgelegt, und es wird zurückgegeben. Wenn das Ereignis automatisch erfolgt, wird ein einzelner Thread freigegeben, das Ereignis ist auf "nicht signalisiert" `PulseEvent` festgelegt, und es wird zurückgegeben.
+Wenn das Ereignis manuell ist, werden alle wartenden Threads freigegeben, `PulseEvent` das Ereignis wird auf nicht signalisiert festgelegt und kehrt zurück. Wenn das Ereignis automatisch ist, wird ein einzelner Thread freigegeben, `PulseEvent` das Ereignis wird auf nicht signalisiert gesetzt und kehrt zurück.
 
-Wenn keine Threads warten oder sofort keine Threads freigegeben werden können, wird `PulseEvent` der Zustand des Ereignisses auf nicht signalisiert festgelegt, und es wird zurückgegeben.
+Wenn keine Threads warten oder keine Threads `PulseEvent` sofort freigegeben werden können, wird der Status des Ereignisses auf nicht signalisiert festgelegt und zurückgegeben.
 
-`PulseEvent`verwendet die zugrunde liegende `PulseEvent` Win32-Funktion, die vorübergehend aus dem Wartezustand durch einen asynchronen Prozedur aufrufim Kernel Modus entfernt werden kann. `PulseEvent` Daher ist unzuverlässig und sollte von neuen Anwendungen nicht verwendet werden. Weitere Informationen finden Sie unter der [pulsetevent-Funktion](/windows/win32/api/winbase/nf-winbase-pulseevent).
+`PulseEvent`verwendet die zugrunde `PulseEvent` liegende Win32-Funktion, die durch einen asynchronen Prozeduraufruf im Kernelmodus kurzzeitig aus dem Wartezustand entfernt werden kann. Daher `PulseEvent` ist unzuverlässig und sollte nicht von neuen Anwendungen verwendet werden. Weitere Informationen finden Sie in der [PulseEvent-Funktion](/windows/win32/api/winbase/nf-winbase-pulseevent).
 
-##  <a name="resetevent"></a>CEvent:: rebuildervent
+## <a name="ceventresetevent"></a><a name="resetevent"></a>CEvent::ResetEvent
 
-Legt den Zustand des Ereignisses auf "nicht signalisiert" fest, bis die Funktion " [SetEvent](#setevent) " explizit auf "signalisiert" festgelegt ist.
+Legt den Status des Ereignisses auf nicht signalisiert fest, bis explizit von der [SetEvent-Memberfunktion](#setevent) signalisiert festgelegt wird.
 
 ```
 BOOL ResetEvent();
@@ -151,17 +151,17 @@ BOOL ResetEvent();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Funktion erfolgreich war. andernfalls 0.
+Ein Wert ungleich Null, wenn die Funktion erfolgreich war; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies bewirkt, dass alle Threads, die auf dieses Ereignis zugreifen möchten, warten.
+Dies führt dazu, dass alle Threads, die auf dieses Ereignis zugreifen möchten, warten.
 
-Diese Member-Funktion wird von automatischen Ereignissen nicht verwendet.
+Diese Memberfunktion wird von automatischen Ereignissen nicht verwendet.
 
-##  <a name="setevent"></a>CEvent:: Log Vent
+## <a name="ceventsetevent"></a><a name="setevent"></a>CEvent::SetEvent
 
-Legt den Zustand des Ereignisses auf signalisiert fest und gibt alle wartenden Threads frei.
+Legt den Status des Ereignisses auf signalisiert fest und gibt alle wartenden Threads frei.
 
 ```
 BOOL SetEvent();
@@ -169,15 +169,15 @@ BOOL SetEvent();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Funktion erfolgreich war, andernfalls 0.
+Ein Wert ungleich Null, wenn die Funktion erfolgreich war, andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Ereignis manuell ist, bleibt das Ereignis signalisiert, bis [reantevent](#resetevent) aufgerufen wird. In diesem Fall können mehrere Threads freigegeben werden. Wenn das Ereignis automatisch erfolgt, bleibt das Ereignis signalisiert, bis ein einzelner Thread freigegeben wird. Das System legt dann den Status des Ereignisses auf "nicht signalisiert" fest. Wenn keine Threads warten, bleibt der Status signalisiert, bis ein Thread freigegeben wird.
+Wenn das Ereignis manuell ist, bleibt das Ereignis signalisiert, bis [ResetEvent](#resetevent) aufgerufen wird. In diesem Fall können mehr als ein Thread freigegeben werden. Wenn das Ereignis automatisch ist, bleibt das Ereignis signalisiert, bis ein einzelner Thread freigegeben wird. Das System setzt dann den Status des Ereignisses auf nicht signalisiert. Wenn keine Threads warten, bleibt der Status signalisiert, bis ein Thread freigegeben wird.
 
-##  <a name="unlock"></a>CEvent:: Unlock
+## <a name="ceventunlock"></a><a name="unlock"></a>CEvent::Entsperren
 
-Gibt das Ereignis Objekt frei.
+Gibt das Ereignisobjekt frei.
 
 ```
 BOOL Unlock();
@@ -185,11 +185,11 @@ BOOL Unlock();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Thread dem Ereignis Objekt gehört und das Ereignis ein automatisches Ereignis ist. andernfalls 0.
+Ein Wert ungleich Null, wenn der Thread Eigentümer des Ereignisobjekts ist und das Ereignis ein automatisches Ereignis ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion wird von Threads aufgerufen, die derzeit ein automatisches Ereignis besitzen, um es freizugeben, wenn das Sperr Objekt wieder verwendet werden soll. Wenn das Lock-Objekt nicht wieder verwendet werden soll, wird diese Funktion vom Dekonstruktor des Lock-Objekts aufgerufen.
+Diese Memberfunktion wird von Threads aufgerufen, die derzeit ein automatisches Ereignis besitzen, um sie nach deren Verwendung freizugeben, wenn ihr Sperrobjekt wiederverwendet werden soll. Wenn das Sperrobjekt nicht wiederverwendet werden soll, wird diese Funktion vom Destruktor des Sperrobjekts aufgerufen.
 
 ## <a name="see-also"></a>Siehe auch
 

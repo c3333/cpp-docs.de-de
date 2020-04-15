@@ -1,6 +1,6 @@
 ---
 title: RELOG_DESCRIPTOR Struktur
-description: Das C++ Build Insights SDK RELOG_DESCRIPTOR Struktur Referenz.
+description: Das C++ Build Insights SDK RELOG_DESCRIPTOR Strukturreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: f6f20835ed6535dd05def629200c113772e8f077
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: c3aee49fe9f609ca37082693ddcfd5e838cc96a1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78333971"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328938"
 ---
 # <a name="relog_descriptor-structure"></a>RELOG_DESCRIPTOR Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `RELOG_DESCRIPTOR`-Struktur wird mit den Funktionen [reloga](../functions/relog-a.md) und [relogw](../functions/relog-w.md) verwendet. Es wird beschrieben, wie eine Ablauf Verfolgung für die Ereignis Ablauf Verfolgung für Windows (ETW) erneut protokolliert werden soll.
+Die `RELOG_DESCRIPTOR` Struktur wird mit den Funktionen [RelogA](../functions/relog-a.md) und [RelogW](../functions/relog-w.md) verwendet. Es wird beschrieben, wie eine Ereignisablaufverfolgung für Windows (ETW) neu protokolliert werden soll.
 
 ## <a name="syntax"></a>Syntax
 
@@ -41,23 +41,23 @@ typedef struct RELOG_DESCRIPTOR_TAG
 } RELOG_DESCRIPTOR;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |  |  |
 |--|--|
-| `NumberOfAnalysisPasses` | Die Anzahl von Analyse Durchläufen, die während der Analysephase der erneuten Protokollierung über die ETW-Ablauf Verfolgung durchgeführt werden sollen. |
-| `AnalysisCallbacks` | Ein [ANALYSIS_CALLBACKS](analysis-callbacks-struct.md) -Objekt, das angibt, welche Funktionen während der Analysephase der erneuten Protokollierung aufgerufen werden. |
-| `RelogCallbacks` | Ein [RELOG_CALLBACKS](relog-callbacks-struct.md) -Objekt, das angibt, welche Funktionen während der neuprotokollierungs Phase der erneuten Protokollierung aufgerufen werden. |
-| `SystemEventsRetentionFlags` | Eine [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](relog-retention-system-event-flags-constants.md) Bitmaske, die angibt, welche System-ETW-Ereignisse in der protokollierten Ablauf Verfolgung aufbewahrt werden sollen. |
-| `AnalysisContext` | Ein vom Benutzer bereitgestellter Kontext, der als Argument an alle in angegebenen Rückruf Funktionen übermittelt wird `AnalysisCallbacks` |
-| `RelogContext` | Ein vom Benutzer bereitgestellter Kontext, der als Argument an alle in angegebenen Rückruf Funktionen übermittelt wird `RelogCallbacks` |
+| `NumberOfAnalysisPasses` | Die Anzahl der Analysedurchläufe, die während der Analysephase der Relogging-Sitzung über die ETW-Ablaufverfolgung durchgeführt werden sollen. |
+| `AnalysisCallbacks` | Ein [ANALYSIS_CALLBACKS](analysis-callbacks-struct.md) Objekt, das angibt, welche Funktionen während der Analysephase der Relogging-Sitzung aufzurufen sind. |
+| `RelogCallbacks` | Ein [RELOG_CALLBACKS](relog-callbacks-struct.md) Objekt, das angibt, welche Funktionen während der Relogging-Phase der Relogging-Sitzung aufzurufen sind. |
+| `SystemEventsRetentionFlags` | Eine [RELOG_RETENTION_SYSTEM_EVENT_FLAGS](relog-retention-system-event-flags-constants.md) Bitmaske an, die angibt, welche System-ETW-Ereignisse in der erneut protokollierten Ablaufverfolgung beibehalten werden sollen. |
+| `AnalysisContext` | Ein vom Benutzer bereitgestellter Kontext, der als Argument an alle in`AnalysisCallbacks` |
+| `RelogContext` | Ein vom Benutzer bereitgestellter Kontext, der als Argument an alle in`RelogCallbacks` |
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die erneute Protokollierung von ETW-Ereignissen während einer erneuten Protokollierungs Sitzung wird vom Benutzer über die in `RelogCallbacks`angegebenen Rückruf Funktionen gesteuert. System-ETW-Ereignisse wie z. b. CPU-Beispiele werden jedoch nicht an diese Rückruf Funktionen weitergeleitet. Verwenden Sie das `SystemEventsRetentionFlags` Feld, um die erneute Protokollierung von etw-System Ereignissen zu steuern.
+Das Erneute Protokollieren von ETW-Ereignissen während einer Relogging-Sitzung `RelogCallbacks`wird vom Benutzer über die in angegebenen Rückruffunktionen gesteuert. System-ETW-Ereignisse wie CPU-Beispiele werden jedoch nicht an diese Rückruffunktionen weitergeleitet. Verwenden `SystemEventsRetentionFlags` Sie das Feld, um die Neuprotokollierung von System-ETW-Ereignissen zu steuern.
 
-Die `AnalysisCallbacks`-und `RelogCallbacks` Strukturen akzeptieren nur Zeiger auf Funktionen, die nicht Mitglied sind. Sie können diese Einschränkung umgehen, indem Sie Sie auf einen Objekt Zeiger festlegen. Dieser Objekt Zeiger wird als Argument an alle nicht-Member-Rückruf Funktionen übermittelt. Verwenden Sie diesen Zeiger, um Member-Funktionen innerhalb ihrer nicht-Member-Rückruf Funktionen aufzurufen.
+Die `AnalysisCallbacks` `RelogCallbacks` und Strukturen akzeptieren nur Zeiger auf Nicht-Member-Funktionen. Sie können diese Einschränkung umgehen, indem Sie sie auf einen Objektzeiger festlegen. Dieser Objektzeiger wird als Argument an alle Nicht-Member-Rückruffunktionen übergeben. Verwenden Sie diesen Zeiger, um Memberfunktionen innerhalb Ihrer Rückruffunktionen ohne Mitglieder aufzurufen.
 
-Die Analysephase einer erneuten Protokollierungs Sitzung wird vor der erneuten Protokollierungs Phase immer ausgeführt.
+Die Analysephase einer Relogging-Sitzung wird immer vor der Relogging-Phase ausgeführt.
 
 ::: moniker-end

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - std::sleep_until [C++]
 - std::swap [C++]
 - std::yield [C++]
-ms.openlocfilehash: 8064cec7e94a909d7dc2e1b22142d362bb7b9488
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: bb0a0a12ec2882701447804f9c88d1776a196cb7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426180"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375836"
 ---
 # <a name="ltthreadgt-functions"></a>&lt;thread&gt;-Funktionen
 
@@ -28,7 +28,7 @@ ms.locfileid: "79426180"
 |[get_id](#get_id)|[sleep_for](#sleep_for)|[sleep_until](#sleep_until)|
 |[swap](#swap)|[yield](#yield)|
 
-## <a name="get_id"></a> get_id
+## <a name="get_id"></a><a name="get_id"></a>get_id
 
 Weist den aktuellen Ausführungsthread eindeutig aus.
 
@@ -40,7 +40,7 @@ thread::id this_thread::get_id() noexcept;
 
 Ein Objekt vom Typ [Thread:: ID](../standard-library/thread-class.md), das den aktuellen Ausführungsthread eindeutig ausweist.
 
-## <a name="sleep_for"></a> sleep_for
+## <a name="sleep_for"></a><a name="sleep_for"></a>sleep_for
 
 Blockiert den aufrufenden Thread.
 
@@ -55,11 +55,11 @@ inline void sleep_for(const chrono::duration<Rep, Period>& Rel_time);
 *Rel_time*\
 Ein [Dauer](../standard-library/duration-class.md)-Objekt, das ein Zeitintervall angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion sperrt den aufrufenden Thread zumindest für die Zeit, die durch *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
+Die Funktion blockiert den aufrufenden Thread mindestens für die Zeit, die von *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="sleep_until"></a> sleep_until
+## <a name="sleep_until"></a><a name="sleep_until"></a>sleep_until
 
 Blockiert den aufrufenden Thread mindestens bis zum angegebenen Zeitpunkt.
 
@@ -75,13 +75,13 @@ void sleep_until(const xtime *Abs_time);
 *Abs_time*\
 Stellt einen Zeitpunkt dar.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="swap"></a> swap
+## <a name="swap"></a><a name="swap"></a>Swap
 
-Vertauscht die Zustände von zwei **Thread** -Objekten.
+Vertauscht die Zustände von zwei **Threadobjekten.**
 
 ```cpp
 void swap(thread& Left, thread& Right) noexcept;
@@ -89,17 +89,17 @@ void swap(thread& Left, thread& Right) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Das linke **Thread** Objekt.
+*Links*\
+Das linke **Threadobjekt.**
 
-*Rechte*\
-Das Rechte **Thread** Objekt.
+*Richting*\
+Das richtige **Threadobjekt.**
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion ruft `Left.swap(Right)` auf.
 
-## <a name="yield"></a> yield
+## <a name="yield"></a><a name="yield"></a>Ertrag
 
 Signalisiert dem Betriebssystem, andere Threads auszuführen, auch wenn der aktuelle Thread normalerweise weiterhin ausgeführt werden würde.
 
@@ -109,4 +109,4 @@ inline void yield() noexcept;
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<thread>](../standard-library/thread.md)
+[\<Gewinde>](../standard-library/thread.md)

@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - templates, with CLR types
 ms.assetid: cf59d16b-5514-448b-9a95-e0b4fcb616a6
-ms.openlocfilehash: ce30133d9a2d1ce5a6e446093a617f3a108055c4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5765370e611e5822b3b2d156d2eee5d21e5b453d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80171826"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376303"
 ---
 # <a name="windows-runtime-and-managed-templates-ccli-and-ccx"></a>Windows-Runtime und verwaltete Vorlagen (C++/CLI und C++/CX)
 
@@ -26,7 +26,7 @@ Weitere Informationen zu C++-Standardklassenvorlagen finden Sie unter [Klassenvo
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: `/ZW`
 
@@ -34,7 +34,7 @@ Compileroption: `/ZW`
 
 Es gibt einige Einschränkungen für das Erstellen von Klassenvorlagen aus verwalteten Typen, die in den folgenden Codebeispielen veranschaulicht werden.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: `/clr`
 
@@ -73,7 +73,7 @@ template<class T> public ref class R {
 };
 ```
 
-Sie können nicht auf Vorlagen zugreifen, die in einer referenzierten Assembly mit C++/CLI-Sprachsyntax definiert sind, aber Sie können Reflektion verwenden. Wenn eine Vorlage nicht instanziiert ist, wird sie nicht in den Metadaten ausgegeben. Wenn eine Vorlage instanziiert ist, werden nur Memberfunktionen, auf die verwiesen wird, in den Metadaten angezeigt.
+Sie können nicht auf Vorlagen zugreifen, die in einer referenzierten Assembly mit C++/CLI-Sprachsyntax definiert sind, aber Sie können Reflektion verwenden. Wenn eine Vorlage nicht instanziiert wird, wird sie nicht in den Metadaten angezeigt. Wenn eine Vorlage instanziiert ist, werden nur Memberfunktionen, auf die verwiesen wird, in den Metadaten angezeigt.
 
 ```cpp
 // managed_templates_3.cpp
@@ -130,6 +130,6 @@ template <>
 class A <int> {};
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)

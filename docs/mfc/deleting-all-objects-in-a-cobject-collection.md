@@ -10,73 +10,73 @@ helpviewer_keywords:
 - objects in CObject collections
 - collection classes [MFC], shared objects
 ms.assetid: 81d2c1d5-a0a5-46e1-8ab9-82b45cf7afd2
-ms.openlocfilehash: 95d4cec61b230df5a019655617a25b1dc309cde4
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 303b8a566a730c5abd06d51fb7977174e19a6435
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62153502"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370534"
 ---
 # <a name="deleting-all-objects-in-a-cobject-collection"></a>Löschen aller Objekte in einer CObject-Sammlung
 
-In diesem Artikel wird erläutert, wie alle Objekte in einer Sammlung löschen (ohne löschen das Auflistungsobjekt selbst).
+In diesem Artikel wird erläutert, wie Sie alle Objekte in einer Auflistung löschen (ohne das Auflistungsobjekt selbst zu löschen).
 
-Zum Löschen aller Objekte in einer Auflistung von `CObject`s (oder abgeleitete Objekte `CObject`), verwenden Sie eine der in diesem Artikel beschriebenen Techniken Iteration [den Zugriff auf alle Mitglieder einer Sammlung](../mfc/accessing-all-members-of-a-collection.md) jedes Objekt in löschen Aktivieren.
+Um alle Objekte in einer `CObject`Auflistung von s `CObject`(oder von ) zu löschen, verwenden Sie eine der im Artikel [Zugriff auf alle Mitglieder einer Sammlung](../mfc/accessing-all-members-of-a-collection.md) beschriebenen Iterationstechniken, um jedes Objekt nacheinander zu löschen.
 
 > [!CAUTION]
->  Objekte in Sammlungen können freigegeben werden. D. h. die Auflistung speichert einen Zeiger auf das Objekt, aber andere Teile des Programms möglicherweise Verweise auf dasselbe Objekt. Sie müssen nicht auf ein Objekt zu löschen, die verwendet wird, bis alle Teile wurden unter Verwendung des Objekts sein.
+> Objekte in Auflistungen können freigegeben werden. Das heißt, die Auflistung behält einen Zeiger auf das Objekt, aber andere Teile des Programms können auch Zeiger auf dasselbe Objekt haben. Sie müssen darauf achten, dass Sie ein freigegebenes Objekt nicht löschen, bis alle Teile mit dem Objekt fertig sind.
 
-In diesem Artikel erfahren Sie, wie die Objekte im gelöscht:
+Dieser Artikel zeigt Ihnen, wie Sie die Objekte in folgenden Beispielen löschen:
 
 - [Eine Liste](#_core_to_delete_all_objects_in_a_list_of_pointers_to_cobject)
 
-- [Ein array](#_core_to_delete_all_elements_in_an_array)
+- [Ein Array](#_core_to_delete_all_elements_in_an_array)
 
-- [Eine Zuordnung](#_core_to_delete_all_elements_in_a_map)
+- [Eine Karte](#_core_to_delete_all_elements_in_a_map)
 
-#### <a name="_core_to_delete_all_objects_in_a_list_of_pointers_to_cobject"></a>  Zum Löschen aller Objekte in einer Liste von Zeigern auf CObject
+#### <a name="to-delete-all-objects-in-a-list-of-pointers-to-cobject"></a><a name="_core_to_delete_all_objects_in_a_list_of_pointers_to_cobject"></a>So löschen Sie alle Objekte in einer Liste von Zeigern auf CObject
 
-1. Verwendung `GetHeadPosition` und `GetNext` um die Liste zu durchlaufen.
+1. Verwenden `GetHeadPosition` `GetNext` und durchlaufen Sie die Liste.
 
-1. Verwenden der **löschen** Operator, um jedes Objekt gelöscht werden, da es in der Iteration gefunden wird.
+1. Verwenden Sie den **Löschoperator,** um jedes Objekt so zu löschen, wie es in der Iteration auftritt.
 
-1. Rufen Sie die `RemoveAll` Funktion, um alle Elemente aus der Liste entfernen, nachdem die Objekte, die mit diesen Elementen verknüpften gelöscht wurden.
+1. Rufen `RemoveAll` Sie die Funktion auf, um alle Elemente aus der Liste zu entfernen, nachdem die mit diesen Elementen verknüpften Objekte gelöscht wurden.
 
-Das folgende Beispiel zeigt, wie Sie zum Löschen aller Objekte aus einer Liste von `CPerson` Objekte. Jedes Objekt in der Liste ist ein Zeiger auf eine `CPerson` -Objekt, das ursprünglich auf dem Heap belegt wurde.
+Das folgende Beispiel zeigt, wie Sie `CPerson` alle Objekte aus einer Liste von Objekten löschen. Jedes Objekt in der Liste ist `CPerson` ein Zeiger auf ein Objekt, das ursprünglich auf dem Heap zugewiesen wurde.
 
 [!code-cpp[NVC_MFCCollections#17](../mfc/codesnippet/cpp/deleting-all-objects-in-a-cobject-collection_1.cpp)]
 
-Der letzte Funktionsaufruf, `RemoveAll`, ist eine Liste-Memberfunktion, die alle Elemente aus der Liste entfernt. Die Memberfunktion `RemoveAt` ein einzelnes Element entfernt.
+Der letzte Funktionsaufruf , ist eine Listenmemberfunktion, `RemoveAll`die alle Elemente aus der Liste entfernt. Die Memberfunktion `RemoveAt` entfernt ein einzelnes Element.
 
-Beachten Sie, dass des Unterschied zwischen dem Löschen eines Elements-Objekts, und entfernen das Element selbst. Nur ein Element aus der Liste entfernt, wird der Verweis auf das Objekt entfernt. Das Objekt ist immer noch im Arbeitsspeicher vorhanden. Wenn Sie ein Objekt löschen, wird nicht mehr vorhanden, und der verwendete Speicherplatz wird freigegeben. Daher ist es wichtig, ein Element zu entfernen, sofort nach dem Auswählen des Elements Objekt gelöscht wurde, damit die Liste wird nicht versuchen Sie, den Zugriff auf Objekte, die nicht mehr vorhanden sind.
+Beachten Sie den Unterschied zwischen dem Löschen des Objekts eines Elements und dem Entfernen des Elements selbst. Wenn Sie ein Element aus der Liste entfernen, wird lediglich der Verweis der Liste auf das Objekt entfernt. Das Objekt ist weiterhin im Speicher vorhanden. Wenn Sie ein Objekt löschen, ist es nicht mehr vorhanden, und sein Speicher wird freigegeben. Daher ist es wichtig, ein Element unmittelbar nach dem Löschen des Elements zu entfernen, damit die Liste nicht versucht, auf Objekte zuzugreifen, die nicht mehr vorhanden sind.
 
-#### <a name="_core_to_delete_all_elements_in_an_array"></a>  So löschen Sie alle Elemente in einem array
+#### <a name="to-delete-all-elements-in-an-array"></a><a name="_core_to_delete_all_elements_in_an_array"></a>So löschen Sie alle Elemente in einem Array
 
-1. Verwendung `GetSize` und Index-Ganzzahlwerten, durchläuft das Array.
+1. Verwenden `GetSize` sie und ganzzahlige Indexwerte, um das Array zu durchlaufen.
 
-1. Verwenden der **löschen** Operator, um jedes Element gelöscht werden, da es in der Iteration gefunden wird.
+1. Verwenden Sie den **Löschoperator,** um jedes Element zu löschen, wie es in der Iteration auftritt.
 
-1. Rufen Sie die `RemoveAll` Funktion, um alle Elemente aus dem Array entfernt werden, nachdem sie gelöscht wurden.
+1. Rufen `RemoveAll` Sie die Funktion auf, um alle Elemente aus dem Array zu entfernen, nachdem sie gelöscht wurden.
 
-   Der Code zum Löschen aller Elemente eines Arrays ist wie folgt aus:
+   Der Code zum Löschen aller Elemente eines Arrays lautet wie folgt:
 
    [!code-cpp[NVC_MFCCollections#18](../mfc/codesnippet/cpp/deleting-all-objects-in-a-cobject-collection_2.cpp)]
 
-Wie Sie mit dem obigen Liste-Beispiel, das Sie aufrufen können `RemoveAll` So entfernen Sie alle Elemente in einem Array oder `RemoveAt` um ein einzelnes Element zu entfernen.
+Wie im obigen Listenbeispiel `RemoveAll` können Sie aufrufen, alle `RemoveAt` Elemente in einem Array oder ein einzelnes Element zu entfernen.
 
-#### <a name="_core_to_delete_all_elements_in_a_map"></a> So löschen Sie alle Elemente in einer Zuordnung
+#### <a name="to-delete-all-elements-in-a-map"></a><a name="_core_to_delete_all_elements_in_a_map"></a>So löschen Sie alle Elemente in einer Karte
 
-1. Verwendung `GetStartPosition` und `GetNextAssoc` durchläuft das Array.
+1. Verwenden `GetStartPosition` `GetNextAssoc` und durchlaufen Sie das Array.
 
-1. Verwenden der **löschen** Operator, um den Schlüssel und/oder einen Wert für jedes kartenelement gelöscht werden, da es in der Iteration gefunden wird.
+1. Verwenden Sie den **Löschoperator,** um den Schlüssel und/oder Wert für jedes Kartenelement zu löschen, wie es in der Iteration auftritt.
 
-1. Rufen Sie die `RemoveAll` Funktion, um alle Elemente aus der Zuordnung entfernen, nachdem sie gelöscht wurden.
+1. Rufen `RemoveAll` Sie die Funktion auf, um alle Elemente aus der Karte zu entfernen, nachdem sie gelöscht wurden.
 
-   Der Code zum Löschen aller Elemente einer `CMap` Auflistung lautet wie folgt. Jedes Element in der Zuordnung ist eine Zeichenfolge als Schlüssel und ein `CPerson` Objekt (abgeleitet von `CObject`) als Wert.
+   Der Code zum Löschen `CMap` aller Elemente einer Auflistung lautet wie folgt. Jedes Element in der Karte hat eine `CPerson` Zeichenfolge als `CObject`Schlüssel und ein Objekt (abgeleitet von ) als Wert.
 
    [!code-cpp[NVC_MFCCollections#19](../mfc/codesnippet/cpp/deleting-all-objects-in-a-cobject-collection_3.cpp)]
 
-Rufen Sie `RemoveAll` So entfernen Sie alle Elemente in einer Karte oder `RemoveKey` um ein einzelnes Element mit dem angegebenen Schlüssel zu entfernen.
+Sie können `RemoveAll` aufrufen, um alle `RemoveKey` Elemente in einer Karte zu entfernen oder ein einzelnes Element mit dem angegebenen Schlüssel zu entfernen.
 
 ## <a name="see-also"></a>Siehe auch
 

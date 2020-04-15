@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::VerifyInterfaceHelper structure
 - Microsoft::WRL::Details::VerifyInterfaceHelper::Verify method
 ms.assetid: ea95b641-199a-4fdf-964b-186b40cb3ba7
-ms.openlocfilehash: cdd0272953b2399cd71efe207eb1c56e5de154e6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 09c2cc7e08e2dc0e8df42c64d285c37627c5925a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398094"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374246"
 ---
 # <a name="verifyinterfacehelper-structure"></a>VerifyInterfaceHelper-Struktur
 
-Unterstützt die Windows Runtime C++ Template Library-Infrastruktur, und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die Windows Runtime C++-Vorlagenbibliotheksinfrastruktur und ist nicht für die direkte Verwendung aus Ihrem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,22 +32,22 @@ struct VerifyInterfaceHelper<false, I>;
 
 ### <a name="parameters"></a>Parameter
 
-*I*<br/>
-Eine Schnittstelle, um zu überprüfen.
+*Ⅰ*<br/>
+Eine Schnittstelle zum Überprüfen.
 
 *isWinRTInterface*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Überprüft, ob die die Template-Parameter angegebene Schnittstelle bestimmte Anforderungen erfüllt.
+Überprüft, ob die vom Vorlagenparameter angegebene Schnittstelle bestimmte Anforderungen erfüllt.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                            | Beschreibung
+Name                                            | BESCHREIBUNG
 ----------------------------------------------- | ---------------------------------------------------------------------------------------------------
-[VerifyInterfaceHelper::Verify-Methode](#verify) | Überprüft, ob die Schnittstelle, die durch den aktuellen Vorlagenparameter angegeben bestimmte Anforderungen erfüllt.
+[VerifyInterfaceHelper::Verify-Methode](#verify) | Überprüft, ob die vom aktuellen Vorlagenparameter angegebene Schnittstelle bestimmte Anforderungen erfüllt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -59,14 +59,14 @@ Name                                            | Beschreibung
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="verify"></a>VerifyInterfaceHelper::Verify
+## <a name="verifyinterfacehelperverify"></a><a name="verify"></a>VerifyInterfaceHelper::Verify
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 static void Verify();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überprüft, ob die Schnittstelle, die durch den aktuellen Vorlagenparameter angegeben bestimmte Anforderungen erfüllt.
+Überprüft, ob die vom aktuellen Vorlagenparameter angegebene Schnittstelle bestimmte Anforderungen erfüllt.

@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CDCRenderTarget [MFC], GetDCRenderTarget
 - CDCRenderTarget [MFC], m_pDCRenderTarget
 ms.assetid: aa8059c9-08e6-49e4-9b8c-00fa54077a61
-ms.openlocfilehash: 70169d2b89d9ea657898f7a96dea27556023d4e2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 790ce0f32c2325fa0ea92ca0bda64ddaa4c86c45
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62168172"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375697"
 ---
 # <a name="cdcrendertarget-class"></a>CDCRenderTarget-Klasse
 
@@ -41,35 +41,35 @@ class CDCRenderTarget : public CRenderTarget;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDCRenderTarget::CDCRenderTarget](#cdcrendertarget)|Erstellt ein CDCRenderTarget-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDCRenderTarget::Attach](#attach)|Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern|
-|[CDCRenderTarget::BindDC](#binddc)|Bindet das Renderziel auf den Gerätekontext, die an den sie zeichnen-Befehle ausgibt|
-|[CDCRenderTarget::Create](#create)|Erstellt einen CDCRenderTarget.|
-|[CDCRenderTarget::Detach](#detach)|Trennt die Render-Ziel-Schnittstelle des Objekts|
-|[CDCRenderTarget::GetDCRenderTarget](#getdcrendertarget)|Gibt die ID2D1DCRenderTarget-Schnittstelle|
+|[CDCRenderTarget::Anfügen](#attach)|Fügt vorhandene Renderzielschnittstelle an das Objekt an|
+|[CDCRenderTarget::BindDC](#binddc)|Bindet das Renderziel an den Gerätekontext, an den es Zeichnungsbefehle ausgibt|
+|[CDCRenderTarget::Erstellen](#create)|Erstellt ein CDCRenderTarget.|
+|[CDCRenderTarget::Detach](#detach)|Trennt die Renderzielschnittstelle vom Objekt|
+|[CDCRenderTarget::GetDCRenderTarget](#getdcrendertarget)|Gibt ID2D1DCRenderTarget-Schnittstelle zurück|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDCRenderTarget::operator ID2D1DCRenderTarget*](#operator_id2d1dcrendertarget_star)|Gibt die ID2D1DCRenderTarget-Schnittstelle|
+|[CDCRenderTarget::operator ID2D1DCRenderTarget*](#operator_id2d1dcrendertarget_star)|Gibt ID2D1DCRenderTarget-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDCRenderTarget::m_pDCRenderTarget](#m_pdcrendertarget)|Ein Zeiger auf ein ID2D1DCRenderTarget-Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CRenderTarget](../../mfc/reference/crendertarget-class.md)
 
@@ -77,11 +77,11 @@ class CDCRenderTarget : public CRenderTarget;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="attach"></a>  CDCRenderTarget::Attach
+## <a name="cdcrendertargetattach"></a><a name="attach"></a>CDCRenderTarget::Anfügen
 
-Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern
+Fügt vorhandene Renderzielschnittstelle an das Objekt an
 
 ```
 void Attach(ID2D1DCRenderTarget* pTarget);
@@ -90,11 +90,11 @@ void Attach(ID2D1DCRenderTarget* pTarget);
 ### <a name="parameters"></a>Parameter
 
 *pTarget*<br/>
-Vorhandene Render-Ziel-Schnittstelle. NULL darf nicht sein
+Vorhandene Renderzielschnittstelle. Kann nicht NULL sein
 
-##  <a name="binddc"></a>  CDCRenderTarget::BindDC
+## <a name="cdcrendertargetbinddc"></a><a name="binddc"></a>CDCRenderTarget::BindDC
 
-Bindet das Renderziel auf den Gerätekontext, die an den sie zeichnen-Befehle ausgibt
+Bindet das Renderziel an den Gerätekontext, an den es Zeichnungsbefehle ausgibt
 
 ```
 BOOL BindDC(
@@ -104,17 +104,17 @@ BOOL BindDC(
 
 ### <a name="parameters"></a>Parameter
 
-*dc*<br/>
-Der Gerätekontext, die an den das Renderziel zeichnen-Befehle ausgibt
+*Dc*<br/>
+Der Gerätekontext, in den das Renderziel Zeichnungsbefehle ausgibt
 
-*rect*<br/>
-Die Dimensionen des Handles für einen Gerätekontext (HDC) an dem das Renderziel gebunden ist
+*Rect*<br/>
+Die Abmessungen des Handles an einen Gerätekontext (HDC), an den das Renderziel gebunden ist
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird FALSE zurückgegeben.
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="cdcrendertarget"></a>  CDCRenderTarget::CDCRenderTarget
+## <a name="cdcrendertargetcdcrendertarget"></a><a name="cdcrendertarget"></a>CDCRenderTarget::CDCRenderTarget
 
 Erstellt ein CDCRenderTarget-Objekt.
 
@@ -122,9 +122,9 @@ Erstellt ein CDCRenderTarget-Objekt.
 CDCRenderTarget();
 ```
 
-##  <a name="create"></a>  CDCRenderTarget::Create
+## <a name="cdcrendertargetcreate"></a><a name="create"></a>CDCRenderTarget::Erstellen
 
-Erstellt einen CDCRenderTarget.
+Erstellt ein CDCRenderTarget.
 
 ```
 BOOL Create(const D2D1_RENDER_TARGET_PROPERTIES& props);
@@ -132,16 +132,16 @@ BOOL Create(const D2D1_RENDER_TARGET_PROPERTIES& props);
 
 ### <a name="parameters"></a>Parameter
 
-*props*<br/>
-Der Renderingmodus, Pixelformat, Remotingoptionen, DPI-Informationen und die minimale DirectX-Unterstützung für das Hardwarerendering erforderlich.
+*Props*<br/>
+Der Rendering-Modus, das Pixelformat, die Remote-Optionen, dPI-Informationen und die minimale DirectX-Unterstützung, die für das Hardware-Rendering erforderlich ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird FALSE zurückgegeben.
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="detach"></a>  CDCRenderTarget::Detach
+## <a name="cdcrendertargetdetach"></a><a name="detach"></a>CDCRenderTarget::Detach
 
-Trennt die Render-Ziel-Schnittstelle des Objekts
+Trennt die Renderzielschnittstelle vom Objekt
 
 ```
 ID2D1DCRenderTarget* Detach();
@@ -149,11 +149,11 @@ ID2D1DCRenderTarget* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf getrennten rendern, Ziel-Schnittstelle.
+Zeiger auf die getrennte Renderzielschnittstelle.
 
-##  <a name="getdcrendertarget"></a>  CDCRenderTarget::GetDCRenderTarget
+## <a name="cdcrendertargetgetdcrendertarget"></a><a name="getdcrendertarget"></a>CDCRenderTarget::GetDCRenderTarget
 
-Gibt die ID2D1DCRenderTarget-Schnittstelle
+Gibt ID2D1DCRenderTarget-Schnittstelle zurück
 
 ```
 ID2D1DCRenderTarget* GetDCRenderTarget();
@@ -161,9 +161,9 @@ ID2D1DCRenderTarget* GetDCRenderTarget();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1DCRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1DCRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="m_pdcrendertarget"></a>  CDCRenderTarget::m_pDCRenderTarget
+## <a name="cdcrendertargetm_pdcrendertarget"></a><a name="m_pdcrendertarget"></a>CDCRenderTarget::m_pDCRenderTarget
 
 Ein Zeiger auf ein ID2D1DCRenderTarget-Objekt.
 
@@ -171,9 +171,9 @@ Ein Zeiger auf ein ID2D1DCRenderTarget-Objekt.
 ID2D1DCRenderTarget* m_pDCRenderTarget;
 ```
 
-##  <a name="operator_id2d1dcrendertarget_star"></a>  CDCRenderTarget::operator ID2D1DCRenderTarget *
+## <a name="cdcrendertargetoperator-id2d1dcrendertarget"></a><a name="operator_id2d1dcrendertarget_star"></a>CDCRenderTarget::operator ID2D1DCRenderTarget*
 
-Gibt die ID2D1DCRenderTarget-Schnittstelle
+Gibt ID2D1DCRenderTarget-Schnittstelle zurück
 
 ```
 operator ID2D1DCRenderTarget*();
@@ -181,7 +181,7 @@ operator ID2D1DCRenderTarget*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1DCRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1DCRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
 ## <a name="see-also"></a>Siehe auch
 

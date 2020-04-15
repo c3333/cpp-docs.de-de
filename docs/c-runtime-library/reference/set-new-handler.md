@@ -1,8 +1,9 @@
 ---
 title: _set_new_handler
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _set_new_handler
+- _o__set_new_handler
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - error handling
 - transferring control to error handler
 ms.assetid: 1d1781b6-5cf8-486a-b430-f365e0bb023f
-ms.openlocfilehash: a1f340887efd657dd9ff9bf219534d77fdd90aa3
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c3f1b9bd8bf2a4404e2239858e4c3c59b755bacd
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948468"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332376"
 ---
 # <a name="_set_new_handler"></a>_set_new_handler
 
@@ -52,20 +54,22 @@ Zeiger zu der von der Anwendung bereitgestellten Speicherbehandlungsfunktion. Is
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die vorherige Ausnahme Behandlungs Funktion zurück, die von **_set_new_handler**registriert wurde, sodass die vorherige Funktion später wieder hergestellt werden kann. Wenn keine vorherige Funktion festgelegt wurde, kann der Rückgabewert verwendet werden, um das Standardverhalten wiederherzustellen. Dieser Wert kann **null**sein.
+Gibt einen Zeiger auf die vorherige Ausnahmebehandlungsfunktion zurück, die von **_set_new_handler**registriert wurde, sodass die vorherige Funktion später wiederhergestellt werden kann. Wenn keine vorherige Funktion festgelegt wurde, kann der Rückgabewert verwendet werden, um das Standardverhalten wiederherzustellen. Dieser Wert kann **NULL**sein.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die C++ **_set_new_handler** -Funktion gibt eine Ausnahme Behandlungs Funktion an, die die Steuerung erhält, wenn der **neue** Operator keinen Arbeitsspeicher zuordnen kann. Schlägt **New** fehl, ruft das Laufzeitsystem automatisch die Ausnahme Behandlungs Funktion auf, die als Argument an **_set_new_handler**übermittelt wurde. **_PNH**, definiert in New. h, ist ein Zeiger auf eine Funktion, die den Typ " **int** " zurückgibt und ein Argument vom Typ " **size_t**" annimmt. Verwenden Sie **size_t** , um den Speicherplatz anzugeben, der zugewiesen werden soll.
+Die C++-_set_new_handler-Funktion gibt eine Ausnahmebehandlungsfunktion an, die die Kontrolle erhält, wenn der **neue** Operator keinen Speicher zuweist. **_set_new_handler** Wenn **neu** fehlschlägt, ruft das Laufzeitsystem automatisch die Ausnahmebehandlungsfunktion auf, die als Argument an **_set_new_handler**übergeben wurde. **_PNH**, die in New.h definiert ist, ist ein Zeiger auf eine Funktion, die den Typ **int** zurückgibt und ein Argument vom Typ **size_t**annimmt. Verwenden Sie **size_t,** um den zuzuweisenden Speicherplatz anzugeben.
 
 Es ist kein Standardhandler vorhanden.
 
-bei **_set_new_handler** handelt es sich im Wesentlichen um ein Garbage Collection-Schema. Das Laufzeitsystem wiederholt die Zuordnung jedes Mal, wenn die Funktion einen Wert ungleich null zurückgibt, und schlägt fehl, wenn die Funktion 0 zurückgibt.
+**_set_new_handler** ist im Wesentlichen ein Garbage Collection-Schema. Das Laufzeitsystem wiederholt die Zuordnung jedes Mal, wenn die Funktion einen Wert ungleich null zurückgibt, und schlägt fehl, wenn die Funktion 0 zurückgibt.
 
-Ein Vorkommen der **_set_new_handler** -Funktion in einem Programm registriert die in der Argumentliste angegebene Ausnahme Behandlungs Funktion mit dem Laufzeitsystem:
+Ein Vorkommen der **_set_new_handler-Funktion** in einem Programm registriert die in der Argumentliste angegebene Ausnahmebehandlungsfunktion beim Laufzeitsystem:
 
 ```cpp
 // set_new_handler1.cpp
+By default, this function's global state is scoped to the application. To change this, see [Global state in the CRT](../global-state.md).
+
 #include <new.h>
 
 int handle_program_memory_depletion( size_t )
@@ -80,7 +84,7 @@ int main( void )
 }
 ```
 
-Sie können die Funktions Adresse speichern, die zuletzt an die **_set_new_handler** -Funktion weitergegeben wurde, und Sie später wieder aktivieren:
+Sie können die Funktionsadresse, die zuletzt an die **_set_new_handler-Funktion** übergeben wurde, speichern und später wieder setzen:
 
 ```cpp
    _PNH old_handler = _set_new_handler( my_handler );
@@ -91,7 +95,7 @@ Sie können die Funktions Adresse speichern, die zuletzt an die **_set_new_handl
    // . . .
 ```
 
-Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für [malloc](malloc.md) fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie von **_set_new_handler**festgelegt. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten außer Kraft setzen, sodass, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, die neue Handlerroutine von **malloc** auf die gleiche Weise aufgerufen wird wie der **neue** Operator, wenn dieser aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
+Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für [malloc](malloc.md) fest. Der neue Handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie von **_set_new_handler**festgelegt. Standardmäßig ruft **malloc** die neue Handlerroutine bei Nichtzuweisung von Arbeitsspeicher nicht auf. Sie können dieses Standardverhalten überschreiben, sodass **malloc** die neue Handlerroutine auf die gleiche Weise aufruft, wenn **malloc** keinen Speicher zuweist, wie der **neue** Operator dies tut, wenn er aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
 
 ```cpp
 _set_new_mode(1);
@@ -99,19 +103,19 @@ _set_new_mode(1);
 
 rechtzeitig im Programm auf, oder stellen Sie eine Verknüpfung mit Newmode.obj her.
 
-Wenn ein benutzerdefinierter `operator new` bereitgestellt wird, werden die neuen Handlerfunktionen bei einem Fehler nicht automatisch aufgerufen.
+Wenn eine benutzerdefinierte `operator new` bereitgestellt wird, werden die neuen Handlerfunktionen bei Einem Fehler nicht automatisch aufgerufen.
 
 Weitere Informationen finden Sie unter [new](../../cpp/new-operator-cpp.md) und [delete](../../cpp/delete-operator-cpp.md) in der *C++-Sprachreferenz*.
 
-Es gibt einen einzelnen **_set_new_handler** -Handler für alle dynamisch verknüpften DLLs oder ausführbaren Dateien. auch wenn Sie **_set_new_handler** anrufen, wird der Handler möglicherweise durch einen anderen ersetzt, oder Sie ersetzen einen Handler, der von einer anderen DLL oder ausführbaren Datei festgelegt wurde.
+Es gibt einen einzelnen **_set_new_handler-Handler** für alle dynamisch verknüpften DLLs oder ausführbaren Dateien. Auch wenn Sie **_set_new_handler** wird der Handler möglicherweise durch einen anderen ersetzt oder dass Sie einen Handler ersetzen, der durch eine andere DLL oder ausführbare Datei festgelegt wurde.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_set_new_handler**|\<new.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -165,7 +169,7 @@ Please contact the application's support team for more information.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Speicherreservierung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>
-[free](free.md)<br/>
+[kostenlos](free.md)<br/>
 [realloc](realloc.md)<br/>

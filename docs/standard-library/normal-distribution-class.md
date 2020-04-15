@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::normal_distribution [C++], param_type
 - std::normal_distribution [C++], param_type
 ms.assetid: bf92cdbd-bc72-4d4a-b588-173d748f0d7d
-ms.openlocfilehash: 39c5321d5bc22e14ace3335e4a925bf7284d1cb0
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 2f64f221e0abdf0cd13b44d5f567aa99f9e4af5c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689236"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376221"
 ---
 # <a name="normal_distribution-class"></a>normal_distribution-Klasse
 
@@ -71,19 +71,19 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*RealType* -\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+*RealType*\
+Der Gleitkomma-Ergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert. Wenn kein entsprechend der normal Verteilung verteilter Wert vorhanden ist, geben Sie **Double** ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps erzeugt, oder typ **doppelt,** wenn keine bereitgestellt wird, verteilt gemäß der Normalverteilung. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
 |[normal_distribution](#normal_distribution)|`normal_distribution::mean`|`normal_distribution::param`|
 |`normal_distribution::operator()`|`normal_distribution::stddev`|[param_type](#param_type)|
 
-Die Eigenschaften Funktionen `mean()` und `stddev()` die Werte für die gespeicherten Verteilungsparameter *Mean* bzw. *StdDev* zurückgeben.
+Die Eigenschaft `mean()` `stddev()` sät und gibt die Werte für die gespeicherten Verteilungsparameter *mean* bzw. *stddev* zurück.
 
 Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
 
@@ -93,7 +93,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 Ausführliche Informationen zur Normalverteilung finden Sie im Artikel [Normal Distribution (Normalverteilung)](https://go.microsoft.com/fwlink/p/?linkid=400924) auf WolframMathWorld.com.
 
@@ -187,7 +187,7 @@ Distribution for 10 samples:
 
 **Namespace:** std
 
-## <a name="normal_distribution"></a> normal_distribution::normal_distribution
+## <a name="normal_distributionnormal_distribution"></a><a name="normal_distribution"></a>normal_distribution::normal_distribution
 
 Erstellt die Verteilung.
 
@@ -198,24 +198,24 @@ explicit normal_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*Mittelwert* \
+*Bedeuten*\
 Der `mean`-Verteilungsparameter.
 
-*StdDev* -\
+*Stddev*\
 Der `stddev`-Verteilungsparameter.
 
-*\ für* den
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < stddev`
+**Voraussetzung:**`0.0 < stddev`
 
 Mit dem ersten Konstruktor wird ein Objekt erstellt, dessen gespeicherter `mean`-Wert den Wert *mean* und dessen gespeicherter `stddev`-Wert den Wert *stddev* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> normal_distribution::param_type
+## <a name="normal_distributionparam_type"></a><a name="param_type"></a>normal_distribution::param_type
 
 Speichert die Parameter der Verteilung.
 
@@ -233,21 +233,21 @@ struct param_type {
 
 ### <a name="parameters"></a>Parameter
 
-*Mittelwert* \
+*Bedeuten*\
 Der `mean`-Verteilungsparameter.
 
-*StdDev* -\
+*Stddev*\
 Der `stddev`-Verteilungsparameter.
 
-*Rechte* \
+*Richting*\
 Die `param_type`-Struktur, mit der verglichen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < stddev`
+**Voraussetzung:**`0.0 < stddev`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

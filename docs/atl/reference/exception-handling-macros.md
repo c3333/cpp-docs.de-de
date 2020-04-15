@@ -1,5 +1,5 @@
 ---
-title: Ausnahmebehandlungs-Makros
+title: Ausnahmebehandlung von Makros
 ms.date: 11/04/2016
 f1_keywords:
 - atldef/ATL::_ATLCATCH
@@ -9,30 +9,30 @@ helpviewer_keywords:
 - exception handling, macros
 - C++ exception handling, macros
 ms.assetid: a8385d34-3fb0-4006-a42a-de045cacf0f4
-ms.openlocfilehash: 8afb2019e38f7548467e85d9a2c1c12c538cf744
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2beffbbed0efee799005190bd7fd071a2087e4d9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62276247"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330086"
 ---
-# <a name="exception-handling-macros"></a>Ausnahmebehandlungs-Makros
+# <a name="exception-handling-macros"></a>Ausnahmebehandlung von Makros
 
-Diese Makros bieten Unterstützung für die Ausnahmebehandlung.
+Diese Makros unterstützen die Ausnahmebehandlung.
 
 |||
 |-|-|
-|[_ATLCATCH](#_atlcatch)|Anweisungen zum Behandeln von Fehlern, die im zugeordneten `_ATLTRY`.|
-|[_ATLCATCHALL](#_atlcatchall)|Anweisungen zum Behandeln von Fehlern, die im zugeordneten `_ATLTRY`.|
-|[_ATLTRY](#_atltry)|Markiert einen geschütztes Codeabschnitt, in dem Fehler möglicherweise auftreten können.|
+|[_ATLCATCH](#_atlcatch)|Anweisung(en) zur Behandlung von Fehlern, die in der zugeordneten `_ATLTRY`auftreten.|
+|[_ATLCATCHALL](#_atlcatchall)|Anweisung(en) zur Behandlung von Fehlern, die in der zugeordneten `_ATLTRY`auftreten.|
+|[_ATLTRY](#_atltry)|Markiert einen geschützten Codeabschnitt, in dem möglicherweise ein Fehler auftritt.|
 
 ## <a name="requirements"></a>Anforderungen:
 
-**Header:** atldef.h
+**Kopfzeile:** atldef.h
 
-##  <a name="_atlcatch"></a>  _ATLCATCH
+## <a name="_atlcatch"></a><a name="_atlcatch"></a>_ATLCATCH
 
-Anweisungen zum Behandeln von Fehlern, die im zugeordneten `_ATLTRY`.
+Anweisung(en) zur Behandlung von Fehlern, die in der zugeordneten `_ATLTRY`auftreten.
 
 ```
 _ATLCATCH(e)
@@ -40,36 +40,36 @@ _ATLCATCH(e)
 
 ### <a name="parameters"></a>Parameter
 
-*e*<br/>
-Die Ausnahme abgefangen.
+*E*<br/>
+Die zu fangende Ausnahme.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zusammen mit `_ATLTRY`. Löst in C++ [catch (CAtlException e)](../../cpp/try-throw-and-catch-statements-cpp.md) für eine bestimmte Art von C++-Ausnahmen zu behandeln.
+Wird in Verbindung mit der `_ATLTRY`-Eigenschaft verwendet. Löst [C++-catch(CAtlException e)](../../cpp/try-throw-and-catch-statements-cpp.md) für die Behandlung eines bestimmten Typs von C++-Ausnahmen auf.
 
-##  <a name="_atlcatchall"></a>  _ATLCATCHALL
+## <a name="_atlcatchall"></a><a name="_atlcatchall"></a>_ATLCATCHALL
 
-Anweisungen zum Behandeln von Fehlern, die im zugeordneten `_ATLTRY`.
+Anweisung(en) zur Behandlung von Fehlern, die in der zugeordneten `_ATLTRY`auftreten.
 
 ```
 _ATLCATCHALL
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zusammen mit `_ATLTRY`. Löst in C++ [catch(...) ](../../cpp/try-throw-and-catch-statements-cpp.md) für alle Arten von C++-Ausnahmen zu behandeln.
+Wird in Verbindung mit der `_ATLTRY`-Eigenschaft verwendet. Löst [C++catch(...)](../../cpp/try-throw-and-catch-statements-cpp.md) für die Behandlung aller Arten von C++-Ausnahmen.
 
-##  <a name="_atltry"></a>  _ATLTRY
+## <a name="_atltry"></a><a name="_atltry"></a>_ATLTRY
 
-Markiert einen geschütztes Codeabschnitt, in dem Fehler möglicherweise auftreten können.
+Markiert einen geschützten Codeabschnitt, in dem möglicherweise ein Fehler auftritt.
 
 ```
 _ATLTRY
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zusammen mit [_ATLCATCH](#_atlcatch) oder [_ATLCATCHALL](#_atlcatchall). Löst in der C++-Symbol [versuchen](../../cpp/try-throw-and-catch-statements-cpp.md).
+Wird in Verbindung mit [_ATLCATCH](#_atlcatch) oder [_ATLCATCHALL](#_atlcatchall)verwendet. Auflöst auf das C++-Symbol [try](../../cpp/try-throw-and-catch-statements-cpp.md).
 
 ## <a name="see-also"></a>Siehe auch
 

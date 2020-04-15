@@ -14,16 +14,16 @@ helpviewer_keywords:
 - CMFCLinkCtrl [MFC], SizeToContent
 - CMFCLinkCtrl [MFC], OnDrawFocusRect
 ms.assetid: 80f3874d-7cc8-410e-9ff1-62a225f5034b
-ms.openlocfilehash: 839448694cee17f5bc1a1e47f7c113026a1a4006
-ms.sourcegitcommit: c6f8e6c2daec40ff4effd8ca99a7014a3b41ef33
+ms.openlocfilehash: 1ef4e390d88f81d738d2ee18be6ba02843633011
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346210"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374400"
 ---
 # <a name="cmfclinkctrl-class"></a>CMFCLinkCtrl-Klasse
 
-Die `CMFCLinkCtrl` Klasse zeigt eine Schaltfläche als Hyperlink an und ruft das Ziel des Links auf, wenn die Schaltfläche geklickt wird.
+Die `CMFCLinkCtrl` Klasse zeigt eine Schaltfläche als Hyperlink an und ruft das Ziel des Links auf, wenn auf die Schaltfläche geklickt wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,32 +35,32 @@ class CMFCLinkCtrl : public CMFCButton
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCLinkCtrl::SetURL](#seturl)|Zeigt eine angegebene URL als Text der Schaltfläche an.|
-|[CMFCLinkCtrl::SetURLPrefix](#seturlprefix)|Legt das implizite-Protokoll (z. B. "http:") der URL.|
-|[CMFCLinkCtrl::SizeToContent](#sizetocontent)|Ändert die Schaltfläche, um den Text der Schaltfläche oder eine Bitmap enthält.|
+|[CMFCLinkCtrl::SetURL](#seturl)|Zeigt eine angegebene URL als Schaltflächentext an.|
+|[CMFCLinkCtrl::SetURLPrefix](#seturlprefix)|Legt das implizite Protokoll (z. B. "http:") der URL fest.|
+|[CMFCLinkCtrl::SizeToContent](#sizetocontent)|Ändert die Größe der Schaltfläche so, dass sie den Schaltflächentext oder die Bitmap enthält.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCLinkCtrl::OnDrawFocusRect](#ondrawfocusrect)|Wird vom Framework aufgerufen, bevor das Fokusrechteck der Schaltfläche gezeichnet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Beim Klicken auf eine Schaltfläche, die von abgeleitet ist die `CMFCLinkCtrl` -Klasse, die vom Framework übergeben der URL für die Schaltfläche als Parameter an die `ShellExecute` Methode. Die `ShellExecute` -Methode öffnet das Ziel der URL.
+Wenn Sie auf eine Schaltfläche `CMFCLinkCtrl` klicken, die von der Klasse abgeleitet wird, `ShellExecute` übergibt das Framework die URL der Schaltfläche als Parameter an die Methode. Dann `ShellExecute` öffnet die Methode das Ziel der URL.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die Größe des eine `CMFCLinkCtrl` -Objekt, und wie Sie eine Url und QuickInfo im Festlegen einer `CMFCLinkCtrl` Objekt. In diesem Beispiel ist Teil der [Beispiel neue Steuerelemente](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird veranschaulicht, `CMFCLinkCtrl` wie die Größe eines Objekts festgelegt wird `CMFCLinkCtrl` und wie eine URL und eine QuickInfo in einem Objekt festgelegt werden. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#9](../../mfc/reference/codesnippet/cpp/cmfclinkctrl-class_1.h)]
 [!code-cpp[NVC_MFC_NewControls#10](../../mfc/reference/codesnippet/cpp/cmfclinkctrl-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -74,9 +74,9 @@ Im folgenden Beispiel wird veranschaulicht, wie die Größe des eine `CMFCLinkCt
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxlinkctrl.h
+**Kopfzeile:** afxlinkctrl.h
 
-##  <a name="ondrawfocusrect"></a>  CMFCLinkCtrl::OnDrawFocusRect
+## <a name="cmfclinkctrlondrawfocusrect"></a><a name="ondrawfocusrect"></a>CMFCLinkCtrl::OnDrawFocusRect
 
 Wird vom Framework aufgerufen, bevor das Fokusrechteck der Schaltfläche gezeichnet wird.
 
@@ -92,15 +92,15 @@ virtual void OnDrawFocusRect(
 [in] Ein Zeiger auf einen Gerätekontext.
 
 *rectClient*<br/>
-[in] Ein Rechteck, das die Link-Steuerelement umschließt.
+[in] Ein Rechteck, das das Verknüpfungssteuerelement umgrenzt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode, wenn Sie Ihren eigenen Code zu verwenden, um die Schaltfläche "das Fokusrechteck gezeichnet werden soll.
+Überschreiben Sie diese Methode, wenn Sie Ihren eigenen Code verwenden möchten, um das Fokusrechteck der Schaltfläche zu zeichnen.
 
-##  <a name="seturl"></a>  CMFCLinkCtrl::SetURL
+## <a name="cmfclinkctrlseturl"></a><a name="seturl"></a>CMFCLinkCtrl::SetURL
 
-Zeigt eine angegebene URL als Text der Schaltfläche an.
+Zeigt eine angegebene URL als Schaltflächentext an.
 
 ```
 void SetURL(LPCTSTR lpszURL);
@@ -109,13 +109,13 @@ void SetURL(LPCTSTR lpszURL);
 ### <a name="parameters"></a>Parameter
 
 *lpszURL*<br/>
-[in] Der Text der Schaltfläche angezeigt.
+[in] Der anzuzeigende Schaltflächentext.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="seturlprefix"></a>  CMFCLinkCtrl::SetURLPrefix
+## <a name="cmfclinkctrlseturlprefix"></a><a name="seturlprefix"></a>CMFCLinkCtrl::SetURLPrefix
 
-Legt das implizite-Protokoll (z. B. "http:") der URL.
+Legt das implizite Protokoll (z. B. "http:") der URL fest.
 
 ```
 void SetURLPrefix(LPCTSTR lpszPrefix);
@@ -124,15 +124,15 @@ void SetURLPrefix(LPCTSTR lpszPrefix);
 ### <a name="parameters"></a>Parameter
 
 *lpszPrefix*<br/>
-[in] Das Präfix des URL-Protokoll.
+[in] Das Präfix des URL-Protokolls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um das URL-Präfix festzulegen. Das Präfix wird nicht auf die Schaltfläche "Gesicht angezeigt, aber Sie können es an die URL Ziel suchen.
+Verwenden Sie diese Methode, um das URL-Präfix festzulegen. Das Präfix wird nicht auf dem Gesicht der Schaltfläche angezeigt, aber Sie können es verwenden, um zum Ziel der URL zu navigieren.
 
-##  <a name="sizetocontent"></a>  CMFCLinkCtrl::SizeToContent
+## <a name="cmfclinkctrlsizetocontent"></a><a name="sizetocontent"></a>CMFCLinkCtrl::SizeToContent
 
-Ändert die Schaltfläche, um den Text der Schaltfläche oder eine Bitmap enthält.
+Ändert die Größe der Schaltfläche so, dass sie den Schaltflächentext oder die Bitmap enthält.
 
 ```
 virtual CSize SizeToContent(
@@ -143,16 +143,16 @@ virtual CSize SizeToContent(
 ### <a name="parameters"></a>Parameter
 
 *bVCenter*<br/>
-[in] True, um Text und der Schaltfläche Bitmap vertikal zwischen dem oberen und den unteren Rand des Steuerelements Links zentriert. andernfalls "false". Der Standardwert ist "false".
+[in] TRUE, um den Schaltflächentext zu zentrieren und vertikal zwischen dem oberen und unteren Rand des Linksteuerelements zu bitmap; andernfalls FALSE. Der Standardwert ist FALSE.
 
 *bHCenter*<br/>
-[in] True, um den Text der Schaltfläche und die Bitmap horizontal zwischen der linken und rechten Seite des Linksteuerelements center. andernfalls "false". Der Standardwert ist "false".
+[in] TRUE, um den Schaltflächentext zu zentrieren und horizontal zwischen der linken und rechten Seite des Linksteuerelements zu bitmap; andernfalls FALSE. Der Standardwert ist FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) Objekt, das die neue Größe des Linksteuerelements enthält.
+Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die neue Größe des Verknüpfungssteuerelements enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

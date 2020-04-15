@@ -10,27 +10,27 @@ helpviewer_keywords:
 - overriding, SQL statements
 - SQL, opening recordsets
 ms.assetid: 72293a08-cef2-4be2-aa1c-30565fcfbaf9
-ms.openlocfilehash: eabaab019ee94b0c5617573c534d920ec710e9b2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 083d268d2b2f2eef072809b1afde9d6ea34f6996
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62329932"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374521"
 ---
 # <a name="sql-customizing-your-recordsets-sql-statement-odbc"></a>SQL: Anpassen der SQL-Anweisung eines Recordsets (ODBC)
 
 In diesem Thema wird Folgendes erläutert:
 
-- Wie wird eine SQL-Anweisung erstellt das framework
+- Wie das Framework eine SQL-Anweisung erstellt
 
-- Gewusst wie: Überschreiben von der SQL-Anweisung
+- Überschreiben der SQL-Anweisung
 
 > [!NOTE]
->  Diese Informationen gelten für die MFC-ODBC-Klassen. Wenn Sie mit den MFC-DAO-Klassen arbeiten, finden Sie im "Vergleich von Microsoft Jet-Datenbank-Engine-SQL und ANSI-SQL" in-DAO-Hilfe.
+> Diese Informationen gelten für die MFC-ODBC-Klassen. Wenn Sie mit den MFC DAO-Klassen arbeiten, lesen Sie das Thema "Vergleich von Microsoft Jet Database Engine SQL und ANSI SQL" in der DAO-Hilfe.
 
-## <a name="sql-statement-construction"></a>Generieren von SQL-Anweisungen
+## <a name="sql-statement-construction"></a>SQL-Anweisungskonstruktion
 
-Das Recordset führt die Auswahl von Datensätzen in erster Linie auf einer SQL **wählen** Anweisung. Wenn Sie die Klasse mit einem Assistenten deklarieren, erstellt es eine überschreibende Version von der `GetDefaultSQL` Memberfunktion, die etwa wie folgt aussieht (für ein Recordset-Klasse aufgerufen `CAuthors`).
+Ihr Recordset basiert die Datensatzauswahl in erster Linie auf einer SQL **SELECT-Anweisung.** Wenn Sie Ihre Klasse mit einem Assistenten deklarieren, schreibt sie eine übergeordnete Version der Memberfunktion, die `GetDefaultSQL` etwa so aussieht (für eine Recordset-Klasse namens `CAuthors`).
 
 ```cpp
 CString CAuthors::GetDefaultSQL()
@@ -39,35 +39,35 @@ CString CAuthors::GetDefaultSQL()
 }
 ```
 
-Standardmäßig gibt dieser Überschreibung den Tabellennamen, die, den Sie mit dem Assistenten angegeben haben. Im Beispiel ist der Tabellenname "Autoren". Wenn Sie später der Recordsets aufrufen `Open` Member-Funktion `Open` erstellt eine endgültige **wählen** -Anweisung der Form:
+Standardmäßig gibt diese Außerkraftsetzung den Tabellennamen zurück, den Sie mit dem Assistenten angegeben haben. Im Beispiel lautet der Tabellenname "AUTHORS". Wenn Sie später die Memberfunktion `Open` des `Open` Recordsets aufrufen, wird eine endgültige **SELECT-Anweisung** des Formulars erstellt:
 
 ```
 SELECT rfx-field-list FROM table-name [WHERE m_strFilter]
        [ORDER BY m_strSort]
 ```
 
-wo `table-name` durch Aufruf von `GetDefaultSQL` und `rfx-field-list` aus einer RFX-Funktionsaufrufe in `DoFieldExchange`. Dies ist das Ergebnis für eine **wählen** Anweisung, wenn durch eine überschreibende Version zur Laufzeit ersetzt werden, obwohl Sie auch die Standard-Anweisung mit Parametern oder einen Filter ändern können.
+wobei `table-name` durch Aufrufen `GetDefaultSQL` `rfx-field-list` abgerufen wird und von den `DoFieldExchange`RFX-Funktionsaufrufen in abgerufen wird. Dies ist das, was Sie für eine **SELECT-Anweisung** erhalten, es sei denn, Sie ersetzen sie durch eine übergeordnete Version zur Laufzeit, obwohl Sie auch die Standardanweisung mit Parametern oder einem Filter ändern können.
 
 > [!NOTE]
->  Wenn Sie einen Spaltennamen angeben, der Leerzeichen enthält (oder enthalten kann), müssen Sie den Namen in eckige Klammern einschließen. Beispielsweise sollte der Name "First Name", "[First Name]" sein.
+> Wenn Sie einen Spaltennamen angeben, der Leerzeichen enthält (oder enthalten könnte), müssen Sie den Namen in eckige Klammern einschließen. Der Name "Vorname" sollte z. B. "[Vorname]" sein.
 
-Zum Überschreiben des Standardwerts **wählen** -Anweisung, übergeben Sie eine Zeichenfolge mit einer vollständigen **wählen** -Anweisung, wenn Sie aufrufen `Open`. Anstatt eine eigene Zeichenfolge erstellt wird, verwendet das Recordset die Zeichenfolge, die Sie angeben. Wenn die Ersatz-Anweisung enthält einen **, in denen** -Klausel, geben Sie einen Filter in nicht `m_strFilter` , da Sie sich dann müssten Filtern zwei Anweisungen. Auf ähnliche Weise, wenn die Ersatz-Anweisung enthält eine **ORDER BY** -Klausel, geben Sie eine Sortierung in nicht `m_strSort` , damit Sie keine werden zwei Arten Anweisungen.
+Um die standardmäßige **SELECT-Anweisung** zu überschreiben, übergeben `Open`Sie beim Aufrufen eine Zeichenfolge mit einer vollständigen **SELECT-Anweisung.** Anstatt eine eigene Standardzeichenfolge zu erstellen, verwendet das Recordset die von Ihnen gelieferte Zeichenfolge. Wenn Ihre Ersatzanweisung eine **WHERE-Klausel** enthält, `m_strFilter` geben Sie keinen Filter in an, da Sie dann über zwei Filteranweisungen verfügen würden. Wenn Ihre Ersatzanweisung eine **ORDER BY-Klausel** enthält, `m_strSort` geben Sie auch keine Sortierung an, damit Sie nicht über zwei Sortierungsanweisungen verfügen.
 
 > [!NOTE]
->  Wenn Sie Literalzeichenfolgen in Ihren Filtern (oder andere Teile der SQL-Anweisung) verwenden, müssen Sie möglicherweise "quote" (Begrenzungszeichen einschließen) diese Zeichenfolgen mit einer DBMS-spezifische Literalpräfix suffix Zeichen (oder Zeichen).
+> Wenn Sie Literalzeichenfolgen in Ihren Filtern (oder anderen Teilen der SQL-Anweisung) verwenden, müssen Sie solche Zeichenfolgen mit einem DBMS-spezifischen Literalpräfix und einem Literalsuffixzeichen (oder Zeichen) "zitieren" (in bestimmte Trennzeichen einschließen).
 
-Besondere syntaktische Anforderungen für Vorgänge wie das äußere Joins können auch je nach das DBMS auftreten. Verwenden Sie ODBC-Funktionen, um diese Informationen aus der Treiber für das DBMS zu erhalten. Rufen Sie z. B. `::SQLGetTypeInfo` für einen bestimmten Datentyp, z. B. `SQL_VARCHAR`, um die Zeichen LITERAL_PREFIX-Zeichen und LITERAL_SUFFIX anfordern. Wenn Sie Datenbank-unabhängige Code schreiben, finden Sie unter [Anhang C: SQL-Grammatik](/sql/odbc/reference/appendixes/appendix-c-sql-grammar) in die [ODBC Programmer's Reference](/sql/odbc/reference/odbc-programmer-s-reference) für ausführliche Informationen zur Syntax.
+Je nach DBMS können auch spezielle syntaktische Anforderungen für Vorgänge wie äußere Verknüpfungen auftreten. Verwenden Sie ODBC-Funktionen, um diese Informationen von Ihrem Treiber für das DBMS abzuholen. Rufen Sie `::SQLGetTypeInfo` beispielsweise einen bestimmten Datentyp `SQL_VARCHAR`auf, z. B. , um die LITERAL_PREFIX und LITERAL_SUFFIX Zeichen anzufordern. Wenn Sie datenbankunabhängigen Code schreiben, finden Sie detaillierte Syntaxinformationen unter [Anhang C: SQL Grammar](/sql/odbc/reference/appendixes/appendix-c-sql-grammar) in der [ODBC-Programmiererreferenz.](/sql/odbc/reference/odbc-programmer-s-reference)
 
-Ein Recordset-Objekt erstellt, die SQL-Anweisung, die zum Auswählen von Datensätzen, es sei denn, Sie, benutzerdefinierte SQL-Anweisung übergeben verwendet wird. Vorgehensweise hängt hauptsächlich von den Wert, der Sie übergeben die *LpszSQL* Parameter, der die `Open` Member-Funktion.
+Ein Recordset-Objekt erstellt die SQL-Anweisung, die es zum Auswählen von Datensätzen verwendet, es sei denn, Sie übergeben eine benutzerdefinierte SQL-Anweisung. Wie dies geschieht, hängt hauptsächlich von dem Wert ab, den Sie im *lpszSQL-Parameter* der `Open` Memberfunktion übergeben.
 
-Das allgemeine Format einer SQL **wählen** -Anweisung ist:
+Die allgemeine Form einer SQL **SELECT-Anweisung** lautet:
 
 ```
 SELECT [ALL | DISTINCT] column-list FROM table-list
     [WHERE search-condition][ORDER BY column-list [ASC | DESC]]
 ```
 
-Eine Möglichkeit zum Hinzufügen der **DISTINCT** Schlüsselwort, um SQL-Anweisung eines Recordsets ist das Schlüsselwort in der ersten RFX-Funktionsaufruf in einbetten `DoFieldExchange`. Zum Beispiel:
+Eine Möglichkeit, das **DISTINCT-Schlüsselwort** zur SQL-Anweisung Ihres Recordsets hinzuzufügen, besteht darin, das Schlüsselwort in den ersten RFX-Funktionsaufruf in `DoFieldExchange`einzubetten. Beispiel:
 
 ```
 ...
@@ -76,33 +76,33 @@ Eine Möglichkeit zum Hinzufügen der **DISTINCT** Schlüsselwort, um SQL-Anweis
 ```
 
 > [!NOTE]
->  Verwenden Sie dieses Verfahren nur mit einem Recordset als schreibgeschützt geöffnet.
+> Verwenden Sie diese Technik nur mit einem Recordset, das als schreibgeschützt geöffnet ist.
 
-## <a name="overriding-the-sql-statement"></a>Überschreiben die SQL-Anweisung
+## <a name="overriding-the-sql-statement"></a>Überschreiben der SQL-Anweisung
 
-Die folgende Tabelle zeigt die Möglichkeiten für die *LpszSQL* Parameter `Open`. Die Fälle in der Tabelle werden nach der Tabelle erläutert.
+Die folgende Tabelle zeigt die Möglichkeiten für `Open`den *lpszSQL-Parameter* zu . Die Fälle in der Tabelle werden im Anschluss an die Tabelle erläutert.
 
-**Der LpszSQL-Parameter und die resultierende SQL-Zeichenfolge**
+**Der lpszSQL-Parameter und der resultierende SQL-String**
 
-|Case|Was Sie in LpszSQL übergeben.|Die resultierenden SELECT-Anweisung|
+|Fall|Was Sie in lpszSQL passieren|Die resultierende SELECT-Anweisung|
 |----------|------------------------------|------------------------------------|
-|1|NULL|**SELECT** *rfx-field-list* **FROM** *table-name*<br /><br /> `CRecordset::Open` Aufrufe `GetDefaultSQL` um den Namen der Tabelle zu erhalten. Die resultierende Zeichenfolge ist ein Fall 2 bis 5, je nachdem, was `GetDefaultSQL` zurückgibt.|
-|2|Ein Tabellenname|**SELECT** *rfx-field-list* **FROM** *table-name*<br /><br /> Die Feldliste stammt aus der RFX-Anweisungen in `DoFieldExchange`. Wenn `m_strFilter` und `m_strSort` nicht leer sind, fügt die **, in denen** und/oder **ORDER BY** Klauseln.|
-|3 \*|Eine vollständige **wählen** Anweisung jedoch ohne eine **, in denen** oder **ORDER BY** Klausel|Wie übergeben. Wenn `m_strFilter` und `m_strSort` nicht leer sind, fügt die **, in denen** und/oder **ORDER BY** Klauseln.|
-|4 \*|Eine vollständige **wählen** -Anweisung mit einem **, in denen** und/oder **ORDER BY** Klausel|Wie übergeben. `m_strFilter` und/oder `m_strSort` müssen bleibt leer, oder zwei Filter und/oder Sortierung-Anweisungen erstellt werden.|
-|5 \*|Ein Aufruf einer gespeicherten Prozedur|Wie übergeben.|
+|1|NULL|**SELECT** *rfx-field-list* **VON** *Tabellenname*<br /><br /> `CRecordset::Open`, `GetDefaultSQL` um den Tabellennamen abzubekommen. Die resultierende Zeichenfolge ist einer der Fälle `GetDefaultSQL` 2 bis 5, je nachdem, was zurückkehrt.|
+|2|Einen Tabellennamen|**SELECT** *rfx-field-list* **VON** *Tabellenname*<br /><br /> Die Feldliste wird den RFX-Anweisungen in `DoFieldExchange`entnommen. Wenn `m_strFilter` `m_strSort` und nicht leer sind, fügen Sie die **WHERE-** und/oder **ORDER BY-Klauseln** hinzu.|
+|3\*|Eine **SELECT** vollständige SELECT-Anweisung, jedoch ohne **WHERE-** oder **ORDER BY-Klausel**|Wie bestanden. Wenn `m_strFilter` `m_strSort` und nicht leer sind, fügen Sie die **WHERE-** und/oder **ORDER BY-Klauseln** hinzu.|
+|4\*|Eine vollständige **SELECT-Anweisung** mit einer **WHERE-** und/oder **ORDER BY-Klausel**|Wie bestanden. `m_strFilter`und/oder `m_strSort` müssen leer bleiben, oder es werden zwei Filter- und/oder Sortieranweisungen erstellt.|
+|5\*|Ein Aufruf einer gespeicherten Prozedur|Wie bestanden.|
 
-\* `m_nFields` muss kleiner oder gleich der Anzahl der Spalten, angegeben der **wählen** Anweisung. Der Datentyp jeder Spalte im angegebenen die **wählen** -Anweisung muss den Datentyp der entsprechenden RFX Ausgabespalte identisch sein.
+\*`m_nFields` muss kleiner oder gleich der Anzahl der Spalten sein, die in der **SELECT-Anweisung** angegeben sind. Der Datentyp jeder Spalte, die in der **SELECT-Anweisung** angegeben ist, muss mit dem Datentyp der entsprechenden RFX-Ausgabespalte identisch sein.
 
-### <a name="case-1---lpszsql--null"></a>Fall 1 LpszSQL = NULL
+### <a name="case-1---lpszsql--null"></a>Fall 1 lpszSQL = NULL
 
-Die Auswahl des Recordsets so hängt `GetDefaultSQL` gibt zurück, wenn `CRecordset::Open` von ihr aufgerufenen. Fällen 2 bis 5 werden die möglichen Zeichenfolgen beschrieben.
+Die Recordset-Auswahl `GetDefaultSQL` hängt `CRecordset::Open` davon ab, was beim Aufrufen zurückgegeben wird. Die Fälle 2 bis 5 beschreiben die möglichen Strings.
 
-### <a name="case-2---lpszsql--a-table-name"></a>Fall 2 LpszSQL = Namen einer Tabelle
+### <a name="case-2---lpszsql--a-table-name"></a>Fall 2 lpszSQL = ein Tabellenname
 
-Das Recordset-Datensatzfeldaustausch (RFX) verwendet, um der Liste der Spalten aus den Spaltennamen zu erstellen, Funktionsaufrufen in die RFX in den Recordset die Überschreibung der `DoFieldExchange`. Wenn Sie einen Assistenten verwendet, um Recordset-Klasse zu deklarieren, muss diese Situation das gleiche Ergebnis wie Fall 1 (vorausgesetzt, dass Sie den gleichen Tabellennamen, die, den Sie im Assistenten angegebenen, übergeben). Wenn Sie einen Assistenten zum Erstellen Ihrer Klasse nicht verwenden, ist 2. Fall die einfachste Möglichkeit zum Erstellen der SQL-Anweisung.
+Das Recordset verwendet Datensatzfeldaustausch (Record Field Exchange, RFX), um die Spaltenliste aus den Spaltennamen `DoFieldExchange`zu erstellen, die in den RFX-Funktionsaufrufen in der Überschreibung von der Recordset-Klasse bereitgestellt werden. Wenn Sie einen Assistenten verwendet haben, um Ihre Recordset-Klasse zu deklarieren, hat diese Anfrage das gleiche Ergebnis wie Fall 1 (vorausgesetzt, Sie übergeben denselben Tabellennamen, den Sie im Assistenten angegeben haben). Wenn Sie zum Schreiben Ihrer Klasse keinen Assistenten verwenden, ist Fall 2 die einfachste Möglichkeit, die SQL-Anweisung zu erstellen.
 
-Das folgende Beispiel erstellt eine SQL­Anweisung, die Datensätze aus einer MFC-datenbankanwendung auswählt. Wenn das Framework Ruft die `GetDefaultSQL` Member-Funktion, die Funktion gibt den Namen der Tabelle `SECTION`.
+Im folgenden Beispiel wird eine SQL-Anweisung erstellt, die Datensätze aus einer MFC-Datenbankanwendung auswählt. Wenn das Framework `GetDefaultSQL` die Memberfunktion aufruft, gibt `SECTION`die Funktion den Namen der Tabelle zurück.
 
 ```cpp
 CString CEnrollSet::GetDefaultSQL()
@@ -111,7 +111,7 @@ CString CEnrollSet::GetDefaultSQL()
 }
 ```
 
-Die Namen der Spalten für die SQL abgerufen **wählen** -Anweisung, die das Framework Ruft die `DoFieldExchange` Member-Funktion.
+Um die Namen der Spalten für die SQL **SELECT-Anweisung** abzuerhalten, ruft das Framework die `DoFieldExchange` Memberfunktion auf.
 
 ```cpp
 void CEnrollSet::DoFieldExchange(CFieldExchange* pFX)
@@ -125,40 +125,40 @@ void CEnrollSet::DoFieldExchange(CFieldExchange* pFX)
 }
 ```
 
-Nach Abschluss des Vorgangs sieht die SQL-Anweisung wie folgt aus:
+Wenn die SQL-Anweisung abgeschlossen ist, sieht sie wie folgt aus:
 
 ```sql
 SELECT CourseID, InstructorID, RoomNo, Schedule, SectionNo
     FROM SECTION
 ```
 
-### <a name="case-3---lpszsql--a-selectfrom-statement"></a>Fall 3 LpszSQL = SELECT / FROM-Anweisung
+### <a name="case-3---lpszsql--a-selectfrom-statement"></a>Fall 3 lpszSQL = eine SELECT/FROM-Anweisung
 
-Sie geben Sie die Liste der Spalten manuell statt auf RFX ihn automatisch zu erstellen. Möglicherweise möchten diese Methode zurückgreifen:
+Sie geben die Spaltenliste von Hand an, anstatt sich auf RFX zu verlassen, um sie automatisch zu erstellen. Sie können dies tun, wenn:
 
-- Sie angeben möchten, die **DISTINCT** Schlüsselwort im Anschluss **wählen**.
+- Sie möchten das **Schlüsselwort DISTINCT** nach **SELECT**angeben.
 
-   Die Spaltenliste sollten die Spaltennamen und Datentypen in der gleichen Reihenfolge entsprechen, in der sie aufgeführt sind `DoFieldExchange`.
+   Die Spaltenliste sollte mit den Spaltennamen und -typen `DoFieldExchange`in der gleichen Reihenfolge übereinstimmen, in der sie in aufgeführt sind.
 
-- Sie haben Grund manuell abrufen von Spaltenwerten mithilfe der ODBC-Funktion `::SQLGetData` statt auf RFX zu binden und Abrufen der Spalten.
+- Sie haben Grund, Spaltenwerte manuell mithilfe `::SQLGetData` der ODBC-Funktion abzurufen, anstatt sich auf RFX zu verlassen, um Spalten für Sie zu binden und abzurufen.
 
-   Sie könnten z. B. neue Spalten zu unterstützen, die den Datenbanktabellen ein Kunde der Anwendung hinzugefügt werden, nachdem die Anwendung verteilt wurde. Sie müssen diese zusätzlichen Felddatenmember, hinzufügen, die zur Zeit nicht bekannt waren Sie die Klasse mit einem Assistenten deklariert.
+   Sie können z. B. neue Spalten aufnehmen, die ein Kunde Ihrer Anwendung den Datenbanktabellen hinzugefügt hat, nachdem die Anwendung verteilt wurde. Sie müssen diese zusätzlichen Felddatenmember hinzufügen, die zum Zeitpunkt der Demeldete der Klasse mit einem Assistenten nicht bekannt waren.
 
-   Die Spaltenliste sollten die Spaltennamen und Datentypen in der gleichen Reihenfolge entsprechen, in der sie aufgeführt sind `DoFieldExchange`, gefolgt von den Namen der manuell gebundenen Spalten. Weitere Informationen finden Sie unter [Recordset: Dynamisches Binden von Datenspalten (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).
+   Die Spaltenliste sollte mit den Spaltennamen und -typen `DoFieldExchange`in der gleichen Reihenfolge übereinstimmen, in der sie in aufgeführt sind, gefolgt von den Namen der manuell gebundenen Spalten. Weitere Informationen finden Sie unter [Recordset: Dynamically Binding Data Columns (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).
 
-- Sie möchten zum Verknüpfen von Tabellen, durch Angeben von mehreren Tabellen in der **FROM** Klausel.
+- Sie möchten Tabellen verknüpfen, indem Sie mehrere Tabellen in der **FROM-Klausel** angeben.
 
-   Weitere Informationen und ein Beispiel finden Sie unter [Recordset: Ausführen einer Verknüpfung (ODBC)](../../data/odbc/recordset-performing-a-join-odbc.md).
+   Weitere Informationen und ein Beispiel finden Sie unter [Recordset: Performing a Join (ODBC)](../../data/odbc/recordset-performing-a-join-odbc.md).
 
-### <a name="case-4---lpszsql--selectfrom-plus-where-andor-order-by"></a>Fall 4 LpszSQL = SELECT / FROM sowie WHERE und/oder ORDER BY
+### <a name="case-4---lpszsql--selectfrom-plus-where-andor-order-by"></a>Fall 4 lpszSQL = SELECT/FROM Plus WHERE und/oder ORDER BY
 
-Angabe, dass alles: der Liste der Spalten (basierend auf den RFX-Aufrufen in `DoFieldExchange`), die Tabellenliste, und der Inhalt des eine **, in denen** und/oder eine **ORDER BY** Klausel. Bei Angabe von Ihrem **, in denen** und/oder **ORDER BY** Klauseln auf diese Weise verwenden Sie keine `m_strFilter` und/oder `m_strSort`.
+Sie geben alles an: die Spaltenliste (basierend auf den RFX-Aufrufen in `DoFieldExchange`), die Tabellenliste und den Inhalt einer **WHERE-** und/oder ORDER **BY-Klausel.** Wenn Sie Ihre **WHERE-** und/oder ORDER BY-Klauseln auf `m_strSort`diese Weise angeben, verwenden **ORDER BY** `m_strFilter` Sie nicht und/oder .
 
-### <a name="case-5---lpszsql--a-stored-procedure-call"></a>Fall 5 LpszSQL = Aufruf einer gespeicherten Prozedur
+### <a name="case-5---lpszsql--a-stored-procedure-call"></a>Fall 5 lpszSQL = ein gespeicherter Prozeduraufruf
 
-Wenn Sie eine vordefinierte Abfrage (z. B. eine gespeicherte Prozedur in einer Microsoft SQL Server-Datenbank) aufrufen möchten, müssen Sie schreiben eine **Aufrufen** -Anweisung in die Zeichenfolge, die Sie, um übergeben *LpszSQL*. Die Assistenten unterstützen keine Recordset-Klasse für den Aufruf einer vordefinierten Abfrage deklarieren. Nicht alle vordefinierten Abfragen Gibt Datensätze zurück.
+Wenn Sie eine vordefinierte Abfrage aufrufen müssen (z. B. eine gespeicherte Prozedur in einer Microsoft SQL Server-Datenbank), müssen Sie eine **CALL-Anweisung** in die Zeichenfolge schreiben, die Sie an *lpszSQL*übergeben. Die Assistenten unterstützen das Deklarieren einer Recordset-Klasse zum Aufrufen einer vordefinierten Abfrage nicht. Nicht alle vordefinierten Abfragen geben Datensätze zurück.
 
-Wenn eine vordefinierte Abfrage keine Datensätze zurückgibt, können Sie mithilfe der `CDatabase` Memberfunktion `ExecuteSQL` direkt. Für eine vordefinierte Abfrage, die Datensätze zurückgibt, müssen Sie auch manuell schreiben die RFX-Aufrufe `DoFieldExchange` für alle Spalten, die die Prozedur zurückgibt. Der RFX-Funktionen aufrufen müssen werden in der gleichen Reihenfolge und dieselben Typen wie die vordefinierte Abfrage zurückzugeben. Weitere Informationen finden Sie unter [Recordset: Deklarieren einer Klasse für eine vordefinierte Abfrage (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-predefined-query-odbc.md).
+Wenn eine vordefinierte Abfrage keine Datensätze zurückgibt, können Sie die `CDatabase` Memberfunktion `ExecuteSQL` direkt verwenden. Für eine vordefinierte Abfrage, die Datensätze zurückgibt, müssen Sie `DoFieldExchange` die RFX-Aufrufe auch manuell für alle Spalten schreiben, die die Prozedur zurückgibt. Die RFX-Aufrufe müssen in derselben Reihenfolge sein und dieselben Typen zurückgeben wie die vordefinierte Abfrage. Weitere Informationen finden Sie unter [Recordset: Deklarieren einer Klasse für eine vordefinierte Abfrage (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-predefined-query-odbc.md).
 
 ## <a name="see-also"></a>Siehe auch
 

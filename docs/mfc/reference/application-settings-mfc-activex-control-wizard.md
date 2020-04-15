@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - MFC ActiveX Control Wizard, application settings
 ms.assetid: 48475194-cc63-467f-8499-f142269a4c1c
-ms.openlocfilehash: 3201b5882a1de4064d924fbb28ee1c575ab8ccbe
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 55f202ffabe945e55589ab1fc771a1757e23ca2f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62151304"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372474"
 ---
 # <a name="application-settings-mfc-activex-control-wizard"></a>Anwendungseinstellungen, MFC-ActiveX-Steuerelement-Assistent
 
@@ -30,16 +30,16 @@ Verwenden Sie diese Seite des MFC-ActiveX-Steuerelement-Assistenten, um grundleg
 
    Wenn Sie Hilfedateien mithilfe des Assistenten generieren, umfasst Ihr Projekt Folgendes:
 
-   - Die VCXPROJ-Datei enthält Code zum Erstellen und Konfigurieren der Hilfedatei, wenn das Projekt erstellt wird.
+  - Die VCXPROJ-Datei enthält Code zum Erstellen und Konfigurieren der Hilfedatei, wenn das Projekt erstellt wird.
 
-   - Die Datei „ *ProjnamePropPage*cpp“ enthält die [SetHelpInfo](../../mfc/reference/colepropertypage-class.md#sethelpinfo) -Funktion im Konstruktor.
+  - Die Datei „ *ProjnamePropPage*cpp“ enthält die [SetHelpInfo](../../mfc/reference/colepropertypage-class.md#sethelpinfo) -Funktion im Konstruktor.
 
-   - Die Datei „projname.hpj“ ist die Hilfeprojektdatei, die vom Hilfecompiler zum Erstellen der Hilfedatei des ActiveX-Steuerelements verwendet wird. Die HPJ-Datei ist eine Textdatei mit Informationen zur Erstellung der Hilfedatei sowie der Pfade zu den zusätzlichen Dateien (z. B. Bitmaps), die die Hilfedatei enthält.
+  - Die Datei „projname.hpj“ ist die Hilfeprojektdatei, die vom Hilfecompiler zum Erstellen der Hilfedatei des ActiveX-Steuerelements verwendet wird. Die HPJ-Datei ist eine Textdatei mit Informationen zur Erstellung der Hilfedatei sowie der Pfade zu den zusätzlichen Dateien (z. B. Bitmaps), die die Hilfedatei enthält.
 
-   - Das Projekt enthält das HLP-Verzeichnis, das die Bitmapdateien der Projekthilfe und die Hilfethemendatei (*Projektname*.rtf) enthalten soll. Diese Hilfethemendatei enthält die Standardhilfethemen für die allgemeinen Eigenschaften, Ereignisse und Methoden, die von vielen ActiveX-Steuerelementen unterstützt werden. Sie können die RTF-Datei bearbeiten, um bestimmte Hilfethemen hinzuzufügen oder zu entfernen.
+  - Das Projekt enthält das HLP-Verzeichnis, das die Bitmapdateien der Projekthilfe und die Hilfethemendatei (*Projektname*.rtf) enthalten soll. Diese Hilfethemendatei enthält die Standardhilfethemen für die allgemeinen Eigenschaften, Ereignisse und Methoden, die von vielen ActiveX-Steuerelementen unterstützt werden. Sie können die RTF-Datei bearbeiten, um bestimmte Hilfethemen hinzuzufügen oder zu entfernen.
 
 ## <a name="see-also"></a>Siehe auch
 
 [MFC-ActiveX-Steuerelement-Assistent](../../mfc/reference/mfc-activex-control-wizard.md)<br/>
 [Steuerelementnamen, MFC-ActiveX-Steuerelement-Assistent](../../mfc/reference/control-names-mfc-activex-control-wizard.md)<br/>
-[Steuerelementeinstellungen, MFC-ActiveX-Steuerelement-Assistent](../../mfc/reference/control-settings-mfc-activex-control-wizard.md)
+[Steuerungseinstellungen, MFC ActiveX Control Wizard](../../mfc/reference/control-settings-mfc-activex-control-wizard.md)

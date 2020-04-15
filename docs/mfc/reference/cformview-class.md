@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CFormView [MFC], CFormView
 - CFormView [MFC], IsInitDlgCompleted
 ms.assetid: a99ec313-36f0-4f28-9d2b-de11de14ac19
-ms.openlocfilehash: 8a0c11352ffab37f50ede5c67aa810fa20e838ed
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a9b897c661731878f0bf78c9d04ae7c4ba28cd42
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182002"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373801"
 ---
 # <a name="cformview-class"></a>CFormView-Klasse
 
@@ -31,29 +31,29 @@ class CFormView : public CScrollView
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFormView::CFormView](#cformview)|Erstellt ein `CFormView`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFormView::IsInitDlgCompleted](#isinitdlgcompleted)|Wird für die Synchronisierung während der Initialisierung verwendet.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Formularansicht ist im Wesentlichen eine Ansicht, die Steuerelemente enthält. Diese Steuerelemente werden basierend auf einer Dialogfeldvorlagenressource angeordnet. Verwenden Sie `CFormView`, wenn Sie Formulare in der Anwendung verwenden möchten. Diese Ansichten unterstützen bei Bedarf mithilfe der [CScrollView](../../mfc/reference/cscrollview-class.md) Funktionalität.
+Eine Formularansicht ist im Wesentlichen eine Ansicht, die Steuerelemente enthält. Diese Steuerelemente werden basierend auf einer Dialogfeldvorlagenressource angeordnet. Verwenden Sie `CFormView`, wenn Sie Formulare in der Anwendung verwenden möchten. Diese Ansichten unterstützen bei Bedarf das Scrollen mithilfe der [CScrollView-Funktionalität.](../../mfc/reference/cscrollview-class.md)
 
-Wenn Sie sind [Erstellen einer formularbasierten Anwendung](../../mfc/reference/creating-a-forms-based-mfc-application.md), können Sie ihre Ansichtsklasse auf der Grundlage `CFormView`, somit eine formularbasierte Anwendung.
+Wenn Sie [eine formularbasierte Anwendung erstellen,](../../mfc/reference/creating-a-forms-based-mfc-application.md)können Sie `CFormView`ihre Ansichtsklasse auf basieren und sie zu einer formularbasierten Anwendung machen.
 
-Sie können auch neue einfügen [Themen zu Formularen](../../mfc/form-views-mfc.md) in Dokument-View-basierte Anwendungen. Auch wenn die Anwendung ursprünglich keine Formulare unterstützte, fügt Visual C++ diese Unterstützung hinzu, wenn Sie ein neues Formular einfügen.
+Sie können auch neue [Formularthemen](../../mfc/form-views-mfc.md) in dokumentansichtsbasierte Anwendungen einfügen. Auch wenn die Anwendung ursprünglich keine Formulare unterstützte, fügt Visual C++ diese Unterstützung hinzu, wenn Sie ein neues Formular einfügen.
 
-Der MFC-Anwendungs-Assistent und der Befehl "Klasse hinzufügen" sind die bevorzugten Methoden zum Erstellen formularbasierter Anwendungen. Wenn Sie zum Erstellen einer formularbasierten Anwendung benötigen ohne die Verwendung dieser Methoden finden Sie unter [Erstellen einer formularbasierten Anwendung](../../mfc/reference/creating-a-forms-based-mfc-application.md).
+Der MFC-Anwendungs-Assistent und der Befehl "Klasse hinzufügen" sind die bevorzugten Methoden zum Erstellen formularbasierter Anwendungen. Wenn Sie eine formularbasierte Anwendung erstellen müssen, ohne diese Methoden zu verwenden, finden Sie weitere Informationen unter [Erstellen einer formularbasierten Anwendung](../../mfc/reference/creating-a-forms-based-mfc-application.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -67,9 +67,9 @@ Der MFC-Anwendungs-Assistent und der Befehl "Klasse hinzufügen" sind die bevorz
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxext.h
+**Kopf:** afxext.h
 
-##  <a name="cformview"></a>  CFormView::CFormView
+## <a name="cformviewcformview"></a><a name="cformview"></a>CFormView::CFormView
 
 Erstellt ein `CFormView`-Objekt.
 
@@ -81,19 +81,19 @@ CFormView(UINT nIDTemplate);
 ### <a name="parameters"></a>Parameter
 
 *lpszTemplateName*<br/>
-Enthält eine Null-terminierte Zeichenfolge, die den Namen einer Dialogfeldvorlagen-Ressource ist.
+Enthält eine null-terminierte Zeichenfolge, die der Name einer Dialogfeldvorlagenressource ist.
 
 *nIDTemplate*<br/>
-Enthält die ID-Nummer einer Dialogfeldvorlagen-Ressource.
+Enthält die ID-Nummer einer Dialogfeldvorlagenressource.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie ein Objekt eines Typs erstellen von abgeleiteten `CFormView`, rufen Sie einen der Konstruktoren verwenden, erstellen das Objekt und identifizieren die Ressource auf dem die Sicht basiert. Sie können die Ressource anhand des Namens (übergeben Sie eine Zeichenfolge als Argument an den Konstruktor) oder nach seiner ID (übergeben Sie eine Ganzzahl ohne Vorzeichen als Argument) identifizieren.
+Wenn Sie ein Objekt eines `CFormView`von abgeleiteten Typs erstellen, rufen Sie einen der Konstruktoren auf, um das Ansichtsobjekt zu erstellen und die Dialogfeldressource zu identifizieren, auf der die Ansicht basiert. Sie können die Ressource entweder anhand des Namens (übergeben Sie eine Zeichenfolge als Argument an den Konstruktor) oder anhand ihrer ID (übergeben Sie eine ganzzahlige Datei ohne Vorzeichen als Argument) identifizieren.
 
-Die Formularansicht Fenster und die untergeordneten Steuerelemente werden nicht erstellt werden, bis `CWnd::Create` aufgerufen wird. `CWnd::Create` wird vom Framework als Teil des Erstellungsprozesses Dokument und Ansicht aufgerufen, die durch die Dokumentvorlage gesteuert wird.
+Das Formularansichtsfenster und die untergeordneten Steuerelemente werden erst erstellt, wenn `CWnd::Create` sie aufgerufen werden. `CWnd::Create`wird vom Framework als Teil des Dokument- und Ansichtserstellungsprozesses aufgerufen, der von der Dokumentvorlage gesteuert wird.
 
 > [!NOTE]
->  Die abgeleitete Klasse *müssen* seinen eigenen Konstruktor bereitstellen. In den Konstruktor aufrufen, den Konstruktor `CFormView::CFormView`, mit der Ressourcenname oder ID als Argument wie in der Übersicht über die vorhergehenden Klasse dargestellt.
+> Die abgeleitete Klasse *muss* einen eigenen Konstruktor bereitstellen. Rufen Sie im Konstruktor den `CFormView::CFormView`Konstruktor , mit dem Ressourcennamen oder der Ressourcen-ID als Argument auf, wie in der vorherigen Klassenübersicht gezeigt.
 
 ### <a name="example"></a>Beispiel
 
@@ -101,7 +101,7 @@ Die Formularansicht Fenster und die untergeordneten Steuerelemente werden nicht 
 
 [!code-cpp[NVC_MFCDocView#91](../../mfc/codesnippet/cpp/cformview-class_2.cpp)]
 
-##  <a name="isinitdlgcompleted"></a>  CFormView::IsInitDlgCompleted
+## <a name="cformviewisinitdlgcompleted"></a><a name="isinitdlgcompleted"></a>CFormView::IsInitDlgAbgeschlossen
 
 Von MFC verwendet, um sicherzustellen, dass die Initialisierung abgeschlossen ist, bevor andere Vorgänge ausgeführt werden.
 

@@ -1,18 +1,18 @@
 ---
-title: 'Vorgehensweise: Organisieren von Projektausgabedateien für Builds'
+title: 'Gewusst wie: Organisieren von Projektausgabedateien für Builds'
 ms.date: 05/06/2019
 helpviewer_keywords:
 - C++, output files
 - output files, organizing
 ms.assetid: 521d95ea-2dcc-4da0-b5eb-ac3e57941446
-ms.openlocfilehash: 202b2cbf135a5d8371354aac0fb8dd26367896c2
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 13aa3d1f8e2993ca34163ecbc0515948db56eb79
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220665"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328527"
 ---
-# <a name="how-to-organize-project-output-files-for-builds"></a>Vorgehensweise: Organisieren von Projektausgabedateien für Builds
+# <a name="how-to-organize-project-output-files-for-builds"></a>Gewusst wie: Organisieren von Projektausgabedateien für Builds
 
 In diesem Thema werden empfohlene Vorgehensweisen zum Organisieren von Projektausgabedateien beschrieben. Wenn Projektausgabedateien falsch eingerichtet werden, können Buildfehler auftreten. Außerdem werden in diesem Thema die Vor- und Nachteile der einzelnen Möglichkeiten zum Organisieren von Projektausgabedateien erörtert.
 
@@ -20,7 +20,7 @@ In diesem Thema werden empfohlene Vorgehensweisen zum Organisieren von Projektau
 
 #### <a name="to-reference-assemblies-with-using"></a>So verweisen Sie mit #using auf Assemblys
 
-1. Sie können direkt aus dem Code heraus auf eine Assembly verweisen, indem Sie eine #using-Anweisung wie `#using <System.Data.dll>` verwenden. Weitere Information finden Sie unter [#using Directive (#using-Direktive)](../preprocessor/hash-using-directive-cpp.md).
+1. Sie können direkt aus dem Code heraus auf eine Assembly verweisen, indem Sie eine #using-Anweisung wie `#using <System.Data.dll>` verwenden. Weitere Informationen finden Sie in [#using Richtlinie](../preprocessor/hash-using-directive-cpp.md).
 
    Die angegebene Datei kann eine DLL-, EXE, .NETMODULE oder OBJ-Datei sein, solange sie in MSIL ist. Die Komponente, auf die verwiesen wird, kann in einer beliebigen Sprache erstellt sein. Mit dieser Option erhalten Sie Zugriff auf IntelliSense, da die Metadaten aus MSIL extrahiert werden. Die fragliche Datei muss sich im Pfad für das Projekt befinden, ansonsten wird das Projekt nicht kompiliert, und IntelliSense ist nicht verfügbar. Eine einfache Möglichkeit zum Bestimmen, ob eine Datei sich im Pfad befindet, besteht darin, mit der rechten Maustaste auf die #using-Zeile zu klicken und den Befehl **Dokument öffnen** auszuwählen. Wenn die Datei nicht gefunden werden kann, erhalten Sie eine Benachrichtigung.
 
@@ -46,9 +46,9 @@ In diesem Thema werden empfohlene Vorgehensweisen zum Organisieren von Projektau
 
 1. Verweisen Sie mit der #include-Anweisung auf die entsprechende Headerdatei im Code. Die Headerdatei muss sich im include-Pfad befinden oder dem aktuellen Projekt angehören. Weitere Information finden Sie unter [#include Directive (C/C++) (#include-Direktive (C/C++))](../preprocessor/hash-include-directive-c-cpp.md).
 
-1. Sie können auch Projektabhängigkeiten festlegen. Das Festlegen von Projektabhängigkeiten garantiert zwei Dinge: Zum einen gewährleistet es, dass Projekte in der richtigen Reihenfolge erstellt werden, damit ein Projekt immer die benötigten abhängigen Dateien findet. Zum anderen wird implizit das Ausgabeverzeichnis des abhängigen Projekts zum Pfad hinzugefügt, damit Dateien zum Zeitpunkt der Verknüpfung mühelos gefunden werden können.
+1. Sie können auch Projektabhängigkeiten festlegen. Das Festlegen von Projektabhängigkeiten garantiert zwei Dinge: Zum einen gewährleistet es, dass Projekte in der richtigen Reihenfolge erstellt werden, damit ein Projekt immer die benötigten abhängigen Dateien findet. Zweitens fügt es implizit das Ausgabeverzeichnis des abhängigen Projekts zum Pfad hinzu, sodass Dateien zur Linkzeit leicht gefunden werden können.
 
-1. Um die Anwendung bereitzustellen, müssen Sie die DLL an einer geeigneten Stelle platzieren. Folgende Möglichkeiten stehen zur Auswahl:
+1. Um die Anwendung bereitzustellen, müssen Sie die DLL an einer geeigneten Stelle platzieren. Die folgenden Werte sind möglich:
 
    1. In demselben Pfad wie die ausführbare Datei.
 
@@ -70,4 +70,4 @@ Bei der Bereitstellung in einer Produktionsumgebung kann der Speicherort der Aus
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++Projekttypen in Visual Studio](reference/visual-cpp-project-types.md)
+[C++-Projektvorlagen](reference/visual-cpp-project-types.md)

@@ -1,6 +1,6 @@
 ---
-title: Onrelogeventfunc-typedef
-description: Die C++ onrelogeventfunc-typedef-Referenz für das Build Insights SDK.
+title: OnRelogEventFunc typdef
+description: Der C++Build Insights SDK OnRelogEventFunc typdef-Verweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 619f9a142ad19a7809b867eda93f2db634825a8f
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 2df8646d530c089b1239978d716b2b619a5b4b61
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334025"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329071"
 ---
-# <a name="onrelogeventfunc-typedef"></a>Onrelogeventfunc-typedef
+# <a name="onrelogeventfunc-typedef"></a>OnRelogEventFunc typdef
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `OnRelogEventFunc` TypeDef ist eine der Funktions Signaturen, die in der [RELOG_CALLBACKS](relog-callbacks-struct.md) Struktur verwendet werden.
+Die `OnRelogEventFunc` typedef ist eine der Funktionssignaturen, die in der [RELOG_CALLBACKS-Struktur](relog-callbacks-struct.md) verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -38,17 +38,17 @@ typedef enum CALLBACK_CODE (BUILD_INSIGHTS_API *OnRelogEventFunc)(
 
 ### <a name="parameters"></a>Parameter
 
-*Event Stack* -\
-Der Ereignis Stapel für das aktuelle Ereignis. Weitere Informationen zu Ereignis Stapeln finden Sie unter [Ereignisse](../event-table.md).
+*eventStack*\
+Der Ereignisstapel für das aktuelle Ereignis. Weitere Informationen zu Ereignisstapeln finden Sie unter [Ereignisse](../event-table.md).
 
-\ " *relogsession* "
-Der zum Aufrufen des [injetevent](../functions/inject-event.md)zu verwendende relogging-Sitzungs Zeiger.
+*relogSession*\
+Der beim Aufrufen des [InjectEvent](../functions/inject-event.md)zu verwendende Sitzungszeiger für das erneute Protokollieren.
 
-*callbackcontext* -\
-Der Kontextwert, der in [RELOG_DESCRIPTOR](analysis-descriptor-struct.md)für diesen Rückruf festgelegt wurde.
+*callbackContext*\
+Der Kontextwert, der für diesen Rückruf in [RELOG_DESCRIPTOR](analysis-descriptor-struct.md)festgelegt wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CALLBACK_CODE](callback-code-enum.md) Wert, der steuert, was als Nächstes geschehen soll.
+Ein [CALLBACK_CODE](callback-code-enum.md) Wert, der steuert, was als nächstes geschehen soll.
 
 ::: moniker-end

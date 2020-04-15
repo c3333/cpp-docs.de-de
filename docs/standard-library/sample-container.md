@@ -6,23 +6,22 @@ helpviewer_keywords:
 - sample container
 - container headers
 ms.assetid: 4ab3dcf9-49c3-4e49-b5d6-1ec573e2aee4
-ms.openlocfilehash: f7b0af53b7abf7801123ed93f50cd51047f70096
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
+ms.openlocfilehash: e89f15c7dd485a73d143b7cbee27ccd354e3892c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220409"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373415"
 ---
 # <a name="ltsample-containergt"></a>&lt;Sample Container&gt;
 
 > [!NOTE]
-> Dieses Thema ist in der Microsoft C++ Dokumentation als nicht funktionierendes Beispiel für Container in verwendet die C++ Standard-Bibliothek. Weitere Informationen finden Sie unter [C++-Standardbibliothekcontainer](../standard-library/stl-containers.md).
+> Dieses Thema ist in der Microsoft C++-Dokumentation als nicht funktionsfähiges Beispiel für Container enthalten, die in der C++-Standardbibliothek verwendet werden. Weitere Informationen finden Sie unter [C++-Standardbibliothekscontainer](../standard-library/stl-containers.md).
 
 Zeigt die Struktur der Container-Header in der C++-Standardbibliothek.
 
 ## <a name="syntax"></a>Syntax
 
-```
-
+```cpp
 #include <sample container> // Nonfunctional header
 ```

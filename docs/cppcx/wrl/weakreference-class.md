@@ -19,16 +19,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::WeakReference::~WeakReference, destructor
 - Microsoft::WRL::Details::WeakReference::WeakReference, constructor
 ms.assetid: 3f4c956b-dbbd-49b1-8cfa-9509a9956c97
-ms.openlocfilehash: a3372a176a158dd9c89eb888c8deb0244eef9a84
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a80c0ec14da2a955a95ac84dd3975212ef20ae04
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387538"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374222"
 ---
 # <a name="weakreference-class"></a>WeakReference-Klasse
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,13 +36,13 @@ Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet
 class WeakReference;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Stellt eine *schwachen Verweis* , die verwendet werden kann, mit der Windows-Runtime oder ein klassisches COM verwenden. Ein schwacher Verweis repräsentiert ein Objekt, auf das möglicherweise zugegriffen werden kann.
+Stellt einen *schwachen Verweis* dar, der mit der Windows-Runtime oder der klassischen COM verwendet werden kann. Ein schwacher Verweis repräsentiert ein Objekt, auf das möglicherweise zugegriffen werden kann.
 
-Ein `WeakReference` -Objekt verwaltet eine *starken Verweis*, dies ist ein Zeiger auf ein Objekt, und ein *starken Verweiszähler*, dies entspricht der Anzahl von Kopien der starke Verweis, die von verteilt wurden die `Resolve()` Methode. Obwohl die Anzahl der starken Verweis ungleich NULL ist, der starke Verweis gültig ist und das Objekt zugegriffen werden kann. Wird die Anzahl der starken Verweis auf 0 (null), wird der starke Verweis ungültig ist, und das Objekt kann nicht zugegriffen werden.
+Ein `WeakReference` Objekt verwaltet einen *starken Verweis*, der ein Zeiger auf ein Objekt ist, und eine *starke Verweisanzahl* `Resolve()` , d. h. die Anzahl der Kopien des starken Verweises, die von der Methode verteilt wurden. Während die starke Verweisanzahl ungleich Null ist, ist der starke Verweis gültig, und auf das Objekt kann zugegriffen werden. Wenn die starke Verweisanzahl Null wird, ist der starke Verweis ungültig, und auf das Objekt kann nicht zugegriffen werden.
 
-Ein `WeakReference` Objekt wird normalerweise verwendet, um ein Objekt darstellt, dessen Vorhandensein durch einen externen Thread oder Anwendung gesteuert wird. Erstellen Sie z. B. eine `WeakReference` Objekt aus einem Verweis auf ein Dateiobjekt. Solange die Datei geöffnet ist, ist der starke Verweis gültig. Wenn die Datei aber geschlossen wird, wird der starke Verweis ungültig.
+Ein `WeakReference` Objekt wird in der Regel verwendet, um ein Objekt darzustellen, dessen Vorhandensein von einem externen Thread oder einer anwendung gesteuert wird. Erstellen Sie beispielsweise `WeakReference` ein Objekt aus einem Verweis auf ein Dateiobjekt. Solange die Datei geöffnet ist, ist der starke Verweis gültig. Wenn die Datei aber geschlossen wird, wird der starke Verweis ungültig.
 
 Die `WeakReference` Methoden sind threadsicher.
 
@@ -50,19 +50,19 @@ Die `WeakReference` Methoden sind threadsicher.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                                                  | Beschreibung
+Name                                                  | BESCHREIBUNG
 ----------------------------------------------------- | ---------------------------------------------------------------------------
-[WeakReference::WeakReference](#weakreference)        | Initialisiert eine neue Instanz der `WeakReference`-Klasse.
-[WeakReference::~WeakReference](#tilde-weakreference) | Hebt die Initialisierung (löscht) der aktuellen Instanz von der `WeakReference` Klasse.
+[WeakReference::WeakReference](#weakreference)        | Initialisiert eine neue Instanz der Klasse `WeakReference`.
+[WeakReference::-Schwachreferenz](#tilde-weakreference) | Deinitialisiert (zerstört) die aktuelle Instanz `WeakReference` der Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                                                                 | Beschreibung
+Name                                                                 | BESCHREIBUNG
 -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------
-[WeakReference::DecrementStrongReference](#decrementstrongreference) | Dekrementiert den starken Verweiszähler des aktuellen `WeakReference` Objekt.
-[WeakReference::IncrementStrongReference](#incrementstrongreference) | Inkrementiert die Anzahl der starken Verweis des aktuellen `WeakReference` Objekt.
-[WeakReference::Resolve](#resolve)                                   | Legt den angegebenen Zeiger auf den aktuellen Wert der starken Verweis fest, wenn die Anzahl der starken Verweis ungleich NULL ist.
-[WeakReference::SetUnknown](#setunknown)                             | Den starken Verweis des aktuellen legt `WeakReference` Objekt, das den angegebenen Schnittstellenzeiger auf.
+[SchwachReferenz::DecrementStrongReference](#decrementstrongreference) | Dekrementiert die starke Referenzanzahl des aktuellen `WeakReference` Objekts.
+[WeakReference::IncrementStrongReference](#incrementstrongreference) | Erhöht die starke Referenzanzahl `WeakReference` des aktuellen Objekts.
+[WeakReference::Auflösen](#resolve)                                   | Legt den angegebenen Zeiger auf den aktuellen starken Referenzwert fest, wenn die starke Referenzanzahl ungleich Null ist.
+[WeakReference::SetUnknown](#setunknown)                             | Legt den starken Verweis `WeakReference` des aktuellen Objekts auf den angegebenen Schnittstellenzeiger fest.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -74,9 +74,9 @@ Name                                                                 | Beschreib
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="tilde-weakreference"></a>WeakReference::~WeakReference
+## <a name="weakreferenceweakreference"></a><a name="tilde-weakreference"></a>WeakReference::-Schwachreferenz
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 virtual ~WeakReference();
@@ -84,31 +84,31 @@ virtual ~WeakReference();
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Hebt die Initialisierung der aktuellen Instanz von der `WeakReference` Klasse.
+Deinitialisiert die aktuelle Instanz `WeakReference` der Klasse.
 
-## <a name="decrementstrongreference"></a>WeakReference::DecrementStrongReference
+## <a name="weakreferencedecrementstrongreference"></a><a name="decrementstrongreference"></a>SchwachReferenz::DecrementStrongReference
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 ULONG DecrementStrongReference();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dekrementiert den starken Verweiszähler des aktuellen `WeakReference` Objekt.
+Dekrementiert die starke Referenzanzahl des aktuellen `WeakReference` Objekts.
 
-Die Anzahl der starken Verweis auf 0 (null) ist, wird der starke Verweis als festgelegt `nullptr`.
+Wenn die starke Referenzanzahl Null wird, `nullptr`wird der starke Verweis auf festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl verringert starken Verweis.
+Die dekrementierte starke Referenzanzahl.
 
-## <a name="incrementstrongreference"></a>WeakReference::IncrementStrongReference
+## <a name="weakreferenceincrementstrongreference"></a><a name="incrementstrongreference"></a>WeakReference::IncrementStrongReference
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 ULONG IncrementStrongReference();
@@ -116,15 +116,15 @@ ULONG IncrementStrongReference();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl inkrementiert starken Verweis.
+Die inkrementierte starke Referenzanzahl.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Inkrementiert die Anzahl der starken Verweis des aktuellen `WeakReference` Objekt.
+Erhöht die starke Referenzanzahl `WeakReference` des aktuellen Objekts.
 
-## <a name="resolve"></a>WeakReference::Resolve
+## <a name="weakreferenceresolve"></a><a name="resolve"></a>WeakReference::Auflösen
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 STDMETHOD(Resolve)
@@ -139,23 +139,23 @@ STDMETHOD(Resolve)
 Eine Schnittstellen-ID.
 
 *ppvObject*<br/>
-Wenn dieser Vorgang abgeschlossen ist, eine Kopie der aktuellen starken Verweis, wenn die Anzahl der starken Verweis ungleich NULL ist.
+Wenn dieser Vorgang abgeschlossen ist, wird eine Kopie des aktuellen starken Verweises kopiert, wenn die starke Referenzanzahl ungleich Null ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-- S_OK, wenn dieser Vorgang erfolgreich ist und die Anzahl der starken Verweis ist 0 (null). Die *PpvObject* Parametersatz zu `nullptr`.
+- S_OK, wenn dieser Vorgang erfolgreich ist und die starke Referenzanzahl Null ist. Der Parameter *ppvObject* `nullptr`ist auf festgelegt.
 
-- S_OK, wenn dieser Vorgang erfolgreich ist und die Anzahl der starken Verweis ist ungleich NULL. Die *PpvObject* Parameter auf der starke Verweis festgelegt ist.
+- S_OK, wenn dieser Vorgang erfolgreich ist und die starke Referenzanzahl ungleich Null ist. Der *parameter ppvObject* wird auf den starken Verweis gesetzt.
 
-- Andernfalls Fehler ein HRESULT, das den Grund angibt, diesen Vorgang.
+- Andernfalls ein HRESULT, das den Grund für den Fehler in diesem Vorgang angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legt den angegebenen Zeiger auf den aktuellen Wert der starken Verweis fest, wenn die Anzahl der starken Verweis ungleich NULL ist.
+Legt den angegebenen Zeiger auf den aktuellen starken Referenzwert fest, wenn die starke Referenzanzahl ungleich Null ist.
 
-## <a name="setunknown"></a>WeakReference::SetUnknown
+## <a name="weakreferencesetunknown"></a><a name="setunknown"></a>WeakReference::SetUnknown
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 void SetUnknown(
@@ -165,23 +165,23 @@ void SetUnknown(
 
 ### <a name="parameters"></a>Parameter
 
-*unk*<br/>
-Ein Zeiger auf die `IUnknown` -Schnittstelle eines Objekts.
+*Unk*<br/>
+Ein Zeiger auf `IUnknown` die Schnittstelle eines Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Den starken Verweis des aktuellen legt `WeakReference` Objekt, das den angegebenen Schnittstellenzeiger auf.
+Legt den starken Verweis `WeakReference` des aktuellen Objekts auf den angegebenen Schnittstellenzeiger fest.
 
-## <a name="weakreference"></a>WeakReference::WeakReference
+## <a name="weakreferenceweakreference"></a><a name="weakreference"></a>WeakReference::WeakReference
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 WeakReference();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert eine neue Instanz der `WeakReference`-Klasse.
+Initialisiert eine neue Instanz der Klasse `WeakReference`.
 
-Der starke Verweiszeiger für die `WeakReference` Objekt wird initialisiert, um `nullptr`, und die Anzahl der starken Verweis auf 1 initialisiert wird.
+Der starke Referenzzeiger `WeakReference` für das Objekt `nullptr`wird initialisiert auf , und die starke Verweisanzahl wird auf 1 initialisiert.

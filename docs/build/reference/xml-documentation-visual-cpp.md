@@ -7,12 +7,12 @@ helpviewer_keywords:
 - comments, C++ source code files
 - /// delimiter for C++ documentation
 ms.assetid: a1aec1c5-b2d1-4c74-83ae-1dbbbb76b506
-ms.openlocfilehash: c46cb77dd2efe41a41c7108115d6d22808782f01
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: c25c54e81bb9c10fc871a2abc178f57e661ae4e6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62316339"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81335730"
 ---
 # <a name="xml-documentation-visual-c"></a>XML-Dokumentation (Visual C++)
 
@@ -27,15 +27,15 @@ XML-Dokumentationskommentare in einer Visual C++-Codedatei müssen sich direkt v
 1. In einer Bibliothek, deren Typdeklarationen und Implementierungen sich in der gleichen Headerdatei befinden.
 
 > [!NOTE]
->  Im aktuellen Release werden Codekommentare in Vorlagen oder beliebigen Elementen, die einen Vorlagentyp enthalten (z.B. eine Funktion, die einen Parameter als Vorlage verwendet), nicht verarbeitet. Das Hinzufügen solcher Kommentare führt zu nicht definiertem Verhalten.
+> Im aktuellen Release werden Codekommentare in Vorlagen oder beliebigen Elementen, die einen Vorlagentyp enthalten (z.B. eine Funktion, die einen Parameter als Vorlage verwendet), nicht verarbeitet. Das Hinzufügen solcher Kommentare führt zu nicht definiertem Verhalten.
 
 Ausführliche Informationen über das Erstellen einer XML-Datei mit Dokumentationskommentaren finden Sie in den folgenden Themen.
 
-|Weitere Informationen zu|Siehe|
+|Informationen über|Finden Sie unter|
 |---------------------------|---------|
 |Die zu verwendenden Compileroptionen|[/doc](doc-process-documentation-comments-c-cpp.md)|
 |Tags, die Sie zum Bereitstellen häufig verwendeter Funktionen in Dokumentationen verwenden können.|[Empfohlene Tags für Dokumentationskommentare](recommended-tags-for-documentation-comments-visual-cpp.md)|
-|ID-Zeichenfolgen, die der Compiler erstellt, um die Konstrukte in Ihrem Code zu identifizieren.|[Verarbeiten der XML-Datei](dot-xml-file-processing.md)|
+|ID-Zeichenfolgen, die der Compiler erstellt, um die Konstrukte in Ihrem Code zu identifizieren.|[Verarbeiten der .xml-Datei](dot-xml-file-processing.md)|
 |Trennen von Dokumentationstags|[Trennzeichen für Visual C++-Dokumentationstags](delimiters-for-visual-cpp-documentation-tags.md)|
 |Generieren einer XML-Datei aus mindestens einer XDC-Datei|[XDCMake-Verweis](xdcmake-reference.md)|
 |Links zu Informationen über XML im Bezug auf Visual Studio-Featurebereiche|[XML in Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)|

@@ -6,25 +6,25 @@ helpviewer_keywords:
 - status bars [MFC], tool tips
 - CStatusBarCtrl class [MFC], tool tips
 ms.assetid: a77597a7-43ef-4b8f-87bc-a8ea1dc63dc3
-ms.openlocfilehash: a607a5fb8c9470df42d12c771865b924891b2dac
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 29d326c708743424686d616bbaf172ccd72481ce
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79442543"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374696"
 ---
 # <a name="using-tooltips-in-a-cstatusbarctrl-object"></a>Verwenden von QuickInfos in einem CStatusBarCtrl-Objekt
 
-Um Quick Infos für ein StatusBar-Steuerelement zu aktivieren, erstellen Sie das `CStatusBarCtrl`-Objekt mit der SBT_TOOLTIPS-Formatvorlage.
+Um QuickInfos für ein Statusleistensteuerelement zu aktivieren, erstellen Sie das `CStatusBarCtrl` Objekt mit dem Stil SBT_TOOLTIPS.
 
 > [!NOTE]
->  Wenn Sie ein `CStatusBar` Objekt zum Implementieren der Statusleiste verwenden, verwenden Sie die `CStatusBar::CreateEx`-Funktion. Sie ermöglicht es Ihnen, zusätzliche Stile für das eingebettete `CStatusBarCtrl` Objekt anzugeben.
+> Wenn Sie ein `CStatusBar` Objekt zum Implementieren der `CStatusBar::CreateEx` Statusleiste verwenden, verwenden Sie die Funktion. Sie können zusätzliche Stile für `CStatusBarCtrl` das eingebettete Objekt angeben.
 
-Nachdem das `CStatusBarCtrl`-Objekt erfolgreich erstellt wurde, verwenden Sie [cstatus barctrl:: SetTipText](../mfc/reference/cstatusbarctrl-class.md#settiptext) und [cstatus-barstrg:: GetTipText](../mfc/reference/cstatusbarctrl-class.md#gettiptext) , um den QuickInfo-Text für einen bestimmten Bereich festzulegen und abzurufen.
+Nachdem `CStatusBarCtrl` das Objekt erfolgreich erstellt wurde, verwenden Sie [CStatusBarCtrl::SetTipText](../mfc/reference/cstatusbarctrl-class.md#settiptext) und [CStatusBarCtrl::GetTipText,](../mfc/reference/cstatusbarctrl-class.md#gettiptext) um den Tipptext für einen bestimmten Bereich festzulegen und abzurufen.
 
-Nachdem die QuickInfo festgelegt wurde, wird Sie nur angezeigt, wenn der Teil ein Symbol und keinen Text enthält, oder wenn der gesamte Text nicht innerhalb des Teils angezeigt werden kann. Quick Infos werden im einfachen Modus nicht unterstützt.
+Sobald die QuickInfo festgelegt wurde, wird sie nur angezeigt, wenn das Teil ein Symbol und keinen Text enthält oder wenn der gesamte Text nicht innerhalb des Teils angezeigt werden kann. Tool-Tipps werden im einfachen Modus nicht unterstützt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Verwenden von CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)<br/>
-[Kontrollen](../mfc/controls-mfc.md)
+[Steuerelemente](../mfc/controls-mfc.md)

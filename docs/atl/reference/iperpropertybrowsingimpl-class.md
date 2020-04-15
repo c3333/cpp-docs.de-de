@@ -1,5 +1,5 @@
 ---
-title: Iperpropertybrowsingimpl-Klasse
+title: IPerPropertyBrowsingImpl-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - IPerPropertyBrowsingImpl
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - property pages, accessing information
 - IPerPropertyBrowsing, ATL implementation
 ms.assetid: 0b1a9be3-d242-4767-be69-663a21e4b728
-ms.openlocfilehash: 263f6826ac921d864dee646ef063c8b456b00af1
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: f8fb80cc38e775b9b26afa033647faac694e968a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495718"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81326515"
 ---
-# <a name="iperpropertybrowsingimpl-class"></a>Iperpropertybrowsingimpl-Klasse
+# <a name="iperpropertybrowsingimpl-class"></a>IPerPropertyBrowsingImpl-Klasse
 
-Diese Klasse implementiert `IUnknown` und ermöglicht einem Client den Zugriff auf die Informationen auf den Eigenschaften Seiten eines Objekts.
+Diese Klasse `IUnknown` implementiert und ermöglicht einem Client den Zugriff auf die Informationen auf den Eigenschaftenseiten eines Objekts.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,27 +39,27 @@ class ATL_NO_VTABLE IPerPropertyBrowsingImpl :
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IPerPropertyBrowsingImpl`abgeleitete Klasse.
+Ihre Klasse, `IPerPropertyBrowsingImpl`abgeleitet von .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[IPerPropertyBrowsingImpl::GetDisplayString](#getdisplaystring)|Ruft eine Zeichenfolge ab, die eine bestimmte Eigenschaft beschreibt.|
-|[IPerPropertyBrowsingImpl::GetPredefinedStrings](#getpredefinedstrings)|Ruft ein Array von Zeichen folgen ab, die den Werten entsprechen, die eine bestimmte Eigenschaft annehmen kann.|
-|[IPerPropertyBrowsingImpl::GetPredefinedValue](#getpredefinedvalue)|Ruft einen Variant-Wert ab, der den Wert einer Eigenschaft enthält, die durch eine angegebene DISPID identifiziert wird. Die DISPID ist mit dem aus abgerufenen `GetPredefinedStrings`Zeichen folgen Namen verknüpft. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
-|[Iperpropertybrowsingimpl:: mappropertytopage](#mappropertytopage)|Ruft die CLSID der Eigenschaften Seite ab, die einer angegebenen Eigenschaft zugeordnet ist.|
+|[IPerPropertyBrowsingImpl::GetPredefinedStrings](#getpredefinedstrings)|Ruft ein Array von Zeichenfolgen ab, das den Werten entspricht, die eine bestimmte Eigenschaft akzeptieren kann.|
+|[IPerPropertyBrowsingImpl::GetPredefinedValue](#getpredefinedvalue)|Ruft einen VARIANT ab, der den Wert einer Eigenschaft enthält, die von einer bestimmten DISPID identifiziert wurde. Die DISPID ist dem Zeichenfolgennamen zugeordnet, der aus `GetPredefinedStrings`abgerufen wurde. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IPerPropertyBrowsingImpl::MapPropertyToPage](#mappropertytopage)|Ruft die CLSID der Eigenschaftenseite ab, die einer bestimmten Eigenschaft zugeordnet ist.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die [IPerPropertyBrowsing](/windows/win32/api/ocidl/nn-ocidl-iperpropertybrowsing) -Schnittstelle ermöglicht einem Client den Zugriff auf die Informationen auf den Eigenschaften Seiten eines Objekts. Die `IPerPropertyBrowsingImpl` -Klasse stellt eine Standard Implementierung dieser Schnittstelle `IUnknown` bereit und implementiert durch das Senden von Informationen an das dumpgerät in Debugbuilds.
+Die [IPerPropertyBrowsing-Schnittstelle](/windows/win32/api/ocidl/nn-ocidl-iperpropertybrowsing) ermöglicht einem Client den Zugriff auf die Informationen in den Eigenschaftenseiten eines Objekts. Die `IPerPropertyBrowsingImpl` Klasse stellt eine Standardimplementierung `IUnknown` dieser Schnittstelle bereit und implementiert, indem Informationen in Debugbuilds an das Dumpgerät gesendet werden.
 
 > [!NOTE]
->  Wenn Sie Microsoft Access als Containeranwendung verwenden, müssen Sie die Klasse von `IPerPropertyBrowsingImpl`ableiten. Andernfalls wird das Steuerelement nicht durch den Zugriff geladen.
+> Wenn Sie Microsoft Access als Containeranwendung verwenden, müssen `IPerPropertyBrowsingImpl`Sie Ihre Klasse von ableiten. Andernfalls lädt Access das Steuerelement nicht.
 
-**Verwandte Artikel** [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md), [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
+**Verwandte Artikel** [ATL Tutorial](../../atl/active-template-library-atl-tutorial.md), Erstellen eines [ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -69,9 +69,9 @@ Die [IPerPropertyBrowsing](/windows/win32/api/ocidl/nn-ocidl-iperpropertybrowsin
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlctl.h
+**Kopfzeile:** atlctl.h
 
-##  <a name="getdisplaystring"></a>Iperpropertybrowsingimpl:: GetDisplayString
+## <a name="iperpropertybrowsingimplgetdisplaystring"></a><a name="getdisplaystring"></a>IPerPropertyBrowsingImpl::GetDisplayString
 
 Ruft eine Zeichenfolge ab, die eine bestimmte Eigenschaft beschreibt.
 
@@ -81,13 +81,13 @@ STDMETHOD(GetDisplayString)(
     BSTR* pBstr);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IPerPropertyBrowsing:: GetDisplayString](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getdisplaystring) im Windows SDK.
+Siehe [IPerPropertyBrowsing::GetDisplayString](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getdisplaystring) im Windows SDK.
 
-##  <a name="getpredefinedstrings"></a>Iperpropertybrowsingimpl:: getpredefinedstrings
+## <a name="iperpropertybrowsingimplgetpredefinedstrings"></a><a name="getpredefinedstrings"></a>IPerPropertyBrowsingImpl::GetPredefinedStrings
 
-Füllt jedes Array mit 0 (null) Elementen.
+Füllt jedes Array mit Null-Elementen.
 
 ```
 STDMETHOD(GetPredefinedStrings)(
@@ -98,15 +98,15 @@ STDMETHOD(GetPredefinedStrings)(
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die ATL-Implementierung von [getpredefinedvalue](#getpredefinedvalue) gibt E_NOTIMPL zurück.
+Die Implementierung von [GetPredefinedValue](#getpredefinedvalue) durch ATL gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IPerPropertyBrowsing:: getpredefinedstrings](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getpredefinedstrings) in der Windows SDK.
+Siehe [IPerPropertyBrowsing::GetPredefinedStrings](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getpredefinedstrings) im Windows SDK.
 
-##  <a name="getpredefinedvalue"></a>Iperpropertybrowsingimpl:: getpredefinedvalue
+## <a name="iperpropertybrowsingimplgetpredefinedvalue"></a><a name="getpredefinedvalue"></a>IPerPropertyBrowsingImpl::GetPredefinedValue
 
-Ruft einen Variant-Wert ab, der den Wert einer Eigenschaft enthält, die durch eine angegebene DISPID identifiziert wird. Die DISPID ist mit dem aus abgerufenen `GetPredefinedStrings`Zeichen folgen Namen verknüpft.
+Ruft einen VARIANT ab, der den Wert einer Eigenschaft enthält, die von einer bestimmten DISPID identifiziert wurde. Die DISPID ist dem Zeichenfolgennamen zugeordnet, der aus `GetPredefinedStrings`abgerufen wurde.
 
 ```
 STDMETHOD(GetPredefinedValue)(
@@ -119,15 +119,15 @@ STDMETHOD(GetPredefinedValue)(
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die ATL-Implementierung von [getpredefinedstrings](#getpredefinedstrings) ruft keine entsprechenden Zeichen folgen ab.
+Die ATL-Implementierung von [GetPredefinedStrings](#getpredefinedstrings) ruft keine entsprechenden Zeichenfolgen ab.
 
-Weitere Informationen finden Sie unter [IPerPropertyBrowsing:: getpredefinedvalue](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getpredefinedvalue) in der Windows SDK.
+Siehe [IPerPropertyBrowsing::GetPredefinedValue](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-getpredefinedvalue) im Windows SDK.
 
-##  <a name="mappropertytopage"></a>Iperpropertybrowsingimpl:: mappropertytopage
+## <a name="iperpropertybrowsingimplmappropertytopage"></a><a name="mappropertytopage"></a>IPerPropertyBrowsingImpl::MapPropertyToPage
 
-Ruft die CLSID der Eigenschaften Seite ab, die der angegebenen Eigenschaft zugeordnet ist.
+Ruft die CLSID der Eigenschaftenseite ab, die der angegebenen Eigenschaft zugeordnet ist.
 
 ```
 STDMETHOD(MapPropertyToPage)(
@@ -135,14 +135,14 @@ STDMETHOD(MapPropertyToPage)(
     CLSID* pClsid);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-ATL verwendet die Eigenschaften Zuordnung des Objekts, um diese Informationen zu erhalten.
+ATL verwendet die Eigenschaftenzuordnung des Objekts, um diese Informationen abzuerhalten.
 
-Weitere Informationen finden Sie unter [IPerPropertyBrowsing:: mappropertytopage](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-mappropertytopage) in der Windows SDK.
+Siehe [IPerPropertyBrowsing::MapPropertyToPage](/windows/win32/api/ocidl/nf-ocidl-iperpropertybrowsing-mappropertytopage) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 
 [IPropertyPageImpl-Klasse](../../atl/reference/ipropertypageimpl-class.md)<br/>
 [ISpecifyPropertyPagesImpl-Klasse](../../atl/reference/ispecifypropertypagesimpl-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

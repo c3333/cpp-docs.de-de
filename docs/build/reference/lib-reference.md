@@ -10,19 +10,19 @@ helpviewer_keywords:
 - LIB [C++]
 - 32-Bit Library Manager
 ms.assetid: ecc7f643-bbd4-47a3-8dc6-b360f880db91
-ms.openlocfilehash: 8e0c2815fdc3ab9ab171d3ebb94480393c8815ed
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: d4ce4e4723faa943a8de1431a604fc7acca2d528
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62291495"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328220"
 ---
 # <a name="lib-reference"></a>LIB-Referenz
 
-Die Microsoft-Bibliotheksverwaltung (LIB.exe) erstellt und verwaltet eine Bibliothek mit Objektdateien Common Object File Format (COFF). LIB kann auch zum Erstellen von Exportdateien und Importbibliotheken Verweise auf exportierte Definitionen verwendet werden.
+Der Microsoft Library Manager (LIB.exe) erstellt und verwaltet eine Bibliothek mit COFF-Objektdateien (Common Object File Format). LIB kann auch verwendet werden, um Exportdateien und Importbibliotheken zu erstellen, um auf exportierte Definitionen zu verweisen.
 
 > [!NOTE]
->  Sie können dieses Tool nur über die Visual Studio-Eingabeaufforderung starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
+> Sie können dieses Tool nur über die Eingabeaufforderung für die Eingabeaufforderung Visual Studio starten. Sie können es nicht von einer Systemeingabeaufforderung oder vom Datei-Explorer aus starten.
 
 - [Übersicht über LIB](overview-of-lib.md)
 

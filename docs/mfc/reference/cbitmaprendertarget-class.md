@@ -18,12 +18,12 @@ helpviewer_keywords:
 - CBitmapRenderTarget [MFC], GetBitmapRenderTarget
 - CBitmapRenderTarget [MFC], m_pBitmapRenderTarget
 ms.assetid: c89a4437-812e-4943-acb2-b429a04cc4d2
-ms.openlocfilehash: 8c110ec8f7c232180bf054e8e4ba90a18f1902c1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6249c121f7bcca0675a8138baef0e2cdc9e632d8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388435"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81352603"
 ---
 # <a name="cbitmaprendertarget-class"></a>CBitmapRenderTarget-Klasse
 
@@ -39,34 +39,34 @@ class CBitmapRenderTarget : public CRenderTarget;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CBitmapRenderTarget::CBitmapRenderTarget](#cbitmaprendertarget)|Erstellt ein CBitmapRenderTarget-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CBitmapRenderTarget::Attach](#attach)|Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern|
-|[CBitmapRenderTarget::Detach](#detach)|Trennt die Render-Ziel-Schnittstelle des Objekts|
-|[CBitmapRenderTarget::GetBitmap](#getbitmap)|Ruft die Bitmap für das Renderziel ab. Die zurückgegebene Bitmap kann für das Zeichnen von Vorgängen verwendet werden.|
-|[CBitmapRenderTarget::GetBitmapRenderTarget](#getbitmaprendertarget)|Gibt die ID2D1BitmapRenderTarget-Schnittstelle|
+|[CBitmapRenderTarget::Anfügen](#attach)|Fügt vorhandene Renderzielschnittstelle an das Objekt an|
+|[CBitmapRenderTarget::Detach](#detach)|Trennt die Renderzielschnittstelle vom Objekt|
+|[CBitmapRenderTarget::GetBitmap](#getbitmap)|Ruft die Bitmap für dieses Renderziel ab. Die zurückgegebene Bitmap kann für Zeichnungsvorgänge verwendet werden.|
+|[CBitmapRenderTarget::GetBitmapRenderTarget](#getbitmaprendertarget)|Gibt ID2D1BitmapRenderTarget-Schnittstelle zurück|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CBitmapRenderTarget::operator ID2D1BitmapRenderTarget*](#operator_id2d1bitmaprendertarget_star)|Gibt die ID2D1BitmapRenderTarget-Schnittstelle|
+|[CBitmapRenderTarget::operator ID2D1BitmapRenderTarget*](#operator_id2d1bitmaprendertarget_star)|Gibt ID2D1BitmapRenderTarget-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CBitmapRenderTarget::m_pBitmapRenderTarget](#m_pbitmaprendertarget)|Ein Zeiger auf ein ID2D1BitmapRenderTarget-Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CRenderTarget](../../mfc/reference/crendertarget-class.md)
 
@@ -74,11 +74,11 @@ class CBitmapRenderTarget : public CRenderTarget;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="attach"></a>  CBitmapRenderTarget::Attach
+## <a name="cbitmaprendertargetattach"></a><a name="attach"></a>CBitmapRenderTarget::Anfügen
 
-Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern
+Fügt vorhandene Renderzielschnittstelle an das Objekt an
 
 ```
 void Attach(ID2D1BitmapRenderTarget* pTarget);
@@ -87,9 +87,9 @@ void Attach(ID2D1BitmapRenderTarget* pTarget);
 ### <a name="parameters"></a>Parameter
 
 *pTarget*<br/>
-Vorhandene Render-Ziel-Schnittstelle. NULL darf nicht sein
+Vorhandene Renderzielschnittstelle. Kann nicht NULL sein
 
-##  <a name="cbitmaprendertarget"></a>  CBitmapRenderTarget::CBitmapRenderTarget
+## <a name="cbitmaprendertargetcbitmaprendertarget"></a><a name="cbitmaprendertarget"></a>CBitmapRenderTarget::CBitmapRenderTarget
 
 Erstellt ein CBitmapRenderTarget-Objekt.
 
@@ -97,9 +97,9 @@ Erstellt ein CBitmapRenderTarget-Objekt.
 CBitmapRenderTarget();
 ```
 
-##  <a name="detach"></a>  CBitmapRenderTarget::Detach
+## <a name="cbitmaprendertargetdetach"></a><a name="detach"></a>CBitmapRenderTarget::Detach
 
-Trennt die Render-Ziel-Schnittstelle des Objekts
+Trennt die Renderzielschnittstelle vom Objekt
 
 ```
 ID2D1BitmapRenderTarget* Detach();
@@ -107,11 +107,11 @@ ID2D1BitmapRenderTarget* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf getrennten rendern, Ziel-Schnittstelle.
+Zeiger auf die getrennte Renderzielschnittstelle.
 
-##  <a name="getbitmap"></a>  CBitmapRenderTarget::GetBitmap
+## <a name="cbitmaprendertargetgetbitmap"></a><a name="getbitmap"></a>CBitmapRenderTarget::GetBitmap
 
-Ruft die Bitmap für das Renderziel ab. Die zurückgegebene Bitmap kann für das Zeichnen von Vorgängen verwendet werden.
+Ruft die Bitmap für dieses Renderziel ab. Die zurückgegebene Bitmap kann für Zeichnungsvorgänge verwendet werden.
 
 ```
 BOOL GetBitmap(CD2DBitmap& bitmap);
@@ -119,16 +119,16 @@ BOOL GetBitmap(CD2DBitmap& bitmap);
 
 ### <a name="parameters"></a>Parameter
 
-*bitmap*<br/>
-Bei der Rückgabe dieser Methode enthält die gültigen Bitmap für das Renderziel. Diese Bitmap kann für das Zeichnen von Vorgängen verwendet werden.
+*Bitmap*<br/>
+Wenn diese Methode zurückgegeben wird, enthält die gültige Bitmap für dieses Renderziel. Diese Bitmap kann für Zeichnungsvorgänge verwendet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird FALSE zurückgegeben.
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="getbitmaprendertarget"></a>  CBitmapRenderTarget::GetBitmapRenderTarget
+## <a name="cbitmaprendertargetgetbitmaprendertarget"></a><a name="getbitmaprendertarget"></a>CBitmapRenderTarget::GetBitmapRenderTarget
 
-Gibt die ID2D1BitmapRenderTarget-Schnittstelle
+Gibt ID2D1BitmapRenderTarget-Schnittstelle zurück
 
 ```
 ID2D1BitmapRenderTarget* GetBitmapRenderTarget();
@@ -136,9 +136,9 @@ ID2D1BitmapRenderTarget* GetBitmapRenderTarget();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1BitmapRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1BitmapRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="m_pbitmaprendertarget"></a>  CBitmapRenderTarget::m_pBitmapRenderTarget
+## <a name="cbitmaprendertargetm_pbitmaprendertarget"></a><a name="m_pbitmaprendertarget"></a>CBitmapRenderTarget::m_pBitmapRenderTarget
 
 Ein Zeiger auf ein ID2D1BitmapRenderTarget-Objekt.
 
@@ -146,9 +146,9 @@ Ein Zeiger auf ein ID2D1BitmapRenderTarget-Objekt.
 ID2D1BitmapRenderTarget* m_pBitmapRenderTarget;
 ```
 
-##  <a name="operator_id2d1bitmaprendertarget_star"></a>  CBitmapRenderTarget::operator ID2D1BitmapRenderTarget *
+## <a name="cbitmaprendertargetoperator-id2d1bitmaprendertarget"></a><a name="operator_id2d1bitmaprendertarget_star"></a>CBitmapRenderTarget::operator ID2D1BitmapRenderTarget*
 
-Gibt die ID2D1BitmapRenderTarget-Schnittstelle
+Gibt ID2D1BitmapRenderTarget-Schnittstelle zurück
 
 ```
 operator ID2D1BitmapRenderTarget*();
@@ -156,7 +156,7 @@ operator ID2D1BitmapRenderTarget*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1BitmapRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1BitmapRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
 ## <a name="see-also"></a>Siehe auch
 

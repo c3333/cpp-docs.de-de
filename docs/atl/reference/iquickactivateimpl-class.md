@@ -1,5 +1,5 @@
 ---
-title: Iquickactivateimpl-Klasse
+title: IQuickActivateImpl-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - IQuickActivateImpl
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - IQuickActivateImpl class
 - IQuickActivate ATL implementation
 ms.assetid: aa80c056-1041-494e-b21d-2acca7dc27ea
-ms.openlocfilehash: 2169686ebbf756c5caf9232f5031532c62ac8265
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 7e1984249caf66e2986341f9c9f7a939d7039125
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495507"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329556"
 ---
-# <a name="iquickactivateimpl-class"></a>Iquickactivateimpl-Klasse
+# <a name="iquickactivateimpl-class"></a>IQuickActivateImpl-Klasse
 
-Diese Klasse kombiniert die Initialisierung von Container Steuerelementen zu einem einzelnen-Befehl.
+Diese Klasse kombiniert die Steuerelementinitialisierung von Containern in einem einzigen Aufruf.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,23 +37,23 @@ class ATL_NO_VTABLE IQuickActivateImpl : public IQuickActivate
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IQuickActivateImpl`abgeleitete Klasse.
+Ihre Klasse, `IQuickActivateImpl`abgeleitet von .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IQuickActivateImpl::GetContentExtent](#getcontentextent)|Ruft die aktuelle Anzeige Größe für ein ausgelaufendes Steuerelement ab.|
-|[IQuickActivateImpl::QuickActivate](#quickactivate)|Führt die schnelle Initialisierung von Steuerelementen aus, die geladen werden.|
-|[IQuickActivateImpl::SetContentExtent](#setcontentextent)|Informiert das Steuerelement darüber, wie viel Anzeigebereich dem Container zugeordnet ist.|
+|[IQuickActivateImpl::GetContentExtent](#getcontentextent)|Ruft die aktuelle Anzeigegröße für ein ausgeführtes Steuerelement ab.|
+|[IQuickActivateImpl::QuickActivate](#quickactivate)|Führt eine schnelle Initialisierung der geladenen Steuerelemente durch.|
+|[IQuickActivateImpl::SetContentExtent](#setcontentextent)|Informiert das Steuerelement darüber, wie viel Anzeigefläche der Container ihm zugewiesen hat.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Mithilfe der [iquickaktivierungs](/windows/win32/api/ocidl/nn-ocidl-iquickactivate) -Schnittstelle können Container Verzögerungen beim Laden von Steuerelementen vermeiden, indem die Initialisierung in einem einzelnen-Befehl kombiniert wird Die `QuickActivate` -Methode ermöglicht es dem Container, einen Zeiger auf eine [QACONTAINER](/windows/win32/api/ocidl/ns-ocidl-qacontainer) -Struktur zu übergeben, die Zeiger auf alle Schnittstellen enthält, die das Steuerelement benötigt. Bei der Rückgabe übergibt das Steuerelement einen Zeiger auf eine [qacontrol](/windows/win32/api/ocidl/ns-ocidl-qacontrol) -Struktur, die Zeiger auf seine eigenen Schnittstellen enthält, die vom Container verwendet werden. Die `IQuickActivateImpl` -Klasse stellt eine Standard `IQuickActivate` Implementierung von `IUnknown` bereit und implementiert durch das Senden von Informationen an das dumpgerät in Debugbuilds.
+Die [IQuickActivate-Schnittstelle](/windows/win32/api/ocidl/nn-ocidl-iquickactivate) hilft Containern, Verzögerungen beim Laden von Steuerelementen zu vermeiden, indem die Initialisierung in einem einzelnen Aufruf kombiniert wird. Die `QuickActivate` Methode ermöglicht es dem Container, einen Zeiger an eine [QACONTAINER-Struktur](/windows/win32/api/ocidl/ns-ocidl-qacontainer) zu übergeben, die Zeiger auf alle Schnittstellen enthält, die das Steuerelement benötigt. Bei der Rückgabe gibt das Steuerelement einen Zeiger an eine [QACONTROL-Struktur](/windows/win32/api/ocidl/ns-ocidl-qacontrol) zurück, die Zeiger auf ihre eigenen Schnittstellen enthält, die vom Container verwendet werden. Die `IQuickActivateImpl` Klasse stellt `IQuickActivate` eine Standardimplementierung von und implementiert, `IUnknown` indem Informationen an das Dump-Gerät in Debugbuilds gesendet werden.
 
-**Verwandte Artikel** [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md), [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
+**Verwandte Artikel** [ATL Tutorial](../../atl/active-template-library-atl-tutorial.md), Erstellen eines [ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -63,25 +63,25 @@ Mithilfe der [iquickaktivierungs](/windows/win32/api/ocidl/nn-ocidl-iquickactiva
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlctl.h
+**Kopfzeile:** atlctl.h
 
-##  <a name="getcontentextent"></a>Iquickactivateimpl:: GetContentExtent
+## <a name="iquickactivateimplgetcontentextent"></a><a name="getcontentextent"></a>IQuickActivateImpl::GetContentExtent
 
-Ruft die aktuelle Anzeige Größe für ein ausgelaufendes Steuerelement ab.
+Ruft die aktuelle Anzeigegröße für ein ausgeführtes Steuerelement ab.
 
 ```
 STDMETHOD(GetContentExtent)(LPSIZEL pSize);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Größe ist für ein vollständiges Rendering des Steuer Elements und wird in HIMETRIC-Einheiten angegeben.
+Die Größe ist für ein vollständiges Rendern des Steuerelements und wird in HIMETRIC-Einheiten angegeben.
 
-Weitere Informationen finden Sie unter [iquickaktivierungs:: GetContentExtent](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-getcontentextent) im Windows SDK.
+Siehe [IQuickActivate::GetContentExtent](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-getcontentextent) im Windows SDK.
 
-##  <a name="quickactivate"></a>Iquickactivateimpl:: quickaktivierungs
+## <a name="iquickactivateimplquickactivate"></a><a name="quickactivate"></a>IQuickActivateImpl::QuickActivate
 
-Führt die schnelle Initialisierung von Steuerelementen aus, die geladen werden.
+Führt eine schnelle Initialisierung der geladenen Steuerelemente durch.
 
 ```
 STDMETHOD(QuickActivate)(
@@ -89,27 +89,27 @@ STDMETHOD(QuickActivate)(
     QACONTROL* pQACtrl);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Struktur enthält Zeiger auf Schnittstellen, die vom-Steuerelement und den Werten einiger Ambient-Eigenschaften benötigt werden. Bei der Rückgabe übergibt das Steuerelement einen Zeiger auf eine [qacontrol](/windows/win32/api/ocidl/ns-ocidl-qacontrol) -Struktur, die Zeiger auf seine eigenen Schnittstellen enthält, die der Container benötigt, sowie zusätzliche Statusinformationen.
+Die Struktur enthält Zeiger auf Schnittstellen, die vom Steuerelement benötigt werden, und die Werte einiger Umgebungseigenschaften. Bei der Rückgabe übergibt das Steuerelement einen Zeiger an eine [QACONTROL-Struktur,](/windows/win32/api/ocidl/ns-ocidl-qacontrol) die Zeiger auf die eigenen Schnittstellen enthält, die der Container benötigt, sowie zusätzliche Statusinformationen.
 
-Weitere Informationen finden Sie unter [iquickaktivierung:: quickaktivierung](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-quickactivate) im Windows SDK.
+Siehe [IQuickActivate::QuickActivate](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-quickactivate) im Windows SDK.
 
-##  <a name="setcontentextent"></a>Iquickactivateimpl:: setcontentextent
+## <a name="iquickactivateimplsetcontentextent"></a><a name="setcontentextent"></a>IQuickActivateImpl::SetContentExtent
 
-Informiert das Steuerelement darüber, wie viel Anzeigebereich dem Container zugeordnet ist.
+Informiert das Steuerelement darüber, wie viel Anzeigefläche der Container ihm zugewiesen hat.
 
 ```
 STDMETHOD(SetContentExtent)(LPSIZEL pSize);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Größe wird in HIMETRIC-Einheiten angegeben.
 
-Weitere Informationen finden Sie unter [iquickaktivierungs:: setcontentextent](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-setcontentextent) in der Windows SDK.
+Siehe [IQuickActivate::SetContentExtent](/windows/win32/api/ocidl/nf-ocidl-iquickactivate-setcontentextent) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CComControl-Klasse](../../atl/reference/ccomcontrol-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

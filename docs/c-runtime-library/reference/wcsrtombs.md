@@ -1,8 +1,9 @@
 ---
 title: wcsrtombs
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wcsrtombs
+- _o_wcsrtombs
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - string conversion, wide characters
 - wide characters, strings
 ms.assetid: a8d21fec-0d36-4085-9d81-9b1c61c7259d
-ms.openlocfilehash: e6640a027b03b7aa0dceaf8e61af6cb43a44d6e0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: af22a7d55c5f4958db6962e98f212fb5bb89e61e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945054"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328055"
 ---
 # <a name="wcsrtombs"></a>wcsrtombs
 
@@ -60,34 +62,36 @@ size_t wcsrtombs(
 *mbstr*<br/>
 Der Adressspeicherort der resultierenden konvertierten Multibyte-Zeichenfolge.
 
-*wcstr*<br/>
+*Wcstr*<br/>
 Indirekter Zeiger auf den Speicherort der Breitzeichenfolge, die konvertiert werden soll.
 
 *count*<br/>
 Die Anzahl der zu konvertierenden Zeichen.
 
 *mbstate*<br/>
-Ein Zeiger auf ein **mbstate_t** -Konvertierungs Zustands Objekt.
+Ein Zeiger auf ein **mbstate_t** Konvertierungsstatusobjekt.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Gibt die Anzahl der erfolgreich konvertierten Bytes zurück, wobei das abschließende NULL-Byte (falls vorhanden) nicht eingeschlossen ist. Andernfalls wird bei einem Fehler -1 zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wcsrgräber** -Funktion konvertiert eine Zeichenfolge mit breit Zeichen, beginnend mit dem angegebenen Konvertierungs Zustand, der in *mbstate*enthalten ist, von den Werten, auf die in *wcstr*verwiesen wird, in die Adresse von *mbstr*. Die Konvertierung wird für jedes Zeichen fortgesetzt, bis: nach einem NULL abschließenden breit Zeichen, wenn ein nicht entsprechendes Zeichen gefunden wird oder wenn das nächste Zeichen das in *count*enthaltene Limit überschreiten würde. Wenn **wcsrgräber** das breit Zeichen NULL-Zeichen (L ' \ 0 ') erkennt, entweder vor oder wenn *count* auftritt, wird es in 8-Bit 0 konvertiert und beendet.
+Die **funktion wcsrtombs** konvertiert eine Zeichenfolge mit breiten Zeichen, beginnend mit dem angegebenen Konvertierungszustand in *mbstate*, von den Werten indirekt, auf die in *wcstr*verwiesen wird, in die Adresse von *mbstr*. Die Konvertierung wird für jedes Zeichen fortgesetzt, bis: nachdem ein Null-Ende-Breitzeichen gefunden wurde, wenn ein nicht entsprechendes Zeichen gefunden wird oder wenn das nächste Zeichen den in *Count*enthaltenen Grenzwert überschreiten würde. Wenn **wcsrtombs** auf das Breitzeichen-NULL-Zeichen (L'-0') trifft, entweder vor oder wenn *die Anzahl* erfolgt, konvertiert es in eine 8-Bit-0 und stoppt.
 
-Folglich ist die Multibytezeichenfolge bei *mbstr* nur dann NULL-terminiert, wenn **wcsrgräber** bei der Konvertierung ein breit Zeichen NULL-Zeichen trifft. Wenn die Sequenzen, auf die von *wcstr* und *mbstr* verwiesen wird, überlappen, ist das Verhalten von **wcsrgrabeln** nicht definiert. **wcsrgräbern** ist von der Kategorie LC_TYPE des aktuellen Gebiets Schemas betroffen.
+Daher wird die Multibyte-Zeichenfolge bei *mbstr* nur dann null beendet, wenn **wcsrtombs** während der Konvertierung auf ein breites Zeichen-NULL-Zeichen trifft. Wenn sich die Sequenzen, auf die *wcstr* und *mbstr* zeigten, überlappen, ist das Verhalten von **wcsrtombs** nicht definiert. **wcsrtombs** wird von der kategorie LC_TYPE des aktuellen Gebietsschemas betroffen.
 
-Die **wcsrgräber** -Funktion unterscheidet [sich von wcstomsb, _wcstombs_l](wcstombs-wcstombs-l.md) durch die Neustart Fähigkeit. Der Konvertierungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Beispielsweise würde eine Anwendung **wcsrlen** anstelle von **wcsnlen**verwenden, wenn ein nachfolgender **wcsr-** aufrufsausdruck anstelle von **wcstomsb**verwendet würde.
+Die **wcsrtombs-Funktion** unterscheidet sich von [wcstombs, _wcstombs_l](wcstombs-wcstombs-l.md) durch ihre Neustartfähigkeit. Der Konvertierungsstatus wird in *mbstate* für nachfolgende Aufrufe derselben oder anderer neustartbarer Funktionen gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert.  Eine Anwendung würde z. B. **wcsrlen** anstelle von **wcsnlen**verwenden, wenn anstelle von **wcstombs**ein nachfolgender Aufruf von **wcsrtombs** verwendet würde.
 
-Wenn das *mbstr* -Argument **null**ist, gibt **wcsrgrabeln** die erforderliche Größe in Byte der Ziel Zeichenfolge zurück. Wenn *mbstate* den Wert NULL aufweist, wird der interne **mbstate_t** -Konvertierungs Status verwendet. Wenn die Zeichenfolge *WCHAR* nicht über eine entsprechende Multibytezeichen-Zeichen Darstellung verfügt, wird-1 zurückgegeben, und der **errno** -Wert wird auf **EILSEQ**festgelegt.
+Wenn das *mbstr-Argument* **NULL**ist, gibt **wcsrtombs** die erforderliche Größe in Bytes der Zielzeichenfolge zurück. Wenn *mbstate* null ist, wird der interne **mbstate_t** Konvertierungsstatus verwendet. Wenn die Zeichensequenz *wchar* keine entsprechende Multibyte-Zeichendarstellung hat, wird eine -1 zurückgegeben und der **Errno** auf **EILSEQ**gesetzt.
 
-In C++ hat diese Funktion eine Vorlagenüberladung, mit der die neuere, sichere Entsprechung dieser Funktion aufgerufen wird. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ hat diese Funktion eine Vorlagenüberladung, mit der die neuere, sichere Entsprechung dieser Funktion aufgerufen wird. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="exceptions"></a>Ausnahmen
 
-Die **wcsrgräber** -Funktion ist multithreadsicher, solange keine Funktion im aktuellen Thread **setlocale** aufruft, während diese Funktion ausgeführt wird und *mbstate* nicht NULL ist.
+Die **funktion wcsrtombs** ist multithreadsicher, solange keine Funktion im aktuellen Thread **setlocale** aufruft, während diese Funktion ausgeführt wird und der *mbstate* nicht null ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -137,7 +141,7 @@ The string was successfuly converted.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wcsrtombs**|\<wchar.h>|
 

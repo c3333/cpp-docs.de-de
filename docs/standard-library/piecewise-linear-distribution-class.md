@@ -26,14 +26,14 @@ helpviewer_keywords:
 - std::piecewise_linear_distribution [C++], param_type
 - std::piecewise_linear_distribution [C++], param_type
 ms.assetid: cd141152-7163-4754-8f98-c6d6500005e0
-ms.openlocfilehash: 9221daa002f19c3f73e65a49efb8da9c6f96b258
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 7d9e1f1b9af3002faa9e2d9b20b7ee76dce35aea
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68455222"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372085"
 ---
-# <a name="piecewiselineardistribution-class"></a>piecewise_linear_distribution-Klasse
+# <a name="piecewise_linear_distribution-class"></a>piecewise_linear_distribution-Klasse
 
 Generiert eine stückweise lineare Verteilung mit Intervallen von variierender Weite und in jedem Intervall linear variierender Wahrscheinlichkeit.
 
@@ -81,9 +81,9 @@ public:
 ### <a name="parameters"></a>Parameter
 
 *RealType*\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
+Der Gleitkommaergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Sampling-Verteilung weist Intervalle von variierender Breite und in jedem Intervall linear variierender Wahrscheinlichkeit auf. Informationen über weitere Sampling-Verteilungen erhalten Sie unter [piecewise_linear_distribution](../standard-library/piecewise-constant-distribution-class.md) und [discrete_distribution](../standard-library/discrete-distribution-class.md).
 
@@ -106,7 +106,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -219,7 +219,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="piecewise_linear_distribution"></a> piecewise_linear_distribution::piecewise_linear_distribution
+## <a name="piecewise_linear_distributionpiecewise_linear_distribution"></a><a name="piecewise_linear_distribution"></a>piecewise_linear_distribution::piecewise_linear_distribution
 
 Erstellt die Verteilung.
 
@@ -249,19 +249,19 @@ explicit piecewise_linear_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*firsti*\
+*firstI*\
 Ein Eingabeiterator für das erste Element im Verteilungsbereich.
 
-*lasti*\
+*lastI*\
 Ein Eingabeiterator für das letzte Element im Verteilungsbereich.
 
 *firstW*\
 Ein Eingabeiterator für das erste Element im Gewichtsbereich.
 
-*Abstände*\
+*Intervallen*\
 Ein [initializer_list](../cpp/initializers.md) mit den Verteilungsintervallen.
 
-*Countdown*\
+*Count*\
 Die Anzahl von Elementen im Verteilungsbereich.
 
 *xmin*\
@@ -271,12 +271,12 @@ Der niedrigste Wert im Verteilungsbereich.
 Der höchste Wert im Verteilungsbereich. Muss größer als *xmin* sein.
 
 *weightfunc*\
-Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der-Parameter als auch der Rückgabewert müssen in den **Double**-Wert konvertiert werden können.
+Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der Parameter als auch der Rückgabewert müssen in **Double konvertierbar**sein.
 
-*parm*\
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Standardkonstruktor legt die gespeicherten Parameter so fest, dass es nur ein Intervall, 0 bis 1, mit einer Wahrscheinlichkeitsdichte von 1 gibt.
 
@@ -290,7 +290,7 @@ piecewise_linear_distribution(
     InputIteratorW firstW);
 ```
 
-erstellt ein Verteilungs Objekt mit Intervallen von Iteratoren über die Sequenz [ `firstI`, `lastI`) und eine entsprechende Gewichtungs Sequenz, beginnend bei *firstw*.
+erstellt ein Verteilungsobjekt mit itnervals aus Iteratoren über die Sequenz [ `firstI`, `lastI`) und eine übereinstimmende Gewichtssequenz ab *firstW*.
 
 Der Initialisiererlistenkonstruktor
 
@@ -301,7 +301,7 @@ piecewise_linear_distribution(
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden.
+erstellt ein Verteilungsobjekt mit Intervallen *intervals* aus den Initialisierungslistenintervallen und Gewichtungen, die aus der Funktion *weightfunc*generiert werden.
 
 Der als
 
@@ -314,7 +314,7 @@ piecewise_linear_distribution(
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt mit  der gleichmäßig über [ `xmin,xmax`] verteilten Anzahl von Intervallen und weist jedem Intervall Gewichtungs Gewichtungen entsprechend der Funktion " *weightfunc*" zu, und " *weightfunc* " muss einen Parameter annehmen und eine Rückgabe aufweisen. -Wert, der beide in `double`konvertierbar sind. **Vorbedingung:** `xmin < xmax`.
+erstellt ein Verteilungsobjekt mit gleichmäßig verteilten *Zählintervallen* über `xmin,xmax`[ ], wobei jede Intervallgewichtung entsprechend der Funktion *weightfunc*zugewiesen wird, und *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, die beide in `double`. **Voraussetzung:**`xmin < xmax`.
 
 Der als
 
@@ -322,9 +322,9 @@ Der als
 explicit piecewise_linear_distribution(const param_type& parm);
 ```
 
-erstellt ein Verteilungs *Objekt mit einem* Parameter als gespeicherte Parameter Struktur.
+erstellt ein Verteilungsobjekt unter Verwendung von *parm* als gespeicherte Parameterstruktur.
 
-## <a name="param_type"></a> piecewise_linear_distribution::param_type
+## <a name="piecewise_linear_distributionparam_type"></a><a name="param_type"></a>piecewise_linear_distribution::param_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -350,12 +350,12 @@ struct param_type {
 
 Siehe Konstruktorparameter für [piecewise_linear_distribution](#piecewise_linear_distribution).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `xmin < xmax`
+**Voraussetzung:**`xmin < xmax`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

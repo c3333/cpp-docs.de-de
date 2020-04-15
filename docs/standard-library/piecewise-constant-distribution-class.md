@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::piecewise_constant_distribution [C++], param_type
 - std::piecewise_constant_distribution [C++], param_type
 ms.assetid: 2c9a21fa-623e-4d63-b827-3f1556b6dedb
-ms.openlocfilehash: db537e7cfab70c2ac4e235a752216b892882f8cf
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: cd7dc8467d07f53b0c741f98743a471df6f6c944
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79446198"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372103"
 ---
 # <a name="piecewise_constant_distribution-class"></a>piecewise_constant_distribution-Klasse
 
@@ -80,8 +80,8 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*RealType* -\
-Der Gleit Komma Ergebnistyp, der Standardwert ist **Double**. Mögliche Typen finden Sie unter [\<random>](../standard-library/random.md).
+*RealType*\
+Der Gleitkommaergebnistyp wird standardmäßig **verdoppelt.** Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -98,7 +98,7 @@ Die Eigenschaftsfunktion `intervals()` gibt einen `vector<result_type>` mit dem 
 
 Die Eigenschaftsfunktion `densities()` gibt einen `vector<result_type>` mit den für jeden Intervallsatz gespeicherten Dichten zurück, die entsprechend den in den Konstruktorparametern genannten Gewichten berechnet werden.
 
-Der Eigenschaftenmember `param()` legt das gespeicherte Verteilungsparameterpaket `param_type` fest oder gibt es zurück.
+Das Eigenschaftsmember `param()` gibt das aktuell gespeicherte Verteilungspaket `param_type` zurück oder legt es fest.
 
 Die `min()`- und `max()`-Memberfunktion gibt das jeweils kleinst- und größtmögliche Ergebnis zurück.
 
@@ -106,7 +106,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -212,13 +212,13 @@ Distribution for 100 samples:
     14-15 ::::::::
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Random >
+**Header:** \<random>
 
 **Namespace:** std
 
-## <a name="piecewise_constant_distribution"></a> piecewise_constant_distribution::piecewise_constant_distribution
+## <a name="piecewise_constant_distributionpiecewise_constant_distribution"></a><a name="piecewise_constant_distribution"></a>piecewise_constant_distribution::piecewise_constant_distribution
 
 Erstellt die Verteilung.
 
@@ -248,19 +248,19 @@ explicit piecewise_constant_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*firsti*\
+*firstI*\
 Ein Eingabeiterator für das erste Element im Verteilungsbereich.
 
-*lasti* -\
+*lastI*\
 Ein Eingabeiterator für das letzte Element im Verteilungsbereich.
 
-*firstw* -\
+*firstW*\
 Ein Eingabeiterator für das erste Element im Gewichtsbereich.
 
-*Intervalle*\
+*Intervallen*\
 Ein [initializer_list](../cpp/initializers.md) mit den Verteilungsintervallen.
 
-*Anzahl*\
+*Count*\
 Die Anzahl von Elementen im Verteilungsbereich.
 
 *xmin*\
@@ -269,10 +269,10 @@ Der niedrigste Wert im Verteilungsbereich.
 *xmax*\
 Der höchste Wert im Verteilungsbereich. Muss größer als *xmin* sein.
 
-*weightfunc* -\
-Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der-Parameter als auch der Rückgabewert müssen in den **Double**-Wert konvertiert werden können.
+*weightfunc*\
+Das Objekt, das die Wahrscheinlichkeitsfunktion für die Verteilung darstellt. Sowohl der Parameter als auch der Rückgabewert müssen in **Double konvertierbar**sein.
 
-*\ für* den
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -298,7 +298,7 @@ intervals,
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt mit Intervallen aus den initialisiererlistenintervallen und Gewichtungen, die aus der Funktion " *weightfunc*" generiert werden. *intervals*
+erstellt ein Verteilungsobjekt mit Intervallen *intervals* aus den Initialisierungslistenintervallen und Gewichtungen, die aus der Funktion *weightfunc*generiert werden.
 
 Der als
 
@@ -308,7 +308,7 @@ piecewise_constant_distribution(size_t count, result_type xmin, result_type xmax
     UnaryOperation weightfunc);
 ```
 
-erstellt ein Verteilungs Objekt, dessen *Anzahl* Intervalle gleichmäßig über [`xmin,xmax`] verteilt sind, wobei jedes Intervall Gewichtungen gemäß der Funktion " *weightfunc*" zugewiesen wird, und " *weightfunc* " muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, der beide in `double`konvertiert werden kann. **Vorbedingung:** `xmin < xmax`
+erstellt ein Verteilungsobjekt mit gleichmäßig verteilten *Zählintervallen* über `xmin,xmax`[ ], wobei jede Intervallgewichtung entsprechend der Funktion *weightfunc*zugewiesen wird, und *weightfunc* muss einen Parameter akzeptieren und einen Rückgabewert aufweisen, die beide in `double`. **Voraussetzung:**`xmin < xmax`
 
 Der als
 
@@ -316,9 +316,9 @@ Der als
 explicit piecewise_constant_distribution(const param_type& parm);
 ```
 
-erstellt ein Verteilungs *Objekt mit einem* Parameter als gespeicherte Parameter Struktur.
+erstellt ein Verteilungsobjekt unter Verwendung von *parm* als gespeicherte Parameterstruktur.
 
-## <a name="param_type"></a> piecewise_constant_distribution::param_type
+## <a name="piecewise_constant_distributionparam_type"></a><a name="param_type"></a>piecewise_constant_distribution::param_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -344,11 +344,11 @@ Siehe Konstruktorparameter für [piecewise_constant_distribution](#piecewise_con
 
 ### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `xmin < xmax`
+**Voraussetzung:**`xmin < xmax`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)\
+[\<zufällige>](../standard-library/random.md)\
 [piecewise_linear_distribution](../standard-library/piecewise-linear-distribution-class.md)

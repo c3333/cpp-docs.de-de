@@ -7,16 +7,16 @@ helpviewer_keywords:
 - functions [MFC], callback
 - callback functions [MFC]
 ms.assetid: b2a6857c-fdd3-45ec-8fd8-2e71fac77582
-ms.openlocfilehash: 9e51774b2158a81fce05dc0bd27e296e4ad94faa
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 8d84f939795e768c6b1356dcd8dc291421aedfdc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424758"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371141"
 ---
 # <a name="callback-functions-used-by-mfc"></a>Von MFC verwendete Rückruffunktionen
 
-Drei Rückruf Funktionen werden in der Microsoft Foundation Class-Bibliothek angezeigt. Diese Rückruf Funktionen werden an [CDC:: enujubjects](../../mfc/reference/cdc-class.md#enumobjects), [CDC:: graystring](../../mfc/reference/cdc-class.md#graystring)und [CDC:: abtabortproc](../../mfc/reference/cdc-class.md#setabortproc)übermittelt. Beachten Sie, dass alle Rückruf Funktionen vor der Rückgabe an Windows MFC-Ausnahmen abfangen müssen, da Ausnahmen nicht über Rückruf Grenzen hinweg ausgelöst werden können. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmen](../../mfc/exception-handling-in-mfc.md).
+Drei Rückruffunktionen werden in der Microsoft Foundation-Klassenbibliothek angezeigt. Diese Rückruffunktionen werden an [CDC::EnumObjects](../../mfc/reference/cdc-class.md#enumobjects), [CDC::GrayString](../../mfc/reference/cdc-class.md#graystring)und [CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc)übergeben. Beachten Sie, dass alle Rückruffunktionen MFC-Ausnahmen abfangen müssen, bevor sie zu Windows zurückkehren, da Ausnahmen nicht über Rückrufgrenzen hinweg ausgelöst werden können. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmen](../../mfc/exception-handling-in-mfc.md).
 
 |Name||
 |----------|-----------------|
@@ -24,13 +24,13 @@ Drei Rückruf Funktionen werden in der Microsoft Foundation Class-Bibliothek ang
 |[Rückruffunktion für CDC::GrayString](#graystring)||
 |[Rückruffunktion für CDC::SetAbortProc](#setabortproc)||
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-## <a name="enum_objects"></a>Rückruffunktion für CDC:: enumujects
+## <a name="callback-function-for-cdcenumobjects"></a><a name="enum_objects"></a>Rückruffunktion für CDC::EnumObjects
 
-Der *objectfunc* -Name ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
+Der *ObjectFunc-Name* ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -42,23 +42,23 @@ int CALLBACK EXPORT ObjectFunc(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszlogobject*<br/>
-Verweist auf eine [logpen](/windows/win32/api/Wingdi/ns-wingdi-logpen) -oder [logbrush](/windows/win32/api/wingdi/ns-wingdi-logbrush) -Datenstruktur, die Informationen zu den logischen Attributen des-Objekts enthält.
+*lpszLogObject*<br/>
+Verweist auf eine [LOGPEN-](/windows/win32/api/Wingdi/ns-wingdi-logpen) oder [LOGBRUSH-Datenstruktur,](/windows/win32/api/wingdi/ns-wingdi-logbrush) die Informationen zu den logischen Attributen des Objekts enthält.
 
-*lpdata*<br/>
-Verweist auf die von der Anwendung bereitgestellten Daten, die an die `EnumObjects`-Funktion übergeben werden.
+*lpData*<br/>
+Verweist auf die von der `EnumObjects` Anwendung bereitgestellten Daten, die an die Funktion übergeben werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Rückruffunktion gibt einen **int**-Wert zurück. Der Wert dieser Rückgabe ist Benutzer definiert. Wenn die Rückruffunktion 0 zurückgibt, `EnumObjects` die Enumeration frühzeitig beendet.
+Die Rückruffunktion gibt eine **int**zurück. Der Wert dieser Rückgabe ist benutzerdefiniert. Wenn die Rückruffunktion 0 `EnumObjects` zurückgibt, wird die Enumeration vorzeitig beendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der tatsächliche Name muss exportiert werden.
 
-## <a name="graystring"></a>Rückruffunktion für CDC:: graystring
+## <a name="callback-function-for-cdcgraystring"></a><a name="graystring"></a>Rückruffunktion für CDC::GrayString
 
-*OutputFunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Rückruf Funktionsnamen.
+*OutputFunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Rückruffunktionsnamen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -71,26 +71,26 @@ BOOL CALLBACK EXPORT OutputFunc(
 
 ### <a name="parameters"></a>Parameter
 
-*HDC*<br/>
-Identifiziert einen Speichergeräte Kontext mit einer Bitmap von mindestens der von `nWidth` angegebenen Breite und Höhe und `nHeight` `GrayString`.
+*Hdc*<br/>
+Identifiziert einen Speichergerätekontext mit einer Bitmap, die `nWidth` mindestens `nHeight` `GrayString`die von und an angegebene Breite und Höhe aufweist.
 
-*lpdata*<br/>
+*lpData*<br/>
 Zeigt auf die zu zeichnende Zeichenfolge.
 
 *nCount*<br/>
-Gibt die Anzahl von Zeichen an, die ausgegeben werden sollen.
+Gibt die Anzahl der ausauszugebenden Zeichen an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Rückgabewert der Rückruffunktion muss "true" sein, um den Erfolg anzugeben. Andernfalls ist Sie false.
+Der Rückgabewert der Rückruffunktion muss TRUE sein, um den Erfolg anzuzeigen. andernfalls ist es FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückruffunktion (*OutputFunc*) muss ein Bild relativ zu den Koordinaten (0, 0) anstelle von (*x*, *y*) zeichnen.
+Die Rückruffunktion (*OutputFunc*) muss ein Bild relativ zu den Koordinaten (0,0) und nicht (*x*, *y*) zeichnen.
 
-## <a name="setabortproc"></a>Rückruffunktion für CDC:: abtabortproc
+## <a name="callback-function-for-cdcsetabortproc"></a><a name="setabortproc"></a>Rückruffunktion für CDC::SetAbortProc
 
-Der Name *abortfunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
+Der Name *AbortFunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -102,23 +102,23 @@ BOOL CALLBACK EXPORT AbortFunc(
 
 ### <a name="parameters"></a>Parameter
 
-*HPR*<br/>
+*Hpr*<br/>
 Identifiziert den Gerätekontext.
 
 *Code*<br/>
-Gibt an, ob ein Fehler aufgetreten ist. Der Wert ist 0, wenn kein Fehler aufgetreten ist. Es ist SP_OUTOFDISK, wenn der Druck-Manager zurzeit nicht über genügend Speicherplatz verfügt und bei der Wartezeit der Anwendung mehr Speicherplatz verfügbar wird. Wenn *Code* SP_OUTOFDISK ist, muss die Anwendung den Druckauftrag nicht abbrechen. Wenn dies nicht der Fall ist, muss Sie dem Druck-Manager durch Aufrufen der Windows-Funktion "`PeekMessage`" oder "`GetMessage`" zurückzugeben.
+Gibt an, ob ein Fehler aufgetreten ist. Es ist 0, wenn kein Fehler aufgetreten ist. Es ist SP_OUTOFDISK, ob der Druck-Manager derzeit nicht mehr Speicherplatz hat und mehr Speicherplatz verfügbar ist, wenn die Anwendung wartet. Wenn *Code* SP_OUTOFDISK ist, muss die Anwendung den Druckauftrag nicht abbrechen. Ist dies nicht der Fall, muss er `PeekMessage` `GetMessage` dem Druck-Manager nachgeben, indem er die oder Windows-Funktion aufruft.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Rückgabewert der Abort-Handler-Funktion ist ungleich 0 (null), wenn der Druckauftrag fortgesetzt werden soll, und 0, wenn er abgebrochen wird.
+Der Rückgabewert der Abbruchhandlerfunktion ist ungleich Null, wenn der Druckauftrag fortgesetzt werden soll, und 0, wenn er abgebrochen wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der tatsächliche Name muss exportiert werden, wie im Abschnitt "Hinweise" von [CDC:: abtabortproc](../../mfc/reference/cdc-class.md#setabortproc)beschrieben.
+Der tatsächliche Name muss exportiert werden, wie im Abschnitt "Hinweise" von [CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc)beschrieben.
 
 ## <a name="see-also"></a>Siehe auch
 
 [Strukturen, Stile, Rückrufe und Meldungszuordnungen](structures-styles-callbacks-and-message-maps.md)<br/>
-[CDC:: umumujects](../../mfc/reference/cdc-class.md#enumobjects)<br/>
-[CDC:: abtabortproc](../../mfc/reference/cdc-class.md#setabortproc)<br/>
-[CDC:: graystring](../../mfc/reference/cdc-class.md#graystring)
+[CDC::EnumObjects](../../mfc/reference/cdc-class.md#enumobjects)<br/>
+[CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc)<br/>
+[CDC::GrayString](../../mfc/reference/cdc-class.md#graystring)

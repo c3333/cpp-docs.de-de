@@ -38,18 +38,18 @@ helpviewer_keywords:
 - CMFCAutoHideBar [MFC], UpdateVisibleState
 - CMFCAutoHideBar [MFC], m_nShowAHWndDelay
 ms.assetid: 54c8d84f-de64-4efd-8a47-3ea0ade40a70
-ms.openlocfilehash: b40e4d48e8204824375630f7517ff3f5aa5108d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 62750f4fb1261f4f30286297c3a240ab67e6df1c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403911"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369899"
 ---
 # <a name="cmfcautohidebar-class"></a>CMFCAutoHideBar-Klasse
 
 Die `CMFCAutoHideBar`-Klasse ist eine besondere Symbolleistenklasse, die die Funktion „Automatisch im Hintergrund“ implementiert.
 
-Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ## <a name="syntax"></a>Syntax
 
@@ -61,38 +61,38 @@ class CMFCAutoHideBar : public CPane
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCAutoHideBar::CMFCAutoHideBar](#cmfcautohidebar)||
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCAutoHideBar::AddAutoHideWindow](#addautohidewindow)||
 |[CMFCAutoHideBar::AllowShowOnPaneMenu](#allowshowonpanemenu)|(Überschreibt `CPane::AllowShowOnPaneMenu`.)|
-|[CMFCAutoHideBar::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [cbasepane:: Calcfixedlayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
-|[CMFCAutoHideBar::Create](#create)|Erstellt eine Steuerleiste und fügt es der [CPane](../../mfc/reference/cpane-class.md) Objekt. (Überschreibt [cpane:: Create](../../mfc/reference/cpane-class.md#create).)|
+|[CMFCAutoHideBar::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [CBasePane::CalcFixedLayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
+|[CMFCAutoHideBar::Create](#create)|Erstellt eine Steuerleiste und fügt sie an das [CPane-Objekt](../../mfc/reference/cpane-class.md) an. (Überschreibt [CPane::Create](../../mfc/reference/cpane-class.md#create).)|
 |[CMFCAutoHideBar::GetFirstAHWindow](#getfirstahwindow)||
 |[CMFCAutoHideBar::GetVisibleCount](#getvisiblecount)||
-|[CMFCAutoHideBar::OnShowControlBarMenu](#onshowcontrolbarmenu)|Wird von Framework aufgerufen, kurz bevor ein spezielles Bereichsmenü angezeigt wird. (Überschreibt [cpane:: Onshowcontrolbarmenu](../../mfc/reference/cpane-class.md#onshowcontrolbarmenu).)|
+|[CMFCAutoHideBar::OnShowControlBarMenu](#onshowcontrolbarmenu)|Wird von Framework aufgerufen, kurz bevor ein spezielles Bereichsmenü angezeigt wird. (Überschreibt [CPane::OnShowControlBarMenu](../../mfc/reference/cpane-class.md#onshowcontrolbarmenu).)|
 |[CMFCAutoHideBar::RemoveAutoHideWindow](#removeautohidewindow)||
-|[CMFCAutoHideBar::SetActiveInGroup](#setactiveingroup)|(Überschreibt [cpane:: Setactiveingroup](../../mfc/reference/cpane-class.md#setactiveingroup).)|
+|[CMFCAutoHideBar::SetActiveInGroup](#setactiveingroup)|(Überschreibt [CPane::SetActiveInGroup](../../mfc/reference/cpane-class.md#setactiveingroup).)|
 |[CMFCAutoHideBar::SetRecentVisibleState](#setrecentvisiblestate)||
 |[CMFCAutoHideBar::ShowAutoHideWindow](#showautohidewindow)||
-|[CMFCAutoHideBar::StretchPane](#stretchpane)|Streckt einen Bereich vertikal oder horizontal. (Überschreibt [cbasepane:: Stretchpane](../../mfc/reference/cbasepane-class.md#stretchpane).)|
+|[CMFCAutoHideBar::StretchPane](#stretchpane)|Streckt einen Bereich vertikal oder horizontal. (Überschreibt [CBasePane::StretchPane](../../mfc/reference/cbasepane-class.md#stretchpane).)|
 |[CMFCAutoHideBar::UnSetAutoHideMode](#unsetautohidemode)||
 |[CMFCAutoHideBar::UpdateVisibleState](#updatevisiblestate)||
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCAutoHideBar::m_nShowAHWndDelay](#m_nshowahwnddelay)|Die zeitliche Verzögerung zwischen dem Zeitpunkt, wenn der Benutzer den Cursor über platziert, einem [CMFCAutoHideButton-Klasse](../../mfc/reference/cmfcautohidebutton-class.md) und dem Zeitpunkt, wenn das Framework das zugeordnete Fenster anzeigt.|
+|[CMFCAutoHideBar::m_nShowAHWndDelay](#m_nshowahwnddelay)|Die Zeitverzögerung zwischen dem Zeitpunkt, zu dem der Benutzer den Mauszeiger über eine [CMFCAutoHideButton-Klasse](../../mfc/reference/cmfcautohidebutton-class.md) setzt, und dem Zeitpunkt, zu dem das Framework das zugehörige Fenster anzeigt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer für einen Dockbereich den Modus „Automatisches Ausblenden“ auswählt, erstellt das Framework automatisch ein `CMFCAutoHideBar`-Objekt. Es erstellt außerdem die erforderlichen [CAutoHideDockSite](../../mfc/reference/cautohidedocksite-class.md) und [CMFCAutoHideButton](../../mfc/reference/cmfcautohidebutton-class.md) Objekte. Jedes `CAutoHideDockSite`-Objekt bezieht sich auf ein einzelne `CMFCAutoHideButton`.
+Wenn der Benutzer für einen Dockbereich den Modus „Automatisches Ausblenden“ auswählt, erstellt das Framework automatisch ein `CMFCAutoHideBar`-Objekt. Außerdem werden die erforderlichen [CAutoHideDockSite-](../../mfc/reference/cautohidedocksite-class.md) und [CMFCAutoHideButton-Objekte](../../mfc/reference/cmfcautohidebutton-class.md) erstellt. Jedes `CAutoHideDockSite`-Objekt bezieht sich auf ein einzelne `CMFCAutoHideButton`.
 
 Die `CMFCAutoHideBar`-Klasse implementiert die Anzeige einer `CAutoHideDockSite`, wenn ein Benutzer die Maus über eine `CMFCAutoHideButton` bewegt. Wenn die Symbolleiste eine WM_MOUSEMOVE-Meldung empfängt, startet `CMFCAutoHideBar` einen Timer. Wenn der Timer fertig ist, sendet er eine WM_TIMER-Ereignisbenachrichtigung an die Symbolleiste. Die Symbolleiste verarbeitet dieses Ereignis, indem geprüft wird, ob sich der Mauszeiger über der gleichen automatisch ausblendbaren Schaltfläche befindet, über der er sich befand, als der Zeitgeber gestartet wurde. Wenn dies der Fall ist, wird die angehängte `CAutoHideDockSite` angezeigt.
 
@@ -106,7 +106,7 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCAutoHideBar`-Obje
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -122,7 +122,7 @@ Das folgende Beispiel veranschaulicht das Erstellen eines `CMFCAutoHideBar`-Obje
 
 **Header:** afxautohidebar.h
 
-## <a name="addautohidewindow"></a>  CMFCAutoHideBar::AddAutoHideWindow
+## <a name="cmfcautohidebaraddautohidewindow"></a><a name="addautohidewindow"></a>CMFCAutoHideBar::AddAutoHideWindow
 
 Fügt einem `CDockablePane` .Fenster Funktionalität hinzu, die ihm automatisches Ausblenden ermöglicht.
 
@@ -138,13 +138,13 @@ CMFCAutoHideButton* AddAutoHideWindow(
 [in] Das Fenster, das Sie ausblenden möchten.
 
 *dwAlignment*<br/>
-[in] Ein Wert, der die Ausrichtung der automatisch ausblendbaren Schaltfläche an das Anwendungsfenster angibt.
+[in] Ein Wert, der die Ausrichtung der Schaltfläche "Auto-Hide" mit dem Anwendungsfenster angibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die *DwAlignment* Parameter gibt an, in dem die Schaltfläche "automatisch ausblenden" in der Anwendung befindet. Der Parameter kann auf einen der folgenden Werte festgelegt werden:
+Der *Parameter dwAlignment* gibt an, wo sich die Schaltfläche zum automatischen Ausblenden in der Anwendung befindet. Der Parameter kann auf einen der folgenden Werte festgelegt werden:
 
 - CBRS_ALIGN_LEFT
 
@@ -154,7 +154,7 @@ Die *DwAlignment* Parameter gibt an, in dem die Schaltfläche "automatisch ausbl
 
 - CBRS_ALIGN_BOTTOM
 
-## <a name="allowshowonpanemenu"></a>  CMFCAutoHideBar::AllowShowOnPaneMenu
+## <a name="cmfcautohidebarallowshowonpanemenu"></a><a name="allowshowonpanemenu"></a>CMFCAutoHidebar::AllowShowOnPaneMenu
 
 ```
 virtual BOOL AllowShowOnPaneMenu() const;
@@ -162,9 +162,9 @@ virtual BOOL AllowShowOnPaneMenu() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="calcfixedlayout"></a>  CMFCAutoHideBar::CalcFixedLayout
+## <a name="cmfcautohidebarcalcfixedlayout"></a><a name="calcfixedlayout"></a>CMFCAutoHideBar::CalcFixedLayout
 
 ```
 virtual CSize CalcFixedLayout(
@@ -180,9 +180,9 @@ virtual CSize CalcFixedLayout(
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcautohidebar"></a>  CMFCAutoHideBar::CMFCAutoHideBar
+## <a name="cmfcautohidebarcmfcautohidebar"></a><a name="cmfcautohidebar"></a>CMFCAutoHideBar::CMFCAutoHideBar
 
 Erstellt ein CMFCAutoHideBar-Objekt.
 
@@ -190,9 +190,9 @@ Erstellt ein CMFCAutoHideBar-Objekt.
 CMFCAutoHideBar();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="create"></a>  CMFCAutoHideBar::Create
+## <a name="cmfcautohidebarcreate"></a><a name="create"></a>CMFCAutoHideBar::Erstellen
 
 ```
 virtual BOOL Create(
@@ -211,7 +211,7 @@ virtual BOOL Create(
 
 *dwStyle*<br/>
 
-*rect*<br/>
+*Rect*<br/>
 
 *pParentWnd*<br/>
 
@@ -223,9 +223,9 @@ virtual BOOL Create(
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="getfirstahwindow"></a>  CMFCAutoHideBar::GetFirstAHWindow
+## <a name="cmfcautohidebargetfirstahwindow"></a><a name="getfirstahwindow"></a>CMFCAutoHideBar::GetFirstAHWindow
 
 Gibt einen Zeiger auf das erste automatisch ausblendbare Fenster in der Anwendung zurück.
 
@@ -237,9 +237,9 @@ CDockablePane* GetFirstAHWindow();
 
 Das erste automatisch ausblendbare Fenster in der Anwendung oder NULL, wenn keines vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="getvisiblecount"></a>  CMFCAutoHideBar::GetVisibleCount
+## <a name="cmfcautohidebargetvisiblecount"></a><a name="getvisiblecount"></a>CMFCAutoHideBar::GetVisibleCount
 
 Ruft die Anzahl der angezeigten automatisch ausblendbaren Schaltflächen ab.
 
@@ -251,21 +251,21 @@ int GetVisibleCount();
 
 Gibt die Anzahl der angezeigten automatisch ausblendbaren Schaltflächen zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="m_nshowahwnddelay"></a>  CMFCAutoHideBar::m_nShowAHWndDelay
+## <a name="cmfcautohidebarm_nshowahwnddelay"></a><a name="m_nshowahwnddelay"></a>CMFCAutoHideBar::m_nShowAHWndDelay
 
-Die zeitliche Verzögerung zwischen dem Zeitpunkt, wenn der Benutzer den Cursor über platziert, einem [CMFCAutoHideButton-Klasse](../../mfc/reference/cmfcautohidebutton-class.md) und dem Zeitpunkt, wenn das Framework das zugeordnete Fenster anzeigt.
+Die Zeitverzögerung zwischen dem Zeitpunkt, zu dem der Benutzer den Mauszeiger über eine [CMFCAutoHideButton-Klasse](../../mfc/reference/cmfcautohidebutton-class.md) setzt, und dem Zeitpunkt, zu dem das Framework das zugehörige Fenster anzeigt.
 
 ```
 int CMFCAutoHideBar::m_nShowAHWndDelay = 400;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer platziert den Cursor über einem `CMFCAutoHideButton`, besteht eine geringfügige Verzögerung kommen, bevor das Framework das zugeordnete Fenster anzeigt. Dieser Parameter bestimmt die Länge der Verzögerung in Millisekunden.
+Wenn der Benutzer den Mauszeiger über einem `CMFCAutoHideButton`platziert, kommt es zu einer leichten Verzögerung, bevor das Framework das zugehörige Fenster anzeigt. Dieser Parameter bestimmt die Länge dieser Verzögerung in Millisekunden.
 
-## <a name="onshowcontrolbarmenu"></a>  CMFCAutoHideBar::OnShowControlBarMenu
+## <a name="cmfcautohidebaronshowcontrolbarmenu"></a><a name="onshowcontrolbarmenu"></a>CMFCAutoHideBar::OnShowControlBarMenu
 
 ```
 virtual BOOL OnShowControlBarMenu(CPoint);
@@ -277,9 +277,9 @@ virtual BOOL OnShowControlBarMenu(CPoint);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="removeautohidewindow"></a>  CMFCAutoHideBar::RemoveAutoHideWindow
+## <a name="cmfcautohidebarremoveautohidewindow"></a><a name="removeautohidewindow"></a>CMFCAutoHideBar::RemoveAutoHideWindow
 
 Entfernt und zerstört das Automatisch-im-Hintergrund-Fenster.
 
@@ -289,15 +289,15 @@ Entfernt und zerstört das Automatisch-im-Hintergrund-Fenster.
 
 ### <a name="parameters"></a>Parameter
 
-CDockablePane * *pAutoHideWnd* die automatisch ausblendbare Fenster entfernen.
+CDockablePane* *pAutoHideWnd* Das zu entfernende automatische Ausblendfenster.
 
 ### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn erfolgreich, andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="setactiveingroup"></a>  CMFCAutoHideBar::SetActiveInGroup
+## <a name="cmfcautohidebarsetactiveingroup"></a><a name="setactiveingroup"></a>CMFCAutoHideBar::SetActiveInGroup
 
 Kennzeichnet eine Automatisch-im-Hintergrund-Leiste als aktiv.
 
@@ -307,13 +307,13 @@ virtual void SetActiveInGroup(BOOL bActive);
 
 ### <a name="parameters"></a>Parameter
 
-[in] "Bool" *bActive* "true", die auf aktiv festzulegen; andernfalls "false".
+[in] BOOL *bActive* TRUE, um auf aktiv zu setzen; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Siehe [CPane::SetActiveInGroup](../../mfc/reference/cpane-class.md#setactiveingroup).
 
-## <a name="setrecentvisiblestate"></a>  CMFCAutoHideBar::SetRecentVisibleState
+## <a name="cmfcautohidebarsetrecentvisiblestate"></a><a name="setrecentvisiblestate"></a>CMFCAutoHideBar::SetRecentVisibleState
 
 ```
 void SetRecentVisibleState(BOOL bState);
@@ -322,11 +322,11 @@ void SetRecentVisibleState(BOOL bState);
 ### <a name="parameters"></a>Parameter
 
 *bState*<br/>
-[in] Zustand festlegen.
+[in] Zustand, den festgelegt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="showautohidewindow"></a>  CMFCAutoHideBar::ShowAutoHideWindow
+## <a name="cmfcautohidebarshowautohidewindow"></a><a name="showautohidewindow"></a>CMFCAutoHideBar::ShowAutoHideWindow
 
 Zeigt das automatisch ausblendbare Fenster an.
 
@@ -340,10 +340,10 @@ BOOL ShowAutoHideWindow(
 ### <a name="parameters"></a>Parameter
 
 *pAutoHideWnd*<br/>
-[in] Fenster angezeigt wird.
+[in] Fenster, das angezeigt werden soll.
 
 *bShow*<br/>
-[in] "True" zum Anzeigen des Fensters.
+[in] TRUE, um das Fenster anzuzeigen.
 
 *bDelay*<br/>
 [in] Dieser Parameter wird ignoriert.
@@ -352,9 +352,9 @@ BOOL ShowAutoHideWindow(
 
 TRUE, wenn erfolgreich, andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="stretchpane"></a>  CMFCAutoHideBar::StretchPane
+## <a name="cmfcautohidebarstretchpane"></a><a name="stretchpane"></a>CMFCAutoHideBar::StretchPane
 
 Ändert die Größe der automatisch ausblendbaren Leiste im reduzierten Zustand, um dem `CMFCAutoHideButton` -Objekt zu entsprechen.
 
@@ -366,21 +366,21 @@ virtual CSize StretchPane(
 
 ### <a name="parameters"></a>Parameter
 
-*nLength*<br/>
-[in] Der Wert wird in der basisimplementierung nicht verwendet. Verwenden Sie diesen Wert in abgeleiteten Implementierungen, um die Länge des Bereichs mit der geänderten Größe anzuzeigen.
+*nLänge*<br/>
+[in] Der Wert wird in der Basisimplementierung nicht verwendet. Verwenden Sie diesen Wert in abgeleiteten Implementierungen, um die Länge des Bereichs mit der geänderten Größe anzuzeigen.
 
 *bVert*<br/>
-[in] Der Wert wird in der basisimplementierung nicht verwendet. Verwenden Sie in abgeleiteten Implementierungen "true" Handle der Fall, in dem die automatisch ausblendbare Leiste vertikal reduziert wird, und "false" für den Fall, in dem die automatisch ausblendbare Leiste horizontal reduziert wird.
+[in] Der Wert wird in der Basisimplementierung nicht verwendet. Verwenden Sie in abgeleiteten Implementierungen TRUE, um den Fall zu behandeln, in dem die automatische Ausblendleiste vertikal reduziert wird, und FALSE für den Fall, dass die automatische Ausblendleiste horizontal reduziert wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die resultierende Größe des Bereichs, dessen Größe geändert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Abgeleitete Klassen können diese Methode zum Anpassen des Verhaltens außer Kraft setzen.
 
-## <a name="unsetautohidemode"></a>  CMFCAutoHideBar::UnSetAutoHideMode
+## <a name="cmfcautohidebarunsetautohidemode"></a><a name="unsetautohidemode"></a>CMFCAutoHideBar::UnSetAutoHideMode
 
 Deaktiviert den automatischen Ausblendemodus für eine Gruppe von automatisch ausblendbaren Leisten.
 
@@ -390,11 +390,11 @@ void UnSetAutoHideMode(CDockablePane* pFirstBarInGroup)
 
 ### <a name="parameters"></a>Parameter
 
-[in] pFirstBarInGroup ein Zeiger auf die erste automatisch ausblendbare Leiste in der Gruppe.
+[in] pFirstBarInGroup A-Zeiger auf die erste auto-hide-Leiste in der Gruppe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="updatevisiblestate"></a>  CMFCAutoHideBar::UpdateVisibleState
+## <a name="cmfcautohidebarupdatevisiblestate"></a><a name="updatevisiblestate"></a>CMFCAutoHideBar::UpdateVisibleState
 
 Wird vom Framework aufgerufen, wenn die automatisch ausblendbare Leiste neu gezeichnet werden muss.
 
@@ -402,12 +402,12 @@ Wird vom Framework aufgerufen, wenn die automatisch ausblendbare Leiste neu geze
 void UpdateVisibleState();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[CPane-Klasse](../../mfc/reference/cpane-class.md)<br/>
+[CPane Class](../../mfc/reference/cpane-class.md)<br/>
 [CAutoHideDockSite-Klasse](../../mfc/reference/cautohidedocksite-class.md)<br/>
 [CMFCAutoHideButton-Klasse](../../mfc/reference/cmfcautohidebutton-class.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - multibyte characters [C++]
 - MBCS [C++]
 ms.assetid: b498733c-a1e1-45e3-8f26-d6da3cb5f2dd
-ms.openlocfilehash: c21b5b1ff059f26558749e904894cb5d15572519
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0b43168ec4331e99dea7e939b097674cc880804e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410563"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375768"
 ---
 # <a name="support-for-multibyte-character-sets-mbcss"></a>Unterstützung von Mehrbyte-Zeichensätzen (MBCS)
 
@@ -28,11 +28,11 @@ Unter MBCS werden Zeichen in ein oder zwei Bytes codiert. In zwei Bytes breiten 
 
 Beachten Sie bei der MBCS-Programmierung alle der nachfolgenden Punkte.
 
-MBCS-Zeichen in der Umgebung MBCS-Zeichen können in Zeichenfolgen wie z. B. Datei- und Verzeichnisnamen angezeigt werden.
+MBCS-Zeichen in der Umgebung MBCS-Zeichen können in Zeichenfolgen wie Datei- und Verzeichnisnamen angezeigt werden.
 
 ### <a name="editing-operations"></a>Bearbeitungsvorgänge
 
-Bearbeitungsvorgänge in MBCS-Anwendungen sollten auf Zeichen und nicht auf Bytes basieren. Die Einfügemarke sollte kein Zeichen, geteilt der **Pfeil nach rechts** Schlüssel verschoben werden soll, ein Zeichen nach rechts, und so weiter. **Löschen Sie** sollte ein Zeichen löschen **Rückgängig** sollte erneut eingefügt werden.
+Bearbeitungsvorgänge in MBCS-Anwendungen sollten auf Zeichen und nicht auf Bytes basieren. Die Einsiedebank sollte kein Zeichen teilen, die **Rechte Pfeiltaste** sollte ein Zeichen rechts bewegen usw. **Löschen** sollte ein Zeichen löschen; **Rückgängig** sollte es wieder einfügen.
 
 ### <a name="string-handling"></a>Zeichenfolgenbehandlung
 
@@ -40,30 +40,30 @@ In Anwendungen, die MBCS verwenden, wirft die Behandlung von Zeichenfolgen beson
 
 ### <a name="run-time-library-support"></a>Unterstützung der Laufzeitbibliothek
 
-Die C-Laufzeitbibliothek und MFC unterstützen die Einzelbyte-, MBCS- und Unicode-Programmierung. Einzelbyte-Zeichenfolgen werden mit den verarbeitet die `str` -Familie der Funktionen der Laufzeit, MBCS-Zeichenfolgen werden mit den entsprechenden verarbeitet `_mbs` Funktionen und Unicode-Zeichenfolgen werden mit den entsprechenden verarbeitet `wcs` Funktionen. In Implementierungen von Memberfunktionen der MFC-Klasse werden portable Laufzeitfunktionen verwendet, die unter den richtigen Voraussetzungen der normalen `str`-Funktionsreihe, den MBCS-Funktionen oder den Unicode-Funktionen zugeordnet werden, wie unter "MBCS/Unicode-Portabilität" beschrieben.
+Die C-Laufzeitbibliothek und MFC unterstützen die Einzelbyte-, MBCS- und Unicode-Programmierung. Single-Byte-Zeichenfolgen werden `str` mit der Reihe von Laufzeitfunktionen verarbeitet, `_mbs` MBCS-Zeichenfolgen werden mit `wcs` entsprechenden Funktionen und Unicode-Zeichenfolgen mit entsprechenden Funktionen verarbeitet. In Implementierungen von Memberfunktionen der MFC-Klasse werden portable Laufzeitfunktionen verwendet, die unter den richtigen Voraussetzungen der normalen `str`-Funktionsreihe, den MBCS-Funktionen oder den Unicode-Funktionen zugeordnet werden, wie unter "MBCS/Unicode-Portabilität" beschrieben.
 
 ### <a name="mbcsunicode-portability"></a>MBCS/Unicode-Portabilität
 
-Mit der Headerdatei tchar.h können Sie Einzelbyte-, MBCS- und Unicode-erstellen-Anwendungen von derselben Quelle. TCHAR.h definiert Makros, die mit dem Präfix *_tcs* , zugeordnet sind `str`, `_mbs`, oder `wcs` Funktionen nach Bedarf. Definieren Sie zur Erstellung von MBCS das `_MBCS`-Symbol. Definieren Sie das Symbol zur Erstellung von Unicode `_UNICODE`. Standardmäßig wird `_UNICODE` für MFC-Anwendungen definiert. Weitere Informationen finden Sie unter [Zuordnungen für generischen Text in tchar.h](../text/generic-text-mappings-in-tchar-h.md).
+Mithilfe der Headerdatei tchar.h können Sie Single-Byte-, MBCS- und Unicode-Anwendungen aus denselben Quellen erstellen. Tchar.h definiert Makros mit *_tcs* , `str`die `_mbs`ggf. , oder `wcs` Funktionen zuordnen. Definieren Sie zur Erstellung von MBCS das `_MBCS`-Symbol. Um Unicode zu erstellen, definieren Sie das Symbol `_UNICODE`. Standardmäßig wird `_UNICODE` für MFC-Anwendungen definiert. Weitere Informationen finden Sie unter [Generic-Text Mappings in tchar.h](../text/generic-text-mappings-in-tchar-h.md).
 
 > [!NOTE]
->  Verhalten ist nicht definiert, wenn Sie beide definieren `_UNICODE` und `_MBCS`.
+> Das Verhalten ist nicht `_UNICODE` definiert, wenn Sie beide und `_MBCS`definieren.
 
 Von den Headerdateien Mbctype.h und Mbstring.h werden MBCS-spezifische Funktionen und Makros definiert, die in bestimmten Fällen benötigt werden. Mit `_ismbblead` können Sie z. B. ermitteln, ob ein bestimmtes Byte einer Zeichenfolge ein führendes Byte ist.
 
-Mit ein Programm international Portieren zu können, codieren [Unicode](../text/support-for-unicode.md) oder Mehrbyte-Zeichensätzen (MBCS).
+Für die internationale Portabilität codieren Sie Ihr Programm mit [Unicode-](../text/support-for-unicode.md) oder Multibyte-Zeichensätzen (MBCSs).
 
-## <a name="what-do-you-want-to-do"></a>Wie möchten Sie vorgehen?
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
 - [MBCS im Programm aktivieren](../text/international-enabling.md)
 
-- [Unicode und MBCS im Programm aktivieren](../text/internationalization-strategies.md)
+- [Sowohl Unicode als auch MBCS im Programm aktivieren](../text/internationalization-strategies.md)
 
-- [Verwenden Sie MBCS, um das Erstellen eines internationalen Programms](../text/mbcs-programming-tips.md)
+- [MBCS verwenden, um ein internationales Programm zu erstellen](../text/mbcs-programming-tips.md)
 
-- [Eine Zusammenfassung zur MBCS-Programmierung](../text/mbcs-programming-tips.md)
+- [Eine Zusammenfassung zur MBCS-Programmierung ansehen](../text/mbcs-programming-tips.md)
 
-- [Erfahren Sie mehr über die Zuordnungen für generischen Text für die Byte-breiter Portabilität](../text/generic-text-mappings-in-tchar-h.md)
+- [Etwas über die Zuordnungen generischer Texte bei Byte-breiter Portabilität erfahren](../text/generic-text-mappings-in-tchar-h.md)
 
 ## <a name="see-also"></a>Siehe auch
 

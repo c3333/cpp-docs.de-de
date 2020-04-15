@@ -10,19 +10,19 @@ helpviewer_keywords:
 - CGopherLocator [MFC], CGopherLocator
 - CGopherLocator [MFC], GetLocatorType
 ms.assetid: 6fcc015f-5ae6-4959-b936-858634c71019
-ms.openlocfilehash: 9ce95a712af6502bff2a2502582a7fa843bf9653
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: d23ef3dad68c62e74ec64454953ca372b8c31114
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69506160"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373668"
 ---
 # <a name="cgopherlocator-class"></a>CGopherLocator-Klasse
 
-Ruft einen Gopher-"Serverlocatorpunkt" von einem Gopher-Server ab, bestimmt den Typ des Locators und macht den Serverlocatorpunkt für [CGopherFileFind](../../mfc/reference/cgopherfilefind-class.md)verfügbar.
+Ruft einen Gopher-"Locator" von einem Gopher-Server ab, bestimmt den Typ des Locators und stellt den Locator [CGopherFileFind](../../mfc/reference/cgopherfilefind-class.md)zur Verfügung.
 
 > [!NOTE]
->  Die Klassen `CGopherConnection`, `CGopherFile`, `CGopherFileFind` undihreMembersindveraltet,daSienichtaufderWindowsXP-Plattformfunktionieren,aberSiefunktionierenweiterhinauf`CGopherLocator` früheren Plattformen.
+> Die `CGopherConnection`Klassen `CGopherFile` `CGopherFileFind`, `CGopherLocator` , und ihre Mitglieder wurden veraltet, weil sie nicht auf der Windows XP-Plattform funktionieren, aber sie werden weiterhin auf früheren Plattformen arbeiten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,45 +34,45 @@ class CGopherLocator : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CGopherLocator::CGopherLocator](#cgopherlocator)|Erstellt ein `CGopherLocator`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CGopherLocator::GetLocatorType](#getlocatortype)|Analysiert einen Gopher-Serverlocatorpunkt und bestimmt seine Attribute.|
+|[CGopherLocator::GetLocatorType](#getlocatortype)|Analysiert einen Gopher-Locator und bestimmt seine Attribute.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CGopherLocator:: Operator LPCTSTR](#operator_lpctstr)|Greift direkt auf in einem `CGopherLocator` -Objekt gespeicherte Zeichen als Zeichenfolge im C-Format zu.|
+|[CGopherLocator::operator LPCTSTR](#operator_lpctstr)|Greift direkt auf Zeichen `CGopherLocator` zu, die in einem Objekt als Zeichenfolge im C-Stil gespeichert sind.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Anwendung muss den Serverlocatorpunkt eines Gopher-Servers abrufen, bevor Informationen von diesem Server abgerufen werden können. Sobald Sie den Serverlocatorpunkt hat, muss Sie den Serverlocatorpunkt als nicht transparentes Token behandeln.
+Eine Anwendung muss den Locator eines Gopher-Servers abrufen, bevor sie Informationen von diesem Server abrufen kann. Sobald der Locator über den Locator verfügt, muss er den Locator als undurchsichtiges Token behandeln.
 
-Jeder Gopher-Serverlocatorpunkt verfügt über Attribute, die den Typ der gefundenen Datei oder des gefundenen Servers bestimmen. Eine Liste der Typen von Gopher-Locators finden Sie unter [getlocatortype](#getlocatortype) .
+Jeder Gopher-Locator verfügt über Attribute, die den Typ der gefundenen Datei oder des gefundenen Servers bestimmen. Eine Liste der Typen von Gopher-Locators finden Sie unter [GetLocatorType.](#getlocatortype)
 
-Eine Anwendung verwendet normalerweise den Serverlocatorpunkt für Aufrufe von [CGopherFileFind:: FindFile](../../mfc/reference/cgopherfilefind-class.md#findfile) , um bestimmte Informationen abzurufen.
+Eine Anwendung verwendet normalerweise den Locator für Aufrufe von [CGopherFileFind::FindFile,](../../mfc/reference/cgopherfilefind-class.md#findfile) um eine bestimmte Information abzurufen.
 
-Weitere Informationen `CGopherLocator` zum Arbeiten mit den anderen MFC-Internet Klassen finden Sie im Artikel [Internet Programmierung mit WinInet](../../mfc/win32-internet-extensions-wininet.md).
+Weitere Informationen zur `CGopherLocator` Funktionsweise mit den anderen MFC-Internetklassen finden Sie im Artikel [Internetprogrammierung mit WinInet](../../mfc/win32-internet-extensions-wininet.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 `CGopherLocator`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxinet.h
+**Kopf:** afxinet.h
 
-##  <a name="cgopherlocator"></a>CGopherLocator:: CGopherLocator
+## <a name="cgopherlocatorcgopherlocator"></a><a name="cgopherlocator"></a>CGopherLocator::CGopherLocator
 
-Diese Member-Funktion wird aufgerufen, um `CGopherLocator` ein-Objekt zu erstellen.
+Diese Memberfunktion wird aufgerufen, um ein `CGopherLocator` Objekt zu erstellen.
 
 ```
 CGopherLocator(const CGopherLocator& ref);
@@ -81,15 +81,15 @@ CGopherLocator(const CGopherLocator& ref);
 ### <a name="parameters"></a>Parameter
 
 *ref*<br/>
-Ein Verweis auf ein konstantes `CGopherLocator` Objekt.
+Ein Verweis auf `CGopherLocator` ein konstantes Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen niemals direkt `CGopherLocator` ein-Objekt. Rufen Sie stattdessen [CGopherConnection:: kreatelocator](../../mfc/reference/cgopherconnection-class.md#createlocator) auf, um einen Zeiger auf das `CGopherLocator` -Objekt zu erstellen und zurückzugeben.
+Sie erstellen `CGopherLocator` nie direkt ein Objekt. Rufen Sie stattdessen [CGopherConnection::CreateLocator](../../mfc/reference/cgopherconnection-class.md#createlocator) auf, um `CGopherLocator` einen Zeiger auf das Objekt zu erstellen und zurückzugeben.
 
-##  <a name="getlocatortype"></a>CGopherLocator:: getlocatortype
+## <a name="cgopherlocatorgetlocatortype"></a><a name="getlocatortype"></a>CGopherLocator::GetLocatorType
 
-Mit dieser Member-Funktion können Sie den Locatortyp abrufen.
+Rufen Sie diese Memberfunktion auf, um den Locator-Typ abzurufen.
 
 ```
 BOOL GetLocatorType(DWORD& dwRef) const;
@@ -98,46 +98,46 @@ BOOL GetLocatorType(DWORD& dwRef) const;
 ### <a name="parameters"></a>Parameter
 
 *dwRef*<br/>
-Ein Verweis auf ein DWORD, das den Locatortyp empfängt. Siehe **Hinweise** für eine Tabelle der locatortypen.
+Ein Verweis auf ein DWORD, das den Locator-Typ empfängt. Siehe **Hinweise** für eine Tabelle mit Locator-Typen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null). Wenn der Aufruf fehlschlägt, kann die Win32-Funktion [GetLastError](/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror) aufgerufen werden, um die Ursache des Fehlers zu ermitteln.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Folgende Typen sind möglich:
+Die möglichen Typen sind wie folgt:
 
 |Wert|Bedeutung|
 |-----------|-------------|
 |GOPHER_TYPE_TEXT_FILE|Eine ASCII-Textdatei.|
 |GOPHER_TYPE_DIRECTORY|Ein Verzeichnis mit zusätzlichen Gopher-Elementen.|
-|GOPHER_TYPE_CSO|Einen CSO-Telefonbuch Server.|
+|GOPHER_TYPE_CSO|Ein CSO-Telefonbuchserver.|
 |GOPHER_TYPE_ERROR|Gibt eine Fehlerbedingung an.|
-|GOPHER_TYPE_MAC_BINHEX|Eine Macintosh-Datei im BinHex-Format.|
+|GOPHER_TYPE_MAC_BINHEX|Eine Macintosh-Datei im BINHEX-Format.|
 |GOPHER_TYPE_DOS_ARCHIVE|Eine DOS-Archivdatei.|
-|GOPHER_TYPE_UNIX_UUENCODED|Eine uucodierte Datei.|
-|GOPHER_TYPE_INDEX_SERVER|Ein Index Server.|
+|GOPHER_TYPE_UNIX_UUENCODED|Eine UUENCODED-Datei.|
+|GOPHER_TYPE_INDEX_SERVER|Ein Indexserver.|
 |GOPHER_TYPE_TELNET|Ein Telnet-Server.|
 |GOPHER_TYPE_BINARY|Eine Binärdatei.|
-|GOPHER_TYPE_REDUNDANT|Ein doppelter Server. Die in enthaltenen Informationen sind ein Duplikat des primären Servers. Der primäre Server ist der letzte Verzeichniseintrag, bei dem es sich nicht um einen GOPHER_TYPE_REDUNDANT-Typ handelt.|
+|GOPHER_TYPE_REDUNDANT|Ein duplizierter Server. Die darin enthaltenen Informationen sind ein Duplikat des primären Servers. Der primäre Server ist der letzte Verzeichniseintrag, der keinen GOPHER_TYPE_REDUNDANT Typ s.|
 |GOPHER_TYPE_TN3270|Ein TN3270-Server.|
 |GOPHER_TYPE_GIF|Eine GIF-Grafikdatei.|
 |GOPHER_TYPE_IMAGE|Eine Bilddatei.|
 |GOPHER_TYPE_BITMAP|Eine Bitmapdatei.|
 |GOPHER_TYPE_MOVIE|Eine Filmdatei.|
-|GOPHER_TYPE_SOUND|Eine Audiodatei.|
+|GOPHER_TYPE_SOUND|Eine Sounddatei.|
 |GOPHER_TYPE_HTML|Ein HTML-Dokument.|
 |GOPHER_TYPE_PDF|Eine PDF-Datei.|
 |GOPHER_TYPE_CALENDAR|Eine Kalenderdatei.|
-|GOPHER_TYPE_INLINE|Eine Inline Datei.|
+|GOPHER_TYPE_INLINE|Eine Inlinedatei.|
 |GOPHER_TYPE_UNKNOWN|Der Elementtyp ist unbekannt.|
-|GOPHER_TYPE_ASK|Ein "Ask +"-Element.|
-|GOPHER_TYPE_GOPHER_PLUS|Ein Gopher +-Element.|
+|GOPHER_TYPE_ASK|Ein Ask+-Element.|
+|GOPHER_TYPE_GOPHER_PLUS|Ein Gopher+-Element.|
 
-##  <a name="operator_lpctstr"></a>CGopherLocator:: Operator LPCTSTR
+## <a name="cgopherlocatoroperator-lpctstr"></a><a name="operator_lpctstr"></a>CGopherLocator::operator LPCTSTR
 
-Dieser nützliche Umwandlungs Operator stellt eine effiziente Methode für den Zugriff auf die in einem `CGopherLocator` -Objekt enthaltene in NULL endend C-Zeichenfolge bereit.
+Dieser nützliche Umwandlungsoperator stellt eine effiziente Methode für den `CGopherLocator` Zugriff auf die null-terminierte C-Zeichenfolge bereit, die in einem Objekt enthalten ist.
 
 ```
 operator LPCTSTR () const;
@@ -145,11 +145,11 @@ operator LPCTSTR () const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeichen Zeiger auf die Daten der Zeichenfolge.
+Ein Zeichenzeiger auf die Daten der Zeichenfolge.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Es werden keine Zeichen kopiert. Es wird nur ein-Zeiger zurückgegeben.
+Es werden keine Zeichen kopiert. es wird nur ein Zeiger zurückgegeben.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -35,51 +35,51 @@ helpviewer_keywords:
 - VTS_OPTEXCLUSIVE constant [MFC]
 - VTS_YSIZE_PIXELS constant [MFC]
 ms.assetid: de99c7a9-7aae-4dc4-b723-40c6380543ab
-ms.openlocfilehash: b15a303f69ce13cf3ba3b6c1c0739acdb8a33c7c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f73c72830216679f8a91d0037d48c1e1b8e400c3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62309475"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372863"
 ---
 # <a name="variant-parameter-type-constants"></a>Variant-Parametertypkonstanten
 
-Dieses Thema enthält neue Konstanten, die angeben, variant Parametertypen, die für die Verwendung mit der OLE-Steuerelementklassen von den Microsoft Foundation Class-Bibliothek entwickelt.
+In diesem Thema werden neue Konstanten aufgeführt, die Variantenparametertypen angeben, die für die Verwendung mit den OLE-Steuerelementklassen der Microsoft Foundation-Klassenbibliothek entwickelt wurden.
 
-Im folgenden finden eine Liste von Konstanten der Klasse:
+Im Folgenden finden Sie eine Liste von Klassenkonstanten:
 
-##  <a name="_mfc_variant_data_constants"></a> Variant-Datenkonstanten
+## <a name="variant-data-constants"></a><a name="_mfc_variant_data_constants"></a>Variantendatenkonstanten
 
-- VTS_COLOR ein 32-Bit-Ganzzahl, der einen RGB-Farbwert darstellt.
+- VTS_COLOR Eine 32-Bit-Ganzzahl, die zur Darstellung eines RGB-Farbwerts verwendet wird.
 
-- VTS_FONT ein Zeiger auf die `IFontDisp` -Schnittstelle eines Objekts der OLE-Schriftart.
+- VTS_FONT Ein Zeiger `IFontDisp` auf die Schnittstelle eines OLE-Schriftartobjekts.
 
-- VTS_HANDLE ein Windows-Handle-Wert.
+- VTS_HANDLE Ein Windows-Handlewert.
 
-- VTS_PICTURE ein Zeiger auf die `IPictureDisp` Schnittstelle eines Bild OLE-Objekts.
+- VTS_PICTURE Ein Zeiger `IPictureDisp` auf die Schnittstelle eines OLE-Bildobjekts.
 
-- VTS_OPTEXCLUSIVE-ein 16-Bit-Wert verwendet, die für ein Steuerelement, das in einer Gruppe von Steuerelementen, wie z. B. Optionsfelder verwendet werden soll. Dieser Typ weist den Container, dass alle anderen verfügt ein Steuerelement in einer Gruppe auf einen Wert "true", "false" sein müssen.
+- VTS_OPTEXCLUSIVE Ein 16-Bit-Wert, der für ein Steuerelement verwendet wird, das in einer Gruppe von Steuerelementen verwendet werden soll, z. B. Optionsfelder. Dieser Typ teilt dem Container mit, dass alle anderen Personen FALSE sein müssen, wenn ein Steuerelement in einer Gruppe einen TRUE-Wert hat.
 
-- VTS_TRISTATE ein 16-Bit-Ganzzahl mit Vorzeichen verwendet, die für Eigenschaften, die einen von drei möglichen Werten (ausgewählte, gelöscht, nicht verfügbar), z. B. ein Kontrollkästchen enthalten können.
+- VTS_TRISTATE Eine 16-Bit-signierte Ganzzahl, die für Eigenschaften verwendet wird, die einen von drei möglichen Werten aufweisen können (ausgewählt, deaktiviert, nicht verfügbar), z. B. ein Kontrollkästchen.
 
-- VTS_XPOS_HIMETRIC ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um eine Position entlang der x-Achse in HIMETRIC-Einheiten darstellen.
+- VTS_XPOS_HIMETRIC Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um eine Position entlang der x-Achse in HIMETRIC-Einheiten darzustellen.
 
-- VTS_YPOS_HIMETRIC ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um eine Position entlang der y-Achse in HIMETRIC-Einheiten darstellen.
+- VTS_YPOS_HIMETRIC Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um eine Position entlang der y-Achse in HIMETRIC-Einheiten darzustellen.
 
-- VTS_XPOS_PIXELS ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um eine Position entlang der x-Achse in Pixel darstellen.
+- VTS_XPOS_PIXELS Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um eine Position entlang der x-Achse in Pixel darzustellen.
 
-- VTS_YPOS_PIXELS ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um eine Position entlang der y-Achse in Pixel darstellen.
+- VTS_YPOS_PIXELS Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um eine Position entlang der y-Achse in Pixel darzustellen.
 
-- VTS_XSIZE_PIXELS ein 32-Bit-Ganzzahl ohne Vorzeichen, der die Breite eines Objekts Bildschirm in Pixel darstellt.
+- VTS_XSIZE_PIXELS Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um die Breite eines Bildschirmobjekts in Pixel darzustellen.
 
-- VTS_YSIZE_PIXELS ein 32-Bit-Ganzzahl ohne Vorzeichen, der die Höhe eines Objekts Bildschirm in Pixel darstellt.
+- VTS_YSIZE_PIXELS Eine 32-Bit-Ganzzahl ohne Vorzeichen, die verwendet wird, um die Höhe eines Bildschirmobjekts in Pixel n. Chr. darzustellen.
 
-- VTS_XSIZE_HIMETRIC ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um die Breite des ein Bildschirmobjekt in HIMETRIC-Einheiten darstellen.
+- VTS_XSIZE_HIMETRIC Eine 32-Bit-Ganzzahl ohne Vorzeichen, die zur Darstellung der Breite eines Bildschirmobjekts in HIMETRIC-Einheiten verwendet wird.
 
-- VTS_YSIZE_HIMETRIC ein 32-Bit-Ganzzahl ohne Vorzeichen verwendet, um die Höhe des ein Bildschirmobjekt in HIMETRIC-Einheiten darstellen.
+- VTS_YSIZE_HIMETRIC Eine 32-Bit-Ganzzahl ohne Vorzeichen, die zur Darstellung der Höhe eines Bildschirmobjekts in HIMETRIC-Einheiten verwendet wird.
 
     > [!NOTE]
-    >  Für alle variant-Typen, mit Ausnahme von VTS_FONT und VTS_PICTURE, wurden zusätzliche variant Konstanten definiert, die einen Zeiger auf die Konstante variant-Daten bereitstellen. Diese Konstanten werden mit dem Namen mit den VTS_P`constantname` Konvention. VTS_PCOLOR ist z. B. ein Zeiger auf eine VTS_COLOR-Konstante.
+    >  Für alle Variantentypen wurden zusätzliche Variantenkonstanten definiert, mit Ausnahme von VTS_FONT und VTS_PICTURE, die einen Zeiger auf die Variantendatenkonstante liefern. Diese Konstanten werden mithilfe`constantname` der VTS_P-Konvention benannt. VTS_PCOLOR ist z. B. ein Zeiger auf eine VTS_COLOR Konstante.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -87,4 +87,4 @@ Im folgenden finden eine Liste von Konstanten der Klasse:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Makros und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)
+[MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

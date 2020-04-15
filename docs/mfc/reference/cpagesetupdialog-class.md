@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CPageSetupDialog [MFC], PreDrawPage
 - CPageSetupDialog [MFC], m_psd
 ms.assetid: 049c0ac8-f254-4854-9414-7a8271d1447a
-ms.openlocfilehash: b81e2a65d09bf5dadbc0860d692caee7a4bd386f
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 218ed24ccf56854622e20936299fcc2e8a3d0fa9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70739760"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374791"
 ---
 # <a name="cpagesetupdialog-class"></a>CPageSetupDialog-Klasse
 
@@ -51,47 +51,47 @@ class CPageSetupDialog : public CCommonDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CPageSetupDialog::CPageSetupDialog](#cpagesetupdialog)|Erstellt ein `CPageSetupDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPageSetupDialog::CreatePrinterDC](#createprinterdc)|Erstellt einen Gerätekontext zum Drucken.|
-|[CPageSetupDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl vorzunehmen.|
+|[CPageSetupDialog::CreatePrinterDC](#createprinterdc)|Erstellt einen Gerätekontext für den Druck.|
+|[CPageSetupDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl zu treffen.|
 |[CPageSetupDialog::GetDeviceName](#getdevicename)|Gibt den Gerätenamen des Druckers zurück.|
-|[CPageSetupDialog::GetDevMode](#getdevmode)|Gibt den aktuellen DEVMODE-Wert des Druckers zurück.|
+|[CPageSetupDialog::GetDevMode](#getdevmode)|Gibt den aktuellen DEVMODE des Druckers zurück.|
 |[CPageSetupDialog::GetDriverName](#getdrivername)|Gibt den vom Drucker verwendeten Treiber zurück.|
-|[CPageSetupDialog::GetMargins](#getmargins)|Gibt die aktuellen Rand Einstellungen des Druckers zurück.|
+|[CPageSetupDialog::GetMargins](#getmargins)|Gibt die aktuellen Randeinstellungen des Druckers zurück.|
 |[CPageSetupDialog::GetPaperSize](#getpapersize)|Gibt das Papierformat des Druckers zurück.|
 |[CPageSetupDialog::GetPortName](#getportname)|Gibt den Namen des Ausgabeports zurück.|
-|[CPageSetupDialog::OnDrawPage](#ondrawpage)|Wird von Framework aufgerufen, um ein Bildschirm Bild einer gedruckten Seite zu Rendering.|
-|[CPageSetupDialog::PreDrawPage](#predrawpage)|Wird von Framework aufgerufen, bevor ein Bildschirm Bild einer gedruckten Seite gerendert wird.|
+|[CPageSetupDialog::OnDrawPage](#ondrawpage)|Wird vom Framework aufgerufen, um ein Bildschirmbild einer gedruckten Seite zu rendern.|
+|[CPageSetupDialog::PreDrawPage](#predrawpage)|Wird vom Framework aufgerufen, bevor ein Bildschirmbild einer gedruckten Seite gerendert wird.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPageSetupDialog::m_psd](#m_psd)|Eine-Struktur, mit der `CPageSetupDialog` ein-Objekt angepasst wird.|
+|[CPageSetupDialog::m_psd](#m_psd)|Eine Struktur, die `CPageSetupDialog` zum Anpassen eines Objekts verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse ist darauf ausgelegt, den Platz des Dialog Felds Druck Setup zu verwenden.
+Diese Klasse ist so konzipiert, dass sie an die Stelle des Dialogfelds Druckeinrichtung treten kann.
 
-Um ein `CPageSetupDialog` -Objekt zu verwenden, erstellen Sie zunächst das `CPageSetupDialog` -Objekt mit dem-Konstruktor. Nachdem das Dialogfeld erstellt wurde, können Sie alle Werte im `m_psd` Datenmember festlegen oder ändern, um die Werte der Steuerelemente des Dialog Felds zu initialisieren. Die [m_psd](#m_psd) -Struktur ist vom Typ pagesetupdlg.
+Um ein `CPageSetupDialog` Objekt zu verwenden, `CPageSetupDialog` erstellen Sie das Objekt zuerst mit dem Konstruktor. Nachdem das Dialogfeld erstellt wurde, können Sie beliebige `m_psd` Werte im Datenelement festlegen oder ändern, um die Werte der Steuerelemente des Dialogfelds zu initialisieren. Die [m_psd](#m_psd) Struktur vom Typ PAGESETUPDLG.
 
-Nachdem Sie die Dialogfeld Steuerelemente initialisiert haben `DoModal` , können Sie die Member-Funktion aufrufen, um das Dialogfeld anzuzeigen und dem Benutzer die Auswahl von Druckoptionen zu ermöglichen. `DoModal`Gibt zurück, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat.
+Rufen Sie nach dem Initialisieren `DoModal` der Dialogfeldsteuerelemente die Memberfunktion auf, um das Dialogfeld anzuzeigen, und ermöglichen Sie dem Benutzer, Druckoptionen auszuwählen. `DoModal`gibt an, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat.
 
-Wenn `DoModal` IDOK zurückgibt, können Sie mehrere der `CPageSetupDialog`Element Funktionen verwenden oder auf den `m_psd` Datenmember zugreifen, um die vom Benutzer eingegebenen Informationen abzurufen.
+Wenn `DoModal` IDOK zurückgegeben wird, `CPageSetupDialog`können Sie mehrere Memberfunktionen `m_psd` von verwenden oder auf das Datenelement zugreifen, um Informationen vom Benutzer abzurufen.
 
 > [!NOTE]
->  Nach dem verwerfen des Dialog Felds Common OLE Page Setup werden alle vom Benutzer vorgenommenen Änderungen nicht vom Framework gespeichert. Es liegt an der Anwendung selbst, alle Werte aus diesem Dialogfeld an einem permanenten Speicherort zu speichern, z. b. in dem Dokument oder in der Anwendungsklasse der Anwendung.
+> Nachdem das allgemeine Dialogfeld OLE-Seiteneinrichtung verworfen wurde, werden alle vom Benutzer vorgenommenen Änderungen nicht vom Framework gespeichert. Es liegt an der Anwendung selbst, werteaus diesem Dialogfeld an einem permanenten Speicherort zu speichern, z. B. Member des Dokuments oder der Anwendungsklasse der Anwendung.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -105,11 +105,11 @@ Wenn `DoModal` IDOK zurückgibt, können Sie mehrere der `CPageSetupDialog`Eleme
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdlgs. h
+**Kopf:** afxdlgs.h
 
-##  <a name="cpagesetupdialog"></a>CPageSetupDialog:: CPageSetupDialog
+## <a name="cpagesetupdialogcpagesetupdialog"></a><a name="cpagesetupdialog"></a>CPageSetupDialog::CPageSetupDialog
 
-Mit dieser Funktion können Sie ein `CPageSetupDialog` -Objekt erstellen.
+Rufen Sie diese `CPageSetupDialog` Funktion auf, um ein Objekt zu erstellen.
 
 ```
 CPageSetupDialog(
@@ -120,58 +120,58 @@ CPageSetupDialog(
 ### <a name="parameters"></a>Parameter
 
 *dwFlags*<br/>
-Ein oder mehrere Flags, die Sie verwenden können, um die Einstellungen des Dialog Felds anzupassen. Die Werte können mit dem bitweisen OR-Operator kombiniert werden. Diese Werte haben folgende Bedeutungen:
+Ein oder mehrere Flags können Sie verwenden, um die Einstellungen des Dialogfelds anzupassen. Die Werte können mit dem bitwise-OR-Operator kombiniert werden. Diese Werte haben die folgenden Bedeutungen:
 
-- PSD_DEFAULTMINMARGINS legt die minimale zulässige Breite für die Seitenränder fest, sodass Sie mit den Minimums des Druckers identisch sind. Dieses Flag wird ignoriert, wenn die Flags PSD_MARGINS und PSD_MINMARGINS ebenfalls angegeben sind.
+- PSD_DEFAULTMINMARGINS Legt die zulässigen Mindestbreiten für die Seitenränder so fest wie die Mindestbreiten des Druckers. Dieses Flag wird ignoriert, wenn die flags PSD_MARGINS und PSD_MINMARGINS ebenfalls angegeben werden.
 
-- PSD_INWININIINTLMEASURE nicht implementiert.
+- PSD_INWININIINTLMEASURE Nicht implementiert.
 
-- PSD_MINMARGINS bewirkt, dass das System die im `rtMinMargin` -Member angegebenen Werte als minimale zulässige Breite für den linken, oberen, rechten und unteren Rand verwendet. Das System hindert den Benutzer an der Eingabe einer Breite, die kleiner ist als die angegebene Mindestanzahl. Wenn PSD_MINMARGINS nicht angegeben ist, legt das System die minimale zulässige Breite auf die vom Drucker zugelassenen Werte fest.
+- PSD_MINMARGINS Bewirkt, dass das System `rtMinMargin` die im Element angegebenen Werte als zulässige Mindestbreiten für den linken, oberen, rechten und unteren Rand verwendet. Das System verhindert, dass der Benutzer eine Breite eingibt, die kleiner als das angegebene Minimum ist. Wenn PSD_MINMARGINS nicht angegeben ist, legt das System die zulässigen Mindestbreiten auf die vom Drucker zulässigen Breiten fest.
 
-- PSD_MARGINS aktiviert den Rand Steuerungs Bereich.
+- PSD_MARGINS Aktiviert den Randkontrollbereich.
 
-- PSD_INTHOUSANDTHSOFINCHES bewirkt, dass die Einheiten des Dialog Felds in 1/1000 Zoll gemessen werden.
+- PSD_INTHOUSANDTHSOFINCHES Bewirkt, dass die Einheiten des Dialogfelds in 1/1000 Zoll gemessen werden.
 
-- PSD_INHUNDREDTHSOFMILLIMETERS bewirkt, dass die Einheiten des Dialog Felds in 1/100 Millimeter gemessen werden.
+- PSD_INHUNDREDTHSOFMILLIMETERS Bewirkt, dass die Einheiten des Dialogfelds in 1/100 Millimeter gemessen werden.
 
-- PSD_DISABLEMARGINS deaktiviert die Dialogfeld-Steuerelemente für Rand.
+- PSD_DISABLEMARGINS Deaktiviert die Steuerelemente des Randdialogfelds.
 
-- PSD_DISABLEPRINTER deaktiviert die Schaltfläche Drucker.
+- PSD_DISABLEPRINTER Deaktiviert die Druckerschaltfläche.
 
-- PSD_NOWARNING verhindert, dass die Warnmeldung angezeigt wird, wenn kein Standarddrucker vorhanden ist.
+- PSD_NOWARNING Verhindert, dass die Warnmeldung angezeigt wird, wenn kein Standarddrucker vorhanden ist.
 
-- PSD_DISABLEORIENTATION deaktiviert das Dialogfeld Steuerelement Seitenausrichtung.
+- PSD_DISABLEORIENTATION Deaktiviert das Dialogfeldsteuerelement für die Seitenausrichtung.
 
-- PSD_RETURNDEFAULT bewirkt `CPageSetupDialog` , dass [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -und [DEVNAMES](/windows/win32/api/commdlg/ns-commdlg-devnames) -Strukturen zurückgegeben werden, die für den System Standarddrucker initialisiert werden, ohne dass ein Dialogfeld angezeigt wird. Es wird davon ausgegangen, `hDevNames` dass `hDevMode` sowohl als auch NULL sind; andernfalls gibt die Funktion einen Fehler zurück. Wenn der System Standarddrucker von einem alten Druckertreiber unterstützt wird (früher als Windows Version 3,0), `hDevNames` wird nur zurückgegeben. `hDevMode` ist NULL.
+- PSD_RETURNDEFAULT `CPageSetupDialog` verursacht die Rückgabe von [DEVMODE-](/windows/win32/api/wingdi/ns-wingdi-devmodea) und [DEVNAMES-Strukturen,](/windows/win32/api/commdlg/ns-commdlg-devnames) die für den Standarddrucker des Systems initialisiert werden, ohne ein Dialogfeld anzuzeigen. Es wird davon `hDevNames` `hDevMode` ausgegangen, dass beide und NULL sind; Andernfalls gibt die Funktion einen Fehler zurück. Wenn der Standarddrucker des Systems von einem alten Druckertreiber (früher `hDevNames` als Windows Version 3.0) unterstützt wird, wird nur zurückgegeben. `hDevMode` ist NULL.
 
-- PSD_DISABLEPAPER deaktiviert das Steuerelement für die Papier Auswahl.
+- PSD_DISABLEPAPER Deaktiviert die Papierauswahlsteuerung.
 
-- PSD_SHOWHELP bewirkt, dass im Dialogfeld die Schaltfläche Hilfe angezeigt wird. Der `hwndOwner` Member darf nicht NULL sein, wenn dieses Flag angegeben wird.
+- PSD_SHOWHELP Bewirkt, dass im Dialogfeld die Hilfeschaltfläche angezeigt wird. Der `hwndOwner` Member darf nicht NULL sein, wenn dieses Flag angegeben ist.
 
-- PSD_ENABLEPAGESETUPHOOK aktiviert die Hook-Funktion, `lpfnSetupHook`die in angegeben ist.
+- PSD_ENABLEPAGESETUPHOOK Aktiviert die in `lpfnSetupHook`angegebene Hook-Funktion.
 
-- PSD_ENABLEPAGESETUPTEMPLATE bewirkt, dass das-Betriebssystem das Dialogfeld mit dem Dialogfeld Vorlagen Feld erstellt `hInstance` , `lpSetupTemplateName`das von und identifiziert wird.
+- PSD_ENABLEPAGESETUPTEMPLATE Veranlasst das Betriebssystem, das Dialogfeld mithilfe des `hInstance` Dialogfelds zu erstellen, das von und `lpSetupTemplateName`identifiziert wurde.
 
-- PSD_ENABLEPAGESETUPTEMPLATEHANDLE gibt an `hInstance` , dass einen Datenblock identifiziert, der eine vorab geladene Dialogfeld Vorlage enthält. Das System ignoriert `lpSetupTemplateName` , wenn dieses Flag angegeben wird.
+- PSD_ENABLEPAGESETUPTEMPLATEHANDLE Gibt `hInstance` an, dass ein Datenblock identifiziert wird, der eine vorinstallierte Dialogfeldvorlage enthält. Das System `lpSetupTemplateName` ignoriert, wenn dieses Flag angegeben ist.
 
-- PSD_ENABLEPAGEPAINTHOOK aktiviert die Hook-Funktion, `lpfnPagePaintHook`die in angegeben ist.
+- PSD_ENABLEPAGEPAINTHOOK Aktiviert die in `lpfnPagePaintHook`angegebene Hook-Funktion.
 
-- PSD_DISABLEPAGEPAINTING deaktiviert den Zeichnungs Bereich des Dialog Felds.
+- PSD_DISABLEPAGEPAINTING Deaktiviert den Zeichnungsbereich des Dialogfelds.
 
 *pParentWnd*<br/>
-Zeiger auf das übergeordnete Element oder den Besitzer des Dialog Felds.
+Zeigen Sie mit dem Zeiger auf das übergeordnete elementge oder den Besitzer des Dialogfelds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die Funktion [DoModal](../../mfc/reference/cdialog-class.md#domodal) , um das Dialogfeld anzuzeigen.
+Verwenden Sie die [DoModal-Funktion,](../../mfc/reference/cdialog-class.md#domodal) um das Dialogfeld anzuzeigen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#94](../../mfc/codesnippet/cpp/cpagesetupdialog-class_1.cpp)]
 
-##  <a name="createprinterdc"></a>CPageSetupDialog:: "kreateprinterdc"
+## <a name="cpagesetupdialogcreateprinterdc"></a><a name="createprinterdc"></a>CPageSetupDialog::CreatePrinterDC
 
-Erstellt einen Drucker Gerätekontext aus den [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -und [DEVNAMES](/windows/win32/api/commdlg/ns-commdlg-devnames) -Strukturen.
+Erstellt einen Druckergerätekontext aus den Strukturen [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) und [DEVNAMES.](/windows/win32/api/commdlg/ns-commdlg-devnames)
 
 ```
 HDC CreatePrinterDC();
@@ -179,11 +179,11 @@ HDC CreatePrinterDC();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Handle für den neu erstellten Drucker Gerätekontext (DC).
+Behandeln Sie den neu erstellten Druckergerätekontext (DC).
 
-##  <a name="domodal"></a>CPageSetupDialog::D omodal
+## <a name="cpagesetupdialogdomodal"></a><a name="domodal"></a>CPageSetupDialog::DoModal
 
-Mit dieser Funktion können Sie das Windows Common OLE Page Setup-Dialogfeld anzeigen und dem Benutzer die Auswahl verschiedener Druck Setup Optionen (z. b. Druckränder, Größe und Ausrichtung des Papiers und Ziel Druckers) ermöglichen.
+Rufen Sie diese Funktion auf, um das allgemeine Dialogfeld OLE-Seiteneinrichtung von Windows anzuzeigen, und ermöglichen Sie dem Benutzer, verschiedene Druckeinrichtungsoptionen auszuwählen, z. B. Druckränder, Größe und Ausrichtung des Papiers und Zieldrucker.
 
 ```
 virtual INT_PTR DoModal();
@@ -191,27 +191,27 @@ virtual INT_PTR DoModal();
 
 ### <a name="return-value"></a>Rückgabewert
 
-IDOK oder IDCANCEL. Wenn IDCANCEL zurückgegeben wird, rufen Sie die Windows-Funktion [commdlgextendederror](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) auf, um zu bestimmen, ob ein Fehler aufgetreten ist.
+IDOK oder IDCANCEL. Wenn IDCANCEL zurückgegeben wird, rufen Sie die Windows [CommDlgExtendedError-Funktion](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) auf, um zu ermitteln, ob ein Fehler aufgetreten ist.
 
 IDOK und IDCANCEL sind Konstanten, die angeben, ob der Benutzer die Schaltfläche OK oder Abbrechen ausgewählt hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Außerdem kann der Benutzer auf die Installationsoptionen für den Drucker zugreifen, z. b. Netzwerk Speicherort und Eigenschaften, die für den ausgewählten Drucker spezifisch sind.
+Darüber hinaus kann der Benutzer auf die Druckereinrichtungsoptionen zugreifen, z. B. den Netzwerkspeicherort und die für den ausgewählten Drucker spezifischen Eigenschaften.
 
-Wenn Sie die verschiedenen Seiten Setup Dialogfelder durch Festlegen der Elemente der `m_psd` Struktur initialisieren möchten, sollten Sie dies vor dem Aufrufen `DoModal`von und nach dem Erstellen des Dialog Objekts tun. Rufen Sie `DoModal`nach dem Aufrufen von andere Element Funktionen auf, um die Einstellungen oder die Eingabeinformationen vom Benutzer in das Dialogfeld abzurufen.
+Wenn Sie die verschiedenen Dialogdialogoptionen für das Seiteneinrichten initialisieren möchten, indem Sie Member der Struktur festlegen, sollten Sie dies `m_psd` vor dem Aufruf und nach dem Erstellen `DoModal`des Dialogobjekts tun. Rufen `DoModal`Sie nach dem Aufruf andere Memberfunktionen auf, um die Einstellungen oder Informationen, die der Benutzer in das Dialogfeld eingibt, abzurufen.
 
-Wenn Sie die vom Benutzer eingegebenen aktuellen Einstellungen weitergeben möchten, müssen Sie [CWinApp:: selectprinter](../../mfc/reference/cwinapp-class.md#selectprinter)aufrufen. Diese Funktion übernimmt die Informationen aus dem `CPageSetupDialog` -Objekt und initialisiert und wählt einen neuen Drucker-DC mit den richtigen Attributen aus.
+Wenn Sie die aktuellen Einstellungen des Benutzers weitergeben möchten, rufen Sie [CWinApp::SelectPrinter](../../mfc/reference/cwinapp-class.md#selectprinter)an. Diese Funktion nimmt die `CPageSetupDialog` Informationen aus dem Objekt und initialisiert und wählt einen neuen Drucker-DC mit den richtigen Attributen aus.
 
 [!code-cpp[NVC_MFCDocView#95](../../mfc/codesnippet/cpp/cpagesetupdialog-class_2.cpp)]
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CPageSetupDialog:: CPageSetupDialog](#cpagesetupdialog).
+  Siehe Beispiel für [CPageSetupDialog::CPageSetupDialog](#cpagesetupdialog).
 
-##  <a name="getdevicename"></a>CPageSetupDialog:: GetDeviceName
+## <a name="cpagesetupdialoggetdevicename"></a><a name="getdevicename"></a>CPageSetupDialog::GetDeviceName
 
-Rufen Sie diese Funktion `DoModal` nach auf, um den Namen des aktuell ausgewählten Druckers abzurufen.
+Rufen Sie `DoModal` diese Funktion nach, um den Namen des aktuell ausgewählten Druckers abzurufen.
 
 ```
 CString GetDeviceName() const;
@@ -219,11 +219,11 @@ CString GetDeviceName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Gerätename, der vom `CPageSetupDialog` -Objekt verwendet wird.
+Der vom `CPageSetupDialog` Objekt verwendete Gerätename.
 
-##  <a name="getdevmode"></a>CPageSetupDialog:: getdevmode
+## <a name="cpagesetupdialoggetdevmode"></a><a name="getdevmode"></a>CPageSetupDialog::GetDevMode
 
-Rufen `DoModal` Sie diese Funktion nach dem Aufruf `CPageSetupDialog` von auf, um Informationen zum Drucker Gerätekontext des-Objekts abzurufen.
+Rufen Sie diese `DoModal` Funktion nach dem Aufruf auf, um Informationen über den Druckergerätekontext des `CPageSetupDialog` Objekts abzurufen.
 
 ```
 LPDEVMODE GetDevMode() const;
@@ -231,11 +231,11 @@ LPDEVMODE GetDevMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -Datenstruktur, die Informationen über die Geräte Initialisierung und die Umgebung eines Druck Treibers enthält. Sie müssen den von dieser Struktur erstellten Arbeitsspeicher mit der Funktion Windows [globalunlock](/windows/win32/api/winbase/nf-winbase-globalunlock) entsperren, die im Windows SDK beschrieben wird.
+Die [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) DEVMODE-Datenstruktur, die Informationen zur Geräteinitialisierung und Umgebung eines Druckertreibers enthält. Sie müssen den von dieser Struktur entnommenen Speicher mit der Windows [GlobalUnlock-Funktion](/windows/win32/api/winbase/nf-winbase-globalunlock) entsperren, die im Windows SDK beschrieben wird.
 
-##  <a name="getdrivername"></a>CPageSetupDialog:: getDriverName
+## <a name="cpagesetupdialoggetdrivername"></a><a name="getdrivername"></a>CPageSetupDialog::GetDriverName
 
-Rufen Sie diese Funktion nach dem Aufrufen von [DoModal](../../mfc/reference/cprintdialog-class.md#domodal) auf, um den Namen des System definierten Drucker-Gerätetreibers abzurufen.
+Rufen Sie diese Funktion auf, nachdem Sie [DoModal](../../mfc/reference/cprintdialog-class.md#domodal) aufgerufen haben, um den Namen des systemdefinierten Druckergerätetreibers abzurufen.
 
 ```
 CString GetDriverName() const;
@@ -243,15 +243,15 @@ CString GetDriverName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` , der den Namen des System definierten Treibers angibt.
+Eine `CString` Angabe des systemdefinierten Treibernamens.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie einen Zeiger auf `CString` das Objekt, `GetDriverName` das von als Wert `lpszDriverName` von zurückgegeben wird, in einem Aufrufen von [CDC:: anatedc](../../mfc/reference/cdc-class.md#createdc).
+Verwenden Sie einen `CString` Zeiger auf `GetDriverName` das Objekt, das als Wert von `lpszDriverName` in einem Aufruf von [CDC::CreateDC](../../mfc/reference/cdc-class.md#createdc)zurückgegeben wird.
 
-##  <a name="getmargins"></a>CPageSetupDialog:: getMargin
+## <a name="cpagesetupdialoggetmargins"></a><a name="getmargins"></a>CPageSetupDialog::GetMargins
 
-Rufen Sie diese Funktion nach einem aufrufen `DoModal` von auf, um die Ränder des Drucker Gerätetreibers abzurufen.
+Rufen Sie diese Funktion `DoModal` nach einem Aufruf auf, um die Ränder des Druckergerätetreibers abzurufen.
 
 ```
 void GetMargins(
@@ -262,14 +262,14 @@ void GetMargins(
 ### <a name="parameters"></a>Parameter
 
 *lpRectMargins*<br/>
-Ein Zeiger auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur oder ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das die Druckränder für den aktuell ausgewählten Drucker (in 1/1000 Zoll oder 1/100 mm) beschreibt. Übergeben Sie NULL für diesen Parameter, wenn Sie an diesem Rechteck nicht interessiert sind.
+Zeiger auf eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) oder ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das (in 1/1000 Zoll oder 1/100 mm) die Druckränder für den aktuell ausgewählten Drucker beschreibt. Übergeben Sie NULL für diesen Parameter, wenn Sie nicht an diesem Rechteck interessiert sind.
 
 *lpRectMinMargins*<br/>
-Ein Zeiger auf `RECT` eine Struktur `CRect` oder ein Objekt, das die minimalen Druckränder für den aktuell ausgewählten Drucker (in 1/1000 Zoll oder 1/100 mm) beschreibt. Übergeben Sie NULL für diesen Parameter, wenn Sie an diesem Rechteck nicht interessiert sind.
+Zeiger auf `RECT` eine `CRect` Struktur oder ein Objekt, das (in 1/1000 Zoll oder 1/100 mm) die minimalen Druckränder für den aktuell ausgewählten Drucker beschreibt. Übergeben Sie NULL für diesen Parameter, wenn Sie nicht an diesem Rechteck interessiert sind.
 
-##  <a name="getpapersize"></a>CPageSetupDialog:: getpapersize
+## <a name="cpagesetupdialoggetpapersize"></a><a name="getpapersize"></a>CPageSetupDialog::GetPaperSize
 
-Rufen Sie diese Funktion auf, um die für das Drucken ausgewählte Papiergröße abzurufen.
+Rufen Sie diese Funktion auf, um die Größe des für den Drucken ausgewählten Papiers abzurufen.
 
 ```
 CSize GetPaperSize() const;
@@ -277,11 +277,11 @@ CSize GetPaperSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt, das die für das Drucken ausgewählte Papiergröße (in 1/1000 Zoll oder 1/100 mm) enthält.
+Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die Größe des Papiers (in 1/1000 Zoll oder 1/100 mm) enthält, das für den Druck ausgewählt wurde.
 
-##  <a name="getportname"></a>CPageSetupDialog:: getportname
+## <a name="cpagesetupdialoggetportname"></a><a name="getportname"></a>CPageSetupDialog::GetPortName
 
-Rufen `DoModal` Sie diese Funktion nach dem Aufruf von auf, um den Namen des aktuell ausgewählten Drucker Ports abzurufen.
+Rufen Sie diese `DoModal` Funktion nach dem Aufruf auf, um den Namen des aktuell ausgewählten Druckeranschlusses abzurufen.
 
 ```
 CString GetPortName() const;
@@ -289,29 +289,29 @@ CString GetPortName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Name des aktuell ausgewählten Drucker Anschlusses.
+Der Name des aktuell ausgewählten Druckeranschlusses.
 
-##  <a name="m_psd"></a>CPageSetupDialog:: m_psd
+## <a name="cpagesetupdialogm_psd"></a><a name="m_psd"></a>CPageSetupDialog::m_psd
 
-Eine Struktur vom Typ pagesetupdlg, deren Member die Merkmale des Dialog Objekts speichern.
+Eine Struktur vom Typ PAGESETUPDLG, deren Member die Eigenschaften des Dialogobjekts speichern.
 
 ```
 PAGESETUPDLG m_psd;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie ein `CPageSetupDialog` -Objekt erstellt haben, `m_psd` können Sie verwenden, um verschiedene Aspekte des Dialog Felds vor `DoModal` dem Aufruf der Member-Funktion festzulegen.
+Nach dem `CPageSetupDialog` Erstellen eines `m_psd` Objekts können Sie verschiedene Aspekte `DoModal` des Dialogfelds festlegen, bevor Sie die Memberfunktion aufrufen.
 
-Wenn Sie den `m_psd` Datenmember direkt ändern, überschreiben Sie jedes Standardverhalten.
+Wenn Sie `m_psd` das Datenelement direkt ändern, überschreiben Sie jedes Standardverhalten.
 
-Weitere Informationen zur [pagesetupdlg](/windows/win32/api/commdlg/ns-commdlg-pagesetupdlgw) -Struktur finden Sie in der Windows SDK.
+Weitere Informationen zur [PAGESETUPDLG-Struktur](/windows/win32/api/commdlg/ns-commdlg-pagesetupdlgw) finden Sie im Windows SDK.
 
-Weitere Informationen finden Sie im Beispiel für [CPageSetupDialog:: CPageSetupDialog](#cpagesetupdialog).
+Siehe Beispiel für [CPageSetupDialog::CPageSetupDialog](#cpagesetupdialog).
 
-##  <a name="ondrawpage"></a>CPageSetupDialog:: ondrawpage
+## <a name="cpagesetupdialogondrawpage"></a><a name="ondrawpage"></a>CPageSetupDialog::OnDrawPage
 
-Wird von Framework aufgerufen, um ein Bildschirm Bild einer gedruckten Seite zu zeichnen.
+Wird vom Framework aufgerufen, um ein Bildschirmbild einer gedruckten Seite zu zeichnen.
 
 ```
 virtual UINT OnDrawPage(
@@ -323,43 +323,43 @@ virtual UINT OnDrawPage(
 ### <a name="parameters"></a>Parameter
 
 *pDC*<br/>
-Zeiger auf den Drucker Gerätekontext.
+Zeiger auf den Druckergerätekontext.
 
 *nMessage*<br/>
-Gibt eine Meldung an, die den Bereich der Seite angibt, die gerade gezeichnet wird. Kann einen der folgenden Werte annehmen:
+Gibt eine Meldung an, die den Bereich der Seite angibt, die gerade gezeichnet wird. Dabei kann es sich um eine der folgenden Methoden handeln:
 
-- WM_PSD_FULLPAGERECT der gesamte Seitenbereich.
+- WM_PSD_FULLPAGERECT Der gesamte Seitenbereich.
 
-- WM_PSD_MINMARGINRECT aktuelle minimale Ränder.
+- WM_PSD_MINMARGINRECT Aktuelle Mindestmargen.
 
-- WM_PSD_MARGINRECT aktuelle Ränder.
+- WM_PSD_MARGINRECT Aktuelle Margen.
 
 - WM_PSD_GREEKTEXTRECT Inhalt der Seite.
 
-- WM_PSD_ENVSTAMPRECT Bereich, der für eine Poststempel Darstellung reserviert ist.
+- WM_PSD_ENVSTAMPRECT Bereich, der für eine Briefmarkendarstellung reserviert ist.
 
-- WM_PSD_YAFULLPAGERECT Bereich für eine Rückgabe Adress Darstellung. Dieser Bereich erstreckt sich auf die Ränder des Bereichs der Beispielseite.
+- WM_PSD_YAFULLPAGERECT Bereich für eine Rückgabeadressendarstellung. Dieser Bereich erstreckt sich bis zu den Rändern des Beispielseitenbereichs.
 
 *lpRect*<br/>
-Zeiger auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -oder [Rect](/windows/win32/api/windef/ns-windef-rect) -Objekt, das die Koordinaten des Zeichnungs Bereichs enthält.
+Zeiger auf ein [CRect-](../../atl-mfc-shared/reference/crect-class.md) oder [RECT-Objekt,](/windows/win32/api/windef/ns-windef-rect) das die Koordinaten des Zeichenbereichs enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wert ungleich 0 (null), wenn behandelt; andernfalls 0.
+Wert ungleich Null, wenn behandelt; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Bild wird dann im Rahmen des allgemeinen Setup-Dialog Felds der OLE-Seite angezeigt. Die Standard Implementierung zeichnet ein Bild einer Textseite.
+Dieses Bild wird dann als Teil des allgemeinen Dialogfelds OLE Seiteneinrichtung angezeigt. Die Standardimplementierung zeichnet ein Bild einer Textseite.
 
-Überschreiben Sie diese Funktion, um die Zeichnung eines bestimmten Bereichs des Bilds oder das gesamte Bild anzupassen. Hierfür können Sie eine **Switch** -Anweisung mit **Case** -Anweisungen verwenden, die den Wert von *nmessage*überprüfen. Wenn Sie z. b. das Rendering der Inhalte des Seiten Bilds anpassen möchten, können Sie den folgenden Beispielcode verwenden:
+Überschreiben Sie diese Funktion, um die Zeichnung eines bestimmten Bereichs des Bildes oder des gesamten Bildes anzupassen. Sie können dies tun, indem Sie eine **switch-Anweisung** mit **Fallanweisungen** verwenden, die den Wert von *nMessage*überprüfen. Um beispielsweise das Rendern des Inhalts des Seitenbilds anzupassen, können Sie den folgenden Beispielcode verwenden:
 
 [!code-cpp[NVC_MFCDocView#96](../../mfc/codesnippet/cpp/cpagesetupdialog-class_3.cpp)]
 
-Beachten Sie, dass Sie nicht jeden Fall von *nmessage*behandeln müssen. Sie können auswählen, ob eine Komponente des Bilds, mehrere Komponenten des Bilds oder der gesamte Bereich verarbeitet werden sollen.
+Beachten Sie, dass Sie nicht jeden Fall von *nMessage*behandeln müssen. Sie können eine Komponente des Bildes, mehrere Komponenten des Bildes oder den gesamten Bereich behandeln.
 
-##  <a name="predrawpage"></a>CPageSetupDialog::P redrawpage
+## <a name="cpagesetupdialogpredrawpage"></a><a name="predrawpage"></a>CPageSetupDialog::PreDrawPage
 
-Wird von Framework aufgerufen, bevor das Bildschirm Bild einer gedruckten Seite gezeichnet wird.
+Wird vom Framework aufgerufen, bevor das Bildschirmbild einer gedruckten Seite gezeichnet wird.
 
 ```
 virtual UINT PreDrawPage(
@@ -371,40 +371,40 @@ virtual UINT PreDrawPage(
 ### <a name="parameters"></a>Parameter
 
 *wPaper*<br/>
-Gibt einen Wert an, der das Papierformat angibt. Bei diesem Wert kann es sich um einen der **DMPAPER_** -Werte handeln, die in der Beschreibung der [DEVMODE](/windows/win32/api/wingdi/ns-wingdi-devmodea) -Struktur aufgeführt sind.
+Gibt einen Wert an, der das Papierformat angibt. Dieser Wert kann einer der **DMPAPER_** Werte sein, die in der Beschreibung der [DEVMODE-Struktur](/windows/win32/api/wingdi/ns-wingdi-devmodea) aufgeführt sind.
 
 *wFlags*<br/>
-Gibt die Ausrichtung des Papiers oder des Umschlags an und gibt an, ob der Drucker ein Punktmatrix-oder HPPCL-Gerät (Hewlett Packard Printer Control Language) ist. Dieser Parameter kann einen der folgenden Werte aufweisen:
+Gibt die Ausrichtung des Papiers oder Umschlags an und gibt an, ob es sich bei dem Drucker um ein Dot-Matrix- oder HPPCL-Gerät (Hewlett Packard Printer Control Language) handelt. Dieser Parameter kann einen der folgenden Werte aufweisen:
 
-- 0x001-Papier im Querformat (Punktmatrix)
+- 0x001 Papier im Querformat (Punktmatrix)
 
-- 0x003 Paper im Querformat (HPPCL)
+- 0x003 Papier im Querformat (HPPCL)
 
 - 0x005 Papier im Hochformat (Punktmatrix)
 
-- 0x007-Papier im Hochformat (HPPCL)
+- 0x007 Papier im Hochformat (HPPCL)
 
-- Umschlag 0x00b im Querformat (HPPCL)
+- 0x00b Umschlag im Querformat (HPPCL)
 
-- Umschlag 0x00d im Hochformat (Punktmatrix)
+- 0x00d Umschlag im Hochformat (Punktmatrix)
 
-- 0x019-Umschlag im Querformat (Punktmatrix)
+- 0x019 Umschlag im Querformat (Punktmatrix)
 
-- Umschlag 0x01f im Hochformat (Punktmatrix)
+- 0x01f Umschlag im Hochformat (Punktmatrix)
 
 *pPSD*<br/>
-Zeiger auf eine `PAGESETUPDLG`-Struktur. Weitere Informationen zu [pagesetupdlg](/windows/win32/api/commdlg/ns-commdlg-pagesetupdlgw)finden Sie in der Windows SDK.
+Zeiger auf eine `PAGESETUPDLG`-Struktur. Weitere Informationen [zu PAGESETUPDLG](/windows/win32/api/commdlg/ns-commdlg-pagesetupdlgw)finden Sie im Windows SDK.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wert ungleich 0 (null), wenn behandelt; andernfalls 0.
+Wert ungleich Null, wenn behandelt; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, um das Zeichnen des Bilds anzupassen. Wenn Sie diese Funktion überschreiben und true zurückgeben, müssen Sie das gesamte Bild zeichnen. Wenn Sie diese Funktion überschreiben und false zurückgeben, wird das gesamte Standardbild vom Framework gezeichnet.
+Überschreiben Sie diese Funktion, um die Zeichnung des Bildes anzupassen. Wenn Sie diese Funktion überschreiben und TRUE zurückgeben, müssen Sie das gesamte Bild zeichnen. Wenn Sie diese Funktion überschreiben und FALSE zurückgeben, wird das gesamte Standardbild vom Framework gezeichnet.
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel WordPad](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel WORDPAD](../../overview/visual-cpp-samples.md)<br/>
 [CCommonDialog-Klasse](../../mfc/reference/ccommondialog-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

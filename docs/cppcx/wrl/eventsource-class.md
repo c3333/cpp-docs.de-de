@@ -23,16 +23,16 @@ helpviewer_keywords:
 - Microsoft::WRL::EventSource::targets_ data member
 - Microsoft::WRL::EventSource::targetsPointerLock_ data member
 ms.assetid: 91f1c072-6af4-44e6-b6d8-ac6d0c688dde
-ms.openlocfilehash: 1350e51ff609a888b6a8ad6841be6856b68c7994
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: bb9151e55d133e3e5d8bf10baeb8448101ad6ce0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423639"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371543"
 ---
 # <a name="eventsource-class"></a>EventSource-Klasse
 
-Stellt ein nicht agiles Ereignis dar. `EventSource`-Memberfunktionen fügen Ereignishandler hinzu, entfernen sie und rufen sie auf. Verwenden Sie für Agile-Ereignisse [agileeventsource](agileeventsource-class.md).
+Stellt ein nicht agiles Ereignis dar. `EventSource`-Memberfunktionen fügen Ereignishandler hinzu, entfernen sie und rufen sie auf. Verwenden Sie für agile Ereignisse [AgileEventSource](agileeventsource-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -43,47 +43,47 @@ class EventSource;
 
 ### <a name="parameters"></a>Parameter
 
-*Tdelegateingeterface*<br/>
-Die-Schnittstelle zu einem Delegaten, der einen Ereignishandler darstellt.
+*TDelegateInterface*<br/>
+Die Schnittstelle zu einem Delegaten, der einen Ereignishandler darstellt.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-| Name                                     | Beschreibung                                            |
+| Name                                     | BESCHREIBUNG                                            |
 | ---------------------------------------- | ------------------------------------------------------ |
-| [EventSource:: eventSource](#eventsource) | Initialisiert eine neue Instanz der `EventSource`-Klasse. |
+| [EventSource::EventSource](#eventsource) | Initialisiert eine neue Instanz der Klasse `EventSource`. |
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-| Name                                 | Beschreibung                                                                                                                                                      |
+| Name                                 | BESCHREIBUNG                                                                                                                                                      |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [EventSource:: Add](#add)             | Fügt den Ereignishandler, der durch die angegebene delegatschnittstelle dargestellt wird, an den Satz von Ereignis Handlern für das aktuelle `EventSource`-Objekt an.                     |
-| [EventSource:: GetSize](#getsize)     | Ruft die Anzahl der Ereignishandler ab, die dem aktuellen `EventSource`-Objekt zugeordnet sind.                                                                         |
-| [EventSource:: InvokeAll](#invokeall) | Ruft jeden Ereignishandler auf, der mit den angegebenen Argument Typen und Argumenten mit dem aktuellen `EventSource`-Objekt verknüpft ist.                                      |
-| [EventSource:: Remove](#remove)       | Löscht den Ereignishandler, der durch das angegebene Ereignis Registrierungs Token dargestellt wird, aus dem Satz von Ereignis Handlern, die dem aktuellen `EventSource`-Objekt zugeordnet sind. |
+| [EventSource::Hinzufügen](#add)             | Fügt den Ereignishandler, der durch die angegebene Delegatschnittstelle `EventSource` dargestellt wird, an den Satz von Ereignishandlern für das aktuelle Objekt an.                     |
+| [EventSource::GetSize](#getsize)     | Ruft die Anzahl der Ereignishandler ab, die dem aktuellen `EventSource` Objekt zugeordnet sind.                                                                         |
+| [EventSource::InvokeAll](#invokeall) | Ruft jeden Ereignishandler auf, der dem aktuellen `EventSource` Objekt mit den angegebenen Argumenttypen und Argumenten zugeordnet ist.                                      |
+| [EventSource::Entfernen](#remove)       | Löscht den Ereignishandler, der durch das angegebene Ereignisregistrierungstoken dargestellt wird, aus dem Satz von Ereignishandlern, die dem aktuellen `EventSource` Objekt zugeordnet sind. |
 
-### <a name="protected-data-members"></a>Geschützte Datenelemente
+### <a name="protected-data-members"></a>Geschützte Datenmember
 
-| Name                                                    | Beschreibung                                                                                                                       |
+| Name                                                    | BESCHREIBUNG                                                                                                                       |
 | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| [EventSource:: addRemoveLock_](#addremovelock)           | Synchronisiert den Zugriff auf das [targets_](#targets) Array beim Hinzufügen, entfernen oder Aufrufen von Ereignis Handlern.                          |
-| [EventSource:: targets_](#targets)                       | Ein Array von einem oder mehreren Ereignis Handlern.                                                                                           |
-| [EventSource:: targetsPointerLock_](#targetspointerlock) | Synchronisiert den Zugriff auf interne Datenmember, auch wenn Ereignishandler für diese eventSource hinzugefügt, entfernt oder aufgerufen werden. |
+| [EventSource::addRemoveLock_](#addremovelock)           | Synchronisiert den Zugriff auf das [targets_-Array](#targets) beim Hinzufügen, Entfernen oder Aufrufen von Ereignishandlern.                          |
+| [EventSource::targets_](#targets)                       | Ein Array von einem oder mehreren Ereignishandlern.                                                                                           |
+| [EventSource::targetsPointerLock_](#targetspointerlock) | Synchronisiert den Zugriff auf interne Datenmember, auch wenn Ereignishandler für diese EventSource hinzugefügt, entfernt oder aufgerufen werden. |
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `EventSource`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** Event. h
+**Kopfzeile:** event.h
 
 **Namespace:** Microsoft::WRL
 
-## <a name="add"></a>EventSource:: Add
+## <a name="eventsourceadd"></a><a name="add"></a>EventSource::Hinzufügen
 
-Fügt den Ereignishandler, der durch die angegebene delegatschnittstelle dargestellt wird, an den Satz von Ereignis Handlern für das aktuelle `EventSource`-Objekt an.
+Fügt den Ereignishandler, der durch die angegebene Delegatschnittstelle `EventSource` dargestellt wird, an den Satz von Ereignishandlern für das aktuelle Objekt an.
 
 ```cpp
 HRESULT Add(
@@ -94,35 +94,35 @@ HRESULT Add(
 
 ### <a name="parameters"></a>Parameter
 
-*delegateingangs Gesicht*<br/>
-Die-Schnittstelle zu einem Delegatobjekt, das einen Ereignishandler darstellt.
+*delegateSchnittstelle*<br/>
+Die Schnittstelle zu einem Delegatenobjekt, das einen Ereignishandler darstellt.
 
-*token*<br/>
-Wenn dieser Vorgang abgeschlossen ist, ein Handle, das das Ereignis darstellt. Verwenden Sie dieses Token als Parameter für die [Remove ()](#remove) -Methode, um den Ereignishandler zu verwerfen.
+*Token*<br/>
+Wenn dieser Vorgang abgeschlossen ist, wird ein Handle, der das Ereignis darstellt, behandelt. Verwenden Sie dieses Token als Parameter für die [Remove()-Methode,](#remove) um den Ereignishandler zu verwerfen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="addremovelock"></a>EventSource:: addRemoveLock_
+## <a name="eventsourceaddremovelock_"></a><a name="addremovelock"></a>EventSource::addRemoveLock_
 
-Synchronisiert den Zugriff auf das [targets_](#targets) Array beim Hinzufügen, entfernen oder Aufrufen von Ereignis Handlern.
+Synchronisiert den Zugriff auf das [targets_-Array](#targets) beim Hinzufügen, Entfernen oder Aufrufen von Ereignishandlern.
 
 ```cpp
 Wrappers::SRWLock addRemoveLock_;
 ```
 
-## <a name="eventsource"></a>EventSource:: eventSource
+## <a name="eventsourceeventsource"></a><a name="eventsource"></a>EventSource::EventSource
 
-Initialisiert eine neue Instanz der `EventSource`-Klasse.
+Initialisiert eine neue Instanz der Klasse `EventSource`.
 
 ```cpp
 EventSource();
 ```
 
-## <a name="getsize"></a>EventSource:: GetSize
+## <a name="eventsourcegetsize"></a><a name="getsize"></a>EventSource::GetSize
 
-Ruft die Anzahl der Ereignishandler ab, die dem aktuellen `EventSource`-Objekt zugeordnet sind.
+Ruft die Anzahl der Ereignishandler ab, die dem aktuellen `EventSource` Objekt zugeordnet sind.
 
 ```cpp
 size_t GetSize() const;
@@ -130,11 +130,11 @@ size_t GetSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl von Ereignis Handlern in [targets_](#targets).
+Die Anzahl der Ereignishandler in [targets_](#targets).
 
-## <a name="invokeall"></a>EventSource:: InvokeAll
+## <a name="eventsourceinvokeall"></a><a name="invokeall"></a>EventSource::InvokeAll
 
-Ruft jeden Ereignishandler auf, der mit den angegebenen Argument Typen und Argumenten mit dem aktuellen `EventSource`-Objekt verknüpft ist.
+Ruft jeden Ereignishandler auf, der dem aktuellen `EventSource` Objekt mit den angegebenen Argumenttypen und Argumenten zugeordnet ist.
 
 ```cpp
 void InvokeAll();
@@ -293,68 +293,68 @@ void InvokeAll(
 ### <a name="parameters"></a>Parameter
 
 *T0*<br/>
-Der Typ des nullten ereignishandlerarguments.
+Der Typ des Arguments zeroth-Ereignishandler.
 
 *T1*<br/>
-Der Typ des ersten ereignishandlerarguments.
+Der Typ des ersten Ereignishandlerarguments.
 
 *T2*<br/>
-Der Typ des zweiten ereignishandlerarguments.
+Der Typ des zweiten Ereignishandlerarguments.
 
-*Übte*<br/>
-Der Typ des dritten ereignishandlerarguments.
+*T3*<br/>
+Der Typ des dritten Ereignishandlerarguments.
 
 *T4*<br/>
-Der Typ des vierten ereignishandlerarguments.
+Der Typ des vierten Ereignishandlerarguments.
 
 *T5*<br/>
-Der Typ des fünften ereignishandlerarguments.
+Der Typ des fünften Ereignishandlerarguments.
 
 *T6*<br/>
-Der Typ des sechsten ereignishandlerarguments.
+Der Typ des sechsten Ereignishandlerarguments.
 
 *T7*<br/>
-Der Typ des siebten ereignishandlerarguments.
+Der Typ des siebten Ereignishandlerarguments.
 
 *T8*<br/>
-Der Typ des achten ereignishandlerarguments.
+Der Typ des achten Ereignishandlerarguments.
 
 *T9*<br/>
-Der Typ des neunten ereignishandlerarguments.
+Der Typ des neunten Ereignishandlerarguments.
 
 *arg0*<br/>
-Das Nuller-ereignishandlerargument.
+Das Argument des Zeroth-Ereignishandlers.
 
 *arg1*<br/>
-Das erste ereignishandlerargument.
+Das erste Ereignishandlerargument.
 
 *arg2*<br/>
-Das zweite ereignishandlerargument.
+Das zweite Ereignishandlerargument.
 
 *arg3*<br/>
-Das dritte ereignishandlerargument.
+Das dritte Ereignishandlerargument.
 
 *arg4*<br/>
-Das vierte ereignishandlerargument.
+Das vierte Ereignishandlerargument.
 
 *arg5*<br/>
-Das fünfte ereignishandlerargument.
+Das fünfte Argument für den Ereignishandler.
 
 *arg6*<br/>
-Das sechste ereignishandlerargument.
+Das sechste Argument für den Ereignishandler.
 
 *arg7*<br/>
-Das siebte ereignishandlerargument.
+Das siebte Ereignishandlerargument.
 
 *arg8*<br/>
-Das achte ereignishandlerargument.
+Das achte Argument für den Ereignishandler.
 
 *arg9*<br/>
-Das neunte ereignishandlerargument.
+Das neunte Ereignishandlerargument.
 
-## <a name="remove"></a>EventSource:: Remove
+## <a name="eventsourceremove"></a><a name="remove"></a>EventSource::Entfernen
 
-Löscht den Ereignishandler, der durch das angegebene Ereignis Registrierungs Token dargestellt wird, aus dem Satz von Ereignis Handlern, die dem aktuellen `EventSource`-Objekt zugeordnet sind.
+Löscht den Ereignishandler, der durch das angegebene Ereignisregistrierungstoken dargestellt wird, aus dem Satz von Ereignishandlern, die dem aktuellen `EventSource` Objekt zugeordnet sind.
 
 ```cpp
 HRESULT Remove(
@@ -364,32 +364,32 @@ HRESULT Remove(
 
 ### <a name="parameters"></a>Parameter
 
-*token*<br/>
-Ein Handle, das einen Ereignishandler darstellt. Dieses Token wurde zurückgegeben, als der Ereignishandler von der [Add ()](#add) -Methode registriert wurde.
+*Token*<br/>
+Ein Handle, das einen Ereignishandler darstellt. Dieses Token wurde zurückgegeben, als der Ereignishandler von der [Add()-Methode](#add) registriert wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zur `EventRegistrationToken` Struktur finden Sie im Thema **Windows:: Foundation:: eventregistrationtoken-Struktur** in der **Windows-Runtime** Referenz Dokumentation.
+Weitere Informationen zur `EventRegistrationToken` Struktur finden Sie im Thema **Windows::Foundation::EventRegistrationToken Structure** in der **Windows-Runtime-Referenzdokumentation.**
 
-## <a name="targets"></a>EventSource:: targets_
+## <a name="eventsourcetargets_"></a><a name="targets"></a>EventSource::targets_
 
-Ein Array von einem oder mehreren Ereignis Handlern.
+Ein Array von einem oder mehreren Ereignishandlern.
 
 ```cpp
 ComPtr<Details::EventTargetArray> targets_;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Ereignis, das durch das aktuelle `EventSource`-Objekt dargestellt wird, auftritt, werden die Ereignishandler aufgerufen.
+Wenn das Ereignis auftritt, `EventSource` das durch das aktuelle Objekt dargestellt wird, werden die Ereignishandler aufgerufen.
 
-## <a name="targetspointerlock"></a>EventSource:: targetsPointerLock_
+## <a name="eventsourcetargetspointerlock_"></a><a name="targetspointerlock"></a>EventSource::targetsPointerLock_
 
-Synchronisiert den Zugriff auf interne Datenmember, auch wenn Ereignishandler für diese `EventSource` hinzugefügt, entfernt oder aufgerufen werden.
+Synchronisiert den Zugriff auf interne Datenmember, `EventSource` auch wenn Ereignishandler dazu hinzugefügt, entfernt oder aufgerufen werden.
 
 ```cpp
 Wrappers::SRWLock targetsPointerLock_;

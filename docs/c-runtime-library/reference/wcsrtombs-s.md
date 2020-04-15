@@ -1,8 +1,9 @@
 ---
 title: wcsrtombs_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wcsrtombs_s
+- _o_wcsrtombs_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - wcsrtombs_s function
 - wide characters, strings
 ms.assetid: 9dccb766-113c-44bb-9b04-07a634dddec8
-ms.openlocfilehash: 68f5b6f6b87fb3ad21899035dfc82d997d90cf38
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: 71a2206df9d3afb64fcaf62848988cf116d9071f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518308"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81328104"
 ---
 # <a name="wcsrtombs_s"></a>wcsrtombs_s
 
@@ -58,68 +60,70 @@ errno_t wcsrtombs_s(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>Parameter
 
-*pReturnValue*<br/>
-Die Größe der konvertierten Zeichenfolge in Bytes, einschließlich des NULL-Terminator.
+*Preturnvalue*<br/>
+Die Größe in Bytes der konvertierten Zeichenfolge, einschließlich des Nullabschlusses.
 
 *mbstr*<br/>
 Die Pufferadresse für die resultierende konvertierte Multibyte-Zeichenfolge.
 
 *sizeInBytes*<br/>
-Die Größe des *mbstr* -Puffers in Bytes.
+Die Größe in *mbstr* Bytes des mbstr-Puffers.
 
-*wcstr*<br/>
+*Wcstr*<br/>
 Zeigt auf die zu konvertierende Breitzeichenfolge.
 
 *count*<br/>
-Die maximale Anzahl von Bytes, die im *mbstr* -Puffer gespeichert werden sollen, oder [_TRUNCATE](../../c-runtime-library/truncate.md).
+Die maximale Anzahl von Bytes, die im *mbstr-Puffer* oder [_TRUNCATE](../../c-runtime-library/truncate.md)gespeichert werden sollen.
 
 *mbstate*<br/>
-Ein Zeiger auf ein **mbstate_t** Konvertierungs Zustands Objekt.
+Ein Zeiger auf ein **mbstate_t** Konvertierungsstatusobjekt.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Null, wenn erfolgreich, Fehlercode bei Fehler.
 
-|Fehlerbedingung|Rückgabewert und **errno**|
+|Fehlerzustand|Rückgabewert und **errno**|
 |---------------------|------------------------------|
-|*mbstr* ist **null** , und *sizeingebytes* > 0|**EINVAL**|
-|*wcstr* ist **null**|**EINVAL**|
-|Der Ziel Puffer ist zu klein, um die konvertierte Zeichenfolge zu enthalten (es sei denn, die *Anzahl* **_TRUNCATE**ist; siehe Hinweise unten)|**ERANGE**|
+|*mbstr* ist **NULL** und *sizeInBytes* > 0|**Einval**|
+|*wcstr* ist **NULL**|**Einval**|
+|Der Zielpuffer ist zu klein, um die konvertierte Zeichenfolge zu enthalten (es sei denn, *die Anzahl* ist **_TRUNCATE**; siehe Hinweise unten)|**ERANGE**|
 
-Wenn eine dieser Bedingungen auftritt, wird die Ausnahme für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion einen Fehlercode zurück und legt **errno** wie in der Tabelle angegeben fest.
+Wenn eine dieser Bedingungen auftritt, wird die Ausnahme für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion einen Fehlercode zurück und setzt **errno,** wie in der Tabelle angegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wcsrtombs_s** -Funktion konvertiert eine Zeichenfolge mit breit Zeichen, auf die von *wcstr* verwiesen wird, in Multibytezeichen, die im Puffer gespeichert sind, auf den *mbstr*zeigt, unter Verwendung des in *mbstate*enthaltenen Konvertierungs Zustands. Die Konvertierung wird für jedes Zeichen fortgesetzt, bis eine der folgenden Bedingungen eintritt:
+Die **wcsrtombs_s-Funktion** konvertiert eine Zeichenfolge mit breiten Zeichen, auf die von *wcstr* verwiesen wird, in Multibyte-Zeichen, die im Puffer gespeichert sind, auf den *mbstr*zeigt, und verwendet den Konvertierungsstatus, der in *mbstate*enthalten ist. Die Konvertierung wird für jedes Zeichen fortgesetzt, bis eine der folgenden Bedingungen eintritt:
 
 - Ein Breitzeichen NULL wird erkannt.
 
 - Ein Breitzeichen, das nicht konvertiert werden kann, wird erkannt.
 
-- Die Anzahl der im *mbstr* -Puffer gespeicherten Bytes ist " *count*".
+- Die Anzahl der im *mbstr-Puffer* gespeicherten Bytes entspricht *der Anzahl*.
 
 Die Zielzeichenfolge endet immer mit NULL, selbst bei einem Fehler.
 
-Wenn *count* der besondere Wert [_TRUNCATE](../../c-runtime-library/truncate.md)ist, konvertiert **wcsrtombs_s** so viele der Zeichen folgen, wie in den Ziel Puffer passen, während ein NULL-Terminator weiterhin Platz bleibt.
+Wenn *count* der sonderwert [_TRUNCATE](../../c-runtime-library/truncate.md)ist, konvertiert **wcsrtombs_s** so viel von der Zeichenfolge, wie in den Zielpuffer passt, während er dennoch Platz für einen Nullabschluss lässt.
 
-Wenn **wcsrtombs_s** die Quell Zeichenfolge erfolgreich konvertiert, wird die Größe der konvertierten Zeichenfolge (einschließlich des NULL-Terminator) in den  *&#42;pReturnValue* (vorausgesetzt, dass *pReturnValue* nicht **null**ist) in Byte eingefügt. Dies tritt auch dann auf, wenn das *mbstr* -Argument **null** ist und eine Möglichkeit bietet, die erforderliche Puffergröße zu bestimmen. Beachten Sie, dass die *Anzahl* ignoriert wird, wenn *mbstr* den Wert **null**hat.
+Wenn **wcsrtombs_s** die Quellzeichenfolge erfolgreich konvertiert, wird die Größe in Bytes der konvertierten Zeichenfolge, einschließlich des NULL-Terminators, in *&#42;pReturnValue (vorausgesetzt,* *pReturnValue* ist nicht **NULL**). Dies tritt auch dann auf, wenn das *mbstr-Argument* **NULL** ist und eine Möglichkeit bietet, die erforderliche Puffergröße zu bestimmen. Beachten Sie, dass, wenn *mbstr* **NULL**ist, *die Anzahl* ignoriert wird.
 
-Wenn **wcsrtombs_s** auf ein breit Zeichen stößt, das nicht in ein Multibytezeichen konvertiert werden kann, wird-1 in *\*pReturnValue*eingefügt, der Ziel Puffer auf eine leere Zeichenfolge festgelegt, **errno** auf **EILSEQ**festgelegt und " **EILSEQ**" zurückgegeben.
+Wenn **wcsrtombs_s** auf ein breites Zeichen trifft, kann es nicht in ein Multibyte-Zeichen konvertiert werden, es setzt -1 in * \*pReturnValue*, legt den Zielpuffer auf eine leere Zeichenfolge fest, setzt **errno** auf **EILSEQ**und gibt **EILSEQ**zurück.
 
-Wenn die Sequenzen, auf die von *wcstr* und *mbstr* verwiesen wird, überlappen, ist das Verhalten von **wcsrtombs_s** nicht definiert. **wcsrtombs_s** wird von der LC_TYPE Kategorie des aktuellen Gebiets Schemas beeinflusst.
+Wenn sich die Sequenzen, auf die *wcstr* und *mbstr* zeigten, überlappen, ist das Verhalten von **wcsrtombs_s** nicht definiert. **wcsrtombs_s** wird von der Kategorie LC_TYPE des aktuellen Gebietsschemas beeinflusst.
 
 > [!IMPORTANT]
-> Stellen Sie sicher, dass sich *wcstr* und *mbstr* nicht überlappen und dass die Anzahl der zu konvertierenden breit *Zeichen korrekt ist* .
+> Stellen Sie sicher, dass sich *wcstr* und *mbstr* nicht überlappen und diese *Anzahl* die Anzahl der zu konvertierenden breiten Zeichen korrekt wiedergibt.
 
-Die **wcsrtombs_s** -Funktion unterscheidet [sich von wcstombs_s, _wcstombs_s_l](wcstombs-s-wcstombs-s-l.md) durch die Neustart Fähigkeit. Der Konvertierungs Zustand wird für nachfolgende Aufrufe der gleichen oder anderer Neu startbarer Funktionen in *mbstate* gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert. Beispielsweise würde eine Anwendung **wcsrlen** anstelle von **wcslen**verwenden, wenn ein nachfolgende **wcsrtombs_s** anstelle von **wcstombs_s**verwendet würde.
+Die **wcsrtombs_s-Funktion** unterscheidet sich von [wcstombs_s, _wcstombs_s_l](wcstombs-s-wcstombs-s-l.md) durch ihre Neustartfähigkeit. Der Konvertierungsstatus wird in *mbstate* für nachfolgende Aufrufe derselben oder anderer neustartbarer Funktionen gespeichert. Wenn sowohl Funktionen, die neu gestartet werden können, als auch Funktionen, die nicht neu gestartet werden könnnen, verwendet werden, sind die Ergebnisse undefiniert. Eine Anwendung würde z. B. **wcsrlen** anstelle von **wcslen**verwenden, wenn anstelle von **wcstombs_s**ein nachfolgender Aufruf **von wcsrtombs_s** verwendet würde.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
 ## <a name="exceptions"></a>Ausnahmen
 
-Die **wcsrtombs_s** -Funktion ist multithreadsicher, solange keine Funktion im aktuellen Thread **setlocale** aufruft, während diese Funktion ausgeführt wird und *mbstate* gleich NULL ist.
+Die **wcsrtombs_s-Funktion** ist multithreadsicher, solange keine Funktion im aktuellen Thread **setlocale** aufruft, während diese Funktion ausgeführt wird und der *mbstate* null ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -168,9 +172,9 @@ int main()
 The string was successfully converted.
 ```
 
-## <a name="requirements"></a>-Anforderungen
+## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wcsrtombs_s**|\<wchar.h>|
 

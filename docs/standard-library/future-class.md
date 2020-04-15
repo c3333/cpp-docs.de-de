@@ -20,12 +20,12 @@ helpviewer_keywords:
 - std::future [C++], wait
 - std::future [C++], wait_for
 - std::future [C++], wait_until
-ms.openlocfilehash: 1519fa105f2cd73c1165bb30264828aa987fbd35
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: e71c750ddeb198faa3ae9c5960b2668c376241ed
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68458453"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370707"
 ---
 # <a name="future-class"></a>future-Klasse
 
@@ -38,7 +38,7 @@ template <class Ty>
 class future;
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jeder standardmäßige *asynchrone Anbieter* gibt ein Objekt zurück, dessen Typ eine Instanziierung dieser Vorlage ist. Ein `future`-Objekt liefert den Einzigen Zugriff auf einen asynchronen Anbieter, dem es zugeordnet ist. Wenn Sie mehrere asynchrone Rückgabeobjekte benötigen, die dem gleichen asynchronen Anbieter zugeordnet sind,, kopieren Sie das `future`-Objekt in das [shared_future](../standard-library/shared-future-class.md)-Objekt.
 
@@ -46,34 +46,34 @@ Jeder standardmäßige *asynchrone Anbieter* gibt ein Objekt zurück, dessen Typ
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[future](#future)|Erstellt ein `future`-Objekt.|
+|[Zukunft](#future)|Erstellt ein `future`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[get](#get)|Ruft das Ergebnis ab, das im zugeordneten asynchronen Zustand gespeichert ist.|
-|[share](#share)|Konvertiert das Objekt in ein `shared_future`.|
-|[valid](#valid)|Gibt an, dass das Objekt nicht leer ist.|
-|[wait](#wait)|Blockiert den aktuellen Thread, bis der zugeordnete asynchrone Zustand bereit ist.|
+|[Freigeben](#share)|Konvertiert das Objekt in ein `shared_future`.|
+|[Gültig](#valid)|Gibt an, ob das Objekt nicht leer ist.|
+|[Warte](#wait)|Blockiert den aktuellen Thread, bis der zugeordnete asynchrone Zustand bereit ist.|
 |[wait_for](#wait_for)|Blockiert, bis der zugeordnete asynchrone Zustand bereit ist, oder bis die angegebene Zeit verstrichen ist.|
 |[wait_until](#wait_until)|Blockiert, bis der zugeordnete asynchrone Zustand bereit ist, oder bis ein angegebener Zeitpunkt erreicht ist.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[future::operator=](#op_eq)|Überträgt den zugeordneten asynchronen Zustand aus einem angegebenen Objekt.|
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** \<future>
+**Kopfzeile:** \<zukünftige>
 
 **Namespace:** std
 
-## <a name="future"></a> future::future-Konstruktor
+## <a name="futurefuture-constructor"></a><a name="future"></a>Zukunft::zukünftiger Konstrukteur
 
 Erstellt ein `future`-Objekt.
 
@@ -84,16 +84,16 @@ future(future&& Other) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Außer*\
-Ein `future`-Objekt.
+*Andere*\
+Ein `future` -Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Mit dem ersten Konstruktor wird ein `future`-Objekt erstellt, das über keinen zugeordneten asynchronen Zustand verfügt.
 
-Der zweite Konstruktor erstellt ein `future` -Objekt und überträgt den zugeordneten asynchronen Zustand von einem *anderen*. *Andere* hat keinen zugeordneten asynchronen Zustand.
+Der zweite Konstruktor `future` erstellt ein Objekt und überträgt den zugeordneten asynchronen Zustand aus *Anderen*. *Andere* haben keinen asynchronen Zustand mehr.
 
-## <a name="get"></a> future::get
+## <a name="futureget"></a><a name="get"></a>Zukunft::get
 
 Ruft das Ergebnis ab, das im zugeordneten asynchronen Zustand gespeichert ist.
 
@@ -105,17 +105,17 @@ Ty get();
 
 Wenn das Ergebnis eine Ausnahme ist, wird es erneut von der Methode ausgelöst. Andernfalls wird das Ergebnis zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Bevor es das Ergebnis abruf, blockiert diese Methode den aktuellen Thread, bis der zugeordnete asynchrone Zustand bereit ist.
 
 Für die Teilspezialisierung `future<Ty&>` ist der gespeicherte Wert praktisch ein Verweis auf das Objekt, das dem asynchronen Anbieter als Rückgabewert übergeben wurde.
 
-Da für die Spezialisierung `future<void>`kein gespeicherter Wert vorhanden ist, gibt die Methode " **void**" zurück.
+Da für die Spezialisierung `future<void>`kein gespeicherter Wert vorhanden ist, gibt die Methode **void**zurück.
 
 In anderen Spezialisierung verschiebt die Methode ihren Rückgabewert aus dem gespeicherten Wert. Deshalb sollten Sie diese Methode nur einmal aufrufen.
 
-## <a name="op_eq"></a> future::operator=
+## <a name="futureoperator"></a><a name="op_eq"></a>zukunft::operator=
 
 Überträgt einen zugeordneten asynchronen Zustand aus einem angegebenen Objekt.
 
@@ -126,17 +126,17 @@ future& operator=(future&& Right) noexcept;
 ### <a name="parameters"></a>Parameter
 
 *Richting*\
-Ein `future`-Objekt.
+Ein `future` -Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 `*this`
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nach der Übertragung verfügt *right* nicht mehr über einen zugeordneten asynchronen Zustand.
+Nach der Übertragung verfügt *Right* nicht mehr über einen zugeordneten asynchronen Zustand.
 
-## <a name="share"></a> future::share
+## <a name="futureshare"></a><a name="share"></a>Zukunft::teilen
 
 Konvertiert das Objekt in ein [shared_future](../standard-library/shared-future-class.md)-Objekt.
 
@@ -148,7 +148,7 @@ shared_future<Ty> share();
 
 `shared_future(move(*this))`
 
-## <a name="valid"></a> future::valid
+## <a name="futurevalid"></a><a name="valid"></a>Zukunft::gültig
 
 Legt fest, ob das Objekt einen zugeordneten asynchronen Zustand hat.
 
@@ -158,9 +158,9 @@ bool valid() noexcept;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**true** , wenn das Objekt über einen zugeordneten asynchronen Zustand verfügt. andernfalls **false**.
+**true,** wenn dem Objekt ein asynchroner Zustand zugeordnet ist; andernfalls **false**.
 
-## <a name="wait"></a> future::wait
+## <a name="futurewait"></a><a name="wait"></a>Zukunft::warten
 
 Blockiert den aktuellen Thread, bis der zugeordnete asynchrone Zustand *bereit* ist.
 
@@ -168,11 +168,11 @@ Blockiert den aktuellen Thread, bis der zugeordnete asynchrone Zustand *bereit* 
 void wait() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein zugeordneter asynchroner Zustand ist nur dann *bereit*, wenn sein asynchroner Anbieter einen Rückgabewert oder eine Ausnahme gespeichert hat.
+Ein zugeordneter asynchroner Zustand ist nur *bereit,* wenn sein asynchroner Anbieter einen Rückgabewert oder eine Ausnahme gespeichert hat.
 
-## <a name="wait_for"></a> future::wait_for
+## <a name="futurewait_for"></a><a name="wait_for"></a>Zukunft::wait_for
 
 Blockiert dem aktuelle Thread, bis der zugeordnete asynchrone Zustand *bereit* ist, oder bis ein angegebenes Zeitintervall verstrichen ist.
 
@@ -190,11 +190,11 @@ Ein [chrono::duration](../standard-library/duration-class.md)-Objekt, das ein ma
 
 Ein [future_status](../standard-library/future-enums.md#future_status), das den Grund für die Rückgabe angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein zugeordneter asynchroner Zustand ist nur dann bereit, wenn sein asynchroner Anbieter einen Rückgabewert oder eine Ausnahme gespeichert hat.
 
-## <a name="wait_until"></a> future::wait_until
+## <a name="futurewait_until"></a><a name="wait_until"></a>Zukunft::wait_until
 
 Blockiert den aktuelle Thread, bis der zugeordnete asynchrone Zustand *bereit* ist, oder bis ein angegebener Zeitpunkt verstrichen ist.
 
@@ -212,11 +212,11 @@ Ein [chrono::time_point](../standard-library/time-point-class.md)-Objekt, das ei
 
 Ein [future_status](../standard-library/future-enums.md#future_status), das den Grund für die Rückgabe angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein zugeordneter asynchroner Zustand ist nur dann *bereit*, wenn sein asynchroner Anbieter einen Rückgabewert oder eine Ausnahme gespeichert hat.
+Ein zugeordneter asynchroner Zustand ist nur *bereit,* wenn sein asynchroner Anbieter einen Rückgabewert oder eine Ausnahme gespeichert hat.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[\<future>](../standard-library/future.md)
+[Header-Dateien-Referenz](../standard-library/cpp-standard-library-header-files.md)\
+[\<zukünftige>](../standard-library/future.md)

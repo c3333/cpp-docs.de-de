@@ -9,12 +9,12 @@ helpviewer_keywords:
 - calling native functions from managed code
 - interop [C++], calling native functions from managed code
 ms.assetid: 982cef18-20d9-42b4-8242-a77fa65f2e36
-ms.openlocfilehash: 50f40cc147daaa26a7fa4e607f0d4dd42cf22d61
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 0cdd5db4fae8d9167fa9ab1aeb6a4e8cbfe76ded
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545366"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372508"
 ---
 # <a name="calling-native-functions-from-managed-code"></a>Aufrufen systemeigener Funktionen aus verwaltetem Code
 
@@ -29,7 +29,7 @@ Weitere Informationen finden Sie unter
 In den Beispielen dieses Abschnitts wird veranschaulicht, wie `PInvoke` verwendet werden kann. `PInvoke` kann angepasstes Datenmarshalling vereinfachen, da Sie die Marshallinginformationen deklarativ in Attributen bereitstellen, anstatt prozeduralen Marshallingcode zu schreiben.
 
 > [!NOTE]
->  Die Marshallingbibliothek bietet eine alternative Möglichkeit, Daten auf optimierte Weise zwischen nativen und verwalteten Umgebungen zu marshallen. Weitere Informationen über die Marshallingbibliothek finden Sie unter Übersicht über das Marshalling [in C++ ](../dotnet/overview-of-marshaling-in-cpp.md) . Die Marshallingbibliothek kann nur für Daten verwendet werden, nicht für Funktionen.
+> Die Marshallingbibliothek bietet eine alternative Möglichkeit, Daten auf optimierte Weise zwischen nativen und verwalteten Umgebungen zu marshallen. Weitere Informationen zur Marshallingbibliothek finden Sie unter [Übersicht über Das Marshalling in C++.](../dotnet/overview-of-marshaling-in-cpp.md) Die Marshallingbibliothek kann nur für Daten verwendet werden, nicht für Funktionen.
 
 ## <a name="pinvoke-and-the-dllimport-attribute"></a>PInvoke und das DllImport-Attribut
 
@@ -174,31 +174,31 @@ Aber Sie müssen Typen marshallen, die nicht das gleiche Formular aufweisen. Daz
 
 |wtypes.h|Visual C++|Visual C++ mit /clr|Common Language Runtime|
 |--------------|------------------|-----------------------------|-----------------------------|
-|HANDLE|void-\*|void-\*|IntPtr, UIntPtr|
+|HANDLE|Leere\*|Leere\*|IntPtr, UIntPtr|
 |BYTE|unsigned char|unsigned char|Byte|
 |SHORT|short|short|Int16|
 |WORD|unsigned short|unsigned short|UInt16|
-|INT|int|int|Int32|
+|INT|INT|INT|Int32|
 |UINT|unsigned int|unsigned int|UInt32|
 |LONG|long|long|Int32|
 |BOOL|long|bool|Boolean|
 |DWORD|unsigned long|unsigned long|UInt32|
 |ULONG|unsigned long|unsigned long|UInt32|
 |CHAR|char|char|Char|
-|LPCSTR|char-\*|String ^ [in], StringBuilder ^ [in, out]|String ^ [in], StringBuilder ^ [in, out]|
-|LPCSTR|Konstante char-\*|String ^|String|
+|LPSTR|Char\*|String ^ [in], StringBuilder ^ [in, out]|String ^ [in], StringBuilder ^ [in, out]|
+|LPCSTR|const char\*|String ^|String|
 |LPWSTR|wchar_t \*|String ^ [in], StringBuilder ^ [in, out]|String ^ [in], StringBuilder ^ [in, out]|
-|LPCWSTR|Konstante wchar_t \*|String ^|String|
-|FLOAT|float|float|Single|
+|LPCWSTR|const wchar_t\*|String ^|String|
+|GLEITKOMMAZAHL|float|float|Single|
 |Double|double|double|Double|
 
 Wenn die Adresse an eine nicht verwaltete Funktion übergeben wird, fixiert der Marshaller automatisch den auf dem Laufzeitheap belegten Speicherplatz. Das Fixieren verhindert, dass der Garbage Collector den belegten Speicherblock während der Komprimierung verschiebt.
 
 Im weiter oben gezeigten Beispiel gibt der CharSet-Parameter von DllImport an, wie verwaltete Zeichenfolgen gemarshallt werden sollen; in diesem Fall sollen sie für die native Seite zu ANSI-Zeichenfolgen gemarshallt werden.
 
-Sie können Marshallinginformationen für einzelne Argumente einer nativen Funktion mit dem MarshalAs-Attribut angeben. Es gibt mehrere Optionen für das Mars Hallen einer Zeichenfolge \* Argument: BSTR, ANSIBStr, TBStr, LPStr, LPWSTR und LPTSTR. Der Standard ist LPStr.
+Sie können Marshallinginformationen für einzelne Argumente einer nativen Funktion mit dem MarshalAs-Attribut angeben. Es gibt mehrere Möglichkeiten zum \* Marshallen eines String-Arguments: BStr, ANSIBStr, TBStr, LPStr, LPWStr und LPTStr. Der Standard ist LPStr.
 
-In diesem Beispiel wird die Zeichenfolge als Doppelbyte-Unicode-Zeichenfolge, LPWStr, gemarshallt. Bei der Ausgabe handelt es sich um den ersten Buchstaben von Hallo Welt! Da das zweite Byte der gemarshallten Zeichenfolge NULL ist, interpretiert und legt dieses als zeichenfolgenmarker dar.
+In diesem Beispiel wird die Zeichenfolge als Doppelbyte-Unicode-Zeichenfolge, LPWStr, gemarshallt. Die Ausgabe ist der erste Buchstabe von Hello World! da das zweite Byte der gemarshallten Zeichenfolge null ist und dies als End-of-String-Marker interpretiert.
 
 ```cpp
 // platform_invocation_services_3.cpp
@@ -217,7 +217,7 @@ int main() {
 
 Das MarshalAs-Attribut befindet sich im System::Runtime::InteropServices-Namespace. Das Attribut kann mit anderen Datentypen, z. B. Arrays, verwendet werden.
 
-Wie bereits in diesem Thema erwähnt, bietet die Marshallingbibliothek eine neue, optimierte Methode, Daten zwischen nativen und verwalteten Umgebungen zu marshallen. Weitere Informationen finden Sie unter Übersicht über das Marshalling [in C++ ](../dotnet/overview-of-marshaling-in-cpp.md).
+Wie bereits in diesem Thema erwähnt, bietet die Marshallingbibliothek eine neue, optimierte Methode, Daten zwischen nativen und verwalteten Umgebungen zu marshallen. Weitere Informationen finden Sie unter [Übersicht über das Marshalling in C++](../dotnet/overview-of-marshaling-in-cpp.md).
 
 ## <a name="performance-considerations"></a>Überlegungen zur Leistung
 

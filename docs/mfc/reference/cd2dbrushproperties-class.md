@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CD2DBrushProperties [MFC], CD2DBrushProperties
 - CD2DBrushProperties [MFC], CommonInit
 ms.assetid: c77d717f-0a16-4d74-b2ce-0ae1766ed6f9
-ms.openlocfilehash: 5ca791af658ee719b2e6d6ea78f82e23a66edc98
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bf6399d2a245addb7e2e65100d33643fcd54e893
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62253724"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369289"
 ---
 # <a name="cd2dbrushproperties-class"></a>CD2DBrushProperties-Klasse
 
@@ -31,15 +31,15 @@ class CD2DBrushProperties : public D2D1_BRUSH_PROPERTIES;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DBrushProperties::CD2DBrushProperties](#cd2dbrushproperties)|Überladen. Erstellt eine `CD2D_BRUSH_PROPERTIES` Struktur|
+|[CD2DBrushEigenschaften::CD2DBrushEigenschaften](#cd2dbrushproperties)|Ist überladen. Erstellt `CD2D_BRUSH_PROPERTIES` eine Struktur|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DBrushProperties::CommonInit](#commoninit)|Initialisiert das Objekt|
+|[CD2DBrushEigenschaften::CommonInit](#commoninit)|Initialisiert das Objekt|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -49,11 +49,11 @@ class CD2DBrushProperties : public D2D1_BRUSH_PROPERTIES;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="cd2dbrushproperties"></a>  CD2DBrushProperties::CD2DBrushProperties
+## <a name="cd2dbrushpropertiescd2dbrushproperties"></a><a name="cd2dbrushproperties"></a>CD2DBrushEigenschaften::CD2DBrushEigenschaften
 
-Erstellt eine CD2D_BRUSH_PROPERTIES-Struktur
+Erstellt eine CD2D_BRUSH_PROPERTIES Struktur
 
 ```
 CD2DBrushProperties();
@@ -67,12 +67,12 @@ CD2DBrushProperties(
 ### <a name="parameters"></a>Parameter
 
 *_opacity*<br/>
-Die Basis Durchlässigkeit des Pinsels. Der Standardwert ist 1,0.
+Die Grunddeckkraft des Pinsels. Der Standardwert ist 1,0.
 
 *_transform*<br/>
-Die Transformation, auf den Pinsel angewendet.
+Die Transformation, die auf den Pinsel angewendet werden soll
 
-##  <a name="commoninit"></a>  CD2DBrushProperties::CommonInit
+## <a name="cd2dbrushpropertiescommoninit"></a><a name="commoninit"></a>CD2DBrushEigenschaften::CommonInit
 
 Initialisiert das Objekt
 

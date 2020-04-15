@@ -1,5 +1,5 @@
 ---
-title: Automatisierung
+title: Automation
 ms.date: 11/04/2016
 helpviewer_keywords:
 - Automation servers, about Automation servers
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - MFC COM, Automation
 - methods [MFC], Automation
 ms.assetid: 329117f0-c1aa-4680-a901-bfb71277dfba
-ms.openlocfilehash: 7818aa708a762f2a284be029a6c3f3facd971d9a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e9320ccf7a21c6110c51366fa8af96596512a4a7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62374154"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370825"
 ---
-# <a name="automation"></a>Automatisierung
+# <a name="automation"></a>Automation
 
 Automation (früher: OLE-Automatisierung) ermöglicht es einer Anwendung, die in einer anderen Anwendung implementierten Objekte zu bearbeiten oder Objekte verfügbar zu machen, damit sie bearbeitet werden können.
 
@@ -45,11 +45,11 @@ Ein weiteres Beispiel ist ein Textverarbeitungsprogramm, das seine Funktion zur 
 
 Wichtiger ist die Unterstützung, die Automation Benutzern und Lösungsanbietern bietet. Durch das Verfügbarmachen von Anwendungsfunktionen über eine gemeinsame, klar definierte Schnittstelle ermöglicht Automation die Erstellung von umfassenden Lösungen in einer einzelnen allgemeinen Programmiersprache, z. B. Microsoft Visual Basic, statt in verschiedenen anwendungsspezifischen Makrosprachen.
 
-Viele kommerzielle Anwendungen, wie Microsoft Excel und Microsoft Visual C++, ermöglichen es Ihnen, viele ihrer Funktionen zu automatisieren. Beispielsweise können in Visual C++ können Sie schreiben VBScript-Makros zum Automatisieren von builds, Aspekte der codebearbeitung oder von Debuggingaufgaben ausführen.
+Viele kommerzielle Anwendungen, wie Microsoft Excel und Microsoft Visual C++, ermöglichen es Ihnen, viele ihrer Funktionen zu automatisieren. In Visual C++ können Sie beispielsweise VBScript -Makros schreiben, um Builds, Aspekte der Codebearbeitung oder von Debuggingaufgaben zu automatisieren.
 
-##  <a name="_core_passing_parameters_in_automation"></a> Übergeben von Parametern in Automation
+## <a name="passing-parameters-in-automation"></a><a name="_core_passing_parameters_in_automation"></a> Übergeben von Parametern in Automation
 
-Eine Schwierigkeit bei der Erstellung von Automatisierungsmethoden besteht darin, einen einheitlichen „sicheren“ Mechanismus zum Übergeben von Daten zwischen Automatisierungsservern und -clients bereitzustellen. Automation verwendet den **VARIANT** -Typ, um Daten zu übergeben. Der **VARIANT** -Typ ist eine Union mit Tags. Sie verfügt über ein Datenelement für den Wert (wobei es sich um eine anonyme C++-Union handelt) und ein Datenelement, das den in der Union gespeicherten Informationstyp angibt. Die **VARIANT** -Typ unterstützt eine Reihe von Standarddatentypen: 2 und 4-Byte-Ganzzahlen, 4 und 8-Byte-Gleitkommazahlen, Zeichenfolgen und boolesche Werte. Darüber hinaus unterstützt er die **HRESULT** (OLE-Fehlercodes), **Währung** (ein numerischer fester Punkttyp) und **Datum** (absolutes Datum und Uhrzeit) Typen, sowie Zeiger auf `IUnknown` und `IDispatch` Schnittstellen.
+Eine Schwierigkeit bei der Erstellung von Automatisierungsmethoden besteht darin, einen einheitlichen „sicheren“ Mechanismus zum Übergeben von Daten zwischen Automatisierungsservern und -clients bereitzustellen. Automation verwendet den **VARIANT** -Typ, um Daten zu übergeben. Der **VARIANT** -Typ ist eine Union mit Tags. Sie verfügt über ein Datenelement für den Wert (wobei es sich um eine anonyme C++-Union handelt) und ein Datenelement, das den in der Union gespeicherten Informationstyp angibt. Der **VARIANT** -Typ unterstützt eine Reihe von Standarddatentypen: 2- und 4-Byte-Ganzzahlen, 4 und 8-Byte-Gleitkommazahlen, Zeichenfolgen und boolesche Werte. Darüber hinaus werden die Typen **HRESULT** (OLE-Fehlercodes), **CURRENCY** (ein numerischer Festpunkttyp) und **DATUM** (absolutes Datum und Uhrzeit) sowie Zeiger auf `IUnknown` und `IDispatch` Schnittstellen unterstützt.
 
 Der **VARIANT** -Typ ist in der [COleVariant](../mfc/reference/colevariant-class.md) -Klasse gekapselt. Die unterstützenden **CURRENCY** - und **DATE** -Klassen sind in den [COleCurrency](../mfc/reference/colecurrency-class.md) - und [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md) -Klassen gekapselt.
 
@@ -67,7 +67,7 @@ Der **VARIANT** -Typ ist in der [COleVariant](../mfc/reference/colevariant-class
 
 - [MFCCALC](../overview/visual-cpp-samples.md) Demonstration einer Automatisierungsclientanwendung.
 
-## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+## <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
 - [Automatisierungsclients](../mfc/automation-clients.md)
 
@@ -77,7 +77,7 @@ Der **VARIANT** -Typ ist in der [COleVariant](../mfc/reference/colevariant-class
 
 - [Active Technology](../mfc/mfc-com.md)
 
-## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun
+## <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
 - [Hinzufügen einer Automatisierungsklasse](../mfc/automation-servers.md)
 

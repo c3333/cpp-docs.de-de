@@ -22,16 +22,16 @@ helpviewer_keywords:
 - std::collate [C++], hash
 - std::collate [C++], transform
 ms.assetid: 92168798-9628-4a2e-be6e-fa62dcd4d6a6
-ms.openlocfilehash: 88b04ad4f14faf4d152c0ce2b9c3477928263c52
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: f05c2e9482f8a0bada3868fdc946d4d26a0e0e1d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427176"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371927"
 ---
 # <a name="collate-class"></a>collate-Klasse
 
-Eine Klassen Vorlage, die ein Objekt beschreibt, das als Gebiets Schema Aspekt dienen kann, um die Reihenfolge und Gruppierung von Zeichen innerhalb einer Zeichenfolge zu steuern, Vergleiche zwischen Ihnen und dem Hashwert von Zeichen folgen.
+Eine Klassenvorlage, die ein Objekt beschreibt, das als Gebietsschema dienen kann, um die Reihenfolge und Gruppierung von Zeichen innerhalb einer Zeichenfolge, Vergleiche zwischen ihnen und das Hashing von Zeichenfolgen zu steuern.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,44 +42,44 @@ class collate : public locale::facet;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der innerhalb eines Programms verwendet wird, um Zeichen zu codieren.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in `id` gespeichert. In einigen Sprachen werden Zeichen gruppiert und als einzelnes Zeichen behandelt. In anderen Sprachen hingegen werden einzelne Zeichen als zwei Zeichen behandelt. Die sortierenden Dienste, die von der collate-Klasse bereitgestellt werden, bieten die Möglichkeit zum Sortieren dieser Fälle.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
-|[collate](#collate)|Der Konstruktor für Objekte der `collate`-Klasse, die als Gebietsschemafacet dient, um Zeichenfolgensortierungskonventionen zu bearbeiten.|
+|[Collate](#collate)|Der Konstruktor für Objekte der `collate`-Klasse, die als Gebietsschemafacet dient, um Zeichenfolgensortierungskonventionen zu bearbeiten.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der ein Zeichen vom Typ `CharType` beschreibt.|
 |[string_type](#string_type)|Ein Typ, der eine Zeichenfolge vom Typ `basic_string` beschreibt, die Zeichen vom Typ `CharType` enthält.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[compare](#compare)|Vergleicht zwei Zeichensequenzen nach ihren facetspezifischen Regeln für Gleichheit oder Ungleichheit.|
+|[Vergleichen](#compare)|Vergleicht zwei Zeichensequenzen nach ihren facetspezifischen Regeln für Gleichheit oder Ungleichheit.|
 |[do_compare](#do_compare)|Eine virtuelle Funktion, die aufgerufen wird, um zwei Zeichensequenzen gemäß ihren facetspezifischen Regeln in Bezug auf Gleichheit oder Ungleichheit zu vergleichen.|
 |[do_hash](#do_hash)|Eine virtuelle Funktion, die aufgerufen wird, um den Hashwert der Sequenzen anhand der facetspezifischen Regeln zu bestimmen.|
 |[do_transform](#do_transform)|Eine virtuelle Funktion, die aufgerufen wird, um eine Zeichenfolge aus einem Gebietsschema in eine Zeichenfolge zu konvertieren, die in den lexikografischen Vergleichen mit anderen Zeichensequenzen verwendet werden kann, die auf ähnliche Weise aus demselben Gebietsschema konvertiert wurden.|
-|[hash](#hash)|Bestimmt den Hashwert der Sequenz nach ihren facetspezifischen Regeln.|
-|[transform](#transform)|Konvertiert eine Zeichenfolge von einem Gebietsschema in eine Zeichenfolge, die in den lexikografischen Vergleichen mit anderen Zeichenfolgen verwendet wird, die auf ähnliche Weise aus dem gleichen Gebietsschema konvertiert wurden.|
+|[Hash](#hash)|Bestimmt den Hashwert der Sequenz nach ihren facetspezifischen Regeln.|
+|[Verwandeln](#transform)|Konvertiert eine Zeichenfolge von einem Gebietsschema in eine Zeichenfolge, die in den lexikografischen Vergleichen mit anderen Zeichenfolgen verwendet wird, die auf ähnliche Weise aus dem gleichen Gebietsschema konvertiert wurden.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Gebiets Schema >
+**Header:** \<locale>
 
 **Namespace:** std
 
-## <a name="char_type"></a> collate::char_type
+## <a name="collatechar_type"></a><a name="char_type"></a>kollaten::char_type
 
 Ein Typ, der ein Zeichen vom Typ `CharType` beschreibt.
 
@@ -87,11 +87,11 @@ Ein Typ, der ein Zeichen vom Typ `CharType` beschreibt.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `CharType`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `CharType` dar.
 
-## <a name="collate"></a> collate::collate
+## <a name="collatecollate"></a><a name="collate"></a>collate::collate
 
 Der Konstruktor für Objekte der collate-Klasse, die als Gebietsschemafacet dient, um Sortierungskonventionen für Zeichenfolgen zu behandeln.
 
@@ -108,25 +108,25 @@ const char* _Locname,
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs*\
+*_refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
 *_Locname*\
 Der Name des Gebietsschemas.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
+Die möglichen Werte für den *parameter _Refs* und deren Signifikanz sind:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
 - 1: Die Lebensdauer des Objekts muss manuell verwaltet werden.
 
-- \> 1: diese Werte sind nicht definiert.
+- \>1: Diese Werte sind nicht definiert.
 
-Der Konstruktor initialisiert sein Basisobjekt mit **locale::** [Face(](../standard-library/locale-class.md#facet_class)`_Refs`).
+Der Konstruktor initialisiert sein Basisobjekt mit **locale::**[facet](../standard-library/locale-class.md#facet_class)(`_Refs`).
 
-## <a name="compare"></a> collate::compare
+## <a name="collatecompare"></a><a name="compare"></a>collate::vergleichen
 
 Vergleicht zwei Zeichensequenzen nach ihren facetspezifischen Regeln für Gleichheit oder Ungleichheit.
 
@@ -139,16 +139,16 @@ int compare(const CharType* first1,
 
 ### <a name="parameters"></a>Parameter
 
-*First1*\
+*first1*\
 Zeiger auf das erste Element in der ersten zu vergleichenden Sequenz.
 
-*Last1*\
+*zuletzt1*\
 Zeiger auf das letzte Element in der ersten zu vergleichenden Sequenz.
 
-*First2*\
+*first2*\
 Zeiger auf das erste Element in der zweiten zu vergleichenden Sequenz.
 
-*Last2*\
+*zuletzt2*\
 Zeiger auf das letzte Element in der zweiten zu vergleichenden Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -157,15 +157,15 @@ Die Memberfunktion gibt Folgendes zurück:
 
 - -1, wenn die erste Sequenz im Vergleich kleiner ist als die zweite Sequenz.
 
-- +1, wenn die zweite Sequenz im Vergleich kleiner ist als die erste Sequenz.
+- +1, wenn die zweite Sequenz kleiner als die erste Sequenz ist.
 
 - 0, wenn die Sequenzen gleichwertig sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die erste Sequenz ist im Vergleich kleiner, wenn sie im frühesten ungleichen Paar in den Sequenzen das kleinere Element enthält oder wenn zwar keine ungleichen Paare vorhanden sind, die erste Sequenz aber kürzer ist.
 
-Die Memberfunktion gibt [do_compare](#do_compare)( `first1`, `last1`, `first2`, `last2`) zurück.
+Die Memberfunktion [do_compare](#do_compare)gibt `first1` `last1`do_compare `first2` `last2`zurück ( , , , ).
 
 ### <a name="example"></a>Beispiel
 
@@ -192,7 +192,7 @@ int main() {
 }
 ```
 
-## <a name="do_compare"></a> collate::do_compare
+## <a name="collatedo_compare"></a><a name="do_compare"></a>collate::do_compare
 
 Eine virtuelle Funktion, die aufgerufen wird, um zwei Zeichensequenzen gemäß ihren facetspezifischen Regeln in Bezug auf Gleichheit oder Ungleichheit zu vergleichen.
 
@@ -205,16 +205,16 @@ virtual int do_compare(const CharType* first1,
 
 ### <a name="parameters"></a>Parameter
 
-*First1*\
+*first1*\
 Zeiger auf das erste Element in der ersten zu vergleichenden Sequenz.
 
-*Last1*\
+*zuletzt1*\
 Zeiger auf das letzte Element in der ersten zu vergleichenden Sequenz.
 
-*First2*\
+*first2*\
 Zeiger auf das erste Element in der zweiten zu vergleichenden Sequenz.
 
-*Last2*\
+*zuletzt2*\
 Zeiger auf das letzte Element in der zweiten zu vergleichenden Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -223,19 +223,19 @@ Die Memberfunktion gibt Folgendes zurück:
 
 - -1, wenn die erste Sequenz im Vergleich kleiner ist als die zweite Sequenz.
 
-- +1, wenn die zweite Sequenz im Vergleich kleiner ist als die erste Sequenz.
+- +1, wenn die zweite Sequenz kleiner als die erste Sequenz ist.
 
 - 0, wenn die Sequenzen gleichwertig sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die geschützte virtuelle Member-Funktion vergleicht die Sequenz bei [* First1, Last1) * mit der Sequenz bei *[First2, Last2*). Sie vergleicht Werte, indem `operator<` zwischen Paaren entsprechender Elemente vom Typ `CharType`angewendet wird. Die erste Sequenz ist im Vergleich kleiner, wenn sie im frühesten ungleichen Paar in den Sequenzen das kleinere Element enthält oder wenn zwar keine ungleichen Paare vorhanden sind, die erste Sequenz aber kürzer ist.
+Die geschützte virtuelle Memberfunktion vergleicht die Sequenz bei [ * first1, Last1)* mit der Sequenz bei *[ first2, last2*). Es vergleicht Werte, indem zwischen Paaren von entsprechenden Elementen vom Typ `operator<` `CharType`angewendet wird. Die erste Sequenz ist im Vergleich kleiner, wenn sie im frühesten ungleichen Paar in den Sequenzen das kleinere Element enthält oder wenn zwar keine ungleichen Paare vorhanden sind, die erste Sequenz aber kürzer ist.
 
 ### <a name="example"></a>Beispiel
 
 Siehe das Beispiel für [collate::compare](#compare), mit dem `do_compare` aufgerufen wird.
 
-## <a name="do_hash"></a> collate::do_hash
+## <a name="collatedo_hash"></a><a name="do_hash"></a>collate::do_hash
 
 Eine virtuelle Funktion, die aufgerufen wird, um den Hashwert der Sequenzen anhand der facetspezifischen Regeln zu bestimmen.
 
@@ -245,17 +245,17 @@ virtual long do_hash(const CharType* first, const CharType* last) const;
 
 ### <a name="parameters"></a>Parameter
 
-*erste*\
+*Ersten*\
 Ein Zeiger auf das erste Zeichen in der Sequenz, dessen Hashwert bestimmt werden soll.
 
-*Letzter*\
+*letzte*\
 Ein Zeiger auf das letzte Zeichen in der Sequenz, dessen Hashwert bestimmt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Hashwert des Typs **long** für die Sequenz.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ein Hashwert kann beispielsweise nützlich sein, um Sequenzen pseudozufällig auf ein Array von Listen zu verteilen.
 
@@ -263,7 +263,7 @@ Ein Hashwert kann beispielsweise nützlich sein, um Sequenzen pseudozufällig au
 
 Siehe das Beispiel für [hash](#hash), mit dem `do_hash` aufgerufen wird.
 
-## <a name="do_transform"></a> collate::do_transform
+## <a name="collatedo_transform"></a><a name="do_transform"></a>collate::do_transform
 
 Eine virtuelle Funktion, die aufgerufen wird, um eine Zeichenfolge aus einem Gebietsschema in eine Zeichenfolge zu konvertieren, die in den lexikografischen Vergleichen mit anderen Zeichensequenzen verwendet werden kann, die auf ähnliche Weise aus demselben Gebietsschema konvertiert wurden.
 
@@ -273,25 +273,25 @@ virtual string_type do_transform(const CharType* first, const CharType* last) co
 
 ### <a name="parameters"></a>Parameter
 
-*erste*\
+*Ersten*\
 Ein Zeiger auf das erste Zeichen in der zu konvertierenden Sequenz.
 
-*Letzter*\
+*letzte*\
 Ein Zeiger auf das letzte Zeichen in der zu konvertierenden Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Eine Zeichenfolge, bei der es sich um die transformierte Zeichensequenz handelt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die geschützte virtuelle Memberfunktion gibt ein Objekt der Klasse [string_type](#string_type) zurück, dessen gesteuerte Sequenz eine Kopie der Sequenz [ `first`, `last`) ist. Wenn eine von der COLLATE-\< **CharType**-Klasse abgeleitete Klasse [Do_compare](#do_compare)> überschreibt, sollte Sie auch die `do_transform` überschreiben Bei der Übergabe an `collate::compare` müssen zwei transformierte Zeichenfolgen zu demselben Ergebnis führen, das Sie erhalten würden, wenn die untransformierten Zeichenfolgen für den Vergleich in der abgeleiteten Klasse übergeben würden.
+Die geschützte virtuelle Memberfunktion gibt ein Objekt der Klasse [string_type](#string_type) `first`dessen `last`gesteuerte Sequenz eine Kopie der Sequenz [ , . Wenn eine von collate\< **CharType**> abgeleitete Klasse [do_compare](#do_compare) überschreibt, sollte sie für die Übereinstimmung auch `do_transform` überschreiben. Bei der Übergabe an `collate::compare` müssen zwei transformierte Zeichenfolgen zu demselben Ergebnis führen, das Sie erhalten würden, wenn die untransformierten Zeichenfolgen für den Vergleich in der abgeleiteten Klasse übergeben würden.
 
 ### <a name="example"></a>Beispiel
 
 Siehe das Beispiel für [transform](#transform), mit dem `do_transform` aufgerufen wird.
 
-## <a name="hash"></a> collate::hash
+## <a name="collatehash"></a><a name="hash"></a>collate::hash
 
 Bestimmt den Hashwert der Sequenz nach ihren facetspezifischen Regeln.
 
@@ -301,19 +301,19 @@ long hash(const CharType* first, const CharType* last) const;
 
 ### <a name="parameters"></a>Parameter
 
-*erste*\
+*Ersten*\
 Ein Zeiger auf das erste Zeichen in der Sequenz, dessen Hashwert bestimmt werden soll.
 
-*Letzter*\
+*letzte*\
 Ein Zeiger auf das letzte Zeichen in der Sequenz, dessen Hashwert bestimmt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Hashwert des Typs **long** für die Sequenz.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt [do_hash](#do_hash)( `first`, `last`) zurück.
+Die Memberfunktion gibt `first` `last` [do_hash](#do_hash)zurück ( , ).
 
 Ein Hashwert kann beispielsweise nützlich sein, um Sequenzen pseudozufällig auf ein Array von Listen zu verteilen.
 
@@ -345,7 +345,7 @@ int main( )
 541187293 551279837
 ```
 
-## <a name="string_type"></a> collate::string_type
+## <a name="collatestring_type"></a><a name="string_type"></a>kollaten::string_type
 
 Ein Typ, der eine Zeichenfolge vom Typ `basic_string` beschreibt, die Zeichen vom Typ `CharType` enthält.
 
@@ -353,15 +353,15 @@ Ein Typ, der eine Zeichenfolge vom Typ `basic_string` beschreibt, die Zeichen vo
 typedef basic_string<CharType> string_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt eine Spezialisierung von Klassen Vorlagen [basic_string](../standard-library/basic-string-class.md) , deren Objekte Kopien der Quell Sequenz speichern können.
+Der Typ beschreibt eine Spezialisierung von [Klassenvorlagenbasic_string](../standard-library/basic-string-class.md) deren Objekte Kopien der Quellsequenz speichern können.
 
 ### <a name="example"></a>Beispiel
 
-Unter `string_type`transform[ finden Sie ein Beispiel für das Deklarieren und Verwenden von ](#transform).
+Unter [transform](#transform) finden Sie ein Beispiel für das Deklarieren und Verwenden von `string_type`.
 
-## <a name="transform"></a> collate::transform
+## <a name="collatetransform"></a><a name="transform"></a>collate::transform
 
 Konvertiert eine Zeichenfolge von einem Gebietsschema in eine Zeichenfolge, die in den lexikografischen Vergleichen mit anderen Zeichenfolgen verwendet wird, die auf ähnliche Weise aus dem gleichen Gebietsschema konvertiert wurden.
 
@@ -371,19 +371,19 @@ string_type transform(const CharType* first, const CharType* last) const;
 
 ### <a name="parameters"></a>Parameter
 
-*erste*\
+*Ersten*\
 Ein Zeiger auf das erste Zeichen in der zu konvertierenden Sequenz.
 
-*Letzter*\
+*letzte*\
 Ein Zeiger auf das letzte Zeichen in der zu konvertierenden Sequenz.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Eine Zeichenfolge, die die transformierte Zeichensequenz enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt [Do_transform](#do_transform)(`first`, `last`) zurück.
+Die Memberfunktion gibt`first` `last` [do_transform](#do_transform)zurück ( , ).
 
 ### <a name="example"></a>Beispiel
 
@@ -429,5 +429,5 @@ int main( )
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<locale>](../standard-library/locale.md)\
+[\<Gebietsschema>](../standard-library/locale.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

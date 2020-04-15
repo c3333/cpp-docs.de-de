@@ -7,37 +7,37 @@ helpviewer_keywords:
 - objects [MFC], graphic objects
 - one-stage and two-stage construction of objects [MFC]
 ms.assetid: 5a1c410c-4a4b-4dd9-a2ec-ced831aa7f21
-ms.openlocfilehash: 871db7abd2682d557bf2e80e9cb97624f0dc53a6
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8f221ac6b63a06c65f932a695dfbf7b93ae7ac96
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62160158"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375967"
 ---
 # <a name="one-stage-and-two-stage-construction-of-objects"></a>Ein- oder zweistufige Erstellung von Objekten
 
-Sie haben die Wahl zwischen zwei Techniken für die grafische Objekte, z. B. Stifte und Pinsel erstellen:
+Sie haben die Wahl zwischen zwei Techniken zum Erstellen von Grafikobjekten, z. B. Stifte und Pinsel:
 
-- *1-Stage-Konstruktion*: Erstellen Sie und initialisieren Sie das Objekt in einem Schritt ausgeführt, alle mit dem Konstruktor.
+- *Ein-Bauweise:* Erstellen und initialisieren Sie das Objekt in einer Phase, alle mit dem Konstruktor.
 
-- *Zweistufige Konstruktion*: Erstellen Sie und initialisieren Sie das Objekt in zwei separaten Phasen. Der Konstruktor erstellt das Objekt, und keine Initialisierungsfunktion initialisiert.
+- *Zweistufige Konstruktion*: Konstruieren und initialisieren Sie das Objekt in zwei separaten Stufen. Der Konstruktor erstellt das Objekt, und eine Initialisierungsfunktion initialisiert es.
 
-Erstellung in zwei Schritten ist immer sicherer. Bei Erstellung der ein-kann der Konstruktor eine Ausnahme ausgelöst, wenn Sie die falsche Argumente angeben oder die speicherbelegung fehlschlägt. Dieses Problem ist aufgrund der zweistufige Konstruktion vermieden werden, müssen Sie für den Fehler zu überprüfen. In beiden Fällen ist das Zerstören des-Objekts den gleichen Prozess aus.
+Zweistufiger Bau ist immer sicherer. Bei einer einstufigen Konstruktion kann der Konstruktor eine Ausnahme auslösen, wenn Sie falsche Argumente angeben oder die Speicherzuweisung fehlschlägt. Dieses Problem wird durch zweistufige Konstruktion vermieden, obwohl Sie auf Fehler überprüfen müssen. In beiden Fällen ist das Zerstören des Objekts derselbe Prozess.
 
 > [!NOTE]
->  Diese Verfahren gelten für die Erstellung beliebiger Objekte, die nicht nur Grafikobjekte.
+> Diese Techniken gelten für das Erstellen von Objekten, nicht nur für Grafikobjekte.
 
-## <a name="example-of-both-construction-techniques"></a>Beispiel für beide Verfahren für die Konstruktion
+## <a name="example-of-both-construction-techniques"></a>Beispiel für beide Konstruktionstechniken
 
-Das folgende kurze Beispiel zeigt beide Methoden zum Erstellen ein Pen-Objekt:
+Das folgende kurze Beispiel zeigt beide Methoden zum Erstellen eines Stiftobjekts:
 
 [!code-cpp[NVC_MFCDocViewSDI#6](../mfc/codesnippet/cpp/one-stage-and-two-stage-construction-of-objects_1.cpp)]
 
-### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr erfahren
+### <a name="what-do-you-want-to-know-more-about"></a>Was möchten Sie mehr darüber wissen?
 
-- [Grafikobjekte](../mfc/graphic-objects.md)
+- [Grafische Objekte](../mfc/graphic-objects.md)
 
-- [Auswählen eines Grafikobjekts für einen Gerätekontext](../mfc/selecting-a-graphic-object-into-a-device-context.md)
+- [Auswählen eines Grafikobjekts in einem Gerätekontext](../mfc/selecting-a-graphic-object-into-a-device-context.md)
 
 - [Gerätekontexte](../mfc/device-contexts.md)
 

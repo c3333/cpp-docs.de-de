@@ -1,5 +1,5 @@
 ---
-title: CMF CListCtrl-Klasse
+title: CMFCListCtrl-Klasse
 ms.date: 07/30/2019
 f1_keywords:
 - CMFCListCtrl
@@ -28,16 +28,16 @@ helpviewer_keywords:
 - CMFCListCtrl [MFC], SetSortColumn
 - CMFCListCtrl [MFC], Sort
 ms.assetid: 50d16aee-138c-4f34-8690-cb75d544ef2e
-ms.openlocfilehash: 599a00af28ee5b8effbabbe5b334022ceb49f91a
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 63fbfd236ed98eee3b90f4a20b191817026903c7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425820"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370773"
 ---
-# <a name="cmfclistctrl-class"></a>CMF CListCtrl-Klasse
+# <a name="cmfclistctrl-class"></a>CMFCListCtrl-Klasse
 
-Die `CMFCListCtrl`-Klasse erweitert die Funktionen der [CListCtrl-Klassen](../../mfc/reference/clistctrl-class.md) Klasse durch Unterstützung der erweiterten Header Steuerungs Funktionalität der [CMF-STRG-Klasse](../../mfc/reference/cmfcheaderctrl-class.md).
+Die `CMFCListCtrl` Klasse erweitert die Funktionalität der [CListCtrl-Klassenklasse,](../../mfc/reference/clistctrl-class.md) indem sie die erweiterte Headersteuerungsfunktionalität der [CMFCHeaderCtrl-Klasse](../../mfc/reference/cmfcheaderctrl-class.md)unterstützt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -49,34 +49,34 @@ class CMFCListCtrl : public CListCtrl
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMF CListCtrl:: enablemarksortedcolumn](#enablemarksortedcolumn)|Ermöglicht das Markieren einer sortierten Spalte mit einer anderen Hintergrundfarbe.|
-|[CMF CListCtrl:: enablemultiplesort](#enablemultiplesort)|Aktiviert den mehrfach Sortiermodus.|
-|[CMF CListCtrl:: getheiaderctrl](#getheaderctrl)|Gibt einen Verweis auf das unterstrichene Header Steuerelement zurück.|
-|[CMF CListCtrl:: ismultiplesort](#ismultiplesort)|Überprüft, ob sich das Listen Steuerelement im mehrfach Sortiermodus befindet.|
-|[CMF CListCtrl:: oncompareitems](#oncompareitems)|Wird von Framework aufgerufen, wenn zwei Listen Steuerungselemente verglichen werden müssen.|
-|[CMF CListCtrl:: ongetcellbkcolor](#ongetcellbkcolor)|Wird von Framework aufgerufen, wenn es die Hintergrundfarbe einer einzelnen Zelle bestimmen muss.|
-|[CMF CListCtrl:: ongetcellfont](#ongetcellfont)|Wird von Framework aufgerufen, wenn es die Schriftart für die gezeichnete Zelle abrufen muss.|
-|[CMF CListCtrl:: ongetcelltextcolor](#ongetcelltextcolor)|Wird von Framework aufgerufen, wenn es die Textfarbe einer einzelnen Zelle bestimmen muss.|
-|[CMF CListCtrl:: removesortcolumn](#removesortcolumn)|Entfernt eine Sortier Spalte aus der Liste der sortierten Spalten.|
-|[CMF CListCtrl:: setsortcolumn](#setsortcolumn)|Legt die aktuelle sortierte Spalte und die Sortierreihenfolge fest.|
-|[CMF CListCtrl:: Sort](#sort)|Sortiert das Listen Steuerelement.|
+|[CMFCListCtrl::EnableMarkSortedColumn](#enablemarksortedcolumn)|Ermöglicht die Möglichkeit, eine sortierte Spalte mit einer anderen Hintergrundfarbe zu markieren.|
+|[CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)|Aktiviert den Mehrfachsorsermodus.|
+|[CMFCListCtrl::GetHeaderCtrl](#getheaderctrl)|Gibt einen Verweis auf das unterstrichene Headersteuerelement zurück.|
+|[CMFCListCtrl::IsMultipleSort](#ismultiplesort)|Überprüft, ob sich das Listensteuerelement im Mehrfachsorsermodus befindet.|
+|[CMFCListCtrl::OnCompareItems](#oncompareitems)|Wird vom Framework aufgerufen, wenn es zwei Listensteuerelemente vergleichen muss.|
+|[CMFCListCtrl::OnGetCellBkColor](#ongetcellbkcolor)|Wird vom Framework aufgerufen, wenn es die Hintergrundfarbe einer einzelnen Zelle bestimmen muss.|
+|[CMFCListCtrl::OnGetCellFont](#ongetcellfont)|Wird vom Framework aufgerufen, wenn es die Schriftart für die gezeichnete Zelle abrufen muss.|
+|[CMFCListCtrl::OnGetCellTextColor](#ongetcelltextcolor)|Wird vom Framework aufgerufen, wenn es die Textfarbe einer einzelnen Zelle bestimmen muss.|
+|[CMFCListCtrl::RemoveSortColumn](#removesortcolumn)|Entfernt eine Sortierspalte aus der Liste der sortierten Spalten.|
+|[CMFCListCtrl::SetSortColumn](#setsortcolumn)|Legt die aktuelle sortierte Spalte und die Sortierreihenfolge fest.|
+|[CMFCListCtrl::Sortieren](#sort)|Sortiert das Listensteuerelement.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CMFCListCtrl` bietet zwei Verbesserungen an der [CListCtrl Class](../../mfc/reference/clistctrl-class.md) -Klasse. Zuerst zeigt dies an, dass die Spalten Sortierung eine verfügbare Option ist, indem automatisch ein Sortier Pfeil für den Header gezeichnet wird. Zweitens wird die Daten Sortierung für mehrere Spalten gleichzeitig unterstützt.
+`CMFCListCtrl`bietet zwei Erweiterungen der [CListCtrl-Klassenklasse.](../../mfc/reference/clistctrl-class.md) Zunächst wird angegeben, dass die Spaltensortierung eine verfügbare Option ist, indem automatisch ein Sortierpfeil auf der Kopfzeile gezeichnet wird. Zweitens unterstützt es die Datensortierung mehrerer Spalten gleichzeitig.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCListCtrl` -Klasse. Das Beispiel zeigt, wie ein Listen Steuerelement erstellt, Spalten eingefügt, Elemente eingefügt, der Text eines Elements festgelegt und die Schriftart des Listen Steuer Elements festgelegt wird. Dieser Code Ausschnitt ist Teil des [Visual Studio-Demo](../../overview/visual-cpp-samples.md)Beispiels.
+Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCListCtrl` -Klasse. Das Beispiel zeigt, wie Sie ein Listensteuerelement erstellen, Spalten einfügen, Elemente einfügen, den Text eines Elements festlegen und die Schriftart des Listensteuerelements festlegen. Dieser Codeausschnitt ist Teil des [Visual Studio Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#25](../../mfc/codesnippet/cpp/cmfclistctrl-class_1.h)]
 [!code-cpp[NVC_MFC_VisualStudioDemo#26](../../mfc/codesnippet/cpp/cmfclistctrl-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -84,13 +84,13 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 [CListCtrl](../../mfc/reference/clistctrl-class.md)
 
-[CMF CListCtrl](../../mfc/reference/cmfclistctrl-class.md)
+[CMFCListCtrl](../../mfc/reference/cmfclistctrl-class.md)
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** afxlistctrl. h
+**Kopfzeile:** afxlistctrl.h
 
-##  <a name="enablemarksortedcolumn"></a>CMF CListCtrl:: enablemarksortedcolumn
+## <a name="cmfclistctrlenablemarksortedcolumn"></a><a name="enablemarksortedcolumn"></a>CMFCListCtrl::EnableMarkSortedColumn
 
 Markiert die sortierten Spalten mit einer anderen Hintergrundfarbe.
 
@@ -102,19 +102,19 @@ void EnableMarkSortedColumn(
 
 ### <a name="parameters"></a>Parameter
 
-*BMARK*<br/>
-in Ein boolescher Parameter, der bestimmt, ob eine andere Hintergrundfarbe aktiviert werden soll.
+*bMark*<br/>
+[in] Ein boolescher Parameter, der bestimmt, ob eine andere Hintergrundfarbe aktiviert werden soll.
 
-*bredraw*<br/>
-in Ein boolescher Parameter, der bestimmt, ob das Steuerelement sofort neu gezeichnet werden soll.
+*bZeichnung*<br/>
+[in] Ein boolescher Parameter, der bestimmt, ob das Steuerelement sofort neu gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`EnableMarkSortedColumn` verwendet die-Methode `CDrawingManager::PixelAlpha`, um zu berechnen, welche Farbe für sortierte Spalten verwendet werden soll. Die ausgewählte Farbe basiert auf der regulären Hintergrundfarbe.
+`EnableMarkSortedColumn`verwendet die `CDrawingManager::PixelAlpha` Methode, um zu berechnen, welche Farbe für sortierte Spalten verwendet werden soll. Die gewählte Farbe basiert auf der regulären Hintergrundfarbe.
 
-##  <a name="enablemultiplesort"></a>CMF CListCtrl:: enablemultiplesort
+## <a name="cmfclistctrlenablemultiplesort"></a><a name="enablemultiplesort"></a>CMFCListCtrl::EnableMultipleSort
 
-Ermöglicht das Sortieren der Daten Zeilen im Listen Steuerelement durch mehrere Spalten.
+Ermöglicht das Sortieren der Datenzeilen im Listensteuerelement nach mehreren Spalten.
 
 ```
 void EnableMultipleSort(BOOL bEnable = TRUE);
@@ -122,16 +122,16 @@ void EnableMultipleSort(BOOL bEnable = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*benabel*<br/>
-in Ein boolescher Wert, der angibt, ob der mehrere Spalten Sortiermodus aktiviert werden soll.
+*bEnable*<br/>
+[in] Ein boolescher Wert, der angibt, ob der Sortiermodus für mehrere Spalten aktiviert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die Sortierung auf der Grundlage mehrerer Spalten aktivieren, verfügen die Spalten über eine Hierarchie. Die Daten Zeilen werden zuerst nach der primären Spalte sortiert. Alle äquivalenten Werte werden dann basierend auf der Priorität nach jeder nachfolgenden Spalte sortiert.
+Wenn Sie die Sortierung basierend auf mehreren Spalten aktivieren, verfügen die Spalten über eine Hierarchie. Die Datenzeilen werden zuerst nach der primären Spalte sortiert. Alle äquivalenten Werte werden dann nach jeder nachfolgenden Spalte basierend auf der Priorität sortiert.
 
-##  <a name="getheaderctrl"></a>CMF CListCtrl:: getheiaderctrl
+## <a name="cmfclistctrlgetheaderctrl"></a><a name="getheaderctrl"></a>CMFCListCtrl::GetHeaderCtrl
 
-Gibt einen Verweis auf das Header Steuerelement zurück.
+Gibt einen Verweis auf das Headersteuerelement zurück.
 
 ```
 virtual CMFCHeaderCtrl& GetHeaderCtrl();
@@ -139,15 +139,15 @@ virtual CMFCHeaderCtrl& GetHeaderCtrl();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das zugrunde liegende [cmfcheaderctrl](../../mfc/reference/cmfcheaderctrl-class.md) -Objekt.
+Ein Verweis auf das zugrunde liegende [CMFCHeaderCtrl-Objekt.](../../mfc/reference/cmfcheaderctrl-class.md)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Header Steuerelement für ein Listen Steuerelement ist das Fenster, das die Titel für die Spalten enthält. Sie befindet sich normalerweise direkt oberhalb der Spalten.
+Das Headersteuerelement für ein Listensteuerelement ist das Fenster, das die Titel für die Spalten enthält. Es befindet sich in der Regel direkt über den Spalten.
 
-##  <a name="ismultiplesort"></a>CMF CListCtrl:: ismultiplesort
+## <a name="cmfclistctrlismultiplesort"></a><a name="ismultiplesort"></a>CMFCListCtrl::IsMultipleSort
 
-Überprüft, ob das Listen Steuerelement momentan das Sortieren mehrerer Spalten unterstützt.
+Überprüft, ob das Listensteuerelement derzeit das Sortieren nach mehreren Spalten unterstützt.
 
 ```
 BOOL IsMultipleSort() const;
@@ -155,15 +155,15 @@ BOOL IsMultipleSort() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das Listen Steuerelement mehrere Sortierungen unterstützt. Andernfalls false.
+TRUE, wenn das Listensteuerelement mehrere Sortierungen unterstützt; FALSE sonst.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn eine [CMF CListCtrl-Klasse](../../mfc/reference/cmfclistctrl-class.md) mehrere Sortierungen unterstützt, kann der Benutzer die Daten im Listen Steuerelement nach mehreren Spalten sortieren. Um mehrere Sortierungen zu aktivieren, muss [cmfclistctrl:: enablemultiplesort](#enablemultiplesort)aufgerufen werden.
+Wenn eine [CMFCListCtrl-Klasse](../../mfc/reference/cmfclistctrl-class.md) mehrere Sortierungen unterstützt, kann der Benutzer die Daten im Listensteuerelement nach mehreren Spalten sortieren. Um die mehrfache Sortierung zu aktivieren, rufen Sie [CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)auf.
 
-##  <a name="oncompareitems"></a>CMF CListCtrl:: oncompareitems
+## <a name="cmfclistctrloncompareitems"></a><a name="oncompareitems"></a>CMFCListCtrl::OnCompareItems
 
-Das Framework ruft diese Methode auf, wenn zwei Elemente verglichen werden.
+Das Framework ruft diese Methode auf, wenn es zwei Elemente vergleicht.
 
 ```
 virtual int OnCompareItems(
@@ -175,25 +175,25 @@ virtual int OnCompareItems(
 ### <a name="parameters"></a>Parameter
 
 *lParam1*<br/>
-in Das erste zu vergleichende Element.
+[in] Das erste zu vergleichende Element.
 
 *lParam2*<br/>
-in Das zweite zu vergleichende Element.
+[in] Das zweite zu vergleichende Element.
 
-*icolumn*<br/>
-in Der Index der Spalte, die von dieser Methode sortiert wird.
+*iColumn*<br/>
+[in] Der Index der Spalte, die diese Methode sortiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine ganze Zahl, die die relative Position der beiden Elemente angibt. Ein negativer Wert gibt an, dass das erste Element dem zweiten vorangestellt wird. ein positiver Wert gibt an, dass das erste Element dem zweiten Element folgen soll, und 0 bedeutet, dass die beiden Elemente äquivalent sind.
+Eine ganze Zahl, die die relative Position der beiden Elemente angibt. Ein negativer Wert gibt an, dass das erste Element dem zweiten vorangestellt werden soll, ein positiver Wert gibt an, dass das erste Element dem zweiten folgen soll, und Null bedeutet, dass die beiden Elemente äquivalent sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung gibt immer 0 (null) zurück. Überschreiben Sie diese Funktion, um einen eigenen Sortieralgorithmus bereitzustellen.
+Die Standardimplementierung gibt immer 0 zurück. Überschreiben Sie diese Funktion, um einen eigenen Sortieralgorithmus bereitzustellen.
 
-##  <a name="ongetcellbkcolor"></a>CMF CListCtrl:: ongetcellbkcolor
+## <a name="cmfclistctrlongetcellbkcolor"></a><a name="ongetcellbkcolor"></a>CMFCListCtrl::OnGetCellBkColor
 
-Das Framework ruft diese Methode auf, wenn die Hintergrundfarbe einer einzelnen Zelle bestimmt werden muss.
+Das Framework ruft diese Methode auf, wenn es die Hintergrundfarbe einer einzelnen Zelle bestimmen muss.
 
 ```
 virtual COLORREF OnGetCellBkColor(
@@ -203,23 +203,23 @@ virtual COLORREF OnGetCellBkColor(
 
 ### <a name="parameters"></a>Parameter
 
-*nzeile*<br/>
-in Die Zeile der fraglichen Zelle.
+*nRow*<br/>
+[in] Die Zeile der betreffenden Zelle.
 
-*ncolumn*<br/>
-in Die Spalte der fraglichen Zelle.
+*nColumn*<br/>
+[in] Die Spalte der betreffenden Zelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein coloref-Wert, der die Hintergrundfarbe der Zelle angibt.
+Ein COLOREF-Wert, der die Hintergrundfarbe der Zelle angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung von `OnGetCellBkColor` verwendet nicht die angegebenen Eingabeparameter und ruft stattdessen einfach `GetBkColor`auf. Daher hat das gesamte Listen Steuerelement standardmäßig dieselbe Hintergrundfarbe. Sie können `OnGetCellBkColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Hintergrundfarbe zu markieren.
+Die Standardimplementierung `OnGetCellBkColor` von verwendet nicht die angegebenen `GetBkColor`Eingabeparameter und ruft stattdessen einfach auf. Daher hat das gesamte Listensteuerelement standardmäßig dieselbe Hintergrundfarbe. Sie können `OnGetCellBkColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Hintergrundfarbe zu markieren.
 
-##  <a name="ongetcellfont"></a>CMF CListCtrl:: ongetcellfont
+## <a name="cmfclistctrlongetcellfont"></a><a name="ongetcellfont"></a>CMFCListCtrl::OnGetCellFont
 
-Das Framework ruft diese Methode auf, wenn die Schriftart für eine einzelne Zelle abgerufen wird.
+Das Framework ruft diese Methode auf, wenn die Schriftart für eine einzelne Zelle abruft.
 
 ```
 virtual HFONT OnGetCellFont(
@@ -230,26 +230,26 @@ virtual HFONT OnGetCellFont(
 
 ### <a name="parameters"></a>Parameter
 
-*nzeile*<br/>
-in Die Zeile der fraglichen Zelle.
+*nRow*<br/>
+[in] Die Zeile der betreffenden Zelle.
 
-*ncolumn*<br/>
-in Die Spalte der fraglichen Zelle.
+*nColumn*<br/>
+[in] Die Spalte der betreffenden Zelle.
 
-*dwdata*<br/>
-in Benutzerdefinierte Daten. Die Standard Implementierung verwendet diesen Parameter nicht.
+*dwData*<br/>
+[in] Benutzerdefinierte Daten. Die Standardimplementierung verwendet diesen Parameter nicht.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Handle für die Schriftart, die für die aktuelle Zelle verwendet wird.
+Ein Handle für die Schriftart, das für die aktuelle Zelle verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig gibt diese Methode NULL zurück. Alle Zellen in einem Listen Steuerelement haben dieselbe Schriftart. Überschreiben Sie diese Methode, um verschiedene Schriftarten für verschiedene Zellen bereitzustellen.
+Standardmäßig gibt diese Methode NULL zurück. Alle Zellen in einem Listensteuerelement haben dieselbe Schriftart. Überschreiben Sie diese Methode, um verschiedene Schriftarten für verschiedene Zellen bereitzustellen.
 
-##  <a name="ongetcelltextcolor"></a>CMF CListCtrl:: ongetcelltextcolor
+## <a name="cmfclistctrlongetcelltextcolor"></a><a name="ongetcelltextcolor"></a>CMFCListCtrl::OnGetCellTextColor
 
-Das Framework ruft diese Methode auf, wenn Sie die Textfarbe einer einzelnen Zelle bestimmen muss.
+Das Framework ruft diese Methode auf, wenn es die Textfarbe einer einzelnen Zelle bestimmen muss.
 
 ```
 virtual COLORREF OnGetCellTextColor(
@@ -259,23 +259,23 @@ virtual COLORREF OnGetCellTextColor(
 
 ### <a name="parameters"></a>Parameter
 
-*nzeile*<br/>
-in Die Zeile der fraglichen Zelle.
+*nRow*<br/>
+[in] Die Zeile der betreffenden Zelle.
 
-*ncolumn*<br/>
-in Die Spalte der fraglichen Zelle.
+*nColumn*<br/>
+[in] Die Spalte der betreffenden Zelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein coloref-Wert, der die Textfarbe der Zelle angibt.
+Ein COLOREF-Wert, der die Textfarbe der Zelle angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig ruft diese Methode `GetTextColor` unabhängig von den Eingabe Parametern auf. Das gesamte Listen Steuerelement hat dieselbe Textfarbe. Sie können `OnGetCellTextColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Textfarbe zu markieren.
+Standardmäßig ruft diese `GetTextColor` Methode unabhängig von Eingabeparametern auf. Das gesamte Listensteuerelement hat dieselbe Textfarbe. Sie können `OnGetCellTextColor` in einer abgeleiteten Klasse überschreiben, um einzelne Zellen mit einer separaten Textfarbe zu markieren.
 
-##  <a name="removesortcolumn"></a>CMF CListCtrl:: removesortcolumn
+## <a name="cmfclistctrlremovesortcolumn"></a><a name="removesortcolumn"></a>CMFCListCtrl::RemoveSortColumn
 
-Entfernt eine Sortier Spalte aus der Liste der sortierten Spalten.
+Entfernt eine Sortierspalte aus der Liste der sortierten Spalten.
 
 ```
 void RemoveSortColumn(int iColumn);
@@ -283,14 +283,14 @@ void RemoveSortColumn(int iColumn);
 
 ### <a name="parameters"></a>Parameter
 
-*icolumn*<br/>
-in Die Spalte, die entfernt werden soll.
+*iColumn*<br/>
+[in] Die zu entfernende Spalte.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Methode wird eine Sortier Spalte aus dem Header Steuerelement entfernt. Sie ruft [CMF-Datei-STRG:: removesortcolumn](../../mfc/reference/cmfcheaderctrl-class.md#removesortcolumn)auf.
+Diese Methode entfernt eine Sortierspalte aus dem Headersteuerelement. Es ruft [CMFCHeaderCtrl::RemoveSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#removesortcolumn)auf.
 
-##  <a name="setsortcolumn"></a>CMF CListCtrl:: setsortcolumn
+## <a name="cmfclistctrlsetsortcolumn"></a><a name="setsortcolumn"></a>CMFCListCtrl::SetSortColumn
 
 Legt die aktuelle sortierte Spalte und die Sortierreihenfolge fest.
 
@@ -303,22 +303,22 @@ void SetSortColumn(
 
 ### <a name="parameters"></a>Parameter
 
-*icolumn*<br/>
-in Die zu sortierende Spalte.
+*iColumn*<br/>
+[in] Die zu sortierende Spalte.
 
-*bascending*<br/>
-in Ein boolescher Wert, der die Sortierreihenfolge angibt.
+*bAufstieg*<br/>
+[in] Ein boolescher Wert, der die Sortierreihenfolge angibt.
 
-*Badd*<br/>
-in Ein boolescher Wert, der angibt, ob die Methode die Spalte, die von *icolumn* angegeben wird, der Liste der Sortier Spalten hinzufügt.
+*bHinzufügen*<br/>
+[in] Ein boolescher Wert, der angibt, ob die Methode die durch *iColumn* angegebene Spalte zur Liste der Sortierspalten hinzufügt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode übergibt die Eingabeparameter mithilfe der [cmfcheaderctrl:: setsortcolumn](../../mfc/reference/cmfcheaderctrl-class.md#setsortcolumn)-Methode an das Header-Steuerelement.
+Diese Methode übergibt die Eingabeparameter an das Headersteuerelement mithilfe der Methode [CMFCHeaderCtrl::SetSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#setsortcolumn).
 
-##  <a name="sort"></a>CMF CListCtrl:: Sort
+## <a name="cmfclistctrlsort"></a><a name="sort"></a>CMFCListCtrl::Sortieren
 
-Sortiert das Listen Steuerelement.
+Sortiert das Listensteuerelement.
 
 ```
 virtual void Sort(
@@ -329,14 +329,14 @@ virtual void Sort(
 
 ### <a name="parameters"></a>Parameter
 
-*icolumn*<br/>
-in Die zu sortierende Spalte.
+*iColumn*<br/>
+[in] Die zu sortierende Spalte.
 
-*bascending*<br/>
-in Ein boolescher Wert, der die Sortierreihenfolge angibt.
+*bAufstieg*<br/>
+[in] Ein boolescher Wert, der die Sortierreihenfolge angibt.
 
-*Badd*<br/>
-in Ein boolescher Wert, der angibt, ob diese Methode die Spalte, die von *icolumn* angegeben wird, der Liste der Sortier Spalten hinzufügt.
+*bHinzufügen*<br/>
+[in] Ein boolescher Wert, der angibt, ob diese Methode die durch *iColumn* angegebene Spalte zur Liste der Sortierspalten hinzufügt.
 
 ## <a name="see-also"></a>Siehe auch
 

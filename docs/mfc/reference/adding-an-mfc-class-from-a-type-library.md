@@ -6,33 +6,33 @@ helpviewer_keywords:
 - MFC, adding classes from type libraries
 - type libraries, adding MFC classes from
 ms.assetid: aba40476-3cfb-47af-990e-ae2e9e0d79cf
-ms.openlocfilehash: e8264de2c717c874da157cb29ad5e336e3ecbd0f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: bf9c763a215a4880d5b0ad206f6a347341fea9eb
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62296747"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371720"
 ---
 # <a name="adding-an-mfc-class-from-a-type-library"></a>Hinzufügen einer MFC-Klasse aus einer Typbibliothek
 
-Verwenden Sie diesen Assistenten zum Erstellen einer MFC-Klasse von einer Schnittstelle in einer Bibliothek verfügbar. Sie können eine MFC-Klasse in eine [MFC-Anwendung](../../mfc/reference/creating-an-mfc-application.md), eine [MFC-DLL](../../mfc/reference/creating-an-mfc-dll-project.md) oder ein [MFC-ActiveX-Steuerelement](../../mfc/reference/creating-an-mfc-activex-control.md) einfügen.
+Verwenden Sie diesen Assistenten, um eine MFC-Klasse aus einer Schnittstelle in einer verfügbaren Typbibliothek zu erstellen. Sie können eine MFC-Klasse in eine [MFC-Anwendung](../../mfc/reference/creating-an-mfc-application.md), eine [MFC-DLL](../../mfc/reference/creating-an-mfc-dll-project.md) oder ein [MFC-ActiveX-Steuerelement](../../mfc/reference/creating-an-mfc-activex-control.md) einfügen.
 
 > [!NOTE]
->  Sie müssen sich nicht zum Erstellen von eines MFC-Projekts mit der Automatisierung aktiviert, um eine Klasse aus einer Typbibliothek hinzufügen.
+> Sie müssen Ihr MFC-Projekt nicht mit aktivierter Automatisierung erstellen, um eine Klasse aus einer Typbibliothek hinzuzufügen.
 
-Eine Typbibliothek enthält eine binäre Beschreibung der Schnittstellen verfügbar gemacht, von einer Komponente, die Methoden zusammen mit ihren Parametern und Rückgabetypen definieren. Die Typbibliothek muss registriert werden, angezeigt in der **Verfügbare Typbibliotheken** Liste im Hinzufügen von Klassen aus Typelib-Assistent. Finden Sie unter "Inside Distributed COM: Geben Sie Bibliotheken und Sprachintegration"in der MSDN Library Weitere Informationen.
+Eine Typbibliothek enthält eine binäre Beschreibung der Schnittstellen, die von einer Komponente verfügbar gemacht werden, und definiert die Methoden zusammen mit ihren Parametern und Rückgabetypen. Ihre Typbibliothek muss registriert sein, damit sie in der Liste **Verfügbare Typbibliotheken** in der Add-Klasse aus dem Typelib-Assistenten angezeigt wird. Weitere Informationen finden Sie unter "Inside Distributed COM: Type Libraries and Language Integration" in der MSDN-Bibliothek.
 
-### <a name="to-add-an-mfc-class-from-a-type-library"></a>Hinzufügen eine MFC-Klasse aus einer Typbibliothek
+### <a name="to-add-an-mfc-class-from-a-type-library"></a>So fügen Sie eine MFC-Klasse aus einer Typbibliothek hinzu
 
-1. In einem **Projektmappen-Explorer** oder [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code), mit der rechten Maustaste in des Namens des Projekts, dem Sie die Klasse hinzufügen möchten.
+1. Klicken Sie im **Projektmappen-Explorer** oder in der [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code)mit der rechten Maustaste auf den Namen des Projekts, dem Sie die Klasse hinzufügen möchten.
 
 1. Klicken Sie im Kontextmenü auf die Option **Hinzufügen**, und klicken Sie danach auf **Klasse hinzufügen**.
 
-1. In der [Klasse hinzufügen](../../ide/add-class-dialog-box.md) im Dialogfeld im Bereich "Vorlagen", klicken Sie auf **MFC-Klasse aus der Typbibliothek**, und klicken Sie dann auf **öffnen** zum Anzeigen der [Hinzufügen von Klassen aus Typelib-Assistent ](../../mfc/reference/add-class-from-typelib-wizard.md).
+1. Klicken Sie im Dialogfeld [Klassen hinzufügen](../../ide/add-class-dialog-box.md) im Bereich Vorlagen auf **MFC-Klasse in Typelib**, und klicken Sie dann auf **Öffnen,** um die [Klasse hinzufügen vom Typelib-Assistenten](../../mfc/reference/add-class-from-typelib-wizard.md)anzuzeigen.
 
-Im Assistenten können Sie mehr als eine Klasse in einer Typbibliothek hinzufügen. Ebenso können Sie Klassen aus mehr als eine Typbibliothek in einer einzelnen Assistenten-Sitzung hinzufügen.
+Im Assistenten können Sie mehr als eine Klasse in einer Typbibliothek hinzufügen. Ebenso können Sie Klassen aus mehr als einer Typbibliothek in einer einzelnen Assistentensitzung hinzufügen.
 
-Der Assistent erstellt eine MFC-Klasse, die von abgeleiteten [COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md), für jede Schnittstelle, die Sie aus der gewählten Typbibliothek hinzufügen. `COleDispatchDriver` implementiert die Clientseite der OLE-Automatisierung.
+Der Assistent erstellt eine MFC-Klasse, die von [COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md)abgeleitet ist, für jede Schnittstelle, die Sie aus der ausgewählten Typbibliothek hinzufügen. `COleDispatchDriver`implementiert die Clientseite der OLE-Automatisierung.
 
 ## <a name="see-also"></a>Siehe auch
 

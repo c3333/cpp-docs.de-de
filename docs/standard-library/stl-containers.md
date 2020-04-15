@@ -5,32 +5,32 @@ helpviewer_keywords:
 - C++ Standard Library, class template containers
 - containers, C++ Standard Library
 ms.assetid: 8e915ca1-19ba-4f0d-93c8-e2c3bfd638eb
-ms.openlocfilehash: 1119947534c030afaad64e4905e58365ffffd05e
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 01be754dd7b418f64cf495d7563f65b323265df8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425076"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81376704"
 ---
 # <a name="c-standard-library-containers"></a>C++-Standardbibliothekscontainer
 
-Die Standardbibliothek stellt unterschiedliche typsichere Container zum Speichern verknüpfter Objekte bereit. Container sind Klassenvorlagen; Beim Deklarieren einer Containervariablen wird der Typ der Elemente angegeben, die der Container enthalten soll. Container können mit Initialisiererlisten erstellt werden. Sie verfügen über Memberfunktionen zum Hinzufügen und Entfernen von Elementen und Ausführen anderer Vorgänge.
+Die Standardbibliothek stellt unterschiedliche typsichere Container zum Speichern verknüpfter Objekte bereit. Die Container sind Klassenvorlagen. Wenn Sie eine Containervariable deklarieren, geben Sie den Typ der Elemente an, die der Container enthalten soll. Container können mit Initialisiererlisten erstellt werden. Sie verfügen über Memberfunktionen zum Hinzufügen und Entfernen von Elementen und zum Durchführen anderer Vorgänge.
 
-Mit [Iteratoren](../standard-library/iterators.md) können Sie die einzelnen Elemente in einem Container durchlaufen und darauf zugreifen. Iteratoren können explizit mithilfe ihrer Memberfunktionen, Operatoren sowie globalen Funktionen verwendet werden. Sie können sie auch implizit verwenden, z. B. mit einer range-for-Schleife. Iteratoren für alle C++-Standardbibliothekscontainer haben eine gemeinsame Schnittstelle, aber jeder Container definiert seine eigenen speziellen Iteratoren.
+Mit [Iteratoren](../standard-library/iterators.md) können Sie die einzelnen Elemente in einem Container durchlaufen und darauf zugreifen. Sie können Iteratoren explizit verwenden, indem Sie ihre Memberfunktionen und Operatoren sowie globale Funktionen verwenden. Sie können sie auch implizit verwenden, z. B. mit einer range-for-Schleife. Iteratoren für alle C++-Standardbibliothekscontainer haben eine gemeinsame Schnittstelle, aber jeder Container definiert seine eigenen speziellen Iteratoren.
 
 Container können in drei Kategorien unterteilt werden: Sequenzcontainer, assoziative Container und Containeradapter.
 
-## <a name="sequence_containers"></a> Sequenzcontainer
+## <a name="sequence-containers"></a><a name="sequence_containers"></a> Sequenzcontainer
 
 Sequenzcontainer wahren die Reihenfolge der von Ihnen angegebenen eingefügten Elemente.
 
 Ein `vector`-Container verhält sich wie ein Array, kann jedoch nach Bedarf automatisch erweitert werden. Er wird mit direktem Zugriff bzw. zusammenhängend gespeichert, und ist in der Länge hochgradig flexibel. Aus diesen und weiteren Gründen ist `vector` der bevorzugte Sequenzcontainer für die meisten Anwendungen. Verwenden Sie einen Vektor, wenn Sie sich nicht sicher sind, welchen Sequenzcontainertyp Sie verwenden sollen. Weitere Informationen finden Sie unter [vector-Klasse](../standard-library/vector-class.md).
 
-Ein `array`-Container weist einige der Vorteile von `vector` auf, aber er ist in der Länge nicht so flexibel. Weitere Informationen finden Sie unter [vector-Klasse](../standard-library/array-class-stl.md).
+Ein `array` Container hat einige `vector`der Stärken von , aber die Länge ist nicht so flexibel. Weitere Informationen finden Sie unter [vector-Klasse](../standard-library/array-class-stl.md).
 
-Ein `deque`-Container (doppelseitige Warteschlange) ermöglichen schnelles Einfügen und Löschen am Anfang und Ende des Containers. Er bietet die Vorteile von direktem Zugriff und flexibler Länge von `vector`, ist aber nicht zusammenhängend. Weitere Informationen finden Sie unter [deque-Klasse](../standard-library/deque-class.md).
+Ein `deque`-Container (doppelseitige Warteschlange) ermöglichen schnelles Einfügen und Löschen am Anfang und Ende des Containers. Es teilt die Vorteile von , `vector`für den zuzufälligen Zugriff und die flexible Länge von , ist aber nicht zusammenhängend. Weitere Informationen finden Sie unter [deque-Klasse](../standard-library/deque-class.md).
 
-Ein `list`-Container ist eine doppelt verknüpfte Liste, die bidirektionalen Zugriff, schnelles Einfügen und Löschen im gesamten Container ermöglicht, aber direkter Zugriff auf ein Element im Container ist nicht möglich. Weitere Informationen finden Sie unter [list-Klasse](../standard-library/list-class.md).
+Ein `list` Container ist eine doppelt verknüpfte Liste, die bidirektionalen Zugriff, schnelle Einfügungen und schnelle Löschungen an einer beliebigen Stelle im Container ermöglicht, aber Sie können nicht zufällig auf ein Element im Container zugreifen. Weitere Informationen finden Sie unter [list-Klasse](../standard-library/list-class.md).
 
 Ein `forward_list`-Container ist eine einfach verknüpfte Liste. Er ist die Version mit Vorwärtszugriff von `list`. Weitere Informationen finden Sie unter [forward_list-Klasse](../standard-library/forward-list-class.md).
 
@@ -48,7 +48,7 @@ Bei sortierten Zuordnungen und Sätzen werden bidirektionale Iteratoren unterst�
 
 ### <a name="heterogeneous-lookup-in-associative-containers-c14"></a>Heterogenes Nachschlagen in assoziativen Containern (C++14)
 
-Die sortierten assoziativen Container (Map, Multimap, Set und Multiset) unterstützen nun das heterogene Nachschlagen, d. h. Sie müssen nicht länger genau denselben Objekttyp als Schlüssel oder Element in Memberfunktionen wie `find()` und `lower_bound()` übergeben. Stattdessen können Sie einen beliebigen Typ übergeben, für den ein überladener `operator<` definiert ist, mit dem ein Vergleich mit dem Schlüsseltyp aktiviert wird.
+Die geordneten assoziativen Container (Map, Multimap, Set und Multiset) unterstützen jetzt eine heterogene Suche, was bedeutet, dass Sie nicht `find()` mehr `lower_bound()`den genau gleichen Objekttyp wie der Schlüssel oder das Element in Memberfunktionen wie und übergeben müssen. Stattdessen können Sie einen beliebigen Typ übergeben, für den ein überladener `operator<` definiert ist, mit dem ein Vergleich mit dem Schlüsseltyp aktiviert wird.
 
 Heterogenes Nachschlagen wird auf Opt-in-Basis aktiviert, wenn Sie den `std::less<>`- oder `std::greater<>`-„diamond functor“-Vergleichsoperator beim Deklarieren der Containervariablen angeben, wie im Folgenden dargestellt:
 
@@ -58,7 +58,7 @@ std::set<BigObject, std::less<>> myNewSet;
 
 Bei Verwendung des Standardvergleichsoperators weist der Container dasselbe Verhalten wie in C++11 und früheren Versionen auf.
 
-Das folgende Beispiel zeigt, wie ein `operator<` überladen werden kann, damit `std::set`-Benutzer Suchvorgänge durch Übergeben einer kurzen Zeichenfolge ausführen können, die mit jedem `BigObject::id`-Member des Objekts verglichen wird.
+Das folgende Beispiel zeigt, `operator<` wie Sie `std::set` überladen werden, damit Benutzer von a Suchschritte ausführen können, `BigObject::id` indem Sie einfach eine kleine Zeichenfolge übergeben, die mit dem Member jedes Objekts verglichen werden kann.
 
 ```cpp
 #include <set>
@@ -119,9 +119,9 @@ int main()
 //Output: myNewSet element = 62F
 ```
 
-Folgende Memberfunktionen in Map, Multimap, Set und Multiset wurden zur Unterstützung vom heterogenen Nachschlagen überlastet:
+Die folgenden Memberfunktionen in Map, Multimap, Set und Multiset wurden überladen, um eine heterogene Suche zu unterstützen:
 
-1. find
+1. Suchen
 
 1. count
 
@@ -133,7 +133,7 @@ Folgende Memberfunktionen in Map, Multimap, Set und Multiset wurden zur Unterst�
 
 ## <a name="container-adapters"></a>Containeradapter
 
-Ein Containeradapter ist die Variante einer Sequenz oder eines assoziativen Containers, die die Schnittstelle zwecks Einfachheit und Verständlichkeit einschränkt. Bei Containeradaptern werden keine Iteratoren unterstützt.
+Ein Containeradapter ist die Variante einer Sequenz oder eines assoziativen Containers, die die Schnittstelle zwecks Einfachheit und Verständlichkeit einschränkt. Containeradapter unterstützen keine Iteratoren.
 
 Ein `queue`-Container folgt der FIFO-Semantik (first in, first out). Das erste *abgelegte* Element, d.h. das in Warteschlange eingefügte, ist das erste, das entnommen wird, d.h. aus der Warteschlange *entfernt* wird. Weitere Informationen finden Sie unter [queue-Klasse](../standard-library/queue-class.md).
 
@@ -141,13 +141,13 @@ Ein `priority_queue`-Container wird so organisiert, dass das Element, das über 
 
 Ein `stack`-Container folgt der LIFO-Semantik (last in, first out). Das letzte Element, das auf dem Stapel abgelegt wird, ist das erste entnommene Element. Weitere Informationen finden Sie unter [stack-Klasse](../standard-library/stack-class.md).
 
-Da Containeradapter keine Iteratoren unterstützen, können sie nicht mit C++-Standardbibliotheksalgorithmen verwendet werden. Weitere Informationen finden Sie unter [Algorithmen](../standard-library/algorithms.md).
+Da Containeradapter keine Iteratoren unterstützen, können sie nicht mit den C++-Standardbibliotheksalgorithmen verwendet werden. Weitere Informationen finden Sie unter [Algorithmen](../standard-library/algorithms.md).
 
 ## <a name="requirements-for-container-elements"></a>Anforderungen für Containerelemente
 
 Im Allgemeinen können Elemente, die in einen C++-Standardbibliothekscontainer eingefügt werden, fast jeden Objekttyp haben, wenn sie kopiert werden können. Nur verschiebbare Elemente – z. B. `vector<unique_ptr<T>>`, die mithilfe von `unique_ptr<>` erstellt werden, funktionieren, solange keine Memberfunktionen aufgerufen werden, die versuchen, sie zu kopieren.
 
-Vom Destruktor darf keine Ausnahme ausgelöst werden.
+Der Destruktor darf keine Ausnahme auslösen.
 
 Sortierte assoziative Container (früher im Artikel beschrieben) müssen einen öffentlich definierten Vergleichsoperator aufweisen. (Standardmäßig ist `operator<` der Operator, allerdings werden auch Typen, die nicht mit `operator<` arbeiten, unterstützt.
 
@@ -162,15 +162,14 @@ Auf Containerelemente wird mithilfe von Iteratoren zugegriffen. Weitere Informat
 
 ## <a name="comparing-containers"></a>Vergleichen von Containern
 
-Alle Container überladen den Operator „==“ zum Vergleichen von zwei Containern desselben Typs, die den gleichen Elementtyp aufweisen. Mit „==“ können Sie einen Vektor \<string> mit einem anderen Vektor \<string> vergleichen; einen Vektor \<string> mit einer Liste \<string> oder einen Vektor \<string> mit einem Vektor \<char*> können Sie mit „==“ jedoch nicht vergleichen.  Sie können in C++98/03 [std::equal](algorithm-functions.md#equal) oder [std::mismatch](algorithm-functions.md#mismatch) zum Vergleichen unterschiedlicher Containertypen und/oder Elementtypen verwenden. Sie können in C++11 auch [std::is_permutation](algorithm-functions.md#is_permutation) verwenden. In all diesen Fällen gehen die Funktionen jedoch davon aus, dass die Container die gleiche Länge aufweisen. Wenn der zweite Bereich kürzer als der erste ist, kommt es zu nicht definiertem Verhalten. Wenn der zweite Bereich länger ist, sind die Ergebnisse möglicherweise trotzdem falsch, da der Vergleich nie über das Ende des ersten Bereichs hinaus fortgesetzt wird.
+Alle Container überladen den Operator „==“ zum Vergleichen von zwei Containern desselben Typs, die den gleichen Elementtyp aufweisen. Sie können == verwenden,\<um eine\<Vektorzeichenfolge> mit einer anderen Vektorzeichenfolge\<> zu vergleichen, aber Sie können sie nicht verwenden, um eine Vektorzeichenfolge> mit einer Listenzeichenfolge\<> oder einer Vektorzeichenfolge\<> mit einem Vektor-Zeichen*>\<zu vergleichen.  In C++98/03 können Sie [std::equal](algorithm-functions.md#equal) oder [std::mismatch](algorithm-functions.md#mismatch) verwenden, um unterschiedliche Containertypen und/oder Elementtypen zu vergleichen. In C++11 können Sie auch [std::is_permutation](algorithm-functions.md#is_permutation)verwenden. Aber in all diesen Fällen gehen die Funktionen davon aus, dass die Container gleich lang sind. Wenn der zweite Bereich kürzer als der erste ist, kommt es zu nicht definiertem Verhalten. Wenn der zweite Bereich länger ist, sind die Ergebnisse möglicherweise trotzdem falsch, da der Vergleich nie über das Ende des ersten Bereichs hinaus fortgesetzt wird.
 
 ### <a name="comparing-dissimilar-containers-c14"></a>Vergleichen unterschiedlicher Container (C++14)
 
-In c++ 14 und höher können Sie unterschiedliche Container und/oder unterschiedliche Elementtypen mit einer der `std::equal`-, `std::mismatch`-oder `std::is_permutation` Funktions Überladungen vergleichen, die zwei komplette Bereiche annehmen. Mit diesen Überladungen können Sie Container mit unterschiedlicher Länge vergleichen. Diese Überladungen sind weniger für Benutzerfehler anfällig und sind beim Vergleichen von Containern mit unterschiedlicher Länge so optimiert, dass sie in konstanter Zeit FALSE zurückgeben. Aus diesem Grund wird empfohlen, diese Überladungen zu verwenden, es sei denn (1) Sie haben einen klaren Grund dazu, dies nicht zu tun, oder (2) Sie verwenden einen [std:: list](../standard-library/list-class.md)-Container, der nicht von den Optimierungen mit zwei Bereichen profitiert.
+In C++14 und höher können Sie unterschiedliche Container und/oder unterschiedliche Elementtypen `std::mismatch`vergleichen, indem Sie einen der , oder `std::is_permutation` Funktionsüberladungen verwenden, die `std::equal`zwei vollständige Bereiche annehmen. Mit diesen Überladungen können Sie Container mit unterschiedlicher Länge vergleichen. Diese Überladungen sind weniger für Benutzerfehler anfällig und sind beim Vergleichen von Containern mit unterschiedlicher Länge so optimiert, dass sie in konstanter Zeit FALSE zurückgeben. Daher empfehlen wir Ihnen, diese Überladungen zu verwenden, es sei denn, Sie haben einen klaren Grund, einen [std::list-Container](../standard-library/list-class.md) nicht zu verwenden, der nicht von den Dual-Range-Optimierungen profitiert.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Containers (Container)](../cpp/containers-modern-cpp.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)\
-[\<Sample Container>](../standard-library/sample-container.md)\
+[Parallelcontainer](../parallel/concrt/parallel-containers-and-objects.md)\
+[\<Probenbehälter>](../standard-library/sample-container.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

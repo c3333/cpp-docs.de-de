@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CSimpleArrayEqualHelper class
 ms.assetid: a2b55d89-78c9-42ef-842c-5304c6d20ad6
-ms.openlocfilehash: 8b7e32ddab5b2f0667b17b0f127ac2e7e5d9a426
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 386b005777b3e31dd74916a41bc5af2ab82df210
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62277993"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330878"
 ---
 # <a name="csimplearrayequalhelper-class"></a>CSimpleArrayEqualHelper-Klasse
 
-Diese Klasse ist eine Hilfsklasse für die [CSimpleArray](../../atl/reference/csimplearray-class.md) Klasse.
+Diese Klasse ist ein Helfer für die [CSimpleArray-Klasse.](../../atl/reference/csimplearray-class.md)
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,21 +35,21 @@ Eine abgeleitete Klasse.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleArrayEqualHelper::IsEqual](#isequal)|(Statisch) Prüft zwei `CSimpleArray` Objektelemente hinsichtlich ihrer Gleichheit.|
+|[CSimpleArrayEqualHelper::IsEqual](#isequal)|(Statisch) Testet `CSimpleArray` zwei Objektelemente auf Gleichheit.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese "traits"-Klasse dient zur Ergänzung der `CSimpleArray` Klasse. Es stellt eine Methode bereit, für die im Vergleich von zwei Elementen gespeichert werden. eine `CSimpleArray` Objekt. Standardmäßig werden die Elemente verglichen, mit **operator=()**, aber wenn das Array von komplexen Datentypen, die ihre eigenen Equality-Operator hat enthält, müssen Sie diese Klasse überschreiben.
+Diese Merkmalsklasse ist eine `CSimpleArray` Ergänzung zur Klasse. Es stellt eine Methode zum Vergleichen `CSimpleArray` von zwei Elementen bereit, die in einem Objekt gespeichert sind. Standardmäßig werden die Elemente mit **operator=()** verglichen, aber wenn das Array komplexe Datentypen enthält, denen ein eigener Gleichheitsoperator fehlt, müssen Sie diese Klasse überschreiben.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlsimpcoll.h
+**Kopfzeile:** atlsimpcoll.h
 
-##  <a name="isequal"></a>  CSimpleArrayEqualHelper::IsEqual
+## <a name="csimplearrayequalhelperisequal"></a><a name="isequal"></a>CSimpleArrayEqualHelper::IsEqual
 
-Prüft zwei `CSimpleArray` Objektelemente hinsichtlich ihrer Gleichheit.
+Testet `CSimpleArray` zwei Objektelemente auf Gleichheit.
 
 ```
 static bool IsEqual(
@@ -59,18 +59,18 @@ static bool IsEqual(
 
 ### <a name="parameters"></a>Parameter
 
-*t1*<br/>
-Ein Objekt vom Typ "t".
+*T1*<br/>
+Ein Objekt des Typs T.
 
 *t2*<br/>
-Ein Objekt vom Typ "t".
+Ein Objekt des Typs T.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" zurück, wenn die Elemente gleich "false", andernfalls sind.
+Gibt true zurück, wenn die Elemente gleich sind, andernfalls false.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CSimpleArray-Klasse](../../atl/reference/csimplearray-class.md)<br/>
 [CSimpleArrayEqualHelperFalse-Klasse](../../atl/reference/csimplearrayequalhelperfalse-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

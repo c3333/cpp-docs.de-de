@@ -1,9 +1,10 @@
 ---
 title: memmove_s, wmemmove_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wmemmove_s
 - memmove_s
+- _o_wmemmove_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +18,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - wmemmove_s function
 - memmove_s function
 ms.assetid: a17619e4-1307-4bb0-98c6-77f8c68dab2d
-ms.openlocfilehash: bc932bb0b13289349543d042e02ead884921d00a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: baec33046f891f64c04adeccf21f41d3eec7b814
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951785"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81333151"
 ---
 # <a name="memmove_s-wmemmove_s"></a>memmove_s, wmemmove_s
 
@@ -61,7 +63,7 @@ errno_t wmemmove_s(
 *dest*<br/>
 Zielobjekt.
 
-*numberOfElements*<br/>
+*Sizeinbytes*<br/>
 Größe des Zielpuffers.
 
 *src*<br/>
@@ -76,26 +78,28 @@ Null, wenn erfolgreich; ein Fehlercode, wenn ein Fehler auftritt
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*dest*|*numberOfElements*|*src*|Rückgabewert|Inhalt von *dest*|
+|*dest*|*Sizeinbytes*|*src*|Rückgabewert|Inhalt *dest*|
 |------------|------------------------|-----------|------------------|------------------------|
-|**NULL**|any|any|**EINVAL**|nicht geändert|
-|any|any|**NULL**|**EINVAL**|nicht geändert|
-|any|< *Countdown*|any|**ERANGE**|nicht geändert|
+|**Null**|any|any|**Einval**|nicht geändert|
+|any|any|**Null**|**Einval**|nicht geändert|
+|any|< *Count*|any|**ERANGE**|nicht geändert|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Kopiert die *Anzahl* von Bytes von Zeichen von *src* in *dest*. Wenn sich einige Bereiche des Quell-und des Zielbereichs überlappen, stellt **memmove_s** sicher, dass die ursprünglichen Quell Bytes im überlappenden Bereich kopiert werden, bevor Sie überschrieben werden.
+Kopiert *Anzahl* Bytes von Zeichen von *src* nach *dest*. Wenn sich einige Bereiche des Quellbereichs und des Ziels überlappen, **stellt memmove_s** sicher, dass die ursprünglichen Quellbytes im überlappenden Bereich kopiert werden, bevor sie überschrieben werden.
 
-Wenn der Wert *dest* oder wenn *src* ein NULL-Zeiger ist oder wenn die Ziel Zeichenfolge zu klein ist, rufen diese Funktionen einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md) Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
+Wenn *dest* oder *src* ein Nullzeiger ist oder wenn die Zielzeichenfolge zu klein ist, rufen diese Funktionen einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** zurück und setzen **errno** auf **EINVAL**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**memmove_s**|\<string.h>|
 |**wmemmove_s**|\<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -126,7 +130,7 @@ int main()
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Before: 0123456789
