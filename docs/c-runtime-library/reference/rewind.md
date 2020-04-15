@@ -1,8 +1,9 @@
 ---
 title: rewind
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - rewind
+- _o_rewind
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - file pointers [C++], repositioning
 - file pointers [C++]
 ms.assetid: 1a460ce1-28d8-4b5e-83a6-633dca29c28a
-ms.openlocfilehash: 084a6f3d7e817498bffb510d865f4a32021e4ce8
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4b99dd1101727c3ba7d501dffc5abe22edf7f7ff
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949271"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338092"
 ---
 # <a name="rewind"></a>rewind
 
@@ -48,30 +50,32 @@ void rewind(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **Rewind** -Funktion positioniert den mit *Stream* verknüpften Dateizeiger am Anfang der Datei. Der Aufruf **rewind** ist vergleichbar mit
+Die **Reswind-Funktion** positioniert den dem *Stream* zugeordneten Dateizeiger am Anfang der Datei neu. Der Aufruf **rewind** ist vergleichbar mit
 
-**(void) "f Seek" (** _Stream_ **, 0l, SEEK_SET);**
+**(void) fseek(** _stream_**, 0L, SEEK_SET );**
 
-Anders als bei der [Suche](fseek-fseeki64.md)löscht **Rewind** jedoch die Fehlerindikatoren für den Stream und den Dateiende-Indikator. Außerdem gibt **Rewind** im Gegensatz zu [fseek](fseek-fseeki64.md)keinen Wert zurück, um anzugeben, ob der Zeiger erfolgreich verschoben wurde.
+Im Gegensatz zu [fseek](fseek-fseeki64.md)löscht **der Rückspulen** jedoch die Fehlerindikatoren für den Stream sowie den End-of-File-Indikator. Im Gegensatz zu [fseek](fseek-fseeki64.md)gibt **Der Rückspulen** auch keinen Wert zurück, um anzugeben, ob der Zeiger erfolgreich verschoben wurde.
 
-Verwenden Sie zum Löschen des Tastatur Puffers **Rewind** mit dem Stream **stdin**, der standardmäßig mit der Tastatur verknüpft ist.
+Um den Tastaturpuffer zu löschen, verwenden Sie **das Zurückspulen** mit dem Stream **stdin**, der standardmäßig der Tastatur zugeordnet ist.
 
-Wenn Stream ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion zurück, und **errno** ist auf **EINVAL**festgelegt.
+Wenn Stream ein **NULL-Zeiger** ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt diese Funktion zurück und **errno** wird auf **EINVAL**gesetzt.
 
-Weitere Informationen über diese und andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (_doserrno, errno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
-|**rewind**|\<stdio.h>|
+|**Zurückspulen**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -110,7 +114,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 The values written are: 1 and -37

@@ -1,8 +1,9 @@
 ---
 title: _get_fmode
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _get_fmode
+- _o__get_fmode
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - file translation [C++], default mode
 - get_fmode function
 ms.assetid: 22ea70e2-b9b5-422d-b514-64f4beaea45c
-ms.openlocfilehash: 03e07ea44aadec7c15352bb63fd25aa777ee9bfb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fbaa30d0842400037f37508df94726f3e7fd7090
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955885"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81345160"
 ---
 # <a name="_get_fmode"></a>_get_fmode
 
@@ -48,24 +50,26 @@ errno_t _get_fmode(
 
 ### <a name="parameters"></a>Parameter
 
-*pmode*<br/>
-Ein Zeiger auf eine Ganzzahl, die mit dem aktuellen Standardmodus gefüllt werden soll: **_O_TEXT** oder **_O_BINARY**.
+*Pmode*<br/>
+Ein Zeiger auf eine ganze Zahl, die mit dem aktuellen Standardmodus gefüllt werden soll: **_O_TEXT** oder **_O_BINARY**.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt 0 (null) zurück, wenn der Vorgang erfolgreich war. Wenn ein Fehler auftritt, erscheint ein Fehlercode. Wenn *pmode* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **EINVAL**zurück.
+Gibt 0 (null) zurück, wenn der Vorgang erfolgreich war. Wenn ein Fehler auftritt, erscheint ein Fehlercode. Wenn *pmode* **NULL**ist, wird der ungültige Parameterhandler wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben aufgerufen. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktion gibt **EINVAL**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Funktion legt die globale Variable [_fmode](../../c-runtime-library/fmode.md) fest. Diese Variable gibt den Standard-Datei Übersetzungsmodus für e/a-Vorgänge auf niedriger Ebene und Stream-Datei an, wie z. b. **_open**, **_pipe**, **f Open**und [freopen](freopen-wfreopen.md).
+Die Funktion legt die globale Variable [_fmode](../../c-runtime-library/fmode.md) fest. Diese Variable gibt den Standarddateiübersetzungsmodus für E/A-Vorgänge auf niedriger Ebene und Streamdatei an, z. B. **_open**, **_pipe**, **fopen**und [freopen](freopen-wfreopen.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
-|**_get_fmode**|\<stdlib.h>|\<fcntl.h>|
+|**_get_fmode**|\<stdlib.h>|\<fcntl.h >|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -76,4 +80,4 @@ Siehe das Beispiel in [_set_fmode](set-fmode.md).
 [_fmode](../../c-runtime-library/fmode.md)<br/>
 [_set_fmode](set-fmode.md)<br/>
 [_setmode](setmode.md)<br/>
-[Text- und Binärmodusdatei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>
+[Text- und Binärmodus-Datei-E/A](../../c-runtime-library/text-and-binary-mode-file-i-o.md)<br/>

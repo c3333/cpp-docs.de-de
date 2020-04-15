@@ -1,8 +1,9 @@
 ---
 title: rand_s
-ms.date: 01/02/2018
+ms.date: 4/2/2020
 api_name:
 - rand_s
+- _o_rand_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,16 +32,16 @@ helpviewer_keywords:
 - cryptographically secure random numbers
 - pseudorandom numbers
 - numbers, generating pseudorandom
-ms.openlocfilehash: 652521ab472736783ba1b4498ca7d7c3f297e7ee
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b11a40dd9dc58964df77330767a55aa95a179319
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949654"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338203"
 ---
 # <a name="rand_s"></a>rand_s
 
-Generiert eine pseudozufällige Zahl. Dies ist eine sicherere Version der Funktion [Rand](rand.md), mit Sicherheitsverbesserungen, wie in [Sicherheitsfunktionen in der CRT](../../c-runtime-library/security-features-in-the-crt.md)beschrieben.
+Generiert eine pseudozufällige Zahl. Dies ist eine sicherere Version der Funktion [rand](rand.md), mit Sicherheitsverbesserungen, wie unter [Sicherheitsfeatures in der CRT](../../c-runtime-library/security-features-in-the-crt.md)beschrieben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,28 +52,30 @@ errno_t rand_s(unsigned int* randomValue);
 ### <a name="parameters"></a>Parameter
 
 *randomValue*<br/>
-Ein Zeiger auf eine Ganzzahl, die den generierten Wert enthalten soll.
+Ein Zeiger auf eine ganze Zahl, die den generierten Wert aufhält.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Null, wenn erfolgreich, andernfalls ein Fehlercode. Wenn der Eingabe Zeiger _randomValue_ ein NULL-Zeiger ist, ruft die Funktion einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **EINVAL** zurück und legt **errno** auf **EINVAL**fest. Wenn die Funktion aus einem anderen Grund fehlschlägt, wird "*_randomValue_ " auf "0" festgelegt.
+Null, wenn erfolgreich, andernfalls ein Fehlercode. Wenn der Eingabezeiger _randomValue_ ein NULL-Zeiger ist, ruft die Funktion einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **EINVAL** zurück und setzt **errno** auf **EINVAL**. Wenn die Funktion aus einem anderen Grund fehlschlägt, wird *_randomValue_ auf 0 gesetzt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **rand_s** -Funktion schreibt eine Pseudo Zufalls-Ganzzahl im Bereich 0 bis **UINT_MAX** in den Eingabe Zeiger. Die **rand_s** -Funktion verwendet das Betriebssystem, um kryptografisch sichere Zufallszahlen zu generieren. Er verwendet nicht den von der [srand](srand.md) -Funktion generierten Ausgangswert und wirkt sich nicht auf die Zufallszahlen Sequenz aus, die von [Rand](rand.md)verwendet wird.
+Die **rand_s-Funktion** schreibt eine Pseudorandom-Ganzzahl im Bereich 0 bis **UINT_MAX** in den Eingabezeiger. Die **rand_s-Funktion** verwendet das Betriebssystem, um kryptographisch sichere Zufallszahlen zu generieren. Es verwendet nicht den Samen, der von der [Srand-Funktion](srand.md) erzeugt wird, noch beeinflusst es die zufällige Zahlenfolge, die von [rand](rand.md)verwendet wird.
 
-Die **rand_s** -Funktion erfordert, dass Konstante **_CRT_RAND_S** vor der Inklusions Anweisung definiert werden, damit die Funktion deklariert wird, wie im folgenden Beispiel gezeigt:
+Die **funktion rand_s** erfordert, dass konstante **_CRT_RAND_S** vor der Inclusion-Anweisung für die zu deklarierende Funktion definiert werden, wie im folgenden Beispiel:
 
 ```C
+By default, this function's global state is scoped to the application. To change this, see [Global state in the CRT](../global-state.md).
+
 #define _CRT_RAND_S
 #include <stdlib.h>
 ```
 
-**rand_s** hängt von der [rtlgenrandom](/windows/win32/api/ntsecapi/nf-ntsecapi-rtlgenrandom) -API ab, die nur unter Windows XP und höher verfügbar ist.
+**rand_s** hängt von der [RtlGenRandom-API](/windows/win32/api/ntsecapi/nf-ntsecapi-rtlgenrandom) ab, die nur in Windows XP und höher verfügbar ist.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**rand_s**|\<stdlib.h>|
 

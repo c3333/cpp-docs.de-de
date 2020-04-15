@@ -1,10 +1,13 @@
 ---
 title: exp2, exp2f, exp2l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - exp2
 - exp2f
 - exp2l
+- _o_exp2
+- _o_exp2f
+- _o_exp2l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,16 +37,16 @@ helpviewer_keywords:
 - exp2f function
 - exp2l function
 ms.assetid: 526e3e10-201a-4610-a886-533f44ece344
-ms.openlocfilehash: 89e0448501cbd423278607bb22959c6cd1ed9464
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: a5df1a216b4565f013a4c42b4ef4369b5b7f9b04
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941572"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81347582"
 ---
 # <a name="exp2-exp2f-exp2l"></a>exp2, exp2f, exp2l
 
-Berechnet 2 bis zum angegebenen Wert.
+Berechnet 2, das auf den angegebenen Wert erhöht wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -70,35 +74,37 @@ long double exp2l(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Der Wert des Exponenten.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung wird der Basis-2-Exponent von *x*zurückgegeben, d. h. 2<sup>x</sup>. Andernfalls wird einer der folgenden Werte zurückgegeben:
+Wenn erfolgreich, gibt der base-2-Exponent von *x*, d. h. 2<sup>x</sup>, zurück. Andernfalls wird einer der folgenden Werte zurückgegeben:
 
-|Problem|Zurück|
+|Problem|Rückgabewert|
 |-----------|------------|
-|*x* = ±0|1|
+|*x* = 0 €|1|
 |*x* = -INFINITY|+0|
-|*x* = + unendlich|+INFINITY|
-|*x* = Nan|NaN|
+|*x* = +INFINITY|+INFINITY|
+|*x* = NaN|NaN|
 |Überlaufbereichsfehler|+HUGE_VAL, +HUGE_VALF, oder +HUGE_VALL|
-|Unterlaufbereichsfehler|Korrektes Ergebnis nach dem runden|
+|Unterlaufbereichsfehler|Korrektes Ergebnis nach Rundung|
 
-Fehler werden gemäß der Angaben in [_matherr](matherr.md) gemeldet.
+Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **exp2** aufzurufen, die **float** -und **long Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **exp2** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **exp2** aufrufen, die **Float-** und **lange Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt **exp2** immer eine **doppelte**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|C-Header|C++-Header|
+|Routine|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |**exp**, **expf**, **expl**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

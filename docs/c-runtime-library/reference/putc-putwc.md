@@ -1,9 +1,11 @@
 ---
 title: putc, putwc
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - putwc
 - putc
+- _o_putc
+- _o_putwc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +35,12 @@ helpviewer_keywords:
 - _puttc function
 - puttc function
 ms.assetid: a37b2e82-9d88-4565-8190-ff8d04c0ddb9
-ms.openlocfilehash: 2fcd0ea2263cd858b0b4ce855f96c0389956ccc3
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 8809595c90c48976d9f28ffa659714f5b9d919c9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70950097"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338459"
 ---
 # <a name="putc-putwc"></a>putc, putwc
 
@@ -58,23 +61,25 @@ wint_t putwc(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu schreibende Zeichen.
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt das geschriebene Zeichen zurück. Um einen Fehler oder eine dateiendebedingung anzugeben, geben **putc** und **putchar** **EOF**; zurück. **putwc** und **putwchar** geben **WEOF**zurück. Verwenden Sie bei allen vier Routinen [ferror](ferror.md) oder [feof](feof.md), um auf einen Fehler oder ein Dateiende zu prüfen. Wenn ein NULL-Zeiger für *Stream*übergeben wird, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **EOF** oder **WEOF** zurück und legen **errno** auf **EINVAL**fest.
+Gibt das geschriebene Zeichen zurück. Um einen Fehler oder eine Dateiendbedingung anzuzeigen, geben **putc** und **putchar** **EOF**zurück; **putwc** und **putwchar** return **WEOF**. Verwenden Sie bei allen vier Routinen [ferror](ferror.md) oder [feof](feof.md), um auf einen Fehler oder ein Dateiende zu prüfen. Wenn ein Nullzeiger für *stream*übergeben wird, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EOF** oder **WEOF** zurück und setzen **errno** auf **EINVAL**.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **putc** -Routine schreibt das einzelne Zeichen *c* an der aktuellen Position in den Ausgabestream. Jede beliebige ganze Zahl kann an **putc**, aber nur die unteren 8 Bits geschrieben werden. Die **putchar** -Routine ist identisch `putc( c, stdout )`mit. Wenn ein Lesefehler auftritt, wird für jede Routine die Fehleranzeige für den Stream festgelegt. **putc** und **putchar** ähneln **fputc** bzw. **_fputchar**, werden jedoch sowohl als Funktionen als auch als Makros implementiert (siehe [auswählen zwischen Funktionen und Makros](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)). **putwc** und **putwchar** sind breit Zeichen Versionen von **putc** bzw. **putchar**. **putwc** und **putc** Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. **putc** unterstützt derzeit keine Ausgabe in einen Unicode-Stream.
+Die **putc-Routine** schreibt das einzelne Zeichen *c* an der aktuellen Position in den *Ausgabestrom.* Jede ganze Zahl kann an **putc**übergeben werden, aber nur die unteren 8 Bits werden geschrieben. Die **putchar-Routine** `putc( c, stdout )`ist identisch mit . Wenn ein Lesefehler auftritt, wird für jede Routine die Fehleranzeige für den Stream festgelegt. **putc** und **putchar** ähneln **fputc** und **_fputchar**, werden aber sowohl als Funktionen als auch als Makros implementiert (siehe [Auswählen zwischen Funktionen und Makros](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md)). **putwc** und **putwchar** sind breitstellige Versionen von **putc** bzw. **putchar.** **putwc** und **putc** verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet wird. **putc** unterstützt derzeit keine Ausgabe in einem UNICODE-Stream.
 
 Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt. Weitere Informationen finden Sie unter **_putc_nolock, _putwc_nolock**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -84,12 +89,12 @@ Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nic
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**putc**|\<stdio.h>|
 |**putwc**|\<stdio.h> oder \<wchar.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -120,7 +125,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 This is the line of output

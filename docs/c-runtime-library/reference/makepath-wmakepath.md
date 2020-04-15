@@ -1,9 +1,11 @@
 ---
 title: _makepath, _wmakepath
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _makepath
 - _wmakepath
+- _o__makepath
+- _o__wmakepath
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _wmakepath function
 - tmakepath function
 ms.assetid: 5930b197-a7b8-46eb-8519-2841a58cd026
-ms.openlocfilehash: aafde0aeeebb7b773d3f96ca66ae65762dcdebdf
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b92e056816183b4bbb07edb3efec4415655d655e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952930"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81341592"
 ---
 # <a name="_makepath-_wmakepath"></a>_makepath, _wmakepath
 
@@ -71,23 +74,25 @@ void _wmakepath(
 *path*<br/>
 Vollständiger Pfadpuffer
 
-*Antrie*<br/>
-Enthält einen Buchstaben (A, B usw.) für das gewünschte Laufwerk und einen optionalen nachgestellten Doppelpunkt. **_makepath** fügt den Doppelpunkt automatisch in den zusammengesetzten Pfad ein, wenn dieser nicht vorhanden ist. Wenn das Laufwerk **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Laufwerk Buchstabe in der Zeichenfolge für den zusammengesetzten *Pfad* angezeigt.
+*Laufwerk*<br/>
+Enthält einen Buchstaben (A, B usw.) für das gewünschte Laufwerk und einen optionalen nachgestellten Doppelpunkt. **_makepath** fügt den Doppelpunkt automatisch in den zusammengesetzten Pfad ein, wenn er fehlt. Wenn *das Laufwerk* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird in der zusammengesetzten *Pfadzeichenfolge* kein Laufwerkbuchstabe angezeigt.
 
 *dir*<br/>
-Enthält den Pfad der Verzeichnisse, ausgenommen die Laufwerkkennzeichner oder den tatsächlichen Dateinamen. Der nachstehende Schrägstrich ist optional, und entweder ein Schrägstrich (/) oder ein umgekehrter Schrägstrich (\\) oder beides kann in einem einzelnen *dir* -Argument verwendet werden. Wenn kein nachstehender Schrägstrich (/ oder \\) angegeben ist, wird er automatisch eingefügt. Wenn *dir* **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Verzeichnispfad in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+Enthält den Pfad der Verzeichnisse, ausgenommen die Laufwerkkennzeichner oder den tatsächlichen Dateinamen. Der nachfolgende Schrägstrich ist optional, und entweder ein Schrägstrich (/) oder ein umgekehrter Schrägstrich (\\) oder beides kann in einem einzelnen *dir-Argument* verwendet werden. Wenn kein nachstehender Schrägstrich (/ oder \\) angegeben ist, wird er automatisch eingefügt. Wenn *dir* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird kein Verzeichnispfad in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
-*fname*<br/>
-Enthält den Basisdateinamen ohne Dateinamenerweiterungen. Wenn *fname* **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Dateiname in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+*Fname*<br/>
+Enthält den Basisdateinamen ohne Dateinamenerweiterungen. Wenn *fname* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird kein Dateiname in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
-*Antrags*<br/>
-Enthält die eigentliche Dateinamenerweiterung mit oder ohne führenden Punkt (.). **_makepath** fügt den Zeitraum automatisch ein, wenn er nicht in *ext*angezeigt wird. Wenn *ext* **null** ist oder auf eine leere Zeichenfolge zeigt, wird keine Erweiterung in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+*Extern*<br/>
+Enthält die eigentliche Dateinamenerweiterung mit oder ohne führenden Punkt (.). **_makepath** fügt die Periode automatisch ein, wenn sie nicht in *ext*angezeigt wird. Wenn *ext* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird keine Erweiterung in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_makepath** -Funktion erstellt eine zusammengesetzte Pfad Zeichenfolge aus einzelnen Komponenten und speichert das Ergebnis im *Pfad*. Der *Pfad* kann einen Laufwerk Buchstaben, einen Verzeichnispfad, einen Dateinamen und eine Dateinamenerweiterung enthalten. **_wmakepath** ist eine breit Zeichen Version von **_makepath**. die Argumente für **_wmakepath** sind Zeichen folgen mit breit Zeichen. **_wmakepath** und **_makepath** Verhalten sich andernfalls identisch.
+Die **_makepath-Funktion** erstellt eine zusammengesetzte Pfadzeichenfolge aus einzelnen Komponenten, die das Ergebnis im *Pfad*speichert. Der *Pfad* kann einen Laufwerkbuchstaben, einen Verzeichnispfad, einen Dateinamen und eine Dateinamenerweiterung enthalten. **_wmakepath** ist eine breit **gefächerte**Version von _makepath ; Die Argumente für **_wmakepath** sind Zeichenfolgen mit großen Zeichen. **_wmakepath** und **_makepath** verhalten sich ansonsten gleich.
 
-**Sicherheitshinweis** Verwenden Sie eine mit NULL endende Zeichenfolge. Um einen Pufferüberlauf zu vermeiden, darf die mit NULL endenden Zeichenfolge die Größe des *Pfad* Puffers nicht überschreiten. **_makepath** stellt nicht sicher, dass die Länge der Zeichenfolge für den zusammengesetzten Pfad **_MAX_PATH**nicht überschreitet. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+**Sicherheitshinweis** Verwenden Sie eine mit NULL endende Zeichenfolge. Um einen Pufferüberlauf zu vermeiden, darf die null-terminierte Zeichenfolge die Größe des *Pfadpuffers* nicht überschreiten. **_makepath** stellt nicht sicher, dass die Länge der zusammengesetzten Pfadzeichenfolge **_MAX_PATH**nicht überschreitet. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -95,18 +100,18 @@ Die **_makepath** -Funktion erstellt eine zusammengesetzte Pfad Zeichenfolge aus
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tmakepath**|**_makepath**|**_makepath**|**_wmakepath**|
 
-Das *path* -Argument muss auf einen leeren Puffer zeigen, der groß genug ist, um den gesamten Pfad zu speichern. Der zusammengesetzte *Pfad* darf nicht größer als die **_MAX_PATH** -Konstante sein, die in "STDLIB. h" definiert ist.
+Das *Pfadargument* muss auf einen leeren Puffer verweisen, der groß genug ist, um den vollständigen Pfad zu halten. Der zusammengesetzte *Pfad* darf nicht größer sein als die **_MAX_PATH** konstante, die in Stdlib.h definiert ist.
 
-Wenn path **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Außerdem wird **errno** auf **EINVAL**festgelegt. **Null** -Werte sind für alle anderen Parameter zulässig.
+Wenn pfad **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Darüber hinaus ist **errno** auf **EINVAL**gesetzt. **NULL-Werte** sind für alle anderen Parameter zulässig.
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_makepath**|\<stdlib.h>|
 |**_wmakepath**|\<stdlib.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -148,7 +153,7 @@ Path extracted with _splitpath:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_fullpath, _wfullpath](fullpath-wfullpath.md)<br/>
 [_splitpath, _wsplitpath](splitpath-wsplitpath.md)<br/>
 [_makepath_s, _wmakepath_s](makepath-s-wmakepath-s.md)<br/>

@@ -1,6 +1,6 @@
 ---
 title: strlen, wcslen, _mbslen, _mbslen_l, _mbstrlen, _mbstrlen_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbslen
 - _mbslen_l
@@ -8,6 +8,10 @@ api_name:
 - wcslen
 - _mbstrlen_l
 - strlen
+- _o__mbslen
+- _o__mbslen_l
+- _o__mbstrlen
+- _o__mbstrlen_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -52,19 +57,19 @@ helpviewer_keywords:
 - strlen function
 - _mbslen function
 ms.assetid: 16462f2a-1e0f-4eb3-be55-bf1c83f374c2
-ms.openlocfilehash: 5b1d3f7483ec96cbcda7c72178613d81747c8060
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 0aa7c4f666936bae9602d6b2ab95a2731d9c0413
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947578"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81355250"
 ---
 # <a name="strlen-wcslen-_mbslen-_mbslen_l-_mbstrlen-_mbstrlen_l"></a>strlen, wcslen, _mbslen, _mbslen_l, _mbstrlen, _mbstrlen_l
 
 Ruft die Länge einer Zeichenfolge mithilfe des aktuellen Gebietsschemas oder einem angegebenen Gebietsschema ab. Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [strnlen, strnlen_s, wcsnlen, wcsnlen_s, _mbsnlen, _mbsnlen_l, _mbstrnlen, _mbstrnlen_l](strnlen-strnlen-s.md)
 
 > [!IMPORTANT]
-> **_mbslen**, **_mbslen_l**, **_mbstrlen**und **_mbstrlen_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
+> **_mbslen** **, _mbslen_l**, **_mbstrlen**und **_mbstrlen_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -93,7 +98,7 @@ size_t _mbstrlen_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Mit NULL endende Zeichenfolge.
 
 *locale*<br/>
@@ -101,13 +106,15 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt die Anzahl der Zeichen in *Str*zurück, ohne das Terminal NULL. Kein Rückgabewert ist zur Angabe eines Fehlers reserviert, mit Ausnahme von **_mbstrlen** und **_mbstrlen_l**, die `((size_t)(-1))` zurückgeben, wenn die Zeichenfolge ein ungültiges Multibytezeichen enthält.
+Jede dieser Funktionen gibt die Anzahl der Zeichen in *str*zurück, mit Ausnahme des Terminal-Null. Es ist kein Rückgabewert reserviert, um einen Fehler `((size_t)(-1))` anzugeben, mit Ausnahme von **_mbstrlen** und **_mbstrlen_l**, die zurückgegeben werden, wenn die Zeichenfolge ein ungültiges Multibyte-Zeichen enthält.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-die Zeichenfolge wird von der Zeichenfolge als Einzel Byte-Zeichen **Folge interpretiert,** sodass der Rückgabewert immer der Anzahl von Bytes entspricht, selbst wenn die Zeichenfolge Multibytezeichen enthält. **wcslen** ist eine breit Zeichen Version von **strinlen**. Das Argument von **wcslen** ist eine Zeichenfolge mit breit Zeichen, und die Anzahl der Zeichen ist breit Zeichen (zwei Byte). **wcslen** und **Straume** Verhalten sich andernfalls identisch.
+**strlen** interpretiert die Zeichenfolge als Ein-Byte-Zeichenfolge, sodass ihr Rückgabewert immer gleich der Anzahl der Bytes ist, auch wenn die Zeichenfolge Multibyte-Zeichen enthält. **wcslen** ist eine breitstellige Version von **strlen**; Das Argument von **wcslen** ist eine Zeichenfolge mit großen Zeichen, und die Anzahl der Zeichen ist in breiten (zwei Byte) Zeichen. **wcslen** und **strlen** verhalten sich ansonsten gleich.
 
 **Sicherheitshinweis**: Diese Funktionen stellen eine mögliche Bedrohung aufgrund eines Pufferüberlaufproblems dar. Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -117,20 +124,20 @@ die Zeichenfolge wird von der Zeichenfolge als Einzel Byte-Zeichen **Folge inter
 |**_tcsclen**|**strlen**|**_mbslen**|**wcslen**|
 |**_tcsclen_l**|**strlen**|**_mbslen_l**|**wcslen**|
 
-**_mbslen** und **_mbslen_l** geben die Anzahl von Multibytezeichen in einer Multibytezeichenfolge zurück, überprüfen jedoch nicht die Gültigkeit von Multibytezeichen. **_mbstrlen** und **_mbstrlen_l** testen die Gültigkeit von Multibytezeichen und erkennen Multibyte-Zeichen folgen. Wenn die an **_mbstrlen** oder **_mbstrlen_l** über gegebene Zeichenfolge ein ungültiges Multibytezeichen für die Codepage enthält, gibt die Funktion-1 zurück und legt **errno** auf **EILSEQ**fest.
+**_mbslen** und **_mbslen_l** die Anzahl der Multibyte-Zeichen in einer Zeichenfolge mit mehreren Byte-Zeichen zurückgeben, aber sie testen nicht auf Gültigkeit von mehreren Byte-Zeichen. **_mbstrlen** und **_mbstrlen_l** testen auf Gültigkeit von Multibyte-Zeichen und erkennen Multibyte-Zeichen-Sequenzen. Wenn die an **_mbstrlen** oder **_mbstrlen_l** übergebene Zeichenfolge ein ungültiges Multibyte-Zeichen für die Codepage enthält, gibt die Funktion -1 zurück und legt **errno** auf **EILSEQ**fest.
 
 Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strlen**|\<string.h>|
 |**wcslen**|\<string.h> oder \<wchar.h>|
 |**_mbslen**, **_mbslen_l**|\<mbstring.h>|
 |**_mbstrlen**, **_mbstrlen_l**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -197,7 +204,7 @@ Bytes in 'ABCァD' : 6
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>

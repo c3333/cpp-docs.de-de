@@ -1,8 +1,9 @@
 ---
 title: frexp, frexpf, frexpl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - frexp
+- _o_frexp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - frexp function
 - floating-point functions, mantissa and exponent
 ms.assetid: 9b020f2e-3967-45ec-a6a8-d467a071aa55
-ms.openlocfilehash: 3a67ced9bd6653a7c40c98a8cf015663c37457bb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 79fe70341f0d6fef1dc7fe00f872456a11972876
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956638"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81345799"
 ---
 # <a name="frexp-frexpf-frexpl"></a>frexp, frexpf, frexpl
 
@@ -68,7 +70,7 @@ long double frexp(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Gleitkommawert.
 
 *expptr*<br/>
@@ -76,13 +78,15 @@ Zeiger auf gespeicherten Integer-Exponenten
 
 ## <a name="return-value"></a>Rückgabewert
 
-**frexp** gibt die Mantisse zurück. Wenn *x* gleich 0 ist, gibt die Funktion 0 für die Mantisse und den Exponenten zurück. Wenn *expptr* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt 0 zurück.
+**frexp** gibt die Mantisse zurück. Wenn *x* 0 ist, gibt die Funktion 0 sowohl für die Mantisse als auch für den Exponenten zurück. Wenn *expptr* **NULL**ist, wird der ungültige Parameterhandler wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben aufgerufen. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt 0 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **frexp** -Funktion teilt den Gleit Komma Wert (*x*) in eine Mantisse (*m*) und einen Exponenten (*n*) auf, sodass der absolute Wert von *m* größer oder gleich 0,5 und kleiner als 1,0 und *x*  =  ist. *m* * 2<sup>*n*</sup>. Der ganzzahlige Exponent *n* wird an dem Speicherort gespeichert, auf den von *expptr*verwiesen wird.
+Die **frexp-Funktion** gliedert den Gleitkommawert (*x*) in eine Mandissa (*m*) und einen Exponenten (*n*), so dass der absolute Wert von *m* größer oder gleich 0,5 und kleiner als 1,0 und *x* = *m* * 2<sup>*n*</sup>ist. Der ganzzahlige Exponent *n* wird an der Position gespeichert, auf die *expptr*.
 
-C++ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen können. In einem C-Programm übernimmt **frexp** immer einen **Double** -und einen **int** -Zeiger und gibt einen **Double**-Wert zurück.
+C++ ermöglicht eine Überlastung, sodass Sie Überladungen von **frexp**aufrufen können. In einem C-Programm nimmt **frexp** immer einen **doppelten** und einen **int** Zeiger und gibt einen **Double**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,7 +94,7 @@ C++ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen könne
 |--------------|---------------------|
 |**frexp**, **frexpf**, **frexpl**|\<math.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

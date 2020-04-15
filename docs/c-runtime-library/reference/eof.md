@@ -1,8 +1,9 @@
 ---
 title: _eof
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _eof
+- _o__eof
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - testing, for end-of-file
 - end of file
 ms.assetid: 265703f4-d07e-4005-abf3-b1d0cdd9e0b0
-ms.openlocfilehash: 5b5c27f1de3369369776dd030df21be05cf20b7a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3218969c603e771ee6d2cdbf9baeed1728934be6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942006"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81347931"
 ---
 # <a name="_eof"></a>_eof
 
@@ -50,16 +52,18 @@ int _eof(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*Fd*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_eof** gibt 1 zurück, wenn die aktuelle Position das Dateiende ist, oder 0, wenn dies nicht der Fall ist. Der Rückgabewert-1 gibt einen Fehler an. in diesem Fall wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EBADF**festgelegt, wodurch ein ungültiger Dateideskriptor angegeben wird.
+**_eof** gibt 1 zurück, wenn die aktuelle Position das Ende der Datei ist, oder 0, wenn dies nicht der Fall ist. Ein Rückgabewert von -1 gibt einen Fehler an. In diesem Fall wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EBADF**gesetzt, was auf einen ungültigen Dateideskriptor hinweist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_eof** -Funktion bestimmt, ob das Ende der mit *FD* verknüpften Datei erreicht wurde.
+Die **_eof-Funktion** bestimmt, ob das Ende der Datei, die *fd* zugeordnet ist, erreicht wurde.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -67,7 +71,7 @@ Die **_eof** -Funktion bestimmt, ob das Ende der mit *FD* verknüpften Datei err
 |--------------|---------------------|---------------------|
 |**_eof**|\<io.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -115,7 +119,7 @@ int main( void )
 This file contains some text.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Number of bytes read = 29
@@ -124,7 +128,7 @@ Number of bytes read = 29
 ## <a name="see-also"></a>Siehe auch
 
 [Fehlerbehandlung](../../c-runtime-library/error-handling-crt.md)<br/>
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
 [clearerr](clearerr.md)<br/>
 [feof](feof.md)<br/>
 [ferror](ferror.md)<br/>

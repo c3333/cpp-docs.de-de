@@ -1,11 +1,13 @@
 ---
 title: isgraph, iswgraph, _isgraph_l, _iswgraph_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - isgraph
 - iswgraph
 - _iswgraph_l
 - _isgraph_l
+- _o_isgraph
+- _o_iswgraph
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -39,12 +42,12 @@ helpviewer_keywords:
 - _istgraph function
 - _ismbcgraph_l function
 ms.assetid: 531a5f34-4302-4d0a-8a4f-b7ea150ad941
-ms.openlocfilehash: 282f11dfa6a4545b672419d42fe960c0e5001fbf
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: b10038a783f05512f12f25a231dd553a1863c143
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79442961"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343827"
 ---
 # <a name="isgraph-iswgraph-_isgraph_l-_iswgraph_l"></a>isgraph, iswgraph, _isgraph_l, _iswgraph_l
 
@@ -71,16 +74,16 @@ int _iswgraph_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende ganze Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine bestimmte Darstellung eines druckbaren Zeichens ist, das kein Leerzeichen ist. **isgraph** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein anderes druckbares Zeichen als ein Leerzeichen ist. **iswgraph** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein druckbares breit Zeichen ist, das kein breit Zeichenbereich ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Test Bedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn *c* eine bestimmte Darstellung eines anderen druckbaren Zeichens als eines Leerzeichens ist. **isgraph** gibt einen Wert ungleich Null zurück, wenn *c* ein druckbares Zeichen ist, das nicht ein Leerzeichen ist. **iswgraph** gibt einen Wert ungleich Null zurück, wenn *c* ein druckbares breites Zeichen ist, das nicht ein großer Zeichenraum ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Testbedingung nicht erfüllt.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **suffix _l** verwenden das Gebietsschema, das übergeben wird, anstelle des aktuellen Gebietsschemas für ihr gebietsschemaabhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **isgraph** und **_isgraph_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
+Das Verhalten von **isgraph** und **_isgraph_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich 0 bis 0xFF, einschließlich. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* nicht einer dieser Werte ist, werden die Funktionen eine Assertion aus.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -89,7 +92,11 @@ Das Verhalten von **isgraph** und **_isgraph_l** ist nicht definiert, wenn *c* n
 |**_istgraph**|**isgraph**|[_ismbcgraph](ismbcgraph-functions.md)|**iswgraph**|
 |**_istgraph_l**|**_isgraph_l**|[_ismbcgraph_l](ismbcgraph-functions.md)|**_iswgraph_l**|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
@@ -98,10 +105,10 @@ Das Verhalten von **isgraph** und **_isgraph_l** ist nicht definiert, wenn *c* n
 |**_isgraph_l**|\<ctype.h>|
 |**_iswgraph_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
-[Gebietsschema](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[Locale](../../c-runtime-library/locale.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>

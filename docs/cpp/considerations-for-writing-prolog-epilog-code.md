@@ -1,5 +1,5 @@
 ---
-title: Überlegungen zum Schreiben von Prolog-Epilogcode
+title: Überlegungen für das Schreiben des Prolog-/Epilogcodes
 ms.date: 11/04/2016
 helpviewer_keywords:
 - stack frame layout
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - __LOCAL_SIZE constant
 - stack, stack frame layout
 ms.assetid: c7814de2-bb5c-4f5f-96d0-bcfd2ad3b182
-ms.openlocfilehash: a598ddbdd1b5f91c97e32905202e264b444c05d0
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: cda6a6c82efcf30a916aced121024095d7ce8138
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74988699"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81337111"
 ---
 # <a name="considerations-for-writing-prologepilog-code"></a>Überlegungen für das Schreiben des Prolog-/Epilogcodes
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
-Vor dem Schreiben eigener Prolog-und epilogcodesequenzen ist es wichtig, zu verstehen, wie der Stapel Rahmen angelegt ist. Es ist auch hilfreich zu wissen, wie das `__LOCAL_SIZE` Symbol verwendet werden kann.
+Bevor Sie Ihre eigenen Prolog- und Epilog-Codesequenzen schreiben, ist es wichtig zu verstehen, wie der Stapelrahmen angeordnet ist. Es ist auch nützlich zu `__LOCAL_SIZE` wissen, wie man das Symbol verwendet.
 
-##  <a name="_pluslang_c.2b2b_.stack_frame_layout"></a>Stapel Rahmen Layout
+## <a name="stack-frame-layout"></a><a name="_pluslang_c.2b2b_.stack_frame_layout"></a>Stack Frame Layout
 
 In diesem Beispiel wird der Standardprologcode veranschaulicht, der in einer 32-Bit-Funktion enthalten sein kann:
 
@@ -43,18 +43,18 @@ ret                       ; Return from function
 
 Der Stapel wächst immer nach unten (von hohen zu niedrigen Speicheradressen). Der Basiszeiger (`ebp`) zeigt auf den abgelegten `ebp`-Wert. Der Gültigkeitsbereich der lokalen Variablen beginnt bei `ebp-4`. Um auf lokale Variablen zuzugreifen, berechnen Sie einen Offset von `ebp`, indem Sie den entsprechenden Wert von `ebp` subtrahieren.
 
-##  <a name="_pluslang___local_size"></a>__LOCAL_SIZE
+## <a name="__local_size"></a><a name="_pluslang___local_size"></a>__LOCAL_SIZE
 
-Der Compiler stellt ein Symbol (`__LOCAL_SIZE`) zur Verwendung im Inline Assembler Block von Funktions Prolog Code bereit. Mit diesem Symbol wird Speicherplatz für lokale Variablen im Stapelrahmen im benutzerdefinierten Prologcode zugeordnet.
+Der Compiler stellt `__LOCAL_SIZE`ein Symbol bereit, , für die Verwendung im Inline-Assemblerblock des Funktionsprologcodes. Mit diesem Symbol wird Speicherplatz für lokale Variablen im Stapelrahmen im benutzerdefinierten Prologcode zugeordnet.
 
-Der Compiler bestimmt den Wert `__LOCAL_SIZE`. Sein Wert ist die Gesamtzahl von Bytes aller benutzerdefinierten lokalen Variablen und der vom Compiler generierten temporären Variablen. `__LOCAL_SIZE` kann nur als unmittelbarer Operand verwendet werden. Sie kann nicht in einem Ausdruck verwendet werden. Sie dürfen den Wert dieses Symbols nicht ändern oder neu definieren. Beispiel:
+Der Compiler bestimmt `__LOCAL_SIZE`den Wert von . Sein Wert ist die Gesamtzahl von Bytes aller benutzerdefinierten lokalen Variablen und der vom Compiler generierten temporären Variablen. `__LOCAL_SIZE`kann nur als sofortiger Operand verwendet werden; Sie kann nicht in einem Ausdruck verwendet werden. Sie dürfen den Wert dieses Symbols nicht ändern oder neu definieren. Beispiel:
 
 ```
 mov        eax, __LOCAL_SIZE           ;Immediate operand--Okay
 mov        eax, [ebp - __LOCAL_SIZE]   ;Error
 ```
 
-Im folgenden Beispiel für eine naked-Funktion, die benutzerdefinierte Prolog-und epilogsequenzen enthält, wird das `__LOCAL_SIZE` Symbol in der Prolog-Sequenz verwendet:
+Das folgende Beispiel einer nackten Funktion, die benutzerdefinierte `__LOCAL_SIZE` Prolog- und Epilogsequenzen enthält, verwendet das Symbol in der Prologsequenz:
 
 ```cpp
 // the__local_size_symbol.cpp
@@ -78,7 +78,7 @@ __declspec ( naked ) int main() {
 }
 ```
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -1,11 +1,15 @@
 ---
 title: _ismbslead, _ismbstrail, _ismbslead_l, _ismbstrail_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbstrail
 - _ismbslead_l
 - _ismbslead
 - _ismbstrail_l
+- _o__ismbslead
+- _o__ismbslead_l
+- _o__ismbstrail
+- _o__ismbstrail_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -43,12 +48,12 @@ helpviewer_keywords:
 - ismbstrail_l function
 - _ismbstrail_l function
 ms.assetid: 86d2cd7a-3cff-443a-b713-14cc17a231e9
-ms.openlocfilehash: 71a5d2a82c01a41f945ef3fa8c7652f846f05103
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d4c9bfcec1deab8c00eb490dc044e62a6124aba3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953777"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81342915"
 ---
 # <a name="_ismbslead-_ismbstrail-_ismbslead_l-_ismbstrail_l"></a>_ismbslead, _ismbstrail, _ismbslead_l, _ismbstrail_l
 
@@ -82,10 +87,10 @@ int _ismbstrail_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Zeiger auf den Beginn der Zeichenfolge oder des vorherigen führenden Bytes.
 
-*current*<br/>
+*Aktuellen*<br/>
 Zeiger auf die zu testende Zeichenfolgenposition.
 
 *locale*<br/>
@@ -93,17 +98,19 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_ismbslead** gibt-1 zurück, wenn das Zeichen ein führendes Byte ist, und **_ismbstrail** gibt-1 zurück, wenn das Zeichen ein nachfolgendes Byte ist. Wenn die Eingabezeichenfolgen gültig sind, aber keine führenden oder nachfolgenden Bytes, geben diese Funktionen 0 zurück. Wenn eines der Argumente **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **null** zurück und legen **errno** auf **EINVAL**fest.
+**_ismbslead** gibt -1 zurück, wenn das Zeichen ein Leadbyte ist und **_ismbstrail** -1 zurückgibt, wenn es sich bei dem Zeichen um ein Trailbyte handelt. Wenn die Eingabezeichenfolgen gültig sind, aber keine führenden oder nachfolgenden Bytes, geben diese Funktionen 0 zurück. Wenn eines der beiden Argumente **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **NULL** zurück und setzen **errno** auf **EINVAL**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**_ismbslead** und **_ismbstrail** sind langsamer als die **_ismbblead** -und **_ismbbtrail** -Versionen, da Sie den Zeichen folgen Kontext berücksichtigen.
+**_ismbslead** und **_ismbstrail** sind langsamer als die **_ismbblead-** und **_ismbbtrail-Versionen,** da sie den Zeichenfolgenkontext berücksichtigen.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **suffix _l** sind identisch, mit der Ausnahme, dass sie für ihr gebietsschemaabhängiges Verhalten das Gebietsschema verwenden, das übergeben wird, anstelle des aktuellen Gebietsschemas. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_ismbslead**|\<mbctype.h> oder \<mbstring.h>|\<ctype.h>,* \<limits.h>, \<stdlib.h>|
 |**_ismbstrail**|\<mbctype.h> oder \<mbstring.h>|\<ctype.h>,* \<limits.h>, \<stdlib.h>|
@@ -112,11 +119,11 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 \* Für Manifestkonstanten für die Testbedingungen.
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
-[ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
-[_ismbb-Routinen](../../c-runtime-library/ismbb-routines.md)<br/>
+[_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

@@ -1,8 +1,9 @@
 ---
 title: _getw
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _getw
+- _o__getw
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - integers, getting from streams
 - getw function
 ms.assetid: ef75facc-b84e-470f-9f5f-8746c90822a0
-ms.openlocfilehash: ad03c92ce90542ecae13609ee228ad094f64fc07
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: eddb68ae6108c8a66966472cebca60a9969b78d1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954875"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81344166"
 ---
 # <a name="_getw"></a>_getw
 
@@ -47,24 +49,26 @@ int _getw(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
-Zeiger auf die **FILE**-Struktur.
+*Stream*<br/>
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_getw** gibt den gelesenen ganzzahligen Wert zurück. Der Rückgabewert von **EOF** gibt entweder einen Fehler oder ein Dateiende an. Da der **EOF** -Wert auch ein berechtigter ganzzahliger Wert ist, verwenden Sie " **feof** " oder " **ferror** ", um eine dateiendebedingung oder eine Fehlerbedingung zu überprüfen. Wenn der Stream **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **EOF**zurück.
+**_getw** gibt den gelesenen Ganzzahlwert zurück. Ein Rückgabewert von **EOF** gibt entweder einen Fehler oder ein Ende der Datei an. Da der **EOF-Wert** jedoch auch ein legitimer Ganzzahlwert ist, verwenden Sie **feof** oder **ferror,** um eine Dateiende- oder Fehlerbedingung zu überprüfen. Wenn *Der Stream* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktion gibt **EOF**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_getw** -Funktion liest den nächsten binären Wert vom Typ " **int** " aus der Datei, die dem *Stream* zugeordnet ist, und erhöht den zugeordneten Dateizeiger (sofern vorhanden), um auf das nächste ungelesene Zeichen zu zeigen. **_getw** nimmt keine besondere Ausrichtung von Elementen im Stream an. Probleme beim Portieren können mit **_getw** auftreten, da die Größe des **int** -Typs und die Reihenfolge von Bytes innerhalb des Typs " **int** " zwischen Systemen unterschiedlich sind.
+Die **_getw-Funktion** liest den nächsten Binärwert des Typs **int** aus der Datei, die *dem Stream* zugeordnet ist, und erhöht den zugeordneten Dateizeiger (falls vorhanden), um auf das nächste ungelesene Zeichen zu verweisen. **_getw** geht nicht von einer besonderen Ausrichtung von Elementen im Stream aus. Probleme mit der Portierung können bei **_getw** auftreten, da die Größe des **int-Typs** und die Reihenfolge der Bytes innerhalb des **int-Typs** von System zu System unterschiedlich sind.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_getw**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -108,7 +112,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 First data word in file: 0x656e694c

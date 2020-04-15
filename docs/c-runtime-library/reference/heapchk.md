@@ -1,8 +1,9 @@
 ---
 title: _heapchk
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _heapchk
+- _o__heapchk
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-heap-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - heaps, checking consistency
 - _heapchk function
 ms.assetid: 859619a5-1e35-4f02-9e09-11d9fa266ec0
-ms.openlocfilehash: 857feb66d89d5dc406042478156483ecb86a2474
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 21c7f9e22728109676d3fc611405ccd43ac773f8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954809"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81344056"
 ---
 # <a name="_heapchk"></a>_heapchk
 
@@ -48,7 +50,7 @@ int _heapchk( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_heapchk** gibt eine der folgenden ganzzahligen Manifest-Konstanten zurück, die in malloc. h definiert sind.
+**_heapchk** gibt eine der folgenden ganzzahligen Manifestkonstanten zurück, die in Malloc.h definiert sind.
 
 |Rückgabewert|Bedingung|
 |-|-|
@@ -58,19 +60,21 @@ int _heapchk( void );
 | **_HEAPEMPTY** | Der Heap wurde noch nicht initialisiert. |
 | **_HEAPOK** | Der Heap scheint konsistent zu sein. |
 
-Wenn ein Fehler auftritt, legt **_heapchk** außerdem **errno** auf **enosys**fest.
+Wenn ein Fehler auftritt, setzt _heapchk **errno** auf **_heapchk** **ENOSYS**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_heapchk** -Funktion unterstützt das Debuggen von Heap bezogenen Problemen durch die Überprüfung auf minimale Konsistenz des Heaps. Wenn das Betriebssystem **_heapchk**nicht unterstützt (z. b. Windows 98), gibt die Funktion **_HEAPOK** zurück und legt **errno** auf **enosys**fest.
+Die **_heapchk-Funktion** hilft beim Debuggen von Heapproblemen, indem sie auf minimale Konsistenz des Heaps überprüft. Wenn das Betriebssystem **_heapchk**(z. B. Windows 98) nicht unterstützt, gibt die Funktion **_HEAPOK** zurück und setzt **errno** auf **ENOSYS**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_heapchk**|\<malloc.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -117,7 +121,7 @@ OK - heap is fine
 
 ## <a name="see-also"></a>Siehe auch
 
-[Speicherreservierung](../../c-runtime-library/memory-allocation.md)<br/>
+[Speicherzuweisung](../../c-runtime-library/memory-allocation.md)<br/>
 [_heapadd](../../c-runtime-library/heapadd.md)<br/>
 [_heapmin](heapmin.md)<br/>
 [_heapset](../../c-runtime-library/heapset.md)<br/>

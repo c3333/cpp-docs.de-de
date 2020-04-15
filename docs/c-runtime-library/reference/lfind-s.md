@@ -1,8 +1,9 @@
 ---
 title: _lfind_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _lfind_s
+- _o__lfind_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +32,12 @@ helpviewer_keywords:
 - searching, linear
 - _lfind_s function
 ms.assetid: f1d9581d-5c9d-4222-a31c-a6dfafefa40d
-ms.openlocfilehash: 69db97dc24b567714bda3e02f5f53ff381ae4911
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 8f2983bee93c623eb936ed12422134281418076b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953452"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81342188"
 ---
 # <a name="_lfind_s"></a>_lfind_s
 
@@ -65,43 +67,45 @@ Zeiger auf die Basis der Suchdaten.
 *number*<br/>
 Die Anzahl der Arrayelemente.
 
-*size*<br/>
+*Größe*<br/>
 Die Größe der Arrayelemente in Bytes.
 
-*compare*<br/>
-Zeiger auf die Vergleichsroutine. Der erste Parameter ist der *Kontext* Zeiger. Der zweite Parameter ist ein Zeiger auf den Schlüssel für die Suche. Der dritte Parameter ist ein Zeiger auf das Arrayelement, das mit dem Schlüssel verglichen werden soll.
+*Vergleichen*<br/>
+Zeiger auf die Vergleichsroutine. Der erste Parameter ist der *Kontextzeiger.* Der zweite Parameter ist ein Zeiger auf den Schlüssel für die Suche. Der dritte Parameter ist ein Zeiger auf das Arrayelement, das mit dem Schlüssel verglichen werden soll.
 
 *context*<br/>
-Ein Zeiger auf ein Objekt, auf das in der Vergleichsfunktion zugegriffen werden kann.
+Ein Zeiger auf ein Objekt, auf das in der Vergleichsfunktion möglicherweise zugegriffen werden kann.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn der Schlüssel gefunden wird, gibt **_lfind_s** einen Zeiger auf das Element des Arrays an der *Basis* zurück, die mit dem *Schlüssel*übereinstimmt. Wenn der Schlüssel nicht gefunden wird, gibt _lfind_s **null**zurück.
+Wenn der Schlüssel gefunden wird, **gibt _lfind_s** einen Zeiger auf das Element des Arrays an der *Basis* zurück, das mit dem *Schlüssel*übereinstimmt. Wenn der Schlüssel nicht gefunden wird, **gibt _lfind_s** **NULL**zurück.
 
-Wenn ungültige Parameter an die Funktion übergeben werden, ruft sie den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parametervalidierung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktion gibt **null**zurück.
+Wenn ungültige Parameter an die Funktion übergeben werden, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt, und die Funktion gibt **NULL**zurück.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|Key|Basis|compare|num|size|errno|
+|Schlüssel|base|compare|num|size|errno|
 |---------|----------|-------------|---------|----------|-----------|
-|**NULL**|any|any|any|any|**EINVAL**|
-|any|**NULL**|any|!= 0|any|**EINVAL**|
-|any|any|any|any|Null|**EINVAL**|
-|any|any|**NULL**|ein|any|**EINVAL**|
+|**Null**|any|any|any|any|**Einval**|
+|any|**Null**|any|!= 0|any|**Einval**|
+|any|any|any|any|Null|**Einval**|
+|any|any|**Null**|ein|any|**Einval**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_lfind_s** -Funktion führt eine lineare Suche nach dem Wert *Schlüssel* in einem Array von *Zahlen* Elementen durch, wobei jede *Breite* Bytes beträgt. Anders als bei **bsearch_s**erfordert **_lfind_s** nicht, dass das Array sortiert wird. Das *Basis* Argument ist ein Zeiger auf die Basis des zu durchsuchenden Arrays. Das *Compare* -Argument ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Array Elemente vergleicht und dann einen Wert zurückgibt, der Ihre Beziehung angibt. **_lfind_s** Ruft die *Vergleichs* Routine einmal oder mehrmals während der Suche auf und übergibt den *Kontext* Zeiger und Zeiger auf zwei Array Elemente bei jedem Aufruf. Die *Vergleichs* Routine muss die Elemente vergleichen und dann ungleich NULL (d.h. die Elemente unterscheiden sich) oder 0 (d.h. die Elemente sind identisch) zurückgeben.
+Die **_lfind_s-Funktion** führt eine lineare Suche nach dem *Wertschlüssel* in einem Array von *Zahlenelementen* mit jeweils *mehreren* Bytes durch. Im Gegensatz zu **bsearch_s** **erfordert _lfind_s** nicht, dass das Array sortiert wird. Das *Basisargument* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays. Das *Argument compare* ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die zwei Arrayelemente vergleicht und dann einen Wert zurückgibt, der ihre Beziehung angibt. **_lfind_s** ruft die *Vergleichsroutine* ein oder mehrere Male während der Suche auf und übergibt den *Kontextzeiger* und die Zeiger an zwei Arrayelemente bei jedem Aufruf. Die *Vergleichsroutine* muss die Elemente vergleichen und dann ungleich Null zurückgeben (d. h. die Elemente sind unterschiedlich) oder 0 (d. h. die Elemente sind identisch).
 
-**_lfind_s** ähnelt **_lfind** außer dem Hinzufügen des *Kontext* Zeigers zu den Argumenten der Vergleichsfunktion und der Parameterliste der Funktion. Der *Kontext* Zeiger kann nützlich sein, wenn die durchsuchte Datenstruktur Teil eines Objekts ist und die *Vergleichs* Funktion auf Member des Objekts zugreifen muss. Mit der *Compare* -Funktion kann der void-Zeiger in den entsprechenden Objekttyp umgewandelt und auf Member des Objekts zugegriffen werden. Durch das Hinzufügen des *Kontext* Parameters wird **_lfind_s** sicherer, da zusätzlicher Kontext verwendet werden kann, um Fehler beim erneuten eintreten zu vermeiden, die mit der Verwendung statischer Variablen zur Bereitstellung von Daten für die *Vergleichs* Funktion einhergehen.
+**_lfind_s** ähnelt **_lfind** mit Ausnahme des Hinzufügens des *Kontextzeigers* zu den Argumenten der Vergleichsfunktion und der Parameterliste der Funktion. Der *Kontextzeiger* kann nützlich sein, wenn die gesuchte Datenstruktur Teil eines Objekts ist und die *Vergleichsfunktion* auf Member des Objekts zugreifen muss. Die *Vergleichsfunktion* kann den leeren Zeiger in den entsprechenden Objekttyp und die Zugriffselemente dieses Objekts umwerfen. Das Hinzufügen des *Kontextparameters* macht **_lfind_s** sicherer, da zusätzlicher Kontext verwendet werden kann, um Reentrancy-Fehler zu vermeiden, die mit der Verwendung statischer Variablen verbunden sind, um Daten für die *Vergleichsfunktion* verfügbar zu machen.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_lfind_s**|\<search.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,11 +1,13 @@
 ---
 title: isdigit, iswdigit, _isdigit_l, _iswdigit_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _isdigit_l
 - iswdigit
 - _iswdigit_l
 - isdigit
+- _o_isdigit
+- _o_iswdigit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +21,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -42,12 +45,12 @@ helpviewer_keywords:
 - _ismbcdigit_l function
 - _isdigit_l function
 ms.assetid: 350b0093-843a-47b0-954e-c1776e8a3853
-ms.openlocfilehash: 30944db0653e26b6130fb7a37ad87e8e81a343f5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 139453b5f03af2b5ec02db715630adf1f6715716
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954389"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343867"
 ---
 # <a name="isdigit-iswdigit-_isdigit_l-_iswdigit_l"></a>isdigit, iswdigit, _isdigit_l, _iswdigit_l
 
@@ -74,7 +77,7 @@ int _iswdigit_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -82,11 +85,11 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine bestimmte Darstellung eines Dezimalstellen Zeichens ist. **IsDigit** gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine Dezimal Ziffer (0-9) ist. **iswdigit** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein breit Zeichen ist, das einem Dezimaltrennzeichen entspricht. Jede dieser Routinen gibt 0 zurück, wenn *c* die Test Bedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn *c* eine bestimmte Darstellung eines Dezimalzeichens ist. **isdigit** gibt einen Wert ungleich Null zurück, wenn *c* eine Dezimalstelle (0 - 9) ist. **iswdigit** gibt einen Wert ungleich Null zurück, wenn *c* ein breites Zeichen ist, das einem Dezimalzeichen entspricht. Jede dieser Routinen gibt 0 zurück, wenn *c* die Testbedingung nicht erfüllt.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **suffix _l** verwenden das Gebietsschema, das übergeben wird, anstelle des aktuellen Gebietsschemas für ihr gebietsschemaabhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **IsDigit** und **_isdigit_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
+Das Verhalten von **isdigit** und **_isdigit_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich 0 bis 0xFF, einschließlich. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* nicht einer dieser Werte ist, werden die Funktionen eine Assertion aus.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -95,19 +98,23 @@ Das Verhalten von **IsDigit** und **_isdigit_l** ist nicht definiert, wenn *c* n
 |**_istdigit**|**isdigit**|[_ismbcdigit](ismbcalnum-functions.md)|**iswdigit**|
 |**_istdigit_l**|**_isdigit_l**|[_ismbcdigit_l](ismbcalnum-functions.md)|**_iswdigit_l**|
 
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isdigit**|\<ctype.h>|
 |**iswdigit**|\<ctype.h> oder \<wchar.h>|
 |**_isdigit_l**|\<ctype.h>|
 |**_iswdigit_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>

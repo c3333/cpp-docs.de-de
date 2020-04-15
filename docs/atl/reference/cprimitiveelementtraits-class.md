@@ -9,16 +9,16 @@ f1_keywords:
 helpviewer_keywords:
 - CPrimitiveElementTraits class
 ms.assetid: 21c1cea8-2c5a-486c-b65c-85490f3ed4e6
-ms.openlocfilehash: 53d039b15c9f4a79956bd86fbb93600854f90e5f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6b45d93420d1832091cc451a3e6eb309f61d07a3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62278162"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81331436"
 ---
 # <a name="cprimitiveelementtraits-class"></a>CPrimitiveElementTraits-Klasse
 
-Diese Klasse stellt die Standardmethoden und -Funktionen für eine Auflistungsklasse bestehend aus primitiven Datentypen.
+Diese Klasse stellt Standardmethoden und -funktionen für eine Auflistungsklasse bereit, die aus primitiven Datentypen besteht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,20 +30,20 @@ class CPrimitiveElementTraits : public CDefaultElementTraits<T>
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ der Daten in das Klassenobjekt Auflistung gespeichert werden.
+Der Typ der Daten, die im Auflistungsklassenobjekt gespeichert werden sollen.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CPrimitiveElementTraits::INARGTYPE](#inargtype)|Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.|
-|[CPrimitiveElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.|
+|[CPrimitiveElementTraits::INARGTYPE](#inargtype)|Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.|
+|[CPrimitiveElementTraits::OUTARGTYPE](#outargtype)|Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse bietet standardmäßig statische Funktionen und Methoden zum Verschieben, kopieren, vergleichen und hashing primitiven Typ Datenelemente in einem Auflistungsobjekt-Klasse gespeichert.
+Diese Klasse bietet statische Standardfunktionen und -methoden zum Verschieben, Kopieren, Vergleichen und Hashing primitiver Datentypelemente, die in einem Auflistungsklassenobjekt gespeichert sind.
 
 Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-collection-classes.md).
 
@@ -61,19 +61,19 @@ Weitere Informationen finden Sie unter [ATL-Auflistungsklassen](../../atl/atl-co
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlcoll.h
+**Kopfzeile:** atlcoll.h
 
-##  <a name="inargtype"></a>  CPrimitiveElementTraits::INARGTYPE
+## <a name="cprimitiveelementtraitsinargtype"></a><a name="inargtype"></a>CPrimitiveElementTraits::INARGTYPE
 
-Der Datentyp, zum Hinzufügen von Elementen für das Objekt der Sammlung-Klasse verwendet werden soll.
+Der Datentyp, der zum Hinzufügen von Elementen zum Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef T INARGTYPE;
 ```
 
-##  <a name="outargtype"></a>  CPrimitiveElementTraits::OUTARGTYPE
+## <a name="cprimitiveelementtraitsoutargtype"></a><a name="outargtype"></a>CPrimitiveElementTraits::OUTARGTYPE
 
-Der Datentyp für das Abrufen von Elementen aus dem Auflistungsobjekt-Klasse.
+Der Datentyp, der zum Abrufen von Elementen aus dem Auflistungsklassenobjekt verwendet werden soll.
 
 ```
 typedef T& OUTARGTYPE;
@@ -82,4 +82,4 @@ typedef T& OUTARGTYPE;
 ## <a name="see-also"></a>Siehe auch
 
 [CDefaultElementTraits-Klasse](../../atl/reference/cdefaultelementtraits-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

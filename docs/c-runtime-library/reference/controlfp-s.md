@@ -1,8 +1,9 @@
 ---
 title: _controlfp_s
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _controlfp_s
+- _o__controlfp_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - EM_AMBIGUOUS
 - _controlfp_s function
 ms.assetid: a51fc3f6-ab13-41f0-b227-6bf02d98e987
-ms.openlocfilehash: 0d12c139f305a3c66419a4e27905ac9f73345f4d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4b36cc9f5ed83b68cb15c39be91165ed7aa86d7b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942879"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348534"
 ---
 # <a name="_controlfp_s"></a>_controlfp_s
 
@@ -58,27 +60,27 @@ Der aktuelle Bitwert des Steuerworts.
 *newControl*<br/>
 Neue Bitwerte des Steuerworts.
 
-*chel*<br/>
+*mask*<br/>
 Maske für festzulegende neue Steuerwortbits.
 
 ## <a name="return-value"></a>Rückgabewert
 
-NULL, wenn erfolgreich, oder ein Fehlercode des **errno** -Werts.
+Null, wenn erfolgreich, oder ein Fehlercode für **einen Errno-Wert.**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_controlfp_s** -Funktion ist eine plattformunabhängige und sicherere Version von **_control87**, die das Gleit Komma Steuerwort in die Adresse abruft, die in *CurrentControl* gespeichert ist, und Sie mithilfe von *newControl*festgelegt wird. Die Bits in den Werten geben den Zustand des Gleitkommasteuerelements an. Mit dem Zustand des Gleitkommasteuerelements kann das Programm die Genauigkeits-, Rundungs- und Unendlichkeitsmodi im mathematischen Gleitkommapaket je nach Plattform ändern. Sie können auch **_controlfp_s** verwenden, um Gleit Komma Ausnahmen zu maskieren bzw. die Maskierung aufzuheben.
+Die **_controlfp_s-Funktion** ist eine plattformunabhängige und sicherere Version von **_control87**, die das Gleitkomma-Steuerwort in die in *currentControl* gespeicherte Adresse abruft und mit *newControl*festlegt. Die Bits in den Werten geben den Zustand des Gleitkommasteuerelements an. Mit dem Zustand des Gleitkommasteuerelements kann das Programm die Genauigkeits-, Rundungs- und Unendlichkeitsmodi im mathematischen Gleitkommapaket je nach Plattform ändern. Sie können **auch _controlfp_s** verwenden, um Gleitkommaausnahmen zu maskieren oder zu entlarven.
 
-Wenn der Wert für *Mask* gleich 0 ist, ruft **_controlfp_s** das Gleit Komma Steuerwort ab und speichert den abgerufenen Wert in *CurrentControl*.
+Wenn der Wert für *Maske* gleich 0 ist, ruft **_controlfp_s** das Gleitkomma-Steuerwort ab und speichert den abgerufenen Wert in *currentControl*.
 
-Wenn *Mask* ungleich NULL ist, wird ein neuer Wert für das Steuerwort festgelegt: Für jedes festgelegte Bit (d. h. gleich 1) in *Mask*wird das entsprechende Bit in *New* verwendet, um das Steuerwort zu aktualisieren. Anders ausgedrückt: *fpcntrl* = ((*fpcntrl* & ~*Mask*) &#124; (*newControl* & *Mask*)), wobei *fpcntrl* das Gleit Komma Steuerwort ist. In diesem Szenario wird *CurrentControl* auf den Wert festgelegt, nachdem die Änderung abgeschlossen wurde. Es ist nicht der alte Bitwert des Steuer Worts.
+Wenn *die Maske* ungleich Null ist, wird ein neuer Wert für das Steuerwort gesetzt: Für jedes Bit, das in der *Maske*festgelegt ist (d. h. gleich 1), wird das entsprechende Bit in *new* verwendet, um das Steuerwort zu aktualisieren. Mit anderen Worten, *fpcntrl* = ((*fpcntrl* & -*Maske*) &#124; (*newControl-Maske* & *mask*)), wobei *fpcntrl* das Gleitkomma-Steuerwort ist. In diesem Szenario wird *currentControl* nach Abschluss der Änderung auf den Wert festgelegt. es ist nicht der alte Steuerelement-Wort-Bitwert.
 
 > [!NOTE]
 > Standardmäßig maskieren die Laufzeitbibliotheken alle Gleitkommaausnahmen.
 
-**_controlfp_s** ist nahezu identisch mit der **_control87** -Funktion auf Intel (x86)-, x64-und Arm-Plattformen. Wenn Sie auf x86-, x64-oder arm-Plattformen abzielen, können Sie **_control87** oder **_controlfp_s**verwenden.
+**_controlfp_s** ist nahezu identisch mit der **_control87-Funktion** auf Intel (x86), x64 und ARM-Plattformen. Wenn Sie auf x86-, x64- oder ARM-Plattformen abzielen, können Sie **_control87** oder **_controlfp_s**verwenden.
 
-Der Unterschied zwischen **_control87** und **_controlfp_s** liegt darin, wie Sie DENORMAL-Werte behandeln. Für Intel (x86)-, x64-und Arm-Plattformen kann **_control87** die DENORMAL-OPERAND-Ausnahme Maske festlegen und löschen. **_controlfp_s** ändert nicht die DENORMAL-OPERAND-Ausnahme Maske. Dieses Beispiel veranschaulicht den Unterschied:
+Der Unterschied zwischen **_control87** und **_controlfp_s** besteht darin, wie sie denormale Werte behandeln. Für Intel (x86), x64- und ARM-Plattformen können **_control87** die DENORMAL OPERAND-Ausnahmemaske festlegen und löschen. **_controlfp_s** ändert die DENORMAL OPERAND-Ausnahmemaske nicht. Dieses Beispiel veranschaulicht den Unterschied:
 
 ```C
 _control87( _EM_INVALID, _MCW_EM );
@@ -88,9 +90,9 @@ _controlfp_s( &current_word, _EM_INVALID, _MCW_EM );
 // DENORMAL exception mask remains unchanged.
 ```
 
-Die möglichen Werte für die Masken Konstante (*Maske*) und die neuen Steuerelement Werte (*newControl*) werden in der folgenden hexadezimal Wertetabelle angezeigt. Verwenden Sie die unten aufgeführten portablen Konstanten ( **_MCW_EM**, **_EM_INVALID**usw.) als Argumente für diese Funktionen, anstatt die hexadezimalen Werte explizit anzugeben.
+Die möglichen Werte für die Maskenkonstante (*Maske*) und neue Steuerwerte (*newControl*) werden in der folgenden Tabelle Hexadezimale Werte angezeigt. Verwenden Sie die unten aufgeführten portablen Konstanten (**_MCW_EM**, **_EM_INVALID**usw.) als Argumente für diese Funktionen, anstatt die hexadezimalen Werte explizit einzuliefern.
 
-Von Intel (x86) abgeleitete Plattformen unterstützen die DENORMAL-Eingabe- und -Ausgabewerte in der Hardware. Das x86-Verhalten besteht darin, die DENORMAL-Werte beizubehalten. Die ARM-Plattform und die x64-Plattformen mit SSE2-Unterstützung ermöglichen es, dass DENORMAL-Operanden und-Ergebnisse geleert oder auf 0 (null) erzwungen werden. Die Funktionen **_controlfp_s**, **_controlfp**und **_control87** stellen eine Maske zum Ändern dieses Verhaltens bereit. Das folgende Beispiel veranschaulicht die Verwendung dieser Maske:
+Von Intel (x86) abgeleitete Plattformen unterstützen die DENORMAL-Eingabe- und -Ausgabewerte in der Hardware. Das x86-Verhalten besteht darin, die DENORMAL-Werte beizubehalten. Die ARM-Plattform und die x64-Plattformen mit SSE2-Unterstützung ermöglichen es, DENORMAL-Operanden und -Ergebnisse zu spülen oder auf Null zu zwingen. Die Funktionen **_controlfp_s**, **_controlfp**und **_control87** stellen eine Maske bereit, um dieses Verhalten zu ändern. Das folgende Beispiel veranschaulicht die Verwendung dieser Maske:
 
 ```C
 unsigned int current_word = 0;
@@ -102,33 +104,35 @@ _controlfp_s(&current_word, _DN_FLUSH, _MCW_DN);
 // and x64 processors with SSE2 support. Ignored on other x86 platforms.
 ```
 
-Auf Arm-Plattformen gilt die **_controlfp_s** -Funktion für das fpscr-Register. In x64-Architekturen ist nur das SSE2-Steuerwort, das im MXCSR-Register gespeichert ist, betroffen. Auf Intel (x86)-Plattformen beeinflusst **_controlfp_s** die Steuer Wörter für x87 und SSE2, falls vorhanden. Es ist möglich, dass die beiden Steuer Wörter inkonsistent sind (z. b. aufgrund eines vorherigen Aufrufes [__control87_2](control87-controlfp-control87-2.md)). Wenn eine Inkonsistenz zwischen den beiden Steuer Wörtern vorliegt, legt **_controlfp_s** das **EM_AMBIGUOUS** -Flag in *CurrentControl*fest. Dies ist eine Warnung, dass das zurückgegebene Steuerwort den Zustand beider Gleitkommasteuerworte möglicherweise nicht genau dargestellt.
+Auf ARM-Plattformen gilt die **_controlfp_s-Funktion** für das FPSCR-Register. Bei x64-Architekturen ist nur das im MXCSR-Register gespeicherte SSE2-Steuerwort betroffen. Auf Intel (x86)-Plattformen wirkt sich **_controlfp_s** auf die Steuerwörter sowohl für x87 als auch für SSE2 aus, sofern vorhanden. Es ist möglich, dass die beiden Steuerwörter nicht miteinander übereinstimmen (z. B. aufgrund eines vorherigen Aufrufs zu [__control87_2);](control87-controlfp-control87-2.md) Wenn eine Inkonsistenz zwischen den beiden Steuerwörtern vorliegt, **legt _controlfp_s** das **EM_AMBIGUOUS-Flag** in *currentControl*fest. Dies ist eine Warnung, dass das zurückgegebene Steuerwort den Zustand beider Gleitkommasteuerworte möglicherweise nicht genau dargestellt.
 
-Auf der Arm-und x64-Architektur wird das Ändern des unendlichen Modus oder der Gleit Komma Genauigkeit nicht unterstützt. Wenn die Genauigkeits Steuer Maske auf der x64-Plattform verwendet wird, löst die Funktion eine-Assertion aus, und der Handler für ungültige Parameter wird aufgerufen, wie in [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben.
+Bei den ARM- und x64-Architekturen wird das Ändern des Unendlichkeitsmodus oder der Gleitkommagenauigkeit nicht unterstützt. Wenn die Präzisionssteuerungsmaske auf der x64-Plattform verwendet wird, löst die Funktion eine Assertion aus, und der ungültige Parameterhandler wird aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
 
-Wenn die Maske nicht ordnungsgemäß festgelegt ist, generiert diese Funktion eine Ausnahme wegen eines ungültigen Parameters, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt diese Funktion **EINVAL** zurück und legt **errno** auf **EINVAL**fest.
+Wenn die Maske nicht ordnungsgemäß festgelegt ist, generiert diese Funktion eine Ausnahme wegen eines ungültigen Parameters, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt diese Funktion **EINVAL** zurück und setzt **errno** auf **EINVAL**.
 
-Diese Funktion wird ignoriert, wenn Sie [/CLR (Common Language Runtime-Kompilierung)](../../build/reference/clr-common-language-runtime-compilation.md) für die Kompilierung verwenden, da die Common Language Runtime (CLR) nur die standardmäßige Gleit Komma Genauigkeit unterstützt.
+Diese Funktion wird ignoriert, wenn Sie [/clr (Common Language Runtime Compilation)](../../build/reference/clr-common-language-runtime-compilation.md) zum Kompilieren verwenden, da die Common Language Runtime (CLR) nur die standardmäßige Gleitkommagenauigkeit unterstützt.
 
-### <a name="mask-constants-and-values"></a>Konstanten und Werte maskieren
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
-Beim Löschen der **_MCW_EM** -Maske wird die Ausnahme festgelegt, was die Hardware Ausnahme zulässt. durch das festlegen wird die Ausnahme ausgeblendet. Wenn **_EM_UNDERFLOW** oder **_EM_OVERFLOW** auftritt, wird keine Hardware Ausnahme ausgelöst, bis die nächste Gleit Komma Anweisung ausgeführt wird. Um eine Hardware Ausnahme direkt nach **_EM_UNDERFLOW** oder **_EM_OVERFLOW**zu generieren, rufen Sie die Anweisung FWAIT MASM auf.
+### <a name="mask-constants-and-values"></a>Maskenkonstanten und -werte
 
-|Format|Farbtonwert|Konstante|Farbtonwert|
+Für die **_MCW_EM** Maske legt das Löschen die Ausnahme fest, die die Hardwareausnahme zulässt. Durch festlegen, wird die Ausnahme ausgeblendet. Wenn ein **_EM_UNDERFLOW** oder **_EM_OVERFLOW** auftritt, wird keine Hardwareausnahme ausgelöst, bis die nächste Gleitkommaanweisung ausgeführt wird. Um eine Hardwareausnahme unmittelbar nach **_EM_UNDERFLOW** oder **_EM_OVERFLOW**zu generieren, rufen Sie die FWAIT MASM-Anweisung auf.
+
+|Mask|Farbtonwert|Konstante|Farbtonwert|
 |----------|---------------|--------------|---------------|
-|**_MCW_DN** (DENORMAL-Steuerelement)|0x03000000|**_DN_SAVE**<br /><br /> **_DN_FLUSH**|0x00000000<br /><br /> 0x01000000|
-|**_MCW_EM** (Unterbrechungs Ausnahme Maske)|0x0008001F|**_EM_INVALID**<br /><br /> **_EM_DENORMAL**<br /><br /> **_EM_ZERODIVIDE**<br /><br /> **_EM_OVERFLOW**<br /><br /> **_EM_UNDERFLOW**<br /><br /> **_EM_INEXACT**|0x00000010<br /><br /> 0x00080000<br /><br /> 0x00000008<br /><br /> 0x00000004<br /><br /> 0x00000002<br /><br /> 0x00000001|
-|**_MCW_IC** (Unendlich-Steuerelement)<br /><br /> (Wird auf Arm-oder x64-Plattformen nicht unterstützt.)|0x00040000|**_IC_AFFINE**<br /><br /> **_IC_PROJECTIVE**|0x00040000<br /><br /> 0x00000000|
-|**_MCW_RC** (Rundungs Steuerung)|0x00000300|**_RC_CHOP**<br /><br /> **_RC_UP**<br /><br /> **_RC_DOWN**<br /><br /> **_RC_NEAR**|0x00000300<br /><br /> 0x00000200<br /><br /> 0x00000100<br /><br /> 0x00000000|
-|**_MCW_PC** (Genauigkeits Steuerung)<br /><br /> (Wird auf Arm-oder x64-Plattformen nicht unterstützt.)|0x00030000|**_PC_24** (24 Bits)<br /><br /> **_PC_53** (53 Bits)<br /><br /> **_PC_64** (64 Bits)|0x00020000<br /><br /> 0x00010000<br /><br /> 0x00000000|
+|**_MCW_DN** (Denormal-Steuerung)|0x03000000|**_DN_SAVE**<br /><br /> **_DN_FLUSH**|0x00000000<br /><br /> 0x01000000|
+|**_MCW_EM** (Interrupt-Ausnahmemaske)|0x0008001F|**_EM_INVALID**<br /><br /> **_EM_DENORMAL**<br /><br /> **_EM_ZERODIVIDE**<br /><br /> **_EM_OVERFLOW**<br /><br /> **_EM_UNDERFLOW**<br /><br /> **_EM_INEXACT**|0x00000010<br /><br /> 0x00080000<br /><br /> 0x00000008<br /><br /> 0x00000004<br /><br /> 0x00000002<br /><br /> 0x00000001|
+|**_MCW_IC** (Infinity-Steuerung)<br /><br /> (Auf ARM- oder x64-Plattformen wird nicht unterstützt.)|0x00040000|**_IC_AFFINE**<br /><br /> **_IC_PROJECTIVE**|0x00040000<br /><br /> 0x00000000|
+|**_MCW_RC** (Rundungssteuerung)|0x00000300|**_RC_CHOP**<br /><br /> **_RC_UP**<br /><br /> **_RC_DOWN**<br /><br /> **_RC_NEAR**|0x00000300<br /><br /> 0x00000200<br /><br /> 0x00000100<br /><br /> 0x00000000|
+|**_MCW_PC** (Präzisionssteuerung)<br /><br /> (Auf ARM- oder x64-Plattformen wird nicht unterstützt.)|0x00030000|**_PC_24** (24 Bit)<br /><br /> **_PC_53** (53 Bit)<br /><br /> **_PC_64** (64 Bit)|0x00020000<br /><br /> 0x00010000<br /><br /> 0x00000000|
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_controlfp_s**|\<float.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

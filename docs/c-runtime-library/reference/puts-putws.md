@@ -1,9 +1,11 @@
 ---
 title: puts, _putws
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _putws
 - puts
+- _o__putws
+- _o_puts
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - putts function
 - _putws function
 ms.assetid: 32dada12-ed45-40ac-be06-3feeced9ecd6
-ms.openlocfilehash: 1cd38678b321853cb229d86f9554bb76efbc84d6
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9681373ccf338daf05be3120fbadd39ba471e86a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949801"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81332961"
 ---
 # <a name="puts-_putws"></a>puts, _putws
 
@@ -57,22 +60,24 @@ int _putws(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Ausgabezeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg einen nicht negativen Wert zurück. Wenn bei **Puts** ein Fehler auftritt, wird **EOF**zurückgegeben. Wenn **_putws** fehlschlägt, wird **WEOF**zurückgegeben. Wenn *Str* ein NULL-Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen die Funktionen **errno** auf **EINVAL** fest und geben **EOF** oder **WEOF**zurück.
+Gibt bei Erfolg einen nicht negativen Wert zurück. Wenn **Puts** fehlschlägt, gibt er **EOF**zurück; Wenn **_putws** fehlschlägt, gibt er **WEOF**zurück. Wenn *str* ein Nullzeiger ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen die Funktionen **errno** auf **EINVAL** und geben **EOF** oder **WEOF**zurück.
 
-Weitere Informationen über diese und andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr (_doserrno, errno, _sys_errlist und _sys_nerr)](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **-** Funktion schreibt *Str* in den **Standardausgabestream stdout**und ersetzt das abschließende Null-Zeichen (' \ 0 ') durch ein Zeilen vorzeichenfolgenzeichen (' \n ') im Ausgabestream.
+Die **puts-Funktion** schreibt *str* in den Standardausgabestream **stdout**und ersetzt das beendende Nullzeichen der Zeichenfolge ('''') durch ein Zeilenumleinenzeichen ('''') im Ausgabestream.
 
-**_putws** ist die breit Zeichen Version von **Puts**; die beiden Funktionen Verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet ist. " **Puts** " unterstützt derzeit keine Ausgabe in einen Unicode-Stream.
+**_putws** ist die breitstellige Version von **Puts**; Die beiden Funktionen verhalten sich identisch, wenn der Stream im ANSI-Modus geöffnet wird. **stellt** die Ausgabe in einem UNICODE-Stream derzeit nicht vor.
 
-**_putwch** schreibt Unicode-Zeichen mithilfe der aktuellen Einstellung des Konsolen Gebiets Schemas.
+**_putwch** schreibt Unicode-Zeichen mit der aktuellen CONSOLE LOCALE-Einstellung.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -82,12 +87,12 @@ Die **-** Funktion schreibt *Str* in den **Standardausgabestream stdout**und ers
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**puts**|\<stdio.h>|
 |**_putws**|\<stdio.h>|
 
-Die-Konsole wird in universelle Windows-Plattform-Apps (UWP) nicht unterstützt. Die Standarddaten Strom Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor Sie von C-Lauf Zeitfunktionen in UWP-Apps verwendet werden können. Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Die Konsole wird in UWP-Apps (Universelle Windows-Plattform) nicht unterstützt. Die Standard-Stream-Handles, die der Konsole, **stdin**, **stdout**und **stderr**zugeordnet sind, müssen umgeleitet werden, bevor C-Laufzeitfunktionen sie in UWP-Apps verwenden können. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -107,7 +112,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Hello world from puts!

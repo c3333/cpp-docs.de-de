@@ -1,11 +1,15 @@
 ---
 title: _atoi64, _atoi64_l, _wtoi64, _wtoi64_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _atoi64_l
 - _wtoi64
 - _atoi64
 - _wtoi64_l
+- _o__atoi64
+- _o__atoi64_l
+- _o__wtoi64
+- _o__wtoi64_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -49,12 +54,12 @@ helpviewer_keywords:
 - _wtoi64 function
 - _atoi64 function
 ms.assetid: 2c3e30fd-545d-4222-8364-0c5905df9526
-ms.openlocfilehash: 950774e74462e8d1f301a1d5b933e57feaa9f840
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 103b100b293ff183dd89f3e7c2f291f9d49519e6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939488"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348833"
 ---
 # <a name="_atoi64-_atoi64_l-_wtoi64-_wtoi64_l"></a>_atoi64, _atoi64_l, _wtoi64, _wtoi64_l
 
@@ -81,7 +86,7 @@ __int64 _wtoi64_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -89,27 +94,29 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt den **__int64** -Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert ist 0 für **_atoi64** , wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
+Jede Funktion gibt den **__int64-Wert** zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert ist 0 für **_atoi64** wenn die Eingabe nicht in einen Wert dieses Typs konvertiert werden kann.
 
-Im Fall eines Überlaufs mit großen positiven ganzzahligen Werten gibt **_atoi64** **I64_MAX** und **I64_MIN** im Falle eines Überlaufs mit großen negativen ganzzahligen Werten zurück.
+Bei Überlauf mit großen positiven Integralwerten **gibt _atoi64** **I64_MAX** und **I64_MIN** bei Überlauf mit großen negativen Integralwerten zurück.
 
-In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
+In allen Fällen a-of-range wird **errno** auf **ERANGE**gesetzt. Wenn der übergebene Parameter **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben 0 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen konvertieren eine Zeichenfolge in eine 64-Bit-Ganzzahl.
 
 Die Eingabezeichenfolge ist eine Sequenz von Zeichen, die als numerischer Wert des angegebenen Typs interpretiert werden. Die Funktion beendet das Lesen der Eingabezeichenfolge am ersten Zeichen, das nicht als Teil einer Zahl erkannt wird. Möglicherweise ist dies das Zeichen NULL ('\0' oder L'\0'), das am Ende der Zeichenfolge steht.
 
-Das *Str* -Argument für **_atoi64** weist die folgende Form auf:
+Das *Argument str* zu **_atoi64** hat die folgende Form:
 
-> [*Leerzeichen*] [*Sign*] [*Ziffern*]
+> [*Leerzeichen*] [*Zeichen*] [*Ziffern*]
 
-Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); und *Ziffern* sind eine oder mehrere Ziffern.
+Ein *Leerzeichen* besteht aus Leerzeichen oder Registerkartenzeichen, die ignoriert werden. *Zeichen* ist entweder plus (+) oder minus (-); und *Ziffern* sind eine oder mehrere Ziffern.
 
-**_wtoi64** ist mit **_atoi64** identisch, außer dass es eine Zeichenfolge mit breit Zeichen als Parameter annimmt.
+**_wtoi64** ist identisch mit **_atoi64** außer dass es eine breite Zeichenzeichenfolge als Parameter verwendet.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Gebiets Schemas übergeben wurde. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **Suffix _l** sind identisch, außer dass sie den übergebenen Gebietsschemaparameter anstelle des aktuellen Gebietsschemas verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -127,7 +134,7 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der **_atoi64** -Funktionen in numerische Werte konvertiert werden können.
+Dieses Programm zeigt, wie als Zeichenfolgen gespeicherte Zahlen mithilfe der **_atoi64-Funktionen** in numerische Werte konvertiert werden können.
 
 ```C
 // crt_atoi64.c

@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - regex_error class
 ms.assetid: 3333a1a3-ca6f-4612-84b2-1b4c7e3db5a4
-ms.openlocfilehash: 52b6bfd74a08200f7d924d2601b85718a941dd85
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: f8f3c88c1b203ed7fcea148843fa99590e27b888
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68451651"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81331871"
 ---
-# <a name="regexerror-class"></a>regex_error-Klasse
+# <a name="regex_error-class"></a>regex_error-Klasse
 
 Meldet ein ungültiges basic_regex-Objekt.
 
@@ -25,19 +25,19 @@ class regex_error
 : public std::runtime_error
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Klasse beschreibt ein Ausnahmeobjekt, das ausgelöst wurde, um einen Fehler bei der Erstellung oder Verwendung eines `basic_regex` -Objekts zu melden.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[regex_error](#regex_error)|Erstellt das Objekt.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[Code](#code)|Gibt den Fehlercode zurück.|
 
@@ -82,7 +82,7 @@ int main()
 regex error: unbalanced parentheses
 ```
 
-## <a name="code"></a> regex_error::code
+## <a name="regex_errorcode"></a><a name="code"></a>regex_error::code
 
 Gibt den Fehlercode zurück.
 
@@ -90,11 +90,11 @@ Gibt den Fehlercode zurück.
 regex_constants::error_code code() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt den Wert zurück, der an den Konstruktor des Objekts übergeben wurde.
 
-## <a name="regex_error"></a> regex_error::regex_error
+## <a name="regex_errorregex_error"></a><a name="regex_error"></a>regex_error::regex_error
 
 Erstellt das Objekt.
 
@@ -104,20 +104,20 @@ regex_error(regex_constants::error_code error);
 
 ### <a name="parameters"></a>Parameter
 
-*Zeit*\
+*Fehler*\
 Der Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der-Konstruktor erstellt ein-Objekt, das den Wert *Fehler*enthält.
+Der Konstruktor erstellt ein Objekt, das den *Wertfehler*enthält.
 
 ## <a name="see-also"></a>Siehe auch
 
 [\<regex>](../standard-library/regex.md)\
 [regex_constants-Klasse](../standard-library/regex-constants-class.md)\
-[\<Regex-> Funktionen](../standard-library/regex-functions.md)\
+[\<regex> Funktionen](../standard-library/regex-functions.md)\
 [regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
-[\<Regex-> Operatoren](../standard-library/regex-operators.md)\
+[\<regex> Operatoren](../standard-library/regex-operators.md)\
 [regex_token_iterator-Klasse](../standard-library/regex-token-iterator-class.md)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)\
-[\<regex>-Typdefinitionen](../standard-library/regex-typedefs.md)
+[\<regex> typedefs](../standard-library/regex-typedefs.md)

@@ -1,11 +1,13 @@
 ---
 title: islower, iswlower, _islower_l, _iswlower_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - iswlower
 - _islower_l
 - islower
 - _iswlower_l
+- _o_islower
+- _o_iswlower
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -19,6 +21,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -45,12 +48,12 @@ helpviewer_keywords:
 - iswlower function
 - _islower_l function
 ms.assetid: fcc3b70a-2b47-45fd-944d-e5c1942e6457
-ms.openlocfilehash: 957bae12c718b0466c8e9f6d39dd57d7c0ccca7d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 64fbde1db738dda694a911557748f2b46b6d8af8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954321"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343800"
 ---
 # <a name="islower-iswlower-_islower_l-_iswlower_l"></a>islower, iswlower, _islower_l, _iswlower_l
 
@@ -77,7 +80,7 @@ int _iswlower_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende ganze Zahl.
 
 *locale*<br/>
@@ -85,11 +88,11 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 (null) zurück, wenn *c* eine bestimmte Darstellung eines Kleinbuchstaben ist. **IsLower** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein Kleinbuchstabe (a-z) ist. **iswlower** gibt einen Wert ungleich 0 (null) zurück, wenn *c* ein breit Zeichen ist, das einem Kleinbuchstaben entspricht, oder wenn *c* einer der von der Implementierung definierten breit Zeichen ist, für die keine **iswcntrl**, **iswdigit**, **iswpunct** , oder **iswspace** ist ungleich 0 (null). Jede dieser Routinen gibt 0 zurück, wenn *c* die Test Bedingung nicht erfüllt.
+Jede dieser Routinen gibt einen Wert ungleich Null zurück, wenn *c* eine bestimmte Darstellung eines Kleinbuchstabens ist. **islower** gibt einen Wert ungleich Null zurück, wenn *c* ein Kleinbuchstaben (a - z) ist. **iswlower** gibt einen Wert ungleich Null zurück, wenn *c* ein breites Zeichen ist, das einem Kleinbuchstaben entspricht, oder wenn *c* zu einem implementierungsdefinierten Satz von Breitzeichen gehört, für die keines von **iswcntrl**, **iswdigit**, **iswpunct**oder **iswspace** ungleich Null ist. Jede dieser Routinen gibt 0 zurück, wenn *c* die Testbedingung nicht erfüllt.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix verwenden das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **suffix _l** verwenden das Gebietsschema, das übergeben wird, anstelle des aktuellen Gebietsschemas für ihr gebietsschemaabhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Das Verhalten von **IsLower** und **_islower_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich von 0 bis 0xFF (einschließlich) liegt. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* keiner dieser Werte ist, wird von den Funktionen eine-Assertion erhoben.
+Das Verhalten von **islower** und **_islower_l** ist nicht definiert, wenn *c* nicht EOF ist oder im Bereich 0 bis 0xFF, einschließlich. Wenn eine Debug-CRT-Bibliothek verwendet wird und *c* nicht einer dieser Werte ist, werden die Funktionen eine Assertion aus.
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -98,19 +101,23 @@ Das Verhalten von **IsLower** und **_islower_l** ist nicht definiert, wenn *c* n
 |**_istlower**|**islower**|[_ismbclower](ismbclower-ismbclower-l-ismbcupper-ismbcupper-l.md)|**iswlower**|
 |**_istlower_l**|`_islower _l`|[_ismbclower_l](ismbclower-ismbclower-l-ismbcupper-ismbcupper-l.md)|**_liswlower_l**|
 
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**islower**|\<ctype.h>|
 |**iswlower**|\<ctype.h> oder \<wchar.h>|
 |**_islower_l**|\<ctype.h>|
 |**_swlower_l**|\<ctype.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>

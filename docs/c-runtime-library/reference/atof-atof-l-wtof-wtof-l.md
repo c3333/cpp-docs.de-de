@@ -1,11 +1,15 @@
 ---
 title: atof, _atof_l, _wtof, _wtof_l
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _wtof_l
 - atof
 - _atof_l
 - _wtof
+- _o__atof_l
+- _o__wtof
+- _o__wtof_l
+- _o_atof
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -49,12 +54,12 @@ helpviewer_keywords:
 - _wtof function
 - string conversion, to floating point values
 ms.assetid: eb513241-c9a9-4f5c-b7e7-a49b14abfb75
-ms.openlocfilehash: a624ae9f900395ed2117ed2bb89e2768c64daba9
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 492719a0cc0f8ac079b257ec8d7aa1014c5b2a86
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70939572"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348925"
 ---
 # <a name="atof-_atof_l-_wtof-_wtof_l"></a>atof, _atof_l, _wtof, _wtof_l
 
@@ -81,7 +86,7 @@ double _wtof_l(
 
 ## <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Zu konvertierende Zeichenfolge.
 
 *locale*<br/>
@@ -89,25 +94,27 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt den **Double** -Wert zurück, der erzeugt wird, indem die Eingabezeichen als Zahl interpretiert werden. Der Rückgabewert ist 0,0, wenn die Eingabe nicht in einen Wert dieses Typs umgewandelt werden kann.
+Jede Funktion gibt den **doppelten** Wert zurück, der durch Interpretieren der Eingabezeichen als Zahl erzeugt wird. Der Rückgabewert ist 0,0, wenn die Eingabe nicht in einen Wert dieses Typs umgewandelt werden kann.
 
-In allen Fällen außerhalb des gültigen Bereichs wird **errno** auf **ERANGE**festgelegt. Wenn der übergebenen Parameter **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben 0 zurück.
+In allen Fällen a-of-range wird **errno** auf **ERANGE**gesetzt. Wenn der übergebene Parameter **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben 0 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen konvertieren eine Zeichenfolge in einen Gleitkommawert mit doppelter Genauigkeit.
 
 Die Eingabezeichenfolge ist eine Sequenz von Zeichen, die als numerischer Wert des angegebenen Typs interpretiert werden. Die Funktion beendet das Lesen der Eingabezeichenfolge am ersten Zeichen, das nicht als Teil einer Zahl erkannt wird. Möglicherweise ist dies das Zeichen NULL ('\0' oder L'\0'), das am Ende der Zeichenfolge steht.
 
-Das *Str* -Argument für **atof** und **_wtof** weist die folgende Form auf:
+Das *Argument str* zu **atof** und **_wtof** hat die folgende Form:
 
-[*Leerzeichen*] [*Sign*] [*Ziffern*] [ __.__ *Ziffern*] [{**e** &#124; **e** } [*Sign*]*Ziffern*]
+[*Leerzeichen*] [*Zeichen*] [*Ziffern*] [__.__ *Ziffern*] [**e** &#124; **E** *-Zeichen*]*Ziffern*]
 
-Ein *Leerraum* besteht aus Leerzeichen oder Tabulator Zeichen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); und *Ziffern* sind eine oder mehrere Dezimalstellen. Wenn keine Ziffern vor dem Dezimaltrennzeichen stehen, muss mindestens eine Ziffer nach dem Dezimaltrennzeichen stehen. Auf die Dezimalstellen kann ein Exponent folgen, der aus einem einführenden Buchstaben (**e**oder **e**) und einer optionalen ganzzahligen Ganzzahl mit Vorzeichen besteht.
+Ein *Leerzeichen* besteht aus Leerzeichen oder Registerkartenzeichen, die ignoriert werden. *Zeichen* ist entweder plus (+) oder minus (-); und *Ziffern* sind eine oder mehrere Dezimalstellen. Wenn keine Ziffern vor dem Dezimaltrennzeichen stehen, muss mindestens eine Ziffer nach dem Dezimaltrennzeichen stehen. Auf die Dezimalstellen kann ein Exponent folgen, der aus einem Einführenden Buchstaben (**e**, oder **E**) und einer optional signierten Dezimalzahl besteht.
 
-Die ucrt-Versionen dieser Funktionen unterstützen nicht die Konvertierung von Exponent-Buchstaben vom Fortran-Stil (**d** oder **d**). Diese nicht-standardmäßige Erweiterung wurde in früheren Versionen der CRT unterstützt. Sie ist möglicherweise eine fehlerhafte Änderung für Ihren Code.
+Die UCRT-Versionen dieser Funktionen unterstützen keine Konvertierung von Fortran-Stil (**d** oder **D**) Exponentenbuchstaben. Diese nicht-standardmäßige Erweiterung wurde in früheren Versionen der CRT unterstützt. Sie ist möglicherweise eine fehlerhafte Änderung für Ihren Code.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets *Schema Parameter,* der anstelle des aktuellen Gebiets Schemas übergeben wurde.
+Die Versionen dieser Funktionen mit dem **Suffix _l** sind identisch, außer dass sie den *übergebenen Gebietsschemaparameter* anstelle des aktuellen Gebietsschemas verwenden.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -121,11 +128,11 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 |Routine(n)|Erforderlicher Header|
 |------------------|---------------------|
 |**atof**, **_atof_l**|C: \<math.h> or \<stdlib.h> C++: \<cstdlib>, \<stdlib.h>, \<cmath> or \<math.h>|
-|**_wtof**, **_wtof_l**|C: \<stdlib.h> oder \<wchar.h> C++: \<cstdlib>, \<stdlib.h> oder \<wchar.h>|
+|**_wtof**, **_wtof_l**|C: \<stdlib.h> or \<wchar.h> C++: \<cstdlib>, \<stdlib.h> or \<wchar.h>|
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm zeigt, wie Zahlen, die als Zeichen folgen gespeichert werden, mithilfe der **atof** -und **_atof_l** -Funktionen in numerische Werte konvertiert werden können.
+Dieses Programm zeigt, wie als Zeichenfolgen gespeicherte Zahlen mithilfe der **Atof-** und **_atof_l-Funktionen** in numerische Werte konvertiert werden können.
 
 ```C
 // crt_atof.c

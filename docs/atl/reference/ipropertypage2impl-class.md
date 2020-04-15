@@ -10,19 +10,19 @@ helpviewer_keywords:
 - IPropertyPage2 ATL implementation
 - IPropertyPage2Impl class
 ms.assetid: e89fbe90-203a-47f0-a5de-23616697e1ce
-ms.openlocfilehash: 5ec6cb2f4fc6931a1bec429068b558bf7ac1906e
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: d112a2411a9debbf2eb77e6b851f4500e8d32ab8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495607"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81329589"
 ---
 # <a name="ipropertypage2impl-class"></a>IPropertyPage2Impl-Klasse
 
-Diese Klasse implementiert `IUnknown` und erbt die Standard Implementierung von [IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md).
+Diese Klasse `IUnknown` implementiert und erbt die Standardimplementierung von [IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md).
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,25 +34,25 @@ class IPropertyPage2Impl : public IPropertyPageImpl<T>
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IPropertyPage2Impl`abgeleitete Klasse.
+Ihre Klasse, `IPropertyPage2Impl`abgeleitet von .
 
 ## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[IPropertyPage2Impl:: editproperty](#editproperty)|Gibt an, welches Eigenschaften Steuerelement den Fokus erhält, wenn die Eigenschaften Seite aktiviert wird. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
+|[IPropertyPage2Impl::EditProperty](#editproperty)|Gibt an, welches Eigenschaftensteuerelement den Fokus erhält, wenn die Eigenschaftenseite aktiviert wird. Die ATL-Implementierung gibt E_NOTIMPL zurück.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die [IPropertyPage2](/windows/win32/api/ocidl/nn-ocidl-ipropertypage2) -Schnittstelle erweitert [IPropertyPage](/windows/win32/api/ocidl/nn-ocidl-ipropertypage) durch `EditProperty` hinzufügen der-Methode. Diese Methode ermöglicht es einem Client, eine bestimmte Eigenschaft in einem Eigenschaften Seiten Objekt auszuwählen.
+Die [IPropertyPage2-Schnittstelle](/windows/win32/api/ocidl/nn-ocidl-ipropertypage2) erweitert [IPropertyPage](/windows/win32/api/ocidl/nn-ocidl-ipropertypage) durch Hinzufügen der `EditProperty` Methode. Mit dieser Methode kann ein Client eine bestimmte Eigenschaft in einem Eigenschaftenseitenobjekt auswählen.
 
-Class `IPropertyPage2Impl` gibt einfach E_NOTIMPL für `IPropertyPage2::EditProperty`zurück. Er erbt jedoch die Standard Implementierung von [IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md) und implementiert `IUnknown` durch das Senden von Informationen an das dumpgerät in Debugbuilds.
+Die `IPropertyPage2Impl` Klasse gibt `IPropertyPage2::EditProperty`einfach E_NOTIMPL für zurück. Es erbt jedoch die Standardimplementierung von [IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md) und implementiert, `IUnknown` indem Informationen an das Dump-Gerät in Debugbuilds gesendet werden.
 
-Wenn Sie eine Eigenschaften Seite erstellen, wird die Klasse in der Regel `IPropertyPageImpl`von abgeleitet. Um die zusätzliche Unterstützung von `IPropertyPage2`bereitzustellen, ändern Sie die Klassendefinition `EditProperty` , und überschreiben Sie die-Methode.
+Wenn Sie eine Eigenschaftenseite erstellen, wird `IPropertyPageImpl`Ihre Klasse in der Regel von abgeleitet. Um die zusätzliche `IPropertyPage2`Unterstützung von bereitzustellen, ändern `EditProperty` Sie ihre Klassendefinition, und überschreiben Sie die Methode.
 
-**Verwandte Artikel** [ATL-Tutorial](../../atl/active-template-library-atl-tutorial.md), [Erstellen eines ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
+**Verwandte Artikel** [ATL Tutorial](../../atl/active-template-library-atl-tutorial.md), Erstellen eines [ATL-Projekts](../../atl/reference/creating-an-atl-project.md)
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -64,11 +64,11 @@ Wenn Sie eine Eigenschaften Seite erstellen, wird die Klasse in der Regel `IProp
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlctl.h
+**Kopfzeile:** atlctl.h
 
-##  <a name="editproperty"></a>IPropertyPage2Impl:: editproperty
+## <a name="ipropertypage2impleditproperty"></a><a name="editproperty"></a>IPropertyPage2Impl::EditProperty
 
-Gibt an, welches Eigenschaften Steuerelement den Fokus erhält, wenn die Eigenschaften Seite aktiviert wird.
+Gibt an, welches Eigenschaftensteuerelement den Fokus erhält, wenn die Eigenschaftenseite aktiviert wird.
 
 ```
 HRESULT EditProperty(DISPID dispID);
@@ -78,12 +78,12 @@ HRESULT EditProperty(DISPID dispID);
 
 Gibt E_NOTIMPL zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [IPropertyPage2:: editproperty](/windows/win32/api/ocidl/nf-ocidl-ipropertypage2-editproperty) in der Windows SDK.
+Siehe [IPropertyPage2::EditProperty](/windows/win32/api/ocidl/nf-ocidl-ipropertypage2-editproperty) im Windows SDK.
 
 ## <a name="see-also"></a>Siehe auch
 
 [IPerPropertyBrowsingImpl-Klasse](../../atl/reference/iperpropertybrowsingimpl-class.md)<br/>
 [ISpecifyPropertyPagesImpl-Klasse](../../atl/reference/ispecifypropertypagesimpl-class.md)<br/>
-[Klassen Übersicht](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

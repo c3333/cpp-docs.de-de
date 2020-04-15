@@ -1,9 +1,11 @@
 ---
 title: _rmdir, _wrmdir
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wrmdir
 - _rmdir
+- _o__rmdir
+- _o__wrmdir
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _wrmdir function
 - wrmdir function
 ms.assetid: 652c2a5a-b0ac-4493-864e-1edf484333c5
-ms.openlocfilehash: 396e620bfabe240638dc070ff87582b16287ff60
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: dc9406371da950eb76207d8ddb4a1be8c732098e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949218"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338073"
 ---
 # <a name="_rmdir-_wrmdir"></a>_rmdir, _wrmdir
 
@@ -60,12 +63,12 @@ int _wrmdir(
 
 ### <a name="parameters"></a>Parameter
 
-*dirname*<br/>
+*Dirname*<br/>
 Der Pfad des Verzeichnisses, das entfernt werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt 0 zurück, wenn das Verzeichnis erfolgreich gelöscht wird. Der Rückgabewert-1 gibt einen Fehler an, und **errno** wird auf einen der folgenden Werte festgelegt:
+Jede dieser Funktionen gibt 0 zurück, wenn das Verzeichnis erfolgreich gelöscht wird. Ein Rückgabewert von -1 gibt einen Fehler an und **errno** wird auf einen der folgenden Werte gesetzt:
 
 |errno-Wert|Bedingung|
 |-|-|
@@ -73,13 +76,15 @@ Jede dieser Funktionen gibt 0 zurück, wenn das Verzeichnis erfolgreich gelösch
 | **ENOENT** | Der Pfad ist ungültig. |
 | **EACCES** | Ein Programm verfügt über ein geöffnetes Handle des Verzeichnisses. |
 
-Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_rmdir** -Funktion löscht das von *dirname*angegebene Verzeichnis. Das Verzeichnis muss leer sein, und es darf sich nicht um das aktuelle Arbeitsverzeichnis oder das Stammverzeichnis handeln.
+Die **_rmdir-Funktion** löscht das von *dirname*angegebene Verzeichnis . Das Verzeichnis muss leer sein, und es darf sich nicht um das aktuelle Arbeitsverzeichnis oder das Stammverzeichnis handeln.
 
-**_wrmdir** ist eine breit Zeichen Version von **_rmdir**. Das *dirname* -Argument für **_wrmdir** ist eine Zeichenfolge mit breit Zeichen. **_wrmdir** und **_rmdir** Verhalten sich andernfalls identisch.
+**_wrmdir** ist eine breit **gefächerte**Version von _rmdir ; Das *dirname-Argument* für **_wrmdir** ist eine Zeichenfolge mit großen Zeichen. **_wrmdir** und **_rmdir** verhalten sich ansonsten gleich.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -89,12 +94,12 @@ Die **_rmdir** -Funktion löscht das von *dirname*angegebene Verzeichnis. Das Ve
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_rmdir**|\<direct.h>|
 |**_wrmdir**|\<direct.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 

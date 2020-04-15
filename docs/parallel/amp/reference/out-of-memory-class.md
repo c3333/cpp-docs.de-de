@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - out_of_memory class
 ms.assetid: 3aa7e682-8f13-4ae6-9188-31fb423956e4
-ms.openlocfilehash: 4edc1db3c1a70a41f9a0493bd3dc484e27f99b44
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: e716d4952bdb9634cc0d195285d3a65c5c06b0a1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77126447"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336801"
 ---
 # <a name="out_of_memory-class"></a>out_of_memory-Klasse
 
@@ -25,13 +25,13 @@ Die Ausnahme, die ausgelöst wird, wenn eine Methode aufgrund unzureichenden Sys
 class out_of_memory : public runtime_exception;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Out_of_memory-Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `out_of_memory`.|
+|[out_of_memory Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `out_of_memory`.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -41,12 +41,13 @@ class out_of_memory : public runtime_exception;
 
 `out_of_memory`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** amprt. h
+**Kopfzeile:** amprt.h
 
 **Namespace:** Parallelität
-## <a name="ctor"></a>out_of_memory
+
+## <a name="out_of_memory"></a><a name="ctor"></a>out_of_memory
 
 Initialisiert eine neue Instanz der Klasse.
 
@@ -68,6 +69,6 @@ Eine Beschreibung des Fehlers.
 
 Eine neue Instanz der `out_of_memory`-Klasse.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+[Parallelitätsnamespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

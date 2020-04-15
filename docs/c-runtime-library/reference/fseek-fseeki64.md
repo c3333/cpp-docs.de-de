@@ -1,9 +1,11 @@
 ---
 title: fseek, _fseeki64
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _fseeki64
 - fseek
+- _o__fseeki64
+- _o_fseek
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - file pointers [C++]
 - seek file pointers
 ms.assetid: f6bb1f8b-891c-426e-9e14-0e7e5c62df70
-ms.openlocfilehash: e3da603c3c7f1b083ddb7f7f9577adae9be5e4f1
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: e8f6021a0b770f6b435653c190d5968f9ac50a57
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956575"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81345757"
 ---
 # <a name="fseek-_fseeki64"></a>fseek, _fseeki64
 
@@ -59,44 +62,46 @@ int _fseeki64(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 *offset*<br/>
 Anzahl von Bytes von *origin*.
 
-*origin*<br/>
-Ursprüngliche Position.
+*Ursprung*<br/>
+Ursprüngliche Position
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn erfolgreich, gibt " **f Seek** " und " **_fseeki64** " 0 zurück. Andernfalls gibt es einen Wert ungleich 0 (null) zurück. Auf Geräten, die Suchvorgänge nicht unterstützen, ist der Rückgabewert nicht definiert. Wenn der *Stream* ein NULL-Zeiger ist oder wenn der *Ursprung* kein zulässiger Wert ist, den Sie unten beschrieben haben, rufen Sie **fseek** und **_fseeki64** den Handler für ungültige Parameter auf, wie unter [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück.
+Wenn erfolgreich, **fseek** und **_fseeki64** gibt 0 zurück. Andernfalls gibt es einen Wert ungleich 0 (null) zurück. Auf Geräten, die Suchvorgänge nicht unterstützen, ist der Rückgabewert nicht definiert. Wenn *stream* ein Nullzeiger ist oder der *Ursprung* nicht einer der unten beschriebenen zulässigen Werte ist, rufen **fseek** und **_fseeki64** den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzen diese Funktionen **errno** auf **EINVAL** und geben -1 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **fseek** -und **_fseeki64** -Funktion verschiebt den Dateizeiger (sofern vorhanden), der mit *Stream* verknüpft ist, an einen neuen Speicherort, der aus dem *Ursprung* *Offset* Bytes ist. Der nächste Vorgang im Stream tritt am neuen Speicherort auf. Für einen updatebereiten Stream kann der nächste Vorgang ein Lese- oder Schreibvorgang sein. Der Argument *Ursprung* muss eine der folgenden Konstanten sein, die in stdio definiert ist. Micha
+Die **Funktionen fseek** und **_fseeki64** verschiebt den dem *Stream* zugeordneten Dateizeiger (falls vorhanden) an eine neue Position, die Bytes vom *Ursprung* *versetzt.* Der nächste Vorgang im Stream tritt am neuen Speicherort auf. Für einen updatebereiten Stream kann der nächste Vorgang ein Lese- oder Schreibvorgang sein. Der *Argumentursprung* muss eine der folgenden Konstanten sein, die in STDIO definiert sind. H:
 
-|Ursprungs Wert|Bedeutung|
+|Ursprungswert|Bedeutung|
 |-|-|
 | **SEEK_CUR** | Aktuelle Position des Dateizeigers |
 | **SEEK_END** | Ende der Datei |
 | **SEEK_SET** | Anfang der Datei |
 
-Sie können **fseek** und **_fseeki64** verwenden, um den Zeiger an einer beliebigen Stelle in einer Datei neu zu positionieren. Der Zeiger kann auch nach dem Ende der Datei positioniert werden. mit " **f Seek** " und " **_fseeki64** " wird der Indikator "Dateiende" gelöscht und die Auswirkungen aller vorherigen [ungetc](ungetc-ungetwc.md) -Aufrufe auf den *Stream*negiert.
+Sie können **fseek** und **_fseeki64** verwenden, um den Zeiger an einer beliebigen Stelle in einer Datei neu zu positionieren. Der Zeiger kann auch nach dem Ende der Datei positioniert werden. **fseek** und **_fseeki64** löscht den End-of-File-Indikator und negiert die Wirkung aller vorherigen [ungetc-Aufrufe](ungetc-ungetwc.md) gegen *Stream*.
 
 Wenn eine Datei zum Anfügen von Daten geöffnet wird, wird die aktuelle Dateiposition vom letzten E/A-Vorgang nicht dadurch bestimmt, wo der nächste Schreibvorgang erfolgt. Wenn noch kein E/A-Vorgang für eine zum Anhängen geöffnete Datei stattgefunden hat, ist die Dateiposition der Anfang der Datei.
 
-Für Datenströme, die im Textmodus geöffnet wurden, sind **fseek** und **_fseeki64** eingeschränkt, da Wagen Rücklauf-Zeilenvorschub Übersetzungen bewirken können, dass **fseek** und **_fseeki64** unerwartete Ergebnisse erzeugen. Die einzigen **fseek** -und **_fseeki64** -Vorgänge, die für im Textmodus geöffnete Streams garantiert werden, sind:
+Für Streams, die im Textmodus geöffnet werden, haben **fseek** und **_fseeki64** nur eingeschränkten Nutzen, da Rücklauf-Feed-Übersetzungen **fseek** und **_fseeki64** zu unerwarteten Ergebnissen führen können. Die einzigen **fseek** und **_fseeki64** Operationen garantiert auf Streams im Textmodus geöffnet arbeiten sind:
 
 - Suchen mit einem Offset von 0 hinsichtlich der ursprünglichen Werte
 
-- Suche vom Anfang der Datei mit einem Offsetwert, der von einem Aufruf von [ftell](ftell-ftelli64.md) zurückgegeben wird, wenn Sie **fseek** verwenden, oder von [_ftelli64](ftell-ftelli64.md), wenn Sie **_fseeki64** verwenden.
+- Suchen vom Anfang der Datei mit einem Offsetwert, der von einem Aufruf an [ftell](ftell-ftelli64.md) zurückgegeben wird, wenn **fseek** oder [_ftelli64](ftell-ftelli64.md) verwendet wird, wenn **_fseeki64 verwendet**wird.
 
-Im Textmodus wird STRG+Z als ein Dateiendezeichen in der Eingabe interpretiert. In [Dateien, die](fopen-wfopen.md) für Lese-/Schreibvorgänge geöffnet sind, überprüfen Sie, ob die Datei mit dem Namen STRG + Z am Ende der Datei ist, und entfernen Sie Sie, wenn möglich. Dies geschieht, da die Kombination von **fseek** und [ftell](ftell-ftelli64.md) oder **_fseeki64** und [_ftelli64](ftell-ftelli64.md)zum Verschieben innerhalb einer Datei, die mit STRG + Z endet, dazu führen kann, dass **fseek** oder **_fseeki64** sich nicht ordnungsgemäß am Ende der Datei.
+Im Textmodus wird STRG+Z als ein Dateiendezeichen in der Eingabe interpretiert. In Dateien, die zum Lesen/Schreiben geöffnet wurden, suchen [fopen](fopen-wfopen.md) und alle zugehörigen Routinen nach einem STRG+Z am Ende der Datei und entfernen es nach Möglichkeit. Dies geschieht, weil die Kombination aus **fseek** und [ftell](ftell-ftelli64.md) oder **_fseeki64** und [_ftelli64](ftell-ftelli64.md), innerhalb einer Datei zu verschieben, die mit einer STRG+Z endet, kann dazu führen, dass **fseek** oder **_fseeki64** sich am Ende der Datei falsch verhalten.
 
-Wenn CRT eine Datei öffnet, die mit einer Bytereihenfolge-Marke (Byte Order Mark, BOM) beginnt, wird der Dateizeiger nach der BOM positioniert (d.h. am Anfang des tatsächlichen Dateiinhalts). Wenn Sie an den Anfang der Datei **Suchen** müssen, verwenden Sie [ftell](ftell-ftelli64.md) , um die Anfangsposition zu ermitteln, und **Suchen Sie danach** , anstatt die Position 0 zu positionieren.
+Wenn CRT eine Datei öffnet, die mit einer Bytereihenfolge-Marke (Byte Order Mark, BOM) beginnt, wird der Dateizeiger nach der BOM positioniert (d.h. am Anfang des tatsächlichen Dateiinhalts). Wenn Sie bis zum Anfang der Datei **suchen** müssen, verwenden Sie [ftell,](ftell-ftelli64.md) um die Ausgangsposition zu erhalten, und **suchen** Sie sie, anstatt position 0 zu positionieren.
 
 Diese Funktion sperrt alle anderen Threads während der Ausführung und ist daher threadsicher. Eine nicht sperrende Version finden Sie unter [_fseek_nolock, _fseeki64_nolock](fseek-nolock-fseeki64-nolock.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -105,7 +110,7 @@ Diese Funktion sperrt alle anderen Threads während der Ausführung und ist dahe
 |**fseek**|\<stdio.h>|
 |**_fseeki64**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -153,4 +158,4 @@ This is the file 'fseek.out'.
 [fopen, _wfopen](fopen-wfopen.md)<br/>
 [ftell, _ftelli64](ftell-ftelli64.md)<br/>
 [_lseek, _lseeki64](lseek-lseeki64.md)<br/>
-[rewind](rewind.md)<br/>
+[Zurückspulen](rewind.md)<br/>

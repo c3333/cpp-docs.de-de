@@ -1,8 +1,9 @@
 ---
 title: _fileno
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _fileno
+- _o__fileno
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - _fileno function
 - streams, getting file handles
 ms.assetid: 86474174-2f17-4100-bcc4-352dd976c7b5
-ms.openlocfilehash: 586e390e100f5dc46a49b99c007016cf23ac68f0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ec4f08e499efe82b0ee35235e6e2d86dbb9bab66
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957208"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346844"
 ---
 # <a name="_fileno"></a>_fileno
 
@@ -48,21 +50,23 @@ int _fileno(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
-Zeiger auf die **FILE**-Struktur.
+*Stream*<br/>
+Zeiger zur **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_fileno** gibt den Dateideskriptor zurück. Es gibt keine Fehlerrückgabe. Das Ergebnis ist nicht definiert, wenn der *Stream* keine geöffnete Datei angibt. Wenn Stream **null**ist, ruft **_fileno** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die Ausführung weiterhin zugelassen wird, gibt diese Funktion -1 zurück und legt **errno** auf **EINVAL** fest.
+**_fileno** gibt den Dateideskriptor zurück. Es gibt keine Fehlerrückgabe. Das Ergebnis ist nicht definiert, wenn *der Stream* keine geöffnete Datei angibt. Wenn Stream **NULL**ist, **ruft _fileno** den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung weiterhin zugelassen wird, gibt diese Funktion -1 zurück und legt **errno** auf **EINVAL** fest.
 
 Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
 > [!NOTE]
-> Wenn **stdout** oder **stderr** keinem Ausgabestream zugeordnet ist (z. b. in einer Windows-Anwendung ohne Konsolenfenster), hat der Dateideskriptor den Wert-2 zurückgegeben. In früheren Versionen lautete der zurückgegebene Dateideskriptor -1. Diese Änderung ermöglicht es Anwendungen, diese Bedingung von einem Fehler unterscheiden.
+> Wenn **stdout** oder **stderr** keinem Ausgabestream zugeordnet ist (z. B. in einer Windows-Anwendung ohne Konsolenfenster), lautet der zurückgegebene Dateideskriptor -2. In früheren Versionen lautete der zurückgegebene Dateideskriptor -1. Diese Änderung ermöglicht es Anwendungen, diese Bedingung von einem Fehler unterscheiden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_fileno** -Routine gibt den Dateideskriptor zurück, der derzeit dem *Stream*zugeordnet ist. Diese Routine wird sowohl als Funktion und als Makro implementiert. Weitere Informationen zum Auswählen einer Implementierung finden Sie unter [Empfehlungen für die Wahl zwischen Funktionen und Macros](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md).
+Die **_fileno-Routine** gibt den Dateideskriptor zurück, der derzeit mit *Stream*verknüpft ist. Diese Routine wird sowohl als Funktion und als Makro implementiert. Weitere Informationen zum Auswählen einer Implementierung finden Sie unter [Empfehlungen für die Wahl zwischen Funktionen und Macros](../../c-runtime-library/recommendations-for-choosing-between-functions-and-macros.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -70,7 +74,7 @@ Die **_fileno** -Routine gibt den Dateideskriptor zurück, der derzeit dem *Stre
 |--------------|---------------------|
 |**_fileno**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

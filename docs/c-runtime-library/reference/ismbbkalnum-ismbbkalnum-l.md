@@ -1,9 +1,11 @@
 ---
 title: _ismbbkalnum, _ismbbkalnum_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbbkalnum
 - _ismbbkalnum_l
+- _o__ismbbkalnum
+- _o__ismbbkalnum_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - _ismbbkalnum function
 - ismbbkalnum function
 ms.assetid: e1d70e7b-29d0-469c-9d93-442b99de22ac
-ms.openlocfilehash: 2b7f188e38a2d13bf08210d6c2408ab996f18849
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 936a7708a824ac6e9e8a07b34bbdb9a3b9e761ff
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954183"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343666"
 ---
 # <a name="_ismbbkalnum-_ismbbkalnum_l"></a>_ismbbkalnum, _ismbbkalnum_l
 
@@ -56,7 +59,7 @@ int _ismbbkalnum_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Die zu testende ganze Zahl.
 
 *locale*<br/>
@@ -64,18 +67,22 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_ismbbkalnum** gibt einen Wert ungleich 0 (null) zurück, wenn es sich bei der ganzzahligen *c* um ein nicht-ASCII-Textsymbol handelt, das keine Interpunktions Zeichen ist. **_ismbbkalnum** verwendet das aktuelle Gebiets Schema für Gebiets Schema abhängige Zeichen Informationen. **_ismbbkalnum_l** ist mit **_ismbbkalnum** identisch, außer dass es das Gebiets Schema als Parameter annimmt. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_ismbbkalnum** gibt einen Wert ungleich Null zurück, wenn die ganze Zahl *c* ein nicht-ASCII-Textsymbol ist, das nicht zeichenzeichenzeichen ist, oder 0, wenn dies nicht der Fall ist. **_ismbbkalnum** verwendet das aktuelle Gebietsschema für gebietsschemaabhängige Zeicheninformationen. **_ismbbkalnum_l** ist identisch mit **_ismbbkalnum** außer dass es das Gebietsschema als Parameter verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_ismbbkalnum**|\<mbctype.h>|
 |**_ismbbkalnum_l**|\<mbctype.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Byteklassifizierung](../../c-runtime-library/byte-classification.md)<br/>
-[_ismbb-Routinen](../../c-runtime-library/ismbb-routines.md)<br/>
+[_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

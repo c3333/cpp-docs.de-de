@@ -16,16 +16,16 @@ f1_keywords:
 helpviewer_keywords:
 - CSimpleArray class
 ms.assetid: ee0c9f39-b61c-4c18-bc43-4eada21dca3a
-ms.openlocfilehash: 8c050002549fc6b7a18acb34f0e4f9a2f278db82
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e45c9b3fd778aacd3a3e2d5d3696661afa0c6fb0
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62278006"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81330904"
 ---
 # <a name="csimplearray-class"></a>CSimpleArray-Klasse
 
-Diese Klasse stellt Methoden zum Verwalten von einem einfachen Array an.
+Diese Klasse stellt Methoden zum Verwalten eines einfachen Arrays bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,59 +37,59 @@ class CSimpleArray
 #### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Der Typ der Daten, die im Array gespeichert.
+Der Typ der Daten, die im Array gespeichert werden sollen.
 
 *TEqual*<br/>
-Ein Merkmal-Objekt, und definieren den Gleichheitstest auf für Elemente des Typs *T*.
+Ein Merkmalsobjekt, das den Gleichheitstest für Elemente des Typs *T*definiert.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleArray::CSimpleArray](#csimplearray)|Der Konstruktor für den einfachen Array.|
-|[CSimpleArray::~CSimpleArray](#dtor)|Der Destruktor für das einfache Array.|
+|[CSimpleArray::CSimpleArray](#csimplearray)|Der Konstruktor für das einfache Array.|
+|[CSimpleArray::'CSimpleArray](#dtor)|Der Destruktor für das einfache Array.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSimpleArray::Add](#add)|Fügt ein neues Element in das Array an.|
-|[CSimpleArray::Find](#find)|Sucht ein Element im Array.|
-|[CSimpleArray::GetData](#getdata)|Gibt einen Zeiger auf die Daten im Array gespeichert.|
-|[CSimpleArray::GetSize](#getsize)|Gibt die Anzahl der Elemente im Array gespeichert.|
-|[CSimpleArray::Remove](#remove)|Entfernt ein angegebenes Element aus dem Array.|
+|[CSimpleArray::Hinzufügen](#add)|Fügt dem Array ein neues Element hinzu.|
+|[CSimpleArray::Suchen](#find)|Sucht ein Element im Array.|
+|[CSimpleArray::GetData](#getdata)|Gibt einen Zeiger auf die im Array gespeicherten Daten zurück.|
+|[CSimpleArray::GetSize](#getsize)|Gibt die Anzahl der im Array gespeicherten Elemente zurück.|
+|[CSimpleArray::Entfernen](#remove)|Entfernt ein bestimmtes Element aus dem Array.|
 |[CSimpleArray::RemoveAll](#removeall)|Entfernt alle Elemente aus dem Array.|
-|[CSimpleArray::RemoveAt](#removeat)|Entfernt das angegebene Element aus dem Array.|
-|[CSimpleArray::SetAtIndex](#setatindex)|Legt das angegebene Element im Array fest.|
+|[CSimpleArray::Removeat](#removeat)|Entfernt das angegebene Element aus dem Array.|
+|[CSimpleArray::SetatIndex](#setatindex)|Legt das angegebene Element im Array fest.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CSimpleArray::operator\[\]](#operator_at)|Ruft ein Element aus dem Array ab.|
 |[CSimpleArray::operator =](#operator_eq)|Zuweisungsoperator.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CSimpleArray` Stellt Methoden zum Erstellen und Verwalten von einem einfachen Array, eines Typs `T`.
+`CSimpleArray`bietet Methoden zum Erstellen und Verwalten eines `T`einfachen Arrays eines beliebigen Typs .
 
-Der Parameter `TEqual` bietet eine Möglichkeit zum Definieren einer Gleichheitsfunktion auf für zwei Elemente des Typs `T`. Durch Erstellen einer Klasse ähnelt [CSimpleArrayEqualHelper](../../atl/reference/csimplearrayequalhelper-class.md), es ist möglich, die das Verhalten des Tests auf Gleichheit für alle angegebenen Arrays zu ändern. Beispielsweise kann beim Umgang mit der ein Array von Zeigern es hilfreich sein, abhängig von den Werten auf Gleichheit als zu definieren, die Zeiger für das Verweisen auf. Die Standardimplementierung verwendet **operator=()**.
+Der `TEqual` Parameter bietet eine Möglichkeit, eine Gleichheitsfunktion für zwei Elemente des Typs zu `T`definieren. Durch Das Erstellen einer Klasse ähnlich [CSimpleArrayEqualHelper](../../atl/reference/csimplearrayequalhelper-class.md)ist es möglich, das Verhalten des Gleichheitstests für ein bestimmtes Array zu ändern. Wenn Sie z. B. mit einem Array von Zeigern umgehen, kann es nützlich sein, die Gleichheit in Abhängigkeit von den Werten zu definieren, auf die die Zeiger verweisen. Die Standardimplementierung verwendet **operator=()**.
 
-Beide `CSimpleArray` und [CSimpleMap](../../atl/reference/csimplemap-class.md) sind für eine kleine Anzahl von Elementen konzipiert. [CAtlArray](../../atl/reference/catlarray-class.md) und [CAtlMap](../../atl/reference/catlmap-class.md) sollte verwendet werden, wenn das Array eine große Anzahl von Elementen enthält.
+Sowohl `CSimpleArray` als auch [CSimpleMap](../../atl/reference/csimplemap-class.md) sind für eine kleine Anzahl von Elementen konzipiert. [CAtlArray](../../atl/reference/catlarray-class.md) und [CAtlMap](../../atl/reference/catlmap-class.md) sollten verwendet werden, wenn das Array eine große Anzahl von Elementen enthält.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlsimpcoll.h
+**Kopfzeile:** atlsimpcoll.h
 
 ## <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#86](../../atl/codesnippet/cpp/csimplearray-class_1.cpp)]
 
-##  <a name="add"></a>  CSimpleArray::Add
+## <a name="csimplearrayadd"></a><a name="add"></a>CSimpleArray::Hinzufügen
 
-Fügt ein neues Element in das Array an.
+Fügt dem Array ein neues Element hinzu.
 
 ```
 BOOL Add(const T& t);
@@ -97,20 +97,20 @@ BOOL Add(const T& t);
 
 ### <a name="parameters"></a>Parameter
 
-*t*<br/>
-Das Element, das dem Array hinzugefügt.
+*T*<br/>
+Das Element, das dem Array hinzugefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Element erfolgreich andernfalls in das Array, "false" hinzugefügt wurde.
+Gibt TRUE zurück, wenn das Element erfolgreich zum Array hinzugefügt wurde, andernfalls FALSE.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#87](../../atl/codesnippet/cpp/csimplearray-class_2.cpp)]
 
-##  <a name="csimplearray"></a>  CSimpleArray::CSimpleArray
+## <a name="csimplearraycsimplearray"></a><a name="csimplearray"></a>CSimpleArray::CSimpleArray
 
-Der Konstruktor für das Array-Objekt.
+Der Konstruktor für das Arrayobjekt.
 
 ```
 CSimpleArray(const CSimpleArray<T, TEqual>& src);
@@ -122,11 +122,11 @@ CSimpleArray();
 *src*<br/>
 Ein vorhandenes `CSimpleArray`-Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Initialisiert die Datenmember, erstellen ein neues leeres `CSimpleArray` Objekt oder eine Kopie eines vorhandenen `CSimpleArray` Objekt.
+Initialisiert die Datenmember, indem `CSimpleArray` ein neues leeres Objekt `CSimpleArray` oder eine Kopie eines vorhandenen Objekts erstellt wird.
 
-##  <a name="dtor"></a>  CSimpleArray:: ~ CSimpleArray
+## <a name="csimplearraycsimplearray"></a><a name="dtor"></a>CSimpleArray::'CSimpleArray
 
 Der Destruktor.
 
@@ -134,11 +134,11 @@ Der Destruktor.
 ~CSimpleArray();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt alle zugeordnete Ressourcen frei.
+Gibt alle zugewiesenen Ressourcen frei.
 
-##  <a name="find"></a>  CSimpleArray::Find
+## <a name="csimplearrayfind"></a><a name="find"></a>CSimpleArray::Suchen
 
 Sucht ein Element im Array.
 
@@ -148,20 +148,20 @@ int Find(const T& t) const;
 
 ### <a name="parameters"></a>Parameter
 
-*t*<br/>
-Das Element nach dem gesucht werden soll.
+*T*<br/>
+Das Element, nach dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt den Index des gefundenen Elements oder -1 zurück, wenn das Element nicht gefunden wird.
+Gibt den Index des gefundenen Elements zurück, oder -1, wenn das Element nicht gefunden wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#88](../../atl/codesnippet/cpp/csimplearray-class_3.cpp)]
 
-##  <a name="getdata"></a>  CSimpleArray::GetData
+## <a name="csimplearraygetdata"></a><a name="getdata"></a>CSimpleArray::GetData
 
-Gibt einen Zeiger auf die Daten im Array gespeichert.
+Gibt einen Zeiger auf die im Array gespeicherten Daten zurück.
 
 ```
 T* GetData() const;
@@ -171,9 +171,9 @@ T* GetData() const;
 
 Gibt einen Zeiger auf die Daten im Array zurück.
 
-##  <a name="getsize"></a>  CSimpleArray::GetSize
+## <a name="csimplearraygetsize"></a><a name="getsize"></a>CSimpleArray::GetSize
 
-Gibt die Anzahl der Elemente im Array gespeichert.
+Gibt die Anzahl der im Array gespeicherten Elemente zurück.
 
 ```
 int GetSize() const;
@@ -181,9 +181,9 @@ int GetSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Anzahl der Elemente im Array gespeichert.
+Gibt die Anzahl der im Array gespeicherten Elemente zurück.
 
-##  <a name="operator_at"></a>  CSimpleArray::operator \[\]
+## <a name="csimplearrayoperator-"></a><a name="operator_at"></a>CSimpleArray::Operator\[\]
 
 Ruft ein Element aus dem Array ab.
 
@@ -198,13 +198,13 @@ Der Elementindex.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Element des Arrays verwiesen *nIndex*.
+Gibt das Element des Arrays zurück, auf das von *nIndex*verwiesen wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#89](../../atl/codesnippet/cpp/csimplearray-class_4.cpp)]
 
-##  <a name="operator_eq"></a>  CSimpleArray::operator =
+## <a name="csimplearrayoperator-"></a><a name="operator_eq"></a>CSimpleArray::operator =
 
 Zuweisungsoperator.
 
@@ -221,19 +221,19 @@ Das Array, das kopiert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die aktualisierte `CSimpleArray` Objekt.
+Gibt einen Zeiger auf `CSimpleArray` das aktualisierte Objekt zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Kopiert alle Elemente aus der `CSimpleArray` Objekt, auf *Src* in das aktuelle Arrayobjekt, und Ersetzen Sie dabei alle vorhandene Daten.
+Kopiert alle Elemente `CSimpleArray` aus dem Objekt, auf das *src* verweist, in das aktuelle Arrayobjekt und ersetzt alle vorhandenen Daten.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Utilities#90](../../atl/codesnippet/cpp/csimplearray-class_5.cpp)]
 
-##  <a name="remove"></a>  CSimpleArray::Remove
+## <a name="csimplearrayremove"></a><a name="remove"></a>CSimpleArray::Entfernen
 
-Entfernt ein angegebenes Element aus dem Array.
+Entfernt ein bestimmtes Element aus dem Array.
 
 ```
 BOOL Remove(const T& t);
@@ -241,18 +241,18 @@ BOOL Remove(const T& t);
 
 ### <a name="parameters"></a>Parameter
 
-*t*<br/>
-Das Element, aus dem Array entfernt.
+*T*<br/>
+Das Element, das aus dem Array entfernt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Element gefunden und entfernt, andernfalls FALSE ist.
+Gibt TRUE zurück, wenn das Element gefunden und entfernt wird, andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Element entfernt wird, werden die übrigen Elemente im Array neu nummeriert, um Lücken zu füllen.
+Wenn ein Element entfernt wird, werden die verbleibenden Elemente im Array neu nummeriert, um den leeren Raum zu füllen.
 
-##  <a name="removeall"></a>  CSimpleArray::RemoveAll
+## <a name="csimplearrayremoveall"></a><a name="removeall"></a>CSimpleArray::RemoveAll
 
 Entfernt alle Elemente aus dem Array.
 
@@ -260,11 +260,11 @@ Entfernt alle Elemente aus dem Array.
 void RemoveAll();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Entfernt alle Elemente, die derzeit im Array gespeichert.
+Entfernt alle Elemente, die derzeit im Array gespeichert sind.
 
-##  <a name="removeat"></a>  CSimpleArray::RemoveAt
+## <a name="csimplearrayremoveat"></a><a name="removeat"></a>CSimpleArray::Removeat
 
 Entfernt das angegebene Element aus dem Array.
 
@@ -275,19 +275,19 @@ BOOL RemoveAtint nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Indizieren Sie die zu entfernenden Elements auf.
+Index, der auf das zu entfernende Element zeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Element wurde entfernt, FALSE, wenn der Index ungültig war.
+Gibt TRUE zurück, wenn das Element entfernt wurde, FALSE, wenn der Index ungültig war.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Element entfernt wird, werden die übrigen Elemente im Array neu nummeriert, um Lücken zu füllen.
+Wenn ein Element entfernt wird, werden die verbleibenden Elemente im Array neu nummeriert, um den leeren Raum zu füllen.
 
-##  <a name="setatindex"></a>  CSimpleArray::SetAtIndex
+## <a name="csimplearraysetatindex"></a><a name="setatindex"></a>CSimpleArray::SetatIndex
 
-Legen Sie das angegebene Element im Array.
+Legen Sie das angegebene Element im Array fest.
 
 ```
 BOOL SetAtIndex(
@@ -298,9 +298,9 @@ BOOL SetAtIndex(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Der Index des Elements zu ändern.
+Der Index des zu ändernden Elements.
 
-*t*<br/>
+*T*<br/>
 Der dem angegebenen Element zuzuweisende Wert.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -309,4 +309,4 @@ Gibt TRUE zurück, wenn erfolgreich, FALSE, wenn der Index ungültig war.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

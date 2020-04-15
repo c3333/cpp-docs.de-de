@@ -10,19 +10,19 @@ helpviewer_keywords:
 - combo boxes [C++], filling from second recordset
 - CListCtrl class, filling from second recordset
 ms.assetid: 360c0834-da6b-4dc0-bcea-80e9acd611f0
-ms.openlocfilehash: 8eb2525ef8b749f58303cae13b87b21d7df73d1b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8664e98c6668568918cc0e6504a38119d2e71428
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80213407"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336926"
 ---
 # <a name="filling-a-list-box-from-a-second-recordset--mfc-data-access"></a>Füllen eines Listenfelds aus einem zweiten Recordset MFC-(Datenzugriff)
 
 Standardmäßig ist eine Datensatzansicht mit einem einzigen Recordset-Objekt verknüpft, dessen Felder den Steuerelementen der Datensatzansicht zugeordnet sind. Manchmal möchten Sie ein Listenfeld- oder Kombinationsfeld-Steuerelement in die Datensatzansicht einfügen und mit Werten aus einem zweiten Recordset-Objekt füllen. Der Benutzer kann das Listenfeld zur Auswahl einer neuen Kategorie von Informationen verwenden, die in der Datensatzansicht angezeigt werden sollen. In diesem Thema wird beschrieben, wie und wann Sie dies tun sollten.
 
 > [!TIP]
->  Beachten Sie, dass das Füllen eines Listen- oder Kombinationsfelds aus einer Datenquelle langsam sein kann. Treffen Sie Vorsichtsmaßnahmen, um zu vermeiden, dass ein Steuerelement mit einer großen Anzahl von Datensätzen aus einem Recordset gefüllt wird.
+> Beachten Sie, dass das Füllen eines Listen- oder Kombinationsfelds aus einer Datenquelle langsam sein kann. Treffen Sie Vorsichtsmaßnahmen, um zu vermeiden, dass ein Steuerelement mit einer großen Anzahl von Datensätzen aus einem Recordset gefüllt wird.
 
 Das Modell für dieses Thema besteht aus einem primären Recordset, das die Steuerelemente des Formulars füllt. Mit einem sekundären Recordset wird ein Listen- oder Kombinationsfeld gefüllt. Die Auswahl einer Zeichenfolge im Listenfeld veranlasst das Programm, das primäre Recordset basierend auf der Auswahl abzufragen. In der folgenden Prozedur wird ein Kombinationsfeld verwendet, sie ist jedoch auch auf ein Listenfeld anwendbar.
 
@@ -30,11 +30,11 @@ Das Modell für dieses Thema besteht aus einem primären Recordset, das die Steu
 
 1. Erstellen Sie das Recordset-Objekt ([CRecordset](../mfc/reference/crecordset-class.md).
 
-1. Rufen Sie einen Zeiger auf das [CComboBox](../mfc/reference/ccombobox-class.md) -Objekt für das Kombinations Feld-Steuerelement ab.
+1. Rufen Sie einen Zeiger auf das [CComboBox-Objekt](../mfc/reference/ccombobox-class.md) für das Kombinationsfeldsteuerelement ab.
 
 1. Löschen Sie vorherige Inhalte aus dem Kombinationsfeld.
 
-1. Navigieren Sie durch alle Datensätze im Recordset, und rufen Sie [CComboBox:: AddString](../mfc/reference/ccombobox-class.md#addstring) für jede Zeichenfolge aus dem aktuellen Datensatz auf, den Sie dem Kombinations Feld hinzufügen möchten.
+1. Bewegen Sie alle Datensätze im Recordset durch und rufen Sie [CComboBox::AddString](../mfc/reference/ccombobox-class.md#addstring) für jede Zeichenfolge aus dem aktuellen Datensatz auf, den Sie dem Kombinationsfeld hinzufügen möchten.
 
 1. Initialisieren Sie die Auswahl im Kombinationsfeld.
 
@@ -68,7 +68,7 @@ Diese Funktion verwendet das zweites Recordset `m_courseSet`, das einen Datensat
 
 Die Funktion ruft `m_courseSet` aus dem Dokument ab und öffnet sie. Anschließend leert sie `m_ctlCourseList` und scrollt durch `m_courseSet`. Die Funktion ruft für jeden Datensatz die `AddString`-Memberfunktion des Kombinationsfelds auf, um den Kurs-ID-Wert aus dem Datensatz hinzuzufügen. Abschließend legt der Code die Auswahl des Kombinationsfelds fest.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Datensatzansichten (MFC-Datenzugriff)](../data/record-views-mfc-data-access.md)<br/>
-[Liste der ODBC-Treiber](../data/odbc/odbc-driver-list.md)
+[ODBC-Treiberliste](../data/odbc/odbc-driver-list.md)
