@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::RuntimeClassFlags structure
 - Microsoft::WRL::RuntimeClassFlags::value constant
 ms.assetid: 7098d605-bd14-4d51-82f4-3def8296a938
-ms.openlocfilehash: 4cbd3f367bc57c2eedf672422a458b67b1908fc0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9fed5bb31b077288495a78aefcbd8401b3520bb6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403151"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367228"
 ---
 # <a name="runtimeclassflags-structure"></a>RuntimeClassFlags-Struktur
 
-Enthält den Typ für eine Instanz von einem [RuntimeClass](runtimeclass-class.md).
+Enthält den Typ für eine Instanz einer [RuntimeClass](runtimeclass-class.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -29,16 +29,16 @@ struct RuntimeClassFlags;
 
 ### <a name="parameters"></a>Parameter
 
-*flags*<br/>
-Ein [RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md) Wert.
+*Flaggen*<br/>
+Ein [RuntimeClassType-Enumerationswert.](runtimeclasstype-enumeration.md)
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[RuntimeClassFlags::value-Konstante](#value-constant)|Enthält eine [RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md) Wert.|
+|[RuntimeClassFlags::value-Konstante](#value-constant)|Enthält einen [RuntimeClassType-Enumerationswert.](runtimeclasstype-enumeration.md)|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -50,9 +50,9 @@ Ein [RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md) Wert.
 
 **Namespace:** Microsoft::WRL
 
-## <a name="value-constant"></a>Runtimeclassflags:: value-Konstante
+## <a name="runtimeclassflagsvalue-constant"></a><a name="value-constant"></a>RuntimeClassFlags::value Konstante
 
-Ein Feld mit einem [RuntimeClassType-Enumeration](runtimeclasstype-enumeration.md) Wert.
+Ein Feld, das einen [RuntimeClassType-Enumerationswert](runtimeclasstype-enumeration.md) enthält.
 
 ```cpp
 static const unsigned int value = flags;

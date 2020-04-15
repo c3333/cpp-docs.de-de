@@ -94,12 +94,12 @@ helpviewer_keywords:
 - CEdit [MFC], ShowBalloonTip
 - CEdit [MFC], Undo
 ms.assetid: b1533c30-7f10-4663-88d3-8b7f2c9f7024
-ms.openlocfilehash: 5ad8784f3bff999eec046aa91f52b1cd164764e5
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 3ca2fe4486ae0751f37d046ef28ed11e60e776ac
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425880"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373987"
 ---
 # <a name="cedit-class"></a>CEdit Class
 
@@ -115,111 +115,111 @@ class CEdit : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CEdit:: CEdit](#cedit)|Erstellt ein `CEdit` Steuerelement Objekt.|
+|[CEdit::CEdit](#cedit)|Erstellt ein `CEdit` Steuerobjekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CEdit:: CanUndo](#canundo)|Bestimmt, ob ein Bearbeitungs Steuerungs Vorgang rückgängig gemacht werden kann.|
-|[CEdit:: charfrompos](#charfrompos)|Ruft die Zeilen-und Zeichen Indizes für das Zeichen ab, das einer angegebenen Position am nächsten liegt.|
-|[CEdit:: Clear](#clear)|Löscht (löscht) die aktuelle Auswahl im Bearbeitungs Steuerelement (sofern vorhanden).|
-|[CEdit:: Copy](#copy)|Kopiert die aktuelle Auswahl (sofern vorhanden) im Bearbeitungs Steuerelement in CF_TEXT Format in die Zwischenablage.|
-|[CEdit:: Create](#create)|Erstellt das Windows-Bearbeitungs Steuerelement und fügt es an das `CEdit` Objekt an.|
-|[CEdit:: Cut](#cut)|Löscht (wenn vorhanden) die aktuelle Auswahl im Bearbeitungs Steuerelement und kopiert den gelöschten Text in CF_TEXT Format in die Zwischenablage.|
-|[CEdit:: emptyundobuffer](#emptyundobuffer)|Setzt das rückgängig-Flag eines Bearbeitungs Steuer Elements zurück (löscht dieses).|
-|[CEdit:: smtlines](#fmtlines)|Legt die Einbindung weicher Zeilenumbruch Zeichen in einem mehrzeiligen Bearbeitungs Steuerelement ein bzw. aus.|
-|[CEdit:: getcuebanner](#getcuebanner)|Ruft den Text ab, der als Text Hinweis oder Tipp in einem Bearbeitungs Steuerelement angezeigt wird, wenn das Steuerelement leer ist und keinen Fokus hat.|
-|[CEdit:: getfirstvisibleline](#getfirstvisibleline)|Bestimmt die oberste sichtbare Zeile in einem Bearbeitungs Steuerelement.|
-|[CEdit:: GetHandle](#gethandle)|Ruft ein Handle für den Arbeitsspeicher ab, der derzeit für ein mehrzeilige Bearbeitungs Steuerelement zugeordnet ist.|
-|[CEdit:: gethighlight](#gethighlight)|Ruft die Indizes der Anfangs-und Endzeichen in einem Textbereich ab, der im aktuellen Bearbeitungs Steuerelement hervorgehoben ist.|
-|[CEdit:: getlimittext](#getlimittext)|Ruft die maximale Menge an Text ab, die dieser `CEdit` enthalten kann.|
-|[CEdit:: getline](#getline)|Ruft eine Textzeile aus einem Bearbeitungs Steuerelement ab.|
-|[CEdit:: getLineCount](#getlinecount)|Ruft die Anzahl der Zeilen in einem mehrzeiligen Bearbeitungs Steuerelement ab.|
-|[CEdit:: getMargin](#getmargins)|Ruft den linken und rechten Rand für dieses `CEdit`ab.|
-|[CEdit:: getmodify](#getmodify)|Bestimmt, ob der Inhalt eines Bearbeitungs Steuer Elements geändert wurde.|
-|[CEdit:: getpasswordchar](#getpasswordchar)|Ruft das Kenn Wort Zeichen ab, das in einem Bearbeitungs Steuerelement angezeigt wird, wenn der Benutzer Text eingibt.|
-|[CEdit:: GetRect](#getrect)|Ruft das Formatierungs Rechteck eines Bearbeitungs Steuer Elements ab.|
-|[CEdit:: GetSEL](#getsel)|Ruft die ersten und letzten Zeichen Positionen der aktuellen Auswahl in einem Bearbeitungs Steuerelement ab.|
-|[CEdit:: hideballoontip](#hideballoontip)|Blendet jede Sprechblase aus, die dem aktuellen Bearbeitungs Steuerelement zugeordnet ist.|
-|[CEdit:: limittext](#limittext)|Schränkt die Länge des Texts ein, den der Benutzer in ein Bearbeitungs Steuerelement eingeben kann.|
-|[CEdit:: linefromchar](#linefromchar)|Ruft die Zeilennummer der Zeile ab, die den angegebenen Zeichen Index enthält.|
-|[CEdit:: lineingedex](#lineindex)|Ruft den Zeichen Index einer Zeile in einem mehrzeiligen Bearbeitungs Steuerelement ab.|
-|[CEdit:: LineLength](#linelength)|Ruft die Länge einer Zeile in einem Bearbeitungs Steuerelement ab.|
-|[CEdit:: linescroll](#linescroll)|Scrollt den Text eines mehrzeiligen Bearbeitungs Steuer Elements.|
-|[CEdit::P Aste](#paste)|Fügt die Daten aus der Zwischenablage an der aktuellen Cursorposition in das Bearbeitungs Steuerelement ein. Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.|
-|[CEdit::P osfromchar](#posfromchar)|Ruft die Koordinaten der oberen linken Ecke eines angegebenen Zeichen Indexes ab.|
-|[CEdit:: replacesel](#replacesel)|Ersetzt die aktuelle Auswahl in einem Bearbeitungs Steuerelement durch den angegebenen Text.|
-|[CEdit:: setcuebanner](#setcuebanner)|Legt den Text fest, der als Text Hinweis oder Tipp in einem Bearbeitungs Steuerelement angezeigt wird, wenn das Steuerelement leer ist und keinen Fokus hat.|
-|[CEdit:: lthandle](#sethandle)|Legt das Handle auf den lokalen Arbeitsspeicher fest, der von einem mehrzeiligen Bearbeitungs Steuerelement verwendet wird.|
-|[CEdit:: ab.](#sethighlight)|Markiert einen Textbereich, der im aktuellen Bearbeitungs Steuerelement angezeigt wird.|
-|[CEdit:: SetLimitText](#setlimittext)|Legt die maximale Menge an Text fest, der in diesem `CEdit` enthalten sein darf.|
-|[CEdit:: setMargin](#setmargins)|Legt den linken und rechten Rand für dieses `CEdit`fest.|
-|[CEdit:: setmodify](#setmodify)|Legt das Änderungsflag für ein Bearbeitungs Steuerelement fest oder löscht dieses.|
-|[CEdit:: setpasswordchar](#setpasswordchar)|Legt ein in einem Bearbeitungs Steuerelement angezeigtes Kennwort fest oder entfernt dieses, wenn der Benutzer Text eingibt.|
-|[CEdit:: abtreadonly](#setreadonly)|Legt den schreibgeschützten Zustand eines Bearbeitungs Steuer Elements fest.|
-|[CEdit:: SetRect](#setrect)|Legt das Formatierungs Rechteck eines mehrzeiligen Bearbeitungs Steuer Elements fest und aktualisiert das-Steuerelement.|
-|[CEdit:: setrectnp](#setrectnp)|Legt das Formatierungs Rechteck eines mehrzeiligen Bearbeitungs Steuer Elements fest, ohne das Steuerelement Fenster neu zu zeichnen.|
-|[CEdit:: abtsel](#setsel)|Wählt einen Bereich von Zeichen in einem Bearbeitungs Steuerelement aus.|
-|[CEdit:: settabstopps](#settabstops)|Legt die Tabstopps in einem mehrzeiligen Bearbeitungs Steuerelement fest.|
-|[CEdit:: ShowBalloonTip](#showballoontip)|Zeigt eine Sprechblasen Info an, die dem aktuellen Bearbeitungs Steuerelement zugeordnet ist.|
-|[CEdit:: rückgängig](#undo)|Kehrt den letzten Bearbeitungs Steuerungs Vorgang um.|
+|[CEdit::CanUndo](#canundo)|Bestimmt, ob ein Bearbeitungssteuerungsvorgang rückgängig gemacht werden kann.|
+|[CEdit::CharFromPos](#charfrompos)|Ruft die Linien- und Zeichenindizes für das Zeichen ab, das einer angegebenen Position am nächsten liegt.|
+|[CEdit::Klar](#clear)|Löscht (löscht) die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement.|
+|[CEdit::Kopieren](#copy)|Kopiert die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement in die Zwischenablage im CF_TEXT Format.|
+|[CEdit::Erstellen](#create)|Erstellt das Windows-Bearbeitungssteuerelement und `CEdit` fügt es an das Objekt an.|
+|[CEdit::Schnitt](#cut)|Löscht (schneidet) die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement und kopiert den gelöschten Text im CF_TEXT Format in die Zwischenablage.|
+|[CEdit::EmptyUndoBuffer](#emptyundobuffer)|Setzt das Rückgängig-Flag eines Bearbeitungssteuerelements zurück ( löscht).|
+|[CEdit::FmtLines](#fmtlines)|Legt die Einschlussung weicher Zeilenumbruchzeichen in oder aus einem mehrzeiligen Bearbeitungssteuerelement fest.|
+|[CEdit::GetCueBanner](#getcuebanner)|Ruft den Text ab, der als Text-Cue oder Tipp in einem Bearbeitungssteuerelement angezeigt wird, wenn das Steuerelement leer ist und keinen Fokus hat.|
+|[CEdit::GetFirstVisibleLine](#getfirstvisibleline)|Bestimmt die oberste sichtbare Zeile in einem Bearbeitungssteuerelement.|
+|[CEdit::GetHandle](#gethandle)|Ruft ein Handle für den Speicher ab, der derzeit für ein mehrzeiliges Bearbeitungssteuerelement reserviert ist.|
+|[CEdit::GetHighlight](#gethighlight)|Ruft die Indizes der Anfangs- und Endzeichen in einem Textbereich ab, der im aktuellen Bearbeitungssteuerelement hervorgehoben ist.|
+|[CEdit::GetLimitText](#getlimittext)|Ruft die maximale Textmenge ab, die darin enthalten `CEdit` sein kann.|
+|[CEdit::GetLine](#getline)|Ruft eine Textzeile aus einem Bearbeitungssteuerelement ab.|
+|[CEdit::GetLineCount](#getlinecount)|Ruft die Anzahl der Zeilen in einem mehrzeiligen Bearbeitungssteuerelement ab.|
+|[CEdit::GetMargins](#getmargins)|Ruft den linken und `CEdit`rechten Rand für diese ab.|
+|[CEdit::GetModify](#getmodify)|Bestimmt, ob der Inhalt eines Bearbeitungssteuerelements geändert wurde.|
+|[CEdit::GetPasswordChar](#getpasswordchar)|Ruft das Kennwortzeichen ab, das in einem Bearbeitungssteuerelement angezeigt wird, wenn der Benutzer Text eingibt.|
+|[CEdit::GetRect](#getrect)|Ruft das Formatierungsrechteck eines Bearbeitungssteuerelements ab.|
+|[CEdit::GetSel](#getsel)|Ruft die ersten und letzten Zeichenpositionen der aktuellen Auswahl in einem Bearbeitungssteuerelement ab.|
+|[CEdit::HideBalloonTip](#hideballoontip)|Blendet alle Sprechblasenspitzen aus, die dem aktuellen Bearbeitungssteuerelement zugeordnet sind.|
+|[CEdit::LimitText](#limittext)|Beschränkt die Länge des Textes, den der Benutzer in ein Bearbeitungssteuerelement eingeben kann.|
+|[CEdit::LineFromChar](#linefromchar)|Ruft die Zeilennummer der Zeile ab, die den angegebenen Zeichenindex enthält.|
+|[CEdit::LineIndex](#lineindex)|Ruft den Zeichenindex einer Linie innerhalb eines mehrzeiligen Bearbeitungssteuerelements ab.|
+|[CEdit::LineLength](#linelength)|Ruft die Länge einer Linie in einem Bearbeitungssteuerelement ab.|
+|[CEdit::LineScroll](#linescroll)|Scrollt den Text eines mehrzeiligen Bearbeitungssteuerelements.|
+|[CEdit::Paste](#paste)|Fügt die Daten aus der Zwischenablage in das Bearbeitungssteuerelement an der aktuellen Cursorposition ein. Daten werden nur eingefügt, wenn die Zwischenablage Daten im CF_TEXT-Format enthält.|
+|[CEdit::PosVonChar](#posfromchar)|Ruft die Koordinaten der oberen linken Ecke eines angegebenen Zeichenindexes ab.|
+|[CEdit::ReplaceSel](#replacesel)|Ersetzt die aktuelle Auswahl in einem Bearbeitungssteuerelement durch den angegebenen Text.|
+|[CEdit::SetCueBanner](#setcuebanner)|Legt den Text fest, der als Text-Cue oder Tipp in einem Bearbeitungssteuerelement angezeigt wird, wenn das Steuerelement leer ist und keinen Fokus hat.|
+|[CEdit::SetHandle](#sethandle)|Legt das Handle auf den lokalen Speicher fest, der von einem mehrzeiligen Bearbeitungssteuerelement verwendet wird.|
+|[CEdit::SetHighlight](#sethighlight)|Hebt einen Textbereich hervor, der im aktuellen Bearbeitungssteuerelement angezeigt wird.|
+|[CEdit::SetLimitText](#setlimittext)|Legt die maximale Textmenge fest, `CEdit` die darin enthalten sein kann.|
+|[CEdit::SetMargins](#setmargins)|Legt den linken und `CEdit`rechten Rand für diese fest.|
+|[CEdit::SetModify](#setmodify)|Legt das Änderungsflag für ein Bearbeitungssteuerelement fest oder löscht es.|
+|[CEdit::SetPasswordChar](#setpasswordchar)|Legt ein Kennwortzeichen fest, das in einem Bearbeitungssteuerelement angezeigt wird, wenn der Benutzer Text eingibt, oder entfernt es.|
+|[CEdit::SetReadOnly](#setreadonly)|Legt den schreibgeschützten Status eines Bearbeitungssteuerelements fest.|
+|[CEdit::SetRect](#setrect)|Legt das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements fest und aktualisiert das Steuerelement.|
+|[CEdit::SetRectNP](#setrectnp)|Legt das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements fest, ohne das Steuerelementfenster neu zu zeichnen.|
+|[CEdit::SetSel](#setsel)|Wählt einen Zeichenbereich in einem Bearbeitungssteuerelement aus.|
+|[CEdit::SetTabStops](#settabstops)|Legt die Tabstopps in einem mehrzeiligen Bearbeitungssteuerelement fest.|
+|[CEdit::ShowBalloonTip](#showballoontip)|Zeigt eine Sprechblasenspitze an, die dem aktuellen Bearbeitungssteuerelement zugeordnet ist.|
+|[CEdit::Rückgängig](#undo)|Kehrt den letzten Bearbeitungssteuerungsvorgang um.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Bearbeitungs Steuerelement ist ein rechteckiges untergeordnetes Fenster, in dem der Benutzer Text eingeben kann.
+Ein Bearbeitungssteuerelement ist ein rechteckiges untergeordnetes Fenster, in das der Benutzer Text eingeben kann.
 
-Sie können ein Bearbeitungs Steuerelement entweder aus einer Dialogfeld Vorlage oder direkt im Code erstellen. Rufen Sie in beiden Fällen zuerst den Konstruk`CEdit` Tor auf, um das `CEdit` Objekt zu erstellen, und rufen Sie dann die [Create](#create) Member-Funktion auf, um das Windows-Bearbeitungs Steuerelement zu erstellen und es an das `CEdit`-Objekt anzufügen
+Sie können ein Bearbeitungssteuerelement entweder aus einer Dialogfeldvorlage oder direkt im Code erstellen. Rufen Sie in beiden Fällen `CEdit` zuerst `CEdit` den Konstruktor auf, um das Objekt zu erstellen, `CEdit` und rufen Sie dann die [Memberfunktion Erstellen](#create) auf, um das Windows-Bearbeitungssteuerelement zu erstellen und es an das Objekt anzufügen.
 
-Die Konstruktion kann ein einstufiger Prozess in einer Klasse sein, die von `CEdit`abgeleitet ist. Schreiben Sie einen Konstruktor für die abgeleitete Klasse, und nennen Sie `Create` aus dem Konstruktor.
+Die Konstruktion kann ein einstufiger Prozess `CEdit`in einer Klasse sein, die von abgeleitet ist. Schreiben Sie einen Konstruktor für `Create` die abgeleitete Klasse und rufen Sie aus dem Konstruktor heraus.
 
-`CEdit` erbt bedeutende Funktionen von `CWnd`. Um Text von einem `CEdit` Objekt festzulegen und abzurufen, verwenden Sie die `CWnd` Member-Funktionen " [SetWindowText](cwnd-class.md#setwindowtext) " und " [GetWindowText](cwnd-class.md#getwindowtext)", die den gesamten Inhalt eines Bearbeitungs Steuer Elements festlegen oder abrufen, selbst wenn es sich um ein mehrzeilige Steuerelement handelt. Text Zeilen in einem mehrzeiligen Steuerelement werden durch "\r\n"-Zeichen folgen getrennt. Wenn ein Bearbeitungs Steuerelement mehrzeilige Werte hat, können Sie den Text des Steuer Elements abrufen und festlegen, indem Sie die `CEdit` Member-Funktionen [getline](#getline), [SetSel](#setsel), [GetSEL](#getsel)und [replacesel](#replacesel)aufrufen.
+`CEdit`erbt wesentliche Funktionen `CWnd`von . Um Text aus einem `CEdit` Objekt festzulegen `CWnd` und abzurufen, verwenden Sie die Memberfunktionen [SetWindowText](cwnd-class.md#setwindowtext) und [GetWindowText](cwnd-class.md#getwindowtext), die den gesamten Inhalt eines Bearbeitungssteuerelements festlegen oder abrufen, auch wenn es sich um ein mehrzeiliges Steuerelement handelt. Textzeilen in einem mehrzeiligen Steuerelement werden durch Zeichensequenzen getrennt. Wenn ein Bearbeitungssteuerelement mehrseitlos ist, rufen Sie einen Teil des `CEdit` Texts des Steuerelements ab und legen Sie ihn fest, indem Sie die Memberfunktionen [GetLine](#getline), [SetSel](#setsel), [GetSel](#getsel)und [ReplaceSel](#replacesel)aufrufen.
 
-Wenn Sie die von einem Bearbeitungs Steuerelement gesendeten Windows-Benachrichtigungs Meldungen an das übergeordnete Element (in der Regel eine von `CDialog`abgeleitete Klasse) verarbeiten möchten, fügen Sie der übergeordneten Klasse für jede Nachricht einen Meldungs Zuordnungs Eintrag und eine nachrichtenhandlerelementfunktion hinzu.
+Wenn Sie Windows-Benachrichtigungen verarbeiten möchten, die von einem Bearbeitungssteuerelement `CDialog`an das übergeordnete Steuerelement gesendet werden (in der Regel eine von abgeleitete Klasse), fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichtenzuordnungseintrag und eine Message-Handler-Memberfunktion hinzu.
 
-Jeder Nachrichten Zuordnungs Eintrag hat die folgende Form:
+Jeder Nachrichtenzuordnungseintrag hat die folgende Form:
 
-  **ON_** _Benachrichtigung_ **(** _ID_ **,** _mitgliedungsfxn_ **)**
+  **ON_**_NOTIFICATION_**(** _id_**,** _memberFxn_ **)**
 
-Dabei gibt `id` die untergeordnete Fenster-ID des Bearbeitungs Steuer Elements an, das die Benachrichtigung sendet, und `memberFxn` der Name der übergeordneten Element Funktion ist, die Sie zum Verarbeiten der Benachrichtigung geschrieben haben.
+wobei `id` die untergeordnete Fenster-ID des Bearbeitungssteuerelements `memberFxn` angegeben wird, das die Benachrichtigung sendet, und der Name der übergeordneten Memberfunktion ist, die Sie geschrieben haben, um die Benachrichtigung zu behandeln.
 
-Der Prototyp der übergeordneten Funktion ist wie folgt:
+Der Funktionsprototyp des Übergeordneten ist wie folgt:
 
-**afx_msg** void-mitgliedmitgliedschaft **();**
+**afx_msg** void MemberFxn **( );**
 
-Im folgenden finden Sie eine Liste potenzieller Nachrichten Zuordnungs Einträge und eine Beschreibung der Fälle, in denen Sie an das übergeordnete Element gesendet werden:
+Im Folgenden finden Sie eine Liste der potenziellen Nachrichtenzuordnungseinträge und eine Beschreibung der Fälle, in denen sie an das übergeordnete Element gesendet werden:
 
-- ON_EN_CHANGE der Benutzer eine Aktion durchgeführt hat, die möglicherweise Text in einem Bearbeitungs Steuerelement geändert hat. Im Gegensatz zur EN_UPDATE Benachrichtigungs Meldung wird diese Benachrichtigungs Meldung gesendet, nachdem Windows die Anzeige aktualisiert hat.
+- ON_EN_CHANGE Der Benutzer hat eine Aktion ausgeführt, die möglicherweise Text in einem Bearbeitungssteuerelement geändert hat. Im Gegensatz zur EN_UPDATE Benachrichtigung wird diese Benachrichtigung gesendet, nachdem Windows die Anzeige aktualisiert hat.
 
-- ON_EN_ERRSPACE das Bearbeitungs Steuerelement kann nicht genügend Arbeitsspeicher zuordnen, um eine bestimmte Anforderung zu erfüllen.
+- ON_EN_ERRSPACE Das Bearbeitungssteuerelement kann nicht genügend Arbeitsspeicher zuweisen, um eine bestimmte Anforderung zu erfüllen.
 
-- ON_EN_HSCROLL der Benutzer auf die horizontale Schiebe Leiste eines Bearbeitungs Steuer Elements klickt. Das übergeordnete Fenster wird benachrichtigt, bevor der Bildschirm aktualisiert wird.
+- ON_EN_HSCROLL Der Benutzer klickt auf die horizontale Bildlaufleiste eines Bearbeitungssteuerelements. Das übergeordnete Fenster wird benachrichtigt, bevor der Bildschirm aktualisiert wird.
 
-- ON_EN_KILLFOCUS das Bearbeitungs Steuerelement den Eingabefokus verliert.
+- ON_EN_KILLFOCUS Das Bearbeitungssteuerelement verliert den Eingabefokus.
 
-- , ON_EN_MAXTEXT der aktuelle Einfügewert die angegebene Anzahl von Zeichen für das Bearbeitungs Steuerelement überschritten hat und abgeschnitten wurde. Wird auch gesendet, wenn ein Bearbeitungs Steuerelement nicht den ES_AUTOHSCROLL Stil hat und die Anzahl der einzufügenden Zeichen die Breite des Bearbeitungs Steuer Elements überschreiten würde. Wird auch gesendet, wenn ein Bearbeitungs Steuerelement nicht den ES_AUTOVSCROLL Stil hat und die Gesamtanzahl der Zeilen, die sich aus einer Text Einfügung ergeben, die Höhe des Bearbeitungs Steuer Elements überschreiten würde.
+- ON_EN_MAXTEXT Die aktuelle Einfügung hat die angegebene Anzahl von Zeichen für das Bearbeitungssteuerelement überschritten und wurde abgeschnitten. Wird auch gesendet, wenn ein Bearbeitungssteuerelement nicht über die ES_AUTOHSCROLL-Formatvorlage verfügt und die Anzahl der einzufügenden Zeichen die Breite des Bearbeitungssteuerelements überschreiten würde. Wird auch gesendet, wenn ein Bearbeitungssteuerelement nicht über den ES_AUTOVSCROLL Stil verfügt und die Gesamtzahl der Zeilen, die sich aus einer Texteinfügung ergeben, die Höhe des Bearbeitungssteuerelements überschreitet.
 
-- ON_EN_SETFOCUS gesendet, wenn ein Bearbeitungs Steuerelement den Eingabefokus erhält.
+- ON_EN_SETFOCUS Gesendet, wenn ein Bearbeitungssteuerelement den Eingabefokus empfängt.
 
-- ON_EN_UPDATE das Bearbeitungs Steuerelement im Begriff ist, geänderten Text anzuzeigen. Wird gesendet, nachdem das Steuerelement den Text formatiert hat, aber bevor der Text angezeigt wird, sodass die Fenstergröße geändert werden kann, falls erforderlich.
+- ON_EN_UPDATE Das Bearbeitungssteuerelement wird geänderten Text anzeigen. Gesendet, nachdem das Steuerelement den Text formatiert hat, aber bevor er den Text so überprüft, dass die Fenstergröße bei Bedarf geändert werden kann.
 
-- ON_EN_VSCROLL der Benutzer auf die vertikale Schiebe Leiste eines Bearbeitungs Steuer Elements klickt. Das übergeordnete Fenster wird benachrichtigt, bevor der Bildschirm aktualisiert wird.
+- ON_EN_VSCROLL Der Benutzer klickt auf die vertikale Bildlaufleiste eines Bearbeitungssteuerelements. Das übergeordnete Fenster wird benachrichtigt, bevor der Bildschirm aktualisiert wird.
 
-Wenn Sie ein `CEdit` Objekt in einem Dialogfeld erstellen, wird das `CEdit` Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
+Wenn Sie `CEdit` ein Objekt in einem `CEdit` Dialogfeld erstellen, wird das Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie über den Dialog-Editor ein `CEdit` Objekt aus einer Dialogfeld Ressource erstellen, wird das `CEdit` Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
+Wenn Sie `CEdit` ein Objekt aus einer Dialogfeldressource `CEdit` mithilfe des Dialogfeld-Editors erstellen, wird das Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie ein `CEdit` Objekt innerhalb eines Fensters erstellen, müssen Sie es möglicherweise auch zerstören. Wenn Sie das `CEdit`-Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie das `CEdit`-Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **Delete** für das-Objekt verwenden, um es zu zerstören, wenn der Benutzer das Windows-Bearbeitungs Steuerelement beendet. Wenn Sie im `CEdit` Objektspeicher zuweisen, überschreiben Sie den `CEdit`-Dekonstruktor, um die Zuordnungen zu verwerfen.
+Wenn Sie `CEdit` ein Objekt in einem Fenster erstellen, müssen Sie es möglicherweise auch zerstören. Wenn Sie `CEdit` das Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie `CEdit` das Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **löschen** für das Objekt aufrufen, um es zu zerstören, wenn der Benutzer das Windows-Bearbeitungssteuerelement beendet. Wenn Sie Speicher im `CEdit` Objekt zuweisen, `CEdit` überschreiben Sie den Destruktor, um die Zuordnungen zu entsorgen.
 
-Wenn Sie bestimmte Stile in einem Bearbeitungs Steuerelement ändern möchten (z. b. ES_READONLY), müssen Sie bestimmte Nachrichten an das Steuerelement senden, anstatt [modifystyle](cwnd-class.md#modifystyle)zu verwenden. Weitere Informationen finden Sie unter [Edit Control Styles](/windows/win32/Controls/edit-control-styles) in the Windows SDK.
+Um bestimmte Formatvorlagen in einem Bearbeitungssteuerelement (z. B. ES_READONLY) zu ändern, müssen Sie bestimmte Nachrichten an das Steuerelement senden, anstatt [ModifyStyle](cwnd-class.md#modifystyle)zu verwenden. Weitere Informationen finden Sie unter Bearbeiten von [Steuerelementstilen](/windows/win32/Controls/edit-control-styles) im Windows SDK.
 
-Weitere Informationen zu `CEdit`finden Sie unter Steuer [Elemente](../../mfc/controls-mfc.md).
+Weitere Informationen `CEdit`zu finden Sie unter [Steuerelemente](../../mfc/controls-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](cobject-class.md)
+[Cobject](cobject-class.md)
 
 [CCmdTarget](ccmdtarget-class.md)
 
@@ -227,13 +227,13 @@ Weitere Informationen zu `CEdit`finden Sie unter Steuer [Elemente](../../mfc/con
 
 `CEdit`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-##  <a name="canundo"></a>CEdit:: CanUndo
+## <a name="ceditcanundo"></a><a name="canundo"></a>CEdit::CanUndo
 
-Mit dieser Funktion können Sie ermitteln, ob der letzte Bearbeitungsvorgang rückgängig gemacht werden kann.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob der letzte Bearbeitungsvorgang rückgängig gemacht werden kann.
 
 ```
 BOOL CanUndo() const;
@@ -241,17 +241,17 @@ BOOL CanUndo() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der letzte Bearbeitungsvorgang durch einen aufzurufenden `Undo` Member-Funktion rückgängig gemacht werden kann. 0, wenn es nicht rückgängig gemacht werden kann.
+Ein Wert ungleich Null, wenn der letzte `Undo` Bearbeitungsvorgang durch einen Aufruf der Memberfunktion rückgängig gemacht werden kann. 0, wenn sie nicht rückgängig gemacht werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [EM_CANUNDO](/windows/win32/Controls/em-canundo) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_CANUNDO](/windows/win32/Controls/em-canundo) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: Undo](#undo).
+  Siehe Beispiel für [CEdit::Undo](#undo).
 
-##  <a name="cedit"></a>CEdit:: CEdit
+## <a name="ceditcedit"></a><a name="cedit"></a>CEdit::CEdit
 
 Erstellt ein `CEdit`-Objekt.
 
@@ -259,17 +259,17 @@ Erstellt ein `CEdit`-Objekt.
 CEdit();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie [Create](#create) zum Erstellen des Windows-Bearbeitungs Steuer Elements.
+Verwenden Sie [Erstellen,](#create) um das Windows-Bearbeitungssteuerelement zu erstellen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#1](../../mfc/reference/codesnippet/cpp/cedit-class_1.cpp)]
 
-##  <a name="charfrompos"></a>CEdit:: charfrompos
+## <a name="ceditcharfrompos"></a><a name="charfrompos"></a>CEdit::CharFromPos
 
-Mit dieser Funktion rufen Sie die NULL basierten Zeilen-und Zeichen Indizes des Zeichens ab, das dem angegebenen Punkt in diesem `CEdit` Steuerelement am nächsten liegt.
+Rufen Sie diese Funktion auf, um die Null-basierten Linien- und `CEdit` Zeichenindizes des Zeichens abzurufen, das dem angegebenen Punkt in diesem Steuerelement am nächsten liegt.
 
 ```
 int CharFromPos(CPoint pt) const;
@@ -277,63 +277,63 @@ int CharFromPos(CPoint pt) const;
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
-Die Koordinaten eines Punkts im Client Bereich dieses `CEdit` Objekts.
+*Pt*<br/>
+Die Koordinaten eines Punktes im `CEdit` Clientbereich dieses Objekts.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Zeichen Index im nieder wertigen Wort und der Zeilen Index im Wort mit hoher Reihenfolge.
+Der Zeichenindex im WORD niedriger Ordnung und der Linienindex im WORD mit hoher Ordnung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
->  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
+> Diese Memberfunktion ist ab Windows 95 und Windows NT 4.0 verfügbar.
 
-Weitere Informationen finden Sie unter [EM_CHARFROMPOS](/windows/win32/Controls/em-charfrompos) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_CHARFROMPOS](/windows/win32/Controls/em-charfrompos) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#3](../../mfc/reference/codesnippet/cpp/cedit-class_2.cpp)]
 
-##  <a name="clear"></a>CEdit:: Clear
+## <a name="ceditclear"></a><a name="clear"></a>CEdit::Klar
 
-Mit dieser Funktion können Sie die aktuelle Auswahl (sofern vorhanden) im Bearbeitungs Steuerelement löschen (Löschen).
+Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement zu löschen (löschen).
 
 ```
 void Clear();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der von `Clear` ausgeführte Löschvorgang kann durch Aufrufen der Funktion [Rückgängig](#undo) -Member rückgängig gemacht werden.
+Die von `Clear` ausgeführte Löschung kann rückgängig gemacht werden, indem die [Rückgängig-Memberfunktion](#undo) aufgerufen wird.
 
-Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in die Zwischenablage einzufügen, müssen Sie die Funktion zum [Ausschneiden](#cut) von Membern.
+Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in der Zwischenablage zu platzieren, rufen Sie die [Funktion "Member ausschneiden"](#cut) auf.
 
-Weitere Informationen finden Sie unter [WM_CLEAR](/windows/win32/dataxchg/wm-clear) in der Windows SDK.
+Weitere Informationen finden Sie unter [WM_CLEAR](/windows/win32/dataxchg/wm-clear) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#4](../../mfc/reference/codesnippet/cpp/cedit-class_3.cpp)]
 
-##  <a name="copy"></a>CEdit:: Copy
+## <a name="ceditcopy"></a><a name="copy"></a>CEdit::Kopieren
 
-Mit dieser Funktion wird die aktuelle Auswahl (sofern vorhanden) im Bearbeitungs Steuerelement in CF_TEXT Format in die Zwischenablage kopiert.
+Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement in der Zwischenablage im format CF_TEXT zu ändern.
 
 ```
 void Copy();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [WM_COPY](/windows/win32/dataxchg/wm-copy) in der Windows SDK.
+Weitere Informationen finden Sie unter [WM_COPY](/windows/win32/dataxchg/wm-copy) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#5](../../mfc/reference/codesnippet/cpp/cedit-class_4.cpp)]
 
-##  <a name="create"></a>CEdit:: Create
+## <a name="ceditcreate"></a><a name="create"></a>CEdit::Erstellen
 
-Erstellt das Windows-Bearbeitungs Steuerelement und fügt es an das `CEdit` Objekt an.
+Erstellt das Windows-Bearbeitungssteuerelement und `CEdit` fügt es an das Objekt an.
 
 ```
 virtual BOOL Create(
@@ -345,89 +345,89 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwstyle*<br/>
-Gibt den Stil des Bearbeitungs Steuer Elements an. Wenden Sie eine beliebige Kombination von [Bearbeitungs Stilen](styles-used-by-mfc.md#edit-styles) auf das Steuerelement an.
+*dwStyle*<br/>
+Gibt den Stil des Bearbeitungssteuerelements an. Wenden Sie eine beliebige Kombination von [Bearbeitungsstilen](styles-used-by-mfc.md#edit-styles) auf das Steuerelement an.
 
 *Rect*<br/>
-Gibt die Größe und Position des Bearbeitungs Steuer Elements an. Kann ein `CRect` Objekt oder `RECT` Struktur sein.
+Gibt die Größe und Position des Bearbeitungssteuerelements an. Kann ein `CRect` Objekt `RECT` oder eine Struktur sein.
 
-*pparser*<br/>
-Gibt das übergeordnete Fenster des Bearbeitungs Steuer Elements an (normalerweise ein `CDialog`). Er darf nicht NULL sein.
+*pParentWnd*<br/>
+Gibt das übergeordnete Fenster des Bearbeitungssteuerelements (in der Regel a `CDialog`) an. Es darf nicht NULL sein.
 
-*NID*<br/>
-Gibt die ID des Bearbeitungs Steuer Elements an.
+*nID*<br/>
+Gibt die ID des Bearbeitungssteuerelements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Initialisierung erfolgreich ist. andernfalls 0.
+Ein Wert ungleich Null, wenn die Initialisierung erfolgreich ist; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CEdit`-Objekt in zwei Schritten. Nennen Sie zunächst den `CEdit`-Konstruktor, und klicken Sie dann auf `Create`, der das Windows-Bearbeitungs Steuerelement erstellt und an das `CEdit`-Objekt anfügt.
+Sie erstellen `CEdit` ein Objekt in zwei Schritten. Rufen Sie `CEdit` zunächst den Konstruktor auf, und rufen Sie dann `Create` `CEdit` auf, das das Windows-Bearbeitungssteuerelement erstellt und an das Objekt anfügt.
 
-Wenn `Create` ausgeführt wird, sendet Windows die [WM_NCCREATE](/windows/win32/winmsg/wm-nccreate)-, [WM_NCCALCSIZE](/windows/win32/winmsg/wm-nccalcsize)-, [WM_CREATE](/windows/win32/winmsg/wm-create)-und [WM_GETMINMAXINFO](/windows/win32/winmsg/wm-getminmaxinfo) Meldungen an das Bearbeitungs Steuerelement.
+Bei `Create` der Ausführung sendet Windows die [Nachrichten WM_NCCREATE](/windows/win32/winmsg/wm-nccreate), [WM_NCCALCSIZE](/windows/win32/winmsg/wm-nccalcsize), [WM_CREATE](/windows/win32/winmsg/wm-create)und [WM_GETMINMAXINFO](/windows/win32/winmsg/wm-getminmaxinfo) an das Bearbeitungssteuerelement.
 
-Diese Nachrichten werden standardmäßig von den Element Funktionen " [onnccreate](cwnd-class.md#onnccreate)", " [onnccalcsize](cwnd-class.md#onnccalcsize)", " [OnCreate](cwnd-class.md#oncreate)" und " [ongetminmaxinfo](cwnd-class.md#ongetminmaxinfo) " in der `CWnd`-Basisklasse verarbeitet. Um die standardmäßige Nachrichten Behandlung zu erweitern, leiten Sie eine Klasse von `CEdit`ab, fügen Sie der neuen Klasse eine Meldungs Zuordnung hinzu, und überschreiben Sie die obigen nachrichtenhandlermember-Funktionen. Überschreiben Sie `OnCreate`z. b., um die erforderliche Initialisierung für die neue Klasse auszuführen.
+Diese Nachrichten werden standardmäßig von den Memberfunktionen [OnNcCreate](cwnd-class.md#onnccreate), [OnNcCalcSize](cwnd-class.md#onnccalcsize), [OnCreate](cwnd-class.md#oncreate)und `CWnd` [OnGetMinMaxInfo](cwnd-class.md#ongetminmaxinfo) in der Basisklasse verarbeitet. Um die Standardnachrichtenbehandlung zu erweitern, `CEdit`leiten Sie eine Klasse von ab , fügen Sie der neuen Klasse eine Nachrichtenzuordnung hinzu, und überschreiben Sie die oben genannten Message-Handler-Memberfunktionen. Überschreiben `OnCreate`Sie z. B., um die erforderliche Initialisierung für die neue Klasse durchzuführen.
 
-Wenden Sie die folgenden [Fenster Stile](styles-used-by-mfc.md#window-styles) auf ein Bearbeitungs Steuerelement an.
+Wenden Sie die folgenden [Fensterstile](styles-used-by-mfc.md#window-styles) auf ein Bearbeitungssteuerelement an.
 
-- Immer WS_CHILD
+- WS_CHILD Immer
 
-- WS_VISIBLE in der Regel
+- WS_VISIBLE In der Regel
 
-- WS_DISABLED selten
+- WS_DISABLED Selten
 
-- WS_GROUP zum Gruppieren von Steuerelementen
+- WS_GROUP Zu Gruppensteuerelementen
 
-- WS_TABSTOP, um das Bearbeitungs Steuerelement in der Tabstopps-Reihenfolge einzubeziehen
+- WS_TABSTOP So wird das Bearbeitungssteuerelement in die Tabstoppreihenfolge eingeschlossen
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#2](../../mfc/reference/codesnippet/cpp/cedit-class_5.cpp)]
 
-##  <a name="cut"></a>CEdit:: Cut
+## <a name="ceditcut"></a><a name="cut"></a>CEdit::Schnitt
 
-Mit dieser Funktion können Sie die aktuelle Auswahl (sofern vorhanden) im Bearbeitungs Steuerelement löschen (Ausschneiden) und den gelöschten Text in CF_TEXT Format in die Zwischenablage kopieren.
+Rufen Sie diese Funktion auf, um die aktuelle Auswahl (falls vorhanden) im Bearbeitungssteuerelement zu löschen (auszuschneiden) und den gelöschten Text in die Zwischenablage im CF_TEXT Format zu kopieren.
 
 ```
 void Cut();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der von `Cut` ausgeführte Löschvorgang kann durch Aufrufen der Funktion [Rückgängig](#undo) -Member rückgängig gemacht werden.
+Die von `Cut` ausgeführte Löschung kann rückgängig gemacht werden, indem die [Rückgängig-Memberfunktion](#undo) aufgerufen wird.
 
-Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in der Zwischenablage zu platzieren, müssen [Sie die Funktion zum Löschen von](#clear) Membern
+Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in die Zwischenablage zu legen, rufen Sie die Funktion [Member löschen](#clear) auf.
 
-Weitere Informationen finden Sie unter [WM_CUT](/windows/win32/dataxchg/wm-cut) in der Windows SDK.
+Weitere Informationen finden Sie unter [WM_CUT](/windows/win32/dataxchg/wm-cut) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#6](../../mfc/reference/codesnippet/cpp/cedit-class_6.cpp)]
 
-##  <a name="emptyundobuffer"></a>CEdit:: emptyundobuffer
+## <a name="ceditemptyundobuffer"></a><a name="emptyundobuffer"></a>CEdit::EmptyUndoBuffer
 
-Mit dieser Funktion wird das rückgängigflag eines Bearbeitungs Steuer Elements zurückgesetzt (gelöscht).
+Rufen Sie diese Funktion auf, um das Rückgängig-Flag eines Bearbeitungssteuerelements zurückzusetzen (löschen).
 
 ```
 void EmptyUndoBuffer();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Bearbeitungs Steuerelement kann jetzt den letzten Vorgang nicht rückgängig machen. Das rückgängigflag wird festgelegt, wenn ein Vorgang innerhalb des Bearbeitungs Steuer Elements rückgängig gemacht werden kann.
+Das Bearbeitungssteuerelement kann nun den letzten Vorgang nicht mehr rückgängig machen. Das Rückgängig-Flag wird immer dann festgelegt, wenn ein Vorgang innerhalb des Bearbeitungssteuerelements rückgängig gemacht werden kann.
 
-Das rückgängig-Flag wird automatisch gelöscht, wenn die Funktionen [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext) oder [SetHandle](#sethandle)`CWnd` Member aufgerufen werden.
+Das Rückgängig-Flag wird automatisch gelöscht, wenn die [SetWindowText-](../../mfc/reference/cwnd-class.md#setwindowtext) oder [SetHandle-Memberfunktionen](#sethandle) `CWnd` aufgerufen werden.
 
-Weitere Informationen finden Sie unter [EM_EMPTYUNDOBUFFER](/windows/win32/Controls/em-emptyundobuffer) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_EMPTYUNDOBUFFER](/windows/win32/Controls/em-emptyundobuffer) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#7](../../mfc/reference/codesnippet/cpp/cedit-class_7.cpp)]
 
-##  <a name="fmtlines"></a>CEdit:: smtlines
+## <a name="ceditfmtlines"></a><a name="fmtlines"></a>CEdit::FmtLines
 
-Mit dieser Funktion können Sie die Aufnahme von Zeichen in einem mehrzeiligen Bearbeitungs Steuerelement ein-oder ausschalten.
+Rufen Sie diese Funktion auf, um die Einschlussung weicher Zeilenumbruchzeichen in ein mehrzeiliger Bearbeitungssteuerelement oder -aus in ein oder aus.
 
 ```
 BOOL FmtLines(BOOL bAddEOL);
@@ -435,30 +435,30 @@ BOOL FmtLines(BOOL bAddEOL);
 
 ### <a name="parameters"></a>Parameter
 
-*baddäol*<br/>
-Gibt an, ob weiche Zeilenumbruch Zeichen eingefügt werden sollen. Der Wert true fügt die Zeichen ein. bei einem Wert von false werden diese entfernt.
+*bAddEOL*<br/>
+Gibt an, ob weiche Zeilenumbruchzeichen eingefügt werden sollen. Der Wert TRUE fügt die Zeichen ein. ein Wert von FALSE entfernt sie.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn eine Formatierung auftritt. andernfalls 0.
+Ein Wert ungleich Null, wenn eine Formatierung auftritt; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein weicher Zeilenumbruch besteht aus zwei Wagen Rücklauf Zeichen und einem Zeilenvorschub, der am Ende einer Zeile eingefügt wird, die aufgrund von Wort Umbrüchen unterbrochen wird. Ein harter Zeilenumbruch besteht aus einem Wagen Rücklauf und einem Zeilenvorschub. Zeilen, die mit einem hart zeiligen Umbruch enden, sind von `FmtLines`nicht betroffen.
+Ein weicher Zeilenumbruch besteht aus zwei Wagenrückläufen und einem Zeilenvorschub, der am Ende einer Zeile eingefügt wird, die aufgrund von Wortumbruch unterbrochen wird. Ein harter Zeilenumbruch besteht aus einem Wagenrücklauf und einem Zeilenvorschub. Zeilen, die mit einem harten Zeilenumbruch enden, sind von `FmtLines`nicht betroffen.
 
-Windows antwortet nur, wenn das `CEdit` Objekt ein mehrzeilige Bearbeitungs Steuerelement ist.
+Windows reagiert nur, `CEdit` wenn es sich bei dem Objekt um ein mehrzeiliges Bearbeitungssteuerelement handelt.
 
-`FmtLines` wirkt sich nur auf den von [GetHandle](#gethandle) zurückgegebenen Puffer und den von [WM_GETTEXT](/windows/win32/winmsg/wm-gettext)zurückgegebenen Text aus. Dies hat keine Auswirkung auf die Anzeige des Texts innerhalb des Bearbeitungs Steuer Elements.
+`FmtLines`wirkt sich nur auf den von [GetHandle](#gethandle) zurückgegebenen Puffer und den von [WM_GETTEXT](/windows/win32/winmsg/wm-gettext)zurückgegebenen Text aus. Es hat keine Auswirkungen auf die Anzeige des Textes innerhalb des Bearbeitungssteuerelements.
 
-Weitere Informationen finden Sie unter [EM_FMTLINES](/windows/win32/Controls/em-fmtlines) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_FMTLINES](/windows/win32/Controls/em-fmtlines) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#8](../../mfc/reference/codesnippet/cpp/cedit-class_8.cpp)]
 
-##  <a name="getcuebanner"></a>CEdit:: getcuebanner
+## <a name="ceditgetcuebanner"></a><a name="getcuebanner"></a>CEdit::GetCueBanner
 
-Ruft den Text ab, der als Text Hinweis oder Tipp in einem Bearbeitungs Steuerelement angezeigt wird, wenn das Steuerelement leer ist.
+Ruft den Text ab, der als Text-Cue oder Tipp in einem Bearbeitungssteuerelement angezeigt wird, wenn das Steuerelement leer ist.
 
 ```
 BOOL GetCueBanner(
@@ -471,24 +471,24 @@ CString GetCueBanner() const;
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-vorgenommen Ein Zeiger auf eine Zeichenfolge, die den Hinweis Text enthält.
+[out] Ein Zeiger auf eine Zeichenfolge, die den Cue-Text enthält.
 
 *cchText*<br/>
-in Die Anzahl der Zeichen, die empfangen werden können. Diese Zahl schließt das abschließende Null-Zeichen ein.
+[in] Die Anzahl der Zeichen, die empfangen werden können. Diese Zahl enthält das beendende NULL-Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei der ersten Überladung ist true, wenn die Methode erfolgreich ist. andernfalls false.
+Für die erste Überladung TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
-Bei der zweiten Überladung eine [CString](../../atl-mfc-shared/using-cstring.md) , die den Hinweis Text enthält, wenn die Methode erfolgreich ist. andernfalls die leere Zeichenfolge ("").
+Für die zweite Überladung eine [CString,](../../atl-mfc-shared/using-cstring.md) die den Cue-Text enthält, wenn die Methode erfolgreich ist; andernfalls die leere Zeichenfolge ("").
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [EM_GETCUEBANNER](/windows/win32/Controls/em-getcuebanner) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_GetCueBannerText](/windows/win32/api/commctrl/nf-commctrl-edit_getcuebannertext) -Makro.
+Diese Methode sendet die [EM_GETCUEBANNER](/windows/win32/Controls/em-getcuebanner) Nachricht, die im Windows SDK beschrieben wird. Weitere Informationen finden [Edit_GetCueBannerText](/windows/win32/api/commctrl/nf-commctrl-edit_getcuebannertext) Sie im Edit_GetCueBannerText-Makro.
 
-##  <a name="getfirstvisibleline"></a>CEdit:: getfirstvisibleline
+## <a name="ceditgetfirstvisibleline"></a><a name="getfirstvisibleline"></a>CEdit::GetFirstVisibleLine
 
-Mit dieser Funktion wird die oberste sichtbare Zeile in einem Bearbeitungs Steuerelement bestimmt.
+Rufen Sie diese Funktion auf, um die oberste sichtbare Zeile in einem Bearbeitungssteuerelement zu bestimmen.
 
 ```
 int GetFirstVisibleLine() const;
@@ -496,19 +496,19 @@ int GetFirstVisibleLine() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index der obersten sichtbaren Zeile. Für einzeilige Bearbeitungs Steuerelemente ist der Rückgabewert 0.
+Der nullbasierte Index der obersten sichtbaren Linie. Bei einzeiligen Bearbeitungssteuerelementen ist der Rückgabewert 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [EM_GETFIRSTVISIBLELINE](/windows/win32/Controls/em-getfirstvisibleline) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETFIRSTVISIBLELINE](/windows/win32/Controls/em-getfirstvisibleline) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#9](../../mfc/reference/codesnippet/cpp/cedit-class_9.cpp)]
 
-##  <a name="gethandle"></a>CEdit:: GetHandle
+## <a name="ceditgethandle"></a><a name="gethandle"></a>CEdit::GetHandle
 
-Rufen Sie diese Funktion auf, um ein Handle für den aktuell zugeordneten Arbeitsspeicher für ein mehrzeilige Bearbeitungs Steuerelement abzurufen.
+Rufen Sie diese Funktion auf, um ein Handle in den Speicher abzurufen, der derzeit für ein mehrzeiliges Bearbeitungssteuerelement reserviert ist.
 
 ```
 HLOCAL GetHandle() const;
@@ -516,28 +516,28 @@ HLOCAL GetHandle() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein lokales Speicher handle, das den Puffer identifiziert, der den Inhalt des Bearbeitungs Steuer Elements enthält. Wenn ein Fehler auftritt, z. b. das Senden der Nachricht an ein einzeilige Bearbeitungs Steuerelement, ist der Rückgabewert 0.
+Ein lokales Speicherhandle, das den Puffer identifiziert, der den Inhalt des Bearbeitungssteuerelements enthält. Wenn ein Fehler auftritt, z. B. das Senden der Nachricht an ein einzeiliges Bearbeitungssteuerelement, ist der Rückgabewert 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei dem Handle handelt es sich um ein lokales Speicher handle, das von allen **lokalen** Windows-Speicherfunktionen verwendet werden kann, die ein lokales Speicher Handle als Parameter annehmen.
+Das Handle ist ein lokales Speicherhandle und kann von allen **lokalen** Windows-Speicherfunktionen verwendet werden, die ein lokales Speicherhandle als Parameter verwenden.
 
-`GetHandle` wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+`GetHandle`wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Ruft `GetHandle` für ein Steuerelement für mehrzeilige Bearbeitungs Steuerelemente in einem Dialogfeld nur auf, wenn das Dialogfeld mit dem festgelegten DS_LOCALEDIT Style-Flag erstellt wurde. Wenn der DS_LOCALEDIT Stil nicht festgelegt ist, erhalten Sie weiterhin einen Rückgabewert ungleich NULL, aber Sie können den zurückgegebenen Wert nicht verwenden.
+Rufen `GetHandle` Sie ein mehrzeiliges Bearbeitungssteuerelement in einem Dialogfeld nur an, wenn das Dialogfeld mit dem DS_LOCALEDIT Stilflagsatz erstellt wurde. Wenn der DS_LOCALEDIT Stil nicht festgelegt ist, erhalten Sie weiterhin einen Rückgabewert ungleich Null, aber Sie können den zurückgegebenen Wert nicht verwenden.
 
 > [!NOTE]
-> `GetHandle` funktioniert nicht mit Windows 95/98. Wenn Sie `GetHandle` in Windows 95/98 aufzurufen, wird NULL zurückgegeben. `GetHandle` funktioniert wie unter Windows NT, Version 3,51 und höher dokumentiert.
+> `GetHandle`funktioniert nicht mit Windows 95/98. Wenn Sie `GetHandle` in Windows 95/98 aufrufen, wird NULL zurückgegeben. `GetHandle`funktioniert wie unter Windows NT, Version 3.51 und höher dokumentiert.
 
-Weitere Informationen finden Sie unter [EM_GETHANDLE](/windows/win32/Controls/em-gethandle) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETHANDLE](/windows/win32/Controls/em-gethandle) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#10](../../mfc/reference/codesnippet/cpp/cedit-class_10.cpp)]
 
-##  <a name="gethighlight"></a>CEdit:: gethighlight
+## <a name="ceditgethighlight"></a><a name="gethighlight"></a>CEdit::GetHighlight
 
-Ruft die Indizes des ersten und des letzten Zeichens in einem Textbereich ab, der im aktuellen Bearbeitungs Steuerelement hervorgehoben ist.
+Ruft die Indizes des ersten und letzten Zeichens in einem Textbereich ab, der im aktuellen Bearbeitungssteuerelement hervorgehoben ist.
 
 ```
 BOOL GetHighlight(
@@ -547,22 +547,22 @@ BOOL GetHighlight(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*pichstart*|vorgenommen NULL basierter Index des ersten Zeichens im Textbereich, der hervorgehoben wird.|
-|*pichend*|vorgenommen NULL basierter Index des letzten Zeichens im Textbereich, der hervorgehoben wird.|
+|*pichStart*|[out] Nullbasierter Index des ersten Zeichens im hervorgehobenen Textbereich.|
+|*pichEnd*|[out] Nullbasierter Index des letzten Zeichens im hervorgehobenen Textbereich.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [EM_GETHILITE](/windows/win32/Controls/em-gethilite) Nachricht, die in der Windows SDK beschrieben wird. Sowohl `SetHighlight` als auch `GetHighlight` sind zurzeit nur für Unicode-Builds aktiviert.
+Diese Methode sendet die [EM_GETHILITE](/windows/win32/Controls/em-gethilite) Nachricht, die im Windows SDK beschrieben wird. Beide `SetHighlight` `GetHighlight` und sind derzeit nur für UNICODE-Builds aktiviert.
 
-##  <a name="getlimittext"></a>CEdit:: getlimittext
+## <a name="ceditgetlimittext"></a><a name="getlimittext"></a>CEdit::GetLimitText
 
-Mit dieser Member-Funktion können Sie den Text Grenzwert für dieses `CEdit`-Objekt abrufen.
+Rufen Sie diese Memberfunktion auf, `CEdit` um das Textlimit für dieses Objekt abzurufen.
 
 ```
 UINT GetLimitText() const;
@@ -570,24 +570,24 @@ UINT GetLimitText() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das aktuelle Text Limit für dieses `CEdit` Objekt in tchars.
+Die aktuelle Textgrenze in TCHARs `CEdit` für dieses Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Text Limit ist die maximale Text Menge in tchars, die das Bearbeitungs Steuerelement annehmen kann.
+Die Textgrenze ist die maximale Textmenge in TCHARs, die das Bearbeitungssteuerelement akzeptieren kann.
 
 > [!NOTE]
->  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
+> Diese Memberfunktion ist ab Windows 95 und Windows NT 4.0 verfügbar.
 
-Weitere Informationen finden Sie unter [EM_GETLIMITTEXT](/windows/win32/Controls/em-getlimittext) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETLIMITTEXT](/windows/win32/Controls/em-getlimittext) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#11](../../mfc/reference/codesnippet/cpp/cedit-class_11.cpp)]
 
-##  <a name="getline"></a>CEdit:: getline
+## <a name="ceditgetline"></a><a name="getline"></a>CEdit::GetLine
 
-Rufen Sie diese Funktion auf, um eine Textzeile aus einem Bearbeitungs Steuerelement abzurufen und in *lpszbuffer*zu stellen.
+Rufen Sie diese Funktion auf, um eine Textzeile aus einem Bearbeitungssteuerelement abzurufen, und platziert sie in *lpszBuffer*.
 
 ```
 int GetLine(
@@ -603,31 +603,31 @@ int GetLine(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt die Zeilennummer an, die von einem mehrzeiligen Bearbeitungs Steuerelement abgerufen werden soll. Zeilennummern sind NULL basiert. der Wert 0 gibt die erste Zeile an. Dieser Parameter wird von einem einzeiligen Bearbeitungs Steuerelement ignoriert.
+Gibt die Zeilennummer an, die von einem mehrzeiligen Bearbeitungssteuerelement abgerufen werden soll. Zeilennummern sind nullbasiert. ein Wert von 0 gibt die erste Zeile an. Dieser Parameter wird von einem einzeiligen Bearbeitungssteuerelement ignoriert.
 
 *lpszBuffer*<br/>
-Verweist auf den Puffer, der eine Kopie der Zeile empfängt. Im ersten Wort des Puffers muss die maximale Anzahl von tchars angegeben werden, die in den Puffer kopiert werden können.
+Zeigt auf den Puffer, der eine Kopie der Zeile empfängt. Das erste Wort des Puffers muss die maximale Anzahl von TCHARs angeben, die in den Puffer kopiert werden können.
 
 *nMaxLength*<br/>
-Gibt die maximale Anzahl von TCHAR-Zeichen an, die in den Puffer kopiert werden können. `GetLine` legt diesen Wert im ersten Wort von *lpszbuffer* ab, bevor Windows aufgerufen wird.
+Gibt die maximale Anzahl von TCHAR-Zeichen an, die in den Puffer kopiert werden können. `GetLine`platziert diesen Wert im ersten Wort von *lpszBuffer,* bevor der Aufruf von Windows gemacht wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der tatsächlich kopierten Zeichen. Der Rückgabewert ist 0, wenn die durch *nIndex* angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungs Steuerelement ist.
+Die Anzahl der tatsächlich kopierten Zeichen. Der Rückgabewert ist 0, wenn die von *nIndex* angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungssteuerelement ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die kopierte Zeile enthält kein NULL-Terminierungs Zeichen.
+Die kopierte Zeile enthält kein Null-Beendigungszeichen.
 
-Weitere Informationen finden Sie unter [EM_GETLINE](/windows/win32/Controls/em-getline) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETLINE](/windows/win32/Controls/em-getline) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: getLineCount](#getlinecount).
+  Siehe beispielfür [CEdit::GetLineCount](#getlinecount).
 
-##  <a name="getlinecount"></a>CEdit:: getLineCount
+## <a name="ceditgetlinecount"></a><a name="getlinecount"></a>CEdit::GetLineCount
 
-Rufen Sie diese Funktion auf, um die Anzahl von Zeilen in einem mehrzeiligen Bearbeitungs Steuerelement abzurufen.
+Rufen Sie diese Funktion auf, um die Anzahl der Zeilen in einem mehrzeiligen Bearbeitungssteuerelement abzurufen.
 
 ```
 int GetLineCount() const;
@@ -635,21 +635,21 @@ int GetLineCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine ganze Zahl, die die Anzahl der Zeilen im mehrzeiligen Bearbeitungs Steuerelement enthält. Wenn kein Text in das Bearbeitungs Steuerelement eingegeben wurde, ist der Rückgabewert 1.
+Eine ganze Zahl, die die Anzahl der Zeilen im mehrzeiligen Bearbeitungssteuerelement enthält. Wenn kein Text in das Bearbeitungssteuerelement eingegeben wurde, ist der Rückgabewert 1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetLineCount` wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+`GetLineCount`wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Weitere Informationen finden Sie unter [EM_GETLINECOUNT](/windows/win32/Controls/em-getlinecount) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETLINECOUNT](/windows/win32/Controls/em-getlinecount) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#12](../../mfc/reference/codesnippet/cpp/cedit-class_12.cpp)]
 
-##  <a name="getmargins"></a>CEdit:: getMargin
+## <a name="ceditgetmargins"></a><a name="getmargins"></a>CEdit::GetMargins
 
-Rufen Sie diese Member-Funktion auf, um die linken und rechten Ränder dieses Bearbeitungs Steuer Elements abzurufen.
+Rufen Sie diese Memberfunktion auf, um den linken und rechten Rand dieses Bearbeitungssteuerelements abzurufen.
 
 ```
 DWORD GetMargins() const;
@@ -657,24 +657,24 @@ DWORD GetMargins() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Breite des linken Rands im nieder wertigen Wort und die Breite des rechten Rands im Wort mit hoher Reihenfolge.
+Die Breite des linken Rands im WORD niedriger Ordnung und die Breite des rechten Rands im WORD mit hoher Ordnung.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ränder werden in Pixel gemessen.
+Die Ränder werden in Pixeln gemessen.
 
 > [!NOTE]
->  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
+> Diese Memberfunktion ist ab Windows 95 und Windows NT 4.0 verfügbar.
 
-Weitere Informationen finden Sie unter [EM_GETMARGINS](/windows/win32/Controls/em-getmargins) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETMARGINS](/windows/win32/Controls/em-getmargins) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEditView:: geteditctrl](ceditview-class.md#geteditctrl).
+  Siehe Beispiel für [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).
 
-##  <a name="getmodify"></a>CEdit:: getmodify
+## <a name="ceditgetmodify"></a><a name="getmodify"></a>CEdit::GetModify
 
-Mit dieser Funktion können Sie feststellen, ob der Inhalt eines Bearbeitungs Steuer Elements geändert wurde.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob der Inhalt eines Bearbeitungssteuerelements geändert wurde.
 
 ```
 BOOL GetModify() const;
@@ -682,21 +682,21 @@ BOOL GetModify() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Inhalt des Bearbeitungs Steuer Elements geändert wurde. 0 (null), wenn Sie unverändert geblieben sind.
+Ein Wert ungleich Null, wenn der Inhalt der Bearbeitungssteuerung geändert wurde; 0 wenn sie unverändert geblieben sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Windows behält ein internes Flag bei, das angibt, ob der Inhalt des Bearbeitungs Steuer Elements geändert wurde. Dieses Flag wird gelöscht, wenn das Bearbeitungs Steuerelement erstmalig erstellt wird, und kann auch durch Aufrufen der [setmodify](#setmodify) -Member-Funktion gelöscht werden.
+Windows verwaltet ein internes Flag, das angibt, ob der Inhalt des Bearbeitungssteuerelements geändert wurde. Dieses Flag wird gelöscht, wenn das Bearbeitungssteuerelement zum ersten Mal erstellt wird, und kann auch durch Aufrufen der [SetModify-Memberfunktion](#setmodify) gelöscht werden.
 
-Weitere Informationen finden Sie unter [EM_GETMODIFY](/windows/win32/Controls/em-getmodify) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETMODIFY](/windows/win32/Controls/em-getmodify) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#13](../../mfc/reference/codesnippet/cpp/cedit-class_13.cpp)]
 
-##  <a name="getpasswordchar"></a>CEdit:: getpasswordchar
+## <a name="ceditgetpasswordchar"></a><a name="getpasswordchar"></a>CEdit::GetPasswordChar
 
-Rufen Sie diese Funktion auf, um das Kenn Wort Zeichen abzurufen, das in einem Bearbeitungs Steuerelement angezeigt wird, wenn der Benutzer Text eingibt.
+Rufen Sie diese Funktion auf, um das Kennwortzeichen abzurufen, das in einem Bearbeitungssteuerelement angezeigt wird, wenn der Benutzer Text eingibt.
 
 ```
 TCHAR GetPasswordChar() const;
@@ -704,21 +704,21 @@ TCHAR GetPasswordChar() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Zeichen an, das anstelle des vom Benutzer eingegebenen Zeichens angezeigt werden soll. Der Rückgabewert ist NULL, wenn kein Kenn Wort Zeichen vorhanden ist.
+Gibt das Zeichen an, das angezeigt werden soll, anstelle des Zeichens, das der Benutzer eingegeben hat. Der Rückgabewert ist NULL, wenn kein Kennwortzeichen vorhanden ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie das Bearbeitungs Steuerelement mit dem ES_PASSWORD-Stil erstellen, bestimmt die dll, die das-Steuerelement unterstützt, das Standard Kennwort-Zeichen. Das Manifest oder die [InitCommonControlsEx](/windows/win32/api/commctrl/nf-commctrl-initcommoncontrolsex) -Methode bestimmt, welche DLL das Bearbeitungs Steuerelement unterstützt. Wenn user32. dll das Bearbeitungs Steuerelement unterstützt, ist das Standard Kennwort Sternchen ("*", U + 002A). Wenn Comctl32. dll, Version 6, das Bearbeitungs Steuerelement unterstützt, ist das Standard Zeichen schwarz Kreis ("●", U + 25cf). Weitere Informationen dazu, welche dll und Version die allgemeinen Steuerelemente unterstützt, finden Sie unter [Shell und allgemeine](/previous-versions/windows/desktop/legacy/bb776779\(v=vs.85\))Steuerelement Versionen.
+Wenn Sie das Bearbeitungssteuerelement mit dem ES_PASSWORD-Stil erstellen, bestimmt die DLL, die das Steuerelement unterstützt, das Standardkennwortzeichen. Das Manifest oder die [InitCommonControlsEx-Methode](/windows/win32/api/commctrl/nf-commctrl-initcommoncontrolsex) bestimmt, welche DLL das Bearbeitungssteuerelement unterstützt. Wenn user32.dll das Bearbeitungssteuerelement unterstützt, lautet das Standardkennwortzeichen ASTERISK ('*', U+002A). Wenn comctl32.dll Version 6 das Bearbeitungssteuerelement unterstützt, ist das Standardzeichen BLACK CIRCLE ('', U+25CF). Weitere Informationen dazu, welche DLL und Version die allgemeinen Steuerelemente unterstützt, finden Sie unter [Shell- und Common Controls-Versionen](/previous-versions/windows/desktop/legacy/bb776779\(v=vs.85\)).
 
-Diese Methode sendet die [EM_GETPASSWORDCHAR](/windows/win32/Controls/em-getpasswordchar) Nachricht, die in der Windows SDK beschrieben wird.
+Diese Methode sendet die [EM_GETPASSWORDCHAR](/windows/win32/Controls/em-getpasswordchar) Nachricht, die im Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#14](../../mfc/reference/codesnippet/cpp/cedit-class_14.cpp)]
 
-##  <a name="getrect"></a>CEdit:: GetRect
+## <a name="ceditgetrect"></a><a name="getrect"></a>CEdit::GetRect
 
-Mit dieser Funktion können Sie das Formatierungs Rechteck eines Bearbeitungs Steuer Elements abrufen.
+Rufen Sie diese Funktion auf, um das Formatierungsrechteck eines Bearbeitungssteuerelements abzurufen.
 
 ```
 void GetRect(LPRECT lpRect) const;
@@ -726,24 +726,24 @@ void GetRect(LPRECT lpRect) const;
 
 ### <a name="parameters"></a>Parameter
 
-*lprect*<br/>
-Verweist auf die `RECT` Struktur, die das Formatierungs Rechteck empfängt.
+*lpRect*<br/>
+Zeigt auf `RECT` die Struktur, die das Formatierungsrechteck empfängt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Formatierungs Rechteck ist das einschränkende Rechteck des Texts, der unabhängig von der Größe des Bearbeitungs Steuerelement Fensters ist.
+Das Formatierungsrechteck ist das einschränkende Rechteck des Textes, das unabhängig von der Größe des Bearbeitungssteuerungsfensters ist.
 
-Das Formatierungs Rechteck eines mehrzeiligen Bearbeitungs Steuer Elements kann durch die Member-Funktionen [SetRect](#setrect) und [setrectnp](#setrectnp) geändert werden.
+Das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements kann durch die Memberfunktionen [SetRect](#setrect) und [SetRectNP](#setrectnp) geändert werden.
 
-Weitere Informationen finden Sie unter [EM_GETRECT](/windows/win32/Controls/em-getrect) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETRECT](/windows/win32/Controls/em-getrect) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: limittext](#limittext).
+  Siehe Beispiel für [CEdit::LimitText](#limittext).
 
-##  <a name="getsel"></a>CEdit:: GetSEL
+## <a name="ceditgetsel"></a><a name="getsel"></a>CEdit::GetSel
 
-Mit dieser Funktion werden die Anfangs-und Endzeichen Positionen der aktuellen Auswahl (sofern vorhanden) in einem Bearbeitungs Steuerelement mithilfe des Rückgabewerts oder der Parameter abgerufen.
+Rufen Sie diese Funktion auf, um die Start- und Endzeichenpositionen der aktuellen Auswahl (falls vorhanden) in einem Bearbeitungssteuerelement mithilfe des Rückgabewerts oder der Parameter abzurufen.
 
 ```
 DWORD GetSel() const;
@@ -755,27 +755,27 @@ void GetSel(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartchar*<br/>
-Verweis auf eine Ganzzahl, die die Position des ersten Zeichens in der aktuellen Auswahl empfängt.
+*nStartChar*<br/>
+Verweis auf eine ganze Zahl, die die Position des ersten Zeichens in der aktuellen Auswahl empfängt.
 
-*nendchar*<br/>
-Verweis auf eine Ganzzahl, die die Position des ersten nicht ausgewählten Zeichens nach dem Ende der aktuellen Auswahl empfängt.
+*nEndChar*<br/>
+Verweis auf eine ganze Zahl, die die Position des ersten nicht ausgewählten Zeichens über das Ende der aktuellen Auswahl hinaus empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Version, die ein DWORD zurückgibt, gibt einen-Wert zurück, der die Anfangsposition im nieder wertigen Wort und die Position des ersten nicht ausgewählten Zeichens nach dem Ende der Auswahl im höherwertigen Wort enthält.
+Die Version, die ein DWORD zurückgibt, gibt einen Wert zurück, der die Startposition im Wort niedriger Ordnung und die Position des ersten nicht ausgewählten Zeichens nach dem Ende der Auswahl im Wort hoher Ordnung enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [EM_GETSEL](/windows/win32/Controls/em-getsel) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_GETSEL](/windows/win32/Controls/em-getsel) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#15](../../mfc/reference/codesnippet/cpp/cedit-class_15.cpp)]
 
-##  <a name="hideballoontip"></a>CEdit:: hideballoontip
+## <a name="cedithideballoontip"></a><a name="hideballoontip"></a>CEdit::HideBalloonTip
 
-Blendet jede Sprechblase aus, die dem aktuellen Bearbeitungs Steuerelement zugeordnet ist.
+Blendet alle Sprechblasenspitzen aus, die dem aktuellen Bearbeitungssteuerelement zugeordnet sind.
 
 ```
 BOOL HideBalloonTip();
@@ -783,15 +783,15 @@ BOOL HideBalloonTip();
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sendet die [EM_HIDEBALLOONTIP](/windows/win32/Controls/em-hideballoontip) Nachricht, die in der Windows SDK beschrieben wird.
+Diese Funktion sendet die [EM_HIDEBALLOONTIP](/windows/win32/Controls/em-hideballoontip) Nachricht, die im Windows SDK beschrieben wird.
 
-##  <a name="limittext"></a>CEdit:: limittext
+## <a name="ceditlimittext"></a><a name="limittext"></a>CEdit::LimitText
 
-Diese Funktion wird aufgerufen, um die Länge des Texts einzuschränken, den der Benutzer in ein Bearbeitungs Steuerelement eingeben darf.
+Rufen Sie diese Funktion auf, um die Länge des Textes zu begrenzen, den der Benutzer in ein Bearbeitungssteuerelement eingeben kann.
 
 ```
 void LimitText(int nChars = 0);
@@ -799,25 +799,25 @@ void LimitText(int nChars = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*nchars*<br/>
-Gibt die Länge (in tchars) des Texts an, den der Benutzer eingeben kann. Wenn dieser Parameter 0 ist, wird die Textlänge auf UINT_MAX Bytes festgelegt. Dies ist das Standardverhalten.
+*nChars*<br/>
+Gibt die Länge (in TCHARs) des Textes an, den der Benutzer eingeben kann. Wenn dieser Parameter 0 ist, wird die Textlänge auf UINT_MAX Bytes festgelegt. Dies ist das Standardverhalten.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Durch Ändern des Text Limits wird nur der Text eingeschränkt, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, und wirkt sich auch nicht auf die Länge des Texts aus, der von der Element Funktion [SetWindowText](cwnd-class.md#setwindowtext) in `CWnd`in das Bearbeitungs Steuerelement kopiert wurde. Wenn eine Anwendung die `SetWindowText`-Funktion verwendet, um mehr Text in ein Bearbeitungs Steuerelement zu platzieren, als im `LimitText`aufgerufen wird, kann der Benutzer jeden beliebigen Text innerhalb des Bearbeitungs Steuer Elements löschen. Das Text Limit verhindert jedoch, dass der Benutzer den vorhandenen Text durch neuen Text ersetzt, es sei denn, das Löschen der aktuellen Auswahl bewirkt, dass der Text unterhalb des Text Limits liegt.
+Durch ändern des Textlimits wird nur der Text eingeschränkt, den der Benutzer eingeben kann. It has no effect on any text already in the edit control, nor does it affect the length of the text copied to the edit control by the [SetWindowText](cwnd-class.md#setwindowtext) member function in `CWnd`. Wenn eine Anwendung `SetWindowText` die Funktion verwendet, um mehr Text in `LimitText`ein Bearbeitungssteuerelement zu platzieren, als im Aufruf von angegeben ist, kann der Benutzer den Text innerhalb des Bearbeitungssteuerelements löschen. Die Textbeschränkung verhindert jedoch, dass der Benutzer den vorhandenen Text durch neuen Text ersetzt, es sei denn, das Löschen der aktuellen Auswahl führt dazu, dass der Text unter die Textgrenze fällt.
 
 > [!NOTE]
->  In Win32 (Windows NT und Windows 95/98) ersetzt [SetLimitText](#setlimittext) diese Funktion.
+> In Win32 (Windows NT und Windows 95/98) ersetzt [SetLimitText](#setlimittext) diese Funktion.
 
-Weitere Informationen finden Sie unter [EM_LIMITTEXT](/windows/win32/Controls/em-limittext) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_LIMITTEXT](/windows/win32/Controls/em-limittext) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#17](../../mfc/reference/codesnippet/cpp/cedit-class_16.cpp)]
 
-##  <a name="linefromchar"></a>CEdit:: linefromchar
+## <a name="ceditlinefromchar"></a><a name="linefromchar"></a>CEdit::LineFromChar
 
-Rufen Sie diese Funktion auf, um die Zeilennummer der Zeile abzurufen, die den angegebenen Zeichen Index enthält.
+Rufen Sie diese Funktion auf, um die Zeilennummer der Zeile abzurufen, die den angegebenen Zeichenindex enthält.
 
 ```
 int LineFromChar(int nIndex = -1) const;
@@ -826,27 +826,27 @@ int LineFromChar(int nIndex = -1) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den NULL basierten Indexwert für das gewünschte Zeichen im Text des Bearbeitungs Steuer Elements oder enthält-1. Wenn *nIndex* den Wert-1 aufweist, wird die aktuelle Zeile angegeben, d. h. die Zeile, die die Einfügemarke enthält.
+Enthält den nullbasierten Indexwert für das gewünschte Zeichen im Text des Bearbeitungssteuerelements oder enthält -1. Wenn *nIndex* -1 ist, gibt es die aktuelle Zeile an, d. h. die Zeile, die die Einstellte enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die null basierte Zeilennummer der Zeile, die den durch *nIndex*angegebenen Zeichen Index enthält. Wenn *nIndex* den Wert-1 aufweist, wird die Nummer der Zeile zurückgegeben, die das erste Zeichen der Auswahl enthält. Wenn keine Auswahl vorhanden ist, wird die aktuelle Zeilennummer zurückgegeben.
+Die nullbasierte Zeilennummer der Zeile, die den von *nIndex*angegebenen Zeichenindex enthält. Wenn *nIndex* -1 ist, wird die Nummer der Zeile zurückgegeben, die das erste Zeichen der Auswahl enthält. Wenn keine Auswahl vorhanden ist, wird die aktuelle Zeilennummer zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Zeichen Index ist die Anzahl der Zeichen vom Anfang des Bearbeitungs Steuer Elements.
+Ein Zeichenindex ist die Anzahl der Zeichen vom Anfang des Bearbeitungssteuerelements.
 
-Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verwendet.
+Diese Memberfunktion wird nur von mehrzeiligen Bearbeitungssteuerelementen verwendet.
 
-Weitere Informationen finden Sie unter [EM_LINEFROMCHAR](/windows/win32/Controls/em-linefromchar) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_LINEFROMCHAR](/windows/win32/Controls/em-linefromchar) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#18](../../mfc/reference/codesnippet/cpp/cedit-class_17.cpp)]
 
-##  <a name="lineindex"></a>CEdit:: lineingedex
+## <a name="ceditlineindex"></a><a name="lineindex"></a>CEdit::LineIndex
 
-Rufen Sie diese Funktion auf, um den Zeichen Index einer Zeile innerhalb eines mehrzeiligen Bearbeitungs Steuer Elements abzurufen.
+Rufen Sie diese Funktion auf, um den Zeichenindex einer Linie innerhalb eines mehrzeiligen Bearbeitungssteuerelements abzurufen.
 
 ```
 int LineIndex(int nLine = -1) const;
@@ -854,28 +854,28 @@ int LineIndex(int nLine = -1) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nzeile*<br/>
-Enthält den Indexwert für die gewünschte Zeile im Text des Bearbeitungs Steuer Elements oder enthält-1. Wenn *nline* den Wert-1 aufweist, wird die aktuelle Zeile angegeben, d. h. die Zeile, die die Einfügemarke enthält.
+*nLine*<br/>
+Enthält den Indexwert für die gewünschte Zeile im Text des Bearbeitungssteuerelements oder enthält -1. Wenn *nLine* -1 ist, gibt es die aktuelle Zeile an, d. h. die Zeile, die die Einstellte enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Zeichen Index der in *nline* angegebenen Zeile oder-1, wenn die angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungs Steuerelement ist.
+Der Zeichenindex der in *nLine* oder -1 angegebenen Linie, wenn die angegebene Zeilennummer größer als die Anzahl der Zeilen im Bearbeitungssteuerelement ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Zeichen Index entspricht der Anzahl von Zeichen vom Anfang des Bearbeitungs Steuer Elements bis zur angegebenen Zeile.
+Der Zeichenindex ist die Anzahl der Zeichen vom Anfang des Bearbeitungssteuerelements bis zur angegebenen Zeile.
 
-Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Diese Memberfunktion wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Weitere Informationen finden Sie unter [EM_LINEINDEX](/windows/win32/controls/em-lineindex) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_LINEINDEX](/windows/win32/controls/em-lineindex) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#19](../../mfc/reference/codesnippet/cpp/cedit-class_18.cpp)]
 
-##  <a name="linelength"></a>CEdit:: LineLength
+## <a name="ceditlinelength"></a><a name="linelength"></a>CEdit::LineLength
 
-Ruft die Länge einer Zeile in einem Bearbeitungs Steuerelement ab.
+Ruft die Länge einer Linie in einem Bearbeitungssteuerelement ab.
 
 ```
 int LineLength(int nLine = -1) const;
@@ -883,32 +883,32 @@ int LineLength(int nLine = -1) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nzeile*<br/>
-Der null basierte Index eines Zeichens in der Zeile, deren Länge abgerufen werden soll. Der Standardwert ist -1.
+*nLine*<br/>
+Der nullbasierte Index eines Zeichens in der Zeile, dessen Länge abgerufen werden soll. Der Standardwert ist -1.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Für einzeilige Bearbeitungs Steuerelemente ist der Rückgabewert die Länge des Texts im Bearbeitungs Steuerelement in tchars.
+Bei einzeiligen Bearbeitungssteuerelementen ist der Rückgabewert die Länge des Texts im Bearbeitungssteuerelement in TCHARs.
 
-Für mehrzeilige Bearbeitungs Steuerelemente ist der Rückgabewert die Länge in tchars der durch den *nline* -Parameter angegebenen Zeile. Bei ANSI-Text entspricht die Länge der Anzahl der Bytes in der Zeile. bei Unicode-Text entspricht die Länge der Anzahl der Zeichen in der Zeile. Die Länge schließt das Wagen Rücklauf Zeichen am Ende der Zeile nicht ein.
+Bei mehrzeiligen Bearbeitungssteuerelementen ist der Rückgabewert die Länge der durch den Parameter *nLine* angegebenen Zeile in TCHARs. Bei ANSI-Text ist die Länge die Anzahl der Bytes in der Zeile. Bei Unicode-Text ist die Länge die Anzahl der Zeichen in der Zeile. Die Länge enthält nicht das Wagen-Rücklaufzeichen am Ende der Zeile.
 
-Wenn der *nline* -Parameter größer als die Anzahl der Zeichen im-Steuerelement ist, ist der Rückgabewert 0 (null).
+Wenn der *nLine-Parameter* mehr als die Anzahl der Zeichen im Steuerelement ist, ist der Rückgabewert Null.
 
-Wenn der *nline* -Parameter-1 ist, ist der Rückgabewert die Anzahl der nicht ausgewählten Zeichen in den Zeilen, die die ausgewählten Zeichen enthalten. Wenn die Auswahl z. b. vom vierten Zeichen einer Zeile bis zum achten Zeichen vom Ende der nächsten Zeile reicht, ist der Rückgabewert 10. Das heißt, drei Zeichen in der ersten Zeile und sieben für das nächste.
+Wenn der *nLine-Parameter* -1 ist, ist der Rückgabewert die Anzahl der nicht ausgewählten Zeichen in den Zeilen, die ausgewählte Zeichen enthalten. Wenn sich die Auswahl beispielsweise vom vierten Zeichen einer Zeile bis zum achten Zeichen vom Ende der nächsten Zeile erstreckt, beträgt der Rückgabewert 10. Das heißt, drei Zeichen in der ersten Zeile und sieben in der nächsten.
 
-Weitere Informationen zum TCHAR-Typ finden Sie in der TCHAR-Zeile in der-Tabelle unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
+Weitere Informationen zum TCHAR-Typ finden Sie in der TCHAR-Zeile in der Tabelle unter [Windows-Datentypen](/windows/win32/WinProg/windows-data-types).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird von der [EM_LINELENGTH](/windows/win32/Controls/em-linelength) Meldung unterstützt, die in der Windows SDK beschrieben wird.
+Diese Methode wird von der [EM_LINELENGTH-Meldung](/windows/win32/Controls/em-linelength) unterstützt, die im Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: lineingedex](#lineindex).
+  Siehe Beispiel für [CEdit::LineIndex](#lineindex).
 
-##  <a name="linescroll"></a>CEdit:: linescroll
+## <a name="ceditlinescroll"></a><a name="linescroll"></a>CEdit::LineScroll
 
-Mit dieser Funktion können Sie im Text eines mehrzeiligen Bearbeitungs Steuer Elements einen Bildlauf durchführen.
+Rufen Sie diese Funktion auf, um den Text eines mehrzeiligen Bearbeitungssteuerelements zu scrollen.
 
 ```
 void LineScroll(
@@ -918,47 +918,47 @@ void LineScroll(
 
 ### <a name="parameters"></a>Parameter
 
-*nlines*<br/>
-Gibt die Anzahl der Zeilen an, die vertikal scrollen soll.
+*nLines*<br/>
+Gibt die Anzahl der Linien an, die vertikal gescrollt werden sollen.
 
-*nchars*<br/>
-Gibt die Anzahl der Zeichen Positionen an, die horizontal durchlaufen werden sollen. Dieser Wert wird ignoriert, wenn das Bearbeitungs Steuerelement entweder den ES_RIGHT oder ES_CENTER Stil hat.
+*nChars*<br/>
+Gibt die Anzahl der Zeichenpositionen an, die horizontal gescrollt werden sollen. Dieser Wert wird ignoriert, wenn das Bearbeitungssteuerelement entweder den ES_RIGHT- oder ES_CENTER-Stil hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Diese Memberfunktion wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Das Bearbeitungs Steuerelement scrollt nicht vertikal nach der letzten Textzeile im Bearbeitungs Steuerelement. Wenn die aktuelle Zeile zuzüglich der Anzahl der durch *nlines* angegebenen Zeilen die Gesamtzahl der Zeilen im Bearbeitungs Steuerelement überschreitet, wird der Wert so angepasst, dass die letzte Zeile des Bearbeitungs Steuer Elements auf den oberen Rand des Fensters zum Bearbeiten von Steuerelementen aufgeschlult wird.
+Das Bearbeitungssteuerelement führt keinen vertikalen Bildlauf über die letzte Textzeile im Bearbeitungssteuerelement. Wenn die aktuelle Zeile plus die anzahl der von *nLines* angegebenen Zeilen die Gesamtzahl der Zeilen im Bearbeitungssteuerelement überschreitet, wird der Wert so angepasst, dass die letzte Zeile des Bearbeitungssteuerelements an den Anfang des Bearbeitungssteuerungsfensters gescrollt wird.
 
-`LineScroll` kann verwendet werden, um einen horizontalen Bildlauf nach dem letzten Zeichen einer beliebigen Zeile durchführen.
+`LineScroll`kann verwendet werden, um horizontal über das letzte Zeichen einer beliebigen Zeile zu scrollen.
 
-Weitere Informationen finden Sie unter [EM_LINESCROLL](/windows/win32/Controls/em-linescroll) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_LINESCROLL](/windows/win32/Controls/em-linescroll) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: getfirstvisibleline](#getfirstvisibleline).
+  Siehe beispielfür [CEdit::GetFirstVisibleLine](#getfirstvisibleline).
 
-##  <a name="paste"></a>CEdit::P Aste
+## <a name="ceditpaste"></a><a name="paste"></a>CEdit::Paste
 
-Mit dieser Funktion können Sie die Daten aus der Zwischenablage in die `CEdit` an der Einfügemarke einfügen.
+Rufen Sie diese Funktion auf, um `CEdit` die Daten aus der Zwischenablage in die einfüge-Einfügemarke einzufügen.
 
 ```
 void Paste();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.
+Daten werden nur eingefügt, wenn die Zwischenablage Daten im CF_TEXT-Format enthält.
 
-Weitere Informationen finden Sie unter [WM_PASTE](/windows/win32/dataxchg/wm-paste) in der Windows SDK.
+Weitere Informationen finden Sie unter [WM_PASTE](/windows/win32/dataxchg/wm-paste) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#20](../../mfc/reference/codesnippet/cpp/cedit-class_19.cpp)]
 
-##  <a name="posfromchar"></a>CEdit::P osfromchar
+## <a name="ceditposfromchar"></a><a name="posfromchar"></a>CEdit::PosVonChar
 
-Mit dieser Funktion wird die Position (obere linke Ecke) eines angegebenen Zeichens innerhalb dieses `CEdit` Objekts abzurufen.
+Rufen Sie diese Funktion auf, um die Position (obere `CEdit` linke Ecke) eines bestimmten Zeichens innerhalb dieses Objekts abzurufen.
 
 ```
 CPoint PosFromChar(UINT nChar) const;
@@ -966,29 +966,29 @@ CPoint PosFromChar(UINT nChar) const;
 
 ### <a name="parameters"></a>Parameter
 
-*NCHAR*<br/>
-Der null basierte Index des angegebenen Zeichens.
+*Nchar*<br/>
+Der nullbasierte Index des angegebenen Zeichens.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Koordinaten der linken oberen Ecke des durch *NCHAR*angegebenen Zeichens.
+Die Koordinaten der oberen linken Ecke des durch *nChar*angegebenen Zeichens .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Zeichen wird angegeben, indem der null basierte Indexwert angegeben wird. Wenn *NCHAR* größer als der Index des letzten Zeichens in diesem `CEdit` Objekt ist, gibt der Rückgabewert die Koordinaten der Zeichenposition direkt hinter dem letzten Zeichen in diesem `CEdit` Objekt an.
+Das Zeichen wird angegeben, indem der nullbasierte Indexwert angegeben wird. Wenn *nChar* größer als der Index des `CEdit` letzten Zeichens in diesem Objekt ist, gibt der Rückgabewert die Koordinaten der Zeichenposition direkt hinter dem letzten Zeichen in diesem `CEdit` Objekt an.
 
 > [!NOTE]
->  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
+> Diese Memberfunktion ist ab Windows 95 und Windows NT 4.0 verfügbar.
 
-Weitere Informationen finden Sie unter [EM_POSFROMCHAR](/windows/win32/Controls/em-posfromchar) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_POSFROMCHAR](/windows/win32/Controls/em-posfromchar) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: linefromchar](#linefromchar).
+  Siehe beispiel für [CEdit::LineFromChar](#linefromchar).
 
-##  <a name="replacesel"></a>CEdit:: replacesel
+## <a name="ceditreplacesel"></a><a name="replacesel"></a>CEdit::ReplaceSel
 
-Mit dieser Funktion wird die aktuelle Auswahl in einem Bearbeitungs Steuerelement durch den von *lpsznewtext*angegebenen Text ersetzt.
+Rufen Sie diese Funktion auf, um die aktuelle Auswahl in einem Bearbeitungssteuerelement durch den von *lpszNewText*angegebenen Text zu ersetzen.
 
 ```
 void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE);
@@ -996,27 +996,27 @@ void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE);
 
 ### <a name="parameters"></a>Parameter
 
-*lpsznewtext*<br/>
-Verweist auf eine mit NULL endenden Zeichenfolge, die den Ersetzungstext enthält.
+*lpszNewText*<br/>
+Zeigt auf eine null-beendete Zeichenfolge, die den Ersatztext enthält.
 
-*bcanundo*<br/>
-Um anzugeben, dass diese Funktion rückgängig gemacht werden kann, legen Sie den Wert dieses Parameters auf true fest. Der Standardwert lautet "FALSE".
+*bCanUndo*<br/>
+Um anzugeben, dass diese Funktion rückgängig gemacht werden kann, legen Sie den Wert dieses Parameters auf TRUE fest. Der Standardwert ist FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ersetzt nur einen Teil des Texts in einem Bearbeitungs Steuerelement. Wenn Sie den gesamten Text ersetzen möchten, verwenden Sie die [CWnd:: SetWindowText](cwnd-class.md#setwindowtext) -Member-Funktion.
+Ersetzt nur einen Teil des Textes in einem Bearbeitungssteuerelement. Wenn Sie den gesamten Text ersetzen möchten, verwenden Sie die Memberfunktion [CWnd::SetWindowText.](cwnd-class.md#setwindowtext)
 
-Wenn keine aktuelle Auswahl vorhanden ist, wird der Ersetzungstext an der aktuellen Cursorposition eingefügt.
+Wenn keine aktuelle Auswahl vorhanden ist, wird der Ersatztext an der aktuellen Cursorposition eingefügt.
 
-Weitere Informationen finden Sie unter [EM_REPLACESEL](/windows/win32/Controls/em-replacesel) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_REPLACESEL](/windows/win32/Controls/em-replacesel) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: lineingedex](#lineindex).
+  Siehe Beispiel für [CEdit::LineIndex](#lineindex).
 
-##  <a name="setcuebanner"></a>CEdit:: setcuebanner
+## <a name="ceditsetcuebanner"></a><a name="setcuebanner"></a>CEdit::SetCueBanner
 
-Legt den Text fest, der als Text Hinweis oder Tipp in einem Bearbeitungs Steuerelement angezeigt wird, wenn das Steuerelement leer ist.
+Legt den Text fest, der als Text-Cue oder Tipp in einem Bearbeitungssteuerelement angezeigt wird, wenn das Steuerelement leer ist.
 
 ```
 BOOL SetCueBanner(LPCWSTR lpszText);
@@ -1029,32 +1029,32 @@ BOOL SetCueBanner(
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-in Ein Zeiger auf eine Zeichenfolge, die den Hinweis enthält, der im Bearbeitungs Steuerelement angezeigt werden soll.
+[in] Zeiger auf eine Zeichenfolge, die den Cue enthält, der im Bearbeitungssteuerelement angezeigt werden soll.
 
-*mit "f"-Fokus*<br/>
-in Wenn der Wert false ist, wird das Hinweis Banner nicht gezeichnet, wenn der Benutzer in das Bearbeitungs Steuerelement klickt und dem Steuerelement den Fokus übergibt.
+*fDrawWhenFocused*<br/>
+[in] Wenn FALSE, wird das Cue-Banner nicht gezeichnet, wenn der Benutzer auf das Bearbeitungssteuerelement klickt und dem Steuerelement den Fokus gibt.
 
-TRUE gibt an, dass das Hinweis Banner auch dann gezeichnet wird, wenn das Steuerelement den Fokus besitzt. Das Hinweis Banner verschwindet, wenn der Benutzer mit dem Eingeben des Steuer Elements beginnt.
+Wenn TRUE, wird das Cue-Banner auch dann gezeichnet, wenn das Steuerelement den Fokus hat. Das Cue-Banner verschwindet, wenn der Benutzer mit der Eingabe des Steuerelements beginnt.
 
-Der Standardwert lautet "FALSE".
+Der Standardwert ist FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Methode erfolgreich ist. andernfalls false.
+TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [EM_SETCUEBANNER](/windows/win32/Controls/em-setcuebanner) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_SetCueBannerTextFocused](/windows/win32/api/commctrl/nf-commctrl-edit_setcuebannertextfocused) -Makro.
+Diese Methode sendet die [EM_SETCUEBANNER](/windows/win32/Controls/em-setcuebanner) Nachricht, die im Windows SDK beschrieben wird. Weitere Informationen finden [Edit_SetCueBannerTextFocused](/windows/win32/api/commctrl/nf-commctrl-edit_setcuebannertextfocused) Sie im Edit_SetCueBannerTextFocused-Makro.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird die [CEdit:: setcuebanner](#setcuebanner) -Methode veranschaulicht.
+Im folgenden Beispiel wird die [CEdit::SetCueBanner-Methode](#setcuebanner) veranschaulicht.
 
 [!code-cpp[NVC_MFC_CEdit_s1#2](../../mfc/reference/codesnippet/cpp/cedit-class_20.cpp)]
 
-##  <a name="sethandle"></a>CEdit:: lthandle
+## <a name="ceditsethandle"></a><a name="sethandle"></a>CEdit::SetHandle
 
-Mit dieser Funktion wird das Handle auf den lokalen Arbeitsspeicher festgelegt, der von einem mehrzeiligen Bearbeitungs Steuerelement verwendet wird.
+Rufen Sie diese Funktion auf, um das Handle auf den lokalen Speicher festzulegen, der von einem mehrzeiligen Bearbeitungssteuerelement verwendet wird.
 
 ```
 void SetHandle(HLOCAL hBuffer);
@@ -1062,33 +1062,33 @@ void SetHandle(HLOCAL hBuffer);
 
 ### <a name="parameters"></a>Parameter
 
-*hbuffer*<br/>
-Enthält ein Handle für den lokalen Arbeitsspeicher. Dieses Handle muss von einem vorherigen-Befehl der Windows-Funktion [localzuc](/windows/win32/api/winbase/nf-winbase-localalloc) mit dem LMEM_MOVEABLE-Flag erstellt worden sein. Es wird davon ausgegangen, dass der Arbeitsspeicher eine auf NULL endenden Zeichenfolge enthält. Wenn dies nicht der Fall ist, sollte das erste Byte des zugeordneten Speichers auf 0 festgelegt werden.
+*hBuffer*<br/>
+Enthält ein Handle für den lokalen Speicher. Dieses Handle muss durch einen vorherigen Aufruf der [LocalAlloc](/windows/win32/api/winbase/nf-winbase-localalloc) Windows-Funktion mit dem LMEM_MOVEABLE-Flag erstellt worden sein. Es wird davon ausgegangen, dass der Speicher eine null-terminierte Zeichenfolge enthält. Ist dies nicht der Fall, sollte das erste Byte des zugewiesenen Speichers auf 0 gesetzt werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Bearbeitungs Steuerelement verwendet diesen Puffer dann, um den aktuell angezeigten Text zu speichern, anstatt seinen eigenen Puffer zuzuweisen.
+Das Bearbeitungssteuerelement verwendet dann diesen Puffer, um den aktuell angezeigten Text zu speichern, anstatt einen eigenen Puffer zuzuweisen.
 
-Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Diese Memberfunktion wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Bevor eine Anwendung ein neues Speicher handle festlegt, sollte Sie die [GetHandle](#gethandle) -Member-Funktion verwenden, um das Handle für den aktuellen Speicherpuffer zu erhalten, und diesen Speicher mithilfe der `LocalFree` Windows-Funktion freigeben.
+Bevor eine Anwendung ein neues Speicherhandle festlegt, sollte sie die [GetHandle-Memberfunktion](#gethandle) verwenden, um `LocalFree` das Handle in den aktuellen Speicherpuffer zu bringen und diesen Speicher mithilfe der Windows-Funktion freizugeben.
 
-`SetHandle` löscht den Rückgängig-Puffer (die [kanundo](#canundo) -Member-Funktion gibt dann 0 zurück) und das interne modifizierungsflag (die [getmodify](#getmodify) -Member-Funktion gibt dann 0 zurück). Das Fenster "Bearbeitungs Steuerelement" wird neu gezeichnet.
+`SetHandle`löscht den Rückgängig-Puffer (die [CanUndo-Memberfunktion](#canundo) gibt dann 0 zurück) und das interne Änderungsflag (die [GetModify-Memberfunktion](#getmodify) gibt dann 0 zurück). Das Bearbeitungssteuerungsfenster wird neu gezeichnet.
 
-Sie können diese Element Funktion in einem mehrzeiligen Bearbeitungs Steuerelement nur in einem Dialogfeld verwenden, wenn Sie das Dialogfeld mit dem DS_LOCALEDIT stilflag festgelegt haben.
+Sie können diese Memberfunktion in einem mehrzeiligen Bearbeitungssteuerelement in einem Dialogfeld nur verwenden, wenn Sie das Dialogfeld mit dem DS_LOCALEDIT Stilflagsatz erstellt haben.
 
 > [!NOTE]
-> `GetHandle` funktioniert nicht mit Windows 95/98. Wenn Sie `GetHandle` in Windows 95/98 aufzurufen, wird NULL zurückgegeben. `GetHandle` funktioniert wie unter Windows NT, Version 3,51 und höher dokumentiert.
+> `GetHandle`funktioniert nicht mit Windows 95/98. Wenn Sie `GetHandle` in Windows 95/98 aufrufen, wird NULL zurückgegeben. `GetHandle`funktioniert wie unter Windows NT, Version 3.51 und höher dokumentiert.
 
-Weitere Informationen finden Sie unter [EM_SETHANDLE](/windows/win32/Controls/em-sethandle), [localzugewiesenen](/windows/win32/api/winbase/nf-winbase-localalloc)und [LocalFree](/windows/win32/api/winbase/nf-winbase-localfree) im Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETHANDLE](/windows/win32/Controls/em-sethandle), [LocalAlloc](/windows/win32/api/winbase/nf-winbase-localalloc)und [LocalFree](/windows/win32/api/winbase/nf-winbase-localfree) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#22](../../mfc/reference/codesnippet/cpp/cedit-class_21.cpp)]
 
-##  <a name="sethighlight"></a>CEdit:: ab.
+## <a name="ceditsethighlight"></a><a name="sethighlight"></a>CEdit::SetHighlight
 
-Markiert einen Textbereich, der im aktuellen Bearbeitungs Steuerelement angezeigt wird.
+Hebt einen Textbereich hervor, der im aktuellen Bearbeitungssteuerelement angezeigt wird.
 
 ```
 void SetHighlight(
@@ -1098,18 +1098,18 @@ void SetHighlight(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ichstart*|in NULL basierter Index des ersten Zeichens im Textbereich, der hervorgehoben werden soll.|
-|*ichend*|in Der null basierte Index des letzten Zeichens im Textbereich, der hervorgehoben werden soll.|
+|*ichStart*|[in] Nullbasierter Index des ersten Zeichens im zu markierenden Textbereich.|
+|*ichEnd*|[in] Nullbasierter Index des letzten Zeichens im zu markierenden Textbereich.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die in der Windows SDK beschrieben wird.  Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die in der Windows SDK beschrieben wird. Sowohl `SetHighlight` als auch `GetHighlight` sind nur für Unicode-Builds aktiviert.
+Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die im Windows SDK beschrieben wird.  Diese Methode sendet die [EM_SETHILITE](/windows/win32/Controls/em-sethilite) Nachricht, die im Windows SDK beschrieben wird. Beide `SetHighlight` `GetHighlight` und sind nur für UNICODE-Builds aktiviert.
 
-##  <a name="setlimittext"></a>CEdit:: SetLimitText
+## <a name="ceditsetlimittext"></a><a name="setlimittext"></a>CEdit::SetLimitText
 
-Diese Member-Funktion zum Festlegen des Text Limits für dieses `CEdit`-Objekt aufzurufen.
+Rufen Sie diese Memberfunktion auf, `CEdit` um die Textgrenze für dieses Objekt festzulegen.
 
 ```
 void SetLimitText(UINT nMax);
@@ -1118,25 +1118,25 @@ void SetLimitText(UINT nMax);
 ### <a name="parameters"></a>Parameter
 
 *nMax*<br/>
-Das neue Text Limit in Zeichen.
+Die neue Textbeschränkung in Zeichen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Text Limit ist die maximale Text Menge in Zeichen, die das Bearbeitungs Steuerelement annehmen kann.
+Die Textgrenze ist die maximale Textmenge in Zeichen, die das Bearbeitungssteuerelement akzeptieren kann.
 
-Durch Ändern des Text Limits wird nur der Text eingeschränkt, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, und wirkt sich auch nicht auf die Länge des Texts aus, der von der Element Funktion [SetWindowText](cwnd-class.md#setwindowtext) in `CWnd`in das Bearbeitungs Steuerelement kopiert wurde. Wenn eine Anwendung die `SetWindowText`-Funktion verwendet, um mehr Text in ein Bearbeitungs Steuerelement zu platzieren, als im `LimitText`aufgerufen wird, kann der Benutzer jeden beliebigen Text innerhalb des Bearbeitungs Steuer Elements löschen. Das Text Limit verhindert jedoch, dass der Benutzer den vorhandenen Text durch neuen Text ersetzt, es sei denn, das Löschen der aktuellen Auswahl bewirkt, dass der Text unterhalb des Text Limits liegt.
+Durch ändern des Textlimits wird nur der Text eingeschränkt, den der Benutzer eingeben kann. It has no effect on any text already in the edit control, nor does it affect the length of the text copied to the edit control by the [SetWindowText](cwnd-class.md#setwindowtext) member function in `CWnd`. Wenn eine Anwendung `SetWindowText` die Funktion verwendet, um mehr Text in `LimitText`ein Bearbeitungssteuerelement zu platzieren, als im Aufruf von angegeben ist, kann der Benutzer den Text innerhalb des Bearbeitungssteuerelements löschen. Die Textbeschränkung verhindert jedoch, dass der Benutzer den vorhandenen Text durch neuen Text ersetzt, es sei denn, das Löschen der aktuellen Auswahl führt dazu, dass der Text unter die Textgrenze fällt.
 
-Diese Funktion ersetzt [limittext](#limittext) in Win32.
+Diese Funktion ersetzt [LimitText](#limittext) in Win32.
 
-Weitere Informationen finden Sie unter [EM_SETLIMITTEXT](/windows/win32/Controls/em-setlimittext) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETLIMITTEXT](/windows/win32/Controls/em-setlimittext) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEditView:: geteditctrl](ceditview-class.md#geteditctrl).
+  Siehe Beispiel für [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).
 
-##  <a name="setmargins"></a>CEdit:: setMargin
+## <a name="ceditsetmargins"></a><a name="setmargins"></a>CEdit::SetMargins
 
-Ruft diese Methode auf, um den linken und rechten Rand dieses Bearbeitungs Steuer Elements festzulegen.
+Rufen Sie diese Methode auf, um den linken und rechten Rand dieses Bearbeitungssteuerelements festzulegen.
 
 ```
 void SetMargins(
@@ -1146,26 +1146,26 @@ void SetMargins(
 
 ### <a name="parameters"></a>Parameter
 
-*nleft*<br/>
+*nLeft*<br/>
 Die Breite des neuen linken Rands in Pixel.
 
-*nright*<br/>
+*nRight*<br/>
 Die Breite des neuen rechten Rands in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
->  Diese Member-Funktion ist ab Windows 95 und Windows NT 4,0 verfügbar.
+> Diese Memberfunktion ist ab Windows 95 und Windows NT 4.0 verfügbar.
 
-Weitere Informationen finden Sie unter [EM_SETMARGINS](/windows/win32/Controls/em-setmargins) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETMARGINS](/windows/win32/Controls/em-setmargins) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEditView:: geteditctrl](ceditview-class.md#geteditctrl).
+  Siehe Beispiel für [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).
 
-##  <a name="setmodify"></a>CEdit:: setmodify
+## <a name="ceditsetmodify"></a><a name="setmodify"></a>CEdit::SetModify
 
-Mit dieser Funktion können Sie das geänderte Flag für ein Bearbeitungs Steuerelement festlegen oder löschen.
+Rufen Sie diese Funktion auf, um das geänderte Flag für ein Bearbeitungssteuerelement festzulegen oder zu löschen.
 
 ```
 void SetModify(BOOL bModified = TRUE);
@@ -1173,22 +1173,22 @@ void SetModify(BOOL bModified = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bmodified*<br/>
-Der Wert true gibt an, dass der Text geändert wurde, und der Wert false gibt an, dass er unverändert ist. Standardmäßig ist das geänderte Flag festgelegt.
+*bModified*<br/>
+Der Wert TRUE gibt an, dass der Text geändert wurde, und ein Wert von FALSE gibt an, dass er unverändert ist. Standardmäßig wird das geänderte Flag gesetzt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das geänderte Flag gibt an, ob der Text im Bearbeitungs Steuerelement geändert wurde. Sie wird automatisch festgelegt, wenn der Benutzer den Text ändert. Der Wert kann mit der [getmodify](#getmodify) -Member-Funktion abgerufen werden.
+Das geänderte Flag gibt an, ob der Text im Bearbeitungssteuerelement geändert wurde. Sie wird automatisch festgelegt, wenn der Benutzer den Text ändert. Sein Wert kann mit der [GetModify-Memberfunktion](#getmodify) abgerufen werden.
 
-Weitere Informationen finden Sie unter [EM_SETMODIFY](/windows/win32/Controls/em-setmodify) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETMODIFY](/windows/win32/Controls/em-setmodify) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: getmodify](#getmodify).
+  Siehe Beispiel für [CEdit::GetModify](#getmodify).
 
-##  <a name="setpasswordchar"></a>CEdit:: setpasswordchar
+## <a name="ceditsetpasswordchar"></a><a name="setpasswordchar"></a>CEdit::SetPasswordChar
 
-Mit dieser Funktion können Sie ein Kenn Wort Zeichen festlegen oder entfernen, das in einem Bearbeitungs Steuerelement angezeigt wird, wenn der Benutzer Text eingibt.
+Rufen Sie diese Funktion auf, um ein Kennwortzeichen festzulegen oder zu entfernen, das in einem Bearbeitungssteuerelement angezeigt wird, wenn der Benutzer Text eingibt.
 
 ```
 void SetPasswordChar(TCHAR ch);
@@ -1196,28 +1196,28 @@ void SetPasswordChar(TCHAR ch);
 
 ### <a name="parameters"></a>Parameter
 
-*ch*<br/>
-Gibt das Zeichen an, das anstelle des vom Benutzer eingegebenen Zeichens angezeigt werden soll. Wenn *ch* den Wert 0 hat, werden die tatsächlich vom Benutzer eingegebenen Zeichen angezeigt.
+*Ch*<br/>
+Gibt das Zeichen an, das anstelle des vom Benutzer eingegebenen Zeichens angezeigt werden soll. Wenn *ch* 0 ist, werden die tatsächlichen Zeichen angezeigt, die vom Benutzer eingegeben werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Kenn Wort Zeichen festgelegt ist, wird dieses Zeichen für jedes Zeichen angezeigt, das der Benutzer eingibt.
+Wenn ein Kennwortzeichen festgelegt wird, wird dieses Zeichen für jedes Zeichen angezeigt, das der Benutzer eingibt.
 
-Diese Member-Funktion hat keine Auswirkung auf ein mehrzeilige Bearbeitungs Steuerelement.
+Diese Memberfunktion hat keine Auswirkungen auf ein mehrzeiliges Bearbeitungssteuerelement.
 
-Wenn die `SetPasswordChar` Member-Funktion aufgerufen wird, zeichnen `CEdit` alle sichtbaren Zeichen mithilfe des von *ch*angegebenen Zeichens neu.
+Wenn `SetPasswordChar` die Memberfunktion `CEdit` aufgerufen wird, werden alle sichtbaren Zeichen mit dem von *ch*angegebenen Zeichen neu gezeichnet.
 
-Wenn das Bearbeitungs Steuerelement mit dem [ES_PASSWORD](styles-used-by-mfc.md#edit-styles) -Format erstellt wird, wird das standardmäßige Kenn Wort Zeichen auf ein Sternchen ( <strong>\*</strong>) festgelegt. Dieser Stil wird entfernt, wenn `SetPasswordChar` aufgerufen wird, wobei *ch* auf 0 festgelegt ist.
+Wenn das Bearbeitungssteuerelement mit dem [Formatformat ES_PASSWORD](styles-used-by-mfc.md#edit-styles) erstellt wird, wird <strong>\*</strong>das Standardkennwortzeichen auf ein Sternchen ( ) festgelegt. Dieser Stil wird `SetPasswordChar` entfernt, wenn *ch* auf 0 gesetzt aufgerufen wird.
 
-Weitere Informationen finden Sie unter [EM_SETPASSWORDCHAR](/windows/win32/Controls/em-setpasswordchar) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETPASSWORDCHAR](/windows/win32/Controls/em-setpasswordchar) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#16](../../mfc/reference/codesnippet/cpp/cedit-class_22.cpp)]
 
-##  <a name="setreadonly"></a>CEdit:: abtreadonly
+## <a name="ceditsetreadonly"></a><a name="setreadonly"></a>CEdit::SetReadOnly
 
-Ruft diese Funktion auf, um den schreibgeschützten Zustand eines Bearbeitungs Steuer Elements festzulegen.
+Ruft diese Funktion auf, um den schreibgeschützten Status eines Bearbeitungssteuerelements festzulegen.
 
 ```
 BOOL SetReadOnly(BOOL bReadOnly = TRUE);
@@ -1225,26 +1225,26 @@ BOOL SetReadOnly(BOOL bReadOnly = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*nur Bread*<br/>
-Gibt an, ob der schreibgeschützte Zustand des Bearbeitungs Steuer Elements festgelegt oder entfernt werden soll. Mit dem Wert true wird der Zustand auf schreibgeschützt festgelegt. der Wert false legt den Zustand auf Lese-/Schreibzugriff fest.
+*bReadOnly*<br/>
+Gibt an, ob der schreibgeschützte Status des Bearbeitungssteuerelements festgelegt oder entfernt werden soll. Der Wert TRUE legt den Status auf schreibgeschützt fest. ein Wert von FALSE legt den Status auf Lesen/Schreiben fest.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn der Vorgang erfolgreich ist, oder 0, wenn ein Fehler auftritt.
+Ein Wert ungleich Null, wenn der Vorgang erfolgreich ist, oder 0, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die aktuelle Einstellung kann gefunden werden, indem Sie das [ES_READONLY](styles-used-by-mfc.md#edit-styles) -Flag im Rückgabewert von [CWnd:: GetStyle](cwnd-class.md#getstyle)testen.
+Die aktuelle Einstellung kann gefunden werden, indem Sie das [ES_READONLY-Flag](styles-used-by-mfc.md#edit-styles) im Rückgabewert von [CWnd::GetStyle](cwnd-class.md#getstyle)testen.
 
-Weitere Informationen finden Sie unter [EM_SETREADONLY](/windows/win32/Controls/em-setreadonly) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETREADONLY](/windows/win32/Controls/em-setreadonly) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#23](../../mfc/reference/codesnippet/cpp/cedit-class_23.cpp)]
 
-##  <a name="setrect"></a>CEdit:: SetRect
+## <a name="ceditsetrect"></a><a name="setrect"></a>CEdit::SetRect
 
-Mit dieser Funktion werden die Dimensionen eines Rechtecks mithilfe der angegebenen Koordinaten festgelegt.
+Rufen Sie diese Funktion auf, um die Bemaßungen eines Rechtecks mithilfe der angegebenen Koordinaten festzulegen.
 
 ```
 void SetRect(LPCRECT lpRect);
@@ -1252,28 +1252,28 @@ void SetRect(LPCRECT lpRect);
 
 ### <a name="parameters"></a>Parameter
 
-*lprect*<br/>
-Verweist auf die `RECT` Struktur oder `CRect` Objekt, das die neuen Dimensionen des Formatierungs Rechtecks angibt.
+*lpRect*<br/>
+Zeigt auf `RECT` die `CRect` Struktur oder das Objekt, das die neuen Dimensionen des Formatierungsrechtecks angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Member wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Dieses Element wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Verwenden Sie `SetRect`, um das Formatierungs Rechteck eines mehrzeiligen Bearbeitungs Steuer Elements festzulegen. Das Formatierungs Rechteck ist das einschränkende Rechteck des Texts, der unabhängig von der Größe des Bearbeitungs Steuerelement Fensters ist. Wenn das Bearbeitungs Steuerelement erstmalig erstellt wird, entspricht das Formatierungs Rechteck dem Client Bereich des Bearbeitungs Steuer Elements. Mithilfe der `SetRect` Member-Funktion kann eine Anwendung das Formatierungs Rechteck größer oder kleiner als das Bearbeitungs Steuerelement-Fenster machen.
+Verwenden `SetRect` Sie diese Datei, um das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements festzulegen. Das Formatierungsrechteck ist das einschränkende Rechteck des Textes, das unabhängig von der Größe des Bearbeitungssteuerungsfensters ist. Wenn das Bearbeitungssteuerelement zum ersten Mal erstellt wird, entspricht das Formatierungsrechteck dem Clientbereich des Bearbeitungssteuerungsfensters. Mithilfe der `SetRect` Memberfunktion kann eine Anwendung das Formatierungsrechteck größer oder kleiner als das Fenster für die Bearbeitungssteuerung machen.
 
-Wenn das Bearbeitungs Steuerelement keine Scrollleiste hat, wird der Text abgeschnitten und nicht umschließt, wenn das Formatierungs Rechteck größer als das Fenster ist. Wenn das Bearbeitungs Steuerelement einen Rahmen enthält, wird das Formatierungs Rechteck um die Größe des Rahmens reduziert. Wenn Sie das von der `GetRect` Member-Funktion zurückgegebene Rechteck anpassen, müssen Sie die Größe des Rahmens entfernen, bevor Sie das Rechteck an `SetRect`übergeben.
+Wenn das Bearbeitungssteuerelement über keine Bildlaufleiste verfügt, wird Text abgeschnitten und nicht umbrochen, wenn das Formatierungsrechteck größer als das Fenster ist. Wenn das Bearbeitungssteuerelement einen Rahmen enthält, wird das Formatierungsrechteck um die Größe des Rahmens verringert. Wenn Sie das von `GetRect` der Memberfunktion zurückgegebene Rechteck anpassen, müssen Sie `SetRect`die Größe des Rahmens entfernen, bevor Sie das Rechteck an übergeben.
 
-Wenn `SetRect` aufgerufen wird, wird der Text des Bearbeitungs Steuer Elements ebenfalls neu formatiert und angezeigt.
+Wenn `SetRect` aufgerufen wird, wird auch der Text des Bearbeitungssteuerelements neu formatiert und erneut angezeigt.
 
-Weitere Informationen finden Sie unter [EM_SETRECT](/windows/win32/Controls/em-setrect) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETRECT](/windows/win32/Controls/em-setrect) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CEdit#24](../../mfc/reference/codesnippet/cpp/cedit-class_24.cpp)]
 
-##  <a name="setrectnp"></a>CEdit:: setrectnp
+## <a name="ceditsetrectnp"></a><a name="setrectnp"></a>CEdit::SetRectNP
 
-Mit dieser Funktion wird das Formatierungs Rechteck eines mehrzeiligen Bearbeitungs Steuer Elements festgelegt.
+Rufen Sie diese Funktion auf, um das Formatierungsrechteck eines mehrzeiligen Bearbeitungssteuerelements festzulegen.
 
 ```
 void SetRectNP(LPCRECT lpRect);
@@ -1281,30 +1281,30 @@ void SetRectNP(LPCRECT lpRect);
 
 ### <a name="parameters"></a>Parameter
 
-*lprect*<br/>
-Verweist auf eine `RECT` Struktur oder `CRect` Objekt, das die neuen Abmessungen des Rechtecks angibt.
+*lpRect*<br/>
+Zeigt auf `RECT` eine `CRect` Struktur oder ein Objekt, das die neuen Bemaßungen des Rechtecks angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Formatierungs Rechteck ist das einschränkende Rechteck des Texts, der unabhängig von der Größe des Bearbeitungs Steuerelement Fensters ist.
+Das Formatierungsrechteck ist das einschränkende Rechteck des Textes, das unabhängig von der Größe des Bearbeitungssteuerungsfensters ist.
 
-`SetRectNP` ist mit der `SetRect` Member-Funktion identisch, mit dem Unterschied, dass das Bearbeitungs Steuerelement-Fenster nicht neu gezeichnet wird.
+`SetRectNP`ist mit `SetRect` der Memberfunktion identisch, mit der Ausnahme, dass das Bearbeitungssteuerungsfenster nicht neu gezeichnet wird.
 
-Wenn das Bearbeitungs Steuerelement erstmalig erstellt wird, entspricht das Formatierungs Rechteck dem Client Bereich des Bearbeitungs Steuer Elements. Durch Aufrufen der `SetRectNP` Member-Funktion kann eine Anwendung das Formatierungs Rechteck größer oder kleiner als das Bearbeitungs Steuerelement-Fenster machen.
+Wenn das Bearbeitungssteuerelement zum ersten Mal erstellt wird, entspricht das Formatierungsrechteck dem Clientbereich des Bearbeitungssteuerungsfensters. Durch Aufrufen `SetRectNP` der Memberfunktion kann eine Anwendung das Formatierungsrechteck größer oder kleiner als das Fenster für die Bearbeitungssteuerung machen.
 
-Wenn das Bearbeitungs Steuerelement keine Scrollleiste hat, wird der Text abgeschnitten und nicht umschließt, wenn das Formatierungs Rechteck größer als das Fenster ist.
+Wenn das Bearbeitungssteuerelement über keine Bildlaufleiste verfügt, wird Text abgeschnitten und nicht umbrochen, wenn das Formatierungsrechteck größer als das Fenster ist.
 
-Dieser Member wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Dieses Element wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-Weitere Informationen finden Sie unter [EM_SETRECTNP](/windows/win32/Controls/em-setrectnp) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETRECTNP](/windows/win32/Controls/em-setrectnp) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: SetRect](#setrect).
+  Siehe Beispiel für [CEdit::SetRect](#setrect).
 
-##  <a name="setsel"></a>CEdit:: abtsel
+## <a name="ceditsetsel"></a><a name="setsel"></a>CEdit::SetSel
 
-Mit dieser Funktion können Sie einen Bereich von Zeichen in einem Bearbeitungs Steuerelement auswählen.
+Rufen Sie diese Funktion auf, um einen Zeichenbereich in einem Bearbeitungssteuerelement auszuwählen.
 
 ```
 void SetSel(
@@ -1319,29 +1319,29 @@ void SetSel(
 
 ### <a name="parameters"></a>Parameter
 
-*dwselection*<br/>
-Gibt die Anfangsposition im nieder wertigen Wort und die Endposition im höherwertigen Wort an. Wenn das nieder wertige Wort 0 und das hochwertige Wort-1 ist, wird der gesamte Text im Bearbeitungs Steuerelement ausgewählt. Wenn das nieder wertige Wort-1 ist, wird die aktuelle Auswahl entfernt.
+*dwSelection*<br/>
+Gibt die Startposition im Wort niedriger Ordnung und die Endposition im Wort hoher Ordnung an. Wenn das Wort niedriger Ordnung 0 und das Wort mit hoher Ordnung -1 ist, wird der gesamte Text im Bearbeitungssteuerelement ausgewählt. Wenn das Wort niedriger Ordnung -1 ist, wird jede aktuelle Auswahl entfernt.
 
-*bnoscroll*<br/>
-Gibt an, ob die Einfügemarke in die Ansicht gescrollt werden soll. Wenn false, wird die Einfügemarke in die Ansicht gescrollt. TRUE gibt an, dass die Einfügemarke nicht in die Ansicht gescrollt wird.
+*bNoScroll*<br/>
+Gibt an, ob die Einstellte in die Ansicht gescrollt werden soll. Wenn FALSE, wird die Einstellte in die Ansicht gescrollt. Wenn TRUE, wird die Einstellte nicht in die Ansicht gescrollt.
 
-*nstartchar*<br/>
-Gibt die Anfangsposition an. Wenn *nstartchar* den Wert 0 hat und *nendchar* den Wert-1 hat, wird der gesamte Text im Bearbeitungs Steuerelement ausgewählt. Wenn *nstartchar* den Wert-1 hat, wird die aktuelle Auswahl entfernt.
+*nStartChar*<br/>
+Gibt die Startposition an. Wenn *nStartChar* 0 und *nEndChar* -1 ist, wird der gesamte Text im Bearbeitungssteuerelement ausgewählt. Wenn *nStartChar* -1 ist, wird jede aktuelle Auswahl entfernt.
 
-*nendchar*<br/>
+*nEndChar*<br/>
 Gibt die Endposition an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [EM_SETSEL](/windows/win32/Controls/em-setsel) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_SETSEL](/windows/win32/Controls/em-setsel) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CEdit:: GetSEL](#getsel).
+  Siehe beispiel für [CEdit::GetSel](#getsel).
 
-##  <a name="settabstops"></a>CEdit:: settabstopps
+## <a name="ceditsettabstops"></a><a name="settabstops"></a>CEdit::SetTabStops
 
-Mit dieser Funktion können Sie die Tabstopps in einem mehrzeiligen Bearbeitungs Steuerelement festlegen.
+Rufen Sie diese Funktion auf, um die Tabstopps in einem mehrzeiligen Bearbeitungssteuerelement festzulegen.
 
 ```
 void SetTabStops();
@@ -1354,38 +1354,38 @@ BOOL SetTabStops(
 
 ### <a name="parameters"></a>Parameter
 
-*cxeachstopps*<br/>
-Gibt an, dass Tabstopps für jede *cxeachstopp* -Dialog Einheit festgelegt werden sollen.
+*cxEachStop*<br/>
+Gibt an, dass Tabstopps an allen *cxEachStop-Dialogeinheiten* festgelegt werden sollen.
 
-*ntabstopps*<br/>
-Gibt die Anzahl der in *rgtabstopps*enthaltenen Tabstopps an. Diese Zahl muss größer als 1 sein.
+*nTabStops*<br/>
+Gibt die Anzahl der Tabstopps an, die in *rgTabStops*enthalten sind. Diese Zahl muss größer als 1 sein.
 
-*rgtabstopps*<br/>
-Verweist auf ein Array von ganzen Zahlen ohne Vorzeichen, das die Tabstopps in Dialogfeld Einheiten angibt. Eine Dialog Einheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialog Einheit ist gleich 1-vierte der aktuellen Dialogfeld Basis-breiten Einheit, und eine vertikale Dialog Einheit ist gleich einem Achtel der aktuellen Dialogfeld-Basis Höheneinheit. Die Dialog Basiseinheiten werden basierend auf der Höhe und der Breite der aktuellen System Schriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialog Basiseinheiten des Dialog Felds in Pixel zurück.
+*rgTabStops*<br/>
+Zeigt auf ein Array von nicht signierten Ganzzahlen, die die Tabstopps in Dialogeinheiten angeben. Eine Dialogeinheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialogeinheit entspricht einem Viertel der aktuellen Dialogbasisbreiteneinheit, und eine vertikale Dialogeinheit entspricht einem Achtel der aktuellen Dialogbasishöheneinheit. Die Dialogbasiseinheiten werden basierend auf der Höhe und Breite der aktuellen Systemschriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialogbasiseinheiten in Pixel zurück.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn die Registerkarten festgelegt wurden. andernfalls 0.
+Ein Wert ungleich Null, wenn die Registerkarten festgelegt wurden; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Text in ein Bearbeitungs Steuerelement mit mehreren Zeilen kopiert wird, bewirkt jedes Tabulator Zeichen im Text, bis der nächste Tabstopp Bereich angezeigt wird.
+Wenn Text in ein mehrzeiliges Bearbeitungssteuerelement kopiert wird, führt jedes Registerkartenzeichen im Text dazu, dass bis zum nächsten Tabstopp Speicherplatz generiert wird.
 
-Um Tabstopps auf die Standardgröße von 32-Dialog Einheiten festzulegen, nennen Sie die Parameter lose Version dieser Member-Funktion. Um Tabstopps auf eine andere Größe als 32 festzulegen, müssen Sie die Version mit dem *cxeachstopp* -Parameter aufrufen. Um Tabstopps auf ein Array von Größen festzulegen, verwenden Sie die Version mit zwei Parametern.
+Um Tabstopps auf die Standardgröße von 32 Dialogeinheiten festzulegen, rufen Sie die parameterlose Version dieser Memberfunktion auf. Um Tabstopps auf eine andere Größe als 32 festzulegen, rufen Sie die Version mit dem Parameter *cxEachStop* auf. Um Tabstopps auf ein Array von Größen festzulegen, verwenden Sie die Version mit zwei Parametern.
 
-Diese Member-Funktion wird nur von mehrzeiligen Bearbeitungs Steuerelementen verarbeitet.
+Diese Memberfunktion wird nur von mehrzeiligen Bearbeitungssteuerelementen verarbeitet.
 
-`SetTabStops` wird das Bearbeitungsfenster nicht automatisch neu gezeichnet. Wenn Sie die Tabstopps für Text, der sich bereits im Bearbeitungs Steuerelement befindet, ändern, müssen Sie [CWnd:: invalidaterierup](cwnd-class.md#invalidaterect) aufrufen, um das Bearbeitungsfenster neu zu zeichnen
+`SetTabStops`zeichnet das Bearbeitungsfenster nicht automatisch neu. Wenn Sie die Registerkartenstopps für Text ändern, der sich bereits im Bearbeitungssteuerelement befindet, rufen Sie [CWnd::InvalidateRect](cwnd-class.md#invalidaterect) auf, um das Bearbeitungsfenster neu zu zeichnen.
 
 Weitere Informationen finden Sie unter [EM_SETTABSTOPS](/windows/win32/Controls/em-settabstops) und [GetDialogBaseUnits](/windows/win32/api/winuser/nf-winuser-getdialogbaseunits) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
-  Sehen Sie sich das Beispiel für [CEditView:: settabstopps](ceditview-class.md#settabstops)an.
+  Siehe Beispiel für [CEditView::SetTabStops](ceditview-class.md#settabstops).
 
-##  <a name="showballoontip"></a>CEdit:: ShowBalloonTip
+## <a name="ceditshowballoontip"></a><a name="showballoontip"></a>CEdit::ShowBalloonTip
 
-Zeigt eine Sprechblasen Info an, die dem aktuellen Bearbeitungs Steuerelement zugeordnet ist.
+Zeigt eine Sprechblasenspitze an, die dem aktuellen Bearbeitungssteuerelement zugeordnet ist.
 
 ```
 BOOL ShowBalloonTip(PEDITBALLOONTIP pEditBalloonTip);
@@ -1398,36 +1398,36 @@ BOOL ShowBalloonTip(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*peditballoontip*|in Zeiger auf eine [editballoontip](/windows/win32/api/commctrl/ns-commctrl-editballoontip) -Struktur, die die Sprechblasen Info beschreibt.|
-|*lpsztitle*|in Ein Zeiger auf eine Unicode-Zeichenfolge, die den Titel der Sprechblasen info enthält.|
-|*lpszText*|in Ein Zeiger auf eine Unicode-Zeichenfolge, die den Text der Sprechblasen info enthält.|
-|*ttiicon*|in Ein **int** -Wert, der den Typ des Symbols angibt, das der Sprechblasen Info zugeordnet werden soll. Der Standardwert ist TTI_NONE. Weitere Informationen finden Sie unter `ttiIcon`-Member der [editballoontip](/windows/win32/api/commctrl/ns-commctrl-editballoontip) -Struktur.|
+|*pEditBalloonTip*|[in] Zeiger auf eine [EDITBALLOONTIP-Struktur,](/windows/win32/api/commctrl/ns-commctrl-editballoontip) die die Ballonspitze beschreibt.|
+|*lpszTitle*|[in] Zeiger auf eine Unicode-Zeichenfolge, die den Titel der Sprechblasenspitze enthält.|
+|*lpszText*|[in] Zeiger auf eine Unicode-Zeichenfolge, die den Text der Sprechblasenspitze enthält.|
+|*ttiIcon*|[in] Ein **INT,** das den Symboltyp angibt, der der Sprechblasenspitze zugeordnet werden soll. Der Standardwert ist TTI_NONE. Weitere Informationen finden `ttiIcon` Sie im Member der [EDITBALLOONTIP-Struktur.](/windows/win32/api/commctrl/ns-commctrl-editballoontip)|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion sendet die [EM_SHOWBALLOONTIP](/windows/win32/Controls/em-showballoontip) Nachricht, die in der Windows SDK beschrieben wird. Weitere Informationen finden Sie im [Edit_ShowBalloonTip](/windows/win32/api/commctrl/nf-commctrl-edit_showballoontip) -Makro.
+Diese Funktion sendet die [EM_SHOWBALLOONTIP](/windows/win32/Controls/em-showballoontip) Nachricht, die im Windows SDK beschrieben wird. Weitere Informationen finden [Edit_ShowBalloonTip](/windows/win32/api/commctrl/nf-commctrl-edit_showballoontip) Sie im Edit_ShowBalloonTip-Makro.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird eine Variable definiert, `m_cedit`, die für den Zugriff auf das aktuelle Bearbeitungs Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird `m_cedit`eine Variable definiert, , die für den Zugriff auf das aktuelle Bearbeitungssteuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CEdit_s1#1](../../mfc/reference/codesnippet/cpp/cedit-class_25.h)]
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Codebeispiel zeigt eine Sprechblasen Info für ein Bearbeitungs Steuerelement. Die [CEdit:: ShowBalloonTip](#showballoontip) -Methode gibt einen Titel und einen Sprechblasen Text an.
+Im folgenden Codebeispiel wird eine Sprechblasenspitze für ein Bearbeitungssteuerelement angezeigt. Die [CEdit::ShowBalloonTip-Methode](#showballoontip) gibt einen Titel- und Sprechblasentipptext an.
 
 [!code-cpp[NVC_MFC_CEdit_s1#3](../../mfc/reference/codesnippet/cpp/cedit-class_26.cpp)]
 
-##  <a name="undo"></a>CEdit:: rückgängig
+## <a name="ceditundo"></a><a name="undo"></a>CEdit::Rückgängig
 
-Rufen Sie diese Funktion auf, um den letzten Bearbeitungs Steuerungs Vorgang rückgängig zu machen.
+Rufen Sie diese Funktion auf, um den letzten Bearbeitungssteuerungsvorgang rückgängig zu machen.
 
 ```
 BOOL Undo();
@@ -1435,13 +1435,13 @@ BOOL Undo();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei einem einzeiligen Bearbeitungs Steuerelement ist der Rückgabewert immer ungleich 0 (null). Bei einem mehrzeiligen Bearbeitungs Steuerelement ist der Rückgabewert ungleich 0 (null), wenn der Rückgängig-Vorgang erfolgreich ist, oder 0, wenn der Rückgängig-Vorgang fehlschlägt.
+Bei einem einzeiligen Bearbeitungssteuerelement ist der Rückgabewert immer ungleich Null. Bei einem mehrzeiligen Bearbeitungssteuerelement ist der Rückgabewert ungleich Null, wenn der Rückgängig-Vorgang erfolgreich ist, oder 0, wenn der Rückgängig-Vorgang fehlschlägt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Rückgängig-Vorgang kann auch rückgängig gemacht werden. Beispielsweise können Sie gelöschten Text mit dem ersten `Undo`-Aufrufvorgang wiederherstellen. Solange es keinen dazwischenliegenden Bearbeitungsvorgang gibt, können Sie den Text mit einem zweiten Aufruf`Undo`erneut entfernen.
+Ein Rückgängig-Vorgang kann auch rückgängig gemacht werden. Sie können z. B. gelöschten `Undo`Text mit dem ersten Aufruf von wiederherstellen. Solange kein Zwischenvorgang für die Bearbeitung vorhanden ist, können Sie den `Undo`Text mit einem zweiten Aufruf von erneut entfernen.
 
-Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo) in der Windows SDK.
+Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
@@ -1449,7 +1449,7 @@ Weitere Informationen finden Sie unter [EM_UNDO](/windows/win32/Controls/em-undo
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel für CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel CALCDRIV](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel CMNCTRL2](../../overview/visual-cpp-samples.md)<br/>
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>

@@ -9,23 +9,23 @@ f1_keywords:
 - array/std::array::operator>=
 - array/std::array::operator==
 ms.assetid: c8f46282-f179-4909-9a01-639cb8e18c27
-ms.openlocfilehash: 3d65cd6b6b8549fd9964f6c5bb6d8b2d3c0a27b6
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 531ad2936322f90a38631a9450e0ad8a210fdd87
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427302"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364914"
 ---
 # <a name="ltarraygt-operators"></a>&lt;array&gt;-Operatoren
 
-Der \<Array-> Header schließt diese **Array** Funktionen für Vergleichs Vorlagen ein, die nicht Mitglied sind.
+Der \<Array->-Header enthält diese Array-Vergleichsvorlagenfunktionen ohne Member. **array**
 
 ||||
 |-|-|-|
-|[operator!=](#op_neq)|[operator&gt;](#op_gt)|[operator&gt;=](#op_gt_eq)|
-|[operator&lt;](#op_lt)|[operator&lt;=](#op_lt_eq)|[operator==](#op_eq_eq)|
+|[Operator!=](#op_neq)|[Operator&gt;](#op_gt)|[Operator&gt;=](#op_gt_eq)|
+|[Operator&lt;](#op_lt)|[Operator&lt;=](#op_lt_eq)|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
 
-## <a name="op_neq"></a> operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator!=
 
 Array-Vergleich, ungleich.
 
@@ -38,21 +38,21 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `!(left == right)` zurück.
+Diese Vorlagenfunktion gibt `!(left == right)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -98,7 +98,7 @@ false
 true
 ```
 
-## <a name="op_lt"></a> operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
 
 Array-Vergleich, kleiner als.
 
@@ -111,21 +111,21 @@ bool operator<(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion überlädt `operator<`, um zwei Objekte der Klassen Vorlagen- [Array Klasse](../standard-library/array-class-stl.md)zu vergleichen. Die Funktion gibt `lexicographical_compare(left.begin(), left.end(), right.begin())`zurück.
+Die Vorlagenfunktion `operator<` überlastt, um zwei Objekte der [Klassenvorlagenarrayklasse](../standard-library/array-class-stl.md)zu vergleichen. Die Funktion gibt `lexicographical_compare(left.begin(), left.end(), right.begin())` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -171,7 +171,7 @@ false
 true
 ```
 
-## <a name="op_lt_eq"></a>operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
 
 Array-Vergleich, kleiner als oder gleich.
 
@@ -184,21 +184,21 @@ bool operator<=(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `!(right < left)` zurück.
+Diese Vorlagenfunktion gibt `!(right < left)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -244,7 +244,7 @@ true
 false
 ```
 
-## <a name="op_eq_eq"></a> operator==
+## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
 
 Array-Vergleich, gleich.
 
@@ -257,21 +257,21 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion überlädt `operator==`, um zwei Objekte der Klassen Vorlagen- [Array Klasse](../standard-library/array-class-stl.md)zu vergleichen. Die Funktion gibt `equal(left.begin(), left.end(), right.begin())`zurück.
+Die Vorlagenfunktion `operator==` überlastt, um zwei Objekte der [Klassenvorlagenarrayklasse](../standard-library/array-class-stl.md)zu vergleichen. Die Funktion gibt `equal(left.begin(), left.end(), right.begin())` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -317,7 +317,7 @@ true
 false
 ```
 
-## <a name="op_gt"></a> operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
 
 Array-Vergleich, größer als.
 
@@ -330,21 +330,21 @@ bool operator>(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `(right < left)` zurück.
+Diese Vorlagenfunktion gibt `(right < left)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -390,7 +390,7 @@ false
 true
 ```
 
-## <a name="op_gt_eq"></a>operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
 
 Array-Vergleich, größer als oder gleich.
 
@@ -403,21 +403,21 @@ bool operator>=(
 
 ### <a name="parameters"></a>Parameter
 
-*Ty* -\
+*Ty*\
 Der Typ eines Elements.
 
 *N*\
 Die Größe des Arrays.
 
-*Linker*\
+*Links*\
 Linker zu vergleichender Container.
 
-*Rechte*\
+*Richting*\
 Rechter zu vergleichender Container.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `!(left < right)` zurück.
+Diese Vorlagenfunktion gibt `!(left < right)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -465,4 +465,4 @@ false
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<array>](../standard-library/array.md)
+[\<Array->](../standard-library/array.md)

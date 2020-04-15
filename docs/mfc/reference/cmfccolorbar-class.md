@@ -1,5 +1,5 @@
 ---
-title: Cmfccolorbar-Klasse
+title: CMFCColorBar-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCColorBar
@@ -74,16 +74,16 @@ helpviewer_keywords:
 - CMFCColorBar [MFC], SetPropList
 - CMFCColorBar [MFC], ShowCommandMessageString
 ms.assetid: 4756ee40-25a5-4cee-af7f-acab7993d1c7
-ms.openlocfilehash: 25bfe3ef67fcca7708179d1a316af05b3ba49dda
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 7b63fb66b800bd758c7f4c89c553e857ad9bbfbc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69505431"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367767"
 ---
-# <a name="cmfccolorbar-class"></a>Cmfccolorbar-Klasse
+# <a name="cmfccolorbar-class"></a>CMFCColorBar-Klasse
 
-Die `CMFCColorBar` Klasse stellt eine andockbare Steuerleiste dar, mit der Farben in einem Dokument oder einer Anwendung ausgewählt werden können.
+Die `CMFCColorBar` Klasse stellt eine Andocksteuerungsleiste dar, die Farben in einem Dokument oder einer Anwendung auswählen kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -95,121 +95,121 @@ class CMFCColorBar : public CMFCPopupMenuBar
 
 ### <a name="protected-constructors"></a>Geschützte Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCColorBar::CMFCColorBar](#cmfccolorbar)|Erstellt ein `CMFCColorBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCColorBar::ContextToSize](#contexttosize)|Berechnet die vertikalen und horizontalen Ränder, die erforderlich sind, um die Schaltflächen auf dem Farb leisten-Steuerelement zu enthalten, und passt dann die Position dieser Schaltflächen an.|
-|[CMFCColorBar::CreateControl](#createcontrol)|Erstellt ein Farb leisten-Steuerelement Fenster, fügt es `CMFCColorBar` an das-Objekt an und ändert die Größe des-Steuer Elements, sodass es die angegebene Palette von Farben enthält.|
-|[CMFCColorBar::Create](#create)|Erstellt ein Farb leisten-Steuerelement Fenster und fügt es `CMFCColorBar` an das-Objekt an.|
-|[CMFCColorBar::EnableAutomaticButton](#enableautomaticbutton)|Zeigt die Schaltfläche automatisch an oder blendet sie aus.|
-|[CMFCColorBar::EnableOtherButton](#enableotherbutton)|Aktiviert oder deaktiviert die Anzeige eines Dialog Felds, in dem Benutzer mehr Farben auswählen können.|
+|[CMFCColorBar::ContextToSize](#contexttosize)|Berechnet die vertikalen und horizontalen Ränder, die erforderlich sind, um die Schaltflächen auf dem Farbleistensteuerelement zu enthalten, und passt dann die Position dieser Schaltflächen an.|
+|[CMFCColorBar::CreateControl](#createcontrol)|Erstellt ein Farbbalken-Steuerelementfenster, fügt `CMFCColorBar` es an das Objekt an, und ändert die Größe des Steuerelements so, dass es die angegebene Farbpalette enthält.|
+|[CMFCColorBar::Erstellen](#create)|Erstellt ein Farbbalken-Steuerelementfenster und `CMFCColorBar` fügt es an das Objekt an.|
+|[CMFCColorBar::EnableAutomaticButton](#enableautomaticbutton)|Zeigt die automatische Schaltfläche ein oder blendet sie aus.|
+|[CMFCColorBar::EnableOtherButton](#enableotherbutton)|Aktiviert oder deaktiviert die Anzeige eines Dialogfelds, in dem der Benutzer weitere Farben auswählen kann.|
 |[CMFCColorBar::GetColor](#getcolor)|Ruft die aktuell ausgewählte Farbe ab.|
-|[CMFCColorBar::GetCommandID](#getcommandid)|Ruft die Befehls-ID des aktuellen Farb leisten-Steuer Elements ab.|
-|[CMFCColorBar::GetHighlightedColor](#gethighlightedcolor)|Ruft die Farbe ab, die angibt, dass eine Farb Schaltfläche den Fokus besitzt. Das heißt, die Schaltfläche ist " *Hot*".|
-|[CMFCColorBar::GetHorzMargin](#gethorzmargin)|Ruft den horizontalen Rand ab, der den Abstand zwischen der linken oder rechten farbzelle und der Client Bereichs Grenze darstellt.|
-|[CMFCColorBar::GetVertMargin](#getvertmargin)|Ruft den vertikalen Rand ab, der den Abstand zwischen der oberen oder untersten farbzelle und der Client Bereichs Grenze darstellt.|
-|[CMFCColorBar::IsTearOff](#istearoff)|Gibt an, ob die aktuelle Farbleiste Andock Bar ist.|
-|[CMFCColorBar::SetColor](#setcolor)|Legt die Farbe fest, die derzeit ausgewählt ist.|
+|[CMFCColorBar::GetCommandID](#getcommandid)|Ruft die Befehls-ID des aktuellen Farbleistensteuerelements ab.|
+|[CMFCColorBar::GetHighlightedColor](#gethighlightedcolor)|Ruft die Farbe ab, die bedeutet, dass eine Farbschaltfläche den Fokus hat. das heißt, die Schaltfläche ist *heiß*.|
+|[CMFCColorBar::GetHorzMargin](#gethorzmargin)|Ruft den horizontalen Rand ab, d. h. den Abstand zwischen der linken oder rechten Farbzelle und der Clientbereichsgrenze.|
+|[CMFCColorBar::GetVertMargin](#getvertmargin)|Ruft den vertikalen Rand ab, d. h. den Abstand zwischen der oberen oder unteren Farbzelle und der Clientbereichsgrenze.|
+|[CMFCColorBar::Istearoff](#istearoff)|Gibt an, ob die aktuelle Farbleiste andockbar ist.|
+|[CMFCColorBar::SetColor](#setcolor)|Legt die aktuell ausgewählte Farbe fest.|
 |[CMFCColorBar::SetColorName](#setcolorname)|Legt einen neuen Namen für eine angegebene Farbe fest.|
-|[CMFCColorBar::SetCommandID](#setcommandid)|Legt eine neue Befehls-ID für ein Farb leisten-Steuerelement fest.|
+|[CMFCColorBar::SetCommandID](#setcommandid)|Legt eine neue Befehls-ID für ein Farbleistensteuerelement fest.|
 |[CMFCColorBar::SetDocumentColors](#setdocumentcolors)|Legt die Liste der Farben fest, die im aktuellen Dokument verwendet werden.|
-|[CMFCColorBar::SetHorzMargin](#sethorzmargin)|Legt den horizontalen Rand fest, der den Abstand zwischen der linken oder rechten farbzelle und der Client Bereichs Grenze darstellt.|
-|[CMFCColorBar::SetVertMargin](#setvertmargin)|Legt den vertikalen Rand fest. Hierbei handelt es sich um den Leerraum zwischen der oberen oder untersten farbzelle und der Grenze des Client Bereichs.|
+|[CMFCColorBar::SetHorzMargin](#sethorzmargin)|Legt den horizontalen Rand fest, d. h. den Abstand zwischen der linken oder rechten Farbzelle und der Clientbereichsgrenze.|
+|[CMFCColorBar::SetVertMargin](#setvertmargin)|Legt den vertikalen Rand fest, d. h. den Abstand zwischen der oberen oder unteren Farbzelle und der Clientbereichsgrenze.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Cmfccolorbar:: Anpassungen](#adjustlocations)|Passt die Positionen der Farb Schaltflächen auf dem Farb leisten-Steuerelement an.|
-|[CMFCColorBar::AllowChangeTextLabels](#allowchangetextlabels)|Gibt an, ob die Text Bezeichnung von Farb Schaltflächen geändert werden kann.|
-|[CMFCColorBar::AllowShowOnList](#allowshowonlist)|Gibt an, ob das Farb leisten-Steuerelement Objekt während des Anpassungs Vorgangs in einer Symbolleisten Liste angezeigt werden kann.|
-|[Cmfccolorbar:: calcsize](#calcsize)|Wird von Framework als Teil des layoutberechnungs Prozesses aufgerufen.|
-|[CMFCColorBar::CreatePalette](#createpalette)|Initialisiert eine Palette mit den Farben in einem angegebenen Array von Farben.|
-|[CMFCColorBar::GetColorGridSize](#getcolorgridsize)|Berechnet die Anzahl der Zeilen und Spalten im Raster eines Farb leisten-Steuer Elements.|
-|[CMFCColorBar::GetExtraHeight](#getextraheight)|Berechnet die zusätzliche Höhe, die in der aktuellen Farbleiste zum Anzeigen verschiedener Benutzeroberflächen Elemente erforderlich ist, wie z. b. die **andere** Schaltfläche, Dokument Farben usw.|
-|[CMFCColorBar::InitColors](#initcolors)|Initialisiert ein Array von Farben mit den Farben in einer angegebenen Palette oder der Standardpalette des Systems.|
-|[CMFCColorBar::OnKey](#onkey)|Wird von Framework aufgerufen, wenn ein Benutzer eine Tastatur Taste drückt.|
-|[CMFCColorBar::OnSendCommand](#onsendcommand)|Wird von Framework aufgerufen, um eine Hierarchie von Popup Steuerelementen zu schließen.|
-|[CMFCColorBar::OnUpdateCmdUI](#onupdatecmdui)|Wird von Framework aufgerufen, um ein Benutzeroberflächen Element eines Farb leisten-Steuer Elements zu aktivieren oder zu deaktivieren, bevor das Element angezeigt wird.|
-|[CMFCColorBar::OpenColorDialog](#opencolordialog)|Öffnet ein Farb Dialogfeld.|
-|[CMFCColorBar::Rebuild](#rebuild)|Zeichnet das Farb leisten-Steuerelement vollständig neu.|
-|[CMFCColorBar::SelectPalette](#selectpalette)|Legt die logische Palette des angegebenen Geräte Kontexts auf die Palette der übergeordneten Schaltfläche des aktuellen Farb leisten-Steuer Elements fest.|
-|[CMFCColorBar::SetPropList](#setproplist)|Legt den `m_pWndPropList` geschützten Datenmember auf den angegebenen Zeiger auf ein Eigenschaften Raster-Steuerelement fest.|
-|[CMFCColorBar::ShowCommandMessageString](#showcommandmessagestring)|Fordert das Rahmen Fenster, das das Farb leisten-Steuerelement besitzt, zum Aktualisieren der Nachrichtenzeile in der Statusleiste auf.|
+|[CMFCColorBar::AdjustLocations](#adjustlocations)|Passt die Positionen der Farbschaltflächen auf dem Farbleistensteuerelement an.|
+|[CMFCColorBar::AllowChangeTextLabels](#allowchangetextlabels)|Gibt an, ob sich die Textbeschriftung von Farbschaltflächen ändern kann.|
+|[CMFCColorBar::AllowShowOnList](#allowshowonlist)|Gibt an, ob das Farbleistensteuerelementobjekt während des Anpassungsprozesses in einer Symbolleistenliste angezeigt werden kann.|
+|[CMFCColorBar::CalcSize](#calcsize)|Wird vom Framework als Teil des Layoutberechnungsprozesses aufgerufen.|
+|[CMFCColorBar::CreatePalette](#createpalette)|Initialisiert eine Palette mit den Farben in einem angegebenen Farbarray.|
+|[CMFCColorBar::GetColorGridSize](#getcolorgridsize)|Berechnet die Anzahl der Zeilen und Spalten im Raster eines Farbbalkensteuerelements.|
+|[CMFCColorBar::GetExtraHeight](#getextraheight)|Berechnet die zusätzliche Höhe, die die aktuelle Farbleiste benötigt, um verschiedene Benutzeroberflächenelemente wie die Schaltfläche **Andere,** Dokumentfarben usw. anzuzeigen.|
+|[CMFCColorBar::InitColors](#initcolors)|Initialisiert ein Array von Farben mit den Farben in einer angegebenen Palette oder der Systemstandardpalette.|
+|[CMFCColorBar::OnKey](#onkey)|Wird vom Framework aufgerufen, wenn ein Benutzer eine Tastaturtaste drückt.|
+|[CMFCColorBar::OnSendCommand](#onsendcommand)|Wird vom Framework aufgerufen, um eine Hierarchie von Popup-Steuerelementen zu schließen.|
+|[CMFCColorBar::OnUpdateCmdUI](#onupdatecmdui)|Wird vom Framework aufgerufen, um ein Benutzeroberflächenelement eines Farbleistensteuerelements zu aktivieren oder zu deaktivieren, bevor das Element angezeigt wird.|
+|[CMFCColorBar::OpenColorDialog](#opencolordialog)|Öffnet ein Farbdialogfeld.|
+|[CMFCColorBar::Neuaufbau](#rebuild)|Zeichnet das Farbleistensteuerelement vollständig neu.|
+|[CMFCColorBar::SelectPalette](#selectpalette)|Legt die logische Palette des angegebenen Gerätekontexts auf die Palette der übergeordneten Schaltfläche des aktuellen Farbleistensteuerelements fest.|
+|[CMFCColorBar::SetPropList](#setproplist)|Legt `m_pWndPropList` den geschützten Datenmember auf den angegebenen Zeiger auf ein Eigenschaftenrastersteuerelement fest.|
+|[CMFCColorBar::ShowCommandMessageString](#showcommandmessagestring)|Fordert das Rahmenfenster an, das das Farbleistensteuerelement besitzt, um die Meldungszeile in der Statusleiste zu aktualisieren.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`m_bInternal`|Ein boolesches Feld, das bestimmt, ob Mausereignisse verarbeitet werden. Normalerweise werden Mausereignisse verarbeitet, wenn dieses Feld den Wert true hat und der Anpassungsmodus false ist.|
-|`m_bIsEnabled`|Ein boolescher Wert, der angibt, ob ein-Steuerelement aktiviert ist.|
-|`m_bIsTearOff`|Ein boolescher Wert, der angibt, ob das Farb leisten Steuerelement andocken unterstützt|
-|`m_BoxSize`|Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt, das die Größe einer Zelle in einem Farb leisten Raster angibt.|
-|`m_bShowDocColorsWhenDocked`|Ein boolescher Wert, der angibt, ob Dokument Farben angezeigt werden sollen, wenn die Farbleiste angedockt ist. Weitere Informationen finden Sie unter [cmfccolorbar:: setdocumentcolors](#setdocumentcolors).|
-|`m_bStdColorDlg`|Ein boolescher Wert, der angibt, ob das Standard Dialogfeld für die System Farbe oder das Dialogfeld [cmfccolordialog](../../mfc/reference/cmfccolordialog-class.md) angezeigt werden soll. Weitere Informationen finden Sie unter [cmfccolorbar:: enableotherbutton](#enableotherbutton).|
-|`m_ColorAutomatic`|Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die aktuelle automatische Farbe speichert. Weitere Informationen finden Sie unter [cmfccolorbar:: enableotherbutton](#enableotherbutton).|
-|`m_ColorNames`|Ein [cmap](../../mfc/reference/cmap-class.md) -Objekt, das einen Satz von RGB-Farben seinen Namen zuordnet.|
-|`m_colors`|Ein [Karray](../../mfc/reference/carray-class.md) von [COLORREF](/windows/win32/gdi/colorref) -Werten, das die Farben enthält, die im Farb leisten-Steuerelement angezeigt werden.|
-|`m_ColorSelected`|Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die Farbe darstellt, die der Benutzer momentan aus dem Farb leisten-Steuerelement ausgewählt hat.|
-|`m_lstDocColors`|Ein [CLIST](../../mfc/reference/clist-class.md) von [COLORREF](/windows/win32/gdi/colorref) -Werten, die die Farben enthalten, die derzeit in einem Dokument verwendet werden.|
-|`m_nCommandID`|Eine Ganzzahl ohne Vorzeichen, die die Befehls-ID einer Farb Schaltfläche ist.|
-|`m_nHorzMargin`|Eine ganze Zahl, die den horizontalen Rand zwischen den Farb Schaltflächen in einem Raster von Farben ist.|
-|`m_nHorzOffset`|Eine ganze Zahl, die den horizontalen Offset zur Mitte der Farb Schaltfläche ist. Dieser Wert ist signifikant, wenn die Schaltfläche Text oder ein Bild zusätzlich zu einer Farbe anzeigt.|
-|`m_nNumColumns`|Eine ganze Zahl, die die Anzahl der Spalten in einem Farb leisten-Steuerelement Raster von Farben ist.|
-|`m_nNumColumnsVert`|Eine ganze Zahl, die die Anzahl der Spalten in einem vertikal ausgerichteten Raster von Farben ist.|
-|`m_nNumRowsHorz`|Eine ganze Zahl, die die Anzahl der Spalten in einem horizontal ausgerichteten Raster von Farben ist.|
-|`m_nRowHeight`|Eine ganze Zahl, die die Höhe einer Zeile mit Farb Schaltflächen in einem Raster von Farben ist.|
-|`m_nVertMargin`|Eine ganze Zahl, die der vertikale Rand zwischen den Farb Schaltflächen in einem Raster von Farben ist.|
-|`m_nVertOffset`|Eine ganze Zahl, die der vertikale Offset zur Mitte der Farb Schaltfläche ist. Dieser Wert ist signifikant, wenn die Schaltfläche Text oder ein Bild zusätzlich zu einer Farbe anzeigt.|
-|`m_Palette`|Eine [CPalette](../../mfc/reference/cpalette-class.md) der Farben, die im Farb leisten-Steuerelement verwendet werden.|
-|`m_pParentBtn`|Ein Zeiger auf ein [cmfccolorbutton](../../mfc/reference/cmfccolorbutton-class.md) -Objekt, das das übergeordnete Element der aktuellen Schaltfläche ist. Dieser Wert ist signifikant, wenn sich die Farb Schaltfläche in einer Hierarchie von Symbolleisten-Steuerelementen befindet oder sich in einem Farbeigenschaften Raster-Steuerelement|
-|`m_pParentRibbonBtn`|Ein Zeiger auf ein [cmfcribboncolorbutton](../../mfc/reference/cmfcribboncolorbutton-class.md) -Objekt, das sich auf dem Menüband befindet und die übergeordnete Schaltfläche der aktuellen Schaltfläche ist. Dieser Wert ist signifikant, wenn sich die Farb Schaltfläche in einer Hierarchie von Symbolleisten-Steuerelementen befindet oder sich in einem Farbeigenschaften Raster-Steuerelement|
-|`m_pWndPropList`|Ein Zeiger auf ein [cmfcpropertygridctrl](../../mfc/reference/cmfcpropertygridctrl-class.md) -Objekt.|
-|`m_strAutoColor`|Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) , bei dem es sich um den Text handelt, der auf der **automatischen** Schaltfläche angezeigt wird. Weitere Informationen finden Sie unter [cmfccolorbar:: enableautomaticbutton](#enableautomaticbutton).|
-|`m_strDocColors`|Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) , bei dem es sich um den Text handelt, der auf der Schaltfläche Dokument Farben angezeigt wird. Weitere Informationen finden Sie unter [cmfccolorbar:: setdocumentcolors](#setdocumentcolors).|
-|`m_strOtherColor`|Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) , bei dem es sich um den Text handelt, der auf der *anderen* Schaltfläche angezeigt wird. Weitere Informationen finden Sie unter [cmfccolorbar:: enableotherbutton](#enableotherbutton).|
+|`m_bInternal`|Ein boolesches Feld, das bestimmt, ob Mausereignisse verarbeitet werden. In der Regel werden Mausereignisse verarbeitet, wenn dieses Feld TRUE und der Anpassungsmodus FALSE ist.|
+|`m_bIsEnabled`|Ein boolescher Wert, der angibt, ob ein Steuerelement aktiviert ist.|
+|`m_bIsTearOff`|Ein boolescher Wert, der angibt, ob das Farbleistensteuerelement das Andocken unterstützt.|
+|`m_BoxSize`|Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) das die Größe einer Zelle in einem Farbbalkenraster angibt.|
+|`m_bShowDocColorsWhenDocked`|Ein boolescher Wert, der angibt, ob Dokumentfarben angezeigt werden sollen, wenn die Farbleiste angedockt ist. Weitere Informationen finden Sie unter [CMFCColorBar::SetDocumentColors](#setdocumentcolors).|
+|`m_bStdColorDlg`|Ein boolescher Wert, der angibt, ob das Standardmäßige Systemfarbdialogfeld oder das Dialogfeld [CMFCColorDialog](../../mfc/reference/cmfccolordialog-class.md) angezeigt werden soll. Weitere Informationen finden Sie unter [CMFCColorBar::EnableOtherButton](#enableotherbutton).|
+|`m_ColorAutomatic`|Ein [COLORREF,](/windows/win32/gdi/colorref) der die aktuelle automatische Farbe speichert. Weitere Informationen finden Sie unter [CMFCColorBar::EnableOtherButton](#enableotherbutton).|
+|`m_ColorNames`|Ein [CMap-Objekt,](../../mfc/reference/cmap-class.md) das einen Satz von RGB-Farben ihren Namen zuordnet.|
+|`m_colors`|Ein [CArray](../../mfc/reference/carray-class.md) von [COLORREF-Werten,](/windows/win32/gdi/colorref) das die Farben enthält, die im Farbleistensteuerelement angezeigt werden.|
+|`m_ColorSelected`|Ein [COLORREF-Wert,](/windows/win32/gdi/colorref) der die Farbe ist, die der Benutzer derzeit aus dem Farbbalkensteuerelement ausgewählt hat.|
+|`m_lstDocColors`|Eine [CList](../../mfc/reference/clist-class.md) von [COLORREF-Werten,](/windows/win32/gdi/colorref) die die Farben enthält, die derzeit in einem Dokument verwendet werden.|
+|`m_nCommandID`|Eine ganzzahlige Datei ohne Vorzeichen, die die Befehls-ID einer Farbschaltfläche ist.|
+|`m_nHorzMargin`|Eine ganze Zahl, die den horizontalen Rand zwischen den Farbschaltflächen in einem Farbraster ist.|
+|`m_nHorzOffset`|Eine ganze Zahl, die den horizontalen Versatz zur Mitte der Farbschaltfläche ist. Dieser Wert ist wichtig, wenn die Schaltfläche zusätzlich zu einer Farbe Text oder ein Bild anzeigt.|
+|`m_nNumColumns`|Eine ganze Zahl, die die Anzahl der Spalten in einem Farbbalken-Steuerelementraster mit Farben ist.|
+|`m_nNumColumnsVert`|Eine ganze Zahl, die die Anzahl der Spalten in einem vertikal ausgerichteten Raster mit Farben ist.|
+|`m_nNumRowsHorz`|Eine ganze Zahl, die die Anzahl der Spalten in einem horizontal ausgerichteten Farbraster ist.|
+|`m_nRowHeight`|Eine ganze Zahl, die die Höhe einer Reihe von Farbschaltflächen in einem Raster von Farben ist.|
+|`m_nVertMargin`|Eine ganze Zahl, die den vertikalen Rand zwischen den Farbschaltflächen in einem Farbraster ist.|
+|`m_nVertOffset`|Eine ganze Zahl, die den vertikalen Versatz zur Mitte der Farbschaltfläche ist. Dieser Wert ist wichtig, wenn die Schaltfläche zusätzlich zu einer Farbe Text oder ein Bild anzeigt.|
+|`m_Palette`|Eine [CPalette](../../mfc/reference/cpalette-class.md) der Farben, die im Farbleistensteuerelement verwendet werden.|
+|`m_pParentBtn`|Ein Zeiger auf ein [CMFCColorButton-Objekt,](../../mfc/reference/cmfccolorbutton-class.md) das das übergeordnete Element der aktuellen Schaltfläche ist. Dieser Wert ist wichtig, wenn sich die Farbschaltfläche in einer Hierarchie von Symbolleistensteuerelementen oder in einem Farbeigenschaftsrastersteuerelement befindet.|
+|`m_pParentRibbonBtn`|Ein Zeiger auf ein [CMFCRibbonColorButton-Objekt,](../../mfc/reference/cmfcribboncolorbutton-class.md) das sich auf dem Menüband befindet und die übergeordnete Schaltfläche der aktuellen Schaltfläche ist. Dieser Wert ist wichtig, wenn sich die Farbschaltfläche in einer Hierarchie von Symbolleistensteuerelementen oder in einem Farbeigenschaftsrastersteuerelement befindet.|
+|`m_pWndPropList`|Ein Zeiger auf ein [CMFCPropertyGridCtrl-Objekt.](../../mfc/reference/cmfcpropertygridctrl-class.md)|
+|`m_strAutoColor`|Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der der Text ist, der auf der Schaltfläche **Automatisch** angezeigt wird. Weitere Informationen finden Sie unter [CMFCColorBar::EnableAutomaticButton](#enableautomaticbutton).|
+|`m_strDocColors`|Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der der Text ist, der auf der Schaltfläche "Dokumentfarben" angezeigt wird. Weitere Informationen finden Sie unter [CMFCColorBar::SetDocumentColors](#setdocumentcolors).|
+|`m_strOtherColor`|Ein [CString,](../../atl-mfc-shared/reference/cstringt-class.md) der der Text ist, der auf der *anderen* Schaltfläche angezeigt wird. Weitere Informationen finden Sie unter [CMFCColorBar::EnableOtherButton](#enableotherbutton).|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Normalerweise erstellen `CMFCColorBar` Sie kein-Objekt direkt. Stattdessen erstellt die [cmfccolormenubutton-Klasse](../../mfc/reference/cmfccolormenubutton-class.md) (die in Menüs und Symbolleisten verwendet wird) oder die [cmfccolorbutton-Klasse](../../mfc/reference/cmfccolorbutton-class.md) das `CMFCColorBar` -Objekt.
+Normalerweise erstellen Sie ein `CMFCColorBar` Objekt nicht direkt. Stattdessen erstellt die [CMFCColorMenuButton-Klasse](../../mfc/reference/cmfccolormenubutton-class.md) (in Menüs und Symbolleisten) oder `CMFCColorBar` die [CMFCColorButton-Klasse](../../mfc/reference/cmfccolorbutton-class.md) das Objekt.
 
-Die `CMFCColorBar` -Klasse bietet die folgenden Funktionen:
+Die `CMFCColorBar` Klasse bietet die folgenden Funktionen:
 
-- Passt automatisch die Liste der Dokument Farben an.
+- Passt die Liste der Dokumentfarben automatisch an.
 
-- Speichert den Zustand und stellt ihn wieder her, sowie den Dokument Zustand.
+- Speichert und stellt den Status zusammen mit dem Dokumentstatus wieder her.
 
 - Verwaltet die Schaltfläche "automatisch".
 
-- Verwendet das [cmfccolorpickerctrl-Klassen](../../mfc/reference/cmfccolorpickerctrl-class.md) Steuerelement, um eine benutzerdefinierte Farbe auszuwählen.
+- Verwendet das [CmFCColorPickerCtrl-Klassensteuerelement,](../../mfc/reference/cmfccolorpickerctrl-class.md) um eine benutzerdefinierte Farbe auszuwählen.
 
-- Unterstützt den Zustand "Abbrechen" (wenn er mit der [cmfccolormenubutton-Klasse](../../mfc/reference/cmfccolormenubutton-class.md)erstellt wird).
+- Unterstützt einen "Tear-off"-Status (wenn er mithilfe der [CMFCColorMenuButton-Klasse](../../mfc/reference/cmfccolormenubutton-class.md)erstellt wird).
 
-So integrieren Sie `CMFCColorBar` die Funktionalität in Ihre Anwendung:
+So integrieren `CMFCColorBar` Sie die Funktionalität in Ihre Anwendung:
 
-1. Erstellen Sie eine reguläre Menü Schaltfläche, und weisen Sie Ihr eine ID zu, beispielsweise ID_CHAR_COLOR.
+1. Erstellen Sie eine normale Menüschaltfläche und weisen Sie ihr eine ID zu, z. B. ID_CHAR_COLOR.
 
-1. Überschreiben Sie in der Rahmen Fenster Klasse die [CFrameWndEx:: onshowpopupmenu](../../mfc/reference/cframewndex-class.md#onshowpopupmenu) -Methode, und ersetzen Sie die reguläre Menü Schaltfläche durch ein [cmfccolormenubutton-Klassen](../../mfc/reference/cmfccolormenubutton-class.md) Objekt (durch Aufrufen von [cmfctoolbar:: replacebutton](../../mfc/reference/cmfctoolbar-class.md#replacebutton)).
+1. Überschreiben Sie in ihrer Framefensterklasse die [CFrameWndEx::OnShowPopupMenu-Methode,](../../mfc/reference/cframewndex-class.md#onshowpopupmenu) und ersetzen Sie die reguläre Menüschaltfläche durch ein [CMFCColorMenuButton-Klassenobjekt](../../mfc/reference/cmfccolormenubutton-class.md) (durch Aufrufen von [CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton)).
 
-1. Legen Sie alle Stile fest, und aktivieren oder deaktivieren Sie die `CMFCColorBar` Funktionen des Objekts während der Erstellung der [cmfccolormenubutton-Klasse](../../mfc/reference/cmfccolormenubutton-class.md) . Das `CMFCColorMenuButton` -Objekt erstellt das `CMFCColorBar` -Objekt dynamisch, nachdem das `CreatePopupMenu` Framework die-Methode aufgerufen hat.
+1. Legen Sie alle Stile fest, und `CMFCColorBar` aktivieren oder deaktivieren Sie die Features des Objekts während der Erstellung der [CMFCColorMenuButton-Klasse.](../../mfc/reference/cmfccolormenubutton-class.md) Das `CMFCColorMenuButton` Objekt erstellt `CMFCColorBar` das Objekt dynamisch, nachdem das Framework die `CreatePopupMenu` Methode aufruft.
 
-Wenn der Benutzer auf eine Farb leisten-Schaltfläche klickt, verwendet das `ON_COMMAND` Framework das-Makro, um das übergeordnete Element des Farb leisten-Steuer Elements zu benachrichtigen. Im-Makro ist der Befehls-ID-Parameter der Wert, den Sie der Farb leisten-Steuerelement Schaltfläche in Schritt 1 zugewiesen haben (in diesem Beispiel ID_CHAR_COLOR). Weitere Informationen finden Sie in den Klassen [cmfccolormenubutton](../../mfc/reference/cmfccolormenubutton-class.md), [cmfccolorbutton Class](../../mfc/reference/cmfccolorbutton-class.md), [cmfccolorpickerctrl Class](../../mfc/reference/cmfccolorpickerctrl-class.md), [CFrameWndEx Class](../../mfc/reference/cframewndex-class.md)und [cmfctoolbar Class](../../mfc/reference/cmfctoolbar-class.md) .
+Wenn der Benutzer auf eine Schaltfläche für die `ON_COMMAND` Farbleiste-Steuerung klickt, verwendet das Framework das Makro, um das übergeordnete Steuerelement des Farbleistensteuerelements zu benachrichtigen. Im Makro ist der Befehls-ID-Parameter der Wert, den Sie der Schaltfläche "Farbbalkensteuerung" in Schritt 1 zugewiesen haben (ID_CHAR_COLOR in diesem Beispiel). Weitere Informationen finden Sie in den Klassen [CMFCColorMenuButton Class](../../mfc/reference/cmfccolormenubutton-class.md), [CMFCColorButtonButton Class](../../mfc/reference/cmfccolorbutton-class.md), [CMFCColorPickerCtrl Class](../../mfc/reference/cmfccolorpickerctrl-class.md), [CFrameWndEx Class](../../mfc/reference/cframewndex-class.md)und [CMFCToolBar Class.](../../mfc/reference/cmfctoolbar-class.md)
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie eine Farbleiste mithilfe verschiedener Methoden in der `CMFCColorBar` -Klasse konfiguriert wird. Mit den Methoden werden die horizontale und vertikale Ränder festgelegt, die andere Schaltfläche aktiviert, ein Farb leisten-Steuerelement Fenster erstellt und die aktuell ausgewählte Farbe festgelegt. Dieses Beispiel ist Teil des Beispiels " [neue Steuerelemente](../../overview/visual-cpp-samples.md)".
+Im folgenden Beispiel wird veranschaulicht, wie sie eine `CMFCColorBar` Farbleiste mithilfe verschiedener Methoden in der Klasse konfigurieren. Die Methoden legen die horizontalen und vertikalen Ränder fest, aktivieren die andere Schaltfläche, erstellen ein Farbbalken-Steuerfenster und legen die aktuell ausgewählte Farbe fest. Dieses Beispiel ist Teil des [Beispiels "Neue Steuerelemente "Neue Steuerelemente ".](../../overview/visual-cpp-samples.md)
 
 [!code-cpp[NVC_MFC_NewControls#1](../../mfc/reference/codesnippet/cpp/cmfccolorbar-class_1.h)]
 [!code-cpp[NVC_MFC_NewControls#2](../../mfc/reference/codesnippet/cpp/cmfccolorbar-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -229,23 +229,23 @@ Im folgenden Beispiel wird veranschaulicht, wie eine Farbleiste mithilfe verschi
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxcolorbar. h
+**Kopfzeile:** afxcolorbar.h
 
-##  <a name="adjustlocations"></a>Cmfccolorbar:: Anpassungen
+## <a name="cmfccolorbaradjustlocations"></a><a name="adjustlocations"></a>CMFCColorBar::AdjustLocations
 
-Passt die Positionen der Farb Schaltflächen auf dem Farb leisten-Steuerelement an.
+Passt die Positionen der Farbschaltflächen auf dem Farbleistensteuerelement an.
 
 ```
 virtual void AdjustLocations();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird von Framework während der WM_SIZE-Nachrichtenverarbeitung aufgerufen.
+Diese Methode wird während der WM_SIZE Nachrichtenverarbeitung vom Framework aufgerufen.
 
-##  <a name="allowchangetextlabels"></a>Cmfccolorbar:: allowchangetextlabels
+## <a name="cmfccolorbarallowchangetextlabels"></a><a name="allowchangetextlabels"></a>CMFCColorBar::AllowChangeTextLabels
 
-Gibt an, ob die Text Bezeichnung von Farb Schaltflächen geändert werden kann.
+Gibt an, ob sich die Textbeschriftung von Farbschaltflächen ändern kann.
 
 ```
 virtual BOOL AllowChangeTextLabels() const;
@@ -253,15 +253,15 @@ virtual BOOL AllowChangeTextLabels() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Immer false.
+Immer FALSE
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig gibt diese Methode immer false zurück, was bedeutet, dass Text Bezeichnungen nicht geändert werden können. Überschreiben Sie diese Methode, um das Ändern von Text Bezeichnungen zu aktivieren
+Standardmäßig gibt diese Methode immer FALSE zurück, was bedeutet, dass Textbeschriftungen nicht geändert werden können. Überschreiben Sie diese Methode, um das Ändern von Textbeschriftungen zu aktivieren.
 
-##  <a name="allowshowonlist"></a>Cmfccolorbar:: allowshowonlist
+## <a name="cmfccolorbarallowshowonlist"></a><a name="allowshowonlist"></a>CMFCColorBar::AllowShowOnList
 
-Gibt an, ob das Farb leisten-Steuerelement Objekt während des Anpassungs Vorgangs in einer Symbolleisten Liste angezeigt werden kann.
+Gibt an, ob das Farbleistensteuerelementobjekt während des Anpassungsprozesses in einer Symbolleistenliste angezeigt werden kann.
 
 ```
 virtual BOOL AllowShowOnList() const;
@@ -269,15 +269,15 @@ virtual BOOL AllowShowOnList() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Immer true.
+Immer TRUE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig gibt diese Methode immer true zurück, was bedeutet, dass das Framework während des Anpassungs Vorgangs das Farb leisten-Steuerelement anzeigen kann. Überschreiben Sie diese Methode, um ein anderes Verhalten zu implementieren.
+Standardmäßig gibt diese Methode immer TRUE zurück, was bedeutet, dass das Framework das Farbleistensteuerelement während des Anpassungsprozesses anzeigen kann. Überschreiben Sie diese Methode, um ein anderes Verhalten zu implementieren.
 
-##  <a name="calcsize"></a>Cmfccolorbar:: calcsize
+## <a name="cmfccolorbarcalcsize"></a><a name="calcsize"></a>CMFCColorBar::CalcSize
 
-Wird von Framework als Teil des layoutberechnungs Prozesses aufgerufen.
+Wird vom Framework als Teil des Layoutberechnungsprozesses aufgerufen.
 
 ```
 virtual CSize CalcSize(BOOL bVertDock);
@@ -286,13 +286,13 @@ virtual CSize CalcSize(BOOL bVertDock);
 ### <a name="parameters"></a>Parameter
 
 *bVertDock*<br/>
-in TRUE, um anzugeben, dass das Farb leisten-Steuerelement vertikal angedockt ist. FALSE, um anzugeben, dass das Farb leisten-Steuerelement horizontal angedockt wird.
+[in] TRUE, um anzugeben, dass das Farbbalkensteuerelement vertikal angedockt ist; FALSE, um anzugeben, dass das Farbbalkensteuerelement horizontal angedockt ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe des Arrays von Farb Schaltflächen in einem Farb leisten-Steuerelement.
+Die Größe des Arrays von Farbschaltflächen in einem Farbleistensteuerelement.
 
-##  <a name="cmfccolorbar"></a>Cmfccolorbar:: cmfccolorbar
+## <a name="cmfccolorbarcmfccolorbar"></a><a name="cmfccolorbar"></a>CMFCColorBar::CMFCColorBar
 
 Erstellt ein `CMFCColorBar`-Objekt.
 
@@ -330,55 +330,55 @@ CMFCColorBar(
 
 ### <a name="parameters"></a>Parameter
 
-*Ellen*<br/>
-in Ein Array von Farben, das das Framework auf dem Farb leisten-Steuerelement anzeigt.
+*Farben*<br/>
+[in] Ein Array von Farben, das das Framework auf dem Farbleistensteuerelement anzeigt.
 
 *Farbe*<br/>
-in Die anfangs ausgewählte Farbe.
+[in] Die ursprünglich ausgewählte Farbe.
 
 *lpszAutoColor*<br/>
-in Die Text Bezeichnung der *automatischen* (Standard-) Farb Schaltfläche oder NULL.
+[in] Die Textbeschriftung der *automatischen* (Standard-)Farbschaltfläche (NULL).
 
-Die Standard Bezeichnung für die automatische Schaltfläche ist **automatisch**.
+Das Standardetikett für die automatische Taste ist **Automatisch**.
 
 *lpszOtherColor*<br/>
-in Die Text Bezeichnung der *anderen* Schaltfläche, die mehr Farboptionen anzeigt, oder NULL.
+[in] Die Textbeschriftung der *anderen* Schaltfläche, die mehr Farbauswahlen anzeigt, oder NULL.
 
-Die Standard Bezeichnung für die andere Schaltfläche ist **mehr Farben...** .
+Die Standardbeschriftung für die andere Schaltfläche ist **More Colors...**.
 
 *lpszDocColors*<br/>
-in Die Text Bezeichnung der Schaltfläche "Dokument Farben". In der Palette Dokument Farben sind alle Farben aufgelistet, die im Dokument aktuell verwendet werden.
+[in] Die Textbeschriftung der Schaltfläche "Dokumentfarben". In der Palette der Dokumentfarben werden alle Farben aufgelistet, die das Dokument derzeit verwendet.
 
 *lstDocColors*<br/>
-in Eine Liste der Farben, die das Dokument momentan verwendet.
+[in] Eine Liste der Farben, die das Dokument derzeit verwendet.
 
 *nColumns*<br/>
-in Die Anzahl der Spalten, die das Array von Farben besitzt.
+[in] Die Anzahl der Spalten, die das Farbarray enthält.
 
 *nRowsDockHorz*<br/>
-in Die Anzahl der Zeilen, die in der Farbleiste angezeigt werden, wenn Sie horizontal angedockt wird.
+[in] Die Anzahl der Zeilen, die die Farbleiste hat, wenn sie horizontal angedockt wird.
 
 *nColDockVert*<br/>
-in Die Anzahl der Spalten, die in der Farbleiste angezeigt werden, wenn Sie vertikal angedockt ist.
+[in] Die Anzahl der Spalten, die die Farbleiste enthält, wenn sie vertikal angedockt wird.
 
 *colorAutomatic*<br/>
-in Die Standardfarbe, die das Framework anwendet, wenn Sie auf die Schaltfläche automatisch klicken.
+[in] Die Standardfarbe, die das Framework anwendet, wenn Sie auf die automatische Schaltfläche klicken.
 
 *nCommandID*<br/>
-in Die Befehls-ID des Farb leisten-Steuer Elements.
+[in] Die Befehls-ID für die Farbleistesteuerung.
 
 *pParentBtn*<br/>
-in Ein Zeiger auf eine übergeordnete Schaltfläche.
+[in] Ein Zeiger auf eine übergeordnete Schaltfläche.
 
 *src*<br/>
-in Ein vorhandenes `CMFCColorBar` -Objekt, das in das `CMFCColorBar` neue-Objekt kopiert werden soll.
+[in] Ein `CMFCColorBar` vorhandenes Objekt, das `CMFCColorBar` in das neue Objekt kopiert werden soll.
 
 *uiCommandID*<br/>
-in Die Befehls-ID.
+[in] Die Befehls-ID.
 
-##  <a name="contexttosize"></a>Cmfccolorbar:: contextbacksize
+## <a name="cmfccolorbarcontexttosize"></a><a name="contexttosize"></a>CMFCColorBar::ContextToSize
 
-Berechnet die vertikalen und horizontalen Ränder, die zum enthalten der Schaltflächen auf dem Farb leisten-Steuerelement erforderlich sind, und passt die Position dieser Schaltflächen an.
+Berechnet die vertikalen und horizontalen Ränder, die erforderlich sind, um die Schaltflächen im Farbleistensteuerelement zu enthalten, und passt die Position dieser Schaltflächen an.
 
 ```
 void ContextToSize(
@@ -388,16 +388,16 @@ void ContextToSize(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*bSquareButtons*|in TRUE, um anzugeben, dass die Form der Schaltflächen auf einem Farb leisten Steuerelement quadratisch ist. andernfalls false. Der Standardwert ist "true".|
-|*bCenterButtons*|in TRUE, um anzugeben, dass der Inhalt auf der Vorderseite einer Farb leisten-Steuerelement Schaltfläche zentriert ist. andernfalls false. Der Standardwert ist "true".|
+|*bSquareButtons*|[in] TRUE, um anzugeben, dass die Form der Schaltflächen auf einem Farbbalkensteuerelement quadratisch ist; andernfalls FALSE. Der Standardwert ist TRUE.|
+|*bCenterButtons*|[in] TRUE, um anzugeben, dass der Inhalt auf der Fläche einer Farbleisten-Steuerelementschaltfläche zentriert ist; andernfalls FALSE. Der Standardwert ist TRUE.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="create"></a>Cmfccolorbar:: Create
+## <a name="cmfccolorbarcreate"></a><a name="create"></a>CMFCColorBar::Erstellen
 
-Erstellt ein Farb leisten-Steuerelement Fenster und fügt es `CMFCColorBar` an das-Objekt an.
+Erstellt ein Farbbalken-Steuerelementfenster und `CMFCColorBar` fügt es an das Objekt an.
 
 ```
 virtual BOOL Create(
@@ -413,37 +413,37 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-in Zeiger auf das übergeordnete Fenster.
+[in] Zeiger auf das übergeordnete Fenster.
 
 *dwStyle*<br/>
-in Eine bitweise Kombination (or) von [Fenster Stilen](../../mfc/reference/styles-used-by-mfc.md#window-styles).
+[in] Eine bitweise Kombination (OR) von [Fensterstilen](../../mfc/reference/styles-used-by-mfc.md#window-styles).
 
 *nID*<br/>
-in Die Befehls-ID.
+[in] Die Befehls-ID.
 
 *pPalette*<br/>
-in Zeiger auf eine Palette von Farben. Der Standardwert ist NULL.
+[in] Zeiger auf eine Farbpalette. Die Standardeinstellung ist NULL.
 
 *nColumns*<br/>
-in Die Anzahl der Spalten im Farb leisten-Steuerelement. Die Standardeinstellung ist 0.
+[in] Die Anzahl der Spalten im Farbleistensteuerelement. Die Standardeinstellung ist 0.
 
 *nRowsDockHorz*<br/>
-in Die Anzahl der Zeilen im Farb leisten-Steuerelement, wenn es horizontal angedockt wird. Die Standardeinstellung ist 0.
+[in] Die Anzahl der Zeilen im Farbleistensteuerelement, wenn es horizontal angedockt wird. Die Standardeinstellung ist 0.
 
 *nColDockVert*<br/>
-in Die Anzahl der Spalten im Farb leisten-Steuerelement, wenn es vertikal angedockt wird. Die Standardeinstellung ist 0.
+[in] Die Anzahl der Spalten im Farbbalkensteuerelement, wenn es vertikal angedockt wird. Die Standardeinstellung ist 0.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um ein `CMFCColorBar` -Objekt zu erstellen, müssen Sie den Klassenkonstruktor und dann diese Methode abrufen. Die `Create` -Methode erstellt das Windows-Steuerelement und Initialisiert eine Liste mit Farben.
+Um ein `CMFCColorBar` Objekt zu erstellen, rufen Sie den Klassenkonstruktor dann diese Methode auf. Die `Create` Methode erstellt das Windows-Steuerelement und initialisiert eine Liste von Farben.
 
-##  <a name="createcontrol"></a>Cmfccolorbar:: kreatecontrol
+## <a name="cmfccolorbarcreatecontrol"></a><a name="createcontrol"></a>CMFCColorBar::CreateControl
 
-Erstellt ein Farb leisten-Steuerelement Fenster, fügt es `CMFCColorBar` an das-Objekt an und ändert die Größe des Steuerelement Fensters, sodass es die angegebene Palette von Farben enthält.
+Erstellt ein Farbleisten-Steuerelementfenster, fügt `CMFCColorBar` es an das Objekt an, und ändert die Größe des Steuerelementfensters so, dass es die angegebene Farbpalette enthält.
 
 ```
 virtual BOOL CreateControl(
@@ -457,31 +457,31 @@ virtual BOOL CreateControl(
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-in Zeiger auf das übergeordnete Fenster. Lässt keine NULL-Werte zu.
+[in] Zeiger auf das übergeordnete Fenster. Lässt keine NULL-Werte zu.
 
 *Rect*<br/>
-in Ein Begrenzungs Rechteck, das angibt, wo das Farb leisten Steuerelement gezeichnet werden soll.
+[in] Ein umgrenzendes Rechteck, das angibt, wo das Farbbalkensteuerelement gezeichnet werden soll.
 
 *nID*<br/>
-in Die Steuerelement-ID.
+[in] Die Steuerelement-ID.
 
 *nColumns*<br/>
-in Die ideale Anzahl von Spalten im Farb leisten-Steuerelement. Diese Methode ändert diese Zahl, sodass Sie der angegebenen Palette von Farben entspricht. Der Standardwert ist-1. Dies bedeutet, dass dieser Parameter nicht angegeben wird.
+[in] Die ideale Anzahl von Spalten im Farbleistensteuerelement. Diese Methode ändert diese Zahl an die angegebene Farbpalette. Der Standardwert ist -1, d. h. dieser Parameter ist nicht angegeben.
 
 *pPalette*<br/>
-in Zeiger auf eine Palette von Farben oder NULL. Wenn dieser Parameter NULL ist, berechnet diese Methode die Größe des Farb leisten-Steuer Elements, als ob 20 Farben angegeben wurden. Der Standardwert ist NULL.
+[in] Zeiger auf eine Farbpalette oder NULL. Wenn dieser Parameter NULL ist, berechnet diese Methode die Größe des Farbbalkensteuerelements, als ob 20 Farben angegeben worden wären. Die Standardeinstellung ist NULL.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode verwendet die Parameter *Rect*, *nColumns*und *pPalette* , um die entsprechende Anzahl oder Zeilen und Spalten im Farb leisten-Steuerelement zu berechnen, und ruft dann die [cmfccolorbar:: Create](#create) -Methode auf.
+Diese Methode verwendet die Parameter *rect*, *nColumns*und *pPalette,* um die entsprechende Zahl oder Zeilen und Spalten im Farbleistensteuerelement zu berechnen, und ruft dann die [CMFCColorBar::Create-Methode](#create) auf.
 
-##  <a name="createpalette"></a>Cmfccolorbar:: CreatePalette
+## <a name="cmfccolorbarcreatepalette"></a><a name="createpalette"></a>CMFCColorBar::CreatePalette
 
-Initialisiert eine Palette mit den Farben in einem angegebenen Array von Farben.
+Initialisiert eine Palette mit den Farben in einem angegebenen Farbarray.
 
 ```
 static BOOL CreatePalette(
@@ -491,18 +491,18 @@ static BOOL CreatePalette(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*arColors*|in Ein Array von Farben.|
-|*palette*|in Eine Palette von Farben.|
+|*arColors*|[in] Ein Array von Farben.|
+|*Palette (palette)*|[in] Eine Farbpalette.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-##  <a name="enableautomaticbutton"></a>Cmfccolorbar:: enableautomaticbutton
+## <a name="cmfccolorbarenableautomaticbutton"></a><a name="enableautomaticbutton"></a>CMFCColorBar::EnableAutomaticButton
 
-Zeigt die Schaltfläche automatisch an oder blendet sie aus.
+Zeigt die automatische Schaltfläche ein oder blendet sie aus.
 
 ```
 void EnableAutomaticButton(
@@ -514,23 +514,23 @@ void EnableAutomaticButton(
 ### <a name="parameters"></a>Parameter
 
 *lpszLabel*<br/>
-in Die Text Bezeichnung der *automatischen* (Standard-) Farb Schaltfläche oder NULL.
+[in] Die Textbeschriftung der *automatischen* (Standard-)Farbschaltfläche (NULL).
 
-Die Standard Bezeichnung für die automatische Schaltfläche ist **automatisch**.
+Das Standardetikett für die automatische Taste ist **Automatisch**.
 
 *colorAutomatic*<br/>
-in Die Standardfarbe, die das Framework anwendet, wenn Sie auf die Schaltfläche automatisch klicken.
+[in] Die Standardfarbe, die das Framework anwendet, wenn Sie auf die automatische Schaltfläche klicken.
 
 *bEnable*<br/>
-in TRUE, wenn die automatische Schaltfläche aktiviert werden soll. FALSE zum Deaktivieren der automatischen Schaltfläche. Der Standardwert ist "true".
+[in] TRUE, um die automatische Taste zu aktivieren; FALSE, um die automatische Schaltfläche zu deaktivieren. Der Standardwert ist TRUE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Text Bezeichnung der automatischen Schaltfläche wird gelöscht, wenn der *lpszlabel* -Parameter NULL ist oder der *benable* -Parameter false ist.
+Die Textbeschriftung der automatischen Schaltfläche wird gelöscht, wenn der Parameter *lpszLabel* NULL oder der *Parameter bEnable* FALSE ist.
 
-##  <a name="enableotherbutton"></a>Cmfccolorbar:: enableotherbutton
+## <a name="cmfccolorbarenableotherbutton"></a><a name="enableotherbutton"></a>CMFCColorBar::EnableOtherButton
 
-Aktiviert oder deaktiviert die Anzeige eines Dialog Felds, in dem Benutzer mehr Farben auswählen können.
+Aktiviert oder deaktiviert die Anzeige eines Dialogfelds, in dem der Benutzer weitere Farben auswählen kann.
 
 ```
 void EnableOtherButton(
@@ -542,17 +542,17 @@ void EnableOtherButton(
 ### <a name="parameters"></a>Parameter
 
 *lpszLabel*<br/>
-in Die Text Bezeichnung der *anderen* Schaltfläche, die mehr Farboptionen anzeigt, oder NULL.
+[in] Die Textbeschriftung der *anderen* Schaltfläche, die mehr Farbauswahlen anzeigt, oder NULL.
 
-Die Standard Bezeichnung für diese Schaltfläche ist **mehr Farben...** .
+Die Standardbezeichnung für diese Schaltfläche ist **Mehr Farben...**.
 
 *bAltColorDlg*<br/>
-in TRUE, wenn das Dialogfeld [cmfccolordialog](../../mfc/reference/cmfccolordialog-class.md) angezeigt werden soll. FALSE, um das Standard Dialogfeld [CColorDialog](../../mfc/reference/ccolordialog-class.md) anzuzeigen. Der Standardwert ist "true".
+[in] TRUE, um das Dialogfeld [CMFCColorDialog](../../mfc/reference/cmfccolordialog-class.md) anzuzeigen; FALSE, um das standardmäßige [Dialogfeld CColorDialog](../../mfc/reference/ccolordialog-class.md) anzuzeigen. Der Standardwert ist TRUE.
 
 *bEnable*<br/>
-in TRUE, wenn die Schaltfläche aktiviert werden soll. FALSE, um die Schaltfläche zu deaktivieren. Der Standardwert ist "true".
+[in] TRUE, um die Schaltfläche zu aktivieren; FALSE, um die Schaltfläche zu deaktivieren. Der Standardwert ist TRUE.
 
-##  <a name="getcolor"></a>Cmfccolorbar:: GetColor
+## <a name="cmfccolorbargetcolor"></a><a name="getcolor"></a>CMFCColorBar::GetColor
 
 Ruft die aktuell ausgewählte Farbe ab.
 
@@ -564,9 +564,9 @@ COLORREF GetColor() const;
 
 Die aktuell ausgewählte Farbe.
 
-##  <a name="getcolorgridsize"></a>Cmfccolorbar:: getcolorgridsize
+## <a name="cmfccolorbargetcolorgridsize"></a><a name="getcolorgridsize"></a>CMFCColorBar::GetColorGridSize
 
-Berechnet die Anzahl der Zeilen und Spalten im Raster eines Farb leisten-Steuer Elements.
+Berechnet die Anzahl der Zeilen und Spalten im Raster eines Farbbalkensteuerelements.
 
 ```
 CSize GetColorGridSize(BOOL bVertDock) const;
@@ -574,17 +574,17 @@ CSize GetColorGridSize(BOOL bVertDock) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*bVertDock*|in TRUE, um die Berechnung für ein vertikales angedocktes Farb leisten Steuerelement auszuführen. Andernfalls führen Sie die Berechnung für ein horizontal angedocktes Steuerelement aus.|
+|*bVertDock*|[in] TRUE, um die Berechnung für ein vertikal angedocktes Farbbalkensteuerelement durchzuführen; Andernfalls führen Sie die Berechnung für ein horizontal angedocktes Steuerelement aus.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CSize](../../atl-mfc-shared/reference/csize-class.md) -Objekt `cx` , dessen Komponente die Anzahl der Spalten enthält `cy` und deren Komponente die Anzahl der Zeilen enthält.
+Ein [CSize-Objekt,](../../atl-mfc-shared/reference/csize-class.md) dessen `cx` Komponente die `cy` Anzahl der Spalten und die Komponente die Anzahl der Zeilen enthält.
 
-##  <a name="getcommandid"></a>Cmfccolorbar:: getcommandid
+## <a name="cmfccolorbargetcommandid"></a><a name="getcommandid"></a>CMFCColorBar::GetCommandID
 
-Ruft die Befehls-ID des aktuellen Farb leisten-Steuer Elements ab.
+Ruft die Befehls-ID des aktuellen Farbleistensteuerelements ab.
 
 ```
 UINT GetCommandID() const;
@@ -594,13 +594,13 @@ UINT GetCommandID() const;
 
 Eine Befehls-ID.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer eine neue Farbe auswählt, sendet das Framework die Befehls-ID in einer WM_COMMAND-Nachricht, um das `CMFCColorBar` übergeordnete Element des Objekts zu benachrichtigen.
+Wenn der Benutzer eine neue Farbe auswählt, sendet das Framework die Befehls-ID in einer WM_COMMAND Nachricht, um das übergeordnete Element des `CMFCColorBar` Objekts zu benachrichtigen.
 
-##  <a name="getextraheight"></a>Cmfccolorbar:: getextraheight
+## <a name="cmfccolorbargetextraheight"></a><a name="getextraheight"></a>CMFCColorBar::GetExtraHeight
 
-Berechnet die zusätzliche Höhe, die in der aktuellen Farbleiste zum Anzeigen verschiedener Elemente der Benutzeroberfläche erforderlich ist, z. b. die **anderen** Schaltflächen-oder Dokument Farben.
+Berechnet die zusätzliche Höhe, die die aktuelle Farbleiste benötigt, um verschiedene Benutzeroberflächenelemente anzuzeigen, z. B. die Schaltfläche **Andere** oder Dokumentfarben.
 
 ```
 int GetExtraHeight(int nNumColumns) const;
@@ -608,17 +608,17 @@ int GetExtraHeight(int nNumColumns) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*nNumColumns*|in Wenn das Farb leisten-Steuerelement Dokument Farben enthält, wird die Anzahl der Spalten im Raster der Dokument Farben angezeigt. Andernfalls wird dieser Wert nicht verwendet.|
+|*nNumColumns*|[in] Wenn das Farbleistensteuerelement Dokumentfarben enthält, wird die Anzahl der Spalten angezeigt, die im Raster der Dokumentfarben angezeigt werden sollen. Andernfalls wird dieser Wert nicht verwendet.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die berechnete zusätzliche Höhe, die benötigt wird.
+Die berechnete zusätzliche Höhe, die erforderlich ist.
 
-##  <a name="gethighlightedcolor"></a>Cmfccolorbar:: gethighlightedcolor
+## <a name="cmfccolorbargethighlightedcolor"></a><a name="gethighlightedcolor"></a>CMFCColorBar::GetHighlightedColor
 
-Ruft die Farbe ab, die angibt, dass eine Farb Schaltfläche den Fokus besitzt. Das heißt, die Schaltfläche ist " *Hot*".
+Ruft die Farbe ab, die bedeutet, dass eine Farbschaltfläche den Fokus hat. das heißt, die Schaltfläche ist *heiß*.
 
 ```
 COLORREF GetHighlightedColor() const;
@@ -628,11 +628,11 @@ COLORREF GetHighlightedColor() const;
 
 Ein RGB-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="gethorzmargin"></a>Cmfccolorbar:: gethorzmargin
+## <a name="cmfccolorbargethorzmargin"></a><a name="gethorzmargin"></a>CMFCColorBar::GetHorzMargin
 
-Ruft den horizontalen Rand ab, der den Abstand zwischen der linken oder rechten farbzelle und der Client Bereichs Grenze darstellt.
+Ruft den horizontalen Rand ab, d. h. den Abstand zwischen der linken oder rechten Farbzelle und der Clientbereichsgrenze.
 
 ```
 int GetHorzMargin();
@@ -642,9 +642,9 @@ int GetHorzMargin();
 
 Der horizontale Rand.
 
-##  <a name="getvertmargin"></a>Cmfccolorbar:: getvertmargin
+## <a name="cmfccolorbargetvertmargin"></a><a name="getvertmargin"></a>CMFCColorBar::GetVertMargin
 
-Ruft den vertikalen Rand ab, der den Abstand zwischen der oberen oder untersten farbzelle und der Client Bereichs Grenze darstellt.
+Ruft den vertikalen Rand ab, d. h. den Abstand zwischen der oberen oder unteren Farbzelle und der Clientbereichsgrenze.
 
 ```
 int GetVertMargin() const;
@@ -654,9 +654,9 @@ int GetVertMargin() const;
 
 Der vertikale Rand.
 
-##  <a name="initcolors"></a>Cmfccolorbar:: initcolors
+## <a name="cmfccolorbarinitcolors"></a><a name="initcolors"></a>CMFCColorBar::InitColors
 
-Initialisiert ein Array von Farben mit den Farben in einer angegebenen Palette oder mit der Standardpalette des Systems.
+Initialisiert ein Array von Farben mit den Farben in einer angegebenen Palette oder mit der Systemstandardpalette.
 
 ```
 static int InitColors(
@@ -666,18 +666,18 @@ static int InitColors(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*pPalette*|in Ein Zeiger auf ein Palettenobjekt oder NULL. Wenn dieser Parameter NULL ist, verwendet diese Methode die Standardpalette des Betriebssystems.|
-|*arColors*|in Ein Array von Farben.|
+|*pPalette*|[in] Ein Zeiger auf ein Palettenobjekt oder NULL. Wenn dieser Parameter NULL ist, verwendet diese Methode die Standardpalette des Betriebssystems.|
+|*arColors*|[in] Ein Array von Farben.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Elemente im Array von Farben.
+Die Anzahl der Elemente im Farbfeld.
 
-##  <a name="istearoff"></a>Cmfccolorbar:: isTearOff
+## <a name="cmfccolorbaristearoff"></a><a name="istearoff"></a>CMFCColorBar::Istearoff
 
-Gibt an, ob die aktuelle Farbleiste Andock Bar ist.
+Gibt an, ob die aktuelle Farbleiste andockbar ist.
 
 ```
 BOOL IsTearOff() const;
@@ -685,15 +685,15 @@ BOOL IsTearOff() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das aktuelle Farb leisten Steuerelement Andock Bar ist. andernfalls false.
+TRUE, wenn das aktuelle Farbleistensteuerelement andockbar ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Farb leisten-Steuerelement andockbar ist, kann es aus einer Steuerleiste entfernt und an einem anderen Speicherort angedockt werden.
+Wenn das Farbleistensteuerelement andockbar ist, kann es von einer Steuerleiste abgerissen und an eine andere Position angedockt werden.
 
-##  <a name="onkey"></a>Cmfccolorbar:: OnKey
+## <a name="cmfccolorbaronkey"></a><a name="onkey"></a>CMFCColorBar::OnKey
 
-Wird von Framework aufgerufen, wenn ein Benutzer eine Tastatur Taste drückt.
+Wird vom Framework aufgerufen, wenn ein Benutzer eine Tastaturtaste drückt.
 
 ```
 virtual BOOL OnKey(UINT nChar);
@@ -701,16 +701,16 @@ virtual BOOL OnKey(UINT nChar);
 
 ### <a name="parameters"></a>Parameter
 
-*nChar*<br/>
-in Der Code des virtuellen Schlüssels für den Schlüssel, den ein Benutzer gedrückt hat.
+*Nchar*<br/>
+[in] Der Virtuelle-Schlüssel-Code für die Taste, die ein Benutzer gedrückt hat.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode den angegebenen Schlüssel verarbeitet. andernfalls false.
+TRUE, wenn diese Methode den angegebenen Schlüssel verarbeitet; andernfalls FALSE.
 
-##  <a name="onsendcommand"></a>Cmfccolorbar:: onsendcommand
+## <a name="cmfccolorbaronsendcommand"></a><a name="onsendcommand"></a>CMFCColorBar::OnSendCommand
 
-Wird von Framework aufgerufen, um eine Hierarchie von Popup Steuerelementen zu schließen.
+Wird vom Framework aufgerufen, um eine Hierarchie von Popup-Steuerelementen zu schließen.
 
 ```
 virtual BOOL OnSendCommand(const CMFCToolBarButton* pButton);
@@ -718,17 +718,17 @@ virtual BOOL OnSendCommand(const CMFCToolBarButton* pButton);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*pButton*|in Zeiger auf ein Steuerelement, das sich auf einer Symbolleiste befindet.|
+|*pButton*|[in] Zeiger auf ein Steuerelement, das sich auf einer Symbolleiste befindet.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-##  <a name="onupdatecmdui"></a>Cmfccolorbar:: OnUpdateCmdUI
+## <a name="cmfccolorbaronupdatecmdui"></a><a name="onupdatecmdui"></a>CMFCColorBar::OnUpdateCmdUI
 
-Wird von Framework aufgerufen, um ein Benutzeroberflächen Element eines Farb leisten-Steuer Elements zu aktivieren oder zu deaktivieren, bevor das Element angezeigt wird.
+Wird vom Framework aufgerufen, um ein Benutzeroberflächenelement eines Farbleistensteuerelements zu aktivieren oder zu deaktivieren, bevor das Element angezeigt wird.
 
 ```
 virtual void OnUpdateCmdUI(
@@ -739,18 +739,18 @@ virtual void OnUpdateCmdUI(
 ### <a name="parameters"></a>Parameter
 
 *pTarget*<br/>
-in Zeiger auf ein Fenster, das ein zu aktualisierenden Benutzeroberflächen Element enthält.
+[in] Zeiger auf ein Fenster, das ein zu aktualisierendes Benutzeroberflächenelement enthält.
 
 *bDisableIfNoHndler*<br/>
-in TRUE, wenn das Element der Benutzeroberfläche deaktiviert werden soll, wenn kein Handler in einer Meldungs Zuordnung definiert ist. andernfalls false.
+[in] TRUE, um das Benutzeroberflächenelement zu deaktivieren, wenn in einer Nachrichtenzuordnung kein Handler definiert ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Benutzer der Anwendung auf ein Benutzeroberflächen Element klickt, muss das Element wissen, ob es als aktiviert oder deaktiviert angezeigt werden soll. Das Ziel der Befehls Meldung liefert diese Informationen durch Implementieren eines ON_UPDATE_COMMAND_UI-Befehls Handlers. Verwenden Sie diese Methode, um den Befehl zu verarbeiten. Weitere Informationen finden Sie unter [CCmdUI-Klasse](../../mfc/reference/ccmdui-class.md).
+Wenn ein Benutzer Ihrer Anwendung auf ein Element der Benutzeroberfläche klickt, muss das Element wissen, ob es als aktiviert oder deaktiviert angezeigt werden soll. Das Ziel der Befehlsnachricht stellt diese Informationen bereit, indem ein ON_UPDATE_COMMAND_UI Befehlshandler implementiert wird. Verwenden Sie diese Methode, um den Befehl zu verarbeiten. Weitere Informationen finden Sie unter [CCmdUI-Klasse](../../mfc/reference/ccmdui-class.md).
 
-##  <a name="opencolordialog"></a>Cmfccolorbar:: opencolordialog
+## <a name="cmfccolorbaropencolordialog"></a><a name="opencolordialog"></a>CMFCColorBar::OpenColorDialog
 
-Öffnet ein Farb Dialogfeld.
+Öffnet ein Farbdialogfeld.
 
 ```
 virtual BOOL OpenColorDialog(
@@ -761,28 +761,28 @@ virtual BOOL OpenColorDialog(
 ### <a name="parameters"></a>Parameter
 
 *colorDefault*<br/>
-in Die Farbe, die standardmäßig ausgewählt wird, wenn das Dialogfeld Farbe geöffnet wird.
+[in] Die Farbe, die standardmäßig ausgewählt wird, wenn das Farbdialogfeld geöffnet wird.
 
 *colorRes*<br/>
-vorgenommen Die Farbe, die ein Benutzer ausgewählt hat.
+[out] Die Farbe, die ein Benutzer ausgewählt hat.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Benutzer eine Farbe ausgewählt hat. FALSE, wenn der Benutzer das Dialogfeld Farbe abgebrochen hat.
+TRUE, wenn der Benutzer eine Farbe ausgewählt hat; FALSE, wenn der Benutzer das Farbdialogfeld abgebrochen hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="rebuild"></a>Cmfccolorbar:: Rebuild
+## <a name="cmfccolorbarrebuild"></a><a name="rebuild"></a>CMFCColorBar::Neuaufbau
 
-Zeichnet das Farb leisten-Steuerelement vollständig neu.
+Zeichnet das Farbleistensteuerelement vollständig neu.
 
 ```
 virtual void Rebuild();
 ```
 
-##  <a name="selectpalette"></a>Cmfccolorbar:: SelectPalette
+## <a name="cmfccolorbarselectpalette"></a><a name="selectpalette"></a>CMFCColorBar::SelectPalette
 
-Legt die logische Palette des angegebenen Geräte Kontexts auf die Palette der übergeordneten Schaltfläche des aktuellen Farb leisten-Steuer Elements fest.
+Legt die logische Palette des angegebenen Gerätekontexts auf die Palette der übergeordneten Schaltfläche des aktuellen Farbleistensteuerelements fest.
 
 ```
 CPalette* SelectPalette(CDC* pDC);
@@ -790,17 +790,17 @@ CPalette* SelectPalette(CDC* pDC);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*pDC*|in Zeiger auf den Gerätekontext der übergeordneten Schaltfläche des aktuellen Farb leisten-Steuer Elements.|
+|*pDC*|[in] Zeiger auf den Gerätekontext der übergeordneten Schaltfläche des aktuellen Farbleistensteuerelements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die Palette, die durch die Palette der übergeordneten Schaltfläche des aktuellen Farb leisten-Steuer Elements ersetzt wird.
+Zeigen Sie mit dem Mauszeiger auf die Palette, die durch die Palette der übergeordneten Schaltfläche des aktuellen Farbleistensteuerelements ersetzt wird.
 
-##  <a name="setcolor"></a>Cmfccolorbar:: setColor
+## <a name="cmfccolorbarsetcolor"></a><a name="setcolor"></a>CMFCColorBar::SetColor
 
-Legt die Farbe fest, die derzeit ausgewählt ist.
+Legt die aktuell ausgewählte Farbe fest.
 
 ```
 void SetColor(COLORREF color);
@@ -809,9 +809,9 @@ void SetColor(COLORREF color);
 ### <a name="parameters"></a>Parameter
 
 *Farbe*<br/>
-in Ein RGB-Farbwert.
+[in] Ein RGB-Farbwert.
 
-##  <a name="setcolorname"></a>Cmfccolorbar:: setcolorname
+## <a name="cmfccolorbarsetcolorname"></a><a name="setcolorname"></a>CMFCColorBar::SetColorName
 
 Legt einen neuen Namen für eine angegebene Farbe fest.
 
@@ -824,18 +824,18 @@ static void SetColorName(
 ### <a name="parameters"></a>Parameter
 
 *Farbe*<br/>
-in Der RGB-Wert einer Farbe.
+[in] Der RGB-Wert einer Farbe.
 
 *strName*<br/>
-in Der neue Name für die angegebene Farbe.
+[in] Der neue Name für die angegebene Farbe.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ändert den Namen der angegebenen Farbe in allen `CMFCColorBar` Objekten in der Anwendung.
+Diese Methode ändert den Namen der `CMFCColorBar` angegebenen Farbe in allen Objekten in der Anwendung.
 
-##  <a name="setcommandid"></a>Cmfccolorbar:: setcommandid
+## <a name="cmfccolorbarsetcommandid"></a><a name="setcommandid"></a>CMFCColorBar::SetCommandID
 
-Legt eine neue Befehls-ID für ein Farb leisten-Steuerelement fest.
+Legt eine neue Befehls-ID für ein Farbleistensteuerelement fest.
 
 ```
 void SetCommandID(UINT nCommandID);
@@ -844,13 +844,13 @@ void SetCommandID(UINT nCommandID);
 ### <a name="parameters"></a>Parameter
 
 *nCommandID*<br/>
-in Eine Befehls-ID.
+[in] Eine Befehls-ID.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Methode können Sie die Befehls-ID eines Farb leisten-Steuer Elements ändern und das übergeordnete Fenster des Steuer Elements Benachrichtigen, dass sich die ID geändert hat.
+Rufen Sie diese Methode auf, um die Befehls-ID eines Farbleistensteuerelements zu ändern und das übergeordnete Fenster des Steuerelements zu benachrichtigen, dass sich die ID geändert hat.
 
-##  <a name="setdocumentcolors"></a>Cmfccolorbar:: setdocumentcolors
+## <a name="cmfccolorbarsetdocumentcolors"></a><a name="setdocumentcolors"></a>CMFCColorBar::SetDocumentColors
 
 Legt die Liste der Farben fest, die im aktuellen Dokument verwendet werden.
 
@@ -864,21 +864,21 @@ void SetDocumentColors(
 ### <a name="parameters"></a>Parameter
 
 *lpszCaption*<br/>
-in Eine Beschriftung, die angezeigt wird, wenn das Farb leisten-Steuerelement nicht angedockt ist.
+[in] Eine Beschriftung, die angezeigt wird, wenn das Farbleistensteuerelement nicht angedockt ist.
 
 *lstDocColors*<br/>
-in Eine Liste von Farben, die die aktuellen Dokument Farben ersetzen.
+[in] Eine Liste von Farben, die die aktuellen Dokumentfarben ersetzt.
 
 *bShowWhenDocked*<br/>
-in TRUE, wenn die Dokument Farben angezeigt werden, wenn das Farb leisten Steuerelement angedockt ist. andernfalls false. Der Standardwert ist false.
+[in] TRUE, um Dokumentfarben anzuzeigen, wenn das Farbleistensteuerelement angedockt ist; andernfalls FALSE. Der Standardwert ist FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-*Dokument Farben* sind die Farben, die derzeit in einem Dokument verwendet werden. Das Framework verwaltet automatisch eine Liste mit Dokument Farben, aber Sie können diese Methode verwenden, um die Liste zu ändern.
+*Dokumentfarben* sind die Farben, die derzeit in einem Dokument verwendet werden. Das Framework verwaltet automatisch eine Liste von Dokumentfarben, aber Sie können diese Methode verwenden, um die Liste zu ändern.
 
-##  <a name="sethorzmargin"></a>Cmfccolorbar:: Abbild-Rand
+## <a name="cmfccolorbarsethorzmargin"></a><a name="sethorzmargin"></a>CMFCColorBar::SetHorzMargin
 
-Legt den horizontalen Rand fest. Hierbei handelt es sich um den Abstand zwischen der linken oder rechten farbzelle und der Grenze des Client Bereichs.
+Legt den horizontalen Rand fest, d. h. den Abstand zwischen der linken oder rechten Farbzelle und der Begrenzung des Clientbereichs.
 
 ```
 void SetHorzMargin(int nHorzMargin);
@@ -887,15 +887,15 @@ void SetHorzMargin(int nHorzMargin);
 ### <a name="parameters"></a>Parameter
 
 *nHorzMargin*<br/>
-in Der horizontale Rand in Pixel.
+[in] Der horizontale Rand in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig legt der [cmfccolorbar:: cmfccolorbar](#cmfccolorbar) -Konstruktor den horizontalen Rand auf 4 Pixel fest.
+Standardmäßig legt der [CmFCColorBar::CMFCColorBar-Konstruktor](#cmfccolorbar) den horizontalen Rand auf 4 Pixel fest.
 
-##  <a name="setproplist"></a>Cmfccolorbar:: setproplist
+## <a name="cmfccolorbarsetproplist"></a><a name="setproplist"></a>CMFCColorBar::SetPropList
 
-Legt den `m_pWndPropList` geschützten Datenmember auf den angegebenen Zeiger auf ein Eigenschaften Raster-Steuerelement fest.
+Legt `m_pWndPropList` den geschützten Datenmember auf den angegebenen Zeiger auf ein Eigenschaftenrastersteuerelement fest.
 
 ```
 void SetPropList(CMFCPropertyGridCtrl* pWndList);
@@ -903,13 +903,13 @@ void SetPropList(CMFCPropertyGridCtrl* pWndList);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*pWndList*|in Zeiger auf das Eigenschaften Raster-Steuerelement Objekt.|
+|*pWndList*|[in] Zeiger auf das Eigenschaftenraster-Steuerelementobjekt.|
 
-##  <a name="setvertmargin"></a>Cmfccolorbar:: setvertmargin
+## <a name="cmfccolorbarsetvertmargin"></a><a name="setvertmargin"></a>CMFCColorBar::SetVertMargin
 
-Legt den vertikalen Rand fest. Hierbei handelt es sich um den Leerraum zwischen der oberen oder untersten farbzelle und der Grenze des Client Bereichs.
+Legt den vertikalen Rand fest, d. h. den Abstand zwischen der oberen oder unteren Farbzelle und der Clientbereichsgrenze.
 
 ```
 void SetVertMargin(int nVertMargin);
@@ -918,15 +918,15 @@ void SetVertMargin(int nVertMargin);
 ### <a name="parameters"></a>Parameter
 
 *nVertMargin*<br/>
-in Der vertikale Rand in Pixel.
+[in] Der vertikale Rand in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig legt der [cmfccolorbar:: cmfccolorbar](#cmfccolorbar) -Konstruktor den vertikalen Rand auf 4 Pixel fest.
+Standardmäßig legt der [CmFCColorBar::CMFCColorBar-Konstruktor](#cmfccolorbar) den vertikalen Rand auf 4 Pixel fest.
 
-##  <a name="showcommandmessagestring"></a>Cmfccolorbar:: showcommandmessagestring
+## <a name="cmfccolorbarshowcommandmessagestring"></a><a name="showcommandmessagestring"></a>CMFCColorBar::ShowCommandMessageString
 
-Fordert das Rahmen Fenster, das das Farb leisten-Steuerelement besitzt, zum Aktualisieren der Nachrichtenzeile in der Statusleiste auf.
+Fordert das Rahmenfenster an, das das Farbleistensteuerelement besitzt, um die Meldungszeile in der Statusleiste zu aktualisieren.
 
 ```
 virtual void ShowCommandMessageString(UINT uiCmdId);
@@ -935,11 +935,11 @@ virtual void ShowCommandMessageString(UINT uiCmdId);
 ### <a name="parameters"></a>Parameter
 
 *uiCmdId*<br/>
-in Eine Befehls-ID. (Dieser Parameter wird ignoriert.)
+[in] Eine Befehls-ID. (Dieser Parameter wird ignoriert.)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die WM_SETMESSAGESTRING-Nachricht an den Besitzer des Farb leisten-Steuer Elements.
+Diese Methode sendet die WM_SETMESSAGESTRING Nachricht an den Besitzer des Farbleistensteuerelements.
 
 ## <a name="see-also"></a>Siehe auch
 

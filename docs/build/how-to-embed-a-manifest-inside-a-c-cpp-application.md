@@ -1,27 +1,27 @@
 ---
-title: 'Vorgehensweise: Einbetten eines Manifests in eine C/C++-Anwendung'
+title: 'Gewusst wie: Einbetten eines Manifests in eine C/C++-Anwendung'
 ms.date: 05/06/2019
 helpviewer_keywords:
 - manifests [C++]
 - embedding manifests
 - makefiles, updating to embed manifest
 ms.assetid: ec0bac69-2fdc-466c-ab0d-710a22974e5d
-ms.openlocfilehash: ee60620f2815bb20e2d0f3ecec768d99533437a9
-ms.sourcegitcommit: da32511dd5baebe27451c0458a95f345144bd439
-ms.translationtype: HT
+ms.openlocfilehash: 2f125ee445d4ee9efdf21c37134d4c5adbca256d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65220701"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81322979"
 ---
-# <a name="how-to-embed-a-manifest-inside-a-cc-application"></a>Vorgehensweise: Einbetten eines Manifests in eine C/C++-Anwendung
+# <a name="how-to-embed-a-manifest-inside-a-cc-application"></a>Gewusst wie: Einbetten eines Manifests in eine C/C++-Anwendung
 
-Es wird empfohlen, dass Sie das Manifest der Anwendung oder Bibliothek in die endgültige Binärdatei eingebettet werden, weil dies gewährleistet, dass richtige Laufzeitverhalten führen konnte in den meisten Szenarien. Visual Studio versucht standardmäßig das Manifest eingebettet, wenn es sich um ein Projekt erstellt. Weitere Informationen finden Sie unter [Manifest Generation in Visual Studio](manifest-generation-in-visual-studio.md). Wenn Sie Ihre Anwendung mithilfe von Nmake erstellen, müssen Sie jedoch einige Änderungen an das Makefile vornehmen. In diesem Abschnitt veranschaulicht, wie die Makefiles ändern, sodass es automatisch das Manifest in die endgültige Binärdatei einbettet.
+Es wird empfohlen, das Manifest Ihrer Anwendung oder Bibliothek in die endgültige Binärdatei einzubetten, da dies in den meisten Szenarien ein korrektes Laufzeitverhalten garantiert. Standardmäßig versucht Visual Studio, das Manifest beim Erstellen eines Projekts einzubetten. Weitere Informationen finden Sie [unter Manifestgenerierung in Visual Studio](manifest-generation-in-visual-studio.md). Wenn Sie jedoch Ihre Anwendung mithilfe von nmake erstellen, müssen Sie einige Änderungen an der Makefile vornehmen. In diesem Abschnitt wird gezeigt, wie die Makefiles so geändert werden, dass das Manifest automatisch in die endgültige Binärdatei eingebettet wird.
 
 ## <a name="two-approaches"></a>Zwei Ansätze
 
-Es gibt zwei Möglichkeiten, um das Manifest in eine Anwendung oder Bibliothek eingebettet.
+Es gibt zwei Möglichkeiten, das Manifest in eine Anwendung oder Bibliothek einzubetten.
 
-- Wenn Sie einen inkrementellen Build nicht ausführen können Sie direkt über die Befehlszeile etwa wie folgt einen Postbuildschritt Manifest einbetten:
+- Wenn Sie keinen inkrementellen Build ausführen, können Sie das Manifest direkt mithilfe einer Befehlszeile ähnlich der folgenden als Postbuildschritt einbetten:
 
    ```cmd
    mt.exe -manifest MyApp.exe.manifest -outputresource:MyApp.exe;1
@@ -33,21 +33,21 @@ Es gibt zwei Möglichkeiten, um das Manifest in eine Anwendung oder Bibliothek e
    mt.exe -manifest MyLibrary.dll.manifest -outputresource:MyLibrary.dll;2
    ```
 
-   Verwenden Sie 1 für eine EXE-Datei und 2 für eine DLL.
+   Verwenden Sie 1 für eine EXE und 2 für eine DLL.
 
-- Wenn Sie einen inkrementellen Build durchführen, verwenden Sie die folgenden Schritte aus:
+- Wenn Sie einen inkrementellen Build ausführen, gehen Sie wie folgt vor:
 
-   - Verknüpfen Sie die Binärdatei, um die MyApp.exe.manifest-Datei zu generieren.
+  - Verknüpfen Sie die Binärdatei, um die Datei MyApp.exe.manifest zu generieren.
 
-   - Konvertieren Sie das Manifest in eine Ressourcendatei.
+  - Konvertieren Sie das Manifest in eine Ressourcendatei.
 
-   - Verknüpfen Sie erneut (inkrementell) um die Manifestressource in die Binärdatei einzubetten.
+  - Verknüpfen Sie (inkrementell), um die Manifestressource in die Binärdatei einzubetten.
 
-Die folgenden Beispiele zeigen, wie Makefiles, um beide Verfahren integrieren geändert wird.
+Die folgenden Beispiele zeigen, wie Makefiles geändert werden, um beide Techniken zu integrieren.
 
 ## <a name="makefiles-before"></a>Makefiles (vorher)
 
-Betrachten Sie das Nmake-Skript für MyApp.exe, eine einfache Anwendung erstellt, die aus einer Datei ein:
+Betrachten Sie das nmake-Skript für MyApp.exe, eine einfache Anwendung, die aus einer Datei erstellt wurde:
 
 ```
 # build MyApp.exe
@@ -67,9 +67,9 @@ clean :
     del MyApp.obj MyApp.exe
 ```
 
-Wenn dieses Skript mit Visual Studio ausgeführt wird, erstellt es MyApp.exe erfolgreich. Außerdem erstellt die externe Manifestdatei MyApp.exe.manifest, für die Verwendung durch das Betriebssystem abhängige Assemblys zur Laufzeit geladen werden.
+Wenn dieses Skript unverändert mit Visual Studio ausgeführt wird, wird MyApp.exe erfolgreich erstellt. Außerdem wird die externe Manifestdatei MyApp.exe.manifest erstellt, die vom Betriebssystem zum Laden abhängiger Assemblys zur Laufzeit verwendet werden kann.
 
-Das Nmake-Skript für MyLibrary.dll sieht ähnlich aus:
+Das nmake-Skript für MyLibrary.dll sieht sehr ähnlich aus:
 
 ```
 # build MyLibrary.dll
@@ -92,9 +92,9 @@ clean :
     del MyLibrary.obj MyLibrary.dll
 ```
 
-## <a name="makefiles-after"></a>Makefiles (nachher)
+## <a name="makefiles-after"></a>Makefiles (Nachher)
 
-Die Erstellung mit eingebettet, Manifeste, die Sie haben vier kleine Änderungen an den ursprünglichen Makefiles vornehmen. Für die Makefile MyApp.exe:
+Um mit eingebetteten Manifesten zu erstellen, müssen Sie vier kleine Änderungen an den ursprünglichen Makefiles vornehmen. Für die Makefile MyApp.exe:
 
 ```
 # build MyApp.exe
@@ -157,9 +157,9 @@ clean :
 #^^^^^^^^^^^^^^^^^^^^^^^^^ Change #4. (Add full path if necessary.)
 ```
 
-Enthält nun zwei Dateien, die die eigentliche Arbeit, makefile.inc und makefile.targ.inc ausführen.
+Die Makefiles enthalten nun zwei Dateien, die die eigentliche Arbeit erledigen, makefile.inc und makefile.targ.inc.
 
-Erstellen Sie makefile.inc, und fügen Sie die folgenden:
+Erstellen Sie makefile.inc, und kopieren Sie Folgendes:
 
 ```
 # makefile.inc -- Include this file into existing makefile at the very top.
@@ -230,7 +230,7 @@ _VC_MANIFEST_CLEAN=
 ####################################################
 ```
 
-Erstellen Sie jetzt **makefile.targ.inc** und fügen Sie Folgendes ein:
+Erstellen Sie nun **makefile.targ.inc** und kopieren Sie Folgendes:
 
 ```
 # makefile.targ.inc - include this at the very bottom of the existing makefile
@@ -259,4 +259,4 @@ $(_VC_MANIFEST_BASENAME).auto.manifest :
 
 ## <a name="see-also"></a>Siehe auch
 
-[Manifestgenerierung für C/C++-Programme](understanding-manifest-generation-for-c-cpp-programs.md)
+[Grundlegendes zur Manifestgenerierung für C/C++-Programme](understanding-manifest-generation-for-c-cpp-programs.md)

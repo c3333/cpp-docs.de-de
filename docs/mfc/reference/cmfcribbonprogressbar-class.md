@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CMFCRibbonProgressBar [MFC], SetPos
 - CMFCRibbonProgressBar [MFC], SetRange
 ms.assetid: de3d9f2e-ed59-480e-aa7d-08a33ab36c67
-ms.openlocfilehash: 7c16217378cb8825ca4605687770de177e720c1d
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 063f8ce560af84d350abc0114644f6a63f969f95
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391113"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368866"
 ---
 # <a name="cmfcribbonprogressbar-class"></a>CMFCRibbonProgressBar-Klasse
 
@@ -47,37 +47,37 @@ class CMFCRibbonProgressBar : public CMFCRibbonBaseElement
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CMFCRibbonProgressBar::CMFCRibbonProgressBar](#cmfcribbonprogressbar)|Erstellt und initialisiert ein `CMFCRibbonProgressBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCRibbonProgressBar::GetPos](#getpos)|Gibt den aktuellen Status zurück.|
-|[CMFCRibbonProgressBar::GetRangeMax](#getrangemax)|Gibt den maximalen Wert des aktuellen Bereichs zurück.|
-|[CMFCRibbonProgressBar::GetRangeMin](#getrangemin)|Der minimale Wert des aktuellen Bereichs zurückgegeben.|
-|[CMFCRibbonProgressBar::GetRegularSize](#getregularsize)|Gibt die reguläre Größe des Menübandelements zurück. (Überschreibt [cmfcribbonbaseelement:: Getregularsize](../../mfc/reference/cmfcribbonbaseelement-class.md#getregularsize).)|
-|[CMFCRibbonProgressBar::IsInfiniteMode](#isinfinitemode)|Gibt an, ob die Statusanzeige im unendliche-Modus ausgeführt wird.|
-|[CMFCRibbonProgressBar::OnDraw](#ondraw)|Wird vom Framework aufgerufen, um das Menübandelement zu zeichnen. (Überschreibt [cmfcribbonbaseelement:: OnDraw](../../mfc/reference/cmfcribbonbaseelement-class.md#ondraw).)|
-|[CMFCRibbonProgressBar::SetInfiniteMode](#setinfinitemode)|Legt die Statusanzeige für unbegrenzte Modus fest.|
-|[CMFCRibbonProgressBar::SetPos](#setpos)|Legt den aktuellen Status fest.|
-|[CMFCRibbonProgressBar::SetRange](#setrange)|Legt die minimalen und maximalen Werte.|
+|[CMFCRibbonProgressBar::GetPos](#getpos)|Gibt den aktuellen Fortschritt zurück.|
+|[CMFCRibbonProgressBar::GetRangeMax](#getrangemax)|Gibt den Maximalwert des aktuellen Bereichs zurück.|
+|[CMFCRibbonProgressBar::GetRangeMin](#getrangemin)|Gibt den Mindestwert des aktuellen Bereichs zurück.|
+|[CMFCRibbonProgressBar::GetRegularSize](#getregularsize)|Gibt die reguläre Größe des Menübandelements zurück. (Überschreibt [CMFCRibbonBaseElement::GetRegularSize](../../mfc/reference/cmfcribbonbaseelement-class.md#getregularsize).)|
+|[CMFCRibbonProgressBar::IsInfiniteMode](#isinfinitemode)|Gibt an, ob die Fortschrittsleiste im unendlichen Modus arbeitet.|
+|[CMFCRibbonProgressbar::OnDraw](#ondraw)|Wird vom Framework aufgerufen, um das Menübandelement zu zeichnen. (Überschreibt [CMFCRibbonBaseElement::OnDraw](../../mfc/reference/cmfcribbonbaseelement-class.md#ondraw).)|
+|[CMFCRibbonProgressBar::SetInfiniteMode](#setinfinitemode)|Legt fest, dass die Fortschrittsleiste im unendlichen Modus funktioniert.|
+|[CMFCRibbonProgressBar::SetPos](#setpos)|Legt den aktuellen Fortschritt fest.|
+|[CMFCRibbonProgressBar::SetRange](#setrange)|Legt die minimalen und maximalen Werte fest.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein `CMFCRibbonProgressBar` kann in zwei Modi betrieben werden: reguläre und unendlich. Im regulären Modus die Statusanzeige von links nach rechts gefüllt und wird beendet, wenn sie den maximalen Wert erreicht. Im Modus "unendlich" ist die Statusanzeige wiederholt aus der minimale Wert auf den maximalen Wert gefüllt werden. Sie können unbegrenzte Modus verwenden, um anzugeben, dass ein Vorgang ausgeführt wird, aber die Dauer unbekannt ist.
+A `CMFCRibbonProgressBar` kann in zwei Modi arbeiten: regelmäßig und unendlich. Im regulären Modus wird der Fortschrittsbalken von links nach rechts gefüllt und stoppt, wenn er den Maximalwert erreicht. Im unendlichen Modus wird der Fortschrittsbalken wiederholt vom Minimalwert zum Maximalwert gefüllt. Sie können den unendlichen Modus verwenden, um anzuzeigen, dass ein Vorgang fortläuft, die Fertigstellungszeit jedoch unbekannt ist.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCRibbonProgressBar` -Klasse. Das Beispiel zeigt die Statusanzeige in der Sie arbeiten unendliche-Modus (wobei die Dauer eines Vorgangs unbekannt ist) festlegen, legen Sie die minimalen und maximalen Werte für die Statusanzeige, und legen Sie die aktuelle Position der Statusanzeige. Dieser Codeausschnitt ist Teil der [MS Office 2007-Demo-Beispiel](../../overview/visual-cpp-samples.md).
+Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCRibbonProgressBar` -Klasse. Das Beispiel zeigt, wie Sie die Fortschrittsleiste so einstellen, dass sie im unendlichen Modus funktioniert (wobei die Abschlusszeit eines Vorgangs unbekannt ist), die minimalen und maximalen Werte für den Fortschrittsbalken festlegen und die aktuelle Position des Fortschrittsbalkens festlegen. Dieser Codeausschnitt ist Teil des [MS Office 2007-Demobeispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_MSOffice2007Demo#11](../../mfc/reference/codesnippet/cpp/cmfcribbonprogressbar-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)
 
@@ -85,11 +85,11 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxRibbonProgressBar.h
+**Kopfzeile:** afxRibbonProgressBar.h
 
-##  <a name="cmfcribbonprogressbar"></a>  CMFCRibbonProgressBar::CMFCRibbonProgressBar
+## <a name="cmfcribbonprogressbarcmfcribbonprogressbar"></a><a name="cmfcribbonprogressbar"></a>CMFCRibbonProgressBar::CMFCRibbonProgressBar
 
-Erstellt und initialisiert ein [CMFCRibbonProgressBar](../../mfc/reference/cmfcribbonprogressbar-class.md) Objekt.
+Erstellt und initialisiert ein [CMFCRibbonProgressBar-Objekt.](../../mfc/reference/cmfcribbonprogressbar-class.md)
 
 ```
 CMFCRibbonProgressBar();
@@ -103,17 +103,17 @@ CMFCRibbonProgressBar(
 ### <a name="parameters"></a>Parameter
 
 *nID*<br/>
-[in] Gibt die Befehls-ID für die Menüband-Statusanzeige an.
+[in] Gibt die Befehls-ID für die Multifunktionsleisten-Fortschrittleiste an.
 
 *nWidth*<br/>
-[in] Gibt die Breite des der Menüband-Statusanzeige in Pixel an.
+[in] Gibt die Breite der Multifunktionsleisten-Fortschrittsleiste in Pixel an.
 
 *nHeight*<br/>
-[in] Gibt die Höhe des der Menüband-Statusanzeige in Pixel an.
+[in] Gibt die Höhe der Multifunktionsleisten-Fortschrittsleiste in Pixel an.
 
-##  <a name="getpos"></a>  CMFCRibbonProgressBar::GetPos
+## <a name="cmfcribbonprogressbargetpos"></a><a name="getpos"></a>CMFCRibbonProgressBar::GetPos
 
-Gibt die aktuelle Position der Statusanzeige zurück.
+Gibt die aktuelle Position des Fortschrittsbalkens zurück.
 
 ```
 int GetPos () const;
@@ -121,15 +121,15 @@ int GetPos () const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der die aktuelle Position der Statusanzeige darstellt.
+Ein Wert, der die aktuelle Position des Fortschrittsbalkens darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bereich, der festgelegt wird muss innerhalb des Bereichs, der gemäß der [CMFCRibbonProgressBar::SetRange](#setrange) Methode.
+Der festgelegte Bereich muss innerhalb des von der [CMFCRibbonProgressBar::SetRange-Methode](#setrange) angegebenen Bereichs liegen.
 
-##  <a name="getrangemax"></a>  CMFCRibbonProgressBar::GetRangeMax
+## <a name="cmfcribbonprogressbargetrangemax"></a><a name="getrangemax"></a>CMFCRibbonProgressBar::GetRangeMax
 
-Gibt zurück, die Statusanzeige, die aktuelle maximale Wert.
+Gibt den aktuellen Maximalwert des Fortschrittsbalkens zurück.
 
 ```
 int GetRangeMax() const;
@@ -137,13 +137,13 @@ int GetRangeMax() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der maximale Wert des aktuellen Bereichs.
+Der Maximalwert des aktuellen Bereichs.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getrangemin"></a>  CMFCRibbonProgressBar::GetRangeMin
+## <a name="cmfcribbonprogressbargetrangemin"></a><a name="getrangemin"></a>CMFCRibbonProgressBar::GetRangeMin
 
-Gibt zurück, die Statusanzeige, die aktuelle minimalen Bereichswert.
+Gibt den aktuellen Mindestbereichswert des Fortschrittsbalkens zurück.
 
 ```
 int GetRangeMin() const;
@@ -151,11 +151,11 @@ int GetRangeMin() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der minimale Wert des aktuellen Bereichs.
+Der Mindestwert des aktuellen Bereichs.
 
-##  <a name="getregularsize"></a>  CMFCRibbonProgressBar::GetRegularSize
+## <a name="cmfcribbonprogressbargetregularsize"></a><a name="getregularsize"></a>CMFCRibbonProgressBar::GetRegularSize
 
-Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ```
 virtual CSize GetRegularSize(CDC* pDC);
@@ -167,11 +167,11 @@ virtual CSize GetRegularSize(CDC* pDC);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isinfinitemode"></a>  CMFCRibbonProgressBar::IsInfiniteMode
+## <a name="cmfcribbonprogressbarisinfinitemode"></a><a name="isinfinitemode"></a>CMFCRibbonProgressBar::IsInfiniteMode
 
-Gibt an, ob die Statusanzeige im unendliche-Modus ausgeführt wird.
+Gibt an, ob die Fortschrittsleiste im unendlichen Modus arbeitet.
 
 ```
 BOOL IsInfiniteMode() const;
@@ -179,15 +179,15 @@ BOOL IsInfiniteMode() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Statusanzeige im unendliche-Modus. andernfalls "false".
+TRUE, wenn sich der Fortschrittsbalken im unendlichen Modus befindet; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Im Modus "unendlich" füllt die Statusanzeige wiederholt aus der minimale Wert auf den maximalen Wert. Sie können unbegrenzte Modus verwenden, um anzugeben, dass ein Vorgang ausgeführt wird, aber die Dauer unbekannt ist.
+Im unendlichen Modus füllt sich der Fortschrittsbalken wiederholt vom Minimalwert zum Maximalwert. Sie können den unendlichen Modus verwenden, um anzuzeigen, dass ein Vorgang fortläuft, die Fertigstellungszeit jedoch unbekannt ist.
 
-##  <a name="ondraw"></a>  CMFCRibbonProgressBar::OnDraw
+## <a name="cmfcribbonprogressbarondraw"></a><a name="ondraw"></a>CMFCRibbonProgressbar::OnDraw
 
-Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
 
 ```
 virtual void OnDraw(CDC* pDC);
@@ -197,11 +197,11 @@ virtual void OnDraw(CDC* pDC);
 
 [in] *pDC*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setinfinitemode"></a>  CMFCRibbonProgressBar::SetInfiniteMode
+## <a name="cmfcribbonprogressbarsetinfinitemode"></a><a name="setinfinitemode"></a>CMFCRibbonProgressBar::SetInfiniteMode
 
-Legt die Statusanzeige für unbegrenzte Modus fest.
+Legt fest, dass die Fortschrittsleiste im unendlichen Modus funktioniert.
 
 ```
 void SetInfiniteMode(BOOL bSet = TRUE);
@@ -210,15 +210,15 @@ void SetInfiniteMode(BOOL bSet = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bSet*<br/>
-[in] "True", um anzugeben, dass die Statusanzeige im unendliche Modus; andernfalls "false".
+[in] TRUE, um anzugeben, dass sich der Fortschrittsbalken im unendlichen Modus befindet; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In der Regel ist die Statusanzeige im unendliche Modus, ist es die Benutzer darüber informiert, dass ein Vorgang ausgeführt wird, aber die Dauer unbekannt ist. Daher füllt die Statusanzeige wiederholt aus der minimale Wert auf den maximalen Wert.
+Wenn sich der Fortschrittsbalken im unendlichen Modus befindet, wird dem Benutzer in der Regel mitgeteilt, dass ein Vorgang fortläuft, die Fertigstellungszeit jedoch unbekannt ist. Somit wird der Fortschrittsbalken wiederholt vom Minimalwert zum Maximalwert gefüllt.
 
-##  <a name="setpos"></a>  CMFCRibbonProgressBar::SetPos
+## <a name="cmfcribbonprogressbarsetpos"></a><a name="setpos"></a>CMFCRibbonProgressBar::SetPos
 
-Legt die aktuelle Position der Statusanzeige an.
+Legt die aktuelle Position des Fortschrittsbalkens fest.
 
 ```
 void SetPos(
@@ -228,19 +228,19 @@ void SetPos(
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
-[in] Gibt die Position, die auf der die Statusanzeige festgelegt ist.
+*Npos*<br/>
+[in] Gibt die Position an, an die die Fortschrittsleiste festgelegt ist.
 
-*bRedraw*<br/>
-[in] Gibt an, ob die Statusanzeige neu gezeichnet werden muss.
+*bZeichnung*<br/>
+[in] Gibt an, ob der Fortschrittsbalken neu gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bereich, der festgelegt wird muss innerhalb des Bereichs, der gemäß der [CMFCRibbonProgressBar::SetRange](#setrange) Methode.
+Der festgelegte Bereich muss innerhalb des von der [CMFCRibbonProgressBar::SetRange-Methode](#setrange) angegebenen Bereichs liegen.
 
-##  <a name="setrange"></a>  CMFCRibbonProgressBar::SetRange
+## <a name="cmfcribbonprogressbarsetrange"></a><a name="setrange"></a>CMFCRibbonProgressBar::SetRange
 
-Legt die minimalen und maximalen Werte für die Statusanzeige.
+Legt die minimalen und maximalen Werte für den Fortschrittsbalken fest.
 
 ```
 void SetRange(
@@ -250,15 +250,15 @@ void SetRange(
 
 ### <a name="parameters"></a>Parameter
 
-*nMin*<br/>
+*Nmin*<br/>
 [in] Gibt den Mindestwert des Bereichs an.
 
 *nMax*<br/>
-[in] Gibt den Höchstwert des Bereichs an.
+[in] Gibt den maximalen Wert des Bereichs an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um den Bereich der Statusanzeige zu definieren, durch Festlegen der minimalen und maximalen Werte.
+Verwenden Sie diese Methode, um den Bereich der Fortschrittsleiste zu definieren, indem Sie minimale und maximale Werte festlegen.
 
 ## <a name="see-also"></a>Siehe auch
 

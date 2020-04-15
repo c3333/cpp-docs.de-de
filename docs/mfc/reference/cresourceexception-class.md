@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CResourceException [MFC], CResourceException
 ms.assetid: af6ae043-d124-4bfd-b35e-7bb0db67d289
-ms.openlocfilehash: b29112b4901a1fecac37aa7ae61496e874959370
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 557bfe1cc41c3dda65bd95d7d687820c0b9862b7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62372193"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368330"
 ---
 # <a name="cresourceexception-class"></a>CResourceException-Klasse
 
@@ -29,19 +29,19 @@ class CResourceException : public CSimpleException
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CResourceException::CResourceException](#cresourceexception)|Erstellt ein `CResourceException`-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Keine weiteren Qualifizierung ist erforderlich oder möglich.
+Eine weitere Qualifizierung ist nicht erforderlich oder möglich.
 
-Weitere Informationen zur Verwendung von `CResourceException`, finden Sie im Artikel [Ausnahmebehandlung (MFC)](../../mfc/exception-handling-in-mfc.md).
+Weitere Informationen zur `CResourceException`Verwendung finden Sie im Artikel [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CException](../../mfc/reference/cexception-class.md)
 
@@ -53,7 +53,7 @@ Weitere Informationen zur Verwendung von `CResourceException`, finden Sie im Art
 
 **Header:** afxwin.h
 
-##  <a name="cresourceexception"></a>  CResourceException::CResourceException
+## <a name="cresourceexceptioncresourceexception"></a><a name="cresourceexception"></a>CResourceException::CResourceException
 
 Erstellt ein `CResourceException`-Objekt.
 
@@ -61,9 +61,9 @@ Erstellt ein `CResourceException`-Objekt.
 CResourceException();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diesen Konstruktor nicht direkt, aber stattdessen rufen Sie die globale Funktion [AfxThrowResourceException](exception-processing.md#afxthrowresourceexception). Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmebehandlung in MFC](../exception-handling-in-mfc.md).
+Verwenden Sie diesen Konstruktor nicht direkt, sondern rufen Sie die globale Funktion [AfxThrowResourceException](exception-processing.md#afxthrowresourceexception)auf. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Exception Handling in MFC](../exception-handling-in-mfc.md).
 
 ## <a name="see-also"></a>Siehe auch
 

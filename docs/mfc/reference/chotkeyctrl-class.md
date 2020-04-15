@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CHotKeyCtrl [MFC], SetHotKey
 - CHotKeyCtrl [MFC], SetRules
 ms.assetid: 896f9766-0718-4f58-aab2-20325e118ca6
-ms.openlocfilehash: 9818c32a7779d646ca5a9485a1331dfa393408ba
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 758fb78fbd4e25a0e2fb8cea300c5371ece04fb4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69506152"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366883"
 ---
 # <a name="chotkeyctrl-class"></a>CHotKeyCtrl-Klasse
 
@@ -43,37 +43,37 @@ class CHotKeyCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHotKeyCtrl::CHotKeyCtrl](#chotkeyctrl)|Erstellt ein `CHotKeyCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHotKeyCtrl::Create](#create)|Erstellt ein Hot Key-Steuerelement und fügt es `CHotKeyCtrl` an ein-Objekt an.|
-|[CHotKeyCtrl::CreateEx](#createex)|Erstellt ein Hot Key-Steuerelement mit den angegebenen erweiterten Windows-Stilen und fügt `CHotKeyCtrl` es an ein-Objekt an.|
-|[CHotKeyCtrl::GetHotKey](#gethotkey)|Ruft den Code des virtuellen Schlüssels und die Modifiziererflags eines Abkürzungs Schlüssels von einem Steuerelement für den Hot Key ab.|
-|[CHotKeyCtrl::GetHotKeyName](#gethotkeyname)|Ruft den Schlüsselnamen im lokalen Zeichensatz ab, der einem Hot Key zugewiesen ist.|
+|[CHotKeyCtrl::Erstellen](#create)|Erstellt ein Hotkey-Steuerelement und `CHotKeyCtrl` fügt es an ein Objekt an.|
+|[CHotKeyCtrl::CreateEx](#createex)|Erstellt ein Hotkey-Steuerelement mit den angegebenen erweiterten `CHotKeyCtrl` Windows-Stilen und fügt es an ein Objekt an.|
+|[CHotKeyCtrl::GetHotKey](#gethotkey)|Ruft den virtuellen Schlüsselcode und die Modifikatorflags eines Hotkeys von einem Hotkey-Steuerelement ab.|
+|[CHotKeyCtrl::GetHotKeyName](#gethotkeyname)|Ruft den Schlüsselnamen im lokalen Zeichensatz ab, der einem Hotkey zugewiesen ist.|
 |[CHotKeyCtrl::GetKeyName](#getkeyname)|Ruft den Schlüsselnamen im lokalen Zeichensatz ab, der dem angegebenen virtuellen Schlüsselcode zugewiesen ist.|
-|[CHotKeyCtrl::SetHotKey](#sethotkey)|Legt die Tastenkombination für ein Hot Key-Steuerelement fest.|
-|[CHotKeyCtrl::SetRules](#setrules)|Definiert die ungültigen Kombinationen und die standardmodifiziererkombination für ein Hot Key-Steuerelement.|
+|[CHotKeyCtrl::SetHotKey](#sethotkey)|Legt die Hot-Key-Kombination für eine Hotkey-Steuerung fest.|
+|[CHotKeyCtrl::SetRules](#setrules)|Definiert die ungültigen Kombinationen und die Standardmodifikatorkombination für ein Hotkey-Steuerelement.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein "Hot Key Control" ist ein Fenster, mit dem der Benutzer eine Abkürzungs Taste erstellen kann. Eine "heiße Taste" ist eine Tastenkombination, die der Benutzer drücken kann, um eine Aktion schnell auszuführen. (Beispielsweise kann ein Benutzer einen Hot-Schlüssel erstellen, der ein bestimmtes Fenster aktiviert und an den Anfang der Z-Reihenfolge bringt.) Das Steuerelement "Hot Key" zeigt die Auswahl des Benutzers an und stellt sicher, dass der Benutzer eine gültige Tastenkombination auswählt.
+Ein "Hotkey-Steuerelement" ist ein Fenster, das es dem Benutzer ermöglicht, einen Hotkey zu erstellen. Eine "Hot-Taste" ist eine Tastenkombination, die der Benutzer drücken kann, um eine Aktion schnell auszuführen. (Ein Benutzer kann z. B. einen Hotkey erstellen, der ein bestimmtes Fenster aktiviert und an den oberen Rand der Z-Reihenfolge bringt.) Das Hotkey-Steuerelement zeigt die Auswahlmöglichkeiten des Benutzers an und stellt sicher, dass der Benutzer eine gültige Tastenkombination auswählt.
 
-Dieses Steuerelement (und damit `CHotKeyCtrl` auch die-Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT, Version 3,51 und höher, ausgeführt werden.
+Dieses Steuerelement (und `CHotKeyCtrl` damit die Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT Version 3.51 und höher ausgeführt werden.
 
-Wenn der Benutzer eine Tastenkombination ausgewählt hat, kann die Anwendung die angegebene Tastenkombination aus dem-Steuerelement abrufen und die WM_SETHOTKEY-Nachricht verwenden, um den Hot-Schlüssel im System einzurichten. Sobald der Benutzer die Taste gedrückt drückt, empfängt das in der WM_SETHOTKEY-Nachricht angegebene Fenster in jedem Teil des Systems eine WM_SYSCOMMAND-Meldung, die SC_HOTKEY angibt. Diese Meldung aktiviert das Fenster, in dem Sie empfangen wird. Die Hot-Taste bleibt gültig, bis die Anwendung, die WM_SETHOTKEY aufgerufen hat, beendet wird.
+Wenn der Benutzer eine Tastenkombination ausgewählt hat, kann die Anwendung die angegebene Tastenkombination aus dem Steuerelement abrufen und die WM_SETHOTKEY Nachricht verwenden, um den Hotkey im System einzurichten. Wenn der Benutzer danach die Hotkey-Taste von einem beliebigen Teil des Systems aus drückt, erhält das in der WM_SETHOTKEY-Nachricht angegebene Fenster eine WM_SYSCOMMAND Meldung, die SC_HOTKEY angibt. Diese Meldung aktiviert das Fenster, das sie empfängt. Der Hotkey bleibt gültig, bis die Anwendung, die WM_SETHOTKEY aufgerufen hat, beendet wird.
 
-Dieser Mechanismus unterscheidet sich von der Unterstützung für heiße Schlüssel, die von der WM_HOTKEY-Nachricht und den Windows [RegisterHotKey](/windows/win32/api/winuser/nf-winuser-registerhotkey) -und [unregisterhotkey](/windows/win32/api/winuser/nf-winuser-unregisterhotkey) -Funktionen abhängt.
+Dieser Mechanismus unterscheidet sich von der Hotkey-Unterstützung, die von der WM_HOTKEY Nachricht und den Funktionen Windows [RegisterHotKey](/windows/win32/api/winuser/nf-winuser-registerhotkey) und [UnregisterHotKey](/windows/win32/api/winuser/nf-winuser-unregisterhotkey) abhängt.
 
-Weitere Informationen zum Verwenden von `CHotKeyCtrl`finden Sie unter Steuer [Elemente](../../mfc/controls-mfc.md) und [Verwenden von CHotKeyCtrl](../../mfc/using-chotkeyctrl.md).
+Weitere Informationen zur `CHotKeyCtrl`Verwendung finden Sie unter [Steuerelemente](../../mfc/controls-mfc.md) und [Verwenden von CHotKeyCtrl](../../mfc/using-chotkeyctrl.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -85,7 +85,7 @@ Weitere Informationen zum Verwenden von `CHotKeyCtrl`finden Sie unter Steuer [El
 
 **Header:** afxcmn.h
 
-##  <a name="chotkeyctrl"></a>CHotKeyCtrl:: CHotKeyCtrl
+## <a name="chotkeyctrlchotkeyctrl"></a><a name="chotkeyctrl"></a>CHotKeyCtrl::CHotKeyCtrl
 
 Erstellt ein `CHotKeyCtrl`-Objekt.
 
@@ -93,9 +93,9 @@ Erstellt ein `CHotKeyCtrl`-Objekt.
 CHotKeyCtrl();
 ```
 
-##  <a name="create"></a>CHotKeyCtrl:: Create
+## <a name="chotkeyctrlcreate"></a><a name="create"></a>CHotKeyCtrl::Erstellen
 
-Erstellt ein Hot Key-Steuerelement und fügt es `CHotKeyCtrl` an ein-Objekt an.
+Erstellt ein Hotkey-Steuerelement und `CHotKeyCtrl` fügt es an ein Objekt an.
 
 ```
 virtual BOOL Create(
@@ -108,30 +108,30 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *dwStyle*<br/>
-Gibt den Stil des Hot Key-Steuer Elements an. Wenden Sie eine beliebige Kombination von Steuerelement Stilen an. Weitere Informationen finden Sie unter [allgemeine Steuerelement Stile](/windows/win32/Controls/common-control-styles) in der Windows SDK.
+Gibt den Stil des Hotkey-Steuerelements an. Wenden Sie eine beliebige Kombination von Steuerelementstilen an. Weitere Informationen finden Sie unter [Allgemeine Steuerelementformatvorlagen](/windows/win32/Controls/common-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Gibt die Größe und Position des Hot Key-Steuer Elements an. Dabei kann es sich entweder um ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder um eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect)handeln.
+Gibt die Größe und Position des Hotkey-Steuerelements an. Es kann entweder ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect)sein.
 
 *pParentWnd*<br/>
-Gibt das übergeordnete Fenster des Hot Key-Steuer Elements an, in der Regel ein [CDialog](../../mfc/reference/cdialog-class.md). Er darf nicht NULL sein.
+Gibt das übergeordnete Fenster des Hotkey-Steuerelements an, in der Regel ein [CDialog](../../mfc/reference/cdialog-class.md). Es darf nicht NULL sein.
 
 *nID*<br/>
-Gibt die ID des Hot Key-Steuer Elements an.
+Gibt die ID des Hotkeys-Steuerelements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Initialisierung erfolgreich war. andernfalls 0.
+Ungleich Null, wenn die Initialisierung erfolgreich war; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CHotKeyCtrl` -Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann `Create`aufgerufen, wodurch das Steuerelement für den Hot Key erstellt und `CHotKeyCtrl` an das-Objekt angefügt wird.
+Sie erstellen `CHotKeyCtrl` ein Objekt in zwei Schritten. Rufen Sie zuerst den Konstruktor auf, und rufen Sie dann `Create` `CHotKeyCtrl` auf, das das Hotkey-Steuerelement erstellt und an das Objekt anfügt.
 
-Wenn Sie erweiterte Windows-Stile mit dem Steuerelement verwenden möchten, müssen Sie anstelle von `Create`den Befehl " [kreateex](#createex) " aufrufen.
+Wenn Sie erweiterte Fensterstile mit Ihrem Steuerelement verwenden `Create`möchten, rufen Sie [CreateEx](#createex) anstelle von auf.
 
-##  <a name="createex"></a>CHotKeyCtrl:: kreateex
+## <a name="chotkeyctrlcreateex"></a><a name="createex"></a>CHotKeyCtrl::CreateEx
 
-Rufen Sie diese Funktion auf, um ein-Steuerelement (ein untergeordnetes Fenster) `CHotKeyCtrl` zu erstellen und es dem-Objekt zuzuordnen.
+Rufen Sie diese Funktion auf, um ein Steuerelement `CHotKeyCtrl` (ein untergeordnetes Fenster) zu erstellen und es dem Objekt zuzuordnen.
 
 ```
 virtual BOOL CreateEx(
@@ -145,31 +145,31 @@ virtual BOOL CreateEx(
 ### <a name="parameters"></a>Parameter
 
 *dwExStyle*<br/>
-Gibt die erweiterte Art des zu erstellenden Steuer Elements an. Eine Liste erweiterter Windows-Stile finden Sie unter dem *dwExStyle* -Parameter für " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw) " in der Windows SDK.
+Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der erweiterten Windows-Stile finden Sie im *dwExStyle-Parameter* für [CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw) im Windows SDK.
 
 *dwStyle*<br/>
-Gibt den Stil des Hot Key-Steuer Elements an. Wenden Sie eine beliebige Kombination von Steuerelement Stilen an. Weitere Informationen finden Sie unter [allgemeine Steuerelement Stile](/windows/win32/Controls/common-control-styles) in der Windows SDK.
+Gibt den Stil des Hotkey-Steuerelements an. Wenden Sie eine beliebige Kombination von Steuerelementstilen an. Weitere Informationen finden Sie unter [Allgemeine Steuerelementstile](/windows/win32/Controls/common-control-styles) im Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die die Größe und Position des zu erstellenden Fensters in Client Koordinaten von *pparser*beschreibt.
+Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
 
 *pParentWnd*<br/>
-Ein Zeiger auf das Fenster, das das übergeordnete Element des Steuer Elements ist.
+Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
 
 *nID*<br/>
-Die ID des untergeordneten Fensters des Steuer Elements.
+Die untergeordnete Fenster-ID des Steuerelements.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden `CreateEx` Sie anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
+Verwenden `CreateEx` Sie anstelle von [Erstellen,](#create) um erweiterte Windows-Formatvorlagen anzuwenden, die durch das Erweiterte Windows-Stilvorwort **WS_EX_** angegeben werden.
 
-##  <a name="gethotkey"></a>CHotKeyCtrl:: GetHotKey
+## <a name="chotkeyctrlgethotkey"></a><a name="gethotkey"></a>CHotKeyCtrl::GetHotKey
 
-Ruft den Code des virtuellen Schlüssels und die Modifiziererflags einer Tastenkombination von einem Steuerelement für den Hot Key ab.
+Ruft den virtuellen Tastencode und die Modifikatorflags einer Tastenkombination von einem Hotkey-Steuerelement ab.
 
 ```
 DWORD GetHotKey() const;
@@ -182,12 +182,12 @@ void GetHotKey(
 ### <a name="parameters"></a>Parameter
 
 *wVirtualKeyCode*<br/>
-vorgenommen Der Code für den virtuellen Schlüssel der Tastenkombination. Eine Liste der virtuellen Standardschlüssel Codes finden Sie unter Winuser. h.
+[out] Virtueller Tastencode der Tastenkombination. Eine Liste der standardmäßigen virtuellen Schlüsselcodes finden Sie unter Winuser.h.
 
 *wModifiers*<br/>
-vorgenommen Eine bitweise Kombination (or) von Flags, die die Modifizierertasten in der Tastenkombination angeben.
+[out] Eine bitweise Kombination (OR) von Flags, die die Modifikatortasten in der Tastenkombination anzeigen.
 
-Die Modifiziererflags lauten wie folgt:
+Die Modifikatorflags lauten wie folgt:
 
 |Flag|Entsprechender Schlüssel|
 |----------|-----------------------|
@@ -198,15 +198,15 @@ Die Modifiziererflags lauten wie folgt:
 
 ### <a name="return-value"></a>Rückgabewert
 
-In der ersten überladenen Methode ein DWORD, das den Code und die Modifiziererflags des virtuellen Schlüssels enthält. Das nieder wertige Byte des nieder wertigen Worts enthält den Code des virtuellen Schlüssels, das hochwertige Byte des nieder wertigen Worts enthält die Modifiziererflags, und das höchst wertige Wort ist 0 (null).
+In der ersten überladenen Methode ein DWORD, das den virtuellen Schlüsselcode und modifiziererflags enthält. Das Low-Order-Byte des Wortes niedriger Ordnung enthält den virtuellen Schlüsselcode, das Byte der hohen Ordnung des Low-Order-Worts enthält die Modifikatorflags, und das Wort hoher Ordnung ist Null.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der virtuelle Schlüsselcode und die Modifizierertasten definieren die Tastenkombination.
+Der virtuelle Tastencode und die Modifikatortasten definieren zusammen die Tastenkombination.
 
-##  <a name="gethotkeyname"></a>CHotKeyCtrl:: gethotkeyname
+## <a name="chotkeyctrlgethotkeyname"></a><a name="gethotkeyname"></a>CHotKeyCtrl::GetHotKeyName
 
-Mit dieser Member-Funktion können Sie den lokalisierten Namen des Abkürzungs Schlüssels abrufen.
+Rufen Sie diese Memberfunktion auf, um den lokalisierten Namen des Hotkeys abzurufen.
 
 ```
 CString GetHotKeyName() const;
@@ -214,15 +214,15 @@ CString GetHotKeyName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der lokalisierte Name der aktuell ausgewählten Hot-Taste. Wenn keine "Hot"-Taste ausgewählt `GetHotKeyName` ist, wird eine leere Zeichenfolge zurückgegeben.
+Der lokalisierte Name des aktuell ausgewählten Hotkeys. Wenn kein ausgewählter Hotkey vorhanden ist, `GetHotKeyName` wird eine leere Zeichenfolge zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Name, der von dieser Member-Funktion zurückgegeben wird, stammt aus dem Tastaturtreiber. Sie können einen nicht lokalisierten Tastaturtreiber in einer lokalisierten Version von Windows installieren und umgekehrt.
+Der Name, den diese Memberfunktion zurückgibt, stammt vom Tastaturtreiber. Sie können einen nicht lokalisierten Tastaturtreiber in einer lokalisierten Windows-Version installieren und umgekehrt.
 
-##  <a name="getkeyname"></a>CHotKeyCtrl:: getkeyname
+## <a name="chotkeyctrlgetkeyname"></a><a name="getkeyname"></a>CHotKeyCtrl::GetKeyName
 
-Mit dieser Member-Funktion können Sie den lokalisierten Namen des Schlüssels abrufen, der einem angegebenen virtuellen Schlüsselcode zugewiesen ist.
+Rufen Sie diese Memberfunktion auf, um den lokalisierten Namen des Schlüssels abzurufen, der einem angegebenen virtuellen Schlüsselcode zugewiesen ist.
 
 ```
 static CString GetKeyName(
@@ -236,23 +236,23 @@ static CString GetKeyName(
 Der virtuelle Schlüsselcode.
 
 *fExtended*<br/>
-Wenn es sich bei dem virtuellen Schlüsselcode um einen erweiterten Schlüssel handelt, gilt: andernfalls false.
+Wenn der virtuelle Schlüsselcode ein erweiterter Schlüssel ist, TRUE; andernfalls FALSE.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der lokalisierte Name des Schlüssels, der durch den *VK* -Parameter angegeben wird. Wenn der Schlüssel über keinen zugeordneten Namen `GetKeyName` verfügt, wird eine leere Zeichenfolge zurückgegeben.
+Der lokalisierte Name des Schlüssels, der durch den *vk-Parameter* angegeben wird. Wenn der Schlüssel keinen zugeordneten Namen hat, `GetKeyName` wird eine leere Zeichenfolge zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Schlüssel Name, der von dieser Funktion zurückgegeben wird, stammt aus dem Tastaturtreiber, sodass Sie einen nicht lokalisierten Tastaturtreiber in einer lokalisierten Version von Windows installieren können und umgekehrt.
+Der Schlüsselname, den diese Funktion zurückgibt, stammt vom Tastaturtreiber, sodass Sie einen nicht lokalisierten Tastaturtreiber in einer lokalisierten Windows-Version installieren können und umgekehrt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCControlLadenDialog#69](../../mfc/codesnippet/cpp/chotkeyctrl-class_1.cpp)]
 
-##  <a name="sethotkey"></a>CHotKeyCtrl:: abkthotkey
+## <a name="chotkeyctrlsethotkey"></a><a name="sethotkey"></a>CHotKeyCtrl::SetHotKey
 
-Legt die Tastenkombination für ein Hot Key-Steuerelement fest.
+Legt die Tastenkombination für ein Hotkey-Steuerelement fest.
 
 ```
 void SetHotKey(
@@ -263,12 +263,12 @@ void SetHotKey(
 ### <a name="parameters"></a>Parameter
 
 *wVirtualKeyCode*<br/>
-in Der Code für den virtuellen Schlüssel der Tastenkombination. Eine Liste der virtuellen Standardschlüssel Codes finden Sie unter Winuser. h.
+[in] Virtueller Tastencode der Tastenkombination. Eine Liste der standardmäßigen virtuellen Schlüsselcodes finden Sie unter Winuser.h.
 
 *wModifiers*<br/>
-in Eine bitweise Kombination (or) von Flags, die die Modifizierertasten in der Tastenkombination angeben.
+[in] Eine bitweise Kombination (OR) von Flags, die die Modifikatortasten in der Tastenkombination anzeigen.
 
-Die Modifiziererflags lauten wie folgt:
+Die Modifikatorflags lauten wie folgt:
 
 |Flag|Entsprechender Schlüssel|
 |----------|-----------------------|
@@ -277,13 +277,13 @@ Die Modifiziererflags lauten wie folgt:
 |HOTKEYF_EXT|Erweiterter Schlüssel|
 |HOTKEYF_SHIFT|Umschalttaste|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der virtuelle Schlüsselcode und die Modifizierertasten definieren die Tastenkombination.
+Der virtuelle Tastencode und die Modifikatortasten definieren zusammen die Tastenkombination.
 
-##  <a name="setrules"></a>CHotKeyCtrl:: ttrules
+## <a name="chotkeyctrlsetrules"></a><a name="setrules"></a>CHotKeyCtrl::SetRules
 
-Mit dieser Funktion können Sie die ungültigen Kombinationen und die standardmodifiziererkombination für ein Hot Key-Steuerelement definieren.
+Rufen Sie diese Funktion auf, um die ungültigen Kombinationen und die Standardmodifikatorkombination für ein Hotkey-Steuerelement zu definieren.
 
 ```
 void SetRules(
@@ -294,30 +294,30 @@ void SetRules(
 ### <a name="parameters"></a>Parameter
 
 *wInvalidComb*<br/>
-Ein Array von Flags, das ungültige Tastenkombinationen angibt. Dabei kann es sich um eine Kombination der folgenden Werte handeln:
+Array von Flags, das ungültige Tastenkombinationen angibt. Es kann eine Kombination der folgenden Werte sein:
 
 - HKCOMB_A ALT
 
-- HKCOMB_C CTRL
+- HKCOMB_C STRG
 
-- HKCOMB_CA STRG + ALT
+- HKCOMB_CA STRG+ALT
 
-- HKCOMB_NONE nicht geänderte Schlüssel
+- HKCOMB_NONE Unveränderte Schlüssel
 
 - HKCOMB_S SHIFT
 
-- HKCOMB_SA UMSCHALT + ALT
+- HKCOMB_SA SHIFT+ALT
 
-- HKCOMB_SC UMSCHALT + STRG
+- HKCOMB_SC SHIFT+CTRL
 
-- HKCOMB_SCA UMSCHALT + STRG + ALT
+- HKCOMB_SCA SHIFT+CTRL+ALT
 
 *wModifiers*<br/>
-Ein Array von Flags, das die zu verwendende Tastenkombination angibt, wenn der Benutzer eine ungültige Kombination eingibt. Weitere Informationen zu den Modifiziererflags finden Sie unter [GetHotKey](#gethotkey).
+Array von Flags, das die Tastenkombination angibt, die verwendet werden soll, wenn der Benutzer eine ungültige Kombination eingibt. Weitere Informationen zu den Modifikatorflags finden Sie unter [GetHotKey](#gethotkey).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn ein Benutzer eine ungültige Tastenkombination eingibt, die durch in *winvalidcomb*angegebene Flags definiert ist, verwendet das System den or-Operator, um die Schlüssel, die vom Benutzer eingegeben wurden, mit den in *wmodifiers*angegebenen Flags zu kombinieren. Die resultierende Tastenkombination wird in eine Zeichenfolge konvertiert und dann im Steuerelement "Hot Key" angezeigt.
+Wenn ein Benutzer eine ungültige Tastenkombination eingibt, wie in *wInvalidComb*angegeben, verwendet das System den OPERATOR ODER, um die vom Benutzer eingegebenen Schlüssel mit den in *wModifiers*angegebenen Flags zu kombinieren. Die resultierende Tastenkombination wird in eine Zeichenfolge konvertiert und dann im Hotkey-Steuerelement angezeigt.
 
 ## <a name="see-also"></a>Siehe auch
 

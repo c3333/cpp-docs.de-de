@@ -20,18 +20,19 @@ helpviewer_keywords:
 - CMFCDropDownToolBar [MFC], OnSendCommand
 - CMFCDropDownToolBar [MFC], OnUpdateCmdUI
 ms.assetid: 78818ec5-83ce-42fa-a0d4-2d9d5ecc8770
-ms.openlocfilehash: f2c4135d2a27928dbde4299fa1f8eda42237d893
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 68dd976471b39d7f50c2f0378b2fce99ad3feeca
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62238060"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367603"
 ---
 # <a name="cmfcdropdowntoolbar-class"></a>CMFCDropDownToolBar-Klasse
 
 Eine Symbolleiste, die angezeigt wird, wenn der Benutzer eine Symbolleisten-Schaltfläche der obersten Ebene drückt und gedrückt hält.
 
-   Weitere Informationen finden Sie im Quellcode der **VC\\Atlmfc\\Src\\Mfc** Ordner von Visual Studio-Installation.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
+
 ## <a name="syntax"></a>Syntax
 
 ```
@@ -42,48 +43,48 @@ class CMFCDropDownToolBar : public CMFCToolBar
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCDropDownToolBar::AllowShowOnPaneMenu](#allowshowonpanemenu)|(Überschreibt `CPane::AllowShowOnPaneMenu`.)|
+|[CMFCDropDownToolbar::AllowShowOnPaneMenu](#allowshowonpanemenu)|(Überschreibt `CPane::AllowShowOnPaneMenu`.)|
 |[CMFCDropDownToolBar::LoadBitmap](#loadbitmap)|(Überschreibt [CMFCToolBar::LoadBitmap](../../mfc/reference/cmfctoolbar-class.md#loadbitmap).)|
 |[CMFCDropDownToolBar::LoadToolBar](#loadtoolbar)|(Überschreibt [CMFCToolBar::LoadToolBar](../../mfc/reference/cmfctoolbar-class.md#loadtoolbar).)|
-|[CMFCDropDownToolBar::OnLButtonUp](#onlbuttonup)||
+|[CMFCDropDownToolbar::OnLButtonup](#onlbuttonup)||
 |[CMFCDropDownToolBar::OnMouseMove](#onmousemove)||
 |[CMFCDropDownToolBar::OnSendCommand](#onsendcommand)|(Überschreibt `CMFCToolBar::OnSendCommand`.)|
 |[CMFCDropDownToolBar::OnUpdateCmdUI](#onupdatecmdui)|(Überschreibt [CMFCToolBar::OnUpdateCmdUI](cmfctoolbar-class.md).|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein `CMFCDropDownToolBar` -Objekt kombiniert die visuelle Darstellung des eine Symbolleiste mit dem Verhalten eines Popup-Menüs. Wenn ein Benutzer drückt und gedrückt hält eine Dropdown-Symbolleisten-Schaltfläche (finden Sie unter [CMFCDropDownToolbarButton-Klasse](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)), wird eine Dropdown-Symbolleiste angezeigt, und der Benutzer kann aus der Dropdown-Symbolleiste eine Schaltfläche auswählen, indem Sie einen Bildlauf dorthin durchführen und Freigeben der Maus Schaltfläche ". Nachdem der Benutzer eine Schaltfläche in der Dropdown-Symbolleiste ausgewählt hat, wird diese Schaltfläche als die aktuelle Schaltfläche auf der Symbolleiste der obersten Ebene angezeigt.
+Ein `CMFCDropDownToolBar` Objekt kombiniert das visuelle Erscheinungsbild einer Symbolleiste mit dem Verhalten eines Popupmenüs. Wenn ein Benutzer eine Dropdown-Symbolleistenschaltfläche drückt und hält (siehe [CMFCDropDownToolbarButton Class),](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)wird eine Dropdown-Symbolleiste angezeigt, und der Benutzer kann eine Schaltfläche aus der Dropdown-Symbolleiste auswählen, indem er zu ihr scrollt und die Maustaste loslässt. Nachdem der Benutzer eine Schaltfläche in der Dropdown-Symbolleiste ausgewählt hat, wird diese Schaltfläche als aktuelle Schaltfläche auf der Symbolleiste der obersten Ebene angezeigt.
 
-Ein Dropdown-Symbolleisten kann nicht angepasst oder angedockt werden kann, und er verfügt nicht über einem abtrennbaren Zustand.
+Eine Dropdown-Symbolleiste kann nicht angepasst oder angedockt werden, und sie hat keinen Abreißzustand.
 
-Die folgende Abbildung zeigt eine `CMFCDropDownToolBar` Objekt:
+Die folgende Abbildung `CMFCDropDownToolBar` zeigt ein Objekt:
 
-![Beispiel für cmfcdropdowntoolbar](../../mfc/reference/media/cmfcdropdown.png "Beispiel für cmfcdropdowntoolbar")
+![Beispiel für CMFCDropDownToolbar](../../mfc/reference/media/cmfcdropdown.png "Beispiel für CMFCDropDownToolbar")
 
-Sie erstellen eine `CMFCDropDownToolBar` Objekt die gleiche Weise, die Sie erstellen eine normale-Symbolleiste (finden Sie unter [CMFCToolBar-Klasse](../../mfc/reference/cmfctoolbar-class.md)).
+Sie erstellen `CMFCDropDownToolBar` ein Objekt auf die gleiche Weise wie eine gewöhnliche Symbolleiste (siehe [CMFCToolBar-Klasse](../../mfc/reference/cmfctoolbar-class.md)).
 
-So fügen Sie die Dropdown-Symbolleisten in einer übergeordneten Symbolleiste ein:
+So fügen Sie die Dropdown-Symbolleiste in eine übergeordnete Symbolleiste ein:
 
 1. Reservieren Sie eine Platzhalterressourcen-ID für die Schaltfläche in der übergeordneten Symbolleistenressource.
 
-2. Erstellen Sie eine `CMFCDropDownToolBarButton` -Objekt, das die Dropdown-Symbolleiste enthält ein (Weitere Informationen finden Sie unter [CMFCDropDownToolbarButton::CMFCDropDownToolbarButton](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md#cmfcdropdowntoolbarbutton)).
+2. Erstellen `CMFCDropDownToolBarButton` Sie ein Objekt, das die Dropdown-Symbolleiste enthält (weitere Informationen finden Sie unter [CMFCDropDownToolbarButton::CMFCDropDownToolbarButton](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md#cmfcdropdowntoolbarbutton)).
 
-3. Ersetzen Sie die Schaltfläche "dummy", mit der `CMFCDropDownToolBarButton` Objekt mit [CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton).
+3. Ersetzen Sie die `CMFCDropDownToolBarButton` Dummy-Schaltfläche durch das Objekt mithilfe von [CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton).
 
-Weitere Informationen zu den Symbolleisten-Schaltflächen, finden Sie unter [Exemplarische Vorgehensweise: Einfügen von Steuerelementen auf der Symbolleiste](../../mfc/walkthrough-putting-controls-on-toolbars.md). Ein Beispiel für eine Dropdown-Symbolleisten finden Sie das Beispielprojekt VisualStudioDemo.
+Weitere Informationen zu Symbolleistenschaltflächen finden Sie unter [Exemplarische Vorgehensweise: Einstecken von Steuerelementen auf Symbolleisten](../../mfc/walkthrough-putting-controls-on-toolbars.md). Ein Beispiel für eine Dropdown-Symbolleiste finden Sie im Beispielprojekt VisualStudioDemo.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die `Create` -Methode in der die `CMFCDropDownToolBar` Klasse. Dieser Codeausschnitt ist Teil der [Visual Studio-Demobeispiel](../../overview/visual-cpp-samples.md).
+Im folgenden Beispiel wird `Create` veranschaulicht, `CMFCDropDownToolBar` wie die Methode in der Klasse verwendet wird. Dieser Codeausschnitt ist Teil des [Visual Studio Demo-Beispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#29](../../mfc/codesnippet/cpp/cmfcdropdowntoolbar-class_1.h)]
 [!code-cpp[NVC_MFC_VisualStudioDemo#30](../../mfc/codesnippet/cpp/cmfcdropdowntoolbar-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -103,7 +104,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die `Create` -Methode in der die
 
 **Header:** afxdropdowntoolbar.h
 
-##  <a name="allowshowonpanemenu"></a>  CMFCDropDownToolBar::AllowShowOnPaneMenu
+## <a name="cmfcdropdowntoolbarallowshowonpanemenu"></a><a name="allowshowonpanemenu"></a>CMFCDropDownToolbar::AllowShowOnPaneMenu
 
 ```
 virtual BOOL AllowShowOnPaneMenu() const;
@@ -111,9 +112,9 @@ virtual BOOL AllowShowOnPaneMenu() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="loadbitmap"></a>  CMFCDropDownToolBar::LoadBitmap
+## <a name="cmfcdropdowntoolbarloadbitmap"></a><a name="loadbitmap"></a>CMFCDropDownToolBar::LoadBitmap
 
 Lädt Symbolleistenbilder aus Anwendungsressourcen.
 
@@ -130,16 +131,16 @@ virtual BOOL LoadBitmap(
 ### <a name="parameters"></a>Parameter
 
 *uiResID*<br/>
-[in] Die Ressourcen-ID der Bitmap, die auf die aktiven Symbolleistenbilder verweist.
+[in] Die Ressourcen-ID der Bitmap, die auf die heißen Symbolleistenbilder verweist.
 
 *uiColdResID*<br/>
-[in] Die Ressourcen-ID der Bitmap, die auf die inaktiven Symbolleistenbilder verweist.
+[in] Die Ressourcen-ID der Bitmap, die auf die kalten Symbolleistenbilder verweist.
 
 *uiMenuResID*<br/>
-[in] Die Ressourcen-ID der Bitmap, die auf die normalen Menübilder verweist.
+[in] Die Ressourcen-ID der Bitmap, die auf die regulären Menübilder verweist.
 
-*bLocked*<br/>
-[in] True, um die Symbolleiste zu sperren. andernfalls "false".
+*Blockiert*<br/>
+[in] TRUE, um die Symbolleiste zu sperren; andernfalls FALSE.
 
 *uiDisabledResID*<br/>
 [in] Die Ressourcen-ID der Bitmap, die auf die deaktivierten Symbolleistenbilder verweist.
@@ -151,13 +152,13 @@ virtual BOOL LoadBitmap(
 
 Ein Wert ungleich 0 (null), wenn die Methode erfolgreich ausgeführt wird, andernfalls 0 (null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die [CMFCToolBar::LoadToolBarEx](../../mfc/reference/cmfctoolbar-class.md#loadtoolbarex) -Methode ruft diese Methode auf, um die Bilder zu laden, die der Symbolleiste zugeordnet sind. Setzen Sie diese Methode außer Kraft, um die Bildressourcen benutzerdefiniert zu laden.
 
 Rufen Sie die `LoadBitmapEx` -Methode auf, um nach der Erstellung der Symbolleiste weitere Bilder zu laden.
 
-##  <a name="loadtoolbar"></a>  CMFCDropDownToolBar::LoadToolBar
+## <a name="cmfcdropdowntoolbarloadtoolbar"></a><a name="loadtoolbar"></a>CMFCDropDownToolBar::LoadToolBar
 
 ```
 virtual BOOL LoadToolBar(
@@ -174,11 +175,11 @@ virtual BOOL LoadToolBar(
 
 [in] *uiResID*<br/>
 
-[in] *UiColdResID*<br/>
+[in] *uiColdResID*<br/>
 
-[in] *UiMenuResID*<br/>
+[in] *uiMenuResID*<br/>
 
-[in] *"Bool"*<br/>
+[in] *BOOL*<br/>
 
 [in] *uiDisabledResID*<br/>
 
@@ -188,9 +189,9 @@ virtual BOOL LoadToolBar(
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onlbuttonup"></a>  CMFCDropDownToolBar::OnLButtonUp
+## <a name="cmfcdropdowntoolbaronlbuttonup"></a><a name="onlbuttonup"></a>CMFCDropDownToolbar::OnLButtonup
 
 ```
 afx_msg void OnLButtonUp(
@@ -202,11 +203,11 @@ afx_msg void OnLButtonUp(
 
 [in] *nFlags*<br/>
 
-[in] *point*<br/>
+[in] *Punkt*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onmousemove"></a>  CMFCDropDownToolBar::OnMouseMove
+## <a name="cmfcdropdowntoolbaronmousemove"></a><a name="onmousemove"></a>CMFCDropDownToolBar::OnMouseMove
 
 ```
 afx_msg void OnMouseMove(
@@ -218,11 +219,11 @@ afx_msg void OnMouseMove(
 
 [in] *nFlags*<br/>
 
-[in] *point*<br/>
+[in] *Punkt*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onsendcommand"></a>  CMFCDropDownToolBar::OnSendCommand
+## <a name="cmfcdropdowntoolbaronsendcommand"></a><a name="onsendcommand"></a>CMFCDropDownToolBar::OnSendCommand
 
 ```
 virtual BOOL OnSendCommand(const CMFCToolBarButton* pButton);
@@ -234,9 +235,9 @@ virtual BOOL OnSendCommand(const CMFCToolBarButton* pButton);
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onupdatecmdui"></a>  CMFCDropDownToolBar::OnUpdateCmdUI
+## <a name="cmfcdropdowntoolbaronupdatecmdui"></a><a name="onupdatecmdui"></a>CMFCDropDownToolBar::OnUpdateCmdUI
 
 ```
 virtual void OnUpdateCmdUI(
@@ -250,14 +251,14 @@ virtual void OnUpdateCmdUI(
 
 [in] *bDisableIfNoHndler*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
 [CMFCToolBar-Klasse](../../mfc/reference/cmfctoolbar-class.md)<br/>
-[CMFCToolBar::Create](../../mfc/reference/cmfctoolbar-class.md#create)<br/>
+[CMFCToolBar::Erstellen](../../mfc/reference/cmfctoolbar-class.md#create)<br/>
 [CMFCToolBar::ReplaceButton](../../mfc/reference/cmfctoolbar-class.md#replacebutton)<br/>
 [CMFCDropDownToolbarButton-Klasse](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)<br/>
-[Exemplarische Vorgehensweise: Einfügen von Steuerelementen in eine Symbolleiste](../../mfc/walkthrough-putting-controls-on-toolbars.md)
+[Exemplarische Vorgehensweise: Steuerelemente in eine Symbolleiste einfügen](../../mfc/walkthrough-putting-controls-on-toolbars.md)

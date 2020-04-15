@@ -6,96 +6,96 @@ helpviewer_keywords:
 - TN023
 - standard resources
 ms.assetid: 60af8415-c576-4c2f-a711-ca5da0b9a1f2
-ms.openlocfilehash: b6a1978a92fcf53de7caacd41c01a91ff16a3fc3
-ms.sourcegitcommit: 934cb53fa4cb59fea611bfeb9db110d8d6f7d165
+ms.openlocfilehash: 90e7b9b7c354ba919c3dee279725b4498bea57ff
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65611406"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370383"
 ---
 # <a name="tn023-standard-mfc-resources"></a>TN023: MFC-Standardressourcen
 
-In diesem Hinweis wird beschrieben, die standard-Ressourcen mit bereitgestellt und wird von der MFC-Bibliothek benötigt wird.
+In diesem Hinweis werden die Standardressourcen beschrieben, die von der MFC-Bibliothek bereitgestellt und benötigt werden.
 
-## <a name="standard-resources"></a>Standard-Ressourcen
+## <a name="standard-resources"></a>Standardressourcen
 
-MFC bietet zwei Kategorien von vordefinierten Ressourcen, die Sie in Ihrer Anwendung verwenden können: ClipArt-Ressourcen und standard-Framework.
+MFC bietet zwei Kategorien vordefinierter Ressourcen, die Sie in Ihrer Anwendung verwenden können: ClipArt-Ressourcen und Standardframeworkressourcen.
 
-ClipArt-Ressourcen sind zusätzliche Ressourcen, die das Framework nicht abhängig ist, aber die Benutzeroberfläche Ihrer Anwendung hinzufügen möchten. Die folgenden ClipArt-Ressourcen befinden sich im allgemeinen MFC-Beispiel [CLIPART](../overview/visual-cpp-samples.md):
+ClipArt-Ressourcen sind zusätzliche Ressourcen, von denen das Framework nicht abhängig ist, die Sie der Benutzeroberfläche Ihrer Anwendung hinzufügen möchten. Die folgenden ClipArt-Ressourcen sind im MFC General-Beispiel [CLIPART](../overview/visual-cpp-samples.md)enthalten:
 
-- Common.rc: Eine einzelne Datei von Ressourcen mit:
+- Common.rc: Eine einzelne Datei mit Ressourcen, die enthält:
 
-   - Eine umfangreiche Auflistung von Symbolen, die eine Vielzahl von Unternehmen und Aufgaben der Datenverarbeitung darstellen.
+  - Eine große Sammlung von Symbolen, die eine Vielzahl von Geschäfts- und Datenverarbeitungsaufgaben darstellen.
 
-   - Einige allgemeine Cursor (Siehe auch Afxres.rc).
+  - Mehrere gängige Cursor (siehe auch Afxres.rc).
 
-   - Eine Bitmap für die Symbolleiste, die mehrere Symbolleisten-Schaltflächen enthält.
+  - Eine Symbolleisten-Bitmap, die mehrere Symbolleistenschaltflächen enthält.
 
-   - Die Bitmap und Symbol für Ressourcen, die von Commdlg.dll verwendet werden.
+  - Die Bitmap- und Symbolressourcen, die von Commdlg.dll verwendet werden.
 
-- Indicate.rc: Enthält die Zeichenfolgenressourcen für die Statusleiste-Key-Status-Indikatoren, z. B. "Obergrenze" für die FESTSTELLTASTE aktiviert.
+- Indicate.rc: Enthält Zeichenfolgenressourcen für die Statusleisten-Schlüsselstatusindikatoren, z. B. "CAP" für Caps Lock.
 
-- Prompts.rc: Enthält im Menü-Eingabeaufforderung Zeichenfolgenressourcen für jeden vordefinierten Befehl ein, z. B. "Neues Dokument erstellen" für ID_FILE_NEW an.
+- Prompts.rc: Enthält Menü-Eingabeaufforderungszeichenfolgenressourcen für jeden vordefinierten Befehl, z. B. "Erstellen eines neuen Dokuments" für ID_FILE_NEW.
 
-- Commdlg.rc: Eine Visual C++ kompatibel RC-Datei, die die standardmäßige COMMDLG Dialogfeldvorlagen enthält.
+- Commdlg.rc: Eine Visual C++-kompatible .rc-Datei, die die standardmäßigen COMMDLG-Dialogvorlagen enthält.
 
-Standard Frameworkressourcen sind Ressourcen mit AFX definierte-IDs, von denen das Framework für die interne Implementierungen abhängig. Sie müssen nur selten diese AFX definierte Ressourcen zu ändern. Wenn Sie dies tun, sollten Sie das weiter unten in diesem Thema beschriebenen Verfahren befolgen.
+Standardframeworkressourcen sind Ressourcen mit AFX-definierten IDs, von denen der Framework für interne Implementierungen abhängt. Sie müssen diese AFX-definierten Ressourcen nur selten ändern. In diesem Artikel sollten Sie das unten beschriebene Verfahren befolgen.
 
-Die folgenden Frameworkressourcen sind im Verzeichnis MFC\INCLUDE enthalten:
+Die folgenden Frameworkressourcen sind im Verzeichnis MFC-INCLUDE enthalten:
 
 - Afxres.rc: Gemeinsame Ressourcen, die vom Framework verwendet werden.
 
-- Afxprint.rc: Spezielle Ressourcen für drucken.
+- Afxprint.rc: Druckspezifische Ressourcen.
 
-- Afxolecl.rc: Spezielle Ressourcen für OLE-Client-Anwendungen.
+- Afxolecl.rc: Ressourcen, die für OLE-Clientanwendungen spezifisch sind.
 
-- Afxolev.rc: Spezielle Ressourcen für vollständige OLE-serveranwendungen.
+- Afxolev.rc: Ressourcen, die für vollständige OLE-Serveranwendungen spezifisch sind.
 
-## <a name="using-clip-art-resources"></a>ClipArt-Ressourcen
+## <a name="using-clip-art-resources"></a>Verwenden von ClipArt-Ressourcen
 
-#### <a name="to-use-a-clip-art-binary-resource"></a>Eine binäre Ressourcendatei mit ClipArt-Verwendung
+#### <a name="to-use-a-clip-art-binary-resource"></a>So verwenden Sie eine Binärressource für ClipArt
 
-1. Öffnen Sie in Visual C++ Ressourcendatei der Anwendung ein.
+1. Öffnen Sie die Ressourcendatei Ihrer Anwendung in Visual C++.
 
-1. Öffnen Sie Common.rc. Diese Datei enthält alle binären ClipArt-Ressourcen. Dies kann einige Zeit dauern, da die Common.rc-Datei kompiliert wird.
+1. Öffnen Sie Common.rc. Diese Datei enthält alle binären ClipArt-Ressourcen. Dies kann einige Zeit in Anspruch nehmen, da die Datei Common.rc kompiliert wird.
 
-1. Halten Sie STRG GEDRÜCKT, und ziehen Sie die Ressourcen, die Sie vom Common.rc an Ressourcendatei der Anwendung verwenden möchten.
+1. Halten Sie STRG gedrückt, während Sie die Ressourcen, die Sie von Common.rc verwenden möchten, in die Ressourcendatei Ihrer Anwendung ziehen.
 
-Um andere ClipArt-Ressourcen zu verwenden, führen Sie die gleichen Schritte aus. Der einzige besteht Unterschied darin, dass Sie die entsprechenden RC-Datei anstelle von Common.rc geöffnet werden.
-
-> [!NOTE]
->  Achten Sie darauf, dass Sie nicht versehentlich Ressourcen aus Common.rc dauerhaft verschieben. Wenn Sie die STRG-Taste enthalten, und ziehen Sie die Ressourcen, erstellen Sie eine Kopie. Wenn Sie nicht STRG halten Sie beim Ziehen, werden die Ressourcen verschoben werden. Wenn Sie befürchten, dass Sie versehentlich die Common.rc-Datei geändert haben können, klicken Sie auf "Nein", wenn Sie gefragt werden, an, ob die Änderungen an Common.rc speichern.
+Um andere ClipArt-Ressourcen zu verwenden, führen Sie die gleichen Schritte aus. Der einzige Unterschied ist, dass Sie die entsprechende .rc-Datei anstelle von Common.rc öffnen.
 
 > [!NOTE]
->  Die RC-Ressourcendateien enthalten eine besondere TEXTINCLUDE-Ressource, die Sie versehentlich auf standard RC-Dateien speichern verhindern.
+> Achten Sie darauf, Ressourcen nicht unbeabsichtigt dauerhaft aus Common.rc zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie Ressourcen ziehen, erstellen Sie eine Kopie. Wenn Sie STRG während des Ziehens nicht gedrückt halten, werden die Ressourcen verschoben. Wenn Sie befürchten, dass Sie versehentlich Änderungen an der Datei Common.rc vorgenommen haben, klicken Sie auf "Nein", wenn Sie gefragt werden, ob die Änderungen in Common.rc gespeichert werden sollen.
 
-### <a name="customizing-standard-framework-resources"></a>Anpassen des Standard-Framework-Ressourcen
+> [!NOTE]
+> Die .rc-Ressourcendateien haben eine spezielle TEXTINCLUDE-Ressource, die Sie daran hindert, versehentlich über den Standard-.rc-Dateien zu speichern.
 
-Standard-Framework-Ressourcen in der Regel befinden sich in einer Anwendung mithilfe der #include Befehl in einer Anwendung Ressourcendatei. AppWizard wird eine Ressourcendatei zu generieren. Diese Datei enthält die richtige standard-Framework-Ressourcen, je nachdem welche AppWizard, die Optionen Sie auswählen. Sie können überprüfen, hinzufügen oder entfernen, welche Ressourcen durch Ändern der Kompilierzeitdirektiven enthalten sind. Zu diesem Zweck öffnen Sie die **Ressource** Menü **Gruppe enthält**. Sehen Sie sich das Element "Kompilierzeitdirektiven" Bearbeiten. Zum Beispiel:
+### <a name="customizing-standard-framework-resources"></a>Anpassen von Standardframeworkressourcen
+
+Standardframeworkressourcen werden in der Regel in einer Anwendung mithilfe des Befehls #include in der Ressourcendatei einer Anwendung enthalten. AppWizard generiert eine Ressourcendatei. Diese Datei enthält die entsprechenden Standardframeworkressourcen, je nachdem, welche AppWizard-Optionen Sie auswählen. Sie können überprüfen, hinzufügen oder entfernen, welche Ressourcen enthalten sind, indem Sie die Kompilierungszeitdirektiven ändern. Öffnen Sie dazu das **Menü Ressourcen,** und wählen Sie **"Einschließen"** aus. Sehen Sie sich das Bearbeitungselement "Compile-Time Directives" an. Beispiel:
 
 ```
 #include "afxres.rc"
 #include "afxprint.rc"
 ```
 
-Der häufigste Fall Anpassen des standard-Framework-Ressourcen ist das Hinzufügen oder Entfernen von zusätzlichen enthält, für den Druck, OLE-Client und OLE-serverunterstützung.
+Der häufigste Fall beim Anpassen von Standardframeworkressourcen besteht darin, zusätzliche Includes für Drucken, OLE Client und OLE Server-Unterstützung hinzuzufügen oder zu entfernen.
 
-In einigen seltenen Fällen kann der Inhalt der standard-Framework-Ressourcen für Ihre spezifische Anwendung angepasst werden sollen, nicht nur fügen Sie hinzu und entfernen Sie die gesamte Datei. Die folgenden Schritte zeigen, wie Sie die Ressourcen beschränken können, die enthalten sind:
+In einigen seltenen Fällen möchten Sie möglicherweise den Inhalt der Standardframeworkressourcen für Ihre jeweilige Anwendung anpassen und nicht nur die gesamte Datei hinzufügen und entfernen. Die folgenden Schritte zeigen, wie Sie die enthaltenen Ressourcen einschränken können:
 
-##### <a name="to-customize-the-contents-of-a-standard-resource-file"></a>Anpassung der Inhalte einer Datei für die standard-Ressource
+##### <a name="to-customize-the-contents-of-a-standard-resource-file"></a>So passen Sie den Inhalt einer Standardressourcendatei an
 
 1. Öffnen Sie die Ressourcendatei in Visual C++.
 
-1. Mit dem Befehl Ressourcenincludes festlegen, entfernen Sie die `#include` für die standard-RC-Datei, die Sie anpassen möchten. Entfernen Sie z. B. zum Anpassen der Seitenansicht-Symbolleiste die `#include "afxprint.rc"` Zeile.
+1. Entfernen Sie mit dem Befehl `#include` Ressourcensatz-Includes die für die Standard-..rc-Datei, die Sie anpassen möchten. Entfernen Sie beispielsweise die `#include "afxprint.rc"` Zeile, um die Symbolleiste für die Druckvorschau anzupassen.
 
-1. Öffnen Sie die entsprechenden standard-Ressourcen-Dateien in MFC\INCLUDE an. Nach dem Beispiel oben in diesem Thema wird die entsprechende Datei MFC\Include\Aafxprint.rc
+1. Öffnen Sie die entsprechenden Standardressourcendateien in MFC-INCLUDE. Im Folgenden zu dem vorherigen Beispiel in diesem Thema lautet die entsprechende Datei MFC-Include-Aafxprint.rc
 
-1. Kopieren Sie alle Ressourcen aus der standard-RC-Datei Ihrer Ressourcendatei der Anwendung ein.
+1. Kopieren Sie alle Ressourcen aus der Standard-.-.rc-Datei in Ihre Anwendungsressourcendatei.
 
-1. Ändern Sie die Kopie der standard-Ressourcen in Ihrer Ressourcendatei der Anwendung.
+1. Ändern Sie die Kopie der Standardressourcen in der Anwendungsressourcendatei.
 
 > [!NOTE]
->  Ändern Sie die Ressourcen direkt in der standard-RC-Dateien nicht. Auf diese Weise ändern sich die Ressourcen verfügbar sind, in jeder Anwendung, nicht nur im diejenige aus, die Sie gerade arbeiten.
+> Ändern Sie die Ressourcen nicht direkt in den Standard-..rc-Dateien. Dadurch werden die Ressourcen geändert, die in jeder Anwendung verfügbar sind, nicht nur in der, an der Sie gerade arbeiten.
 
 ## <a name="see-also"></a>Siehe auch
 

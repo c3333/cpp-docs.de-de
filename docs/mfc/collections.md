@@ -17,60 +17,60 @@ helpviewer_keywords:
 - collection classes [MFC], lists
 - collection classes [MFC], shapes
 ms.assetid: 02586e4c-851d-41d0-a722-feb11c17c74c
-ms.openlocfilehash: f3dea68deaae73313fe389be49e8bbed7da3c93a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3fba3a3c6cd3fecbda7f46575b1d72c450c44019
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62383840"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361870"
 ---
 # <a name="collections"></a>Auflistungen
 
-Die Microsoft Foundation Class-Bibliothek enthält Auflistungsklassen, um Gruppen von Objekten zu verwalten. Diese Klassen sind zwei Typen:
+Die Microsoft Foundation-Klassenbibliothek stellt Auflistungsklassen zum Verwalten von Objektgruppen bereit. Diese Klassen haben zwei Typen:
 
-- [Auflistungsklassen, die aus den C++-Vorlagen erstellt wurde](#_core_the_template_based_collection_classes)
+- [Sammlungsklassen, die aus C++-Vorlagen erstellt wurden](#_core_the_template_based_collection_classes)
 
-- [Auflistungsklassen, die nicht aus Vorlagen erstellt.](#_core_the_collection_classes_not_based_on_templates)
+- [Auflistungsklassen, die nicht aus Vorlagen erstellt wurden](#_core_the_collection_classes_not_based_on_templates)
 
 > [!NOTE]
->  Wenn Ihr Code bereits Auflistungsklassen verwendet wird, können Sie weiterhin ihre Verwendung. Wenn Sie neue typsicheren Auflistungsklasse für Ihre eigenen Datentypen schreiben, empfehlen wir, dass neuere Vorlagen basierende Klassen verwendet werden.
+> Wenn Ihr Code bereits Nichtvorlagenauflistungsklassen verwendet, können Sie sie weiterhin verwenden. Wenn Sie neue typsichere Auflistungsklassen für Ihre eigenen Datentypen schreiben, wird empfohlen, die neueren vorlagenbasierten Klassen zu verwenden.
 
-##  <a name="_core_collection_shapes"></a> Auflistungsformen
+## <a name="collection-shapes"></a><a name="_core_collection_shapes"></a>Sammlungsformen
 
-Eine Auflistungsklasse ist die "Form" und von den Typen seiner Elemente gekennzeichnet. Die Form bezieht sich auf die Möglichkeit, die Objekte organisiert und von der Sammlung gespeichert werden. MFC bietet drei grundlegende Auflistungsformen: Listet, arrays und Zuordnungen (auch bekannt als Wörterbücher). Sie können die Form "Auflistung" auswählen, die sich am besten für Ihre bestimmte Programmierproblem ist.
+Eine Auflistungsklasse zeichnet sich durch ihre "Form" und die Typen ihrer Elemente aus. Die Form bezieht sich auf die Art und Weise, wie die Objekte von der Auflistung organisiert und gespeichert werden. MFC stellt drei grundlegende Auflistungs-Shapes bereit: Listen, Arrays und Karten (auch als Wörterbücher bezeichnet). Sie können die Sammlungsform auswählen, die für Ihr spezielles Programmierproblem am besten geeignet ist.
 
-Jede der drei bereitgestellten Auflistungsformen wird kurz weiter unten in diesem Thema beschrieben. Um vergleichen die Funktionen der Formen können Sie entscheiden, was für Ihr Programm am besten geeignet ist, finden Sie unter [Empfehlungen für die Auswahl einer Sammlungsklasse](../mfc/recommendations-for-choosing-a-collection-class.md).
+Jedes der drei bereitgestellten Auflistungs-Shapes wird später in diesem Thema kurz beschrieben. Informationen zum Vergleichen der Features der Shapes, mit denen Sie entscheiden können, welche für Ihr Programm am besten ist, finden Sie unter [Empfehlungen zum Auswählen einer Sammlungsklasse](../mfc/recommendations-for-choosing-a-collection-class.md).
 
-- Liste
+- List
 
-   Die List-Klasse bietet es sich um eine geordnete, nicht indizierte Liste von Elementen, die als eine doppelt verknüpfte Liste implementiert. Eine Liste verfügt über eine "Head" und ein "Tail" und hinzufügen oder Entfernen von Elementen in der Head oder Tail, einfügen oder Löschen von Elementen in der Mitte ist sehr schnell.
+   Die Listenklasse stellt eine geordnete, nicht indizierte Liste von Elementen bereit, die als doppelt verknüpfte Liste implementiert ist. Eine Liste hat einen "Kopf" und einen "Schwanz", und das Hinzufügen oder Entfernen von Elementen aus dem Kopf oder Schwanz oder das Einfügen oder Löschen von Elementen in der Mitte ist sehr schnell.
 
 - Array
 
-   Die Array-Klasse stellt eine dynamisch angepasst, bestellt und Integer indizierte Array von Objekten bereit.
+   Die Arrayklasse stellt ein Array mit dynamischer Größe, geordneter und ganzzahliger Indizierter Array von Objekten bereit.
 
-- Karte (auch bekannt als Wörterbuch)
+- Karte (auch als Wörterbuch bekannt)
 
-   Eine Zuordnung ist eine Auflistung, die ein Wertobjekt ein-Objekt zuordnet.
+   Eine Zuordnung ist eine Auflistung, die einem Wertobjekt ein Schlüsselobjekt zuordnet.
 
-##  <a name="_core_the_template_based_collection_classes"></a> Die vorlagenbasierte Auflistungsklassen
+## <a name="the-template-based-collection-classes"></a><a name="_core_the_template_based_collection_classes"></a>Die vorlagenbasierten Auflistungsklassen
 
-Die einfachste Möglichkeit zum Implementieren von einer typsicheren Auflistung, die Objekte eines beliebigen Typs enthält, ist die MFC-Template-basierten Klassen verwenden. Beispiele dieser Klassen finden Sie in der MFC-Beispiel [sammeln](../overview/visual-cpp-samples.md).
+Die einfachste Möglichkeit zum Implementieren einer typsicheren Auflistung, die Objekte eines beliebigen Typs enthält, besteht darin, eine der Aufderader-basierten MFC-Vorlagenklassen zu verwenden. Beispiele für diese Klassen finden Sie im MFC-Beispiel [COLLECT](../overview/visual-cpp-samples.md).
 
-Die folgende Tabelle enthält die MFC-vorlagenbasierte Auflistungsklassen.
+In der folgenden Tabelle sind die auf MFC-Vorlagen basierenden Auflistungsklassen aufgeführt.
 
-### <a name="collection-template-classes"></a>Vorlage-Auflistungsklassen
+### <a name="collection-template-classes"></a>Sammlungsvorlagenklassen
 
-|Inhalt der Auflistung|Arrays|Listen|Karten|
+|Sammlungsinhalt|Arrays|Listen|Karten|
 |-------------------------|------------|-----------|----------|
 |Auflistungen von Objekten eines beliebigen Typs|`CArray`|`CList`|`CMap`|
-|Sammlungen von Zeigern auf Objekte eines beliebigen Typs|`CTypedPtrArray`|`CTypedPtrList`|`CTypedPtrMap`|
+|Auflistungen von Zeigern auf Objekte eines beliebigen Typs|`CTypedPtrArray`|`CTypedPtrList`|`CTypedPtrMap`|
 
-##  <a name="_core_the_collection_classes_not_based_on_templates"></a> Die Auflistungsklassen, die nicht auf Vorlagen basierende
+## <a name="the-collection-classes-not-based-on-templates"></a><a name="_core_the_collection_classes_not_based_on_templates"></a>Die Auflistungsklassen, die nicht auf Vorlagen basieren
 
-Wenn Ihre Anwendung noch nicht auf Vorlagen basierende MFC-Klassen verwendet, können Sie weiterhin ihre Verwendung. Für neue Sammlungen empfehlen wir jedoch, dass Sie die Template-basierten Klassen verwenden. Die folgende Tabelle enthält die MFC-Auflistungsklassen, die nicht auf Vorlagen basieren.
+Wenn Ihre Anwendung bereits MFC-Nichtvorlagenklassen verwendet, können Sie sie weiterhin verwenden. Für neue Sammlungen wird jedoch empfohlen, die vorlagenbasierten Klassen zu verwenden. In der folgenden Tabelle sind die MFC-Auflistungsklassen aufgeführt, die nicht auf Vorlagen basieren.
 
-### <a name="nontemplate-collection-classes"></a>Auflistungsklassen
+### <a name="nontemplate-collection-classes"></a>Nontemplate-Auflistungsklassen
 
 |Arrays|Listen|Karten|
 |------------|-----------|----------|
@@ -82,7 +82,7 @@ Wenn Ihre Anwendung noch nicht auf Vorlagen basierende MFC-Klassen verwendet, k�
 |`CWordArray`||`CMapWordToOb`|
 |`CUIntArray`||`CMapWordToPtr`|
 
-Die Merkmale von MFC-Auflistungsklassen Tabelle [Empfehlungen für die Auswahl einer Sammlungsklasse](../mfc/recommendations-for-choosing-a-collection-class.md) wird beschrieben, die MFC-Auflistungsklassen im Hinblick auf diese Eigenschaften (mit Ausnahme von Form):
+Die Tabelle Merkmale von MFC-Auflistungsklassen in den Empfehlungen für die [Auswahl einer Auflistungsklasse](../mfc/recommendations-for-choosing-a-collection-class.md) beschreibt die MFC-Auflistungsklassen in Bezug auf diese Eigenschaften (außer Shape):
 
 - ob die Klasse C++-Vorlagen verwendet
 
@@ -92,23 +92,23 @@ Die Merkmale von MFC-Auflistungsklassen Tabelle [Empfehlungen für die Auswahl e
 
 - ob die Auflistung typsicher ist
 
-### <a name="what-do-you-want-to-do"></a>Was möchten Sie tun
+### <a name="what-do-you-want-to-do"></a>Was möchten Sie tun?
 
-#### <a name="general-collection-class-tasks"></a>Auflistungsklassen, allgemeine Aufgaben
+#### <a name="general-collection-class-tasks"></a>Allgemeine Aufgaben der Sammlungsklasse
 
 - [Empfehlungen für die Auswahl einer Sammlungsklasse](../mfc/recommendations-for-choosing-a-collection-class.md)
 
 - [Vorgehensweise: Erstellen einer typsicheren Auflistung](../mfc/how-to-make-a-type-safe-collection.md)
 
-- [Erstellen von Stapel- und Warteschlangenauflistungen](../mfc/creating-stack-and-queue-collections.md)
+- [Erstellen von Stack- und Warteschlangenauflistungen](../mfc/creating-stack-and-queue-collections.md)
 
-- [CArray::Add](../mfc/reference/carray-class.md#add)
+- [CArray::Hinzufügen](../mfc/reference/carray-class.md#add)
 
-#### <a name="template-based-collection-class-tasks"></a>Vorlagenbasierte Auflistungsklassen, Aufgaben
+#### <a name="template-based-collection-class-tasks"></a>Vorlagenbasierte Aufgaben der Sammlungsklasse
 
 - [Vorlagenbasierte Klassen](../mfc/template-based-classes.md)
 
-#### <a name="accessing-the-members-of-a-collection-template-based-or-not"></a>Zugriff auf die Member einer Auflistung (Template-basierten oder nicht)
+#### <a name="accessing-the-members-of-a-collection-template-based-or-not"></a>Zugriff auf die Mitglieder einer Sammlung (Vorlagenbasiert oder nicht)
 
 - [Zugreifen auf alle Elemente einer Auflistung](../mfc/accessing-all-members-of-a-collection.md)
 

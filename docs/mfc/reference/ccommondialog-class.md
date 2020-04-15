@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CCommonDialog [MFC], CCommonDialog
 ms.assetid: 1f68d65f-a0fd-4778-be22-ebbe51a95f95
-ms.openlocfilehash: 4fa7aa51d1ce482e00f68365045cd35c3fb7939b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 853a4756df3b70f4f33deb7159b4d1aee610092c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182266"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369445"
 ---
 # <a name="ccommondialog-class"></a>CCommonDialog-Klasse
 
@@ -29,13 +29,13 @@ class CCommonDialog : public CDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CCommonDialog::CCommonDialog](#ccommondialog)|Erstellt ein `CCommonDialog`-Objekt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die folgenden Klassen kapseln die Funktionalität der Windows-Standarddialogfelder:
+Die folgenden Klassen kapseln die Funktionalität der allgemeinen Windows-Dialogfelder:
 
 - [CFileDialog](../../mfc/reference/cfiledialog-class.md)
 
@@ -55,7 +55,7 @@ Die folgenden Klassen kapseln die Funktionalität der Windows-Standarddialogfeld
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -67,9 +67,9 @@ Die folgenden Klassen kapseln die Funktionalität der Windows-Standarddialogfeld
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdlgs.h
+**Kopf:** afxdlgs.h
 
-##  <a name="ccommondialog"></a>  CCommonDialog::CCommonDialog
+## <a name="ccommondialogccommondialog"></a><a name="ccommondialog"></a>CCommonDialog::CCommonDialog
 
 Erstellt ein `CCommonDialog`-Objekt.
 
@@ -80,11 +80,11 @@ explicit CCommonDialog(CWnd* pParentWnd);
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-Verweist auf das übergeordnete Element oder Besitzer Window-Objekt (des Typs [CWnd](../../mfc/reference/cwnd-class.md)) zu dem das Dialogfeldobjekt gehört. Wenn es NULL ist, wird das Dialogfeldobjekt übergeordnete Fenster auf das Hauptanwendungsfenster festgelegt.
+Zeigt auf das übergeordnete oder Besitzerfensterobjekt (vom Typ [CWnd](../../mfc/reference/cwnd-class.md)), zu dem das Dialogobjekt gehört. Wenn es SICH um NULL handelt, wird das übergeordnete Fenster des Dialogobjekts auf das Hauptanwendungsfenster festgelegt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Finden Sie unter [CDialog::CDialog](../../mfc/reference/cdialog-class.md#cdialog) vollständige Informationen.
+Vollständige Informationen finden Sie unter [CDialog::CDialog.](../../mfc/reference/cdialog-class.md#cdialog)
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -1,6 +1,6 @@
 ---
 title: strtok_s, _strtok_s_l, wcstok_s, _wcstok_s_l, _mbstok_s, _mbstok_s_l
-ms.date: 03/25/2019
+ms.date: 4/2/2020
 api_name:
 - _wcstok_s_l
 - _mbstok_s_l
@@ -8,6 +8,10 @@ api_name:
 - strtok_s
 - wcstok_s
 - _strtok_s_l
+- _o__mbstok_s
+- _o__mbstok_s_l
+- _o_strtok_s
+- _o_wcstok_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -51,12 +56,12 @@ helpviewer_keywords:
 - _mbstok_s function
 - strtok_s function
 ms.assetid: 7696c972-f83b-4617-8c82-95973e9fdb46
-ms.openlocfilehash: 1bbc5910e6242a0df262cc43b58815ea80ff9681
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9fe89fb897a5459b16c49060359b4bb40bc062a7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946458"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365219"
 ---
 # <a name="strtok_s-_strtok_s_l-wcstok_s-_wcstok_s_l-_mbstok_s-_mbstok_s_l"></a>strtok_s, _strtok_s_l, wcstok_s, _wcstok_s_l, _mbstok_s, _mbstok_s_l
 
@@ -110,10 +115,10 @@ unsigned char* _mbstok_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
-Eine Zeichenfolge, die das zu suchende Token enthält.
+*Str*<br/>
+Eine Zeichenfolge, die das zu findende Token oder Token enthält.
 
-*Trennzeichen*<br/>
+*delimiters*<br/>
 Der Satz von Trennzeichen, die verwendet werden sollen.
 
 *context*<br/>
@@ -124,46 +129,48 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf das nächste Token zurück, das in *Str*gefunden wurde. Gibt **null** zurück, wenn keine weiteren Token gefunden werden. Jeder-Befehl ändert *Str* , indem er das erste Trennzeichen, das nach dem zurückgegebenen Token auftritt, durch ein NULL-Zeichen ersetzt.
+Gibt einen Zeiger auf das nächste Token *zurück,* das in str gefunden wurde. Gibt **NULL** zurück, wenn keine weiteren Token gefunden werden. Jeder Aufruf ändert *str,* indem ein Nullzeichen durch das erste Trennzeichen ersetzt wird, das nach dem zurückgegebenen Token auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*str*|*Trennzeichen*|*context*|Rückgabewert|**errno**|
+|*Str*|*delimiters*|*context*|Rückgabewert|**errno**|
 |----------------|------------------|---------------|------------------|-------------|
-|**NULL**|any|Zeiger auf einen NULL-Zeiger|**NULL**|**EINVAL**|
-|any|**NULL**|any|**NULL**|**EINVAL**|
-|any|any|**NULL**|**NULL**|**EINVAL**|
+|**Null**|any|Zeiger auf einen NULL-Zeiger|**Null**|**Einval**|
+|any|**Null**|any|**Null**|**Einval**|
+|any|any|**Null**|**Null**|**Einval**|
 
-Wenn *Str* **null** ist, aber der *Kontext* ein Zeiger auf einen gültigen Kontext Zeiger ist, gibt es keinen Fehler.
+Wenn *str* **NULL** ist, aber *Kontext* ein Zeiger auf einen gültigen Kontextzeiger ist, gibt es keinen Fehler.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **strtok_s** -Funktions Familie findet das nächste Token in *Str*. Der Zeichensatz in *Trenn* Zeichen gibt mögliche Trennzeichen des Tokens an, das in *Str* auf dem aktuellen-Befehl zu finden ist. **wcstok_s** und **_mbstok_s** sind breit Zeichen-und multibytezeichenversionen von **strtok_s**. Die Argumente und Rückgabewerte von **wcstok_s** und **_wcstok_s_l** sind Zeichen folgen mit breit Zeichen. bei den **_mbstok_s** und **_mbstok_s_l** handelt es sich um Multibyte-Zeichen folgen. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **strtok_s** Funktionsfamilie findet das nächste Token in *str*. Der Satz von Zeichen in *Trennzeichen* gibt mögliche Trennzeichen des Tokens an, die im aktuellen Aufruf in *str* zu finden sind. **wcstok_s** und **_mbstok_s** sind breit- und multibyte-Versionen von **strtok_s**. Die Argumente und Rückgabewerte von **wcstok_s** und **_wcstok_s_l** sind Zeichenfolgen mit großen Zeichen. _mbstok_s **und** **_mbstok_s_l** sind Zeichenfolgen mit mehreren Bytezeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
-Diese Funktion überprüft ihre Parameter. Wenn ein Fehlerzustand auftritt, wie in der Tabelle Fehlerbedingungen, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **null**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn eine Fehlerbedingung auftritt, wie in der Tabelle Fehlerbedingungen, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, legen diese Funktionen **errno** auf **EINVAL** fest und geben **NULL**zurück.
 
-Beim ersten **strtok_s**-Aufrufe überspringt die Funktion führende Trennzeichen und gibt einen Zeiger auf das erste Token in *Str*zurück, wobei das Token mit einem NULL-Zeichen beendet wird. Weitere Token können aus dem Rest von *Str* durch eine Reihe von Aufrufen an **strtok_s**aufgeteilt werden. Jeder **strtok_s** -Aufrufe ändert *Str* , indem er ein NULL-Zeichen nach dem Token einfügt, das von diesem-Befehl zurückgegeben wird. Der *Kontext* Zeiger verfolgt, welche Zeichenfolge gelesen wird und an welcher Stelle in der Zeichenfolge das nächste Token gelesen werden soll. Um das nächste Token aus *Str*zu lesen, müssen Sie **strtok_s** mit einem **null** -Wert für das *Str* -Argument aufrufen und denselben *Kontext* Parameter übergeben. Das **null** *Str* -Argument bewirkt, dass **strtok_s** im geänderten *Str*nach dem nächsten Token sucht. Das *Trenn* Zeichen Argument kann einen beliebigen Wert von einem der nächsten Aufrufe annehmen, sodass der Satz von Trennzeichen variieren kann.
+Beim ersten Aufruf **von strtok_s**überspringt die Funktion führende Trennzeichen und gibt einen Zeiger auf das erste Token in *str*zurück, wodurch das Token mit einem Nullzeichen beendet wird. Weitere Token können aus dem Rest der *Str* durch eine Reihe von Aufrufen an **strtok_s**. Jeder Aufruf von **strtok_s** ändert *str,* indem ein Nullzeichen nach dem von diesem Aufruf zurückgegebenen Token eingefügt wird. Der *Kontextzeiger* verfolgt, welche Zeichenfolge gelesen wird und wo in der Zeichenfolge das nächste Token gelesen werden soll. Um das nächste Token aus *str*zu lesen, rufen Sie **strtok_s** mit einem **NULL-Wert** für das *Argument str* auf und übergeben denselben *Kontextparameter.* Das Argument **NULL** *str* bewirkt, dass **strtok_s** nach dem nächsten Token in der geänderten *str*suchen. Das *Trennzeichenargument* kann einen beliebigen Wert von einem Aufruf zum nächsten annehmen, sodass der Satz von Trennzeichen variieren kann.
 
-Da der *Kontext* Parameter die in **strtok** und **_strtok_l**verwendeten statischen Puffer ersetzt, können zwei Zeichen folgen im gleichen Thread gleichzeitig analysiert werden.
+Da der *Kontextparameter* die statischen Puffer ersetzt, die in **strtok** und **_strtok_l**verwendet werden, ist es möglich, zwei Zeichenfolgen gleichzeitig im gleichen Thread zu analysieren.
 
-Der Ausgabewert ist von der Einstellung der **LC_CTYPE** -Kategorieeinstellung des Gebiets Schemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md).
+Der Ausgabewert wird durch die Einstellung der **LC_CTYPE** Kategorieeinstellung des Gebietsschemas beeinflusst. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md).
 
-Die Versionen dieser Funktionen ohne das **_l** -Suffix verwenden das aktuelle Thread Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. Die Versionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch stattdessen das durch den *locale* -Parameter angegebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen ohne das **suffix _l** verwenden das aktuelle Threadgebietsschema für dieses gebietsschemaabhängige Verhalten. Die Versionen mit dem **Suffix _l** sind identisch, außer sie verwenden stattdessen das durch den *Gebietsschemaparameter* angegebene Gebietsschema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**strtok_s**|\<string.h>|
 |**_strtok_s_l**|\<string.h>|
 |**wcstok_s**,<br />**_wcstok_s_l**|\<string.h> oder \<wchar.h>|
 |**_mbstok_s**,<br />**_mbstok_s_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
-|TCHAR.H-Routine|\_Unicode- \_& MBCS nicht definiert|\_Definierte MBCS|_UNICODE definiert|
+|TCHAR.H-Routine|\_UNICODE \_& MBCS nicht definiert|\_MBCS definiert|_UNICODE definiert|
 |---------------------|------------------------------------|--------------------|-----------------------|
 |**_tcstok_s**|**strtok_s**|**_mbstok_s**|**wcstok_s**|
 |**_tcstok_s_l**|**_strtok_s_l**|**_mbstok_s_l**|**_wcstok_s_l**|
@@ -236,7 +243,7 @@ tokens
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [strcspn, wcscspn, _mbscspn, _mbscspn_l](strcspn-wcscspn-mbscspn-mbscspn-l.md)<br/>

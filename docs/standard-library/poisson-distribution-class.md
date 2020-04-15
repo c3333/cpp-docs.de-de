@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::poisson_distribution [C++], param_type
 - std::poisson_distribution [C++], param_type
 ms.assetid: 09614281-349a-45f7-8e95-c0196be0a937
-ms.openlocfilehash: 180b84c6ac7bef94a93f73c0bdefc6a6f95164f0
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: fd1464c099d6f666b53387326c1dd863048defdc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689131"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372046"
 ---
 # <a name="poisson_distribution-class"></a>poisson_distribution-Klasse
 
@@ -67,12 +67,12 @@ public:
 
 ### <a name="parameters"></a>Parameter
 
-*Inttype* -\
-Der ganzzahlige Ergebnistyp, der Standardwert ist **int**. Informationen zu möglichen Typen finden Sie unter [\<random >](../standard-library/random.md).
+*IntType*\
+Der ganzzahlige Ergebnistyp wird standardmäßig **int**. Mögliche Typen finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs mit einer Poisson-Verteilung produziert. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
+Die Klassenvorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Integraltyps mit einer Poisson-Verteilung erzeugt. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
 ||||
 |-|-|-|
@@ -89,7 +89,7 @@ Die `reset()`-Memberfunktion verwirft alle zwischengespeicherten Werte, damit da
 
 Die `operator()`-Memberfunktionen geben den nächsten generierten Wert von entweder dem aktuellen oder dem spezifizierten Parameterpaket zurück, das auf der URNG-Engine basiert.
 
-Weitere Informationen zu Verteilungsklassen und ihren Membern finden Sie unter [\<random>](../standard-library/random.md).
+Weitere Informationen zu Verteilungsklassen und deren Mitgliedern finden Sie unter [ \<zufällige>](../standard-library/random.md).
 
 Ausführliche Informationen über die Poisson-Verteilung finden Sie im Wolfram MathWorld-Artikel [Poisson Distribution Poisson-Verteilung)](https://go.microsoft.com/fwlink/p/?linkid=401112).
 
@@ -196,7 +196,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="poisson_distribution"></a> poisson_distribution::poisson_distribution
+## <a name="poisson_distributionpoisson_distribution"></a><a name="poisson_distribution"></a>poisson_distribution::poisson_distribution
 
 Erstellt die Verteilung.
 
@@ -207,21 +207,21 @@ explicit binomial_distribution(const param_type& parm);
 
 ### <a name="parameters"></a>Parameter
 
-*Mittelwert* \
+*Bedeuten*\
 Der `mean`-Verteilungsparameter.
 
-*\ für* den
+*Parm*\
 Die für die Erstellung der Verteilung verwendete Parameterstruktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < mean`
+**Voraussetzung:**`0.0 < mean`
 
 Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `mean`-Wert den Wert *mean* enthält.
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="param_type"></a> poisson_distribution::param_type
+## <a name="poisson_distributionparam_type"></a><a name="param_type"></a>poisson_distribution::param_type
 
 Speichert die Parameter der Verteilung.
 
@@ -240,12 +240,12 @@ struct param_type {
 
 Siehe Konstruktorparameter für [poisson_distribution](#poisson_distribution).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-**Vorbedingung:** `0.0 < mean`
+**Voraussetzung:**`0.0 < mean`
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<random>](../standard-library/random.md)
+[\<zufällige>](../standard-library/random.md)

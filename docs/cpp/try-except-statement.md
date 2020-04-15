@@ -1,6 +1,7 @@
 ---
 title: try-except-Anweisung
-ms.date: 10/09/2018
+description: Der Microsoft C++-Verweis auf die __try und __except strukturierten Ausnahmebehandlungsanweisungen.
+ms.date: 04/03/2020
 f1_keywords:
 - _abnormal_termination_cpp
 - _exception_code_cpp
@@ -22,76 +23,74 @@ helpviewer_keywords:
 - _exception_info keyword [C++]
 - _abnormal_termination keyword [C++]
 ms.assetid: 30d60071-ea49-4bfb-a8e6-7a420de66381
-ms.openlocfilehash: 7d3a92aa8c6d1f77a1795eabde0ae1e575bb5770
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 132edf7cc9819637fafa3947686972d311924b99
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79444128"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366240"
 ---
 # <a name="try-except-statement"></a>try-except-Anweisung
 
-**Microsoft-spezifisch**
-
-Die **Try-außer-** Anweisung ist eine Microsoft-Erweiterung für C C++ und Sprachen, die die strukturierte Ausnahmebehandlung unterstützen.
+Die **try-except-Anweisung** ist eine Microsoft-Erweiterung, die strukturierte Ausnahmebehandlungen in den Sprachen C und C++ unterstützt. Diese Erweiterung ist **Microsoft-spezifisch**.
 
 ## <a name="syntax"></a>Syntax
 
-> **\_\_versuchen**<br/>
+> **\_\_Versuchen**<br/>
 > {<br/>
-> &nbsp;&nbsp;&nbsp;&nbsp;//überwachten Code<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp;geschützter Code<br/>
 > }<br/>
-> **\_\_außer** ( *Ausdruck* )<br/>
+> außer ( *Ausdruck* ) ** \_ \_**<br/>
 > {<br/>
-> &nbsp;&nbsp;&nbsp;&nbsp;//Ausnahmehandler-Code<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp;Ausnahmehandlercode<br/>
 > }
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die **try-with-** Anweisung ist eine Microsoft-Erweiterung für die C++ C-und die-Sprache, mit der Zielanwendungen steuern können, wann Ereignisse auftreten, die die Programmausführung normalerweise beenden. Diese Ereignisse werden als *Ausnahmen*bezeichnet, und der Mechanismus, der Ausnahmen behandelt, wird als *strukturierte Ausnahmebehandlung* (SEH) bezeichnet.
+Die **try-except-Anweisung** ist eine Microsoft-Erweiterung der C- und C++-Sprachen. Es ermöglicht Zielanwendungen, Die Kontrolle zu erlangen, wenn Ereignisse auftreten, die normalerweise die Programmausführung beenden. Solche Ereignisse werden als *strukturierte Ausnahmen*oder kurz *Ausnahmen* bezeichnet. Der Mechanismus, der sich mit diesen Ausnahmen befasst, wird als *Structured Exception Handling* (SEH) bezeichnet.
 
-Weitere Informationen finden Sie in der [try-schließlich-Anweisung](../cpp/try-finally-statement.md).
+Weitere Informationen finden Sie in der [try-finally-Anweisung](../cpp/try-finally-statement.md).
 
-Ausnahmen können entweder hardwarebasiert oder softwarebasiert sein. Auch wenn Anwendungen nicht von Hardware- oder Softwareausnahmen vollständig wiederhergestellt werden können, kann die strukturierte Ausnahmebehandlung das Anzeigen von Fehlerinformationen ermöglichen und den internen Zustand der Anwendung abfangen, um das Problem zu diagnostizieren. Dies ist besonders hilfreich bei zeitweilig auftretenden Problemen, die nicht leicht reproduziert werden können.
+Ausnahmen können entweder hardwarebasiert oder softwarebasiert sein. Strukturierte Ausnahmebehandlung ist nützlich, auch wenn Anwendungen von Hardware- oder Softwareausnahmen nicht vollständig wiederhergestellt werden können. SEH ermöglicht es, Fehlerinformationen anzuzeigen und den internen Status der Anwendung abzufangen, um das Problem zu diagnostizieren. Es ist besonders nützlich für intermittierende Probleme, die nicht einfach zu reproduzieren sind.
 
 > [!NOTE]
-> Die strukturierte Ausnahmebehandlung arbeitet mit Win32 für C- und C++-Quelldateien. Sie ist jedoch nicht speziell für C++ entwickelt. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Die C++-Ausnahmebehandlung ist auch flexibler, da sie Ausnahmen eines beliebigen Typs behandeln kann. Bei C++ Programmen empfiehlt es sich, den Mechanismus für die C++ Ausnahmebehandlung zu verwenden ([try-, catch-und Throw](../cpp/try-throw-and-catch-statements-cpp.md) -Anweisungen).
+> Die strukturierte Ausnahmebehandlung arbeitet mit Win32 für C- und C++-Quelldateien. Es ist jedoch nicht speziell für C++ konzipiert. Sie können sicherstellen, dass der Code portabler ist, indem Sie die C++-Ausnahmebehandlung verwenden. Die C++-Ausnahmebehandlung ist auch flexibler, da sie Ausnahmen eines beliebigen Typs behandeln kann. Für C++-Programme wird empfohlen, systemeigene C++-Ausnahmebehandlungen zu verwenden: [Try-, catch- und](../cpp/try-throw-and-catch-statements-cpp.md) throw-Anweisungen.
 
-Die Verbund Anweisung nach der **__try** -Klausel ist der Text oder der geschützte Abschnitt. Die Verbund Anweisung nach der **__except** -Klausel ist der Ausnahmehandler. Der Handler gibt eine Reihe von Aktionen an, die abgerufen werden, wenn eine Ausnahme während der Ausführung des Texts des geschützten Bereichs ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
+Die zusammengesetzte Anweisung nach der **__try-Klausel** ist der *Körper-* oder *Bewachtabschnitt.* Der **__except** Ausdruck wird auch als *Filterausdruck* bezeichnet. Sein Wert bestimmt, wie die Ausnahme behandelt wird. Die zusammengesetzte Anweisung nach der **__except-Klausel** ist der Ausnahmehandler. Der Handler gibt die Aktionen an, die ausgeführt werden sollen, wenn während der Ausführung des Bodyabschnitts eine Ausnahme ausgelöst wird. Die Ausführung erfolgt folgendermaßen:
 
 1. Der geschützte Bereich wird ausgeführt.
 
-1. Wenn während der Ausführung des geschützten Abschnitts keine Ausnahme auftritt, wird die Ausführung bei der Anweisung nach der **__except** -Klausel fortgesetzt.
+1. Wenn während der Ausführung des bewachten Abschnitts keine Ausnahme auftritt, wird die Ausführung in der Anweisung nach der **__except-Klausel** fortgesetzt.
 
-1. Wenn während der Ausführung des geschützten Abschnitts oder in einer Routine, die der geschützte Abschnitt aufruft, eine Ausnahme auftritt, wird der **__except** *Ausdruck* (bezeichnet als *Filter* Ausdruck) ausgewertet, und der Wert bestimmt, wie die Ausnahme behandelt wird. Es gibt drei mögliche Werte:
+1. Wenn während der Ausführung des bewachten Abschnitts oder in einer Routine, die der bewachte Abschnitt aufruft, eine Ausnahme auftritt, wird der **__except-Ausdruck** ausgewertet. Es gibt drei mögliche Werte:
 
-   - Die Ausnahme EXCEPTION_CONTINUE_EXECUTION (-1) wurde verworfen. Fortsetzen der Ausführung an der Stelle, an der die Ausnahme aufgetreten ist.
+   - `EXCEPTION_CONTINUE_EXECUTION`(-1) Die Ausnahme wird abgelehnt. Fortsetzen der Ausführung an der Stelle, an der die Ausnahme aufgetreten ist.
 
-   - EXCEPTION_CONTINUE_SEARCH (0) Ausnahme wurde nicht erkannt. Fahren Sie fort, im Stapel nach einem Handler zu suchen, zuerst nach enthaltenen **try-except**-Anweisungen, dann nach Handlern mit der nächst höheren Priorität.
+   - `EXCEPTION_CONTINUE_SEARCH`(0) Die Ausnahme wird nicht erkannt. Fahren Sie fort, im Stapel nach einem Handler zu suchen, zuerst nach enthaltenen **try-except**-Anweisungen, dann nach Handlern mit der nächst höheren Priorität.
 
-   - EXCEPTION_EXECUTE_HANDLER (1) Ausnahme wurde erkannt. Übertragen Sie die Steuerung an den Ausnahmehandler, indem Sie die **__except** Verbund Anweisung ausführen und dann die Ausführung nach dem Block **__except** fortsetzen.
+   - `EXCEPTION_EXECUTE_HANDLER`(1) Die Ausnahme wird anerkannt. Übertragen Sie die Steuerung an den Ausnahmehandler, indem Sie die **__except** zusammengesetzte Anweisung ausführen, und fahren Sie dann nach dem **__except-Block** fort.
 
-Da der **__except** Ausdruck als C-Ausdruck ausgewertet wird, ist er auf einen einzelnen Wert, den bedingten Ausdrucks Operator oder den Komma-Operator beschränkt. Wenn eine erweiterte Verarbeitung erforderlich ist, kann der Ausdruck eine Routine aufrufen, die einen der drei Werte zurückgibt, die oben aufgelistet sind.
+Der **__except** Ausdruck wird als C-Ausdruck ausgewertet. Sie ist auf einen einzelnen Wert, den Operator für bedingten Ausdruck oder den Kommaoperator beschränkt. Wenn eine erweiterte Verarbeitung erforderlich ist, kann der Ausdruck eine Routine aufrufen, die einen der drei Werte zurückgibt, die oben aufgelistet sind.
 
 Jede Anwendung kann einen eigenen Ausnahmehandler haben.
 
-Es ist nicht zulässig, zu einer **__try** -Anweisung zu springen, aber gültig, um von einer Anweisung zu springen. Der Ausnahmehandler wird nicht aufgerufen, wenn ein Prozess in der Mitte der Ausführung einer **Try-außer-** Anweisung beendet wird.
+Es ist nicht gültig, in eine **__try-Anweisung** zu springen, aber es ist gültig, aus einer zu springen. Der Ausnahmehandler wird nicht aufgerufen, wenn ein Prozess mitten in der Ausführung einer **try-except-Anweisung** beendet wird.
 
-Aus Kompatibilitätsgründen mit früheren Versionen sind **_try**, **_except**und **_leave** Synonyme für **__try**, **__except**und **__leave** , es sei denn, die Compileroption [/Za \(Deaktivieren von Spracherweiterungen)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Kompatibilitätmit früheren Versionen sind **_try**, **_except**und **_leave** Synonyme für **__try**, **__except**und **__leave,** es sei denn, die Compileroption [ \(/Za Disable language extensions)](../build/reference/za-ze-disable-language-extensions.md) wird angegeben.
 
 ### <a name="the-__leave-keyword"></a>Das __leave-Schlüsselwort
 
-Das **__leave** -Schlüsselwort ist nur innerhalb des geschützten Abschnitts einer **Try-außer-** Anweisung gültig, und seine Auswirkung besteht darin, bis zum Ende des geschützten Abschnitts zu springen. Die Ausführung wird mit der ersten Anweisung nach dem Ausnahmehandler fortgesetzt.
+Das schlüsselwortlose schlüsselwortbesuchende **Schlüsselwort __leave** ist nur innerhalb des bewachten Abschnitts einer **try-except-Anweisung** gültig, und seine Wirkung besteht darin, bis zum Ende des bewachten Abschnitts zu springen. Die Ausführung wird mit der ersten Anweisung nach dem Ausnahmehandler fortgesetzt.
 
-Eine **goto** -Anweisung kann auch aus dem abgesicherten Abschnitt herausspringen, und die Leistung wird nicht beeinträchtigt, da dies in einer **try-schließlich-** Anweisung der Fall ist, da keine Stapel Auflösung stattfindet. Es empfiehlt sich jedoch, anstelle einer **goto** -Anweisung das **__leave** Schlüsselwort zu verwenden, da es weniger wahrscheinlich ist, einen Programmierfehler zu erstellen, wenn der geschützte Abschnitt groß oder komplex ist.
+Eine **goto-Anweisung** kann auch aus dem bewachten Abschnitt springen, und sie beeinträchtigt die Leistung nicht, wie sie es in einer **try-finally-Anweisung** tut. Das liegt daran, dass das Stapelaufwickeln nicht auftritt. Es wird jedoch empfohlen, das **Schlüsselwort __leave** anstelle einer **goto-Anweisung** zu verwenden. Der Grund dafür ist, dass Sie weniger wahrscheinlich einen Programmierfehler machen, wenn der bewachte Abschnitt groß oder komplex ist.
 
 ### <a name="structured-exception-handling-intrinsic-functions"></a>Intrinsische Funktionen der strukturierten Ausnahmebehandlung
 
-Die strukturierte Ausnahmebehandlung bietet zwei intrinsische Funktionen, die für die Verwendung mit der **Try-außer-** Anweisung verfügbar sind: `GetExceptionCode` und `GetExceptionInformation`.
+Die strukturierte Ausnahmebehandlung stellt zwei systeminterne Funktionen bereit, die mit der **try-except-Anweisung** verwendet werden können: [GetExceptionCode](/windows/win32/Debug/getexceptioncode) und [GetExceptionInformation](/windows/win32/Debug/getexceptioninformation).
 
-`GetExceptionCode` gibt den Code (eine 32-Bit-Ganzzahl) der Ausnahme zurück.
+`GetExceptionCode`gibt den Code (eine 32-Bit-Ganzzahl) der Ausnahme zurück.
 
-Die intrinsische Funktion `GetExceptionInformation` gibt einen Zeiger auf eine-Struktur zurück, die zusätzliche Informationen über die Ausnahme enthält. Mit diesem Zeiger können Sie auf den Computerzustand zugreifen, der zum Zeitpunkt einer Hardwareausnahme vorhanden war. Die Struktur sieht wie folgt aus:
+Die systeminterne Funktion `GetExceptionInformation` gibt einen Zeiger auf eine [EXCEPTION_POINTERS](/windows/win32/api/winnt/ns-winnt-exception_pointers) Struktur zurück, die zusätzliche Informationen über die Ausnahme enthält. Mit diesem Zeiger können Sie auf den Computerzustand zugreifen, der zum Zeitpunkt einer Hardwareausnahme vorhanden war. Die Struktur sieht wie folgt aus:
 
 ```cpp
 typedef struct _EXCEPTION_POINTERS {
@@ -100,13 +99,13 @@ typedef struct _EXCEPTION_POINTERS {
 } EXCEPTION_POINTERS, *PEXCEPTION_POINTERS;
 ```
 
-Die Zeiger Typen `PEXCEPTION_RECORD` und `PCONTEXT` werden in der Includedatei \<Winnt. h > definiert, und `_EXCEPTION_RECORD` und `_CONTEXT` werden in der Includedatei \<excpt. h definiert >
+Die Zeigertypen `PEXCEPTION_RECORD` `PCONTEXT` und sind in \<der Includedatei winnt.h> definiert und `_EXCEPTION_RECORD` `_CONTEXT` in der Includedatei \<excpt.h>
 
-Sie können `GetExceptionCode` innerhalb des Ausnahme Handlers verwenden. Allerdings können Sie `GetExceptionInformation` nur innerhalb des Ausnahme Filter Ausdrucks verwenden. Die Information, auf die verwiesen wird, befindet sich im Allgemeinen auf dem Stapel und ist nicht mehr verfügbar, wenn die Steuerung an den Ausnahmehandler übertragen wird.
+Sie können `GetExceptionCode` innerhalb des Ausnahmehandlers verwendet werden. Sie können jedoch `GetExceptionInformation` nur innerhalb des Ausnahmefilterausdrucks verwendet werden. Die Informationen, auf die es verweist, befinden sich im Allgemeinen auf dem Stapel und sind nicht mehr verfügbar, wenn das Steuerelement an den Ausnahmehandler übertragen wird.
 
-Die intrinsische Funktion `AbnormalTermination` ist innerhalb eines Beendigungs Handlers verfügbar. Gibt 0 zurück, wenn der Text der **Try-End-** Anweisung sequenziell beendet wird. In allen anderen Fällen wird 1 zurückgegeben.
+Die intrinsische Funktion [AbnormalTermination](/windows/win32/Debug/abnormaltermination) ist innerhalb eines Beendigungshandlers verfügbar. Es gibt 0 zurück, wenn der Text der **try-finally-Anweisung** sequenziell beendet wird. In allen anderen Fällen wird 1 zurückgegeben.
 
-excpt. h definiert einige alternative Namen für diese systeminternen Funktionen:
+\<excpt.h> definiert einige alternative Namen für diese systeminternen:
 
 `GetExceptionCode` entspricht `_exception_code`
 
@@ -178,10 +177,8 @@ in except
 world
 ```
 
-**Ende Microsoft-spezifisch**
+## <a name="see-also"></a>Siehe auch
 
-## <a name="see-also"></a>Weitere Informationen
-
-[Schreiben eines Ausnahme Handlers](../cpp/writing-an-exception-handler.md)<br/>
-[Strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
-[Schlüsselwörter](../cpp/keywords-cpp.md)
+[Schreiben eines Ausnahmehandlers](../cpp/writing-an-exception-handler.md)<br/>
+[Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)<br/>
+[Keywords](../cpp/keywords-cpp.md)

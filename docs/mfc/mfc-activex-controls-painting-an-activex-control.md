@@ -5,73 +5,73 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], painting
 - MFC ActiveX controls [MFC], optimizing
 ms.assetid: 25fff9c0-4dab-4704-aaae-8dfb1065dee3
-ms.openlocfilehash: b90aa331c289caf827785af2eeba037e70f686ab
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fd98af90e86b6b98a856e633e50c5bf266cc466a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62186878"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364585"
 ---
 # <a name="mfc-activex-controls-painting-an-activex-control"></a>MFC-ActiveX-Steuerelemente: Darstellen eines ActiveX-Steuerelements
 
-In diesem Artikel wird beschrieben, die ActiveX-Steuerelement gezeichnet werden und wie Sie ändern können, Paint-Code, um den Prozess zu optimieren. (Finden Sie unter [optimieren Steuerelements zeichnen](../mfc/optimizing-control-drawing.md) für Techniken zum Zeichnen zu optimieren, indem Sie einzeln Steuerelemente ohne zuvor ausgewählten GDI-Objekte wiederherstellen. Nachdem alle Steuerelemente gezeichnet wurden, kann die Container automatisch die ursprünglichen Objekte wiederhergestellt werden.)
+In diesem Artikel wird der ActiveX-Steuerelementlackierungsprozess beschrieben und erläutert, wie Sie Denlackcode ändern können, um den Prozess zu optimieren. ((Siehe Optimieren der [Steuerungszeichnung](../mfc/optimizing-control-drawing.md) für Techniken zum Optimieren der Zeichnung, indem Steuerelemente nicht einzeln wiederhergestellt werden, um zuvor ausgewählte GDI-Objekte wiederherzustellen. Nachdem alle Steuerelemente gezeichnet wurden, kann der Container die ursprünglichen Objekte automatisch wiederherstellen.)
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen zu moderne Technologien, die ActiveX-ablösen, finden Sie unter [ActiveX-Steuerelemente](activex-controls.md).
+> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
 
-Beispiele in diesem Artikel werden von einem Steuerelement, das von der MFC-ActiveX-Steuerelement-Assistenten mit Standardeinstellungen erstellt. Weitere Informationen zum Erstellen von Anwendungen Skelett-Steuerelements mit MFC-ActiveX-Steuerelement-Assistenten finden Sie im Artikel [MFC-ActiveX-Steuerelement-Assistent](../mfc/reference/mfc-activex-control-wizard.md).
+Beispiele in diesem Artikel sind ein Steuerelement, das vom MFC ActiveX Control Wizard mit Standardeinstellungen erstellt wurde. Weitere Informationen zum Erstellen einer Skelettsteuerungsanwendung mit dem MFC ActiveX Control Wizard finden Sie im Artikel [MFC ActiveX Control Wizard](../mfc/reference/mfc-activex-control-wizard.md).
 
-Die folgenden Themen werden behandelt:
+Die folgenden Themen werden erörtert:
 
-- [Der Gesamtprozess für das Zeichnen eines Steuerelements und der Code, der von der ActiveX-Steuerelement-Assistent zur Unterstützung der Darstellung erstellt](#_core_the_painting_process_of_an_activex_control)
+- [Der gesamte Prozess zum Malen eines Steuerelements und des Codes, der vom ActiveX Control Wizard zur Unterstützung des Lackierens erstellt wurde.](#_core_the_painting_process_of_an_activex_control)
 
-- [Gewusst wie: Optimieren des zeichnen-Vorgangs](#_core_optimizing_your_paint_code)
+- [So optimieren Sie den Lackierprozess](#_core_optimizing_your_paint_code)
 
-- [Gewusst wie: Zeichnen des Steuerelements mit Metadateien](#_core_painting_your_control_using_metafiles)
+- [So malen Sie Ihr Steuerelement mit Metadateien](#_core_painting_your_control_using_metafiles)
 
-##  <a name="_core_the_painting_process_of_an_activex_control"></a> Der Zeichnen-Prozess, der ein ActiveX-Steuerelement
+## <a name="the-painting-process-of-an-activex-control"></a><a name="_core_the_painting_process_of_an_activex_control"></a>Der Malprozess eines ActiveX-Steuerelements
 
-Wenn ActiveX-Steuerelemente zuerst angezeigt werden, oder neu gezeichnet werden, folgen sie einen zeichnen-Prozess ähnlich für andere Anwendungen, die entwickelt wurden, verwenden von MFC, mit einem wichtigen Unterschied: ActiveX-Steuerelemente können in einer aktiven oder inaktiven Status sein.
+Wenn ActiveX-Steuerelemente anfänglich angezeigt oder neu gezeichnet werden, folgen sie einem Malprozess, der anderen Anwendungen ähnelt, die mit MFC entwickelt wurden, mit einem wichtigen Unterschied: ActiveX-Steuerelemente können sich in einem aktiven oder inaktiven Zustand befinden.
 
-Ein aktives Steuerelement wird in einem ActiveX-Steuerelement-Container von einem untergeordneten Fenster dargestellt. Wie andere Windows ist es selbst zu zeichnen, wenn eine WM_PAINT-Meldung empfangen wird. Basisklasse des Steuerelements [COleControl](../mfc/reference/colecontrol-class.md), behandelt diese Meldung in die `OnPaint` Funktion. Diese Standardimplementierung Ruft die `OnDraw` Funktion des Steuerelements.
+Ein aktives Steuerelement wird in einem ActiveX-Steuerelementcontainer durch ein untergeordnetes Fenster dargestellt. Wie andere Fenster ist es für das Malen selbst verantwortlich, wenn eine WM_PAINT Nachricht empfangen wird. Die Basisklasse des Steuerelements, [COleControl](../mfc/reference/colecontrol-class.md), `OnPaint` verarbeitet diese Meldung in ihrer Funktion. Diese Standardimplementierung `OnDraw` ruft die Funktion Ihres Steuerelements auf.
 
-Ein Inaktives Steuerelement wird unterschiedlich gezeichnet. Wenn das Steuerelement aktiv ist, ist das Fenster nicht sichtbar oder nicht vorhanden ist, damit es keine zeichennachricht empfangen kann. Stattdessen ruft der Steuerelementcontainer direkt die `OnDraw` Funktion des Steuerelements. Dies unterscheidet sich von Zeichnen-Prozess in, das ein aktives Steuerelement die `OnPaint` Memberfunktion nie aufgerufen wird.
+Ein inaktives Steuerelement wird anders dargestellt. Wenn das Steuerelement inaktiv ist, ist das Fenster entweder unsichtbar oder nicht vorhanden, sodass es keine Paint-Nachricht empfangen kann. Stattdessen ruft der Steuerelementcontainer `OnDraw` direkt die Funktion des Steuerelements auf. Dies unterscheidet sich vom Malprozess eines `OnPaint` aktiven Steuerelements dadurch, dass die Memberfunktion nie aufgerufen wird.
 
-Wie in den vorherigen Absätzen erörtert, hängt wie ein ActiveX-Steuerelement aktualisiert wird, vom Zustand des Steuerelements. Aber da das Framework Ruft die `OnDraw` Memberfunktion in beiden Fällen fügen Sie die meisten den zeichnen-Code in diese Memberfunktion.
+Wie in den vorherigen Absätzen erläutert, hängt die Aktualisierung eines ActiveX-Steuerelements vom Status des Steuerelements ab. Da das Framework jedoch `OnDraw` in beiden Fällen die Memberfunktion aufruft, fügen Sie den Großteil des Malcodes in dieser Memberfunktion hinzu.
 
-Die `OnDraw` Member-Funktion behandelt das Zeichnen von Steuerelementen. Wenn ein Steuerelement nicht aktiv ist, ruft der Steuerelement-Container `OnDraw`, übergeben den Gerätekontext, der dem Steuerelementcontainer und die Koordinaten des rechteckigen Bereichs, der vom Steuerelement beansprucht wird.
+Die `OnDraw` Memberfunktion behandelt die Steuerungsmalerei. Wenn ein Steuerelement inaktiv ist, `OnDraw`ruft der Steuerelementcontainer auf, indem er den Gerätekontext des Steuerelementcontainers und die Koordinaten des rechteckigen Bereichs, der vom Steuerelement belegt wird, übergibt.
 
-Übergeben Sie das Rechteck durch das Framework die `OnDraw` Memberfunktion enthält des Bereichs, der vom Steuerelement. Wenn das Steuerelement aktiv ist, wird die oberen linken Ecke (0, 0) und der Gerätekontext, der übergeben wird, für das untergeordnete Fenster, das das Steuerelement enthält. Wenn das Steuerelement inaktiv ist, die linke obere Koordinate ist nicht unbedingt (0, 0) und der Gerätekontext, der übergeben wird, für den Steuerelementcontainer, die das Steuerelement enthält.
+Das Rechteck, das vom `OnDraw` Framework an die Memberfunktion übergeben wird, enthält den bereich, der vom Steuerelement belegt wird. Wenn das Steuerelement aktiv ist, ist die obere linke Ecke (0, 0) und der übergebene Gerätekontext ist für das untergeordnete Fenster, das das Steuerelement enthält. Wenn das Steuerelement inaktiv ist, ist die obere linke Koordinate nicht notwendigerweise (0, 0) und der übergebene Gerätekontext ist für den Steuerelementcontainer, der das Steuerelement enthält.
 
 > [!NOTE]
->  Es ist wichtig, Ihre Änderungen an `OnDraw` hängen nicht von des Rechtecks oberen linken Punkts ist gleich (0, 0) und an, dass Sie nur innerhalb des Rechtecks zeichnen `OnDraw`. Es können unerwartete Ergebnisse auftreten, wenn Sie über den Bereich des Rechtecks zeichnen.
+> Es ist wichtig, `OnDraw` dass Ihre Änderungen nicht davon abhängen, ob der obere linke Punkt des Rechtecks gleich `OnDraw`(0, 0) ist, und dass Sie nur innerhalb des Rechtecks zeichnen, das an übergeben wird. Unerwartete Ergebnisse können auftreten, wenn Sie über den Bereich des Rechtecks hinaus zeichnen.
 
-Die standardmäßige Implementierung von MFC-ActiveX-Steuerelement-Assistenten in der Implementierungsdatei des Steuerelements (. CPP), dargestellt im folgenden, zeichnet das Rechteck mit einem weißen Pinsel und füllt die Ellipse mit der aktuellen Hintergrundfarbe.
+Die Standardimplementierung, die vom MFC ActiveX Control Wizard in der Steuerelementimplementierungsdatei (. CPP), siehe unten, malt das Rechteck mit einem weißen Pinsel und füllt die Ellipse mit der aktuellen Hintergrundfarbe.
 
 [!code-cpp[NVC_MFC_AxUI#1](../mfc/codesnippet/cpp/mfc-activex-controls-painting-an-activex-control_1.cpp)]
 
 > [!NOTE]
->  Beim Zeichnen eines Steuerelements, sollten Sie keine Annahmen über den Zustand des Gerätekontexts, die als übergeben wird, die *Pdc* Parameter, um die `OnDraw` Funktion. Gelegentlich der Gerätekontext wird von der Container-Anwendung bereitgestellt und werden nicht unbedingt auf die Standardwerte initialisiert werden. Insbesondere wählen Sie explizit aus, die Stifte, Pinsel, Farben, Schriftarten und andere Ressourcen, denen Ihr Code zum Zeichnen von abhängig ist.
+> Beim Zeichnen eines Steuerelements sollten Sie keine Annahmen über den Zustand des Gerätekontexts `OnDraw` treffen, der als *pdc-Parameter* an die Funktion übergeben wird. Gelegentlich wird der Gerätekontext von der Containeranwendung bereitgestellt und nicht unbedingt in den Standardzustand initialisiert. Wählen Sie insbesondere explizit die Stifte, Pinsel, Farben, Schriftarten und andere Ressourcen aus, von denen Ihr Zeichencode abhängt.
 
-##  <a name="_core_optimizing_your_paint_code"></a> Optimieren des Zeichencodes
+## <a name="optimizing-your-paint-code"></a><a name="_core_optimizing_your_paint_code"></a>Optimieren Ihres Farbcodes
 
-Nachdem das Steuerelement selbst erfolgreich gezeichnet hat, der nächste Schritt ist die Optimierung der `OnDraw` Funktion.
+Nachdem das Steuerelement sich erfolgreich selbst gemalt hat, besteht der nächste Schritt darin, die `OnDraw` Funktion zu optimieren.
 
-Die standardmäßige Implementierung des ActiveX-Steuerelements zeichnen, zeichnet den gesamte Steuerelement-Bereich. Dies ist ausreichend für einfache Steuerelemente sind in vielen Fällen Neuzeichnen des Steuerelements allerdings schneller, wenn nur der Teil, der Aktualisierung benötigt neu wurde, statt das gesamte Steuerelement gezeichnet wurde.
+Die Standardimplementierung der ActiveX-Steuerelementlackierung zeichnet den gesamten Kontrollbereich. Dies ist für einfache Steuerelemente ausreichend, aber in vielen Fällen wäre das Neulackieren des Steuerelements schneller, wenn nur der Teil, der aktualisiert werden musste, anstelle des gesamten Steuerelements neu lackiert würde.
 
-Die `OnDraw` Funktion bietet eine einfache Methode der Optimierung durch Übergabe *RcInvalid*, den rechteckigen Bereich des Steuerelements, das Neuzeichnen benötigt. Verwenden Sie diesen Bereich, in der Regel kleiner als der gesamte Steuerelement-Bereich, um den zeichnen-Prozess zu beschleunigen.
+Die `OnDraw` Funktion bietet eine einfache Methode der Optimierung durch Übergeben *von rcInvalid*, der rechteckige Bereich des Steuerelements, das neu gezeichnet werden muss. Verwenden Sie diesen Bereich, der in der Regel kleiner als der gesamte Kontrollbereich ist, um den Lackiervorgang zu beschleunigen.
 
-##  <a name="_core_painting_your_control_using_metafiles"></a> Das Zeichnen des Steuerelements mit Metadateien
+## <a name="painting-your-control-using-metafiles"></a><a name="_core_painting_your_control_using_metafiles"></a>Malen Sie Ihr Steuerelement mit Metadateien
 
-In den meisten Fällen die *Pdc* Parameter, um die `OnDraw` Funktion verweist, für einen Bildschirm Gerätekontext (DC). Allerdings ist der Domänencontroller empfangen, für das Rendering bei Bilder des Steuerelements oder während einer Sitzung für die Seitenansicht drucken, eine besondere Art eine "Metadatei DC" aufgerufen. Im Gegensatz zu einem Bildschirm DC, der an sie gesendete Anforderungen sofort zu verarbeitet, speichert eine Metadatei DC Anforderungen zu einem späteren Zeitpunkt wiedergegeben werden. Einige containeranwendungen können auch mit einer Metadatei DC im Designmodus Bild für das Steuerelement zu rendern.
+In den meisten Fällen zeigt `OnDraw` der *pdc-Parameter* zur Funktion auf einen Bildschirmgerätekontext (DC). Beim Drucken von Bildern des Steuerelements oder während einer Druckvorschausitzung ist der für das Rendern empfangene Domänencontroller jedoch ein spezieller Typ, der als "Metadatei-DC" bezeichnet wird. Im Gegensatz zu einem Bildschirm-DC, der sofort an ihn gesendete Anforderungen verarbeitet, speichert ein Metadatei-DC Anforderungen, die zu einem späteren Zeitpunkt wiedergegeben werden sollen. Einige Containeranwendungen können das Steuerelementabbild auch mithilfe eines Metadatei-DC im Entwurfsmodus rendern.
 
-Metadatei Anforderungen zeichnen kann gemacht werden, indem der Container über zwei Funktionen: `IViewObject::Draw` (diese Funktion kann auch für nicht-Metadatei zeichnen aufgerufen werden) und `IDataObject::GetData`. Bei einer Metadatei, DC wird als einer der Parameter übergeben, das MFC-Framework ruft [OnDrawMetafile](../mfc/reference/colecontrol-class.md#ondrawmetafile). Da dies eine virtuelle Memberfunktion ist, überschreiben Sie diese Funktion in der Steuerelementklasse auf spezielle Verarbeitungsschritte ausführen. Das Standardverhalten ruft `COleControl::OnDraw`.
+Metadateizeichnungsanforderungen können vom Container über zwei `IViewObject::Draw` Schnittstellenfunktionen gestellt werden: (diese Funktion kann `IDataObject::GetData`auch für nicht-Metafile-Zeichnung aufgerufen werden) und . Wenn ein Metadatei-DC als einer der Parameter übergeben wird, ruft das MFC-Framework [COleControl::OnDrawMetafile](../mfc/reference/colecontrol-class.md#ondrawmetafile)auf. Da es sich um eine virtuelle Memberfunktion handelt, überschreiben Sie diese Funktion in der Steuerelementklasse, um eine spezielle Verarbeitung zu übernehmen. Das Standardverhalten `COleControl::OnDraw`ruft auf.
 
-Um sicherzustellen, dass das Steuerelement sowohl Bildschirm- und Metadatei geräteinhalten gezeichnet werden kann, müssen Sie nur die Member-Funktionen verwenden, die in einem Bildschirm und einer Metadatei DC unterstützt werden. Denken Sie daran, dass das Koordinatensystem nicht in Pixel gemessen werden kann.
+Um sicherzustellen, dass das Steuerelement sowohl in Bildschirm- als auch in Metadateigerätekontexten gezeichnet werden kann, dürfen Sie nur Memberfunktionen verwenden, die sowohl in einem Bildschirm als auch in einem Metadatei-DC unterstützt werden. Beachten Sie, dass das Koordinatensystem möglicherweise nicht in Pixeln gemessen wird.
 
-Da die standardmäßige Implementierung des `OnDrawMetafile` Aufrufe des Steuerelements `OnDraw` funktionieren, verwenden Sie nur Memberfunktionen, die für einen Gerätekontext für den Bildschirm, und einer Metadatei geeignet sind, es sei denn, Sie überschreiben `OnDrawMetafile`. Die folgende Liste enthält die Teilmenge der `CDC` Memberfunktionen, die in einer Metadatei und einen Bildschirm Gerätekontext verwendet werden können. Weitere Informationen zu diesen Funktionen finden Sie unter Klasse [CDC](../mfc/reference/cdc-class.md) in die *MFC-Referenz*.
+Da die Standardimplementierung von `OnDrawMetafile` Aufrufen `OnDraw` der Funktion des Steuerelements, verwenden Sie nur Memberfunktionen, die sowohl `OnDrawMetafile`für eine Metadatei als auch für einen Bildschirmgerätekontext geeignet sind, es sei denn, Sie überschreiben . Im Folgenden wird die `CDC` Teilmenge der Memberfunktionen aufgeführt, die sowohl in einer Metadatei als auch in einem Bildschirmgerätekontext verwendet werden können. Weitere Informationen zu diesen Funktionen finden Sie unter Klasse [CDC](../mfc/reference/cdc-class.md) in der *MFC-Referenz*.
 
-|Einen Bogen konvertiert.|BibBlt|Chord|
+|Arc|BibBlt|Chord|
 |---------|------------|-----------|
 |`Ellipse`|`Escape`|`ExcludeClipRect`|
 |`ExtTextOut`|`FloodFill`|`IntersectClipRect`|
@@ -88,25 +88,25 @@ Da die standardmäßige Implementierung des `OnDrawMetafile` Aufrufe des Steuere
 |`SetViewportOrg`|`SetWindowExt`|`SetWindowORg`|
 |`StretchBlt`|`TextOut`||
 
-Zusätzlich zu `CDC` Member-Funktionen, es gibt einige andere Funktionen, die in einer Metadatei DC kompatibel sind. Dazu gehören [: CPalette:: AnimatePalette](../mfc/reference/cpalette-class.md#animatepalette), [CFont::CreateFontIndirect](../mfc/reference/cfont-class.md#createfontindirect), und drei Memberfunktionen der `CBrush`: [CreateBrushIndirect](../mfc/reference/cbrush-class.md#createbrushindirect), [CreateDIBPatternBrush](../mfc/reference/cbrush-class.md#createdibpatternbrush), und [CreatePatternBrush](../mfc/reference/cbrush-class.md#createpatternbrush).
+Zusätzlich zu `CDC` den Memberfunktionen gibt es mehrere weitere Funktionen, die in einem Metadatei-DC kompatibel sind. Dazu gehören [CPalette::AnimatePalette](../mfc/reference/cpalette-class.md#animatepalette), [CFont::CreateFontIndirect](../mfc/reference/cfont-class.md#createfontindirect)und `CBrush`drei Memberfunktionen von : [CreateBrushIndirect](../mfc/reference/cbrush-class.md#createbrushindirect), [CreateDIBPatternBrush](../mfc/reference/cbrush-class.md#createdibpatternbrush)und [CreatePatternBrush](../mfc/reference/cbrush-class.md#createpatternbrush).
 
-Funktionen, die nicht in einer Metadatei aufgezeichnet werden, sind: [DrawFocusRect](../mfc/reference/cdc-class.md#drawfocusrect), [DrawIcon](../mfc/reference/cdc-class.md#drawicon), [DrawText](../mfc/reference/cdc-class.md#drawtext), [ExcludeUpdateRgn](../mfc/reference/cdc-class.md#excludeupdatergn), [FillRect](../mfc/reference/cdc-class.md#fillrect), [FrameRect](../mfc/reference/cdc-class.md#framerect), [GrayString](../mfc/reference/cdc-class.md#graystring), [InvertRect](../mfc/reference/cdc-class.md#invertrect), [ScrollDC](../mfc/reference/cdc-class.md#scrolldc), and [TabbedTextOut](../mfc/reference/cdc-class.md#tabbedtextout). Da eine Metadatei DC nicht tatsächlich von einem Gerät zugeordnet ist, können nicht Sie SetDIBits GetDIBits und CreateDIBitmap mit einer Metadatei DC verwenden. Sie können mit einer Metadatei DC SetDIBitsToDevice und StretchDIBits als Ziel verwenden. [CreateCompatibleDC](../mfc/reference/cdc-class.md#createcompatibledc), [CreateCompatibleBitmap](../mfc/reference/cbitmap-class.md#createcompatiblebitmap), und [CreateDiscardableBitmap](../mfc/reference/cbitmap-class.md#creatediscardablebitmap) sind nicht mit einer Metadatei DC sinnvoll.
+Funktionen, die nicht in einer Metadatei aufgezeichnet werden, sind: [DrawFocusRect](../mfc/reference/cdc-class.md#drawfocusrect), [DrawIcon](../mfc/reference/cdc-class.md#drawicon), [DrawText](../mfc/reference/cdc-class.md#drawtext), [ExcludeUpdateRgn](../mfc/reference/cdc-class.md#excludeupdatergn), [FillRect](../mfc/reference/cdc-class.md#fillrect), [FrameRect](../mfc/reference/cdc-class.md#framerect), [GrayString](../mfc/reference/cdc-class.md#graystring), [InvertRect](../mfc/reference/cdc-class.md#invertrect), [ScrollDC](../mfc/reference/cdc-class.md#scrolldc)und [TabbedTextOut](../mfc/reference/cdc-class.md#tabbedtextout). Da ein Metadatei-DC nicht tatsächlich einem Gerät zugeordnet ist, können Sie SetDIBits, GetDIBits und CreateDIBitmap nicht mit einem Metadatei-DC verwenden. Sie können SetDIBitsToDevice und StretchDIBits mit einem Metadatei-DC als Ziel verwenden. [CreateCompatibleDC](../mfc/reference/cdc-class.md#createcompatibledc), [CreateCompatibleBitmap](../mfc/reference/cbitmap-class.md#createcompatiblebitmap)und [CreateDiscardableBitmap](../mfc/reference/cbitmap-class.md#creatediscardablebitmap) sind mit einem Metadatei-DC nicht aussagekräftig.
 
-Ein weiterer wichtiger Aspekt bei Verwendung einer Metadatei Domänencontroller ist, dass das Koordinatensystem nicht in Pixel gemessen werden kann. Aus diesem Grund alle in Ihrem Code zum Zeichnen angepasst werden, muss damit er in das Rechteck passt an übergeben `OnDraw` in die *RcBounds* Parameter. Dies verhindert versehentliche Zeichnen außerhalb der Kontrolle, da *RcBounds* die Größe der das Fenster des Steuerelements darstellt.
+Ein weiterer Punkt, der bei der Verwendung eines Metadatei-DC zu berücksichtigen ist, ist, dass das Koordinatensystem möglicherweise nicht in Pixeln gemessen wird. Aus diesem Grund sollte der gesamte Zeichnungscode so `OnDraw` angepasst werden, dass er in das Rechteck passt, an das im Parameter *rcBounds* übergeben wird. Dadurch wird ein versehentliches Lackieren außerhalb des Steuerelements verhindert, da *rcBounds* die Größe des Fensters des Steuerelements darstellt.
 
-Nachdem Sie die Metadateirendering für das Steuerelement implementiert haben, verwenden Sie zum Testen der Metadatei Testcontainer. Informationen zum Zugriff auf den Testcontainer finden Sie unter [Testen von Eigenschaften und Ereignissen mit dem Testcontainer](../mfc/testing-properties-and-events-with-test-container.md) .
+Nachdem Sie das Metadateirendering für das Steuerelement implementiert haben, verwenden Sie Testcontainer, um die Metadatei zu testen. Informationen zum Zugriff auf den Testcontainer finden Sie unter [Testen von Eigenschaften und Ereignissen mit dem Testcontainer](../mfc/testing-properties-and-events-with-test-container.md) .
 
-#### <a name="to-test-the-controls-metafile-using-test-container"></a>So testen Sie die Metadatei des Steuerelements mit Test Container
+#### <a name="to-test-the-controls-metafile-using-test-container"></a>So testen Sie die Metadatei des Steuerelements mithilfe des Testcontainers
 
-1. Klicken Sie auf den Testcontainer **bearbeiten** Menü klicken Sie auf **neues Steuerelement einfügen**.
+1. Klicken Sie im Menü **Bearbeiten** des Testcontainers auf **Neues Steuerelement einfügen**.
 
-1. In der **neues Steuerelement einfügen** Feld, wählen Sie das Steuerelement aus, und klicken Sie auf **OK**.
+1. Wählen Sie im Feld **Neue Steuerung einfügen** das Steuerelement aus, und klicken Sie auf **OK**.
 
-   Das Steuerelement wird im Test-Container angezeigt.
+   Das Steuerelement wird im Testcontainer angezeigt.
 
-1. Auf der **Steuerelement** Menü klicken Sie auf **Metadatei**.
+1. Klicken Sie im Menü **Steuerung** auf **Metadatei zeichnen**.
 
-   Ein separates Fenster wird angezeigt, in dem die Metadatei angezeigt wird. Sie können ändern, dass die Größe des Fensters, um zu sehen, wie der Skalierung des Steuerelements Metadatei auswirkt. Sie können dieses Fenster jederzeit schließen.
+   Es wird ein separates Fenster angezeigt, in dem die Metadatei angezeigt wird. Sie können die Größe dieses Fensters ändern, um zu sehen, wie sich die Skalierung auf die Metadatei des Steuerelements auswirkt. Sie können dieses Fenster jederzeit schließen.
 
 ## <a name="see-also"></a>Siehe auch
 

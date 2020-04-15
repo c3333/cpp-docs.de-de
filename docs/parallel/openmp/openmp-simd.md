@@ -5,27 +5,27 @@ helpviewer_keywords:
 - SIMD
 - OpenMP in Visual C++, new features
 - explicit parallelization, new features
-ms.openlocfilehash: 52402aa553c6d68d3073aba26ecac7b784522ee9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 0a7f1142a3a432628795341f4885b76a5c144990
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62363270"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366449"
 ---
 # <a name="simd-extension"></a>SIMD-Erweiterung
 
-Visual C++ unterstützt derzeit die OpenMP 2.0-Standard, jedoch Visual Studio-2019 jetzt auch SIMD-Funktionen bietet.
+Visual C++ unterstützt derzeit den OpenMP 2.0-Standard, Aber Visual Studio 2019 bietet jetzt auch SIMD-Funktionalität.
 
 > [!NOTE]
-> Um SIMD zu verwenden, kompilieren Sie mit der `-openmp:experimental` Switch, die zusätzliche OpenMP-Funktionen nicht verfügbar bei Verwendung der `-openmp` wechseln.
+> Um SIMD zu verwenden, kompilieren Sie mit dem Switch, der `-openmp:experimental` zusätzliche OpenMP-Funktionen aktiviert, die bei Verwendung des `-openmp` Switches nicht verfügbar sind.
 >
-> Die `-openmp:experimental` Switch subsumes `-openmp`, d. h., alle OpenMP 2.0-Features sind enthalten, verwendet.
+> Der `-openmp:experimental` Schalter subsumiert, `-openmp`was bedeutet, dass alle OpenMP 2.0-Features in seiner Verwendung enthalten sind.
 
-Weitere Informationen finden Sie unter [SIMD-Erweiterung für C++ OpenMP in Visual Studio](https://devblogs.microsoft.com/cppblog/simd-extension-to-c-openmp-in-visual-studio/).
+Weitere Informationen finden Sie unter [SIMD-Erweiterung auf C++ OpenMP in Visual Studio](https://devblogs.microsoft.com/cppblog/simd-extension-to-c-openmp-in-visual-studio/).
 
-## <a name="openmp-simd-in-visual-c"></a>OpenMP-SIMD in visuellen ElementC++
+## <a name="openmp-simd-in-visual-c"></a>OpenMP SIMD in Visual C++
 
-OpenMP SIMD, eingeführt in 4.0 OpenMP standard, Ziele, die Vektor-freundliche Schleifen vornehmen. Mithilfe der `simd` Direktive, bevor Sie eine Schleife, der Compiler kann vektorabhängigkeiten zu ignorieren, die Schleife als Vektor-freundliche wie möglich und berücksichtigen Sie die Absicht des Benutzers müssen mehrere Schleifeniterationen, die gleichzeitig ausgeführt.
+OpenMP SIMD, eingeführt im OpenMP 4.0-Standard, zielt auf vektorfreundliche Schleifen ab. Durch die `simd` Verwendung der Direktive vor einer Schleife kann der Compiler Vektorabhängigkeiten ignorieren, die Schleife so vektorfreundlich wie möglich gestalten und die Absicht der Benutzer respektieren, mehrere Schleifeniterationen gleichzeitig auszuführen.
 
 ```c
     #pragma omp simd
@@ -37,15 +37,15 @@ OpenMP SIMD, eingeführt in 4.0 OpenMP standard, Ziele, die Vektor-freundliche S
     }
 ```
 
-Visual C++ bietet ähnliche nicht OpenMP-Schleife-Pragmas wie `#pragma vector` und `#pragma ivdep`, jedoch mit OpenMP SIMD, der Compiler mehrere, z. B. möglich:
+Visual C++ bietet ähnliche Nicht-OpenMP-Schleifen-Pragmas wie `#pragma vector` und `#pragma ivdep`, aber mit OpenMP SIMD kann der Compiler mehr tun, wie:
 
-- Darf stets vorhanden vektorabhängigkeiten ignorieren.
-- `/fp:fast` ist innerhalb der Schleife aktiviert werden.
-- Äußere Schleife und Schleifen mit Funktionsaufrufen sind geeignete Vektor.
-- Geschachtelte Schleifen können in einer Schleife vereinigt und Vektor-freundliche vorgenommen werden.
-- Hybrid-Beschleunigung mit `#pragma omp for simd` undifferenzierte Multithreading und detaillierte Vektoren zu aktivieren.  
+- Immer zulässig, um vorhandene Vektorabhängigkeiten zu ignorieren.
+- `/fp:fast`ist innerhalb der Schleife aktiviert.
+- Äußere Schleifen und Schleifen mit Funktionsaufrufen sind vektorfreundlich.
+- Verschachtelte Schleifen können zu einer Schleife zusammengezwickt und vektorfreundlich gemacht werden.
+- Hybridbeschleunigung `#pragma omp for simd` mit zur Ermöglichung grobkörniger Multithreading- und Feinkornvektoren.  
 
-Vector-freundliche Schleifen bleibt der Compiler im Hintergrund, wenn Sie ein Support-Vector-Log-Schalter verwenden:
+Bei vektorfreundlichen Schleifen bleibt der Compiler stumm, es sei denn, Sie verwenden einen Vektorunterstützungsprotokollschalter:
 
 ```cmd
     cl -O2 -openmp:experimental -Qvec-report:2 mycode.cpp
@@ -57,7 +57,7 @@ Vector-freundliche Schleifen bleibt der Compiler im Hintergrund, wenn Sie ein Su
     mycode.cpp(96) : info C5001: Omp simd loop vectorized
 ```
 
-For-Schleifen für nicht-Vektor-Friendly gibt der Compiler jeweils eine Nachricht:
+Bei nicht vektorfreundlichen Schleifen gibt der Compiler jeweils eine Meldung aus:
 
 ```cmd
     cl -O2 -openmp:experimental mycode.cpp
@@ -70,23 +70,23 @@ For-Schleifen für nicht-Vektor-Friendly gibt der Compiler jeweils eine Nachrich
 
 ### <a name="clauses"></a>Klauseln
 
-Die OpenMP SIMD-Direktive kann auch die folgenden Klauseln zur Verbesserung der Vector-Support nutzen:
+Die OpenMP SIMD-Direktive kann auch die folgenden Klauseln verwenden, um die Vektorunterstützung zu verbessern:
 
-|Direktive|Beschreibung|
+|Direktive|BESCHREIBUNG|
 |---|---|
-|`simdlen(length)`|Geben Sie die Anzahl der Bereiche des Vektors.|
-|`safelen(length)`|Geben Sie die Entfernung der Vector-Abhängigkeit.|
-|`linear(list[ : linear-step]`)|Die lineare Zuordnung schleifeninduktionsvariable Array-Abonnement.|
+|`simdlen(length)`|Geben Sie die Anzahl der Vektorspuren an.|
+|`safelen(length)`|Geben Sie den Vektorabhängigkeitsabstand an.|
+|`linear(list[ : linear-step]`)|Die lineare Zuordnung von der Schleifeninduktionsvariablen zum Arrayabonnement.|
 |`aligned(list[ : alignment])`|Die Ausrichtung der Daten.|
-|`private(list)`|Geben Sie die Daten Privatisierung.|
-|`lastprivate(list)`|Geben Sie Daten Privatisierung, mit der endgültigen Wert aus der letzten Iteration.|
-|`reduction(reduction-identifier:list)`|Geben Sie benutzerdefinierte Reduction-Vorgänge.|
-|`collapse(n)`|Zusammenfügenden Schleife schachteln.|
+|`private(list)`|Geben Sie die Datenprivatisierung an.|
+|`lastprivate(list)`|Geben Sie die Datenprivatisierung mit dem endgültigen Wert aus der letzten Iteration an.|
+|`reduction(reduction-identifier:list)`|Geben Sie benutzerdefinierte Reduktionsvorgänge an.|
+|`collapse(n)`|Coalescing Loop Nest.|
 
 > [!NOTE]
-> Nicht-ab-SIMD-Klauseln werden analysiert und vom Compiler eine Warnung ignoriert wird.
+> Nicht effektive SIMD-Klauseln werden vom Compiler mit einer Warnung analysiert und ignoriert.
 >
-> Verwenden Sie z. B. der folgende Codeprobleme eine Warnung:
+> Die Verwendung des folgenden Codes gibt z. B. eine Warnung aus:
 >
 > ```c
 >    #pragma omp simd simdlen(8)
@@ -104,9 +104,9 @@ Die OpenMP SIMD-Direktive kann auch die folgenden Klauseln zur Verbesserung der 
 
 ### <a name="example"></a>Beispiel
   
-Die Direktive von OpenMP SIMD bietet Benutzern eine Möglichkeit zum Festlegen der Compiler stellen Schleifen Vektor geeignet. Benutzer möchten, durch das Hinzufügen einer Schleife mit OpenMP SIMD-Direktive, müssen mehrere Schleifeniterationen, die gleichzeitig ausgeführt.
+Die OpenMP SIMD-Direktive bietet Benutzern eine Möglichkeit, den Compiler zu diktieren, schleifen vektorfreundlich zu machen. Durch Kommentieren einer Schleife mit der OpenMP SIMD-Direktive beabsichtigen Benutzer, mehrere Schleifeniterationen gleichzeitig ausführen zu lassen.
 
-Beispielsweise wird die folgende Schleife mit OpenMP SIMD-Direktive versehen. Es ist keine perfekte Parallelität zwischen Schleifeniterationen da rückwärts Abhängigkeit von einer [i] in einen [i-1], aber aufgrund der SIMD-Direktive, die der Compiler zum Packen von aufeinander folgenden Iterationen von der ersten Anweisung in einem Vektor-Anweisung, und führen Sie immer noch möglich ist Diese parallel.
+Die folgende Schleife wird z. B. mit der OpenMP SIMD-Direktive mit Anmerkungen angezeigt. Es gibt keine perfekte Parallelität zwischen Schleifeniterationen, da es eine Rückwärtsabhängigkeit von a[i] zu a[i-1] gibt, aber aufgrund der SIMD-Direktive ist es dem Compiler weiterhin erlaubt, aufeinander folgende Iterationen der ersten Anweisung in eine Vektoranweisung zu packen und parallel auszuführen.
 
 ```c
     #pragma omp simd
@@ -118,7 +118,7 @@ Beispielsweise wird die folgende Schleife mit OpenMP SIMD-Direktive versehen. Es
     }
 ```
 
-Daher folgendermaßen transformierte Vektor der Schleife ist **rechtliche** da der Compiler das sequenzielle Verhalten von jeder ursprüngliche Schleifeniteration beibehält. Das heißt, `a[i]` ausgeführt wird, nachdem `a[-1]`, `b[i]` ist nach `a[i]` und der Aufruf von `bar` zuletzt geschieht.
+Daher ist die folgende transformierte Vektorform der Schleife **zulässig,** da der Compiler das sequenzielle Verhalten jeder ursprünglichen Schleifeniteration beibehält. Mit anderen `a[i]` Worten, wird `a[-1]` `b[i]` nach `a[i]` ausgeführt, ist `bar` nach und der Aufruf zu geschieht zuletzt.
 
 ```c
     for (i = 0; i < count; i+=4)
@@ -132,7 +132,7 @@ Daher folgendermaßen transformierte Vektor der Schleife ist **rechtliche** da d
     }
 ```
 
-Hat **unzulässige** zum Verschieben der Speicherverweis `*c` aus der Schleife, wenn sie Aliasnamen dürfen die `a[i]` oder `b[i]`. Es ist auch nicht zulässig, die Anweisungen innerhalb einer ursprünglichen Iteration neu anzuordnen, wenn sie die sequenzielle Abhängigkeit unterbrochen. Die folgende transformierte Schleife ist z. B. nicht zulässig:
+Es ist **nicht legal,** den `*c` Speicherverweis aus der Schleife `a[i]` `b[i]`zu verschieben, wenn er alias mit oder sein kann. Es ist auch nicht legal, die Anweisungen in einer ursprünglichen Iteration neu anzuordnen, wenn die sequenzielle Abhängigkeit unterbrochen wird. Die folgende transformierte Schleife ist z. B. nicht legal:
 
 ```c
     c = b;
@@ -150,4 +150,4 @@ Hat **unzulässige** zum Verschieben der Speicherverweis `*c` aus der Schleife, 
 
 ## <a name="see-also"></a>Siehe auch
 
-[/openmp (OpenMP 2.0-Unterstützung aktivieren)](../../build/reference/openmp-enable-openmp-2-0-support.md)<br/>
+[/openmp (Aktivieren der OpenMP 2.0-Unterstützung)](../../build/reference/openmp-enable-openmp-2-0-support.md)<br/>

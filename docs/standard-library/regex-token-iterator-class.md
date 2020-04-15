@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::regex_token_iterator [C++], pointer
 - std::regex_token_iterator [C++], reference
 ms.assetid: a213ba48-8e4e-4b6b-871a-2637acf05f15
-ms.openlocfilehash: 57fac1d9d5c73c2644a679402809933290dd3fc3
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 5ada2ad69cbcac15e09968045e54095dfb2623d1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689055"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366401"
 ---
 # <a name="regex_token_iterator-class"></a>regex_token_iterator-Klasse
 
@@ -45,18 +45,18 @@ class regex_token_iterator
 
 ## <a name="parameters"></a>Parameter
 
-*Bidit* -\
+*BidIt*\
 Der Itertatortyp für Teilübereinstimmungen.
 
-*Elem* -\
+*Elem*\
 Der zu entsprechende Elementtyp.
 
-*Rxcharakteristika* -\
+*RXtraits*\
 Merkmalklasse für Elemente.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Klassen Vorlage beschreibt ein konstantes Forward-Iteratorobjekt. Vom Konzept her enthält sie ein `regex_iterator` -Objekt, das in der Klasse verwendet wird, um in einer Zeichenfolge nach Übereinstimmungen eines regulären Ausdrucks zu suchen. In der Klasse werden Objekte des Typs `sub_match<BidIt>` extrahiert, die den Teilübereinstimmungen entsprechen, die durch die Indexwerte im gespeicherten Vektor `subs` für jede Übereinstimmung des regulären Ausdrucks gekennzeichnet sind.
+Die Klassenvorlage beschreibt ein konstantes Vorwärts-Iteratorobjekt. Vom Konzept her enthält sie ein `regex_iterator` -Objekt, das in der Klasse verwendet wird, um in einer Zeichenfolge nach Übereinstimmungen eines regulären Ausdrucks zu suchen. In der Klasse werden Objekte des Typs `sub_match<BidIt>` extrahiert, die den Teilübereinstimmungen entsprechen, die durch die Indexwerte im gespeicherten Vektor `subs` für jede Übereinstimmung des regulären Ausdrucks gekennzeichnet sind.
 
 Der Indexwert -1 kennzeichnet die Zeichenfolge, die unmittelbar nach dem Ende der vorherigen Übereinstimmung des regulären Ausdrucks oder, wenn es keine vorherige Übereinstimmung eines regulären Ausdrucks gab, am Anfang der Zeichenfolge beginnt und sich, ohne es zu enthalten, bis zum ersten Zeichen der aktuellen Übereinstimmung des regulären Ausdrucks oder bis zum Ende der Zeichenfolge erstreckt, wenn es keine aktuelle Übereinstimmung gibt. Jeder andere Indexwert `idx` kennzeichnet die Inhalte der Erfassungsgruppe, die in `it.match[idx]`enthalten ist.
 
@@ -70,30 +70,30 @@ Der Indexwert -1 kennzeichnet die Zeichenfolge, die unmittelbar nach dem Ende de
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[regex_token_iterator](#regex_token_iterator)|Erstellt den Iterator.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[difference_type](#difference_type)|Der Typ einer Iteratordifferenz.|
-|[iterator_category](#iterator_category)|Der Typ der Iteratorkategorie.|
+|[Iterator_category](#iterator_category)|Der Typ der Iteratorkategorie.|
 |[Zeiger](#pointer)|Der Typ eines Zeigers auf eine Übereinstimmung.|
-|[reference](#reference)|Der Typ eines Verweises auf eine Teilübereinstimmung.|
+|[Verweis](#reference)|Der Typ eines Verweises auf eine Teilübereinstimmung.|
 |[regex_type](#regex_type)|Der Typ des regulären Ausdrucks, der übereinstimmen soll.|
-|[value_type](#value_type)|Der Typ einer Teilübereinstimmung.|
+|[Value_type](#value_type)|Der Typ einer Teilübereinstimmung.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[Operator!=](#op_neq)|Vergleicht Iteratoren auf Ungleichheit.|
-|[operator*](#op_star)|Greift auf die gekennzeichnete Teilübereinstimmung zu.|
-|[operator++](#op_add_add)|Erhöht den Iterator.|
-|[operator==](#op_eq_eq)|Vergleicht Iteratoren auf Gleichheit.|
-|[operator->](#op_arrow)|Greift auf die gekennzeichnete Teilübereinstimmung zu.|
+|[Operator*](#op_star)|Greift auf die gekennzeichnete Teilübereinstimmung zu.|
+|[Operator++](#op_add_add)|Erhöht den Iterator.|
+|[Betreiber== Einzelnachweise ==](#op_eq_eq)|Vergleicht Iteratoren auf Gleichheit.|
+|[Operator->](#op_arrow)|Greift auf die gekennzeichnete Teilübereinstimmung zu.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -197,7 +197,7 @@ match == aa
 match == z
 ```
 
-## <a name="difference_type"></a> regex_token_iterator::difference_type
+## <a name="regex_token_iteratordifference_type"></a><a name="difference_type"></a>regex_token_iterator::difference_type
 
 Der Typ einer Iteratordifferenz.
 
@@ -205,11 +205,11 @@ Der Typ einer Iteratordifferenz.
 typedef std::ptrdiff_t difference_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `std::ptrdiff_t`.
 
-## <a name="iterator_category"></a> regex_token_iterator::iterator_category
+## <a name="regex_token_iteratoriterator_category"></a><a name="iterator_category"></a>regex_token_iterator::iterator_category
 
 Der Typ der Iteratorkategorie.
 
@@ -217,11 +217,11 @@ Der Typ der Iteratorkategorie.
 typedef std::forward_iterator_tag iterator_category;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `std::forward_iterator_tag`.
 
-## <a name="op_neq"></a> regex_token_iterator::operator!=
+## <a name="regex_token_iteratoroperator"></a><a name="op_neq"></a>regex_token_iterator::Operator!=
 
 Vergleicht Iteratoren auf Ungleichheit.
 
@@ -231,14 +231,14 @@ bool operator!=(const regex_token_iterator& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Der Iterator für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt `!(*this == right)`zurück.
+Die Memberfunktion gibt `!(*this == right)` zurück.
 
-## <a name="op_star"></a> regex_token_iterator::operator*
+## <a name="regex_token_iteratoroperator"></a><a name="op_star"></a>regex_token_iterator::Operator*
 
 Greift auf die gekennzeichnete Teilübereinstimmung zu.
 
@@ -246,11 +246,11 @@ Greift auf die gekennzeichnete Teilübereinstimmung zu.
 const sub_match<BidIt>& operator*();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt ein `sub_match<BidIt>` -Objekt zurück, das der Erfassungsgruppe entspricht, die durch den Indexwert `subs[pos]`gekennzeichnet ist.
 
-## <a name="op_add_add"></a> regex_token_iterator::operator++
+## <a name="regex_token_iteratoroperator"></a><a name="op_add_add"></a>regex_token_iterator::operator++
 
 Erhöht den Iterator.
 
@@ -260,13 +260,13 @@ regex_token_iterator& operator++();
 regex_token_iterator& operator++(int);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der gespeicherte Iterator `it` ein Iterator am Ende der Sequenz ist, legt der erste Operator den gespeicherten Wert `pos` auf den Wert von `subs.size()` fest (wodurch er ein Iterator am Ende der Sequenz wird). Andernfalls erhöht der Operator den gespeicherten Wert `pos`. Wenn das Ergebnis dem Wert `subs.size()` entspricht, wird der gespeicherte Wert `pos` auf 0 (null) festgelegt und der gespeicherte Iterator `it` wird erhöht. Wenn beim Inkrementieren der gespeicherte Iterator keinem Iterator am Ende der Sequenz entspricht, führt der Operator keine weitere Aktion aus. Andernfalls, wenn das Ende der vorherigen Übereinstimmung sich am Ende der Zeichenfolge befand, legt der Operator den gespeicherten Wert von `pos` auf `subs.size()` fest. Andernfalls erhöht der Operator wiederholt den gespeicherten Wert `pos` bis auf `pos == subs.size()` oder `subs[pos] == -1` (wodurch sichergestellt wird, dass die nächste Dereferenzierung des Iterators das Ende der Zeichenfolge zurückgibt, wenn einer der Indexwerte -1 ist). In allen Fällen gibt der Operator das Objekt zurück.
 
 Der zweite Operator erstellt eine Kopie des Objekts, erhöht das Objekt und gibt dann die Kopie zurück.
 
-## <a name="op_eq_eq"></a> regex_token_iterator::operator==
+## <a name="regex_token_iteratoroperator"></a><a name="op_eq_eq"></a>regex_token_iterator::Operator==
 
 Vergleicht Iteratoren auf Gleichheit.
 
@@ -276,14 +276,14 @@ bool operator==(const regex_token_iterator& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Der Iterator für den Vergleich.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt `it == right.it && subs == right.subs && pos == right.pos`zurück.
+Die Memberfunktion gibt `it == right.it && subs == right.subs && pos == right.pos` zurück.
 
-## <a name="op_arrow"></a> regex_token_iterator::operator-&gt;
+## <a name="regex_token_iteratoroperator-gt"></a><a name="op_arrow"></a>regex_token_iterator::Operator-&gt;
 
 Greift auf die gekennzeichnete Teilübereinstimmung zu.
 
@@ -291,11 +291,11 @@ Greift auf die gekennzeichnete Teilübereinstimmung zu.
 const sub_match<BidIt> * operator->();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt einen Zeiger auf ein `sub_match<BidIt>` -Objekt zurück, das der Erfassungsgruppe entspricht, die durch den Indexwert `subs[pos]`gekennzeichnet ist.
 
-## <a name="pointer"></a> regex_token_iterator::pointer
+## <a name="regex_token_iteratorpointer"></a><a name="pointer"></a>regex_token_iterator::pointer
 
 Der Typ eines Zeigers auf eine Übereinstimmung.
 
@@ -303,11 +303,11 @@ Der Typ eines Zeigers auf eine Übereinstimmung.
 typedef sub_match<BidIt> *pointer;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `sub_match<BidIt>*`, wobei `BidIt` der Vorlagenparameter ist.
 
-## <a name="reference"></a> regex_token_iterator::reference
+## <a name="regex_token_iteratorreference"></a><a name="reference"></a>regex_token_iterator::Referenz
 
 Der Typ eines Verweises auf eine Teilübereinstimmung.
 
@@ -315,11 +315,11 @@ Der Typ eines Verweises auf eine Teilübereinstimmung.
 typedef sub_match<BidIt>& reference;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `sub_match<BidIt>&`, wobei `BidIt` der Vorlagenparameter ist.
 
-## <a name="regex_token_iterator"></a> regex_token_iterator::regex_token_iterator
+## <a name="regex_token_iteratorregex_token_iterator"></a><a name="regex_token_iterator"></a>regex_token_iterator::regex_token_iterator
 
 Erstellt den Iterator.
 
@@ -342,19 +342,19 @@ regex_token_iterator(BidIt first, BidIt last,
 
 ### <a name="parameters"></a>Parameter
 
-*erste* \
+*Ersten*\
 Anfang der Sequenz, die übereinstimmen soll.
 
-*Letzter* \
+*letzte*\
 Ende der Sequenz, die übereinstimmen soll.
 
-*erneut* \
+*Re*\
 Regulärer Ausdruck für Übereinstimmungen.
 
-*f* -\
+*F*\
 Flags für Übereinstimmungen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der erste Konstruktor erstellt einen Sequenzende-Iterator.
 
@@ -364,7 +364,7 @@ Der dritte Konstruktor erstellt ein Objekt, dessen gespeicherter Iterator `it` a
 
 Der vierte Konstruktor erstellt ein Objekt, dessen gespeicherter Iterator `it` auf `regex_iterator<BidIt, Elem, RXtraits>(first, last, re, f)`initialisiert wird, dessen gespeicherter Vektor `subs` die `N` Werte enthält, auf die das Konstruktorargument `submatches`zeigt, und dessen gespeicherter Wert `pos` gleich 0 (null) ist.
 
-## <a name="regex_type"></a> regex_token_iterator::regex_type
+## <a name="regex_token_iteratorregex_type"></a><a name="regex_type"></a>regex_token_iterator::regex_type
 
 Der Typ des regulären Ausdrucks, der übereinstimmen soll.
 
@@ -372,11 +372,11 @@ Der Typ des regulären Ausdrucks, der übereinstimmen soll.
 typedef basic_regex<Elem, RXtraits> regex_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Typedef ist ein Synonym für `basic_regex<Elem, RXtraits>`.
 
-## <a name="value_type"></a> regex_token_iterator::value_type
+## <a name="regex_token_iteratorvalue_type"></a><a name="value_type"></a>regex_token_iterator::value_type
 
 Der Typ einer Teilübereinstimmung.
 
@@ -384,17 +384,17 @@ Der Typ einer Teilübereinstimmung.
 typedef sub_match<BidIt> value_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `sub_match<BidIt>`, wobei `BidIt` der Vorlagenparameter ist.
 
 ## <a name="see-also"></a>Siehe auch
 
 [\<regex>](../standard-library/regex.md)\
-[regex_constants-Klasse](../standard-library/regex-constants-class.md) \
-[regex_error-Klasse](../standard-library/regex-error-class.md) \
-[\<regex > Funktionen](../standard-library/regex-functions.md) \
-[regex_iterator-Klasse](../standard-library/regex-iterator-class.md) \
-[\<regex > Operatoren](../standard-library/regex-operators.md) \
-[regex_traits-Klasse](../standard-library/regex-traits-class.md) \
-[\<regex>-Typdefinitionen](../standard-library/regex-typedefs.md)
+[regex_constants-Klasse](../standard-library/regex-constants-class.md)\
+[regex_error-Klasse](../standard-library/regex-error-class.md)\
+[\<regex> Funktionen](../standard-library/regex-functions.md)\
+[regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
+[\<regex> Operatoren](../standard-library/regex-operators.md)\
+[regex_traits-Klasse](../standard-library/regex-traits-class.md)\
+[\<regex> typedefs](../standard-library/regex-typedefs.md)

@@ -34,16 +34,16 @@ helpviewer_keywords:
 - CFontDialog [MFC], IsUnderline
 - CFontDialog [MFC], m_cf
 ms.assetid: 6228d500-ed0f-4156-81e5-ab0d57d1dcf4
-ms.openlocfilehash: c0d0c37d055d9b337f7b709b4ee3d299daae7658
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 6ece239496def9fd65a95a622ac3c475fe5becea
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70741557"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81373827"
 ---
 # <a name="cfontdialog-class"></a>CFontDialog-Klasse
 
-Ermöglicht es Ihnen, ein Dialogfeld für die Schriftart Auswahl in Ihre Anwendung einzubinden.
+Ermöglicht es Ihnen, ein Dialogfeld für die Schriftartauswahl in Ihre Anwendung zu integrieren.
 
 ## <a name="syntax"></a>Syntax
 
@@ -55,58 +55,58 @@ class CFontDialog : public CCommonDialog
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFontDialog::CFontDialog](#cfontdialog)|Erstellt ein `CFontDialog`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFontDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl vorzunehmen.|
-|[CFontDialog::GetCharFormat](#getcharformat)|Ruft die Zeichen Formatierung der ausgewählten Schriftart ab.|
+|[CFontDialog::DoModal](#domodal)|Zeigt das Dialogfeld an und ermöglicht es dem Benutzer, eine Auswahl zu treffen.|
+|[CFontDialog::GetCharFormat](#getcharformat)|Ruft die Zeichenformatierung der ausgewählten Schriftart ab.|
 |[CFontDialog::GetColor](#getcolor)|Gibt die Farbe der ausgewählten Schriftart zurück.|
-|[CFontDialog::GetCurrentFont](#getcurrentfont)|Weist die Merkmale der aktuell ausgewählten Schriftart einer `LOGFONT` -Struktur zu.|
-|[CFontDialog::GetFaceName](#getfacename)|Gibt den Namen der Vorderseite der ausgewählten Schriftart zurück.|
+|[CFontDialog::GetCurrentFont](#getcurrentfont)|Weist die Merkmale der aktuell ausgewählten `LOGFONT` Schriftart einer Struktur zu.|
+|[CFontDialog::GetFaceName](#getfacename)|Gibt den Flächennamen der ausgewählten Schriftart zurück.|
 |[CFontDialog::GetSize](#getsize)|Gibt die Punktgröße der ausgewählten Schriftart zurück.|
-|[CFontDialog::GetStyleName](#getstylename)|Gibt den Format Namen der ausgewählten Schriftart zurück.|
+|[CFontDialog::GetStyleName](#getstylename)|Gibt den Stilnamen der ausgewählten Schriftart zurück.|
 |[CFontDialog::GetWeight](#getweight)|Gibt die Gewichtung der ausgewählten Schriftart zurück.|
-|[CFontDialog::IsBold](#isbold)|Bestimmt, ob die Schriftart fett formatiert ist.|
-|[CFontDialog::IsItalic](#isitalic)|Bestimmt, ob die Schriftart kursiv formatiert ist.|
-|[CFontDialog::IsStrikeOut](#isstrikeout)|Bestimmt, ob die Schriftart mit Strichen angezeigt wird.|
+|[CfontDialog::IsBold](#isbold)|Bestimmt, ob die Schriftart fett formatiert ist.|
+|[CFontDialog::IsItalic](#isitalic)|Bestimmt, ob die Schriftart kursiv ist.|
+|[CfontDialog::IsStrikeOut](#isstrikeout)|Bestimmt, ob die Schriftart mit Strikeout angezeigt wird.|
 |[CFontDialog::IsUnderline](#isunderline)|Bestimmt, ob die Schriftart unterstrichen ist.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CFontDialog::m_cf](#m_cf)|Eine-Struktur, mit der `CFontDialog` ein-Objekt angepasst wird.|
+|[CFontDialog::m_cf](#m_cf)|Eine Struktur, die `CFontDialog` zum Anpassen eines Objekts verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein `CFontDialog` -Objekt ist ein Dialogfeld mit einer Liste von Schriftarten, die derzeit im System installiert sind. Der Benutzer kann eine bestimmte Schriftart aus der Liste auswählen, und diese Auswahl wird dann an die Anwendung zurückgemeldet.
+Ein `CFontDialog` Objekt ist ein Dialogfeld mit einer Liste von Schriftarten, die derzeit im System installiert sind. Der Benutzer kann eine bestimmte Schriftart aus der Liste auswählen, und diese Auswahl wird dann an die Anwendung zurückgemeldet.
 
-Verwenden Sie zum `CFontDialog` Erstellen eines-Objekts den bereitgestellten Konstruktor, oder leiten Sie eine neue Unterklasse ab, und verwenden Sie Ihren eigenen benutzerdefinierten Konstruktor.
+Um ein `CFontDialog` Objekt zu erstellen, verwenden Sie den bereitgestellten Konstruktor oder leiten Sie eine neue Unterklasse ab, und verwenden Sie einen eigenen benutzerdefinierten Konstruktor.
 
-Sobald ein `CFontDialog` -Objekt erstellt wurde, können Sie die- `m_cf` Struktur verwenden, um die Werte oder Zustände von Steuerelementen im Dialogfeld zu initialisieren. Die [m_cf](#m_cf) -Struktur ist vom Typ " [chooabfont](/windows/win32/api/commdlg/ns-commdlg-choosefontw)". Weitere Informationen zu dieser Struktur finden Sie in der Windows SDK.
+Nachdem `CFontDialog` ein Objekt erstellt wurde, `m_cf` können Sie die Struktur verwenden, um die Werte oder Zustände von Steuerelementen im Dialogfeld zu initialisieren. Die [m_cf](#m_cf) Struktur vom Typ [CHOOSEFONT](/windows/win32/api/commdlg/ns-commdlg-choosefontw). Weitere Informationen zu dieser Struktur finden Sie im Windows SDK.
 
-Nachdem Sie die Steuerelemente des Dialog Felds initialisiert haben `DoModal` , können Sie die Member-Funktion aufrufen, um das Dialogfeld anzuzeigen und dem Benutzer zu ermöglichen, eine Schriftart auszuwählen. `DoModal`Gibt zurück, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat.
+Rufen Sie nach dem Initialisieren der `DoModal` Steuerelemente des Dialogobjekts die Memberfunktion auf, um das Dialogfeld anzuzeigen, und ermöglichen Sie dem Benutzer, eine Schriftart auszuwählen. `DoModal`gibt an, ob der Benutzer die Schaltfläche OK (IDOK) oder Abbrechen (IDCANCEL) ausgewählt hat.
 
-Wenn `DoModal` IDOK zurückgibt, können Sie eine der `CFontDialog`-Member-Funktionen verwenden, um die vom Benutzer eingegebenen Informationen abzurufen.
+Wenn `DoModal` IDOK zurückgegeben wird, `CFontDialog`können Sie eine der Memberfunktionen von verwenden, um die vom Benutzer eingegebenen Informationen abzurufen.
 
-Mit der Windows-Funktion [commdlgextendederror](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) können Sie feststellen, ob ein Fehler während der Initialisierung des Dialog Felds aufgetreten ist, und weitere Informationen zu diesem Fehler erhalten. Weitere Informationen zu dieser Funktion finden Sie in der Windows SDK.
+Sie können die Windows [CommDlgExtendedError-Funktion](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) verwenden, um zu ermitteln, ob während der Initialisierung des Dialogfelds ein Fehler aufgetreten ist, und um mehr über den Fehler zu erfahren. Weitere Informationen zu dieser Funktion finden Sie im Windows SDK.
 
-`CFontDialog`basiert auf der kommdlg. DLL-Datei, die in der Windows-Version 3,1 und höher enthalten ist.
+`CFontDialog`sich auf das COMMDLG verlässt. DLL-Datei, die mit Windows-Versionen 3.1 und höher ausgeliefert wird.
 
-Zum Anpassen des Dialog Felds leiten Sie eine Klasse von `CFontDialog`ab, geben Sie eine benutzerdefinierte Dialogfeld Vorlage an, und fügen Sie eine Message-Map hinzu, um die Benachrichtigungs Meldungen von den erweiterten Steuerelementen zu verarbeiten. Alle nicht verarbeiteten Nachrichten sollten an die Basisklasse übermittelt werden.
+Um das Dialogfeld anzupassen, leiten `CFontDialog`Sie eine Klasse von ab, stellen Sie eine benutzerdefinierte Dialogfeldvorlage bereit, und fügen Sie eine Meldungszuordnung hinzu, um die Benachrichtigungen aus den erweiterten Steuerelementen zu verarbeiten. Alle nicht verarbeiteten Nachrichten sollten an die Basisklasse übergeben werden.
 
 Das Anpassen der Hook-Funktion ist nicht erforderlich.
 
-Weitere Informationen zum Verwenden von `CFontDialog`finden Sie unter [Allgemeine Dialog Klassen](../../mfc/common-dialog-classes.md).
+Weitere Informationen zur `CFontDialog`Verwendung finden Sie unter [Allgemeine Dialogklassen](../../mfc/common-dialog-classes.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -120,9 +120,9 @@ Weitere Informationen zum Verwenden von `CFontDialog`finden Sie unter [Allgemein
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxdlgs. h
+**Kopf:** afxdlgs.h
 
-##  <a name="cfontdialog"></a>CFontDialog:: CFontDialog
+## <a name="cfontdialogcfontdialog"></a><a name="cfontdialog"></a>CFontDialog::CFontDialog
 
 Erstellt ein `CFontDialog`-Objekt.
 
@@ -143,13 +143,13 @@ CFontDialog(
 ### <a name="parameters"></a>Parameter
 
 *plfInitial*<br/>
-Ein Zeiger auf eine [LOGFONT](/windows/win32/api/wingdi/ns-wingdi-logfontw) -Datenstruktur, mit der Sie einige der Schriftart Eigenschaften festlegen können.
+Ein Zeiger auf eine [LOGFONT-Datenstruktur,](/windows/win32/api/wingdi/ns-wingdi-logfontw) mit der Sie einige Der Schriftartenfestlegen festlegen können.
 
 *charFormat*<br/>
-Ein Zeiger auf eine [Charformat](/windows/win32/api/richedit/ns-richedit-charformata) -Datenstruktur, mit der Sie einige der Schriftart Merkmale in einem Rich-Edit-Steuerelement festlegen können.
+Ein Zeiger auf eine [CHARFORMAT-Datenstruktur,](/windows/win32/api/richedit/ns-richedit-charformata) mit der Sie einige der Schriftzüge in einem umfangreichen Bearbeitungssteuerelement festlegen können.
 
 *dwFlags*<br/>
-Bestimmt eine oder mehrere Schriftart-wählen-Flags. Ein oder mehrere Vorgabewerte können mit dem bitweisen OR-Operator kombiniert werden. Wenn Sie den `m_cf.Flag`s-Strukturmember ändern, stellen Sie sicher, dass Sie einen bitweisen OR-Operator bei Ihren Änderungen verwenden, um das Standardverhalten unverändert zu lassen. Ausführliche Informationen zu den einzelnen Flags finden Sie in der Beschreibung der [Auswahl Schriftart](/windows/win32/api/commdlg/ns-commdlg-choosefontw) in der Windows SDK.
+Bestimmt eine oder mehrere Schriftart-wählen-Flags. Ein oder mehrere Vorgabewerte können mit dem bitweisen OR-Operator kombiniert werden. Wenn Sie den `m_cf.Flag`s-Strukturmember ändern, stellen Sie sicher, dass Sie einen bitweisen OR-Operator bei Ihren Änderungen verwenden, um das Standardverhalten unverändert zu lassen. Weitere Informationen zu jedem dieser Flags finden Sie in der Beschreibung der [CHOOSEFONT-Struktur](/windows/win32/api/commdlg/ns-commdlg-choosefontw) im Windows SDK.
 
 *pdcPrinter*<br/>
 Ein Zeiger auf einen Druckgerätekontext. Sofern bereitgestellt, verweist dieser Parameter auf einen Druckgerätekontext für den Drucker, auf dem die Schriftarten ausgewählt werden sollen.
@@ -157,20 +157,20 @@ Ein Zeiger auf einen Druckgerätekontext. Sofern bereitgestellt, verweist dieser
 *pParentWnd*<br/>
 Ein Zeiger auf das übergeordnete Fenster oder das Besitzerfenster des Schriftartdialogfelds.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Beachten Sie, dass der Konstruktor automatisch die Member der `CHOOSEFONT`-Struktur ausfüllt. Sie sollten diese nur ändern, wenn Sie ein anderes Schriftartdialogfeld als das standardmäßige verwenden möchten.
 
 > [!NOTE]
->  Die erste Version dieser Funktion existiert nur, wenn es keine Unterstützung für das Rich-Edit-Steuerelement gibt.
+> Die erste Version dieser Funktion existiert nur, wenn es keine Unterstützung für das Rich-Edit-Steuerelement gibt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#78](../../mfc/codesnippet/cpp/cfontdialog-class_1.cpp)]
 
-##  <a name="domodal"></a>CFontDialog::D omodal
+## <a name="cfontdialogdomodal"></a><a name="domodal"></a>CFontDialog::DoModal
 
-Mit dieser Funktion können Sie das Windows-Dialogfeld "allgemeine Schriftart" anzeigen und dem Benutzer die Auswahl einer Schriftart gestatten.
+Rufen Sie diese Funktion auf, um das Dialogfeld allgemeine Windows-Schriftart anzuzeigen und dem Benutzer die Auswahl einer Schriftart zu ermöglichen.
 
 ```
 virtual INT_PTR DoModal();
@@ -178,23 +178,23 @@ virtual INT_PTR DoModal();
 
 ### <a name="return-value"></a>Rückgabewert
 
-IDOK oder IDCANCEL. Wenn IDCANCEL zurückgegeben wird, rufen Sie die Windows-Funktion [commdlgextendederror](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) auf, um zu bestimmen, ob ein Fehler aufgetreten ist.
+IDOK oder IDCANCEL. Wenn IDCANCEL zurückgegeben wird, rufen Sie die Windows [CommDlgExtendedError-Funktion](/windows/win32/api/commdlg/nf-commdlg-commdlgextendederror) auf, um zu ermitteln, ob ein Fehler aufgetreten ist.
 
 IDOK und IDCANCEL sind Konstanten, die angeben, ob der Benutzer die Schaltfläche OK oder Abbrechen ausgewählt hat.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie die verschiedenen Schriftart Dialogfeld-Steuerelemente durch Festlegen von Membern der [m_cf](#m_cf) -Struktur initialisieren möchten, sollten `DoModal`Sie dies vor dem Aufrufen von tun, nachdem das Dialogfeld Objekt erstellt wurde.
+Wenn Sie die verschiedenen Schriftdialogsteuerelemente initialisieren [m_cf](#m_cf) möchten, indem Sie Elemente `DoModal`der m_cf Struktur festlegen, sollten Sie dies vor dem Aufruf tun, jedoch nachdem das Dialogobjekt erstellt wurde.
 
-Wenn `DoModal` IDOK zurückgibt, können Sie andere Element Funktionen aufrufen, um die Einstellungen oder Informationen einzugeben, die der Benutzer im Dialogfeld abruft.
+Wenn `DoModal` IDOK zurückgegeben wird, können Sie andere Memberfunktionen aufrufen, um die Einstellungen oder Informationen, die der Benutzer eingibt, in das Dialogfeld abzurufen.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie in den Beispielen für [CFontDialog:: CFontDialog](#cfontdialog) und [CFontDialog:: GetColor](#getcolor).
+  Siehe die Beispiele für [CFontDialog::CFontDialog](#cfontdialog) und [CFontDialog::GetColor](#getcolor).
 
-##  <a name="getcharformat"></a>CFontDialog:: getcharformat
+## <a name="cfontdialoggetcharformat"></a><a name="getcharformat"></a>CFontDialog::GetCharFormat
 
-Ruft die Zeichen Formatierung der ausgewählten Schriftart ab.
+Ruft die Zeichenformatierung der ausgewählten Schriftart ab.
 
 ```
 void GetCharFormat(CHARFORMAT& cf) const;
@@ -202,10 +202,10 @@ void GetCharFormat(CHARFORMAT& cf) const;
 
 ### <a name="parameters"></a>Parameter
 
-*cf*<br/>
-Eine [Charformat](/windows/win32/api/richedit/ns-richedit-charformata) -Struktur, die Informationen über die Zeichen Formatierung der ausgewählten Schriftart enthält.
+*Cf*<br/>
+Eine [CHARFORMAT-Struktur,](/windows/win32/api/richedit/ns-richedit-charformata) die Informationen über die Zeichenformatierung der ausgewählten Schriftart enthält.
 
-##  <a name="getcolor"></a>CFontDialog:: GetColor
+## <a name="cfontdialoggetcolor"></a><a name="getcolor"></a>CFontDialog::GetColor
 
 Rufen Sie diese Funktion auf, um die ausgewählte Schriftfarbe abzurufen.
 
@@ -221,9 +221,9 @@ Die Farbe der ausgewählten Schriftart.
 
 [!code-cpp[NVC_MFCDocView#79](../../mfc/codesnippet/cpp/cfontdialog-class_2.cpp)]
 
-##  <a name="getcurrentfont"></a>CFontDialog:: getcurrentfont
+## <a name="cfontdialoggetcurrentfont"></a><a name="getcurrentfont"></a>CFontDialog::GetCurrentFont
 
-Mit dieser Funktion werden die Merkmale der aktuell ausgewählten Schriftart den Membern einer [LOGFONT](/windows/win32/api/wingdi/ns-wingdi-logfontw) -Struktur zugewiesen.
+Rufen Sie diese Funktion auf, um den Membern einer [LOGFONT-Struktur](/windows/win32/api/wingdi/ns-wingdi-logfontw) die Merkmale der aktuell ausgewählten Schriftart zuzuweisen.
 
 ```
 void GetCurrentFont(LPLOGFONT lplf);
@@ -232,21 +232,21 @@ void GetCurrentFont(LPLOGFONT lplf);
 ### <a name="parameters"></a>Parameter
 
 *lplf*<br/>
-Ein Zeiger auf eine `LOGFONT` -Struktur.
+Ein Zeiger auf `LOGFONT` eine Struktur.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Für `CFontDialog` den Zugriff auf einzelne Merkmale der aktuellen Schriftart werden andere Element Funktionen bereitgestellt.
+Weitere `CFontDialog` Memberfunktionen werden bereitgestellt, um auf einzelne Merkmale der aktuellen Schriftart zuzugreifen.
 
-Wenn diese Funktion während eines Aufrufs von [DoModal](#domodal)aufgerufen wird, wird die aktuelle Auswahl zurückgegeben (was der Benutzer im Dialogfeld sieht oder geändert hat). Wenn diese Funktion nach einem Aufruf von `DoModal` aufgerufen wird (nur wenn `DoModal` IDOK zurückgibt), gibt Sie zurück, was der Benutzer tatsächlich ausgewählt hat.
+Wenn diese Funktion während eines Aufrufs von [DoModal](#domodal)aufgerufen wird, gibt sie die aktuelle Auswahl zu diesem Zeitpunkt zurück (was der Benutzer im Dialogfeld sieht oder geändert hat). Wenn diese Funktion nach einem `DoModal` Aufruf `DoModal` von aufgerufen wird (nur wenn IDOK zurückgegeben wird), gibt sie zurück, was der Benutzer tatsächlich ausgewählt hat.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#80](../../mfc/codesnippet/cpp/cfontdialog-class_3.cpp)]
 
-##  <a name="getfacename"></a>CFontDialog:: getfakename
+## <a name="cfontdialoggetfacename"></a><a name="getfacename"></a>CFontDialog::GetFaceName
 
-Rufen Sie diese Funktion auf, um den Namen der Vorderseite der ausgewählten Schriftart abzurufen.
+Rufen Sie diese Funktion auf, um den Flächennamen der ausgewählten Schriftart abzurufen.
 
 ```
 CString GetFaceName() const;
@@ -254,13 +254,13 @@ CString GetFaceName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Gesichts Name der im `CFontDialog` Dialogfeld ausgewählten Schriftart.
+Der Flächenname der im `CFontDialog` Dialogfeld ausgewählten Schriftart.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#81](../../mfc/codesnippet/cpp/cfontdialog-class_4.cpp)]
 
-##  <a name="getsize"></a>CFontDialog:: GetSize
+## <a name="cfontdialoggetsize"></a><a name="getsize"></a>CFontDialog::GetSize
 
 Rufen Sie diese Funktion auf, um die Größe der ausgewählten Schriftart abzurufen.
 
@@ -270,15 +270,15 @@ int GetSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe der Schriftart in Zehntel eines Punkts.
+Die Schriftgröße in Zehntel eines Punktes.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#82](../../mfc/codesnippet/cpp/cfontdialog-class_5.cpp)]
 
-##  <a name="getstylename"></a>CFontDialog:: getstylename
+## <a name="cfontdialoggetstylename"></a><a name="getstylename"></a>CFontDialog::GetStyleName
 
-Mit dieser Funktion wird der Stilname der ausgewählten Schriftart abgerufen.
+Rufen Sie diese Funktion auf, um den Stilnamen der ausgewählten Schriftart abzurufen.
 
 ```
 CString GetStyleName() const;
@@ -292,7 +292,7 @@ Der Stilname der Schriftart.
 
 [!code-cpp[NVC_MFCDocView#83](../../mfc/codesnippet/cpp/cfontdialog-class_6.cpp)]
 
-##  <a name="getweight"></a>CFontDialog:: getweight
+## <a name="cfontdialoggetweight"></a><a name="getweight"></a>CFontDialog::GetWeight
 
 Rufen Sie diese Funktion auf, um die Gewichtung der ausgewählten Schriftart abzurufen.
 
@@ -304,17 +304,17 @@ int GetWeight() const;
 
 Die Gewichtung der ausgewählten Schriftart.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen über die Gewichtung einer Schriftart finden Sie unter [CFont::](../../mfc/reference/cfont-class.md#createfont)up.
+Weitere Informationen zur Gewichtung einer Schriftart finden Sie unter [CFont::CreateFont](../../mfc/reference/cfont-class.md#createfont).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#84](../../mfc/codesnippet/cpp/cfontdialog-class_7.cpp)]
 
-##  <a name="isbold"></a>CFontDialog:: isbold
+## <a name="cfontdialogisbold"></a><a name="isbold"></a>CfontDialog::IsBold
 
-Mit dieser Funktion können Sie ermitteln, ob die ausgewählte Schriftart fett formatiert ist.
+Rufen Sie diese Funktion auf, um zu ermitteln, ob die ausgewählte Schriftart fett formatiert ist.
 
 ```
 BOOL IsBold() const;
@@ -322,15 +322,15 @@ BOOL IsBold() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn für die ausgewählte Schriftart das Fett formatierte Merkmal aktiviert ist. andernfalls 0.
+Ein Wert ungleich Null, wenn in der ausgewählten Schriftart das Bold-Merkmal aktiviert ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#85](../../mfc/codesnippet/cpp/cfontdialog-class_8.cpp)]
 
-##  <a name="isitalic"></a>CFontDialog:: IsItalic
+## <a name="cfontdialogisitalic"></a><a name="isitalic"></a>CFontDialog::IsItalic
 
-Mit dieser Funktion können Sie ermitteln, ob die ausgewählte Schriftart kursiv formatiert ist.
+Rufen Sie diese Funktion auf, um zu ermitteln, ob die ausgewählte Schriftart kursiv ist.
 
 ```
 BOOL IsItalic() const;
@@ -338,15 +338,15 @@ BOOL IsItalic() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn für die ausgewählte Schriftart das kursiv formatierte Merkmal aktiviert ist. andernfalls 0.
+Ein Wert ungleich Null, wenn in der ausgewählten Schriftart das Italic-Merkmal aktiviert ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#86](../../mfc/codesnippet/cpp/cfontdialog-class_9.cpp)]
 
-##  <a name="isstrikeout"></a>CFontDialog:: isstrikeout
+## <a name="cfontdialogisstrikeout"></a><a name="isstrikeout"></a>CfontDialog::IsStrikeOut
 
-Mit dieser Funktion können Sie ermitteln, ob die ausgewählte Schriftart mit Strikeout angezeigt wird.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob die ausgewählte Schriftart mit Strikeout angezeigt wird.
 
 ```
 BOOL IsStrikeOut() const;
@@ -354,15 +354,15 @@ BOOL IsStrikeOut() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn für die ausgewählte Schriftart das Strikeout-Merkmal aktiviert ist. andernfalls 0.
+Ein Wert ungleich Null, wenn in der ausgewählten Schriftart das Strikeout-Merkmal aktiviert ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#87](../../mfc/codesnippet/cpp/cfontdialog-class_10.cpp)]
 
-##  <a name="isunderline"></a>CFontDialog:: isunter Streichung
+## <a name="cfontdialogisunderline"></a><a name="isunderline"></a>CFontDialog::IsUnderline
 
-Mit dieser Funktion können Sie ermitteln, ob die ausgewählte Schriftart unterstrichen ist.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob die ausgewählte Schriftart unterstrichen ist.
 
 ```
 BOOL IsUnderline() const;
@@ -370,23 +370,23 @@ BOOL IsUnderline() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn für die ausgewählte Schriftart die Unterstreichung markiert ist. andernfalls 0.
+Ein Wert ungleich Null, wenn in der ausgewählten Schriftart das Merkmal Unterstreichung aktiviert ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#88](../../mfc/codesnippet/cpp/cfontdialog-class_11.cpp)]
 
-##  <a name="m_cf"></a>CFontDialog:: m_cf
+## <a name="cfontdialogm_cf"></a><a name="m_cf"></a>CFontDialog::m_cf
 
-Eine-Struktur, deren Elemente die Merkmale des Dialog Objekts speichern.
+Eine Struktur, deren Member die Eigenschaften des Dialogobjekts speichern.
 
 ```
 CHOOSEFONT m_cf;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Nachdem Sie ein `CFontDialog` -Objekt erstellt haben, `m_cf` können Sie verwenden, um verschiedene Aspekte des Dialog Felds vor `DoModal` dem Aufrufen der Member-Funktion zu ändern. Weitere Informationen zu dieser Struktur finden Sie unter [ausgewählter Schriftart](/windows/win32/api/commdlg/ns-commdlg-choosefontw) in der Windows SDK.
+Nach dem `CFontDialog` Erstellen eines `m_cf` Objekts können Sie verschiedene Aspekte `DoModal` des Dialogfelds ändern, bevor Sie die Memberfunktion aufrufen. Weitere Informationen zu dieser Struktur finden Sie unter [CHOOSEFONT](/windows/win32/api/commdlg/ns-commdlg-choosefontw) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
@@ -394,6 +394,6 @@ Nachdem Sie ein `CFontDialog` -Objekt erstellt haben, `m_cf` können Sie verwend
 
 ## <a name="see-also"></a>Siehe auch
 
-[MFC-Beispiel Hierarchien](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel HIERSVR](../../overview/visual-cpp-samples.md)<br/>
 [CCommonDialog-Klasse](../../mfc/reference/ccommondialog-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)

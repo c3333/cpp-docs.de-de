@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - CA2CAEX class
 ms.assetid: 388e7c1d-a144-474c-a182-b15f69a74bd8
-ms.openlocfilehash: 88389d4fe913a31fce43e3c8cc95605f99701695
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e6c727993b2907aaa551421a5d2d23e372b68917
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62261194"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81319143"
 ---
 # <a name="ca2caex-class"></a>CA2CAEX-Klasse
 
-Diese Klasse wird von Zeichenfolgen-konvertierungsmakros CA2CTEX und CT2CAEX und der Typedef CA2CA verwendet.
+Diese Klasse wird von den Zeichenfolgenkonvertierungsmakros CA2CTEX und CT2CAEX sowie dem typedef CA2CA verwendet.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,56 +33,56 @@ class CA2CAEX
 #### <a name="parameters"></a>Parameter
 
 *t_nBufferLength*<br/>
-Die Größe des Puffers, die in der Übersetzungsprozess verwendet werden soll. Die Standardeinstellung ist 128 Bytes.
+Die Größe des Puffers, der im Übersetzungsprozess verwendet wird. Die Standardlänge beträgt 128 Byte.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CA2CAEX::CA2CAEX](#ca2caex)|Der Konstruktor.|
-|[CA2CAEX::~CA2CAEX](#dtor)|Der Destruktor.|
+|[CA2CAEX::CA2CAEX](#dtor)|Der Destruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2CAEX::Operator LPCSTR](#operator_lpcstr)|Konvertierungsoperator.|
+|[CA2CAEX::operator LPCSTR](#operator_lpcstr)|Konvertierungsoperator.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CA2CAEX::m_psz](#m_psz)|Der Datenmember, die die Quellzeichenfolge speichert.|
+|[CA2CAEX::m_psz](#m_psz)|Das Datenelement, das die Quellzeichenfolge speichert.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn zusätzliche Funktionalität erforderlich ist, verwenden Sie in Ihrem eigenen Code CA2CTEX, CT2CAEX oder CA2CA an.
+Verwenden Sie CA2CTEX, CT2CAEX oder CA2CA in Ihrem eigenen Code, es sei denn, zusätzliche Funktionen sind erforderlich.
 
-Diese Klasse wird sicher in Schleifen verwendet, und es wird nicht zu einem Stapelüberlauf. Standardmäßig verwenden die ATL-Konvertierungsklassen und -makros für die Konvertierung die ANSI-Codeseite des aktuellen Threads.
+Diese Klasse ist sicher in Schleifen zu verwenden und überläuft den Stapel nicht. Standardmäßig verwenden die ATL-Konvertierungsklassen und -makros für die Konvertierung die ANSI-Codeseite des aktuellen Threads.
 
-Die folgenden Makros basieren auf diese Klasse:
+Die folgenden Makros basieren auf dieser Klasse:
 
 - CA2CTEX
 
 - CT2CAEX
 
-Die folgende Typedef basiert auf diese Klasse:
+Die folgende typedef basiert auf dieser Klasse:
 
 - CA2CA
 
-Eine Erläuterung der diese textkonvertierungsmakros, finden Sie unter [ATL- und MFC-Zeichenfolgen-Konvertierungsmakros](string-conversion-macros.md).
+Eine Erläuterung dieser Textkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros](string-conversion-macros.md).
 
 ## <a name="example"></a>Beispiel
 
-Finden Sie unter [ATL- und MFC-Zeichenfolgen-Konvertierungsmakros](string-conversion-macros.md) für ein Beispiel für diese Zeichenfolgen-konvertierungsmakros.
+Ein Beispiel für die Verwendung dieser Zeichenfolgenkonvertierungsmakros finden Sie unter [ATL- und MFC-Zeichenfolgenkonvertierungsmakros.](string-conversion-macros.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlconv.h
+**Kopfzeile:** atlconv.h
 
-##  <a name="ca2caex"></a>  CA2CAEX::CA2CAEX
+## <a name="ca2caexca2caex"></a><a name="ca2caex"></a>CA2CAEX::CA2CAEX
 
 Der Konstruktor.
 
@@ -93,17 +93,17 @@ CA2CAEX(LPCSTR psz) throw(...);
 
 ### <a name="parameters"></a>Parameter
 
-*psz*<br/>
-Die Textzeichenfolge, die konvertiert werden.
+*Psz*<br/>
+Die zu konvertierende Textzeichenfolge.
 
 *nCodePage*<br/>
-Wenn Sie nicht in dieser Klasse verwendet.
+Nicht verwendet in dieser Klasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Erstellt den Puffer für die Übersetzung erforderlich sind.
+Erstellt den Puffer, der für die Übersetzung erforderlich ist.
 
-##  <a name="dtor"></a>  CA2CAEX:: ~ CA2CAEX
+## <a name="ca2caexca2caex"></a><a name="dtor"></a>CA2CAEX::CA2CAEX
 
 Der Destruktor.
 
@@ -111,19 +111,19 @@ Der Destruktor.
 ~CA2CAEX() throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt den zugeordneten Puffer frei.
+Gibt den zugewiesenen Puffer frei.
 
-##  <a name="m_psz"></a>  CA2CAEX::m_psz
+## <a name="ca2caexm_psz"></a><a name="m_psz"></a>CA2CAEX::m_psz
 
-Der Datenmember, die die Quellzeichenfolge speichert.
+Das Datenelement, das die Quellzeichenfolge speichert.
 
 ```
 LPCSTR m_psz;
 ```
 
-##  <a name="operator_lpcstr"></a>  CA2CAEX::Operator LPCSTR
+## <a name="ca2caexoperator-lpcstr"></a><a name="operator_lpcstr"></a>CA2CAEX::operator LPCSTR
 
 Konvertierungsoperator.
 
@@ -133,7 +133,7 @@ operator LPCSTR() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die Zeichenfolge zurück, LPCSTR eingeben.
+Gibt die Textzeichenfolge als Typ LPCSTR zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
@@ -142,4 +142,4 @@ Gibt die Zeichenfolge zurück, LPCSTR eingeben.
 [CW2AEX-Klasse](../../atl/reference/cw2aex-class.md)<br/>
 [CW2CWEX-Klasse](../../atl/reference/cw2cwex-class.md)<br/>
 [CW2WEX-Klasse](../../atl/reference/cw2wex-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

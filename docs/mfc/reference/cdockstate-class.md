@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CDockState [MFC], SaveState
 - CDockState [MFC], m_arrBarInfo
 ms.assetid: 09e7c10b-3abd-4cb2-ad36-42420fe6bc36
-ms.openlocfilehash: b8c4b80d7182795d8919adb64491d506325976ef
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 1c76bcda6465ca86b8da4778d3653cb23001b78b
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391178"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375556"
 ---
 # <a name="cdockstate-class"></a>CDockState-Klasse
 
@@ -37,54 +37,54 @@ class CDockState : public CObject
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDockState::Clear](#clear)|Löscht die Zustandsinformationen andocken.|
-|[CDockState::GetVersion](#getversion)|Ruft die Versionsnummer des gespeicherten Status Leiste.|
-|[CDockState::LoadState](#loadstate)|Ruft die Zustandsinformationen aus der Registrierung oder. INI-Datei.|
-|[CDockState::SaveState](#savestate)|Speichert Zustandsinformationen der Registrierung oder der INI-Datei.|
+|[CDockState::Löschen](#clear)|Löscht die Dockstatusinformationen.|
+|[CDockState::GetVersion](#getversion)|Ruft die Versionsnummer des gespeicherten Balkenstatus ab.|
+|[CDockState::LoadState](#loadstate)|Ruft Statusinformationen aus der Registrierung oder ab. INI-Datei.|
+|[CDockState::SaveState](#savestate)|Speichert Statusinformationen in der Registrierung oder INI-Datei.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDockState::m_arrBarInfo](#m_arrbarinfo)|Array von Zeigern auf den gespeicherten Andocken Zustandsinformationen, die mit einem Eintrag für jede Steuerleiste.|
+|[CDockState::m_arrBarInfo](#m_arrbarinfo)|Array von Zeigern auf die gespeicherten Dockstatusinformationen mit einem Eintrag für jede Steuerleiste.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Dock-Status umfasst die Größe und Position der Leiste und davon, ob es angedockt ist. Beim Abrufen von den gespeicherten Zustand, Andocken `CDockState` überprüft des Balkens Position und, wenn die Leiste nicht angezeigt, mit den aktuellen bildschirmeinstellungen wird `CDockState` skaliert des Balkens zu positionieren, damit es sichtbar ist. Der Hauptzweck von `CDockState` besteht darin, den gesamten Status einer Reihe von Steuerleisten speichern und zu diesem Zustand gespeichert werden und entweder in der Registrierungs, die Anwendung geladen. INI-Datei oder in binärer Form im Rahmen einer `CArchive` Inhalt des Objekts.
+Der Dock-Status enthält die Größe und Position des Balkens und ob er angedockt ist. Überprüft beim Abrufen des `CDockState` gespeicherten Dockstatus die Position der Leiste, und skaliert die `CDockState` Position der Leiste, wenn sie mit den aktuellen Bildschirmeinstellungen nicht sichtbar ist, die Position der Leiste so, dass sie sichtbar ist. Der Hauptzweck `CDockState` von besteht darin, den gesamten Status einer Reihe von Kontrollleisten zu speichern und zuzulassen, dass dieser Status gespeichert und entweder in die Registrierung, die Anwendung , geladen wird. INI-Datei oder in binärer `CArchive` Form als Teil des Inhalts eines Objekts.
 
-Die Leiste kann alle andockbaren Balken-, z. B. eine Symbolleiste, die Statusleiste oder die Dialogleiste sein. `CDockState` Objekte werden geschrieben, und liest bis oder aus einer Datei über eine `CArchive` Objekt.
+Die Leiste kann eine beliebige andockbare Steuerleiste sein, einschließlich einer Symbolleiste, Statusleiste oder Dialogleiste. `CDockState`Objekte über ein `CArchive` Objekt geschrieben und in eine Datei gelesen werden.
 
-[CFrameWnd::GetDockState](../../mfc/reference/cframewnd-class.md#getdockstate) Ruft ab, die Zustandsinformationen aller des Rahmenfensters `CControlBar` Objekte und versetzt ihn in das `CDockState` Objekt. Anschließend können Sie den Inhalt der Schreiben der `CDockState` Objekt in den Speicher mit [Serialize](../../mfc/reference/cobject-class.md#serialize) oder [CDockState::SaveState](#savestate). Wenn Sie später die Steuerleisten im Rahmenfenster versetzen möchten, können Sie mit der Auslastungstest des Status mit `Serialize` oder [CDockState::LoadState](#loadstate), verwenden Sie dann [CFrameWnd::SetDockState](../../mfc/reference/cframewnd-class.md#setdockstate) die gespeicherten anwenden Zustand, der das Rahmenfenster Schiebeleisten-Steuerelemente.
+[CFrameWnd::GetDockState](../../mfc/reference/cframewnd-class.md#getdockstate) ruft die Statusinformationen aller Objekte `CControlBar` des Rahmenfensters `CDockState` ab und fügt sie in das Objekt ein. Sie können dann den `CDockState` Inhalt des Objekts mit [Serialize](../../mfc/reference/cobject-class.md#serialize) oder [CDockState::SaveState](#savestate)in den Speicher schreiben. Wenn Sie später den Status der Steuerleisten im Rahmenfenster wiederherstellen möchten, können Sie den Status mit `Serialize` oder [CDockState::LoadState](#loadstate)laden und dann [CFrameWnd::SetDockState](../../mfc/reference/cframewnd-class.md#setdockstate) verwenden, um den gespeicherten Status auf die Kontrollleisten des Rahmenfensters anzuwenden.
 
-Weitere Informationen zum Andocken Schiebeleisten-Steuerelemente, finden Sie in den Artikeln [Steuerleisten](../../mfc/control-bars.md), [Symbolleisten: Andockbare und unverankerte](../../mfc/docking-and-floating-toolbars.md), und [Frame Windows](../../mfc/frame-windows.md).
+Weitere Informationen zu Docking-Steuerleisten finden Sie in den Artikeln [Control Bars](../../mfc/control-bars.md), [Toolbars: Docking and Floating und](../../mfc/docking-and-floating-toolbars.md)Frame [Windows](../../mfc/frame-windows.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 `CDockState`
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxadv.h
+**Kopf:** afxadv.h
 
-##  <a name="clear"></a>  CDockState::Clear
+## <a name="cdockstateclear"></a><a name="clear"></a>CDockState::Löschen
 
-Rufen Sie diese Funktion deaktivieren Sie alle Andocken Informationen in den `CDockState` Objekt.
+Rufen Sie diese Funktion auf, um `CDockState` alle im Objekt gespeicherten Andockinformationen zu löschen.
 
 ```
 void Clear();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies schließt nicht nur, ob die Leiste oder nicht, aber die Größe und Position des Balkens angedockt ist und, und zwar unabhängig davon, ob es angezeigt wird.
+Dazu gehört nicht nur, ob die Leiste angedockt ist oder nicht, sondern auch die Größe und Position der Bar und ob sie sichtbar ist.
 
-##  <a name="getversion"></a>  CDockState::GetVersion
+## <a name="cdockstategetversion"></a><a name="getversion"></a>CDockState::GetVersion
 
-Mit dieser Funktion wird zum Abrufen der Anzahl der Version des gespeicherten Status Leiste.
+Rufen Sie diese Funktion auf, um die Versionsnummer des gespeicherten Balkenstatus abzurufen.
 
 ```
 DWORD GetVersion();
@@ -92,15 +92,15 @@ DWORD GetVersion();
 
 ### <a name="return-value"></a>Rückgabewert
 
-1, wenn die Leiste gespeicherten Informationen ist älter als der aktuelle Strich Zustand 2, wenn die gespeicherte Leiste sind die gleichen Informationen wie die aktuelle Befehlsleiste Zustand.
+1, wenn die gespeicherten Balkeninformationen älter als der aktuelle Balkenstatus sind; 2 wenn die gespeicherten Balkeninformationen mit dem aktuellen Balkenstatus identisch sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Versionsunterstützung ermöglicht eine überarbeitete angezeigt, die immer noch in der Lage zu erkennen und zu Laden des persistenten Status, die von einer früheren Version des Balkens erstellt und neue dauerhafte Eigenschaften hinzufügen.
+Die Versionsunterstützung ermöglicht es einem überarbeiteten Balken, neue persistente Eigenschaften hinzuzufügen und dennoch den persistenten Zustand zu erkennen und zu laden, der von einer früheren Version des Balkens erstellt wurde.
 
-##  <a name="loadstate"></a>  CDockState::LoadState
+## <a name="cdockstateloadstate"></a><a name="loadstate"></a>CDockState::LoadState
 
-Mit dieser Funktion wird zum Abrufen von Statusinformationen aus der Registrierung oder. INI-Datei.
+Rufen Sie diese Funktion auf, um Statusinformationen aus der Registrierung oder abzurufen. INI-Datei.
 
 ```
 void LoadState(LPCTSTR lpszProfileName);
@@ -109,23 +109,23 @@ void LoadState(LPCTSTR lpszProfileName);
 ### <a name="parameters"></a>Parameter
 
 *lpszProfileName*<br/>
-Verweist auf eine Null-Teminated-Zeichenfolge, die gibt den Namen eines Abschnitts in der Initialisierungsdatei oder einen Schlüssel in der Windows-Registrierung, in dem Statusinformationen gespeichert ist.
+Verweist auf eine Null-Teminat-Zeichenfolge, die den Namen eines Abschnitts in der Initialisierungsdatei oder einen Schlüssel in der Windows-Registrierung angibt, in dem Statusinformationen gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Profilname ist der Teil der Anwendung. INI-Datei oder der Registrierung, die die Balken Zustandsinformationen enthält. Sie können die Steuerleiste Zustandsinformationen in der Registrierung speichern oder. INI-Datei mit `SaveState`.
+Der Profilname ist der Abschnitt der Anwendung . INI-Datei oder die Registrierung, die die Statusinformationen der Balken enthält. Sie können Steuerelementleistenstatusinformationen in der Registrierung oder speichern. INI-Datei `SaveState`mit .
 
-##  <a name="m_arrbarinfo"></a>  CDockState::m_arrBarInfo
+## <a name="cdockstatem_arrbarinfo"></a><a name="m_arrbarinfo"></a>CDockState::m_arrBarInfo
 
-Ein `CPtrArray` -Objekt, das ein Array von Zeigern auf die Informationen zur gespeicherten Control Balken für jede Steuerleiste, der Zustandsinformationen in gespeichert ist, wird die `CDockState` Objekt.
+Ein `CPtrArray` Objekt, das ein Array von Zeigern auf die gespeicherten Steuerelementleisteninformationen `CDockState` für jede Steuerelementleiste ist, die Statusinformationen im Objekt gespeichert hat.
 
 ```
 CPtrArray m_arrBarInfo;
 ```
 
-##  <a name="savestate"></a>  CDockState::SaveState
+## <a name="cdockstatesavestate"></a><a name="savestate"></a>CDockState::SaveState
 
-Mit dieser Funktion können Sie die Zustandsinformationen in der Registrierung speichern oder. INI-Datei.
+Rufen Sie diese Funktion auf, um die Statusinformationen in der Registrierung oder zu speichern. INI-Datei.
 
 ```
 void SaveState(LPCTSTR lpszProfileName);
@@ -134,11 +134,11 @@ void SaveState(LPCTSTR lpszProfileName);
 ### <a name="parameters"></a>Parameter
 
 *lpszProfileName*<br/>
-Verweist auf eine Null-Teminated-Zeichenfolge, die gibt den Namen eines Abschnitts in der Initialisierungsdatei oder einen Schlüssel in der Windows-Registrierung, in dem Statusinformationen gespeichert ist.
+Verweist auf eine Null-Teminat-Zeichenfolge, die den Namen eines Abschnitts in der Initialisierungsdatei oder einen Schlüssel in der Windows-Registrierung angibt, in dem Statusinformationen gespeichert werden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Profilname ist der Teil der Anwendung. INI-Datei oder die Registrierung enthält, die Statusinformationen der Steuerleiste. `SaveState` speichert auch die Größe des aktuellen Bildschirms. Sie können die Leiste Informationen abrufen, aus der Registrierung oder. INI-Datei mit `LoadState`.
+Der Profilname ist der Abschnitt der Anwendung . INI-Datei oder die Registrierung, die die Statusinformationen der Steuerleiste enthält. `SaveState`speichert auch die aktuelle Bildschirmgröße. Sie können Steuerelementleisteninformationen aus der Registrierung oder abrufen. INI-Datei `LoadState`mit .
 
 ## <a name="see-also"></a>Siehe auch
 

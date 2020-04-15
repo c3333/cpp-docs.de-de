@@ -6,41 +6,41 @@ helpviewer_keywords:
 - CHeaderCtrl class [MFC], image lists
 - image lists [MFC], header controls
 ms.assetid: d5e9b310-6278-406c-909c-eefa09549a47
-ms.openlocfilehash: 3d9a4a0c655fa46c15d8c4d9b2b4e90cd34c2937
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 8002c16d1cdf5e0683b642001409b6da9c260660
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62411538"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366468"
 ---
 # <a name="using-image-lists-with-header-controls"></a>Verwenden von Bildlisten in Headersteuerelementen
 
-Header-Elemente haben die Möglichkeit, ein Bild in einem Headerelement anzuzeigen. Dieses Image in einer Liste zugeordnete Bild gespeichert ist 16 x 16 Pixel und die gleichen Eigenschaften wie die Symbol-Images, die in einem Listenansicht-Steuerelement verwendet wurde. Um dieses Verhalten wurde erfolgreich zu implementieren, Sie müssen zuerst erstellen und initialisieren die Bildliste, ordnen Sie die Liste das Kopfzeilen-Steuerelement, und ändern Sie die Attribute des Headerelements, das das Bild angezeigt wird.
+Kopfzeilenelemente können ein Bild innerhalb eines Kopfelements anzeigen. Dieses Bild, das in einer zugeordneten Bildliste gespeichert ist, hat 16 x 16 Pixel und hat die gleichen Eigenschaften wie die Symbolbilder, die in einem Listenansichtssteuerelement verwendet werden. Um dieses Verhalten erfolgreich zu implementieren, müssen Sie zuerst die Bildliste erstellen und initialisieren, die Liste dem Kopfkopfsteuerelement zuordnen und dann die Attribute des Kopfelements ändern, das das Bild anzeigt.
 
-Das folgende Verfahren illustriert die Details, die mithilfe eines Zeigers auf ein Headersteuerelement (`m_pHdrCtrl`) und einen Zeiger auf eine Bildliste (`m_pHdrImages`).
+Das folgende Verfahren veranschaulicht die Details mithilfe eines Zeigers auf ein Headersteuerelement`m_pHdrCtrl`(`m_pHdrImages`) und eines Zeigers auf eine Bildliste ( ).
 
-### <a name="to-display-an-image-in-a-header-item"></a>Um ein Bild in einem Headerelement anzuzeigen.
+### <a name="to-display-an-image-in-a-header-item"></a>So zeigen Sie ein Bild in einem Kopfelement an
 
-1. Erstellen Sie eine neue Bildliste (oder verwenden Sie ein vorhandene Image List-Objekt) mit der [CImageList](../mfc/reference/cimagelist-class.md) -Konstruktor, den resultierenden Zeiger speichern.
+1. Erstellen Sie eine neue Bildliste (oder verwenden Sie ein vorhandenes Bildlistenobjekt) mit dem [CImageList-Konstruktor,](../mfc/reference/cimagelist-class.md) in dem der resultierende Zeiger gespeichert wird.
 
-1. Initialisieren Sie das neue Image List-Objekt durch Aufrufen [CImageList:: Create](../mfc/reference/cimagelist-class.md#create). Der folgende Code ist ein Beispiel für diesen Aufruf.
+1. Initialisieren Sie das neue Bildlistenobjekt, indem Sie [CImageList::Create](../mfc/reference/cimagelist-class.md#create)aufrufen. Der folgende Code ist ein Beispiel für diesen Aufruf.
 
    [!code-cpp[NVC_MFCControlLadenDialog#15](../mfc/codesnippet/cpp/using-image-lists-with-header-controls_1.cpp)]
 
-1. Hinzufügen von Bildern für jedes Headerelement. Der folgende Code fügt zwei vordefinierte Images.
+1. Fügen Sie die Bilder für jedes Kopfelement hinzu. Der folgende Code fügt zwei vordefinierte Bilder hinzu.
 
    [!code-cpp[NVC_MFCControlLadenDialog#16](../mfc/codesnippet/cpp/using-image-lists-with-header-controls_2.cpp)]
 
-1. Ordnen Sie die Bildliste mit dem Kopfzeilen-Steuerelement mit einem Aufruf von [:: SetImageList](../mfc/reference/cheaderctrl-class.md#setimagelist).
+1. Ordnen Sie die Bildliste dem Headersteuerelement einem Aufruf von [CHeaderCtrl::SetImageList](../mfc/reference/cheaderctrl-class.md#setimagelist)zu.
 
-1. Ändern Sie die Headerelement, um ein Bild aus der Liste zugeordnete Bild anzuzeigen. Im folgende Beispiel weist der ersten Abbildung aus `m_phdrImages`, um das erste Headerelement mit `m_pHdrCtrl`.
+1. Ändern Sie das Kopfelement, um ein Bild aus der zugeordneten Bildliste anzuzeigen. Im folgenden Beispiel wird das `m_phdrImages`erste Bild von dem `m_pHdrCtrl`dem ersten Kopfelement zugewiesen.
 
    [!code-cpp[NVC_MFCControlLadenDialog#17](../mfc/codesnippet/cpp/using-image-lists-with-header-controls_3.cpp)]
 
-Ausführliche Informationen zu den Parameterwerten verwendet, finden Sie in der entsprechenden [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md).
+Ausführliche Informationen zu den verwendeten Parameterwerten finden Sie im entsprechenden [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md).
 
 > [!NOTE]
->  Es ist möglich, mehrere Steuerelemente, die über dieselbe Bildliste haben. Z. B. in einem standard-Listenansicht-Steuerelement möglicherweise eine Bildliste (von 16 x 16-Pixel-Images) verwendet werden, indem sowohl der Ansicht kleine Symbole von einem Listenansicht-Steuerelement und die Headerelemente des Listenansicht-Steuerelement.
+> Es ist möglich, mehrere Steuerelemente mit derselben Bildliste zu verwenden. In einem Standardlistenansichtssteuerelement kann z. B. eine Bildliste (mit 16 x 16 Pixel-Bildern) sowohl von der kleinen Symbolansicht eines Listenansichtssteuerelements als auch von den Kopfzeilenelementen des Listenansichtssteuerelements verwendet werden.
 
 ## <a name="see-also"></a>Siehe auch
 

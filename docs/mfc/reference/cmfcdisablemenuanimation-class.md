@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - CMFCDisableMenuAnimation [MFC], Restore
 ms.assetid: c6eb07da-c382-43d6-8028-007f2320e50e
-ms.openlocfilehash: bf8c598e9e105569e0a5676267e205b3d3939712
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 990f41d2dfa6491d246797322ee275c9648d52a9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62345603"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367570"
 ---
 # <a name="cmfcdisablemenuanimation-class"></a>CMFCDisableMenuAnimation-Klasse
 
-Deaktiviert die Popup-Menü-Animation.
+Deaktiviert die Popup-Menüanimation.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,7 +31,7 @@ class CMFCDisableMenuAnimation
 
 |||
 |-|-|
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |`CMFCDisableMenuAnimation::CMFCDisableMenuAnimation`|Erstellt ein `CMFCDisableMenuAnimation`-Objekt.|
 |`CMFCDisableMenuAnimation::~CMFCDisableMenuAnimation`|Destruktor.|
 
@@ -39,27 +39,27 @@ class CMFCDisableMenuAnimation
 
 |||
 |-|-|
-|Name|Beschreibung|
-|[CMFCDisableMenuAnimation::Restore](#restore)|Wird von der vorherigen Animation, die das Framework verwendet wird, um ein Popupmenü anzuzeigen.|
+|Name|BESCHREIBUNG|
+|[CMFCDisableMenuAnimation::Wiederherstellen](#restore)|Stellt die vorherige Animation wieder her, die das Framework zum Anzeigen eines Popupmenüs verwendet hat.|
 
-### <a name="data-members"></a>Datenmember
+### <a name="data-members"></a>Datenelemente
 
 |||
 |-|-|
-|Name|Beschreibung|
-|`CMFCDisableMenuAnimation::m_animType`|Speichert den vorherigen Popupmenü-Animation-Typ.|
+|Name|BESCHREIBUNG|
+|`CMFCDisableMenuAnimation::m_animType`|Speichert den vorherigen Popupmenü-Animationstyp.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Hilfsklasse vorübergehend deaktivieren, Popup-Menüanimationen (z. B., wenn Sie die Maus oder Tastatur Befehle verarbeiten).
+Verwenden Sie diese Hilfsklasse, um die Popupmenüanimation vorübergehend zu deaktivieren (z. B. wenn Sie Maus- oder Tastaturbefehle verarbeiten).
 
-Ein `CMFCDisableMenuAnimation` Objekt deaktiviert die Popup-Menüanimation während ihrer Lebensdauer. Der Konstruktor speichert den aktuellen Typ der Popup-Menü Animationen in der `m_animType` -Feld und setzt die aktuelle Animation Typ `CMFCPopupMenu::NO_ANIMATION`. Der Destruktor wird der vorherige Animationstyp.
+Ein `CMFCDisableMenuAnimation` Objekt deaktiviert die Popupmenüanimation während seiner Lebensdauer. Der Konstruktor speichert den aktuellen Popupmenü-Animationstyp im `m_animType` Feld `CMFCPopupMenu::NO_ANIMATION`und legt den aktuellen Animationstyp auf fest. Der Destruktor stellt den vorherigen Animationstyp wieder her.
 
-Sie erstellen eine `CMFCDisableMenuAnimation` Objekt im Stapel, um Popup-Menüanimationen in einer einzelnen Funktion zu deaktivieren. Wenn Sie Popup-Menü-Animation zwischen Funktionen deaktivieren möchten, erstellen Sie eine `CMFCDisableMenuAnimation` Objekt auf dem Heap, und löschen Sie sie bei der Popup-Menüanimationen wiederherstellen möchten.
+Sie können `CMFCDisableMenuAnimation` ein Objekt auf dem Stapel erstellen, um die Popupmenüanimation in einer einzelnen Funktion zu deaktivieren. Wenn Sie die Popupmenüanimation zwischen Funktionen `CMFCDisableMenuAnimation` deaktivieren möchten, erstellen Sie ein Objekt auf dem Heap, und löschen Sie es dann, wenn Sie die Popupmenüanimation wiederherstellen möchten.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt, wie Sie den Stapel zu verwenden, um die Menüanimation vorübergehend zu deaktivieren.
+Das folgende Beispiel zeigt, wie Sie den Stack verwenden, um die Menüanimation vorübergehend zu deaktivieren.
 
 [!code-cpp[NVC_MFC_Misc#1](../../mfc/reference/codesnippet/cpp/cmfcdisablemenuanimation-class_1.h)]
 
@@ -69,19 +69,19 @@ Das folgende Beispiel zeigt, wie Sie den Stapel zu verwenden, um die Menüanimat
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxpopupmenu.h
+**Kopfzeile:** afxpopupmenu.h
 
-##  <a name="restore"></a>  CMFCDisableMenuAnimation::Restore
+## <a name="cmfcdisablemenuanimationrestore"></a><a name="restore"></a>CMFCDisableMenuAnimation::Wiederherstellen
 
-Wird von der vorherigen Animation, die das Framework verwendet wird, um ein Popupmenü anzuzeigen.
+Stellt die vorherige Animation wieder her, die das Framework zum Anzeigen eines Popupmenüs verwendet hat.
 
 ```
 void Restore ();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird aufgerufen, indem die `CMFCDisableMenuAnimation` Destruktor die vorherige Animation wiederherstellen, die das Framework verwendet wird, um ein Popupmenü anzuzeigen.
+Diese Methode wird `CMFCDisableMenuAnimation` vom Destruktor aufgerufen, um die vorherige Animation wiederherzustellen, die das Framework zum Anzeigen eines Popupmenüs verwendet hat.
 
 ## <a name="see-also"></a>Siehe auch
 

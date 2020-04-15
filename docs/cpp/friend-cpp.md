@@ -8,16 +8,16 @@ helpviewer_keywords:
 - friend classes [C++]
 - friend keyword [C++]
 ms.assetid: 8fe9ee55-d56f-40cd-9075-d9fb1375aff4
-ms.openlocfilehash: 744d0dcf8aafdfe336db0c49307b8e1756b8cf7f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 20116674feffaa5b4bbddf707dd3a4d0c1d9ad98
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80179925"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364440"
 ---
 # <a name="friend-c"></a>Friend (C++)
 
-In einigen Fällen ist es bequemer, den Zugriff auf Element Ebene auf Funktionen zu gewähren, die keine Member einer Klasse oder auf alle Member einer separaten Klasse sind. Nur der Klassenimplementierer kann seine „Friends“ deklarieren. Eine Funkion oder Klasse kann sich nicht selbst als „Friend“ einer Klasse deklarieren. Verwenden Sie in einer Klassendefinition das **Friend** -Schlüsselwort und den Namen einer nicht-Member-Funktion oder einer anderen Klasse, um ihm Zugriff auf die privaten und geschützten Member der Klasse zu gewähren. In einer Vorlagen Definition kann ein Typparameter als Friend deklariert werden.
+Unter bestimmten Umständen ist es bequemer, Funktionen, die nicht Mitglieder einer Klasse sind, oder allen Membern in einer separaten Klasse Zugriff auf Memberebene zu gewähren. Nur der Klassenimplementierer kann seine „Friends“ deklarieren. Eine Funkion oder Klasse kann sich nicht selbst als „Friend“ einer Klasse deklarieren. Verwenden Sie in einer **friend** Klassendefinition das friend-Schlüsselwort und den Namen einer Nicht-Member-Funktion oder einer anderen Klasse, um ihr Zugriff auf die privaten und geschützten Member Ihrer Klasse zu gewähren. In einer Vorlagendefinition kann ein Typparameter als Freund deklariert werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,7 +30,7 @@ friend F;
 
 Wenn Sie eine Friend-Funktion deklarieren, die zuvor nicht deklariert wurde, wird diese Funktion in den einschließenden Nichtklassenbereich exportiert.
 
-In einer Friend-Deklaration deklarierte Funktionen werden so behandelt, als wären Sie mithilfe des **extern** -Schlüssel Worts deklariert worden. Weitere Informationen finden Sie unter [extern](extern-cpp.md).
+Funktionen, die in einer Friend-Deklaration deklariert wurden, werden so behandelt, als ob sie mit dem schlüsselwortsuchenden Schlüsselwort **extern** deklariert worden wären. Weitere Informationen finden Sie unter [extern](extern-cpp.md).
 
 Obwohl Funktionen mit globalem Gültigkeitsbereich als Friends vor ihrem Prototypen deklariert werden können, können Memberfunktionen nicht als Friends vor der Darstellung ihrer vollständigen Klassendeklaration deklariert werden. Der folgende Code zeigt, warum hierbei ein Fehler auftritt:
 
@@ -42,18 +42,18 @@ class HasFriends
 };
 ```
 
-Im vorhergehenden Beispiel wird der Klassenname `ForwardDeclared` in den Bereich eingegeben. Die vollständige Deklaration (besonders der Teil, in der die Funktion als `IsAFriend` deklariert wird) ist jedoch nicht bekannt. Daher generiert die **Friend** -Deklaration in der Klasse `HasFriends` einen Fehler.
+Im vorhergehenden Beispiel wird der Klassenname `ForwardDeclared` in den Bereich eingegeben. Die vollständige Deklaration (besonders der Teil, in der die Funktion als `IsAFriend` deklariert wird) ist jedoch nicht bekannt. Daher generiert die Friend-Deklaration in der Klasse **friend** `HasFriends` einen Fehler.
 
-Ab c++ 11 gibt es zwei Formen von Friend-Deklarationen für eine Klasse:
+Ab C++11 gibt es zwei Formen von Freunddeklarationen für eine Klasse:
 
 ```cpp
 friend class F;
 friend F;
 ```
 
-In der ersten Form wird eine neue Klasse von F eingeführt, wenn im innersten Namespace keine vorhandene Klasse mit diesem Namen gefunden wurde. **C++ 11**: das zweite Formular führt nicht zu einer neuen Klasse. Sie kann verwendet werden, wenn die Klasse bereits deklariert wurde, und Sie muss beim Deklarieren eines Vorlagen-Typparameters oder einer typedef als Friend verwendet werden.
+Das erste Formular führt eine neue Klasse F ein, wenn im innersten Namespace keine vorhandene Klasse mit diesem Namen gefunden wurde. **C++11**: Das zweite Formular führt keine neue Klasse ein. Sie kann verwendet werden, wenn die Klasse bereits deklariert wurde, und sie muss beim Deklarieren eines Vorlagentypparameters oder eines typedef als Freund verwendet werden.
 
-Verwenden Sie `class friend F`, wenn der referenzierte Typ noch nicht deklariert wurde:
+Verwenden `class friend F` Sie diese Verwendung, wenn der referenzierte Typ noch nicht deklariert wurde:
 
 ```cpp
 namespace NS
@@ -75,7 +75,7 @@ namespace NS
 }
 ```
 
-Im folgenden Beispiel verweist `friend F` auf die `F` Klasse, die außerhalb des Bereichs von NS deklariert wird.
+Bezieht `friend F` sich im folgenden `F` Beispiel auf die Klasse, die außerhalb des Bereichs von NS deklariert wird.
 
 ```cpp
 class F {};
@@ -88,7 +88,7 @@ namespace NS
 }
 ```
 
-Verwenden Sie `friend F`, um einen Vorlagen Parameter als Friend zu deklarieren:
+Verwenden `friend F` Sie diese Verwendung, um einen Vorlagenparameter als Freund zu deklarieren:
 
 ```cpp
 template <typename T>
@@ -99,7 +99,7 @@ class my_class
 };
 ```
 
-Verwenden Sie `friend F`, um eine typedef als Friend zu deklarieren:
+Verwenden `friend F` Sie diese Form, um eine typedef als Freund zu deklarieren:
 
 ```cpp
 class Foo {};
@@ -115,13 +115,13 @@ class G
 Um zwei befreundete Klassen zu deklarieren, muss die gesamte zweite Klasse als Friend der ersten Klasse angegeben werden. Diese Einschränkung besteht, weil der Compiler über genügend Informationen verfügt, um einzelne Friend-Funktionen nur an der Stelle zu deklarieren, in der die zweite Klasse deklariert wird.
 
 > [!NOTE]
->  Obwohl die gesamte zweite Klasse Friend der ersten Klasse sein muss, können Sie auswählen, welche Funktionen in der ersten Klasse Friends der zweiten Klasse sind.
+> Obwohl die gesamte zweite Klasse Friend der ersten Klasse sein muss, können Sie auswählen, welche Funktionen in der ersten Klasse Friends der zweiten Klasse sind.
 
 ## <a name="friend-functions"></a>friend-Funktionen
 
-Eine **Friend** -Funktion ist eine Funktion, die kein Member einer Klasse ist, aber auf die privaten und geschützten Member der Klasse zugreifen kann. Friend-Funktionen gelten nicht als Klassenmember. Es sind normale externe Funktionen, denen spezielle Zugriffsrechte gewährt werden. Freunde befinden sich nicht im Bereich der Klasse, und Sie werden nicht mithilfe der Member-Selection-Operatoren () aufgerufen **.** und- **>** ), es sei denn, Sie sind Mitglieder einer anderen Klasse. Eine **Friend** -Funktion wird von der Klasse deklariert, die Zugriff gewährt. Die **Friend** -Deklaration kann an beliebiger Stelle in der Klassen Deklaration platziert werden. Sie wird nicht durch die Schlüsselwörter der Zugriffssteuerung beeinflusst.
+Eine **Friend-Funktion** ist eine Funktion, die kein Mitglied einer Klasse ist, aber Zugriff auf die privaten und geschützten Member der Klasse hat. Friend-Funktionen gelten nicht als Klassenmember. Es sind normale externe Funktionen, denen spezielle Zugriffsrechte gewährt werden. Freunde befinden sich nicht im Bereich der Klasse und werden nicht mit den Memberauswahloperatoren (**aufgerufen.** und**>**- ) es sei denn, sie sind Mitglieder einer anderen Klasse. Eine **Friend-Funktion** wird von der Klasse deklariert, die Zugriff gewährt. Die **Friend-Deklaration** kann an einer beliebigen Stelle in der Klassendeklaration platziert werden. Sie wird nicht durch die Schlüsselwörter der Zugriffssteuerung beeinflusst.
 
-Das folgende Beispiel zeigt eine `Point`-Klasse und die Friend-Funktion `ChangePrivate`. Die **Friend** -Funktion hat Zugriff auf den privaten Datenmember des `Point` Objekts, das Sie als Parameter empfängt.
+Das folgende Beispiel zeigt eine `Point`-Klasse und die Friend-Funktion `ChangePrivate`. Die **Friend-Funktion** hat Zugriff auf `Point` das private Datenmember des Objekts, das sie als Parameter empfängt.
 
 ```cpp
 // friend_functions.cpp
@@ -183,7 +183,7 @@ int A::Func1( B& b ) { return b._b; }   // OK
 int A::Func2( B& b ) { return b._b; }   // C2248
 ```
 
-Im vorherigen Beispiel wird nur der Funktion `A::Func1( B& )` Friend-Zugriff auf die `B`-Klasse gewährt. Daher ist der Zugriff auf den privaten Member `_b` in `Func1` der Klasse `A`, jedoch nicht in `Func2`.
+Im vorherigen Beispiel wird nur der Funktion `A::Func1( B& )` Friend-Zugriff auf die `B`-Klasse gewährt. Daher ist der Zugriff `_b` auf `Func1` den `A` privaten Member `Func2`in der Klasse korrekt, aber nicht in .
 
 Bei der `friend`-Klasse handelt es sich um eine Klasse, deren sämtliche Memberfunktionen Friend-Funktionen einer Klasse sind, d. h. deren Memberfunktionen Zugriff auf die privaten und geschützten Member der anderen Klasse haben. Angenommen, die `friend`-Deklaration in der `B`-Klasse lautete:
 
@@ -224,19 +224,19 @@ int main() {
 
 Die Friendship-Klasse wurde nicht gegenseitig festgelegt, es sei denn, sie wurde explizit als solche angegeben. Im obigen Beispiel können Memberfunktionen von `YourClass` nicht auf die privaten Member von `YourOtherClass` zugreifen.
 
-Ein verwalteter Typ ( C++in/CLI) darf keine Friend-Funktionen, Friend-Klassen oder Friend-Schnittstellen aufweisen.
+Ein verwalteter Typ (in C++/CLI) kann keine Friend-Funktionen, Freundesklassen oder Freundesschnittstellen haben.
 
 Die Friendship-Klasse wird nicht vererbt. Dies bedeutet, dass die von `YourOtherClass` abgeleiteten Klassen nicht auf die privaten Member von `YourClass` zugreifen können. Die Friendship-Klasse ist nicht transitiv. Daher können Klassen, die Friends von `YourOtherClass` sind, nicht auf die privaten Member von `YourClass` zugreifen.
 
 Die folgende Abbildung zeigt vier Klassendeklarationen: `Base`, `Derived`, `aFriend` und `anotherFriend`. Nur die `aFriend`-Klasse hat direkten Zugriff auf die privaten Member der `Base`-Klassendeklaration (und auf alle Member, die `Base` möglicherweise geerbt hat).
 
-![Auswirkungen der Friend-Beziehung](../cpp/media/vc38v41.gif "Auswirkungen von Friend-Beziehungen") <br/>
+![Auswirkungen von Friend-Beziehungen](../cpp/media/vc38v41.gif "Auswirkungen von Friend-Beziehungen") <br/>
 Auswirkungen von Friend-Beziehungen
 
 ## <a name="inline-friend-definitions"></a>Inline-Friend-Definitionen
 
-Friend-Funktionen können (bei Angabe eines Funktions Texts) innerhalb von Klassen Deklarationen definiert werden. Diese Funktionen sind Inlinefunktionen und wie Memberinlinefunktionen verhalten sie sich, als wären sie sofort definiert worden, nachdem alle Klassenmember angezeigt wurden, jedoch bevor der Klassengültigkeitsbereich geschlossen wurde (Ende der Klassendeklaration). Friend-Funktionen, die innerhalb von Klassen Deklarationen definiert sind, befinden sich im Gültigkeitsbereich der einschließenden Klasse.
+Friend-Funktionen können innerhalb von Klassendeklarationen definiert werden (ein Funktionstext). Diese Funktionen sind Inlinefunktionen und wie Memberinlinefunktionen verhalten sie sich, als wären sie sofort definiert worden, nachdem alle Klassenmember angezeigt wurden, jedoch bevor der Klassengültigkeitsbereich geschlossen wurde (Ende der Klassendeklaration). Friend-Funktionen, die innerhalb von Klassendeklarationen definiert sind, befinden sich im Bereich der einschließenden Klasse.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Schlüsselwörter](../cpp/keywords-cpp.md)
+[Keywords](../cpp/keywords-cpp.md)

@@ -1,5 +1,5 @@
 ---
-title: Krebar-Klasse
+title: CReBar-Klasse
 ms.date: 11/19/2018
 f1_keywords:
 - CReBar
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - CReBar [MFC], Create
 - CReBar [MFC], GetReBarCtrl
 ms.assetid: c1ad2720-1d33-4106-8e4e-80aa84f93559
-ms.openlocfilehash: 434232e8f99bf914b00379db53d4b4a37d24fe36
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: c1379d1ef8effea0df564da1b43769bb9a11435d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69502792"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81363932"
 ---
-# <a name="crebar-class"></a>Krebar-Klasse
+# <a name="crebar-class"></a>CReBar-Klasse
 
 Eine Steuerleiste, die Layout-, Persistenz- und Zustandsinformationen für Grundleisten-Steuerelemente bereitstellt.
 
@@ -33,30 +33,30 @@ class CReBar : public CControlBar
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CReBar::AddBar](#addbar)|Fügt ein Band zu einer Info Leiste hinzu.|
-|[CReBar::Create](#create)|Erstellt das Grund leisten-Steuerelement und fügt es `CReBar` an das-Objekt an.|
-|[CReBar::GetReBarCtrl](#getrebarctrl)|Ermöglicht den direkten Zugriff auf das zugrunde liegende allgemeine Steuerelement.|
+|[CReBar::AddBar](#addbar)|Fügt einer Bewehrung ein Band hinzu.|
+|[CReBar::Erstellen](#create)|Erstellt das Bewehrungssteuerelement und `CReBar` fügt es an das Objekt an.|
+|[CReBar::GetReBarCtrl](#getrebarctrl)|Ermöglicht den direkten Zugriff auf das zugrunde liegende gemeinsame Steuerelement.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Grund leisten-Objekt kann eine Vielzahl von untergeordneten Fenstern enthalten, normalerweise andere Steuerelemente, einschließlich Bearbeitungs Feldern, Symbolleisten und Listenfelder. Ein Grund leisten-Objekt kann seine untergeordneten Fenster über einer angegebenen Bitmap anzeigen. Ihre Anwendung kann die Größe der Info Leiste automatisch ändern, oder der Benutzer kann die Größe der Info Leiste manuell ändern, indem er auf die Zieh Punkt Leiste klickt oder diese zieht.
+Ein Bewehrungsobjekt kann eine Vielzahl von untergeordneten Fenstern enthalten, in der Regel andere Steuerelemente, einschließlich Bearbeitungsfelder, Symbolleisten und Listenfelder. Ein Bewehrungsobjekt kann seine untergeordneten Fenster über einer angegebenen Bitmap anzeigen. Ihre Anwendung kann die Größe der Bewehrung automatisch ändern, oder der Benutzer kann die Größe der Bewehrung manuell ändern, indem er auf die Greiferleiste klickt oder sie zieht.
 
-![Beispiel für rebarmenu](../../mfc/reference/media/vc4sc61.gif "Beispiel für rebarmenu")
+![Beispiel eines Grundleistenmenüs](../../mfc/reference/media/vc4sc61.gif "Beispiel eines Grundleistenmenüs")
 
-## <a name="rebar-control"></a>Grund leisten-Steuerelement
+## <a name="rebar-control"></a>Bewehrungssteuerung
 
-Ein Grund leisten-Objekt verhält sich ähnlich wie ein Toolbar-Objekt. Eine Grund Leiste verwendet den Click-and-Drag-Mechanismus, um die Größe der Bänder zu ändern. Ein Grund leisten-Steuerelement kann ein oder mehrere Bänder enthalten, wobei jedes Band eine beliebige Kombination aus einer Zieh Punkt Leiste, einer Bitmap, einer Text Bezeichnung und einem untergeordneten Fenster enthält. Bänder dürfen jedoch nicht mehr als ein untergeordnetes Fenster enthalten.
+Ein Bewehrungsobjekt verhält sich ähnlich wie ein Symbolleistenobjekt. Eine Bewehrung verwendet den Click-and-Drag-Mechanismus, um die Größe ihrer Bänder zu ändern. Ein Bewehrungssteuerelement kann ein oder mehrere Bänder enthalten, wobei jedes Band eine beliebige Kombination aus einer Greiferleiste, einer Bitmap, einer Textbeschriftung und einem untergeordneten Fenster enthält. Bänder dürfen jedoch nicht mehr als ein untergeordnetes Fenster enthalten.
 
-`CReBar`verwendet die Klasse " [krebarctrl](../../mfc/reference/crebarctrl-class.md) ", um die Implementierung bereitzustellen. Sie können auf das Grund leisten-Steuerelement über [GetReBarCtrl](#getrebarctrl) zugreifen, um die Anpassungsoptionen des-Steuer Elements zu nutzen. Weitere Informationen zu den Grund leisten-Steuerelementen `CReBarCtrl`finden Sie unter. Weitere Informationen zum Verwenden von Grund leisten-Steuerelementen finden Sie unter [verwenden](../../mfc/using-crebarctrl.md)von "debugstrg".
+`CReBar`verwendet die [CReBarCtrl-Klasse,](../../mfc/reference/crebarctrl-class.md) um seine Implementierung bereitzustellen. Sie können über [GetReBarCtrl](#getrebarctrl) auf das Bewehrungssteuerelement zugreifen, um die Anpassungsoptionen des Steuerelements zu nutzen. Weitere Informationen zu Bewehrungssteuerelementen finden Sie unter `CReBarCtrl`. Weitere Informationen zur Verwendung von Bewehrungssteuerelementen finden Sie unter [Verwenden von CReBarCtrl](../../mfc/using-crebarctrl.md).
 
 > [!CAUTION]
->  Das Andocken von Steuerelement Objekten unterstützt die MFC-Steuerleiste nicht. Wenn `CRebar::EnableDocking` aufgerufen wird, wird die Anwendung von der Anwendung bestätigt.
+> Bewehrungs- und Bewehrungssteuerungsobjekte unterstützen das MFC-Steuerleistenandocken nicht. Wenn `CRebar::EnableDocking` aufgerufen wird, wird Ihre Anwendung bestätigen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -68,11 +68,11 @@ Ein Grund leisten-Objekt verhält sich ähnlich wie ein Toolbar-Objekt. Eine Gru
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** Afxext. h
+**Kopf:** afxext.h
 
-##  <a name="addbar"></a>Krebar:: addbar
+## <a name="crebaraddbar"></a><a name="addbar"></a>CReBar::AddBar
 
-Diese Member-Funktion wird aufgerufen, um der Info Leiste ein Band hinzuzufügen.
+Rufen Sie diese Memberfunktion auf, um der Bewehrung ein Band hinzuzufügen.
 
 ```
 BOOL AddBar(
@@ -91,23 +91,23 @@ BOOL AddBar(
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
-Ein Zeiger auf ein `CWnd` -Objekt, das das untergeordnete Fenster ist, das in die Info Leiste eingefügt werden soll. Das referenzierte Objekt muss über eine WS_CHILD verfügen.
+*Pbar*<br/>
+Ein Zeiger auf `CWnd` ein Objekt, das das untergeordnete Fenster ist, das in die Bewehrung eingefügt werden soll. Das referenzierte Objekt muss über eine WS_CHILD verfügen.
 
 *lpszText*<br/>
-Ein Zeiger auf eine Zeichenfolge, die den Text enthält, der auf der Info Leiste angezeigt werden soll. Standardmäßig NULL. Der in *lpszText* enthaltene Text ist nicht Teil des untergeordneten Fensters. Sie befindet sich auf der Grund leisten selbst.
+Ein Zeiger auf eine Zeichenfolge, die den Text enthält, der auf der Bewehrung angezeigt werden soll. NULL standardmäßig. Der in *lpszText* enthaltene Text ist nicht Teil des untergeordneten Fensters. es ist auf der Bewehrung selbst.
 
 *pbmp*<br/>
-Ein Zeiger auf ein `CBitmap` -Objekt, das im Hintergrund der Hintergrund Anzeige angezeigt werden soll. Standardmäßig NULL.
+Ein Zeiger auf `CBitmap` ein Objekt, das auf dem Bewehrungshintergrund angezeigt werden soll. NULL standardmäßig.
 
 *dwStyle*<br/>
-Ein DWORD, das das Format enthält, das auf die Info Leiste angewendet werden soll. Eine komplette `fStyle` Liste der Band Stile finden Sie in der Funktionsbeschreibung in der Win32-Struktur [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) .
+Ein DWORD, das den Stil enthält, der auf die Bewehrung angewendet werden soll. Eine `fStyle` vollständige Liste der Bandstile finden Sie in der Funktionsbeschreibung in der Win32-Struktur [REBARBANDINFO.](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow)
 
 *clrFore*<br/>
-Ein COLORREF-Wert, der die Vordergrundfarbe der Info Leiste darstellt.
+Ein COLORREF-Wert, der die Vordergrundfarbe der Bewehrung darstellt.
 
 *clrBack*<br/>
-Ein COLORREF-Wert, der die Hintergrundfarbe der Info Leiste darstellt.
+Ein COLORREF-Wert, der die Hintergrundfarbe der Bewehrung darstellt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -117,9 +117,9 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 [!code-cpp[NVC_MFC_CReBarCtrl#1](../../mfc/reference/codesnippet/cpp/crebar-class_1.cpp)]
 
-##  <a name="create"></a>"Krebar:: Create"
+## <a name="crebarcreate"></a><a name="create"></a>CReBar::Erstellen
 
-Rufen Sie diese Member-Funktion auf, um eine Grund Leiste zu erstellen.
+Rufen Sie diese Memberfunktion auf, um eine Bewehrung zu erstellen.
 
 ```
 virtual BOOL Create(
@@ -132,16 +132,16 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-Zeiger auf das `CWnd` -Objekt, dessen Windows-Fenster der Statusleiste übergeordnet ist. Normalerweise das Rahmen Fenster.
+Zeigen Sie `CWnd` auf das Objekt, dessen Windows-Fenster das übergeordnete Element der Statusleiste ist. Normalerweise Ihr Rahmenfenster.
 
 *dwCtrlStyle*<br/>
-Der Stil des Grund leisten Steuer Elements. Standardmäßig werden in RBS_BANDBORDERS schmale Linien angezeigt, um angrenzende Bänder innerhalb des Grund leisten-Steuer Elements zu trennen. Eine Liste der Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK.
+Der Bewehrungssteuerungsstil. Standardmäßig RBS_BANDBORDERS, die schmale Linien anzeigt, um benachbarte Bänder innerhalb des Bewehrungssteuerelements zu trennen. Eine Liste der Formatvorlagen finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
 
 *dwStyle*<br/>
-Die Fenster Stile des Fenster Fensters.
+Die Bewehrungsfensterstile.
 
 *nID*<br/>
-Die ID des untergeordneten Fensters der Info Leiste.
+Die untergeordnete Fenster-ID der Bewehrung.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -149,11 +149,11 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für " [krebar:: addbar](#addbar)".
+  Siehe Beispiel für [CReBar::AddBar](#addbar).
 
-##  <a name="getrebarctrl"></a>Krebar:: GetReBarCtrl
+## <a name="crebargetrebarctrl"></a><a name="getrebarctrl"></a>CReBar::GetReBarCtrl
 
-Diese Member-Funktion ermöglicht den direkten Zugriff auf das zugrunde liegende allgemeine Steuerelement.
+Diese Memberfunktion ermöglicht den direkten Zugriff auf das zugrunde liegende gemeinsame Steuerelement.
 
 ```
 CReBarCtrl& GetReBarCtrl() const;
@@ -161,13 +161,13 @@ CReBarCtrl& GetReBarCtrl() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf ein " [krebarctrl](../../mfc/reference/crebarctrl-class.md) "-Objekt.
+Ein Verweis auf ein [CReBarCtrl-Objekt.](../../mfc/reference/crebarctrl-class.md)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Member-Funktion können Sie die Funktionalität des allgemeinen Windows-Steuer Elements für die Grund Leiste beim Anpassen der Info Leiste nutzen. Wenn Sie `GetReBarCtrl`den Befehl verwenden, wird ein Verweis Objekt an `CReBarCtrl` das-Objekt zurückgegeben, sodass Sie beide Member-Funktionen verwenden können.
+Rufen Sie diese Memberfunktion auf, um die Funktionalität der allgemeinen Windows-Bewehrungssteuerung beim Anpassen der Bewehrung zu nutzen. Wenn Sie `GetReBarCtrl`aufrufen, wird ein `CReBarCtrl` Referenzobjekt an das Objekt zurückgegeben, sodass Sie beide Elementfunktionen verwenden können.
 
-Weitere Informationen zum Anpassen der `CReBarCtrl` Info Leiste mithilfe von finden Sie unter [verwenden](../../mfc/using-crebarctrl.md)von "debugstrg".
+Weitere Informationen `CReBarCtrl` zum Anpassen der Bewehrung finden Sie unter Verwenden von [CReBarCtrl](../../mfc/using-crebarctrl.md).
 
 ### <a name="example"></a>Beispiel
 

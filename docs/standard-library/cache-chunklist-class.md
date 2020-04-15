@@ -10,12 +10,12 @@ helpviewer_keywords:
 - stdext::cache_chunklist [C++], allocate
 - stdext::cache_chunklist [C++], deallocate
 ms.assetid: af19eccc-4ae7-4a34-bbb2-81e397424cb9
-ms.openlocfilehash: 035e5153b4e4c84743a64bcc9cec24920a6a0336
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: d0dd6176a34bd625069511106c491225d1467d08
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72688361"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366755"
 ---
 # <a name="cache_chunklist-class"></a>cache_chunklist-Klasse
 
@@ -30,28 +30,28 @@ class cache_chunklist
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*RT*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*Sz*|Die Anzahl der zuzuweisenden Elemente im Array|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Diese Klassen Vorlage verwendet den **New-Operator** , um Segmente von unformatierten Arbeitsspeicher zuzuordnen, und subzuordnende Blöcke, um bei Bedarf Speicher für einen Speicherblock zuzuweisen. Er speichert frei zugeordnete Speicherblöcke in einer separaten freien Liste für jeden Block und verwendet den **Operator Delete** zum Aufheben der Zuordnung eines Segments, wenn kein Arbeitsspeicher Block verwendet wird.
+Diese Klassenvorlage verwendet **Operator new,** um Blöcke von Rohspeicher zuzuweisen und Blöcke zu unterordnen, um Speicher für einen Speicherblock bei Bedarf zuzuweisen. Es speichert verteilte Speicherblöcke in einer separaten freien Liste für jeden Chunk und verwendet **Operator delete,** um einen Chunk zuzuweisen, wenn keiner seiner Speicherblöcke verwendet wird.
 
-Jeder Speicherblock enthält *SZ* -Bytes des verwendbaren Speichers und einen Zeiger auf den Block, zu dem er gehört. Jeder Block enthält `Nelts` Speicherblöcke, drei Zeiger, einen int-Wert und die Daten, die **Operator new** und **Operator Delete** erfordern.
+Jeder Speicherblock enthält *Sz-Bytes* an nutzbarem Speicher und einen Zeiger auf den Chunk, zu dem er gehört. Jeder Chunk `Nelts` enthält Speicherblöcke, drei Zeiger, einen int und die Daten, die **der Operator neu** und das Löschen des **Operators** benötigen.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[cache_chunklist](#cache_chunklist)|Konstruiert ein Objekt vom Typ `cache_chunklist`.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[allocate](#allocate)|Belegt einen Speicherblock.|
-|[deallocate](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
+|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -59,7 +59,7 @@ Jeder Speicherblock enthält *SZ* -Bytes des verwendbaren Speichers und einen Ze
 
 **Namespace:** stdext
 
-## <a name="allocate"></a> cache_chunklist::allocate
+## <a name="cache_chunklistallocate"></a><a name="allocate"></a>cache_chunklist::zuweisen
 
 Belegt einen Speicherblock.
 
@@ -69,17 +69,17 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*count*|Die Anzahl der zuzuordnenden Elemente des Arrays.|
+|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
 
 ### <a name="return-value"></a>Rückgabewert
 
 Zeiger auf das zugewiesene Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="cache_chunklist"></a> cache_chunklist::cache_chunklist
+## <a name="cache_chunklistcache_chunklist"></a><a name="cache_chunklist"></a>cache_chunklist::cache_chunklist
 
 Konstruiert ein Objekt vom Typ `cache_chunklist`.
 
@@ -87,9 +87,9 @@ Konstruiert ein Objekt vom Typ `cache_chunklist`.
 cache_chunklist();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-## <a name="deallocate"></a> cache_chunklist::deallocate
+## <a name="cache_chunklistdeallocate"></a><a name="deallocate"></a>cache_chunklist::deallocate
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -99,13 +99,13 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuweisung zum Speicher aufgehoben werden soll.|
+|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
 |*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

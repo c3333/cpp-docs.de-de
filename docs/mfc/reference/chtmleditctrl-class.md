@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CHtmlEditCtrl [MFC], GetDHtmlDocument
 - CHtmlEditCtrl [MFC], GetStartDocument
 ms.assetid: 0fc4a238-b05f-4874-9edc-6a6701f064d9
-ms.openlocfilehash: 6f5c465a8ec9c8f54af5545e66fb849a08d241af
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 05063c62e9f7a5d88d3fecde842f979725200f98
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62389410"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366843"
 ---
 # <a name="chtmleditctrl-class"></a>CHtmlEditCtrl-Klasse
 
@@ -36,25 +36,25 @@ class CHtmlEditCtrl: public CWnd,
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHtmlEditCtrl::CHtmlEditCtrl](#chtmleditctrl)|Erstellt ein `CHtmlEditCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHtmlEditCtrl::Create](#create)|Erstellt ein WebBrowser ActiveX-Steuerelement, und fügt es der `CHtmlEditCtrl` Objekt. Diese Funktion setzt automatisch das WebBrowser ActiveX-Steuerelement in den Bearbeitungsmodus.|
-|[CHtmlEditCtrl::GetDHtmlDocument](#getdhtmldocument)|Ruft die [IHTMLDocument2](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574\(v=vs.85\)) Schnittstelle für das Dokument derzeit geladen, im WebBrowser-Steuerelement enthalten.|
-|[CHtmlEditCtrl::GetStartDocument](#getstartdocument)|Ruft die URL ab, der ein Standarddokument in der enthaltenen WebBrowser-Steuerelement geladen.|
+|[CHtmlEditCtrl::Erstellen](#create)|Erstellt ein WebBrowser ActiveX-Steuerelement und `CHtmlEditCtrl` fügt es an das Objekt an. Diese Funktion versetzt das WebBrowser ActiveX-Steuerelement automatisch in den Bearbeitungsmodus.|
+|[CHtmlEditCtrl::GetDHtmlDocument](#getdhtmldocument)|Ruft die [IHTMLDocument2-Schnittstelle](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574\(v=vs.85\)) für das Dokument ab, das derzeit im enthaltenen WebBrowser-Steuerelement geladen ist.|
+|[CHtmlEditCtrl::GetStartDocument](#getstartdocument)|Ruft die URL in ein Standarddokument ab, das in das enthaltene WebBrowser-Steuerelement geladen werden soll.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die gehostete WebBrowser, die Steuerelement automatisch angezeigt wird, in Bearbeitungsmodus befindet, nachdem dieser erstellt wurde.
+Das gehostete WebBrowser-Steuerelement wird nach der Erstellung automatisch in den Bearbeitungsmodus versetzt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -68,7 +68,7 @@ Die gehostete WebBrowser, die Steuerelement automatisch angezeigt wird, in Bearb
 
 **Header:** afxhtml.h
 
-##  <a name="chtmleditctrl"></a>  CHtmlEditCtrl::CHtmlEditCtrl
+## <a name="chtmleditctrlchtmleditctrl"></a><a name="chtmleditctrl"></a>CHtmlEditCtrl::CHtmlEditCtrl
 
 Erstellt ein `CHtmlEditCtrl`-Objekt.
 
@@ -76,9 +76,9 @@ Erstellt ein `CHtmlEditCtrl`-Objekt.
 CHtmlEditCtrl();
 ```
 
-##  <a name="create"></a>  CHtmlEditCtrl::Create
+## <a name="chtmleditctrlcreate"></a><a name="create"></a>CHtmlEditCtrl::Erstellen
 
-Erstellt ein WebBrowser ActiveX-Steuerelement, und fügt es der `CHtmlEditCtrl` Objekt. Der WebBrowser ActiveX Steuerelement automatisch zu einem Standarddokument navigiert und dann befindet sich im Bearbeitungsmodus befindet, von dieser Funktion.
+Erstellt ein WebBrowser ActiveX-Steuerelement und `CHtmlEditCtrl` fügt es an das Objekt an. Das WebBrowser ActiveX-Steuerelement navigiert automatisch zu einem Standarddokument und wird dann von dieser Funktion in den Bearbeitungsmodus versetzt.
 
 ```
 virtual BOOL Create(
@@ -98,25 +98,25 @@ Dieser Parameter wird nicht verwendet.
 *dwStyle*<br/>
 Dieser Parameter wird nicht verwendet.
 
-*rect*<br/>
-Gibt an, die Größe und Position des Steuerelements.
+*Rect*<br/>
+Gibt die Größe und Position des Steuerelements an.
 
 *pParentWnd*<br/>
-Gibt die übergeordnete Fenster des Steuerelements an. Es darf nicht NULL sein.
+Gibt das übergeordnete Fenster des Steuerelements an. Es darf nicht NULL sein.
 
 *nID*<br/>
-Gibt an, der ID des Steuerelements
+Gibt die ID des Steuerelements an.
 
 *pContext*<br/>
 Dieser Parameter wird nicht verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt "true" bei Erfolg bei "false".
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-##  <a name="getdhtmldocument"></a>  CHtmlEditCtrl::GetDHtmlDocument
+## <a name="chtmleditctrlgetdhtmldocument"></a><a name="getdhtmldocument"></a>CHtmlEditCtrl::GetDHtmlDocument
 
-Ruft die [IHTMLDocument2](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574\(v=vs.85\)) Schnittstelle für das Dokument derzeit geladen, im enthaltenen WebBrowser-Steuerelement
+Ruft die [IHTMLDocument2-Schnittstelle](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574\(v=vs.85\)) für das Dokument ab, das derzeit im enthaltenen WebBrowser-Steuerelement geladen ist.
 
 ```
 BOOL GetDHtmlDocument(IHTMLDocument2** ppDocument) const;
@@ -127,9 +127,9 @@ BOOL GetDHtmlDocument(IHTMLDocument2** ppDocument) const;
 *ppDocument*<br/>
 Die Dokumentschnittstelle.
 
-##  <a name="getstartdocument"></a>  CHtmlEditCtrl::GetStartDocument
+## <a name="chtmleditctrlgetstartdocument"></a><a name="getstartdocument"></a>CHtmlEditCtrl::GetStartDocument
 
-Ruft die URL ab, der ein Standarddokument in der enthaltenen WebBrowser-Steuerelement geladen.
+Ruft die URL in ein Standarddokument ab, das in das enthaltene WebBrowser-Steuerelement geladen werden soll.
 
 ```
 virtual LPCTSTR GetStartDocument();

@@ -1,8 +1,9 @@
 ---
 title: wctob
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - wctob
+- _o_wctob
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - wctob function
 - characters, converting
 ms.assetid: 46aec98b-c2f2-4e9d-9d89-7db99ba8a9a6
-ms.openlocfilehash: 151325b0d66e6d57156cdf94828ca1d4b151d437
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 420071680c3dc273f6df637cf44273f2c24bd64c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70944934"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81320442"
 ---
 # <a name="wctob"></a>wctob
 
@@ -52,25 +54,27 @@ Zu übersetzender Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn **wcdeb** ein breit Zeichen erfolgreich konvertiert, wird dessen multibytezeichendarstellung nur dann zurückgegeben, wenn das Multibytezeichen genau ein Byte lang ist. Wenn **wcesb** ein breit Zeichen erkennt, das nicht in ein Multibytezeichen konvertiert werden kann, oder wenn das Multibytezeichen nicht genau ein Byte lang ist, wird "-1" zurückgegeben.
+Wenn **wctob** ein breites Zeichen erfolgreich konvertiert, gibt es seine Multibyte-Zeichendarstellung zurück, nur wenn das Multibyte-Zeichen genau ein Byte lang ist. Wenn **wctob** auf ein breites Zeichen trifft, das nicht in ein Multibyte-Zeichen konvertiert werden kann, oder das Multibyte-Zeichen nicht genau ein Byte lang ist, gibt es ein -1 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **wcdeb** -Funktion konvertiert ein in *WCHAR* enthaltenes breit Zeichen in das entsprechende Multibytezeichen, das vom Return **int** -Wert übergeben wird, wenn das Multibytezeichen genau ein Byte lang ist.
+Die **wctob-Funktion** konvertiert ein breites Zeichen, das in *wchar* enthalten ist, in das entsprechende Multibyte-Zeichen, das vom Return **Int-Wert** übergeben wird, wenn das Multibyte-Zeichen genau ein Byte lang ist.
 
-Wenn **wcdeb** nicht erfolgreich war und kein entsprechendes Multibytezeichen gefunden wurde, legt die Funktion **errno** auf **EILSEQ** fest und gibt-1 zurück.
+Wenn **wctob** nicht erfolgreich war und kein entsprechendes Multibyte-Zeichen gefunden wurde, setzt die Funktion **errno** auf **EILSEQ** und gibt -1 zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**wctob**|\<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
-Dieses Programm veranschaulicht das Verhalten der **wcstomsb** -Funktion.
+Dieses Programm veranschaulicht das Verhalten der **wcstombs-Funktion.**
 
 ```C
 // crt_wctob.c

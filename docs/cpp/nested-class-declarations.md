@@ -9,12 +9,12 @@ helpviewer_keywords:
 - declaring classes [C++]
 - declarations, nested classes
 ms.assetid: c02e471d-b7f9-41b8-8ef6-2323f006dbd5
-ms.openlocfilehash: a1464ce9ca8349550160c768265c1c4eada93209
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8ace21e3c8ced72b34898a716eae882a3750c8ef
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80161163"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367901"
 ---
 # <a name="nested-class-declarations"></a>Geschachtelte Klassendeklarationen
 
@@ -54,14 +54,14 @@ int main()
 }
 ```
 
-`BufferedIO::BufferedInput` und `BufferedIO::BufferedOutput` werden innerhalb `BufferedIO`deklariert. Diese Klassennamen sind außerhalb des gültigen Bereichs der Klasse `BufferedIO` nicht sichtbar. Ein Objekt vom Typ `BufferedIO` enthält jedoch keine Objekte des Typs `BufferedInput` oder `BufferedOutput`.
+`BufferedIO::BufferedInput`und `BufferedIO::BufferedOutput` werden `BufferedIO`innerhalb deklariert. Diese Klassennamen sind außerhalb des gültigen Bereichs der Klasse `BufferedIO` nicht sichtbar. Ein Objekt vom Typ `BufferedIO` enthält jedoch keine Objekte des Typs `BufferedInput` oder `BufferedOutput`.
 
 Geschachtelte Klassen können Namen, Typnamen, Namen statischer Member und Enumeratoren nur aus der einschließenden Klasse direkt verwenden. Um Namen von anderen Klassenmembern zu verwenden, müssen Sie Zeiger, Verweise oder Objektnamen verwenden.
 
 Im vorherigen Beispiel mit `BufferedIO` kann auf die Enumeration `IOError` direkt von Memberfunktionen in den geschachtelten Klassen `BufferedIO::BufferedInput` oder `BufferedIO::BufferedOutput` zugegriffen werden, wie in der `good`-Funktion gezeigt wird.
 
 > [!NOTE]
->  Geschachtelte Klassen deklarieren nur Typen innerhalb des gültigen Klassenbereichs. Sie führen nicht dazu, dass enthaltene Objekte der geschachtelten Klasse erstellt werden. Das vorhergehende Beispiel deklariert zwei geschachtelte Klassen, jedoch keine Objekte dieser Klassentypen.
+> Geschachtelte Klassen deklarieren nur Typen innerhalb des gültigen Klassenbereichs. Sie führen nicht dazu, dass enthaltene Objekte der geschachtelten Klasse erstellt werden. Das vorhergehende Beispiel deklariert zwei geschachtelte Klassen, jedoch keine Objekte dieser Klassentypen.
 
 Eine Ausnahme von der Bereichssichtbarkeit einer Deklaration der geschachtelten Klasse ist, wenn ein Typname zusammen mit einer Vorwärtsdeklaration deklariert ist.  In diesem Fall ist der Klassenname, der von der Vorwärtsdeklaration deklariert wird, außerhalb der einschließenden Klasse sichtbar, wobei sein Bereich als kleinster einschließender Nichtklassenbereich definiert wird.  Beispiel:
 
@@ -134,13 +134,13 @@ int main()
 }
 ```
 
-Im vorherigen Beispiel wird die Syntax des *qualifizierten Typnamens* verwendet, um den Funktionsnamen zu deklarieren. Die Deklaration:
+Im vorherigen Beispiel wird die Syntax *mit qualifiziertem Typnamen* verwendet, um den Funktionsnamen zu deklarieren. Die Deklaration:
 
 ```cpp
 BufferedIO::BufferedInput::read()
 ```
 
-bedeutet "die `read`-Funktion, die ein Member der `BufferedInput`-Klasse ist, die im Bereich der `BufferedIO`-Klasse liegt". Da diese Deklaration die *qualified-Type-Name-* Syntax verwendet, sind Konstrukte der folgenden Form möglich:
+bedeutet "die `read`-Funktion, die ein Member der `BufferedInput`-Klasse ist, die im Bereich der `BufferedIO`-Klasse liegt". Da diese Deklaration die Syntax *des qualifizierten Typnamens* verwendet, sind Konstrukte der folgenden Form möglich:
 
 ```cpp
 typedef BufferedIO::BufferedInput BIO_INPUT;
@@ -148,7 +148,7 @@ typedef BufferedIO::BufferedInput BIO_INPUT;
 int BIO_INPUT::read()
 ```
 
-Die vorangehende Deklaration entspricht der vorherigen Deklaration, Sie verwendet jedoch anstelle der Klassennamen einen **typedef** -Namen.
+Die vorangehende Deklaration entspricht der vorherigen, verwendet jedoch anstelle der Klassennamen einen **typedef-Namen.**
 
 ## <a name="friend-functions-in-nested-classes"></a>Friend-Funktionen in geschachtelten Klassen
 
@@ -206,6 +206,6 @@ int GetExtendedErrorStatus( char *message )
 
 Bei der vorherigen Schnittstelle können mehrere Klassen die Dienste dieser Funktion verwenden, indem eine Speicheradresse übergeben wird, an welche die Fehlermeldung kopiert werden soll.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

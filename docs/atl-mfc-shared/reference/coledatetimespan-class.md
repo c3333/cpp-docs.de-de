@@ -26,16 +26,16 @@ helpviewer_keywords:
 - Date data type, MFC encapsulation of
 - COleDateTimeSpan class
 ms.assetid: 7441526d-a30a-4019-8fb3-3fee6f897cbe
-ms.openlocfilehash: b68a984488f37326f3b0c1249a5f17a3eb76548b
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 7173fa0b6261ea718a02d399d944a1b5bb98b9f6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62198199"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317742"
 ---
 # <a name="coledatetimespan-class"></a>COleDateTimeSpan-Klasse
 
-Stellt einen relativen Zeitpunkt, eine Zeitspanne dar.
+Stellt eine relative Zeit, eine Zeitspanne dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,59 +47,59 @@ class COleDateTimeSpan
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDateTimeSpan::COleDateTimeSpan](#coledatetimespan)|Erstellt ein `COleDateTimeSpan`-Objekt.|
+|[ColedateTimeSpan::ColeDateTimeSpan](#coledatetimespan)|Erstellt ein `COleDateTimeSpan`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDateTimeSpan::Format](#format)|Generiert eine formatierte Zeichenfolgendarstellung einer `COleDateTimeSpan` Objekt.|
-|[COleDateTimeSpan::GetDays](#getdays)|Gibt dem Tagteil von der Spanne zurück, dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetHours](#gethours)|Gibt dem Stundenteil der Spanne zurück, dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetMinutes](#getminutes)|Gibt dem Minutenteil der Spanne zurück, dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetSeconds](#getseconds)|Gibt dem zweiten Teil der Spanne zurück, dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetStatus](#getstatus)|Ruft ab, der den Status (Gültigkeit) `COleDateTimeSpan` Objekt.|
-|[COleDateTimeSpan::GetTotalDays](#gettotaldays)|Gibt der Anzahl der Tage dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetTotalHours](#gettotalhours)|Gibt der Anzahl der Stunden dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetTotalMinutes](#gettotalminutes)|Gibt der Anzahl der Minuten dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::GetTotalSeconds](#gettotalseconds)|Gibt der Anzahl der Sekunden zurück, dies `COleDateTimeSpan` -Objekt darstellt.|
-|[COleDateTimeSpan::SetDateTimeSpan](#setdatetimespan)|Legt den Wert dieses `COleDateTimeSpan` Objekt.|
-|[COleDateTimeSpan::SetStatus](#setstatus)|Legt den Status (Gültigkeit) dieses `COleDateTimeSpan` Objekt.|
+|[COleDateTimeSpan::Format](#format)|Generiert eine formatierte Zeichenfolgendarstellung eines `COleDateTimeSpan` Objekts.|
+|[COleDateTimeSpan::GetDays](#getdays)|Gibt den Tagesteil der `COleDateTimeSpan` Spanne zurück, die dieses Objekt darstellt.|
+|[COledateTimeSpan::GetHours](#gethours)|Gibt den Stundenteil der `COleDateTimeSpan` Spanne zurück, die dieses Objekt darstellt.|
+|[COleDateTimeSpan::GetMinutes](#getminutes)|Gibt den Minutenteil der `COleDateTimeSpan` Spanne zurück, die dieses Objekt darstellt.|
+|[COleDateTimeSpan::GetSeconds](#getseconds)|Gibt den zweiten Teil `COleDateTimeSpan` der Spanne zurück, die dieses Objekt darstellt.|
+|[COleDateTimeSpan::GetStatus](#getstatus)|Ruft den Status (Gültigkeit) dieses Objekts `COleDateTimeSpan` ab.|
+|[COleDateTimeSpan::GetTotalDays](#gettotaldays)|Gibt die Anzahl `COleDateTimeSpan` der Tage zurück, die dieses Objekt darstellt.|
+|[COledateTimeSpan::GetTotalHours](#gettotalhours)|Gibt die Anzahl `COleDateTimeSpan` der Stunden zurück, die dieses Objekt darstellt.|
+|[COledateTimeSpan::GetTotalMinuten](#gettotalminutes)|Gibt die Anzahl `COleDateTimeSpan` der Minuten zurück, die dieses Objekt darstellt.|
+|[COleDateTimeSpan::GetTotalSekunden](#gettotalseconds)|Gibt die Anzahl `COleDateTimeSpan` der Sekunden zurück, die dieses Objekt darstellt.|
+|[COledateTimeSpan::SetDateTimeSpan](#setdatetimespan)|Legt den Wert `COleDateTimeSpan` dieses Objekts fest.|
+|[COleDateTimeSpan::SetStatus](#setstatus)|Legt den Status (Gültigkeit) dieses `COleDateTimeSpan` Objekts fest.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
 |||
 |-|-|
-|[operator +, -](#operator_add_-)|Hinzufügen, subtrahiert werden soll, und ändern Sie das Zeichen für `COleDateTimeSpan` Werte.|
-|[operator +=, -=](#operator_add_eq_-_eq)|Addition und Subtraktion ein `COleDateTimeSpan` Wert aus diesem `COleDateTimeSpan` Wert.|
-|[operator =](#operator_eq)|Kopiert ein `COleDateTimeSpan` Wert.|
-|[operator ==, <, <=](#coledatetimespan_relational_operators)|Vergleichen Sie zwei `COleDateTimeSpan` Werte.|
-|[Operator double](#operator_double)|Konvertiert diese `COleDateTimeSpan` -Werts in einen **doppelte**.|
+|[Betreiber +, -](#operator_add_-)|Hinzufügen, Subtrahieren und `COleDateTimeSpan` Ändern von Zeichen für Werte.|
+|[Operator +=, -=](#operator_add_eq_-_eq)|Fügen Sie einen `COleDateTimeSpan` Wert `COleDateTimeSpan` hinzu, und subtrahieren Sie ihn von diesem Wert.|
+|[Operator =](#operator_eq)|Kopiert `COleDateTimeSpan` einen Wert.|
+|[Operator ==, <, <=](#coledatetimespan_relational_operators)|Vergleichen `COleDateTimeSpan` Sie zwei Werte.|
+|[Operator double](#operator_double)|Konvertiert diesen `COleDateTimeSpan` Wert in eine **doppelte**.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[COleDateTimeSpan::m_span](#m_span)|Enthält die zugrunde liegende **doppelte** für diesen `COleDateTimeSpan` Objekt.|
-|[COleDateTimeSpan::m_status](#m_status)|Enthält den Status dieser `COleDateTimeSpan` Objekt.|
+|[COleDateTimeSpan::m_span](#m_span)|Enthält das **double** zugrunde `COleDateTimeSpan` liegende Double für dieses Objekt.|
+|[COleDateTimeSpan::m_status](#m_status)|Enthält den Status `COleDateTimeSpan` dieses Objekts.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`COleDateTimeSpan` eine Basisklasse keinen.
+`COleDateTimeSpan`hat keine Basisklasse.
 
-Ein `COleDateTimeSpan` behält Zeit in Tagen.
+A `COleDateTimeSpan` hält Zeit in Tagen.
 
-`COleDateTimeSpan` wird verwendet, mit dessen Begleitklasse [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md). `COleDateTime` Kapselt die `DATE` -Datentyp der OLE-Automatisierung. `COleDateTime` Stellt die absolute Zeitwerte dar. Alle `COleDateTime` Berechnungen umfassen `COleDateTimeSpan` Werte. Die Beziehung zwischen diesen Klassen ist analog zu der eine zweite Grenze zwischen [CTime](../../atl-mfc-shared/reference/ctime-class.md) und [CTimeSpan](../../atl-mfc-shared/reference/ctimespan-class.md).
+`COleDateTimeSpan`wird mit der Begleitklasse [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)verwendet. `COleDateTime`kapselt den `DATE` Datentyp der OLE-Automatisierung. `COleDateTime`stellt absolute Zeitwerte dar. Alle `COleDateTime` Berechnungen `COleDateTimeSpan` beinhalten Werte. Die Beziehung zwischen diesen Klassen ist analog zu der zwischen [CTime](../../atl-mfc-shared/reference/ctime-class.md) und [CTimeSpan](../../atl-mfc-shared/reference/ctimespan-class.md).
 
-Weitere Informationen zu den `COleDateTime` und `COleDateTimeSpan` Klassen finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
+Weitere Informationen zu `COleDateTime` `COleDateTimeSpan` den und Klassen finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** ATLComTime.h
+**Kopfzeile:** ATLComTime.h
 
-##  <a name="coledatetimespan_relational_operators"></a>  COleDateTimeSpan-Operatoren (Relational)
+## <a name="coledatetimespan-relational-operators"></a><a name="coledatetimespan_relational_operators"></a>COleDateTimeSpan Relationale Operatoren
 
 Vergleichsoperatoren.
 
@@ -115,16 +115,16 @@ bool operator>=(const COleDateTimeSpan& dateSpan) const throw();
 ### <a name="parameters"></a>Parameter
 
 *dateSpan*<br/>
-Der zu vergleichende `COleDateTimeSpan`.
+Das zu vergleichende `COleDateTimeSpan`-Element.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Operatoren vergleichen zwei Werte für Datum/Uhrzeit-Spanne und gibt TRUE zurück, wenn die Bedingung true ist; andernfalls "false".
+Diese Operatoren vergleichen zwei Datums-/Zeitzeitwerte und geben TRUE zurück, wenn die Bedingung wahr ist. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
->  Ein ATLASSERT treten auf, wenn ein Operand ungültig ist.
+> Ein ATLASSERT tritt auf, wenn einer der beiden Operanden ungültig ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -132,7 +132,7 @@ Diese Operatoren vergleichen zwei Werte für Datum/Uhrzeit-Spanne und gibt TRUE 
 
 [!code-cpp[NVC_ATLMFC_Utilities#26](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_2.cpp)]
 
-##  <a name="coledatetimespan"></a>  COleDateTimeSpan::COleDateTimeSpan
+## <a name="coledatetimespancoledatetimespan"></a><a name="coledatetimespan"></a>ColedateTimeSpan::ColeDateTimeSpan
 
 Erstellt ein `COleDateTimeSpan`-Objekt.
 
@@ -145,32 +145,32 @@ COleDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
 ### <a name="parameters"></a>Parameter
 
 *dblSpanSrc*<br/>
-Die Anzahl der Tage, die in die neue kopiert werden `COleDateTimeSpan` Objekt.
+Die Anzahl der Tage, die `COleDateTimeSpan` in das neue Objekt kopiert werden sollen.
 
 *lDays*, *nHours*, *nMins*, *nSecs*<br/>
-Geben Sie den Tag und Werte in die neue kopiert werden `COleDateTimeSpan` Objekt.
+Geben Sie die Tages- und Zeitwerte an, die in das neue `COleDateTimeSpan` Objekt kopiert werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle diese Konstruktoren erstellen neue `COleDateTimeSpan` Objekte, die auf den angegebenen Wert initialisiert. Eine kurze Beschreibung jeder dieser Konstruktoren folgt:
+Alle diese Konstruktoren `COleDateTimeSpan` erstellen neue Objekte, die auf den angegebenen Wert initialisiert wurden. Eine kurze Beschreibung der einzelnen Konstruktoren folgt:
 
-- **COleDateTimeSpan ()** erstellt eine `COleDateTimeSpan` Objekt mit 0 initialisiert.
+- **COleDateTimeSpan( )** Erstellt ein `COleDateTimeSpan` Objekt, das auf 0 initialisiert wurde.
 
-- **COleDateTimeSpan (** `dblSpanSrc` **)** erstellt eine `COleDateTimeSpan` Objekt aus einem Gleitkomma-Wert.
+- **COleDateTimeSpan(** `dblSpanSrc` **)** Erstellt ein `COleDateTimeSpan` Objekt aus einem Gleitkommawert.
 
-- **COleDateTimeSpan (** `lDays` **,** `nHours` **,** `nMins` **,** `nSecs` **)**  Erstellt eine `COleDateTimeSpan` Objekt mit den angegebenen numerischen Werten initialisiert.
+- **COleDateTimeSpan(** `lDays` **,** `nHours` **,** `nMins` **)** `nSecs` **)** Erstellt ein `COleDateTimeSpan` Objekt, das auf die angegebenen numerischen Werte initialisiert wurde.
 
-Der Status der neuen `COleDateTimeSpan` Objekt zu ungültig festgelegt ist.
+Der Status des `COleDateTimeSpan` neuen Objekts ist auf gültig festgelegt.
 
-Weitere Informationen über die Grenzen für `COleDateTimeSpan` Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
+Weitere Informationen zu den `COleDateTimeSpan` Grenzwerten für Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATLMFC_Utilities#14](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_3.cpp)]
 
-##  <a name="format"></a>  COleDateTimeSpan::Format
+## <a name="coledatetimespanformat"></a><a name="format"></a>COleDateTimeSpan::Format
 
-Generiert eine formatierte Zeichenfolgendarstellung einer `COleDateTimeSpan` Objekt.
+Generiert eine formatierte Zeichenfolgendarstellung eines `COleDateTimeSpan` Objekts.
 
 ```
 CString Format(LPCTSTR pFormat) const;
@@ -180,9 +180,9 @@ CString Format(UINT nID) const;
 ### <a name="parameters"></a>Parameter
 
 *pFormat*<br/>
-Eine Formatierungszeichenfolge ähnelt der `printf` Formatierungszeichenfolge. Formatierungscodes Prozentsatz vorangestellt (`%`) anmelden, werden mit den entsprechenden ersetzt `COleDateTimeSpan` Komponente. Andere Zeichen in der Formatierungszeichenfolge werden auf die zurückgegebene Zeichenfolge unverändert kopiert. Der Wert und die Bedeutung der Formatierungscodes für `Format` sind nachfolgend aufgeführt:
+Eine Formatierungszeichenfolge, die der `printf` Formatierungszeichenfolge ähnelt. Formatierungscodes, denen`%`ein Prozentzeichen ( ) `COleDateTimeSpan` vorangestellt ist, werden durch die entsprechende Komponente ersetzt. Andere Zeichen in der Formatierungszeichenfolge werden unverändert in die zurückgegebene Zeichenfolge kopiert. Der Wert und die Bedeutung `Format` der Formatierungscodes für sind unten aufgeführt:
 
-- **%H** Stunden in den aktuellen Tag
+- **%H** Stunden am aktuellen Tag
 
 - **%M** Minuten in der aktuellen Stunde
 
@@ -190,36 +190,36 @@ Eine Formatierungszeichenfolge ähnelt der `printf` Formatierungszeichenfolge. F
 
 - **%%** Prozentzeichen
 
-Die vier oben aufgeführten Formatcodes sind die einzige Codes, die Format akzeptiert.
+Die vier oben aufgeführten Formatcodes sind die einzigen Codes, die Format akzeptiert.
 
 -
 
 *nID*<br/>
-Die Ressourcen-ID für die Format-Zeichenfolge.
+Die Ressourcen-ID für die Formatsteuerungszeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein `CString` , die den formatierten Wert für Datum/Uhrzeit-Spanne enthält.
+A, `CString` das den formatierten Datums-/Zeitzeitwert enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktionen um eine formatierte Darstellung des Werts Zeitspanne zu erstellen. Wenn der Status dieser `COleDateTimeSpan` Objekt null ist. der zurückgegebene Wert ist eine leere Zeichenfolge. Wenn der Status ungültig ist, wird die zurückgegebene Zeichenfolge durch die Zeichenfolgenressource IDS_INVALID_DATETIMESPAN angegeben.
+Rufen Sie diese Funktionen auf, um eine formatierte Darstellung des Zeitzeitwerts zu erstellen. Wenn der Status `COleDateTimeSpan` dieses Objekts null ist, ist der Rückgabewert eine leere Zeichenfolge. Wenn der Status ungültig ist, wird die Rückgabezeichenfolge durch die Zeichenfolgenressource IDS_INVALID_DATETIMESPAN angegeben.
 
-Eine kurze Beschreibung der Formate für diese Funktion folgt:
+Eine kurze Beschreibung der Formulare für diese Funktion folgt:
 
 **Format(** *pFormat* **)**<br/>
-Dieses Formular formatiert den Wert, der mit der Formatzeichenfolge, die spezielle Formatierungscodes enthält, die ein Prozentzeichen (%) vorangestellt werden, wie in `printf`. Die Formatierungszeichenfolge wird als Parameter an die Funktion übergeben.
+Dieses Formular formatiert den Wert mithilfe der Formatzeichenfolge, die spezielle Formatierungscodes enthält, denen ein Prozentzeichen (%) vorangestellt ist, wie in `printf`. Die Formatierungszeichenfolge wird als Parameter an die Funktion übergeben.
 
 **Format(** *nID* **)**<br/>
-Dieses Formular formatiert den Wert, der mit der Formatzeichenfolge, die spezielle Formatierungscodes enthält, die ein Prozentzeichen (%) vorangestellt werden, wie in `printf`. Die Formatierungszeichenfolge ist eine Ressource. Die ID der Ressource, diese Zeichenfolge wird als Parameter übergeben.
+Dieses Formular formatiert den Wert mithilfe der Formatzeichenfolge, die spezielle Formatierungscodes enthält, denen ein Prozentzeichen (%) vorangestellt ist, wie in `printf`. Die Formatierungszeichenfolge ist eine Ressource. Die ID dieser Zeichenfolgenressource wird als Parameter übergeben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATLMFC_Utilities#15](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_4.cpp)]
 
-##  <a name="getdays"></a>  COleDateTimeSpan::GetDays
+## <a name="coledatetimespangetdays"></a><a name="getdays"></a>COleDateTimeSpan::GetDays
 
-Ruft den Tagteil von diesen Wert für Datum/Uhrzeit-Spanne ab.
+Ruft den Tagesteil dieses Datums-/Zeitspannenwerts ab.
 
 ```
 LONG GetDays() const throw();
@@ -227,19 +227,19 @@ LONG GetDays() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Tagteil dieses Werts für Datum/Uhrzeit-Spanne.
+Der Tagesteil dieses Datums-/Zeitspannenwerts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabe Werte aus dieser Funktion zwischen ca. - 3,615,000 und 3,615,000.
+Die Rückgabewerte dieser Funktion liegen zwischen ca. - 3.615.000 und 3.615.000.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -253,9 +253,9 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 [!code-cpp[NVC_ATLMFC_Utilities#16](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_5.cpp)]
 
-##  <a name="gethours"></a>  COleDateTimeSpan::GetHours
+## <a name="coledatetimespangethours"></a><a name="gethours"></a>COledateTimeSpan::GetHours
 
-Ruft den Stundenteil dieses Werts für Datum/Uhrzeit-Spanne ab.
+Ruft den Stundenteil dieses Datums-/Zeitspannenwerts ab.
 
 ```
 LONG GetHours() const throw();
@@ -263,19 +263,19 @@ LONG GetHours() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Stunden Teil dieser Wert für Datum/Uhrzeit-Spanne.
+Der Stundenteil dieses Datums-/Zeitspannenwerts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen - 23 und 23.
+Die Rückgabewerte dieser Funktion reichen zwischen - 23 und 23.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -289,9 +289,9 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 [!code-cpp[NVC_ATLMFC_Utilities#17](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_6.cpp)]
 
-##  <a name="getminutes"></a>  COleDateTimeSpan::GetMinutes
+## <a name="coledatetimespangetminutes"></a><a name="getminutes"></a>COleDateTimeSpan::GetMinutes
 
-Ruft den Minutenteil dieses Werts für Datum/Uhrzeit-Spanne ab.
+Ruft den Minutenteil dieses Datums-/Zeitspannenwerts ab.
 
 ```
 LONG GetMinutes() const throw();
@@ -299,19 +299,19 @@ LONG GetMinutes() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Minuten Teil dieser Wert für Datum/Uhrzeit-Spanne.
+Der Minutenteil dieses Datums-/Zeitspannenwerts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen - 59 und 59.
+Die Rückgabewerte dieser Funktion liegen zwischen - 59 und 59.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -325,9 +325,9 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 [!code-cpp[NVC_ATLMFC_Utilities#18](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_7.cpp)]
 
-##  <a name="getseconds"></a>  COleDateTimeSpan::GetSeconds
+## <a name="coledatetimespangetseconds"></a><a name="getseconds"></a>COleDateTimeSpan::GetSeconds
 
-Ruft den zweiten Teil dieses Werts für Datum/Uhrzeit-Spanne ab.
+Ruft den zweiten Teil dieses Datums-/Zeitzeitwerts ab.
 
 ```
 LONG GetSeconds() const throw();
@@ -335,19 +335,19 @@ LONG GetSeconds() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Sekundenteil dieses Werts für Datum/Uhrzeit-Spanne.
+Der Sekundenteil dieses Datums/Zeitspannenwerts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen - 59 und 59.
+Die Rückgabewerte dieser Funktion liegen zwischen - 59 und 59.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -361,9 +361,9 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 [!code-cpp[NVC_ATLMFC_Utilities#19](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_8.cpp)]
 
-##  <a name="getstatus"></a>  COleDateTimeSpan::GetStatus
+## <a name="coledatetimespangetstatus"></a><a name="getstatus"></a>COleDateTimeSpan::GetStatus
 
-Ruft ab, der den Status (Gültigkeit) `COleDateTimeSpan` Objekt.
+Ruft den Status (Gültigkeit) dieses Objekts `COleDateTimeSpan` ab.
 
 ```
 DateTimeSpanStatus GetStatus() const throw();
@@ -371,11 +371,11 @@ DateTimeSpanStatus GetStatus() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Status dieser `COleDateTimeSpan` Wert.
+Der Status `COleDateTimeSpan` dieses Werts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Rückgabewert wird definiert, durch die `DateTimeSpanStatus` Enumerationstyp, der in definiert ist die `COleDateTimeSpan` Klasse.
+Der Rückgabewert wird `DateTimeSpanStatus` durch den aufgezählten Typ definiert, der innerhalb der `COleDateTimeSpan` Klasse definiert ist.
 
 ```
 enum DateTimeSpanStatus{
@@ -385,29 +385,29 @@ enum DateTimeSpanStatus{
 };
 ```
 
-Eine kurze Beschreibung dieser Status-Werte finden Sie in der folgenden Liste:
+Eine kurze Beschreibung dieser Statuswerte finden Sie in der folgenden Liste:
 
-- `COleDateTimeSpan::valid` Gibt an, das von diesem `COleDateTimeSpan` Objekt gültig ist.
+- `COleDateTimeSpan::valid`Gibt an, dass dieses `COleDateTimeSpan` Objekt gültig ist.
 
-- `COleDateTimeSpan::invalid` Gibt an, das von diesem `COleDateTimeSpan` Objekt ist ungültig; d. h. der Wert möglicherweise nicht korrekt.
+- `COleDateTimeSpan::invalid`Gibt an, dass dieses `COleDateTimeSpan` Objekt ungültig ist. das heißt, sein Wert kann falsch sein.
 
-- `COleDateTimeSpan::null` Gibt an, das von diesem `COleDateTimeSpan` Objekt null ist, d. h., dass für dieses Objekt kein Wert angegeben wurde. (Dies ist "null", in dem Sinne Database "kein Wert, wenn" im Gegensatz zu den C++-NULL).
+- `COleDateTimeSpan::null`Gibt an, dass dieses `COleDateTimeSpan` Objekt null ist, d. h., dass kein Wert für dieses Objekt angegeben wurde. (Dies ist "null" im Datenbanksinn "keinen Wert haben" im Gegensatz zum C++ NULL.)
 
-Der Status einer `COleDateTimeSpan` Objekt ist ungültig. in den folgenden Fällen:
+Der Status `COleDateTimeSpan` eines Objekts ist in den folgenden Fällen ungültig:
 
-- Wenn dieses Objekt, einem Überlauf oder Unterlauf während eines arithmetischen Zuweisung, nämlich aufgetreten sind `+=` oder `-=`.
+- Wenn dieses Objekt während eines arithmetischen Zuweisungsvorgangs einen `+=` Über- oder Unterlauf erlebt hat, nämlich, oder `-=`.
 
-- Wenn ein ungültiger Wert für dieses Objekt zugewiesen wurde.
+- Wenn diesem Objekt ein ungültiger Wert zugewiesen wurde.
 
-- Wenn der Status dieses Objekts explizit festgelegt wurde, um ungültige mit `SetStatus`.
+- Wenn der Status dieses Objekts explizit `SetStatus`auf ungültig mit festgelegt wurde.
 
-Weitere Informationen zu den Vorgängen, die den Status als ungültig festlegen können, finden Sie unter [COleDateTimeSpan::operator +, -](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_-) und [COleDateTimeSpan::operator +=, -=](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_eq_-_eq).
+Weitere Informationen zu den Vorgängen, die den Status auf ungültig festlegen können, finden Sie unter [COleDateTimeSpan::operator +, -](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_-) und [COleDateTimeSpan::operator +=, -=](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_eq_-_eq).
 
-Weitere Informationen über die Grenzen für `COleDateTimeSpan` Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
+Weitere Informationen zu den `COleDateTimeSpan` Grenzwerten für Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
-##  <a name="gettotaldays"></a>  COleDateTimeSpan::GetTotalDays
+## <a name="coledatetimespangettotaldays"></a><a name="gettotaldays"></a>COleDateTimeSpan::GetTotalDays
 
-Ruft diesen Wert Datum/Uhrzeit-Spanne in Tagen ab.
+Ruft diesen Datums-/Zeitzeitwert ab, ausgedrückt in Tagen.
 
 ```
 double GetTotalDays() const throw();
@@ -415,21 +415,21 @@ double GetTotalDays() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Dieses Datum/Uhrzeit-Span-Wert in Tagen angegeben. Obwohl diese Funktion Prototyp, um einen Double-Wert zurückzugeben ist, wird immer einen ganzzahliger Wert zurückgegeben.
+Dieser Datums-/Zeitzeitwert wird in Tagen ausgedrückt. Obwohl diese Funktion prototypiert ist, um ein Double zurückzugeben, wird immer ein Ganzzahlwert zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen ca. - 3.65e6 und 3.65e6.
+Die Rückgabewerte dieser Funktion liegen zwischen etwa - 3,65e6 und 3,65e6.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalHours](#gettotalhours)
 
@@ -441,9 +441,9 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 [!code-cpp[NVC_ATLMFC_Utilities#20](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_9.cpp)]
 
-##  <a name="gettotalhours"></a>  COleDateTimeSpan::GetTotalHours
+## <a name="coledatetimespangettotalhours"></a><a name="gettotalhours"></a>COledateTimeSpan::GetTotalHours
 
-Ruft ab diesem Datum/Uhrzeit-Span-Wert, der in Stunden ausgedrückt.
+Ruft diesen Datums-/Zeitspannenwert ab, ausgedrückt in Stunden.
 
 ```
 double GetTotalHours() const throw();
@@ -451,21 +451,21 @@ double GetTotalHours() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Dieses Datum/Uhrzeit-Span-Wert, der in Stunden ausgedrückt wird. Obwohl diese Funktion Prototyp, um einen Double-Wert zurückzugeben ist, wird immer einen ganzzahliger Wert zurückgegeben.
+Dieser Datums-/Zeitzeitwert wird in Stunden ausgedrückt. Obwohl diese Funktion prototypiert ist, um ein Double zurückzugeben, wird immer ein Ganzzahlwert zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen ca. - 8.77e7 und 8.77e7.
+Die Rückgabewerte dieser Funktion liegen zwischen etwa - 8,77e7 und 8,77e7.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -475,11 +475,11 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [GetTotalDays](#gettotaldays).
+Siehe Beispiel für [GetTotalDays](#gettotaldays).
 
-##  <a name="gettotalminutes"></a>  COleDateTimeSpan::GetTotalMinutes
+## <a name="coledatetimespangettotalminutes"></a><a name="gettotalminutes"></a>COledateTimeSpan::GetTotalMinuten
 
-Ruft diesen Wert Datum/Zeitspanne in Minuten ab.
+Ruft diesen Datums-/Zeitzeitwert in Minuten ab.
 
 ```
 double GetTotalMinutes() const throw();
@@ -487,21 +487,21 @@ double GetTotalMinutes() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Dieses Datum/Uhrzeit-Spanne-Wert, ausgedrückt in Minuten. Obwohl diese Funktion Prototyp, um einen Double-Wert zurückzugeben ist, wird immer einen ganzzahliger Wert zurückgegeben.
+Dieser Datums-/Zeitstichwert wird in Minuten ausgedrückt. Obwohl diese Funktion prototypiert ist, um ein Double zurückzugeben, wird immer ein Ganzzahlwert zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion zwischen ca. - 5.26e9 und 5.26e9.
+Die Rückgabewerte dieser Funktion liegen zwischen etwa - 5.26e9 und 5.26e9.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -511,11 +511,11 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [GetTotalDays](#gettotaldays).
+Siehe Beispiel für [GetTotalDays](#gettotaldays).
 
-##  <a name="gettotalseconds"></a>  COleDateTimeSpan::GetTotalSeconds
+## <a name="coledatetimespangettotalseconds"></a><a name="gettotalseconds"></a>COleDateTimeSpan::GetTotalSekunden
 
-Ruft diesen Wert Datum/Zeitspanne in Sekunden ab.
+Ruft diesen Datums-/Zeitspannenwert in Sekunden um.
 
 ```
 double GetTotalSeconds() const throw();
@@ -523,21 +523,21 @@ double GetTotalSeconds() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Dieses Datum/Uhrzeit-Span-Wert in Sekunden angegeben. Obwohl diese Funktion Prototyp, um einen Double-Wert zurückzugeben ist, wird immer einen ganzzahliger Wert zurückgegeben.
+Dieser Datums-/Zeitzeitwert wird in Sekunden ausgedrückt. Obwohl diese Funktion prototypiert ist, um ein Double zurückzugeben, wird immer ein Ganzzahlwert zurückgegeben.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Rückgabewerte von dieser Funktion liegen zwischen ca. – 3.16e11 zu 3.16e11.
+Die Rückgabewerte dieser Funktion reichen zwischen etwa - 3.16e11 und 3.16e11.
 
-Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Weitere Funktionen, die den `COleDateTimeSpan` Wert eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -547,32 +547,32 @@ Für andere Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt,
 
 ### <a name="example"></a>Beispiel
 
-Siehe das Beispiel für [GetTotalDays](#gettotaldays).
+Siehe Beispiel für [GetTotalDays](#gettotaldays).
 
-##  <a name="m_span"></a>  COleDateTimeSpan::m_span
+## <a name="coledatetimespanm_span"></a><a name="m_span"></a>COleDateTimeSpan::m_span
 
-Die zugrunde liegende **doppelte** Wert für diesen `COleDateTime` Objekt.
+Der **double** zugrunde liegende `COleDateTime` doppelte Wert für dieses Objekt.
 
 ```
 double m_span;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Wert drückt aus, der Datum/Zeitraum in Tagen.
+Dieser Wert gibt die Datums-/Zeitspanne in Tagen an.
 
 > [!CAUTION]
->  Ändern des Werts in der **doppelte** Datenmember ändert sich den Wert dieser `COleDateTimeSpan` Objekt. Er ändert nicht den Status dieses `COleDateTimeSpan` Objekt.
+> Wenn Sie den Wert im **Doppeldatenelement** `COleDateTimeSpan` ändern, wird der Wert dieses Objekts geändert. Der Status dieses `COleDateTimeSpan` Objekts wird nicht geändert.
 
-##  <a name="m_status"></a>  COleDateTimeSpan::m_status
+## <a name="coledatetimespanm_status"></a><a name="m_status"></a>COleDateTimeSpan::m_status
 
-Der Typ für dieses Datenelement ist den enumerierten Typ `DateTimeSpanStatus`, definiert in der `COleDateTimeSpan` Klasse.
+Der Typ für diesen Datenmember ist `DateTimeSpanStatus`der aufgezählte `COleDateTimeSpan` Typ , der innerhalb der Klasse definiert ist.
 
 ```
 DateTimeSpanStatus m_status;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ```
 enum DateTimeSpanStatus{
@@ -582,44 +582,44 @@ enum DateTimeSpanStatus{
    };
 ```
 
-Eine kurze Beschreibung dieser Status-Werte finden Sie in der folgenden Liste:
+Eine kurze Beschreibung dieser Statuswerte finden Sie in der folgenden Liste:
 
-- `COleDateTimeSpan::valid` Gibt an, das von diesem `COleDateTimeSpan` Objekt gültig ist.
+- `COleDateTimeSpan::valid`Gibt an, dass dieses `COleDateTimeSpan` Objekt gültig ist.
 
-- `COleDateTimeSpan::invalid` Gibt an, das von diesem `COleDateTimeSpan` Objekt ist ungültig; d. h. der Wert möglicherweise nicht korrekt.
+- `COleDateTimeSpan::invalid`Gibt an, dass dieses `COleDateTimeSpan` Objekt ungültig ist. das heißt, sein Wert kann falsch sein.
 
-- `COleDateTimeSpan::null` Gibt an, das von diesem `COleDateTimeSpan` Objekt null ist, d. h., dass für dieses Objekt kein Wert angegeben wurde. (Dies ist "null", in dem Sinne Database "kein Wert, wenn" im Gegensatz zu den C++-NULL).
+- `COleDateTimeSpan::null`Gibt an, dass dieses `COleDateTimeSpan` Objekt null ist, d. h., dass kein Wert für dieses Objekt angegeben wurde. (Dies ist "null" im Datenbanksinn "keinen Wert haben" im Gegensatz zum C++ NULL.)
 
-Der Status einer `COleDateTimeSpan` Objekt ist ungültig. in den folgenden Fällen:
+Der Status `COleDateTimeSpan` eines Objekts ist in den folgenden Fällen ungültig:
 
-- Wenn dieses Objekt, einem Überlauf oder Unterlauf während eines arithmetischen Zuweisung, nämlich aufgetreten sind `+=` oder `-=`.
+- Wenn dieses Objekt während eines arithmetischen Zuweisungsvorgangs einen `+=` Über- oder Unterlauf erlebt hat, nämlich, oder `-=`.
 
-- Wenn ein ungültiger Wert für dieses Objekt zugewiesen wurde.
+- Wenn diesem Objekt ein ungültiger Wert zugewiesen wurde.
 
-- Wenn der Status dieses Objekts explizit festgelegt wurde, um ungültige mit [SetStatus](#setstatus).
+- Wenn der Status dieses Objekts mit [SetStatus](#setstatus)explizit auf ungültig festgelegt wurde.
 
-Weitere Informationen zu den Vorgängen, die den Status als ungültig festlegen können, finden Sie unter [COleDateTimeSpan::operator +, -](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_-) und [COleDateTimeSpan::operator +=, -=](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_eq_-_eq).
+Weitere Informationen zu den Vorgängen, die den Status auf ungültig festlegen können, finden Sie unter [COleDateTimeSpan::operator +, -](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_-) und [COleDateTimeSpan::operator +=, -=](../../atl-mfc-shared/reference/coledatetime-class.md#operator_add_eq_-_eq).
 
 > [!CAUTION]
->  Dieses Datenelement ist für erweiterte programmierungssituationen. Sie sollten die Inline-Memberfunktionen verwenden [GetStatus](#getstatus) und [SetStatus](#setstatus). Finden Sie unter `SetStatus` für weitere Punkte in Bezug auf die dieses Datenelement explizit festlegen.
+> Dieser Datenmember ist für fortgeschrittene Programmiersituationen. Sie sollten die Inline-Memberfunktionen [GetStatus](#getstatus) und [SetStatus](#setstatus)verwenden. Weitere `SetStatus` Hinweise zur expliziten Einstellung dieses Datenmembers finden Sie unter .
 
-Weitere Informationen über die Grenzen für `COleDateTimeSpan` Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
+Weitere Informationen zu den `COleDateTimeSpan` Grenzwerten für Werte finden Sie im Artikel [Datum und Uhrzeit: Automatisierungssupport](../../atl-mfc-shared/date-and-time-automation-support.md).
 
-##  <a name="operator_eq"></a>  COleDateTimeSpan::operator =
+## <a name="coledatetimespanoperator-"></a><a name="operator_eq"></a>COleDateTimeSpan::Operator =
 
-Kopiert ein `COleDateTimeSpan` Wert.
+Kopiert `COleDateTimeSpan` einen Wert.
 
 ```
 COleDateTimeSpan& operator=(double dblSpanSrc) throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser überladenen Zuweisungsoperator kopiert den Wert des Datums-/Zeitspanne, in diese `COleDateTimeSpan` Objekt.
+Dieser überladene Zuweisungsoperator kopiert den Quelldatums-/Zeitzeitwert in dieses `COleDateTimeSpan` Objekt.
 
-##  <a name="operator_add_-"></a>  COleDateTimeSpan::operator +, -
+## <a name="coledatetimespanoperator---"></a><a name="operator_add_-"></a>COleDateTimeSpan::operator +, -
 
-Hinzufügen, subtrahiert werden soll, und ändern Sie das Zeichen für `COleDateTimeSpan` Werte.
+Hinzufügen, Subtrahieren und `COleDateTimeSpan` Ändern von Zeichen für Werte.
 
 ```
 COleDateTimeSpan operator+(const COleDateTimeSpan& dateSpan) const throw();
@@ -627,56 +627,56 @@ COleDateTimeSpan operator-(const COleDateTimeSpan& dateSpan) const throw();
 COleDateTimeSpan operator-() const throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die ersten beiden Operatoren können Sie die Addition und Subtraktion von Datum/Uhrzeit-Bereich Werte. Die dritte können Sie die Vorzeichen eines Datum/Uhrzeit-Span-Werts zu ändern.
+Mit den ersten beiden Operatoren können Sie Datums-/Zeitzeitwerte hinzufügen und subtrahieren. Mit der dritten Seite können Sie das Vorzeichen eines Datums-/Zeitzeitwerts ändern.
 
-Wenn einer der Operanden null ist, ist den Status des resultierenden `COleDateTimeSpan` Wert ist null.
+Wenn einer der Operanden null ist, `COleDateTimeSpan` ist der Status des resultierenden Werts null.
 
-Wenn es sich bei den Operanden ist ungültig, und die andere ist nicht null ist, den Status des resultierenden `COleDateTimeSpan` Wert ist ungültig.
+Wenn einer der Operanden ungültig und der andere nicht null `COleDateTimeSpan` ist, ist der Status des resultierenden Werts ungültig.
 
-Weitere Informationen zu den gültigen, Ungültiger und null-Status-Werte, finden Sie unter den [M_status](#m_status) Membervariablen gespeichert.
+Weitere Informationen zu den gültigen, ungültigen und NULL-Statuswerten finden Sie in der m_status-Membervariablen. [m_status](#m_status)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATLMFC_Utilities#23](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_10.cpp)]
 
-##  <a name="operator_add_eq_-_eq"></a>  COleDateTimeSpan::operator +=, -=
+## <a name="coledatetimespanoperator---"></a><a name="operator_add_eq_-_eq"></a>COleDateTimeSpan::operator +=, -=
 
-Addition und Subtraktion ein `COleDateTimeSpan` Wert aus diesem `COleDateTimeSpan` Wert.
+Fügen Sie einen `COleDateTimeSpan` Wert `COleDateTimeSpan` hinzu, und subtrahieren Sie ihn von diesem Wert.
 
 ```
 COleDateTimeSpan& operator+=(const COleDateTimeSpan dateSpan) throw();
 COleDateTimeSpan& operator-=(const COleDateTimeSpan dateSpan) throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Operatoren können Sie die Addition und Subtraktion von Datums-/Zeitspanne Werte aus dieser `COleDateTimeSpan` Objekt. Wenn einer der Operanden null ist, ist den Status des resultierenden `COleDateTimeSpan` Wert ist null.
+Mit diesen Operatoren können Sie Datums-/Zeitzeitwerte von diesem `COleDateTimeSpan` Objekt hinzufügen und subtrahieren. Wenn einer der Operanden null ist, `COleDateTimeSpan` ist der Status des resultierenden Werts null.
 
-Wenn es sich bei den Operanden ist ungültig, und die andere ist nicht null ist, den Status des resultierenden `COleDateTimeSpan` Wert ist ungültig.
+Wenn einer der Operanden ungültig und der andere nicht null `COleDateTimeSpan` ist, ist der Status des resultierenden Werts ungültig.
 
-Weitere Informationen zu den gültigen, Ungültiger und null-Status-Werte, finden Sie unter den [M_status](#m_status) Membervariablen gespeichert.
+Weitere Informationen zu den gültigen, ungültigen und NULL-Statuswerten finden Sie in der m_status-Membervariablen. [m_status](#m_status)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATLMFC_Utilities#24](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_11.cpp)]
 
-##  <a name="operator_double"></a>  Doppelte COleDateTimeSpan::operator
+## <a name="coledatetimespanoperator-double"></a><a name="operator_double"></a>COleDateTimeSpan::Operator-Doppel
 
-Konvertiert diese `COleDateTimeSpan` -Werts in einen **doppelte**.
+Konvertiert diesen `COleDateTimeSpan` Wert in eine **doppelte**.
 
 ```
 operator double() const throw();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Operator gibt den Wert dieses `COleDateTimeSpan` Wert als Gleitkommazahl von Tagen.
+Dieser Operator gibt den `COleDateTimeSpan` Wert dieses Werts als Gleitkommazahlvon Tagen zurück.
 
-##  <a name="setdatetimespan"></a>  COleDateTimeSpan::SetDateTimeSpan
+## <a name="coledatetimespansetdatetimespan"></a><a name="setdatetimespan"></a>COledateTimeSpan::SetDateTimeSpan
 
-Legt den Wert dieses Werts für Datum/Uhrzeit-Spanne.
+Legt den Wert dieses Datums-/Zeitzeitwerts fest.
 
 ```
 void SetDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
@@ -685,19 +685,19 @@ void SetDateTimeSpan(LONG lDays, int nHours, int nMins, int nSecs) throw();
 ### <a name="parameters"></a>Parameter
 
 *lDays*, *nHours*, *nMins*, *nSecs*<br/>
-Zeigen die Werte für Datum-Span und Zeitspanne, die in diese kopiert werden `COleDateTimeSpan` Objekt.
+Geben Sie die Datums- und Zeitzeitwerte `COleDateTimeSpan` an, die in dieses Objekt kopiert werden sollen.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Für Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden Sie unter den folgenden Member-Funktionen:
+Funktionen, die den Wert `COleDateTimeSpan` eines Objekts abfragen, finden Sie in den folgenden Memberfunktionen:
 
 - [GetDays](#getdays)
 
 - [GetHours](#gethours)
 
-- [GetMinutes](#getminutes)
+- [Getminutes](#getminutes)
 
-- [GetSeconds](#getseconds)
+- [Getseconds](#getseconds)
 
 - [GetTotalDays](#gettotaldays)
 
@@ -711,9 +711,9 @@ Für Funktionen, die den Wert der Abfrage eine `COleDateTimeSpan` Objekt, finden
 
 [!code-cpp[NVC_ATLMFC_Utilities#21](../../atl-mfc-shared/codesnippet/cpp/coledatetimespan-class_12.cpp)]
 
-##  <a name="setstatus"></a>  COleDateTimeSpan::SetStatus
+## <a name="coledatetimespansetstatus"></a><a name="setstatus"></a>COleDateTimeSpan::SetStatus
 
-Legt den Status (Gültigkeit) dieses `COleDateTimeSpan` Objekt.
+Legt den Status (Gültigkeit) dieses `COleDateTimeSpan` Objekts fest.
 
 ```
 void SetStatus(DateTimeSpanStatus status) throw();
@@ -722,11 +722,11 @@ void SetStatus(DateTimeSpanStatus status) throw();
 ### <a name="parameters"></a>Parameter
 
 *Status*<br/>
-Der neue Statuswert für diesen `COleDateTimeSpan` Objekt.
+Der neue Statuswert `COleDateTimeSpan` für dieses Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die *Status* Parameterwert wird definiert, indem die `DateTimeSpanStatus` Enumerationstyp, der in definiert ist die `COleDateTimeSpan` Klasse.
+Der *Statusparameterwert* wird `DateTimeSpanStatus` durch den aufgezählten Typ definiert, der innerhalb der `COleDateTimeSpan` Klasse definiert ist.
 
 ```
 enum DateTimeSpanStatus{
@@ -736,16 +736,16 @@ enum DateTimeSpanStatus{
    };
 ```
 
-Eine kurze Beschreibung dieser Status-Werte finden Sie in der folgenden Liste:
+Eine kurze Beschreibung dieser Statuswerte finden Sie in der folgenden Liste:
 
-- `COleDateTimeSpan::valid` Gibt an, das von diesem `COleDateTimeSpan` Objekt gültig ist.
+- `COleDateTimeSpan::valid`Gibt an, dass dieses `COleDateTimeSpan` Objekt gültig ist.
 
-- `COleDateTimeSpan::invalid` Gibt an, das von diesem `COleDateTimeSpan` Objekt ist ungültig; d. h. der Wert möglicherweise nicht korrekt.
+- `COleDateTimeSpan::invalid`Gibt an, dass dieses `COleDateTimeSpan` Objekt ungültig ist. das heißt, sein Wert kann falsch sein.
 
-- `COleDateTimeSpan::null` Gibt an, das von diesem `COleDateTimeSpan` Objekt null ist, d. h., dass für dieses Objekt kein Wert angegeben wurde. (Dies ist "null", in dem Sinne Database "kein Wert, wenn" im Gegensatz zu den C++-NULL).
+- `COleDateTimeSpan::null`Gibt an, dass dieses `COleDateTimeSpan` Objekt null ist, d. h., dass kein Wert für dieses Objekt angegeben wurde. (Dies ist "null" im Datenbanksinn "keinen Wert haben" im Gegensatz zum C++ NULL.)
 
    > [!CAUTION]
-   > Diese Funktion ist für die erweiterte programmierungssituationen. Diese Funktion wird die Daten in dieses Objekt nicht geändert. Dieser wird den meisten Fällen verwendet, legen Sie den Status auf **null** oder **ungültige**. Beachten Sie, dass der Zuweisungsoperator ([Operator =](#operator_eq)) und [SetDateTimeSpan](#setdatetimespan) führen Sie den Status des Objekts basierend auf den Werten der Datenquelle festgelegt.
+   > Diese Funktion ist für fortgeschrittene Programmiersituationen. Diese Funktion ändert die Daten in diesem Objekt nicht. Es wird am häufigsten verwendet, um den Status auf **null** oder **ungültig**festzulegen. Beachten Sie, dass der Zuweisungsoperator ([operator =](#operator_eq)) und [SetDateTimeSpan](#setdatetimespan) den Status des Objekts basierend auf dem Quellwert(n) festlegen.
 
 ### <a name="example"></a>Beispiel
 
@@ -757,4 +757,4 @@ Eine kurze Beschreibung dieser Status-Werte finden Sie in der folgenden Liste:
 [CTime-Klasse](../../atl-mfc-shared/reference/ctime-class.md)<br/>
 [CTimeSpan-Klasse](../../atl-mfc-shared/reference/ctimespan-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[Freigegebene ATL-/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)
+[FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)

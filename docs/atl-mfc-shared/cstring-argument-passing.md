@@ -11,32 +11,32 @@ helpviewer_keywords:
 - CString objects, passing arguments
 - string arguments
 ms.assetid: a67bebff-edf1-4cf4-bbff-d1cc6a901099
-ms.openlocfilehash: 1729167786d71c107fe6a4369d5a0c7e7c8594f1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 53977eb47520a20571a2d5ba8aa105c567ff40d1
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62236384"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317932"
 ---
 # <a name="cstring-argument-passing"></a>CString-Argumentenübergabe
 
-In diesem Artikel wird erläutert, wie übergeben [CString](../atl-mfc-shared/reference/cstringt-class.md) Objekte, Funktionen und das zurückkehren `CString` -Objekte aus Funktionen.
+In diesem Artikel wird erläutert, wie [CString-Objekte](../atl-mfc-shared/reference/cstringt-class.md) an Funktionen übergeben und Objekte aus Funktionen zurückgegeben `CString` werden.
 
-##  <a name="_core_cstring_argument.2d.passing_conventions"></a> CString-Argumentübergabe-Konventionen
+## <a name="cstring-argument-passing-conventions"></a><a name="_core_cstring_argument.2d.passing_conventions"></a>CString-Argument-Passing-Konventionen
 
-Wenn Sie eine Klassenschnittstelle definieren, müssen Sie die argumentübergabekonvention für Ihre Memberfunktionen bestimmen. Es gibt einige Standardregeln für die weiter- und Rückgabe von `CString` Objekte. Wenn Sie die in beschriebenen Regeln folgen [Zeichenfolgen als Eingaben der Orchestratorfunktion](#_core_strings_as_function_inputs) und [Zeichenfolgen als Funktionsausgaben](#_core_strings_as_function_outputs), effizienten und korrekten Code müssen.
+Wenn Sie eine Klassenschnittstelle definieren, müssen Sie die Argumentübergabekonvention für Ihre Memberfunktionen bestimmen. Es gibt einige Standardregeln `CString` für das Übergeben und Zurückgeben von Objekten. Wenn Sie die in Strings beschriebenen Regeln [als Funktionseingaben](#_core_strings_as_function_inputs) und [Zeichenfolgen als Funktionsausgaben](#_core_strings_as_function_outputs)befolgen, haben Sie effizienten, korrekten Code.
 
-##  <a name="_core_strings_as_function_inputs"></a> Zeichenfolgen als Eingaben der Orchestratorfunktion
+## <a name="strings-as-function-inputs"></a><a name="_core_strings_as_function_inputs"></a>Strings als Funktionseingänge
 
-Die effiziente und sichere Möglichkeit zum Verwenden einer `CString` -Objekt aufgerufene Funktionen ist das Übergeben einer `CString` Objekt an die Funktion. Trotz des Namens einer `CString` Objekt speichert keine Zeichenfolge intern als Zeichenfolge im C-Stil, die einen null-Terminator verfügt. Stattdessen eine `CString` -Objekt behält eine sorgfältige verfolgen die Anzahl der Zeichen hat. Mit `CString` ein LPCTSTR-Zeiger auf eine Null-terminierte Zeichenfolge ist eine kleine Menge an Arbeit, die erhebliche, wenn Ihr Code dafür ständig werden kann. Das Ergebnis ist temporär, da zum Ändern der `CString` Inhalt erklärt alte Kopien des Zeigers LPCTSTR.
+Die effizienteste und sicherste `CString` Methode zur Verwendung eines `CString` Objekts in aufgerufenen Funktionen besteht darin, ein Objekt an die Funktion zu übergeben. Trotz des Namens `CString` speichert ein Objekt eine Zeichenfolge intern nicht als Zeichenfolge im C-Stil, die über einen Nullabschluss verfügt. Stattdessen verfolgt `CString` ein Objekt sorgfältig die Anzahl der Zeichen, die es hat. Die `CString` Bereitstellung eines LPCTSTR-Zeigers auf eine null-terminierte Zeichenfolge ist eine kleine Menge an Arbeit, die erheblich werden kann, wenn Ihr Code dies ständig tun muss. Das Ergebnis ist temporär, da jede Änderung am `CString` Inhalt alte Kopien des LPCTSTR-Zeigers ungültig macht.
 
-Es sinnvoll in einigen Fällen geben Sie eine Zeichenfolge im C-Stil. Beispielsweise kann eine Situation, in denen eine aufgerufene Funktion ist in C geschrieben und unterstützt keine Objekte, vorhanden sein. In diesem Fall erzwingen die `CString` Parameter LPCTSTR, und die Funktion eine C-Stil-Null-terminierte Zeichenfolge erhalten. Können Sie auch die andere Richtung wechseln und erstellen Sie eine `CString` -Objekt unter Verwendung der `CString` Konstruktor, der einen C-Stil Zeichenfolgenparameter akzeptiert.
+In einigen Fällen ist es sinnvoll, eine Zeichenfolge im C-Stil bereitzustellen. Es kann z. B. eine Situation geben, in der eine aufgerufene Funktion in C geschrieben wird und keine Objekte unterstützt. In diesem Fall wird `CString` der Parameter zu LPCTSTR genötigt, und die Funktion erhält eine Null-Termin-Zeichenfolge im C-Stil. Sie können auch in die `CString` andere Richtung `CString` gehen und ein Objekt erstellen, indem Sie den Konstruktor verwenden, der einen Zeichenfolgenparameter im C-Stil akzeptiert.
 
-Wenn der Zeichenfolgeninhalt durch eine Funktion geändert werden, deklarieren Sie den Parameter als Konstanten `CString` Reference (`CString&`).
+Wenn der Zeichenfolgeninhalt durch eine Funktion geändert werden soll, deklarieren Sie den Parameter als nicht konstanten `CString` Verweis (`CString&`).
 
-##  <a name="_core_strings_as_function_outputs"></a> Zeichenfolgen als Funktionsausgabe
+## <a name="strings-as-function-outputs"></a><a name="_core_strings_as_function_outputs"></a>Zeichenfolgen als Funktionsausgänge
 
-Sie können in der Regel zurückgeben `CString` Objekte von Funktionen, da `CString` Objekte folgen Wertsemantik z. B. primitive Typen. Um eine schreibgeschützte Zeichenfolge zurückzugeben, verwenden Sie eine Konstante `CString` Reference (`const CString&`). Das folgende Beispiel veranschaulicht die Verwendung von `CString` Parameter und Rückgabetypen:
+In der `CString` Regel können `CString` Sie Objekte aus Funktionen zurückgeben, da Objekte Wertsemantik wie primitive Typen folgen. Um eine schreibgeschützte Zeichenfolge zurückzugeben, `CString` verwenden`const CString&`Sie einen konstanten Verweis ( ). Das folgende Beispiel veranschaulicht `CString` die Verwendung von Parametern und Rückgabetypen:
 
 [!code-cpp[NVC_ATLMFC_Utilities#197](../atl-mfc-shared/codesnippet/cpp/cstring-argument-passing_1.cpp)]
 

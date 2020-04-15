@@ -10,93 +10,93 @@ helpviewer_keywords:
 - LocaleID ambient property [MFC]
 - LOCALIZE sample [MFC]
 ms.assetid: a44b839a-c652-4ec5-b824-04392708a5f9
-ms.openlocfilehash: 13c8ff545763017b01685e012ab2d497eaf7084a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 987cde2117307cdb5940a31e6f01efb15c527b84
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392686"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364597"
 ---
 # <a name="mfc-activex-controls-localizing-an-activex-control"></a>MFC-ActiveX-Steuerelemente: Lokalisieren eines ActiveX-Steuerelements
 
-Dieser Artikel beschreibt Verfahren zum Lokalisieren von ActiveX-Steuerelement-Schnittstellen.
+In diesem Artikel werden Verfahren zum Lokalisieren von ActiveX-Steuerungsschnittstellen erläutert.
 
 >[!IMPORTANT]
-> ActiveX ist eine veraltete Technologie, die nicht für Neuentwicklungen verwendet werden soll. Weitere Informationen zu moderne Technologien, die ActiveX-ablösen, finden Sie unter [ActiveX-Steuerelemente](activex-controls.md).
+> ActiveX ist eine legacy Technologie, die nicht für Neuentwicklungen verwendet werden sollte. Weitere Informationen zu modernen Technologien, die ActiveX ablösen, finden Sie unter [ActiveX Controls](activex-controls.md).
 
-Wenn Sie ein ActiveX-Steuerelement einen internationalen Markt anpassen möchten, empfiehlt es sich um das Steuerelement zu lokalisieren. Windows unterstützt viele Sprachen zusätzlich zu den Englisch, darunter Deutsch, Französisch und Schwedisch. Dies kann Probleme für das Steuerelement darstellen, wenn die Schnittstelle nur auf Englisch ist.
+Wenn Sie ein ActiveX-Steuerelement an einen internationalen Markt anpassen möchten, können Sie das Steuerelement lokalisieren. Windows unterstützt neben dem Standardenglisch viele Sprachen, einschließlich Deutsch, Französisch und Schwedisch. Dies kann Probleme für das Steuerelement darstellen, wenn seine Schnittstelle nur auf Englisch ist.
 
-Im Allgemeinen sollte ActiveX-Steuerelemente immer ihrem Gebietsschema auf die LocaleID-ambient-Eigenschaft basieren. Hierfür gibt es drei Möglichkeiten:
+Im Allgemeinen sollten ActiveX-Steuerelemente ihr Gebietsschema immer auf der Ambient LocaleID-Eigenschaft basieren. Hierzu stehen drei Möglichkeiten zur Verfügung:
 
-- Laden Sie die Ressourcen, die immer bei Bedarf, basierend auf den aktuellen Wert von der LocaleID-ambient-Eigenschaft. Die MFC-ActiveX-Steuerelemente Beispiel [LOCALIZE](../overview/visual-cpp-samples.md) nutzt diese Strategie.
+- Laden Sie Ressourcen, immer bei Bedarf, basierend auf dem aktuellen Wert der Ambient LocaleID-Eigenschaft. Das MFC ActiveX-Steuerelementbeispiel [LOCALIZE](../overview/visual-cpp-samples.md) verwendet diese Strategie.
 
-- Laden Sie Ressourcen aus, wenn das erste Steuerelement basierend auf der ambient LocaleID-Eigenschaft Instanzen wird, und verwenden Sie diese Ressourcen für alle anderen Instanzen. In diesem Artikel wird diese Strategie.
-
-    > [!NOTE]
-    >  Diese funktioniert nicht ordnungsgemäß in einigen Fällen, wenn zukünftige Instanzen mit unterschiedlichen Gebietsschemas enthält.
-
-- Verwenden der `OnAmbientChanged` Notification-Funktion, um die richtigen Ressourcen für das Gebietsschema des Containers dynamisch zu laden.
+- Laden Sie Ressourcen, wenn das erste Steuerelement basierend auf der Ambient LocaleID-Eigenschaft instanziiert wird, und verwenden Sie diese Ressourcen für alle anderen Instanzen. Dieser Artikel veranschaulicht diese Strategie.
 
     > [!NOTE]
-    >  Dies funktioniert für das Steuerelement, aber die Laufzeit-DLL dynamisch aktualisiert nicht seine eigenen Ressourcen bei die LocaleID-Ambiente-Eigenschaft ändert. Laufzeit-DLLs für ActiveX-Steuerelemente verwenden darüber hinaus das Threadgebietsschema, um das Gebietsschema für ihre Ressourcen zu ermitteln.
+    >  Dies funktioniert in einigen Fällen nicht ordnungsgemäß, wenn zukünftige Instanzen unterschiedliche Gebietsschemas haben.
 
-Im weiteren Verlauf dieses Artikels werden zwei Lokalisierung von Strategien beschrieben. Die erste Strategie [ordnet Programmierschnittstelle des Steuerelements](#_core_localizing_your_control.92.s_programmability_interface) (Namen von Eigenschaften, Methoden und Ereignisse). Die zweite Strategie [ordnet die Benutzeroberfläche des Steuerelements](#_core_localizing_the_control.92.s_user_interface), verwenden ambient LocaleID-Eigenschaft des Containers. Eine Demonstration der steuerelementlokalisierung finden Sie unter dem Beispiel für die MFC-ActiveX-Steuerelemente [LOCALIZE](../overview/visual-cpp-samples.md).
+- Verwenden `OnAmbientChanged` Sie die Benachrichtigungsfunktion, um die richtigen Ressourcen für das Gebietsschema des Containers dynamisch zu laden.
 
-##  <a name="_core_localizing_your_control.92.s_programmability_interface"></a> Lokalisieren von Programmierschnittstelle des Steuerelements
+    > [!NOTE]
+    >  Dies funktioniert für das Steuerelement, aber die Laufzeit-DLL aktualisiert ihre eigenen Ressourcen nicht dynamisch, wenn sich die Ambient LocaleID-Eigenschaft ändert. Darüber hinaus verwenden Laufzeit-DLLs für ActiveX-Steuerelemente das Threadgebietsschema, um das Gebietsschema für seine Ressourcen zu bestimmen.
 
-Beim Lokalisieren von des Steuerelements-Programmierschnittstelle (die Schnittstelle, die Programmierer, die Schreiben von Anwendungen, die das Steuerelement zu verwenden), müssen Sie eine geänderte Version des Steuerelements erstellen. IDL-Datei (ein Skript zum Erstellen der Steuerelement-Typbibliothek) für jede Sprache, die Sie unterstützen möchten. Dies ist der einzige Ort, Sie den Namen der Steuerelementeigenschaften zu lokalisieren müssen.
+Der Rest dieses Artikels beschreibt zwei Lokalisierungsstrategien. Die erste Strategie [lokalisiert die Programmierbarkeitsschnittstelle des Steuerelements](#_core_localizing_your_control.92.s_programmability_interface) (Namen von Eigenschaften, Methoden und Ereignissen). Die zweite Strategie [lokalisiert die Benutzeroberfläche des Steuerelements](#_core_localizing_the_control.92.s_user_interface)mithilfe der Ambient LocaleID-Eigenschaft des Containers. Eine Demonstration der Steuerelementlokalisierung finden Sie im MFC ActiveX-Steuerelementbeispiel [LOCALIZE](../overview/visual-cpp-samples.md).
 
-Wenn Sie einem lokalisierten-Steuerelement entwickeln, schließen Sie die Gebietsschema-ID als ein Attribut auf Typebene-Bibliothek ein. Wenn Sie eine Typbibliothek mit französischen Eigenschaftennamen bereitstellen möchten, erstellen Sie z. B. eine Kopie des BEISPIELS. IDL-Datei, und rufen Sie es SAMPLEFR. IDL. Fügen Sie ein Gebietsschema-ID-Attribut in der Datei (die Gebietsschema-ID für Französisch ist 0x040c), etwa wie folgt:
+## <a name="localizing-the-controls-programmability-interface"></a><a name="_core_localizing_your_control.92.s_programmability_interface"></a>Lokalisieren der Programmierbarkeitsschnittstelle des Steuerelements
+
+Beim Lokalisieren der Programmierbarkeitsschnittstelle des Steuerelements (der Schnittstelle, die von Programmierern verwendet wird, die Anwendungen schreiben, die das Steuerelement verwenden), müssen Sie eine geänderte Version des Steuerelements erstellen. IDL-Datei (ein Skript zum Erstellen der Steuerelementtypbibliothek) für jede Sprache, die Sie unterstützen möchten. Dies ist der einzige Ort, an dem Sie die Steuerelementeigenschaftsnamen lokalisieren müssen.
+
+Wenn Sie ein lokalisiertes Steuerelement entwickeln, fügen Sie die Gebietsschema-ID als Attribut auf Typbibliotheksebene ein. Wenn Sie beispielsweise eine Typbibliothek mit lokalisierten französischen Eigenschaftsnamen bereitstellen möchten, erstellen Sie eine Kopie Ihrer SAMPLE. IDL-Datei, und nennen Sie es SAMPLEFR. Idl. Fügen Sie der Datei ein Gebietsschema-ID-Attribut hinzu (die Gebietsschema-ID für Französisch ist 0x040c), ähnlich wie folgt:
 
 [!code-cpp[NVC_MFC_AxLoc#1](../mfc/codesnippet/cpp/mfc-activex-controls-localizing-an-activex-control_1.idl)]
 
-Ändern Sie die Eigenschaftennamen in SAMPLEFR. IDL auf französische Entsprechungen und verwenden Sie dann MKTYPLIB. EXE-Datei die französische Typbibliothek SAMPLEFR. TLB.
+Ändern Sie die Eigenschaftsnamen in SAMPLEFR. IDL zu ihren französischen Entsprechungen, und verwenden Sie dann MKTYPLIB. EXE, um die französische Typbibliothek SAMPLEFR zu erstellen. Tlb.
 
-Um mehrere lokalisierte Typbibliotheken zu erstellen, können Sie eine lokalisierte hinzufügen. IDL-Dateien zum Projekt, und sie werden automatisch erstellt werden.
+Um mehrere lokalisierte Typbibliotheken zu erstellen, können Sie beliebige lokalisierte hinzufügen. IDL-Dateien in das Projekt und werden automatisch erstellt.
 
-#### <a name="to-add-an-idl-file-to-your-activex-control-project"></a>Hinzufügen einer. IDL-Datei zu dem ActiveX-Steuerelementprojekt
+#### <a name="to-add-an-idl-file-to-your-activex-control-project"></a>So fügen Sie eine hinzu. IDL-Datei in Ihr ActiveX-Steuerprojekt
 
-1. Mit das Projekt geöffnet ist, auf die **Projekt** Menü klicken Sie auf **vorhandenes Element hinzufügen**.
+1. Wenn Das Steuerelementprojekt geöffnet ist, klicken Sie im Menü **Projekt** auf **Vorhandenes Element hinzufügen**.
 
-   Die **vorhandenes Element hinzufügen** Dialogfeld wird angezeigt.
+   Das Dialogfeld **Vorhandenes Element hinzufügen** wird angezeigt.
 
-1. Wählen Sie das Laufwerk und Verzeichnis, um anzuzeigen, bei Bedarf.
+1. Wählen Sie ggf. das anzuzeigende Laufwerk und Verzeichnis aus.
 
-1. In der **Dateityp** Kontrollkästchen **alle Dateien (\*.\*)** .
+1. Wählen Sie im Feld **Typdateien** **Alle Dateien (\*.\*)** aus.
 
-1. Doppelklicken Sie im Listenfeld Datei auf den. IDL-Datei, die Sie in das Projekt einfügen möchten.
+1. Doppelklicken Sie im Dateilistenfeld auf die . IDL-Datei, die Sie in das Projekt einfügen möchten.
 
-1. Klicken Sie auf **öffnen** Wenn Sie alle erforderlichen hinzugefügt haben. IDL-Dateien.
+1. Klicken Sie auf **Öffnen,** wenn Sie alle erforderlichen hinzugefügt haben. IDL-Dateien.
 
-Da die Dateien zum Projekt hinzugefügt wurden, werden sie erstellt werden, wenn der Rest des Projekts erstellt wird. Die lokalisierte Typbibliotheken befinden sich in dem aktuellen Projektverzeichnis für ActiveX-Steuerelement.
+Da die Dateien dem Projekt hinzugefügt wurden, werden sie erstellt, wenn der Rest des Projekts erstellt wird. Die lokalisierten Typbibliotheken befinden sich im aktuellen ActiveX-Steuerelementprojektverzeichnis.
 
-Innerhalb des Codes die interne Eigenschaften-Namen (normalerweise in englischer Sprache) werden immer verwendet und sind nicht lokalisiert. Dies schließt Dispatchzuordnung des Steuerelements, die Exchange-Eigenschaftenfunktionen und Ihre Eigenschaft Seite Data Exchange-Code.
+Innerhalb Ihres Codes werden die internen Eigenschaftsnamen (in der Regel in Englisch) immer verwendet und nie lokalisiert. Dazu gehören die Control Dispatch Map, die Eigenschaftenaustauschfunktionen und der Datenaustauschcode Für Eigenschaftenseiten.
 
-Nur eine Typbibliothek (. TLB)-Datei in die Ressourcen von der Implementierung des Steuerelements gebunden werden kann (. OCX)-Datei. Dies ist normalerweise die Version mit der standardisierten (in der Regel auf Englisch) Namen. Eine lokalisierte Version des Steuerelements zu senden, Sie für den Versand müssen, der. OCX (die auf den Standardwert bereits gebunden wurde. TLB-Version) und die. TLB für das jeweilige Gebietsschema. Dies bedeutet, dass nur die. OCX ist seit den richtigen für englische Versionen erforderlich. TLB wurde bereits an sie gebunden. Für andere Gebietsschemas, die lokalisierte Typbibliothek auch geliefert werden muss mit den. OCX.
+Nur eine Typbibliothek (. TLB)-Datei kann an die Ressourcen der Kontrollimplementierung gebunden werden (. OCX)-Datei. Dies ist in der Regel die Version mit den standardisierten (typischerweise englischen) Namen. Um eine lokalisierte Version Ihres Steuerelements zu versenden, müssen Sie die versenden. OCX (die bereits an den Standardwert gebunden wurde . TLB-Version) und die . TLB für das entsprechende Gebietsschema. Dies bedeutet, dass nur die . OCX wird für englische Versionen benötigt, da die richtige . TLB ist bereits daran gebunden. Für andere Gebietsschemas muss die lokalisierte Typbibliothek auch mit der ausgeliefert werden. Ocx.
 
-Um sicherzustellen, dass die Clients des Steuerelements auf die Bibliothek mit lokalisierten finden können, registrieren Sie Ihr Gebietsschema aus. Im Abschnitt "Typbibliothek" der Windows-systemregistrierung TLB-Dateien. Der dritte Parameter (normalerweise optional) der der [AfxOleRegisterTypeLib](../mfc/reference/registering-ole-controls.md#afxoleregistertypelib) Funktion wird für diesen Zweck bereitgestellt. Im folgende Beispiel wird eine französische Typbibliothek für ActiveX-Steuerelement registriert:
+Um sicherzustellen, dass Clients Ihres Steuerelements die lokalisierte Typbibliothek finden können, registrieren Sie Ihre gebietsschemaspezifische . TLB-Dateien unter dem Abschnitt TypeLib der Windows-Systemregistrierung. Der dritte Parameter (normalerweise optional) der [Funktion AfxOleRegisterTypeLib](../mfc/reference/registering-ole-controls.md#afxoleregistertypelib) wird zu diesem Zweck bereitgestellt. Im folgenden Beispiel wird eine französische Typbibliothek für ein ActiveX-Steuerelement registriert:
 
 [!code-cpp[NVC_MFC_AxLoc#2](../mfc/codesnippet/cpp/mfc-activex-controls-localizing-an-activex-control_2.cpp)]
 
-Wenn das Steuerelement registriert ist, die `AfxOleRegisterTypeLib` Funktion sucht automatisch nach dem angegebenen. TLB-Datei im gleichen Verzeichnis wie das Steuerelement und registriert sie in der Datenbank der Windows-Registrierung. Wenn die. TLB-Datei nicht gefunden wird, die Funktion hat keine Auswirkungen.
+Wenn Ihr Steuerelement registriert `AfxOleRegisterTypeLib` ist, sucht die Funktion automatisch nach der angegebenen . TLB-Datei im selben Verzeichnis wie das Steuerelement und registriert sie in der Windows-Registrierungsdatenbank. Wenn die . TLB-Datei wurde nicht gefunden, die Funktion hat keine Wirkung.
 
-##  <a name="_core_localizing_the_control.92.s_user_interface"></a> Lokalisieren die Benutzeroberfläche des Steuerelements
+## <a name="localizing-the-controls-user-interface"></a><a name="_core_localizing_the_control.92.s_user_interface"></a>Lokalisieren der Benutzeroberfläche des Steuerelements
 
-Um die Benutzeroberfläche des Steuerelements zu lokalisieren, platzieren Sie aller Benutzer sichtbare des Steuerelements-Ressourcen (z. B. Eigenschaftenseiten und Fehlermeldungen) in sprachspezifischen Ressourcen-DLLs. Sie können dann ambient LocaleID-Eigenschaft des Containers verwenden, Auswahl die entsprechenden DLL für das Gebietsschema des Benutzers.
+Um die Benutzeroberfläche eines Steuerelements zu lokalisieren, platzieren Sie alle benutzersichtbaren Ressourcen des Steuerelements (z. B. Eigenschaftenseiten und Fehlermeldungen) in sprachspezifischen Ressourcen-DLLs. Anschließend können Sie die Ambient LocaleID-Eigenschaft des Containers verwenden, um die entsprechende DLL für das Gebietsschema des Benutzers auszuwählen.
 
-Das folgende Codebeispiel veranschaulicht eine Möglichkeit zum Suchen und laden die Ressourcen-DLL für ein bestimmtes Gebietsschema. Diese Memberfunktion auf, dem Namen `GetLocalizedResourceHandle` für dieses Beispiel kann eine Memberfunktion der ActiveX-Steuerelementklasse sein:
+Im folgenden Codebeispiel wird ein Ansatz zum Suchen und Laden der Ressourcen-DLL für ein bestimmtes Gebietsschema veranschaulicht. Diese Memberfunktion, `GetLocalizedResourceHandle` die für dieses Beispiel aufgerufen wird, kann eine Memberfunktion Ihrer ActiveX-Steuerelementklasse sein:
 
 [!code-cpp[NVC_MFC_AxLoc#3](../mfc/codesnippet/cpp/mfc-activex-controls-localizing-an-activex-control_3.cpp)]
 
-Beachten Sie, dass die untersprachen-ID in jedem Fall der Switch-Anweisung, um spezialisiertere Lokalisierung bereitzustellen überprüft werden konnte. Eine Demonstration dieser Funktion finden Sie unter den `GetResourceHandle` -Funktion in der MFC-ActiveX-Steuerelemente Beispiel [LOCALIZE](../overview/visual-cpp-samples.md).
+Beachten Sie, dass die Untersprachen-ID in jedem Fall der Switch-Anweisung überprüft werden kann, um eine speziellere Lokalisierung bereitzustellen. Eine Demonstration dieser Funktion finden `GetResourceHandle` Sie in der Funktion im MFC ActiveX-Steuerelementbeispiel [LOCALIZE](../overview/visual-cpp-samples.md).
 
-Wenn das Steuerelement selbst in einem Container geladen wird, kann es aufrufen [COleControl:: AmbientLocaleID](../mfc/reference/colecontrol-class.md#ambientlocaleid) die Gebietsschema-ID abrufen Das Steuerelement kann dann den zurückgegebenen Gebietsschema-ID-Wert, übergeben die `GetLocalizedResourceHandle` -Funktion, die die richtige Ressourcenbibliothek lädt. Das Steuerelement sollte das resultierende Handle übergeben, sofern vorhanden, um [AfxSetResourceHandle](../mfc/reference/application-information-and-management.md#afxsetresourcehandle):
+Wenn sich das Steuerelement zum ersten Mal in einen Container lädt, kann es [COleControl::AmbientLocaleID](../mfc/reference/colecontrol-class.md#ambientlocaleid) aufrufen, um die Gebietsschema-ID abzurufen. Das Steuerelement kann dann den zurückgegebenen `GetLocalizedResourceHandle` Gebietsschema-ID-Wert an die Funktion übergeben, die die richtige Ressourcenbibliothek lädt. Das Steuerelement sollte das resultierende Handle ggf. an [AfxSetResourceHandle](../mfc/reference/application-information-and-management.md#afxsetresourcehandle)übergeben:
 
 [!code-cpp[NVC_MFC_AxLoc#4](../mfc/codesnippet/cpp/mfc-activex-controls-localizing-an-activex-control_4.cpp)]
 
-Fügen Sie das Codebeispiel oben in einer Memberfunktion des Steuerelements, z. B. eine Überschreibung der [COleControl:: OnSetClientSite](../mfc/reference/colecontrol-class.md#onsetclientsite). Darüber hinaus *M_hResDLL* muss eine Membervariable der Steuerelement-Klasse.
+Platzieren Sie das obige Codebeispiel in einer Memberfunktion des Steuerelements, z. B. einer Außerkraftsetzung von [COleControl::OnSetClientSite](../mfc/reference/colecontrol-class.md#onsetclientsite). Darüber hinaus sollte *m_hResDLL* eine Membervariable der Steuerelementklasse sein.
 
-Sie können ähnlichen Logik verwenden, für die Lokalisierung der Eigenschaftenseite des Steuerelements. Um die Eigenschaftenseite zu lokalisieren, fügen Sie Code wie im folgenden Beispiel Ihr Eigenschaftenseite Implementierungsdatei (in einer Außerkraftsetzung der [COlePropertyPage:: OnSetPageSite](../mfc/reference/colepropertypage-class.md#onsetpagesite)):
+Sie können eine ähnliche Logik zum Lokalisieren der Eigenschaftenseite eines Steuerelements verwenden. Um die Eigenschaftenseite zu lokalisieren, fügen Sie Code hinzu, der dem folgenden Beispiel ähnelt, zur Implementierungsdatei Ihrer Eigenschaftenseite (in einer Außerkraftsetzung von [COlePropertyPage::OnSetPageSite):](../mfc/reference/colepropertypage-class.md#onsetpagesite)
 
 [!code-cpp[NVC_MFC_AxLoc#5](../mfc/codesnippet/cpp/mfc-activex-controls-localizing-an-activex-control_5.cpp)]
 

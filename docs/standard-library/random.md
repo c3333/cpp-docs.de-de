@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - random header
 ms.assetid: 60afc25c-b162-4811-97c1-1b65398d4c57
-ms.openlocfilehash: fbff6123c810251109dd48d74a5bd4632793be6f
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 540daa5bafa28b1d56c55daf33f0b5f5461c8ed6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689102"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81320233"
 ---
 # <a name="ltrandomgt"></a>&lt;random&gt;
 
@@ -19,30 +19,30 @@ Definiert Funktionen zum Generieren von Zufallszahlen und erlaubt die Erstellung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header**: \<random >
+**Header** \<: zufällige>
 
 **Namespace:** std
 
 > [!NOTE]
-> Die \<random > Bibliothek verwendet die Anweisung "#include < initializer_list >".
+> Die \<zuzufällige>-Bibliothek verwendet die Anweisung "#include <initializer_list>".
 
 ## <a name="summary"></a>Zusammenfassung
 
-Ein *Zufallszahlengenerator* ist ein Objekt, bei dem eine Sequenz von Pseudo-Zufallswerten erzeugt wird. Ein Generator, der Werte produziert, die in einem bestimmten Bereich gleichförmig verteilt sind, ist ein *Uniform Random Number Generator* (URNG, einheitlicher Zufallszahlengenerator). Eine Klassen Vorlage, die als URNG fungiert, wird als *Engine* bezeichnet, wenn diese Klasse bestimmte gemeinsame Merkmale aufweist, die später in diesem Artikel erläutert werden. Ein URNG kann mit einer *Verteilung* kombiniert werden – was im Normalfall auch geschieht –, indem der URNG als Argument an den `operator()` des Verteilers übergeben wird, um Werte zu produzieren, die in einer von der Verteilung definierten Art und Weise verteilt werden.
+Ein *Zufallszahlengenerator* ist ein Objekt, bei dem eine Sequenz von Pseudo-Zufallswerten erzeugt wird. Ein Generator, der Werte produziert, die in einem bestimmten Bereich gleichförmig verteilt sind, ist ein *Uniform Random Number Generator* (URNG, einheitlicher Zufallszahlengenerator). Eine Klassenvorlage, die als URNG verwendet werden soll, wird als *Engine* bezeichnet, wenn diese Klasse bestimmte allgemeine Merkmale hat, die weiter unten in diesem Artikel erläutert werden. Ein URNG kann mit einer *Verteilung* kombiniert werden – was im Normalfall auch geschieht –, indem der URNG als Argument an den `operator()` des Verteilers übergeben wird, um Werte zu produzieren, die in einer von der Verteilung definierten Art und Weise verteilt werden.
 
 Diese Links führen zu den Hauptabschnitten dieses Artikels:
 
 - [Beispiele](#code)
 
-- [Kategorisierte Auflistung](#listing)
+- [Kategorisierte Stufung](#listing)
 
 - [Engines und Verteilungen](#engdist)
 
-- [Hinweise](#comments)
+- [Bemerkungen](#comments)
 
 ### <a name="quick-tips"></a>Einfache Tipps
 
-Im folgenden finden Sie einige Tipps, die Sie beachten sollten, wenn Sie \<random > verwenden:
+Hier sind einige Tipps, die \<Sie bei der Verwendung zufälliger> beachten sollten:
 
 - Für die meisten Zwecke produzieren URNGs Rohbits, die durch Verteilungen geformt werden müssen. (Eine wichtige Ausnahme ist [std::shuffle()](../standard-library/algorithm-functions.md#shuffle), da es einen URNG direkt verwendet.)
 
@@ -52,9 +52,9 @@ Im folgenden finden Sie einige Tipps, die Sie beachten sollten, wenn Sie \<rando
 
 - Die hilfreichste Paarung für die meisten Anwendungen ist die `mt19937`-Engine mit `uniform_int_distribution`, wie später in diesem Artikel im [Codebeispiel](#code) gezeigt.
 
-Es stehen zahlreiche Optionen für die Auswahl im \<random >-Header zur Auswahl, und jede dieser Optionen ist der veralteten C-Lauf Zeitfunktion `rand()` vorzuziehen. Informationen dazu, was bei `rand()` falsch ist und wie \<random > diese Mängel behandelt, finden Sie in [diesem Video](https://go.microsoft.com/fwlink/p/?linkid=397615).
+Es gibt viele Optionen zur \<Auswahl in der zufälligen> Header, und jede `rand()`von ihnen ist der veralteten C-Runtime-Funktion vorzuziehen. Informationen darüber, was mit `rand()` diesen \<Mängeln falsch ist und wie zufällig> diese Mängel behebt, finden Sie [in diesem Video](https://go.microsoft.com/fwlink/p/?linkid=397615).
 
-## <a name="code"></a> Beispiele
+## <a name="examples"></a><a name="code"></a>Beispiele
 
 Im folgenden Codebeispiel wird veranschaulicht, wie einige Zufallszahlen (in diesem Fall fünf) mit einem Generator erstellt werden, der mit einem nicht-deterministischen Startwert generiert wurde.
 
@@ -209,9 +209,9 @@ Randomized array: Si C Sc H Na O S Cr K Li Al Ti Cl B Mn He Fe Ne Be Ar V P Ca N
 
 Dieser Code zeigt zwei verschiedene Randomisierungen – Randomisierungen eines Vektors aus Ganzzahlen und Mischung eines Arrays indizierter Daten – mit einer Testvorlagenfunktion. Der erste Aufruf der Testfunktion verwendet den kryptografisch sicheren, nicht-deterministischen, nicht startwert fähigen, nicht wiederholbaren `random_device`-URNG. Für den zweiten Testlauf wird das `mersenne_twister_engine` als URNG mit einem deterministischen konstanten 32-Bit-Startwert verwendet, was bedeutet, dass die Ergebnisse wiederholbar sind. Der dritte Testlauf startet das `mersenne_twister_engine` mit einem nicht-deterministischen 32-Bit-Ergebnis aus `random_device`. Der vierte Testlauf baut darauf auf, indem er eine mit `random_device`-Ergebnissen gefüllte [Startwertsequenz](../standard-library/seed-seq-class.md) verwendet, die mehr als 32-Bit nicht-deterministische Zufallszahlen ausgibt ( die aber immer noch kryptografisch sicher sind). Weitere Informationen dazu erhalten Sie im Folgenden.
 
-## <a name="listing"></a> Kategorisierte Auflistung
+## <a name="categorized-listing"></a><a name="listing"></a> Kategorisierte Auflistung
 
-###  <a name="urngs"></a> Einheitlicher Zufallszahlengenerator
+### <a name="uniform-random-number-generators"></a><a name="urngs"></a> Einheitlicher Zufallszahlengenerator
 
 URNGs werden oft anhand folgender Eigenschaften beschrieben:
 
@@ -221,15 +221,15 @@ URNGs werden oft anhand folgender Eigenschaften beschrieben:
 
 3. **Qualität**: Ähnlichkeit der generierten Sequenz mit wirklich zufälligen Zahlen. Dies wird häufig als „*Zufallscharakter*“ bezeichnet.
 
-In den folgenden Abschnitten werden die Uniform Random Number Generatoren (urngs) aufgelistet, die im \<random >-Header bereitgestellt werden.
+In den folgenden Abschnitten werden die einheitlichen Zufallszahlengeneratoren (URNGs) aufgeführt, die \<im>-Header bereitgestellt werden.
 
-####  <a name="rd"></a> Nicht-deterministischen Generator
+#### <a name="non-deterministic-generator"></a><a name="rd"></a> Nicht-deterministischen Generator
 
 |||
 |-|-|
-|[random_device-Klasse](../standard-library/random-device-class.md)|Generiert eine nicht-deterministische und kryptografisch sichere Zufallssequenz mithilfe eines externen Geräts. Wird normalerweise zur Ausstattung einer Engine mit einem Startwert verwendet. Geringe Leistung, sehr hohe Qualität. Weitere Informationen finden Sie in den [Hinweisen](#comments).|
+|[random_device-Klasse](../standard-library/random-device-class.md)|Generiert eine nicht-deterministische und kryptografisch sichere Zufallssequenz mithilfe eines externen Geräts. Wird normalerweise zur Ausstattung einer Engine mit einem Startwert verwendet. Geringe Leistung, sehr hohe Qualität. Weitere Informationen finden Sie unter [Bemerkungen](#comments).|
 
-####  <a name="typedefs"></a> Modultypdefinitionen mit voreingestellten Parametern
+#### <a name="engine-typedefs-with-predefined-parameters"></a><a name="typedefs"></a> Modultypdefinitionen mit voreingestellten Parametern
 
 Zur Instanzierung von Engines und Engine-Adaptern. Weitere Informationen erhalten Sie im Abschnitt [Engines und Verteilungen](#engdist).
 
@@ -305,7 +305,7 @@ Zur Instanzierung von Engines und Engine-Adaptern. Weitere Informationen erhalte
     typedef subtract_with_carry_engine<unsigned long long, 48, 5, 12> ranlux48_base;
     ```
 
-####  <a name="eng"></a> Modulvorlagen
+#### <a name="engine-templates"></a><a name="eng"></a> Modulvorlagen
 
 Engine-Vorlagen werden als eigenständige URNGs verwendet oder als Basis-Engine an [Engine-Adapter](#engadapt) übergeben. Diese werden normalerweise mit einer [vorangestellten Engine-Typdefinition](#typedefs) instanziert und an eine [Verteilung](#distributions) übergeben. Weitere Informationen erhalten Sie im Abschnitt [Engines und Verteilungen](#engdist).
 
@@ -315,7 +315,7 @@ Engine-Vorlagen werden als eigenständige URNGs verwendet oder als Basis-Engine 
 |[mersenne_twister_engine-Klasse](../standard-library/mersenne-twister-engine-class.md)|Generiert mithilfe des Mersenne-Twisteralgorithmus eine Zufallssequenz. Am komplexesten und mit der höchsten Qualität, außer für die Klasse random_device. Sehr schnelle Leistung.|
 |[subtract_with_carry_engine-Klasse](../standard-library/subtract-with-carry-engine-class.md)|Generiert eine zufällige Sequenz mithilfe des Algorithmus "subtract with carry". Eine Verbesserung gegenüber `linear_congruential_engine`, aber von viel geringerer Qualität und Leistung als `mersenne_twister_engine`.|
 
-####  <a name="engadapt"></a>Moduladaptervorlagen
+#### <a name="engine-adaptor-templates"></a><a name="engadapt"></a>Moduladaptervorlagen
 
 Engine-Adapter sind Vorlagen, die andere (Basis-)Engines anpassen. Diese werden normalerweise mit einer [vorangestellten Engine-Typdefinition](#typedefs) instanziert und an eine [Verteilung](#distributions) übergeben. Weitere Informationen erhalten Sie im Abschnitt [Engines und Verteilungen](#engdist).
 
@@ -325,32 +325,32 @@ Engine-Adapter sind Vorlagen, die andere (Basis-)Engines anpassen. Diese werden 
 |[independent_bits_engine-Klasse](../standard-library/independent-bits-engine-class.md)|Generiert eine zufällige Sequenz mit einer angegebenen Anzahl von Bits, indem Bits aus von der Basis-Engine zurückgegebenen Werten erneut verpackt werden.|
 |[shuffle_order_engine-Klasse](../standard-library/shuffle-order-engine-class.md)|Generiert eine zufällige Sequenz durch Neupositionieren der Werte, die von ihrer Basis-Engine zurückgegeben werden.|
 
-[[Engine-Vorlagen](#eng)]
+[[Modulvorlagen](#eng)]
 
-###  <a name="distributions"></a> Zufallszahlverteilungen
+### <a name="random-number-distributions"></a><a name="distributions"></a> Zufallszahlverteilungen
 
-In den folgenden Abschnitten werden die Verteilungen aufgelistet, die im Header der \<random > bereitgestellt werden Verteilungen sind ein Nachverarbeitungsmechanismus, der normalerweise URNS-Ausgaben als Eingaben verwendet und die Ausgabe mithilfe einer Funktion mit definierter statistischer Wahrscheinlichkeitsdichte verteilt. Weitere Informationen erhalten Sie im Abschnitt [Engines und Verteilungen](#engdist).
+In den folgenden Abschnitten werden \<die Verteilungen im>-Header aufgeführt. Verteilungen sind ein Nachverarbeitungsmechanismus, der normalerweise URNS-Ausgaben als Eingaben verwendet und die Ausgabe mithilfe einer Funktion mit definierter statistischer Wahrscheinlichkeitsdichte verteilt. Weitere Informationen erhalten Sie im Abschnitt [Engines und Verteilungen](#engdist).
 
 #### <a name="uniform-distributions"></a>Gleichförmige Verteilungen.
 
 |||
 |-|-|
 |[uniform_int_distribution-Klasse](../standard-library/uniform-int-distribution-class.md)|Produziert eine gleichförmige Ganzzahlwertverteilung über einen Bereich im geschlossenen Intervall \[a, b] (inklusiv-inklusiv).|
-|[uniform_real_distribution-Klasse](../standard-library/uniform-real-distribution-class.md)|Produziert eine gleichförmige (Gleitkomma-)Echtwerteverteilung über einen Bereich im halboffenen Intervall [a, b) (inklusiv-exklusiv).|
+|[uniform_real_distribution Klasse](../standard-library/uniform-real-distribution-class.md)|Produziert eine gleichförmige (Gleitkomma-)Echtwerteverteilung über einen Bereich im halboffenen Intervall [a, b) (inklusiv-exklusiv).|
 |[generate_canonical](../standard-library/random-functions.md#generate_canonical)|Produziert eine gleiche (Gleitkomma-)Echtwerteverteilung mit vorgegebener Genauigkeit über [0, 1) (inklusiv-exklusiv).|
 
-[[Zufallszahlverteilungen](#distributions)]
+[[Zufallszahlenverteilungen](#distributions)]
 
 #### <a name="bernoulli-distributions"></a>Bernoulli-Verteilungen
 
 |||
 |-|-|
-|[bernoulli_distribution-Klasse](../standard-library/bernoulli-distribution-class.md)|Erzeugt eine Bernoulli-Verteilung von **booleschen** Werten.|
-|[binomial_distribution-Klasse](../standard-library/binomial-distribution-class.md)|Produziert eine binomiale Verteilung von Ganzzahlwerten.|
+|[bernoulli_distribution-Klasse](../standard-library/bernoulli-distribution-class.md)|Erzeugt eine Bernoulli-Verteilung von **Bool-Werten.**|
+|[binomial_distribution Klasse](../standard-library/binomial-distribution-class.md)|Produziert eine binomiale Verteilung von Ganzzahlwerten.|
 |[geometric_distribution-Klasse](../standard-library/geometric-distribution-class.md)|Produziert eine geometrische Verteilung von Ganzzahlwerten.|
 |[negative_binomial_distribution-Klasse](../standard-library/negative-binomial-distribution-class.md)|Produziert eine negative binomiale Verteilung von Ganzzahlwerten.|
 
-[[Zufallszahlverteilungen](#distributions)]
+[[Zufallszahlenverteilungen](#distributions)]
 
 #### <a name="normal-distributions"></a>Normalverteilungen
 
@@ -358,12 +358,12 @@ In den folgenden Abschnitten werden die Verteilungen aufgelistet, die im Header 
 |-|-|
 |[cauchy_distribution-Klasse](../standard-library/cauchy-distribution-class.md)|Produziert eine Couch-Verteilung von (Gleitkomma-)Echtwerten.|
 |[chi_squared_distribution-Klasse](../standard-library/chi-squared-distribution-class.md)|Produziert eine Chi-Quadrat-Verteilung von (Gleitkomma-)Echtwerten.|
-|[fisher_f_distribution-Klasse](../standard-library/fisher-f-distribution-class.md)|Produziert eine f-Verteilung (auch als f-Distribution von Snedecor oder Fisher-Snedecor-Verteilung bezeichnet) von (Gleit Komma-) echt Werten.|
+|[fisher_f_distribution Klasse](../standard-library/fisher-f-distribution-class.md)|Erzeugt eine F-Verteilung (auch bekannt als Snedecor f-Verteilung oder Fisher-Snedecor-Verteilung) von realen (Floating Point) Werten.|
 |[lognormal_distribution-Klasse](../standard-library/lognormal-distribution-class.md)|Produziert eine Lognormalverteilung von (Gleitkomma-)Echtwerten.|
 |[normal_distribution-Klasse](../standard-library/normal-distribution-class.md)|Produziert eine (Gaußsche) Normalverteilung von (Gleitkomma-)Echtwerten.|
-|[student_t_distribution-Klasse](../standard-library/student-t-distribution-class.md)|Produziert die studentische *t*-Verteilung von (Gleitkomma-)Echtwerten.|
+|[student_t_distribution Klasse](../standard-library/student-t-distribution-class.md)|Produziert die studentische *t*-Verteilung von (Gleitkomma-)Echtwerten.|
 
-[[Zufallszahlverteilungen](#distributions)]
+[[Zufallszahlenverteilungen](#distributions)]
 
 #### <a name="poisson-distributions"></a>Poisson-Verteilungen
 
@@ -375,7 +375,7 @@ In den folgenden Abschnitten werden die Verteilungen aufgelistet, die im Header 
 |[poisson_distribution-Klasse](../standard-library/poisson-distribution-class.md)|Produziert eine Poisson-Verteilung von Ganzzahlwerten.|
 |[weibull_distribution-Klasse](../standard-library/weibull-distribution-class.md)|Produziert eine Weibull-Verteilung von (Gleitkomma-)Echtwerten.|
 
-[[Zufallszahlverteilungen](#distributions)]
+[[Zufallszahlenverteilungen](#distributions)]
 
 #### <a name="sampling-distributions"></a>Sampling-Verteilungen
 
@@ -385,11 +385,11 @@ In den folgenden Abschnitten werden die Verteilungen aufgelistet, die im Header 
 |[piecewise_constant_distribution-Klasse](../standard-library/piecewise-constant-distribution-class.md)|Produziert eine stückweise konstante Verteilung von (Gleitkomma-)Echtwerten.|
 |[piecewise_linear_distribution-Klasse](../standard-library/piecewise-linear-distribution-class.md)|Produziert eine stückweise lineare Verteilung von (Gleitkomma-)Echtwerten.|
 
-[[Zufallszahlverteilungen](#distributions)]
+[[Zufallszahlenverteilungen](#distributions)]
 
 ### <a name="utility-functions"></a>Hilfsfunktionen
 
-In diesem Abschnitt werden die allgemeinen Hilfsfunktionen aufgelistet, die im \<random >-Header bereitgestellt werden.
+In diesem Abschnitt werden die \<allgemeinen Dienstprogrammfunktionen im>-Header aufgeführt.
 
 |||
 |-|-|
@@ -397,7 +397,7 @@ In diesem Abschnitt werden die allgemeinen Hilfsfunktionen aufgelistet, die im \
 
 ### <a name="operators"></a>Operatoren
 
-In diesem Abschnitt werden die Operatoren aufgelistet, die im \<random >-Header bereitgestellt werden
+In diesem Abschnitt werden \<die Operatoren aufgeführt, die im>-Header angegeben sind.
 
 |||
 |-|-|
@@ -406,25 +406,25 @@ In diesem Abschnitt werden die Operatoren aufgelistet, die im \<random >-Header 
 |`operator<<`|Schreibt Zustandsinformationen in einen Stream.|
 |`operator>>`|Extrahiert Zustandsinformationen aus einem Stream.|
 
-## <a name="engdist"></a> Module und Verteilungen
+## <a name="engines-and-distributions"></a><a name="engdist"></a>Motoren und Distributionen
 
-In den folgenden Abschnitten finden Sie Informationen zu den einzelnen Klassen Vorlagen Kategorien, die in \<random > definiert sind. Beide Klassen Vorlagen Kategorien akzeptieren einen Typ als Argument und verwenden freigegebene Vorlagen Parameternamen, um die Eigenschaften des Typs, die als tatsächlicher Argumenttyp zulässig sind, wie folgt zu beschreiben:
+Informationen zu jeder dieser Klassenvorlagenkategorien, die in \<zufälligen> definiert sind, finden Sie in den folgenden Abschnitten. Beide Klassenvorlagenkategorien verwenden einen Typ als Argument und verwenden freigegebene Vorlagenparameternamen, um die Eigenschaften des Typs zu beschreiben, die als tatsächlicher Argumenttyp zulässig sind, wie folgt:
 
-- `IntType` gibt ein **kurzes**, **int**, **Long**, **Long Long**, **Ganzzahl ohne Vorzeichen Short**, Ganzzahl ohne Vorzeichen **int**, **Ganzzahl ohne Vorzeichen long**oder **Ganzzahl ohne Vorzeichen long long**an.
+- `IntType`gibt eine **kurze**, **int**, **long**, **long**, **unsigned short**, **unsigned int**, **unsigned long**, oder **unsigned long long**an.
 
-- `UIntType` gibt eine **unsignierte Short**-, **Ganzzahl ohne Vorzeichen int**-, **Ganzzahl ohne Vorzeichen long**-oder **Ganzzahl ohne Vorzeichen long long**-Zahl an.
+- `UIntType`gibt **an, dass nicht signiert kurz**, nicht signiert **int**, **nicht signiert lang**, oder nicht signiert lang **lang**.
 
-- `RealType` gibt einen **float**-, **Double**-oder **long Double**-Wert an.
+- `RealType`zeigt einen **Float,** **double**oder **long double an.**
 
-### <a name="engines"></a>Engines
+### <a name="engines"></a>Motoren
 
 [Engine-Vorlagen](#eng) und [Engine-Adaptervorlagen](#engadapt) sind Vorlagen, mit deren Parametern der erstellte Generator angepasst wird.
 
-Eine *Engine* ist eine Klassen-oder Klassen Vorlage, deren Instanzen (Generatoren) als Quelle von Zufallszahlen fungieren, die gleichmäßig zwischen einem Mindest-und Maximalwert verteilt werden. Ein *Engine-Adapter* gibt eine Sequenz von Werten aus, die verschiedene Zufallscharaktereigenschaften haben, indem er von einer anderen Zufallswerte-Engine produzierte Werte übernimmt und einen bestimmtem Algorithmus für diese Werte anwendet.
+Ein *Modul* ist eine Klassen- oder Klassenvorlage, deren Instanzen (Generatoren) als Quelle von Zufallszahlen fungieren, die gleichmäßig zwischen einem minimalen und maximalen Wert verteilt sind. Ein *Engine-Adapter* gibt eine Sequenz von Werten aus, die verschiedene Zufallscharaktereigenschaften haben, indem er von einer anderen Zufallswerte-Engine produzierte Werte übernimmt und einen bestimmtem Algorithmus für diese Werte anwendet.
 
 Jede Engine und jeder Engine-Adapter haben die folgenden Member:
 
-- `typedef` `numeric-type` `result_type` ist der vom `operator()` des Generators zurückgegebene Typ. Der `numeric-type` wird als Vorlagenparameter bei der Instanzierung übergeben.
+- `typedef`ist der Typ, der vom `operator()`Generator zurückgegeben wird. `numeric-type` `result_type` Der `numeric-type` wird als Vorlagenparameter bei der Instanzierung übergeben.
 
 - `result_type operator()` gibt Werte zurück, die gleichmäßig zwischen `min()` und `max()` verteilt werden.
 
@@ -434,13 +434,13 @@ Jede Engine und jeder Engine-Adapter haben die folgenden Member:
 
 - `void seed(result_type s)` startet den Generator mit dem Startwert `s`. Für Engines lautet die Signatur zur Unterstützung von Standardparametern `void seed(result_type s = default_seed)` (Engine-Adapter definieren einen separaten `void seed()`, siehe nächsten Unterabschnitt).
 
-- `template <class Seq> void seed(Seq& q)` startet den Generator mithilfe von [seed_seq](../standard-library/seed-seq-class.md)`Seq`.
+- `template <class Seq> void seed(Seq& q)`Samen des Generators mithilfe eines [seed_seq](../standard-library/seed-seq-class.md)`Seq`.
 
 - Ein expliziter Konstruktor mit dem Argument `result_type x`, mit dem ein Generator erstellt wird, der mit Startwerten versehen ist, als wäre `seed(x)` aufgerufen worden.
 
 - Ein expliziter Konstruktor mit dem Argument `seed_seq& seq`, mit dem ein Generator erstellt wird, der mit Startwerten versehen ist, als wäre `seed(seq)` aufgerufen worden.
 
-- `void discard(unsigned long long count)` ruft `operator()` effektiv mit der Häufigkeit `count` auf und bewertet jeden Wert.
+- `void discard(unsigned long long count)`ruft `operator()` `count` die Zeiten effektiv auf und verwirft jeden Wert.
 
 **Engine-Adapter** unterstützen zusätzlich diese Member (`Engine` ist der erste Vorlagenparameter eines Engine-Adapters, der den Typ der Basis-Engine bezeichnet):
 
@@ -458,15 +458,15 @@ Jede Engine besitzt einen *Zustand*, mit dem die Sequenz der Werte bestimmt wird
 
 ### <a name="distributions"></a>Verteilungen
 
-Eine [Zufallszahl Verteilungen](#distributions) ist eine Klassen-oder Klassen Vorlage, deren Instanzen einen Stream gleichmäßig verteilter Zufallszahlen transformieren, die aus einem Modul in einen Stream von Zufallszahlen mit einer bestimmten Verteilung abgerufen werden. Jede Verteilung verfügt über die folgenden Member:
+Eine [Zufallszahlenverteilung](#distributions) ist eine Klassen- oder Klassenvorlage, deren Instanzen einen Strom einheitlich verteilter Zufallszahlen, die von einem Modul erhalten wurden, in einen Strom von Zufallszahlen mit einer bestimmten Verteilung transformieren. Jede Verteilung verfügt über die folgenden Member:
 
-- `typedef` `numeric-type` `result_type` ist der vom `operator()` der Verteilung zurückgegebene Typ. Der `numeric-type` wird als Vorlagenparameter bei der Instanzierung übergeben.
+- `typedef`ist der Typ, der von `operator()`der Verteilung zurückgegeben wird. `numeric-type` `result_type` Der `numeric-type` wird als Vorlagenparameter bei der Instanzierung übergeben.
 
 - `template <class URNG> result_type operator()(URNG& gen)` gibt Werte zurück, die entsprechend der Definition der Verteilung verteilt werden, indem `gen` als Quelle für gleichmäßig verteilte Zufallswerte und die gespeicherten *Parameter der Verteilung* verwendet wird.
 
 - `template <class URNG> result_type operator()(URNG& gen, param_type p)` gibt die Werte zurück, die in Übereinstimmung mit der Definition der Verteilung mithilfe von `gen` als Quelle für gleichmäßig verteilte Zufallswerte und die Parameterstruktur `p` verteilt werden.
 
-- `typedef` `unspecified-type` `param_type` ist das Paket von Parametern, die optional an `operator()` übergeben werden, und wird anstelle der gespeicherten Parameter verwendet, um den Rückgabewert zu generieren.
+- `typedef`ist das Paket von Parametern, an `operator()` die optional übergeben wird und anstelle der gespeicherten Parameter verwendet wird, um den Rückgabewert zu generieren. `unspecified-type` `param_type`
 
 - Ein `const param&`-Konstruktor initialisiert die gespeicherten Parameter aus dem Argument.
 
@@ -480,9 +480,9 @@ Eine [Zufallszahl Verteilungen](#distributions) ist eine Klassen-oder Klassen Vo
 
 - `void reset()` verwirft alle zwischengespeicherten Werte, damit das Ergebnis des folgenden Aufrufs von `operator()` nicht von Werten abhängig ist, die vor dem Aufruf aus der Engine bezogen wurden.
 
-Eine Parameterstruktur ist ein Objekt, in dem alle für eine Verteilung erforderlichen Parameter gespeichert werden. Sie enthält folgende Informationen:
+Eine Parameterstruktur ist ein Objekt, in dem alle für eine Verteilung erforderlichen Parameter gespeichert werden. Sie enthält folgende Elemente:
 
-- `typedef` `distribution-type` `distribution_type` ist der Typ der Verteilung.
+- `typedef``distribution-type` , die die Art ihrer Verteilung `distribution_type`ist.
 
 - Mindestens ein Konstruktor, der die gleichen Parameterlisten akzeptiert, wie von den Verteilungskonstruktoren akzeptiert werden.
 
@@ -492,18 +492,18 @@ Eine Parameterstruktur ist ein Objekt, in dem alle für eine Verteilung erforder
 
 Weitere Informationen erhalten Sie in den entsprechenden Unterthemen unter diesem Thema, auf die zuvor in diesem Artikel verlinkt wurde.
 
-## <a name="comments"></a> Hinweise
+## <a name="remarks"></a>Hinweise zu <a name="comments"></a>
 
 Dies sind zwei höchst hilfereiche URNGs in Visual Studio – `mt19937` und `random_device` – wie in der Vergleichstabelle gezeigt:
 
-|URNG|Fast|Kryptografisch sicher|Startwertfähig|Deterministic|
+|URNG|Schnell|Kryptografisch sicher|Startwertfähig|Deterministisch|
 |----------|-----------|---------------------|---------------|--------------------|
-|`mt19937`|Ja|Nein|Ja|Ja<sup>*</sup>|
-|`random_device`|Nein|Ja|Nein|Nein|
+|`mt19937`|Ja|Nein |Ja|Ja<sup>*</sup>|
+|`random_device`|Nein |Ja|Nein|Nein|
 
 <sup>* Wenn mit einem bekannten Startwert ausgestattet.</sup>
 
-Obwohl der ISO C++-Standard nicht erfordert, dass `random_device` kryptografisch sicher ist, wird es in Visual Studio implementiert, um kryptografische Sicherheit herzustellen. (Der Begriff „kryptografisch sicher“ drückt keine Garantie aus, sondern bezeichnet ein Mindest-Entropieniveau – und damit ein Vorhersagbarkeitsniveau –, das ein bestimmter Randomisierungsalgorithmus aufweist. Weitere Informationen finden Sie im Wikipedia-Artikel [cryptografisch Secure Pseudo Zufalls Number Generator](https://go.microsoft.com/fwlink/p/?linkid=398017).) Da der ISO C++ -Standard dies nicht erfordert, können andere Plattformen `random_device` als einfachen Pseudozufallszahlen-Generator implementieren (nicht kryptografisch sicher) und können nur als Ausgangswert für einen anderen Generator verwendet werden. Lesen Sie die Dokumentation für diese Plattformen, wenn Sie `random_device` plattformübergreifend verwenden.
+Obwohl der ISO C++-Standard nicht erfordert, dass `random_device` kryptografisch sicher ist, wird es in Visual Studio implementiert, um kryptografische Sicherheit herzustellen. (Der Begriff „kryptografisch sicher“ drückt keine Garantie aus, sondern bezeichnet ein Mindest-Entropieniveau – und damit ein Vorhersagbarkeitsniveau –, das ein bestimmter Randomisierungsalgorithmus aufweist. Weitere Informationen finden Sie im Wikipedia-Artikel [Kryptographisch sicherer Pseudozufallszahlengenerator](https://go.microsoft.com/fwlink/p/?linkid=398017).) Da der ISO C++-Standard dies nicht `random_device` erfordert, können andere Plattformen als einfachen Pseudo-Zufallszahlengenerator (nicht kryptographisch sicher) implementieren und nur als Ausgangsquelle für einen anderen Generator geeignet sein. Lesen Sie die Dokumentation für diese Plattformen, wenn Sie `random_device` plattformübergreifend verwenden.
 
 `random_device`-Ergebnisse sind per Definition nicht reproduzierbar, und ein Nebeneffekt ist, dass er eventuell deutlich langsamer läuft als andere URNGs. Die meisten Anwendungen, für die keine kryptografische Sicherheit erforderlich sind, verwenden `mt19937` oder eine ähnliche Engine, obwohl Sie sie vielleicht mit einem Aufruf von `random_device` starten möchten, wie im [Codebeispiel](#code) gezeigt.
 

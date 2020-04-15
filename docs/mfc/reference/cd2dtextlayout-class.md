@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CD2DTextLayout [MFC], SetLocaleName
 - CD2DTextLayout [MFC], m_pTextLayout
 ms.assetid: 724bd13c-f2ef-4e55-a775-8cb04b7b7908
-ms.openlocfilehash: ca89d12c6aeed33be740aa9f999e7c11d6c32056
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 9be4c1134e2f82ceb3af31cbeb1a7d55f4071777
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62396183"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369027"
 ---
 # <a name="cd2dtextlayout-class"></a>CD2DTextLayout-Klasse
 
@@ -49,40 +49,40 @@ class CD2DTextLayout : public CD2DResource;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CD2DTextLayout::CD2DTextLayout](#cd2dtextlayout)|Erstellt ein CD2DTextLayout-Objekt.|
-|[CD2DTextLayout::~CD2DTextLayout](#_dtorcd2dtextlayout)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Text-Layout-Objekt zerstört wird.|
+|[CD2DTextLayout::-CD2DTextLayout](#_dtorcd2dtextlayout)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Textlayoutobjekt zerstört wird.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DTextLayout::Create](#create)|Erstellt eine CD2DTextLayout an. (Überschreibt [CD2DResource:: Create](../../mfc/reference/cd2dresource-class.md#create).)|
-|[CD2DTextLayout::Destroy](#destroy)|Zerstört ein CD2DTextLayout-Objekt. (Überschreibt [CD2DResource:: Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|
-|[CD2DTextLayout::Get](#get)|Gibt die IDWriteTextLayout-Schnittstelle|
-|[CD2DTextLayout::GetFontFamilyName](#getfontfamilyname)|Kopiert die Namen der Schriftfamilie des Texts an der angegebenen Position.|
-|[CD2DTextLayout::GetLocaleName](#getlocalename)|Ruft den Namen des Gebietsschemas des Texts an der angegebenen Position ab.|
-|[CD2DTextLayout::IsValid](#isvalid)|Überprüft die Gültigkeit der Ressource (überschreibt [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|
-|[CD2DTextLayout::ReCreate](#recreate)|Wird Sie einer CD2DTextLayout neu erstellt. (Überschreibt [CD2DResource::ReCreate](../../mfc/reference/cd2dresource-class.md#recreate).)|
-|[CD2DTextLayout::SetFontFamilyName](#setfontfamilyname)|Legt Null-terminierte Schriftfamiliennamen für Text in einen angegebenen Textbereich|
-|[CD2DTextLayout::SetLocaleName](#setlocalename)|Legt den Namen des Gebietsschemas für Text in einen angegebenen Textbereich|
+|[CD2DTextLayout::Erstellen](#create)|Erstellt ein CD2DTextLayout. (Überschreibt [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|
+|[CD2DTextLayout::Destroy](#destroy)|Zerstört ein CD2DTextLayout-Objekt. (Überschreibt [CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|
+|[CD2DTextLayout::Get](#get)|Gibt IDWriteTextLayout-Schnittstelle zurück|
+|[CD2DTextLayout::GetFontFamilyName](#getfontfamilyname)|Kopiert den Schriftfamiliennamen des Textes an der angegebenen Position.|
+|[CD2DTextLayout::GetLocaleName](#getlocalename)|Ruft den Gebietsschemanamen des Textes an der angegebenen Position ab.|
+|[CD2DTextLayout::IsValid](#isvalid)|Überprüft die Ressourcengültigkeit (Überschreibt [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|
+|[CD2DTextLayout::ReCreate](#recreate)|Erstellt ein CD2DTextLayout neu. (Überschreibt [CD2DResource::ReCreate](../../mfc/reference/cd2dresource-class.md#recreate).)|
+|[CD2DTextLayout::SetFontFamilyName](#setfontfamilyname)|Legt den Familiennamen für null-terminierte Schriftarten für Text innerhalb eines angegebenen Textbereichs fest.|
+|[CD2DTextLayout::SetLocaleName](#setlocalename)|Legt den Gebietsschemanamen für Text innerhalb eines angegebenen Textbereichs fest|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DTextLayout::operator IDWriteTextLayout*](#operator_idwritetextlayout_star)|Gibt die IDWriteTextLayout-Schnittstelle|
+|[CD2DTextLayout::operator IDWriteTextLayout*](#operator_idwritetextlayout_star)|Gibt IDWriteTextLayout-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CD2DTextLayout::m_pTextLayout](#m_ptextlayout)|Ein Zeiger auf ein IDWriteTextLayout.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CD2DResource](../../mfc/reference/cd2dresource-class.md)
 
@@ -90,17 +90,17 @@ class CD2DTextLayout : public CD2DResource;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="_dtorcd2dtextlayout"></a>  CD2DTextLayout:: ~ CD2DTextLayout
+## <a name="cd2dtextlayoutcd2dtextlayout"></a><a name="_dtorcd2dtextlayout"></a>CD2DTextLayout::-CD2DTextLayout
 
-Der Destruktor. Wird aufgerufen, wenn ein D2D-Text-Layout-Objekt zerstört wird.
+Der Destruktor. Wird aufgerufen, wenn ein D2D-Textlayoutobjekt zerstört wird.
 
 ```
 virtual ~CD2DTextLayout();
 ```
 
-##  <a name="cd2dtextlayout"></a>  CD2DTextLayout::CD2DTextLayout
+## <a name="cd2dtextlayoutcd2dtextlayout"></a><a name="cd2dtextlayout"></a>CD2DTextLayout::CD2DTextLayout
 
 Erstellt ein CD2DTextLayout-Objekt.
 
@@ -119,20 +119,20 @@ CD2DTextLayout(
 Ein Zeiger auf das Renderziel.
 
 *strText*<br/>
-Eine CString-Objekt, das enthält die Zeichenfolge zum Erstellen eines neuen CD2DTextLayout-Objekts aus.
+Ein CString-Objekt, das die Zeichenfolge zum Erstellen eines neuen CD2DTextLayout-Objekts enthält.
 
 *textFormat*<br/>
-Eine CString-Objekt, das auf die Zeichenfolge anzuwendende Format enthält.
+Ein CString-Objekt, das das Format enthält, das auf die Zeichenfolge angewendet werden soll.
 
 *sizeMax*<br/>
-Die Größe des im Layout.
+Die Größe des Layoutfelds.
 
 *bAutoDestroy*<br/>
-Gibt an, dass vom Besitzer (pParentTarget) das Objekt zerstört wird.
+Gibt an, dass das Objekt vom Besitzer (pParentTarget) zerstört wird.
 
-##  <a name="create"></a>  CD2DTextLayout::Create
+## <a name="cd2dtextlayoutcreate"></a><a name="create"></a>CD2DTextLayout::Erstellen
 
-Erstellt eine CD2DTextLayout an.
+Erstellt ein CD2DTextLayout.
 
 ```
 virtual HRESULT Create(CRenderTarget* */);
@@ -140,9 +140,9 @@ virtual HRESULT Create(CRenderTarget* */);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird einen HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="destroy"></a>  CD2DTextLayout::Destroy
+## <a name="cd2dtextlayoutdestroy"></a><a name="destroy"></a>CD2DTextLayout::Destroy
 
 Zerstört ein CD2DTextLayout-Objekt.
 
@@ -150,9 +150,9 @@ Zerstört ein CD2DTextLayout-Objekt.
 virtual void Destroy();
 ```
 
-##  <a name="get"></a>  CD2DTextLayout::Get
+## <a name="cd2dtextlayoutget"></a><a name="get"></a>CD2DTextLayout::Get
 
-Gibt die IDWriteTextLayout-Schnittstelle
+Gibt IDWriteTextLayout-Schnittstelle zurück
 
 ```
 IDWriteTextLayout* Get();
@@ -160,11 +160,11 @@ IDWriteTextLayout* Get();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf ein IDWriteTextLayout-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine IDWriteTextLayout-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="getfontfamilyname"></a>  CD2DTextLayout::GetFontFamilyName
+## <a name="cd2dtextlayoutgetfontfamilyname"></a><a name="getfontfamilyname"></a>CD2DTextLayout::GetFontFamilyName
 
-Kopiert die Namen der Schriftfamilie des Texts an der angegebenen Position.
+Kopiert den Schriftfamiliennamen des Textes an der angegebenen Position.
 
 ```
 CString GetFontFamilyName(
@@ -175,18 +175,18 @@ CString GetFontFamilyName(
 ### <a name="parameters"></a>Parameter
 
 *currentPosition*<br/>
-Die Position des zu untersuchenden Texts.
+Die Position des zu untersuchenden Textes.
 
-*textRange*<br/>
-Der Bereich des Texts mit dem gleichen Formatierung wie der Text an der Position von CurrentPosition angegeben. Dies bedeutet, dass die Ausführung die exakte Formatierung als die angegebene Position, einschließlich, aber nicht beschränkt auf den Namen der Schriftfamilie.
+*Textrange*<br/>
+Der Textbereich, der die gleiche Formatierung wie der Text an der von currentPosition angegebenen Position aufweist. Dies bedeutet, dass die Ausführung die exakte Formatierung als angegebene Position aufweist, einschließlich, aber nicht beschränkt auf den Familiennamen der Schriftart.
 
 ### <a name="return-value"></a>Rückgabewert
 
-CString-Objekt, das den aktuellen Namen der Schriftfamilie enthält.
+CString-Objekt, das den aktuellen Schriftfamiliennamen enthält.
 
-##  <a name="getlocalename"></a>  CD2DTextLayout::GetLocaleName
+## <a name="cd2dtextlayoutgetlocalename"></a><a name="getlocalename"></a>CD2DTextLayout::GetLocaleName
 
-Ruft den Namen des Gebietsschemas des Texts an der angegebenen Position ab.
+Ruft den Gebietsschemanamen des Textes an der angegebenen Position ab.
 
 ```
 CString GetLocaleName(
@@ -197,18 +197,18 @@ CString GetLocaleName(
 ### <a name="parameters"></a>Parameter
 
 *currentPosition*<br/>
-Die Position des zu untersuchenden Texts.
+Die Position des zu überprüfenden Textes.
 
-*textRange*<br/>
-Der Bereich des Texts mit dem gleichen Formatierung wie der Text an der Position von CurrentPosition angegeben. Dies bedeutet, dass die Ausführung die exakte Formatierung als die angegebene Position, einschließlich, aber nicht beschränkt auf den Gebietsschemanamen.
+*Textrange*<br/>
+Der Textbereich, der die gleiche Formatierung wie der Text an der von currentPosition angegebenen Position aufweist. Dies bedeutet, dass die Ausführung die exakte Formatierung als angegebene Position aufweist, einschließlich, aber nicht beschränkt auf den Gebietsschemanamen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 CString-Objekt, das den aktuellen Gebietsschemanamen enthält.
 
-##  <a name="isvalid"></a>  CD2DTextLayout::IsValid
+## <a name="cd2dtextlayoutisvalid"></a><a name="isvalid"></a>CD2DTextLayout::IsValid
 
-Die Gültigkeit der Überprüfungen-Ressource
+Überprüft die Gültigkeit der Ressource
 
 ```
 virtual BOOL IsValid() const;
@@ -216,9 +216,9 @@ virtual BOOL IsValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Ressource gültig ist. andernfalls "false".
+TRUE, wenn die Ressource gültig ist; andernfalls FALSE.
 
-##  <a name="m_ptextlayout"></a>  CD2DTextLayout::m_pTextLayout
+## <a name="cd2dtextlayoutm_ptextlayout"></a><a name="m_ptextlayout"></a>CD2DTextLayout::m_pTextLayout
 
 Ein Zeiger auf ein IDWriteTextLayout.
 
@@ -226,9 +226,9 @@ Ein Zeiger auf ein IDWriteTextLayout.
 IDWriteTextLayout* m_pTextLayout;
 ```
 
-##  <a name="operator_idwritetextlayout_star"></a>  CD2DTextLayout::Operator IDWriteTextLayout *
+## <a name="cd2dtextlayoutoperator-idwritetextlayout"></a><a name="operator_idwritetextlayout_star"></a>CD2DTextLayout::operator IDWriteTextLayout*
 
-Gibt die IDWriteTextLayout-Schnittstelle
+Gibt IDWriteTextLayout-Schnittstelle zurück
 
 ```
 operator IDWriteTextLayout*();
@@ -236,11 +236,11 @@ operator IDWriteTextLayout*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf ein IDWriteTextLayout-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine IDWriteTextLayout-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="recreate"></a>  CD2DTextLayout::ReCreate
+## <a name="cd2dtextlayoutrecreate"></a><a name="recreate"></a>CD2DTextLayout::ReCreate
 
-Wird Sie einer CD2DTextLayout neu erstellt.
+Erstellt ein CD2DTextLayout neu.
 
 ```
 virtual HRESULT ReCreate(CRenderTarget* */);
@@ -248,11 +248,11 @@ virtual HRESULT ReCreate(CRenderTarget* */);
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird einen HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="setfontfamilyname"></a>  CD2DTextLayout::SetFontFamilyName
+## <a name="cd2dtextlayoutsetfontfamilyname"></a><a name="setfontfamilyname"></a>CD2DTextLayout::SetFontFamilyName
 
-Legt Null-terminierte Schriftfamiliennamen für Text in einen angegebenen Textbereich
+Legt den Familiennamen für null-terminierte Schriftarten für Text innerhalb eines angegebenen Textbereichs fest.
 
 ```
 BOOL SetFontFamilyName(
@@ -263,18 +263,18 @@ BOOL SetFontFamilyName(
 ### <a name="parameters"></a>Parameter
 
 *pwzFontFamilyName*<br/>
-Den Namen der Schriftfamilie, der für die gesamte Textzeichenfolge innerhalb des Bereichs von TextRange angegebenen gilt
+Der Schriftfamilienname, der für die gesamte Textzeichenfolge innerhalb des von textRange angegebenen Bereichs gilt.
 
-*textRange*<br/>
-Text-Bereich, für die diese Änderung gilt
+*Textrange*<br/>
+Textbereich, auf den diese Änderung angewendet wird
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird "false" zurückgegeben
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="setlocalename"></a>  CD2DTextLayout::SetLocaleName
+## <a name="cd2dtextlayoutsetlocalename"></a><a name="setlocalename"></a>CD2DTextLayout::SetLocaleName
 
-Legt den Namen des Gebietsschemas für Text in einen angegebenen Textbereich
+Legt den Gebietsschemanamen für Text innerhalb eines angegebenen Textbereichs fest
 
 ```
 BOOL SetLocaleName(
@@ -285,14 +285,14 @@ BOOL SetLocaleName(
 ### <a name="parameters"></a>Parameter
 
 *pwzLocaleName*<br/>
-Eine Gebietsschema Null-terminierte Zeichenfolge
+Eine null-terminierte Gebietsschemanamenszeichenfolge
 
-*textRange*<br/>
-Text-Bereich, für die diese Änderung gilt
+*Textrange*<br/>
+Textbereich, auf den diese Änderung angewendet wird
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird "false" zurückgegeben
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
 ## <a name="see-also"></a>Siehe auch
 

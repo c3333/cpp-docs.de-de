@@ -1,62 +1,62 @@
 ---
-title: 'Tutorial: Grundlagen zu Windows Performance Analyzer'
-description: Tutorial zum Durchführen von grundlegenden Vorgängen in Windows Performance Analyzer.
+title: 'Tutorial: Grundlagen des Windows-Leistungsanalyseprogramms'
+description: Tutorial zum Abschließen grundlegender Vorgänge in Windows Performance Analyzer.
 ms.date: 11/03/2019
 helpviewer_keywords:
 - C++ Build Insights
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: f197e7dfd852cd66039f7279f90e42b0cf75fd86
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: ae1050b9389527a12f5bdbea6d695c0f20510127
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78333887"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81323404"
 ---
-# <a name="tutorial-windows-performance-analyzer-basics"></a>Tutorial: Grundlagen zu Windows Performance Analyzer
+# <a name="tutorial-windows-performance-analyzer-basics"></a>Tutorial: Grundlagen des Windows-Leistungsanalyseprogramms
 
 ::: moniker range="<=vs-2017"
 
-Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Um die Dokumentation für diese Version anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2019 fest.
+Die C++-Build-Insights-Tools sind in Visual Studio 2019 verfügbar. Um die Dokumentation für diese Version **Version** anzuzeigen, legen Sie das Visual Studio Version-Selektor-Steuerelement für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range="vs-2019"
 
-Zum C++ effektiven Verwenden von Build Insights sind einige Kenntnisse der Windows Performance Analyzer (WPA) erforderlich. In diesem Artikel erfahren Sie, wie Sie gängige WPA-Vorgänge kennenlernen. Weitere Informationen zur Verwendung von WPA finden Sie in der Dokumentation zu [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer) .
+Die Verwendung von C++ Build Insights erfordert effektiv einige Kenntnisse von Windows Performance Analyzer (WPA). Dieser Artikel hilft Ihnen, sich mit häufigen WPA-Vorgängen vertraut zu machen. Weitere Informationen zur Verwendung von WPA finden Sie in der [Windows Performance Analyzer-Dokumentation.](/windows-hardware/test/wpt/windows-performance-analyzer)
 
 ## <a name="change-the-view-mode"></a>Ändern des Ansichtsmodus
 
-WPA bietet zwei grundlegende Ansichtsmodi, mit denen Sie Ihre Ablauf Verfolgungen untersuchen können:
+WPA bietet zwei grundlegende Ansichtsmodi, mit denen Sie Ihre Spuren erkunden können:
 
 - Graph-Modus und
-- Tabellen Modus.
+- Tabellenmodus.
 
-Sie können zwischen diesen mithilfe der Symbole im Ansichtsmodus oben im Ansichts Bereich wechseln:
+Sie können zwischen ihnen wechseln, indem Sie die Ansichtsmodussymbole oben im Ansichtsbereich verwenden:
 
-![Wechseln zwischen Graph-und Tabellen Modus.](media/wpa-switching-view-mode.gif)
+![Wechseln zwischen Diagrammmodus und Tabellenmodus.](media/wpa-switching-view-mode.gif)
 
-## <a name="select-presets"></a>Voreinstellungen auswählen
+## <a name="select-presets"></a>Presets auswählen
 
-Die C++ meisten buildinsights WPA-Ansichten verfügen über mehrere Voreinstellungen, aus denen Sie auswählen können. Sie können die gewünschte Voreinstellung mithilfe des Dropdown Menüs am oberen Rand des Bereichs Ansicht auswählen:
+Die meisten C++ Build Insights WPA-Ansichten verfügen über mehrere Voreinstellungen, aus denen Sie wählen können. Sie können die gewünschte Voreinstellung auswählen, indem Sie das Dropdown-Menü oben im Ansichtsbereich verwenden:
 
 ![Auswählen einer Voreinstellung.](media/wpa-presets.png)
 
-## <a name="zoom-in-and-out"></a>Vergrößern und verkleinern
+## <a name="zoom-in-and-out"></a>Vergrößern und Verkleinern
 
-Einige buildüberwachungen sind so groß, dass es schwierig ist, die Details herauszufinden. Um einen Bereich zu vergrößern, der Sie interessiert, klicken Sie mit der rechten Maustaste auf das Diagramm, und wählen Sie **Zoom**aus. Sie können jederzeit zur vorherigen Einstellung zurückkehren, indem Sie **Rückgängig vergrößern**auswählen. Diese Abbildung zeigt ein Beispiel für die Verwendung einer Auswahl und des **Zoom** -Befehls, um einen Abschnitt des Diagramms zu vergrößern:
+Einige Build-Spuren sind so groß, dass es schwierig ist, die Details zu erkennen. Um einen Bereich zu vergrößern, der Sie interessiert, klicken Sie mit der rechten Maustaste auf das Diagramm, und wählen Sie **Zoom**aus. Sie können jederzeit zur vorherigen Einstellung zurückkehren, indem Sie **Zoom rückgängig machen**. Dieses Bild zeigt ein Beispiel für die Verwendung einer Auswahl und den Befehl **Zoom,** um einen Abschnitt des Diagramms zu vergrößern:
 
 ![Vergrößern eines Diagramms.](media/wpa-zooming.gif)
 
-## <a name="group-by-different-columns"></a>Nach verschiedenen Spalten gruppieren
+## <a name="group-by-different-columns"></a>Gruppieren nach verschiedenen Spalten
 
-Sie können die Art und Weise anpassen, wie die Ablauf Verfolgung angezeigt wird. Klicken Sie am oberen Rand eines Ansichts Bereichs auf das Zahnrad Symbol, und ordnen Sie die Spalten im Build Explorer-Ansichts-Editor neu an. Die in diesem Dialogfeld über der gelben Zeile gefundenen Spalten sind die Spalten, nach denen Ihre Daten Zeilen gruppiert sind. Die Spalte rechts oberhalb der gelben Linie ist besonders: in der Diagramm Ansicht wird Sie auf den farbigen Balken angezeigt.
+Sie können die Anzeige der Ablaufverfolgung anpassen. Klicken Sie auf das Zahnradsymbol oben in einem Ansichtsbereich, und ordnen Sie die Spalten im Ansichts-Editor des Build-Explorers neu an. Die Spalten, die sich über der gelben Linie in diesem Dialogfeld befinden, sind die Spalten, nach denen Ihre Datenzeilen gruppiert sind. Die Spalte direkt über der gelben Linie ist etwas Besonderes: In der Diagrammansicht wird sie auf den farbigen Balken angezeigt.
 
-Diese Abbildung zeigt ein Beispiel eines Balkendiagramms für einen Link Aufruf. Verwenden Sie das Zahnrad Symbol, um das Dialogfeld Ansicht-Editor für Build-Explorer zu öffnen. Anschließend ziehen wir die Spalten Einträge für die Komponente und den Namen über die Gelbe Zeile. Die Konfiguration wird geändert, um den Detailgrad zu erhöhen und um zu sehen, was im Linker tatsächlich passiert ist:
+Dieses Bild zeigt ein Beispielbalkendiagramm eines Linkaufrufs. Wir verwenden das Zahnradsymbol, um das Dialogfeld "Explorer-Ansichts-Editor erstellen" zu öffnen. Anschließend ziehen wir die Spalteneinträge "Komponente" und "Name" über die gelbe Linie. Die Konfiguration wird geändert, um die Detailgenauigkeit zu erhöhen und zu sehen, was tatsächlich innerhalb des Linkers passiert ist:
 
 ![Vergrößern eines Diagramms.](media/wpa-grouping.gif)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Tutorial: vcperf und Windows Performance Analyzer](vcperf-and-wpa.md)\
 [Referenz: vcperf-Befehle](/cpp/build-insights/reference/vcperf-commands)\

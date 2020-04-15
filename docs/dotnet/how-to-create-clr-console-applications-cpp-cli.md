@@ -5,12 +5,12 @@ helpviewer_keywords:
 - console applications, templates
 - CLR console applications, project template
 ms.assetid: e89bce3c-706f-4ae0-8a90-cb1a0f674e70
-ms.openlocfilehash: 610efc8b0780422fc89e3bf9708ba488fe7d1f47
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 86e5abe330b0edc514fed74a12188ab73e8bfdd8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080056"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368539"
 ---
 # <a name="how-to-create-clr-console-applications-ccli"></a>Gewusst wie: Erstellen von CLR-Konsolenanwendungen (C++/CLI)
 
@@ -22,29 +22,29 @@ Wenn Sie die Vorlage für Konsolenanwendungen zum Erstellen eines Projekts verwe
 
 - Verweise auf diese .NET Framework-Namespaces:
 
-   - <xref:System.AppDomainManager>– enthält grundlegende Klassen und Basisklassen, die häufig verwendete Werte und Verweis Datentypen, Ereignisse und Ereignishandler, Schnittstellen, Attribute und Verarbeitungs Ausnahmen definieren.
+  - <xref:System.AppDomainManager>– Enthält grundlegende Klassen und Basisklassen, die häufig verwendete Werte definieren und auf Datentypen, Ereignisse und Ereignishandler, Schnittstellen, Attribute und Verarbeitungsausnahmen verweisen.
 
-   - mscorlib – Assembly-DLL, die die .NET Framework-Entwicklung unterstützt.
+  - mscorlib – Assembly-DLL, die die .NET Framework-Entwicklung unterstützt.
 
 - Quelldateien:
 
-   - Konsole (CPP-Datei) – Hauptquelldatei und Einstiegspunkt in die App, die Sie soeben erstellt haben. Diese Datei identifiziert die DLL-Datei und den Namespace des Projekts. Fügen Sie eigenen Code in diese Datei ein.
+  - Konsole (CPP-Datei) – Hauptquelldatei und Einstiegspunkt in die App, die Sie soeben erstellt haben. Diese Datei identifiziert die DLL-Datei und den Namespace des Projekts. Fügen Sie eigenen Code in diese Datei ein.
 
-   - AssemblyInfo.cpp – Diese Datei enthält Attribute, Dateien, Ressourcen, Typen, Versionsinformationen, Signaturinformationen usw., die Sie zum Ändern der Assemblymetadaten des Projekts verwenden können. Weitere Informationen finden Sie unter [Assemblyinhalte](/dotnet/framework/app-domains/assembly-contents).
+  - AssemblyInfo.cpp – Diese Datei enthält Attribute, Dateien, Ressourcen, Typen, Versionsinformationen, Signaturinformationen usw., die Sie zum Ändern der Assemblymetadaten des Projekts verwenden können. Weitere Informationen finden Sie unter [Assemblyinhalt](/dotnet/framework/app-domains/assembly-contents).
 
-   - Stdafx.cpp – Diese Datei wird zum Erstellen der vorkompilierten Headerdatei "Win32.pc" und der vorkompilierten Typendatei "StdAfx.obj" verwendet.
+  - Stdafx.cpp – Diese Datei wird zum Erstellen der vorkompilierten Headerdatei "Win32.pc" und der vorkompilierten Typendatei "StdAfx.obj" verwendet.
 
 - Headerdateien:
 
-   - Stdafx.h – Diese Datei wird zum Erstellen der vorkompilierten Headerdatei "Win32.pc" und der vorkompilierten Typendatei "StdAfx.obj" verwendet.
+  - Stdafx.h – Diese Datei wird zum Erstellen der vorkompilierten Headerdatei "Win32.pc" und der vorkompilierten Typendatei "StdAfx.obj" verwendet.
 
-   - resource.h – Eine generierte Includedatei für "app.rc".
+  - resource.h – Eine generierte Includedatei für "app.rc".
 
 - Ressourcendateien:
 
-   - app.rc – Die Ressourcenskriptdatei eines Programms.
+  - app.rc – Die Ressourcenskriptdatei eines Programms.
 
-   - app.ico – Die Symboldatei eines Programms.
+  - app.ico – Die Symboldatei eines Programms.
 
 - ReadMe.txt – Diese Datei beschreibt die Dateien im Projekt.
 
@@ -60,6 +60,6 @@ Wenn Sie die Vorlage für Konsolenanwendungen zum Erstellen eines Projekts verwe
 
 1. Klicken Sie auf die Schaltfläche **OK** .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[CLR Projects (CLR-Projekte)](../build/reference/files-created-for-clr-projects.md)
+[CLR-Projekte](../build/reference/files-created-for-clr-projects.md)

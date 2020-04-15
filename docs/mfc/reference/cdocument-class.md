@@ -120,12 +120,12 @@ helpviewer_keywords:
 - CDocument [MFC], m_clrRichPreviewTextColor
 - CDocument [MFC], m_lfRichPreviewFont
 ms.assetid: e5a2891d-e1e1-4599-8c7e-afa9b4945446
-ms.openlocfilehash: 2d87ff67000fb5b70c0a5c965638875e6f50b22c
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 2f8ba8d0b35bd72efa8f8d63dbefd689e645d768
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424458"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374052"
 ---
 # <a name="cdocument-class"></a>CDocument-Klasse
 
@@ -141,124 +141,124 @@ class CDocument : public CCmdTarget
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDocument:: CDocument](#cdocument)|Erstellt ein `CDocument`-Objekt.|
+|[CDocument::CDocument](#cdocument)|Erstellt ein `CDocument`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDocument:: AddView](#addview)|Fügt eine Ansicht an das Dokument an.|
-|[CDocument:: BeginRead Blöcke](#beginreadchunks)|Initialisiert das Lesen von Blöcken.|
-|[CDocument:: cancloseframe](#cancloseframe)|Erweiterte über schreibbar; wird aufgerufen, bevor ein Rahmen Fenster geschlossen wird, das dieses Dokument anzeigen.|
-|[CDocument:: clearchunklist](#clearchunklist)|Löscht die Blockliste.|
-|[CDocument:: clearpathname](#clearpathname)|Löscht den Pfad des Dokument Objekts.|
-|[CDocument::D eletecontent](#deletecontents)|Wird aufgerufen, um die Bereinigung des Dokuments auszuführen.|
-|[CDocument:: findchunk](#findchunk)|Sucht nach einem Block mit der angegebenen GUID.|
-|[CDocument:: GetAdapter](#getadapter)|Gibt einen Zeiger auf ein Objekt zurück, das `IDocument` Schnittstelle implementiert.|
-|[CDocument:: GetDocTemplate](#getdoctemplate)|Gibt einen Zeiger auf die Dokument Vorlage zurück, die den Typ des Dokuments beschreibt.|
-|[CDocument:: GetFile](#getfile)|Gibt einen Zeiger auf das gewünschte `CFile` Objekt zurück.|
-|[CDocument:: GetFirstViewPosition](#getfirstviewposition)|Gibt die Position der ersten in der Liste der Ansichten zurück. wird verwendet, um die Iterationen zu starten.|
-|[CDocument:: GetNextView](#getnextview)|Durchläuft die Liste der Sichten, die dem Dokument zugeordnet sind.|
-|[CDocument:: getPathname](#getpathname)|Gibt den Pfad der Datendatei des Dokuments zurück.|
-|[CDocument:: getminiatur](#getthumbnail)|Wird aufgerufen, um eine Bitmap zu erstellen, die vom Miniatur Ansichts Anbieter verwendet wird, um Miniaturansichten anzuzeigen|
-|[CDocument:: getTitle](#gettitle)|Gibt den Titel des Dokuments zurück.|
-|[CDocument:: initializesearchcontent](#initializesearchcontent)|Wird aufgerufen, um den Such Inhalt für den Suchhandler zu initialisieren.|
-|[CDocument:: IsModified](#ismodified)|Gibt an, ob das Dokument seit der letzten Speicherung geändert wurde.|
-|[CDocument:: issearchandorganizehandler](#issearchandorganizehandler)|Gibt an, ob diese Instanz von `CDocument`-Objekt für Search & Organisations Handler erstellt wurde.|
-|[CDocument:: loaddocumentfromstream](#loaddocumentfromstream)|Wird aufgerufen, um Dokument Daten aus dem Stream zu laden.|
-|[CDocument:: onbeforerichpreviewfontchanged](#onbeforerichpreviewfontchanged)|Wird aufgerufen, bevor die Schriftart der großen Vorschau geändert wird.|
-|[CDocument:: onchangedviewlist](#onchangedviewlist)|Wird aufgerufen, nachdem dem Dokument eine Ansicht hinzugefügt oder daraus entfernt wurde.|
-|[CDocument:: onclosedocument](#onclosedocument)|Wird aufgerufen, um das Dokument zu schließen.|
-|[CDocument:: onkreatepreviewframe](#oncreatepreviewframe)|Wird von Framework aufgerufen, wenn es einen Vorschau Rahmen für eine umfangreiche Vorschauversion erstellen muss.|
-|[CDocument:: ondocumentevent](#ondocumentevent)|Wird von Framework als Reaktion auf ein Dokument Ereignis aufgerufen.|
-|[CDocument:: ondrawminiatur](#ondrawthumbnail)|Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um Inhalte der Miniaturansicht zu zeichnen.|
-|[CDocument:: onloaddocumentfromstream](#onloaddocumentfromstream)|Wird von Framework aufgerufen, wenn die Dokument Daten aus dem Stream geladen werden müssen.|
-|[CDocument:: OnNewDocument](#onnewdocument)|Wird aufgerufen, um ein neues Dokument zu erstellen.|
-|[CDocument:: OnOpenDocument](#onopendocument)|Wird aufgerufen, um ein vorhandenes Dokument zu öffnen.|
-|[CDocument:: onpreviewhandlerqueryfocus](#onpreviewhandlerqueryfocus)|Weist den Vorschau Handler an, das HWND vom Aufruf der GetFocus-Funktion zurückzugeben.|
-|[CDocument:: onpreviewhandlertranslateaccelerator](#onpreviewhandlertranslateaccelerator)|Weist den Vorschau Handler an, eine Tastatureingabe zu verarbeiten, die von der Meldungs Pumpe des Prozesses, in dem der Vorschau Handler ausgeführt wird, übergeben wird.|
-|[CDocument:: onrichpreviewbackcolorchanged](#onrichpreviewbackcolorchanged)|Wird aufgerufen, wenn die Rich Preview-Hintergrundfarbe geändert wurde.|
-|[CDocument:: onrichpreviewfontchanged](#onrichpreviewfontchanged)|Wird aufgerufen, wenn die umfangreiche Vorschau Schriftart geändert wurde.|
-|[CDocument:: onrichpreviewsitechanged](#onrichpreviewsitechanged)|Wird aufgerufen, wenn eine umfangreiche Vorschau Site geändert wurde.|
-|[CDocument:: onrichpreviewtextcolorchanged](#onrichpreviewtextcolorchanged)|Wird aufgerufen, wenn sich die Textfarbe für Rich Preview geändert hat.|
-|[CDocument:: OnSaveDocument](#onsavedocument)|Wird aufgerufen, um das Dokument auf Datenträger zu speichern.|
-|[CDocument:: onunloadhandler](#onunloadhandler)|Wird von Framework aufgerufen, wenn der Vorschau Handler entladen wird.|
-|[CDocument::P recloseframe](#precloseframe)|Wird aufgerufen, bevor das Rahmen Fenster geschlossen wird.|
-|[CDocument:: infonextchunkvalue](#readnextchunkvalue)|Liest den nächsten Block Wert.|
-|[CDocument:: Releasefile](#releasefile)|Gibt eine Datei frei, um Sie für die Verwendung durch andere Anwendungen verfügbar zu machen.|
-|[CDocument:: removechunk](#removechunk)|Entfernt einen Block mit der angegebenen GUID.|
-|[CDocument:: removeview](#removeview)|Trennt eine Ansicht aus dem Dokument.|
-|[CDocument:: reportsaveloadexception](#reportsaveloadexception)|Erweiterte über schreibbar; wird aufgerufen, wenn ein Öffnungs-oder Speichervorgang aufgrund einer Ausnahme nicht abgeschlossen werden kann.|
-|[CDocument:: SaveModified](#savemodified)|Erweiterte über schreibbar; wird aufgerufen, um den Benutzer zu Fragen, ob das Dokument gespeichert werden soll.|
-|[CDocument:: setchunkvalue](#setchunkvalue)|Legt einen Segment Wert fest.|
-|[CDocument:: SetModifiedFlag](#setmodifiedflag)|Legt ein Flag fest, das angibt, dass Sie das Dokument seit der letzten Speicherung geändert haben.|
-|[CDocument:: setpathname](#setpathname)|Legt den Pfad der Datendatei fest, die vom Dokument verwendet wird.|
-|[CDocument:: SetTitle](#settitle)|Legt den Titel des Dokuments fest.|
-|[CDocument:: UpdateAllViews](#updateallviews)|Benachrichtigt alle Sichten, dass das Dokument geändert wurde.|
+|[CDocument::AddView](#addview)|Fügt dem Dokument eine Ansicht an.|
+|[CDocument::BeginReadChunks](#beginreadchunks)|Initialisiert das Stücklesen.|
+|[CDocument::CanCloseFrame](#cancloseframe)|Fortgeschrittene überschreibbare; vor dem Schließen eines Rahmenfensters aufgerufen werden, in dem dieses Dokument angezeigt wird.|
+|[CDocument::ClearChunkList](#clearchunklist)|Löscht die Chunk-Liste.|
+|[CDocument::ClearPathName](#clearpathname)|Löscht den Pfad des Dokumentobjekts.|
+|[CDocument::DeleteContents](#deletecontents)|Wird aufgerufen, um die Bereinigung des Dokuments durchzuführen.|
+|[CDocument::FindChunk](#findchunk)|Sucht nach einem Chunk mit der angegebenen GUID.|
+|[CDocument::GetAdapter](#getadapter)|Gibt einen Zeiger auf `IDocument` die Objektimplementierungsschnittstelle zurück.|
+|[CDocument::GetDocTemplate](#getdoctemplate)|Gibt einen Zeiger auf die Dokumentvorlage zurück, die den Typ des Dokuments beschreibt.|
+|[CDocument::GetFile](#getfile)|Gibt einen Zeiger auf `CFile` das gewünschte Objekt zurück.|
+|[CDocument::GetFirstViewPosition](#getfirstviewposition)|Gibt die Position der ersten in der Liste der Ansichten zurück. verwendet, um die Iteration zu beginnen.|
+|[CDocument::GetNextView](#getnextview)|Durchgeht die Liste der Ansichten, die dem Dokument zugeordnet sind.|
+|[CDocument::GetPathName](#getpathname)|Gibt den Pfad der Datendatei des Dokuments zurück.|
+|[CDocument::GetThumbnail](#getthumbnail)|Wird aufgerufen, um eine Bitmap zu erstellen, die vom Miniaturansichtsanbieter zum Anzeigen der Miniaturansicht verwendet werden soll.|
+|[CDocument::GetTitle](#gettitle)|Gibt den Titel des Dokuments zurück.|
+|[CDocument::InitializeSearchContent](#initializesearchcontent)|Wird aufgerufen, um Suchinhalte für Search Handler zu initialisieren.|
+|[CDocument::IsModified](#ismodified)|Gibt an, ob das Dokument seit dem letzten Speichern geändert wurde.|
+|[CDocument::IsSearchAndOrganizeHandler](#issearchandorganizehandler)|Gibt an, `CDocument` ob diese Instanz des Objekts für Search & Organize-Handler erstellt wurde.|
+|[CDocument::LoadDocumentFromStream](#loaddocumentfromstream)|Wird aufgerufen, um Dokumentdaten aus dem Stream zu laden.|
+|[CDocument::OnBeforeRichPreviewfontChanged](#onbeforerichpreviewfontchanged)|Wird aufgerufen, bevor die Rich Preview-Schriftart geändert wird.|
+|[CDocument::OnChangedViewList](#onchangedviewlist)|Wird aufgerufen, nachdem eine Ansicht dem Dokument hinzugefügt oder daraus entfernt wurde.|
+|[CDocument::OnCloseDocument](#onclosedocument)|Wird aufgerufen, um das Dokument zu schließen.|
+|[CDocument::OnCreatePreviewFrame](#oncreatepreviewframe)|Wird vom Framework aufgerufen, wenn es einen Vorschaurahmen für Rich Preview erstellen muss.|
+|[CDocument::OnDocumentEvent](#ondocumentevent)|Wird vom Framework als Reaktion auf ein Dokumentereignis aufgerufen.|
+|[CDocument::OnDrawThumbnail](#ondrawthumbnail)|Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um Deninhalt der Miniaturansicht zu zeichnen.|
+|[CDocument::OnLoadDocumentFromStream](#onloaddocumentfromstream)|Wird vom Framework aufgerufen, wenn es die Dokumentdaten aus dem Stream laden muss.|
+|[CDocument::OnNewDocument](#onnewdocument)|Wird aufgerufen, um ein neues Dokument zu erstellen.|
+|[CDocument::OnOpenDocument](#onopendocument)|Wird aufgerufen, um ein vorhandenes Dokument zu öffnen.|
+|[CDocument::OnPreviewHandlerQueryFocus](#onpreviewhandlerqueryfocus)|Weist den Vorschauhandler an, die HWND vom Aufrufen der GetFocus-Funktion zurückzugeben.|
+|[CDocument::OnPreviewHandlerTranslateAccelerator](#onpreviewhandlertranslateaccelerator)|Weist den Vorschauhandler an, einen Tastenanschlag zu verarbeiten, der von der Nachrichtenpumpe des Prozesses übergeben wird, in dem der Vorschauhandler ausgeführt wird.|
+|[CDocument::OnRichPreviewBackColorChanged](#onrichpreviewbackcolorchanged)|Wird aufgerufen, wenn sich die Hintergrundfarbe der Rich Preview geändert hat.|
+|[CDocument::OnRichPreviewFontChanged](#onrichpreviewfontchanged)|Wird aufgerufen, wenn die Rich Preview-Schriftart geändert wurde.|
+|[CDocument::OnRichPreviewSiteChanged](#onrichpreviewsitechanged)|Wird aufgerufen, wenn die Rich Preview-Website geändert wurde.|
+|[CDocument::OnRichPreviewTextColorChanged](#onrichpreviewtextcolorchanged)|Wird aufgerufen, wenn sich die Textfarbe der Rich Preview geändert hat.|
+|[CDocument::OnSaveDocument](#onsavedocument)|Wird aufgerufen, um das Dokument auf dem Datenträger zu speichern.|
+|[CDocument::OnUnloadHandler](#onunloadhandler)|Wird vom Framework aufgerufen, wenn der Vorschauhandler entladen wird.|
+|[CDocument::PreCloseFrame](#precloseframe)|Wird aufgerufen, bevor das Rahmenfenster geschlossen wird.|
+|[CDocument::ReadNextChunkValue](#readnextchunkvalue)|Liest den nächsten Chunk-Wert.|
+|[CDocument::ReleaseFile](#releasefile)|Gibt eine Datei frei, um sie für andere Anwendungen verfügbar zu machen.|
+|[CDocument::RemoveChunk](#removechunk)|Entfernt einen Chunk mit der angegebenen GUID.|
+|[CDocument::RemoveView](#removeview)|Trennt eine Ansicht aus dem Dokument.|
+|[CDocument::ReportSaveLoadException](#reportsaveloadexception)|Fortgeschrittene überschreibbare; wird aufgerufen, wenn ein Öffnungs- oder Speichervorgang aufgrund einer Ausnahme nicht abgeschlossen werden kann.|
+|[CDocument::SaveModified](#savemodified)|Fortgeschrittene überschreibbare; , um den Benutzer zu fragen, ob das Dokument gespeichert werden soll.|
+|[CDocument::SetChunkValue](#setchunkvalue)|Legt einen Chunk-Wert fest.|
+|[CDocument::SetModifiedFlag](#setmodifiedflag)|Legt ein Flag fest, das angibt, dass Sie das Dokument seit dem letzten Speichern geändert haben.|
+|[CDocument::SetPathName](#setpathname)|Legt den Pfad der vom Dokument verwendeten Datendatei fest.|
+|[CDocument::SetTitle](#settitle)|Legt den Titel des Dokuments fest.|
+|[CDocument::UpdateAllViews](#updateallviews)|Benachrichtigt alle Ansichten, dass das Dokument geändert wurde.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDocument:: OnFileSendMail](#onfilesendmail)|Sendet eine e-Mail-Nachricht mit angefügtem Dokument.|
-|[CDocument:: OnUpdateFileSendMail](#onupdatefilesendmail)|Aktiviert den Befehl Mail senden, wenn die Unterstützung von e-Mails vorhanden ist.|
+|[CDocument::OnFileSendMail](#onfilesendmail)|Sendet eine E-Mail-Nachricht mit dem angehängten Dokument.|
+|[CDocument::OnUpdateFileSendMail](#onupdatefilesendmail)|Aktiviert den Befehl E-Mail senden, wenn E-Mail-Support vorhanden ist.|
 
-### <a name="public-data-members"></a>Öffentliche Datenelemente
+### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDocument:: m_bGetThumbnailMode](#m_bgetthumbnailmode)|Gibt an, dass `CDocument` Objekt von dllhost für Miniaturansichten erstellt wurde. Muss in `CView::OnDraw`eingeglichen werden.|
-|[CDocument:: m_bPreviewHandlerMode](#m_bpreviewhandlermode)|Gibt an, dass `CDocument` Objekt von prevhost für `Rich Preview`erstellt wurde. Muss in `CView::OnDraw`eingeglichen werden.|
-|[CDocument:: m_bSearchMode](#m_bsearchmode)|Gibt an, dass `CDocument` Objekt von Indexer oder einer anderen Suchanwendung erstellt wurde.|
-|[CDocument:: m_clrRichPreviewBackColor](#m_clrrichpreviewbackcolor)|Gibt die Hintergrundfarbe für das umfangreiche Vorschau Fenster an. Diese Farbe wird vom Host festgelegt.|
-|[CDocument:: m_clrRichPreviewTextColor](#m_clrrichpreviewtextcolor)|Gibt die Vordergrundfarbe des Rich-Vorschau Fensters an. Diese Farbe wird vom Host festgelegt.|
-|[CDocument:: m_lfRichPreviewFont](#m_lfrichpreviewfont)|Gibt die Text Schriftart für das umfangreiche Vorschau Fenster an. Diese Schriftart Informationen werden vom Host festgelegt.|
+|[CDocument::m_bGetThumbnailMode](#m_bgetthumbnailmode)|Gibt an, dass das `CDocument` Objekt von dllhost für Miniaturansichten erstellt wurde. Sollte eingecheckt `CView::OnDraw`werden.|
+|[CDocument::m_bPreviewHandlerMode](#m_bpreviewhandlermode)|Gibt an, dass das `CDocument` Objekt `Rich Preview`von prevhost für erstellt wurde. Sollte eingecheckt `CView::OnDraw`werden.|
+|[CDocument::m_bSearchMode](#m_bsearchmode)|Gibt an, dass das `CDocument` Objekt von einem Indexer oder einer anderen Suchanwendung erstellt wurde.|
+|[CDocument::m_clrRichPreviewBackColor](#m_clrrichpreviewbackcolor)|Gibt die Hintergrundfarbe des Rich Preview-Fensters an. Diese Farbe wird vom Host festgelegt.|
+|[CDocument::m_clrRichPreviewTextColor](#m_clrrichpreviewtextcolor)|Gibt die Vordergrundfarbe des Rich-Vorschaufensters an. Diese Farbe wird vom Host festgelegt.|
+|[CDocument::m_lfRichPreviewFont](#m_lfrichpreviewfont)|Gibt die Textschriftart für das Rich-Vorschaufenster an. Diese Schriftartinformationen werden vom Host festgelegt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Dokument stellt die Dateneinheit dar, die der Benutzer in der Regel mit dem Befehl zum Öffnen von Dateien öffnet und mit dem Befehl zum Speichern von Dateien speichert.
+Ein Dokument stellt die Dateneinheit dar, die der Benutzer normalerweise mit dem Befehl Dateiöffnen öffnet und mit dem Befehl Dateispeichern speichert.
 
-`CDocument` unterstützt Standard Vorgänge, z. b. das Erstellen eines Dokuments, das Laden und Speichern des Dokuments. Das Framework bearbeitet Dokumente mithilfe der-Schnittstelle, die durch `CDocument`definiert wird.
+`CDocument`unterstützt Standardvorgänge wie das Erstellen, Laden und Speichern eines Dokuments. Das Framework bearbeitet Dokumente mithilfe `CDocument`der von definierten Schnittstelle.
 
-Eine Anwendung kann mehr als einen Dokumenttyp unterstützen. Beispielsweise kann eine Anwendung sowohl Tabellen-als auch Textdokumente unterstützen. Jedem Dokumenttyp ist eine Dokument Vorlage zugeordnet. die Dokument Vorlage gibt an, welche Ressourcen (z. b. Menü, Symbol oder Zugriffstasten Tabelle) für diesen Dokumenttyp verwendet werden. Jedes Dokument enthält einen Zeiger auf das zugeordnete `CDocTemplate` Objekt.
+Eine Anwendung kann mehr als einen Dokumenttyp unterstützen. Eine Anwendung kann z. B. sowohl Tabellenkalkulationen als auch Textdokumente unterstützen. Jedem Dokumenttyp ist eine Dokumentvorlage zugeordnet. Die Dokumentvorlage gibt an, welche Ressourcen (z. B. Menü, Symbol oder Beschleunigertabelle) für diesen Dokumenttyp verwendet werden. Jedes Dokument enthält einen Zeiger `CDocTemplate` auf das zugeordnete Objekt.
 
-Benutzer interagieren mit einem Dokument über die zugeordneten [CView](../../mfc/reference/cview-class.md) -Objekte. Eine Ansicht rendert ein Bild des Dokuments in einem Rahmen Fenster und interpretiert Benutzereingaben als Vorgänge für das Dokument. Einem Dokument können mehrere Ansichten zugeordnet sein. Wenn der Benutzer ein Fenster in einem Dokument öffnet, erstellt das Framework eine Ansicht und fügt Sie an das Dokument an. Die Dokument Vorlage gibt an, welche Art von Ansicht und Rahmen Fenster zum Anzeigen der einzelnen Dokumenttypen verwendet werden.
+Benutzer interagieren mit einem Dokument über die ihm zugeordneten [CView-Objekte.](../../mfc/reference/cview-class.md) Eine Ansicht rendert ein Bild des Dokuments in einem Rahmenfenster und interpretiert Benutzereingaben als Vorgänge für das Dokument. Einem Dokument können mehrere Ansichten zugeordnet sein. Wenn der Benutzer ein Fenster in einem Dokument öffnet, erstellt das Framework eine Ansicht und fügt sie an das Dokument an. Die Dokumentvorlage gibt an, welche Art von Ansicht und Rahmenfenster zum Anzeigen der einzelnen Dokumenttypen verwendet werden.
 
-Dokumente sind Teil des Standard Befehls Routings des Frameworks und erhalten folglich Befehle von standardmäßigen Benutzeroberflächen Komponenten (z. b. dem Menü Element Datei speichern). Ein Dokument empfängt Befehle, die von der aktiven Ansicht weitergeleitet werden. Wenn das Dokument einen angegebenen Befehl nicht behandelt, leitet es den Befehl an die Dokument Vorlage weiter, die ihn verwaltet.
+Dokumente sind Teil des Standardbefehlsroutings des Frameworks und erhalten daher Befehle von Standardkomponenten der Benutzeroberfläche (z. B. dem Menüpunkt Dateispeichern). Ein Dokument empfängt Befehle, die von der aktiven Ansicht weitergeleitet werden. Wenn das Dokument einen bestimmten Befehl nicht verarbeitet, leitet es den Befehl an die Dokumentvorlage weiter, die es verwaltet.
 
-Wenn die Daten eines Dokuments geändert werden, muss jeder seiner Sichten diese Änderungen widerspiegeln. `CDocument` stellt die [UpdateAllViews](#updateallviews) -Member-Funktion bereit, damit Sie die Sichten über solche Änderungen benachrichtigen können, sodass sich die Ansichten bei Bedarf selbst neu zeichnen können. Das Framework fordert den Benutzer außerdem auf, eine geänderte Datei vor dem Schließen zu speichern.
+Wenn die Daten eines Dokuments geändert werden, muss jede seiner Ansichten diese Änderungen widerspiegeln. `CDocument`stellt die [UpdateAllViews-Memberfunktion](#updateallviews) bereit, mit der Sie die Ansichten über solche Änderungen benachrichtigen können, damit sich die Ansichten bei Bedarf neu zeichnen können. Das Framework fordert den Benutzer außerdem auf, eine geänderte Datei vor dem Schließen zu speichern.
 
-Zum Implementieren von Dokumenten in einer typischen Anwendung müssen Sie folgende Schritte ausführen:
+Um Dokumente in einer typischen Anwendung zu implementieren, müssen Sie die folgenden Schritte ausführen:
 
-- Leiten Sie eine Klasse von `CDocument` für jeden Dokumenttyp ab.
+- Leiten Sie eine `CDocument` Klasse für jeden Dokumenttyp ab.
 
-- Fügen Sie Element Variablen zum Speichern der einzelnen Dokument Daten hinzu.
+- Fügen Sie Membervariablen hinzu, um die Daten jedes Dokuments zu speichern.
 
-- Implementieren Sie Member-Funktionen zum Lesen und Ändern der Dokument Daten. Die Dokument Sichten sind die wichtigsten Benutzer dieser Member-Funktionen.
+- Implementieren Sie Memberfunktionen zum Lesen und Ändern der Dokumentdaten. Die Ansichten des Dokuments sind die wichtigsten Benutzer dieser Memberfunktionen.
 
-- Überschreiben Sie die [CObject:: Serialize](../../mfc/reference/cobject-class.md#serialize) -Member-Funktion in der Document-Klasse, um die Daten des Dokuments zu schreiben und auf den Datenträger zu lesen.
+- Überschreiben Sie die [CObject::Serialize-Memberfunktion](../../mfc/reference/cobject-class.md#serialize) in Ihrer Dokumentklasse, um die Daten des Dokuments auf und von der Festplatte zu schreiben und zu lesen.
 
-`CDocument` unterstützt das Senden Ihres Dokuments per e-Mail, wenn der e-Mail-Support (MAPI) vorhanden ist. Weitere Informationen finden Sie in den Artikeln [MAPI](../../mfc/mapi.md) und [MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md).
+`CDocument`unterstützt das Versenden Ihres Dokuments per E-Mail, wenn E-Mail-Support (MAPI) vorhanden ist. Siehe die Artikel [MAPI](../../mfc/mapi.md) und [MAPI Support in MFC](../../mfc/mapi-support-in-mfc.md).
 
-Weitere Informationen zu `CDocument`finden Sie in den Themen [Serialisierung](../../mfc/serialization-in-mfc.md), [Dokument-/Ansichtarchitektur](../../mfc/document-view-architecture.md)und [Dokument-/Ansicht-Erstellung](../../mfc/document-view-creation.md).
+Weitere Informationen `CDocument`zu finden Sie unter [Serialisierung](../../mfc/serialization-in-mfc.md), [Dokument-/Ansichtsarchitekturthemen](../../mfc/document-view-architecture.md)und [Dokument-/Ansichtserstellung](../../mfc/document-view-creation.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
 `CDocument`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-##  <a name="addview"></a>CDocument:: AddView
+## <a name="cdocumentaddview"></a><a name="addview"></a>CDocument::AddView
 
-Mit dieser Funktion können Sie eine Ansicht an das Dokument anfügen.
+Rufen Sie diese Funktion auf, um dem Dokument eine Ansicht anzufügen.
 
 ```
 void AddView(CView* pView);
@@ -266,32 +266,32 @@ void AddView(CView* pView);
 
 ### <a name="parameters"></a>Parameter
 
-*pView*<br/>
-Verweist auf die Ansicht, die hinzugefügt wird.
+*Pview*<br/>
+Zeigt auf die hinzugefügte Ansicht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion fügt die angegebene Ansicht der Liste der Ansichten hinzu, die dem Dokument zugeordnet sind. die-Funktion legt auch den Dokument Zeiger der Ansicht auf dieses Dokument fest. Das Framework ruft diese Funktion auf, wenn ein neu erstelltes Ansichts Objekt an ein Dokument angefügt wird. Dies tritt in Reaktion auf den Befehl Datei neu, Datei öffnen oder neuer Fenster oder, wenn ein Splitter Fenster geteilt wird, auf.
+Diese Funktion fügt die angegebene Ansicht der Liste der Ansichten hinzu, die dem Dokument zugeordnet sind. Die Funktion legt auch den Dokumentzeiger der Ansicht auf dieses Dokument fest. Das Framework ruft diese Funktion auf, wenn ein neu erstelltes Ansichtsobjekt an ein Dokument angefügt wird. Dies geschieht als Reaktion auf einen Befehl "Datei neu", "Datei geöffnet" oder "Neues Fenster" oder wenn ein Splitterfenster geteilt wird.
 
-Diese Funktion wird nur aufgerufen, wenn Sie eine Ansicht manuell erstellen und anfügen. In der Regel lassen Sie das Framework Dokumente und Ansichten verbinden, indem Sie ein [CDocTemplate](../../mfc/reference/cdoctemplate-class.md) -Objekt definieren, um eine Dokument Klasse, eine Ansichts Klasse und eine Frame Fenster Klasse zuzuordnen.
+Rufen Sie diese Funktion nur auf, wenn Sie eine Ansicht manuell erstellen und anfügen. In der Regel lassen Sie das Framework Dokumente und Ansichten verbinden, indem Sie ein [CDocTemplate-Objekt](../../mfc/reference/cdoctemplate-class.md) definieren, um eine Dokumentklasse, Eine Ansichtsklasse und eine Rahmenfensterklasse zuzuordnen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocViewSDI#12](../../mfc/codesnippet/cpp/cdocument-class_1.cpp)]
 
-##  <a name="beginreadchunks"></a>CDocument:: BeginRead Blöcke
+## <a name="cdocumentbeginreadchunks"></a><a name="beginreadchunks"></a>CDocument::BeginReadChunks
 
-Initialisiert das Lesen von Blöcken.
+Initialisiert das Stücklesen.
 
 ```
 virtual void BeginReadChunks ();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="cancloseframe"></a>CDocument:: cancloseframe
+## <a name="cdocumentcancloseframe"></a><a name="cancloseframe"></a>CDocument::CanCloseFrame
 
-Wird von Framework aufgerufen, bevor ein Rahmen Fenster, in dem das Dokument angezeigt wird, geschlossen wird.
+Wird vom Framework aufgerufen, bevor ein Rahmenfenster, in dem das Dokument angezeigt wird, geschlossen wird.
 
 ```
 virtual BOOL CanCloseFrame(CFrameWnd* pFrame);
@@ -300,17 +300,17 @@ virtual BOOL CanCloseFrame(CFrameWnd* pFrame);
 ### <a name="parameters"></a>Parameter
 
 *pFrame*<br/>
-Verweist auf das Rahmen Fenster einer Ansicht, die an das Dokument angefügt ist.
+Zeigt auf das Rahmenfenster einer Ansicht, die dem Dokument zugeordnet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Rahmen Fenster sicher geschlossen werden kann. andernfalls 0.
+Ein Wert ungleich Null, wenn das Rahmenfenster sicher geschlossen werden kann. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung überprüft, ob andere Rahmen Fenster das Dokument anzeigen. Wenn das angegebene Rahmen Fenster das letzte ist, das das Dokument anzeigt, wird der Benutzer von der-Funktion aufgefordert, das Dokument zu speichern, wenn es geändert wurde. Überschreiben Sie diese Funktion, wenn Sie eine besondere Verarbeitung durchführen möchten, wenn ein Rahmen Fenster geschlossen wird. Hierbei handelt es sich um eine erweiterte über schreibbare.
+Die Standardimplementierung überprüft, ob andere Rahmenfenster das Dokument anzeigen. Wenn das angegebene Rahmenfenster das letzte ist, in dem das Dokument angezeigt wird, fordert die Funktion den Benutzer auf, das Dokument zu speichern, wenn es geändert wurde. Überschreiben Sie diese Funktion, wenn Sie eine spezielle Verarbeitung durchführen möchten, wenn ein Rahmenfenster geschlossen wird. Dies ist ein fortgeschrittenes Überridable.
 
-##  <a name="cdocument"></a>CDocument:: CDocument
+## <a name="cdocumentcdocument"></a><a name="cdocument"></a>CDocument::CDocument
 
 Erstellt ein `CDocument`-Objekt.
 
@@ -318,51 +318,51 @@ Erstellt ein `CDocument`-Objekt.
 CDocument();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Framework behandelt die Dokument Erstellung für Sie. Überschreiben Sie die [OnNewDocument](#onnewdocument) -Member-Funktion, um die Initialisierung pro Dokument auszuführen. Dies ist insbesondere in SDI-Anwendungen (Single Document Interface) wichtig.
+Das Framework verarbeitet die Dokumenterstellung für Sie. Überschreiben Sie die [OnNewDocument-Memberfunktion,](#onnewdocument) um die Initialisierung pro Dokument durchzuführen. Dies ist besonders wichtig bei SDI-Anwendungen (Single Document Interface).
 
-##  <a name="clearchunklist"></a>CDocument:: clearchunklist
+## <a name="cdocumentclearchunklist"></a><a name="clearchunklist"></a>CDocument::ClearChunkList
 
-Löscht die Blockliste.
+Löscht die Chunk-Liste.
 
 ```
 virtual void ClearChunkList ();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="clearpathname"></a>CDocument:: clearpathname
+## <a name="cdocumentclearpathname"></a><a name="clearpathname"></a>CDocument::ClearPathName
 
-Löscht den Pfad des Dokument Objekts.
+Löscht den Pfad des Dokumentobjekts.
 
 ```
 virtual void ClearPathName();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Löschen des Pfads aus einem `CDocument` Objekt bewirkt, dass die Anwendung den Benutzer auffordert, wenn das Dokument das nächste Mal gespeichert wird. Dadurch verhält sich ein **Save** -Befehl wie ein " **Speichern** unter"-Befehl.
+Wenn Sie den `CDocument` Pfad von einem Objekt löschen, fordert die Anwendung den Benutzer auf, wenn das Dokument das nächste Jahr gespeichert wird. Dadurch verhält sich ein **Save-Befehl** wie ein **Save-As-Befehl.**
 
-##  <a name="deletecontents"></a>CDocument::D eletecontent
+## <a name="cdocumentdeletecontents"></a><a name="deletecontents"></a>CDocument::DeleteContents
 
-Wird von Framework aufgerufen, um die Daten des Dokuments zu löschen, ohne das `CDocument` Objekt selbst zu zerstören.
+Wird vom Framework aufgerufen, um die Daten `CDocument` des Dokuments zu löschen, ohne das Objekt selbst zu zerstören.
 
 ```
 virtual void DeleteContents();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie wird aufgerufen, kurz bevor das Dokument zerstört werden soll. Außerdem wird Sie aufgerufen, um sicherzustellen, dass ein Dokument leer ist, bevor es wieder verwendet wird. Dies ist besonders wichtig für eine SDI-Anwendung, bei der nur ein Dokument verwendet wird. das Dokument wird immer wieder verwendet, wenn der Benutzer ein anderes Dokument erstellt oder öffnet. Mit dieser Funktion können Sie den Befehl "Alle löschen" oder einen ähnlichen Befehl implementieren, mit dem alle Dokument Daten gelöscht werden. Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um die Daten in Ihrem Dokument zu löschen.
+Es wird kurz vor der Vernichtung des Dokuments aufgerufen. Es wird auch aufgerufen, um sicherzustellen, dass ein Dokument leer ist, bevor es wiederverwendet wird. Dies ist besonders wichtig für eine SDI-Anwendung, die nur ein Dokument verwendet. Das Dokument wird wiederverwendet, wenn der Benutzer ein anderes Dokument erstellt oder öffnet. Rufen Sie diese Funktion auf, um einen Befehl "Alle löschen" oder einen ähnlichen Befehl zu implementieren, der alle Dokumentdaten löscht. Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um die Daten in Ihrem Dokument zu löschen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#57](../../mfc/codesnippet/cpp/cdocument-class_2.cpp)]
 
-##  <a name="findchunk"></a>CDocument:: findchunk
+## <a name="cdocumentfindchunk"></a><a name="findchunk"></a>CDocument::FindChunk
 
-Sucht einen Block mit einer angegebenen GUID.
+Sucht nach einem Chunk mit einer angegebenen GUID.
 
 ```
 virtual POSITION FindChunk(
@@ -373,20 +373,20 @@ virtual POSITION FindChunk(
 ### <a name="parameters"></a>Parameter
 
 *guid*<br/>
-Gibt die GUID eines zu suchenden Blocks an.
+Gibt die GUID eines zu suchenden Abschnitts an.
 
 *pid*<br/>
 Gibt eine PID eines zu suchenden Blocks an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Position in der internen Blockliste, wenn erfolgreich. Andernfalls NULL.
+Positionieren Sie die interne Chunk-Liste, falls dies erfolgreich ist. Andernfalls NULL.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getadapter"></a>CDocument:: GetAdapter
+## <a name="cdocumentgetadapter"></a><a name="getadapter"></a>CDocument::GetAdapter
 
-Gibt einen Zeiger auf ein Objekt zurück, das die `IDocument`-Schnittstelle implementiert.
+Gibt einen Zeiger auf ein `IDocument` Objekt zurück, das die Schnittstelle implementiert.
 
 ```
 virtual ATL::IDocument* GetAdapter();
@@ -394,13 +394,13 @@ virtual ATL::IDocument* GetAdapter();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein Objekt, das die `IDocument`-Schnittstelle implementiert.
+Ein Zeiger auf ein `IDocument` Objekt, das die Schnittstelle implementiert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getdoctemplate"></a>CDocument:: GetDocTemplate
+## <a name="cdocumentgetdoctemplate"></a><a name="getdoctemplate"></a>CDocument::GetDocTemplate
 
-Mit dieser Funktion können Sie einen Zeiger auf die Dokument Vorlage für diesen Dokumenttyp abrufen.
+Rufen Sie diese Funktion auf, um einen Zeiger auf die Dokumentvorlage für diesen Dokumenttyp abzurufen.
 
 ```
 CDocTemplate* GetDocTemplate() const;
@@ -408,15 +408,15 @@ CDocTemplate* GetDocTemplate() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die Dokument Vorlage für diesen Dokumenttyp oder NULL, wenn das Dokument nicht durch eine Dokument Vorlage verwaltet wird.
+Ein Zeiger auf die Dokumentvorlage für diesen Dokumenttyp oder NULL, wenn das Dokument nicht von einer Dokumentvorlage verwaltet wird.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#58](../../mfc/codesnippet/cpp/cdocument-class_3.cpp)]
 
-##  <a name="getfile"></a>CDocument:: GetFile
+## <a name="cdocumentgetfile"></a><a name="getfile"></a>CDocument::GetFile
 
-Mit dieser Member-Funktion können Sie einen Zeiger auf ein `CFile`-Objekt abrufen.
+Rufen Sie diese Memberfunktion auf, `CFile` um einen Zeiger auf ein Objekt abzurufen.
 
 ```
 virtual CFile* GetFile(
@@ -427,22 +427,22 @@ virtual CFile* GetFile(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszfilename*<br/>
+*lpszFileName*<br/>
 Eine Zeichenfolge, die den Pfad zur gewünschten Datei ist. Der Pfad kann relativ oder absolut sein.
 
 *pError*<br/>
-Ein Zeiger auf ein vorhandenes Datei Ausnahme Objekt, das den Abschluss Status des Vorgangs angibt.
+Ein Zeiger auf ein vorhandenes Dateiausnahmeobjekt, das den Abschlussstatus des Vorgangs angibt.
 
-*nopenflags*<br/>
-Freigabe-und Zugriffsmodus. Gibt die Aktion an, die beim Öffnen der Datei ausgeführt werden soll. Sie können die im CFile-Konstruktor [CFile:: CFile](../../mfc/reference/cfile-class.md#cfile) aufgeführten Optionen mithilfe des bitweisen or (&#124;)-Operators kombinieren. Eine Zugriffsberechtigung und eine Freigabe Option sind erforderlich. die `modeCreate`-und `modeNoInherit` Modi sind optional.
+*nOpenFlags*<br/>
+Freigabe- und Zugriffsmodus. Gibt die Aktion an, die beim Öffnen der Datei zu ergreifen ist. Sie können die im CFile-Konstruktor [CFile::CFile](../../mfc/reference/cfile-class.md#cfile) aufgeführten Optionen mithilfe des operator bitweiser ODER (&#124;) kombinieren. Eine Zugriffsberechtigung und eine Freigabeoption sind erforderlich. und `modeCreate` `modeNoInherit` Modi sind optional.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein `CFile` -Objekt.
+Ein Zeiger auf ein `CFile`-Objekt.
 
-##  <a name="getfirstviewposition"></a>CDocument:: GetFirstViewPosition
+## <a name="cdocumentgetfirstviewposition"></a><a name="getfirstviewposition"></a>CDocument::GetFirstViewPosition
 
-Mit dieser Funktion können Sie die Position der ersten Ansicht in der Liste der Sichten abrufen, die dem Dokument zugeordnet sind.
+Rufen Sie diese Funktion auf, um die Position der ersten Ansicht in der Liste der Ansichten abzurufen, die dem Dokument zugeordnet sind.
 
 ```
 virtual POSITION GetFirstViewPosition() const;
@@ -450,15 +450,15 @@ virtual POSITION GetFirstViewPosition() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Positionswert, der für die Iterationen mit der [GetNextView](#getnextview) -Member-Funktion verwendet werden kann.
+Ein POSITION-Wert, der für die Iteration mit der [GetNextView-Memberfunktion](#getnextview) verwendet werden kann.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#59](../../mfc/codesnippet/cpp/cdocument-class_4.cpp)]
 
-##  <a name="getnextview"></a>CDocument:: GetNextView
+## <a name="cdocumentgetnextview"></a><a name="getnextview"></a>CDocument::GetNextView
 
-Mit dieser Funktion können Sie alle Dokument Sichten durchlaufen.
+Rufen Sie diese Funktion auf, um alle Ansichten des Dokuments zu durchlaufen.
 
 ```
 virtual CView* GetNextView(POSITION& rPosition) const;
@@ -466,24 +466,24 @@ virtual CView* GetNextView(POSITION& rPosition) const;
 
 ### <a name="parameters"></a>Parameter
 
-*rPosition zurück*<br/>
-Ein Verweis auf einen Positionswert, der von einem vorherigen Aufrufen der Element Funktionen `GetNextView` oder [GetFirstViewPosition](#getfirstviewposition) zurückgegeben wurde. Dieser Wert darf nicht NULL sein.
+*Rposition*<br/>
+Ein Verweis auf einen POSITION-Wert, `GetNextView` der von einem vorherigen Aufruf der oder [GetFirstViewPosition-Memberfunktionen](#getfirstviewposition) zurückgegeben wird. Dieser Wert darf nicht NULL sein.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die durch *rPosition*identifizierte Ansicht.
+Ein Zeiger auf die Ansicht, die durch *rPosition*identifiziert wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die-Funktion gibt die durch *rPosition* identifizierte Ansicht zurück und legt dann *rPosition* auf den Positionswert der nächsten Ansicht in der Liste fest. Wenn die abgerufene Ansicht der letzte in der Liste ist, wird *rPosition* auf NULL festgelegt.
+Die Funktion gibt die durch *rPosition* identifizierte Ansicht zurück und legt dann *rPosition* auf den POSITION-Wert der nächsten Ansicht in der Liste fest. Wenn die abgerufene Ansicht die letzte in der Liste ist, wird *rPosition* auf NULL gesetzt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFCDocView#59](../../mfc/codesnippet/cpp/cdocument-class_4.cpp)]
 
-##  <a name="getpathname"></a>CDocument:: getPathname
+## <a name="cdocumentgetpathname"></a><a name="getpathname"></a>CDocument::GetPathName
 
-Mit dieser Funktion können Sie den voll qualifizierten Pfad der Datenträger Datei des Dokuments abrufen.
+Rufen Sie diese Funktion auf, um den vollqualifizierten Pfad der Datenträgerdatei des Dokuments abzurufen.
 
 ```
 const CString& GetPathName() const;
@@ -491,11 +491,11 @@ const CString& GetPathName() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der voll qualifizierte Pfad des Dokuments. Diese Zeichenfolge ist leer, wenn das Dokument nicht gespeichert wurde oder keine Datenträger Datei zugeordnet ist.
+Der vollqualifizierte Pfad des Dokuments. Diese Zeichenfolge ist leer, wenn dem Dokument nicht oder keine Datenträgerdatei zugeordnet ist.
 
-##  <a name="getthumbnail"></a>CDocument:: getminiatur
+## <a name="cdocumentgetthumbnail"></a><a name="getthumbnail"></a>CDocument::GetThumbnail
 
-Erstellt eine Bitmap, die vom Miniatur Ansichts Anbieter verwendet wird, um die Miniaturansicht anzuzeigen.
+Erstellt eine Bitmap, die vom Miniaturansichtsanbieter zum Anzeigen der Miniaturansicht verwendet werden soll.
 
 ```
 virtual BOOL GetThumbnail(
@@ -506,24 +506,24 @@ virtual BOOL GetThumbnail(
 
 ### <a name="parameters"></a>Parameter
 
-*verschoben*<br/>
+*Cx*<br/>
 Gibt die Breite und Höhe der Bitmap an.
 
 *phbmp*<br/>
 Enthält ein Handle für eine Bitmap, wenn die Funktion erfolgreich zurückgegeben wird.
 
-*pdwalpha*<br/>
-Enthält ein DWORD, das den Wert des Alphakanals angibt, wenn die Funktion erfolgreich zurückgegeben wird.
+*pdwAlpha*<br/>
+Enthält ein DWORD, das den Alphakanalwert angibt, wenn die Funktion erfolgreich zurückgegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn eine Bitmap für die Miniaturansicht erfolgreich erstellt wurde. andernfalls false.
+Gibt TRUE zurück, wenn eine Bitmap für die Miniaturansicht erfolgreich erstellt wurde. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="gettitle"></a>CDocument:: getTitle
+## <a name="cdocumentgettitle"></a><a name="gettitle"></a>CDocument::GetTitle
 
-Mit dieser Funktion können Sie den Titel des Dokuments abrufen, der normalerweise aus dem Dateinamen des Dokuments abgeleitet ist.
+Rufen Sie diese Funktion auf, um den Titel des Dokuments abzurufen, der normalerweise vom Dateinamen des Dokuments abgeleitet wird.
 
 ```
 const CString& GetTitle() const;
@@ -533,21 +533,21 @@ const CString& GetTitle() const;
 
 Der Titel des Dokuments.
 
-##  <a name="initializesearchcontent"></a>CDocument:: initializesearchcontent
+## <a name="cdocumentinitializesearchcontent"></a><a name="initializesearchcontent"></a>CDocument::InitializeSearchContent
 
-Wird aufgerufen, um den Such Inhalt für den Such Handler zu initialisieren.
+Wird aufgerufen, um Suchinhalte für den Suchhandler zu initialisieren.
 
 ```
 virtual void InitializeSearchContent ();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um Such Inhalte zu initialisieren. Der Inhalt muss eine Zeichenfolge mit Teilen sein, die durch ";" getrennt sind. Beispiel: "Point; Rollen OLE-Element ".
+Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um Suchinhalt zu initialisieren. Der Inhalt sollte eine Zeichenfolge sein, deren Teile durch ";" begrenzt sind. Beispiel: "Punkt; Rechteck; ole item".
 
-##  <a name="ismodified"></a>CDocument:: IsModified
+## <a name="cdocumentismodified"></a><a name="ismodified"></a>CDocument::IsModified
 
-Mit dieser Funktion können Sie ermitteln, ob das Dokument seit der letzten Speicherung geändert wurde.
+Rufen Sie diese Funktion auf, um zu bestimmen, ob das Dokument seit dem letzten Speichern geändert wurde.
 
 ```
 virtual BOOL IsModified();
@@ -555,11 +555,11 @@ virtual BOOL IsModified();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich 0 (null), wenn das Dokument seit der letzten Speicherung geändert wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn das Dokument seit dem letzten Speichern geändert wurde. andernfalls 0.
 
-##  <a name="issearchandorganizehandler"></a>CDocument:: issearchandorganizehandler
+## <a name="cdocumentissearchandorganizehandler"></a><a name="issearchandorganizehandler"></a>CDocument::IsSearchAndOrganizeHandler
 
-Gibt an, ob diese Instanz von `CDocument` für den Such & Organisations Handler erstellt wurde.
+Gibt an, `CDocument` ob diese Instanz von für den Search & Organize-Handler erstellt wurde.
 
 ```
 BOOL IsSearchAndOrganizeHandler() const;
@@ -567,15 +567,15 @@ BOOL IsSearchAndOrganizeHandler() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn diese Instanz von `CDocument` für den Such & Organisations Handler erstellt wurde.
+Gibt TRUE zurück, `CDocument` wenn diese Instanz von für den Search & Organize-Handler erstellt wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion gibt zurzeit nur dann true zurück, wenn umfassende Vorschau Handler in einem Out-of-Process-Server implementiert werden. Sie können die geeigneten Flags (m_bPreviewHandlerMode m_bSearchMode m_bGetThumbnailMode) auf der Anwendungsebene festlegen, damit diese Funktion true zurückgibt.
+Derzeit gibt diese Funktion TRUE nur für Rich Preview-Handler zurück, die in einem Nicht-Prozessserver implementiert sind. Sie können die entsprechenden Flags (m_bPreviewHandlerMode, m_bSearchMode, m_bGetThumbnailMode) auf Anwendungsebene festlegen, damit diese Funktion TRUE zurückgibt.
 
-##  <a name="loaddocumentfromstream"></a>CDocument:: loaddocumentfromstream
+## <a name="cdocumentloaddocumentfromstream"></a><a name="loaddocumentfromstream"></a>CDocument::LoadDocumentFromStream
 
-Wird aufgerufen, um Dokument Daten aus einem Stream zu laden.
+Wird aufgerufen, um Dokumentdaten aus einem Stream zu laden.
 
 ```
 virtual HRESULT LoadDocumentFromStream(
@@ -588,122 +588,122 @@ virtual HRESULT LoadDocumentFromStream(
 *pStream*<br/>
 Ein Zeiger auf einen Stream. Dieser Stream wird von der Shell bereitgestellt.
 
-*dwgrsmode*<br/>
+*dwGrfMode*<br/>
 Zugriffsmodus auf den Stream.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn der Ladevorgang erfolgreich ist, andernfalls HRESULT mit einem Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Sie können diese Methode in einer abgeleiteten Klasse überschreiben, um anzupassen, wie Daten aus dem Stream geladen werden.
 
-##  <a name="m_bgetthumbnailmode"></a>CDocument:: m_bGetThumbnailMode
+## <a name="cdocumentm_bgetthumbnailmode"></a><a name="m_bgetthumbnailmode"></a>CDocument::m_bGetThumbnailMode
 
-Gibt an, dass das `CDocument` Objekt von dllhost für Miniaturansichten erstellt wurde. Muss in `CView::OnDraw`eingeglichen werden.
+Gibt an, `CDocument` dass das Objekt von dllhost für Miniaturansichten erstellt wurde. Sollte eingecheckt `CView::OnDraw`werden.
 
 ```
 BOOL m_bGetThumbnailMode;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`TRUE` gibt an, dass das Dokument von dllhost für Miniaturansichten erstellt wurde.
+`TRUE`gibt an, dass das Dokument von dllhost für Miniaturansichten erstellt wurde.
 
-##  <a name="m_bpreviewhandlermode"></a>CDocument:: m_bPreviewHandlerMode
+## <a name="cdocumentm_bpreviewhandlermode"></a><a name="m_bpreviewhandlermode"></a>CDocument::m_bPreviewHandlerMode
 
-Gibt an, dass das `CDocument` Objekt von prevhost für die umfangreiche Vorschauversion erstellt wurde. Muss in `CView::OnDraw`eingeglichen werden.
+Gibt an, `CDocument` dass das Objekt von prevhost for Rich Preview erstellt wurde. Sollte eingecheckt `CView::OnDraw`werden.
 
 ```
 BOOL m_bPreviewHandlerMode;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-TRUE gibt an, dass das Dokument von prevhost für die umfangreiche Vorschauversion erstellt wurde.
+TRUE gibt an, dass das Dokument von prevhost for Rich Preview erstellt wurde.
 
-##  <a name="m_bsearchmode"></a>CDocument:: m_bSearchMode
+## <a name="cdocumentm_bsearchmode"></a><a name="m_bsearchmode"></a>CDocument::m_bSearchMode
 
-Gibt an, dass das `CDocument` Objekt vom Indexer oder von einer anderen Suchanwendung erstellt wurde.
+Gibt an, `CDocument` dass das Objekt von einem Indexer oder einer anderen Suchanwendung erstellt wurde.
 
 ```
 BOOL m_bSearchMode;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`TRUE` gibt an, dass das Dokument vom Indexer oder von einer anderen Suchanwendung erstellt wurde.
+`TRUE`gibt an, dass das Dokument von einem Indexer oder einer anderen Suchanwendung erstellt wurde.
 
-##  <a name="m_clrrichpreviewbackcolor"></a>CDocument:: m_clrRichPreviewBackColor
+## <a name="cdocumentm_clrrichpreviewbackcolor"></a><a name="m_clrrichpreviewbackcolor"></a>CDocument::m_clrRichPreviewBackColor
 
-Gibt die Hintergrundfarbe für das umfangreiche Vorschau Fenster an. Diese Farbe wird vom Host festgelegt.
+Gibt die Hintergrundfarbe des Rich Preview-Fensters an. Diese Farbe wird vom Host festgelegt.
 
 ```
 COLORREF m_clrRichPreviewBackColor;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_clrrichpreviewtextcolor"></a>CDocument:: m_clrRichPreviewTextColor
+## <a name="cdocumentm_clrrichpreviewtextcolor"></a><a name="m_clrrichpreviewtextcolor"></a>CDocument::m_clrRichPreviewTextColor
 
-Gibt die Vordergrundfarbe des Rich-Preview-Fensters an. Diese Farbe wird vom Host festgelegt.
+Gibt die Vordergrundfarbe des Rich Preview-Fensters an. Diese Farbe wird vom Host festgelegt.
 
 ```
 COLORREF m_clrRichPreviewTextColor;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="m_lfrichpreviewfont"></a>CDocument:: m_lfRichPreviewFont
+## <a name="cdocumentm_lfrichpreviewfont"></a><a name="m_lfrichpreviewfont"></a>CDocument::m_lfRichPreviewFont
 
-Gibt die Text Schriftart für das umfangreiche Vorschau Fenster an. Diese Schriftart Informationen werden vom Host festgelegt.
+Gibt die Textschriftart für das Rich-Vorschaufenster an. Diese Schriftartinformationen werden vom Host festgelegt.
 
 ```
 CFont m_lfRichPreviewFont;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onbeforerichpreviewfontchanged"></a>CDocument:: onbeforerichpreviewfontchanged
+## <a name="cdocumentonbeforerichpreviewfontchanged"></a><a name="onbeforerichpreviewfontchanged"></a>CDocument::OnBeforeRichPreviewfontChanged
 
-Wird aufgerufen, bevor die Schriftart für die umfangreiche Vorschau geändert wird.
+Wird aufgerufen, bevor die Rich Preview-Schriftart geändert wird.
 
 ```
 virtual void OnBeforeRichPreviewFontChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onchangedviewlist"></a>CDocument:: onchangedviewlist
+## <a name="cdocumentonchangedviewlist"></a><a name="onchangedviewlist"></a>CDocument::OnChangedViewList
 
-Wird von Framework aufgerufen, nachdem dem Dokument eine Ansicht hinzugefügt oder daraus entfernt wurde.
+Wird vom Framework aufgerufen, nachdem eine Ansicht dem Dokument hinzugefügt oder daraus entfernt wurde.
 
 ```
 virtual void OnChangedViewList();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion überprüft, ob die letzte Ansicht entfernt wird, und löscht, wenn dies der Fall ist, das Dokument. Überschreiben Sie diese Funktion, wenn Sie eine besondere Verarbeitung durchführen möchten, wenn das Framework eine Ansicht hinzufügt oder entfernt. Wenn Sie z. b. möchten, dass ein Dokument geöffnet bleibt, auch wenn keine angefügten Sichten vorhanden sind, überschreiben Sie diese Funktion.
+Die Standardimplementierung dieser Funktion prüft, ob die letzte Ansicht entfernt wird, und löscht ggf. das Dokument. Überschreiben Sie diese Funktion, wenn Sie eine spezielle Verarbeitung durchführen möchten, wenn das Framework eine Ansicht hinzufügt oder entfernt. Wenn Sie z. B. möchten, dass ein Dokument geöffnet bleibt, auch wenn ihm keine Ansichten zugeordnet sind, überschreiben Sie diese Funktion.
 
-##  <a name="onclosedocument"></a>CDocument:: onclosedocument
+## <a name="cdocumentonclosedocument"></a><a name="onclosedocument"></a>CDocument::OnCloseDocument
 
-Wird vom Framework aufgerufen, wenn das Dokument geschlossen wird, in der Regel als Teil des Befehls zum Schließen der Datei.
+Wird vom Framework aufgerufen, wenn das Dokument geschlossen wird, in der Regel als Teil des Befehls "Dateischließen".
 
 ```
 virtual void OnCloseDocument();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion zerstört alle Frames, die zum Anzeigen des Dokuments verwendet werden, schließt die Ansicht, bereinigt den Inhalt des Dokuments und ruft dann die [DeleteContents](#deletecontents) -Member-Funktion auf, um die Daten des Dokuments zu löschen.
+Die Standardimplementierung dieser Funktion zerstört alle Frames, die zum Anzeigen des Dokuments verwendet werden, schließt die Ansicht, bereinigt den Inhalt des Dokuments und ruft dann die [Memberfunktion DeleteContents](#deletecontents) auf, um die Daten des Dokuments zu löschen.
 
-Überschreiben Sie diese Funktion, wenn Sie eine besondere Bereinigungs Verarbeitung durchführen möchten, wenn das Framework ein Dokument schließt. Wenn das Dokument beispielsweise einen Datensatz in einer Datenbank darstellt, empfiehlt es sich, diese Funktion zu überschreiben, um die Datenbank zu schließen. Sie sollten die Basisklassen Version dieser Funktion von ihrer außer Kraft Setzung aus abrufen.
+Überschreiben Sie diese Funktion, wenn Sie eine spezielle Bereinigungsverarbeitung durchführen möchten, wenn das Framework ein Dokument schließt. Wenn das Dokument z. B. einen Datensatz in einer Datenbank darstellt, sollten Sie diese Funktion überschreiben, um die Datenbank zu schließen. Sie sollten die Basisklassenversion dieser Funktion über Ihre Außerkraftsetzung aufrufen.
 
-##  <a name="oncreatepreviewframe"></a>CDocument:: onkreatepreviewframe
+## <a name="cdocumentoncreatepreviewframe"></a><a name="oncreatepreviewframe"></a>CDocument::OnCreatePreviewFrame
 
-Wird von Framework aufgerufen, wenn es einen Vorschau Rahmen für eine umfangreiche Vorschauversion erstellen muss.
+Wird vom Framework aufgerufen, wenn es einen Vorschaurahmen für Rich Preview erstellen muss.
 
 ```
 virtual BOOL OnCreatePreviewFrame();
@@ -711,13 +711,13 @@ virtual BOOL OnCreatePreviewFrame();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt true zurück, wenn der Frame erfolgreich erstellt wurde. andernfalls false.
+Gibt TRUE zurück, wenn der Frame erfolgreich erstellt wurde. andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ondocumentevent"></a>CDocument:: ondocumentevent
+## <a name="cdocumentondocumentevent"></a><a name="ondocumentevent"></a>CDocument::OnDocumentEvent
 
-Wird von Framework als Reaktion auf ein Dokument Ereignis aufgerufen.
+Wird vom Framework als Reaktion auf ein Dokumentereignis aufgerufen.
 
 ```
 virtual void OnDocumentEvent(DocumentEvent deEvent);
@@ -725,23 +725,23 @@ virtual void OnDocumentEvent(DocumentEvent deEvent);
 
 ### <a name="parameters"></a>Parameter
 
-*wird deaktiviert*<br/>
-in Ein enumerierter Datentyp, der den Ereignistyp beschreibt.
+*deEvent*<br/>
+[in] Ein aufgezählter Datentyp, der den Ereignistyp beschreibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dokument Ereignisse können sich auf mehrere Klassen auswirken. Diese Methode ist für die Verarbeitung von Dokument Ereignissen zuständig, die andere Klassen als die [CDocument-Klasse](../../mfc/reference/cdocument-class.md)betreffen. Derzeit ist die einzige Klasse, die auf Dokument Ereignisse reagieren muss, die [cdatarecoveryhandler-Klasse](../../mfc/reference/cdatarecoveryhandler-class.md). Die `CDocument`-Klasse verfügt über andere über schreibbare Methoden, die für die Behandlung der Auswirkung auf die `CDocument`zuständig sind.
+Dokumentereignisse können mehrere Klassen betreffen. Diese Methode ist für die Behandlung von Dokumentereignissen verantwortlich, die sich auf andere Klassen als die [CDocument-Klasse](../../mfc/reference/cdocument-class.md)auswirken. Derzeit ist die einzige Klasse, die auf Dokumentereignisse reagieren muss, die [CDataRecoveryHandler-Klasse](../../mfc/reference/cdatarecoveryhandler-class.md). Die `CDocument` Klasse verfügt über andere überschreibbare Methoden, die für die Behandlung der Auswirkungen auf die `CDocument`verantwortlich sind.
 
-In der folgenden Tabelle sind die möglichen Werte für " *deevent* " und die Ereignisse aufgeführt, denen Sie entsprechen.
+In der folgenden Tabelle sind die möglichen Werte für *deEvent* und die Ereignisse aufgeführt, denen sie entsprechen.
 
 |Wert|Entsprechendes Ereignis|
 |-----------|-------------------------|
-|`onAfterNewDocument`|Es wurde ein neues Dokument erstellt.|
+|`onAfterNewDocument`|Ein neues Dokument wurde erstellt.|
 |`onAfterOpenDocument`|Ein neues Dokument wurde geöffnet.|
 |`onAfterSaveDocument`|Das Dokument wurde gespeichert.|
 |`onAfterCloseDocument`|Das Dokument wurde geschlossen.|
 
-##  <a name="ondrawthumbnail"></a>CDocument:: ondrawminiatur
+## <a name="cdocumentondrawthumbnail"></a><a name="ondrawthumbnail"></a>CDocument::OnDrawThumbnail
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um die Miniaturansicht zu zeichnen.
 
@@ -753,33 +753,33 @@ virtual void OnDrawThumbnail(
 
 ### <a name="parameters"></a>Parameter
 
-*dc*<br/>
+*Dc*<br/>
 Ein Verweis auf einen Gerätekontext.
 
-*lprcbounds*<br/>
-Gibt ein Begrenzungs Rechteck des Bereichs an, in dem die Miniaturansicht gezeichnet werden soll.
+*lprcBounds*<br/>
+Gibt ein umgrenzendes Rechteck des Bereichs an, in dem die Miniaturansicht gezeichnet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onfilesendmail"></a>CDocument:: OnFileSendMail
+## <a name="cdocumentonfilesendmail"></a><a name="onfilesendmail"></a>CDocument::OnFileSendMail
 
-Sendet eine Nachricht über den residenten Mailhost (sofern vorhanden) mit dem Dokument als Anlage.
+Sendet eine Nachricht über den residenten E-Mail-Host (falls vorhanden) mit dem Dokument als Anlage.
 
 ```
 void OnFileSendMail();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`OnFileSendMail` wird [OnSaveDocument](#onsavedocument) aufgerufen, um unbenannte und geänderte Dokumente in einer temporären Datei zu serialisieren (speichern), die dann per elektronischer e-Mail gesendet wird. Wenn das Dokument nicht geändert wurde, wird keine temporäre Datei benötigt. das Original wird gesendet. `OnFileSendMail` lädt Datei "Mapi32. DLL, wenn Sie nicht bereits geladen wurde.
+`OnFileSendMail`ruft [OnSaveDocument](#onsavedocument) auf, um unbenannte und geänderte Dokumente in eine temporäre Datei zu serialisieren (speichern), die dann per E-Mail gesendet wird. Wenn das Dokument nicht geändert wurde, wird keine temporäre Datei benötigt. das Original gesendet wird. `OnFileSendMail`lädt MAPI32. DLL, wenn sie noch nicht geladen wurde.
 
-Eine spezielle Implementierung `OnFileSendMail` für [COleDocument](../../mfc/reference/coledocument-class.md) verarbeitet Verbund Dateien ordnungsgemäß.
+Eine spezielle `OnFileSendMail` Implementierung von für [COleDocument](../../mfc/reference/coledocument-class.md) verarbeitet zusammengesetzte Dateien korrekt.
 
-`CDocument` unterstützt das Senden Ihres Dokuments per e-Mail, wenn der e-Mail-Support (MAPI) vorhanden ist. Weitere Informationen finden Sie in den Artikeln [MAPI-Themen](../../mfc/mapi.md) und [MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md)
+`CDocument`unterstützt das Versenden Ihres Dokuments per E-Mail, wenn E-Mail-Support (MAPI) vorhanden ist. Weitere Informationen finden Sie in den Artikeln [MAPI Topics](../../mfc/mapi.md) und [MAPI Support in MFC](../../mfc/mapi-support-in-mfc.md).
 
-##  <a name="onloaddocumentfromstream"></a>CDocument:: onloaddocumentfromstream
+## <a name="cdocumentonloaddocumentfromstream"></a><a name="onloaddocumentfromstream"></a>CDocument::OnLoadDocumentFromStream
 
-Wird von Framework aufgerufen, wenn die Dokument Daten aus einem Stream geladen werden müssen.
+Wird vom Framework aufgerufen, wenn es die Dokumentdaten aus einem Stream laden muss.
 
 ```
 virtual HRESULT OnLoadDocumentFromStream(
@@ -790,20 +790,20 @@ virtual HRESULT OnLoadDocumentFromStream(
 ### <a name="parameters"></a>Parameter
 
 *pStream*<br/>
-Ein Zeiger auf einen eingehenden Datenstrom.
+Ein Zeiger auf einen eingehenden Stream.
 
-*GRF-Modus*<br/>
+*grfMode*<br/>
 Zugriffsmodus auf den Stream.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn der Ladevorgang erfolgreich ist. andernfalls ein Fehlercode.
+S_OK, wenn die Last erfolgreich ist; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onnewdocument"></a>CDocument:: OnNewDocument
+## <a name="cdocumentonnewdocument"></a><a name="onnewdocument"></a>CDocument::OnNewDocument
 
-Wird von Framework als Teil des Datei neuen Befehls aufgerufen.
+Wird vom Framework als Teil des Befehls Datei neu aufgerufen.
 
 ```
 virtual BOOL OnNewDocument();
@@ -811,19 +811,19 @@ virtual BOOL OnNewDocument();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Dokument erfolgreich initialisiert wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn das Dokument erfolgreich initialisiert wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion Ruft die [DeleteContents](#deletecontents) -Member-Funktion auf, um sicherzustellen, dass das Dokument leer ist, und markiert das neue Dokument dann als Clean. Überschreiben Sie diese Funktion, um die Datenstruktur für ein neues Dokument zu initialisieren. Sie sollten die Basisklassen Version dieser Funktion von ihrer außer Kraft Setzung aus abrufen.
+Die Standardimplementierung dieser Funktion ruft die [DeleteContents-Memberfunktion](#deletecontents) auf, um sicherzustellen, dass das Dokument leer ist, und markiert dann das neue Dokument als bereinigend. Überschreiben Sie diese Funktion, um die Datenstruktur für ein neues Dokument zu initialisieren. Sie sollten die Basisklassenversion dieser Funktion über Ihre Außerkraftsetzung aufrufen.
 
-Wenn der Benutzer den Befehl "neue Datei" in einer SDI-Anwendung auswählt, verwendet das Framework diese Funktion, um das vorhandene Dokument erneut zu initialisieren, anstatt ein neues zu erstellen. Wenn der Benutzer in einer MDI-Anwendung (Multiple Document Interface) die Datei neu auswählt, erstellt das Framework jedes Mal ein neues Dokument und ruft dann diese Funktion auf, um es zu initialisieren. Sie müssen den Initialisierungs Code in dieser Funktion anstelle von im Konstruktor platzieren, damit der Befehl "Datei neu" in SDI-Anwendungen wirksam ist.
+Wenn der Benutzer den Befehl "Neu speichern" in einer SDI-Anwendung auswählt, verwendet das Framework diese Funktion, um das vorhandene Dokument erneut zu initialisieren, anstatt ein neues Dokument zu erstellen. Wenn der Benutzer In einer MDI-Anwendung (Multiple Document Interface) Datei neu auswählt, erstellt das Framework jedes Mal ein neues Dokument und ruft diese Funktion dann auf, um es zu initialisieren. Sie müssen Ihren Initialisierungscode in dieser Funktion statt im Konstruktor platzieren, damit der Befehl Datei neu in SDI-Anwendungen wirksam ist.
 
-Beachten Sie, dass es Fälle gibt, in denen `OnNewDocument` zweimal aufgerufen wird. Dies tritt auf, wenn das Dokument als ActiveX-Dokument Server eingebettet ist. Die-Funktion wird zuerst von der `CreateInstance`-Methode aufgerufen (die von der `COleObjectFactory`abgeleiteten Klasse verfügbar gemacht wird), und ein zweites Mal durch die `InitNew`-Methode (die von der `COleServerDoc`abgeleiteten Klasse verfügbar gemacht wird).
+Beachten Sie, dass `OnNewDocument` es Fälle gibt, in denen zweimal aufgerufen wird. Dies tritt auf, wenn das Dokument als ActiveX Document Server eingebettet ist. Die Funktion wird zuerst `CreateInstance` von der `COleObjectFactory`Methode aufgerufen (verfügbar durch die `InitNew` -derived-Klasse) und ein zweites Mal von der Methode (verfügbar durch die `COleServerDoc`-derived-Klasse).
 
 ### <a name="example"></a>Beispiel
 
-In den folgenden Beispielen werden alternative Methoden zum Initialisieren eines Dokument Objekts veranschaulicht.
+Die folgenden Beispiele veranschaulichen alternative Methoden zum Initialisieren eines Dokumentobjekts.
 
 [!code-cpp[NVC_MFCDocView#60](../../mfc/codesnippet/cpp/cdocument-class_5.cpp)]
 
@@ -831,9 +831,9 @@ In den folgenden Beispielen werden alternative Methoden zum Initialisieren eines
 
 [!code-cpp[NVC_MFCDocView#62](../../mfc/codesnippet/cpp/cdocument-class_7.cpp)]
 
-##  <a name="onopendocument"></a>CDocument:: OnOpenDocument
+## <a name="cdocumentonopendocument"></a><a name="onopendocument"></a>CDocument::OnOpenDocument
 
-Wird von Framework als Teil des Datei Öffnungs Befehls aufgerufen.
+Wird vom Framework als Teil des File Open-Befehls aufgerufen.
 
 ```
 virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
@@ -841,22 +841,22 @@ virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszpathname*<br/>
+*lpszPathName*<br/>
 Zeigt auf den Pfad des zu öffnenden Dokuments.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Dokument erfolgreich geladen wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn das Dokument erfolgreich geladen wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion öffnet die angegebene Datei, ruft die [DeleteContents](#deletecontents) -Member-Funktion auf, um sicherzustellen, dass das Dokument leer ist, ruft [CObject:: Serialize](../../mfc/reference/cobject-class.md#serialize) auf, um den Inhalt der Datei zu lesen, und markiert das Dokument dann als Clean. Überschreiben Sie diese Funktion, wenn Sie etwas anderes als den Archive-Mechanismus oder den File-Mechanismus verwenden möchten. Sie können z. b. eine Anwendung schreiben, bei der Dokumente Datensätze in einer Datenbank und nicht als separate Dateien darstellen.
+Die Standardimplementierung dieser Funktion öffnet die angegebene Datei, ruft die [DeleteContents-Memberfunktion](#deletecontents) auf, um sicherzustellen, dass das Dokument leer ist, ruft [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize) auf, um den Inhalt der Datei zu lesen, und markiert dann das Dokument als bereinigend. Überschreiben Sie diese Funktion, wenn Sie etwas anderes als den Archivierungsmechanismus oder den Dateimechanismus verwenden möchten. Sie können z. B. eine Anwendung schreiben, in der Dokumente Datensätze in einer Datenbank und nicht separate Dateien darstellen.
 
-Wenn der Benutzer den Befehl zum Öffnen der Datei in einer SDI-Anwendung auswählt, verwendet das Framework diese Funktion, um das vorhandene `CDocument` Objekt erneut zu initialisieren, anstatt ein neues zu erstellen. Wenn der Benutzer in einer MDI-Anwendung Datei öffnen auswählt, erstellt das Framework jedes Mal ein neues `CDocument` Objekt und ruft dann diese Funktion auf, um es zu initialisieren. Sie müssen den Initialisierungs Code in dieser Funktion anstelle von im Konstruktor platzieren, damit der Befehl zum Öffnen von Dateien in SDI-Anwendungen wirksam ist.
+Wenn der Benutzer den Befehl Datei öffnen in einer SDI-Anwendung auswählt, `CDocument` verwendet das Framework diese Funktion, um das vorhandene Objekt erneut zu initialisieren, anstatt ein neues zu erstellen. Wenn der Benutzer Datei öffnen in einer MDI-Anwendung `CDocument` auswählt, erstellt das Framework jedes Mal ein neues Objekt und ruft diese Funktion dann auf, um es zu initialisieren. Sie müssen Ihren Initialisierungscode in dieser Funktion und nicht im Konstruktor platzieren, damit der Befehl Dateigeöffnet in SDI-Anwendungen wirksam ist.
 
 ### <a name="example"></a>Beispiel
 
-In den folgenden Beispielen werden alternative Methoden zum Initialisieren eines Dokument Objekts veranschaulicht.
+Die folgenden Beispiele veranschaulichen alternative Methoden zum Initialisieren eines Dokumentobjekts.
 
 [!code-cpp[NVC_MFCDocView#60](../../mfc/codesnippet/cpp/cdocument-class_5.cpp)]
 
@@ -866,9 +866,9 @@ In den folgenden Beispielen werden alternative Methoden zum Initialisieren eines
 
 [!code-cpp[NVC_MFCDocView#63](../../mfc/codesnippet/cpp/cdocument-class_8.cpp)]
 
-##  <a name="onpreviewhandlerqueryfocus"></a>CDocument:: onpreviewhandlerqueryfocus
+## <a name="cdocumentonpreviewhandlerqueryfocus"></a><a name="onpreviewhandlerqueryfocus"></a>CDocument::OnPreviewHandlerQueryFocus
 
-Weist den Vorschau Handler an, das vom Aufruf der `GetFocus` Funktion abgerufene HWND zurückzugeben.
+Weist den Vorschauhandler an, die HWND `GetFocus` zurückzugeben, die vom Aufrufen der Funktion abgerufen wurde.
 
 ```
 virtual HRESULT OnPreviewHandlerQueryFocus(HWND* phwnd);
@@ -877,17 +877,17 @@ virtual HRESULT OnPreviewHandlerQueryFocus(HWND* phwnd);
 ### <a name="parameters"></a>Parameter
 
 *phwnd*<br/>
-vorgenommen Wenn diese Methode zurückgegeben wird, enthält Sie einen Zeiger auf das HWND, das vom Aufruf der `GetFocus`-Funktion vom Vordergrund Thread des Vorschau Handlers zurückgegeben wurde.
+[out] Wenn diese Methode zurückgegeben wird, enthält einen Zeiger `GetFocus` auf die HWND, die vom Aufrufen der Funktion aus dem Vordergrundthread des Vorschauhandlers zurückgegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK zurück, wenn erfolgreich; andernfalls ein Fehlerwert.
+Gibt S_OK zurück, wenn erfolgreich; oder einen Fehlerwert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onpreviewhandlertranslateaccelerator"></a>CDocument:: onpreviewhandlertranslateaccelerator
+## <a name="cdocumentonpreviewhandlertranslateaccelerator"></a><a name="onpreviewhandlertranslateaccelerator"></a>CDocument::OnPreviewHandlerTranslateAccelerator
 
-Weist den Vorschau Handler an, eine Tastatureingabe zu verarbeiten, die von der Meldungs Pumpe des Prozesses, in dem der Vorschau Handler ausgeführt wird, übergeben wird.
+Weist den Vorschauhandler an, einen Tastenanschlag zu verarbeiten, der von der Nachrichtenpumpe des Prozesses übergeben wird, in dem der Vorschauhandler ausgeführt wird.
 
 ```
 virtual HRESULT OnPreviewHandlerTranslateAccelerator(MSG* pmsg);
@@ -896,57 +896,57 @@ virtual HRESULT OnPreviewHandlerTranslateAccelerator(MSG* pmsg);
 ### <a name="parameters"></a>Parameter
 
 *pmsg*<br/>
-in Ein Zeiger auf eine Fenster Meldung.
+[in] Ein Zeiger auf eine Fensternachricht.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Tastatureingabe-Nachricht vom Vorschau Handler verarbeitet werden kann, wird Sie vom Handler verarbeitet, und es wird S_OK zurückgegeben. Wenn der Vorschau Handler die Tastatureingabe Nachricht nicht verarbeiten kann, wird er über `IPreviewHandlerFrame::TranslateAccelerator`dem Host zur Anwendung angeboten. Wenn der Host die Nachricht verarbeitet, gibt diese Methode S_OK zurück. Wenn der Host die Nachricht nicht verarbeitet, gibt diese Methode S_FALSE zurück.
+Wenn die Tastenanschlagnachricht vom Vorschauhandler verarbeitet werden kann, verarbeitet der Handler sie und gibt S_OK zurück. Wenn der Vorschauhandler die Tastenanschlagnachricht nicht verarbeiten kann, wird sie dem Host über `IPreviewHandlerFrame::TranslateAccelerator`angeboten. Wenn der Host die Nachricht verarbeitet, gibt diese Methode S_OK zurück. Wenn der Host die Nachricht nicht verarbeitet, gibt diese Methode S_FALSE zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onrichpreviewbackcolorchanged"></a>CDocument:: onrichpreviewbackcolorchanged
+## <a name="cdocumentonrichpreviewbackcolorchanged"></a><a name="onrichpreviewbackcolorchanged"></a>CDocument::OnRichPreviewBackColorChanged
 
-Wird aufgerufen, wenn die Rich Preview-Hintergrundfarbe geändert wurde.
+Wird aufgerufen, wenn sich die Hintergrundfarbe der Rich Preview geändert hat.
 
 ```
 virtual void OnRichPreviewBackColorChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onrichpreviewfontchanged"></a>CDocument:: onrichpreviewfontchanged
+## <a name="cdocumentonrichpreviewfontchanged"></a><a name="onrichpreviewfontchanged"></a>CDocument::OnRichPreviewFontChanged
 
-Wird aufgerufen, wenn sich die Schriftart der Rich-Vorschau geändert hat.
+Wird aufgerufen, wenn sich die Rich Preview-Schriftart geändert hat.
 
 ```
 virtual void OnRichPreviewFontChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onrichpreviewsitechanged"></a>CDocument:: onrichpreviewsitechanged
+## <a name="cdocumentonrichpreviewsitechanged"></a><a name="onrichpreviewsitechanged"></a>CDocument::OnRichPreviewSiteChanged
 
-Wird aufgerufen, wenn die Rich Preview-Website geändert wurde.
+Wird aufgerufen, wenn sich die Rich Preview-Website geändert hat.
 
 ```
 virtual void OnRichPreviewSiteChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onrichpreviewtextcolorchanged"></a>CDocument:: onrichpreviewtextcolorchanged
+## <a name="cdocumentonrichpreviewtextcolorchanged"></a><a name="onrichpreviewtextcolorchanged"></a>CDocument::OnRichPreviewTextColorChanged
 
-Wird aufgerufen, wenn sich die Textfarbe für Rich Preview geändert hat.
+Wird aufgerufen, wenn sich die Textfarbe "Rich Preview" geändert hat.
 
 ```
 virtual void OnRichPreviewTextColorChanged();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onsavedocument"></a>CDocument:: OnSaveDocument
+## <a name="cdocumentonsavedocument"></a><a name="onsavedocument"></a>CDocument::OnSaveDocument
 
-Wird von Framework als Teil des File Save-oder File Save as-Befehls aufgerufen.
+Wird vom Framework als Teil des Befehls Datei speichern oder Speichern unter speichern aufgerufen.
 
 ```
 virtual BOOL OnSaveDocument(LPCTSTR lpszPathName);
@@ -954,30 +954,30 @@ virtual BOOL OnSaveDocument(LPCTSTR lpszPathName);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszpathname*<br/>
-Zeigt auf den voll qualifizierten Pfad, in dem die Datei gespeichert werden soll.
+*lpszPathName*<br/>
+Zeigt auf den vollqualifizierten Pfad, in dem die Datei gespeichert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn das Dokument erfolgreich gespeichert wurde. andernfalls 0.
+Ein Wert ungleich Null, wenn das Dokument erfolgreich gespeichert wurde; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion öffnet die angegebene Datei, ruft [CObject:: Serialize](../../mfc/reference/cobject-class.md#serialize) auf, um die Dokument Daten in die Datei zu schreiben, und markiert das Dokument dann als bereinigt. Überschreiben Sie diese Funktion, wenn Sie eine besondere Verarbeitung durchführen möchten, wenn das Framework ein Dokument speichert. Sie können z. b. eine Anwendung schreiben, bei der Dokumente Datensätze in einer Datenbank und nicht als separate Dateien darstellen.
+Die Standardimplementierung dieser Funktion öffnet die angegebene Datei, ruft [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize) auf, um die Daten des Dokuments in die Datei zu schreiben, und markiert dann das Dokument als bereinigend. Überschreiben Sie diese Funktion, wenn Sie eine spezielle Verarbeitung durchführen möchten, wenn das Framework ein Dokument speichert. Sie können z. B. eine Anwendung schreiben, in der Dokumente Datensätze in einer Datenbank und nicht separate Dateien darstellen.
 
-##  <a name="onunloadhandler"></a>CDocument:: onunloadhandler
+## <a name="cdocumentonunloadhandler"></a><a name="onunloadhandler"></a>CDocument::OnUnloadHandler
 
-Wird von Framework aufgerufen, wenn der Vorschau Handler entladen wird.
+Wird vom Framework aufgerufen, wenn der Vorschauhandler entladen wird.
 
 ```
 virtual void OnUnloadHandler();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onupdatefilesendmail"></a>CDocument:: OnUpdateFileSendMail
+## <a name="cdocumentonupdatefilesendmail"></a><a name="onupdatefilesendmail"></a>CDocument::OnUpdateFileSendMail
 
-Aktiviert den ID_FILE_SEND_MAIL Befehl, wenn e-Mail-Unterstützung (MAPI) vorhanden ist.
+Aktiviert den ID_FILE_SEND_MAIL Befehl, wenn Mail-Support (MAPI) vorhanden ist.
 
 ```
 void OnUpdateFileSendMail(CCmdUI* pCmdUI);
@@ -986,17 +986,17 @@ void OnUpdateFileSendMail(CCmdUI* pCmdUI);
 ### <a name="parameters"></a>Parameter
 
 *pCmdUI*<br/>
-Ein Zeiger auf das [CCmdUI](../../mfc/reference/ccmdui-class.md) -Objekt, das mit dem ID_FILE_SEND_MAIL-Befehl verknüpft ist.
+Ein Zeiger auf das [CCmdUI-Objekt,](../../mfc/reference/ccmdui-class.md) das dem Befehl ID_FILE_SEND_MAIL zugeordnet ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Andernfalls entfernt die Funktion den ID_FILE_SEND_MAIL Befehl aus dem Menü, einschließlich Trennzeichen oberhalb oder unterhalb des Menü Elements. MAPI ist aktiviert, wenn Datei "Mapi32. Die dll ist im Pfad und im Abschnitt [Mail] des Gewinns vorhanden. INI-Datei, MAPI = 1. Die meisten Anwendungen platzieren diesen Befehl im Menü Datei.
+Andernfalls entfernt die Funktion den ID_FILE_SEND_MAIL Befehl aus dem Menü, einschließlich Trennzeichen oberhalb oder unterhalb des Menüelements. MAPI ist aktiviert, wenn MAPI32. DLL ist im Pfad und im Abschnitt [Mail] des WIN vorhanden. INI-Datei, MAPI=1. Die meisten Anwendungen setzen diesen Befehl in das Menü Datei.
 
-`CDocument` unterstützt das Senden Ihres Dokuments per e-Mail, wenn der e-Mail-Support (MAPI) vorhanden ist. Weitere Informationen finden Sie in den Artikeln [MAPI-Themen](../../mfc/mapi.md) und [MAPI-Unterstützung in MFC](../../mfc/mapi-support-in-mfc.md)
+`CDocument`unterstützt das Versenden Ihres Dokuments per E-Mail, wenn E-Mail-Support (MAPI) vorhanden ist. Weitere Informationen finden Sie in den Artikeln [MAPI Topics](../../mfc/mapi.md) und [MAPI Support in MFC](../../mfc/mapi-support-in-mfc.md).
 
-##  <a name="precloseframe"></a>CDocument::P recloseframe
+## <a name="cdocumentprecloseframe"></a><a name="precloseframe"></a>CDocument::PreCloseFrame
 
-Diese Member-Funktion wird von Framework aufgerufen, bevor das Rahmen Fenster zerstört wird.
+Diese Memberfunktion wird vom Framework aufgerufen, bevor das Rahmenfenster zerstört wird.
 
 ```
 virtual void PreCloseFrame(CFrameWnd* pFrame);
@@ -1005,17 +1005,17 @@ virtual void PreCloseFrame(CFrameWnd* pFrame);
 ### <a name="parameters"></a>Parameter
 
 *pFrame*<br/>
-Ein Zeiger auf das [CFrameWnd](../../mfc/reference/cframewnd-class.md) , das das zugeordnete `CDocument` Objekt enthält.
+Zeiger auf das [CFrameWnd,](../../mfc/reference/cframewnd-class.md) `CDocument` das das zugeordnete Objekt enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie kann überschrieben werden, um eine benutzerdefinierte Bereinigung bereitzustellen, aber stellen Sie sicher, dass Sie auch die Basisklasse aufzurufen.
+Es kann überschrieben werden, um eine benutzerdefinierte Bereinigung bereitzustellen, aber achten Sie darauf, auch die Basisklasse aufzurufen.
 
-Der Standardwert von `PreCloseFrame` in `CDocument`nichts bewirkt. Die von `CDocument`abgeleiteten Klassen [COleDocument](../../mfc/reference/coledocument-class.md) und [CRichEditDoc](../../mfc/reference/cricheditdoc-class.md) verwenden diese Member-Funktion.
+Der Standardwert `PreCloseFrame` von `CDocument`tut nichts in . Die `CDocument`-abgeleiteten Klassen [COleDocument](../../mfc/reference/coledocument-class.md) und [CRichEditDoc](../../mfc/reference/cricheditdoc-class.md) verwenden diese Memberfunktion.
 
-##  <a name="readnextchunkvalue"></a>CDocument:: infonextchunkvalue
+## <a name="cdocumentreadnextchunkvalue"></a><a name="readnextchunkvalue"></a>CDocument::ReadNextChunkValue
 
-Liest den nächsten Segment Wert.
+Liest den nächsten Chunk-Wert.
 
 ```
 virtual BOOL ReadNextChunkValue(IFilterChunkValue** ppValue);
@@ -1024,17 +1024,17 @@ virtual BOOL ReadNextChunkValue(IFilterChunkValue** ppValue);
 ### <a name="parameters"></a>Parameter
 
 *ppValue*<br/>
-vorgenommen Wenn die Funktion zurückgegeben wird, enthält *ppValue* den gelesenen Wert.
+[out] Wenn die Funktion zurückgegeben wird, enthält *ppValue* den Wert, der gelesen wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="releasefile"></a>CDocument:: Releasefile
+## <a name="cdocumentreleasefile"></a><a name="releasefile"></a>CDocument::ReleaseFile
 
-Diese Member-Funktion wird vom Framework aufgerufen, um eine Datei freizugeben, sodass Sie von anderen Anwendungen verwendet werden kann.
+Diese Memberfunktion wird vom Framework aufgerufen, um eine Datei freizugeben, sodass sie für andere Anwendungen verfügbar ist.
 
 ```
 virtual void ReleaseFile(
@@ -1045,22 +1045,22 @@ virtual void ReleaseFile(
 ### <a name="parameters"></a>Parameter
 
 *pFile*<br/>
-Ein Zeiger auf das CFile-Objekt, das freigegeben werden soll.
+Ein Zeiger auf das freizugebende CFile-Objekt.
 
-*babort*<br/>
-Gibt an, ob die Datei mit `CFile::Close` oder `CFile::Abort`freigegeben werden soll. FALSE, wenn die Datei mit [CFile:: Close](../../mfc/reference/cfile-class.md#close)veröffentlicht werden soll. TRUE, wenn die Datei mit [CFile:: Abort](../../mfc/reference/cfile-class.md#abort)freigegeben werden soll.
+*bAbort*<br/>
+Gibt an, ob die Datei mithilfe `CFile::Close` `CFile::Abort`von oder freigegeben werden soll. FALSE, wenn die Datei mit [CFile::Close](../../mfc/reference/cfile-class.md#close)freigegeben werden soll; TRUE, wenn die Datei mit [CFile::Abort](../../mfc/reference/cfile-class.md#abort)freigegeben werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn " *babort* " den Wert "true" hat, ruft `ReleaseFile` `CFile::Abort`auf, und die Datei wird veröffentlicht. `CFile::Abort` löst keine Ausnahme aus.
+Wenn *bAbort* TRUE `ReleaseFile` `CFile::Abort`ist, ruft , und die Datei wird freigegeben. `CFile::Abort`löst keine Ausnahme aus.
 
-Wenn " *babort* " auf "false" gesetzt ist, werden `ReleaseFile` `CFile::Close` aufgerufen und die Datei freigegeben.
+Wenn *bAbort* FALSE `ReleaseFile` `CFile::Close` ist, ruft die Datei auf und die Datei wird freigegeben.
 
-Überschreiben Sie diese Member-Funktion, um eine Aktion durch den Benutzer anzufordern, bevor die Datei freigegeben wird.
+Überschreiben Sie diese Memberfunktion, um eine Aktion des Benutzers zu verlangen, bevor die Datei freigegeben wird.
 
-##  <a name="removechunk"></a>CDocument:: removechunk
+## <a name="cdocumentremovechunk"></a><a name="removechunk"></a>CDocument::RemoveChunk
 
-Entfernt einen Block mit der angegebenen GUID.
+Entfernt einen Chunk mit der angegebenen GUID.
 
 ```
 virtual void RemoveChunk(
@@ -1071,16 +1071,16 @@ virtual void RemoveChunk(
 ### <a name="parameters"></a>Parameter
 
 *Guid*<br/>
-Gibt die GUID eines zu entfernenden Blocks an.
+Gibt die GUID eines zu entfernenden Abschnitts an.
 
-*Lauer*<br/>
-Gibt die PID eines zu entfernenden Blocks an.
+*Pid*<br/>
+Gibt die PID eines zu entfernenden Abschnitts an.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="removeview"></a>CDocument:: removeview
+## <a name="cdocumentremoveview"></a><a name="removeview"></a>CDocument::RemoveView
 
-Mit dieser Funktion wird eine Ansicht von einem Dokument getrennt.
+Rufen Sie diese Funktion auf, um eine Ansicht von einem Dokument zu trennen.
 
 ```
 void RemoveView(CView* pView);
@@ -1088,20 +1088,20 @@ void RemoveView(CView* pView);
 
 ### <a name="parameters"></a>Parameter
 
-*pView*<br/>
-Verweist auf die Ansicht, die entfernt wird.
+*Pview*<br/>
+Zeigt auf die Ansicht, die entfernt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion entfernt die angegebene Sicht aus der Liste der Sichten, die dem Dokument zugeordnet sind. Außerdem wird der Dokument Zeiger der Ansicht auf NULL festgelegt. Diese Funktion wird vom Framework aufgerufen, wenn ein Rahmen Fenster geschlossen oder ein Bereich eines Splitter Fensters geschlossen wird.
+Diese Funktion entfernt die angegebene Ansicht aus der Liste der Ansichten, die dem Dokument zugeordnet sind. Außerdem wird der Dokumentzeiger der Ansicht auf NULL festgelegt. Diese Funktion wird vom Framework aufgerufen, wenn ein Rahmenfenster geschlossen oder ein Bereich eines Splitterfensters geschlossen wird.
 
-Diese Funktion wird nur aufgerufen, wenn Sie eine Ansicht manuell trennen. In der Regel lassen Sie das Framework Dokumente und Sichten trennen, indem Sie ein [CDocTemplate](../../mfc/reference/cdoctemplate-class.md) -Objekt definieren, um eine Dokument Klasse, eine Ansichts Klasse und eine Frame Fenster Klasse zuzuordnen.
+Rufen Sie diese Funktion nur auf, wenn Sie eine Ansicht manuell trennen. In der Regel lassen Sie das Framework Dokumente und Ansichten trennen, indem Sie ein [CDocTemplate-Objekt](../../mfc/reference/cdoctemplate-class.md) definieren, um eine Dokumentklasse, Eine Ansichtsklasse und eine Rahmenfensterklasse zuzuordnen.
 
-Im Beispiel zu [AddView](#addview) finden Sie eine Beispiel Implementierung.
+Im Beispiel unter [AddView](#addview) finden Sie eine Beispielimplementierung.
 
-##  <a name="reportsaveloadexception"></a>CDocument:: reportsaveloadexception
+## <a name="cdocumentreportsaveloadexception"></a><a name="reportsaveloadexception"></a>CDocument::ReportSaveLoadException
 
-Wird aufgerufen, wenn eine Ausnahme ausgelöst wird (in der Regel eine [CFileException](../../mfc/reference/cfileexception-class.md) oder [carchiveexception](../../mfc/reference/carchiveexception-class.md)), während das Dokument gespeichert oder geladen wird.
+Wird aufgerufen, wenn beim Speichern oder Laden des Dokuments eine Ausnahme ausgelöst wird (in der Regel eine [CFileException](../../mfc/reference/cfileexception-class.md) oder [CArchiveException](../../mfc/reference/carchiveexception-class.md)).
 
 ```
 virtual void ReportSaveLoadException(
@@ -1113,25 +1113,25 @@ virtual void ReportSaveLoadException(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszpathname*<br/>
+*lpszPathName*<br/>
 Zeigt auf den Namen des Dokuments, das gespeichert oder geladen wurde.
 
-*e*<br/>
-Verweist auf die ausgelöste Ausnahme. Kann möglicherweise NULL sein.
+*E*<br/>
+Zeigt auf die ausgelöste Ausnahme. Kann NULL sein.
 
-*bSpeichern*<br/>
-Flag, das angibt, welcher Vorgang ausgeführt wurde. ein Wert ungleich 0 (null), wenn das Dokument gespeichert wurde, 0, wenn das Dokument geladen wurde.
+*bSparen*<br/>
+Flag, das angibt, welcher Vorgang ausgeführt wurde; Ungleich Null, wenn das Dokument gespeichert wurde, 0, wenn das Dokument geladen wurde.
 
-*nidpdefault*<br/>
-Der Bezeichner der Fehlermeldung, die angezeigt werden soll, wenn die Funktion keine spezifischere angibt.
+*nIDPDefault*<br/>
+Bezeichner der Fehlermeldung, die angezeigt werden soll, wenn die Funktion keine spezifischere angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung überprüft das Ausnahme Objekt und sucht nach einer Fehlermeldung, in der die Ursache speziell beschrieben wird. Wenn eine bestimmte Nachricht nicht gefunden wird oder *e* NULL ist, wird die durch den Parameter " *nidpdefault* " angegebene allgemeine Meldung verwendet. Die Funktion zeigt dann ein Meldungs Feld mit der Fehlermeldung an. Überschreiben Sie diese Funktion, wenn Sie zusätzliche, angepasste Fehlermeldungen bereitstellen möchten. Hierbei handelt es sich um eine erweiterte über schreibbare.
+Die Standardimplementierung untersucht das Ausnahmeobjekt und sucht nach einer Fehlermeldung, die die Ursache genau beschreibt. Wenn eine bestimmte Nachricht nicht gefunden wird oder *wenn e* NULL ist, wird die allgemeine Meldung verwendet, die durch den Parameter *nIDPDefault* angegeben wird. Die Funktion zeigt dann ein Meldungsfeld mit der Fehlermeldung an. Überschreiben Sie diese Funktion, wenn Sie zusätzliche, benutzerdefinierte Fehlermeldungen bereitstellen möchten. Dies ist ein fortgeschrittenes Überridable.
 
-##  <a name="savemodified"></a>CDocument:: SaveModified
+## <a name="cdocumentsavemodified"></a><a name="savemodified"></a>CDocument::SaveModified
 
-Wird von Framework aufgerufen, bevor ein modifiziertes Dokument geschlossen wird.
+Wird vom Framework aufgerufen, bevor ein geändertes Dokument geschlossen werden soll.
 
 ```
 virtual BOOL SaveModified();
@@ -1139,15 +1139,15 @@ virtual BOOL SaveModified();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL, wenn es sicher ist, den Vorgang fortzusetzen und das Dokument zu schließen. 0, wenn das Dokument nicht geschlossen werden soll.
+Ein Wert ungleich Null, wenn das Dokument sicher fortgesetzt und geschlossen werden kann. 0, wenn das Dokument nicht geschlossen werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Standard Implementierung dieser Funktion zeigt ein Meldungs Feld an, in dem der Benutzer gefragt wird, ob die Änderungen im Dokument gespeichert werden sollen, sofern vorhanden. Überschreiben Sie diese Funktion, wenn für das Programm eine andere Aufforderungs Prozedur erforderlich ist. Hierbei handelt es sich um eine erweiterte über schreibbare.
+Die Standardimplementierung dieser Funktion zeigt ein Meldungsfeld an, in dem der Benutzer gefragt wird, ob die Änderungen am Dokument gespeichert werden sollen, falls vorhanden. Überschreiben Sie diese Funktion, wenn Ihr Programm eine andere Eingabeaufforderung erfordert. Dies ist ein fortgeschrittenes Überridable.
 
-##  <a name="setchunkvalue"></a>CDocument:: setchunkvalue
+## <a name="cdocumentsetchunkvalue"></a><a name="setchunkvalue"></a>CDocument::SetChunkValue
 
-Legt einen Segment Wert fest.
+Legt einen Chunk-Wert fest.
 
 ```
 virtual BOOL SetChunkValue (IFilterChunkValue* pValue);
@@ -1156,17 +1156,17 @@ virtual BOOL SetChunkValue (IFilterChunkValue* pValue);
 ### <a name="parameters"></a>Parameter
 
 *pValue*<br/>
-Gibt einen festzulegenden Block Wert an.
+Gibt einen zu legenden Chunk-Wert an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setmodifiedflag"></a>CDocument:: SetModifiedFlag
+## <a name="cdocumentsetmodifiedflag"></a><a name="setmodifiedflag"></a>CDocument::SetModifiedFlag
 
-Diese Funktion wird aufgerufen, nachdem Sie Änderungen am Dokument vorgenommen haben.
+Rufen Sie diese Funktion auf, nachdem Sie Änderungen am Dokument vorgenommen haben.
 
 ```
 virtual void SetModifiedFlag(BOOL bModified = TRUE);
@@ -1174,16 +1174,16 @@ virtual void SetModifiedFlag(BOOL bModified = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bmodified*<br/>
-Flag zum angeben, ob das Dokument geändert wurde.
+*bModified*<br/>
+Flag, das angibt, ob das Dokument geändert wurde.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Durch konsistentes Aufrufen dieser Funktion stellen Sie sicher, dass das Framework den Benutzer auffordert, Änderungen zu speichern, bevor ein Dokument geschlossen wird. In der Regel sollten Sie den Standardwert true für den *bmodified* -Parameter verwenden. Um ein Dokument als "bereinigt" (nicht geändert) zu markieren, wird diese Funktion mit dem Wert "false" aufgerufen.
+Indem Sie diese Funktion konsistent aufrufen, stellen Sie sicher, dass das Framework den Benutzer auffordert, Änderungen vor dem Schließen eines Dokuments zu speichern. In der Regel sollten Sie den Standardwert TRUE für den *Parameter bModified* verwenden. Um ein Dokument als sauber (unverändert) zu markieren, rufen Sie diese Funktion mit dem Wert FALSE auf.
 
-##  <a name="setpathname"></a>CDocument:: setpathname
+## <a name="cdocumentsetpathname"></a><a name="setpathname"></a>CDocument::SetPathName
 
-Mit dieser Funktion können Sie den voll qualifizierten Pfad der Datenträger Datei des Dokuments angeben.
+Rufen Sie diese Funktion auf, um den vollqualifizierten Pfad der Datenträgerdatei des Dokuments anzugeben.
 
 ```
 virtual void SetPathName(
@@ -1193,19 +1193,19 @@ virtual void SetPathName(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszpathname*<br/>
-Verweist auf die Zeichenfolge, die als Pfad für das Dokument verwendet werden soll.
+*lpszPathName*<br/>
+Zeigt auf die Zeichenfolge, die als Pfad für das Dokument verwendet werden soll.
 
-*baddtomru*<br/>
-Bestimmt, ob der Dateiname der zuletzt verwendeten Datei Liste (MRU) hinzugefügt wird. Wenn true, wird der Dateiname hinzugefügt. Wenn der Wert false ist, wird er nicht hinzugefügt.
+*bAddToMRU*<br/>
+Bestimmt, ob der Dateiname der zuletzt verwendeten (MRU)-Dateiliste hinzugefügt wird. Wenn TRUE, wird der Dateiname hinzugefügt. wenn FALSE, wird es nicht hinzugefügt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Abhängig vom Wert von *baddtomru* wird der Pfad der von der Anwendung verwalteten MRU-Liste hinzugefügt oder nicht hinzugefügt. Beachten Sie, dass einige Dokumente keiner Datenträger Datei zugeordnet sind. Diese Funktion wird nur aufgerufen, wenn Sie die Standard Implementierung zum Öffnen und Speichern von Dateien überschreiben, die vom Framework verwendet werden.
+Abhängig vom Wert von *bAddToMRU* wird der Pfad der von der Anwendung verwalteten MRU-Liste hinzugefügt oder nicht hinzugefügt. Beachten Sie, dass einige Dokumente keiner Datenträgerdatei zugeordnet sind. Rufen Sie diese Funktion nur auf, wenn Sie die Standardimplementierung zum Öffnen und Speichern von Dateien überschreiben, die vom Framework verwendet werden.
 
-##  <a name="settitle"></a>CDocument:: SetTitle
+## <a name="cdocumentsettitle"></a><a name="settitle"></a>CDocument::SetTitle
 
-Mit dieser Funktion können Sie den Titel des Dokuments angeben (die Zeichenfolge, die in der Titelleiste eines Rahmen Fensters angezeigt wird).
+Rufen Sie diese Funktion auf, um den Titel des Dokuments anzugeben (die Zeichenfolge, die in der Titelleiste eines Rahmenfensters angezeigt wird).
 
 ```
 virtual void SetTitle(LPCTSTR lpszTitle);
@@ -1213,16 +1213,16 @@ virtual void SetTitle(LPCTSTR lpszTitle);
 
 ### <a name="parameters"></a>Parameter
 
-*lpsztitle*<br/>
-Verweist auf die Zeichenfolge, die als Titel des Dokuments verwendet werden soll.
+*lpszTitle*<br/>
+Zeigt auf die Zeichenfolge, die als Titel des Dokuments verwendet werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie diese Funktion aufrufen, werden die Titel aller Rahmen Fenster aktualisiert, in denen das Dokument angezeigt wird.
+Wenn Sie diese Funktion aufrufen, werden die Titel aller Rahmenfenster aktualisiert, in denen das Dokument angezeigt wird.
 
-##  <a name="updateallviews"></a>CDocument:: UpdateAllViews
+## <a name="cdocumentupdateallviews"></a><a name="updateallviews"></a>CDocument::UpdateAllViews
 
-Diese Funktion wird aufgerufen, nachdem das Dokument geändert wurde.
+Rufen Sie diese Funktion auf, nachdem das Dokument geändert wurde.
 
 ```
 void UpdateAllViews(
@@ -1233,20 +1233,20 @@ void UpdateAllViews(
 
 ### <a name="parameters"></a>Parameter
 
-*psender*<br/>
-Verweist auf die Ansicht, die das Dokument geändert hat, oder NULL, wenn alle Sichten aktualisiert werden sollen.
+*pSender*<br/>
+Zeigt auf die Ansicht, die das Dokument geändert hat, oder NULL, wenn alle Ansichten aktualisiert werden sollen.
 
 *lHint*<br/>
-Enthält Informationen über die Änderung.
+Enthält Informationen zur Änderung.
 
-*phint*<br/>
+*pHint*<br/>
 Verweist auf ein Objekt, das Informationen über die Änderung speichert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie sollten diese Funktion aufrufen, nachdem Sie die [SetModifiedFlag](#setmodifiedflag) -Member-Funktion aufgerufen haben. Diese Funktion informiert jede Ansicht, die an das Dokument angefügt ist, mit Ausnahme der von *psender*angegebenen Ansicht, dass das Dokument geändert wurde. Diese Funktion wird in der Regel von der Ansichts Klasse aufgerufen, nachdem der Benutzer das Dokument in einer Ansicht geändert hat.
+Sie sollten diese Funktion aufrufen, nachdem Sie die [SetModifiedFlag-Memberfunktion](#setmodifiedflag) aufrufen. Diese Funktion informiert jede dem Dokument zugeordnete Ansicht, mit Ausnahme der von *pSender*angegebenen Ansicht, dass das Dokument geändert wurde. Normalerweise rufen Sie diese Funktion aus Ihrer Ansichtsklasse auf, nachdem der Benutzer das Dokument über eine Ansicht geändert hat.
 
-Diese Funktion Ruft die [CView:: OnUpdate](../../mfc/reference/cview-class.md#onupdate) -Member-Funktion für jede der Dokument Sichten außer der sendenden Ansicht auf, wobei *phint* und *lHint*übergeben werden. Verwenden Sie diese Parameter, um Informationen über die an dem Dokument vorgenommenen Änderungen an die Sichten zu übergeben. Sie können Informationen mithilfe von *lHint* codieren und/oder eine von [CObject](../../mfc/reference/cobject-class.md)abgeleitete Klasse definieren, um Informationen über die Änderungen zu speichern und ein Objekt dieser Klasse mithilfe von *phint*zu übergeben. Überschreiben Sie die `CView::OnUpdate` Member-Funktion in Ihrer [CView](../../mfc/reference/cview-class.md)-abgeleiteten Klasse, um die Aktualisierung der Anzeige der Ansicht auf der Grundlage der übergebenen Informationen zu optimieren.
+Diese Funktion ruft die [CView::OnUpdate-Memberfunktion](../../mfc/reference/cview-class.md#onupdate) für jede der Ansichten des Dokuments mit Ausnahme der sendenden Ansicht, übergeben *pHint* und *lHint*auf. Verwenden Sie diese Parameter, um Informationen zu den Ansichten über die am Dokument vorgenommenen Änderungen zu übermitteln. Sie können Informationen mit *lHint* und/oder [CObject](../../mfc/reference/cobject-class.md)definieren, um Informationen über die Änderungen zu speichern und ein Objekt dieser Klasse mit *pHint*zu übergeben. Überschreiben `CView::OnUpdate` Sie die Memberfunktion in Ihrer [CView](../../mfc/reference/cview-class.md)-derived-Klasse, um die Aktualisierung der Anzeige der Ansicht basierend auf den übergebenen Informationen zu optimieren.
 
 ### <a name="example"></a>Beispiel
 
@@ -1256,7 +1256,7 @@ Diese Funktion Ruft die [CView:: OnUpdate](../../mfc/reference/cview-class.md#on
 
 [MFC-Beispiel MDIDOCVW](../../overview/visual-cpp-samples.md)<br/>
 [MFC-Beispiel SNAPVW](../../overview/visual-cpp-samples.md)<br/>
-[MFC-Beispiel NPP](../../overview/visual-cpp-samples.md)<br/>
+[MFC-Beispiel-NPP](../../overview/visual-cpp-samples.md)<br/>
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [CCmdTarget-Klasse](../../mfc/reference/ccmdtarget-class.md)<br/>

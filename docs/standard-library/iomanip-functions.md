@@ -26,23 +26,23 @@ helpviewer_keywords:
 - std::setiosflags [C++]
 - std::setprecision [C++]
 - std::setw [C++]
-ms.openlocfilehash: 7fd523dc9184ae613cf8a52969a497b6b4761cf6
-ms.sourcegitcommit: eff68e4e82be292a5664616b16a526df3e9d1cda
+ms.openlocfilehash: 0ed59a94c6b1c7d962b566e2a6b186ffb617a26a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80150822"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81375424"
 ---
 # <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt;-Funktionen
 
 ||||
 |-|-|-|
 |[get_money](#iomanip_get_money)|[get_time](#iomanip_get_time)|[put_money](#iomanip_put_money)|
-|[put_time](#iomanip_put_time)|[quoted](#quoted)|[resetiosflags](#resetiosflags)|
-|[setbase](#setbase)|[setfill](#setfill)|[setiosflags](#setiosflags)|
+|[put_time](#iomanip_put_time)|[Zitiert](#quoted)|[resetiosflags](#resetiosflags)|
+|[Setbase](#setbase)|[Setfill](#setfill)|[setiosflags](#setiosflags)|
 |[setprecision](#setprecision)|[setw](#setw)|
 
-## <a name="get_money"></a><a name="iomanip_get_money"></a> get_money
+## <a name="get_money"></a><a name="iomanip_get_money"></a>get_money
 
 Extrahiert mithilfe des gewünschten Formats einen Währungswert aus einem Stream, und gibt den Wert in einem Parameter zurück.
 
@@ -53,19 +53,19 @@ T7 get_money(Money& amount, bool use_intl);
 
 ### <a name="parameters"></a>Parameter
 
-\ *Betrag*
+*Menge*\
 Der extrahierte Währungswert.
 
 *use_intl*\
-Wenn **true**, verwenden Sie das internationale Format. Der Standardwert ist **false**.
+Wenn **true,** verwenden Sie das internationale Format. Der Standardwert ist **false**.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus dem Datenstrom `str`sich als `formatted input function` verhält, die die Element Funktion `get` für die Gebiets Schema-FAC`money_get` ette aufruft, die `str`zugeordnet ist, wobei *use_intl* verwendet wird, um das internationale Format anzugeben. Bei erfolgreicher Ausführung speichert der-Befehl den extrahierten monetären Wert in der *Summe* . Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, `str`das sich beim `formatted input function` Extrahieren aus `get` dem Stream wie `money_get` ein `str`Objekt verhält, das die Memberfunktion für die Gebietsschema-Facette aufruft, die mit zugeordnet ist, wobei *use_intl* verwendet wird, um das internationale Format anzugeben. Bei Erfolg wird der Aufruf in *Höhe* des extrahierten Geldwerts gespeichert. Dann gibt der Manipulator `str` zurück.
 
 `Money` muss Typ `long double` oder eine Instanziierung von `basic_string` sein, das die gleichen Parameter und Merkmale wie `str` aufweist.
 
-## <a name="get_time"></a><a name="iomanip_get_time"></a> get_time
+## <a name="get_time"></a><a name="iomanip_get_time"></a>get_time
 
 Extrahiert einen Zeitwert mithilfe eines gewünschten Formats aus einem Stream. Gibt den Wert als Zeitstruktur in einem Parameter zurück.
 
@@ -84,9 +84,9 @@ Das gewünschte Format, das Sie verwenden, um den Zeitwert zu erhalten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `time_get` gehörige Gebietsschemafacet `str` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `str` gehörige Gebietsschemafacet `time_get` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
 
-## <a name="put_money"></a><a name="iomanip_put_money"></a> put_money
+## <a name="put_money"></a><a name="iomanip_put_money"></a>put_money
 
 Fügt einen Währungswert mithilfe des gewünschten Formats in einen Stream ein.
 
@@ -97,11 +97,11 @@ T8 put_money(const Money& amount, bool use_intl);
 
 ### <a name="parameters"></a>Parameter
 
-\ *Betrag*
+*Menge*\
 Der Währungswert, der in den Stream eingefügt werden soll.
 
 *use_intl*\
-Auf " **true** " festgelegt, wenn der Manipulator das internationale Format verwenden soll, andernfalls " **false** ".
+Wird auf **true** gesetzt, wenn manipulator das internationale Format verwenden soll, **false,** wenn nicht.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -109,11 +109,11 @@ Gibt `str` zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `money_put` gehörige Gebietsschemafacet `str` auf. Bei erfolgreicher Ausführung fügt der-Befehl `amount` entsprechend formatiert ein und verwendet *use_intl* , um das internationale Format und `str.fill()`als Füll Element anzugeben. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `str` gehörige Gebietsschemafacet `money_put` auf. Bei Erfolg wird der `amount` Aufruf entsprechend formatiert eingefügt, indem `str.fill()` *use_intl* verwendet wird, um das internationale Format und als Füllelement anzugeben. Dann gibt der Manipulator `str` zurück.
 
 `Money` muss Typ `long double` oder eine Instanziierung von `basic_string` sein, das die gleichen Parameter und Merkmale wie `str` aufweist.
 
-## <a name="put_time"></a><a name="iomanip_put_time"></a> put_time
+## <a name="put_time"></a><a name="iomanip_put_time"></a>put_time
 
 Schreibt einen Zeitwert mithilfe eines angegebenen Formats von einer Zeitstruktur in einen Stream.
 
@@ -132,9 +132,9 @@ Das gewünschte Format, das Sie verwenden, um den Zeitwert zu schreiben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `put` gehörige Gebietsschema `time_put` die Memberfunktion `str` auf. Die Output-Funktion verwendet *time_ptr* , um die Zeitstruktur anzugeben, und *time_format* , um den Anfang einer null-terminierten Format Zeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
+Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `str` gehörige Gebietsschema `time_put` die Memberfunktion `put` auf. Die Ausgabefunktion verwendet *time_ptr,* um die Zeitstruktur anzugeben, und *time_format,* um den Anfang einer null-terminierten Formatzeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
 
-## <a name="quoted"></a><a name="quoted"></a> quoted
+## <a name="quoted"></a><a name="quoted"></a>Zitiert
 
 **(Neu in C++14)** Ein iostream-Manipulator, der mithilfe der Operatoren „>>“ und „<<“ praktisches Roundtripping von Zeichenfolgen in und aus Streams ermöglicht.
 
@@ -148,12 +148,12 @@ quoted(const char* str, char delimiter, char escape) // or wide versions
 ### <a name="parameters"></a>Parameter
 
 *Str*\
-Eine Std:: String-, char\*-, Zeichenfolgenliteralzeichen oder unformatierte Zeichen folgen Literale oder eine breite Version von diesen (z. b. Std:: wstring, wchar_t\*).
+A std::string,\*char , string literal oder raw string literal oder eine wide version of any\*of these (z. B. std::wstring, wchar_t ).
 
-*Trenn* Zeichen\
+*Trennzeichen*\
 Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Trennzeichen für den Anfang und das Ende der Zeichenfolge verwendet wird.
 
-*Escape* -\
+*Flucht*\
 Ein benutzerdefiniertes Zeichen oder Breitzeichen, das als Escapezeichen für Escapesequenzen in der Zeichenfolge verwendet wird.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -301,7 +301,7 @@ Press Enter to exit
 */
 ```
 
-## <a name="resetiosflags"></a><a name="resetiosflags"></a> resetiosflags
+## <a name="resetiosflags"></a><a name="resetiosflags"></a>resetiosflags
 
 Löscht die angegebenen Flags.
 
@@ -311,18 +311,18 @@ T1 resetiosflags(ios_base::fmtflags mask);
 
 ### <a name="parameters"></a>Parameter
 
-*Masken*\
+*Maske*\
 Die zu löschenden Flags.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream-`str``str.`[Setf](../standard-library/ios-base-class.md#setf)`(ios_base::`-" [f](../standard-library/ios-base-class.md#fmtflags) "-`, mask)`aufruft und dann `str`zurückgibt.
+Der Manipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.`aus dem Stream [setf](../standard-library/ios-base-class.md#setf)`(ios_base::`[fmtflags](../standard-library/ios-base-class.md#fmtflags)`, mask)`aufruft und dann zurückgibt. `str`
 
 ### <a name="example"></a>Beispiel
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `resetiosflags`.
 
-## <a name="setbase"></a><a name="setbase"></a> setbase
+## <a name="setbase"></a><a name="setbase"></a>Setbase
 
 Legt die Basis für Ganzzahlen fest.
 
@@ -332,26 +332,26 @@ T3 setbase(int base);
 
 ### <a name="parameters"></a>Parameter
 
-*base*\
+*Basis*\
 Die Zahlenbasis.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.setf(mask,` [ios_base:: basefield](../standard-library/ios-base-class.md#fmtflags) -`)`aufruft und dann `str`zurückgibt. Hier wird `mask` wie folgt bestimmt:
+Der Manipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.setf(mask,` aus dem Stream [ios_base::basefield](../standard-library/ios-base-class.md#fmtflags)`)`aufruft und dann zurückgibt. `str` Hier `mask` wird wie folgt bestimmt:
 
-- Wenn *Base* 8 ist, wird `mask` `ios_base::`[Oct](../standard-library/ios-functions.md#oct).
+- Wenn *Basis* 8 `mask` ist, dann ist `ios_base::` [oct](../standard-library/ios-functions.md#oct).
 
-- Wenn *Base* den Wert 10 hat, wird Mask `ios_base::`[Dec](../standard-library/ios-functions.md#dec).
+- Wenn *Basis* 10 ist, `ios_base::`dann ist Maske [dec](../standard-library/ios-functions.md#dec).
 
-- Wenn *Base* den Wert 16 hat, wird `mask` `ios_base::`[Hex](../standard-library/ios-functions.md#hex).
+- Wenn *Basis* 16 `mask` ist, dann ist `ios_base::` [hex](../standard-library/ios-functions.md#hex).
 
-- Wenn *Base* ein beliebiger anderer Wert ist, wird mask [`ios_base::``(0)`](../standard-library/ios-base-class.md#fmtflags) .
+- Wenn *Base* ein anderer Wert `ios_base::`ist, dann mask ist [fmtflags](../standard-library/ios-base-class.md#fmtflags)`(0)`.
 
 ### <a name="example"></a>Beispiel
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setbase`.
 
-## <a name="setfill"></a><a name="setfill"></a> setfill
+## <a name="setfill"></a><a name="setfill"></a>Setfill
 
 Legt das zum Auffüllen in einer rechts ausgerichteten Anzeige verwendete Zeichen fest.
 
@@ -362,18 +362,18 @@ T4 setfill(Elem Ch);
 
 ### <a name="parameters"></a>Parameter
 
-*Ch* -\
+*Ch*\
 Das zum Auffüllen in einer rechts ausgerichteten Anzeige verwendete Zeichen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Vorlagen Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Fill](../standard-library/basic-ios-class.md#fill)`(Ch)`aufruft und dann `str`zurückgibt. Der Typ `Elem` muss mit dem Elementtyp für den Stream `str`identisch sein.
+Der Vorlagenmanipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.`aus dem `str`Stream [fill](../standard-library/basic-ios-class.md#fill)`(Ch)`aufruft und dann zurückgibt. Der `Elem` Typ muss mit dem Elementtyp `str`für den Stream identisch sein.
 
 ### <a name="example"></a>Beispiel
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setfill`.
 
-## <a name="setiosflags"></a><a name="setiosflags"></a> setiosflags
+## <a name="setiosflags"></a><a name="setiosflags"></a>setiosflags
 
 Legt die angegebenen Flags fest.
 
@@ -383,18 +383,18 @@ T2 setiosflags(ios_base::fmtflags mask);
 
 ### <a name="parameters"></a>Parameter
 
-*Masken*\
+*Maske*\
 Die festzulegenden Flags.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Setf](../standard-library/ios-base-class.md#setf) -`(mask)`aufruft und dann `str`zurückgibt.
+Der Manipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.`aus dem Stream `str` [setf](../standard-library/ios-base-class.md#setf)`(mask)`aufruft und dann zurückgibt.
 
 ### <a name="example"></a>Beispiel
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setiosflags`.
 
-## <a name="setprecision"></a><a name="setprecision"></a> setprecision
+## <a name="setprecision"></a><a name="setprecision"></a>Setprecision
 
 Legt die Genauigkeit für Gleitkommawerte fest.
 
@@ -404,18 +404,18 @@ T5 setprecision(streamsize Prec);
 
 ### <a name="parameters"></a>Parameter
 
-*Prec* -\
+*Prec*\
 Die Genauigkeit für Gleitkommawerte.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Genauigkeits](../standard-library/ios-base-class.md#precision)`(Prec)`aufruft und dann `str`zurückgibt.
+Der Manipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.`aus dem `str`Stream precision [aufruft](../standard-library/ios-base-class.md#precision)`(Prec)`und dann zurückgibt.
 
 ### <a name="example"></a>Beispiel
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setprecision`.
 
-## <a name="setw"></a><a name="setw"></a> setw
+## <a name="setw"></a><a name="setw"></a>Setw
 
 Gibt die Breite des Anzeigefelds für das nächste Element im Stream an.
 
@@ -425,12 +425,12 @@ T6 setw(streamsize Wide);
 
 ### <a name="parameters"></a>Parameter
 
-*Breit*\
+*Breite*\
 Die Breite des Anzeigefelds.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen in den Stream `str``str.`[Breite](../standard-library/ios-base-class.md#width)`(Wide)`aufruft und dann `str`zurückgibt.
+Der Manipulator gibt ein Objekt zurück, das beim `str`Extrahieren `str.`aus dem `str`Stream width [aufruft](../standard-library/ios-base-class.md#width)`(Wide)`und dann zurückgibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -651,6 +651,6 @@ l4 = 4096
 l5 = 65536
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<iomanip>](../standard-library/iomanip.md)

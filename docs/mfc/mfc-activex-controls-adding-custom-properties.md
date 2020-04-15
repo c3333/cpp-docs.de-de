@@ -5,48 +5,48 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], properties
 - properties [MFC], custom
 ms.assetid: 85af5167-74c7-427b-b8f3-e0d7b73942e5
-ms.openlocfilehash: e02d5523b894f89aa93c8d2765a128920afa2353
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 00f7a879582bca562ce626fe224206094fd19bc7
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392777"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364700"
 ---
 # <a name="mfc-activex-controls-adding-custom-properties"></a>MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Eigenschaften
 
-Benutzerdefinierte Eigenschaften unterscheiden sich von vordefinierten Eigenschaften, da benutzerdefinierte Eigenschaften von noch nicht implementiert werden die `COleControl` Klasse. Eine benutzerdefinierte Eigenschaft wird verwendet, um einen bestimmten Zustand oder die Darstellung von ein ActiveX-Steuerelement ein Programmierer, die mit dem Steuerelement verfügbar zu machen.
+Benutzerdefinierte Eigenschaften unterscheiden sich von Bestandseigenschaften dadurch, dass benutzerdefinierte Eigenschaften nicht bereits von der `COleControl` Klasse implementiert wurden. Eine benutzerdefinierte Eigenschaft wird verwendet, um einen bestimmten Status oder eine bestimmte Darstellung eines ActiveX-Steuerelements für einen Programmierer verfügbar zu machen, der das Steuerelement verwendet.
 
-In diesem Artikel wird beschrieben, wie eine benutzerdefinierte Eigenschaft hinzuzufügen, klicken Sie auf das ActiveX-Steuerelement mit dem Assistenten zum Hinzufügen von Eigenschaften und erläutert, die sich ergebende codeänderungen. Folgende Themen werden behandelt:
+In diesem Artikel wird beschrieben, wie Sie dem ActiveX-Steuerelement mithilfe des Assistenten zum Hinzufügen von Eigenschaften eine benutzerdefinierte Eigenschaft hinzufügen und die resultierenden Codeänderungen erklären. Dabei werden folgende Themen behandelt:
 
-- [Verwenden den Assistenten zum Hinzufügen einer Eigenschaft zum Hinzufügen einer benutzerdefinierten Eigenschaft](#_core_using_classwizard_to_add_a_custom_property)
+- [Verwenden des Assistenten zum Hinzufügen von Eigenschaften zum Hinzufügen einer benutzerdefinierten Eigenschaft](#_core_using_classwizard_to_add_a_custom_property)
 
-- [Änderungen der Eigenschaft-Assistenten für benutzerdefinierte Eigenschaften hinzuzufügen](#_core_classwizard_changes_for_custom_properties)
+- [Eigenschaften-Assistenten-Änderungen für benutzerdefinierte Eigenschaften hinzufügen](#_core_classwizard_changes_for_custom_properties)
 
-Benutzerdefinierte Eigenschaften sind in vier Arten von Implementierung: Member-Variable, die Member-Variable mit der Benachrichtigung "," Get/Set-Methoden, als auch parametrisierte.
+Benutzerdefinierte Eigenschaften sind in vier Implementierungsvarianten erhältlich: Membervariable, Membervariable mit Benachrichtigung, Ab/Set-Methoden und Parameterized.
 
-- Implementierung des Schnittstellenmembers Variable
+- Implementierung von Membervariablen
 
-   Diese Implementierung stellt der Zustand der Eigenschaft als eine Membervariable in der Steuerelementklasse dar. Verwenden Sie die Membervariablen Implementierung, wenn es nicht wichtig zu wissen, wenn der Eigenschaftswert geändert wird. Die drei Typen erstellt diese Implementierung Mindestmaß an Code für die Unterstützung für die Eigenschaft an. Ist das Makro für Dispatch den Eintrag für die Implementierung des Schnittstellenmembers Variable [DISP_PROPERTY](../mfc/reference/dispatch-maps.md#disp_property).
+   Diese Implementierung stellt den Status der Eigenschaft als Membervariable in der Steuerelementklasse dar. Verwenden Sie die Membervariable-Implementierung, wenn es nicht wichtig ist zu wissen, wann sich der Eigenschaftswert ändert. Von den drei Typen erstellt diese Implementierung den geringsten Supportcode für die Eigenschaft. Das Dispatch-Map-Eintragsmakro für die Implementierung der Membervariablen ist [DISP_PROPERTY](../mfc/reference/dispatch-maps.md#disp_property).
 
-- Membervariablen Notification-Implementierung
+- Mitgliedsvariable mit Benachrichtigungsimplementierung
 
-   Diese Implementierung besteht aus einer Membervariablen gespeichert und eine Benachrichtigungsfunktion, die durch den Assistenten zum Hinzufügen einer Eigenschaft erstellt. Die Benachrichtigungsfunktion wird automatisch durch das Framework nach der Änderung der Eigenschaft-Wert aufgerufen werden. Verwenden Sie die Membervariablen durch Implementierung der Benachrichtigung, wenn Sie müssen benachrichtigt werden, nachdem sich ein Eigenschaftswert geändert hat. Diese Implementierung ist mehr Zeit erforderlich, da es sich um einen Funktionsaufruf erfordert. Das Makro für Dispatch den Eintrag für diese Implementierung wird [DISP_PROPERTY_NOTIFY](../mfc/reference/dispatch-maps.md#disp_property_notify).
+   Diese Implementierung besteht aus einer Membervariablen und einer Benachrichtigungsfunktion, die vom Add Property Wizard erstellt wurde. Die Benachrichtigungsfunktion wird automatisch vom Framework aufgerufen, nachdem sich der Eigenschaftswert geändert hat. Verwenden Sie die Membervariable mit Benachrichtigungsimplementierung, wenn Sie benachrichtigt werden müssen, nachdem sich ein Eigenschaftswert geändert hat. Diese Implementierung erfordert mehr Zeit, da sie einen Funktionsaufruf erfordert. Das Dispatch-Map-Eintragsmakro für diese Implementierung ist [DISP_PROPERTY_NOTIFY](../mfc/reference/dispatch-maps.md#disp_property_notify).
 
-- Get/Set-Methoden-Implementierung
+- Implementierung von Abrufen/Festlegen von Methoden
 
-   Diese Implementierung besteht aus einem Paar von Memberfunktionen in der Control-Klasse. Die Get/Set-Methoden Implementierung ruft automatisch die Get-Member-Funktion, wenn der Benutzer des Steuerelements auf den aktuellen Wert der Eigenschaft anfordert und die Set-Member-Funktion, wenn der Benutzer des Steuerelements fordert, dass die Eigenschaft geändert werden. Verwenden Sie diese Implementierung, wenn zum Berechnen des Wert einer Eigenschaft während der Laufzeit einen Benutzer des Steuerelements vor dem Ändern der tatsächlichen-Eigenschaft übergebenen Wert überprüfen, oder einen Lese- oder Schreibzugriff nur - Eigenschaftentyp implementieren. Das Makro für Dispatch den Eintrag für diese Implementierung wird [DISP_PROPERTY_EX](../mfc/reference/dispatch-maps.md#disp_property_ex). Im folgenden Abschnitt [mithilfe des Assistenten zum Hinzufügen von Eigenschaften zum Hinzufügen einer benutzerdefinierten Eigenschaft](#_core_using_classwizard_to_add_a_custom_property), verwendet die benutzerdefinierte CircleOffset-Eigenschaft dieser Implementierung veranschaulicht.
+   Diese Implementierung besteht aus einem Paar von Memberfunktionen in der Steuerelementklasse. Die Implementierung "Methoden abrufen/Festlegen" ruft automatisch die Memberfunktion Abrufen auf, wenn der Benutzer des Steuerelements den aktuellen Wert der Eigenschaft und die Elementfunktion Festlegen anfordert, wenn der Benutzer des Steuerelements anfordert, dass die Eigenschaft geändert wird. Verwenden Sie diese Implementierung, wenn Sie den Wert einer Eigenschaft während der Laufzeit berechnen, einen vom Benutzer des Steuerelements übergebenen Wert überprüfen müssen, bevor Sie die tatsächliche Eigenschaft ändern, oder einen Schreib- oder Schreibeigenschaftstyp implementieren. Das Dispatch-Map-Eintragsmakro für diese Implementierung ist [DISP_PROPERTY_EX](../mfc/reference/dispatch-maps.md#disp_property_ex). Im folgenden Abschnitt verwendet [der Assistent zum Hinzufügen einer benutzerdefinierten Eigenschaft](#_core_using_classwizard_to_add_a_custom_property)die benutzerdefinierte CircleOffset-Eigenschaft, um diese Implementierung zu demonstrieren.
 
-- Parametrisierte Implementierung
+- Parametrierte Implementierung
 
-   Parametrisierte Implementierung wird von der Assistent zum Hinzufügen von Eigenschaften unterstützt. Eine parametrisierte Eigenschaft (manchmal als "eine Array-Eigenschaft" bezeichnet) kann verwendet werden, um einen Satz von Werten über eine einzelne Eigenschaft Ihres Steuerelements zugreifen. Das Makro für Dispatch den Eintrag für diese Implementierung ist DISP_PROPERTY_PARAM. Weitere Informationen zur Implementierung dieses Typs finden Sie unter [Implementieren einer parametrisierten Eigenschaft](../mfc/mfc-activex-controls-advanced-topics.md) in diesem Artikel ActiveX-Steuerelemente: Weiterführende Themen.
+   Die parametrisierte Implementierung wird vom Add Property Wizard unterstützt. Eine parametrisierte Eigenschaft (manchmal auch als Eigenschaftsarray bezeichnet) kann verwendet werden, um über eine einzelne Eigenschaft des Steuerelements auf einen Satz von Werten zuzugreifen. Das Dispatch-Map-Eintragsmakro für diese Implementierung ist DISP_PROPERTY_PARAM. Weitere Informationen zum Implementieren dieses Typs finden Sie unter [Implementieren einer Parametrierten Eigenschaft](../mfc/mfc-activex-controls-advanced-topics.md) im Artikel ActiveX-Steuerelemente: Erweiterte Themen.
 
-##  <a name="_core_using_classwizard_to_add_a_custom_property"></a> Mithilfe der Eigenschaft Assistenten zum Hinzufügen zum Hinzufügen einer benutzerdefinierten Eigenschaft
+## <a name="using-the-add-property-wizard-to-add-a-custom-property"></a><a name="_core_using_classwizard_to_add_a_custom_property"></a>Verwenden des Eigenschaften-Assistenten hinzufügen zum Hinzufügen einer benutzerdefinierten Eigenschaft
 
-Das folgende Verfahren veranschaulicht das Hinzufügen einer benutzerdefinierten Eigenschaft, CircleOffset, die die Implementierung der Get/Set-Methoden verwendet. Die benutzerdefinierte CircleOffset-Eigenschaft kann Benutzer für den Kreis aus der Mitte des umschließenden Rechtecks des Steuerelements den offset des Steuerelements. Das Verfahren zum Hinzufügen von benutzerdefinierten Eigenschaften mit einer Implementierung als Get/Set-Methoden ist sehr ähnlich.
+Das folgende Verfahren veranschaulicht das Hinzufügen einer benutzerdefinierten Eigenschaft, CircleOffset, die die Get/Set Methods-Implementierung verwendet. Die benutzerdefinierte CircleOffset-Eigenschaft ermöglicht es dem Benutzer des Steuerelements, den Kreis von der Mitte des umgebenden Rechtecks des Steuerelements zu verrechnen. Das Verfahren zum Hinzufügen benutzerdefinierter Eigenschaften mit einer anderen Implementierung als Get/Set-Methoden ist sehr ähnlich.
 
-Dieses Verfahren kann auch verwendet werden, um weitere benutzerdefinierten Eigenschaften hinzufügen. Ersetzen Sie Ihr benutzerdefinierter Eigenschaftenname für die CircleOffset Eigenschaftennamen und Parameter.
+Das gleiche Verfahren kann auch verwendet werden, um andere benutzerdefinierte Eigenschaften hinzuzufügen, die Sie möchten. Ersetzen Sie Ihren benutzerdefinierten Eigenschaftsnamen durch den CircleOffset-Eigenschaftsnamen und die Parameter.
 
-#### <a name="to-add-the-circleoffset-custom-property-using-the-add-property-wizard"></a>Zum Hinzufügen der benutzerdefinierten CircleOffset-Eigenschaft, die mithilfe des Assistenten zum Hinzufügen von Eigenschaften
+#### <a name="to-add-the-circleoffset-custom-property-using-the-add-property-wizard"></a>So fügen Sie die benutzerdefinierte CircleOffset-Eigenschaft mithilfe des Eigenschaften-Assistenten hinzufügen hinzu
 
 1. Laden Sie das Steuerelementprojekt.
 
@@ -54,43 +54,43 @@ Dieses Verfahren kann auch verwendet werden, um weitere benutzerdefinierten Eige
 
 1. Klicken Sie mit der rechten Maustaste auf den Schnittstellenknoten des Steuerelements (den zweiten Knoten des Bibliotheksknotens), um das Kontextmenü zu öffnen.
 
-1. Klicken Sie im Kontextmenü auf **hinzufügen** , und klicken Sie dann auf **Eigenschaft hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** und dann auf **Eigenschaft hinzufügen**.
 
-   Daraufhin wird die [Assistent zum Hinzufügen von Eigenschaften](../ide/names-add-property-wizard.md).
+   Dadurch wird der [Eigenschaften-Assistent hinzufügen](../ide/names-add-property-wizard.md)geöffnet.
 
-1. In der **Eigenschaftennamen** geben *CircleOffset*.
+1. Geben Sie im Feld **Eigenschaftenname** *CircleOffset*ein.
 
 1. Klicken Sie unter **Implementierungstyp**auf **Get/Set-Methoden**.
 
-1. In der **Eigenschaftentyp** Kontrollkästchen **kurze**.
+1. Wählen Sie im Feld **Eigenschaftentyp** **kurze**aus.
 
-1. Geben Sie eindeutige Namen für die Get- und Set-Funktion, oder übernehmen Sie die Standardnamen.
+1. Geben Sie eindeutige Namen für Ihre Get- und Set-Funktionen ein, oder akzeptieren Sie die Standardnamen.
 
-9. Klicken Sie auf **Fertig stellen**.
+1. Klicken Sie auf **Fertig stellen**.
 
-##  <a name="_core_classwizard_changes_for_custom_properties"></a> Hinzufügen von Eigenschaftenänderungen-Assistenten für benutzerdefinierte Eigenschaften
+## <a name="add-property-wizard-changes-for-custom-properties"></a><a name="_core_classwizard_changes_for_custom_properties"></a>Eigenschaften-Assistenten-Änderungen für benutzerdefinierte Eigenschaften hinzufügen
 
-Wenn Sie die benutzerdefinierte CircleOffset-Eigenschaft hinzufügen, nimmt der Assistent zum Hinzufügen von Eigenschaften Änderungen an den Header (. H) und die Implementierung (. CPP)-Dateien von der Control-Klasse.
+Wenn Sie die benutzerdefinierte CircleOffset-Eigenschaft hinzufügen, nimmt der Eigenschaften-Assistent zum Hinzufügen Änderungen am Header (. H) und die Umsetzung (. CPP)-Dateien der Kontrollklasse.
 
-Die folgenden Zeilen werden hinzugefügt, um die. H-Datei, um zwei aufgerufenen Funktionen zu deklarieren `GetCircleOffset` und `SetCircleOffset`:
+Die folgenden Zeilen werden der hinzugefügt. H-Datei, um `GetCircleOffset` zwei `SetCircleOffset`aufgerufene Funktionen zu deklarieren und:
 
 [!code-cpp[NVC_MFC_AxUI#25](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_1.h)]
 
-Des Steuerelements wird die folgende Zeile hinzugefügt. IDL-Datei:
+Die folgende Zeile wird der . IDL-Datei:
 
 [!code-cpp[NVC_MFC_AxUI#26](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_2.idl)]
 
-Diese Zeile weist der CircleOffset-Eigenschaft eine bestimmte ID-Nummer, stammt von der Position der Methode in der Liste von Methoden und Eigenschaften von den Assistenten zum Hinzufügen einer Eigenschaft an.
+Diese Zeile weist der CircleOffset-Eigenschaft eine bestimmte ID-Nummer zu, die von der Position der Methode in der Methoden- und Eigenschaftenliste des Eigenschaften-Assistenten hinzufügen übernommen wird.
 
-Darüber hinaus wird die folgende Zeile hinzugefügt, um die Dispatchzuordnung (in der. CPP-Datei von der Control-Klasse) zum Zuordnen der CircleOffset-Eigenschaft des Steuerelements zwei Handler Funktionen:
+Darüber hinaus wird der Dispatch-Map die folgende Zeile hinzugefügt (im . CPP-Datei der Steuerelementklasse), um die CircleOffset-Eigenschaft den beiden Handlerfunktionen des Steuerelements zuzuordnen:
 
 [!code-cpp[NVC_MFC_AxUI#27](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_3.cpp)]
 
-Zum Schluss die Implementierungen der `GetCircleOffset` und `SetCircleOffset` Funktionen wurden hinzugefügt, bis zum Ende des Steuerelements. CPP-Datei. In den meisten Fällen ändern Sie die Get-Funktion, um den Wert der Eigenschaft zurückzugeben. Die Set-Funktion wird in der Regel Code enthalten, die entweder vor oder nach der Änderung der Eigenschaft ausgeführt werden soll.
+Schließlich werden die Implementierungen der `GetCircleOffset` und `SetCircleOffset` Funktionen am Ende des Steuerelements hinzugefügt. CPP-Datei. In den meisten Fällen ändern Sie die Get-Funktion, um den Wert der Eigenschaft zurückzugeben. Die Set-Funktion enthält in der Regel Code, der entweder vor oder nach den Änderungen der Eigenschaft ausgeführt werden soll.
 
 [!code-cpp[NVC_MFC_AxUI#28](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_4.cpp)]
 
-Beachten Sie, dass der Assistent zum Hinzufügen von Eigenschaften automatisch zu einen Aufruf fügt [SetModifiedFlag](../mfc/reference/colecontrol-class.md#setmodifiedflag), in den Hauptteil der Funktion. Das Aufrufen dieser Funktion markiert das Steuerelement als geändert. Wenn ein Steuerelement geändert wurde, wird sein neue Status gespeichert werden, wenn der Container gespeichert wird. Diese Funktion sollte aufgerufen werden, wenn sich eine Eigenschaft, die als Teil des persistenten Status des Steuerelements gespeichert Wert ändert.
+Beachten Sie, dass der Assistent zum Hinzufügen von Eigenschaften automatisch einen Aufruf zu [SetModifiedFlag](../mfc/reference/colecontrol-class.md#setmodifiedflag)zum Text körperder Funktion Festlegen hinzufügt. Wenn Sie diese Funktion aufrufen, wird das Steuerelement als geändert markiert. Wenn ein Steuerelement geändert wurde, wird sein neuer Status gespeichert, wenn der Container gespeichert wird. Diese Funktion sollte aufgerufen werden, wenn eine Eigenschaft, die als Teil des persistenten Zustands des Steuerelements gespeichert wird, den Wert ändert.
 
 ## <a name="see-also"></a>Siehe auch
 

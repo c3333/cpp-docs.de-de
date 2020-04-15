@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cpp.stop
 - Class View, hint file
 ms.assetid: 17194f66-cf62-4523-abec-77db0675ab65
-ms.openlocfilehash: de299f17686d68956e9847d47743d8931734d4ad
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 8037cb8025cc85a8479528490e1512531cbcc035
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80075202"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81322310"
 ---
 # <a name="hint-files"></a>Hinweisdateien
 
@@ -36,8 +36,9 @@ Eine Hinweisdatei enthält vom Benutzer anpassbare Hinweise, die die gleiche Syn
 
 > [!IMPORTANT]
 > Wenn Sie eine Hinweisdatei ändern oder hinzufügen, sind zusätzliche Schritte erforderlich, damit die Änderungen wirksam werden:
-> - In Versionen vor Visual Studio 2017 Version 15,6: Löschen Sie die SDF-Datei und/oder die VC. DB-Datei in der Projekt Mappe für alle Änderungen.
-> - In Visual Studio 2017 Version 15,6 und höher: Schließen Sie die Projekt Mappe, und öffnen Sie Sie nach dem Hinzufügen neuer Hinweis Dateien erneut.
+>
+> - In Versionen vor Visual Studio 2017 Version 15.6: Löschen Sie die .sdf-Datei und/oder VC.db-Datei in der Projektmappe für alle Änderungen.
+> - In Visual Studio 2017 Version 15.6 und höher: Schließen und öffnen Sie die Lösung nach dem Hinzufügen neuer Hinweisdateien erneut.
 
 ## <a name="scenario"></a>Szenario
 
@@ -92,17 +93,17 @@ Ab Version 15.8 von Visual Studio 2017 gibt es verschiedene Features, mit denen 
 
 - Mit einer Schnellaktion kann eine Hinweisdatei erstellt werden, die das hervorgehobene Makro einschließt. Wenn bereits eine Hinweisdatei vorhanden ist, kann ihr mit einer anderen Schnellaktion das Makro hinzugefügt werden.
 
-![Hervorgehobenes Makro.](media/hint-squiggle-and-actions.png "Hinweis Wellenlinie und schnelle Aktionen")
+![Hervorgehobenes Makro.](media/hint-squiggle-and-actions.png "Hinweis-Squiggle und schnelle Aktionen")
 
 Nach dem Ausführen einer der beiden Schnellaktionen analysiert der Parser die Dateien neu, die von der Hinweisdatei betroffen sind.
 
-Standardmäßig wird das störende Makro als Vorschlag hervorgehoben. Die Hervorhebung kann beispielsweise durch eine grüne oder rote Wellenlinie so angepasst werden, dass sie deutlicher zu sehen ist. Verwenden Sie dazu unter **Extras**Optionen > Text-Editor > C/C++ > Ansicht**im Abschnitt**Wellenlinien im Code >  die Option **Makros in übersprungenen Suchbereichen**.
+Standardmäßig wird das störende Makro als Vorschlag hervorgehoben. Die Hervorhebung kann beispielsweise durch eine grüne oder rote Wellenlinie so angepasst werden, dass sie deutlicher zu sehen ist. Verwenden Sie dazu unter **Extras** > **Optionen** > **Text-Editor** > **C/C++** > **Ansicht** im Abschnitt **Wellenlinien im Code** die Option **Makros in übersprungenen Suchbereichen**.
 
-![Makros in ausgelassene browserregions-Option.](media/skipped-regions-squiggle-option.png "Übersprungene Regions Wellen-Option.")
+![Makros in der Option Übersprungene Browsing-Regionen.](media/skipped-regions-squiggle-option.png "Übersprungene Bereiche squiggle Option.")
 
 ## <a name="display-browsing-database-errors"></a>Anzeigen von Fehlern beim Durchsuchen der Datenbank
 
-Über den Menübefehl **Projekt** > **Fehler beim Durchsuchen der Datenbank anzeigen** werden in der **Fehlerliste** alle Bereiche angezeigt, die nicht analysiert werden konnten. Der Befehl dient dazu, die Erstellung der Hinweisdatei zu optimieren. Vom Parser kann jedoch nicht ermittelt werden, ob die Ursache des Fehlers ein störendes Makro ist. Sie müssen daher jeden Fehler einzeln analysieren. Führen Sie den Befehl **Fehler beim Durchsuchen der Datenbank anzeigen** aus, und navigieren Sie zu jedem Fehler, um die betroffene Datei im Editor zu laden. Wenn sich Makros im Bereich befinden, werden sie hervorgehoben. Sie können diese mit Schnellaktionen einer Hinweisdatei hinzufügen. Nach einem Update der Hinweisdatei wird die Fehlerliste automatisch aktualisiert. Wenn Sie die Hinweisdatei manuell ändern, können Sie mit dem Befehl **Projektmappe neu prüfen** ein Update auslösen.
+Der Menübefehl **Projektanzeige** > **Browsing Database Errors** zeigt alle Bereiche an, die in der **Fehlerliste**nicht analysiert werden konnten. Der Befehl dient dazu, die Erstellung der Hinweisdatei zu optimieren. Vom Parser kann jedoch nicht ermittelt werden, ob die Ursache des Fehlers ein störendes Makro ist. Sie müssen daher jeden Fehler einzeln analysieren. Führen Sie den Befehl **Fehler beim Durchsuchen der Datenbank anzeigen** aus, und navigieren Sie zu jedem Fehler, um die betroffene Datei im Editor zu laden. Wenn sich Makros im Bereich befinden, werden sie hervorgehoben. Sie können diese mit Schnellaktionen einer Hinweisdatei hinzufügen. Nach einem Update der Hinweisdatei wird die Fehlerliste automatisch aktualisiert. Wenn Sie die Hinweisdatei manuell ändern, können Sie mit dem Befehl **Projektmappe neu prüfen** ein Update auslösen.
 
 ## <a name="architecture"></a>Aufbau
 
@@ -150,11 +151,11 @@ Für Hinweise wird die folgende Syntax verwendet:
 
 |Syntax|Bedeutung|
 |------------|-------------|
-|`#define` von *Hint-Name* *-Zeichenfolge*<br /><br /> `#define` *Hint-Name* `(` *Parameter*,...`)` *-Ersetzungs Zeichenfolge*|Eine Präprozessordirektive, die einen neuen Hinweis definiert oder einen vorhandenen Hinweis neu definiert. Nach der Direktive ersetzt der Präprozessor jedes Vorkommen von *Hinweisname* im Quellcode mit *Ersatzzeichenfolge*.<br /><br /> Durch das zweite Syntaxformat wird ein funktionsähnlicher Hinweis definiert. Wenn ein funktionsähnlicher Hinweis im Quellcode vorkommt, ersetzt der Präprozessor zunächst jedes Vorkommen von *Parameter* in *Ersatzzeichenfolge* mit dem entsprechenden Argument im Quellcode. Anschließend wird *Hinweisname* durch *Ersatzzeichenfolge* ersetzt.|
+|`#define` *Hinweisname* *Ersatzzeichenfolge*<br /><br /> `#define` *Hinweisname* `(` *Parameter*, ...`)`*Ersatzzeichenfolge*|Eine Präprozessordirektive, die einen neuen Hinweis definiert oder einen vorhandenen Hinweis neu definiert. Nach der Direktive ersetzt der Präprozessor jedes Vorkommen von *Hinweisname* im Quellcode mit *Ersatzzeichenfolge*.<br /><br /> Durch das zweite Syntaxformat wird ein funktionsähnlicher Hinweis definiert. Wenn ein funktionsähnlicher Hinweis im Quellcode vorkommt, ersetzt der Präprozessor zunächst jedes Vorkommen von *Parameter* in *Ersatzzeichenfolge* mit dem entsprechenden Argument im Quellcode. Anschließend wird *Hinweisname* durch *Ersatzzeichenfolge* ersetzt.|
 |`@<`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die den Anfang von einer Reihe von Zuordnungselementen definiert.|
 |`@=`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die ein Zwischenzuordnungselement definiert. Eine Zuordnung kann mehrere Zuordnungselemente enthalten.|
 |`@>`|Eine für Hinweisdateien spezifische *Ersatzzeichenfolge*, die das Ende von einer Reihe von Zuordnungselementen definiert.|
-|`#undef` *Hint-Name*|Die Präprozessordirektive, die einen vorhandenen Hinweis löscht. Der Name des Hinweises wird durch den Bezeichner *Hinweisname* bereitgestellt.|
+|`#undef` *Hinweisname*|Die Präprozessordirektive, die einen vorhandenen Hinweis löscht. Der Name des Hinweises wird durch den Bezeichner *Hinweisname* bereitgestellt.|
 |`//` *Kommentar*|Ein einzeiliger Kommentar.|
 |`/*` *Kommentar* `*/`|Ein mehrzeiliger Kommentar.|
 
@@ -166,7 +167,7 @@ Die Abbildung stellt einige der physischen Verzeichnisse in einem Visual Studio 
 
 ### <a name="hint-file-directories"></a>Hinweisdateiverzeichnisse
 
-![Allgemeine und Projekt&#45;spezifische Hinweis Datei Verzeichnisse.](media/hintfile.png "Hintfile")
+![Allgemeines und Projekt&#45;spezifische Hinweisdateiverzeichnisse.](media/hintfile.png "HintFile")
 
 ### <a name="directories-and-hint-file-contents"></a>Verzeichnisse und Hinweisdateiinhalte
 
@@ -242,9 +243,9 @@ Die folgenden Hinweise gelten für die vorangehende Liste:
 
 - Der Hinweis `#undef` im Verzeichnis `A2` hat die Hinweise für `OBRACE` und `CBRACE` aus der Verzeichnishinweisdatei `Debug` gelöscht.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Für Visual Studio C++-Projekte erstellte Dateitypen](file-types-created-for-visual-cpp-projects.md)<br>
 [#define-Direktive (C/C++)](../../preprocessor/hash-define-directive-c-cpp.md)<br>
-[#undef-Direktive (C/C++)](../../preprocessor/hash-undef-directive-c-cpp.md)<br>
-[SAL-Anmerkungen](../../c-runtime-library/sal-annotations.md)<br>
+[#undef Richtlinie (C/C++)](../../preprocessor/hash-undef-directive-c-cpp.md)<br>
+[SAL Anmerkungen](../../c-runtime-library/sal-annotations.md)<br>

@@ -23,19 +23,19 @@ helpviewer_keywords:
 - unlock function
 - _unlock function
 ms.assetid: 2eda2507-a134-4997-aa12-f2f8cb319e14
-ms.openlocfilehash: 5535b19a2419bf58f22bc39d87fc615c19265cd4
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
-ms.translationtype: HT
+ms.openlocfilehash: 185cb1e5f582fd5eeb1dbcb337c402319ab78f00
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957259"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365689"
 ---
 # <a name="_unlock"></a>_unlock
 
 Gibt eine Multi-Thread-Sperre frei.
 
 > [!IMPORTANT]
->  Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
+> Diese Funktion ist veraltet. Von Visual Studio 2015 an ist sie nicht in der CRT verfügbar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -50,7 +50,7 @@ void __cdecl _unlock(
 *locknum*<br/>
 [in]: Der Bezeichner der freizugebenden Sperre.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Quelle:** mlock.c
 

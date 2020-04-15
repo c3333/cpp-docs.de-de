@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CD2DLayer [MFC], IsValid
 - CD2DLayer [MFC], m_pLayer
 ms.assetid: 2f96378e-66bb-40d1-9661-6afe324de3c1
-ms.openlocfilehash: 28ebe19b0f28692116a0b95721ff2e5490ad7e68
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: aa6fb313bfcc2983f167936e5ad4f78be1e17a44
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391230"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369216"
 ---
 # <a name="cd2dlayer-class"></a>CD2DLayer-Klasse
 
@@ -45,38 +45,38 @@ class CD2DLayer : public CD2DResource;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CD2DLayer::CD2DLayer](#cd2dlayer)|Erstellt ein CD2DLayer-Objekt.|
-|[CD2DLayer::~CD2DLayer](#_dtorcd2dlayer)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Layer-Objekt zerstört wird.|
+|[CD2DLayer::-CD2DLayer](#_dtorcd2dlayer)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Layerobjekt zerstört wird.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DLayer::Attach](#attach)|Hängt die vorhandene Ressourcenschnittstelle für das Objekt|
-|[CD2DLayer::Create](#create)|Erstellt eine CD2DLayer an. (Überschreibt [CD2DResource:: Create](../../mfc/reference/cd2dresource-class.md#create).)|
-|[CD2DLayer::Destroy](#destroy)|Zerstört ein CD2DLayer-Objekt. (Überschreibt [CD2DResource:: Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|
-|[CD2DLayer::Detach](#detach)|Resource-Schnittstelle aus dem Objekt getrennt|
-|[CD2DLayer::Get](#get)|Gibt die ID2D1Layer-Schnittstelle|
-|[CD2DLayer::GetSize](#getsize)|Gibt die Größe des Renderziels in geräteunabhängigen Pixeln|
-|[CD2DLayer::IsValid](#isvalid)|Überprüft die Gültigkeit der Ressource (überschreibt [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|
+|[CD2DLayer::Anfügen](#attach)|Fügt vorhandene Ressourcenschnittstelle an das Objekt an|
+|[CD2DLayer::Erstellen](#create)|Erstellt einen CD2DLayer. (Überschreibt [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|
+|[CD2DLayer::Destroy](#destroy)|Zerstört ein CD2DLayer-Objekt. (Überschreibt [CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|
+|[CD2DLayer::Detach](#detach)|Trennen der Ressourcenschnittstelle vom Objekt|
+|[CD2DLayer::Get](#get)|Gibt ID2D1Layer-Schnittstelle zurück|
+|[CD2DLayer::GetSize](#getsize)|Gibt die Größe des Renderziels in geräteunabhängigen Pixeln zurück|
+|[CD2DLayer::IsValid](#isvalid)|Überprüft die Ressourcengültigkeit (Überschreibt [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DLayer::operator ID2D1Layer*](#operator_id2d1layer_star)|Gibt die ID2D1Layer-Schnittstelle|
+|[CD2DLayer::operator ID2D1Layer*](#operator_id2d1layer_star)|Gibt ID2D1Layer-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CD2DLayer::m_pLayer](#m_player)|Speichert einen Zeiger auf ein ID2D1Layer-Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CD2DResource](../../mfc/reference/cd2dresource-class.md)
 
@@ -84,19 +84,19 @@ class CD2DLayer : public CD2DResource;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="_dtorcd2dlayer"></a>  CD2DLayer:: ~ CD2DLayer
+## <a name="cd2dlayercd2dlayer"></a><a name="_dtorcd2dlayer"></a>CD2DLayer::-CD2DLayer
 
-Der Destruktor. Wird aufgerufen, wenn ein D2D-Layer-Objekt zerstört wird.
+Der Destruktor. Wird aufgerufen, wenn ein D2D-Layerobjekt zerstört wird.
 
 ```
 virtual ~CD2DLayer();
 ```
 
-##  <a name="attach"></a>  CD2DLayer::Attach
+## <a name="cd2dlayerattach"></a><a name="attach"></a>CD2DLayer::Anfügen
 
-Hängt die vorhandene Ressourcenschnittstelle für das Objekt
+Fügt vorhandene Ressourcenschnittstelle an das Objekt an
 
 ```
 void Attach(ID2D1Layer* pResource);
@@ -105,9 +105,9 @@ void Attach(ID2D1Layer* pResource);
 ### <a name="parameters"></a>Parameter
 
 *pResource*<br/>
-Vorhandene Ressourcenschnittstelle. NULL darf nicht sein
+Vorhandene Ressourcenschnittstelle. Kann nicht NULL sein
 
-##  <a name="cd2dlayer"></a>  CD2DLayer::CD2DLayer
+## <a name="cd2dlayercd2dlayer"></a><a name="cd2dlayer"></a>CD2DLayer::CD2DLayer
 
 Erstellt ein CD2DLayer-Objekt.
 
@@ -123,11 +123,11 @@ CD2DLayer(
 Ein Zeiger auf das Renderziel.
 
 *bAutoDestroy*<br/>
-Gibt an, dass vom Besitzer (pParentTarget) das Objekt zerstört wird.
+Gibt an, dass das Objekt vom Besitzer (pParentTarget) zerstört wird.
 
-##  <a name="create"></a>  CD2DLayer::Create
+## <a name="cd2dlayercreate"></a><a name="create"></a>CD2DLayer::Erstellen
 
-Erstellt eine CD2DLayer an.
+Erstellt einen CD2DLayer.
 
 ```
 virtual HRESULT Create(CRenderTarget* pRenderTarget);
@@ -140,9 +140,9 @@ Ein Zeiger auf das Renderziel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird einen HRESULT-Fehlercode zurückgegeben.
+Wenn die Methode erfolgreich ist, wird S_OK zurückgegeben. Andernfalls wird ein HRESULT-Fehlercode zurückgegeben.
 
-##  <a name="destroy"></a>  CD2DLayer::Destroy
+## <a name="cd2dlayerdestroy"></a><a name="destroy"></a>CD2DLayer::Destroy
 
 Zerstört ein CD2DLayer-Objekt.
 
@@ -150,9 +150,9 @@ Zerstört ein CD2DLayer-Objekt.
 virtual void Destroy();
 ```
 
-##  <a name="detach"></a>  CD2DLayer::Detach
+## <a name="cd2dlayerdetach"></a><a name="detach"></a>CD2DLayer::Detach
 
-Resource-Schnittstelle aus dem Objekt getrennt
+Trennen der Ressourcenschnittstelle vom Objekt
 
 ```
 ID2D1Layer* Detach();
@@ -160,11 +160,11 @@ ID2D1Layer* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf getrennten Resource-Schnittstelle.
+Zeiger auf eine getrennte Ressourcenschnittstelle.
 
-##  <a name="get"></a>  CD2DLayer::Get
+## <a name="cd2dlayerget"></a><a name="get"></a>CD2DLayer::Get
 
-Gibt die ID2D1Layer-Schnittstelle
+Gibt ID2D1Layer-Schnittstelle zurück
 
 ```
 ID2D1Layer* Get();
@@ -172,11 +172,11 @@ ID2D1Layer* Get();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1Layer-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1Layer-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="getsize"></a>  CD2DLayer::GetSize
+## <a name="cd2dlayergetsize"></a><a name="getsize"></a>CD2DLayer::GetSize
 
-Gibt die Größe des Renderziels in geräteunabhängigen Pixeln
+Gibt die Größe des Renderziels in geräteunabhängigen Pixeln zurück
 
 ```
 CD2DSizeF GetSize() const;
@@ -186,9 +186,9 @@ CD2DSizeF GetSize() const;
 
 Die aktuelle Größe des Renderziels in geräteunabhängigen Pixeln
 
-##  <a name="isvalid"></a>  CD2DLayer::IsValid
+## <a name="cd2dlayerisvalid"></a><a name="isvalid"></a>CD2DLayer::IsValid
 
-Die Gültigkeit der Überprüfungen-Ressource
+Überprüft die Gültigkeit der Ressource
 
 ```
 virtual BOOL IsValid() const;
@@ -196,9 +196,9 @@ virtual BOOL IsValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Ressource gültig ist. andernfalls "false".
+TRUE, wenn die Ressource gültig ist; andernfalls FALSE.
 
-##  <a name="m_player"></a>  CD2DLayer::m_pLayer
+## <a name="cd2dlayerm_player"></a><a name="m_player"></a>CD2DLayer::m_pLayer
 
 Speichert einen Zeiger auf ein ID2D1Layer-Objekt.
 
@@ -206,9 +206,9 @@ Speichert einen Zeiger auf ein ID2D1Layer-Objekt.
 ID2D1Layer* m_pLayer;
 ```
 
-##  <a name="operator_id2d1layer_star"></a>  CD2DLayer::Operator ID2D1Layer *
+## <a name="cd2dlayeroperator-id2d1layer"></a><a name="operator_id2d1layer_star"></a>CD2DLayer::operator ID2D1Layer*
 
-Gibt die ID2D1Layer-Schnittstelle
+Gibt ID2D1Layer-Schnittstelle zurück
 
 ```
 operator ID2D1Layer* ();
@@ -216,7 +216,7 @@ operator ID2D1Layer* ();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1Layer-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1Layer-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
 ## <a name="see-also"></a>Siehe auch
 

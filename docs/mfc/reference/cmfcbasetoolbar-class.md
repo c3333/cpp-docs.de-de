@@ -12,16 +12,16 @@ helpviewer_keywords:
 - CMFCBaseToolBar [MFC], GetMinSize
 - CMFCBaseToolBar [MFC], OnAfterChangeParent
 ms.assetid: 5d79206d-55e4-46f8-b1b8-042e34d7f9da
-ms.openlocfilehash: 7a6ccdaf3d78b9973505dd4e90ca76f671fce889
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 027fe8569ff133bb3f348c9d0607f19c6d778c4e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403866"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367833"
 ---
 # <a name="cmfcbasetoolbar-class"></a>CMFCBaseToolBar-Klasse
 
-Die Basisklasse für Symbolleisten.
+Basisklasse für Symbolleisten.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,23 +33,23 @@ class CMFCBaseToolBar : public CPane
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|`CMFCBaseToolBar::CMFCBaseToolBar`|Standardkonstruktor|
+|`CMFCBaseToolBar::CMFCBaseToolBar`|Der Standardkonstruktor.|
 |`CMFCBaseToolBar::~CMFCBaseToolBar`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`CMFCBaseToolBar::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
-|[CMFCBaseToolBar::GetDockingMode](#getdockingmode)|Gibt den Andockmodus zurück. (Überschreibt [cbasepane:: Getdockingmode](../../mfc/reference/cbasepane-class.md#getdockingmode).)|
-|[CMFCBaseToolBar::GetMinSize](#getminsize)|Gibt die minimale Größe einer Symbolleiste zurück. (Überschreibt [CPane::GetMinSize](../../mfc/reference/cpane-class.md#getminsize).)|
-|[CMFCBaseToolBar::OnAfterChangeParent](#onafterchangeparent)|Wird vom Framework aufgerufen, nach im Bereich der übergeordneten Änderungen. (Overrides [CBasePane::OnAfterChangeParent](../../mfc/reference/cbasepane-class.md#onafterchangeparent).)|
+|[CMFCBaseToolBar::GetDockingMode](#getdockingmode)|Gibt den Andockmodus zurück. (Überschreibt [CBasePane::GetDockingMode](../../mfc/reference/cbasepane-class.md#getdockingmode).)|
+|[CMFCBaseToolBar::GetMinSize](#getminsize)|Gibt die Mindestgröße einer Symbolleiste zurück. (Überschreibt [CPane::GetMinSize](../../mfc/reference/cpane-class.md#getminsize).)|
+|[CMFCBaseToolBar::OnAfterChangeParent](#onafterchangeparent)|Wird vom Framework aufgerufen, nachdem sich das übergeordnete Fenster geändert hat. (Überschreibt [CBasePane::OnAfterChangeParent](../../mfc/reference/cbasepane-class.md#onafterchangeparent).)|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -63,9 +63,9 @@ class CMFCBaseToolBar : public CPane
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxbasetoolbar.h
+**Kopfzeile:** afxbasetoolbar.h
 
-##  <a name="getdockingmode"></a>  CMFCBaseToolBar::GetDockingMode
+## <a name="cmfcbasetoolbargetdockingmode"></a><a name="getdockingmode"></a>CMFCBaseToolBar::GetDockingMode
 
 Gibt den Andockmodus zurück.
 
@@ -77,9 +77,9 @@ virtual AFX_DOCK_TYPE GetDockingMode() const;
 
 Der Andockmodus.
 
-##  <a name="getminsize"></a>  CMFCBaseToolBar::GetMinSize
+## <a name="cmfcbasetoolbargetminsize"></a><a name="getminsize"></a>CMFCBaseToolBar::GetMinSize
 
-Gibt die minimale Größe einer Symbolleiste zurück.
+Gibt die Mindestgröße einer Symbolleiste zurück.
 
 ```
 virtual void GetMinSize(CSize& size) const;
@@ -87,12 +87,12 @@ virtual void GetMinSize(CSize& size) const;
 
 ### <a name="parameters"></a>Parameter
 
-*size*<br/>
-[out] Die minimale Größe einer Symbolleiste.
+*Größe*<br/>
+[out] Die Mindestgröße einer Symbolleiste.
 
-##  <a name="onafterchangeparent"></a>  CMFCBaseToolBar::OnAfterChangeParent
+## <a name="cmfcbasetoolbaronafterchangeparent"></a><a name="onafterchangeparent"></a>CMFCBaseToolBar::OnAfterChangeParent
 
-Wird vom Framework aufgerufen, nach im Bereich der übergeordneten Änderungen.
+Wird vom Framework aufgerufen, nachdem sich das übergeordnete Fenster geändert hat.
 
 ```
 virtual void OnAfterChangeParent(CWnd* pWndOldParent);

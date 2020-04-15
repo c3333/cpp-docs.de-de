@@ -1,5 +1,5 @@
 ---
-title: 'TN059: Verwenden von MFC MBCS / Unicode-Umwandlungsmakros'
+title: 'TN059: Verwenden von MFC MBCS-Unicode-Konvertierungsmakros'
 ms.date: 11/04/2016
 helpviewer_keywords:
 - MFCANS32.DLL
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - macros [MFC], MBCS conversion macros
 - TN059
 ms.assetid: a2aab748-94d0-4e2f-8447-3bd07112a705
-ms.openlocfilehash: 6c182ff584404fb91de8ff5e8020ec2e6ef9f950
-ms.sourcegitcommit: 934cb53fa4cb59fea611bfeb9db110d8d6f7d165
+ms.openlocfilehash: 0d63a87d0fddde30dd5cbb18207297a345d74b9c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65611860"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81366582"
 ---
 # <a name="tn059-using-mfc-mbcsunicode-conversion-macros"></a>TN059: Verwenden von MFC MBCS/Unicode-Umwandlungsmakros
 
 > [!NOTE]
->  Der folgende technische Hinweis wurde seit dem ersten Erscheinen in der Onlinedokumentation nicht aktualisiert. Daher können einige Verfahren und Themen veraltet oder falsch sein. Um aktuelle Informationen zu erhalten, wird empfohlen, das gewünschte Thema im Index der Onlinedokumentation zu suchen.
+> Der folgende technische Hinweis wurde seit dem ersten Erscheinen in der Onlinedokumentation nicht aktualisiert. Daher können einige Verfahren und Themen veraltet oder falsch sein. Um aktuelle Informationen zu erhalten, wird empfohlen, das gewünschte Thema im Index der Onlinedokumentation zu suchen.
 
-Dieser Hinweis beschreibt, wie die Makros, die für die MBCS/Unicode-Konvertierung, die im AFXPRIV definiert sind. H. Diese Makros sind besonders hilfreich, wenn Ihre Anwendung Abschlüsse direkt mit der OLE-API oder aus irgendeinem Grund, häufig muss für die Konvertierung zwischen Unicode und MBCS.
+In diesem Hinweis wird beschrieben, wie die Makros für die MBCS/Unicode-Konvertierung verwendet werden, die in AFXPRIV definiert sind. H. Diese Makros sind am nützlichsten, wenn Ihre Anwendung direkt mit der OLE-API umgeht oder aus irgendeinem Grund häufig zwischen Unicode und MBCS konvertieren muss.
 
 ## <a name="overview"></a>Übersicht
 
-In MFC 3.x, wurde eine spezielle DLL verwendet (MFCANS32. (DLL) für die Konvertierung von Unicode und MBCS automatisch, wenn OLE-Schnittstellen aufgerufen wurden. Diese DLL-Datei wurde eine praktisch transparente Schicht, die OLE-Anwendungen, als wären die OLE-APIs und Schnittstellen MBCS geschrieben werden soll, obwohl sie immer Unicode sind zulässig (außer auf einem Macintosh). Während dieser Ebene praktische war und Anwendungen schnell von Win16 auf Win32 portiert zulässig (MFC-, Microsoft Word, Microsoft Excel und VBA, sind nur einige der Microsoft-Anwendungen, die diese Technologie verwendet), es hatte einen manchmal signifikanten Leistungsgewinn erreicht. Aus diesem Grund MFC 4.x diese DLL-Datei wird nicht verwendet und stattdessen kommuniziert direkt mit der Unicode-OLE-Schnittstellen. Zu diesem Zweck MFC muss in Unicode zu MBCS zu konvertieren, wenn Sie einen Aufruf von OLE-Schnittstelle vornehmen, und oft in MBCS aus Unicode zu konvertieren, wenn Sie eine OLE-Schnittstelle implementieren muss. Um dies effizient und einfach zu behandeln, wurden eine Reihe von Makros erstellt, um diese Konvertierung zu vereinfachen.
+In MFC 3.x wurde eine spezielle DLL verwendet (MFCANS32. DLL), um automatisch zwischen Unicode und MBCS zu konvertieren, wenn OLE-Schnittstellen aufgerufen wurden. Diese DLL war eine fast transparente Ebene, die es ermöglichte, OLE-Anwendungen so zu schreiben, als ob die OLE-APIs und -Schnittstellen MBCS wären, obwohl sie immer Unicode sind (außer auf dem Macintosh). Obwohl diese Ebene bequem war und es ermöglichte, Anwendungen schnell von Win16 nach Win32 zu portieren (MFC, Microsoft Word, Microsoft Excel und VBA, sind nur einige der Microsoft-Anwendungen, die diese Technologie verwendet haben), hatte es manchmal einen erheblichen Leistungseinschlag. Aus diesem Grund verwendet MFC 4.x diese DLL nicht und spricht stattdessen direkt mit den Unicode OLE-Schnittstellen. Dazu muss MFC beim Aufruf einer OLE-Schnittstelle in Unicode in MBCS konvertieren und beim Implementieren einer OLE-Schnittstelle häufig von Unicode in MBCS konvertieren. Um dies effizient und einfach zu handhaben, wurden eine Reihe von Makros erstellt, um diese Konvertierung zu erleichtern.
 
-Einer der größten Hürden zum Erstellen solcher einen Satz von Makros ist die speicherbelegung. Da die Zeichenfolgen an Stelle konvertiert werden können, muss neue Arbeitsspeicher zum Speichern der konvertierten zugeordnet werden. Dies kann mit Code wie den folgenden erfolgt sind:
+Eine der größten Hürden beim Erstellen eines solchen Satzes von Makros ist die Speicherzuweisung. Da die Zeichenfolgen nicht an Ort und Stelle konvertiert werden können, muss neuer Speicher für die konvertierten Ergebnisse zugewiesen werden. Dies hätte mit Code ähnlich dem folgenden durchgeführt werden können:
 
 ```
 // we want to convert an MBCS string in lpszA
@@ -53,9 +53,9 @@ pI->SomeFunctionThatNeedsUnicode(lpszW);
 delete[] lpszW;
 ```
 
-Dieser Ansatz als eine Reihe von Problemen. Das Hauptproblem ist, dass es viel Code ist zu schreiben, testen und Debuggen. Etwas, das einen einfachen Aufruf wurde, ist jetzt wesentlich komplexer. Darüber hinaus ist gibt es eine wichtige Common Language Runtime Mehraufwand auf diese Weise. Speicher muss auf dem Heap reserviert und freigegeben, jedes Mal, wenn eine Konvertierung abgeschlossen ist. Schließlich der obige Code würde müssen haben entsprechende `#ifdefs` für Unicode- und Macintosh-Builds (die diese Konvertierung durchgeführt werden, erfordern keine) hinzugefügt.
+Dieser Ansatz ist eine Reihe von Problemen. Das Hauptproblem ist, dass es viel Code zum Schreiben, Testen und Debuggen ist. Etwas, das ein einfacher Funktionsaufruf war, ist jetzt viel komplexer. Darüber hinaus gibt es dabei einen erheblichen Laufzeitaufwand. Speicher muss auf dem Heap zugewiesen und bei jeder Konvertierung freigegeben werden. Schließlich müsste der obige Code `#ifdefs` für Unicode- und Macintosh-Builds entsprechend hinzugefügt werden (die diese Konvertierung nicht erfordern).
 
-Die Projektmappe, die, der wir lassen einfallen, besteht darin einige Makros zu erstellen, die (1) Maske der Unterschied zwischen den verschiedenen Plattformen und (2) verwenden Sie eine effiziente Speicherbelegungsschema und (3) sind einfach zum Einfügen in den vorhandenen Quellcode. Hier ist ein Beispiel für eine der Definitionen aus:
+Die Lösung, die wir entwickelt haben, ist, einige Makros zu erstellen, die 1) den Unterschied zwischen den verschiedenen Plattformen maskieren und 2) ein effizientes Speicherzuweisungsschema verwenden, und 3) sind einfach in den vorhandenen Quellcode einzufügen. Hier ist ein Beispiel für eine der Definitionen:
 
 ```
 #define A2W(lpa) (\
@@ -66,7 +66,7 @@ Die Projektmappe, die, der wir lassen einfallen, besteht darin einige Makros zu 
     _convert)\)\)
 ```
 
-Mit diesem Makro anstelle der oben stehende Code und die Dinge sind wesentlich einfacher:
+Verwenden Sie dieses Makro anstelle des obigen Codes und die Dinge sind viel einfacher:
 
 ```
 // use it to call OLE here
@@ -74,17 +74,17 @@ USES_CONVERSION;
 pI->SomeFunctionThatNeedsUnicode(T2OLE(lpszA));
 ```
 
-Es gibt zusätzliche Aufrufe, in denen Konvertierung ist notwendig, aber verwenden die Makros, die einfach und effektiv.
+Es gibt zusätzliche Aufrufe, bei denen konvertierung erforderlich ist, aber die Verwendung der Makros ist einfach und effektiv.
 
-Die Implementierung jedes Makros verwendet die Funktion "_alloca()" "Arbeitsspeicher aus dem Stapel statt dem Heap belegt. Reservieren von Speicher im Stapel ist wesentlich schneller als die Zuteilung von Arbeitsspeicher auf dem Heap, und der Speicher wird automatisch freigegeben, wenn die Funktion beendet wird. Darüber hinaus die Makros vermeiden Sie Aufrufe `MultiByteToWideChar` (oder `WideCharToMultiByte`) mehr als einmal. Dazu weisen Sie ein wenig mehr Arbeitsspeicher als erforderlich erledigt wird. Wir wissen, dass in mindestens einer MBC konvertiert **WCHAR** und für die einzelnen **WCHAR** haben wir ein Maximum von zwei MBC Bytes. Dabei wird jedoch immer genug etwas häufiger als nötig, zugeordnet wird um die Konvertierung den zweiten Aufruf behandeln, die zweite Aufruf der Konvertierungsfunktion vermieden. Der Aufruf der Hilfsfunktion `AfxA2Whelper` reduziert die Anzahl der Argument-pushvorgängen, die ausgeführt werden müssen, um die Konvertierung auszuführen (Dies führt in kleinere Codeabschnitte optimiert, als wenn sie aufgerufen `MultiByteToWideChar` direkt).
+Die Implementierung jedes Makros verwendet die _alloca()-Funktion, um Speicher aus dem Stapel anstelle des Heaps zuzuweisen. Das Zuweisen von Speicher aus dem Stapel ist viel schneller als das Zuweisen von Speicher auf dem Heap, und der Speicher wird automatisch freigegeben, wenn die Funktion beendet wird. Darüber hinaus vermeiden die `MultiByteToWideChar` Makros `WideCharToMultiByte`das Aufrufen (oder ) mehr als einmal. Dies geschieht, indem etwas mehr Speicher als nötig zugewiesen wird. Wir wissen, dass ein MBC in höchstens einen **WCHAR** konvertiert wird und dass wir für jeden **WCHAR** maximal zwei MBC-Bytes haben werden. Durch die Zuweisung etwas mehr als notwendig, aber immer genug, um die Konvertierung zu behandeln, wird der zweite Aufruf des zweiten Aufrufs an die Konvertierungsfunktion vermieden. Der Aufruf der Hilfsfunktion `AfxA2Whelper` reduziert die Anzahl der Argument-Pushs, die ausgeführt werden müssen, um die `MultiByteToWideChar` Konvertierung durchzuführen (dies führt zu kleinerem Code, als wenn er direkt aufgerufen wird).
 
-In der Reihenfolge für die Makros Speicherplatz zum Speichern der temporären Länge, ist es erforderlich, deklarieren Sie eine lokale Variable namens _convert, die in jeder Funktion, die hierfür verwendet konvertierungsmakros. Dies erfolgt durch das Makro USES_CONVERSION aufrufen, wie im Beispiel oben zu sehen.
+Damit die Makros über Platz zum Speichern der temporären Länge verfügen, ist es notwendig, eine lokale Variable namens _convert zu deklarieren, die dies in jeder Funktion tut, die die Konvertierungsmakros verwendet. Dies geschieht durch Aufrufen des USES_CONVERSION Makros, wie oben im Beispiel zu sehen.
 
-Es gibt sowohl generische konvertierungsmakros und OLE-spezifischen Makros. Diese beiden Sätze von anderen Makro werden nachfolgend beschrieben. Alle Makros befinden sich im AFXPRIV. H.
+Es gibt sowohl generische Konvertierungsmakros als auch OLE-spezifische Makros. Diese beiden verschiedenen Makrosätze werden im Folgenden erläutert. Alle Makros befinden sich in AFXPRIV. H.
 
-## <a name="generic-conversion-macros"></a>Generische-Konvertierungsmakros
+## <a name="generic-conversion-macros"></a>Generische Konvertierungsmakros
 
-Generische konvertierungsmakros bilden den zugrunde liegende Mechanismus. Der Makrobeispiel und die Implementierung dargestellt, die im vorherigen Abschnitt A2W, ist eine solche "generischen" Makro. Es ist nicht speziell an OLE verbunden. Der Satz von generischen Makros sind unten aufgeführt:
+Die generischen Konvertierungsmakros bilden den zugrunde liegenden Mechanismus. Das im vorherigen Abschnitt Gezeigte Makrobeispiel und die Implementierung, A2W, ist ein solches "generisches" Makro. Es bezieht sich nicht speziell auf OLE. Der Satz generischer Makros ist unten aufgeführt:
 
 ```
 A2CW      (LPCSTR) -> (LPCWSTR)
@@ -93,13 +93,13 @@ W2CA      (LPCWSTR) -> (LPCSTR)
 W2A      (LPCWSTR) -> (LPSTR)
 ```
 
-Neben dem Text Konvertierungen Weise gibt es Makros und Hilfsfunktionen zum Konvertieren von `TEXTMETRIC`, `DEVMODE`, `BSTR`, und OLE-Zeichenfolgen zugeordnet. Bei diesen Makros wird, würde den Rahmen dieser Diskussion – AFXPRIV finden Sie unter. Für Weitere Informationen zu diesen Makros H.
+Neben Textkonvertierungen gibt es auch Makros und Hilfsfunktionen `DEVMODE` `BSTR`zum Konvertieren von , , und OLE zugewiesenen `TEXTMETRIC`Zeichenfolgen. Diese Makros gehen über den Rahmen dieser Diskussion hinaus - siehe AFXPRIV. H für weitere Informationen zu diesen Makros.
 
 ## <a name="ole-conversion-macros"></a>OLE-Konvertierungsmakros
 
-Der OLE-konvertierungsmakros dienen insbesondere für die Behandlung von Funktionen, die erwarten, dass **OLESTR** Zeichen. Wenn Sie die OLE-Header zu untersuchen, sehen Sie zahlreiche Verweise auf **LPCOLESTR** und **OLECHAR**. Diese Typen werden zum Verweisen auf den Typ der verwendeten Zeichen im OLE-Schnittstellen auf eine Weise, die nicht spezifisch für die Plattform ist. **OLECHAR** ordnet **Char** Win16 und Macintosh-Plattformen und **WCHAR** in Win32.
+Die OLE-Konvertierungsmakros wurden speziell für die Handhabung von Funktionen entwickelt, die **OLESTR-Zeichen** erwarten. Wenn Sie die OLE-Header untersuchen, werden viele Verweise auf **LPCOLESTR** und **OLECHAR**angezeigt. Diese Typen werden verwendet, um auf den Typ von Zeichen zu verweisen, die in OLE-Schnittstellen in einer Weise verwendet werden, die nicht plattformspezifisch ist. **OLECHAR** ordnet **char** in Win16- und Macintosh-Plattformen und **WCHAR** in Win32 zu.
 
-Um die Anzahl der zu halten **#ifdef** -Direktiven in der MFC-code auf ein Minimum haben wir eine ähnliche Makro für jede Konvertierung, die, an denen OLE-Zeichenfolgen beteiligt sind. Die folgenden Makros werden die am häufigsten verwendet:
+Um die Anzahl der **#ifdef** Direktiven im MFC-Code auf ein Minimum zu beschränken, haben wir für jede Konvertierung ein ähnliches Makro wie ole-Zeichenfolgen. Die folgenden Makros werden am häufigsten verwendet:
 
 ```
 T2COLE   (LPCTSTR) -> (LPCOLESTR)
@@ -108,11 +108,11 @@ OLE2CT   (LPCOLESTR) -> (LPCTSTR)
 OLE2T   (LPCOLESTR) -> (LPCSTR)
 ```
 
-In diesem Fall werden ähnliche Makros zur Durchführung von TEXTMETRIC "," DEVMODE "," BSTR "und" OLE-Zeichenfolgen zugeordnet. AFXPRIV finden Sie unter. H für Weitere Informationen.
+Auch hier gibt es ähnliche Makros für textMETRIC, DEVMODE, BSTR und OLE zugewiesene Zeichenfolgen. Siehe AFXPRIV. H für weitere Informationen.
 
-## <a name="other-considerations"></a>Andere Überlegungen
+## <a name="other-considerations"></a>Weitere Überlegungen
 
-Verwenden Sie die Makros, die nicht in einer engen Schleife aus. Beispielsweise möchten nicht Sie die folgende Art von Code zu schreiben:
+Verwenden Sie die Makros nicht in einer engen Schleife. Sie möchten z. B. nicht die folgende Art von Code schreiben:
 
 ```
 void BadIterateCode(LPCTSTR lpsz)
@@ -124,7 +124,7 @@ void BadIterateCode(LPCTSTR lpsz)
 }
 ```
 
-Der obige Code verursachen MB Arbeitsspeicher auf dem Stapel, je nachdem welche den Inhalt der Zeichenfolge zuordnen `lpsz` ist! Es dauert auch die Zeit, um die Zeichenfolge für jede Iteration der Schleife zu konvertieren. Verschieben Sie stattdessen eine solche Konstanten Konvertierungen aus der Schleife:
+Der obige Code kann dazu führen, dass Megabyte Arbeitsspeicher `lpsz` auf dem Stapel zugewiesen werden, je nachdem, was der Inhalt der Zeichenfolge ist! Es dauert auch Zeit, um die Zeichenfolge für jede Iteration der Schleife zu konvertieren. Verschieben Sie stattdessen solche konstanten Konvertierungen aus der Schleife:
 
 ```
 void MuchBetterIterateCode(LPCTSTR lpsz)
@@ -138,7 +138,7 @@ void MuchBetterIterateCode(LPCTSTR lpsz)
 }
 ```
 
-Wenn die Zeichenfolge nicht konstant ist, klicken Sie dann kapseln Sie den Aufruf der Methode in eine Funktion. Dadurch wird die Konvertierung Puffer freigegeben werden, dass Sie jedes Mal. Zum Beispiel:
+Wenn die Zeichenfolge nicht konstant ist, kapseln Sie den Methodenaufruf in eine Funktion. Dadurch kann der Konvertierungspuffer jedes Mal freigegeben werden. Beispiel:
 
 ```
 void CallSomeMethod(int ii, LPCTSTR lpsz)
@@ -156,7 +156,7 @@ void MuchBetterIterateCode2(LPCTSTR* lpszArray)
 }
 ```
 
-Geben Sie das Ergebnis eines die Makros, nie zurück, es sei denn, der zurückgegebene Wert bedeutet eine Kopie der Daten vor der Rückgabe. Dieser Code ist z. B. ungültige:
+Geben Sie niemals das Ergebnis eines der Makros zurück, es sei denn, der Rückgabewert impliziert, dass eine Kopie der Daten vor der Rückgabe erstellt wird. Dieser Code ist z. B. fehlerhaft:
 
 ```
 LPTSTR BadConvert(ISomeInterface* pI)
@@ -173,7 +173,7 @@ return lpszT; // bad! returning alloca memory
 }
 ```
 
-Der obige Code könnte behoben werden, durch Ändern des Rückgabewerts auf etwas, das den Wert kopiert:
+Der obige Code könnte behoben werden, indem der Rückgabewert in etwas geändert wird, das den Wert kopiert:
 
 ```
 CString BetterConvert(ISomeInterface* pI)
@@ -190,7 +190,7 @@ return lpszT; // CString makes copy
 }
 ```
 
-Die Makros sind einfach zu verwenden und einfach in Ihren Code einfügen, aber wie Sie die oben genannten Einschränkungen erkennen können, müssen Sie darauf achten, dass bei ihrer Verwendung.
+Die Makros sind einfach zu bedienen und einfach in Ihren Code einzufügen, aber wie Sie aus den obigen Vorbehalten erkennen können, müssen Sie vorsichtig sein, wenn Sie sie verwenden.
 
 ## <a name="see-also"></a>Siehe auch
 

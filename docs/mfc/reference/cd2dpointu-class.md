@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CD2DPointU [MFC], CD2DPointU
 ms.assetid: 04733f96-b6de-4a89-82e3-caad1e8087a9
-ms.openlocfilehash: 6289d33aa0672d1ee423d91b11527dccfc868da7
-ms.sourcegitcommit: e10a5feea193c249ddc5a6faba48e7c6d8784e73
+ms.openlocfilehash: 8c6db55f1dde1fd054a1f75590f5969c097b2f90
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70177178"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369140"
 ---
 # <a name="cd2dpointu-class"></a>CD2DPointU-Klasse
 
@@ -29,15 +29,15 @@ class CD2DPointU : public D2D1_POINT_2U;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DPointU::CD2DPointU](#cd2dpointu)|Überladen. Erstellt eine `CD2DPointU` aus einem `D2D1_POINT_2U` Objekt Objekt.|
+|[CD2DPointU::CD2DPointU](#cd2dpointu)|Ist überladen. Erstellt ein `CD2DPointU` von-Objekt-Objekt. `D2D1_POINT_2U`|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DPointU:: Operator-CPoint](#operator_cpoint)|Konvertiert `CD2DPointU` in`CPoint` ein-Objekt.|
+|[CD2DPointU::operator CPoint](#operator_cpoint)|Konvertiert `CD2DPointU` in `CPoint` ein Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -47,9 +47,9 @@ class CD2DPointU : public D2D1_POINT_2U;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget. h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="cd2dpointu"></a>CD2DPointU:: CD2DPointU
+## <a name="cd2dpointucd2dpointu"></a><a name="cd2dpointu"></a>CD2DPointU::CD2DPointU
 
 Erstellt ein CD2DPointU-Objekt aus dem CPoint-Objekt.
 
@@ -62,18 +62,18 @@ CD2DPointU(UINT32 uX = 0, UINT32 uY = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
+*Pt*<br/>
 Quellpunkt
 
-*uX*<br/>
+*Ux*<br/>
 Quelle X
 
-*uY*<br/>
+*Uy*<br/>
 Quelle Y
 
-##  <a name="operator_cpoint"></a>CD2DPointU:: Operator-CPoint
+## <a name="cd2dpointuoperator-cpoint"></a><a name="operator_cpoint"></a>CD2DPointU::operator CPoint
 
-Konvertiert CD2DPointU in ein CPoint-Objekt.
+Konvertiert CD2DPointU in CPoint-Objekt.
 
 ```
 operator CPoint();
@@ -81,7 +81,7 @@ operator CPoint();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Aktueller Wert von D2D Point.
+Aktueller Wert des D2D-Punkts.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -160,12 +160,12 @@ helpviewer_keywords:
 - CRT_REPORT_HOOK type
 - _finddata_t type
 ms.assetid: 23312dd2-4a6a-4d70-9b48-2a5d0d8c9f28
-ms.openlocfilehash: c93cf4bf138fc6bc648d33c180edbed0dbe5014e
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
-ms.translationtype: HT
+ms.openlocfilehash: d8d7abe0f5562250e51e011014a8f9587bc7636e
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69500639"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367934"
 ---
 # <a name="standard-types"></a>Standardtypen
 
@@ -173,7 +173,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 
 ### <a name="fixed-width-integral-types-stdinth"></a>Ganzzahltypen mit fester Breite (stdint.h)
 
-|name|Entsprechender integrierter Typ|
+|Name|Entsprechender integrierter Typ|
 |----------|-------------------------------|
 |int8\_t, uint8\_t|signed char, unsigned char|
 |int16\_t, uint16\_t|short, unsigned short|
@@ -189,7 +189,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |int_fast64_t, uint_fast64_t|long long, unsigned long long|
 |intmax_t, uintmax_t|long long, unsigned long long|
 
-|Typ|BESCHREIBUNG|Deklariert in|
+|type|BESCHREIBUNG|Deklariert in|
 |----------|-----------------|-----------------|
 |`clock_t` (lang)|Speichert Zeitwerte, die von [clock](../c-runtime-library/reference/clock.md) verwendet werden.|TIME.H|
 |`_complex`-Struktur|Speicher tatsächliche und imaginäre Teile komplexer Zahlen, die von [_cabs](../c-runtime-library/reference/cabs.md) verwendet werden.|MATH.H|
@@ -217,7 +217,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |`jmp_buf`-Array|Wird von [setjmp](../c-runtime-library/reference/setjmp.md) und [longjmp](../c-runtime-library/reference/longjmp.md) verwendet, um die Programmumgebung zu sichern und wiederherzustellen.|SETJMP.H|
 |`lconv`-Struktur|Enthält Formatierungsregeln für numerische Werte in verschiedenen Ländern/Regionen. Wird durch [localeconv](../c-runtime-library/reference/localeconv.md) verwendet.|LOCALE.H|
 |`_LDOUBLE`,<br /><br /> `_LONGDOUBLE`,<br /><br /> `_LDBL12` (long double- oder vorzeichenloses Zeichenarray)|Wird verwendet, um einen long double-Wert darzustellen.|STDLIB.H|
-|`_locale_t`-Struktur|Speichert aktuelle Gebietsschemawerte; wird in allen gebietsschemaspezifischen C-Laufzeitbibliotheken verwendet.|CRTDEF.H|
+|`_locale_t`-Struktur|Speichert aktuelle Gebietsschemawerte; wird in allen gebietsschemaspezifischen C-Laufzeitbibliotheken verwendet.|CRTDEFS.H|
 |`mbstate_t`|Verfolgt den Zustand einer Multibytezeichen-Konvertierung.|WCHAR.H|
 |langer `off_t`, `_off_t`-Integer|Stellt den Dateioffsetwert dar.|WCHAR.H, SYS\TYPES.H|
 |`_onexit_t`,<br /><br /> `_onexit_m_t`-Zeiger|Wird durch [_onexit, _onexit_m](../c-runtime-library/reference/onexit-onexit-m.md) zurückgegeben.|STDLIB.H|

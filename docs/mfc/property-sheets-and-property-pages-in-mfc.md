@@ -7,25 +7,25 @@ helpviewer_keywords:
 - property sheets, MFC
 - tab dialog boxes
 ms.assetid: e1bede2b-0285-4b88-a052-0f8a372807a2
-ms.openlocfilehash: fa8ee3518ad2b32e0eace77f0961eb86ccde1822
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 10fb34c79745e672d30dd2d3c3b97d457583f795
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391373"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81371168"
 ---
 # <a name="property-sheets-and-property-pages-in-mfc"></a>Eigenschaftenblätter und Eigenschaftenseiten in MFC
 
-Ein Eigenschaftenblatt, auch bekannt als ein Dialogfeld im Registerformat, wird ein Dialogfeld, das Eigenschaftenseiten enthält. Jede Eigenschaftenseite basiert auf einer Dialogfeldvorlagen-Ressource, und es enthält Steuerelemente. Es wird auf einer Seite mit einer Registerkarte im Vordergrund eingeschlossen. Die Registerkarte die Seite den Namen und gibt seinen Zweck an. Benutzer klicken Sie auf einer Registerkarte im Eigenschaftenfenster Eigenschaft zum Auswählen eines Satzes von Steuerelementen.
+Ein Eigenschaftenblatt, auch als Registerkartendialogfeld bezeichnet, ist ein Dialogfeld, das Eigenschaftenseiten enthält. Jede Eigenschaftenseite basiert auf einer Dialogfeldvorlagenressource und enthält Steuerelemente. Es ist auf einer Seite mit einer Registerkarte oben eingeschlossen. Die Registerkarte benennt die Seite und gibt deren Zweck an. Benutzer klicken auf eine Registerkarte im Eigenschaftenblatt, um eine Reihe von Steuerelementen auszuwählen.
 
-Verwenden Sie Seiten, um die Steuerelemente im Eigenschaftenblatt in sinnvolle Sätze zu gruppieren. Das eigenständige Eigenschaftenblatt weist normalerweise auf mehrere Steuerelemente selbst. Diese gelten für alle Seiten.
+Verwenden Sie Seiten, um die Steuerelemente im Eigenschaftenblatt in sinnvolle Mengen zu gruppieren. Das enthaltene Eigenschaftenblatt verfügt in der Regel über mehrere eigene Steuerelemente. Diese gelten für alle Seiten.
 
-Eigenschaftenblätter werden basierend auf Klasse [CPropertySheet](../mfc/reference/cpropertysheet-class.md). Eigenschaftenseiten werden basierend auf Klasse [CPropertyPage](../mfc/reference/cpropertypage-class.md).
+Eigenschaftenblätter basieren auf der Klasse [CPropertySheet](../mfc/reference/cpropertysheet-class.md). Eigenschaftenseiten basieren auf der Klasse [CPropertyPage](../mfc/reference/cpropertypage-class.md).
 
-Ein Eigenschaftenblatt ist eine besondere Art von Dialogfeld, das in der Regel so ändern Sie die Attribute des einige externe Objekt, z. B. die aktuelle Auswahl in einer Ansicht verwendet wird. Das Eigenschaftenblatt besteht aus drei Hauptkomponenten: das Dialogfeld enthält einen oder mehrere Eigenschaftenseiten angezeigten jeweils nur ein, und eine Registerkarte am oberen Rand jeder Seite, die der Benutzer klickt, um diese Seite. Eigenschaftenblätter eignen sich für Situationen, in dem Sie mehrere ähnliche Gruppen von Einstellungen und Optionen zu ändern. Ein Eigenschaftenblatt gruppiert Informationen in einer leicht verständlichen Weise.
+Ein Eigenschaftenblatt ist eine spezielle Art von Dialogfeld, das im Allgemeinen verwendet wird, um die Attribute eines externen Objekts zu ändern, z. B. die aktuelle Auswahl in einer Ansicht. Das Eigenschaftenblatt besteht aus drei Hauptteilen: dem Dialogfeld, einer oder mehreren Eigenschaftenseiten, die nacheinander angezeigt werden, und einer Registerkarte oben auf jeder Seite, auf die der Benutzer klickt, um diese Seite auszuwählen. Eigenschaftenblätter sind nützlich für Situationen, in denen Sie mehrere ähnliche Gruppen von Einstellungen oder Optionen ändern können. Ein Eigenschaftenblatt gruppiert Informationen auf leicht verständliche Weise.
 
 > [!NOTE]
->  Wenn Sie versuchen, ein Eigenschaftenblatt mit anzeigen `CPropertySheet::DoModal`, das System möglicherweise eine Ausnahme der ersten Chance zu generieren. Diese Ausnahme tritt auf, da das System versucht, so ändern Sie die [Window-Stile](../mfc/reference/styles-used-by-mfc.md#window-styles) des Objekts vor dem das Objekt erstellt wurde. Weitere Informationen über diese Ausnahme sowie wie Sie die Zukunft zu vermeiden oder zu behandeln, finden Sie unter [CPropertySheet:: DoModal](../mfc/reference/cpropertysheet-class.md#domodal).
+> Wenn Sie versuchen, ein Eigenschaftenblatt `CPropertySheet::DoModal`mithilfe von anzuzeigen, generiert das System möglicherweise eine Ausnahme der ersten Chance. Diese Ausnahme tritt auf, weil das System versucht, die [Fensterstile](../mfc/reference/styles-used-by-mfc.md#window-styles) des Objekts zu ändern, bevor das Objekt erstellt wurde. Weitere Informationen zu dieser Ausnahme und zum Vermeiden oder Behandeln finden Sie unter [CPropertySheet::DoModal](../mfc/reference/cpropertysheet-class.md#domodal).
 
 ## <a name="see-also"></a>Siehe auch
 

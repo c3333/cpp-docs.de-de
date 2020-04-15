@@ -4,34 +4,34 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - class factories [MFC], and licensing
 ms.assetid: 53c4856a-4062-46db-9f69-dd4339f746b3
-ms.openlocfilehash: 18d86122e57af056a50a4d94bac89d65a7b71c7d
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: e3fed6520cdbe0fd964e4e80e7c9ed9b78296d16
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425928"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372310"
 ---
 # <a name="class-factories-and-licensing"></a>Klassenfabriken und Lizenzierung
 
-Um eine Instanz des OLE-Steuer Elements zu erstellen, ruft eine Containeranwendung eine Member-Funktion der Klassenfactory des Steuer Elements auf. Da Ihr Steuerelement ein tatsächliches OLE-Objekt ist, ist die Klassenfactory für das Erstellen von Instanzen Ihres Steuer Elements verantwortlich. Jede OLE-Steuerelement Klasse muss über eine Klassenfactory verfügen.
+Um eine Instanz Ihres OLE-Steuerelements zu erstellen, ruft eine Containeranwendung eine Memberfunktion der Klassenfactory des Steuerelements auf. Da es sich bei dem Steuerelement um ein tatsächliches OLE-Objekt handelt, ist die Klassenfactory für das Erstellen von Instanzen des Steuerelements verantwortlich. Jede OLE-Steuerelementklasse muss über eine Klassenfactory verfügen.
 
-Ein weiteres wichtiges Feature von OLE-Steuerelementen ist die Möglichkeit, eine Lizenz zu erzwingen. Mit dem controlwizard können Sie die Lizenzierung während der Erstellung des Steuerelement Projekts integrieren. Weitere Informationen zur Steuerelement Lizenzierung finden Sie im Artikel [ActiveX-Steuerelemente: lizenzieren eines ActiveX-Steuer](../../mfc/mfc-activex-controls-licensing-an-activex-control.md)Elements.
+Ein weiteres wichtiges Merkmal von OLE-Steuerelementen ist ihre Fähigkeit, eine Lizenz zu erzwingen. Mit ControlWizard können Sie die Lizenzierung während der Erstellung Ihres Steuerungsprojekts integrieren. Weitere Informationen zur Steuerelementlizenzierung finden Sie im Artikel [ActiveX Controls: Licensing An ActiveX Control](../../mfc/mfc-activex-controls-licensing-an-activex-control.md).
 
-In der folgenden Tabelle werden mehrere Makros und Funktionen aufgelistet, die zum Deklarieren und Implementieren der Klassenfactory Ihres Steuer Elements und zum Lizenzieren Ihres Steuer Elements verwendet werden.
+In der folgenden Tabelle sind mehrere Makros und Funktionen aufgeführt, die zum Deklarieren und Implementieren der Klassenfactory des Steuerelements und zur Lizenzierung des Steuerelements verwendet werden.
 
 ### <a name="class-factories-and-licensing"></a>Klassenfabriken und Lizenzierung
 
 |||
 |-|-|
-|[DECLARE_OLECREATE_EX](#declare_olecreate_ex)|Deklariert die Klassenfactory für ein OLE-Steuerelement oder eine Eigenschaften Seite.|
-|[IMPLEMENT_OLECREATE_EX](#implement_olecreate_ex)|Implementiert die `GetClassID` Funktion des Steuer Elements und deklariert eine Instanz der Klassenfactory.|
-|[BEGIN_OLEFACTORY](#begin_olefactory)|Beginnt die Deklaration von Lizenzierungs Funktionen.|
-|[END_OLEFACTORY](#end_olefactory)|Beendet die Deklaration von Lizenzierungs Funktionen.|
-|[Afxverifylicfile](#afxverifylicfile)|Überprüft, ob ein-Steuerelement für die Verwendung auf einem bestimmten Computer lizenziert ist.|
+|[DECLARE_OLECREATE_EX](#declare_olecreate_ex)|Deklariert die Klassenfactory für ein OLE-Steuerelement oder eine Eigenschaftenseite.|
+|[IMPLEMENT_OLECREATE_EX](#implement_olecreate_ex)|Implementiert die Funktion `GetClassID` des Steuerelements und deklariert eine Instanz der Klassenfactory.|
+|[BEGIN_OLEFACTORY](#begin_olefactory)|Beginnt die Deklaration aller Lizenzierungsfunktionen.|
+|[END_OLEFACTORY](#end_olefactory)|Beendet die Deklaration aller Lizenzierungsfunktionen.|
+|[AfxVerifyLicFile](#afxverifylicfile)|Überprüft, ob ein Steuerelement für die Verwendung auf einem bestimmten Computer lizenziert ist.|
 
-##  <a name="declare_olecreate_ex"></a>DECLARE_OLECREATE_EX
+## <a name="declare_olecreate_ex"></a><a name="declare_olecreate_ex"></a>DECLARE_OLECREATE_EX
 
-Deklariert eine Klassenfactory und die `GetClassID` Member-Funktion Ihrer Steuerelement Klasse.
+Deklariert eine Klassenfactory `GetClassID` und die Memberfunktion Ihrer Steuerelementklasse.
 
 ```
 DECLARE_OLECREATE_EX(class_name)
@@ -39,24 +39,24 @@ DECLARE_OLECREATE_EX(class_name)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement Klasse.
+*Class_name*<br/>
+Der Name der Steuerelementklasse.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie dieses Makro in der Header Datei der Control-Klasse für ein Steuerelement, das keine Lizenzierung unterstützt.
+Verwenden Sie dieses Makro in der Steuerelementklassenheaderdatei für ein Steuerelement, das keine Lizenzierung unterstützt.
 
-Beachten Sie, dass dieses Makro denselben Zweck erfüllt wie das folgende Codebeispiel:
+Beachten Sie, dass dieses Makro dem gleichen Zweck wie das folgende Codebeispiel dient:
 
 [!code-cpp[NVC_MFCAxCtl#14](../../mfc/reference/codesnippet/cpp/class-factories-and-licensing_1.h)]
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
-  **Header** afxctl. h
+  **Header** afxctl.h
 
-##  <a name="implement_olecreate_ex"></a>IMPLEMENT_OLECREATE_EX
+## <a name="implement_olecreate_ex"></a><a name="implement_olecreate_ex"></a>IMPLEMENT_OLECREATE_EX
 
-Implementiert die Klassenfactory Ihres Steuer Elements und die [GetClassID-](../../mfc/reference/colecontrol-class.md#getclassid) Member-Funktion Ihrer Steuerelement Klasse.
+Implementiert die Klassenfactory des Steuerelements und die [GetClassID-Memberfunktion](../../mfc/reference/colecontrol-class.md#getclassid) Ihrer Steuerelementklasse.
 
 ```
 IMPLEMENT_OLECREATE_EX(
@@ -77,26 +77,26 @@ IMPLEMENT_OLECREATE_EX(
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement-Eigenschaften Seiten Klasse.
+*Class_name*<br/>
+Der Name der Steuerelementeigenschaftsseitenklasse.
 
 *external_name*<br/>
-Der für Anwendungen verfügbar gemachte Objektname.
+Der Objektname, der für Anwendungen verfügbar gemacht wird.
 
-*l, W1, W2, B1, B2, B3, B4, B5, B6, B7, B8*<br/>
-Komponenten der CLSID der Klasse. Weitere Informationen zu diesen Parametern finden Sie in den Hinweisen zum [IMPLEMENT_OLECREATE](run-time-object-model-services.md#implement_olecreate).
+*l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8*<br/>
+Komponenten der CLSID der Klasse. Weitere Informationen zu diesen Parametern finden Sie unter Hinweise [zu IMPLEMENT_OLECREATE](run-time-object-model-services.md#implement_olecreate).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro muss in der Implementierungs Datei für jede Steuerelement Klasse angezeigt werden, die das DECLARE_OLECREATE_EX-Makro oder das BEGIN_OLEFACTORY-und END_OLEFACTORY-Makros verwendet. Der externe Name ist der Bezeichner des OLE-Steuer Elements, das für andere Anwendungen verfügbar gemacht wird. Container verwenden diesen Namen, um ein Objekt dieser Steuerelement Klasse anzufordern.
+Dieses Makro muss in der Implementierungsdatei für jede Steuerelementklasse angezeigt werden, die das DECLARE_OLECREATE_EX-Makro oder die BEGIN_OLEFACTORY- und END_OLEFACTORY-Makros verwendet. Der externe Name ist der Bezeichner des OLE-Steuerelements, das für andere Anwendungen verfügbar gemacht wird. Container verwenden diesen Namen, um ein Objekt dieser Steuerelementklasse anzufordern.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
-  **Header** afxctl. h
+  **Header** afxctl.h
 
-##  <a name="begin_olefactory"></a>BEGIN_OLEFACTORY
+## <a name="begin_olefactory"></a><a name="begin_olefactory"></a>BEGIN_OLEFACTORY
 
-Beginnt die Deklaration ihrer Klassenfactory in der Header Datei Ihrer Steuerelement Klasse.
+Beginnt die Deklaration Ihrer Klassenfactory in der Headerdatei der Steuerelementklasse.
 
 ```
 BEGIN_OLEFACTORY(class_name)
@@ -104,20 +104,20 @@ BEGIN_OLEFACTORY(class_name)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Gibt den Namen der Steuerelement Klasse an, deren Klassenfactory ist.
+*Class_name*<br/>
+Gibt den Namen der Steuerelementklasse an, deren Klassenfactory dies ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Deklarationen von klassenfactorylizenzierungs Funktionen sollten unmittelbar nach BEGIN_OLEFACTORY beginnen.
+Deklarationen von Klassenfactory-Lizenzierungsfunktionen sollten unmittelbar nach BEGIN_OLEFACTORY beginnen.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
-  **Header** afxctl. h
+  **Header** afxctl.h
 
-##  <a name="end_olefactory"></a>END_OLEFACTORY
+## <a name="end_olefactory"></a><a name="end_olefactory"></a>END_OLEFACTORY
 
-Beendet die Deklaration der Klassenfactory Ihres Steuer Elements.
+Beendet die Deklaration der Klassenfactory des Steuerelements.
 
 ```
 END_OLEFACTORY(class_name)
@@ -125,16 +125,16 @@ END_OLEFACTORY(class_name)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement Klasse, deren Klassenfactory ist.
+*Class_name*<br/>
+Der Name der Steuerelementklasse, deren Klassenfactory dies ist.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
-  **Header** afxctl. h
+  **Header** afxctl.h
 
-##  <a name="afxverifylicfile"></a>Afxverifylicfile
+## <a name="afxverifylicfile"></a><a name="afxverifylicfile"></a>AfxVerifyLicFile
 
-Mit dieser Funktion können Sie überprüfen, ob die von `pszLicFileName` benannte Lizenzdatei für das OLE-Steuerelement gültig ist.
+Rufen Sie diese Funktion auf, `pszLicFileName` um zu überprüfen, ob die nach benannte Lizenzdatei für das OLE-Steuerelement gültig ist.
 
 ```
 BOOL AFXAPI AfxVerifyLicFile(
@@ -146,32 +146,32 @@ BOOL AFXAPI AfxVerifyLicFile(
 
 ### <a name="parameters"></a>Parameter
 
-*HINSTANCE*<br/>
-Der Instanzhandle der dll, die dem lizenzierten Steuerelement zugeordnet ist.
+*hInstance*<br/>
+Das Instanzhandle der DLL, die dem lizenzierten Steuerelement zugeordnet ist.
 
-*pszlicdateiname*<br/>
-Verweist auf eine mit NULL endenden Zeichenfolge, die den Lizenz Dateinamen enthält.
+*pszLicFileName*<br/>
+Verweist auf eine null-beendete Zeichenfolge, die den Lizenzdateinamen enthält.
 
-*pszlicfilecontent*<br/>
-Verweist auf eine Byte Sequenz, die der Sequenz am Anfang der Lizenzdatei entsprechen muss.
+*pszLicFileContents*<br/>
+Zeigt auf eine Bytesequenz, die mit der Sequenz übereinstimmen muss, die am Anfang der Lizenzdatei gefunden wurde.
 
-*CCH*<br/>
-Anzahl der Zeichen in *pszlicfilecontent*.
+*Cch*<br/>
+Anzahl der Zeichen in *pszLicFileContents*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Lizenzdatei vorhanden ist und mit der Zeichenfolge in *pszlicfilecontent*beginnt. andernfalls 0.
+Ein Wert ungleich Null, wenn die Lizenzdatei vorhanden ist und mit der Zeichensequenz in *pszLicFileContents*beginnt. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn *CCH* den Wert-1 hat, verwendet diese Funktion Folgendes:
+Wenn *cch* -1 ist, verwendet diese Funktion:
 
 [!code-cpp[NVC_MFC_Utilities#36](../../mfc/codesnippet/cpp/class-factories-and-licensing_2.cpp)]
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
-  **Header** afxctl. h
+  **Header** afxctl.h
 
 ## <a name="see-also"></a>Siehe auch
 
-[Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)
+[MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

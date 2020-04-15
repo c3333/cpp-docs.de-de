@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - ITopologyNode structure
 ms.assetid: 92e7e032-04f6-4c7c-be36-8f9a35fc4734
-ms.openlocfilehash: 1b4cb6a856d6da7b8eee7f9cba1ad51e375c024d
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 7cb815c4f7dc5ad09e8d352abc3f3375b8d9e205
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77140059"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368109"
 ---
 # <a name="itopologynode-structure"></a>ITopologyNode-Struktur
 
@@ -29,35 +29,35 @@ Eine Schnittstelle für einen vom Ressourcen-Manager definierten Topologieknoten
 struct ITopologyNode;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[Itopologynode:: getexecutionresourcecount](#getexecutionresourcecount)|Gibt die Anzahl der Ausführungs Ressourcen zurück, die unter diesem Knoten gruppiert sind.|
-|[Itopologynode:: getfirstexecutionresource](#getfirstexecutionresource)|Gibt die erste Ausführungs Ressource zurück, die in der Enumerationsfolge unter diesem Knoten gruppiert ist.|
-|[Itopologynode:: GetId](#getid)|Gibt den eindeutigen Bezeichner des Ressourcen-Manager für diesen Knoten zurück.|
-|[Itopologynode:: GetNext](#getnext)|Gibt eine Schnittstelle zum nächsten topologieknoten in der Aufzählungs Reihenfolge zurück.|
-|[Itopologynode:: getnumanode](#getnumanode)|Gibt die von Windows zugewiesene NUMA-Knotenzahl zurück, zu der dieser Ressource-Manager-Knoten gehört.|
+|[ITopologyNode::GetExecutionResourceCount](#getexecutionresourcecount)|Gibt die Anzahl der Ausführungsressourcen zurück, die unter diesem Knoten gruppiert sind.|
+|[ITopologyNode::GetFirstExecutionResource](#getfirstexecutionresource)|Gibt die erste Ausführungsressource zurück, die unter diesem Knoten in der Enumerationsreihenfolge gruppiert ist.|
+|[ITopologyNode::GetId](#getid)|Gibt den eindeutigen Bezeichner des Ressourcen-Managers für diesen Knoten zurück.|
+|[ITopologyNode::GetNext](#getnext)|Gibt eine Schnittstelle an den nächsten Topologieknoten in Enumerationsreihenfolge zurück.|
+|[ITopologyNode::GetNumaNode](#getnumanode)|Gibt die von Windows zugewiesene NUMA-Knotenzahl zurück, zu der dieser Ressource-Manager-Knoten gehört.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Schnittstelle wird in der Regel verwendet, um die Topologie des Systems zu durchlaufen, wie von der Ressourcen-Manager beobachtet.
+Diese Schnittstelle wird in der Regel verwendet, um die Topologie des Systems zu gehen, wie vom Ressourcen-Manager beobachtet.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `ITopologyNode`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** concrtrm. h
+**Kopfzeile:** concrtrm.h
 
 **Namespace:** Parallelität
 
-## <a name="getexecutionresourcecount"></a>Itopologynode:: getexecutionresourcecount-Methode
+## <a name="itopologynodegetexecutionresourcecount-method"></a><a name="getexecutionresourcecount"></a>ITopologyNode::GetExecutionResourceCount-Methode
 
-Gibt die Anzahl der Ausführungs Ressourcen zurück, die unter diesem Knoten gruppiert sind.
+Gibt die Anzahl der Ausführungsressourcen zurück, die unter diesem Knoten gruppiert sind.
 
 ```cpp
 virtual unsigned int GetExecutionResourceCount() const = 0;
@@ -65,11 +65,11 @@ virtual unsigned int GetExecutionResourceCount() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Ausführungs Ressourcen, die unter diesem Knoten gruppiert sind.
+Die Anzahl der Ausführungsressourcen, die unter diesem Knoten gruppiert sind.
 
-## <a name="getfirstexecutionresource"></a>Itopologynode:: getfirstexecutionresource-Methode
+## <a name="itopologynodegetfirstexecutionresource-method"></a><a name="getfirstexecutionresource"></a>ITopologyNode::GetFirstExecutionResource-Methode
 
-Gibt die erste Ausführungs Ressource zurück, die in der Enumerationsfolge unter diesem Knoten gruppiert ist.
+Gibt die erste Ausführungsressource zurück, die unter diesem Knoten in der Enumerationsreihenfolge gruppiert ist.
 
 ```cpp
 virtual ITopologyExecutionResource *GetFirstExecutionResource() const = 0;
@@ -77,11 +77,11 @@ virtual ITopologyExecutionResource *GetFirstExecutionResource() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die erste Ausführungs Ressource, die in der Enumerationsfolge unter diesem Knoten gruppiert ist.
+Die erste Ausführungsressource, die unter diesem Knoten in der Enumerationsreihenfolge gruppiert ist.
 
-## <a name="getid"></a>Itopologynode:: GetId-Methode
+## <a name="itopologynodegetid-method"></a><a name="getid"></a>ITopologyNode::GetId-Methode
 
-Gibt den eindeutigen Bezeichner des Ressourcen-Manager für diesen Knoten zurück.
+Gibt den eindeutigen Bezeichner des Ressourcen-Managers für diesen Knoten zurück.
 
 ```cpp
 virtual unsigned int GetId() const = 0;
@@ -89,17 +89,17 @@ virtual unsigned int GetId() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der eindeutige Bezeichner des Ressourcen-Manager für diesen Knoten.
+Der eindeutige Bezeichner des Ressourcen-Managers für diesen Knoten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Concurrency Runtime stellt Hardwarethreads auf dem System in Gruppen von Prozessor Knoten dar. Knoten werden normalerweise von der Hardware Topologie des Systems abgeleitet. Beispielsweise können alle Prozessoren eines bestimmten Sockets oder eines bestimmten NUMA-Knotens zum gleichen Prozessor Knoten gehören. Der Ressourcen-Manager weist diesen Knoten, beginnend mit `0` bis einschließlich `nodeCount - 1`, eindeutige Bezeichner zu, wobei `nodeCount` die Gesamtzahl der Prozessor Knoten im System darstellt.
+Die Concurrency Runtime stellt Hardwarethreads auf dem System in Gruppen von Prozessorknoten dar. Knoten werden in der Regel von der Hardwaretopologie des Systems abgeleitet. Beispielsweise können alle Prozessoren auf einem bestimmten Socket oder einem bestimmten NUMA-Knoten zum gleichen Prozessorknoten gehören. Der Ressourcen-Manager weist diesen Knoten eindeutige `0` Bezeichner `nodeCount - 1`zu, beginnend mit bis zu und einschließlich , wobei `nodeCount` die Gesamtzahl der Prozessorknoten auf dem System angezeigt wird.
 
-Die Anzahl der Knoten kann aus der Funktion " [getprocessornoentcount](concurrency-namespace-functions.md)" abgerufen werden.
+Die Anzahl der Knoten kann über die Funktion [GetProcessorNodeCount](concurrency-namespace-functions.md)abgerufen werden.
 
-## <a name="getnext"></a>Itopologynode:: GetNext-Methode
+## <a name="itopologynodegetnext-method"></a><a name="getnext"></a>ITopologyNode::GetNext-Methode
 
-Gibt eine Schnittstelle zum nächsten topologieknoten in der Aufzählungs Reihenfolge zurück.
+Gibt eine Schnittstelle an den nächsten Topologieknoten in Enumerationsreihenfolge zurück.
 
 ```cpp
 virtual ITopologyNode *GetNext() const = 0;
@@ -107,9 +107,9 @@ virtual ITopologyNode *GetNext() const = 0;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Schnittstelle zum nächsten Knoten in der Aufzählungs Reihenfolge. Wenn in der Aufzählungs Reihenfolge der System Topologie keine weiteren Knoten vorhanden sind, gibt diese Methode den Wert `NULL`zurück.
+Eine Schnittstelle zum nächsten Knoten in Enumerationsreihenfolge. Wenn in der Enumerationsreihenfolge der Systemtopologie keine Knoten mehr vorhanden `NULL`sind, gibt diese Methode den Wert zurück.
 
-## <a name="getnumanode"></a>Itopologynode:: getnumanode-Methode
+## <a name="itopologynodegetnumanode-method"></a><a name="getnumanode"></a>ITopologyNode::GetNumaNode-Methode
 
 Gibt die von Windows zugewiesene NUMA-Knotenzahl zurück, zu der dieser Ressource-Manager-Knoten gehört.
 
@@ -125,6 +125,6 @@ Die von Windows zugewiesene NUMA-Knotenzahl, zu der dieser Ressource-Manager-Kno
 
 Ein Threadproxy, der auf einem virtuellen Prozessorstamm ausgeführt wird, der zu diesem Knoten gehört, verfügt über Affinität zu mindestens der NUMA-Knotenebene für den NUMA-Knoten, der von dieser Methode zurückgegeben wird.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Concurrency-Namespace](concurrency-namespace.md)

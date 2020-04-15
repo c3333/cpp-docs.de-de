@@ -4,29 +4,29 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - type libraries [MFC], accessing
 ms.assetid: a03fa7f0-86c2-4119-bf81-202916fb74b3
-ms.openlocfilehash: 23d4675bd3638d2effd1b967f0729f9e70dac6de
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 1794e16489ab48d919bbd4116588fba4b74b88d9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426192"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372873"
 ---
 # <a name="type-library-access"></a>Zugreifen auf die Typbibliothek
 
-Typbibliotheken machen die Schnittstellen eines OLE-Steuer Elements für andere OLE-fähige Anwendungen verfügbar. Jedes OLE-Steuerelement muss eine Typbibliothek aufweisen, wenn eine oder mehrere Schnittstellen verfügbar gemacht werden sollen.
+Typbibliotheken machen die Schnittstellen eines OLE-Steuerelements für andere OLE-fähige Anwendungen verfügbar. Jedes OLE-Steuerelement muss über eine Typbibliothek verfügen, wenn eine oder mehrere Schnittstellen verfügbar gemacht werden sollen.
 
-Mit den folgenden Makros kann ein OLE-Steuerelement Zugriff auf seine eigene Typbibliothek bereitstellen:
+Die folgenden Makros ermöglichen es einem OLE-Steuerelement, Zugriff auf seine eigene Typbibliothek zu gewähren:
 
 ### <a name="type-library-access"></a>Zugreifen auf die Typbibliothek
 
 |||
 |-|-|
-|[DECLARE_OLETYPELIB](#declare_oletypelib)|Deklariert eine `GetTypeLib` Member-Funktion eines OLE-Steuer Elements (muss in der Klassen Deklaration verwendet werden).|
-|[IMPLEMENT_OLETYPELIB](#implement_oletypelib)|Implementiert eine `GetTypeLib` Member-Funktion eines OLE-Steuer Elements (muss in der Klassen Implementierung verwendet werden).|
+|[DECLARE_OLETYPELIB](#declare_oletypelib)|Deklariert `GetTypeLib` eine Memberfunktion eines OLE-Steuerelements (muss in der Klassendeklaration verwendet werden).|
+|[IMPLEMENT_OLETYPELIB](#implement_oletypelib)|Implementiert eine `GetTypeLib` Memberfunktion eines OLE-Steuerelements (muss in der Klassenimplementierung verwendet werden).|
 
-##  <a name="declare_oletypelib"></a>DECLARE_OLETYPELIB
+## <a name="declare_oletypelib"></a><a name="declare_oletypelib"></a>DECLARE_OLETYPELIB
 
-Deklariert die `GetTypeLib` Member-Funktion der Steuerelement Klasse.
+Deklariert `GetTypeLib` die Memberfunktion Ihrer Steuerelementklasse.
 
 ```
 DECLARE_OLETYPELIB(class_name)
@@ -34,20 +34,20 @@ DECLARE_OLETYPELIB(class_name)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement Klasse, die mit der Typbibliothek verknüpft ist.
+*Class_name*<br/>
+Der Name der Steuerelementklasse, die sich auf die Typbibliothek bezieht.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie dieses Makro in der Header Datei der Steuerelement Klasse.
+Verwenden Sie dieses Makro in der Headerdatei der Steuerklassen.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
 **Header:** afxdisp.h
 
-##  <a name="implement_oletypelib"></a>IMPLEMENT_OLETYPELIB
+## <a name="implement_oletypelib"></a><a name="implement_oletypelib"></a>IMPLEMENT_OLETYPELIB
 
-Implementiert die `GetTypeLib` Member-Funktion des Steuer Elements.
+Implementiert die Memberfunktion `GetTypeLib` des Steuerelements.
 
 ```
 IMPLEMENT_OLETYPELIB(class_name, tlid, wVerMajor,  wVerMinor)
@@ -55,26 +55,26 @@ IMPLEMENT_OLETYPELIB(class_name, tlid, wVerMajor,  wVerMinor)
 
 ### <a name="parameters"></a>Parameter
 
-*class_name*<br/>
-Der Name der Steuerelement Klasse, die mit der Typbibliothek verknüpft ist.
+*Class_name*<br/>
+Der Name der Steuerelementklasse, die sich auf die Typbibliothek bezieht.
 
 *tlid*<br/>
 Die ID-Nummer der Typbibliothek.
 
-*wvermajor*<br/>
+*wVerMajor*<br/>
 Die Hauptversionsnummer der Typbibliothek.
 
-*wverminor*<br/>
-Die neben Versionsnummer der Typbibliothek.
+*wVerMinor*<br/>
+Die Typbibliothek Nebenversionsnummer.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro muss in der Implementierungs Datei für jede Steuerelement Klasse, die das DECLARE_OLETYPELIB-Makro verwendet, angezeigt werden.
+Dieses Makro muss in der Implementierungsdatei für jede Steuerelementklasse angezeigt werden, die das DECLARE_OLETYPELIB-Makro verwendet.
 
-### <a name="requirements"></a>Voraussetzungen
+### <a name="requirements"></a>Anforderungen
 
 **Header:** afxdisp.h
 
 ## <a name="see-also"></a>Siehe auch
 
-[Makros und Globals](../../mfc/reference/mfc-macros-and-globals.md)
+[MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

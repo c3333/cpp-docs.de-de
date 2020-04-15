@@ -1,6 +1,6 @@
 ---
 title: _strset_s, _strset_s_l, _wcsset_s, _wcsset_s_l, _mbsset_s, _mbsset_s_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wcsset_s
 - _wcsset_s_l
@@ -8,6 +8,10 @@ api_name:
 - _mbsset_s_l
 - _strset_s_l
 - _mbsset_s
+- _o__mbsset_s
+- _o__mbsset_s_l
+- _o__strset_s
+- _o__wcsset_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -22,6 +26,7 @@ api_location:
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -61,12 +66,12 @@ helpviewer_keywords:
 - _tcsset_s function
 - mbsset_s function
 ms.assetid: dceb2909-6b41-4792-acb7-888e45bb8b35
-ms.openlocfilehash: a962a333af2a7f5c75d1ce2eb3fb5ce797a5d7f2
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 599c991e2e9b4cee1515decdaf1050311d844a68
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73626121"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81317245"
 ---
 # <a name="_strset_s-_strset_s_l-_wcsset_s-_wcsset_s_l-_mbsset_s-_mbsset_s_l"></a>_strset_s, _strset_s_l, _wcsset_s, _wcsset_s_l, _mbsset_s, _mbsset_s_l
 
@@ -115,13 +120,13 @@ errno_t _mbsset_s_l(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Festzulegende mit NULL endende Zeichenfolge.
 
-*numberOfElements*<br/>
-Die Größe des *Str* -Puffers.
+*Sizeinbytes*<br/>
+Die Größe *str* des str-Puffers.
 
-*c*<br/>
+*C*<br/>
 Zeicheneinstellung.
 
 *locale*<br/>
@@ -131,15 +136,17 @@ Zu verwendendes Gebietsschema.
 
 Null, wenn erfolgreich, andernfalls ein Fehlercode.
 
-Diese Funktionen überprüfen ihre Argumente. Wenn *Str* ein NULL-Zeiger ist, oder wenn das " *zahlofelements* "-Argument kleiner oder gleich 0 ist oder der übergebenen Block nicht auf NULL endet, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " zurück und legen " **errno** " auf " **EINVAL**" fest.
+Diese Funktionen überprüfen ihre Argumente. Wenn *str* ein Nullzeiger ist oder das *argument numberOfElements* kleiner oder gleich 0 ist oder der übergebene Block nicht null-beendet ist, wird der ungültige Parameterhandler aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** zurück und setzen **errno** auf **EINVAL**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_strset_s** -Funktion legt alle Zeichen von *Str* auf *c* (konvertiert in **char**), mit Ausnahme des abschließenden NULL-Zeichens fest. **_wcsset_s** und **_mbsset_s** sind breit Zeichen-und multibytezeichenversionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
+Die **_strset_s-Funktion** legt alle Zeichen von *str* auf *c* (konvertiert in **char**) mit Ausnahme des beendenden Nullzeichens fest. **_wcsset_s** und **_mbsset_s** sind breit- und multibyte-Versionen von **_strset_s**. Die Datentypen der Argumente und Rückgabewerte unterscheiden sich entsprechend. Anderenfalls verhalten sich diese Funktionen identisch.
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Gebietsschema](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Versionen dieser Funktionen ohne das **_l**-Suffix verwenden das aktuelle Gebietsschema für dieses vom Gebietsschema abhängige Verhalten; die Versionen mit dem **_l**-Suffix sind beinahe identisch, verwenden jedoch stattdessen den ihnen übergebenen Gebietsschemaparameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -150,7 +157,7 @@ Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mi
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strset_s**|\<string.h>|
 |**_strset_s_l**|\<tchar.h>|
@@ -184,7 +191,7 @@ After:  *******************************
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbset, _mbsnbset_l](mbsnbset-mbsnbset-l.md)<br/>

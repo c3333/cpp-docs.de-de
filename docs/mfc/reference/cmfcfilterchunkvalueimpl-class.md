@@ -46,16 +46,16 @@ helpviewer_keywords:
 - CMFCFilterChunkValueImpl [MFC], SetTextValue
 - CMFCFilterChunkValueImpl [MFC], SetChunk
 ms.assetid: 3c833f23-5b88-4d08-9e09-ca6a8aec88bf
-ms.openlocfilehash: b883d442342dd9fbbd074d9f8fcab76f81ef9864
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 2c90a873033516710077d31c8bb8af5fb5172ca6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62237556"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81367508"
 ---
 # <a name="cmfcfilterchunkvalueimpl-class"></a>CMFCFilterChunkValueImpl-Klasse
 
-Dies ist eine Klasse, die sowohl Block-Eigenschaft-Wert-Paar-Logik vereinfacht.
+Dies ist eine Klasse, die sowohl die Chunk- als auch die Eigenschaftswertpaarlogik vereinfacht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -67,53 +67,53 @@ class CMFCFilterChunkValueImpl : public ATL::IFilterChunkValue;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCFilterChunkValueImpl::~CMFCFilterChunkValueImpl](#_dtorcmfcfilterchunkvalueimpl)|Destructs das Objekt an.|
+|[CMFCFilterChunkValueImpl::'CMFCFilterChunkValueImpl](#_dtorcmfcfilterchunkvalueimpl)|Zerstört das Objekt.|
 |[CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl](#cmfcfilterchunkvalueimpl)|Erstellt das Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCFilterChunkValueImpl::Clear](#clear)|Löscht die ChunkValue an.|
-|[CMFCFilterChunkValueImpl::CopyChunk](#copychunk)|Kopiert dieses Blocks auf eine Struktur, die die Eigenschaften eines Blocks beschreibt.|
-|[CMFCFilterChunkValueImpl::CopyFrom](#copyfrom)|Initialisiert diesen Block-Wert aus der andere Wert.|
-|[CMFCFilterChunkValueImpl::GetChunkGUID](#getchunkguid)|Ruft den Block GUID ab.|
-|[CMFCFilterChunkValueImpl::GetChunkPID](#getchunkpid)|Ruft den Block PID (Eigenschafts-ID) ab.|
-|[CMFCFilterChunkValueImpl::GetChunkType](#getchunktype)|Ruft chunk Typ.|
+|[CMFCFilterChunkValueImpl::Clear](#clear)|Löscht den ChunkValue.|
+|[CMFCFilterChunkValueImpl::CopyChunk](#copychunk)|Kopiert diesen Chunk in eine Struktur, die die Eigenschaften eines Chunks beschreibt.|
+|[CMFCFilterChunkValueImpl::KopierenVon](#copyfrom)|Initialisiert diesen Chunk-Wert aus dem anderen Wert.|
+|[CMFCFilterChunkValueImpl::GetChunkGUID](#getchunkguid)|Ruft die Chunk-GUID ab.|
+|[CMFCFilterChunkValueImpl::GetChunkPID](#getchunkpid)|Ruft die Block-PID (Eigenschafts-ID) ab.|
+|[CMFCFilterChunkValueImpl::GetChunkType](#getchunktype)|Ruft den Chunk-Typ ab.|
 |[CMFCFilterChunkValueImpl::GetString](#getstring)|Ruft den Zeichenfolgenwert ab.|
-|[CMFCFilterChunkValueImpl::GetValue](#getvalue)|Ruft den Wert als eine zugeordnete Propvariant ab.|
-|[CMFCFilterChunkValueImpl::GetValueNoAlloc](#getvaluenoalloc)|Gibt nicht zugewiesenen (interne Wert) den Wert.|
-|[CMFCFilterChunkValueImpl::IsValid](#isvalid)|Überprüft, ob der Wert dieser Eigenschaft gültig ist.|
-|[CMFCFilterChunkValueImpl::SetBoolValue](#setboolvalue)|Überladen. Legt die Eigenschaft über Schlüssel zu einem booleschen Wert fest.|
-|[CMFCFilterChunkValueImpl::SetDwordValue](#setdwordvalue)|Legt die Eigenschaft durch den Schlüssel für einen DWORD-Wert.|
-|[CMFCFilterChunkValueImpl::SetFileTimeValue](#setfiletimevalue)|Legt die Eigenschaft über Schlüssel zu einer Filetime an.|
-|[CMFCFilterChunkValueImpl::SetInt64Value](#setint64value)|Legt die Eigenschaft durch Schlüssel Int64-Hashwerte.|
-|[CMFCFilterChunkValueImpl::SetIntValue](#setintvalue)|Legt die Eigenschaft durch den Schlüssel für eine ganze Zahl.|
-|[CMFCFilterChunkValueImpl::SetLongValue](#setlongvalue)|Legt die Eigenschaft durch die Taste, um einen Long-Wert.|
-|[CMFCFilterChunkValueImpl::SetSystemTimeValue](#setsystemtimevalue)|Legt die Eigenschaft durch Schlüssel in einem SystemTime.|
-|[CMFCFilterChunkValueImpl::SetTextValue](#settextvalue)|Legt die Eigenschaft durch die Taste, um eine Unicode-Zeichenfolge.|
+|[CMFCFilterChunkValueImpl::GetValue](#getvalue)|Ruft den Wert als zugeordnete Propvariante ab.|
+|[CMFCFilterChunkValueImpl::GetValueNoAlloc](#getvaluenoalloc)|Gibt den nicht zugewiesenen Wert (interner Wert) zurück.|
+|[CMFCFilterChunkValueImpl::IsValid](#isvalid)|Überprüft, ob dieser Eigenschaftswert gültig ist oder nicht.|
+|[CMFCFilterChunkValueImpl::SetBoolValue](#setboolvalue)|Ist überladen. Legt die Eigenschaft nach Schlüssel auf einen booleschen Wert fest.|
+|[CMFCFilterChunkValueImpl::SetDwordValue](#setdwordvalue)|Legt die Eigenschaft nach Schlüssel auf ein DWORD fest.|
+|[CMFCFilterChunkValueImpl::SetFileTimeValue](#setfiletimevalue)|Legt die Eigenschaft nach Schlüssel auf eine Dateizeit fest.|
+|[CMFCFilterChunkValueImpl::SetInt64Value](#setint64value)|Legt die Eigenschaft nach Schlüssel auf int64 fest.|
+|[CMFCFilterChunkValueImpl::SetIntValue](#setintvalue)|Legt die Eigenschaft nach Schlüssel auf einen int fest.|
+|[CMFCFilterChunkValueImpl::SetLongValue](#setlongvalue)|Legt die Eigenschaft nach Schlüssel auf long fest.|
+|[CMFCFilterChunkValueImpl::SetSystemTimeValue](#setsystemtimevalue)|Legt die Eigenschaft nach Schlüssel auf eine SystemTime fest.|
+|[CMFCFilterChunkValueImpl::SetTextValue](#settextvalue)|Legt die Eigenschaft nach Schlüssel auf eine Unicode-Zeichenfolge fest.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCFilterChunkValueImpl::SetChunk](#setchunk)|Eine Hilfsfunktion, die das Segment der allgemeinen Eigenschaften festlegt.|
+|[CMFCFilterChunkValueImpl::SetChunk](#setchunk)|Eine Hilfsfunktion, die die allgemeinen Eigenschaften des Chunks festlegt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Um zu verwenden, erstellen Sie einfach eine CMFCFilterChunkValueImpl-Klasse, von der richtigen
+Zur Verwendung erstellen Sie einfach eine CMFCFilterChunkValueImpl-Klasse der richtigen Art
 
 Beispiel:
 
-CMFCFilterChunkValueImpl-Segment;
+CMFCFilterChunkValueImpl-Chunk;
 
-hr = chunk.SetBoolValue(PKEY_IsAttachment, true);
+hr = Chunk. SetBoolValue(PKEY_IsAttachment, true);
 
 oder
 
-hr = chunk.SetFileTimeValue(PKEY_ItemDate, ftLastModified);
+hr = Chunk. SetFileTimeValue(PKEY_ItemDate, ftLastModified);
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -125,17 +125,17 @@ hr = chunk.SetFileTimeValue(PKEY_ItemDate, ftLastModified);
 
 **Header:** afxwin.h
 
-##  <a name="clear"></a>  CMFCFilterChunkValueImpl::Clear
+## <a name="cmfcfilterchunkvalueimplclear"></a><a name="clear"></a>CMFCFilterChunkValueImpl::Clear
 
-Löscht die ChunkValue an.
+Löscht den ChunkValue.
 
 ```
 void Clear();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="cmfcfilterchunkvalueimpl"></a>  CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl
+## <a name="cmfcfilterchunkvalueimplcmfcfilterchunkvalueimpl"></a><a name="cmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl
 
 Erstellt das Objekt.
 
@@ -143,21 +143,21 @@ Erstellt das Objekt.
 CMFCFilterChunkValueImpl();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="_dtorcmfcfilterchunkvalueimpl"></a>  CMFCFilterChunkValueImpl:: ~ CMFCFilterChunkValueImpl
+## <a name="cmfcfilterchunkvalueimplcmfcfilterchunkvalueimpl"></a><a name="_dtorcmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl::'CMFCFilterChunkValueImpl
 
-Destructs das Objekt an.
+Zerstört das Objekt.
 
 ```
 virtual ~CMFCFilterChunkValueImpl();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="copychunk"></a>  CMFCFilterChunkValueImpl::CopyChunk
+## <a name="cmfcfilterchunkvalueimplcopychunk"></a><a name="copychunk"></a>CMFCFilterChunkValueImpl::CopyChunk
 
-Kopiert dieses Blocks auf eine Struktur, die die Eigenschaften eines Blocks beschreibt.
+Kopiert diesen Chunk in eine Struktur, die die Eigenschaften eines Chunks beschreibt.
 
 ```
 HRESULT CopyChunk(STAT_CHUNK* pStatChunk);
@@ -166,17 +166,17 @@ HRESULT CopyChunk(STAT_CHUNK* pStatChunk);
 ### <a name="parameters"></a>Parameter
 
 *pStatChunk*<br/>
-Ein Zeiger auf den Zielwert, beschreibt die Merkmale des Blocks.
+Ein Zeiger auf den Zielwert, der die Eigenschaften des Chunks beschreibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="copyfrom"></a>  CMFCFilterChunkValueImpl::CopyFrom
+## <a name="cmfcfilterchunkvalueimplcopyfrom"></a><a name="copyfrom"></a>CMFCFilterChunkValueImpl::KopierenVon
 
-Initialisiert diesen Block-Wert aus der andere Wert.
+Initialisiert diesen Chunk-Wert aus dem anderen Wert.
 
 ```
 void CopyFrom (IFilterChunkValue* pValue);
@@ -185,13 +185,13 @@ void CopyFrom (IFilterChunkValue* pValue);
 ### <a name="parameters"></a>Parameter
 
 *pValue*<br/>
-Gibt den Quellwert zum Kopieren aus.
+Gibt den Quellwert an, aus dem kopiert werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getchunkguid"></a>  CMFCFilterChunkValueImpl::GetChunkGUID
+## <a name="cmfcfilterchunkvalueimplgetchunkguid"></a><a name="getchunkguid"></a>CMFCFilterChunkValueImpl::GetChunkGUID
 
-Ruft den Block GUID ab.
+Ruft die Chunk-GUID ab.
 
 ```
 REFGUID GetChunkGUID() const;
@@ -199,13 +199,13 @@ REFGUID GetChunkGUID() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf eine GUID zum Identifizieren des Blocks.
+Ein Verweis auf eine GUID, die den Chunk identifiziert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getchunkpid"></a>  CMFCFilterChunkValueImpl::GetChunkPID
+## <a name="cmfcfilterchunkvalueimplgetchunkpid"></a><a name="getchunkpid"></a>CMFCFilterChunkValueImpl::GetChunkPID
 
-Ruft den Block PID (Eigenschafts-ID) ab.
+Ruft die Block-PID (Eigenschafts-ID) ab.
 
 ```
 DWORD GetChunkPID() const;
@@ -213,13 +213,13 @@ DWORD GetChunkPID() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine DWORD-Wert, der mit der Eigenschafts-ID an.
+Ein DWORD-Wert, der die Eigenschafts-ID enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getchunktype"></a>  CMFCFilterChunkValueImpl::GetChunkType
+## <a name="cmfcfilterchunkvalueimplgetchunktype"></a><a name="getchunktype"></a>CMFCFilterChunkValueImpl::GetChunkType
 
-Ruft den Block-Typ ab.
+Ruft den Chunk-Typ ab.
 
 ```
 CHUNKSTATE GetChunkType() const;
@@ -227,11 +227,11 @@ CHUNKSTATE GetChunkType() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein CHUNKSTATE aufgezählt-Wert, der angibt, ob das aktuelle Segment einer Text-Type-Eigenschaft oder ein Werttyp-Eigenschaft ist.
+Ein CHUNKSTATE-Enumeratwert, der angibt, ob der aktuelle Chunk eine Texttypeigenschaft oder eine Werttypeigenschaft ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getstring"></a>  CMFCFilterChunkValueImpl::GetString
+## <a name="cmfcfilterchunkvalueimplgetstring"></a><a name="getstring"></a>CMFCFilterChunkValueImpl::GetString
 
 Ruft den Zeichenfolgenwert ab.
 
@@ -241,13 +241,13 @@ CString &GetString();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Zeichenfolge mit der Block-Wert.
+Eine Zeichenfolge, die den Chunk-Wert enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getvalue"></a>  CMFCFilterChunkValueImpl::GetValue
+## <a name="cmfcfilterchunkvalueimplgetvalue"></a><a name="getvalue"></a>CMFCFilterChunkValueImpl::GetValue
 
-Ruft den Wert als eine zugeordnete Propvariant ab.
+Ruft den Wert als zugeordnete Propvariante ab.
 
 ```
 HRESULT GetValue(PROPVARIANT** ppPropVariant);
@@ -256,17 +256,17 @@ HRESULT GetValue(PROPVARIANT** ppPropVariant);
 ### <a name="parameters"></a>Parameter
 
 *ppPropVariant*<br/>
-Wenn die Funktion zurückgibt, enthält dieser Parameter die Block-Wert.
+Wenn die Funktion zurückgegeben wird, enthält dieser Parameter den Chunk-Wert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-S_OK, wenn PROPVARIANT erfolgreich reserviert wurde und der Block-Wert erfolgreich, um kopiert wurde *PpPropVariant*; andernfalls ein Fehlercode.
+S_OK, wenn PROPVARIANT erfolgreich zugewiesen wurde und der Chunk-Wert erfolgreich in *ppPropVariant*kopiert wurde. andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getvaluenoalloc"></a>  CMFCFilterChunkValueImpl::GetValueNoAlloc
+## <a name="cmfcfilterchunkvalueimplgetvaluenoalloc"></a><a name="getvaluenoalloc"></a>CMFCFilterChunkValueImpl::GetValueNoAlloc
 
-Gibt den Wert des nicht zugewiesenen (interne Wert).
+Gibt den nicht zugewiesenen Wert (interner Wert) zurück.
 
 ```
 PROPVARIANT GetValueNoAlloc ();
@@ -274,13 +274,13 @@ PROPVARIANT GetValueNoAlloc ();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der aktuelle Block-Wert zurückgegeben.
+Gibt den aktuellen Chunk-Wert zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="isvalid"></a>  CMFCFilterChunkValueImpl::IsValid
+## <a name="cmfcfilterchunkvalueimplisvalid"></a><a name="isvalid"></a>CMFCFilterChunkValueImpl::IsValid
 
-Überprüft, ob der Wert dieser Eigenschaft gültig ist.
+Überprüft, ob dieser Eigenschaftswert gültig ist oder nicht.
 
 ```
 BOOL IsValid() const;
@@ -288,13 +288,13 @@ BOOL IsValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn der aktuelle Block-Wert gültig ist. andernfalls "false".
+TRUE, wenn der aktuelle Chunk-Wert gültig ist; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setboolvalue"></a>  CMFCFilterChunkValueImpl::SetBoolValue
+## <a name="cmfcfilterchunkvalueimplsetboolvalue"></a><a name="setboolvalue"></a>CMFCFilterChunkValueImpl::SetBoolValue
 
-Überladen. Legt die Eigenschaft über Schlüssel zu einem booleschen Wert fest.
+Ist überladen. Legt die Eigenschaft nach Schlüssel auf einen booleschen Wert fest.
 
 ```
 HRESULT SetBoolValue(
@@ -319,35 +319,35 @@ HRESULT SetBoolValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *bVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setchunk"></a>  CMFCFilterChunkValueImpl::SetChunk
+## <a name="cmfcfilterchunkvalueimplsetchunk"></a><a name="setchunk"></a>CMFCFilterChunkValueImpl::SetChunk
 
-Eine Hilfsfunktion, die das Segment der allgemeinen Eigenschaften festlegt.
+Eine Hilfsfunktion, die die allgemeinen Eigenschaften des Chunks festlegt.
 
 ```
 HRESULT SetChunk(
@@ -362,32 +362,32 @@ HRESULT SetChunk(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setdwordvalue"></a>  CMFCFilterChunkValueImpl::SetDwordValue
+## <a name="cmfcfilterchunkvalueimplsetdwordvalue"></a><a name="setdwordvalue"></a>CMFCFilterChunkValueImpl::SetDwordValue
 
-Legen Sie die Eigenschaft durch den Schlüssel für einen DWORD-Wert.
+Legen Sie die Eigenschaft nach Schlüssel auf ein DWORD fest.
 
 ```
 HRESULT SetDwordValue(
@@ -403,35 +403,35 @@ HRESULT SetDwordValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *dwVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setfiletimevalue"></a>  CMFCFilterChunkValueImpl::SetFileTimeValue
+## <a name="cmfcfilterchunkvalueimplsetfiletimevalue"></a><a name="setfiletimevalue"></a>CMFCFilterChunkValueImpl::SetFileTimeValue
 
-Legen Sie die Eigenschaft über Schlüssel zu einer Filetime an.
+Legen Sie die Eigenschaft nach Schlüssel auf eine Dateizeit fest.
 
 ```
 HRESULT SetFileTimeValue(
@@ -447,35 +447,35 @@ HRESULT SetFileTimeValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *dtVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setint64value"></a>  CMFCFilterChunkValueImpl::SetInt64Value
+## <a name="cmfcfilterchunkvalueimplsetint64value"></a><a name="setint64value"></a>CMFCFilterChunkValueImpl::SetInt64Value
 
-Festlegen Sie die Eigenschaft durch Schlüssel ein Int64.
+Legen Sie die Eigenschaft nach Schlüssel auf int64 fest.
 
 ```
 HRESULT SetInt64Value(
@@ -491,35 +491,35 @@ HRESULT SetInt64Value(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *nVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setintvalue"></a>  CMFCFilterChunkValueImpl::SetIntValue
+## <a name="cmfcfilterchunkvalueimplsetintvalue"></a><a name="setintvalue"></a>CMFCFilterChunkValueImpl::SetIntValue
 
-Legen Sie die Eigenschaft durch den Schlüssel für eine ganze Zahl.
+Legen Sie die Eigenschaft nach Schlüssel auf einen int fest.
 
 ```
 HRESULT SetIntValue(
@@ -535,35 +535,35 @@ HRESULT SetIntValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *nVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setlongvalue"></a>  CMFCFilterChunkValueImpl::SetLongValue
+## <a name="cmfcfilterchunkvalueimplsetlongvalue"></a><a name="setlongvalue"></a>CMFCFilterChunkValueImpl::SetLongValue
 
-Legen Sie die Eigenschaft, durch die Taste, um einen Long-Wert.
+Legen Sie die Eigenschaft nach Schlüssel auf long fest.
 
 ```
 HRESULT SetLongValue(
@@ -579,35 +579,35 @@ HRESULT SetLongValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *lVal*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setsystemtimevalue"></a>  CMFCFilterChunkValueImpl::SetSystemTimeValue
+## <a name="cmfcfilterchunkvalueimplsetsystemtimevalue"></a><a name="setsystemtimevalue"></a>CMFCFilterChunkValueImpl::SetSystemTimeValue
 
-Legt die Eigenschaft durch Schlüssel in einem SystemTime.
+Legt die Eigenschaft nach Schlüssel auf eine SystemTime fest.
 
 ```
 HRESULT SetSystemTimeValue(
@@ -623,35 +623,35 @@ HRESULT SetSystemTimeValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
-*systemTime*<br/>
-Gibt den Wert "Block" festgelegt.
+*Systemtime*<br/>
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="settextvalue"></a>  CMFCFilterChunkValueImpl::SetTextValue
+## <a name="cmfcfilterchunkvalueimplsettextvalue"></a><a name="settextvalue"></a>CMFCFilterChunkValueImpl::SetTextValue
 
-Legt die Eigenschaft durch die Taste, um eine Unicode-Zeichenfolge.
+Legt die Eigenschaft nach Schlüssel auf eine Unicode-Zeichenfolge fest.
 
 ```
 HRESULT SetTextValue(
@@ -667,31 +667,31 @@ HRESULT SetTextValue(
 ### <a name="parameters"></a>Parameter
 
 *pkey*<br/>
-Gibt einen Eigenschaftsschlüssel.
+Gibt einen Eigenschaftsschlüssel an.
 
 *pszValue*<br/>
-Gibt den Wert "Block" festgelegt.
+Gibt den festzulegenden Chunk-Wert an.
 
 *chunkType*<br/>
-Flags geben an, ob dieses Segment einen Text-Typ oder ein Werttyp-Eigenschaft enthält. Flagwerte werden aus der CHUNKSTATE-Enumeration entnommen.
+Flags geben an, ob dieser Chunk einen Texttyp oder eine Werttypeigenschaft enthält. Flagwerte werden der CHUNKSTATE-Enumeration entnommen.
 
 *locale*<br/>
-Die Sprache und der untersprachen ein Textsegment zugeordnet werden soll. Block-Gebietsschema dokumentindexer dient, führen Sie die richtige wörtertrennung Text. Wenn das Segment weder ein Werttyp mit dem Datentyp VT_LPWSTR: VT_LPSTR oder VT_BSTR als auch vom Texttyp ist, wird dieses Feld ignoriert.
+Die Sprache und Untersprache, die einem Textabschnitt zugeordnet sind. Das Blockgebietsschema wird von Dokumentindizierern verwendet, um den richtigen Wortumbruch von Text auszuführen. Wenn es sich bei dem Chunk weder um einen Texttyp noch um einen Werttyp mit Datentyp VT_LPWSTR, VT_LPSTR oder VT_BSTR handelt, wird dieses Feld ignoriert.
 
-*cwcLenSource*<br/>
-Die Länge in Zeichen des Quelltexts aus dem der aktuelle Datenblock abgeleitet wurde. Ein Wert von NULL gibt an, Zeichen für Zeichen-Entsprechung zwischen den Quelltext und den abgeleiteten Text. Ein Wert ungleich NULL bedeutet, dass keine solche direkte Entsprechung vorhanden ist.
+*cwcLenQuelle*<br/>
+Die Länge in Zeichen des Quelltextes, von dem der aktuelle Chunk abgeleitet wurde. Ein Nullwert bedeutet Zeichen-für-Zeichen-Entsprechung zwischen dem Quelltext und dem abgeleiteten Text. Ein Wert ungleich Null bedeutet, dass eine solche direkte Entsprechung nicht besteht.
 
 *cwcStartSource*<br/>
-Der Offset, von dem aus der Quelltext für einen abgeleiteten Block in der Quelle Block startet.
+Der Offset, von dem der Quelltext für einen abgeleiteten Abschnitt im Quellabschnitt beginnt.
 
 *chunkBreakType*<br/>
-Der Typ der Pause, die den vorherigen Block von aktuellen Block trennt. Werte reichen von der CHUNK_BREAKTYPE-Enumeration.
+Der Typ der Unterbrechung, die den vorherigen Block vom aktuellen Block trennt. Die Werte stammen aus der CHUNK_BREAKTYPE-Enumeration.
 
 ### <a name="return-value"></a>Rückgabewert
 
 S_OK, wenn erfolgreich; andernfalls ein Fehlercode.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 

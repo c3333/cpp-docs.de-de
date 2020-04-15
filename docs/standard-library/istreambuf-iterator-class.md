@@ -18,16 +18,16 @@ helpviewer_keywords:
 - std::istreambuf_iterator [C++], traits_type
 - std::istreambuf_iterator [C++], equal
 ms.assetid: 39002da2-61a6-48a5-9d0c-5df8271f6038
-ms.openlocfilehash: 3b839126b7b5541c3a9dd033fcbbc8221bde7c22
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 80bca2160f2e60938e9d0c85557b11a273c23264
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689470"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81363060"
 ---
 # <a name="istreambuf_iterator-class"></a>istreambuf_iterator-Klasse
 
-Die Klassen Vorlage istreambuf_iterator beschreibt ein eingabeiteratorobjekt, das Zeichen Elemente aus einem Eingabestreampuffer extrahiert, auf den es durch ein gespeicheres Objekt zugreift, vom Typ Zeiger auf `basic_streambuf` \< **CharType**, **Merkmale**> .
+Die Klassenvorlage istreambuf_iterator beschreibt ein Eingabe-Iterator-Objekt, das Zeichenelemente aus einem Eingabestreampuffer extrahiert, auf `basic_streambuf` \< den sie über ein gespeichertes Objekt vom Typ Zeiger auf **CharType**, **Traits**> zugreift.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,13 +39,13 @@ class istreambuf_iterator
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der den Zeichentyp für das istreambuf_iterator-Objekt darstellt.
 
-*Merkmale* \
+*Merkmale*\
 Der Typ, der den Zeichentyp für das istreambuf_iterator-Objekt darstellt. Dieses Argument ist optional, und der Standardwert ist `char_traits`\< *CharType>.*
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die istreambuf_iterator-Klasse muss die Anforderungen für einen Eingabeiterator erfüllen.
 
@@ -53,13 +53,13 @@ Nachdem ein Objekt der istreambuf_iterator-Klasse mit einem als nicht null gespe
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[istreambuf_iterator](#istreambuf_iterator)|Erstellt ein `istreambuf_iterator`-Objekt, das initialisiert wird, um Zeichen aus dem Eingabestream zu lesen.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, der für den Zeichentyp von `ostreambuf_iterator` bereitgestellt wird.|
 |[int_type](#int_type)|Ein Typ, der einen Ganzzahltyp für ein `istreambuf_iterator`-Objekt bereitstellt.|
@@ -69,17 +69,17 @@ Nachdem ein Objekt der istreambuf_iterator-Klasse mit einem als nicht null gespe
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[equal](#equal)|Testet zwei Eingabestreampufferiteratoren auf Gleichheit.|
+|[Gleich](#equal)|Testet zwei Eingabestreampufferiteratoren auf Gleichheit.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
-|[operator*](#op_star)|Der Dereferenzierungsoperator gibt das folgende Zeichen im Stream zurück.|
-|[operator++](#op_add_add)|Gibt entweder das folgende Zeichen im Eingabestream zurück oder kopiert das Objekt vor dem Inkrementieren und gibt die Kopie zurück.|
-|[operator->](#op_arrow)|Gibt den Wert eines Members zurück, falls vorhanden.|
+|[Operator*](#op_star)|Der Dereferenzierungsoperator gibt das folgende Zeichen im Stream zurück.|
+|[Operator++](#op_add_add)|Gibt entweder das folgende Zeichen im Eingabestream zurück oder kopiert das Objekt vor dem Inkrementieren und gibt die Kopie zurück.|
+|[Operator->](#op_arrow)|Gibt den Wert eines Members zurück, falls vorhanden.|
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -87,7 +87,7 @@ Nachdem ein Objekt der istreambuf_iterator-Klasse mit einem als nicht null gespe
 
 **Namespace:** std
 
-## <a name="char_type"></a> istreambuf_iterator::char_type
+## <a name="istreambuf_iteratorchar_type"></a><a name="char_type"></a>istreambuf_iterator::char_type
 
 Ein Typ, der für den Zeichentyp von `ostreambuf_iterator` bereitgestellt wird.
 
@@ -95,7 +95,7 @@ Ein Typ, der für den Zeichentyp von `ostreambuf_iterator` bereitgestellt wird.
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ stellt ein Synonym für den Vorlagenparameter *CharType* dar.
 
@@ -132,7 +132,7 @@ int main( )
 }
 ```
 
-## <a name="equal"></a> istreambuf_iterator::equal
+## <a name="istreambuf_iteratorequal"></a><a name="equal"></a>istreambuf_iterator::gleich
 
 Testet zwei Eingabestream-Pufferiteratoren auf Äquivalenz.
 
@@ -142,16 +142,16 @@ bool equal(const istreambuf_iterator<CharType, Traits>& right) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Der Iterator für die Durchführung von Gleichheitsüberprüfungen.
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Iteratoren `istreambuf_iterator` End-of-Stream-Iteratoren sind oder wenn keiner von beiden ein End-of-Stream-Iterator ist; andernfalls **FALSE**.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Ein Bereich wird durch das `istreambuf_iterator` an der aktuellen Position und dem End-of-Stream-Iterator definiert, aber da alle nicht-End-of-Stream-Iteratoren unter der `equal` Member-Funktion äquivalent sind, ist es nicht möglich, Unterbereiche mit `istreambuf_iterator`s zu definieren. Die `==`- und `!=`-Operatoren weisen die gleiche Semantik auf.
+Ein Bereich wird `istreambuf_iterator` durch die bis zur aktuellen Position und dem End-of-Stream-Iterator definiert, aber `equal` da alle Nicht-End-of-Stream-Iteratoren unter der Memberfunktion äquivalent sind, ist es nicht möglich, Subbereiche mit `istreambuf_iterator`s zu definieren. Die `==`- und `!=`-Operatoren weisen die gleiche Semantik auf.
 
 ### <a name="example"></a>Beispiel
 
@@ -181,7 +181,7 @@ int main( )
 }
 ```
 
-## <a name="int_type"></a> istreambuf_iterator::int_type
+## <a name="istreambuf_iteratorint_type"></a><a name="int_type"></a>istreambuf_iterator::int_type
 
 Ein Typ, der einen Ganzzahltyp für ein `istreambuf_iterator`-Objekt bereitstellt.
 
@@ -189,7 +189,7 @@ Ein Typ, der einen Ganzzahltyp für ein `istreambuf_iterator`-Objekt bereitstell
 typedef typename traits_type::int_type int_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für `Traits::int_type`.
 
@@ -212,7 +212,7 @@ The inttype1 = 100.
 */
 ```
 
-## <a name="istream_type"></a> istreambuf_iterator::istream_type
+## <a name="istreambuf_iteratoristream_type"></a><a name="istream_type"></a>istreambuf_iterator::istream_type
 
 Ein Typ, der für den Streamtyp von `istreambuf_iterator` bereitgestellt wird.
 
@@ -220,15 +220,15 @@ Ein Typ, der für den Streamtyp von `istreambuf_iterator` bereitgestellt wird.
 typedef basic_istream<CharType, Traits> istream_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für `basic_istream`\< **CharType**, **Traits**>.
+Der Typ ist `basic_istream` \< ein Synonym für **CharType**, **Traits**>.
 
 ### <a name="example"></a>Beispiel
 
 Unter [istreambuf_iterator](#istreambuf_iterator) finden Sie ein Beispiel für das Deklarieren und Verwenden von `istream_type`.
 
-## <a name="istreambuf_iterator"></a> istreambuf_iterator::istreambuf_iterator
+## <a name="istreambuf_iteratoristreambuf_iterator"></a><a name="istreambuf_iterator"></a>istreambuf_iterator::istreambuf_iterator
 
 Erstellt einen istreambuf_iterator, der initialisiert wird, um Zeichen aus dem Eingabestream zu lesen.
 
@@ -239,15 +239,15 @@ istreambuf_iterator(istream_type& _Istr) throw();
 
 ### <a name="parameters"></a>Parameter
 
-*\ "*
+*strbuf*\
 Der Eingabestreampuffer, dem der `istreambuf_iterator` angefügt wird.
 
-*_Istr* \
+*_Istr*\
 Der Eingabestream, dem der `istreambuf_iterator` angefügt wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor initialisiert den Eingabestream-Puffer Zeiger mit " *strinbuf*". Der zweite Konstruktor initialisiert den Eingabestream-Puffer Zeiger mit *_Istr*. `rdbuf` und schließlich versucht, ein Objekt vom Typ `CharType` zu extrahieren und zu speichern.
+Der erste Konstruktor initialisiert den Eingabestream-Pufferzeiger mit *strbuf*. Der zweite Konstruktor initialisiert den Eingabestream-Pufferzeiger mit *_Istr*. `rdbuf`, und versucht schließlich, ein Objekt `CharType`vom Typ zu extrahieren und zu speichern.
 
 ### <a name="example"></a>Beispiel
 
@@ -281,7 +281,7 @@ int main( )
 }
 ```
 
-## <a name="op_star"></a> istreambuf_iterator::operator*
+## <a name="istreambuf_iteratoroperator"></a><a name="op_star"></a>istreambuf_iterator::Operator*
 
 Der Dereferenzierungsoperator gibt das folgende Zeichen im Stream zurück.
 
@@ -321,7 +321,7 @@ int main( )
 }
 ```
 
-## <a name="op_add_add"></a> istreambuf_iterator::operator++
+## <a name="istreambuf_iteratoroperator"></a><a name="op_add_add"></a>istreambuf_iterator::operator++
 
 Gibt entweder das folgende Zeichen im Eingabestream zurück oder kopiert das Objekt vor dem Inkrementieren und gibt die Kopie zurück.
 
@@ -334,9 +334,9 @@ istreambuf_iterator<CharType, Traits> operator++(int);
 
 Ein `istreambuf_iterator` oder ein Verweis auf `istreambuf_iterator`.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der erste Operator versucht schließlich, ein Objekt vom Typ `CharType` aus dem zugeordneten Eingabestream zu extrahieren und zu speichern. Der zweite Operator erstellt eine Kopie des Objekts, inkrementiert das Objekt und gibt dann die Kopie zurück.
+Der erste Operator versucht schließlich, ein `CharType` Objekt vom Typ aus dem zugeordneten Eingabestream zu extrahieren und zu speichern. Der zweite Operator erstellt eine Kopie des Objekts, inkrementiert das Objekt und gibt dann die Kopie zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -366,7 +366,7 @@ int main( )
 }
 ```
 
-## <a name="op_arrow"></a> istreambuf_iterator::operator-&gt;
+## <a name="istreambuf_iteratoroperator-gt"></a><a name="op_arrow"></a>istreambuf_iterator::Operator-&gt;
 
 Gibt den Wert eines Members zurück, falls vorhanden.
 
@@ -376,9 +376,9 @@ const Elem* operator->() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Operator gibt **&\*\*this** zurück.
+Der Operator gibt ** & \* \*diese**zurück.
 
-## <a name="streambuf_type"></a> istreambuf_iterator::streambuf_type
+## <a name="istreambuf_iteratorstreambuf_type"></a><a name="streambuf_type"></a>istreambuf_iterator::streambuf_type
 
 Ein Typ, der für den Streamtyp von „istreambuf_iterator“ bereitgestellt wird.
 
@@ -386,15 +386,15 @@ Ein Typ, der für den Streamtyp von „istreambuf_iterator“ bereitgestellt wir
 typedef basic_streambuf<CharType, Traits> streambuf_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Typ ist ein Synonym für `basic_streambuf`\< **CharType**, **Traits**>.
+Der Typ ist `basic_streambuf` \< ein Synonym für **CharType**, **Traits**>.
 
 ### <a name="example"></a>Beispiel
 
 Unter [istreambuf_iterator](#istreambuf_iterator) finden Sie ein Beispiel für das Deklarieren und Verwenden von `istreambuf_type`.
 
-## <a name="traits_type"></a> istreambuf_iterator::traits_type
+## <a name="istreambuf_iteratortraits_type"></a><a name="traits_type"></a>istreambuf_iterator::traits_type
 
 Ein Typ, der für den Merkmaltyp von `istream_iterator` bereitgestellt wird.
 
@@ -402,7 +402,7 @@ Ein Typ, der für den Merkmaltyp von `istream_iterator` bereitgestellt wird.
 typedef Traits traits_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ stellt ein Synonym für den Vorlagenparameter *Merkmale* dar.
 
@@ -441,7 +441,7 @@ int main( )
 
 ## <a name="see-also"></a>Siehe auch
 
-[iterator-Struktur](../standard-library/iterator-struct.md)\
+[iterator Struct](../standard-library/iterator-struct.md)\
 [\<iterator>](../standard-library/iterator.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)

@@ -8,27 +8,27 @@ helpviewer_keywords:
 - inline assembler [C++]
 - inline assembly [C++]
 ms.assetid: 7e13f18f-3628-4306-8b81-4a6d09c043fe
-ms.openlocfilehash: d36c4d83a1fbf5d7ad718a7caf1dccb8f6745676
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2050f59601755a93c73b743debacbf52ba9cec05
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80169370"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318080"
 ---
 # <a name="inline-assembler"></a>Inlineassembler
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
 Die Assemblysprache dient vielen Zwecken, wie etwa der Verbesserung der Programmgeschwindigkeit, der Verringerung der Speicheranforderungen und der Steuerung der Hardware. Sie können den Inlineassembler verwenden, um Assemblysprachanweisungen ohne zusätzliche Assembly- und Verknüpfungsschritte direkt in die C- und C++-Quellprogramme einzubetten. Der Inlineassembler wird in den Compiler integriert, daher benötigen Sie keinen getrennten Assembler wie den Microsoft Macro Assembler (MASM).
 
 > [!NOTE]
->  Programme mit Inlineassemblercode sind nicht vollständig auf andere Hardwareplattformen übertragbar. Wenn Ihnen Portabilität wichtig ist, vermeiden Sie beim Entwerfen die Verwendung des Inlineassemblers.
+> Programme mit Inlineassemblercode sind nicht vollständig auf andere Hardwareplattformen übertragbar. Wenn Ihnen Portabilität wichtig ist, vermeiden Sie beim Entwerfen die Verwendung des Inlineassemblers.
 
-Die Inlineassembly wird auf Arm-und x64-Prozessoren nicht unterstützt.  In folgenden Themen wird erklärt, wie der Inlineassembler von Visual C/C++ mit x86-Prozessoren zu verwenden ist:
+Die Inline-Baugruppe wird auf den ARM- und x64-Prozessoren nicht unterstützt.  In folgenden Themen wird erklärt, wie der Inlineassembler von Visual C/C++ mit x86-Prozessoren zu verwenden ist:
 
 - [Übersicht über Inlineassembler](../../assembler/inline/inline-assembler-overview.md)
 
-- [Vorteile der Inlineassembly](../../assembler/inline/advantages-of-inline-assembly.md)
+- [Vorteile von Inlineassemblys](../../assembler/inline/advantages-of-inline-assembly.md)
 
 - [__asm](../../assembler/inline/asm.md)
 
@@ -40,7 +40,7 @@ Die Inlineassembly wird auf Arm-und x64-Prozessoren nicht unterstützt.  In folg
 
 - [Springen zu Bezeichnungen in der Inlineassembly](../../assembler/inline/jumping-to-labels-in-inline-assembly.md)
 
-- [Aufrufen von C-Funktionen in der Inlineassembly](../../assembler/inline/calling-c-functions-in-inline-assembly.md)
+- [Aufrufen von C-Funktionen in der Inline-Baugruppe](../../assembler/inline/calling-c-functions-in-inline-assembly.md)
 
 - [Aufrufen von C++-Funktionen in der Inlineassembly](../../assembler/inline/calling-cpp-functions-in-inline-assembly.md)
 
@@ -48,9 +48,9 @@ Die Inlineassembly wird auf Arm-und x64-Prozessoren nicht unterstützt.  In folg
 
 - [Optimieren der Inlineassembly](../../assembler/inline/optimizing-inline-assembly.md)
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Intrinsische Compilerfunktionen und Assemblysprache](../../intrinsics/compiler-intrinsics-and-assembly-language.md)<br/>
-[C++-Programmiersprachenreferenz](../../cpp/cpp-language-reference.md)<br/>
+[CompilerIntrinsics und Assemblylanguage](../../intrinsics/compiler-intrinsics-and-assembly-language.md)<br/>
+[C++-Sprachreferenz](../../cpp/cpp-language-reference.md)<br/>

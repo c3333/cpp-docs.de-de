@@ -1,9 +1,10 @@
 ---
 title: _swab
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _swab
 - stdlib/_swab
+- _o__swab
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-utility-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - swab function
 - bytes, swapping
 ms.assetid: 017142f2-050c-4f6a-8b49-6b094f58ec94
-ms.openlocfilehash: b0faba55c42023f4d66adae68de6be2c1ab009a0
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: f7fe23cd9c1b2eab52ebe50904d0bb18fe16cea6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946293"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362952"
 ---
 # <a name="_swab"></a>_swab
 
@@ -63,21 +65,23 @@ Anzahl der zu kopierenden und tauschender Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die Funktion " **Swap** " gibt keinen Wert zurück. Die-Funktion legt **errno** auf **EINVAL** fest, wenn der *src* -oder *dest* -Zeiger NULL ist oder *n* kleiner als 0 (null) ist und der Handler für ungültige Parameter aufgerufen wird, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
+Die **Tupferfunktion** gibt keinen Wert zurück. Die Funktion setzt **errno** auf **EINVAL,** wenn entweder der *src-* oder *dest-Zeiger* null oder *n* kleiner als Null ist und der ungültige Parameterhandler aufgerufen wird, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Wenn *n* gleich ist, kopiert die **_swab** -Funktion *n* Bytes aus *src*, tauscht die einzelnen Paare von angrenzenden Bytes aus und speichert das Ergebnis am *dest*. Wenn *n* ungerade ist, kopiert **_swab** die ersten *n*-1 Byte von *src*, und das endgültige Byte wird nicht kopiert. Die **_swab** -Funktion wird normalerweise verwendet, um Binärdaten für die Übertragung auf einen Computer vorzubereiten, der eine andere Byte Reihenfolge verwendet.
+Wenn *n* gerade ist, kopiert die **_swab-Funktion** *n* Bytes aus *src*, tauscht jedes Paar benachbarter Bytes aus und speichert das Ergebnis bei *dest*. Wenn *n* ungerade ist, **kopiert und** tauscht _swab die ersten *n*-1 Bytes von *src*aus, und das endgültige Byte wird nicht kopiert. Die **_swab** Funktion wird in der Regel verwendet, um binäre Daten für die Übertragung an einen Computer vorzubereiten, der eine andere Bytereihenfolge verwendet.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_swab**|C: \<stdlib.h> C++: \<cstdlib> oder \<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

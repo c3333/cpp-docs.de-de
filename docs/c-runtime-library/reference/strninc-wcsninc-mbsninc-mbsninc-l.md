@@ -1,11 +1,13 @@
 ---
 title: _strninc, _wcsninc, _mbsninc, _mbsninc_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbsninc
 - _mbsninc_l
 - _wcsninc
 - _strninc
+- _o__mbsninc
+- _o__mbsninc_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -45,16 +48,16 @@ helpviewer_keywords:
 - mbsninc_l function
 - _tcsninc function
 ms.assetid: 6caace64-f9e4-48c0-afa8-ea51824ad723
-ms.openlocfilehash: b03ca4c9515bd2c70a1ce2574850e23b3add44c5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 297d2fdf940ab81a3d636d4726e6e6a345ce5c02
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947070"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364479"
 ---
 # <a name="_strninc-_wcsninc-_mbsninc-_mbsninc_l"></a>_strninc, _wcsninc, _mbsninc, _mbsninc_l
 
-Verschiebt einen Zeichen folgen Zeiger um **n** Zeichen.
+Verschiebt einen Zeichenfolgenzeiger um **n** Zeichen.
 
 > [!IMPORTANT]
 > **_mbsninc** und **_mbsninc_l** können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden. Weitere Informationen finden Sie im Artikel [CRT functions not supported in Universal Windows Platform apps (In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen)](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md).
@@ -83,7 +86,7 @@ unsigned char *_mbsninc(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Quellzeichenfolge.
 
 *count*<br/>
@@ -94,11 +97,13 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Zeiger auf *Str* zurück, nachdem *Str* um *count* -Zeichen erhöht wurde, oder **null** , wenn der angegebene Zeiger **null**ist. Wenn *count* größer oder gleich der Anzahl der Zeichen in *Str*ist, ist das Ergebnis nicht definiert.
+Jede dieser Routinen gibt einen Zeiger auf *str* zurück, nachdem *str* um *Zählzeichen* oder **NULL** erhöht wurde, wenn der angegebene Zeiger **NULL**ist. Wenn die *Anzahl* größer oder gleich der Anzahl der Zeichen in *str*ist, ist das Ergebnis nicht definiert.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_mbsninc** -Funktion erhöht das Multibytezeichen *Str* by *count* . **_mbsninc** erkennt multibytezeichensequenzen gemäß der derzeit verwendeten [Multibytezeichen-Codepage](../../c-runtime-library/code-pages.md) .
+Die **_mbsninc-Funktion** erhöht *str* um Zählmultibyte-Zeichen. *count* **_mbsninc** erkennt Multibyte-Zeichen-Sequenzen entsprechend der derzeit genutzten [Multibyte-Codepage.](../../c-runtime-library/code-pages.md)
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -106,24 +111,24 @@ Die **_mbsninc** -Funktion erhöht das Multibytezeichen *Str* by *count* . **_mb
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tcsninc**|**_strninc**|**_mbsninc**|**_wcsninc**|
 
-**_strninc** und **_wcsninc** sind Einzel Byte Zeichen-Zeichen folgen und breit Zeichen-Zeichen folgen Versionen von **_mbsninc**. **_wcsninc** und **_strninc** werden nur für diese Zuordnung bereitgestellt und sollten andernfalls nicht verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
+**_strninc** und **_wcsninc** sind einbyte Zeichenfolgen- und Breitzeichenzeichenfolgenversionen von **_mbsninc**. **_wcsninc** und **_strninc** werden nur für diese Zuordnung bereitgestellt und sollten nicht anderweitig verwendet werden. Weitere Informationen finden Sie unter [Verwenden von Zuordnungen für generischen Text](../../c-runtime-library/using-generic-text-mappings.md) und [Textzuordnungen für generischen Text](../../c-runtime-library/generic-text-mappings.md).
 
-**_mbsninc_l** ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_mbsninc_l** identisch ist, außer dass stattdessen der übergebene Gebietsschemaparameter verwendet wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbsninc**|\<mbstring.h>|
 |**_mbsninc_l**|\<mbstring.h>|
 |**_strninc**|\<tchar.h>|
 |**_wcsninc**|\<tchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_strdec, _wcsdec, _mbsdec, _mbsdec_l](strdec-wcsdec-mbsdec-mbsdec-l.md)<br/>

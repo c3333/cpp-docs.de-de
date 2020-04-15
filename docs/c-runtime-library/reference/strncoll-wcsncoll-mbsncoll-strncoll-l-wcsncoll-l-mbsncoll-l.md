@@ -1,6 +1,6 @@
 ---
 title: _strncoll, _wcsncoll, _mbsncoll, _strncoll_l, _wcsncoll_l, _mbsncoll_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _strncoll
 - _mbsncoll_l
@@ -8,6 +8,12 @@ api_name:
 - _wcsncoll_l
 - _mbsncoll
 - _strncoll_l
+- _o__mbsncoll
+- _o__mbsncoll_l
+- _o__strncoll
+- _o__strncoll_l
+- _o__wcsncoll
+- _o__wcsncoll_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -21,6 +27,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -63,12 +70,12 @@ helpviewer_keywords:
 - ftcsnccoll function
 - _wcsncoll_l function
 ms.assetid: e659a5a4-8afe-4033-8e72-17ffd4bdd8e9
-ms.openlocfilehash: e5120b37cd06266752194ec826a173474f6902fd
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c9d36edde4f529651f9bed4c34b81bf977bac09f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947264"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364236"
 ---
 # <a name="_strncoll-_wcsncoll-_mbsncoll-_strncoll_l-_wcsncoll_l-_mbsncoll_l"></a>_strncoll, _wcsncoll, _mbsncoll, _strncoll_l, _wcsncoll_l, _mbsncoll_l
 
@@ -128,21 +135,23 @@ Das zu verwendende Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt einen Wert zurück, der die Beziehung der Teil Zeichenfolgen von *Zeichenfolge1* und *Zeichenfolge2*wie folgt angibt.
+Jede dieser Funktionen gibt einen Wert zurück, der die Beziehung der Teilzeichenfolgen von *string1* und *string2*wie folgt angibt.
 
 |Rückgabewert|Verhältnis von string1 zu string2|
 |------------------|----------------------------------------|
-|< 0|*Zeichenfolge1* ist kleiner als *Zeichenfolge2*.|
-|0|*Zeichenfolge1* ist mit *Zeichenfolge2*identisch.|
-|> 0|*Zeichenfolge1* ist größer als *Zeichenfolge2*.|
+|< 0|*string1* ist kleiner als *string2*.|
+|0|*string1* ist identisch mit *string2*.|
+|> 0|*string1* ist größer als *string2*.|
 
-Jede dieser Funktionen gibt **_NLSCMPERROR**zurück. Um **_NLSCMPERROR**zu verwenden, fügen Sie entweder String. h oder mbstring. h ein. **_wcsncoll** kann fehlschlagen, wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* breit Zeichen Codes enthält, die sich außerhalb der Domäne der Sortierreihenfolge befinden. Wenn ein Fehler auftritt, legt **_wcsncoll** möglicherweise **errno** auf **EINVAL**fest. Wenn Sie einen **_wcsncoll**-Aufrufvorgang überprüfen möchten, legen Sie **errno** auf 0 fest, und überprüfen Sie dann **errno** , nachdem Sie **_wcsncoll**aufgerufen haben.
+Jede dieser Funktionen gibt **_NLSCMPERROR**zurück. Um **_NLSCMPERROR**zu verwenden, fügen Sie entweder STRING.h oder MBSTRING.h ein. **_wcsncoll** kann fehlschlagen, wenn *string1* oder *string2* breitstellige Codes enthält, die sich außerhalb der Domäne der Sortiersequenz befinden. Wenn ein Fehler auftritt, **kann _wcsncoll** **errno** auf **EINVAL**setzen. Um bei einem Aufruf an **_wcsncoll**nach einem Fehler zu suchen, legen Sie **errno** auf 0 fest, und überprüfen Sie dann **errno,** nachdem Sie **_wcsncoll**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Jede dieser Funktionen führt einen Vergleich der ersten *count* -Zeichen in *Zeichenfolge1* und *Zeichenfolge2*entsprechend der derzeit verwendeten Codepage durch. Diese Funktionen sollten nur verwendet werden, wenn es in der Codepage einen Unterschied zwischen der Reihenfolge des Zeichensatzes und der lexikografischen Reihenfolge gibt, und dieser Unterschied für den Zeichenfolgenvergleich relevant ist. Die Reihenfolge des Zeichensatzes ist vom Gebietsschema abhängig. Die Versionen dieser Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema, aber die Versionen mit dem **_l** -Suffix verwenden das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Jede dieser Funktionen führt einen Mitlichtfallvergleich der ersten *Zählzeichen* in *String1* und *string2*gemäß der Codepage durch, die derzeit verwendet wird. Diese Funktionen sollten nur verwendet werden, wenn es in der Codepage einen Unterschied zwischen der Reihenfolge des Zeichensatzes und der lexikografischen Reihenfolge gibt, und dieser Unterschied für den Zeichenfolgenvergleich relevant ist. Die Reihenfolge des Zeichensatzes ist vom Gebietsschema abhängig. Die Versionen dieser Funktionen, die nicht über das **_l** Suffix verfügen, verwenden das aktuelle Gebietsschema, aber die Versionen mit dem **_l** Suffix verwenden das übergebene Gebietsschema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn entweder *Zeichenfolge1* oder *Zeichenfolge2* ein NULL-Zeiger ist oder *count* größer als **INT_MAX**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen **_NLSCMPERROR** zurück und legen **errno** auf **EINVAL**fest.
+Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn *string1* oder *string2* ein NULL-Zeiger oder *die Anzahl* größer als **INT_MAX**ist, wird der ungültige Parameterhandler aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **_NLSCMPERROR** zurück und setzen **errno** auf **EINVAL**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -153,18 +162,18 @@ Mit allen diesen Funktionen werden ihre Parameter überprüft. Wenn entweder *Ze
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strncoll**, **_strncoll_l**|\<string.h>|
 |**_wcsncoll**, **_wcsncoll_l**|\<wchar.h> oder \<string.h>|
 |**_mbsncoll**, **_mbsncoll_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Locale](../../c-runtime-library/locale.md)<br/>
-[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[String-Manipulation](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [strcoll-Funktionen](../../c-runtime-library/strcoll-functions.md)<br/>
 [localeconv](localeconv.md)<br/>
 [_mbsnbcoll, _mbsnbcoll_l, _mbsnbicoll, _mbsnbicoll_l](mbsnbcoll-mbsnbcoll-l-mbsnbicoll-mbsnbicoll-l.md)<br/>

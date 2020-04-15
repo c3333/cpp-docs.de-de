@@ -11,24 +11,24 @@ f1_keywords:
 - filesystem/std::filesystem::perms
 - filesystem/std::experimental::filesystem::perms
 ms.assetid: 0096c046-d101-464c-8259-b878a48280b0
-ms.openlocfilehash: f148347cd132a604622415c65bb3e0352f5308eb
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 0d5b31b31f9f435c52db89521b4b753c16d86501
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427122"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368416"
 ---
 # <a name="ltfilesystemgt-enumerations"></a>&lt;filesystem&gt;-Enumerationen
 
 In diesem Thema werden die Enumerationen filesystem-Header beschrieben.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<experimentellen/Dateisystem >
+**Header:** \<experimental/filesystem>
 
 **Namespace:** std::experimental::filesystem
 
-## <a name="copy_options"></a> copy_options
+## <a name="copy_options"></a><a name="copy_options"></a>copy_options
 
 Eine Enumeration von Bitmaskenwerten, die mit den Funktionen [copy](filesystem-functions.md#copy) und [copy_file](filesystem-functions.md#copy_file) verwendet wird, um Verhalten anzugeben.
 
@@ -51,7 +51,7 @@ enum class copy_options {
 
 ### <a name="values"></a>Werte
 
-|`Name`|Beschreibung|
+|`Name`|BESCHREIBUNG|
 |------------|-----------------|
 |`none`|Führen Sie das Standardverhalten für diesen Vorgang aus.|
 |`skip_existing`|Erstellen Sie keine Kopie, wenn die Datei bereits vorhanden ist. Melden Sie auch keinen Fehler.|
@@ -64,7 +64,7 @@ enum class copy_options {
 |`create_symlinks`|Erstellen Sie symbolische Links, anstatt Dateien zu kopieren. Ein absoluter Pfad muss als Quellpfad verwendet werden, es sei denn, das Ziel ist das aktuelle Verzeichnis.|
 |`create_hard_links`|Erstellen Sie feste Links, anstatt Dateien zu kopieren.|
 
-## <a name="directory_options"></a> directory_options
+## <a name="directory_options"></a><a name="directory_options"></a> directory_options
 
 Gibt an, ob symbolischen Verknüpfungen zu Verzeichnissen gefolgt oder ob diese ignoriert werden sollen.
 
@@ -79,14 +79,14 @@ enum class directory_options {
 
 ### <a name="values"></a>Werte
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`none`|Standardverhalten: symbolische Verknüpfungen auf Verzeichnisse ignorieren. „Berechtigung verweigert“ ist ein Fehler.|
 |`follow_directory_symlink`|Symbolische Verknüpfungen zu Verzeichnissen als tatsächliche Verzeichnisse behandeln.|
 
-## <a name="file_type"></a> file_type
+## <a name="file_type"></a><a name="file_type"></a>file_type
 
-Eine Enumeration für Dateitypen. Die unterstützten Werte sind regulär, Verzeichnis, NOT_FOUND und unbekannt.
+Eine Enumeration für Dateitypen. Die unterstützten Werte sind regular, Verzeichnis, not_found und unbekannt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -120,17 +120,17 @@ enum class file_type {
 |`socket`|7|Stellt ein Socket auf UNIX-basierten Systemen dar. (Nicht unterstützt.)|
 |`unknown`|8|Stellt eine Datei dar, deren Status nicht ermittelt werden kann.|
 
-## <a name="perm_options"></a>perm_options
+## <a name="perm_options"></a><a name="perm_options"></a>perm_options
 
-Enthält Werte `replace`, `add`, `remove`und `nofollow`.
+Enthält `replace`die `add` `remove`Werte `nofollow`, , und .
 
 ```cpp
 enum class perm_options;
 ```
 
-## <a name="perms"></a> perms
+## <a name="perms"></a><a name="perms"></a>Perms
 
-Flags für Dateiberechtigungen. Die unterstützten Werte sind im wesentlichen "schreibgeschützt" und "alle". Bei einer schreibgeschützten Datei sind keine *_write-Bits festgelegt. Andernfalls wird das `all` -Bit (0x0777) festgelegt.
+Flags für Dateiberechtigungen. Die unterstützten Werte sind im Wesentlichen "schreibgeschützt" und alle. Bei einer schreibgeschützten Datei sind keine *_write-Bits festgelegt. Andernfalls wird das `all` -Bit (0x0777) festgelegt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -163,5 +163,5 @@ enum class perms {// names for permissions
 
 ## <a name="see-also"></a>Siehe auch
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[\<filesystem>](../standard-library/filesystem.md)
+[Header-Dateien-Referenz](../standard-library/cpp-standard-library-header-files.md)\
+[\<Dateisystem->](../standard-library/filesystem.md)

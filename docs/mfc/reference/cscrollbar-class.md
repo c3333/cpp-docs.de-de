@@ -1,5 +1,5 @@
 ---
-title: Cscrollbar-Klasse
+title: CScrollBar-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CScrollBar
@@ -30,14 +30,14 @@ helpviewer_keywords:
 - CScrollBar [MFC], SetScrollRange
 - CScrollBar [MFC], ShowScrollBar
 ms.assetid: f3735ca5-73ea-46dc-918b-4d824c9fe47f
-ms.openlocfilehash: cd0c1ed85969d50548cf6b2be1d5677ed62110bc
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 761d7e9db650c6d95e916c85bd7456d9b1c647c5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69502574"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318535"
 ---
-# <a name="cscrollbar-class"></a>Cscrollbar-Klasse
+# <a name="cscrollbar-class"></a>CScrollBar-Klasse
 
 Stellt die Funktionalität eines Windows-Bildlaufleisten-Steuerelements bereit.
 
@@ -51,43 +51,43 @@ class CScrollBar : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CScrollBar::CScrollBar](#cscrollbar)|Erstellt ein `CScrollBar`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CScrollBar::Create](#create)|Erstellt die Windows-Scrollleiste und fügt Sie an `CScrollBar` das-Objekt an.|
+|[CScrollBar::Erstellen](#create)|Erstellt die Windows-Bildlaufleiste und `CScrollBar` fügt sie an das Objekt an.|
 |[CScrollBar::EnableScrollBar](#enablescrollbar)|Aktiviert oder deaktiviert einen oder beide Pfeile auf einer Scrollleiste.|
-|[CScrollBar::GetScrollBarInfo](#getscrollbarinfo)|Ruft Informationen über die Bild Lauf Leiste mithilfe einer `SCROLLBARINFO` -Struktur ab.|
-|[CScrollBar::GetScrollInfo](#getscrollinfo)|Ruft Informationen über die Scrollleiste ab.|
-|[CScrollBar::GetScrollLimit](#getscrolllimit)|Ruft den Grenzwert der Bild Lauf Leiste ab.|
+|[CScrollBar::GetScrollBarInfo](#getscrollbarinfo)|Ruft Informationen über die Bildlaufleiste mithilfe einer `SCROLLBARINFO` Struktur ab.|
+|[CScrollBar::GetScrollInfo](#getscrollinfo)|Ruft Informationen zur Bildlaufleiste ab.|
+|[CScrollBar::GetScrollLimit](#getscrolllimit)|Ruft das Limit der Bildlaufleiste ab|
 |[CScrollBar::GetScrollPos](#getscrollpos)|Ruft die aktuelle Position eines Scrollfelds ab.|
-|[CScrollBar::GetScrollRange](#getscrollrange)|Ruft die aktuellen minimalen und maximalen Schiebe leisten Positionen für die angegebene Bild Lauf Leiste ab.|
+|[CScrollBar::GetScrollRange](#getscrollrange)|Ruft die aktuellen minimalen und maximalen Bildlaufleistenpositionen für die angegebene Bildlaufleiste ab.|
 |[CScrollBar::SetScrollInfo](#setscrollinfo)|Legt die Informationen über die Bildlaufleiste fest.|
-|[CScrollBar::SetScrollPos](#setscrollpos)|Legt die aktuelle Position eines scrollfelds fest.|
+|[CScrollBar::SetScrollPos](#setscrollpos)|Legt die aktuelle Position eines Bildlauffelds fest.|
 |[CScrollBar::SetScrollRange](#setscrollrange)|Legt die minimalen und maximalen Positionswerte für die angegebene Scrollleiste fest.|
-|[CScrollBar::ShowScrollBar](#showscrollbar)|Zeigt eine Schiebe Leiste an oder blendet sie aus.|
+|[CScrollBar::ShowScrollBar](#showscrollbar)|Zeigt eine Bildlaufleiste ein oder blendet sie aus.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein ScrollBar-Steuerelement in zwei Schritten. Rufen Sie zuerst `CScrollBar` den-Konstruktor auf, um das `CScrollBar` -Objekt zu erstellen, und rufen Sie dann die [Create](#create) Member-Funktion auf, um das Windows `CScrollBar` -Bild Lauf leisten-Steuerelement zu erstellen und es an das
+Sie erstellen ein Bildlaufleistensteuerelement in zwei Schritten. Rufen Sie zunächst `CScrollBar` den Konstruktor auf, um das `CScrollBar` Objekt zu erstellen, und rufen Sie dann die [Memberfunktion Erstellen](#create) auf, um das Windows-Scrollleistensteuerelement zu erstellen und es an das `CScrollBar` Objekt anzuhängen.
 
-Wenn Sie ein `CScrollBar` -Objekt in einem Dialogfeld (über eine Dialogfeld Ressource) erstellen `CScrollBar` , wird automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
+Wenn Sie `CScrollBar` ein Objekt in einem Dialogfeld (über eine Dialogfeldressource) erstellen, wird dieser `CScrollBar` automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie ein `CScrollBar` -Objekt in einem-Fenster erstellen, müssen Sie es möglicherweise auch zerstören.
+Wenn Sie `CScrollBar` ein Objekt in einem Fenster erstellen, müssen Sie es möglicherweise auch zerstören.
 
-Wenn Sie das `CScrollBar` Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie das `CScrollBar` Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie " **Delete** " für das-Objekt verwenden, um es zu zerstören, wenn der Benutzer die Windows-Scrollleiste beendet.
+Wenn Sie `CScrollBar` das Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie `CScrollBar` das Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **das Objekt** löschen aufrufen, um es zu zerstören, wenn der Benutzer die Windows-Bildlaufleiste beendet.
 
-Wenn Sie im `CScrollBar` Objektspeicher zuweisen, überschreiben Sie den `CScrollBar` Dekonstruktor, um die Zuweisungen zu verwerfen.
+Wenn Sie Speicher im `CScrollBar` Objekt zuweisen, `CScrollBar` überschreiben Sie den Destruktor, um die Zuordnungen zu entsorgen.
 
-Weitere Informationen zum Verwenden von `CScrollBar`finden Sie unter Steuer [Elemente](../../mfc/controls-mfc.md).
+Weitere Informationen zur `CScrollBar`Verwendung finden Sie unter [Steuerelemente](../../mfc/controls-mfc.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -99,9 +99,9 @@ Weitere Informationen zum Verwenden von `CScrollBar`finden Sie unter Steuer [Ele
 
 **Header:** afxwin.h
 
-##  <a name="create"></a>Cscrollbar:: Create
+## <a name="cscrollbarcreate"></a><a name="create"></a>CScrollBar::Erstellen
 
-Erstellt die Windows-Scrollleiste und fügt Sie an `CScrollBar` das-Objekt an.
+Erstellt die Windows-Bildlaufleiste und `CScrollBar` fügt sie an das Objekt an.
 
 ```
 virtual BOOL Create(
@@ -114,40 +114,40 @@ virtual BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *dwStyle*<br/>
-Gibt den Stil der Scrollleiste an. Wenden Sie ein beliebige Kombination von [Stilen der Scrollleiste](../../mfc/reference/styles-used-by-mfc.md#scroll-bar-styles) auf die Scrollleiste an.
+Gibt den Stil der Bildlaufleiste an. Wenden Sie eine beliebige Kombination von [Bildlaufleistenstilen](../../mfc/reference/styles-used-by-mfc.md#scroll-bar-styles) auf die Bildlaufleiste an.
 
 *Rect*<br/>
-Gibt die Größe und Position der Scrollleiste an. Kann entweder eine `RECT` Struktur oder ein `CRect` -Objekt sein.
+Gibt die Größe und Position der Bildlaufleiste an. Kann entweder `RECT` eine Struktur `CRect` oder ein Objekt sein.
 
 *pParentWnd*<br/>
-Gibt das übergeordnete Fenster der Scrollleiste an, `CDialog` in der Regel ein-Objekt. Er darf nicht NULL sein.
+Gibt das übergeordnete Fenster der Bildlaufleiste an, in der Regel ein `CDialog` Objekt. Es darf nicht NULL sein.
 
 *nID*<br/>
-Die Steuerelement-ID der Scrollleiste.
+Die Steuer-ID der Bildlaufleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CScrollBar` -Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen, der das `CScrollBar` -Objekt erstellt. `Create`anschließend wird aufgerufen, wodurch die zugeordnete Windows-Scrollleiste erstellt und initialisiert `CScrollBar` und an das-Objekt angefügt wird.
+Sie erstellen `CScrollBar` ein Objekt in zwei Schritten. Rufen Sie zunächst den Konstruktor `CScrollBar` auf, der das Objekt erstellt. rufen `Create`Sie dann auf , wodurch die zugehörige Windows-Bildlaufleiste erstellt und initialisiert und an das `CScrollBar` Objekt angefügt wird.
 
-Wenden Sie die folgenden [Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf eine Schiebe Leiste an:
+Wenden Sie die folgenden [Fensterstile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf eine Bildlaufleiste an:
 
-- WS_CHILD immer
+- WS_CHILD Immer
 
-- WS_VISIBLE normalerweise
+- WS_VISIBLE In der Regel
 
-- WS_DISABLED selten
+- WS_DISABLED Selten
 
-- WS_GROUP zum Gruppieren von Steuerelementen
+- WS_GROUP Zu Gruppensteuerelementen
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CScrollBar#1](../../mfc/reference/codesnippet/cpp/cscrollbar-class_1.cpp)]
 
-##  <a name="cscrollbar"></a>Cscrollbar:: cscrollbar
+## <a name="cscrollbarcscrollbar"></a><a name="cscrollbar"></a>CScrollBar::CScrollBar
 
 Erstellt ein `CScrollBar`-Objekt.
 
@@ -155,15 +155,15 @@ Erstellt ein `CScrollBar`-Objekt.
 CScrollBar();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie nach dem Erstellen des Objekts `Create` die Member-Funktion auf, um die Windows-Bild Lauf Leiste zu erstellen und zu initialisieren.
+Rufen Sie nach dem `Create` Erstellen des Objekts die Memberfunktion auf, um die Windows-Bildlaufleiste zu erstellen und zu initialisieren.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CScrollBar#2](../../mfc/reference/codesnippet/cpp/cscrollbar-class_2.h)]
 
-##  <a name="enablescrollbar"></a>Cscrollbar:: enablescrollbar
+## <a name="cscrollbarenablescrollbar"></a><a name="enablescrollbar"></a>CScrollBar::EnableScrollBar
 
 Aktiviert oder deaktiviert einen oder beide Pfeile auf einer Scrollleiste.
 
@@ -174,25 +174,25 @@ BOOL EnableScrollBar(UINT nArrowFlags = ESB_ENABLE_BOTH);
 ### <a name="parameters"></a>Parameter
 
 *nArrowFlags*<br/>
-Gibt an, ob die Bild Lauf Pfeile aktiviert oder deaktiviert sind und welche Pfeile aktiviert oder deaktiviert werden. Dieser Parameter kann einen der folgenden Werte aufweisen:
+Gibt an, ob die Bildlaufpfeile aktiviert oder deaktiviert sind und welche Pfeile aktiviert oder deaktiviert sind. Dieser Parameter kann einer der folgenden Werte sein:
 
-- ESB_ENABLE_BOTH aktiviert beide Pfeile einer Schiebe Leiste.
+- ESB_ENABLE_BOTH Aktiviert beide Pfeile einer Bildlaufleiste.
 
-- ESB_DISABLE_LTUP deaktiviert den Pfeil nach Links einer horizontalen Schiebe Leiste oder den Pfeil nach oben einer vertikalen Schiebe Leiste.
+- ESB_DISABLE_LTUP Deaktiviert den linken Pfeil einer horizontalen Bildlaufleiste oder den Pfeil nach oben einer vertikalen Bildlaufleiste.
 
-- ESB_DISABLE_RTDN deaktiviert den Pfeil nach rechts einer horizontalen Schiebe Leiste oder den Pfeil nach unten in einer vertikalen Schiebe Leiste.
+- ESB_DISABLE_RTDN Deaktiviert den rechten Pfeil einer horizontalen Bildlaufleiste oder den Abwärtspfeil einer vertikalen Bildlaufleiste.
 
-- ESB_DISABLE_BOTH deaktiviert beide Pfeile einer Schiebe Leiste.
+- ESB_DISABLE_BOTH Deaktiviert beide Pfeile einer Bildlaufleiste.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn die Pfeile wie angegeben aktiviert oder deaktiviert werden. andernfalls 0 (null) gibt an, dass sich die Pfeile bereits im angeforderten Zustand befinden oder dass ein Fehler aufgetreten ist.
+Ein Wert ungleich Null, wenn die Pfeile wie angegeben aktiviert oder deaktiviert sind; andernfalls 0, was angibt, dass sich die Pfeile bereits im angeforderten Zustand befinden oder dass ein Fehler aufgetreten ist.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [cscrollbar:: setscrollrange](#setscrollrange).
+  Siehe Beispiel für [CScrollBar::SetScrollRange](#setscrollrange).
 
-##  <a name="getscrollbarinfo"></a>Cscrollbar:: getscrollbarinfo
+## <a name="cscrollbargetscrollbarinfo"></a><a name="getscrollbarinfo"></a>CScrollBar::GetScrollBarInfo
 
 Ruft die Informationen ab, die von der `SCROLLBARINFO`-Struktur über eine Scrollleiste verwaltet werden.
 
@@ -203,17 +203,17 @@ BOOL GetScrollBarInfo(PSCROLLBARINFO pScrollInfo) const;
 ### <a name="parameters"></a>Parameter
 
 *pScrollInfo*<br/>
-Ein Zeiger auf die [scrollbarinfo](/windows/win32/api/winuser/ns-winuser-scrollbarinfo) -Struktur.
+Ein Zeiger auf die [SCROLLBARINFO-Struktur.](/windows/win32/api/winuser/ns-winuser-scrollbarinfo)
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
+Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion emuliert die Funktionalität der [SBM_SCROLLBARINFO](/windows/win32/Controls/sbm-getscrollbarinfo) -Nachricht, wie im Windows SDK beschrieben.
+Diese Memberfunktion emuliert die Funktionalität der [SBM_SCROLLBARINFO](/windows/win32/Controls/sbm-getscrollbarinfo) Nachricht, wie im Windows SDK beschrieben.
 
-##  <a name="getscrollinfo"></a>Cscrollbar:: getscrollinfo
+## <a name="cscrollbargetscrollinfo"></a><a name="getscrollinfo"></a>CScrollBar::GetScrollInfo
 
 Ruft die Informationen ab, die von der `SCROLLINFO`-Struktur über eine Scrollleiste verwaltet werden.
 
@@ -226,30 +226,30 @@ BOOL GetScrollInfo(
 ### <a name="parameters"></a>Parameter
 
 *lpScrollInfo*<br/>
-Ein Zeiger auf eine [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur. Weitere Informationen zu dieser Struktur finden Sie in der Windows SDK.
+Ein Zeiger auf eine [SCROLLINFO-Struktur.](/windows/win32/api/winuser/ns-winuser-scrollinfo) Weitere Informationen zu dieser Struktur finden Sie im Windows SDK.
 
-*nMask*<br/>
-Gibt die abzurufenden ScrollBar-Parameter an. Typische Verwendung, SIF_ALL, gibt eine Kombination aus SIF_PAGE, SIF_POS, SIF_TRACKPOS und SIF_RANGE an. Weitere `SCROLLINFO` Informationen zu den nmask-Werten finden Sie unter.
+*nMaske*<br/>
+Gibt die abzurufenbalkenparameter an, die abgerufen werden sollen. Typische Verwendung, SIF_ALL, gibt eine Kombination aus SIF_PAGE, SIF_POS, SIF_TRACKPOS und SIF_RANGE an. Weitere `SCROLLINFO` Informationen zu den nMask-Werten finden Sie unter .
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Nachricht Werte abgerufen hat, ist die Rückgabe true. Andernfalls ist Sie false.
+Wenn die Nachricht Werte abgerufen hat, lautet die Rückgabe TRUE. Andernfalls ist es FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetScrollInfo`ermöglicht Anwendungen die Verwendung von 32-Bit-scrollpositionen.
+`GetScrollInfo`ermöglicht anwendungen die Verwendung von 32-Bit-Bildlaufpositionen.
 
-Die [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur enthält Informationen zu einer Schiebe Leiste, einschließlich der minimalen und maximalen scrollpositionen, der Seitengröße und der Position des Bild Lauf Felds (Ziehpunkt). Weitere Informationen zum Ändern der Struktur Standardwerte finden Sie im Thema zur StrukturdesWindowsSDK.`SCROLLINFO`
+Die [SCROLLINFO-Struktur](/windows/win32/api/winuser/ns-winuser-scrollinfo) enthält Informationen über eine Bildlaufleiste, einschließlich der minimalen und maximalen Bildlaufpositionen, der Seitengröße und der Position des Bildlauffelds (Daumen). Weitere `SCROLLINFO` Informationen zum Ändern der Strukturstandards finden Sie im Strukturthema im Windows SDK.
 
-Die MFC-Windows-Meldungs Handler, die die Position der Scrollleiste angeben ([CWnd:: OnHScroll und [CWnd:: OnVScroll](../../mfc/reference/cwnd-class.md#onvscroll)), stellen nur 16 Bits von Positionsdaten bereit. `GetScrollInfo`und `SetScrollInfo` stellen 32 Bits von Positions leisten-Positionsdaten bereit. Daher kann eine Anwendung bei der `GetScrollInfo` `CWnd::OnHScroll` Verarbeitung von oder `CWnd::OnVScroll` zum Abrufen von 32-Bit-Scrollleisten-Positionsdaten aufruft.
+Die MFC Windows-Nachrichtenhandler, die die Bildlaufleistenposition [CWnd::OnHScroll und [CWnd::OnVScroll "](../../mfc/reference/cwnd-class.md#onvscroll)angeben, stellen nur 16 Bits Positionsdaten bereit. `GetScrollInfo`und `SetScrollInfo` stellen Sie 32 Bit Bildlaufleistenpositionsdaten bereit. Daher kann eine `GetScrollInfo` Anwendung während `CWnd::OnHScroll` `CWnd::OnVScroll` der Verarbeitung entweder aufrufen oder 32-Bit-Bildlaufleistenpositionsdaten abrufen.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CWnd:: OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
+  Siehe Beispiel für [CWnd::OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
 
-##  <a name="getscrolllimit"></a>Cscrollbar:: getscrolllimit
+## <a name="cscrollbargetscrolllimit"></a><a name="getscrolllimit"></a>CScrollBar::GetScrollLimit
 
-Ruft die maximale Scrollposition der Scrollleiste ab.
+Ruft die maximale Bildlaufposition der Bildlaufleiste ab.
 
 ```
 int GetScrollLimit();
@@ -257,13 +257,13 @@ int GetScrollLimit();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die maximale Position einer Schiebe Leiste an, wenn erfolgreich. andernfalls 0.
+Gibt die maximale Position einer Bildlaufleiste an, wenn sie erfolgreich ist. andernfalls 0.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CWnd:: OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
+  Siehe Beispiel für [CWnd::OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
 
-##  <a name="getscrollpos"></a>Cscrollbar:: getscrollpos
+## <a name="cscrollbargetscrollpos"></a><a name="getscrollpos"></a>CScrollBar::GetScrollPos
 
 Ruft die aktuelle Position eines Scrollfelds ab.
 
@@ -273,19 +273,19 @@ int GetScrollPos() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die aktuelle Position des Bild Lauf Felds an, wenn erfolgreich. andernfalls 0.
+Gibt die aktuelle Position des Bildlauffelds an, wenn dies erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die aktuelle Position ist ein relativer Wert, der vom aktuellen scrollbereich abhängig ist. Wenn der scrollbereich beispielsweise 100 bis 200 und das Bild Lauf Feld in der Mitte des Balkens liegt, ist die aktuelle Position 150.
+Die aktuelle Position ist ein relativer Wert, der vom aktuellen Bildlaufbereich abhängt. Wenn der Bildlaufbereich beispielsweise 100 bis 200 beträgt und sich das Bildlauffeld in der Mitte des Balkens befindet, ist die aktuelle Position 150.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CWnd:: OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
+  Siehe Beispiel für [CWnd::OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
 
-##  <a name="getscrollrange"></a>Cscrollbar:: getscrollrange
+## <a name="cscrollbargetscrollrange"></a><a name="getscrollrange"></a>CScrollBar::GetScrollRange
 
-Kopiert die aktuellen minimalen und maximalen Schiebe leisten Positionen für die angegebene Bild Lauf Leiste an die von *lpminpos* und *lpmaxpos*angegebenen Speicherorte.
+Kopiert die aktuellen minimalen und maximalen Bildlaufleistenpositionen für die angegebene Bildlaufleiste an die von *lpMinPos* und *lpMaxPos*angegebenen Positionen .
 
 ```
 void GetScrollRange(
@@ -296,22 +296,22 @@ void GetScrollRange(
 ### <a name="parameters"></a>Parameter
 
 *lpMinPos*<br/>
-Verweist auf die ganzzahlige Variable, die die minimale Position erhalten soll.
+Zeigt auf die Ganzzahlvariable, die die Mindestposition erhalten soll.
 
 *lpMaxPos*<br/>
-Verweist auf die ganzzahlige Variable, die die maximale Position erhalten soll.
+Zeigt auf die Ganzzahlvariable, die die maximale Position erhalten soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Standardbereich für ein Bild Lauf leisten-Steuerelement ist leer (beide Werte sind 0).
+Der Standardbereich für ein Scrollleistensteuerelement ist leer (beide Werte sind 0).
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CWnd:: OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
+  Siehe Beispiel für [CWnd::OnHScroll](../../mfc/reference/cwnd-class.md#onhscroll).
 
-##  <a name="setscrollinfo"></a>Cscrollbar:: setScrollInfo
+## <a name="cscrollbarsetscrollinfo"></a><a name="setscrollinfo"></a>CScrollBar::SetScrollInfo
 
-Legt die Informationen fest, `SCROLLINFO` die von der-Struktur über eine Schiebe Leiste verwaltet werden.
+Legt die Informationen `SCROLLINFO` fest, die die Struktur für eine Bildlaufleiste verwaltet.
 
 ```
 BOOL SetScrollInfo(
@@ -322,28 +322,28 @@ BOOL SetScrollInfo(
 ### <a name="parameters"></a>Parameter
 
 *lpScrollInfo*<br/>
-Ein Zeiger auf eine [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur.
+Ein Zeiger auf eine [SCROLLINFO-Struktur.](/windows/win32/api/winuser/ns-winuser-scrollinfo)
 
-*bRedraw*<br/>
-Gibt an, ob die Bild Lauf Leiste neu gezeichnet werden soll, um die neuen Informationen widerzuspiegeln. Wenn *bredraw* den Wert true hat, wird die Scrollleiste neu gezeichnet. Wenn der Wert false ist, wird er nicht neu gezeichnet. Die Bild Lauf Leiste wird standardmäßig neu gezeichnet.
+*bZeichnung*<br/>
+Gibt an, ob die Bildlaufleiste neu gezeichnet werden soll, um die neuen Informationen widerzuspiegeln. Wenn *bRedraw* TRUE ist, wird die Bildlaufleiste neu gezeichnet. Wenn es FALSE ist, wird es nicht neu gezeichnet. Die Bildlaufleiste wird standardmäßig neu gezeichnet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung ist die Rückgabe true. Andernfalls ist Sie false.
+Wenn dies erfolgreich ist, lautet die Rückgabe TRUE. Andernfalls ist es FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie müssen die Werte angeben, die für `SCROLLINFO` die Struktur Parameter erforderlich sind, einschließlich der Flagwerte.
+Sie müssen die Werte `SCROLLINFO` angeben, die für die Strukturparameter erforderlich sind, einschließlich der Flagwerte.
 
-Die `SCROLLINFO` Struktur enthält Informationen zu einer Schiebe Leiste, einschließlich der minimalen und maximalen scrollpositionen, der Seitengröße und der Position des Bild Lauf Felds (Ziehpunkt). Weitere Informationen zum Ändern der Struktur Standardwerte finden Sie im Thema [ScrollInfo](/windows/win32/api/winuser/ns-winuser-scrollinfo) -Struktur im Windows SDK.
+Die `SCROLLINFO` Struktur enthält Informationen über eine Bildlaufleiste, einschließlich der minimalen und maximalen Bildlaufpositionen, der Seitengröße und der Position des Bildlauffelds (Daumen). Weitere Informationen zum Ändern der Strukturstandards finden Sie im Thema [scrollINFO-Struktur](/windows/win32/api/winuser/ns-winuser-scrollinfo) im Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CScrollBar#3](../../mfc/reference/codesnippet/cpp/cscrollbar-class_3.cpp)]
 
-##  <a name="setscrollpos"></a>Cscrollbar:: setscrollpos
+## <a name="cscrollbarsetscrollpos"></a><a name="setscrollpos"></a>CScrollBar::SetScrollPos
 
-Legt die aktuelle Position eines Bild Lauf Felds auf das von *NPOs* angegebene fest und zeichnet, falls angegeben, die Schiebe Leiste neu, um die neue Position widerzuspiegeln.
+Legt die aktuelle Position eines Bildlauffelds auf die von *nPos* angegebene Position fest und zeichnet, falls angegeben, die Bildlaufleiste neu, um die neue Position widerzuspiegeln.
 
 ```
 int SetScrollPos(
@@ -353,25 +353,25 @@ int SetScrollPos(
 
 ### <a name="parameters"></a>Parameter
 
-*nPos*<br/>
-Gibt die neue Position für das Bild Lauf Feld an. Er muss innerhalb des scrollbereichs liegen.
+*Npos*<br/>
+Gibt die neue Position für das Bildlauffeld an. Sie muss sich innerhalb des Bildlaufbereichs befinden.
 
-*bRedraw*<br/>
-Gibt an, ob die Bild Lauf Leiste neu gezeichnet werden soll, um die neue Position widerzuspiegeln. Wenn *bredraw* den Wert true hat, wird die Scrollleiste neu gezeichnet. Wenn der Wert false ist, wird er nicht neu gezeichnet. Die Bild Lauf Leiste wird standardmäßig neu gezeichnet.
+*bZeichnung*<br/>
+Gibt an, ob die Bildlaufleiste neu gezeichnet werden soll, um die neue Position widerzuspiegeln. Wenn *bRedraw* TRUE ist, wird die Bildlaufleiste neu gezeichnet. Wenn es FALSE ist, wird es nicht neu gezeichnet. Die Bildlaufleiste wird standardmäßig neu gezeichnet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die vorherige Position des Bild Lauf Felds an, wenn erfolgreich. andernfalls 0.
+Gibt die vorherige Position des Bildlauffelds an, wenn es erfolgreich ist. andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legen Sie *bredraw* auf false fest, wenn die Bild Lauf Leiste durch einen nachfolgenden Aufruf einer anderen Funktion neu gezeichnet wird, um zu vermeiden, dass die Bild Lauf Leiste zweimal innerhalb eines kurzen Intervalls neu gezeichnet wird.
+Legen Sie *bRedraw* auf FALSE fest, wenn die Bildlaufleiste durch einen nachfolgenden Aufruf einer anderen Funktion neu gezeichnet wird, um zu vermeiden, dass die Bildlaufleiste innerhalb eines kurzen Intervalls zweimal neu gezeichnet wird.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [cscrollbar:: setscrollrange](#setscrollrange).
+  Siehe Beispiel für [CScrollBar::SetScrollRange](#setscrollrange).
 
-##  <a name="setscrollrange"></a>Cscrollbar:: setscrollrange
+## <a name="cscrollbarsetscrollrange"></a><a name="setscrollrange"></a>CScrollBar::SetScrollRange
 
 Legt die minimalen und maximalen Positionswerte für die angegebene Scrollleiste fest.
 
@@ -385,31 +385,31 @@ void SetScrollRange(
 ### <a name="parameters"></a>Parameter
 
 *nMinPos*<br/>
-Gibt die minimale Bild Lauf Position an.
+Gibt die minimale Bildlaufposition an.
 
 *nMaxPos*<br/>
-Gibt die maximale Scrollposition an.
+Gibt die maximale Bildlaufposition an.
 
-*bRedraw*<br/>
-Gibt an, ob die Bild Lauf Leiste neu gezeichnet werden soll, um die Änderung widerzuspiegeln. Wenn *bredraw* den Wert true hat, wird die Scrollleiste neu gezeichnet. Wenn der Wert false ist, wird er nicht neu gezeichnet. Sie wird standardmäßig neu gezeichnet.
+*bZeichnung*<br/>
+Gibt an, ob die Bildlaufleiste neu gezeichnet werden soll, um die Änderung widerzuspiegeln. Wenn *bRedraw* TRUE ist, wird die Bildlaufleiste neu gezeichnet. wenn FALSE, wird es nicht neu gezeichnet. Sie wird standardmäßig neu gezeichnet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Legen Sie *nminpos* und *nmaxpos* auf 0 fest, um Standard Scrollleisten auszublenden.
+Legen Sie *nMinPos* und *nMaxPos* auf 0 fest, um Standard-Scrollleisten auszublenden.
 
-Diese Funktion kann nicht aufgerufen werden, um beim Verarbeiten einer Benachrichtigungs Meldung der Bild Lauf Leiste eine Bild Lauf Leiste auszublenden.
+Rufen Sie diese Funktion nicht auf, um eine Bildlaufleiste auszublenden, während Sie eine Bildlaufleistenbenachrichtigung verarbeiten.
 
-Wenn ein Aufrufen von `SetScrollRange` unmittelbar auf einen Aufrufen der `SetScrollPos` Member-Funktion folgt, legen Sie *bredraw* in `SetScrollPos` auf 0 fest, um zu verhindern, dass die Bild Lauf Leiste zweimal neu gezeichnet wird.
+Wenn ein `SetScrollRange` Aufruf unmittelbar auf `SetScrollPos` einen Aufruf der Memberfunktion `SetScrollPos` folgt, setzen Sie *bRedraw* in auf 0, um zu verhindern, dass die Bildlaufleiste zweimal neu gezeichnet wird.
 
-Der Unterschied zwischen den von *nminpos* und *nmaxpos* angegebenen Werten darf nicht größer als 32.767 sein. Der Standardbereich für ein Bild Lauf leisten-Steuerelement ist leer (sowohl *nminpos* als auch *nmaxpos* sind 0).
+Die Differenz zwischen den von *nMinPos* und *nMaxPos* angegebenen Werten darf nicht größer als 32.767 sein. Der Standardbereich für ein Scrollleistensteuerelement ist leer (sowohl *nMinPos* als auch *nMaxPos* sind 0).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CScrollBar#4](../../mfc/reference/codesnippet/cpp/cscrollbar-class_4.cpp)]
 
-##  <a name="showscrollbar"></a>Cscrollbar:: ShowScrollbar
+## <a name="cscrollbarshowscrollbar"></a><a name="showscrollbar"></a>CScrollBar::ShowScrollBar
 
-Zeigt eine Schiebe Leiste an oder blendet sie aus.
+Zeigt eine Bildlaufleiste ein oder blendet sie aus.
 
 ```
 void ShowScrollBar(BOOL bShow = TRUE);
@@ -418,15 +418,15 @@ void ShowScrollBar(BOOL bShow = TRUE);
 ### <a name="parameters"></a>Parameter
 
 *bShow*<br/>
-Gibt an, ob die Bild Lauf Leiste angezeigt oder ausgeblendet wird. Wenn dieser Parameter true ist, wird die Scrollleiste angezeigt. Andernfalls wird Sie ausgeblendet.
+Gibt an, ob die Bildlaufleiste angezeigt oder ausgeblendet wird. Wenn dieser Parameter TRUE ist, wird die Bildlaufleiste angezeigt. andernfalls ist es ausgeblendet.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Eine Anwendung sollte diese Funktion nicht zum Ausblenden einer Schiebe Leiste bei der Verarbeitung einer Benachrichtigungs Meldung für eine Schiebe Leiste ausführen.
+Eine Anwendung sollte diese Funktion nicht aufrufen, um eine Bildlaufleiste auszublenden, während eine Bildlaufleistenbenachrichtigung verarbeitet wird.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [cscrollbar:: Create](#create).
+  Siehe Beispiel für [CScrollBar::Create](#create).
 
 ## <a name="see-also"></a>Siehe auch
 
@@ -435,7 +435,7 @@ Eine Anwendung sollte diese Funktion nicht zum Ausblenden einer Schiebe Leiste b
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [CButton-Klasse](../../mfc/reference/cbutton-class.md)<br/>
 [CComboBox-Klasse](../../mfc/reference/ccombobox-class.md)<br/>
-[CEdit-Klasse](../../mfc/reference/cedit-class.md)<br/>
+[CEdit Class](../../mfc/reference/cedit-class.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)<br/>
 [CStatic-Klasse](../../mfc/reference/cstatic-class.md)<br/>
 [CDialog-Klasse](../../mfc/reference/cdialog-class.md)

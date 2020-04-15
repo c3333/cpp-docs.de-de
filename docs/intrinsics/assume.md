@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - __assume keyword [C++]
 ms.assetid: d8565123-b132-44b1-8235-5a8c8bff85a7
-ms.openlocfilehash: f3f847b5268605bdc5df90a8bbc6a88c78431864
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 06189405703a7cc34f3bd807ec79612394ee899f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70216963"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368196"
 ---
 # <a name="__assume"></a>__assume
 
-**Microsoft-spezifisch**
+**Microsoft Specific**
 
 Übergibt einen Hinweis an den Optimierer.
 
@@ -31,29 +31,29 @@ __assume(
 
 ### <a name="parameters"></a>Parameter
 
-*Begriff*\
+*Ausdruck*\
 Ein beliebiger Ausdruck, von dem angenommen wird, dass er "true" ergibt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Optimierer geht davon aus, dass die durch `expression` dargestellte Bedingung zu dem Zeitpunkt "true" ist, zu dem das Schlüsselwort angezeigt wird, und "true" bleibt, bis `expression` geändert wird (z. B. durch die Zuweisung zu einer Variablen). Durch die selektive Verwendung von Hinweisen, die von `__assume` an den Optimierer übergeben werden, kann die Optimierung verbessert werden.
 
 Wenn die `__assume`-Anweisung als Widerspruch geschrieben wurde (ein Ausdruck, der immer in "false" ausgewertet wird), wird diese immer als `__assume(0)` behandelt. Wenn der Code sich nicht wie erwartet verhält, stellen Sie, wie zuvor beschrieben, sicher, dass der von Ihnen definierte `expression` gültig ist und stimmt. Weitere Informationen zum erwarteten Verhalten von `__assume(0)` finden Sie weiter unten in den Hinweisen.
 
 > [!WARNING]
->  Ein Programm darf keine ungültige `__assume`-Anweisung an einem erreichbaren Pfad enthalten. Wenn der Compiler eine ungültige `__assume`-Anweisung erreichen kann, kann das Programm möglicherweise ein unvorhersehbares und möglicherweise gefährliches Verhalten verursachen.
+> Ein Programm darf keine ungültige `__assume`-Anweisung an einem erreichbaren Pfad enthalten. Wenn der Compiler eine ungültige `__assume`-Anweisung erreichen kann, kann das Programm möglicherweise ein unvorhersehbares und möglicherweise gefährliches Verhalten verursachen.
 
 `__assume` ist keine echte systeminterne Funktion. Sie muss nicht als Funktion deklariert werden und kann nicht in einer `#pragma intrinsic`-Anweisung verwendet werden. Es wird zwar kein Code generiert, der vom Optimierer generierte Code ist jedoch davon betroffen.
 
-Nur `__assume` in [Assert](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) verwenden, wenn Assert nicht wiederherstellbar ist. Verwenden Sie `__assume` nicht in einer Assert-Anweisung, für die Sie über den folgenden Fehlerwiederherstellungscode verfügen, da der Compiler den Fehlerbehebungscode aus Optimierungsgründen möglicherweise löscht.
+Verwenden `__assume` Sie in einem [ASSERT](../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) nur, wenn die Assertion nicht wiederhergestellt werden kann. Verwenden Sie `__assume` nicht in einer Assert-Anweisung, für die Sie über den folgenden Fehlerwiederherstellungscode verfügen, da der Compiler den Fehlerbehebungscode aus Optimierungsgründen möglicherweise löscht.
 
 Die `__assume(0)`-Anweisung ist ein Sonderfall. Verwenden Sie `__assume(0)`, um einen Codepfad anzugeben, der nicht erreicht werden kann. Im folgenden Beispiel wird veranschaulicht, wie `__assume(0)` verwendet wird, um anzugeben, dass der Standardfall einer Switch-Anweisung nicht erreicht werden kann. Dies zeigt die typische Verwendung von `__assume(0)`.
 
-Aus Kompatibilitätsgründen mit früheren Versionen ist **_assume** ein Synonym für **__assume** , es sei denn, die Compileroption [/Za \(Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Kompatibilität mit früheren Versionen ist **_assume** ein Synonym für **__assume** es sei denn, die Compileroption [/Za \(Disable language extensions)](../build/reference/za-ze-disable-language-extensions.md) wird angegeben.
 
 ## <a name="requirements"></a>Anforderungen
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`__assume`|x86, ARM, x64, ARM64|
 
@@ -114,9 +114,9 @@ Leider wird durch diese Verwendung von `assert` verhindert, dass der Compiler di
       NODEFAULT;
 ```
 
-**Ende Microsoft-spezifisch**
+**END Microsoft Spezifisch**
 
 ## <a name="see-also"></a>Siehe auch
 
-[Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)\
-[Schlüsselwörter](../cpp/keywords-cpp.md)
+[Compiler-Intrinsics](../intrinsics/compiler-intrinsics.md)\
+[Keywords](../cpp/keywords-cpp.md)

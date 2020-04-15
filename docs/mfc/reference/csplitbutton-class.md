@@ -14,16 +14,16 @@ helpviewer_keywords:
 - CSplitButton [MFC], SetDropDownMenu
 - CSplitButton [MFC], OnDropDown
 ms.assetid: 6844d0a9-6408-4e44-9b5f-57628ed8bad6
-ms.openlocfilehash: a552334adb4963f45388a798eb0723e61c09ec85
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 0b54324c3c5503182add15a3dd0a9ecd07c24b18
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69502838"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318115"
 ---
 # <a name="csplitbutton-class"></a>CSplitButton-Klasse
 
-Die `CSplitButton` -Klasse stellt ein Steuerelement für unterteilte Schaltflächen Das Steuerelement mit einer unterteilten Schaltfläche führt ein Standardverhalten aus, wenn ein Benutzer auf den Hauptteil der Schaltfläche klickt, und zeigt ein Dropdownmenü an, wenn ein Benutzer auf den Dropdownpfeil der Schaltfläche klickt.
+Die `CSplitButton` Klasse stellt ein Steuerelement mit geteilten Schaltflächen dar. Das Steuerelement mit einer unterteilten Schaltfläche führt ein Standardverhalten aus, wenn ein Benutzer auf den Hauptteil der Schaltfläche klickt, und zeigt ein Dropdownmenü an, wenn ein Benutzer auf den Dropdownpfeil der Schaltfläche klickt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,34 +35,34 @@ class CSplitButton : public CButton
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSplitButton:: CSplitButton](#csplitbutton)|Erstellt ein `CSplitButton`-Objekt.|
+|[CSplitButton::CSplitButton](#csplitbutton)|Erstellt ein `CSplitButton`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSplitButton:: Create](#create)|Erstellt ein Steuerelement für eine unterteilte Schaltfläche mit angegebenen Stilen und `CSplitButton` fügt es an das aktuelle-Objekt an.|
-|[CSplitButton::SetDropDownMenu](#setdropdownmenu)|Legt das Dropdown Menü fest, das angezeigt wird, wenn ein Benutzer auf den Dropdown Pfeil des aktuellen Steuer Elements für eine unterteilte Schaltfläche klickt.|
+|[CSplitButton::Erstellen](#create)|Erstellt ein Split-Schaltflächensteuerelement mit angegebenen Stilen und fügt es an das aktuelle `CSplitButton` Objekt an.|
+|[CSplitButton::SetDropDownMenu](#setdropdownmenu)|Legt das Dropdown-Menü fest, das angezeigt wird, wenn ein Benutzer auf den Dropdown-Pfeil des aktuellen Steuerelements für die geteilte Schaltfläche klickt.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CSplitButton::OnDropDown](#ondropdown)|Verarbeitet die BCN_DROPDOWN-Benachrichtigung, die vom System gesendet wird, wenn ein Benutzer auf den Dropdown Pfeil des aktuellen Steuer Elements für eine unterteilte Schaltfläche klickt.|
+|[CsplitButton::OnDropdown](#ondropdown)|Behandelt die BCN_DROPDOWN Benachrichtigung, die das System sendet, wenn ein Benutzer auf den Dropdown-Pfeil des aktuellen Steuerelements für die geteilte Schaltfläche klickt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `CSplitButton` -Klasse wird von der [CButton](../../mfc/reference/cbutton-class.md) -Klasse abgeleitet. Das Steuerelement für die unterteilte Schaltfläche ist ein Schaltflächen-Steuerelement, dessen Format Wenn ein Benutzer auf den Dropdown Pfeil klickt, wird ein benutzerdefiniertes Menü angezeigt. Weitere Informationen finden Sie unter den Stilen BS_SPLITBUTTON und BS_DEFSPLITBUTTON in [Schalt](/windows/win32/Controls/button-styles)Flächen Formaten.
+Die `CSplitButton` Klasse wird von der [CButton-Klasse](../../mfc/reference/cbutton-class.md) abgeleitet. Das Steuerelement für die geteilte Schaltfläche ist ein Schaltflächensteuerelement, dessen Stil BS_SPLITBUTTON ist. Es wird ein benutzerdefiniertes Menü angezeigt, wenn ein Benutzer auf den Dropdown-Pfeil klickt. Weitere Informationen finden Sie unter BS_SPLITBUTTON und BS_DEFSPLITBUTTON Stile in [Schaltflächenstilen](/windows/win32/Controls/button-styles).
 
-In der folgenden Abbildung wird ein Dialogfeld dargestellt, das ein Pager-Steuerelement und ein (1) Split Button-Steuerelement enthält. Auf den (2) Dropdown Pfeil wurde bereits geklickt, und das Untermenü (3) wird angezeigt.
+Die folgende Abbildung zeigt ein Dialogfeld, das ein Pager-Steuerelement und ein (1) geteiltes Schaltflächensteuerelement enthält. Der (2) Dropdown-Pfeil wurde bereits angeklickt und das Untermenü (3) wird angezeigt.
 
-![Dialog mit einem SplitButton-und Pager-Steuerelement.](../../mfc/reference/media/splitbutton_pager.png "Dialog mit einem SplitButton-und Pager-Steuerelement.")
+![Dialogfeld mit einer Trennschaltfläche und einem Pagersteuerelement.](../../mfc/reference/media/splitbutton_pager.png "Dialogfeld mit einer Trennschaltfläche und einem Pagersteuerelement.")
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -78,11 +78,11 @@ In der folgenden Abbildung wird ein Dialogfeld dargestellt, das ein Pager-Steuer
 
 Diese Klasse wird in Windows Vista und höher unterstützt.
 
-Weitere Anforderungen für diese Klasse werden unter Buildanforderungen [für allgemeine Windows Vista](../../mfc/build-requirements-for-windows-vista-common-controls.md)-Steuerelemente beschrieben.
+Weitere Anforderungen für diese Klasse werden unter [Buildanforderungen für allgemeine Windows Vista-Steuerelemente](../../mfc/build-requirements-for-windows-vista-common-controls.md)beschrieben.
 
-##  <a name="create"></a>CSplitButton:: Create
+## <a name="csplitbuttoncreate"></a><a name="create"></a>CSplitButton::Erstellen
 
-Erstellt ein Steuerelement für eine unterteilte Schaltfläche mit angegebenen Stilen und `CSplitButton` fügt es an das aktuelle-Objekt an.
+Erstellt ein Split-Schaltflächensteuerelement mit angegebenen Stilen und fügt es an das aktuelle `CSplitButton` Objekt an.
 
 ```
 virtual BOOL Create(
@@ -96,18 +96,18 @@ virtual BOOL Create(
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*dwStyle*|in Eine bitweise Kombination (or) der Stile, die auf das-Steuerelement angewendet werden sollen. Weitere Informationen finden Sie unter [Schaltflächen Stile](../../mfc/reference/styles-used-by-mfc.md#button-styles).|
-|*Rect*|in Ein Verweis auf eine [Rect](/previous-versions/dd162897\(v=vs.85\)) -Struktur, die die Position und Größe des Steuer Elements enthält.|
-|*pParentWnd*|in Ein nicht-NULL-Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, das das übergeordnete Fenster des Steuer Elements ist.|
-|*nID*|in Die ID des Steuer Elements.|
+|*dwStyle*|[in] Eine bitweise Kombination (OR) von Stilen, die auf das Steuerelement angewendet werden sollen. Weitere Informationen finden Sie unter [Schaltflächenstile](../../mfc/reference/styles-used-by-mfc.md#button-styles).|
+|*Rect*|[in] Ein Verweis auf eine [RECT-Struktur,](/previous-versions/dd162897\(v=vs.85\)) die die Position und Größe des Steuerelements enthält.|
+|*pParentWnd*|[in] Ein Nicht-NULL-Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Steuerelements ist.|
+|*nID*|[in] Die ID des Steuerelements.|
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
+TRUE, wenn diese Methode erfolgreich ist; andernfalls FALSE.
 
-##  <a name="csplitbutton"></a>CSplitButton:: CSplitButton
+## <a name="csplitbuttoncsplitbutton"></a><a name="csplitbutton"></a>CSplitButton::CSplitButton
 
-Erstellt ein `CSplitButton`-Objekt. Die Parameter des Konstruktors geben ein Untermenü an, das angezeigt wird, wenn ein Benutzer auf den Dropdown Pfeil des Steuer Elements für die unterteilte Schaltfläche klickt.
+Erstellt ein `CSplitButton`-Objekt. Die Parameter des Konstruktors geben ein Untermenü an, das angezeigt wird, wenn ein Benutzer auf den Dropdownpfeil des Steuerelements für die geteilte Schaltfläche klickt.
 
 ```
 CSplitButton();
@@ -122,17 +122,17 @@ CSplitButton(CMenu* pMenu)
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*nMenuId*|in Die Ressourcen-ID der Menüleiste.|
-|*nSubMenuId*|in Die Ressourcen-ID eines Untermenüs.|
-|*pMenu*|in Ein Zeiger auf ein [CMenu](../../mfc/reference/cmenu-class.md) -Objekt, das ein Untermenü angibt. Das- `CSplitButton` Objekt löscht `CMenu` das-Objekt und das zugehörige HMENU, wenn das Objekt den Gültigkeitsbereich verlässt. `CSplitButton`|
+|*nMenuId*|[in] Die Ressourcen-ID der Menüleiste.|
+|*nSubMenuId*|[in] Die Ressourcen-ID eines Untermenüs.|
+|*pMenu*|[in] Ein Zeiger auf ein [CMenu-Objekt,](../../mfc/reference/cmenu-class.md) das ein Untermenü angibt. Das `CSplitButton` Objekt löscht `CMenu` das Objekt und die `CSplitButton` zugehörigen HMENU, wenn das Objekt den Gültigkeitsbereich verlässt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die [CSplitButton:: Create](#create) -Methode, um ein Steuerelement unterteilte Schaltflächen `CSplitButton` zu erstellen und an das-Objekt anzufügen.
+Verwenden Sie die [CSplitButton::Create-Methode,](#create) um ein `CSplitButton` Split-Button-Steuerelement zu erstellen und es an das Objekt anzufügen.
 
-##  <a name="ondropdown"></a>CSplitButton:: OnDropDown
+## <a name="csplitbuttonondropdown"></a><a name="ondropdown"></a>CsplitButton::OnDropdown
 
-Verarbeitet die BCN_DROPDOWN-Benachrichtigung, die vom System gesendet wird, wenn ein Benutzer auf den Dropdown Pfeil des aktuellen Steuer Elements für eine unterteilte Schaltfläche klickt.
+Behandelt die BCN_DROPDOWN Benachrichtigung, die das System sendet, wenn ein Benutzer auf den Dropdown-Pfeil des aktuellen Steuerelements für die geteilte Schaltfläche klickt.
 
 ```
 afx_msg void OnDropDown(
@@ -144,16 +144,16 @@ afx_msg void OnDropDown(
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*pNMHDR*|in Zeiger auf eine [NMHDR](/windows/win32/api/richedit/ns-richedit-nmhdr) -Struktur, die Informationen über die [BCN_DROPDOWN](/windows/win32/Controls/bcn-dropdown) -Benachrichtigung enthält.|
-|*pResult*|vorgenommen (Wird nicht verwendet. es wird kein Wert zurückgegeben.) Rückgabewert der [BCN_DROPDOWN](/windows/win32/Controls/bcn-dropdown) -Benachrichtigung.|
+|*pNMHDR*|[in] Zeiger auf eine [NMHDR-Struktur,](/windows/win32/api/richedit/ns-richedit-nmhdr) die Informationen über die [BCN_DROPDOWN-Benachrichtigung](/windows/win32/Controls/bcn-dropdown) enthält.|
+|*pResult*|[out] (Nicht verwendet; es wird kein Wert zurückgegeben.) Rückgabewert der [BCN_DROPDOWN](/windows/win32/Controls/bcn-dropdown) Benachrichtigung.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn der Benutzer auf den Dropdown Pfeil auf einem Trenn Schaltfläche-Steuerelement klickt, sendet das System eine BCN_DROPDOWN `OnDropDown` -Benachrichtigungs Meldung, die von der Methode verarbeitet wird. `CSplitButton` Allerdings wird die BCN_DROPDOWN-Benachrichtigung nicht an das Steuerelement weiterleiten, das das Steuerelement für die unterteilte Schaltfläche enthält. Folglich kann das enthaltende Steuerelement eine benutzerdefinierte Aktion nicht als Antwort auf die Benachrichtigung unterstützen.
+Wenn der Benutzer auf den Dropdown-Pfeil auf ein Steuerelement für geteilte `OnDropDown` Schaltflächen klickt, sendet das System eine BCN_DROPDOWN Benachrichtigung, die von der Methode verarbeitet wird. Das `CSplitButton` Objekt leitet die BCN_DROPDOWN Benachrichtigung jedoch nicht an das Steuerelement weiter, das das Steuerelement für die geteilte Schaltfläche enthält. Daher kann das enthaltende Steuerelement keine benutzerdefinierte Aktion als Reaktion auf die Benachrichtigung unterstützen.
 
-Um eine benutzerdefinierte Aktion zu implementieren, die das enthaltende Steuerelement unterstützt, verwenden Sie ein [CButton](../../mfc/reference/cbutton-class.md) -Objekt `CSplitButton` mit einem Stil von BS_SPLITBUTTON anstelle eines-Objekts. Implementieren Sie dann einen Handler für die BCN_DROPDOWN-Benachrichtigung `CButton` im-Objekt. Weitere Informationen finden Sie unter [Schaltflächen Stile](../../mfc/reference/styles-used-by-mfc.md#button-styles).
+Um eine benutzerdefinierte Aktion zu implementieren, die das enthaltende Steuerelement unterstützt, verwenden Sie ein [CButton-Objekt](../../mfc/reference/cbutton-class.md) mit der Formatvorlage BS_SPLITBUTTON anstelle eines Objekts. `CSplitButton` Implementieren Sie dann einen Handler `CButton` für die BCN_DROPDOWN Benachrichtigung im Objekt. Weitere Informationen finden Sie unter [Schaltflächenstile](../../mfc/reference/styles-used-by-mfc.md#button-styles).
 
-Verwenden Sie [Nachrichten Reflektion](../../mfc/tn062-message-reflection-for-windows-controls.md), um eine benutzerdefinierte Aktion zu implementieren, die das Steuerelement für die unterteilte Schaltfläche Leiten Sie eine eigene Klasse von `CSplitButton` der-Klasse ab, und benennen Sie Sie, z. b. cmysplitbutton. Fügen Sie der Anwendung dann die folgende Meldungs Zuordnung hinzu, um die BCN_DROPDOWN-Benachrichtigung zu behandeln:
+Um eine benutzerdefinierte Aktion zu implementieren, die das Steuerelement der geteilten Schaltfläche selbst unterstützt, verwenden Sie [die Nachrichtenreflexion](../../mfc/tn062-message-reflection-for-windows-controls.md). Leiten Sie Ihre eigene `CSplitButton` Klasse von der Klasse ab, und benennen Sie sie, z. B. CMySplitButton. Fügen Sie dann der Anwendung die folgende Meldungszuordnung hinzu, um die BCN_DROPDOWN-Benachrichtigung zu verarbeiten:
 
 ```
 BEGIN_MESSAGE_MAP(CMySplitButton,
@@ -162,9 +162,9 @@ BEGIN_MESSAGE_MAP(CMySplitButton,
 END_MESSAGE_MAP()
 ```
 
-##  <a name="setdropdownmenu"></a>CSplitButton:: setdropdownmenu
+## <a name="csplitbuttonsetdropdownmenu"></a><a name="setdropdownmenu"></a>CSplitButton::SetDropDownMenu
 
-Legt das Dropdown Menü fest, das angezeigt wird, wenn ein Benutzer auf den Dropdown Pfeil des aktuellen Steuer Elements für eine unterteilte Schaltfläche klickt.
+Legt das Dropdown-Menü fest, das angezeigt wird, wenn ein Benutzer auf den Dropdown-Pfeil des aktuellen Steuerelements für die geteilte Schaltfläche klickt.
 
 ```
 void SetDropDownMenu(
@@ -178,21 +178,21 @@ void SetDropDownMenu(CMenu* pMenu);
 
 |Parameter|Beschreibung|
 |---------------|-----------------|
-|*nMenuId*|in Die Ressourcen-ID der Menüleiste.|
-|*nSubMenuId*|in Die Ressourcen-ID eines Untermenüs.|
-|*pMenu*|in Ein Zeiger auf ein [CMenu](../../mfc/reference/cmenu-class.md) -Objekt, das ein Untermenü angibt. Das- `CSplitButton` Objekt löscht `CMenu` das-Objekt und das zugehörige HMENU, wenn das Objekt den Gültigkeitsbereich verlässt. `CSplitButton`|
+|*nMenuId*|[in] Die Ressourcen-ID der Menüleiste.|
+|*nSubMenuId*|[in] Die Ressourcen-ID eines Untermenüs.|
+|*pMenu*|[in] Zeiger auf ein [CMenu-Objekt,](../../mfc/reference/cmenu-class.md) das ein Untermenü angibt. Das `CSplitButton` Objekt löscht `CMenu` das Objekt und die `CSplitButton` zugehörigen HMENU, wenn das Objekt den Gültigkeitsbereich verlässt.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der *nmenuid* -Parameter identifiziert eine Menüleiste, bei der es sich um eine horizontale Liste von Menüleisten Elementen handelt. Der *nsubmenuid* -Parameter ist eine Null basierte Indexnummer, die ein Untermenü identifiziert. Dies ist die Dropdown Liste mit Menü Elementen, die jedem Menüleisten Element zugeordnet sind. Beispielsweise verfügt eine typische Anwendung über ein Menü, das die Menüleisten Elemente, "file", "Edit" und "Help" enthält. Das Menüleisten Element "Datei" enthält ein Untermenü mit den Menü Elementen "Öffnen", "Schließen" und "beenden". Wenn Sie auf den Dropdown Pfeil des Trenn Schaltflächen-Steuer Elements klicken, zeigt das-Steuerelement das angegebene Untermenü an, nicht die Menüleiste.
+Der Parameter *nMenuId* identifiziert eine Menüleiste, die eine horizontale Liste von Menüleistenelementen ist. Der Parameter *nSubMenuId* ist eine nullbasierte Indexnummer, die ein Untermenü identifiziert, d. h. die Dropdownliste der Menüelemente, die jedem Menüleistenelement zugeordnet sind. Eine typische Anwendung verfügt beispielsweise über ein Menü, das die Menüleistenelemente "Datei", "Bearbeiten" und "Hilfe" enthält. Das Menüleistenelement "Datei" verfügt über ein Untermenü, das die Menüelemente "Öffnen", "Schließen" und "Beenden" enthält. Wenn auf den Dropdown-Pfeil des Split-Button-Steuerelements geklickt wird, zeigt das Steuerelement das angegebene Untermenü und nicht die Menüleiste an.
 
-In der folgenden Abbildung wird ein Dialogfeld dargestellt, das ein Pager-Steuerelement und ein (1) Split Button-Steuerelement enthält. Auf den (2) Dropdown Pfeil wurde bereits geklickt, und das Untermenü (3) wird angezeigt.
+Die folgende Abbildung zeigt ein Dialogfeld, das ein Pager-Steuerelement und ein (1) geteiltes Schaltflächensteuerelement enthält. Der (2) Dropdown-Pfeil wurde bereits angeklickt und das Untermenü (3) wird angezeigt.
 
-![Dialog mit einem SplitButton-und Pager-Steuerelement.](../../mfc/reference/media/splitbutton_pager.png "Dialog mit einem SplitButton-und Pager-Steuerelement.")
+![Dialogfeld mit einer Trennschaltfläche und einem Pagersteuerelement.](../../mfc/reference/media/splitbutton_pager.png "Dialogfeld mit einer Trennschaltfläche und einem Pagersteuerelement.")
 
 ### <a name="example"></a>Beispiel
 
-Die erste Anweisung im folgenden Codebeispiel veranschaulicht die [CSplitButton:: setdropdownmenu](#setdropdownmenu) -Methode. Wir haben das Menü mit dem Ressourcen-Editor von Visual Studio erstellt, der automatisch die Menüleisten-ID "IDR_MENU1" trägt. Der *nsubmenuid* -Parameter, der 0 (null) ist, verweist auf das einzige Untermenü der Menüleiste.
+Die erste Anweisung im folgenden Codebeispiel veranschaulicht die [CSplitButton::SetDropDownMenu-Methode.](#setdropdownmenu) Wir haben das Menü mit dem Visual Studio-Ressourcen-Editor erstellt, der automatisch die Menüleisten-ID IDR_MENU1. Der Parameter *nSubMenuId,* der Null ist, bezieht sich auf das einzige Untermenü der Menüleiste.
 
 [!code-cpp[NVC_MFC_CSplitButton_s2#1](../../mfc/reference/codesnippet/cpp/csplitbutton-class_1.cpp)]
 

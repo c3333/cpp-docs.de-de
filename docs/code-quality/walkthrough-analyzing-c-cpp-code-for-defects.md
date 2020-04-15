@@ -1,128 +1,179 @@
 ---
-title: 'Exemplarische Vorgehensweise: analysierenC++ von C/Code auf Fehler'
-ms.date: 11/04/2016
+title: 'Exemplarische Vorgehensweise: Analysieren von C/C++-Code auf Fehler'
+description: Veranschaulicht, wie die Codeanalyse mit Microsoft C++ in Visual Studio verwendet wird.
+ms.date: 04/14/2020
 ms.topic: conceptual
 helpviewer_keywords:
 - C/C++, code analysis
 - code analysis, walkthroughs
 - code, analyzing C/C++
 - code analysis tool, walkthroughs
-ms.openlocfilehash: 5fbdf9e223b3c1e1b8664de2018381958c458f45
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: fe9b3775199b2a18cf940b99e87852350f1fbea9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "79467066"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81370213"
 ---
-# <a name="walkthrough-analyzing-cc-code-for-defects"></a>Exemplarische Vorgehensweise: analysierenC++ von C/Code auf Fehler
+# <a name="walkthrough-analyzing-cc-code-for-defects"></a>Exemplarische Vorgehensweise: Analysieren von C/C++-Code auf Fehler
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht,C++ wie c/Code mit dem Code Analysetool für C/C++ Code auf potenzielle Code Fehler analysiert wird.
+In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie C/C++-Code auf potenzielle Codefehler analysiert wird. Es verwendet die Codeanalysetools für C/C++-Code.
 
-- Ausführen der Code Analyse für nativen Code.
-- Analysieren von Code Fehler Warnungen.
+In dieser exemplarischen Vorgehensweise finden Sie:
+
+- Führen Sie die Codeanalyse für systemeigenen Code aus.
+- Analysieren Sie Codefehlerwarnungen.
 - Behandeln Sie die Warnung als Fehler.
-- Kommentieren Sie den Quellcode, um die Code Fehleranalyse zu verbessern.
+- Kommentieren Sie den Quellcode, um die Codefehleranalyse zu verbessern.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Eine Kopie des [Demo](../code-quality/demo-sample.md)Beispiels.
-- Grundlegendes Verständnis von CC++/.
+- Eine Kopie des [CppDemo-Beispiels](../code-quality/demo-sample.md).
+- Grundlegendes Verständnis von C/C++.
 
-### <a name="to-run-code-defect-analysis-on-native-code"></a>So führen Sie die Code Fehleranalyse für nativen Code aus
+## <a name="run-code-analysis-on-native-code"></a>Ausführen der Codeanalyse für systemeigenen Code
 
-1. Öffnen Sie die Demo Projekt Mappe in Visual Studio.
+### <a name="to-run-code-defect-analysis-on-native-code"></a>So führen Sie die Codefehleranalyse für systemeigenen Code aus
 
-     Die Demo Lösung füllt nun **Projektmappen-Explorer**auf.
+::: moniker range=">=vs-2019"
 
-1. Klicken Sie im Menü **Build** auf **Projektmappe neu erstellen**.
+1. Öffnen Sie die CppDemo-Lösung in Visual Studio.
 
-     Die Lösung wird ohne Fehler oder Warnungen erstellt.
+     Die CppDemo-Lösung füllt jetzt den **Projektmappen-Explorer**.
 
-1. Wählen Sie in **Projektmappen-Explorer**das Projekt codemängel aus.
+1. Wählen Sie im Menü **Erstellen** die Option **Lösung neu erstellen**aus.
 
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
+     Die Lösung erstellt ohne Fehler oder Warnungen.
 
-     Das Dialogfeld **Codedefekte-Eigenschaften Seiten** wird angezeigt.
+1. Wählen Sie im **Projektmappen-Explorer**das CodeDefects-Projekt aus.
 
-1. Klicken Sie auf **Codeanalyse**.
+1. Wählen Sie im Menü **Projekt** **Eigenschaften**aus.
 
-1. Aktivieren Sie das Kontrollkästchen **Code Analyse fürC++ C/on-Build aktivieren** .
+     Das Dialogfeld **CodeDefects Property Pages** wird angezeigt.
 
-1. Erstellen Sie das Projekt "codemängel" neu.
+1. Wählen Sie die Eigenschaftenseite **Codeanalyse** aus.
 
-     Code Analyse Warnungen werden in der **Fehlerliste**angezeigt.
+1. Ändern Sie die **Eigenschaft Codeanalyse für Build aktivieren** in **Ja**. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
-### <a name="to-analyze-code-defect-warnings"></a>So analysieren Sie Code Fehler Warnungen
+1. Erstellen Sie das CodeDefects-Projekt neu.
 
-1. Klicken Sie im Menü **Ansicht** auf **Fehlerliste**.
+     Codeanalysewarnungen werden im Fenster **Fehlerliste** angezeigt.
 
-     Abhängig vom Entwickler Profil, das Sie in Visual Studio ausgewählt haben, müssen Sie möglicherweise im Menü **Ansicht** auf **andere Fenster** zeigen und dann auf **Fehlerliste**klicken.
+::: moniker-end
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+::: moniker range="<=vs-2017"
 
-     Warning C6230: Implizite Umwandlung zwischen semantisch unterschiedlichen Typen: HRESULT wird in einem Boolean-Kontext verwendet.
+1. Öffnen Sie die CppDemo-Lösung in Visual Studio.
 
-     Im Code-Editor wird die Zeile, die die Warnung verursacht hat, im `bool ProcessDomain()`der Funktion angezeigt. Diese Warnung gibt an, dass eine `HRESULT` in einer if-Anweisung verwendet wird, in der ein boolesches Ergebnis erwartet wird.  Dies ist in der Regel ein Fehler, weil der `S_OK` HRESULT von der Funktion zurückgegeben wird, auf Erfolg hinweist, bei der Konvertierung in einen booleschen Wert jedoch zu `false`.
+     Die CppDemo-Lösung füllt jetzt den **Projektmappen-Explorer**.
 
-1. Korrigieren Sie diese Warnung, indem Sie das `SUCCEEDED`-Makro verwenden, das in `true` konvertiert, wenn ein `HRESULT` Rückgabewert Erfolg angibt. Der Code sollte dem folgenden Code ähneln:
+1. Wählen Sie im Menü **Erstellen** die Option **Lösung neu erstellen**aus.
+
+     Die Lösung erstellt ohne Fehler oder Warnungen.
+
+     > [!NOTE]
+     > In Visual Studio 2017 wird möglicherweise `E1097 unknown attribute "no_init_all"` eine falsche Warnung im IntelliSense-Modul angezeigt. Sie können diese Warnung problemlos ignorieren.
+
+1. Wählen Sie im **Projektmappen-Explorer**das CodeDefects-Projekt aus.
+
+1. Wählen Sie im Menü **Projekt** **Eigenschaften**aus.
+
+     Das Dialogfeld **CodeDefects Property Pages** wird angezeigt.
+
+1. Wählen Sie die Eigenschaftenseite **Codeanalyse** aus.
+
+1. Aktivieren Sie das Kontrollkästchen **Codeanalyse unter Build aktivieren.** Klicken Sie auf **OK**, um die Änderungen zu speichern.
+
+1. Erstellen Sie das CodeDefects-Projekt neu.
+
+     Codeanalysewarnungen werden im Fenster **Fehlerliste** angezeigt.
+
+::: moniker-end
+
+### <a name="to-analyze-code-defect-warnings"></a>So analysieren Sie Codefehlerwarnungen
+
+1. Wählen Sie im Menü **Ansicht** **Die Option Fehlerliste**aus.
+
+     Dieses Menüelement ist möglicherweise nicht sichtbar. Dies hängt vom Entwicklerprofil ab, das Sie in Visual Studio ausgewählt haben. Möglicherweise müssen Sie im Menü **Ansicht** auf **andere Windows** zeigen und dann **Fehlerliste**auswählen.
+
+1. Doppelklicken Sie im Fenster **Fehlerliste** auf die folgende Warnung:
+
+     C6230: Implizite Umwandlung zwischen semantisch unterschiedlichen Typen: Verwendung von HRESULT in einem booleschen Kontext.
+
+     Der Code-Editor zeigt die Zeile an, die die Warnung innerhalb der Funktion `bool ProcessDomain()`verursacht hat. Diese Warnung gibt `HRESULT` an, dass eine in einer "if"-Anweisung verwendet wird, in der ein boolesches Ergebnis erwartet wird. Es ist in der Regel `S_OK` ein Fehler, denn wenn das HRESULT von einer Funktion zurückgegeben wird, zeigt es Erfolg an, aber wenn es in einen booleschen Wert konvertiert wird, wird es in `false`ausgewertet.
+
+1. Korrigieren Sie diese `SUCCEEDED` Warnung mithilfe des `true` Makros, das in den Zeitpunkt konvertiert wird, an dem ein `HRESULT` Rückgabewert auf Erfolg hinweist. Ihr Code sollte dem folgenden Code ähneln:
 
    ```cpp
-   if (SUCCEEDED (ReadUserAccount()) )
+   if (SUCCEEDED(ReadUserAccount()))
    ```
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+1. Doppelklicken Sie in der **Fehlerliste**auf die folgende Warnung:
 
-     Warning C6282: Falscher Operator: Zuweisung zu konstanter im Test Kontext. Was = = beabsichtigt?
+     C6282: Falscher Operator: Zuweisung einer Konstante im booleschen Kontext. Erwägen Sie stattdessen die Verwendung von '=='.
 
-1. Korrigieren Sie diese Warnung, indem Sie auf Gleichheit testen. Der Code sollte in etwa wie der folgende Code aussehen:
+1. Korrigieren Sie diese Warnung, indem Sie die Gleichheit testen. Ihr Code sollte dem folgenden Code ähnlich aussehen:
 
    ```cpp
-   if ((len == ACCOUNT_DOMAIN_LEN) || (g_userAccount[len] != '\\'))
+   if ((len == ACCOUNT_DOMAIN_LEN) || (g_userAccount[len] != L'\\'))
    ```
 
-### <a name="to-treat-warning-as-an-error"></a>So behandeln Sie die Warnung als Fehler
+1. Korrigieren Sie die verbleibenden C6001-Warnungen `j` in der **Fehlerliste,** indem Sie sie initialisieren `i` und auf 0.
 
-1. Fügen Sie in der Datei Bug. cpp am Anfang der Datei die folgende `#pragma`-Anweisung hinzu, um die Warnung C6001 als Fehler zu behandeln:
+1. Erstellen Sie das CodeDefects-Projekt neu.
+
+     Das Projekt erstellt ohne Warnungen oder Fehler.
+
+## <a name="correct-source-code-annotation-warnings"></a>Korrigieren von Quellcodeanmerkungswarnungen
+
+### <a name="to-enable-the-source-code-annotation-warnings-in-annotationc"></a>So aktivieren Sie die Quellcodeanmerkungswarnungen in annotation.c
+
+::: moniker range=">=vs-2019"
+
+1. Wählen Sie im Projektprojektprojekt Projekt Annotations aus.
+
+1. Wählen Sie im Menü **Projekt** **Eigenschaften**aus.
+
+     Das Dialogfeld **Annotations Property Pages** wird angezeigt.
+
+1. Wählen Sie die Eigenschaftenseite **Codeanalyse** aus.
+
+1. Ändern Sie die **Eigenschaft Codeanalyse für Build aktivieren** in **Ja**. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+
+::: moniker-end
+
+::: moniker range="<=vs-2017"
+
+1. Wählen Sie im Projektprojektprojekt Projekt Annotations aus.
+
+1. Wählen Sie im Menü **Projekt** **Eigenschaften**aus.
+
+     Das Dialogfeld **Annotations Property Pages** wird angezeigt.
+
+1. Wählen Sie die Eigenschaftenseite **Codeanalyse** aus.
+
+1. Aktivieren Sie das Kontrollkästchen **Codeanalyse unter Build aktivieren.** Klicken Sie auf **OK**, um die Änderungen zu speichern.
+
+::: moniker-end
+
+### <a name="to-correct-the-source-code-annotation-warnings-in-annotationc"></a>So korrigieren Sie die Quellcodeanmerkungswarnungen in annotation.c
+
+1. Erstellen Sie das Annotations-Projekt neu.
+
+1. Wählen Sie im Menü **Erstellen** die Option **Codeanalyse für Anmerkungen**ausführen aus.
+
+1. Doppelklicken Sie in der **Fehlerliste**auf die folgende Warnung:
+
+     C6011: Verweis auf NULL-Zeiger 'newNode'.
+
+     Diese Warnung weist darauf hin, dass der Aufrufer den Rückgabewert nicht überprüft. In diesem Fall kann `AllocateNode` ein Aufruf an einen NULL-Wert zurückgeben. Siehe die Headerdatei annotations.h für `AllocateNode`die Funktionsdeklaration für .
+
+1. Der Cursor befindet sich an der Position in der Datei annotations.cpp, an der die Warnung aufgetreten ist.
+
+1. Um diese Warnung zu korrigieren, verwenden Sie eine "if"-Anweisung, um den Rückgabewert zu testen. Ihr Code sollte dem folgenden Code ähneln:
 
    ```cpp
-   #pragma warning (error: 6001)
-   ```
-
-1. Erstellen Sie das Projekt "codemängel" neu.
-
-     Im **Fehlerliste**wird C6001 jetzt als Fehler angezeigt.
-
-1. Korrigieren Sie die verbleibenden zwei C6001-Fehler im **Fehlerliste** , indem Sie `i` initialisieren und auf 0 `j`.
-
-1. Erstellen Sie das Projekt "codemängel" neu.
-
-     Das Projekt wird ohne Warnungen oder Fehler erstellt.
-
-### <a name="to-correct-the-source-code-annotation-warnings-in-annotationc"></a>So korrigieren Sie die Warnungen der Quell Code Anmerkung in der Anmerkung. c
-
-1. Wählen Sie in Projektmappen-Explorer das Projekt Annotations aus.
-
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
-
-     Das Dialogfeld **Annotations-Eigenschaften Seiten** wird angezeigt.
-
-1. Klicken Sie auf **Codeanalyse**.
-
-1. Aktivieren Sie das Kontrollkästchen **Code Analyse fürC++ C/on-Build aktivieren** .
-
-1. Erstellen Sie das Projekt Annotations neu.
-
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
-
-     Warnung C6011: dereferenzierender NULL-Zeiger "newNode".
-
-     Diese Warnung weist darauf hin, dass der Aufrufer den Rückgabewert nicht überprüfen konnte. In diesem Fall kann ein Rückruf von " **Zuordnungs-Ode** " einen NULL-Wert zurückgeben (Weitere Informationen finden Sie in der Annotations. h-Header Datei für die Funktionsdeklaration für "zustellerode")
-
-1. Öffnen Sie die Datei "Annotations. cpp".
-
-1. Um diese Warnung zu korrigieren, verwenden Sie eine if-Anweisung, um den Rückgabewert zu testen. Der Code sollte dem folgenden Code ähneln:
-
-   ```cpp
+   LinkedList* newNode = AllocateNode();
    if (nullptr != newNode)
    {
        newNode->data = value;
@@ -131,27 +182,29 @@ In dieser exemplarischen Vorgehensweise wird veranschaulicht,C++ wie c/Code mit 
    }
    ```
 
-1. Erstellen Sie das Projekt Annotations neu.
+1. Erstellen Sie das Annotations-Projekt neu.
 
-     Das Projekt wird ohne Warnungen oder Fehler erstellt.
+     Das Projekt erstellt ohne Warnungen oder Fehler.
 
-### <a name="to-use-source-code-annotation"></a>So verwenden Sie die Quell Code Anmerkung
+## <a name="use-source-code-annotation-to-discover-more-issues"></a>Verwenden von Quellcodeanmerkungen, um weitere Probleme zu ermitteln
 
-1. Kommentieren Sie formale Parameter und den Rückgabewert der Funktion `AddTail`, um anzugeben, dass die Zeiger Werte möglicherweise NULL sind:
+### <a name="to-use-source-code-annotation"></a>So verwenden Sie Quellcodeanmerkungen
+
+1. Kommentieren Sie formale Parameter und den `AddTail` Rückgabewert der Funktion, um anzugeben, dass die Zeigerwerte null sein können:
 
    ```cpp
    _Ret_maybenull_ LinkedList* AddTail(_Maybenull_ LinkedList* node, int value)
    ```
 
-1. Projekt zum erneuten Erstellen von Anmerkungen.
+1. Wählen Sie im Menü **Build** die Option **Codeanalyse für Lösung ausführen** aus.
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+1. Doppelklicken Sie in der **Fehlerliste**auf die folgende Warnung:
 
-     Warnung C6011: dereferenzierender NULL-Zeiger "Node".
+     C6011: Verweis auf NULL-Zeiger 'Knoten'.
 
-     Diese Warnung gibt an, dass der an die Funktion eingegebene Knoten NULL sein kann, und gibt die Nummer der Zeile an, in der die Warnung ausgelöst wurde.
+     Diese Warnung gibt an, dass der an die Funktion übergebene Knoten möglicherweise NULL ist.
 
-1. Um diese Warnung zu korrigieren, verwenden Sie eine if-Anweisung am Anfang der Funktion, um den bestandenen Wert zu testen. Der Code sollte dem folgenden Code ähneln:
+1. Um diese Warnung zu korrigieren, verwenden Sie eine 'if'-Anweisung am Anfang der Funktion, um den übergebenen Wert zu testen. Ihr Code sollte dem folgenden Code ähneln:
 
    ```cpp
    if (nullptr == node)
@@ -160,11 +213,11 @@ In dieser exemplarischen Vorgehensweise wird veranschaulicht,C++ wie c/Code mit 
    }
    ```
 
-1. Projekt zum erneuten Erstellen von Anmerkungen.
+1. Wählen Sie im Menü **Build** die Option **Codeanalyse für Lösung ausführen** aus.
 
-     Das Projekt wird jetzt ohne Warnungen oder Fehler erstellt.
+     Das Projekt wird nun ohne Warnungen oder Fehler erstellt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-Exemplarische Vorgehensweise [: Analysieren von verwaltetem Code auf Code Fehler](/visualstudio/code-quality/walkthrough-analyzing-managed-code-for-code-defects)\
-[Code Analyse für C/C++](../code-quality/code-analysis-for-c-cpp-overview.md)
+[Exemplarische Vorgehensweise: Analysieren von verwaltetem Code für Codefehler](/visualstudio/code-quality/walkthrough-analyzing-managed-code-for-code-defects)\
+[Codeanalyse für C/C++](../code-quality/code-analysis-for-c-cpp-overview.md)

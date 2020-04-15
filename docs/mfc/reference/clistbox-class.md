@@ -1,6 +1,6 @@
 ---
 title: CListBox-Klasse
-description: Eine Beschreibung der MFC CListBox-Klasse und ihrer Member-Funktionen.
+description: Eine Beschreibung der MFC CListBox-Klasse und ihrer Memberfunktionen.
 ms.date: 01/22/2020
 f1_keywords:
 - CListBox
@@ -103,12 +103,12 @@ helpviewer_keywords:
 - CListBox [MFC], SetTopIndex
 - CListBox [MFC], VKeyToItem
 ms.assetid: 7ba3c699-c286-4cd9-9066-532c41ec05d1
-ms.openlocfilehash: 5c3337641dcfc720a5f9fbccf5bb0614e97c3b54
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 5bc66ab2775ebb9023c65c9decae205604c978c6
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425838"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372228"
 ---
 # <a name="clistbox-class"></a>CListBox-Klasse
 
@@ -124,111 +124,111 @@ class CListBox : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CListBox:: CListBox](#clistbox)|Erstellt ein `CListBox`-Objekt.|
+|[CListBox::CListBox](#clistbox)|Erstellt ein `CListBox`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CListBox::AddString](#addstring)|Fügt einem Listenfeld eine Zeichenfolge hinzu.|
-|[CListBox:: chartoitem](#chartoitem)|Überschreiben Sie, um benutzerdefinierte WM_CHAR Behandlung für Listenfelder, die keine Zeichen folgen sind, bereitzustellen.|
-|[CListBox:: compareitem](#compareitem)|Wird von Framework aufgerufen, um die Position eines neuen Elements in einem sortierten Besitzer-zeichnen-Listenfeld zu bestimmen.|
-|[CListBox:: Create](#create)|Erstellt das Windows-Listenfeld und fügt es an das `CListBox` Objekt an.|
-|[CListBox::D eleteitem](#deleteitem)|Wird von Framework aufgerufen, wenn der Benutzer ein Element aus einem Listenfeld für den Besitzer zeichnen löscht.|
-|[CListBox::D eletestring](#deletestring)|Löscht eine Zeichenfolge aus einem Listenfeld.|
-|[CListBox::D IR](#dir)|Fügt Dateinamen, Laufwerke oder beides aus dem aktuellen Verzeichnis einem Listenfeld hinzu.|
-|[CListBox::D rawitem](#drawitem)|Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Listen Felds für das Besitzer Zeichen ändert.|
-|[CListBox:: FindString](#findstring)|Sucht in einem Listenfeld nach einer Zeichenfolge.|
-|[CListBox:: FindStringExact](#findstringexact)|Sucht die erste Listenfeld Zeichenfolge, die mit einer angegebenen Zeichenfolge übereinstimmt.|
-|[CListBox:: getanchorindex](#getanchorindex)|Ruft den NULL basierten Index des aktuellen Anker Elements in einem Listenfeld ab.|
-|[CListBox:: getcaretindex](#getcaretindex)|Bestimmt den Index des Elements, das über das Fokus Rechteck in einem Listenfeld für Mehrfachauswahl verfügt.|
-|[CListBox:: GetCount](#getcount)|Gibt die Anzahl der Zeichen folgen in einem Listenfeld zurück.|
-|[CListBox:: getcurrsel](#getcursel)|Gibt den NULL basierten Index der aktuell ausgewählten Zeichenfolge in einem Listenfeld zurück.|
-|[CListBox:: gethorizontalblock](#gethorizontalextent)|Gibt die Breite in Pixel zurück, in der ein Listenfeld horizontal gescrollt werden kann.|
-|[CListBox:: GetItemData](#getitemdata)|Gibt einen Wert zurück, der dem Listenfeld Element zugeordnet ist.|
-|[CListBox:: getitemdataptr](#getitemdataptr)|Gibt einen Zeiger auf ein Listenfeld Element zurück.|
-|[CListBox:: GetItemHeight](#getitemheight)|Bestimmt die Höhe der Elemente in einem Listenfeld.|
-|[CListBox:: GetItemRect](#getitemrect)|Gibt das umgebende Rechteck des Listenfeld Elements zurück, das aktuell angezeigt wird.|
-|[CListBox:: getlistboxinfo](#getlistboxinfo)|Ruft die Anzahl der Elemente pro Spalte ab.|
-|[CListBox:: getLocale](#getlocale)|Ruft den Gebiets Schema Bezeichner für ein Listenfeld ab.|
-|[CListBox:: GetSEL](#getsel)|Gibt den Auswahl Zustand eines Listenfeld Elements zurück.|
-|[CListBox:: getselcount](#getselcount)|Gibt die Anzahl der Zeichen folgen zurück, die derzeit in einem Listenfeld für Mehrfachauswahl ausgewählt sind.|
-|[CListBox:: getselitems](#getselitems)|Gibt die Indizes der Zeichen folgen zurück, die derzeit in einem Listenfeld ausgewählt sind.|
-|[CListBox:: gettext](#gettext)|Kopiert ein Listenfeld Element in einen Puffer.|
-|[CListBox:: gettextlen](#gettextlen)|Gibt die Länge eines Listenfeld Elements in Byte zurück.|
-|[CListBox:: gettopindex](#gettopindex)|Gibt den Index der ersten sichtbaren Zeichenfolge in einem Listenfeld zurück.|
-|[CListBox:: InitStorage](#initstorage)|Ordnet Speicherblöcke für Listenfeld Elemente und Zeichen folgen vorab zu.|
+|[CListBox::CharToItem](#chartoitem)|Überschreiben, um benutzerdefinierte WM_CHAR Für Besitzer-Zeichnungslistenfelder bereitzustellen, die keine Zeichenfolgen haben.|
+|[CListBox::CompareItem](#compareitem)|Wird vom Framework aufgerufen, um die Position eines neuen Elements in einem sortierten Listenfeld für die Besitzerzeichnung zu bestimmen.|
+|[CListBox::Erstellen](#create)|Erstellt das Windows-Listenfeld und `CListBox` fügt es an das Objekt an.|
+|[CListBox::DeleteItem](#deleteitem)|Wird vom Framework aufgerufen, wenn der Benutzer ein Element aus einem Listenfeld für besitzerzeichnenlöscht.|
+|[CListBox::DeleteString](#deletestring)|Löscht eine Zeichenfolge aus einem Listenfeld.|
+|[CListBox::Dir](#dir)|Fügt Dateinamen, Laufwerke oder beides aus dem aktuellen Verzeichnis zu einem Listenfeld hinzu.|
+|[CListBox::DrawItem](#drawitem)|Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines Listenfelds für die Besitzerzeichnung ändert.|
+|[CListBox::FindString](#findstring)|Sucht nach einer Zeichenfolge in einem Listenfeld.|
+|[CListBox::FindStringExact](#findstringexact)|Sucht die erste Listenfeldzeichenfolge, die einer angegebenen Zeichenfolge entspricht.|
+|[CListBox::GetAnchorIndex](#getanchorindex)|Ruft den nullbasierten Index des aktuellen Ankerelements in einem Listenfeld ab.|
+|[CListBox::GetCaretIndex](#getcaretindex)|Bestimmt den Index des Elements mit dem Fokusrechteck in einem Listenfeld mit mehreren Auswahlen.|
+|[CListBox::GetCount](#getcount)|Gibt die Anzahl der Zeichenfolgen in einem Listenfeld zurück.|
+|[CListBox::GetCurSel](#getcursel)|Gibt den nullbasierten Index der aktuell ausgewählten Zeichenfolge in einem Listenfeld zurück.|
+|[CListBox::GetHorizontalExtent](#gethorizontalextent)|Gibt die Breite in Pixel zurück, in der ein Listenfeld horizontal gescrollt werden kann.|
+|[CListBox::GetItemData](#getitemdata)|Gibt einen Wert zurück, der dem Listenfeldelement zugeordnet ist.|
+|[CListBox::GetItemDataPtr](#getitemdataptr)|Gibt einen Zeiger auf ein Listenfeldelement zurück.|
+|[CListBox::GetItemHeight](#getitemheight)|Bestimmt die Höhe von Elementen in einem Listenfeld.|
+|[CListBox::GetItemRect](#getitemrect)|Gibt das umgrenzende Rechteck des Listenfeldelements zurück, wie es derzeit angezeigt wird.|
+|[CListBox::GetListBoxInfo](#getlistboxinfo)|Ruft die Anzahl der Elemente pro Spalte ab.|
+|[CListBox::GetLocale](#getlocale)|Ruft den Gebietsschemabezeichner für ein Listenfeld ab.|
+|[CListBox::GetSel](#getsel)|Gibt den Auswahlstatus eines Listenfeldelements zurück.|
+|[CListBox::GetSelCount](#getselcount)|Gibt die Anzahl der Zeichenfolgen zurück, die derzeit in einem Listenfeld mit mehreren Auswahlen ausgewählt sind.|
+|[CListBox::GetSelItems](#getselitems)|Gibt die Indizes der Zeichenfolgen zurück, die derzeit in einem Listenfeld ausgewählt sind.|
+|[CListBox::GetText](#gettext)|Kopiert ein Listenfeldelement in einen Puffer.|
+|[CListBox::GetTextLen](#gettextlen)|Gibt die Länge in Bytes eines Listenfeldelements zurück.|
+|[CListBox::GetTopIndex](#gettopindex)|Gibt den Index der ersten sichtbaren Zeichenfolge in einem Listenfeld zurück.|
+|[CListBox::InitStorage](#initstorage)|Ordnet Speicherblöcke für Listenfeldelemente und Zeichenfolgen vorab zu.|
 |[CListBox::InsertString](#insertstring)|Fügt eine Zeichenfolge an einer bestimmten Position in einem Listenfeld ein.|
-|[CListBox:: itemfrompoint](#itemfrompoint)|Gibt den Index des Listenfeld Elements an nächster Stelle zurück.|
-|[CListBox:: MeasureItem](#measureitem)|Wird von Framework aufgerufen, wenn ein Listenfeld zum Erstellen von Besitzern zum Bestimmen von Listenfeld Dimensionen erstellt wird.|
-|[CListBox:: resetcontent](#resetcontent)|Löscht alle Einträge aus einem Listenfeld.|
-|[CListBox:: SelectString](#selectstring)|Sucht nach einer Zeichenfolge in einem Listenfeld mit einer einzelnen Auswahl und wählt diese aus.|
-|[CListBox:: selitemrange](#selitemrange)|Aktiviert oder deaktiviert einen Bereich von Zeichen folgen in einem Listenfeld mit Mehrfachauswahl.|
-|[CListBox:: "Ziel Index Index"](#setanchorindex)|Legt den Anker in einem Listenfeld Mehrfachauswahl fest, um eine erweiterte Auswahl zu beginnen.|
-|[CListBox:: setcaretindex](#setcaretindex)|Legt das Fokus Rechteck auf das Element am angegebenen Index in einem Mehrfachauswahl-Listenfeld fest.|
-|[CListBox:: setcolumnwidth](#setcolumnwidth)|Legt die Spaltenbreite eines mehrspaltigen Listen Felds fest.|
-|[CListBox:: setcurrsel](#setcursel)|Wählt eine Listenfeld Zeichenfolge aus.|
-|[CListBox:: Abbild-Bereich](#sethorizontalextent)|Legt die Breite in Pixel fest, in der ein Listenfeld horizontal gescrollt werden kann.|
-|[CListBox:: Daten](#setitemdata)|Legt einen Wert fest, der dem Listenfeld Element zugeordnet ist.|
-|[CListBox:: Ziel-DataPtr](#setitemdataptr)|Legt einen Zeiger auf das Listenfeld Element fest.|
-|[CListBox:: Sekunden-Höhe](#setitemheight)|Legt die Höhe von Elementen in einem Listenfeld fest.|
-|[CListBox:: setlocale](#setlocale)|Legt den Gebiets Schema Bezeichner für ein Listenfeld fest.|
-|[CListBox:: Sekunden](#setsel)|Aktiviert oder deaktiviert ein Listenfeld Element in einem Listenfeld mit Mehrfachauswahl.|
-|[CListBox:: settabstopps](#settabstops)|Legt die Position der Tabstopps in einem Listenfeld fest.|
-|[CListBox:: settopindex](#settopindex)|Legt den NULL basierten Index der ersten sichtbaren Zeichenfolge in einem Listenfeld fest.|
-|[CListBox:: vkeytoitem](#vkeytoitem)|Überschreiben Sie, um benutzerdefinierte WM_KEYDOWN Behandlung für Listenfelder mit der LBS_WANTKEYBOARDINPUT Formatvorlage bereitzustellen.|
+|[CListBox::ItemFromPoint](#itemfrompoint)|Gibt den Index des Listenfeldelements zurück, das einem Punkt am nächsten liegt.|
+|[CListBox::MeasureItem](#measureitem)|Wird vom Framework aufgerufen, wenn ein Listenfeld für besitzerzeichnenerstellt wird, um Listenfelddimensionen zu bestimmen.|
+|[CListBox::ResetContent](#resetcontent)|Löscht alle Einträge aus einem Listenfeld.|
+|[CListBox::SelectString](#selectstring)|Sucht eine Zeichenfolge in einem Listenfeld mit einer Auswahl und wählt sie aus.|
+|[CListBox::SelItemRange](#selitemrange)|Wählt einen Zeichenfolgenbereich in einem Listenfeld mit mehreren Auswahlen aus oder untergibt diese.|
+|[CListBox::SetAnchorIndex](#setanchorindex)|Legt den Anker in einem Listenfeld mit mehreren Auswahlen fest, um eine erweiterte Auswahl zu beginnen.|
+|[CListBox::SetCaretIndex](#setcaretindex)|Legt das Fokusrechteck auf das Element am angegebenen Index in einem Listenfeld mit mehreren Auswahlen fest.|
+|[CListBox::SetColumnWidth](#setcolumnwidth)|Legt die Spaltenbreite eines mehrspaltigen Listenfelds fest.|
+|[CListBox::SetCurSel](#setcursel)|Wählt eine Listenfeldzeichenfolge aus.|
+|[CListBox::SetHorizontalExtent](#sethorizontalextent)|Legt die Breite in Pixel fest, in der ein Listenfeld horizontal gescrollt werden kann.|
+|[CListBox::SetItemData](#setitemdata)|Legt einen Wert fest, der dem Listenfeldelement zugeordnet ist.|
+|[CListBox::SetItemDataPtr](#setitemdataptr)|Legt einen Zeiger auf das Listenfeldelement fest.|
+|[CListBox::SetItemHeight](#setitemheight)|Legt die Höhe von Elementen in einem Listenfeld fest.|
+|[CListBox::SetLocale](#setlocale)|Legt den Gebietsschemabezeichner für ein Listenfeld fest.|
+|[CListBox::SetSel](#setsel)|Wählt ein Listenfeldelement in einem Listenfeld mit mehreren Auswahlen aus oder wird die Auswahl.|
+|[CListBox::SetTabStops](#settabstops)|Legt die Tabstopppositionen in einem Listenfeld fest.|
+|[CListBox::SetTopIndex](#settopindex)|Legt den nullbasierten Index der ersten sichtbaren Zeichenfolge in einem Listenfeld fest.|
+|[CListBox::VKeyToItem](#vkeytoitem)|Überschreiben, um benutzerdefinierte WM_KEYDOWN Für Listenfelder mit dem Stilsatz LBS_WANTKEYBOARDINPUT bereitzustellen.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein Listenfeld zeigt eine Liste von Elementen (z. b. Dateinamen) an, die der Benutzer anzeigen und auswählen kann.
+In einem Listenfeld wird eine Liste von Elementen angezeigt, z. B. Dateinamen, die der Benutzer anzeigen und auswählen kann.
 
-In einem Listenfeld mit einfacher Auswahl kann der Benutzer nur ein Element auswählen. In einem Listenfeld mit mehreren Auswahlmöglichkeiten kann ein Bereich von Elementen ausgewählt werden. Wenn der Benutzer ein Element auswählt, wird es hervorgehoben, und das Listenfeld sendet eine Benachrichtigungs Meldung an das übergeordnete Fenster.
+In einem Listenfeld mit einer Auswahl kann der Benutzer nur ein Element auswählen. In einem Listenfeld mit mehreren Auswahlmöglichkeiten kann ein Bereich von Elementen ausgewählt werden. Wenn der Benutzer ein Element auswählt, wird es hervorgehoben, und das Listenfeld sendet eine Benachrichtigung an das übergeordnete Fenster.
 
-Sie können ein Listenfeld entweder aus einer Dialogfeld Vorlage oder direkt im Code erstellen. Um es direkt zu erstellen, erstellen Sie das `CListBox`-Objekt, und rufen Sie dann die [Create](#create) Member-Funktion auf, um das Windows-Listenfeld-Steuerelement zu erstellen und es an das `CListBox` Objekt anzufügen Um ein Listenfeld in einer Dialogfeld Vorlage zu verwenden, deklarieren Sie eine Listenfeld Variable in der Dialogfeld Klasse, und verwenden Sie dann `DDX_Control` in der `DoDataExchange`-Funktion der Dialogfeld Klasse, um die Member-Variable mit dem-Steuerelement zu verbinden. (Dies erfolgt automatisch, wenn Sie Ihrer Dialogfeld Klasse eine Steuerelement Variable hinzufügen.)
+Sie können ein Listenfeld entweder aus einer Dialogfeldvorlage oder direkt im Code erstellen. Um es direkt zu `CListBox` erstellen, erstellen Sie das Objekt, und rufen Sie dann `CListBox` die Memberfunktion [Erstellen](#create) auf, um das Windows-Listenfeldsteuerelement zu erstellen und es an das Objekt anzufügen. Um ein Listenfeld in einer Dialogfeldvorlage zu verwenden, deklarieren `DDX_Control` Sie eine Listenfeldvariable `DoDataExchange` in der Dialogfeldklasse, und verwenden Sie dann in der Funktion der Dialogfeldklasse die Membervariable mit dem Steuerelement. (Dies geschieht automatisch für Sie, wenn Sie Ihrer Dialogfeldklasse eine Steuerelementvariable hinzufügen.)
 
-Die Konstruktion kann ein einstufiger Prozess in einer Klasse sein, die von `CListBox`abgeleitet ist. Schreiben Sie einen Konstruktor für die abgeleitete Klasse, und nennen Sie `Create` aus dem Konstruktor.
+Die Konstruktion kann ein einstufiger Prozess `CListBox`in einer Klasse sein, die von abgeleitet ist. Schreiben Sie einen Konstruktor für `Create` die abgeleitete Klasse und rufen Sie aus dem Konstruktor heraus.
 
-Wenn Sie die von einem Listenfeld gesendeten Windows-Benachrichtigungs Meldungen an das übergeordnete Element (in der Regel eine von [CDialog](../../mfc/reference/cdialog-class.md)abgeleitete Klasse) verarbeiten möchten, fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichten Zuordnungs Eintrag und eine nachrichtenhandlermember-Funktion hinzu.
+Wenn Sie Windows-Benachrichtigungen verarbeiten möchten, die von einem Listenfeld an das übergeordnete Element gesendet werden (normalerweise eine von [CDialog](../../mfc/reference/cdialog-class.md)abgeleitete Klasse), fügen Sie der übergeordneten Klasse für jede Nachricht einen Nachrichtenzuordnungseintrag und eine Message-Handler-Memberfunktion hinzu.
 
-Jeder Nachrichten Zuordnungs Eintrag hat die folgende Form:
+Jeder Nachrichtenzuordnungseintrag hat die folgende Form:
 
 `ON_Notification( id, memberFxn )`
 
-Dabei gibt `id` die ID des untergeordneten Fensters des Listenfeld-Steuer Elements an, das die Benachrichtigung sendet, und `memberFxn` der Name der übergeordneten Element Funktion ist, die Sie zum Verarbeiten der Benachrichtigung geschrieben haben.
+wobei `id` die untergeordnete Fenster-ID des Listenfeldsteuerelements `memberFxn` angegeben wird, das die Benachrichtigung sendet, und der Name der übergeordneten Memberfunktion ist, die Sie geschrieben haben, um die Benachrichtigung zu behandeln.
 
-Der Prototyp der übergeordneten Funktion ist wie folgt:
+Der Funktionsprototyp des Übergeordneten ist wie folgt:
 
 `afx_msg void memberFxn( );`
 
-Im folgenden finden Sie eine Liste potenzieller Nachrichten Zuordnungs Einträge und eine Beschreibung der Fälle, in denen Sie an das übergeordnete Element gesendet werden:
+Im Folgenden finden Sie eine Liste der potenziellen Nachrichtenzuordnungseinträge und eine Beschreibung der Fälle, in denen sie an das übergeordnete Element gesendet werden:
 
-- ON_LBN_DBLCLK der Benutzer auf eine Zeichenfolge in einem Listenfeld doppelklickt. Diese Benachrichtigungs Meldung wird nur von einem Listenfeld mit dem [LBS_NOTIFY](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) -Format gesendet.
+- ON_LBN_DBLCLK Der Benutzer klickt in einem Listenfeld auf eine Zeichenfolge. Nur ein Listenfeld mit dem [Format LBS_NOTIFY](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) sendet diese Benachrichtigung.
 
-- ON_LBN_ERRSPACE das Listenfeld kann nicht genügend Arbeitsspeicher zuordnen, um die Anforderung zu erfüllen.
+- ON_LBN_ERRSPACE Das Listenfeld kann nicht genügend Arbeitsspeicher zuweisen, um die Anforderung zu erfüllen.
 
-- ON_LBN_KILLFOCUS das Listenfeld den Eingabefokus verliert.
+- ON_LBN_KILLFOCUS Das Listenfeld verliert den Eingabefokus.
 
-- ON_LBN_SELCANCEL die aktuelle Listenfeld Auswahl abgebrochen wird. Diese Meldung wird nur gesendet, wenn ein Listenfeld den LBS_NOTIFY Stil hat.
+- ON_LBN_SELCANCEL Die aktuelle Listenfeldauswahl wird abgebrochen. Diese Nachricht wird nur gesendet, wenn ein Listenfeld den LBS_NOTIFY-Stil hat.
 
-- ON_LBN_SELCHANGE die Auswahl im Listenfeld geändert wurde. Diese Benachrichtigung wird nicht gesendet, wenn die Auswahl von der [CListBox:: setcurrsel](#setcursel) -Member-Funktion geändert wird. Diese Benachrichtigung gilt nur für ein Listenfeld, das den LBS_NOTIFY Stil hat. Wenn der Benutzer eine Pfeiltaste drückt, wird die LBN_SELCHANGE Benachrichtigungs Meldung gesendet, wenn der Benutzer eine Pfeiltaste drückt, auch wenn sich die Auswahl nicht ändert.
+- ON_LBN_SELCHANGE Die Auswahl im Listenfeld hat sich geändert. Diese Benachrichtigung wird nicht gesendet, wenn die Auswahl durch die [Memberfunktion CListBox::SetCurSel](#setcursel) geändert wird. Diese Benachrichtigung gilt nur für ein Listenfeld mit dem Stil LBS_NOTIFY. Die LBN_SELCHANGE Benachrichtigungwirdwirdbenachrichtigung wird für ein Listenfeld mit mehreren Auswahlen gesendet, wenn der Benutzer eine Pfeiltaste drückt, auch wenn sich die Auswahl nicht ändert.
 
-- ON_LBN_SETFOCUS das Listenfeld den Eingabefokus erhält.
+- ON_LBN_SETFOCUS Das Listenfeld empfängt den Eingabefokus.
 
-- ON_WM_CHARTOITEM ein Listenfeld zum Zeichnen von Besitzern, das keine Zeichen folgen enthält, eine WM_CHAR Meldung empfängt.
+- ON_WM_CHARTOITEM Ein Listenfeld für die Besitzerzeichnung ohne Zeichenfolgen erhält eine WM_CHAR Nachricht.
 
-- ON_WM_VKEYTOITEM ein Listenfeld mit dem LBS_WANTKEYBOARDINPUT Format eine WM_KEYDOWN Meldung empfängt.
+- ON_WM_VKEYTOITEM Ein Listenfeld mit dem Stil LBS_WANTKEYBOARDINPUT erhält eine WM_KEYDOWN Nachricht.
 
-Wenn Sie ein `CListBox` Objekt in einem Dialogfeld (über eine Dialogfeld Ressource) erstellen, wird das `CListBox` Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
+Wenn Sie `CListBox` ein Objekt in einem Dialogfeld (über eine Dialogfeldressource) erstellen, wird das `CListBox` Objekt automatisch zerstört, wenn der Benutzer das Dialogfeld schließt.
 
-Wenn Sie ein `CListBox` Objekt innerhalb eines Fensters erstellen, müssen Sie möglicherweise das `CListBox` Objekt zerstören. Wenn Sie das `CListBox`-Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie das `CListBox`-Objekt auf dem Heap mithilfe der **New** -Funktion erstellen, müssen Sie **Delete** für das-Objekt verwenden, um es zu zerstören, wenn der Benutzer das übergeordnete Fenster schließt.
+Wenn Sie `CListBox` ein Objekt in einem Fenster erstellen, müssen Sie das `CListBox` Objekt möglicherweise zerstören. Wenn Sie `CListBox` das Objekt auf dem Stapel erstellen, wird es automatisch zerstört. Wenn Sie `CListBox` das Objekt auf dem Heap mithilfe der **neuen** Funktion erstellen, müssen Sie **das Objekt** löschen aufrufen, um es zu zerstören, wenn der Benutzer das übergeordnete Fenster schließt.
 
-Wenn Sie im `CListBox` Objekt Arbeitsspeicher zuordnen, überschreiben Sie den `CListBox`-Dekonstruktor, um die Zuordnung zu verwerfen.
+Wenn Sie Speicher im `CListBox` Objekt zuweisen, `CListBox` überschreiben Sie den Destruktor, um die Zuordnung zu entsorgen.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -236,11 +236,11 @@ Wenn Sie im `CListBox` Objekt Arbeitsspeicher zuordnen, überschreiben Sie den `
 
 `CListBox`
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
-##  <a name="addstring"></a>CListBox:: AddString
+## <a name="clistboxaddstring"></a><a name="addstring"></a>CListBox::AddString
 
 Fügt einem Listenfeld eine Zeichenfolge hinzu.
 
@@ -250,26 +250,26 @@ int AddString(LPCTSTR lpszItem);
 
 ### <a name="parameters"></a>Parameter
 
-*lpszitem*<br/>
-Verweist auf die mit NULL endende Zeichenfolge, die hinzugefügt werden soll.
+*lpszItem*<br/>
+Zeigt auf die null-terminierte Zeichenfolge, die hinzugefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index der Zeichenfolge im Listenfeld. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge zur Verfügung steht.
+Der nullbasierte Index für die Zeichenfolge im Listenfeld. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. Der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge verfügbar ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Listenfeld nicht mit dem [LBS_SORT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil erstellt wurde, wird die Zeichenfolge am Ende der Liste hinzugefügt. Andernfalls wird die Zeichenfolge in die Liste eingefügt, und die Liste wird sortiert. Wenn das Listenfeld mit dem LBS_SORT-Stil, jedoch nicht mit dem [LBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Format erstellt wurde, sortiert das Framework die Liste nach einem oder mehreren Aufrufen der `CompareItem` Member-Funktion.
+Wenn das Listenfeld nicht mit dem [Stil LBS_SORT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) erstellt wurde, wird die Zeichenfolge am Ende der Liste hinzugefügt. Andernfalls wird die Zeichenfolge in die Liste eingefügt, und die Liste wird sortiert. Wenn das Listenfeld mit dem Stil LBS_SORT, nicht aber mit dem [LBS_HASSTRINGS-Stil](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) `CompareItem` erstellt wurde, sortiert das Framework die Liste nach einem oder mehreren Aufrufen der Memberfunktion.
 
-Verwenden Sie [InsertString](#insertstring) , um eine Zeichenfolge in eine bestimmte Position im Listenfeld einzufügen.
+Verwenden Sie [InsertString,](#insertstring) um eine Zeichenfolge an einer bestimmten Position im Listenfeld einzufügen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#3](../../mfc/codesnippet/cpp/clistbox-class_1.cpp)]
 
-##  <a name="chartoitem"></a>CListBox:: chartoitem
+## <a name="clistboxchartoitem"></a><a name="chartoitem"></a>CListBox::CharToItem
 
-Wird von Framework aufgerufen, wenn das übergeordnete Fenster des Listen Felds eine WM_CHARTOITEM Meldung aus dem Listenfeld empfängt.
+Wird vom Framework aufgerufen, wenn das übergeordnete Fenster des Listenfelds eine WM_CHARTOITEM Nachricht aus dem Listenfeld empfängt.
 
 ```
 virtual int CharToItem(
@@ -279,37 +279,37 @@ virtual int CharToItem(
 
 ### <a name="parameters"></a>Parameter
 
-*nkey*<br/>
+*nKey*<br/>
 Der ANSI-Code des Zeichens, das der Benutzer eingegeben hat.
 
 *nIndex*<br/>
-Die aktuelle Position der Listenfeld Einfügemarke.
+Die aktuelle Position der Listenbox-Pflege.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt-1 oder-2 für keine weitere Aktion oder eine nicht negative Zahl zurück, um einen Index eines Listenfeld Elements anzugeben, für das die Standardaktion für den Tastatur Strich ausgeführt werden soll. Die Standard Implementierung gibt-1 zurück.
+Gibt - 1 oder - 2 für keine weitere Aktion oder eine nicht negative Zahl zurück, um einen Index eines Listenfeldelements anzugeben, auf dem die Standardaktion für den Tastenanschlag ausgeführt werden soll. Die Standardimplementierung gibt zurück - 1.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die WM_CHARTOITEM Meldung wird vom Listenfeld gesendet, wenn eine WM_CHAR Meldung empfangen wird. Dies ist jedoch nur möglich, wenn das Listenfeld alle folgenden Kriterien erfüllt:
+Die WM_CHARTOITEM Nachricht wird vom Listenfeld gesendet, wenn eine WM_CHAR Nachricht empfangen wird, jedoch nur, wenn das Listenfeld alle folgenden Kriterien erfüllt:
 
-- Ist ein Listenfeld zum Zeichnen von Besitzern.
+- Ist ein Listenfeld für die Besitzerzeichnung.
 
-- Hat nicht den [LBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil festgelegt.
+- Der [LBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil ist nicht festgelegt.
 
-- Weist mindestens ein Element auf.
+- Hat mindestens ein Element.
 
-Sie sollten diese Funktion niemals selbst aufzurufen. Überschreiben Sie diese Funktion, um eine eigene benutzerdefinierte Behandlung von Tastatur Meldungen bereitzustellen.
+Sie sollten diese Funktion niemals selbst aufrufen. Überschreiben Sie diese Funktion, um Ihre eigene benutzerdefinierte Behandlung von Tastaturnachrichten bereitzustellen.
 
-In ihrer außer Kraft Setzung müssen Sie einen Wert zurückgeben, um das Framework darüber zu informieren, welche Aktion Sie ausgeführt haben. Der Rückgabewert-1 oder-2 gibt an, dass Sie alle Aspekte der Elementauswahl behandelt haben und keine weitere Aktion im Listenfeld ausführen müssen. Vor dem Zurückgeben von-1 oder-2 konnten Sie die Auswahl festlegen oder die Einfügemarke oder beides verschieben. Verwenden Sie [setcurrsel](#setcursel) oder [SetSel](#setsel), um die Auswahl festzulegen. Verwenden Sie [setcaretindex](#setcaretindex), um die Einfügemarke zu verschieben.
+In der Außerkraftsetzung müssen Sie einen Wert zurückgeben, um dem Framework mitzuteilen, welche Aktion Sie ausgeführt haben. Ein Rückgabewert von - 1 oder - 2 gibt an, dass Sie alle Aspekte der Auswahl des Elements behandelt haben und keine weiteren Aktionen durch das Listenfeld erfordern. Vor der Rückkehr - 1 oder - 2, können Sie die Auswahl einstellen oder die Einseroder verschieben. Um die Auswahl festzulegen, verwenden Sie [SetCurSel](#setcursel) oder [SetSel](#setsel). Um die Einserwart zu verschieben, verwenden Sie [SetCaretIndex](#setcaretindex).
 
-Ein Rückgabewert von 0 (null) oder größer gibt den Index eines Elements im Listenfeld an und gibt an, dass im Listenfeld die Standardaktion für den Tastatur Strich für das angegebene Element ausgeführt werden soll.
+Ein Rückgabewert von 0 oder höher gibt den Index eines Elements im Listenfeld an und gibt an, dass das Listenfeld die Standardaktion für den Tastenanschlag für das angegebene Element ausführen soll.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#4](../../mfc/codesnippet/cpp/clistbox-class_2.cpp)]
 
-##  <a name="clistbox"></a>CListBox:: CListBox
+## <a name="clistboxclistbox"></a><a name="clistbox"></a>CListBox::CListBox
 
 Erstellt ein `CListBox`-Objekt.
 
@@ -317,17 +317,17 @@ Erstellt ein `CListBox`-Objekt.
 CListBox();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CListBox`-Objekt in zwei Schritten. Zuerst wird der Konstruktor aufgerufen `ClistBox` und dann `Create`aufgerufen, der das Windows-Listenfeld initialisiert und an den `CListBox`anfügt.
+Sie erstellen `CListBox` ein Objekt in zwei Schritten. Rufen Sie zunächst `ClistBox` den Konstruktor auf, und rufen Sie dann `Create`auf, `CListBox`das Windows-Listenfeld initialisiert und an die anfügt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#1](../../mfc/codesnippet/cpp/clistbox-class_3.cpp)]
 
-##  <a name="compareitem"></a>CListBox:: compareitem
+## <a name="clistboxcompareitem"></a><a name="compareitem"></a>CListBox::CompareItem
 
-Wird von Framework aufgerufen, um die relative Position eines neuen Elements in einem sortierten Besitzer-zeichnen-Listenfeld zu bestimmen.
+Wird vom Framework aufgerufen, um die relative Position eines neuen Elements in einem sortierten Listenfeld für die Besitzerzeichnung zu bestimmen.
 
 ```
 virtual int CompareItem(LPCOMPAREITEMSTRUCT lpCompareItemStruct);
@@ -335,32 +335,32 @@ virtual int CompareItem(LPCOMPAREITEMSTRUCT lpCompareItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpcompareitemstruct*<br/>
-Ein Long-Zeiger auf eine `COMPAREITEMSTRUCT`-Struktur.
+*lpCompareItemStruct*<br/>
+Ein langer Zeiger `COMPAREITEMSTRUCT` auf eine Struktur.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die relative Position der beiden Elemente an, die in der [compareitemstruct](/windows/win32/api/winuser/ns-winuser-compareitemstruct) -Struktur beschrieben werden. Es kann sich um einen der folgenden Werte handeln:
+Gibt die relative Position der beiden elemente an, die in der [COMPAREITEMSTRUCT-Struktur](/windows/win32/api/winuser/ns-winuser-compareitemstruct) beschrieben werden. Dabei kann es sich um einen der folgenden Werte erfreuen:
 
 |Wert|Bedeutung|
 |-----------|-------------|
-|-1|Element 1 wird vor Element 2 sortiert.|
-|0|Element 1 und Element 2 Sortieren dasselbe.|
-|1|Element 1 sortiert nach Element 2.|
+|-1|Artikel 1 sortiert vor Artikel 2.|
+|0|Artikel 1 und Artikel 2 sortieren die gleiche.|
+|1|Artikel 1 sortiert nach Artikel 2.|
 
-Eine Beschreibung der `COMPAREITEMSTRUCT` Struktur finden Sie unter [CWnd:: oncompareitem](../../mfc/reference/cwnd-class.md#oncompareitem) .
+Eine Beschreibung der `COMPAREITEMSTRUCT` Struktur finden Sie unter [CWnd::OnCompareItem.](../../mfc/reference/cwnd-class.md#oncompareitem)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Member-Funktion keine Aktion aus. Wenn Sie ein Listenfeld zum Zeichnen von Besitzern mit dem LBS_SORT Stil erstellen, müssen Sie diese Element Funktion überschreiben, damit das Framework beim Sortieren neuer Elemente, die dem Listenfeld hinzugefügt werden, behilflich ist.
+Standardmäßig führt diese Memberfunktion nichts aus. Wenn Sie ein Listenfeld für die Besitzerzeichnung mit dem Format LBS_SORT erstellen, müssen Sie diese Memberfunktion überschreiben, um das Framework beim Sortieren neuer Elemente zu unterstützen, die dem Listenfeld hinzugefügt wurden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#5](../../mfc/codesnippet/cpp/clistbox-class_4.cpp)]
 
-##  <a name="create"></a>CListBox:: Create
+## <a name="clistboxcreate"></a><a name="create"></a>CListBox::Erstellen
 
-Erstellt das Windows-Listenfeld und fügt es an das `CListBox` Objekt an.
+Erstellt das Windows-Listenfeld und `CListBox` fügt es an das Objekt an.
 
 ```
 virtual BOOL Create(
@@ -372,53 +372,53 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwstyle*<br/>
-Gibt den Stil des Listen Felds an. Wenden Sie eine beliebige Kombination von [Listenfeld Stilen](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) auf das Feld an.
+*dwStyle*<br/>
+Gibt den Stil des Listenfelds an. Wenden Sie eine beliebige Kombination von [Listenfeldstilen](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) auf das Feld an.
 
 *Rect*<br/>
-Gibt die Größe und Position des Listen Felds an. Kann entweder ein `CRect` Objekt oder eine `RECT` Struktur sein.
+Gibt die Größe und Position des Listenfelds an. Kann entweder `CRect` ein Objekt `RECT` oder eine Struktur sein.
 
-*pparser*<br/>
-Gibt das übergeordnete Fenster des Listen Felds an (normalerweise ein `CDialog` Objekt). Er darf nicht NULL sein.
+*pParentWnd*<br/>
+Gibt das übergeordnete Fenster des Listenfelds (in der Regel ein Objekt) `CDialog` an. Es darf nicht NULL sein.
 
-*NID*<br/>
-Gibt die Steuerelement-ID des Listen Felds an.
+*nID*<br/>
+Gibt die Steuerelement-ID des Listenfelds an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen ein `CListBox`-Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann `Create`aufgerufen, der das Windows-Listenfeld initialisiert und an das `CListBox`-Objekt anfügt.
+Sie erstellen `CListBox` ein Objekt in zwei Schritten. Rufen Sie zunächst den Konstruktor auf, und rufen Sie dann `Create`auf, `CListBox` das Windows-Listenfeld initialisiert und an das Objekt anfügt.
 
-Wenn `Create` ausgeführt wird, sendet Windows die [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate)-, [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate)-, [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)-und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) Meldungen an das Listenfeld-Steuerelement.
+Bei `Create` der Ausführung sendet Windows die [Nachrichten WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate) [, WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate), [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)und [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) Nachrichten an das Listenfeldsteuerelement.
 
-Diese Nachrichten werden standardmäßig von den Funktionen " [onnccreate](../../mfc/reference/cwnd-class.md#onnccreate)", " [OnCreate](../../mfc/reference/cwnd-class.md#oncreate)", " [onnccalcsize](../../mfc/reference/cwnd-class.md#onnccalcsize)" und " [ongetminmaxinfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) " in der `CWnd`-Basisklasse verarbeitet. Um die standardmäßige Meldungs Behandlung zu erweitern, leiten Sie eine Klasse von `CListBox`ab, fügen Sie der neuen Klasse eine Meldungs Zuordnung hinzu, und überschreiben Sie die zuvor genannten nachrichtenhandlermember-Funktionen. Überschreiben Sie `OnCreate`z. b., um die erforderliche Initialisierung für eine neue Klasse auszuführen.
+Diese Nachrichten werden standardmäßig von den Memberfunktionen [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate), [OnCreate](../../mfc/reference/cwnd-class.md#oncreate), [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize)und `CWnd` [OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) in der Basisklasse verarbeitet. Um die Standardnachrichtenbehandlung zu erweitern, `CListBox`leiten Sie eine Klasse von ab , fügen Sie der neuen Klasse eine Nachrichtenzuordnung hinzu, und überschreiben Sie die vorherigen Message-Handler-Memberfunktionen. Überschreiben `OnCreate`Sie z. B., um die erforderliche Initialisierung für eine neue Klasse durchzuführen.
 
-Wenden Sie die folgenden [Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein Listenfeld-Steuerelement an.
+Wenden Sie die folgenden [Fensterstile](../../mfc/reference/styles-used-by-mfc.md#window-styles) auf ein Listenfeldsteuerelement an.
 
-- Immer WS_CHILD
+- WS_CHILD Immer
 
-- WS_VISIBLE in der Regel
+- WS_VISIBLE In der Regel
 
-- WS_DISABLED selten
+- WS_DISABLED Selten
 
-- WS_VSCROLL, um eine vertikale Schiebe Leiste hinzuzufügen
+- WS_VSCROLL So fügen Sie eine vertikale Bildlaufleiste hinzu
 
-- WS_HSCROLL, um eine horizontale Schiebe Leiste hinzuzufügen
+- WS_HSCROLL So fügen Sie eine horizontale Bildlaufleiste hinzu
 
-- WS_GROUP zum Gruppieren von Steuerelementen
+- WS_GROUP Zu Gruppensteuerelementen
 
-- WS_TABSTOP, um die Tabstopps für dieses Steuerelement zuzulassen.
+- WS_TABSTOP So lassen Sie das Tabing auf dieses Steuerelement zu
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#2](../../mfc/codesnippet/cpp/clistbox-class_5.cpp)]
 
-##  <a name="deleteitem"></a>CListBox::D eleteitem
+## <a name="clistboxdeleteitem"></a><a name="deleteitem"></a>CListBox::DeleteItem
 
-Wird von Framework aufgerufen, wenn der Benutzer ein Element aus einem Besitzer löscht `CListBox` Objekt erstellt oder das Listenfeld zerstört.
+Wird vom Framework aufgerufen, wenn der Benutzer ein `CListBox` Element aus einem Besitzerzeichnungsobjekt löscht oder das Listenfeld zerstört.
 
 ```
 virtual void DeleteItem(LPDELETEITEMSTRUCT lpDeleteItemStruct);
@@ -426,20 +426,20 @@ virtual void DeleteItem(LPDELETEITEMSTRUCT lpDeleteItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpdeleteitemstruct*<br/>
-Ein langer Zeiger auf eine Windows [deleteitemstruct](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) -Struktur, die Informationen über das gelöschte Element enthält.
+*lpDeleteItemStruct*<br/>
+Ein langer Zeiger auf eine Windows [DELETEITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) die Informationen zum gelöschten Element enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um bei Bedarf ein Listenfeld für den Besitzer der Erstellung neu zu zeichnen.
+Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um bei Bedarf ein Listenfeld für besitzerzeichnen neu zu zeichnen.
 
-Eine Beschreibung der `DELETEITEMSTRUCT` Struktur finden Sie unter [CWnd:: ondeleteitem](../../mfc/reference/cwnd-class.md#ondeleteitem) .
+Eine Beschreibung der `DELETEITEMSTRUCT` Struktur finden Sie unter [CWnd::OnDeleteItem.](../../mfc/reference/cwnd-class.md#ondeleteitem)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#6](../../mfc/codesnippet/cpp/clistbox-class_6.cpp)]
 
-##  <a name="deletestring"></a>CListBox::D eletestring
+## <a name="clistboxdeletestring"></a><a name="deletestring"></a>CListBox::DeleteString
 
 Löscht das Element in Position *nIndex* aus dem Listenfeld.
 
@@ -450,23 +450,23 @@ int DeleteString(UINT nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index der zu löschenden Zeichenfolge an.
+Gibt den nullbasierten Index der zu löschenden Zeichenfolge an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Zeichen folgen, die in der Liste verbleiben. Der Rückgabewert ist LB_ERR, wenn *nIndex* einen Index angibt, der größer als die Anzahl der Elemente in der Liste ist.
+Eine Anzahl der Inseiten, die in der Liste verbleiben. Der Rückgabewert ist LB_ERR, wenn *nIndex* einen Index angibt, der größer als die Anzahl der Elemente in der Liste ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Alle Elemente nach *nIndex* werden nun um eine Position nach unten verschoben. Wenn ein Listenfeld z. b. zwei Elemente enthält, führt das Löschen des ersten Elements dazu, dass das restliche Element jetzt an der ersten Position liegt. *nIndex*= 0 für das Element an der ersten Position.
+Alle Elemente, die *nach nIndex* folgen, bewegen sich nun um eine Position nach unten. Wenn z. B. ein Listenfeld zwei Elemente enthält, führt das Löschen des ersten Elements dazu, dass sich das verbleibende Element jetzt an der ersten Position befindet. *nIndex*=0 für das Element an der ersten Position.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#7](../../mfc/codesnippet/cpp/clistbox-class_7.cpp)]
 
-##  <a name="dir"></a>CListBox::D IR
+## <a name="clistboxdir"></a><a name="dir"></a>CListBox::Dir
 
-Fügt einem Listenfeld eine Liste von Dateinamen, Laufwerken oder beidem hinzu.
+Fügt eine Liste von Dateinamen, Laufwerken oder beides zu einem Listenfeld hinzu.
 
 ```
 int Dir(
@@ -476,34 +476,34 @@ int Dir(
 
 ### <a name="parameters"></a>Parameter
 
-*attr*<br/>
-Kann eine beliebige Kombi **Nation der in** `CFile::GetStatu`[s](../../mfc/reference/cfile-class.md#getstatus)beschriebenen Enumerationswerte oder eine beliebige Kombination der folgenden Werte sein:
+*Attr*<br/>
+Kann eine beliebige Kombination der unter `CFile::GetStatu` [s](../../mfc/reference/cfile-class.md#getstatus)beschriebenen **Enumerumwerte** oder eine beliebige Kombination der folgenden Werte sein:
 
 |Wert|Bedeutung|
 |-----------|-------------|
-|0x0000|Die Datei kann aus gelesen oder geschrieben werden.|
-|0x0001|Die Datei kann aus gelesen werden, aber nicht in geschrieben.|
-|0x0002|Die Datei ist ausgeblendet und wird nicht in einer Verzeichnis Auflistung angezeigt.|
-|0x0004|Die Datei ist eine Systemdatei.|
-|0x0010|Der von *lpszwildcard* angegebene Name gibt ein Verzeichnis an.|
+|0x0000|Die Datei kann aus gelesen oder in die Datei geschrieben werden.|
+|0x0001|Die Datei kann gelesen, aber nicht geschrieben werden.|
+|0x0002|Die Datei ist ausgeblendet und wird nicht in einer Verzeichnisliste angezeigt.|
+|0x0004|Datei ist eine Systemdatei.|
+|0x0010|Der von *lpszWildCard* angegebene Name gibt ein Verzeichnis an.|
 |0x0020|Die Datei wurde archiviert.|
-|0x4000|Schließen Sie alle Laufwerke ein, die dem von *lpszwildcard*angegebenen Namen entsprechen.|
-|0x8000|Exklusives Flag. Wenn das exklusive Flag festgelegt ist, werden nur Dateien des angegebenen Typs aufgelistet. Andernfalls werden Dateien des angegebenen Typs zusätzlich zu "normalen" Dateien aufgelistet.|
+|0x4000|Schließen Sie alle Laufwerke ein, die dem von *lpszWildCard*angegebenen Namen entsprechen.|
+|0x8000|Exklusive Flagge. Wenn das exklusive Flag festgelegt ist, werden nur Dateien des angegebenen Typs aufgelistet. Andernfalls werden Dateien des angegebenen Typs zusätzlich zu "normalen" Dateien aufgelistet.|
 
-*lpszwildcard*<br/>
-Verweist auf eine Datei Spezifikations Zeichenfolge. Die Zeichenfolge kann Platzhalter enthalten (z. b. *.\*).
+*lpszWildCard*<br/>
+Zeigt auf eine Dateispezifikationszeichenfolge. Die Zeichenfolge kann Platzhalter enthalten (z. B. *.\*).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des letzten Datei namens, der der Liste hinzugefügt wurde. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichen folgen verfügbar ist.
+Der Null-basierte Index des letzten Dateinamens, der der Liste hinzugefügt wurde. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. Der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolgen verfügbar ist.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#8](../../mfc/codesnippet/cpp/clistbox-class_8.cpp)]
 
-##  <a name="drawitem"></a>CListBox::D rawitem
+## <a name="clistboxdrawitem"></a><a name="drawitem"></a>CListBox::DrawItem
 
-Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Listen Felds für das Besitzer Zeichen ändert.
+Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines Listenfelds für die Besitzerzeichnung ändert.
 
 ```
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
@@ -511,24 +511,24 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpdrawitemstruct*<br/>
-Ein langer Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
+*lpDrawItemStruct*<br/>
+Ein langer Zeiger auf eine [DRAWITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-drawitemstruct) die Informationen über den erforderlichen Zeichnungstyp enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `itemAction` und `itemState` Member der `DRAWITEMSTRUCT` Struktur definieren die auszuführende Zeichnungs Aktion.
+Die `itemAction` `itemState` und die `DRAWITEMSTRUCT` Elemente der Struktur definieren die Zeichnungsaktion, die ausgeführt werden soll.
 
-Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, um das Zeichnen für einen Besitzer `CListBox` Objekt zu implementieren. Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface), die für den in *lpdrawitemstruct* angegebenen Anzeige Kontext ausgewählt sind, wiederherstellen, bevor diese Element Funktion beendet wird.
+Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, um `CListBox` die Zeichnung für ein Besitzerzeichnungsobjekt zu implementieren. Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface) wiederherstellen, die für den in *lpDrawItemStruct* bereitgestellten Anzeigekontext ausgewählt wurden, bevor diese Memberfunktion beendet wird.
 
-Eine Beschreibung der `DRAWITEMSTRUCT` Struktur finden Sie unter [CWnd:: OnDrawItem](../../mfc/reference/cwnd-class.md#ondrawitem) .
+Eine Beschreibung der `DRAWITEMSTRUCT` Struktur finden Sie unter [CWnd::OnDrawItem.](../../mfc/reference/cwnd-class.md#ondrawitem)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#9](../../mfc/codesnippet/cpp/clistbox-class_9.cpp)]
 
-##  <a name="findstring"></a>CListBox:: FindString
+## <a name="clistboxfindstring"></a><a name="findstring"></a>CListBox::FindString
 
-Sucht die erste Zeichenfolge in einem Listenfeld, das das angegebene Präfix enthält, ohne die Listenfeld Auswahl zu ändern.
+Sucht die erste Zeichenfolge in einem Listenfeld, das das angegebene Präfix enthält, ohne die Listenfeldauswahl zu ändern.
 
 ```
 int FindString(
@@ -538,27 +538,27 @@ int FindString(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartafter*<br/>
-Enthält den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nstartafter*angegebenen Element. Wenn *nstartafter* den Wert-1 hat, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nStartAfter*<br/>
+Enthält den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nStartAfter*angegebenen Element fortgesetzt. Wenn *nStartAfter* -1 ist, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszitem*<br/>
-Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche erfolgt unabhängig von der Groß-/Kleinschreibung, sodass diese Zeichenfolge eine beliebige Kombination von Groß-und Kleinbuchstaben enthalten kann.
+*lpszItem*<br/>
+Verweist auf die null-terminierte Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche ist großfliegt, daher kann diese Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des übereinstimmenden Elements oder LB_ERR, wenn die Suche nicht erfolgreich war.
+Der nullbasierte Index des übereinstimmenden Elements oder LB_ERR, wenn die Suche nicht erfolgreich war.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie die Member-Funktion von [SelectString](#selectstring) , um eine Zeichenfolge zu suchen und auszuwählen.
+Verwenden [SelectString](#selectstring) Sie die SelectString-Memberfunktion, um eine Zeichenfolge zu suchen und auszuwählen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#10](../../mfc/codesnippet/cpp/clistbox-class_10.cpp)]
 
-##  <a name="findstringexact"></a>CListBox:: FindStringExact
+## <a name="clistboxfindstringexact"></a><a name="findstringexact"></a>CListBox::FindStringExact
 
-Sucht die erste Listenfeld Zeichenfolge, die mit der in *lpszfind*angegebenen Zeichenfolge übereinstimmt.
+Sucht die erste List-Box-Zeichenfolge, die mit der in *lpszFind*angegebenen Zeichenfolge übereinstimmt.
 
 ```
 int FindStringExact(
@@ -568,27 +568,27 @@ int FindStringExact(
 
 ### <a name="parameters"></a>Parameter
 
-*nindexstart*<br/>
-Gibt den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element an. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nindexstart*angegebenen Element. Wenn *nindexstart* den Wert-1 aufweist, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nIndexStart*<br/>
+Gibt den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element an. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nIndexStart*angegebenen Element fortgesetzt. Wenn *nIndexStart* -1 ist, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszfind*<br/>
-Zeigt auf die zu suchende NULL-terminierte Zeichenfolge. Diese Zeichenfolge kann einen kompletten Dateinamen enthalten, einschließlich der Erweiterung. Bei der Suche wird die Groß-/Kleinschreibung nicht beachtet, sodass die Zeichenfolge eine beliebige Kombination aus Groß-und Kleinbuchstaben enthalten kann.
+*lpszFind*<br/>
+Zeigt auf die null-terminierte Zeichenfolge, nach der gesucht werden soll. Diese Zeichenfolge kann einen vollständigen Dateinamen enthalten, einschließlich der Erweiterung. Bei der Suche wird die Groß-/Kleinschreibung nicht beachtet, sodass die Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Index des übereinstimmenden Elements oder LB_ERR, wenn die Suche nicht erfolgreich war.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Listenfeld mit einem Besitzer Zeichnungs Stil, aber ohne den [LBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil erstellt wurde, versucht die `FindStringExact` Member-Funktion, den Double Word-Wert mit dem Wert von *lpszfind*abzugleichen.
+Wenn das Listenfeld mit einem Besitzerzeichnungsstil, jedoch `FindStringExact` ohne [LBS_HASSTRINGS-Stil](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) erstellt wurde, versucht die Memberfunktion, den Doppelwortwert mit dem Wert von *lpszFind*abzugleichen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#11](../../mfc/codesnippet/cpp/clistbox-class_11.cpp)]
 
-##  <a name="getanchorindex"></a>CListBox:: getanchorindex
+## <a name="clistboxgetanchorindex"></a><a name="getanchorindex"></a>CListBox::GetAnchorIndex
 
-Ruft den NULL basierten Index des aktuellen Anker Elements im Listenfeld ab.
+Ruft den nullbasierten Index des aktuellen Ankerelements im Listenfeld ab.
 
 ```
 int GetAnchorIndex() const;
@@ -596,19 +596,19 @@ int GetAnchorIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Index des aktuellen Anker Elements, wenn erfolgreich. Andernfalls LB_ERR.
+Der Index des aktuellen Ankerelements, falls erfolgreich; ansonsten LB_ERR.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Im Listenfeld Mehrfachauswahl ist das Anker Element das erste oder letzte Element in einem Block zusammenhängender ausgewählter Elemente.
+In einem Listenfeld mit mehreren Auswahlen ist das Ankerelement das erste oder letzte Element in einem Block zusammenhängender ausgewählter Elemente.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox::](#setanchorindex)"".
+  Siehe Beispiel für [CListBox::SetAnchorIndex](#setanchorindex).
 
-##  <a name="getcaretindex"></a>CListBox:: getcaretindex
+## <a name="clistboxgetcaretindex"></a><a name="getcaretindex"></a>CListBox::GetCaretIndex
 
-Bestimmt den Index des Elements, das über das Fokus Rechteck in einem Listenfeld für Mehrfachauswahl verfügt.
+Bestimmt den Index des Elements mit dem Fokusrechteck in einem Listenfeld mit mehreren Auswahlen.
 
 ```
 int GetCaretIndex() const;
@@ -616,17 +616,17 @@ int GetCaretIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des Elements, das über das Fokus Rechteck in einem Listenfeld verfügt. Wenn das Listenfeld ein Listenfeld für die einfache Auswahl ist, ist der Rückgabewert der Index des ausgewählten Elements, sofern vorhanden.
+Der nullbasierte Index des Elements, das das Fokusrechteck in einem Listenfeld enthält. Wenn es sich bei dem Listenfeld um ein Listenfeld mit einer Auswahl handelt, ist der Rückgabewert der Index des ausgewählten Elements, falls vorhanden.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Element ist möglicherweise nicht ausgewählt.
+Das Element kann ausgewählt werden oder nicht.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox:: setcaretindex](#setcaretindex).
+  Siehe Beispiel für [CListBox::SetCaretIndex](#setcaretindex).
 
-##  <a name="getcount"></a>CListBox:: GetCount
+## <a name="clistboxgetcount"></a><a name="getcount"></a>CListBox::GetCount
 
 Ruft die Anzahl der Elemente in einem Listenfeld ab.
 
@@ -638,17 +638,17 @@ int GetCount() const;
 
 Die Anzahl der Elemente im Listenfeld oder LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zurückgegebene Anzahl ist ein Wert größer als der Indexwert des letzten Elements (der Index ist NULL basiert).
+Die zurückgegebene Anzahl ist größer als der Indexwert des letzten Elements (der Index ist nullbasiert).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#12](../../mfc/codesnippet/cpp/clistbox-class_12.cpp)]
 
-##  <a name="getcursel"></a>CListBox:: getcurrsel
+## <a name="clistboxgetcursel"></a><a name="getcursel"></a>CListBox::GetCurSel
 
-Ruft ggf. den NULL basierten Index des aktuell ausgewählten Elements in einem Listenfeld mit einer einzelnen Auswahl ab.
+Ruft den nullbasierten Index des aktuell ausgewählten Elements (falls vorhanden) in einem Listenfeld mit einer Auswahl ab.
 
 ```
 int GetCurSel() const;
@@ -656,21 +656,21 @@ int GetCurSel() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des derzeit ausgewählten Elements, wenn es sich um ein Listenfeld mit einfacher Auswahl handelt. Es ist LB_ERR, wenn derzeit kein Element ausgewählt ist.
+Der nullbasierte Index des aktuell ausgewählten Elements, wenn es sich um ein Listenfeld mit einer Auswahl handelt. Es ist LB_ERR, wenn derzeit kein Element ausgewählt ist.
 
-Der Index des Elements in einem Listenfeld mit Mehrfachauswahl, das den Fokus besitzt.
+In einem Listenfeld mit mehreren Auswahlen wird der Index des Elements mit dem Fokus angezeigt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-`GetCurSel` für ein Listenfeld mit Mehrfachauswahl nicht aufzurufen. Verwenden Sie stattdessen [CListBox:: getselitems](#getselitems) .
+Rufen `GetCurSel` Sie kein Listenfeld mit mehreren Auswahlen an. Verwenden Sie stattdessen [CListBox::GetSelItems.](#getselitems)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#13](../../mfc/codesnippet/cpp/clistbox-class_13.cpp)]
 
-##  <a name="gethorizontalextent"></a>CListBox:: gethorizontalblock
+## <a name="clistboxgethorizontalextent"></a><a name="gethorizontalextent"></a>CListBox::GetHorizontalExtent
 
-Ruft die Breite in Pixel ab, um die ein horizontaler Bildlauf durchgeführt werden kann.
+Ruft aus dem Listenfeld die Breite in Pixel ab, um die sie horizontal gescrollt werden kann.
 
 ```
 int GetHorizontalExtent() const;
@@ -678,19 +678,19 @@ int GetHorizontalExtent() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die scrollbare Breite des Listen Felds in Pixel.
+Die scrollbare Breite des Listenfelds in Pixel.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dies gilt nur, wenn das Listenfeld eine horizontale Schiebe Leiste aufweist.
+Dies gilt nur, wenn das Listenfeld über eine horizontale Bildlaufleiste verfügt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#14](../../mfc/codesnippet/cpp/clistbox-class_14.cpp)]
 
-##  <a name="getitemdata"></a>CListBox:: GetItemData
+## <a name="clistboxgetitemdata"></a><a name="getitemdata"></a>CListBox::GetItemData
 
-Ruft den von der Anwendung bereitgestellten Double Word-Wert ab, der dem angegebenen Listenfeld Element zugeordnet ist.
+Ruft den von der Anwendung bereitgestellten Doppelwortwert ab, der dem angegebenen Listenfeldelement zugeordnet ist.
 
 ```
 DWORD_PTR GetItemData(int nIndex) const;
@@ -699,23 +699,23 @@ DWORD_PTR GetItemData(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements im Listenfeld an.
+Gibt den nullbasierten Index des Elements im Listenfeld an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Wert, der dem Element zugeordnet ist, oder LB_ERR, wenn ein Fehler auftritt.
+Der dem Element zugeordnete Wert oder LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Double Word-Wert war der *dwitemdata* -Parameter [eines-Aufrufes](#setitemdata) .
+Der Doubleword-Wert war der *dwItemData-Parameter* eines [SetItemData-Aufrufs.](#setitemdata)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#15](../../mfc/codesnippet/cpp/clistbox-class_15.cpp)]
 
-##  <a name="getitemdataptr"></a>CListBox:: getitemdataptr
+## <a name="clistboxgetitemdataptr"></a><a name="getitemdataptr"></a>CListBox::GetItemDataPtr
 
-Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Listenfeld Element als Zeiger zugeordnet ist (**void** <strong>\*</strong>).
+Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Listenfeldelement als Zeiger zugeordnet ist (**void** <strong>\*</strong>).
 
 ```
 void* GetItemDataPtr(int nIndex) const;
@@ -724,19 +724,19 @@ void* GetItemDataPtr(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements im Listenfeld an.
+Gibt den nullbasierten Index des Elements im Listenfeld an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ruft einen Zeiger ab, oder-1, wenn ein Fehler auftritt.
+Ruft einen Zeiger oder -1 ab, wenn ein Fehler auftritt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#16](../../mfc/codesnippet/cpp/clistbox-class_16.cpp)]
 
-##  <a name="getitemheight"></a>CListBox:: GetItemHeight
+## <a name="clistboxgetitemheight"></a><a name="getitemheight"></a>CListBox::GetItemHeight
 
-Bestimmt die Höhe der Elemente in einem Listenfeld.
+Bestimmt die Höhe von Elementen in einem Listenfeld.
 
 ```
 int GetItemHeight(int nIndex) const;
@@ -745,19 +745,19 @@ int GetItemHeight(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements im Listenfeld an. Dieser Parameter wird nur verwendet, wenn das Listenfeld den LBS_OWNERDRAWVARIABLE Stil hat. Andernfalls sollte der Wert auf 0 festgelegt werden.
+Gibt den nullbasierten Index des Elements im Listenfeld an. Dieser Parameter wird nur verwendet, wenn das Listenfeld den Stil LBS_OWNERDRAWVARIABLE. Andernfalls sollte sie auf 0 gesetzt werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Höhe der Elemente im Listenfeld in Pixel. Wenn das Listenfeld den [LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil hat, ist der Rückgabewert die Höhe des durch *nIndex*angegebenen Elements. Wenn ein Fehler auftritt, wird der Rückgabewert LB_ERR.
+Die Höhe der Elemente im Listenfeld in Pixel. Wenn das Listenfeld den [LBS_OWNERDRAWVARIABLE-Format](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) hat, ist der Rückgabewert die Höhe des von *nIndex*angegebenen Elements . Wenn ein Fehler auftritt, wird der Rückgabewert LB_ERR.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#17](../../mfc/codesnippet/cpp/clistbox-class_17.cpp)]
 
-##  <a name="getitemrect"></a>CListBox:: GetItemRect
+## <a name="clistboxgetitemrect"></a><a name="getitemrect"></a>CListBox::GetItemRect
 
-Ruft die Abmessungen des Rechtecks ab, das ein Listenfeld Element umschließt, das gerade im Listenfeld Fenster angezeigt wird.
+Ruft die Dimensionen des Rechtecks ab, das ein Listenfeldelement angrenzt, wie es derzeit im Listenfeldfenster angezeigt wird.
 
 ```
 int GetItemRect(
@@ -768,10 +768,10 @@ int GetItemRect(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements an.
+Gibt den nullbasierten Index des Elements an.
 
-*lprect*<br/>
-Gibt einen Long-Zeiger auf eine [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) an, die die Listenfeld-Client Koordinaten des Elements empfängt.
+*lpRect*<br/>
+Gibt einen langen Zeiger auf eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) an, die die Listenfeldclientkoordinaten des Elements empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -781,7 +781,7 @@ LB_ERR, wenn ein Fehler auftritt.
 
 [!code-cpp[NVC_MFC_CListBox#18](../../mfc/codesnippet/cpp/clistbox-class_18.cpp)]
 
-##  <a name="getlistboxinfo"></a>CListBox:: getlistboxinfo
+## <a name="clistboxgetlistboxinfo"></a><a name="getlistboxinfo"></a>CListBox::GetListBoxInfo
 
 Ruft die Anzahl der Elemente pro Spalte ab.
 
@@ -791,15 +791,15 @@ DWORD GetListBoxInfo() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Anzahl von Elementen pro Spalte des `CListBox` Objekts.
+Anzahl der Elemente pro `CListBox` Spalte des Objekts.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion emuliert die Funktionalität der [LB_GETLISTBOXINFO](/windows/win32/Controls/lb-getlistboxinfo) Nachricht, wie in der Windows SDK beschrieben.
+Diese Memberfunktion emuliert die Funktionalität der [LB_GETLISTBOXINFO](/windows/win32/Controls/lb-getlistboxinfo) Nachricht, wie im Windows SDK beschrieben.
 
-##  <a name="getlocale"></a>CListBox:: getLocale
+## <a name="clistboxgetlocale"></a><a name="getlocale"></a>CListBox::GetLocale
 
-Ruft das vom Listenfeld verwendete Gebiets Schema ab.
+Ruft das gebietsschema ab, das vom Listenfeld verwendet wird.
 
 ```
 LCID GetLocale() const;
@@ -807,19 +807,19 @@ LCID GetLocale() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der LCID-Wert (Locale Identifier) für die Zeichen folgen im Listenfeld.
+Der Gebietsschemabezeichner (LCID) für die Zeichenfolgen im Listenfeld.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Gebiets Schema wird z. b. verwendet, um die Sortierreihenfolge der Zeichen folgen in einem sortierten Listenfeld zu bestimmen.
+Das Gebietsschema wird z. B. verwendet, um die Sortierreihenfolge der Zeichenfolgen in einem sortierten Listenfeld zu bestimmen.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox:: setlocale](#setlocale).
+  Siehe Beispiel für [CListBox::SetLocale](#setlocale).
 
-##  <a name="getsel"></a>CListBox:: GetSEL
+## <a name="clistboxgetsel"></a><a name="getsel"></a>CListBox::GetSel
 
-Ruft den Auswahl Zustand eines Elements ab.
+Ruft den Auswahlstatus eines Elements ab.
 
 ```
 int GetSel(int nIndex) const;
@@ -828,25 +828,25 @@ int GetSel(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements an.
+Gibt den nullbasierten Index des Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine positive Zahl, wenn das angegebene Element ausgewählt ist. Andernfalls ist der Wert 0. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt.
+Eine positive Zahl, wenn das angegebene Element ausgewählt ist; Andernfalls ist es 0. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Member-Funktion kann sowohl mit einzelnen als auch mit Mehrfachauswahl-Listenfeldern verwendet werden.
+Diese Memberfunktion funktioniert sowohl mit Einzel- als auch mit Mehrfachauswahllistenfeldern.
 
-Verwenden Sie [CListBox:: getcurrsel](#getcursel), um den Index des aktuell ausgewählten Listenfeld Elements abzurufen.
+Um den Index des aktuell ausgewählten Listenfeldelements abzurufen, verwenden Sie [CListBox::GetCurSel](#getcursel).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#19](../../mfc/codesnippet/cpp/clistbox-class_19.cpp)]
 
-##  <a name="getselcount"></a>CListBox:: getselcount
+## <a name="clistboxgetselcount"></a><a name="getselcount"></a>CListBox::GetSelCount
 
-Ruft die Gesamtanzahl der ausgewählten Elemente in einem Listenfeld mit Mehrfachauswahl ab.
+Ruft die Gesamtzahl der ausgewählten Elemente in einem Listenfeld mit mehreren Auswahlen ab.
 
 ```
 int GetSelCount() const;
@@ -854,15 +854,15 @@ int GetSelCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl ausgewählter Elemente in einem Listenfeld. Wenn das Listenfeld ein Listenfeld für die einfache Auswahl ist, wird der Rückgabewert LB_ERR.
+Die Anzahl der ausgewählten Elemente in einem Listenfeld. Wenn es sich bei dem Listenfeld um ein Listenfeld mit einer Auswahl handelt, wird der Rückgabewert LB_ERR.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox:: getselitems](#getselitems).
+  Siehe beispielfür [CListBox::GetSelItems](#getselitems).
 
-##  <a name="getselitems"></a>CListBox:: getselitems
+## <a name="clistboxgetselitems"></a><a name="getselitems"></a>CListBox::GetSelItems
 
-Füllt einen Puffer mit einem Array von ganzen Zahlen, das die Element Nummern ausgewählter Elemente in einem Listenfeld mit Mehrfachauswahl angibt.
+Füllt einen Puffer mit einem Array von ganzzahlen, das die Elementnummern ausgewählter Elemente in einem Listenfeld mit mehreren Auswahlen angibt.
 
 ```
 int GetSelItems(
@@ -872,21 +872,21 @@ int GetSelItems(
 
 ### <a name="parameters"></a>Parameter
 
-*nmaxitems*<br/>
-Gibt die maximale Anzahl ausgewählter Elemente an, deren Element Nummer in den Puffer eingefügt werden soll.
+*nMaxItems*<br/>
+Gibt die maximale Anzahl ausgewählter Artikel an, deren Artikelnummern im Puffer platziert werden sollen.
 
-*rgindex*<br/>
-Gibt einen Zeiger auf einen Puffer an, der groß genug für die Anzahl der von *nmaxitems*angegebenen ganzzahligen Elemente ist.
+*rgIndex*<br/>
+Gibt einen Zeiger auf einen Puffer an, der groß genug für die Anzahl der von *nMaxItems*angegebenen Ganzzahlen ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die tatsächliche Anzahl der Elemente, die im Puffer abgelegt werden. Wenn das Listenfeld ein Listenfeld für die einfache Auswahl ist, wird der Rückgabewert `LB_ERR`.
+Die tatsächliche Anzahl der im Puffer platzierten Elemente. Wenn das Listenfeld ein Listenfeld mit einer `LB_ERR`Auswahl ist, lautet der Rückgabewert .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#20](../../mfc/codesnippet/cpp/clistbox-class_20.cpp)]
 
-##  <a name="gettext"></a>CListBox:: gettext
+## <a name="clistboxgettext"></a><a name="gettext"></a>CListBox::GetText
 
 Ruft eine Zeichenfolge aus einem Listenfeld ab.
 
@@ -903,29 +903,29 @@ void GetText(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index der abzurufenden Zeichenfolge an.
+Gibt den nullbasierten Index der abrufbaren Zeichenfolge an.
 
 *lpszBuffer*<br/>
-Verweist auf den Puffer, der die Zeichenfolge empfängt. Der Puffer muss über ausreichend Speicherplatz für die Zeichenfolge und ein abschließendes NULL-Zeichen verfügen. Die Größe der Zeichenfolge kann im Voraus durch Aufrufen der `GetTextLen` Member-Funktion bestimmt werden.
+Zeigt auf den Puffer, der die Zeichenfolge empfängt. Der Puffer muss über ausreichend Speicherplatz für die Zeichenfolge und ein beendendes NULL-Zeichen verfügen. Die Größe der Zeichenfolge kann im Voraus `GetTextLen` durch Aufrufen der Memberfunktion bestimmt werden.
 
-*RString*<br/>
+*rString*<br/>
 Ein Verweis auf ein `CString`-Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge (in Byte) der Zeichenfolge ohne das abschließende Null Zeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert LB_ERR.
+Die Länge (in Bytes) der Zeichenfolge, ohne das beendende Nullzeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert LB_ERR.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die zweite Form dieser Member-Funktion füllt ein `CString`-Objekt mit dem Zeichen folgen Text.
+Die zweite Form dieser Memberfunktion `CString` füllt ein Objekt mit dem Zeichenfolgentext.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#21](../../mfc/codesnippet/cpp/clistbox-class_21.cpp)]
 
-##  <a name="gettextlen"></a>CListBox:: gettextlen
+## <a name="clistboxgettextlen"></a><a name="gettextlen"></a>CListBox::GetTextLen
 
-Ruft die Länge einer Zeichenfolge in einem Listenfeld Element ab.
+Ruft die Länge einer Zeichenfolge in einem Listenfeldelement ab.
 
 ```
 int GetTextLen(int nIndex) const;
@@ -934,19 +934,19 @@ int GetTextLen(int nIndex) const;
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index der Zeichenfolge an.
+Gibt den nullbasierten Index der Zeichenfolge an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge der Zeichenfolge in Zeichen, ohne das abschließende Null Zeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert LB_ERR.
+Die Länge der Zeichenfolge in Zeichen, mit Ausnahme des beendenden Nullzeichens. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert LB_ERR.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox:: gettext](#gettext).
+  Siehe Beispiel für [CListBox::GetText](#gettext).
 
-##  <a name="gettopindex"></a>CListBox:: gettopindex
+## <a name="clistboxgettopindex"></a><a name="gettopindex"></a>CListBox::GetTopIndex
 
-Ruft den NULL basierten Index des ersten sichtbaren Elements in einem Listenfeld ab.
+Ruft den nullbasierten Index des ersten sichtbaren Elements in einem Listenfeld ab.
 
 ```
 int GetTopIndex() const;
@@ -954,19 +954,19 @@ int GetTopIndex() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der null basierte Index des ersten sichtbaren Elements in einem Listenfeld, wenn erfolgreich, LB_ERR andernfalls.
+Der Null-basierte Index des ersten sichtbaren Elements in einem Listenfeld, wenn erfolgreich, LB_ERR andernfalls.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Zuerst befindet sich Element 0 am oberen Rand des Listen Felds, aber wenn im Listenfeld ein Bildlauf durchgeführt wird, befindet sich möglicherweise ein anderes Element im oberen Bereich.
+Zunächst befindet sich Element 0 oben im Listenfeld, aber wenn das Listenfeld gescrollt wird, befindet sich möglicherweise ein anderes Element oben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#22](../../mfc/codesnippet/cpp/clistbox-class_22.cpp)]
 
-##  <a name="initstorage"></a>CListBox:: InitStorage
+## <a name="clistboxinitstorage"></a><a name="initstorage"></a>CListBox::InitStorage
 
-Ordnet Speicher zum Speichern von Listenfeld Elementen zu.
+Reserviert Speicher zum Speichern von Listenfeldelementen.
 
 ```
 int InitStorage(
@@ -976,29 +976,29 @@ int InitStorage(
 
 ### <a name="parameters"></a>Parameter
 
-*nitems*<br/>
-Gibt die Anzahl der hinzu zufügenden Elemente an.
+*nItems*<br/>
+Gibt die Anzahl der hinzuzufügenden Elemente an.
 
 *nBytes*<br/>
-Gibt die Größe des Arbeitsspeichers in Bytes an, der für Element Zeichenfolgen belegt werden soll.
+Gibt die Speichermenge in Bytes an, die für Elementzeichenfolgen reserviert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung ist die maximale Anzahl von Elementen, die im Listenfeld gespeichert werden können, bevor eine Speicher Belegungs Zuordnung erforderlich ist, andernfalls LB_ERRSPACE, was bedeutet, dass nicht genügend Arbeitsspeicher verfügbar ist.
+Wenn dies erfolgreich ist, ist die maximale Anzahl von Elementen, die das Listenfeld speichern kann, bevor eine Speicherumverteilung erforderlich ist, andernfalls LB_ERRSPACE, d. h., es ist nicht genügend Arbeitsspeicher verfügbar.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird aufgerufen, bevor einer `CListBox`eine große Anzahl von Elementen hinzugefügt wird.
+Rufen Sie diese Funktion auf, bevor `CListBox`Sie eine große Anzahl von Elementen zu einer hinzufügen.
 
-Diese Funktion beschleunigt die Initialisierung von Listenfeldern, die über eine große Anzahl von Elementen verfügen (mehr als 100). Dadurch wird die angegebene Arbeitsspeicher Menge vorab zugeordnet, sodass nachfolgende [AddString](#addstring)-, [InsertString](#insertstring)-und [dir](#dir) -Funktionen die kürzeste mögliche Zeit beanspruchen. Sie können Schätzwerte für die Parameter verwenden. Wenn Sie den Wert überschätzen, wird ein zusätzlicher Arbeitsspeicher zugewiesen. Wenn Sie unterschätzen, wird die normale Zuordnung für Elemente verwendet, die den vorab zugeordneten Betrag überschreiten.
+Diese Funktion beschleunigt die Initialisierung von Listenfeldern mit einer großen Anzahl von Elementen (mehr als 100). Es ordnet die angegebene Speichermenge vor, so dass nachfolgende [AddString](#addstring)-, [InsertString-](#insertstring)und [Dir-Funktionen](#dir) die kürzest mögliche Zeit in Anspruch nehmen. Sie können Schätzungen für die Parameter verwenden. Wenn Sie überschätzen, wird etwas zusätzlicher Speicher zugewiesen. Wenn Sie unterschätzen, wird die normale Zuordnung für Artikel verwendet, die den vorab zugewiesenen Betrag überschreiten.
 
-Nur Windows 95/98: der *nitems* -Parameter ist auf 16-Bit-Werte beschränkt. Dies bedeutet, dass Listenfelder nicht mehr als 32.767 Elemente enthalten dürfen. Obwohl die Anzahl der Elemente eingeschränkt ist, wird die Gesamtgröße der Elemente in einem Listenfeld nur durch den verfügbaren Arbeitsspeicher beschränkt.
+Nur Windows 95/98: Der *nItems-Parameter* ist auf 16-Bit-Werte beschränkt. Dies bedeutet, dass Listenfelder nicht mehr als 32.767 Elemente enthalten dürfen. Obwohl die Anzahl der Elemente eingeschränkt ist, ist die Gesamtgröße der Elemente in einem Listenfeld nur durch den verfügbaren Speicher begrenzt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#23](../../mfc/codesnippet/cpp/clistbox-class_23.cpp)]
 
-##  <a name="insertstring"></a>CListBox:: InsertString
+## <a name="clistboxinsertstring"></a><a name="insertstring"></a>CListBox::InsertString
 
 Fügt eine Zeichenfolge in das Listenfeld ein.
 
@@ -1011,26 +1011,26 @@ int InsertString(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index der Position an, an der die Zeichenfolge eingefügt werden soll. Wenn dieser Parameter-1 ist, wird die Zeichenfolge am Ende der Liste hinzugefügt.
+Gibt den nullbasierten Index der Position an, um die Zeichenfolge einzufügen. Wenn dieser Parameter -1 ist, wird die Zeichenfolge am Ende der Liste hinzugefügt.
 
-*lpszitem*<br/>
+*lpszItem*<br/>
 Zeigt auf die einzufügende nullterminierte Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der nullbasierte Index der Position, an der die Zeichenfolge eingefügt wurde. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge zur Verfügung steht.
+Der nullbasierte Index der Position, an der die Zeichenfolge eingefügt wurde. Der Rückgabewert ist LB_ERR, wenn ein Fehler auftritt. Der Rückgabewert ist LB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge verfügbar ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Anders als bei der Member-Funktion von [AddString](#addstring) bewirkt `InsertString` nicht, dass eine Liste mit dem [LBS_SORT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Format sortiert wird.
+Im Gegensatz zur [AddString-Memberfunktion](#addstring) `InsertString` wird keine Liste mit der LBS_SORT-Formatsortiert. [LBS_SORT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#24](../../mfc/codesnippet/cpp/clistbox-class_24.cpp)]
 
-##  <a name="itemfrompoint"></a>CListBox:: itemfrompoint
+## <a name="clistboxitemfrompoint"></a><a name="itemfrompoint"></a>CListBox::ItemFromPoint
 
-Bestimmt das Listenfeld Element, das dem in *PT*angegebenen Punkt am nächsten liegt.
+Bestimmt das Listenfeldelement, das dem in *pt*angegebenen Punkt am nächsten liegt.
 
 ```
 UINT ItemFromPoint(
@@ -1040,27 +1040,27 @@ UINT ItemFromPoint(
 
 ### <a name="parameters"></a>Parameter
 
-*pt*<br/>
-Der Punkt, an dem das nächste Element gesucht werden soll, das relativ zur oberen linken Ecke des Client Bereichs des Listen Felds angegeben wird.
+*Pt*<br/>
+Punkt, für den das nächste Element gefunden werden soll, angegeben relativ zur oberen linken Ecke des Clientbereichs des Listenfelds.
 
-*baußen*<br/>
-Verweis auf eine boolesche Variable, die auf true festgelegt wird, wenn *PT* außerhalb des Client Bereichs des Listen Felds liegt, false, wenn *PT* im Client Bereich des Listen Felds liegt.
+*bOutside*<br/>
+Verweis auf eine BOOL-Variable, die auf TRUE gesetzt wird, wenn *pt* außerhalb des Clientbereichs des Listenfelds ist, FALSE, wenn *pt* sich innerhalb des Clientbereichs des Listenfelds befindet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Index des nächstgelegenen Elements bis zu dem in *PT*angegebenen Punkt.
+Der Index des nächstgelegenen Elements an den punktgemäß in *pt*angegebenen Punkt .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Sie können diese Funktion verwenden, um zu bestimmen, welches Listenfeld Element der Mauszeiger bewegt.
+Mit dieser Funktion können Sie bestimmen, über welches Listenfeldelement der Mauszeiger bewegt wird.
 
 ### <a name="example"></a>Beispiel
 
-  Weitere Informationen finden Sie im Beispiel für [CListBox::](#setanchorindex)"".
+  Siehe Beispiel für [CListBox::SetAnchorIndex](#setanchorindex).
 
-##  <a name="measureitem"></a>CListBox:: MeasureItem
+## <a name="clistboxmeasureitem"></a><a name="measureitem"></a>CListBox::MeasureItem
 
-Wird von Framework aufgerufen, wenn ein Listenfeld mit einer Art von Besitzer Zeichenfolge erstellt wird.
+Wird vom Framework aufgerufen, wenn ein Listenfeld mit einem Besitzerzeichnungsstil erstellt wird.
 
 ```
 virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
@@ -1068,22 +1068,22 @@ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpmeasureitemstruct*<br/>
-Ein langer Zeiger auf eine [measureitemstruct](/windows/win32/api/winuser/ns-winuser-measureitemstruct) -Struktur.
+*lpMeasureItemStruct*<br/>
+Ein langer Zeiger auf eine [MEASUREITEMSTRUCT-Struktur.](/windows/win32/api/winuser/ns-winuser-measureitemstruct)
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, und füllen Sie die `MEASUREITEMSTRUCT`-Struktur aus, um Fenster über die Listenfeld Dimensionen zu informieren. Wenn das Listenfeld mit dem [LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) -Format erstellt wird, ruft das Framework diese Member-Funktion für jedes Element im Listenfeld auf. Andernfalls wird dieser Member nur einmal aufgerufen.
+Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Windows über die Listenfelddimensionen zu informieren. Wenn das Listenfeld mit dem [Stil LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) erstellt wird, ruft das Framework diese Memberfunktion für jedes Element im Listenfeld auf. Andernfalls wird dieses Element nur einmal aufgerufen.
 
-Weitere Informationen zur Verwendung des LBS_OWNERDRAWFIXED Formats in einem mit der `SubclassDlgItem` Member-Funktion von `CWnd`erstellten [LBS_OWNERDRAWFIXED](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) -Stil finden Sie in der [technischen Notiz 14](../../mfc/tn014-custom-controls.md).
+Weitere Informationen zur Verwendung des [LBS_OWNERDRAWFIXED-Stils](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) in einem `SubclassDlgItem` Mit `CWnd`der Memberfunktion von erstellten Listenfeld für besitzerzeichnen. Siehe die Diskussion in Technical Note [14](../../mfc/tn014-custom-controls.md).
 
-Eine Beschreibung der `MEASUREITEMSTRUCT` Struktur finden Sie unter [CWnd:: OnMeasureItem](../../mfc/reference/cwnd-class.md#onmeasureitem) .
+Eine Beschreibung der `MEASUREITEMSTRUCT` Struktur finden Sie unter [CWnd::OnMeasureItem.](../../mfc/reference/cwnd-class.md#onmeasureitem)
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#25](../../mfc/codesnippet/cpp/clistbox-class_25.cpp)]
 
-##  <a name="resetcontent"></a>CListBox:: resetcontent
+## <a name="clistboxresetcontent"></a><a name="resetcontent"></a>CListBox::ResetContent
 
 Entfernt alle Elemente aus einem Listenfeld.
 
@@ -1095,9 +1095,9 @@ void ResetContent();
 
 [!code-cpp[NVC_MFC_CListBox#26](../../mfc/codesnippet/cpp/clistbox-class_26.cpp)]
 
-##  <a name="selectstring"></a>CListBox:: SelectString
+## <a name="clistboxselectstring"></a><a name="selectstring"></a>CListBox::SelectString
 
-Sucht nach einem Listenfeld Element, das mit der angegebenen Zeichenfolge übereinstimmt, und wenn ein übereinstimmendes Element gefunden wird, wird das Element ausgewählt.
+Sucht nach einem Listenfeldelement, das mit der angegebenen Zeichenfolge übereinstimmt, und wenn ein übereinstimmendes Element gefunden wird, wird das Element ausgewählt.
 
 ```
 int SelectString(
@@ -1107,33 +1107,33 @@ int SelectString(
 
 ### <a name="parameters"></a>Parameter
 
-*nstartafter*<br/>
-Enthält den NULL basierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche das Ende des Listen Felds erreicht, wird Sie vom oberen Rand des Listen Felds zurück zu dem durch *nstartafter*angegebenen Element. Wenn *nstartafter* den Wert-1 hat, wird das gesamte Listenfeld von Anfang an durchsucht.
+*nStartAfter*<br/>
+Enthält den nullbasierten Index des Elements vor dem ersten zu durchsuchenden Element. Wenn die Suche am Ende des Listenfelds angelangt ist, wird sie vom oberen Rand des Listenfelds zurück zu dem von *nStartAfter*angegebenen Element fortgesetzt. Wenn *nStartAfter* -1 ist, wird das gesamte Listenfeld von Anfang an durchsucht.
 
-*lpszitem*<br/>
-Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche erfolgt unabhängig von der Groß-/Kleinschreibung, sodass diese Zeichenfolge eine beliebige Kombination von Groß-und Kleinbuchstaben enthalten kann.
+*lpszItem*<br/>
+Verweist auf die null-terminierte Zeichenfolge, die das Präfix enthält, nach dem gesucht werden soll. Die Suche ist großfliegt, daher kann diese Zeichenfolge eine beliebige Kombination aus Groß- und Kleinbuchstaben enthalten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Index des ausgewählten Elements, wenn die Suche erfolgreich war. Wenn die Suche nicht erfolgreich war, wird der Rückgabewert LB_ERR, und die aktuelle Auswahl wird nicht geändert.
+Der Index des ausgewählten Elements, wenn die Suche erfolgreich war. Wenn die Suche nicht erfolgreich war, wird der Rückgabewert LB_ERR und die aktuelle Auswahl wird nicht geändert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das Listenfeld wird ggf. mit einem Bildlauf ausgeführt, um das ausgewählte Element in der Ansicht anzuzeigen.
+Das Listenfeld wird ggf. gescrollt, um das ausgewählte Element anzuzeigen.
 
-Diese Member-Funktion kann nicht mit einem Listenfeld verwendet werden, das den [LBS_MULTIPLESEL](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil aufweist.
+Diese Memberfunktion kann nicht mit einem Listenfeld mit dem [Format LBS_MULTIPLESEL](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) verwendet werden.
 
-Ein Element wird nur ausgewählt, wenn die Anfangs Zeichen (vom Startpunkt) mit den Zeichen in der durch *lpszitem*angegebenen Zeichenfolge verglichen werden.
+Ein Element wird nur ausgewählt, wenn seine Anfangszeichen (vom Startpunkt) mit den Zeichen in der von *lpszItem*angegebenen Zeichenfolge übereinstimmen.
 
-Verwenden Sie die `FindString` Member-Funktion, um eine Zeichenfolge zu suchen, ohne das Element auszuwählen.
+Verwenden `FindString` Sie die Memberfunktion, um eine Zeichenfolge zu finden, ohne das Element auszuwählen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#27](../../mfc/codesnippet/cpp/clistbox-class_27.cpp)]
 
-##  <a name="selitemrange"></a>CListBox:: selitemrange
+## <a name="clistboxselitemrange"></a><a name="selitemrange"></a>CListBox::SelItemRange
 
-Wählt mehrere aufeinander folgende Elemente in einem Listenfeld mit Mehrfachauswahl aus.
+Wählt mehrere aufeinander folgende Elemente in einem Listenfeld mit mehreren Auswahlen aus.
 
 ```
 int SelItemRange(
@@ -1145,29 +1145,29 @@ int SelItemRange(
 ### <a name="parameters"></a>Parameter
 
 *bSelect*<br/>
-Gibt an, wie die Auswahl festgelegt wird. Wenn *bSelect* den Wert true hat, wird die Zeichenfolge ausgewählt und hervorgehoben. Wenn der Wert false ist, wird die Hervorhebung entfernt, und die Zeichenfolge ist nicht mehr ausgewählt.
+Gibt an, wie die Auswahl festgelegt werden soll. Wenn *bSelect* TRUE ist, wird die Zeichenfolge ausgewählt und hervorgehoben. Wenn FALSE, wird die Hervorhebung entfernt, und die Zeichenfolge ist nicht mehr ausgewählt.
 
-*nfirstitem*<br/>
-Gibt den NULL basierten Index des ersten festzulegenden Elements an.
+*nFirstItem*<br/>
+Gibt den nullbasierten Index des ersten festzulegenden Elements an.
 
-*nlastitem*<br/>
-Gibt den NULL basierten Index des letzten festzulegenden Elements an.
+*nLastItem*<br/>
+Gibt den nullbasierten Index des letzten festzulegenden Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Member-Funktion nur für Listenfelder mit Mehrfachauswahl. Wenn Sie nur ein Element in einem Listenfeld mit Mehrfachauswahl auswählen müssen – d. h., wenn *nfirstitem* gleich *nlastitem* ist – wird stattdessen die Member-Funktion [SetSel](#setsel) aufgerufen.
+Verwenden Sie diese Memberfunktion nur mit Listenfeldern mit mehreren Auswahlen. Wenn Sie nur ein Element in einem Listenfeld mit mehreren Auswahlen auswählen müssen, d. h., wenn *nFirstItem* *nLastItem* gleich ist, rufen Sie stattdessen die [SetSel-Memberfunktion](#setsel) auf.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#28](../../mfc/codesnippet/cpp/clistbox-class_28.cpp)]
 
-##  <a name="setanchorindex"></a>CListBox:: "Ziel Index Index"
+## <a name="clistboxsetanchorindex"></a><a name="setanchorindex"></a>CListBox::SetAnchorIndex
 
-Legt den Anker in einem Listenfeld Mehrfachauswahl fest, um eine erweiterte Auswahl zu beginnen.
+Legt den Anker in einem Listenfeld mit mehreren Auswahlen fest, um eine erweiterte Auswahl zu beginnen.
 
 ```
 void SetAnchorIndex(int nIndex);
@@ -1176,19 +1176,19 @@ void SetAnchorIndex(int nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Listenfeld Elements an, das als Anker verwendet werden soll.
+Gibt den nullbasierten Index des Listenfeldelements an, das der Anker sein wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Im Listenfeld Mehrfachauswahl ist das Anker Element das erste oder letzte Element in einem Block zusammenhängender ausgewählter Elemente.
+In einem Listenfeld mit mehreren Auswahlen ist das Ankerelement das erste oder letzte Element in einem Block zusammenhängender ausgewählter Elemente.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#29](../../mfc/codesnippet/cpp/clistbox-class_29.cpp)]
 
-##  <a name="setcaretindex"></a>CListBox:: setcaretindex
+## <a name="clistboxsetcaretindex"></a><a name="setcaretindex"></a>CListBox::SetCaretIndex
 
-Legt das Fokus Rechteck auf das Element am angegebenen Index in einem Mehrfachauswahl-Listenfeld fest.
+Legt das Fokusrechteck auf das Element am angegebenen Index in einem Listenfeld mit mehreren Auswahlen fest.
 
 ```
 int SetCaretIndex(
@@ -1199,16 +1199,16 @@ int SetCaretIndex(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements an, das das Fokus Rechteck im Listenfeld erhalten soll.
+Gibt den nullbasierten Index des Elements an, das das Fokusrechteck im Listenfeld erhalten soll.
 
-*bscroll*<br/>
-Wenn dieser Wert 0 ist, wird das Element gescrollt, bis es vollständig sichtbar ist. Wenn dieser Wert nicht 0 ist, wird das Element gescrollt, bis es mindestens teilweise sichtbar ist.
+*bScroll*<br/>
+Wenn dieser Wert 0 ist, wird das Element gescrollt, bis es vollständig sichtbar ist. Wenn dieser Wert nicht 0 ist, wird das Element gescrollt, bis es zumindest teilweise sichtbar ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
 LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn das Element nicht sichtbar ist, wird es in die Ansicht gescrollt.
 
@@ -1216,9 +1216,9 @@ Wenn das Element nicht sichtbar ist, wird es in die Ansicht gescrollt.
 
 [!code-cpp[NVC_MFC_CListBox#30](../../mfc/codesnippet/cpp/clistbox-class_30.cpp)]
 
-##  <a name="setcolumnwidth"></a>CListBox:: setcolumnwidth
+## <a name="clistboxsetcolumnwidth"></a><a name="setcolumnwidth"></a>CListBox::SetColumnWidth
 
-Legt die Breite aller Spalten in einem mehrspaltigen Listenfeld (erstellt mit dem [LBS_MULTICOLUMN](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil) in Pixel fest.
+Legt die Breite in Pixeln aller Spalten in einem Listenfeld mit mehreren Spalten fest (erstellt mit dem [Stil LBS_MULTICOLUMN).](../../mfc/reference/styles-used-by-mfc.md#list-box-styles)
 
 ```
 void SetColumnWidth(int cxWidth);
@@ -1226,16 +1226,16 @@ void SetColumnWidth(int cxWidth);
 
 ### <a name="parameters"></a>Parameter
 
-*cxwidth*<br/>
-Gibt die Breite aller Spalten in Pixel an.
+*cxWidth*<br/>
+Gibt die Breite in Pixelaller Spalten an.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#31](../../mfc/codesnippet/cpp/clistbox-class_31.cpp)]
 
-##  <a name="setcursel"></a>CListBox:: setcurrsel
+## <a name="clistboxsetcursel"></a><a name="setcursel"></a>CListBox::SetCurSel
 
-Wählt eine Zeichenfolge aus und führt ggf. einen Bildlauf in die Ansicht aus.
+Wählt eine Zeichenfolge aus und scrollt bei Bedarf in die Ansicht.
 
 ```
 int SetCurSel(int nSelect);
@@ -1244,27 +1244,27 @@ int SetCurSel(int nSelect);
 ### <a name="parameters"></a>Parameter
 
 *nWählen*<br/>
-Gibt den NULL basierten Index der auszuwählenden Zeichenfolge an. Wenn *nselect* den Wert-1 hat, ist das Listenfeld auf keine Auswahl festgelegt.
+Gibt den nullbasierten Index der ausgewählten Zeichenfolge an. Wenn *nSelect* -1 ist, ist das Listenfeld so eingestellt, dass es keine Auswahl hat.
 
 ### <a name="return-value"></a>Rückgabewert
 
 LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die neue Zeichenfolge ausgewählt ist, wird die Hervorhebung im Listenfeld aus der zuvor ausgewählten Zeichenfolge entfernt.
+Wenn die neue Zeichenfolge ausgewählt ist, entfernt das Listenfeld die Hervorhebung aus der zuvor ausgewählten Zeichenfolge.
 
-Verwenden Sie diese Member-Funktion nur für Listenfelder mit einfacher Auswahl.
+Verwenden Sie diese Memberfunktion nur mit Listenfeldern mit einer Auswahl.
 
-Verwenden Sie [CListBox:: SetSel](#setsel), um eine Auswahl in einem Listenfeld Mehrfachauswahl festzulegen oder zu entfernen.
+Um eine Auswahl in einem Listenfeld mit mehreren Auswahlen festzulegen oder zu entfernen, verwenden Sie [CListBox::SetSel](#setsel).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#32](../../mfc/codesnippet/cpp/clistbox-class_32.cpp)]
 
-##  <a name="sethorizontalextent"></a>CListBox:: Abbild-Bereich
+## <a name="clistboxsethorizontalextent"></a><a name="sethorizontalextent"></a>CListBox::SetHorizontalExtent
 
-Legt die Breite (in Pixel) fest, um die ein Listenfeld horizontal gescrollt werden kann.
+Legt die Breite in Pixel fest, durch die ein Listenfeld horizontal gescrollt werden kann.
 
 ```
 void SetHorizontalExtent(int cxExtent);
@@ -1272,22 +1272,22 @@ void SetHorizontalExtent(int cxExtent);
 
 ### <a name="parameters"></a>Parameter
 
-*cxblock*<br/>
-Gibt die Anzahl der Pixel an, um die das Listenfeld horizontal gescrollt werden kann.
+*cxExtent*<br/>
+Gibt die Anzahl der Pixel an, nach denen das Listenfeld horizontal gescrollt werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die Größe des Listen Felds kleiner ist als dieser Wert, führt die horizontale Schiebe Leiste im Listenfeld einen horizontalen Bildlauf durch. Wenn das Listenfeld groß oder größer als dieser Wert ist, wird die horizontale Schiebe Leiste ausgeblendet.
+Wenn die Größe des Listenfelds kleiner als dieser Wert ist, scrollt die horizontale Bildlaufleiste horizontal Elemente im Listenfeld. Wenn das Listenfeld so groß oder größer als dieser Wert ist, wird die horizontale Bildlaufleiste ausgeblendet.
 
-Um auf einen `SetHorizontalExtent`aufzurufen, muss das Listenfeld mit der [WS_HSCROLL](../../mfc/reference/styles-used-by-mfc.md#window-styles) Formatvorlage definiert worden sein.
+Um auf einen `SetHorizontalExtent`Aufruf von zu reagieren, muss das Listenfeld mit dem [Stil WS_HSCROLL](../../mfc/reference/styles-used-by-mfc.md#window-styles) definiert worden sein.
 
-Diese Member-Funktion ist für Listenfelder mit mehreren Spalten nicht nützlich. Bei mehrspaltigen Listenfeldern wird die `SetColumnWidth` Member-Funktion aufgerufen.
+Diese Memberfunktion ist für mehrspaltige Listenfelder nicht nützlich. Rufen Sie für mehrspaltige Listenfelder die `SetColumnWidth` Memberfunktion auf.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#33](../../mfc/codesnippet/cpp/clistbox-class_33.cpp)]
 
-##  <a name="setitemdata"></a>CListBox:: Daten
+## <a name="clistboxsetitemdata"></a><a name="setitemdata"></a>CListBox::SetItemData
 
 Legt einen Wert fest, der dem angegebenen Element in einem Listenfeld zugeordnet ist.
 
@@ -1300,9 +1300,9 @@ int SetItemData(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements an.
+Gibt den nullbasierten Index des Elements an.
 
-*dwitemdata*<br/>
+*dwItemData*<br/>
 Gibt den Wert an, der dem Element zugeordnet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -1313,9 +1313,9 @@ LB_ERR, wenn ein Fehler auftritt.
 
 [!code-cpp[NVC_MFC_CListBox#34](../../mfc/codesnippet/cpp/clistbox-class_34.cpp)]
 
-##  <a name="setitemdataptr"></a>CListBox:: Ziel-DataPtr
+## <a name="clistboxsetitemdataptr"></a><a name="setitemdataptr"></a>CListBox::SetItemDataPtr
 
-Legt den 32-Bit-Wert, der dem angegebenen Element in einem Listenfeld zugeordnet ist, als den angegebenen Zeiger fest ( **void** <strong>\*</strong>).
+Legt den 32-Bit-Wert, der dem angegebenen Element zugeordnet ist, in einem Listenfeld als den angegebenen Zeiger fest ( **void** <strong>\*</strong>).
 
 ```
 int SetItemDataPtr(
@@ -1326,7 +1326,7 @@ int SetItemDataPtr(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements an.
+Gibt den nullbasierten Index des Elements an.
 
 *pData*<br/>
 Gibt den Zeiger an, der dem Element zugeordnet werden soll.
@@ -1335,15 +1335,15 @@ Gibt den Zeiger an, der dem Element zugeordnet werden soll.
 
 LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Dieser Zeiger bleibt für die Lebensdauer des Listen Felds gültig, auch wenn die relative Position des Elements im Listenfeld geändert werden kann, wenn Elemente hinzugefügt oder entfernt werden. Daher kann der Index des Elements innerhalb des Felds geändert werden, aber der Zeiger bleibt zuverlässig.
+Dieser Zeiger bleibt für die Lebensdauer des Listenfelds gültig, auch wenn sich die relative Position des Elements innerhalb des Listenfelds ändern kann, wenn Elemente hinzugefügt oder entfernt werden. Daher kann sich der Index des Elements innerhalb des Felds ändern, aber der Zeiger bleibt zuverlässig.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#35](../../mfc/codesnippet/cpp/clistbox-class_35.cpp)]
 
-##  <a name="setitemheight"></a>CListBox:: Sekunden-Höhe
+## <a name="clistboxsetitemheight"></a><a name="setitemheight"></a>CListBox::SetItemHeight
 
 Legt die Höhe von Elementen in einem Listenfeld fest.
 
@@ -1356,26 +1356,26 @@ int SetItemHeight(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Elements im Listenfeld an. Dieser Parameter wird nur verwendet, wenn das Listenfeld den LBS_OWNERDRAWVARIABLE Stil hat. Andernfalls sollte der Wert auf 0 festgelegt werden.
+Gibt den nullbasierten Index des Elements im Listenfeld an. Dieser Parameter wird nur verwendet, wenn das Listenfeld den Stil LBS_OWNERDRAWVARIABLE. Andernfalls sollte sie auf 0 gesetzt werden.
 
-*cyitemheight*<br/>
+*cyItemHeight*<br/>
 Gibt die Höhe des Elements in Pixel an.
 
 ### <a name="return-value"></a>Rückgabewert
 
 LB_ERR, wenn der Index oder die Höhe ungültig ist.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn das Listenfeld den [LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil hat, legt diese Funktion die Höhe des durch *nIndex*angegebenen Elements fest. Andernfalls legt diese Funktion die Höhe aller Elemente im Listenfeld fest.
+Wenn das Listenfeld den [Stil LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) hat, legt diese Funktion die Höhe des von *nIndex*angegebenen Elements fest. Andernfalls legt diese Funktion die Höhe aller Elemente im Listenfeld fest.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#36](../../mfc/codesnippet/cpp/clistbox-class_36.cpp)]
 
-##  <a name="setlocale"></a>CListBox:: setlocale
+## <a name="clistboxsetlocale"></a><a name="setlocale"></a>CListBox::SetLocale
 
-Legt den Gebiets Schema Bezeichner für dieses Listenfeld fest.
+Legt den Gebietsschemabezeichner für dieses Listenfeld fest.
 
 ```
 LCID SetLocale(LCID nNewLocale);
@@ -1383,24 +1383,24 @@ LCID SetLocale(LCID nNewLocale);
 
 ### <a name="parameters"></a>Parameter
 
-*nnewlocale*<br/>
-Der neue LCID-Wert (Locale Identifier), der für das Listenfeld festgelegt werden soll.
+*nNewLocale*<br/>
+Der neue Gebietsschemabezeichner (LCID), der für das Listenfeld festgelegt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der vorherige LCID-Wert (Locale Identifier) für dieses Listenfeld.
+Der vorherige Gebietsschemabezeichner (LCID) für dieses Listenfeld.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn `SetLocale` nicht aufgerufen wird, wird das Standard Gebiets Schema vom System abgerufen. Dieses Standard Gebiets Schema für das System kann mithilfe der regionalen (oder internationalen) Anwendung der Systemsteuerung geändert werden.
+Wenn `SetLocale` nicht aufgerufen wird, wird das Standardgebietsschema vom System abgerufen. Dieses Systemstandardgebietsschema kann mithilfe der regionalen (oder internationalen) Anwendung der Systemsteuerung geändert werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#37](../../mfc/codesnippet/cpp/clistbox-class_37.cpp)]
 
-##  <a name="setsel"></a>CListBox:: Sekunden
+## <a name="clistboxsetsel"></a><a name="setsel"></a>CListBox::SetSel
 
-Wählt eine Zeichenfolge in einem Listenfeld mit Mehrfachauswahl aus.
+Wählt eine Zeichenfolge in einem Listenfeld mit mehreren Auswahlen aus.
 
 ```
 int SetSel(
@@ -1411,28 +1411,28 @@ int SetSel(
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Enthält den NULL basierten Index der festzulegenden Zeichenfolge. Wenn-1, wird die Auswahl in Abhängigkeit vom Wert von *bSelect*zu allen Zeichen folgen hinzugefügt bzw. aus ihr entfernt.
+Enthält den nullbasierten Index der festzulegenden Zeichenfolge. Wenn -1, wird die Auswahl allen Zeichenfolgen hinzugefügt oder aus ihnen entfernt, abhängig vom Wert von *bSelect*.
 
 *bSelect*<br/>
-Gibt an, wie die Auswahl festgelegt wird. Wenn *bSelect* den Wert true hat, wird die Zeichenfolge ausgewählt und hervorgehoben. Wenn der Wert false ist, wird die Hervorhebung entfernt, und die Zeichenfolge ist nicht mehr ausgewählt. Die angegebene Zeichenfolge wird standardmäßig ausgewählt und hervorgehoben.
+Gibt an, wie die Auswahl festgelegt werden soll. Wenn *bSelect* TRUE ist, wird die Zeichenfolge ausgewählt und hervorgehoben. Wenn FALSE, wird die Hervorhebung entfernt, und die Zeichenfolge ist nicht mehr ausgewählt. Die angegebene Zeichenfolge wird standardmäßig ausgewählt und hervorgehoben.
 
 ### <a name="return-value"></a>Rückgabewert
 
 LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Member-Funktion nur für Listenfelder mit Mehrfachauswahl.
+Verwenden Sie diese Memberfunktion nur mit Listenfeldern mit mehreren Auswahlen.
 
-Verwenden Sie [CListBox:: setcurrsel](#setcursel), um ein Element aus einem Listenfeld mit einer einzelnen Auswahl auszuwählen.
+Um ein Element aus einem Listenfeld mit einer Auswahl auszuwählen, verwenden Sie [CListBox::SetCurSel](#setcursel).
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#38](../../mfc/codesnippet/cpp/clistbox-class_38.cpp)]
 
-##  <a name="settabstops"></a>CListBox:: settabstopps
+## <a name="clistboxsettabstops"></a><a name="settabstops"></a>CListBox::SetTabStops
 
-Legt die Position der Tabstopps in einem Listenfeld fest.
+Legt die Tabstopppositionen in einem Listenfeld fest.
 
 ```
 void SetTabStops();
@@ -1445,34 +1445,34 @@ BOOL SetTabStops(
 
 ### <a name="parameters"></a>Parameter
 
-*cxeachstopps*<br/>
-Tabstopps werden bei jeder *cxeachstopp* -Dialog Einheit festgelegt. Unter *rgtabstopps* finden Sie eine Beschreibung einer Dialogfeld Einheit.
+*cxEachStop*<br/>
+Tabstopps werden an allen *cxEachStop-Dialogeinheiten* festgelegt. Eine Beschreibung einer Dialogeinheit finden Sie unter *rgTabStops.*
 
-*ntabstopps*<br/>
-Gibt die Anzahl von Tabstopps an, die im Listenfeld enthalten sein sollen.
+*nTabStops*<br/>
+Gibt die Anzahl der Tabstopps an, die im Listenfeld enthalten sein sollen.
 
-*rgtabstopps*<br/>
-Verweist auf das erste Element eines Arrays von ganzen Zahlen, das die Position der Tabstopps in Dialogfeld Einheiten enthält. Eine Dialog Einheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialog Einheit ist gleich 1-vierte der aktuellen Dialogfeld Basis-breiten Einheit, und eine vertikale Dialog Einheit ist gleich einem Achtel der aktuellen Dialogfeld-Basis Höheneinheit. Die Dialog Basiseinheiten werden basierend auf der Höhe und der Breite der aktuellen System Schriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialog Basiseinheiten des Dialog Felds in Pixel zurück. Die Tabstopps müssen in steigender Reihenfolge sortiert werden. zurück-Registerkarten sind nicht zulässig.
+*rgTabStops*<br/>
+Zeigt auf das erste Element eines Arrays von Ganzzahlen, die die Tabstopppositionen in Dialogeinheiten enthalten. Eine Dialogeinheit ist ein horizontaler oder vertikaler Abstand. Eine horizontale Dialogeinheit entspricht einem Viertel der aktuellen Dialogbasisbreiteneinheit, und eine vertikale Dialogeinheit entspricht einem Achtel der aktuellen Dialogbasishöheneinheit. Die Dialogbasiseinheiten werden basierend auf der Höhe und Breite der aktuellen Systemschriftart berechnet. Die `GetDialogBaseUnits` Windows-Funktion gibt die aktuellen Dialogbasiseinheiten in Pixel zurück. Die Tabstopps müssen in zunehmender Reihenfolge sortiert werden. zurück-Registerkarten sind nicht zulässig.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich 0 (null), wenn alle Registerkarten festgelegt wurden. andernfalls 0.
+Ein Wert ungleich Null, wenn alle Registerkarten festgelegt wurden; andernfalls 0.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Um Tabstopps auf die Standardgröße von 2 Dialog Einheiten festzulegen, nennen Sie die Parameter lose Version dieser Member-Funktion. Um Tabstopps auf eine andere Größe als 2 festzulegen, müssen Sie die Version mit dem *cxeachstopp* -Argument aufzurufen.
+Um Tabstopps auf die Standardgröße von 2 Dialogeinheiten festzulegen, rufen Sie die parameterlose Version dieser Memberfunktion auf. Um Tabstopps auf eine andere Größe als 2 festzulegen, rufen Sie die Version mit dem Argument *cxEachStop* auf.
 
-Um Tabstopps auf ein Array von Größen festzulegen, verwenden Sie die-Version mit den Argumenten *rgtabstopps* und *ntabstopps* . Ein Tabstopp wird für jeden Wert in *rgtabstopps*festgelegt, bis zu der Anzahl, die von *ntabstopps*angegeben wird.
+Um Tabstopps auf ein Array von Größen festzulegen, verwenden Sie die Version mit den Argumenten *rgTabStops* und *nTabStops.* Für jeden Wert in *rgTabStops*wird ein Tabstopp festgelegt, bis zu der von *nTabStops*angegebenen Zahl .
 
-Um auf einen aufzurufenden `SetTabStops` Member-Funktion zu reagieren, muss das Listenfeld mit der [LBS_USETABSTOPS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Formatvorlage erstellt werden.
+Um auf einen Aufruf `SetTabStops` der Memberfunktion zu reagieren, muss das Listenfeld mit dem [Stil LBS_USETABSTOPS](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) erstellt worden sein.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#39](../../mfc/codesnippet/cpp/clistbox-class_39.cpp)]
 
-##  <a name="settopindex"></a>CListBox:: settopindex
+## <a name="clistboxsettopindex"></a><a name="settopindex"></a>CListBox::SetTopIndex
 
-Stellt sicher, dass ein bestimmtes Listenfeld Element sichtbar ist.
+Stellt sicher, dass ein bestimmtes Listenfeldelement sichtbar ist.
 
 ```
 int SetTopIndex(int nIndex);
@@ -1481,23 +1481,23 @@ int SetTopIndex(int nIndex);
 ### <a name="parameters"></a>Parameter
 
 *nIndex*<br/>
-Gibt den NULL basierten Index des Listenfeld Elements an.
+Gibt den nullbasierten Index des Listenfeldelements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-NULL, wenn erfolgreich, oder LB_ERR, wenn ein Fehler auftritt.
+Null, wenn erfolgreich, oder LB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Das System führt einen Bildlauf durch das Listenfeld durch, bis entweder das von *nIndex* angegebene Element oben im Listenfeld angezeigt wird oder der maximale scrollbereich erreicht wurde.
+Das System scrollt das Listenfeld, bis entweder das von *nIndex* angegebene Element oben im Listenfeld angezeigt wird oder der maximale Bildlaufbereich erreicht wurde.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CListBox#40](../../mfc/codesnippet/cpp/clistbox-class_40.cpp)]
 
-##  <a name="vkeytoitem"></a>CListBox:: vkeytoitem
+## <a name="clistboxvkeytoitem"></a><a name="vkeytoitem"></a>CListBox::VKeyToItem
 
-Wird von Framework aufgerufen, wenn das übergeordnete Fenster des Listen Felds eine WM_VKEYTOITEM Meldung aus dem Listenfeld empfängt.
+Wird vom Framework aufgerufen, wenn das übergeordnete Fenster des Listenfelds eine WM_VKEYTOITEM Nachricht aus dem Listenfeld empfängt.
 
 ```
 virtual int VKeyToItem(
@@ -1507,31 +1507,31 @@ virtual int VKeyToItem(
 
 ### <a name="parameters"></a>Parameter
 
-*nkey*<br/>
-Der Code des virtuellen Schlüssels der vom Benutzer gedrückten Taste. Eine Liste der virtuellen Standardschlüssel Codes finden Sie unter Winuser. h.
+*nKey*<br/>
+Der virtuelle Schlüsselcode der Taste, die der Benutzer gedrückt hat. Eine Liste der standardmäßigen virtuellen Schlüsselcodes finden Sie unter Winuser.h
 
 *nIndex*<br/>
-Die aktuelle Position der Listenfeld Einfügemarke.
+Die aktuelle Position der Listenbox-Pflege.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt-2 für keine weitere Aktion,-1 für die Standardaktion oder eine nicht negative Zahl zurück, um einen Index eines Listenfeld Elements anzugeben, für das die Standardaktion für den Tastatur Strich ausgeführt werden soll.
+Gibt - 2 für keine weitere Aktion, - 1 für Standardaktion oder eine nicht negative Zahl zurück, um einen Index eines Listenfeldelements anzugeben, auf dem die Standardaktion für den Tastenanschlag ausgeführt werden soll.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die WM_VKEYTOITEM Meldung wird vom Listenfeld gesendet, wenn eine WM_KEYDOWN Meldung empfangen wird. Dies ist jedoch nur möglich, wenn das Listenfeld beide der folgenden Punkte erfüllt:
+Die WM_VKEYTOITEM Nachricht wird vom Listenfeld gesendet, wenn eine WM_KEYDOWN Nachricht empfangen wird, jedoch nur, wenn das Listenfeld die beiden folgenden Punkte erfüllt:
 
 - Hat den [LBS_WANTKEYBOARDINPUT](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) Stil festgelegt.
 
-- Weist mindestens ein Element auf.
+- Hat mindestens ein Element.
 
-Sie sollten diese Funktion niemals selbst aufzurufen. Überschreiben Sie diese Funktion, um eine eigene benutzerdefinierte Behandlung von Tastatur Meldungen bereitzustellen.
+Sie sollten diese Funktion niemals selbst aufrufen. Überschreiben Sie diese Funktion, um Ihre eigene benutzerdefinierte Behandlung von Tastaturnachrichten bereitzustellen.
 
-Sie müssen einen Wert zurückgeben, um das Framework darüber zu informieren, welche Aktion Sie durchgeführt haben. Der Rückgabewert-2 gibt an, dass die Anwendung alle Aspekte der Elementauswahl behandelt hat und keine weitere Aktion im Listenfeld erfordert. Vor der Rückgabe von-2 konnten Sie die Auswahl festlegen oder die Einfügemarke oder beides verschieben. Verwenden Sie [setcurrsel](#setcursel) oder [SetSel](#setsel), um die Auswahl festzulegen. Verwenden Sie [setcaretindex](#setcaretindex), um die Einfügemarke zu verschieben.
+Sie müssen einen Wert zurückgeben, um dem Framework mitzuteilen, welche Aktion Ihre Außerkraftsetzung ausgeführt hat. Der Rückgabewert von - 2 gibt an, dass die Anwendung alle Aspekte der Auswahl des Elements behandelt hat und keine weitere Aktion durch das Listenfeld erfordert. Vor der Rückkehr - 2, können Sie die Auswahl oder bewegen Sie die Einser oder beides. Um die Auswahl festzulegen, verwenden Sie [SetCurSel](#setcursel) oder [SetSel](#setsel). Um die Einserwart zu verschieben, verwenden Sie [SetCaretIndex](#setcaretindex).
 
-Der Rückgabewert-1 gibt an, dass das Listenfeld die Standardaktion als Reaktion auf den Tastatur Strich ausführen soll. Die Standard Implementierung gibt-1 zurück.
+Der Rückgabewert 1 gibt an, dass das Listenfeld die Standardaktion als Reaktion auf den Tastenanschlag ausführen soll. Die Standardimplementierung gibt zurück - 1.
 
-Ein Rückgabewert von 0 (null) oder größer gibt den Index eines Elements im Listenfeld an und gibt an, dass im Listenfeld die Standardaktion für den Tastatur Strich für das angegebene Element ausgeführt werden soll.
+Ein Rückgabewert von 0 oder höher gibt den Index eines Elements im Listenfeld an und gibt an, dass das Listenfeld die Standardaktion für den Tastenanschlag für das angegebene Element ausführen soll.
 
 ### <a name="example"></a>Beispiel
 
@@ -1545,6 +1545,6 @@ Ein Rückgabewert von 0 (null) oder größer gibt den Index eines Elements im Li
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
 [CButton-Klasse](../../mfc/reference/cbutton-class.md)<br/>
 [CComboBox-Klasse](../../mfc/reference/ccombobox-class.md)<br/>
-[CEdit-Klasse](../../mfc/reference/cedit-class.md)<br/>
+[CEdit Class](../../mfc/reference/cedit-class.md)<br/>
 [CScrollBar-Klasse](../../mfc/reference/cscrollbar-class.md)<br/>
 [CStatic-Klasse](../../mfc/reference/cstatic-class.md)

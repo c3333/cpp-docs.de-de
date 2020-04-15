@@ -7,16 +7,16 @@ f1_keywords:
 - AMP_SHORT_VECTORS/Concurrency::graphics::short_vector_traits::short_vector_traits
 - AMP_SHORT_VECTORS/Concurrency::graphics::short_vector_traits::size Constant
 ms.assetid: cd9492da-9e02-4a6e-9d50-b61252cdb460
-ms.openlocfilehash: 7531a57dddcc85392380029afc6edd577bbc5cf3
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: d743f74deaea5cb31cd609ece90891c8cfe2258f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77126373"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81374733"
 ---
 # <a name="short_vector_traits-structure"></a>short_vector_traits-Struktur
 
-short_vector_traits ermöglicht das Abrufen der zugrunde liegenden Vektor Länge und des skalaren Typs eines kurzen Vektor Typs oder eines skalaren Typs.
+short_vector_traits ermöglicht das Abrufen der zugrunde liegenden Vektorlänge und des Skalartyps eines kurzen Vektortyps oder eines Skalartyps
 
 ## <a name="syntax"></a>Syntax
 
@@ -79,7 +79,7 @@ struct short_vector_traits<double_4>;
 
 `T`
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
@@ -91,36 +91,36 @@ struct short_vector_traits<double_4>;
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[short_vector_traits:: short_vector_traits-Konstruktor](#ctor)||
+|[short_vector_traits::short_vector_traits-Konstruktor](#ctor)||
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[short_vector_traits:: size-Konstante](#size)||
+|[short_vector_traits::size-Konstante](#size)||
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
 `short_vector_traits`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** amp_short_vectors. h
+**Kopfzeile:** amp_short_vectors.h
 
-**Namespace:** Parallelität:: Grafiken
+**Namespace:** Parallelität::Grafiken
 
-## <a name="ctor"></a>short_vector_traits:: short_vector_traits-Konstruktor
+## <a name="short_vector_traitsshort_vector_traits-constructor"></a><a name="ctor"></a>short_vector_traits::short_vector_traits Konstruktor
 
 ```cpp
 short_vector_traits();
 ```
 
-## <a name="size"></a>short_vector_traits:: size-Konstante
+## <a name="short_vector_traitssize-constant"></a><a name="size"></a>short_vector_traits::Size Konstante
 
 ```cpp
 static int const size = 1;
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency::graphics Namespace](concurrency-graphics-namespace.md)
+[Concurrency::graphics-Namespace](concurrency-graphics-namespace.md)

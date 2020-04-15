@@ -5,20 +5,20 @@ f1_keywords:
 - istream/std::swap
 - istream/std::ws
 ms.assetid: 0301ea0d-4ded-4841-83dd-4253b55b3188
-ms.openlocfilehash: fc512558969bc25d2b16afa2b93219e13d0b28ca
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 3d647c7b05a3868ec0359410cc0e703306b874ba
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79425682"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81363079"
 ---
 # <a name="ltistreamgt-functions"></a>&lt;istream&gt;-Funktionen
 
 |||
 |-|-|
-|[swap](#istream_swap)|[ws](#ws)|
+|[swap](#istream_swap)|[Ws](#ws)|
 
-## <a name="istream_swap"></a> swap
+## <a name="swap"></a><a name="istream_swap"></a>Swap
 
 Tauscht die Elemente zweier Streamobjekte.
 
@@ -36,13 +36,13 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Linker*\
-Ein Datenstrom.
+*Links*\
+Ein Stream
 
-*Rechte*\
-Ein Datenstrom.
+*Richting*\
+Ein Stream
 
-## <a name="ws"></a> ws
+## <a name="ws"></a><a name="ws"></a>Ws
 
 Überspringt Leerraum im Datenstrom.
 
@@ -53,17 +53,17 @@ template class<Elem, Tr> basic_istream<Elem, Tr>& ws(basic_istream<Elem, Tr>& _I
 ### <a name="parameters"></a>Parameter
 
 *_Istr*\
-Ein Datenstrom.
+Ein Stream
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Stream (Datenstrom).
+Der Datenstrom.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator extrahiert und verwirft alle Elemente `ch`, für die [Use_facet](../standard-library/basic-filebuf-class.md#open)< **CType**\< **Elem**> > ( [getloc](../standard-library/ios-base-class.md#getloc)). **is**( **CType**\< **Elem**>:: **Space**, **ch**) ist true.
+Der Manipulator extrahiert und verwirft alle Elemente, `ch` für die [use_facet](../standard-library/basic-filebuf-class.md#open)< **Ctype** \< **Elem**> >( [getloc](../standard-library/ios-base-class.md#getloc)). **is**(**ctype**\< **Elem**>:: **space**, **ch**) ist TRUE.
 
-Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. *_Istr*wird zurückgegeben.
+Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. Es gibt *_Istr zurück.*
 
 ### <a name="example"></a>Beispiel
 

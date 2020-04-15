@@ -1,8 +1,9 @@
 ---
 title: tmpfile_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - tmpfile_s
+- _o_tmpfile_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - tmpfile_s function
 - temporary files, creating
 ms.assetid: 50879c69-215e-425a-a2a3-8b5467121eae
-ms.openlocfilehash: 64107f26fa651739f4d5bdd7521b15d9d458df65
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 8f9dd58abdf1d3225341e40661c14ae3a5013257
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70946054"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81362461"
 ---
 # <a name="tmpfile_s"></a>tmpfile_s
 
@@ -56,32 +58,34 @@ Gibt bei Erfolg 0 (null) zurück und einen Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*pFilePtr*|**Rückgabewert**|**Inhalt der**  *pFilePtr*|
+|*pFilePtr*|**Rückgabewert**|**Inhalt von**  *pFilePtr*|
 |----------------|----------------------|---------------------------------|
-|**NULL**|**EINVAL**|nicht geändert|
+|**Null**|**Einval**|nicht geändert|
 
-Wenn der obengenannte Parametervalidierungsfehler auftritt, wird der ungültige Parameterhandler wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben aufgerufen. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und der Rückgabewert ist **EINVAL**.
+Wenn der obengenannte Parametervalidierungsfehler auftritt, wird der ungültige Parameterhandler wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben aufgerufen. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und der Rückgabewert ist **EINVAL**.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **tmpfile_s** -Funktion erstellt eine temporäre Datei und legt einen Zeiger auf diesen Stream im *pFilePtr* -Argument ab. Die temporäre Datei wird im Stammverzeichnis erstellt. Verwenden Sie zum Erstellen einer temporären Datei in einem anderen Verzeichnis als dem Stammverzeichnis [tmpnam_s](tmpnam-s-wtmpnam-s.md) oder [tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md) in Verbindung mit [fopen](fopen-wfopen.md).
+Die **tmpfile_s-Funktion** erstellt eine temporäre Datei und setzt einen Zeiger auf diesen Stream im *pFilePtr-Argument.* Die temporäre Datei wird im Stammverzeichnis erstellt. Verwenden Sie zum Erstellen einer temporären Datei in einem anderen Verzeichnis als dem Stammverzeichnis [tmpnam_s](tmpnam-s-wtmpnam-s.md) oder [tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md) in Verbindung mit [fopen](fopen-wfopen.md).
 
-Wenn die Datei nicht geöffnet werden kann, schreibt **tmpfile_s** **null** in den *pFilePtr* -Parameter. Diese temporäre Datei wird automatisch gelöscht, wenn die Datei geschlossen wird, wenn das Programm normal beendet wird, oder wenn **_rmtmp** aufgerufen wird, vorausgesetzt, dass das aktuelle Arbeitsverzeichnis nicht geändert wird. Die temporäre Datei wird im Modus " **w + b** " (binärer Lese-/Schreibmodus) geöffnet.
+Wenn die Datei nicht geöffnet werden kann, **schreibt tmpfile_s** **NULL** in den Parameter *pFilePtr.* Diese temporäre Datei wird automatisch gelöscht, wenn die Datei geschlossen wird, wenn das Programm normal beendet wird oder wenn **_rmtmp** aufgerufen wird, vorausgesetzt, dass sich das aktuelle Arbeitsverzeichnis nicht ändert. Die temporäre Datei wird im **w+b-Modus** (binäres Lesen/Schreiben) geöffnet.
 
-Ein Fehler kann auftreten, wenn Sie mehr als **TMP_MAX_S** versuchen (siehe stdio). H) Ruft mit **tmpfile_s**auf.
+Fehler können auftreten, wenn Sie mehr als **TMP_MAX_S** versuchen (siehe STDIO. H) Anrufe mit **tmpfile_s**.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**tmpfile_s**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 > [!NOTE]
-> Dieses Beispiel erfordert möglicherweise Administratorrechte, um unter Windows ausgeführt werden zu können.
+> In diesem Beispiel müssen möglicherweise Administratorrechte unter Windows ausgeführt werden.
 
 ```C
 // crt_tmpfile_s.c

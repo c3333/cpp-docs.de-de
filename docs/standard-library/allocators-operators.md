@@ -5,22 +5,22 @@ f1_keywords:
 - allocators/std::operator!=
 - allocators/std::operator==
 ms.assetid: b55d67cb-3c69-46bf-ad40-e845fb096c4e
-ms.openlocfilehash: b7429e298cdf14d727fc481db6c4a3bf8574b5e7
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 7bc37e98ed85582cac8fc7ae21e54a6d5da9e06f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79424056"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81364964"
 ---
 # <a name="ltallocatorsgt-operators"></a>&lt;Allocators&gt;-Operatoren
 
-Dies sind die Funktionen des globalen Vorlagen Operators, die in &lt;Zuweisungs&gt;definiert sind. Informationen zu Klassenmember-Operator Funktionen finden Sie in der-Klassen Dokumentation.
+Dies sind die globalen &lt;Vorlagenoperatorfunktionen, die in Zuallokatoren&gt;definiert sind. Informationen zu Klassenmemberoperatorfunktionen finden Sie in der Klassendokumentation.
 
 |||
 |-|-|
-|[operator!=](#op_neq)|[operator==](#op_eq_eq)|
+|[Operator!=](#op_neq)|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
 
-## <a name="op_neq"></a> operator!=
+## <a name="operator"></a><a name="op_neq"></a>Operator!=
 
 Es wird auf Ungleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.
 
@@ -33,20 +33,20 @@ bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*left*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
-|*right*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
+|*Links*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
+|*Richting*|Eines der Zuweisungsobjekte, die auf Ungleichheit geprüft werden sollen.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Zuweisungsobjekte nicht gleich sind; **FALSE**, wenn die Zuweisungsobjekte gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Vorlagenoperator gibt `!(left == right)` zurück.
 
-## <a name="op_eq_eq"></a> operator==
+## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
 
 Es wird auf Gleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.
 
@@ -59,19 +59,19 @@ bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
+|Parameter|BESCHREIBUNG|
 |---------------|-----------------|
-|*left*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
-|*right*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
+|*Links*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
+|*Richting*|Eines der Zuweisungsobjekte, die auf Gleichheit geprüft werden sollen.|
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Zuweisungsobjekte gleich sind; **FALSE**, wenn die Zuweisungsobjekte nicht gleich sind.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Dieser Vorlagenoperator gibt `left.equals(right)` zurück.
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<allocators>](../standard-library/allocators-header.md)
+[\<Zuallokatoren>](../standard-library/allocators-header.md)

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - CD2DEllipse [MFC], CD2DEllipse
 ms.assetid: e9f02f54-acf2-427e-b349-db50cd9a77df
-ms.openlocfilehash: 21087682d40dac521cc949a39ef4b1aab23e7d71
-ms.sourcegitcommit: e10a5feea193c249ddc5a6faba48e7c6d8784e73
+ms.openlocfilehash: 82ad2fbfb8558486134f85d7ec9bcaa6eb4e7507
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70177211"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369257"
 ---
 # <a name="cd2dellipse-class"></a>CD2DEllipse-Klasse
 
@@ -29,9 +29,9 @@ class CD2DEllipse : public D2D1_ELLIPSE;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DEllipse:: CD2DEllipse](#cd2dellipse)|Überladen. Erstellt ein `CD2DEllipse` -Objekt `D2D1_ELLIPSE` aus dem-Objekt.|
+|[CD2DEllipse::CD2DEllipse](#cd2dellipse)|Ist überladen. Erstellt ein `CD2DEllipse` Objekt `D2D1_ELLIPSE` aus einem Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -41,9 +41,9 @@ class CD2DEllipse : public D2D1_ELLIPSE;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget. h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="cd2dellipse"></a>CD2DEllipse:: CD2DEllipse
+## <a name="cd2dellipsecd2dellipse"></a><a name="cd2dellipse"></a>CD2DEllipse::CD2DEllipse
 
 Erstellt ein CD2DEllipse-Objekt aus dem CD2DRectF-Objekt.
 
@@ -60,16 +60,16 @@ CD2DEllipse(
 ### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
-Quell Rechteck
+Quellrechteck
 
 *ellipse*<br/>
-quellellipse
+Quellellipse
 
 *ptCenter*<br/>
 Der Mittelpunkt der Ellipse.
 
 *sizeRadius*<br/>
-Der X-RADIUS-und Y-Radius der Ellipse.
+Der X-Radius und der Y-Radius der Ellipse.
 
 ## <a name="see-also"></a>Siehe auch
 

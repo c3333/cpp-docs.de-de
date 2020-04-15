@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CHwndRenderTarget [MFC], Resize
 - CHwndRenderTarget [MFC], m_pHwndRenderTarget
 ms.assetid: aa65b69f-7202-46ea-af81-ef325da0b840
-ms.openlocfilehash: bf446cdf1ea064943ff92d66ac89b0e4177e6910
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 24cf4127c2f429f66143af3a0f49625f23a4e6ee
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62345785"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372462"
 ---
 # <a name="chwndrendertarget-class"></a>CHwndRenderTarget-Klasse
 
@@ -47,38 +47,38 @@ class CHwndRenderTarget : public CRenderTarget;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHwndRenderTarget::CHwndRenderTarget](#chwndrendertarget)|Erstellt ein Objekt CHwndRenderTarget von HWND.|
+|[CHwndRenderTarget::CHwndRenderTarget](#chwndrendertarget)|Erstellt ein CHwndRenderTarget-Objekt aus HWND.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHwndRenderTarget::Attach](#attach)|Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern|
-|[CHwndRenderTarget::CheckWindowState](#checkwindowstate)|Gibt an, ob es sich bei okkludierte das HWND, das Renderziel zugeordnet ist.|
-|[CHwndRenderTarget::Create](#create)|Erstellt ein Renderziel mit dem Fenster verknüpft ist|
-|[CHwndRenderTarget::Detach](#detach)|Trennt die Render-Ziel-Schnittstelle des Objekts|
-|[CHwndRenderTarget::GetHwnd](#gethwnd)|Gibt das zugeordnete HWND-Renderziel.|
-|[CHwndRenderTarget::GetHwndRenderTarget](#gethwndrendertarget)|Gibt die ID2D1HwndRenderTarget-Schnittstelle.|
-|[CHwndRenderTarget::ReCreate](#recreate)|Ein Renderziel, die dem Fenster zugeordneten erstellt erneut|
-|[CHwndRenderTarget::Resize](#resize)|Ändert die Größe des Renderziels in die angegebene Pixelgröße|
+|[CHwndRenderTarget::Anfügen](#attach)|Fügt vorhandene Renderzielschnittstelle an das Objekt an|
+|[CHwndRenderTarget::CheckWindowState](#checkwindowstate)|Gibt an, ob die diesem Renderziel zugeordnete HWND ausfällt.|
+|[CHwndRenderTarget::Erstellen](#create)|Erstellt ein Renderziel, das dem Fenster zugeordnet ist|
+|[CHwndRenderTarget::Detach](#detach)|Trennt die Renderzielschnittstelle vom Objekt|
+|[CHwndRenderTarget::GetHwnd](#gethwnd)|Gibt die HWND zurück, die diesem Renderziel zugeordnet ist.|
+|[CHwndRenderTarget::GetHwndRenderTarget](#gethwndrendertarget)|Gibt die ID2D1HwndRenderTarget-Schnittstelle zurück.|
+|[CHwndRenderTarget::ReCreate](#recreate)|Erstellt ein Renderziel, das dem Fenster zugeordnet ist|
+|[CHwndRenderTarget::Größe ändern](#resize)|Ändert die Größe des Renderziels auf die angegebene Pixelgröße|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CHwndRenderTarget::operator ID2D1HwndRenderTarget*](#operator_id2d1hwndrendertarget_star)|Gibt die ID2D1HwndRenderTarget-Schnittstelle.|
+|[CHwndRenderTarget::operator ID2D1HwndRenderTarget*](#operator_id2d1hwndrendertarget_star)|Gibt die ID2D1HwndRenderTarget-Schnittstelle zurück.|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CHwndRenderTarget::m_pHwndRenderTarget](#m_phwndrendertarget)|Ein Zeiger auf ein ID2D1HwndRenderTarget-Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)
 
 [CRenderTarget](../../mfc/reference/crendertarget-class.md)
 
@@ -86,11 +86,11 @@ class CHwndRenderTarget : public CRenderTarget;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="attach"></a>  CHwndRenderTarget::Attach
+## <a name="chwndrendertargetattach"></a><a name="attach"></a>CHwndRenderTarget::Anfügen
 
-Hängt die vorhandene Ziel-Schnittstelle für das Objekt zu rendern
+Fügt vorhandene Renderzielschnittstelle an das Objekt an
 
 ```
 void Attach(ID2D1HwndRenderTarget* pTarget);
@@ -99,11 +99,11 @@ void Attach(ID2D1HwndRenderTarget* pTarget);
 ### <a name="parameters"></a>Parameter
 
 *pTarget*<br/>
-Vorhandene Render-Ziel-Schnittstelle. NULL darf nicht sein
+Vorhandene Renderzielschnittstelle. Kann nicht NULL sein
 
-##  <a name="checkwindowstate"></a>  CHwndRenderTarget::CheckWindowState
+## <a name="chwndrendertargetcheckwindowstate"></a><a name="checkwindowstate"></a>CHwndRenderTarget::CheckWindowState
 
-Gibt an, ob es sich bei okkludierte das HWND, das Renderziel zugeordnet ist.
+Gibt an, ob die diesem Renderziel zugeordnete HWND ausfällt.
 
 ```
 D2D1_WINDOW_STATE CheckWindowState() const;
@@ -111,11 +111,11 @@ D2D1_WINDOW_STATE CheckWindowState() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert, der angibt, ob das zugeordnete HWND-Renderziel okkludiert wird.
+Ein Wert, der angibt, ob die diesem Renderziel zugeordnete HWND ausgemacht ist.
 
-##  <a name="chwndrendertarget"></a>  CHwndRenderTarget::CHwndRenderTarget
+## <a name="chwndrendertargetchwndrendertarget"></a><a name="chwndrendertarget"></a>CHwndRenderTarget::CHwndRenderTarget
 
-Erstellt ein Objekt CHwndRenderTarget von HWND.
+Erstellt ein CHwndRenderTarget-Objekt aus HWND.
 
 ```
 CHwndRenderTarget(HWND hwnd = NULL);
@@ -123,12 +123,12 @@ CHwndRenderTarget(HWND hwnd = NULL);
 
 ### <a name="parameters"></a>Parameter
 
-*hwnd*<br/>
-Das HWND zugeordneten Renderziel
+*Hwnd*<br/>
+Der HWND, der diesem Renderziel zugeordnet ist
 
-##  <a name="create"></a>  CHwndRenderTarget::Create
+## <a name="chwndrendertargetcreate"></a><a name="create"></a>CHwndRenderTarget::Erstellen
 
-Erstellt ein Renderziel mit dem Fenster verknüpft ist
+Erstellt ein Renderziel, das dem Fenster zugeordnet ist
 
 ```
 BOOL Create(HWND hWnd);
@@ -137,15 +137,15 @@ BOOL Create(HWND hWnd);
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-Das HWND zugeordneten Renderziel
+Der HWND, der diesem Renderziel zugeordnet ist
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird "false" zurückgegeben
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="detach"></a>  CHwndRenderTarget::Detach
+## <a name="chwndrendertargetdetach"></a><a name="detach"></a>CHwndRenderTarget::Detach
 
-Trennt die Render-Ziel-Schnittstelle des Objekts
+Trennt die Renderzielschnittstelle vom Objekt
 
 ```
 ID2D1HwndRenderTarget* Detach();
@@ -153,11 +153,11 @@ ID2D1HwndRenderTarget* Detach();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf getrennten rendern, Ziel-Schnittstelle.
+Zeiger auf die getrennte Renderzielschnittstelle.
 
-##  <a name="gethwnd"></a>  CHwndRenderTarget::GetHwnd
+## <a name="chwndrendertargetgethwnd"></a><a name="gethwnd"></a>CHwndRenderTarget::GetHwnd
 
-Gibt das zugeordnete HWND-Renderziel.
+Gibt die HWND zurück, die diesem Renderziel zugeordnet ist.
 
 ```
 HWND GetHwnd() const;
@@ -165,11 +165,11 @@ HWND GetHwnd() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das HWND zugeordneten Renderziel.
+Die DIESEM Renderziel zugeordnete HWND.
 
-##  <a name="gethwndrendertarget"></a>  CHwndRenderTarget::GetHwndRenderTarget
+## <a name="chwndrendertargetgethwndrendertarget"></a><a name="gethwndrendertarget"></a>CHwndRenderTarget::GetHwndRenderTarget
 
-Gibt die ID2D1HwndRenderTarget-Schnittstelle.
+Gibt die ID2D1HwndRenderTarget-Schnittstelle zurück.
 
 ```
 ID2D1HwndRenderTarget* GetHwndRenderTarget();
@@ -177,9 +177,9 @@ ID2D1HwndRenderTarget* GetHwndRenderTarget();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1HwndRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1HwndRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="m_phwndrendertarget"></a>  CHwndRenderTarget::m_pHwndRenderTarget
+## <a name="chwndrendertargetm_phwndrendertarget"></a><a name="m_phwndrendertarget"></a>CHwndRenderTarget::m_pHwndRenderTarget
 
 Ein Zeiger auf ein ID2D1HwndRenderTarget-Objekt.
 
@@ -187,9 +187,9 @@ Ein Zeiger auf ein ID2D1HwndRenderTarget-Objekt.
 ID2D1HwndRenderTarget* m_pHwndRenderTarget;
 ```
 
-##  <a name="operator_id2d1hwndrendertarget_star"></a>  CHwndRenderTarget::operator ID2D1HwndRenderTarget *
+## <a name="chwndrendertargetoperator-id2d1hwndrendertarget"></a><a name="operator_id2d1hwndrendertarget_star"></a>CHwndRenderTarget::operator ID2D1HwndRenderTarget*
 
-Gibt die ID2D1HwndRenderTarget-Schnittstelle.
+Gibt die ID2D1HwndRenderTarget-Schnittstelle zurück.
 
 ```
 operator ID2D1HwndRenderTarget*();
@@ -197,11 +197,11 @@ operator ID2D1HwndRenderTarget*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1HwndRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1HwndRenderTarget-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="recreate"></a>  CHwndRenderTarget::ReCreate
+## <a name="chwndrendertargetrecreate"></a><a name="recreate"></a>CHwndRenderTarget::ReCreate
 
-Ein Renderziel, die dem Fenster zugeordneten erstellt erneut
+Erstellt ein Renderziel, das dem Fenster zugeordnet ist
 
 ```
 BOOL ReCreate(HWND hWnd);
@@ -210,15 +210,15 @@ BOOL ReCreate(HWND hWnd);
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-Das HWND zugeordneten Renderziel
+Der HWND, der diesem Renderziel zugeordnet ist
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird FALSE zurückgegeben.
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
-##  <a name="resize"></a>  CHwndRenderTarget::Resize
+## <a name="chwndrendertargetresize"></a><a name="resize"></a>CHwndRenderTarget::Größe ändern
 
-Ändert die Größe des Renderziels in die angegebene Pixelgröße
+Ändert die Größe des Renderziels auf die angegebene Pixelgröße
 
 ```
 BOOL Resize(const CD2DSizeU& size);
@@ -226,12 +226,12 @@ BOOL Resize(const CD2DSizeU& size);
 
 ### <a name="parameters"></a>Parameter
 
-*size*<br/>
-Die neue Größe des Renderziels in Pixeln
+*Größe*<br/>
+Die neue Größe des Renderziels in Gerätepixeln
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Methode erfolgreich ist, wird "true" zurückgegeben. Andernfalls wird FALSE zurückgegeben.
+Wenn die Methode erfolgreich ist, wird TRUE zurückgegeben. Andernfalls wird FALSE zurückgegeben.
 
 ## <a name="see-also"></a>Siehe auch
 

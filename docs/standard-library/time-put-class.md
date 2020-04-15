@@ -14,16 +14,16 @@ helpviewer_keywords:
 - std::time_put [C++], do_put
 - std::time_put [C++], put
 ms.assetid: df79493e-3331-48d2-97c3-ac3a745f0791
-ms.openlocfilehash: 2c0ae501693a8abffc72a23be9c427f31bad65b6
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 10691de0a583dc7d5a66c319968d90978bf59480
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79426090"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81368001"
 ---
 # <a name="time_put-class"></a>time_put-Klasse
 
-Die Klassen Vorlage beschreibt ein Objekt, das als Gebiets Schema Aspekt fungieren kann, um Konvertierungen von Uhrzeitwerten in Sequenzen vom Typ `CharType`zu steuern.
+Die Klassenvorlage beschreibt ein Objekt, das als Gebietsschema dienen kann, um Konvertierungen von Zeitwerten in Sequenzen vom Typ `CharType`zu steuern.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,43 +35,43 @@ class time_put : public locale::facet;
 
 ### <a name="parameters"></a>Parameter
 
-*CharType* -\
+*Chartype*\
 Der Typ, der innerhalb eines Programms verwendet wird, um Zeichen zu codieren.
 
-*OutputIterator* -\
+*OutputIterator*\
 Der Typ des Iterators, in den die Time-Put-Funktionen ihre Ausgabe schreiben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wie bei jedem Gebietsschemafacet hat die statische Objekt-ID einen anfänglichen gespeicherten Wert von NULL. Beim ersten Versuch, auf den gespeicherten Wert zuzugreifen, wird ein eindeutiger positiver Wert in **id** gespeichert.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[time_put](#time_put)|Der Konstruktor für Objekte des Typs `time_put`.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Typname|Beschreibung|
+|Name des Typs|BESCHREIBUNG|
 |-|-|
 |[char_type](#char_type)|Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.|
 |[iter_type](#iter_type)|Ein Typ, der einen Ausgabeiterator beschreibt.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Memberfunktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[do_put](#do_put)|Eine virtuelle Funktion, die Zeit- und Datumsinformationen als Sequenz von `CharType`-Objekten ausgibt.|
-|[put](#put)|Gibt Zeit- und Datumsinformationen als Sequenz von `CharType`-Objekten aus.|
+|[setzen](#put)|Gibt Zeit- und Datumsinformationen als Sequenz von `CharType`-Objekten aus.|
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-**Header:** \<Gebiets Schema >
+**Header:** \<locale>
 
 **Namespace:** std
 
-## <a name="char_type"></a> time_put::char_type
+## <a name="time_putchar_type"></a><a name="char_type"></a>time_put::char_type
 
 Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwendet wird.
 
@@ -79,11 +79,11 @@ Ein Typ, mit dem ein Zeichen beschrieben wird, das von einem Gebietsschema verwe
 typedef CharType char_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `CharType`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `CharType` dar.
 
-## <a name="do_put"></a> time_put::do_put
+## <a name="time_putdo_put"></a><a name="do_put"></a>time_put::do_put
 
 Eine virtuelle Funktion, die Zeit- und Datumsinformationen als Sequenz von `CharType`-Objekten ausgibt.
 
@@ -98,13 +98,13 @@ virtual iter_type do_put(
 
 ### <a name="parameters"></a>Parameter
 
-*nächste*\
+*nächster*\
 Ein Ausgabeiterator, in den die Zeichensequenz für Zeit und Datum eingefügt werden soll.
 
-*_Iosbase*\
+*_iosbase*\
 Nicht verwendet.
 
-*_Pt*\
+*_pt*\
 Die Zeit- und Datumsinformationen, die ausgegeben werden.
 
 *_Fmt*\
@@ -117,17 +117,17 @@ Ein Modifizierer für das Format. Siehe [strftime, wcsftime, _strftime_l, _wcsft
 
 Ein Iterator an die erste Position hinter dem letzten eingefügten Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die virtuelle geschützte Member-Funktion generiert sequenzielle Elemente, beginnend bei `next` aus Zeitwerten, die im-Objekt gespeichert sind, \* `_Pt`vom Typ `tm`. Die Funktion gibt einen Iterator zurück, der die nächste Stelle zum Einfügen eines Elements nach der generierten Ausgabe festlegt.
+Die Virtual Protected Member-Funktion `next` generiert sequenzielle Elemente \* `_Pt`ab `tm`Zeitwerten, die im Objekt vom Typ gespeichert sind. Die Funktion gibt einen Iterator zurück, der die nächste Stelle zum Einfügen eines Elements nach der generierten Ausgabe festlegt.
 
-Die Ausgabe wird von denselben Regeln generiert, die von `strftime`verwendet werden, mit einem letzten Argument *_Pt*, um eine Reihe von **char** -Elementen in einem Array zu generieren. Es wird davon ausgegangen, dass jedes solche **char** -Element einem äquivalenten Element vom Typ `CharType` durch eine einfache 1-zu-Eins-Zuordnung zugeordnet wird. Wenn *_mod* gleich 0 (null) ist, ist das effektive Format "% F", wobei F durch *_Fmt*ersetzt wird. Andernfalls ist das effektive Format "% MF", wobei M durch *_mod*ersetzt wird.
+Die Ausgabe wird durch die `strftime`gleichen Regeln generiert, die von verwendet werden, mit dem letzten Argument *von _Pt*, um eine Reihe von **char-Elementen** in einem Array zu generieren. Es wird davon ausgegangen, dass jedes dieser `CharType` **char-Elemente** einem äquivalenten Element des Typs durch eine einfache 1:1-Zuordnung zugeordnet wird. Wenn *_Mod* gleich Null ist, ist das effektive Format "%F", wobei F durch *_Fmt*ersetzt wird. Andernfalls ist das effektive Format "%MF", wobei M durch *_Mod*ersetzt wird.
 
 ### <a name="example"></a>Beispiel
 
 Siehe das Beispiel für [put](#put), mit dem `do_put` aufgerufen wird.
 
-## <a name="iter_type"></a> time_put::iter_type
+## <a name="time_putiter_type"></a><a name="iter_type"></a>time_put::iter_type
 
 Ein Typ, der einen Ausgabeiterator beschreibt.
 
@@ -135,11 +135,11 @@ Ein Typ, der einen Ausgabeiterator beschreibt.
 typedef OutputIterator iter_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Type stellt ein Synonym für den Vorlagenparameter `OutputIterator`dar.
+Der Type stellt ein Synonym für den Vorlagenparameter `OutputIterator` dar.
 
-## <a name="put"></a> time_put::put
+## <a name="time_putput"></a><a name="put"></a>time_put::put
 
 Gibt Zeit- und Datumsinformationen als Sequenz von `CharType`-Objekten aus.
 
@@ -161,16 +161,16 @@ iter_type put(iter_type next,
 
 ### <a name="parameters"></a>Parameter
 
-*nächste*\
+*nächster*\
 Ein Ausgabeiterator, in den die Zeichensequenz für Zeit und Datum eingefügt werden soll.
 
-*_Iosbase*\
+*_iosbase*\
 Nicht verwendet.
 
 *_Fill*\
-Das Zeichen vom Typ, das für den Abstand verwendet `CharType`.
+Das Zeichen `CharType` des Typs, der für den Abstand verwendet wird.
 
-*_Pt*\
+*_pt*\
 Die Zeit- und Datumsinformationen, die ausgegeben werden.
 
 *_Fmt*\
@@ -179,19 +179,19 @@ Das Format der Ausgabe. Siehe [strftime, wcsftime, _strftime_l, _wcsftime_l](../
 *_Mod*\
 Ein Modifizierer für das Format. Siehe [strftime, wcsftime, _strftime_l, _wcsftime_l](../c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l.md) für gültige Werte.
 
-*erste*\
+*Ersten*\
 Der Anfang der Formatierungszeichenfolge für die Ausgabe. Siehe [strftime, wcsftime, _strftime_l, _wcsftime_l](../c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l.md) für gültige Werte.
 
-*Letzter*\
+*letzte*\
 Das Ende der Formatierungszeichenfolge für die Ausgabe. Siehe [strftime, wcsftime, _strftime_l, _wcsftime_l](../c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l.md) für gültige Werte.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Iterator an die erste Position hinter dem letzten eingefügten Element.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion gibt [Do_put](#do_put)(`next`, `_Iosbase`, `_Fill`, `_Pt`, `_Fmt`, `_Mod`) zurück. Die zweite Element Funktion kopiert in \* `next` + + beliebiges Element im Intervall [`first`, `last`), nicht in Prozent (%). Für einen Prozentwert, auf den das Zeichen *C* im Intervall [`first``last`) folgt, wertet die Funktion stattdessen `next` = `do_put`(`next`, `_Iosbase`, `_Fill`, `_Pt`, *C*, 0) aus und überspringt in der Vergangenheit *C*. Wenn *C* jedoch ein Qualifiziererzeichen aus dem Satz EOQ # ist, gefolgt von einem Zeichen `C2` im Intervall [`first`, `last`), wertet die Funktion stattdessen `next` = `do_put`(`next`, `_Iosbase`, `_Fill`, `_Pt`, `C2`, *C*) aus und überspringt den letzten `C2`.
+Die erste Memberfunktion`next`gibt `_Iosbase` `_Fill` [do_put](#do_put)zurück `_Mod`( , , , `_Pt`, `_Fmt`, . Die zweite Memberfunktion \* `next` kopiert in ++ `first`jedes `last`Element im Intervall [ , ) mit einem Prozent (%). Für einen Prozentsatz gefolgt von einem `first`Zeichen `last` `next`  =  `do_put` *C* im Intervall `next`[ `_Iosbase` `_Fill`, `_Pt`) wertet die Funktion stattdessen ( , , , , *C*, 0) aus und überspringt *C*. Wenn *C* jedoch ein Qualifiziererzeichen aus dem Satz `C2` EOQ ist, gefolgt von `next`  =  `do_put`einem `next` `_Iosbase`Zeichen `_Fill` `_Pt`im `C2`Intervall `first`[ , `last`) wertet die Funktion stattdessen ( , , , , , , *C*) aus und überspringt . `C2`
 
 ### <a name="example"></a>Beispiel
 
@@ -237,7 +237,7 @@ num_put( ) = x: 05:30:40 07/04/00
 strftime( ) = x: 05:30:40 07/04/00
 ```
 
-## <a name="time_put"></a> time_put::time_put
+## <a name="time_puttime_put"></a><a name="time_put"></a>time_put::time_put
 
 Konstruktor für Objekte des Typs `time_put`.
 
@@ -247,23 +247,23 @@ explicit time_put(size_t _Refs = 0);
 
 ### <a name="parameters"></a>Parameter
 
-*_Refs*\
+*_refs*\
 Integerwert, der zum Angeben des Speicherverwaltungstyps für das Objekt verwendet wird.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die möglichen Werte für den *_Refs* -Parameter und ihre Bedeutung lauten:
+Die möglichen Werte für den *parameter _Refs* und deren Signifikanz sind:
 
 - 0: Die Lebensdauer des Objekts wird von den Gebietsschemas verwaltet, in denen es enthalten ist.
 
 - 1: Die Lebensdauer des Objekts muss manuell verwaltet werden.
 
-- \> 1: diese Werte sind nicht definiert.
+- \>1: Diese Werte sind nicht definiert.
 
-Der Konstruktor initialisiert sein Basisobjekt mit [locale:: Face(](../standard-library/locale-class.md#facet_class) *_Refs*).
+Der Konstruktor initialisiert sein Basisobjekt mit [locale::facet](../standard-library/locale-class.md#facet_class)(*_Refs*).
 
 ## <a name="see-also"></a>Siehe auch
 
-[\<locale>](../standard-library/locale.md)\
+[\<Gebietsschema>](../standard-library/locale.md)\
 [time_base-Klasse](../standard-library/time-base-class.md)\
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

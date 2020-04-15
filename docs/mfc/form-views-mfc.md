@@ -8,55 +8,55 @@ helpviewer_keywords:
 - forms-based applications [MFC]
 - forms [MFC], adding to applications
 ms.assetid: efbe73c1-4ca4-4613-aac2-30d916e92c0e
-ms.openlocfilehash: f93f65e949c18ddb1ad5dba859ba8c4832abac8f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5e8912c9013175fe254b2f4a4a968a67fd071f39
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62392829"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81365295"
 ---
 # <a name="form-views-mfc"></a>Formularansichten (MFC)
 
-Sie können alle Visual C++-Anwendung mit Unterstützung für die MFC-Bibliotheken, einschließlich Formen Hinzufügen einer [Forms basierende Anwendung](../mfc/reference/creating-a-forms-based-mfc-application.md) (eine, deren View-Klasse abgeleitet ist `CFormView`). Wenn Sie Ihre Anwendung zur Unterstützung von Formularen anfänglich nicht erstellt haben, wird Visual C++ diese Unterstützung für die Sie hinzufügen, wenn Sie ein neues Formular einfügen. In einer SDI- oder MDI-Anwendung, die dem implementiert die Standardseite [Dokument-/Ansichtsarchitektur](../mfc/document-view-architecture.md), wenn der Benutzer wählt die **neu** Befehl (standardmäßig auf die **Datei** Menü), Visual C++ wird der Benutzer zur Auswahl der verfügbaren Formulare aufgefordert.
+Sie können Formulare zu jeder Visual C++-Anwendung hinzufügen, die die MFC-Bibliotheken unterstützt, einschließlich einer [formularbasierten Anwendung](../mfc/reference/creating-a-forms-based-mfc-application.md) (eine Anwendung, deren Ansichtsklasse von `CFormView`abgeleitet ist). Wenn Sie Ihre Anwendung zunächst nicht zur Unterstützung von Formularen erstellt haben, fügt Visual C++ diese Unterstützung für Sie hinzu, wenn Sie ein neues Formular einfügen. In einer SDI- oder MDI-Anwendung, die die [Standarddokument-/Ansichtsarchitektur](../mfc/document-view-architecture.md)implementiert, wenn der Benutzer den Befehl **Neu** (standardmäßig im Menü **Datei)** wählt, fordert Visual C++ den Benutzer auf, aus den verfügbaren Formularen auszuwählen.
 
-Mit einer SDI-Anwendung, wenn der Benutzer wählt die **neu** Befehl die aktuelle Instanz des Formulars wird weiterhin ausgeführt, aber eine neue Instanz der Anwendung mit das ausgewählte Formular wird erstellt, wenn keiner gefunden wird. In einer MDI-Anwendung, die aktuelle Instanz des Formulars ausgeführt, wenn der Benutzer weiterhin die **neu** Befehl.
+Wenn der Benutzer bei einer SDI-Anwendung den Befehl **Neu** auswählt, wird die aktuelle Instanz des Formulars weiterhin ausgeführt, aber eine neue Instanz der Anwendung mit dem ausgewählten Formular wird erstellt, wenn keine Instanz gefunden wird. In einer MDI-Anwendung wird die aktuelle Instanz des Formulars weiterhin ausgeführt, wenn der Benutzer den Befehl **Neu** auswählt.
 
 > [!NOTE]
->  Sie können ein Formular in eine auf Dialogfeldern basierende Anwendung einfügen (, deren Dialogfeldklasse basiert auf, einer `CDialog` und eine Klasse wird in der Ansicht nicht implementiert). Allerdings ohne die Dokument-/Ansichtarchitektur, Visual C++ automatisch implementiert nicht die **Datei**&#124;**neu** Funktionalität. Sie müssen eine Möglichkeit für den Benutzer an zusätzliche Formulare, z. B. durch die Implementierung ein Dialogfeld im Registerformat mit verschiedenen Eigenschaftenseiten erstellen.
+> Sie können ein Formular in eine dialogbasierte Anwendung einfügen `CDialog` (eine, deren Dialogklasse basiert und eine, in der keine Ansichtsklasse implementiert ist). Ohne die Dokument-/Ansichtsarchitektur implementiert Visual C++ jedoch nicht automatisch die **Datei&#124;** **Neue** Funktionalität. Sie müssen eine Möglichkeit für den Benutzer erstellen, zusätzliche Formulare anzuzeigen, z. B. durch Implementieren eines Dialogfelds mit Registerkarten mit verschiedenen Eigenschaftenseiten.
 
-Wenn Sie ein neues Formular in Ihre Anwendung einfügen, führt Visual C++ Folgendes aus:
+Wenn Sie ein neues Formular in Ihre Anwendung einfügen, führt Visual C++ die folgenden Schritte aus:
 
-- Erstellt eine Klasse, die basierend auf einer der Formular-Stil-Klassen, die Sie auswählen (`CFormView`, `CRecordView`, `CDaoRecordView`, oder `CDialog`).
+- Erstellt eine Klasse basierend auf einer der von`CFormView`Ihnen `CRecordView` `CDaoRecordView`auswählen `CDialog`Klassen im Formularstil ( , , , oder ).
 
-- Erstellt eine Dialogfeldressource mit der entsprechenden Stile (oder Sie können eine vorhandenen Dialog-Ressource, die noch nicht zu einer Klasse wurde).
+- Erstellt eine Dialogressource mit entsprechenden Formatvorlagen (oder Sie können eine vorhandene Dialogfeldressource verwenden, die noch keiner Klasse zugeordnet ist).
 
-   Wenn Sie eine vorhandenen Dialog-Ressource auswählen, müssen Sie diese Stile festgelegt werden, mithilfe der Seite "Eigenschaften" für das Dialogfeld. Formate für ein Dialogfeld müssen Folgendes enthalten:
+   Wenn Sie eine vorhandene Dialogfeldressource auswählen, müssen Sie diese Formatvorlagen möglicherweise mithilfe der Eigenschaftenseite für das Dialogfeld festlegen. Stile für ein Dialogfeld müssen Folgendes enthalten:
 
-     **WS_CHILD**=On
+     **WS_CHILD**=Ein
 
-     **WS_BORDER**=Off
+     **WS_BORDER**=Aus
 
-     **WS_VISIBLE**=Off
+     **WS_VISIBLE**=Aus
 
-     **WS_CAPTION**=Off
+     **WS_CAPTION**=Aus
 
-Für Anwendungen, die basierend auf der Dokument-/Ansichtarchitektur die **Formulars** Befehl (Rechtsklick in der Klassenansicht) auch:
+Für Anwendungen, die auf der Dokument-/Ansichtsarchitektur basieren, gilt auch der Befehl **"Neues Formular"** (Rechtsklick in der Klassenansicht):
 
-- Erstellt eine `CDocument`-basierten Klasse
+- Erstellt `CDocument`eine -basierte Klasse
 
-   Anstatt eine neue Klasse erstellt haben, können Sie alle vorhandenen `CDocument`-basierten Klasse im Projekt.
+   Anstatt eine neue Klasse erstellen zu lassen, können Sie jede vorhandene -basierte `CDocument`Klasse in Ihrem Projekt verwenden.
 
-- Generiert eine Dokumentvorlage (abgeleitet `CDocument`) mit der Zeichenfolge, Menüs und Symbol für Ressourcen.
+- Generiert eine Dokumentvorlage `CDocument`(abgeleitet von ) mit Zeichenfolgen-, Menü- und Symbolressourcen.
 
-   Sie können auch auf der Basis der Vorlage für eine neue Klasse erstellen.
+   Sie können auch eine neue Klasse erstellen, auf der die Vorlage basieren soll.
 
-- Fügt einen Aufruf von `AddDocumentTemplate` in Ihrer Anwendungsverzeichnis `InitInstance` Code.
+- Fügt einen `AddDocumentTemplate` Aufruf im `InitInstance` Code Ihrer Anwendung hinzu.
 
-   Fügt dieser Code für jedes neue Formular erstellen, die Liste der verfügbaren Formulare des Formulars hinzugefügt, wenn der Benutzer auswählt Visual C++ die **neu** Befehl. Dieser Code umfasst verknüpfte Ressourcen-ID des Formulars und die Namen der der zugeordnete Dokument anzeigen und Frameklassen, aus denen die neue Form-Objekt besteht.
+   Visual C++ fügt diesen Code für jedes neue Formular hinzu, das Sie erstellen, wodurch das Formular der Liste der verfügbaren Formulare hinzugefügt wird, wenn der Benutzer den Befehl **Neu** auswählt. Dieser Code enthält die zugeordnete Ressourcen-ID des Formulars und die Namen der zugeordneten Dokument-, Ansichts- und Frameklassen, aus denen das neue Formularobjekt zusammen besteht.
 
    Dokumentvorlagen dienen als Verbindung zwischen Dokumenten, Rahmenfenstern und Ansichten. Für ein einzelnes Dokument können Sie viele Vorlagen erstellen.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 - [Erstellen einer formularbasierten Anwendung](../mfc/reference/creating-a-forms-based-mfc-application.md)
 
@@ -64,4 +64,4 @@ Weitere Informationen finden Sie unter:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Elemente der Benutzeroberfläche](../mfc/user-interface-elements-mfc.md)
+[Benutzeroberflächenelemente](../mfc/user-interface-elements-mfc.md)

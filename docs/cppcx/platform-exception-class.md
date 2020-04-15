@@ -10,16 +10,16 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::Exception Class
 ms.assetid: ca1d5a67-3a5a-48fe-8099-f9c38a2d2dce
-ms.openlocfilehash: d37d55c56e3c23d8d9129c985cb4272d2e3ee47a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4604769d9d1bc5fa848d15459327dc87d82f7016
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62368733"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81363779"
 ---
 # <a name="platformexception-class"></a>Platform::Exception-Klasse
 
-Stellt Fehler dar, die beim Ausführen einer Anwendung auftreten. Benutzerdefinierte Ausnahmeklassen können nicht von `Platform::Exception`abgeleitet werden. Wenn Sie eine benutzerdefinierte Ausnahme benötigen, können Sie `Platform::COMException` verwenden und ein app-spezifisches HRESULT angeben.
+Stellt Fehler dar, die bei der Anwendungsausführung auftreten. Benutzerdefinierte Ausnahmeklassen können nicht von `Platform::Exception`abgeleitet werden. Wenn Sie eine benutzerdefinierte Ausnahme benötigen, können Sie `Platform::COMException` verwenden und ein app-spezifisches HRESULT angeben.
 
 ## <a name="syntax"></a>Syntax
 
@@ -35,38 +35,38 @@ Die `Exception` -Klasse verfügt auch über die folgenden Arten von Membern.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[Exception::Exception](#ctor)|Initialisiert eine neue Instanz der `Exception`-Klasse.|
+|[Ausnahme::Ausnahme](#ctor)|Initialisiert eine neue Instanz der Klasse `Exception`.|
 
 ### <a name="methods"></a>Methoden
 
 Die `Exception` -Klasse erbt die Methoden `Equals()`, `Finalize()`,`GetHashCode()`,`GetType()`,`MemberwiseClose()`und `ToString()` von [Platform::Object Class](../cppcx/platform-object-class.md)abgeleitet werden. Die `Exception` -Klasse verfügt auch über die folgende Methode.
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[Exception::CreateException](#createexception)|Erstellt eine Ausnahme, die den angegebenen HRESULT-Wert darstellt.|
+|[Ausnahme::CreateException](#createexception)|Erstellt eine Ausnahme, die den angegebenen HRESULT-Wert darstellt.|
 
 ### <a name="properties"></a>Eigenschaften
 
 Die Ausnahmeklasse verfügt auch über die folgenden Eigenschaften:
 
-|Member|Beschreibung|
+|Member|BESCHREIBUNG|
 |------------|-----------------|
-|[Exception::HResult](#hresult)|Das HRESULT, das der Ausnahme entspricht.|
-|[Exception::Message](#message)|Eine Meldung, in der die Ausnahme beschrieben wird. Dieser Wert ist schreibgeschützt und kann nicht geändert werden, nachdem `Exception` erstellt wurde.|
+|[Ausnahme::HResult](#hresult)|Das HRESULT, das der Ausnahme entspricht.|
+|[Ausnahme::Nachricht](#message)|Eine Meldung, mit der die Ausnahme beschrieben wird. Dieser Wert ist schreibgeschützt und kann nicht geändert werden, nachdem `Exception` erstellt wurde.|
 
 ### <a name="requirements"></a>Anforderungen
 
-**Unterstützter Client (Min.):** Windows 8
+**Mindestens unterstützter Client:** Windows 8
 
-**Unterstützter Server (Min.):** Windows Server 2012
+**Minimal unterstützter Server:** Windows Server 2012
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
 **Metadaten:** platform.winmd
 
-## <a name="createexception"></a> Exception:: createexception-Methode
+## <a name="exceptioncreateexception-method"></a><a name="createexception"></a>Ausnahme::CreateException-Methode
 
 Erstellt ein Platform::Exception^ aus einem angegebenen HRESULT-Wert.
 
@@ -79,23 +79,23 @@ Exception^ CreateException(int32 hr, Platform::String^ message);
 
 ### <a name="parameters"></a>Parameter
 
-*hr*<br/>
-Ein HRESULT-Wert, den Sie in der Regel aus einem Aufruf an eine COM-Methode erhalten. Wenn der Wert 0 (null) die identisch mit S_OK ist ist, löst diese Methode [Platform:: InvalidArgumentException](../cppcx/platform-invalidargumentexception-class.md) da COM-Methoden keine Ausnahmen auslösen sollen.
+*Hr*<br/>
+Ein HRESULT-Wert, den Sie in der Regel aus einem Aufruf an eine COM-Methode erhalten. Wenn der Wert 0 ist, der S_OK entspricht, löst diese Methode [Platform::InvalidArgumentException](../cppcx/platform-invalidargumentexception-class.md) aus, da COM-Methoden, die erfolgreich sind, keine Ausnahmen auslösen sollten.
 
-*message*<br/>
+*Nachricht*<br/>
 Eine Zeichenfolge, die den Fehler beschreibt.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Eine Ausnahme, die den Fehler HRESULT darstellt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Verwenden Sie diese Methode, um eine Ausnahme aus einem HRESULT zu erstellen, die beispielsweise aus einem Aufruf einer COM-Schnittstellen-Methode zurückgegeben wird. Sie können die Überladung verwenden, die einen String^-Parameter erhält, um eine benutzerdefinierte Meldung bereitzustellen.
 
-Es wird dringend empfohlen, createexception zu verwenden, erstellen Sie eine stark typisierte Ausnahme anstelle erstellen eine [Platform:: COMException](../cppcx/platform-comexception-class.md) , die lediglich HRESULT enthält.
+Es wird dringend empfohlen, CreateException zu verwenden, um eine stark typisierte Ausnahme zu erstellen, anstatt eine [Platform::COMException](../cppcx/platform-comexception-class.md) zu erstellen, die lediglich das HRESULT enthält.
 
-## <a name="ctor"></a>  Exception:: Exception-Konstruktor
+## <a name="exceptionexception-constructor"></a><a name="ctor"></a>Ausnahme::Ausnahmekonstruktor
 
 Initialisiert eine neue Instanz der Exception-Klasse.
 
@@ -108,13 +108,13 @@ Exception(int32 hresult, ::Platform::String^ message);
 
 ### <a name="parameters"></a>Parameter
 
-*hresult*<br/>
+*Hresult*<br/>
 Der Fehler HRESULT, der durch die Ausnahme repräsentiert wird.
 
-*message*<br/>
+*Nachricht*<br/>
 Eine vom Benutzer angegebene Meldung, beispielsweise vorschreibender Text, der der Ausnahme zugeordnet ist. Im Allgemeinen sollten Sie die zweite Überladung verwenden, um eine beschreibende Meldung bereitzustellen, die möglichst spezifisch erläutert, wie und warum der Fehler aufgetreten ist.
 
-## <a name="hresult"></a>  Exception:: HRESULT-Eigenschaft
+## <a name="exceptionhresult-property"></a><a name="hresult"></a>Ausnahme::HResult-Eigenschaft
 
 Das HRESULT, das der Ausnahme entspricht.
 
@@ -129,11 +129,11 @@ public:
 
 Der HRESULT-Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die meisten Ausnahmen fangen als COM-Fehler an, die als HRESULT-Werte zurückgegeben werden. C++/CX konvertiert diese Werte in Platform::Exception^-Objekte, und diese Eigenschaft speichert den Wert des ursprünglichen Fehlercodes.
 
-## <a name="message"></a> Exception:: Message-Eigenschaft
+## <a name="exceptionmessage-property"></a><a name="message"></a>Ausnahme::Message-Eigenschaft
 
 Die Meldung, in der der Fehler beschrieben wird.
 
@@ -147,9 +147,9 @@ public:property String^ Message;
 
 In den Ausnahmen, die aus der Windows Runtime stammen, ist dieses eine vom System bereitgestellte Beschreibung des Fehlers.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-In Windows 8 ist diese Eigenschaft schreibgeschützt, da Ausnahmen in dieser Version der Windows-Runtime über die ABI nur als HRESULTS transportiert werden. Bei Windows 8.1 werden umfangreichere Ausnahmeinformationen über die ABI transportiert, und Sie können eine benutzerdefinierte Meldung bereitstellen, auf die andere Komponenten programmgesteuert zugreifen können. Weitere Informationen finden Sie unter [Ausnahmen (C++ / CX)](../cppcx/exceptions-c-cx.md).
+In Windows 8 ist diese Eigenschaft schreibgeschützt, da Ausnahmen in dieser Version der Windows-Runtime nur als HRESULTS über das ABI transportiert werden. Bei Windows 8.1 werden umfangreichere Ausnahmeinformationen über die ABI transportiert, und Sie können eine benutzerdefinierte Meldung bereitstellen, auf die andere Komponenten programmgesteuert zugreifen können. Weitere Informationen finden Sie unter [Ausnahmen (C++/CX)](../cppcx/exceptions-c-cx.md).
 
 ## <a name="see-also"></a>Siehe auch
 

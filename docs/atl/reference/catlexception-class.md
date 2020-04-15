@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlException class
 ms.assetid: 3fd7b041-f70d-4292-b947-0d70781d95a8
-ms.openlocfilehash: a6ed6062be02fddc111e4eda4d26226b7a7a0c63
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 6da56e4d6c443520eb6f857624a5923e71a1e580
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62260674"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81318996"
 ---
 # <a name="catlexception-class"></a>CAtlException-Klasse
 
@@ -30,33 +30,33 @@ class CAtlException
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CAtlException::CAtlException](#catlexception)|Der Konstruktor.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlException::operator HRESULT](#operator_hresult)|Wandelt das aktuelle Objekt in ein HRESULT-Wert.|
+|[CAtlException::operator HRESULT](#operator_hresult)|Gibt das aktuelle Objekt in einen HRESULT-Wert um.|
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CAtlException::m_hr](#m_hr)|Die Variable vom Typ HRESULT vom Objekt erstellt und verwendet, um den Fehlerzustand zu speichern.|
+|[CAtlException::m_hr](#m_hr)|Die Variable vom Typ HRESULT, die vom Objekt erstellt und zum Speichern der Fehlerbedingung verwendet wird.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein `CAtlException` Objekt stellt eine Ausnahmebedingung, die im Zusammenhang mit einem ATL-Vorgang dar. Die `CAtlException` Klasse enthält einen öffentlichen Datenmember, die den Statuscode, der angibt, des Grund für die Ausnahme, und ein Cast-Operator, der Ihnen die Möglichkeit, die Ausnahme zu behandeln, als handele es sich um ein HRESULT speichert.
+Ein `CAtlException` Objekt stellt eine Ausnahmebedingung dar, die sich auf einen ATL-Vorgang bezieht. Die `CAtlException` Klasse enthält einen öffentlichen Datenmember, der den Statuscode speichert, der den Grund für die Ausnahme angibt, und einen Umwandlungsoperator, mit dem Sie die Ausnahme wie ein HRESULT behandeln können.
 
-Rufen Sie in der Regel `AtlThrow` anstatt zu erstellen einen `CAtlException` direkt.
+Im Allgemeinen rufen `AtlThrow` Sie ein `CAtlException` Objekt auf, anstatt es direkt zu erstellen.
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlexcept.h
+**Kopfzeile:** atlexcept.h
 
-##  <a name="catlexception"></a>  CAtlException::CAtlException
+## <a name="catlexceptioncatlexception"></a><a name="catlexception"></a>CAtlException::CAtlException
 
 Der Konstruktor.
 
@@ -67,30 +67,30 @@ CAtlException() throw();
 
 ### <a name="parameters"></a>Parameter
 
-*hr*<br/>
+*Hr*<br/>
 Der HRESULT-Fehlercode.
 
-##  <a name="operator_hresult"></a>  CAtlException::operator HRESULT
+## <a name="catlexceptionoperator-hresult"></a><a name="operator_hresult"></a>CAtlException::operator HRESULT
 
-Wandelt das aktuelle Objekt in ein HRESULT-Wert.
+Gibt das aktuelle Objekt in einen HRESULT-Wert um.
 
 ```
 operator HRESULT() const throw ();
 ```
 
-##  <a name="m_hr"></a>  CAtlException::m_hr
+## <a name="catlexceptionm_hr"></a><a name="m_hr"></a>CAtlException::m_hr
 
-Der HRESULT-Datenmember.
+Das HRESULT-Datenelement.
 
 ```
 HRESULT m_hr;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der Datenmember, die die fehlerbedingung speichert. Der HRESULT-Wert wird festgelegt, durch den Konstruktor [CAtlException::CAtlException](#catlexception).
+Das Datenelement, das die Fehlerbedingung speichert. Der HRESULT-Wert wird vom Konstruktor [CAtlException::CAtlException](#catlexception)festgelegt.
 
 ## <a name="see-also"></a>Siehe auch
 
 [AtlThrow](debugging-and-error-reporting-global-functions.md#atlthrow)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

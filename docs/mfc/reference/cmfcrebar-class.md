@@ -1,5 +1,5 @@
 ---
-title: Cmatkrebar-Klasse
+title: CMFCReBar-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCReBar
@@ -28,17 +28,18 @@ helpviewer_keywords:
 - CMFCReBar [MFC], OnUpdateCmdUI
 - CMFCReBar [MFC], SetPaneAlignment
 ms.assetid: 02a60e29-6224-49c1-9e74-e0a7d9f8d023
-ms.openlocfilehash: d348cf7aac57ce213e4d3f602501d12cee8e20d8
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: a07f30fb00dd00e7a6315b8935731ccfc7500843
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69505440"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361697"
 ---
-# <a name="cmfcrebar-class"></a>Cmatkrebar-Klasse
+# <a name="cmfcrebar-class"></a>CMFCReBar-Klasse
 
-Ein `CMFCReBar` -Objekt ist eine Steuerleiste, die Layout-, Persistenz-und Zustandsinformationen für Grund leisten-Steuerelemente bereitstellt.
-Weitere Informationen finden Sie im Quellcode, der sich im **Ordner\\VC atlmfc\\\\src MFC** Ihrer Visual Studio-Installation befindet.
+Ein `CMFCReBar` Objekt ist eine Steuerleiste, die Layout-, Persistenz- und Statusinformationen für Bewehrungssteuerelemente bereitstellt.
+Weitere Informationen finden Sie im Quellcode im **Ordner VC\\atlmfc\\src\\mfc** Ihrer Visual Studio-Installation.
+
 ## <a name="syntax"></a>Syntax
 
 ```
@@ -49,49 +50,49 @@ class CMFCReBar : public CPane
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CMFCReBar::AddBar](#addbar)|Fügt ein Band zu einer Info Leiste hinzu.|
-|[CMFCReBar::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [cbasepane:: calcfixedlayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
-|[CMFCReBar::CanFloat](#canfloat)|(Überschreibt [cbasepane:: canfloat](../../mfc/reference/cbasepane-class.md#canfloat).)|
-|[Cmatkrebar:: Create](#create)|Erstellt das Grund leisten-Steuerelement und fügt es `CMFCReBar` an das-Objekt an.|
-|[CMFCReBar::EnableDocking](#enabledocking)|(Überschreibt [cbasepane:: EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking).)|
-|[CMFCReBar::GetReBarBandInfoSize](#getrebarbandinfosize)||
-|[CMFCReBar::GetReBarCtrl](#getrebarctrl)|Ermöglicht den direkten Zugriff auf das zugrunde liegende allgemeine " [krebarctrl](../../mfc/reference/crebarctrl-class.md) "-Steuerelement.|
-|[CMFCReBar::OnShowControlBarMenu](#onshowcontrolbarmenu)|(Überschreibt [CPANE:: onshowcontrolbarmenu](../../mfc/reference/cpane-class.md#onshowcontrolbarmenu).)|
-|[CMFCReBar::OnToolHitTest](#ontoolhittest)|(Überschreibt [CWnd:: ontoolhittest](../../mfc/reference/cwnd-class.md#ontoolhittest).)|
-|[CMFCReBar::OnUpdateCmdUI](#onupdatecmdui)|(Überschreibt [cbasepane:: OnUpdateCmdUI](cbasepane-class.md).)|
-|[CMFCReBar::SetPaneAlignment](#setpanealignment)|(Überschreibt [cbasepane:: setpanealignment](../../mfc/reference/cbasepane-class.md#setpanealignment).)|
+|[CMFCReBar::AddBar](#addbar)|Fügt einer Bewehrung ein Band hinzu.|
+|[CMFCReBar::CalcFixedLayout](#calcfixedlayout)|(Überschreibt [CBasePane::CalcFixedLayout](../../mfc/reference/cbasepane-class.md#calcfixedlayout).)|
+|[CMFCReBar::CanFloat](#canfloat)|(Überschreibt [CBasePane::CanFloat](../../mfc/reference/cbasepane-class.md#canfloat).)|
+|[CMFCReBar::Erstellen](#create)|Erstellt das Bewehrungssteuerelement und `CMFCReBar` fügt es an das Objekt an.|
+|[CMFCReBar::EnableDocking](#enabledocking)|(Überschreibt [CBasePane::EnableDocking](../../mfc/reference/cbasepane-class.md#enabledocking).)|
+|[CMFCReBar::GetRebarBandInfoSize](#getrebarbandinfosize)||
+|[CMFCReBar::GetReBarCtrl](#getrebarctrl)|Bietet direkten Zugriff auf das zugrunde liegende gemeinsame [CReBarCtrl-Steuerelement.](../../mfc/reference/crebarctrl-class.md)|
+|[CMFCReBar::OnShowControlBarMenu](#onshowcontrolbarmenu)|(Überschreibt [CPane::OnShowControlBarMenu](../../mfc/reference/cpane-class.md#onshowcontrolbarmenu).)|
+|[CMFCRebar::OnToolHittest](#ontoolhittest)|(Überschreibt [CWnd::OnToolHitTest](../../mfc/reference/cwnd-class.md#ontoolhittest).)|
+|[CMFCReBar::OnUpdateCmdUI](#onupdatecmdui)|(Überschreibt [CBasePane::OnUpdateCmdUI](cbasepane-class.md).)|
+|[CMFCReBar::SetPaneAlignment](#setpanealignment)|(Überschreibt [CBasePane::SetPaneAlignment](../../mfc/reference/cbasepane-class.md#setpanealignment).)|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Ein `CMFCReBar` -Objekt kann eine Vielzahl untergeordneter Fenster enthalten. Dies schließt Bearbeitungsfelder, Symbolleisten und Listenfelder ein. Sie können die Größe der Info Leiste Programm gesteuert ändern, oder der Benutzer kann die Größe der Info Leiste manuell ändern, indem er seine Zieh Punkt Leiste zieht. Sie können auch den Hintergrund eines Grund leisten-Objekts auf eine Bitmap Ihrer Wahl festlegen.
+Ein `CMFCReBar` Objekt kann eine Vielzahl von untergeordneten Fenstern enthalten. Dazu gehören Bearbeitungsfelder, Symbolleisten und Listenfelder. Sie können die Größe der Bewehrung programmgesteuert ändern, oder der Benutzer kann die Größe der Bewehrung manuell ändern, indem Er die Greiferleiste gezogen wird. Sie können den Hintergrund eines Bewehrungsobjekts auch auf eine Bitmap Ihrer Wahl festlegen.
 
-Ein Grund leisten-Objekt verhält sich ähnlich wie ein Toolbar-Objekt. Ein Grund leisten-Steuerelement kann ein oder mehrere Bänder enthalten, und jedes Band kann eine Zieh Punkt Leiste, eine Bitmap, eine Text Bezeichnung und ein untergeordnetes Fenster enthalten.
+Ein Bewehrungsobjekt verhält sich ähnlich wie ein Symbolleistenobjekt. Ein Bewehrungssteuerelement kann ein oder mehrere Bänder enthalten, und jedes Band kann eine Greiferleiste, eine Bitmap, eine Textbeschriftung und ein untergeordnetes Fenster enthalten.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCReBar` -Klasse. Das Beispiel zeigt, wie Sie ein Grund leisten-Steuerelement erstellen und diesem ein Band hinzufügen. Das Band fungiert als interne Symbolleiste. Dieser Code Ausschnitt ist Teil des Info leisten- [Test](../../overview/visual-cpp-samples.md)Beispiels.
+Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in der `CMFCReBar` -Klasse. Das Beispiel zeigt, wie Sie ein Bewehrungssteuerelement erstellen und ihm ein Band hinzufügen. Das Band fungiert als interne Symbolleiste. Dieser Codeausschnitt ist Teil des [Rebar-Testbeispiels](../../overview/visual-cpp-samples.md).
 
 [!code-cpp[NVC_MFC_RebarTest#1](../../mfc/reference/codesnippet/cpp/cmfcrebar-class_1.h)]
 [!code-cpp[NVC_MFC_RebarTest#2](../../mfc/reference/codesnippet/cpp/cmfcrebar-class_2.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[CObject](../../mfc/reference/cobject-class.md)\
-└&nbsp;[CCmdTarget](../../mfc/reference/ccmdtarget-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[CWnd](../../mfc/reference/cwnd-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[Cbasepane](../../mfc/reference/cbasepane-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[CPANE](../../mfc/reference/cpane-class.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└&nbsp;[CMF-Leiste](../../mfc/reference/cmfcrebar-class.md)
+[Cobject](../../mfc/reference/cobject-class.md)\
+&nbsp;[CCmdTarget](../../mfc/reference/ccmdtarget-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CWnd](../../mfc/reference/cwnd-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CBasePane](../../mfc/reference/cbasepane-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CPane](../../mfc/reference/cpane-class.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€&nbsp;[CMFCReBar](../../mfc/reference/cmfcrebar-class.md)
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrebar. h
+**Kopf:** afxRebar.h
 
-##  <a name="addbar"></a>CMF-Leiste:: addbar
+## <a name="cmfcrebaraddbar"></a><a name="addbar"></a>CMFCReBar::AddBar
 
-Fügt ein Band zu einer Info Leiste hinzu.
+Fügt einer Bewehrung ein Band hinzu.
 
 ```
 BOOL AddBar(
@@ -110,31 +111,31 @@ BOOL AddBar(
 
 ### <a name="parameters"></a>Parameter
 
-*pBar*<br/>
-[in, out] Ein Zeiger auf das untergeordnete Fenster, das in die Info Leiste eingefügt werden soll. Das Objekt, auf das verwiesen wird, muss über das Fenster **WS_CHILD** verfügen.
+*Pbar*<br/>
+[in, out] Ein Zeiger auf das untergeordnete Fenster, das in die Bewehrung eingefügt werden soll. Das referenzierte Objekt muss über den **WS_CHILD** Fensterstil verfügen.
 
 *pszText*<br/>
-in Gibt den Text an, der auf der Info Leiste angezeigt werden soll. Der Text ist nicht Teil des untergeordneten Fensters. Stattdessen wird er auf der Info Leiste angezeigt.
+[in] Gibt den Text an, der auf der Bewehrung angezeigt werden soll. Der Text ist nicht Teil des untergeordneten Fensters. Vielmehr wird es auf der Bewehrung selbst angezeigt.
 
 *pbmp*<br/>
-[in, out] Gibt die Bitmap an, die auf dem Hintergrund der Info Leiste angezeigt werden soll.
+[in, out] Gibt die Bitmap an, die auf dem Bewehrungshintergrund angezeigt werden soll.
 
 *dwStyle*<br/>
-in Enthält den Stil, der auf das Band angewendet werden soll. Eine komplette Liste der Band Stile finden Sie in der Beschreibung für `fStyle` in der [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) -Struktur in der Windows SDK-Dokumentation.
+[in] Enthält den Stil, der auf das Band angewendet werden soll. Eine vollständige Liste der Bandstile finden `fStyle` Sie in der [REBARBANDINFO-Struktur](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) in der Windows SDK-Dokumentation.
 
 *clrFore*<br/>
-in Stellt die Vordergrundfarbe der Info Leiste dar.
+[in] Stellt die Vordergrundfarbe der Bewehrung dar.
 
 *clrBack*<br/>
-in Stellt die Hintergrundfarbe der Info Leiste dar.
+[in] Stellt die Hintergrundfarbe der Bewehrung dar.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn das Band erfolgreich der Info Leiste hinzugefügt wurde. andernfalls false.
+TRUE, wenn das Band erfolgreich zur Bewehrung hinzugefügt wurde; andernfalls FALSE.
 
-##  <a name="create"></a>Cmatkrebar:: Create
+## <a name="cmfcrebarcreate"></a><a name="create"></a>CMFCReBar::Erstellen
 
-Erstellt das Grund leisten-Steuerelement und fügt es an das [cmfkrebar](../../mfc/reference/cmfcrebar-class.md) -Objekt an.
+Erstellt das Bewehrungssteuerelement und fügt es an das [CMFCReBar-Objekt](../../mfc/reference/cmfcrebar-class.md) an.
 
 ```
 BOOL Create(
@@ -147,26 +148,26 @@ BOOL Create(
 ### <a name="parameters"></a>Parameter
 
 *pParentWnd*<br/>
-[in, out] Ein Zeiger auf das übergeordnete Fenster dieses Grund leisten-Steuer Elements.
+[in, out] Ein Zeiger auf das übergeordnete Fenster dieses Bewehrungssteuerelements.
 
 *dwCtrlStyle*<br/>
-in Gibt den Stil für das Grund leisten-Steuerelement an. Der Standardformat Wert ist **RBS_BANDBORDERS**, in dem schmale Linien angezeigt werden, um angrenzende Bänder im Info leisten-Steuerelement voneinander zu trennen. Eine Liste gültiger Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK-Dokumentation.
+[in] Gibt den Stil für das Bewehrungssteuerelement an. Der Standardstilwert ist **RBS_BANDBORDERS**, der schmale Linien anzeigt, um benachbarte Bänder auf dem Bewehrungssteuerelement zu trennen. Eine Liste gültiger Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK-Dokumentation.
 
 *dwStyle*<br/>
-in Der Fenster Stil des Grund leisten-Steuer Elements. Eine Liste gültiger Stile finden Sie unter [Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#window-styles).
+[in] Der Fensterstil des Bewehrungssteuerelements. Eine Liste gültiger Stile finden Sie unter [Fensterformate](../../mfc/reference/styles-used-by-mfc.md#window-styles).
 
 *nID*<br/>
-in Die ID des untergeordneten Fensters der Info Leiste.
+[in] Die untergeordnete Fenster-ID der Bewehrung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Info Leiste erfolgreich erstellt wurde. andernfalls false.
+TRUE, wenn die Bewehrung erfolgreich erstellt wurde; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getrebarctrl"></a>Cmberkrebar:: GetReBarCtrl
+## <a name="cmfcrebargetrebarctrl"></a><a name="getrebarctrl"></a>CMFCReBar::GetReBarCtrl
 
-Bietet direkten Zugriff auf `CReBarCtrl` das zugrunde liegende allgemeine Steuer `CMFCReBar` Element für-Objekte.
+Bietet direkten `CReBarCtrl` Zugriff auf das `CMFCReBar` zugrunde liegende allgemeine Steuerelement für Objekte.
 
 ```
 CReBarCtrl& GetReBarCtrl() const;
@@ -174,13 +175,13 @@ CReBarCtrl& GetReBarCtrl() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das zugrunde `CReBarCtrl` liegende-Objekt.
+Ein Verweis auf `CReBarCtrl` das zugrunde liegende Objekt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um die gemeinsame Steuerung von Windows-Funktionen beim Anpassen der Info Leiste zu nutzen.
+Rufen Sie diese Methode auf, um die allgemeine Steuerungsfunktionalität von Windows zu nutzen, wenn Sie die Bewehrung anpassen.
 
-##  <a name="calcfixedlayout"></a>Cmatkrebar:: calcfixedlayout
+## <a name="cmfcrebarcalcfixedlayout"></a><a name="calcfixedlayout"></a>CMFCReBar::CalcFixedLayout
 
 ```
 virtual CSize CalcFixedLayout(
@@ -190,14 +191,14 @@ virtual CSize CalcFixedLayout(
 
 ### <a name="parameters"></a>Parameter
 
-in *bstretch*<br/>
+[in] *bStretch*<br/>
 [in] *bHorz*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="canfloat"></a>CMF-Leiste:: canfloat
+## <a name="cmfcrebarcanfloat"></a><a name="canfloat"></a>CMFCReBar::CanFloat
 
 ```
 virtual BOOL CanFloat() const;
@@ -205,9 +206,9 @@ virtual BOOL CanFloat() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="enabledocking"></a>Cmatkrebar:: EnableDocking
+## <a name="cmfcrebarenabledocking"></a><a name="enabledocking"></a>CMFCReBar::EnableDocking
 
 ```
 void EnableDocking(DWORD dwDockStyle);
@@ -215,11 +216,11 @@ void EnableDocking(DWORD dwDockStyle);
 
 ### <a name="parameters"></a>Parameter
 
-in *dwdockstyle*<br/>
+[in] *dwDockStyle*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="getrebarbandinfosize"></a>Cmberkrebar:: getrebarbandinfosize
+## <a name="cmfcrebargetrebarbandinfosize"></a><a name="getrebarbandinfosize"></a>CMFCReBar::GetRebarBandInfoSize
 
 ```
 UINT GetReBarBandInfoSize() const;
@@ -227,9 +228,9 @@ UINT GetReBarBandInfoSize() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onshowcontrolbarmenu"></a>Cmberkrebar:: onshowcontrolbarmenu
+## <a name="cmfcrebaronshowcontrolbarmenu"></a><a name="onshowcontrolbarmenu"></a>CMFCReBar::OnShowControlBarMenu
 
 ```
 virtual BOOL OnShowControlBarMenu(CPoint);
@@ -237,13 +238,13 @@ virtual BOOL OnShowControlBarMenu(CPoint);
 
 ### <a name="parameters"></a>Parameter
 
-in *CPoint*<br/>
+[in] *CPoint*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="ontoolhittest"></a>CMF-Leiste:: ontoolhittest
+## <a name="cmfcrebarontoolhittest"></a><a name="ontoolhittest"></a>CMFCRebar::OnToolHittest
 
 ```
 virtual INT_PTR OnToolHitTest(
@@ -253,14 +254,14 @@ virtual INT_PTR OnToolHitTest(
 
 ### <a name="parameters"></a>Parameter
 
-in *Punkt*<br/>
+[in] *Punkt*<br/>
 [in] *pTI*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="onupdatecmdui"></a>CMF-Leiste:: OnUpdateCmdUI
+## <a name="cmfcrebaronupdatecmdui"></a><a name="onupdatecmdui"></a>CMFCReBar::OnUpdateCmdUI
 
 ```
 virtual void OnUpdateCmdUI(
@@ -270,12 +271,12 @@ virtual void OnUpdateCmdUI(
 
 ### <a name="parameters"></a>Parameter
 
-in *pTARGET*<br/>
-in *bdisableifnohndler*<br/>
+[in] *pTarget*<br/>
+[in] *bDisableIfNoHndler*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-##  <a name="setpanealignment"></a>Cmatkrebar:: setpanealignment
+## <a name="cmfcrebarsetpanealignment"></a><a name="setpanealignment"></a>CMFCReBar::SetPaneAlignment
 
 ```
 virtual void SetPaneAlignment(DWORD dwAlignment);
@@ -283,13 +284,13 @@ virtual void SetPaneAlignment(DWORD dwAlignment);
 
 ### <a name="parameters"></a>Parameter
 
-in *dwalignment*<br/>
+[in] *dwAlignment*<br/>
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Siehe auch
 
 [Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
 [CReBarCtrl-Klasse](../../mfc/reference/crebarctrl-class.md)<br/>
-[CPane-Klasse](../../mfc/reference/cpane-class.md)
+[CPane Class](../../mfc/reference/cpane-class.md)

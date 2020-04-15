@@ -11,54 +11,54 @@ helpviewer_keywords:
 - pointer dereference operator overloading
 - plus operator
 ms.assetid: 7683ef08-42a4-4283-928f-d3dd4f3ab4c0
-ms.openlocfilehash: 60444ee3c55df39e6b7820ff9b9d7ad81017b0da
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 971ef08c5e79f851c502ea872c541517065797c5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80188492"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81372034"
 ---
 # <a name="overloading-unary-operators"></a>Überladen von unären Operatoren
 
 Die unären Operatoren, die überladen werden können, sind Folgende:
 
-1. `!` ([Logisches Not](../cpp/logical-negation-operator-exclpt.md))
+1. `!`([logisch NICHT](../cpp/logical-negation-operator-exclpt.md))
 
-1. `&` ([Adresse von](../cpp/address-of-operator-amp.md))
+1. `&`([Adresse)](../cpp/address-of-operator-amp.md)
 
-1. `~` ([Einerkomplement](../cpp/one-s-complement-operator-tilde.md))
+1. `~`([die Komplement )](../cpp/one-s-complement-operator-tilde.md)
 
-1. `*` ([Zeigerdereferenzierung](../cpp/indirection-operator-star.md))
+1. `*`([Zeigerdereferenzierung](../cpp/indirection-operator-star.md))
 
-1. `+` ([unäres Plus](../cpp/additive-operators-plus-and.md))
+1. `+`([unary plus](../cpp/additive-operators-plus-and.md))
 
-1. `-` ([unäre Negation](../cpp/additive-operators-plus-and.md))
+1. `-`([unäre Negation](../cpp/additive-operators-plus-and.md))
 
-1. `++` ([Inkrement](../cpp/prefix-increment-and-decrement-operators-increment-and-decrement.md))
+1. `++`([Inkrement](../cpp/prefix-increment-and-decrement-operators-increment-and-decrement.md))
 
-1. `--` ([Dekrement](../cpp/prefix-increment-and-decrement-operators-increment-and-decrement.md))
+1. `--`([dekrementierung](../cpp/prefix-increment-and-decrement-operators-increment-and-decrement.md))
 
-9. Konvertierungsoperatoren
+1. Konvertierungsoperatoren
 
-Die Postfix-Inkrement-und Dekrementoperatoren (`++` und `--`) werden separat in [Inkrement und Dekrement](../cpp/increment-and-decrement-operator-overloading-cpp.md)behandelt.
+Die Postfix-Inkrement-`++` und `--`Dekrementoperatoren ( und ) werden in [Increment und Dekrement](../cpp/increment-and-decrement-operator-overloading-cpp.md)separat behandelt.
 
-Konvertierungs Operatoren werden auch in einem separaten Thema behandelt. siehe [benutzerdefinierte Typkonvertierungen](../cpp/user-defined-type-conversions-cpp.md).
+Konvertierungsoperatoren werden auch in einem separaten Thema behandelt. siehe [Benutzerdefinierte Typkonvertierungen](../cpp/user-defined-type-conversions-cpp.md).
 
 Die folgenden Regeln sind für alle anderen unären Operatoren erfüllt. Um eine Funktion für einen unären Operator als nicht statischen Member zu deklarieren, müssen Sie sie im folgenden Format deklarieren:
 
-> *ret-Type-* **Operator** *op* **()**
+> *ret-Typ* **Operator** *op* **()**
 
-wobei " *ret-Type* " der Rückgabetyp und " *op* " einer der in der obigen Tabelle aufgeführten Operatoren ist.
+wobei *ret-type* der Rückgabetyp ist und *op* einer der in der obigen Tabelle aufgeführten Operatoren ist.
 
 Um eine Funktion für einen unären Operator als globale Funktion zu deklarieren, müssen Sie sie im folgenden Format deklarieren:
 
-> *ret-Type-* **Operator** *op* **(** *arg* **)**
+> *ret-typ* **operator** *op* **(** *arg* **)**
 
-Dabei sind " *ret-Type* " und " *op* " wie für Member-Operator Funktionen beschrieben und " *arg* " ein Argument des Klassen Typs, in dem der Vorgang ausgeführt werden soll.
+wobei *ret-type* und *op* wie für Memberoperatorfunktionen beschrieben sind und der *arg* ein Argument des Klassentyps ist, auf dem ausgeführt werden soll.
 
 > [!NOTE]
->  Es gibt keine Einschränkung für die Rückgabetypen der unären Operatoren. Beispielsweise macht es Sinn für ein logisches NOT (`!`), einen Ganzzahlwert zurückzugeben. Das wird aber nicht erzwungen.
+> Es gibt keine Einschränkung für die Rückgabetypen der unären Operatoren. Beispielsweise macht es Sinn für ein logisches NOT (`!`), einen Ganzzahlwert zurückzugeben. Das wird aber nicht erzwungen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Operatorüberladung](../cpp/operator-overloading.md)

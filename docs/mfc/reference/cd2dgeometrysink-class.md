@@ -38,12 +38,12 @@ helpviewer_keywords:
 - CD2DGeometrySink [MFC], SetSegmentFlags
 - CD2DGeometrySink [MFC], m_pSink
 ms.assetid: e5e07f41-0343-4ab1-9d6b-8c62ed33c04a
-ms.openlocfilehash: 48c88f0b837b2e49e4c87f07a9aa28c16a66c1e3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: cb51c7b11f75debece61105bf20a201b6eab80a9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62391256"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81369237"
 ---
 # <a name="cd2dgeometrysink-class"></a>CD2DGeometrySink-Klasse
 
@@ -59,41 +59,41 @@ class CD2DGeometrySink;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DGeometrySink::CD2DGeometrySink](#cd2dgeometrysink)|Erstellt ein Objekt CD2DGeometrySink CD2DPathGeometry-Objekts.|
-|[CD2DGeometrySink::~CD2DGeometrySink](#_dtorcd2dgeometrysink)|Der Destruktor. Wird aufgerufen, wenn Senke D2D Geometry-Objekt zerstört wird.|
+|[CD2DGeometrySink::CD2DGeometrySink](#cd2dgeometrysink)|Erstellt ein CD2DGeometrySink-Objekt aus dem CD2DPathGeometry-Objekt.|
+|[CD2DGeometrySink::'CD2DGeometrySink'S](#_dtorcd2dgeometrysink)|Der Destruktor. Wird aufgerufen, wenn ein D2D-Geometriesenkenobjekt zerstört wird.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DGeometrySink::AddArc](#addarc)|Fügt einem einzelnen Bogen der Pfadgeometrie hinzu|
+|[CD2DGeometrySink::AddArc](#addarc)|Fügt der Pfadgeometrie einen einzelnen Bogen hinzu|
 |[CD2DGeometrySink::AddBezier](#addbezier)|Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.|
-|[CD2DGeometrySink::AddBeziers](#addbeziers)|Erstellt eine Sequenz von kubische Bezier-Kurven und fügt diese an die Geometriesenke.|
-|[CD2DGeometrySink::AddLine](#addline)|Erstellt ein Liniensegment zwischen dem aktuellen Punkt und dem angegebenen Endpunkt und fügt es auf die Geometriesenke.|
-|[CD2DGeometrySink::AddLines](#addlines)|Erstellt eine Sequenz von Zeilen, die mit den angegebenen Punkten und die Geometriesenke hinzugefügt.|
-|[CD2DGeometrySink::AddQuadraticBezier](#addquadraticbezier)|Erstellt eine quadratische Bezierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.|
-|[CD2DGeometrySink::AddQuadraticBeziers](#addquadraticbeziers)|Fügt eine Sequenz von quadratischen Bezier-Segmente als ein Array, in einem einzigen Aufruf hinzu.|
+|[CD2DGeometrySink::AddBeziers](#addbeziers)|Erstellt eine Sequenz von kubischen Bézierkurven und fügt sie der Geometriesenke hinzu.|
+|[CD2DGeometrySink::AddLine](#addline)|Erstellt ein Liniensegment zwischen dem aktuellen Punkt und dem angegebenen Endpunkt und fügt es der Geometriesenke hinzu.|
+|[CD2DGeometrySink::AddLines](#addlines)|Erstellt eine Sequenz von Linien mit den angegebenen Punkten und fügt sie der Geometriesenke hinzu.|
+|[CD2DGeometrySink::AddQuadraticBezier](#addquadraticbezier)|Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.|
+|[CD2DGeometrySink::AddQuadraticBeziers](#addquadraticbeziers)|Fügt eine Sequenz quadratischer Béziersegmente als Array in einem einzelnen Aufruf hinzu.|
 |[CD2DGeometrySink::BeginFigure](#beginfigure)|Startet eine neue Figur am angegebenen Punkt.|
-|[CD2DGeometrySink::Close](#close)|Schließt die Geometriesenke|
-|[CD2DGeometrySink::EndFigure](#endfigure)|Beendet die aktuelle Figur an; optional, wird geschlossen.|
-|[CD2DGeometrySink::Get](#get)|Gibt die ID2D1GeometrySink-Schnittstelle|
-|[CD2DGeometrySink::IsValid](#isvalid)|Überprüft die Gültigkeit der Geometrie-Senke|
-|[CD2DGeometrySink::SetFillMode](#setfillmode)|Gibt die Methode verwendet, um zu bestimmen, welche Punkte innerhalb der Geometrie, die von dieser Geometriesenke beschrieben und außerhalb.|
-|[CD2DGeometrySink::SetSegmentFlags](#setsegmentflags)|Gibt an, Strich und Join-Optionen auf neuen Segmenten, die die Geometriesenke hinzugefügt angewendet werden.|
+|[CD2DGeometrySink::Schließen](#close)|Schließt die Geometriesenke|
+|[CD2DGeometrySink::EndAbbildung](#endfigure)|Beendet die aktuelle Zahl; optional schließt es.|
+|[CD2DGeometrySink::Get](#get)|Gibt ID2D1GeometrySink-Schnittstelle zurück|
+|[CD2DGeometrySink::IsValid](#isvalid)|Überprüft die Gültigkeit der Geometriesenke|
+|[CD2DGeometrySink::SetFillMode](#setfillmode)|Gibt die Methode an, die verwendet wird, um zu bestimmen, welche Punkte sich innerhalb der geometrie, die von dieser Geometriesenke beschrieben wird, und welche Punkte sich außerhalb befinden.|
+|[CD2DGeometrySink::SetSegmentFlags](#setsegmentflags)|Gibt Strich- und Verknüpfungsoptionen an, die auf neue Segmente angewendet werden sollen, die der Geometriesenke hinzugefügt werden.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DGeometrySink::operator ID2D1GeometrySink*](#operator_id2d1geometrysink_star)|Gibt die ID2D1GeometrySink-Schnittstelle|
+|[CD2DGeometrySink::operator ID2D1GeometrySink*](#operator_id2d1geometrysink_star)|Gibt ID2D1GeometrySink-Schnittstelle zurück|
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DGeometrySink::m_pSink](#m_psink)|Ein Zeiger auf ein ID2D1GeometrySink.|
+|[CD2DGeometrySink::m_pSink](#m_psink)|Ein Zeiger auf eine ID2D1GeometrySink.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -101,19 +101,19 @@ class CD2DGeometrySink;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget.h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="_dtorcd2dgeometrysink"></a>  CD2DGeometrySink:: ~ CD2DGeometrySink
+## <a name="cd2dgeometrysinkcd2dgeometrysink"></a><a name="_dtorcd2dgeometrysink"></a>CD2DGeometrySink::'CD2DGeometrySink'S
 
-Der Destruktor. Wird aufgerufen, wenn Senke D2D Geometry-Objekt zerstört wird.
+Der Destruktor. Wird aufgerufen, wenn ein D2D-Geometriesenkenobjekt zerstört wird.
 
 ```
 virtual ~CD2DGeometrySink();
 ```
 
-##  <a name="addarc"></a>  CD2DGeometrySink::AddArc
+## <a name="cd2dgeometrysinkaddarc"></a><a name="addarc"></a>CD2DGeometrySink::AddArc
 
-Fügt einem einzelnen Bogen der Pfadgeometrie hinzu
+Fügt der Pfadgeometrie einen einzelnen Bogen hinzu
 
 ```
 void AddArc(const D2D1_ARC_SEGMENT& arc);
@@ -121,10 +121,10 @@ void AddArc(const D2D1_ARC_SEGMENT& arc);
 
 ### <a name="parameters"></a>Parameter
 
-*arc*<br/>
-Das Bogensegment in der Abbildung hinzu
+*Arc*<br/>
+Das Bogensegment, das der Figur hinzugefügt werden soll
 
-##  <a name="addbezier"></a>  CD2DGeometrySink::AddBezier
+## <a name="cd2dgeometrysinkaddbezier"></a><a name="addbezier"></a>CD2DGeometrySink::AddBezier
 
 Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.
 
@@ -134,12 +134,12 @@ void AddBezier(const D2D1_BEZIER_SEGMENT& bezier);
 
 ### <a name="parameters"></a>Parameter
 
-*bezier*<br/>
-Eine Struktur, die beschreibt, die Control-Punkte und Endpunkt der Bezier-Kurve hinzufügen.
+*Bezier*<br/>
+Eine Struktur, die die Kontrollpunkte und den Endpunkt der hinzuzufügenden Bézierkurve beschreibt.
 
-##  <a name="addbeziers"></a>  CD2DGeometrySink::AddBeziers
+## <a name="cd2dgeometrysinkaddbeziers"></a><a name="addbeziers"></a>CD2DGeometrySink::AddBeziers
 
-Erstellt eine Sequenz von kubische Bezier-Kurven und fügt diese an die Geometriesenke.
+Erstellt eine Sequenz von kubischen Bézierkurven und fügt sie der Geometriesenke hinzu.
 
 ```
 void AddBeziers(
@@ -149,12 +149,12 @@ void AddBeziers(
 
 ### <a name="parameters"></a>Parameter
 
-*beziers*<br/>
-Ein Array von Bezier-Segmente, die beschreibt, die Bezier-Kurven zu erstellen. Eine Kurve gezeichnet wird an den Endpunkt, der das erste Bezier-Segment in das Array vom aktuellen Punkt von der Geometriesenke (der Endpunkt das letzte Segment gezeichnet oder den Speicherort, der durch BeginFigure angegeben). Wenn das Array zusätzliche Bezier-Segmente enthält, verwendet jedes nachfolgende Bezier-Segment der Endpunkt des vorherigen Segments Bezier als Anfangspunkt.
+*Beziers*<br/>
+Ein Array von Bézier-Segmenten, das die zu erstellenden Bézierkurven beschreibt. Eine Kurve wird vom aktuellen Punkt der Geometriesenke (dem Endpunkt des zuletzt gezeichneten Segments oder der von BeginFigure angegebenen Position) bis zum Endpunkt des ersten Bézier-Segments im Array gezeichnet. Wenn das Array zusätzliche Bézier-Segmente enthält, verwendet jedes nachfolgende Bézier-Segment den Endpunkt des vorherigen Bézier-Segments als Startpunkt.
 
-##  <a name="addline"></a>  CD2DGeometrySink::AddLine
+## <a name="cd2dgeometrysinkaddline"></a><a name="addline"></a>CD2DGeometrySink::AddLine
 
-Erstellt ein Liniensegment zwischen dem aktuellen Punkt und dem angegebenen Endpunkt und fügt es auf die Geometriesenke.
+Erstellt ein Liniensegment zwischen dem aktuellen Punkt und dem angegebenen Endpunkt und fügt es der Geometriesenke hinzu.
 
 ```
 void AddLine(CD2DPointF point);
@@ -162,12 +162,12 @@ void AddLine(CD2DPointF point);
 
 ### <a name="parameters"></a>Parameter
 
-*point*<br/>
-Der Endpunkt der Linie zu zeichnen.
+*Punkt*<br/>
+Der Endpunkt der zu zeichnenden Linie.
 
-##  <a name="addlines"></a>  CD2DGeometrySink::AddLines
+## <a name="cd2dgeometrysinkaddlines"></a><a name="addlines"></a>CD2DGeometrySink::AddLines
 
-Erstellt eine Sequenz von Zeilen, die mit den angegebenen Punkten und die Geometriesenke hinzugefügt.
+Erstellt eine Sequenz von Linien mit den angegebenen Punkten und fügt sie der Geometriesenke hinzu.
 
 ```
 void AddLines(
@@ -177,12 +177,12 @@ void AddLines(
 
 ### <a name="parameters"></a>Parameter
 
-*points*<br/>
-Ein Array von einem oder mehreren Punkten, die beschreiben, die Zeilen, die gezeichnet werden soll. Eine Zeile wird dem ersten Punkt im Array vom aktuellen Punkt von der Geometriesenke (der Endpunkt das letzte Segment gezeichnet oder den Speicherort, der anhand des BeginFigure) gezeichnet. Wenn das Array zusätzliche Punkte enthält, wird eine Linie zwischen dem ersten zum zweiten Punkt im Array, aus der zweiten, zeigen Sie auf der dritten Punkt usw. gezeichnet. Ein Array aus einer Folge von den Endpunkten der Linien zu zeichnen.
+*Punkte*<br/>
+Ein Array von einem oder mehreren Punkten, die die zu zeichnenden Linien beschreiben. Eine Linie wird vom aktuellen Punkt der Geometriesenke (dem Endpunkt des zuletzt gezeichneten Segments oder der von BeginFigure angegebenen Position) bis zum ersten Punkt im Array gezeichnet. Wenn das Array zusätzliche Punkte enthält, wird eine Linie vom ersten Punkt zum zweiten Punkt im Array, vom zweiten Punkt zum dritten Punkt usw. gezogen. Ein Array einer Sequenz der Endpunkte der zu zeichnenden Linien.
 
-##  <a name="addquadraticbezier"></a>  CD2DGeometrySink::AddQuadraticBezier
+## <a name="cd2dgeometrysinkaddquadraticbezier"></a><a name="addquadraticbezier"></a>CD2DGeometrySink::AddQuadraticBezier
 
-Erstellt eine quadratische Bezierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.
+Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt.
 
 ```
 void AddQuadraticBezier(const D2D1_QUADRATIC_BEZIER_SEGMENT& bezier);
@@ -190,12 +190,12 @@ void AddQuadraticBezier(const D2D1_QUADRATIC_BEZIER_SEGMENT& bezier);
 
 ### <a name="parameters"></a>Parameter
 
-*bezier*<br/>
-Eine Struktur, die beschreibt, der Kontrollpunkt und dem Endpunkt der quadratischen Bezier-Kurve hinzufügen.
+*Bezier*<br/>
+Eine Struktur, die den Kontrollpunkt und den Endpunkt der hinzuzufügenden quadratischen Bézierkurve beschreibt.
 
-##  <a name="addquadraticbeziers"></a>  CD2DGeometrySink::AddQuadraticBeziers
+## <a name="cd2dgeometrysinkaddquadraticbeziers"></a><a name="addquadraticbeziers"></a>CD2DGeometrySink::AddQuadraticBeziers
 
-Fügt eine Sequenz von quadratischen Bezier-Segmente als ein Array, in einem einzigen Aufruf hinzu.
+Fügt eine Sequenz quadratischer Béziersegmente als Array in einem einzelnen Aufruf hinzu.
 
 ```
 void AddQuadraticBeziers(
@@ -205,10 +205,10 @@ void AddQuadraticBeziers(
 
 ### <a name="parameters"></a>Parameter
 
-*beziers*<br/>
-Ein Array aus einer Folge von quadratischen Bezier-Segmente.
+*Beziers*<br/>
+Ein Array einer Sequenz quadratischer Béziersegmente.
 
-##  <a name="beginfigure"></a>  CD2DGeometrySink::BeginFigure
+## <a name="cd2dgeometrysinkbeginfigure"></a><a name="beginfigure"></a>CD2DGeometrySink::BeginFigure
 
 Startet eine neue Figur am angegebenen Punkt.
 
@@ -221,14 +221,14 @@ void BeginFigure(
 ### <a name="parameters"></a>Parameter
 
 *startPoint*<br/>
-Der Punkt, an dem die neue Abbildung beginnt.
+Der Punkt, an dem die neue Figur beginnen soll.
 
 *figureBegin*<br/>
-Gibt an, ob die neue Abbildung gefüllt oder sein sollte.
+Ob die neue Figur hohl oder gefüllt sein soll.
 
-##  <a name="cd2dgeometrysink"></a>  CD2DGeometrySink::CD2DGeometrySink
+## <a name="cd2dgeometrysinkcd2dgeometrysink"></a><a name="cd2dgeometrysink"></a>CD2DGeometrySink::CD2DGeometrySink
 
-Erstellt ein Objekt CD2DGeometrySink CD2DPathGeometry-Objekts.
+Erstellt ein CD2DGeometrySink-Objekt aus dem CD2DPathGeometry-Objekt.
 
 ```
 CD2DGeometrySink(CD2DPathGeometry& pathGeometry);
@@ -236,10 +236,10 @@ CD2DGeometrySink(CD2DPathGeometry& pathGeometry);
 
 ### <a name="parameters"></a>Parameter
 
-*pathGeometry*<br/>
+*Pathgeometry*<br/>
 Ein vorhandenes CD2DPathGeometry-Objekt.
 
-##  <a name="close"></a>  CD2DGeometrySink::Close
+## <a name="cd2dgeometrysinkclose"></a><a name="close"></a>CD2DGeometrySink::Schließen
 
 Schließt die Geometriesenke
 
@@ -249,11 +249,11 @@ BOOL Close();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ungleich NULL Wenn erfolgreich; andernfalls "false".
+Ungleich Null, wenn erfolgreich; andernfalls FALSE.
 
-##  <a name="endfigure"></a>  CD2DGeometrySink::EndFigure
+## <a name="cd2dgeometrysinkendfigure"></a><a name="endfigure"></a>CD2DGeometrySink::EndAbbildung
 
-Beendet die aktuelle Figur an; optional, wird geschlossen.
+Beendet die aktuelle Zahl; optional schließt es.
 
 ```
 void EndFigure(D2D1_FIGURE_END figureEnd);
@@ -262,11 +262,11 @@ void EndFigure(D2D1_FIGURE_END figureEnd);
 ### <a name="parameters"></a>Parameter
 
 *figureEnd*<br/>
-Ein Wert, der angibt, ob die aktuelle Figur geschlossen ist. Wenn die Abbildung geschlossen ist, wird eine Linie zwischen dem aktuellen Punkt und den Startpunkt mit BeginFigure angegebenen gezeichnet.
+Ein Wert, der angibt, ob die aktuelle Zahl geschlossen ist. Wenn die Figur geschlossen ist, wird eine Linie zwischen dem aktuellen Punkt und dem von BeginFigure angegebenen Startpunkt gezeichnet.
 
-##  <a name="get"></a>  CD2DGeometrySink::Get
+## <a name="cd2dgeometrysinkget"></a><a name="get"></a>CD2DGeometrySink::Get
 
-Gibt die ID2D1GeometrySink-Schnittstelle
+Gibt ID2D1GeometrySink-Schnittstelle zurück
 
 ```
 ID2D1GeometrySink* Get();
@@ -274,11 +274,11 @@ ID2D1GeometrySink* Get();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1GeometrySink-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1GeometrySink-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="isvalid"></a>  CD2DGeometrySink::IsValid
+## <a name="cd2dgeometrysinkisvalid"></a><a name="isvalid"></a>CD2DGeometrySink::IsValid
 
-Überprüft die Gültigkeit der Geometrie-Senke
+Überprüft die Gültigkeit der Geometriesenke
 
 ```
 BOOL IsValid() const;
@@ -286,19 +286,19 @@ BOOL IsValid() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Geometriesenke gültig ist. andernfalls "false".
+TRUE, wenn Geometriesenke gültig ist; andernfalls FALSE.
 
-##  <a name="m_psink"></a>  CD2DGeometrySink::m_pSink
+## <a name="cd2dgeometrysinkm_psink"></a><a name="m_psink"></a>CD2DGeometrySink::m_pSink
 
-Ein Zeiger auf ein ID2D1GeometrySink.
+Ein Zeiger auf eine ID2D1GeometrySink.
 
 ```
 ID2D1GeometrySink* m_pSink;
 ```
 
-##  <a name="operator_id2d1geometrysink_star"></a>  CD2DGeometrySink::Operator ID2D1GeometrySink *
+## <a name="cd2dgeometrysinkoperator-id2d1geometrysink"></a><a name="operator_id2d1geometrysink_star"></a>CD2DGeometrySink::operator ID2D1GeometrySink*
 
-Gibt die ID2D1GeometrySink-Schnittstelle
+Gibt ID2D1GeometrySink-Schnittstelle zurück
 
 ```
 operator ID2D1GeometrySink*();
@@ -306,11 +306,11 @@ operator ID2D1GeometrySink*();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Zeiger auf eine ID2D1GeometrySink-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert ist.
+Zeiger auf eine ID2D1GeometrySink-Schnittstelle oder NULL, wenn das Objekt noch nicht initialisiert wurde.
 
-##  <a name="setfillmode"></a>  CD2DGeometrySink::SetFillMode
+## <a name="cd2dgeometrysinksetfillmode"></a><a name="setfillmode"></a>CD2DGeometrySink::SetFillMode
 
-Gibt die Methode verwendet, um zu bestimmen, welche Punkte innerhalb der Geometrie, die von dieser Geometriesenke beschrieben und außerhalb.
+Gibt die Methode an, die verwendet wird, um zu bestimmen, welche Punkte sich innerhalb der geometrie, die von dieser Geometriesenke beschrieben wird, und welche Punkte sich außerhalb befinden.
 
 ```
 void SetFillMode(D2D1_FILL_MODE fillMode);
@@ -318,12 +318,12 @@ void SetFillMode(D2D1_FILL_MODE fillMode);
 
 ### <a name="parameters"></a>Parameter
 
-*fillMode*<br/>
-Die Methode verwendet, um zu bestimmen, ob ein bestimmter Punkt Teil der Geometrie ist.
+*Fillmode*<br/>
+Die Methode, mit der bestimmt wird, ob ein bestimmter Punkt Teil der Geometrie ist.
 
-##  <a name="setsegmentflags"></a>  CD2DGeometrySink::SetSegmentFlags
+## <a name="cd2dgeometrysinksetsegmentflags"></a><a name="setsegmentflags"></a>CD2DGeometrySink::SetSegmentFlags
 
-Gibt an, Strich und Join-Optionen auf neuen Segmenten, die die Geometriesenke hinzugefügt angewendet werden.
+Gibt Strich- und Verknüpfungsoptionen an, die auf neue Segmente angewendet werden sollen, die der Geometriesenke hinzugefügt werden.
 
 ```
 void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
@@ -332,7 +332,7 @@ void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
 ### <a name="parameters"></a>Parameter
 
 *vertexFlags*<br/>
-Optionen für Strich und Join auf neuen Segmenten, die die Geometriesenke hinzugefügt angewendet werden.
+Strich- und Verknüpfungsoptionen, die auf neue Segmente angewendet werden sollen, die der Geometriesenke hinzugefügt werden.
 
 ## <a name="see-also"></a>Siehe auch
 
