@@ -1,8 +1,9 @@
 ---
 title: _gcvt
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _gcvt
+- _o__gcvt
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-convert-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +33,12 @@ helpviewer_keywords:
 - strings [C++], converting from floating point
 - CVTBUFSIZE
 ms.assetid: 5761411e-c06b-409a-912f-810fe7f4bcb5
-ms.openlocfilehash: 3618f5571275783131c74c89f29218f89023f70e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: f161256c6dc86a045f49111cde3651bea08ead11
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956100"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81345319"
 ---
 # <a name="_gcvt"></a>_gcvt
 
@@ -57,31 +59,33 @@ char *_gcvt(
 *value*<br/>
 Zu konvertierender Wert.
 
-*Ziffern*<br/>
+*Zahlen*<br/>
 Anzahl der gespeicherten signifikanten Ziffern.
 
-*buffer*<br/>
+*Puffer*<br/>
 Speicherort für das Ergebnis.
 
 ## <a name="return-value"></a>Rückgabewert
 
 **_gcvt** gibt einen Zeiger auf die Zeichenfolge der Ziffern zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_gcvt** -Funktion konvertiert einen Gleit Komma *Wert* in eine Zeichenfolge (mit einem Dezimaltrennzeichen und einem möglichen Byte) und speichert die Zeichenfolge im *Puffer*. Der *Puffer* sollte groß genug sein, um den konvertierten Wert und ein abschließendes NULL-Zeichen, das automatisch angehängt wird, aufnehmen zu können. Wenn eine Puffergröße von *Ziffern* + 1 verwendet wird, überschreibt die Funktion das Ende des Puffers. Dies geschieht, da die konvertierte Zeichenfolge ein Dezimaltrennzeichen enthält und Informationen über Zeichen und Exponenten enthalten kann. Es wird kein Überlauf bereitgestellt. **_gcvt** versucht, *Ziffern* Ziffern im Dezimal Format zu liefern. Wenn dies nicht möglich ist, werden *Ziffern* Ziffern im exponentiellen Format erzeugt. Bei der Konvertierung können Nachstellen von Nullen unterdrückt werden.
+Die **_gcvt-Funktion** konvertiert einen Gleitkommawert in eine Zeichenfolge (die ein Dezimalkomma und ein mögliches Zeichenbyte enthält) und speichert die Zeichenfolge im *Puffer*. *value* Der *Puffer* sollte groß genug sein, um den konvertierten Wert plus ein beendendes Nullzeichen aufzunehmen, das automatisch angehängt wird. Wenn eine Puffergröße von Ziffern + 1 verwendet wird, überschreibt die Funktion das Ende des *Puffers.* Dies geschieht, da die konvertierte Zeichenfolge ein Dezimaltrennzeichen enthält und Informationen über Zeichen und Exponenten enthalten kann. Es wird kein Überlauf bereitgestellt. **_gcvt** versucht, *Ziffern* im Dezimalformat zu erzeugen. Wenn *dies* nicht der Falle ist, erzeugt es Ziffern im exponentiellen Format. Bei der Konvertierung können Nachstellen von Nullen unterdrückt werden.
 
-Ein *Puffer* der Länge **_CVTBUFSIZE** ist für alle Gleit Komma Werte ausreichend.
+Ein *Puffer* mit länge **_CVTBUFSIZE** ist für jeden Gleitkommawert ausreichend.
 
-Diese Funktion überprüft ihre Parameter. Wenn der Puffer **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt **null**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *buffer* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, setzt diese Funktion **errno** auf **EINVAL** und gibt **NULL**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_gcvt**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

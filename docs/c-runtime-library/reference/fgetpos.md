@@ -1,8 +1,9 @@
 ---
 title: fgetpos
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - fgetpos
+- _o_fgetpos
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -25,12 +27,12 @@ helpviewer_keywords:
 - fgetpos function
 - streams, file position indicator
 ms.assetid: bfa05c38-1135-418c-bda1-d41be51acb62
-ms.openlocfilehash: 27d25b29f656d1df889e5f83857ca437f609a07a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 0c16150a6240068e1453ec90b396c87ab9ece5a4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940842"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346914"
 ---
 # <a name="fgetpos"></a>fgetpos
 
@@ -47,19 +49,21 @@ int fgetpos(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Der Zielstream
 
-*POS*<br/>
+*Pos*<br/>
 Speicher des Positionsindikators
 
 ## <a name="return-value"></a>Rückgabewert
 
-Wenn der Vorgang erfolgreich ist, gibt die Funktion " **f** . Bei einem Fehler wird ein Wert ungleich 0 (null) zurückgegeben, und **errno** wird auf eine der folgenden Manifest-Konstanten (definiert in stdio) festgelegt. H): **EBADF**, d. h. der angegebene Stream ist kein gültiger Dateizeiger, oder der Zugriff darauf ist nicht möglich, oder **EINVAL**, d. h. der *Streamwert* oder der Wert von *POS* ist ungültig, z. b. Wenn ein NULL-Zeiger ist. Wenn *Stream* oder *POS* ein **null** -Zeiger ist, ruft die Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
+Wenn dies erfolgreich ist, gibt **fgetpos** 0 zurück. Bei einem Fehler gibt er einen Wert ungleich Null zurück und legt **errno** auf eine der folgenden Manifestkonstanten fest (definiert in STDIO). H): **EBADF**, was bedeutet, dass der angegebene Stream kein gültiger Dateizeiger ist oder nicht zugänglich ist, oder **EINVAL**, was bedeutet, dass der *Streamwert* oder der Wert von *pos* ungültig ist, z. B. wenn einer der beiden Einen Nullzeiger ist. Wenn *Stream* oder *pos* ein **NULL-Zeiger** ist, ruft die Funktion den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **fgetpos** -Funktion Ruft den aktuellen Wert des Datei Positions Indikators des *Stream* -Arguments ab und speichert ihn in dem Objekt, auf *das von Torys verwiesen wird.* Die **fsetpos** -Funktion kann später in *POS* gespeicherte Informationen verwenden, um den Zeiger des *Stream* -Arguments auf seine Position zum Zeitpunkt des Aufrufs von **fgetpos** zurückzusetzen. Der *POS* -Wert wird in einem internen Format gespeichert und ist nur für die Verwendung durch " **f** " und " **ssetpos**" vorgesehen.
+Die **fgetpos-Funktion** ruft den aktuellen Wert des Dateipositionsindikators des *Stream-Arguments* ab und speichert ihn im Objekt, auf das *pos*zeigt. Die **fsetpos-Funktion** kann später Informationen verwenden, die in *pos* gespeichert sind, um den Zeiger des *Streamarguments* auf seine Position zum Zeitpunkt des Aufrufs von **fgetpos** zurückzusetzen. Der *pos-Wert* wird in einem internen Format gespeichert und ist nur für die Verwendung durch **fgetpos** und **fsetpos**bestimmt.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -67,7 +71,7 @@ Die **fgetpos** -Funktion Ruft den aktuellen Wert des Datei Positions Indikators
 |--------------|---------------------|
 |**fgetpos**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

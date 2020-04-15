@@ -1,8 +1,9 @@
 ---
 title: _kbhit
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _kbhit
+- _o__kbhit
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -32,12 +34,12 @@ helpviewer_keywords:
 - _kbhit function
 - keyboards, checking input
 ms.assetid: e82a1cc9-bbec-4150-b678-a7e433220fe4
-ms.openlocfilehash: 972b060dd98b5d267fa1f529c898573d4b82bb61
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: c49a924a38aed3ff2d7953e150c4f3f1f3a5a25c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438091"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81342249"
 ---
 # <a name="_kbhit"></a>_kbhit
 
@@ -55,23 +57,25 @@ int _kbhit( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_kbhit** gibt einen Wert ungleich 0 (null) zurück, wenn eine Taste gedrückt wurde. Andernfalls wird 0 zurückgegeben.
+**_kbhit** gibt einen Wert ungleich Null zurück, wenn eine Taste gedrückt wurde. Andernfalls wird 0 zurückgegeben.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die **_kbhit** -Funktion überprüft die Konsole auf eine aktuelle Tastenkombination. Wenn die Funktion einen Wert ungleich 0 (null) zurückgibt, befindet sich eine Tastatureingabe im Puffer. Das Programm kann dann **_getch** oder **_getche** abrufen, um die Tastatureingabe zu erhalten.
+Die **_kbhit-Funktion** überprüft die Konsole auf einen aktuellen Tastenanschlag. Wenn die Funktion einen Wert ungleich 0 (null) zurückgibt, befindet sich eine Tastatureingabe im Puffer. Das Programm kann dann **_getch** oder **_getche** aufrufen, um den Tastenanschlag zu erhalten.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_kbhit**|\<conio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
-Alle Versionen der [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
+Alle Versionen [C-Laufzeitbibliotheken](../../c-runtime-library/crt-library-features.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -105,6 +109,6 @@ Hit me!! Hit me!! Hit me!! Hit me!! Hit me!! Hit me!! Hit me!!
 Key struck was 'q'
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>

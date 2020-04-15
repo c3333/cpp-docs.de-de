@@ -1,11 +1,12 @@
 ---
 title: ldexp, ldexpf, ldexpl
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - ldexp
 - ldexpf
 - ldexpl
 - _ldexpl
+- _o_ldexp
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +19,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +39,12 @@ helpviewer_keywords:
 - exponent, floating-point numbers
 - floating-point functions, mantissa and exponent
 ms.assetid: aa7f5310-3879-4f63-ae74-86a39fbdedfa
-ms.openlocfilehash: 7fabd00c7ddc5c430c158089b7e5769158b46328
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 0432cfb66db5a90c933401549aba1b538fa66855
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953505"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81342243"
 ---
 # <a name="ldexp-ldexpf-ldexpl"></a>ldexp, ldexpf, ldexpl
 
@@ -75,25 +77,27 @@ long double ldexpl(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Gleitkommawert.
 
-*exp*<br/>
+*Exp*<br/>
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die **ldexp** -Funktionen geben bei Erfolg den Wert von *x* \* 2<sup>*Exp*</sup> zurück. Bei einem Überlauf und abhängig vom Vorzeichen von *x*gibt **LDE XP** +/- **HUGE_VAL**; zurück. der **errno** -Wert ist auf **ERANGE**festgelegt.
+Die **ldexp-Funktionen** geben den Wert *x* \* 2<sup>*exp*</sup> zurück, wenn erfolgreich. Bei Überlauf und je nach Vorzeichen von *x*gibt **ldexp** +/- **HUGE_VAL**zurück. Der **errno-Wert** ist auf **ERANGE**festgelegt.
 
-Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu **errno-** und möglichen Fehlerrückgabewerten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **LDE XP** aufzurufen, die **float** -oder **Long** **Double** -Typen annehmen. In einem C-Programm nimmt **ldebug** immer einen **Double** -und einen **int** -Wert und gibt einen **Double**-Wert zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **ldexp** aufrufen, die **float-** oder **long** **double-Typen** annehmen. In einem C-Programm nimmt **ldexp** immer ein **Double** und ein **int** und gibt eine **doppelte**zurück.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|C-Header|C++-Header|
+|Routine|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |**ldexp**, **ldexpf**, **ldexpl**|\<math.h>|\<cmath>|
 
@@ -117,7 +121,7 @@ int main( void )
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 4.0 times two to the power of 3 is 32.0

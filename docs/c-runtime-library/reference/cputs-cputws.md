@@ -1,9 +1,11 @@
 ---
 title: _cputs, _cputws
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _cputws
 - _cputs
+- _o__cputs
+- _o__cputws
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-conio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - console, sending strings to
 - cputws function
 ms.assetid: ec418484-0f8d-43ec-8d8b-198a556c659e
-ms.openlocfilehash: 46fce16078b9ce289d45ee4e62bb4076eaf5795a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 3b8f49fc7fbe90d4069a5dfeef9bbba3a7f05335
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942632"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81348371"
 ---
 # <a name="_cputs-_cputws"></a>_cputs, _cputws
 
@@ -60,18 +63,20 @@ int _cputws(
 
 ### <a name="parameters"></a>Parameter
 
-*str*<br/>
+*Str*<br/>
 Ausgabezeichenfolge.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung gibt **_cputs** 0 zurück. Wenn die Funktion fehlschlägt, wird einen Wert ungleich null zurückgegeben.
+Wenn dies erfolgreich ist, **gibt _cputs** 0 zurück. Wenn die Funktion fehlschlägt, wird einen Wert ungleich null zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_cputs** -Funktion schreibt die auf NULL endenden Zeichenfolge, auf die von *Str* verwiesen wird, direkt in die Konsole. Eine Kombination aus Wagenrücklauf-Zeilenvorschub (CR-LF) wird nicht automatisch an die Zeichenfolge angefügt.
+Die **_cputs-Funktion** schreibt die null-terminierte Zeichenfolge, auf die von *str* direkt auf die Konsole verwiesen wird. Eine Kombination aus Wagenrücklauf-Zeilenvorschub (CR-LF) wird nicht automatisch an die Zeichenfolge angefügt.
 
-Diese Funktion überprüft seine Parameter. Wenn *Str* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und-1 wird zurückgegeben.
+Diese Funktion überprüft seine Parameter. Wenn *str* **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und -1 zurückgegeben.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -81,12 +86,12 @@ Diese Funktion überprüft seine Parameter. Wenn *Str* **null**ist, wird der Han
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|Optionaler Header|
+|Routine|Erforderlicher Header|Optionaler Header|
 |-------------|---------------------|---------------------|
 |**_cputs**|\<conio.h>|\<errno.h>|
 |**_cputws**|\<conio.h>|\<errno.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -151,5 +156,5 @@ Hello world (courtesy of _cputws)!
 
 ## <a name="see-also"></a>Siehe auch
 
-[Konsole und Port-E/A](../../c-runtime-library/console-and-port-i-o.md)<br/>
+[Konsole und Port-I/O](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_putch, _putwch](putch-putwch.md)<br/>

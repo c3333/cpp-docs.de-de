@@ -1,9 +1,11 @@
 ---
 title: _strdate, _wstrdate
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _strdate
 - _wstrdate
+- _o__strdate
+- _o__wstrdate
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-time-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -36,12 +39,12 @@ helpviewer_keywords:
 - _tstrdate function
 - copying dates
 ms.assetid: de8e4097-58f8-42ba-9dcd-cb4d9a9f1696
-ms.openlocfilehash: e1164db5857643bac649e96493a3d66cdee3b6e2
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9b4b6d3b81dd1dda968cc42448ab2e53bdd44433
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70958223"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81361283"
 ---
 # <a name="_strdate-_wstrdate"></a>_strdate, _wstrdate
 
@@ -68,24 +71,26 @@ wchar_t *_wstrdate(
 
 ### <a name="parameters"></a>Parameter
 
-*dateStr*<br/>
+*datestr*<br/>
 Ein Zeiger auf einen Puffer, der die formatierte Datumszeichenfolge enthält.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Funktionen gibt einen Zeiger auf die resultierende Zeichenfolge *dateStr*zurück.
+Jede dieser Funktionen gibt einen Zeiger auf die resultierende Zeichenfolge *datestr*zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [_strdate_s, _wstrdate_s](strdate-s-wstrdate-s.md). Es wird empfohlen, nach Möglichkeit die sichereren Funktionen zu verwenden.
 
-Die **_strdate** -Funktion kopiert das aktuelle Systemdatum in den Puffer, auf das von *dateStr*, formatiertem **mm**/**DD**/**yy**, verwiesen wird, wobei **mm** zwei Ziffern darstellt, die den Monat, **DD** , darstellen. gibt zwei Ziffern an, die den Tag darstellen, und **yy** ist die letzten zwei Ziffern des Jahres. Die Zeichenfolge **12/05/99** stellt z. b. den 5. Dezember 1999 dar. Der Puffer muss mindestens 9 Bytes lang sein.
+Die **funktion _strdate** kopiert das aktuelle Systemdatum in den Puffer, auf den durch *datestr*verwiesen wird, **formatiert mm**/**dd**/**yy**, wobei **mm** zwei Ziffern für den Monat, **dd** zwei Ziffern für den Tag und **yy** die letzten beiden Ziffern des Jahres ist. Beispielsweise stellt die Zeichenfolge **12/05/99** den 5. Dezember 1999 dar. Der Puffer muss mindestens 9 Bytes lang sein.
 
-Wenn *dateStr* ein **null** -Zeiger ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
+Wenn *datestr* ein **NULL-Zeiger** ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen -1 zurück und setzen **errno** auf **EINVAL**.
 
-**_wstrdate** ist eine breit Zeichen Version von **_strdate**. Das Argument und der Rückgabewert von **_wstrdate** sind Zeichen folgen mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+**_wstrdate** ist eine breitgefächerte Version von **_strdate**; Das Argument und der Rückgabewert von **_wstrdate** sind Zeichenfolgen mit großen Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -95,12 +100,12 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_strdate**|\<time.h>|
 |**_wstrdate**|\<time.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -130,7 +135,7 @@ OS date: 04/25/03
 
 ## <a name="see-also"></a>Siehe auch
 
-[Uhrzeitverwaltung](../../c-runtime-library/time-management.md)<br/>
+[Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>
 [ctime, _ctime32, _ctime64, _wctime, _wctime32, _wctime64](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)<br/>
 [gmtime, _gmtime32, _gmtime64](gmtime-gmtime32-gmtime64.md)<br/>

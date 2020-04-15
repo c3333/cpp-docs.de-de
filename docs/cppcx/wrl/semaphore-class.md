@@ -13,16 +13,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Wrappers::Semaphore::operator= operator
 - Microsoft::WRL::Wrappers::Semaphore::Semaphore, constructor
 ms.assetid: ded53526-17b4-4381-9c60-ea5e77363db6
-ms.openlocfilehash: 10357bb1cd46a33a8d4090c1ccc30050584d1816
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: e017b1b6316c4b6d49563d9a543950ab28961d90
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403131"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81359355"
 ---
 # <a name="semaphore-class"></a>Semaphore-Klasse
 
-Stellt ein Synchronisierungsobjekt, das eine freigegebene Ressource steuert, die eine begrenzte Anzahl von Benutzern unterstützen können.
+Stellt ein Synchronisierungsobjekt dar, das eine freigegebene Ressource steuert, die eine begrenzte Anzahl von Benutzern unterstützen kann.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,27 +34,27 @@ class Semaphore : public HandleT<HandleTraits::SemaphoreTraits>;
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name       | Beschreibung
+Name       | BESCHREIBUNG
 ---------- | ------------------------------------------------------
 `SyncLock` | Ein Synonym für eine Klasse, die synchrone Sperren unterstützt.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-Name                               | Beschreibung
+Name                               | BESCHREIBUNG
 ---------------------------------- | ----------------------------------------------------
-[Semaphore::Semaphore](#semaphore) | Initialisiert eine neue Instanz der `Semaphore`-Klasse.
+[Semaphore::Semaphore](#semaphore) | Initialisiert eine neue Instanz der Klasse `Semaphore`.
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-Name                     | Beschreibung
+Name                     | BESCHREIBUNG
 ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------
-[Semaphore::Lock](#lock) | Wartet, bis das aktuelle Objekt, oder das Objekt, das das angegebene Handle zugeordnet ist, in den signalisierten Zustand oder das angegebene Timeoutintervall verstrichen ist.
+[Semaphore::Lock](#lock) | Wartet, bis sich das aktuelle Objekt oder das dem angegebenen Handle zugeordnete Objekt im signalisierten Zustand befindet oder das angegebene Timeoutintervall abgelaufen ist.
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-Name                                     | Beschreibung
+Name                                     | BESCHREIBUNG
 ---------------------------------------- | ---------------------------------------------------------------------------------------
-[Semaphore::operator=](#operator-assign) | Verschiebt das angegebene Handle von einem `Semaphore` -Objekt mit dem aktuellen `Semaphore` Objekt.
+[Semaphore::operator=](#operator-assign) | Verschiebt das angegebene `Semaphore` Handle von `Semaphore` einem Objekt in das aktuelle Objekt.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -62,13 +62,13 @@ Name                                     | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** corewrappers.h
+**Kopfzeile:** corewrappers.h
 
 **Namespace:** Microsoft::WRL::Wrappers
 
-## <a name="lock"></a>Semaphore::Lock
+## <a name="semaphorelock"></a><a name="lock"></a>Semaphore::Lock
 
-Wartet, bis das aktuelle Objekt, oder die `Semaphore` zugeordnete Objekt das angegebene Handle im signalisierten Zustand ist, oder das angegebene Timeoutintervall verstrichen.
+Wartet, bis sich das `Semaphore` aktuelle Objekt oder das dem angegebenen Handle zugeordnete Objekt im signalisierten Zustand befindet oder das angegebene Timeoutintervall abgelaufen ist.
 
 ```cpp
 SyncLock Lock(
@@ -83,19 +83,19 @@ static SyncLock Lock(
 
 ### <a name="parameters"></a>Parameter
 
-*milliseconds*<br/>
-Das Timeoutintervall in Millisekunden. Der Standardwert ist UNENDLICH sein, was die unbegrenzt wartet.
+*Millisekunden*<br/>
+Das Timeoutintervall in Millisekunden. Der Standardwert ist INFINITE, der auf unbestimmte Zeit wartet.
 
-*h*<br/>
-Ein Handle für ein `Semaphore` Objekt.
+*H*<br/>
+Ein Handle `Semaphore` für ein Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine `Details::SyncLockWithStatusT<HandleTraits::SemaphoreTraits>`
+A `Details::SyncLockWithStatusT<HandleTraits::SemaphoreTraits>`
 
-## <a name="operator-assign"></a>Semaphore::operator=
+## <a name="semaphoreoperator"></a><a name="operator-assign"></a>Semaphore::operator=
 
-Verschiebt das angegebene Handle von einem `Semaphore` -Objekt mit dem aktuellen `Semaphore` Objekt.
+Verschiebt das angegebene `Semaphore` Handle von `Semaphore` einem Objekt in das aktuelle Objekt.
 
 ```cpp
 Semaphore& operator=(
@@ -105,16 +105,16 @@ Semaphore& operator=(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Rvalue-Verweis auf eine `Semaphore` Objekt.
+*H*<br/>
+Rvalue-Verweis auf `Semaphore` ein Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Verweis auf das aktuelle `Semaphore` Objekt.
+Ein Verweis auf `Semaphore` das aktuelle Objekt.
 
-## <a name="semaphore"></a>Semaphore::Semaphore
+## <a name="semaphoresemaphore"></a><a name="semaphore"></a>Semaphore::Semaphore
 
-Initialisiert eine neue Instanz der `Semaphore`-Klasse.
+Initialisiert eine neue Instanz der Klasse `Semaphore`.
 
 ```cpp
 explicit Semaphore(
@@ -128,5 +128,5 @@ WRL_NOTHROW Semaphore(
 
 ### <a name="parameters"></a>Parameter
 
-*h*<br/>
-Ein Handle oder einen Rvalue-Verweis auf eine `Semaphore` Objekt.
+*H*<br/>
+Ein Handle oder ein rvalue-Verweis auf ein `Semaphore` Objekt.

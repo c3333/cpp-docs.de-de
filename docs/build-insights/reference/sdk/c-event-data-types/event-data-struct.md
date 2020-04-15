@@ -1,6 +1,6 @@
 ---
 title: EVENT_DATA Struktur
-description: Das C++ Build Insights SDK EVENT_DATA Struktur Referenz.
+description: Das C++ Build Insights SDK EVENT_DATA Strukturreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 572cbdaba346ddb77b665b5677b978c83a80aa3d
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.openlocfilehash: 8ce396febe278c5e7c34fe170939c9522913f92a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79422907"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81325600"
 ---
 # <a name="event_data-structure"></a>EVENT_DATA Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `EVENT_DATA` Struktur beschreibt ein Ereignis, das von einer Analyse oder einer erneuten Protokollierungs Sitzung empfangen wurde. Diese Sitzungen werden durch Aufrufen der Funktionen " [analysieren](../functions/analyze.md)", " [analyzea](../functions/analyze-a.md)", " [analyzew](../functions/analyze-w.md)", " [relog](../functions/relog.md)", " [reloga](../functions/relog-a.md)" oder " [relogw](../functions/relog-w.md) " gestartet
+Die `EVENT_DATA` Struktur beschreibt ein Ereignis, das von einer Analyse- oder Reloggingsitzung empfangen wurde. Diese Sitzungen werden durch Aufrufen der Funktionen [Analyze](../functions/analyze.md), [AnalyzeA](../functions/analyze-a.md), [AnalyzeW](../functions/analyze-w.md), [Relog](../functions/relog.md), [RelogA](../functions/relog-a.md)oder [RelogW](../functions/relog-w.md) gestartet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -60,30 +60,30 @@ typedef struct EVENT_DATA_TAG
 
 |  |  |
 |--|--|
-| `EventId` | Eine Zahl, die das Ereignis bezeichnet. Eine Liste der Ereignis Bezeichner finden Sie unter [event_id](event-id-enum.md). |
-| `EventInstanceId` | Eine Zahl, die das aktuelle Ereignis innerhalb einer Ablauf Verfolgung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Ablauf Verfolgung mehrmals analysiert oder neu protokolliert wird. Verwenden Sie dieses Feld, um das gleiche Ereignis in mehreren Analysen zu identifizieren oder die erneute Protokollierung über dieselbe Ablauf Verfolgung durchzuführen. |
-| `TickFrequency` | Die Anzahl der Ticks pro Sekunde, die verwendet werden sollen, wenn eine in Ticks gemessene Dauer ausgewertet wird. |
-| `StartTimestamp` | Wenn das Ereignis eine *Aktivität*ist, wird dieses Feld auf einen Teil Strich Wert festgelegt, der zu dem Zeitpunkt aufgezeichnet wurde, als die Aktivität gestartet wurde. Wenn dieses Ereignis ein *einfaches Ereignis*ist, wird dieses Feld auf einen Teil Strich Wert festgelegt, der zu dem Zeitpunkt aufgezeichnet wurde, als das Ereignis aufgetreten ist. |
-| `StopTimestamp` | Wenn das Ereignis eine *Aktivität*ist, wird dieses Feld auf einen Teil Strich Wert festgelegt, der zu dem Zeitpunkt aufgezeichnet wurde, zu dem die Aktivität beendet wurde. Wenn das Ereignis zum Abbrechen für diese Aktivität noch nicht empfangen wurde, wird dieses Feld auf 0 (null) festgelegt. Wenn dieses Ereignis ein *einfaches Ereignis*ist, wird dieses Feld auf 0 (null) festgelegt. |
-| `ExclusiveDurationTicks` | Wenn dieses Ereignis eine *Aktivität*ist, wird dieses Feld auf die Anzahl der Ticks festgelegt, die direkt in dieser Aktivität aufgetreten sind. Die Anzahl der Ticks, die in einer untergeordneten Aktivität aufgetreten sind, wird ausgeschlossen. Dieses Feld ist für *einfache Ereignisse*auf 0 (null) festgelegt. |
-| `CPUTicks` | Wenn dieses Ereignis eine *Aktivität*ist, wird dieses Feld auf die Anzahl der CPU-Ticks festgelegt, die während dieser Aktivität aufgetreten sind. Ein CPU-Tick unterscheidet sich von einem regulären Tick. CPU-Ticks werden nur gezählt, wenn die CPU Code in einer Aktivität ausführt. CPU-Ticks werden nicht gezählt, wenn der der Aktivität zugeordnete Thread im Ruhezustand ist. Dieses Feld ist für *einfache Ereignisse*auf 0 (null) festgelegt. |
-| `ExclusiveCPUTicks` | Dieses Feld hat dieselbe Bedeutung wie `CPUTicks`, mit der Ausnahme, dass es keine CPU-Ticks enthält, die in untergeordneten Aktivitäten aufgetreten sind. Dieses Feld ist für *einfache Ereignisse*auf 0 (null) festgelegt. |
-| `WallClockTimeResponsibilityTicks` | Wenn es sich bei diesem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf eine Takt Anzahl festgelegt, die den Beitrag dieser Aktivität zur Gesamtzeit für die Uhrzeit darstellt. Der Takt der Aufgaben für die Wand Zeit unterscheidet sich von einem regulären Tick. Bei der Zeit, in der die Zeit für die Zeit in der Arbeit berücksichtigt wird Beispielsweise können zwei parallele Aktivitäten eine Dauer von 50 Ticks und dieselbe Start-und Endzeit aufweisen. In diesem Fall wird für beide eine Wand Zeit in der Verantwortung von 25 Ticks zugewiesen. Dieses Feld ist für *einfache Ereignisse*auf 0 (null) festgelegt. |
-| `ExclusiveWallClockTimeResponsibilityTicks` | Dieses Feld hat dieselbe Bedeutung wie `WallClockTimeResponsibilityTicks`, mit dem Unterschied, dass es keine untergeordneten Aktivitäten von der Wand-/Uhrzeitangabe enthält. Dieses Feld ist für *einfache Ereignisse*auf 0 (null) festgelegt. |
-| `Data` | Zeigt auf zusätzliche Daten, die im Ereignis gespeichert werden. Der Datentyp, auf den verwiesen wird, ist abhängig vom `EventId` Feld unterschiedlich. |
+| `EventId` | Eine Zahl, die das Ereignis identifiziert. Eine Liste der Ereignisbezeichner finden Sie unter [EVENT_ID](event-id-enum.md). |
+| `EventInstanceId` | Eine Zahl, die das aktuelle Ereignis innerhalb einer Ablaufverfolgung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Ablaufverfolgung mehrmals analysiert oder neu protokolliert wird. Verwenden Sie dieses Feld, um dasselbe Ereignis in mehreren Analyse- oder Relogging-Durchgängen über dieselbe Ablaufverfolgung zu identifizieren. |
+| `TickFrequency` | Die Anzahl der Ticks pro Sekunde, die bei der Auswertung einer in Ticks gemessenen Dauer verwendet werden sollen. |
+| `StartTimestamp` | Wenn es sich bei dem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf einen Tick-Wert festgelegt, der zum Zeitpunkt des Beginns der Aktivität erfasst wurde. Wenn es sich bei diesem Ereignis um ein *einfaches Ereignis*handelt, wird dieses Feld auf einen Tick-Wert festgelegt, der zum Zeitpunkt des Auftretens des Ereignisses erfasst wurde. |
+| `StopTimestamp` | Wenn es sich bei dem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf einen Tick-Wert festgelegt, der zum Zeitpunkt des Beendetwerdens der Aktivität erfasst wurde. Wenn das Stoppereignis für diese Aktivität noch nicht empfangen wurde, wird dieses Feld auf Null gesetzt. Wenn es sich bei diesem Ereignis um ein *einfaches Ereignis*handelt, wird dieses Feld auf Null gesetzt. |
+| `ExclusiveDurationTicks` | Wenn es sich bei diesem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf die Anzahl der Ticks festgelegt, die direkt in dieser Aktivität aufgetreten sind. Die Anzahl der Ticks, die in einer untergeordneten Aktivität aufgetreten sind, wird ausgeschlossen. Dieses Feld ist für *einfache Ereignisse*auf Null gesetzt. |
+| `CPUTicks` | Wenn es sich bei diesem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf die Anzahl der CPU-Ticks festgelegt, die während dieser Aktivität aufgetreten sind. Ein CPU-Tick unterscheidet sich von einem normalen Tick. CPU-Ticks werden nur gezählt, wenn die CPU Code in einer Aktivität ausführt. CPU-Ticks werden nicht gezählt, wenn der der Aktivität zugeordnete Thread schläft. Dieses Feld ist für *einfache Ereignisse*auf Null gesetzt. |
+| `ExclusiveCPUTicks` | Dieses Feld hat die `CPUTicks`gleiche Bedeutung wie , außer dass es keine CPU-Ticks enthält, die in untergeordneten Aktivitäten aufgetreten sind. Dieses Feld ist für *einfache Ereignisse*auf Null gesetzt. |
+| `WallClockTimeResponsibilityTicks` | Wenn es sich bei diesem Ereignis um eine *Aktivität*handelt, wird dieses Feld auf eine Tickanzahl festgelegt, die den Beitrag dieser Aktivität zur Gesamtzeit von Wand-Uhr darstellt. Ein Wand-Uhr-Zeitverantwortungs-Tick unterscheidet sich von einem normalen Tick. Wand-Uhr-Zeitverantwortung tickt berücksichtigung Parallelität zwischen Aktivitäten. Beispielsweise können zwei parallele Aktivitäten eine Dauer von 50 Ticks und die gleiche Start- und Stoppzeit haben. In diesem Fall wird beiden eine Wand-Uhr-Zeitverantwortung von 25 Ticks zugewiesen. Dieses Feld ist für *einfache Ereignisse*auf Null gesetzt. |
+| `ExclusiveWallClockTimeResponsibilityTicks` | Dieses Feld hat die `WallClockTimeResponsibilityTicks`gleiche Bedeutung wie , außer dass es nicht die Wand-Uhr-Zeitverantwortung tickt von Kinderaktivitäten enthält. Dieses Feld ist für *einfache Ereignisse*auf Null gesetzt. |
+| `Data` | Verweist auf zusätzliche Daten, die im Ereignis gespeichert sind. Der Typ der Daten, auf die `EventId` verwiesen wird, ist je nach Feld unterschiedlich. |
 | `ProcessId` | Der Bezeichner für den Prozess, in dem das Ereignis aufgetreten ist. |
 | `ThreadId` | Der Bezeichner für den Thread, in dem das Ereignis aufgetreten ist. |
-| `ProcessorIndex` | Die NULL indizierte CPU-Zahl, auf der das Ereignis aufgetreten ist. |
-| `EventName` | Eine ANSI-Zeichenfolge mit dem Namen der Entität, die durch `EventId`identifiziert wird. |
-| `EventWideName` | Eine Breite Zeichenfolge, die den Namen der durch `EventId`identifizierten Entität enthält. |
+| `ProcessorIndex` | Die nullindizierte CPU-Nummer, auf der das Ereignis aufgetreten ist. |
+| `EventName` | Eine ANSI-Zeichenfolge, die den `EventId`Namen der Entität enthält, die durch identifiziert wurde. |
+| `EventWideName` | Eine breite Zeichenfolge, die den `EventId`Namen der Entität enthält, die durch identifiziert wurde. |
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Viele Felder in `EVENT_DATA` die Tick-Zähler enthalten. C++Buildeinblicke verwendet den Leistungs Leistungswert von Fenstern als Quelle von Ticks. Ein Tick-Zähler muss mit dem `TickFrequency`-Feld verwendet werden, um ihn in eine entsprechende Zeiteinheit, z. b. Sekunden, zu konvertieren. Sehen Sie sich das folgende Beispiel an, um diese Konvertierung durchzuführen. `EVENT_DATA` enthält kein Feld für die reguläre Takt Anzahl einer Aktivität. Zum Abrufen dieses Werts subtrahieren Sie `StartTimestamp` von `StopTimestamp`. `EVENT_DATA` ist eine Struktur, die von C-API-Benutzern verwendet werden soll. Für C++ API-Benutzer werden Klassen wie [Ereignis](../cpp-event-data-types/event.md) automatisch Zeit Konvertierungen durchführen.
+Viele Felder `EVENT_DATA` in enthalten Tick-Zahlen. C++ Build Insights verwendet den Leistungsindikator von Window als Quelle von Ticks. Eine Tickanzahl muss mit `TickFrequency` dem Feld verwendet werden, um es in eine geeignete Zeiteinheit wie Sekunden umzuwandeln. Im folgenden Beispiel finden Sie eine Durchführung dieser Konvertierung. `EVENT_DATA`enthält kein Feld für die regelmäßige Tickanzahl einer Aktivität. Um diesen Wert zu `StartTimestamp` `StopTimestamp`erhalten, subtrahieren Sie von . `EVENT_DATA`ist eine Struktur, die von C-API-Benutzern verwendet werden soll. Für C++-API-Benutzer führen Klassen wie [Event](../cpp-event-data-types/event.md) automatisch Zeitkonvertierungen durch.
 
-Der Wert des Felds `EVENT_DATA` `Data` hängt vom Wert des `EventId` Felds ab. Der Wert `Data` wird in der folgenden Tabelle beschrieben. In der folgenden Tabelle fehlen möglicherweise einige Entitäts Bezeichner. In diesem Fall wird das Feld `Data` auf `nullptr` oder NULL festgelegt.
+Der Wert `EVENT_DATA` `Data` des Felds hängt `EventId` vom Wert seines Felds ab. Der Wert `Data` von wird in der folgenden Tabelle beschrieben. Einige Entitätsbezeichner fehlen möglicherweise in der folgenden Tabelle. In diesem Fall `Data` wird das `nullptr` Feld auf null oder Null gesetzt.
 
-| `EventId` -Wert | Typ, auf den von verwiesen wird `Data` |
+| Wert vom Typ `EventId` | Typ, auf den durch`Data` |
 |--|--|
 | `EVENT_ID_BACK_END_PASS` | [CL_PASS_DATA](cl-pass-data-struct.md) |
 | `EVENT_ID_COMMAND_LINE` | `const wchar_t` |
@@ -103,7 +103,7 @@ Der Wert des Felds `EVENT_DATA` `Data` hängt vom Wert des `EventId` Felds ab. D
 | `EVENT_ID_SYMBOL_NAME` | [SYMBOL_NAME_DATA](symbol-name-data-struct.md) |
 | `EVENT_ID_TEMPLATE_INSTANTIATION` | [TEMPLATE_INSTANTIATION_DATA](template-instantiation-data-struct.md) |
 
-## <a name="tick-conversion-example"></a>Beispiel für Tick-Konvertierung
+## <a name="tick-conversion-example"></a>Beispiel für die Tick-Konvertierung
 
 ```cpp
 //

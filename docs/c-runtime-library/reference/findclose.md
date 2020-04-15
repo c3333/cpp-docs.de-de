@@ -1,8 +1,9 @@
 ---
 title: _findclose
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _findclose
+- _o__findclose
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -26,12 +28,12 @@ helpviewer_keywords:
 - _findclose function
 - findclose function
 ms.assetid: 9216c573-0878-444c-b5d7-cdaf16fb9163
-ms.openlocfilehash: c67336cc12bcdee754edd40b91078faa83a17984
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ed17963dc7331962c3ac0d522db2843822ec5f79
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957319"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346785"
 ---
 # <a name="_findclose"></a>_findclose
 
@@ -47,12 +49,16 @@ int _findclose(
 
 ### <a name="parameters"></a>Parameter
 
-*bewältigen*<br/>
-Such handle, das von einem vorherigen-Befehl an **_findfirst**zurückgegeben wurde.
+*Behandeln*<br/>
+Suchhandle, das von einem vorherigen Aufruf an **_findfirst**zurückgegeben wurde.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung gibt **_findclose** 0 zurück. Andernfalls wird-1 zurückgegeben und **errno** auf **ENOENT**festgelegt, um anzugeben, dass keine weiteren übereinstimmenden Dateien gefunden werden konnten.
+Wenn dies erfolgreich ist, **gibt _findclose** 0 zurück. Andernfalls gibt es -1 zurück und setzt **errno** auf **ENOENT**, was darauf hinweist, dass keine übereinstimmenden Dateien mehr gefunden wurden.
+
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -60,7 +66,7 @@ Bei erfolgreicher Ausführung gibt **_findclose** 0 zurück. Andernfalls wird-1 
 |--------------|---------------------|
 |**_findclose**|\<io.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

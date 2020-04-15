@@ -1,8 +1,9 @@
 ---
 title: _read
-ms.date: 02/13/2019
+ms.date: 4/2/2020
 api_name:
 - _read
+- _o__read
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -29,12 +31,12 @@ helpviewer_keywords:
 - reading data [C++]
 - files [C++], reading
 ms.assetid: 2ce9c433-57ad-47fe-9ac1-4a7d4c883d30
-ms.openlocfilehash: 32238923aeef14230f68def15e27c676753faf61
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: db3726b85bb4ba7c8e9a691bef3fb063ec5709c9
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949533"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81338130"
 ---
 # <a name="_read"></a>_read
 
@@ -52,38 +54,40 @@ int _read(
 
 ### <a name="parameters"></a>Parameter
 
-*fd*<br/>
+*Fd*<br/>
 Dateideskriptor, der auf die geöffnete Datei verweist.
 
-*buffer*<br/>
+*Puffer*<br/>
 Speicherort für Daten.
 
 *buffer_size*<br/>
-Maximale Anzahl der zu lesenden Bytes.
+Maximale Anzahl zu lesender Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_read** gibt die Anzahl der gelesenen Bytes zurück, die möglicherweise kleiner als *buffer_size* ist, wenn in der Datei weniger als *buffer_size* Bytes verbleiben oder wenn die Datei im Textmodus geöffnet wurde. Im Textmodus wird jedes Wagen Rücklauf-Zeilenvorschub-Paar `\r\n` durch ein Einzel Zeilen-Feed-Zeichen `\n`ersetzt. Nur das einzeilige Einfügezeichen wird im Rückgabewert gezählt. Der Ersatz hat keine Auswirkung auf den Rückgabezeiger.
+**_read** gibt die Anzahl der gelesenen Bytes zurück, die möglicherweise kleiner als *buffer_size* sind, wenn weniger als *buffer_size* Bytes in der Datei verbleiben oder wenn die Datei im Textmodus geöffnet wurde. Im Textmodus wird jedes Wagen-Rücklaufpaar `\r\n` durch ein `\n`einzelnes Zeilenvorschubzeichen ersetzt. Nur das einzeilige Vorschubzeichen wird im Rückgabewert gezählt. Der Ersatz hat keine Auswirkung auf den Rückgabezeiger.
 
-Wenn die Funktion versucht, am Ende der Datei zu lesen, wird 0 zurückgegeben. Wenn *FD* nicht gültig ist, die Datei nicht zum Lesen geöffnet ist oder die Datei gesperrt ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück und legt **errno** auf **EBADF**fest.
+Wenn die Funktion versucht, am Ende der Datei zu lesen, wird 0 zurückgegeben. Wenn *fd* ungültig ist, die Datei nicht zum Lesen geöffnet ist oder die Datei gesperrt ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion -1 zurück und setzt **errno** auf **EBADF**.
 
-Wenn der Puffer **null**ist oder wenn *buffer_size* > **INT_MAX**, wird der Handler für ungültige Parameter aufgerufen. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück, und **errno** ist auf **EINVAL**festgelegt.
+Wenn *buffer* **NULL**ist oder *wenn buffer_size* > **INT_MAX**wird der ungültige Parameterhandler aufgerufen. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion -1 zurück und **errno** wird auf **EINVAL**gesetzt.
 
-Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_read** -Funktion liest maximal *buffer_size* Bytes aus der Datei, die mit *FD*verknüpft ist, in den *Puffer* . Der Lesevorgang beginnt an der aktuellen Position des Dateizeigers für die betreffende Datei. Nach dem Lesevorgang zeigt der Dateizeiger auf das nächste ungelesene Zeichen.
+Die **_read-Funktion** liest maximal *buffer_size* Bytes aus der Datei, die *fd*zugeordnet ist, in den *Puffer.* Der Lesevorgang beginnt an der aktuellen Position des Dateizeigers für die betreffende Datei. Nach dem Lesevorgang zeigt der Dateizeiger auf das nächste ungelesene Zeichen.
 
-Wenn die Datei im Textmodus geöffnet wurde, wird der Lesevorgang beendet, wenn **_read** auf ein STRG + Z-Zeichen stößt, das als Dateiende-Indikator behandelt wird. Verwenden Sie [_lseek](lseek-lseeki64.md), um den Dateiende-Indikator zu löschen.
+Wenn die Datei im Textmodus geöffnet wurde, wird der Lesefehler beendet, wenn **_read** auf ein STRG+Z-Zeichen trifft, das als Dateiende-Indikator behandelt wird. Verwenden Sie [_lseek](lseek-lseeki64.md), um den Dateiende-Indikator zu löschen.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_read**|\<io.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -136,7 +140,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Read 19 bytes from file
@@ -144,7 +148,7 @@ Read 19 bytes from file
 
 ## <a name="see-also"></a>Siehe auch
 
-[E/A auf niedriger Ebene](../../c-runtime-library/low-level-i-o.md)<br/>
+[Low-Level-E/A](../../c-runtime-library/low-level-i-o.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
 [fread](fread.md)<br/>
 [_open, _wopen](open-wopen.md)<br/>

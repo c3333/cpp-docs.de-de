@@ -1,9 +1,11 @@
 ---
 title: memcpy_s, wmemcpy_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - memcpy_s
 - wmemcpy_s
+- _o_memcpy_s
+- _o_wmemcpy_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +31,12 @@ helpviewer_keywords:
 - memcpy_s function
 - wmemcpy_s function
 ms.assetid: 5504e20a-83d9-4063-91fc-3f55f7dabe99
-ms.openlocfilehash: 8078590df6950201ef81356ba6c28173e80572ee
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: dc5e49115b65b6883e55df13d0610231a87c1c55
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952797"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81333342"
 ---
 # <a name="memcpy_s-wmemcpy_s"></a>memcpy_s, wmemcpy_s
 
@@ -76,27 +79,29 @@ Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*dest*|*destSize*|*src*|*count*|Rückgabewert|Inhalt von *dest*|
+|*dest*|*destSize*|*src*|*count*|Rückgabewert|Inhalt *dest*|
 |------------|----------------|-----------|---|------------------|------------------------|
 |any|any|any|0|0|Nicht geändert|
-|**NULL**|any|any|ungleich null|**EINVAL**|Nicht geändert|
-|any|any|**NULL**|ungleich null|**EINVAL**|*dest* ist nulgerout|
-|any|< *Countdown*|any|ungleich null|**ERANGE**|*dest* ist nulgerout|
+|**Null**|any|any|ungleich null|**Einval**|Nicht geändert|
+|any|any|**Null**|ungleich null|**Einval**|*dest* ist auf Null gesetzt|
+|any|< *Count*|any|ungleich null|**ERANGE**|*dest* ist auf Null gesetzt|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**memcpy_s** kopiert die *Anzahl* von Bytes von *src* in *dest*. **wmemcpy_s** kopiert die *Anzahl* von breit Zeichen (zwei Bytes). Wenn sich Quelle und Ziel überlappen, ist das Verhalten von **memcpy_s** nicht definiert. Verwenden Sie **memmove_s** , um überlappende Bereiche zu behandeln.
+**memcpy_s** Kopien *zählen* Bytes von *src* nach *dest*; **wmemcpy_s** Kopien *zählen* breite Zeichen (zwei Bytes). Wenn sich Quelle und Ziel überlappen, ist das Verhalten von **memcpy_s** nicht definiert. Verwenden Sie **memmove_s,** um überlappende Bereiche zu behandeln.
 
-Diese Funktionen überprüfen ihre Parameter. Wenn *count* ungleich NULL und *dest* oder *src* ein NULL-Zeiger ist oder *destSize* kleiner als *count*ist, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen " **EINVAL** " oder " **ERANGE** " zurück und legen " **errno** " auf den Rückgabewert fest.
+Diese Funktionen überprüfen ihre Parameter. Wenn *count* ungleich Null ist und *dest* oder *src* ein Nullzeiger ist oder *destSize* kleiner als *count*ist, rufen diese Funktionen den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, geben diese Funktionen **EINVAL** oder **ERANGE** zurück und setzen **errno** auf den Rückgabewert.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**memcpy_s**|\<memory.h> oder \<string.h>|
 |**wmemcpy_s**|\<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

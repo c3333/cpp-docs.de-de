@@ -1,6 +1,6 @@
 ---
 title: Analysieren
-description: Die C++ Build Insights SDK-Analyse Funktionsreferenz.
+description: Die C++ Build Insights SDK Analyze-Funktionsreferenz.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 49161641d1cff1c64261d95bb2caace2f802543a
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 08b3643270cc785b3fbea36720d192b4a1473104
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334433"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81324112"
 ---
 # <a name="analyze"></a>Analysieren
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `Analyze`-Funktion wird verwendet, um eine ETW-Ablauf Verfolgung (Event Tracing for Windows, Ereignis Ablauf Verfolgung für Windows C++ ) zu analysieren, die von MSVC abgerufen wurde Die Ereignisse in der etw-Ablauf Verfolgung werden sequenziell an eine vom Aufrufer bereitgestellte Analysegruppe weitergeleitet. Diese Funktion unterstützt Multipass-Analysen, mit denen der Ereignisdaten Strom mehrmals in einer Zeile an die Analysegruppe weitergeleitet werden kann.
+Die `Analyze` Funktion wird verwendet, um eine ETW-Ablaufverfolgung (Event Tracing for Windows) zu analysieren, die von MSVC abgerufen wurde, während ein C++-Build nachverfolgt wird. Die Ereignisse in der ETW-Ablaufverfolgung werden sequenziell an eine vom Aufrufer bereitgestellte Analysegruppe weitergeleitet. Diese Funktion unterstützt Multipassanalysen, die die Weiterleitung des Ereignisstreams an die Analysegruppe mehrmals hintereinander ermöglichen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,20 +45,20 @@ RESULT_CODE Analyze(
 
 ### <a name="parameters"></a>Parameter
 
-*Tanalyzergroupmembers* -\
+*TAnalyzerGroupMembers*\
 Dieser Parameter wird immer abgeleitet.
 
-*inputlogfile* -\
-Die Eingabe-etw-Ablauf Verfolgung, von der Ereignisse gelesen werden sollen.
+*inputLogFile*\
+Die Eingabe-ETW-Ablaufverfolgung, aus der Sie Ereignisse lesen möchten.
 
-*Anzahl* der\
-Die Anzahl der an der Eingabe Ablauf Verfolgung zu testenden Analysen. Die Ablauf Verfolgung wird einmal pro Analyse Durchlauf durch die angegebene Analysegruppe weitergeleitet.
+*numberOfPasses*\
+Die Anzahl der Analysedurchläufe, die für die Eingabeablaufverfolgung ausgeführt werden sollen. Die Ablaufverfolgung wird einmal pro Analysedurchlauf durch die bereitgestellte Analysegruppe geleitet.
 
-*analyzergroup* -\
-Die Analyzer-Gruppe, die für die Analyse verwendet wird. Rufen Sie [makestaticanalyzergroup](make-static-analyzer-group.md) auf, um eine Analysegruppe zu erstellen. Wenn Sie eine dynamische Analysegruppe verwenden möchten, die von [makedynamicanalyzergroup](make-dynamic-analyzer-group.md)abgerufen wurde, Kapseln Sie Sie zuerst in einer statischen Analysegruppe, indem Sie die Adresse an `MakeStaticAnalyzerGroup`übergeben.
+*analyzerGroup*\
+Die für die Analyse verwendete Analysegruppe. Rufen Sie [MakeStaticAnalyzerGroup](make-static-analyzer-group.md) auf, um eine Analyzer-Gruppe zu erstellen. Um eine dynamische Analysatorgruppe zu verwenden, die von [MakeDynamicAnalyzerGroup](make-dynamic-analyzer-group.md)abgerufen wurde, kapseln Sie sie zunächst in einer statischen Analysatorgruppe ein, indem Sie ihre Adresse an `MakeStaticAnalyzerGroup`übergeben.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) -Aufzählung.
+Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
 
 ::: moniker-end

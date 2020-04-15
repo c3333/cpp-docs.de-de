@@ -11,20 +11,20 @@ helpviewer_keywords:
 - std::fpos [C++], seekpos
 - std::fpos [C++], state
 ms.assetid: ffd0827c-fa34-47f4-b10e-5cb707fcde47
-ms.openlocfilehash: cdca7b961d9aedad841692160c8313f8a306dec2
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 7d60a31e69e8a1ad82086f715cac6dde064d1fac
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689674"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81359202"
 ---
 # <a name="fpos-class"></a>fpos-Klasse
 
-Die Klassen Vorlage beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Datei Positions Indikators innerhalb eines Streams benötigt werden. Ein Objekt der Klasse fpos\< **St**> speichert effektiv mindestens zwei Memberobjekte:
+Die Klassenvorlage beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Dateipositionsindikators in einem beliebigen Stream erforderlich sind. Ein Objekt der Klasse fpos\< **St**> speichert effektiv mindestens zwei Memberobjekte:
 
 - Ein Byteoffset vom Typ [streamoff](../standard-library/ios-typedefs.md#streamoff)
 
-- Ein Konvertierungs Zustand, der von einem Objekt der Klasse "Basic_filebuf" vom Typ "`St`" verwendet wird, in der Regel `mbstate_t`.
+- Ein Konvertierungsstatus, der von einem Objekt `St`der `mbstate_t`Klasse basic_filebuf , vom Typ verwendet wird, in der Regel .
 
 Es kann auch eine beliebige Dateiposition speichern, die von einem Objekt der Klasse [basic_filebuf](../standard-library/basic-filebuf-class.md) und vom Typ `fpos_t` verwendet werden kann. In einer Umgebung mit begrenzter Dateigröße werden `streamoff` und `fpos_t` jedoch manchmal synonym verwendet. In einer Umgebung ohne Streams, mit zustandsabhängiger Codierung, wird `mbstate_t` möglicherweise nicht verwendet. Daher kann die Anzahl der gespeicherten Memberobjekte variieren.
 
@@ -37,32 +37,32 @@ class fpos
 
 ### <a name="parameters"></a>Parameter
 
-@No__t_1 von " *Status Type* "
+*Statetype*\
 Zustandsinformationen.
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Konstruktor|Beschreibung|
+|Konstruktor|BESCHREIBUNG|
 |-|-|
 |[fpos](#fpos)|Erstellt ein Objekt, das Informationen zu einer Position (Offset) in einem Stream enthält.|
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|Member-Funktion|Beschreibung|
+|Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[seekpos](#seekpos)|Wird nur intern von der C++-Standardbibliothek verwendet. Rufen Sie diese Methode nicht aus Ihrem Code auf.|
-|[state](#state)|Legt den Konvertierungszustand fest oder gibt ihn zurück.|
+|[Staat](#state)|Legt den Konvertierungszustand fest oder gibt ihn zurück.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[Operator!=](#op_neq)|Testet Dateipositionsindikatoren auf Ungleichheit.|
-|[operator+](#op_add)|Erhöht einen Dateipositionsindikator.|
-|[operator+=](#op_add_eq)|Erhöht einen Dateipositionsindikator.|
-|[operator-](#operator-)|Verringert einen Dateipositionsindikator.|
+|[Operator+](#op_add)|Erhöht einen Dateipositionsindikator.|
+|[Operator+=](#op_add_eq)|Erhöht einen Dateipositionsindikator.|
+|[Betreiber-](#operator-)|Verringert einen Dateipositionsindikator.|
 |[operator-=](#operator-_eq)|Verringert einen Dateipositionsindikator.|
-|[operator==](#op_eq_eq)|Testet Dateipositionsindikatoren auf Gleichheit.|
+|[Betreiber== Einzelnachweise ==](#op_eq_eq)|Testet Dateipositionsindikatoren auf Gleichheit.|
 |[operator streamoff](#op_streamoff)|Wandelt ein Objekt vom Typ `fpos` in ein Objekt vom Typ `streamoff` um.|
 
 ## <a name="requirements"></a>Anforderungen
@@ -71,7 +71,7 @@ Zustandsinformationen.
 
 **Namespace:** std
 
-## <a name="fpos"></a> fpos::fpos
+## <a name="fposfpos"></a><a name="fpos"></a>fpos::fpos
 
 Erstellt ein Objekt, das Informationen zu einer Position (Offset) in einem Stream enthält.
 
@@ -83,22 +83,22 @@ fpos(Statetype _State, fpos_t _Filepos);
 
 ### <a name="parameters"></a>Parameter
 
-*_Off* \
+*_off*\
 Der Offset in den Stream
 
-*_State* \
+*_state*\
 Der Startzustand des `fpos`-Objekts
 
-*_Filepos* \
+*_Filepos*\
 Der Offset in den Stream
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Der erste Konstruktor speichert den Offset *_Off*relativ zum Anfang der Datei und im ursprünglichen Konvertierungs Zustand (falls dies wichtig ist). Wenn *_Off* den Wert-1 hat, stellt das resultierende Objekt eine ungültige Streamposition dar.
+Der erste Konstruktor speichert den *Offset-_Off*relativ zum Anfang der Datei und im ursprünglichen Konvertierungsstatus (falls das wichtig ist). Wenn *_Off* -1 ist, stellt das resultierende Objekt eine ungültige Streamposition dar.
 
-Der zweite Konstruktor speichert einen Offset von 0 (null) und das Objekt *_State*.
+Der zweite Konstruktor speichert einen Nulloffset, und das Objekt *_State*.
 
-## <a name="op_neq"></a> fpos::operator!=
+## <a name="fposoperator"></a><a name="op_neq"></a>fpos::operator!=
 
 Testet Dateipositionsindikatoren auf Ungleichheit.
 
@@ -108,16 +108,16 @@ bool operator!=(const fpos<Statetype>& right) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Der Dateipositionsindikator, gegen den verglichen werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Dateipositionsindikatoren nicht identisch sind, andernfalls **FALSE**
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt `!(*this == right)`zurück.
+Die Memberfunktion gibt `!(*this == right)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -171,7 +171,7 @@ int main( )
 }
 ```
 
-## <a name="op_add"></a> fpos::operator+
+## <a name="fposoperator"></a><a name="op_add"></a>fpos::operator+
 
 Erhöht einen Dateipositionsindikator.
 
@@ -181,14 +181,14 @@ fpos<Statetype> operator+(streamoff _Off) const;
 
 ### <a name="parameters"></a>Parameter
 
-*_Off* \
+*_off*\
 Der Offset, um den der Dateipositionsindikator erhöht werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Position in der Datei
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt „**fpos(\*this) +=** `_Off`“ zurück.
 
@@ -196,7 +196,7 @@ Die Memberfunktion gibt „**fpos(\*this) +=** `_Off`“ zurück.
 
 Ein Beispiel für die Verwendung von `operator+` finden Sie unter [operator!=](#op_neq).
 
-## <a name="op_add_eq"></a> fpos::operator+=
+## <a name="fposoperator"></a><a name="op_add_eq"></a>fpos::operator+=
 
 Erhöht einen Dateipositionsindikator.
 
@@ -206,22 +206,22 @@ fpos<Statetype>& operator+=(streamoff _Off);
 
 ### <a name="parameters"></a>Parameter
 
-*_Off* \
+*_off*\
 Der Offset, um den der Dateipositionsindikator erhöht werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die Position in der Datei
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion fügt dem gespeicherten Offset-Member-Objekt *_Off* hinzu und gibt dann **\*this**zurück. Für die Positionierung innerhalb einer Datei ist das Ergebnis in der Regel nur für binäre Datenströme gültig, die über keine zustandsabhängige Codierung verfügen.
+Die Memberfunktion fügt *dem* gespeicherten Offsetelementobjekt _Off hinzu und ** \*gibt**diese dann zurück. Für die Positionierung innerhalb einer Datei ist das Ergebnis in der Regel nur für binäre Datenströme gültig, die über keine zustandsabhängige Codierung verfügen.
 
 ### <a name="example"></a>Beispiel
 
 Ein Beispiel für die Verwendung von `operator+=` finden Sie unter [operator!=](#op_neq).
 
-## <a name="operator-"></a> fpos::operator-
+## <a name="fposoperator-"></a><a name="operator-"></a>fpos::operator-
 
 Verringert einen Dateipositionsindikator.
 
@@ -233,10 +233,10 @@ fpos<Statetype> operator-(streamoff _Off) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Dateiposition
 
-*_Off* \
+*_off*\
 Streamoffset
 
 ### <a name="return-value"></a>Rückgabewert
@@ -247,7 +247,7 @@ Die erste Memberfunktion gibt `(streamoff)*this - (streamoff) right` zurück. Di
 
 Ein Beispiel für die Verwendung von `operator-` finden Sie unter [operator!=](#op_neq).
 
-## <a name="operator-_eq"></a> fpos::operator-=
+## <a name="fposoperator-"></a><a name="operator-_eq"></a>fpos::operator-=
 
 Verringert einen Dateipositionsindikator.
 
@@ -257,14 +257,14 @@ fpos<Statetype>& operator-=(streamoff _Off);
 
 ### <a name="parameters"></a>Parameter
 
-*_Off* \
+*_off*\
 Streamoffset
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Memberfunktion gibt `fpos(*this) -= _Off`zurück.
+Die Memberfunktion gibt `fpos(*this) -= _Off` zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Für die Positionierung innerhalb einer Datei ist das Ergebnis in der Regel nur für binäre Datenströme gültig, die über keine zustandsabhängige Codierung verfügen.
 
@@ -272,7 +272,7 @@ Für die Positionierung innerhalb einer Datei ist das Ergebnis in der Regel nur 
 
 Ein Beispiel für die Verwendung von `operator-=` finden Sie unter [operator!=](#op_neq).
 
-## <a name="op_eq_eq"></a> fpos::operator==
+## <a name="fposoperator"></a><a name="op_eq_eq"></a>fpos::operator==
 
 Testet Dateipositionsindikatoren auf Gleichheit.
 
@@ -282,22 +282,22 @@ bool operator==(const fpos<Statetype>& right) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Rechte* \
+*Richting*\
 Der Dateipositionsindikator, gegen den verglichen werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
 **TRUE**, wenn die Dateipositionsindikatoren identisch sind, andernfalls **FALSE**
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt `(streamoff)*this == (streamoff)right`zurück.
+Die Memberfunktion gibt `(streamoff)*this == (streamoff)right` zurück.
 
 ### <a name="example"></a>Beispiel
 
 Ein Beispiel für die Verwendung von `operator+=` finden Sie unter [operator!=](#op_neq).
 
-## <a name="op_streamoff"></a> fpos::operator streamoff
+## <a name="fposoperator-streamoff"></a><a name="op_streamoff"></a>fpos::Operator-Streamoff
 
 Wandelt ein Objekt vom Typ `fpos` in ein Objekt vom Typ `streamoff` um
 
@@ -305,7 +305,7 @@ Wandelt ein Objekt vom Typ `fpos` in ein Objekt vom Typ `streamoff` um
 operator streamoff() const;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt das gespeicherte Offset-Memberobjekt und alle zusätzlichen Offsets zurück, die als Teil des `fpos_t`-Memberobjekts gespeichert sind.
 
@@ -336,7 +336,7 @@ int main( )
 0
 ```
 
-## <a name="seekpos"></a> fpos::seekpos
+## <a name="fposseekpos"></a><a name="seekpos"></a>fpos::seekpos
 
 Diese Methode wird nur intern von der C++-Standardbibliothek verwendet. Rufen Sie diese Methode nicht aus Ihrem Code auf.
 
@@ -344,7 +344,7 @@ Diese Methode wird nur intern von der C++-Standardbibliothek verwendet. Rufen Si
 fpos_t seekpos() const;
 ```
 
-## <a name="state"></a> fpos::state
+## <a name="fposstate"></a><a name="state"></a>fpos::Zustand
 
 Legt den Konvertierungszustand fest oder gibt ihn zurück.
 
@@ -356,16 +356,16 @@ void state(Statetype _State);
 
 ### <a name="parameters"></a>Parameter
 
-*_State* \
+*_state*\
 Der neue Konvertierungsstatus
 
 ### <a name="return-value"></a>Rückgabewert
 
 Der Konvertierungsstatus
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion gibt den im `St` Member-Objekt gespeicherten Wert zurück. Die zweite Member-Funktion speichert *_State* im `St` Member-Objekt.
+Die erste Memberfunktion gibt den `St` im Memberobjekt gespeicherten Wert zurück. Die zweite Memberfunktion speichert `St` *_State* im Memberobjekt.
 
 ### <a name="example"></a>Beispiel
 
@@ -395,5 +395,5 @@ int main() {
 ## <a name="see-also"></a>Siehe auch
 
 [Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[iostream-Programmierung](../standard-library/iostream-programming.md)\
+[iostream Programmierung](../standard-library/iostream-programming.md)\
 [iostreams-Konventionen](../standard-library/iostreams-conventions.md)

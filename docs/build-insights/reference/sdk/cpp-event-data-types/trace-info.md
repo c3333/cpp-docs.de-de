@@ -1,6 +1,6 @@
 ---
-title: Traceingefo-Klasse
-description: Die C++ Referenz zum Build Insights SDK TraceInfo-Klasse.
+title: TraceInfo-Klasse
+description: Der C++ Build Insights SDK TraceInfo-Klassenverweis.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 5cf32c8dc954a803a11888231d35b1050ac81cc3
-ms.sourcegitcommit: 3e8fa01f323bc5043a48a0c18b855d38af3648d4
+ms.openlocfilehash: 75d53937e3999f5692dee0ecf419e0ce5f49a274
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78334499"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81324170"
 ---
-# <a name="traceinfo-class"></a>Traceingefo-Klasse
+# <a name="traceinfo-class"></a>TraceInfo-Klasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist kompatibel mit Visual Studio 2017 und höher. Um die Dokumentation für diese Versionen anzuzeigen, legen Sie das Steuerelement für die Visual Studio-Versions Auswahl für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `TraceInfo`-Klasse wird verwendet, um auf nützliche Eigenschaften über eine zu analysierende oder erneut protokollierte Ablauf Verfolgung zuzugreifen.
+Die `TraceInfo` Klasse wird verwendet, um auf nützliche Eigenschaften für eine Zuverfolgung zuzugreifen, die analysiert oder erneut protokolliert wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,25 +47,25 @@ public:
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ziehen Sie die `StartTimestamp` von `StopTimestamp` ab, um die Anzahl der Ticks zu erhalten, die während der gesamten Ablauf Verfolgung verstrichen sind Verwenden Sie `TickFrequency`, um den resultierenden Wert in eine Zeiteinheit zu konvertieren. Ein Beispiel für die Umstellung von Ticks in Time finden Sie unter [EVENT_DATA](../c-event-data-types/event-data-struct.md).
+Subtrahieren `StopTimestamp` Sie die, `StartTimestamp` um die Anzahl der Ticks zu erhalten, die während der gesamten Spur verstrichen sind. Verwenden `TickFrequency` Sie diese Datei, um den resultierenden Wert in eine Zeiteinheit zu konvertieren. Ein Beispiel für das Konvertieren von Ticks in die Zeit finden Sie unter [EVENT_DATA](../c-event-data-types/event-data-struct.md).
 
-Wenn Sie Ticks nicht selbst konvertieren möchten, stellt die `TraceInfo`-Klasse eine Member-Funktion bereit, die die Ablauf Verfolgungs Dauer in Nanosekunden zurückgibt. Konvertieren Sie diesen C++ Wert mit der Standard-`chrono` Bibliothek in andere Zeiteinheiten.
+Wenn Sie Ticks nicht selbst konvertieren `TraceInfo` möchten, stellt die Klasse eine Memberfunktion bereit, die die Ablaufverfolgungsdauer in Nanosekunden zurückgibt. Verwenden Sie die `chrono` Standard-C++-Bibliothek, um diesen Wert in andere Zeiteinheiten zu konvertieren.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="constructors"></a>Konstruktoren
 
-[Traceingefo](#trace-info)
+[TraceInfo](#trace-info)
 
 ### <a name="functions"></a>Functions
 
 [Dauer](#duration)
-[logicalprocessorcount](#logical-processor-count)
-[starttimestamp](#start-timestamp)
-[stoptimestamp](#stop-timestamp)
+[LogicalProcessorCount](#logical-processor-count)
+[StartTimestamp](#start-timestamp)
+[StopTimestamp](#stop-timestamp)
 [TickFrequency](#tick-frequency)
 
-## <a name="duration"></a>Auf
+## <a name="duration"></a><a name="duration"></a>Dauer
 
 ```cpp
 std::chrono::nanoseconds Duration() const;
@@ -75,7 +75,7 @@ std::chrono::nanoseconds Duration() const;
 
 Die Dauer der Aktivität in Nanosekunden.
 
-## <a name="logical-processor-count"></a>Logicalprocessorcount
+## <a name="logicalprocessorcount"></a><a name="logical-processor-count"></a>LogicalProcessorCount
 
 ```cpp
 const unsigned long& LogicalProcessorCount() const;
@@ -83,9 +83,9 @@ const unsigned long& LogicalProcessorCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der logischen Prozessoren auf dem Computer, auf dem die Ablauf Verfolgung erfasst wurde.
+Die Anzahl der logischen Prozessoren auf dem Computer, auf dem die Ablaufverfolgung erfasst wurde.
 
-## <a name="start-timestamp"></a>Starttimestamp
+## <a name="starttimestamp"></a><a name="start-timestamp"></a>StartTimestamp
 
 ```cpp
 const long long& StartTimestamp() const;
@@ -93,9 +93,9 @@ const long long& StartTimestamp() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Tick-Wert, der zum Zeitpunkt der Ablauf Verfolgung aufgezeichnet wurde.
+Ein Tick-Wert, der zum Zeitpunkt des Startens der Ablaufverfolgung erfasst wurde.
 
-## <a name="stop-timestamp"></a>Stoptimestamp
+## <a name="stoptimestamp"></a><a name="stop-timestamp"></a>StopTimestamp
 
 ```cpp
 const long long& StopTimestamp() const;
@@ -103,9 +103,9 @@ const long long& StopTimestamp() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Tick-Wert, der zum Zeitpunkt der Beendigung der Ablauf Verfolgung aufgezeichnet wurde.
+Ein Tick-Wert, der zum Zeitpunkt des Anhaltens der Ablaufverfolgung erfasst wurde.
 
-## <a name="tick-frequency"></a>TickFrequency
+## <a name="tickfrequency"></a><a name="tick-frequency"></a>Tickfrequency
 
 ```cpp
 const long long& TickFrequency() const;
@@ -113,9 +113,9 @@ const long long& TickFrequency() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Ticks pro Sekunde, die verwendet werden sollen, wenn eine in Ticks gemessene Dauer ausgewertet wird.
+Die Anzahl der Ticks pro Sekunde, die bei der Auswertung einer in Ticks gemessenen Dauer verwendet werden sollen.
 
-## <a name="trace-info"></a>Traceingefo
+## <a name="traceinfo"></a><a name="trace-info"></a>TraceInfo
 
 ```cpp
 TraceInfo(const TRACE_INFO_DATA& data);
@@ -124,6 +124,6 @@ TraceInfo(const TRACE_INFO_DATA& data);
 ### <a name="parameters"></a>Parameter
 
 *Daten*\
-Die Daten, die die Informationen zur Ablauf Verfolgung enthalten.
+Die Daten, die die Informationen über die Ablaufverfolgung enthalten.
 
 ::: moniker-end

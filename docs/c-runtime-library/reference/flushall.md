@@ -1,8 +1,9 @@
 ---
 title: _flushall
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _flushall
+- _o__flushall
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -27,12 +29,12 @@ helpviewer_keywords:
 - streams, flushing
 - _flushall function
 ms.assetid: 2cd73562-6d00-4ca2-b13c-80d0ae7870b5
-ms.openlocfilehash: dce7412ccc19d4870494851d366c059ff01de16a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 93181c0fe941a1c5e259e706771495666329bcb3
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957141"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346625"
 ---
 # <a name="_flushall"></a>_flushall
 
@@ -46,17 +48,19 @@ int _flushall( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-**_flushall** gibt die Anzahl der geöffneten Streams (Eingabe und Ausgabe) zurück. Es gibt keine Fehlerrückgabe.
+**_flushall** gibt die Anzahl der offenen Streams (Eingang und Ausgang) zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Standardmäßig schreibt die **_flushall** -Funktion den Inhalt aller Puffer, die mit geöffneten Ausgabestreams verknüpft sind, in die entsprechenden Dateien. Aus allen Puffern, die geöffneten Eingabestreams zugeordnet sind, wird der aktuelle Inhalt gelöscht. (Diese Puffer werden normalerweise vom Betriebssystem verwaltet, das die optimale Zeit zum automatischen Schreiben der Daten auf den Datenträger bestimmt: wenn ein Puffer ist voll, wenn ein Stream geschlossen wird oder wenn ein Programm normal beendet wird, ohne die Streams zu schließen.)
+Standardmäßig schreibt die **_flushall-Funktion** in entsprechende Dateien den Inhalt aller Puffer, die offenen Ausgabestreams zugeordnet sind. Aus allen Puffern, die geöffneten Eingabestreams zugeordnet sind, wird der aktuelle Inhalt gelöscht. (Diese Puffer werden normalerweise vom Betriebssystem verwaltet, das die optimale Zeit zum automatischen Schreiben der Daten auf den Datenträger bestimmt: wenn ein Puffer ist voll, wenn ein Stream geschlossen wird oder wenn ein Programm normal beendet wird, ohne die Streams zu schließen.)
 
-Wenn ein Lesevorgang auf einen **_flushall**-Aufrufe folgt, werden neue Daten aus den Eingabedateien in die Puffer gelesen. Alle Streams bleiben nach dem **_flushall**-Aufrufe geöffnet.
+Wenn ein Lesefehler auf einen Aufruf **von _flushall**folgt, werden neue Daten aus den Eingabedateien in die Puffer gelesen. Alle Streams bleiben nach dem Aufruf zu **_flushall**geöffnet.
 
-Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Sie können diese Funktion aktivieren, ohne ein vorhandenes Programm umzuschreiben. Verknüpfen Sie hierzu die Objektdateien des Programms mit "Commode.obj". In der resultierenden ausführbaren Datei schreiben Aufrufe von **_flushall** den Inhalt aller Puffer auf den Datenträger. COMMODE. obj wirkt sich nur auf **_flushall** und [fflush](fflush.md) aus.
+Mit der Datenträgercommitfunktion der Laufzeitbibliothek können Sie sicherstellen, dass wichtige Daten direkt auf den Datenträger anstatt in die Betriebssystempuffer geschrieben werden. Ohne ein vorhandenes Programm neu zu schreiben, können Sie diese Funktion aktivieren, indem Sie die Objektdateien des Programms mit Commode.obj verknüpfen. In der resultierenden ausführbaren Datei schreiben Aufrufe von **_flushall** den Inhalt aller Puffer auf den Datenträger. Nur **_flushall** und [fflush](fflush.md) sind von Commode.obj betroffen.
 
 Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unter [Stream-E/A](../../c-runtime-library/stream-i-o.md), [fopen](fopen-wfopen.md) und [_fdopen](fdopen-wfdopen.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -64,7 +68,7 @@ Weitere Informationen zum Steuern der Datenträgercommitfunktion finden Sie unte
 |--------------|---------------------|
 |**_flushall**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,8 +1,9 @@
 ---
 title: _getdrive
-ms.date: 09/19/2019
+ms.date: 4/2/2020
 api_name:
 - _getdrive
+- _o__getdrive
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,12 +30,12 @@ helpviewer_keywords:
 - disk drives
 - _getdrive function
 ms.assetid: e40631a0-8f1a-4897-90ac-e1037ff30bca
-ms.openlocfilehash: 94d6c15270827cf61ec6086de8fa11251b435e2c
-ms.sourcegitcommit: f907b15f50a6b945d0b87c03af0050946157d701
+ms.openlocfilehash: 239bad8ef492396d713d81611e8d4c00da1697af
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71158767"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81344337"
 ---
 # <a name="_getdrive"></a>_getdrive
 
@@ -50,15 +52,19 @@ int _getdrive( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt das aktuelle (Standard-)Laufwerk zurück (1 = A, 2 = B usw.). Der Rückgabewert 0 (null) bedeutet, dass der aktuelle Pfad nicht mit dem Namen eines Buch Laufwerks, z. b. einem UNC-Pfad, beginnt. Oder es bedeutet, dass eine interne Puffer Zuordnung fehlgeschlagen ist. Wenn eine interne Zuordnung fehlschlägt `errno` , wird auf ENOMEM festgelegt.
+Gibt das aktuelle (Standard-)Laufwerk zurück (1 = A, 2 = B usw.). Ein Rückgabewert von Null bedeutet, dass der aktuelle Pfad nicht mit einem Buchstabenlaufwerknamen beginnt, z. B. mit einem UNC-Pfad. Oder es bedeutet, dass eine interne Pufferzuweisung fehlgeschlagen ist. Wenn eine interne `errno` Zuordnung fehlschlägt, wird auf ENOMEM gesetzt.
+
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_getdrive**|\<direct.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

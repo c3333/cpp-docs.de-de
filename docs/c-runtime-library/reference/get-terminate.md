@@ -1,8 +1,9 @@
 ---
 title: _get_terminate
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _get_terminate
+- _o__get_terminate
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-runtime-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -28,16 +30,16 @@ helpviewer_keywords:
 - get_terminate function
 - _get_terminate function
 ms.assetid: c8f168c4-0ad5-4832-a522-dd1ef383c208
-ms.openlocfilehash: 7a9bfb6f8be1c990b349f14055eb2fe5c409e0d5
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fff90037851b23f3525f514aba0f6f913f9dd776
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70955684"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81344933"
 ---
 # <a name="_get_terminate"></a>_get_terminate
 
-Gibt die Beendigungs Routine zurück, die durch **Beenden**aufgerufen werden soll.
+Gibt die Beendigungsroutine zurück, die von **terminate**aufgerufen werden soll.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,20 +49,24 @@ terminate_function _get_terminate( void );
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt einen Zeiger auf die Funktion zurück, die durch [Set_terminate](set-terminate-crt.md) registriert wurde. Wenn keine Funktion festgelegt wurde, kann der Rückgabewert verwendet werden, um das Standardverhalten wiederherzustellen. Dieser Wert kann **null**sein.
+Gibt einen Zeiger auf die Funktion zurück, die durch [Set_terminate](set-terminate-crt.md) registriert wurde. Wenn keine Funktion festgelegt wurde, kann der Rückgabewert verwendet werden, um das Standardverhalten wiederherzustellen. Dieser Wert kann **NULL**sein.
+
+## <a name="remarks"></a>Bemerkungen
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_get_terminate**|\<eh.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Ausnahmebehandlungsroutinen](../../c-runtime-library/exception-handling-routines.md)<br/>
-[abort](abort.md)<br/>
+[Abbrechen](abort.md)<br/>
 [set_unexpected](set-unexpected-crt.md)<br/>
-[terminate](terminate-crt.md)<br/>
-[unexpected](unexpected-crt.md)<br/>
+[Beenden](terminate-crt.md)<br/>
+[Unerwartete](unexpected-crt.md)<br/>

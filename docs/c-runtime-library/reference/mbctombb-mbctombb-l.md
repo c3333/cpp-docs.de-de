@@ -1,9 +1,11 @@
 ---
 title: _mbctombb, _mbctombb_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbctombb_l
 - _mbctombb
+- _o__mbctombb
+- _o__mbctombb_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - mbctombb function
 - _mbctombb_l function
 ms.assetid: d90970b8-71ff-4586-b6a2-f9ceb811f776
-ms.openlocfilehash: b449dfae04f875c819f34422b9a0ae92e2b8a7c2
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 4afd1c92930fe622eb03569913b264d6c285dcda
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952526"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81341016"
 ---
 # <a name="_mbctombb-_mbctombb_l"></a>_mbctombb, _mbctombb_l
 
@@ -59,7 +62,7 @@ unsigned int _mbctombb_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu konvertierendes Multibytezeichen.
 
 *locale*<br/>
@@ -67,24 +70,26 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreicher Ausführung gibt **_mbctombb** und **_mbctombb_l** das Einzel Byte Zeichen zurück, das *c*entspricht. Andernfalls wird *c*zurückgegeben.
+Bei Erfolg **geben _mbctombb** und **_mbctombb_l** das Einbyte-Zeichen zurück, das *c*entspricht. andernfalls gibt es *c*zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_mbctombb** -Funktion und die **_mbctombb_l** -Funktion konvertieren ein angegebenes Multibytezeichen in ein entsprechendes Einzel Byte-Multibytezeichen. Zeichen müssen Einzel Byte Zeichen innerhalb des Bereichs 0x20-0x7E oder 0xA1-0xDF entsprechen, um konvertiert zu werden.
+Die **_mbctombb-** und **_mbctombb_l-Funktionen** konvertieren ein bestimmtes Multibyte-Zeichen in ein entsprechendes Einzelbyte-Multibyte-Zeichen. Zeichen müssen Einzelbyte-Zeichen im Bereich 0x20 - 0x7E oder 0xA1 - 0xDF entsprechen, die konvertiert werden sollen.
 
-Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Version dieser Funktion ohne das **_l** -Suffix verwendet das aktuelle Gebiets Schema für dieses vom Gebiets Schema abhängige Verhalten. die Version mit dem **_l** -Suffix ist beinahe identisch, verwendet jedoch stattdessen den übergebenen Gebiets Schema Parameter. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Der Ausgabewert ist von der Kategorieeinstellung **LC_CTYPE** des Gebietsschemas betroffen. Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Version dieser Funktion ohne das **suffix _l** verwendet das aktuelle Gebietsschema für dieses gebietsschemaabhängige Verhalten. Die Version mit dem **Suffix _l** ist identisch, außer dass sie stattdessen den übergebenen Gebietsschemaparameter verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-In früheren Versionen wurde **_mbctombb** als **zentohan**bezeichnet. Verwenden Sie stattdessen **_mbctombb** .
+In früheren Versionen wurde **_mbctombb** **zentohan**genannt. Verwenden Sie stattdessen **_mbctombb.**
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbctombb**|\<mbstring.h>|
 |**_mbctombb_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

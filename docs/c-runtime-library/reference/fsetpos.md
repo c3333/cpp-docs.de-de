@@ -1,8 +1,9 @@
 ---
 title: fsetpos
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - fsetpos
+- _o_fsetpos
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -15,6 +16,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -25,12 +27,12 @@ helpviewer_keywords:
 - streams, setting position indicators
 - fsetpos function
 ms.assetid: 6d19ff48-1a2b-47b3-9f23-ed0a47b5a46e
-ms.openlocfilehash: f44ab1b35c9e598f82dbc0af96979476ee353541
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 22b8cebd0154c0dbfc3d21843380ebc9a139059a
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70956523"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81345718"
 ---
 # <a name="fsetpos"></a>fsetpos
 
@@ -47,21 +49,23 @@ int fsetpos(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
-*POS*<br/>
+*Pos*<br/>
 Speicher des Positionsindikators
 
 ## <a name="return-value"></a>Rückgabewert
 
-Bei erfolgreichem Erfolg gibt " **f** " den Wert 0 zurück. Bei einem Fehler gibt die Funktion einen Wert ungleich 0 (null) zurück und legt **errno** auf eine der folgenden (in errno definierten) Manifest-Konstanten fest. H): **EBADF**, d. h., auf die Datei kann nicht zugegriffen werden, oder das *Objekt, auf das verweist,* ist keine gültige Dateistruktur. oder **EINVAL**, d. h., es wurde ein ungültiger Wert für *Stream* oder *POS* übermittelt. Wenn ein ungültiger Parameter übergeben wird, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird.
+Wenn dies erfolgreich ist, gibt **fsetpos** 0 zurück. Bei einem Fehler gibt die Funktion einen Wert ungleich Null zurück und setzt **errno** auf eine der folgenden Manifestkonstanten (definiert in ERRNO). H): **EBADF**, was bedeutet, dass auf die Datei nicht zugegriffen werden kann oder das Objekt, auf das der *Stream* verweist, keine gültige Dateistruktur ist; oder **EINVAL**, was bedeutet, dass ein ungültiger Wert für *Stream* oder *Pos* übergeben wurde. Wenn ein ungültiger Parameter übergeben wird, rufen diese Funktionen den Handler für ungültige Parameter auf, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben wird.
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **fsetpos** -Funktion legt den Datei Positionsindikator für den *Stream* auf den Wert von *POS*fest, der in einem vorherigen **fgetpos** -aufrufungstyp für *Stream*abgerufen wird. Die-Funktion löscht den Dateiende-Indikator und macht alle Auswirkungen von [ungetc](ungetc-ungetwc.md) auf *Stream*unerledigt. Nach dem Aufruf von **fsetpos**kann der nächste Vorgang für den *Stream* entweder Input oder Output sein.
+Die **fsetpos-Funktion** setzt die Dateipositionsanzeige für den *Stream* auf den Wert von *pos*, der in einem vorherigen Aufruf von **fgetpos** gegen *stream*erhalten wurde. Die Funktion löscht den End-of-File-Indikator und macht alle Auswirkungen von [ungetc](ungetc-ungetwc.md) auf *Stream*. Nach dem Aufruf von **fsetpos**kann der nächste Vorgang im *Stream* entweder ein- oder ausgespielt sein.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -69,7 +73,7 @@ Die **fsetpos** -Funktion legt den Datei Positionsindikator für den *Stream* au
 |--------------|---------------------|
 |**fsetpos**|\<stdio.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

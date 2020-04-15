@@ -1,9 +1,11 @@
 ---
 title: _memicmp, _memicmp_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _memicmp_l
 - _memicmp
+- _o__memicmp
+- _o__memicmp_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -30,12 +33,12 @@ helpviewer_keywords:
 - memicmp_l function
 - _memicmp_l function
 ms.assetid: 0a6eb945-4077-4f84-935d-1aaebe8db8cb
-ms.openlocfilehash: a463b9c79a76879311bb811b38e4aabcfd6e7226
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 5ad22f2107695b14d4a8361d4532d6e250b5af6f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70951844"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81333236"
 ---
 # <a name="_memicmp-_memicmp_l"></a>_memicmp, _memicmp_l
 
@@ -59,10 +62,10 @@ int _memicmp_l(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer1*<br/>
+*Puffer1*<br/>
 Erster Puffer.
 
-*buffer2*<br/>
+*puffer2*<br/>
 Zweite Puffer.
 
 *count*<br/>
@@ -80,24 +83,26 @@ Der Rückgabewert gibt die Beziehung zwischen den Puffern an.
 |< 0|*buffer1* kleiner als *buffer2*.|
 |0|*buffer1* identisch mit *buffer2*.|
 |> 0|*buffer1* größer als *buffer2*.|
-|**_NLSCMPERROR**|Es ist ein Fehler aufgetreten.|
+|**_NLSCMPERROR**|Ein Fehler ist aufgetreten.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_memicmp** -Funktion vergleicht die ersten *count* -Zeichen der beiden Puffer *buffer1* und *buffer2* Byte mit Byte. Beim Vergleich wird die Groß-/Kleinschreibung nicht berücksichtigt.
+Die **_memicmp-Funktion** vergleicht die ersten *Zählzeichen* der beiden Puffer *buffer1* und *buffer2* Byte by byte. Beim Vergleich wird die Groß-/Kleinschreibung nicht berücksichtigt.
 
-Wenn entweder *buffer1* oder *buffer2* ein NULL-Zeiger ist, ruft diese Funktion einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion **_NLSCMPERROR** zurück und legt **errno** auf **EINVAL**fest.
+Wenn *buffer1* oder *buffer2* ein NULL-Zeiger ist, ruft diese Funktion einen ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, gibt die Funktion **_NLSCMPERROR** zurück und setzt **errno** auf **EINVAL**.
 
-**_memicmp** verwendet das aktuelle Gebiets Schema für vom Gebiets Schema abhängiges Verhalten. **_memicmp_l** ist beinahe identisch, verwendet jedoch stattdessen das übergebene Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_memicmp** verwendet das aktuelle Gebietsschema für gebietsschemaabhängiges Verhalten. **_memicmp_l** identisch ist, außer dass es stattdessen das übergebene Gebietsschema verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_memicmp**|\<memory.h> oder \<string.h>|
 |**_memicmp_l**|\<memory.h> oder \<string.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 

@@ -1,9 +1,10 @@
 ---
 title: _fpclass, _fpclassf
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - _fpclass
 - _fpclassf
+- _o__fpclass
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +17,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +35,12 @@ helpviewer_keywords:
 - _fpclass function
 - _fpclassf function
 ms.assetid: 2774872d-3543-446f-bc72-db85f8b95a6b
-ms.openlocfilehash: 982bd5fb33ef2e14785c775a9b79b0adc8f3a459
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b16655fed046114e9dd8592c5e1fd3fc5f7ed4bf
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80170214"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346275"
 ---
 # <a name="_fpclass-_fpclassf"></a>_fpclass, _fpclassf
 
@@ -58,21 +60,21 @@ int _fpclassf(
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*X*<br/>
 Der zu testende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Die Funktionen **_fpclass** und **_fpclassf** geben einen ganzzahligen Wert zurück, der die Gleit Komma Klassifizierung des Arguments *x*angibt. Die Klassifizierung weist möglicherweise einen der folgenden, in \<float.h> definierten Werte auf.
+Die **_fpclass-** und **_fpclassf-Funktionen** geben einen Ganzzahlwert zurück, der die Gleitkommaklassifizierung des Arguments *x*angibt. Die Klassifizierung weist möglicherweise einen der folgenden, in \<float.h> definierten Werte auf.
 
-|value|BESCHREIBUNG|
+|Wert|BESCHREIBUNG|
 |-----------|-----------------|
 |**_FPCLASS_SNAN**|Signalisierender NaN|
 |**_FPCLASS_QNAN**|Stiller NaN|
-|**_FPCLASS_NINF**|Minus unendlich (-INF)|
+|**_FPCLASS_NINF**|Negative Unendlichkeit ( -INF)|
 |**_FPCLASS_NN**|Negativ normalisierter ungleich null-Wert|
 |**_FPCLASS_ND**|Negativ denormalisiert|
-|**_FPCLASS_NZ**|Negatives NULL-Wert (-0)|
+|**_FPCLASS_NZ**|Negative Null ( - 0)|
 |**_FPCLASS_PZ**|Positiv 0 (+0)|
 |**_FPCLASS_PD**|Positiv denormalisiert|
 |**_FPCLASS_PN**|Positiv normalisierter ungleich null-Wert|
@@ -80,17 +82,19 @@ Die Funktionen **_fpclass** und **_fpclassf** geben einen ganzzahligen Wert zur�
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Funktionen **_fpclass** und **_fpclassf** sind Microsoft-spezifisch. Sie ähneln [fpclassify](fpclassify.md), geben jedoch detaillierte Informationen über das Argument zurück. Die **_fpclassf** -Funktion ist nur verfügbar, wenn Sie für die x64-Plattform kompiliert ist.
+Die **_fpclass-** und **_fpclassf** Funktionen sind Microsoft-spezifisch. Sie ähneln [fpclassify](fpclassify.md), geben jedoch detaillierte Informationen über das Argument zurück. Die **_fpclassf** Funktion ist nur verfügbar, wenn sie für die x64-Plattform kompiliert wird.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
+
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
-|**_fpclass** **_fpclassf**|\<float.h>|
+|**_fpclass**, **_fpclassf**|\<float.h>|
 
 Weitere Informationen zur Kompatibilität und Konformität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [isnan, _isnan, _isnanf](isnan-isnan-isnanf.md)<br/>

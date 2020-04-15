@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - runtime_exception class
 ms.assetid: 8fe3ce2c-3d4c-4b9c-95e8-e592f37adefd
-ms.openlocfilehash: 6ad784720833d2ae5de7d653d132ba144aec2677
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: ff54357055d373db98f469b071edc75fce75e0b4
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77126376"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81336798"
 ---
 # <a name="runtime_exception-class"></a>runtime_exception-Klasse
 
@@ -26,14 +26,14 @@ Der Basistyp für Ausnahmen in der C++ Accelerated Massive Parallelism (AMP)-Bib
 class runtime_exception : public std::exception;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[runtime_exception-Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `runtime_exception`.|
-|[~ runtime_exception-Dekonstruktor](#dtor)|Zerstört das `runtime_exception`-Objekt.|
+|[runtime_exception Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `runtime_exception`.|
+|[Runtime_exception Destruktor](#dtor)|Zerstört das `runtime_exception`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
@@ -45,7 +45,7 @@ class runtime_exception : public std::exception;
 
 |Name|BESCHREIBUNG|
 |----------|-----------------|
-|[operator=](#operator_eq)|Kopiert den Inhalt des angegebenen `runtime_exception`-Objekts in dieses Objekt.|
+|[Operator=](#operator_eq)|Kopiert den Inhalt des angegebenen `runtime_exception`-Objekts in dieses Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -53,13 +53,13 @@ class runtime_exception : public std::exception;
 
 `runtime_exception`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Header:** amprt. h
+**Kopfzeile:** amprt.h
 
 **Namespace:** Parallelität
 
-## <a name="ctor"></a>runtime_exception-Konstruktor
+## <a name="runtime_exception-constructor"></a><a name="ctor"></a>runtime_exception Konstruktor
 
 Initialisiert eine neue Instanz der Klasse.
 
@@ -92,7 +92,7 @@ Das zu kopierende `runtime_exception`-Objekt.
 
 Das `runtime_exception`-Objekt.
 
-## <a name="dtor"></a>~ runtime_exception-Dekonstruktor
+## <a name="runtime_exception-destructor"></a><a name="dtor"></a>Runtime_exception Destruktor
 
 Zerstört das Objekt.
 
@@ -102,7 +102,7 @@ Zerstört das Objekt.
 virtual ~runtime_exception() throw();
 ```
 
-## <a name="get_error_code"></a>get_error_code
+## <a name="get_error_code"></a><a name="get_error_code"></a>get_error_code
 
 Gibt den Fehlercode zurück, der die Ausnahme verursacht hat.
 
@@ -116,8 +116,9 @@ HRESULT get_error_code() const throw();
 
 Der HRESULT-Wert des Fehlers, der diese Ausnahme verursacht hat.
 
-## <a name="operator_eq"></a> operator=
-  Kopiert den Inhalt des angegebenen `runtime_exception`-Objekts in dieses Objekt.
+## <a name="operator"></a><a name="operator_eq"></a>Operator=
+
+Kopiert den Inhalt des angegebenen `runtime_exception`-Objekts in dieses Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -134,6 +135,6 @@ Das zu kopierende `runtime_exception`-Objekt.
 
 Ein Verweis auf das `runtime_exception`-Objekt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+[Parallelitätsnamespace (C++ AMP)](concurrency-namespace-cpp-amp.md)

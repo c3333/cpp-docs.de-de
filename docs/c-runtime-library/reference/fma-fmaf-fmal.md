@@ -1,10 +1,13 @@
 ---
 title: fma, fmaf, fmal
-ms.date: 04/05/2018
+ms.date: 4/2/2020
 api_name:
 - fma
 - fmaf
 - fmal
+- _o_fma
+- _o_fmaf
+- _o_fmal
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +20,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-math-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +37,12 @@ helpviewer_keywords:
 - fmaf function
 - fmal function
 ms.assetid: 584a6037-da1e-4e86-9f0c-97aae86de0c0
-ms.openlocfilehash: 4ddc4061e5a24ee3b5176aedc569d134d85e0002
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 993ca4d57202b3789929161a964b3e41d48fd98f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70957105"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81346568"
 ---
 # <a name="fma-fmaf-fmal"></a>fma, fmaf, fmal
 
@@ -80,37 +84,39 @@ long double fmal(
 
 ### <a name="parameters"></a>Parameter
 
-*w*<br/>
+*X*<br/>
 Der erste zu multiplizierende Wert.
 
 *y*<br/>
 Der zweite zu multiplizierende Wert.
 
-*z*<br/>
+*Z*<br/>
 Der hinzuzufügende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Gibt `(x * y) + z`zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
+Gibt `(x * y) + z` zurück. Der Rückgabewert wird dann mit dem aktuellen Rundungsformat gerundet.
 
 Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
-|Problem|Zurück|
+|Problem|Rückgabewert|
 |-----------|------------|
-|*x* = unendlich, *y* = 0 oder<br /><br /> *x* = 0, *y* = unendlich|NaN|
-|*x* oder *y* = Exact ± unendlich, *z* = unendlich mit umgekehrtem Vorzeichen|NaN|
-|*x* oder *y* = Nan|NaN|
-|nicht (*x* = 0, *y*= unbegrenzt) und *z* = Nan<br /><br /> nicht (*x*= unbegrenzt, *y*= 0) und *z* = Nan|NaN|
-|Überlaufbereichsfehler|± HUGE_VAL, ± HUGE_VALF oder ± HUGE_VALL|
+|*x* = INFINITY, *y* = 0 oder<br /><br /> *x* = 0, *y* = INFINITY|NaN|
+|*x* oder *y* = exakt - INFINITY, *z* = INFINITY mit dem entgegengesetzten Vorzeichen|NaN|
+|*x* oder *y* = NaN|NaN|
+|nicht (*x* = 0, *y*= unbestimmt) und *z* = NaN<br /><br /> nicht (*x*=unbestimmt, *y*=0) und *z* = NaN|NaN|
+|Überlaufbereichsfehler|HUGE_VAL, HUGE_VALF oder HUGE_VALL|
 |Unterlaufbereichsfehler|Richtige Wert nach dem Runden|
 
-Fehler werden gemäß der Angaben in [_matherr](matherr.md) gemeldet.
+Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufen, die **float** -und **Long** **Double** -Typen annehmen und zurückgeben. In einem C-Programm nimmt **FMA** immer einen **Double**-Wert an und gibt ihn zurück.
+Da C++ eine Überlastung ermöglicht, können Sie Überladungen von **fma** aufrufen, die **Float-** und **lange** **Doppeltypen** aufnehmen und zurückgeben. In einem C-Programm nimmt und gibt **fma** immer ein **Double**zurück.
 
 Diese Funktion berechnet den Wert mit unendlicher Genauigkeit und rundet das endgültige Ergebnis dann.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -118,7 +124,7 @@ Diese Funktion berechnet den Wert mit unendlicher Genauigkeit und rundet das end
 |--------------|--------------|------------------|
 |**fma**, **fmaf**, **fmal**|\<math.h>|\<cmath>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

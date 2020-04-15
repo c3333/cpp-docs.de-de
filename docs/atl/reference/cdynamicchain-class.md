@@ -13,19 +13,19 @@ helpviewer_keywords:
 - chaining message maps
 - CDynamicChain class
 ms.assetid: f084b2be-0e77-4836-973d-ae278a1e9da8
-ms.openlocfilehash: 4b68198c17d7bd030b88bc78ad4de1367c914703
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4a72b3b4308ed83dfdc4a2895a04d1fe9a177ce5
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62259000"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81327035"
 ---
 # <a name="cdynamicchain-class"></a>CDynamicChain-Klasse
 
-Diese Klasse stellt die Methoden, die Sie unterstützen die dynamische Verkettung von meldungszuordnungen bereit.
+Diese Klasse stellt Methoden bereit, die die dynamische Verkettung von Nachrichtenzuordnungen unterstützen.
 
 > [!IMPORTANT]
->  Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,50 +37,50 @@ class CDynamicChain
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |[CDynamicChain::CDynamicChain](#cdynamicchain)|Der Konstruktor.|
-|[CDynamicChain::~CDynamicChain](#dtor)|Der Destruktor.|
+|[CDynamicChain::-CDynamicChain](#dtor)|Der Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CDynamicChain::CallChain](#callchain)|Leitet eine Windows-Meldung an ein anderes Objekt in die nachrichtenzuordnung an.|
-|[CDynamicChain::RemoveChainEntry](#removechainentry)|Entfernt einen Nachrichtenzuordnungseintrag aus der Auflistung.|
-|[CDynamicChain::SetChainEntry](#setchainentry)|Fügt einen Nachrichtenzuordnungseintrag der Auflistung hinzu oder ändert einen vorhandenen Eintrag.|
+|[CDynamicChain::CallChain](#callchain)|Leitet eine Windows-Nachricht an die Nachrichtenzuordnung eines anderen Objekts weiter.|
+|[CDynamicChain::RemoveChainEntry](#removechainentry)|Entfernt einen Meldungszuordnungseintrag aus der Auflistung.|
+|[CDynamicChain::SetChainEntry](#setchainentry)|Fügt der Auflistung einen Meldungszuordnungseintrag hinzu oder ändert einen vorhandenen Eintrag.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-`CDynamicChain` verwaltet eine Auflistung von meldungszuordnungen, aktivieren eine Windows-Meldung, die zur Laufzeit zur meldungszuordnung für ein anderes Objekt weitergeleitet werden.
+`CDynamicChain`verwaltet eine Sammlung von Nachrichtenzuordnungen, sodass eine Windows-Nachricht zur Laufzeit an die Nachrichtenzuordnung eines anderen Objekts weitergeleitet werden kann.
 
-Um Unterstützung für das dynamische Verketten von meldungszuordnungen hinzuzufügen, führen Sie folgende Schritte aus:
+Gehen Sie wie folgt vor, um Unterstützung für die dynamische Verkettung von Nachrichtenzuordnungen hinzuzufügen:
 
-- Leiten Sie eine Klasse von `CDynamicChain`. Geben Sie in der meldungszuordnung, die [CHAIN_MSG_MAP_DYNAMIC](message-map-macros-atl.md#chain_msg_map_dynamic) Makro, eine Verkettung mit Standard-meldungszuordnung eines anderen Objekts.
+- Leiten Sie Ihre `CDynamicChain`Klasse von ab. Geben Sie in der Meldungszuordnung die [CHAIN_MSG_MAP_DYNAMIC](message-map-macros-atl.md#chain_msg_map_dynamic) Makros an, das mit der Standardnachrichtenzuordnung eines anderen Objekts verkettet werden soll.
 
-- Leiten Sie jede Klasse, die Sie aus, zu verketten möchten [CMessageMap](../../atl/reference/cmessagemap-class.md). `CMessageMap` ermöglicht einem Objekt, dessen meldungszuordnungen auf andere Objekte verfügbar zu machen.
+- Leiten Sie jede Klasse ab, an die Sie eine Kette von [CMessageMap](../../atl/reference/cmessagemap-class.md)verketten möchten. `CMessageMap`ermöglicht es einem Objekt, seine Nachrichtenzuordnungen für andere Objekte verfügbar zu machen.
 
-- Rufen Sie `CDynamicChain::SetChainEntry` zu identifizieren, die Objekt und der Meldung zugeordnet werden soll, eine Verkettung mit.
+- Rufen `CDynamicChain::SetChainEntry` Sie auf, um zu identifizieren, welches Objekt und an welche Nachrichtenzuordnung Sie verketten möchten.
 
-Nehmen wir beispielsweise an, dass Ihre Klasse wie folgt definiert ist:
+Angenommen, Ihre Klasse ist wie folgt definiert:
 
 [!code-cpp[NVC_ATL_Windowing#88](../../atl/codesnippet/cpp/cdynamicchain-class_1.h)]
 
-Der Client ruft dann `CMyWindow::SetChainEntry`:
+Der Client `CMyWindow::SetChainEntry`ruft dann auf:
 
 [!code-cpp[NVC_ATL_Windowing#89](../../atl/codesnippet/cpp/cdynamicchain-class_2.cpp)]
 
-wo `chainedObj` ist das verkettete Objekt und ist eine Instanz einer Klasse abgeleitet `CMessageMap`. Jetzt, wenn `myCtl` empfängt eine Nachricht, die durch nicht behandelte `OnPaint` oder `OnSetFocus`, die Fensterprozedur leitet die Nachricht an `chainedObj`des Standard-meldungszuordnung.
+wobei `chainedObj` das verkettete Objekt und eine Instanz `CMessageMap`einer von abgeleiteten Klasse ist. Wenn nun `myCtl` eine Nachricht empfängt wird, `OnPaint` `OnSetFocus`die nicht von oder behandelt `chainedObj`wird, leitet die Fensterprozedur die Nachricht an die Standardmeldungszuordnung von 's weiter.
 
-Weitere Informationen über das Verketten von Nachricht Zuordnung finden Sie unter [Meldungszuordnungen](../../atl/message-maps-atl.md) im Artikel "ATL-Fensterklassen".
+Weitere Informationen zur Verkettung von Nachrichtenkarten finden Sie unter [Nachrichtenzuordnungen](../../atl/message-maps-atl.md) im Artikel "ATL Window Classes".
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** atlwin.h vorhanden
+**Kopfzeile:** atlwin.h
 
-##  <a name="callchain"></a>  CDynamicChain::CallChain
+## <a name="cdynamicchaincallchain"></a><a name="callchain"></a>CDynamicChain::CallChain
 
-Leitet die Windows-Nachricht an ein anderes Objekt in die nachrichtenzuordnung an.
+Leitet die Windows-Nachricht an die Nachrichtenzuordnung eines anderen Objekts weiter.
 
 ```
 BOOL CallChain(
@@ -95,34 +95,34 @@ BOOL CallChain(
 ### <a name="parameters"></a>Parameter
 
 *dwChainID*<br/>
-[in] Der eindeutige Bezeichner, der das verkettete Objekt und seine meldungszuordnung, zugeordnet ist.
+[in] Der eindeutige Bezeichner, der dem verketteten Objekt und seiner Meldungszuordnung zugeordnet ist.
 
 *hWnd*<br/>
-[in] Das Handle für das Fenster mit dem Empfang der Nachricht.
+[in] Das Handle für das Fenster, das die Nachricht empfängt.
 
 *uMsg*<br/>
-[in] Die Meldung, die an das Fenster gesendet wird.
+[in] Die an das Fenster gesendete Nachricht.
 
 *wParam*<br/>
-[in] Zusätzliche meldungsspezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 *lParam*<br/>
-[in] Zusätzliche meldungsspezifische Informationen.
+[in] Zusätzliche nachrichtenspezifische Informationen.
 
 *lResult*<br/>
 [out] Das Ergebnis der Nachrichtenverarbeitung.
 
 ### <a name="return-value"></a>Rückgabewert
 
-True, wenn die Nachricht vollständig verarbeitet wird. andernfalls "false".
+TRUE, wenn die Nachricht vollständig verarbeitet wird; andernfalls FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Für die Fensterprozedur aufzurufende `CallChain`, Sie müssen angeben, die [CHAIN_MSG_MAP_DYNAMIC](message-map-macros-atl.md#chain_msg_map_dynamic) Makro in der meldungszuordnung. Ein Beispiel finden Sie unter den [CDynamicChain](../../atl/reference/cdynamicchain-class.md) Übersicht.
+Damit die Fensterprozedur `CallChain`aufgerufen werden kann, müssen Sie das [CHAIN_MSG_MAP_DYNAMIC](message-map-macros-atl.md#chain_msg_map_dynamic) Makros in der Nachrichtenzuordnung angeben. Ein Beispiel finden Sie in der [CDynamicChain-Übersicht.](../../atl/reference/cdynamicchain-class.md)
 
-`CallChain` erfordert einen vorherigen Aufruf [SetChainEntry](#setchainentry) Zuordnen der *DwChainID* Wert mit einem Objekt und seine meldungszuordnung.
+`CallChain`erfordert einen vorherigen Aufruf von [SetChainEntry,](#setchainentry) um den *dwChainID-Wert* einem Objekt und seiner Nachrichtenzuordnung zuzuordnen.
 
-##  <a name="cdynamicchain"></a>  CDynamicChain::CDynamicChain
+## <a name="cdynamicchaincdynamicchain"></a><a name="cdynamicchain"></a>CDynamicChain::CDynamicChain
 
 Der Konstruktor.
 
@@ -130,7 +130,7 @@ Der Konstruktor.
 CDynamicChain();
 ```
 
-##  <a name="dtor"></a>  CDynamicChain:: ~ CDynamicChain
+## <a name="cdynamicchaincdynamicchain"></a><a name="dtor"></a>CDynamicChain::-CDynamicChain
 
 Der Destruktor.
 
@@ -138,13 +138,13 @@ Der Destruktor.
 ~CDynamicChain();
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Gibt alle zugeordnete Ressourcen frei.
+Gibt alle zugewiesenen Ressourcen frei.
 
-##  <a name="removechainentry"></a>  CDynamicChain::RemoveChainEntry
+## <a name="cdynamicchainremovechainentry"></a><a name="removechainentry"></a>CDynamicChain::RemoveChainEntry
 
-Entfernt die Zuordnung für die angegebene Nachricht aus der Auflistung.
+Entfernt die angegebene Meldungszuordnung aus der Auflistung.
 
 ```
 BOOL RemoveChainEntry(DWORD dwChainID);
@@ -153,15 +153,15 @@ BOOL RemoveChainEntry(DWORD dwChainID);
 ### <a name="parameters"></a>Parameter
 
 *dwChainID*<br/>
-[in] Der eindeutige Bezeichner, der das verkettete Objekt und seine meldungszuordnung, zugeordnet ist. Sie definieren ursprünglich diesen Wert durch einen Aufruf von [SetChainEntry](#setchainentry).
+[in] Der eindeutige Bezeichner, der dem verketteten Objekt und seiner Meldungszuordnung zugeordnet ist. Sie definieren diesen Wert ursprünglich über einen Aufruf von [SetChainEntry](#setchainentry).
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die nachrichtenzuordnung erfolgreich aus der Auflistung entfernt wird. Andernfalls "false".
+TRUE, wenn die Nachrichtenzuordnung erfolgreich aus der Auflistung entfernt wurde. Andernfalls lautet der Wert FALSE.
 
-##  <a name="setchainentry"></a>  CDynamicChain:: SetChainEntry
+## <a name="cdynamicchainsetchainentry"></a><a name="setchainentry"></a>CDynamicChain::SetChainEntry
 
-Die Zuordnung der angegebenen Meldung und der Auflistung hinzugefügt.
+Fügt der Auflistung die angegebene Nachrichtenzuordnung hinzu.
 
 ```
 BOOL SetChainEntry(
@@ -173,23 +173,23 @@ BOOL SetChainEntry(
 ### <a name="parameters"></a>Parameter
 
 *dwChainID*<br/>
-[in] Der eindeutige Bezeichner, der das verkettete Objekt und seine meldungszuordnung, zugeordnet ist.
+[in] Der eindeutige Bezeichner, der dem verketteten Objekt und seiner Meldungszuordnung zugeordnet ist.
 
 *pObject*<br/>
-[in] Ein Zeiger auf das verkettete Objekt deklarieren die meldungszuordnung. Dieses Objekt muss abgeleitet [CMessageMap](../../atl/reference/cmessagemap-class.md).
+[in] Ein Zeiger auf das verkettete Objekt, das die Nachrichtenzuordnung deklariert. Dieses Objekt muss von [CMessageMap](../../atl/reference/cmessagemap-class.md)abstammen.
 
 *dwMsgMapID*<br/>
-[in] Der Bezeichner der Nachricht Zuordnung in den verketteten-Objekt. Der Standardwert ist 0 (null) und die Standard-meldungszuordnung, die mit deklariert identifiziert [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map). An einem alternativen meldungszuordnung, die mit deklariert [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map), übergeben Sie `msgMapID`.
+[in] Der Bezeichner der Nachrichtenzuordnung im verketteten Objekt. Der Standardwert ist 0, der die mit [BEGIN_MSG_MAP](message-map-macros-atl.md#begin_msg_map)deklarierte Standardmeldungszuordnung identifiziert. Um eine alternative Meldungszuordnung anzugeben, die mit `msgMapID` [ALT_MSG_MAP(msgMapID)](message-map-macros-atl.md#alt_msg_map)deklariert wurde, übergeben Sie .
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die meldungszuordnung erfolgreich zur Auflistung hinzugefügt wurde. Andernfalls "false".
+TRUE, wenn die Nachrichtenzuordnung erfolgreich zur Auflistung hinzugefügt wurde. Andernfalls lautet der Wert FALSE.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Wenn die *DwChainID* Wert in der Auflistung bereits vorhanden ist, durch die zugeordnete Objekt und eine meldungszuordnung ersetzt *pObject* und *DwMsgMapID*bzw. Andernfalls wird ein neuer Eintrag hinzugefügt.
+Wenn der *dwChainID-Wert* bereits in der Auflistung vorhanden ist, werden das zugehörige Objekt und die zugehörige Nachrichtenzuordnung durch *pObject* bzw. *dwMsgMapID*ersetzt. Andernfalls wird ein neuer Eintrag hinzugefügt.
 
 ## <a name="see-also"></a>Siehe auch
 
 [CWindowImpl-Klasse](../../atl/reference/cwindowimpl-class.md)<br/>
-[Übersicht über die Klasse](../../atl/atl-class-overview.md)
+[Klassenübersicht](../../atl/atl-class-overview.md)

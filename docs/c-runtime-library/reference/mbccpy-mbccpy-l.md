@@ -1,9 +1,11 @@
 ---
 title: _mbccpy, _mbccpy_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _mbccpy
 - _mbccpy_l
+- _o__mbccpy
+- _o__mbccpy_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -37,12 +40,12 @@ helpviewer_keywords:
 - _mbccpy function
 - mbccpy_l function
 ms.assetid: 13f4de6e-7792-41ac-b319-dd9b135433aa
-ms.openlocfilehash: 98ae2eb75949077d02b98ba3aec75da534e93884
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 45f93e370e11cf38fc17da3557b21c636fcbc623
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70952698"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81341266"
 ---
 # <a name="_mbccpy-_mbccpy_l"></a>_mbccpy, _mbccpy_l
 
@@ -76,31 +79,33 @@ Zu kopierendes Multibytezeichen.
 *locale*<br/>
 Zu verwendendes Gebietsschema.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_mbccpy** -Funktion kopiert ein Multibytezeichen von *src* in *dest*.
+Die **_mbccpy-Funktion** kopiert ein Multibyte-Zeichen von *src* nach *dest*.
 
-Diese Funktion überprüft ihre Parameter. Wenn **_mbccpy** einen NULL-Zeiger für *dest* oder *src*übergeben wird, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL**festgelegt.
+Diese Funktion überprüft ihre Parameter. Wenn **_mbccpy** ein Nullzeiger für *dest* oder *src*übergeben wird, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL**gesetzt.
 
-**_mbccpy** verwendet das aktuelle Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten. **_mbccpy_l** ist mit **_mbccpy** identisch, mit der Ausnahme, dass **_mbccpy_l** das übergebene Gebiets Schema für jedes vom Gebiets Schema abhängige Verhalten verwendet. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+**_mbccpy** verwendet das aktuelle Gebietsschema für jedes gebietsschemaabhängige Verhalten. **_mbccpy_l** ist identisch mit **_mbccpy** außer dass **_mbccpy_l** das Gebietsschema verwendet, das für ein gebietsschemaabhängiges Verhalten übergeben wird. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 **Sicherheitshinweis** Verwenden Sie eine mit NULL endende Zeichenfolge. Die mit NULL endende Zeichenfolge darf die Größe des Zielpuffers nicht überschreiten. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns). Pufferüberlaufprobleme werden häufig bei Systemangriffen eingesetzt, da sie zu einer unbefugten Ausweitung der Berechtigungen führen.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
 |Tchar.h-Routine|_UNICODE und _MBCS nicht definiert|_MBCS definiert|_UNICODE definiert|
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tccpy**|Führt eine Zuordnung zum Makro oder zur Inlinefunktion aus|**_mbccpy**|Führt eine Zuordnung zum Makro oder zur Inlinefunktion aus|
-|**_tccpy_l**|n/v|**_mbccpy_l**|n/v|
+|**_tccpy_l**|–|**_mbccpy_l**|–|
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_mbccpy**|\<mbctype.h>|
 |**_mbccpy_l**|\<mbctype.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 

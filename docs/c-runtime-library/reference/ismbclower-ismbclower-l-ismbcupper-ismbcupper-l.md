@@ -1,11 +1,15 @@
 ---
 title: _ismbclower, _ismbclower_l, _ismbcupper, _ismbcupper_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _ismbclower
 - _ismbclower_l
 - _ismbcupper_l
 - _ismbcupper
+- _o__ismbclower
+- _o__ismbclower_l
+- _o__ismbcupper
+- _o__ismbcupper_l
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -18,6 +22,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-multibyte-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -35,12 +40,12 @@ helpviewer_keywords:
 - ismbclower_l function
 - _ismbcupper_l function
 ms.assetid: 17d89587-65bc-477c-ba8f-a84e63cf59e7
-ms.openlocfilehash: 6a64a0d9be83733fa5482eee84ce6576dd32c221
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 9a0991d974c33cff22044364f7a4351f160215a8
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953786"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81342932"
 ---
 # <a name="_ismbclower-_ismbclower_l-_ismbcupper-_ismbcupper_l"></a>_ismbclower, _ismbclower_l, _ismbcupper, _ismbcupper_l
 
@@ -70,7 +75,7 @@ int _ismbcupper_l(
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende Zeichen.
 
 *locale*<br/>
@@ -78,37 +83,39 @@ Zu verwendendes Gebietsschema.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c*< = 255 und es eine entsprechende **_ismbb** -Routine gibt (z. b. **_ismbcalnum** entspricht **_ismbbalnum**), ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** -Routine.
+Jede dieser Routinen gibt einen Wert ungleich 0 zurück, wenn das Zeichen die Testbedingung erfüllt, bzw. 0, wenn es sie nicht erfüllt. Wenn *c*<= 255 und es eine entsprechende **_ismbb** Routine gibt (z. B. **entspricht _ismbcalnum** **_ismbbalnum),** ist das Ergebnis der Rückgabewert der entsprechenden **_ismbb** Routine.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen testet ein angegebenes Mehrbytezeichen auf eine angegebene Bedingung.
 
-Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die Versionen dieser Funktionen mit dem **Suffix _l** sind identisch, außer dass sie das übergebene Gebietsschema anstelle des aktuellen Gebietsschemas für ihr gebietsschemaabhängiges Verhalten verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
-|-Routine zurückgegebener Wert|Testbedingung|Beispiel für Codepage 932|
+|Routine|Testbedingung|Beispiel für Codepage 932|
 |-------------|--------------------|---------------------------|
-|**_ismbclower**|Kleinbuchstaben alphabetisch|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung eines englischen ASCII-Kleinbuchstabens ist: 0x61<=*c*<=0x7A.|
-|**_ismbclower_l**|Kleinbuchstaben alphabetisch|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung eines englischen ASCII-Kleinbuchstabens ist: 0x61<=*c*<=0x7A.|
-|**_ismbcupper**|Großbuchstaben alphabetisch|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung eines englischen ASCII-Großbuchstabens ist: 0x41<=*c*<=0x5A.|
-|**_ismbcupper_l**|Großbuchstaben alphabetisch|Gibt nur dann einen Wert ungleich 0 (null) zurück, wenn *c* eine Einzel Byte Darstellung eines englischen ASCII-Großbuchstabens ist: 0x41<=*c*<=0x5A.|
+|**_ismbclower**|Kleinbuchstaben alphabetisch|Gibt einen Wert ungleich Null zurück, wenn c eine Einzelbyte-Darstellung eines ENGLISCHEN BUCHSTABENs in Kleinbuchstaben ist: 0x61<=*c*<=0x7A. *c*|
+|**_ismbclower_l**|Kleinbuchstaben alphabetisch|Gibt einen Wert ungleich Null zurück, wenn c eine Einzelbyte-Darstellung eines ENGLISCHEN BUCHSTABENs in Kleinbuchstaben ist: 0x61<=*c*<=0x7A. *c*|
+|**_ismbcupper**|Großbuchstaben alphabetisch|Gibt einen Wert ungleich Null zurück, wenn c eine Einzelbyte-Darstellung eines englischen ASCII-Großbuchstabens *ist:* 0x41<=*c*<=0x5A.|
+|**_ismbcupper_l**|Großbuchstaben alphabetisch|Gibt einen Wert ungleich Null zurück, wenn c eine Einzelbyte-Darstellung eines englischen ASCII-Großbuchstabens *ist:* 0x41<=*c*<=0x5A.|
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_ismbclower**|\<mbstring.h>|
 |**_ismbclower_l**|\<mbstring.h>|
 |**_ismbcupper**|\<mbstring.h>|
 |**_ismbcupper_l**|\<mbstring.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Zeichenklassifizierung](../../c-runtime-library/character-classification.md)<br/>
-[ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
+[_ismbc-Routinen](../../c-runtime-library/ismbc-routines.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
 [Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
-[is, isw Routines (is- und isw-Routinen)](../../c-runtime-library/is-isw-routines.md)<br/>
-[_ismbb-Routinen](../../c-runtime-library/ismbb-routines.md)<br/>
+[is, isw Routines](../../c-runtime-library/is-isw-routines.md)<br/>
+[_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

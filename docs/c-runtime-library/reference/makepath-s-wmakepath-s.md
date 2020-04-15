@@ -1,9 +1,11 @@
 ---
 title: _makepath_s, _wmakepath_s
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _wmakepath_s
 - _makepath_s
+- _o__makepath_s
+- _o__wmakepath_s
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -17,6 +19,7 @@ api_location:
 - ucrtbase.dll
 - api-ms-win-crt-filesystem-l1-1-0.dll
 - ntoskrnl.exe
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,12 +36,12 @@ helpviewer_keywords:
 - _wmakepath_s function
 - makepath_s function
 ms.assetid: 4405e43c-3d63-4697-bb80-9b8dcd21d027
-ms.openlocfilehash: 7bd85734e71120a214d652048c02c176728474b2
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 3a44651cb9ff8be806c45c6b6c5f41f810319a85
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73624356"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81341602"
 ---
 # <a name="_makepath_s-_wmakepath_s"></a>_makepath_s, _wmakepath_s
 
@@ -86,23 +89,23 @@ errno_t _wmakepath_s(
 *path*<br/>
 Vollständiger Pfadpuffer
 
-*sizin words*<br/>
+*sizeInWords*<br/>
 Größe des Puffers in Worten
 
 *sizeInBytes*<br/>
 Größe des Puffers in Byte.
 
-*Antrie*<br/>
-Enthält einen Buchstaben (A, B usw.) für das gewünschte Laufwerk und einen optionalen nachgestellten Doppelpunkt. **_makepath_s** fügt den Doppelpunkt automatisch in den zusammengesetzten Pfad ein, wenn dieser nicht vorhanden ist. Wenn das Laufwerk **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Laufwerk Buchstabe in der Zeichenfolge für den zusammengesetzten *Pfad* angezeigt.
+*Laufwerk*<br/>
+Enthält einen Buchstaben (A, B usw.) für das gewünschte Laufwerk und einen optionalen nachgestellten Doppelpunkt. **_makepath_s** fügt den Doppelpunkt automatisch in den zusammengesetzten Pfad ein, wenn er fehlt. Wenn *das Laufwerk* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird in der zusammengesetzten *Pfadzeichenfolge* kein Laufwerkbuchstabe angezeigt.
 
-*has*<br/>
-Enthält den Pfad der Verzeichnisse, ausgenommen die Laufwerkkennzeichner oder den tatsächlichen Dateinamen. Der nachstehende Schrägstrich ist optional, und entweder ein Schrägstrich (/) oder ein umgekehrter Schrägstrich (\\) oder beides kann in einem einzelnen *dir* -Argument verwendet werden. Wenn kein nachstehender Schrägstrich (/ oder \\) angegeben ist, wird er automatisch eingefügt. Wenn *dir* **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Verzeichnispfad in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+*dir*<br/>
+Enthält den Pfad der Verzeichnisse, ausgenommen die Laufwerkkennzeichner oder den tatsächlichen Dateinamen. Der nachfolgende Schrägstrich ist optional, und entweder ein Schrägstrich (/) oder ein umgekehrter Schrägstrich (\\) oder beides kann in einem einzelnen *dir-Argument* verwendet werden. Wenn kein nachstehender Schrägstrich (/ oder \\) angegeben ist, wird er automatisch eingefügt. Wenn *dir* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird kein Verzeichnispfad in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
-*fname*<br/>
-Enthält den Basisdateinamen ohne Dateinamenerweiterungen. Wenn *fname* **null** ist oder auf eine leere Zeichenfolge verweist, wird kein Dateiname in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+*Fname*<br/>
+Enthält den Basisdateinamen ohne Dateinamenerweiterungen. Wenn *fname* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird kein Dateiname in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
-*Antrags*<br/>
-Enthält die eigentliche Dateinamenerweiterung mit oder ohne führenden Punkt (.). **_makepath_s** fügt den Zeitraum automatisch ein, wenn er nicht in *ext*angezeigt wird. Wenn *ext* **null** ist oder auf eine leere Zeichenfolge zeigt, wird keine Erweiterung in die zusammengesetzte *Pfad* Zeichenfolge eingefügt.
+*Extern*<br/>
+Enthält die eigentliche Dateinamenerweiterung mit oder ohne führenden Punkt (.). **_makepath_s** fügt die Periode automatisch ein, wenn sie nicht in *ext*angezeigt wird. Wenn *ext* **NULL** ist oder auf eine leere Zeichenfolge zeigt, wird keine Erweiterung in die zusammengesetzte *Pfadzeichenfolge* eingefügt.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -110,16 +113,18 @@ Null, wenn erfolgreich, ein Fehlercode, wenn ein Fehler auftritt.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*path*|*sizin Words* / *sizin Bytes*|Return|Inhalt des *Pfads*|
+|*path*|*sizeInWords* / *sizeInBytes*|Rückgabewert|Inhalt des *Pfades*|
 |------------|------------------------------------|------------|------------------------|
-|**NULL**|any|**EINVAL**|nicht geändert|
-|any|<= 0|**EINVAL**|nicht geändert|
+|**Null**|any|**Einval**|nicht geändert|
+|any|<= 0|**Einval**|nicht geändert|
 
-Wenn Fehlerzustände wie die oben genannten auftreten, wird ein Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf **EINVAL** festgelegt, und die Funktionen gibt **EINVAL**zurück. **Null** ist für die Parameter " *Drive*", " *Name*" und " *ext*" zulässig. Informationen über das Verhalten, wenn diese Parameter NULL-Zeiger oder leere Zeichen folgen sind, finden Sie im Abschnitt "Hinweise".
+Wenn Fehlerzustände wie die oben genannten auftreten, wird ein Handler für ungültige Parameter aufgerufen, wie in [Parametervalidierung](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die Ausführung fortgesetzt werden darf, wird **errno** auf **EINVAL** gesetzt und die Funktionen geben **EINVAL**zurück. **NULL** ist für die Parameter *Drive*, *fname*und *ext*zulässig. Informationen zum Verhalten, wenn es sich bei diesen Parametern um NULL-Zeiger oder leere Zeichenfolgen handelt, finden Sie im Abschnitt Hinweise.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_makepath_s** -Funktion erstellt eine zusammengesetzte Pfad Zeichenfolge aus einzelnen Komponenten und speichert das Ergebnis im *Pfad*. Der *Pfad* kann einen Laufwerk Buchstaben, einen Verzeichnispfad, einen Dateinamen und eine Dateinamenerweiterung enthalten. **_wmakepath_s** ist eine breit Zeichen Version von **_makepath_s**. die Argumente für **_wmakepath_s** sind Zeichen folgen mit breit Zeichen. **_wmakepath_s** und **_makepath_s** Verhalten sich andernfalls identisch.
+Die **_makepath_s-Funktion** erstellt eine zusammengesetzte Pfadzeichenfolge aus einzelnen Komponenten, die das Ergebnis im *Pfad*speichert. Der *Pfad* kann einen Laufwerkbuchstaben, einen Verzeichnispfad, einen Dateinamen und eine Dateinamenerweiterung enthalten. **_wmakepath_s** ist eine breit **gefächerte**Version von _makepath_s ; Die Argumente für **_wmakepath_s** sind Zeichenfolgen mit großen Zeichen. **_wmakepath_s** und **_makepath_s** verhalten sich ansonsten gleich.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -127,17 +132,17 @@ Die **_makepath_s** -Funktion erstellt eine zusammengesetzte Pfad Zeichenfolge a
 |---------------------|--------------------------------------|--------------------|-----------------------|
 |**_tmakepath_s**|**_makepath_s**|**_makepath_s**|**_wmakepath_s**|
 
-Das *path* -Argument muss auf einen leeren Puffer zeigen, der groß genug ist, um den gesamten Pfad zu speichern. Der zusammengesetzte *Pfad* darf nicht größer als die **_MAX_PATH** -Konstante sein, die in "STDLIB. h" definiert ist.
+Das *Pfadargument* muss auf einen leeren Puffer verweisen, der groß genug ist, um den vollständigen Pfad zu halten. Der zusammengesetzte *Pfad* darf nicht größer sein als die **_MAX_PATH** konstante, die in Stdlib.h definiert ist.
 
-Wenn path **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Außerdem wird **errno** auf **EINVAL**festgelegt. **Null** -Werte sind für alle anderen Parameter zulässig.
+Wenn pfad **NULL**ist, wird der ungültige Parameterhandler aufgerufen, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Darüber hinaus ist **errno** auf **EINVAL**gesetzt. **NULL-Werte** sind für alle anderen Parameter zulässig.
 
 In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
-Die Debug-Bibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit "0xFE" auf. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
+Die Debugbibliotheksversionen dieser Funktionen füllen zunächst den Puffer mit 0xFE. Um dieses Verhalten zu deaktivieren, verwenden Sie [_CrtSetDebugFillThreshold](crtsetdebugfillthreshold.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**_makepath_s**|\<stdlib.h>|
 |**_wmakepath_s**|\<stdlib.h> oder \<wchar.h>|
@@ -196,7 +201,7 @@ Path extracted with _splitpath_s:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Dateibehandlung](../../c-runtime-library/file-handling.md)<br/>
+[Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_fullpath, _wfullpath](fullpath-wfullpath.md)<br/>
 [_splitpath_s, _wsplitpath_s](splitpath-s-wsplitpath-s.md)<br/>
 [_makepath, _wmakepath](makepath-wmakepath.md)<br/>

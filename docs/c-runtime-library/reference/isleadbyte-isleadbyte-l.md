@@ -1,9 +1,11 @@
 ---
 title: isleadbyte, _isleadbyte_l
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - _isleadbyte_l
 - isleadbyte
+- _o__isleadbyte_l
+- _o_isleadbyte
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-string-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -31,12 +34,12 @@ helpviewer_keywords:
 - istleadbyte function
 - isleadbyte function
 ms.assetid: 3b2bcf09-d82b-4803-9e80-59d04942802a
-ms.openlocfilehash: 6b853dcea82c2afea91b2e0545d253786c88ae5e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: dddf1d669f77805df8e00f506b6427603ac8fd9f
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954313"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81343841"
 ---
 # <a name="isleadbyte-_isleadbyte_l"></a>isleadbyte, _isleadbyte_l
 
@@ -54,20 +57,22 @@ int _isleadbyte_l( int c );
 
 ### <a name="parameters"></a>Parameter
 
-*c*<br/>
+*C*<br/>
 Zu testende ganze Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**isleadbyte** gibt einen Wert ungleich 0 (null) zurück, wenn das Argument die Test Bedingung erfüllt, oder 0, wenn dies nicht der Fall ist. Im Gebiets Schema "C" und in Einzel Byte-Zeichensatz (SBCS)-Gebiets Schemas gibt **isleadbyte** immer 0 (null) zurück.
+**isleadbyte** gibt einen Wert ungleich Null zurück, wenn das Argument die Testbedingung erfüllt, oder 0, wenn dies nicht der Fall ist. Im Gebietsschema "C" und in SBCS-Gebietsschemas (Single-Byte-Zeichensatz) gibt **isleadbyte** immer 0 zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das **isleadbyte** -Makro gibt einen Wert ungleich 0 (null) zurück, wenn das Argument das erste Byte eines multibytezeichens ist. **isleadbyte** erzeugt ein sinnvolles Ergebnis für ein beliebiges ganzzahliges Argument von-1 (**EOF**) bis **UCHAR_MAX** (0xFF) (einschließlich).
+Das **isleadbyte-Makro** gibt einen Wert ungleich Null zurück, wenn sein Argument das erste Byte eines Multibyte-Zeichens ist. **isleadbyte** erzeugt ein aussagekräftiges Ergebnis für jedes ganzzahlige Argument von -1 (**EOF**) bis **UCHAR_MAX** (0xFF), einschließlich.
 
-Der erwartete Argumenttyp von **isleadbyte** ist **int**. Wenn ein signiertes Zeichen erfolgreich ist, kann der Compiler es durch die Signierungs Erweiterung in eine ganze Zahl konvertieren, was zu unvorhersehbaren Ergebnissen führt.
+Der erwartete Argumenttyp von **isleadbyte** ist **int**; Wenn ein signiertes Zeichen übergeben wird, kann der Compiler es in eine ganzzahlige durch Vorzeichenerweiterung konvertieren, was zu unvorhersehbaren Ergebnissen führt.
 
-Die Version dieser Funktion mit dem **_l** -Suffix ist beinahe identisch, verwendet jedoch das übergebene Gebiets Schema anstelle des aktuellen Gebiets Schemas für Ihr vom Gebiets Schema abhängiges Verhalten.
+Die Version dieser Funktion mit dem **Suffix _l** ist identisch, außer dass sie das übergebene Gebietsschema anstelle des aktuellen Gebietsschemas für sein gebietsschemaabhängiges Verhalten verwendet.
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -77,15 +82,15 @@ Die Version dieser Funktion mit dem **_l** -Suffix ist beinahe identisch, verwen
 
 ## <a name="requirements"></a>Anforderungen
 
-|-Routine zurückgegebener Wert|Erforderlicher Header|
+|Routine|Erforderlicher Header|
 |-------------|---------------------|
 |**isleadbyte**|\<ctype.h>|
 |**_isleadbyte_l**|\<ctype.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="see-also"></a>Siehe auch
 
 [Byteklassifizierung](../../c-runtime-library/byte-classification.md)<br/>
 [Locale](../../c-runtime-library/locale.md)<br/>
-[_ismbb-Routinen](../../c-runtime-library/ismbb-routines.md)<br/>
+[_ismbb Routinen](../../c-runtime-library/ismbb-routines.md)<br/>

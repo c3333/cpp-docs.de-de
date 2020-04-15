@@ -10,12 +10,12 @@ helpviewer_keywords:
 - CD2DSizeU [MFC], CD2DSizeU
 - CD2DSizeU [MFC], IsNull
 ms.assetid: 6e679ba8-2112-43c3-8275-70b660856f02
-ms.openlocfilehash: 45625331d0c1be8ca7c663d12c53516dc7bd77c7
-ms.sourcegitcommit: e10a5feea193c249ddc5a6faba48e7c6d8784e73
+ms.openlocfilehash: a5b87fe2ddd8fb32ddbbb2884c630952afdb079c
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70177188"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81359295"
 ---
 # <a name="cd2dsizeu-class"></a>CD2DSizeU-Klasse
 
@@ -31,21 +31,21 @@ class CD2DSizeU : public D2D1_SIZE_U;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DSizeU::CD2DSizeU](#cd2dsizeu)|Überladen. Erstellt ein `CD2DSizeU` -Objekt `D2D1_SIZE_U` aus dem-Objekt.|
+|[CD2DSizeU::CD2DSizeU](#cd2dsizeu)|Ist überladen. Erstellt ein `CD2DSizeU` Objekt `D2D1_SIZE_U` aus einem Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DSizeU::IsNull](#isnull)|Gibt einen **booleschen** Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (null) enthält.|
+|[CD2DSizeU::IsNull](#isnull)|Gibt einen **booleschen** Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (NULL) enthält.|
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
-|[CD2DSizeU:: Operator CSize](#operator_csize)|Konvertiert `CD2DSizeU` in`CSize` ein-Objekt.|
+|[CD2DSizeU::operator CSize](#operator_csize)|Konvertiert `CD2DSizeU` in `CSize` ein Objekt.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -55,9 +55,9 @@ class CD2DSizeU : public D2D1_SIZE_U;
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** afxrendertarget. h
+**Kopfzeile:** afxrendertarget.h
 
-##  <a name="cd2dsizeu"></a>CD2DSizeU:: CD2DSizeU
+## <a name="cd2dsizeucd2dsizeu"></a><a name="cd2dsizeu"></a>CD2DSizeU::CD2DSizeU
 
 Erstellt ein CD2DSizeU-Objekt aus dem CSize-Objekt.
 
@@ -73,18 +73,18 @@ CD2DSizeU(
 
 ### <a name="parameters"></a>Parameter
 
-*size*<br/>
+*Größe*<br/>
 Quellgröße
 
-*verschoben*<br/>
-Quell Breite
+*Cx*<br/>
+Quellbreite
 
-*CY*<br/>
-Quell Höhe
+*Cy*<br/>
+Quellhöhe
 
-##  <a name="isnull"></a>CD2DSizeU:: IsNull
+## <a name="cd2dsizeuisnull"></a><a name="isnull"></a>CD2DSizeU::IsNull
 
-Gibt einen booleschen Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (null) enthält.
+Gibt einen booleschen Wert zurück, der angibt, ob ein Ausdruck keine gültigen Daten (Null) enthält.
 
 ```
 BOOL IsNull() const;
@@ -92,9 +92,9 @@ BOOL IsNull() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn Breite und Höhe leer sind. andernfalls false.
+TRUE, wenn Breite und Höhe leer sind; andernfalls FALSE.
 
-##  <a name="operator_csize"></a>CD2DSizeU:: Operator CSize
+## <a name="cd2dsizeuoperator-csize"></a><a name="operator_csize"></a>CD2DSizeU::operator CSize
 
 Konvertiert CD2DSizeU in CSize-Objekt.
 
@@ -104,7 +104,7 @@ operator CSize();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Aktueller Wert der D2D Size.
+Aktueller Wert der D2D-Größe.
 
 ## <a name="see-also"></a>Siehe auch
 

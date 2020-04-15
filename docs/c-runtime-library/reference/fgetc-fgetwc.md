@@ -1,9 +1,11 @@
 ---
 title: fgetc, fgetwc
-ms.date: 11/04/2016
+ms.date: 4/2/2020
 api_name:
 - fgetwc
 - fgetc
+- _o_fgetc
+- _o_fgetwc
 api_location:
 - msvcrt.dll
 - msvcr80.dll
@@ -16,6 +18,7 @@ api_location:
 - msvcr120_clr0400.dll
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
+- api-ms-win-crt-private-l1-1-0
 api_type:
 - DLLExport
 topic_type:
@@ -33,16 +36,16 @@ helpviewer_keywords:
 - reading characters from streams
 - fgetwc function
 ms.assetid: 13348b7b-dc86-421c-9d6c-611ca79c8338
-ms.openlocfilehash: 92f44c65802f3baed37078574577bf108bbcd09a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c1589c64127b47f4dd2a1147f2b4d549601db4fc
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70940890"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81347007"
 ---
 # <a name="fgetc-fgetwc"></a>fgetc, fgetwc
 
-Liest ein Zeichen aus einem Stream
+Liest ein Zeichen aus einem Stream.
 
 ## <a name="syntax"></a>Syntax
 
@@ -57,24 +60,26 @@ wint_t fgetwc(
 
 ### <a name="parameters"></a>Parameter
 
-*stream*<br/>
+*Stream*<br/>
 Zeiger auf die **FILE**-Struktur.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**fgetc** gibt das als **int** gelesene Zeichen zurück oder gibt **EOF** zurück, um einen Fehler oder ein Dateiende anzugeben. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breit Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Dateiende anzugeben. Verwenden Sie für beide Funktionen **feof** oder **ferror** , um zwischen einem Fehler und einer dateiendebedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn der Stream **null**ist, rufen **fgetc** und **fgetwc** den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
+**fgetc** gibt das als **int** gelesene Zeichen zurück oder gibt **EOF** zurück, um einen Fehler oder ein Ende der Datei anzuzeigen. **fgetwc** gibt als [wint_t](../../c-runtime-library/standard-types.md)das breite Zeichen zurück, das dem gelesenen Zeichen entspricht, oder gibt **WEOF** zurück, um einen Fehler oder ein Ende der Datei anzuzeigen. Verwenden Sie für beide Funktionen **feof** oder **ferror,** um zwischen einem Fehler und einer End-of-File-Bedingung zu unterscheiden. Wenn ein Lesefehler auftritt, wird der Fehlerindikator für den Stream festgelegt. Wenn *Stream* **NULL**ist, rufen **fgetc** und **fgetwc** den ungültigen Parameterhandler auf, wie unter [Parametervalidierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die Ausführung fortgesetzt werden darf, legen diese Funktionen **errno** auf **EINVAL** fest und geben **EOF**zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Jede dieser Funktionen liest ein einzelnes Zeichen von der aktuellen Position der Datei, die dem *Stream*zugeordnet ist. Die Funktion erhöht dann den zugeordneten Dateizeiger (sofern definiert), um auf das nächste Zeichen zu zeigen. Wenn der Stream am Dateiende ist, wird der Dateiende-Indikator für den Stream festgelegt.
+Jede dieser Funktionen liest ein einzelnes Zeichen aus der aktuellen Position der Datei, die *dem Stream*zugeordnet ist. Die Funktion erhöht dann den zugeordneten Dateizeiger (sofern definiert), um auf das nächste Zeichen zu zeigen. Wenn der Stream am Dateiende ist, wird der Dateiende-Indikator für den Stream festgelegt.
 
-**fgetc** entspricht **getc**, wird jedoch nur als Funktion und nicht als Funktion und Makro implementiert.
+**fgetc** ist gleichbedeutend mit **getc**, wird aber nur als Funktion und nicht als Funktion und Makro implementiert.
 
-" **f. WC** " ist die breit Zeichen Version von " **f**". Er liest **c** als Multibytezeichen oder breit Zeichen, je nachdem, ob der *Stream* im Textmodus oder im Binärmodus geöffnet ist.
+**fgetwc** ist die breitstellige Version von **fgetc**; Es liest **c** als Multibyte-Zeichen oder als breites Zeichen, je nachdem, ob *der Stream* im Textmodus oder binären Modus geöffnet wird.
 
 Die Versionen mit dem Suffix **_nolock** sind identisch, allerdings sind sie nicht vor Störungen durch andere Threads geschützt.
 
 Weitere Informationen zur Verarbeitung von Breitzeichen und Multibytezeichen im Text- und Binärmodus finden Sie unter [Unicodestream-E/A im Text- und Binärmodus](../../c-runtime-library/unicode-stream-i-o-in-text-and-binary-modes.md).
+
+Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen dazu finden Sie [unter Globaler Status in der CRT](../global-state.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -89,7 +94,7 @@ Weitere Informationen zur Verarbeitung von Breitzeichen und Multibytezeichen im 
 |**fgetc**|\<stdio.h>|
 |**fgetwc**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -135,7 +140,7 @@ Line one.
 Line two.
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 Line one.

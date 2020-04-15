@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft::WRL::Details::ArgTraitsHelper structure
 - Microsoft::WRL::Details::ArgTraitsHelper::args constant
 ms.assetid: e3f798da-0aef-4a57-95d3-d38c34c47d72
-ms.openlocfilehash: fbba6d96106cc95910ccd9d0029cb3e9c254d7d3
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 4acbd9fa660f29bbaf209282ff0e90f43621574d
+ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62398835"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81360771"
 ---
 # <a name="argtraitshelper-structure"></a>ArgTraitsHelper-Struktur
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -30,26 +30,26 @@ struct ArgTraitsHelper;
 ### <a name="parameters"></a>Parameter
 
 *TDelegateInterface*<br/>
-Ein Delegat-Schnittstelle.
+Eine Delegatschnittstelle.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Hilft, die gemeinsamen Merkmale der Argumente des Delegaten definieren.
+Hilft beim Definieren gemeinsamer Merkmale von Delegatenargumenten.
 
 ## <a name="members"></a>Member
 
 ### <a name="public-typedefs"></a>Öffentliche Typedefs
 
-Name         | Beschreibung
+Name         | BESCHREIBUNG
 ------------ | ------------------------------------------------------
 `methodType` | Ein Synonym für `decltype(&TDelegateInterface::Invoke)`.
 `Traits`     | Ein Synonym für `ArgTraits<methodType>`.
 
 ### <a name="public-constants"></a>Öffentliche Konstanten
 
-Name                           | Beschreibung
+Name                           | BESCHREIBUNG
 ------------------------------ | ---------------------------------------------------------------------------------------------------------------------
-[ArgTraitsHelper::args](#args) | Hilft [argtraits:: args](#args) behalten Sie die Anzahl der Parameter der `Invoke` Methode einer Schnittstelle des Delegaten.
+[ArgTraitsHelper::args](#args) | Hilft [ArgTraits::args](#args) zählt die Anzahl der `Invoke` Parameter auf der Methode einer Delegatschnittstelle.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -57,18 +57,18 @@ Name                           | Beschreibung
 
 ## <a name="requirements"></a>Anforderungen
 
-**Header:** event.h
+**Kopfzeile:** event.h
 
 **Namespace:** Microsoft::WRL::Details
 
-## <a name="args"></a>ArgTraitsHelper::args
+## <a name="argtraitshelperargs"></a><a name="args"></a>ArgTraitsHelper::args
 
-Unterstützt die Infrastruktur von WRL und nicht direkt aus Ihrem Code verwendet werden soll.
+Unterstützt die WRL-Infrastruktur und ist nicht für die direkte Verwendung aus dem Code vorgesehen.
 
 ```cpp
 static const int args = Traits::args;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Hilft `ArgTraitsHelper::args` behalten Sie die Anzahl der Parameter der `Invoke` Methode einer Schnittstelle des Delegaten.
+Hilft `ArgTraitsHelper::args` dabei, die Anzahl der `Invoke` Parameter für die Methode einer Delegatschnittstelle beizubehalten.
